@@ -17,7 +17,7 @@ export const auth_state: AuthState = {
   token: '',
 };
 
-const auth_actions = {
+export const auth_actions = {
   LOGIN: 'LOGIN',
   LOGOUT: 'LOGOUT',
 };

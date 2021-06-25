@@ -1,4 +1,10 @@
-import { auth_state, auth_reducer, AuthState, AuthData } from './auth_reducer';
+import {
+  auth_state,
+  auth_reducer,
+  AuthState,
+  AuthData,
+  auth_actions,
+} from './auth_reducer';
 
 // types
 export type GlobalState = AuthState;
@@ -22,8 +28,12 @@ export type ActionList = {
 };
 
 // global reducers, actions and init state
-export const ACTIONS: ActionList = {
+export const reducers: ActionList = {
   ...auth_reducer,
+};
+
+export const ACTIONS = {
+  ...auth_actions,
 };
 
 export const INITIAL_STATE: GlobalState = {
@@ -32,6 +42,6 @@ export const INITIAL_STATE: GlobalState = {
 
 export const reducer = ({ state, action }: ReducerOptions) => {
   const { type, data } = action;
-  const functionAction: SingleAction = ACTIONS[type];
+  const functionAction: SingleAction = reducers[type];
   return functionAction ? functionAction({ state, data }) : state;
 };
