@@ -1,23 +1,23 @@
-import React, { useEffect, useReducer } from 'react';
-import { ACTIONS, INITIAL_STATE } from './reducers';
-import { logger } from './utils';
+import React, { useContext, useReducer } from 'react';
+import useCombinedReducers from 'use-combined-reducers';
+import { auth_reducer, auth_state } from './reducers/auth_reducer';
+import { question_reducer, question_state } from './reducers/question_reducer';
+import { Logger } from './utils';
 
-const Context = React.createContext({});
+const AppContext = React.createContext({});
 
 const ContextState: React.FC = ({ children }) => {
-  const [state, dispatch] = useReducer(logger, INITIAL_STATE);
+  const [state, dispatch] = useCombinedReducers({
+    authentification: useReducer(Logger(auth_reducer), auth_state),
+    proposal: useReducer(Logger(question_reducer), question_state),
+  });
 
-  useEffect(() => {
-    dispatch({
-      type: ACTIONS.LOGIN,
-      data: {
-        username: 'toto',
-        token: 'yallaaaaa',
-      },
-    });
-  }, []);
-
-  return <Context.Provider value={state}>{children}</Context.Provider>;
+  return (
+    <AppContext.Provider value={{ state, dispatch }}>
+      {children}
+    </AppContext.Provider>
+  );
 };
 
+export const useAppContext = (): any => useContext(AppContext);
 export default ContextState;

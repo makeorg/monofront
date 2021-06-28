@@ -1,13 +1,41 @@
-import { GlobalState, reducer, ReducerAction } from './reducers';
+import { useCallback } from 'react';
 
-export const logger = (
-  state: GlobalState,
-  action: ReducerAction
-): GlobalState => {
-  const newState = reducer({ state, action });
-  console.groupCollapsed('Action Type:', action.type);
-  console.log('Prev state: ', state);
-  console.log('Next state: ', newState);
-  console.groupEnd();
-  return newState;
+type Reducer<State = any, Action = any> = (
+  state: State,
+  action: Action
+) => State;
+
+const getCurrentTimeFormatted = () => {
+  const currentTime = new Date();
+  const hours = currentTime.getHours();
+  const minutes = currentTime.getMinutes();
+  const seconds = currentTime.getSeconds();
+  const milliseconds = currentTime.getMilliseconds();
+  return `${hours}:${minutes}:${seconds}.${milliseconds}`;
+};
+
+export const Logger = (reducer: Reducer): any => {
+  const reducerWithLogger = useCallback(
+    (state, action) => {
+      const next = reducer(state, action);
+      console.group(
+        `%cAction: %c${action.type} %cat ${getCurrentTimeFormatted()}`,
+        'color: green; font-weight: bold;',
+        'color: red; font-weight: bold;',
+        'color: lightblue; font-weight: lighter;'
+      );
+      console.log(
+        '%cPrevious State:',
+        'color: #9E9E9E; font-weight: 700;',
+        state
+      );
+      console.log('%cAction:', 'color: #00A7F7; font-weight: 700;', action);
+      console.log('%cNext State:', 'color: #47B04B; font-weight: 700;', next);
+      console.groupEnd();
+      return next;
+    },
+    [reducer]
+  );
+
+  return reducerWithLogger;
 };

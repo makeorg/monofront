@@ -1,4 +1,4 @@
-import { ActionList, SingleActionOptions } from '.';
+import { ReducerAction } from './types';
 
 // types
 type isAuthState = {
@@ -22,20 +22,29 @@ export const auth_actions = {
   LOGOUT: 'LOGOUT',
 };
 
-export const auth_reducer: ActionList = {
-  [auth_actions.LOGIN]: ({ state, data = {} }: SingleActionOptions) => {
-    const { username, token }: AuthData = data;
-    return {
-      ...state,
-      isAuth: true,
-      username,
-      token,
-    };
-  },
-  [auth_actions.LOGOUT]: ({ state }: SingleActionOptions) => ({
-    ...state,
-    isAuth: false,
-    username: '',
-    token: '',
-  }),
+export const auth_reducer = (
+  state: AuthState,
+  action: ReducerAction
+): AuthState => {
+  const { type, data = {} } = action;
+  switch (type) {
+    case auth_actions.LOGOUT: {
+      const { username, token }: AuthData = data;
+      return {
+        ...state,
+        isAuth: true,
+        username,
+        token,
+      };
+    }
+    case auth_actions.LOGIN:
+      return {
+        ...state,
+        isAuth: false,
+        username: '',
+        token: '',
+      };
+    default:
+      return state;
+  }
 };
