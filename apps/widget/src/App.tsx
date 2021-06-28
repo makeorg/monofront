@@ -12,9 +12,9 @@ const App: React.FC = () => {
   const initQuestion = async () => {
     const result = await getQuestion(QUESTION_ID);
     dispatch({
-      type: ACTIONS.GET_QUESTION,
+      type: ACTIONS.GET_PROPOSAL,
       data: {
-        question: result,
+        proposals: result,
         questionId: '66a9230b-08cb-4f37-8ed8-aa95a8eac19a',
       },
     });
@@ -22,7 +22,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     initQuestion();
-  }, []);
+  }, [state]);
 
   return <div>hello world</div>;
 };

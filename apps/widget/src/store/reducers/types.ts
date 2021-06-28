@@ -1,5 +1,5 @@
 import { AuthState } from './auth_reducer';
-import { QuestionState } from './question_reducer';
+import { ProposalState } from './proposals_reducer';
 
 export type Question = {
   proposals: [
@@ -102,7 +102,15 @@ export type Question = {
   ];
 };
 
-export type GlobalState = AuthState & QuestionState;
+export type Reducer<State = any, Action = any> = (
+  state: State,
+  action: Action
+) => State;
+
+export type GlobalState = {
+  authentification: AuthState;
+  proposals: ProposalState;
+};
 interface ReducerData {
   [index: string]: string;
 }

@@ -1,23 +1,57 @@
-import React, { useContext, useReducer } from 'react';
+import React, { useContext, useEffect, useReducer } from 'react';
 import useCombinedReducers from 'use-combined-reducers';
 import { auth_reducer, auth_state } from './reducers/auth_reducer';
-import { question_reducer, question_state } from './reducers/question_reducer';
-import { Logger } from './utils';
+import {
+  proposals_reducer,
+  proposals_state,
+} from './reducers/proposals_reducer';
+import { ReducerAction } from './reducers/types';
+import { getCurrentTimeFormatted } from './utils';
 
-const AppContext = React.createContext({});
+const AppContextDispatch = React.createContext({});
+const AppContextState = React.createContext({});
 
 const ContextState: React.FC = ({ children }) => {
   const [state, dispatch] = useCombinedReducers({
-    authentification: useReducer(Logger(auth_reducer), auth_state),
-    proposal: useReducer(Logger(question_reducer), question_state),
+    authentification: useReducer(auth_reducer, auth_state),
+    proposals: useReducer(proposals_reducer, proposals_state),
   });
 
+  const dispatchLogged = (action: ReducerAction) => {
+    console.group(
+      `%cAction: %c${action.type} %cat ${getCurrentTimeFormatted()}`,
+      'color: green; font-weight: bold;',
+      'color: red; font-weight: bold;',
+      'color: lightblue; font-weight: lighter;'
+    );
+    console.log(
+      '%cPrevious State:',
+      'color: #9E9E9E; font-weight: 700;',
+      state
+    );
+    console.log('%cAction:', 'color: #00A7F7; font-weight: 700;', action);
+
+    return dispatch(action);
+  };
+
+  useEffect(() => {
+    console.log('%cNew State:', 'color: #47B04B; font-weight: 700;', state);
+    console.groupEnd();
+  }, [state]);
+
   return (
-    <AppContext.Provider value={{ state, dispatch }}>
-      {children}
-    </AppContext.Provider>
+    <AppContextDispatch.Provider value={dispatchLogged}>
+      <AppContextState.Provider value={state}>
+        {children}
+      </AppContextState.Provider>
+    </AppContextDispatch.Provider>
   );
 };
 
-export const useAppContext = (): any => useContext(AppContext);
+export const useAppContext = (): any => {
+  const state = useContext(AppContextState);
+  const dispatch = useContext(AppContextDispatch);
+  return { state, dispatch };
+};
+
 export default ContextState;

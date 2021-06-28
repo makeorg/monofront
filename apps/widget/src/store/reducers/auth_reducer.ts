@@ -1,4 +1,4 @@
-import { ReducerAction } from './types';
+import { Reducer, ReducerAction } from './types';
 
 // types
 type isAuthState = {
@@ -22,8 +22,8 @@ export const auth_actions = {
   LOGOUT: 'LOGOUT',
 };
 
-export const auth_reducer = (
-  state: AuthState,
+export const auth_reducer: Reducer = (
+  state: isAuthState,
   action: ReducerAction
 ): AuthState => {
   const { type, data = {} } = action;
