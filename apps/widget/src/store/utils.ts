@@ -1,6 +1,9 @@
 import { GlobalState, reducer, ReducerAction } from './reducers';
 
-export const logger = (state: GlobalState, action: ReducerAction) => {
+export const logger = (
+  state: GlobalState,
+  action: ReducerAction
+): GlobalState => {
   const newState = reducer({ state, action });
   console.groupCollapsed('Action Type:', action.type);
   console.log('Prev state: ', state);

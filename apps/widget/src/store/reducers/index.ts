@@ -8,7 +8,7 @@ import {
 
 // types
 export type GlobalState = AuthState;
-export type ReducerData = AuthData | any;
+export type ReducerData = AuthData;
 export type ReducerAction = {
   type: string;
   data?: ReducerData;
@@ -40,7 +40,7 @@ export const INITIAL_STATE: GlobalState = {
   ...auth_state,
 };
 
-export const reducer = ({ state, action }: ReducerOptions) => {
+export const reducer = ({ state, action }: ReducerOptions): GlobalState => {
   const { type, data } = action;
   const functionAction: SingleAction = reducers[type];
   return functionAction ? functionAction({ state, data }) : state;
