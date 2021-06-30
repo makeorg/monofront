@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useReducer, useState } from 'react';
 import useCombinedReducers from 'use-combined-reducers';
 import { auth_reducer, auth_state } from './reducers/auth_reducer';
@@ -59,7 +61,7 @@ const ContextState: React.FC = ({ children }) => {
     </AppContextDispatch.Provider>
   );
 };
-
+/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
 export const useAppContext = (): any => {
   const state = useContext(AppContextState);
   const dispatch = useContext(AppContextDispatch);
