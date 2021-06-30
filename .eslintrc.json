@@ -39,7 +39,7 @@
 
     "max-len": ["warn", { "code": 80 }],
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/exhaustive-deps": "off",
     "import/prefer-default-export": "off",
     "react/prop-types": "off",
     "comma-dangle": "off",

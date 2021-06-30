@@ -22,7 +22,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     initQuestion();
-  }, [state]);
+  }, []);
 
   return <div>hello world</div>;
 };
