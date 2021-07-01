@@ -1,6 +1,6 @@
 {
   "lerna": "2.2.0",
-  "packages": ["apps/*", "api", "components", "types", "assets", "utils"],
+  "packages": ["apps/*", "api", "components", "types", "assets", "utils", "ui"],
   "npmClient": "yarn",
   "useWorkspaces": true,
   "version": "1.0.0"

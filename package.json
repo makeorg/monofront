@@ -9,7 +9,8 @@
     "components",
     "types",
     "assets",
-    "utils"
+    "utils",
+    "ui"
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap",

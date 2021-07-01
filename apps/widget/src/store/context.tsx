@@ -11,7 +11,7 @@ import {
   proposals_state,
 } from './reducers/proposals_reducer';
 import { ReducerAction } from './reducers/types';
-import { getCurrentTimeFormatted } from './utils';
+import { deepEqual, getCurrentTimeFormatted } from './utils';
 
 const AppContext = React.createContext({});
 
@@ -21,7 +21,7 @@ const ContextState: React.FC = ({ children }) => {
     question: useReducer(question_reducer, question_state),
     proposals: useReducer(proposals_reducer, proposals_state),
   });
-  const [lastAction, setLastAction] = useState({
+  const [lastAction, setLastAction]: [any, any] = useState({
     lastState: state,
     action: {
       type: '',
@@ -38,7 +38,7 @@ const ContextState: React.FC = ({ children }) => {
 
   useEffect(() => {
     const { action, lastState } = lastAction;
-    if (JSON.stringify(lastState) !== JSON.stringify(state)) {
+    if (!deepEqual(lastState, state) && action.type) {
       console.group(
         `%cAction: %c${action.type} %cat ${getCurrentTimeFormatted()}`,
         'color: green; font-weight: bold;',
@@ -53,6 +53,7 @@ const ContextState: React.FC = ({ children }) => {
       console.log('%cAction:', 'color: #00A7F7; font-weight: 700;', action);
       console.log('%cNew State:', 'color: #47B04B; font-weight: 700;', state);
       console.groupEnd();
+      setLastAction({ lastState: state, action: {} });
     }
   }, [state]);
 
