@@ -1,0 +1,400 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Colors must match the snapshot with default Props 1`] = `
+Array [
+  @media (min-width:360px) {
+
+}
+
+<h1>
+    Colors
+  </h1>,
+  .c0 {
+  color: rgba(213,21,60,1);
+  font-size: 12px;
+}
+
+.c0:hover,
+.c0:focus {
+  color: rgba(213,21,60,1);
+}
+
+.c1 {
+  width: 14px;
+  height: 14px;
+  margin-left: 7px;
+}
+
+.c2 {
+  width: 25px;
+  height: 25px;
+  border: 1px solid;
+  margin: 5px;
+  background-color: rgba(37,49,134,1);
+}
+
+.c3 {
+  width: 25px;
+  height: 25px;
+  border: 1px solid;
+  margin: 5px;
+  background-color: rgba(213,21,60,1);
+}
+
+.c4 {
+  width: 25px;
+  height: 25px;
+  border: 1px solid;
+  margin: 5px;
+  background-color: rgba(0,0,0,1);
+}
+
+.c5 {
+  width: 25px;
+  height: 25px;
+  border: 1px solid;
+  margin: 5px;
+  background-color: rgba(255,255,255,1);
+}
+
+.c6 {
+  width: 25px;
+  height: 25px;
+  border: 1px solid;
+  margin: 5px;
+  background-color: rgba(51,67,91,1);
+}
+
+.c7 {
+  width: 25px;
+  height: 25px;
+  border: 1px solid;
+  margin: 5px;
+  background-color: rgba(80,122,31,1);
+}
+
+.c8 {
+  width: 25px;
+  height: 25px;
+  border: 1px solid;
+  margin: 5px;
+  background-color: rgba(190,24,44,1);
+}
+
+.c9 {
+  width: 25px;
+  height: 25px;
+  border: 1px solid;
+  margin: 5px;
+  background-color: rgba(117,117,117,1);
+}
+
+.c10 {
+  width: 25px;
+  height: 25px;
+  border: 1px solid;
+  margin: 5px;
+  background-color: rgba(0,0,0,0.65);
+}
+
+.c11 {
+  width: 25px;
+  height: 25px;
+  border: 1px solid;
+  margin: 5px;
+  background-color: rgba(0,0,0,0.15);
+}
+
+.c12 {
+  width: 25px;
+  height: 25px;
+  border: 1px solid;
+  margin: 5px;
+  background-color: rgba(0,0,0,0.05);
+}
+
+@media (min-width:360px) {
+  .c0 {
+    font-size: 16px;
+  }
+}
+
+<table>
+    <caption>
+      Color values used for the UI of
+       
+      <a
+        className="c0"
+        href="http://test.make.org"
+      >
+        http://test.make.org
+      </a>
+       
+      from the design tokens
+       
+      <a
+        className="c0"
+        href="https://www.npmjs.com/package/athena-design-tokens"
+        rel="nooperner"
+        target="_blank"
+      >
+        NPM module
+        <svg
+          aria-hidden={true}
+          className="c1 red-link"
+          height={12}
+          viewBox="0 0 12 12"
+          width={12}
+        >
+          <path
+            className="tofill"
+            d="M12.5.893v10.214c0 .77-.624 1.393-1.393 1.393H.893c-.77 0-1.393-.624-1.393-1.393V.893C-.5.123.124-.5.893-.5h10.214c.77 0 1.393.624 1.393 1.393zm-2.554.464H6.697c-.618 0-.93.75-.492 1.189l.928.928-5.674 5.674a.348.348 0 000 .492l.9.9a.347.347 0 00.493 0l5.674-5.673.928.928c.436.436 1.189.13 1.189-.492v-3.25a.697.697 0 00-.697-.696z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </a>
+       
+    </caption>
+    <thead>
+      <tr>
+        <th
+          scope="col"
+        >
+          name
+        </th>
+        <th
+          scope="col"
+        >
+          color
+        </th>
+        <th
+          scope="col"
+        >
+          value
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th
+          scope="row"
+        >
+          brandPrimary
+        </th>
+        <td>
+          <div
+            className="c2"
+          />
+        </td>
+        <td>
+          rgba(37,49,134,1)
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <th
+          scope="row"
+        >
+          brandSecondary
+        </th>
+        <td>
+          <div
+            className="c3"
+          />
+        </td>
+        <td>
+          rgba(213,21,60,1)
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <th
+          scope="row"
+        >
+          black
+        </th>
+        <td>
+          <div
+            className="c4"
+          />
+        </td>
+        <td>
+          rgba(0,0,0,1)
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <th
+          scope="row"
+        >
+          white
+        </th>
+        <td>
+          <div
+            className="c5"
+          />
+        </td>
+        <td>
+          rgba(255,255,255,1)
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <th
+          scope="row"
+        >
+          infos
+        </th>
+        <td>
+          <div
+            className="c6"
+          />
+        </td>
+        <td>
+          rgba(51,67,91,1)
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <th
+          scope="row"
+        >
+          success
+        </th>
+        <td>
+          <div
+            className="c7"
+          />
+        </td>
+        <td>
+          rgba(80,122,31,1)
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <th
+          scope="row"
+        >
+          error
+        </th>
+        <td>
+          <div
+            className="c8"
+          />
+        </td>
+        <td>
+          rgba(190,24,44,1)
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <th
+          scope="row"
+        >
+          agree
+        </th>
+        <td>
+          <div
+            className="c7"
+          />
+        </td>
+        <td>
+          rgba(80,122,31,1)
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <th
+          scope="row"
+        >
+          disagree
+        </th>
+        <td>
+          <div
+            className="c8"
+          />
+        </td>
+        <td>
+          rgba(190,24,44,1)
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <th
+          scope="row"
+        >
+          neutral
+        </th>
+        <td>
+          <div
+            className="c9"
+          />
+        </td>
+        <td>
+          rgba(117,117,117,1)
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <th
+          scope="row"
+        >
+          greyDark
+        </th>
+        <td>
+          <div
+            className="c10"
+          />
+        </td>
+        <td>
+          rgba(0,0,0,0.65)
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <th
+          scope="row"
+        >
+          grey
+        </th>
+        <td>
+          <div
+            className="c11"
+          />
+        </td>
+        <td>
+          rgba(0,0,0,0.15)
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <th
+          scope="row"
+        >
+          greyLighter
+        </th>
+        <td>
+          <div
+            className="c12"
+          />
+        </td>
+        <td>
+          rgba(0,0,0,0.05)
+        </td>
+      </tr>
+    </tbody>
+  </table>,
+]
+`;

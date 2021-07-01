@@ -1,8 +1,11 @@
 /* eslint-disable no-console */
 /* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import React, { useContext, useEffect, useReducer, useState } from 'react';
 import useCombinedReducers from 'use-combined-reducers';
 import { auth_reducer, auth_state } from './reducers/auth_reducer';
+import { question_reducer, question_state } from './reducers/question_reducer';
 import {
   proposals_reducer,
   proposals_state,
@@ -10,12 +13,12 @@ import {
 import { ReducerAction } from './reducers/types';
 import { getCurrentTimeFormatted } from './utils';
 
-const AppContextDispatch = React.createContext({});
-const AppContextState = React.createContext({});
+const AppContext = React.createContext({});
 
 const ContextState: React.FC = ({ children }) => {
   const [state, dispatch] = useCombinedReducers({
     authentification: useReducer(auth_reducer, auth_state),
+    question: useReducer(question_reducer, question_state),
     proposals: useReducer(proposals_reducer, proposals_state),
   });
   const [lastAction, setLastAction] = useState({
@@ -25,7 +28,7 @@ const ContextState: React.FC = ({ children }) => {
     },
   });
 
-  const dispatchLogged = (action: ReducerAction) => {
+  const dispatchLogged = async (action: ReducerAction) => {
     setLastAction({
       lastState: state,
       action,
@@ -54,18 +57,12 @@ const ContextState: React.FC = ({ children }) => {
   }, [state]);
 
   return (
-    <AppContextDispatch.Provider value={dispatchLogged}>
-      <AppContextState.Provider value={state}>
-        {children}
-      </AppContextState.Provider>
-    </AppContextDispatch.Provider>
+    <AppContext.Provider value={{ state, dispatch: dispatchLogged }}>
+      {children}
+    </AppContext.Provider>
   );
 };
 /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
-export const useAppContext = (): any => {
-  const state = useContext(AppContextState);
-  const dispatch = useContext(AppContextDispatch);
-  return { state, dispatch };
-};
+export const useAppContext = (): any => useContext(AppContext);
 
 export default ContextState;

@@ -1,33 +1,18 @@
-import { Proposal } from '@make.org/types';
+import { ProposalType } from '@make.org/types';
 import { Reducer, ReducerAction } from './types';
-
-// types
-export type ProposalState = {
-  proposals?: Proposal[];
-  questionId: string;
-};
+import { proposals_actions } from '../actions/proposals_actions';
 
 // state, actions and reducer
-export const proposals_state: ProposalState = {
-  proposals: undefined,
-  questionId: '',
-};
-
-export const proposals_actions = {
-  GET_PROPOSAL: 'GET_PROPOSAL',
-};
+export const proposals_state: ProposalType[] = [];
 
 export const proposals_reducer: Reducer = (
-  state: ProposalState,
+  state: ProposalType[],
   action: ReducerAction
-): ProposalState => {
-  const { type, data = {} } = action;
+): ProposalType[] => {
+  const { type = '', data = [] } = action;
   switch (type) {
-    case proposals_actions.GET_PROPOSAL:
-      return {
-        ...state,
-        ...data,
-      };
+    case proposals_actions.GET_ALL_PROPOSALS:
+      return data;
     default:
       return state;
   }

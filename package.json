@@ -7,7 +7,9 @@
     "apps/*",
     "api",
     "components",
-    "types"
+    "types",
+    "assets",
+    "utils"
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap",

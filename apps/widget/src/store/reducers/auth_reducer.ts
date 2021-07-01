@@ -1,4 +1,5 @@
 import { Reducer, ReducerAction } from './types';
+import { auth_actions } from '../actions/auth_actions';
 
 // types
 type isAuthState = {
@@ -17,34 +18,28 @@ export const auth_state: AuthState = {
   token: '',
 };
 
-export const auth_actions = {
-  LOGIN: 'LOGIN',
-  LOGOUT: 'LOGOUT',
-};
-
 export const auth_reducer: Reducer = (
   state: isAuthState,
   action: ReducerAction
 ): AuthState => {
   const { type, data = {} } = action;
+  const newState = { ...state };
   switch (type) {
     case auth_actions.LOGOUT: {
       const { username, token }: AuthData = data;
-      return {
-        ...state,
+      return Object.assign(newState, {
         isAuth: true,
         username,
         token,
-      };
+      });
     }
     case auth_actions.LOGIN:
-      return {
-        ...state,
+      return Object.assign(newState, {
         isAuth: false,
         username: '',
         token: '',
-      };
+      });
     default:
-      return state;
+      return newState;
   }
 };
