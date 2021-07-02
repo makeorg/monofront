@@ -1,0 +1,47 @@
+{
+	"folders": [
+		{
+			"name": "🌱 root",
+			"path": "."
+		},
+		{
+			"name": "🧑🏼‍🔧 API",
+			"path": "api"
+		},
+		{
+			"name": "👷‍♂️ Apps",
+			"path": "apps"
+		},
+		{
+			"name": "👨‍🎓 Assets",
+			"path": "assets"
+		},
+		{
+			"name": "🧑🏼‍🏭 Components",
+			"path": "components"
+		},
+		{
+			"name": "👮🏼‍♀️ Types",
+			"path": "types"
+		},
+		{
+			"name": "🧑🏼‍🎨 UI",
+			"path": "ui"
+		},
+		{
+			"name": "🧑🏼‍🔬 Utils",
+			"path": "utils"
+		}
+	],
+	"settings": {
+	  "typescript.validate.enable": false,
+	  "javascript.validate.enable": false,
+	  "editor.formatOnSave": false,
+	  "editor.tabSize": 2,
+	  "editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	  },
+	  "git.ignoreLimitWarning": true
+	}
+  }
+  
