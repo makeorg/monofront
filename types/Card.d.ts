@@ -2,6 +2,11 @@ import { ProposalType } from './Proposal';
 import { QuestionType } from './Question';
 import { VoteType } from './Vote';
 
+export type DemographicType = {
+  label: string
+  value: string
+}
+
 export type PartnerItemType = {
   name: string
   imageUrl: string

@@ -4,10 +4,9 @@ import { typography } from 'athena-design-tokens';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
-
-import { GreyLinkStyle } from 'Client/ui/Elements/Buttons/V2/style';
-import { MiddleColumnStyle } from 'Client/ui/Elements/FlexElements';
-import { SvgArrowReturn } from 'Client/ui/Svg/elements';
+import { GreyLinkStyle } from '@make.org/ui/elements/Buttons/style';
+import { MiddleColumnStyle } from '@make.org/ui/elements/FlexElements';
+import { SvgArrowReturn } from '@make.org/ui/Svg/elements';
 
 export const SequenceContainerStyle = styled(MiddleColumnStyle)`
   position: relative;

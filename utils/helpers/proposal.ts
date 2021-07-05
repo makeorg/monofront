@@ -1,5 +1,3 @@
-/* @flow */
-
 import {
   getBaitText,
   MIN_PROPOSAL_LENGTH,

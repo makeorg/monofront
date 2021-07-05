@@ -16,3 +16,4 @@ export * from './Tracking';
 export * from './User';
 export * from './View';
 export * from './Vote';
+export * from './Store';

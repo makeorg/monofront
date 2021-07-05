@@ -1,0 +1,4 @@
+export const TYPE_USER = 'USER';
+export const TYPE_ORGANISATION = 'ORGANISATION';
+export const TYPE_PERSONALITY = 'PERSONALITY';
+export const TYPE_ANONYMOUS = 'ANONYMOUS';

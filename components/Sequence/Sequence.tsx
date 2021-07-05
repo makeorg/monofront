@@ -19,12 +19,11 @@ import { getParticipateLink } from '@make.org/utils/helpers/url';
 import { MetaTags } from '../MetaTags';
 import { ProposalSubmit } from '../Proposal/Submit';
 import { SequenceCard } from './Cards';
-
-// REST TO DO
 import { SequenceProgress } from './Progress';
 import { SequencePlaceholder } from './Placeholder';
 import { useSequence } from './Hooks/useSequence';
 
+// REDUX REST TO DO
 import { useSelector } from 'react-redux';
 import { selectCurrentQuestion } from 'Shared/store/selectors/questions.selector';
 
