@@ -1,6 +1,5 @@
-import { QuestionType } from '@make.org/types';
-import { Reducer, ReducerAction } from './types';
-import { question_actions } from '../actions/question_actions';
+import { QuestionType, Reducer, ReducerAction } from '@make.org/types';
+import { GET_QUESTION } from '../../actionTypes';
 
 // state, actions and reducer
 export const question_state: QuestionType | undefined = undefined;
@@ -9,10 +8,10 @@ export const question_reducer: Reducer = (
   state: QuestionType,
   action: ReducerAction
 ): QuestionType => {
-  const { type, data = {} } = action;
+  const { type, payload = {} } = action;
   switch (type) {
-    case question_actions.GET_QUESTION:
-      return data;
+    case GET_QUESTION:
+      return payload;
     default:
       return state;
   }

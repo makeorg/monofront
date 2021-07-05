@@ -5,28 +5,15 @@ import {
   PROPOSALS_LISTING_LIMIT,
 } from '@make.org/utils/constants/proposal';
 import {
-  QuestionType,
-  ProposalListCardType,
-  TopProposalListCardType,
   ProposalsType,
   ProposalType
 } from '@make.org/types';
-import {
-  FEED_PROPOSAL,
-  FEED_TOP_PROPOSALS
-} from '@make.org/utils/constants/card';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { i18n } from '@make.org/utils/i18n';
 import { TRANSLATION_NAMESPACE } from '@make.org/utils/i18n/constants';
 import { Logger } from '@make.org/utils/services/Logger';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 import { AVAILABLE_ALGORITHMS } from '@make.org/api/ProposalApiService';
-import {
-  CONSULTATION_POPULAR_PROPOSALS
-} from '@make.org/utils/constants/featureFlipping';
-import {
-  checkIsFeatureActivated
-} from '@make.org/utils/helpers/featureFlipping';
 
 export const getProposalLength = (content = ''): number => {
   if (content === '') {
@@ -48,7 +35,7 @@ export const proposalHasValidLength = (length = 0): boolean => {
  * Search the first no voted proposal
  * @type {Object|undefined}
  */
-export const searchFirstUnvotedProposal = (proposals: ProposalType[]) => proposals.find((proposal) => proposal.votes.every((vote) => vote.hasVoted === false));
+export const searchFirstUnvotedProposal = (proposals: ProposalType[]): ProposalType => proposals.find((proposal) => proposal.votes.every((vote) => vote.hasVoted === false));
 
 export const searchProposals = async (
   country: string,
@@ -103,31 +90,6 @@ export const searchTaggedProposals = async (
   );
 
   return response;
-};
-
-export const buildProposalsFeed = (
-  proposals: ProposalType[],
-  question: QuestionType,
-  sortTypeKey: string
-): ProposalListCardType[] | TopProposalListCardType[] => {
-  const hasPopularProposals = checkIsFeatureActivated(
-    CONSULTATION_POPULAR_PROPOSALS,
-    question.activeFeatures
-  );
-
-  const feed = proposals.map((proposal) => ({
-    type: FEED_PROPOSAL,
-    proposal,
-  }));
-
-  if (hasPopularProposals && sortTypeKey !== 'POPULAR') {
-    feed.splice(3, 0, {
-      type: FEED_TOP_PROPOSALS,
-      question,
-    });
-  }
-
-  return feed;
 };
 
 export const getProposalCardIndex = (index = 0) => `proposal_list_card_${index}`;

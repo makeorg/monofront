@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ContextState from '@make.org/store';
 import App from './App';
-import ContextState from './store/context';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(

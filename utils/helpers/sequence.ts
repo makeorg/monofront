@@ -26,9 +26,9 @@ import {
  * @return {number}
  */
 export const findIndexOfFirstUnvotedCard = (
+  firstUnvotedProposal: ProposalType,
   cards: SequenceCardType[],
   currentIndex: number,
-  firstUnvotedProposal?: ProposalType,
 ): number => {
   if (!firstUnvotedProposal) {
     return cards.length ? cards.length - 1 : 0;
@@ -72,8 +72,8 @@ export const buildCards = (
   hasProposed: boolean,
   canPropose: boolean,
   isStandardSequence: boolean,
-  introCardParam?: string,
-  pushProposalParam?: string,
+  introCardParam?: boolean,
+  pushProposalParam?: boolean,
   withDemographics?: boolean
 ): SequenceCardType[] => {
   const withPushProposalCard: boolean = extraSlidesConfig.pushProposalCard

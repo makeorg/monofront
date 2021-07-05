@@ -8,21 +8,28 @@ import { SequenceCardType, QuestionType, ProposalType } from '@make.org/types';
 import { searchFirstUnvotedProposal } from '@make.org/utils/helpers/proposal';
 import { scrollToTop } from '@make.org/utils/helpers/styled';
 import { CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL } from '@make.org/utils/constants/card';
+import { selectAuthentication } from '@make.org/store/selectors/user.selector';
+import {
+  resetSequenceIndex,
+  setSequenceIndex,
+  loadSequenceCards,
+  resetSequenceVotedProposals,
+} from '@make.org/store/actions/sequence';
 import { useSequenceTracking } from './useSequenceTracking';
 import { useSequenceVoteOnlyNotification } from './useSequenceVoteOnlyNotification';
 import { useSequenceExtraDataAutoSubmit } from './useSequenceExtraDataAutoSubmit';
 import { useSequenceQueryParams } from './useSequenceQueryParams';
 
 // REDUX REST TO DO
-import { type StateRoot } from 'Shared/store/types';
-import { useSelector, useDispatch } from 'react-redux';
-import { selectAuthentication } from 'Shared/store/selectors/user.selector';
-import {
-  resetSequenceIndex,
-  setSequenceIndex,
-  loadSequenceCards,
-  resetSequenceVotedProposals,
-} from 'Shared/store/actions/sequence';
+import { useAppContext } from '../../../store';
+
+type ReturnFunctionType = {
+  withProposalButton: boolean
+  country: string
+  isLoading: boolean
+  currentCard: SequenceCardType
+}
+type ExecuteStartSequence = (questionId: string, votedIds: string[]) => Promise<ProposalType[]>
 
 /**
  * Renders Sequence component with Intro / Push Proposal / Sign Up & Proposal Cards
@@ -30,41 +37,30 @@ import {
 export const useSequence = (
   question: QuestionType,
   isStandardSequence: boolean,
-  executeStartSequence: (questionId, votedIds) => ProposalType[]
-) => {
+  executeStartSequence: ExecuteStartSequence
+): ReturnFunctionType => {
   // Dispatch
-  const dispatch = useDispatch();
+  const { state, dispatch } = useAppContext();
 
   // StateRoot
-  const { country } = useSelector((state: StateRoot) => state.appConfig);
-  const { hasProposed } = useSelector((state: StateRoot) => state.proposal);
-  const { isLoggedIn } = useSelector((state: StateRoot) =>
-    selectAuthentication(state)
-  );
-  const persistedDemographics = useSelector(
-    (state: StateRoot) => state.sequence.demographics
-  );
-  const { isPushProposal, votedProposalIdsOfQuestion, currentIndex, cards } =
-    useSelector((state: StateRoot) => {
-      const {
-        cards: sCards,
-        currentIndex: sCurrentIndex,
-        votedProposalIds: sVotedProposalIds,
-      } = state.sequence;
+  const { appConfig = {}, proposal = {}, sequence = {} } = state;
+  const { country } = appConfig;
+  const { hasProposed } = proposal;
+  const { isLoggedIn } = selectAuthentication(state);
+  const persistedDemographics = sequence && sequence.demographics;
+  const {
+    cards: sCards,
+    currentIndex: sCurrentIndex,
+    votedProposalIds: sVotedProposalIds,
+  } = sequence;
 
-      const votedProposalIdsOfQuestionValue =
-        (sVotedProposalIds && sVotedProposalIds[question?.slug]) || [];
-
-      return {
-        cards: sCards,
-        currentIndex: sCurrentIndex || 0,
-        votedProposalIdsOfQuestion: votedProposalIdsOfQuestionValue,
-        isPushProposal: !!(
-          sCards &&
-          sCards[sCurrentIndex]?.type === CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL
-        ),
-      };
-    });
+  const isPushProposal = !!(
+    sCards
+    && sCards[sCurrentIndex]?.type === CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL
+  );
+  const votedProposalIdsOfQuestion = (sVotedProposalIds && sVotedProposalIds[question?.slug]) || [];
+  const currentIndex = sCurrentIndex || 0;
+  const cards = sCards;
 
   // State
   const [currentCard, setCurrentCard] = useState(null);
@@ -77,8 +73,7 @@ export const useSequence = (
   // Sequence hooks
   useSequenceTracking();
   useSequenceVoteOnlyNotification(question);
-  const { firstProposal, introCardParam, pushProposalParam } =
-    useSequenceQueryParams();
+  const { firstProposal, introCardParam, pushProposalParam } = useSequenceQueryParams();
   useSequenceExtraDataAutoSubmit(question.slug, cards, currentIndex);
 
   // Other
@@ -90,23 +85,26 @@ export const useSequence = (
   }, []);
 
   // load sequence data
-  useEffect(async () => {
-    const votedIds = firstProposal
-      ? [firstProposal, ...votedProposalIdsOfQuestion]
-      : votedProposalIdsOfQuestion;
+  useEffect(() => {
+    const loadSequenceData = async () => {
+      const votedIds = firstProposal
+        ? [firstProposal, ...votedProposalIdsOfQuestion]
+        : votedProposalIdsOfQuestion;
 
-    if (question) {
-      const proposals = await executeStartSequence(
-        question.questionId,
-        votedIds
-      );
-      if (proposals) {
-        setSequenceProposals(proposals);
+      if (question) {
+        const proposals = await executeStartSequence(
+          question.questionId,
+          votedIds
+        );
+        if (proposals) {
+          setSequenceProposals(proposals);
+        }
       }
-    }
-    dispatch(resetSequenceIndex()); // @toDo : check if realy needed - see useEffect init sequence index
+      dispatch(resetSequenceIndex()); // @toDo : check if realy needed - see useEffect init sequence index
 
-    setLoading(false);
+      setLoading(false);
+    };
+    loadSequenceData();
   }, [question, firstProposal, isLoggedIn, hasProposed]);
 
   // build cards

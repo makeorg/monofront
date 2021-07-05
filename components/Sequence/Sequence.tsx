@@ -11,21 +11,19 @@ import {
   KIND_STANDARD,
 } from '@make.org/utils/constants/sequence';
 import { CARD_TYPE_NO_PROPOSAL_CARD } from '@make.org/utils/constants/card';
-import { QuestionType } from '@make.org/types';
+import { ProposalType, QuestionType, StateRoot } from '@make.org/types';
 import { i18n } from '@make.org/utils/i18n';
 import { trackClickOperationPage } from '@make.org/utils/services/Tracking';
 import { SequenceService } from '@make.org/utils/services/Sequence';
 import { getParticipateLink } from '@make.org/utils/helpers/url';
+import { useAppContext } from '@make.org/store';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { MetaTags } from '../MetaTags';
 import { ProposalSubmit } from '../Proposal/Submit';
 import { SequenceCard } from './Cards';
 import { SequenceProgress } from './Progress';
 import { SequencePlaceholder } from './Placeholder';
 import { useSequence } from './Hooks/useSequence';
-
-// REDUX REST TO DO
-import { useSelector } from 'react-redux';
-import { selectCurrentQuestion } from 'Shared/store/selectors/questions.selector';
 
 import {
   SequenceContainerStyle,
@@ -47,15 +45,14 @@ export type Props = {
  */
 export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
   const [isSequenceEmpty, setIsSequenceEmpty] = useState(false);
+  const { state } = useAppContext();
 
-  const question: QuestionType = useSelector((state: StateRoot) =>
-    selectCurrentQuestion(state)
-  );
+  const question: QuestionType = selectCurrentQuestion(state);
 
   const executeStartSequence = async (
     questionId: string,
     votedIds: string[]
-  ) => {
+  ): Promise<ProposalType[]> => {
     const { proposals } = await SequenceService.startSequenceByKind(
       questionId,
       votedIds,
@@ -63,7 +60,7 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
     );
     setIsSequenceEmpty(proposals.length === 0);
 
-    return proposals || [];
+    return proposals;
   };
   const { withProposalButton, country, isLoading, currentCard } = useSequence(
     question,

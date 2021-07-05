@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import './App.css';
+import { getQuestionDetails } from '@make.org/store/actions/question/';
+import { getAllProposals } from '@make.org/store/actions/proposals';
+import { useAppContext } from '@make.org/store';
 import { getProposals, getQuestion } from './server';
-import { getAllProposals } from './store/actions/proposals_actions';
-import { getQuestionDetails } from './store/actions/question_actions';
-import { useAppContext } from './store/context';
 
 const QUESTION_ID = '66a9230b-08cb-4f37-8ed8-aa95a8eac19a';
 

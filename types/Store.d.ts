@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ErrorObjectType } from './Api';
 import { HomeViewType } from './View';
 import {
@@ -17,7 +18,8 @@ export type StateConfig = {
   readonly translations: any
   readonly countriesWithConsultations: []
   readonly device: string
-  readonly privacyPolicy: Date
+  readonly privacyPolicy?: Date
+  readonly queryParams: any
 };
 
 // Config Homepage
@@ -29,18 +31,22 @@ export type StateViews = {
 // Proposal State
 export type StateProposal = {
     readonly hasProposed: boolean
+    readonly popularProposals: ProposalType[]
+    readonly error: ErrorObjectType
+    readonly data: any // to check
 };
 
 // Sequence State
 export type StateSequence = {
     readonly currentIndex: number
+    readonly questionSlug?: string
     readonly votedProposalIds: { [n: string]: string[] }
     readonly proposals: ProposalType[]
     readonly cards: SequenceCardType[]
     readonly demographics?: {
-    type: string
-    value: string
-    question: string[]
+      type: string
+      value: string
+      questions: string[]
   }
 };
 
@@ -152,16 +158,30 @@ export type StateSession = {
 
 // All state
 export type StateRoot = {
-  appConfig: StateConfig
-  views: StateViews
-  proposal: StateProposal
-  sequence: StateSequence
+  // common data
+  appConfig?: StateConfig
+  views?: StateViews
+  proposal?: StateProposal
+  sequence?: StateSequence
   currentQuestion?: string
-  notifications: StateNotification
-  user: StateUser
-  questions: StateQuestions
-  modal: StateModal
-  partners: StatePartners
-  panel: StatePanel
-  session: StateSession
+  notifications?: StateNotification
+  user?: StateUser
+  questions?: StateQuestions
+  modal?: StateModal
+  partners?: StatePartners
+  panel?: StatePanel
+  session?: StateSession
+  // widget data
+  question: QuestionType
+  proposals: ProposalType[]
+};
+
+export type Reducer<State = any, Action = any> = (
+  state: State,
+  action: Action
+) => State;
+
+export type ReducerAction = {
+  type: string;
+  payload?: any;
 };

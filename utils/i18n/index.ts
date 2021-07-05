@@ -4,7 +4,7 @@ import i18next, { InitOptions, Callback } from 'i18next';
 let instance = i18next;
 
 export const i18n = {
-  t: (args): any => instance.t(args),
+  t: instance.t,
   getLanguage: (): string => instance.language,
   init: (options: InitOptions, callback?: Callback) => instance.init(options, callback),
   changeLanguage: (lng: string, callback?: Callback) => instance.changeLanguage(lng, callback),
