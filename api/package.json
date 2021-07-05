@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@make.org/types": "0.1.0",
-    "typescript": "^4.3.5"
+    "@make.org/types": "0.1.0"
   }
 }
