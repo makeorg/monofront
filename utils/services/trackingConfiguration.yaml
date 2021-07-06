@@ -1,0 +1,594 @@
+---
+
+COMMON_PARAMETERS:
+    parameters:
+        - key: location
+          description: Current page name
+        - key: source
+          description: >
+            Source name. Is always `core`. 
+            (other existing source name: "huffpost")
+        - key: language
+          description: >
+            Current ISO language. Refers to the interface language (not the consultation language).
+        - key: country
+          description: >
+            Current ISO country. Refers to the country in the path of url (not the consultation country).
+        - key: questionId
+          description: Question id of the consultation (if relevant)
+          optional: true
+        - key: questionSlug
+          description: Question slug of the consultation (if relevant)
+          optional: true
+        - key: referrer
+          description: Referer value
+          optional: true
+        - key: url
+          description: Current url
+
+CLICK_MAKEORG_LOGO:     
+    key: click-navbar-logo
+    description: Click on logo navbar
+
+CLICK_PERSONNAL_DATA_LINK:
+    key: click-personal-data-link
+    description: Click data page link
+
+CLICK_CLOSE_MODAL:
+    key: click-close-modal
+    description: Close modal
+    parameters:
+        - key: context          
+          description: Modal context
+          values: 
+            - MODAL_LOGIN
+            - MODAL_REGISTER
+            - MODAL_FORGOT_PASSWORD
+            - MODAL_DEPARTMENT
+            - MODAL_COUNTRIES
+            - MODAL_PROPOSAL_SUCCESS
+
+DISPLAY_PAGE_OPERATION:
+    key: display-page-operation
+    description: Display consultation page
+
+CLICK_ACTIONS_TAB:
+    key: click-actions-tab
+    description: Click on actions tab
+
+CLICK_PARTICIPATE_TAB:
+    key: click-participate-tab
+    description: Click on participate tab
+
+CLICK_EXPLORE_TAB:
+    key: click-explore-tab
+    description: Click on explore tab
+
+CLICK_BUTTON_LEARN_MORE:
+    key: click-button-learn-more
+    description: Click on learn more link
+    parameters:
+      - key: component
+        description: component name
+        optional: true
+
+CLICK_SEQUENCE_OPEN:
+    key: click-sequence-open
+    description: Click on go to sequence link
+    parameters:
+        - key: component
+          description: component name
+          values:
+            - sequence
+            - sequence-popular
+            - sequence-controversial
+            - sequence-keyword
+
+CLICK_SEE_MORE_COMMUNITY:
+    key: click-see-more-community
+    description: Click on see all partners    
+    parameters:
+      - key: component
+        description: component name
+        optional: true
+
+CLICK_TAG_ACTION:
+    key: click-tag-action
+    description: On change tags select
+    parameters:
+        - key: tag-name
+          description: tag label
+        - key: nature
+          description: tag action type
+          values:
+            - unselect
+            - select
+
+CLICK_FILTER_ACTION:
+    key: click-filter-action
+    description: On change filter select
+    parameters:
+        - key: filter-name
+          description: filter label
+        - key: nature
+          description: '@toDo - value seems to be allways checked'
+          values: 
+            - checked
+
+CLICK_PROPOSAL_VIEW_MORE:
+    key: click-proposal-viewmore
+    description: Click view more proposals button
+    parameters:
+        - key: page
+          description: page number
+          optional: true
+        - key: component
+          description: component name
+          values:
+            - proposals
+            - top-proposals
+            - detail-ideas
+            - favourites
+            - current-operations        
+
+DISPLAY_SEQUENCE:
+    key: display-sequence
+    description: On display sequence
+
+DISPLAY_NO_PROPOSAL_SEQUENCE:
+    key: display-proposal-null
+    description: On display no proposal card for empty sequence
+
+CLICK_START_SEQUENCE:
+    key: click-start-sequence
+    description: Click to start sequence
+
+CLICK_PROPOSAL_VOTE:
+    key: click-proposal-vote
+    description: Click vote button
+    parameters:
+        - key: card-position
+          description: card position
+        - key: component
+          description: component name
+        - key: proposalId
+          description: proposal id (internal tracking only)
+        - key: nature
+          description: vote key (internal tracking only)
+
+CLICK_PROPOSAL_UNVOTE:
+    key: click-proposal-unvote
+    description: Click unvote button
+    parameters:
+        - key: card-position          
+          description: card position
+        - key: component
+          description: component name
+        - key: proposalId
+          description: proposal id (internal tracking only)
+        - key: nature
+          description: vote key (internal tracking only)
+
+CLICK_SEQUENCE_FIRST_VOTE:
+    key: click-sequence-first-vote
+    description: First click on vote button
+    parameters:
+        - key: card-position
+          description: card position
+        - key: proposalId
+          description: proposal id (internal tracking only)
+        - key: nature
+          description: vote key (internal tracking only)
+
+CLICK_PROPOSAL_QUALIFY:
+    key: click-proposal-qualify
+    description: Click qualify button
+    parameters:
+        - key: card-position
+          description: card position
+        - key: component
+          description: component name
+        - key: proposalId
+          description: proposal id (internal tracking only)
+        - key: nature
+          description: vote key (internal tracking only)
+        - key: type
+          description: qualification key (internal tracking only)
+
+CLICK_PROPOSAL_UNQUALIFY:
+    key: click-proposal-unqualify
+    description: Click unqualify button
+    parameters:
+        - key: card-position          
+          description: card position
+        - key: component
+          description: component name
+        - key: proposalId
+          description: proposal id (internal tracking only)
+        - key: nature
+          description: vote key (internal tracking only)
+        - key: type
+          description: qualification key (internal tracking only)
+
+CLICK_SEQUENCE_NEXT_CARD:
+    key: click-sequence-next-card
+    description: Click next card button on sequence
+
+CLICK_SEQUENCE_PREVIOUS_CARD:
+    key: click-sequence-previous-card
+    description: Click previous card button on sequence
+
+CLICK_SEQUENCE_LAST_PROPOSAL:
+    key: click-sequence-last-proposal
+    description: Click next card button of last proposal card
+
+CLICK_PROPOSAL_PUSH_CARD_IGNORE:
+    key: click-proposal-push-card-ignore
+    description: Click next card button of push proposal card
+
+DISPLAY_INTRO_CARD:
+    key: display-intro-card
+    description: Display intro card
+
+DISPLAY_PROPOSAL_PUSH_CARD:
+    key: display-proposal-push-card
+    description: Display push proposal card
+
+DISPLAY_FINAL_CARD:
+    key: display-final-card
+    description: Display final card
+
+DISPLAY_AUTHENTICATION_FORM:
+    key: display-authentication-form
+    description: Display signin form
+
+DISPLAY_SIGN_UP_FORM:
+    key: display-signup-form
+    description: Display signup form
+
+DISPLAY_SIGN_IN_FORM:
+    key: display-signin-form
+    description: Display signin form
+
+DISPLAY_FORGOTPASSWORD_FORM:
+    key: display-forgotpassword-form
+    description: Display forgotpassword form
+
+AUTHEN_SOCIAL_SUCCESS:
+    key: authen-social-success
+    description: On social authentication success
+    parameters:
+        - key: social-network
+          description: provider name
+        - key: account-creation
+          description: is an account creation
+
+SIGN_UP_EMAIL_SUCCESS:
+    key: signup-email-success
+    description: On sign up by email success
+
+SIGN_IN_EMAIL_SUCCESS:
+    key: signin-email-success
+    description: On sign in by email success
+
+AUTHEN_SOCIAL_FAILURE:
+    key: authen-social-failure
+    description: On social authentication fail
+    parameters:
+        - key: social-network
+          description: provider name
+
+SIGN_UP_EMAIL_FAILURE:
+    key: signup-email-failure
+    description: On signup by email fail
+
+SIGN_IN_EMAIL_FAILURE:
+    key: signin-email-failure
+    description: On signin by email fail
+
+DISPLAY_LEGAL_CONSENT:
+    key: display-legal-consent
+    description: Display legal consent
+
+CLICK_CITIZEN_REGISTER:
+    key: click-register
+    description: click to register on citizen block
+    
+DISPLAY_PROPOSAL_FIELD:
+    key: display-proposal-field
+    description: Display proposal form
+
+CLICK_PROPOSAL_SUBMIT:
+    key: click-proposal-submit
+    description: Click proposal submit button
+
+CLICK_BACK_PROPOSALS:
+    key: click-back-proposals
+    description: Cancel proposal submition
+
+DISPLAY_PROPOSAL_SUBMIT_VALIDATION:
+    key: display-proposal-submit-validation
+    description: Display proposal submit validation
+
+CLICK_KEEP_VOTING:
+    key: click-keep-voting
+    description: Close proposal success modal
+
+DISPLAY_MODERATION_TEXT:
+    key: display-moderation-text
+    description: Display moderation Text
+
+CLICK_MODERATION_LINK:
+    key: click-moderation-link
+    description: Click show moderation link
+
+CLICK_SHARE:
+    key: click-share
+    description: Click share button
+    parameters:
+        - key: social-network
+          description: provider name
+
+CLICK_FOLLOW_US:
+    key: click-follow-us
+    description: Click follow us button
+    parameters:
+        - key: social-network
+          description: provider name
+
+CLICK_HOMEPAGE_CONSULTATION:
+    key: click-button-consultation
+    description: Click homepage consultations button
+
+CLICK_NAVBAR_SEARCH:
+    key: click-navbar-search
+    description: Click navbar search button
+
+DISPLAY_PAGE_RESULTS:
+    key: display-page-results
+    description: Display results page
+
+DISPLAY_SEARCH_MAIN_RESULTS:
+    key: display-search-main-results
+    description: Display search results
+
+DISPLAY_SEARCH_PROPOSALS:
+    key: display-search-proposals
+    description: Display search proposals results
+
+DISPLAY_SEARCH_ORGANISATIONS:
+    key: display-search-organisations
+    description: Display search organisations results
+
+DISPLAY_SEARCH_CONSULTATIONS:
+    key: display-search-consultations
+    description: Display search consultations results
+
+CLICK_SEARCH_RETURN:
+    key: click-search-return
+    description: Click search return button
+
+DISPLAY_PAGE_IDEAS:
+    key: display-page-ideas
+    description: Display ideas page
+    parameters:
+        - key: type
+          description: page type
+          values:
+            - top-idea-details
+            - top-ideas
+
+CLICK_PROFILE:
+    key: click-profile
+    description: Click profile button
+
+CLICK_PUBLIC_PROFILE:
+    key: click-public-profile
+    description: Click public profile link
+    parameters:
+        - key: type
+          description: user type
+          values:
+            - PERSONALITY
+            - ORGANISATION
+        - key: component
+          description: component name
+          optional: true
+
+DISPLAY_PUBLIC_PROFILE:
+    key: display-public-profile
+    description: Display a public profile
+    parameters:
+        - key: type
+          description: user type
+          values:
+            - PERSONALITY
+            - ORGANISATION
+
+CLICK_REPORT_DOWNLOAD:
+    key: click-report-download
+    description: Click results report download button
+    parameters:
+        - key: type
+          description: file type
+
+DISPLAY_HOMEPAGE:
+    key: display-page-home
+    description: Display home page
+
+DISPLAY_BROWSE_CONSULTATIONS:
+    key: display-browse-consultations
+    description: Display browse consultations page
+
+DISPLAY_BROWSE_RESULTS:
+    key: display-browse-results
+    description: Display browse consultations results page
+
+CLICK_HOMEPAGE_PARTICIPATE:
+    key: click-button-consultations
+    description: Click participate link on home page
+
+CLICK_HOMEPAGE_GREAT_CAUSES:
+    key: click-button-great-causes
+    description: Click great causes link on home page
+
+CLICK_HOMEPAGE_BROWSE_CONSULTATIONS:
+    key: click-button-browse-consultations
+    description: Click browse consultations link on home page
+
+CLICK_HOMEPAGE_BROWSE_RESULTS:
+    key: click-button-browse-results
+    description: Click browse consultations results on home page
+
+CLICK_VIEW_BLOG:
+    key: click-view-blog
+    description: Click view blog on home page
+    parameters:
+        - key: component
+          description: component name
+          values:
+            - blog list
+            - blog item
+
+CLICK_BROWSE_PARTICIPATE:
+    key: click-button-participate
+    description: Click participate button on browse consultations
+    parameters:
+        - key: question-Id
+          description: question id   
+
+CLICK_PAGINATION:
+    key: click-page
+    description: Click pagination button
+    parameters:
+        - key: page-number
+          description: page number
+
+CLICK_RESULTS:
+    key: click-button-results
+    description: Click results button
+
+CLICK_SUBSCRIBE:
+    key: click-button-subscribe
+    description: Click subscribe button
+    parameters:
+        - key: component
+          description: component name
+          values:
+            - subscribe-next-consultation
+
+DISPLAY_SESSION_EXPIRED:
+    key: display-session-expired
+    description: Display modal session expired 
+
+DISPLAY_PROPOSAL_PAGE:
+    key: display-proposal-page
+    description: Display proposal page 
+
+CLICK_BREADCRUMBS:
+    key: click-breadcrumbs
+    description: Click on breadcrumbs link 
+    parameters:
+        - key: level
+          description: level of the link in breacrumbs
+CLICK_OPERATION_PAGE:
+    key: click-operation-page
+    description: Click on operation page link
+DISPLAY_COOKIE_MODAL_FIRST_STEP:
+    key: display-cookies-modal-first-step
+    description: Display cookie modal first step
+DISPLAY_COOKIE_MODAL_SECOND_STEP:
+    key: display-cookies-modal-second-step
+    description: Display cookie modal second step
+CLICK_COOKIE_MODAL_REFUSE:
+    key: click-cookies-close-modal
+    description: Close modal without cookies acceptance
+CLICK_COOKIE_MODAL_PERSONALIZE:
+    key: click-cookies-personalize
+    description: Click on personalize button in cookie modal
+CLICK_COOKIE_MODAL_SAVE:
+    key: click-cookies-save
+    description: Click to accept cookies
+    parameters:
+      - key: type
+        description: type name
+        values:
+          - cookies-accept-all
+          - cookies-accept-preferences
+CLICK_COOKIE_SWITCH_ACCEPT:
+    key: click-cookies-accept
+    description: Click on switch to accept cookies
+    parameters:
+      - key: type
+        description: type name
+        values:
+          - facebook_tracking
+          - twitter_tracking
+          - facebook_sharing
+          - twitter_sharing
+          - linkedin_sharing
+CLICK_COOKIE_SWITCH_REFUSE:
+    key: click-cookies-refuse
+    description: Click switch to refuse cookies
+    parameters:
+      - key: type
+        description: type name
+        values:
+          - facebook_tracking
+          - twitter_tracking
+          - facebook_sharing
+          - twitter_sharing
+          - linkedin_sharing
+CLICK_COOKIE_MODAL_BACK:
+    key: click-cookies-back
+    description: Click on back button in cookie modal
+DISPLAY_DEMOGRAPHICS:
+    key: display-demographics
+    description: Display demographics card in sequence
+    parameters:
+      - key: type
+        description: type name
+        values:
+          - gender
+          - age
+          - region
+DISPLAY_DEMOGRAPHICS_CONFIRMATION:
+    key: display-demographics-confirmation
+    description: Display demographics confirmation in sequence
+    parameters:
+      - key: type
+        description: type name
+        values:
+          - gender
+          - age
+          - region
+CLICK_SKIP_DEMOGRAPHICS:
+    key: click-skip-demographics
+    description: Click on skip button on demographics card in sequence
+    parameters:
+      - key: type
+        description: type name
+        values:
+          - gender
+          - age
+          - region
+CLICK_SAVE_DEMOGRAPHICS:
+    key: click-save-demographics
+    description: Click on save button on demographics card in sequence
+    parameters:
+      - key: type
+        description: type name
+        values:
+          - gender
+          - age
+          - region
+CLICK_VOTE_DEMOGRAPHICS:
+    key: click-vote-demographics
+    description: Click on continue button on demographics confirmation card in sequence
+    parameters:
+      - key: type
+        description: type name
+        values:
+          - gender
+          - age
+          - region

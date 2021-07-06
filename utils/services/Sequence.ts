@@ -1,4 +1,4 @@
-import { QuestionApiService } from 'Shared/api/QuestionApiService';
+import { QuestionApiService } from '@make.org/api/QuestionApiService';
 import { ProposalType } from '@make.org/types';
 import { Logger } from './Logger';
 import { defaultUnexpectedError } from './DefaultErrorHandler';

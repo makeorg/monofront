@@ -32,7 +32,7 @@ export type StateViews = {
 export type StateProposal = {
     readonly hasProposed: boolean
     readonly popularProposals: ProposalType[]
-    readonly error: ErrorObjectType
+    readonly error?: ErrorObjectType
     readonly data: any // to check
 };
 
@@ -172,7 +172,7 @@ export type StateRoot = {
   panel?: StatePanel
   session?: StateSession
   // widget data
-  question: QuestionType
+  question?: QuestionType
   proposals: ProposalType[]
 };
 
@@ -184,4 +184,9 @@ export type Reducer<State = any, Action = any> = (
 export type ReducerAction = {
   type: string;
   payload?: any;
+  user?: any;
+  error?: any;
+  provider?: any;
 };
+
+export type Dispatch<A = any> = (value: A) => void

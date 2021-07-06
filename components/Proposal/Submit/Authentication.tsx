@@ -5,19 +5,14 @@ import {
   trackClickPersonnalDataLink,
   trackDisplayAuthenticationForm,
 } from '@make.org/utils/services/Tracking';
-
 import { Link } from 'react-router-dom';
+import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
+import { useAppContext } from '@make.org/store';
+import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
+import { modalShowLogin } from '@make.org/store/actions/modal';
+import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 
-import { StateRoot } from 'Shared/store/types';
-import { ColumnElementStyle } from 'Client/ui/Elements/FlexElements';
-import { AuthenticationRegisterButtons } from 'Client/features/auth/Register/Buttons';
-import { useSelector, useDispatch } from 'react-redux';
-import {
-  closePanel,
-  removePanelContent,
-} from 'Shared/store/reducers/panel/actions';
-import { modalShowLogin } from 'Shared/store/actions/modal';
-import { selectAuthentication } from 'Shared/store/selectors/user.selector';
+import { AuthenticationRegisterButtons } from '@make.org/components/Auth/Register/Buttons';
 import {
   ProposalStepWrapperStyle,
   ProposalBackButtonStyle,
@@ -42,13 +37,10 @@ export const ProposalAuthentication: React.FC = ({
   handleCancel,
   handleProposeAPICall,
 }: Props) => {
-  const dispatch = useDispatch();
-  const { isLoggedIn, user } = useSelector((state: StateRoot) =>
-    selectAuthentication(state)
-  );
-  const { country, language } = useSelector(
-    (state: StateRoot) => state.appConfig
-  );
+  const { state, dispatch } = useAppContext();
+  const { isLoggedIn, user } = selectAuthentication(state);
+  const { country, language } = state.appConfig;
+
   const handleModerationLink = () => {
     dispatch(closePanel());
     dispatch(removePanelContent());

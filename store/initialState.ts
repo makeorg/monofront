@@ -1,5 +1,12 @@
 import { StateRoot } from '@make.org/types';
 import { sequence_state } from './reducers/sequence';
+import { panel_state } from './reducers/panel';
+import { modal_state } from './reducers/modal';
+import { session_state } from './reducers/session';
+import { notifications_state } from './reducers/notifications';
+import { authentication_state } from './reducers/user/authentication';
+import { cookiesPreferences_state } from './reducers/user/cookiesPreferences';
+import { passwordRecovery_state } from './reducers/user/passwordRecovery';
 
 export const initialState: StateRoot = {
   appConfig: {
@@ -22,50 +29,16 @@ export const initialState: StateRoot = {
   sequence: sequence_state,
   questions: {},
   currentQuestion: '',
-  notifications: {
-    banner: {},
-    tip: {},
-    dismissed: [],
-  },
+  notifications: notifications_state,
   user: {
-    authentication: {
-      errors: [],
-      isLoggedIn: false,
-      user: undefined,
-    },
-    passwordRecovery: {
-      newPassword: undefined,
-      resetToken: undefined,
-      userId: undefined,
-      errorMessage: undefined,
-      error: false,
-      updated: false,
-    },
-    cookiesPreferences: {
-      facebook_tracking: false,
-      twitter_tracking: false,
-      facebook_sharing: false,
-      twitter_sharing: false,
-      linkedin_sharing: false,
-    },
+    authentication: authentication_state,
+    passwordRecovery: passwordRecovery_state,
+    cookiesPreferences: cookiesPreferences_state,
   },
-  modal: {
-    isOpen: false,
-    contentType: '',
-    showExpirationSession: false,
-    showCookies: false,
-    showDataPolicy: false,
-    focusAfterClose: true,
-    extraProps: {},
-  },
+  modal: modal_state,
   partners: {},
-  panel: {
-    isExpanded: false,
-    panelContent: undefined,
-  },
-  session: {
-    sessionId: '',
-  },
+  panel: panel_state,
+  session: session_state,
   question: undefined,
   proposals: []
 };

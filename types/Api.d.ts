@@ -10,3 +10,15 @@ export type ErrorObjectType = {
   key: string
   message: any
 };
+
+export type ErrorResponse = {
+  response: {
+    status: number
+    data: any
+    headers: any
+    config: any
+  }
+  isAxiosError: boolean
+  message: string
+  request: any
+};

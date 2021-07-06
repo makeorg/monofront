@@ -5,6 +5,7 @@
   "dependencies": {
     "@make.org/api": "0.1.0",
     "@make.org/assets": "0.1.0",
+    "@make.org/components": "0.1.0",
     "@make.org/types": "0.1.0",
     "@make.org/ui": "0.1.0",
     "@make.org/utils": "0.1.0",
@@ -15,6 +16,7 @@
     "query-string": "^7.0.1",
     "react": "^17.0.2",
     "react-router": "^5.2.0",
+    "universal-cookie": "^4.0.4",
     "url-search-params-polyfill": "^8.1.1",
     "uuid": "^8.3.2"
   },

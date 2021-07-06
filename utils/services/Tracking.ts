@@ -1,4 +1,4 @@
-import { TrackingService } from 'Shared/services/TrackingService';
+import { TrackingService } from './TrackingService';
 
 const { trackingEvent } = TrackingService;
 
@@ -11,23 +11,23 @@ const getPosition = (cardPosition?: number): string => {
 };
 
 /* On Load Consultation Tracking */
-export const trackDisplayOperationPage = () => {
+export const trackDisplayOperationPage = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_PAGE_OPERATION());
 };
 
-export const trackClickActionsTab = () => {
+export const trackClickActionsTab = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_ACTIONS_TAB());
 };
 
-export const trackClickParticipateTab = () => {
+export const trackClickParticipateTab = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_PARTICIPATE_TAB());
 };
 
-export const trackClickExploreTab = () => {
+export const trackClickExploreTab = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_EXPLORE_TAB());
 };
 
-export const trackClickLearnMore = (component?: string) => {
+export const trackClickLearnMore = (component?: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_BUTTON_LEARN_MORE({ component })
   );
@@ -35,7 +35,7 @@ export const trackClickLearnMore = (component?: string) => {
 
 /* Open Sequence Tracking */
 
-export const trackOpenSequence = (component: string) => {
+export const trackOpenSequence = (component: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_SEQUENCE_OPEN({ component })
   );
@@ -44,7 +44,7 @@ export const trackOpenSequence = (component: string) => {
 export const trackLoadMoreProposals = (
   componentName: string,
   pageCount?: number
-) => {
+): void => {
   const pageNumber = pageCount !== undefined ? pageCount.toString() : undefined;
 
   TrackingService.sendAllTrackers(
@@ -56,68 +56,68 @@ export const trackLoadMoreProposals = (
 };
 
 /* Sequence Tracking */
-export const trackDisplaySequence = () => {
+export const trackDisplaySequence = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_SEQUENCE());
 };
 
-export const trackDisplayNoProposalSequence = () => {
+export const trackDisplayNoProposalSequence = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_NO_PROPOSAL_SEQUENCE());
 };
 
-export const trackClickOperationPage = () => {
+export const trackClickOperationPage = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_OPERATION_PAGE());
 };
 
 /* Header Tracking */
-export const trackClickMakeLogo = () => {
+export const trackClickMakeLogo = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_MAKEORG_LOGO());
 };
 
 /* Moderation Text Tracking */
-export const trackDisplayModerationText = () => {
+export const trackDisplayModerationText = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_MODERATION_TEXT());
 };
 
-export const trackClickModerationLink = () => {
+export const trackClickModerationLink = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_MODERATION_LINK());
 };
 
-export const trackDisplayAuthenticationForm = () => {
+export const trackDisplayAuthenticationForm = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_AUTHENTICATION_FORM());
 };
 
-export const trackClickPersonnalDataLink = () => {
+export const trackClickPersonnalDataLink = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_PERSONNAL_DATA_LINK());
 };
 
 /* Proposal Submit */
-export const trackDisplayProposalField = () => {
+export const trackDisplayProposalField = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_PROPOSAL_FIELD());
 };
 
-export const trackClickProposalSubmit = () => {
+export const trackClickProposalSubmit = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_PROPOSAL_SUBMIT());
 };
 
-export const trackClickBackProposals = () => {
+export const trackClickBackProposals = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_BACK_PROPOSALS());
 };
 
-export const trackDisplayProposalSubmitValidation = () => {
+export const trackDisplayProposalSubmitValidation = (): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.DISPLAY_PROPOSAL_SUBMIT_VALIDATION()
   );
 };
 
-export const trackClickKeepVoting = () => {
+export const trackClickKeepVoting = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_KEEP_VOTING());
 };
 
-export const trackDisplayForgotPasswordForm = () => {
+export const trackDisplayForgotPasswordForm = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_FORGOTPASSWORD_FORM());
 };
 
-export const trackClickCloseModal = (modalContext: string) => {
+export const trackClickCloseModal = (modalContext: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_CLOSE_MODAL({
       context: modalContext,
@@ -126,27 +126,27 @@ export const trackClickCloseModal = (modalContext: string) => {
 };
 
 /* Sign Up */
-export const trackDisplaySignupForm = () => {
+export const trackDisplaySignupForm = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_SIGN_UP_FORM());
 };
 
-export const trackSignupEmailSuccess = () => {
+export const trackSignupEmailSuccess = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.SIGN_UP_EMAIL_SUCCESS());
 };
 
-export const trackSignupEmailFailure = () => {
+export const trackSignupEmailFailure = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.SIGN_UP_EMAIL_FAILURE());
 };
 
 /* Signin */
-export const trackDisplaySigninForm = () => {
+export const trackDisplaySigninForm = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_SIGN_IN_FORM());
 };
 
 export const trackAuthenticationSocialSuccess = (
   socialNetwork: string,
   accountCreation: string
-) => {
+): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.AUTHEN_SOCIAL_SUCCESS({
       'social-network': socialNetwork,
@@ -155,7 +155,7 @@ export const trackAuthenticationSocialSuccess = (
   );
 };
 
-export const trackAuthenticationSocialFailure = (socialNetwork: string) => {
+export const trackAuthenticationSocialFailure = (socialNetwork?: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.AUTHEN_SOCIAL_FAILURE({
       'social-network': socialNetwork,
@@ -163,55 +163,55 @@ export const trackAuthenticationSocialFailure = (socialNetwork: string) => {
   );
 };
 
-export const trackLoginEmailSuccess = () => {
+export const trackLoginEmailSuccess = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.SIGN_IN_EMAIL_SUCCESS());
 };
 
-export const trackLoginEmailFailure = () => {
+export const trackLoginEmailFailure = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.SIGN_IN_EMAIL_FAILURE());
 };
 
 /* Sequence */
-export const trackClickStartSequence = () => {
+export const trackClickStartSequence = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_START_SEQUENCE());
 };
 
-export const trackClickNextCard = () => {
+export const trackClickNextCard = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_SEQUENCE_NEXT_CARD());
 };
 
-export const trackClickNextOnLastProposal = () => {
+export const trackClickNextOnLastProposal = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_SEQUENCE_LAST_PROPOSAL());
 };
 
-export const trackClickProposalPushCardIgnore = () => {
+export const trackClickProposalPushCardIgnore = (): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_PROPOSAL_PUSH_CARD_IGNORE()
   );
 };
 
-export const trackClickPreviousCard = () => {
+export const trackClickPreviousCard = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_SEQUENCE_PREVIOUS_CARD());
 };
 
-export const trackDisplayIntroCard = () => {
+export const trackDisplayIntroCard = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_INTRO_CARD());
 };
 
-export const trackDisplayProposalPushCard = () => {
+export const trackDisplayProposalPushCard = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_PROPOSAL_PUSH_CARD());
 };
 
-export const trackDisplaySignUpCard = () => {
+export const trackDisplaySignUpCard = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_SIGN_UP_CARD());
 };
 
-export const trackDisplayFinalCard = () => {
+export const trackDisplayFinalCard = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_FINAL_CARD());
 };
 
 /* Tags Tracking */
-export const trackTag = (label: string, action: string) => {
+export const trackTag = (label: string, action: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_TAG_ACTION({
       'tag-name': label,
@@ -220,7 +220,7 @@ export const trackTag = (label: string, action: string) => {
   );
 };
 
-export const trackFilter = (label: string, action: string) => {
+export const trackFilter = (label: string, action: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_FILTER_ACTION({
       'filter-name': label,
@@ -234,8 +234,8 @@ export const trackVote = (
   proposalId: string,
   nature: string,
   position?: number,
-  topComponent? = ''
-) => {
+  topComponent = ''
+): void => {
   const cardPosition: string = getPosition(position);
   const params = { 'card-position': cardPosition, component: topComponent };
   const internalParams = { proposalId, nature };
@@ -253,7 +253,7 @@ export const trackFirstVote = (
   proposalId: string,
   nature: string,
   position?: number
-) => {
+): void => {
   const cardPosition = getPosition(position);
   const params = { 'card-position': cardPosition };
   const internalParams = { proposalId, nature };
@@ -271,8 +271,8 @@ export const trackUnvote = (
   proposalId: string,
   nature: string,
   position?: number,
-  topComponent? = ''
-) => {
+  topComponent = ''
+): void => {
   const cardPosition = getPosition(position);
   const params = { 'card-position': cardPosition, component: topComponent };
   const internalParams = { proposalId, nature };
@@ -292,8 +292,8 @@ export const trackQualify = (
   type: string,
   nature: string,
   position?: number,
-  topComponent? = ''
-) => {
+  topComponent = ''
+): void => {
   const cardPosition = getPosition(position);
   const params = { 'card-position': cardPosition, component: topComponent };
   const internalParams = { proposalId, type, nature };
@@ -312,8 +312,8 @@ export const trackUnqualify = (
   type: string,
   nature: string,
   position?: number,
-  topComponent? = ''
-) => {
+  topComponent = ''
+): void => {
   const cardPosition = getPosition(position);
   const params = { 'card-position': cardPosition, component: topComponent };
   const internalParams = { proposalId, type, nature };
@@ -328,7 +328,7 @@ export const trackUnqualify = (
 };
 
 /* Sharing */
-export const trackClickShare = (socialNetwork: string) => {
+export const trackClickShare = (socialNetwork: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_SHARE({
       'social-network': socialNetwork,
@@ -337,41 +337,41 @@ export const trackClickShare = (socialNetwork: string) => {
 };
 
 /* Homepage */
-export const trackDisplayHomepage = () => {
+export const trackDisplayHomepage = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_HOMEPAGE());
 };
 
-export const trackClickHomepageConsultations = () => {
+export const trackClickHomepageConsultations = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_HOMEPAGE_CONSULTATION());
 };
 
 /** Search */
-export const trackClickSubmitSearch = () => {
+export const trackClickSubmitSearch = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_NAVBAR_SEARCH());
 };
 
-export const trackDisplaySearchMainResult = () => {
+export const trackDisplaySearchMainResult = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_SEARCH_MAIN_RESULTS());
 };
 
-export const trackDisplaySearchProposalsResult = () => {
+export const trackDisplaySearchProposalsResult = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_SEARCH_PROPOSALS());
 };
 
-export const trackDisplaySearchOragnisationsResult = () => {
+export const trackDisplaySearchOragnisationsResult = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_SEARCH_ORGANISATIONS());
 };
 
-export const trackDisplaySearchConsultationsResult = () => {
+export const trackDisplaySearchConsultationsResult = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_SEARCH_CONSULTATIONS());
 };
 
-export const trackClickSearchReturn = () => {
+export const trackClickSearchReturn = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_SEARCH_RETURN());
 };
 
 /** proposal card */
-export const trackClickProposalProfile = (userType: string) => {
+export const trackClickProposalProfile = (userType: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_PUBLIC_PROFILE({
       type: userType,
@@ -380,7 +380,7 @@ export const trackClickProposalProfile = (userType: string) => {
 };
 
 /** Follow Us component */
-export const trackClickFollowUs = (event: SyntheticEvent<HTMLLinkElement>) => {
+export const trackClickFollowUs = (event: React.SyntheticEvent<HTMLLinkElement>): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_FOLLOW_US({
       'social-network': event.currentTarget.dataset.networkName,
@@ -389,7 +389,7 @@ export const trackClickFollowUs = (event: SyntheticEvent<HTMLLinkElement>) => {
 };
 
 /** Profile */
-export const trackDisplayPublicProfile = (userType: string) => {
+export const trackDisplayPublicProfile = (userType: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.DISPLAY_PUBLIC_PROFILE({
       type: userType,
@@ -397,14 +397,14 @@ export const trackDisplayPublicProfile = (userType: string) => {
   );
 };
 
-export const trackClickProfile = () => {
+export const trackClickProfile = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_PROFILE());
 };
 
 export const trackClickPublicProfile = (
   userType: string,
   component?: string
-) => {
+): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_PUBLIC_PROFILE({
       type: userType,
@@ -414,7 +414,7 @@ export const trackClickPublicProfile = (
 };
 
 /** On Load Ideas page Tracking */
-export const trackDisplayTopIdeas = (pageType: string) => {
+export const trackDisplayTopIdeas = (pageType: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.DISPLAY_PAGE_IDEAS({
       type: pageType,
@@ -423,7 +423,7 @@ export const trackDisplayTopIdeas = (pageType: string) => {
 };
 
 /** Results */
-export const trackDownloadReport = (extension: string) => {
+export const trackDownloadReport = (extension: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_REPORT_DOWNLOAD({
       type: extension,
@@ -432,35 +432,35 @@ export const trackDownloadReport = (extension: string) => {
 };
 
 /** Home and Browse */
-export const trackDisplayBrowseConsultations = () => {
+export const trackDisplayBrowseConsultations = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_BROWSE_CONSULTATIONS());
 };
 
-export const trackDisplayBrowseResults = () => {
+export const trackDisplayBrowseResults = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_BROWSE_RESULTS());
 };
 
-export const trackClickHomepageParticipate = () => {
+export const trackClickHomepageParticipate = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_HOMEPAGE_PARTICIPATE());
 };
 
-export const trackClickHomepageDiscover = () => {
+export const trackClickHomepageDiscover = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_HOMEPAGE_GREAT_CAUSES());
 };
 
-export const trackClickBrowseConsultations = () => {
+export const trackClickBrowseConsultations = (): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_HOMEPAGE_BROWSE_CONSULTATIONS()
   );
 };
 
-export const trackClickBrowseResults = () => {
+export const trackClickBrowseResults = (): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_HOMEPAGE_BROWSE_RESULTS()
   );
 };
 
-export const trackClickBlog = (componentName: string) => {
+export const trackClickBlog = (componentName: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_VIEW_BLOG({
       component: componentName,
@@ -468,7 +468,7 @@ export const trackClickBlog = (componentName: string) => {
   );
 };
 
-export const trackClickParticipate = (questionId: string) => {
+export const trackClickParticipate = (questionId: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_BROWSE_PARTICIPATE({
       'question-Id': questionId.toString(),
@@ -476,7 +476,7 @@ export const trackClickParticipate = (questionId: string) => {
   );
 };
 
-export const trackClickPageNumber = (pageNumber: number) => {
+export const trackClickPageNumber = (pageNumber: number): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_PAGINATION({
       'page-number': pageNumber.toString(),
@@ -484,15 +484,15 @@ export const trackClickPageNumber = (pageNumber: number) => {
   );
 };
 
-export const trackClickResults = () => {
+export const trackClickResults = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_RESULTS());
 };
 
-export const trackDisplayResultsPage = () => {
+export const trackDisplayResultsPage = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_PAGE_RESULTS());
 };
 
-export const trackClickSubscribe = (componentName: string) => {
+export const trackClickSubscribe = (componentName: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_SUBSCRIBE({
       component: componentName,
@@ -500,55 +500,55 @@ export const trackClickSubscribe = (componentName: string) => {
   );
 };
 
-export const trackDisplayLegalConsent = () => {
+export const trackDisplayLegalConsent = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_LEGAL_CONSENT());
 };
 
-export const trackClickCitizenRegister = () => {
+export const trackClickCitizenRegister = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_CITIZEN_REGISTER());
 };
 
 // session
-export const trackDisplaySessionExpired = () => {
+export const trackDisplaySessionExpired = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_SESSION_EXPIRED());
 };
 
 // Proposal Page
-export const trackDisplayProposalPage = () => {
+export const trackDisplayProposalPage = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_PROPOSAL_PAGE());
 };
 
 // Breadcrumbs
-export const trackClickBreadcrumbs = (level: number) => {
+export const trackClickBreadcrumbs = (level: number): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_BREADCRUMBS({ level: level.toString() })
   );
 };
 
 // Cookie Modal Tracking
-export const trackDisplayModalCookieFirstStep = () => {
+export const trackDisplayModalCookieFirstStep = (): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.DISPLAY_COOKIE_MODAL_FIRST_STEP()
   );
 };
 
-export const trackDisplayModalCookieSecondStep = () => {
+export const trackDisplayModalCookieSecondStep = (): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.DISPLAY_COOKIE_MODAL_SECOND_STEP()
   );
 };
 
-export const trackClickModalCookieRefuse = () => {
+export const trackClickModalCookieRefuse = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_COOKIE_MODAL_REFUSE());
 };
 
-export const trackClickModalCookiePersonalize = () => {
+export const trackClickModalCookiePersonalize = (): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_COOKIE_MODAL_PERSONALIZE()
   );
 };
 
-export const trackClickModalCookieSave = (type: string) => {
+export const trackClickModalCookieSave = (type: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_COOKIE_MODAL_SAVE({
       type,
@@ -556,7 +556,7 @@ export const trackClickModalCookieSave = (type: string) => {
   );
 };
 
-export const trackClickCookieSwitchAccept = (type: string) => {
+export const trackClickCookieSwitchAccept = (type: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_COOKIE_SWITCH_ACCEPT({
       type,
@@ -564,7 +564,7 @@ export const trackClickCookieSwitchAccept = (type: string) => {
   );
 };
 
-export const trackClickCookieSwitchRefuse = (type: string) => {
+export const trackClickCookieSwitchRefuse = (type: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_COOKIE_SWITCH_REFUSE({
       type,
@@ -572,11 +572,11 @@ export const trackClickCookieSwitchRefuse = (type: string) => {
   );
 };
 
-export const trackClickModalCookieBack = () => {
+export const trackClickModalCookieBack = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_COOKIE_MODAL_BACK());
 };
 
-export const trackDisplayDemographics = (type: string) => {
+export const trackDisplayDemographics = (type: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.DISPLAY_DEMOGRAPHICS({
       type,
@@ -584,7 +584,7 @@ export const trackDisplayDemographics = (type: string) => {
   );
 };
 
-export const trackDisplayDemographicsConfirmation = (type: string) => {
+export const trackDisplayDemographicsConfirmation = (type: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.DISPLAY_DEMOGRAPHICS_CONFIRMATION({
       type,
@@ -592,7 +592,7 @@ export const trackDisplayDemographicsConfirmation = (type: string) => {
   );
 };
 
-export const trackClickSaveDemographics = (type: string) => {
+export const trackClickSaveDemographics = (type: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_SAVE_DEMOGRAPHICS({
       type,
@@ -600,7 +600,7 @@ export const trackClickSaveDemographics = (type: string) => {
   );
 };
 
-export const trackClickSkipDemographics = (type: string) => {
+export const trackClickSkipDemographics = (type: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_SKIP_DEMOGRAPHICS({
       type,
@@ -608,7 +608,7 @@ export const trackClickSkipDemographics = (type: string) => {
   );
 };
 
-export const trackClickVoteDemographics = (type: string) => {
+export const trackClickVoteDemographics = (type: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_VOTE_DEMOGRAPHICS({
       type,

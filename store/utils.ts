@@ -1,32 +1,41 @@
 import { useReducer, createContext } from 'react';
-import useCombinedReducers from 'use-combined-reducers';
-import { question_reducer, question_state } from './reducers/question';
-import {
-  proposals_reducer,
-  proposals_state,
-} from './reducers/proposals';
-import { sequence_reducer, sequence_state } from './reducers/sequence';
+import { question_reducer } from './reducers/question';
+import { panel_reducer } from './reducers/panel';
+import { modal_reducer } from './reducers/modal';
+import { proposals_reducer } from './reducers/proposals';
+import { sequence_reducer } from './reducers/sequence';
+import { user_reducer } from './reducers/user';
+import { initialState } from './initialState';
 
 export const AppContext = createContext({});
 
-export const useAllReducers = (): any => {
-  const [state, dispatch] = useCombinedReducers({
-    question: useReducer(question_reducer, question_state),
-    proposals: useReducer(proposals_reducer, proposals_state),
-    sequence: useReducer(sequence_reducer, sequence_state),
-    // appConfig: undefined,
-    // views: undefined,
-    // proposal: undefined,
-    // currentQuestion: undefined,
-    // notifications: undefined,
-    // user: undefined,
-    // questions: undefined,
-    // modal: undefined,
-    // partners: undefined,
-    // panel: undefined,
-    // session: undefined,
-  });
+export const combineReducers = (slices: any) => (state: any, action: any) => Object.keys(slices).reduce( // use for..in loop, if you prefer it
+  (acc, prop) => ({
+    ...acc,
+    [prop]: slices[prop](acc[prop], action),
+  }),
+  state
+);
 
+const rootReducer = combineReducers({
+  question: question_reducer,
+  proposals: proposals_reducer,
+  sequence: sequence_reducer,
+  // appConfig: undefined,
+  // views: undefined,
+  // proposal: undefined,
+  // currentQuestion: undefined,
+  // notifications: undefined,
+  user: user_reducer,
+  // questions: undefined,
+  modal: modal_reducer,
+  // partners: undefined,
+  panel: panel_reducer,
+  // session: undefined,
+});
+
+export const useAllReducers = (): any => {
+  const [state, dispatch] = useReducer(rootReducer, initialState);
   return { state, dispatch };
 };
 

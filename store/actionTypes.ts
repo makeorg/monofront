@@ -1,6 +1,11 @@
 /** Proposal Action */
 export const PROPOSE_SUCCESS = 'PROPOSAL_PROPOSE_SUCCESS';
 export const PROPOSAL_LOAD = 'PROPOSAL_LOAD';
+/** Panel action */
+export const PANEL_OPEN = 'PANEL_OPEN';
+export const PANEL_CLOSE = 'PANEL_CLOSE';
+export const PANEL_SET_CONTENT = 'PANEL_SET_CONTENT';
+export const PANEL_REMOVE_CONTENT = 'PANEL_REMOVE_CONTENT';
 /** Register Action */
 export const REGISTER_REQUEST = 'USER_REGISTER_REQUEST';
 export const REGISTER_SUCCESS = 'USER_REGISTER_SUCCESS';

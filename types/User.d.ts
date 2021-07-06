@@ -33,6 +33,8 @@ export type UserProfileType = {
   postalCode: string
   optInNewsletter: boolean
   website: string
+  legalMinorConsent?: boolean
+  legalAdvisorApproval?: boolean
 };
 
 export type PasswordsType = {
