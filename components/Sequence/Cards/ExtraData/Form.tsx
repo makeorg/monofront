@@ -24,7 +24,7 @@ import { SelectDemographics } from './Select';
 const SKIP_TRACKING_VALUE = 'SKIPPED';
 
 type Props = {
-  type: string;
+  type: TypeDemographicName;
   demographics: {
     ui: string;
     data: DemographicsType[];

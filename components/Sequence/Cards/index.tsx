@@ -1,6 +1,10 @@
-// @flow
 import React, { useEffect } from 'react';
-import { SequenceCardType, QuestionType } from '@make.org/types';
+import {
+  SequenceCardType,
+  QuestionType,
+  IntroCardConfigType,
+  NoProposalCardConfigType,
+} from '@make.org/types';
 import {
   CARD_TYPE_EXTRASLIDE_INTRO,
   CARD_TYPE_PROPOSAL,
@@ -37,17 +41,20 @@ export const Card: React.FC<CardProps> = ({ card, question }) => {
     case CARD_TYPE_PROPOSAL:
       return <ProposalCard proposalCard={card} />;
     case CARD_TYPE_EXTRASLIDE_INTRO:
-      return <IntroCard configuration={card.configuration} />;
+      return (
+        <IntroCard configuration={card.configuration as IntroCardConfigType} />
+      );
     case CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL:
-      return <PushProposalCard configuration={card.configuration} />;
+      return <PushProposalCard />;
     case CARD_TYPE_EXTRASLIDE_FINAL_CARD:
-      return <FinalCard configuration={card.configuration} />;
+      return <FinalCard />;
     case CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD:
       return <SpecialFinalCard />;
     case CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD:
       return <ExtraDataCard />;
     case CARD_TYPE_NO_PROPOSAL_CARD: {
-      const { title, description } = card.configuration;
+      const { title, description } =
+        card.configuration as NoProposalCardConfigType;
       return (
         <NoProposal
           question={question}
@@ -68,7 +75,7 @@ type Props = {
   question: QuestionType;
 };
 
-export const SequenceCard = ({ card, question }: Props) => {
+export const SequenceCard: React.FC<Props> = ({ card, question }) => {
   const isProposalCard = card.type === CARD_TYPE_PROPOSAL;
   const isNoProposalCard = card.type === CARD_TYPE_NO_PROPOSAL_CARD;
   const topComponentContext: TopComponentContextValueType =

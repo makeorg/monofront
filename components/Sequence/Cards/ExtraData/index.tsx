@@ -8,8 +8,6 @@ import { i18n } from '@make.org/utils/i18n';
 import { useAppContext } from '@make.org/store';
 import { SequenceIntroParagraphStyle } from '../style';
 import { ExtraDataDescriptionStyle } from './style';
-
-// REST TO DO
 import { SubmittedDemographics } from './SubmittedStep';
 import { ExtraDataForm } from './Form';
 
