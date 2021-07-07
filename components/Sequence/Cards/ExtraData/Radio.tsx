@@ -1,7 +1,6 @@
-// @flow
-import { type DemographicsType } from 'Shared/types/card';
-import { ScreenReaderItemStyle } from 'Client/ui/Elements/AccessibilityElements';
 import React, { useState } from 'react';
+import { DemographicsType } from '@make.org/types';
+import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import {
   RadioAsButtonWrapperStyle,
   RadioAsButtonLabelStyle,
@@ -9,17 +8,17 @@ import {
 } from './style';
 
 type Props = {
-  type: string,
-  data: DemographicsType[],
-  currentValue: string,
-  setCurrentValue: () => {},
+  type: string;
+  data: DemographicsType[];
+  currentValue: string;
+  setCurrentValue: (value: string) => void;
 };
 
 const handleClassName = (
   currentValue: string,
   focusValue: string,
   elementValue: string
-) => {
+): string => {
   if (elementValue === currentValue && elementValue === focusValue) {
     return 'selected focused';
   }
@@ -35,12 +34,12 @@ const handleClassName = (
   return '';
 };
 
-export const RadioDemographics = ({
+export const RadioDemographics: React.FC<Props> = ({
   type,
   data,
   currentValue,
   setCurrentValue,
-}: Props) => {
+}) => {
   const [focusValue, setFocusValue] = useState(null);
   const isAgeDemographic = type === 'age';
 

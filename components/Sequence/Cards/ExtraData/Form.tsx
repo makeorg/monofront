@@ -14,11 +14,12 @@ import {
   trackClickSkipDemographics,
   trackDisplayDemographics,
 } from '@make.org/utils/services/Tracking';
+import { useAppContext } from '@make.org/store';
 import { SubmitButton } from '@make.org/ui/elements/Form/SubmitButton';
+import { TypeDemographicName } from '@make.org/api/DemographicsTrackingApiService';
 import { RadioDemographics } from './Radio';
 import { ExtraDataFormStyle, SkipIconStyle, SubmitWrapperStyle } from './style';
 import { SelectDemographics } from './Select';
-import { useAppContext } from '../../../../store';
 
 const SKIP_TRACKING_VALUE = 'SKIPPED';
 
@@ -32,12 +33,12 @@ type Props = {
 };
 
 export const renderFormUI = (
-  type: string,
+  type: TypeDemographicName,
   ui: string,
   data: DemographicsType[],
   currentValue: string,
-  setCurrentValue = () => {}
-) => {
+  setCurrentValue: (value: string) => void
+): React.ReactNode => {
   switch (ui) {
     case 'radio':
       return (
@@ -50,11 +51,7 @@ export const renderFormUI = (
       );
     case 'select':
       return (
-        <SelectDemographics
-          data={data}
-          currentValue={currentValue}
-          setCurrentValue={setCurrentValue}
-        />
+        <SelectDemographics data={data} setCurrentValue={setCurrentValue} />
       );
     default:
       return null;

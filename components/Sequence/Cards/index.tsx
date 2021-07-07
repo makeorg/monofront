@@ -11,6 +11,11 @@ import {
   CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
 } from '@make.org/utils/constants/card';
 import { trackDisplayNoProposalSequence } from '@make.org/utils/services/Tracking';
+import {
+  TopComponentContext,
+  TopComponentContextValueType,
+  TopComponentContextValue,
+} from '@make.org/store/topComponentContext';
 import { SequenceCardStyle } from './style';
 import { IntroCard } from './Intro';
 import { PushProposalCard } from './PushProposal';
@@ -18,26 +23,16 @@ import { FinalCard } from './Final';
 import { SpecialFinalCard } from './SpecialFinal';
 import { ProposalCard } from './Proposal';
 import { NoProposal } from './NoProposal';
-
-// REST TO DO
 import { ExtraDataCard } from './ExtraData';
-
-
-import {
-  TopComponentContext,
-  type TopComponentContextValueType,
-  TopComponentContextValue,
-} from 'Client/context/TopComponentContext';
-
 
 type CardProps = {
   /** Attribute of the card */
-  card: SequenceCardType
+  card: SequenceCardType;
   /** Object with Dynamic properties used to configure the Sequence (questionId, country, ...) */
-  question: QuestionType
+  question: QuestionType;
 };
 
-export const Card = ({ card, question }: CardProps) => {
+export const Card: React.FC<CardProps> = ({ card, question }) => {
   switch (card.type) {
     case CARD_TYPE_PROPOSAL:
       return <ProposalCard proposalCard={card} />;
@@ -68,9 +63,9 @@ export const Card = ({ card, question }: CardProps) => {
 
 type Props = {
   /** Attribute of the card */
-  card: SequenceCardType
+  card: SequenceCardType;
   /** Object with Dynamic properties used to configure the Sequence (questionId, country, ...) */
-  question: QuestionType
+  question: QuestionType;
 };
 
 export const SequenceCard = ({ card, question }: Props) => {

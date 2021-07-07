@@ -1,4 +1,3 @@
-// @flow
 import { ApiService } from './ApiService';
 
 export const DEMOGRAPHICS_TRACKING_PATH = '/tracking/demographics';
