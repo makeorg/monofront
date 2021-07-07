@@ -45,7 +45,7 @@ export const RadioDemographics: React.FC<Props> = ({
 
   return (
     <ExtraDataRadioGroupStyle className={isAgeDemographic && 'three-columns'}>
-      {data.map(demographic => (
+      {data.map((demographic) => (
         <RadioAsButtonWrapperStyle
           key={demographic.value}
           className={handleClassName(

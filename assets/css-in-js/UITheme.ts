@@ -1,5 +1,3 @@
-
-
 import { createGlobalStyle } from 'styled-components';
 import { color } from 'athena-design-tokens';
 import { intToPx } from 'Shared/helpers/styled';

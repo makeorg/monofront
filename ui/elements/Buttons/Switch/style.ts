@@ -14,8 +14,7 @@ export const SwitchButtonStyle = styled.button`
   width: 40px;
   height: 10px;
   display: flex;
-  background-color: ${props =>
-    props.isChecked ? 'rgba(80, 122, 31, 0.4)' : 'rgba(0, 0, 0, 0.15)'};
+  background-color: ${(props) => (props.isChecked ? 'rgba(80, 122, 31, 0.4)' : 'rgba(0, 0, 0, 0.15)')};
 
   vertical-align: middle;
   border: 0;
@@ -28,10 +27,9 @@ export const SwitchButtonInternalLabelStyle = styled.span`
   position: relative;
   height: 16px;
   width: 16px;
-  left: ${props => (props.isChecked ? 'calc(100% - 16px);' : '0')};
+  left: ${(props) => (props.isChecked ? 'calc(100% - 16px);' : '0')};
   bottom: 3px;
-  background-color: ${props =>
-    props.isChecked ? 'rgba(80, 122, 31, 1)' : 'rgba(0, 0, 0, 1)'};
+  background-color: ${(props) => (props.isChecked ? 'rgba(80, 122, 31, 1)' : 'rgba(0, 0, 0, 1)')};
   transition: 0.4s;
   border-radius: 50%;
 `;

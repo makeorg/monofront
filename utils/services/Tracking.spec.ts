@@ -388,8 +388,7 @@ describe('Tracking Service', () => {
   });
 
   it('track Display Proposal Submit Validation', () => {
-    const eventName =
-      trackingConfiguration.DISPLAY_PROPOSAL_SUBMIT_VALIDATION.key;
+    const eventName = trackingConfiguration.DISPLAY_PROPOSAL_SUBMIT_VALIDATION.key;
 
     trackDisplayProposalSubmitValidation();
     expect(TrackingService.track).toHaveBeenNthCalledWith(1, eventName, {});
@@ -865,8 +864,7 @@ describe('Tracking Service', () => {
   });
 
   it('track Click Homepage Browse Consultations', () => {
-    const eventName =
-      trackingConfiguration.CLICK_HOMEPAGE_BROWSE_CONSULTATIONS.key;
+    const eventName = trackingConfiguration.CLICK_HOMEPAGE_BROWSE_CONSULTATIONS.key;
     trackClickBrowseConsultations();
     expect(TrackingService.track).toHaveBeenNthCalledWith(1, eventName, {});
     expect(FacebookTracking.trackCustom).toHaveBeenNthCalledWith(
@@ -1064,8 +1062,7 @@ describe('Tracking Service', () => {
   });
 
   it('track display Modal Cookie Second Step', () => {
-    const eventName =
-      trackingConfiguration.DISPLAY_COOKIE_MODAL_SECOND_STEP.key;
+    const eventName = trackingConfiguration.DISPLAY_COOKIE_MODAL_SECOND_STEP.key;
     trackDisplayModalCookieSecondStep();
     expect(TrackingService.track).toHaveBeenNthCalledWith(1, eventName, {});
     expect(FacebookTracking.trackCustom).toHaveBeenNthCalledWith(

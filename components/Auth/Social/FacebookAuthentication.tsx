@@ -34,7 +34,7 @@ export const FacebookAuthentication: React.FC = () => {
 
   // setting facebook browser to true or false
   const [isFacebookBrowser, setFacebookBrowser] = useState(false);
-  const handleFacebookLoginCallback = response => {
+  const handleFacebookLoginCallback = (response) => {
     if (!response?.accessToken && response?.status === 'unknown') {
       Logger.logInfo(
         'Facebook auth failed with status unknown. Probably user close popup.'
@@ -100,7 +100,7 @@ export const FacebookAuthentication: React.FC = () => {
         callback={handleFacebookLoginCallback}
         language={language}
         disableMobileRedirect
-        render={renderProps => (
+        render={(renderProps) => (
           <FacebookButtonStyle onClick={renderProps.onClick} type="button">
             <SvgFacebookLogoF aria-hidden focusable="false" />
             <ScreenReaderItemStyle>Facebook</ScreenReaderItemStyle>

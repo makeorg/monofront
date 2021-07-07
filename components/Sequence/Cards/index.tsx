@@ -53,8 +53,7 @@ export const Card: React.FC<CardProps> = ({ card, question }) => {
     case CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD:
       return <ExtraDataCard />;
     case CARD_TYPE_NO_PROPOSAL_CARD: {
-      const { title, description } =
-        card.configuration as NoProposalCardConfigType;
+      const { title, description } = card.configuration as NoProposalCardConfigType;
       return (
         <NoProposal
           question={question}
@@ -78,8 +77,7 @@ type Props = {
 export const SequenceCard: React.FC<Props> = ({ card, question }) => {
   const isProposalCard = card.type === CARD_TYPE_PROPOSAL;
   const isNoProposalCard = card.type === CARD_TYPE_NO_PROPOSAL_CARD;
-  const topComponentContext: TopComponentContextValueType =
-    TopComponentContextValue.getSequenceProposal();
+  const topComponentContext: TopComponentContextValueType = TopComponentContextValue.getSequenceProposal();
 
   useEffect(() => {
     if (isNoProposalCard) {

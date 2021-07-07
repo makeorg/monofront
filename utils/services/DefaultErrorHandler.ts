@@ -1,6 +1,6 @@
 import { Logger } from './Logger';
 
-let unexpectedError = error => {
+let unexpectedError = (error) => {
   const message = 'You should handle unexpected errors (default handler)';
   try {
     if (!error.logged) {
@@ -15,5 +15,4 @@ export const setUnexpectedError = (func: (apiServiceError: Object) => void) => {
   unexpectedError = func;
 };
 
-export const defaultUnexpectedError = apiServiceError =>
-  unexpectedError(apiServiceError);
+export const defaultUnexpectedError = (apiServiceError) => unexpectedError(apiServiceError);

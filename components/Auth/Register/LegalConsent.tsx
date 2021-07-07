@@ -65,9 +65,7 @@ export const LegalConsent = ({
           name="legalMinorConsent"
           value={minorConsent}
           handleCheck={() => setMinorConsent(!minorConsent)}
-          handleChange={() =>
-            handleLegalField('legalMinorConsent', minorConsent)
-          }
+          handleChange={() => handleLegalField('legalMinorConsent', minorConsent)}
           label={i18n.t('legal_consent.minor_consent')}
           isChecked={minorConsent}
           required
@@ -78,9 +76,7 @@ export const LegalConsent = ({
           name="profile.legalAdvisorApproval"
           value={parentalConsent}
           handleCheck={() => setParentalConsent(!parentalConsent)}
-          handleChange={() =>
-            handleLegalField('legalAdvisorApproval', parentalConsent)
-          }
+          handleChange={() => handleLegalField('legalAdvisorApproval', parentalConsent)}
           label={i18n.t('legal_consent.parental_consent')}
           isChecked={parentalConsent}
           required

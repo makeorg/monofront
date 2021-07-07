@@ -24,8 +24,7 @@ export const ExtraDataCard: React.FC = () => {
   const persistedDemographics = state.sequence.demographics;
   const [type, setType] = useState(null);
   const [demographics, setDemographics] = useState(null);
-  const persistedDemographicsWithValue =
-    persistedDemographics?.type && persistedDemographics?.value;
+  const persistedDemographicsWithValue = persistedDemographics?.type && persistedDemographics?.value;
 
   // set a random type
   useEffect(() => {

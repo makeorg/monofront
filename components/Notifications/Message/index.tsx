@@ -16,6 +16,7 @@ import {
   SOCIAL_MEDIA_COOKIES_MESSAGE,
   COOKIES_PREFERENCES_UPDATE_MESSAGE,
 } from '@make.org/utils/constants/notifications';
+import { PasswordRecoveryFailureMessage } from 'Client/features/auth/PasswordRecovery/Failure';
 import { SecureExpiredMessage } from '../Banner/SecureExpired';
 import { AccountActivationSuccessMessage } from '../Banner/AccountActivationSuccess';
 import { AccountActivationFailureMessage } from '../Banner/AccountActivationFailure';
@@ -32,7 +33,6 @@ import { SocialMediaCookiesMessage } from '../Banner/SocialMediaCookies';
 import { CookiesPreferencesUpdateMessage } from '../Banner/CookiesPreferencesUpdate';
 
 // REST TO DO
-import { PasswordRecoveryFailureMessage } from 'Client/features/auth/PasswordRecovery/Failure';
 
 type Props = {
   name: string

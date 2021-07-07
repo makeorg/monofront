@@ -31,5 +31,4 @@ export const CertifiedIconStyle = styled(SvgCheckedSymbol)`
   .tofill {
     fill: ${TextColors.Blue};
   }
-`
-;
+`;

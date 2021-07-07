@@ -31,7 +31,7 @@ export const GoogleAuthentication: React.FC = () => {
   const { privacyPolicy } = state.appConfig;
 
   /** Google login method callback */
-  const handleGoogleLoginSuccess = response => {
+  const handleGoogleLoginSuccess = (response) => {
     const success = () => {
       dispatch(loginSocialSuccess());
       dispatch(getUser());
@@ -57,7 +57,7 @@ export const GoogleAuthentication: React.FC = () => {
     );
   };
 
-  const handleGoogleLoginFailure = response => {
+  const handleGoogleLoginFailure = (response) => {
     if (response?.error === 'popup_closed_by_user') {
       Logger.logInfo('Google auth popup closed by user');
 
@@ -81,7 +81,7 @@ export const GoogleAuthentication: React.FC = () => {
       buttonText="Google"
       onSuccess={handleGoogleLoginSuccess}
       onFailure={handleGoogleLoginFailure}
-      render={renderProps => (
+      render={(renderProps) => (
         <GoogleButtonStyle onClick={renderProps.onClick} type="button">
           <SvgGoogleLogoG aria-hidden focusable="false" />
           <ScreenReaderItemStyle>Google</ScreenReaderItemStyle>

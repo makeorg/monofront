@@ -5,8 +5,7 @@ const nodeEnvWindow = () => onClientSide && window.NODE_ENV;
 const isDevWindow = () => nodeEnvWindow === 'development';
 const isTestWindow = () => nodeEnvWindow === 'ci';
 const apiUrlWindow = () => onClientSide && window.API_URL;
-const proxyTargetApiUrlWindow = () =>
-  onClientSide && window.PROXY_TARGET_API_URL;
+const proxyTargetApiUrlWindow = () => onClientSide && window.PROXY_TARGET_API_URL;
 const frontUrlWindow = () => onClientSide && window.FRONT_URL;
 const portWindow = () => onClientSide && window.PORT;
 
