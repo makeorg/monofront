@@ -1,36 +1,34 @@
-// @flow
-import { type DemographicsType } from 'Shared/types/card';
-import { type StateRoot } from 'Shared/store/types';
-import { BlackBorderButtonStyle } from 'Client/ui/Elements/Buttons/V2/style';
-import { SubmitButton } from 'Client/ui/Elements/Form/SubmitButton';
 import React, { useEffect, useMemo, useState } from 'react';
-import { i18n } from 'Shared/i18n';
-import { useDispatch, useSelector } from 'react-redux';
-import { matchMobileDevice } from 'Shared/helpers/styled';
-import { DemographicsTrackingService } from 'Shared/services/DemographicsTracking';
+import { DemographicsType } from '@make.org/types';
+import { BlackBorderButtonStyle } from '@make.org/ui/elements/Buttons/style';
+import { i18n } from '@make.org/utils/i18n';
+import { matchMobileDevice } from '@make.org/utils/helpers/styled';
+import { DemographicsTrackingService } from '@make.org/utils/services/DemographicsTracking';
 import {
   incrementSequenceIndex,
   persistDemographics,
-} from 'Shared/store/actions/sequence';
+} from '@make.org/store/actions/sequence';
 import { useLocation } from 'react-router';
 import {
   trackClickSaveDemographics,
   trackClickSkipDemographics,
   trackDisplayDemographics,
-} from 'Shared/services/Tracking';
+} from '@make.org/utils/services/Tracking';
+import { SubmitButton } from '@make.org/ui/elements/Form/SubmitButton';
 import { RadioDemographics } from './Radio';
 import { ExtraDataFormStyle, SkipIconStyle, SubmitWrapperStyle } from './style';
 import { SelectDemographics } from './Select';
+import { useAppContext } from '../../../../store';
 
 const SKIP_TRACKING_VALUE = 'SKIPPED';
 
 type Props = {
-  type: string,
+  type: string;
   demographics: {
-    ui: string,
-    data: DemographicsType[],
-  },
-  currentQuestion: string,
+    ui: string;
+    data: DemographicsType[];
+  };
+  currentQuestion: string;
 };
 
 export const renderFormUI = (
@@ -38,7 +36,7 @@ export const renderFormUI = (
   ui: string,
   data: DemographicsType[],
   currentValue: string,
-  setCurrentValue: () => {}
+  setCurrentValue = () => {}
 ) => {
   switch (ui) {
     case 'radio':
@@ -63,15 +61,15 @@ export const renderFormUI = (
   }
 };
 
-export const ExtraDataForm = ({
+export const ExtraDataForm: React.FC<Props> = ({
   type,
   demographics,
   currentQuestion,
-}: Props) => {
-  const dispatch = useDispatch();
+}) => {
+  const { dispatch, state } = useAppContext();
   const location = useLocation();
 
-  const { device } = useSelector((state: StateRoot) => state.appConfig);
+  const { device } = state.appConfig;
   const [currentValue, setCurrentValue] = useState(null);
   const [isSubmitDisabled, setIsSubmitDisabled] = useState();
   const [isSkipDisabled, setIsSkipDisabled] = useState(false);
@@ -92,7 +90,7 @@ export const ExtraDataForm = ({
   }, [location.search]);
 
   const handleSubmit =
-    value => async (event: SyntheticInputEvent<HTMLInputElement>) => {
+    value => async (event: React.SyntheticEvent<HTMLInputElement>) => {
       event.preventDefault();
       setIsSubmitDisabled(true);
       setIsSkipDisabled(true);

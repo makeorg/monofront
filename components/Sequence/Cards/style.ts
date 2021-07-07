@@ -4,15 +4,12 @@ import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { color, typography } from 'athena-design-tokens';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
-
-// REST TO DO
-import { RedButtonStyle } from 'Client/ui/Elements/Buttons/V2/style';
-import { GreyButtonStyle } from 'Client/ui/Elements/Buttons/style';
+import { GreyButtonStyle, RedButtonStyle } from '@make.org/ui/elements/Buttons/style';
 import {
   CenterColumnStyle,
   SpaceBetweenRowStyle,
-} from 'Client/ui/Elements/FlexElements';
-import { SeparatorStyle } from 'Client/ui/Elements/Separators';
+} from '@make.org/ui/elements/FlexElements';
+import { SeparatorStyle } from '@make.org/ui/elements/Separators';
 
 export const SequenceCardStyle = styled.section`
   position: relative;

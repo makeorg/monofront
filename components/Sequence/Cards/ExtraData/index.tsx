@@ -1,19 +1,20 @@
-// @flow
 import {
   buildDemographicsByType,
   setTitleByType,
   DEMOGRAPHIC_TYPES,
-} from 'Client/helper/demographics';
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { type StateRoot } from 'Shared/store/types';
-import { i18n } from 'Shared/i18n';
+} from '@make.org/utils/helpers/demographics';
+import React, { useEffect, useState } from 'react';
+import { i18n } from '@make.org/utils/i18n';
+import { useAppContext } from '@make.org/store';
 import { SequenceIntroParagraphStyle } from '../style';
-import { ExtraDataForm } from './Form';
 import { ExtraDataDescriptionStyle } from './style';
-import { SubmittedDemographics } from './SubmittedStep';
 
-export const ExtraDataCard = () => {
+// REST TO DO
+import { SubmittedDemographics } from './SubmittedStep';
+import { ExtraDataForm } from './Form';
+
+export const ExtraDataCard: React.FC = () => {
+  const { state } = useAppContext();
   const getRandomType = () => {
     const randomValue = Math.round(
       Math.random() * (DEMOGRAPHIC_TYPES.length - 1)
@@ -21,19 +22,15 @@ export const ExtraDataCard = () => {
 
     return DEMOGRAPHIC_TYPES[randomValue];
   };
-  const currentQuestion = useSelector(
-    (state: StateRoot) => state.currentQuestion
-  );
-  const persistedDemographics = useSelector(
-    (state: StateRoot) => state.sequence.demographics
-  );
+  const { currentQuestion } = state;
+  const persistedDemographics = state.sequence.demographics;
   const [type, setType] = useState(null);
   const [demographics, setDemographics] = useState(null);
   const persistedDemographicsWithValue =
     persistedDemographics?.type && persistedDemographics?.value;
 
   // set a random type
-  useState(() => {
+  useEffect(() => {
     const newType = getRandomType();
     setType(newType);
     setDemographics(buildDemographicsByType(newType));

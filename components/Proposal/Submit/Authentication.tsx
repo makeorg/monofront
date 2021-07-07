@@ -32,11 +32,11 @@ type Props = {
   handleProposeAPICall: () => void;
 };
 
-export const ProposalAuthentication: React.FC = ({
+export const ProposalAuthentication: React.FC<Props> = ({
   handleStepBack,
   handleCancel,
   handleProposeAPICall,
-}: Props) => {
+}) => {
   const { state, dispatch } = useAppContext();
   const { isLoggedIn, user } = selectAuthentication(state);
   const { country, language } = state.appConfig;

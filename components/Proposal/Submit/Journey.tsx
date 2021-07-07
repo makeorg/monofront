@@ -5,32 +5,23 @@ import {
 } from '@make.org/utils/services/Tracking';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { getLocalizedBaitText } from '@make.org/utils/helpers/proposal';
+import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
+import { proposeSuccess } from '@make.org/store/actions/proposal';
+import { selectAuthentication } from '@make.org/store/selectors/user.selector';
+import { modalShowProposalSuccess } from '@make.org/store/actions/modal';
+import { useAppContext } from '@make.org/store';
 import { ProposalForm } from './Form';
 import { ProposalAuthentication } from './Authentication';
-
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  closePanel,
-  removePanelContent,
-} from 'Shared/store/reducers/panel/actions';
-import { selectAuthentication } from 'Shared/store/selectors/user.selector';
-import { modalShowProposalSuccess } from 'Shared/store/actions/modal';
-import { proposeSuccess } from 'Shared/store/actions/proposal';
 
 const steps = {
   AUTHENTICATION_STEP: 'authentication',
   FORM: 'form',
 };
 
-export const ProposalJourney = () => {
-  const dispatch = useDispatch();
-  const { isLoggedIn } = useSelector((state: StateRoot) =>
-    selectAuthentication(state)
-  );
-
-  const { question } = useSelector(
-    state => state.questions[state.currentQuestion]
-  );
+export const ProposalJourney: React.FC = () => {
+  const { dispatch, state } = useAppContext();
+  const { isLoggedIn } = selectAuthentication(state);
+  const { question } = state.questions[state.currentQuestion];
   const [proposalContent, setProposalContent] = useState('');
   const [proposalStep, setProposalStep] = useState('form');
   const [waiting, setWaiting] = useState(false);
@@ -45,7 +36,9 @@ export const ProposalJourney = () => {
     }
   };
 
-  const handleValueChange = (event: SyntheticEvent<HTMLTextAreaElement>) => {
+  const handleValueChange = (
+    event: React.SyntheticEvent<HTMLTextAreaElement>
+  ) => {
     if (proposalContent.length < baitText.length) {
       return setProposalContent(baitText);
     }

@@ -1,19 +1,20 @@
-// @flow
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import {
   trackDisplayFinalCard,
   trackClickOperationPage,
   trackClickCitizenRegister,
-} from 'Shared/services/Tracking';
-import { i18n } from 'Shared/i18n';
-import { resetSequenceVotedProposals } from 'Shared/store/actions/sequence';
-import { CenterColumnStyle } from 'Client/ui/Elements/FlexElements';
-import { LinkAsRedButtonStyle } from 'Client/ui/Elements/Buttons/V2/style';
-import { getParticipateLink } from 'Shared/helpers/url';
+} from '@make.org/utils/services/Tracking';
+import { i18n } from '@make.org/utils/i18n';
+import { resetSequenceVotedProposals } from '@make.org/store/actions/sequence';
+import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
+import {
+  LinkAsRedButtonStyle,
+  RedLinkButtonStyle,
+} from '@make.org/ui/elements/Buttons/style';
+import { getParticipateLink } from '@make.org/utils/helpers/url';
 import { useParams } from 'react-router';
-import { RedLinkButtonStyle } from 'Client/ui/Elements/Buttons/style';
-import { modalShowRegister } from 'Shared/store/actions/modal';
+import { modalShowRegister } from '@make.org/store/actions/modal';
+import { useAppContext } from '@make.org/store';
 import {
   SequenceAltTitleStyle,
   SequenceParagraphStyle,
@@ -21,10 +22,10 @@ import {
   FinalCardRegisterStyle,
 } from './style';
 
-export const FinalCard = () => {
-  const dispatch = useDispatch();
+export const FinalCard: React.FC = () => {
+  const { dispatch, state } = useAppContext();
   const { country } = useParams();
-  const currentQuestion: string = useSelector(state => state.currentQuestion);
+  const { currentQuestion } = state;
   const handleClick = () => {
     dispatch(modalShowRegister());
     trackClickCitizenRegister();

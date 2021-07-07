@@ -1,22 +1,21 @@
-// @flow
-import { setTitleByType } from 'Client/helper/demographics';
-import { RedButtonStyle } from 'Client/ui/Elements/Buttons/V2/style';
+import { setTitleByType } from '@make.org/utils/helpers/demographics';
+import { RedButtonStyle } from '@make.org/ui/elements/Buttons/style';
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { i18n } from 'Shared/i18n';
-import { incrementSequenceIndex } from 'Shared/store/actions/sequence';
+import { i18n } from '@make.org/utils/i18n';
+import { incrementSequenceIndex } from '@make.org/store/actions/sequence';
 import {
   trackClickVoteDemographics,
   trackDisplayDemographicsConfirmation,
-} from 'Shared/services/Tracking';
+} from '@make.org/utils/services/Tracking';
+import { useAppContext } from '@make.org/store';
 import { SequenceIntroParagraphStyle, SequenceParagraphStyle } from '../style';
 
 type Props = {
-  type: string,
+  type: string;
 };
 
-export const SubmittedDemographics = ({ type }: Props) => {
-  const dispatch = useDispatch();
+export const SubmittedDemographics: React.FC<Props> = ({ type }) => {
+  const { dispatch } = useAppContext();
 
   useEffect(() => {
     trackDisplayDemographicsConfirmation(type);

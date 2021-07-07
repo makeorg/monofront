@@ -1,27 +1,33 @@
 import React from 'react';
-import { i18n } from 'Shared/i18n';
-import { useSelector } from 'react-redux';
-import { LinkAsRedButtonStyle } from 'Client/ui/Elements/Buttons/V2/style';
-import { Sharing } from 'Client/features/sharing';
-import { matchDesktopDevice } from 'Shared/helpers/styled';
-import { getParticipateLink } from 'Shared/helpers/url';
+import { i18n } from '@make.org/utils/i18n';
+import { LinkAsRedButtonStyle } from '@make.org/ui/elements/Buttons/style';
+import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
+import { getParticipateLink } from '@make.org/utils/helpers/url';
+import { QuestionType } from '@make.org/types';
+import { useAppContext } from '@make.org/store';
 import {
   SequenceMainTitleStyle,
   SequenceParagraphStyle,
   FinalCardSeparatorStyle,
 } from './style';
 
+// REST TO DO
+import { Sharing } from 'Client/features/sharing';
+
 export type Props = {
   /** Object with Dynamic properties used to configure the Sequence (questionId, country, ...) */
-  question: QuestionType,
-  /** Sequence kind parameter */
-  sequenceKind: string,
+  question: QuestionType;
+  title: string;
+  description: string;
 };
 
-export const NoProposal = ({ question, title, description }) => {
-  const { device, country } = useSelector(
-    (state: StateRoot) => state.appConfig
-  );
+export const NoProposal: React.FC<Props> = ({
+  question,
+  title,
+  description,
+}) => {
+  const { state } = useAppContext();
+  const { device, country } = state.appConfig;
   const isDesktop = matchDesktopDevice(device);
 
   return (

@@ -1,14 +1,13 @@
-// @flow
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { type IntroCardConfigType } from 'Shared/types/card';
+import { IntroCardConfigType } from '@make.org/types';
 import {
   trackDisplayIntroCard,
   trackClickStartSequence,
-} from 'Shared/services/Tracking';
-import { i18n } from 'Shared/i18n';
-import { incrementSequenceIndex } from 'Shared/store/actions/sequence';
-import { PlayIconStyle } from 'Client/ui/Elements/Buttons/style';
+} from '@make.org/utils/services/Tracking';
+import { i18n } from '@make.org/utils/i18n';
+import { incrementSequenceIndex } from '@make.org/store/actions/sequence';
+import { useAppContext } from '@make.org/store';
+import { PlayIconStyle } from '@make.org/ui/elements/Buttons/style';
 import {
   SequenceIntroButtonStyle,
   SequenceMainTitleStyle,
@@ -17,11 +16,11 @@ import {
 
 type Props = {
   /** Object with Static properties used to configure the Intro Card */
-  configuration: IntroCardConfigType,
+  configuration: IntroCardConfigType;
 };
 
-export const IntroCard = ({ configuration }: Props) => {
-  const dispatch = useDispatch();
+export const IntroCard: React.FC<Props> = ({ configuration }) => {
+  const { dispatch } = useAppContext();
   const { description, title } = configuration;
   const descriptionText = description || i18n.t('intro_card.description');
   const handleStartSequence = () => {

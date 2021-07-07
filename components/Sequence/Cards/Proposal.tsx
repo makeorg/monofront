@@ -1,39 +1,37 @@
-// @flow
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import {
   trackClickNextOnLastProposal,
   trackClickNextCard,
-} from 'Shared/services/Tracking';
+} from '@make.org/utils/services/Tracking';
+import { i18n } from '@make.org/utils/i18n';
+import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
+import { incrementSequenceIndex } from '@make.org/store/actions/sequence';
+import { ProposalCardType } from '@make.org/types';
+import { CARD_TYPE_PROPOSAL } from '@make.org/utils/constants/card';
+import { useAppContext } from '@make.org/store';
+
+// REST TO DO
 import { Vote } from 'Client/features/vote';
-import { i18n } from 'Shared/i18n';
-import { ScreenReaderItemStyle } from 'Client/ui/Elements/AccessibilityElements';
-import { incrementSequenceIndex } from 'Shared/store/actions/sequence';
-import { type ProposalCardType } from 'Shared/types/card';
-import { type StateRoot } from 'Shared/store/types';
-import { CARD_TYPE_PROPOSAL } from 'Shared/constants/card';
 import { ProposalAuthor } from '../../../ui/Proposal/Author';
 import { SequenceProposalStyle, SequenceNextCardButtonStyle } from './style';
 
 type Props = {
   /** Proposal card */
-  proposalCard: ProposalCardType,
+  proposalCard: ProposalCardType;
 };
 
 /**
  * Handles Proposal Card Business Logic
  */
 export const ProposalCard = ({ proposalCard }: Props) => {
-  const dispatch = useDispatch();
+  const { dispatch, state } = useAppContext();
 
   const [proposal, setProposal] = useState(proposalCard.configuration.proposal);
   const [index, setIndex] = useState(proposalCard.index);
-  const allCards = useSelector((state: StateRoot) => state.sequence.cards);
-  const votes = useSelector((state: StateRoot) =>
-    state.sequence.cards[index].state
-      ? state.sequence.cards[index].state.votes
-      : []
-  );
+  const allCards = state.sequence.cards;
+  const votes = state.sequence.cards[index].state
+    ? state.sequence.cards[index].state.votes
+    : [];
   const [isVoted, setIsVoted] = useState(
     votes.some(vote => vote.hasVoted === true)
   );

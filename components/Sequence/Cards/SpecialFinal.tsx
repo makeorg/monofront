@@ -1,23 +1,19 @@
-// @flow
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { type StateRoot } from 'Shared/store/types';
 import { useParams } from 'react-router-dom';
-import { getParticipateLink } from 'Shared/helpers/url';
-import { i18n } from 'Shared/i18n';
+import { getParticipateLink } from '@make.org/utils/helpers/url';
+import { i18n } from '@make.org/utils/i18n';
 import {
   trackClickOperationPage,
   trackDisplayFinalCard,
-} from 'Shared/services/Tracking';
-import { resetSequenceVotedProposals } from 'Shared/store/actions/sequence';
-import { LinkAsRedButtonStyle } from 'Client/ui/Elements/Buttons/V2/style';
+} from '@make.org/utils/services/Tracking';
+import { resetSequenceVotedProposals } from '@make.org/store/actions/sequence';
+import { LinkAsRedButtonStyle } from '@make.org/ui/elements/Buttons/style';
+import { useAppContext } from '@make.org/store';
 import { SequenceMainTitleStyle, SequenceParagraphStyle } from './style';
 
-export const SpecialFinalCard = () => {
-  const dispach = useDispatch();
-  const currentQuestion: string = useSelector(
-    (state: StateRoot) => state.currentQuestion
-  );
+export const SpecialFinalCard: React.FC = () => {
+  const { dispach, state } = useAppContext();
+  const { currentQuestion } = state;
   const { country } = useParams();
 
   useEffect(() => {

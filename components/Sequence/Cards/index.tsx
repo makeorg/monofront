@@ -11,8 +11,6 @@ import {
   CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
 } from '@make.org/utils/constants/card';
 import { trackDisplayNoProposalSequence } from '@make.org/utils/services/Tracking';
-
-// REST TO DO
 import { SequenceCardStyle } from './style';
 import { IntroCard } from './Intro';
 import { PushProposalCard } from './PushProposal';
@@ -20,6 +18,8 @@ import { FinalCard } from './Final';
 import { SpecialFinalCard } from './SpecialFinal';
 import { ProposalCard } from './Proposal';
 import { NoProposal } from './NoProposal';
+
+// REST TO DO
 import { ExtraDataCard } from './ExtraData';
 
 

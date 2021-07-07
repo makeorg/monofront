@@ -17,20 +17,17 @@ import {
   trackClickModerationLink,
 } from '@make.org/utils/services/Tracking';
 
-import { useSelector } from 'react-redux';
-import { StateRoot } from 'Shared/store/types';
-import { selectCurrentQuestion } from 'Shared/store/selectors/questions.selector';
-import { ScreenReaderItemStyle } from 'Client/ui/Elements/AccessibilityElements';
-import { SpaceBetweenRowStyle } from 'Client/ui/Elements/FlexElements';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
+import { SpaceBetweenRowStyle } from '@make.org/ui/elements/FlexElements';
 import {
   GreyNoBackgroundButtonStyle,
   RedButtonStyle,
-} from 'Client/ui/Elements/Buttons/V2/style';
+} from '@make.org/ui/elements/Buttons/style';
 
-import { throttle } from 'Shared/helpers/throttle';
+import { throttle } from '@make.org/utils/helpers/throttle';
 
-
-import { LoadingDots } from 'Client/ui/Elements/Loading/Dots';
+import { LoadingDots } from '@make.org/ui/elements/Loading/Dots';
 import {
   ProposalStepWrapperStyle,
   ProposalStepTitleStyle,
@@ -40,18 +37,19 @@ import {
   ProposalExternalLinkStyle,
   ProposalExternalLinkIconStyle,
 } from './style';
+import { useAppContext } from '../../../store';
 
 type Props = {
-  proposalContent: string,
-  handleValueChange: (event: SyntheticEvent<HTMLTextAreaElement>) => void,
-  setProposalContent: string => void,
-  handleFieldFocus: () => void,
-  handleCancel: () => void,
-  handleSubmit: () => void,
-  waitingApiCallback: boolean,
+  proposalContent: string;
+  handleValueChange: (event: React.SyntheticEvent<HTMLTextAreaElement>) => void;
+  setProposalContent: (arg: string) => void;
+  handleFieldFocus: () => void;
+  handleCancel: () => void;
+  handleSubmit: () => void;
+  waitingApiCallback: boolean;
 };
 
-export const ProposalForm = ({
+export const ProposalForm: React.FC<Props> = ({
   proposalContent,
   setProposalContent,
   handleValueChange,
@@ -59,12 +57,11 @@ export const ProposalForm = ({
   handleCancel,
   handleSubmit,
   waitingApiCallback,
-}: Props) => {
-  const inputRef: ?ProposalTextareaStyle = useRef();
-  const question: QuestionType = useSelector((state: StateRoot) =>
-    selectCurrentQuestion(state)
-  );
-  const { country } = useSelector((state: StateRoot) => state.appConfig);
+}) => {
+  const { state } = useAppContext();
+  const inputRef = useRef();
+  const question: QuestionType = selectCurrentQuestion(state);
+  const { country } = state.appConfig;
   const proposalIsEmpty = proposalContent.length === 0;
   const baitText = getLocalizedBaitText(
     question?.language,
@@ -79,11 +76,7 @@ export const ProposalForm = ({
 
   const secureFieldValue = event => {
     handleValueChange(event);
-    if (
-      inputRef &&
-      inputRef.current &&
-      inputRef.current.selectionStart < baitText.length
-    ) {
+    if (inputRef.current && inputRef.current.selectionStart < baitText.length) {
       setProposalContent(baitText);
     }
   };

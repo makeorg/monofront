@@ -1,19 +1,18 @@
-// @flow
 import React, { useEffect } from 'react';
 import {
   trackDisplayProposalPushCard,
   trackClickProposalPushCardIgnore,
-} from 'Shared/services/Tracking';
-import { i18n } from 'Shared/i18n';
+} from '@make.org/utils/services/Tracking';
+import { i18n } from '@make.org/utils/i18n';
 import {
   PencilIconStyle,
   ForwardIconStyle,
-} from 'Client/ui/Elements/Buttons/style';
-import { MiddleColumnToRowStyle } from 'Client/ui/Elements/FlexElements';
-import { incrementSequenceIndex } from 'Shared/store/actions/sequence';
-import { useDispatch } from 'react-redux';
-import { ProposalJourney } from 'Client/features/proposal/Submit/Journey';
-import { setPanelContent } from 'Shared/store/reducers/panel/actions';
+} from '@make.org/ui/elements/Buttons/style';
+import { MiddleColumnToRowStyle } from '@make.org/ui/elements/FlexElements';
+import { incrementSequenceIndex } from '@make.org/store/actions/sequence';
+import { setPanelContent } from '@make.org/store/actions/panel';
+import { useAppContext } from '@make.org/store';
+import { ProposalJourney } from '@make.org/components/Proposal/Submit/Journey';
 import {
   SequenceIntroParagraphStyle,
   SequencePushProposalButtonStyle,
@@ -23,8 +22,8 @@ import {
 /**
  * Handles Push Proposal Card Business Logic
  */
-export const PushProposalCard = () => {
-  const dispatch = useDispatch();
+export const PushProposalCard: React.FC = () => {
+  const { dispatch } = useAppContext();
   useEffect(() => {
     trackDisplayProposalPushCard();
   }, []);

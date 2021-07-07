@@ -1,12 +1,12 @@
 import { typography, color } from 'athena-design-tokens';
-import { Breakpoints } from 'Client/app/assets/vars/Breakpoints';
-import { MakeFonts } from 'Client/app/assets/vars/Fonts';
-import { SpaceBetweenRowStyle } from 'Client/ui/Elements/FlexElements';
-import { ParagraphStyle } from 'Client/ui/Elements/ParagraphElements';
-import { SvgFastForward } from 'Client/ui/Svg/elements';
-import SelectArrow from 'Client/ui/Svg/source/select-arrow.svg';
-import { intToPx } from 'Shared/helpers/styled';
+import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { SpaceBetweenRowStyle } from '@make.org/ui/elements/FlexElements';
+import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
+import { SvgFastForward } from '@make.org/ui/Svg/elements';
+import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
+import SelectArrow from '@make.org/ui/Svg/source/select-arrow.svg';
 
 const MAX_WIDTH = 275;
 

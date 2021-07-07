@@ -7,6 +7,7 @@ import { notifications_state } from './reducers/notifications';
 import { authentication_state } from './reducers/user/authentication';
 import { cookiesPreferences_state } from './reducers/user/cookiesPreferences';
 import { passwordRecovery_state } from './reducers/user/passwordRecovery';
+import { proposal_state } from './reducers/proposal';
 
 export const initialState: StateRoot = {
   appConfig: {
@@ -20,12 +21,7 @@ export const initialState: StateRoot = {
     privacyPolicy: undefined
   },
   views: {},
-  proposal: {
-    hasProposed: false,
-    popularProposals: [],
-    error: undefined,
-    data: undefined,
-  },
+  proposal: proposal_state,
   sequence: sequence_state,
   questions: {},
   currentQuestion: '',

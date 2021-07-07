@@ -1,4 +1,3 @@
-// @flow
 import { getBaitText } from '@make.org/utils/constants/proposal';
 import { ProposalType, ProposalsType } from '@make.org/types';
 import { ProposalApiService } from '@make.org/api/ProposalApiService';

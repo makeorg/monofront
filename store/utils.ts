@@ -6,6 +6,7 @@ import { proposals_reducer } from './reducers/proposals';
 import { sequence_reducer } from './reducers/sequence';
 import { user_reducer } from './reducers/user';
 import { initialState } from './initialState';
+import { proposal_reducer } from './reducers/proposal';
 
 export const AppContext = createContext({});
 
@@ -23,7 +24,7 @@ const rootReducer = combineReducers({
   sequence: sequence_reducer,
   // appConfig: undefined,
   // views: undefined,
-  // proposal: undefined,
+  proposal: proposal_reducer,
   // currentQuestion: undefined,
   // notifications: undefined,
   user: user_reducer,
