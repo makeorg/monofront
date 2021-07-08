@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { env } from 'Shared/env';
+import { env } from '../../env';
 import { FontSize } from './index';
 
 jest.mock('Shared/env');

@@ -1,4 +1,4 @@
-import * as routes from 'Shared/routes';
+import * as routes from '@make.org/utils/routes';
 import { getLocationContext, getTrackingLocation } from './getLocationContext';
 
 describe('getLocationContext', () => {

@@ -5,7 +5,7 @@ import {
   NAVIGATION_ELEMENT_ARIA_CLASS,
   SEARCH_ARIA_CLASS,
   SEARCH_ELEMENT_ARIA_CLASS,
-} from 'Shared/constants/a11y';
+} from '@make.org/utils/constants/a11y';
 import { MakeFonts } from '../vars/Fonts';
 
 export const DefaultStylesheet = createGlobalStyle`

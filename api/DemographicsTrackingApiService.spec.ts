@@ -1,4 +1,4 @@
-import { ApiService } from 'Shared/api/ApiService';
+import { ApiService } from './ApiService';
 import {
   DemographicsTrackingApiService,
   DEMOGRAPHICS_TRACKING_PATH,

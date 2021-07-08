@@ -1,4 +1,4 @@
-import { ApiService } from 'Shared/api/ApiService';
+import { ApiService } from './ApiService';
 import { VoteApiService, PATH_VOTE, PATH_UNVOTE } from './VoteApiService';
 
 jest.mock('./ApiService');

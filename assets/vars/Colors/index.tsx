@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import athena from 'athena-design-tokens';
 import styled from 'styled-components';
-import { RedLinkHTMLElementStyle } from 'Client/ui/Elements/LinkElements';
-import { ExternalLinkIconStyle } from 'Client/ui/Elements/Buttons/V2/style';
+import { RedLinkHTMLElementStyle } from '@make.org/ui/elements/LinkElements';
+import { ExternalLinkIconStyle } from '@make.org/ui/elements/Buttons/style';
 import { env } from '../../env';
 
 const ColorboxStyle = styled.div`
@@ -19,7 +19,7 @@ const colors = [];
 for (const [colorName, value] of Object.entries(ColorGroupName)) {
   colors.push({ colorName, value });
 }
-export const Colors: React.FC = () => (
+export const Colors = () => (
   <>
     <h1>Colors</h1>
     <table>
@@ -49,8 +49,8 @@ export const Colors: React.FC = () => (
           <th scope="col">value</th>
         </tr>
       </thead>
-      {colors.map(c => (
-        <Fragment key={c.colorName}>
+      {colors.map(c =(c) (
+   =    <Fragment key={c.colorName}>
           <tbody>
             <tr>
               <th scope="row">{c.colorName}</th>

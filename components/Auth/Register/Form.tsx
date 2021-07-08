@@ -1,22 +1,18 @@
-// @flow
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { i18n } from 'Shared/i18n';
-import { type RegisterFormDataType } from 'Shared/types/form';
-import { type ErrorObjectType } from 'Shared/types/api';
-import { type StateRoot } from 'Shared/store/types';
-import { RegisterCheckBox } from 'Client/ui/Elements/Form/CheckBox/RegisterCheckbox';
+import { i18n } from '@make.org/utils/i18n';
+import { ErrorObjectType, RegisterFormDataType } from '@make.org/types';
+import { RegisterCheckBox } from '@make.org/ui/elements/Form/CheckBox/RegisterCheckbox';
 import {
   FormCenterAlignStyle,
   ConditionParagraphStyle,
   FormRequirementsStyle,
-} from 'Client/ui/Elements/Form/Styled/Content';
-import { getFieldError } from 'Shared/helpers/form';
-import { UntypedInput } from 'Client/ui/Elements/Form/UntypedInput';
-import { NumberInput } from 'Client/ui/Elements/Form/NumberInput';
-import { PasswordInput } from 'Client/ui/Elements/Form/PasswordInput';
-import { REGISTER_FORMNAME } from 'Shared/constants/form';
-import { SubmitButton } from 'Client/ui/Elements/Form/SubmitButton';
+} from '@make.org/ui/elements/Form/Styled/Content';
+import { getFieldError } from '@make.org/utils/helpers/form';
+import { UntypedInput } from '@make.org/ui/elements/Form/UntypedInput';
+import { NumberInput } from '@make.org/ui/elements/Form/NumberInput';
+import { PasswordInput } from '@make.org/ui/elements/Form/PasswordInput';
+import { REGISTER_FORMNAME } from '@make.org/utils/constants/form';
+import { SubmitButton } from '@make.org/ui/elements/Form/SubmitButton';
 import {
   EmailFieldIcon,
   PasswordFieldIcon,
@@ -25,13 +21,14 @@ import {
   PostalCodeFieldIcon,
   JobFieldIcon,
   SubmitThumbsUpIcon,
-} from 'Shared/constants/icons';
-import { throttle } from 'Shared/helpers/throttle';
-import { FormErrors } from 'Client/ui/Elements/Form/Errors';
-import { CustomPatternInput } from 'Client/ui/Elements/Form/CustomPatternInput';
-import { getGTUPageLink } from 'Shared/helpers/url';
-import { ScreenReaderItemStyle } from 'Client/ui/Elements/AccessibilityElements';
-import * as postCodeValidator from 'Client/validator/postCode';
+} from '@make.org/utils/constants/icons';
+import { useAppContext } from '@make.org/store';
+import { throttle } from '@make.org/utils/helpers/throttle';
+import { FormErrors } from '@make.org/ui/elements/Form/Errors';
+import { CustomPatternInput } from '@make.org/ui/elements/Form/CustomPatternInput';
+import { getGTUPageLink } from '@make.org/utils/helpers/url';
+import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
+import * as postCodeValidator from '@make.org/utils/validator/postCode';
 import { TermsOfUseLinkStyle, NewWindowIconStyle } from '../style';
 
 type Props = {
@@ -45,20 +42,17 @@ type Props = {
 /**
  * Renders Register Form
  */
-export const RegisterForm = ({
+export const RegisterForm: React.FC<Props> = ({
   user,
   errors,
   handleChange,
   handleLegalField,
   handleSubmit,
   disableSubmit,
-}: Props) => {
-  const { country, language } = useSelector(
-    (state: StateRoot) => state.appConfig
-  );
-  const currentQuestion = useSelector(
-    (state: StateRoot) => state.currentQuestion
-  );
+}) => {
+  const { state } = useAppContext();
+  const { country, language } = state.appConfig;
+  const {currentQuestion} = state;
 
   const emailError = getFieldError('email', errors);
   const passwordError = getFieldError('password', errors);

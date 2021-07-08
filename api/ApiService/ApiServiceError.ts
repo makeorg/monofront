@@ -19,7 +19,7 @@ export class ApiServiceError extends Error {
 
   requestId?: string;
 
-  clone = (message: string) => new ApiServiceError(
+  clone = (message: string): void => new ApiServiceError(
     message,
     this.status,
     this.data,
