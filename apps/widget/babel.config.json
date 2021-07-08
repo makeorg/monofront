@@ -1,0 +1,18 @@
+{
+    "presets": [
+        "@babel/react",
+        "@babel/typescript",
+        ["@babel/env", { 
+            "modules": false 
+        }]
+    ],
+    "plugins": [
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-transform-typescript",
+        ["module-resolver", {
+            "alias": {
+                "^@make.org/(.+)": "../\\1/src"
+            }
+        }]
+    ]
+  }
