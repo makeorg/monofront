@@ -7,11 +7,10 @@ import {
   AppContext,
   deepEqual,
   getCurrentTimeFormatted,
-  GlobalContent,
   useAllReducers,
 } from './utils';
 
-export const useAppContext = (): GlobalContent => useContext(AppContext);
+export const useAppContext = () => useContext(AppContext);
 
 const ContextState: React.FC = ({ children }) => {
   const { state, dispatch } = useAllReducers();

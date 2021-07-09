@@ -122,6 +122,7 @@ readonly showCookies: boolean
 readonly contentType: string
 readonly focusAfterClose: boolean
 readonly extraProps: any
+readonly isLogin?: boolean
 };
 
 export type StateActor = {
@@ -175,7 +176,7 @@ export type StateRoot = {
   session?: StateSession
   // widget data
   question?: QuestionType
-  proposals: ProposalType[]
+  proposals?: ProposalType[]
 };
 
 export type Reducer<State = any, Action = any> = (

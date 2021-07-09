@@ -9,22 +9,19 @@ import { user_reducer } from './reducers/user';
 import { initialState } from './initialState';
 import { proposal_reducer } from './reducers/proposal';
 
-export type GlobalContent = {
-  state: StateRoot
-  dispatch: Dispatch
-}
-
-export const AppContext = createContext<GlobalContent>({
+export const AppContext = createContext({
   state: initialState,
-  dispatch: () => undefined
+  dispatch: (arg: any) => {
+    console.log(arg);
+  }
 });
 
 export const combineReducers = (
-  slices: Reducer
+  slices: any
 ) => (
-  state: Partial<StateRoot>,
-  action: ReducerAction
-): Reducer => Object.keys(slices).reduce(
+  state: any,
+  action: any
+): any => Object.keys(slices).reduce(
   (acc, prop) => ({
     ...acc,
     [prop]: slices[prop](acc[prop], action),
@@ -36,17 +33,17 @@ const rootReducer = combineReducers({
   question: question_reducer,
   proposals: proposals_reducer,
   sequence: sequence_reducer,
-  // appConfig: undefined,
-  // views: undefined,
+  appConfig: undefined,
+  views: undefined,
   proposal: proposal_reducer,
-  // currentQuestion: undefined,
-  // notifications: undefined,
+  currentQuestion: undefined,
+  notifications: undefined,
   user: user_reducer,
-  // questions: undefined,
+  questions: undefined,
   modal: modal_reducer,
-  // partners: undefined,
+  partners: undefined,
   panel: panel_reducer,
-  // session: undefined,
+  session: undefined,
 });
 
 export const useAllReducers = (): { state: StateRoot, dispatch: Dispatch } => {

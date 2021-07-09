@@ -119,17 +119,21 @@ export const sequence_reducer: Reducer = (
           questions: [action.payload.questionSlug],
         },
       };
-    case SEQUENCE_DEMOGRAPHICS_ADD_QUESTION:
-      return {
-        ...state,
-        demographics: {
-          ...state.demographics,
-          questions: [
-            ...state.demographics.questions,
-            action.payload.questionSlug,
-          ],
-        },
-      };
+    case SEQUENCE_DEMOGRAPHICS_ADD_QUESTION: {
+      if (state.demographics) {
+        return {
+          ...state,
+          demographics: {
+            ...state.demographics,
+            questions: [
+              ...state.demographics.questions,
+              action.payload.questionSlug,
+            ],
+          },
+        };
+      }
+      return state;
+    }
     default:
       return state;
   }
