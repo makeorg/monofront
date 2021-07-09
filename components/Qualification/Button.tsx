@@ -1,11 +1,15 @@
 // @flow
 import React, { useState, useEffect } from 'react';
 import { QualificationService } from '@make.org/utils/services/Qualification';
-import { trackQualify, trackUnqualify } from '@make.org/utils/services/Tracking';
+import {
+  trackQualify,
+  trackUnqualify,
+} from '@make.org/utils/services/Tracking';
 import { voteStaticParams } from '@make.org/utils/constants/vote';
 import { QualificationType } from '@make.org/types';
 import { LoadingDots } from '@make.org/ui/elements/Loading/Dots';
 import { i18n } from '@make.org/utils/i18n';
+import { useAppContext } from '@make.org/store';
 import { TopComponentContext } from '@make.org/store/topComponentContext';
 import { QualifyButtonStyle } from '@make.org/ui/elements/Buttons/style';
 import { qualify as actionQualify } from '@make.org/store/actions/sequence';
@@ -13,17 +17,17 @@ import { CounterStyle } from './style';
 
 type Props = {
   /** qualification object */
-  qualification: QualificationType,
+  qualification: QualificationType;
   /** Voted key property */
-  votedKey: string,
+  votedKey: string;
   /** Proposal's Id */
-  proposalId: string,
+  proposalId: string;
   /** String containing the hash generate api side for security purpose */
-  proposalKey: string,
+  proposalKey: string;
   /** Index of the card */
-  index: number,
+  index?: number;
   /** Optional boolean to disable click event on the qualification button */
-  disableClick: boolean,
+  disableClick?: boolean;
 };
 
 /**
@@ -37,26 +41,24 @@ export const QualificationButton: React.FC<Props> = ({
   index,
   disableClick = false,
 }) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppContext();
   const [userQualification, setUserQualification] = useState(qualification);
   const { hasQualified, qualificationKey, count } = userQualification;
   const buttonLabel = i18n.t(`qualification.${qualificationKey}`);
   const [isQualified, setIsQualified] = useState<boolean>(hasQualified);
   const [pendingQualification, setPendingQualification] = useState<boolean>(false);
-    
   useEffect(() => {
     setUserQualification(qualification);
     setIsQualified(qualification.hasQualified);
   }, [qualification]);
 
   const handleQualify = async (context: string) => {
-    const qualificationResult: ?Qualifica =      =
-      await QualificationService.qualify(
-        proposalId,
-        proposalKey,
-        votedKey,
-        qualificationKey
-      );
+    const qualificationResult: QualificationType = await QualificationService.qualify(
+      proposalId,
+      proposalKey,
+      votedKey,
+      qualificationKey
+    );
 
     if (qualificationResult) {
       setIsQualified(true);
@@ -68,13 +70,12 @@ export const QualificationButton: React.FC<Props> = ({
   };
 
   const handleUnqualify = async (context: string) => {
-    const qualificationResult: ?Qualifica =      =
-      await QualificationService.unqualify(
-        proposalId,
-        proposalKey,
-        votedKey,
-        qualificationKey
-      );
+    const qualificationResult: QualificationType = await QualificationService.unqualify(
+      proposalId,
+      proposalKey,
+      votedKey,
+      qualificationKey
+    );
 
     if (qualificationResult) {
       setIsQualified(false);
@@ -99,7 +100,8 @@ export const QualificationButton: React.FC<Props> = ({
   };
 
   return (
-    <TopComponentContext.Consumer>(context){context => (
+    <TopComponentContext.Consumer>
+      {(context) => (
         <QualifyButtonStyle
           className={isQualified && 'qualified'}
           color={voteStaticParams[votedKey].color}

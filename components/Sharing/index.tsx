@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useLocation } from 'react-router';
-import { Location } from 'history';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { i18n } from '@make.org/utils/i18n';
 import { trackClickShare } from '@make.org/utils/services/Tracking';
@@ -20,8 +19,8 @@ import {
   NOTIFICATION_LEVEL_INFORMATION,
   SOCIAL_MEDIA_COOKIES_MESSAGE,
 } from '@make.org/utils/constants/notifications';
+import { useAppContext } from '@make.org/store';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
-import { UserCookiePreferences } from '@make.org/types';
 import {
   SharingStyle,
   FacebookButtonStyle,
@@ -32,19 +31,20 @@ import {
 /**
  * Renders Sharing
  */
-export const Sharing = () => {
-  const location: Location = useLocation();
-  const dispatch = useDispatch();
+export const Sharing: React.FC = () => {
+  const location = useLocation();
+  const { dispatch } = useAppContext();
   const cookies = new Cookies();
-  const preferencesCookie: UserCookiePreferences = cookies.get(
-    USER_PREFERENCES_COOKIE
-  );
+  const preferencesCookie = cookies.get(USER_PREFERENCES_COOKIE);
 
   const displayCookieNotification = () => dispatch(
-          yNotificationBanner(
-            _MEDIA_COOKIES_MESSAGE,
-            CATION_LEVEL_INFORMATION
-          );  return (
+    displayNotificationBanner(
+      SOCIAL_MEDIA_COOKIES_MESSAGE,
+      NOTIFICATION_LEVEL_INFORMATION
+    )
+  );
+
+  return (
     <SharingStyle as={UnstyledListStyle}>
       <li>
         {preferencesCookie?.facebook_sharing ? (

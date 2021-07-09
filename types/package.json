@@ -2,6 +2,8 @@
   "name": "@make.org/types",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "react": "^17.0.2"
+  },
   "browserslist": {}
 }

@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import { ErrorObjectType } from '@make.org/types';
 import { useIsFieldValid } from '@make.org/utils/hooks/useFieldValidation';
 import { throttle } from '@make.org/utils/helpers/throttle';
-import { emptyError } from '../Errors/Message';
 import { BasicInputStyle } from '../Styled/Input';
 import { CenterInputIconStyle } from '../Styled/Icons';
 import {
@@ -13,27 +12,27 @@ import {
 
 type Props = {
   /** Type of the input */
-  type: string,
+  type: string;
   /** Name of the input */
-  name: string,
+  name: string;
   /** Icon of the input */
-  icon: HTMLElement,
+  icon: HTMLElement;
   /** Value of the input */
-  value: string,
+  value: string;
   /** Label of the input */
-  label: string,
+  label: string;
   /** Custom validation pattern */
-  pattern: string,
+  pattern: string;
   /** Mehtod called on change event */
-  handleChange: (event: SyntheticInputEvent<HTMLInputElement>) => void,
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   /** Object containing field errors */
-  error: ErrorObjectType,
+  error?: ErrorObjectType;
   /** Is input required or optional */
-  required: boolean,
+  required: boolean;
   /** Minimum length required for the input */
-  minLength: number,
+  minLength: number;
   /** Maximum length required for the input */
-  maxLength: number,
+  maxLength: number;
 };
 
 export const CustomPatternInput: React.FC<Props> = ({
@@ -44,7 +43,7 @@ export const CustomPatternInput: React.FC<Props> = ({
   label,
   pattern,
   handleChange,
-  error = emptyError,
+  error,
   required = false,
   minLength = 0,
   maxLength = 100000,

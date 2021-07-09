@@ -8,23 +8,23 @@ import {
 
 type Props = {
   /** Name of the checkbox */
-  name: string,
+  name: string;
   /** Label of the checkbox */
-  label: string,
+  label: string;
   /** handleLabelClick of the checkbox */
-  handleCheck: (event: SyntheticEvent<HTMLLabelElement>) => void,
+  handleCheck: (event: React.ChangeEvent<HTMLLabelElement>) => void;
   /** Value of the checkbox */
-  value: string | boolean,
+  value: string | boolean;
   /** onChange of the checkbox */
-  handleChange: (event: SyntheticEvent<HTMLLabelElement>) => void,
+  handleChange: (event: React.ChangeEvent<HTMLLabelElement>) => void;
   /** Default value of the checkbox */
-  isChecked: boolean,
+  isChecked?: boolean;
   /** Is input required or optional */
-  required: boolean,
+  required?: boolean;
   /** isBlack color parameter optional */
-  isBlack: boolean,
+  isBlack?: boolean;
   /** noFontSizeChange parameter optional */
-  noFontSizeChange: boolean,
+  noFontSizeChange?: boolean;
 };
 
 export const CheckBox: React.FC<Props> = ({

@@ -1,24 +1,18 @@
 import React, { useEffect } from 'react';
 import { i18n } from '@make.org/utils/i18n';
-import { type StateRoot } from 'Shared/store/types';
-import { type QuestionType } from 'Shared/types/question';
-import {
-  VoteOnlyMessageStyle,
-  VoteOnlyButtonStyle,
-} from 'Client/ui/Elements/Notifications/Banner/style';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectCurrentQuestion } from 'Shared/store/selectors/questions.selector';
-import { clearNotificationBanner } from 'Shared/store/actions/notifications';
+import { QuestionType } from '@make.org/types';
+import { useAppContext } from '@make.org/store';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { clearNotificationBanner } from '@make.org/store/actions/notifications';
+import { VoteOnlyMessageStyle, VoteOnlyButtonStyle } from './style';
 
 type Props = {
-  close: () => undefined,
+  close: () => undefined;
 };
 
-export const VoteOnlyMessage = ({ close }: Props) => {
-  const question: QuestionType = useSelector((state: StateRoot) =>
-    selectCurrentQuestion(state)
-  );
-  const dispatch = useDispatch();
+export const VoteOnlyMessage: React.FC<Props> = ({ close }) => {
+  const { dispatch, state } = useAppContext();
+  const question: QuestionType = selectCurrentQuestion(state);
 
   useEffect(() => {
     if (!question) {

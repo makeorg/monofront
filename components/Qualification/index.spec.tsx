@@ -1,7 +1,6 @@
-// @flow
 import React from 'react';
 import { shallow } from 'enzyme';
-import { LoadingDots } from 'Client/ui/Elements/Loading/Dots';
+import { LoadingDots } from '@make.org/ui/elements/Loading/Dots';
 import { Qualification } from './index';
 import { QualificationButton } from './Button';
 

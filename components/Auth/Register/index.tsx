@@ -30,7 +30,7 @@ import { AuthenticationWrapperStyle } from '../style';
 import { LegalConsent } from './LegalConsent';
 
 export const Register: React.FC = () => {
-  const { dispatch } = useAppContext()
+  const { dispatch } = useAppContext();
   const [user, setUser] = useState<RegisterFormDataType>({
     email: '',
     password: '',
@@ -46,9 +46,8 @@ export const Register: React.FC = () => {
   });
   const [errors, setErrors] = useState<ErrorObjectType[]>([]);
   const [waitingCallback, setWaitingCallback] = useState<boolean>(false);
-  const [needLegalConsent, displayLegalConsent] = useState<boolean =    );
-  const userIsAChild =
-    user && user.profile && user.profile.age && user.profile.age < 15;
+  const [needLegalConsent, displayLegalConsent] = useState<boolean>(false);
+  const userIsAChild = user && user.profile && user.profile.age && user.profile.age < 15;
 
   const handleLoginModal = () => {
     dispatch(modalShowLogin());
@@ -70,7 +69,7 @@ export const Register: React.FC = () => {
     });
   };
 
-  const handleChange = (event: SyntheticInputEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = event.target;
 
     if (id.includes('profile.')) {
@@ -113,7 +112,7 @@ export const Register: React.FC = () => {
     );
   };
 
-  const handleSubmit = async (event: SyntheticInputEvent<HTMLInputElement>) => {
+  const handleSubmit = async (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     const success = () => {
       logAndLoadUser(user.email, user.password).then(() => {
@@ -135,7 +134,7 @@ export const Register: React.FC = () => {
     setWaitingCallback(false);
   };
 
-  const toggleLegalConsent = (event: SyntheticInputEvent<any>) => {
+  const toggleLegalConsent = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     displayLegalConsent(!needLegalConsent);
   };

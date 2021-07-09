@@ -16,7 +16,7 @@ import {
   SOCIAL_MEDIA_COOKIES_MESSAGE,
   COOKIES_PREFERENCES_UPDATE_MESSAGE,
 } from '@make.org/utils/constants/notifications';
-import { PasswordRecoveryFailureMessage } from 'Client/features/auth/PasswordRecovery/Failure';
+import { PasswordRecoveryFailureMessage } from '../../Auth/PasswordRecovery/Failure';
 import { SecureExpiredMessage } from '../Banner/SecureExpired';
 import { AccountActivationSuccessMessage } from '../Banner/AccountActivationSuccess';
 import { AccountActivationFailureMessage } from '../Banner/AccountActivationFailure';
@@ -32,17 +32,19 @@ import { FirstVoteTip } from '../Tip/FirstVote';
 import { SocialMediaCookiesMessage } from '../Banner/SocialMediaCookies';
 import { CookiesPreferencesUpdateMessage } from '../Banner/CookiesPreferencesUpdate';
 
-// REST TO DO
-
 type Props = {
-  name: string
+  name: string;
   params?: {
-    email: string
-  }
-  close?: () => void
-}
+    email: string;
+  };
+  close?: () => void;
+};
 
-export const NotificationMessage: React.FC<Props> = ({ name, params, close }) => {
+export const NotificationMessage: React.FC<Props> = ({
+  name,
+  params,
+  close,
+}) => {
   switch (name) {
     case SECURE_EXPIRED_MESSAGE:
       return <SecureExpiredMessage />;

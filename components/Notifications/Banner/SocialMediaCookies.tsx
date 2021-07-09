@@ -1,14 +1,13 @@
-import { WhiteLink } from 'Client/ui/Elements/Notifications/Banner/style';
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getCookiesPageLink } from 'Shared/helpers/url';
+import { getCookiesPageLink } from '@make.org/utils/helpers/url';
 import { i18n } from '@make.org/utils/i18n';
-import { clearNotificationBanner } from 'Shared/store/actions/notifications';
-import { type StateRoot } from 'Shared/store/types';
+import { clearNotificationBanner } from '@make.org/store/actions/notifications';
+import { useAppContext } from '@make.org/store';
+import { WhiteLink } from './style';
 
-export const SocialMediaCookiesMessage = () => {
-  const dispatch = useDispatch();
-  const { country } = useSelector((state: StateRoot) => state.appConfig);
+export const SocialMediaCookiesMessage: React.FC = () => {
+  const { dispatch, state } = useAppContext();
+  const { country } = state.appConfig;
 
   return (
     <>

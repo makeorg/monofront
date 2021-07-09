@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import athena from 'athena-design-tokens';
-import { RedLinkHTMLElementStyle } from 'Client/ui/Elements/LinkElements';
-import { ExternalLinkIconStyle } from 'Client/ui/Elements/Buttons/V2/style';
+import { RedLinkHTMLElementStyle } from '@make.org/ui/elements/LinkElements';
+import { ExternalLinkIconStyle } from '@make.org/ui/elements/Buttons/style';
 import { env } from '../../env';
 
 const FontGroupName = athena.typography.font.fontsize;

@@ -4,14 +4,14 @@ import {
   Breakpoints,
   Layouts,
   DefaultPadding,
-} from 'Client/app/assets/vars/Breakpoints';
-import { ShadowColors } from 'Client/app/assets/vars/Colors';
-import { intToPx } from 'Shared/helpers/styled';
+} from '@make.org/assets/vars/Breakpoints';
+import { ShadowColors } from '@make.org/assets/vars/Colors';
+import { intToPx } from '@make.org/utils/helpers/styled';
 import {
   CloseButtonStyle,
   WhiteButtonStyle,
-} from 'Client/ui/Elements/Buttons/style';
-import { ColumnToRowElementStyle } from 'Client/ui/Elements/FlexElements';
+} from '@make.org/ui/elements/Buttons/style';
+import { ColumnToRowElementStyle } from '@make.org/ui/elements/FlexElements';
 import { Link } from 'react-router-dom';
 
 export const NotificationWrapperStyle = styled.aside`

@@ -3,7 +3,7 @@ import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '../helpers/styled';
 import { Logger } from '../services/Logger';
 
-export const useMedia = (query: string) => {
+export const useMedia = (query: string): boolean => {
   const [value, setValue] = useState(false);
 
   useEffect(() => {
@@ -35,18 +35,15 @@ export const useMedia = (query: string) => {
   return value;
 };
 
-export const useDesktop = () =>
-  useMed `(min-width: ${intToPx(Breakpoints.Desktop)})`);
+export const useDesktop = (): boolean => useMedia(`(min-width: ${intToPx(Breakpoints.Desktop)})`);
 
-export const useTablet = () =>
-  useMed `(min-width: ${intToPx(Breakpoints.Tablet)})`);
+export const useTablet = (): boolean => useMedia(`(min-width: ${intToPx(Breakpoints.Tablet)})`);
 
-export const useMobile = () =>
-  useMed 
-    `only screen and (max-device-width: ${intToPx(Breakpoints.Tablet)})`
-  );
+export const useMobile = (): boolean => useMedia(
+  `only screen and (max-device-width: ${intToPx(Breakpoints.Tablet)})`
+);
 
-export const useScreenWidth = () => {
+export const useScreenWidth = (): number => {
   const hasWindowObject = typeof window === 'object';
 
   const screenWidth = hasWindowObject ? window.screen.width : null;
@@ -70,14 +67,14 @@ export const useScreenWidth = () => {
   return value;
 };
 
-export const useScreenMobileContainerWidth = () => {
+export const useScreenMobileContainerWidth = (): number => {
   const screenWidth = useScreenWidth();
   const mobileContainerPadding = 20 * 2;
 
   return screenWidth ? screenWidth - mobileContainerPadding : null;
 };
 
-export const useDevicePixelRatio = () => {
+export const useDevicePixelRatio = (): number => {
   if (typeof window === 'object') {
     return window.devicePixelRatio;
   }

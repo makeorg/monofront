@@ -1,9 +1,9 @@
 import React from 'react';
 import { i18n } from '@make.org/utils/i18n';
-import { SvgSadEmoji } from 'Client/ui/Svg/elements';
-import { SecuredExpirationStyle } from 'Client/ui/Elements/Notifications/Banner/style';
+import { SvgSadEmoji } from '@make.org/ui/Svg/elements';
+import { SecuredExpirationStyle } from './style';
 
-export const SecureExpiredMessage = (): React.FC => (
+export const SecureExpiredMessage: React.FC = () => (
   <SecuredExpirationStyle>
     {i18n.t('common.notifications.secure_expired.first_sentence')}
     <> </>

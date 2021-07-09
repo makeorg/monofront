@@ -19,10 +19,10 @@ import {
 } from '../style';
 
 type Props = {
-  needLegalConsent: boolean,
-  handleLegalField: (fieldName: string, value: boolean) => any,
-  handleSubmit: (event: React.SyntheticInputEvent<HTMLInputElement>) => any,
-  toggleLegalConsent: (event: SyntheticInputEvent<any>) => void,
+  needLegalConsent: boolean;
+  handleLegalField: (fieldName: string, value: boolean) => void;
+  handleSubmit: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  toggleLegalConsent: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export const LegalConsent: React.FC<Props> = ({

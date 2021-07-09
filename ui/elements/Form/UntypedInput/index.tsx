@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { ErrorObjectType } from '@make.org/types';
 import { useIsFieldValid } from '@make.org/utils/hooks/useFieldValidation';
-import { emptyError } from '../Errors/Message';
 import { BasicInputStyle } from '../Styled/Input';
 import { CenterInputIconStyle } from '../Styled/Icons';
 import {
@@ -12,21 +11,21 @@ import {
 
 type Props = {
   /** Type of the input */
-  type: string,
+  type: string;
   /** Name of the input */
-  name: string,
+  name: string;
   /** Icon of the input */
-  icon: HTMLElement,
+  icon: HTMLElement;
   /** Value of the input */
-  value: string,
+  value: string;
   /** Label of the input */
-  label: string,
+  label: string;
   /** Mehtod called on change event */
-  handleChange: (event: SyntheticInputEvent<HTMLInputElement>) => void,
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   /** Object containing field errors */
-  error: ErrorObjectType,
+  error?: ErrorObjectType;
   /** Is input required or optional */
-  required: boolean,
+  required: boolean;
 };
 
 export const UntypedInput: React.FC<Props> = ({
@@ -36,7 +35,7 @@ export const UntypedInput: React.FC<Props> = ({
   value,
   label,
   handleChange,
-  error = emptyError,
+  error,
   required = false,
 }) => {
   const inputRef = useRef(null);

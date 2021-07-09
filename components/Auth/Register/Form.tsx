@@ -24,20 +24,20 @@ import {
 } from '@make.org/utils/constants/icons';
 import { useAppContext } from '@make.org/store';
 import { throttle } from '@make.org/utils/helpers/throttle';
-import { FormErrors } from '@make.org/ui/elements/Form/Errors';
 import { CustomPatternInput } from '@make.org/ui/elements/Form/CustomPatternInput';
 import { getGTUPageLink } from '@make.org/utils/helpers/url';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import * as postCodeValidator from '@make.org/utils/validator/postCode';
+import { FormErrors } from '../../Form/Errors';
 import { TermsOfUseLinkStyle, NewWindowIconStyle } from '../style';
 
 type Props = {
-  user: RegisterFormDataType,
-  errors: ErrorObjectType[],
-  handleChange: (event: SyntheticInputEvent<HTMLInputElement>) => any,
-  handleLegalField: (fieldName: string, value: boolean) => any,
-  handleSubmit: (event: SyntheticInputEvent<HTMLInputElement>) => any,
-  disableSubmit: boolean,
+  user: RegisterFormDataType;
+  errors: ErrorObjectType[];
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleLegalField: (fieldName: string, value: boolean) => void;
+  handleSubmit: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  disableSubmit: boolean;
 };
 /**
  * Renders Register Form

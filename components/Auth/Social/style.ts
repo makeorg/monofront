@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { color } from 'athena-design-tokens';
-import { SocialNetworksColors } from 'Client/app/assets/vars/Colors';
-import { SvgMailPlain } from 'Client/ui/Svg/elements';
-import { CenterRowStyle } from 'Client/ui/Elements/FlexElements';
-import { RedButtonStyle } from 'Client/ui/Elements/Buttons/style';
+import { SocialNetworksColors } from '@make.org/assets/vars/Colors';
+import { SvgMailPlain } from '@make.org/ui/Svg/elements';
+import { CenterRowStyle } from '@make.org/ui/elements/FlexElements';
+import { RedButtonStyle } from '@make.org/ui/elements/Buttons/style';
 
 export const AuthenticationButtonWrapperStyle = styled(CenterRowStyle)`
   width: 100%;

@@ -1,4 +1,4 @@
-import { ApiService } from 'Shared/api/ApiService';
+import { ApiService } from './ApiService';
 import {
   ProposalApiService,
   PATH_PROPOSALS,

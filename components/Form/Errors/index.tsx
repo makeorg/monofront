@@ -1,12 +1,12 @@
 import React, { useRef, useLayoutEffect } from 'react';
 import { ErrorObjectType } from '@make.org/types';
 import { i18n } from '@make.org/utils/i18n';
-import { UnstyledListStyle } from '../../ListElements';
+import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import {
   FormErrorsContainerStyle,
   FormErrorsIntroStyle,
   FormErrorsListItemStyle,
-} from '../Styled/Errors';
+} from '@make.org/ui/elements/Form/Styled/Errors';
 
 type Props = {
   errors: ErrorObjectType[];

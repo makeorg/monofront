@@ -86,7 +86,7 @@ export const ExtraDataForm: React.FC<Props> = ({
     return accumulator;
   }, [location.search]);
 
-  const handleSubmit = (value) => async (event: React.SyntheticEvent<HTMLInputElement>) => {
+  const handleSubmit = (value) => async (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     setIsSubmitDisabled(true);
     setIsSkipDisabled(true);

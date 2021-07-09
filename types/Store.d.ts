@@ -63,7 +63,8 @@ export type StateAuthentication = {
     readonly isLoggedIn: boolean
     readonly errors: ErrorObjectType[]
     readonly user?: {
-    userId: string
+      userId: string
+      displayName: string
   }
 };
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import { UnknownObjectType } from './Commons';
 
 export type ApiServiceHeadersType = {
@@ -10,7 +11,7 @@ export type ApiServiceHeadersType = {
 export type ErrorObjectType = {
   field: string
   key: string
-  message: string
+  message: string | React.ReactNode
 };
 
 export type ErrorResponse = {

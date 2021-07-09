@@ -19,7 +19,7 @@ const colors = [];
 for (const [colorName, value] of Object.entries(ColorGroupName)) {
   colors.push({ colorName, value });
 }
-export const Colors = () => (
+export const Colors: React.FC = () => (
   <>
     <h1>Colors</h1>
     <table>
@@ -49,8 +49,8 @@ export const Colors = () => (
           <th scope="col">value</th>
         </tr>
       </thead>
-      {colors.map(c =(c) (
-   =    <Fragment key={c.colorName}>
+      {colors.map((c) => (
+        <Fragment key={c.colorName}>
           <tbody>
             <tr>
               <th scope="row">{c.colorName}</th>

@@ -41,7 +41,7 @@ import { useAppContext } from '../../../store';
 
 type Props = {
   proposalContent: string;
-  handleValueChange: (event: React.SyntheticEvent<HTMLTextAreaElement>) => void;
+  handleValueChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   setProposalContent: (arg: string) => void;
   handleFieldFocus: () => void;
   handleCancel: () => void;

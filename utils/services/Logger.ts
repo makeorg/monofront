@@ -95,25 +95,25 @@ class LoggerSingleton {
       // eslint-disable-next-line no-console
       console.log(level, data);
     }
-    if (!onClientSide) {
-      // eslint-disable-next-line import/no-cycle
-      const { logError, logInfo, logWarning } = await import(
-        'Server/ssr/helpers/ssr.helper'
-      );
+    // if (!onClientSide) {
+    //   // eslint-disable-next-line import/no-cycle
+    //   const { logError, logInfo, logWarning } = await import(
+    //     'Server/ssr/helpers/ssr.helper'
+    //   );
 
-      switch (level) {
-        case LOG_INFO:
-          logInfo(data);
-          break;
-        case LOG_WARNING:
-          logWarning(data);
-          break;
-        default:
-          logError(data);
-      }
+    //   switch (level) {
+    //     case LOG_INFO:
+    //       logInfo(data);
+    //       break;
+    //     case LOG_WARNING:
+    //       logWarning(data);
+    //       break;
+    //     default:
+    //       logError(data);
+    //   }
 
-      return () => undefined;
-    }
+    //   return () => undefined;
+    // }
 
     return axios({
       method: 'POST',

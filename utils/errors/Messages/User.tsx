@@ -4,8 +4,8 @@ import { i18n } from '@make.org/utils/i18n';
 import {
   MessageWithDynamicLabel,
   LoginErrorMessage,
-} from '@make.org/ui/elements/Form/Errors/Message';
-import { ErrorMessageForgotPassword } from '@make.org/ui/elements/Form/Errors/Message/Password';
+} from '@make.org/components/Form/Errors/Message';
+import { ErrorMessageForgotPassword } from '@make.org/components/Form/Errors/Message/Password';
 
 export const loginErrors: ErrorObjectType[] = [
   {

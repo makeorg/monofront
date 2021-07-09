@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import { ErrorObjectType } from '@make.org/types';
 import { useIsFieldValid } from '@make.org/utils/hooks/useFieldValidation';
 import { throttle } from '@make.org/utils/helpers/throttle';
-import { emptyError } from '../Errors/Message';
 import { BasicInputStyle } from '../Styled/Input';
 import { CenterInputIconStyle } from '../Styled/Icons';
 import {
@@ -13,23 +12,23 @@ import {
 
 type Props = {
   /** Name of the input */
-  name: string,
+  name: string;
   /** Icon of the input */
-  icon: HTMLElement,
+  icon: HTMLElement;
   /** Label of the input */
-  label: string,
+  label: string;
   /** Mehtod called on change event */
-  handleChange: (event: React.SyntheticInputEvent<HTMLInputElement>) => void,
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   /** Value of the input */
-  value: number,
+  value: number;
   /** Object containing field errors */
-  error: ErrorObjectType,
+  error?: ErrorObjectType;
   /** Is input required or optional */
-  required: boolean,
+  required: boolean;
   /** min value */
-  min: number,
+  min: number;
   /** max value */
-  max: number,
+  max: number;
 };
 
 export const NumberInput: React.FC<Props> = ({
@@ -38,7 +37,7 @@ export const NumberInput: React.FC<Props> = ({
   value,
   label,
   handleChange,
-  error = emptyError,
+  error,
   required = false,
   min = 0,
   max = 100000,

@@ -1,5 +1,8 @@
 import React from 'react';
-import { getTotalVotesCount, getVotesPercent } from '@make.org/utils/helpers/voteResult';
+import {
+  getTotalVotesCount,
+  getVotesPercent,
+} from '@make.org/utils/helpers/voteResult';
 import { VoteType } from '@make.org/types';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { voteStaticParams } from '@make.org/utils/constants/vote';
@@ -18,19 +21,19 @@ import { VoteButtonWrapperStyle } from '../style';
 
 type Props = {
   /** Proposal's Id */
-  proposalId: string,
+  proposalId: string;
   /** Array of votes */
-  votes: VoteType[],
+  votes: VoteType[];
   /** Voted key property */
-  votedKey: string,
+  votedKey: string;
   /** Method called when vote button is clicked */
-  handleUnvote: () => void | Promise<void>,
+  handleUnvote: () => void | Promise<void>;
   /** When waiting response from API */
-  pending: boolean,
+  pending: boolean;
   /** Disable click on unvote button */
-  disableClick: boolean,
+  disableClick?: boolean;
   /** Boolean to disable tooltip on button hover event */
-  withTooltip: boolean,
+  withTooltip?: boolean;
 };
 
 /**

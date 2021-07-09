@@ -5,7 +5,7 @@ import {
   trackFirstVote,
   trackUnvote,
 } from '@make.org/utils/services/Tracking';
-import { VoteType, ProposalType, StateRoot } from '@make.org/types';
+import { VoteType, ProposalType } from '@make.org/types';
 import {
   getVoteKey,
   getSameKey,
@@ -60,7 +60,7 @@ export const Vote: React.FC<Props> = ({
   index = 0,
   isSequence,
 }) => {
-  const { dispatch } = useAppContext();
+  const { dispatch, state } = useAppContext();
   const { id: proposalId } = proposal;
   const contextType = useContext(TopComponentContext);
   const [currentVotes, setCurrentVotes] = useState(votes);
@@ -71,9 +71,7 @@ export const Vote: React.FC<Props> = ({
   const [pending, setPending] = useState(false);
   const [animateVoteKey, setAnimatedVoteKey] = useState('');
   const [pendingVoteKey, setPendingVoteKey] = useState('');
-  const { votedProposalIds } = useSelector(
-    (state: StateRoot) => state.sequence
-  );
+  const { votedProposalIds } = state.sequence;
   const isFirstSequenceVote = contextType === TopComponentContextValue.getSequenceProposal()
     && (votedProposalIds[proposal.question.slug] || []).length === 0;
 
@@ -109,7 +107,6 @@ export const Vote: React.FC<Props> = ({
     setCurrentVotes(newVotes);
     setUserVote(null);
     dispatch(actionUnvote(proposal, newVotes, contextType));
-    await onUnvote();
     await trackUnvote(proposalId, voteKey, index, contextType);
     stopPending();
   };
@@ -133,7 +130,6 @@ export const Vote: React.FC<Props> = ({
     setCurrentVotes(updatedVotes);
     setUserVote(updatedVotes.find((newVote) => newVote.hasVoted === true));
     dispatch(actionVote(proposal, updatedVotes, contextType));
-    await onVote();
     await trackVote(proposalId, voteKey, index, contextType);
     if (isFirstSequenceVote) {
       trackFirstVote(proposalId, voteKey, index);

@@ -6,8 +6,8 @@ let instance = i18next;
 export const i18n = {
   t: instance.t,
   getLanguage: (): string => instance.language,
-  init: (options: InitOptions, callback?: Callback): Promise<TFunction> => instance.init(options, callback),
-  changeLanguage: (lng: string, callback?: Callback): Promise<TFunction> => instance.changeLanguage(lng, callback),
+  init: (options: InitOptions, callback?: Callback): Promise<any> => instance.init(options, callback),
+  changeLanguage: (lng: string, callback?: Callback): Promise<any> => instance.changeLanguage(lng, callback),
   cloneInstance: (options?: InitOptions, callback?: Callback): void => {
     instance = i18next.cloneInstance(options, callback);
   },

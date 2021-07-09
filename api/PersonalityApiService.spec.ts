@@ -1,4 +1,4 @@
-import { ApiService } from 'Shared/api/ApiService';
+import { ApiService } from './ApiService';
 import {
   PersonalityApiService,
   PERSONALITY_PATH,

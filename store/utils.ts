@@ -9,7 +9,15 @@ import { user_reducer } from './reducers/user';
 import { initialState } from './initialState';
 import { proposal_reducer } from './reducers/proposal';
 
-export const AppContext = createContext({});
+export type GlobalContent = {
+  state: StateRoot
+  dispatch: Dispatch
+}
+
+export const AppContext = createContext<GlobalContent>({
+  state: initialState,
+  dispatch: () => undefined
+});
 
 export const combineReducers = (
   slices: Reducer
