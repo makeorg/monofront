@@ -11,7 +11,7 @@ import { selectCurrentQuestion } from 'Shared/store/selectors/questions.selector
 import { clearNotificationBanner } from 'Shared/store/actions/notifications';
 
 type Props = {
-  close: () => {},
+  close: () => undefined,
 };
 
 export const VoteOnlyMessage = ({ close }: Props) => {

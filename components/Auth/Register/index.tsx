@@ -96,7 +96,7 @@ export const Register: React.FC = () => {
     const success = () => {
       dispatch(getUser(true));
     };
-    const handleErrors = () => {};
+    const handleErrors = () => undefined;
     const unexpectedError = () => {
       dispatch(modalClose());
       // @toDo: notify user

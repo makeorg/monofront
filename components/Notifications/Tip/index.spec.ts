@@ -35,7 +35,7 @@ describe('TagTooltip', () => {
       },
     })
   );
-  jest.spyOn(redux, 'useDispatch').mockReturnValue(() => {});
+  jest.spyOn(redux, 'useDispatch').mockReturnValue(() => undefined);
 
   it('must match the snapshot with default Props', () => {
     const component = renderer.create(<Tip />).toJSON();

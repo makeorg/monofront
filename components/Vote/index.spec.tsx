@@ -11,7 +11,7 @@ describe.skip('VoteContainer', () => {
   const votes = [];
   const index = 1;
   const currentIndex = 1;
-  const goToNextCard = () => {};
+  const goToNextCard = () => undefined;
 
   beforeEach(() => {
     wrapper = shallow(
