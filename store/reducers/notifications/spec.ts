@@ -1,10 +1,9 @@
-/* @flow */
 import {
   LOGIN_SUCCESS_MESSAGE,
   NOTIFICATION_LEVEL_SUCCESS,
   NOTIFICATION_LEVEL_INFORMATION,
   FIRST_VOTE_TIP_MESSAGE,
-} from 'Shared/constants/notifications';
+} from '@make.org/utils/constants/notifications';
 import { notifications } from './index';
 
 describe('Notification reducer', () => {

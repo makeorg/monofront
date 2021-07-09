@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-export const SvgAngleArrowRight = (props: any) => (
+export const SvgAngleArrowRight: React.FC<React.HTMLAttributes> = (props) => (
   <svg
     width={21}
     height={21}

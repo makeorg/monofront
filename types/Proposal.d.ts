@@ -35,7 +35,7 @@ export type ProposalType = {
   votes: VoteType[]
   context: ContextType
   trending: string
-  labels: any[]
+  labels: any[] // TO DELETE ?
   author: AuthorType
   organisations: OrganisationSoftType[]
   themeId: string

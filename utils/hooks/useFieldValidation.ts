@@ -1,5 +1,5 @@
 import { ElementRef as TypeElementRef, useEffect, useState } from 'react';
-import { BasicInputStyle as TypeBasicInput } from 'Client/ui/Elements/Form/Styled/Input';
+import { BasicInputStyle as TypeBasicInput } from '@make.org/ui/elements/Form/Styled/Input';
 import { ErrorObjectType } from '@make.org/types';
 import { i18n } from '@make.org/utils/i18n';
 
@@ -21,14 +21,10 @@ export const useIsFieldValid: React.FC = (
   if (ref.current) {
     inputField = ref.current;
     isRefEmpty = inputField.value.length === 0;
-    filled =      e =
-      (inputField.value !== undefined || inputField.val
-      &&  &&
-      inputField.name.toLowerCase() === 'postalcode';
-    fil =      e =
-      (inputField.value !== undefined || inputField.val
-      &&  &&
-      inputField.name.toLowerCase() === 'website';
+    filledPostalCode = (inputField.value !== undefined || inputField.value !== '')
+      && inputField.name.toLowerCase() === 'postalcode';
+    filledWebsite = (inputField.value !== undefined || inputField.value !== '')
+      && inputField.name.toLowerCase() === 'website';
   }
 
   useEffect(() => {
@@ -64,7 +60,7 @@ export const useIsFieldValid: React.FC = (
     }
 
     return setFieldValidation(validationStatus);
-  });
+  }, [isRefEmpty, filledPostalCode, filledWebsite, isInitialErrorEmpty, inputField]);
 
   return isFieldValid;
 };

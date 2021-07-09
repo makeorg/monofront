@@ -1,10 +1,8 @@
-// @flow
+import { PersonalityApiService } from '@make.org/api/PersonalityApiService';
+import { PersonalityService } from '@make.org/utils/services/Personality';
 
-import { PersonalityApiService } from 'Shared/api/PersonalityApiService';
-import { PersonalityService } from 'Shared/services/Personality';
-
-jest.mock('Shared/api/PersonalityApiService');
-jest.mock('Shared/services/Logger');
+jest.mock('@make.org/api/PersonalityApiService');
+jest.mock('@make.org/utils/services/Logger');
 
 describe('PersonalityApiService Service', () => {
   describe('getPersonalityId function', () => {

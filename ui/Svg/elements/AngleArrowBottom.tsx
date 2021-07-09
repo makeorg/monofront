@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-export const SvgAngleArrowBottom = (props: any) => (
+export const SvgAngleArrowBottom: React.FC<React.HTMLAttributes> = (props) => (
   <svg width={21} height={21} viewBox="0 0 21 21" {...props}>
     <path
       className="tofill"

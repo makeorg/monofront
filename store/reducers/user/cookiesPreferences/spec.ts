@@ -1,10 +1,8 @@
-/* @flow */
-
 import {
   acceptAllCookiesPreferences,
   rejectAllCookiesPreferences,
   setCookiesPreferencesInApp,
-} from 'Shared/store/actions/user/cookiesPreferences';
+} from '../../../actions/user/cookiesPreferences';
 import { cookiesPreferences } from './index';
 
 describe('Cookies preferences reducer', () => {

@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-export const SvgEmptyAvatar = (props: any) => (
+export const SvgEmptyAvatar: React.FC<React.HTMLAttributes> = (props) => (
   <svg width={30} height={30} viewBox="0 0 30 30" {...props}>
     <defs>
       <circle cx={15} cy={15} r={15} />

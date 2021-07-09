@@ -137,7 +137,7 @@ export const buildCards = (
  * @param  {string} sequenceKind
  * @return {boolean}
  */
-export const isStandardSequence = (sequenceKind: string) => sequenceKind === KIND_STANDARD;
+export const isStandardSequence = (sequenceKind: string): boolean => sequenceKind === KIND_STANDARD;
 
 /**
  * Render title depending on kind

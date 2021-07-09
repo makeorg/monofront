@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tooltip } from '@make.org/ui/Tooltip';
+import { Tooltip } from '@make.org/ui/components/Tooltip';
 import { LoadingDots } from '@make.org/ui/elements/Loading/Dots';
 import { i18n } from '@make.org/utils/i18n';
 import {

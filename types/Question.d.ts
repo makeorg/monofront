@@ -193,6 +193,13 @@ export type QuestionType = {
   topProposalCount: number
 };
 
+export type CountsByQuestionType = {
+  [questionId: string]: {
+    proposalsCount: number
+    votesCount: number
+  }
+}
+
 export type QuestionPartnerType = {
   organisationId: string
   organisationName: string
@@ -205,7 +212,7 @@ export type QuestionPartnerType = {
   language: string
   country: string
   website?: string
-  countsByQuestion: any
+  countsByQuestion: CountsByQuestionType
 };
 
 export type ResultsLinkType = {

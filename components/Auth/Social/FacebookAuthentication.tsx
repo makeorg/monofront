@@ -1,4 +1,3 @@
-// @flow
 import React, { useState, useEffect } from 'react';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 import { FACEBOOK_PROVIDER_ENUM } from '@make.org/api/UserApiService';

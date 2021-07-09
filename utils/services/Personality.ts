@@ -1,14 +1,13 @@
-// @flow
-import { type UserType } from 'Shared/types/user';
 import {
-  type PersonalityCommentsType,
-  type PersonalityOpinionType,
-  type PersonalityProfileType,
-} from 'Shared/types/personality';
-import { PersonalityApiService } from 'Shared/api/PersonalityApiService';
-import { getErrorMessages } from 'Shared/helpers/form';
-import { updatePersonalityErrors } from 'Shared/errors/Messages/Personality';
-import { type ErrorObjectType } from 'Shared/types/api';
+  PersonalityCommentsType,
+  PersonalityOpinionType,
+  PersonalityProfileType,
+  ErrorObjectType,
+  UserType
+} from '@make.org/types';
+import { PersonalityApiService } from '@make.org/api/PersonalityApiService';
+import { getErrorMessages } from '@make.org/utils/helpers/form';
+import { updatePersonalityErrors } from '@make.org/utils/errors/Messages/Personality';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
 const getPersonalityById = async (userId: string): Promise<?UserType> => {
@@ -54,7 +53,8 @@ const postPersonnalityComments = async (
 const getPersonnalityOpinion = async (
   personalityId: string,
   questionId?: string
-): Promise<?(PersonalityOpinionType[])> => {
+): Promise<?(PersonalityOpinionType[]
+)> => {
   try {
     const response = await PersonalityApiService.getPersonnalityOpinion(
       personalityId,
@@ -68,7 +68,7 @@ const getPersonnalityOpinion = async (
   }
 };
 
-const getProfile = async (personalityId: string) => {
+const getProfile = async (personalityId: string): any => {
   try {
     const response = await PersonalityApiService.getProfile(personalityId);
 

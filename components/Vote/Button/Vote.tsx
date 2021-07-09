@@ -1,33 +1,32 @@
-// @flow
 import React from 'react';
-import { Tooltip } from 'Client/ui/Tooltip';
-import { LoadingDots } from 'Client/ui/Elements/Loading/Dots';
-import { i18n } from 'Shared/i18n';
+import { Tooltip } from '@make.org/ui/components/Tooltip';
+import { LoadingDots } from '@make.org/ui/elements/Loading/Dots';
+import { i18n } from '@make.org/utils/i18n';
 import {
   VoteIconStyle,
   VoteButtonStyle,
-} from 'Client/ui/Elements/Buttons/style';
+} from '@make.org/ui/elements/Buttons/style';
 
 type ButtonProps = {
   /** Vote key */
   voteKey: string;
   /** button className */
-  buttonClass?: string;
+  buttonClass: string;
   /** When button is in pending mode */
-  displayPending?: boolean;
+  displayPending: boolean;
   /** Method called when vote button is clicked */
-  handleVote?: () => void | Promise<void>;
+  handleVote: () => void | Promise<void>;
   /** Trigged animation on vote button after API response */
-  animateVote?: boolean;
+  animateVote: boolean;
   /** Boolean to disable click event on the vote button */
-  disableClick?: boolean;
+  disableClick: boolean;
 };
 
 const VoteButtonItem = ({
   voteKey,
   buttonClass = voteKey,
   displayPending = false,
-  handleVote = () => {},
+  handleVote = () => undefined,
   animateVote = false,
   disableClick = false,
 }: ButtonProps) => {

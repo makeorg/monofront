@@ -23,7 +23,6 @@ import {
   vote as actionVote,
   unvote as actionUnvote,
 } from '@make.org/store/actions/sequence';
-import { Tip } from '@make.org/ui/components/Notifications/Tip';
 import {
   clearNotificationTip,
   dismissNotification,
@@ -39,6 +38,7 @@ import {
   VoteButtonWrapperStyle,
 } from './style';
 import { VoteButton } from './Button/Vote';
+import { Tip } from '../Notifications/Tip';
 
 type Props = {
   /** Proposal's Id */
@@ -167,7 +167,7 @@ export const Vote: React.FC<Props> = ({
       };
     }
     return null;
-  } [dispatch, isFirstSequenceVote]);
+  }, [dispatch, isFirstSequenceVote]);
 
   if (userVote && votedKey) {
     return (

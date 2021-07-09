@@ -1,6 +1,4 @@
-/* @flow */
-
-import React, { useState } from 'react';
+import React, { ReactChild, ReactNode, useState } from 'react';
 import {
   TopTooltipStyle,
   BottomTooltipStyle,
@@ -11,9 +9,9 @@ import { TooltipComponent } from './TooltipComponent';
 
 type Props = {
   /** Content of the button */
-  content: any,
+  content: string | ReactNode,
   /** Content of the Tooltip */
-  children: React.ReactChild | string,
+  children: ReactChild | string,
   /** Styled Component Element */
   direction: string,
 };

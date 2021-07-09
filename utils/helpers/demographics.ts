@@ -14,7 +14,12 @@ export const setTitleByType = (type: string): string => {
   }
 };
 
-export const buildDemographicsByType = (type: string): any => {
+export const buildDemographicsByType = (
+  type: string
+): {
+    ui: string,
+    data: string | { label: string, value: string}[]
+  } => {
   switch (type) {
     case 'gender':
       return {

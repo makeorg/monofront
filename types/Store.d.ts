@@ -4,6 +4,7 @@ import { HomeViewType } from './View';
 import {
   QuestionType,
   QuestionResultsType,
+  CountsByQuestionType,
 } from './Question';
 import { ProposalType } from './Proposal';
 import { TagType } from './Tag';
@@ -134,7 +135,7 @@ readonly votesCount: number
 readonly language: string
 readonly country: string
 readonly website?: string
-readonly countsByQuestion: any
+readonly countsByQuestion: CountsByQuestionType
 };
 
 export type StateActors = {
@@ -187,6 +188,23 @@ export type ReducerAction = {
   user?: any;
   error?: any;
   provider?: any;
+};
+
+export type NotificationParamsType = {
+  email?: string
+}
+
+export type NotificationType = {
+  contentId?: string,
+  params?: NotificationParamsType,
+  level?: string,
+  toDimiss?: boolean,
+};
+
+export type NotificationsState = {
+  banner: NotificationType,
+  tip: NotificationType,
+  dismissed: string[],
 };
 
 export type Dispatch<A = any> = (value: A) => void

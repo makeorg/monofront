@@ -3,6 +3,7 @@ import { generatePath } from 'react-router';
 import queryString from 'query-string';
 import { ABOUT_MAKE_LINK } from '@make.org/utils/constants/url';
 import { env } from '@make.org/assets/env';
+import { UnknownObjectType } from '@make.org/types';
 import {
   ROUTE_PARTICIPATE,
   ROUTE_SEQUENCE,
@@ -72,7 +73,7 @@ export const getMultiLangStaticLink = (
 export const getSequenceLink = (
   country: string,
   questionSlug: string,
-  params?: any
+  params?: UnknownObjectType
 ): string => generatePath(ROUTE_SEQUENCE, {
   country,
   questionSlug,
@@ -92,7 +93,7 @@ export const getSequenceLink = (
 export const getSequencePopularLink = (
   country: string,
   questionSlug: string,
-  params?: any
+  params?: UnknownObjectType
 ): string => generatePath(ROUTE_SEQUENCE_POPULAR, {
   country,
   questionSlug,
@@ -111,7 +112,7 @@ export const getSequencePopularLink = (
 export const getSequenceControversialLink = (
   country: string,
   questionSlug: string,
-  params?: any
+  params?: UnknownObjectType
 ): string => generatePath(ROUTE_SEQUENCE_CONTROVERSIAL, {
   country,
   questionSlug,
@@ -133,7 +134,7 @@ export const getSequenceKeywordLink = (
   country: string,
   questionSlug: string,
   encodedKeyword: string,
-  params?: any
+  params?: UnknownObjectType
 ): string => generatePath(ROUTE_SEQUENCE_KEYWORD, {
   country,
   questionSlug,

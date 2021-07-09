@@ -3,44 +3,42 @@ import {
   ImageDataType,
   IMAGE_SOURCE_INTERNAL,
   IMAGE_SOURCE_EXTERNAL,
+  UnknownObjectType,
 } from '@make.org/types';
 import { useDevicePixelRatio } from '@make.org/utils/hooks/useMedia';
 
 const imageflowQueryParams = (
-  width?: number,
-  height?: number,
-  crop?: boolean
+  width: ?number,
+  height: ?number,
+  crop: ?boolean
 ) => `?w=${width || ''}&h=${height || ''}&mode=${crop ? 'crop' : 'pad'}`;
 
 type Props = {
   /** image source */
-  src: string | ImageDataType
+  src: string | ImageDataType,
   /** image className */
-  className?: string
+  className: string,
   /** image alternative */
-  alt?: string
+  alt: string,
   /** image src set */
-  srcSet?: string
+  srcSet: string,
   /** image width */
-  width?: number
+  width: number,
   /** Image height */
-  height?: number
+  height: number,
   /** image key */
-  key?: string | number
+  key: string | number,
   /** image loading */
-  loading?: string
+  loading: string,
   /** image loading */
-  crop?: boolean
+  crop: boolean,
 };
 
-const isInternalSou(url)Url url
-  && url &&
-  url.toLowerCase().includes(
-  && s') &&
-  url.toLowerCase().includes('make');
+const isInternalSourceUrl = (url: string): string => url
+  && url.toLowerCase().includes('assets')
+  && url.toLowerCase().includes('make');
 
-const isImageSupportedByIma(url)low url =>
-  /\.(jpg|jpeg|gif|png)($|\?)/.test(url.toLowerCase());
+const isImageSupportedByImageFlow = (url: string): string => /\.(jpg|jpeg|gif|png)($|\?)/.test(url.toLowerCase());
 
 const getImageFlowSrcs = (url, width, height, crop) => {
   if (!url) {
@@ -73,10 +71,9 @@ const toImageData = (src: string, alt: string) => ({
     : IMAGE_SOURCE_EXTERNAL,
 });
 
-const isIma(value)a = value => value && !!value.url;
+const isImageData = (value) => value && !!value.url;
 
-const defaultPlaceHo =  mage =
-  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAQAAAAHUWYVAAABKklEQVR42u3RMQEAAAjDMObfLQbABAdHKqFJT+lRAQJEQIAICBABASIgQAREQIAICBABASIgQAREQIAICBABASIgQAREQIAICBABASIgQAREQIAICBABASIgQAREQIAICBABASIgQAREQIAICBABASIgQAREQIAICBABASIgQAREQIAICBABASIgQAREQIAICBABASIgQAQEiAlABASIgAARECACAkRABASIgAARECACAkRABASIgAARECACAkRABASIgAARECACAkRABASIgAARECACAkRABASIgAARECACAkRABASIgAARECACAkRABASIgAARECACAkRABASIgAARECACAkRAgAABIiBABASIgAARECACIiBABASIgAARECACIiBABASILluohIUgz8ZhMAAAAABJRU5ErkJggg==';
+const defaultPlaceHolderImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAQAAAAHUWYVAAABKklEQVR42u3RMQEAAAjDMObfLQbABAdHKqFJT+lRAQJEQIAICBABASIgQAREQIAICBABASIgQAREQIAICBABASIgQAREQIAICBABASIgQAREQIAICBABASIgQAREQIAICBABASIgQAREQIAICBABASIgQAREQIAICBABASIgQAREQIAICBABASIgQAREQIAICBABASIgQAQEiAlABASIgAARECACAkRABASIgAARECACAkRABASIgAARECACAkRABASIgAARECACAkRABASIgAARECACAkRABASIgAARECACAkRABASIgAARECACAkRABASIgAARECACAkRABASIgAARECACAkRAgAABIiBABASIgAARECACIiBABASIgAARECACIiBABASILluohIUgz8ZhMAAAAABJRU5ErkJggg==';
 
 const selectImageToLoad = (ratio, src1x, src2x, src3x) => {
   if (ratio === 2 && src2x) {
@@ -89,7 +86,7 @@ const selectImageToLoad = (ratio, src1x, src2x, src3x) => {
   return src1x;
 };
 
-export const getSrcValues = (useImageFlow, url, width, height, crop) => {
+export const getSrcValues = (useImageFlow: boolean, url: string, width: number, height: number, crop: boolean): UnknownObjectType => {
   if (!useImageFlow) {
     return {
       src1x: url,
@@ -127,8 +124,7 @@ export const Image: React.FC<Props> = ({
   const ratio = useDevicePixelRatio();
 
   const { src1x, src2x, src3x, srcSetValue, placeHolder } = useMemo(
- =>
-      getSrcValues(source === IMAGE_SOURCE_INTERNAL, url, width, height, crop),
+    () => getSrcValues(source === IMAGE_SOURCE_INTERNAL, url, width, height, crop),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [url, width, height]
   );

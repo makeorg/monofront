@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-export const SvgClock = (props: any) => (
+export const SvgClock: React.FC<React.HTMLAttributes> = (props) => (
   <svg width={12} height={13} viewBox="0 0 12 13" {...props}>
     <path
       className="tofill"

@@ -55,7 +55,7 @@ export const setUserInfo = (
 
 export const logoutSuccess = (): ReducerAction => ({ type: actionTypes.LOGOUT });
 
-export const getUser = (afterRegistration?: boolean) => async (dispatch: Dispatch, getState: () => StateRoot) => {
+export const getUser = (afterRegistration?: boolean) => async (dispatch: Dispatch, getState: () => StateRoot): Promise<void> => {
   const { isOpen: isModalOpen } = getState().modal;
   const user = await UserService.current();
   if (!user) {
@@ -101,7 +101,7 @@ export const getUser = (afterRegistration?: boolean) => async (dispatch: Dispatc
   return null;
 };
 
-export const login = (email: string, password: string, approvePrivacyPolicy: boolean) => (dispatch: Dispatch) => {
+export const login = (email: string, password: string, approvePrivacyPolicy: boolean) => (dispatch: Dispatch): void => {
   dispatch(loginRequest());
   const success = (): void => {
     dispatch(loginSuccess());
@@ -135,7 +135,7 @@ export const login = (email: string, password: string, approvePrivacyPolicy: boo
   UserService.login(email, password, approvePrivacyPolicy, success, errors);
 };
 
-export const loginSocial = (provider: string, socialToken: string, approvePrivacyPolicy: boolean) => (dispatch: Dispatch) => {
+export const loginSocial = (provider: string, socialToken: string, approvePrivacyPolicy: boolean) => (dispatch: Dispatch): void => {
   dispatch(loginSocialRequest(provider));
   if (!socialToken) {
     dispatch(loginSocialFailure());
@@ -176,7 +176,7 @@ export const loginSocial = (provider: string, socialToken: string, approvePrivac
   });
 };
 
-export const logout = (afterAccountDeletion?: boolean) => (dispatch: Dispatch) => {
+export const logout = (afterAccountDeletion?: boolean) => (dispatch: Dispatch): void => {
   const success = () => {
     dispatch(clearSessionId());
     dispatch(logoutSuccess());

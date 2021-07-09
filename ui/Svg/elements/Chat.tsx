@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-export const SvgChat = (props: any) => (
+export const SvgChat: React.FC<React.HTMLAttributes> = (props) => (
   <svg width={23} height={22} viewBox="0 0 23 22" {...props}>
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g

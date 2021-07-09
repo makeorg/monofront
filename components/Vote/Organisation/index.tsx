@@ -1,12 +1,11 @@
-// @flow
 import React from 'react';
-import { type OrganisationSoftType } from 'Shared/types/organisation';
-import { i18n } from 'Shared/i18n';
-import { getOrganisationProfileLink } from 'Shared/helpers/url';
-import { RedLinkRouterStyle } from 'Client/ui/Elements/LinkElements';
-import { trackClickProposalProfile } from 'Shared/services/Tracking';
-import { formatOrganisationName } from 'Shared/helpers/stringFormatter';
-import { TYPE_ORGANISATION } from 'Shared/constants/user';
+import { OrganisationSoftType } from '@make.org/types';
+import { i18n } from '@make.org/utils/i18n';
+import { getOrganisationProfileLink } from '@make.org/utils/helpers/url';
+import { RedLinkRouterStyle } from '@make.org/ui/elements/LinkElements';
+import { trackClickProposalProfile } from '@make.org/utils/services/Tracking';
+import { formatOrganisationName } from '@make.org/utils/helpers/stringFormatter';
+import { TYPE_ORGANISATION } from '@make.org/utils/constants/user';
 import { OrganisationsVoteWrapperStyle } from './style';
 
 type Props = {
@@ -14,7 +13,7 @@ type Props = {
   country: string,
 };
 
-export const OrganisationsVote = (props: Props) => {
+export const OrganisationsVote: React.FC<Props> = (props) => {
   const { organisations, country } = props;
 
   if (!organisations.length) {
@@ -26,9 +25,9 @@ export const OrganisationsVote = (props: Props) => {
       {organisations.map((organisation, index) => (
         <React.Fragment key={organisation.organisationId}>
           {!!index && index + 1 < organisations.length && ', '}
-          {!!index &&
-            index + 1 === organisations.length &&
-            i18n.t('profile.organisation.and')}
+          {!!index
+            && index + 1 === organisations.length
+            && i18n.t('profile.organisation.and')}
           <RedLinkRouterStyle
             to={getOrganisationProfileLink(
               country,

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import { env } from '@make.org/assets/env';
-import { ApiServiceError } from 'Shared/api/ApiService/ApiServiceError';
+import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 
 const LOG_INFO = 'info';
 const LOG_WARNING = 'warn';
@@ -112,7 +112,7 @@ class LoggerSingleton {
           logError(data);
       }
 
-      return () => {};
+      return () => undefined;
     }
 
     return axios({
@@ -126,7 +126,7 @@ class LoggerSingleton {
         data: this.normalizeData(data),
       },
     })
-      .then(() => {})
+      .then(() => undefined)
       .catch((e) => {
         // eslint-disable-next-line no-console
         console.log('Fail to log error - ', e);

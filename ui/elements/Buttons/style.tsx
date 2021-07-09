@@ -73,6 +73,51 @@ export const BasicButtonStyle = styled.button.attrs((props) => ({
   }
 `;
 
+const RedStyle = `
+  color: ${color.white};
+  background-color: ${color.brandSecondary};
+  .tofill {
+    fill: ${color.white};
+  }
+  &:hover,
+  &:focus {
+    color: ${color.white};
+    text-decoration: none;
+  }
+`;
+
+const GreyStyle = `
+  color: ${color.greyDark};
+  background-color: ${color.greyLighter};
+  .tofill {
+    fill: ${color.brandSecondary};
+  }
+  &:hover,
+  &:focus {
+    color: ${color.greyDark};
+    text-decoration: none;
+  }
+`;
+
+export const RedButtonStyle = styled.button.attrs((props) => ({
+  type: 'button',
+  ...props,
+}))`
+  ${BasicButtonStyle};
+  ${RedStyle};
+  &:disabled {
+    ${GreyStyle};
+  }
+`;
+
+export const GreyButtonStyle = styled.button.attrs((props) => ({
+  type: 'button',
+  ...props,
+}))`
+  ${BasicButtonStyle};
+  ${GreyStyle};
+`;
+
 export const WhiteButtonStyle = styled(BasicButtonStyle)`
   color: ${color.black};
   background-color: ${color.white};
@@ -419,51 +464,6 @@ export const SaveFileIconStyle = styled((props) => (
 // eslint-disable-next-line react/jsx-props-no-spreading
 export const LinkIconStyle = styled((props) => <SvgLink {...props} />)`
   ${ButtonIconStyle}
-`;
-
-const RedStyle = `
-  color: ${color.white};
-  background-color: ${color.brandSecondary};
-  .tofill {
-    fill: ${color.white};
-  }
-  &:hover,
-  &:focus {
-    color: ${color.white};
-    text-decoration: none;
-  }
-`;
-
-const GreyStyle = `
-  color: ${color.greyDark};
-  background-color: ${color.greyLighter};
-  .tofill {
-    fill: ${color.brandSecondary};
-  }
-  &:hover,
-  &:focus {
-    color: ${color.greyDark};
-    text-decoration: none;
-  }
-`;
-
-export const RedButtonStyle = styled.button.attrs((props) => ({
-  type: 'button',
-  ...props,
-}))`
-  ${BasicButtonStyle};
-  ${RedStyle};
-  &:disabled {
-    ${GreyStyle};
-  }
-`;
-
-export const GreyButtonStyle = styled.button.attrs((props) => ({
-  type: 'button',
-  ...props,
-}))`
-  ${BasicButtonStyle};
-  ${GreyStyle};
 `;
 
 export const LinkAsRedButtonStyle = styled(Link)`

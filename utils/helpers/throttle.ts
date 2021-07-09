@@ -1,11 +1,11 @@
 const THROTTLE_DEFAULT_TIME = 500;
 // light version of lodash.throttle https://www.npmjs.com/package/lodash.throttle
 export const throttle = (
-  func,
+  func = () => undefined,
   preventDefault = true,
   time = THROTTLE_DEFAULT_TIME,
   context = typeof window !== 'undefined' ? window : {}
-): any => {
+): void => {
   let wait = false;
   let timer;
   return (...args) => {

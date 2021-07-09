@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-export const SvgIdea = (props: any) => (
+export const SvgIdea: React.FC<React.HTMLAttributes> = (props) => (
   <svg width={30} height={30} viewBox="0 0 30 30" {...props}>
     <defs>
       <path

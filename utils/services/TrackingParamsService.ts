@@ -18,11 +18,11 @@ class TrackingParamsServiceClass {
 
   _url?: string = undefined;
 
-  _all: any = {};
+  _all = {};
 
-  _listeners: any[] = [];
+  _listeners = [];
 
-  _instance: any = null;
+  _instance = null;
 
   constructor() {
     if (!this._instance) {
@@ -101,7 +101,7 @@ class TrackingParamsServiceClass {
     this._listeners.forEach((listener) => listener.onTrackingUpdate(this._all));
   }
 
-  addListener(object: any) {
+  addListener(object) {
     const requiredMethod = object.onTrackingUpdate;
     if (requiredMethod === undefined) {
       throw new Error('Object does not support the interface.');

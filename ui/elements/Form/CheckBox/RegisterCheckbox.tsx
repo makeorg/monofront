@@ -14,7 +14,7 @@ import {
 
 type Props = {
   /** Method called on change legal field */
-  handleLegalField: (fieldName: string, value: boolean) => any,
+  handleLegalField: (fieldName: string, value: boolean) => void,
   /** Is input required or optional */
   required: boolean,
 };

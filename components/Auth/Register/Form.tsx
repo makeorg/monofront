@@ -52,7 +52,7 @@ export const RegisterForm: React.FC<Props> = ({
 }) => {
   const { state } = useAppContext();
   const { country, language } = state.appConfig;
-  const {currentQuestion} = state;
+  const { currentQuestion } = state;
 
   const emailError = getFieldError('email', errors);
   const passwordError = getFieldError('password', errors);

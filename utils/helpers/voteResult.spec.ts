@@ -1,11 +1,9 @@
-/* @flow */
-
 import {
   VOTE_AGREE_KEY,
   VOTE_DISAGREE_KEY,
   VOTE_NEUTRAL_KEY,
-} from 'Shared/constants/vote';
-import { BadArgumentError } from 'Shared/errors';
+} from '../constants/vote';
+import { BadArgumentError } from '../errors';
 import * as VoteResultHelper from './voteResult';
 
 describe('VoteResult Helper', () => {

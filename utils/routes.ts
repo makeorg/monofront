@@ -90,7 +90,7 @@ export const matchRoute = (
 export const getRouteOrganisationProposals = (
   country: string,
   organisationSlug: string
-) => generatePath(ROUTE_ORGANISATION_PROPOSALS, {
+): string => generatePath(ROUTE_ORGANISATION_PROPOSALS, {
   country,
   organisationSlug,
 });
@@ -98,22 +98,22 @@ export const getRouteOrganisationProposals = (
 export const getRouteOrganisationVotes = (
   country: string,
   organisationSlug: string
-) => generatePath(ROUTE_ORGANISATION_VOTES, {
+): string => generatePath(ROUTE_ORGANISATION_VOTES, {
   country,
   organisationSlug,
 });
 
-export const getRouteProfile = (country: string) => generatePath(ROUTE_PROFILE, { country });
+export const getRouteProfile = (country: string): string => generatePath(ROUTE_PROFILE, { country });
 
-export const getRouteProfileEdit = (country: string) => generatePath(ROUTE_PROFILE_EDIT, { country });
+export const getRouteProfileEdit = (country: string): string => generatePath(ROUTE_PROFILE_EDIT, { country });
 
-export const getRouteProfileProposals = (country: string) => generatePath(ROUTE_PROFILE_PROPOSALS, { country });
+export const getRouteProfileProposals = (country: string): string => generatePath(ROUTE_PROFILE_PROPOSALS, { country });
 
-export const getRouteProfileFavourites = (country: string) => generatePath(ROUTE_PROFILE_FAVOURITES, { country });
+export const getRouteProfileFavourites = (country: string): string => generatePath(ROUTE_PROFILE_FAVOURITES, { country });
 
-export const getRouteProfileOpinions = (country: string) => generatePath(ROUTE_PROFILE_OPINIONS, { country });
+export const getRouteProfileOpinions = (country: string): string => generatePath(ROUTE_PROFILE_OPINIONS, { country });
 
-export const getRouteNoCookies = (country: string) => generatePath(ROUTE_STATIC_NOCOOKIES, { country });
+export const getRouteNoCookies = (country: string): string => generatePath(ROUTE_STATIC_NOCOOKIES, { country });
 
 /**
  * Get the search main results route
@@ -122,7 +122,7 @@ export const getRouteNoCookies = (country: string) => generatePath(ROUTE_STATIC_
  * @param  {string} query
  * @return {string}
  */
-export const getRouteSearch = (country: string, query: string) => `${generatePath(ROUTE_SEARCH, { country })}?query=${query}`;
+export const getRouteSearch = (country: string, query: string): string => `${generatePath(ROUTE_SEARCH, { country })}?query=${query}`;
 
 /**
  * Get the search proposals results route
@@ -131,7 +131,7 @@ export const getRouteSearch = (country: string, query: string) => `${generatePat
  * @param  {string} query
  * @return {string}
  */
-export const getRouteSearchProposals = (country: string, query: string) => `${generatePath(ROUTE_SEARCH_PROPOSALS, {
+export const getRouteSearchProposals = (country: string, query: string): string => `${generatePath(ROUTE_SEARCH_PROPOSALS, {
   country,
 })}?query=${query}`;
 
@@ -142,7 +142,7 @@ export const getRouteSearchProposals = (country: string, query: string) => `${ge
  * @param  {string} query
  * @return {string}
  */
-export const getRouteSearchConsultations = (country: string, query: string) => `${generatePath(ROUTE_SEARCH_CONSULTATIONS, {
+export const getRouteSearchConsultations = (country: string, query: string): string => `${generatePath(ROUTE_SEARCH_CONSULTATIONS, {
   country,
 })}?query=${query}`;
 
@@ -154,7 +154,7 @@ export const getRouteSearchConsultations = (country: string, query: string) => `
  * @return {string}
  */
 
-export const getRouteSearchOrganisations = (country: string, query: string) => `${generatePath(ROUTE_SEARCH_ORGANISATIONS, {
+export const getRouteSearchOrganisations = (country: string, query: string): string => `${generatePath(ROUTE_SEARCH_ORGANISATIONS, {
   country,
 })}?query=${query}`;
 
@@ -172,12 +172,12 @@ export const getPaginatedRoute = (
   country: string,
   pageId: number,
   questionSlug?: string
-) => generatePath(path, { country, pageId, questionSlug });
+): string => generatePath(path, { country, pageId, questionSlug });
 
 export const isParticipatePage = (
   pathname: string,
   includingPreview: ?boolean = true
-) => matchRoute(
+): boolean => matchRoute(
   pathname,
   ROUTE_PARTICIPATE,
   false,
@@ -189,22 +189,22 @@ export const isParticipatePage = (
 export const isExplorePage = (
   pathname: string,
   includingPreview: ?boolean = true
-) => matchRoute(pathname, ROUTE_EXPLORE, false, false, false, includingPreview);
+): boolean => matchRoute(pathname, ROUTE_EXPLORE, false, false, false, includingPreview);
 
 export const isResultsPage = (
   pathname: string,
   includingPreview: ?boolean = true
-) => matchRoute(pathname, ROUTE_RESULTS, false, false, false, includingPreview);
+): boolean => matchRoute(pathname, ROUTE_RESULTS, false, false, false, includingPreview);
 
 export const isTopIdeasPage = (
   pathname: string,
   includingPreview: ?boolean = true
-) => matchRoute(pathname, ROUTE_TOP_IDEAS, false, false, false, includingPreview);
+): boolean => matchRoute(pathname, ROUTE_TOP_IDEAS, false, false, false, includingPreview);
 
 export const isTopIdeaDetailsPage = (
   pathname: string,
   includingPreview: ?boolean = true
-) => matchRoute(
+): boolean => matchRoute(
   pathname,
   ROUTE_TOP_IDEA_DETAILS,
   false,
@@ -216,7 +216,7 @@ export const isTopIdeaDetailsPage = (
 export const isOrganisationProposals = (
   pathname: string,
   includingPreview: ?boolean = true
-) => matchRoute(
+): boolean => matchRoute(
   pathname,
   ROUTE_ORGANISATION_PROPOSALS,
   false,
@@ -228,7 +228,7 @@ export const isOrganisationProposals = (
 export const isOrganisationVotes = (
   pathname: string,
   includingPreview: ?boolean = true
-) => matchRoute(
+): boolean => matchRoute(
   pathname,
   ROUTE_ORGANISATION_VOTES,
   false,
@@ -239,7 +239,7 @@ export const isOrganisationVotes = (
 export const isProfileProposals = (
   pathname: string,
   includingPreview: ?boolean = true
-) => matchRoute(
+): boolean => matchRoute(
   pathname,
   ROUTE_PROFILE_PROPOSALS,
   false,
@@ -251,7 +251,7 @@ export const isProfileProposals = (
 export const isProfileFavourites = (
   pathname: string,
   includingPreview: ?boolean = true
-) => matchRoute(
+): boolean => matchRoute(
   pathname,
   ROUTE_PROFILE_FAVOURITES,
   false,
@@ -263,7 +263,7 @@ export const isProfileFavourites = (
 export const isBrowseConsultationsPage = (
   pathname: string,
   includingPreview: ?boolean = true
-) => matchRoute(
+): boolean => matchRoute(
   pathname,
   ROUTE_BROWSE_CONSULTATIONS,
   false,
@@ -275,7 +275,7 @@ export const isBrowseConsultationsPage = (
 export const isBrowseResultsPage = (
   pathname: string,
   includingPreview: ?boolean = true
-) => matchRoute(
+): boolean => matchRoute(
   pathname,
   ROUTE_BROWSE_RESULTS,
   false,
@@ -287,14 +287,14 @@ export const isBrowseResultsPage = (
 export const isHomepage = (
   pathname: string,
   includingPreview: ?boolean = true
-) => matchRoute(pathname, '/', true, false, false, includingPreview);
+): boolean => matchRoute(pathname, '/', true, false, false, includingPreview);
 
 export const isHomepageWithLocale = (
   pathname: string,
   includingPreview: ?boolean = true
-) => matchRoute(pathname, ROUTE_COUNTRY, true, false, false, includingPreview);
+): boolean => matchRoute(pathname, ROUTE_COUNTRY, true, false, false, includingPreview);
 
 export const isSequencePage = (
   pathname: string,
   includingPreview: ?boolean = true
-) => matchRoute(pathname, ROUTE_SEQUENCE, false, false, false, includingPreview);
+): boolean => matchRoute(pathname, ROUTE_SEQUENCE, false, false, false, includingPreview);

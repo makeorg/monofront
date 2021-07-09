@@ -5,14 +5,10 @@ import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElemen
 import { ThemeProvider } from 'styled-components';
 import { pxToPercent } from '@make.org/utils/helpers/styled';
 import { trackClickPreviousCard } from '@make.org/utils/services/Tracking';
-
-
-// REDUX REST TO DO 
-import { type StateRoot } from 'Shared/store/types';
-import { type QuestionType } from 'Shared/types/question';
-import { useSelector, useDispatch } from 'react-redux';
-import { decrementSequenceIndex } from 'Shared/store/actions/sequence';
-import { selectCurrentQuestion } from 'Shared/store/selectors/questions.selector';
+import { QuestionType } from '@make.org/types';
+import { useAppContext } from '@make.org/store';
+import { decrementSequenceIndex } from '@make.org/store/actions/sequence';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import {
   ProgressPreviousButtonStyle,
   ProgressIconStyle,
@@ -21,14 +17,10 @@ import {
   ProgressBarStyle,
 } from './style';
 
-export const SequenceProgress = () => {
-  const dispatch = useDispatch();
-  const question: QuestionType = useSelector((state: StateRoot) =>
-    selectCurrentQuestion(state)
-  );
-  const { cards, currentIndex } = useSelector(
-    (state: StateRoot) => state.sequence
-  );
+export const SequenceProgress: React.FC = () => {
+  const { dispatch, state } = useAppContext();
+  const question: QuestionType = selectCurrentQuestion(state);
+  const { cards, currentIndex } = state.sequence;
   const index = currentIndex + 1;
   const total = cards.length;
 

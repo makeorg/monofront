@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-export const SvgMailPlain = (props: any) => (
+export const SvgMailPlain: React.FC<React.HTMLAttributes> = (props) => (
   <svg width={20} height={20} viewBox="0 0 20 20" {...props}>
     <path
       className="tofill"

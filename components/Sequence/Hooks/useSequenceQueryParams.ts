@@ -1,6 +1,10 @@
 import { useLocation } from 'react-router';
 
-export const useSequenceQueryParams = () => {
+export const useSequenceQueryParams = (): {
+  firstProposal: string,
+  introCardParam: string,
+  pushProposalParam: string
+} => {
   const { search } = useLocation;
   const params = new URLSearchParams(search);
   const firstProposal = params.get('firstProposal');

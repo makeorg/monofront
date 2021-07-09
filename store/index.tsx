@@ -10,7 +10,7 @@ import {
   useAllReducers,
 } from './utils';
 
-export const useAppContext = (): any => useContext(AppContext);
+export const useAppContext = (): React.Context => useContext(AppContext);
 
 const ContextState: React.FC = ({ children }) => {
   const { state, dispatch } = useAllReducers();

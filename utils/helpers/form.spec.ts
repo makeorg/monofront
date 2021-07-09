@@ -1,6 +1,5 @@
-// @flow
-import { type ErrorObjectType } from 'Shared/types/api';
-import { defaultApiError, emptyError } from 'Shared/errors/Messages';
+import { ErrorObjectType } from '@make.org/types';
+import { defaultApiError, emptyError } from '../errors/Messages';
 import {
   getFieldError,
   getErrorMessages,
@@ -35,9 +34,7 @@ describe('getFieldError', () => {
   });
 
   it('getFieldError with right key and filled errors', () => {
-    errors.map((error, index) => {
-      return expect(getFieldError(error.field, errors)).toEqual(errors[index]);
-    });
+    errors.map((error, index) => expect(getFieldError(error.field, errors)).toEqual(errors[index]));
   });
 });
 

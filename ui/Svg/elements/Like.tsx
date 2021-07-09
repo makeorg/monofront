@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-export const SvgLike = (props: any) => (
+export const SvgLike: React.FC<React.HTMLAttributes> = (props) => (
   <svg width={50} height={50} viewBox="0 0 50 50" {...props}>
     <path
       className="tofill"

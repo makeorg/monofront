@@ -11,7 +11,7 @@ import {
   KIND_STANDARD,
 } from '@make.org/utils/constants/sequence';
 import { CARD_TYPE_NO_PROPOSAL_CARD } from '@make.org/utils/constants/card';
-import { ProposalType, QuestionType, StateRoot } from '@make.org/types';
+import { ProposalType, QuestionType } from '@make.org/types';
 import { i18n } from '@make.org/utils/i18n';
 import { trackClickOperationPage } from '@make.org/utils/services/Tracking';
 import { SequenceService } from '@make.org/utils/services/Sequence';

@@ -1,11 +1,11 @@
 // @flow
 
-import { ProposalApiService } from 'Shared/api/ProposalApiService';
-import { ProposalService } from 'Shared/services/Proposal';
+import { ProposalApiService } from '@make.org/api/ProposalApiService';
+import { ProposalService } from '@make.org/utils/services/Proposal';
 
-jest.mock('Shared/api/ProposalApiService');
-jest.mock('Shared/services/Question');
-jest.mock('Shared/services/Logger');
+jest.mock('@make.org/api/ProposalApiService');
+jest.mock('@make.org/utils/services/Question');
+jest.mock('@make.org/utils/services/Logger');
 
 describe('Proposal Service', () => {
   afterEach(() => {

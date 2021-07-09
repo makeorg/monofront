@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-export const SvgTrending = (props: any) => (
+export const SvgTrending: React.FC<React.HTMLAttributes> = (props) => (
   <svg width={18} height={14} viewBox="0 0 18 14" {...props}>
     <path
       className="tofill"

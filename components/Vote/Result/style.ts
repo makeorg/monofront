@@ -42,8 +42,8 @@ export const VoteResultBarStyle = styled.button`
   width: 6px;
   min-height: 5px;
   margin: 0 2px;
-  h(props(props)props => getBarHeight(props.percent)};
-  background-(props(props)props => props.color};
+  height: ${(props) => getBarHeight(props.percent)};
+  background-color: ${(props) => props.color};
   border: none;
   padding: 0;
 `;

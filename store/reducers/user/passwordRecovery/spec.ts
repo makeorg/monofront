@@ -1,6 +1,4 @@
-/* @flow */
-
-import * as actionCreators from 'Shared/store/actions/user/passwordRecovery';
+import * as actionCreators from '../../../actions/user/passwordRecovery';
 import { passwordRecovery } from './index';
 
 describe('PasswordRecovery reducer', () => {

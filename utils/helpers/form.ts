@@ -1,5 +1,5 @@
 import { i18n } from '@make.org/utils/i18n';
-import { ErrorObjectType } from '@make.org/types';
+import { ErrorObjectType, UnknownObjectType } from '@make.org/types';
 import { defaultApiError } from '../errors/Messages';
 import { mapErrors } from '../services/ApiErrors';
 import { Logger } from '../services/Logger';
@@ -73,7 +73,7 @@ export const transformFieldValueToProfileValue = (
   initialValue: string | number
 ): string | number | null => setEmptyStringToNull(initialValue);
 
-export const transformProfileToFormData = (profile: any) => {
+export const transformProfileToFormData = (profile: UnknownObjectType): UnknownObjectType => {
   const formData = { ...profile };
 
   Object.keys(formData).forEach((key) => {

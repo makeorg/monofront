@@ -1,10 +1,10 @@
-import { StateRoot, TagType } from '@make.org/types';
+import { QuestionType, StateActors, StateRoot, TagType } from '@make.org/types';
 
 /**
  * Questions data selector
  * @param {*} state
  */
-export const selectQuestionData = (state: StateRoot, questionSlug?: string) => {
+export const selectQuestionData = (state: StateRoot, questionSlug?: string): QuestionType => {
   if (!questionSlug) {
     return null;
   }
@@ -16,7 +16,7 @@ export const selectQuestionData = (state: StateRoot, questionSlug?: string) => {
  * question selector
  * @param {*} state
  */
-export const selectQuestion = (state: StateRoot, questionSlug?: string) => {
+export const selectQuestion = (state: StateRoot, questionSlug?: string): QuestionType => {
   const data = selectQuestionData(state, questionSlug);
 
   return data && data.question;
@@ -26,7 +26,7 @@ export const selectQuestion = (state: StateRoot, questionSlug?: string) => {
  * Sequence question selector
  * @param {*} state
  */
-export const selectCurrentQuestion = (state: StateRoot) => {
+export const selectCurrentQuestion = (state: StateRoot): QuestionType => {
   const questionSlug = state.currentQuestion;
   return selectQuestion(state, questionSlug);
 };
@@ -34,7 +34,7 @@ export const selectCurrentQuestion = (state: StateRoot) => {
  *  question partners
  *  @param {*} state
  */
-export const selectQuestionPartners = (state: StateRoot, slug: string) => {
+export const selectQuestionPartners = (state: StateRoot, slug: string): StateActors => {
   if (!slug) {
     return null;
   }

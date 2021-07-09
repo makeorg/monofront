@@ -1,4 +1,5 @@
 import { useReducer, createContext } from 'react';
+import { Dispatch, Reducer, ReducerAction, StateRoot } from '@make.org/types';
 import { question_reducer } from './reducers/question';
 import { panel_reducer } from './reducers/panel';
 import { modal_reducer } from './reducers/modal';
@@ -10,7 +11,12 @@ import { proposal_reducer } from './reducers/proposal';
 
 export const AppContext = createContext({});
 
-export const combineReducers = (slices: any) => (state: any, action: any) => Object.keys(slices).reduce( // use for..in loop, if you prefer it
+export const combineReducers = (
+  slices: Reducer
+) => (
+  state: Partial<StateRoot>,
+  action: ReducerAction
+): Reducer => Object.keys(slices).reduce(
   (acc, prop) => ({
     ...acc,
     [prop]: slices[prop](acc[prop], action),
@@ -35,7 +41,7 @@ const rootReducer = combineReducers({
   // session: undefined,
 });
 
-export const useAllReducers = (): any => {
+export const useAllReducers = (): { state: StateRoot, dispatch: Dispatch } => {
   const [state, dispatch] = useReducer(rootReducer, initialState);
   return { state, dispatch };
 };
@@ -49,4 +55,4 @@ export const getCurrentTimeFormatted = (): string => {
   return `${hours}:${minutes}:${seconds}.${milliseconds}`;
 };
 
-export const deepEqual = (x: any, y: any): boolean => JSON.stringify(x) === JSON.stringify(y);
+export const deepEqual = (x: StateRoot, y: StateRoot): boolean => JSON.stringify(x) === JSON.stringify(y);

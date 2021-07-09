@@ -1,5 +1,5 @@
 import React from 'react';
-import { TooltipStyle } from '@make.org/ui/elements/TooltipElements';
+import { TooltipStyle } from '../../elements/TooltipElements';
 
 type Props = {
   /** Content of the button */
@@ -16,8 +16,8 @@ type Props = {
   displayTooltip: boolean,
 };
 
-export const TooltipComponent = (props: Props) => {
-  const { content, children, type, displayTooltip, showTooltip, hideToolti =       props;
+export const TooltipComponent: React.FC<Props> = (props) => {
+  const { content, children, type, displayTooltip, showTooltip, hideTooltip } = props;
 
   return (
     <>

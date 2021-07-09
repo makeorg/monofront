@@ -4,13 +4,11 @@ import {
   NOTIFICATION_LEVEL_INFORMATION,
   VOTE_ONLY_MESSAGE,
 } from '@make.org/utils/constants/notifications';
+import { displayNotificationBanner } from '@make.org/store/actions/notifications';
+import { useAppContext } from '@make.org/store';
 
-// REDUX REST TO DO
-import { useDispatch } from 'react-redux';
-import { displayNotificationBanner } from 'Shared/store/actions/notifications';
-
-export const useSequenceVoteOnlyNotification = (question: QuestionType) => {
-  const dispatch = useDispatch;
+export const useSequenceVoteOnlyNotification = (question: QuestionType): void => {
+  const { dispatch } = useAppContext();
   useEffect(() => {
     if (question && !question.canPropose) {
       dispatch(
