@@ -12,6 +12,7 @@ module.exports = {
         'types',
         'assets',
         'utils',
+        'store',
         'ui',
       ],
     ],
