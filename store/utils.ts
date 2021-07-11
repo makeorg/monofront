@@ -11,39 +11,46 @@ import { proposal_reducer } from './reducers/proposal';
 
 export const AppContext = createContext({
   state: initialState,
-  dispatch: (arg: any) => {
-    console.log(arg);
-  }
+  dispatch: (arg: ReducerAction) => {}, // eslint-disable-line
 });
 
+type SliceType = {
+  [key: string]: Reducer
+}
+
 export const combineReducers = (
-  slices: any
+  slices: SliceType
 ) => (
-  state: any,
-  action: any
-): any => Object.keys(slices).reduce(
-  (acc, prop) => ({
-    ...acc,
-    [prop]: slices[prop](acc[prop], action),
-  }),
-  state
+  state: StateRoot,
+  action: ReducerAction
+): any => Object.keys(slices).filter((s) => s !== undefined).reduce(
+  (flatReducer: SliceType, prop) => {
+    if (prop in slices && slices[prop] !== undefined) {
+      return {
+        ...flatReducer,
+        [prop]: slices[prop](flatReducer[prop], action),
+      };
+    }
+    return flatReducer;
+  },
+  {}
 );
 
 const rootReducer = combineReducers({
   question: question_reducer,
   proposals: proposals_reducer,
   sequence: sequence_reducer,
-  appConfig: undefined,
-  views: undefined,
+  // appConfig: undefined,
+  // views: undefined,
   proposal: proposal_reducer,
-  currentQuestion: undefined,
-  notifications: undefined,
+  // currentQuestion: undefined,
+  // notifications: undefined,
   user: user_reducer,
-  questions: undefined,
+  // questions: undefined,
   modal: modal_reducer,
-  partners: undefined,
+  // partners: undefined,
   panel: panel_reducer,
-  session: undefined,
+  // session: undefined,
 });
 
 export const useAllReducers = (): { state: StateRoot, dispatch: Dispatch } => {

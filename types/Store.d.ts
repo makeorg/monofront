@@ -209,4 +209,4 @@ export type NotificationsState = {
   dismissed: string[],
 };
 
-export type Dispatch<A = any> = (value: A) => void
+export type Dispatch = (value: ReducerAction) => void
