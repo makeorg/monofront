@@ -1,8 +1,9 @@
+import { AxiosPromise, AxiosRequestConfig, AxiosResponse } from 'axios';
 import { IApiServiceStrategy } from './index';
 
 export class ApiServiceMock implements IApiServiceStrategy {
   // eslint-disable-next-line class-methods-use-this
-  callApi(url: string, options: any = {}): Promise<any> {
+  callApi(url: string, options: AxiosRequestConfig = {}): AxiosPromise<AxiosResponse> {
     return Promise.resolve(url, options);
   }
 

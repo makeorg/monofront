@@ -1,3 +1,4 @@
+import { AxiosPromise, AxiosResponse } from 'axios';
 import { PROPOSALS_LISTING_LIMIT } from '@make.org/utils/constants/proposal';
 import { ApiService } from './ApiService';
 
@@ -7,7 +8,7 @@ export const ORGANISATION_VOTES_PATH = '/organisations/:organisationId/votes';
 export const ORGANISATION_PROFILE = '/organisations/:organisationId/profile';
 
 export class OrganisationApiService {
-  static getOrganisations(slug: string): Promise<any> {
+  static getOrganisations(slug: string): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(ORGANISATIONS_PATH, {
       method: 'GET',
       params: {
@@ -16,7 +17,7 @@ export class OrganisationApiService {
     });
   }
 
-  static search(country: string, query: string): Promise<any> {
+  static search(country: string, query: string): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(ORGANISATIONS_PATH, {
       method: 'GET',
       params: {
@@ -31,7 +32,7 @@ export class OrganisationApiService {
     seed?: number,
     limit: number = PROPOSALS_LISTING_LIMIT,
     skip = 0
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(
       ORGANISATION_PROPOSALS_PATH.replace(':organisationId', organisationId),
       {
@@ -41,7 +42,7 @@ export class OrganisationApiService {
     );
   }
 
-  static getProfile(organisationId: string): Promise<any> {
+  static getProfile(organisationId: string): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(
       ORGANISATION_PROFILE.replace(':organisationId', organisationId),
       {
@@ -57,7 +58,7 @@ export class OrganisationApiService {
     description: string,
     website: string,
     optInNewsletter: boolean
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(
       ORGANISATION_PROFILE.replace(':organisationId', organisationId),
       {
@@ -79,7 +80,7 @@ export class OrganisationApiService {
     seed?: number,
     limit: number = PROPOSALS_LISTING_LIMIT,
     skip = 0
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(
       ORGANISATION_VOTES_PATH.replace(':organisationId', organisationId),
       {

@@ -1,3 +1,4 @@
+import { AxiosPromise, AxiosResponse } from 'axios';
 import { ApiService } from './ApiService';
 
 export const DEMOGRAPHICS_TRACKING_PATH = '/tracking/demographics';
@@ -20,7 +21,7 @@ export class DemographicsTrackingApiService {
     name: TypeDemographicName,
     value: string,
     parameters: { [n: string]: string } = {}
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     const contentObj: TypeDemographicTrack = {
       demographic: name,
       value,
