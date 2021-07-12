@@ -1,3 +1,6 @@
+// any can't be typed for data line 16 & 40
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { v4 as uuidv4 } from 'uuid';
 
 export class ApiServiceError extends Error {
@@ -33,6 +36,7 @@ export class ApiServiceError extends Error {
   constructor(
     message: string,
     status?: number,
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     data?: any,
     url?: string,
     method?: string,

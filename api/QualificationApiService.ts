@@ -1,3 +1,4 @@
+import { AxiosPromise, AxiosResponse } from 'axios';
 import { ApiService } from './ApiService';
 
 export const PATH_QUALIFICATION = '/proposals/:proposalId/qualification';
@@ -9,7 +10,7 @@ export class QualificationApiService {
     proposalKey: string,
     voteKey: string,
     qualificationKey: string
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(
       PATH_QUALIFICATION.replace(':proposalId', proposalId),
       {
@@ -29,7 +30,7 @@ export class QualificationApiService {
     proposalKey: string,
     voteKey: string,
     qualificationKey: string
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(
       PATH_UNQUALIFICATION.replace(':proposalId', proposalId),
       {

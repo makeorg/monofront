@@ -1,4 +1,5 @@
 import { ApiServiceHeadersType } from '@make.org/types';
+import { AxiosPromise, AxiosResponse } from 'axios';
 import { ApiService } from './ApiService';
 
 export const PERSONALITY_PATH = '/personalities/:personalityId';
@@ -11,7 +12,7 @@ export class PersonalityApiService {
     personalityId: string,
     questionId?: string,
     headers?: ApiServiceHeadersType = {}
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(
       PERSONALITY_PATH.replace(':personalityId', personalityId),
       {
@@ -33,7 +34,7 @@ export class PersonalityApiService {
     vote: string,
     qualification: string,
     headers?: ApiServiceHeadersType = {}
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(
       PERSONALITY_COMMENTS_PATH.replace(':personalityId', personalityId),
       {
@@ -55,7 +56,7 @@ export class PersonalityApiService {
     personalityId: string,
     questionId?: string,
     headers?: ApiServiceHeadersType = {}
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(
       PERSONALITY_OPINION_PATH.replace(':personalityId', personalityId),
       {
@@ -68,7 +69,7 @@ export class PersonalityApiService {
     );
   }
 
-  static getProfile(personalityId: string): Promise<any> {
+  static getProfile(personalityId: string): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(
       PERSONALITY_PROFILE.replace(':personalityId', personalityId),
       {
@@ -86,7 +87,7 @@ export class PersonalityApiService {
     website: string,
     optInNewsletter: boolean,
     politicalParty: string
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(
       PERSONALITY_PROFILE.replace(':personalityId', personalityId),
       {

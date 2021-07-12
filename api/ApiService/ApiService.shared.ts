@@ -118,7 +118,7 @@ export const handleErrors = (
 };
 
 type OptionsType = {
-  headers?: any
+  headers?: Readonly<Record<string, string | boolean>>
   allowedHeaders?: string[]
   body?: string
   params?: string

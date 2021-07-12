@@ -1,4 +1,5 @@
 import { ApiServiceHeadersType } from '@make.org/types';
+import { AxiosPromise, AxiosResponse } from 'axios';
 import { ApiService } from './ApiService';
 
 export const PATH_PROPOSALS = '/proposals';
@@ -56,7 +57,7 @@ export const AVAILABLE_ALGORITHMS: TypeAvailableAlgorithms = {
 };
 
 export class ProposalApiService {
-  static propose(content: string, questionId: string): Promise<any> {
+  static propose(content: string, questionId: string): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(PATH_PROPOSALS, {
       method: 'POST',
       body: JSON.stringify({
@@ -71,7 +72,7 @@ export class ProposalApiService {
   static getProposal(
     proposalId: string,
     headers: ApiServiceHeadersType = {}
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(
       PATH_PROPOSAL_GET.replace(':proposalId', proposalId),
       {
@@ -85,7 +86,7 @@ export class ProposalApiService {
   static getPopularProposals(
     questionId: string,
     headers: ApiServiceHeadersType = {}
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(
       PATH_TOP_PROPOSALS.replace(':questionId', questionId),
       {
@@ -107,7 +108,7 @@ export class ProposalApiService {
     ideaIds?: string,
     order?: string,
     headers?: ApiServiceHeadersType
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     const params = {
       questionId,
       content,

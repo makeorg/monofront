@@ -1,5 +1,6 @@
 import { generatePath } from 'react-router';
 import { ApiServiceHeadersType } from '@make.org/types';
+import { AxiosPromise, AxiosResponse } from 'axios';
 import { ApiService } from './ApiService';
 
 const PATH_QUESTIONS_LIST = '/questions';
@@ -23,7 +24,7 @@ export class QuestionApiService {
     limit?: number,
     skip?: number,
     headers: ApiServiceHeadersType = {}
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(generatePath(PATH_QUESTIONS_LIST), {
       method: 'GET',
       headers,
@@ -43,7 +44,7 @@ export class QuestionApiService {
     sortAlgorithm?: string,
     limit?: number,
     skip?: number
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     const headers = {};
     return ApiService.callApi(
       generatePath(PATH_QUESTION_PARTNERS, { questionId }),
@@ -58,7 +59,7 @@ export class QuestionApiService {
   static getDetail(
     questionSlugOrId: string,
     headers: ApiServiceHeadersType = {}
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(
       PATH_QUESTION_DETAIL.replace(':questionSlugOrId', questionSlugOrId),
       {
@@ -73,7 +74,7 @@ export class QuestionApiService {
     limit?: number,
     skip?: number,
     headers: ApiServiceHeadersType = {}
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(
       generatePath(PATH_QUESTION_POPULAR_TAGS, { questionId }),
       { method: 'GET', headers, params: { limit, skip } }
@@ -86,7 +87,7 @@ export class QuestionApiService {
     limit?: number,
     skip?: number,
     headers: ApiServiceHeadersType = {}
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(
       generatePath(PATH_QUESTION_PERSONALITIES, { questionId }),
       { method: 'GET', headers, params: { personalityRole, limit, skip } }
@@ -98,7 +99,7 @@ export class QuestionApiService {
     includedProposalIds: string[] = [],
     sequenceKind: string,
     headers: ApiServiceHeadersType = {}
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     let startSequenceUrl = PATH_QUESTION_START_SEQUENCE.replace(
       ':sequenceKind',
       sequenceKind
@@ -121,7 +122,7 @@ export class QuestionApiService {
     includedProposalIds: string[] = [],
     keyword: string,
     headers: ApiServiceHeadersType = {}
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     let startSequenceUrl = PATH_QUESTION_START_SEQUENCE_KEYWORD.replace(
       ':questionId',
       questionId
@@ -146,7 +147,7 @@ export class QuestionApiService {
     sort = 'endDate',
     order = 'DESC',
     headers: ApiServiceHeadersType = {}
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(PATH_QUESTIONS_SEARCH, {
       method: 'GET',
       headers,
@@ -163,7 +164,7 @@ export class QuestionApiService {
   static getTopIdeas(
     questionId: string,
     headers: ApiServiceHeadersType = {}
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(
       PATH_QUESTION_TOP_IDEAS.replace(':questionId', questionId),
       {
@@ -177,7 +178,7 @@ export class QuestionApiService {
     questionId: string,
     topIdeaId: string,
     headers: ApiServiceHeadersType = {}
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(
       PATH_QUESTION_TOP_IDEA_DETAILS.replace(':questionId', questionId).replace(
         ':topIdeaId',
@@ -196,7 +197,7 @@ export class QuestionApiService {
     limit: number,
     seed?: number,
     headers: ApiServiceHeadersType = {}
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(
       PATH_QUESTION_FEATURED_PROPOSALS.replace(':questionId', questionId),
       {
@@ -215,7 +216,7 @@ export class QuestionApiService {
     questionId: string,
     limit: number,
     headers: ApiServiceHeadersType = {}
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(
       PATH_QUESTION_KEYWORDS.replace(':questionId', questionId),
       {

@@ -1,3 +1,4 @@
+import { AxiosPromise, AxiosResponse } from 'axios';
 import { ApiService } from './ApiService';
 
 export const PATH_VOTE = '/proposals/:proposalId/vote';
@@ -8,7 +9,7 @@ export class VoteApiService {
     proposalId: string,
     voteKey: string,
     proposalKey: string
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(PATH_VOTE.replace(':proposalId', proposalId), {
       method: 'POST',
       body: JSON.stringify({ voteKey, proposalKey }),
@@ -20,7 +21,7 @@ export class VoteApiService {
     proposalId: string,
     voteKey: string,
     proposalKey: string
-  ): Promise<any> {
+  ): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(PATH_UNVOTE.replace(':proposalId', proposalId), {
       method: 'POST',
       body: JSON.stringify({ voteKey, proposalKey }),
