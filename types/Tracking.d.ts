@@ -21,3 +21,31 @@ export type PerformanceTimingType = {
   unloadEventEnd: number
   unloadEventStart: number
 };
+
+export type TrackingConfigurationParamType = {
+  key: string,
+  description: string,
+  values?: string[],
+  optional?: boolean,
+};
+
+export type TrackingConfigurationType = {
+  key: string,
+  description: string,
+  parameters: TrackingConfigurationParamType[],
+};
+
+export type TrackingEventArgsType = {
+  eventName: string
+  parameters: TrackingConfigurationParamType[]
+}
+export type TrackingEventType = (args: TrackingEventArgsType) => { eventName: string, parameters: TrackingConfigurationParamType }
+export type TrackingEventsType = {
+  [f: string]: TrackingEventType
+}
+
+export type TrackingApiServiceParamsType = {
+  eventName: string
+  eventParameters: TrackingConfigurationParamType
+  eventType: string
+}

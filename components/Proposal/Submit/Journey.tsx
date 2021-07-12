@@ -36,9 +36,7 @@ export const ProposalJourney: React.FC = () => {
     }
   };
 
-  const handleValueChange = (
-    event: React.SyntheticEvent<HTMLTextAreaElement>
-  ) => {
+  const handleValueChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     if (proposalContent.length < baitText.length) {
       return setProposalContent(baitText);
     }

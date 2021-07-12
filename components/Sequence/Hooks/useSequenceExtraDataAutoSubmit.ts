@@ -5,10 +5,9 @@ import {
 } from '@make.org/utils/constants/card';
 import { DemographicsTrackingService } from '@make.org/utils/services/DemographicsTracking';
 import { Logger } from '@make.org/utils/services/Logger';
-
-// REDUX REST TO DO
-import { useSelector, useDispatch } from 'react-redux';
-import { addQuestionToDemographics } from 'Shared/store/actions/sequence';
+import { addQuestionToDemographics } from '@make.org/store/actions/sequence';
+import { ProposalCardStateType } from '@make.org/types';
+import { useAppContext } from '@make.org/store';
 
 const AFTER_NB_VOTES = 2;
 
@@ -19,13 +18,11 @@ const AFTER_NB_VOTES = 2;
  */
 export const useSequenceExtraDataAutoSubmit = (
   questionSlug: string,
-  cards,
+  cards: ProposalCardStateType[],
   currentIndex: number
 ): void => {
-  const dispatch = useDispatch();
-  const persistedDemographics = useSelector(
-    (state: StateRoot) => state.sequence.demographics
-  );
+  const { dispatch, state } = useAppContext();
+  const persistedDemographics = state.sequence.demographics;
 
   const triggeringIndexValue = useMemo(() => {
     // no cards

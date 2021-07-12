@@ -164,7 +164,7 @@ const checkLoginPrivacyPolicy = async (
   privacyPolicyDate: string,
   action?: () => void,
   success?: () => void,
-  failure?: (args?: any) => void,
+  failure?: (args?: ErrorObjectType[]) => void,
   unexpectedError?: () => void
 ): Promise<string | null> => {
   try {
@@ -252,7 +252,7 @@ const loginSocial = async (
   approvePrivacyPolicy?: boolean,
   success?: () => void,
   failure?: () => void,
-  unexpectedError?: () => void
+  // unexpectedError?: () => void
 ): Promise<UserAuthType> => {
   try {
     const response = await UserApiService.loginSocial(

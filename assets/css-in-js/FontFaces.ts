@@ -1,5 +1,3 @@
-
-
 import { createGlobalStyle } from 'styled-components';
 import TradeGothicBoldCondensed from '../fonts/TradeGothicBoldCondensed.woff';
 import TradeGothicBoldCondensed2 from '../fonts/TradeGothicBoldCondensed.woff2';

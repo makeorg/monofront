@@ -1,20 +1,19 @@
-/* @flow */
-import {
-  getBaitText,
-  PROPOSALS_LISTING_LIMIT,
-} from 'Shared/constants/proposal';
 import {
   AVAILABLE_ALGORITHMS,
   ProposalApiService,
-} from 'Shared/api/ProposalApiService';
-import { Logger } from 'Shared/services/Logger';
-import { ProposalService } from 'Shared/services/Proposal';
-import { ApiServiceError } from 'Shared/api/ApiService/ApiServiceError';
+} from '@make.org/api/ProposalApiService';
+import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
+import {
+  getBaitText,
+  PROPOSALS_LISTING_LIMIT,
+} from '../constants/proposal';
+import { Logger } from '../services/Logger';
+import { ProposalService } from '../services/Proposal';
 import * as ProposalHelper from './proposal';
 
-jest.mock('Shared/api/ProposalApiService');
-jest.mock('Shared/services/Logger');
-jest.mock('Shared/constants/proposal', () => ({
+jest.mock('@make.org/api/ProposalApiService');
+jest.mock('../services/Logger');
+jest.mock('../constants/proposal', () => ({
   getBaitText: () => 'il faut',
   MIN_PROPOSAL_LENGTH: 12,
   MAX_PROPOSAL_LENGTH: 140,

@@ -1,7 +1,7 @@
-import { QuestionApiService } from 'Shared/api/QuestionApiService';
+import { QuestionApiService } from '@make.org/api/QuestionApiService';
 import { SequenceService } from './Sequence';
 
-jest.mock('Shared/api/QuestionApiService');
+jest.mock('@make.org/api/QuestionApiService');
 
 describe('Question Service', () => {
   afterEach(() => {

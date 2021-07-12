@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-export const SvgTwitterLogo = (props: any) => (
+export const SvgTwitterLogo: React.FC<React.HTMLAttributes> = (props) => (
   <svg width={16} height={12} viewBox="0 0 16 12" {...props}>
     <path
       className="tofill"

@@ -8,8 +8,6 @@ import { i18n } from '@make.org/utils/i18n';
 import { useAppContext } from '@make.org/store';
 import { SequenceIntroParagraphStyle } from '../style';
 import { ExtraDataDescriptionStyle } from './style';
-
-// REST TO DO
 import { SubmittedDemographics } from './SubmittedStep';
 import { ExtraDataForm } from './Form';
 
@@ -26,8 +24,7 @@ export const ExtraDataCard: React.FC = () => {
   const persistedDemographics = state.sequence.demographics;
   const [type, setType] = useState(null);
   const [demographics, setDemographics] = useState(null);
-  const persistedDemographicsWithValue =
-    persistedDemographics?.type && persistedDemographics?.value;
+  const persistedDemographicsWithValue = persistedDemographics?.type && persistedDemographics?.value;
 
   // set a random type
   useEffect(() => {

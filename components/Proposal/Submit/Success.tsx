@@ -1,11 +1,10 @@
 import React from 'react';
 import { i18n } from '@make.org/utils/i18n';
-import { selectAuthentication } from 'Shared/store/selectors/user.selector';
-import { useSelector, useDispatch } from 'react-redux';
-import { type StateRoot } from 'Shared/store/types';
-import { RedButtonStyle } from 'Client/ui/Elements/Buttons/style';
-import { modalClose } from 'Shared/store/actions/modal';
-import { trackClickKeepVoting } from '@amke.org/utils/services/Tracking';
+import { useAppContext } from '@make.org/store';
+import { selectAuthentication } from '@make.org/store/selectors/user.selector';
+import { RedButtonStyle } from '@make.org/ui/elements/Buttons/style';
+import { modalClose } from '@make.org/store/actions/modal';
+import { trackClickKeepVoting } from '@make.org/utils/services/Tracking';
 import {
   ProposalSuccessWrapperStyle,
   ProposalSuccessTitleStyle,
@@ -13,11 +12,9 @@ import {
   ProposalSuccessIconStyle,
 } from './style';
 
-export const ProposalSuccess = () => {
-  const dispatch = useDispatch();
-  const { user } = useSelector((state: StateRoot) =>
-    selectAuthentication(state)
-  );
+export const ProposalSuccess: React.FC = () => {
+  const { dispatch, state } = useAppContext();
+  const { user } = selectAuthentication(state);
   const handleCloseButton = () => {
     dispatch(modalClose());
     trackClickKeepVoting();

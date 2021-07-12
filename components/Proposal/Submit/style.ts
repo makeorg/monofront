@@ -4,23 +4,23 @@ import {
   RedButtonStyle,
   GreyNoBackgroundButtonStyle,
   RedNoBackgroundButtonStyle,
-} from 'Client/ui/Elements/Buttons/V2/style';
+} from '@make.org/ui/elements/Buttons/style';
 import {
   SvgPencil,
   SvgExternalLinkPlain,
   SvgArrowLeft,
   SvgCheckedLightBulb,
-} from 'Client/ui/Svg/elements';
+} from '@make.org/ui/Svg/elements';
 import {
   SpaceBetweenColumnStyle,
   ColumnElementStyle,
   CenterColumnStyle,
-} from 'Client/ui/Elements/FlexElements';
-import { MakeFonts } from 'Client/app/assets/vars/Fonts';
+} from '@make.org/ui/elements/FlexElements';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import TextareaAutosize from 'react-autosize-textarea/lib';
-import { intToPx } from 'Shared/helpers/styled';
-import { Breakpoints } from 'Client/app/assets/vars/Breakpoints';
-import { ContainerWithPadding } from 'Client/app/Styled/MainElements';
+import { intToPx } from '@make.org/utils/helpers/styled';
+import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { ContainerWithPadding } from '@make.org/ui/elements/Styled/MainElements';
 
 export const PanelTriggerStyle = styled(RedButtonStyle)`
   position: fixed;

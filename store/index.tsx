@@ -2,7 +2,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import React, { useContext, useEffect, useState } from 'react';
-import { ReducerAction } from '@make.org/types';
+import { Dispatch, ReducerAction, StateRoot } from '@make.org/types';
 import {
   AppContext,
   deepEqual,
@@ -10,7 +10,7 @@ import {
   useAllReducers,
 } from './utils';
 
-export const useAppContext = (): any => useContext(AppContext);
+export const useAppContext = (): { state: StateRoot, dispatch: Dispatch } => useContext(AppContext);
 
 const ContextState: React.FC = ({ children }) => {
   const { state, dispatch } = useAllReducers();

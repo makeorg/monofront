@@ -1,13 +1,12 @@
 import React from 'react';
 import { i18n } from '@make.org/utils/i18n';
+import { setPanelContent } from '@make.org/store/actions/panel';
+import { useAppContext } from '@make.org/store';
 import { ProposalJourney } from './Journey';
 import { PanelTriggerStyle, TriggerIconStyle } from './style';
 
-import { useDispatch } from 'react-redux';
-import { setPanelContent } from 'Shared/store/reducers/panel/actions';
-
 export const ProposalSubmit: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppContext();
 
   return (
     <PanelTriggerStyle

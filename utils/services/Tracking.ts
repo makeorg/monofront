@@ -380,7 +380,7 @@ export const trackClickProposalProfile = (userType: string): void => {
 };
 
 /** Follow Us component */
-export const trackClickFollowUs = (event: React.SyntheticEvent<HTMLLinkElement>): void => {
+export const trackClickFollowUs = (event: React.ChangeEvent<HTMLLinkElement>): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_FOLLOW_US({
       'social-network': event.currentTarget.dataset.networkName,

@@ -1,5 +1,3 @@
-
-
 import { createGlobalStyle } from 'styled-components';
 import { color, typography } from 'athena-design-tokens';
 import { MakeFonts } from '../vars/Fonts';

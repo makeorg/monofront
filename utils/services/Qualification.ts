@@ -1,0 +1,56 @@
+import { QualificationApiService } from '@make.org/api/QualificationApiService';
+import { QualificationType } from '@make.org/types';
+import { defaultUnexpectedError } from './DefaultErrorHandler';
+
+const qualify = async (
+  proposalId: string,
+  proposalKey: string,
+  voteKey: string,
+  qualificationKey: string,
+  unexpectedError: () => void = () => undefined
+): Promise<QualificationType> => {
+  try {
+    const response = await QualificationApiService.qualify(
+      proposalId,
+      proposalKey,
+      voteKey,
+      qualificationKey
+    );
+
+    return response.data;
+  } catch (apiServiceError) {
+    defaultUnexpectedError(apiServiceError);
+    unexpectedError();
+
+    return null;
+  }
+};
+
+const unqualify = async (
+  proposalId: string,
+  proposalKey: string,
+  voteKey: string,
+  qualificationKey: string,
+  unexpectedError: () => void = () => undefined
+): Promise<QualificationType> => {
+  try {
+    const response = await QualificationApiService.unqualify(
+      proposalId,
+      proposalKey,
+      voteKey,
+      qualificationKey
+    );
+
+    return response.data;
+  } catch (apiServiceError) {
+    defaultUnexpectedError(apiServiceError);
+    unexpectedError();
+
+    return null;
+  }
+};
+
+export const QualificationService = {
+  qualify,
+  unqualify,
+};

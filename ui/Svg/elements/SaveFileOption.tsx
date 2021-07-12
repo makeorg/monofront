@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-export const SvgSaveFileOption = (props: any) => (
+export const SvgSaveFileOption: React.FC<React.HTMLAttributes> = (props) => (
   <svg width={16} height={16} viewBox="0 0 16 16" {...props}>
     <path
       className="tofill"

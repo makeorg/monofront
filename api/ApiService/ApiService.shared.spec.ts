@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
-import { Logger } from 'Shared/services/Logger';
-import { ApiServiceError } from 'Shared/api/ApiService/ApiServiceError';
-import { env } from 'Shared/env';
+import { Logger } from '@make.org/utils/services/Logger';
+import { env } from '@make.org/assets/env';
+import { ApiServiceError } from './ApiServiceError';
 import { ApiServiceShared, handleErrors } from './ApiService.shared';
 
 jest.mock('uuid');

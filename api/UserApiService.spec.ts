@@ -1,6 +1,6 @@
-import { ApiService } from 'Shared/api/ApiService';
-import { getDateOfBirthFromAge } from 'Shared/helpers/date';
-import { PROPOSALS_LISTING_LIMIT } from 'Shared/constants/proposal';
+import { getDateOfBirthFromAge } from '@make.org/utils/helpers/date';
+import { PROPOSALS_LISTING_LIMIT } from '@make.org/utils/constants/proposal';
+import { ApiService } from './ApiService';
 import {
   UserApiService,
   PATH_USER,

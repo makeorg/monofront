@@ -1,4 +1,3 @@
-// @flow
 import { useEffect } from 'react';
 import { trackDisplaySequence } from '@make.org/utils/services/Tracking';
 

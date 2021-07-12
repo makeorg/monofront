@@ -1,38 +1,36 @@
-// @flow
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { i18n } from 'Shared/i18n';
-import { type RegisterFormDataType } from 'Shared/types/form';
-import { type ErrorObjectType } from 'Shared/types/api';
+import { i18n } from '@make.org/utils/i18n';
+import { RegisterFormDataType, ErrorObjectType } from '@make.org/types';
 import {
   SecondLevelTitleStyle,
   FourthLevelTitleStyle,
-} from 'Client/ui/Elements/TitleElements';
+} from '@make.org/ui/elements/TitleElements';
 import {
   SmallSeparatorWithMarginStyle,
   SeparatorWrapperStyle,
   TextSeparatorStyle,
   SeparatorStyle,
-} from 'Client/ui/Elements/Separators';
-import { RedLinkButtonStyle } from 'Client/ui/Elements/Buttons/style';
-import { ExtraParagraphStyle } from 'Client/ui/Elements/Form/Styled/Content';
-import { FacebookAuthentication } from 'Client/features/auth/Social/FacebookAuthentication';
-import { GoogleAuthentication } from 'Client/features/auth/Social/GoogleAuthentication';
-import { modalShowLogin, modalClose } from 'Shared/store/actions/modal';
+} from '@make.org/ui/elements/Separators';
+import { RedLinkButtonStyle } from '@make.org/ui/elements/Buttons/style';
+import { ExtraParagraphStyle } from '@make.org/ui/elements/Form/Styled/Content';
+import { FacebookAuthentication } from '@make.org/components/Auth/Social/FacebookAuthentication';
+import { GoogleAuthentication } from '@make.org/components/Auth/Social/GoogleAuthentication';
+import { modalShowLogin, modalClose } from '@make.org/store/actions/modal';
 import {
   trackSignupEmailSuccess,
   trackSignupEmailFailure,
-} from 'Shared/services/Tracking';
-import { UserService } from 'Shared/services/User';
-import { Logger } from 'Shared/services/Logger';
-import { getUser } from 'Shared/store/actions/authentication';
+} from '@make.org/utils/services/Tracking';
+import { UserService } from '@make.org/utils/services/User';
+import { Logger } from '@make.org/utils/services/Logger';
+import { useAppContext } from '@make.org/store';
+import { getUser } from '@make.org/store/actions/authentication';
 import { RegisterForm } from './Form';
 
 import { AuthenticationWrapperStyle } from '../style';
 import { LegalConsent } from './LegalConsent';
 
-export const Register = () => {
-  const dispatch = useDispatch();
+export const Register: React.FC = () => {
+  const { dispatch } = useAppContext();
   const [user, setUser] = useState<RegisterFormDataType>({
     email: '',
     password: '',
@@ -49,8 +47,7 @@ export const Register = () => {
   const [errors, setErrors] = useState<ErrorObjectType[]>([]);
   const [waitingCallback, setWaitingCallback] = useState<boolean>(false);
   const [needLegalConsent, displayLegalConsent] = useState<boolean>(false);
-  const userIsAChild =
-    user && user.profile && user.profile.age && user.profile.age < 15;
+  const userIsAChild = user && user.profile && user.profile.age && user.profile.age < 15;
 
   const handleLoginModal = () => {
     dispatch(modalShowLogin());
@@ -72,7 +69,7 @@ export const Register = () => {
     });
   };
 
-  const handleChange = (event: SyntheticInputEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = event.target;
 
     if (id.includes('profile.')) {
@@ -98,7 +95,7 @@ export const Register = () => {
     const success = () => {
       dispatch(getUser(true));
     };
-    const handleErrors = () => {};
+    const handleErrors = () => undefined;
     const unexpectedError = () => {
       dispatch(modalClose());
       // @toDo: notify user
@@ -115,7 +112,7 @@ export const Register = () => {
     );
   };
 
-  const handleSubmit = async (event: SyntheticInputEvent<HTMLInputElement>) => {
+  const handleSubmit = async (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     const success = () => {
       logAndLoadUser(user.email, user.password).then(() => {
@@ -137,7 +134,7 @@ export const Register = () => {
     setWaitingCallback(false);
   };
 
-  const toggleLegalConsent = (event: SyntheticInputEvent<any>) => {
+  const toggleLegalConsent = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     displayLegalConsent(!needLegalConsent);
   };

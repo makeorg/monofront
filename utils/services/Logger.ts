@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import { env } from '@make.org/assets/env';
-import { ApiServiceError } from 'Shared/api/ApiService/ApiServiceError';
+import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 
 const LOG_INFO = 'info';
 const LOG_WARNING = 'warn';
@@ -95,25 +95,25 @@ class LoggerSingleton {
       // eslint-disable-next-line no-console
       console.log(level, data);
     }
-    if (!onClientSide) {
-      // eslint-disable-next-line import/no-cycle
-      const { logError, logInfo, logWarning } = await import(
-        'Server/ssr/helpers/ssr.helper'
-      );
+    // if (!onClientSide) {
+    //   // eslint-disable-next-line import/no-cycle
+    //   const { logError, logInfo, logWarning } = await import(
+    //     'Server/ssr/helpers/ssr.helper'
+    //   );
 
-      switch (level) {
-        case LOG_INFO:
-          logInfo(data);
-          break;
-        case LOG_WARNING:
-          logWarning(data);
-          break;
-        default:
-          logError(data);
-      }
+    //   switch (level) {
+    //     case LOG_INFO:
+    //       logInfo(data);
+    //       break;
+    //     case LOG_WARNING:
+    //       logWarning(data);
+    //       break;
+    //     default:
+    //       logError(data);
+    //   }
 
-      return () => {};
-    }
+    //   return () => undefined;
+    // }
 
     return axios({
       method: 'POST',
@@ -126,7 +126,7 @@ class LoggerSingleton {
         data: this.normalizeData(data),
       },
     })
-      .then(() => {})
+      .then(() => undefined)
       .catch((e) => {
         // eslint-disable-next-line no-console
         console.log('Fail to log error - ', e);

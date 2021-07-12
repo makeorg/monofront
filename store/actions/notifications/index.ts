@@ -1,4 +1,4 @@
-import { ReducerAction } from '@make.org/types';
+import { NotificationParamsType, ReducerAction } from '@make.org/types';
 import {
   CLOSE_NOTIFICATION_BANNER,
   DISMISS_NOTIFICATION,
@@ -19,7 +19,7 @@ export const dismissNotification = (contentId: string): ReducerAction => ({
 export const displayNotificationBanner = (
   contentId: string,
   level?: string,
-  params?: any,
+  params?: NotificationParamsType,
   toDismiss?: boolean
 ): ReducerAction => ({
   type: DISPLAY_NOTIFICATION_BANNER,

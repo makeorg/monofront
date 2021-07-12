@@ -1,13 +1,11 @@
-/* @flow */
-
-import { ApiService } from 'Shared/api/ApiService';
-import { TrackingApiService } from 'Shared/api/TrackingApiService';
-import trackingConfiguration from 'Shared/services/trackingConfiguration.yaml';
-import * as trackingConstants from 'Shared/constants/tracking';
-import { TrackingService } from 'Shared/services/TrackingService';
-import { TYPE_ORGANISATION } from 'Shared/constants/user';
+import { ApiService } from '@make.org/api/ApiService';
+import { TrackingApiService } from '@make.org/api/TrackingApiService';
+import * as trackingConstants from '@make.org/utils/constants/tracking';
+import { TrackingService } from '@make.org/utils/services/TrackingService';
+import { TYPE_ORGANISATION } from '@make.org/utils/constants/user';
 import Cookies from 'universal-cookie';
-import { USER_PREFERENCES_COOKIE } from 'Shared/constants/cookies';
+import { USER_PREFERENCES_COOKIE } from '@make.org/utils/constants/cookies';
+import trackingConfiguration from './trackingConfiguration.yaml';
 import {
   trackClickMakeLogo,
   trackDisplaySequence,
@@ -388,8 +386,7 @@ describe('Tracking Service', () => {
   });
 
   it('track Display Proposal Submit Validation', () => {
-    const eventName =
-      trackingConfiguration.DISPLAY_PROPOSAL_SUBMIT_VALIDATION.key;
+    const eventName = trackingConfiguration.DISPLAY_PROPOSAL_SUBMIT_VALIDATION.key;
 
     trackDisplayProposalSubmitValidation();
     expect(TrackingService.track).toHaveBeenNthCalledWith(1, eventName, {});
@@ -865,8 +862,7 @@ describe('Tracking Service', () => {
   });
 
   it('track Click Homepage Browse Consultations', () => {
-    const eventName =
-      trackingConfiguration.CLICK_HOMEPAGE_BROWSE_CONSULTATIONS.key;
+    const eventName = trackingConfiguration.CLICK_HOMEPAGE_BROWSE_CONSULTATIONS.key;
     trackClickBrowseConsultations();
     expect(TrackingService.track).toHaveBeenNthCalledWith(1, eventName, {});
     expect(FacebookTracking.trackCustom).toHaveBeenNthCalledWith(
@@ -1064,8 +1060,7 @@ describe('Tracking Service', () => {
   });
 
   it('track display Modal Cookie Second Step', () => {
-    const eventName =
-      trackingConfiguration.DISPLAY_COOKIE_MODAL_SECOND_STEP.key;
+    const eventName = trackingConfiguration.DISPLAY_COOKIE_MODAL_SECOND_STEP.key;
     trackDisplayModalCookieSecondStep();
     expect(TrackingService.track).toHaveBeenNthCalledWith(1, eventName, {});
     expect(FacebookTracking.trackCustom).toHaveBeenNthCalledWith(

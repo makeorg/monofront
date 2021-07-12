@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 import React from 'react';
 import { i18n } from '@make.org/utils/i18n';
 
@@ -24,7 +25,7 @@ export const MessageWithDynamicLabel: React.FC<WithLabelProps> = ({
   />
 );
 
-export const LoginErrorMessage = () => (
+export const LoginErrorMessage: React.FC = () => (
   <span
     dangerouslySetInnerHTML={{
       __html: i18n.t('login.email_doesnot_exist', {
@@ -39,6 +40,6 @@ export const LoginErrorMessage = () => (
   />
 );
 
-export const DefaultApiErrorMessage = () => (
+export const DefaultApiErrorMessage: React.FC = () => (
   <>{i18n.t('common.form.messages.api_error')}</>
 );

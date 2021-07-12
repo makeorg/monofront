@@ -1,8 +1,6 @@
-
-
 import { createGlobalStyle } from 'styled-components';
 import { color } from 'athena-design-tokens';
-import { intToPx } from 'Shared/helpers/styled';
+import { intToPx } from '@make.org/utils/helpers/styled';
 import { ShadowColors } from '../vars/Colors';
 import { Layouts, DefaultPadding, Breakpoints } from '../vars/Breakpoints';
 

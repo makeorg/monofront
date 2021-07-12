@@ -15,13 +15,11 @@ import {
   loadSequenceCards,
   resetSequenceVotedProposals,
 } from '@make.org/store/actions/sequence';
+import { useAppContext } from '@make.org/store';
 import { useSequenceTracking } from './useSequenceTracking';
 import { useSequenceVoteOnlyNotification } from './useSequenceVoteOnlyNotification';
 import { useSequenceExtraDataAutoSubmit } from './useSequenceExtraDataAutoSubmit';
 import { useSequenceQueryParams } from './useSequenceQueryParams';
-
-// REDUX REST TO DO
-import { useAppContext } from '../../../store';
 
 type ReturnFunctionType = {
   withProposalButton: boolean

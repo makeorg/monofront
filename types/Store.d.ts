@@ -4,6 +4,7 @@ import { HomeViewType } from './View';
 import {
   QuestionType,
   QuestionResultsType,
+  CountsByQuestionType,
 } from './Question';
 import { ProposalType } from './Proposal';
 import { TagType } from './Tag';
@@ -62,7 +63,8 @@ export type StateAuthentication = {
     readonly isLoggedIn: boolean
     readonly errors: ErrorObjectType[]
     readonly user?: {
-    userId: string
+      userId: string
+      displayName: string
   }
 };
 
@@ -120,6 +122,7 @@ readonly showCookies: boolean
 readonly contentType: string
 readonly focusAfterClose: boolean
 readonly extraProps: any
+readonly isLogin?: boolean
 };
 
 export type StateActor = {
@@ -134,7 +137,7 @@ readonly votesCount: number
 readonly language: string
 readonly country: string
 readonly website?: string
-readonly countsByQuestion: any
+readonly countsByQuestion: CountsByQuestionType
 };
 
 export type StateActors = {
@@ -173,7 +176,7 @@ export type StateRoot = {
   session?: StateSession
   // widget data
   question?: QuestionType
-  proposals: ProposalType[]
+  proposals?: ProposalType[]
 };
 
 export type Reducer<State = any, Action = any> = (
@@ -189,4 +192,21 @@ export type ReducerAction = {
   provider?: any;
 };
 
-export type Dispatch<A = any> = (value: A) => void
+export type NotificationParamsType = {
+  email?: string
+}
+
+export type NotificationType = {
+  contentId?: string,
+  params?: NotificationParamsType,
+  level?: string,
+  toDimiss?: boolean,
+};
+
+export type NotificationsState = {
+  banner: NotificationType,
+  tip: NotificationType,
+  dismissed: string[],
+};
+
+export type Dispatch = (value: ReducerAction) => void

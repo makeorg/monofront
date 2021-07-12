@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-export const SvgLock = (props: any) => (
+export const SvgLock: React.FC<React.HTMLAttributes> = (props) => (
   <svg width={13} height={16} viewBox="0 0 13 16" {...props}>
     <path
       className="tofill"

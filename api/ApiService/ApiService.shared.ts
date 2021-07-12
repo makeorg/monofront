@@ -1,5 +1,5 @@
 /* eslint-disable max-classes-per-file */
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import axiosRetry from 'axios-retry';
 import { Logger } from '@make.org/utils/services/Logger';
 import { APP_NAME } from '@make.org/utils/constants/config';
@@ -31,7 +31,7 @@ export const handleErrors = (
   requestUrl?: string,
   requestMethod?: string,
   requestId?: string
-) => {
+): void => {
   const status = error.response?.status || 0;
   const responseData = error.response?.data || null;
   const url = error.response?.config?.url || requestUrl || 'none';
@@ -117,9 +117,19 @@ export const handleErrors = (
   );
 };
 
+type OptionsType = {
+  headers?: any
+  allowedHeaders?: string[]
+  body?: string
+  params?: string
+  method?: string
+  httpsAgent?: string
+  withCredentials?: boolean
+}
+
 class ApiServiceSharedClass {
   // eslint-disable-next-line class-methods-use-this
-  callApi(url: string, options: any = {}): Promise<any> {
+  callApi(url: string, options: OptionsType = {}): Promise<AxiosResponse> {
     const paramsQuery = new URLSearchParams(LOCATION_PARAMS).toString();
     const requestId = uuidv4();
     const defaultHeaders = {

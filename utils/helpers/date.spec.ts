@@ -1,7 +1,5 @@
-/* @flow */
-
 import MockDate from 'mockdate';
-import { DATE_CAPITALIZE_LL_FORMAT } from 'Shared/constants/date';
+import { DATE_CAPITALIZE_LL_FORMAT } from '../constants/date';
 import {
   DateHelper,
   getDateOfBirthFromAge,

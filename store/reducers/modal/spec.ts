@@ -1,6 +1,4 @@
-/* @flow */
-
-import * as contentTypes from 'Shared/constants/modal';
+import * as contentTypes from '@make.org/utils/constants/modal';
 import { modal } from './index';
 
 describe('Modal reducer', () => {

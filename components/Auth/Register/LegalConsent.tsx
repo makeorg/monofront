@@ -1,13 +1,12 @@
-// @flow
 import React, { useState, useEffect } from 'react';
-import { LEGAL_CONSENT_FORMNAME } from 'Shared/constants/form';
-import { i18n } from 'Shared/i18n';
+import { LEGAL_CONSENT_FORMNAME } from '@make.org/utils/constants/form';
+import { i18n } from '@make.org/utils/i18n';
 import {
   SecondLevelTitleStyle,
   FourthLevelTitleStyle,
-} from 'Client/ui/Elements/TitleElements';
-import { CheckBox } from 'Client/ui/Elements/Form/CheckBox';
-import { trackDisplayLegalConsent } from 'Shared/services/Tracking';
+} from '@make.org/ui/elements/TitleElements';
+import { CheckBox } from '@make.org/ui/elements/Form/CheckBox';
+import { trackDisplayLegalConsent } from '@make.org/utils/services/Tracking';
 import {
   LegalFormStyle,
   LegalIconStyle,
@@ -20,18 +19,18 @@ import {
 } from '../style';
 
 type Props = {
-  needLegalConsent: boolean,
-  handleLegalField: (fieldName: string, value: boolean) => any,
-  handleSubmit: (event: SyntheticInputEvent<HTMLInputElement>) => any,
-  toggleLegalConsent: (event: SyntheticInputEvent<any>) => void,
+  needLegalConsent: boolean;
+  handleLegalField: (fieldName: string, value: boolean) => void;
+  handleSubmit: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  toggleLegalConsent: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-export const LegalConsent = ({
+export const LegalConsent: React.FC<Props> = ({
   needLegalConsent,
   handleLegalField,
   handleSubmit,
   toggleLegalConsent,
-}: Props) => {
+}) => {
   const [minorConsent, setMinorConsent] = useState<boolean>(false);
   const [parentalConsent, setParentalConsent] = useState<boolean>(false);
   const agreedAllConsents = minorConsent && parentalConsent;
@@ -65,9 +64,7 @@ export const LegalConsent = ({
           name="legalMinorConsent"
           value={minorConsent}
           handleCheck={() => setMinorConsent(!minorConsent)}
-          handleChange={() =>
-            handleLegalField('legalMinorConsent', minorConsent)
-          }
+          handleChange={() => handleLegalField('legalMinorConsent', minorConsent)}
           label={i18n.t('legal_consent.minor_consent')}
           isChecked={minorConsent}
           required
@@ -78,9 +75,7 @@ export const LegalConsent = ({
           name="profile.legalAdvisorApproval"
           value={parentalConsent}
           handleCheck={() => setParentalConsent(!parentalConsent)}
-          handleChange={() =>
-            handleLegalField('legalAdvisorApproval', parentalConsent)
-          }
+          handleChange={() => handleLegalField('legalAdvisorApproval', parentalConsent)}
           label={i18n.t('legal_consent.parental_consent')}
           isChecked={parentalConsent}
           required

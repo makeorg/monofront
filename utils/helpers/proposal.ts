@@ -92,7 +92,7 @@ export const searchTaggedProposals = async (
   return response;
 };
 
-export const getProposalCardIndex = (index = 0) => `proposal_list_card_${index}`;
+export const getProposalCardIndex = (index = 0): string => `proposal_list_card_${index}`;
 
 /**
  * Rendering title depending on feed algorithm type

@@ -1,6 +1,7 @@
+import { ClassDeclaration } from 'typescript';
 import { Logger } from './Logger';
 
-let unexpectedError = error => {
+let unexpectedError = (error) => {
   const message = 'You should handle unexpected errors (default handler)';
   try {
     if (!error.logged) {
@@ -11,9 +12,8 @@ let unexpectedError = error => {
   }
 };
 
-export const setUnexpectedError = (func: (apiServiceError: Object) => void) => {
+export const setUnexpectedError = (func: (apiServiceError: ClassDeclaration) => void): void => {
   unexpectedError = func;
 };
 
-export const defaultUnexpectedError = apiServiceError =>
-  unexpectedError(apiServiceError);
+export const defaultUnexpectedError = (apiServiceError: ClassDeclaration): void => unexpectedError(apiServiceError);

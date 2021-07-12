@@ -5,7 +5,7 @@ function customTemplate(
 ) {
   return template.ast`
     ${imports}
-    ${`\n`}
+    ${'\n'}
     export const ${componentName} = (${props}) => ${jsx}
   `;
 }

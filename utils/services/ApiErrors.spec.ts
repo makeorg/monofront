@@ -1,5 +1,4 @@
-// @flow
-import { type ErrorObjectType } from 'Shared/types/api';
+import { ErrorObjectType } from '@make.org/types';
 import { mapErrors } from './ApiErrors';
 
 describe('mapErrors', () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const SvgArrowUp = (props: any) => (
+export const SvgArrowUp: React.FC<React.HTMLAttributes> = (props) => (
   // eslint-disable-next-line react/jsx-props-no-spreading
   <svg width={26} height={29} viewBox="0 0 26 29" {...props}>
     <path

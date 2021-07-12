@@ -1,8 +1,7 @@
+/* eslint-disable */
 export const fbq = {
-  load() {
-    /* eslint-disable */
-    // $FlowFixMe
-    !function (f, b, e, v, n, t, s) {
+  load(): void {
+    !funct(function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
         n.callMethod ?
           n.callMethod.apply(n, arguments) : n.queue.push(arguments)
@@ -13,10 +12,9 @@ export const fbq = {
       // $FlowFixMe
       s.parentNode.insertBefore(t, s)
     }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-    /* eslint-enable */
+      'https://connect.facebook.net/en_US/fbevents.js')) /* eslint-enable */
   },
-  track(...args) {
+  track(...args: any): void {
     return window.fbq(...args);
   },
 };

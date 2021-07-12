@@ -9,48 +9,44 @@ import { incrementSequenceIndex } from '@make.org/store/actions/sequence';
 import { ProposalCardType } from '@make.org/types';
 import { CARD_TYPE_PROPOSAL } from '@make.org/utils/constants/card';
 import { useAppContext } from '@make.org/store';
-
-// REST TO DO
-import { Vote } from 'Client/features/vote';
-import { ProposalAuthor } from '../../../ui/Proposal/Author';
+import { Vote } from '../../Vote';
+import { ProposalAuthor } from '../../Proposal/Author';
 import { SequenceProposalStyle, SequenceNextCardButtonStyle } from './style';
 
 type Props = {
   /** Proposal card */
-  proposalCard: ProposalCardType;
+  proposalCard: ProposalCardType,
 };
 
 /**
  * Handles Proposal Card Business Logic
  */
-export const ProposalCard = ({ proposalCard }: Props) => {
+export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
   const { dispatch, state } = useAppContext();
 
   const [proposal, setProposal] = useState(proposalCard.configuration.proposal);
   const [index, setIndex] = useState(proposalCard.index);
   const allCards = state.sequence.cards;
-  const votes = state.sequence.cards[index].state
-    ? state.sequence.cards[index].state.votes
-    : [];
+  const { votes = [] } = state.sequence.cards[index].state || {};
   const [isVoted, setIsVoted] = useState(
-    votes.some(vote => vote.hasVoted === true)
+    votes.some((vote) => vote.hasVoted === true)
   );
   const [isLastProposalCard, setIsLastProposalCard] = useState(
-    proposalCard.index ===
-      allCards.filter(card => card.type === CARD_TYPE_PROPOSAL).pop().index
+    proposalCard.index
+      === allCards.filter((card) => card.type === CARD_TYPE_PROPOSAL).pop().index
   );
 
   useEffect(() => {
     setProposal(proposalCard.configuration.proposal);
     setIndex(proposalCard.index);
     setIsLastProposalCard(
-      proposalCard.index ===
-        allCards.filter(card => card.type === CARD_TYPE_PROPOSAL).pop().index
+      proposalCard.index
+        === allCards.filter((card) => card.type === CARD_TYPE_PROPOSAL).pop().index
     );
   }, [proposalCard, allCards]);
 
   useEffect(() => {
-    setIsVoted(votes.some(vote => vote.hasVoted === true));
+    setIsVoted(votes.some((vote) => vote.hasVoted === true));
   }, [votes]);
 
   const goToNextCard = () => {
@@ -75,8 +71,8 @@ export const ProposalCard = ({ proposalCard }: Props) => {
         votes={votes}
         proposalKey={proposal.proposalKey}
         index={index}
-        onVote={() => {}}
-        onUnvote={() => {}}
+        onVote={() => undefined}
+        onUnvote={() => undefined}
         isSequence
       />
       {isVoted && (

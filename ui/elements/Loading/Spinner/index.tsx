@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { i18n } from '@make.org/util/i18n';
+import { i18n } from '@make.org/utils/i18n';
 import {
   SpinnerContainerStyle,
   SpinnerWrapperStyle,
@@ -9,7 +9,7 @@ import {
   SpinnerFourthRingStyle,
 } from './Styled';
 
-export const Spinner = () => (
+export const Spinner: React.FC = () => (
   <SpinnerContainerStyle as="aside" aria-label={i18n.t('common.loading')}>
     <SpinnerWrapperStyle>
       <SpinnerFirstRingStyle aria-hidden />

@@ -1,4 +1,3 @@
-// @flow
 import { env } from '@make.org/assets/env';
 import { fbq } from './fbq';
 

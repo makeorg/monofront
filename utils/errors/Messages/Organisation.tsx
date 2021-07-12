@@ -1,7 +1,6 @@
-// @flow
 import React from 'react';
 import { ErrorObjectType } from '@make.org/types';
-import { MessageWithDynamicLabel } from '@make.org/ui/Elements/Form/Errors/Message';
+import { MessageWithDynamicLabel } from '@make.org/components/Form/Errors/Message';
 
 export const updateOrganisationErrors: ErrorObjectType[] = [
   {

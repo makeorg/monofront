@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import * as React from 'react';
 
-export const SvgArrowReturn = (props: any) => (
+export const SvgArrowReturn: React.FC<React.HTMLAttributes> = (props) => (
   <svg width={16} height={15} {...props}>
     <g fillRule="evenodd">
       <path

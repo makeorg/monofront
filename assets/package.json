@@ -3,10 +3,16 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "@make.org/components": "0.1.0",
+        "@make.org/ui": "0.1.0",
+        "@make.org/utils": "0.1.0",
         "athena-design-tokens": "^0.1.7",
         "react": "^17.0.2",
-        "styled-components": "^5.3.0",
-        "@make.org/components": "0.1.0"
+        "react-test-renderer": "^17.0.2",
+        "styled-components": "^5.3.0"
     },
-    "browserslist": {}
+    "browserslist": {},
+    "devDependencies": {
+        "react-test-renderer": "^17.0.2"
+    }
 }

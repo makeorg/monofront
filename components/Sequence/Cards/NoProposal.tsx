@@ -5,14 +5,12 @@ import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
 import { getParticipateLink } from '@make.org/utils/helpers/url';
 import { QuestionType } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
+import { Sharing } from '../../Sharing';
 import {
   SequenceMainTitleStyle,
   SequenceParagraphStyle,
   FinalCardSeparatorStyle,
 } from './style';
-
-// REST TO DO
-import { Sharing } from 'Client/features/sharing';
 
 export type Props = {
   /** Object with Dynamic properties used to configure the Sequence (questionId, country, ...) */

@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-export const SvgInstagramLogo = (props: any) => (
+export const SvgInstagramLogo: React.FC<React.HTMLAttributes> = (props) => (
   <svg width={38} height={38} viewBox="0 0 38 38" {...props}>
     <defs>
       <linearGradient

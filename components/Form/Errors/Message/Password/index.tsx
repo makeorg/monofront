@@ -1,8 +1,9 @@
+/* eslint-disable react/no-danger */
 import React from 'react';
 import { i18n } from '@make.org/utils/i18n';
 import { modalShowForgotPassword } from '@make.org/store/actions/modal';
+import { useAppContext } from '@make.org/store';
 import { CustomErrorTriggerStyle } from '@make.org/ui/elements/Form/Styled/Errors';
-import { useAppContext } from '../../../../../store';
 
 type Props = {
   inputId?: string;

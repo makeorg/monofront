@@ -1,3 +1,6 @@
+import React from 'react';
+import { UnknownObjectType } from './Commons';
+
 export type ApiServiceHeadersType = {
   'x-make-country'?: string
   'x-make-language'?: string
@@ -8,17 +11,20 @@ export type ApiServiceHeadersType = {
 export type ErrorObjectType = {
   field: string
   key: string
-  message: any
+  message: string | React.ReactNode
 };
 
 export type ErrorResponse = {
   response: {
     status: number
-    data: any
-    headers: any
-    config: any
+    data: UnknownObjectType
+    headers: UnknownObjectType
+    config: {
+      url: string
+      method: string
+    }
   }
   isAxiosError: boolean
   message: string
-  request: any
+  request: string
 };

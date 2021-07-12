@@ -4,9 +4,10 @@ import {
   SequenceCardType,
   QualificationType,
   VoteType,
-  ReducerAction
+  ReducerAction,
+  Dispatch
 } from '@make.org/types';
-import { TopComponentContextValue } from 'Client/context/TopComponentContext';
+import { TopComponentContextValue } from '../../topComponentContext';
 import {
   SEQUENCE_DECREMENT_INDEX,
   SEQUENCE_DEMOGRAPHICS_ADD_QUESTION,
@@ -30,7 +31,7 @@ export const loadSequenceCards = (cards: SequenceCardType[]): ReducerAction => (
 
 export const updateSequenceCardState = (
   index: number,
-  newCardState: any
+  newCardState: Partial<SequenceCardType>
 ): ReducerAction => ({
   type: SEQUENCE_UPDATE_CARD_STATE,
   payload: { index, newCardState },
@@ -46,20 +47,20 @@ export const loadSequenceProposals = (proposals: ProposalType[]): ReducerAction 
   payload: { proposals },
 });
 
-export const unloadSequenceProposals = () => (dispatch: any) => dispatch({ type: SEQUENCE_UNLOAD_PROPOSALS });
+export const unloadSequenceProposals = () => (dispatch: Dispatch): void => dispatch({ type: SEQUENCE_UNLOAD_PROPOSALS });
 
-export const resetSequenceIndex = () => (dispatch: any) => dispatch({ type: SEQUENCE_RESET_INDEX });
+export const resetSequenceIndex = () => (dispatch: Dispatch): void => dispatch({ type: SEQUENCE_RESET_INDEX });
 
-export const incrementSequenceIndex = () => (dispatch: any) => dispatch({ type: SEQUENCE_INCREMENT_INDEX });
+export const incrementSequenceIndex = () => (dispatch: Dispatch): void => dispatch({ type: SEQUENCE_INCREMENT_INDEX });
 
-export const decrementSequenceIndex = () => (dispatch: any) => dispatch({ type: SEQUENCE_DECREMENT_INDEX });
+export const decrementSequenceIndex = () => (dispatch: Dispatch): void => dispatch({ type: SEQUENCE_DECREMENT_INDEX });
 
-export const setSequenceIndex = (index: number) => ({
+export const setSequenceIndex = (index: number): ReducerAction => ({
   type: SEQUENCE_SET_INDEX,
   payload: { index },
 });
 
-export const unvote = (proposal: ProposalType, newVotes: VoteType[], context: string) => (dispatch: any, getState: () => StateRoot): ReducerAction => {
+export const unvote = (proposal: ProposalType, newVotes: VoteType[], context: string): void => (dispatch: Dispatch, getState: () => StateRoot): ReducerAction => {
   if (context !== TopComponentContextValue.getSequenceProposal()) {
     return;
   }
@@ -83,7 +84,7 @@ export const unvote = (proposal: ProposalType, newVotes: VoteType[], context: st
   );
 };
 
-export const vote = (proposal: ProposalType, newVotes: VoteType[], context: string) => (dispatch: any, getState: () => StateRoot): ReducerAction => {
+export const vote = (proposal: ProposalType, newVotes: VoteType[], context: string): void => (dispatch: Dispatch, getState: () => StateRoot): ReducerAction => {
   if (context !== TopComponentContextValue.getSequenceProposal()) {
     return;
   }
@@ -130,7 +131,7 @@ export const qualify = (
   votedKey: string,
   qualification: QualificationType,
   context: string
-) => (dispatch: any, getState: () => StateRoot): ReducerAction => {
+) => (dispatch: Dispatch, getState: () => StateRoot): ReducerAction => {
   if (context !== TopComponentContextValue.getSequenceProposal()) {
     return;
   }

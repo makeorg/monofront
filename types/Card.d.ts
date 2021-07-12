@@ -58,13 +58,14 @@ export type ProposalCardType = {
   index: number
 };
 
+export type SequenceCardConfigType = IntroCardConfigType
+| PushProposalCardConfigType
+| ProposalCardConfigType
+| NoProposalCardConfigType
+
 export type SequenceCardType = {
   type: string
-  configuration:
-    IntroCardConfigType
-    | PushProposalCardConfigType
-    | ProposalCardConfigType
-    | NoProposalCardConfigType
+  configuration: SequenceCardConfigType
   state?: ProposalCardStateType
   index: number
 };

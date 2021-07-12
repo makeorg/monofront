@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-export const SvgSuitcase = (props: any) => (
+export const SvgSuitcase: React.FC<React.HTMLAttributes> = (props) => (
   <svg width={16} height={14} viewBox="0 0 16 14" {...props}>
     <path
       className="tofill"

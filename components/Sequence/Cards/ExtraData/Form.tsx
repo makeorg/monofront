@@ -24,7 +24,7 @@ import { SelectDemographics } from './Select';
 const SKIP_TRACKING_VALUE = 'SKIPPED';
 
 type Props = {
-  type: string;
+  type: TypeDemographicName;
   demographics: {
     ui: string;
     data: DemographicsType[];
@@ -86,34 +86,33 @@ export const ExtraDataForm: React.FC<Props> = ({
     return accumulator;
   }, [location.search]);
 
-  const handleSubmit =
-    value => async (event: React.SyntheticEvent<HTMLInputElement>) => {
-      event.preventDefault();
-      setIsSubmitDisabled(true);
-      setIsSkipDisabled(true);
-      const success = () => {
-        setIsSubmitDisabled(false);
-        setIsSkipDisabled(false);
-        dispatch(incrementSequenceIndex());
-      };
-      const error = () => {
-        setIsSubmitDisabled(false);
-        setIsSkipDisabled(false);
-      };
-
-      await DemographicsTrackingService.track(
-        type,
-        value,
-        utmParams,
-        success,
-        error
-      );
-
-      dispatch(persistDemographics(type, value, currentQuestion));
-      trackClickSaveDemographics(type);
+  const handleSubmit = (value) => async (event: React.ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
+    setIsSubmitDisabled(true);
+    setIsSkipDisabled(true);
+    const success = () => {
+      setIsSubmitDisabled(false);
+      setIsSkipDisabled(false);
+      dispatch(incrementSequenceIndex());
+    };
+    const error = () => {
+      setIsSubmitDisabled(false);
+      setIsSkipDisabled(false);
     };
 
-  const onClickSkip = event => {
+    await DemographicsTrackingService.track(
+      type,
+      value,
+      utmParams,
+      success,
+      error
+    );
+
+    dispatch(persistDemographics(type, value, currentQuestion));
+    trackClickSaveDemographics(type);
+  };
+
+  const onClickSkip = (event) => {
     handleSubmit(SKIP_TRACKING_VALUE)(event);
     trackClickSkipDemographics(type);
   };
