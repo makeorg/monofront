@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-
-export const SvgSadEmoji: React.FC = (props: React.SVGProps<SVGSVGElement>) => (
+import { SvgPropsType } from '@make.org/types';
+export const SvgSadEmoji: React.FC = (props: SvgPropsType) => (
   <svg width={45} height={45} viewBox="0 0 45 45" {...props}>
     <defs>
       <clipPath>

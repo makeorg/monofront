@@ -34,7 +34,7 @@ export class PersonalityApiService {
     vote: string,
     qualification: string,
     headers?: ApiServiceHeadersType = {}
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<any> {
     return ApiService.callApi(
       PERSONALITY_COMMENTS_PATH.replace(':personalityId', personalityId),
       {
@@ -56,7 +56,7 @@ export class PersonalityApiService {
     personalityId: string,
     questionId?: string,
     headers?: ApiServiceHeadersType = {}
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<any> {
     return ApiService.callApi(
       PERSONALITY_OPINION_PATH.replace(':personalityId', personalityId),
       {

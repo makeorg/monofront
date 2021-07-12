@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-
-export const SvgCookie: React.FC = (props: React.SVGProps<SVGSVGElement>) => (
+import { SvgPropsType } from '@make.org/types';
+export const SvgCookie: React.FC = (props: SvgPropsType) => (
   <svg width={108} height={104} viewBox="0 0 108 104" {...props}>
     <path
       fill="#DE7A4B"

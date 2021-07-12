@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-
-export const SvgLightning: React.FC = (props: React.SVGProps<SVGSVGElement>) => (
+import { SvgPropsType } from '@make.org/types';
+export const SvgLightning: React.FC = (props: SvgPropsType) => (
   <svg width={9} height={18} viewBox="0 0 9 18" {...props}>
     <path
       className="tofill"

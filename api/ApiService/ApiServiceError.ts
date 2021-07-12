@@ -22,7 +22,7 @@ export class ApiServiceError extends Error {
 
   requestId?: string;
 
-  clone = (message: string): void => new ApiServiceError(
+  clone = (message: string): ApiServiceError => new ApiServiceError(
     message,
     this.status,
     this.data,

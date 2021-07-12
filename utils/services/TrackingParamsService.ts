@@ -1,5 +1,10 @@
 /* eslint-disable  no-underscore-dangle */
 import { getTrackingLocation } from '@make.org/api/ApiService/getLocationContext';
+import { TrackingParamsListenerType } from '../../types';
+
+type TrackingParamsServiceClassType = {
+
+}
 
 class TrackingParamsServiceClass {
   _source = '';
@@ -18,11 +23,20 @@ class TrackingParamsServiceClass {
 
   _url?: string = undefined;
 
-  _all = {};
+  _listeners: TrackingParamsListenerType[] = [];
 
-  _listeners = [];
+  _all = {
+    location: this._location,
+    source: this._source,
+    language: this._language,
+    country: this._country,
+    questionId: this._questionId,
+    questionSlug: this._questionSlug,
+    referrer: this._referrer,
+    url: this._url,
+  };
 
-  _instance = null;
+  _instance: TrackingParamsServiceClass | null = null;
 
   constructor() {
     if (!this._instance) {
@@ -101,7 +115,7 @@ class TrackingParamsServiceClass {
     this._listeners.forEach((listener) => listener.onTrackingUpdate(this._all));
   }
 
-  addListener(object) {
+  addListener(object: TrackingParamsListenerType) {
     const requiredMethod = object.onTrackingUpdate;
     if (requiredMethod === undefined) {
       throw new Error('Object does not support the interface.');

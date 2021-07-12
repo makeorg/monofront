@@ -49,3 +49,18 @@ export type TrackingApiServiceParamsType = {
   eventParameters: TrackingConfigurationParamType
   eventType: string
 }
+
+export type TrackingParamsUpdateType = {
+  source?: string
+  country?: string
+  language?: string
+  location?: string
+  url?: string
+  referrer?: string
+  questionId?: string
+  questionSlug?: string
+}
+
+export type TrackingParamsListenerType = {
+  onTrackingUpdate: (params: TrackingParamsUpdateType) => void
+}

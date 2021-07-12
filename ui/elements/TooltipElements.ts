@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import { color } from 'athena-design-tokens';
 import { pxToRem } from '@make.org/utils/helpers/styled';
 
-export const TooltipStyle = styled.div`
+export const TooltipStyle = styled.div<{ zIndex?: number, as?: string }>`
   min-width: 70px;
   position: absolute;
   padding: ${pxToRem('5px')} ${pxToRem('10px')};
-  z-ind(props){props => props.zIndex};
+  z-index: ${({ zIndex = 1 }) => zIndex};
   background-color: ${color.infos};
   color: ${color.white};
   font-size: ${pxToRem('12px')};

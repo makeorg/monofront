@@ -10,7 +10,7 @@ export interface IApiServiceStrategy {
 }
 
 class ApiServiceClass {
-  strategyValue: IApiServiceStrategy;
+  strategyValue: IApiServiceStrategy | null = null;
 
   set strategy(strategy: IApiServiceStrategy) {
     this.strategyValue = strategy;

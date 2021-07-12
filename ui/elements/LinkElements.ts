@@ -9,7 +9,7 @@ import {
 } from './Buttons/style';
 import { SvgExternalLink } from '../Svg/elements';
 
-const linkStyle = (linkColor) => `
+const linkStyle = (linkColor: string) => `
   color: ${linkColor};
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   &:hover,

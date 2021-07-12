@@ -1,3 +1,5 @@
+import { ChangeEvent, FormEvent } from 'react';
+
 const THROTTLE_DEFAULT_TIME = 500;
 // light version of lodash.throttle https://www.npmjs.com/package/lodash.throttle
 export const throttle = (
@@ -5,11 +7,12 @@ export const throttle = (
   preventDefault = true,
   time: number = THROTTLE_DEFAULT_TIME,
   context = typeof window !== 'undefined' ? window : {}
-): void => {
+): ((...args: ChangeEvent[] | FormEvent[]) => void
+) => {
   let wait = false;
-  let timer: Timeout;
-  return (...args) => {
-    if (args[0] && args[0].preventDefault && preventDefault) {
+  let timer: NodeJS.Timeout;
+  return (...args: ChangeEvent[] | FormEvent[]): void => {
+    if (args[0] && !!args[0].preventDefault && preventDefault) {
       args[0].preventDefault();
     }
     const later = () => {

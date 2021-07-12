@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-
-export const SvgBigArrowRight: React.FC = (props: React.SVGProps<SVGSVGElement>) => (
+import { SvgPropsType } from '@make.org/types';
+export const SvgBigArrowRight: React.FC = (props: SvgPropsType) => (
   <svg width={5} height={8} viewBox="0 0 5 8" {...props}>
     <path
       className="tofill"

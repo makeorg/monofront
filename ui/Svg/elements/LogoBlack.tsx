@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-
-export const SvgLogoBlack: React.FC = (props: React.SVGProps<SVGSVGElement>) => (
+import { SvgPropsType } from '@make.org/types';
+export const SvgLogoBlack: React.FC = (props: SvgPropsType) => (
   <svg width={44} height={23} viewBox="0 0 44 23" {...props}>
     <defs>
       <path d="M1.057 1.233C-.043 2.339 0 3.814 0 5.393c0 1.579-.044 3.054 1.057 4.16.762.767 1.643 1.18 2.919 1.18V8.432c-.47 0-.836-.221-1.027-.472-.235-.31-.381-.65-.381-2.567 0-1.918.146-2.272.381-2.582.19-.25.557-.457 1.027-.457V.053c-1.276 0-2.157.413-2.92 1.18" />

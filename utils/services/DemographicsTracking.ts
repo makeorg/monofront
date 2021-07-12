@@ -8,7 +8,7 @@ const PREFIX_QUERY_PARAMS_ACCEPTED = 'utm_';
 
 const sanitizeQueryParams = (queryParams: any) => {
   const queryParamSanitized = {};
-  Object.keys(queryParams).forEach((key) => {
+  Object.keys(queryParams).forEach((key: string) => {
     if (key.startsWith(PREFIX_QUERY_PARAMS_ACCEPTED)) {
       queryParamSanitized[key] = queryParams[key];
     }
@@ -33,7 +33,9 @@ export const track = async (
     success();
   } catch (apiServiceError) {
     defaultUnexpectedError(apiServiceError);
-    error();
+    if (error) {
+      error();
+    }
   }
 };
 

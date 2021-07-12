@@ -22,7 +22,7 @@ export const useSequenceExtraDataAutoSubmit = (
   currentIndex: number
 ): void => {
   const { dispatch, state } = useAppContext();
-  const persistedDemographics = state.sequence.demographics;
+  const { demographics: persistedDemographics } = state.sequence || {};
 
   const triggeringIndexValue: number | null = useMemo(() => {
     // no cards
@@ -48,7 +48,7 @@ export const useSequenceExtraDataAutoSubmit = (
     const card = cards
       .filter(
         (fCard) => fCard.type === CARD_TYPE_PROPOSAL
-          && !fCard.state.votes.some((vote) => vote.hasVoted === true)
+          && !fCard.state?.votes.some((vote) => !!vote && vote.hasVoted === true)
       )
       .sort((a, b) => a.index - b.index)
       .splice(0, AFTER_NB_VOTES)

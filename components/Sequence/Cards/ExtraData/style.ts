@@ -23,7 +23,7 @@ export const ExtraDataDescriptionStyle = styled(ParagraphStyle)`
   text-align: center;
 `;
 
-export const ExtraDataRadioGroupStyle = styled.div`
+export const ExtraDataRadioGroupStyle = styled.div<{ className: string }>`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 10px;

@@ -21,7 +21,7 @@ export const LoadingWrapperStyle = styled.div`
   margin: 0 auto;
 `;
 
-export const DotStyle = styled.span`
+export const DotStyle = styled.span<{ delay: number, duration: number }>`
   animation-delay: ${(props) => props.delay}s;
   animation-duration: ${(props) => props.duration}s;
   animation-name: ${PendingAnimation};

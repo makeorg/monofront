@@ -5,7 +5,6 @@ import {
 } from '@make.org/types';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 
-let instance = null;
 
 export const getDateOfBirthFromAge = (age = ''): string => {
   if (!age) {
@@ -87,6 +86,12 @@ export const selectStep = (
 
   return false;
 };
+
+type DateHelperSingletonType = {
+  languageValue: string
+}
+
+let instance: DateHelperSingletonType | null = null;
 
 export class DateHelperSingleton {
   languageValue: string;

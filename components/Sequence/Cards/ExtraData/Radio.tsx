@@ -16,7 +16,7 @@ type Props = {
 
 const handleClassName = (
   currentValue: string,
-  focusValue: string,
+  focusValue: string | null,
   elementValue: string
 ): string => {
   if (elementValue === currentValue && elementValue === focusValue) {
@@ -40,11 +40,11 @@ export const RadioDemographics: React.FC<Props> = ({
   currentValue,
   setCurrentValue,
 }) => {
-  const [focusValue, setFocusValue] = useState(null);
+  const [focusValue, setFocusValue] = useState<string | null>(null);
   const isAgeDemographic = type === 'age';
 
   return (
-    <ExtraDataRadioGroupStyle className={isAgeDemographic && 'three-columns'}>
+    <ExtraDataRadioGroupStyle className={isAgeDemographic ? 'three-columns' : ''}>
       {data.map((demographic) => (
         <RadioAsButtonWrapperStyle
           key={demographic.value}

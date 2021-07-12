@@ -72,8 +72,8 @@ export const matchRoute = (
   routePath: string,
   exact = false,
   strict = false,
-  sensitive: ?boolean = false,
-  matchPreview: ?boolean = false
+  sensitive = false,
+  matchPreview = false
 ): boolean => {
   const pathToCheck: string = matchPreview
     ? pathname.replace(BASE_PREVIEW_PATH_REG, '')
@@ -176,7 +176,7 @@ export const getPaginatedRoute = (
 
 export const isParticipatePage = (
   pathname: string,
-  includingPreview: ?boolean = true
+  includingPreview = true
 ): boolean => matchRoute(
   pathname,
   ROUTE_PARTICIPATE,
@@ -188,22 +188,22 @@ export const isParticipatePage = (
 
 export const isExplorePage = (
   pathname: string,
-  includingPreview: ?boolean = true
+  includingPreview = true
 ): boolean => matchRoute(pathname, ROUTE_EXPLORE, false, false, false, includingPreview);
 
 export const isResultsPage = (
   pathname: string,
-  includingPreview: ?boolean = true
+  includingPreview = true
 ): boolean => matchRoute(pathname, ROUTE_RESULTS, false, false, false, includingPreview);
 
 export const isTopIdeasPage = (
   pathname: string,
-  includingPreview: ?boolean = true
+  includingPreview = true
 ): boolean => matchRoute(pathname, ROUTE_TOP_IDEAS, false, false, false, includingPreview);
 
 export const isTopIdeaDetailsPage = (
   pathname: string,
-  includingPreview: ?boolean = true
+  includingPreview = true
 ): boolean => matchRoute(
   pathname,
   ROUTE_TOP_IDEA_DETAILS,
@@ -215,7 +215,7 @@ export const isTopIdeaDetailsPage = (
 
 export const isOrganisationProposals = (
   pathname: string,
-  includingPreview: ?boolean = true
+  includingPreview = true
 ): boolean => matchRoute(
   pathname,
   ROUTE_ORGANISATION_PROPOSALS,
@@ -227,7 +227,7 @@ export const isOrganisationProposals = (
 
 export const isOrganisationVotes = (
   pathname: string,
-  includingPreview: ?boolean = true
+  includingPreview = true
 ): boolean => matchRoute(
   pathname,
   ROUTE_ORGANISATION_VOTES,
@@ -238,7 +238,7 @@ export const isOrganisationVotes = (
 );
 export const isProfileProposals = (
   pathname: string,
-  includingPreview: ?boolean = true
+  includingPreview = true
 ): boolean => matchRoute(
   pathname,
   ROUTE_PROFILE_PROPOSALS,
@@ -250,7 +250,7 @@ export const isProfileProposals = (
 
 export const isProfileFavourites = (
   pathname: string,
-  includingPreview: ?boolean = true
+  includingPreview = true
 ): boolean => matchRoute(
   pathname,
   ROUTE_PROFILE_FAVOURITES,
@@ -262,7 +262,7 @@ export const isProfileFavourites = (
 
 export const isBrowseConsultationsPage = (
   pathname: string,
-  includingPreview: ?boolean = true
+  includingPreview = true
 ): boolean => matchRoute(
   pathname,
   ROUTE_BROWSE_CONSULTATIONS,
@@ -274,7 +274,7 @@ export const isBrowseConsultationsPage = (
 
 export const isBrowseResultsPage = (
   pathname: string,
-  includingPreview: ?boolean = true
+  includingPreview = true
 ): boolean => matchRoute(
   pathname,
   ROUTE_BROWSE_RESULTS,
@@ -286,15 +286,15 @@ export const isBrowseResultsPage = (
 
 export const isHomepage = (
   pathname: string,
-  includingPreview: ?boolean = true
+  includingPreview = true
 ): boolean => matchRoute(pathname, '/', true, false, false, includingPreview);
 
 export const isHomepageWithLocale = (
   pathname: string,
-  includingPreview: ?boolean = true
+  includingPreview = true
 ): boolean => matchRoute(pathname, ROUTE_COUNTRY, true, false, false, includingPreview);
 
 export const isSequencePage = (
   pathname: string,
-  includingPreview: ?boolean = true
+  includingPreview = true
 ): boolean => matchRoute(pathname, ROUTE_SEQUENCE, false, false, false, includingPreview);

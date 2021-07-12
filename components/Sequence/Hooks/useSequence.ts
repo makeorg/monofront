@@ -41,9 +41,9 @@ export const useSequence = (
   const { state, dispatch } = useAppContext();
 
   // StateRoot
-  const { appConfig = {}, proposal = {}, sequence = {} } = state;
-  const { country } = appConfig;
-  const { hasProposed } = proposal;
+  const { appConfig, proposal, sequence } = state;
+  const { country } = appConfig || {};
+  const { hasProposed } = proposal || {};
   const { isLoggedIn } = selectAuthentication(state);
   const persistedDemographics = sequence && sequence.demographics;
   const {

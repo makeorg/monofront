@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-
-export const SvgDisconnect: React.FC = (props: React.SVGProps<SVGSVGElement>) => (
+import { SvgPropsType } from '@make.org/types';
+export const SvgDisconnect: React.FC = (props: SvgPropsType) => (
   <svg width={11} height={11} viewBox="0 0 11 11" {...props}>
     <g fill="none" fillRule="evenodd" transform="translate(-1 -1)">
       <g>

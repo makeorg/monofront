@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-
-export const SvgClose: React.FC = (props: React.SVGProps<SVGSVGElement>) => (
+import { SvgPropsType } from '@make.org/types';
+export const SvgClose: React.FC = (props: SvgPropsType) => (
   <svg width={13} height={13} viewBox="0 0 13 13" {...props}>
     <path
       className="tofill"

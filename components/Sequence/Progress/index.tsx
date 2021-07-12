@@ -20,7 +20,7 @@ import {
 export const SequenceProgress: React.FC = () => {
   const { dispatch, state } = useAppContext();
   const question: QuestionType = selectCurrentQuestion(state);
-  const { cards, currentIndex } = state.sequence;
+  const { cards, currentIndex } = state.sequence || {};
   const index = currentIndex + 1;
   const total = cards.length;
 
