@@ -6,7 +6,7 @@ import {
 import { DemographicsTrackingService } from '@make.org/utils/services/DemographicsTracking';
 import { Logger } from '@make.org/utils/services/Logger';
 import { addQuestionToDemographics } from '@make.org/store/actions/sequence';
-import { ProposalCardStateType } from '@make.org/types';
+import { ProposalCardType } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
 
 const AFTER_NB_VOTES = 2;
@@ -18,13 +18,13 @@ const AFTER_NB_VOTES = 2;
  */
 export const useSequenceExtraDataAutoSubmit = (
   questionSlug: string,
-  cards: ProposalCardStateType[],
+  cards: ProposalCardType[],
   currentIndex: number
 ): void => {
   const { dispatch, state } = useAppContext();
   const persistedDemographics = state.sequence.demographics;
 
-  const triggeringIndexValue = useMemo(() => {
+  const triggeringIndexValue: number | null = useMemo(() => {
     // no cards
     if (!cards) {
       return null;
@@ -57,21 +57,24 @@ export const useSequenceExtraDataAutoSubmit = (
     if (card === undefined) {
       return null;
     }
-
-    return parseInt(card.index, 10) + 1;
+    if (typeof card.index === 'string') {
+      return parseInt(card.index, 10) + 1;
+    }
+    return card.index + 1;
   }, [cards, persistedDemographics, questionSlug]);
 
   useEffect(() => {
     if (currentIndex === triggeringIndexValue) {
-      if (!persistedDemographics?.type || !persistedDemographics?.value) {
+      const { type = '', value = '' } = persistedDemographics || {};
+      if (!type || !value) {
         Logger.logError(
           `Unexpected error: no demographic values to send (questionId: ${questionSlug})`
         );
       }
 
       DemographicsTrackingService.track(
-        persistedDemographics.type,
-        persistedDemographics.value,
+        type,
+        value,
         {},
         () => dispatch(addQuestionToDemographics(questionSlug))
       );

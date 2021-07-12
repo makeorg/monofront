@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-export const SvgSelectArrow: React.FC<React.HTMLAttributes> = (props) => (
+export const SvgSelectArrow: React.FC = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 10 10"

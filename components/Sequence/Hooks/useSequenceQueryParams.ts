@@ -1,11 +1,11 @@
 import { useLocation } from 'react-router';
 
 export const useSequenceQueryParams = (): {
-  firstProposal: string,
-  introCardParam: string,
-  pushProposalParam: string
+  firstProposal: string | null,
+  introCardParam: boolean,
+  pushProposalParam: boolean
 } => {
-  const { search } = useLocation;
+  const { search } = useLocation();
   const params = new URLSearchParams(search);
   const firstProposal = params.get('firstProposal');
   const introCardParam = params.get('introCard')?.toLowerCase() !== 'false';

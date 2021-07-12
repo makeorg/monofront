@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-export const SvgMap: React.FC<React.HTMLAttributes> = (props) => (
+export const SvgMap: React.FC = (props: React.SVGProps<SVGSVGElement>) => (
   <svg width={21} height={18} viewBox="0 0 21 18" {...props}>
     <path
       className="tofill"

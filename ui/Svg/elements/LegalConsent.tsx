@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-export const SvgLegalConsent: React.FC<React.HTMLAttributes> = (props) => (
+export const SvgLegalConsent: React.FC = (props: React.SVGProps<SVGSVGElement>) => (
   <svg width={150} height={89} viewBox="0 0 150 89" {...props}>
     <g fill="none" fillRule="evenodd">
       <path

@@ -6,7 +6,7 @@ import { defaultUnexpectedError } from './DefaultErrorHandler';
 
 const PREFIX_QUERY_PARAMS_ACCEPTED = 'utm_';
 
-const sanitizeQueryParams = (queryParams) => {
+const sanitizeQueryParams = (queryParams: any) => {
   const queryParamSanitized = {};
   Object.keys(queryParams).forEach((key) => {
     if (key.startsWith(PREFIX_QUERY_PARAMS_ACCEPTED)) {

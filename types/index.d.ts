@@ -18,3 +18,4 @@ export * from './View';
 export * from './Vote';
 export * from './Store';
 export * from './Commons';
+export * from './modules';

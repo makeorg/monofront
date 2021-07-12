@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-export const SvgPlayButton: React.FC<React.HTMLAttributes> = (props) => (
+export const SvgPlayButton: React.FC = (props: React.SVGProps<SVGSVGElement>) => (
   <svg width={14} height={16} viewBox="0 0 13.8 16.1" {...props}>
     <path
       className="tofill"

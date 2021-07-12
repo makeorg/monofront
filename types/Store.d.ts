@@ -45,7 +45,7 @@ export type StateSequence = {
     readonly proposals: ProposalType[]
     readonly cards: SequenceCardType[]
     readonly demographics?: {
-      type: string
+      type: TypeDemographicName
       value: string
       questions: string[]
   }
@@ -194,6 +194,7 @@ export type ReducerAction = {
 
 export type NotificationParamsType = {
   email?: string
+  questionId?: string
 }
 
 export type NotificationType = {
@@ -209,4 +210,4 @@ export type NotificationsState = {
   dismissed: string[],
 };
 
-export type Dispatch = (value: ReducerAction) => void
+export type Dispatch = (value: any) => void

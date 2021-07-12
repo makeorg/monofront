@@ -3,11 +3,11 @@ const THROTTLE_DEFAULT_TIME = 500;
 export const throttle = (
   func: any = () => undefined,
   preventDefault = true,
-  time = THROTTLE_DEFAULT_TIME,
+  time: number = THROTTLE_DEFAULT_TIME,
   context = typeof window !== 'undefined' ? window : {}
 ): void => {
   let wait = false;
-  let timer;
+  let timer: Timeout;
   return (...args) => {
     if (args[0] && args[0].preventDefault && preventDefault) {
       args[0].preventDefault();

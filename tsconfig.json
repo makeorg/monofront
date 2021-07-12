@@ -12,7 +12,7 @@
   "include": [],
   "exclude": ["**/node_modules"],
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./types/index",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

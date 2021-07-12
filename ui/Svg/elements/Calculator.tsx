@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-export const SvgCalculator: React.FC<React.HTMLAttributes> = (props) => (
+export const SvgCalculator: React.FC = (props: React.SVGProps<SVGSVGElement>) => (
   <svg width={17} height={18} viewBox="0 0 17 18" {...props}>
     <path
       className="tofill"

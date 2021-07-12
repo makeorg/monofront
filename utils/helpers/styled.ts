@@ -19,7 +19,7 @@ export const getBarHeight = (value: number): string => {
   return `${barHeight}px`;
 };
 
-export const scrollToTop = (): void => {
+export const scrollToTop = (): void | null => {
   const app = document.getElementById('app');
   if (!app) {
     return null;
@@ -27,7 +27,7 @@ export const scrollToTop = (): void => {
   return window.scrollTo(0, app.getBoundingClientRect().top);
 };
 
-export const scrollToElementId = (elementId: string): void => {
+export const scrollToElementId = (elementId: string): void | null => {
   const element = document.getElementById(elementId);
   if (!element) {
     return null;

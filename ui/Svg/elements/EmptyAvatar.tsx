@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-export const SvgEmptyAvatar: React.FC<React.HTMLAttributes> = (props) => (
+export const SvgEmptyAvatar: React.FC = (props: React.SVGProps<SVGSVGElement>) => (
   <svg width={30} height={30} viewBox="0 0 30 30" {...props}>
     <defs>
       <circle cx={15} cy={15} r={15} />
@@ -19,7 +19,7 @@ export const SvgEmptyAvatar: React.FC<React.HTMLAttributes> = (props) => (
         fill="#000"
         fillOpacity={0.1}
         stroke="#000"
-        strokeLinejoin="square"
+        strokeLinecap="square"
         strokeOpacity={0.2}
       />
       <g>

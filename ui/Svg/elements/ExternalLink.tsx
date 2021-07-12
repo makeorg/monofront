@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-export const SvgExternalLink: React.FC<React.HTMLAttributes> = (props) => (
+export const SvgExternalLink: React.FC = (props: React.SVGProps<SVGSVGElement>) => (
   <svg width={16} height={14} viewBox="0 0 16 14" {...props}>
     <path
       className="tofill"

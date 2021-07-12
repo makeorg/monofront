@@ -4,6 +4,8 @@ import './App.css';
 import { getQuestionDetails } from '@make.org/store/actions/question/';
 import { getAllProposals } from '@make.org/store/actions/proposals';
 import { useAppContext } from '@make.org/store';
+import { KIND_STANDARD } from '@make.org/utils/constants/sequence';
+import { Sequence } from '@make.org/components/Sequence/Sequence';
 import { getProposals, getQuestion } from './server';
 
 const QUESTION_ID = '66a9230b-08cb-4f37-8ed8-aa95a8eac19a';
@@ -22,7 +24,7 @@ const App: React.FC = () => {
     getAllDetails();
   }, []);
 
-  return <div>hello world</div>;
+  return <Sequence sequenceKind={KIND_STANDARD} />;
 };
 
 export default App;

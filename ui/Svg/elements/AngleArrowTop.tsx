@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-export const SvgAngleArrowTop: React.FC<React.HTMLAttributes> = (props) => (
+export const SvgAngleArrowTop: React.FC = (props: React.SVGProps<SVGSVGElement>) => (
   <svg width={21} height={21} viewBox="0 0 21 21" aria-hidden {...props}>
     <path
       className="tofill"

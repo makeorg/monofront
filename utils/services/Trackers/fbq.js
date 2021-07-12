@@ -1,6 +1,6 @@
 /* eslint-disable */
 export const fbq = {
-  load(): void {
+  load() {
     !funct(function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
         n.callMethod ?
@@ -14,7 +14,7 @@ export const fbq = {
     }(window, document, 'script',
       'https://connect.facebook.net/en_US/fbevents.js')) /* eslint-enable */
   },
-  track(...args: any): void {
+  track(...args) {
     return window.fbq(...args);
   },
 };

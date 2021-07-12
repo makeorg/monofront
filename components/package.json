@@ -37,6 +37,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-router": "^5.1.16",
     "enzyme": "^3.11.0"
   }
 }
