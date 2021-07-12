@@ -7,21 +7,20 @@ type Props = {
   /** Content of the Tooltip element */
   children: React.Component | string,
   /** Styled Component Element used as button */
-  type: React.Component,
   /** Method to show tooltip */
-  showTooltip: (event: SyntheticInputEvent<HTMLButtonElement>) => void,
+  showTooltip: (event: React.MouseEvent<HTMLDivElement> | React.FocusEvent<HTMLDivElement>) => void,
   /** Method to hide tooltip */
-  hideTooltip: (event: SyntheticInputEvent<HTMLButtonElement>) => void,
+  hideTooltip: (event: React.MouseEvent<HTMLDivElement> | React.FocusEvent<HTMLDivElement>) => void,
   /** Boolean toggled when tooltip is shown / hidden */
   displayTooltip: boolean,
 };
 
 export const TooltipComponent: React.FC<Props> = (props) => {
-  const { content, children, type, displayTooltip, showTooltip, hideTooltip } = props;
+  const { content, children, displayTooltip, showTooltip, hideTooltip } = props;
 
   return (
     <>
-      <TooltipStyle as={type} aria-hidden={!displayTooltip} role="tooltip">
+      <TooltipStyle aria-hidden={!displayTooltip} role="tooltip">
         {content}
       </TooltipStyle>
       <div

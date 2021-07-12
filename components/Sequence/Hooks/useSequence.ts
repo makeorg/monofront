@@ -50,7 +50,7 @@ export const useSequence = (
     cards: sCards,
     currentIndex: sCurrentIndex,
     votedProposalIds: sVotedProposalIds,
-  } = sequence;
+  } = sequence || {};
 
   const isPushProposal = !!(
     sCards

@@ -6,7 +6,7 @@ import {
 import { DemographicsTrackingService } from '@make.org/utils/services/DemographicsTracking';
 import { Logger } from '@make.org/utils/services/Logger';
 import { addQuestionToDemographics } from '@make.org/store/actions/sequence';
-import { ProposalCardType } from '@make.org/types';
+import { ProposalCardType, SequenceCardType } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
 
 const AFTER_NB_VOTES = 2;
@@ -18,7 +18,7 @@ const AFTER_NB_VOTES = 2;
  */
 export const useSequenceExtraDataAutoSubmit = (
   questionSlug: string,
-  cards: ProposalCardType[],
+  cards: ProposalCardType[] | SequenceCardType[],
   currentIndex: number
 ): void => {
   const { dispatch, state } = useAppContext();

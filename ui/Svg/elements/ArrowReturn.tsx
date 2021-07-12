@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import * as React from 'react';
+import { SvgPropsType } from '@make.org/types';
 
 export const SvgArrowReturn: React.FC = (props: SvgPropsType) => (
   <svg width={16} height={15} {...props}>

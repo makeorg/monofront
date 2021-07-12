@@ -43,7 +43,7 @@ export const useMobile = (): boolean => useMedia(
   `only screen and (max-device-width: ${intToPx(Breakpoints.Tablet)})`
 );
 
-export const useScreenWidth = (): number => {
+export const useScreenWidth = (): number | null => {
   const hasWindowObject = typeof window === 'object';
 
   const screenWidth = hasWindowObject ? window.screen.width : null;
@@ -67,14 +67,14 @@ export const useScreenWidth = (): number => {
   return value;
 };
 
-export const useScreenMobileContainerWidth = (): number => {
+export const useScreenMobileContainerWidth = (): number | null => {
   const screenWidth = useScreenWidth();
   const mobileContainerPadding = 20 * 2;
 
   return screenWidth ? screenWidth - mobileContainerPadding : null;
 };
 
-export const useDevicePixelRatio = (): number => {
+export const useDevicePixelRatio = (): number | null => {
   if (typeof window === 'object') {
     return window.devicePixelRatio;
   }

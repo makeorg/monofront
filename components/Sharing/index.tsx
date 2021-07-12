@@ -55,7 +55,7 @@ export const Sharing: React.FC = () => {
             href={facebookShareUrl(location.pathname)}
             onClick={() => trackClickShare('facebook')}
           >
-            <SvgFacebookLogoF aria-hidden focusable="false" />
+            <SvgFacebookLogoF aria-hidden focusable={false} />
           </FacebookButtonStyle>
         ) : (
           <FacebookButtonStyle
@@ -63,7 +63,7 @@ export const Sharing: React.FC = () => {
             onClick={displayCookieNotification}
             type="button"
           >
-            <SvgFacebookLogoF aria-hidden focusable="false" />
+            <SvgFacebookLogoF aria-hidden focusable={false} />
           </FacebookButtonStyle>
         )}
       </li>
@@ -76,7 +76,7 @@ export const Sharing: React.FC = () => {
             href={twitterShareUrl(location.pathname, '', '')}
             onClick={() => trackClickShare('twitter')}
           >
-            <SvgTwitterLogo aria-hidden focusable="false" />
+            <SvgTwitterLogo aria-hidden focusable={false} />
           </TwitterButtonStyle>
         ) : (
           <TwitterButtonStyle
@@ -84,7 +84,7 @@ export const Sharing: React.FC = () => {
             onClick={displayCookieNotification}
             type="button"
           >
-            <SvgTwitterLogo aria-hidden focusable="false" />
+            <SvgTwitterLogo aria-hidden focusable={false} />
           </TwitterButtonStyle>
         )}
       </li>
@@ -97,7 +97,7 @@ export const Sharing: React.FC = () => {
             href={linkedinShareUrl(location.pathname)}
             onClick={() => trackClickShare('linkedin')}
           >
-            <SvgLinkedinLogoIn aria-hidden focusable="false" />
+            <SvgLinkedinLogoIn aria-hidden focusable={false} />
           </LinkedInButtonStyle>
         ) : (
           <LinkedInButtonStyle
@@ -105,7 +105,7 @@ export const Sharing: React.FC = () => {
             onClick={displayCookieNotification}
             type="button"
           >
-            <SvgLinkedinLogoIn aria-hidden focusable="false" />
+            <SvgLinkedinLogoIn aria-hidden focusable={false} />
           </LinkedInButtonStyle>
         )}
       </li>

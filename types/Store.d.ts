@@ -9,7 +9,7 @@ import {
 import { ProposalType } from './Proposal';
 import { TagType } from './Tag';
 import { PersonalityType } from './User';
-import { SequenceCardType } from './Card';
+import { ProposalCardType, SequenceCardType } from './Card';
 
 // Config State
 export type StateConfig = {
@@ -43,7 +43,7 @@ export type StateSequence = {
     readonly questionSlug?: string
     readonly votedProposalIds: { [n: string]: string[] }
     readonly proposals: ProposalType[]
-    readonly cards: SequenceCardType[]
+    readonly cards: SequenceCardType[] | ProposalCardType[]
     readonly demographics?: {
       type: TypeDemographicName
       value: string

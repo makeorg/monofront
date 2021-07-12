@@ -68,7 +68,7 @@ export const ExtraDataForm: React.FC<Props> = ({
 
   const { device } = state.appConfig;
   const [currentValue, setCurrentValue] = useState(null);
-  const [isSubmitDisabled, setIsSubmitDisabled] = useState();
+  const [isSubmitDisabled, setIsSubmitDisabled] = useState(false);
   const [isSkipDisabled, setIsSkipDisabled] = useState(false);
   const { data, ui } = demographics;
   const FORM_NAME = `demographics_${type}`;
@@ -86,7 +86,7 @@ export const ExtraDataForm: React.FC<Props> = ({
     return accumulator;
   }, [location.search]);
 
-  const handleSubmit = (value) => async (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSubmit = (value: string) => async (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     setIsSubmitDisabled(true);
     setIsSkipDisabled(true);
@@ -112,7 +112,7 @@ export const ExtraDataForm: React.FC<Props> = ({
     trackClickSaveDemographics(type);
   };
 
-  const onClickSkip = (event) => {
+  const onClickSkip = (event: React.SyntheticEvent<HTMLButtonElement>) => {
     handleSubmit(SKIP_TRACKING_VALUE)(event);
     trackClickSkipDemographics(type);
   };
@@ -140,7 +140,7 @@ export const ExtraDataForm: React.FC<Props> = ({
           onClick={onClickSkip}
           data-cy-button="skip-demographics"
         >
-          <SkipIconStyle aria-hidden focusable={false} />
+          <SkipIconStyle aria-hidden focusable="false" />
           {i18n.t('demographics_card.skip')}
         </BlackBorderButtonStyle>
         <SubmitButton

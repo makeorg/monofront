@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import { i18n } from '@make.org/utils/i18n';
 import { SpaceBetweenRowStyle } from '@make.org/ui/elements/FlexElements';
@@ -12,7 +11,7 @@ export const SequencePlaceholder: React.FC = () => (
     <ScreenReaderItemStyle>{i18n.t('common.loading')}</ScreenReaderItemStyle>
     <SequenceContentStyle>
       <SequencePlaceholderLineStyle className="title" />
-      <ProposalSkeleton fromSequence />
+      <ProposalSkeleton />
       <SpaceBetweenRowStyle className="fullwidth">
         <SequencePlaceholderLineStyle className="button" />
         <SequencePlaceholderLineStyle />

@@ -6,6 +6,7 @@ import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { SvgFastForward } from '@make.org/ui/Svg/elements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
+import { SvgPropsType } from '@make.org/types';
 import SelectArrow from '@make.org/ui/Svg/source/select-arrow.svg';
 
 const MAX_WIDTH = 275;
@@ -83,7 +84,7 @@ export const SelectStyle = styled.select`
   background: transparent url(${SelectArrow}) no-repeat 95% center;
 `;
 
-export const SkipIconStyle = styled(SvgFastForward)`
+export const SkipIconStyle = styled(SvgFastForward)<SvgPropsType>`
   margin-right: 5px;
   width: 16px;
 `;
