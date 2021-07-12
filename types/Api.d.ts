@@ -28,3 +28,13 @@ export type ErrorResponse = {
   message: string
   request: string
 };
+
+export type OptionsType = {
+  headers?: Readonly<Record<string, string | boolean>>
+  allowedHeaders?: string[]
+  body?: string
+  params?: string
+  method?: string
+  httpsAgent?: string
+  withCredentials?: boolean
+}

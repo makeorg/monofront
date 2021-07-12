@@ -136,5 +136,5 @@ export const getLocationContext = (
 export const getTrackingLocation = (pathname: string): string => {
   const location = getLocationContext(pathname, '', '');
 
-  return location.split(' ').shift();
+  return location.split(' ').shift() || '';
 };

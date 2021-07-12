@@ -5,10 +5,9 @@ import {
 } from '@make.org/types';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 
-
 export const getDateOfBirthFromAge = (age = ''): string => {
   if (!age) {
-    return null;
+    return '';
   }
 
   const birthYear = new Date().getFullYear() - Number(age);

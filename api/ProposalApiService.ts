@@ -109,7 +109,7 @@ export class ProposalApiService {
     order?: string,
     headers?: ApiServiceHeadersType
   ): AxiosPromise<AxiosResponse> {
-    const params = {
+    const params: Record<string, string | number | undefined> = {
       questionId,
       content,
       seed,

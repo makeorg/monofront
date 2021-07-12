@@ -1,5 +1,5 @@
 import { getDateOfBirthFromAge } from '@make.org/utils/helpers/date';
-import { ApiServiceHeadersType } from '@make.org/types';
+import { ApiServiceHeadersType, UserRegisterType, UserType } from '@make.org/types';
 import { setEmptyStringToNull } from '@make.org/utils/helpers/form';
 import { PROPOSALS_LISTING_LIMIT } from '@make.org/utils/constants/proposal';
 import { AxiosPromise, AxiosResponse } from 'axios';
@@ -74,11 +74,11 @@ export class UserApiService {
     password: string,
     approvePrivacyPolicy?: boolean
   ): AxiosPromise<AxiosResponse> {
-    const data = {
+    const data: Record<string, string | boolean> = {
       username: email,
       password,
       grant_type: 'password',
-      approvePrivacyPolicy,
+      approvePrivacyPolicy: approvePrivacyPolicy || false,
     };
 
     return ApiService.callApi(PATH_USER_LOGIN, {
@@ -134,7 +134,7 @@ export class UserApiService {
    * @param  {Object}  user
    * @return {Promise}
    */
-  static register(user: any): AxiosPromise<AxiosResponse> {
+  static register(user: UserRegisterType): AxiosPromise<AxiosResponse> {
     const {
       age,
       firstname,
@@ -154,7 +154,7 @@ export class UserApiService {
         password,
         firstName: setEmptyStringToNull(firstname),
         dateOfBirth: setEmptyStringToNull(dateOfBirth),
-        postalCode: setEmptyStringToNull(postalcode),
+        postalCode: setEmptyStringToNull(postalcode || ''),
         profession,
         country: ApiService.country,
         language: ApiService.language,

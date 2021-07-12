@@ -1,7 +1,7 @@
-import { AxiosPromise, AxiosRequestConfig, AxiosResponse } from 'axios';
+import { AxiosPromise, AxiosResponse } from 'axios';
 
 export interface IApiServiceStrategy {
-  callApi(url: string, options: AxiosRequestConfig): AxiosPromise<AxiosResponse>;
+  callApi(url: string, options): AxiosPromise<AxiosResponse>;
   get country(): string;
   get language(): string;
   get source(): string;
@@ -21,7 +21,7 @@ class ApiServiceClass {
     return this.strategyValue;
   }
 
-  callApi(url: string, options: AxiosRequestConfig = {}): AxiosPromise<AxiosResponse> {
+  callApi(url: string, options = {}): AxiosPromise<AxiosResponse> {
     return this.strategy.callApi(url, options);
   }
 

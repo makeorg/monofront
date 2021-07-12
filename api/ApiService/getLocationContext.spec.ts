@@ -196,9 +196,7 @@ describe('getLocationContext', () => {
   fixtures.map((record) => it(`get tracking location context ${record.name}`, () => {
     expect(
       getTrackingLocation(
-        record.path,
-        record.params && record.params.questionId,
-        record.params && record.params.proposalId
+        record.path
       )
     ).toBe(record.expectedTracking);
   }));
