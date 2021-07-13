@@ -1,4 +1,4 @@
-import { ApiServiceHeadersType } from '@make.org/types';
+import { ApiServiceHeadersType, ProposalsType } from '@make.org/types';
 import { AxiosPromise, AxiosResponse } from 'axios';
 import { ApiService } from './ApiService';
 
@@ -108,7 +108,7 @@ export class ProposalApiService {
     ideaIds?: string,
     order?: string,
     headers?: ApiServiceHeadersType
-  ): AxiosPromise<AxiosResponse> {
+  ): AxiosPromise<AxiosResponse<ProposalsType>> {
     const params: Record<string, string | number | undefined> = {
       questionId,
       content,

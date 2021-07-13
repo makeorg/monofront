@@ -22,6 +22,12 @@ export class ApiServiceError extends Error {
 
   requestId?: string;
 
+  fileName?: string
+
+  lineNumber?: string
+
+  columnNumber?: string
+
   clone = (message: string): ApiServiceError => new ApiServiceError(
     message,
     this.status,

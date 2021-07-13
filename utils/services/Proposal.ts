@@ -1,6 +1,7 @@
 import { getBaitText } from '@make.org/utils/constants/proposal';
 import { ProposalType, ProposalsType } from '@make.org/types';
 import { ProposalApiService } from '@make.org/api/ProposalApiService';
+import { AxiosPromise, AxiosResponse } from 'axios';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
 // @todo remove with DepreactedProposalSubmit
@@ -28,7 +29,7 @@ const propose = async (content: string, questionId: string): Promise<void> => {
   }
 };
 
-const getProposal = async (proposalId: string): Promise<ProposalType> => {
+const getProposal = async (proposalId: string): Promise<AxiosResponse<ProposalType> | null> => {
   try {
     const response = await ProposalApiService.getProposal(proposalId);
 
@@ -42,7 +43,7 @@ const getProposal = async (proposalId: string): Promise<ProposalType> => {
 
 const getPopularProposals = async (
   questionId: string
-): Promise<ProposalsType> => {
+): Promise<AxiosResponse<ProposalType> | null> => {
   try {
     const response = await ProposalApiService.getPopularProposals(questionId);
 
@@ -65,9 +66,9 @@ const searchProposals = async (
   content?: string,
   ideaIds?: string,
   order?: string
-): Promise<ProposalsType> => {
+): Promise<ProposalsType | null> => {
   try {
-    const response = await ProposalApiService.searchProposals(
+    const response: AxiosResponse = await ProposalApiService.searchProposals(
       country,
       questionId,
       tagsIds,
@@ -80,18 +81,17 @@ const searchProposals = async (
       order
     );
     const { data } = response;
-
     // @toDo: hack multi-countries
     const { results } = data;
 
-    const updateCountry = (proposal) => ({
+    const updateCountry = (proposal: ProposalType) => ({
       ...proposal,
       question: proposal.question,
     });
 
     return {
       ...data,
-      results: results.map((proposal) => updateCountry(proposal)),
+      results: results.map((proposal: ProposalType) => updateCountry(proposal)),
     };
   } catch (apiServiceError) {
     defaultUnexpectedError(apiServiceError);

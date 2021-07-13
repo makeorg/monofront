@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import { env } from '@make.org/assets/env';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
@@ -8,7 +8,7 @@ const LOG_WARNING = 'warn';
 const LOG_ERROR = 'error';
 // const onClientSide = typeof window !== 'undefined' && !!window;
 
-let instance = null;
+let instance: LoggerSingleton | null = null;
 
 class LoggerSingleton {
   constructor() {
@@ -37,14 +37,15 @@ class LoggerSingleton {
   formatError = (error: Error) => ({
     message: error.message,
     name: error.name,
-    fileName: error.fileName,
-    lineNumber: error.lineNumber,
-    columnNumber: error.columnNumber,
+    // TO DO
+    // fileName: error.fileName,
+    // lineNumber: error.lineNumber,
+    // columnNumber: error.columnNumber,
     stack: error.stack,
     logId: uuidv4(),
   });
 
-  normalizeData = (data) => {
+  normalizeData = (data: ApiServiceError | Error | {[key: string]: string}) => {
     if (data instanceof ApiServiceError) {
       return this.formatApiServiceError(data);
     }
@@ -78,19 +79,19 @@ class LoggerSingleton {
     }
   };
 
-  logError = (error) => {
+  logError = (error: string) => {
     this.log(error, LOG_ERROR);
   };
 
-  logInfo = (data) => {
+  logInfo = (data: string) => {
     this.log(data, LOG_INFO);
   };
 
-  logWarning = (data) => {
+  logWarning = (data: string) => {
     this.log(data, LOG_WARNING);
   };
 
-  log = async (data, level) => {
+  log = (data: string, level: string): AxiosResponse => {
     if (env.isDev()) {
       // eslint-disable-next-line no-console
       console.log(level, data);
@@ -115,6 +116,7 @@ class LoggerSingleton {
     //   return () => undefined;
     // }
 
+    // TO DO
     return axios({
       method: 'POST',
       url: '/api/logger',

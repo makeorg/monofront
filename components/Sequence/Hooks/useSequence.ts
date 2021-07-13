@@ -23,9 +23,9 @@ import { useSequenceQueryParams } from './useSequenceQueryParams';
 
 type ReturnFunctionType = {
   withProposalButton: boolean
-  country: string
+  country?: string
   isLoading: boolean
-  currentCard: SequenceCardType
+  currentCard: SequenceCardType | null
 }
 type ExecuteStartSequence = (questionId: string, votedIds: string[]) => Promise<ProposalType[]>
 
@@ -43,8 +43,8 @@ export const useSequence = (
   // StateRoot
   const { appConfig, proposal, sequence } = state;
   const { country } = appConfig || {};
-  const { hasProposed } = proposal || {};
-  const { isLoggedIn } = selectAuthentication(state);
+  const { hasProposed = false } = proposal || {};
+  const { isLoggedIn } = selectAuthentication(state) || {};
   const persistedDemographics = sequence && sequence.demographics;
   const {
     cards: sCards = [],
@@ -61,12 +61,12 @@ export const useSequence = (
   const cards = sCards;
 
   // State
-  const [currentCard, setCurrentCard] = useState(null);
+  const [currentCard, setCurrentCard] = useState<SequenceCardType | null>(null);
   const [isLoading, setLoading] = useState(true);
   const [withProposalButton, setWithProposalButton] = useState(
     !!question?.canPropose
   );
-  const [sequenceProposals, setSequenceProposals] = useState([]);
+  const [sequenceProposals, setSequenceProposals] = useState<ProposalType[]>([]);
 
   // Sequence hooks
   useSequenceTracking();

@@ -5,7 +5,8 @@ import {
   QualificationType,
   VoteType,
   ReducerAction,
-  Dispatch
+  Dispatch,
+  ProposalCardStateType
 } from '@make.org/types';
 import { TopComponentContextValue } from '../../topComponentContext';
 import {
@@ -31,7 +32,7 @@ export const loadSequenceCards = (cards: SequenceCardType[]): ReducerAction => (
 
 export const updateSequenceCardState = (
   index: number,
-  newCardState: Partial<SequenceCardType>
+  newCardState: ProposalCardStateType
 ): ReducerAction => ({
   type: SEQUENCE_UPDATE_CARD_STATE,
   payload: { index, newCardState },
@@ -60,11 +61,12 @@ export const setSequenceIndex = (index: number): ReducerAction => ({
   payload: { index },
 });
 
-export const unvote = (proposal: ProposalType, newVotes: VoteType[], context: string): void => (dispatch: Dispatch, getState: () => StateRoot): ReducerAction => {
+export const unvote = (proposal: ProposalType, newVotes: VoteType[], context: string) => (dispatch: Dispatch, getState: () => StateRoot): void => {
   if (context !== TopComponentContextValue.getSequenceProposal()) {
     return;
   }
-  const { cards, currentIndex } = getState().sequence;
+  const { sequence } = getState();
+  const { cards = [], currentIndex = 0 } = sequence || {};
 
   dispatch({
     type: SEQUENCE_PROPOSAL_UNVOTE,
@@ -84,11 +86,12 @@ export const unvote = (proposal: ProposalType, newVotes: VoteType[], context: st
   );
 };
 
-export const vote = (proposal: ProposalType, newVotes: VoteType[], context: string): void => (dispatch: Dispatch, getState: () => StateRoot): ReducerAction => {
+export const vote = (proposal: ProposalType, newVotes: VoteType[], context: string) => (dispatch: Dispatch, getState: () => StateRoot): void => {
   if (context !== TopComponentContextValue.getSequenceProposal()) {
     return;
   }
-  const { cards, currentIndex } = getState().sequence;
+  const { sequence } = getState();
+  const { cards = [], currentIndex = 0 } = sequence || {};
 
   dispatch({
     type: SEQUENCE_PROPOSAL_VOTE,
@@ -112,11 +115,11 @@ const getVotesUpdatedWithQualifification = (
   votedKey: string,
   qualification: QualificationType
 ) => {
-  const qualificationMatch = (qualificationItem) => qualificationItem.qualificationKey === qualification.qualificationKey;
+  const qualificationMatch = (qualificationItem: QualificationType) => qualificationItem.qualificationKey === qualification.qualificationKey;
 
-  const getUpdatedVote = (voteItem) => ({
+  const getUpdatedVote = (voteItem: VoteType) => ({
     ...voteItem,
-    qualifications: voteItem.qualifications.map((qualificationItem) => (qualificationMatch(qualificationItem) ? qualification : qualificationItem)),
+    qualifications: voteItem.qualifications.map((qualificationItem: QualificationType) => (qualificationMatch(qualificationItem) ? qualification : qualificationItem)),
   });
 
   const newVotes = votes.map((voteItem) => (voteItem.voteKey === votedKey && voteItem.hasVoted === true
@@ -131,11 +134,12 @@ export const qualify = (
   votedKey: string,
   qualification: QualificationType,
   context: string
-) => (dispatch: Dispatch, getState: () => StateRoot): ReducerAction => {
+) => (dispatch: Dispatch, getState: () => StateRoot): void => {
   if (context !== TopComponentContextValue.getSequenceProposal()) {
     return;
   }
-  const { cards, currentIndex } = getState().sequence;
+  const { sequence } = getState();
+  const { cards = [], currentIndex = 0 } = sequence || {};
   const proposalSequenceCard = cards[currentIndex];
   const { votes } = proposalSequenceCard.state || { votes: [] };
   const newVotes = getVotesUpdatedWithQualifification(

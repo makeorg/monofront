@@ -26,7 +26,7 @@ import {
  * @return {number}
  */
 export const findIndexOfFirstUnvotedCard = (
-  firstUnvotedProposal: ProposalType,
+  firstUnvotedProposal: ProposalType | undefined,
   cards: SequenceCardType[],
   currentIndex: number,
 ): number => {

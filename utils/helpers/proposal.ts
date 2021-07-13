@@ -35,7 +35,7 @@ export const proposalHasValidLength = (length = 0): boolean => {
  * Search the first no voted proposal
  * @type {Object|undefined}
  */
-export const searchFirstUnvotedProposal = (proposals: ProposalType[]): ProposalType => proposals.find((proposal) => proposal.votes.every((vote) => vote.hasVoted === false));
+export const searchFirstUnvotedProposal = (proposals: ProposalType[]): ProposalType | undefined => proposals.find((proposal) => proposal.votes.every((vote) => vote.hasVoted === false));
 
 export const searchProposals = async (
   country: string,
@@ -47,7 +47,7 @@ export const searchProposals = async (
   tagsIds?: string,
   sortTypeKey?: string,
   ideaIds?: string
-): Promise<ProposalsType> => {
+): Promise<ProposalsType | null> => {
   const skip = page * limit;
 
   const result = await ProposalService.searchProposals(
@@ -73,7 +73,7 @@ export const searchTaggedProposals = async (
   page = 0,
   sortTypeKey = AVAILABLE_ALGORITHMS.TAGGED_FIRST.value,
   ideaIds?: string
-): Promise<ProposalsType> => {
+): Promise<ProposalsType | null> => {
   const limit = PROPOSALS_LISTING_LIMIT;
   const skip = page * limit;
   const tagsIds = TagIdsArray.length ? TagIdsArray.join(',') : undefined;
@@ -123,9 +123,7 @@ export const getLocalizedBaitText = (language: string, questionId: string): stri
   );
 
   if (!localizedBaitText) {
-    Logger.logError({
-      message: `No proposal bait for questionId:${questionId} with language:${language}`,
-    });
+    Logger.logError(`No proposal bait for questionId:${questionId} with language:${language}`);
     return i18n.getResource(
       DEFAULT_LANGUAGE,
       TRANSLATION_NAMESPACE,
