@@ -38,6 +38,18 @@ export type TrackingConfigurationParamType = TrackingCommonConfigurationParamsTy
   values?: string[]
   optional?: boolean
   component?: string
+  page?: string
+  context?: string
+  'social-network'?: string
+  'account-creation'?: string
+  'tag-name'?: string
+  nature?: string
+  'filter-name'?: string
+  type?: string
+  'question-Id'?: string
+  'page-number'?: string
+  'card-position'?: string
+  level?: string
 };
 
 export type TrackingEventConfigurationType = {
@@ -50,7 +62,7 @@ export type TrackingEventType = (
   args?: TrackingConfigurationParamType
   ) => {
     eventName: string,
-    parameters?: TrackingConfigurationParamType
+    parameters: TrackingConfigurationParamType
   }
 export type TrackingAllEventsType = {
   [f: string]: TrackingEventType

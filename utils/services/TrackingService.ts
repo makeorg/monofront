@@ -106,7 +106,7 @@ const trackFacebookPixel = (eventName: string, parameters: TrackingConfiguration
   FacebookTracking.trackCustom(eventName, eventParameters);
 };
 
-const trackTwitterPixel = (eventName: number): void => {
+const trackTwitterPixel = (eventName: string | number): void => {
   TwitterTracking.track(eventName);
 };
 
