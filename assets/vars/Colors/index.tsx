@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import athena from 'athena-design-tokens';
 import styled from 'styled-components';
 import { RedLinkHTMLElementStyle } from '@make.org/ui/elements/LinkElements';
-import { ExternalLinkIconStyle } from '@make.org/ui/elements/Buttons/style';
+import { ExternalLinkIconStyle } from '@make.org/ui/elements/ButtonsElements';
 import { env } from '../../env';
 
 const ColorboxStyle = styled.div<{ col?: string }>`

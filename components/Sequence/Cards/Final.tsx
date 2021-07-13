@@ -10,7 +10,8 @@ import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
 import {
   LinkAsRedButtonStyle,
   RedLinkButtonStyle,
-} from '@make.org/ui/elements/Buttons/style';
+} from '@make.org/ui/elements/ButtonsElements';
+
 import { getParticipateLink } from '@make.org/utils/helpers/url';
 import { useParams } from 'react-router';
 import { modalShowRegister } from '@make.org/store/actions/modal';

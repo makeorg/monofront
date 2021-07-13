@@ -22,9 +22,9 @@ type Props = {
   /** image src set */
   srcSet: string;
   /** image width */
-  width: number;
+  width: number | undefined | null;
   /** Image height */
-  height: number;
+  height: number | undefined | null;
   /** image key */
   key: string | number;
   /** image loading */
@@ -200,8 +200,8 @@ export const Image: React.FC<Props> = ({
           key={key}
           className={className}
           loading={loading}
-          width={width ? `${width}` : null}
-          height={height ? `${height}` : null}
+          width={width ? `${width}` : ''}
+          height={height ? `${height}` : ''}
         />
       )}
       {imageToLoad && (
@@ -209,8 +209,8 @@ export const Image: React.FC<Props> = ({
           <img
             src={imageToLoad}
             alt={altCurrent}
-            width={width ? `${width}` : null}
-            height={height ? `${height}` : null}
+            width={width ? `${width}` : ''}
+            height={height ? `${height}` : ''}
           />
         </noscript>
       )}

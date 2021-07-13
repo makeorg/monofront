@@ -4,7 +4,7 @@ import {
   RedButtonStyle,
   GreyNoBackgroundButtonStyle,
   RedNoBackgroundButtonStyle,
-} from '@make.org/ui/elements/Buttons/style';
+} from '@make.org/ui/elements/ButtonsElements';
 import {
   SvgPencil,
   SvgExternalLinkPlain,

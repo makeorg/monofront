@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { SvgPreviousArrowLeft } from '@make.org/ui/Svg/elements';
 import { color, typography } from 'athena-design-tokens';
-import { UnstyledButtonStyle } from '@make.org/ui/elements/Buttons/style';
+import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { QuestionThemeType, SvgPropsType } from '@make.org/types';

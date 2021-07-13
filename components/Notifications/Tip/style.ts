@@ -3,7 +3,7 @@ import { color } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { UnstyledButtonStyle } from '@make.org/ui/elements/Buttons/style';
+import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 
 export const TipWrapperStyle = styled.div`
   position: relative;

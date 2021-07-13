@@ -6,7 +6,7 @@ import {
   FormErrorsContainerStyle,
   FormErrorsIntroStyle,
   FormErrorsListItemStyle,
-} from '@make.org/ui/elements/Form/Styled/Errors';
+} from '@make.org/ui/elements/FormElements';
 
 type Props = {
   errors: ErrorObjectType[];

@@ -4,7 +4,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { Image } from '../Image';
 
-export const AvatarStyle = styled.span`
+export const AvatarStyle = styled.span<{isSequence?: boolean}>`
   position: ${(props) => (props.isSequence ? 'absolute' : 'static')};
   top: ${(props) => (props.isSequence ? '-6px' : '')};
   left: ${(props) => (props.isSequence ? '50%' : '')};
@@ -15,7 +15,7 @@ export const AvatarStyle = styled.span`
   display: inline-flex;
 `;
 
-export const AvatarImageStyle = styled(Image)`
+export const AvatarImageStyle = styled(Image)<{avatarSize: number}>`
   box-sizing: content-box;
   min-width: ${(props) => intToPx(props.avatarSize)};
   width: ${(props) => intToPx(props.avatarSize)};
@@ -39,7 +39,7 @@ export const PartnerAvatarStyle = styled.span`
   }
 `;
 
-export const AvatarWithDotsStyle = styled.div`
+export const AvatarWithDotsStyle = styled.div<{avatarSize: number}>`
   display: flex;
   align-items: center;
   justify-content: center;

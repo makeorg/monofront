@@ -7,7 +7,7 @@ import { i18n } from '@make.org/utils/i18n';
 import {
   PencilIconStyle,
   ForwardIconStyle,
-} from '@make.org/ui/elements/Buttons/style';
+} from '@make.org/ui/elements/SvgElements';
 import { MiddleColumnToRowStyle } from '@make.org/ui/elements/FlexElements';
 import { incrementSequenceIndex } from '@make.org/store/actions/sequence';
 import { setPanelContent } from '@make.org/store/actions/panel';

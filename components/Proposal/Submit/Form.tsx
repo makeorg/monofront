@@ -23,11 +23,11 @@ import { SpaceBetweenRowStyle } from '@make.org/ui/elements/FlexElements';
 import {
   GreyNoBackgroundButtonStyle,
   RedButtonStyle,
-} from '@make.org/ui/elements/Buttons/style';
+} from '@make.org/ui/elements/ButtonsElements';
 
 import { throttle } from '@make.org/utils/helpers/throttle';
 
-import { LoadingDots } from '@make.org/ui/elements/Loading/Dots';
+import { LoadingDots } from '@make.org/ui/components/Loading/Dots';
 import {
   ProposalStepWrapperStyle,
   ProposalStepTitleStyle,

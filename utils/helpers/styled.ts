@@ -1,12 +1,5 @@
 import { DESKTOP_DEVICE, MOBILE_DEVICE } from '../constants/config';
 
-export const pxToRem = (value: string | number, base:number | string = 16): string => {
-  const px = typeof value === 'string' ? parseInt(value, 10) : value;
-  const parsedBase = typeof base === 'string' ? parseInt(base, 10) : base;
-  const rem = parseFloat((px / parsedBase).toPrecision(4));
-  return `${rem}rem`;
-};
-
 export const pxToPercent = (childValue: number, parentValue: number): string => {
   const percentValue = (childValue * 100) / parentValue;
   return `${percentValue}%`;

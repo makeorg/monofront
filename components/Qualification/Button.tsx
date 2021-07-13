@@ -7,11 +7,11 @@ import {
 } from '@make.org/utils/services/Tracking';
 import { voteStaticParams } from '@make.org/utils/constants/vote';
 import { QualificationType } from '@make.org/types';
-import { LoadingDots } from '@make.org/ui/elements/Loading/Dots';
+import { LoadingDots } from '@make.org/ui/components/Loading/Dots';
 import { i18n } from '@make.org/utils/i18n';
 import { useAppContext } from '@make.org/store';
 import { TopComponentContext } from '@make.org/store/topComponentContext';
-import { QualifyButtonStyle } from '@make.org/ui/elements/Buttons/style';
+import { QualifyButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { qualify as actionQualify } from '@make.org/store/actions/sequence';
 import { CounterStyle } from './style';
 

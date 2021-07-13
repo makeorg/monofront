@@ -4,7 +4,7 @@ import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { color, typography } from 'athena-design-tokens';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { GreyButtonStyle, RedButtonStyle } from '@make.org/ui/elements/Buttons/style';
+import { GreyButtonStyle, RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import {
   CenterColumnStyle,
   SpaceBetweenRowStyle,

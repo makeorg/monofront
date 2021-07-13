@@ -7,19 +7,19 @@ import {
   trackDisplayFinalCard,
 } from '@make.org/utils/services/Tracking';
 import { resetSequenceVotedProposals } from '@make.org/store/actions/sequence';
-import { LinkAsRedButtonStyle } from '@make.org/ui/elements/Buttons/style';
+import { LinkAsRedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { useAppContext } from '@make.org/store';
 import { SequenceMainTitleStyle, SequenceParagraphStyle } from './style';
 
 export const SpecialFinalCard: React.FC = () => {
-  const { dispach, state } = useAppContext();
+  const { dispatch, state } = useAppContext();
   const { currentQuestion } = state;
   const { country } = useParams();
 
   useEffect(() => {
     trackDisplayFinalCard();
-    return () => dispach(resetSequenceVotedProposals(currentQuestion));
-  }, [currentQuestion, dispach]);
+    return () => dispatch(resetSequenceVotedProposals(currentQuestion));
+  }, [currentQuestion, dispatch]);
 
   return (
     <>

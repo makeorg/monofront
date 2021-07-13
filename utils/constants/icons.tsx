@@ -11,7 +11,7 @@ import {
   PaperPlaneIconStyle,
   SaveFileIconStyle,
   LinkIconStyle,
-} from '@make.org/ui/elements/Buttons/style';
+} from '@make.org/ui/elements/SvgElements';
 
 /** Form Icons */
 export const EmailFieldIcon = <EmailIconStyle aria-hidden focusable="false" />;

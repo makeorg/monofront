@@ -11,8 +11,8 @@ import {
   TextSeparatorStyle,
   SeparatorStyle,
 } from '@make.org/ui/elements/Separators';
-import { RedLinkButtonStyle } from '@make.org/ui/elements/Buttons/style';
-import { ExtraParagraphStyle } from '@make.org/ui/elements/Form/Styled/Content';
+import { RedLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
+import { ExtraParagraphStyle } from '@make.org/ui/elements/FormElements';
 import { FacebookAuthentication } from '@make.org/components/Auth/Social/FacebookAuthentication';
 import { GoogleAuthentication } from '@make.org/components/Auth/Social/GoogleAuthentication';
 import { modalShowLogin, modalClose } from '@make.org/store/actions/modal';

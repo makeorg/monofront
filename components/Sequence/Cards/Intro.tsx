@@ -7,7 +7,7 @@ import {
 import { i18n } from '@make.org/utils/i18n';
 import { incrementSequenceIndex } from '@make.org/store/actions/sequence';
 import { useAppContext } from '@make.org/store';
-import { PlayIconStyle } from '@make.org/ui/elements/Buttons/style';
+import { PlayIconStyle } from '@make.org/ui/elements/SvgElements';
 import {
   SequenceIntroButtonStyle,
   SequenceMainTitleStyle,

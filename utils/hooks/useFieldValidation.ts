@@ -1,12 +1,11 @@
-import { ElementRef as TypeElementRef, useEffect, useState } from 'react';
-import { BasicInputStyle as TypeBasicInput } from '@make.org/ui/elements/Form/Styled/Input';
+import { MutableRefObject, useEffect, useState } from 'react';
 import { ErrorObjectType } from '@make.org/types';
 import { i18n } from '@make.org/utils/i18n';
 
-export const useIsFieldValid: React.FC = (
-  ref: TypeElementRef<TypeBasicInput>,
+export const useIsFieldValid = (
+  ref: MutableRefObject<HTMLInputElement>,
   initialError: ErrorObjectType
-) => {
+): boolean => {
   const [isFieldValid, setFieldValidation] = useState<boolean>(true);
   let isInitialErrorEmpty = true;
   let isRefEmpty = true;
@@ -18,7 +17,7 @@ export const useIsFieldValid: React.FC = (
     isInitialErrorEmpty = !initialError.message;
   }
 
-  if (ref.current) {
+  if (ref && ref.current) {
     inputField = ref.current;
     isRefEmpty = inputField.value.length === 0;
     filledPostalCode = (inputField.value !== undefined || inputField.value !== '')

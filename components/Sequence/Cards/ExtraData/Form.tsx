@@ -1,6 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { SyntheticEvent, useEffect, useMemo, useState } from 'react';
 import { DemographicsType } from '@make.org/types';
-import { BlackBorderButtonStyle } from '@make.org/ui/elements/Buttons/style';
+import { BlackBorderButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { i18n } from '@make.org/utils/i18n';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { DemographicsTrackingService } from '@make.org/utils/services/DemographicsTracking';
@@ -15,7 +15,7 @@ import {
   trackDisplayDemographics,
 } from '@make.org/utils/services/Tracking';
 import { useAppContext } from '@make.org/store';
-import { SubmitButton } from '@make.org/ui/elements/Form/SubmitButton';
+import { SubmitButton } from '@make.org/ui/components/SubmitButton';
 import { TypeDemographicName } from '@make.org/api/DemographicsTrackingApiService';
 import { RadioDemographics } from './Radio';
 import { ExtraDataFormStyle, SkipIconStyle, SubmitWrapperStyle } from './style';
@@ -86,7 +86,7 @@ export const ExtraDataForm: React.FC<Props> = ({
     return accumulator;
   }, [location.search]);
 
-  const handleSubmit = (value: string) => async (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSubmit = (value: string) => async (event: SyntheticEvent<HTMLFormElement> | SyntheticEvent<HTMLButtonElement>) => {
     event.preventDefault();
     setIsSubmitDisabled(true);
     setIsSkipDisabled(true);

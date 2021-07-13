@@ -31,6 +31,9 @@ export const Avatar: React.FC<Props> = ({
 }) => (
   <AvatarStyle isSequence={isSequence}>
     {avatarUrl ? (
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      // styled component doesn't handle props overloading on an extended object
       <AvatarImageStyle
         src={avatarUrl}
         alt={avatarAlt}

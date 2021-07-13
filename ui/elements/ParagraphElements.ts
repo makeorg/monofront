@@ -26,3 +26,22 @@ export const PlayfairParagraphStyle = styled.p`
 export const CenterParagraphStyle = styled(ParagraphStyle)`
   text-align: center;
 `;
+
+export const InlineParagraphStyle = styled(ParagraphStyle)`
+  display: inline;
+`;
+
+export const ExtraParagraphStyle = styled(InlineParagraphStyle)`
+  margin-top: 15px;
+`;
+
+export const ExtraAltParagraphStyle = styled(InlineParagraphStyle)`
+  margin-top: 10px;
+`;
+
+export const ConditionParagraphStyle = styled(InlineParagraphStyle)`
+  margin-bottom: 15px;
+  a {
+    color: ${color.brandSecondary};
+  }
+`;
