@@ -2,7 +2,7 @@
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
 
-export const SvgEmptyAvatar: React.FC = (props: SvgPropsType) => (
+export const SvgEmptyAvatar: React.FC<SvgPropsType> = (props: SvgPropsType) => (
   <svg width={30} height={30} viewBox="0 0 30 30" {...props}>
     <defs>
       <circle cx={15} cy={15} r={15} />

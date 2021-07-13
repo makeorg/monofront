@@ -2,7 +2,7 @@
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
 
-export const SvgCookie: React.FC = (props: SvgPropsType) => (
+export const SvgCookie: React.FC<SvgPropsType> = (props: SvgPropsType) => (
   <svg width={108} height={104} viewBox="0 0 108 104" {...props}>
     <path
       fill="#DE7A4B"

@@ -11,7 +11,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 
-export const AuthenticationWrapperStyle = styled.section`
+export const AuthenticationWrapperStyle = styled.section<{ className?: string }>`
   display: flex;
   flex-flow: column;
   justify-content: center;

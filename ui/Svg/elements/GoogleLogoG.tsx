@@ -2,7 +2,7 @@
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
 
-export const SvgGoogleLogoG: React.FC = (props: SvgPropsType) => (
+export const SvgGoogleLogoG: React.FC<SvgPropsType> = (props: SvgPropsType) => (
   <svg width={16} height={16} viewBox="0 0 16 16" {...props}>
     <g fill="none">
       <path

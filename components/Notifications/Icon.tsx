@@ -14,7 +14,7 @@ import {
 
 type Props = {
   level: string,
-  context: string,
+  context?: string,
 };
 
 export const NotificationIcon: React.FC<Props> = ({ level, context = 'banner' }) => {

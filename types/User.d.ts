@@ -37,21 +37,6 @@ export type UserProfileType = {
   legalAdvisorApproval?: boolean
 };
 
-export type UserRegisterType = {
-  email: string
-  password: string
-  profile: {
-    age: string
-    firstname: string
-    postalcode?: string
-    profession?: string
-    legalMinorConsent?: boolean
-    legalMinorConsent?: boolean
-    legalAdvisorApproval?: boolean
-    approvePrivacyPolicy: boolean
-  }
-};
-
 export type PasswordsType = {
   newPassword: string
   actualPassword: string

@@ -2,7 +2,7 @@
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
 
-export const SvgMail: React.FC = (props: SvgPropsType) => (
+export const SvgMail: React.FC<SvgPropsType> = (props: SvgPropsType) => (
   <svg width={46} height={46} viewBox="0 0 46 46" {...props}>
     <path
       className="tofill"

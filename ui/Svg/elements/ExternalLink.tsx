@@ -2,7 +2,7 @@
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
 
-export const SvgExternalLink: React.FC = (props: SvgPropsType) => (
+export const SvgExternalLink: React.FC<SvgPropsType> = (props: SvgPropsType) => (
   <svg width={16} height={14} viewBox="0 0 16 14" {...props}>
     <path
       className="tofill"
