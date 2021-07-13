@@ -274,7 +274,7 @@ const loginSocial = async (
 const checkSocialPrivacyPolicy = async (
   provider: string,
   token: string,
-  privacyPolicyDate: string,
+  privacyPolicyDate: Date,
   action?: () => void,
   success?: () => void,
   failure?: () => void,

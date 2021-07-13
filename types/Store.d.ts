@@ -19,7 +19,7 @@ export type StateConfig = {
   readonly translations: any
   readonly countriesWithConsultations: []
   readonly device: string
-  readonly privacyPolicy?: Date
+  readonly privacyPolicy: Date
   readonly queryParams: any
 };
 
@@ -164,10 +164,10 @@ export type StateSession = {
 // All state
 export type StateRoot = {
   // common data
-  appConfig?: StateConfig
+  appConfig: StateConfig
   views?: StateViews
   proposal?: StateProposal
-  sequence?: StateSequence
+  sequence: StateSequence
   currentQuestion?: string
   notifications?: StateNotification
   user?: StateUser

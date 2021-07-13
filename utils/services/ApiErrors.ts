@@ -10,7 +10,7 @@ import { Logger } from './Logger';
 export const mapErrors = (
   internalErrors: ErrorObjectType[],
   apiErrors: ErrorObjectType[],
-  logId?: string
+  // logId?: string
 ): ErrorObjectType[] => {
   const errors: ErrorObjectType[] = apiErrors.map(
     (apiError: ErrorObjectType) => {
@@ -28,12 +28,12 @@ export const mapErrors = (
           message: errorMatch.message,
         };
       }
-
-      Logger.logError({
-        message: `Unexpected error: "field": "${apiErrorField}", "key": "${apiError.key}", "message": "${apiError.message}"`,
-        logId,
-      });
-
+      // TO DO
+      // Logger.logError({
+      //   message: `Unexpected error: "field": "${apiErrorField}", "key": "${apiError.key}", "message": "${apiError.message}"`,
+      //   logId,
+      // });
+      Logger.logError(`Unexpected error: "field": "${apiErrorField}", "key": "${apiError.key}", "message": "${apiError.message}"`,);
       return {
         field: apiErrorField,
         key: apiError.key,

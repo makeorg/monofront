@@ -19,13 +19,14 @@ import {
 
 export const SequenceProgress: React.FC = () => {
   const { dispatch, state } = useAppContext();
-  const question: QuestionType = selectCurrentQuestion(state);
+  const question: QuestionType | null = selectCurrentQuestion(state);
+  const { theme } = question || {};
   const { cards, currentIndex = 0 } = state.sequence || {};
   const index = currentIndex + 1;
   const total = cards ? cards.length : 0;
 
   return (
-    <ThemeProvider theme={question.theme}>
+    <ThemeProvider theme={theme}>
       <SpaceBetweenRowStyle className="fullwidth" data-cy-container="progress">
         <ProgressPreviousButtonStyle
           onClick={() => {
