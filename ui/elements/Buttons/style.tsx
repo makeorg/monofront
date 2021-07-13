@@ -473,7 +473,8 @@ export const LinkAsRedButtonStyle = styled(Link)`
     ${GreyStyle};
   }
 `;
-export const ExternalLinkIconStyle = styled(SvgExternalLinkPlain)`
+
+export const ExternalLinkIconStyle = styled(SvgExternalLinkPlain)<{ className?: string }>`
   width: 14px;
   height: 14px;
   margin-left: 7px;

@@ -1,5 +1,5 @@
 import { getDateOfBirthFromAge } from '@make.org/utils/helpers/date';
-import { ApiServiceHeadersType, UserRegisterType, UserType } from '@make.org/types';
+import { ApiServiceHeadersType, RegisterFormDataType } from '@make.org/types';
 import { setEmptyStringToNull } from '@make.org/utils/helpers/form';
 import { PROPOSALS_LISTING_LIMIT } from '@make.org/utils/constants/proposal';
 import { AxiosPromise, AxiosResponse } from 'axios';
@@ -134,7 +134,7 @@ export class UserApiService {
    * @param  {Object}  user
    * @return {Promise}
    */
-  static register(user: UserRegisterType): AxiosPromise<AxiosResponse> {
+  static register(user: RegisterFormDataType): AxiosPromise<AxiosResponse> {
     const {
       age,
       firstname,

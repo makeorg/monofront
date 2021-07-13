@@ -2,7 +2,7 @@
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
 
-export const SvgAlert: React.FC = (props: SvgPropsType) => (
+export const SvgAlert: React.FC<SvgPropsType> = (props: SvgPropsType) => (
   <svg width={19} height={17} viewBox="0 0 19 17" {...props}>
     <g fill="none" fillRule="evenodd">
       <path fill="#FFF" d="M6 5h5v11H6z" />

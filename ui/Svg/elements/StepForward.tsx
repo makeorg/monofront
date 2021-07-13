@@ -2,7 +2,7 @@
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
 
-export const SvgStepForward: React.FC = (props: SvgPropsType) => (
+export const SvgStepForward: React.FC<SvgPropsType> = (props: SvgPropsType) => (
   <svg width={10} height={16} viewBox="0 0 10 16" {...props}>
     <path
       className="tofill"

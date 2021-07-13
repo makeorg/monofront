@@ -2,7 +2,7 @@
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
 
-export const SvgAngleArrowRight: React.FC = (props: SvgPropsType) => (
+export const SvgAngleArrowRight: React.FC<SvgPropsType> = (props: SvgPropsType) => (
   <svg
     width={21}
     height={21}

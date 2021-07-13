@@ -5,7 +5,7 @@ import { RedLinkHTMLElementStyle } from '@make.org/ui/elements/LinkElements';
 import { ExternalLinkIconStyle } from '@make.org/ui/elements/Buttons/style';
 import { env } from '../../env';
 
-const ColorboxStyle = styled.div`
+const ColorboxStyle = styled.div<{ col?: string }>`
   width: 25px;
   height: 25px;
   border: 1px solid;

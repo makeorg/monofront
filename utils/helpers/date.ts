@@ -5,7 +5,7 @@ import {
 } from '@make.org/types';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 
-export const getDateOfBirthFromAge = (age = ''): string => {
+export const getDateOfBirthFromAge = (age: string | number = ''): string => {
   if (!age) {
     return '';
   }

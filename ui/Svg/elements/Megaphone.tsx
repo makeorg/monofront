@@ -2,7 +2,7 @@
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
 
-export const SvgMegaphone: React.FC = (props: SvgPropsType) => (
+export const SvgMegaphone: React.FC<SvgPropsType> = (props: SvgPropsType) => (
   <svg width={20} height={20} viewBox="0 0 20 20" {...props}>
     <defs>
       <path

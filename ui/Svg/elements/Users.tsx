@@ -1,7 +1,7 @@
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
 
-export const SvgUsers: React.FC = (props: SvgPropsType) => {
+export const SvgUsers: React.FC<SvgPropsType> = (props: SvgPropsType) => {
   const { style } = props;
   return (
     <svg width="1em" height="1em" viewBox="0 0 640 512" aria-hidden style={style}>

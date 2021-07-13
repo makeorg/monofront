@@ -2,7 +2,7 @@
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
 
-export const SvgSelectArrow: React.FC = (props: SvgPropsType) => (
+export const SvgSelectArrow: React.FC<SvgPropsType> = (props: SvgPropsType) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 10 10"

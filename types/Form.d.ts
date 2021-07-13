@@ -1,6 +1,6 @@
 export type RegisterFormProfileDataType = {
   firstname: string
-  age?: number
+  age: string | number
   postalcode: string
   profession: string
   legalMinorConsent: boolean

@@ -2,7 +2,7 @@
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
 
-export const SvgPlayButton: React.FC = (props: SvgPropsType) => (
+export const SvgPlayButton: React.FC<SvgPropsType> = (props: SvgPropsType) => (
   <svg width={14} height={16} viewBox="0 0 13.8 16.1" {...props}>
     <path
       className="tofill"

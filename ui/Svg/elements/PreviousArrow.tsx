@@ -2,7 +2,7 @@
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
 
-export const SvgPreviousArrow: React.FC = (props: SvgPropsType) => (
+export const SvgPreviousArrow: React.FC<SvgPropsType> = (props: SvgPropsType) => (
   <svg width={9} height={16} viewBox="0 0 9 16" {...props}>
     <path
       className="tofill"
