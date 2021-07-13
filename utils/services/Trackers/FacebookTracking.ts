@@ -1,4 +1,5 @@
 import { env } from '@make.org/assets/env';
+import { TrackingConfigurationParamType } from '@make.org/types';
 import { fbq } from './fbq.js';
 
 const makePixelId = '260470104426586';
@@ -58,7 +59,7 @@ export const FacebookTracking = {
     fbq.track('track', 'PageView');
   },
 
-  trackCustom(eventName: string, eventParameters: FacebookEventParams): void {
+  trackCustom(eventName: string, eventParameters: FacebookEventParams | TrackingConfigurationParamType): void {
     if (!isFBInitialized()) {
       return;
     }

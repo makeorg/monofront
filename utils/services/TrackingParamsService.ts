@@ -1,6 +1,6 @@
 /* eslint-disable  no-underscore-dangle */
 import { getTrackingLocation } from '@make.org/api/ApiService/getLocationContext';
-import { TrackingParamsListenerType } from '../../types';
+import { TrackingCommonConfigurationParamsType, TrackingParamsListenerType } from '@make.org/types';
 
 class TrackingParamsServiceClass {
   _source = '';
@@ -21,7 +21,7 @@ class TrackingParamsServiceClass {
 
   _listeners: TrackingParamsListenerType[] = [];
 
-  _all = {
+  _all: TrackingCommonConfigurationParamsType = {
     location: this._location,
     source: this._source,
     language: this._language,
@@ -119,7 +119,7 @@ class TrackingParamsServiceClass {
     this._listeners.push(object);
   }
 
-  all() {
+  all(): TrackingCommonConfigurationParamsType {
     this._updateDynamicParams();
     return this._all;
   }

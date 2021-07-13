@@ -37,7 +37,7 @@ export const findIndexOfFirstUnvotedCard = (
   const indexOfFirstUnvotedCard = cards.findIndex(
     (card) => {
       const { type = '', configuration } = card;
-      if ('proposal' in configuration) {
+      if (!!configuration && 'proposal' in configuration) {
         const { proposal } = configuration;
         if (type === CARD_TYPE_PROPOSAL && proposal.id) {
           return proposal.id === (firstUnvotedProposal && firstUnvotedProposal.id);
@@ -76,13 +76,13 @@ export const buildCards = (
   pushProposalParam?: boolean,
   withDemographics?: boolean
 ): SequenceCardType[] => {
-  const withPushProposalCard: boolean = extraSlidesConfig.pushProposalCard
-    && extraSlidesConfig.pushProposalCard.enabled
-    && canPropose
-    && pushProposalParam
+  const withPushProposalCard: boolean = !!extraSlidesConfig.pushProposalCard
+    && !!extraSlidesConfig.pushProposalCard.enabled
+    && !!canPropose
+    && !!pushProposalParam
     && !hasProposed;
-  const withIntroCard: boolean = extraSlidesConfig.introCard
-    && extraSlidesConfig.introCard.enabled
+  const withIntroCard: boolean = !!extraSlidesConfig.introCard
+    && !!extraSlidesConfig.introCard.enabled
     && !!introCardParam;
 
   const cards: SequenceCardType[] = proposals.map((proposal) => ({

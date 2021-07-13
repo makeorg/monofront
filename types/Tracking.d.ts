@@ -22,25 +22,37 @@ export type PerformanceTimingType = {
   unloadEventStart: number
 };
 
-export type TrackingConfigurationParamType = {
-  key: string,
-  description: string,
-  values?: string[],
-  optional?: boolean,
-};
-
-export type TrackingConfigurationType = {
-  key: string,
-  description: string,
-  parameters: TrackingConfigurationParamType[],
-};
-
-export type TrackingEventArgsType = {
-  eventName: string
-  parameters: TrackingConfigurationParamType[]
+export type TrackingCommonConfigurationParamsType = {
+  location?: string
+  source?: string
+  language?: string
+  country?: string
+  questionId?: string
+  questionSlug?: string
+  referrer?: string
+  url?: string
 }
-export type TrackingEventType = (args: TrackingEventArgsType) => { eventName: string, parameters: TrackingConfigurationParamType }
-export type TrackingEventsType = {
+export type TrackingConfigurationParamType = TrackingCommonConfigurationParamsType & {
+  key?: string
+  description?: string
+  values?: string[]
+  optional?: boolean
+  component?: string
+};
+
+export type TrackingEventConfigurationType = {
+  key: string,
+  description: string,
+  parameters?: TrackingConfigurationParamType[],
+};
+
+export type TrackingEventType = (
+  args?: TrackingConfigurationParamType
+  ) => {
+    eventName: string,
+    parameters?: TrackingConfigurationParamType
+  }
+export type TrackingAllEventsType = {
   [f: string]: TrackingEventType
 }
 

@@ -104,14 +104,16 @@ export type StateUser = {
     readonly cookiesPreferences: StateUserCookiesPreferences
 };
 
+export type SingleStateQuestionType = {
+  question: QuestionType
+  questionResults: QuestionResultsType
+  popularTags: TagType[]
+  popularProposals: ProposalType[]
+  personalities: PersonalityType[]
+}
+
 export type StateQuestions = {
-    readonly [n: string]: {
-    question: QuestionType
-    questionResults: QuestionResultsType
-    popularTags: TagType[]
-    popularProposals: ProposalType[]
-    personalities: PersonalityType[]
-  }
+    readonly [n: string]: SingleStateQuestionType
 };
 
 export type StateModal = {

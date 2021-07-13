@@ -2,22 +2,21 @@ import { env } from '@make.org/assets/env';
 import {
   PerformanceTimingType,
   TrackingConfigurationParamType,
-  TrackingConfigurationType,
-  TrackingEventArgsType,
-  TrackingEventsType
+  TrackingAllEventsType,
+  TrackingEventConfigurationType
 } from '@make.org/types';
 import Cookies from 'universal-cookie';
 import { USER_PREFERENCES_COOKIE } from '@make.org/utils/constants/cookies';
 import { TrackingApiService } from '@make.org/api/TrackingApiService';
 import trackingConfiguration from './trackingConfiguration.yaml';
 import { FacebookTracking } from './Trackers/FacebookTracking';
-import { TwitterTracking } from './Trackers/TwitterTracking';
+import { TwitterTracking } from './Trackers/TwitterTracking.js';
 import { trackingParamsService } from './TrackingParamsService';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
 const validateParameters = (
-  values: TrackingEventArgsType,
-  expectedParameters: TrackingConfigurationParamType[]
+  values: TrackingConfigurationParamType,
+  expectedParameters: TrackingConfigurationParamType[] = []
 ) => {
   const keys = Object.keys(values);
   const expectedKeys = expectedParameters.map((param) => param.key);
@@ -28,38 +27,36 @@ const validateParameters = (
     );
   }
   expectedParameters.forEach((expectedParam) => {
-    if (
-      values[expectedParam.key] === undefined
-      && expectedParam.optional !== true
-    ) {
+    const { key: expectedKey = '', optional } = expectedParam;
+    if (!values[expectedKey] && optional !== true) {
       throw new Error(
-        `Tracking error : required param not found "${expectedParam.key}"`
+        `Tracking error : required param not found "${expectedKey}"`
       );
     }
     if (
       expectedParam.values
       && expectedParam.values.length
-      && !expectedParam.values.find((el) => el === values[expectedParam.key])
+      && !expectedParam.values.find((el) => el === values[expectedKey])
     ) {
       throw new Error(
         `Tracking error : invalid "${
-          values[expectedParam.key]
+          values[expectedKey]
         }" value. "${expectedParam.values.toString()}" expected.`
       );
     }
   });
 };
 
-const trackingEvent: TrackingEventsType = {};
+const trackingEvent: TrackingAllEventsType = {};
 Object.keys(trackingConfiguration).forEach((key) => {
-  const eventConfiguration: TrackingConfigurationType = trackingConfiguration[key];
+  const eventConfiguration: TrackingEventConfigurationType = trackingConfiguration[key];
   trackingEvent[key] = (
     params
-  ): { eventName: string, parameters: TrackingConfigurationParamType[] } => {
+  ) => {
     const { key: eventName, parameters } = eventConfiguration;
     validateParameters(params || {}, parameters || []);
 
-    return { eventName: eventName || '', parameters: params || {} };
+    return { eventName: eventName || '', parameters: params || undefined };
   };
 });
 
@@ -104,7 +101,7 @@ export const track = (eventName: string, parameters: TrackingConfigurationParamT
 };
 
 const trackFacebookPixel = (eventName: string, parameters: TrackingConfigurationParamType): void => {
-  const eventParameters = getEventParameters(parameters);
+  const eventParameters: TrackingConfigurationParamType = getEventParameters(parameters);
 
   FacebookTracking.trackCustom(eventName, eventParameters);
 };
