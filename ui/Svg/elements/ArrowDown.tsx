@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
+
 export const SvgArrowDown: React.FC = (props: SvgPropsType) => (
   // eslint-disable-next-line react/jsx-props-no-spreading
   <svg width={10} height={10} viewBox="0 0 10 10" {...props}>

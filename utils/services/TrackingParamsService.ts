@@ -2,10 +2,6 @@
 import { getTrackingLocation } from '@make.org/api/ApiService/getLocationContext';
 import { TrackingParamsListenerType } from '../../types';
 
-type TrackingParamsServiceClassType = {
-
-}
-
 class TrackingParamsServiceClass {
   _source = '';
 

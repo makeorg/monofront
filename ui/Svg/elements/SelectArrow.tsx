@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
+
 export const SvgSelectArrow: React.FC = (props: SvgPropsType) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

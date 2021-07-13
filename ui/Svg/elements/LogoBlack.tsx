@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
+
 export const SvgLogoBlack: React.FC = (props: SvgPropsType) => (
   <svg width={44} height={23} viewBox="0 0 44 23" {...props}>
     <defs>

@@ -63,7 +63,7 @@ Object.keys(trackingConfiguration).forEach((key) => {
   };
 });
 
-const getEventParameters = (parameters: TrackingConfigurationParamType = {}) => {
+const getEventParameters = (parameters: TrackingConfigurationParamType) => {
   const { parameters: defaultParameters } = trackingEvent.COMMON_PARAMETERS(
     trackingParamsService.all()
   );
@@ -84,7 +84,7 @@ const trackPerformance = async (
   }
 };
 
-export const track = (eventName: string, parameters: TrackingConfigurationParamType = {}): Promise<any> => {
+export const track = (eventName: string, parameters: TrackingConfigurationParamType): Promise<any> => {
   const eventParameters = getEventParameters(parameters);
 
   if (env.isDev()) {
@@ -103,7 +103,7 @@ export const track = (eventName: string, parameters: TrackingConfigurationParamT
   return TrackingApiService.track(params);
 };
 
-const trackFacebookPixel = (eventName: string, parameters: TrackingConfigurationParamType = {}): void => {
+const trackFacebookPixel = (eventName: string, parameters: TrackingConfigurationParamType): void => {
   const eventParameters = getEventParameters(parameters);
 
   FacebookTracking.trackCustom(eventName, eventParameters);
@@ -136,7 +136,7 @@ export const TrackingService = {
     }
 
     if (preferencesCookie?.twitter_tracking) {
-      TrackingService.trackTwitterPixel(eventName);
+      TrackingService.trackTwitterPixel(Number(eventName));
     }
   },
 };

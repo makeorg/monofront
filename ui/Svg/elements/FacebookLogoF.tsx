@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
+
 export const SvgFacebookLogoF: React.FC = (props: SvgPropsType) => (
   <svg width={8} height={16} viewBox="0 0 8 16" {...props}>
     <path

@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
+
 export const SvgClapping: React.FC = (props: SvgPropsType) => (
   <svg width={18} height={20} viewBox="0 0 18 20" {...props}>
     <path

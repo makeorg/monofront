@@ -6,7 +6,7 @@ import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 const LOG_INFO = 'info';
 const LOG_WARNING = 'warn';
 const LOG_ERROR = 'error';
-const onClientSide = typeof window !== 'undefined' && !!window;
+// const onClientSide = typeof window !== 'undefined' && !!window;
 
 let instance = null;
 

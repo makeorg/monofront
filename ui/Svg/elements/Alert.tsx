@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
+
 export const SvgAlert: React.FC = (props: SvgPropsType) => (
   <svg width={19} height={17} viewBox="0 0 19 17" {...props}>
     <g fill="none" fillRule="evenodd">

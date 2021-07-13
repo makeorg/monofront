@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
+
 export const SvgPeople: React.FC = (props: SvgPropsType) => (
   <svg width={38} height={27} viewBox="0 0 38 27" {...props}>
     <path

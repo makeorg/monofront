@@ -1,5 +1,6 @@
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
+
 export const SvgUsers: React.FC = (props: SvgPropsType) => {
   const { style } = props;
   return (

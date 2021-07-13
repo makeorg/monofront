@@ -1,7 +1,8 @@
+// eslint-disable
 import { env } from '@make.org/assets/env';
 import { Logger } from '../Logger';
 import trackingConfiguration from '../trackingConfiguration.yaml';
-import { twttr } from './twttr';
+import { twttr } from './twttr.js';
 
 const TWITTER_UNIVERSAL_MAKE_TAG = 'o2q8v';
 const twitterEventMapping = {
@@ -50,24 +51,19 @@ export const TwitterTracking = {
 };
 
 export const TwitterUniversalTag = {
-  /* eslint-disable */
   init() {
     if (env.isTest() || env.isDev()) {
       return;
     }
-    // $FlowFixMe
-    !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
-    // $FlowFixMe
-    twq('init',TWITTER_UNIVERSAL_MAKE_TAG);
-    
+    !(function (e, t, n, s, u, a) { e.twq || (s = e.twq = function () { s.exe ? s.exe.apply(s, arguments) : s.queue.push(arguments); }, s.version = '1.1', s.queue = [], u = t.createElement(n), u.async = !0, u.src = 'https://static.ads-twitter.com/uwt.js', a = t.getElementsByTagName(n)[0], a.parentNode.insertBefore(u, a)); }(window, document, 'script'));
+    twq('init', TWITTER_UNIVERSAL_MAKE_TAG);
   },
   pageView() {
     if (env.isTest() || env.isDev()) {
-      Logger.logInfo(`Tracking Twitter: event pageView`);
+      Logger.logInfo('Tracking Twitter: event pageView');
       return;
     }
-    // $FlowFixMe
-    twq('track','PageView');
+    twq('track', 'PageView');
   },
   /* eslint-enable */
 };

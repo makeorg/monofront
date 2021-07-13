@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
+
 export const SvgChat: React.FC = (props: SvgPropsType) => (
   <svg width={23} height={22} viewBox="0 0 23 22" {...props}>
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">

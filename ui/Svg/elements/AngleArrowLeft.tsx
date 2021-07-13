@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
+
 export const SvgAngleArrowLeft: React.FC = (props: SvgPropsType) => (
   <svg width={21} height={21} viewBox="0 0 21 21" {...props}>
     <path

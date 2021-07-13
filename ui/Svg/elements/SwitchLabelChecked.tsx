@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
+
 export const SvgSwitchLabelChecked: React.FC = (props: SvgPropsType) => (
   <svg width={9} height={7} viewBox="0 0 9 7" {...props}>
     <path

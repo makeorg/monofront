@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
+
 export const SvgHandHeart: React.FC = (props: SvgPropsType) => (
   <svg width={34} height={31} viewBox="0 0 34 31" {...props}>
     <path

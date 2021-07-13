@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
+
 export const SvgStats: React.FC = (props: SvgPropsType) => (
   <svg width={14} height={11} viewBox="0 0 14 11" {...props}>
     <path

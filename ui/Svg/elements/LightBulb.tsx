@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
+
 export const SvgLightBulb: React.FC = (props: SvgPropsType) => (
   <svg width={10} height={16} viewBox="0 0 10 16" {...props}>
     <path

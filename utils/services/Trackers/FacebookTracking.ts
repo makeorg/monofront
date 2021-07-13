@@ -1,18 +1,18 @@
 import { env } from '@make.org/assets/env';
-import { fbq } from './fbq';
+import { fbq } from './fbq.js';
 
 const makePixelId = '260470104426586';
 
 let initialized = false;
 
 type FacebookEventParams = {
-  source: string,
-  location: string,
-  url: string,
-  country: string,
-  language: string,
+  source?: string,
+  location?: string,
+  url?: string,
+  country?: string,
+  language?: string,
   referer?: string,
-  question: string,
+  question?: string,
   cardPosition?: string,
   sequenceId?: string,
   proposalId?: string,

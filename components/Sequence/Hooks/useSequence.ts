@@ -47,8 +47,8 @@ export const useSequence = (
   const { isLoggedIn } = selectAuthentication(state);
   const persistedDemographics = sequence && sequence.demographics;
   const {
-    cards: sCards,
-    currentIndex: sCurrentIndex,
+    cards: sCards = [],
+    currentIndex: sCurrentIndex = 0,
     votedProposalIds: sVotedProposalIds,
   } = sequence || {};
 
