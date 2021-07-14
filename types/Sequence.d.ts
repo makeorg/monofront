@@ -9,3 +9,9 @@ export type SequenceType = {
   id: string;
   proposals: ProposalType[];
 };
+
+export type KeywordSequenceType = {
+  proposals: ProposalType[];
+  label: string;
+  key: string;
+};

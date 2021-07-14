@@ -56,33 +56,6 @@ export const isInProgress = (dates: ConsultationDates): boolean => {
   return start <= today && today < end;
 };
 
-export const selectStep = (
-  timeline: {
-    result?: QuestionTimelineType;
-    workshop?: QuestionTimelineType;
-    action?: QuestionTimelineType;
-  },
-  currentStep: string,
-  nextStep: string | undefined
-): boolean => {
-  const today = Date.now();
-  const currentStepDate = Date.parse(timeline[currentStep].date);
-  let nextStepDate;
-
-  if (nextStep) {
-    nextStepDate = Date.parse(timeline[nextStep].date);
-  }
-
-  const isBetweenSteps = today >= currentStepDate && today < nextStepDate;
-  const isLastStep = today >= currentStepDate && !nextStepDate;
-
-  if (isBetweenSteps || isLastStep) {
-    return true;
-  }
-
-  return false;
-};
-
 type DateHelperSingletonType = {
   languageValue: string;
 };

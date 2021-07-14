@@ -9,7 +9,11 @@ import {
 import { ProposalType } from './Proposal';
 import { TagType } from './Tag';
 import { PersonalityType } from './User';
-import { ProposalCardType, SequenceCardType } from './Card';
+import {
+  DemographicNameType,
+  ProposalCardType,
+  SequenceCardType,
+} from './Card';
 
 // Config State
 export type StateConfig = {
@@ -45,7 +49,7 @@ export type StateSequence = {
   readonly proposals: ProposalType[];
   readonly cards: SequenceCardType[] | ProposalCardType[];
   readonly demographics?: {
-    type: TypeDemographicName;
+    type: DemographicNameType;
     value: string;
     questions: string[];
   };
@@ -54,7 +58,13 @@ export type StateSequence = {
 // Notification State
 export type StateNotification = {
   readonly banner: { contentId?: any; level?: string; params?: any };
-  readonly tip: { id?: string; content?: any; level?: string };
+  readonly tip: {
+    id?: string;
+    content?: any;
+    level: string;
+    contentId?: string;
+    toDismiss?: boolean;
+  };
   readonly dismissed: string[];
 };
 

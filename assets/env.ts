@@ -1,7 +1,7 @@
 // TODO find a new way to handle ENV on Client side
 
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-const onClientSide = typeof window !== 'undefined';
+export const onClientSide = typeof window !== 'undefined';
 
 // Define client env variables
 // @ts-ignore
@@ -10,11 +10,12 @@ const isDevWindow = (): boolean => nodeEnvWindow() === 'development';
 const isTestWindow = (): boolean => nodeEnvWindow() === 'ci';
 // @ts-ignore
 const apiUrlWindow = (): string | undefined => onClientSide && window.API_URL;
-// @ts-ignore
 const proxyTargetApiUrlWindow = (): string | undefined =>
+  // @ts-ignore
   onClientSide && window.PROXY_TARGET_API_URL;
-// @ts-ignore
+
 const frontUrlWindow = (): string | undefined =>
+  // @ts-ignore
   onClientSide && window.FRONT_URL;
 // @ts-ignore
 const portWindow = (): string | undefined => onClientSide && window.PORT;

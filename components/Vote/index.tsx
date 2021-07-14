@@ -183,7 +183,6 @@ export const Vote: React.FC<Props> = ({
           proposalKey={proposalKey}
           votedKey={votedKey}
           index={index}
-          pendingVote={pending}
         />
       </VoteContainerStyle>
     );
@@ -204,12 +203,7 @@ export const Vote: React.FC<Props> = ({
             >
               <VoteButton
                 voteKey={voteKey}
-                buttonClass={getVoteButtonClass(
-                  voteKey,
-                  animateVoteKey,
-                  pendingVoteKey,
-                  false
-                )}
+                buttonClass={getVoteButtonClass(voteKey, animateVoteKey, false)}
                 displayPending={getSameKey(pendingVoteKey, voteKey)}
                 handleVote={() => handleVote(voteKey)}
                 animateVote={getSameKey(animateVoteKey, voteKey)}

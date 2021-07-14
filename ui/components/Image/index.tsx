@@ -22,9 +22,9 @@ type Props = {
   /** image src set */
   srcSet: string;
   /** image width */
-  width: number | undefined | null;
+  width: number;
   /** Image height */
-  height: number | undefined | null;
+  height: number;
   /** image key */
   key: string | number;
   /** image loading */
@@ -168,7 +168,7 @@ export const Image: React.FC<Props> = ({
   );
 
   const [srcCurrent, setSrcCurrent] = useState(placeHolder);
-  const [srcSetCurrent, setSrcSetCurrent] = useState(null);
+  const [srcSetCurrent, setSrcSetCurrent] = useState(srcSet);
 
   const imageToLoad = useMemo(
     () => selectImageToLoad(ratio, src1x, src2x, src3x),

@@ -122,7 +122,7 @@ export const buildCards = (
     type: isStandardSequence
       ? CARD_TYPE_EXTRASLIDE_FINAL_CARD
       : CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD,
-    configuration: extraSlidesConfig.finalCard,
+    configuration: undefined,
     index: 0,
   });
 

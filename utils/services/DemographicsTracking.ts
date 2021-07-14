@@ -1,7 +1,5 @@
-import {
-  DemographicsTrackingApiService,
-  TypeDemographicName,
-} from '@make.org/api/DemographicsTrackingApiService';
+import { DemographicsTrackingApiService } from '@make.org/api/DemographicsTrackingApiService';
+import { DemographicNameType } from '@make.org/types';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
 const PREFIX_QUERY_PARAMS_ACCEPTED = 'utm_';
@@ -18,7 +16,7 @@ const sanitizeQueryParams = (queryParams: { [n: string]: string }) => {
 };
 
 export const track = async (
-  name: TypeDemographicName,
+  name: DemographicNameType,
   value: string,
   parameters: { [n: string]: string } = {},
   success: () => void,

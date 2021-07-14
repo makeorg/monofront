@@ -41,7 +41,7 @@ export const QualificationButton: React.FC<Props> = ({
   index,
   disableClick = false,
 }) => {
-  const dispatch = useAppContext();
+  const { dispatch } = useAppContext();
   const [userQualification, setUserQualification] = useState(qualification);
   const { hasQualified, qualificationKey, count } = userQualification;
   const buttonLabel = i18n.t(`qualification.${qualificationKey}`);

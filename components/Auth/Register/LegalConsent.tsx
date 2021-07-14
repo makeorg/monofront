@@ -5,7 +5,7 @@ import {
   SecondLevelTitleStyle,
   FourthLevelTitleStyle,
 } from '@make.org/ui/elements/TitleElements';
-import { CheckBox } from '@make.org/ui/elements/Form/CheckBox';
+import { CheckBox } from '@make.org/ui/elements/FormElements';
 import { trackDisplayLegalConsent } from '@make.org/utils/services/Tracking';
 import {
   LegalFormStyle,

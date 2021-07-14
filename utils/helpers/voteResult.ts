@@ -31,13 +31,13 @@ export const getVotesPercent = (
   votes: VoteType[],
   votesCount: number
 ): { [n: string]: number } => {
-  const agreeVote: boolean = votes.find(
+  const agreeVote: VoteType | undefined = votes.find(
     vote => vote.voteKey === VOTE_AGREE_KEY
   );
-  const disagreeVote: boolean = votes.find(
+  const disagreeVote: VoteType | undefined = votes.find(
     vote => vote.voteKey === VOTE_DISAGREE_KEY
   );
-  const neutralVote: boolean = votes.find(
+  const neutralVote: VoteType | undefined = votes.find(
     vote => vote.voteKey === VOTE_NEUTRAL_KEY
   );
 
@@ -66,7 +66,7 @@ export const getVotesPercent = (
 export const getVotesRatio = (
   votesCount: number,
   votesTarget: number
-): number => {
+): string => {
   const percent = (votesCount * 100) / votesTarget;
 
   return percent.toFixed(1);

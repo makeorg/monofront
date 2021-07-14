@@ -7,7 +7,6 @@ import {
   isInProgress,
   getDate,
   orderByEndDate,
-  selectStep,
   chronologicalOrder,
 } from './date';
 
@@ -136,39 +135,6 @@ describe('Date Helper', () => {
     it('consultation is closed', () => {
       endDate = '1980-01-02';
       expect(isInProgress({ startDate, endDate })).toBe(false);
-    });
-  });
-
-  describe('selectStep', () => {
-    const result = { date: '2021-02-15' };
-    const workshop = { date: '2021-03-15' };
-    const action = { date: '2021-04-15' };
-    const timeline = { result, action, workshop };
-
-    it('marks first step result as current', () => {
-      MockDate.set('2021-03-10');
-      expect(selectStep(timeline, 'result', 'workshop')).toBe(true);
-      expect(selectStep(timeline, 'workshop', 'result')).toBe(false);
-      expect(selectStep(timeline, 'workshop', 'action')).toBe(false);
-    });
-
-    it('marks second step workshop as current', () => {
-      MockDate.set('2021-04-10');
-      expect(selectStep(timeline, 'workshop', 'action')).toBe(true);
-      expect(selectStep(timeline, 'action', 'result')).toBe(false);
-      expect(selectStep(timeline, 'result', 'workshop')).toBe(false);
-      expect(selectStep(timeline, 'result', 'workshop')).toBe(false);
-      expect(selectStep(timeline, 'workshop', 'result')).toBe(false);
-    });
-
-    it('marks last step as current', () => {
-      MockDate.set('2021-05-10');
-      expect(selectStep(timeline, 'result', undefined)).toBe(true);
-      expect(selectStep(timeline, 'workshop', 'result')).toBe(false);
-      expect(selectStep(timeline, 'action', 'result')).toBe(false);
-      expect(selectStep(timeline, 'action', 'workshop')).toBe(false);
-      expect(selectStep(timeline, 'result', 'action')).toBe(false);
-      expect(selectStep(timeline, 'result', 'workshop')).toBe(false);
     });
   });
 

@@ -1,5 +1,5 @@
 import React, { SyntheticEvent, useEffect, useMemo, useState } from 'react';
-import { DemographicsType } from '@make.org/types';
+import { DemographicNameType, DemographicDataType } from '@make.org/types';
 import { BlackBorderButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { i18n } from '@make.org/utils/i18n';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
@@ -16,7 +16,6 @@ import {
 } from '@make.org/utils/services/Tracking';
 import { useAppContext } from '@make.org/store';
 import { SubmitButton } from '@make.org/ui/components/SubmitButton';
-import { TypeDemographicName } from '@make.org/api/DemographicsTrackingApiService';
 import { RadioDemographics } from './Radio';
 import { ExtraDataFormStyle, SkipIconStyle, SubmitWrapperStyle } from './style';
 import { SelectDemographics } from './Select';
@@ -24,18 +23,18 @@ import { SelectDemographics } from './Select';
 const SKIP_TRACKING_VALUE = 'SKIPPED';
 
 type Props = {
-  type: TypeDemographicName;
+  type: DemographicNameType;
   demographics: {
     ui: string;
-    data: DemographicsType[];
+    data: DemographicDataType[];
   };
   currentQuestion: string;
 };
 
 export const renderFormUI = (
-  type: TypeDemographicName,
+  type: DemographicNameType,
   ui: string,
-  data: DemographicsType[],
+  data: DemographicDataType[],
   currentValue: string,
   setCurrentValue: (value: string) => void
 ): React.ReactNode => {

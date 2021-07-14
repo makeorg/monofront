@@ -1,5 +1,5 @@
 import { ApiServiceHeadersType, ProposalsType } from '@make.org/types';
-import { AxiosPromise, AxiosResponse } from 'axios';
+import { AxiosResponse } from 'axios';
 import { ApiService } from './ApiService';
 
 export const PATH_PROPOSALS = '/proposals';
@@ -60,7 +60,7 @@ export class ProposalApiService {
   static propose(
     content: string,
     questionId: string
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_PROPOSALS, {
       method: 'POST',
       body: JSON.stringify({
@@ -75,7 +75,7 @@ export class ProposalApiService {
   static getProposal(
     proposalId: string,
     headers: ApiServiceHeadersType = {}
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       PATH_PROPOSAL_GET.replace(':proposalId', proposalId),
       {
@@ -89,7 +89,7 @@ export class ProposalApiService {
   static getPopularProposals(
     questionId: string,
     headers: ApiServiceHeadersType = {}
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       PATH_TOP_PROPOSALS.replace(':questionId', questionId),
       {
@@ -111,7 +111,7 @@ export class ProposalApiService {
     ideaIds?: string,
     order?: string,
     headers?: ApiServiceHeadersType
-  ): AxiosPromise<AxiosResponse<ProposalsType>> {
+  ): Promise<void | AxiosResponse<ProposalsType>> {
     const params: Record<string, string | number | undefined> = {
       questionId,
       content,

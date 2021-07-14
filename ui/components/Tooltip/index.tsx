@@ -1,4 +1,4 @@
-import React, { Component, SyntheticEvent, useState } from 'react';
+import React, { SyntheticEvent, useState } from 'react';
 import { StyledComponent } from 'styled-components';
 import {
   BottomTooltipStyle,
@@ -10,7 +10,7 @@ import {
 
 type Props = {
   /** Content of the button */
-  content: Component | string;
+  content: string | JSX.Element;
   /** Content of the Tooltip */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   children: any;

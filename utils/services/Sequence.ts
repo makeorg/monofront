@@ -1,5 +1,5 @@
 import { QuestionApiService } from '@make.org/api/QuestionApiService';
-import { ProposalType } from '@make.org/types';
+import { KeywordSequenceType, ProposalType } from '@make.org/types';
 import { Logger } from './Logger';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
@@ -88,14 +88,19 @@ const startSequenceByKind = async (
   questionId: string,
   includedProposalIds: string[],
   sequenceKind: string
-): Promise<SequenceByKindResponse> => {
+): Promise<null | SequenceByKindResponse> => {
   try {
-    const { data } = await QuestionApiService.startSequenceByKind(
+    const response = await QuestionApiService.startSequenceByKind(
       questionId,
       includedProposalIds,
       sequenceKind
     );
 
+    if (!response) {
+      return null;
+    }
+
+    const { data } = response;
     const orderedProposals = getOrderedProposals(
       data.proposals,
       includedProposalIds
@@ -115,11 +120,11 @@ const startSequenceByKind = async (
 
     logCornerCases(questionId, duplicates, voted, uniqueOrderedProposals);
 
-    const response = {
+    const formattedResponse = {
       proposals: uniqueOrderedProposals,
     };
 
-    return response;
+    return formattedResponse;
   } catch (apiServiceError) {
     defaultUnexpectedError(apiServiceError);
     return null;
@@ -130,13 +135,19 @@ const startSequenceByKeyword = async (
   questionId: string,
   includedProposalIds: string[],
   keyword: string
-): Promise<ProposalType[]> => {
+): Promise<null | KeywordSequenceType> => {
   try {
-    const { data } = await QuestionApiService.startSequenceByKeyword(
+    const response = await QuestionApiService.startSequenceByKeyword(
       questionId,
       includedProposalIds,
       keyword
     );
+
+    if (!response) {
+      return null;
+    }
+
+    const { data } = response;
     const orderedProposals = getOrderedProposals(
       data.proposals,
       includedProposalIds
@@ -152,13 +163,13 @@ const startSequenceByKeyword = async (
 
     logCornerCases(questionId, duplicates, voted, unique);
 
-    const response = {
+    const formattedResponse = {
       proposals: unique,
       label: data.label,
       key: data.key,
     };
 
-    return response;
+    return formattedResponse;
   } catch (apiServiceError) {
     defaultUnexpectedError(apiServiceError);
     return null;

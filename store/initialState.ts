@@ -18,7 +18,7 @@ export const initialState: StateRoot = {
     queryParams: {},
     countriesWithConsultations: [],
     device: '',
-    privacyPolicy: undefined,
+    privacyPolicy: new Date(),
   },
   views: {},
   proposal: proposal_state,

@@ -5,6 +5,7 @@ import {
   clearNotificationTip,
   dismissNotification,
 } from '@make.org/store/actions/notifications';
+import { useAppContext } from '@make.org/store';
 import { NotificationMessage } from '../Message';
 import {
   TipWrapperStyle,
@@ -20,12 +21,10 @@ type Props = {
 };
 
 export const Tip: React.FC<Props> = ({ isFirstSequenceVote = false }) => {
-  const dispatch = useDispatch();
-  const { contentId, level, toDismiss } = useSelector(
-    (state: StateRoot) => state.notifications.tip
-  );
-  const { dismissed } = useSelector((state: StateRoot) => state.notifications);
-  const isDismissed = dismissed.f(
+  const { dispatch, state } = useAppContext();
+  const { contentId, level, toDismiss } = state.notifications.tip;
+  const { dismissed } = state.notifications;
+  const isDismissed = dismissed.find(
     notificationId => notificationId === contentId
   );
 

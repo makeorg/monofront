@@ -6,7 +6,7 @@ export class ApiServiceMock implements IApiServiceStrategy {
   callApi(
     url: string,
     options: AxiosRequestConfig = {}
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return Promise.resolve(url, options);
   }
 

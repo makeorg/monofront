@@ -5,12 +5,12 @@ import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 
-export const TipWrapperStyle = styled.div`
+export const TipWrapperStyle = styled.div<{ isFirstSequenceVote: boolean }>`
   position: relative;
   font-family: ${MakeFonts.CircularStandardBook};
   background-color: ${color.infos};
   color: ${color.white};
-  margin-(props(props)ops => (props.isFirstSequenceVote ? '20px' : '0px')};
+  margin-top: ${props => (props.isFirstSequenceVote ? '20px' : '0px')};
   padding: 6px 37px 6px 10px;
   border-radius: 2px;
   font-size: 16px;

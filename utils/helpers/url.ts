@@ -454,7 +454,7 @@ export const getHomeLink = (country: string): string =>
  * @return {string}
  */
 
-export const redirectToNotFoundPage = (country: string): string => {
+export const redirectToNotFoundPage = (country: string): void => {
   window.location = generatePath(ROUTE_STATIC_NOTFOUND, {
     country,
   });

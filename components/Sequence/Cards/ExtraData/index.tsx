@@ -6,6 +6,8 @@ import {
 import React, { useEffect, useState } from 'react';
 import { i18n } from '@make.org/utils/i18n';
 import { useAppContext } from '@make.org/store';
+import { DemographicNameType, DemographicsType } from '@make.org/types';
+import { AGE_RANGES } from '@make.org/utils/constants/demographics';
 import { SequenceIntroParagraphStyle } from '../style';
 import { ExtraDataDescriptionStyle } from './style';
 import { SubmittedDemographics } from './SubmittedStep';
@@ -22,8 +24,11 @@ export const ExtraDataCard: React.FC = () => {
   };
   const { currentQuestion } = state;
   const persistedDemographics = state.sequence.demographics;
-  const [type, setType] = useState(null);
-  const [demographics, setDemographics] = useState(null);
+  const [type, setType] = useState<DemographicNameType>('age');
+  const [demographics, setDemographics] = useState<DemographicsType>({
+    ui: 'radio',
+    data: AGE_RANGES,
+  });
   const persistedDemographicsWithValue =
     persistedDemographics?.type && persistedDemographics?.value;
 
@@ -38,7 +43,7 @@ export const ExtraDataCard: React.FC = () => {
     return <SubmittedDemographics type={persistedDemographics.type} />;
   }
 
-  if (type) {
+  if (type && demographics) {
     return (
       <>
         <SequenceIntroParagraphStyle>

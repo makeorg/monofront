@@ -1,8 +1,4 @@
-import {
-  IntroCardConfigType,
-  PushProposalCardConfigType,
-  FinalCardConfigType,
-} from './Card';
+import { IntroCardConfigType, PushProposalCardConfigType } from './Card';
 
 export type QuestionThemeType = {
   color?: string;
@@ -113,7 +109,6 @@ export type QuestionWordingType = {
 export type QuestionExtraSlidesConfigType = {
   introCard: IntroCardConfigType;
   pushProposalCard: PushProposalCardConfigType;
-  finalCard: FinalCardConfigType;
 };
 
 export type SimpleOperationDataType = {

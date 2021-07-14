@@ -25,7 +25,7 @@ export type OrganisationVoteType = {
 export type OrganisationVotesType = {
   total: number;
   seed: number;
-  results: OrganisationVoteType[];
+  results: OrganisationVoteType[] | [];
 };
 
 export type OrganisationSoftType = {

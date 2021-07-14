@@ -1,6 +1,7 @@
-import { AxiosPromise, AxiosResponse } from 'axios';
+import { AxiosResponse } from 'axios';
 import { PROPOSALS_LISTING_LIMIT } from '@make.org/utils/constants/proposal';
 import { ApiService } from './ApiService';
+import { OrganisationVotesType } from '../types';
 
 export const ORGANISATIONS_PATH = '/organisations';
 export const ORGANISATION_PROPOSALS_PATH =
@@ -9,7 +10,7 @@ export const ORGANISATION_VOTES_PATH = '/organisations/:organisationId/votes';
 export const ORGANISATION_PROFILE = '/organisations/:organisationId/profile';
 
 export class OrganisationApiService {
-  static getOrganisations(slug: string): AxiosPromise<AxiosResponse> {
+  static getOrganisations(slug: string): Promise<void | AxiosResponse> {
     return ApiService.callApi(ORGANISATIONS_PATH, {
       method: 'GET',
       params: {
@@ -18,7 +19,7 @@ export class OrganisationApiService {
     });
   }
 
-  static search(country: string, query: string): AxiosPromise<AxiosResponse> {
+  static search(country: string, query: string): Promise<void | AxiosResponse> {
     return ApiService.callApi(ORGANISATIONS_PATH, {
       method: 'GET',
       params: {
@@ -33,7 +34,7 @@ export class OrganisationApiService {
     seed?: number,
     limit: number = PROPOSALS_LISTING_LIMIT,
     skip = 0
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       ORGANISATION_PROPOSALS_PATH.replace(':organisationId', organisationId),
       {
@@ -43,7 +44,7 @@ export class OrganisationApiService {
     );
   }
 
-  static getProfile(organisationId: string): AxiosPromise<AxiosResponse> {
+  static getProfile(organisationId: string): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       ORGANISATION_PROFILE.replace(':organisationId', organisationId),
       {
@@ -59,7 +60,7 @@ export class OrganisationApiService {
     description: string,
     website: string,
     optInNewsletter: boolean
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       ORGANISATION_PROFILE.replace(':organisationId', organisationId),
       {
@@ -81,7 +82,7 @@ export class OrganisationApiService {
     seed?: number,
     limit: number = PROPOSALS_LISTING_LIMIT,
     skip = 0
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse<OrganisationVotesType>> {
     return ApiService.callApi(
       ORGANISATION_VOTES_PATH.replace(':organisationId', organisationId),
       {

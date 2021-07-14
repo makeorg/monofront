@@ -77,10 +77,10 @@ export const useScreenMobileContainerWidth = (): number | null => {
   return screenWidth ? screenWidth - mobileContainerPadding : null;
 };
 
-export const useDevicePixelRatio = (): number | null => {
+export const useDevicePixelRatio = (): number => {
   if (typeof window === 'object') {
     return window.devicePixelRatio;
   }
 
-  return null;
+  return 1;
 };

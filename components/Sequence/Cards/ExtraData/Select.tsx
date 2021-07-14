@@ -1,9 +1,9 @@
 import React from 'react';
-import { DemographicType } from '@make.org/types';
+import { DemographicDataType } from '@make.org/types';
 import { SelectStyle } from './style';
 
 type Props = {
-  data: DemographicType[];
+  data: DemographicDataType[];
   setCurrentValue: (value: string) => void;
 };
 

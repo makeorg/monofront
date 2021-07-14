@@ -1,7 +1,7 @@
 import { getBaitText } from '@make.org/utils/constants/proposal';
 import { ProposalType, ProposalsType } from '@make.org/types';
 import { ProposalApiService } from '@make.org/api/ProposalApiService';
-import { AxiosPromise, AxiosResponse } from 'axios';
+import { AxiosResponse } from 'axios';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
 // @todo remove with DepreactedProposalSubmit
@@ -35,7 +35,7 @@ const getProposal = async (
   try {
     const response = await ProposalApiService.getProposal(proposalId);
 
-    return response.data;
+    return response && response.data;
   } catch (apiServiceError) {
     defaultUnexpectedError(apiServiceError);
 
@@ -49,7 +49,7 @@ const getPopularProposals = async (
   try {
     const response = await ProposalApiService.getPopularProposals(questionId);
 
-    return response.data;
+    return response && response.data;
   } catch (apiServiceError) {
     defaultUnexpectedError(apiServiceError);
 
@@ -70,7 +70,7 @@ const searchProposals = async (
   order?: string
 ): Promise<ProposalsType | null> => {
   try {
-    const response: AxiosResponse = await ProposalApiService.searchProposals(
+    const response = await ProposalApiService.searchProposals(
       country,
       questionId,
       tagsIds,
@@ -82,6 +82,10 @@ const searchProposals = async (
       ideaIds,
       order
     );
+    if (!response) {
+      return null;
+    }
+
     const { data } = response;
     // @toDo: hack multi-countries
     const { results } = data;

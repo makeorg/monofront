@@ -2,7 +2,7 @@ import { getDateOfBirthFromAge } from '@make.org/utils/helpers/date';
 import { ApiServiceHeadersType, RegisterFormDataType } from '@make.org/types';
 import { setEmptyStringToNull } from '@make.org/utils/helpers/form';
 import { PROPOSALS_LISTING_LIMIT } from '@make.org/utils/constants/proposal';
-import { AxiosPromise, AxiosResponse } from 'axios';
+import { AxiosResponse } from 'axios';
 import { ApiService } from './ApiService';
 
 export const PATH_USER_ME = '/user/me';
@@ -35,7 +35,7 @@ export class UserApiService {
    * Get user
    * @return {Promise}
    */
-  static current(): AxiosPromise<AxiosResponse> {
+  static current(): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_USER_CURRENT, {
       method: 'GET',
     });
@@ -47,7 +47,7 @@ export class UserApiService {
    *
    * @return {Promise}
    */
-  static getProfile(userId: string): AxiosPromise<AxiosResponse> {
+  static getProfile(userId: string): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_USER_PROFILE.replace(':userId', userId), {
       method: 'GET',
     });
@@ -59,7 +59,7 @@ export class UserApiService {
    * Get user token
    * @return {Promise}
    */
-  static getUserToken(): AxiosPromise<AxiosResponse> {
+  static getUserToken(): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_USER_GET_TOKEN, {
       method: 'GET',
     });
@@ -76,7 +76,7 @@ export class UserApiService {
     email: string,
     password: string,
     approvePrivacyPolicy?: boolean
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     const data: Record<string, string | boolean> = {
       username: email,
       password,
@@ -102,7 +102,7 @@ export class UserApiService {
    *
    * @return {Promise}
    */
-  static logout(): AxiosPromise<AxiosResponse> {
+  static logout(): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_USER_LOGOUT, {
       method: 'POST',
     });
@@ -119,7 +119,7 @@ export class UserApiService {
     provider: string,
     token: string,
     approvePrivacyPolicy?: boolean
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_USER_LOGIN_SOCIAL, {
       method: 'POST',
       body: JSON.stringify({
@@ -137,7 +137,7 @@ export class UserApiService {
    * @param  {Object}  user
    * @return {Promise}
    */
-  static register(user: RegisterFormDataType): AxiosPromise<AxiosResponse> {
+  static register(user: RegisterFormDataType): Promise<void | AxiosResponse> {
     const {
       age,
       firstname,
@@ -182,7 +182,7 @@ export class UserApiService {
     website: string,
     legalMinorConsent: boolean,
     legalAdvisorApproval: boolean
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_USER_PROFILE.replace(':userId', userId), {
       method: 'PUT',
       body: JSON.stringify({
@@ -212,7 +212,7 @@ export class UserApiService {
     userId: string,
     actualPassword: string,
     newPassword: string
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       PATH_USER_UPDATE_PASSWORD.replace(':userId', userId),
       {
@@ -227,7 +227,7 @@ export class UserApiService {
    * @param  {String}  email
    * @return {Promise}
    */
-  static forgotPassword(email: string): AxiosPromise<AxiosResponse> {
+  static forgotPassword(email: string): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_USER_FORGOT_PASSWORD, {
       method: 'POST',
       body: JSON.stringify({ email }),
@@ -245,7 +245,7 @@ export class UserApiService {
     userId: string,
     verificationToken: string,
     headers: ApiServiceHeadersType = {}
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     const newPath = PATH_USER_VERIFICATION.replace(':userId', userId).replace(
       ':verificationToken',
       verificationToken
@@ -268,7 +268,7 @@ export class UserApiService {
     userId: string,
     resetToken: string,
     headers?: ApiServiceHeadersType
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       PATH_USER_RESET_TOKEN_CHECK.replace(':userId', userId).replace(
         ':resetToken',
@@ -294,7 +294,7 @@ export class UserApiService {
     resetToken: string,
     userId: string,
     headers?: ApiServiceHeadersType
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       PATH_USER_CHANGE_PASSWORD.replace(':userId', userId),
       {
@@ -316,7 +316,7 @@ export class UserApiService {
     userId: string,
     password?: string,
     headers?: ApiServiceHeadersType
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       PATH_USER_DELETE_ACCOUNT.replace(':userId', userId),
       {
@@ -336,7 +336,7 @@ export class UserApiService {
     seed?: number,
     limit: number = PROPOSALS_LISTING_LIMIT,
     skip = 0
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_USER_PROPOSALS.replace(':userId', userId), {
       method: 'GET',
       params: { sort: 'createdAt', order: 'desc', seed, limit, skip },
@@ -351,7 +351,7 @@ export class UserApiService {
     userId: string,
     limit: number = PROPOSALS_LISTING_LIMIT,
     skip = 0
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_USER_FAVOURITES.replace(':userId', userId), {
       method: 'GET',
       params: { qualifications: 'likeIt', limit, skip },
@@ -368,7 +368,7 @@ export class UserApiService {
     email: string,
     password: string,
     headers?: ApiServiceHeadersType
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_USER_PRIVACY_POLICY, {
       method: 'POST',
       headers,
@@ -386,7 +386,7 @@ export class UserApiService {
     provider: string,
     token: string,
     headers?: ApiServiceHeadersType
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_USER_SOCIAL_PRIVACY_POLICY, {
       method: 'POST',
       headers,

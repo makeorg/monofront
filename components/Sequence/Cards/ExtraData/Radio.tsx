@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DemographicsType } from '@make.org/types';
+import { DemographicDataType } from '@make.org/types';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import {
   RadioAsButtonWrapperStyle,
@@ -9,7 +9,7 @@ import {
 
 type Props = {
   type: string;
-  data: DemographicsType[];
+  data: DemographicDataType[];
   currentValue: string;
   setCurrentValue: (value: string) => void;
 };

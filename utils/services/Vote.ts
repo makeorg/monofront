@@ -6,7 +6,7 @@ const vote = async (
   proposalId: string,
   voteKey: string,
   proposalKey: string
-): Promise<VoteType> => {
+): Promise<VoteType | null> => {
   try {
     const response = await VoteApiService.vote(
       proposalId,
@@ -14,7 +14,7 @@ const vote = async (
       proposalKey
     );
 
-    return response.data;
+    return response && response.data;
   } catch (apiServiceError) {
     defaultUnexpectedError(apiServiceError);
 
@@ -26,7 +26,7 @@ const unvote = async (
   proposalId: string,
   voteKey: string,
   proposalKey: string
-): Promise<VoteType> => {
+): Promise<VoteType | null> => {
   try {
     const response = await VoteApiService.unvote(
       proposalId,
@@ -34,7 +34,7 @@ const unvote = async (
       proposalKey
     );
 
-    return response.data;
+    return response && response.data;
   } catch (apiServiceError) {
     defaultUnexpectedError(apiServiceError);
 

@@ -108,7 +108,7 @@ const forgotPassword = async (
       return;
     }
     if (apiServiceError.status === 400) {
-      errors(mapErrors(forgotPasswordErrors, apiServiceError.data));
+      errors(mapErrors(forgotPasswordErrors, apiServiceError.data, 'noLogId'));
       return;
     }
     defaultUnexpectedError(apiServiceError);

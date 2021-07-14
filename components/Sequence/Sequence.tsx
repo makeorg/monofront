@@ -11,7 +11,11 @@ import {
   KIND_STANDARD,
 } from '@make.org/utils/constants/sequence';
 import { CARD_TYPE_NO_PROPOSAL_CARD } from '@make.org/utils/constants/card';
-import { ProposalType, QuestionType } from '@make.org/types';
+import {
+  NoProposalCardType,
+  ProposalType,
+  QuestionType,
+} from '@make.org/types';
 import { i18n } from '@make.org/utils/i18n';
 import { trackClickOperationPage } from '@make.org/utils/services/Tracking';
 import { SequenceService } from '@make.org/utils/services/Sequence';
@@ -72,7 +76,7 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
     return <SequencePlaceholder />;
   }
 
-  const noProposalCard = {
+  const noProposalCard: NoProposalCardType = {
     type: CARD_TYPE_NO_PROPOSAL_CARD,
     configuration: {
       title: getNoProposalCardTitleBySequenceKind(sequenceKind),
@@ -80,6 +84,7 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
         ? i18n.t('no_proposal_card.description.regular')
         : i18n.t('no_proposal_card.description.special'),
     },
+    index: 0,
   };
 
   const getMetaTitle = () => {

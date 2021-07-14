@@ -19,8 +19,8 @@ export const setEmptyStringToNull = (
 };
 
 export const setNullToEmptyString = (
-  initialValue: string | number | null
-): string | number => {
+  initialValue: string | number | null | boolean
+): string | number | boolean => {
   if (typeof initialValue === 'number') {
     return initialValue;
   }
@@ -55,7 +55,7 @@ export const getFieldError = (
 export const getErrorMessages = (
   internalErrors: ErrorObjectType[],
   serviceErrors: ErrorObjectType[],
-  logId?: string
+  logId: string
 ): ErrorObjectType[] => {
   switch (true) {
     case !Array.isArray(serviceErrors):

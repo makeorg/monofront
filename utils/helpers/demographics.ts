@@ -1,3 +1,4 @@
+import { DemographicNameType, DemographicsType } from '@make.org/types';
 import {
   AGE_RANGES,
   GENDER,
@@ -5,7 +6,11 @@ import {
 } from '@make.org/utils/constants/demographics';
 import { i18n } from '@make.org/utils/i18n';
 
-export const DEMOGRAPHIC_TYPES = ['region', 'gender', 'age'];
+export const DEMOGRAPHIC_TYPES: DemographicNameType[] = [
+  'region',
+  'gender',
+  'age',
+];
 
 export const setTitleByType = (type: string): string => {
   switch (type) {
@@ -18,12 +23,7 @@ export const setTitleByType = (type: string): string => {
   }
 };
 
-export const buildDemographicsByType = (
-  type: string
-): {
-  ui: string;
-  data: string | { label: string; value: string }[];
-} => {
+export const buildDemographicsByType = (type: string): DemographicsType => {
   switch (type) {
     case 'gender':
       return {

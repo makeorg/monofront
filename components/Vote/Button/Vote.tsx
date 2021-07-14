@@ -62,15 +62,15 @@ type Props = {
   /** button className */
   buttonClass: string;
   /** When button is in pending mode */
-  displayPending: boolean;
+  displayPending?: boolean;
   /** Method called when vote button is clicked */
   handleVote: () => void | Promise<void>;
   /** Trigged animation on vote button after API response */
-  animateVote: boolean;
+  animateVote?: boolean;
   /** Boolean to disable click event on the vote button */
-  disableClick: boolean;
+  disableClick?: boolean;
   /** Boolean to disable tooltip on button hover event */
-  withTooltip: boolean;
+  withTooltip?: boolean;
 };
 
 export const VoteButton: React.FC<Props> = ({

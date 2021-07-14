@@ -4,17 +4,18 @@ import {
   PersonalityProfileType,
   ErrorObjectType,
   UserType,
+  UserProfileType,
 } from '@make.org/types';
 import { PersonalityApiService } from '@make.org/api/PersonalityApiService';
 import { getErrorMessages } from '@make.org/utils/helpers/form';
 import { updatePersonalityErrors } from '@make.org/utils/errors/Messages/Personality';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
-const getPersonalityById = async (userId: string): Promise<?UserType> => {
+const getPersonalityById = async (userId: string): Promise<null | UserType> => {
   try {
     const response = await PersonalityApiService.getPersonality(userId);
 
-    return response.data;
+    return response && response.data;
   } catch (apiServiceError) {
     defaultUnexpectedError(apiServiceError);
 
@@ -30,7 +31,7 @@ const postPersonnalityComments = async (
   comment3: string,
   vote: string,
   qualification: string
-): Promise<?PersonalityCommentsType> => {
+): Promise<null | PersonalityCommentsType> => {
   try {
     const response = await PersonalityApiService.postPersonnalityComments(
       personalityId,
@@ -42,7 +43,7 @@ const postPersonnalityComments = async (
       qualification
     );
 
-    return response.data;
+    return response && response.data;
   } catch (apiServiceError) {
     defaultUnexpectedError(apiServiceError);
 
@@ -53,13 +54,13 @@ const postPersonnalityComments = async (
 const getPersonnalityOpinion = async (
   personalityId: string,
   questionId?: string
-): Promise<?PersonalityOpinionType[]> => {
+): Promise<null | PersonalityOpinionType[]> => {
   try {
     const response = await PersonalityApiService.getPersonnalityOpinion(
       personalityId,
       questionId
     );
-    return response.data;
+    return response && response.data;
   } catch (apiServiceError) {
     defaultUnexpectedError(apiServiceError);
 
@@ -67,11 +68,13 @@ const getPersonnalityOpinion = async (
   }
 };
 
-const getProfile = async (personalityId: string): any => {
+const getProfile = async (
+  personalityId: string
+): Promise<null | UserProfileType> => {
   try {
     const response = await PersonalityApiService.getProfile(personalityId);
 
-    return response.data;
+    return response && response.data;
   } catch (apiServiceError) {
     if (apiServiceError.status === 401) {
       return null;

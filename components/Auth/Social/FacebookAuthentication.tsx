@@ -84,7 +84,7 @@ export const FacebookAuthentication: React.FC = () => {
     /** Dirty Hack to disable facebook connect in webview / FB browser due to unstable SDK methods
      *  https://developers.facebook.com/docs/facebook-login/best-practices/#avoidwebview
      */
-    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    const ua = navigator.userAgent || navigator.vendor;
     if (ua.indexOf('FBAN') > -1 || ua.indexOf('FBAV') > -1) {
       setFacebookBrowser(true);
     }

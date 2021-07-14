@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import axiosRetry from 'axios-retry';
-import axios, { AxiosPromise, AxiosResponse } from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import { IApiServiceStrategy } from './index';
 import { ApiServiceShared } from './ApiService.shared';
 import { getLocationContext } from './getLocationContext';
@@ -100,7 +100,7 @@ export class ApiServiceClient implements IApiServiceStrategy {
   callApi(
     url: string,
     options: { proposalId?: string; headers?: Readonly<Record<string, string>> }
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     const defaultHeaders = {
       'x-make-country': this._country,
       'x-make-language': this._language,
@@ -135,7 +135,7 @@ export class ApiServiceClient implements IApiServiceStrategy {
       response.then(res =>
         this._headersListeners.forEach(
           (listener: (headers: Readonly<Record<string, string>>) => void) =>
-            listener(res.headers)
+            listener(res && res.headers)
         )
       );
 

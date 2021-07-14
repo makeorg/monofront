@@ -12,15 +12,15 @@ type Props = {
   /** Url of avatar */
   avatarUrl: string;
   /** Width of avatar */
-  avatarSize: number;
+  avatarSize?: number;
   /** Width of avatar */
-  avatarAlt: string;
+  avatarAlt?: string;
   /** Special avatar design for sequence */
   isSequence: boolean;
 };
 
 type DotsProps = {
-  avatarSize: number;
+  avatarSize?: number;
 };
 
 export const Avatar: React.FC<Props> = ({
@@ -31,14 +31,15 @@ export const Avatar: React.FC<Props> = ({
 }) => (
   <AvatarStyle isSequence={isSequence}>
     {avatarUrl ? (
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      // styled component doesn't handle props overloading on an extended object
       <AvatarImageStyle
+        key="avatar"
         src={avatarUrl}
         alt={avatarAlt}
         width={avatarSize}
         height={avatarSize}
+        className="avatar"
+        srcSet={avatarUrl}
+        loading="eager"
         avatarSize={avatarSize}
         crop
       />

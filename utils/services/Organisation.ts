@@ -7,19 +7,22 @@ import {
   OrganisationProfileType,
   ProposalsType,
   ErrorObjectType,
+  OrganisationVoteType,
+  ProposalType,
 } from '@make.org/types';
 import { updateOrganisationErrors } from '@make.org/utils/errors/Messages/Organisation';
 import { getErrorMessages } from '@make.org/utils/helpers/form';
+import { AxiosResponse } from 'axios';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
 const searchOrganisations = async (
   country: string,
   content: string
-): Promise<OrganisationsType> => {
+): Promise<null | OrganisationsType> => {
   try {
     const response = await OrganisationApiService.search(country, content);
 
-    return response.data;
+    return response && response.data;
   } catch (apiServiceError) {
     defaultUnexpectedError(apiServiceError);
 
@@ -29,13 +32,15 @@ const searchOrganisations = async (
 
 const getOrganisationBySlug = async (
   slug: string
-): Promise<OrganisationType> => {
+): Promise<null | OrganisationType> => {
   try {
     const response = await OrganisationApiService.getOrganisations(slug);
 
-    const organisation = response.data.results.find(
-      result => result.slug === slug
-    );
+    const organisation =
+      response &&
+      response.data.results.find(
+        (result: OrganisationType) => result.slug === slug
+      );
 
     if (!organisation) {
       return null;
@@ -53,7 +58,7 @@ const getProposals = async (
   organisationId: string,
   seed?: number,
   page = 0
-): Promise<ProposalsType> => {
+): Promise<null | ProposalsType> => {
   const limit = PROPOSALS_LISTING_LIMIT;
   const skip = page * limit;
 
@@ -65,7 +70,7 @@ const getProposals = async (
       skip
     );
 
-    return response.data;
+    return response && response.data;
   } catch (apiServiceError) {
     defaultUnexpectedError(apiServiceError);
 
@@ -75,37 +80,56 @@ const getProposals = async (
 
 const getVotes = async (
   organisationId: string,
-  seed?: number,
+  initialSeed?: number,
   page = 0
-): Promise<OrganisationVotesType> => {
+): Promise<null | OrganisationVotesType> => {
   const limit = PROPOSALS_LISTING_LIMIT;
   const skip = page * limit;
 
   try {
     const response = await OrganisationApiService.getOrganisationVotes(
       organisationId,
-      seed,
+      initialSeed,
       limit,
       skip
     );
-    const { results } = response.data;
 
-    const proposals = results.map(result => result.proposal);
+    if (!response) {
+      return null;
+    }
 
-    const organisationVotes = results.map(result => {
-      const Proposal = proposals.find(
-        proposal => proposal.id === result.proposal.id
-      );
-      return {
-        ...result,
-        proposal: Proposal,
-      };
-    });
+    const { results, total, seed } = response && response.data;
+
+    if (!results) {
+      return null;
+    }
+
+    const proposals = results.map(
+      (result: OrganisationVoteType) => result.proposal
+    );
+
+    const organisationVotes: OrganisationVoteType[] = results.map(
+      (result: OrganisationVoteType) => {
+        const Proposal = proposals.find(
+          (proposal: ProposalType) => proposal.id === result.proposal.id
+        );
+        if (!Proposal) {
+          return {
+            ...result,
+          };
+        }
+
+        return {
+          ...result,
+          proposal: Proposal,
+        };
+      }
+    );
 
     return {
       results: organisationVotes,
-      total: response.total,
-      seed: response.seed,
+      total,
+      seed,
     };
   } catch (apiServiceError) {
     defaultUnexpectedError(apiServiceError);
@@ -116,11 +140,11 @@ const getVotes = async (
 
 const getProfile = async (
   organisationId: string
-): Promise<OrganisationProfileType | null> => {
+): Promise<null | OrganisationProfileType | null> => {
   try {
     const response = await OrganisationApiService.getProfile(organisationId);
 
-    return response.data;
+    return response && response.data;
   } catch (apiServiceError) {
     if (apiServiceError.status === 401) {
       return null;
@@ -136,7 +160,7 @@ const update = async (
   profile: OrganisationProfileType,
   success: () => void,
   handleErrors: (errors: ErrorObjectType[]) => void
-): Promise<void> => {
+): Promise<null | void> => {
   try {
     const {
       organisationName,

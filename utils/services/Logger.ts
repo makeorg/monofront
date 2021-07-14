@@ -9,6 +9,8 @@ const LOG_ERROR = 'error';
 // const onClientSide = typeof window !== 'undefined' && !!window;
 
 let instance: LoggerSingleton | null = null;
+const host = env.frontUrl();
+const port = env.port();
 
 class LoggerSingleton {
   constructor() {
@@ -46,7 +48,7 @@ class LoggerSingleton {
   });
 
   normalizeData = (
-    data: ApiServiceError | Error | { [key: string]: string }
+    data: ApiServiceError | Error | { [key: string]: string } | string
   ) => {
     if (data instanceof ApiServiceError) {
       return this.formatApiServiceError(data);
@@ -81,19 +83,22 @@ class LoggerSingleton {
     }
   };
 
-  logError = (error: string) => {
+  logError = (error: string | ApiServiceError | Record<string, string>) => {
     this.log(error, LOG_ERROR);
   };
 
-  logInfo = (data: string) => {
+  logInfo = (data: string | ApiServiceError | Record<string, string>) => {
     this.log(data, LOG_INFO);
   };
 
-  logWarning = (data: string) => {
+  logWarning = (data: string | ApiServiceError | Record<string, string>) => {
     this.log(data, LOG_WARNING);
   };
 
-  log = (data: string, level: string): AxiosResponse => {
+  log = (
+    data: string | ApiServiceError | Record<string, string>,
+    level: string
+  ): Promise<void | AxiosResponse> => {
     if (env.isDev()) {
       // eslint-disable-next-line no-console
       console.log(level, data);
@@ -114,16 +119,14 @@ class LoggerSingleton {
     //     default:
     //       logError(data);
     //   }
-
-    //   return () => undefined;
     // }
 
     // TO DO
-    return axios({
+    return axios('/api/logger', {
       method: 'POST',
-      url: '/api/logger',
       proxy: {
-        port: env.port(),
+        host,
+        port: parseInt(port, 10),
       },
       data: {
         level: level || 'error',

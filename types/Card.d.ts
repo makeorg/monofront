@@ -2,9 +2,25 @@ import { ProposalType } from './Proposal';
 import { QuestionType } from './Question';
 import { VoteType } from './Vote';
 
-export type DemographicType = {
+export type DemographicDataType = {
   label: string;
   value: string;
+};
+
+export type DemographicNameType = 'age' | 'region' | 'gender' | '';
+
+export type DemographicsType = {
+  ui: string;
+  data: DemographicDataType[];
+};
+
+export type DemographicTrackType = {
+  demographic: string;
+  value: string;
+  questionId: string;
+  source: 'core';
+  country: string;
+  parameters: { [n: string]: string };
 };
 
 export type PartnerItemType = {
@@ -16,26 +32,10 @@ export type IntroCardConfigType = {
   enabled: boolean;
   title?: string;
   description?: string;
-  partners?: PartnerItemType[];
-  extraLogo?: string;
-  id?: string;
 };
 
 export type PushProposalCardConfigType = {
   enabled: boolean;
-  extraLogo?: string;
-  id?: string;
-};
-
-export type FinalCardConfigType = {
-  enabled: boolean;
-  withSharing: boolean;
-  title?: string;
-  share?: boolean;
-  learnMoreTitle?: string;
-  learnMoreTextButton?: string;
-  linkUrl?: string;
-  description?: string;
 };
 
 export type ProposalCardConfigType = {
@@ -81,7 +81,8 @@ export type TopProposalListCardType = {
   question: QuestionType;
 };
 
-export type DemographicsType = {
-  value: string;
-  label: string;
+export type NoProposalCardType = {
+  type: string;
+  configuration: NoProposalCardConfigType;
+  index: number;
 };

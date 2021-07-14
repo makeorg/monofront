@@ -4,6 +4,8 @@ import {
   QuestionType,
   IntroCardConfigType,
   NoProposalCardConfigType,
+  ProposalCardType,
+  NoProposalCardType,
 } from '@make.org/types';
 import {
   CARD_TYPE_EXTRASLIDE_INTRO,
@@ -31,7 +33,7 @@ import { ExtraDataCard } from './ExtraData';
 
 type CardProps = {
   /** Attribute of the card */
-  card: SequenceCardType;
+  card: SequenceCardType | NoProposalCardType;
   /** Object with Dynamic properties used to configure the Sequence (questionId, country, ...) */
   question: QuestionType;
 };
@@ -39,7 +41,7 @@ type CardProps = {
 export const Card: React.FC<CardProps> = ({ card, question }) => {
   switch (card.type) {
     case CARD_TYPE_PROPOSAL:
-      return <ProposalCard proposalCard={card} />;
+      return <ProposalCard proposalCard={card as ProposalCardType} />;
     case CARD_TYPE_EXTRASLIDE_INTRO:
       return (
         <IntroCard configuration={card.configuration as IntroCardConfigType} />
@@ -70,7 +72,7 @@ export const Card: React.FC<CardProps> = ({ card, question }) => {
 
 type Props = {
   /** Attribute of the card */
-  card: SequenceCardType;
+  card: SequenceCardType | NoProposalCardType;
   /** Object with Dynamic properties used to configure the Sequence (questionId, country, ...) */
   question: QuestionType;
 };
