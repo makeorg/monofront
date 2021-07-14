@@ -11,7 +11,10 @@ export const panel_state: StatePanel = {
   panelContent: undefined,
 };
 
-export const panel_reducer: Reducer = (state: StatePanel, action: ReducerAction): StatePanel => {
+export const panel_reducer: Reducer = (
+  state: StatePanel,
+  action: ReducerAction
+): StatePanel => {
   switch (action.type) {
     case PANEL_OPEN:
       return {

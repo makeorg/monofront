@@ -10,7 +10,7 @@ const ColorboxStyle = styled.div<{ col?: string }>`
   height: 25px;
   border: 1px solid;
   margin: 5px;
-  background-color: ${(props) => props.col};
+  background-color: ${props => props.col};
 `;
 
 const ColorGroupName = athena.color;
@@ -49,7 +49,7 @@ export const Colors: React.FC = () => (
           <th scope="col">value</th>
         </tr>
       </thead>
-      {colors.map((c) => (
+      {colors.map(c => (
         <Fragment key={c.colorName}>
           <tbody>
             <tr>

@@ -3,7 +3,7 @@ import {
   PerformanceTimingType,
   TrackingConfigurationParamType,
   TrackingAllEventsType,
-  TrackingEventConfigurationType
+  TrackingEventConfigurationType,
 } from '@make.org/types';
 import Cookies from 'universal-cookie';
 import { USER_PREFERENCES_COOKIE } from '@make.org/utils/constants/cookies';
@@ -19,14 +19,14 @@ const validateParameters = (
   expectedParameters: TrackingConfigurationParamType[] = []
 ) => {
   const keys = Object.keys(values);
-  const expectedKeys = expectedParameters.map((param) => param.key);
-  const extraKeys = keys.filter((key) => !expectedKeys.find((el) => el === key));
+  const expectedKeys = expectedParameters.map(param => param.key);
+  const extraKeys = keys.filter(key => !expectedKeys.find(el => el === key));
   if (extraKeys.length) {
     throw new Error(
       `Tracking error : find unexpected tracking values "${extraKeys.toString()}"`
     );
   }
-  expectedParameters.forEach((expectedParam) => {
+  expectedParameters.forEach(expectedParam => {
     const { key: expectedKey = '', optional } = expectedParam;
     if (!values[expectedKey] && optional !== true) {
       throw new Error(
@@ -34,9 +34,9 @@ const validateParameters = (
       );
     }
     if (
-      expectedParam.values
-      && expectedParam.values.length
-      && !expectedParam.values.find((el) => el === values[expectedKey])
+      expectedParam.values &&
+      expectedParam.values.length &&
+      !expectedParam.values.find(el => el === values[expectedKey])
     ) {
       throw new Error(
         `Tracking error : invalid "${
@@ -48,11 +48,10 @@ const validateParameters = (
 };
 
 const trackingEvent: TrackingAllEventsType = {};
-Object.keys(trackingConfiguration).forEach((key) => {
-  const eventConfiguration: TrackingEventConfigurationType = trackingConfiguration[key];
-  trackingEvent[key] = (
-    params
-  ) => {
+Object.keys(trackingConfiguration).forEach(key => {
+  const eventConfiguration: TrackingEventConfigurationType =
+    trackingConfiguration[key];
+  trackingEvent[key] = params => {
     const { key: eventName, parameters } = eventConfiguration;
     validateParameters(params || {}, parameters || []);
 
@@ -81,7 +80,10 @@ const trackPerformance = async (
   }
 };
 
-export const track = (eventName: string, parameters: TrackingConfigurationParamType): Promise<any> => {
+export const track = (
+  eventName: string,
+  parameters: TrackingConfigurationParamType
+): Promise<any> => {
   const eventParameters = getEventParameters(parameters);
 
   if (env.isDev()) {
@@ -100,8 +102,12 @@ export const track = (eventName: string, parameters: TrackingConfigurationParamT
   return TrackingApiService.track(params);
 };
 
-const trackFacebookPixel = (eventName: string, parameters: TrackingConfigurationParamType): void => {
-  const eventParameters: TrackingConfigurationParamType = getEventParameters(parameters);
+const trackFacebookPixel = (
+  eventName: string,
+  parameters: TrackingConfigurationParamType
+): void => {
+  const eventParameters: TrackingConfigurationParamType =
+    getEventParameters(parameters);
 
   FacebookTracking.trackCustom(eventName, eventParameters);
 };
@@ -120,9 +126,9 @@ export const TrackingService = {
     eventName,
     parameters,
   }: {
-    eventName: string,
-    parameters: TrackingConfigurationParamType,
-  }):void => {
+    eventName: string;
+    parameters: TrackingConfigurationParamType;
+  }): void => {
     const cookies = new Cookies();
     const preferencesCookie = cookies.get(USER_PREFERENCES_COOKIE);
 

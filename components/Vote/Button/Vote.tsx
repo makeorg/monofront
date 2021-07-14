@@ -2,12 +2,8 @@ import React from 'react';
 import { Tooltip } from '@make.org/ui/components/Tooltip';
 import { LoadingDots } from '@make.org/ui/components/Loading/Dots';
 import { i18n } from '@make.org/utils/i18n';
-import {
-  VoteButtonStyle,
-} from '@make.org/ui/elements/ButtonsElements';
-import {
-  VoteIconStyle,
-} from '@make.org/ui/elements/SvgElements';
+import { VoteButtonStyle } from '@make.org/ui/elements/ButtonsElements';
+import { VoteIconStyle } from '@make.org/ui/elements/SvgElements';
 
 type ButtonProps = {
   /** Vote key */

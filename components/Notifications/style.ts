@@ -2,7 +2,10 @@ import { color } from 'athena-design-tokens';
 import { SvgAlert, SvgCheck, SvgInfos } from '@make.org/ui/Svg/elements';
 import styled from 'styled-components';
 
-export const NotificationInfosStyle = styled(SvgInfos)<{ className?: string, focusable?: string }>`
+export const NotificationInfosStyle = styled(SvgInfos)<{
+  className?: string;
+  focusable?: string;
+}>`
   min-width: 19px;
   margin-right: 10px;
   &.tip {
@@ -12,7 +15,10 @@ export const NotificationInfosStyle = styled(SvgInfos)<{ className?: string, foc
   }
 `;
 
-export const NotificationSuccessStyle = styled(SvgCheck)<{ className?: string, focusable?: string }>`
+export const NotificationSuccessStyle = styled(SvgCheck)<{
+  className?: string;
+  focusable?: string;
+}>`
   fill: ${color.agree};
   min-width: 22px;
   margin-right: 10px;
@@ -23,7 +29,10 @@ export const NotificationSuccessStyle = styled(SvgCheck)<{ className?: string, f
   }
 `;
 
-export const NotificationAlertStyle = styled(SvgAlert)<{ className?: string, focusable?: string }>`
+export const NotificationAlertStyle = styled(SvgAlert)<{
+  className?: string;
+  focusable?: string;
+}>`
   min-width: 19px;
   margin-right: 10px;
   &.tip {

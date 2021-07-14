@@ -75,7 +75,7 @@ export const VoteResult: React.FC<Props> = ({
         {i18n.t('results.total', { count: votesCount })}
       </ScreenReaderItemStyle>
       <ScreenReaderItemStyle as="ul">
-        {voteKeys.map((voteKey) => (
+        {voteKeys.map(voteKey => (
           <li key={`${voteKey}_percent_${proposalId}`}>
             {i18n.t('vote.with_percent', {
               votedKey: i18n.t(`vote.${voteKey}`),
@@ -85,7 +85,7 @@ export const VoteResult: React.FC<Props> = ({
         ))}
       </ScreenReaderItemStyle>
       <VoteResultGraphStyle>
-        {voteKeys.map((voteKey) => (
+        {voteKeys.map(voteKey => (
           <VoteResultItemStyle key={`${voteKey}_item_${proposalId}`}>
             <Tooltip
               content={tooltipContent(votesPercent[voteKey], voteKey)}

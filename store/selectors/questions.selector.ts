@@ -1,10 +1,19 @@
-import { QuestionType, SingleStateQuestionType, StateActors, StateRoot, TagType } from '@make.org/types';
+import {
+  QuestionType,
+  SingleStateQuestionType,
+  StateActors,
+  StateRoot,
+  TagType,
+} from '@make.org/types';
 
 /**
  * Questions data selector
  * @param {*} state
  */
-export const selectQuestionData = (state: StateRoot, questionSlug?: string): SingleStateQuestionType | null => {
+export const selectQuestionData = (
+  state: StateRoot,
+  questionSlug?: string
+): SingleStateQuestionType | null => {
   if (!questionSlug || !state.questions) {
     return null;
   }
@@ -16,7 +25,10 @@ export const selectQuestionData = (state: StateRoot, questionSlug?: string): Sin
  * question selector
  * @param {*} state
  */
-export const selectQuestion = (state: StateRoot, questionSlug?: string): QuestionType | null => {
+export const selectQuestion = (
+  state: StateRoot,
+  questionSlug?: string
+): QuestionType | null => {
   const data = selectQuestionData(state, questionSlug);
 
   return data && data.question;
@@ -26,7 +38,9 @@ export const selectQuestion = (state: StateRoot, questionSlug?: string): Questio
  * Sequence question selector
  * @param {*} state
  */
-export const selectCurrentQuestion = (state: StateRoot): QuestionType | null => {
+export const selectCurrentQuestion = (
+  state: StateRoot
+): QuestionType | null => {
   const questionSlug = state.currentQuestion;
   return selectQuestion(state, questionSlug);
 };
@@ -34,7 +48,10 @@ export const selectCurrentQuestion = (state: StateRoot): QuestionType | null => 
  *  question partners
  *  @param {*} state
  */
-export const selectQuestionPartners = (state: StateRoot, slug: string): StateActors | null => {
+export const selectQuestionPartners = (
+  state: StateRoot,
+  slug: string
+): StateActors | null => {
   if (!slug || !state.partners) {
     return null;
   }
@@ -54,8 +71,8 @@ export const selectQuestionPopularTags = (
     return null;
   }
   return (
-    state
-    && state.questions[questionSlug]
-    && state.questions[questionSlug].popularTags
+    state &&
+    state.questions[questionSlug] &&
+    state.questions[questionSlug].popularTags
   );
 };

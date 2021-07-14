@@ -31,7 +31,7 @@ export const FormErrors: React.FC<Props> = ({ errors }) => {
         {i18n.t('common.form.messages.errors_notification')}
       </FormErrorsIntroStyle>
       <UnstyledListStyle>
-        {errors.map((error) => (
+        {errors.map(error => (
           <FormErrorsListItemStyle key={`${error.field}_${error.key}`}>
             {error.message}
           </FormErrorsListItemStyle>

@@ -15,26 +15,23 @@ export const AppContext = createContext({
 });
 
 type SliceType = {
-  [key: string]: Reducer
-}
+  [key: string]: Reducer;
+};
 
-export const combineReducers = (
-  slices: SliceType
-) => (
-  state: StateRoot,
-  action: ReducerAction
-): any => Object.keys(slices).filter((s) => s !== undefined).reduce(
-  (flatReducer: SliceType, prop) => {
-    if (prop in slices && slices[prop] !== undefined) {
-      return {
-        ...flatReducer,
-        [prop]: slices[prop](flatReducer[prop], action),
-      };
-    }
-    return flatReducer;
-  },
-  {}
-);
+export const combineReducers =
+  (slices: SliceType) =>
+  (state: StateRoot, action: ReducerAction): any =>
+    Object.keys(slices)
+      .filter(s => s !== undefined)
+      .reduce((flatReducer: SliceType, prop) => {
+        if (prop in slices && slices[prop] !== undefined) {
+          return {
+            ...flatReducer,
+            [prop]: slices[prop](flatReducer[prop], action),
+          };
+        }
+        return flatReducer;
+      }, {});
 
 const rootReducer = combineReducers({
   question: question_reducer,
@@ -53,7 +50,7 @@ const rootReducer = combineReducers({
   // session: undefined,
 });
 
-export const useAllReducers = (): { state: StateRoot, dispatch: Dispatch } => {
+export const useAllReducers = (): { state: StateRoot; dispatch: Dispatch } => {
   const [state, dispatch] = useReducer(rootReducer, initialState);
   return { state, dispatch };
 };
@@ -67,4 +64,5 @@ export const getCurrentTimeFormatted = (): string => {
   return `${hours}:${minutes}:${seconds}.${milliseconds}`;
 };
 
-export const deepEqual = (x: StateRoot, y: StateRoot): boolean => JSON.stringify(x) === JSON.stringify(y);
+export const deepEqual = (x: StateRoot, y: StateRoot): boolean =>
+  JSON.stringify(x) === JSON.stringify(y);

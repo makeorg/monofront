@@ -1,4 +1,8 @@
-import { StateUserCookiesPreferences, Reducer, ReducerAction } from '@make.org/types';
+import {
+  StateUserCookiesPreferences,
+  Reducer,
+  ReducerAction,
+} from '@make.org/types';
 import {
   ACCEPT_ALL_COOKIES_PREFERENCES,
   REJECT_ALL_COOKIES_PREFERENCES,

@@ -23,4 +23,5 @@ export const voteStaticParams = {
   },
 };
 
-export const voteStaticParamsKeys: Array<string> = Object.keys(voteStaticParams);
+export const voteStaticParamsKeys: Array<string> =
+  Object.keys(voteStaticParams);

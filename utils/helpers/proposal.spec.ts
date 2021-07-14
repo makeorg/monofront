@@ -3,10 +3,7 @@ import {
   ProposalApiService,
 } from '@make.org/api/ProposalApiService';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
-import {
-  getBaitText,
-  PROPOSALS_LISTING_LIMIT,
-} from '../constants/proposal';
+import { getBaitText, PROPOSALS_LISTING_LIMIT } from '../constants/proposal';
 import { Logger } from '../services/Logger';
 import { ProposalService } from '../services/Proposal';
 import * as ProposalHelper from './proposal';
@@ -28,9 +25,8 @@ describe('Proposal Helper', () => {
   describe('getProposalLength function', () => {
     const validProposalContent = 'foobar';
     it('getProposalLength with content', () => {
-      const proposalLength = ProposalHelper.getProposalLength(
-        validProposalContent
-      );
+      const proposalLength =
+        ProposalHelper.getProposalLength(validProposalContent);
       expect(proposalLength).toBe(13);
     });
 
@@ -85,9 +81,8 @@ describe('Proposal Helper', () => {
       };
       const proposals = [fooProposal, barProposal, bazProposal];
 
-      const firstUnvotedProposal = ProposalHelper.searchFirstUnvotedProposal(
-        proposals
-      );
+      const firstUnvotedProposal =
+        ProposalHelper.searchFirstUnvotedProposal(proposals);
       expect(firstUnvotedProposal.id).toBe('bar');
     });
   });

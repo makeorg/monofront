@@ -8,15 +8,17 @@ import { env } from '@make.org/assets/env';
 import { ErrorResponse } from '@make.org/types';
 import { ApiServiceError } from './ApiServiceError';
 
-const HOSTNAME = (typeof window !== 'undefined' && window?.location?.hostname) || null;
+const HOSTNAME =
+  (typeof window !== 'undefined' && window?.location?.hostname) || null;
 
-const LOCATION_PARAMS = (typeof window !== 'undefined' && window?.location?.search) || '';
+const LOCATION_PARAMS =
+  (typeof window !== 'undefined' && window?.location?.search) || '';
 
 const API_URL = env.apiUrl();
 
 axiosRetry(axios, {
   retries: 5,
-  retryDelay: (retryCount) => retryCount * 100,
+  retryDelay: retryCount => retryCount * 100,
 });
 
 /**
@@ -37,7 +39,8 @@ export const handleErrors = (
   const url = error.response?.config?.url || requestUrl || 'none';
   const method = error.response?.config?.method || requestMethod || 'none';
   const isServerError = status && status >= 500;
-  const isClientOffline = typeof window !== 'undefined' && window?.navigator?.onLine === false;
+  const isClientOffline =
+    typeof window !== 'undefined' && window?.navigator?.onLine === false;
   const uuid = uuidv4();
 
   let logged;
@@ -99,18 +102,21 @@ export const handleErrors = (
 };
 
 type OptionsType = {
-  headers?: Readonly<Record<string, string | null>>
-  allowedHeaders?: string[]
-  body?: string
-  params?: string
-  method?: Method
-  httpsAgent?: string
-  withCredentials?: boolean
-}
+  headers?: Readonly<Record<string, string | null>>;
+  allowedHeaders?: string[];
+  body?: string;
+  params?: string;
+  method?: Method;
+  httpsAgent?: string;
+  withCredentials?: boolean;
+};
 
 class ApiServiceSharedClass {
   // eslint-disable-next-line class-methods-use-this
-  callApi(url: string, options: OptionsType = {}): Promise<void | AxiosResponse> {
+  callApi(
+    url: string,
+    options: OptionsType = {}
+  ): Promise<void | AxiosResponse> {
     const paramsQuery = new URLSearchParams(LOCATION_PARAMS).toString();
     const requestId = uuidv4();
     const defaultHeaders: Readonly<Record<string, string | null>> = {
@@ -127,7 +133,7 @@ class ApiServiceSharedClass {
     }
 
     if (options.allowedHeaders) {
-      Object.keys(headers).forEach((key) => {
+      Object.keys(headers).forEach(key => {
         if (options.allowedHeaders && !options.allowedHeaders.includes(key)) {
           delete headers[key];
         }
@@ -147,7 +153,7 @@ class ApiServiceSharedClass {
       withCredentials:
         options.withCredentials !== undefined ? options.withCredentials : true,
       httpsAgent: options.httpsAgent || undefined,
-    }).catch((error) => handleErrors(error, apiUrl, options.method, requestId));
+    }).catch(error => handleErrors(error, apiUrl, options.method, requestId));
   }
 }
 

@@ -22,12 +22,15 @@ import { useSequenceExtraDataAutoSubmit } from './useSequenceExtraDataAutoSubmit
 import { useSequenceQueryParams } from './useSequenceQueryParams';
 
 type ReturnFunctionType = {
-  withProposalButton: boolean
-  country?: string
-  isLoading: boolean
-  currentCard: SequenceCardType | null
-}
-type ExecuteStartSequence = (questionId: string, votedIds: string[]) => Promise<ProposalType[]>
+  withProposalButton: boolean;
+  country?: string;
+  isLoading: boolean;
+  currentCard: SequenceCardType | null;
+};
+type ExecuteStartSequence = (
+  questionId: string,
+  votedIds: string[]
+) => Promise<ProposalType[]>;
 
 /**
  * Renders Sequence component with Intro / Push Proposal / Sign Up & Proposal Cards
@@ -53,10 +56,10 @@ export const useSequence = (
   } = sequence || {};
 
   const isPushProposal = !!(
-    sCards
-    && sCards[sCurrentIndex]?.type === CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL
+    sCards && sCards[sCurrentIndex]?.type === CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL
   );
-  const votedProposalIdsOfQuestion = (sVotedProposalIds && sVotedProposalIds[question?.slug]) || [];
+  const votedProposalIdsOfQuestion =
+    (sVotedProposalIds && sVotedProposalIds[question?.slug]) || [];
   const currentIndex = sCurrentIndex || 0;
   const cards = sCards;
 
@@ -66,12 +69,15 @@ export const useSequence = (
   const [withProposalButton, setWithProposalButton] = useState(
     !!question?.canPropose
   );
-  const [sequenceProposals, setSequenceProposals] = useState<ProposalType[]>([]);
+  const [sequenceProposals, setSequenceProposals] = useState<ProposalType[]>(
+    []
+  );
 
   // Sequence hooks
   useSequenceTracking();
   useSequenceVoteOnlyNotification(question);
-  const { firstProposal, introCardParam, pushProposalParam } = useSequenceQueryParams();
+  const { firstProposal, introCardParam, pushProposalParam } =
+    useSequenceQueryParams();
   useSequenceExtraDataAutoSubmit(question.slug, cards, currentIndex);
 
   // Other

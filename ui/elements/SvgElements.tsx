@@ -22,7 +22,7 @@ import {
 } from '../Svg/elements';
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-export const VoteIconStyle = styled((props) => <SvgThumbsUp {...props} />)`
+export const VoteIconStyle = styled(props => <SvgThumbsUp {...props} />)`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -64,7 +64,7 @@ const ButtonIconStyle = `
 `;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-export const ProposalIconStyle = styled((props) => <SvgPencil {...props} />)`
+export const ProposalIconStyle = styled(props => <SvgPencil {...props} />)`
   ${ButtonIconStyle};
   &.closed {
     margin: 0;
@@ -75,26 +75,26 @@ export const ProposalIconStyle = styled((props) => <SvgPencil {...props} />)`
 `;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-export const EmailIconStyle = styled((props) => <SvgEnvelope {...props} />)`
+export const EmailIconStyle = styled(props => <SvgEnvelope {...props} />)`
   ${ButtonIconStyle}
 `;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-export const ClappingIconStyle = styled((props) => <SvgClapping {...props} />)`
+export const ClappingIconStyle = styled(props => <SvgClapping {...props} />)`
   ${ButtonIconStyle}
 `;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-export const SignOutIconStyle = styled((props) => <SvgSignOut {...props} />)`
+export const SignOutIconStyle = styled(props => <SvgSignOut {...props} />)`
   ${ButtonIconStyle}
 `;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-export const PencilIconStyle = styled((props) => <SvgPencil {...props} />)`
+export const PencilIconStyle = styled(props => <SvgPencil {...props} />)`
   ${ButtonIconStyle}
 `;
 
-export const AngleArrowLeftIconStyle = styled((props) => (
+export const AngleArrowLeftIconStyle = styled(props => (
   // eslint-disable-next-line react/jsx-props-no-spreading
   <SvgAngleArrowLeft {...props} />
 ))`
@@ -102,53 +102,53 @@ export const AngleArrowLeftIconStyle = styled((props) => (
 `;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-export const ThumbsUpIconStyle = styled((props) => <SvgThumbsUp {...props} />)`
+export const ThumbsUpIconStyle = styled(props => <SvgThumbsUp {...props} />)`
   ${ButtonIconStyle}
 `;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-export const PlayIconStyle = styled((props) => <SvgPlayButton {...props} />)`
+export const PlayIconStyle = styled(props => <SvgPlayButton {...props} />)`
   ${ButtonIconStyle}
 `;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-export const ForwardIconStyle = styled((props) => <SvgStepForward {...props} />)`
+export const ForwardIconStyle = styled(props => <SvgStepForward {...props} />)`
   ${ButtonIconStyle}
 `;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-export const LockIconStyle = styled((props) => <SvgLock {...props} />)`
+export const LockIconStyle = styled(props => <SvgLock {...props} />)`
   ${ButtonIconStyle}
 `;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-export const UserIconStyle = styled((props) => <SvgUser {...props} />)`
+export const UserIconStyle = styled(props => <SvgUser {...props} />)`
   ${ButtonIconStyle}
 `;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-export const ChildIconStyle = styled((props) => <SvgChild {...props} />)`
+export const ChildIconStyle = styled(props => <SvgChild {...props} />)`
   ${ButtonIconStyle}
 `;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-export const MapMarkerIconStyle = styled((props) => <SvgMapMarker {...props} />)`
+export const MapMarkerIconStyle = styled(props => <SvgMapMarker {...props} />)`
   ${ButtonIconStyle}
 `;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-export const SuitcaseIconStyle = styled((props) => <SvgSuitcase {...props} />)`
+export const SuitcaseIconStyle = styled(props => <SvgSuitcase {...props} />)`
   ${ButtonIconStyle}
 `;
 
-export const PaperPlaneIconStyle = styled((props) => (
+export const PaperPlaneIconStyle = styled(props => (
   // eslint-disable-next-line react/jsx-props-no-spreading
   <SvgPaperPlane {...props} />
 ))`
   ${ButtonIconStyle}
 `;
 
-export const SaveFileIconStyle = styled((props) => (
+export const SaveFileIconStyle = styled(props => (
   // eslint-disable-next-line react/jsx-props-no-spreading
   <SvgSaveFileOption {...props} />
 ))`
@@ -156,6 +156,6 @@ export const SaveFileIconStyle = styled((props) => (
 `;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-export const LinkIconStyle = styled((props) => <SvgLink {...props} />)`
+export const LinkIconStyle = styled(props => <SvgLink {...props} />)`
   ${ButtonIconStyle}
 `;

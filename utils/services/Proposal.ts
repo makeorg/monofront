@@ -15,7 +15,7 @@ const deprecatedPropose = async (
 
   ProposalApiService.propose(proposalContent, questionId)
     .then(success)
-    .catch((apiServiceError) => {
+    .catch(apiServiceError => {
       defaultUnexpectedError(apiServiceError);
       unexpectedError();
     });
@@ -29,7 +29,9 @@ const propose = async (content: string, questionId: string): Promise<void> => {
   }
 };
 
-const getProposal = async (proposalId: string): Promise<AxiosResponse<ProposalType> | null> => {
+const getProposal = async (
+  proposalId: string
+): Promise<AxiosResponse<ProposalType> | null> => {
   try {
     const response = await ProposalApiService.getProposal(proposalId);
 

@@ -12,8 +12,12 @@ let unexpectedError = (error: ApiServiceError | Error) => {
   }
 };
 
-export const setUnexpectedError = (func: (apiServiceError: ApiServiceError | Error) => void): void => {
+export const setUnexpectedError = (
+  func: (apiServiceError: ApiServiceError | Error) => void
+): void => {
   unexpectedError = func;
 };
 
-export const defaultUnexpectedError = (apiServiceError: ApiServiceError | Error): void => unexpectedError(apiServiceError);
+export const defaultUnexpectedError = (
+  apiServiceError: ApiServiceError | Error
+): void => unexpectedError(apiServiceError);

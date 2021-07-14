@@ -6,12 +6,12 @@ export const DEMOGRAPHICS_TRACKING_PATH = '/tracking/demographics';
 export type TypeDemographicName = 'age' | 'region' | 'gender';
 
 type TypeDemographicTrack = {
-  demographic: string,
-  value: string,
-  questionId: string,
-  source: 'core',
-  country: string,
-  parameters: { [n: string]: string },
+  demographic: string;
+  value: string;
+  questionId: string;
+  source: 'core';
+  country: string;
+  parameters: { [n: string]: string };
 };
 
 const SOURCE = 'core';

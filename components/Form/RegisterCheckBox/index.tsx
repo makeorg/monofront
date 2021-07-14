@@ -15,9 +15,9 @@ import { useAppContext } from '@make.org/store';
 
 type Props = {
   /** Method called on change legal field */
-  handleLegalField: (fieldName: string, value: boolean) => void,
+  handleLegalField: (fieldName: string, value: boolean) => void;
   /** Is input required or optional */
-  required: boolean,
+  required: boolean;
 };
 export const RegisterCheckBox: React.FC<Props> = ({
   handleLegalField,

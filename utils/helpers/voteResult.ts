@@ -17,7 +17,7 @@ export const getTotalVotesCount = (votes: VoteType[]): number => {
   }
 
   return votes
-    .map((vote) => vote.count)
+    .map(vote => vote.count)
     .reduce((total, voteCount) => total + voteCount);
 };
 
@@ -27,15 +27,18 @@ export const getTotalVotesCount = (votes: VoteType[]): number => {
  * @param {VoteType} votes
  * @param {number} votesCount
  */
-export const getVotesPercent = (votes: VoteType[], votesCount: number): {[n: string]: number} => {
+export const getVotesPercent = (
+  votes: VoteType[],
+  votesCount: number
+): { [n: string]: number } => {
   const agreeVote: boolean = votes.find(
-    (vote) => vote.voteKey === VOTE_AGREE_KEY
+    vote => vote.voteKey === VOTE_AGREE_KEY
   );
   const disagreeVote: boolean = votes.find(
-    (vote) => vote.voteKey === VOTE_DISAGREE_KEY
+    vote => vote.voteKey === VOTE_DISAGREE_KEY
   );
   const neutralVote: boolean = votes.find(
-    (vote) => vote.voteKey === VOTE_NEUTRAL_KEY
+    vote => vote.voteKey === VOTE_NEUTRAL_KEY
   );
 
   return {
@@ -60,7 +63,10 @@ export const getVotesPercent = (votes: VoteType[], votesCount: number): {[n: str
  * @param {number} votesCount
  * @param {number} votesTarget
  */
-export const getVotesRatio = (votesCount: number, votesTarget: number): number => {
+export const getVotesRatio = (
+  votesCount: number,
+  votesTarget: number
+): number => {
   const percent = (votesCount * 100) / votesTarget;
 
   return percent.toFixed(1);

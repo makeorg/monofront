@@ -1,15 +1,21 @@
 import React, { Component, SyntheticEvent, useState } from 'react';
 import { StyledComponent } from 'styled-components';
-import { BottomTooltipStyle, LeftTooltipStyle, RightTooltipStyle, TooltipStyle, TopTooltipStyle } from '../../elements/TooltipElements';
+import {
+  BottomTooltipStyle,
+  LeftTooltipStyle,
+  RightTooltipStyle,
+  TooltipStyle,
+  TopTooltipStyle,
+} from '../../elements/TooltipElements';
 
 type Props = {
   /** Content of the button */
-  content: Component | string,
+  content: Component | string;
   /** Content of the Tooltip */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  children: any,
+  children: any;
   /** Styled Component Element */
-  direction?: string,
+  direction?: string;
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -40,7 +46,11 @@ export const Tooltip: React.FC<Props> = ({
 
   return (
     <>
-      <TooltipStyle as={TooltipType[direction]} aria-hidden={!displayTooltip} role="tooltip">
+      <TooltipStyle
+        as={TooltipType[direction]}
+        aria-hidden={!displayTooltip}
+        role="tooltip"
+      >
         {content}
       </TooltipStyle>
       <div

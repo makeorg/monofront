@@ -1,4 +1,8 @@
-import { Reducer, ReducerAction, StateUserPasswordRecovery } from '@make.org/types';
+import {
+  Reducer,
+  ReducerAction,
+  StateUserPasswordRecovery,
+} from '@make.org/types';
 import * as actionTypes from '../../../actionTypes';
 
 export const passwordRecovery_state: StateUserPasswordRecovery = {

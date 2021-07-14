@@ -34,7 +34,9 @@ describe('getFieldError', () => {
   });
 
   it('getFieldError with right key and filled errors', () => {
-    errors.map((error, index) => expect(getFieldError(error.field, errors)).toEqual(errors[index]));
+    errors.map((error, index) =>
+      expect(getFieldError(error.field, errors)).toEqual(errors[index])
+    );
   });
 });
 

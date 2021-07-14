@@ -3,9 +3,9 @@ import { i18n } from '@make.org/utils/i18n';
 
 type Props = {
   /** Vote key's percentage */
-  votePercent: number,
+  votePercent: number;
   /** Vote key */
-  voteKey: string,
+  voteKey: string;
 };
 
 export const ResultTooltip: React.FC = (props: Props) => {

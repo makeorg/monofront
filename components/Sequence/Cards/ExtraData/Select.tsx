@@ -11,8 +11,8 @@ export const SelectDemographics: React.FC<Props> = ({
   data,
   setCurrentValue,
 }) => (
-  <SelectStyle onChange={(event) => setCurrentValue(event.target.value)}>
-    {data.map((demographic) => (
+  <SelectStyle onChange={event => setCurrentValue(event.target.value)}>
+    {data.map(demographic => (
       <option key={demographic.value} value={demographic.value}>
         {demographic.label}
       </option>

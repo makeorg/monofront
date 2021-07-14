@@ -14,9 +14,12 @@ export const PATH_USER_LOGOUT = '/logout';
 export const PATH_USER_LOGIN_SOCIAL = '/user/login/social';
 export const PATH_USER = '/user';
 export const PATH_USER_FORGOT_PASSWORD = '/user/reset-password/request-reset';
-export const PATH_USER_VERIFICATION = '/user/:userId/validate/:verificationToken';
-export const PATH_USER_RESET_TOKEN_CHECK = '/user/reset-password/check-validity/:userId/:resetToken';
-export const PATH_USER_CHANGE_PASSWORD = '/user/reset-password/change-password/:userId';
+export const PATH_USER_VERIFICATION =
+  '/user/:userId/validate/:verificationToken';
+export const PATH_USER_RESET_TOKEN_CHECK =
+  '/user/reset-password/check-validity/:userId/:resetToken';
+export const PATH_USER_CHANGE_PASSWORD =
+  '/user/reset-password/change-password/:userId';
 export const PATH_USER_UPDATE_PASSWORD = '/user/:userId/change-password';
 export const PATH_USER_DELETE_ACCOUNT = '/user/:userId/delete';
 export const PATH_USER_PROPOSALS = '/user/:userId/proposals';
@@ -88,7 +91,7 @@ export class UserApiService {
       },
       body: Object.keys(data)
         .map(
-          (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
         )
         .join('&'),
     });

@@ -18,12 +18,12 @@ type TypeSort =
   | 'popular';
 
 type TypeFeedAlgortithms = {
-  CONTROVERSY: { key: string, value: string },
-  ACTORS: { key: string, value: string },
-  POPULAR: { key: string, value: TypeSort },
-  REALISTIC: { key: string, value: string },
-  RECENT: { key: string, value: string },
-  TAGGED_FIRST: { key: string, value: string },
+  CONTROVERSY: { key: string; value: string };
+  ACTORS: { key: string; value: string };
+  POPULAR: { key: string; value: TypeSort };
+  REALISTIC: { key: string; value: string };
+  RECENT: { key: string; value: string };
+  TAGGED_FIRST: { key: string; value: string };
 };
 
 export const PROPOSALS_FEED_ALGORITHMS: TypeFeedAlgortithms = {
@@ -36,7 +36,7 @@ export const PROPOSALS_FEED_ALGORITHMS: TypeFeedAlgortithms = {
 };
 
 type TypeAvailableAlgorithms = {
-  [name: string]: { key: string, value: string },
+  [name: string]: { key: string; value: string };
 };
 
 export const AVAILABLE_ALGORITHMS: TypeAvailableAlgorithms = {
@@ -57,7 +57,10 @@ export const AVAILABLE_ALGORITHMS: TypeAvailableAlgorithms = {
 };
 
 export class ProposalApiService {
-  static propose(content: string, questionId: string): AxiosPromise<AxiosResponse> {
+  static propose(
+    content: string,
+    questionId: string
+  ): AxiosPromise<AxiosResponse> {
     return ApiService.callApi(PATH_PROPOSALS, {
       method: 'POST',
       body: JSON.stringify({

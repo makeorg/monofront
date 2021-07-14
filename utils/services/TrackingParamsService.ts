@@ -1,6 +1,9 @@
 /* eslint-disable  no-underscore-dangle */
 import { getTrackingLocation } from '@make.org/api/ApiService/getLocationContext';
-import { TrackingCommonConfigurationParamsType, TrackingParamsListenerType } from '@make.org/types';
+import {
+  TrackingCommonConfigurationParamsType,
+  TrackingParamsListenerType,
+} from '@make.org/types';
 
 class TrackingParamsServiceClass {
   _source = '';
@@ -39,9 +42,10 @@ class TrackingParamsServiceClass {
       this._instance = this;
     }
 
-    this._referrer = typeof window !== 'undefined' && !!window.document.referrer
-      ? window.document.referrer
-      : '';
+    this._referrer =
+      typeof window !== 'undefined' && !!window.document.referrer
+        ? window.document.referrer
+        : '';
 
     return this._instance;
   }
@@ -89,9 +93,10 @@ class TrackingParamsServiceClass {
   }
 
   _updateDynamicParams() {
-    this._url = typeof window !== 'undefined' && window && window.location
-      ? window.location.href
-      : undefined;
+    this._url =
+      typeof window !== 'undefined' && window && window.location
+        ? window.location.href
+        : undefined;
 
     this._location = getTrackingLocation(window.location.pathname);
     this._dispatchUpdate();
@@ -108,7 +113,7 @@ class TrackingParamsServiceClass {
       referrer: this._referrer,
       url: this._url,
     };
-    this._listeners.forEach((listener) => listener.onTrackingUpdate(this._all));
+    this._listeners.forEach(listener => listener.onTrackingUpdate(this._all));
   }
 
   addListener(object: TrackingParamsListenerType) {

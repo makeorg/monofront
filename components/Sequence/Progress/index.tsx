@@ -19,7 +19,7 @@ import {
 
 export const SequenceProgress: React.FC = () => {
   const { dispatch, state } = useAppContext();
-  const question: QuestionType | null = selectCurrentQuestion(state);
+  const question: QuestionType | null = selectCurrentQuestion(state);
   const { theme } = question || {};
   const { cards, currentIndex = 0 } = state.sequence || {};
   const index = currentIndex + 1;

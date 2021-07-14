@@ -47,7 +47,8 @@ export const Register: React.FC = () => {
   const [errors, setErrors] = useState<ErrorObjectType[]>([]);
   const [waitingCallback, setWaitingCallback] = useState<boolean>(false);
   const [needLegalConsent, displayLegalConsent] = useState<boolean>(false);
-  const userIsAChild = user && user.profile && user.profile.age && user.profile.age < 15;
+  const userIsAChild =
+    user && user.profile && user.profile.age && user.profile.age < 15;
 
   const handleLoginModal = () => {
     dispatch(modalShowLogin());

@@ -1,18 +1,19 @@
 import React, { SyntheticEvent } from 'react';
 import { i18n } from '@make.org/utils/i18n';
-import { UnstyledButtonStyle, HidePasswordIconStyle } from '@make.org/ui/elements/ButtonsElements';
+import {
+  UnstyledButtonStyle,
+  HidePasswordIconStyle,
+} from '@make.org/ui/elements/ButtonsElements';
 import { SvgEye, SvgEyeSlash } from '@make.org/ui/Svg/elements';
 
 type Props = {
   /** Boolean toggled when password shown / hidden */
-  isPasswordDisplayed: boolean,
+  isPasswordDisplayed: boolean;
   /** Method called to show / encrypt password */
-  toggleIsPasswordDisplayed: (
-    event: SyntheticEvent<HTMLButtonElement>
-  ) => void,
+  toggleIsPasswordDisplayed: (event: SyntheticEvent<HTMLButtonElement>) => void;
 };
 
-export const PasswordButton: React.FC<Props> = (props) => {
+export const PasswordButton: React.FC<Props> = props => {
   const { isPasswordDisplayed, toggleIsPasswordDisplayed } = props;
 
   return (

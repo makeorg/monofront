@@ -26,7 +26,7 @@ export const sequence_state: StateSequence = {
 export const sequence_reducer: Reducer = (
   state: StateSequence = sequence_state,
   action: ReducerAction
-) : StateSequence => {
+): StateSequence => {
   switch (action.type) {
     case SEQUENCE_UPDATE_CARD_STATE: {
       const { cards } = state;
@@ -63,7 +63,8 @@ export const sequence_reducer: Reducer = (
         proposals: [],
       };
     case SEQUENCE_PROPOSAL_VOTE: {
-      const oldProposalList = state.votedProposalIds[action.payload.questionSlug] || [];
+      const oldProposalList =
+        state.votedProposalIds[action.payload.questionSlug] || [];
       const newProposalList = [...oldProposalList, action.payload.proposalId];
 
       return {
@@ -80,7 +81,7 @@ export const sequence_reducer: Reducer = (
       }
       const newProposalList = state.votedProposalIds[
         action.payload.questionSlug
-      ].filter((item) => item !== action.payload.proposalId);
+      ].filter(item => item !== action.payload.proposalId);
 
       return {
         ...state,

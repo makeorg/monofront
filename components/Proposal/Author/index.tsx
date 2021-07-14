@@ -21,13 +21,17 @@ import {
 } from '@make.org/utils/helpers/stringFormatter';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
-import { AuthorInfosStyle, InfosWrapperStyle, CertifiedIconStyle } from './style';
+import {
+  AuthorInfosStyle,
+  InfosWrapperStyle,
+  CertifiedIconStyle,
+} from './style';
 
 type Props = {
   /** Object with author's properties */
-  proposal: ProposalType,
+  proposal: ProposalType;
   /** Enable sequence context & specials styles */
-  isSequence: boolean,
+  isSequence: boolean;
 };
 
 export const ProposalAuthorAge: React.FC = ({ age }) => {
@@ -38,7 +42,10 @@ export const ProposalAuthorAge: React.FC = ({ age }) => {
   return <>{`, ${i18n.t('proposal_card.author.age', { age })}`}</>;
 };
 
-export const ProposalAuthorInformations: React.FC<Props> = ({ proposal, isSequence }) => {
+export const ProposalAuthorInformations: React.FC<Props> = ({
+  proposal,
+  isSequence,
+}) => {
   const { country } = useParams();
   const { author } = proposal;
 
@@ -89,7 +96,10 @@ const setAvatarSize = (isMobile: boolean, isSequence: boolean) => {
   return 36;
 };
 
-export const ProposalAuthor: React.FC<Props> = ({ proposal, isSequence = false }) => {
+export const ProposalAuthor: React.FC<Props> = ({
+  proposal,
+  isSequence = false,
+}) => {
   const { author } = proposal;
   const { device } = useSelector((state: StateRoot) => state.appConfig);
   const isMobile = matchMobileDevice(device);

@@ -30,13 +30,17 @@ export const CheckboxWrapper = styled(FlexElementStyle)`
   margin-bottom: 15px;
 `;
 
-export const CheckboxLabelStyle = styled.label<{isBlack?: boolean, noFontSizeChange: boolean}>`
+export const CheckboxLabelStyle = styled.label<{
+  isBlack?: boolean;
+  noFontSizeChange: boolean;
+}>`
   display: inline-flex;
-  color: ${(props) => (props.isBlack ? color.black : color.greyDark)};
+  color: ${props => (props.isBlack ? color.black : color.greyDark)};
   font-family: ${MakeFonts.CircularStandardBook};
-  font-size: ${(props) => (props.noFontSizeChange
-    ? intToPx(typography.font.fontsize.XS.value)
-    : intToPx(typography.font.fontsize.X2S.value))};
+  font-size: ${props =>
+    props.noFontSizeChange
+      ? intToPx(typography.font.fontsize.XS.value)
+      : intToPx(typography.font.fontsize.X2S.value)};
   a {
     color: ${color.brandSecondary};
   }
@@ -82,9 +86,11 @@ export const FakeCheckboxInputStyle = styled.div`
   }
 `;
 
-export const StyledCheckbox = styled(FakeCheckboxInputStyle)<{checked: boolean}>`
+export const StyledCheckbox = styled(FakeCheckboxInputStyle)<{
+  checked: boolean;
+}>`
   svg {
-    visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
+    visibility: ${props => (props.checked ? 'visible' : 'hidden')};
   }
   ${HiddenCheckbox}:focus + & {
     box-shadow: 0 0 0 2px ${color.grey};
@@ -130,7 +136,7 @@ export const FormRequirementsStyle = styled.p`
   color: ${color.greyDark};
 `;
 
-export const FakeFieldStyle = styled.div<{hasError: boolean}>`
+export const FakeFieldStyle = styled.div<{ hasError: boolean }>`
   display: flex;
   position: relative;
   width: 100%;
@@ -139,7 +145,7 @@ export const FakeFieldStyle = styled.div<{hasError: boolean}>`
   background-color: ${color.greyLighter};
   border-width: 1px;
   border-style: solid;
-  border-color: ${(props) => (props.hasError ? color.error : color.grey)};
+  border-color: ${props => (props.hasError ? color.error : color.grey)};
   margin-bottom: 15px;
   &:last-child {
     margin-bottom: 0;

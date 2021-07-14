@@ -1,5 +1,10 @@
 import { ReducerAction } from '@make.org/types';
-import { PANEL_CLOSE, PANEL_OPEN, PANEL_REMOVE_CONTENT, PANEL_SET_CONTENT } from '../../actionTypes';
+import {
+  PANEL_CLOSE,
+  PANEL_OPEN,
+  PANEL_REMOVE_CONTENT,
+  PANEL_SET_CONTENT,
+} from '../../actionTypes';
 
 export const openPanel = (): ReducerAction => ({
   type: PANEL_OPEN,

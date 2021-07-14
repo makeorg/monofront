@@ -13,11 +13,14 @@ import {
 } from './style';
 
 type Props = {
-  level: string,
-  context?: string,
+  level: string;
+  context?: string;
 };
 
-export const NotificationIcon: React.FC<Props> = ({ level, context = 'banner' }) => {
+export const NotificationIcon: React.FC<Props> = ({
+  level,
+  context = 'banner',
+}) => {
   switch (level) {
     case NOTIFICATION_LEVEL_INFORMATION:
       return (

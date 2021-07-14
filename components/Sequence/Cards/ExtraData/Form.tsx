@@ -86,31 +86,35 @@ export const ExtraDataForm: React.FC<Props> = ({
     return accumulator;
   }, [location.search]);
 
-  const handleSubmit = (value: string) => async (event: SyntheticEvent<HTMLFormElement> | SyntheticEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    setIsSubmitDisabled(true);
-    setIsSkipDisabled(true);
-    const success = () => {
-      setIsSubmitDisabled(false);
-      setIsSkipDisabled(false);
-      dispatch(incrementSequenceIndex());
-    };
-    const error = () => {
-      setIsSubmitDisabled(false);
-      setIsSkipDisabled(false);
-    };
+  const handleSubmit =
+    (value: string) =>
+    async (
+      event: SyntheticEvent<HTMLFormElement> | SyntheticEvent<HTMLButtonElement>
+    ) => {
+      event.preventDefault();
+      setIsSubmitDisabled(true);
+      setIsSkipDisabled(true);
+      const success = () => {
+        setIsSubmitDisabled(false);
+        setIsSkipDisabled(false);
+        dispatch(incrementSequenceIndex());
+      };
+      const error = () => {
+        setIsSubmitDisabled(false);
+        setIsSkipDisabled(false);
+      };
 
-    await DemographicsTrackingService.track(
-      type,
-      value,
-      utmParams,
-      success,
-      error
-    );
+      await DemographicsTrackingService.track(
+        type,
+        value,
+        utmParams,
+        success,
+        error
+      );
 
-    dispatch(persistDemographics(type, value, currentQuestion));
-    trackClickSaveDemographics(type);
-  };
+      dispatch(persistDemographics(type, value, currentQuestion));
+      trackClickSaveDemographics(type);
+    };
 
   const onClickSkip = (event: React.SyntheticEvent<HTMLButtonElement>) => {
     handleSubmit(SKIP_TRACKING_VALUE)(event);

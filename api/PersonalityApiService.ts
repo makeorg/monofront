@@ -3,8 +3,10 @@ import { AxiosPromise, AxiosResponse } from 'axios';
 import { ApiService } from './ApiService';
 
 export const PERSONALITY_PATH = '/personalities/:personalityId';
-export const PERSONALITY_COMMENTS_PATH = '/personalities/:personalityId/comments';
-export const PERSONALITY_OPINION_PATH = '/personalities/:personalityId/opinions';
+export const PERSONALITY_COMMENTS_PATH =
+  '/personalities/:personalityId/comments';
+export const PERSONALITY_OPINION_PATH =
+  '/personalities/:personalityId/opinions';
 export const PERSONALITY_PROFILE = '/personalities/:personalityId/profile';
 
 export class PersonalityApiService {

@@ -17,7 +17,8 @@ class ApiServiceClass {
   }
 
   get strategy() {
-    if (!this.strategyValue) throw new Error('No ApiService strategy configured');
+    if (!this.strategyValue)
+      throw new Error('No ApiService strategy configured');
     return this.strategyValue;
   }
 

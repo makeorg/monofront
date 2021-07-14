@@ -16,7 +16,7 @@ import { NotificationIcon } from '../Icon';
 
 type Props = {
   /** isFirstSequenceVote for specific design on sequence firstProposal */
-  isFirstSequenceVote: boolean,
+  isFirstSequenceVote: boolean;
 };
 
 export const Tip: React.FC<Props> = ({ isFirstSequenceVote = false }) => {
@@ -25,7 +25,9 @@ export const Tip: React.FC<Props> = ({ isFirstSequenceVote = false }) => {
     (state: StateRoot) => state.notifications.tip
   );
   const { dismissed } = useSelector((state: StateRoot) => state.notifications);
-  const isDismissed = dismissed.f((notificationId) => notificationId === contentId);
+  const isDismissed = dismissed.f(
+    notificationId => notificationId === contentId
+  );
 
   const closeNotificationTip = () => {
     if (toDismiss) {

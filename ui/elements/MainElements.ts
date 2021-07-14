@@ -6,10 +6,7 @@ import {
   Layouts,
   DefaultPadding,
 } from '@make.org/assets/vars/Breakpoints';
-import {
-  ColumnElementStyle,
-  CenterColumnStyle,
-} from './FlexElements';
+import { ColumnElementStyle, CenterColumnStyle } from './FlexElements';
 import { LinkAsRedButtonStyle } from './ButtonsElements';
 
 export const ContainerWithPadding = `

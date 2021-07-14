@@ -80,7 +80,8 @@ export const SelectStyle = styled.select`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   color: ${color.greyDark};
   appearance: none;
-  background: transparent url(@make.org/ui/Svg/source/select-arrow.svg) no-repeat 95% center;
+  background: transparent url(@make.org/ui/Svg/source/select-arrow.svg)
+    no-repeat 95% center;
 `;
 
 export const SkipIconStyle = styled(SvgFastForward)<SvgPropsType>`

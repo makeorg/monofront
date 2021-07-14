@@ -41,7 +41,7 @@ export const FontSize: React.FC = () => (
           <th scope="col">value</th>
         </tr>
       </thead>
-      {fonts.map((f) => (
+      {fonts.map(f => (
         <Fragment key={f.fontName}>
           <tbody>
             <tr>

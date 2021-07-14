@@ -1,17 +1,25 @@
 import styled from 'styled-components';
 import { SecondLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
-import { SvgLegalConsent, SvgExternalLinkPlain } from '@make.org/ui/Svg/elements';
+import {
+  SvgLegalConsent,
+  SvgExternalLinkPlain,
+} from '@make.org/ui/Svg/elements';
 import { SmallSeparatorStyle } from '@make.org/ui/elements/Separators';
 import { FormCenterAlignStyle } from '@make.org/ui/elements/FormElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { color, typography } from 'athena-design-tokens';
-import { RedButtonStyle, UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
+import {
+  RedButtonStyle,
+  UnstyledButtonStyle,
+} from '@make.org/ui/elements/ButtonsElements';
 import { SpaceBetweenRowStyle } from '@make.org/ui/elements/FlexElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 
-export const AuthenticationWrapperStyle = styled.section<{ className?: string }>`
+export const AuthenticationWrapperStyle = styled.section<{
+  className?: string;
+}>`
   display: flex;
   flex-flow: column;
   justify-content: center;

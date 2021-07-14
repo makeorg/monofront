@@ -20,10 +20,12 @@ export const useIsFieldValid = (
   if (ref && ref.current) {
     inputField = ref.current;
     isRefEmpty = inputField.value.length === 0;
-    filledPostalCode = (inputField.value !== undefined || inputField.value !== '')
-      && inputField.name.toLowerCase() === 'postalcode';
-    filledWebsite = (inputField.value !== undefined || inputField.value !== '')
-      && inputField.name.toLowerCase() === 'website';
+    filledPostalCode =
+      (inputField.value !== undefined || inputField.value !== '') &&
+      inputField.name.toLowerCase() === 'postalcode';
+    filledWebsite =
+      (inputField.value !== undefined || inputField.value !== '') &&
+      inputField.name.toLowerCase() === 'website';
   }
 
   useEffect(() => {
@@ -59,7 +61,13 @@ export const useIsFieldValid = (
     }
 
     return setFieldValidation(validationStatus);
-  }, [isRefEmpty, filledPostalCode, filledWebsite, isInitialErrorEmpty, inputField]);
+  }, [
+    isRefEmpty,
+    filledPostalCode,
+    filledWebsite,
+    isInitialErrorEmpty,
+    inputField,
+  ]);
 
   return isFieldValid;
 };

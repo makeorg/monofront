@@ -4,13 +4,13 @@ import { Logger } from './Logger';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
 type Accumulator = {
-  unique: ProposalType[],
-  duplicates: ProposalType[],
-  voted: ProposalType[],
+  unique: ProposalType[];
+  duplicates: ProposalType[];
+  voted: ProposalType[];
 };
 
 type SequenceByKindResponse = {
-  proposals: ProposalType[],
+  proposals: ProposalType[];
 };
 
 const getOrderedProposals = (
@@ -40,22 +40,24 @@ const getOrderedProposals = (
 };
 
 // remove duplicates and voted
-const removeDuplicatedAndVotedProposals = (includedProposalIds: string[]) => (accumulator: Accumulator, proposal: ProposalType) => {
-  if (
-    accumulator.unique.find((item) => item.id === proposal.id) !== undefined
-  ) {
-    accumulator.duplicates.push(proposal);
-  } else if (
-    proposal.votes.some((vote) => vote.hasVoted === true)
-      && !includedProposalIds.includes(proposal.id)
-  ) {
-    accumulator.voted.push(proposal);
-  } else {
-    accumulator.unique.push(proposal);
-  }
+const removeDuplicatedAndVotedProposals =
+  (includedProposalIds: string[]) =>
+  (accumulator: Accumulator, proposal: ProposalType) => {
+    if (
+      accumulator.unique.find(item => item.id === proposal.id) !== undefined
+    ) {
+      accumulator.duplicates.push(proposal);
+    } else if (
+      proposal.votes.some(vote => vote.hasVoted === true) &&
+      !includedProposalIds.includes(proposal.id)
+    ) {
+      accumulator.voted.push(proposal);
+    } else {
+      accumulator.unique.push(proposal);
+    }
 
-  return accumulator;
-};
+    return accumulator;
+  };
 
 const logCornerCases = (
   questionId,

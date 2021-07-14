@@ -1,7 +1,7 @@
 import {
   QuestionExtraSlidesConfigType,
   SequenceCardType,
-  ProposalType
+  ProposalType,
 } from '@make.org/types';
 import { i18n } from '../i18n';
 import {
@@ -28,24 +28,24 @@ import {
 export const findIndexOfFirstUnvotedCard = (
   firstUnvotedProposal: ProposalType | undefined,
   cards: SequenceCardType[],
-  currentIndex: number,
+  currentIndex: number
 ): number => {
   if (!firstUnvotedProposal) {
     return cards.length ? cards.length - 1 : 0;
   }
 
-  const indexOfFirstUnvotedCard = cards.findIndex(
-    (card) => {
-      const { type = '', configuration } = card;
-      if (!!configuration && 'proposal' in configuration) {
-        const { proposal } = configuration;
-        if (type === CARD_TYPE_PROPOSAL && proposal.id) {
-          return proposal.id === (firstUnvotedProposal && firstUnvotedProposal.id);
-        }
+  const indexOfFirstUnvotedCard = cards.findIndex(card => {
+    const { type = '', configuration } = card;
+    if (!!configuration && 'proposal' in configuration) {
+      const { proposal } = configuration;
+      if (type === CARD_TYPE_PROPOSAL && proposal.id) {
+        return (
+          proposal.id === (firstUnvotedProposal && firstUnvotedProposal.id)
+        );
       }
-      return false;
     }
-  );
+    return false;
+  });
 
   if (indexOfFirstUnvotedCard <= currentIndex) {
     return currentIndex;
@@ -76,16 +76,18 @@ export const buildCards = (
   pushProposalParam?: boolean,
   withDemographics?: boolean
 ): SequenceCardType[] => {
-  const withPushProposalCard: boolean = !!extraSlidesConfig.pushProposalCard
-    && !!extraSlidesConfig.pushProposalCard.enabled
-    && !!canPropose
-    && !!pushProposalParam
-    && !hasProposed;
-  const withIntroCard: boolean = !!extraSlidesConfig.introCard
-    && !!extraSlidesConfig.introCard.enabled
-    && !!introCardParam;
+  const withPushProposalCard: boolean =
+    !!extraSlidesConfig.pushProposalCard &&
+    !!extraSlidesConfig.pushProposalCard.enabled &&
+    !!canPropose &&
+    !!pushProposalParam &&
+    !hasProposed;
+  const withIntroCard: boolean =
+    !!extraSlidesConfig.introCard &&
+    !!extraSlidesConfig.introCard.enabled &&
+    !!introCardParam;
 
-  const cards: SequenceCardType[] = proposals.map((proposal) => ({
+  const cards: SequenceCardType[] = proposals.map(proposal => ({
     type: CARD_TYPE_PROPOSAL,
     configuration: { proposal },
     state: { votes: proposal.votes },
@@ -137,14 +139,17 @@ export const buildCards = (
  * @param  {string} sequenceKind
  * @return {boolean}
  */
-export const isStandardSequence = (sequenceKind: string): boolean => sequenceKind === KIND_STANDARD;
+export const isStandardSequence = (sequenceKind: string): boolean =>
+  sequenceKind === KIND_STANDARD;
 
 /**
  * Render title depending on kind
  * @param  {string} sequenceKind
  * @return {string || null}
  */
-export const getSequenceTitleBySequenceKind = (sequenceKind: string): string | null => {
+export const getSequenceTitleBySequenceKind = (
+  sequenceKind: string
+): string | null => {
   switch (sequenceKind) {
     case KIND_CONTROVERSY: {
       return i18n.t('sequence_zone.controversial_title');
@@ -161,7 +166,9 @@ export const getSequenceTitleBySequenceKind = (sequenceKind: string): string | n
  * @param  {string} sequenceKind
  * @return {string || null}
  */
-export const getNoProposalCardTitleBySequenceKind = (sequenceKind: string): string | null => {
+export const getNoProposalCardTitleBySequenceKind = (
+  sequenceKind: string
+): string | null => {
   switch (sequenceKind) {
     case KIND_CONTROVERSY: {
       return i18n.t('no_proposal_card.title.controversial');
@@ -180,4 +187,5 @@ export const getNoProposalCardTitleBySequenceKind = (sequenceKind: string): stri
  *
  */
 
-export const isKeywordSequence = (sequenceKind: string): boolean => ![KIND_CONTROVERSY, KIND_POPULAR, KIND_STANDARD].includes(sequenceKind);
+export const isKeywordSequence = (sequenceKind: string): boolean =>
+  ![KIND_CONTROVERSY, KIND_POPULAR, KIND_STANDARD].includes(sequenceKind);

@@ -41,7 +41,7 @@ export const getFieldError = (
   field: string,
   errors: ErrorObjectType[]
 ): ErrorObjectType => {
-  let fieldError = errors.find((error) => error.field === field);
+  let fieldError = errors.find(error => error.field === field);
   if (fieldError === undefined) {
     fieldError = {
       field: '',
@@ -73,10 +73,12 @@ export const transformFieldValueToProfileValue = (
   initialValue: string | number
 ): string | number | null => setEmptyStringToNull(initialValue);
 
-export const transformProfileToFormData = (profile: UnknownObjectType): UnknownObjectType => {
+export const transformProfileToFormData = (
+  profile: UnknownObjectType
+): UnknownObjectType => {
   const formData = { ...profile };
 
-  Object.keys(formData).forEach((key) => {
+  Object.keys(formData).forEach(key => {
     formData[key] = setNullToEmptyString(formData[key]);
   });
 

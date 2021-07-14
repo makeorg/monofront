@@ -4,7 +4,9 @@ import {
   OrganisationsType,
   OrganisationType,
   OrganisationVotesType,
-  OrganisationProfileType, ProposalsType, ErrorObjectType
+  OrganisationProfileType,
+  ProposalsType,
+  ErrorObjectType,
 } from '@make.org/types';
 import { updateOrganisationErrors } from '@make.org/utils/errors/Messages/Organisation';
 import { getErrorMessages } from '@make.org/utils/helpers/form';
@@ -32,7 +34,7 @@ const getOrganisationBySlug = async (
     const response = await OrganisationApiService.getOrganisations(slug);
 
     const organisation = response.data.results.find(
-      (result) => result.slug === slug
+      result => result.slug === slug
     );
 
     if (!organisation) {
@@ -73,7 +75,7 @@ const getProposals = async (
 
 const getVotes = async (
   organisationId: string,
-  seed? : number,
+  seed?: number,
   page = 0
 ): Promise<OrganisationVotesType> => {
   const limit = PROPOSALS_LISTING_LIMIT;
@@ -88,11 +90,11 @@ const getVotes = async (
     );
     const { results } = response.data;
 
-    const proposals = results.map((result) => result.proposal);
+    const proposals = results.map(result => result.proposal);
 
-    const organisationVotes = results.map((result) => {
+    const organisationVotes = results.map(result => {
       const Proposal = proposals.find(
-        (proposal) => proposal.id === result.proposal.id
+        proposal => proposal.id === result.proposal.id
       );
       return {
         ...result,

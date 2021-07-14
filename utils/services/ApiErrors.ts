@@ -9,7 +9,7 @@ import { Logger } from './Logger';
  */
 export const mapErrors = (
   internalErrors: ErrorObjectType[],
-  apiErrors: ErrorObjectType[],
+  apiErrors: ErrorObjectType[]
   // logId?: string
 ): ErrorObjectType[] => {
   const errors: ErrorObjectType[] = apiErrors.map(
@@ -17,8 +17,9 @@ export const mapErrors = (
       const apiErrorField = apiError.field.toLowerCase();
       const apiErrorMessage = i18n.t(`common.form.messages.${apiError.key}`);
       const errorMatch = internalErrors.find(
-        (internalError: ErrorObjectType) => apiErrorField === internalError.field
-          && apiError.key === internalError.key
+        (internalError: ErrorObjectType) =>
+          apiErrorField === internalError.field &&
+          apiError.key === internalError.key
       );
 
       if (typeof errorMatch !== 'undefined') {
@@ -33,7 +34,9 @@ export const mapErrors = (
       //   message: `Unexpected error: "field": "${apiErrorField}", "key": "${apiError.key}", "message": "${apiError.message}"`,
       //   logId,
       // });
-      Logger.logError(`Unexpected error: "field": "${apiErrorField}", "key": "${apiError.key}", "message": "${apiError.message}"`,);
+      Logger.logError(
+        `Unexpected error: "field": "${apiErrorField}", "key": "${apiError.key}", "message": "${apiError.message}"`
+      );
       return {
         field: apiErrorField,
         key: apiError.key,

@@ -2,7 +2,13 @@ import React, { useState, useRef } from 'react';
 import { ErrorObjectType } from '@make.org/types';
 import { useIsFieldValid } from '@make.org/utils/hooks/useFieldValidation';
 import { throttle } from '@make.org/utils/helpers/throttle';
-import { BasicInputStyle, CenterInputIconStyle, FieldWrapperStyle, FloatingLabelStyle, MiddleFakeFieldStyle } from '@make.org/ui/elements/FormElements';
+import {
+  BasicInputStyle,
+  CenterInputIconStyle,
+  FieldWrapperStyle,
+  FloatingLabelStyle,
+  MiddleFakeFieldStyle,
+} from '@make.org/ui/elements/FormElements';
 import { PasswordButton } from './Button';
 
 type Props = {

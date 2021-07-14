@@ -15,7 +15,7 @@ import { SequenceProposalStyle, SequenceNextCardButtonStyle } from './style';
 
 type Props = {
   /** Proposal card */
-  proposalCard: ProposalCardType,
+  proposalCard: ProposalCardType;
 };
 
 /**
@@ -29,24 +29,24 @@ export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
   const allCards = state.sequence.cards;
   const { votes = [] } = state.sequence.cards[index].state || {};
   const [isVoted, setIsVoted] = useState(
-    votes.some((vote) => vote.hasVoted === true)
+    votes.some(vote => vote.hasVoted === true)
   );
   const [isLastProposalCard, setIsLastProposalCard] = useState(
-    proposalCard.index
-      === allCards.filter((card) => card.type === CARD_TYPE_PROPOSAL).pop().index
+    proposalCard.index ===
+      allCards.filter(card => card.type === CARD_TYPE_PROPOSAL).pop().index
   );
 
   useEffect(() => {
     setProposal(proposalCard.configuration.proposal);
     setIndex(proposalCard.index);
     setIsLastProposalCard(
-      proposalCard.index
-        === allCards.filter((card) => card.type === CARD_TYPE_PROPOSAL).pop().index
+      proposalCard.index ===
+        allCards.filter(card => card.type === CARD_TYPE_PROPOSAL).pop().index
     );
   }, [proposalCard, allCards]);
 
   useEffect(() => {
-    setIsVoted(votes.some((vote) => vote.hasVoted === true));
+    setIsVoted(votes.some(vote => vote.hasVoted === true));
   }, [votes]);
 
   const goToNextCard = () => {

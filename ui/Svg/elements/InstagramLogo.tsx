@@ -2,7 +2,9 @@
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
 
-export const SvgInstagramLogo: React.FC<SvgPropsType> = (props: SvgPropsType) => (
+export const SvgInstagramLogo: React.FC<SvgPropsType> = (
+  props: SvgPropsType
+) => (
   <svg width={38} height={38} viewBox="0 0 38 38" {...props}>
     <defs>
       <linearGradient

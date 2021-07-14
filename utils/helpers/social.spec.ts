@@ -6,7 +6,7 @@ const socialMessage = 'bar';
 const twitterHashtag = 'baz';
 
 jest.mock('Shared/helpers/url', () => ({
-  getRelativeCurrentUrl: (pathname) => pathname,
+  getRelativeCurrentUrl: pathname => pathname,
 }));
 
 describe('Social Helper', () => {

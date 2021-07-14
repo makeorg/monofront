@@ -45,7 +45,9 @@ class LoggerSingleton {
     logId: uuidv4(),
   });
 
-  normalizeData = (data: ApiServiceError | Error | {[key: string]: string}) => {
+  normalizeData = (
+    data: ApiServiceError | Error | { [key: string]: string }
+  ) => {
     if (data instanceof ApiServiceError) {
       return this.formatApiServiceError(data);
     }
@@ -129,7 +131,7 @@ class LoggerSingleton {
       },
     })
       .then(() => undefined)
-      .catch((e) => {
+      .catch(e => {
         // eslint-disable-next-line no-console
         console.log('Fail to log error - ', e);
       });

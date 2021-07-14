@@ -1,8 +1,5 @@
 import moment from 'moment';
-import {
-  HomeQuestionType,
-  QuestionTimelineType,
-} from '@make.org/types';
+import { HomeQuestionType, QuestionTimelineType } from '@make.org/types';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 
 export const getDateOfBirthFromAge = (age: string | number = ''): string => {
@@ -30,8 +27,8 @@ export const getAgeFromDateOfBirth = (dateOfBirth: string): string => {
   let age = today.getFullYear() - birthDate.getFullYear();
   const mounthDiff = today.getMonth() - birthDate.getMonth();
   if (
-    mounthDiff < 0
-    || (mounthDiff === 0 && today.getDate() < birthDate.getDate())
+    mounthDiff < 0 ||
+    (mounthDiff === 0 && today.getDate() < birthDate.getDate())
   ) {
     age -= 1;
   }
@@ -40,8 +37,8 @@ export const getAgeFromDateOfBirth = (dateOfBirth: string): string => {
 };
 
 type ConsultationDates = {
-  startDate?: string | null,
-  endDate?: string | null,
+  startDate?: string | null;
+  endDate?: string | null;
 };
 
 export const isInProgress = (dates: ConsultationDates): boolean => {
@@ -61,9 +58,9 @@ export const isInProgress = (dates: ConsultationDates): boolean => {
 
 export const selectStep = (
   timeline: {
-    result?: QuestionTimelineType,
-    workshop?: QuestionTimelineType,
-    action?: QuestionTimelineType,
+    result?: QuestionTimelineType;
+    workshop?: QuestionTimelineType;
+    action?: QuestionTimelineType;
   },
   currentStep: string,
   nextStep: string | undefined
@@ -87,8 +84,8 @@ export const selectStep = (
 };
 
 type DateHelperSingletonType = {
-  languageValue: string
-}
+  languageValue: string;
+};
 
 let instance: DateHelperSingletonType | null = null;
 
@@ -134,8 +131,8 @@ export class DateHelperSingleton {
     const objectNowDate = new Date();
     const objectEndDate = new Date(endDate);
     if (
-      Number.isNaN(objectEndDate.getMonth())
-      || Number.isNaN(objectNowDate.getMonth())
+      Number.isNaN(objectEndDate.getMonth()) ||
+      Number.isNaN(objectNowDate.getMonth())
     ) {
       return null;
     }
@@ -178,7 +175,7 @@ export const orderByEndDate = (
     return -1;
   }
 
-  return (Number(dateB) - Number(dateA));
+  return Number(dateB) - Number(dateA);
 };
 
 export const chronologicalOrder = (
@@ -198,7 +195,7 @@ export const chronologicalOrder = (
     return -1;
   }
 
-  return (Number(dateB) - Number(dateA));
+  return Number(dateB) - Number(dateA);
 };
 
 export const DateHelper = new DateHelperSingleton(DEFAULT_LANGUAGE);

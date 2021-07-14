@@ -19,7 +19,7 @@ export const ButtonsWrapperStyle = styled.div`
   }
 `;
 
-export const UnstyledButtonStyle = styled.button.attrs((props) => ({
+export const UnstyledButtonStyle = styled.button.attrs(props => ({
   type: 'button',
   ...props,
 }))`
@@ -31,7 +31,7 @@ export const UnstyledButtonStyle = styled.button.attrs((props) => ({
   background-color: transparent;
 `;
 
-export const BasicButtonStyle = styled.button.attrs((props) => ({
+export const BasicButtonStyle = styled.button.attrs(props => ({
   type: 'button',
   ...props,
 }))`
@@ -80,7 +80,7 @@ const GreyStyle = `
   }
 `;
 
-export const RedButtonStyle = styled.button.attrs((props) => ({
+export const RedButtonStyle = styled.button.attrs(props => ({
   type: 'button',
   ...props,
 }))`
@@ -91,7 +91,7 @@ export const RedButtonStyle = styled.button.attrs((props) => ({
   }
 `;
 
-export const GreyButtonStyle = styled.button.attrs((props) => ({
+export const GreyButtonStyle = styled.button.attrs(props => ({
   type: 'button',
   ...props,
 }))`
@@ -199,12 +199,12 @@ export const QualifyButtonStyle = styled.button`
   border-style: solid;
   padding: 0 10px;
   border-radius: 36px;
-  border-color: ${(props) => props.color};
-  color: ${(props) => props.color};
+  border-color: ${props => props.color};
+  color: ${props => props.color};
   background-color: ${color.white};
   &.qualified {
     color: ${color.white};
-    background-color: ${(props) => props.color};
+    background-color: ${props => props.color};
   }
   @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
@@ -226,7 +226,7 @@ const InverseRotateButton = keyframes`
   100% { transform: rotate(0deg); }
 `;
 
-export const VoteButtonStyle = styled.button.attrs((props) => ({
+export const VoteButtonStyle = styled.button.attrs(props => ({
   type: 'button',
   ...props,
 }))`
@@ -265,7 +265,7 @@ export const VoteButtonStyle = styled.button.attrs((props) => ({
     border-color: ${color.neutral};
   }
   &.animated {
-    box-shadow: 0 0 0 0 ${(props) => props.color};
+    box-shadow: 0 0 0 0 ${props => props.color};
     animation: ${RotateButton} 0.5s 1;
     transform: scale(0.9);
   }
@@ -320,7 +320,9 @@ export const HidePasswordIconStyle = styled(UnstyledButtonStyle)`
   color: ${color.greyDark};
 `;
 
-export const ExternalLinkIconStyle = styled(SvgExternalLinkPlain)<{ className?: string }>`
+export const ExternalLinkIconStyle = styled(SvgExternalLinkPlain)<{
+  className?: string;
+}>`
   width: 14px;
   height: 14px;
   margin-left: 7px;
@@ -372,7 +374,7 @@ export const GreyLinkStyle = styled(Link)`
   ${GreyNoBackgroundStyle};
 `;
 
-export const BlackBorderButtonStyle = styled.button.attrs((props) => ({
+export const BlackBorderButtonStyle = styled.button.attrs(props => ({
   type: 'button',
   ...props,
 }))`

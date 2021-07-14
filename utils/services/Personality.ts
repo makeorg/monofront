@@ -3,7 +3,7 @@ import {
   PersonalityOpinionType,
   PersonalityProfileType,
   ErrorObjectType,
-  UserType
+  UserType,
 } from '@make.org/types';
 import { PersonalityApiService } from '@make.org/api/PersonalityApiService';
 import { getErrorMessages } from '@make.org/utils/helpers/form';
@@ -53,8 +53,7 @@ const postPersonnalityComments = async (
 const getPersonnalityOpinion = async (
   personalityId: string,
   questionId?: string
-): Promise<?(PersonalityOpinionType[]
-)> => {
+): Promise<?PersonalityOpinionType[]> => {
   try {
     const response = await PersonalityApiService.getPersonnalityOpinion(
       personalityId,

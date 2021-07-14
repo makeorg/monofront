@@ -34,7 +34,10 @@ export const modal_state: StateModal = {
   extraProps: {},
 };
 
-export const modal_reducer: Reducer = (state: StateModal, action: ReducerAction): StateModal => {
+export const modal_reducer: Reducer = (
+  state: StateModal,
+  action: ReducerAction
+): StateModal => {
   switch (action.type) {
     case MODAL_CLOSE_COOKIES:
       return {

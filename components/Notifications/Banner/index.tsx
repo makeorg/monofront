@@ -22,7 +22,7 @@ export const NotificationBanner: React.FC = () => {
   const { dismissed } = state.notifications;
   const uniqueIdentifier = JSON.stringify({ contentId, params });
   const isDismissed = dismissed.find(
-    (notificationId) => notificationId === uniqueIdentifier
+    notificationId => notificationId === uniqueIdentifier
   );
 
   const closeNotificationBanner = () => {

@@ -41,7 +41,10 @@ export const ProgressBarWrapperStyle = styled.div`
   border: 1px solid ${color.grey};
 `;
 
-export const ProgressBarStyle = styled.div < { theme: QuestionThemeType, percentWidth?: number | string } >`
+export const ProgressBarStyle = styled.div<{
+  theme: QuestionThemeType;
+  percentWidth?: number | string;
+}>`
   position: absolute;
   top: 0;
   left: 0;

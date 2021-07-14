@@ -71,9 +71,10 @@ export const ProposalForm: React.FC<Props> = ({
   const charCounting = proposalIsEmpty
     ? baitText?.length
     : proposalContent.length;
-  const disableSubmitButton = !proposalHasValidLength(proposalContent.length) || waitingApiCallback;
+  const disableSubmitButton =
+    !proposalHasValidLength(proposalContent.length) || waitingApiCallback;
 
-  const secureFieldValue = (event) => {
+  const secureFieldValue = event => {
     handleValueChange(event);
     if (inputRef.current && inputRef.current.selectionStart < baitText.length) {
       setProposalContent(baitText);

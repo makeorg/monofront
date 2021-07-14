@@ -1,5 +1,15 @@
-import React, { ChangeEvent, FC, KeyboardEvent, MouseEventHandler, SyntheticEvent } from 'react';
-import { CheckboxWrapper, CheckboxLabelStyle, FakeCheckboxInputStyle } from '../../elements/FormElements';
+import React, {
+  ChangeEvent,
+  FC,
+  KeyboardEvent,
+  MouseEventHandler,
+  SyntheticEvent,
+} from 'react';
+import {
+  CheckboxWrapper,
+  CheckboxLabelStyle,
+  FakeCheckboxInputStyle,
+} from '../../elements/FormElements';
 import { SvgCheck } from '../../Svg/elements';
 
 type Props = {
@@ -8,7 +18,11 @@ type Props = {
   /** Label of the checkbox */
   label: string;
   /** handleLabelClick of the checkbox */
-  handleCheck: (event: SyntheticEvent<HTMLLabelElement> | MouseEventHandler<HTMLLabelElement>) => void;
+  handleCheck: (
+    event:
+      | SyntheticEvent<HTMLLabelElement>
+      | MouseEventHandler<HTMLLabelElement>
+  ) => void;
   /** Value of the checkbox */
   value: string | number | readonly string[];
   /** onChange of the checkbox */

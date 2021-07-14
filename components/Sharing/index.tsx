@@ -37,12 +37,13 @@ export const Sharing: React.FC = () => {
   const cookies = new Cookies();
   const preferencesCookie = cookies.get(USER_PREFERENCES_COOKIE);
 
-  const displayCookieNotification = () => dispatch(
-    displayNotificationBanner(
-      SOCIAL_MEDIA_COOKIES_MESSAGE,
-      NOTIFICATION_LEVEL_INFORMATION
-    )
-  );
+  const displayCookieNotification = () =>
+    dispatch(
+      displayNotificationBanner(
+        SOCIAL_MEDIA_COOKIES_MESSAGE,
+        NOTIFICATION_LEVEL_INFORMATION
+      )
+    );
 
   return (
     <SharingStyle as={UnstyledListStyle}>

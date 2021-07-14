@@ -90,30 +90,38 @@ export const matchRoute = (
 export const getRouteOrganisationProposals = (
   country: string,
   organisationSlug: string
-): string => generatePath(ROUTE_ORGANISATION_PROPOSALS, {
-  country,
-  organisationSlug,
-});
+): string =>
+  generatePath(ROUTE_ORGANISATION_PROPOSALS, {
+    country,
+    organisationSlug,
+  });
 
 export const getRouteOrganisationVotes = (
   country: string,
   organisationSlug: string
-): string => generatePath(ROUTE_ORGANISATION_VOTES, {
-  country,
-  organisationSlug,
-});
+): string =>
+  generatePath(ROUTE_ORGANISATION_VOTES, {
+    country,
+    organisationSlug,
+  });
 
-export const getRouteProfile = (country: string): string => generatePath(ROUTE_PROFILE, { country });
+export const getRouteProfile = (country: string): string =>
+  generatePath(ROUTE_PROFILE, { country });
 
-export const getRouteProfileEdit = (country: string): string => generatePath(ROUTE_PROFILE_EDIT, { country });
+export const getRouteProfileEdit = (country: string): string =>
+  generatePath(ROUTE_PROFILE_EDIT, { country });
 
-export const getRouteProfileProposals = (country: string): string => generatePath(ROUTE_PROFILE_PROPOSALS, { country });
+export const getRouteProfileProposals = (country: string): string =>
+  generatePath(ROUTE_PROFILE_PROPOSALS, { country });
 
-export const getRouteProfileFavourites = (country: string): string => generatePath(ROUTE_PROFILE_FAVOURITES, { country });
+export const getRouteProfileFavourites = (country: string): string =>
+  generatePath(ROUTE_PROFILE_FAVOURITES, { country });
 
-export const getRouteProfileOpinions = (country: string): string => generatePath(ROUTE_PROFILE_OPINIONS, { country });
+export const getRouteProfileOpinions = (country: string): string =>
+  generatePath(ROUTE_PROFILE_OPINIONS, { country });
 
-export const getRouteNoCookies = (country: string): string => generatePath(ROUTE_STATIC_NOCOOKIES, { country });
+export const getRouteNoCookies = (country: string): string =>
+  generatePath(ROUTE_STATIC_NOCOOKIES, { country });
 
 /**
  * Get the search main results route
@@ -122,7 +130,8 @@ export const getRouteNoCookies = (country: string): string => generatePath(ROUTE
  * @param  {string} query
  * @return {string}
  */
-export const getRouteSearch = (country: string, query: string): string => `${generatePath(ROUTE_SEARCH, { country })}?query=${query}`;
+export const getRouteSearch = (country: string, query: string): string =>
+  `${generatePath(ROUTE_SEARCH, { country })}?query=${query}`;
 
 /**
  * Get the search proposals results route
@@ -131,9 +140,13 @@ export const getRouteSearch = (country: string, query: string): string => `${gen
  * @param  {string} query
  * @return {string}
  */
-export const getRouteSearchProposals = (country: string, query: string): string => `${generatePath(ROUTE_SEARCH_PROPOSALS, {
-  country,
-})}?query=${query}`;
+export const getRouteSearchProposals = (
+  country: string,
+  query: string
+): string =>
+  `${generatePath(ROUTE_SEARCH_PROPOSALS, {
+    country,
+  })}?query=${query}`;
 
 /**
  * Get the search proposals results route
@@ -142,9 +155,13 @@ export const getRouteSearchProposals = (country: string, query: string): string 
  * @param  {string} query
  * @return {string}
  */
-export const getRouteSearchConsultations = (country: string, query: string): string => `${generatePath(ROUTE_SEARCH_CONSULTATIONS, {
-  country,
-})}?query=${query}`;
+export const getRouteSearchConsultations = (
+  country: string,
+  query: string
+): string =>
+  `${generatePath(ROUTE_SEARCH_CONSULTATIONS, {
+    country,
+  })}?query=${query}`;
 
 /**
  * Get the search organisations results route
@@ -154,9 +171,13 @@ export const getRouteSearchConsultations = (country: string, query: string): str
  * @return {string}
  */
 
-export const getRouteSearchOrganisations = (country: string, query: string): string => `${generatePath(ROUTE_SEARCH_ORGANISATIONS, {
-  country,
-})}?query=${query}`;
+export const getRouteSearchOrganisations = (
+  country: string,
+  query: string
+): string =>
+  `${generatePath(ROUTE_SEARCH_ORGANISATIONS, {
+    country,
+  })}?query=${query}`;
 
 /**
  * Get a path with pagination params
@@ -177,112 +198,123 @@ export const getPaginatedRoute = (
 export const isParticipatePage = (
   pathname: string,
   includingPreview = true
-): boolean => matchRoute(
-  pathname,
-  ROUTE_PARTICIPATE,
-  false,
-  false,
-  false,
-  includingPreview
-);
+): boolean =>
+  matchRoute(
+    pathname,
+    ROUTE_PARTICIPATE,
+    false,
+    false,
+    false,
+    includingPreview
+  );
 
 export const isExplorePage = (
   pathname: string,
   includingPreview = true
-): boolean => matchRoute(pathname, ROUTE_EXPLORE, false, false, false, includingPreview);
+): boolean =>
+  matchRoute(pathname, ROUTE_EXPLORE, false, false, false, includingPreview);
 
 export const isResultsPage = (
   pathname: string,
   includingPreview = true
-): boolean => matchRoute(pathname, ROUTE_RESULTS, false, false, false, includingPreview);
+): boolean =>
+  matchRoute(pathname, ROUTE_RESULTS, false, false, false, includingPreview);
 
 export const isTopIdeasPage = (
   pathname: string,
   includingPreview = true
-): boolean => matchRoute(pathname, ROUTE_TOP_IDEAS, false, false, false, includingPreview);
+): boolean =>
+  matchRoute(pathname, ROUTE_TOP_IDEAS, false, false, false, includingPreview);
 
 export const isTopIdeaDetailsPage = (
   pathname: string,
   includingPreview = true
-): boolean => matchRoute(
-  pathname,
-  ROUTE_TOP_IDEA_DETAILS,
-  false,
-  false,
-  false,
-  includingPreview
-);
+): boolean =>
+  matchRoute(
+    pathname,
+    ROUTE_TOP_IDEA_DETAILS,
+    false,
+    false,
+    false,
+    includingPreview
+  );
 
 export const isOrganisationProposals = (
   pathname: string,
   includingPreview = true
-): boolean => matchRoute(
-  pathname,
-  ROUTE_ORGANISATION_PROPOSALS,
-  false,
-  false,
-  false,
-  includingPreview
-);
+): boolean =>
+  matchRoute(
+    pathname,
+    ROUTE_ORGANISATION_PROPOSALS,
+    false,
+    false,
+    false,
+    includingPreview
+  );
 
 export const isOrganisationVotes = (
   pathname: string,
   includingPreview = true
-): boolean => matchRoute(
-  pathname,
-  ROUTE_ORGANISATION_VOTES,
-  false,
-  false,
-  false,
-  includingPreview
-);
+): boolean =>
+  matchRoute(
+    pathname,
+    ROUTE_ORGANISATION_VOTES,
+    false,
+    false,
+    false,
+    includingPreview
+  );
 export const isProfileProposals = (
   pathname: string,
   includingPreview = true
-): boolean => matchRoute(
-  pathname,
-  ROUTE_PROFILE_PROPOSALS,
-  false,
-  false,
-  false,
-  includingPreview
-);
+): boolean =>
+  matchRoute(
+    pathname,
+    ROUTE_PROFILE_PROPOSALS,
+    false,
+    false,
+    false,
+    includingPreview
+  );
 
 export const isProfileFavourites = (
   pathname: string,
   includingPreview = true
-): boolean => matchRoute(
-  pathname,
-  ROUTE_PROFILE_FAVOURITES,
-  false,
-  false,
-  false,
-  includingPreview
-);
+): boolean =>
+  matchRoute(
+    pathname,
+    ROUTE_PROFILE_FAVOURITES,
+    false,
+    false,
+    false,
+    includingPreview
+  );
 
 export const isBrowseConsultationsPage = (
   pathname: string,
   includingPreview = true
-): boolean => matchRoute(
-  pathname,
-  ROUTE_BROWSE_CONSULTATIONS,
-  false,
-  false,
-  false,
-  includingPreview
-);
+): boolean =>
+  matchRoute(
+    pathname,
+    ROUTE_BROWSE_CONSULTATIONS,
+    false,
+    false,
+    false,
+    includingPreview
+  );
 
 export const isBrowseResultsPage = (
   pathname: string,
   includingPreview = true
-): boolean => matchRoute(
-  pathname,
-  ROUTE_BROWSE_RESULTS,
-  false,
-  false,
-  false,
-  includingPreview
-);
+): boolean =>
+  matchRoute(
+    pathname,
+    ROUTE_BROWSE_RESULTS,
+    false,
+    false,
+    false,
+    includingPreview
+  );
 
 export const isHomepage = (
   pathname: string,
@@ -292,9 +324,11 @@ export const isHomepage = (
 export const isHomepageWithLocale = (
   pathname: string,
   includingPreview = true
-): boolean => matchRoute(pathname, ROUTE_COUNTRY, true, false, false, includingPreview);
+): boolean =>
+  matchRoute(pathname, ROUTE_COUNTRY, true, false, false, includingPreview);
 
 export const isSequencePage = (
   pathname: string,
   includingPreview = true
-): boolean => matchRoute(pathname, ROUTE_SEQUENCE, false, false, false, includingPreview);
+): boolean =>
+  matchRoute(pathname, ROUTE_SEQUENCE, false, false, false, includingPreview);

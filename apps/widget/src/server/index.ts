@@ -1,7 +1,9 @@
 import { ProposalType, QuestionType } from '@make.org/types';
 
-const ENDPOINT_PROPOSALS = (questionId : string): string => `https://api.preprod.makeorg.tech/sequences/standard/${questionId}`;
-const ENDPOINT_QUESTION = (questionId : string): string => `https://api.preprod.makeorg.tech/questions/${questionId}/details`;
+const ENDPOINT_PROPOSALS = (questionId: string): string =>
+  `https://api.preprod.makeorg.tech/sequences/standard/${questionId}`;
+const ENDPOINT_QUESTION = (questionId: string): string =>
+  `https://api.preprod.makeorg.tech/questions/${questionId}/details`;
 
 export const getQuestion = async (
   questionId: string

@@ -23,9 +23,10 @@ export class ApiServiceClient implements IApiServiceStrategy {
   _headersListeners: any = new Map();
 
   constructor() {
-    this._referrer = typeof window !== 'undefined' && !!window.document.referrer
-      ? window.document.referrer
-      : '';
+    this._referrer =
+      typeof window !== 'undefined' && !!window.document.referrer
+        ? window.document.referrer
+        : '';
   }
 
   set language(language: string) {
@@ -96,7 +97,10 @@ export class ApiServiceClient implements IApiServiceStrategy {
     this._headersListeners.delete(identifier);
   }
 
-  callApi(url: string, options: { proposalId?: string, headers?: Readonly<Record<string, string>> }): AxiosPromise<AxiosResponse> {
+  callApi(
+    url: string,
+    options: { proposalId?: string; headers?: Readonly<Record<string, string>> }
+  ): AxiosPromise<AxiosResponse> {
     const defaultHeaders = {
       'x-make-country': this._country,
       'x-make-language': this._language,
@@ -115,9 +119,11 @@ export class ApiServiceClient implements IApiServiceStrategy {
 
     axiosRetry(axios, {
       retries: 5,
-      retryDelay: (retryCount) => retryCount * 100,
-      retryCondition: (error) => axiosRetry.isNetworkOrIdempotentRequestError(error)
-        || (error.response && error.response.status === 401 && this._isLogged) || false,
+      retryDelay: retryCount => retryCount * 100,
+      retryCondition: error =>
+        axiosRetry.isNetworkOrIdempotentRequestError(error) ||
+        (error.response && error.response.status === 401 && this._isLogged) ||
+        false,
     });
 
     try {
@@ -126,7 +132,12 @@ export class ApiServiceClient implements IApiServiceStrategy {
         headers,
       });
 
-      response.then((res) => this._headersListeners.forEach((listener: (headers: Readonly<Record<string, string>>) => void) => listener(res.headers)));
+      response.then(res =>
+        this._headersListeners.forEach(
+          (listener: (headers: Readonly<Record<string, string>>) => void) =>
+            listener(res.headers)
+        )
+      );
 
       return response;
     } catch (apiServiceError) {

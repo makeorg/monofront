@@ -7,7 +7,9 @@ import {
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { useAppContext } from '@make.org/store';
 
-export const useSequenceVoteOnlyNotification = (question: QuestionType): void => {
+export const useSequenceVoteOnlyNotification = (
+  question: QuestionType
+): void => {
   const { dispatch } = useAppContext();
   useEffect(() => {
     if (question && !question.canPropose) {

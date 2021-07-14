@@ -121,12 +121,14 @@ export const getLocationContext = (
     { route: '/:country', name: 'homepage', exact: true, strict: false },
   ];
 
-  const location = locations.find((item) => matchRoute(
-    path,
-    item.route,
-    item.exact ? item.exact : false,
-    item.strict ? item.strict : false
-  ));
+  const location = locations.find(item =>
+    matchRoute(
+      path,
+      item.route,
+      item.exact ? item.exact : false,
+      item.strict ? item.strict : false
+    )
+  );
 
   return location === undefined
     ? `unknown-location ${pathname}`

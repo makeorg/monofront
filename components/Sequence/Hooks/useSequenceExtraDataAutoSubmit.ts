@@ -32,14 +32,14 @@ export const useSequenceExtraDataAutoSubmit = (
 
     // has extra data card
     if (
-      cards.find((fCard) => fCard.type === CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD)
+      cards.find(fCard => fCard.type === CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD)
     ) {
       return null;
     }
 
     // extra data already sent for question
     if (
-      persistedDemographics?.questions.find((element) => element === questionSlug)
+      persistedDemographics?.questions.find(element => element === questionSlug)
     ) {
       return null;
     }
@@ -47,8 +47,9 @@ export const useSequenceExtraDataAutoSubmit = (
     // find the proposal card after which to trigger
     const card = cards
       .filter(
-        (fCard) => fCard.type === CARD_TYPE_PROPOSAL
-          && !fCard.state?.votes.some((vote) => !!vote && vote.hasVoted === true)
+        fCard =>
+          fCard.type === CARD_TYPE_PROPOSAL &&
+          !fCard.state?.votes.some(vote => !!vote && vote.hasVoted === true)
       )
       .sort((a, b) => a.index - b.index)
       .splice(0, AFTER_NB_VOTES)
@@ -72,11 +73,8 @@ export const useSequenceExtraDataAutoSubmit = (
         );
       }
 
-      DemographicsTrackingService.track(
-        type,
-        value,
-        {},
-        () => dispatch(addQuestionToDemographics(questionSlug))
+      DemographicsTrackingService.track(type, value, {}, () =>
+        dispatch(addQuestionToDemographics(questionSlug))
       );
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

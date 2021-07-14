@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-  SvgSwitchLabelChecked,
-  SvgSwitchLabelCross,
-} from '../../Svg/elements';
+import { SvgSwitchLabelChecked, SvgSwitchLabelCross } from '../../Svg/elements';
 
 import { SwitchButtonStyle, SwitchButtonInternalLabelStyle } from './style';
 

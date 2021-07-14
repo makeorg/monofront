@@ -7,8 +7,7 @@ export const throttle = (
   preventDefault = true,
   time: number = THROTTLE_DEFAULT_TIME,
   context = typeof window !== 'undefined' ? window : {}
-): ((...args: ChangeEvent[] | FormEvent[]) => void
-) => {
+): ((...args: ChangeEvent[] | FormEvent[]) => void) => {
   let wait = false;
   let timer: NodeJS.Timeout;
   return (...args: ChangeEvent[] | FormEvent[]): void => {

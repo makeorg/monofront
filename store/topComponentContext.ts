@@ -20,4 +20,5 @@ export const TopComponentContextValue = {
 
 const defaultContext: TopComponentContextValueType = '';
 
-export const TopComponentContext: Context<TopComponentContextValueType> = createContext(defaultContext);
+export const TopComponentContext: Context<TopComponentContextValueType> =
+  createContext(defaultContext);

@@ -1,9 +1,15 @@
-import { StateAuthentication, StateRoot, StateUserPasswordRecovery } from '@make.org/types';
+import {
+  StateAuthentication,
+  StateRoot,
+  StateUserPasswordRecovery,
+} from '@make.org/types';
 /**
  * authentication selector
  * @param {*} state
  */
-export const selectAuthentication = (state: StateRoot): StateAuthentication | undefined => {
+export const selectAuthentication = (
+  state: StateRoot
+): StateAuthentication | undefined => {
   const { authentication } = state.user || {};
   return authentication;
 };
@@ -12,7 +18,9 @@ export const selectAuthentication = (state: StateRoot): StateAuthentication | un
  * passwordRecovery selector
  * @param {*} state
  */
-export const selectPasswordRecovery = (state: StateRoot): StateUserPasswordRecovery| undefined => {
+export const selectPasswordRecovery = (
+  state: StateRoot
+): StateUserPasswordRecovery | undefined => {
   const { passwordRecovery } = state.user || {};
   return passwordRecovery;
 };

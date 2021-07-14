@@ -7,7 +7,7 @@ import {
   UserProfileType,
   OrganisationProfileType,
   ErrorObjectType,
-  RegisterFormDataType
+  RegisterFormDataType,
 } from '@make.org/types';
 import { mapErrors } from '@make.org/utils/services/ApiErrors';
 import {
@@ -20,7 +20,10 @@ import {
 } from '@make.org/utils/errors/Messages/User';
 import { getErrorMessages } from '@make.org/utils/helpers/form';
 import { PROPOSALS_LISTING_LIMIT } from '@make.org/utils/constants/proposal';
-import { TYPE_ORGANISATION, TYPE_PERSONALITY } from '@make.org/utils/constants/user';
+import {
+  TYPE_ORGANISATION,
+  TYPE_PERSONALITY,
+} from '@make.org/utils/constants/user';
 import { apiClient } from '@make.org/api/ApiService/ApiService.client';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 import { OrganisationService } from './Organisation';
@@ -33,9 +36,10 @@ const updatePassword = async (
   success: () => void,
   handleErrors: (errors: ErrorObjectType[]) => void
 ): Promise<void> => {
-  const actualPassword = hasPassword && passwords.actualPassword
-    ? passwords.actualPassword
-    : undefined;
+  const actualPassword =
+    hasPassword && passwords.actualPassword
+      ? passwords.actualPassword
+      : undefined;
   const { newPassword } = passwords;
 
   try {
@@ -71,17 +75,17 @@ const deleteAccount = async (
     success();
   } catch (apiServiceError) {
     if (
-      apiServiceError.status === 400
-      && apiServiceError.data
-      && apiServiceError.data.shift().key === INVALID_PASSWORD_KEY_ERROR
+      apiServiceError.status === 400 &&
+      apiServiceError.data &&
+      apiServiceError.data.shift().key === INVALID_PASSWORD_KEY_ERROR
     ) {
       invalidPassword();
       return;
     }
     if (
-      apiServiceError.status === 400
-      && apiServiceError.data
-      && apiServiceError.data.shift().key === INVALID_EMAIL_KEY_ERROR
+      apiServiceError.status === 400 &&
+      apiServiceError.data &&
+      apiServiceError.data.shift().key === INVALID_EMAIL_KEY_ERROR
     ) {
       invalidEmail();
       return;
@@ -251,7 +255,7 @@ const loginSocial = async (
   token: string,
   approvePrivacyPolicy?: boolean,
   success?: () => void,
-  failure?: () => void,
+  failure?: () => void
   // unexpectedError?: () => void
 ): Promise<UserAuthType> => {
   try {
@@ -320,9 +324,7 @@ const changePassword = async (
   }
 };
 
-const current = async (
-  unauthorized?: () => void
-): Promise<UserType | null> => {
+const current = async (unauthorized?: () => void): Promise<UserType | null> => {
   try {
     const response = await UserApiService.current();
     apiClient.isLogged = true; // @see ApiServiceClient

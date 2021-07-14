@@ -7,13 +7,16 @@ const PATH_QUESTIONS_LIST = '/questions';
 const PATH_QUESTIONS_SEARCH = '/questions/search';
 const PATH_QUESTION_DETAIL = '/questions/:questionSlugOrId/details';
 const PATH_QUESTION_START_SEQUENCE = '/sequences/:sequenceKind/:questionId';
-const PATH_QUESTION_START_SEQUENCE_KEYWORD = '/sequences/keyword/:questionId/:keywordKey';
+const PATH_QUESTION_START_SEQUENCE_KEYWORD =
+  '/sequences/keyword/:questionId/:keywordKey';
 const PATH_QUESTION_PARTNERS = '/questions/:questionId/partners';
 const PATH_QUESTION_PERSONALITIES = '/questions/:questionId/personalities';
 const PATH_QUESTION_POPULAR_TAGS = '/questions/:questionId/popular-tags';
 const PATH_QUESTION_TOP_IDEAS = '/questions/:questionId/top-ideas';
-const PATH_QUESTION_TOP_IDEA_DETAILS = '/questions/:questionId/top-ideas/:topIdeaId';
-const PATH_QUESTION_FEATURED_PROPOSALS = '/questions/:questionId/featured-proposals';
+const PATH_QUESTION_TOP_IDEA_DETAILS =
+  '/questions/:questionId/top-ideas/:topIdeaId';
+const PATH_QUESTION_FEATURED_PROPOSALS =
+  '/questions/:questionId/featured-proposals';
 export const PATH_QUESTION_KEYWORDS = '/questions/:questionId/keywords';
 
 export class QuestionApiService {
@@ -106,7 +109,7 @@ export class QuestionApiService {
     ).replace(':questionId', questionId);
     // remove null value
     const includeParams = includedProposalIds
-      .map((proposalId) => (proposalId ? `include=${proposalId}` : ''))
+      .map(proposalId => (proposalId ? `include=${proposalId}` : ''))
       .join('&');
 
     startSequenceUrl += includeParams ? `?${includeParams}` : '';
@@ -129,7 +132,7 @@ export class QuestionApiService {
     ).replace(':keywordKey', keyword);
     // remove null value
     const includeParams = includedProposalIds
-      .map((proposalId) => (proposalId ? `include=${proposalId}` : ''))
+      .map(proposalId => (proposalId ? `include=${proposalId}` : ''))
       .join('&');
 
     startSequenceUrl += includeParams ? `?${includeParams}` : '';

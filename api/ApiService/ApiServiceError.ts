@@ -22,22 +22,23 @@ export class ApiServiceError extends Error {
 
   requestId?: string;
 
-  fileName?: string
+  fileName?: string;
 
-  lineNumber?: string
+  lineNumber?: string;
 
-  columnNumber?: string
+  columnNumber?: string;
 
-  clone = (message: string): ApiServiceError => new ApiServiceError(
-    message,
-    this.status,
-    this.data,
-    this.url,
-    this.method,
-    this.logId,
-    this.logged,
-    this.requestId
-  );
+  clone = (message: string): ApiServiceError =>
+    new ApiServiceError(
+      message,
+      this.status,
+      this.data,
+      this.url,
+      this.method,
+      this.logId,
+      this.logged,
+      this.requestId
+    );
 
   constructor(
     message: string,

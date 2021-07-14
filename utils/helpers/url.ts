@@ -41,9 +41,11 @@ import {
   ROUTE_STATIC_A11Y_DE,
 } from '../routes';
 
-export const getRelativeCurrentUrl = (pathName: string): string => `${env.frontUrl()}${pathName}`;
+export const getRelativeCurrentUrl = (pathName: string): string =>
+  `${env.frontUrl()}${pathName}`;
 
-export const getPartnerAnchor = (aboutUrl: string): string => `${aboutUrl}#partenaires`;
+export const getPartnerAnchor = (aboutUrl: string): string =>
+  `${aboutUrl}#partenaires`;
 
 export const getMultiLangStaticLink = (
   country: string,
@@ -74,14 +76,15 @@ export const getSequenceLink = (
   country: string,
   questionSlug: string,
   params?: UnknownObjectType
-): string => generatePath(ROUTE_SEQUENCE, {
-  country,
-  questionSlug,
-}).concat(
-  params && Object.keys(params).length > 0
-    ? `?${queryString.stringify(params)}`
-    : ''
-);
+): string =>
+  generatePath(ROUTE_SEQUENCE, {
+    country,
+    questionSlug,
+  }).concat(
+    params && Object.keys(params).length > 0
+      ? `?${queryString.stringify(params)}`
+      : ''
+  );
 
 /**
  * Get the sequence Popular link
@@ -94,14 +97,15 @@ export const getSequencePopularLink = (
   country: string,
   questionSlug: string,
   params?: UnknownObjectType
-): string => generatePath(ROUTE_SEQUENCE_POPULAR, {
-  country,
-  questionSlug,
-}).concat(
-  params && Object.keys(params).length > 0
-    ? `?${queryString.stringify(params)}`
-    : ''
-);
+): string =>
+  generatePath(ROUTE_SEQUENCE_POPULAR, {
+    country,
+    questionSlug,
+  }).concat(
+    params && Object.keys(params).length > 0
+      ? `?${queryString.stringify(params)}`
+      : ''
+  );
 
 /**
  * Get the sequence Controversial link
@@ -113,14 +117,15 @@ export const getSequenceControversialLink = (
   country: string,
   questionSlug: string,
   params?: UnknownObjectType
-): string => generatePath(ROUTE_SEQUENCE_CONTROVERSIAL, {
-  country,
-  questionSlug,
-}).concat(
-  params && Object.keys(params).length > 0
-    ? `?${queryString.stringify(params)}`
-    : ''
-);
+): string =>
+  generatePath(ROUTE_SEQUENCE_CONTROVERSIAL, {
+    country,
+    questionSlug,
+  }).concat(
+    params && Object.keys(params).length > 0
+      ? `?${queryString.stringify(params)}`
+      : ''
+  );
 
 /**
  * Get the sequence keyword link
@@ -135,15 +140,16 @@ export const getSequenceKeywordLink = (
   questionSlug: string,
   encodedKeyword: string,
   params?: UnknownObjectType
-): string => generatePath(ROUTE_SEQUENCE_KEYWORD, {
-  country,
-  questionSlug,
-  encodedKeyword,
-}).concat(
-  params && Object.keys(params).length > 0
-    ? `?${queryString.stringify(params)}`
-    : ''
-);
+): string =>
+  generatePath(ROUTE_SEQUENCE_KEYWORD, {
+    country,
+    questionSlug,
+    encodedKeyword,
+  }).concat(
+    params && Object.keys(params).length > 0
+      ? `?${queryString.stringify(params)}`
+      : ''
+  );
 
 /**
  * Get the browse consultations link
@@ -156,10 +162,11 @@ export const getSequenceKeywordLink = (
 export const getBrowseConsultationsLink = (
   country: string,
   pageId = 1
-): string => generatePath(ROUTE_BROWSE_CONSULTATIONS, {
-  country,
-  pageId,
-});
+): string =>
+  generatePath(ROUTE_BROWSE_CONSULTATIONS, {
+    country,
+    pageId,
+  });
 
 /**
  * Get the browse results link
@@ -169,10 +176,11 @@ export const getBrowseConsultationsLink = (
  *
  * @return {string}
  */
-export const getBrowseResultsLink = (country: string, pageId = 1): string => generatePath(ROUTE_BROWSE_RESULTS, {
-  country,
-  pageId,
-});
+export const getBrowseResultsLink = (country: string, pageId = 1): string =>
+  generatePath(ROUTE_BROWSE_RESULTS, {
+    country,
+    pageId,
+  });
 
 /**
  * Get the participate link
@@ -182,10 +190,14 @@ export const getBrowseResultsLink = (country: string, pageId = 1): string => gen
  *
  * @return {string}
  */
-export const getParticipateLink = (country: string, questionSlug: string): string => generatePath(ROUTE_PARTICIPATE, {
-  country,
-  questionSlug,
-});
+export const getParticipateLink = (
+  country: string,
+  questionSlug: string
+): string =>
+  generatePath(ROUTE_PARTICIPATE, {
+    country,
+    questionSlug,
+  });
 
 /**
  * Get the explore link
@@ -200,11 +212,12 @@ export const getExploreLink = (
   country: string,
   questionSlug: string,
   pageId = 1
-): string => generatePath(ROUTE_EXPLORE, {
-  country,
-  questionSlug,
-  pageId,
-});
+): string =>
+  generatePath(ROUTE_EXPLORE, {
+    country,
+    questionSlug,
+    pageId,
+  });
 
 /**
  * Get the results link
@@ -214,10 +227,11 @@ export const getExploreLink = (
  *
  * @return {string}
  */
-export const getResultsLink = (country: string, questionSlug: string): string => generatePath(ROUTE_RESULTS, {
-  country,
-  questionSlug,
-});
+export const getResultsLink = (country: string, questionSlug: string): string =>
+  generatePath(ROUTE_RESULTS, {
+    country,
+    questionSlug,
+  });
 
 /**
  * Get the top ideas by questions link
@@ -227,10 +241,14 @@ export const getResultsLink = (country: string, questionSlug: string): string =>
  *
  * @return {string}
  */
-export const getTopIdeasLink = (country: string, questionSlug: string): string => generatePath(ROUTE_TOP_IDEAS, {
-  country,
-  questionSlug,
-});
+export const getTopIdeasLink = (
+  country: string,
+  questionSlug: string
+): string =>
+  generatePath(ROUTE_TOP_IDEAS, {
+    country,
+    questionSlug,
+  });
 
 /**
  * Get the top idea details link
@@ -244,11 +262,12 @@ export const getTopIdeaDetailsLink = (
   country: string,
   questionSlug: string,
   topIdeaId: string
-): string => generatePath(ROUTE_TOP_IDEA_DETAILS, {
-  country,
-  questionSlug,
-  topIdeaId,
-});
+): string =>
+  generatePath(ROUTE_TOP_IDEA_DETAILS, {
+    country,
+    questionSlug,
+    topIdeaId,
+  });
 
 /**
  * Get the consultation link
@@ -263,11 +282,12 @@ export const getDynamicConsultationLink = (
   country: string,
   questionSlug: string,
   consultationStep: string
-): string => generatePath(ROUTE_CONSULTATION_STEP, {
-  country,
-  questionSlug,
-  consultationStep,
-});
+): string =>
+  generatePath(ROUTE_CONSULTATION_STEP, {
+    country,
+    questionSlug,
+    consultationStep,
+  });
 
 /**
  * Get the proposal link
@@ -284,12 +304,13 @@ export const getProposalLink = (
   questionSlug: string,
   proposalId: string,
   proposalSlug: string
-): string => generatePath(ROUTE_PROPOSAL, {
-  country,
-  questionSlug,
-  proposalId,
-  proposalSlug,
-});
+): string =>
+  generatePath(ROUTE_PROPOSAL, {
+    country,
+    questionSlug,
+    proposalId,
+    proposalSlug,
+  });
 
 /**
  * Get the organisation profile link
@@ -301,10 +322,11 @@ export const getProposalLink = (
 export const getOrganisationProfileLink = (
   country: string,
   organisationSlug: string
-): string => generatePath(ROUTE_ORGANISATION_PROFILE, {
-  country,
-  organisationSlug,
-});
+): string =>
+  generatePath(ROUTE_ORGANISATION_PROFILE, {
+    country,
+    organisationSlug,
+  });
 
 /**
  * Get the personality profile link
@@ -313,10 +335,14 @@ export const getOrganisationProfileLink = (
  * @param  {string} userId
  * @return {string}
  */
-export const getPersonalityProfileLink = (country: string, userId: string): string => generatePath(ROUTE_PERSONALITY_PROFILE, {
-  country,
-  userId,
-});
+export const getPersonalityProfileLink = (
+  country: string,
+  userId: string
+): string =>
+  generatePath(ROUTE_PERSONALITY_PROFILE, {
+    country,
+    userId,
+  });
 
 /**
  * Get the contact page link
@@ -324,14 +350,15 @@ export const getPersonalityProfileLink = (country: string, userId: string): stri
  * @param  {string} country
  * @return {string}
  */
-export const getContactPageLink = (country: string, language: string): string => getMultiLangStaticLink(
-  country,
-  language,
-  ROUTE_STATIC_CONTACT_FR,
-  // same uri as french version
-  ROUTE_STATIC_CONTACT_FR,
-  ROUTE_STATIC_CONTACT_DE
-);
+export const getContactPageLink = (country: string, language: string): string =>
+  getMultiLangStaticLink(
+    country,
+    language,
+    ROUTE_STATIC_CONTACT_FR,
+    // same uri as french version
+    ROUTE_STATIC_CONTACT_FR,
+    ROUTE_STATIC_CONTACT_DE
+  );
 
 /**
  * Get the data page link
@@ -340,13 +367,14 @@ export const getContactPageLink = (country: string, language: string): string =>
  * @param  {string} lamguage
  * @return {string}
  */
-export const getDataPageLink = (country: string, language: string): string => getMultiLangStaticLink(
-  country,
-  language,
-  ROUTE_STATIC_DATA_FR,
-  ROUTE_STATIC_DATA_EN,
-  ROUTE_STATIC_DATA_DE
-);
+export const getDataPageLink = (country: string, language: string): string =>
+  getMultiLangStaticLink(
+    country,
+    language,
+    ROUTE_STATIC_DATA_FR,
+    ROUTE_STATIC_DATA_EN,
+    ROUTE_STATIC_DATA_DE
+  );
 
 /**
  * Get the GTU page link
@@ -355,13 +383,14 @@ export const getDataPageLink = (country: string, language: string): string => ge
  * @param  {string} lamguage
  * @return {string}
  */
-export const getGTUPageLink = (country: string, language: string): string => getMultiLangStaticLink(
-  country,
-  language,
-  ROUTE_STATIC_GTU_FR,
-  ROUTE_STATIC_GTU_EN,
-  ROUTE_STATIC_GTU_DE
-);
+export const getGTUPageLink = (country: string, language: string): string =>
+  getMultiLangStaticLink(
+    country,
+    language,
+    ROUTE_STATIC_GTU_FR,
+    ROUTE_STATIC_GTU_EN,
+    ROUTE_STATIC_GTU_DE
+  );
 
 /**
  * Get the Legal page link
@@ -370,13 +399,14 @@ export const getGTUPageLink = (country: string, language: string): string => get
  * @param  {string} lamguage
  * @return {string}
  */
-export const getLegalPageLink = (country: string, language: string): string => getMultiLangStaticLink(
-  country,
-  language,
-  ROUTE_STATIC_LEGAL_FR,
-  ROUTE_STATIC_LEGAL_EN,
-  ROUTE_STATIC_LEGAL_DE
-);
+export const getLegalPageLink = (country: string, language: string): string =>
+  getMultiLangStaticLink(
+    country,
+    language,
+    ROUTE_STATIC_LEGAL_FR,
+    ROUTE_STATIC_LEGAL_EN,
+    ROUTE_STATIC_LEGAL_DE
+  );
 
 /**
  * Get the A11y page link
@@ -384,14 +414,15 @@ export const getLegalPageLink = (country: string, language: string): string => g
  * @param  {string} country
  * @return {string}
  */
-export const getA11YPageLink = (country: string, language: string): string => getMultiLangStaticLink(
-  country,
-  language,
-  ROUTE_STATIC_A11Y_FR,
-  // todo EN Translation for a11y page
-  ROUTE_STATIC_A11Y_FR,
-  ROUTE_STATIC_A11Y_DE
-);
+export const getA11YPageLink = (country: string, language: string): string =>
+  getMultiLangStaticLink(
+    country,
+    language,
+    ROUTE_STATIC_A11Y_FR,
+    // todo EN Translation for a11y page
+    ROUTE_STATIC_A11Y_FR,
+    ROUTE_STATIC_A11Y_DE
+  );
 
 /**
  * Get the Cookies page link
@@ -399,9 +430,10 @@ export const getA11YPageLink = (country: string, language: string): string => ge
  * @param  {string} country
  * @return {string}
  */
-export const getCookiesPageLink = (country: string): string => generatePath(ROUTE_STATIC_COOKIES, {
-  country,
-});
+export const getCookiesPageLink = (country: string): string =>
+  generatePath(ROUTE_STATIC_COOKIES, {
+    country,
+  });
 
 /**
  * Get the home page link
@@ -409,11 +441,12 @@ export const getCookiesPageLink = (country: string): string => generatePath(ROUT
  * @param  {string} country
  * @return {string}
  */
-export const getHomeLink = (country: string): string => (country
-  ? generatePath(ROUTE_COUNTRY, {
-    country,
-  })
-  : '/');
+export const getHomeLink = (country: string): string =>
+  country
+    ? generatePath(ROUTE_COUNTRY, {
+        country,
+      })
+    : '/';
 /**
  * Get the Not found page link
  *
@@ -427,7 +460,8 @@ export const redirectToNotFoundPage = (country: string): string => {
   });
 };
 
-export const isPreviewPath = (path: string): boolean => path.includes(BASE_PREVIEW_PATH, 0);
+export const isPreviewPath = (path: string): boolean =>
+  path.includes(BASE_PREVIEW_PATH, 0);
 
 /**
  * Get webflow dynamic page link
@@ -437,7 +471,10 @@ export const isPreviewPath = (path: string): boolean => path.includes(BASE_PREVI
  * @return {string}
  */
 
-export const getWebflowDynamicLink = (language: string, route: string): string => `${ABOUT_MAKE_LINK}${language}${route}`;
+export const getWebflowDynamicLink = (
+  language: string,
+  route: string
+): string => `${ABOUT_MAKE_LINK}${language}${route}`;
 
 /**
  * Get the password recovery link
@@ -452,11 +489,12 @@ export const getPasswordRecoveryLink = (
   country: string,
   userId: string,
   resetToken: string
-): string => generatePath(ROUTE_PASSWORD_RECOVERY, {
-  country,
-  userId,
-  resetToken,
-});
+): string =>
+  generatePath(ROUTE_PASSWORD_RECOVERY, {
+    country,
+    userId,
+    resetToken,
+  });
 
 /**
  * Get the account activation link
@@ -471,8 +509,9 @@ export const getAccountActivationLink = (
   country: string,
   userId: string,
   verificationToken: string
-): string => generatePath(ROUTE_ACCOUNT_ACTIVATION, {
-  country,
-  userId,
-  verificationToken,
-});
+): string =>
+  generatePath(ROUTE_ACCOUNT_ACTIVATION, {
+    country,
+    userId,
+    verificationToken,
+  });

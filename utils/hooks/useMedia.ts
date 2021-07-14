@@ -35,13 +35,16 @@ export const useMedia = (query: string): boolean => {
   return value;
 };
 
-export const useDesktop = (): boolean => useMedia(`(min-width: ${intToPx(Breakpoints.Desktop)})`);
+export const useDesktop = (): boolean =>
+  useMedia(`(min-width: ${intToPx(Breakpoints.Desktop)})`);
 
-export const useTablet = (): boolean => useMedia(`(min-width: ${intToPx(Breakpoints.Tablet)})`);
+export const useTablet = (): boolean =>
+  useMedia(`(min-width: ${intToPx(Breakpoints.Tablet)})`);
 
-export const useMobile = (): boolean => useMedia(
-  `only screen and (max-device-width: ${intToPx(Breakpoints.Tablet)})`
-);
+export const useMobile = (): boolean =>
+  useMedia(
+    `only screen and (max-device-width: ${intToPx(Breakpoints.Tablet)})`
+  );
 
 export const useScreenWidth = (): number | null => {
   const hasWindowObject = typeof window === 'object';

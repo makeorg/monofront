@@ -4,7 +4,10 @@ import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { color, typography } from 'athena-design-tokens';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { GreyButtonStyle, RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
+import {
+  GreyButtonStyle,
+  RedButtonStyle,
+} from '@make.org/ui/elements/ButtonsElements';
 import {
   CenterColumnStyle,
   SpaceBetweenRowStyle,
@@ -18,18 +21,21 @@ export const SequenceCardStyle = styled.section<{ isNoProposalCard?: boolean }>`
   align-items: center;
   flex: 1;
   width: 100%;
-  padding: ${({ isNoProposalCard = false }) => (isNoProposalCard ? '60px 20px' : '0 20px')};
+  padding: ${({ isNoProposalCard = false }) =>
+    isNoProposalCard ? '60px 20px' : '0 20px'};
   background-color: ${color.white};
   border-radius: 8px;
   box-shadow: 0 2px 3px 0 ${ShadowColors.BlackZeroTwoOpacity};
-  margin: ${({ isNoProposalCard = false }) => (isNoProposalCard ? '20px auto 0px' : '20px auto 40px')};
+  margin: ${({ isNoProposalCard = false }) =>
+    isNoProposalCard ? '20px auto 0px' : '20px auto 40px'};
   min-height: 315px;
   &.center {
     justify-content: center;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     max-height: 365px;
-    padding: ${({ isNoProposalCard = false }) => (isNoProposalCard ? '70px 30px 40px' : '0 30px')};
+    padding: ${({ isNoProposalCard = false }) =>
+      isNoProposalCard ? '70px 30px 40px' : '0 30px'};
     margin-top: 30px;
   }
 `;
