@@ -98,6 +98,7 @@ export const buildCards = (
     cards.splice(cards.length / 2, 0, {
       type: CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL,
       configuration: extraSlidesConfig.pushProposalCard,
+      state: { votes: [] },
       index: 0,
     });
   }
@@ -106,6 +107,7 @@ export const buildCards = (
     cards.splice(0, 0, {
       type: CARD_TYPE_EXTRASLIDE_INTRO,
       configuration: extraSlidesConfig.introCard,
+      state: { votes: [] },
       index: 0,
     });
   }
@@ -114,6 +116,7 @@ export const buildCards = (
     cards.splice(withIntroCard ? 3 : 2, 0, {
       type: CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
       configuration: undefined,
+      state: { votes: [] },
       index: 0,
     });
   }
@@ -123,6 +126,7 @@ export const buildCards = (
       ? CARD_TYPE_EXTRASLIDE_FINAL_CARD
       : CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD,
     configuration: undefined,
+    state: { votes: [] },
     index: 0,
   });
 

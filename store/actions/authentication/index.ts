@@ -200,7 +200,7 @@ export const loginSocial =
 
 export const logout =
   (afterAccountDeletion?: boolean) =>
-  (dispatch: Dispatch): Promise<void> => {
+  (dispatch: Dispatch): Promise<void | null> => {
     const success = () => {
       dispatch(clearSessionId());
       dispatch(logoutSuccess());

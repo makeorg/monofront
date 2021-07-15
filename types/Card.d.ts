@@ -48,7 +48,7 @@ export type NoProposalCardConfigType = {
 };
 
 export type ProposalCardStateType = {
-  votes: VoteType[];
+  votes: VoteType[] | [];
 };
 
 export type ProposalCardType = {
@@ -66,7 +66,7 @@ export type SequenceCardConfigType =
 
 export type SequenceCardType = {
   type: string;
-  configuration: SequenceCardConfigType;
+  configuration?: SequenceCardConfigType;
   state: ProposalCardStateType;
   index: number;
 };

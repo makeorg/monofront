@@ -180,8 +180,8 @@ export class UserApiService {
     postalCode: string,
     optInNewsletter: boolean,
     website: string,
-    legalMinorConsent: boolean,
-    legalAdvisorApproval: boolean
+    legalMinorConsent?: boolean,
+    legalAdvisorApproval?: boolean
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_USER_PROFILE.replace(':userId', userId), {
       method: 'PUT',

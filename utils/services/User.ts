@@ -37,9 +37,7 @@ const updatePassword = async (
   handleErrors: (errors: ErrorObjectType[]) => void
 ): Promise<void> => {
   const actualPassword =
-    hasPassword && passwords.actualPassword
-      ? passwords.actualPassword
-      : undefined;
+    hasPassword && passwords.actualPassword ? passwords.actualPassword : '';
   const { newPassword } = passwords;
 
   try {
@@ -151,14 +149,20 @@ const login = async (
 ): Promise<void> => {
   try {
     await UserApiService.login(email, password, approvePrivacyPolicy);
-    success();
+    if (success) {
+      success();
+    }
   } catch (apiServiceError) {
     if ([400, 401, 403, 404].includes(apiServiceError.status)) {
-      errors(loginErrors);
-      return;
+      if (errors) {
+        errors(loginErrors);
+        return;
+      }
     }
     defaultUnexpectedError(apiServiceError);
-    unexpectedError();
+    if (unexpectedError) {
+      unexpectedError();
+    }
   }
 };
 
@@ -170,29 +174,34 @@ const checkLoginPrivacyPolicy = async (
   success?: () => void,
   failure?: (args?: ErrorObjectType[]) => void,
   unexpectedError?: () => void
-): Promise<string | null> => {
+): Promise<void | null> => {
   try {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const { data } = await UserApiService.loginPrivacyPolicy(email, password);
+    const response = await UserApiService.loginPrivacyPolicy(email, password);
+    if (!response) {
+      return null;
+    }
+
+    const { data } = response;
     const lastVersion = new Date(privacyPolicyDate);
     let userAcceptance;
 
-    if (data?.privacyPolicyApprovalDate != null) {
+    if (data && data.privacyPolicyApprovalDate != null) {
       userAcceptance = new Date(data.privacyPolicyApprovalDate);
     }
 
-    if (!userAcceptance || userAcceptance < lastVersion) {
-      action();
-      return;
+    if ((!userAcceptance || userAcceptance < lastVersion) && action) {
+      return action();
     }
-    login(email, password, undefined, success, failure, unexpectedError);
+    return login(email, password, undefined, success, failure, unexpectedError);
   } catch (apiServiceError) {
-    if ([400, 401, 403, 404].includes(apiServiceError.status)) {
-      failure(loginErrors);
-      return;
+    if ([400, 401, 403, 404].includes(apiServiceError.status) && failure) {
+      return failure(loginErrors);
     }
-    defaultUnexpectedError(apiServiceError);
-    failure();
+    if (failure) {
+      failure();
+    }
+    return defaultUnexpectedError(apiServiceError);
   }
 };
 
@@ -200,7 +209,7 @@ const myProposals = async (
   userId: string,
   seed?: number,
   page = 0
-): Promise<SearchProposalsType> => {
+): Promise<SearchProposalsType | void> => {
   const limit = PROPOSALS_LISTING_LIMIT;
   const skip = page * limit;
   try {
@@ -211,42 +220,43 @@ const myProposals = async (
       skip
     );
 
-    return response.data;
+    return response && response.data;
   } catch (apiServiceError) {
-    defaultUnexpectedError(apiServiceError);
-
-    return null;
+    return defaultUnexpectedError(apiServiceError);
   }
 };
 
 const myFavourites = async (
   userId: string,
   page = 0
-): Promise<SearchProposalsType> => {
+): Promise<SearchProposalsType | void> => {
   const limit = PROPOSALS_LISTING_LIMIT;
   const skip = page * limit;
   try {
     const response = await UserApiService.myFavourites(userId, limit, skip);
 
-    return response.data;
+    return response && response.data;
   } catch (apiServiceError) {
-    defaultUnexpectedError(apiServiceError);
-
-    return null;
+    return defaultUnexpectedError(apiServiceError);
   }
 };
 
-const logout = async (success?: () => void): Promise<void> => {
+const logout = async (success?: () => void): Promise<void | null> => {
   try {
     apiClient.isLogged = false; // @see ApiServiceClient
     await UserApiService.logout();
-    success();
+    if (success) {
+      return success();
+    }
+    return null;
   } catch (apiServiceError) {
     if (apiServiceError.status === 401) {
-      success();
-      return;
+      if (success) {
+        return success();
+      }
     }
     defaultUnexpectedError(apiServiceError);
+    return null;
   }
 };
 
@@ -255,23 +265,28 @@ const loginSocial = async (
   token: string,
   approvePrivacyPolicy?: boolean,
   success?: () => void,
-  failure?: () => void
-  // unexpectedError?: () => void
-): Promise<UserAuthType> => {
+  failure?: () => void,
+  unexpectedError?: () => void
+): Promise<UserAuthType | void> => {
   try {
     const response = await UserApiService.loginSocial(
       provider,
       token,
       approvePrivacyPolicy
     );
-    success();
+    if (success) {
+      success();
+    }
 
-    return response.data;
+    return response && response.data;
   } catch (apiServiceError) {
-    defaultUnexpectedError(apiServiceError);
-    failure();
-
-    return null;
+    if (failure) {
+      failure();
+    }
+    if (unexpectedError) {
+      return unexpectedError();
+    }
+    return defaultUnexpectedError(apiServiceError);
   }
 };
 
@@ -283,10 +298,15 @@ const checkSocialPrivacyPolicy = async (
   success?: () => void,
   failure?: () => void,
   unexpectedError?: () => void
-): Promise<string | null> => {
+): Promise<void | null> => {
   try {
-    const { data } = await UserApiService.socialPrivacyPolicy(provider, token);
+    const response = await UserApiService.socialPrivacyPolicy(provider, token);
 
+    if (!response) {
+      return null;
+    }
+
+    const { data } = response;
     const lastVersion = new Date(privacyPolicyDate);
 
     let userAcceptance;
@@ -294,15 +314,17 @@ const checkSocialPrivacyPolicy = async (
       userAcceptance = new Date(data.privacyPolicyApprovalDate);
     }
 
-    if (!userAcceptance || userAcceptance < lastVersion) {
-      action();
-      return;
+    if ((!userAcceptance || userAcceptance < lastVersion) && action) {
+      return action();
     }
 
     loginSocial(provider, token, undefined, success, failure, unexpectedError);
+    return null;
   } catch (apiServiceError) {
-    defaultUnexpectedError(apiServiceError);
-    failure();
+    if (failure) {
+      failure();
+    }
+    return defaultUnexpectedError(apiServiceError);
   }
 };
 
@@ -315,12 +337,16 @@ const changePassword = async (
 ): Promise<void> => {
   try {
     await UserApiService.changePassword(newPassword, resetToken, userId);
-    success();
+    if (success) {
+      success();
+    }
 
     return;
   } catch (apiServiceError) {
     defaultUnexpectedError(apiServiceError);
-    failure();
+    if (failure) {
+      failure();
+    }
   }
 };
 
@@ -329,11 +355,13 @@ const current = async (unauthorized?: () => void): Promise<UserType | null> => {
     const response = await UserApiService.current();
     apiClient.isLogged = true; // @see ApiServiceClient
 
-    return response.data;
+    return response && response.data;
   } catch (apiServiceError) {
     if (apiServiceError.status === 401) {
       apiClient.isLogged = false; // @see ApiServiceClient
-      unauthorized();
+      if (unauthorized) {
+        unauthorized();
+      }
 
       return null;
     }
@@ -347,7 +375,7 @@ const getProfile = async (userId: string): Promise<UserProfileType | null> => {
   try {
     const response = await UserApiService.getProfile(userId);
 
-    return response.data;
+    return response && response.data;
   } catch (apiServiceError) {
     if (apiServiceError.status === 401) {
       return null;
@@ -361,7 +389,7 @@ const getProfile = async (userId: string): Promise<UserProfileType | null> => {
 const getProfileByUserType = async (
   userId: string,
   userType: string
-): Promise<UserProfileType | OrganisationProfileType> => {
+): Promise<UserProfileType | OrganisationProfileType | null> => {
   if (userType === TYPE_ORGANISATION) {
     return OrganisationService.getProfile(userId);
   }
