@@ -60,7 +60,7 @@ const removeDuplicatedAndVotedProposals =
   };
 
 const logCornerCases = (
-  questionId,
+  questionId: string,
   duplicates: ProposalType[],
   voted: ProposalType[],
   uniqueProposals: ProposalType[]

@@ -54,7 +54,7 @@ export const QualificationButton: React.FC<Props> = ({
   }, [qualification]);
 
   const handleQualify = async (context: string) => {
-    const qualificationResult: QualificationType =
+    const qualificationResult: QualificationType | null =
       await QualificationService.qualify(
         proposalId,
         proposalKey,
@@ -72,7 +72,7 @@ export const QualificationButton: React.FC<Props> = ({
   };
 
   const handleUnqualify = async (context: string) => {
-    const qualificationResult: QualificationType =
+    const qualificationResult: QualificationType | null =
       await QualificationService.unqualify(
         proposalId,
         proposalKey,
@@ -106,7 +106,7 @@ export const QualificationButton: React.FC<Props> = ({
     <TopComponentContext.Consumer>
       {context => (
         <QualifyButtonStyle
-          className={isQualified && 'qualified'}
+          className={isQualified ? 'qualified' : ''}
           color={voteStaticParams[votedKey].color}
           onClick={() => handleQualification(context)}
           aria-label={

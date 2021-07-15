@@ -51,6 +51,7 @@ export type TrackingConfigurationParamType =
     'page-number'?: string;
     'card-position'?: string;
     level?: string;
+    [key: string]: string;
   };
 
 export type TrackingEventConfigurationType = {

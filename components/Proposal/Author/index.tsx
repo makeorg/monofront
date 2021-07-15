@@ -61,14 +61,17 @@ export const ProposalAuthorInformations: React.FC<Props> = ({
       <ScreenReaderItemStyle>
         {i18n.t('proposal_card.author.from')}
       </ScreenReaderItemStyle>
-      <InfosWrapperStyle className={isSequence && 'sequence'}>
+      <InfosWrapperStyle className={isSequence ? 'sequence' : ''}>
         {isOrganisation && (
           <>
             <RedLinkRouterStyle
               onClick={() => trackClickPublicProfile(TYPE_ORGANISATION)}
-              to={getOrganisationProfileLink(country, author.organisationSlug)}
+              to={getOrganisationProfileLink(
+                country,
+                author.organisationSlug || ''
+              )}
             >
-              {formatOrganisationName(author.organisationName)}
+              {formatOrganisationName(author.organisationName || '')}
             </RedLinkRouterStyle>
             <CertifiedIconStyle aria-hidden focusable="false" />
           </>
@@ -79,12 +82,12 @@ export const ProposalAuthorInformations: React.FC<Props> = ({
               onClick={() => trackClickPublicProfile(TYPE_PERSONALITY)}
               to={getPersonalityProfileLink(country, proposal.userId)}
             >
-              {formatAuthorName(author.firstName)}
+              {formatAuthorName(author.firstName || '')}
             </RedLinkRouterStyle>
             <CertifiedIconStyle aria-hidden focusable="false" />
           </>
         )}
-        {isBasicUser && formatAuthorName(author.firstName)}
+        {isBasicUser && formatAuthorName(author.firstName || '')}
         <ProposalAuthorAge age={author.age} />
       </InfosWrapperStyle>
     </>
@@ -111,7 +114,11 @@ export const ProposalAuthor: React.FC<Props> = ({
 
   return (
     <AuthorInfosStyle>
-      <Avatar avatarUrl={author.avatarUrl} isSequence avatarSize={avatarSize} />
+      <Avatar
+        avatarUrl={author.avatarUrl || ''}
+        isSequence
+        avatarSize={avatarSize}
+      />
       <ProposalAuthorInformations proposal={proposal} isSequence={isSequence} />
     </AuthorInfosStyle>
   );

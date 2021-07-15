@@ -54,7 +54,7 @@ export type ProposalCardStateType = {
 export type ProposalCardType = {
   type: string;
   configuration: ProposalCardConfigType;
-  state?: ProposalCardStateType;
+  state: ProposalCardStateType;
   index: number;
 };
 
@@ -66,8 +66,8 @@ export type SequenceCardConfigType =
 
 export type SequenceCardType = {
   type: string;
-  configuration?: SequenceCardConfigType;
-  state?: ProposalCardStateType;
+  configuration: SequenceCardConfigType;
+  state: ProposalCardStateType;
   index: number;
 };
 

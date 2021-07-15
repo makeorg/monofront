@@ -9,8 +9,8 @@ const LOG_ERROR = 'error';
 // const onClientSide = typeof window !== 'undefined' && !!window;
 
 let instance: LoggerSingleton | null = null;
-const host = env.frontUrl();
-const port = env.port();
+const host = env.frontUrl() || '';
+const port = env.port() || '';
 
 class LoggerSingleton {
   constructor() {

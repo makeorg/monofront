@@ -55,7 +55,7 @@ Object.keys(trackingConfiguration).forEach(key => {
     const { key: eventName, parameters } = eventConfiguration;
     validateParameters(params || {}, parameters || []);
 
-    return { eventName: eventName || '', parameters: params || undefined };
+    return { eventName: eventName || '', parameters: params || {} };
   };
 });
 

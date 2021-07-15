@@ -61,7 +61,7 @@ export type StateNotification = {
   readonly tip: {
     id?: string;
     content?: any;
-    level: string;
+    level?: string;
     contentId?: string;
     toDismiss?: boolean;
   };
@@ -75,6 +75,7 @@ export type StateAuthentication = {
   readonly user?: {
     userId: string;
     displayName: string;
+    profile?: any;
   };
 };
 
@@ -143,7 +144,7 @@ export type StateActor = {
   readonly slug: string;
   readonly avatarUrl: string;
   readonly description: string;
-  readonly publicProfile: boolean;
+  readonly public?: boolean;
   readonly proposalsCount: number;
   readonly votesCount: number;
   readonly language: string;
@@ -179,10 +180,10 @@ export type StateRoot = {
   proposal?: StateProposal;
   sequence: StateSequence;
   currentQuestion?: string;
-  notifications?: StateNotification;
+  notifications: StateNotification;
   user?: StateUser;
   questions?: StateQuestions;
-  modal?: StateModal;
+  modal: StateModal;
   partners?: StatePartners;
   panel?: StatePanel;
   session?: StateSession;
@@ -214,12 +215,6 @@ export type NotificationType = {
   params?: NotificationParamsType;
   level?: string;
   toDimiss?: boolean;
-};
-
-export type NotificationsState = {
-  banner: NotificationType;
-  tip: NotificationType;
-  dismissed: string[];
 };
 
 export type Dispatch = (value: any) => void;

@@ -70,7 +70,10 @@ export const logoutSuccess = (): ReducerAction => ({
 
 export const getUser =
   (afterRegistration?: boolean) =>
-  async (dispatch: Dispatch, getState: () => StateRoot): Promise<void> => {
+  async (
+    dispatch: Dispatch,
+    getState: () => StateRoot
+  ): Promise<void | null> => {
     const { isOpen: isModalOpen } = getState().modal;
     const user = await UserService.current();
     if (!user) {
@@ -85,10 +88,11 @@ export const getUser =
     const profile:
       | UserProfileType
       | OrganisationProfileType
-      | PersonalityProfileType = user
+      | PersonalityProfileType
+      | null = user
       ? await UserService.getProfileByUserType(user.userId, user.userType)
       : null;
-    if (user && 'firstName' in profile) {
+    if (profile && 'firstName' in profile) {
       dispatch(setUserInfo(user, profile));
     }
     if (isModalOpen) {
@@ -112,7 +116,6 @@ export const getUser =
         )
       );
     }
-
     return null;
   };
 
@@ -154,7 +157,7 @@ export const login =
 
 export const loginSocial =
   (provider: string, socialToken: string, approvePrivacyPolicy: boolean) =>
-  (dispatch: Dispatch): void => {
+  (dispatch: Dispatch): Promise<void> => {
     dispatch(loginSocialRequest(provider));
     if (!socialToken) {
       dispatch(loginSocialFailure());
@@ -197,7 +200,7 @@ export const loginSocial =
 
 export const logout =
   (afterAccountDeletion?: boolean) =>
-  (dispatch: Dispatch): void => {
+  (dispatch: Dispatch): Promise<void> => {
     const success = () => {
       dispatch(clearSessionId());
       dispatch(logoutSuccess());

@@ -38,7 +38,7 @@ export const ProposalAuthentication: React.FC<Props> = ({
   handleProposeAPICall,
 }) => {
   const { state, dispatch } = useAppContext();
-  const { isLoggedIn, user } = selectAuthentication(state);
+  const { isLoggedIn, user } = selectAuthentication(state) || {};
   const { country, language } = state.appConfig;
 
   const handleModerationLink = () => {

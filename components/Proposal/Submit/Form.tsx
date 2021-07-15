@@ -28,6 +28,7 @@ import {
 import { throttle } from '@make.org/utils/helpers/throttle';
 
 import { LoadingDots } from '@make.org/ui/components/Loading/Dots';
+import { useAppContext } from '@make.org/store';
 import {
   ProposalStepWrapperStyle,
   ProposalStepTitleStyle,
@@ -37,7 +38,6 @@ import {
   ProposalExternalLinkStyle,
   ProposalExternalLinkIconStyle,
 } from './style';
-import { useAppContext } from '../../../store';
 
 type Props = {
   proposalContent: string;
@@ -59,13 +59,13 @@ export const ProposalForm: React.FC<Props> = ({
   waitingApiCallback,
 }) => {
   const { state } = useAppContext();
-  const inputRef = useRef();
-  const question: QuestionType = selectCurrentQuestion(state);
+  const inputRef = useRef() as React.MutableRefObject<HTMLTextAreaElement>;
+  const question: QuestionType | null = selectCurrentQuestion(state);
   const { country } = state.appConfig;
   const proposalIsEmpty = proposalContent.length === 0;
   const baitText = getLocalizedBaitText(
-    question?.language,
-    question?.questionId
+    question?.language || '',
+    question?.questionId || ''
   );
   const isFR = country === 'FR';
   const charCounting = proposalIsEmpty
@@ -74,10 +74,13 @@ export const ProposalForm: React.FC<Props> = ({
   const disableSubmitButton =
     !proposalHasValidLength(proposalContent.length) || waitingApiCallback;
 
-  const secureFieldValue = event => {
+  const secureFieldValue = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     handleValueChange(event);
-    if (inputRef.current && inputRef.current.selectionStart < baitText.length) {
-      setProposalContent(baitText);
+    if (inputRef && typeof inputRef.current !== 'undefined') {
+      const { selectionStart = 0 } = inputRef.current;
+      if (!!selectionStart && selectionStart < baitText.length) {
+        setProposalContent(baitText);
+      }
     }
   };
 
@@ -93,7 +96,7 @@ export const ProposalForm: React.FC<Props> = ({
         onSubmit={throttle(handleSubmit)}
       >
         <ProposalStepTitleStyle className="with-margin-bottom">
-          {question.question}
+          {question && question.question}
         </ProposalStepTitleStyle>
         <ScreenReaderItemStyle>
           {i18n.t('proposal_submit.form.title')}
@@ -116,7 +119,7 @@ export const ProposalForm: React.FC<Props> = ({
             rows={6}
             spellCheck
             maxLength={MAX_PROPOSAL_LENGTH}
-            lang={question.language}
+            lang={question ? question.language : ''}
           />
           <ProposalCharCountStyle aria-hidden data-cy-container="char-count">
             {`${charCounting} / ${MAX_PROPOSAL_LENGTH}`}

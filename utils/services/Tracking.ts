@@ -29,7 +29,7 @@ export const trackClickExploreTab = (): void => {
 
 export const trackClickLearnMore = (component?: string): void => {
   TrackingService.sendAllTrackers(
-    trackingEvent.CLICK_BUTTON_LEARN_MORE({ component })
+    trackingEvent.CLICK_BUTTON_LEARN_MORE({ component: component || '' })
   );
 };
 
@@ -45,7 +45,7 @@ export const trackLoadMoreProposals = (
   componentName: string,
   pageCount?: number
 ): void => {
-  const pageNumber = pageCount !== undefined ? pageCount.toString() : undefined;
+  const pageNumber = pageCount !== undefined ? pageCount.toString() : '';
 
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_PROPOSAL_VIEW_MORE({
@@ -160,7 +160,7 @@ export const trackAuthenticationSocialFailure = (
 ): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.AUTHEN_SOCIAL_FAILURE({
-      'social-network': socialNetwork,
+      'social-network': socialNetwork || '',
     })
   );
 };
@@ -387,7 +387,7 @@ export const trackClickFollowUs = (
 ): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_FOLLOW_US({
-      'social-network': event.currentTarget.dataset.networkName,
+      'social-network': event.currentTarget.dataset.networkName || '',
     })
   );
 };
@@ -411,8 +411,8 @@ export const trackClickPublicProfile = (
 ): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_PUBLIC_PROFILE({
-      type: userType,
-      component,
+      type: userType || '',
+      component: component || '',
     })
   );
 };

@@ -6,3 +6,7 @@ declare module '*.svg' {
   const content: SVGAElement;
   export default content;
 }
+declare module '*.yaml' {
+  const data: any;
+  export default data;
+}

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import {
   trackClickNextOnLastProposal,
@@ -6,7 +7,7 @@ import {
 import { i18n } from '@make.org/utils/i18n';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { incrementSequenceIndex } from '@make.org/store/actions/sequence';
-import { ProposalCardType } from '@make.org/types';
+import { ProposalCardType, VoteType } from '@make.org/types';
 import { CARD_TYPE_PROPOSAL } from '@make.org/utils/constants/card';
 import { useAppContext } from '@make.org/store';
 import { Vote } from '../../Vote';
@@ -26,24 +27,29 @@ export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
 
   const [proposal, setProposal] = useState(proposalCard.configuration.proposal);
   const [index, setIndex] = useState(proposalCard.index);
-  const allCards = state.sequence.cards;
-  const { votes = [] } = state.sequence.cards[index].state || {};
+  const { cards = [] } = state.sequence || {};
+  const { votes = [] } = cards[index].state ? cards[index].state : {};
   const [isVoted, setIsVoted] = useState(
-    votes.some(vote => vote.hasVoted === true)
+    votes.some((vote: VoteType) => vote.hasVoted === true)
   );
+
+  const getLastCardIndex = () => {
+    const allProposals = cards.filter(card => card.type === CARD_TYPE_PROPOSAL);
+    const lastCard = allProposals.pop();
+    if (lastCard) {
+      return lastCard.index;
+    }
+    return 0;
+  };
   const [isLastProposalCard, setIsLastProposalCard] = useState(
-    proposalCard.index ===
-      allCards.filter(card => card.type === CARD_TYPE_PROPOSAL).pop().index
+    proposalCard.index === getLastCardIndex()
   );
 
   useEffect(() => {
     setProposal(proposalCard.configuration.proposal);
     setIndex(proposalCard.index);
-    setIsLastProposalCard(
-      proposalCard.index ===
-        allCards.filter(card => card.type === CARD_TYPE_PROPOSAL).pop().index
-    );
-  }, [proposalCard, allCards]);
+    setIsLastProposalCard(proposalCard.index === getLastCardIndex());
+  }, [proposalCard, cards]);
 
   useEffect(() => {
     setIsVoted(votes.some(vote => vote.hasVoted === true));
@@ -71,8 +77,6 @@ export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
         votes={votes}
         proposalKey={proposal.proposalKey}
         index={index}
-        onVote={() => undefined}
-        onUnvote={() => undefined}
         isSequence
       />
       {isVoted && (

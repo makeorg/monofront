@@ -22,10 +22,10 @@ type Props = {
 
 export const Tip: React.FC<Props> = ({ isFirstSequenceVote = false }) => {
   const { dispatch, state } = useAppContext();
-  const { contentId, level, toDismiss } = state.notifications.tip;
-  const { dismissed } = state.notifications;
+  const { tip, dismissed } = state.notifications;
+  const { contentId = '', level = '', toDismiss } = tip;
   const isDismissed = dismissed.find(
-    notificationId => notificationId === contentId
+    (notificationId: string) => notificationId === contentId
   );
 
   const closeNotificationTip = () => {

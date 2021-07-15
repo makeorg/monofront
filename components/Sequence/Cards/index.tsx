@@ -49,9 +49,9 @@ export const Card: React.FC<CardProps> = ({ card, question }) => {
     case CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL:
       return <PushProposalCard />;
     case CARD_TYPE_EXTRASLIDE_FINAL_CARD:
-      return <FinalCard />;
+      return <FinalCard questionSlug={question.slug} />;
     case CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD:
-      return <SpecialFinalCard />;
+      return <SpecialFinalCard questionSlug={question.slug} />;
     case CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD:
       return <ExtraDataCard />;
     case CARD_TYPE_NO_PROPOSAL_CARD: {
@@ -94,7 +94,7 @@ export const SequenceCard: React.FC<Props> = ({ card, question }) => {
     <>
       <TopComponentContext.Provider value={topComponentContext}>
         <SequenceCardStyle
-          className={!isProposalCard && 'center'}
+          className={!isProposalCard ? 'center' : ''}
           id={`card-${card.index}`}
           data-cy-card-type={card.type}
           data-cy-card-number={!isNoProposalCard && card.index + 1}

@@ -76,7 +76,7 @@ export const Vote: React.FC<Props> = ({
     contextType === TopComponentContextValue.getSequenceProposal() &&
     (votedProposalIds[proposal.question.slug] || []).length === 0;
 
-  let timeout;
+  let timeout: number;
   const wait = async (ms: number) =>
     new Promise(resolve => {
       timeout = setTimeout(resolve, ms);
@@ -107,7 +107,7 @@ export const Vote: React.FC<Props> = ({
     setVotedKey('');
     const newVotes = updateAndGetVotes(currentVotes, unvote);
     setCurrentVotes(newVotes);
-    setUserVote(null);
+    setUserVote(undefined);
     dispatch(actionUnvote(proposal, newVotes, contextType));
     await trackUnvote(proposalId, voteKey, index, contextType);
     stopPending();
@@ -156,11 +156,11 @@ export const Vote: React.FC<Props> = ({
     []
   );
 
-  useEffect(() => {
+  useEffect((): any => {
     if (isFirstSequenceVote) {
       dispatch(displayNotificationTip(FIRST_VOTE_TIP_MESSAGE, undefined, true));
 
-      return () => {
+      return (): void => {
         dispatch(clearNotificationTip());
       };
     }
@@ -169,7 +169,7 @@ export const Vote: React.FC<Props> = ({
 
   if (userVote && votedKey) {
     return (
-      <VoteContainerStyle isSequence={isSequence}>
+      <VoteContainerStyle isSequence={!!isSequence}>
         <VoteResult
           proposalId={proposalId}
           votes={currentVotes}
@@ -191,7 +191,7 @@ export const Vote: React.FC<Props> = ({
   return (
     <>
       {isFirstSequenceVote && <Tip isFirstSequenceVote={isFirstSequenceVote} />}
-      <VoteContainerStyle isSequence={isSequence}>
+      <VoteContainerStyle isSequence={!!isSequence}>
         <ScreenReaderItemStyle as="p">
           {i18n.t('vote.intro_title')}
         </ScreenReaderItemStyle>

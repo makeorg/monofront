@@ -1,6 +1,7 @@
 import { Logger } from '@make.org/utils/services/Logger';
+import { AxiosResponse } from 'axios';
 import { ProposalService } from '@make.org/utils/services/Proposal';
-import { Dispatch, ReducerAction } from '@make.org/types';
+import { Dispatch, ProposalType, ReducerAction } from '@make.org/types';
 import * as actionTypes from '../../actionTypes';
 
 export const proposeSuccess = (): ReducerAction => ({
@@ -8,8 +9,8 @@ export const proposeSuccess = (): ReducerAction => ({
 });
 
 export const fetchProposalData =
-  (proposalId: string): void =>
-  (dispatch: Dispatch) =>
+  (proposalId: string) =>
+  (dispatch: Dispatch): Promise<void | AxiosResponse<ProposalType> | null> =>
     ProposalService.getProposal(proposalId)
       .then(proposal => {
         dispatch({ type: actionTypes.PROPOSAL_LOAD, payload: proposal });
@@ -17,5 +18,5 @@ export const fetchProposalData =
         return proposal;
       })
       .catch(error => {
-        Logger.logError(Error(error));
+        Logger.logError(error);
       });
