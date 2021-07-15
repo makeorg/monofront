@@ -44,7 +44,9 @@
 	  "editor.codeActionsOnSave": {
 		"source.fixAll.eslint": true
 	  },
-	  "git.ignoreLimitWarning": true
+		"git.ignoreLimitWarning": true,
+		"tslint.packageManager": "yarn",
+		"tslint.configFile": "./tsconfig.json"
 	}
   }
   
