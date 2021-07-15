@@ -66,7 +66,7 @@ export const ExtraDataForm: React.FC<Props> = ({
   const location = useLocation();
 
   const { device } = state.appConfig;
-  const [currentValue, setCurrentValue] = useState(null);
+  const [currentValue, setCurrentValue] = useState<string>('');
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(false);
   const [isSkipDisabled, setIsSkipDisabled] = useState(false);
   const { data, ui } = demographics;
@@ -75,7 +75,7 @@ export const ExtraDataForm: React.FC<Props> = ({
 
   const utmParams = useMemo(() => {
     const params = new URLSearchParams(location.search);
-    const accumulator = {};
+    const accumulator: { [key: string]: string } = {};
     params.forEach((value, key) => {
       if (key.startsWith('utm_')) {
         accumulator[key] = params.getAll(key).join(',');

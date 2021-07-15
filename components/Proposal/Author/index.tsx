@@ -19,8 +19,9 @@ import {
   formatAuthorName,
   formatOrganisationName,
 } from '@make.org/utils/helpers/stringFormatter';
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { useParams } from 'react-router-dom';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
+import { useAppContext } from '@make.org/store';
 import {
   AuthorInfosStyle,
   InfosWrapperStyle,
@@ -34,7 +35,9 @@ type Props = {
   isSequence: boolean;
 };
 
-export const ProposalAuthorAge: React.FC = ({ age }) => {
+export const ProposalAuthorAge: React.FC<{ age: number | null }> = ({
+  age,
+}) => {
   if (!age) {
     return null;
   }
@@ -100,8 +103,9 @@ export const ProposalAuthor: React.FC<Props> = ({
   proposal,
   isSequence = false,
 }) => {
+  const { state } = useAppContext();
   const { author } = proposal;
-  const { device } = useSelector((state: StateRoot) => state.appConfig);
+  const { device } = state.appConfig;
   const isMobile = matchMobileDevice(device);
   const avatarSize = setAvatarSize(isMobile, isSequence);
 

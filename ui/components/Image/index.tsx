@@ -137,7 +137,7 @@ export const Image: React.FC<Props> = ({
   className,
   src,
   alt,
-  srcSet,
+  srcSet = '',
   loading,
   crop,
 }) => {
@@ -152,7 +152,13 @@ export const Image: React.FC<Props> = ({
   const altCurrent = alt || imgData.alt || '';
   const ratio = useDevicePixelRatio();
 
-  const { src1x, src2x, src3x, srcSetValue, placeHolder } = useMemo(
+  const {
+    src1x,
+    src2x,
+    src3x,
+    srcSetValue = '',
+    placeHolder,
+  } = useMemo(
     () => {
       const result = getSrcValues(
         source === IMAGE_SOURCE_INTERNAL,
@@ -168,7 +174,7 @@ export const Image: React.FC<Props> = ({
   );
 
   const [srcCurrent, setSrcCurrent] = useState(placeHolder);
-  const [srcSetCurrent, setSrcSetCurrent] = useState(srcSet);
+  const [srcSetCurrent, setSrcSetCurrent] = useState<string>(srcSet);
 
   const imageToLoad = useMemo(
     () => selectImageToLoad(ratio, src1x, src2x, src3x),

@@ -22,15 +22,13 @@ export const ExtraDataCard: React.FC = () => {
 
     return DEMOGRAPHIC_TYPES[randomValue];
   };
-  const { currentQuestion } = state;
+  const { currentQuestion = '' } = state;
   const persistedDemographics = state.sequence.demographics;
   const [type, setType] = useState<DemographicNameType>('age');
   const [demographics, setDemographics] = useState<DemographicsType>({
     ui: 'radio',
     data: AGE_RANGES,
   });
-  const persistedDemographicsWithValue =
-    persistedDemographics?.type && persistedDemographics?.value;
 
   // set a random type
   useEffect(() => {
@@ -39,7 +37,11 @@ export const ExtraDataCard: React.FC = () => {
     setDemographics(buildDemographicsByType(newType));
   }, [type]);
 
-  if (persistedDemographicsWithValue) {
+  if (
+    typeof persistedDemographics !== 'undefined' &&
+    !!persistedDemographics.type &&
+    !!persistedDemographics.value
+  ) {
     return <SubmittedDemographics type={persistedDemographics.type} />;
   }
 
