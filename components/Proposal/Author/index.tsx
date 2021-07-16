@@ -19,18 +19,25 @@ import {
   formatAuthorName,
   formatOrganisationName,
 } from '@make.org/utils/helpers/stringFormatter';
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { useParams } from 'react-router-dom';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
-import { AuthorInfosStyle, InfosWrapperStyle, CertifiedIconStyle } from './style';
+import { useAppContext } from '@make.org/store';
+import {
+  AuthorInfosStyle,
+  InfosWrapperStyle,
+  CertifiedIconStyle,
+} from './style';
 
 type Props = {
   /** Object with author's properties */
-  proposal: ProposalType,
+  proposal: ProposalType;
   /** Enable sequence context & specials styles */
-  isSequence: boolean,
+  isSequence: boolean;
 };
 
-export const ProposalAuthorAge: React.FC = ({ age }) => {
+export const ProposalAuthorAge: React.FC<{ age: number | null }> = ({
+  age,
+}) => {
   if (!age) {
     return null;
   }
@@ -38,7 +45,10 @@ export const ProposalAuthorAge: React.FC = ({ age }) => {
   return <>{`, ${i18n.t('proposal_card.author.age', { age })}`}</>;
 };
 
-export const ProposalAuthorInformations: React.FC<Props> = ({ proposal, isSequence }) => {
+export const ProposalAuthorInformations: React.FC<Props> = ({
+  proposal,
+  isSequence,
+}) => {
   const { country } = useParams();
   const { author } = proposal;
 
@@ -51,14 +61,17 @@ export const ProposalAuthorInformations: React.FC<Props> = ({ proposal, isSequen
       <ScreenReaderItemStyle>
         {i18n.t('proposal_card.author.from')}
       </ScreenReaderItemStyle>
-      <InfosWrapperStyle className={isSequence && 'sequence'}>
+      <InfosWrapperStyle className={isSequence ? 'sequence' : ''}>
         {isOrganisation && (
           <>
             <RedLinkRouterStyle
               onClick={() => trackClickPublicProfile(TYPE_ORGANISATION)}
-              to={getOrganisationProfileLink(country, author.organisationSlug)}
+              to={getOrganisationProfileLink(
+                country,
+                author.organisationSlug || ''
+              )}
             >
-              {formatOrganisationName(author.organisationName)}
+              {formatOrganisationName(author.organisationName || '')}
             </RedLinkRouterStyle>
             <CertifiedIconStyle aria-hidden focusable="false" />
           </>
@@ -69,12 +82,12 @@ export const ProposalAuthorInformations: React.FC<Props> = ({ proposal, isSequen
               onClick={() => trackClickPublicProfile(TYPE_PERSONALITY)}
               to={getPersonalityProfileLink(country, proposal.userId)}
             >
-              {formatAuthorName(author.firstName)}
+              {formatAuthorName(author.firstName || '')}
             </RedLinkRouterStyle>
             <CertifiedIconStyle aria-hidden focusable="false" />
           </>
         )}
-        {isBasicUser && formatAuthorName(author.firstName)}
+        {isBasicUser && formatAuthorName(author.firstName || '')}
         <ProposalAuthorAge age={author.age} />
       </InfosWrapperStyle>
     </>
@@ -89,15 +102,23 @@ const setAvatarSize = (isMobile: boolean, isSequence: boolean) => {
   return 36;
 };
 
-export const ProposalAuthor: React.FC<Props> = ({ proposal, isSequence = false }) => {
+export const ProposalAuthor: React.FC<Props> = ({
+  proposal,
+  isSequence = false,
+}) => {
+  const { state } = useAppContext();
   const { author } = proposal;
-  const { device } = useSelector((state: StateRoot) => state.appConfig);
+  const { device } = state.appConfig;
   const isMobile = matchMobileDevice(device);
   const avatarSize = setAvatarSize(isMobile, isSequence);
 
   return (
     <AuthorInfosStyle>
-      <Avatar avatarUrl={author.avatarUrl} isSequence avatarSize={avatarSize} />
+      <Avatar
+        avatarUrl={author.avatarUrl || ''}
+        isSequence
+        avatarSize={avatarSize}
+      />
       <ProposalAuthorInformations proposal={proposal} isSequence={isSequence} />
     </AuthorInfosStyle>
   );

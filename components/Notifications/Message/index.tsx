@@ -58,8 +58,12 @@ export const NotificationMessage: React.FC<Props> = ({
       return <LogoutSuccessMessage />;
     case LOGIN_SUCCESS_MESSAGE:
       return <LoginSuccessMessage />;
-    case REGISTER_SUCCESS_VALIDATE_MESSAGE:
-      return <RegisterSuccessValidateMessage email={params.email} />;
+    case REGISTER_SUCCESS_VALIDATE_MESSAGE: {
+      if (params) {
+        return <RegisterSuccessValidateMessage email={params.email} />;
+      }
+      return null;
+    }
     case REGISTER_SUCCESS_MESSAGE:
       return <RegisterSuccessMessage />;
     case NETWORK_ERROR_MESSAGE:

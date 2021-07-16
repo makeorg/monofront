@@ -6,7 +6,7 @@ import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { SvgFastForward } from '@make.org/ui/Svg/elements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
-import SelectArrow from '@make.org/ui/Svg/source/select-arrow.svg';
+import { SvgPropsType } from '@make.org/types';
 
 const MAX_WIDTH = 275;
 
@@ -23,7 +23,7 @@ export const ExtraDataDescriptionStyle = styled(ParagraphStyle)`
   text-align: center;
 `;
 
-export const ExtraDataRadioGroupStyle = styled.div`
+export const ExtraDataRadioGroupStyle = styled.div<{ className: string }>`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 10px;
@@ -80,10 +80,11 @@ export const SelectStyle = styled.select`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   color: ${color.greyDark};
   appearance: none;
-  background: transparent url(${SelectArrow}) no-repeat 95% center;
+  background: transparent url(@make.org/ui/Svg/source/select-arrow.svg)
+    no-repeat 95% center;
 `;
 
-export const SkipIconStyle = styled(SvgFastForward)`
+export const SkipIconStyle = styled(SvgFastForward)<SvgPropsType>`
   margin-right: 5px;
   width: 16px;
 `;

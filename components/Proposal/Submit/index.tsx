@@ -6,7 +6,7 @@ import { ProposalJourney } from './Journey';
 import { PanelTriggerStyle, TriggerIconStyle } from './style';
 
 export const ProposalSubmit: React.FC = () => {
-  const dispatch = useAppContext();
+  const { dispatch } = useAppContext();
 
   return (
     <PanelTriggerStyle

@@ -1,22 +1,34 @@
-const onClientSide = typeof window !== 'undefined';
+// TODO find a new way to handle ENV on Client side
+
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+export const onClientSide = typeof window !== 'undefined';
 
 // Define client env variables
-const nodeEnvWindow = () => onClientSide && window.NODE_ENV;
-const isDevWindow = () => nodeEnvWindow === 'development';
-const isTestWindow = () => nodeEnvWindow === 'ci';
-const apiUrlWindow = () => onClientSide && window.API_URL;
-const proxyTargetApiUrlWindow = () => onClientSide && window.PROXY_TARGET_API_URL;
-const frontUrlWindow = () => onClientSide && window.FRONT_URL;
-const portWindow = () => onClientSide && window.PORT;
+// @ts-ignore
+const nodeEnvWindow = (): string | undefined => onClientSide && window.NODE_ENV;
+const isDevWindow = (): boolean => nodeEnvWindow() === 'development';
+const isTestWindow = (): boolean => nodeEnvWindow() === 'ci';
+// @ts-ignore
+const apiUrlWindow = (): string | undefined => onClientSide && window.API_URL;
+const proxyTargetApiUrlWindow = (): string | undefined =>
+  // @ts-ignore
+  onClientSide && window.PROXY_TARGET_API_URL;
+
+const frontUrlWindow = (): string | undefined =>
+  // @ts-ignore
+  onClientSide && window.FRONT_URL;
+// @ts-ignore
+const portWindow = (): string | undefined => onClientSide && window.PORT;
 
 // Define server env variables
-const nodeEnvProcess = () => process.env.NODE_ENV;
-const isDevProcess = () => nodeEnvProcess === 'development';
-const isTestProcess = () => nodeEnvProcess === 'ci';
-const apiUrlProcess = () => process.env.API_URL;
-const proxyTargetApiUrlProcess = () => process.env.PROXY_TARGET_API_URL;
-const frontUrlProcess = () => process.env.FRONT_URL;
-const portProcess = () => process.env.PORT;
+const nodeEnvProcess = (): string | undefined => process.env.NODE_ENV;
+const isDevProcess = (): boolean => nodeEnvProcess() === 'development';
+const isTestProcess = (): boolean => nodeEnvProcess() === 'ci';
+const apiUrlProcess = (): string | undefined => process.env.API_URL;
+const proxyTargetApiUrlProcess = (): string | undefined =>
+  process.env.PROXY_TARGET_API_URL;
+const frontUrlProcess = (): string | undefined => process.env.FRONT_URL;
+const portProcess = (): string | undefined => process.env.PORT;
 
 // Export in env object
 export const env = {

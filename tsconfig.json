@@ -8,12 +8,10 @@
     { "path": "./components" },
     { "path": "./utils" }
   ],
-  "files": [],
-  "include": [],
   "exclude": ["**/node_modules"],
   "compilerOptions": {
-    "baseUrl": ".",
-    "target": "es5",
+    "baseUrl": "./types/index",
+    "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -27,6 +25,16 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "sourceMap": true
+    "sourceMap": true,
+    "paths": {
+      "@make.org/widget": ["./apps/widget/*"],
+      "@make.org/components": ["./components/*"],
+      "@make.org/types": ["./types/*"],
+      "@make.org/api": ["./api/*"],
+      "@make.org/assets": ["./assets/*"],
+      "@make.org/utils": ["./utils/*"],
+      "@make.org/ui": ["./ui/*"],
+      "@make.org/store": ["./store/*"]
+    }
   }
 }

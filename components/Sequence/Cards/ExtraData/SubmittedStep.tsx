@@ -1,5 +1,5 @@
 import { setTitleByType } from '@make.org/utils/helpers/demographics';
-import { RedButtonStyle } from '@make.org/ui/elements/Buttons/style';
+import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import React, { useEffect } from 'react';
 import { i18n } from '@make.org/utils/i18n';
 import { incrementSequenceIndex } from '@make.org/store/actions/sequence';
@@ -34,6 +34,7 @@ export const SubmittedDemographics: React.FC<Props> = ({ type }) => {
         {i18n.t('demographics_card.submitted_disclaimer')}
       </SequenceParagraphStyle>
       <RedButtonStyle
+        data-cy-button="demographic-continue-vote"
         onClick={() => {
           dispatch(incrementSequenceIndex());
           trackClickVoteDemographics(type);

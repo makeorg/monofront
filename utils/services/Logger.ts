@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import { env } from '@make.org/assets/env';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
@@ -6,9 +6,11 @@ import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 const LOG_INFO = 'info';
 const LOG_WARNING = 'warn';
 const LOG_ERROR = 'error';
-const onClientSide = typeof window !== 'undefined' && !!window;
+// const onClientSide = typeof window !== 'undefined' && !!window;
 
-let instance = null;
+let instance: LoggerSingleton | null = null;
+const host = env.frontUrl() || '';
+const port = env.port() || '';
 
 class LoggerSingleton {
   constructor() {
@@ -37,14 +39,17 @@ class LoggerSingleton {
   formatError = (error: Error) => ({
     message: error.message,
     name: error.name,
-    fileName: error.fileName,
-    lineNumber: error.lineNumber,
-    columnNumber: error.columnNumber,
+    // TO DO
+    // fileName: error.fileName,
+    // lineNumber: error.lineNumber,
+    // columnNumber: error.columnNumber,
     stack: error.stack,
     logId: uuidv4(),
   });
 
-  normalizeData = (data) => {
+  normalizeData = (
+    data: ApiServiceError | Error | { [key: string]: string } | string
+  ) => {
     if (data instanceof ApiServiceError) {
       return this.formatApiServiceError(data);
     }
@@ -78,19 +83,22 @@ class LoggerSingleton {
     }
   };
 
-  logError = (error) => {
+  logError = (error: string | ApiServiceError | Record<string, string>) => {
     this.log(error, LOG_ERROR);
   };
 
-  logInfo = (data) => {
+  logInfo = (data: string | ApiServiceError | Record<string, string>) => {
     this.log(data, LOG_INFO);
   };
 
-  logWarning = (data) => {
+  logWarning = (data: string | ApiServiceError | Record<string, string>) => {
     this.log(data, LOG_WARNING);
   };
 
-  log = async (data, level) => {
+  log = (
+    data: string | ApiServiceError | Record<string, string>,
+    level: string
+  ): Promise<void | AxiosResponse> => {
     if (env.isDev()) {
       // eslint-disable-next-line no-console
       console.log(level, data);
@@ -111,15 +119,14 @@ class LoggerSingleton {
     //     default:
     //       logError(data);
     //   }
-
-    //   return () => undefined;
     // }
 
-    return axios({
+    // TO DO
+    return axios('/api/logger', {
       method: 'POST',
-      url: '/api/logger',
       proxy: {
-        port: env.port(),
+        host,
+        port: parseInt(port, 10),
       },
       data: {
         level: level || 'error',
@@ -127,7 +134,7 @@ class LoggerSingleton {
       },
     })
       .then(() => undefined)
-      .catch((e) => {
+      .catch(e => {
         // eslint-disable-next-line no-console
         console.log('Fail to log error - ', e);
       });

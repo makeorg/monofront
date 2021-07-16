@@ -1,7 +1,7 @@
-import { AxiosPromise, AxiosRequestConfig, AxiosResponse } from 'axios';
+import { AxiosResponse } from 'axios';
 
 export interface IApiServiceStrategy {
-  callApi(url: string, options: AxiosRequestConfig): AxiosPromise<AxiosResponse>;
+  callApi(url: string, options: any): Promise<void | AxiosResponse>;
   get country(): string;
   get language(): string;
   get source(): string;
@@ -10,18 +10,19 @@ export interface IApiServiceStrategy {
 }
 
 class ApiServiceClass {
-  strategyValue: IApiServiceStrategy;
+  strategyValue: IApiServiceStrategy | null = null;
 
   set strategy(strategy: IApiServiceStrategy) {
     this.strategyValue = strategy;
   }
 
   get strategy() {
-    if (!this.strategyValue) throw new Error('No ApiService strategy configured');
+    if (!this.strategyValue)
+      throw new Error('No ApiService strategy configured');
     return this.strategyValue;
   }
 
-  callApi(url: string, options: AxiosRequestConfig = {}): AxiosPromise<AxiosResponse> {
+  callApi(url: string, options = {}): Promise<void | AxiosResponse> {
     return this.strategy.callApi(url, options);
   }
 

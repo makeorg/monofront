@@ -15,7 +15,6 @@ import {
   VoteResultTotalLabelStyle,
   VoteResultBarStyle,
 } from './style';
-import { ResultTooltip } from './Tooltip';
 import { UnvoteButton } from '../Button/Unvote';
 import { VoteButtonWrapperStyle } from '../style';
 
@@ -51,8 +50,11 @@ export const VoteResult: React.FC<Props> = ({
   const votesCount = getTotalVotesCount(votes);
   const voteKeys = Object.keys(voteStaticParams);
   const votesPercent = getVotesPercent(votes, votesCount);
-  const tooltipContent = (percent, voteKey) => (
-    <ResultTooltip votePercent={percent} voteKey={voteKey} />
+  const tooltipContent = (percent: number, voteKey: string) => (
+    <>
+      <p>{i18n.t(`vote.${voteKey}`)}</p>
+      <p>{i18n.t('common.percent', { percent })}</p>
+    </>
   );
 
   return (
@@ -75,7 +77,7 @@ export const VoteResult: React.FC<Props> = ({
         {i18n.t('results.total', { count: votesCount })}
       </ScreenReaderItemStyle>
       <ScreenReaderItemStyle as="ul">
-        {voteKeys.map((voteKey) => (
+        {voteKeys.map(voteKey => (
           <li key={`${voteKey}_percent_${proposalId}`}>
             {i18n.t('vote.with_percent', {
               votedKey: i18n.t(`vote.${voteKey}`),
@@ -85,7 +87,7 @@ export const VoteResult: React.FC<Props> = ({
         ))}
       </ScreenReaderItemStyle>
       <VoteResultGraphStyle>
-        {voteKeys.map((voteKey) => (
+        {voteKeys.map(voteKey => (
           <VoteResultItemStyle key={`${voteKey}_item_${proposalId}`}>
             <Tooltip
               content={tooltipContent(votesPercent[voteKey], voteKey)}

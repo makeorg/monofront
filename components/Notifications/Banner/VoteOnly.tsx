@@ -7,12 +7,12 @@ import { clearNotificationBanner } from '@make.org/store/actions/notifications';
 import { VoteOnlyMessageStyle, VoteOnlyButtonStyle } from './style';
 
 type Props = {
-  close: () => undefined;
+  close?: () => void;
 };
 
 export const VoteOnlyMessage: React.FC<Props> = ({ close }) => {
   const { dispatch, state } = useAppContext();
-  const question: QuestionType = selectCurrentQuestion(state);
+  const question: QuestionType | null = selectCurrentQuestion(state);
 
   useEffect(() => {
     if (!question) {
@@ -23,6 +23,7 @@ export const VoteOnlyMessage: React.FC<Props> = ({ close }) => {
   if (!question) {
     return null;
   }
+
   return (
     <VoteOnlyMessageStyle>
       {i18n.t('common.notifications.vote_only.message', {

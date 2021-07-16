@@ -18,7 +18,7 @@ export const initialState: StateRoot = {
     queryParams: {},
     countriesWithConsultations: [],
     device: '',
-    privacyPolicy: undefined
+    privacyPolicy: new Date(),
   },
   views: {},
   proposal: proposal_state,
@@ -36,7 +36,8 @@ export const initialState: StateRoot = {
   panel: panel_state,
   session: session_state,
   question: undefined,
-  proposals: []
+  proposals: [],
 };
 
-export const createInitialState = (): StateRoot => JSON.parse(JSON.stringify(initialState));
+export const createInitialState = (): StateRoot =>
+  JSON.parse(JSON.stringify(initialState));

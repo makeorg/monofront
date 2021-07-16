@@ -1,6 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { DemographicsType } from '@make.org/types';
-import { BlackBorderButtonStyle } from '@make.org/ui/elements/Buttons/style';
+import React, { SyntheticEvent, useEffect, useMemo, useState } from 'react';
+import { DemographicNameType, DemographicDataType } from '@make.org/types';
+import { BlackBorderButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { i18n } from '@make.org/utils/i18n';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { DemographicsTrackingService } from '@make.org/utils/services/DemographicsTracking';
@@ -15,8 +15,7 @@ import {
   trackDisplayDemographics,
 } from '@make.org/utils/services/Tracking';
 import { useAppContext } from '@make.org/store';
-import { SubmitButton } from '@make.org/ui/elements/Form/SubmitButton';
-import { TypeDemographicName } from '@make.org/api/DemographicsTrackingApiService';
+import { SubmitButton } from '@make.org/ui/components/SubmitButton';
 import { RadioDemographics } from './Radio';
 import { ExtraDataFormStyle, SkipIconStyle, SubmitWrapperStyle } from './style';
 import { SelectDemographics } from './Select';
@@ -24,18 +23,18 @@ import { SelectDemographics } from './Select';
 const SKIP_TRACKING_VALUE = 'SKIPPED';
 
 type Props = {
-  type: TypeDemographicName;
+  type: DemographicNameType;
   demographics: {
     ui: string;
-    data: DemographicsType[];
+    data: DemographicDataType[];
   };
   currentQuestion: string;
 };
 
 export const renderFormUI = (
-  type: TypeDemographicName,
+  type: DemographicNameType,
   ui: string,
-  data: DemographicsType[],
+  data: DemographicDataType[],
   currentValue: string,
   setCurrentValue: (value: string) => void
 ): React.ReactNode => {
@@ -67,8 +66,8 @@ export const ExtraDataForm: React.FC<Props> = ({
   const location = useLocation();
 
   const { device } = state.appConfig;
-  const [currentValue, setCurrentValue] = useState(null);
-  const [isSubmitDisabled, setIsSubmitDisabled] = useState();
+  const [currentValue, setCurrentValue] = useState<string>('');
+  const [isSubmitDisabled, setIsSubmitDisabled] = useState(false);
   const [isSkipDisabled, setIsSkipDisabled] = useState(false);
   const { data, ui } = demographics;
   const FORM_NAME = `demographics_${type}`;
@@ -76,7 +75,7 @@ export const ExtraDataForm: React.FC<Props> = ({
 
   const utmParams = useMemo(() => {
     const params = new URLSearchParams(location.search);
-    const accumulator = {};
+    const accumulator: { [key: string]: string } = {};
     params.forEach((value, key) => {
       if (key.startsWith('utm_')) {
         accumulator[key] = params.getAll(key).join(',');
@@ -86,33 +85,37 @@ export const ExtraDataForm: React.FC<Props> = ({
     return accumulator;
   }, [location.search]);
 
-  const handleSubmit = (value) => async (event: React.ChangeEvent<HTMLInputElement>) => {
-    event.preventDefault();
-    setIsSubmitDisabled(true);
-    setIsSkipDisabled(true);
-    const success = () => {
-      setIsSubmitDisabled(false);
-      setIsSkipDisabled(false);
-      dispatch(incrementSequenceIndex());
+  const handleSubmit =
+    (value: string) =>
+    async (
+      event: SyntheticEvent<HTMLFormElement> | SyntheticEvent<HTMLButtonElement>
+    ) => {
+      event.preventDefault();
+      setIsSubmitDisabled(true);
+      setIsSkipDisabled(true);
+      const success = () => {
+        setIsSubmitDisabled(false);
+        setIsSkipDisabled(false);
+        dispatch(incrementSequenceIndex());
+      };
+      const error = () => {
+        setIsSubmitDisabled(false);
+        setIsSkipDisabled(false);
+      };
+
+      await DemographicsTrackingService.track(
+        type,
+        value,
+        utmParams,
+        success,
+        error
+      );
+
+      dispatch(persistDemographics(type, value, currentQuestion));
+      trackClickSaveDemographics(type);
     };
-    const error = () => {
-      setIsSubmitDisabled(false);
-      setIsSkipDisabled(false);
-    };
 
-    await DemographicsTrackingService.track(
-      type,
-      value,
-      utmParams,
-      success,
-      error
-    );
-
-    dispatch(persistDemographics(type, value, currentQuestion));
-    trackClickSaveDemographics(type);
-  };
-
-  const onClickSkip = (event) => {
+  const onClickSkip = (event: React.SyntheticEvent<HTMLButtonElement>) => {
     handleSubmit(SKIP_TRACKING_VALUE)(event);
     trackClickSkipDemographics(type);
   };
@@ -140,11 +143,12 @@ export const ExtraDataForm: React.FC<Props> = ({
           onClick={onClickSkip}
           data-cy-button="skip-demographics"
         >
-          <SkipIconStyle aria-hidden focusable={false} />
+          <SkipIconStyle aria-hidden focusable="false" />
           {i18n.t('demographics_card.skip')}
         </BlackBorderButtonStyle>
         <SubmitButton
           formName={FORM_NAME}
+          data-cy-button="submit-demographics"
           label={
             isMobile
               ? i18n.t('demographics_card.submit_mobile')

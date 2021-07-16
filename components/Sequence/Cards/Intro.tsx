@@ -7,7 +7,7 @@ import {
 import { i18n } from '@make.org/utils/i18n';
 import { incrementSequenceIndex } from '@make.org/store/actions/sequence';
 import { useAppContext } from '@make.org/store';
-import { PlayIconStyle } from '@make.org/ui/elements/Buttons/style';
+import { PlayIconStyle } from '@make.org/ui/elements/SvgElements';
 import {
   SequenceIntroButtonStyle,
   SequenceMainTitleStyle,
@@ -21,7 +21,7 @@ type Props = {
 
 export const IntroCard: React.FC<Props> = ({ configuration }) => {
   const { dispatch } = useAppContext();
-  const { description, title } = configuration;
+  const { description = '', title } = configuration;
   const descriptionText = description || i18n.t('intro_card.description');
   const handleStartSequence = () => {
     dispatch(incrementSequenceIndex());

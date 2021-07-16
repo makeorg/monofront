@@ -4,7 +4,7 @@ import { typography } from 'athena-design-tokens';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { GreyLinkStyle } from '@make.org/ui/elements/Buttons/style';
+import { GreyLinkStyle } from '@make.org/ui/elements/ButtonsElements';
 import { MiddleColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { SvgArrowReturn } from '@make.org/ui/Svg/elements';
 

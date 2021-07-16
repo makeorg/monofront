@@ -8,7 +8,7 @@ const qualify = async (
   voteKey: string,
   qualificationKey: string,
   unexpectedError: () => void = () => undefined
-): Promise<QualificationType> => {
+): Promise<QualificationType | null> => {
   try {
     const response = await QualificationApiService.qualify(
       proposalId,
@@ -17,7 +17,7 @@ const qualify = async (
       qualificationKey
     );
 
-    return response.data;
+    return response && response.data;
   } catch (apiServiceError) {
     defaultUnexpectedError(apiServiceError);
     unexpectedError();
@@ -32,7 +32,7 @@ const unqualify = async (
   voteKey: string,
   qualificationKey: string,
   unexpectedError: () => void = () => undefined
-): Promise<QualificationType> => {
+): Promise<QualificationType | null> => {
   try {
     const response = await QualificationApiService.unqualify(
       proposalId,
@@ -41,7 +41,7 @@ const unqualify = async (
       qualificationKey
     );
 
-    return response.data;
+    return response && response.data;
   } catch (apiServiceError) {
     defaultUnexpectedError(apiServiceError);
     unexpectedError();

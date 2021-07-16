@@ -1,6 +1,9 @@
 import React from 'react';
+import { SvgPropsType } from '@make.org/types';
 
-export const SvgWhiteArrowDown: React.FC<React.HTMLAttributes> = (props) => (
+export const SvgWhiteArrowDown: React.FC<SvgPropsType> = (
+  props: SvgPropsType
+) => (
   // eslint-disable-next-line react/jsx-props-no-spreading
   <svg width="14" height="14" viewBox="0 0 14 14" {...props}>
     <path

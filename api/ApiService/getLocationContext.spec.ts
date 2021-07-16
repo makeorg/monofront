@@ -183,30 +183,28 @@ describe('getLocationContext', () => {
     },
   ];
 
-  fixtures.map((record) => it(`get location context ${record.name}`, () => {
-    expect(
-      getLocationContext(
-        record.path,
-        record.params && record.params.questionId,
-        record.params && record.params.proposalId
-      )
-    ).toBe(record.expected);
-  }));
+  fixtures.map(record =>
+    it(`get location context ${record.name}`, () => {
+      expect(
+        getLocationContext(
+          record.path,
+          record.params && record.params.questionId,
+          record.params && record.params.proposalId
+        )
+      ).toBe(record.expected);
+    })
+  );
 
-  fixtures.map((record) => it(`get tracking location context ${record.name}`, () => {
-    expect(
-      getTrackingLocation(
-        record.path,
-        record.params && record.params.questionId,
-        record.params && record.params.proposalId
-      )
-    ).toBe(record.expectedTracking);
-  }));
+  fixtures.map(record =>
+    it(`get tracking location context ${record.name}`, () => {
+      expect(getTrackingLocation(record.path)).toBe(record.expectedTracking);
+    })
+  );
 
   it('all routes have location', () => {
     const definedRoutes = Object.keys(routes)
-      .filter((name) => name.includes('ROUTE_'))
-      .map((name) => ({
+      .filter(name => name.includes('ROUTE_'))
+      .map(name => ({
         name,
         // eslint-disable-next-line import/namespace
         path: routes[name],
@@ -251,11 +249,11 @@ describe('getLocationContext', () => {
 
     // .map(route => route.replace(/:/g, ''));
     const filteredRoutes = definedRoutes.filter(
-      (route) => !routesToExcludes.includes(route.name)
+      route => !routesToExcludes.includes(route.name)
     );
-    filteredRoutes.forEach((route) => {
+    filteredRoutes.forEach(route => {
       const elementFromFixture = fixtures.find(
-        (item) => item.name === route.name
+        item => item.name === route.name
       );
       if (!elementFromFixture) {
         throw new Error(`Not found. Route: ${route.name}`);

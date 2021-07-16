@@ -35,15 +35,18 @@ export const useMedia = (query: string): boolean => {
   return value;
 };
 
-export const useDesktop = (): boolean => useMedia(`(min-width: ${intToPx(Breakpoints.Desktop)})`);
+export const useDesktop = (): boolean =>
+  useMedia(`(min-width: ${intToPx(Breakpoints.Desktop)})`);
 
-export const useTablet = (): boolean => useMedia(`(min-width: ${intToPx(Breakpoints.Tablet)})`);
+export const useTablet = (): boolean =>
+  useMedia(`(min-width: ${intToPx(Breakpoints.Tablet)})`);
 
-export const useMobile = (): boolean => useMedia(
-  `only screen and (max-device-width: ${intToPx(Breakpoints.Tablet)})`
-);
+export const useMobile = (): boolean =>
+  useMedia(
+    `only screen and (max-device-width: ${intToPx(Breakpoints.Tablet)})`
+  );
 
-export const useScreenWidth = (): number => {
+export const useScreenWidth = (): number | null => {
   const hasWindowObject = typeof window === 'object';
 
   const screenWidth = hasWindowObject ? window.screen.width : null;
@@ -67,7 +70,7 @@ export const useScreenWidth = (): number => {
   return value;
 };
 
-export const useScreenMobileContainerWidth = (): number => {
+export const useScreenMobileContainerWidth = (): number | null => {
   const screenWidth = useScreenWidth();
   const mobileContainerPadding = 20 * 2;
 
@@ -79,5 +82,5 @@ export const useDevicePixelRatio = (): number => {
     return window.devicePixelRatio;
   }
 
-  return null;
+  return 1;
 };

@@ -37,13 +37,13 @@ export const VoteResultItemStyle = styled.li`
   align-items: flex-end;
 `;
 
-export const VoteResultBarStyle = styled.button`
+export const VoteResultBarStyle = styled.button<{ percent: number }>`
   display: flex;
   width: 6px;
   min-height: 5px;
   margin: 0 2px;
-  height: ${(props) => getBarHeight(props.percent)};
-  background-color: ${(props) => props.color};
+  height: ${props => getBarHeight(props.percent)};
+  background-color: ${props => props.color};
   border: none;
   padding: 0;
 `;

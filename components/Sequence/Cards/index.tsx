@@ -4,6 +4,8 @@ import {
   QuestionType,
   IntroCardConfigType,
   NoProposalCardConfigType,
+  ProposalCardType,
+  NoProposalCardType,
 } from '@make.org/types';
 import {
   CARD_TYPE_EXTRASLIDE_INTRO,
@@ -31,7 +33,7 @@ import { ExtraDataCard } from './ExtraData';
 
 type CardProps = {
   /** Attribute of the card */
-  card: SequenceCardType;
+  card: SequenceCardType | NoProposalCardType;
   /** Object with Dynamic properties used to configure the Sequence (questionId, country, ...) */
   question: QuestionType;
 };
@@ -39,7 +41,7 @@ type CardProps = {
 export const Card: React.FC<CardProps> = ({ card, question }) => {
   switch (card.type) {
     case CARD_TYPE_PROPOSAL:
-      return <ProposalCard proposalCard={card} />;
+      return <ProposalCard proposalCard={card as ProposalCardType} />;
     case CARD_TYPE_EXTRASLIDE_INTRO:
       return (
         <IntroCard configuration={card.configuration as IntroCardConfigType} />
@@ -47,13 +49,14 @@ export const Card: React.FC<CardProps> = ({ card, question }) => {
     case CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL:
       return <PushProposalCard />;
     case CARD_TYPE_EXTRASLIDE_FINAL_CARD:
-      return <FinalCard />;
+      return <FinalCard questionSlug={question.slug} />;
     case CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD:
-      return <SpecialFinalCard />;
+      return <SpecialFinalCard questionSlug={question.slug} />;
     case CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD:
       return <ExtraDataCard />;
     case CARD_TYPE_NO_PROPOSAL_CARD: {
-      const { title, description } = card.configuration as NoProposalCardConfigType;
+      const { title, description } =
+        card.configuration as NoProposalCardConfigType;
       return (
         <NoProposal
           question={question}
@@ -69,7 +72,7 @@ export const Card: React.FC<CardProps> = ({ card, question }) => {
 
 type Props = {
   /** Attribute of the card */
-  card: SequenceCardType;
+  card: SequenceCardType | NoProposalCardType;
   /** Object with Dynamic properties used to configure the Sequence (questionId, country, ...) */
   question: QuestionType;
 };
@@ -77,7 +80,8 @@ type Props = {
 export const SequenceCard: React.FC<Props> = ({ card, question }) => {
   const isProposalCard = card.type === CARD_TYPE_PROPOSAL;
   const isNoProposalCard = card.type === CARD_TYPE_NO_PROPOSAL_CARD;
-  const topComponentContext: TopComponentContextValueType = TopComponentContextValue.getSequenceProposal();
+  const topComponentContext: TopComponentContextValueType =
+    TopComponentContextValue.getSequenceProposal();
 
   useEffect(() => {
     if (isNoProposalCard) {
@@ -90,7 +94,7 @@ export const SequenceCard: React.FC<Props> = ({ card, question }) => {
     <>
       <TopComponentContext.Provider value={topComponentContext}>
         <SequenceCardStyle
-          className={!isProposalCard && 'center'}
+          className={!isProposalCard ? 'center' : ''}
           id={`card-${card.index}`}
           data-cy-card-type={card.type}
           data-cy-card-number={!isNoProposalCard && card.index + 1}

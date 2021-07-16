@@ -65,20 +65,22 @@ export const Vote: React.FC<Props> = ({
   const contextType = useContext(TopComponentContext);
   const [currentVotes, setCurrentVotes] = useState(votes);
   const [userVote, setUserVote] = useState(
-    currentVotes && currentVotes.find((vote) => vote.hasVoted === true)
+    currentVotes && currentVotes.find(vote => vote.hasVoted === true)
   );
   const [votedKey, setVotedKey] = useState(userVote ? userVote.voteKey : '');
   const [pending, setPending] = useState(false);
   const [animateVoteKey, setAnimatedVoteKey] = useState('');
   const [pendingVoteKey, setPendingVoteKey] = useState('');
   const { votedProposalIds } = state.sequence;
-  const isFirstSequenceVote = contextType === TopComponentContextValue.getSequenceProposal()
-    && (votedProposalIds[proposal.question.slug] || []).length === 0;
+  const isFirstSequenceVote =
+    contextType === TopComponentContextValue.getSequenceProposal() &&
+    (votedProposalIds[proposal.question.slug] || []).length === 0;
 
-  let timeout;
-  const wait = async (ms: number) => new Promise((resolve) => {
-    timeout = setTimeout(resolve, ms);
-  });
+  let timeout: number;
+  const wait = async (ms: number) =>
+    new Promise(resolve => {
+      timeout = setTimeout(resolve, ms);
+    });
   const clearWait = async () => {
     clearTimeout(timeout);
   };
@@ -105,7 +107,7 @@ export const Vote: React.FC<Props> = ({
     setVotedKey('');
     const newVotes = updateAndGetVotes(currentVotes, unvote);
     setCurrentVotes(newVotes);
-    setUserVote(null);
+    setUserVote(undefined);
     dispatch(actionUnvote(proposal, newVotes, contextType));
     await trackUnvote(proposalId, voteKey, index, contextType);
     stopPending();
@@ -128,7 +130,7 @@ export const Vote: React.FC<Props> = ({
     setVotedKey(vote.voteKey);
     const updatedVotes = updateAndGetVotes(currentVotes, vote);
     setCurrentVotes(updatedVotes);
-    setUserVote(updatedVotes.find((newVote) => newVote.hasVoted === true));
+    setUserVote(updatedVotes.find(newVote => newVote.hasVoted === true));
     dispatch(actionVote(proposal, updatedVotes, contextType));
     await trackVote(proposalId, voteKey, index, contextType);
     if (isFirstSequenceVote) {
@@ -140,7 +142,7 @@ export const Vote: React.FC<Props> = ({
   };
 
   useEffect(() => {
-    const stateUserVote = votes && votes.find((vote) => vote.hasVoted === true);
+    const stateUserVote = votes && votes.find(vote => vote.hasVoted === true);
     setCurrentVotes(votes);
     setUserVote(stateUserVote);
     setVotedKey(stateUserVote ? stateUserVote.voteKey : '');
@@ -154,11 +156,11 @@ export const Vote: React.FC<Props> = ({
     []
   );
 
-  useEffect(() => {
+  useEffect((): any => {
     if (isFirstSequenceVote) {
       dispatch(displayNotificationTip(FIRST_VOTE_TIP_MESSAGE, undefined, true));
 
-      return () => {
+      return (): void => {
         dispatch(clearNotificationTip());
       };
     }
@@ -167,7 +169,7 @@ export const Vote: React.FC<Props> = ({
 
   if (userVote && votedKey) {
     return (
-      <VoteContainerStyle isSequence={isSequence}>
+      <VoteContainerStyle isSequence={!!isSequence}>
         <VoteResult
           proposalId={proposalId}
           votes={currentVotes}
@@ -181,7 +183,6 @@ export const Vote: React.FC<Props> = ({
           proposalKey={proposalKey}
           votedKey={votedKey}
           index={index}
-          pendingVote={pending}
         />
       </VoteContainerStyle>
     );
@@ -190,7 +191,7 @@ export const Vote: React.FC<Props> = ({
   return (
     <>
       {isFirstSequenceVote && <Tip isFirstSequenceVote={isFirstSequenceVote} />}
-      <VoteContainerStyle isSequence={isSequence}>
+      <VoteContainerStyle isSequence={!!isSequence}>
         <ScreenReaderItemStyle as="p">
           {i18n.t('vote.intro_title')}
         </ScreenReaderItemStyle>
@@ -202,12 +203,7 @@ export const Vote: React.FC<Props> = ({
             >
               <VoteButton
                 voteKey={voteKey}
-                buttonClass={getVoteButtonClass(
-                  voteKey,
-                  animateVoteKey,
-                  pendingVoteKey,
-                  false
-                )}
+                buttonClass={getVoteButtonClass(voteKey, animateVoteKey, false)}
                 displayPending={getSameKey(pendingVoteKey, voteKey)}
                 handleVote={() => handleVote(voteKey)}
                 animateVote={getSameKey(animateVoteKey, voteKey)}

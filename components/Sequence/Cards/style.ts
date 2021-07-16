@@ -4,32 +4,38 @@ import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { color, typography } from 'athena-design-tokens';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { GreyButtonStyle, RedButtonStyle } from '@make.org/ui/elements/Buttons/style';
+import {
+  GreyButtonStyle,
+  RedButtonStyle,
+} from '@make.org/ui/elements/ButtonsElements';
 import {
   CenterColumnStyle,
   SpaceBetweenRowStyle,
 } from '@make.org/ui/elements/FlexElements';
 import { SeparatorStyle } from '@make.org/ui/elements/Separators';
 
-export const SequenceCardStyle = styled.section`
+export const SequenceCardStyle = styled.section<{ isNoProposalCard?: boolean }>`
   position: relative;
   display: flex;
   flex-flow: column;
   align-items: center;
   flex: 1;
   width: 100%;
-  padding: ${(props) => (props.isNoProposalCard ? '60px 20px' : '0 20px')};
+  padding: ${({ isNoProposalCard = false }) =>
+    isNoProposalCard ? '60px 20px' : '0 20px'};
   background-color: ${color.white};
   border-radius: 8px;
   box-shadow: 0 2px 3px 0 ${ShadowColors.BlackZeroTwoOpacity};
-  margin: ${(props) => (props.isNoProposalCard ? '20px auto 0px' : '20px auto 40px')};
+  margin: ${({ isNoProposalCard = false }) =>
+    isNoProposalCard ? '20px auto 0px' : '20px auto 40px'};
   min-height: 315px;
   &.center {
     justify-content: center;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     max-height: 365px;
-    padding: ${(props) => (props.isNoProposalCard ? '70px 30px 40px' : '0 30px')};
+    padding: ${({ isNoProposalCard = false }) =>
+      isNoProposalCard ? '70px 30px 40px' : '0 30px'};
     margin-top: 30px;
   }
 `;
@@ -145,7 +151,7 @@ const SequenceFadeInAnimation = keyframes`
   100% { background-color: ${color.greyLighter}; }
 `;
 
-export const SequencePlaceholderLineStyle = styled.div`
+export const SequencePlaceholderLineStyle = styled.div<{ className?: string }>`
   display: flex;
   height: 20px;
   width: 100%;

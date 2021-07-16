@@ -1,19 +1,22 @@
 import { generatePath } from 'react-router';
 import { ApiServiceHeadersType } from '@make.org/types';
-import { AxiosPromise, AxiosResponse } from 'axios';
+import { AxiosResponse } from 'axios';
 import { ApiService } from './ApiService';
 
 const PATH_QUESTIONS_LIST = '/questions';
 const PATH_QUESTIONS_SEARCH = '/questions/search';
 const PATH_QUESTION_DETAIL = '/questions/:questionSlugOrId/details';
 const PATH_QUESTION_START_SEQUENCE = '/sequences/:sequenceKind/:questionId';
-const PATH_QUESTION_START_SEQUENCE_KEYWORD = '/sequences/keyword/:questionId/:keywordKey';
+const PATH_QUESTION_START_SEQUENCE_KEYWORD =
+  '/sequences/keyword/:questionId/:keywordKey';
 const PATH_QUESTION_PARTNERS = '/questions/:questionId/partners';
 const PATH_QUESTION_PERSONALITIES = '/questions/:questionId/personalities';
 const PATH_QUESTION_POPULAR_TAGS = '/questions/:questionId/popular-tags';
 const PATH_QUESTION_TOP_IDEAS = '/questions/:questionId/top-ideas';
-const PATH_QUESTION_TOP_IDEA_DETAILS = '/questions/:questionId/top-ideas/:topIdeaId';
-const PATH_QUESTION_FEATURED_PROPOSALS = '/questions/:questionId/featured-proposals';
+const PATH_QUESTION_TOP_IDEA_DETAILS =
+  '/questions/:questionId/top-ideas/:topIdeaId';
+const PATH_QUESTION_FEATURED_PROPOSALS =
+  '/questions/:questionId/featured-proposals';
 export const PATH_QUESTION_KEYWORDS = '/questions/:questionId/keywords';
 
 export class QuestionApiService {
@@ -24,7 +27,7 @@ export class QuestionApiService {
     limit?: number,
     skip?: number,
     headers: ApiServiceHeadersType = {}
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(generatePath(PATH_QUESTIONS_LIST), {
       method: 'GET',
       headers,
@@ -44,7 +47,7 @@ export class QuestionApiService {
     sortAlgorithm?: string,
     limit?: number,
     skip?: number
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     const headers = {};
     return ApiService.callApi(
       generatePath(PATH_QUESTION_PARTNERS, { questionId }),
@@ -59,7 +62,7 @@ export class QuestionApiService {
   static getDetail(
     questionSlugOrId: string,
     headers: ApiServiceHeadersType = {}
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       PATH_QUESTION_DETAIL.replace(':questionSlugOrId', questionSlugOrId),
       {
@@ -74,7 +77,7 @@ export class QuestionApiService {
     limit?: number,
     skip?: number,
     headers: ApiServiceHeadersType = {}
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       generatePath(PATH_QUESTION_POPULAR_TAGS, { questionId }),
       { method: 'GET', headers, params: { limit, skip } }
@@ -87,7 +90,7 @@ export class QuestionApiService {
     limit?: number,
     skip?: number,
     headers: ApiServiceHeadersType = {}
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       generatePath(PATH_QUESTION_PERSONALITIES, { questionId }),
       { method: 'GET', headers, params: { personalityRole, limit, skip } }
@@ -99,14 +102,14 @@ export class QuestionApiService {
     includedProposalIds: string[] = [],
     sequenceKind: string,
     headers: ApiServiceHeadersType = {}
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     let startSequenceUrl = PATH_QUESTION_START_SEQUENCE.replace(
       ':sequenceKind',
       sequenceKind
     ).replace(':questionId', questionId);
     // remove null value
     const includeParams = includedProposalIds
-      .map((proposalId) => (proposalId ? `include=${proposalId}` : ''))
+      .map(proposalId => (proposalId ? `include=${proposalId}` : ''))
       .join('&');
 
     startSequenceUrl += includeParams ? `?${includeParams}` : '';
@@ -122,14 +125,14 @@ export class QuestionApiService {
     includedProposalIds: string[] = [],
     keyword: string,
     headers: ApiServiceHeadersType = {}
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     let startSequenceUrl = PATH_QUESTION_START_SEQUENCE_KEYWORD.replace(
       ':questionId',
       questionId
     ).replace(':keywordKey', keyword);
     // remove null value
     const includeParams = includedProposalIds
-      .map((proposalId) => (proposalId ? `include=${proposalId}` : ''))
+      .map(proposalId => (proposalId ? `include=${proposalId}` : ''))
       .join('&');
 
     startSequenceUrl += includeParams ? `?${includeParams}` : '';
@@ -147,7 +150,7 @@ export class QuestionApiService {
     sort = 'endDate',
     order = 'DESC',
     headers: ApiServiceHeadersType = {}
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_QUESTIONS_SEARCH, {
       method: 'GET',
       headers,
@@ -164,7 +167,7 @@ export class QuestionApiService {
   static getTopIdeas(
     questionId: string,
     headers: ApiServiceHeadersType = {}
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       PATH_QUESTION_TOP_IDEAS.replace(':questionId', questionId),
       {
@@ -178,7 +181,7 @@ export class QuestionApiService {
     questionId: string,
     topIdeaId: string,
     headers: ApiServiceHeadersType = {}
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       PATH_QUESTION_TOP_IDEA_DETAILS.replace(':questionId', questionId).replace(
         ':topIdeaId',
@@ -197,7 +200,7 @@ export class QuestionApiService {
     limit: number,
     seed?: number,
     headers: ApiServiceHeadersType = {}
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       PATH_QUESTION_FEATURED_PROPOSALS.replace(':questionId', questionId),
       {
@@ -216,7 +219,7 @@ export class QuestionApiService {
     questionId: string,
     limit: number,
     headers: ApiServiceHeadersType = {}
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       PATH_QUESTION_KEYWORDS.replace(':questionId', questionId),
       {

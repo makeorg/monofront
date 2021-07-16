@@ -1,11 +1,9 @@
 import React from 'react';
 import { Tooltip } from '@make.org/ui/components/Tooltip';
-import { LoadingDots } from '@make.org/ui/elements/Loading/Dots';
+import { LoadingDots } from '@make.org/ui/components/Loading/Dots';
 import { i18n } from '@make.org/utils/i18n';
-import {
-  VoteIconStyle,
-  VoteButtonStyle,
-} from '@make.org/ui/elements/Buttons/style';
+import { VoteButtonStyle } from '@make.org/ui/elements/ButtonsElements';
+import { VoteIconStyle } from '@make.org/ui/elements/SvgElements';
 
 type ButtonProps = {
   /** Vote key */
@@ -64,15 +62,15 @@ type Props = {
   /** button className */
   buttonClass: string;
   /** When button is in pending mode */
-  displayPending: boolean;
+  displayPending?: boolean;
   /** Method called when vote button is clicked */
   handleVote: () => void | Promise<void>;
   /** Trigged animation on vote button after API response */
-  animateVote: boolean;
+  animateVote?: boolean;
   /** Boolean to disable click event on the vote button */
-  disableClick: boolean;
+  disableClick?: boolean;
   /** Boolean to disable tooltip on button hover event */
-  withTooltip: boolean;
+  withTooltip?: boolean;
 };
 
 export const VoteButton: React.FC<Props> = ({

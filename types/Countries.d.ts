@@ -1,4 +1,4 @@
 export type CountryType = {
-  isoCode: string
-  name: string
+  isoCode: string;
+  name: string;
 };

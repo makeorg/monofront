@@ -1,5 +1,5 @@
-import { ApiServiceHeadersType } from '@make.org/types';
-import { AxiosPromise, AxiosResponse } from 'axios';
+import { ApiServiceHeadersType, ProposalsType } from '@make.org/types';
+import { AxiosResponse } from 'axios';
 import { ApiService } from './ApiService';
 
 export const PATH_PROPOSALS = '/proposals';
@@ -18,12 +18,12 @@ type TypeSort =
   | 'popular';
 
 type TypeFeedAlgortithms = {
-  CONTROVERSY: { key: string, value: string },
-  ACTORS: { key: string, value: string },
-  POPULAR: { key: string, value: TypeSort },
-  REALISTIC: { key: string, value: string },
-  RECENT: { key: string, value: string },
-  TAGGED_FIRST: { key: string, value: string },
+  CONTROVERSY: { key: string; value: string };
+  ACTORS: { key: string; value: string };
+  POPULAR: { key: string; value: TypeSort };
+  REALISTIC: { key: string; value: string };
+  RECENT: { key: string; value: string };
+  TAGGED_FIRST: { key: string; value: string };
 };
 
 export const PROPOSALS_FEED_ALGORITHMS: TypeFeedAlgortithms = {
@@ -36,7 +36,7 @@ export const PROPOSALS_FEED_ALGORITHMS: TypeFeedAlgortithms = {
 };
 
 type TypeAvailableAlgorithms = {
-  [name: string]: { key: string, value: string },
+  [name: string]: { key: string; value: string };
 };
 
 export const AVAILABLE_ALGORITHMS: TypeAvailableAlgorithms = {
@@ -57,7 +57,10 @@ export const AVAILABLE_ALGORITHMS: TypeAvailableAlgorithms = {
 };
 
 export class ProposalApiService {
-  static propose(content: string, questionId: string): AxiosPromise<AxiosResponse> {
+  static propose(
+    content: string,
+    questionId: string
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_PROPOSALS, {
       method: 'POST',
       body: JSON.stringify({
@@ -72,7 +75,7 @@ export class ProposalApiService {
   static getProposal(
     proposalId: string,
     headers: ApiServiceHeadersType = {}
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       PATH_PROPOSAL_GET.replace(':proposalId', proposalId),
       {
@@ -86,7 +89,7 @@ export class ProposalApiService {
   static getPopularProposals(
     questionId: string,
     headers: ApiServiceHeadersType = {}
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       PATH_TOP_PROPOSALS.replace(':questionId', questionId),
       {
@@ -108,8 +111,8 @@ export class ProposalApiService {
     ideaIds?: string,
     order?: string,
     headers?: ApiServiceHeadersType
-  ): AxiosPromise<AxiosResponse> {
-    const params = {
+  ): Promise<void | AxiosResponse<ProposalsType>> {
+    const params: Record<string, string | number | undefined> = {
       questionId,
       content,
       seed,

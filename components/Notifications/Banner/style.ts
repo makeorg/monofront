@@ -10,7 +10,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import {
   CloseButtonStyle,
   WhiteButtonStyle,
-} from '@make.org/ui/elements/Buttons/style';
+} from '@make.org/ui/elements/ButtonsElements';
 import { ColumnToRowElementStyle } from '@make.org/ui/elements/FlexElements';
 import { Link } from 'react-router-dom';
 

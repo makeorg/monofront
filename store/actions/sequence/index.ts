@@ -5,7 +5,8 @@ import {
   QualificationType,
   VoteType,
   ReducerAction,
-  Dispatch
+  Dispatch,
+  ProposalCardStateType,
 } from '@make.org/types';
 import { TopComponentContextValue } from '../../topComponentContext';
 import {
@@ -17,151 +18,176 @@ import {
   SEQUENCE_LOAD_PROPOSALS,
   SEQUENCE_PROPOSAL_UNVOTE,
   SEQUENCE_PROPOSAL_VOTE,
-  SEQUENCE_RESET_INDEX,
   SEQUENCE_RESET_VOTED_PROPOSALS,
   SEQUENCE_SET_INDEX,
-  SEQUENCE_UNLOAD_PROPOSALS,
   SEQUENCE_UPDATE_CARD_STATE,
 } from '../../actionTypes';
 
-export const loadSequenceCards = (cards: SequenceCardType[]): ReducerAction => ({
+export const loadSequenceCards = (
+  cards: SequenceCardType[]
+): ReducerAction => ({
   type: SEQUENCE_LOAD_CARDS,
   payload: { cards },
 });
 
 export const updateSequenceCardState = (
   index: number,
-  newCardState: Partial<SequenceCardType>
+  newCardState: ProposalCardStateType
 ): ReducerAction => ({
   type: SEQUENCE_UPDATE_CARD_STATE,
   payload: { index, newCardState },
 });
 
-export const resetSequenceVotedProposals = (questionSlug: string): ReducerAction => ({
+export const resetSequenceVotedProposals = (
+  questionSlug: string
+): ReducerAction => ({
   type: SEQUENCE_RESET_VOTED_PROPOSALS,
   payload: { questionSlug },
 });
 
-export const loadSequenceProposals = (proposals: ProposalType[]): ReducerAction => ({
+export const loadSequenceProposals = (
+  proposals: ProposalType[]
+): ReducerAction => ({
   type: SEQUENCE_LOAD_PROPOSALS,
   payload: { proposals },
 });
 
-export const unloadSequenceProposals = () => (dispatch: Dispatch): void => dispatch({ type: SEQUENCE_UNLOAD_PROPOSALS });
+export const incrementSequenceIndex =
+  () =>
+  (dispatch: Dispatch): void =>
+    dispatch({ type: SEQUENCE_INCREMENT_INDEX });
 
-export const resetSequenceIndex = () => (dispatch: Dispatch): void => dispatch({ type: SEQUENCE_RESET_INDEX });
-
-export const incrementSequenceIndex = () => (dispatch: Dispatch): void => dispatch({ type: SEQUENCE_INCREMENT_INDEX });
-
-export const decrementSequenceIndex = () => (dispatch: Dispatch): void => dispatch({ type: SEQUENCE_DECREMENT_INDEX });
+export const decrementSequenceIndex =
+  () =>
+  (dispatch: Dispatch): void =>
+    dispatch({ type: SEQUENCE_DECREMENT_INDEX });
 
 export const setSequenceIndex = (index: number): ReducerAction => ({
   type: SEQUENCE_SET_INDEX,
   payload: { index },
 });
 
-export const unvote = (proposal: ProposalType, newVotes: VoteType[], context: string): void => (dispatch: Dispatch, getState: () => StateRoot): ReducerAction => {
-  if (context !== TopComponentContextValue.getSequenceProposal()) {
-    return;
-  }
-  const { cards, currentIndex } = getState().sequence;
+export const unvote =
+  (proposal: ProposalType, newVotes: VoteType[], context: string) =>
+  (dispatch: Dispatch, getState: () => StateRoot): void => {
+    if (context !== TopComponentContextValue.getSequenceProposal()) {
+      return;
+    }
+    const { sequence } = getState();
+    const { cards = [], currentIndex = 0 } = sequence || {};
 
-  dispatch({
-    type: SEQUENCE_PROPOSAL_UNVOTE,
-    payload: {
-      proposalId: proposal.id,
-      questionSlug: proposal.question.slug,
-    },
-  });
+    dispatch({
+      type: SEQUENCE_PROPOSAL_UNVOTE,
+      payload: {
+        proposalId: proposal.id,
+        questionSlug: proposal.question.slug,
+      },
+    });
 
-  const proposalSequenceCard = cards[currentIndex];
+    const proposalSequenceCard = cards[currentIndex];
 
-  dispatch(
-    updateSequenceCardState(currentIndex, {
-      ...proposalSequenceCard.state,
-      votes: newVotes,
-    })
-  );
-};
+    dispatch(
+      updateSequenceCardState(currentIndex, {
+        ...proposalSequenceCard.state,
+        votes: newVotes,
+      })
+    );
+  };
 
-export const vote = (proposal: ProposalType, newVotes: VoteType[], context: string): void => (dispatch: Dispatch, getState: () => StateRoot): ReducerAction => {
-  if (context !== TopComponentContextValue.getSequenceProposal()) {
-    return;
-  }
-  const { cards, currentIndex } = getState().sequence;
+export const vote =
+  (proposal: ProposalType, newVotes: VoteType[], context: string) =>
+  (dispatch: Dispatch, getState: () => StateRoot): void => {
+    if (context !== TopComponentContextValue.getSequenceProposal()) {
+      return;
+    }
+    const { sequence } = getState();
+    const { cards = [], currentIndex = 0 } = sequence || {};
 
-  dispatch({
-    type: SEQUENCE_PROPOSAL_VOTE,
-    payload: {
-      proposalId: proposal.id,
-      questionSlug: proposal.question.slug,
-    },
-  });
+    dispatch({
+      type: SEQUENCE_PROPOSAL_VOTE,
+      payload: {
+        proposalId: proposal.id,
+        questionSlug: proposal.question.slug,
+      },
+    });
 
-  const proposalSequenceCard = cards[currentIndex];
-  dispatch(
-    updateSequenceCardState(proposalSequenceCard.index, {
-      ...proposalSequenceCard.state,
-      votes: newVotes,
-    })
-  );
-};
+    const proposalSequenceCard = cards[currentIndex];
+    dispatch(
+      updateSequenceCardState(proposalSequenceCard.index, {
+        ...proposalSequenceCard.state,
+        votes: newVotes,
+      })
+    );
+  };
 
 const getVotesUpdatedWithQualifification = (
   votes: VoteType[],
   votedKey: string,
   qualification: QualificationType
 ) => {
-  const qualificationMatch = (qualificationItem) => qualificationItem.qualificationKey === qualification.qualificationKey;
+  const qualificationMatch = (qualificationItem: QualificationType) =>
+    qualificationItem.qualificationKey === qualification.qualificationKey;
 
-  const getUpdatedVote = (voteItem) => ({
+  const getUpdatedVote = (voteItem: VoteType) => ({
     ...voteItem,
-    qualifications: voteItem.qualifications.map((qualificationItem) => (qualificationMatch(qualificationItem) ? qualification : qualificationItem)),
+    qualifications: voteItem.qualifications.map(
+      (qualificationItem: QualificationType) =>
+        qualificationMatch(qualificationItem)
+          ? qualification
+          : qualificationItem
+    ),
   });
 
-  const newVotes = votes.map((voteItem) => (voteItem.voteKey === votedKey && voteItem.hasVoted === true
-    ? getUpdatedVote(voteItem)
-    : voteItem));
+  const newVotes = votes.map(voteItem =>
+    voteItem.voteKey === votedKey && voteItem.hasVoted === true
+      ? getUpdatedVote(voteItem)
+      : voteItem
+  );
 
   return newVotes;
 };
 
-export const qualify = (
-  proposalId: string,
-  votedKey: string,
-  qualification: QualificationType,
-  context: string
-) => (dispatch: Dispatch, getState: () => StateRoot): ReducerAction => {
-  if (context !== TopComponentContextValue.getSequenceProposal()) {
-    return;
-  }
-  const { cards, currentIndex } = getState().sequence;
-  const proposalSequenceCard = cards[currentIndex];
-  const { votes } = proposalSequenceCard.state || { votes: [] };
-  const newVotes = getVotesUpdatedWithQualifification(
-    votes,
-    votedKey,
-    qualification
-  );
+export const qualify =
+  (
+    proposalId: string,
+    votedKey: string,
+    qualification: QualificationType,
+    context: string
+  ) =>
+  (dispatch: Dispatch, getState: () => StateRoot): void => {
+    if (context !== TopComponentContextValue.getSequenceProposal()) {
+      return;
+    }
+    const { sequence } = getState();
+    const { cards = [], currentIndex = 0 } = sequence || {};
+    const proposalSequenceCard = cards[currentIndex];
+    const { votes } = proposalSequenceCard.state || { votes: [] };
+    const newVotes = getVotesUpdatedWithQualifification(
+      votes,
+      votedKey,
+      qualification
+    );
 
-  dispatch(
-    updateSequenceCardState(proposalSequenceCard.index, {
-      ...proposalSequenceCard.state,
-      votes: newVotes,
-    })
-  );
-};
+    dispatch(
+      updateSequenceCardState(proposalSequenceCard.index, {
+        ...proposalSequenceCard.state,
+        votes: newVotes,
+      })
+    );
+  };
 
 export const persistDemographics = (
   type: string,
   value: string,
   questionSlug: string
-):ReducerAction => ({
+): ReducerAction => ({
   type: SEQUENCE_DEMOGRAPHICS_PERSIST,
   payload: { type, value, questionSlug },
 });
 
-export const addQuestionToDemographics = (questionSlug: string): ReducerAction => ({
+export const addQuestionToDemographics = (
+  questionSlug: string
+): ReducerAction => ({
   type: SEQUENCE_DEMOGRAPHICS_ADD_QUESTION,
   payload: { questionSlug },
 });

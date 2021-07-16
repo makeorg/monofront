@@ -33,19 +33,20 @@
 			"path": "utils"
 		},
 		{
-			"name": "🧑🏼‍🔬 Store",
+			"name": "🧑🏼‍🌾 Store",
 			"path": "store"
 		}
 	],
 	"settings": {
-	  "typescript.validate.enable": false,
-	  "javascript.validate.enable": false,
+		"javascript.validate.enable": false,
 	  "editor.formatOnSave": false,
 	  "editor.tabSize": 2,
 	  "editor.codeActionsOnSave": {
 		"source.fixAll.eslint": true
 	  },
-	  "git.ignoreLimitWarning": true
+		"git.ignoreLimitWarning": true,
+		"tslint.packageManager": "yarn",
+		"tslint.configFile": "./tsconfig.json"
 	}
   }
   

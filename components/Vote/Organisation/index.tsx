@@ -9,11 +9,11 @@ import { TYPE_ORGANISATION } from '@make.org/utils/constants/user';
 import { OrganisationsVoteWrapperStyle } from './style';
 
 type Props = {
-  organisations: OrganisationSoftType[],
-  country: string,
+  organisations: OrganisationSoftType[];
+  country: string;
 };
 
-export const OrganisationsVote: React.FC<Props> = (props) => {
+export const OrganisationsVote: React.FC<Props> = props => {
   const { organisations, country } = props;
 
   if (!organisations.length) {
@@ -25,9 +25,9 @@ export const OrganisationsVote: React.FC<Props> = (props) => {
       {organisations.map((organisation, index) => (
         <React.Fragment key={organisation.organisationId}>
           {!!index && index + 1 < organisations.length && ', '}
-          {!!index
-            && index + 1 === organisations.length
-            && i18n.t('profile.organisation.and')}
+          {!!index &&
+            index + 1 === organisations.length &&
+            i18n.t('profile.organisation.and')}
           <RedLinkRouterStyle
             to={getOrganisationProfileLink(
               country,

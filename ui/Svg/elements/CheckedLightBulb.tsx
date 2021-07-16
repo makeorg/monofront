@@ -1,7 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import { SvgPropsType } from '@make.org/types';
 
-export const SvgCheckedLightBulb: React.FC<React.HTMLAttributes> = (props) => (
+export const SvgCheckedLightBulb: React.FC<SvgPropsType> = (
+  props: SvgPropsType
+) => (
   <svg width={114} height={166} viewBox="0 0 114 166" {...props}>
     <g fill="none" fillRule="evenodd">
       <g fillRule="nonzero">

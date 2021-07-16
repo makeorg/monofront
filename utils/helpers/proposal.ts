@@ -4,10 +4,7 @@ import {
   MAX_PROPOSAL_LENGTH,
   PROPOSALS_LISTING_LIMIT,
 } from '@make.org/utils/constants/proposal';
-import {
-  ProposalsType,
-  ProposalType
-} from '@make.org/types';
+import { ProposalsType, ProposalType } from '@make.org/types';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { i18n } from '@make.org/utils/i18n';
 import { TRANSLATION_NAMESPACE } from '@make.org/utils/i18n/constants';
@@ -35,7 +32,12 @@ export const proposalHasValidLength = (length = 0): boolean => {
  * Search the first no voted proposal
  * @type {Object|undefined}
  */
-export const searchFirstUnvotedProposal = (proposals: ProposalType[]): ProposalType => proposals.find((proposal) => proposal.votes.every((vote) => vote.hasVoted === false));
+export const searchFirstUnvotedProposal = (
+  proposals: ProposalType[]
+): ProposalType | undefined =>
+  proposals.find(proposal =>
+    proposal.votes.every(vote => vote.hasVoted === false)
+  );
 
 export const searchProposals = async (
   country: string,
@@ -47,7 +49,7 @@ export const searchProposals = async (
   tagsIds?: string,
   sortTypeKey?: string,
   ideaIds?: string
-): Promise<ProposalsType> => {
+): Promise<ProposalsType | null> => {
   const skip = page * limit;
 
   const result = await ProposalService.searchProposals(
@@ -69,11 +71,11 @@ export const searchTaggedProposals = async (
   country: string,
   questionId: string,
   TagIdsArray: string[] = [],
-  seed?:number,
+  seed?: number,
   page = 0,
   sortTypeKey = AVAILABLE_ALGORITHMS.TAGGED_FIRST.value,
   ideaIds?: string
-): Promise<ProposalsType> => {
+): Promise<ProposalsType | null> => {
   const limit = PROPOSALS_LISTING_LIMIT;
   const skip = page * limit;
   const tagsIds = TagIdsArray.length ? TagIdsArray.join(',') : undefined;
@@ -92,7 +94,8 @@ export const searchTaggedProposals = async (
   return response;
 };
 
-export const getProposalCardIndex = (index = 0): string => `proposal_list_card_${index}`;
+export const getProposalCardIndex = (index = 0): string =>
+  `proposal_list_card_${index}`;
 
 /**
  * Rendering title depending on feed algorithm type
@@ -115,7 +118,10 @@ export const getProposalsListTitle = (sortKey: string): string => {
  * @param {QuestionType} question
  * @return {string}
  */
-export const getLocalizedBaitText = (language: string, questionId: string): string => {
+export const getLocalizedBaitText = (
+  language: string,
+  questionId: string
+): string => {
   const localizedBaitText = i18n.getResource(
     language,
     TRANSLATION_NAMESPACE,
@@ -123,9 +129,9 @@ export const getLocalizedBaitText = (language: string, questionId: string): stri
   );
 
   if (!localizedBaitText) {
-    Logger.logError({
-      message: `No proposal bait for questionId:${questionId} with language:${language}`,
-    });
+    Logger.logError(
+      `No proposal bait for questionId:${questionId} with language:${language}`
+    );
     return i18n.getResource(
       DEFAULT_LANGUAGE,
       TRANSLATION_NAMESPACE,

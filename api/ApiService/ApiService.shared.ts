@@ -1,5 +1,5 @@
 /* eslint-disable max-classes-per-file */
-import axios, { AxiosResponse } from 'axios';
+import axios, { Method, AxiosResponse } from 'axios';
 import axiosRetry from 'axios-retry';
 import { Logger } from '@make.org/utils/services/Logger';
 import { APP_NAME } from '@make.org/utils/constants/config';
@@ -8,15 +8,17 @@ import { env } from '@make.org/assets/env';
 import { ErrorResponse } from '@make.org/types';
 import { ApiServiceError } from './ApiServiceError';
 
-const HOSTNAME = (typeof window !== 'undefined' && window?.location?.hostname) || null;
+const HOSTNAME =
+  (typeof window !== 'undefined' && window?.location?.hostname) || null;
 
-const LOCATION_PARAMS = (typeof window !== 'undefined' && window?.location?.search) || '';
+const LOCATION_PARAMS =
+  (typeof window !== 'undefined' && window?.location?.search) || '';
 
 const API_URL = env.apiUrl();
 
 axiosRetry(axios, {
   retries: 5,
-  retryDelay: (retryCount) => retryCount * 100,
+  retryDelay: retryCount => retryCount * 100,
 });
 
 /**
@@ -36,9 +38,9 @@ export const handleErrors = (
   const responseData = error.response?.data || null;
   const url = error.response?.config?.url || requestUrl || 'none';
   const method = error.response?.config?.method || requestMethod || 'none';
-  const isNetworkError = !!error.isAxiosError && !error.response;
   const isServerError = status && status >= 500;
-  const isClientOffline = typeof window !== 'undefined' && window?.navigator?.onLine === false;
+  const isClientOffline =
+    typeof window !== 'undefined' && window?.navigator?.onLine === false;
   const uuid = uuidv4();
 
   let logged;
@@ -72,24 +74,6 @@ export const handleErrors = (
       );
       logged = true;
       break;
-    case isNetworkError:
-      Logger.logError(
-        new ApiServiceError(
-          `API call error - no response - ${error.message}`,
-          ...commonArguments
-        )
-      );
-      logged = true;
-      break;
-    case !error.response:
-      Logger.logError(
-        new ApiServiceError(
-          `API call error - not axios error - ${error.message}`,
-          ...commonArguments
-        )
-      );
-      logged = true;
-      break;
     case !error.request:
       Logger.logWarning(
         new ApiServiceError(
@@ -118,21 +102,24 @@ export const handleErrors = (
 };
 
 type OptionsType = {
-  headers?: Readonly<Record<string, string | boolean>>
-  allowedHeaders?: string[]
-  body?: string
-  params?: string
-  method?: string
-  httpsAgent?: string
-  withCredentials?: boolean
-}
+  headers?: Readonly<Record<string, string | null>>;
+  allowedHeaders?: string[];
+  body?: string;
+  params?: string;
+  method?: Method;
+  httpsAgent?: string;
+  withCredentials?: boolean;
+};
 
 class ApiServiceSharedClass {
   // eslint-disable-next-line class-methods-use-this
-  callApi(url: string, options: OptionsType = {}): Promise<AxiosResponse> {
+  callApi(
+    url: string,
+    options: OptionsType = {}
+  ): Promise<void | AxiosResponse> {
     const paramsQuery = new URLSearchParams(LOCATION_PARAMS).toString();
     const requestId = uuidv4();
-    const defaultHeaders = {
+    const defaultHeaders: Readonly<Record<string, string | null>> = {
       'x-hostname': HOSTNAME,
       'x-make-app-name': APP_NAME,
       'x-make-location': 'core',
@@ -146,8 +133,8 @@ class ApiServiceSharedClass {
     }
 
     if (options.allowedHeaders) {
-      Object.keys(headers).forEach((key) => {
-        if (!options.allowedHeaders.includes(key)) {
+      Object.keys(headers).forEach(key => {
+        if (options.allowedHeaders && !options.allowedHeaders.includes(key)) {
           delete headers[key];
         }
       });
@@ -166,7 +153,7 @@ class ApiServiceSharedClass {
       withCredentials:
         options.withCredentials !== undefined ? options.withCredentials : true,
       httpsAgent: options.httpsAgent || undefined,
-    }).catch((error) => handleErrors(error, apiUrl, options.method, requestId));
+    }).catch(error => handleErrors(error, apiUrl, options.method, requestId));
   }
 }
 

@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { SvgPreviousArrowLeft } from '@make.org/ui/Svg/elements';
 import { color, typography } from 'athena-design-tokens';
-import { UnstyledButtonStyle } from '@make.org/ui/elements/Buttons/style';
+import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { QuestionThemeType, SvgPropsType } from '@make.org/types';
 
 export const ProgressPreviousButtonStyle = styled(UnstyledButtonStyle)`
   flex: 0;
@@ -16,7 +17,7 @@ export const ProgressPreviousButtonStyle = styled(UnstyledButtonStyle)`
   }
 `;
 
-export const ProgressIconStyle = styled(SvgPreviousArrowLeft)`
+export const ProgressIconStyle = styled(SvgPreviousArrowLeft)<SvgPropsType>`
   width: 13px;
 `;
 
@@ -40,12 +41,15 @@ export const ProgressBarWrapperStyle = styled.div`
   border: 1px solid ${color.grey};
 `;
 
-export const ProgressBarStyle = styled.div`
+export const ProgressBarStyle = styled.div<{
+  theme: QuestionThemeType;
+  percentWidth?: number | string;
+}>`
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
-  width: ${(props) => props.percentWidth};
-  background-color: ${(props) => props.theme.color};
+  width: ${({ percentWidth }) => percentWidth};
+  background-color: ${({ theme }) => theme.color};
   transition: width ease-in 0.5s;
 `;

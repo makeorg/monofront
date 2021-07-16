@@ -2,15 +2,15 @@ import React, { Fragment } from 'react';
 import athena from 'athena-design-tokens';
 import styled from 'styled-components';
 import { RedLinkHTMLElementStyle } from '@make.org/ui/elements/LinkElements';
-import { ExternalLinkIconStyle } from '@make.org/ui/elements/Buttons/style';
+import { ExternalLinkIconStyle } from '@make.org/ui/elements/ButtonsElements';
 import { env } from '../../env';
 
-const ColorboxStyle = styled.div`
+const ColorboxStyle = styled.div<{ col?: string }>`
   width: 25px;
   height: 25px;
   border: 1px solid;
   margin: 5px;
-  background-color: ${(props) => props.col};
+  background-color: ${props => props.col};
 `;
 
 const ColorGroupName = athena.color;
@@ -49,7 +49,7 @@ export const Colors: React.FC = () => (
           <th scope="col">value</th>
         </tr>
       </thead>
-      {colors.map((c) => (
+      {colors.map(c => (
         <Fragment key={c.colorName}>
           <tbody>
             <tr>

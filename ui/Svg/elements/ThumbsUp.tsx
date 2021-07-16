@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import { SvgPropsType } from '@make.org/types';
 
-export const SvgThumbsUp: React.FC<React.HTMLAttributes> = (props) => (
+export const SvgThumbsUp: React.FC<SvgPropsType> = (props: SvgPropsType) => (
   <svg width={25} height={25} viewBox="0 0 25 25" {...props}>
     <g fill="none" fillRule="evenodd">
       <path

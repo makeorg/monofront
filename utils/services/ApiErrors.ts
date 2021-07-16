@@ -10,15 +10,16 @@ import { Logger } from './Logger';
 export const mapErrors = (
   internalErrors: ErrorObjectType[],
   apiErrors: ErrorObjectType[],
-  logId?: string
+  logId: string
 ): ErrorObjectType[] => {
   const errors: ErrorObjectType[] = apiErrors.map(
     (apiError: ErrorObjectType) => {
       const apiErrorField = apiError.field.toLowerCase();
       const apiErrorMessage = i18n.t(`common.form.messages.${apiError.key}`);
       const errorMatch = internalErrors.find(
-        (internalError: ErrorObjectType) => apiErrorField === internalError.field
-          && apiError.key === internalError.key
+        (internalError: ErrorObjectType) =>
+          apiErrorField === internalError.field &&
+          apiError.key === internalError.key
       );
 
       if (typeof errorMatch !== 'undefined') {
@@ -28,12 +29,10 @@ export const mapErrors = (
           message: errorMatch.message,
         };
       }
-
       Logger.logError({
         message: `Unexpected error: "field": "${apiErrorField}", "key": "${apiError.key}", "message": "${apiError.message}"`,
         logId,
       });
-
       return {
         field: apiErrorField,
         key: apiError.key,

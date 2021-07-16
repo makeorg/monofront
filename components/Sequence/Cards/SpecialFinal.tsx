@@ -7,19 +7,22 @@ import {
   trackDisplayFinalCard,
 } from '@make.org/utils/services/Tracking';
 import { resetSequenceVotedProposals } from '@make.org/store/actions/sequence';
-import { LinkAsRedButtonStyle } from '@make.org/ui/elements/Buttons/style';
+import { LinkAsRedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { useAppContext } from '@make.org/store';
 import { SequenceMainTitleStyle, SequenceParagraphStyle } from './style';
 
-export const SpecialFinalCard: React.FC = () => {
-  const { dispach, state } = useAppContext();
-  const { currentQuestion } = state;
+type Props = {
+  questionSlug: string;
+};
+
+export const SpecialFinalCard: React.FC<Props> = ({ questionSlug }) => {
+  const { dispatch } = useAppContext();
   const { country } = useParams();
 
   useEffect(() => {
     trackDisplayFinalCard();
-    return () => dispach(resetSequenceVotedProposals(currentQuestion));
-  }, [currentQuestion, dispach]);
+    return () => dispatch(resetSequenceVotedProposals(questionSlug));
+  }, [questionSlug, dispatch]);
 
   return (
     <>
@@ -30,7 +33,7 @@ export const SpecialFinalCard: React.FC = () => {
         {i18n.t('special_final_card.subtitle')}
       </SequenceParagraphStyle>
       <LinkAsRedButtonStyle
-        to={getParticipateLink(country, currentQuestion)}
+        to={getParticipateLink(country, questionSlug)}
         onClick={() => trackClickOperationPage()}
       >
         {i18n.t('special_final_card.cta_text')}

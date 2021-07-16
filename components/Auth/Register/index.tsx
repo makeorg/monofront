@@ -11,8 +11,8 @@ import {
   TextSeparatorStyle,
   SeparatorStyle,
 } from '@make.org/ui/elements/Separators';
-import { RedLinkButtonStyle } from '@make.org/ui/elements/Buttons/style';
-import { ExtraParagraphStyle } from '@make.org/ui/elements/Form/Styled/Content';
+import { RedLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
+import { ExtraParagraphStyle } from '@make.org/ui/elements/FormElements';
 import { FacebookAuthentication } from '@make.org/components/Auth/Social/FacebookAuthentication';
 import { GoogleAuthentication } from '@make.org/components/Auth/Social/GoogleAuthentication';
 import { modalShowLogin, modalClose } from '@make.org/store/actions/modal';
@@ -47,7 +47,8 @@ export const Register: React.FC = () => {
   const [errors, setErrors] = useState<ErrorObjectType[]>([]);
   const [waitingCallback, setWaitingCallback] = useState<boolean>(false);
   const [needLegalConsent, displayLegalConsent] = useState<boolean>(false);
-  const userIsAChild = user && user.profile && user.profile.age && user.profile.age < 15;
+  const userIsAChild =
+    user && user.profile && user.profile.age && user.profile.age < 15;
 
   const handleLoginModal = () => {
     dispatch(modalShowLogin());

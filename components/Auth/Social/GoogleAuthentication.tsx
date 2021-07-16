@@ -1,5 +1,8 @@
 import React from 'react';
-import GoogleLogin from 'react-google-login';
+import GoogleLogin, {
+  GoogleLoginResponse,
+  GoogleLoginResponseOffline,
+} from 'react-google-login';
 import { GOOGLE_PROVIDER_ENUM } from '@make.org/api/UserApiService';
 import { GOOGLE_LOGIN_ID } from '@make.org/utils/constants/config';
 import { SvgGoogleLogoG } from '@make.org/ui/Svg/elements';
@@ -28,10 +31,12 @@ import { useAppContext } from '../../../store';
  */
 export const GoogleAuthentication: React.FC = () => {
   const { dispatch, state } = useAppContext();
-  const { privacyPolicy } = state.appConfig;
+  const { privacyPolicy } = state.appConfig || {};
 
   /** Google login method callback */
-  const handleGoogleLoginSuccess = (response) => {
+  const handleGoogleLoginSuccess = (
+    response: GoogleLoginResponse | GoogleLoginResponseOffline
+  ) => {
     const success = () => {
       dispatch(loginSocialSuccess());
       dispatch(getUser());
@@ -41,15 +46,17 @@ export const GoogleAuthentication: React.FC = () => {
       trackAuthenticationSocialFailure();
     };
     const unexpectedError = () => dispatch(modalClose());
+    let accessToken = '';
+    if ('accessToken' in response) {
+      accessToken = response.accessToken;
+    }
 
     UserService.checkSocialPrivacyPolicy(
       GOOGLE_PROVIDER_ENUM,
-      response.accessToken,
+      accessToken,
       privacyPolicy,
       () => {
-        dispatch(
-          modalShowDataPolicySocial(GOOGLE_PROVIDER_ENUM, response.accessToken)
-        );
+        dispatch(modalShowDataPolicySocial(GOOGLE_PROVIDER_ENUM, accessToken));
       },
       success,
       handleErrors,
@@ -57,7 +64,7 @@ export const GoogleAuthentication: React.FC = () => {
     );
   };
 
-  const handleGoogleLoginFailure = (response) => {
+  const handleGoogleLoginFailure = (response: any) => {
     if (response?.error === 'popup_closed_by_user') {
       Logger.logInfo('Google auth popup closed by user');
 
@@ -81,7 +88,7 @@ export const GoogleAuthentication: React.FC = () => {
       buttonText="Google"
       onSuccess={handleGoogleLoginSuccess}
       onFailure={handleGoogleLoginFailure}
-      render={(renderProps) => (
+      render={renderProps => (
         <GoogleButtonStyle onClick={renderProps.onClick} type="button">
           <SvgGoogleLogoG aria-hidden focusable="false" />
           <ScreenReaderItemStyle>Google</ScreenReaderItemStyle>

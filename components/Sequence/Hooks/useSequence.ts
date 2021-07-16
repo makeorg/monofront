@@ -1,19 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState } from 'react';
-import {
-  buildCards,
-  findIndexOfFirstUnvotedCard,
-} from '@make.org/utils/helpers/sequence';
+import { useEffect, useState, useMemo } from 'react';
+import { buildCards } from '@make.org/utils/helpers/sequence';
 import { SequenceCardType, QuestionType, ProposalType } from '@make.org/types';
-import { searchFirstUnvotedProposal } from '@make.org/utils/helpers/proposal';
 import { scrollToTop } from '@make.org/utils/helpers/styled';
-import { CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL } from '@make.org/utils/constants/card';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import {
-  resetSequenceIndex,
-  setSequenceIndex,
   loadSequenceCards,
   resetSequenceVotedProposals,
+  setSequenceIndex,
 } from '@make.org/store/actions/sequence';
 import { useAppContext } from '@make.org/store';
 import { useSequenceTracking } from './useSequenceTracking';
@@ -22,12 +16,14 @@ import { useSequenceExtraDataAutoSubmit } from './useSequenceExtraDataAutoSubmit
 import { useSequenceQueryParams } from './useSequenceQueryParams';
 
 type ReturnFunctionType = {
-  withProposalButton: boolean
-  country: string
-  isLoading: boolean
-  currentCard: SequenceCardType
-}
-type ExecuteStartSequence = (questionId: string, votedIds: string[]) => Promise<ProposalType[]>
+  isLoading: boolean;
+  currentCard: SequenceCardType | null;
+  isEmptySequence: boolean;
+};
+type ExecuteStartSequence = (
+  questionId: string,
+  votedIds: string[]
+) => Promise<ProposalType[] | null>;
 
 /**
  * Renders Sequence component with Intro / Push Proposal / Sign Up & Proposal Cards
@@ -35,58 +31,54 @@ type ExecuteStartSequence = (questionId: string, votedIds: string[]) => Promise<
 export const useSequence = (
   question: QuestionType,
   isStandardSequence: boolean,
+  country: string,
   executeStartSequence: ExecuteStartSequence
 ): ReturnFunctionType => {
   // Dispatch
   const { state, dispatch } = useAppContext();
 
   // StateRoot
-  const { appConfig = {}, proposal = {}, sequence = {} } = state;
-  const { country } = appConfig;
-  const { hasProposed } = proposal;
-  const { isLoggedIn } = selectAuthentication(state);
+  const { proposal, sequence } = state;
+  const { hasProposed = false } = proposal || {};
+  const { isLoggedIn } = selectAuthentication(state) || {};
   const persistedDemographics = sequence && sequence.demographics;
-  const {
-    cards: sCards,
-    currentIndex: sCurrentIndex,
-    votedProposalIds: sVotedProposalIds,
-  } = sequence;
+  const { currentIndex = 0, votedProposalIds } = sequence || {};
 
-  const isPushProposal = !!(
-    sCards
-    && sCards[sCurrentIndex]?.type === CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL
-  );
-  const votedProposalIdsOfQuestion = (sVotedProposalIds && sVotedProposalIds[question?.slug]) || [];
-  const currentIndex = sCurrentIndex || 0;
-  const cards = sCards;
+  const votedProposalIdsOfQuestion = votedProposalIds[question?.slug] || [];
 
   // State
-  const [currentCard, setCurrentCard] = useState(null);
+  const [currentCard, setCurrentCard] = useState<SequenceCardType | null>(null);
   const [isLoading, setLoading] = useState(true);
-  const [withProposalButton, setWithProposalButton] = useState(
-    !!question?.canPropose
+  const [cards, setCards] = useState<SequenceCardType[]>([]);
+  const [sequenceProposals, setSequenceProposals] = useState<ProposalType[]>(
+    []
   );
-  const [sequenceProposals, setSequenceProposals] = useState([]);
 
   // Sequence hooks
   useSequenceTracking();
   useSequenceVoteOnlyNotification(question);
-  const { firstProposal, introCardParam, pushProposalParam } = useSequenceQueryParams();
+  const { firstProposalParam, introCardParam, pushProposalParam } =
+    useSequenceQueryParams();
   useSequenceExtraDataAutoSubmit(question.slug, cards, currentIndex);
 
   // Other
   const isFR = country === 'FR';
+  const withDemographicsCard = useMemo(
+    () => isFR && !persistedDemographics?.type,
+    []
+  );
 
   // scroll to top
   useEffect(() => {
     scrollToTop();
+    dispatch(setSequenceIndex(0));
   }, []);
 
   // load sequence data
   useEffect(() => {
     const loadSequenceData = async () => {
-      const votedIds = firstProposal
-        ? [firstProposal, ...votedProposalIdsOfQuestion]
+      const votedIds = firstProposalParam
+        ? [firstProposalParam, ...votedProposalIdsOfQuestion]
         : votedProposalIdsOfQuestion;
 
       if (question) {
@@ -94,24 +86,24 @@ export const useSequence = (
           question.questionId,
           votedIds
         );
+        if (!proposals || proposals.length === 0) {
+          setLoading(false);
+        }
+
         if (proposals) {
           setSequenceProposals(proposals);
         }
       }
-      dispatch(resetSequenceIndex()); // @toDo : check if realy needed - see useEffect init sequence index
-
       setLoading(false);
     };
     loadSequenceData();
-  }, [question, firstProposal, isLoggedIn, hasProposed]);
+  }, [question, firstProposalParam, isLoggedIn, hasProposed]);
 
   // build cards
   useEffect(() => {
-    if (!question || !sequenceProposals || !sequenceProposals.length) {
+    if (!question || !sequenceProposals.length) {
       return;
     }
-    const withDemographicsCard = isFR && !persistedDemographics?.type;
-
     const buildedCards: SequenceCardType[] = buildCards(
       sequenceProposals,
       question.sequenceConfig,
@@ -122,19 +114,9 @@ export const useSequence = (
       pushProposalParam,
       withDemographicsCard
     );
-
+    setCards(buildedCards);
     dispatch(loadSequenceCards(buildedCards));
   }, [hasProposed, sequenceProposals]);
-
-  // init sequence index
-  useEffect(() => {
-    const indexOfFirstUnvotedCard: number = findIndexOfFirstUnvotedCard(
-      searchFirstUnvotedProposal(sequenceProposals),
-      cards,
-      currentIndex
-    );
-    dispatch(setSequenceIndex(indexOfFirstUnvotedCard));
-  }, [cards]);
 
   // set current card
   useEffect(() => {
@@ -142,10 +124,7 @@ export const useSequence = (
       return;
     }
     setCurrentCard(cards[currentIndex]);
-    setWithProposalButton(question && question.canPropose);
-    if (isPushProposal) {
-      setWithProposalButton(false);
-    }
+    setLoading(false);
   }, [cards, currentIndex]);
 
   // reset voted proposals when unmount
@@ -159,9 +138,8 @@ export const useSequence = (
   );
 
   return {
-    withProposalButton,
-    country,
     isLoading,
     currentCard,
+    isEmptySequence: sequenceProposals.length === 0,
   };
 };

@@ -1,14 +1,11 @@
 /* eslint-disable no-underscore-dangle */
-
 import axiosRetry from 'axios-retry';
-import axios, { AxiosPromise, AxiosResponse } from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import { IApiServiceStrategy } from './index';
 import { ApiServiceShared } from './ApiService.shared';
 import { getLocationContext } from './getLocationContext';
 
 export class ApiServiceClient implements IApiServiceStrategy {
-  _instance = null;
-
   _language = '';
 
   _country = '';
@@ -23,18 +20,13 @@ export class ApiServiceClient implements IApiServiceStrategy {
 
   _isLogged = false;
 
-  _headersListeners: Map<string, string> = new Map();
+  _headersListeners: any = new Map();
 
   constructor() {
-    if (!this._instance) {
-      this._instance = this;
-    }
-
-    this._referrer = typeof window !== 'undefined' && !!window.document.referrer
-      ? window.document.referrer
-      : '';
-
-    return this._instance;
+    this._referrer =
+      typeof window !== 'undefined' && !!window.document.referrer
+        ? window.document.referrer
+        : '';
   }
 
   set language(language: string) {
@@ -93,11 +85,11 @@ export class ApiServiceClient implements IApiServiceStrategy {
     return this._customData;
   }
 
-  set headersListener(listeners: Map<(headers: string) => void, string>) {
+  set headersListener(listeners: Map<string, string>) {
     this._headersListeners = listeners;
   }
 
-  addHeadersListener(identifier: string, listener: (headers: string) => void): void {
+  addHeadersListener(identifier: string, listener: string): void {
     this._headersListeners.set(identifier, listener);
   }
 
@@ -105,7 +97,10 @@ export class ApiServiceClient implements IApiServiceStrategy {
     this._headersListeners.delete(identifier);
   }
 
-  callApi(url: string, options: { proposalId?: string, headers?: string }): AxiosPromise<AxiosResponse> {
+  callApi(
+    url: string,
+    options: { proposalId?: string; headers?: Readonly<Record<string, string>> }
+  ): Promise<void | AxiosResponse> {
     const defaultHeaders = {
       'x-make-country': this._country,
       'x-make-language': this._language,
@@ -114,7 +109,7 @@ export class ApiServiceClient implements IApiServiceStrategy {
       'x-make-location': getLocationContext(
         window.location.pathname,
         this._questionId,
-        options.proposalId
+        options.proposalId || ''
       ),
       'x-make-referrer': this._referrer,
       'x-make-custom-data': this._customData,
@@ -124,9 +119,11 @@ export class ApiServiceClient implements IApiServiceStrategy {
 
     axiosRetry(axios, {
       retries: 5,
-      retryDelay: (retryCount) => retryCount * 100,
-      retryCondition: (error) => axiosRetry.isNetworkOrIdempotentRequestError(error)
-        || (error.response && error.response.status === 401 && this._isLogged),
+      retryDelay: retryCount => retryCount * 100,
+      retryCondition: error =>
+        axiosRetry.isNetworkOrIdempotentRequestError(error) ||
+        (error.response && error.response.status === 401 && this._isLogged) ||
+        false,
     });
 
     try {
@@ -135,7 +132,12 @@ export class ApiServiceClient implements IApiServiceStrategy {
         headers,
       });
 
-      response.then((res) => this._headersListeners.forEach((listener) => listener(res.headers)));
+      response.then(res =>
+        this._headersListeners.forEach(
+          (listener: (headers: Readonly<Record<string, string>>) => void) =>
+            listener(res && res.headers)
+        )
+      );
 
       return response;
     } catch (apiServiceError) {

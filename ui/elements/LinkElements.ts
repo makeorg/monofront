@@ -3,13 +3,9 @@ import { color, typography } from 'athena-design-tokens';
 import { Link } from 'react-router-dom';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import {
-  RedButtonStyle,
-  GreyButtonStyle,
-} from './Buttons/style';
 import { SvgExternalLink } from '../Svg/elements';
 
-const linkStyle = (linkColor) => `
+const linkStyle = (linkColor: string) => `
   color: ${linkColor};
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   &:hover,
@@ -32,23 +28,4 @@ export const RedLinkRouterStyle = styled(Link)`
 
 export const RedLinkHTMLElementStyle = styled.a`
   ${linkStyle(color.brandSecondary)}
-`;
-
-export const LinkAsRedButton = styled(RedButtonStyle)`
-  display: inline-flex;
-  text-decoration: none;
-  &:hover,
-  &:focus {
-    color: ${color.white};
-    text-decoration: none;
-  }
-`;
-
-export const LinkAsGreyButton = styled(GreyButtonStyle)`
-  display: inline-flex;
-  text-decoration: none;
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
 `;

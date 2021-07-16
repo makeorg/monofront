@@ -1,22 +1,28 @@
-import { QuestionType, StateActors, StateRoot, TagType } from '@make.org/types';
+import {
+  QuestionType,
+  SingleStateQuestionType,
+  StateActors,
+  StateRoot,
+  TagType,
+} from '@make.org/types';
 
 /**
  * Questions data selector
  * @param {*} state
  */
-export const selectQuestionData = (state: StateRoot, questionSlug?: string): QuestionType => {
-  if (!questionSlug) {
-    return null;
-  }
-
-  return state.questions[questionSlug];
-};
+export const selectQuestionData = (
+  state: StateRoot,
+  questionSlug: string
+): SingleStateQuestionType => state.questions[questionSlug];
 
 /**
  * question selector
  * @param {*} state
  */
-export const selectQuestion = (state: StateRoot, questionSlug?: string): QuestionType => {
+export const selectQuestion = (
+  state: StateRoot,
+  questionSlug: string
+): QuestionType => {
   const data = selectQuestionData(state, questionSlug);
 
   return data && data.question;
@@ -28,17 +34,21 @@ export const selectQuestion = (state: StateRoot, questionSlug?: string): Questio
  */
 export const selectCurrentQuestion = (state: StateRoot): QuestionType => {
   const questionSlug = state.currentQuestion;
-  return selectQuestion(state, questionSlug);
+  return selectQuestion(state, questionSlug || '');
 };
 /**
  *  question partners
  *  @param {*} state
  */
-export const selectQuestionPartners = (state: StateRoot, slug: string): StateActors => {
-  if (!slug) {
+export const selectQuestionPartners = (
+  state: StateRoot,
+  slug: string
+): StateActors | null => {
+  if (!slug || !state.partners) {
     return null;
   }
-  return state && state.partners[slug] && state.partners[slug].actors;
+
+  return state.partners[slug] && state.partners[slug].actors;
 };
 
 /**
@@ -48,13 +58,13 @@ export const selectQuestionPartners = (state: StateRoot, slug: string): StateAct
 export const selectQuestionPopularTags = (
   state: StateRoot,
   questionSlug: string
-): TagType[] => {
-  if (!questionSlug) {
+): TagType[] | null => {
+  if (!questionSlug || !state.questions) {
     return null;
   }
   return (
-    state
-    && state.questions[questionSlug]
-    && state.questions[questionSlug].popularTags
+    state &&
+    state.questions[questionSlug] &&
+    state.questions[questionSlug].popularTags
   );
 };

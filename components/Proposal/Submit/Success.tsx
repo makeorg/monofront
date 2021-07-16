@@ -2,7 +2,7 @@ import React from 'react';
 import { i18n } from '@make.org/utils/i18n';
 import { useAppContext } from '@make.org/store';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
-import { RedButtonStyle } from '@make.org/ui/elements/Buttons/style';
+import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { modalClose } from '@make.org/store/actions/modal';
 import { trackClickKeepVoting } from '@make.org/utils/services/Tracking';
 import {

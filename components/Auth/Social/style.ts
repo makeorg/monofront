@@ -3,7 +3,7 @@ import { color } from 'athena-design-tokens';
 import { SocialNetworksColors } from '@make.org/assets/vars/Colors';
 import { SvgMailPlain } from '@make.org/ui/Svg/elements';
 import { CenterRowStyle } from '@make.org/ui/elements/FlexElements';
-import { RedButtonStyle } from '@make.org/ui/elements/Buttons/style';
+import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 
 export const AuthenticationButtonWrapperStyle = styled(CenterRowStyle)`
   width: 100%;

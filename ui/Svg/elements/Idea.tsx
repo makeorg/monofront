@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import { SvgPropsType } from '@make.org/types';
 
-export const SvgIdea: React.FC<React.HTMLAttributes> = (props) => (
+export const SvgIdea: React.FC<SvgPropsType> = (props: SvgPropsType) => (
   <svg width={30} height={30} viewBox="0 0 30 30" {...props}>
     <defs>
       <path

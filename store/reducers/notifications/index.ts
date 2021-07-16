@@ -1,5 +1,5 @@
 import { NOTIFICATION_LEVEL_INFORMATION } from '@make.org/utils/constants/notifications';
-import { NotificationsState, Reducer, ReducerAction } from '@make.org/types';
+import { Reducer, ReducerAction, StateNotification } from '@make.org/types';
 import {
   CLOSE_NOTIFICATION_BANNER,
   CLOSE_NOTIFICATION_TIP,
@@ -8,7 +8,7 @@ import {
   DISPLAY_NOTIFICATION_TIP,
 } from '../../actionTypes';
 
-export const notifications_state: NotificationsState = {
+export const notifications_state: StateNotification = {
   banner: {},
   tip: {},
   dismissed: [],

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { LoadingDots } from '@make.org/ui/elements/Loading/Dots';
+import { LoadingDots } from '@make.org/ui/components/Loading/Dots';
 import { Qualification } from './index';
 import { QualificationButton } from './Button';
 

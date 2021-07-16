@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DemographicsType } from '@make.org/types';
+import { DemographicDataType } from '@make.org/types';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import {
   RadioAsButtonWrapperStyle,
@@ -9,14 +9,14 @@ import {
 
 type Props = {
   type: string;
-  data: DemographicsType[];
+  data: DemographicDataType[];
   currentValue: string;
   setCurrentValue: (value: string) => void;
 };
 
 const handleClassName = (
   currentValue: string,
-  focusValue: string,
+  focusValue: string | null,
   elementValue: string
 ): string => {
   if (elementValue === currentValue && elementValue === focusValue) {
@@ -40,12 +40,14 @@ export const RadioDemographics: React.FC<Props> = ({
   currentValue,
   setCurrentValue,
 }) => {
-  const [focusValue, setFocusValue] = useState(null);
+  const [focusValue, setFocusValue] = useState<string | null>(null);
   const isAgeDemographic = type === 'age';
 
   return (
-    <ExtraDataRadioGroupStyle className={isAgeDemographic && 'three-columns'}>
-      {data.map((demographic) => (
+    <ExtraDataRadioGroupStyle
+      className={isAgeDemographic ? 'three-columns' : ''}
+    >
+      {data.map(demographic => (
         <RadioAsButtonWrapperStyle
           key={demographic.value}
           className={handleClassName(

@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import { SvgPropsType } from '@make.org/types';
 
-export const SvgSignOut: React.FC<React.HTMLAttributes> = (props) => (
+export const SvgSignOut: React.FC<SvgPropsType> = (props: SvgPropsType) => (
   <svg width={16} height={13} viewBox="0 0 16 13" {...props}>
     <path
       className="tofill"

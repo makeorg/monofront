@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { pxToRem } from '@make.org/utils/helpers/styled';
+import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 
 export const FlexElementStyle = styled.div`
@@ -8,7 +8,7 @@ export const FlexElementStyle = styled.div`
 
 export const ColumnToRowElementStyle = styled(FlexElementStyle)`
   flex-flow: column;
-  @media (min-width: ${pxToRem(Breakpoints.Tablet)}) {
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     flex-flow: row;
   }
 `;
@@ -54,21 +54,21 @@ export const SpaceBetweenColumnStyle = styled(ColumnElementStyle)`
 /* Column To Row Elements */
 export const CenterColumnStyleToRowStyle = styled(ColumnToRowElementStyle)`
   align-items: center;
-  @media (min-width: ${pxToRem(Breakpoints.Tablet)}) {
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     justify-content: center;
   }
 `;
 
 export const MiddleColumnToRowStyle = styled(CenterColumnStyleToRowStyle)`
   justify-content: center;
-  @media (min-width: ${pxToRem(Breakpoints.Tablet)}) {
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     align-items: center;
   }
 `;
 
 export const SpaceBetweenColumnToRowStyle = styled(ColumnToRowElementStyle)`
   align-items: center;
-  @media (min-width: ${pxToRem(Breakpoints.Tablet)}) {
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     justify-content: space-between;
   }
 `;

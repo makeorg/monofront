@@ -1,6 +1,6 @@
 import React from 'react';
 import { i18n } from '@make.org/utils/i18n';
-import { LinkAsRedButtonStyle } from '@make.org/ui/elements/Buttons/style';
+import { LinkAsRedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
 import { getParticipateLink } from '@make.org/utils/helpers/url';
 import { QuestionType } from '@make.org/types';
@@ -32,7 +32,10 @@ export const NoProposal: React.FC<Props> = ({
     <>
       <SequenceMainTitleStyle>{title}</SequenceMainTitleStyle>
       <SequenceParagraphStyle>{description}</SequenceParagraphStyle>
-      <LinkAsRedButtonStyle to={getParticipateLink(country, question.slug)}>
+      <LinkAsRedButtonStyle
+        to={getParticipateLink(country, question.slug)}
+        data-cy-link="go-participate-page"
+      >
         {i18n.t('no_proposal_card.link_text')}
       </LinkAsRedButtonStyle>
       {isDesktop && (

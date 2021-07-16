@@ -3,6 +3,7 @@ import { color, typography } from 'athena-design-tokens';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { SvgCheckedSymbol } from '@make.org/ui/Svg/elements';
+import { TextColors } from '@make.org/assets/vars/Colors';
 
 export const AuthorInfosStyle = styled.div`
   display: flex;

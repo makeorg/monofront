@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import { SvgPropsType } from '@make.org/types';
 
-export const SvgLike: React.FC<React.HTMLAttributes> = (props) => (
+export const SvgLike: React.FC<SvgPropsType> = (props: SvgPropsType) => (
   <svg width={50} height={50} viewBox="0 0 50 50" {...props}>
     <path
       className="tofill"

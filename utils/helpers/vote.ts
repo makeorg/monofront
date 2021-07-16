@@ -1,6 +1,7 @@
 import { VoteType } from '@make.org/types';
 
-export const getVoteKey = (voteKey: string, proposalId: string): string => `${voteKey}_${proposalId}`;
+export const getVoteKey = (voteKey: string, proposalId: string): string =>
+  `${voteKey}_${proposalId}`;
 
 export const getSameKey = (wantedKey: string, voteKey: string): boolean => {
   if (wantedKey === voteKey) {
@@ -12,7 +13,6 @@ export const getSameKey = (wantedKey: string, voteKey: string): boolean => {
 export const getVoteButtonClass = (
   voteKey: string,
   animateVote: string,
-  pendingVoteKey: string,
   isVoted: boolean
 ): string => {
   if (animateVote === voteKey) {
@@ -29,4 +29,7 @@ export const getVoteButtonClass = (
 export const updateAndGetVotes = (
   votesToUpdate: VoteType[],
   vote: VoteType
-): VoteType[] => votesToUpdate.map((oldVote) => (oldVote.voteKey === vote.voteKey ? vote : oldVote));
+): VoteType[] =>
+  votesToUpdate.map(oldVote =>
+    oldVote.voteKey === vote.voteKey ? vote : oldVote
+  );

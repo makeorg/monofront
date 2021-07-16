@@ -7,6 +7,7 @@
     "@make.org/types": "0.1.0",
     "@make.org/utils": "0.1.0",
     "@types/node": "^15.12.5",
+    "@types/styled-components": "^5.1.11",
     "@types/react": "^17.0.11",
     "athena-design-tokens": "^0.1.7",
     "react": "^17.0.2",

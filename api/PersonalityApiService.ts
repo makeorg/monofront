@@ -1,18 +1,20 @@
 import { ApiServiceHeadersType } from '@make.org/types';
-import { AxiosPromise, AxiosResponse } from 'axios';
+import { AxiosResponse } from 'axios';
 import { ApiService } from './ApiService';
 
 export const PERSONALITY_PATH = '/personalities/:personalityId';
-export const PERSONALITY_COMMENTS_PATH = '/personalities/:personalityId/comments';
-export const PERSONALITY_OPINION_PATH = '/personalities/:personalityId/opinions';
+export const PERSONALITY_COMMENTS_PATH =
+  '/personalities/:personalityId/comments';
+export const PERSONALITY_OPINION_PATH =
+  '/personalities/:personalityId/opinions';
 export const PERSONALITY_PROFILE = '/personalities/:personalityId/profile';
 
 export class PersonalityApiService {
   static getPersonality(
     personalityId: string,
     questionId?: string,
-    headers?: ApiServiceHeadersType = {}
-  ): AxiosPromise<AxiosResponse> {
+    headers?: ApiServiceHeadersType
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       PERSONALITY_PATH.replace(':personalityId', personalityId),
       {
@@ -33,8 +35,8 @@ export class PersonalityApiService {
     comment3: string,
     vote: string,
     qualification: string,
-    headers?: ApiServiceHeadersType = {}
-  ): AxiosPromise<AxiosResponse> {
+    headers?: ApiServiceHeadersType
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       PERSONALITY_COMMENTS_PATH.replace(':personalityId', personalityId),
       {
@@ -55,8 +57,8 @@ export class PersonalityApiService {
   static getPersonnalityOpinion(
     personalityId: string,
     questionId?: string,
-    headers?: ApiServiceHeadersType = {}
-  ): AxiosPromise<AxiosResponse> {
+    headers?: ApiServiceHeadersType
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       PERSONALITY_OPINION_PATH.replace(':personalityId', personalityId),
       {
@@ -69,7 +71,7 @@ export class PersonalityApiService {
     );
   }
 
-  static getProfile(personalityId: string): AxiosPromise<AxiosResponse> {
+  static getProfile(personalityId: string): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       PERSONALITY_PROFILE.replace(':personalityId', personalityId),
       {
@@ -87,7 +89,7 @@ export class PersonalityApiService {
     website: string,
     optInNewsletter: boolean,
     politicalParty: string
-  ): AxiosPromise<AxiosResponse> {
+  ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       PERSONALITY_PROFILE.replace(':personalityId', personalityId),
       {

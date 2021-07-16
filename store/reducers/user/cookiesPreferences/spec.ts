@@ -36,7 +36,10 @@ describe('Cookies preferences reducer', () => {
     };
 
     expect(
-      cookiesPreferences(previousState, setCookiesPreferencesInApp(expectedState))
+      cookiesPreferences(
+        previousState,
+        setCookiesPreferencesInApp(expectedState)
+      )
     ).toEqual(expectedState);
   });
 

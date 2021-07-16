@@ -1,7 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import { SvgPropsType } from '@make.org/types';
 
-export const SvgLegalConsent: React.FC<React.HTMLAttributes> = (props) => (
+export const SvgLegalConsent: React.FC<SvgPropsType> = (
+  props: SvgPropsType
+) => (
   <svg width={150} height={89} viewBox="0 0 150 89" {...props}>
     <g fill="none" fillRule="evenodd">
       <path

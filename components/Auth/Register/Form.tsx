@@ -1,18 +1,17 @@
 import React from 'react';
 import { i18n } from '@make.org/utils/i18n';
 import { ErrorObjectType, RegisterFormDataType } from '@make.org/types';
-import { RegisterCheckBox } from '@make.org/ui/elements/Form/CheckBox/RegisterCheckbox';
+import { RegisterCheckBox } from '@make.org/components/Form/RegisterCheckBox';
 import {
   FormCenterAlignStyle,
-  ConditionParagraphStyle,
   FormRequirementsStyle,
-} from '@make.org/ui/elements/Form/Styled/Content';
+} from '@make.org/ui/elements/FormElements';
 import { getFieldError } from '@make.org/utils/helpers/form';
-import { UntypedInput } from '@make.org/ui/elements/Form/UntypedInput';
-import { NumberInput } from '@make.org/ui/elements/Form/NumberInput';
-import { PasswordInput } from '@make.org/ui/elements/Form/PasswordInput';
+import { UntypedInput } from '@make.org/components/Form/UntypedInput';
+import { NumberInput } from '@make.org/components/Form/NumberInput';
+import { PasswordInput } from '@make.org/components/Form/PasswordInput';
 import { REGISTER_FORMNAME } from '@make.org/utils/constants/form';
-import { SubmitButton } from '@make.org/ui/elements/Form/SubmitButton';
+import { SubmitButton } from '@make.org/ui/components/SubmitButton';
 import {
   EmailFieldIcon,
   PasswordFieldIcon,
@@ -24,10 +23,11 @@ import {
 } from '@make.org/utils/constants/icons';
 import { useAppContext } from '@make.org/store';
 import { throttle } from '@make.org/utils/helpers/throttle';
-import { CustomPatternInput } from '@make.org/ui/elements/Form/CustomPatternInput';
+import { CustomPatternInput } from '@make.org/components/Form/CustomPatternInput';
 import { getGTUPageLink } from '@make.org/utils/helpers/url';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import * as postCodeValidator from '@make.org/utils/validator/postCode';
+import { ConditionParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { FormErrors } from '../../Form/Errors';
 import { TermsOfUseLinkStyle, NewWindowIconStyle } from '../style';
 

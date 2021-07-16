@@ -6,11 +6,14 @@ import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElemen
 import { QualificationLabelStyle, QualificationContentStyle } from './style';
 
 type Props = {
-  qualification: QualificationType,
-  voteColor: string,
+  qualification: QualificationType;
+  voteColor: string;
 };
 
-export const QualificationResults: React.FC<Props> = ({ qualification, voteColor }) => (
+export const QualificationResults: React.FC<Props> = ({
+  qualification,
+  voteColor,
+}) => (
   <SpaceBetweenRowStyle as="li">
     <QualificationLabelStyle color={voteColor}>
       {i18n.t(`qualification.${qualification.qualificationKey}`)}

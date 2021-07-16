@@ -1,14 +1,12 @@
-import {
-  DemographicsTrackingApiService,
-  TypeDemographicName,
-} from '@make.org/api/DemographicsTrackingApiService';
+import { DemographicsTrackingApiService } from '@make.org/api/DemographicsTrackingApiService';
+import { DemographicNameType } from '@make.org/types';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
 const PREFIX_QUERY_PARAMS_ACCEPTED = 'utm_';
 
-const sanitizeQueryParams = (queryParams) => {
-  const queryParamSanitized = {};
-  Object.keys(queryParams).forEach((key) => {
+const sanitizeQueryParams = (queryParams: { [n: string]: string }) => {
+  const queryParamSanitized: { [n: string]: string } = {};
+  Object.keys(queryParams).forEach((key: string) => {
     if (key.startsWith(PREFIX_QUERY_PARAMS_ACCEPTED)) {
       queryParamSanitized[key] = queryParams[key];
     }
@@ -18,7 +16,7 @@ const sanitizeQueryParams = (queryParams) => {
 };
 
 export const track = async (
-  name: TypeDemographicName,
+  name: DemographicNameType,
   value: string,
   parameters: { [n: string]: string } = {},
   success: () => void,
@@ -33,7 +31,9 @@ export const track = async (
     success();
   } catch (apiServiceError) {
     defaultUnexpectedError(apiServiceError);
-    error();
+    if (error) {
+      error();
+    }
   }
 };
 

@@ -10,7 +10,8 @@ import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
 import {
   LinkAsRedButtonStyle,
   RedLinkButtonStyle,
-} from '@make.org/ui/elements/Buttons/style';
+} from '@make.org/ui/elements/ButtonsElements';
+
 import { getParticipateLink } from '@make.org/utils/helpers/url';
 import { useParams } from 'react-router';
 import { modalShowRegister } from '@make.org/store/actions/modal';
@@ -22,10 +23,13 @@ import {
   FinalCardRegisterStyle,
 } from './style';
 
-export const FinalCard: React.FC = () => {
-  const { dispatch, state } = useAppContext();
+type Props = {
+  questionSlug: string;
+};
+
+export const FinalCard: React.FC<Props> = ({ questionSlug }) => {
+  const { dispatch } = useAppContext();
   const { country } = useParams();
-  const { currentQuestion } = state;
   const handleClick = () => {
     dispatch(modalShowRegister());
     trackClickCitizenRegister();
@@ -33,7 +37,7 @@ export const FinalCard: React.FC = () => {
 
   useEffect(() => {
     trackDisplayFinalCard();
-    return () => dispatch(resetSequenceVotedProposals(currentQuestion));
+    return () => dispatch(resetSequenceVotedProposals(questionSlug));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -46,7 +50,7 @@ export const FinalCard: React.FC = () => {
         {i18n.t('final_card.description')}
       </SequenceParagraphStyle>
       <LinkAsRedButtonStyle
-        to={getParticipateLink(country, currentQuestion)}
+        to={getParticipateLink(country, questionSlug)}
         onClick={() => trackClickOperationPage()}
       >
         {i18n.t('final_card.link_text')}

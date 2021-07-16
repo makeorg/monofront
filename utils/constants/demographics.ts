@@ -1,8 +1,8 @@
 import { i18n } from '@make.org/utils/i18n';
-import { DemographicType } from '@make.org/types';
+import { DemographicDataType } from '@make.org/types';
 
 // Should be handled by API / BO as a configuration
-export const AGE_RANGES: DemographicType[] = [
+export const AGE_RANGES: DemographicDataType[] = [
   {
     label: '8 - 15',
     value: '8-15',
@@ -33,7 +33,7 @@ export const AGE_RANGES: DemographicType[] = [
   },
 ];
 
-export const GENDER: DemographicType[] = [
+export const GENDER: DemographicDataType[] = [
   {
     label: i18n.t('demographics_card.gender.male'),
     value: 'M',
@@ -48,7 +48,7 @@ export const GENDER: DemographicType[] = [
   },
 ];
 
-export const REGION: DemographicType[] = [
+export const REGION: DemographicDataType[] = [
   {
     label: i18n.t('demographics_card.region.FR-ARA'),
     value: 'FR-ARA',

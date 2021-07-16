@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import { SvgPropsType } from '@make.org/types';
 
-export const SvgLogo: React.FC<React.HTMLAttributes> = (props) => {
+export const SvgLogo: React.FC<SvgPropsType> = (props: SvgPropsType) => {
   const { width, height, focusable, 'aria-hidden': ariaHidden } = props;
   return (
     <svg

@@ -10,15 +10,15 @@ import { QualificationButton } from './Button';
 
 type Props = {
   /** Array with qualifications received from Api */
-  qualifications: QualificationType[],
+  qualifications: QualificationType[];
   /** Proposal's Id */
-  proposalId: string,
+  proposalId: string;
   /** String containing the hash generate api side for security purpose */
-  proposalKey: string,
+  proposalKey: string;
   /** Voted key property */
-  votedKey: string,
+  votedKey: string;
   /** Index of the card */
-  index: number,
+  index: number;
 };
 
 /**
@@ -42,7 +42,7 @@ export const Qualification: React.FC<Props> = ({
         {i18n.t('qualification.title')}
       </ScreenReaderItemStyle>
       <SpaceBetweenColumnStyle as={UnstyledListStyle}>
-        {userQualifications.map((qualification) => (
+        {userQualifications.map(qualification => (
           <li
             key={getQualificationIndex(
               qualification.qualificationKey,

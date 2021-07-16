@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import athena from 'athena-design-tokens';
 import { RedLinkHTMLElementStyle } from '@make.org/ui/elements/LinkElements';
-import { ExternalLinkIconStyle } from '@make.org/ui/elements/Buttons/style';
+import { ExternalLinkIconStyle } from '@make.org/ui/elements/ButtonsElements';
 import { env } from '../../env';
 
 const FontGroupName = athena.typography.font.fontsize;
@@ -41,7 +41,7 @@ export const FontSize: React.FC = () => (
           <th scope="col">value</th>
         </tr>
       </thead>
-      {fonts.map((f) => (
+      {fonts.map(f => (
         <Fragment key={f.fontName}>
           <tbody>
             <tr>
