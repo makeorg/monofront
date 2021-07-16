@@ -13,10 +13,11 @@ import {
   SET_MOBILE_DEVICE,
 } from '../../actionTypes';
 
+// TO DO
 export const appConfig_state: StateConfig = {
-  source: '',
-  language: '',
-  country: '',
+  source: 'widget',
+  language: 'fr',
+  country: 'FR',
   translations: {},
   queryParams: {},
   countriesWithConsultations: [],

@@ -18,6 +18,7 @@ const validateParameters = (
   values: TrackingConfigurationParamType,
   expectedParameters: TrackingConfigurationParamType[] = []
 ) => {
+  return;
   const keys = Object.keys(values);
   const expectedKeys = expectedParameters.map(param => param.key);
   const extraKeys = keys.filter(key => !expectedKeys.find(el => el === key));

@@ -1,7 +1,7 @@
-import { Reducer, ReducerAction, StateRoot } from '@make.org/types';
+import { ReducerAction, StateRoot } from '@make.org/types';
 
 type SliceType = {
-  [key: string]: Reducer;
+  [key: string]: any; // TO DO
 };
 
 export const combineReducers =
@@ -17,7 +17,7 @@ export const combineReducers =
           };
         }
         return flatReducer;
-      }, {});
+      }, state);
 
 export const getCurrentTimeFormatted = (): string => {
   const currentTime = new Date();

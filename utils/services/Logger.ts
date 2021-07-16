@@ -121,7 +121,6 @@ class LoggerSingleton {
     //   }
     // }
 
-    // TO DO
     return axios('/api/logger', {
       method: 'POST',
       proxy: {

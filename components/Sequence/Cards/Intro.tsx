@@ -21,8 +21,9 @@ type Props = {
 
 export const IntroCard: React.FC<Props> = ({ configuration }) => {
   const { dispatch } = useAppContext();
-  const { description = '', title } = configuration;
-  const descriptionText = description || i18n.t('intro_card.description');
+  const { description, title } = configuration;
+  const descriptionText =
+    description || 'blablabal' || i18n.t('intro_card.description');
   const handleStartSequence = () => {
     dispatch(incrementSequenceIndex());
     trackClickStartSequence();
