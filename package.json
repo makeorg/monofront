@@ -14,7 +14,6 @@
     "store"
   ],
   "scripts": {
-    "prepare": "husky install",
     "postinstall": "husky install && rm -rf .git/hooks && ln -s ../.husky .git/hooks",
     "bootstrap": "lerna bootstrap",
     "lint": "eslint api apps components",
