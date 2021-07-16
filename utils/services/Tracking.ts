@@ -204,10 +204,6 @@ export const trackDisplayProposalPushCard = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_PROPOSAL_PUSH_CARD());
 };
 
-export const trackDisplaySignUpCard = (): void => {
-  TrackingService.sendAllTrackers(trackingEvent.DISPLAY_SIGN_UP_CARD());
-};
-
 export const trackDisplayFinalCard = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_FINAL_CARD());
 };

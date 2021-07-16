@@ -34,6 +34,7 @@ export const SubmittedDemographics: React.FC<Props> = ({ type }) => {
         {i18n.t('demographics_card.submitted_disclaimer')}
       </SequenceParagraphStyle>
       <RedButtonStyle
+        data-cy-button="demographic-continue-vote"
         onClick={() => {
           dispatch(incrementSequenceIndex());
           trackClickVoteDemographics(type);

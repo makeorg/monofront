@@ -182,7 +182,7 @@ export type StateRoot = {
   currentQuestion?: string;
   notifications: StateNotification;
   user?: StateUser;
-  questions?: StateQuestions;
+  questions: StateQuestions;
   modal: StateModal;
   partners?: StatePartners;
   panel?: StatePanel;

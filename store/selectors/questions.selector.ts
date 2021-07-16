@@ -12,14 +12,8 @@ import {
  */
 export const selectQuestionData = (
   state: StateRoot,
-  questionSlug?: string
-): SingleStateQuestionType | null => {
-  if (!questionSlug || !state.questions) {
-    return null;
-  }
-
-  return state.questions[questionSlug];
-};
+  questionSlug: string
+): SingleStateQuestionType => state.questions[questionSlug];
 
 /**
  * question selector
@@ -27,8 +21,8 @@ export const selectQuestionData = (
  */
 export const selectQuestion = (
   state: StateRoot,
-  questionSlug?: string
-): QuestionType | null => {
+  questionSlug: string
+): QuestionType => {
   const data = selectQuestionData(state, questionSlug);
 
   return data && data.question;
@@ -38,11 +32,9 @@ export const selectQuestion = (
  * Sequence question selector
  * @param {*} state
  */
-export const selectCurrentQuestion = (
-  state: StateRoot
-): QuestionType | null => {
+export const selectCurrentQuestion = (state: StateRoot): QuestionType => {
   const questionSlug = state.currentQuestion;
-  return selectQuestion(state, questionSlug);
+  return selectQuestion(state, questionSlug || '');
 };
 /**
  *  question partners

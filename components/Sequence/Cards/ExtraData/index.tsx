@@ -47,7 +47,7 @@ export const ExtraDataCard: React.FC = () => {
 
   if (type && demographics) {
     return (
-      <>
+      <div data-cy-demographic-type={type}>
         <SequenceIntroParagraphStyle>
           {setTitleByType(type)}
         </SequenceIntroParagraphStyle>
@@ -59,7 +59,7 @@ export const ExtraDataCard: React.FC = () => {
           demographics={demographics}
           currentQuestion={currentQuestion}
         />
-      </>
+      </div>
     );
   }
 

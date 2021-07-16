@@ -148,6 +148,7 @@ export const ExtraDataForm: React.FC<Props> = ({
         </BlackBorderButtonStyle>
         <SubmitButton
           formName={FORM_NAME}
+          data-cy-button="submit-demographics"
           label={
             isMobile
               ? i18n.t('demographics_card.submit_mobile')

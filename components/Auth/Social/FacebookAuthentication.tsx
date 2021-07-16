@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
+import FacebookLogin, {
+  ReactFacebookFailureResponse,
+  ReactFacebookLoginInfo,
+} from 'react-facebook-login';
 import { FACEBOOK_PROVIDER_ENUM } from '@make.org/api/UserApiService';
 import { SvgFacebookLogoF } from '@make.org/ui/Svg/elements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
@@ -33,16 +36,19 @@ export const FacebookAuthentication: React.FC = () => {
 
   // setting facebook browser to true or false
   const [isFacebookBrowser, setFacebookBrowser] = useState(false);
-  const handleFacebookLoginCallback = response => {
-    if (!response?.accessToken && response?.status === 'unknown') {
-      Logger.logInfo(
-        'Facebook auth failed with status unknown. Probably user close popup.'
-      );
+  const handleFacebookLoginCallback = (
+    response: ReactFacebookLoginInfo | ReactFacebookFailureResponse
+  ) => {
+    if (!('accessToken' in response)) {
+      const { status } = response;
+      if (status === 'unknown') {
+        Logger.logInfo(
+          'Facebook auth failed with status unknown. Probably user close popup.'
+        );
 
-      return;
-    }
-    if (!response?.accessToken) {
-      Logger.logError(`Facebook login failure: ${response?.status}`);
+        return;
+      }
+      Logger.logError(`Facebook login failure: ${status}`);
       dispatch(
         displayNotificationBanner(
           UNEXPECTED_ERROR_MESSAGE,
@@ -50,7 +56,9 @@ export const FacebookAuthentication: React.FC = () => {
         )
       );
       dispatch(modalClose());
+      return;
     }
+    const { accessToken } = response;
 
     const success = () => {
       dispatch(loginSocialSuccess());
@@ -64,14 +72,11 @@ export const FacebookAuthentication: React.FC = () => {
 
     UserService.checkSocialPrivacyPolicy(
       FACEBOOK_PROVIDER_ENUM,
-      response.accessToken,
+      accessToken,
       privacyPolicy,
       () => {
         dispatch(
-          modalShowDataPolicySocial(
-            FACEBOOK_PROVIDER_ENUM,
-            response.accessToken
-          )
+          modalShowDataPolicySocial(FACEBOOK_PROVIDER_ENUM, accessToken)
         );
       },
       success,
@@ -99,13 +104,14 @@ export const FacebookAuthentication: React.FC = () => {
         callback={handleFacebookLoginCallback}
         language={language}
         disableMobileRedirect
-        render={renderProps => (
+      >
+        {(renderProps: { onClick: () => void }) => (
           <FacebookButtonStyle onClick={renderProps.onClick} type="button">
             <SvgFacebookLogoF aria-hidden focusable="false" />
             <ScreenReaderItemStyle>Facebook</ScreenReaderItemStyle>
           </FacebookButtonStyle>
         )}
-      />
+      </FacebookLogin>
     );
   }
   return null;

@@ -32,7 +32,10 @@ export const NoProposal: React.FC<Props> = ({
     <>
       <SequenceMainTitleStyle>{title}</SequenceMainTitleStyle>
       <SequenceParagraphStyle>{description}</SequenceParagraphStyle>
-      <LinkAsRedButtonStyle to={getParticipateLink(country, question.slug)}>
+      <LinkAsRedButtonStyle
+        to={getParticipateLink(country, question.slug)}
+        data-cy-link="go-participate-page"
+      >
         {i18n.t('no_proposal_card.link_text')}
       </LinkAsRedButtonStyle>
       {isDesktop && (

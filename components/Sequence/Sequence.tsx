@@ -1,8 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState } from 'react';
+import React from 'react';
 import {
   getNoProposalCardTitleBySequenceKind,
   getSequenceTitleBySequenceKind,
+  isPushProposalCard,
   isStandardSequence,
 } from '@make.org/utils/helpers/sequence';
 import {
@@ -48,38 +49,39 @@ export type Props = {
  * Renders Sequence component with Intro / Push Proposal / Sign Up & Proposal Cards
  */
 export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
-  const [isSequenceEmpty, setIsSequenceEmpty] = useState(false);
   const { state } = useAppContext();
-
+  const { country } = state.appConfig;
   const question: QuestionType = selectCurrentQuestion(state);
 
   const executeStartSequence = async (
     questionId: string,
     votedIds: string[]
-  ): Promise<ProposalType[]> => {
-    const { proposals } = await SequenceService.startSequenceByKind(
+  ): Promise<ProposalType[] | null> => {
+    const results = await SequenceService.startSequenceByKind(
       questionId,
       votedIds,
       sequenceKind
     );
-    setIsSequenceEmpty(proposals.length === 0);
-
-    return proposals;
+    if (!!results && 'proposals' in results) {
+      return results.proposals;
+    }
+    return null;
   };
-  const { withProposalButton, country, isLoading, currentCard } = useSequence(
+  const { isLoading, currentCard, isEmptySequence } = useSequence(
     question,
     isStandardSequence(sequenceKind),
+    country,
     executeStartSequence
   );
 
-  if (isLoading) {
+  if (isLoading && !question) {
     return <SequencePlaceholder />;
   }
 
   const noProposalCard: NoProposalCardType = {
     type: CARD_TYPE_NO_PROPOSAL_CARD,
     configuration: {
-      title: getNoProposalCardTitleBySequenceKind(sequenceKind),
+      title: getNoProposalCardTitleBySequenceKind(sequenceKind) || '',
       description: isStandardSequence(sequenceKind)
         ? i18n.t('no_proposal_card.description.regular')
         : i18n.t('no_proposal_card.description.special'),
@@ -100,10 +102,14 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
 
     return null;
   };
+
+  const withProposalButton =
+    question?.canPropose && !isPushProposalCard(currentCard);
+
   return (
     <>
       <MetaTags
-        title={i18n.t(getMetaTitle(), {
+        title={i18n.t(getMetaTitle() || '', {
           question: question.wording.question,
         })}
         description={question.wording.metas.description}
@@ -123,14 +129,16 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
             </>
           )}
           <SequenceCard
-            card={isSequenceEmpty ? noProposalCard : currentCard}
+            card={
+              !isEmptySequence && !!currentCard ? currentCard : noProposalCard
+            }
             question={question}
           />
-          {!isSequenceEmpty && <SequenceProgress />}
+          {!isEmptySequence && <SequenceProgress />}
         </SequenceContentStyle>
         <ConsultationPageLinkStyle
           className={!withProposalButton && 'static'}
-          to={getParticipateLink(country, question.slug)}
+          to={getParticipateLink(country || '', question.slug)}
           onClick={() => trackClickOperationPage()}
         >
           {i18n.t('sequence.more')}

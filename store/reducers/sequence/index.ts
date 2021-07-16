@@ -8,10 +8,8 @@ import {
   SEQUENCE_LOAD_PROPOSALS,
   SEQUENCE_PROPOSAL_UNVOTE,
   SEQUENCE_PROPOSAL_VOTE,
-  SEQUENCE_RESET_INDEX,
   SEQUENCE_RESET_VOTED_PROPOSALS,
   SEQUENCE_SET_INDEX,
-  SEQUENCE_UNLOAD_PROPOSALS,
   SEQUENCE_UPDATE_CARD_STATE,
 } from '../../actionTypes';
 
@@ -57,11 +55,6 @@ export const sequence_reducer: Reducer = (
         ...state,
         proposals: action.payload.proposals,
       };
-    case SEQUENCE_UNLOAD_PROPOSALS:
-      return {
-        ...state,
-        proposals: [],
-      };
     case SEQUENCE_PROPOSAL_VOTE: {
       const oldProposalList =
         state.votedProposalIds[action.payload.questionSlug] || [];
@@ -91,11 +84,6 @@ export const sequence_reducer: Reducer = (
         },
       };
     }
-    case SEQUENCE_RESET_INDEX:
-      return {
-        ...state,
-        currentIndex: 0,
-      };
     case SEQUENCE_SET_INDEX:
       return {
         ...state,

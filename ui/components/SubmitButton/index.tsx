@@ -12,6 +12,7 @@ type Props = {
   disabled?: boolean;
   /** Icon of the input */
   icon?: React.ReactNode;
+  'data-cy-button': string;
 };
 
 export const SubmitButton: React.FC<Props> = ({
@@ -20,8 +21,15 @@ export const SubmitButton: React.FC<Props> = ({
   id,
   label,
   disabled,
+  'data-cy-button': dataCyButton,
 }) => (
-  <ActiveButtonStyle type="submit" form={formName} id={id} disabled={disabled}>
+  <ActiveButtonStyle
+    data-cy-button={dataCyButton}
+    type="submit"
+    form={formName}
+    id={id}
+    disabled={disabled}
+  >
     {icon}
     {label}
   </ActiveButtonStyle>
