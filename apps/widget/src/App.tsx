@@ -11,7 +11,8 @@ import { getProposals, getQuestion } from './server';
 const QUESTION_ID = '66a9230b-08cb-4f37-8ed8-aa95a8eac19a';
 
 const App: React.FC = () => {
-  const { dispatch } = useAppContext();
+  const { dispatch, state } = useAppContext();
+  const { currentQuestion } = state;
 
   useEffect(() => {
     const getAllDetails = async () => {
@@ -23,6 +24,10 @@ const App: React.FC = () => {
     };
     getAllDetails();
   }, []);
+
+  if (!currentQuestion) {
+    return <div>No question yet</div>;
+  }
 
   return <Sequence sequenceKind={KIND_STANDARD} />;
 };

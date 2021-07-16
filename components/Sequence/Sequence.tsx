@@ -67,6 +67,7 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
     }
     return null;
   };
+
   const { isLoading, currentCard, isEmptySequence } = useSequence(
     question,
     isStandardSequence(sequenceKind),
@@ -74,7 +75,7 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
     executeStartSequence
   );
 
-  if (isLoading && !question) {
+  if (isLoading) {
     return <SequencePlaceholder />;
   }
 

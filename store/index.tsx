@@ -1,17 +1,54 @@
 /* eslint-disable no-console */
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import React, { useContext, useEffect, useState } from 'react';
+import React, {
+  useContext,
+  useEffect,
+  useState,
+  useReducer,
+  createContext,
+} from 'react';
 import { Dispatch, ReducerAction, StateRoot } from '@make.org/types';
-import {
-  AppContext,
-  deepEqual,
-  getCurrentTimeFormatted,
-  useAllReducers,
-} from './utils';
+import { combineReducers, deepEqual, getCurrentTimeFormatted } from './utils';
+
+import { question_reducer } from './reducers/question';
+import { panel_reducer } from './reducers/panel';
+import { modal_reducer } from './reducers/modal';
+import { proposals_reducer } from './reducers/proposals';
+import { sequence_reducer } from './reducers/sequence';
+import { user_reducer } from './reducers/user';
+import { initialState } from './initialState';
+import { proposal_reducer } from './reducers/proposal';
+
+export const AppContext = createContext({
+  state: initialState,
+    dispatch: (arg: ReducerAction) => {}, // eslint-disable-line
+});
 
 export const useAppContext = (): { state: StateRoot; dispatch: Dispatch } =>
   useContext(AppContext);
+
+const rootReducer = combineReducers({
+  question: question_reducer,
+  proposals: proposals_reducer,
+  sequence: sequence_reducer,
+  // appConfig: undefined,
+  // views: undefined,
+  proposal: proposal_reducer,
+  // currentQuestion: undefined,
+  // notifications: undefined,
+  user: user_reducer,
+  // questions: undefined,
+  modal: modal_reducer,
+  // partners: undefined,
+  panel: panel_reducer,
+  // session: undefined,
+});
+
+export const useAllReducers = (): { state: StateRoot; dispatch: Dispatch } => {
+  const [state, dispatch] = useReducer(rootReducer, initialState);
+  return { state, dispatch };
+};
 
 const ContextState: React.FC = ({ children }) => {
   const { state, dispatch } = useAllReducers();
