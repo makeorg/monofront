@@ -59,7 +59,7 @@ export const useSequence = (
   useSequenceVoteOnlyNotification(question);
   const { firstProposalParam, introCardParam, pushProposalParam } =
     useSequenceQueryParams();
-  useSequenceExtraDataAutoSubmit(question.slug, cards, currentIndex);
+  useSequenceExtraDataAutoSubmit(question?.slug, cards, currentIndex);
 
   // Other
   const isFR = country === 'FR';

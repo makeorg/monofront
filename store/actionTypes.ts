@@ -86,3 +86,10 @@ export const SET_MOBILE_DEVICE = 'SET_MOBILE_DEVICE';
 export const GET_ALL_PROPOSALS = 'GET_ALL_PROPOSALS';
 /** Get question details for the widget */
 export const GET_QUESTION = 'GET_QUESTION';
+/* set current question */
+export const SET_CURRENT_QUESTION_SLUG = 'SET_CURRENT_QUESTION_SLUG';
+export const REMOVE_CURRENT_QUESTION_SLUG = 'REMOVE_CURRENT_QUESTION_SLUG';
+/* questions array */
+export const LOAD_QUESTION = 'LOAD_QUESTION';
+export const QUESTION_POPULAR_TAGS_LOAD = 'QUESTION_POPULAR_TAGS_LOAD';
+export const QUESTION_PERSONALITIES_LOAD = 'QUESTION_PERSONALITIES_LOAD';
