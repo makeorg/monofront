@@ -3,7 +3,7 @@ import { trackDisplaySequence } from '@make.org/utils/services/Tracking';
 
 export const useSequenceTracking = (): void => {
   useEffect(() => {
-    // trackDisplaySequence(); TO DO
+    trackDisplaySequence();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };

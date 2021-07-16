@@ -17,28 +17,28 @@ const QUESTION_ID = '66a9230b-08cb-4f37-8ed8-aa95a8eac19a';
 
 const App: React.FC = () => {
   const { dispatch, state } = useAppContext();
-  const { currentQuestion, questions } = state;
+  const { currentQuestion, questions, appConfig } = state;
+  const { language, country, source } = appConfig;
 
   useEffect(() => {
     ApiService.strategy = apiClient;
-    // TO DO
     // add listener to update apiClient params
-    // trackingParamsService.addListener({
-    //   onTrackingUpdate: params => {
-    //     apiClient.source = params.source;
-    //     apiClient.country = params.country;
-    //     apiClient.language = params.language;
-    //     apiClient.location = params.location;
-    //     apiClient.url = params.url;
-    //     apiClient.referrer = params.referrer;
-    //     apiClient.questionId = params.questionId;
-    //   },
-    // });
+    trackingParamsService.addListener({
+      onTrackingUpdate: params => {
+        apiClient.source = params.source || '';
+        apiClient.country = params.country || '';
+        apiClient.language = params.language || '';
+        apiClient.location = params.location || '';
+        apiClient.url = params.url || '';
+        apiClient.referrer = params.referrer || '';
+        apiClient.questionId = params.questionId || '';
+      },
+    });
 
-    // // Set tracking params
-    // trackingParamsService.source = source;
-    // trackingParamsService.country = country;
-    // trackingParamsService.language = language;
+    // Set tracking params
+    trackingParamsService.source = source;
+    trackingParamsService.country = country;
+    trackingParamsService.language = language;
 
     const getAllDetails = async () => {
       const response = await getQuestion(QUESTION_ID);
