@@ -11,10 +11,15 @@ module.exports = {
         use: 'ts-loader',
         exclude: path.resolve(__dirname, '../../node_modules/'),
       },
+      {
+        test: /\.ya?ml$/,
+        type: 'json', // Required by Webpack v4
+        use: 'yaml-loader',
+      },
     ],
   },
   resolve: {
-    extensions: ['.ts', '.js', '.tsx'],
+    extensions: ['.ts', '.js', '.tsx', 'yaml'],
   },
   output: {
     filename: 'bundle.js',

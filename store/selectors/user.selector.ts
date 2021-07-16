@@ -7,9 +7,7 @@ import {
  * authentication selector
  * @param {*} state
  */
-export const selectAuthentication = (
-  state: StateRoot
-): StateAuthentication | undefined => {
+export const selectAuthentication = (state: StateRoot): StateAuthentication => {
   const { authentication } = state.user || {};
   return authentication;
 };

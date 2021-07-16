@@ -179,9 +179,9 @@ export type StateRoot = {
   views?: StateViews;
   proposal?: StateProposal;
   sequence: StateSequence;
-  currentQuestion?: string;
+  currentQuestion: string;
   notifications: StateNotification;
-  user?: StateUser;
+  user: StateUser;
   questions: StateQuestions;
   modal: StateModal;
   partners?: StatePartners;

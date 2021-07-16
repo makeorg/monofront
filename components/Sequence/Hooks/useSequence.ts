@@ -3,10 +3,8 @@ import { useEffect, useState, useMemo } from 'react';
 import { buildCards } from '@make.org/utils/helpers/sequence';
 import { SequenceCardType, QuestionType, ProposalType } from '@make.org/types';
 import { scrollToTop } from '@make.org/utils/helpers/styled';
-import { CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL } from '@make.org/utils/constants/card';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import {
-  resetSequenceIndex,
   loadSequenceCards,
   resetSequenceVotedProposals,
   setSequenceIndex,
@@ -96,8 +94,6 @@ export const useSequence = (
           setSequenceProposals(proposals);
         }
       }
-      dispatch(resetSequenceIndex()); // @toDo : check if realy needed - see useEffect init sequence index
-
       setLoading(false);
     };
     loadSequenceData();

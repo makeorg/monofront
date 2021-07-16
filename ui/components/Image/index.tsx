@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { ImageDataType } from '@make.org/types';
 import {
-  ImageDataType,
   IMAGE_SOURCE_INTERNAL,
   IMAGE_SOURCE_EXTERNAL,
-} from '@make.org/types';
+} from '@make.org/utils/constants/image';
+
 import { useDevicePixelRatio } from '@make.org/utils/hooks/useMedia';
 
 const imageflowQueryParams = (
