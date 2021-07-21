@@ -16,6 +16,10 @@ export class ApiServiceClient implements IApiServiceStrategy {
 
   _referrer = '';
 
+  _url = '';
+
+  _location = '';
+
   _customData = '';
 
   _isLogged = false;
@@ -77,6 +81,22 @@ export class ApiServiceClient implements IApiServiceStrategy {
     return this._referrer;
   }
 
+  set location(location: string) {
+    this._location = location;
+  }
+
+  get location(): string {
+    return this._location;
+  }
+
+  set url(url: string) {
+    this._url = url;
+  }
+
+  get url(): string {
+    return this._url;
+  }
+
   set customData(customData: string) {
     this._customData = customData;
   }
@@ -87,6 +107,22 @@ export class ApiServiceClient implements IApiServiceStrategy {
 
   set headersListener(listeners: Map<string, string>) {
     this._headersListeners = listeners;
+  }
+
+  set url(url: string) {
+    this._url = url;
+  }
+
+  get url(): string {
+    return this._url;
+  }
+
+  set location(location: string) {
+    this._location = location;
+  }
+
+  get location(): string {
+    return this._location;
   }
 
   addHeadersListener(identifier: string, listener: string): void {

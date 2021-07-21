@@ -19,6 +19,10 @@ import { sequence_reducer } from './reducers/sequence';
 import { user_reducer } from './reducers/user';
 import { initialState } from './initialState';
 import { proposal_reducer } from './reducers/proposal';
+import { currentQuestion_reducer } from './reducers/currentQuestion';
+import { appConfig_reducer } from './reducers/appConfig';
+import { questions_reducer } from './reducers/questions';
+import { notifications_reducer } from './reducers/notifications';
 
 export const AppContext = createContext({
   state: initialState,
@@ -32,13 +36,13 @@ const rootReducer = combineReducers({
   question: question_reducer,
   proposals: proposals_reducer,
   sequence: sequence_reducer,
-  // appConfig: undefined,
+  appConfig: appConfig_reducer,
   // views: undefined,
   proposal: proposal_reducer,
-  // currentQuestion: undefined,
-  // notifications: undefined,
+  currentQuestion: currentQuestion_reducer,
+  notifications: notifications_reducer,
   user: user_reducer,
-  // questions: undefined,
+  questions: questions_reducer,
   modal: modal_reducer,
   // partners: undefined,
   panel: panel_reducer,

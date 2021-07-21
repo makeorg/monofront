@@ -13,6 +13,14 @@ module.exports = {
         exclude: path.resolve(__dirname, '../../node_modules/'),
       },
       {
+        test: /\.(woff|woff2)$/,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+      {
         test: /\.ya?ml$/,
         type: 'json', // Required by Webpack v4
         use: 'yaml-loader',
@@ -25,7 +33,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Development',
-      template: './src/index.html',
+      template: './public/index.html',
     }),
   ],
   output: {

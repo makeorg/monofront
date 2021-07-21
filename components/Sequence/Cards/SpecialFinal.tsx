@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import { getParticipateLink } from '@make.org/utils/helpers/url';
 import { i18n } from '@make.org/utils/i18n';
 import {
@@ -16,8 +15,8 @@ type Props = {
 };
 
 export const SpecialFinalCard: React.FC<Props> = ({ questionSlug }) => {
-  const { dispatch } = useAppContext();
-  const { country } = useParams();
+  const { dispatch, state } = useAppContext();
+  const { country } = state.appConfig;
 
   useEffect(() => {
     trackDisplayFinalCard();

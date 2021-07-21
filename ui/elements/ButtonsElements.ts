@@ -31,27 +31,17 @@ export const UnstyledButtonStyle = styled.button.attrs(props => ({
   background-color: transparent;
 `;
 
-export const BasicButtonStyle = styled.button.attrs(props => ({
-  type: 'button',
-  ...props,
-}))`
+export const BasicButtonStyle = `
   display: flex;
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
   font-family: ${MakeFonts.TradeGothicBoldCondensed};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  line-height: 1;
-  border: none;
-  border-radius: 20px;
   text-transform: uppercase;
-  padding: 12px 25px 8px;
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
-    padding: 13px 25px 10px;
-  }
-  @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.S.value)};
-  }
+  border-radius: 20px;
+  border: none;
+  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  padding: 10px 20px 7px 20px;
+  text-decoration: none;
 `;
 
 const RedStyle = `
@@ -107,7 +97,11 @@ export const LinkAsRedButtonStyle = styled(Link)`
   }
 `;
 
-export const WhiteButtonStyle = styled(BasicButtonStyle)`
+export const WhiteButtonStyle = styled.button.attrs(props => ({
+  type: 'button',
+  ...props,
+}))`
+  ${BasicButtonStyle};
   color: ${color.black};
   background-color: ${color.white};
   svg {
@@ -129,7 +123,11 @@ export const SmallGreyButtonStyle = styled(GreyButtonStyle)`
   }
 `;
 
-export const ActiveButtonStyle = styled(BasicButtonStyle)`
+export const ActiveButtonStyle = styled.button.attrs(props => ({
+  type: 'button',
+  ...props,
+}))`
+  ${BasicButtonStyle};
   color: ${color.white};
   background-color: ${color.brandSecondary};
   svg,

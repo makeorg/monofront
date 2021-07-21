@@ -84,9 +84,9 @@ export const SequenceCard: React.FC<Props> = ({ card, question }) => {
     TopComponentContextValue.getSequenceProposal();
 
   useEffect(() => {
-    if (isNoProposalCard) {
-      trackDisplayNoProposalSequence();
-    }
+    // if (isNoProposalCard) {
+    //   trackDisplayNoProposalSequence();
+    // }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

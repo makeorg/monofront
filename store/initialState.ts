@@ -8,22 +8,15 @@ import { authentication_state } from './reducers/user/authentication';
 import { cookiesPreferences_state } from './reducers/user/cookiesPreferences';
 import { passwordRecovery_state } from './reducers/user/passwordRecovery';
 import { proposal_state } from './reducers/proposal';
+import { appConfig_state } from './reducers/appConfig';
+import { questions_state } from './reducers/questions';
 
 export const initialState: StateRoot = {
-  appConfig: {
-    source: '',
-    language: '',
-    country: '',
-    translations: {},
-    queryParams: {},
-    countriesWithConsultations: [],
-    device: '',
-    privacyPolicy: new Date(),
-  },
+  appConfig: appConfig_state,
   views: {},
   proposal: proposal_state,
   sequence: sequence_state,
-  questions: {},
+  questions: questions_state,
   currentQuestion: '',
   notifications: notifications_state,
   user: {

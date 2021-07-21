@@ -13,7 +13,6 @@ import {
 } from '@make.org/ui/elements/ButtonsElements';
 
 import { getParticipateLink } from '@make.org/utils/helpers/url';
-import { useParams } from 'react-router';
 import { modalShowRegister } from '@make.org/store/actions/modal';
 import { useAppContext } from '@make.org/store';
 import {
@@ -28,8 +27,8 @@ type Props = {
 };
 
 export const FinalCard: React.FC<Props> = ({ questionSlug }) => {
-  const { dispatch } = useAppContext();
-  const { country } = useParams();
+  const { dispatch, state } = useAppContext();
+  const { country } = state.appConfig;
   const handleClick = () => {
     dispatch(modalShowRegister());
     trackClickCitizenRegister();

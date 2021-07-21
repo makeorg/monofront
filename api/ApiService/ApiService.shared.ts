@@ -14,7 +14,8 @@ const HOSTNAME =
 const LOCATION_PARAMS =
   (typeof window !== 'undefined' && window?.location?.search) || '';
 
-const API_URL = env.apiUrl();
+// const API_URL = env.apiUrl(); TO DO
+const API_URL = 'https://api.preprod.makeorg.tech';
 
 axiosRetry(axios, {
   retries: 5,

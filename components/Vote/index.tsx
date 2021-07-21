@@ -4,6 +4,8 @@ import {
   trackVote,
   trackFirstVote,
   trackUnvote,
+  trackClickNextOnLastProposal,
+  trackClickNextCard,
 } from '@make.org/utils/services/Tracking';
 import { VoteType, ProposalType } from '@make.org/types';
 import {
@@ -15,13 +17,11 @@ import {
 import { VoteService } from '@make.org/utils/services/Vote';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { voteStaticParamsKeys } from '@make.org/utils/constants/vote';
-import {
-  TopComponentContext,
-  TopComponentContextValue,
-} from '@make.org/store/topComponentContext';
+import { TopComponentContext } from '@make.org/store/topComponentContext';
 import {
   vote as actionVote,
   unvote as actionUnvote,
+  incrementSequenceIndex,
 } from '@make.org/store/actions/sequence';
 import {
   clearNotificationTip,
@@ -39,6 +39,7 @@ import {
 } from './style';
 import { VoteButton } from './Button/Vote';
 import { Tip } from '../Notifications/Tip';
+import { SequenceNextCardButtonStyle } from '../Sequence/Cards/style';
 
 type Props = {
   /** Proposal's Id */
@@ -49,8 +50,10 @@ type Props = {
   proposalKey: string;
   /** Index of the card */
   index: number;
-  /** Specific design for new sequence */
+  /** Specific boolean sequence */
   isSequence?: boolean;
+  /** Specific boolean for last sequence */
+  isLastProposal?: boolean;
 };
 
 export const Vote: React.FC<Props> = ({
@@ -58,7 +61,8 @@ export const Vote: React.FC<Props> = ({
   votes,
   proposalKey,
   index = 0,
-  isSequence,
+  isSequence = false,
+  isLastProposal = false,
 }) => {
   const { dispatch, state } = useAppContext();
   const { id: proposalId } = proposal;
@@ -72,9 +76,9 @@ export const Vote: React.FC<Props> = ({
   const [animateVoteKey, setAnimatedVoteKey] = useState('');
   const [pendingVoteKey, setPendingVoteKey] = useState('');
   const { votedProposalIds } = state.sequence;
-  const isFirstSequenceVote =
-    contextType === TopComponentContextValue.getSequenceProposal() &&
-    (votedProposalIds[proposal.question.slug] || []).length === 0;
+  const votedProposals = votedProposalIds[proposal.question.slug];
+  const isFirstSequenceVote = isSequence && !votedProposals;
+  const lastProposalOfSequence = isSequence && isLastProposal;
 
   let timeout: number;
   const wait = async (ms: number) =>
@@ -141,6 +145,14 @@ export const Vote: React.FC<Props> = ({
     stopPending();
   };
 
+  const goToNextCard = () => {
+    dispatch(incrementSequenceIndex());
+    if (lastProposalOfSequence) {
+      return trackClickNextOnLastProposal();
+    }
+    return trackClickNextCard();
+  };
+
   useEffect(() => {
     const stateUserVote = votes && votes.find(vote => vote.hasVoted === true);
     setCurrentVotes(votes);
@@ -165,7 +177,8 @@ export const Vote: React.FC<Props> = ({
       };
     }
     return null;
-  }, [dispatch, isFirstSequenceVote]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (userVote && votedKey) {
     return (
@@ -184,6 +197,17 @@ export const Vote: React.FC<Props> = ({
           votedKey={votedKey}
           index={index}
         />
+        {isSequence && (
+          <SequenceNextCardButtonStyle
+            onClick={goToNextCard}
+            id={`next-button-${proposal.id}`}
+            data-cy-button="next-proposal"
+          >
+            {lastProposalOfSequence
+              ? i18n.t('proposal_card.validate')
+              : i18n.t('proposal_card.next')}
+          </SequenceNextCardButtonStyle>
+        )}
       </VoteContainerStyle>
     );
   }
