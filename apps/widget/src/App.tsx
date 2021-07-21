@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import './App.css';
-import { getQuestionDetails } from '@make.org/store/actions/question/';
 import { getAllProposals } from '@make.org/store/actions/proposals';
 import { loadQuestion } from '@make.org/store/actions/questions';
 import { ApiService } from '@make.org/api/ApiService';
@@ -20,37 +19,40 @@ const App: React.FC = () => {
   const { currentQuestion, questions, appConfig } = state;
   const { language, country, source } = appConfig;
 
+  ApiService.strategy = apiClient;
+  trackingParamsService.source = source;
+  trackingParamsService.country = country;
+  trackingParamsService.language = language;
+  trackingParamsService.questionId = QUESTION_ID;
+
+  const getAllDetails = async () => {
+    const response = await getQuestion(QUESTION_ID);
+    dispatch(loadQuestion(response));
+    const proposals = await getProposals(response.questionId);
+    dispatch(getAllProposals(proposals));
+  };
+
   useEffect(() => {
-    ApiService.strategy = apiClient;
+    // TO DO
     // add listener to update apiClient params
     trackingParamsService.addListener({
       onTrackingUpdate: params => {
-        apiClient.source = params.source || '';
-        apiClient.country = params.country || '';
-        apiClient.language = params.language || '';
+        apiClient.source = params.source || source;
+        apiClient.country = params.country || country;
+        apiClient.language = params.language || language;
         apiClient.location = params.location || '';
         apiClient.url = params.url || '';
         apiClient.referrer = params.referrer || '';
-        apiClient.questionId = params.questionId || '';
+        apiClient.questionId = params.questionId || QUESTION_ID;
       },
     });
 
-    // Set tracking params
-    trackingParamsService.source = source;
-    trackingParamsService.country = country;
-    trackingParamsService.language = language;
+    // // Set tracking params
 
-    const getAllDetails = async () => {
-      const response = await getQuestion(QUESTION_ID);
-      dispatch(loadQuestion(response));
-      const proposals = await getProposals(response.questionId);
-      dispatch(getAllProposals(proposals));
-    };
     getAllDetails();
   }, []);
 
   useEffect(() => {
-    console.log(Object.keys(questions));
     if (questions) {
       dispatch(setCurrentQuestionSlug(Object.keys(questions)[0]));
     }

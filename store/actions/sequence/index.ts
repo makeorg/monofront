@@ -52,15 +52,13 @@ export const loadSequenceProposals = (
   payload: { proposals },
 });
 
-export const incrementSequenceIndex =
-  () =>
-  (dispatch: Dispatch): void =>
-    dispatch({ type: SEQUENCE_INCREMENT_INDEX });
+export const incrementSequenceIndex = (): ReducerAction => ({
+  type: SEQUENCE_INCREMENT_INDEX,
+});
 
-export const decrementSequenceIndex =
-  () =>
-  (dispatch: Dispatch): void =>
-    dispatch({ type: SEQUENCE_DECREMENT_INDEX });
+export const decrementSequenceIndex = (): ReducerAction => ({
+  type: SEQUENCE_DECREMENT_INDEX,
+});
 
 export const setSequenceIndex = (index: number): ReducerAction => ({
   type: SEQUENCE_SET_INDEX,

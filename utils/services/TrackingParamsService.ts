@@ -92,6 +92,13 @@ class TrackingParamsServiceClass {
     }
   }
 
+  set location(location: string) {
+    if (this._location !== location) {
+      this._location = location;
+      this._dispatchUpdate();
+    }
+  }
+
   _updateDynamicParams() {
     this._url =
       typeof window !== 'undefined' && window && window.location

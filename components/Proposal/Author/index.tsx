@@ -19,7 +19,6 @@ import {
   formatAuthorName,
   formatOrganisationName,
 } from '@make.org/utils/helpers/stringFormatter';
-import { useParams } from 'react-router-dom';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { useAppContext } from '@make.org/store';
 import {
@@ -49,7 +48,8 @@ export const ProposalAuthorInformations: React.FC<Props> = ({
   proposal,
   isSequence,
 }) => {
-  const { country } = useParams();
+  const { state } = useAppContext();
+  const { country } = state.appConfig;
   const { author } = proposal;
 
   const isOrganisation = author.userType === TYPE_ORGANISATION;

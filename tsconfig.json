@@ -8,6 +8,7 @@
     { "path": "./components" },
     { "path": "./utils" }
   ],
+  "include": ["**/fonts.d.ts"],
   "exclude": ["**/node_modules"],
   "compilerOptions": {
     "baseUrl": "./types/index",

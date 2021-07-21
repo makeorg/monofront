@@ -22,6 +22,7 @@ import { proposal_reducer } from './reducers/proposal';
 import { currentQuestion_reducer } from './reducers/currentQuestion';
 import { appConfig_reducer } from './reducers/appConfig';
 import { questions_reducer } from './reducers/questions';
+import { notifications_reducer } from './reducers/notifications';
 
 export const AppContext = createContext({
   state: initialState,
@@ -39,7 +40,7 @@ const rootReducer = combineReducers({
   // views: undefined,
   proposal: proposal_reducer,
   currentQuestion: currentQuestion_reducer,
-  // notifications: undefined,
+  notifications: notifications_reducer,
   user: user_reducer,
   questions: questions_reducer,
   modal: modal_reducer,

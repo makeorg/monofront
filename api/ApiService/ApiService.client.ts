@@ -81,6 +81,22 @@ export class ApiServiceClient implements IApiServiceStrategy {
     return this._referrer;
   }
 
+  set location(location: string) {
+    this._location = location;
+  }
+
+  get location(): string {
+    return this._location;
+  }
+
+  set url(url: string) {
+    this._url = url;
+  }
+
+  get url(): string {
+    return this._url;
+  }
+
   set customData(customData: string) {
     this._customData = customData;
   }
