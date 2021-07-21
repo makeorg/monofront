@@ -109,22 +109,6 @@ export class ApiServiceClient implements IApiServiceStrategy {
     this._headersListeners = listeners;
   }
 
-  set url(url: string) {
-    this._url = url;
-  }
-
-  get url(): string {
-    return this._url;
-  }
-
-  set location(location: string) {
-    this._location = location;
-  }
-
-  get location(): string {
-    return this._location;
-  }
-
   addHeadersListener(identifier: string, listener: string): void {
     this._headersListeners.set(identifier, listener);
   }
