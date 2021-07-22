@@ -1,6 +1,6 @@
 import React from 'react';
 import { getCookiesPageLink } from '@make.org/utils/helpers/url';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { clearNotificationBanner } from '@make.org/store/actions/notifications';
 import { useAppContext } from '@make.org/store';
 import { WhiteLink } from './style';

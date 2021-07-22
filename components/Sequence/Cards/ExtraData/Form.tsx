@@ -1,7 +1,7 @@
 import React, { SyntheticEvent, useEffect, useMemo, useState } from 'react';
 import { DemographicNameType, DemographicDataType } from '@make.org/types';
 import { BlackBorderButtonStyle } from '@make.org/ui/elements/ButtonsElements';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { DemographicsTrackingService } from '@make.org/utils/services/DemographicsTracking';
 import {

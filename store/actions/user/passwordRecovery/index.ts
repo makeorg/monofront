@@ -1,4 +1,4 @@
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { StateRoot, Dispatch, ReducerAction } from '@make.org/types';
 import { UserService } from '@make.org/utils/services/User';
 import * as actionTypes from '../../../actionTypes';

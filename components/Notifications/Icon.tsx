@@ -5,7 +5,7 @@ import {
   NOTIFICATION_LEVEL_ERROR,
   NOTIFICATION_LEVEL_ALERT,
 } from '@make.org/utils/constants/notifications';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import {
   NotificationAlertStyle,
   NotificationSuccessStyle,

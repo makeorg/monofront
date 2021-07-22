@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { getDataPageLink } from '@make.org/utils/helpers/url';
 import {
   trackClickPersonnalDataLink,

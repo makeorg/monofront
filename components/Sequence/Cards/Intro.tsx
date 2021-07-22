@@ -4,7 +4,7 @@ import {
   trackDisplayIntroCard,
   trackClickStartSequence,
 } from '@make.org/utils/services/Tracking';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { incrementSequenceIndex } from '@make.org/store/actions/sequence';
 import { useAppContext } from '@make.org/store';
 import { PlayIconStyle } from '@make.org/ui/elements/SvgElements';
@@ -22,8 +22,7 @@ type Props = {
 export const IntroCard: React.FC<Props> = ({ configuration }) => {
   const { dispatch } = useAppContext();
   const { description, title } = configuration;
-  const descriptionText =
-    description || 'blablabal' || i18n.t('intro_card.description');
+  const descriptionText = description || i18n.t('intro_card.description') || '';
   const handleStartSequence = () => {
     dispatch(incrementSequenceIndex());
     trackClickStartSequence();

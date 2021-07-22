@@ -1,4 +1,4 @@
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { DemographicDataType } from '@make.org/types';
 
 // Should be handled by API / BO as a configuration

@@ -1,6 +1,6 @@
 /* eslint-disable react/no-danger */
 import React from 'react';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 
 type WithLabelProps = {
   messageKey: string;

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { getParticipateLink } from '@make.org/utils/helpers/url';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import {
   trackClickOperationPage,
   trackDisplayFinalCard,

@@ -8,7 +8,7 @@ import {
 import { voteStaticParams } from '@make.org/utils/constants/vote';
 import { QualificationType } from '@make.org/types';
 import { LoadingDots } from '@make.org/ui/components/Loading/Dots';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
 import { TopComponentContext } from '@make.org/store/topComponentContext';
 import { QualifyButtonStyle } from '@make.org/ui/elements/ButtonsElements';

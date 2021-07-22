@@ -1,6 +1,6 @@
 import React, { useRef, useLayoutEffect } from 'react';
 import { ErrorObjectType } from '@make.org/types';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import {
   FormErrorsContainerStyle,

@@ -1,4 +1,4 @@
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { ErrorObjectType, UnknownObjectType } from '@make.org/types';
 import { defaultApiError } from '../errors/Messages';
 import { mapErrors } from '../services/ApiErrors';

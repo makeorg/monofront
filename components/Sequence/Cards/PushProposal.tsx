@@ -3,7 +3,7 @@ import {
   trackDisplayProposalPushCard,
   trackClickProposalPushCardIgnore,
 } from '@make.org/utils/services/Tracking';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import {
   PencilIconStyle,
   ForwardIconStyle,

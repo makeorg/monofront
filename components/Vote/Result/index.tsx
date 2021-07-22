@@ -7,7 +7,7 @@ import { VoteType } from '@make.org/types';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { voteStaticParams } from '@make.org/utils/constants/vote';
 import { Tooltip } from '@make.org/ui/components/Tooltip';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import {
   VoteResultContainerStyle,
   VoteResultGraphStyle,

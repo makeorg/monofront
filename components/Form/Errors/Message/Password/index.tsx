@@ -1,6 +1,6 @@
 /* eslint-disable react/no-danger */
 import React from 'react';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { modalShowForgotPassword } from '@make.org/store/actions/modal';
 import { useAppContext } from '@make.org/store';
 import { CustomErrorTriggerStyle } from '@make.org/ui/elements/FormElements';

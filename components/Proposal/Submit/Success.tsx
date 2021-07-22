@@ -1,5 +1,5 @@
 import React from 'react';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';

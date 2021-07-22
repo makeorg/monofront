@@ -49,13 +49,24 @@ const rootReducer = combineReducers({
   // session: undefined,
 });
 
-export const useAllReducers = (): { state: StateRoot; dispatch: Dispatch } => {
-  const [state, dispatch] = useReducer(rootReducer, initialState);
+export const useAllReducers = (
+  serverState?: StateRoot
+): {
+  state: StateRoot;
+  dispatch: Dispatch;
+} => {
+  const [state, dispatch] = useReducer(
+    rootReducer,
+    serverState || initialState
+  );
   return { state, dispatch };
 };
 
-const ContextState: React.FC = ({ children }) => {
-  const { state, dispatch } = useAllReducers();
+const ContextState: React.FC<{ serverState?: StateRoot }> = ({
+  serverState,
+  children,
+}) => {
+  const { state, dispatch } = useAllReducers(serverState);
   const [lastAction, setLastAction] = useState({
     lastState: state,
     action: {

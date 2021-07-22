@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
   entry: './src/index.tsx',
@@ -8,9 +9,10 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.(ts|tsx)$/,
         use: 'ts-loader',
-        exclude: path.resolve(__dirname, '../../node_modules/'),
+        sideEffects: false,
+        exclude: [path.resolve(__dirname, '../../node_modules/')],
       },
       {
         test: /\.(woff|woff2)$/,
@@ -29,8 +31,12 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.js', '.tsx', 'yaml'],
+    alias: {
+      '@make.org': path.resolve(__dirname, '../../'),
+    },
   },
   plugins: [
+    // new BundleAnalyzerPlugin(),
     new HtmlWebpackPlugin({
       title: 'Development',
       template: './public/index.html',

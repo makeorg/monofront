@@ -1,5 +1,5 @@
 import React from 'react';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { setPanelContent } from '@make.org/store/actions/panel';
 import { useAppContext } from '@make.org/store';
 import { ProposalJourney } from './Journey';

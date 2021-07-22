@@ -1,7 +1,7 @@
 import React from 'react';
 import { modalShowRegister } from '@make.org/store/actions/modal';
 import { useAppContext } from '@make.org/store';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { FacebookAuthentication } from '../Social/FacebookAuthentication';
 import { GoogleAuthentication } from '../Social/GoogleAuthentication';
 import {

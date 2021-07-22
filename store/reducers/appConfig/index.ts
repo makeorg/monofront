@@ -3,7 +3,7 @@ import {
   DESKTOP_DEVICE,
   MOBILE_DEVICE,
 } from '@make.org/utils/constants/config';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { TRANSLATION_NAMESPACE } from '@make.org/utils/i18n/constants';
 import { Reducer, ReducerAction, StateConfig } from '@make.org/types';
 import {
