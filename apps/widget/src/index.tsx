@@ -7,6 +7,7 @@ import { FontFacesStylesheet } from '@make.org/assets/css-in-js/FontFaces';
 import { DefaultStylesheet } from '@make.org/assets/css-in-js/DefaultStyle';
 import { UIThemeStylesheet } from '@make.org/assets/css-in-js/UITheme';
 import ContextState from '@make.org/store';
+import { LocalesContext } from '@make.org/utils/i18n';
 import App from './App';
 
 ReactDOM.render(
@@ -14,11 +15,13 @@ ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
         <ContextState>
-          <ModernNormalizeStylesheet />
-          <FontFacesStylesheet />
-          <DefaultStylesheet />
-          <UIThemeStylesheet />
-          <App />
+          <LocalesContext>
+            <ModernNormalizeStylesheet />
+            <FontFacesStylesheet />
+            <DefaultStylesheet />
+            <UIThemeStylesheet />
+            <App />
+          </LocalesContext>
         </ContextState>
       </BrowserRouter>
     </React.StrictMode>
