@@ -1,6 +1,6 @@
 import React from 'react';
 import { OrganisationSoftType } from '@make.org/types';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { getOrganisationProfileLink } from '@make.org/utils/helpers/url';
 import { RedLinkRouterStyle } from '@make.org/ui/elements/LinkElements';
 import { trackClickProposalProfile } from '@make.org/utils/services/Tracking';

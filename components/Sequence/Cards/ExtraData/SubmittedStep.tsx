@@ -1,7 +1,7 @@
 import { setTitleByType } from '@make.org/utils/helpers/demographics';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import React, { useEffect } from 'react';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { incrementSequenceIndex } from '@make.org/store/actions/sequence';
 import {
   trackClickVoteDemographics,

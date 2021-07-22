@@ -17,7 +17,7 @@ import {
   ProposalType,
   QuestionType,
 } from '@make.org/types';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { trackClickOperationPage } from '@make.org/utils/services/Tracking';
 import { SequenceService } from '@make.org/utils/services/Sequence';
 import { getParticipateLink } from '@make.org/utils/helpers/url';

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { QuestionType } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';

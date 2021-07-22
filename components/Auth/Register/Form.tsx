@@ -1,5 +1,5 @@
 import React from 'react';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { ErrorObjectType, RegisterFormDataType } from '@make.org/types';
 import { RegisterCheckBox } from '@make.org/components/Form/RegisterCheckBox';
 import {

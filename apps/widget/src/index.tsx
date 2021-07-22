@@ -9,7 +9,7 @@ import { UIThemeStylesheet } from '@make.org/assets/css-in-js/UITheme';
 import { env } from '@make.org/assets/env';
 import ContextState from '@make.org/store';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { StateRoot } from '@make.org/types';
 import { initialState } from '@make.org/store/initialState'; // TO DO
 import App from './App';

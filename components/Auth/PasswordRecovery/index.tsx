@@ -1,5 +1,5 @@
 import React from 'react';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { SecondLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
 import { SmallSeparatorWithMarginStyle } from '@make.org/ui/elements/Separators';
 import { useAppContext } from '@make.org/store';

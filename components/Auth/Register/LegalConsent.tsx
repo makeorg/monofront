@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { LEGAL_CONSENT_FORMNAME } from '@make.org/utils/constants/form';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import {
   SecondLevelTitleStyle,
   FourthLevelTitleStyle,

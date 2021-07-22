@@ -3,7 +3,7 @@ import {
   SequenceCardType,
   ProposalType,
 } from '@make.org/types';
-import { i18n } from '../i18n';
+import i18n from 'i18next';
 import {
   CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
   CARD_TYPE_EXTRASLIDE_FINAL_CARD,

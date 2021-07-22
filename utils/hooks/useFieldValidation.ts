@@ -1,6 +1,6 @@
 import { MutableRefObject, useEffect, useState } from 'react';
 import { ErrorObjectType } from '@make.org/types';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 
 export const useIsFieldValid = (
   ref: MutableRefObject<HTMLInputElement>,

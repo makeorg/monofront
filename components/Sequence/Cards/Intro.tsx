@@ -4,7 +4,7 @@ import {
   trackDisplayIntroCard,
   trackClickStartSequence,
 } from '@make.org/utils/services/Tracking';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { incrementSequenceIndex } from '@make.org/store/actions/sequence';
 import { useAppContext } from '@make.org/store';
 import { PlayIconStyle } from '@make.org/ui/elements/SvgElements';

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ErrorObjectType } from '@make.org/types';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { PasswordInput } from '@make.org/components/Form/PasswordInput';
 import { SubmitButton } from '@make.org/ui/components/SubmitButton';
 import { PASSWORD_RECOVERY_FORMNAME } from '@make.org/utils/constants/form';

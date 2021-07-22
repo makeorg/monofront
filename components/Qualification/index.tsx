@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { getQualificationIndex } from '@make.org/utils/helpers/qualification';
 import { QualificationType } from '@make.org/types';
 import { SpaceBetweenColumnStyle } from '@make.org/ui/elements/FlexElements';

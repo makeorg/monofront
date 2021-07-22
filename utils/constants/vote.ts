@@ -1,5 +1,5 @@
 import { color } from 'athena-design-tokens';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 
 export const VOTE_AGREE_KEY = 'agree';
 export const VOTE_DISAGREE_KEY = 'disagree';

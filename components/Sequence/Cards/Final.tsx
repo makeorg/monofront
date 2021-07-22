@@ -4,7 +4,7 @@ import {
   trackClickOperationPage,
   trackClickCitizenRegister,
 } from '@make.org/utils/services/Tracking';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { resetSequenceVotedProposals } from '@make.org/store/actions/sequence';
 import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
 import {

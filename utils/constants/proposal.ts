@@ -1,4 +1,4 @@
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 
 export const MIN_PROPOSAL_LENGTH = 12;
 export const MAX_PROPOSAL_LENGTH = 140;

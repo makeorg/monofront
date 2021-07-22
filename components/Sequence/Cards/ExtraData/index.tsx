@@ -4,7 +4,7 @@ import {
   DEMOGRAPHIC_TYPES,
 } from '@make.org/utils/helpers/demographics';
 import React, { useEffect, useState } from 'react';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
 import { DemographicNameType, DemographicsType } from '@make.org/types';
 import { AGE_RANGES } from '@make.org/utils/constants/demographics';

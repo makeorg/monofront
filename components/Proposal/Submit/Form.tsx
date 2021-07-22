@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { QuestionType } from '@make.org/types';
 import { PROPOSAL_SUBMIT_FORMNAME } from '@make.org/utils/constants/form';
 import { MAX_PROPOSAL_LENGTH } from '@make.org/utils/constants/proposal';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import {
   getLocalizedBaitText,
   proposalHasValidLength,

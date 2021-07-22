@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useLocation } from 'react-router';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { trackClickShare } from '@make.org/utils/services/Tracking';
 import {
   SvgFacebookLogoF,

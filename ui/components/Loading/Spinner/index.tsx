@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import {
   SpinnerContainerStyle,
   SpinnerWrapperStyle,

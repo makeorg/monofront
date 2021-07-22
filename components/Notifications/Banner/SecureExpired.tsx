@@ -1,5 +1,5 @@
 import React from 'react';
-import { i18n } from '@make.org/utils/i18n';
+import i18n from 'i18next';
 import { SvgSadEmoji } from '@make.org/ui/Svg/elements';
 import { SecuredExpirationStyle } from './style';
 

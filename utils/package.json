@@ -12,7 +12,7 @@
     "@make.org/utils": "0.1.0",
     "athena-design-tokens": "^0.1.7",
     "axios": "^0.21.1",
-    "i18next": "^20.3.2",
+    "i18next": "^20.3.4",
     "mockdate": "^3.0.5",
     "moment": "^2.29.1",
     "query-string": "^7.0.1",
