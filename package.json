@@ -17,7 +17,8 @@
     "postinstall": "husky install && rm -rf .git/hooks && ln -s ../.husky .git/hooks",
     "bootstrap": "lerna bootstrap",
     "lint": "eslint api apps components",
-    "start:widget": "yarn workspace @make.org/widget dev"
+    "start:widget": "yarn workspace @make.org/widget dev",
+    "prod:widget": "yarn workspace @make.org/widget prod"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",
@@ -47,7 +48,6 @@
     "@types/node": "^16.0.0",
     "@types/react": "^17.0.13",
     "@types/react-dom": "^17.0.8",
-    "i18next": "^20.3.4",
     "typescript": "^4.3.5"
   }
 }
