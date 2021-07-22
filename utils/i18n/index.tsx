@@ -1,15 +1,7 @@
 /* eslint no-restricted-imports: 0 */
-import React, { createContext } from 'react';
-import i18next, { InitOptions, Callback, TFunction, Resource } from 'i18next';
-import { env } from '@make.org/assets/env';
-import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
-import { useAppContext } from '@make.org/store';
+import i18next, { InitOptions, Callback, TFunction } from 'i18next';
 
 let instance = i18next;
-
-export const I18nContext = createContext({
-  initLocales: (keys: Resource) => {}, // eslint-disable-line
-});
 
 export const i18n = {
   t: instance.t,
@@ -29,26 +21,4 @@ export const i18n = {
     key: string,
     options?: InitOptions
   ): any => instance.getResource(lng, ns, key, options),
-};
-
-export const LocalesContext: React.FC = ({ children }) => {
-  const { state } = useAppContext();
-  const { language } = state.appConfig;
-
-  const initLocales = (keys: Resource) => {
-    i18n.init({
-      interpolation: {
-        escapeValue: false,
-      },
-      debug: env.isDev(),
-      lng: language || DEFAULT_LANGUAGE,
-      resources: keys,
-    });
-  };
-
-  return (
-    <I18nContext.Provider value={{ initLocales }}>
-      {children}
-    </I18nContext.Provider>
-  );
 };
