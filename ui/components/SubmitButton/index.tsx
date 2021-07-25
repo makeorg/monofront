@@ -12,7 +12,8 @@ type Props = {
   disabled?: boolean;
   /** Icon of the input */
   icon?: React.ReactNode;
-  'data-cy-button': string;
+  /** Icon of the input */
+  'data-cy-button'?: string;
 };
 
 export const SubmitButton: React.FC<Props> = ({

@@ -1,4 +1,3 @@
-// @flow
 import {
   TagType,
   PersonalityType,
@@ -11,6 +10,7 @@ import {
   LOAD_QUESTION,
   QUESTION_PERSONALITIES_LOAD,
   QUESTION_POPULAR_TAGS_LOAD,
+  GET_QUESTION,
 } from '../../actionTypes';
 
 export const loadQuestion = (question: QuestionType): ReducerAction => ({
@@ -53,3 +53,13 @@ export const fechQuestionPersonalities =
     const results = response ? response.results : [];
     return dispatch(loadQuestionPersonalities(questionSlug, results));
   };
+
+export const getQuestionDetails = (
+  question: QuestionType
+): {
+  type: string;
+  payload: QuestionType;
+} => ({
+  type: GET_QUESTION,
+  payload: question,
+});

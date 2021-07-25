@@ -13,7 +13,7 @@ type Props = {
 };
 
 export const FormErrors: React.FC<Props> = ({ errors }) => {
-  const formRef = useRef(null);
+  const formRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     if (formRef.current) {

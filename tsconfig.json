@@ -1,6 +1,7 @@
 {
   "references": [
     { "path": "./apps/widget" },
+    { "path": "./apps/front" },
     { "path": "./store" },
     { "path": "./ui" },
     { "path": "./api" },
@@ -8,8 +9,12 @@
     { "path": "./components" },
     { "path": "./utils" }
   ],
-  "include": ["**/fonts.d.ts"],
-  "exclude": ["**/node_modules"],
+  "exclude": [
+    "**/node_modules", 
+    "**/spec.ts",
+    "**/*.spec.ts",
+    "**/*.spec.tsx"
+  ],
   "compilerOptions": {
     "baseUrl": "./types/index",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -27,8 +32,10 @@
     "jsx": "preserve",
     "target": "esnext",
     "sourceMap": true,
+    "rootDir": ".",
     "paths": {
       "@make.org/widget": ["./apps/widget/*"],
+      "@make.org/front": ["./apps/front/*"],
       "@make.org/components": ["./components/*"],
       "@make.org/types": ["./types/*"],
       "@make.org/api": ["./api/*"],

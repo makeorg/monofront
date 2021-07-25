@@ -1,0 +1,600 @@
+{
+    "context": "Consultation citoyenne réalisée par Make.org pour le ministère de l'Economie et des Finances du 03/12/2019 au 25/01/2020, autour de la question : \"Comment assurer l'égalité femmes-hommes dans l'économie ?\"",
+    "key_figures": {
+        "participants": 79400,
+        "proposals": 3579,
+        "votes": 549000
+    },
+    "top_ideas": [
+        {
+            "name": "Parentalité",
+            "ideas": [
+                {
+                    "idea": "Allonger le congé parternité",
+                    "agreement": 85,
+                    "adhesion": 19,
+                    "realistic": 23
+                },
+                {
+                    "idea": "Développer l'offre de crêches, y compris en entreprise, ainsi que les modes de garde",
+                    "agreement": 81,
+                    "adhesion": 17,
+                    "realistic": 26
+                },
+                {
+                    "idea": "Mieux répartir le congé parental entre femmes et hommes pour favoriser la coparentalité",
+                    "agreement": 86,
+                    "adhesion": 14,
+                    "realistic": 24
+                },
+                {
+                    "idea": "Valoriser et mieux prendre en compte les congés parentaux dans le calcul des droits à la retraite",
+                    "agreement": 82,
+                    "adhesion": 16,
+                    "realistic": 21
+                },
+                {
+                    "idea": "Mieux rémunérer les congés",
+                    "agreement": 76,
+                    "adhesion": 14,
+                    "realistic": 20
+                }
+            ]
+        },
+        {
+            "name": "Fonctionnement de l'entreprise",
+            "ideas": [
+                {
+                    "idea": "Amener plus de transparence sur les inégalités salariales et sanctionner les entreprises qui les pratiquent",
+                    "agreement": 79,
+                    "adhesion": 11,
+                    "realistic": 23
+                },
+                {
+                    "idea": "Faciliter l'aménagement des horaires de travail (télétravail, temps partiel) pour s'occuper des enfants sans impacter la carrière",
+                    "agreement": 86,
+                    "adhesion": 14,
+                    "realistic": 23
+                },
+                {
+                    "idea": "Privilégier les compétences à la parité et aux quotas dans le monde professionnel",
+                    "agreement": 74,
+                    "adhesion": 18,
+                    "realistic": 23
+                },
+                {
+                    "idea": "Lutter contre toutes les formes de discrimination au travail",
+                    "agreement": 85,
+                    "adhesion": 12,
+                    "realistic": 25
+                },
+                {
+                    "idea": "Pouvoir signaler les situations harcèlement et de sexisme au travail tout en assurant des sanctions et un suivi des plaignants",
+                    "agreement": 87,
+                    "adhesion": 12,
+                    "realistic": 22
+                }
+            ]
+        },
+        {
+            "name": "Sensibilisation",
+            "ideas": [
+                {
+                    "idea": "Eduquer dès le plus jeune à l'égalité femmes hommes ainsi qu'aux stéréotypes et discriminations",
+                    "agreement": 83,
+                    "adhesion": 15,
+                    "realistic": 21
+                },
+                {
+                    "idea": "Sensibiliser à la mixité des métiers et aux orientations professionnelles non genrées",
+                    "agreement": 80,
+                    "adhesion": 14,
+                    "realistic": 22
+                }
+            ]
+        }
+    ],
+    "controversials": [
+        {
+            "author": "Sophie",
+            "content": "Il faut encourager voire imposer la parité pour les postes de managers et les postes de direction ",
+            "agree": 33,
+            "disagree": 64
+        },
+        {
+            "author": "Sébastien",
+            "content": "Il faut que le congé paternité soit obligatoire et de même durée que le congé maternité afin de réduire les inégalités F/H",
+            "agree": 46,
+            "disagree": 46
+        },
+        {
+            "author": "Victor",
+            "content": "Il faut abolir congés paternité et maternité et créer un congé parental unique avec un solde de congés à partager entre les deux parents",
+            "agree": 27,
+            "disagree": 66
+        },
+        {
+            "author": "Louise",
+            "content": "Il faut intégrer la notion de genre dans les programmes d'éducation pour déconstruire les stéréotypes dès le plus jeune âge",
+            "agree": 30,
+            "disagree": 61
+        },
+        {
+            "author": "Emilie",
+            "content": "Il faut instaurer un revenu pour les femmes s'occupant de leur foyer/enfants : reconnaître leur travail (éducation, organisation famille)",
+            "agree": 38,
+            "disagree": 33
+        }
+    ],
+    "rejected": [
+        {
+            "author": "Sophie",
+            "content": "Il faut imposer un quota minimum d'un sexe (40 pct) dans toutes les grandes écoles surtout d'ingénieurs",
+            "disagree": 72,
+            "no_way": 60
+        },
+        {
+            "author": "Leo",
+            "content": "Il faut ne plus faire du genre un point central de l'identité administrative (sur la CNI par exemple ou sur l'acte de naissance).",
+            "disagree": 45,
+            "no_way": 53
+        },
+        {
+            "author": "Laurence",
+            "content": "Il faut développer l'écriture inclusive dans les organisations publiques et privées",
+            "disagree": 44,
+            "no_way": 49
+        },
+        {
+            "author": "Robert",
+            "content": "Il faut durcir les conditions d'attribution de la pension de réversion afin qu'elle ne soit pas désincitative au travail",
+            "disagree": 23,
+            "no_way": 60
+        }
+    ],
+    "cartography": [
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Thèmes plébiscités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Congés parentaux",
+                    "sublabel": "",
+                    "percent": 31,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Sensibilisation et éducation",
+                    "sublabel": "",
+                    "percent": 15,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Prise en charge de l'enfant",
+                    "sublabel": "",
+                    "percent": 13,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "center",
+                        "yAxis": 2.3
+                    }
+                },
+                {
+                    "label": "Discrimination au travail",
+                    "sublabel": "",
+                    "percent": 11,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Fonctionnement interne",
+                    "sublabel": "d'une structure",
+                    "percent": 6,
+                    "color": "#fff689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Parité et",
+                    "sublabel": "discrimination positive",
+                    "percent": 5,
+                    "color": "#c1ebdd",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Autre",
+                    "sublabel": "",
+                    "percent": 19,
+                    "color": "#ffffff",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "yAxis": 1.8
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Solutions plébiscitées",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Mesures législatives",
+                    "sublabel": "et réglementaires",
+                    "percent": 36,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Changement de pratiques",
+                    "sublabel": "",
+                    "percent": 18,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "center",
+                        "xAxis": 2.2,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Éducation",
+                    "sublabel": "",
+                    "percent": 14,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.7,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Sanctions",
+                    "sublabel": "",
+                    "percent": 7,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.75
+                    }
+                },
+                {
+                    "label": "Aides et",
+                    "sublabel": "subventions",
+                    "percent": 7,
+                    "color": "#fff689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Comportements individuels",
+                    "sublabel": "",
+                    "percent": 5,
+                    "color": "#c1ebdd",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Aménagement des espaces",
+                    "sublabel": "",
+                    "percent": 5,
+                    "color": "#59bad4",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Autre",
+                    "sublabel": "",
+                    "percent": 8,
+                    "color": "#ffffff",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "xAxis": 1.9,
+                        "yAxis": 1.7
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Acteurs plébiscités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Etat",
+                    "sublabel": "",
+                    "percent": 47,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.3,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Entreprises",
+                    "sublabel": "",
+                    "percent": 33,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.7,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Etablissements scolaires",
+                    "sublabel": "",
+                    "percent": 10,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Individus",
+                    "sublabel": "",
+                    "percent": 6,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Autre",
+                    "sublabel": "",
+                    "percent": 4,
+                    "color": "#ffffff",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "xAxis": 1.8,
+                        "yAxis": 1.7
+                    }
+                }
+            ]
+        }
+    ],
+    "participation": [
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (1/2)",
+            "forcedHigherValue": 30,
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "Île-de-France",
+                    "bars": {
+                        "first": 29,
+                        "second": 18
+                    }
+                },
+                {
+                    "label": "Auvergne-Rhône-Alpes",
+                    "bars": {
+                        "first": 13,
+                        "second": 12
+                    }
+                },
+                {
+                    "label": "Hauts-de-France",
+                    "bars": {
+                        "first": 7,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Nouvelle-Aquitaine",
+                    "bars": {
+                        "first": 6,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Occitanie",
+                    "bars": {
+                        "first": 8,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Grand-Est",
+                    "bars": {
+                        "first": 7,
+                        "second": 8
+                    }
+                },
+                {
+                    "label": "Provence-Alpes-Côte-d-Azur",
+                    "bars": {
+                        "first": 7,
+                        "second": 7
+                    }
+                }
+            ]
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (2/2)",
+            "forcedHigherValue": 30,
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "Pays-de-la-Loire",
+                    "bars": {
+                        "first": 6,
+                        "second": 6
+                    }
+                },
+                {
+                    "label": "Normandie",
+                    "bars": {
+                        "first": 5,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Bretagne",
+                    "bars": {
+                        "first": 3,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Bourgogne-Franche-Comté",
+                    "bars": {
+                        "first": 3,
+                        "second": 4
+                    }
+                },
+                {
+                    "label": "Centre-Val-de-Loire",
+                    "bars": {
+                        "first": 4,
+                        "second": 4
+                    }
+                },
+                {
+                    "label": "Outre-mer",
+                    "bars": {
+                        "first": 2,
+                        "second": 3
+                    }
+                },
+                {
+                    "label": "Corse",
+                    "bars": {
+                        "first": 1,
+                        "second": 1
+                    }
+                }
+            ]
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par âge",
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "16-24 ans",
+                    "bars": {
+                        "first": 36,
+                        "second": 13
+                    }
+                },
+                {
+                    "label": "25-34 ans",
+                    "bars": {
+                        "first": 45,
+                        "second": 15
+                    }
+                },
+                {
+                    "label": "35-44 ans",
+                    "bars": {
+                        "first": 8,
+                        "second": 16
+                    }
+                },
+                {
+                    "label": "45-54 ans",
+                    "bars": {
+                        "first": 4,
+                        "second": 17
+                    }
+                },
+                {
+                    "label": "55-64 ans",
+                    "bars": {
+                        "first": 4,
+                        "second": 15
+                    }
+                },
+                {
+                    "label": "65 ans et plus",
+                    "bars": {
+                        "first": 3,
+                        "second": 24
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Votes par genre",
+            "legend": "",
+            "data": [
+                {
+                    "label": "hommes",
+                    "percent": 45,
+                    "color": "#4c45a5"
+                },
+                {
+                    "label": "femmes",
+                    "percent": 55,
+                    "color": "#eb7575"
+                }
+            ]
+        }
+    ]
+}

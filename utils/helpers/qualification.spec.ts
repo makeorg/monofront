@@ -1,5 +1,3 @@
-/* @flow */
-
 import { getQualificationIndex } from './qualification';
 
 describe('Qualification Helper', () => {

@@ -107,8 +107,8 @@ export type QuestionWordingType = {
 };
 
 export type QuestionExtraSlidesConfigType = {
-  introCard: IntroCardConfigType;
-  pushProposalCard: PushProposalCardConfigType;
+  introCard?: IntroCardConfigType;
+  pushProposalCard?: PushProposalCardConfigType;
 };
 
 export type SimpleOperationDataType = {
@@ -165,7 +165,7 @@ export type QuestionType = {
   canPropose: boolean;
   operationKind: 'PUBLIC_CONSULTATION' | 'PRIVATE_CONSULTATION' | 'GREAT_CAUSE';
   sequenceConfig: QuestionExtraSlidesConfigType;
-  aboutUrl: string;
+  aboutUrl: Location;
   partners: PartnerType[];
   theme: QuestionThemeType;
   consultationImage?: string;

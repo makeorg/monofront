@@ -58,13 +58,9 @@ export const selectQuestionPartners = (
 export const selectQuestionPopularTags = (
   state: StateRoot,
   questionSlug: string
-): TagType[] | null => {
+): TagType[] | undefined => {
   if (!questionSlug || !state.questions) {
-    return null;
+    return undefined;
   }
-  return (
-    state &&
-    state.questions[questionSlug] &&
-    state.questions[questionSlug].popularTags
-  );
+  return state.questions[questionSlug].popularTags;
 };

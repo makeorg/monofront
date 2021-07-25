@@ -1,0 +1,460 @@
+{
+    "context": "Le Comité Champs-Elysées (association qui réunit les acteurs culturels et économiques de l’avenue : musées, théâtres, cinémas, foncières, enseignes et commerces indépendants) a lancé une consultation citoyenne consacrée à l'avenir des Champs-Elysées. Elle a permis d'identifier 6 grands consensus citoyens qui peuvent se lire aussi comme une synthèse des attentes des Franciliens sur la ville de demain. Les conclusions de la consultation sont remis à l'ensemble des candidats à l'élection municipale 2020.",
+    "key_figures": {
+        "participants": 96762,
+        "proposals": 2067,
+        "votes": 448432
+    },
+    "top_ideas": [
+        {
+            "name": "Aménagements urbains et paysagés",
+            "ideas": [
+                {
+                    "idea": "Végétaliser l'Avenue des Champs Elysées",
+                    "agreement": 82,
+                    "adhesion": 15,
+                    "realistic": 21
+                },
+                {
+                    "idea": "Faire des Champs Elysées un espace de vie et de promenade agréable",
+                    "agreement": 77,
+                    "adhesion": 11,
+                    "realistic": 23
+                }
+            ]
+        },
+        {
+            "name": "Culture et patrimoine",
+            "ideas": [
+                {
+                    "idea": "Préserver le patrimoine des Champs Elysées",
+                    "agreement": 79,
+                    "adhesion": 16,
+                    "realistic": 17
+                },
+                {
+                    "idea": "Refaire des Champs Elysées un espace de vie culturelle",
+                    "agreement": 75,
+                    "adhesion": 17,
+                    "realistic": 18
+                }
+            ]
+        },
+        {
+            "name": "Commerces",
+            "ideas": [
+                {
+                    "idea": "Favoriser les commerces de proximité et les savoirs-faire français par rapport aux grandes chaînes",
+                    "agreement": 77,
+                    "adhesion": 18,
+                    "realistic": 20
+                }
+            ]
+        },
+        {
+            "name": "Transports",
+            "ideas": [
+                {
+                    "idea": "Mieux encadrer les différents moyens de transports et favoriser leur cohabitation",
+                    "agreement": 75,
+                    "adhesion": 12,
+                    "realistic": 23
+                }
+            ]
+        },
+        {
+            "name": "Propreté",
+            "ideas": [
+                {
+                    "idea": "Rendre l'avenue des Champs Elysées plus propre",
+                    "agreement": 84,
+                    "adhesion": 14,
+                    "realistic": 22
+                }
+            ]
+        },
+        {
+            "name": "Sécurité",
+            "ideas": [
+                {
+                    "idea": "Améliorer la sécurité sur l'avenue notamment contre les vols et agressions",
+                    "agreement": 74,
+                    "adhesion": 16,
+                    "realistic": 23
+                }
+            ]
+        }
+    ],
+    "controversials": [
+        {
+            "author": "Thomas",
+            "content": "Il faut piétonniser complètement les Champs Elysées pour en faire un lieu de vie urbaine et non un lieu de passage touristique.",
+            "agree": 41,
+            "like_it": 15,
+            "disagree": 45,
+            "no_way": 18
+        },
+        {
+            "author": "Anne",
+            "content": "Il faut permettre la voiture pour une meilleure mobilité car seule une classe d'âge peut utiliser vélos et trottinettes.",
+            "agree": 52,
+            "like_it": 15,
+            "disagree": 31,
+            "no_way": 18
+        },
+        {
+            "author": "Caroline",
+            "content": "Il faut réduire les voies de circulation de véhicules à moteur pour créer plusieurs voies vélos",
+            "agree": 60,
+            "like_it": 12,
+            "disagree": 26,
+            "no_way": 11
+        },
+        {
+            "author": "Greg",
+            "content": "Il faut créer un grand jardin 100% piéton, central park parisien, sur toute l'avenue de l'Arc à la Concorde",
+            "agree": 44,
+            "like_it": 19,
+            "disagree": 45,
+            "no_way": 22
+        },
+        {
+            "author": "Thomas",
+            "content": "Il faut faire des concerts comme à l'époque (Supertramp, Johnny...)\t",
+            "agree": 44,
+            "like_it": 14,
+            "disagree": 33,
+            "no_way": 14
+        }
+    ],
+    "rejected": [
+        {
+            "author": "Jean-Pierre",
+            "content": "Il faut garder les Champs tels qu'ils sont, ce serait une hérésie de les transformer en bois de Boulogne !",
+            "disagree": 46,
+            "no_way": 19
+        },
+        {
+            "author": "Bernard",
+            "content": "Il faut supprimer les terrasses qui empiètent sur la partie piétonne",
+            "disagree": 57,
+            "no_way": 31
+        },
+        {
+            "author": "Arnaud ",
+            "content": "Il faut un joli tramway high-tech zéro émission CO2 roulant sur du gazon. Il serait relié et roulerait également au milieu du périphérique.",
+            "disagree": 53,
+            "no_way": 23
+        }
+    ],
+    "cartography": [
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Thèmes plébiscités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Environnement",
+                    "sublabel": "",
+                    "percent": 33,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 1.7
+                    }
+                },
+                {
+                    "label": "Transport & déplacements",
+                    "sublabel": "",
+                    "percent": 19,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Commerces ",
+                    "sublabel": "& magasins",
+                    "percent": 12,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Propreté",
+                    "sublabel": " & déchets",
+                    "percent": 10,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Image des",
+                    "sublabel": " Champs Elysées",
+                    "percent": 9,
+                    "color": "#fff689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Sécurité",
+                    "sublabel": "",
+                    "percent": 9,
+                    "color": "#c1ebdd",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.9,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Culture & Sport",
+                    "sublabel": "",
+                    "percent": 6,
+                    "color": "#59bad4",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.9,
+                        "yAxis": 1.85
+                    }
+                },
+                {
+                    "label": "Autre",
+                    "sublabel": "",
+                    "percent": 2,
+                    "color": "#ffffff",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "textAlign": "left",
+                        "yAxis": 1.7
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Solutions plébiscitées",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Protection environnementale",
+                    "sublabel": "",
+                    "percent": 30,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 1.7
+                    }
+                },
+                {
+                    "label": "Aménagement urbain",
+                    "sublabel": "",
+                    "percent": 23,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Régulation",
+                    "sublabel": "",
+                    "percent": 21,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Aménagement",
+                    "sublabel": " commercial",
+                    "percent": 14,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Sanctions",
+                    "sublabel": " (dont financières)",
+                    "percent": 5,
+                    "color": "#fff689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 2,
+                        "yAxis": 1.75
+                    }
+                },
+                {
+                    "label": "Nouveaux services & innovation",
+                    "sublabel": "",
+                    "percent": 4,
+                    "color": "#c1ebdd",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.9,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Autre",
+                    "sublabel": "",
+                    "percent": 3,
+                    "color": "#ffffff",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "textAlign": "left",
+                        "yAxis": 1.7
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Acteurs plébiscités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Mairie",
+                    "sublabel": "",
+                    "percent": 79,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Entreprises",
+                    "sublabel": "",
+                    "percent": 10,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.9,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Etat",
+                    "sublabel": "",
+                    "percent": 9,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.9,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Autre",
+                    "sublabel": "",
+                    "percent": 2,
+                    "color": "#ffffff",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "textAlign": "left",
+                        "yAxis": 1.7
+                    }
+                }
+            ]
+        }
+    ],
+    "participation": [
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par âge",
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "18-24 ans",
+                    "bars": {
+                        "first": 15,
+                        "second": 11
+                    }
+                },
+                {
+                    "label": "25-34 ans",
+                    "bars": {
+                        "first": 25,
+                        "second": 20
+                    }
+                },
+                {
+                    "label": "35-44 ans",
+                    "bars": {
+                        "first": 13,
+                        "second": 19
+                    }
+                },
+                {
+                    "label": "45-54 ans",
+                    "bars": {
+                        "first": 10,
+                        "second": 18
+                    }
+                },
+                {
+                    "label": "55-64 ans",
+                    "bars": {
+                        "first": 14,
+                        "second": 15
+                    }
+                },
+                {
+                    "label": "65 ans et plus",
+                    "bars": {
+                        "first": 23,
+                        "second": 17
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Votes par genre",
+            "legend": "",
+            "data": [
+                {
+                    "label": "hommes",
+                    "percent": 54,
+                    "color": "#4c45a5"
+                },
+                {
+                    "label": "femmes",
+                    "percent": 46,
+                    "color": "#eb7575"
+                }
+            ]
+        }
+    ]
+}

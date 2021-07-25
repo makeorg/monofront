@@ -1,0 +1,687 @@
+{
+  "context": "Paris Good Fashion, Groupe Etam, les Galeries Lafayette, Paris Modes Insider et Vestiaire Collective, en partenariat avec le Groupe Eram, Petit Bateau, La Redoute et Who’s Next, ont lancé une consultation citoyenne afin de transformer positivement l'industrie, soutenue par des acteurs publics et privés. Cette consultation, mobilisant massivement la société française, a permis d'identifier les priorités des citoyens pour une mode plus responsable, sous la forme de 14 idées plébiscitées réunies en 5 axes principaux. La coalition des acteurs s'engage à répondre de façon concrète, par des actions fortes, à court, moyen et long terme aux transformations souhaitées sur, par exemple, le recyclage, la relocalisation de la production et les matières et procédés de fabrication. Cette consultation n'est que le début d'un plan d'actions qui va s'étendre jusqu'en 2024, année des Jeux Olympiques, pour faire que la mode en France soit plus responsable.",
+  "key_figures": {
+    "participants": 106638,
+    "proposals": 3319,
+    "votes": 467733
+  },
+  "top_ideas": [
+    {
+      "name": "Recyclage et seconde main",
+      "ideas": [
+        {
+          "idea": "Favoriser le recyclage des vêtements",
+          "agreement": 96,
+          "adhesion": 17,
+          "realistic": 33
+        },
+        {
+          "idea": "Utiliser des matières et fibres issues du recyclage d'anciens vêtements",
+          "agreement": 90,
+          "adhesion": 21,
+          "realistic": 29
+        },
+        {
+          "idea": "Donner les invendus à des oeuvres de charité plutôt que les détruire",
+          "agreement": 93,
+          "adhesion": 23,
+          "realistic": 25
+        },
+        {
+          "idea": "Développer et démocratiser la vente de seconde main",
+          "agreement": 90,
+          "adhesion": 20,
+          "realistic": 27
+        },
+        {
+          "idea": "Mettre en place un système de récupération de vêtements dans les magasins",
+          "agreement": 88,
+          "adhesion": 23,
+          "realistic": 27
+        }
+      ]
+    },
+    {
+      "name": "Relocalisation",
+      "ideas": [
+        {
+          "idea": "Relocaliser la confection de vêtements",
+          "agreement": 90,
+          "adhesion": 26,
+          "realistic": 27
+        },
+        {
+          "idea": "Développer les cultures de matières premières françaises et raisonnées",
+          "agreement": 90,
+          "adhesion": 22,
+          "realistic": 25
+        }
+      ]
+    },
+    {
+      "name": "Matières et procédés de fabrication",
+      "ideas": [
+        {
+          "idea": "Privilégier les matières naturelles et éco-responsables tout en limitant les matières plastiques dans les vêtements",
+          "agreement": 92,
+          "adhesion": 22,
+          "realistic": 27
+        },
+        {
+          "idea": "Rendre les vêtements de meilleure qualité, plus solides et durables dans le temps",
+          "agreement": 90,
+          "adhesion": 26,
+          "realistic": 28
+        },
+        {
+          "idea": "Limiter l'utilisation de produits chimiques dans les vêtements",
+          "agreement": 92,
+          "adhesion": 18,
+          "realistic": 29
+        }
+      ]
+    },
+    {
+      "name": "Information du consommateur",
+      "ideas": [
+        {
+          "idea": "Améliorer et augmenter la transparence sur l'origine et la composition des produits",
+          "agreement": 92,
+          "adhesion": 22,
+          "realistic": 28
+        },
+        {
+          "idea": "Sensibiliser les citoyens aux enjeux de la mode responsable",
+          "agreement": 90,
+          "adhesion": 20,
+          "realistic": 28
+        }
+      ]
+    },
+    {
+      "name": "Emballages",
+      "ideas": [
+        {
+          "idea": "Limiter l'utilisation d'emballages et de cintres plastiques",
+          "agreement": 92,
+          "adhesion": 20,
+          "realistic": 33
+        }
+      ]
+    },
+    {
+      "name": "Conditions de travail",
+      "ideas": [
+        {
+          "idea": "Garantir des conditions de travail convenables dans l'industrie textile, en particulier à l'étranger",
+          "agreement": 90,
+          "adhesion": 23,
+          "realistic": 24
+        }
+      ]
+    }
+  ],
+  "controversials": [
+    {
+      "content": "Il faut mettre en valeur les matières de longue durée de vie et facilement transformables comme la laine, les cuirs et peaux",
+      "author": "Pierre",
+      "agree": 57,
+      "like_it": 9,
+      "disagree": 19,
+      "no_way": 12,
+      "votes": 279
+    },
+    {
+      "content": "Il faut des vêtements uniquement à partir de matières recyclées, upcyclées et bio. Le coton, la laine...ne sont pas écologiques si pas bio. ",
+      "author": "Aurélie",
+      "agree": 49,
+      "like_it": 10,
+      "disagree": 26,
+      "no_way": 7,
+      "votes": 100
+    },
+    {
+      "content": "Il faut intégrer dans le prix du vêtement une consigne qui sera déduite du prochain achat lors de la restitution du vêtement ",
+      "author": "Marie-Annick",
+      "agree": 43,
+      "like_it": 9,
+      "disagree": 28,
+      "no_way": 8,
+      "votes": 120
+    },
+    {
+      "content": "Il faut interdire les matières animales (cuir, fourrure)",
+      "author": "Mélanie",
+      "agree": 50,
+      "like_it": 14,
+      "disagree": 24,
+      "no_way": 8,
+      "votes": 118
+    },
+    {
+      "content": "Il faut arrêter de mettre des étiquettes sur les vêtements, il faudrait plutôt les imprimer dessus.",
+      "author": "Dagau",
+      "agree": 43,
+      "like_it": 11,
+      "disagree": 30,
+      "no_way": 9,
+      "votes": 398
+    },
+    {
+      "content": "Il faut que les magasins fassent évoluer leur modèles de l'achat vers la location",
+      "author": "Audrey",
+      "agree": 29,
+      "like_it": 6,
+      "disagree": 35,
+      "no_way": 7,
+      "votes": 82
+    },
+    {
+      "content": "Il faut mettre en place une taxe écologique textile pour l'acheteur comme pour le producteur ",
+      "author": "Sylvie",
+      "agree": 40,
+      "like_it": 10,
+      "disagree": 31,
+      "no_way": 11,
+      "votes": 156
+    }
+  ],
+  "rejected": [
+    {
+      "content": "Il ne faut plus acheter mais louer des vêtements",
+      "author": "Damien",
+      "agree": 10,
+      "like_it": 3,
+      "disagree": 55,
+      "no_way": 4,
+      "votes": 38
+    },
+    {
+      "content": "Il faut interdire les programmes de fidélité",
+      "author": "Cecile",
+      "agree": 12,
+      "like_it": 5,
+      "disagree": 58,
+      "no_way": 27,
+      "votes": 21
+    }
+  ],
+  "cartography": [
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Thèmes cités",
+      "legend": "",
+      "data": [
+        {
+          "label": "Recyclage, seconde main",
+          "sublabel": "& location",
+          "percent": 22,
+          "color": "#4B45A5",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.2,
+            "yAxis": 2.1
+          }
+        },
+        {
+          "label": "Production locale",
+          "sublabel": "",
+          "percent": 15,
+          "color": "#8955bd",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.2,
+            "yAxis": 2.2
+
+          }
+        },
+        {
+          "label": "Matières et procédés",
+          "sublabel": "de fabrication",
+          "percent": 13,
+          "color": "#eb7575",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.2,
+            "yAxis": 2.2
+          }
+        },
+        {
+          "label": "Information",
+          "sublabel": "du consommateur",
+          "percent": 9,
+          "color": "#f5976e",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.8
+          }
+        },
+        {
+          "label": "Surproduction",
+          "sublabel": "& surconsommation",
+          "percent": 8,
+          "color": "#eeb298",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.8,
+            "yAxis": 1.8
+          }
+        },
+        {
+          "label": "Durée de vie",
+          "sublabel": "des produits (qualité)",
+          "percent": 5,
+          "color": "#ffd266",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 2.0,
+            "yAxis": 1.8
+          }
+        },
+        {
+          "label": "Emballages",
+          "sublabel": "",
+          "percent": 4,
+          "color": "#fff689",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 2.1,
+            "yAxis": 1.8
+          }
+        },
+        {
+          "label": "Droits humains",
+          "sublabel": "& conditions de travail",
+          "percent": 3,
+          "color": "#e5ffae",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 2.0,
+            "yAxis": 2.0
+          }
+        },
+        {
+          "label": "Bien être animal",
+          "sublabel": "",
+          "percent": 2,
+          "color": "#c1ebdd",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 2.0,
+            "yAxis": 2.2
+          }
+        },
+        {
+          "label": "Prix & soldes",
+          "sublabel": "",
+          "percent": 2,
+          "color": "#59bad4",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 1.9,
+            "yAxis": 1.9
+          }
+        },
+        {
+          "label": "Mode pour tous",
+          "sublabel": "",
+          "percent": 1,
+          "color": "#5886ae",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.2,
+            "yAxis": 2.3
+          }
+        }
+      ]
+    },
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Solutions citées",
+      "legend": "",
+      "data": [
+        {
+          "label": "Favoriser, développer",
+          "sublabel": "",
+          "percent": 45,
+          "color": "#4b45a5",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.2,
+            "yAxis": 2.2
+          }
+        },
+        {
+          "label": "Limiter,",
+          "sublabel": "réduire, arrêter",
+          "percent": 14,
+          "color": "#8955bd",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.8,
+            "yAxis": 2.0
+          }
+        },
+        {
+          "label": "Sensibiliser,",
+          "sublabel": "communiquer",
+          "percent": 6,
+          "color": "#eb7575",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.9,
+            "yAxis": 1.8
+          }
+        },
+        {
+          "label": "Obliger, imposer",
+          "sublabel": "",
+          "percent": 3,
+          "color": "#f5976e",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 2.0,
+            "yAxis": 1.8
+          }
+        },
+        {
+          "label": "Interdire, sanctionner",
+          "sublabel": "",
+          "percent": 3,
+          "color": "#eeb298",
+          "adjustLabel": 6,
+          "textAlign": "right",
+          "xAxis": 2.0,
+          "yAxis": 1.9
+        },
+        {
+          "label": "Subventionner/Taxer",
+          "sublabel": "",
+          "percent": 2,
+          "color": "#ffd266",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.0,
+            "yAxis": 2.1  
+          }
+        }
+      ]
+    },
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Publics cités",
+      "legend": "",
+      "data": [
+        {
+          "label": "Marques",
+          "sublabel": "",
+          "percent": 14,
+          "color": "#4b45a5",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.3,
+            "yAxis": 2.2
+          }
+        },
+        {
+          "label": "Consommateurs",
+          "sublabel": "",
+          "percent": 9,
+          "color": "#8955bd",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.2,
+            "yAxis": 2.2
+          }
+        },
+        {
+          "label": "Autres acteurs",
+          "sublabel": "de la profession",
+          "percent": 6,
+          "color": "#eb7575",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.8,
+            "yAxis": 1.8
+          }
+        },
+        {
+          "label": "Magasins",
+          "sublabel": "",
+          "percent": 6,
+          "color": "#f5976e",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.9,
+            "yAxis": 1.8
+          }
+        },
+        {
+          "label": "Ouvriers",
+          "sublabel": "",
+          "percent": 1,
+          "color": "#eeb298",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.0,
+            "yAxis": 1.8
+          }
+        }
+      ]
+    }
+  ],
+  "participation": [
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par région (1/2)",
+      "forcedHigherValue": 30,
+      "legend": {
+        "title": "Répartition des votes",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "Île-de-France",
+          "bars": {
+            "first": 26,
+            "second": 18
+          }
+        },
+        {
+          "label": "Auvergne-Rhône-Alpes",
+          "bars": {
+            "first": 12,
+            "second": 12
+          }
+        },
+        {
+          "label": "Hauts-de-France",
+          "bars": {
+            "first": 7,
+            "second": 9
+          }
+        },
+        {
+          "label": "Nouvelle-Aquitaine",
+          "bars": {
+            "first": 8,
+            "second": 9
+          }
+        },
+        {
+          "label": "Occitanie",
+          "bars": {
+            "first": 8,
+            "second": 9
+          }
+        },
+        {
+          "label": "Grand-Est",
+          "bars": {
+            "first": 7,
+            "second": 8
+          }
+        },
+        {
+          "label": "Provence-Alpes-Côte-d-Azur",
+          "bars": {
+            "first": 10,
+            "second": 7
+          }
+        }
+      ]
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par région (2/2)",
+      "forcedHigherValue": 30,
+      "legend": {
+        "title": "Répartition des votes",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "Pays-de-la-Loire",
+          "bars": {
+            "first": 6,
+            "second": 6
+          }
+        },
+        {
+          "label": "Normandie",
+          "bars": {
+            "first": 4,
+            "second": 5
+          }
+        },
+        {
+          "label": "Bretagne",
+          "bars": {
+            "first": 4,
+            "second": 5
+          }
+        },
+        {
+          "label": "Bourgogne-Franche-Comté",
+          "bars": {
+            "first": 3,
+            "second": 4
+          }
+        },
+        {
+          "label": "Centre-Val-de-Loire",
+          "bars": {
+            "first": 3,
+            "second": 4
+          }
+        },
+        {
+          "label": "Outre-mer",
+          "bars": {
+            "first": 1,
+            "second": 3
+          }
+        },
+        {
+          "label": "Corse",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        },
+        {
+          "label": "Wallonia",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        }
+      ]
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par âge",
+      "legend": {
+        "title": "Répartition des votes",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "16-24 ans",
+          "bars": {
+            "first": 18,
+            "second": 13
+          }
+        },
+        {
+          "label": "25-34 ans",
+          "bars": {
+            "first": 21,
+            "second": 15
+          }
+        },
+        {
+          "label": "35-44 ans",
+          "bars": {
+            "first": 16,
+            "second": 16
+          }
+        },
+        {
+          "label": "45-54 ans",
+          "bars": {
+            "first": 15,
+            "second": 17
+          }
+        },
+        {
+          "label": "55-64 ans",
+          "bars": {
+            "first": 15,
+            "second": 15
+          }
+        },
+        {
+          "label": "65 ans et plus",
+          "bars": {
+            "first": 15,
+            "second": 24
+          }
+        }
+      ]
+    },
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Votes par genre",
+      "legend": "",
+      "data": [
+        {
+          "label": "hommes",
+          "percent": 21,
+          "color": "#4b45a5"
+        },
+        {
+          "label": "femmes",
+          "percent": 79,
+          "color": "#8955bd"
+        }
+      ]
+    }
+  ]
+}

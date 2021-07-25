@@ -1,4 +1,4 @@
-// @flow
+
 
 import { ProposalApiService } from '@make.org/api/ProposalApiService';
 import { ProposalService } from '@make.org/utils/services/Proposal';

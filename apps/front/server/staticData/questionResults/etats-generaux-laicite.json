@@ -1,0 +1,586 @@
+{
+  "context": "Consultation citoyenne réalisée par Make.org du 2021-04-20 au 2021-06-19, autour de la question : Comment faire vivre la laïcité au quotidien ?",
+  "key_figures": {
+    "participants": 55636,
+    "proposals": 2371,
+    "votes": 609642
+  },
+  "top_ideas": [
+    {
+      "name": "Sensibilisation et éducation",
+      "ideas": [
+        {
+          "idea": "Développer l'esprit critique par le biais de l'éducation",
+          "agreement": 86,
+          "adhesion": 16,
+          "realistic": 15
+        },
+        {
+          "idea": "Transmettre les valeurs de cohésion et de respect dès le plus jeune âge",
+          "agreement": 89,
+          "adhesion": 16,
+          "realistic": 15
+        },
+        {
+          "idea": "Enseigner les fondements de la laïcité à l'école",
+          "agreement": 84,
+          "adhesion": 13,
+          "realistic": 18
+        },
+        {
+          "idea": "Mieux définir le concept de laïcité et ses implications auprès de la population",
+          "agreement": 84,
+          "adhesion": 14,
+          "realistic": 15
+        },
+        {
+          "idea": "Enseigner l'histoire des relgions afin de mieux les connaitre",
+          "agreement": 78,
+          "adhesion": 12,
+          "realistic": 17
+        },
+        {
+          "idea": "Mieux lutter contre la stigmatisation des pratiques et des pratiquants",
+          "agreement": 76,
+          "adhesion": 16,
+          "realistic": 10
+        }
+      ]
+    },
+    {
+      "name": "Cadre d'application de la laïcité",
+      "ideas": [
+        {
+          "idea": "Rappeler la primauté des lois de la République sur les religions",
+          "agreement": 85,
+          "adhesion": 14,
+          "realistic": 17
+        },
+        {
+          "idea": "Assurer la neutralité religieuse en politique et dans les institutions",
+          "agreement": 76,
+          "adhesion": 13,
+          "realistic": 15
+        },
+        {
+          "idea": "Stimuler la cohésion sociale grâce à la laïcité",
+          "agreement": 76,
+          "adhesion": 14,
+          "realistic": 12
+        }
+      ]
+    },
+    {
+      "name": "Liberté de conscience et de culte",
+      "ideas": [
+        {
+          "idea": "Garantir et protéger la liberté de conscience et de culte",
+          "agreement": 89,
+          "adhesion": 14,
+          "realistic": 17
+        },
+        {
+          "idea": "Refuser le prosélytisme ou le fait d'imposer une religion",
+          "agreement": 80,
+          "adhesion": 16,
+          "realistic": 15
+        }
+      ]
+    }
+  ],
+  "controversials": [
+    {
+      "id": "08832b75-51f4-45a0-83fa-648529fe3131",
+      "content": "Il faut créer un cours d'éducation aux religions pour tous les élèves, détaché des cours d'Histoire.",
+      "author": "mael",
+      "agree": 42,
+      "like_it": 9,
+      "disagree": 47,
+      "no_way": 21,
+      "votes": 496
+    },
+    {
+      "id": "1ce7dd96-42b1-4461-999b-ec9603698eaf",
+      "content": "Il faut protéger les enfants des religions. Ne pas permettre un enrôlement dans une religion avant la majorité.",
+      "author": "Mylene",
+      "agree": 43,
+      "like_it": 10,
+      "disagree": 37,
+      "no_way": 10,
+      "votes": 482
+    },
+    {
+      "id": "cd20df1a-751d-4edf-886b-8ec1260ce4ab",
+      "content": "Il faut que la laïcité (séparation de la société civile et de la société religieuse) soit respectée. L’état ne doit pas intervenir",
+      "author": "Anais",
+      "agree": 50,
+      "like_it": 10,
+      "disagree": 34,
+      "no_way": 11,
+      "votes": 316
+    },
+    {
+      "id": "f06a3b1e-30a3-4151-ad40-2ec4d81f851f",
+      "content": "Il faut autoriser tous les signes de religion et non aucun : vivre ensemble pour plus de tolérance, moins de tabou, moins de diabolisation.",
+      "author": "Juliane",
+      "agree": 49,
+      "like_it": 18,
+      "disagree": 40,
+      "no_way": 19,
+      "votes": 1540
+    },
+    {
+      "id": "037041d6-21b6-40fd-a8ad-a05904fb98f5",
+      "content": "Il faut permettre aux élèves de lycée de porter le voile et la kippa à partir de 15 ans, les jeunes peuvent faire leurs propres choix",
+      "author": "Urv'An",
+      "agree": 33,
+      "like_it": 10,
+      "disagree": 58,
+      "no_way": 35,
+      "votes": 278
+    },
+    {
+      "id": "9e935576-d4f0-44c5-93ac-405161eb9290",
+      "content": "Il faut que le calendrier français reflète plus la laïcité. Actuellement les jours fériés sont le privilège d'une seule religion.",
+      "author": "Amandine",
+      "agree": 39,
+      "like_it": 10,
+      "disagree": 48,
+      "no_way": 23,
+      "votes": 1288
+    },
+    {
+      "id": "cc56e9e8-742c-4b7e-86cc-f272e85e9454",
+      "content": "Il faut arrêter de diffuser tous les événements religieux sur les chaînes publiques.",
+      "author": "Esteban",
+      "agree": 39,
+      "like_it": 11,
+      "disagree": 40,
+      "no_way": 17,
+      "votes": 329
+    },
+    {
+      "id": "1e57d447-9602-48d8-b3a3-6d7f9b3db7fd",
+      "content": "Il faut faire financer les cultes par les pratiquants (via un impôt cultuel sur le revenu) plus que par l'Etat (dons défiscalisés à 66%)",
+      "author": "Am",
+      "agree": 41,
+      "like_it": 12,
+      "disagree": 38,
+      "no_way": 13,
+      "votes": 344
+    },
+    {
+      "id": "48c1e3aa-9aa4-4817-aa5e-1b8c70a700eb",
+      "content": "Il faut que les cantines scolaires s'interdisent de proposer des menus en fonction de la religion",
+      "author": "Edith",
+      "agree": 38,
+      "like_it": 12,
+      "disagree": 47,
+      "no_way": 23,
+      "votes": 686
+    },
+    {
+      "id": "3843605d-5c76-4dff-b141-a2aa12a67d46",
+      "content": "Il faut cesser de stigmatiser des femmes qui portent le voile sous prétexte qu’elles ne respectent pas la laïcité alors c’est ça la laïcité.",
+      "author": "Sirine",
+      "agree": 48,
+      "like_it": 10,
+      "disagree": 43,
+      "no_way": 13,
+      "votes": 226
+    },
+    {
+      "id": "ba0514a5-a224-4371-8525-7c23635bc236",
+      "content": "Il faut laisser les gens vivre leur foi ouvertement comme cela se fait en Angleterre, aux États Unis etc",
+      "author": "khalid",
+      "agree": 43,
+      "like_it": 12,
+      "disagree": 41,
+      "no_way": 22,
+      "votes": 1035
+    },
+    {
+      "id": "1836aff8-9cb9-4772-9133-1b2e5cd32ae1",
+      "content": "Il faut que l’athéisme soit la norme et que la pratique d’un culte quel qu’il soit s’adapte à la société et non l’inverse.",
+      "author": "Paul",
+      "agree": 51,
+      "like_it": 12,
+      "disagree": 33,
+      "no_way": 12,
+      "votes": 420
+    }
+  ],
+  "rejected": [],
+  "cartography": [
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Thèmes cités",
+      "legend": "",
+      "data": [
+        {
+          "label": "Sensibilisation à la laïcité",
+          "percent": 22,
+          "color": "#4B45A5",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.35,
+            "yAxis": 1.9
+          }
+        },
+        {
+          "label": "Milieu scolaire",
+          "percent": 21,
+          "color": "#8955BD",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.35
+          }
+        },
+        {
+          "label": "Modification & application de la loi",
+          "percent": 18,
+          "color": "#EB7575",
+          "adjustLabel": {
+            "textAlign": "center",
+            "yAxis": 2.3
+          }
+        },
+        {
+          "label": "Définition de la laïcité",
+          "percent": 15,
+          "color": "#F5976E",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.85,
+            "yAxis": 2.25
+          }
+        },
+        {
+          "label": "Espace public",
+          "percent": 12,
+          "color": "#EEB298",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.75
+          }
+        },
+        {
+          "label": "Services publics et élus",
+          "percent": 6,
+          "color": "#FFD266",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.75,
+            "yAxis": 1.85
+          }
+        },
+        {
+          "label": "Lieux de cultes et",
+          "sublabel": " associations cultuelles",
+          "percent": 6,
+          "color": "#FFF689",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.85,
+            "yAxis": 1.95
+          }
+        },
+        {
+          "label": "Liberté de conscience",
+          "percent": 5,
+          "color": "#E5FFAE",
+          "adjustLabel": {
+            "textAlign": "right",
+            "yAxis": 2.1
+          }
+        },
+        {
+          "label": "Entreprise",
+          "percent": 1,
+          "color": "#C1EBDD",
+          "adjustLabel": {
+            "textAlign": "left",
+            "yAxis": 1.85
+          }
+        }
+      ]
+    },
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Solutions citées",
+      "legend": "",
+      "data": [
+        {
+          "label": "Favoriser, developper",
+          "percent": 29,
+          "color": "#4B45A5",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.35,
+            "yAxis": 1.9
+          }
+        },
+        {
+          "label": "Sensibiliser, communiquer",
+          "percent": 18,
+          "color": "#8955BD",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.15,
+            "yAxis": 2.25
+          }
+        },
+        {
+          "label": "Obliger, imposer, appliquer",
+          "percent": 17,
+          "color": "#EB7575",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.8,
+            "yAxis": 2.25
+          }
+        },
+        {
+          "label": "Limiter, réduire,",
+          "sublabel": " arrêter",
+          "percent": 15,
+          "color": "#F5976E",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.75,
+            "yAxis": 1.85
+          }
+        },
+        {
+          "label": "Interdire, sanctionner",
+          "percent": 6,
+          "color": "#EEB298",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.9,
+            "yAxis": 1.75
+          }
+        },
+        {
+          "label": "Conserver, garder",
+          "percent": 4,
+          "color": "#FFD266",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.9,
+            "yAxis": 1.9
+          }
+        },
+        {
+          "label": "Changer, adapter",
+          "percent": 3,
+          "color": "#FFF689",
+          "adjustLabel": {
+            "textAlign": "left",
+            "yAxis": 1.85
+          }
+        }
+      ]
+    }
+  ],
+  "participation": [
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par région (1/2)",
+      "forcedHigherValue": 20,
+      "legend": {
+        "title": "Répartition des votes",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "Île-de-France",
+          "bars": {
+            "first": 19,
+            "second": 18
+          }
+        },
+        {
+          "label": "Auvergne-Rhône-Alpes",
+          "bars": {
+            "first": 14,
+            "second": 12
+          }
+        },
+        {
+          "label": "Hauts-de-France",
+          "bars": {
+            "first": 9,
+            "second": 9
+          }
+        },
+        {
+          "label": "Nouvelle-Aquitaine",
+          "bars": {
+            "first": 7,
+            "second": 9
+          }
+        },
+        {
+          "label": "Occitanie",
+          "bars": {
+            "first": 8,
+            "second": 9
+          }
+        },
+        {
+          "label": "Grand-Est",
+          "bars": {
+            "first": 10,
+            "second": 8
+          }
+        },
+        {
+          "label": "Provence-Alpes-Côte-d-Azur",
+          "bars": {
+            "first": 8,
+            "second": 7
+          }
+        }
+      ],
+      "id": "participation_0"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par région (2/2)",
+      "forcedHigherValue": 20,
+      "legend": {
+        "title": "Répartition des votes",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "Pays-de-la-Loire",
+          "bars": {
+            "first": 5,
+            "second": 6
+          }
+        },
+        {
+          "label": "Normandie",
+          "bars": {
+            "first": 5,
+            "second": 5
+          }
+        },
+        {
+          "label": "Bretagne",
+          "bars": {
+            "first": 5,
+            "second": 5
+          }
+        },
+        {
+          "label": "Bourgogne-Franche-Comté",
+          "bars": {
+            "first": 3,
+            "second": 4
+          }
+        },
+        {
+          "label": "Centre-Val-de-Loire",
+          "bars": {
+            "first": 3,
+            "second": 4
+          }
+        },
+        {
+          "label": "Outre-mer",
+          "bars": {
+            "first": 4,
+            "second": 3
+          }
+        },
+        {
+          "label": "Corse",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        }
+      ],
+      "id": "participation_1"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par âge",
+      "legend": {
+        "title": "Répartition des votes",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "18-24 ans",
+          "bars": {
+            "first": 41,
+            "second": 18
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "25-34 ans",
+          "bars": {
+            "first": 52,
+            "second": 26
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "35-44 ans",
+          "bars": {
+            "first": 6,
+            "second": 27
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "45-54 ans",
+          "bars": {
+            "first": 1,
+            "second": 29
+          },
+          "color": "#8BDAB2"
+        }
+      ],
+      "id": "participation_2"
+    },
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Votes par genre",
+      "legend": "",
+      "data": [
+        {
+          "label": "hommes",
+          "percent": 45,
+          "color": "#4B45A5"
+        },
+        {
+          "label": "femmes",
+          "percent": 55,
+          "color": "#8955BD"
+        }
+      ],
+      "id": "participation_3"
+    }
+  ]
+}

@@ -1,0 +1,689 @@
+{
+    "context": "Make.org a lancé, avec le soutien de la secrétaire d’État chargée des personnes handicapées Sophie Cluzel, une vaste consultation citoyenne, première étape de sa Grande Cause dédiée au handicap. Pendant plus de trois mois, des centaines de milliers de citoyens ont été invités à répondre à la question \"Comment la société peut-elle garantir une vraie place aux personnes handicapées ?\" en proposant leurs solutions et en votant sur celles des autres. Grâce aux consensus identifiés dans cette consultation, entreprises, associations, citoyens et institutions partenaires de Make.org se réuniront en ateliers pour bâtir un grand plan d'actions concrètes issues de la société civile en faveur des personnes handicapées.",
+    "reports": [{
+        "type": "document pdf",
+        "path": "/reports/operations/handicap/2020_02-Grande_Cause_Handicap-Rapport.pdf",
+        "size": "5,2 Mo"
+    },{
+        "type": "document word",
+        "path": "/reports/operations/handicap/2020_02-Grande_Cause_Handicap-Rapport.xml",
+        "size": "459 Ko"
+    }],
+    "key_figures": {
+        "reach": 5100000,
+        "participants": 274600,
+        "proposals": 7172,
+        "votes": 953000
+    },
+    "top_ideas": [
+        {
+            "name": "Communiquer, informer, sensibiliser",
+            "ideas": [
+                {
+                    "idea": "Sensibiliser et mieux prendre en compte la diversité des handicaps, notamment ceux invisibles",
+                    "agreement": 93,
+                    "adhesion": 19,
+                    "realistic": 32
+                },
+                {
+                    "idea": "Sensibiliser et former l'ensemble du personnel éducatif au handicap",
+                    "agreement": 89,
+                    "adhesion": 17,
+                    "realistic": 33
+                }
+            ]
+        },
+        {
+            "name": "Simplification des démarches",
+            "ideas": [
+                {
+                    "idea": "Simplifier les démarches administratives et les délais de traitement, en particulier au sein des MDPH",
+                    "agreement": 90,
+                    "adhesion": 23,
+                    "realistic": 33
+                }
+            ]
+        },
+        {
+            "name": "Accompagner les personnes et soutenir leur autonomie",
+            "ideas": [
+                {
+                    "idea": "Développer les structures d'accueil en fonction des handicaps et maintenir les capacités de ceux existant",
+                    "agreement": 90,
+                    "adhesion": 16,
+                    "realistic": 34
+                },
+                {
+                    "idea": "Offrir une meilleure prise en charge des soins et dépenses liées au handicap et encadrer le cout des équipements",
+                    "agreement": 90,
+                    "adhesion": 19,
+                    "realistic": 31
+                },
+                {
+                    "idea": "Réévaluer le montant et le calcul des pensions d'invalidité, des retraites et de l'AAH",
+                    "agreement": 89,
+                    "adhesion": 16,
+                    "realistic": 33
+                },
+                {
+                    "idea": "Mieux accompagner les aidants",
+                    "agreement": 92,
+                    "adhesion": 19,
+                    "realistic": 33
+                },
+                {
+                    "idea": "Valoriser les métiers de l'accompagnement par la reconnaissance, la formation et la rémunération",
+                    "agreement": 89,
+                    "adhesion": 19,
+                    "realistic": 30
+                }
+            ]
+        },
+        {
+            "name": "Adapter la société",
+            "ideas": [
+                {
+                    "idea": "Améliorer l'accès aux infrastructures, notamment aux batiments publics",
+                    "agreement": 90,
+                    "adhesion": 14,
+                    "realistic": 35
+                },
+                {
+                    "idea": "Rendre la ville et les transports plus accessibles pour les personnes handicapées",
+                    "agreement": 92,
+                    "adhesion": 15,
+                    "realistic": 31
+                },
+                {
+                    "idea": "Renforcer les moyens d'accueil humains et financiers dans les écoles",
+                    "agreement": 89,
+                    "adhesion": 18,
+                    "realistic": 31
+                },
+                {
+                    "idea": "Améliorer la formation et l'accompagnement des personnes handicapées dans leur parcours professionnel",
+                    "agreement": 87,
+                    "adhesion": 17,
+                    "realistic": 33
+                },
+                {
+                    "idea": "Adapter les entreprises pour favoriser l'inclusions des personnes handicapées au travail",
+                    "agreement": 90,
+                    "adhesion": 15,
+                    "realistic": 34
+                }
+            ]
+        }
+    ],
+    "controversials": [
+        {
+            "author": "Marie",
+            "content": "Il faut qu'un handicapé français puisse garder ses aides sociales, s'il choisit de vivre dans un autre pays de l'Europe",
+            "agree": 46,
+            "like_it": 8,
+            "disagree": 30,
+            "no_way": 11
+        },
+        {
+            "author": "Philippe",
+            "content": "Il faut légaliser le canabis, pour arrêter tout ces médicament bien chimiques qui nous rendent encore plus malades et qui nous coûtent cher",
+            "agree": 51,
+            "like_it": 14,
+            "disagree": 26,
+            "no_way": 13
+        },
+        {
+            "author": "Laurence",
+            "content": "Il faut faire des écoles parallèles avec des niveaux différents, qui doivent s'adapter aux publics concernés",
+            "agree": 59,
+            "like_it": 11,
+            "disagree": 17,
+            "no_way": 9
+        },
+        {
+            "author": "Christelle",
+            "content": "Il faut forcer les entreprises à employer des personnes handicapées et ne pas les autoriser à payer des amendes ou des pénalités.",
+            "agree": 56,
+            "like_it": 13,
+            "disagree": 27,
+            "no_way": 9
+        },
+        {
+            "author": "Juliette",
+            "content": "Il faut supprimer ce logo de fauteuil qui ne représente qu'une minorité des personnes en situation de handicap",
+            "agree": 42,
+            "like_it": 9,
+            "disagree": 38,
+            "no_way": 16
+        }
+    ],
+    "rejected": [
+        {
+            "author": "Olivier",
+            "content": "Il faut fermer tous les établissements spécialisés et transférer les budgets du médico-social vers l'Education Nationale",
+            "disagree": 51,
+            "no_way": 57
+        },
+        {
+            "author": "Thierry",
+            "content": "Il faut développer les lieux de vie pour personnes handicapées, et que ces lieux de vie soient financés par les pensionnaires eux-mêmes",
+            "disagree": 32,
+            "no_way": 34
+        }
+    ],
+    "cartography": [
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Thèmes plébiscités",
+            "legend": "Parmi les nombreux sujets évoqués dans la consultation, la thématique de l'accompagnement (valoriser le statut des aidants, améliorer les conditions d’exercice des AVS ou auxiliaires de vie) a été plébiscitée devant le thème de l’emploi (favoriser la formation professionnelle, adapter les entreprises) et celui des représentations associées aux personnes handicapées (mieux parler des handicaps invisibles).",
+            "data": [
+                {
+                    "label": "Accompagnement",
+                    "sublabel": "",
+                    "percent": 17,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.35,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Emploi",
+                    "sublabel": "",
+                    "percent": 10,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.35
+                    }
+                },
+                {
+                    "label": "Scolarité",
+                    "sublabel": "",
+                    "percent": 10,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.35,
+                        "yAxis": 2.15
+                    }
+                },
+                {
+                    "label": "Regards",
+                    "sublabel": "et représentations",
+                    "percent": 10,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.3,
+                        "yAxis": 2.25
+                    }
+                },
+                {
+                    "label": "Accès aux",
+                    "sublabel": "infrastructures",
+                    "percent": 7,
+                    "color": "#fff689",
+                    "adjustLabel": {
+                        "textAlign": "center",
+                        "yAxis": 2.3
+                    }
+                },
+                {
+                    "label": "Démarches",
+                    "sublabel": "administratives",
+                    "percent": 7,
+                    "color": "#c1ebdd",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.85,
+                        "yAxis": 2.25
+                    }
+                },
+                {
+                    "label": "Protection sociale",
+                    "sublabel": "et services publics",
+                    "percent": 5,
+                    "color": "#59bad4",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.75,
+                        "yAxis": 2.15
+                    }
+                },
+                {
+                    "label": "Aides et allocations",
+                    "sublabel": "",
+                    "percent": 5,
+                    "color": "#5985af",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.75,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Accès aux soins",
+                    "sublabel": "",
+                    "percent": 5,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.75
+                    }
+                },
+                {
+                    "label": "Autre",
+                    "sublabel": "",
+                    "percent": 24,
+                    "color": "#ffffff",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "yAxis": 1.75
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Solutions plébiscitées",
+            "legend": "Les citoyens appellent en premier lieu des solutions d’action orientées vers un changement dans les politiques publiques (revaloriser les aides et améliorer la prise en charge des soins) mais également vers une meilleure sensibilisation, notamment via les campagnes d’information et l'enseignement à l'école. Des solutions relatives à la simplification des démarches administratives ont également fédéré les votes citoyens.",
+            "data": [
+                {
+                    "label": "Réforme des",
+                    "sublabel": "politiques publiques",
+                    "percent": 18,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.35
+                    }
+                },
+                {
+                    "label": "Sensibilisation",
+                    "sublabel": "et communication",
+                    "percent": 13,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.35
+                    }
+                },
+                {
+                    "label": "Aménagement",
+                    "sublabel": "des espaces",
+                    "percent": 10,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.35,
+                        "yAxis": 2.15
+                    }
+                },
+                {
+                    "label": "Insertion",
+                    "sublabel": "",
+                    "percent": 10,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "center",
+                        "yAxis": 2.25
+                    }
+                },
+                {
+                    "label": "Simplification",
+                    "sublabel": "",
+                    "percent": 9,
+                    "color": "#fff689",
+                    "adjustLabel": {
+                        "textAlign": "center",
+                        "yAxis": 2.25
+                    }
+                },
+                {
+                    "label": "Formation",
+                    "sublabel": "",
+                    "percent": 9,
+                    "color": "#c1ebdd",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Aides et",
+                    "sublabel": "subventions",
+                    "percent": 9,
+                    "color": "#59bad4",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.75
+                    }
+                },
+                {
+                    "label": "Orientation de",
+                    "sublabel": "politique générale",
+                    "percent": 6,
+                    "color": "#5985af",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.75
+                    }
+                },
+                {
+                    "label": "Harmonisation",
+                    "sublabel": "",
+                    "percent": 5,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.75,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Autre",
+                    "sublabel": "",
+                    "percent": 11,
+                    "color": "#ffffff",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "xAxis": 1.9,
+                        "yAxis": 1.75
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Acteurs plébiscités",
+            "legend": "Les citoyens désignent majoritairement les pouvoirs publics afin de mettre en oeuvre des solutions pour le handicap (relèvement des aides, création de structures, revalorisation salariale des métiers de l’accompagnement). Le rôle des citoyens (proches aidants ou associations) reste néanmoins mis en avant dans 10% des propositions plébiscitées.",
+            "data": [
+                {
+                    "label": "Etat",
+                    "sublabel": "",
+                    "percent": 55,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.35,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Établissements",
+                    "sublabel": "scolaires",
+                    "percent": 13,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Collectivités",
+                    "sublabel": "locales",
+                    "percent": 7,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.75
+                    }
+                },
+                {
+                    "label": "Entreprises",
+                    "sublabel": "",
+                    "percent": 7,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.75,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Citoyens",
+                    "sublabel": "",
+                    "percent": 5,
+                    "color": "#fff689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.85
+                    }
+                },
+                {
+                    "label": "Proches",
+                    "sublabel": "et aidants",
+                    "percent": 5,
+                    "color": "#c1ebdd",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Autre",
+                    "sublabel": "",
+                    "percent": 8,
+                    "color": "#ffffff",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "xAxis": 1.9,
+                        "yAxis": 1.75
+                    }
+                }
+            ]
+        }
+    ],
+    "participation": [
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (1/2)",
+            "forcedHigherValue": 18,
+            "legend": {
+                "title": "Répartition des participants",
+                "dimensions": {
+                    "first": "participants",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "Île-de-France",
+                    "bars": {
+                        "first": 13,
+                        "second": 18
+                    }
+                },
+                {
+                    "label": "Auvergne-Rhône-Alpes",
+                    "bars": {
+                        "first": 11,
+                        "second": 12
+                    }
+                },
+                {
+                    "label": "Hauts-de-France",
+                    "bars": {
+                        "first": 10,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Nouvelle-Aquitaine",
+                    "bars": {
+                        "first": 9,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Occitanie",
+                    "bars": {
+                        "first": 10,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Grand-Est",
+                    "bars": {
+                        "first": 9,
+                        "second": 8
+                    }
+                },
+                {
+                    "label": "Provence-Alpes-Côte-d'Azur",
+                    "bars": {
+                        "first": 9,
+                        "second": 7
+                    }
+                }
+            ]
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (2/2)",
+            "forcedHigherValue": 18,
+            "legend": {
+                "title": "Répartition des participants",
+                "dimensions": {
+                    "first": "participants",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "Pays-de-la-Loire",
+                    "bars": {
+                        "first": 5,
+                        "second": 6
+                    }
+                },
+                {
+                    "label": "Bretagne",
+                    "bars": {
+                        "first": 5,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Normandie",
+                    "bars": {
+                        "first": 6,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Bourgogne-Franche-Comté",
+                    "bars": {
+                        "first": 4,
+                        "second": 4
+                    }
+                },
+                {
+                    "label": "Centre-Val-de-Loire",
+                    "bars": {
+                        "first": 4,
+                        "second": 4
+                    }
+                },
+                {
+                    "label": "Outre-mer",
+                    "bars": {
+                        "first": 4,
+                        "second": 3
+                    }
+                },
+                {
+                    "label": "Corse",
+                    "bars": {
+                        "first": 1,
+                        "second": 1
+                    }
+                }
+            ]
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par âge",
+            "legend": {
+                "title": "Répartition des participants",
+                "dimensions": {
+                    "first": "participants",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "16-24 ans",
+                    "bars": {
+                        "first": 16,
+                        "second": 13
+                    }
+                },
+                {
+                    "label": "25-34 ans",
+                    "bars": {
+                        "first": 14,
+                        "second": 15
+                    }
+                },
+                {
+                    "label": "35-44 ans",
+                    "bars": {
+                        "first": 13,
+                        "second": 16
+                    }
+                },
+                {
+                    "label": "45-54 ans",
+                    "bars": {
+                        "first": 19,
+                        "second": 17
+                    }
+                },
+                {
+                    "label": "55-64 ans",
+                    "bars": {
+                        "first": 19,
+                        "second": 15
+                    }
+                },
+                {
+                    "label": "65 ans et plus",
+                    "bars": {
+                        "first": 19,
+                        "second": 24
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Participation par genre",
+            "legend": "",
+            "data": [
+                {
+                    "label": "femmes",
+                    "percent": 61,
+                    "color": "#eb7575"
+                },
+                {
+                    "label": "hommes",
+                    "percent": 39,
+                    "color": "#4c45a5"
+                }
+            ]
+        }
+    ]
+}

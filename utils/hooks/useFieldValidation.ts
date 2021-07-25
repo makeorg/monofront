@@ -1,17 +1,17 @@
-import { MutableRefObject, useEffect, useState } from 'react';
+import { RefObject, useEffect, useState } from 'react';
 import { ErrorObjectType } from '@make.org/types';
 import i18n from 'i18next';
 
 export const useIsFieldValid = (
-  ref: MutableRefObject<HTMLInputElement>,
-  initialError: ErrorObjectType
+  ref: RefObject<HTMLInputElement> | null,
+  initialError: ErrorObjectType | undefined
 ): boolean => {
   const [isFieldValid, setFieldValidation] = useState<boolean>(true);
   let isInitialErrorEmpty = true;
   let isRefEmpty = true;
-  let inputField;
-  let filledPostalCode;
-  let filledWebsite;
+  let inputField: HTMLInputElement;
+  let filledPostalCode = false;
+  let filledWebsite = false;
 
   if (initialError) {
     isInitialErrorEmpty = !initialError.message;
@@ -30,6 +30,10 @@ export const useIsFieldValid = (
 
   useEffect(() => {
     let validationStatus = true;
+    if (!inputField) {
+      validationStatus = false;
+    }
+
     if (!isRefEmpty) {
       validationStatus = inputField.checkValidity();
     }
@@ -61,13 +65,8 @@ export const useIsFieldValid = (
     }
 
     return setFieldValidation(validationStatus);
-  }, [
-    isRefEmpty,
-    filledPostalCode,
-    filledWebsite,
-    isInitialErrorEmpty,
-    inputField,
-  ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isRefEmpty, filledPostalCode, filledWebsite, isInitialErrorEmpty]);
 
   return isFieldValid;
 };

@@ -14,9 +14,10 @@ import {
   NotificationCloseButtonStyle,
 } from './style';
 import { NotificationIcon } from '../Icon';
+import { NOTIFICATION_LEVEL_INFORMATION } from '../../../utils/constants/notifications';
 
 export const NotificationBanner: React.FC = () => {
-  const notificationRef = useRef(null);
+  const notificationRef = useRef<HTMLDivElement>(null);
   const { dispatch, state } = useAppContext();
   const { contentId, level, toDismiss, params } = state.notifications.banner;
   const { dismissed } = state.notifications;
@@ -35,7 +36,7 @@ export const NotificationBanner: React.FC = () => {
   };
 
   useEffect(() => {
-    if (notificationRef.current) {
+    if (notificationRef && notificationRef.current) {
       notificationRef.current.focus();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -47,7 +48,7 @@ export const NotificationBanner: React.FC = () => {
   return (
     <NotificationWrapperStyle ref={notificationRef} role={role} tabIndex={0}>
       <NotificationContentStyle className={level}>
-        <NotificationIcon level={level} />
+        <NotificationIcon level={level || NOTIFICATION_LEVEL_INFORMATION} />
         <NotificationMessage
           name={contentId}
           params={params}

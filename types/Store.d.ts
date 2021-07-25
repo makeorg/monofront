@@ -21,10 +21,11 @@ export type StateConfig = {
   readonly language: string;
   readonly country: string;
   readonly translations: any;
-  readonly countriesWithConsultations: [];
+  readonly countriesWithConsultations: string[];
   readonly device: string;
-  readonly privacyPolicy: Date;
+  readonly privacyPolicy: string;
   readonly queryParams: any;
+  readonly customData: Record<string, string>;
 };
 
 // Config Homepage
@@ -57,8 +58,13 @@ export type StateSequence = {
 
 // Notification State
 export type StateNotification = {
-  readonly banner: { contentId?: any; level?: string; params?: any };
-  readonly tip: {
+  banner: {
+    contentId?: any;
+    level?: string;
+    params?: any;
+    toDismiss?: boolean;
+  };
+  tip: {
     id?: string;
     content?: any;
     level?: string;
@@ -92,12 +98,13 @@ export type StateForgotPassword = {
 
 // User Password Recovery State
 export type StateUserPasswordRecovery = {
+  validToken?: boolean;
   readonly newPassword?: string;
-  readonly resetToken?: string;
-  readonly userId?: string;
+  resetToken: string;
+  readonly userId: string;
   readonly errorMessage?: string;
-  readonly error: boolean;
-  readonly updated: boolean;
+  readonly error?: boolean;
+  readonly updated?: boolean;
 };
 
 export type StateUserCookiesPreferences = {
@@ -117,10 +124,10 @@ export type StateUser = {
 
 export type SingleStateQuestionType = {
   question: QuestionType;
-  questionResults: QuestionResultsType;
-  popularTags: TagType[];
-  popularProposals: ProposalType[];
-  personalities: PersonalityType[];
+  questionResults?: QuestionResultsType;
+  popularTags?: TagType[];
+  popularProposals?: ProposalType[];
+  personalities?: PersonalityType[];
 };
 
 export type StateQuestions = {

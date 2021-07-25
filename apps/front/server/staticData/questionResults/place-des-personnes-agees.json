@@ -1,0 +1,555 @@
+{
+  "context": "Cette démarche a réaffirmé certains des consensus issus de la consultation réalisée pour la Grande Cause \"Mieux prendre soin de nos aînés\" en 2019. En même temps, elle a mis en avant des nouvelles priorités citoyennes, notamment autour de sujets comme l'isolement, l'habitat ou la place des aidants. Ses conclusions, concrétisées sous la forme de 10 idées plébiscitées réunies en 4 axes, nourriront par la suite les actions gouvernementales en cours et à venir dans ce domaine.",
+  "key_figures": {
+    "participants": 53877,
+    "proposals": 1788,
+    "votes": 383165
+  },
+  "top_ideas": [
+    {
+      "name": "Lieux de vie",
+      "ideas": [
+        {
+          "idea": "Favoriser le maintien à domicile des personnes agées",
+          "agreement": 94,
+          "adhesion": 14,
+          "realistic": 23
+        },
+        {
+          "idea": "Développer des modes d'habitats alternatifs",
+          "agreement": 93,
+          "adhesion": 15,
+          "realistic": 22
+        },
+        {
+          "idea": "Améliorer le fonctionnement des EHPAD",
+          "agreement": 93,
+          "adhesion": 14,
+          "realistic": 24
+        }
+      ]
+    },
+    {
+      "name": "Professionnels de santé et aidants",
+      "ideas": [
+        {
+          "idea": "Renforcer les métiers du maintien à domicile",
+          "agreement": 95,
+          "adhesion": 13,
+          "realistic": 27
+        },
+        {
+          "idea": "Revaloriser les métiers de la santé et améliorer la formation",
+          "agreement": 93,
+          "adhesion": 14,
+          "realistic": 24
+        },
+        {
+          "idea": "Accompagner les aidants et améliorer leur quotidien",
+          "agreement": 93,
+          "adhesion": 13,
+          "realistic": 26
+        }
+      ]
+    },
+    {
+      "name": "Autonomie et indépendance",
+      "ideas": [
+        {
+          "idea": "Respecter le pouvoir de décision des personnes âgées",
+          "agreement": 95,
+          "adhesion": 13,
+          "realistic": 25
+        },
+        {
+          "idea": "Revaloriser les retraites et les aides financières",
+          "agreement": 92,
+          "adhesion": 16,
+          "realistic": 21
+        }
+      ]
+    },
+    {
+      "name": "Liens sociaux",
+      "ideas": [
+        {
+          "idea": "Redonner une place sociale aux personnes âgées, notamment par des initiatives intergénérationnelles",
+          "agreement": 94,
+          "adhesion": 13,
+          "realistic": 24
+        },
+        {
+          "idea": "Lutter contre l'isolement des personnes agées et favoriser le lien social",
+          "agreement": 94,
+          "adhesion": 12,
+          "realistic": 25
+        }
+      ]
+    }
+  ],
+  "controversials": [
+    {
+      "id": "a6589450-e8db-493e-a9a7-1d7fd8fa729b",
+      "content": "Il faut abandonner progressivement l'hébergement en EHPA ou EHPAD, et aller totalement vers le maintien à domicile.",
+      "author": "pierre",
+      "agree": 49,
+      "like_it": 13,
+      "disagree": 34,
+      "no_way": 7,
+      "votes": 280
+    },
+    {
+      "id": "4265cac9-e4ad-4f8f-bb29-4deae4e974ae",
+      "content": "Il faut supprimer les ehpad, remettre les personnes âgées dans la vraie vie, actuellement les ehpad sont de vrais mouroirs",
+      "author": "Jeanne M",
+      "agree": 46,
+      "like_it": 10,
+      "disagree": 32,
+      "no_way": 8,
+      "votes": 428
+    },
+    {
+      "id": "04953670-4e1c-4824-9a02-10bf07b1ef0a",
+      "content": "Il faut que ce soit les enfants qui prennent en charge leurs parents, c'est la meilleure de toutes les solutions avec bien entendu un suivi",
+      "author": "Abdoulah",
+      "agree": 38,
+      "like_it": 6,
+      "disagree": 34,
+      "no_way": 7,
+      "votes": 652
+    },
+    {
+      "id": "126006c9-a6b3-4e5b-aef8-f9cb80d96493",
+      "content": "Il faut supprimer pour les seniors les conditions de revenus pour la rénovation énergétique... et l'adaptation des logements",
+      "author": "AssuranceUniverselleAutonomie",
+      "agree": 41,
+      "like_it": 10,
+      "disagree": 36,
+      "no_way": 15,
+      "votes": 223
+    },
+    {
+      "id": "000f4f0f-4d04-4550-b64f-39d80ac16a52",
+      "content": "Il faut prélever un % sur le salaire obligatoire pour tout le monde pour plus tard comme l'assurance retraite ",
+      "author": "Jeanine",
+      "agree": 40,
+      "like_it": 5,
+      "disagree": 35,
+      "no_way": 13,
+      "votes": 304
+    },
+    {
+      "id": "b7b38876-7e47-4387-b806-db3105f39ce9",
+      "content": "Il faut supprimer la taxe d'habitation, y compris sur les résidences secondaires pour les seniors de plus de 60 ans.",
+      "author": "Christophe",
+      "agree": 43,
+      "like_it": 6,
+      "disagree": 31,
+      "no_way": 9,
+      "votes": 514
+    },
+    {
+      "id": "bd21ff5f-8b24-4323-9cd7-334e6f1083ae",
+      "content": "Il faut expliquer aux retraités présents l'avantage de leur situation par rapport aux futures générations de retraités",
+      "author": "Philippe",
+      "agree": 35,
+      "like_it": 3,
+      "disagree": 36,
+      "no_way": 11,
+      "votes": 364
+    },
+    {
+      "id": "a3ecd3df-192e-4e80-a908-3576e0f77007",
+      "content": "Il faut réserver des créneaux horaires aux personnes âgées pour leur permettre de faire leurs courses tranquillement dans grandes surfaces",
+      "author": "Sandrine",
+      "agree": 44,
+      "like_it": 6,
+      "disagree": 30,
+      "no_way": 12,
+      "votes":866
+    }
+
+
+  ],
+  "rejected": [
+  ],
+  "cartography": [
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Thèmes cités",
+      "legend": "",
+      "data": [
+        {
+          "label": "Ehpad ",
+          "sublabel": "& maisons de retraite",
+          "percent": 21,
+          "color": "#4B45A5",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.2,
+            "yAxis": 1.9
+          }
+        },
+        {
+          "label": "Lien intergénérationnel",
+          "sublabel": "",
+          "percent": 14,
+          "color": "#8955bd",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.4
+          }
+        },
+        {
+          "label": "Professionnels de santé",
+          "sublabel": "",
+          "percent": 14,
+          "color": "#eb7575",
+          "adjustLabel": {
+              "textAlign": "left",
+              "xAxis": 2.3,
+              "yAxis": 2.2
+          }
+        },
+        {
+          "label": "Isolement",
+          "sublabel": " & activités",
+          "percent": 13,
+          "color": "#f5976e",
+          "adjustLabel": {
+            "textAlign": "center",
+            "yAxis": 2.3
+          }
+        },
+        {
+          "label": "Habitat",
+          "sublabel": "",
+          "percent": 11,
+          "color": "#eeb298",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.8,
+            "yAxis": 2.2
+          }
+        },
+        {
+          "label": "Sensibilisation",
+          "sublabel": " & prévention",
+          "percent": 10,
+          "color": "#ffd266",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.75
+          }
+        },
+        {
+          "label": "Autres",
+          "sublabel": "",
+          "percent": 17,
+          "color": "#ffffff",
+          "adjustLabel": {
+            "hidePercent": true,
+            "textAlign": "left",
+            "yAxis": 1.9
+          }
+        }
+      ]
+    },
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Solutions citées",
+      "legend": "",
+      "data": [
+        {
+          "label": "Favoriser, développer",
+          "sublabel": "",
+          "percent": 48,
+          "color": "#4b45a5",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.4
+          }
+        },
+        {
+          "label": "Créer, proposer",
+          "sublabel": "",
+          "percent": 11,
+          "color": "#8955bd",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.8,
+            "yAxis": 2.2
+          }
+        },
+        {
+          "label": "Limiter, réduire, arrêter",
+          "sublabel": "",
+          "percent": 7,
+          "color": "#eb7575",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.8,
+            "yAxis": 2.1
+          }
+        },
+        {
+          "label": "Maintenir, garder",
+          "sublabel": "",
+          "percent": 6,
+          "color": "#f5976e",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.8
+          }
+        },
+        {
+          "label": "Sensibiliser,",
+          "sublabel": " communiquer",
+          "percent": 6,
+          "color": "#eeb298",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.8
+          }
+        },
+        {
+          "label": "Changer, adapter",
+          "sublabel": "",
+          "percent": 5,
+          "color": "#ffd266",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.9,
+            "yAxis": 1.9
+          }
+        },
+        {
+          "label": "Autres",
+          "sublabel": "",
+          "percent": 17,
+          "color": "#ffffff",
+          "adjustLabel": {
+            "hidePercent": true,
+            "textAlign": "left",
+            "yAxis": 1.9
+          }
+        }
+      ]
+    }
+  ],
+  "participation": [
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par région (1/2)",
+      "forcedHigherValue": 19,
+      "legend": {
+        "title": "Répartition des votes",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "Île-de-France",
+          "bars": {
+            "first": 12,
+            "second": 18
+          }
+        },
+        {
+          "label": "Auvergne-Rhône-Alpes",
+          "bars": {
+            "first": 13,
+            "second": 12
+          }
+        },
+        {
+          "label": "Hauts-de-France",
+          "bars": {
+            "first": 10,
+            "second": 9
+          }
+        },
+        {
+          "label": "Nouvelle-Aquitaine",
+          "bars": {
+            "first": 10,
+            "second": 9
+          }
+        },
+        {
+          "label": "Occitanie",
+          "bars": {
+            "first": 10,
+            "second": 9
+          }
+        },
+        {
+          "label": "Grand-Est",
+          "bars": {
+            "first": 8,
+            "second": 8
+          }
+        },
+        {
+          "label": "Provence-Alpes-Côte-d-Azur",
+          "bars": {
+            "first": 9,
+            "second": 7
+          }
+        }
+      ],
+      "id": "participation_0"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par région (2/2)",
+      "forcedHigherValue": 19,
+      "legend": {
+        "title": "Répartition des votes",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "Pays-de-la-Loire",
+          "bars": {
+            "first": 4,
+            "second": 6
+          }
+        },
+        {
+          "label": "Normandie",
+          "bars": {
+            "first": 5,
+            "second": 5
+          }
+        },
+        {
+          "label": "Bretagne",
+          "bars": {
+            "first": 7,
+            "second": 5
+          }
+        },
+        {
+          "label": "Bourgogne-Franche-Comté",
+          "bars": {
+            "first": 4,
+            "second": 4
+          }
+        },
+        {
+          "label": "Centre-Val-de-Loire",
+          "bars": {
+            "first": 4,
+            "second": 4
+          }
+        },
+        {
+          "label": "Outre-mer",
+          "bars": {
+            "first": 4,
+            "second": 3
+          }
+        },
+        {
+          "label": "Corse",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        }
+      ],
+      "id": "participation_1"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par âge",
+      "legend": {
+        "title": "Répartition des votes",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "16-24 ans",
+          "bars": {
+            "first": 4,
+            "second": 13
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "25-34 ans",
+          "bars": {
+            "first": 6,
+            "second": 15
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "35-44 ans",
+          "bars": {
+            "first": 5,
+            "second": 16
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "45-54 ans",
+          "bars": {
+            "first": 8,
+            "second": 17
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "55-64 ans",
+          "bars": {
+            "first": 26,
+            "second": 15
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "65 ans et plus",
+          "bars": {
+            "first": 51,
+            "second": 24
+          },
+          "color": "#8BDAB2"
+        }
+      ],
+      "id": "participation_2"
+    },
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Votes par genre",
+      "legend": "",
+      "data": [
+        {
+          "label": "femmes",
+          "percent": 63,
+          "color": "#4B45A5"
+        },{
+          "label": "hommes",
+          "percent": 37,
+          "color": "#8955bd"
+        }
+      ],
+      "id": "participation_3"
+    }
+  ]
+}

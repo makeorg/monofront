@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import i18n from 'i18next';
 import { ProposalType } from '@make.org/types';

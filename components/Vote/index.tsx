@@ -80,10 +80,10 @@ export const Vote: React.FC<Props> = ({
   const isFirstSequenceVote = isSequence && !votedProposals;
   const lastProposalOfSequence = isSequence && isLastProposal;
 
-  let timeout: number;
+  let timeout: NodeJS.Timeout;
   const wait = async (ms: number) =>
     new Promise(resolve => {
-      timeout = setTimeout(resolve, ms);
+      timeout = setTimeout(() => resolve, ms);
     });
   const clearWait = async () => {
     clearTimeout(timeout);

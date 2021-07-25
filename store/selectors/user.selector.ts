@@ -18,7 +18,7 @@ export const selectAuthentication = (state: StateRoot): StateAuthentication => {
  */
 export const selectPasswordRecovery = (
   state: StateRoot
-): StateUserPasswordRecovery | undefined => {
-  const { passwordRecovery } = state.user || {};
+): StateUserPasswordRecovery => {
+  const { passwordRecovery } = state.user;
   return passwordRecovery;
 };
