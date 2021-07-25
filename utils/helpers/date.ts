@@ -1,4 +1,4 @@
-import moment from 'moment';
+import { format as formatDate } from 'date-fns';
 import { HomeQuestionType, QuestionTimelineType } from '@make.org/types';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 
@@ -91,9 +91,11 @@ export class DateHelperSingleton {
       return null;
     }
 
-    moment.locale(this.languageValue);
-
-    return moment(objectDate).format(format);
+    return formatDate(objectDate, 'PPPPpp', {
+      locale: {
+        code: this.languageValue,
+      },
+    });
   }
 
   getRemainingDays(endDate: string | null): number | null {
@@ -101,21 +103,16 @@ export class DateHelperSingleton {
       return null;
     }
 
-    const objectNowDate = new Date();
     const objectEndDate = new Date(endDate);
-    if (
-      Number.isNaN(objectEndDate.getMonth()) ||
-      Number.isNaN(objectNowDate.getMonth())
-    ) {
+    if (Number.isNaN(objectEndDate.getMonth())) {
       return null;
     }
 
-    moment.locale(this.languageValue);
+    console.log(this.languageValue);
 
-    const momentNowDate = moment(objectNowDate);
-    const momentEndDate = moment(objectEndDate);
-
-    return momentEndDate.diff(momentNowDate, 'days');
+    return Math.round(
+      (objectEndDate.getTime() - new Date().getTime()) / (1000 * 3600 * 24)
+    );
   }
 }
 
