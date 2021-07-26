@@ -83,7 +83,7 @@ export const Vote: React.FC<Props> = ({
   let timeout: NodeJS.Timeout;
   const wait = async (ms: number) =>
     new Promise(resolve => {
-      timeout = setTimeout(() => resolve, ms);
+      timeout = setTimeout(resolve, ms);
     });
   const clearWait = async () => {
     clearTimeout(timeout);
