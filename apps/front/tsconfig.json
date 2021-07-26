@@ -1,10 +1,13 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "outDir": "./dist/types",
     "jsx": "react-jsx",
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "composite": true
+    "composite": true,
+    "sourceMap": true,
+    "moduleResolution": "node"
   },
   "include": [
     "../../apps/front",

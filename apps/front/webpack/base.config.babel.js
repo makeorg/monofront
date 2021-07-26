@@ -1,28 +1,38 @@
-import webpack from 'webpack';
-import TerserPlugin from 'terser-webpack-plugin';
-import nodeExternals from 'webpack-node-externals';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import LoadablePlugin from '@loadable/webpack-plugin';
-import MomentLocalesPlugin from 'moment-locales-webpack-plugin';
-import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
-import DotEnv from 'dotenv-webpack';
+/* eslint-disable @typescript-eslint/no-var-requires */
+const webpack = require('webpack');
+const TerserPlugin = require('terser-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const LoadablePlugin = require('@loadable/webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const DotEnv = require('dotenv-webpack');
+const path = require('path');
 
-export const clientConfig = envConfigPath => ({
+const clientConfig = envConfigPath => ({
   entry: [
     'core-js/stable',
     'regenerator-runtime/runtime',
     'glider-js/glider-compat.min.js',
-    '../client/index.ts',
+    path.resolve(__dirname, '..', 'client', 'index.js'),
   ],
   output: {
     filename: 'js/[name].[contenthash].js',
     chunkFilename: 'js/[name].[contenthash].js',
-    path: '../dist/client',
+    path: path.resolve(__dirname, '..', 'dist', 'client'),
     publicPath: '/',
     sourceMapFilename: '../map/[name].js.map',
   },
   resolve: {
     extensions: ['*', '.ts', '.tsx', '.js'],
+    alias: {
+      '@make.org/utils': path.resolve(__dirname, '../../utils'),
+      '@make.org/api': path.resolve(__dirname, '../../api'),
+      '@make.org/ui': path.resolve(__dirname, '../../ui'),
+      '@make.org/components': path.resolve(__dirname, '../../components'),
+      '@make.org/store': path.resolve(__dirname, '../../store'),
+      '@make.org/assets': path.resolve(__dirname, '../../assets'),
+      '@make.org/types': path.resolve(__dirname, '../../types'),
+    },
     fallback: {
       fs: false,
     },
@@ -55,8 +65,8 @@ export const clientConfig = envConfigPath => ({
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: '../public/index.html',
-      filename: './index.html',
+      template: path.resolve(__dirname, '../public/index.html'),
+      filename: path.resolve(__dirname, '../dist/index.html'),
       meta: {
         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
         charset: 'utf-8',
@@ -79,11 +89,8 @@ export const clientConfig = envConfigPath => ({
       scriptLoading: 'defer',
     }),
     new LoadablePlugin(),
-    new MomentLocalesPlugin({
-      localesToKeep: ['fr', 'en', 'de'],
-    }),
     new FaviconsWebpackPlugin({
-      logo: '../client/app/assets/images/favicon.png',
+      logo: path.resolve(__dirname, '../../../assets/images/favicon.png'),
       mode: 'webapp',
       prefix: 'favicon/',
       inject: false,
@@ -134,13 +141,17 @@ export const clientConfig = envConfigPath => ({
   devtool: 'hidden-source-map',
 });
 
-export const serverConfig = envConfigPath => ({
+const serverConfig = envConfigPath => ({
   // server side rendering
   target: 'node',
-  context: '.',
-  entry: ['core-js/stable', 'regenerator-runtime', '../server/index.ts'],
+  context: path.resolve('.'),
+  entry: [
+    'core-js/stable',
+    'regenerator-runtime',
+    path.resolve(__dirname, '..', 'server', 'index.ts'),
+  ],
   output: {
-    path: '../dist',
+    path: path.resolve(__dirname, '..', 'dist'),
     filename: 'server.js',
     libraryTarget: 'commonjs2',
     sourceMapFilename: 'map/[file].map',
@@ -185,3 +196,5 @@ export const serverConfig = envConfigPath => ({
   ],
   devtool: 'source-map',
 });
+
+module.exports = { clientConfig, serverConfig };

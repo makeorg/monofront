@@ -134,7 +134,7 @@
 				"yargs": "^17.0.1"
 		},
 		"scripts": {
-				"dev": "webpack serve --mode development --progress --hot",
+				"dev": "webpack --mode development --progress --color --config ./webpack/config.babel.js",
 				"prod": "webpack serve --mode production --progress --hot"
 		}
 }

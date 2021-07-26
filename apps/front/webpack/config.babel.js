@@ -1,9 +1,7 @@
-import webpack from 'webpack';
-// import { merge } from 'webpack-merge';
-import { clientConfig, serverConfig } from './base.config.babel.js';
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { merge } = require('webpack-merge');
+const webpack = require('webpack');
+const { clientConfig, serverConfig } = require('./base.config.babel.js');
 
 // Define env file path depending from NODE_ENV
 let envConfigPath = '../.env';
@@ -33,4 +31,4 @@ if (process.env.NODE_ENV === 'development') {
 const webpackConfig = [merge(client), merge(server)];
 
 // eslint-disable-next-line import/no-default-export
-export default webpackConfig;
+module.exports = webpackConfig;
