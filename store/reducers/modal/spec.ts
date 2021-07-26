@@ -1,4 +1,4 @@
-import * as contentTypes from '@make.org/utils/constants/modal';
+import { MODAL_TYPES } from '@make.org/types';
 import { modal } from './index';
 
 describe('Modal reducer', () => {
@@ -25,7 +25,7 @@ describe('Modal reducer', () => {
 
     const expectedState = {
       isOpen: true,
-      contentType: contentTypes.MODAL_LOGIN,
+      contentType: MODAL_TYPES.MODAL_LOGIN,
     };
 
     expect(modal(previousState, action)).toEqual(expectedState);
@@ -40,7 +40,7 @@ describe('Modal reducer', () => {
 
     const expectedState = {
       isOpen: true,
-      contentType: contentTypes.MODAL_REGISTER,
+      contentType: MODAL_TYPES.MODAL_REGISTER,
     };
 
     expect(modal(previousState, action)).toEqual(expectedState);
@@ -55,7 +55,7 @@ describe('Modal reducer', () => {
 
     const expectedState = {
       isOpen: true,
-      contentType: contentTypes.MODAL_FORGOT_PASSWORD,
+      contentType: MODAL_TYPES.MODAL_FORGOT_PASSWORD,
     };
 
     expect(modal(previousState, action)).toEqual(expectedState);
@@ -74,7 +74,7 @@ describe('Modal reducer', () => {
 
     const expectedState = {
       isOpen: true,
-      contentType: contentTypes.MODAL_COUNTRIES,
+      contentType: MODAL_TYPES.MODAL_COUNTRIES,
       focusAfterClose: false,
     };
 

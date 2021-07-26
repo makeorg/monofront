@@ -77,6 +77,21 @@ export const getCountryWithConsultations = (
   return countryHasConsultations;
 };
 
+export const getLanguageFromParams = (
+  countryCode: string,
+  queryLanguageParam?: string
+): string => {
+  if (queryLanguageParam) {
+    return queryLanguageParam.toLowerCase();
+  }
+
+  if (languageStorage.isAvailable() && languageStorage.hasValue(countryCode)) {
+    return languageStorage.get(countryCode) || '';
+  }
+
+  return getLanguageFromCountryCode(countryCode);
+};
+
 export const getCountryDPA = (
   country: string
 ): { name: string; link: string } | null => {

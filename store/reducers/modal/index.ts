@@ -1,12 +1,9 @@
 import {
-  MODAL_LOGIN,
-  MODAL_REGISTER,
-  MODAL_FORGOT_PASSWORD,
-  MODAL_DEPARTMENT,
-  MODAL_PROPOSAL_SUCCESS,
-  MODAL_COUNTRIES,
-} from '@make.org/utils/constants/modal';
-import { Reducer, ReducerAction, StateModal } from '@make.org/types';
+  MODAL_TYPES,
+  Reducer,
+  ReducerAction,
+  StateModal,
+} from '@make.org/types';
 import {
   MODAL_SHOW_LOGIN,
   MODAL_SHOW_REGISTER,
@@ -26,7 +23,7 @@ import {
 
 export const modal_state: StateModal = {
   isOpen: false,
-  contentType: '',
+  contentType: undefined,
   showExpirationSession: false,
   showCookies: false,
   showDataPolicy: false,
@@ -53,38 +50,38 @@ export const modal_reducer: Reducer = (
       return {
         ...state,
         isOpen: true,
-        contentType: MODAL_LOGIN,
+        contentType: MODAL_TYPES.MODAL_LOGIN,
       };
     case MODAL_SHOW_REGISTER:
       return {
         ...state,
         isOpen: true,
-        contentType: MODAL_REGISTER,
+        contentType: MODAL_TYPES.MODAL_REGISTER,
       };
     case MODAL_SHOW_FORGOT_PASSWORD:
       return {
         ...state,
         isOpen: true,
-        contentType: MODAL_FORGOT_PASSWORD,
+        contentType: MODAL_TYPES.MODAL_FORGOT_PASSWORD,
       };
     case MODAL_SHOW_DEPARTMENT_FORM:
       return {
         ...state,
         isOpen: true,
-        contentType: MODAL_DEPARTMENT,
+        contentType: MODAL_TYPES.MODAL_DEPARTMENT,
       };
     case MODAL_SHOW_COUNTRIES:
       return {
         ...state,
         isOpen: true,
-        contentType: MODAL_COUNTRIES,
+        contentType: MODAL_TYPES.MODAL_COUNTRIES,
         focusAfterClose: action.payload.focusAfterClose,
       };
     case MODAL_SHOW_PROPOSAL_SUCCESS:
       return {
         ...state,
         isOpen: true,
-        contentType: MODAL_PROPOSAL_SUCCESS,
+        contentType: MODAL_TYPES.MODAL_PROPOSAL_SUCCESS,
       };
     case MODAL_CLOSE:
       return {

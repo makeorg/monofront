@@ -1,13 +1,6 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 import { modalClose } from '@make.org/store/actions/modal';
-import {
-  MODAL_LOGIN,
-  MODAL_REGISTER,
-  MODAL_FORGOT_PASSWORD,
-  MODAL_PROPOSAL_SUCCESS,
-  MODAL_COUNTRIES,
-} from '@make.org/utils/constants/modal';
 import { Login } from '@make.org/components/Auth/Login';
 import { Register } from '@make.org/components/Auth/Register';
 import { PasswordForgot } from '@make.org/components/Auth/PasswordForgot';
@@ -17,16 +10,18 @@ import i18n from 'i18next';
 import { CloseButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { SvgClose } from '@make.org/ui/Svg/elements';
 import { useAppContext } from '@make.org/store';
+import { MODAL_TYPES } from '@make.org/types';
 import { SwitchCountry } from '../SwitchCountry';
 
 ReactModal.setAppElement('#app');
 
 const modalContents = {
-  [MODAL_LOGIN]: <Login />,
-  [MODAL_REGISTER]: <Register />,
-  [MODAL_FORGOT_PASSWORD]: <PasswordForgot />,
-  [MODAL_PROPOSAL_SUCCESS]: <ProposalSuccess />,
-  [MODAL_COUNTRIES]: <SwitchCountry />,
+  [MODAL_TYPES.MODAL_LOGIN]: <Login />,
+  [MODAL_TYPES.MODAL_REGISTER]: <Register />,
+  [MODAL_TYPES.MODAL_FORGOT_PASSWORD]: <PasswordForgot />,
+  [MODAL_TYPES.MODAL_PROPOSAL_SUCCESS]: <ProposalSuccess />,
+  [MODAL_TYPES.MODAL_COUNTRIES]: <SwitchCountry />,
+  [MODAL_TYPES.MODAL_DEPARTMENT]: null,
 };
 
 export const Modal: React.FC = () => {
@@ -35,7 +30,9 @@ export const Modal: React.FC = () => {
 
   const handleCloseWithTracking = () => {
     dispatch(modalClose());
-    trackClickCloseModal(contentType);
+    if (contentType) {
+      trackClickCloseModal(contentType);
+    }
   };
 
   if (isOpen) {
@@ -54,7 +51,7 @@ export const Modal: React.FC = () => {
         >
           <SvgClose aria-hidden focusable="false" />
         </CloseButtonStyle>
-        {modalContents[contentType]}
+        {!!contentType && modalContents[contentType]}
       </ReactModal>
     );
   }

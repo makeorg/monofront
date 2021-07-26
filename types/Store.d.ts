@@ -14,6 +14,7 @@ import {
   ProposalCardType,
   SequenceCardType,
 } from './Card';
+import { MODAL_TYPES } from './Enums';
 
 // Config State
 export type StateConfig = {
@@ -136,20 +137,12 @@ export type StateQuestions = {
   readonly [n: string]: SingleStateQuestionType;
 };
 
-enum ModalTypes {
-  MODAL_LOGIN,
-  MODAL_REGISTER,
-  MODAL_FORGOT_PASSWORD,
-  MODAL_PROPOSAL_SUCCESS,
-  MODAL_COUNTRIES,
-}
-
 export type StateModal = {
   readonly isOpen: boolean;
   readonly showExpirationSession: boolean;
   readonly showDataPolicy: boolean;
   readonly showCookies: boolean;
-  readonly contentType: keyof typeof ModalTypes;
+  readonly contentType: keyof typeof MODAL_TYPES | undefined;
   readonly focusAfterClose: boolean;
   readonly extraProps: any;
   readonly isLogin?: boolean;
@@ -202,7 +195,7 @@ export type StateRoot = {
   questions: StateQuestions;
   modal: StateModal;
   partners?: StatePartners;
-  panel?: StatePanel;
+  panel: StatePanel;
   session?: StateSession;
   // widget data
   question?: QuestionType;
