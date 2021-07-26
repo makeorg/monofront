@@ -48,8 +48,7 @@ export const CustomPatternInput: FC<Props> = ({
   minLength = 0,
   maxLength = 100000,
 }) => {
-  const inputRef = useRef(null);
-  const isFieldValid = useIsFieldValid(inputRef, error);
+   const inputRef = useRef<HTMLInputElement>(null);  const isFieldValid = useIsFieldValid(inputRef, error);
   return (
     <MiddleFakeFieldStyle hasError={!isFieldValid}>
       <CenterInputIconStyle aria-hidden>{icon}</CenterInputIconStyle>

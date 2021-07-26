@@ -1,0 +1,521 @@
+{
+    "context": "La Bretagne est la première région de France où il fait bon vivre. Ses habitants se sont exprimés pour faire de ce territoire d'exception un endroit profitable pour chacun et améliorer le cadre de vie breton, que ce soit dans les villes, sur la côte ou en campagne !",
+    "key_figures": {
+        "participants": 29486,
+        "proposals": 602,
+        "votes": 184604
+    },
+    "top_ideas": [
+        {
+            "name": "Qualité de vie",
+            "ideas": [
+                {
+                    "idea": "Développer les transports en commun notamment en espace rural",
+                    "agreement": 89,
+                    "adhesion": 18,
+                    "realistic": 29
+                },
+                {
+                    "idea": "Favoriser les produits locaux et les circuits courts",
+                    "agreement": 93,
+                    "adhesion": 23,
+                    "realistic": 30
+                },
+                {
+                    "idea": "Développer une agriculture raisonnée",
+                    "agreement": 91,
+                    "adhesion": 20,
+                    "realistic": 29
+                },
+                {
+                    "idea": "Limiter les emballages, notamment en plastique et développer des alternatives",
+                    "agreement": 87,
+                    "adhesion": 19,
+                    "realistic": 30
+                },
+                {
+                    "idea": "Développer et sécuriser les pistes cyclables",
+                    "agreement": 84,
+                    "adhesion": 17,
+                    "realistic": 30
+                },
+                {
+                    "idea": "Limiter l'urbanisation et la bétonnisation",
+                    "agreement": 86,
+                    "adhesion": 23,
+                    "realistic": 26
+                },
+                {
+                    "idea": "Limiter l'éclairage la nuit notamment des entreprises et vitrines",
+                    "agreement": 89,
+                    "adhesion": 15,
+                    "realistic": 32
+                },
+                {
+                    "idea": "Favoriser les entreprises de proximité notamment pour redynamiser les bourgs",
+                    "agreement": 86,
+                    "adhesion": 20,
+                    "realistic": 25
+                },
+                {
+                    "idea": "Revégétaliser les villes et reboiser les espaces bretons",
+                    "agreement": 91,
+                    "adhesion": 20,
+                    "realistic": 30
+                },
+                {
+                    "idea": "les services de tri des déchets",
+                    "agreement": 88,
+                    "adhesion": 13,
+                    "realistic": 29
+                },
+                {
+                    "idea": "Protéger et nettoyer les côtes bretonnes",
+                    "agreement": 93,
+                    "adhesion": 14,
+                    "realistic": 30
+                },
+                {
+                    "idea": "Maintenir les autoroutes gratuites",
+                    "agreement": 93,
+                    "adhesion": 17,
+                    "realistic": 22
+                }
+            ]
+        }
+    ],
+    "controversials": [
+        {
+            "author": "Herve",
+            "content": "Il faut réunifier la Bretagne historique avec la Loire-Atlantique. Une telle Bretagne sera plus cohérente et plus forte.",
+            "agree": 37,
+            "like_it": 11,
+            "disagree": 27,
+            "no_way": 12
+        },
+        {
+            "author": "Laurence",
+            "content": "Il faut interdire la chasse pour qu'on puisse profiter de nos campagnes et s'y promener sans risquer de prendre une balle perdue.",
+            "agree": 46,
+            "like_it": 13,
+            "disagree": 27,
+            "no_way": 9
+        },
+        {
+            "author": "Rémi",
+            "content": "Il faut taxer fermement les propriétaires de logements inoccupés.",
+            "agree": 44,
+            "like_it": 11,
+            "disagree": 24,
+            "no_way": 7
+        },
+        {
+            "author": "Vincent ",
+            "content": "Il faut laisser les bars ouverts jusqu'à 2h du matin.",
+            "agree": 57,
+            "like_it": 17,
+            "disagree": 20,
+            "no_way": 9
+        }
+    ],
+    "rejected": [
+        {
+            "author": "Enora",
+            "content": "Il faut agrandir l’aéroport de Brest.",
+            "disagree": 36,
+            "no_way": 18
+        },
+        {
+            "author": "Alexandre",
+            "content": "Il faut réguler le tourisme car cela devient invivable l'été.",
+            "disagree": 36,
+            "no_way": 17
+        },
+        {
+            "author": "Aurelien",
+            "content": "Il faut que la Bretagne retrouve son indépendance.",
+            "disagree": 50,
+            "no_way": 21
+        }
+    ],
+    "cartography": [
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Thèmes plébiscités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Environnement",
+                    "sublabel": "",
+                    "percent": 30,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Transport",
+                    "sublabel": "",
+                    "percent": 23,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Consommation",
+                    "sublabel": "",
+                    "percent": 18,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Emploi",
+                    "sublabel": "",
+                    "percent": 7,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Urbanisme",
+                    "sublabel": "",
+                    "percent": 6,
+                    "color": "#fff689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Autre",
+                    "sublabel": "",
+                    "percent": 16,
+                    "color": "#ffffff",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "yAxis": 1.8
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Solutions plébiscitées",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Aménagement des ",
+                    "sublabel": "espaces",
+                    "percent": 20,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Amélioration d'un ",
+                    "sublabel": "service existant",
+                    "percent": 17,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.3,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Régulation",
+                    "sublabel": "",
+                    "percent": 11,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Aides et",
+                    "sublabel": " subventions",
+                    "percent": 11,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Protection",
+                    "sublabel": " environnementale",
+                    "percent": 11,
+                    "color": "#fff689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Sensibilisation et",
+                    "sublabel": " communication",
+                    "percent": 9,
+                    "color": "#c1ebdd",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.75
+                    }
+                },
+                {
+                    "label": "Nouveaux",
+                    "sublabel": " services",
+                    "percent": 8,
+                    "color": "#59bad4",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Comportements",
+                    "sublabel": " individuels",
+                    "percent": 6,
+                    "color": "#5985af",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Autre",
+                    "sublabel": "",
+                    "percent": 7,
+                    "color": "#ffffff",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "xAxis": 1.9,
+                        "yAxis": 1.8
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Acteurs plébiscités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Collectivités ",
+                    "sublabel": "locales",
+                    "percent": 42,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Entreprises",
+                    "sublabel": "",
+                    "percent": 22,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "center",
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Citoyens",
+                    "sublabel": "",
+                    "percent": 14,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Associations",
+                    "sublabel": "",
+                    "percent": 6,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Gouvernement",
+                    "sublabel": "",
+                    "percent": 5,
+                    "color": "#fff689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Enseignement",
+                    "sublabel": " supérieur",
+                    "percent": 5,
+                    "color": "#c1ebdd",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Autre",
+                    "sublabel": "",
+                    "percent": 6,
+                    "color": "#ffffff",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "xAxis": 1.9,
+                        "yAxis": 1.8
+                    }
+                }
+            ]
+        }
+    ],
+    "participation": [
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par départements",
+            "forcedHigherValue": 25,
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population de Bretagne"
+                }
+            },
+            "data": [
+                {
+                    "label": "Côtes-d'Armor ",
+                    "bars": {
+                        "first": 19,
+                        "second": 20
+                    }
+                },
+                {
+                    "label": "Finistère",
+                    "bars": {
+                        "first": 29,
+                        "second": 30
+                    }
+                },
+                {
+                    "label": "Ille et Villaine",
+                    "bars": {
+                        "first": 28,
+                        "second": 25
+                    }
+                },
+                {
+                    "label": "Morbihan",
+                    "bars": {
+                        "first": 24,
+                        "second": 25
+                    }
+                }
+            ]
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par âge",
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population de Bretagne"
+                }
+            },
+            "data": [
+                {
+                    "label": "18-24 ans",
+                    "bars": {
+                        "first": 33,
+                        "second": 8
+                    }
+                },
+                {
+                    "label": "25-34 ans",
+                    "bars": {
+                        "first": 28,
+                        "second": 13
+                    }
+                },
+                {
+                    "label": "35-44 ans",
+                    "bars": {
+                        "first": 16,
+                        "second": 16
+                    }
+                },
+                {
+                    "label": "45-54 ans",
+                    "bars": {
+                        "first": 10,
+                        "second": 18
+                    }
+                },
+                {
+                    "label": "55-64 ans",
+                    "bars": {
+                        "first": 9,
+                        "second": 18
+                    }
+                },
+                {
+                    "label": "65 ans et plus",
+                    "bars": {
+                        "first": 4,
+                        "second": 27
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Votes par genre",
+            "legend": "",
+            "data": [
+                {
+                    "label": "hommes",
+                    "percent": 38,
+                    "color": "#4c45a5"
+                },
+                {
+                    "label": "femmes",
+                    "percent": 62,
+                    "color": "#eb7575"
+                }
+            ]
+        }
+    ]
+}

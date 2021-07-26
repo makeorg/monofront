@@ -36,6 +36,7 @@ export type HomeViewType = {
   pastQuestions: HomeQuestionType[];
   featuredQuestions: HomeQuestionType[];
   posts: HomePostType[];
+  country?: string;
 };
 
 export type SearchViewsType = {

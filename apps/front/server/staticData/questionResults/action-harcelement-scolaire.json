@@ -1,0 +1,522 @@
+{
+    "context": "La Fondation Ramsay Santé, acteur majeur de la prévention santé en France, a lancé une consultation sur la protection des jeunes face au harcèlement scolaire. Cette consultation a permis d'identifier les priorités citoyennes sur des sujets comme l'éducation scolaire, la formation des enseignants et des professionnels ou la sensibilisation auprès de la population, sous la forme de 10 idées plébiscitées réunies en 5 axes principaux. Ces résultats nourriront les actions de la Fondation Ramsay Santé et de ses partenaires.",
+    "key_figures": {
+        "participants": 13835,
+        "proposals": 395,
+        "votes": 42144
+    },
+    "top_ideas": [
+        {
+            "name": "Milieu scolaire",
+            "ideas": [
+                {
+                    "idea": "Former les professionnels de l'enseignement et du péri-scolaire",
+                    "agreement": 94,
+                    "adhesion": 13,
+                    "realistic": 26
+                },
+                {
+                    "idea": "Modifier les programmes scolaires et enseigner davantage les savoirs être",
+                    "agreement": 90,
+                    "adhesion": 13,
+                    "realistic": 24
+                },
+                {
+                    "idea": "Mettre en place de nouveaux fonctionnements dans les établissements scolaires",
+                    "agreement": 89,
+                    "adhesion": 12,
+                    "realistic": 26
+                },
+                {
+                    "idea": "Faire venir des intervenants exterieurs dans les établissements scolaires",
+                    "agreement": 92,
+                    "adhesion": 11,
+                    "realistic": 26
+                }
+            ]
+        },
+        {
+            "name": "Sanctions",
+            "ideas": [
+                {
+                    "idea": "Appliquer et durcir les sanctions, notamment envers les harceleurs",
+                    "agreement": 95,
+                    "adhesion": 15,
+                    "realistic": 25
+                }
+            ]
+        },
+        {
+            "name": "Cyber-harcèlement",
+            "ideas": [
+                {
+                    "idea": "Lutter contre le cyber-harcèlement",
+                    "agreement": 92,
+                    "adhesion": 15,
+                    "realistic": 28
+                }
+            ]
+        },
+        {
+            "name": "Prise en charge et aide aux victimes ",
+            "ideas": [
+                {
+                    "idea": "Favoriser le dialogue et la communication",
+                    "agreement": 93,
+                    "adhesion": 11,
+                    "realistic": 30
+                },
+                {
+                    "idea": "Trouver un dispositif de communication qui permette l'anonymat",
+                    "agreement": 90,
+                    "adhesion": 15,
+                    "realistic": 22
+                },
+                {
+                    "idea": "Mieux accompagner et responsabiliser les parents",
+                    "agreement": 94,
+                    "adhesion": 14,
+                    "realistic": 26
+                }
+            ]
+        }
+    ],
+    "controversials": [
+        {
+            "author": "Isabelle",
+            "content": "Il faut que les harceleurs soient envoyés en maison de correction où emprisonnés \"en fonction de leur âge \"",
+            "agree": 47,
+            "disagree": 35
+        },
+        {
+            "author": "Nathalie",
+            "content": "Il faut supprimer les allocations familiales pour obliger les parents laxistes à agir",
+            "agree": 33,
+            "disagree": 55
+        },
+        {
+            "author": "Samuel",
+            "content": "Il faut rendre obligatoire les uniformes à l'école",
+            "agree": 25,
+            "disagree": 52
+        },
+        {
+            "author": "Laura",
+            "content": "Il faut « harceler » les harceleurs  ",
+            "agree": 31,
+            "disagree": 40
+        },
+        {
+            "author": "Amandine",
+            "content": "Il faut que l'Etat rembourse à 100% les consultations psychologiques pour les victimes et harceleurs qui le souhaitent",
+            "agree": 52,
+            "disagree": 39
+        },
+        {
+            "author": "Anne-laure",
+            "content": "Il faut obliger chaque collégien à rencontrer 1h le psychologue scolaire de son établissement chaque année pour détecter les faiblesses",
+            "agree": 39,
+            "disagree": 39
+        }
+    ],
+    "rejected": [],
+    "cartography": [
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Thèmes cités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Education",
+                    "sublabel": "scolaire",
+                    "percent": 17,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 1.9,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Sensibilisation",
+                    "sublabel": "",
+                    "percent": 13,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.3
+                    }
+                },
+                {
+                    "label": "Formations",
+                    "sublabel": "",
+                    "percent": 13,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.3
+                    }
+                },
+                {
+                    "label": "Sanction",
+                    "sublabel": "",
+                    "percent": 12,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Fonctionnement",
+                    "sublabel": "des établissements",
+                    "percent": 13,
+                    "color": "#fff689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Communication",
+                    "sublabel": "",
+                    "percent": 11,
+                    "color": "#c1ebdd",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Aide",
+                    "sublabel": "aux victimes",
+                    "percent": 8,
+                    "color": "#59bad4",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.9,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Effectifs et moyens",
+                    "sublabel": "",
+                    "percent": 5,
+                    "color": "#5985af",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.9,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Général",
+                    "sublabel": "",
+                    "percent": 5,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.9,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Lutte contre le",
+                    "sublabel": "cyber harcèlement",
+                    "percent": 4,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "yAxis": 2.0
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Publics cités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Enfants/élèves",
+                    "sublabel": "",
+                    "percent": 38,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.3
+                    }
+                },
+                {
+                    "label": "Etablissements",
+                    "sublabel": "scolaires",
+                    "percent": 16,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis":2.2,
+                        "yAxis":2.2
+                    }
+                },
+                {
+                    "label": "Harceleurs",
+                    "sublabel": "",
+                    "percent": 13,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Personnel enseignant ",
+                    "sublabel": "et éducatif",
+                    "percent": 13,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis":1.8
+                    }
+                },
+                {
+                    "label": "Parents/adultes",
+                    "sublabel": "",
+                    "percent": 11,
+                    "color": "#fff689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis":1.8
+                    }
+                },
+                {
+                    "label": "Victimes",
+                    "sublabel": "",
+                    "percent": 8,
+                    "color": "#c1ebdd",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis":1.9,
+                        "yAxis":1.9
+                    }
+                },
+                {
+                    "label": "Professionnel ",
+                    "sublabel": "de santé",
+                    "percent": 1,
+                    "color": "#59bad4",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "yAxis": 2.0
+                    }
+                }
+            ]
+        }
+    ],
+    "participation": [
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (1/2)",
+            "forcedHigherValue": 28,
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "Île-de-France",
+                    "bars": {
+                        "first": 27,
+                        "second": 18
+                    }
+                },
+                {
+                    "label": "Auvergne-Rhône-Alpes",
+                    "bars": {
+                        "first": 11,
+                        "second": 12
+                    }
+                },
+                {
+                    "label": "Hauts-de-France",
+                    "bars": {
+                        "first": 7,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Nouvelle-Aquitaine",
+                    "bars": {
+                        "first": 7,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Occitanie",
+                    "bars": {
+                        "first": 8,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Grand-Est",
+                    "bars": {
+                        "first": 9,
+                        "second": 8
+                    }
+                },
+                {
+                    "label": "Provence-Alpes-Côte-d-Azur",
+                    "bars": {
+                        "first": 9,
+                        "second": 7
+                    }
+                }
+            ]
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (2/2)",
+            "forcedHigherValue": 28,
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "Pays-de-la-Loire",
+                    "bars": {
+                        "first": 4,
+                        "second": 6
+                    }
+                },
+                {
+                    "label": "Normandie",
+                    "bars": {
+                        "first": 6,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Bretagne",
+                    "bars": {
+                        "first": 7,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Bourgogne-Franche-Comté",
+                    "bars": {
+                        "first": 3,
+                        "second": 4
+                    }
+                },
+                {
+                    "label": "Centre-Val-de-Loire",
+                    "bars": {
+                        "first": 3,
+                        "second": 4
+                    }
+                },
+                {
+                    "label": "Outre-mer",
+                    "bars": {
+                        "first": 4,
+                        "second": 3
+                    }
+                },
+                {
+                    "label": "Corse",
+                    "bars": {
+                        "first": 1,
+                        "second": 1
+                    }
+                }
+            ]
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par âge",
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "18-24 ans",
+                    "bars": {
+                        "first": 1,
+                        "second": 11
+                    }
+                },
+                {
+                    "label": "25-34 ans",
+                    "bars": {
+                        "first": 26,
+                        "second": 15
+                    }
+                },
+                {
+                    "label": "35-44 ans",
+                    "bars": {
+                        "first": 30,
+                        "second": 16
+                    }
+                },
+                {
+                    "label": "45-54 ans",
+                    "bars": {
+                        "first": 10,
+                        "second": 17
+                    }
+                },
+                {
+                    "label": "55-64 ans",
+                    "bars": {
+                        "first": 13,
+                        "second": 16
+                    }
+                },
+                {
+                    "label": "65 ans et plus",
+                    "bars": {
+                        "first": 20,
+                        "second": 25
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Votes par genre",
+            "legend": "",
+            "data": [
+                {
+                    "label": "hommes",
+                    "percent": 26,
+                    "color": "#4c45a5"
+                },
+                {
+                    "label": "femmes",
+                    "percent": 74,
+                    "color": "#eb7575"
+                }
+            ]
+        }
+    ]
+}

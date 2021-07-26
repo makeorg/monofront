@@ -1,11 +1,11 @@
-/* @flow */
+
 import * as socialHelper from './social';
 
 const socialPathName = 'foo';
 const socialMessage = 'bar';
 const twitterHashtag = 'baz';
 
-jest.mock('Shared/helpers/url', () => ({
+jest.mock('@make.org/utils/helpers/url', () => ({
   getRelativeCurrentUrl: pathname => pathname,
 }));
 

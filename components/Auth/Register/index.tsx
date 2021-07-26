@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FormEvent, SyntheticEvent, useState } from 'react';
 import i18n from 'i18next';
 import { RegisterFormDataType, ErrorObjectType } from '@make.org/types';
 import {
@@ -12,7 +12,7 @@ import {
   SeparatorStyle,
 } from '@make.org/ui/elements/Separators';
 import { RedLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
-import { ExtraParagraphStyle } from '@make.org/ui/elements/FormElements';
+import { ExtraParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { FacebookAuthentication } from '@make.org/components/Auth/Social/FacebookAuthentication';
 import { GoogleAuthentication } from '@make.org/components/Auth/Social/GoogleAuthentication';
 import { modalShowLogin, modalClose } from '@make.org/store/actions/modal';
@@ -92,7 +92,7 @@ export const Register: React.FC = () => {
     });
   };
 
-  const logAndLoadUser = async (email, password) => {
+  const logAndLoadUser = async (email: string, password: string) => {
     const success = () => {
       dispatch(getUser(true));
     };
@@ -113,7 +113,7 @@ export const Register: React.FC = () => {
     );
   };
 
-  const handleSubmit = async (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const success = () => {
       logAndLoadUser(user.email, user.password).then(() => {
@@ -135,7 +135,9 @@ export const Register: React.FC = () => {
     setWaitingCallback(false);
   };
 
-  const toggleLegalConsent = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const toggleLegalConsent = (
+    event: SyntheticEvent<HTMLButtonElement> | FormEvent<HTMLFormElement>
+  ) => {
     event.preventDefault();
     displayLegalConsent(!needLegalConsent);
   };
@@ -149,7 +151,7 @@ export const Register: React.FC = () => {
       />
       <AuthenticationWrapperStyle
         aria-labelledby="register_title"
-        className={needLegalConsent && 'hidden'}
+        className={needLegalConsent ? 'hidden' : ''}
       >
         <SecondLevelTitleStyle
           id="register_title"

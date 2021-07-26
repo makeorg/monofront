@@ -13,7 +13,7 @@ export const combineReducers =
         if (prop in slices && slices[prop] !== undefined) {
           return {
             ...flatReducer,
-            [prop]: slices[prop](flatReducer[prop], action),
+            [prop]: slices[prop](flatReducer[prop], action || {}),
           };
         }
         return flatReducer;

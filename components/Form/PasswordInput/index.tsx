@@ -38,7 +38,7 @@ export const PasswordInput: React.FC<Props> = ({
   required = true,
 }) => {
   const [isPasswordDisplayed, displayPassword] = useState<boolean>(false);
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const isFieldValid = useIsFieldValid(inputRef, error);
 
   return (

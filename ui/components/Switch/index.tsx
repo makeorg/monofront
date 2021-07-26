@@ -4,9 +4,9 @@ import { SvgSwitchLabelChecked, SvgSwitchLabelCross } from '../../Svg/elements';
 import { SwitchButtonStyle, SwitchButtonInternalLabelStyle } from './style';
 
 type Props = {
-  value: boolean;
-  onEnabling?: () => void;
-  onDisabling?: () => void;
+  value?: boolean;
+  onEnabling: () => void;
+  onDisabling: () => void;
 };
 
 export const SwitchButton: React.FC<Props> = ({

@@ -1,5 +1,3 @@
-/* @flow */
-
 import * as helpers from './stringFormatter';
 
 describe('capitalize', () => {

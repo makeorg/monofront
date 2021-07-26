@@ -38,8 +38,7 @@ export const UntypedInput: React.FC<Props> = ({
   error,
   required = false,
 }) => {
-  const inputRef = useRef(null);
-  const isFieldValid = useIsFieldValid(inputRef, error);
+   const inputRef = useRef<HTMLInputElement>(null);  const isFieldValid = useIsFieldValid(inputRef, error);
 
   return (
     <MiddleFakeFieldStyle hasError={!isFieldValid}>

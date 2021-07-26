@@ -1,4 +1,3 @@
-// @flow
 import React, { useState, useEffect } from 'react';
 import { QualificationService } from '@make.org/utils/services/Qualification';
 import {

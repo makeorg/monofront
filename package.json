@@ -18,7 +18,9 @@
     "bootstrap": "lerna bootstrap",
     "lint": "eslint api apps components",
     "start:widget": "yarn workspace @make.org/widget dev",
-    "prod:widget": "yarn workspace @make.org/widget prod"
+    "prod:widget": "yarn workspace @make.org/widget prod",
+    "start:front": "yarn workspace @make.org/front dev",
+    "prod:front": "yarn workspace @make.org/front prod"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",

@@ -1,4 +1,4 @@
-// @flow
+
 
 import { ReducerAction, StateQuestions } from '@make.org/types';
 import {

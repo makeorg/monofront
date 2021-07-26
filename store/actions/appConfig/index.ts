@@ -1,4 +1,3 @@
-/* @flow */
 import { ReducerAction } from '@make.org/types';
 import {
   SET_COUNTRY_CONFIGURATION,

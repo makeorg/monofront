@@ -1,0 +1,559 @@
+{
+    "key_figures": {
+        "participants": 36824,
+        "proposals": 949,
+        "votes": 159999
+    },
+    "context": "L’environnement est un enjeu crucial en Bretagne. Les habitants prennent progressivement conscience de la fragilité du territoire et des grandes transformations auxquelles ils doivent faire face : développement durable, agriculture, littoral, activités industrielles, changement d’habitudes... A travers la consultation, ils ont partagé leurs priorités pour agir !",
+    "top_ideas": [
+        {
+            "name": "Protection de l'environnement.",
+            "ideas": [
+                {
+                    "idea": "Favoriser les produits locaux et les circuits courts",
+                    "agreement": 97,
+                    "adhesion": 19,
+                    "realistic": 34
+                },
+                {
+                    "idea": "Développer une agriculture raisonnée",
+                    "agreement": 92,
+                    "adhesion": 23,
+                    "realistic": 29
+                },
+                {
+                    "idea": "Limiter les emballages, notamment en plastique",
+                    "agreement": 94,
+                    "adhesion": 19,
+                    "realistic": 32
+                },
+                {
+                    "idea": "Améliorer le tri et favoriser l'économie circulaire",
+                    "agreement": 94,
+                    "adhesion": 17,
+                    "realistic": 37
+                },
+                {
+                    "idea": "Reforester la Bretagne et végétaliser les villes",
+                    "agreement": 94,
+                    "adhesion": 18,
+                    "realistic": 34
+                },
+                {
+                    "idea": "Lutter contre la pollution et les déchets",
+                    "agreement": 93,
+                    "adhesion": 19,
+                    "realistic": 33
+                },
+                {
+                    "idea": "Développer les transports en commun notamment en espace rural",
+                    "agreement": 85,
+                    "adhesion": 17,
+                    "realistic": 33
+                },
+                {
+                    "idea": "Limiter l'urbanisation et la bétonnisation",
+                    "agreement": 86,
+                    "adhesion": 20,
+                    "realistic": 32
+                },
+                {
+                    "idea": "Favoriser les entreprises de proximité notamment pour redynamiser les bourgs",
+                    "agreement": 91,
+                    "adhesion": 21,
+                    "realistic": 31
+                },
+                {
+                    "idea": "Protéger les espaces et les espèces en particulier maritimes",
+                    "agreement": 89,
+                    "adhesion": 18,
+                    "realistic": 35
+                },
+                {
+                    "idea": "Développer le secteur de l'énergie notamment renouvelable",
+                    "agreement": 84,
+                    "adhesion": 14,
+                    "realistic": 32
+                }
+            ]
+        }
+    ],
+    "controversials": [
+        {
+            "author": "Isabelle",
+            "content": "Il faut interdire la chasse afin de permettre à la faune de renaitre.",
+            "agree": 39,
+            "like_it": 14,
+            "disagree": 31,
+            "no_way": 16
+        },
+        {
+            "author": "Cecile",
+            "content": "Il faut des options végétariennes tous les jours dans les cantines.",
+            "agree": 43,
+            "like_it": 9,
+            "disagree": 29,
+            "no_way": 11
+        },
+        {
+            "author": "Guylaine",
+            "content": "Il faut moins taxer les collectes d'ordures ménagères.",
+            "agree": 57,
+            "like_it": 10,
+            "disagree": 18,
+            "no_way": 10
+        },
+        {
+            "author": "Thierry",
+            "content": "Il faut préserver le patrimoine naturel maritime et terrestre de l'industrialisation en stoppant la prolifération des éoliennes géantes.",
+            "agree": 49,
+            "like_it": 9,
+            "disagree": 27,
+            "no_way": 13
+        }
+    ],
+    "rejected": [
+        {
+            "author": "Claire",
+            "content": "Il faut limiter le tourisme.",
+            "disagree": 51,
+            "no_way": 23
+        },
+        {
+            "author": "Nicolas",
+            "content": "Il faut augmenter fortement (x5 ou x10) les taxes sur les ordures ménagères pour obliger les habitants à passer en mode zéro déchet.",
+            "disagree": 52,
+            "no_way": 17
+        },
+        {
+            "author": "Katy",
+            "content": "Il faut aider les propriétaires de voiture à acheter des électriques en commençant par les îles.",
+            "disagree": 33,
+            "no_way": 12
+        },
+        {
+            "author": "Caroline ",
+            "content": "Il faut interdire les immatriculations de bateaux aux non bretons.",
+            "disagree": 45,
+            "no_way": 13
+        }
+    ],
+    "cartography": [
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Thèmes plébiscités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Mode ",
+                    "sublabel": "de consommation",
+                    "percent": 23,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Agriculture",
+                    "sublabel": "",
+                    "percent": 12,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.3,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Traitement et collecte ",
+                    "sublabel": "des déchets",
+                    "percent": 11,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.3,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Mode de production",
+                    "sublabel": "",
+                    "percent": 8,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "center",
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Biodiversité",
+                    "sublabel": "",
+                    "percent": 8,
+                    "color": "#fff689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Milieu scolaire",
+                    "sublabel": "",
+                    "percent": 6,
+                    "color": "#c1ebdd",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Urbanisme",
+                    "sublabel": "",
+                    "percent": 6,
+                    "color": "#59bad4",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Mobilité et",
+                    "sublabel": " transports",
+                    "percent": 6,
+                    "color": "#5985af",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.05
+                    }
+                },
+                {
+                    "label": "Alimentation",
+                    "sublabel": "",
+                    "percent": 5,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Autre",
+                    "sublabel": "",
+                    "percent": 15,
+                    "color": "#ffffff",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "xAxis": 1.9,
+                        "yAxis": 1.8
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Solutions plébiscitées",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Comportements ",
+                    "sublabel": "individuels",
+                    "percent": 19,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Aménagement ",
+                    "sublabel": "du territoire",
+                    "percent": 15,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.3,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Financement de ",
+                    "sublabel": "solutions innonvantes",
+                    "percent": 15,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.3,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Régulation",
+                    "sublabel": "",
+                    "percent": 11,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Sensibilisation",
+                    "sublabel": " et éducation",
+                    "percent": 9,
+                    "color": "#fff689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Contrôle",
+                    "sublabel": "",
+                    "percent": 8,
+                    "color": "#c1ebdd",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Changement de",
+                    "sublabel": " politiques publiques",
+                    "percent": 7,
+                    "color": "#59bad4",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Recyclage /",
+                    "sublabel": "économie circulaire",
+                    "percent": 6,
+                    "color": "#5985af",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Autre",
+                    "sublabel": "",
+                    "percent": 10,
+                    "color": "#ffffff",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "xAxis": 1.9,
+                        "yAxis": 1.8
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Acteurs plébiscités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Collectivités ",
+                    "sublabel": "locales",
+                    "percent": 54,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Individus",
+                    "sublabel": "",
+                    "percent": 19,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Entreprises",
+                    "sublabel": "",
+                    "percent": 10,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Gouvernement",
+                    "sublabel": "",
+                    "percent": 8,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Agriculteurs",
+                    "sublabel": "",
+                    "percent": 6,
+                    "color": "#fff689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.9,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Autre",
+                    "sublabel": "",
+                    "percent": 3,
+                    "color": "#ffffff",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "xAxis": 1.9,
+                        "yAxis": 1.8
+                    }
+                }
+            ]
+        }
+    ],
+    "participation": [
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par départements",
+            "forcedHigherValue": 25,
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population de Bretagne"
+                }
+            },
+            "data": [
+                {
+                    "label": "Côtes-d'Armor ",
+                    "bars": {
+                        "first": 21,
+                        "second": 20
+                    }
+                },
+                {
+                    "label": "Finistère",
+                    "bars": {
+                        "first": 26,
+                        "second": 30
+                    }
+                },
+                {
+                    "label": "Ille et Villaine",
+                    "bars": {
+                        "first": 26,
+                        "second": 25
+                    }
+                },
+                {
+                    "label": "Morbihan",
+                    "bars": {
+                        "first": 27,
+                        "second": 25
+                    }
+                }
+            ]
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par âge",
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population de Bretagne"
+                }
+            },
+            "data": [
+                {
+                    "label": "18-24 ans",
+                    "bars": {
+                        "first": 7,
+                        "second": 8
+                    }
+                },
+                {
+                    "label": "25-34 ans",
+                    "bars": {
+                        "first": 16,
+                        "second": 13
+                    }
+                },
+                {
+                    "label": "35-44 ans",
+                    "bars": {
+                        "first": 19,
+                        "second": 16
+                    }
+                },
+                {
+                    "label": "45-54 ans",
+                    "bars": {
+                        "first": 17,
+                        "second": 18
+                    }
+                },
+                {
+                    "label": "55-64 ans",
+                    "bars": {
+                        "first": 25,
+                        "second": 18
+                    }
+                },
+                {
+                    "label": "65 ans et plus",
+                    "bars": {
+                        "first": 16,
+                        "second": 27
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Votes par genre",
+            "legend": "",
+            "data": [
+                {
+                    "label": "hommes",
+                    "percent": 36,
+                    "color": "#4c45a5"
+                },
+                {
+                    "label": "femmes",
+                    "percent": 64,
+                    "color": "#eb7575"
+                }
+            ]
+        }
+    ]
+}

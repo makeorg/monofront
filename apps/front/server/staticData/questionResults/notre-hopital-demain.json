@@ -1,0 +1,727 @@
+{
+    "context": "Le CESE (Conseil Economique, Social et Environnemental) a lancé une consultation citoyenne consacrée à l'avenir du système hospitalier. Cette consultation a permis d'identifier les principales priorités des citoyens pour l'hôpital de demain, sous la forme de 22 consensus réunis en 7 axes. Les conclusions de la consultation vont alimenter le Ségur de la santé ainsi qu’un avis du CESE qui sera remis au gouvernement.",
+    "key_figures": {
+        "participants": 68824,
+        "proposals": 4119,
+        "votes": 519955
+    },
+    "top_ideas": [
+        {
+            "name": "Moyens et conditions de travail",
+            "ideas": [
+                {
+                    "idea": "Revaloriser les salaires des personnels soignants à l'hôpital",
+                    "agreement": 92,
+                    "adhesion": 22,
+                    "realistic": 29
+                },
+                {
+                    "idea": "Donner plus de moyens humains et matériels aux hôpitaux",
+                    "agreement": 89,
+                    "adhesion": 19,
+                    "realistic": 29
+                },
+                {
+                    "idea": "Mieux permettre aux personnels médicaux d'évoluer dans leur carrière",
+                    "agreement": 83,
+                    "adhesion": 17,
+                    "realistic": 32
+                },
+                {
+                    "idea": "Interroger la pertinence du ratio de patients par soignant",
+                    "agreement": 84,
+                    "adhesion": 19,
+                    "realistic": 28
+                },
+                {
+                    "idea": "Respecter les limites de temps de travail des professionnels de santé à l'hôpital",
+                    "agreement": 84,
+                    "adhesion": 19,
+                    "realistic": 24
+                }
+            ]
+        },
+        {
+            "name": "Offre de soins",
+            "ideas": [
+                {
+                    "idea": "Désengorger les urgences",
+                    "agreement": 86,
+                    "adhesion": 17,
+                    "realistic": 32
+                },
+                {
+                    "idea": "Développer une offre de soins de proximité",
+                    "agreement": 90,
+                    "adhesion": 14,
+                    "realistic": 29
+                },
+                {
+                    "idea": "Développer les soins à domicile",
+                    "agreement": 89,
+                    "adhesion": 17,
+                    "realistic": 24
+                },
+                {
+                    "idea": "Mieux adapter les EHPAD aux besoins de leurs résidents",
+                    "agreement": 85,
+                    "adhesion": 19,
+                    "realistic": 27
+                }
+            ]
+        },
+        {
+            "name": "Gouvernance et administration",
+            "ideas": [
+                {
+                    "idea": "Repenser la gouvernance des hôpitaux",
+                    "agreement": 88,
+                    "adhesion": 18,
+                    "realistic": 28
+                },
+                {
+                    "idea": "Diminuer la charge administrative des soignants",
+                    "agreement": 88,
+                    "adhesion": 20,
+                    "realistic": 29
+                },
+                {
+                    "idea": "Réduire les moyens administratifs dans les hôpitaux publics",
+                    "agreement": 83,
+                    "adhesion": 22,
+                    "realistic": 25
+                }
+            ]
+        },
+        {
+            "name": "Politiques de santé",
+            "ideas": [
+                {
+                    "idea": "Sortir l’hôpital des logiques de rentabilité financière",
+                    "agreement": 89,
+                    "adhesion": 23,
+                    "realistic": 26
+                },
+                {
+                    "idea": "Impliquer les professionnels de santé dans la réforme à venir",
+                    "agreement": 89,
+                    "adhesion": 21,
+                    "realistic": 26
+                },
+                {
+                    "idea": "Maintenir le caractère public de la santé et le protéger",
+                    "agreement": 85,
+                    "adhesion": 27,
+                    "realistic": 21
+                }
+            ]
+        },
+        {
+            "name": "Prévention et éthique",
+            "ideas": [
+                {
+                    "idea": "Développer la prévention",
+                    "agreement": 87,
+                    "adhesion": 20,
+                    "realistic": 27
+                },
+                {
+                    "idea": "Intégrer le temps d'écoute et de pédagogie dans le travail soignant",
+                    "agreement": 87,
+                    "adhesion": 20,
+                    "realistic": 25
+                },
+                {
+                    "idea": "Informer les patients du coût des soins",
+                    "agreement": 84,
+                    "adhesion": 19,
+                    "realistic": 30
+                },
+                {
+                    "idea": "Repenser le rôle des soignants dans l’accompagnement de la fin de vie",
+                    "agreement": 83,
+                    "adhesion": 20,
+                    "realistic": 24
+                }
+            ]
+        },
+        {
+            "name": "Relations interprofessionnelles",
+            "ideas": [
+                {
+                    "idea": "Favoriser les liens entre hôpital public et professionnels libéraux",
+                    "agreement": 88,
+                    "adhesion": 15,
+                    "realistic": 31
+                },
+                {
+                    "idea": "Moderniser les dossiers médicaux afin d’améliorer le suivi, notamment grâce au numérique",
+                    "agreement": 84,
+                    "adhesion": 14,
+                    "realistic": 30
+                }
+            ]
+        },
+        {
+            "name": "Industrie",
+            "ideas": [
+                {
+                    "idea": "Relocaliser en France la production de matériel médical",
+                    "agreement": 92,
+                    "adhesion": 19,
+                    "realistic": 25
+                }
+            ]
+        }
+    ],
+    "controversials": [
+        {
+            "author": "Nathalie",
+            "content": "Il faut donner une plus grande visibilité et rembourser l'homéopathie, ostéopathie, la médecine chinoise",
+            "agree": 45,
+            "like_it": 11,
+            "disagree": 31,
+            "no_way": 16
+        },
+        {
+            "author": "Xavier",
+            "content": "Il faut interdire les médecins libéraux de s'installer librement pour remédier aux déserts médicaux.",
+            "agree": 45,
+            "like_it": 10,
+            "disagree": 33,
+            "no_way": 10
+        },
+        {
+            "author": "Marianne",
+            "content": "Il faut rétablir l'isf pour donner les moyens de fonctionner à l'hôpital public",
+            "agree": 45,
+            "like_it": 9,
+            "disagree": 26,
+            "no_way": 7
+        },
+        {
+            "author": "Ilena",
+            "content": "Il faut payer les urgences le jour même (même 1€ symbolique pour les moins favorisés)",
+            "agree": 43,
+            "like_it": 8,
+            "disagree": 28,
+            "no_way": 15
+        },
+        {
+            "author": "Philippe",
+            "content": "Il faut nationaliser les cliniques privées qui exercent une concurrence déloyale avec l'hôpital public. ",
+            "agree": 35,
+            "like_it": 8,
+            "disagree": 36,
+            "no_way": 10
+        },
+        {
+            "author": "Safia",
+            "content": "Il faut interdire la proposition de consultations privées dans des établissements publics",
+            "agree": 46,
+            "like_it": 13,
+            "disagree": 27,
+            "no_way": 11
+        },
+        {
+            "author": "Leila",
+            "content": "Il faut accepter de donner la mort à l'hôpital. On y naît, pourquoi ne pas y mourir de façon prévisionnelle aussi ?",
+            "agree": 51,
+            "like_it": 9,
+            "disagree": 20,
+            "no_way": 8
+        },
+        {
+            "author": "Philippe",
+            "content": "Il faut évaluer le gain financier de la gratuitė totale des soins qui supprimerait  tous  les dispositifs de recouvrement .",
+            "agree": 39,
+            "like_it": 11,
+            "disagree": 19,
+            "no_way": 7
+        },
+        {
+            "author": "Laurence",
+            "content": "Il faut renforcer le rôle des patients par une démocratie sanitaire participative (ouverte à tous les usagers) par territoire de santé ",
+            "agree": 39,
+            "like_it": 6,
+            "disagree": 22,
+            "no_way": 9
+        }
+    ],
+    "rejected": [
+        {
+            "author": "Franck",
+            "content": "Il faut laisser à l’hôpital public les pathologies très lourdes ou très rares et le reste dans le privé ",
+            "disagree": 74,
+            "no_way": 45
+        },
+        {
+            "author": "Ognjen",
+            "content": "Il faut réduire les frais en radiologie en fournissant au patient que le diagnostic sans la radio ",
+            "disagree": 40,
+            "no_way": 21
+        },
+        {
+            "author": "Philippe",
+            "content": "Il faut augmenter le temps de travail des soignants pour augmenter les salaires, 35h c'est beaucoup trop peu pour bien suivre les patients ",
+            "disagree": 52,
+            "no_way": 28
+        },
+        {
+            "author": "Didier",
+            "content": "Il faut que l'État arrête de se mêler de la gestion de la santé des français.",
+            "disagree": 56,
+            "no_way": 33
+        },
+        {
+            "author": "Gisèle",
+            "content": "Il faut annuler les charges sociales des bas salaires du personnel soignant et annexes (ex: personnel entretien) pour revaloriser le salaire",
+            "disagree": 36,
+            "no_way": 16
+        },
+        {
+            "author": "Noémie",
+            "content": "Il faut supprimer la médecine libérale : en pratique, tous les médecins sont déjà salariés de la sécurité sociale.",
+            "disagree": 47,
+            "no_way": 28
+        },
+        {
+            "author": "Christian",
+            "content": "Il faut sur l'hôpital, que les syndicats de tous bords ne viennent pas parasiter le débat ! Ils ne font pas avancer les choses",
+            "disagree": 33,
+            "no_way": 20
+        },
+        {
+            "author": "Gérard",
+            "content": "Il faut que l'Hôpital public adopte les bonnes pratiques d'organisation et de gestion des plus performantes Cliniques privées.",
+            "disagree": 43,
+            "no_way": 25
+        },
+        {
+            "author": "Laurent",
+            "content": "Il faut transformer son statut d’établissement public en ESPIC pour le rendre plus agile sur le territoire ",
+            "disagree": 21,
+            "no_way": 11
+        }
+    ],
+    "cartography": [
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Thèmes plébiscités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Carrières, rémunération",
+                    "sublabel": " et conditions de travail",
+                    "percent": 29,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.35
+                    }
+                },
+                {
+                    "label": "Valeurs et ",
+                    "sublabel": "grandes orientations",
+                    "percent": 16,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Effectifs et moyens",
+                    "sublabel": "",
+                    "percent": 14,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "center",
+                        "yAxis": 2.3
+                    }
+                },
+                {
+                    "label": "Organisation du",
+                    "sublabel": " système de santé",
+                    "percent": 8,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Gouvernance de",
+                    "sublabel": " l'hôpital",
+                    "percent": 7,
+                    "color": "#fff689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Gestion administrative",
+                    "sublabel": " de l'hôpital",
+                    "percent": 6,
+                    "color": "#c1ebdd",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Structures spécifiques",
+                    "sublabel": " de santé",
+                    "percent": 5,
+                    "color": "#59bad4",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Autre",
+                    "sublabel": "",
+                    "percent": 15,
+                    "color": "#ffffff",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "yAxis": 1.8
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Solutions plébiscitées",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Favoriser, développer",
+                    "sublabel": "",
+                    "percent": 67,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.5,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Limiter, réduire,",
+                    "sublabel": " arrêter",
+                    "percent": 24,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Obliger, imposer",
+                    "sublabel": "",
+                    "percent": 3,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.7,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Interdire, sanctionner",
+                    "sublabel": "",
+                    "percent": 3,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "center",
+                        "yAxis": 1.85
+                    }
+                },
+                {
+                    "label": "Sensibiliser, communiquer",
+                    "sublabel": "",
+                    "percent": 3,
+                    "color": "#fff689",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "yAxis": 1.95
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Acteurs plébiscités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Hôpital",
+                    "sublabel": "",
+                    "percent": 39,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.3,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Professionnels",
+                    "sublabel": " de santé",
+                    "percent": 33,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.7,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Pouvoirs publics",
+                    "sublabel": "",
+                    "percent": 22,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Patients",
+                    "sublabel": "",
+                    "percent": 5,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.9,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Autre",
+                    "sublabel": "",
+                    "percent": 1,
+                    "color": "#ffffff",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "xAxis": 1.9,
+                        "yAxis": 1.7
+                    }
+                }
+            ]
+        }
+    ],
+    "participation": [
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (1/2)",
+            "forcedHigherValue": 25,
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "Île-de-France",
+                    "bars": {
+                        "first": 24,
+                        "second": 18
+                    }
+                },
+                {
+                    "label": "Auvergne-Rhône-Alpes",
+                    "bars": {
+                        "first": 13,
+                        "second": 12
+                    }
+                },
+                {
+                    "label": "Hauts-de-France",
+                    "bars": {
+                        "first": 4,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Nouvelle-Aquitaine",
+                    "bars": {
+                        "first": 9,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Occitanie",
+                    "bars": {
+                        "first": 9,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Grand-Est",
+                    "bars": {
+                        "first": 9,
+                        "second": 8
+                    }
+                },
+                {
+                    "label": "Provence-Alpes-Côte-d-Azur",
+                    "bars": {
+                        "first": 8,
+                        "second": 7
+                    }
+                }
+            ]
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (2/2)",
+            "forcedHigherValue": 25,
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "Pays-de-la-Loire",
+                    "bars": {
+                        "first": 6,
+                        "second": 6
+                    }
+                },
+                {
+                    "label": "Normandie",
+                    "bars": {
+                        "first": 4,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Bretagne",
+                    "bars": {
+                        "first": 7,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Bourgogne-Franche-Comté",
+                    "bars": {
+                        "first": 3,
+                        "second": 4
+                    }
+                },
+                {
+                    "label": "Centre-Val-de-Loire",
+                    "bars": {
+                        "first": 3,
+                        "second": 4
+                    }
+                },
+                {
+                    "label": "Outre-mer",
+                    "bars": {
+                        "first": 1,
+                        "second": 3
+                    }
+                },
+                {
+                    "label": "Corse",
+                    "bars": {
+                        "first": 1,
+                        "second": 1
+                    }
+                }
+            ]
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par âge",
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "16-24 ans",
+                    "bars": {
+                        "first": 7,
+                        "second": 13
+                    }
+                },
+                {
+                    "label": "25-34 ans",
+                    "bars": {
+                        "first": 14,
+                        "second": 15
+                    }
+                },
+                {
+                    "label": "35-44 ans",
+                    "bars": {
+                        "first": 13,
+                        "second": 16
+                    }
+                },
+                {
+                    "label": "45-54 ans",
+                    "bars": {
+                        "first": 12,
+                        "second": 17
+                    }
+                },
+                {
+                    "label": "55-64 ans",
+                    "bars": {
+                        "first": 23,
+                        "second": 15
+                    }
+                },
+                {
+                    "label": "65 ans et plus",
+                    "bars": {
+                        "first": 31,
+                        "second": 24
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Votes par genre",
+            "legend": "",
+            "data": [
+                {
+                    "label": "hommes",
+                    "percent": 38,
+                    "color": "#4c45a5"
+                },
+                {
+                    "label": "femmes",
+                    "percent": 62,
+                    "color": "#eb7575"
+                }
+            ]
+        }
+    ]
+}

@@ -1,4 +1,3 @@
-// @flow
 import { Reducer, ReducerAction } from '@make.org/types';
 import {
   REMOVE_CURRENT_QUESTION_SLUG,

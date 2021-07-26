@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, FormEvent, SyntheticEvent } from 'react';
 import { LEGAL_CONSENT_FORMNAME } from '@make.org/utils/constants/form';
 import i18n from 'i18next';
 import {
   SecondLevelTitleStyle,
   FourthLevelTitleStyle,
 } from '@make.org/ui/elements/TitleElements';
-import { CheckBox } from '@make.org/ui/elements/FormElements';
+import { CheckBox } from '@make.org/ui/components/CheckBox';
 import { trackDisplayLegalConsent } from '@make.org/utils/services/Tracking';
 import {
   LegalFormStyle,
@@ -21,8 +21,8 @@ import {
 type Props = {
   needLegalConsent: boolean;
   handleLegalField: (fieldName: string, value: boolean) => void;
-  handleSubmit: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  toggleLegalConsent: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
+  toggleLegalConsent: (event: SyntheticEvent<HTMLButtonElement>) => void;
 };
 
 export const LegalConsent: React.FC<Props> = ({
@@ -46,7 +46,7 @@ export const LegalConsent: React.FC<Props> = ({
       id={LEGAL_CONSENT_FORMNAME}
       name={LEGAL_CONSENT_FORMNAME}
       onSubmit={handleSubmit}
-      className={!needLegalConsent && 'hidden'}
+      className={!needLegalConsent ? 'hidden' : ''}
     >
       <SecondLevelTitleStyle id="legal_consent_title">
         {i18n.t('legal_consent.title')}
@@ -62,7 +62,7 @@ export const LegalConsent: React.FC<Props> = ({
       <LegalCheckboxWrapperStyle>
         <CheckBox
           name="legalMinorConsent"
-          value={minorConsent}
+          value={JSON.stringify(minorConsent)}
           handleCheck={() => setMinorConsent(!minorConsent)}
           handleChange={() =>
             handleLegalField('legalMinorConsent', minorConsent)
@@ -75,7 +75,7 @@ export const LegalConsent: React.FC<Props> = ({
       <LegalCheckboxWrapperStyle>
         <CheckBox
           name="profile.legalAdvisorApproval"
-          value={parentalConsent}
+          value={JSON.stringify(parentalConsent)}
           handleCheck={() => setParentalConsent(!parentalConsent)}
           handleChange={() =>
             handleLegalField('legalAdvisorApproval', parentalConsent)

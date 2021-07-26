@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "composite": true
+  },
+  "include": [
+    "../../apps/front",
+    "../../store",
+    "../../ui",
+    "../../api",
+    "../../assets",
+    "../../components",
+    "../../utils" 
+  ],
+}

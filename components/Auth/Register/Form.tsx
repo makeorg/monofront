@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ChangeEvent, FormEvent } from 'react';
 import i18n from 'i18next';
 import { ErrorObjectType, RegisterFormDataType } from '@make.org/types';
 import { RegisterCheckBox } from '@make.org/components/Form/RegisterCheckBox';
@@ -34,9 +34,9 @@ import { TermsOfUseLinkStyle, NewWindowIconStyle } from '../style';
 type Props = {
   user: RegisterFormDataType;
   errors: ErrorObjectType[];
-  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
   handleLegalField: (fieldName: string, value: boolean) => void;
-  handleSubmit: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
   disableSubmit: boolean;
 };
 /**

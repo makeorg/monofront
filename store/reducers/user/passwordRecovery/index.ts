@@ -7,8 +7,8 @@ import * as actionTypes from '../../../actionTypes';
 
 export const passwordRecovery_state: StateUserPasswordRecovery = {
   newPassword: undefined,
-  resetToken: undefined,
-  userId: undefined,
+  resetToken: '',
+  userId: '',
   errorMessage: undefined,
   error: false,
   updated: false,

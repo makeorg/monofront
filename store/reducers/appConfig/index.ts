@@ -1,4 +1,3 @@
-// @flow
 import {
   DESKTOP_DEVICE,
   MOBILE_DEVICE,
@@ -22,7 +21,8 @@ export const appConfig_state: StateConfig = {
   queryParams: {},
   countriesWithConsultations: [],
   device: '',
-  privacyPolicy: new Date(),
+  privacyPolicy: '',
+  customData: {},
 };
 
 export const appConfig_reducer: Reducer = (

@@ -2,9 +2,7 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "jsx": "react",
-    "esModuleInterop": true
-  },
-  "include": [
-    "**/*.d.ts",
-  ]
+    "esModuleInterop": true,
+    "composite": true
+  }
 }

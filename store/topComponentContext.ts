@@ -1,4 +1,4 @@
-// @flow
+
 import { createContext, Context } from 'react';
 
 export type TopComponentContextValueType = string;

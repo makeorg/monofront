@@ -1,4 +1,4 @@
-// @flow
+
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
 

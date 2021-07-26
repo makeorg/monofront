@@ -1,0 +1,550 @@
+{
+    "context": "La solidarité est une condition du vivre ensemble qui s’incarne dans la culture bretonne : solidarité entre les générations, lutte contre l'exclusion au travail ou à l’école, accès aux services publics, dynamisme des centres-villes... Les Bretons ont partagé leurs idées pour renforcer la cohésion sociale et la solidarité en Bretagne.",
+    "key_figures": {
+        "participants": 25453,
+        "proposals": 536,
+        "votes": 120995
+    },
+    "top_ideas": [
+        {
+            "name": "Solidarité",
+            "ideas": [
+                {
+                    "idea": "Aider les personnes agées et favoriser l'intergénérationnel",
+                    "agreement": 90,
+                    "adhesion": 18,
+                    "realistic": 34
+                },
+                {
+                    "idea": "Développer les transports en commun notamment en espace rural",
+                    "agreement": 86,
+                    "adhesion": 17,
+                    "realistic": 32
+                },
+                {
+                    "idea": "Donner plus de pouvoir de décision aux citoyens",
+                    "agreement": 79,
+                    "adhesion": 15,
+                    "realistic": 29
+                },
+                {
+                    "idea": "Favoriser les produits locaux et les circuits courts",
+                    "agreement": 91,
+                    "adhesion": 22,
+                    "realistic": 31
+                },
+                {
+                    "idea": "Aider les plus démunis notamment par la redistribution alimentaire et l'accès au logement",
+                    "agreement": 84,
+                    "adhesion": 20,
+                    "realistic": 26
+                },
+                {
+                    "idea": "Aider les personnes en situation de handicap",
+                    "agreement": 86,
+                    "adhesion": 17,
+                    "realistic": 34
+                },
+                {
+                    "idea": "Favoriser le vivre ensemble et l'entraide en soutenant les initiatives citoyennes",
+                    "agreement": 81,
+                    "adhesion": 17,
+                    "realistic": 27
+                },
+                {
+                    "idea": "Favoriser l'égalité femme/homme et lutter contre l'homophobie",
+                    "agreement": 82,
+                    "adhesion": 21,
+                    "realistic": 30
+                },
+                {
+                    "idea": "Permettre à chacun de se former",
+                    "agreement": 74,
+                    "adhesion": 12,
+                    "realistic": 29
+                },
+                {
+                    "idea": "Améliorer la cohérence territoriale",
+                    "agreement": 78,
+                    "adhesion": 16,
+                    "realistic": 31
+                },
+                {
+                    "idea": "Aider et soutenir les agriculteurs locaux dans la transition écologique",
+                    "agreement": 85,
+                    "adhesion": 21,
+                    "realistic": 28
+                }
+            ]
+        }
+    ],
+    "controversials": [
+        {
+            "author": "Rémi",
+            "content": "Il faut un programme d'accueil des migrants, favoriser la solidarité et l'empathie de la population plutôt que la défiance.",
+            "agree": 51,
+            "like_it": 15,
+            "disagree": 30,
+            "no_way": 14
+        },
+        {
+            "author": "Gwenael",
+            "content": "Il faut rendre le breton officiel sur tout son territoire historique et son enseignement obligatoire.",
+            "agree": 24,
+            "like_it": 8,
+            "disagree": 42,
+            "no_way": 12
+        },
+        {
+            "author": "Anne-sophie",
+            "content": "Il faut arrêter de vendre à prix d'or des propriétés ou des terrains à des non-Bretons de souche.",
+            "agree": 39,
+            "like_it": 10,
+            "disagree": 44,
+            "no_way": 14
+        },
+        {
+            "author": "Pierre",
+            "content": "Il faut retablir le parlement de bretagne un parlement qui a pouvoir de légiférer pour les 5 départements historique de la Bretagne.",
+            "agree": 46,
+            "like_it": 10,
+            "disagree": 20,
+            "no_way": 7
+        }
+    ],
+    "rejected": [
+        {
+            "author": "Gabriel ",
+            "content": "Il faut arrêter de soutenir financièrement l'enseignement du Breton qui est sectaire, clivant, élitiste, rétrograde.",
+            "disagree": 68,
+            "no_way": 44
+        },
+        {
+            "author": "Ron",
+            "content": "Il faut proposer des aides au logement à ceux qui sont nés sur Rennes en priorité.",
+            "disagree": 70,
+            "no_way": 32
+        },
+        {
+            "author": "Jean-pol",
+            "content": "Il faut un contrôle strict des personnes voulant s'installer en Bretagne afin de garder un caractère Breton au pays.",
+            "disagree": 57,
+            "no_way": 34
+        }
+    ],
+    "cartography": [
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Thèmes plébiscités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Emploi",
+                    "sublabel": "",
+                    "percent": 19,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Mobilité ",
+                    "sublabel": "et transports",
+                    "percent": 18,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.3,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Aide sociale",
+                    "sublabel": "",
+                    "percent": 16,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Urbanisme",
+                    "sublabel": "",
+                    "percent": 15,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Établissements",
+                    "sublabel": " de santé",
+                    "percent": 8,
+                    "color": "#fff689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Démocratie",
+                    "sublabel": " participative",
+                    "percent": 6,
+                    "color": "#59bad4",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Valeurs",
+                    "sublabel": "",
+                    "percent": 6,
+                    "color": "#5985af",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Autre",
+                    "sublabel": "",
+                    "percent": 12,
+                    "color": "#ffffff",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "xAxis": 1.9,
+                        "yAxis": 1.8
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Solutions plébiscitées",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Aménagement ",
+                    "sublabel": "du territoire",
+                    "percent": 28,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Aides ",
+                    "sublabel": "e subventions",
+                    "percent": 18,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Incitation",
+                    "sublabel": "",
+                    "percent": 14,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "center",
+                        "xAxis": 2,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Sensibilisation",
+                    "sublabel": " et éducation",
+                    "percent": 9,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Comportements",
+                    "sublabel": " individuels",
+                    "percent": 5,
+                    "color": "#c1ebdd",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Innovation",
+                    "sublabel": "",
+                    "percent": 5,
+                    "color": "#fff689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Participation",
+                    "sublabel": " citoyenne",
+                    "percent": 5,
+                    "color": "#59bad4",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Régulation",
+                    "sublabel": "",
+                    "percent": 5,
+                    "color": "#5985af",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Autre",
+                    "sublabel": "",
+                    "percent": 11,
+                    "color": "#ffffff",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "xAxis": 1.9,
+                        "yAxis": 1.8
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Acteurs plébiscités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Collectivités locales",
+                    "sublabel": "",
+                    "percent": 37,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Individus",
+                    "sublabel": "",
+                    "percent": 18,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "ONG ",
+                    "sublabel": "& associations",
+                    "percent": 10,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Gouvernement",
+                    "sublabel": "",
+                    "percent": 10,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "PME",
+                    "sublabel": " et TPE",
+                    "percent": 10,
+                    "color": "#fff689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Grande entreprises",
+                    "sublabel": "",
+                    "percent": 7,
+                    "color": "#c1ebdd",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.9,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Écoles",
+                    "sublabel": " et universités",
+                    "percent": 5,
+                    "color": "#59bad4",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Autre",
+                    "sublabel": "",
+                    "percent": 3,
+                    "color": "#ffffff",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "xAxis": 1.85,
+                        "yAxis": 1.8
+                    }
+                }
+            ]
+        }
+    ],
+    "participation": [
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par départements",
+            "forcedHigherValue": 25,
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population de Bretagne"
+                }
+            },
+            "data": [
+                {
+                    "label": "Côtes-d'Armor ",
+                    "bars": {
+                        "first": 14,
+                        "second": 20
+                    }
+                },
+                {
+                    "label": "Finistère",
+                    "bars": {
+                        "first": 29,
+                        "second": 30
+                    }
+                },
+                {
+                    "label": "Ille et Villaine",
+                    "bars": {
+                        "first": 30,
+                        "second": 25
+                    }
+                },
+                {
+                    "label": "Morbihan",
+                    "bars": {
+                        "first": 27,
+                        "second": 25
+                    }
+                }
+            ]
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par âge",
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population de Bretagne"
+                }
+            },
+            "data": [
+                {
+                    "label": "18-24 ans",
+                    "bars": {
+                        "first": 20,
+                        "second": 8
+                    }
+                },
+                {
+                    "label": "25-34 ans",
+                    "bars": {
+                        "first": 24,
+                        "second": 13
+                    }
+                },
+                {
+                    "label": "35-44 ans",
+                    "bars": {
+                        "first": 17,
+                        "second": 16
+                    }
+                },
+                {
+                    "label": "45-54 ans",
+                    "bars": {
+                        "first": 14,
+                        "second": 18
+                    }
+                },
+                {
+                    "label": "55-64 ans",
+                    "bars": {
+                        "first": 15,
+                        "second": 18
+                    }
+                },
+                {
+                    "label": "65 ans et plus",
+                    "bars": {
+                        "first": 10,
+                        "second": 27
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Votes par genre",
+            "legend": "",
+            "data": [
+                {
+                    "label": "hommes",
+                    "percent": 42,
+                    "color": "#4c45a5"
+                },
+                {
+                    "label": "femmes",
+                    "percent": 58,
+                    "color": "#eb7575"
+                }
+            ]
+        }
+    ]
+}

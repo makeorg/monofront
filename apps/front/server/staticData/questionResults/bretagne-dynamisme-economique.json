@@ -1,0 +1,584 @@
+{
+    "context": "La Bretagne profite d’un taux d’emploi élevé et d’un taux de chômage inférieur à la moyenne nationale. Les Bretons ont partagé leurs idées pour en faire un bassin d’emploi encore plus dynamique et porteur de perspectives pour les salariés, les indépendants, les jeunes, les personnes sans emploi ou encore les entreprises...",
+    "key_figures": {
+        "participants": 21950,
+        "proposals": 682,
+        "votes": 98494
+    },
+    "top_ideas": [
+        {
+            "name": "Emploi",
+            "ideas": [
+                {
+                    "idea": "Favoriser les produits locaux et les circuits courts",
+                    "agreement": 95,
+                    "adhesion": 23,
+                    "realistic": 34
+                },
+                {
+                    "idea": "Soutenir les PME/entrepreneurs et aider à la création d’entreprise",
+                    "agreement": 90,
+                    "adhesion": 20,
+                    "realistic": 34
+                },
+                {
+                    "idea": "Favoriser la formation en adéquation avec les besoins de main d'oeuvre de la région",
+                    "agreement": 88,
+                    "adhesion": 15,
+                    "realistic": 37
+                },
+                {
+                    "idea": "Développer les transports en commun pour faciliter l'accès à l'emploi notamment en espace rural",
+                    "agreement": 90,
+                    "adhesion": 22,
+                    "realistic": 35
+                },
+                {
+                    "idea": "Favoriser les entreprises de proximité notamment pour redynamiser les bourgs",
+                    "agreement": 90,
+                    "adhesion": 21,
+                    "realistic": 33
+                },
+                {
+                    "idea": "Développer une agriculture raisonnée",
+                    "agreement": 89,
+                    "adhesion": 23,
+                    "realistic": 29
+                },
+                {
+                    "idea": "Développer les filières de recyclage et l'économie circulaire",
+                    "agreement": 87,
+                    "adhesion": 20,
+                    "realistic": 41
+                },
+                {
+                    "idea": "Créer plus de lien entre les étudiants et les différents métiers",
+                    "agreement": 84,
+                    "adhesion": 18,
+                    "realistic": 38
+                },
+                {
+                    "idea": "Favoriser l'apprentissage et l'alternance",
+                    "agreement": 85,
+                    "adhesion": 23,
+                    "realistic": 33
+                },
+                {
+                    "idea": "Faire connaitre les métiers bretons notamment ceux en demande de main d'oeuvre",
+                    "agreement": 80,
+                    "adhesion": 17,
+                    "realistic": 38
+                },
+                {
+                    "idea": "Développer un modèle économique Breton écologique",
+                    "agreement": 76,
+                    "adhesion": 24,
+                    "realistic": 29
+                },
+                {
+                    "idea": "Avoir une vraie politique de l'emploi pour les séniors",
+                    "agreement": 77,
+                    "adhesion": 15,
+                    "realistic": 36
+                },
+                {
+                    "idea": "Développer l'artisanat breton",
+                    "agreement": 90,
+                    "adhesion": 21,
+                    "realistic": 36
+                },
+                {
+                    "idea": "Améliorer l'offre de logements notamment pour les travailleurs précaires",
+                    "agreement": 86,
+                    "adhesion": 17,
+                    "realistic": 34
+                }
+            ]
+        }
+    ],
+    "controversials": [
+        {
+            "author": "Mick",
+            "content": "Il faut arrêter d'accepter toutes les populations du monde et favoriser nos jeunes et personnes âgées.",
+            "agree": 49,
+            "like_it": 14,
+            "disagree": 33,
+            "no_way": 19
+        },
+        {
+            "author": "Legoff",
+            "content": "Il faut développer le tourisme en Bretagne.",
+            "agree": 52,
+            "like_it": 8,
+            "disagree": 19,
+            "no_way": 10
+        },
+        {
+            "author": "Robin2901",
+            "content": "Il faut une totale indépendance économique pour notre Bretagne.",
+            "agree": 37,
+            "like_it": 12,
+            "disagree": 39,
+            "no_way": 13
+        },
+        {
+            "author": "Virginie ",
+            "content": "Il faut verser 1 000 euros à tous les citoyens chaque mois et chacun choisit le métier qu'il veut faire. Changer autant qu'on veut si besoin.",
+            "agree": 29,
+            "like_it": 11,
+            "disagree": 43,
+            "no_way": 11
+        }
+    ],
+    "rejected": [
+        {
+            "author": "Marie",
+            "content": "Il faut faire un aéroport international.",
+            "disagree": 51,
+            "no_way": 29
+        },
+        {
+            "author": "Dylan",
+            "content": "Il faut instaurer une taxe au kilomètre parcouru afin de favoriser les produits et matériaux locaux, et donc les emplois locaux.",
+            "disagree": 34,
+            "no_way": 14
+        },
+        {
+            "author": "Fabien ",
+            "content": "Il faut une réunification et une indépendance de la Bretagne.",
+            "disagree": 45,
+            "no_way": 25
+        },
+        {
+            "author": "Jules",
+            "content": "Il faut donner moins d’aides.",
+            "disagree": 48,
+            "no_way": 23
+        }
+    ],
+    "cartography": [
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Thèmes plébiscités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Formation",
+                    "sublabel": "",
+                    "percent": 21,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Agriculture",
+                    "sublabel": "",
+                    "percent": 12,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Mobilité et",
+                    "sublabel": " transports",
+                    "percent": 12,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Entreprenariat",
+                    "sublabel": "",
+                    "percent": 9,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "center",
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Urbanisme",
+                    "sublabel": "",
+                    "percent": 7,
+                    "color": "#fff689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Développement",
+                    "sublabel": " durable",
+                    "percent": 6,
+                    "color": "#c1ebdd",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Industrie",
+                    "sublabel": "",
+                    "percent": 5,
+                    "color": "#59bad4",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Conditions",
+                    "sublabel": " de travail",
+                    "percent": 5,
+                    "color": "#5985af",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Autre",
+                    "sublabel": "",
+                    "percent": 23,
+                    "color": "#ffffff",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "xAxis": 1.8,
+                        "yAxis": 1.9
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Solutions plébiscitées",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Investissement",
+                    "sublabel": "",
+                    "percent": 20,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Aides et ",
+                    "sublabel": "subventions",
+                    "percent": 13,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Aménagement du ",
+                    "sublabel": "territoire",
+                    "percent": 13,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Sensibilisation ",
+                    "sublabel": "et éducation",
+                    "percent": 12,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "center",
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Régulation",
+                    "sublabel": "",
+                    "percent": 11,
+                    "color": "#fff689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Innovation",
+                    "sublabel": "",
+                    "percent": 9,
+                    "color": "#c1ebdd",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Mise en place",
+                    "sublabel": " d'infrastructures",
+                    "percent": 9,
+                    "color": "#59bad4",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Comportements",
+                    "sublabel": " individuels",
+                    "percent": 5,
+                    "color": "#5985af",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Autre",
+                    "sublabel": "",
+                    "percent": 8,
+                    "color": "#ffffff",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "xAxis": 1.9,
+                        "yAxis": 1.8
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Acteurs plébiscités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Collectivités locales",
+                    "sublabel": "",
+                    "percent": 39,
+                    "color": "#4c45a5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "PME et TPE",
+                    "sublabel": "",
+                    "percent": 18,
+                    "color": "#eb7575",
+                    "adjustLabel": {
+                        "textAlign": "center",
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Grandes",
+                    "sublabel": " entreprises",
+                    "percent": 12,
+                    "color": "#eeb29a",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Centres",
+                    "sublabel": " de formation",
+                    "percent": 8,
+                    "color": "#ffd674",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Gouvernements",
+                    "sublabel": "",
+                    "percent": 8,
+                    "color": "#fff689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Écoles",
+                    "sublabel": " et universités",
+                    "percent": 8,
+                    "color": "#c1ebdd",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Individus",
+                    "sublabel": "",
+                    "percent": 6,
+                    "color": "#59bad4",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Autre",
+                    "sublabel": "",
+                    "percent": 1,
+                    "color": "#ffffff",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "xAxis": 1.85,
+                        "yAxis": 1.7
+                    }
+                }
+            ]
+        }
+    ],
+    "participation": [
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par départements",
+            "forcedHigherValue": 25,
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population de Bretagne"
+                }
+            },
+            "data": [
+                {
+                    "label": "Côtes-d'Armor ",
+                    "bars": {
+                        "first": 18,
+                        "second": 20
+                    }
+                },
+                {
+                    "label": "Finistère",
+                    "bars": {
+                        "first": 26,
+                        "second": 30
+                    }
+                },
+                {
+                    "label": "Ille et Villaine",
+                    "bars": {
+                        "first": 28,
+                        "second": 25
+                    }
+                },
+                {
+                    "label": "Morbihan",
+                    "bars": {
+                        "first": 28,
+                        "second": 25
+                    }
+                }
+            ]
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par âge",
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population de Bretagne"
+                }
+            },
+            "data": [
+                {
+                    "label": "18-24 ans",
+                    "bars": {
+                        "first": 16,
+                        "second": 8
+                    }
+                },
+                {
+                    "label": "25-34 ans",
+                    "bars": {
+                        "first": 17,
+                        "second": 13
+                    }
+                },
+                {
+                    "label": "35-44 ans",
+                    "bars": {
+                        "first": 18,
+                        "second": 16
+                    }
+                },
+                {
+                    "label": "45-54 ans",
+                    "bars": {
+                        "first": 18,
+                        "second": 18
+                    }
+                },
+                {
+                    "label": "55-64 ans",
+                    "bars": {
+                        "first": 20,
+                        "second": 18
+                    }
+                },
+                {
+                    "label": "65 ans et plus",
+                    "bars": {
+                        "first": 11,
+                        "second": 27
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Votes par genre",
+            "legend": "",
+            "data": [
+                {
+                    "label": "hommes",
+                    "percent": 40,
+                    "color": "#4c45a5"
+                },
+                {
+                    "label": "femmes",
+                    "percent": 60,
+                    "color": "#eb7575"
+                }
+            ]
+        }
+    ]
+}
