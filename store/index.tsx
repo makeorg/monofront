@@ -84,7 +84,7 @@ const ContextState: React.FC<{ serverState?: StateRoot }> = ({
 
   useEffect(() => {
     const { action, lastState } = lastAction;
-    if (!deepEqual(lastState, state) && action.type) {
+    if (!deepEqual(lastState, state) && action && action.type) {
       console.group(
         `%cAction: %c${action.type} %cat ${getCurrentTimeFormatted()}`,
         'color: green; font-weight: bold;',
