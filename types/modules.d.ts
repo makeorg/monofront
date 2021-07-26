@@ -2,6 +2,7 @@ declare module 'athena-design-tokens';
 declare module 'uuid';
 declare module 'react-router-dom';
 declare module 'react-router';
+declare module 'react-modal';
 declare module '@loadable/component';
 declare module 'adblockdetect';
 declare module '*.woff';
@@ -16,6 +17,10 @@ declare module '*.yaml' {
   export default data;
 }
 declare module '*.json' {
+  const data: any;
+  export default data;
+}
+declare module '*.png' {
   const data: any;
   export default data;
 }

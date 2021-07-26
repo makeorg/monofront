@@ -83,7 +83,9 @@ class LoggerSingleton {
     }
   };
 
-  logError = (error: string | ApiServiceError | Record<string, string>) => {
+  logError = (
+    error: string | ApiServiceError | Record<string, string> | Error
+  ) => {
     this.log(error, LOG_ERROR);
   };
 
@@ -96,7 +98,7 @@ class LoggerSingleton {
   };
 
   log = (
-    data: string | ApiServiceError | Record<string, string>,
+    data: string | ApiServiceError | Record<string, string> | Error,
     level: string
   ): Promise<void | AxiosResponse> => {
     if (env.isDev()) {

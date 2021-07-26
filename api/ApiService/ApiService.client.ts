@@ -109,7 +109,10 @@ export class ApiServiceClient implements IApiServiceStrategy {
     this._headersListeners = listeners;
   }
 
-  addHeadersListener(identifier: string, listener: string): void {
+  addHeadersListener(
+    identifier: string,
+    listener: string | ((args: any) => string)
+  ): void {
     this._headersListeners.set(identifier, listener);
   }
 

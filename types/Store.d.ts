@@ -82,6 +82,8 @@ export type StateAuthentication = {
     userId: string;
     displayName: string;
     profile?: any;
+    userType?: string;
+    avatarUrl: string;
   };
 };
 
@@ -134,12 +136,20 @@ export type StateQuestions = {
   readonly [n: string]: SingleStateQuestionType;
 };
 
+enum ModalTypes {
+  MODAL_LOGIN,
+  MODAL_REGISTER,
+  MODAL_FORGOT_PASSWORD,
+  MODAL_PROPOSAL_SUCCESS,
+  MODAL_COUNTRIES,
+}
+
 export type StateModal = {
   readonly isOpen: boolean;
   readonly showExpirationSession: boolean;
   readonly showDataPolicy: boolean;
   readonly showCookies: boolean;
-  readonly contentType: string;
+  readonly contentType: keyof typeof ModalTypes;
   readonly focusAfterClose: boolean;
   readonly extraProps: any;
   readonly isLogin?: boolean;

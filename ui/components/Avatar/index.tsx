@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {
   AvatarStyle,
@@ -16,7 +15,7 @@ type Props = {
   /** Width of avatar */
   avatarAlt?: string;
   /** Special avatar design for sequence */
-  isSequence: boolean;
+  isSequence?: boolean;
 };
 
 type DotsProps = {
