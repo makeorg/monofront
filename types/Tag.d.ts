@@ -1,7 +1,7 @@
 export type TagType = {
   tagId: string;
   label: string;
-  display: string;
+  display: boolean;
   weight: number;
   operationId: string;
   questionId: string;

@@ -69,7 +69,9 @@ export const removeAriaHiddenAndNegativeTab = (className: string) => {
   );
 };
 
-export const addAriaHiddenByClass = (className: string) => {
+export const addAriaHiddenByClass = (
+  className: string
+): HTMLElement | undefined => {
   /** get elements by className and tranform the NodeList in Array */
   const elementsCollection = document.querySelectorAll(`.${className}`);
   const elementsArray = Array.from(elementsCollection);
@@ -86,7 +88,9 @@ export const addAriaHiddenByClass = (className: string) => {
   return elementWithAttribute;
 };
 
-export const removeAriaHiddenByClass = (className: string) => {
+export const removeAriaHiddenByClass = (
+  className: string
+): HTMLElement | undefined => {
   /** get elements by className and tranform the NodeList in Array */
   const elementsCollection = document.querySelectorAll(`.${className}`);
   const elementsArray = Array.from(elementsCollection);

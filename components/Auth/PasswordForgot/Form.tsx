@@ -26,9 +26,7 @@ export const ForgotPasswordForm: React.FC = () => {
     setEmail(event.target.value);
   };
 
-  const handleSubmit = async (
-    event: React.SyntheticEvent<HTMLInputElement>
-  ) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const success = () => setSuccess(true);
     const handleErrors = (serviceErrors: ErrorObjectType[]) => {

@@ -1,45 +1,48 @@
 import React from 'react';
-import { Vote } from 'Client/features/vote';
-import { type ProposalType } from 'Shared/types/proposal';
-import { getProposalLink, getParticipateLink } from 'Shared/helpers/url';
-import { OrganisationsVote } from 'Client/features/vote/Organisation';
-import { ProposalFooterWithQuestionElement } from 'Client/ui/Proposal/FooterElement/ProposalWithQuestion';
-import { DeprecatedProposalAuthor } from 'Client/ui/Proposal/DeprecatedAuthor';
+import { Vote } from '@make.org/components/Vote';
+import { ProposalType } from '@make.org/types';
+import {
+  getProposalLink,
+  getParticipateLink,
+} from '@make.org/utils/helpers/url';
+import { OrganisationsVote } from '@make.org/components/Vote/Organisation';
 import {
   ProposalCardStyle,
   ProposalStyle,
   ProposalInnerStyle,
-} from 'Client/ui/Elements/ProposalCardElements';
-import { DetailledVoteResults } from 'Client/ui/Proposal/DetailledVoteResults';
-import { isInProgress } from 'Shared/helpers/date';
-import { AuthorWrapperStyle } from 'Client/ui/Proposal/DeprecatedAuthor/Styled';
-import { ScreenReaderItemStyle } from 'Client/ui/Elements/AccessibilityElements';
-import { i18n } from 'Shared/i18n';
-import { ColumnElementStyle } from 'Client/ui/Elements/FlexElements';
-import { useSelector } from 'react-redux';
-import { StateRoot } from 'Shared/store/types';
+} from '@make.org/ui/elements/ProposalCardElements';
+import { isInProgress } from '@make.org/utils/helpers/date';
+import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
+import i18n from 'i18next';
+import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
+import { useAppContext } from '@make.org/store';
+import { AuthorWrapperStyle } from '../DeprecatedAuthor/Styled';
+import { DetailledVoteResults } from '../DetailledVoteResults';
+import { DeprecatedProposalAuthor } from '../DeprecatedAuthor';
+import { ProposalFooterWithQuestionElement } from '../FooterElement/ProposalWithQuestion';
 
 type Props = {
   /** Object with all proposal's properties */
-  proposal: ProposalType,
+  proposal: ProposalType;
   /** Proposal's position in list */
-  position: number,
+  position: number;
   /** Size of proposals list */
-  size: number,
+  size: number;
   /** Show or not organisation who voted */
-  withOrganisations?: boolean,
+  withOrganisations?: boolean;
   /** Enable radius on Mobile */
-  withMobileRadius?: boolean,
+  withMobileRadius?: boolean;
 };
 
-export const ProposalCardWithQuestion = ({
+export const ProposalCardWithQuestion: React.FC<Props> = ({
   proposal,
   position,
   size,
   withOrganisations = false,
   withMobileRadius = false,
-}: Props) => {
-  const { country } = useSelector((state: StateRoot) => state.appConfig);
+}) => {
+  const { state } = useAppContext();
+  const { country } = state.appConfig;
   const proposalLink = getProposalLink(
     country,
     proposal.question.slug,

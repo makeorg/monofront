@@ -5,10 +5,7 @@ import { getRouteSearch } from '@make.org/utils/routes';
 import i18n from 'i18next';
 import { SvgAngleArrowLeft } from '@make.org/ui/Svg/elements';
 import { useAppContext } from '@make.org/store';
-import {
-  SearchBackArrowStyle,
-  SearchBackStyle,
-} from 'Client/pages/Search/Styled';
+import { SearchBackArrowStyle, SearchBackStyle } from './Styled';
 
 type Props = RouterProps & {
   term: string;

@@ -61,7 +61,9 @@ export const SequenceTitleStyle = styled.h2`
   }
 `;
 
-export const ConsultationPageLinkStyle = styled(GreyLinkStyle)`
+export const ConsultationPageLinkStyle = styled(GreyLinkStyle)<{
+  className: string;
+}>`
   align-self: flex-start;
   margin: 20px 0;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {

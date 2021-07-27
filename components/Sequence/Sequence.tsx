@@ -138,7 +138,7 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
           {!isEmptySequence && <SequenceProgress />}
         </SequenceContentStyle>
         <ConsultationPageLinkStyle
-          className={!withProposalButton && 'static'}
+          className={withProposalButton ? '' : 'static'}
           to={getParticipateLink(country || '', question.slug)}
           onClick={() => trackClickOperationPage()}
         >

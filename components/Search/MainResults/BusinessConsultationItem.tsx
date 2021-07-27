@@ -1,14 +1,12 @@
-// @flow
 import React from 'react';
 import { color } from 'athena-design-tokens';
-import { useSelector } from 'react-redux';
-import { type StateRoot } from '@make.org/utils/store/types';
-import { type QuestionType } from '@make.org/utils/types/question';
+import { QuestionType } from '@make.org/types';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { getParticipateLink } from '@make.org/utils/helpers/url';
 import { trackClickHomepageConsultations } from '@make.org/utils/services/Tracking';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import i18n from 'i18next';
+import { useAppContext } from '@make.org/store';
 import {
   SearchResultsConsultationListStyle,
   BusinessConsultationsItemStyle,
@@ -21,10 +19,10 @@ import {
 } from '../Styled';
 
 type Props = {
-  questions: QuestionType[],
+  questions: QuestionType[];
 };
 
-const businessConsultation = (question, country) => (
+const businessConsultation = (question: QuestionType, country: string) => (
   <BusinessConsultationsItemStyle
     key={question.slug}
     backgroundColor={color.white}
@@ -46,7 +44,7 @@ const businessConsultation = (question, country) => (
               ? getParticipateLink(country, question.slug)
               : undefined
           }
-          as={!isInProgress(question) && 'a'}
+          as={!isInProgress(question) ? 'a' : undefined}
           href={isInProgress(question) ? undefined : question.aboutUrl || '#'}
           onClick={() => trackClickHomepageConsultations()}
         >
@@ -58,8 +56,9 @@ const businessConsultation = (question, country) => (
     </BusinessConsultationsItemWrapperStyle>
   </BusinessConsultationsItemStyle>
 );
-export const BusinessConsultationsList = ({ questions }: Props) => {
-  const { country } = useSelector((state: StateRoot) => state.appConfig);
+export const BusinessConsultationsList: React.FC<Props> = ({ questions }) => {
+  const { state } = useAppContext();
+  const { country } = state.appConfig;
 
   return (
     <SearchResultsConsultationListStyle>

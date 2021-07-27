@@ -1,18 +1,15 @@
-// @flow
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { type OrganisationType } from '@make.org/utils/types/organisation';
+import { OrganisationType } from '@make.org/types';
 import i18n from 'i18next';
 import { getOrganisationProfileLink } from '@make.org/utils/helpers/url';
-import { type StateRoot } from '@make.org/utils/store/types';
-import { Avatar } from '@make.org/ui/Avatar';
+import { Avatar } from '@make.org/ui/components/Avatar';
 import {
   SearchOrganisationsListStyle,
   SearchOrganisationsListItemStyle,
   SearchOrganisationItemStyle,
   SearchOrganisationAvatarStyle,
-} from 'Client/features/search/Styled';
+} from '@make.org/components/Search/Styled';
 
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import {
@@ -20,19 +17,21 @@ import {
   ProfileTitleStyle,
   ProfileAvatarLayoutStyle,
 } from '@make.org/ui/elements/ProfileElements';
-import { CertifiedIconStyle } from '@make.org/ui/Proposal/DeprecatedAuthor/Styled';
+import { CertifiedIconStyle } from '@make.org/components/Proposal/DeprecatedAuthor/Styled';
 import { formatOrganisationName } from '@make.org/utils/helpers/stringFormatter';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
+import { useAppContext } from '@make.org/store';
 import { MainResultsOrganisationsMobile } from './Mobile';
 
 type Props = {
-  organisations: OrganisationType[],
+  organisations: OrganisationType[];
 };
 
-export const MainResultsOrganisations = ({ organisations }: Props) => {
-  const { country, device } = useSelector(
-    (state: StateRoot) => state.appConfig
-  );
+export const MainResultsOrganisations: React.FC<Props> = ({
+  organisations,
+}) => {
+  const { state } = useAppContext();
+  const { country, device } = state.appConfig;
   const isMobile = matchMobileDevice(device);
 
   if (isMobile) {
@@ -48,7 +47,7 @@ export const MainResultsOrganisations = ({ organisations }: Props) => {
               to={getOrganisationProfileLink(country, organisation.slug)}
             >
               <ProfileAvatarLayoutStyle>
-                <SearchOrganisationAvatarStyle>
+                <SearchOrganisationAvatarStyle avatarSize={80}>
                   <Avatar avatarSize={80} avatarUrl={organisation.avatarUrl} />
                 </SearchOrganisationAvatarStyle>
                 <ProfileContentWrapperStyle>

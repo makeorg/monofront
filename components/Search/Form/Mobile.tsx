@@ -1,4 +1,3 @@
-// @flow
 import React, { useState } from 'react';
 import { SvgSearch } from '@make.org/ui/Svg/elements';
 import i18n from 'i18next';
@@ -20,17 +19,19 @@ import { SearchForm } from './Form';
 export const MobileSearchInput: React.FC = () => {
   const [isExpanded, expandForm] = useState<boolean>(false);
 
-  const toggleMobileExpansion = (event: SyntheticEvent<HTMLButtonElement>) => {
+  const toggleMobileExpansion = (
+    event: React.SyntheticEvent<HTMLButtonElement>
+  ) => {
     event.preventDefault();
 
     if (isExpanded) {
-      removeAriaHiddenByClass(SEARCH_ARIA_CLASS, 250);
-      removeAriaHiddenByClass(SEARCH_ELEMENT_ARIA_CLASS, 250);
+      removeAriaHiddenByClass(SEARCH_ARIA_CLASS);
+      removeAriaHiddenByClass(SEARCH_ELEMENT_ARIA_CLASS);
       return expandForm(!isExpanded);
     }
 
-    addAriaHiddenByClass(SEARCH_ARIA_CLASS, 250);
-    addAriaHiddenByClass(SEARCH_ELEMENT_ARIA_CLASS, 250);
+    addAriaHiddenByClass(SEARCH_ARIA_CLASS);
+    addAriaHiddenByClass(SEARCH_ELEMENT_ARIA_CLASS);
     return expandForm(!isExpanded);
   };
 
@@ -48,7 +49,7 @@ export const MobileSearchInput: React.FC = () => {
       </SearchFormTriggerStyle>
       <SearchFormWrapperStyle
         aria-hidden={!isExpanded && true}
-        className={isExpanded && 'expanded'}
+        className={isExpanded ? 'expanded' : ''}
       >
         <SearchForm />
         <SearchFormCancelTriggerStyle

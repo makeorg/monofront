@@ -18,4 +18,5 @@
     "../../components",
     "../../utils" 
   ],
+  "exclude": ["./node_modules"]
 }

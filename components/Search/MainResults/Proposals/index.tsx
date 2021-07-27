@@ -1,37 +1,34 @@
-// @flow
 import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { type ProposalType } from '@make.org/utils/types/proposal';
+import { ProposalType } from '@make.org/types';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
-import { ProposalCardWithQuestion } from 'Client/features/proposal/ProposalCardWithQuestion';
+import { ProposalCardWithQuestion } from '@make.org/components/Proposal/ProposalCardWithQuestion';
 import i18n from 'i18next';
 import { searchProposals } from '@make.org/utils/helpers/proposal';
-import { type StateRoot } from '@make.org/utils/store/types';
-import { Spinner } from '@make.org/ui/elements/Loading/Spinner';
-import { SearchMoreProposalsButtonStyle } from 'Client/pages/Search/Styled';
+import { Spinner } from '@make.org/ui/components/Loading/Spinner';
 import {
   TopComponentContext,
-  type TopComponentContextValueType,
+  TopComponentContextValueType,
   TopComponentContextValue,
-} from 'Client/context/TopComponentContext';
+} from '@make.org/store/topComponentContext';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
+import { useAppContext } from '@make.org/store';
+import { SearchMoreProposalsButtonStyle } from '../../Styled';
 import { MainResultsProposalsMobile } from './Mobile';
 import { MainResultsProposalsItemStyle } from './Styled';
 
 type Props = {
-  searchTerm: string,
-  proposals: ProposalType[],
-  count: number,
+  searchTerm: string;
+  proposals: ProposalType[];
+  count: number;
 };
 
-export const MainResultsProposals = ({
+export const MainResultsProposals: React.FC<Props> = ({
   searchTerm,
   proposals,
   count,
-}: Props) => {
-  const { country, device } = useSelector(
-    (state: StateRoot) => state.appConfig
-  );
+}) => {
+  const { state } = useAppContext();
+  const { country, device } = state.appConfig;
   const isMobile = matchMobileDevice(device);
   const [page, setPage] = useState<number>(1);
   const [isLoading, setIsLoading] = useState<boolean>(false);

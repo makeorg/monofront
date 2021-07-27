@@ -1,5 +1,3 @@
-/* @flow */
-
 import styled from 'styled-components';
 import { pxToRem } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';

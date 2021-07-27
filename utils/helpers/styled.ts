@@ -8,6 +8,13 @@ export const pxToPercent = (
   return `${percentValue}%`;
 };
 
+export const pxToRem = (value: string | number, base = '16'): string => {
+  const px = typeof value === 'number' ? value : parseInt(value, 10);
+  const rem = parseFloat((px / parseInt(base, 10)).toPrecision(4));
+
+  return `${rem}rem`;
+};
+
 export const intToPx = (value: number): string => `${value}px`;
 
 export const getBarHeight = (value: number): string => {
