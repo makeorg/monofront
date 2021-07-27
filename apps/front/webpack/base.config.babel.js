@@ -13,7 +13,7 @@ const clientConfig = envConfigPath => ({
     'core-js/stable',
     'regenerator-runtime/runtime',
     'glider-js/glider-compat.min.js',
-    path.resolve(__dirname, '..', 'client', 'index.js'),
+    path.resolve(__dirname, '..', 'client', 'index.tsx'),
   ],
   output: {
     filename: 'js/[name].[contenthash].js',
@@ -25,13 +25,13 @@ const clientConfig = envConfigPath => ({
   resolve: {
     extensions: ['*', '.ts', '.tsx', '.js'],
     alias: {
-      '@make.org/utils': path.resolve(__dirname, '../../utils'),
-      '@make.org/api': path.resolve(__dirname, '../../api'),
-      '@make.org/ui': path.resolve(__dirname, '../../ui'),
-      '@make.org/components': path.resolve(__dirname, '../../components'),
-      '@make.org/store': path.resolve(__dirname, '../../store'),
-      '@make.org/assets': path.resolve(__dirname, '../../assets'),
-      '@make.org/types': path.resolve(__dirname, '../../types'),
+      '@make.org/utils': path.resolve(__dirname, '../../../utils'),
+      '@make.org/api': path.resolve(__dirname, '../../../api'),
+      '@make.org/ui': path.resolve(__dirname, '../../../ui'),
+      '@make.org/components': path.resolve(__dirname, '../../../components'),
+      '@make.org/store': path.resolve(__dirname, '../../../store'),
+      '@make.org/assets': path.resolve(__dirname, '../../../assets'),
+      '@make.org/types': path.resolve(__dirname, '../../../types'),
     },
     fallback: {
       fs: false,
@@ -117,9 +117,9 @@ const clientConfig = envConfigPath => ({
     rules: [
       {
         test: /\.(ts|tsx)$/,
-        use: 'ts-loader',
+        use: ['babel-loader', 'ts-loader'],
         sideEffects: false,
-        exclude: '/node_modules/',
+        exclude: /node_modules/,
       },
       {
         test: /\.(jpe?g|png|gif|svg|ttf|eot|woff|woff2|manifest|ico)$/,
@@ -163,13 +163,28 @@ const serverConfig = envConfigPath => ({
     nodeExternals(),
     { 'webpack-manifest': './webpack-manifest.json' },
   ],
+  resolve: {
+    extensions: ['*', '.ts', '.tsx', '.js'],
+    alias: {
+      '@make.org/utils': path.resolve(__dirname, '../../../utils'),
+      '@make.org/api': path.resolve(__dirname, '../../../api'),
+      '@make.org/ui': path.resolve(__dirname, '../../../ui'),
+      '@make.org/components': path.resolve(__dirname, '../../../components'),
+      '@make.org/store': path.resolve(__dirname, '../../../store'),
+      '@make.org/assets': path.resolve(__dirname, '../../../assets'),
+      '@make.org/types': path.resolve(__dirname, '../../../types'),
+    },
+    fallback: {
+      fs: false,
+    },
+  },
   module: {
     rules: [
       {
         test: /\.(ts|tsx)$/,
-        use: 'ts-loader',
+        use: ['babel-loader', 'ts-loader'],
         sideEffects: false,
-        exclude: '/node_modules/',
+        exclude: /node_modules/,
       },
       {
         test: /\.(jpe?g|png|gif|svg|ttf|eot|woff|woff2|manifest|ico)$/,

@@ -1,13 +1,12 @@
 declare module 'athena-design-tokens';
 declare module 'uuid';
-declare module 'react-router-dom';
-declare module 'react-router';
 declare module 'react-modal';
 declare module '@loadable/component';
 declare module 'adblockdetect';
 declare module '*.woff';
 declare module '*.woff2';
 declare module 'webpack-manifest';
+declare module 'glider-js';
 declare module '*.svg' {
   const content: SVGAElement;
   export default content;
@@ -21,6 +20,14 @@ declare module '*.json' {
   export default data;
 }
 declare module '*.png' {
+  const data: any;
+  export default data;
+}
+declare module '*.jpg' {
+  const data: any;
+  export default data;
+}
+declare module '*.jpeg' {
   const data: any;
   export default data;
 }

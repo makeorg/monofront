@@ -30,7 +30,7 @@ export const CookieSwitch: React.FC<Props> = ({
   return (
     <CookieModalElementSwitchWrapperStyle>
       <CookieModalCookieDetailParagraphStyle
-        className={onCookiePage && 'cookie-page'}
+        className={onCookiePage ? 'cookie-page' : ''}
       >
         {description}
         <CookieSwitchWrapperStyle>

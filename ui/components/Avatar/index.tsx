@@ -9,7 +9,7 @@ import { SvgEmptyAvatar } from '../../Svg/elements';
 
 type Props = {
   /** Url of avatar */
-  avatarUrl: string;
+  avatarUrl: string | null;
   /** Width of avatar */
   avatarSize?: number;
   /** Width of avatar */
