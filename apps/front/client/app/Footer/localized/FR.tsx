@@ -33,6 +33,7 @@ import {
   FooterNavStyle,
   FooterItemStyle,
   FooterItemLinkStyle,
+  FooterItemHTMLLinkStyle,
   FooterSeparatorStyle,
   FooterWrapperFirstListStyle,
   FooterWrapperSecondListStyle,
@@ -66,8 +67,7 @@ export const FooterFR: React.FC = () => {
           <FooterWrapperFirstListStyle>
             {isDesktop && (
               <FooterItemStyle>
-                <FooterItemLinkStyle
-                  as="a"
+                <FooterItemHTMLLinkStyle
                   target="_blank"
                   rel="noopener"
                   href={NEWS_LINK}
@@ -76,11 +76,11 @@ export const FooterFR: React.FC = () => {
                   {i18n.t('main_footer.news')}
                   <> </>
                   <FooterExternalLink />
-                </FooterItemLinkStyle>
+                </FooterItemHTMLLinkStyle>
               </FooterItemStyle>
             )}
             <FooterItemStyle>
-              <FooterItemLinkStyle
+              <FooterItemHTMLLinkStyle
                 as="a"
                 target="_blank"
                 rel="noopener"
@@ -89,12 +89,11 @@ export const FooterFR: React.FC = () => {
                 {i18n.t('main_footer.press_details')}
                 <> </>
                 <FooterExternalLink />
-              </FooterItemLinkStyle>
+              </FooterItemHTMLLinkStyle>
             </FooterItemStyle>
             {isDesktop && (
               <FooterItemStyle>
-                <FooterItemLinkStyle
-                  as="a"
+                <FooterItemHTMLLinkStyle
                   target="_blank"
                   rel="noopener"
                   href={JOBS_LINK}
@@ -102,11 +101,11 @@ export const FooterFR: React.FC = () => {
                   {i18n.t('main_footer.jobs')}
                   <> </>
                   <FooterExternalLink />
-                </FooterItemLinkStyle>
+                </FooterItemHTMLLinkStyle>
               </FooterItemStyle>
             )}
             <FooterItemStyle>
-              <FooterItemLinkStyle
+              <FooterItemHTMLLinkStyle
                 as="a"
                 target="_blank"
                 rel="noopener"
@@ -115,7 +114,7 @@ export const FooterFR: React.FC = () => {
                 {i18n.t('main_footer.dotation_funds')}
                 <> </>
                 <FooterExternalLink />
-              </FooterItemLinkStyle>
+              </FooterItemHTMLLinkStyle>
             </FooterItemStyle>
           </FooterWrapperFirstListStyle>
           <FooterWrapperThirdListStyle as="div">

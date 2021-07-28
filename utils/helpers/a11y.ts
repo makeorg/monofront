@@ -1,4 +1,4 @@
-// @flow
+
 export const addAriaHiddenAndNegativeTab = (className: string): any => {
   /** get elements by className and tranform the NodeList in Array */
   const elementsCollection = document.querySelectorAll(`.${className}`);

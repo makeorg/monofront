@@ -7,7 +7,7 @@ import { FooterINT } from './localized/INT';
 /**
  * Renders Main Footer
  */
-export const Footer = () => {
+export const Footer = (): JSX.Element => {
   const { state } = useAppContext();
   const { language } = state.appConfig;
 

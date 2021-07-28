@@ -61,7 +61,7 @@ type Props = {
   /** When button is in pending mode */
   displayPending: boolean;
   /** Method called when vote button is clicked */
-  handleUnvote: () => void | Promise<void>;
+  handleUnvote: () => void;
   /** Boolean to disable click event on the vote button */
   disableClick: boolean;
   /** Boolean to disable tooltip on button hover event */

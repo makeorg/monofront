@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import { SvgCheck } from '@make.org/ui/Svg/elements';
 import {
@@ -11,7 +10,7 @@ type Props = {
   /** Name of the checkbox */
   name: string;
   /** Label of the checkbox */
-  label: string;
+  label: string | JSX.Element;
   /** handleLabelClick of the checkbox */
   handleCheck: (event: React.SyntheticEvent<HTMLLabelElement>) => void;
   /** Value of the checkbox */

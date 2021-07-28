@@ -21,7 +21,7 @@ type Props = {
   /** Boolean to disable tooltip on button hover event */
   withTooltip?: boolean;
   /** handle click on vote */
-  handleVote?: (voteKey: string) => void;
+  handleVote?: () => void;
 };
 
 export const VoteResultElement: React.FC<Props> = ({
@@ -46,7 +46,7 @@ export const VoteResultElement: React.FC<Props> = ({
         proposalId={proposalId}
         votes={votes}
         votedKey={votedKey}
-        handleVote={handleVote}
+        handleUnvote={handleVote}
         pending={isPending}
         disableClick={disableClick}
         withTooltip={withTooltip}

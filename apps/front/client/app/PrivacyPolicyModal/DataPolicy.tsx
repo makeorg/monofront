@@ -78,7 +78,7 @@ export const DataPolicy: React.FC = () => {
       </DataPolicyParagraphStyle>
       <CheckBox
         name="dataPolicyConsent"
-        value={dataPolicyConsent}
+        value={JSON.stringify(dataPolicyConsent)}
         handleCheck={handleCheck}
         label={
           <span

@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import i18n from 'i18next';
 import { SkipLink } from '@make.org/ui/elements/MainElements';

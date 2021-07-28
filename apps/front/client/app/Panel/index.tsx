@@ -1,4 +1,3 @@
-// @flow
 import React, { useEffect, useRef } from 'react';
 import { lockBody, unlockBody } from '@make.org/utils/helpers/styled';
 import {

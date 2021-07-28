@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, FC } from 'react';
 import { useCookies } from 'react-cookie';
 import { useLocation } from 'react-router-dom';
 import { UserService } from '@make.org/utils/services/User';
@@ -7,12 +7,12 @@ import { useAppContext } from '@make.org/store';
 
 type Props = {
   /** Children content */
-  children: React.ReactNode;
+  children: JSX.Element;
 };
 
 const SecureExpirationDateCookieName = 'make-secure-expiration';
 
-export const SecureExpiration = ({ children }: Props): React.ReactNode => {
+export const SecureExpiration: FC<Props> = ({ children }: Props) => {
   const { dispatch } = useAppContext();
   const [cookies] = useCookies([SecureExpirationDateCookieName]);
   const [cookieData, setCookieData] = useState(

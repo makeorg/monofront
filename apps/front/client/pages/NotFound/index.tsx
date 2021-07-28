@@ -1,4 +1,3 @@
-/* @flow */
 import React, { FC } from 'react';
 import i18n from 'i18next';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';

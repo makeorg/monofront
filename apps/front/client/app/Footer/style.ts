@@ -61,13 +61,21 @@ export const FooterItemStyle = styled.li`
   color: ${color.greyDark};
 `;
 
-export const FooterItemLinkStyle = styled(Link)`
+const LinkStyle = `
   display: inline-flex;
   align-items: center;
   font-family: ${MakeFonts.CircularStandardBook};
   text-decoration: none;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   color: ${color.greyDark};
+`;
+
+export const FooterItemLinkStyle = styled(Link)`
+  ${LinkStyle};
+`;
+
+export const FooterItemHTMLLinkStyle = styled.a`
+  ${LinkStyle};
 `;
 
 export const FooterItemAltLinkStyle = styled(FooterItemLinkStyle)`

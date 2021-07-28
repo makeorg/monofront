@@ -1,3 +1,5 @@
+// TODO move to apps/front scope
+
 /** Navigation */
 export const NAVIGATION_ARIA_CLASS = 'expand-navigation-aria';
 export const NAVIGATION_ELEMENT_ARIA_CLASS = 'expand-navigation-element-aria';

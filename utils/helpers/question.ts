@@ -1,4 +1,4 @@
-// @flow
+
 import { PartnerType, QuestionType, StateQuestions } from '@make.org/types';
 
 const GREAT_CAUSE = 'GREAT_CAUSE';

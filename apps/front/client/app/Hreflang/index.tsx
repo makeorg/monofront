@@ -1,5 +1,4 @@
-// @flow
-import React from 'react';
+import React, { FC } from 'react';
 import { Link } from 'react-head';
 import { getLanguageFromCountryCode } from '@make.org/utils/helpers/countries';
 import { env } from '@make.org/assets/env';
@@ -13,7 +12,7 @@ export const X_DEFAULT_LANG_COUNTRIES = [
   { language: 'x-default', country: 'FR' },
 ];
 
-export const Hreflang = () => {
+export const Hreflang: FC = () => {
   const { pathname } = useLocation();
   const { state } = useAppContext();
   const { countriesWithConsultations } = state.appConfig;

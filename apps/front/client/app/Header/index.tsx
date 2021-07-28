@@ -2,10 +2,6 @@ import React from 'react';
 import i18n from 'i18next';
 import { trackClickMakeLogo } from '@make.org/utils/services/Tracking';
 import { HeaderAuthentication } from '@make.org/components/Auth/Header';
-import { MobileSearchInput } from '@make.org/components/search/Form/Mobile';
-import { DesktopSearchInput } from '@make.org/components/search/Form/Desktop';
-import { MobileMenu } from '@make.org/components/navigation/Menu/Mobile';
-import { DesktopMenu } from '@make.org/components/navigation/Menu/Desktop';
 import {
   NAVIGATION_ELEMENT_ARIA_CLASS,
   SEARCH_ELEMENT_ARIA_CLASS,
@@ -16,6 +12,10 @@ import { getHomeLink } from '@make.org/utils/helpers/url';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
 import { useAppContext } from '@make.org/store';
+import { DesktopMenu } from '../Navigation/Menu/Desktop';
+import { MobileMenu } from '../Navigation/Menu/Mobile';
+import { DesktopSearchInput } from '../Search/Form/Desktop';
+import { MobileSearchInput } from '../Search/Form/Mobile';
 import {
   HeaderStyle,
   HeaderInnerStyle,
@@ -25,6 +25,7 @@ import {
   HeaderFlexRightStyle,
   HeaderSeparatorStyle,
 } from './style';
+import { Logger } from '../../../../../utils/services/Logger';
 
 /**
  * Renders Main Header
@@ -48,7 +49,14 @@ export const Header: React.FC = () => {
           <h1>
             <HeaderLogoLinkStyle
               to={getHomeLink(country)}
-              onClick={country ? trackClickMakeLogo : () => {}}
+              onClick={
+                country
+                  ? trackClickMakeLogo
+                  : () =>
+                      Logger.logError({
+                        message: 'No country on Make.org logo',
+                      })
+              }
               data-cy-link="home"
             >
               <HeaderLogoStyle focusable="false" aria-hidden />

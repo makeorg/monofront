@@ -1,4 +1,4 @@
-// @flow
+
 import React from 'react';
 import i18n from 'i18next';
 import { QuestionType } from '@make.org/types';

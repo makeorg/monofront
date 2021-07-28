@@ -1,4 +1,3 @@
-// @flow
 import React, { useState } from 'react';
 import ReactModal from 'react-modal';
 import { CloseButtonStyle } from '@make.org/ui/elements/ButtonsElements';

@@ -1,4 +1,3 @@
-// @flow
 import React, { useState, useEffect, FC } from 'react';
 import { useParams } from 'react-router';
 import { QuestionService } from '@make.org/utils/services/Question';
@@ -24,7 +23,8 @@ type Props = {
 
 export const QuestionWrapper: FC<Props> = ({ children, withRedirect }) => {
   const { dispatch, state } = useAppContext();
-  const { country, questionSlug } = useParams();
+  const params: { country: string; questionSlug: string } = useParams();
+  const { country, questionSlug } = params;
   const questionsInState = state.questions;
   const currentQuestion: QuestionType = selectCurrentQuestion(state);
   const currentQuestionSlug = state.currentQuestion;

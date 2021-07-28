@@ -26,7 +26,7 @@ type Props = {
   /** Voted key property */
   votedKey: string;
   /** Method called when vote button is clicked */
-  handleUnvote: () => void | Promise<void>;
+  handleUnvote: () => void;
   /** When waiting response from API */
   pending: boolean;
   /** Disable click on unvote button */

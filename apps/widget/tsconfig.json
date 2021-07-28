@@ -15,5 +15,5 @@
     "../../assets",
     "../../components",
     "../../utils" 
-  ],
+, "../front/client/app/Search"  ],
 }

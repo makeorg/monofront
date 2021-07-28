@@ -1,6 +1,6 @@
 import { useAppContext } from '@make.org/store';
 import { useEffect } from 'react';
-import { useRouteMatch } from 'react-router';
+import { match, useRouteMatch } from 'react-router';
 import {
   DEFAULT_COUNTRY,
   DEFAULT_LANGUAGE,
@@ -10,12 +10,16 @@ import { setCountryCode } from '@make.org/store/actions/appConfig';
 import { ROUTE_COUNTRY, BASE_PREVIEW_PATH } from '../../../shared/routes';
 
 export const CountryListener = (): null => {
-  const { params } = useRouteMatch({
+  let country = DEFAULT_COUNTRY;
+  const routeMatching: match<{ country: string }> | null = useRouteMatch({
     path: `(${BASE_PREVIEW_PATH})?${ROUTE_COUNTRY}`,
-  }) || {
-    params: {},
-  };
-  const { country } = params;
+  });
+
+  if (routeMatching) {
+    const { params } = routeMatching;
+    country = params.country;
+  }
+
   const upperCountry = country && country.toUpperCase();
   const { dispatch } = useAppContext();
 

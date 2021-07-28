@@ -56,7 +56,7 @@ export const SwitchCountry: React.FC = () => {
             <CountryLinkStyle
               to={getHomeLink(item.isoCode)}
               onClick={() => switchCountry(item.isoCode)}
-              className={item.isoCode === country && 'selected'}
+              className={item.isoCode === country ? 'selected' : ''}
               aria-current={item.isoCode === country}
               data-cy-link={`country_switch_${item.isoCode}`}
             >

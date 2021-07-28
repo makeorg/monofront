@@ -1,4 +1,3 @@
-// @flow
 import { useEffect } from 'react';
 import { Logger } from '@make.org/utils/services/Logger';
 import {
