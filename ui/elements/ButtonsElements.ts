@@ -89,7 +89,7 @@ export const GreyButtonStyle = styled.button.attrs(props => ({
   ${GreyStyle};
 `;
 
-export const LinkAsRedButtonStyle = styled(Link)`
+export const LinkAsRedButtonStyle = styled(Link)<any>`
   ${BasicButtonStyle};
   ${RedStyle};
   &:disabled {

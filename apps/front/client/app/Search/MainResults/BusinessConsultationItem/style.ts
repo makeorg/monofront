@@ -7,7 +7,7 @@ import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { SvgAngleArrowRight } from '@make.org/ui/Svg/elements';
-import { Link } from 'react-router-dom';
+import { Link, LinkProps } from 'react-router-dom';
 
 export const SearchResultsConsultationListStyle = styled(UnstyledListStyle)`
   @media (max-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -38,7 +38,7 @@ export const BusinessConsultationsItemStatusStyle = styled.p`
   }
 `;
 
-export const BusinessConsultationsItemLinkStyle = styled(Link)<any>`
+export const BusinessConsultationsItemLinkStyle = styled(Link)<LinkProps>`
   font-family: ${MakeFonts.CircularStandardBold};
   color: ${color.greyDark};
   &:hover,

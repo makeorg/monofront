@@ -1,7 +1,10 @@
 import React, { FC } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { useLocation } from 'react-router';
+import { Redirect, useLocation } from 'react-router';
 import loadable from '@loadable/component';
+import { getHomeLink } from '@make.org/utils/helpers/url';
+import { DEFAULT_COUNTRY } from '@make.org/utils/constants/config';
+import { useAppContext } from '@make.org/store';
 import { QuestionWrapper } from '../pages/Consultation/QuestionWrapper';
 import { usePageBackgoundColor } from '../hooks/usePageBackgroundColor';
 
@@ -84,7 +87,7 @@ const SequencePageStandard = loadable(
 //   () => import('../pages/PasswordRecovery')
 // );
 // const NotFoundPage = loadable(() => import('../pages/NotFound'));
-// const HomePage = loadable(() => import('../pages/Home'));
+const HomePage = loadable(() => import('../pages/Home'));
 // const ProposalPage = loadable(() => import('../pages/Proposal'));
 // const AccountActivationPage = loadable(
 //   () => import('../pages/AccountActivation')
@@ -113,8 +116,9 @@ export const Routes: FC = () => {
   // const preferencesCookies: StateUserCookiesPreferences = cookies.get(
   //   USER_PREFERENCES_COOKIE
   // );
+  const { state } = useAppContext();
   const location = useLocation();
-  // const { country } = state.appConfig;
+  const { country } = state.appConfig;
   const { pathname } = location;
 
   usePageBackgoundColor(pathname);
@@ -202,10 +206,10 @@ export const Routes: FC = () => {
         path={ROUTE_ORGANISATION_PROFILE}
         to={ROUTE_ORGANISATION_PROPOSALS}
       />
-      <Redirect path={ROUTE_PROFILE} to={ROUTE_PROFILE_PROPOSALS} />
+      <Redirect path={ROUTE_PROFILE} to={ROUTE_PROFILE_PROPOSALS} /> */}
       <Route exact path={ROUTE_COUNTRY} component={HomePage} />
-      <Route path={ROUTE_STATIC_NOTFOUND} component={NotFoundPage} />
-      <Route path={ROUTE_STATIC_COOKIES} component={CookiesPage} />
+      {/* <Route path={ROUTE_STATIC_NOTFOUND} component={NotFoundPage} />
+      <Route path={ROUTE_STATIC_COOKIES} component={CookiesPage} /> */}
 
       {/* Routes used for fr language */}
       {/* <Route path={ROUTE_STATIC_LEGAL_FR} component={LegalPage} />
@@ -224,13 +228,13 @@ export const Routes: FC = () => {
       <Route path={ROUTE_STATIC_GTU_DE} component={TermsOfUse} />
       <Route path={ROUTE_STATIC_DATA_DE} component={Data} />
       <Route path={ROUTE_STATIC_CONTACT_DE} component={Contact} />
-      <Route path={ROUTE_STATIC_A11Y_DE} component={Accessibility} />
+      <Route path={ROUTE_STATIC_A11Y_DE} component={Accessibility} /> */}
 
-      <Route path={ROUTE_STATIC_NOTFOUND} component={NotFoundPage} />
+      {/* <Route path={ROUTE_STATIC_NOTFOUND} component={NotFoundPage} /> */}
       <Redirect exact path="/" to={getHomeLink(country || DEFAULT_COUNTRY)} />
-      <Redirect path={ROUTE_EXPLORE_ROOT} to={ROUTE_EXPLORE_FIRST_PAGE} />
+      {/* <Redirect path={ROUTE_EXPLORE_ROOT} to={ROUTE_EXPLORE_FIRST_PAGE} /> */}
 
-      {<Route component={NotFoundPage} /> */}
+      {/* <Route component={NotFoundPage} /> */}
     </Switch>
   );
 };

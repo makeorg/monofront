@@ -10,10 +10,11 @@ import { passwordRecovery_state } from './reducers/user/passwordRecovery';
 import { proposal_state } from './reducers/proposal';
 import { appConfig_state } from './reducers/appConfig';
 import { questions_state } from './reducers/questions';
+import { views_state } from './reducers/views';
 
 export const initialState: StateRoot = {
   appConfig: appConfig_state,
-  views: {},
+  views: views_state,
   proposal: proposal_state,
   sequence: sequence_state,
   questions: questions_state,

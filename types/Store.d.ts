@@ -186,7 +186,7 @@ export type StateSession = {
 export type StateRoot = {
   // common data
   appConfig: StateConfig;
-  views?: StateViews;
+  views: StateViews;
   proposal?: StateProposal;
   sequence: StateSequence;
   currentQuestion: string;
