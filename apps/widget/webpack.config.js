@@ -2,6 +2,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/index.tsx',
@@ -41,12 +42,14 @@ module.exports = {
       '@make.org/types': path.resolve(__dirname, '../../types'),
     },
   },
-
   plugins: [
     new BundleAnalyzerPlugin(),
     new HtmlWebpackPlugin({
       title: 'Development',
       template: './public/index.html',
+    }),
+    new Dotenv({
+      path: './.env.local', // load this now instead of the ones in '.env'
     }),
   ],
   output: {
@@ -55,9 +58,13 @@ module.exports = {
     clean: true,
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: './dist',
     compress: true,
     port: 3000,
     hot: true,
+    host: 'local.makeorg.tech',
+    historyApiFallback: true,
+    disableHostCheck: true,
+    https: true,
   },
 };
