@@ -136,13 +136,13 @@ const initApp = async (state: StateRoot) => {
   // add listerner to update apiClient params
   trackingParamsService.addListener({
     onTrackingUpdate: (params: any) => {
-      apiClient.source = JSON.stringify(params.source);
-      apiClient.country = JSON.stringify(params.country);
-      apiClient.language = JSON.stringify(params.language);
-      apiClient.location = JSON.stringify(params.location);
-      apiClient.url = JSON.stringify(params.url);
-      apiClient.referrer = JSON.stringify(params.referrer);
-      apiClient.questionId = JSON.stringify(params.questionId);
+      apiClient.source = params.source;
+      apiClient.country = params.country;
+      apiClient.language = params.language;
+      apiClient.location = params.location;
+      apiClient.url = params.url;
+      apiClient.referrer = params.referrer;
+      apiClient.questionId = params.questionId;
     },
   });
 
