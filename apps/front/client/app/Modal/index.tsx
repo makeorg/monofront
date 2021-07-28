@@ -10,7 +10,7 @@ import i18n from 'i18next';
 import { CloseButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { SvgClose } from '@make.org/ui/Svg/elements';
 import { useAppContext } from '@make.org/store';
-import { MODAL_TYPES } from '@make.org/types';
+import { MODAL_TYPES } from '@make.org/types/enums';
 import { SwitchCountry } from '../SwitchCountry';
 
 ReactModal.setAppElement('#app');

@@ -19,4 +19,3 @@ export * from './Vote';
 export * from './Store';
 export * from './Commons';
 export * from './modules';
-export * from './Enums';

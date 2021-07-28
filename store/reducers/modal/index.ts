@@ -1,9 +1,5 @@
-import {
-  MODAL_TYPES,
-  Reducer,
-  ReducerAction,
-  StateModal,
-} from '@make.org/types';
+import { Reducer, ReducerAction, StateModal } from '@make.org/types';
+import { MODAL_TYPES } from '@make.org/types/enums';
 import {
   MODAL_SHOW_LOGIN,
   MODAL_SHOW_REGISTER,

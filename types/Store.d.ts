@@ -14,7 +14,7 @@ import {
   ProposalCardType,
   SequenceCardType,
 } from './Card';
-import { MODAL_TYPES } from './Enums';
+import { MODAL_TYPES } from './enums/modal_types';
 
 // Config State
 export type StateConfig = {
