@@ -2,6 +2,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './client/index.tsx',
@@ -47,6 +48,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Development',
       template: './public/index.html',
+    }),
+    new Dotenv({
+      path: './.env.local', // load this now instead of the ones in '.env'
     }),
   ],
   output: {
