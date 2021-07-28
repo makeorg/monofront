@@ -111,7 +111,8 @@ export const CookieModal: React.FC = () => {
     if (!preferencesCookie) {
       dispatch(modalShowCookies());
     }
-  }, [preferencesCookie, dispatch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [preferencesCookie]);
 
   if (!showCookies) {
     return null;

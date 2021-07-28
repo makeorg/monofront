@@ -20,7 +20,7 @@ ReactModal.setAppElement('#app');
 
 export const ExpirationSessionModal: React.FC = () => {
   const { dispatch, state } = useAppContext();
-  const showExpirationSession = state.modal;
+  const { showExpirationSession } = state.modal;
 
   useEffect(() => {
     if (showExpirationSession) {

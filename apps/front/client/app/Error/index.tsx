@@ -28,12 +28,12 @@ export class ErrorBoundary extends React.Component<Props, State> {
     };
   }
 
-  componentDidCatch(error: Error) {
+  componentDidCatch(error: Error): void {
     this.setState({ hasError: true });
     Logger.logError(JSON.stringify(error));
   }
 
-  render() {
+  render(): any {
     // init service error notification
 
     const { hasError } = this.state;
@@ -43,14 +43,14 @@ export class ErrorBoundary extends React.Component<Props, State> {
       // You can render any custom fallback UI
       return <h1>Un problème est survenu.</h1>;
     }
-    return children;
+    return <>{children}</>;
   }
 }
 
 /**
  * Handles Services Error
  */
-export const ServiceErrorHandler = (children: any): any => {
+export const ServiceErrorHandler: React.FC = ({ children }) => {
   const { dispatch } = useAppContext();
   setUnexpectedError(error => {
     Logger.logError(JSON.stringify(error));
@@ -76,5 +76,5 @@ export const ServiceErrorHandler = (children: any): any => {
     }
   });
 
-  return children;
+  return <>{children}</>;
 };
