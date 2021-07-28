@@ -20,7 +20,7 @@ export const appConfig_state: StateConfig = {
   translations: {},
   queryParams: {},
   countriesWithConsultations: [],
-  device: '',
+  device: 'DESKTOP',
   privacyPolicy: '',
   customData: {},
 };

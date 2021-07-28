@@ -50,12 +50,12 @@ module.exports = {
     }),
   ],
   output: {
-    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true,
+    publicPath: '/',
+    filename: 'bundle.js',
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: './dist',
     compress: true,
     port: 3000,
     hot: true,

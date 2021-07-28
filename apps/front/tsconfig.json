@@ -16,7 +16,8 @@
     "../../api",
     "../../assets",
     "../../components",
-    "../../utils" 
+    "../../utils",
+    "./i18n/*.json"
   ],
   "paths": {
     "@make.org/widget": ["../../apps/widget/*"],
