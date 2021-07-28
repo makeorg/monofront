@@ -18,7 +18,6 @@ import { updateRequestContextCustomData } from '@make.org/store/middleware/reque
 import { updateTrackingQuestionParam } from '@make.org/store/middleware/question';
 import i18n from 'i18next';
 import { initialState } from '@make.org/store/initialState';
-import { translationRessources } from '@make.org/utils/constants/languages';
 import { USER_PREFERENCES_COOKIE } from '@make.org/utils/constants/cookies';
 import { getRouteNoCookies } from '@make.org/utils/routes';
 import ContextState from '@make.org/store';
@@ -35,6 +34,25 @@ import { NoCookies } from './pages/Static/NoCookies';
 import { ErrorBoundary, ServiceErrorHandler } from './app/Error';
 // import { initTrackersFromPreferences } from './helper/cookies';
 import { LanguageListener } from './app/LanguageListener';
+import fr from '../i18n/fr.json';
+
+declare global {
+  interface Window {
+    INITIAL_STATE?: StateRoot;
+  }
+}
+
+// TO DO with the SSR
+window.INITIAL_STATE = {
+  ...initialState,
+  appConfig: {
+    ...initialState.appConfig,
+    translations: { fr: { translation: fr } },
+  },
+};
+// END TO DO with the SSR
+
+const serverState = window.INITIAL_STATE || initialState;
 
 window.onerror = (message, source, lineNumber, columnNumber, error) => {
   if (error && error.stack) {
@@ -81,6 +99,9 @@ const initApp = async (state: StateRoot) => {
 
   // Set in session storage some keys from query params
   setDataFromQueryParams(queryParams);
+  const {
+    appConfig: { translations },
+  } = state;
 
   const store = {
     ...state,
@@ -102,7 +123,7 @@ const initApp = async (state: StateRoot) => {
     },
     debug: env.isDev(),
     lng: language || DEFAULT_LANGUAGE,
-    resources: translationRessources,
+    resources: translations,
   });
 
   const cookies = new Cookies();
@@ -114,7 +135,7 @@ const initApp = async (state: StateRoot) => {
 
   // add listerner to update apiClient params
   trackingParamsService.addListener({
-    onTrackingUpdate: params => {
+    onTrackingUpdate: (params: any) => {
       apiClient.source = JSON.stringify(params.source);
       apiClient.country = JSON.stringify(params.country);
       apiClient.language = JSON.stringify(params.language);
@@ -202,7 +223,7 @@ const initApp = async (state: StateRoot) => {
   });
 };
 
-initApp(initialState);
+initApp(serverState);
 
 // TODO
 // if (module.hot) {
