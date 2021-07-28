@@ -443,7 +443,8 @@
     "save": "Confirm my selection",
     "technicals": {
       "secure": "make secure : once you have logged into your citizen account on Make.org, this cookie ensures that this connection will be maintained while you are browsing the service.",
-      "expiration": "make-secure-expiration : this cookie is used to detect your inactivity on the service in order to make this connection expire."
+      "expiration": "make-secure-expiration : this cookie is used to detect your inactivity on the service in order to make this connection expire.",
+      "demographics": "make-demographics: this cookie allows us to remember if you've already been asked demographics information (age range, region, gender, etc) on this device so that we don't ask you again."
     },
     "preferences": {
       "authentication": "Google and Facebook authentication cookies: they enable registration and connection to your citizen account via these social networks.",
@@ -680,9 +681,7 @@
         "title": "Download the full report",
         "type": "Format : {{extension}} - Weight : {{weight}}",
         "button": "Download",
-        "deprecated_contact": "If you want to receive the full report on this consultation, contact us at this address :",
         "contact": "To receive the full report on this consultation, please contact us at this address :",
-        "deprecated_email_object": "Ask for the results report.",
         "email_object": "Results report."
       },
       "top_ideas": {
@@ -690,10 +689,6 @@
         "title": "Top emerging ideas, grouped into {{count}} themes",
         "introduction": ", The best citizen solutions are grouped into big ideas that structure the consultation. To classify these ideas, the Make.org algorithm takes into account the votes 'Agree' and 'Disagree' as well as the mentions 'Genius', 'Obvious', 'Irrelevant !' and 'Nonsense'.",
         "title_plural": "Top ideas is merged in {{count}} topics",
-        "deprecated_title": "@@consultation.results.top_ideas.deprecated_title|fr:Le top des idées émergentes, regroupées en {{count}} thème",
-        "deprecated_title_plural": "@@consultation.results.top_ideas.deprecated_title_plural|fr:Le top des idées émergentes, regroupées en {{count}} thèmes",
-        "deprecated_introduction": "@@consultation.results.top_ideas.deprecated_introduction|fr:À leur arrivée sur la plateforme, les meilleures propositions citoyennes sont regroupées en grandes idées qui structurent la consultation. Pour classer ces idées, l’algorithme Make.org tient compte des votes « pour » et « contre » ainsi que des mentions « coup de cœur», « banalité », « surtout pas ! » et « réaliste ».",
-        "deprecated_theme_title": "@@consultation.results.top_ideas.deprecated_theme_title|fr:Thème {{count}} : {{name}}",
         "axe_title": "@@consultation.results.top_ideas.axe_title|fr:Axe {{count}} : {{name}}"
       },
       "proposals": {
@@ -997,8 +992,6 @@
       "placeholder": "Search",
       "submit": "Search",
       "flush": "Clear search field",
-      "deprecated_placeholder": "Search",
-      "deprecated_placeholder_mobile": "Search",
       "open_panel": "Display search field",
       "cancel": "Cancel"
     }
@@ -1018,17 +1011,17 @@
   },
   "legal": {
     "title": "Legal mentions",
-    "make_infos": "Website's publisher: MAKE.ORG, Société par Actions Simplifiées au capital de 1000 euros, having its headquarters at 4 rue René Villermé, 75011, PARIS, registered with the RCS of PARIS under the number 820 016 095 (here after 'MAKE.ORG').",
+    "make_infos": "Website's publisher: MAKE.ORG, Société par Actions Simplifiées with a capital of {{make_capital}}, having its headquarters at {{make_address}} FRANCE, registered with the RCS of PARIS under the number {{make_rcs}} (here after 'MAKE.ORG').",
     "mail": "Email: ",
     "make_phone": "Phone number: ",
-    "make_phone_number": "(+33) 1 44 74 77 46",
+    "make_phone_number": "{{make_phone_number}}",
     "director": "Head of publishing: ",
     "host": "Webite host: ",
-    "host_address": "OVH, 2 rue Kellermann, 59100, ROUBAIX FRANCE",
+    "host_address": "{{make_host_address}} FRANCE",
     "host_phone": "Phone number: ",
-    "host_phone_number": "08 99 70 17 61",
+    "host_phone_number": "{{host_number}}",
     "cnil": "CNIL declaration number: ",
-    "cnil_number": "2005312"
+    "cnil_number": "{{cnil_number}}"
   },
   "cookies_management": {
     "title": "Use of cookies",
@@ -1054,13 +1047,15 @@
       "mandatory": "Always active",
       "duration": "Duration : {{duration}}",
       "session": "Session",
+      "month": "{{count}} month",
       "year": "{{count}} year",
       "year_plural": "{{count}} years",
       "technicals": {
         "name": "Technical cookies:",
         "description": "these cookies are necessary for the functioning of the website and cannot be disabled. You can set your browser to block or be informed of the existence of these cookies, but some parts of our website may be affected. These cookies are not intended to identify you personally.",
         "secure": "make-secure : once you have logged in to your citizen account on Make.org, this cookie ensures that this connection will be maintained while you browse the service.",
-        "secure-expiration": "make-secure-expiration: this cookie is used to detect your inactivity on the service in order to expire this connection."
+        "secure-expiration": "make-secure-expiration: this cookie is used to detect your inactivity on the service in order to expire this connection.",
+        "demographics": "make-demographics: this cookie allows us to remember if you've already been asked demographics information (age range, region, gender, etc) on this device so that we don't ask you again."
       },
       "preferences": {
         "name": "Preference cookies:",
@@ -1169,8 +1164,10 @@
     "HU": "Hungary",
     "IE": "Ireland",
     "IN": "India",
+    "IS": "Iceland",
     "IT": "Italy",
     "JP": "Japan",
+    "LI": "Liechtenstein",
     "LT": "Lithuania",
     "LU": "Luxembourg",
     "LV": "Latvia",
@@ -1208,5 +1205,44 @@
     },
     "link_text": "I access to the consultation",
     "sharing": "Or give more visibility to the consultation by disseminating it."
+  },
+  "demographics_card": {
+    "disclaimer": "@@demographics_card.disclaimer|fr:Vos informations sont anonymes et permettent à nos résultats d'être représentatifs.",
+    "skip": "@@demographics_card.skip|fr:Passer",
+    "submit_mobile": "@@demographics_card.submit_mobile|fr:Enregistrer",
+    "submit_desktop": "@@demographics_card.submit_desktop|fr:Enregistrer et continuer",
+    "age": {
+      "title": "@@demographics_card.age.title|fr:Quelle est votre tranche d’âge ?"
+    },
+    "gender": {
+      "title": "@@demographics_card.gender.title|fr:Quel est votre genre ?",
+      "male": "@@demographics_card.gender.male|fr:Homme",
+      "female": "@@demographics_card.gender.female|fr:Femme",
+      "other": "@@demographics_card.gender.other|fr:Non-binaire"
+    },
+    "region": {
+      "title": "@@demographics_card.region.title|fr:Quelle est votre région ?",
+      "select": "@@demographics_card.region.select|fr:Selectionner",
+      "FR-ARA": "@@demographics_card.region.FR-ARA|fr:Auvergne-Rhône-Alpes",
+      "FR-BFC": "@@demographics_card.region.FR-BFC|fr:Bourgogne-Franche-Comté",
+      "FR-BRE": "@@demographics_card.region.FR-BRE|fr:Bretagne",
+      "FR-CVL": "@@demographics_card.region.FR-CVL|fr:Centre-Val de Loire",
+      "FR-COR": "@@demographics_card.region.FR-COR|fr:Corse",
+      "FR-GES": "@@demographics_card.region.FR-GES|fr:Grand Est",
+      "FR-HDF": "@@demographics_card.region.FR-HDF|fr:Hauts-de-France",
+      "FR-IDF": "@@demographics_card.region.FR-IDF|fr:Île-de-France",
+      "FR-NOR": "@@demographics_card.region.FR-NOR|fr:Normandie",
+      "FR-NAQ": "@@demographics_card.region.FR-NAQ|fr:Nouvelle-Aquitaine",
+      "FR-OCC": "@@demographics_card.region.FR-OCC|fr:Occitanie",
+      "FR-PDL": "@@demographics_card.region.FR-PDL|fr:Pays de la Loire",
+      "FR-PAC": "@@demographics_card.region.FR-PAC|fr:Provence-Alpes-Côte d'Azur",
+      "FR-GUA": "@@demographics_card.region.FR-GUA|fr:Guadeloupe",
+      "FR-GUF": "@@demographics_card.region.FR-GUF|fr:Guyane",
+      "FR-MTQ": "@@demographics_card.region.FR-MTQ|fr:Martinique",
+      "FR-LRE": "@@demographics_card.region.FR-LRE|fr:La Réunion",
+      "FR-MAY": "@@demographics_card.region.FR-MAY|fr:Mayotte"
+    },
+    "submitted_thanks": "@@demographics_card.submitted_thanks|fr:Merci pour votre réponse.",
+    "submitted_disclaimer": "@@demographics_card.submitted_disclaimer|fr: Elle sera utilisée de façon anonyme pour analyser les résultats de la consultation."
   }
 }

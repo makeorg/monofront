@@ -343,6 +343,45 @@
     "subtitle": "Vous pouvez continuer à participer à la consultation",
     "cta_text": "J'accède à la consultation"
   },
+  "demographics_card": {
+    "disclaimer": "Vos informations sont anonymes et permettent à nos résultats d'être représentatifs.",
+    "skip": "Passer",
+    "submit_mobile": "Enregistrer",
+    "submit_desktop": "Enregistrer et continuer",
+    "submitted_thanks": "Merci pour votre réponse.",
+    "submitted_disclaimer": " Elle sera utilisée de façon anonyme pour analyser les résultats de la consultation.",
+    "age": {
+      "title": "Quelle est votre tranche d’âge ?"
+    },
+    "gender": {
+      "title": "Quel est votre genre ?",
+      "male": "Homme",
+      "female": "Femme",
+      "other": "Non-binaire"
+    },
+    "region": {
+      "title": "Quelle est votre région ?",
+      "select": "Sélectionner",
+      "FR-ARA": "Auvergne-Rhône-Alpes",
+      "FR-BFC": "Bourgogne-Franche-Comté",
+      "FR-BRE": "Bretagne",
+      "FR-CVL": "Centre-Val de Loire",
+      "FR-COR": "Corse",
+      "FR-GES": "Grand Est",
+      "FR-HDF": "Hauts-de-France",
+      "FR-IDF": "Île-de-France",
+      "FR-NOR": "Normandie",
+      "FR-NAQ": "Nouvelle-Aquitaine",
+      "FR-OCC": "Occitanie",
+      "FR-PDL": "Pays de la Loire",
+      "FR-PAC": "Provence-Alpes-Côte d'Azur",  
+      "FR-GUA": "Guadeloupe",
+      "FR-GUF": "Guyane",
+      "FR-MTQ": "Martinique",
+      "FR-LRE": "La Réunion",
+      "FR-MAY": "Mayotte"
+    }
+  },
   "proposal_submit": {
     "form": {
       "bait": "Il faut ",
@@ -503,7 +542,8 @@
     "save": "Valider ma sélection",
     "technicals": {
       "secure": "make secure : une fois que vous vous êtes connecté à votre espace citoyen sur Make.org, ce cookie garantit que cette connexion va se maintenir pendant votre navigation sur le service.",
-      "expiration": "make-secure-expiration : ce cookie sert à détecter votre inactivité sur le service de façon à faire expirer cette connexion."
+      "expiration": "make-secure-expiration : ce cookie sert à détecter votre inactivité sur le service de façon à faire expirer cette connexion.",
+      "demographics": "make-demographics: ce cookie nous permet de savoir si des informations démographiques (tranche d'âge, région, genre, etc) vous ont déjà été demandées sur cet appareil, afin de ne pas vous les demander à nouveau lors d'une prochaine visite."
     },
     "preferences": {
       "authentication": "Les cookies d'authentification Google et Facebook : ils permettent l'inscription et la connexion à votre espace citoyen via ces réseaux sociaux.",
@@ -865,20 +905,14 @@
         "title": "Obtenez le rapport complet",
         "type": "Format : {{extension}} - Poids : {{weight}}",
         "button": "Télécharger",
-        "deprecated_contact": "Si vous souhaitez obtenir le rapport complet de la consultation, merci de nous contacter à l’adresse : ",
         "contact": "Pour obtenir le rapport d’analyses complet de cette consultation, merci de bien vouloir nous contacter à l’adresse : ",
-        "deprecated_email_object": "Demande de rapport pour la consultation",
         "email_object": "Rapport analyse"
       },
       "top_ideas": {
         "skiplink": "Le top des idées émergentes",
-        "deprecated_title": "Le top des idées émergentes, regroupées en {{count}} thème",
         "title": "Le top des idées plébiscitées, regroupées en {{count}} axe",
-        "deprecated_title_plural": "Le top des idées émergentes, regroupées en {{count}} thèmes",
         "title_plural": "Le top des idées plébiscitées, regroupées en {{count}} axes",
-        "deprecated_introduction": "À leur arrivée sur la plateforme, les meilleures propositions citoyennes sont regroupées en grandes idées qui structurent la consultation. Pour classer ces idées, l’algorithme Make.org tient compte des votes « pour » et « contre » ainsi que des mentions « coup de cœur», « banalité », « surtout pas ! » et « réaliste ».",
         "introduction": "À leur arrivée sur la plateforme, les meilleures propositions des citoyens sont regroupées en grandes idées qui structurent la consultation. Pour classer ces idées, l’algorithme Make.org tient compte des votes « pour » et « contre » ainsi que des mentions « coup de coeur », « réaliste », « banalité » et « surtout pas ! ».",
-        "deprecated_theme_title": "Thème {{count}} : {{name}}",
         "axe_title": "Axe {{count}} : {{name}}"
       },  
       "proposals": {
@@ -1071,8 +1105,6 @@
       "introduction": "Pour effectuer une recherche, votre requête doit être comprise entre 3 et 140 caratères. Saisissez la dans le champ de recherche puis cliquez sur le bouton \"Rechercher\"",
       "introduction_searched": "Pour vider le champ de recherche, cliquez sur le bouton \"Effacer le champ de recherche\"",
       "label": "Champ de recherche",
-      "deprecated_placeholder": "Recherchez une idée, un thème, un sujet",
-      "deprecated_placeholder_mobile": "Recherchez...",
       "placeholder": "Rechercher",
       "submit": "Rechercher",
       "flush": "Effacer le champ de recherche",
@@ -1095,17 +1127,17 @@
   },
   "legal":{
     "title": "Mentions légales",
-    "make_infos": "Editeur du site : MAKE.ORG, Société par Actions Simplifiées au capital de 1000 euros, ayant son siège social au 4 rue René Villermé, 75011, PARIS, immatriculée au RCS de PARIS sous le numéro 820 016 095 (ci-après« MAKE.ORG »).",
+    "make_infos": "Editeur du site : MAKE.ORG, Société par Actions Simplifiées au capital de {{make_capital}}, ayant son siège social au {{make_address}}, immatriculée au RCS de PARIS sous le numéro {{make_rcs}} (ci-après« MAKE.ORG »).",
     "mail": "Adresse de courrier électronique : ",
     "make_phone": "Numéro de téléphone : ",
-    "make_phone_number": "01 44 74 77 46",
+    "make_phone_number": "{{make_phone_number}}",
     "director": "Directeur de Publication : ",
     "host": "Hébergeur du site : ",
-    "host_address": "OVH, 2 rue Kellermann, 59100, ROUBAIX FRANCE", 
+    "host_address": "{{make_host_address}} FRANCE", 
     "host_phone": "Numéro de téléphone : ",
-    "host_phone_number": "08 99 70 17 61",
+    "host_phone_number": "{{host_number}}",
     "cnil": "Numéro de déclaration CNIL : ",
-    "cnil_number": "2005312"
+    "cnil_number": "{{cnil_number}}"
   },
   "cookies_management": {
     "title": "Gestion des Cookies",
@@ -1131,13 +1163,15 @@
       "mandatory": "Toujours actif",
       "duration": "Durée : {{duration}}",
       "session": "Session",
+      "month": "{{count}} mois",
       "year": "{{count}} an",
       "year_plural": "{{count}} ans",
       "technicals": {
         "name": "Les cookies techniques :",
         "description": "ces cookies sont nécessaires au fonctionnement du site et ne peuvent pas être désactivés. Vous pouvez configurer votre navigateur afin de bloquer ou être informé de l‘existence de ces cookies, mais certaines parties de notre site peuvent être affectées. Ces cookies ne visent pas à vous identifier personnellement.",
         "secure": "make-secure : une fois que vous vous êtes connecté à votre espace citoyen sur Make.org, ce cookie garantit que cette connexion va se maintenir pendant votre navigation sur le service.",
-        "secure-expiration": "make-secure-expiration: ce cookie sert à détecter votre inactivité sur le service de façon à faire expirer cette connexion."
+        "secure-expiration": "make-secure-expiration: ce cookie sert à détecter votre inactivité sur le service de façon à faire expirer cette connexion.",
+        "demographics": "make-demographics: ce cookie nous permet de savoir si des informations démographiques (tranche d'âge, région, genre, etc) vous ont déjà été demandées sur cet appareil, afin de ne pas vous les demander à nouveau lors d'une prochaine visite."
       },
       "preferences": {
         "name": "Les cookies de préférences :",
@@ -1189,8 +1223,10 @@
     "HU": "Hongrie",
     "IE": "Irlande",
     "IN": "Inde",
+    "IS": "Islande",
     "IT": "Italie",
     "JP": "Japon",
+    "LI": "Liechtenstein",
     "LT": "Lituanie",
     "LU": "Luxembourg",
     "LV": "Lettonie",
