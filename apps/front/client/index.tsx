@@ -47,6 +47,7 @@ window.INITIAL_STATE = {
   ...initialState,
   appConfig: {
     ...initialState.appConfig,
+    source: 'core',
     translations: { fr: { translation: fr } },
   },
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { useLocation } from 'react-router';
 import loadable from '@loadable/component';
@@ -108,7 +108,7 @@ const SequencePageStandard = loadable(
 // const Accessibility = loadable(() => import('../pages/Static/A11y'));
 // const CookiesPage = loadable(() => import('../pages/Static/Cookies'));
 
-export const Routes = () => {
+export const Routes: FC = () => {
   // const cookies = new Cookies();
   // const preferencesCookies: StateUserCookiesPreferences = cookies.get(
   //   USER_PREFERENCES_COOKIE

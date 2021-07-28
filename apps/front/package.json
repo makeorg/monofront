@@ -137,6 +137,7 @@
 		},
 		"scripts": {
 				"dev": "webpack serve --mode development --progress --hot",
-				"prod": "webpack serve --mode production --progress --hot"
+				"prod": "webpack serve --mode production --progress --hot",
+				"full": "webpack --mode development --progress --color --config ./webpack/config.babel.js"
 		}
 }

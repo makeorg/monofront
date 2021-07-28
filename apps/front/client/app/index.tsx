@@ -85,7 +85,7 @@ export const AppContainer: FC = () => {
                   <Routes />
                 </AppMainContentStyle>
                 <Modal />
-                <Footer /> */
+                <Footer />
               </AppWrapperStyle>
             </>
             <Panel />

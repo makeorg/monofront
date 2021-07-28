@@ -20,10 +20,11 @@ const clientConfig = envConfigPath => ({
     chunkFilename: 'js/[name].[contenthash].js',
     path: path.resolve(__dirname, '..', 'dist', 'client'),
     publicPath: '/',
+    pathinfo: false,
     sourceMapFilename: '../map/[name].js.map',
   },
   resolve: {
-    extensions: ['*', '.ts', '.tsx', '.js'],
+    extensions: ['*', '.ts', '.tsx', '.js', '.yaml', '.json'],
     alias: {
       '@make.org/utils': path.resolve(__dirname, '../../../utils'),
       '@make.org/api': path.resolve(__dirname, '../../../api'),
@@ -49,6 +50,7 @@ const clientConfig = envConfigPath => ({
   optimization: {
     moduleIds: 'deterministic',
     minimizer: [new TerserPlugin()],
+    concatenateModules: true,
     runtimeChunk: false, // runtimeChunk + inlineSource is not compatible with loadable-component for now
     splitChunks: {
       cacheGroups: {
@@ -61,7 +63,8 @@ const clientConfig = envConfigPath => ({
         },
       },
     },
-    concatenateModules: true,
+    removeAvailableModules: false,
+    removeEmptyChunks: false,
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -122,7 +125,7 @@ const clientConfig = envConfigPath => ({
         exclude: /node_modules/,
       },
       {
-        test: /\.(jpe?g|png|gif|svg|ttf|eot|woff|woff2|manifest|ico)$/,
+        test: /\.(jpe?g|png|gif|svg|ttf|eot|woff|woff2|manifest|ico|yaml)$/,
         use: [
           {
             loader: 'file-loader',
@@ -151,6 +154,7 @@ const serverConfig = envConfigPath => ({
     path.resolve(__dirname, '..', 'server', 'index.ts'),
   ],
   output: {
+    pathinfo: false,
     path: path.resolve(__dirname, '..', 'dist'),
     filename: 'server.js',
     libraryTarget: 'commonjs2',
@@ -161,10 +165,18 @@ const serverConfig = envConfigPath => ({
   },
   externals: [
     nodeExternals(),
-    { 'webpack-manifest': './webpack-manifest.json' },
+    {
+      'webpack-manifest': './webpack-manifest.json',
+      sharp: 'commonjs sharp',
+    },
   ],
+  optimization: {
+    removeAvailableModules: false,
+    removeEmptyChunks: false,
+    splitChunks: false,
+  },
   resolve: {
-    extensions: ['*', '.ts', '.tsx', '.js'],
+    extensions: ['*', '.ts', '.tsx', '.js', '.yaml', '.json'],
     alias: {
       '@make.org/utils': path.resolve(__dirname, '../../../utils'),
       '@make.org/api': path.resolve(__dirname, '../../../api'),
@@ -187,7 +199,7 @@ const serverConfig = envConfigPath => ({
         exclude: /node_modules/,
       },
       {
-        test: /\.(jpe?g|png|gif|svg|ttf|eot|woff|woff2|manifest|ico)$/,
+        test: /\.(jpe?g|png|gif|svg|ttf|eot|woff|woff2|manifest|ico|yaml)$/,
         use: [
           {
             loader: 'file-loader',
