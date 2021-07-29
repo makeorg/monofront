@@ -23,7 +23,7 @@ export const ResultsContext: FC<Props> = ({ aboutUrl, context }) => (
         href={aboutUrl}
         target="_blank"
         rel="noopener"
-        onClick={trackClickLearnMore}
+        onClick={() => trackClickLearnMore()}
       >
         {i18n.t('consultation.cards.about.link')}
         <NewWindowIconStyle />

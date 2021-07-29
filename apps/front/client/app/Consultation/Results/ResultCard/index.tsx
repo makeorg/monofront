@@ -3,7 +3,7 @@ import {
   RESULTS_TOP_IDEAS,
   RESULTS_CONTROVERSIALS,
 } from '@make.org/utils/constants/ids';
-import { getCurrentContainer } from '@make.org/utils/helpers/consultation';
+import { getCurrentContainer } from '../../../../helper/consultation';
 import {
   ResultCardStyle,
   ResultTitleWrapperStyle,
@@ -14,13 +14,13 @@ import {
 
 type Props = {
   /** Optional icon to render */
-  icon?: any;
+  icon?: JSX.Element;
   /** T;tle to render */
   title: string;
   /** O;tional description to render */
   description?: string;
   /** O;tional id to render */
-  id?: string;
+  id: string;
   /** C;ildren to render */
   children: Node;
 };
@@ -32,9 +32,9 @@ export const ResultCard: FC<Props> = ({
   id,
   children,
 }) => {
-  const currentContainer = getCurrentContainer(id);
-  const isTopIdeas = id && id === RESULTS_TOP_IDEAS;
-  const isControversials = id && id === RESULTS_CONTROVERSIALS;
+  const currentContainer = getCurrentContainer(id || '');
+  const isTopIdeas = id === RESULTS_TOP_IDEAS || false;
+  const isControversials = id === RESULTS_CONTROVERSIALS || false;
   return (
     <ResultCardStyle>
       <ResultTitleWrapperStyle isTopIdeas={isTopIdeas}>

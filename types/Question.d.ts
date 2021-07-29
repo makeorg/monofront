@@ -37,7 +37,7 @@ export type PieChartDataType = {
   color: string;
   adjustLabel?: {
     hidePercent?: boolean;
-    textAlign?: string;
+    textAlign?: 'center' | 'end' | 'left' | 'right' | 'start';
     xAxis?: number;
     yAxis?: number;
   };

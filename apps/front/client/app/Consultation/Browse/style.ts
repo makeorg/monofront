@@ -222,6 +222,12 @@ export const ConsultationRedLinkElementStyle = styled(Link)`
   font-family: ${MakeFonts.TradeGothicBoldCondensed};
 `;
 
+export const ConsultationRedHTMLLinkElementStyle = styled.a`
+  ${linkStyle(color.brandSecondary)};
+  text-transform: uppercase;
+  font-family: ${MakeFonts.TradeGothicBoldCondensed};
+`;
+
 export const NoConsultationWrapperStyle = styled(ColumnElementStyle)`
   max-width: 540px;
   flex: 1;

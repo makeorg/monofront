@@ -3,6 +3,7 @@ import { QuestionType } from '@make.org/types';
 import { useScreenWidth } from '@make.org/utils/hooks/useMedia';
 import { useAppContext } from '@make.org/store';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
+import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { MobileDescriptionImageStyle } from '../Styled/Presentation';
 
 type Props = {
@@ -21,7 +22,7 @@ export const MobileDescriptionImage: FC<Props> = ({ question }) => {
         <MobileDescriptionImageStyle
           src={question.descriptionImage}
           alt={question.descriptionImageAlt || ''}
-          width={screenWidth}
+          width={screenWidth || Breakpoints.LargeMobile}
         />
       )}
     </>

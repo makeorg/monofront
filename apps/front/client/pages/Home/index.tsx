@@ -27,7 +27,8 @@ export const HomePage: FC = () => {
   const isDE = country === 'DE';
   const displayPartnership = isFR || isDE;
   const hasConsultations =
-    homepage?.currentQuestions.length > 0 || homepage?.pastQuestions.length > 0;
+    (homepage && homepage.currentQuestions.length > 0) ||
+    (homepage && homepage.pastQuestions.length > 0);
 
   const initHomepage = async () => {
     setIsLoading(true);

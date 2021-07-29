@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import i18n from 'i18next';
 import { CONTACT_EMAIL } from '@make.org/utils/constants/config';
 import { QuestionType } from '@make.org/types';
+import { RedLinkHTMLElementStyle } from '@make.org/ui/elements/LinkElements';
 import { ResultCardSidebar } from '../ResultCardSidebar';
 
 type Props = {
@@ -17,9 +18,9 @@ export const ResultsContact: FC<Props> = ({ question }) => {
       title={i18n.t('consultation.results.download.title')}
       description={i18n.t('consultation.results.download.contact')}
     >
-      <a className="red-link" href={mailToHref}>
+      <RedLinkHTMLElementStyle href={mailToHref}>
         {CONTACT_EMAIL}
-      </a>
+      </RedLinkHTMLElementStyle>
     </ResultCardSidebar>
   );
 };

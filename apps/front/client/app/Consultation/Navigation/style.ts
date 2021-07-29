@@ -1,4 +1,4 @@
-import { color } from 'athena-design-tokens/dist/color';
+import { color } from 'athena-design-tokens';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
 import styled from 'styled-components';
 

@@ -7,7 +7,7 @@ import {
 } from './style';
 
 type Props = {
-  icon: any;
+  icon: JSX.Element;
   title: string;
   description: string;
   linkText: string;

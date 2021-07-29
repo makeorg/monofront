@@ -6,7 +6,7 @@ import {
   SvgChevronArrowLeft,
   SvgChevronArrowRight,
 } from '@make.org/ui/Svg/elements';
-import { ChartType } from '@make.org/ui/components/Data';
+import { ChartType } from '@make.org/components/Data';
 import { useSlider } from '@make.org/utils/hooks/useSlider';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
@@ -26,7 +26,7 @@ type Props = {
 };
 
 export const ResultsSlider: FC<Props> = ({ data, sliderName, styleClass }) => {
-  const sliderRef = useRef();
+  const sliderRef = useRef<HTMLDivElement>(null);
   const { state } = useAppContext();
   const { device } = state.appConfig;
   const isMobile = matchMobileDevice(device);
@@ -72,7 +72,6 @@ export const ResultsSlider: FC<Props> = ({ data, sliderName, styleClass }) => {
         <ResultsSliderArrowsStyle
           className={`${sliderName} glider-prev`}
           aria-label={i18n.t('common.slider.previous')}
-          isResultsPage={resultsPage}
         >
           <SvgChevronArrowLeft
             aria-hidden
@@ -83,7 +82,6 @@ export const ResultsSlider: FC<Props> = ({ data, sliderName, styleClass }) => {
         <ResultsSliderArrowsStyle
           className={`${sliderName} glider-next`}
           aria-label={i18n.t('common.slider.next')}
-          isResultsPage={resultsPage}
         >
           <SvgChevronArrowRight
             aria-hidden

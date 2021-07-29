@@ -15,7 +15,10 @@ import {
 } from '@make.org/utils/services/Tracking';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { useAppContext } from '@make.org/store';
-import { ConsultationRedLinkElementStyle } from './style';
+import {
+  ConsultationRedLinkElementStyle,
+  ConsultationRedHTMLLinkElementStyle,
+} from './style';
 
 type Props = {
   question: HomeQuestionType;
@@ -58,9 +61,7 @@ export const ConsultationLink: FC<Props> = ({ question, label }) => {
 
   if (closedConsultationWithoutResults || externalResultLink) {
     return (
-      <ConsultationRedLinkElementStyle
-        as="a"
-        // $FlowFixMe : flow cannot understrand desctructuring externalResultLink
+      <ConsultationRedHTMLLinkElementStyle
         href={
           externalResultLink
             ? resultsLink && resultsLink.value
@@ -77,7 +78,7 @@ export const ConsultationLink: FC<Props> = ({ question, label }) => {
         <ScreenReaderItemStyle>
           {i18n.t('common.open_new_window')}
         </ScreenReaderItemStyle>
-      </ConsultationRedLinkElementStyle>
+      </ConsultationRedHTMLLinkElementStyle>
     );
   }
 
@@ -88,7 +89,7 @@ export const ConsultationLink: FC<Props> = ({ question, label }) => {
           ? getDynamicConsultationLink(
               country,
               questionSlug,
-              resultsLink && resultsLink.value
+              (resultsLink && resultsLink.value) || ''
             )
           : consultationPath
       }

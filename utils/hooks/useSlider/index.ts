@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { RefObject, useEffect } from 'react';
 import { SliderParamsType } from '@make.org/types';
 import Glider from 'glider-js';
 import {
@@ -12,7 +12,7 @@ import {
 } from './a11y';
 
 export const useSlider = (
-  sliderRef: React.RefObject<HTMLDivElement>,
+  sliderRef: RefObject<HTMLDivElement>,
   sliderParams: SliderParamsType,
   canBeInitialize: boolean
 ): any => {

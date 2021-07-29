@@ -11,7 +11,7 @@ import { useAppContext } from '@make.org/store';
 import {
   BreadcrumbsPagesType,
   Breadcrumbs,
-} from '../../app/Breadcrumbs/Breadcrumbs';
+} from '../../Breadcrumbs/Breadcrumbs';
 import {
   InnerPagesNavigation,
   PageNavigationType,
@@ -34,7 +34,7 @@ export const BrowseConsultationsHeader: FC = () => {
     name: consultationsPage
       ? i18n.t('browse.nav_consultations_desktop')
       : i18n.t('browse.nav_results_desktop'),
-    link: location,
+    link: location.pathname,
   };
 
   const BrowseNavigation: PageNavigationType[] = [

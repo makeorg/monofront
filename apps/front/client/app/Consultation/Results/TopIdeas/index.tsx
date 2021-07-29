@@ -5,10 +5,10 @@ import {
   VOTE_AGREE_KEY,
 } from '@make.org/utils/constants/vote';
 import i18n from 'i18next';
-import { ThemeItemType } from '@make.org/types';
+import { QuestionType } from '@make.org/types';
 import { Collapse } from '@make.org/ui/components/Collapse';
 import { ColumnToRowElementStyle } from '@make.org/ui/elements/FlexElements';
-import { VoteIconStyle } from '@make.org/ui/elements/ButtonsElements';
+import { VoteIconStyle } from '@make.org/ui/elements/SvgElements';
 import {
   TopIdeaListItemStyle,
   TopIdeaItemTitleStyle,
@@ -20,10 +20,7 @@ import {
 } from './style';
 
 type Props = {
-  topIdeas: {
-    first_theme: ThemeItemType;
-    second_theme: ThemeItemType;
-  };
+  topIdeas: any[];
   question: QuestionType;
 };
 
@@ -43,7 +40,7 @@ export const TopIdeas: FC<Props> = ({ topIdeas, question }) => {
           language={question.language}
         >
           <UnstyledListStyle>
-            {topIdea.ideas.map(idea => (
+            {topIdea.ideas.map((idea: any) => (
               <TopIdeaListItemStyle key={idea.idea}>
                 <TopIdeaItemTitleStyle lang={question.language}>
                   {idea.idea}

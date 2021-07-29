@@ -8,19 +8,6 @@ import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 
-export const ResultsSliderStyle = styled.div`
-  background-color: ${color.greyLighter};
-  border-radius: ${intToPx(Elements.BorderRadius)};
-  box-shadow: 0 1px 1px 0 ${ShadowColors.BlackZeroFiveOpacity};
-  &.results-page {
-    box-shadow: none;
-    margin-top: 10px;
-    @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-      margin-top: ${props => (props.isResultsPage ? '0px' : '15px')};
-    }
-  }
-`;
-
 export const ResultsSliderArrowsStyle = styled(UnstyledButtonStyle)`
   position: absolute;
   top: 50%;
@@ -49,7 +36,9 @@ export const ResultsSliderArrowsStyle = styled(UnstyledButtonStyle)`
   }
 `;
 
-export const ResultsSliderPagination = styled(ParagraphStyle)`
+export const ResultsSliderPagination = styled(ParagraphStyle)<{
+  focusable: string;
+}>`
   text-align: center;
   margin-top: 10px;
   font-family: ${MakeFonts.CircularStandardBook};
@@ -58,6 +47,20 @@ export const ResultsSliderPagination = styled(ParagraphStyle)`
   letter-spacing: 0.12px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     margin-top: 20px;
+  }
+`;
+
+export const ResultsSliderStyle = styled.div<{
+  isResultsPage: boolean;
+}>`
+  background-color: ${color.greyLighter};
+  border-radius: ${intToPx(Elements.BorderRadius)};
+  box-shadow: 0 1px 1px 0 ${ShadowColors.BlackZeroFiveOpacity};
+  &.results-page {
+    box-shadow: none;
+    margin-top: 10px;
+    @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+      margin-top: ${props => (props.isResultsPage ? '0px' : '15px')};
     }
   }
 `;

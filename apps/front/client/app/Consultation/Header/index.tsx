@@ -6,12 +6,12 @@ import {
   getBrowseConsultationsLink,
   getBrowseResultsLink,
 } from '@make.org/utils/helpers/url';
-import { getCurrentLabel } from '@make.org/utils/helpers/consultation';
 import { QuestionType, PartnerType } from '@make.org/types';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { FOUNDER_PARTNER } from '@make.org/utils/constants/partner';
 import { isResultsPage } from '@make.org/utils/routes';
+import { getCurrentLabel } from '../../../helper/consultation';
 import {
   Breadcrumbs,
   BreadcrumbsPagesType,
@@ -58,7 +58,7 @@ export const ParticipateHeader: FC = () => {
 
   const currentPage: BreadcrumbsPagesType = {
     name: breadcrumbLabel,
-    link: location,
+    link: location.pathname,
   };
 
   return (

@@ -91,8 +91,12 @@ export const ConsultationItem: FC<Props> = ({
   const isTabletViewport = useTablet();
   const { state } = useAppContext();
   const { device } = state.appConfig;
-  const containerWidth = useScreenMobileContainerWidth();
+  let containerWidth = useScreenMobileContainerWidth();
   const isDesktopInState = matchDesktopDevice(device);
+
+  if (!containerWidth) {
+    containerWidth = 0;
+  }
 
   let imageWidth = containerWidth;
   let imageHeight = getSixteenPerNineRatioHeight(containerWidth);
@@ -110,7 +114,7 @@ export const ConsultationItem: FC<Props> = ({
   return (
     <ConsultationArticleStyle>
       <ConsultationElementPictureStyle
-        src={descriptionImage}
+        src={descriptionImage || ''}
         alt={descriptionImageAlt || ''}
         width={imageWidth}
         height={imageHeight}

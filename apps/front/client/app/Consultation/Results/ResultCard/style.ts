@@ -29,7 +29,7 @@ export const ResultTitleWrapperStyle = styled(ColumnElementStyle)<{
   }
 `;
 
-export const ResultCardIconStyle = styled.span<{ focusable: boolean }>`
+export const ResultCardIconStyle = styled.span<{ focusable: string }>`
   margin-bottom: 15px;
 `;
 
