@@ -3,11 +3,11 @@ import {
   Breakpoints,
   DefaultPadding,
   Layouts,
-} from 'Client/app/assets/vars/Breakpoints';
-import { intToPx } from 'Shared/helpers/styled';
-import { MiddleColumnStyle } from 'Client/ui/Elements/FlexElements';
-import { ConsultationLabelStyle } from 'Client/ui/Elements/ConsultationElements';
-import { SecondLevelTitleStyle } from 'Client/ui/Elements/TitleElements';
+} from '@make.org/assets/vars/Breakpoints';
+import { intToPx } from '@make.org/utils/helpers/styled';
+import { MiddleColumnStyle } from '@make.org/ui/elements/FlexElements';
+import { ConsultationLabelStyle } from '@make.org/ui/elements/ConsultationElements';
+import { SecondLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
 import { typography } from 'athena-design-tokens';
 
 export const IntroWrapperStyle = styled(MiddleColumnStyle)`

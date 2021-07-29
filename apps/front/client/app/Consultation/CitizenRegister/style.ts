@@ -1,11 +1,9 @@
-// citizen-register__wrapper
-
 import styled from 'styled-components';
-import { MakeFonts } from 'Client/app/assets/vars/Fonts';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { color, typography } from 'athena-design-tokens';
-import { intToPx, pxToPercent } from 'Shared/helpers/styled';
-import { Breakpoints } from 'Client/app/assets/vars/Breakpoints';
-import { FlexElementStyle } from 'Client/ui/Elements/FlexElements';
+import { intToPx, pxToPercent } from '@make.org/utils/helpers/styled';
+import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 
 export const CitizenRegisterContentStyle = styled(FlexElementStyle)`
   justify-content: flex-start;

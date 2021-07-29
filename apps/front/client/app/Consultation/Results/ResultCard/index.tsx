@@ -1,10 +1,9 @@
-// @flow
-import React from 'react';
+import React, { FC } from 'react';
 import {
   RESULTS_TOP_IDEAS,
   RESULTS_CONTROVERSIALS,
-} from 'Shared/constants/ids';
-import { getCurrentContainer } from 'Shared/helpers/consultation';
+} from '@make.org/utils/constants/ids';
+import { getCurrentContainer } from '@make.org/utils/helpers/consultation';
 import {
   ResultCardStyle,
   ResultTitleWrapperStyle,
@@ -15,24 +14,24 @@ import {
 
 type Props = {
   /** Optional icon to render */
-  icon?: any,
-  /** Title to render */
-  title: string,
-  /** Optional description to render */
-  description?: string,
-  /** Optional id to render */
-  id?: string,
-  /** Children to render */
-  children: Node,
+  icon?: any;
+  /** T;tle to render */
+  title: string;
+  /** O;tional description to render */
+  description?: string;
+  /** O;tional id to render */
+  id?: string;
+  /** C;ildren to render */
+  children: Node;
 };
 
-export const ResultCard = ({
+export const ResultCard: FC<Props> = ({
   icon,
   title,
   description,
   id,
   children,
-}: Props) => {
+}) => {
   const currentContainer = getCurrentContainer(id);
   const isTopIdeas = id && id === RESULTS_TOP_IDEAS;
   const isControversials = id && id === RESULTS_CONTROVERSIALS;

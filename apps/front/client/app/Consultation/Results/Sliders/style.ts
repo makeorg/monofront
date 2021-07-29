@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { color, typography } from 'athena-design-tokens';
-import { ShadowColors } from 'Client/app/assets/vars/Colors';
-import { Elements } from 'Client/app/assets/vars/Elements';
-import { intToPx } from 'Shared/helpers/styled';
-import { UnstyledButtonStyle } from 'Client/ui/Elements/Buttons/style';
-import { MakeFonts } from 'Client/app/assets/vars/Fonts';
-import { ParagraphStyle } from 'Client/ui/Elements/ParagraphElements';
-import { Breakpoints } from 'Client/app/assets/vars/Breakpoints';
+import { ShadowColors } from '@make.org/assets/vars/Colors';
+import { Elements } from '@make.org/assets/vars/Elements';
+import { intToPx } from '@make.org/utils/helpers/styled';
+import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
+import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 
 export const ResultsSliderStyle = styled.div`
   background-color: ${color.greyLighter};

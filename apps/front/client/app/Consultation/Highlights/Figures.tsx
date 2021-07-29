@@ -1,21 +1,20 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { useLocation } from 'react-router';
-import { type StateRoot } from 'Shared/store/types';
-import { type QuestionType } from 'Shared/types/question';
-import { useSelector } from 'react-redux';
-import { selectCurrentQuestion } from 'Shared/store/selectors/questions.selector';
-import { DateHelper } from 'Shared/helpers/date';
-import { i18n } from 'Shared/i18n';
-import { isResultsPage } from 'Shared/routes';
+import { QuestionType } from '@make.org/types';
+import { useAppContext } from '@make.org/store';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { DateHelper } from '@make.org/utils/helpers/date';
+import i18n from 'i18next';
+import { isResultsPage } from '@make.org/utils/routes';
 import {
   formatCountWithLanguage,
   formatMillionToText,
-} from 'Shared/helpers/numberFormatter';
-import { ScreenReaderItemStyle } from 'Client/ui/Elements/AccessibilityElements';
+} from '@make.org/utils/helpers/numberFormatter';
+import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import {
   DATE_CAPITALIZE_L_FORMAT,
   DATE_LOWERCASE_LL_FORMAT,
-} from 'Shared/constants/date';
+} from '@make.org/utils/constants/date';
 import {
   FiguresValueStyle,
   FiguresListStyle,
@@ -23,12 +22,13 @@ import {
   HigthlightsTitleStyle,
 } from './style';
 
-export const Figures = () => {
-  const { language } = useSelector((state: StateRoot) => state.appConfig);
-  const question: QuestionType = useSelector((state: StateRoot) =>
-    selectCurrentQuestion(state)
+export const Figures: FC = () => {
+  const { state } = useAppContext();
+  const { language } = state.appConfig;
+  const question: QuestionType = selectCurrentQuestion(state);
+  const remainingDays = DateHelper.getRemainingDays(
+    question ? question.endDate : ''
   );
-  const remainingDays = DateHelper.getRemainingDays(question.endDate);
   const location = useLocation();
   const resultsPage = isResultsPage(location.pathname);
 
@@ -47,22 +47,23 @@ export const Figures = () => {
           dateTime={
             resultsPage
               ? DateHelper.localizedAndFormattedDate(
-                  question.endDate,
+                  question.endDate || '',
                   DATE_CAPITALIZE_L_FORMAT
-                )
+                ) || ''
               : DateHelper.localizedAndFormattedDate(
-                  question.startDate,
+                  question.startDate || '',
                   DATE_CAPITALIZE_L_FORMAT
-                )
+                ) || ''
           }
         >
           {resultsPage
-            ? DateHelper.localizedAndFormattedDate(
-                question.endDate,
+            ? question &&
+              DateHelper.localizedAndFormattedDate(
+                question.endDate || '',
                 DATE_LOWERCASE_LL_FORMAT
               )
             : DateHelper.localizedAndFormattedDate(
-                question.startDate,
+                question.startDate || '',
                 DATE_LOWERCASE_LL_FORMAT
               )}
         </FiguresValueStyle>
@@ -72,7 +73,7 @@ export const Figures = () => {
           {resultsPage
             ? i18n.t('consultation.highlights.proposals')
             : i18n.t('consultation.highlights.remaining', {
-                count: remainingDays,
+                count: remainingDays || 0,
               })}
         </HigthlightsTitleStyle>
         <ScreenReaderItemStyle> : </ScreenReaderItemStyle>
@@ -82,7 +83,7 @@ export const Figures = () => {
                 question.highlights.proposalsCount,
                 language
               )
-            : formatCountWithLanguage(remainingDays, language)}
+            : formatCountWithLanguage(remainingDays || 0, language)}
         </FiguresValueStyle>
       </FiguresListItemStyle>
       <FiguresListItemStyle>

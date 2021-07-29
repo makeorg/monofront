@@ -1,10 +1,9 @@
-// @flow
-import React from 'react';
-import { i18n } from 'Shared/i18n';
-import { SvgMail } from 'Client/ui/Svg/elements';
-import { useDispatch } from 'react-redux';
-import { modalShowRegister } from 'Shared/store/actions/modal';
-import { trackClickSubscribe } from 'Shared/services/Tracking';
+import React, { FC } from 'react';
+import i18n from 'i18next';
+import { SvgMail } from '@make.org/ui/Svg/elements';
+import { modalShowRegister } from '@make.org/store/actions/modal';
+import { trackClickSubscribe } from '@make.org/utils/services/Tracking';
+import { useAppContext } from '@make.org/store';
 import {
   NoConsultationWrapperStyle,
   NoConsultationImageStyle,
@@ -13,8 +12,8 @@ import {
 } from './style';
 
 type Props = {
-  questionsCount: number,
-  resultsContext: boolean,
+  questionsCount: number;
+  resultsContext: boolean;
 };
 
 const getTitleFromContext = (
@@ -38,11 +37,11 @@ const getTitleFromContext = (
   return i18n.t('browse.one_consultation');
 };
 
-export const RegistrationIncentive = ({
+export const RegistrationIncentive: FC<Props> = ({
   questionsCount,
   resultsContext,
-}: Props) => {
-  const dispatch = useDispatch();
+}) => {
+  const { dispatch } = useAppContext();
 
   const handleClick = () => {
     dispatch(modalShowRegister());

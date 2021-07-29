@@ -6,6 +6,7 @@ import {
   QuestionKeywordType,
   PersonalityType,
   TagType,
+  ProposalType,
 } from '@make.org/types';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 import { Logger } from './Logger';
@@ -159,7 +160,7 @@ const getFeaturedProposals = async (
   maxPartnerProposals: number,
   limit: number,
   seed?: number
-): Promise<{ total: number; results: QuestionPartnerType[] } | null> => {
+): Promise<{ total: number; results: ProposalType[] } | null> => {
   try {
     const response = await QuestionApiService.getFeaturedProposals(
       questionId,

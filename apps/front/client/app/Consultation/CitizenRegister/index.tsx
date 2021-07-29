@@ -1,11 +1,10 @@
-import React from 'react';
-import { i18n } from 'Shared/i18n';
-import { useDispatch, useSelector } from 'react-redux';
-import { type StateRoot } from 'Shared/store/types';
-import { selectAuthentication } from 'Shared/store/selectors/user.selector';
-import { RedButtonStyle } from 'Client/ui/Elements/Buttons/V2/style';
-import { modalShowRegister } from 'Shared/store/actions/modal';
-import { trackClickCitizenRegister } from 'Shared/services/Tracking';
+import React, { FC } from 'react';
+import i18n from 'i18next';
+import { selectAuthentication } from '@make.org/store/selectors/user.selector';
+import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
+import { modalShowRegister } from '@make.org/store/actions/modal';
+import { trackClickCitizenRegister } from '@make.org/utils/services/Tracking';
+import { useAppContext } from '@make.org/store';
 import {
   CitizenRegisterContentStyle,
   CitizenRegisterTitleStyle,
@@ -13,17 +12,15 @@ import {
   SocialCitizenRegisterWrapperStyle,
 } from './style';
 
-export const CitizenRegister = () => {
-  const dispatch = useDispatch();
+export const CitizenRegister: FC = () => {
+  const { dispatch, state } = useAppContext();
 
   const handleClick = () => {
     dispatch(modalShowRegister());
     trackClickCitizenRegister();
   };
 
-  const { isLoggedIn } = useSelector((state: StateRoot) =>
-    selectAuthentication(state)
-  );
+  const { isLoggedIn } = selectAuthentication(state);
   if (isLoggedIn) {
     return null;
   }

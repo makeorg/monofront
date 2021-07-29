@@ -1,7 +1,18 @@
-// @flow
-import React from 'react';
-import { type HomeQuestionType } from 'Shared/types/question';
-import { DateHelper } from 'Shared/helpers/date';
+import React, { FC } from 'react';
+import { HomeQuestionType } from '@make.org/types';
+import { DateHelper } from '@make.org/utils/helpers/date';
+import i18n from 'i18next';
+import {
+  useScreenMobileContainerWidth,
+  useTablet,
+} from '@make.org/utils/hooks/useMedia';
+import { formatMillionToText } from '@make.org/utils/helpers/numberFormatter';
+import {
+  getSixteenPerNineRatioHeight,
+  matchDesktopDevice,
+} from '@make.org/utils/helpers/styled';
+import { DATE_CAPITALIZE_LL_FORMAT } from '@make.org/utils/constants/date';
+import { useAppContext } from '@make.org/store';
 import {
   ConsultationElementPictureStyle,
   ConsultationElementSubtitleStyle,
@@ -13,29 +24,19 @@ import {
   ConsultationLightIconStyle,
   ConsultationItemStyle,
   ConsultationActionIconStyle,
-} from 'Client/features/consultation/Browse/style';
-import { i18n } from 'Shared/i18n';
-import {
-  useScreenMobileContainerWidth,
-  useTablet,
-} from 'Client/hooks/useMedia';
-import { formatMillionToText } from 'Shared/helpers/numberFormatter';
-import {
-  getSixteenPerNineRatioHeight,
-  matchDesktopDevice,
-} from 'Shared/helpers/styled';
-import { type StateRoot } from 'Shared/store/types';
-import { useSelector } from 'react-redux';
-import { DATE_CAPITALIZE_LL_FORMAT } from 'Shared/constants/date';
+} from './style';
 import { ConsultationLink } from './Link';
 
 type Props = {
-  question: HomeQuestionType,
-  resultsContext: boolean,
-  itemsCount: number,
+  question: HomeQuestionType;
+  resultsContext: boolean;
+  itemsCount: number;
 };
 
-export const getHomepageRatio = (height: number, itemsCount: number) => {
+export const getHomepageRatio = (
+  height: number,
+  itemsCount: number
+): number => {
   switch (itemsCount) {
     case 4:
       return (height * 255) / 248;
@@ -47,11 +48,11 @@ export const getHomepageRatio = (height: number, itemsCount: number) => {
   }
 };
 
-export const ConsultationItem = ({
+export const ConsultationItem: FC<Props> = ({
   question,
   resultsContext,
   itemsCount,
-}: Props) => {
+}) => {
   const {
     descriptionImage,
     descriptionImageAlt,
@@ -88,7 +89,8 @@ export const ConsultationItem = ({
   }
 
   const isTabletViewport = useTablet();
-  const { device } = useSelector((state: StateRoot) => state.appConfig);
+  const { state } = useAppContext();
+  const { device } = state.appConfig;
   const containerWidth = useScreenMobileContainerWidth();
   const isDesktopInState = matchDesktopDevice(device);
 

@@ -1,16 +1,13 @@
 import styled from 'styled-components';
 import { color } from 'athena-design-tokens';
-import { intToPx } from 'Shared/helpers/styled';
-import {
-  DefaultPadding,
-  Breakpoints,
-} from 'Client/app/assets/vars/Breakpoints';
-import { ShadowColors } from 'Client/app/assets/vars/Colors';
-import { FourthLevelTitleStyle } from 'Client/ui/Elements/TitleElements';
-import { MakeFonts } from 'Client/app/assets/vars/Fonts';
-import { CenterColumnStyle } from 'Client/ui/Elements/FlexElements';
-import { Elements } from 'Client/app/assets/vars/Elements';
-import { SvgLightBulb } from 'Client/ui/Svg/elements';
+import { intToPx } from '@make.org/utils/helpers/styled';
+import { DefaultPadding, Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { ShadowColors } from '@make.org/assets/vars/Colors';
+import { FourthLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
+import { Elements } from '@make.org/assets/vars/Elements';
+import { SvgLightBulb } from '@make.org/ui/Svg/elements';
 
 export const ProposalWrapperStyle = styled.div`
   width: 100%;

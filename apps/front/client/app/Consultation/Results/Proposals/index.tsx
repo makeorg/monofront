@@ -1,16 +1,15 @@
-// @flow
-import React from 'react';
+import React, { FC } from 'react';
 import {
-  type TypeControversialsProposals,
-  type RejectedProposalsType,
-} from 'Shared/types/question';
-import { i18n } from 'Shared/i18n';
-import { ScreenReaderItemStyle } from 'Client/ui/Elements/AccessibilityElements';
-import { formatAuthorName } from 'Shared/helpers/stringFormatter';
-import { useSelector } from 'react-redux';
-import { matchMobileDevice } from 'Shared/helpers/styled';
-import { AvatarImageStyle } from 'Client/ui/Avatar/style';
-import { SvgEmptyAvatar } from 'Client/ui/Svg/elements';
+  TypeControversialsProposals,
+  RejectedProposalsType,
+} from '@make.org/types';
+import i18n from 'i18next';
+import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
+import { formatAuthorName } from '@make.org/utils/helpers/stringFormatter';
+import { useAppContext } from '@make.org/store';
+import { matchMobileDevice } from '@make.org/utils/helpers/styled';
+import { AvatarImageStyle } from '@make.org/ui/components/Avatar/style';
+import { SvgEmptyAvatar } from '@make.org/ui/Svg/elements';
 import {
   ResultsProposalsListStyle,
   ResultsProposalListItemStyle,
@@ -24,16 +23,16 @@ import {
 } from './style';
 
 type Props = {
-  proposals: TypeControversialsProposals[] | RejectedProposalsType[],
-  isRejected?: boolean,
-  question: QuestionType,
+  proposals: TypeControversialsProposals[] | RejectedProposalsType[];
+  isRejected?: boolean;
+  question: QuestionType;
 };
 
-export const ProposalsResults = ({
+export const ProposalsResults: FC<Props> = ({
   proposals,
   question,
   isRejected,
-}: Props) => {
+}) => {
   const setAvatarSize = (isMobile: boolean) => {
     if (!isMobile) {
       return 38;
@@ -41,7 +40,8 @@ export const ProposalsResults = ({
 
     return 31;
   };
-  const { device } = useSelector((state: StateRoot) => state.appConfig);
+  const { state } = useAppContext();
+  const { device } = state.appConfig;
   const isMobile = matchMobileDevice(device);
   const avatarSize = setAvatarSize(isMobile);
 

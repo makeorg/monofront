@@ -8,8 +8,8 @@ import {
 import { useDevicePixelRatio } from '@make.org/utils/hooks/useMedia';
 
 const imageflowQueryParams = (
-  width?: number,
-  height?: number,
+  width: number | undefined,
+  height: number | undefined,
   crop?: boolean
 ) => `?w=${width || ''}&h=${height || ''}&mode=${crop ? 'crop' : 'pad'}`;
 
@@ -17,21 +17,21 @@ type Props = {
   /** image source */
   src: string | ImageDataType;
   /** image className */
-  className: string;
+  className?: string;
   /** image alternative */
   alt: string;
   /** image src set */
-  srcSet: string;
+  srcSet?: string;
   /** image width */
-  width: number;
+  width?: number;
   /** Image height */
-  height: number;
+  height?: number;
   /** image key */
-  key: string | number;
+  key?: string | number;
   /** image loading */
-  loading: 'eager' | 'lazy' | undefined;
+  loading?: 'eager' | 'lazy' | undefined;
   /** image loading */
-  crop: boolean;
+  crop?: boolean;
 };
 
 const isInternalSourceUrl = (url: string): boolean => {
@@ -49,8 +49,8 @@ const isImageSupportedByImageFlow = (url: string): boolean => {
 
 const getImageFlowSrcs = (
   url: string,
-  width: number,
-  height: number,
+  width: number | undefined,
+  height: number | undefined,
   crop: boolean
 ) => {
   if (!url) {
@@ -64,8 +64,16 @@ const getImageFlowSrcs = (
   }
   const src = url.replace(/\?.*/g, "$'");
   const paramsSrc1x = imageflowQueryParams(width, height, crop);
-  const paramsSrc2x = imageflowQueryParams(width * 2, height * 2, crop);
-  const paramsSrc3x = imageflowQueryParams(width * 3, height * 3, crop);
+  const paramsSrc2x = imageflowQueryParams(
+    (width || 0) * 2,
+    (height || 0) * 2,
+    crop
+  );
+  const paramsSrc3x = imageflowQueryParams(
+    (width || 0) * 3,
+    (height || 0) * 3,
+    crop
+  );
 
   return {
     src1x: `${src}${paramsSrc1x}`,
@@ -105,8 +113,8 @@ const selectImageToLoad = (
 export const getSrcValues = (
   useImageFlow: boolean,
   url: string,
-  width: number,
-  height: number,
+  width: number | undefined,
+  height: number | undefined,
   crop: boolean
 ): {
   src1x: string;
@@ -140,7 +148,7 @@ export const Image: React.FC<Props> = ({
   alt,
   srcSet = '',
   loading,
-  crop,
+  crop = false,
 }) => {
   // @toDo: src can be an imageData object or a string
   const imgData = useMemo(() => {

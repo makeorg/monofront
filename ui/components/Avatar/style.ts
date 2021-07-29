@@ -26,7 +26,7 @@ export const AvatarImageStyle = styled(Image)<{ avatarSize: number }>`
   background-color: ${color.white};
 `;
 
-export const PartnerAvatarStyle = styled.span`
+export const PartnerAvatarStyle = styled.span<any>`
   margin: 0;
   display: block;
   svg,

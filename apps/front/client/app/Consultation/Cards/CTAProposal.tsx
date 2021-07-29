@@ -1,7 +1,6 @@
-// @flow
-import React from 'react';
-import { ColumnElementStyle } from 'Client/ui/Elements/FlexElements';
-import { i18n } from 'Shared/i18n';
+import React, { FC } from 'react';
+import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
+import i18n from 'i18next';
 import {
   CardStyle,
   CardTitleStyle,
@@ -12,19 +11,19 @@ import {
 } from './style';
 
 type Props = {
-  icon: any,
-  title: string,
-  description: string,
-  proposalCount: number,
-  thresold: number,
-  linkText: string,
-  linkHref: string,
-  classes?: string,
-  onClickAction?: () => void,
-  isKeywordActive?: boolean,
+  icon: any;
+  title: string;
+  description: string;
+  proposalCount: number;
+  thresold: number;
+  linkText: string;
+  linkHref: string;
+  classes?: string;
+  onClickAction?: () => void;
+  isKeywordActive?: boolean;
 };
 
-export const CTAProposal = ({
+export const CTAProposal: FC<Props> = ({
   icon,
   title,
   description,
@@ -33,9 +32,9 @@ export const CTAProposal = ({
   linkText,
   linkHref,
   classes = '',
-  onClickAction = () => {},
+  onClickAction = () => null,
   isKeywordActive,
-}: Props) => {
+}) => {
   const isActive = proposalCount >= thresold;
 
   return (

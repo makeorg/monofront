@@ -10,7 +10,7 @@
     "moduleResolution": "node"
   },
   "include": [
-    "../../apps/front",
+    ".",
     "../../store",
     "../../ui",
     "../../api",

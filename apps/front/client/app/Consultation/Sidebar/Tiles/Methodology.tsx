@@ -1,19 +1,18 @@
-// @flow
-import React from 'react';
-import { type StateRoot } from 'Shared/store/types';
-import { type QuestionType } from 'Shared/types/question';
-import { TileWithTitle } from 'Client/ui/Elements/TileWithTitle';
-import { DeprecatedCollapse } from 'Client/ui/Elements/Collapse/DeprecatedCollapse';
-import { i18n } from 'Shared/i18n';
-import { ParagraphStyle } from 'Client/ui/Elements/ParagraphElements';
-import { useSelector } from 'react-redux';
-import { matchMobileDevice } from 'Shared/helpers/styled';
+import React, { FC } from 'react';
+import { QuestionType } from '@make.org/types';
+import { TileWithTitle } from '@make.org/ui/elements/TileWithTitle';
+import { DeprecatedCollapse } from '@make.org/ui/elements/Collapse/DeprecatedCollapse';
+import i18n from 'i18next';
+import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
+import { useAppContext } from '@make.org/store';
+import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 
 type Props = {
-  question: QuestionType,
+  question: QuestionType;
 };
-export const MethodologyTile = ({ question }: Props) => {
-  const { device } = useSelector((state: StateRoot) => state.appConfig);
+export const MethodologyTile: FC<Props> = ({ question }) => {
+  const { state } = useAppContext();
+  const { device } = state.appConfig;
   const isMobile = matchMobileDevice(device);
   if (!question.displayResults) {
     return null;

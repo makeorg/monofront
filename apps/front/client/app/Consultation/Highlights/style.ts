@@ -1,13 +1,12 @@
-import { color } from 'athena-design-tokens/dist/color';
-import { typography } from 'athena-design-tokens/dist/typography';
-import { Breakpoints } from 'Client/app/assets/vars/Breakpoints';
-import { Elements } from 'Client/app/assets/vars/Elements';
-import { MakeFonts } from 'Client/app/assets/vars/Fonts';
+import { color, typography } from 'athena-design-tokens';
+import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { Elements } from '@make.org/assets/vars/Elements';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import {
   ColumnElementStyle,
   FlexElementStyle,
-} from 'Client/ui/Elements/FlexElements';
-import { intToPx } from 'Shared/helpers/styled';
+} from '@make.org/ui/elements/FlexElements';
+import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 
 export const HigthlightsWrapperStyle = styled.section`
@@ -144,7 +143,7 @@ export const ProgressBarContainerStyle = styled.div`
   margin: 10px 0 20px;
 `;
 
-export const ProgressBarStyle = styled.div`
+export const ProgressBarStyle = styled.div<{ percent: string }>`
   position: absolute;
   left: 0;
   top: 0;

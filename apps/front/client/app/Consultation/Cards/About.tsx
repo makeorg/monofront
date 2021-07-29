@@ -1,11 +1,10 @@
-// @flow
-import React from 'react';
-import { type QuestionType } from 'Shared/types/question';
-import { i18n } from 'Shared/i18n';
-import { useSelector } from 'react-redux';
-import { selectCurrentQuestion } from 'Shared/store/selectors/questions.selector';
-import { ScreenReaderItemStyle } from 'Client/ui/Elements/AccessibilityElements';
-import { matchMobileDevice } from 'Shared/helpers/styled';
+import React, { FC } from 'react';
+import { QuestionType } from '@make.org/types';
+import i18n from 'i18next';
+import { useAppContext } from '@make.org/store';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
+import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import {
   CardStyle,
   CardAltTitleStyle,
@@ -15,11 +14,10 @@ import {
   MobileAboutStyle,
 } from './style';
 
-export const About = () => {
-  const question: QuestionType = useSelector((state: StateRoot) =>
-    selectCurrentQuestion(state)
-  );
-  const { device } = useSelector((state: StateRoot) => state.appConfig);
+export const About: FC = () => {
+  const { state } = useAppContext();
+  const question: QuestionType = selectCurrentQuestion(state);
+  const { device } = state.appConfig;
   const isMobile = matchMobileDevice(device);
   return (
     <>
@@ -44,13 +42,13 @@ export const About = () => {
   );
 };
 
-export const DesktopAbout = () => (
+export const DesktopAbout: FC = () => (
   <CardStyle className="margin-bottom">
     <About />
   </CardStyle>
 );
 
-export const MobileAbout = () => (
+export const MobileAbout: FC = () => (
   <MobileAboutStyle>
     <About />
   </MobileAboutStyle>

@@ -1,10 +1,9 @@
-// @flow
-import React from 'react';
-import { SvgLightBulb } from 'Client/ui/Svg/elements';
-import { i18n } from 'Shared/i18n';
-import { useDispatch } from 'react-redux';
-import { setPanelContent } from 'Shared/store/reducers/panel/actions';
-import { ProposalJourney } from 'Client/features/proposal/Submit/Journey';
+import React, { FC } from 'react';
+import { SvgLightBulb } from '@make.org/ui/Svg/elements';
+import i18n from 'i18next';
+import { setPanelContent } from '@make.org/store/actions/panel';
+import { ProposalJourney } from '@make.org/components/Proposal/Submit/Journey';
+import { useAppContext } from '@make.org/store';
 import {
   CardStyle,
   CardTitleStyle,
@@ -12,8 +11,8 @@ import {
   CardButtonStyle,
 } from './style';
 
-export const SubmitProposal = () => {
-  const dispatch = useDispatch();
+export const SubmitProposal: FC = () => {
+  const { dispatch } = useAppContext();
   return (
     <CardStyle className="margin-bottom">
       <SvgLightBulb aria-hidden width={31} height={31} focusable="false" />

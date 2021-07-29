@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { MakeFonts } from 'Client/app/assets/vars/Fonts';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { color, typography } from 'athena-design-tokens';
-import { intToPx } from 'Shared/helpers/styled';
-import { Layouts, Breakpoints } from 'Client/app/assets/vars/Breakpoints';
-import { FlexElementStyle } from 'Client/ui/Elements/FlexElements';
+import { intToPx } from '@make.org/utils/helpers/styled';
+import { Layouts, Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 import { Link } from 'react-router-dom';
-import { SvgExternalLink } from '../../../ui/Svg/elements';
+import { SvgExternalLink } from '@make.org/ui/Svg/elements';
 
 export const HeaderWrapperStyle = styled(FlexElementStyle)`
   background-color: ${props => props.theme.color};

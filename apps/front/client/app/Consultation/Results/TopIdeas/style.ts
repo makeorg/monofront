@@ -1,12 +1,12 @@
-import { Breakpoints } from 'Client/app/assets/vars/Breakpoints';
+import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { color, typography } from 'athena-design-tokens';
-import { Elements } from 'Client/app/assets/vars/Elements';
-import { MakeFonts } from 'Client/app/assets/vars/Fonts';
-import { ProfileHasVotedStyle } from 'Client/features/proposal/ProfileVoteCard/style';
-import { ParagraphStyle } from 'Client/ui/Elements/ParagraphElements';
-import { intToPx } from 'Shared/helpers/styled';
+import { Elements } from '@make.org/assets/vars/Elements';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { ProfileHasVotedStyle } from '@make.org/components/Proposal/ProfileVoteCard/style';
+import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
+import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
-import { FlexElementStyle } from 'Client/ui/Elements/FlexElements';
+import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 
 export const ThemeResultsWrapperStyle = styled(FlexElementStyle)`
   align-items: center;

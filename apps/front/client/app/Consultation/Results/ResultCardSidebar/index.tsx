@@ -1,5 +1,4 @@
-// @flow
-import React from 'react';
+import React, { FC } from 'react';
 import {
   ResultCardSidebarStyle,
   ResultCardSidebarTitleStyle,
@@ -8,20 +7,20 @@ import {
 
 type Props = {
   /** Title to render */
-  title: string,
+  title: string;
   /** Optional description to render */
-  description: string,
+  description: string;
   /** Children to render */
-  children: Node,
+  children: Node;
   /** Optional parameter to render for context display */
-  isContext?: boolean,
+  isContext?: boolean;
 };
-export const ResultCardSidebar = ({
+export const ResultCardSidebar: FC<Props> = ({
   title,
   description,
   children,
   isContext,
-}: Props) => (
+}) => (
   <ResultCardSidebarStyle isContext={isContext}>
     <ResultCardSidebarTitleStyle
       data-cy-container={isContext ? 'context' : 'contact'}

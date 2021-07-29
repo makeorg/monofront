@@ -1,9 +1,8 @@
-// #flow
-import React from 'react';
-import { i18n } from 'Shared/i18n';
-import { HomepageSectionTitleStyle } from 'Client/pages/Home/style';
-import { isBrowseConsultationsPage } from 'Shared/routes';
+import React, { FC } from 'react';
+import i18n from 'i18next';
+import { isBrowseConsultationsPage } from '@make.org/utils/routes';
 import { useLocation } from 'react-router';
+import { HomepageSectionTitleStyle } from '../../../pages/Home/style';
 import {
   ConsultationsTitleWrapperStyle,
   ConsultationsSubtitleStyle,
@@ -11,9 +10,13 @@ import {
 } from './style';
 
 type Props = {
-  total: number,
+  total: number;
+  sectionTitleId: string;
 };
-export const BrowseConsultationsTitles = ({ total, sectionTitleId }: Props) => {
+export const BrowseConsultationsTitles: FC<Props> = ({
+  total,
+  sectionTitleId,
+}) => {
   const location = useLocation();
   const consultationsPage = isBrowseConsultationsPage(location.pathname);
   const hasConsultations = total > 0;

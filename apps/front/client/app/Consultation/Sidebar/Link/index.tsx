@@ -1,21 +1,20 @@
-// @flow
-import React from 'react';
-import { i18n } from 'Shared/i18n';
-import { NewWindowIconStyle } from 'Client/ui/Elements/LinkElements';
-import { ScreenReaderItemStyle } from 'Client/ui/Elements/AccessibilityElements';
+import React, { FC } from 'react';
+import i18n from 'i18next';
+import { NewWindowIconStyle } from '@make.org/ui/elements/LinkElements';
+import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { NewWindowLinkStyle } from './style';
 
 type Props = {
-  linkUrl: string,
-  linkText: string,
-  tracking: () => void,
+  linkUrl: string;
+  linkText: string;
+  tracking: () => void;
 };
 
-export const SidebarNewWindowLink = ({
+export const SidebarNewWindowLink: FC<Props> = ({
   linkUrl,
   linkText,
   tracking,
-}: Props) => (
+}) => (
   <NewWindowLinkStyle
     href={linkUrl}
     target="_blank"

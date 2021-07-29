@@ -1,21 +1,20 @@
-// @flow
-import { type StateRoot } from 'Shared/store/types';
-import { TileWithTitle } from 'Client/ui/Elements/TileWithTitle';
-import { DeprecatedCollapse } from 'Client/ui/Elements/Collapse/DeprecatedCollapse';
-import React from 'react';
-import { i18n } from 'Shared/i18n';
-import { type QuestionType } from 'Shared/types/question';
-import { isInProgress } from 'Shared/helpers/date';
-import { isGreatCause } from 'Shared/helpers/question';
-import { useSelector } from 'react-redux';
-import { matchMobileDevice } from 'Shared/helpers/styled';
+import { TileWithTitle } from '@make.org/ui/elements/TileWithTitle';
+import { DeprecatedCollapse } from '@make.org/ui/elements/Collapse/DeprecatedCollapse';
+import React, { FC } from 'react';
+import i18n from 'i18next';
+import { QuestionType } from '@make.org/types';
+import { isInProgress } from '@make.org/utils/helpers/date';
+import { isGreatCause } from '@make.org/utils/helpers/question';
+import { useAppContext } from '@make.org/store';
+import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { Partners } from '../Partners';
 
 type Props = {
-  question: QuestionType,
+  question: QuestionType;
 };
-export const PartnersTile = ({ question }: Props) => {
-  const { device } = useSelector((state: StateRoot) => state.appConfig);
+export const PartnersTile: FC<Props> = ({ question }) => {
+  const { state } = useAppContext();
+  const { device } = state.appConfig;
   const isMobile = matchMobileDevice(device);
   const questionIsGreatCause = isGreatCause(question.operationKind);
 

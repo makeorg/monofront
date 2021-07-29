@@ -1,19 +1,18 @@
-// @flow
-import React from 'react';
-import { i18n } from 'Shared/i18n';
-import { trackClickLearnMore } from 'Shared/services/Tracking';
-import { ResultCardSidebar } from 'Client/features/consultation/Results/ResultCardSidebar';
-import { ScreenReaderItemStyle } from 'Client/ui/Elements/AccessibilityElements';
+import React, { FC } from 'react';
+import i18n from 'i18next';
+import { trackClickLearnMore } from '@make.org/utils/services/Tracking';
+import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
+import { ResultCardSidebar } from '../ResultCardSidebar';
 import { ResultContextNewWindowLinkStyle, NewWindowIconStyle } from './style';
 
 type Props = {
   /** About link to render */
-  aboutUrl: string,
+  aboutUrl: string;
   /** context description to render */
-  context: string,
+  context: string;
 };
 
-export const ResultsContext = ({ aboutUrl, context }: Props) => (
+export const ResultsContext: FC<Props> = ({ aboutUrl, context }) => (
   <>
     <ResultCardSidebar
       title={i18n.t('consultation.results.context')}
@@ -24,7 +23,7 @@ export const ResultsContext = ({ aboutUrl, context }: Props) => (
         href={aboutUrl}
         target="_blank"
         rel="noopener"
-        onClick={() => trackClickLearnMore()}
+        onClick={trackClickLearnMore}
       >
         {i18n.t('consultation.cards.about.link')}
         <NewWindowIconStyle />

@@ -1,29 +1,33 @@
-// @flow
-import React from 'react';
+import React, { FC } from 'react';
+import { useAppContext } from '@make.org/store';
 import {
-  InnerPagesNavigation,
-  type PageNavigationType,
-} from 'Client/features/navigation/Pages';
-import { useSelector } from 'react-redux';
-import { getExploreLink, getParticipateLink } from 'Shared/helpers/url';
-import { i18n } from 'Shared/i18n';
-import { selectCurrentQuestion } from 'Shared/store/selectors/questions.selector';
-import { type QuestionType } from 'Shared/types/question';
+  getExploreLink,
+  getParticipateLink,
+} from '@make.org/utils/helpers/url';
+import i18n from 'i18next';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { QuestionType } from '@make.org/types';
 import { useParams } from 'react-router';
-import { CONSULTATION_NAVIGATION } from 'Shared/constants/ids';
-import { scrollToElementId, matchDesktopDevice } from 'Shared/helpers/styled';
+import { CONSULTATION_NAVIGATION } from '@make.org/utils/constants/ids';
+import {
+  scrollToElementId,
+  matchDesktopDevice,
+} from '@make.org/utils/helpers/styled';
 import {
   trackClickExploreTab,
   trackClickParticipateTab,
-} from 'Shared/services/Tracking';
+} from '@make.org/utils/services/Tracking';
+import {
+  InnerPagesNavigation,
+  PageNavigationType,
+} from '../../Navigation/Pages';
 import { NavigationWrapperStyle, NavigationInnerStyle } from './style';
 
-export const ParticipateNavigation = () => {
-  const { country, pageId } = useParams();
-  const question: QuestionType = useSelector((state: StateRoot) =>
-    selectCurrentQuestion(state)
-  );
-  const { device } = useSelector((state: StateRoot) => state.appConfig);
+export const ParticipateNavigation: FC = () => {
+  const { country, pageId } = useParams<{ country: string; pageId: string }>();
+  const { state } = useAppContext();
+  const question: QuestionType = selectCurrentQuestion(state);
+  const { device } = state.appConfig;
   const isDesktop = matchDesktopDevice(device);
   const NavigationPages: PageNavigationType[] = [
     {
@@ -46,7 +50,7 @@ export const ParticipateNavigation = () => {
       label: isDesktop
         ? i18n.t('consultation.navigation.explore_desktop')
         : i18n.t('consultation.navigation.explore_mobile'),
-      routeToMatch: getExploreLink(country, question.slug, pageId),
+      routeToMatch: getExploreLink(country, question.slug, Number(pageId)),
     },
   ];
 

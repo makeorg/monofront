@@ -1,20 +1,18 @@
-// @flow
-import React, { useRef } from 'react';
+import React, { FC, useRef } from 'react';
 import { useLocation } from 'react-router';
-import { type StateRoot } from 'Shared/store/types';
-import { type SliderParamsType } from 'Shared/types/views';
-import { i18n } from 'Shared/i18n';
+import { SliderParamsType } from '@make.org/types';
+import i18n from 'i18next';
 import {
   SvgChevronArrowLeft,
   SvgChevronArrowRight,
-} from 'Client/ui/Svg/elements';
-import { ChartType } from 'Client/ui/Data';
-import { useSlider } from 'Client/hooks/useSlider';
-import { ScreenReaderItemStyle } from 'Client/ui/Elements/AccessibilityElements';
-import { UnstyledListStyle } from 'Client/ui/Elements/ListElements';
-import { isResultsPage } from 'Shared/routes';
-import { matchMobileDevice } from 'Shared/helpers/styled';
-import { useSelector } from 'react-redux';
+} from '@make.org/ui/Svg/elements';
+import { ChartType } from '@make.org/ui/components/Data';
+import { useSlider } from '@make.org/utils/hooks/useSlider';
+import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
+import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
+import { isResultsPage } from '@make.org/utils/routes';
+import { matchMobileDevice } from '@make.org/utils/helpers/styled';
+import { useAppContext } from '@make.org/store';
 import {
   ResultsSliderStyle,
   ResultsSliderArrowsStyle,
@@ -22,14 +20,15 @@ import {
 } from './style';
 
 type Props = {
-  data: any[],
-  sliderName: string,
-  styleClass?: string,
+  data: any[];
+  sliderName: string;
+  styleClass?: string;
 };
 
-export const ResultsSlider = ({ data, sliderName, styleClass }: Props) => {
+export const ResultsSlider: FC<Props> = ({ data, sliderName, styleClass }) => {
   const sliderRef = useRef();
-  const { device } = useSelector((state: StateRoot) => state.appConfig);
+  const { state } = useAppContext();
+  const { device } = state.appConfig;
   const isMobile = matchMobileDevice(device);
   const dataLength = data.length;
   const sliderParams: SliderParamsType = {

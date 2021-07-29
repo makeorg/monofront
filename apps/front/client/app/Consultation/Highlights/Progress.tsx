@@ -1,13 +1,13 @@
-import { ScreenReaderItemStyle } from 'Client/ui/Elements/AccessibilityElements';
-import React from 'react';
+import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
+import React, { FC } from 'react';
 import { useLocation } from 'react-router';
-import { type QuestionHighlightsType } from 'Shared/types/question';
-import { useSelector } from 'react-redux';
-import { i18n } from 'Shared/i18n';
-import { selectCurrentQuestion } from 'Shared/store/selectors/questions.selector';
-import { getVotesRatio } from 'Shared/helpers/voteResult';
-import { isResultsPage } from 'Shared/routes';
-import { formatCountWithLanguage } from 'Shared/helpers/numberFormatter';
+import { QuestionHighlightsType } from '@make.org/types';
+import { useAppContext } from '@make.org/store';
+import i18n from 'i18next';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { getVotesRatio } from '@make.org/utils/helpers/voteResult';
+import { isResultsPage } from '@make.org/utils/routes';
+import { formatCountWithLanguage } from '@make.org/utils/helpers/numberFormatter';
 import {
   ProgressWrapperStyle,
   ProgressInnerStyle,
@@ -19,13 +19,14 @@ import {
   ProgressDescriptionStyle,
 } from './style';
 
-export const Progress = () => {
+export const Progress: FC = () => {
+  const { state } = useAppContext();
   const {
     highlights,
   }: {
-    highlights: QuestionHighlightsType,
-  } = useSelector((state: StateRoot) => selectCurrentQuestion(state));
-  const { language } = useSelector((state: StateRoot) => state.appConfig);
+    highlights: QuestionHighlightsType;
+  } = selectCurrentQuestion(state);
+  const { language } = state.appConfig;
   const { votesCount, votesTarget } = highlights;
   const votesPercent = getVotesRatio(votesCount, votesTarget);
   const location = useLocation();

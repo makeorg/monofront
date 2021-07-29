@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { LinkAsRedButton } from 'Client/ui/Elements/LinkElements';
-import { UnstyledListStyle } from 'Client/ui/Elements/ListElements';
-import { intToPx } from 'Shared/helpers/styled';
-import { Breakpoints } from 'Client/app/assets/vars/Breakpoints';
+import { LinkAsRedButton } from '@make.org/ui/elements/LinkElements';
+import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
+import { intToPx } from '@make.org/utils/helpers/styled';
+import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 
 export const ParticipateButtonStyle = styled(LinkAsRedButton)`
   margin: 10px 0 15px;

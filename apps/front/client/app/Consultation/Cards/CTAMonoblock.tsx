@@ -1,5 +1,4 @@
-// @flow
-import React from 'react';
+import React, { FC } from 'react';
 import {
   CardStyle,
   CardTitleStyle,
@@ -8,24 +7,24 @@ import {
 } from './style';
 
 type Props = {
-  icon: any,
-  title: string,
-  description: string,
-  linkText: string,
-  linkHref: string,
-  classes?: string,
-  onClickAction?: () => void,
+  icon: any;
+  title: string;
+  description: string;
+  linkText: string;
+  linkHref: string;
+  classes?: string;
+  onClickAction?: () => void;
 };
 
-export const CTAMonoBlock = ({
+export const CTAMonoBlock: FC<Props> = ({
   icon,
   title,
   description,
   linkText,
   linkHref,
   classes = '',
-  onClickAction = () => {},
-}: Props) => (
+  onClickAction = () => null,
+}) => (
   <CardStyle className={classes}>
     {icon}
     <CardTitleStyle>{title}</CardTitleStyle>

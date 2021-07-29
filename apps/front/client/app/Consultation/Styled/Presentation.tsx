@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Image } from 'Client/ui/Image';
+import { Image } from '@make.org/ui/components/Image';
 
 export const DescriptionImageStyle = styled(Image)`
   border-radius: 8px 8px 0 0;

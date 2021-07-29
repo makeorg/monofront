@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { color } from 'athena-design-tokens';
-import { SvgLightning, SvgThumbsUp } from 'Client/ui/Svg/elements';
+import { SvgLightning, SvgThumbsUp } from '@make.org/ui/Svg/elements';
 
 export const ResultsIconsStyle = {
   width: '16px',

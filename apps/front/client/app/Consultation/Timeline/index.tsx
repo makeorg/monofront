@@ -1,22 +1,24 @@
-// @flow
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { FC } from 'react';
+import { useAppContext } from '@make.org/store';
 import { useLocation } from 'react-router';
-import { DateHelper, isInProgress, selectStep } from 'Shared/helpers/date';
-import { i18n } from 'Shared/i18n';
-import { selectCurrentQuestion } from 'Shared/store/selectors/questions.selector';
-import { type StateRoot } from 'Shared/store/types';
-import { isGreatCause } from 'Shared/helpers/question';
-import { CONTACT_EMAIL } from 'Shared/constants/config';
-import { type QuestionType } from 'Shared/types/question';
-import { isResultsPage } from 'Shared/routes';
+import {
+  DateHelper,
+  isInProgress,
+  selectStep,
+} from '@make.org/utils/helpers/date';
+import i18n from 'i18next';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { isGreatCause } from '@make.org/utils/helpers/question';
+import { CONTACT_EMAIL } from '@make.org/utils/constants/config';
+import { QuestionType } from '@make.org/types';
+import { isResultsPage } from '@make.org/utils/routes';
 import { buildTimeline, getStepTitle } from 'Client/helper/timeline';
 import {
   DATE_DD_MMMM_FORMAT,
   DATE_DD_MMMM_YYYY_FORMAT,
   DATE_MMMM_YYYY_FORMAT,
-} from 'Shared/constants/date';
-import { CONSULTATION_TIMELINE_ACTIVE } from 'Shared/constants/featureFlipping';
+} from '@make.org/utils/constants/date';
+import { CONSULTATION_TIMELINE_ACTIVE } from '@make.org/utils/constants/featureFlipping';
 import { checkIsFeatureActivated } from 'Client/helper/featureFlipping';
 import {
   TimelineWrapperStyle,
@@ -32,19 +34,19 @@ import {
 } from './style';
 
 type Props = {
-  title: string,
-  dateText: string,
-  description: string,
-  withLink?: boolean,
+  title: string;
+  dateText: string;
+  description: string;
+  withLink?: boolean;
 };
 
-const TimelineItem = ({
+const TimelineItem: FC<Props> = ({
   title,
   dateText,
   description,
   withLink = false,
   isCurrent = false,
-}: Props) => (
+}) => (
   <TimelineItemWrapperStyle>
     <TimelineItemTitleStyle>
       {title}
@@ -60,10 +62,9 @@ const TimelineItem = ({
   </TimelineItemWrapperStyle>
 );
 
-export const Timeline = () => {
-  const question: QuestionType = useSelector((state: StateRoot) =>
-    selectCurrentQuestion(state)
-  );
+export const Timeline: FC = () => {
+  const { state } = useAppContext();
+  const question: QuestionType = selectCurrentQuestion(state);
   const { timeline } = question;
   const { result, workshop, action } = timeline;
   const oneStepTimeline = !result && !workshop && !action;

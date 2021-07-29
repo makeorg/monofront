@@ -1,20 +1,19 @@
-import { color } from 'athena-design-tokens/dist/color';
-import { typography } from 'athena-design-tokens/dist/typography';
-import { Breakpoints } from 'Client/app/assets/vars/Breakpoints';
-import { Elements } from 'Client/app/assets/vars/Elements';
-import { MakeFonts } from 'Client/app/assets/vars/Fonts';
+import { color, typography } from 'athena-design-tokens';
+import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { Elements } from '@make.org/assets/vars/Elements';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import {
   LinkAsRedButtonStyle,
   RedButtonStyle,
-} from 'Client/ui/Elements/Buttons/V2/style';
-import { FlexElementStyle } from 'Client/ui/Elements/FlexElements';
-import { ParagraphStyle } from 'Client/ui/Elements/ParagraphElements';
-import { SvgExternalLink, SvgLock } from 'Client/ui/Svg/elements';
+} from '@make.org/ui/elements/ButtonsElements';
+import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
+import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
+import { SvgExternalLink, SvgLock } from '@make.org/ui/Svg/elements';
 import { Link } from 'react-router-dom';
-import { intToPx } from 'Shared/helpers/styled';
+import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 
-export const CardStyle = styled.section`
+export const CardStyle = styled.section<{ isKeywordActive?: boolean }>`
   display: flex;
   flex-flow: column;
   justify-content: space-between;

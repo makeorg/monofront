@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { color, typography } from 'athena-design-tokens';
-import { Breakpoints } from 'Client/app/assets/vars/Breakpoints';
-import { intToPx } from 'Shared/helpers/styled';
-import { ShadowColors } from 'Client/app/assets/vars/Colors';
-import { MakeFonts } from 'Client/app/assets/vars/Fonts';
-import { Elements } from 'Client/app/assets/vars/Elements';
-import { ThirdLevelTitleStyle } from 'Client/ui/Elements/TitleElements';
-import { ParagraphStyle } from 'Client/ui/Elements/ParagraphElements';
-import { ColumnToRowElementStyle } from 'Client/ui/Elements/FlexElements';
+import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { intToPx } from '@make.org/utils/helpers/styled';
+import { ShadowColors } from '@make.org/assets/vars/Colors';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { Elements } from '@make.org/assets/vars/Elements';
+import { ThirdLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
+import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
+import { ColumnToRowElementStyle } from '@make.org/ui/elements/FlexElements';
 
 export const ParticipateWrapperStyle = styled.div`
   background-color: ${props =>

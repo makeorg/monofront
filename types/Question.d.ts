@@ -142,6 +142,7 @@ export type QuestionHighlightsType = {
   votesTarget: number;
   votesCount: number;
   participantsCount: number;
+  proposalsCount: number;
 };
 
 export type QuestionTimelineType = {
@@ -159,13 +160,13 @@ export type QuestionType = {
   countries: string[];
   language: string;
   allowedSources: string[];
-  startDate?: string | null;
-  endDate?: string | null;
+  startDate?: string;
+  endDate?: string;
   landingSequenceId: string;
   canPropose: boolean;
   operationKind: 'PUBLIC_CONSULTATION' | 'PRIVATE_CONSULTATION' | 'GREAT_CAUSE';
   sequenceConfig: QuestionExtraSlidesConfigType;
-  aboutUrl: Location;
+  aboutUrl: string;
   partners: PartnerType[];
   theme: QuestionThemeType;
   consultationImage?: string;

@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { color, typography } from 'athena-design-tokens';
-import { intToPx } from 'Shared/helpers/styled';
-import { Breakpoints } from 'Client/app/assets/vars/Breakpoints';
-import { UnstyledListStyle } from 'Client/ui/Elements/ListElements';
-import { Elements } from 'Client/app/assets/vars/Elements';
-import { MakeFonts } from 'Client/app/assets/vars/Fonts';
-import { SvgLightning } from 'Client/ui/Svg/elements';
-import { AvatarStyle } from 'Client/ui/Avatar/style';
+import { intToPx } from '@make.org/utils/helpers/styled';
+import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
+import { Elements } from '@make.org/assets/vars/Elements';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { SvgLightning } from '@make.org/ui/Svg/elements';
+import { AvatarStyle } from '@make.org/ui/components/Avatar/style';
 
 export const ResultsProposalsListStyle = styled(UnstyledListStyle)`
   width: 100%;

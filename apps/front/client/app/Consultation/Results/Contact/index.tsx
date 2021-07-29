@@ -1,14 +1,13 @@
-// @flow
-import React from 'react';
-import { i18n } from 'Shared/i18n';
-import { CONTACT_EMAIL } from 'Shared/constants/config';
-import { type QuestionType } from 'Shared/types/question';
-import { ResultCardSidebar } from 'Client/features/consultation/Results/ResultCardSidebar';
+import React, { FC } from 'react';
+import i18n from 'i18next';
+import { CONTACT_EMAIL } from '@make.org/utils/constants/config';
+import { QuestionType } from '@make.org/types';
+import { ResultCardSidebar } from '../ResultCardSidebar';
 
 type Props = {
-  question: QuestionType,
+  question: QuestionType;
 };
-export const ResultsContact = ({ question }: Props) => {
+export const ResultsContact: FC<Props> = ({ question }) => {
   const mailToHref = `mailto:${CONTACT_EMAIL}?subject=${i18n.t(
     'consultation.results.download.email_object'
   )} - ${question.question}`;

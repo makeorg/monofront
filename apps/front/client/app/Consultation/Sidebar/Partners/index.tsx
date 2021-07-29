@@ -1,31 +1,30 @@
-// @flow
-import React from 'react';
+import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { type StateRoot } from 'Shared/store/types';
-import { i18n } from 'Shared/i18n';
-import { type QuestionType, type PartnerType } from 'Shared/types/question';
-import { FourthLevelTitleStyle } from 'Client/ui/Elements/TitleElements';
-import { ParagraphStyle } from 'Client/ui/Elements/ParagraphElements';
-import { TileSeparatorStyle } from 'Client/ui/Elements/TileWithTitle/style';
-import { getPartnerAnchor, getSequenceLink } from 'Shared/helpers/url';
+import i18n from 'i18next';
+import { QuestionType, PartnerType } from '@make.org/types';
+import { FourthLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
+import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
+import { TileSeparatorStyle } from '@make.org/ui/elements/TileWithTitle/style';
+import { getPartnerAnchor, getSequenceLink } from '@make.org/utils/helpers/url';
 import {
   trackClickLearnMore,
   trackOpenSequence,
-} from 'Shared/services/Tracking';
-import { COMPONENT_PARAM_SEQUENCE } from 'Shared/constants/tracking';
-import { isInProgress } from 'Shared/helpers/date';
-import { ParticipateButtonStyle } from 'Client/features/consultation/Styled/Partners';
-import { SidebarNewWindowLink } from 'Client/features/consultation/Sidebar/Link';
-import { ACTION_PARTNER } from 'Shared/constants/partner';
-import { useSelector } from 'react-redux';
+} from '@make.org/utils/services/Tracking';
+import { COMPONENT_PARAM_SEQUENCE } from '@make.org/utils/constants/tracking';
+import { isInProgress } from '@make.org/utils/helpers/date';
+import { ACTION_PARTNER } from '@make.org/utils/constants/partner';
+import { useAppContext } from '@make.org/store';
+import { ParticipateButtonStyle } from '../../Styled/Partners';
+import { SidebarNewWindowLink } from '../Link';
 import { PartnersList } from './List';
 
 type Props = {
-  question: QuestionType,
+  question: QuestionType;
 };
 
-export const Partners = ({ question }: Props) => {
-  const { country } = useSelector((state: StateRoot) => state.appConfig);
+export const Partners: FC<Props> = ({ question }) => {
+  const { state } = useAppContext();
+  const { country } = state.appConfig;
   const sequenceLink = getSequenceLink(country, question.slug);
 
   const partners: PartnerType[] = question.partners

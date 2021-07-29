@@ -1,30 +1,27 @@
-// @flow
-import React from 'react';
-import { type StateRoot } from 'Shared/store/types';
-import { type QuestionType } from 'Shared/types/question';
-import { getSequenceLink } from 'Shared/helpers/url';
-import { i18n } from 'Shared/i18n';
+import React, { FC } from 'react';
+import { QuestionType } from '@make.org/types';
+import { getSequenceLink } from '@make.org/utils/helpers/url';
+import i18n from 'i18next';
 import { Link } from 'react-router-dom';
-import { trackOpenSequence } from 'Shared/services/Tracking';
-import { COMPONENT_PARAM_SEQUENCE } from 'Shared/constants/tracking';
-import { LinkAsRedButton } from 'Client/ui/Elements/LinkElements';
+import { trackOpenSequence } from '@make.org/utils/services/Tracking';
+import { COMPONENT_PARAM_SEQUENCE } from '@make.org/utils/constants/tracking';
+import { LinkAsRedButton } from '@make.org/ui/elements/LinkElements';
+import { useAppContext } from '@make.org/store';
+import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import {
   ParticipateWrapperStyle,
   ParticipateInnerStyle,
   ParticipateSeparatorStyle,
   ParticipateIntroductionStyle,
-} from 'Client/features/consultation/Styled/ParticipateBanner';
-import { useSelector } from 'react-redux';
-import { matchMobileDevice } from 'Shared/helpers/styled';
+} from '../Styled/ParticipateBanner';
 
 type Props = {
-  question: QuestionType,
+  question: QuestionType;
 };
 
-export const ParticipateBanner = ({ question }: Props) => {
-  const { country, device } = useSelector(
-    (state: StateRoot) => state.appConfig
-  );
+export const ParticipateBanner: FC<Props> = ({ question }) => {
+  const { state } = useAppContext();
+  const { country, device } = state.appConfig;
   const isMobile = matchMobileDevice(device);
   const sequenceLink = getSequenceLink(country, question.slug);
 

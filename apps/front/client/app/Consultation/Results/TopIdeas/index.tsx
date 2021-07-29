@@ -1,12 +1,14 @@
-// @flow
-import { UnstyledListStyle } from 'Client/ui/Elements/ListElements';
-import React from 'react';
-import { voteStaticParams, VOTE_AGREE_KEY } from 'Shared/constants/vote';
-import { i18n } from 'Shared/i18n';
-import { ThemeItemType } from 'Shared/types/question';
-import { Collapse } from 'Client/ui/Elements/Collapse';
-import { ColumnToRowElementStyle } from 'Client/ui/Elements/FlexElements';
-import { VoteIconStyle } from 'Client/ui/Elements/Buttons/style';
+import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
+import React, { FC } from 'react';
+import {
+  voteStaticParams,
+  VOTE_AGREE_KEY,
+} from '@make.org/utils/constants/vote';
+import i18n from 'i18next';
+import { ThemeItemType } from '@make.org/types';
+import { Collapse } from '@make.org/ui/components/Collapse';
+import { ColumnToRowElementStyle } from '@make.org/ui/elements/FlexElements';
+import { VoteIconStyle } from '@make.org/ui/elements/ButtonsElements';
 import {
   TopIdeaListItemStyle,
   TopIdeaItemTitleStyle,
@@ -19,13 +21,13 @@ import {
 
 type Props = {
   topIdeas: {
-    first_theme: ThemeItemType,
-    second_theme: ThemeItemType,
-  },
-  question: QuestionType,
+    first_theme: ThemeItemType;
+    second_theme: ThemeItemType;
+  };
+  question: QuestionType;
 };
 
-export const TopIdeas = ({ topIdeas, question }: Props) => {
+export const TopIdeas: FC<Props> = ({ topIdeas, question }) => {
   const voteAttributes = voteStaticParams[VOTE_AGREE_KEY];
 
   return (

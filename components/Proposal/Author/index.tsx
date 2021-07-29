@@ -30,7 +30,7 @@ type Props = {
   /** Object with author's properties */
   proposal: ProposalType;
   /** Enable sequence context & specials styles */
-  isSequence: boolean;
+  isSequence?: boolean;
 };
 
 export const ProposalAuthorAge: React.FC<{ age: number | null }> = ({

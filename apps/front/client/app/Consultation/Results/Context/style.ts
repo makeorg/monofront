@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { MakeFonts } from 'Client/app/assets/vars/Fonts';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { typography } from 'athena-design-tokens';
-import { SvgExternalLinkPlain } from 'Client/ui/Svg/elements';
-import { intToPx } from 'Shared/helpers/styled';
+import { SvgExternalLinkPlain } from '@make.org/ui/Svg/elements';
+import { intToPx } from '@make.org/utils/helpers/styled';
 
 const ResultContextLinkStyle = `
 display: inline-flex;

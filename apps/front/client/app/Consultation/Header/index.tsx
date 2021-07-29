@@ -1,20 +1,21 @@
-// @flow
-import React from 'react';
-import { type StateRoot } from 'Shared/store/types';
-import { useSelector } from 'react-redux';
+import React, { FC } from 'react';
+import { useAppContext } from '@make.org/store';
 import { useLocation } from 'react-router';
-import { Breadcrumbs } from 'Client/app/Breadcrumbs/Breadcrumbs';
-import { i18n } from 'Shared/i18n';
+import i18n from 'i18next';
 import {
   getBrowseConsultationsLink,
   getBrowseResultsLink,
-} from 'Shared/helpers/url';
-import { getCurrentLabel } from 'Shared/helpers/consultation';
-import { type QuestionType, type PartnerType } from 'Shared/types/question';
-import { ScreenReaderItemStyle } from 'Client/ui/Elements/AccessibilityElements';
-import { selectCurrentQuestion } from 'Shared/store/selectors/questions.selector';
-import { FOUNDER_PARTNER } from 'Shared/constants/partner';
-import { isResultsPage } from 'Shared/routes';
+} from '@make.org/utils/helpers/url';
+import { getCurrentLabel } from '@make.org/utils/helpers/consultation';
+import { QuestionType, PartnerType } from '@make.org/types';
+import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { FOUNDER_PARTNER } from '@make.org/utils/constants/partner';
+import { isResultsPage } from '@make.org/utils/routes';
+import {
+  Breadcrumbs,
+  BreadcrumbsPagesType,
+} from '../../Breadcrumbs/Breadcrumbs';
 import {
   HeaderWrapperStyle,
   HeaderContentStyle,
@@ -24,11 +25,10 @@ import {
 } from './style';
 import { PartnersList } from './PartnerLink';
 
-export const ParticipateHeader = () => {
-  const { country } = useSelector((state: StateRoot) => state.appConfig);
-  const question: QuestionType = useSelector((state: StateRoot) =>
-    selectCurrentQuestion(state)
-  );
+export const ParticipateHeader: FC = () => {
+  const { state } = useAppContext();
+  const { country } = state.appConfig;
+  const question: QuestionType = selectCurrentQuestion(state);
   const founders: PartnerType[] = question.partners
     ? question.partners.filter(
         partner => partner.partnerKind === FOUNDER_PARTNER

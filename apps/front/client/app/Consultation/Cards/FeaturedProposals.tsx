@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { i18n } from 'Shared/i18n';
-import { UnstyledListStyle } from 'Client/ui/Elements/ListElements';
-import { QuestionService } from 'Shared/services/Question';
-import { DeprecatedProposalAuthor } from 'Client/ui/Proposal/DeprecatedAuthor';
-import { getProposalLink, getExploreLink } from 'Shared/helpers/url';
-import { trackClickExploreTab } from 'Shared/services/Tracking';
-import { Spinner } from 'Client/ui/Elements/Loading/Spinner';
-import { CONSULTATION_NAVIGATION } from 'Shared/constants/ids';
-import { scrollToElementId } from 'Shared/helpers/styled';
+import i18n from 'i18next';
+import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
+import { QuestionService } from '@make.org/utils/services/Question';
+import { DeprecatedProposalAuthor } from '@make.org/components/Proposal/DeprecatedAuthor';
+import { getProposalLink, getExploreLink } from '@make.org/utils/helpers/url';
+import { trackClickExploreTab } from '@make.org/utils/services/Tracking';
+import { Spinner } from '@make.org/ui/components/Loading/Spinner';
+import { CONSULTATION_NAVIGATION } from '@make.org/utils/constants/ids';
+import { scrollToElementId } from '@make.org/utils/helpers/styled';
+import { ProposalType, QuestionType } from '@make.org/types';
 import {
   CardStyle,
   CardAltTitleStyle,
@@ -18,12 +19,14 @@ import {
 } from './style';
 
 type Props = {
-  question: QuestionType,
+  question: QuestionType;
 };
 
-export const FeaturedProposals = ({ question }: Props) => {
-  const { country, pageId } = useParams();
-  const [featuredProposals, setFeaturedProposals] = useState([]);
+export const FeaturedProposals: FC<Props> = ({ question }) => {
+  const { country, pageId } = useParams<{ country: string; pageId: string }>();
+  const [featuredProposals, setFeaturedProposals] = useState<ProposalType[]>(
+    []
+  );
   const [isLoading, setIsLoading] = useState(false);
   const maxPartnerProposals = 1;
   const limit = 4;
@@ -89,7 +92,7 @@ export const FeaturedProposals = ({ question }: Props) => {
         )}
       </>
       <ExploreLinkStyle
-        to={getExploreLink(country, question.slug, pageId)}
+        to={getExploreLink(country, question.slug, Number(pageId))}
         onClick={handleClick}
       >
         {i18n.t('consultation.navigation.explore_desktop')}

@@ -1,9 +1,10 @@
-// @flow
-import React from 'react';
-import { isGreatCause } from 'Shared/helpers/question';
-import { type QuestionType } from 'Shared/types/question';
-import { i18n } from 'Shared/i18n';
-import { DateHelper } from 'Shared/helpers/date';
+import React, { FC } from 'react';
+import { isGreatCause } from '@make.org/utils/helpers/question';
+import { QuestionType } from '@make.org/types';
+import i18n from 'i18next';
+import { DateHelper } from '@make.org/utils/helpers/date';
+import { Image } from '@make.org/ui/components/Image';
+import { DATE_CAPITALIZE_LL_FORMAT } from '@make.org/utils/constants/date';
 import {
   IntroBannerTitleStyle,
   GreatCauseIntroLabelStyle,
@@ -12,15 +13,13 @@ import {
   DefaultBannerTitleStyle,
   DefaultBannerMainContainer,
   DefaultBannerTimeStyle,
-} from 'Client/features/consultation/Styled/IntroBanner';
-import { Image } from 'Client/ui/Image';
-import { DATE_CAPITALIZE_LL_FORMAT } from 'Shared/constants/date';
+} from '../Styled/IntroBanner';
 
 type Props = {
-  question: QuestionType,
+  question: QuestionType;
 };
 
-export const IntroBanner = ({ question }: Props) =>
+export const IntroBanner: FC<Props> = ({ question }) =>
   isGreatCause(question.operationKind) ? (
     <IntroWrapperStyle as="header" id="intro">
       {question.consultationImage ? (

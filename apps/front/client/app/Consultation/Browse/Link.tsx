@@ -1,30 +1,29 @@
-// @flow
-import React from 'react';
-import { type StateRoot } from 'Shared/store/types';
-import { type HomeQuestionType } from 'Shared/types/question';
-import { NewWindowIconStyle } from 'Client/ui/Elements/LinkElements';
+import React, { FC } from 'react';
+import { HomeQuestionType } from '@make.org/types';
+import { NewWindowIconStyle } from '@make.org/ui/elements/LinkElements';
 import { Link } from 'react-router-dom';
-import { i18n } from 'Shared/i18n';
+import i18n from 'i18next';
 import {
   getDynamicConsultationLink,
   getParticipateLink,
-} from 'Shared/helpers/url';
-import { scrollToTop } from 'Shared/helpers/styled';
-import { isInProgress } from 'Shared/helpers/date';
+} from '@make.org/utils/helpers/url';
+import { scrollToTop } from '@make.org/utils/helpers/styled';
+import { isInProgress } from '@make.org/utils/helpers/date';
 import {
   trackClickResults,
   trackClickParticipate,
-} from 'Shared/services/Tracking';
-import { useSelector } from 'react-redux';
-import { ScreenReaderItemStyle } from 'Client/ui/Elements/AccessibilityElements';
+} from '@make.org/utils/services/Tracking';
+import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
+import { useAppContext } from '@make.org/store';
 import { ConsultationRedLinkElementStyle } from './style';
 
 type Props = {
-  question: HomeQuestionType,
-  label: string,
+  question: HomeQuestionType;
+  label: string;
 };
-export const ConsultationLink = ({ question, label }: Props) => {
-  const { country } = useSelector((state: StateRoot) => state.appConfig);
+export const ConsultationLink: FC<Props> = ({ question, label }) => {
+  const { state } = useAppContext();
+  const { country } = state.appConfig;
   const { questionSlug, resultsLink, aboutUrl } = question;
   const consultationPath = getParticipateLink(country, questionSlug);
 
@@ -62,7 +61,11 @@ export const ConsultationLink = ({ question, label }: Props) => {
       <ConsultationRedLinkElementStyle
         as="a"
         // $FlowFixMe : flow cannot understrand desctructuring externalResultLink
-        href={externalResultLink ? resultsLink.value : aboutUrl || '#'}
+        href={
+          externalResultLink
+            ? resultsLink && resultsLink.value
+            : aboutUrl || '#'
+        }
         target="_blank"
         rel="noopener"
         onClick={handleClick}
@@ -85,8 +88,7 @@ export const ConsultationLink = ({ question, label }: Props) => {
           ? getDynamicConsultationLink(
               country,
               questionSlug,
-              // $FlowFixMe : flow cannot understrand desctructuring internalResultLink
-              resultsLink.value
+              resultsLink && resultsLink.value
             )
           : consultationPath
       }

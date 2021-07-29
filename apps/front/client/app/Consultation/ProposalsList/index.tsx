@@ -1,18 +1,17 @@
-// @flow
-import { ScreenReaderItemStyle } from 'Client/ui/Elements/AccessibilityElements';
-import { ProposalAuthor } from 'Client/ui/Proposal/Author';
-import { ProposalSkeleton } from 'Client/ui/Skeletons/Proposal';
-import React from 'react';
-import { getProposalLink } from 'Shared/helpers/url';
-import { i18n } from 'Shared/i18n';
-import { type ProposalType } from 'Shared/types/proposal';
-import { Vote } from 'Client/features/vote';
-import { DateHelper } from 'Shared/helpers/date';
+import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
+import { ProposalAuthor } from '@make.org/components/Proposal/Author';
+import { ProposalSkeleton } from '@make.org/ui/components/Skeletons/Proposal';
+import React, { FC } from 'react';
+import { getProposalLink } from '@make.org/utils/helpers/url';
+import i18n from 'i18next';
+import { ProposalType } from '@make.org/types';
+import { Vote } from '@make.org/components/Vote';
+import { DateHelper } from '@make.org/utils/helpers/date';
 import { useParams } from 'react-router';
 import {
   DATE_CAPITALIZE_L_FORMAT,
   DATE_LOWERCASE_LL_FORMAT,
-} from 'Shared/constants/date';
+} from '@make.org/utils/constants/date';
 import {
   ProposalsListStyle,
   ProposalListItemStyle,
@@ -22,12 +21,12 @@ import {
 } from './style';
 
 type Props = {
-  isLoading: boolean,
-  proposals: ProposalType[] | [],
+  isLoading: boolean;
+  proposals: ProposalType[] | [];
 };
 
 type SkeletonProps = {
-  id: string,
+  id: string;
 };
 
 const generateSkeletonsList = (count: number) => {
@@ -40,8 +39,8 @@ const generateSkeletonsList = (count: number) => {
   return skeletonsList;
 };
 
-export const ProposalsList = ({ isLoading, proposals }: Props) => {
-  const { country } = useParams();
+export const ProposalsList: FC<Props> = ({ isLoading, proposals }) => {
+  const { country } = useParams<{ country: string }>();
   const skeletonsList: SkeletonProps[] = generateSkeletonsList(12);
   const hasProposals = proposals.length > 0;
 
@@ -88,10 +87,12 @@ export const ProposalsList = ({ isLoading, proposals }: Props) => {
                 {i18n.t('proposal_card.author.date')}
               </ScreenReaderItemStyle>
               <ProposalDateStyle
-                dateTime={DateHelper.localizedAndFormattedDate(
-                  proposal.createdAt,
-                  DATE_CAPITALIZE_L_FORMAT
-                )}
+                dateTime={
+                  DateHelper.localizedAndFormattedDate(
+                    proposal.createdAt,
+                    DATE_CAPITALIZE_L_FORMAT
+                  ) || ''
+                }
               >
                 {DateHelper.localizedAndFormattedDate(
                   proposal.createdAt,

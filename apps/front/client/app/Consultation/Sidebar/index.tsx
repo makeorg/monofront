@@ -1,24 +1,23 @@
-// @flow
-import React from 'react';
-import { type StateRoot } from 'Shared/store/types';
-import { type QuestionType } from 'Shared/types/question';
-import { i18n } from 'Shared/i18n';
-import { isGreatCause } from 'Shared/helpers/question';
-import { ConsultationPageSidebarStyle } from 'Client/pages/Consultation/style';
-import { FollowUs } from 'Client/features/flipping/FollowUs';
-import { PopularTags } from 'Client/features/flipping/PopularTags';
-import { LocalActorsTile } from 'Client/features/flipping/LocalActors/Tille';
-import { matchMobileDevice } from 'Shared/helpers/styled';
-import { useSelector } from 'react-redux';
+import React, { FC } from 'react';
+import { QuestionType } from '@make.org/types';
+import i18n from 'i18next';
+import { isGreatCause } from '@make.org/utils/helpers/question';
+import { FollowUs } from '@make.org/components/Flipping/FollowUs';
+import { PopularTags } from '@make.org/components/Flipping/PopularTags';
+import { LocalActorsTile } from '@make.org/components/Flipping/LocalActors/Tille';
+import { matchMobileDevice } from '@make.org/utils/helpers/styled';
+import { useAppContext } from '@make.org/store';
+import { ConsultationPageSidebarStyle } from '../../../pages/Consultation/style';
 import { PresentationTile } from './Tiles/Presentation';
 import { PartnersTile } from './Tiles/Partners';
 import { MethodologyTile } from './Tiles/Methodology';
 
 type Props = {
-  question: QuestionType,
+  question: QuestionType;
 };
-export const ConsultationSidebar = ({ question }: Props) => {
-  const { device } = useSelector((state: StateRoot) => state.appConfig);
+export const ConsultationSidebar: FC<Props> = ({ question }) => {
+  const { state } = useAppContext();
+  const { device } = state.appConfig;
   const isMobile = matchMobileDevice(device);
   return (
     <ConsultationPageSidebarStyle

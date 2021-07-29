@@ -1,18 +1,17 @@
-// @flow
-import React from 'react';
-import { type StateRoot } from 'Shared/store/types';
-import { type QuestionType } from 'Shared/types/question';
-import { useScreenWidth } from 'Client/hooks/useMedia';
-import { useSelector } from 'react-redux';
-import { matchMobileDevice } from 'Shared/helpers/styled';
+import React, { FC } from 'react';
+import { QuestionType } from '@make.org/types';
+import { useScreenWidth } from '@make.org/utils/hooks/useMedia';
+import { useAppContext } from '@make.org/store';
+import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { MobileDescriptionImageStyle } from '../Styled/Presentation';
 
 type Props = {
-  question: QuestionType,
+  question: QuestionType;
 };
 
-export const MobileDescriptionImage = ({ question }: Props) => {
-  const { device } = useSelector((state: StateRoot) => state.appConfig);
+export const MobileDescriptionImage: FC<Props> = ({ question }) => {
+  const { state } = useAppContext();
+  const { device } = state.appConfig;
   const isMobile = matchMobileDevice(device);
   const screenWidth = useScreenWidth();
 

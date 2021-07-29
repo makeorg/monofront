@@ -1,18 +1,15 @@
-import React from 'react';
-import { type PartnerType } from 'Shared/types/question';
-import {
-  PartnersListStyle,
-  AvatarWrapperStyle,
-} from 'Client/features/consultation/Styled/Partners';
-import { Tooltip } from 'Client/ui/Tooltip';
-import { FOUNDER_PARTNER } from 'Shared/constants/partner';
+import React, { FC } from 'react';
+import { PartnerType } from '@make.org/types';
+import { Tooltip } from '@make.org/ui/components/Tooltip';
+import { FOUNDER_PARTNER } from '@make.org/utils/constants/partner';
+import { PartnersListStyle, AvatarWrapperStyle } from '../../Styled/Partners';
 import { PartnerTooltip } from './Tooltip';
 import { PartnerAvatar } from './Avatar';
 
 type TooltipProps = {
-  partner: PartnerType,
+  partner: PartnerType;
 };
-const PartnerAvatarWithTooltip = ({ partner }: TooltipProps) => {
+const PartnerAvatarWithTooltip: FC<TooltipProps> = ({ partner }) => {
   const content = (
     <PartnerTooltip
       partnerName={partner.name}
@@ -28,13 +25,15 @@ const PartnerAvatarWithTooltip = ({ partner }: TooltipProps) => {
 };
 
 type Props = {
-  partners: PartnerType[],
+  partners: PartnerType[];
 };
 
-export const orderByWeight = (partner1, partner2) =>
-  partner2.weight - partner1.weight;
+export const orderByWeight = (
+  partner1: PartnerType,
+  partner2: PartnerType
+): number => partner2.weight - partner1.weight;
 
-export const PartnersList = ({ partners }: Props) => (
+export const PartnersList: FC<Props> = ({ partners }) => (
   <PartnersListStyle>
     {partners.sort(orderByWeight).map(partner => (
       <AvatarWrapperStyle key={partner.name}>

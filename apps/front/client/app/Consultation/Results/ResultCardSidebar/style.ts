@@ -1,11 +1,11 @@
 import { color, typography } from 'athena-design-tokens';
-import { MakeFonts } from 'Client/app/assets/vars/Fonts';
-import { Breakpoints } from 'Client/app/assets/vars/Breakpoints';
-import { Elements } from 'Client/app/assets/vars/Elements';
-import { intToPx } from 'Shared/helpers/styled';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { Elements } from '@make.org/assets/vars/Elements';
+import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 
-export const ResultCardSidebarStyle = styled.section`
+export const ResultCardSidebarStyle = styled.section<{ isContext: boolean }>`
   display: flex;
   flex-flow: column;
   justify-content: space-between;

@@ -1,10 +1,9 @@
-import React from 'react';
-import { type StateRoot } from 'Shared/store/types';
-import { type QuestionType } from 'Shared/types/question';
-import { useSelector } from 'react-redux';
-import { selectCurrentQuestion } from 'Shared/store/selectors/questions.selector';
-import { Image } from 'Client/ui/Image';
-import { matchDesktopDevice } from 'Shared/helpers/styled';
+import React, { FC } from 'react';
+import { QuestionType } from '@make.org/types';
+import { useAppContext } from '@make.org/store';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { Image } from '@make.org/ui/components/Image';
+import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
 import { Figures } from './Figures';
 import {
   HigthlightsColumnStyle,
@@ -13,11 +12,10 @@ import {
 } from './style';
 import { Progress } from './Progress';
 
-export const ParticipateHighlights = () => {
-  const question: QuestionType = useSelector((state: StateRoot) =>
-    selectCurrentQuestion(state)
-  );
-  const { device } = useSelector((state: StateRoot) => state.appConfig);
+export const ParticipateHighlights: FC = () => {
+  const { state } = useAppContext();
+  const question: QuestionType = selectCurrentQuestion(state);
+  const { device } = state.appConfig;
   const isDesktop = matchDesktopDevice(device);
 
   return (

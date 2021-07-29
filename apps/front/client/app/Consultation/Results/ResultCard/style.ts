@@ -1,12 +1,11 @@
-import { color } from 'athena-design-tokens/dist/color';
-import { Breakpoints } from 'Client/app/assets/vars/Breakpoints';
-import { Elements } from 'Client/app/assets/vars/Elements';
-import { intToPx } from 'Shared/helpers/styled';
+import { color, typography } from 'athena-design-tokens';
+import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { Elements } from '@make.org/assets/vars/Elements';
+import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
-import { MakeFonts } from 'Client/app/assets/vars/Fonts';
-import { typography } from 'athena-design-tokens/dist/typography';
-import { ParagraphStyle } from 'Client/ui/Elements/ParagraphElements';
-import { ColumnElementStyle } from 'Client/ui/Elements/FlexElements';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
+import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 
 export const ResultCardStyle = styled.section`
   display: flex;
@@ -21,14 +20,16 @@ export const ResultCardStyle = styled.section`
   }
 `;
 
-export const ResultTitleWrapperStyle = styled(ColumnElementStyle)`
+export const ResultTitleWrapperStyle = styled(ColumnElementStyle)<{
+  isTopIdeas: boolean;
+}>`
   padding-bottom: ${props => (props.isTopIdeas ? '0px' : '20px')};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     padding-bottom: ${props => (props.isTopIdeas ? '0px' : '30px')};
   }
 `;
 
-export const ResultCardIconStyle = styled.span`
+export const ResultCardIconStyle = styled.span<{ focusable: boolean }>`
   margin-bottom: 15px;
 `;
 
@@ -41,7 +42,9 @@ export const ResultCardTitleStyle = styled.h4`
   }
 `;
 
-export const ResultCardDescriptionStyle = styled(ParagraphStyle)`
+export const ResultCardDescriptionStyle = styled(ParagraphStyle)<{
+  isControversials: boolean;
+}>`
   padding: ${props =>
     props.isControversials ? '10px 0px 0px' : '10px 0px 25px'};
   border-bottom: ${props =>

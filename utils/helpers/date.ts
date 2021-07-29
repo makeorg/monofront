@@ -98,7 +98,7 @@ export class DateHelperSingleton {
     });
   }
 
-  getRemainingDays(endDate: string | null): number | null {
+  getRemainingDays(endDate: string | null | undefined): number | null {
     if (!endDate) {
       return null;
     }

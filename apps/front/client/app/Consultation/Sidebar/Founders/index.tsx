@@ -1,26 +1,28 @@
-// @flow
-import React from 'react';
-import { i18n } from 'Shared/i18n';
-import { type PartnerType } from 'Shared/types/question';
-import { FOUNDER_PARTNER, MEDIA_PARTNER } from 'Shared/constants/partner';
-import { SidebarSeparatorStyle } from 'Client/ui/Elements/TileWithTitle/style';
+import React, { FC } from 'react';
+import i18n from 'i18next';
+import { PartnerType } from '@make.org/types';
+import {
+  FOUNDER_PARTNER,
+  MEDIA_PARTNER,
+} from '@make.org/utils/constants/partner';
+import { SidebarSeparatorStyle } from '@make.org/ui/elements/TileWithTitle/style';
 import { PartnersList } from '../Partners/List';
 import { FoundersTitleStyle } from './style';
 
 type Props = {
-  isGreatCause: boolean,
-  founders: PartnerType[],
+  isGreatCause: boolean;
+  founders: PartnerType[];
 };
 
 type PartnersTypeListProps = {
-  isGreatCause: boolean,
-  partners: PartnerType[],
+  isGreatCause: boolean;
+  partners: PartnerType[];
 };
 
-const PartnersListByType = ({
+const PartnersListByType: FC<PartnersTypeListProps> = ({
   isGreatCause,
   partners,
-}: PartnersTypeListProps) => {
+}) => {
   const founders = partners.filter(
     partner => partner.partnerKind === FOUNDER_PARTNER
   );
@@ -57,7 +59,7 @@ const PartnersListByType = ({
   );
 };
 
-export const Founders = ({ founders, isGreatCause }: Props) => {
+export const Founders: FC<Props> = ({ founders, isGreatCause }) => {
   if (!founders || founders.length === 0) {
     return null;
   }

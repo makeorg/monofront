@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { color, typography } from 'athena-design-tokens';
-import { intToPx } from 'Shared/helpers/styled';
-import { FlexElementStyle } from 'Client/ui/Elements/FlexElements';
-import { Breakpoints } from 'Client/app/assets/vars/Breakpoints';
-import { MakeFonts } from 'Client/app/assets/vars/Fonts';
-import { ContainerWithPadding } from 'Client/app/Styled/MainElements';
+import { intToPx } from '@make.org/utils/helpers/styled';
+import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
+import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
 
 export const TimelineWrapperStyle = styled(FlexElementStyle)`
   background-color: ${color.white};

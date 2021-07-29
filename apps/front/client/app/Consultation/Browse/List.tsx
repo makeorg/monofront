@@ -1,24 +1,23 @@
-// @flow
-import React from 'react';
-import { type HomeQuestionType } from 'Shared/types/question';
-import { RegistrationIncentive } from 'Client/features/consultation/Browse/RegistrationIncentive';
-import { ConsultationItem } from 'Client/features/consultation/Browse/Item';
-import { HomepagePageInnerStyle } from 'Client/pages/Home/style';
+import React, { FC } from 'react';
+import { HomeQuestionType } from '@make.org/types';
+import { RegistrationIncentive } from './RegistrationIncentive';
+import { ConsultationItem } from './Item';
+import { HomepagePageInnerStyle } from '../../../pages/Home/style';
 import { ConsultationsListStyle, ConsultationsListItemStyle } from './style';
 
 type Props = {
-  questions: HomeQuestionType[] | [],
-  total: number,
-  resultsContext?: boolean,
-  noRegister?: boolean,
+  questions: HomeQuestionType[] | [];
+  total: number;
+  resultsContext?: boolean;
+  noRegister?: boolean;
 };
 
-export const BrowseConsultationsList = ({
+export const BrowseConsultationsList: FC<Props> = ({
   questions,
   total,
   resultsContext = false,
   noRegister = false,
-}: Props) => {
+}) => {
   const hasQuestions = total > 0;
   const hasOneQuestion = total === 1;
   let ITEMS_PER_ROW = 4;

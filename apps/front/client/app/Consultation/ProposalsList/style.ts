@@ -1,10 +1,9 @@
-import { typography } from 'athena-design-tokens';
-import { color } from 'athena-design-tokens/dist/color';
-import { Breakpoints } from 'Client/app/assets/vars/Breakpoints';
-import { Elements } from 'Client/app/assets/vars/Elements';
-import { UnstyledListStyle } from 'Client/ui/Elements/ListElements';
+import { typography, color } from 'athena-design-tokens';
+import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { Elements } from '@make.org/assets/vars/Elements';
+import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { Link } from 'react-router-dom';
-import { intToPx } from 'Shared/helpers/styled';
+import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 
 export const ProposalsListStyle = styled(UnstyledListStyle)`

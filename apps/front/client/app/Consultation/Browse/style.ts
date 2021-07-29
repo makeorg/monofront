@@ -5,19 +5,22 @@ import {
   SvgPeople,
   SvgLightBulb,
   SvgFist,
-} from 'Client/ui/Svg/elements';
+} from '@make.org/ui/Svg/elements';
 import { Link } from 'react-router-dom';
-import { intToPx, getFullWidthDividedByItems } from 'Shared/helpers/styled';
-import { Breakpoints } from 'Client/app/assets/vars/Breakpoints';
-import { MakeFonts } from 'Client/app/assets/vars/Fonts';
+import {
+  intToPx,
+  getFullWidthDividedByItems,
+} from '@make.org/utils/helpers/styled';
+import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import {
   ColumnElementStyle,
   MiddleColumnStyle,
-} from 'Client/ui/Elements/FlexElements';
-import { UnstyledListStyle } from 'Client/ui/Elements/ListElements';
-import { Image } from 'Client/ui/Image';
-import { UnstyledButtonStyle } from 'Client/ui/Elements/Buttons/style';
-import { ContainerWithPadding } from 'Client/app/Styled/MainElements';
+} from '@make.org/ui/elements/FlexElements';
+import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
+import { Image } from '@make.org/ui/components/Image';
+import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
+import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
 
 export const BrowseHeaderStyle = styled.header`
   background-color: ${color.greyLighter};
@@ -93,7 +96,7 @@ export const ConsultationsSubtitleStyle = styled.p`
   color: ${color.greyDark};
 `;
 
-const linkStyle = linkColor => `
+const linkStyle = (linkColor: string) => `
   color: ${linkColor};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   &:hover,
@@ -113,7 +116,7 @@ export const ConsultationsListStyle = styled(UnstyledListStyle)`
   }
 `;
 
-export const ConsultationsListItemStyle = styled.li`
+export const ConsultationsListItemStyle = styled.li<{ itemsPerRow: number }>`
   margin-bottom: 50px;
   padding-left: 20px;
   padding-right: 20px;

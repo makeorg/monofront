@@ -1,33 +1,32 @@
-// @flow
-import React from 'react';
-import { i18n } from 'Shared/i18n';
-import { type StateRoot } from 'Shared/store/types';
+import React, { FC } from 'react';
+import i18n from 'i18next';
 import { useLocation, useParams } from 'react-router';
 import {
   getBrowseConsultationsLink,
   getBrowseResultsLink,
-} from 'Shared/helpers/url';
+} from '@make.org/utils/helpers/url';
+import { isBrowseConsultationsPage } from '@make.org/utils/routes';
+import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
+import { useAppContext } from '@make.org/store';
 import {
-  type BreadcrumbsPagesType,
+  BreadcrumbsPagesType,
   Breadcrumbs,
-} from 'Client/app/Breadcrumbs/Breadcrumbs';
-import { isBrowseConsultationsPage } from 'Shared/routes';
+} from '../../app/Breadcrumbs/Breadcrumbs';
 import {
   InnerPagesNavigation,
-  type PageNavigationType,
-} from 'Client/features/navigation/Pages';
-import { useSelector } from 'react-redux';
-import { matchDesktopDevice } from 'Shared/helpers/styled';
+  PageNavigationType,
+} from '../../Navigation/Pages';
 import {
   BrowseHeaderStyle,
   BrowseHeaderInnerStyle,
   BrowseHeaderTitleStyle,
 } from './style';
 
-export const BrowseConsultationsHeader = () => {
+export const BrowseConsultationsHeader: FC = () => {
   const location = useLocation();
-  const { country, pageId } = useParams();
-  const { device } = useSelector((state: StateRoot) => state.appConfig);
+  const { state } = useAppContext();
+  const { country, pageId } = useParams<{ country: string; pageId?: string }>();
+  const { device } = state.appConfig;
   const consultationsPage = isBrowseConsultationsPage(location.pathname);
   const isDesktop = matchDesktopDevice(device);
 
@@ -44,14 +43,14 @@ export const BrowseConsultationsHeader = () => {
       label: isDesktop
         ? i18n.t('browse.nav_consultations_desktop')
         : i18n.t('browse.nav_consultations_mobile'),
-      routeToMatch: getBrowseConsultationsLink(country, pageId),
+      routeToMatch: getBrowseConsultationsLink(country, Number(pageId)),
     },
     {
       link: getBrowseResultsLink(country),
       label: isDesktop
         ? i18n.t('browse.nav_results_desktop')
         : i18n.t('browse.nav_results_mobile'),
-      routeToMatch: getBrowseResultsLink(country, pageId),
+      routeToMatch: getBrowseResultsLink(country, Number(pageId)),
     },
   ];
 

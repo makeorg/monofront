@@ -1,19 +1,19 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { COMPONENT_PARAM_CONSULTATION_HEADER } from 'Shared/constants/tracking';
-import { TYPE_ORGANISATION } from 'Shared/constants/user';
-import { orderPartnersByWeight } from 'Shared/helpers/question';
+import React, { FC } from 'react';
+import { useAppContext } from '@make.org/store';
+import { COMPONENT_PARAM_CONSULTATION_HEADER } from '@make.org/utils/constants/tracking';
+import { TYPE_ORGANISATION } from '@make.org/utils/constants/user';
+import { orderPartnersByWeight } from '@make.org/utils/helpers/question';
 import {
   getOrganisationProfileLink,
   getPartnerAnchor,
-} from 'Shared/helpers/url';
-import { i18n } from 'Shared/i18n';
+} from '@make.org/utils/helpers/url';
+import i18n from 'i18next';
 import {
   trackClickLearnMore,
   trackClickPublicProfile,
-} from 'Shared/services/Tracking';
-import { selectCurrentQuestion } from 'Shared/store/selectors/questions.selector';
-import { type PartnerType } from 'Shared/types/question';
+} from '@make.org/utils/services/Tracking';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { PartnerType, QuestionType } from '@make.org/types';
 import { NewWindowLink } from './Link';
 import {
   HeaderListWrapperStyle,
@@ -25,27 +25,26 @@ import {
 } from './style';
 
 type Props = {
-  partnersList: PartnerType[],
-  title: string,
-  seeMoreLink?: boolean,
-  noMargin?: boolean,
+  partnersList: PartnerType[];
+  title: string;
+  seeMoreLink?: boolean;
+  noMargin?: boolean;
 };
 
-export const PartnersList = ({
+export const PartnersList: FC<Props> = ({
   partnersList,
   title,
   seeMoreLink = false,
   noMargin = false,
-}: Props) => {
-  const { country } = useSelector((state: StateRoot) => state.appConfig);
-  const question: QuestionType = useSelector((state: StateRoot) =>
-    selectCurrentQuestion(state)
-  );
+}) => {
+  const { state } = useAppContext();
+  const { country } = state.appConfig;
+  const question: QuestionType = selectCurrentQuestion(state);
 
   const displayMoreLink = seeMoreLink && partnersList.length > 2;
 
   return (
-    <HeaderListWrapperStyle className={noMargin && 'no-margin'}>
+    <HeaderListWrapperStyle className={noMargin ? 'no-margin' : ''}>
       <HeaderListLabelStyle>
         {title}
         <> </>
