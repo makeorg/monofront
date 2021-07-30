@@ -18,7 +18,7 @@ export const ConsultationHeaderWrapperStyle = styled.div<{
 `;
 
 export const ConsultationPageWrapperStyle = styled.div<{
-  isGreatCause: boolean;
+  isGreatCause?: boolean;
 }>`
   display: flex;
   flex-flow: column;

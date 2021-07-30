@@ -4,5 +4,25 @@
     "jsx": "react",
     "esModuleInterop": true,
     "composite": true
+  },
+  "include": [
+    ".",
+    "../store",
+    "../ui",
+    "../api",
+    "../assets",
+    "../components",
+    "../utils"
+  ],
+  "paths": {
+    "@make.org/widget": ["../apps/widget/*"],
+    "@make.org/front": ["../apps/front/*"],
+    "@make.org/components": ["../components/*"],
+    "@make.org/types": ["../types/*"],
+    "@make.org/api": ["../api/*"],
+    "@make.org/assets": ["../assets/*"],
+    "@make.org/utils": ["../utils/*"],
+    "@make.org/ui": ["../ui/*"],
+    "@make.org/store": ["../store/*"]
   }
 }

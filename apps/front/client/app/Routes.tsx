@@ -72,10 +72,10 @@ const ExplorePage = loadable(() => import('../pages/Consultation/Explore'));
 export const ResultsPage = loadable(
   () => import('../pages/Consultation/Results')
 );
-// const TopIdeasPage = loadable(() => import('../pages/Consultation/TopIdeas'));
-// const TopIdeaDetailsPage = loadable(
-//   () => import('../pages/Consultation/TopIdeaDetails')
-// );
+const TopIdeasPage = loadable(() => import('../pages/Consultation/TopIdeas'));
+const TopIdeaDetailsPage = loadable(
+  () => import('../pages/Consultation/TopIdeaDetails')
+);
 const SequenceByKindPage = loadable(
   () => import('../pages/Consultation/SequenceByKind')
 );
@@ -174,7 +174,7 @@ export const Routes: FC = () => {
           <ResultsPage />
         </QuestionWrapper>
       </Route>
-      {/* <Route path={ROUTE_TOP_IDEA_DETAILS}>
+      <Route path={ROUTE_TOP_IDEA_DETAILS}>
         <QuestionWrapper>
           <TopIdeaDetailsPage />
         </QuestionWrapper>
@@ -183,7 +183,7 @@ export const Routes: FC = () => {
         <QuestionWrapper>
           <TopIdeasPage />
         </QuestionWrapper>
-      </Route> */}
+      </Route>
       {/* <Route
         path={ROUTE_ACCOUNT_ACTIVATION}
         component={AccountActivationPage}

@@ -1,52 +1,51 @@
 // @flow
-import React, { useEffect, useState } from 'react';
-import { getTopIdeasLink, redirectToNotFoundPage } from 'Shared/helpers/url';
-import { useParams, useLocation } from 'react-router-dom';
-import { type StateRoot } from 'Shared/store/types';
-import { type QuestionType } from 'Shared/types/question';
-import { type TopIdeaType } from 'Shared/types/topIdea';
-import { trackDisplayTopIdeas } from 'Shared/services/Tracking';
-import { IntroBanner } from 'Client/features/consultation/IntroBanner/index';
-import { FollowUs } from 'Client/features/flipping/FollowUs';
-import { TopIdeaService } from 'Shared/services/TopIdea';
-import { TopIdeaCard } from 'Client/features/topIdeas/Card';
-import { i18n } from 'Shared/i18n';
+import React, { FC, useEffect, useState } from 'react';
 import {
-  type BreadcrumbsPagesType,
-  Breadcrumbs,
-} from 'Client/app/Breadcrumbs/DeprecatedBreadcrumbs';
+  getTopIdeasLink,
+  redirectToNotFoundPage,
+} from '@make.org/utils/helpers/url';
+import { useParams, useLocation } from 'react-router-dom';
+import { QuestionType, TopIdeaType } from '@make.org/types';
 
-import { MUNICIPAL_PERSONALITY_HEADER } from 'Shared/constants/featureFlipping';
-import { CandidateEngagement } from 'Client/custom/municipales/CandidateEngagement';
-import { checkIsFeatureActivated } from 'Client/helper/featureFlipping';
-import { MetaTags } from 'Client/app/MetaTags';
-import { ConsultationSidebar } from 'Client/features/consultation/Sidebar';
-import { ColumnElementStyle } from 'Client/ui/Elements/FlexElements';
-import { TopIdeaDetailsSkipLinks } from 'Client/app/SkipLinks/TopIdeaDetails';
-import { TopIdeaDetailsProposals } from 'Client/features/topIdeas/Proposals';
-import { TopIdeaDetailsComments } from 'Client/features/topIdeas/Comments';
-import { MobileDescriptionImage } from 'Client/features/consultation/MobileDescriptionImage';
+import { trackDisplayTopIdeas } from '@make.org/utils/services/Tracking';
+import { FollowUs } from '@make.org/components/Flipping/FollowUs';
+import { TopIdeaService } from '@make.org/utils/services/TopIdea';
+import i18n from 'i18next';
+
+import { MUNICIPAL_PERSONALITY_HEADER } from '@make.org/utils/constants/featureFlipping';
+import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import { ThemeProvider } from 'styled-components';
-import { useSelector } from 'react-redux';
-import { selectCurrentQuestion } from 'Shared/store/selectors/questions.selector';
-import { matchMobileDevice } from 'Shared/helpers/styled';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { matchMobileDevice } from '@make.org/utils/helpers/styled';
+import { useAppContext } from '@make.org/store';
+import { checkIsFeatureActivated } from '@make.org/utils/helpers/featureFlipping';
+import { CandidateEngagement } from '../../custom/municipales/CandidateEngagement';
+import { TopIdeaDetailsComments } from '../../app/TopIdeas/Comments';
+import { TopIdeaDetailsProposals } from '../../app/TopIdeas/Proposals';
+import { TopIdeaCard } from '../../app/TopIdeas/Card';
+import { TopIdeaDetailsSkipLinks } from '../../app/SkipLinks/TopIdeaDetails';
+import { MetaTags } from '../../app/MetaTags';
+import { MobileDescriptionImage } from '../../app/Consultation/MobileDescriptionImage';
+import { ConsultationSidebar } from '../../app/Consultation/Sidebar';
+import {
+  BreadcrumbsPagesType,
+  Breadcrumbs,
+} from '../../app/Breadcrumbs/DeprecatedBreadcrumbs';
+import { IntroBanner } from '../../app/Consultation/IntroBanner/index';
 import {
   ConsultationPageContentStyle,
   ConsultationPageWrapperStyle,
   ConsultationHeaderWrapperStyle,
 } from './style';
 
-const TopIdeaDetailsPage = () => {
-  const { country, device } = useSelector(
-    (state: StateRoot) => state.appConfig
-  );
-  const question: QuestionType = useSelector((state: StateRoot) =>
-    selectCurrentQuestion(state)
-  );
+const TopIdeaDetailsPage: FC = () => {
+  const { state } = useAppContext();
+  const { country, device } = state.appConfig;
+  const question: QuestionType = selectCurrentQuestion(state);
   const isMobile = matchMobileDevice(device);
-  const { topIdeaId } = useParams();
+  const { topIdeaId } = useParams<{ topIdeaId: string }>();
   const location = useLocation();
-  const [topIdea, setTopIdea] = useState<?TopIdeaType>(undefined);
+  const [topIdea, setTopIdea] = useState<TopIdeaType>(null);
   const hasComments = topIdea && topIdea.comments.length > 0;
 
   // @todo remove or refactor when Municipales is over
@@ -55,7 +54,7 @@ const TopIdeaDetailsPage = () => {
     question.activeFeatures
   );
 
-  const parentPages: BreadcrumbsPagesType = [
+  const parentPages: BreadcrumbsPagesType[] = [
     {
       name: i18n.t('idea_card.title'),
       link: getTopIdeasLink(country, question.slug),
@@ -63,7 +62,7 @@ const TopIdeaDetailsPage = () => {
   ];
   const currentPage = {
     name: i18n.t('idea_details.current_page'),
-    link: location,
+    link: location.pathname,
   };
 
   const initTopIdea = async () => {

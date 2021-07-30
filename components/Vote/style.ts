@@ -3,7 +3,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 
-export const VoteContainerStyle = styled.div<{ isSequence: boolean }>`
+export const VoteContainerStyle = styled.div<{ isSequence?: boolean }>`
   display: flex;
   justify-content: center;
   width: 100%;

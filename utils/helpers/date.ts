@@ -1,5 +1,7 @@
 import { format as formatDate } from 'date-fns'; // eslint-disabled-line import/no-duplicates
-import { fr, enGB, de } from 'date-fns/locale'; // eslint-disabled-line import/no-duplicates
+import fr from 'date-fns/locale/fr'; // eslint-disabled-line import/no-duplicates
+import enGB from 'date-fns/locale/en-GB'; // eslint-disabled-line import/no-duplicates
+import de from 'date-fns/locale/de'; // eslint-disabled-line import/no-duplicates
 import { HomeQuestionType, QuestionTimelineType } from '@make.org/types';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 import { LocaleType } from '@make.org/types/enums';
