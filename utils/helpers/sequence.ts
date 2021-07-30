@@ -14,7 +14,7 @@ import {
 } from '../constants/card';
 import {
   KIND_CONTROVERSY,
-  KIND_POPULAR,
+  KIND_CONSENSUS,
   KIND_STANDARD,
 } from '../constants/sequence';
 
@@ -129,7 +129,7 @@ export const getSequenceTitleBySequenceKind = (
     case KIND_CONTROVERSY: {
       return i18n.t('sequence_zone.controversial_title');
     }
-    case KIND_POPULAR: {
+    case KIND_CONSENSUS: {
       return i18n.t('sequence_zone.popular_title');
     }
     default:
@@ -148,7 +148,7 @@ export const getNoProposalCardTitleBySequenceKind = (
     case KIND_CONTROVERSY: {
       return i18n.t('no_proposal_card.title.controversial');
     }
-    case KIND_POPULAR: {
+    case KIND_CONSENSUS: {
       return i18n.t('no_proposal_card.title.popular');
     }
     default:
@@ -163,4 +163,4 @@ export const getNoProposalCardTitleBySequenceKind = (
  */
 
 export const isKeywordSequence = (sequenceKind: string): boolean =>
-  ![KIND_CONTROVERSY, KIND_POPULAR, KIND_STANDARD].includes(sequenceKind);
+  ![KIND_CONTROVERSY, KIND_CONSENSUS, KIND_STANDARD].includes(sequenceKind);

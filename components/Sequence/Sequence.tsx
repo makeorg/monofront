@@ -8,7 +8,7 @@ import {
 } from '@make.org/utils/helpers/sequence';
 import {
   KIND_CONTROVERSY,
-  KIND_POPULAR,
+  KIND_CONSENSUS,
   KIND_STANDARD,
 } from '@make.org/utils/constants/sequence';
 import { CARD_TYPE_NO_PROPOSAL_CARD } from '@make.org/utils/constants/card';
@@ -29,7 +29,6 @@ import { SequenceCard } from './Cards';
 import { SequenceProgress } from './Progress';
 import { SequencePlaceholder } from './Placeholder';
 import { useSequence } from './Hooks/useSequence';
-
 import {
   SequenceContainerStyle,
   ConsultationPageLinkStyle,
@@ -97,7 +96,7 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
     if (sequenceKind === KIND_CONTROVERSY) {
       return 'meta.sequence.title_controversy';
     }
-    if (sequenceKind === KIND_POPULAR) {
+    if (sequenceKind === KIND_CONSENSUS) {
       return 'meta.sequence.title_popular';
     }
 

@@ -58,6 +58,11 @@ import {
   ROUTE_STATIC_CONTACT_DE,
   ROUTE_STATIC_A11Y_DE,
 } from '../../shared/routes';
+import {
+  KIND_CONTROVERSY,
+  KIND_CONSENSUS,
+  KIND_STANDARD,
+} from '../../../../utils/constants/sequence';
 
 // const BrowsePage = loadable(() => import('../pages/Browse'));
 // const ParticipatePage = loadable(
@@ -71,18 +76,12 @@ import {
 // const TopIdeaDetailsPage = loadable(
 //   () => import('../pages/Consultation/TopIdeaDetails')
 // );
-const SequencePageStandard = loadable(
-  () => import('../pages/Consultation/SequenceStandard')
+const SequenceByKindPage = loadable(
+  () => import('../pages/Consultation/SequenceByKind')
 );
-// const SequencePopularPage = loadable(
-//   () => import('../pages/Consultation/SequencePopular')
-// );
-// const SequenceControversialPage = loadable(
-//   () => import('../pages/Consultation/SequenceControversy')
-// );
-// const SequenceKeywordPage = loadable(
-//   () => import('../pages/Consultation/SequenceKeyword')
-// );
+const SequenceByKeywordPage = loadable(
+  () => import('../pages/Consultation/SequenceByKeyword')
+);
 // const PasswordRecoveryPage = loadable(
 //   () => import('../pages/PasswordRecovery')
 // );
@@ -143,28 +142,28 @@ export const Routes: FC = () => {
         <QuestionWrapper withRedirect>
           <ExplorePage />
         </QuestionWrapper>
-      </Route>
+      </Route> */}
       <Route path={ROUTE_SEQUENCE_KEYWORD}>
         <QuestionWrapper withRedirect>
-          <SequenceKeywordPage />
-        </QuestionWrapper>
-      </Route> */}
-      <Route path={ROUTE_SEQUENCE}>
-        <QuestionWrapper withRedirect>
-          <SequencePageStandard />
+          <SequenceByKeywordPage />
         </QuestionWrapper>
       </Route>
-      {/* <Route path={ROUTE_SEQUENCE_POPULAR}>
+      <Route path={ROUTE_SEQUENCE}>
         <QuestionWrapper withRedirect>
-          <SequencePopularPage />
+          <SequenceByKindPage kind={KIND_STANDARD} />
+        </QuestionWrapper>
+      </Route>
+      <Route path={ROUTE_SEQUENCE_POPULAR}>
+        <QuestionWrapper withRedirect>
+          <SequenceByKindPage kind={KIND_CONSENSUS} />
         </QuestionWrapper>
       </Route>
       <Route path={ROUTE_SEQUENCE_CONTROVERSIAL}>
         <QuestionWrapper withRedirect>
-          <SequenceControversialPage />
+          <SequenceByKindPage kind={KIND_CONTROVERSY} />
         </QuestionWrapper>
       </Route>
-      <Route path={ROUTE_RESULTS}>
+      {/* <Route path={ROUTE_RESULTS}>
         <QuestionWrapper>
           <ResultsPage />
         </QuestionWrapper>
