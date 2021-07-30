@@ -1,4 +1,3 @@
-
 import { ReducerAction, StateViews } from '@make.org/types';
 import { LOAD_HOMEPAGE } from '../../actionTypes';
 

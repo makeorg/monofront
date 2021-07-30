@@ -3,22 +3,12 @@ import i18n from 'i18next';
 export const formatCountWithLanguage = (
   count: number,
   language: string
-): string | null => {
-  if (!count) {
-    return null;
-  }
-
-  return count.toLocaleString(language);
-};
+): string => count.toLocaleString(language);
 
 export const formatMillionToText = (
   count: number,
   language: string
-): string | null => {
-  if (!count) {
-    return null;
-  }
-
+): string => {
   let number = count;
   const oneMillion = 10 ** 6;
 

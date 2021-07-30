@@ -60,25 +60,35 @@ class LoggerSingleton {
       return {
         message: data,
         stack: 'no-stack',
-        logId: uuidv4(),
+        app_logId: uuidv4(),
+        app_logName: '-',
       };
     }
     if (typeof data === 'object') {
-      return {
+      const formatedData = {
         ...data,
-        logId: data.logId || uuidv4(),
+        app_logId: data.app_logId || data.logId || uuidv4(),
+        app_logName: data.app_logName || data.name || data.errorName || '-',
+        stack: data.stack || '-',
+        message: data.message || '-',
       };
+      // TODO
+      // delete formatedData.name;
+      // delete formatedData.errorName;
+      // delete formatedData.logId;
+
+      return formatedData;
     }
 
     try {
       return {
         message: JSON.stringify(data),
-        logId: uuidv4(),
+        app_logId: uuidv4(),
       };
     } catch (e) {
       return {
         message: e.message,
-        logId: uuidv4(),
+        app_logId: uuidv4(),
       };
     }
   };
@@ -97,7 +107,7 @@ class LoggerSingleton {
     this.log(data, LOG_WARNING);
   };
 
-  log = (
+  log = async (
     data: string | ApiServiceError | Record<string, string> | Error,
     level: string
   ): Promise<void | AxiosResponse> => {
@@ -105,6 +115,8 @@ class LoggerSingleton {
       // eslint-disable-next-line no-console
       console.log(level, data);
     }
+
+    // TODO handle it cleanly
     // if (!onClientSide) {
     //   // eslint-disable-next-line import/no-cycle
     //   const { logError, logInfo, logWarning } = await import(

@@ -8,9 +8,9 @@ export const pxToPercent = (
   return `${percentValue}%`;
 };
 
-export const pxToRem = (value: string | number, base = '16'): string => {
+export const pxToRem = (value: string | number, base = 16): string => {
   const px = typeof value === 'number' ? value : parseInt(value, 10);
-  const rem = parseFloat((px / parseInt(base, 10)).toPrecision(4));
+  const rem = parseFloat((px / base).toPrecision(4));
 
   return `${rem}rem`;
 };

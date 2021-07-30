@@ -1,13 +1,17 @@
 {
+  "references": [
+    { "path": "../../store" },
+    { "path": "../../ui" },
+    { "path": "../../api" },
+    { "path": "../../assets" },
+    { "path": "../../components" },
+    { "path": "../../utils" }
+  ],
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "./dist/types",
-    "jsx": "react-jsx",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
+    "rootDir": "../../",
     "composite": true,
-    "sourceMap": true,
-    "moduleResolution": "node"
   },
   "include": [
     ".",

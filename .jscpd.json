@@ -1,0 +1,8 @@
+{
+  "threshold": 1.5,
+  "reporters": ["html", "console"],
+  "ignore": ["**/webpack.config.js", "**/webpack/**", "**/*.sh", "**/node_modules/**","**/__snapshots__/**", "**/__fixtures__/**", "**/*.spec.js", "**/spec.js", "**/i18n/*.json", "**/*.svg", "**/Deprecated/*.js", "**/Deprecated/**/index.js", "**/coverage/**", "**/reports/**"],
+  "absolute": true,
+  "output": "./reports",
+  "minTokens": 100
+}

@@ -61,6 +61,8 @@ const App: React.FC = () => {
   if (!currentQuestion) {
     return <div>No question yet</div>;
   }
+
+  return <Sequence sequenceKind={SEQUENCE.KIND_CONSENSUS} />;
 };
 
 export default App;

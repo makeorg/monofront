@@ -59,19 +59,18 @@ export const getFieldError = (
 
 export const getErrorMessages = (
   internalErrors: ErrorObjectType[],
-  serviceErrors: ErrorObjectType[],
+  serviceErrors: ErrorObjectType[] | ErrorObjectType,
   logId: string
 ): ErrorObjectType[] => {
-  switch (true) {
-    case !Array.isArray(serviceErrors):
-      Logger.logError({
-        message: `Unexpected error (array expected): ${serviceErrors}`,
-        logId,
-      });
-      return [defaultApiError];
-    default:
-      return mapErrors(internalErrors, serviceErrors, logId);
+  if (Array.isArray(serviceErrors)) {
+    return mapErrors(internalErrors, serviceErrors, logId);
   }
+
+  Logger.logError({
+    message: `Unexpected error (array expected): ${serviceErrors}`,
+    logId,
+  });
+  return [defaultApiError];
 };
 
 export const transformFieldValueToProfileValue = (

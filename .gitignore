@@ -4,4 +4,8 @@
 /dist
 /*/dist
 /*/*/dist
+/reports
+/coverage
 .DS_Store
+.env
+yarn-error.log

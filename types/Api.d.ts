@@ -2,6 +2,28 @@ import React from 'react';
 import { Method } from 'axios';
 import { UnknownObjectType } from './Commons';
 
+type Method =
+  | 'get'
+  | 'GET'
+  | 'delete'
+  | 'DELETE'
+  | 'head'
+  | 'HEAD'
+  | 'options'
+  | 'OPTIONS'
+  | 'post'
+  | 'POST'
+  | 'put'
+  | 'PUT'
+  | 'patch'
+  | 'PATCH'
+  | 'purge'
+  | 'PURGE'
+  | 'link'
+  | 'LINK'
+  | 'unlink'
+  | 'UNLINK';
+
 export type ApiServiceHeadersType = {
   'x-make-country'?: string;
   'x-make-language'?: string;
@@ -22,7 +44,7 @@ export type ErrorResponse = {
     headers: UnknownObjectType;
     config: {
       url: string;
-      method: string;
+      method: Method;
     };
   };
   isAxiosError: boolean;
@@ -31,11 +53,12 @@ export type ErrorResponse = {
 };
 
 export type OptionsType = {
-  headers?: Readonly<Record<string, string | boolean>>;
+  headers?: Readonly<Record<string, string | boolean | null>>;
   allowedHeaders?: string[];
   body?: string;
-  params?: string;
-  method?: Method;
+  params?: Record<string, string>;
+  method: Method;
   httpsAgent?: string;
   withCredentials?: boolean;
+  proposalId?: string;
 };

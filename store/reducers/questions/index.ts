@@ -1,5 +1,3 @@
-
-
 import { ReducerAction, StateQuestions } from '@make.org/types';
 import {
   LOAD_QUESTION,

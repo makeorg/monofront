@@ -1,67 +1,68 @@
-import {
-  queryParamIsDisable,
-  transformExtraSlidesConfigFromQuery,
-} from './query.helper';
+import { QuestionExtraSlidesConfigType } from '@make.org/types';
+import { transformExtraSlidesConfigFromQuery } from './query.helper';
 
 describe('query helper', () => {
-  describe('queryParamIsDisable', () => {
-    it('introCard query must be enabled by default', () => {
-      // given
-      const query = {};
-      // when
-      const isDisable = queryParamIsDisable(query, 'introCard');
-      // then
-      expect(isDisable).toBe(false);
-    });
-
-    it('introCard query must be disabled', () => {
-      // given
-      const query = { introCard: 'false' };
-      // when
-      const isDisable = queryParamIsDisable(query, 'introCard');
-      // then
-      expect(isDisable).toBe(true);
-    });
-
-    it('introCard query must be enabled', () => {
-      // given
-      const query = { introCard: 'true' };
-      // when
-      const isDisable = queryParamIsDisable(query, 'introCard');
-      // then
-      expect(isDisable).toBe(false);
-    });
-  });
-
   describe('transformExtraSlidesConfigFromQuery', () => {
-    let extraSlidesConfig;
-    beforeEach(() => {
-      extraSlidesConfig = {
-        introCard: { param: 'unactive' },
+    it('wihtout extra cards', () => {
+      const extraSlidesConfig: QuestionExtraSlidesConfigType = {
+        introCard: {
+          enabled: true,
+          title: 'fooTitle',
+          description: 'fooDescription',
+        },
+        pushProposalCard: {
+          enabled: true,
+        },
       };
-    });
-    it('introCard query must be enabled by default', () => {
-      // given
-      const query = {};
-      // when
       const extraSlides = transformExtraSlidesConfigFromQuery(
         extraSlidesConfig,
-        query
+        true,
+        true
       );
-      // then
-      expect(extraSlides).toEqual(extraSlidesConfig);
+      expect(extraSlides).toMatchObject({});
     });
 
-    it('introCard query must be enabled', () => {
-      // given
-      const query = { introCard: 'true' };
-      // when
+    it('Disable intro card', () => {
+      const extraSlidesConfig: QuestionExtraSlidesConfigType = {
+        introCard: {
+          enabled: true,
+          title: 'fooTitle',
+          description: 'fooDescription',
+        },
+        pushProposalCard: {
+          enabled: true,
+        },
+      };
+
       const extraSlides = transformExtraSlidesConfigFromQuery(
         extraSlidesConfig,
-        query
+        true,
+        false
       );
-      // then
-      expect(extraSlides).toEqual(extraSlidesConfig);
+      expect(extraSlides).toMatchObject({
+        pushProposalCard: extraSlidesConfig.pushProposalCard,
+      });
+    });
+
+    it('Disable push proposal card', () => {
+      const extraSlidesConfig: QuestionExtraSlidesConfigType = {
+        introCard: {
+          enabled: true,
+          title: 'fooTitle',
+          description: 'fooDescription',
+        },
+        pushProposalCard: {
+          enabled: true,
+        },
+      };
+      const extraSlides = transformExtraSlidesConfigFromQuery(
+        extraSlidesConfig,
+        false,
+        true
+      );
+      expect(extraSlides).toMatchObject({
+        introCard: extraSlidesConfig.introCard,
+      });
     });
   });
 });

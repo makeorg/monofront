@@ -4,9 +4,12 @@ import snapshotDiff from 'snapshot-diff';
 import { SvgInfos } from '@make.org/ui/Svg/elements';
 import { TileWithTitle } from './index';
 
-jest.mock('@make.org/ui/elements/TileWithTitle/style', () => ({
+jest.mock('./style', () => ({
   TileWithTitleStyle: 'TileWithTitleStyle',
   TileTitleStyle: 'TileTitleStyle',
+}));
+
+jest.mock('@make.org/ui/elements/SeparatorsElements', () => ({
   TileSeparatorStyle: 'TileSeparatorStyle',
 }));
 

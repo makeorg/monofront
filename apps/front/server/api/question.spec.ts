@@ -1,18 +1,19 @@
 import httpMocks from 'node-mocks-http';
-import { questionResults, ALLOWED_URL } from './question';
-
-const fs = require('fs');
-const cache = require('memory-cache');
-const { SERVER_DIR } = require('../paths');
+import fs from 'fs';
+import cache from 'memory-cache';
+import { questionResults } from './question';
+import { SERVER_DIR } from '../paths';
 
 jest.mock('memory-cache');
 jest.mock('fs');
+jest.mock('@make.org/assets/env', () => ({
+  env: {
+    frontUrl: jest.fn(),
+  },
+}));
 
-describe('Question Api', () => {
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
-});
+const mockedCache = cache as jest.Mocked<any>;
+const mockedFs = fs as jest.Mocked<any>;
 
 describe('QuestionResults Api', () => {
   afterEach(() => {
@@ -26,13 +27,11 @@ describe('QuestionResults Api', () => {
       });
       const response = httpMocks.createResponse();
       jest.spyOn(response, 'setHeader');
-      cache.get.mockReturnValueOnce('fooCache');
+      mockedCache.get.mockReturnValue('fooCache');
 
-      questionResults(request, response, () => {});
-      expect(response.setHeader.mock.calls).toEqual([
-        ['Access-Control-Allow-Origin', ALLOWED_URL],
-        ['Content-Type', 'application/json'],
-      ]);
+      questionResults(request, response);
+      expect(response.getHeader('Access-Control-Allow-Origin')).toEqual('');
+      expect(response.getHeader('Content-Type')).toEqual('application/json');
     });
   });
 
@@ -43,7 +42,7 @@ describe('QuestionResults Api', () => {
       });
       const response = httpMocks.createResponse();
       jest.spyOn(response, 'status');
-      questionResults(request, response, () => {});
+      questionResults(request, response);
       expect(response.status).toHaveBeenCalledWith(400);
     });
 
@@ -53,7 +52,7 @@ describe('QuestionResults Api', () => {
       });
       const response = httpMocks.createResponse();
       jest.spyOn(response, 'status');
-      questionResults(request, response, () => {});
+      questionResults(request, response);
       expect(response.status).not.toHaveBeenCalledWith(400);
     });
   });
@@ -67,8 +66,8 @@ describe('QuestionResults Api', () => {
       jest.spyOn(response, 'send');
       jest.spyOn(cache, 'get');
 
-      cache.get.mockReturnValueOnce('fooCache');
-      questionResults(request, response, () => {});
+      mockedCache.get.mockReturnValue('fooCache');
+      questionResults(request, response);
       expect(response.send).toHaveBeenCalledWith('fooCache');
       expect(cache.get).toHaveBeenCalledWith(
         `${SERVER_DIR}/staticData/questionResults/foo-bar.json`
@@ -85,10 +84,10 @@ describe('QuestionResults Api', () => {
       jest.spyOn(cache, 'get');
       jest.spyOn(cache, 'put');
 
-      cache.get.mockReturnValueOnce(undefined);
-      fs.readFileSync.mockReturnValueOnce(fileContent);
+      mockedCache.get.mockReturnValue(undefined);
+      mockedFs.readFileSync.mockReturnValue(fileContent);
 
-      questionResults(request, response, () => {});
+      questionResults(request, response);
       expect(response.send).toHaveBeenCalledWith(fileContent);
       expect(cache.get).toHaveBeenCalledWith(
         `${SERVER_DIR}/staticData/questionResults/foo-bar.json`
@@ -109,12 +108,12 @@ describe('QuestionResults Api', () => {
       jest.spyOn(cache, 'get');
       jest.spyOn(cache, 'put');
 
-      cache.get.mockReturnValueOnce(undefined);
-      fs.readFileSync.mockImplementation(() => {
+      mockedCache.get.mockReturnValue(undefined);
+      mockedFs.readFileSync.mockImplementation(() => {
         throw new Error('bad');
       });
 
-      questionResults(request, response, () => {});
+      questionResults(request, response);
 
       expect(cache.get).toHaveBeenCalledWith(
         `${SERVER_DIR}/staticData/questionResults/foo-bar.json`

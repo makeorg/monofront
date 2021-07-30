@@ -1,19 +1,15 @@
 {
+  "references": [
+    { "path": "../store" },
+    { "path": "../ui" },
+    { "path": "../api" },
+    { "path": "../assets" },
+    { "path": "../utils" }
+  ],
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "jsx": "react",
-    "esModuleInterop": true,
     "composite": true
   },
-  "include": [
-    ".",
-    "../store",
-    "../ui",
-    "../api",
-    "../assets",
-    "../components",
-    "../utils"
-  ],
   "paths": {
     "@make.org/widget": ["../apps/widget/*"],
     "@make.org/front": ["../apps/front/*"],

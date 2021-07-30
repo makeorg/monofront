@@ -3,6 +3,7 @@ declare module 'uuid';
 declare module 'react-modal';
 declare module '@loadable/component';
 declare module 'adblockdetect';
+declare module 'react-test-renderer';
 declare module '*.woff';
 declare module '*.woff2';
 declare module 'webpack-manifest';

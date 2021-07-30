@@ -1,7 +1,8 @@
-import { format as formatDate } from 'date-fns'; // eslint-disabled-line import/no-duplicates
-import fr from 'date-fns/locale/fr'; // eslint-disabled-line import/no-duplicates
-import enGB from 'date-fns/locale/en-GB'; // eslint-disabled-line import/no-duplicates
-import de from 'date-fns/locale/de'; // eslint-disabled-line import/no-duplicates
+/* eslint-disable import/no-duplicates */
+import { format as formatDate } from 'date-fns';
+import fr from 'date-fns/locale/fr';
+import enGB from 'date-fns/locale/en-GB';
+import de from 'date-fns/locale/de';
 import { HomeQuestionType, QuestionTimelineType } from '@make.org/types';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 import { LocaleType } from '@make.org/types/enums';
@@ -101,7 +102,7 @@ export class DateHelperSingleton {
       return null;
     }
     const locale = locales[this.languageValue];
-    return formatDate(objectDate, 'PPPPpp', {
+    return formatDate(objectDate, format, {
       locale,
     });
   }
@@ -173,7 +174,7 @@ export const chronologicalOrder = (
     return -1;
   }
 
-  return Number(dateB) - Number(dateA);
+  return Number(dateA) - Number(dateB);
 };
 
 export const DateHelper = new DateHelperSingleton(DEFAULT_LANGUAGE);
