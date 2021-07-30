@@ -64,7 +64,7 @@ import {
   ROUTE_STATIC_A11Y_DE,
 } from '../../shared/routes';
 
-// const BrowsePage = loadable(() => import('../pages/Browse'));
+const BrowsePage = loadable(() => import('../pages/Browse'));
 const ParticipatePage = loadable(
   () => import('../pages/Consultation/Participate')
 );
@@ -130,10 +130,10 @@ export const Routes: FC = () => {
 
   return (
     <Switch>
-      {/* <Route path={ROUTE_BROWSE_CONSULTATIONS} component={BrowsePage} />
+      <Route path={ROUTE_BROWSE_CONSULTATIONS} component={BrowsePage} />
       <Route path={ROUTE_BROWSE_RESULTS} component={BrowsePage} />
       <Redirect path={ROUTE_CONSULTATION} to={ROUTE_PARTICIPATE} />
-       */}
+
       <Route path={ROUTE_PARTICIPATE}>
         <QuestionWrapper withRedirect>
           <ParticipatePage />
