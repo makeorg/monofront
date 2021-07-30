@@ -1,4 +1,5 @@
 import React from 'react';
+import { Method } from 'axios';
 import { UnknownObjectType } from './Commons';
 
 export type ApiServiceHeadersType = {
@@ -34,7 +35,7 @@ export type OptionsType = {
   allowedHeaders?: string[];
   body?: string;
   params?: string;
-  method?: string;
+  method?: Method;
   httpsAgent?: string;
   withCredentials?: boolean;
 };

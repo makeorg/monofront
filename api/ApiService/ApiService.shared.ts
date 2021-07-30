@@ -5,7 +5,7 @@ import { Logger } from '@make.org/utils/services/Logger';
 import { APP_NAME } from '@make.org/utils/constants/config';
 import { v4 as uuidv4 } from 'uuid';
 import { env } from '@make.org/assets/env';
-import { ErrorResponse } from '@make.org/types';
+import { ErrorResponse, OptionsType } from '@make.org/types';
 import { ApiServiceError } from './ApiServiceError';
 
 const HOSTNAME =
@@ -100,16 +100,6 @@ export const handleErrors = (
     logged,
     requestId || 'none'
   );
-};
-
-type OptionsType = {
-  headers?: Readonly<Record<string, string | null>>;
-  allowedHeaders?: string[];
-  body?: string;
-  params?: string;
-  method?: Method;
-  httpsAgent?: string;
-  withCredentials?: boolean;
 };
 
 class ApiServiceSharedClass {

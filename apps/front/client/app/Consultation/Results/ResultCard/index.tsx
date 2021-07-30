@@ -22,7 +22,7 @@ type Props = {
   /** O;tional id to render */
   id: string;
   /** C;ildren to render */
-  children: Node;
+  children: React.ReactChild;
 };
 
 export const ResultCard: FC<Props> = ({

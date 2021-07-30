@@ -69,9 +69,9 @@ const ParticipatePage = loadable(
   () => import('../pages/Consultation/Participate')
 );
 const ExplorePage = loadable(() => import('../pages/Consultation/Explore'));
-// export const ResultsPage = loadable(
-//   () => import('../pages/Consultation/Results')
-// );
+export const ResultsPage = loadable(
+  () => import('../pages/Consultation/Results')
+);
 // const TopIdeasPage = loadable(() => import('../pages/Consultation/TopIdeas'));
 // const TopIdeaDetailsPage = loadable(
 //   () => import('../pages/Consultation/TopIdeaDetails')
@@ -164,7 +164,7 @@ export const Routes: FC = () => {
           <SequenceByKindPage kind={KIND_CONTROVERSY} />
         </QuestionWrapper>
       </Route>
-      {/* <Route path={ROUTE_RESULTS}>
+      <Route path={ROUTE_RESULTS}>
         <QuestionWrapper>
           <ResultsPage />
         </QuestionWrapper>
@@ -174,7 +174,7 @@ export const Routes: FC = () => {
           <ResultsPage />
         </QuestionWrapper>
       </Route>
-      <Route path={ROUTE_TOP_IDEA_DETAILS}>
+      {/* <Route path={ROUTE_TOP_IDEA_DETAILS}>
         <QuestionWrapper>
           <TopIdeaDetailsPage />
         </QuestionWrapper>
@@ -183,8 +183,8 @@ export const Routes: FC = () => {
         <QuestionWrapper>
           <TopIdeasPage />
         </QuestionWrapper>
-      </Route>
-      <Route
+      </Route> */}
+      {/* <Route
         path={ROUTE_ACCOUNT_ACTIVATION}
         component={AccountActivationPage}
       />
