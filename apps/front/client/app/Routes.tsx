@@ -68,7 +68,7 @@ import {
 const ParticipatePage = loadable(
   () => import('../pages/Consultation/Participate')
 );
-// const ExplorePage = loadable(() => import('../pages/Consultation/Explore'));
+const ExplorePage = loadable(() => import('../pages/Consultation/Explore'));
 // export const ResultsPage = loadable(
 //   () => import('../pages/Consultation/Results')
 // );
@@ -139,11 +139,11 @@ export const Routes: FC = () => {
           <ParticipatePage />
         </QuestionWrapper>
       </Route>
-      {/* <Route path={ROUTE_EXPLORE}>
+      <Route path={ROUTE_EXPLORE}>
         <QuestionWrapper withRedirect>
           <ExplorePage />
         </QuestionWrapper>
-      </Route> */}
+      </Route>
       <Route path={ROUTE_SEQUENCE_KEYWORD}>
         <QuestionWrapper withRedirect>
           <SequenceByKeywordPage />
