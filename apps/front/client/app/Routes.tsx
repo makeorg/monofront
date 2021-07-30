@@ -5,6 +5,11 @@ import loadable from '@loadable/component';
 import { getHomeLink } from '@make.org/utils/helpers/url';
 import { DEFAULT_COUNTRY } from '@make.org/utils/constants/config';
 import { useAppContext } from '@make.org/store';
+import {
+  KIND_CONTROVERSY,
+  KIND_CONSENSUS,
+  KIND_STANDARD,
+} from '@make.org/utils/constants/sequence';
 import { QuestionWrapper } from '../pages/Consultation/QuestionWrapper';
 import { usePageBackgoundColor } from '../hooks/usePageBackgroundColor';
 
@@ -58,16 +63,11 @@ import {
   ROUTE_STATIC_CONTACT_DE,
   ROUTE_STATIC_A11Y_DE,
 } from '../../shared/routes';
-import {
-  KIND_CONTROVERSY,
-  KIND_CONSENSUS,
-  KIND_STANDARD,
-} from '../../../../utils/constants/sequence';
 
 // const BrowsePage = loadable(() => import('../pages/Browse'));
-// const ParticipatePage = loadable(
-//   () => import('../pages/Consultation/Participate')
-// );
+const ParticipatePage = loadable(
+  () => import('../pages/Consultation/Participate')
+);
 // const ExplorePage = loadable(() => import('../pages/Consultation/Explore'));
 // export const ResultsPage = loadable(
 //   () => import('../pages/Consultation/Results')
@@ -133,12 +133,13 @@ export const Routes: FC = () => {
       {/* <Route path={ROUTE_BROWSE_CONSULTATIONS} component={BrowsePage} />
       <Route path={ROUTE_BROWSE_RESULTS} component={BrowsePage} />
       <Redirect path={ROUTE_CONSULTATION} to={ROUTE_PARTICIPATE} />
+       */}
       <Route path={ROUTE_PARTICIPATE}>
         <QuestionWrapper withRedirect>
           <ParticipatePage />
         </QuestionWrapper>
       </Route>
-      <Route path={ROUTE_EXPLORE}>
+      {/* <Route path={ROUTE_EXPLORE}>
         <QuestionWrapper withRedirect>
           <ExplorePage />
         </QuestionWrapper>
