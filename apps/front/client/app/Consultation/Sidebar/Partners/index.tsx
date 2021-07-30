@@ -4,7 +4,7 @@ import i18n from 'i18next';
 import { QuestionType, PartnerType } from '@make.org/types';
 import { FourthLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
-import { TileSeparatorStyle } from '@make.org/ui/elements/TileWithTitle/style';
+import { TileSeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { getPartnerAnchor, getSequenceLink } from '@make.org/utils/helpers/url';
 import {
   trackClickLearnMore,

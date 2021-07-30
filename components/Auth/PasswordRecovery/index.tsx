@@ -1,7 +1,7 @@
 import React from 'react';
 import i18n from 'i18next';
 import { SecondLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
-import { SmallSeparatorWithMarginStyle } from '@make.org/ui/elements/Separators';
+import { SmallSeparatorWithMarginStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { useAppContext } from '@make.org/store';
 import { selectPasswordRecovery } from '@make.org/store/selectors/user.selector';
 import { PasswordRecoveryForm } from './Form';

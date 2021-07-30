@@ -1,12 +1,15 @@
 import httpMocks from 'node-mocks-http';
 import { QuestionApiService } from 'Shared/api/QuestionApiService';
 import { UserApiService } from 'Shared/api/UserApiService';
-import { HTTP_NO_CONTENT, HTTP_NOT_FOUND } from 'Shared/constants/httpStatus';
+import {
+  HTTP_NO_CONTENT,
+  HTTP_NOT_FOUND,
+} from '@make.org/utils/constants/httpStatus';
 import { createInitialState } from 'Shared/store/initialState';
 import {
   NOTIFICATION_LEVEL_ERROR,
   PASSWORD_RECOVERY_FAILURE_MESSAGE,
-} from 'Shared/constants/notifications';
+} from '@make.org/utils/constants/notifications';
 import { reactRender } from '../reactRender';
 import { passwordRecoveryRoute } from './passwordRecoveryRoute';
 

@@ -12,7 +12,7 @@ import {
   CenterColumnStyle,
   SpaceBetweenRowStyle,
 } from '@make.org/ui/elements/FlexElements';
-import { SeparatorStyle } from '@make.org/ui/elements/Separators';
+import { SeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 
 export const SequenceCardStyle = styled.section<{ isNoProposalCard?: boolean }>`
   position: relative;

@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
 import {
-  TypeControversialsProposals,
+  ControversialProposalsType,
   RejectedProposalsType,
+  QuestionType,
 } from '@make.org/types';
 import i18n from 'i18next';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
@@ -23,7 +24,7 @@ import {
 } from './style';
 
 type Props = {
-  proposals: TypeControversialsProposals[] | RejectedProposalsType[];
+  proposals: ControversialProposalsType[] | RejectedProposalsType[];
   isRejected?: boolean;
   question: QuestionType;
 };

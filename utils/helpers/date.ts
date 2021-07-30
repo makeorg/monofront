@@ -97,24 +97,24 @@ export class DateHelperSingleton {
       },
     });
   }
-
-  getRemainingDays(endDate: string | null | undefined): number | null {
-    if (!endDate) {
-      return null;
-    }
-
-    const objectEndDate = new Date(endDate);
-    if (Number.isNaN(objectEndDate.getMonth())) {
-      return null;
-    }
-
-    console.log(this.languageValue);
-
-    return Math.round(
-      (objectEndDate.getTime() - new Date().getTime()) / (1000 * 3600 * 24)
-    );
-  }
 }
+
+export const getRemainingDays = (
+  endDate: string | null | undefined
+): number | null => {
+  if (!endDate) {
+    return null;
+  }
+
+  const objectEndDate = new Date(endDate);
+  if (Number.isNaN(objectEndDate.getMonth())) {
+    return null;
+  }
+
+  return Math.round(
+    (objectEndDate.getTime() - new Date().getTime()) / (1000 * 3600 * 24)
+  );
+};
 
 export const getDate = (dateString?: string): Date | null => {
   if (!dateString) {

@@ -6,9 +6,9 @@ import {
 } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { MiddleColumnStyle } from '@make.org/ui/elements/FlexElements';
-import { ConsultationLabelStyle } from '@make.org/ui/elements/ConsultationElements';
 import { SecondLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
-import { typography } from 'athena-design-tokens';
+import { typography, color } from 'athena-design-tokens';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
 
 export const IntroWrapperStyle = styled(MiddleColumnStyle)`
   padding: 30px ${intToPx(DefaultPadding.Mobile)};
@@ -17,8 +17,21 @@ export const IntroWrapperStyle = styled(MiddleColumnStyle)`
   }
 `;
 
-export const GreatCauseIntroLabelStyle = styled(ConsultationLabelStyle)`
+export const GreatCauseIntroLabelStyle = styled.span`
+  background-color: ${color.black};
+  padding: 3px 10px 1px;
+  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  color: ${color.white};
+  font-family: ${MakeFonts.TradeGothicBoldCondensed};
+  text-transform: uppercase;
   margin-bottom: 5px;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    padding: 6px 12px 4px;
+  }
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    padding: 8px 18px 5px;
+  }
 `;
 
 export const GreatCauseIntroBannerTitleStyle = styled(SecondLevelTitleStyle)`

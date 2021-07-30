@@ -18,14 +18,19 @@ export type ReportsType = {
 
 export type ControversialProposalsType = {
   author: string;
+  avatarUrl: string;
   content: string;
   like_it: number;
+  agree: number;
+  disagree: number;
   no_way: number;
 };
 
 export type RejectedProposalsType = {
   author: string;
+  avatarUrl: string;
   content: string;
+  agree: number;
   disagree: number;
   no_way: number;
 };

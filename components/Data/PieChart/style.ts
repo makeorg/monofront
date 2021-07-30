@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { color, typography } from 'athena-design-tokens';
-import { ShadowColors } from 'Client/app/assets/vars/Colors';
-import { FourthLevelTitleStyle } from 'Client/ui/Elements/TitleElements';
-import { MakeFonts } from 'Client/app/assets/vars/Fonts';
-import { intToPx } from 'Shared/helpers/styled';
-import { Elements } from 'Client/app/assets/vars/Elements';
+import { ShadowColors } from '@make.org/assets/vars/Colors';
+import { FourthLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { intToPx } from '@make.org/utils/helpers/styled';
+import { Elements } from '@make.org/assets/vars/Elements';
 
 export const PieChartWrapperStyle = styled.div`
   width: 100%;

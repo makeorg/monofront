@@ -143,7 +143,7 @@ export const ProgressBarContainerStyle = styled.div`
   margin: 10px 0 20px;
 `;
 
-export const ProgressBarStyle = styled.div<{ percent: string }>`
+export const ProgressBarStyle = styled.div<{ percent: number }>`
   position: absolute;
   left: 0;
   top: 0;

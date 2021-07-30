@@ -1,5 +1,5 @@
-import { TileWithTitle } from '@make.org/ui/elements/TileWithTitle';
-import { DeprecatedCollapse } from '@make.org/ui/elements/Collapse/DeprecatedCollapse';
+import { TileWithTitle } from '@make.org/ui/components/TileWithTitle';
+import { DeprecatedCollapse } from '@make.org/ui/components/Collapse/DeprecatedCollapse';
 import React, { FC } from 'react';
 import i18n from 'i18next';
 import { QuestionType } from '@make.org/types';

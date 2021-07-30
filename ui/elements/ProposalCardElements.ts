@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { CardStyle } from '@make.org/ui/elements/CardsElements';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { typography } from 'athena-design-tokens';
+import { CardStyle } from './CardsElements';
 import { ColumnElementStyle } from './FlexElements';
 
 export const ProposalInnerStyle = styled(ColumnElementStyle)`

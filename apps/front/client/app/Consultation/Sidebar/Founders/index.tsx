@@ -5,7 +5,7 @@ import {
   FOUNDER_PARTNER,
   MEDIA_PARTNER,
 } from '@make.org/utils/constants/partner';
-import { SidebarSeparatorStyle } from '@make.org/ui/elements/TileWithTitle/style';
+import { SidebarSeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { PartnersList } from '../Partners/List';
 import { FoundersTitleStyle } from './style';
 

@@ -1,25 +1,25 @@
 import React, { FC } from 'react';
 import { useAppContext } from '@make.org/store';
 import { useLocation } from 'react-router';
-import {
-  DateHelper,
-  isInProgress,
-  selectStep,
-} from '@make.org/utils/helpers/date';
+import { DateHelper, isInProgress } from '@make.org/utils/helpers/date';
 import i18n from 'i18next';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { isGreatCause } from '@make.org/utils/helpers/question';
 import { CONTACT_EMAIL } from '@make.org/utils/constants/config';
 import { QuestionType } from '@make.org/types';
 import { isResultsPage } from '@make.org/utils/routes';
-import { buildTimeline, getStepTitle } from 'Client/helper/timeline';
 import {
   DATE_DD_MMMM_FORMAT,
   DATE_DD_MMMM_YYYY_FORMAT,
   DATE_MMMM_YYYY_FORMAT,
 } from '@make.org/utils/constants/date';
 import { CONSULTATION_TIMELINE_ACTIVE } from '@make.org/utils/constants/featureFlipping';
-import { checkIsFeatureActivated } from 'Client/helper/featureFlipping';
+import { checkIsFeatureActivated } from '@make.org/utils/helpers/featureFlipping';
+import {
+  buildTimeline,
+  getStepTitle,
+  selectStep,
+} from '../../../helper/timeline';
 import {
   TimelineWrapperStyle,
   TimelineListWrapperStyle,
@@ -38,6 +38,7 @@ type Props = {
   dateText: string;
   description: string;
   withLink?: boolean;
+  isCurrent?: boolean;
 };
 
 const TimelineItem: FC<Props> = ({
@@ -110,7 +111,7 @@ export const Timeline: FC = () => {
           <TimelineListWrapperStyle as="div">
             <TimelineItem
               title={i18n.t('consultation.timeline.consultation_title')}
-              dateText={firstStepDateText}
+              dateText={firstStepDateText || ''}
               description={i18n.t(
                 'consultation.timeline.consultation_description'
               )}
@@ -122,7 +123,7 @@ export const Timeline: FC = () => {
             <li>
               <TimelineItem
                 title={i18n.t('consultation.timeline.consultation_title')}
-                dateText={firstStepDateText}
+                dateText={firstStepDateText || ''}
                 description={i18n.t(
                   'consultation.timeline.consultation_description'
                 )}

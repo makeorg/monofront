@@ -1,8 +1,8 @@
-import { TileWithTitle } from '@make.org/ui/elements/TileWithTitle';
+import { TileWithTitle } from '@make.org/ui/components/TileWithTitle';
 import React, { FC } from 'react';
 import i18n from 'i18next';
 import { QuestionType, PartnerType } from '@make.org/types';
-import { PresentationTileWithTitleStyle } from '@make.org/ui/elements/TileWithTitle/style';
+import { PresentationTileWithTitleStyle } from '@make.org/ui/components/TileWithTitle/style';
 import { useScreenWidth } from '@make.org/utils/hooks/useMedia';
 import { isGreatCause } from '@make.org/utils/helpers/question';
 import { trackClickLearnMore } from '@make.org/utils/services/Tracking';
@@ -16,6 +16,7 @@ import {
   matchDesktopDevice,
   matchMobileDevice,
 } from '@make.org/utils/helpers/styled';
+import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { DescriptionImageStyle } from '../../Styled/Presentation';
 import { Founders } from '../Founders';
 import { SidebarNewWindowLink } from '../Link';
@@ -37,8 +38,8 @@ export const PresentationTile: FC<Props> = ({ question }) => {
       )
     : [];
 
-  const descriptionImageHeight = isDesktop ? 204 : null;
-  const descriptionImagewidth = isDesktop ? null : screenWidth;
+  const descriptionImageHeight = isDesktop ? 204 : 0;
+  const descriptionImagewidth = isDesktop ? 0 : screenWidth;
 
   return (
     <>
@@ -47,12 +48,14 @@ export const PresentationTile: FC<Props> = ({ question }) => {
           src={question.descriptionImage}
           alt={question.descriptionImageAlt || ''}
           height={descriptionImageHeight}
-          width={descriptionImagewidth}
+          width={descriptionImagewidth || Breakpoints.LargeMobile}
         />
       )}
       <TileWithTitle
         as={
-          question.descriptionImage ? PresentationTileWithTitleStyle : undefined
+          question.descriptionImage
+            ? PresentationTileWithTitleStyle
+            : TileWithTitle
         }
         title={i18n.t('consultation.presentation.title')}
       >

@@ -12,9 +12,11 @@ import {
   PartnershipTitleStyle,
   PartnershipRedButton,
 } from './style';
+import { useAppContext } from '../../../../../../store';
 
 export const PartnershipBanner: FC = () => {
-  const { language } = useSelector((state: StateRoot) => state.appConfig);
+  const { state } = useAppContext();
+  const { language } = state.appConfig;
 
   return (
     <PartnershipSectionStyle

@@ -15,7 +15,7 @@ import {
   ColumnElementStyle,
 } from './FlexElements';
 import { ParagraphStyle } from './ParagraphElements';
-import { SeparatorStyle } from './Separators';
+import { SeparatorStyle } from './SeparatorsElements';
 import { GreyButtonStyle, UnstyledButtonStyle } from './ButtonsElements';
 import { RedLinkHTMLElementStyle } from './LinkElements';
 import { SvgLink, SvgLike, SvgMapMarker } from '../Svg/elements';

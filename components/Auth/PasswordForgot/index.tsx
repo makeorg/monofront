@@ -1,7 +1,7 @@
 import React from 'react';
 import i18n from 'i18next';
 import { SecondLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
-import { SmallSeparatorWithMarginStyle } from '@make.org/ui/elements/Separators';
+import { SmallSeparatorWithMarginStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { RedLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { modalShowLogin } from '@make.org/store/actions/modal';
 import { ExtraAltParagraphStyle } from '@make.org/ui/elements/ParagraphElements';

@@ -81,7 +81,7 @@ export const QuestionWrapper: FC<Props> = ({ children, withRedirect }) => {
 
   if (withRedirect && !isInProgress(currentQuestion)) {
     if (typeof window === 'object') {
-      window.location = currentQuestion.aboutUrl;
+      window.location.href = currentQuestion.aboutUrl;
     }
     return alternativeContent;
   }

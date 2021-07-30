@@ -38,13 +38,21 @@ export const BusinessConsultationsItemStatusStyle = styled.p`
   }
 `;
 
-export const BusinessConsultationsItemLinkStyle = styled(Link)<LinkProps>`
+const BusinessConsultationsLinkStyle = `
   font-family: ${MakeFonts.CircularStandardBold};
   color: ${color.greyDark};
   &:hover,
   &:focus {
     color: ${color.greyDark};
   }
+`;
+
+export const BusinessConsultationsItemLinkStyle = styled(Link)<LinkProps>`
+  ${BusinessConsultationsLinkStyle};
+`;
+
+export const BusinessConsultationsItemHTMLLinkStyle = styled.a`
+  ${BusinessConsultationsLinkStyle};
 `;
 
 export const BusinessConsultationsItemBorderStyle = styled.div`

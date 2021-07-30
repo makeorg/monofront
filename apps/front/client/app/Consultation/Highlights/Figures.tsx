@@ -3,7 +3,7 @@ import { useLocation } from 'react-router';
 import { QuestionType } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
-import { DateHelper } from '@make.org/utils/helpers/date';
+import { DateHelper, getRemainingDays } from '@make.org/utils/helpers/date';
 import i18n from 'i18next';
 import { isResultsPage } from '@make.org/utils/routes';
 import {
@@ -26,9 +26,7 @@ export const Figures: FC = () => {
   const { state } = useAppContext();
   const { language } = state.appConfig;
   const question: QuestionType = selectCurrentQuestion(state);
-  const remainingDays = DateHelper.getRemainingDays(
-    question ? question.endDate : ''
-  );
+  const remainingDays = getRemainingDays(question ? question.endDate : '');
   const location = useLocation();
   const resultsPage = isResultsPage(location.pathname);
 

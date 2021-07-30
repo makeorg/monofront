@@ -43,3 +43,11 @@ export const ContentSeparatorStyle = styled(SeparatorStyle)`
     margin: 15px 0;
   }
 `;
+
+export const TileSeparatorStyle = styled(SeparatorStyle)`
+  margin: 8px 0 16px;
+`;
+
+export const SidebarSeparatorStyle = styled(SeparatorStyle)`
+  margin: 10px 0;
+`;

@@ -26,7 +26,8 @@ export const Hero: FC = () => {
   const { homepage } = state.views;
   const isDesktop = matchDesktopDevice(device);
   const isFr = country === 'FR';
-  const hasActiveConsultations = homepage?.currentQuestions.length > 0;
+  const hasActiveConsultations =
+    homepage && homepage.currentQuestions.length > 0;
 
   return (
     <HeroWrapperStyle as="section" aria-labelledby="hero-title">

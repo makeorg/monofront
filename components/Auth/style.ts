@@ -4,7 +4,7 @@ import {
   SvgLegalConsent,
   SvgExternalLinkPlain,
 } from '@make.org/ui/Svg/elements';
-import { SmallSeparatorStyle } from '@make.org/ui/elements/Separators';
+import { SmallSeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { FormCenterAlignStyle } from '@make.org/ui/elements/FormElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { color, typography } from 'athena-design-tokens';

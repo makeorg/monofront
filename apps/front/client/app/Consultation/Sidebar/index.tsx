@@ -3,8 +3,6 @@ import { QuestionType } from '@make.org/types';
 import i18n from 'i18next';
 import { isGreatCause } from '@make.org/utils/helpers/question';
 import { FollowUs } from '@make.org/components/Flipping/FollowUs';
-import { PopularTags } from '@make.org/components/Flipping/PopularTags';
-import { LocalActorsTile } from '@make.org/components/Flipping/LocalActors/Tille';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { useAppContext } from '@make.org/store';
 import { ConsultationPageSidebarStyle } from '../../../pages/Consultation/style';
@@ -27,9 +25,7 @@ export const ConsultationSidebar: FC<Props> = ({ question }) => {
     >
       <PresentationTile question={question} />
       <PartnersTile question={question} />
-      {!isMobile && <LocalActorsTile question={question} />}
       <MethodologyTile question={question} />
-      <PopularTags question={question} />
       {!isMobile && <FollowUs question={question} />}
     </ConsultationPageSidebarStyle>
   );

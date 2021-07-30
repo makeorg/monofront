@@ -1,11 +1,11 @@
 import httpMocks from 'node-mocks-http';
 import { createInitialState } from 'Shared/store/initialState';
-import { isInProgress } from 'Shared/helpers/date';
+import { isInProgress } from '@make.org/utils/helpers/date';
 import { QuestionApiService } from 'Shared/api/QuestionApiService';
 import { sequenceRoute } from './sequenceRoute';
 import { reactRender } from '../reactRender';
 
-jest.mock('Shared/helpers/date', () => ({
+jest.mock('@make.org/utils/helpers/date', () => ({
   isInProgress: jest.fn(),
 }));
 

@@ -5,7 +5,7 @@ import {
   HomepageSectionTitleStyle,
   HomepageSectionStyle,
   HomepagePageInnerStyle,
-} from '../../../../pages/Home/style';
+} from '../../../pages/Home/style';
 import { ConsultationElementSubtitleStyle } from '../../Consultation/Browse/style';
 
 import { FeaturedQuestions } from './Questions';

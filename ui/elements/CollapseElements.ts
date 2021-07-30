@@ -5,7 +5,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Elements } from '@make.org/assets/vars/Elements';
-import { SeparatorStyle } from './Separators';
+import { SeparatorStyle } from './SeparatorsElements';
 import { UnstyledButtonStyle } from './ButtonsElements';
 import { MiddleColumnStyle } from './FlexElements';
 

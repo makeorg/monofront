@@ -3,7 +3,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { color } from 'athena-design-tokens';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
-import { SeparatorStyle } from '../../elements/Separators';
+import { SeparatorStyle } from '../../elements/SeparatorsElements';
 import { SpaceBetweenRowStyle } from '../../elements/FlexElements';
 
 export const SequenceSkeletonCardStyle = styled.div`

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { QuestionType } from '@make.org/types';
-import { TileWithTitle } from '@make.org/ui/elements/TileWithTitle';
-import { DeprecatedCollapse } from '@make.org/ui/elements/Collapse/DeprecatedCollapse';
+import { TileWithTitle } from '@make.org/ui/components/TileWithTitle';
+import { DeprecatedCollapse } from '@make.org/ui/components/Collapse/DeprecatedCollapse';
 import i18n from 'i18next';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { useAppContext } from '@make.org/store';

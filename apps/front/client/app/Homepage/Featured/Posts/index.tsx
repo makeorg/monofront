@@ -12,7 +12,7 @@ import {
   ConsultationElementPictureStyle,
   ConsultationElementTitleStyle,
   ConsultationElementParagraphStyle,
-  ConsultationRedLinkElementStyle,
+  ConsultationRedHTMLLinkElementStyle,
 } from '../../../Consultation/Browse/style';
 import { HomepagePageInnerStyle } from '../../../../pages/Home/style';
 import { HomepageQuestionsButtonStyle } from '../../Questions/style';
@@ -46,15 +46,14 @@ export const FeaturedPosts: FC<Props> = ({ posts }) => {
               <ConsultationElementParagraphStyle>
                 {post.description}
               </ConsultationElementParagraphStyle>
-              <ConsultationRedLinkElementStyle
-                as="a"
-                href={post.link}
+              <ConsultationRedHTMLLinkElementStyle
+                href={post.link || '#'}
                 target="_blank"
                 rel="noopener"
                 onClick={() => trackClickBlog('blog item')}
               >
                 {i18n.t('homepage.posts.link_text')}
-              </ConsultationRedLinkElementStyle>
+              </ConsultationRedHTMLLinkElementStyle>
             </ConsultationArticleStyle>
           </ConsultationsListItemStyle>
         ))}

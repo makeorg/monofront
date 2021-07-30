@@ -16,6 +16,7 @@ import {
   BusinessConsultationsItemStatusStyle,
   BusinessConsultationsItemArrowStyle,
   BusinessConsultationsItemLinkStyle,
+  BusinessConsultationsItemHTMLLinkStyle,
 } from './style';
 
 type Props = {
@@ -38,18 +39,21 @@ const businessConsultation = (question: QuestionType, country: string) => (
             ? i18n.t('search.main_results.open_consultation')
             : i18n.t('search.main_results.finished_consultation')}
         </BusinessConsultationsItemStatusStyle>
-        <BusinessConsultationsItemLinkStyle
-          to={
-            isInProgress(question)
-              ? getParticipateLink(country, question.slug)
-              : undefined
-          }
-          as={!isInProgress(question) ? 'a' : undefined}
-          href={isInProgress(question) ? undefined : question.aboutUrl || '#'}
-          onClick={() => trackClickHomepageConsultations()}
-        >
-          {question.question}
-        </BusinessConsultationsItemLinkStyle>
+        {isInProgress(question) ? (
+          <BusinessConsultationsItemLinkStyle
+            to={getParticipateLink(country, question.slug)}
+            onClick={() => trackClickHomepageConsultations()}
+          >
+            {question.question}
+          </BusinessConsultationsItemLinkStyle>
+        ) : (
+          <BusinessConsultationsItemHTMLLinkStyle
+            href={question.aboutUrl || '#'}
+            onClick={() => trackClickHomepageConsultations()}
+          >
+            {question.question}
+          </BusinessConsultationsItemHTMLLinkStyle>
+        )}
       </BusinessConsultationStyle>
 
       <BusinessConsultationsItemArrowStyle aria-hidden focusable="false" />

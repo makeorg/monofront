@@ -11,7 +11,7 @@ import {
   ThirdLevelTitleStyle,
   FourthLevelTitleStyle,
 } from '@make.org/ui/elements/TitleElements';
-import { SmallSeparatorStyle } from '@make.org/ui/elements/Separators';
+import { SmallSeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { RedLinkHTMLElementStyle } from '@make.org/ui/elements/LinkElements';
 import { SvgExternalLink, SvgBigCheck } from '@make.org/ui/Svg/elements';

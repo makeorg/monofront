@@ -32,8 +32,8 @@ export const ParticipateHighlights: FC = () => {
         <HigthlightsColumnStyle className="half left-spacing">
           <ImageWrapperStyle>
             <Image
-              src={question.descriptionImage}
-              alt={question.descriptionImageAlt}
+              src={question.descriptionImage || ''}
+              alt={question.descriptionImageAlt || ''}
               width={555}
               height={331}
               crop

@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import snapshotDiff from 'snapshot-diff';
 import { DeprecatedCollapse } from './DeprecatedCollapse';
 
-jest.mock('Client/ui/Elements/CollapseElements', () => ({
+jest.mock('@make.org/ui/elements/CollapseElements', () => ({
   TileWithCollapseWrapperStyle: 'TileWithCollapseWrapperStyle',
   CollapseWrapperStyle: 'TileSeparatorStyle',
   CollapseTriggerStyle: 'CollapseTriggerStyle',
@@ -12,7 +12,7 @@ jest.mock('Client/ui/Elements/CollapseElements', () => ({
   CollapseSeparatorStyle: 'CollapseSeparatorStyle',
 }));
 
-jest.mock('Client/ui/Svg/elements', () => ({
+jest.mock('@make.org/ui/Svg/elements', () => ({
   SvgAngleArrowRight: 'SvgAngleArrowRight',
 }));
 

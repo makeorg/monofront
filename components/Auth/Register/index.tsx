@@ -10,7 +10,7 @@ import {
   SeparatorWrapperStyle,
   TextSeparatorStyle,
   SeparatorStyle,
-} from '@make.org/ui/elements/Separators';
+} from '@make.org/ui/elements/SeparatorsElements';
 import { RedLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { ExtraParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { FacebookAuthentication } from '@make.org/components/Auth/Social/FacebookAuthentication';

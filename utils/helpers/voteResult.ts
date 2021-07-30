@@ -66,8 +66,8 @@ export const getVotesPercent = (
 export const getVotesRatio = (
   votesCount: number,
   votesTarget: number
-): string => {
+): number => {
   const percent = (votesCount * 100) / votesTarget;
 
-  return percent.toFixed(1);
+  return percent;
 };
