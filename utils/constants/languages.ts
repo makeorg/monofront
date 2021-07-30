@@ -1,6 +1,9 @@
 // REST TO DO
 // import english from 'Server/staticData/i18n/en.json';
 // import french from 'Server/staticData/i18n/fr.json';
+
+import { LocaleType } from '../../types/enums';
+
 // import german from 'Server/staticData/i18n/de.json';
 const english = {};
 const french = {};
@@ -15,18 +18,18 @@ export const translationRessources = {
 export const countriesConfiguration = [
   {
     countryCode: 'AT',
-    language: 'de',
+    language: LocaleType.de,
   },
   {
     countryCode: 'DE',
-    language: 'de',
+    language: LocaleType.de,
   },
   {
     countryCode: 'FR',
-    language: 'fr',
+    language: LocaleType.fr,
   },
   {
     countryCode: 'LU',
-    language: 'fr',
+    language: LocaleType.fr,
   },
 ];

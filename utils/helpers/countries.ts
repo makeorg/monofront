@@ -1,9 +1,10 @@
 import i18n from 'i18next';
+import { CountryType } from '@make.org/types';
+import { LocaleType } from '@make.org/types/enums';
 import { trackingParamsService } from '../services/TrackingParamsService';
 import { DateHelper } from './date';
 import { countriesConfiguration } from '../constants/languages';
 import { DEFAULT_LANGUAGE } from '../constants/config';
-import { CountryType } from '../../types';
 
 export const compareCountriesByName = (
   a: CountryType,
@@ -18,7 +19,9 @@ export const compareCountriesByName = (
   return 0;
 };
 
-export const getLanguageFromCountryCode = (countryCode: string): string => {
+export const getLanguageFromCountryCode = (
+  countryCode: string
+): keyof typeof LocaleType => {
   const countryConfiguration = countriesConfiguration.find(
     countryConf => countryConf.countryCode === countryCode
   );
@@ -48,7 +51,7 @@ export const setCountry = (country: string): void => {
 };
 
 export const setLanguage = (
-  language: string,
+  language: keyof typeof LocaleType,
   country: string,
   cloneI18nInstance?: boolean
 ): void => {

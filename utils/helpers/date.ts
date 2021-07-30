@@ -1,6 +1,14 @@
-import { format as formatDate } from 'date-fns';
+import { format as formatDate } from 'date-fns'; // eslint-disabled-line import/no-duplicates
+import { fr, enGB, de } from 'date-fns/locale'; // eslint-disabled-line import/no-duplicates
 import { HomeQuestionType, QuestionTimelineType } from '@make.org/types';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
+import { LocaleType } from '@make.org/types/enums';
+
+const locales: { [key: string]: Locale } = {
+  [LocaleType.fr]: fr,
+  [LocaleType.en]: enGB,
+  [LocaleType.de]: de,
+};
 
 export const getDateOfBirthFromAge = (age: string | number = ''): string => {
   if (!age) {
@@ -57,15 +65,15 @@ export const isInProgress = (dates: ConsultationDates): boolean => {
 };
 
 type DateHelperSingletonType = {
-  languageValue: string;
+  languageValue: keyof typeof LocaleType;
 };
 
 let instance: DateHelperSingletonType | null = null;
 
 export class DateHelperSingleton {
-  languageValue: string;
+  languageValue: keyof typeof LocaleType;
 
-  constructor(language: string) {
+  constructor(language: keyof typeof LocaleType) {
     if (!instance) {
       instance = this;
     }
@@ -73,11 +81,11 @@ export class DateHelperSingleton {
     this.languageValue = language;
   }
 
-  set language(language: string) {
+  set language(language: keyof typeof LocaleType) {
     this.languageValue = language;
   }
 
-  get language(): string {
+  get language(): keyof typeof LocaleType {
     return this.languageValue;
   }
 
@@ -90,11 +98,9 @@ export class DateHelperSingleton {
     if (Number.isNaN(objectDate.getMonth())) {
       return null;
     }
-
+    const locale = locales[this.languageValue];
     return formatDate(objectDate, 'PPPPpp', {
-      locale: {
-        code: this.languageValue,
-      },
+      locale,
     });
   }
 }

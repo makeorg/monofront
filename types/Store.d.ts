@@ -15,11 +15,12 @@ import {
   SequenceCardType,
 } from './Card';
 import { MODAL_TYPES } from './enums/modal_types';
+import { LocaleType } from './enums/locales';
 
 // Config State
 export type StateConfig = {
   readonly source: string;
-  readonly language: string;
+  readonly language: keyof typeof LocaleType;
   readonly country: string;
   readonly translations: any;
   readonly countriesWithConsultations: string[];
