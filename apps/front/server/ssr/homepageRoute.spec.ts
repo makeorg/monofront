@@ -1,5 +1,5 @@
 import httpMocks from 'node-mocks-http';
-import { createInitialState } from 'Shared/store/initialState';
+import { createInitialState } from '@make.org/store/initialState';
 import { ViewsService } from '../service/ViewsService';
 import { homepageRoute } from './homepageRoute';
 import { reactRender } from '../reactRender';
@@ -10,7 +10,7 @@ jest.mock('../reactRender', () => ({ reactRender: jest.fn() }));
 jest.mock('./helpers/ssr.helper', () => ({
   logError: jest.fn(),
 }));
-jest.mock('Shared/store/initialState', () => ({
+jest.mock('@make.org/store/initialState', () => ({
   createInitialState: jest.fn(),
 }));
 

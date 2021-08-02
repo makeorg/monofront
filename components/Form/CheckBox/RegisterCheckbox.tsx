@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { SvgCheck } from '@make.org/ui/Svg/elements';
 import i18n from 'i18next';

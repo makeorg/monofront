@@ -87,10 +87,10 @@ const SequenceByKeywordPage = loadable(
 // );
 // const NotFoundPage = loadable(() => import('../pages/NotFound'));
 const HomePage = loadable(() => import('../pages/Home'));
-// const ProposalPage = loadable(() => import('../pages/Proposal'));
-// const AccountActivationPage = loadable(
-//   () => import('../pages/AccountActivation')
-// );
+const ProposalPage = loadable(() => import('../pages/Proposal'));
+const AccountActivationPage = loadable(
+  () => import('../pages/AccountActivation')
+);
 // const ProfileEditPage = loadable(() => import('../pages/Profile/Edit'));
 
 // const ProfilePage = loadable(() => import('../pages/Profile'));
@@ -184,29 +184,29 @@ export const Routes: FC = () => {
           <TopIdeasPage />
         </QuestionWrapper>
       </Route>
-      {/* <Route
+      <Route
         path={ROUTE_ACCOUNT_ACTIVATION}
         component={AccountActivationPage}
       />
       <Route path={ROUTE_PROPOSAL} component={ProposalPage} />
-      <Route path={ROUTE_PASSWORD_RECOVERY} component={PasswordRecoveryPage} />
-      <Route path={ROUTE_PROFILE_EDIT} component={ProfileEditPage} />
-      <Route path={ROUTE_PROFILE_PROPOSALS} component={ProfilePage} />
-      <Route path={ROUTE_PROFILE_FAVOURITES} component={ProfilePage} />
-      <Route path={ROUTE_PROFILE_FOLLOWING} component={ProfilePage} />
-      <Route path={ROUTE_PROFILE_OPINIONS} component={ProfileOpinionsPage} />
-      <Route path={ROUTE_ORGANISATION_PROPOSALS} component={OrganisationPage} />
-      <Route path={ROUTE_ORGANISATION_VOTES} component={OrganisationPage} />
-      <Route path={ROUTE_SEARCH} component={SearchPage} />
-      <Route path={ROUTE_SEARCH_PROPOSALS} component={SearchPage} />
-      <Route path={ROUTE_SEARCH_ORGANISATIONS} component={SearchPage} />
-      <Route path={ROUTE_SEARCH_CONSULTATIONS} component={SearchPage} />
-      <Route path={ROUTE_PERSONALITY_PROFILE} component={PersonalityPage} />
+      {/* <Route path={ROUTE_PASSWORD_RECOVERY} component={PasswordRecoveryPage} /> */}
+      {/* <Route path={ROUTE_PROFILE_EDIT} component={ProfileEditPage} /> */}
+      {/* <Route path={ROUTE_PROFILE_PROPOSALS} component={ProfilePage} /> */}
+      {/* <Route path={ROUTE_PROFILE_FAVOURITES} component={ProfilePage} /> */}
+      {/* <Route path={ROUTE_PROFILE_FOLLOWING} component={ProfilePage} /> */}
+      {/* <Route path={ROUTE_PROFILE_OPINIONS} component={ProfileOpinionsPage} /> */}
+      {/* <Route path={ROUTE_ORGANISATION_PROPOSALS} component={OrganisationPage} /> */}
+      {/* <Route path={ROUTE_ORGANISATION_VOTES} component={OrganisationPage} /> */}
+      {/* <Route path={ROUTE_SEARCH} component={SearchPage} /> */}
+      {/* <Route path={ROUTE_SEARCH_PROPOSALS} component={SearchPage} /> */}
+      {/* <Route path={ROUTE_SEARCH_ORGANISATIONS} component={SearchPage} /> */}
+      {/* <Route path={ROUTE_SEARCH_CONSULTATIONS} component={SearchPage} /> */}
+      {/* <Route path={ROUTE_PERSONALITY_PROFILE} component={PersonalityPage} /> */}
       <Redirect
         path={ROUTE_ORGANISATION_PROFILE}
         to={ROUTE_ORGANISATION_PROPOSALS}
       />
-      <Redirect path={ROUTE_PROFILE} to={ROUTE_PROFILE_PROPOSALS} /> */}
+      <Redirect path={ROUTE_PROFILE} to={ROUTE_PROFILE_PROPOSALS} />
       <Route exact path={ROUTE_COUNTRY} component={HomePage} />
       {/* <Route path={ROUTE_STATIC_NOTFOUND} component={NotFoundPage} />
       <Route path={ROUTE_STATIC_COOKIES} component={CookiesPage} /> */}

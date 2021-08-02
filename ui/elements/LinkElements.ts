@@ -40,3 +40,11 @@ export const LinkAsRedButton = styled(RedButtonStyle)`
     text-decoration: none;
   }
 `;
+export const LinkAsGreyButton = styled(GreyButtonStyle)`
+  display: inline-flex;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+`;

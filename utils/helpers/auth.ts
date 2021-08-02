@@ -3,7 +3,7 @@ import { UserService } from '../services/User';
 
 export const authenticationState = async (): Promise<{
   isLoggedIn: boolean;
-  user: UserType | undefined;
+  user?: UserType;
 }> => {
   const user = await UserService.current();
   const profile = user

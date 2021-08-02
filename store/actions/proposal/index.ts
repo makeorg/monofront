@@ -10,7 +10,7 @@ export const proposeSuccess = (): ReducerAction => ({
 
 export const fetchProposalData =
   (proposalId: string) =>
-  (dispatch: Dispatch): Promise<void | AxiosResponse<ProposalType> | null> =>
+  (dispatch: Dispatch): Promise<ProposalType | void | null> =>
     ProposalService.getProposal(proposalId)
       .then(proposal => {
         dispatch({ type: actionTypes.PROPOSAL_LOAD, payload: proposal });

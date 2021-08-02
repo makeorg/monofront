@@ -21,6 +21,7 @@ export type UserType = {
   country: string;
   language: string;
   avatarUrl: string;
+  profile: UserProfileType;
 };
 
 export type UserProfileType = {

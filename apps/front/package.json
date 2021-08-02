@@ -59,7 +59,7 @@
 				"ua-parser-js": "~0.7.28",
 				"universal-cookie": "~4.0.4",
 				"universal-cookie-express": "~4.0.0",
-				"url-search-params-polyfill": "8.1.1",
+				"url-search-params-polyfill": "^8.1.1",
 				"uuid": "^8.3.0",
 				"webpack": "^5.46.0",
 				"webpack-dev-middleware": "^5.0.0",

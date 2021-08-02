@@ -49,7 +49,7 @@ type Props = {
   /** String containing the hash generate api side for security purpose */
   proposalKey: string;
   /** Index of the card */
-  index: number;
+  index?: number;
   /** Specific boolean sequence */
   isSequence?: boolean;
   /** Specific boolean for last sequence */

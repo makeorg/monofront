@@ -1,5 +1,10 @@
 import i18n from 'i18next';
-import { ErrorObjectType, UnknownObjectType } from '@make.org/types';
+import {
+  ErrorObjectType,
+  OrganisationProfileType,
+  PersonalityType,
+  UserProfileType,
+} from '@make.org/types';
 import { defaultApiError } from '../errors/Messages';
 import { mapErrors } from '../services/ApiErrors';
 import { Logger } from '../services/Logger';
@@ -73,12 +78,12 @@ export const transformFieldValueToProfileValue = (
   initialValue: string | number
 ): string | number | null => setEmptyStringToNull(initialValue);
 
-export const transformProfileToFormData = (
-  profile: UnknownObjectType
-): UnknownObjectType => {
-  const formData = { ...profile };
+export const transformProfileToFormData = (profile: UserProfileType): any => {
+  const formData: { [key: string]: number | string | boolean | null } = {
+    ...profile,
+  };
 
-  Object.keys(formData).forEach(key => {
+  Object.keys(formData).forEach((key): void => {
     formData[key] = setNullToEmptyString(formData[key]);
   });
 

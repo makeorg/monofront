@@ -36,7 +36,7 @@ const getQuestions = async (
 
 const getDetail = async (
   questionSlugOrId: string,
-  notFound: () => void,
+  notFound: () => void = () => null,
   country?: string
 ): Promise<QuestionType | null> => {
   try {

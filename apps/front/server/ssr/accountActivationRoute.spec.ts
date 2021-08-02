@@ -5,7 +5,7 @@ import {
   HTTP_NO_CONTENT,
   HTTP_NOT_FOUND,
 } from '@make.org/utils/constants/httpStatus';
-import { createInitialState } from 'Shared/store/initialState';
+import { createInitialState } from '@make.org/store/initialState';
 import {
   NOTIFICATION_LEVEL_SUCCESS,
   NOTIFICATION_LEVEL_ERROR,

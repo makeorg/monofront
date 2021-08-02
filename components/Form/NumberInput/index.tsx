@@ -42,7 +42,8 @@ export const NumberInput: React.FC<Props> = ({
   min = 0,
   max = 100000,
 }) => {
-   const inputRef = useRef<HTMLInputElement>(null);  const isFieldValid = useIsFieldValid(inputRef, error);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const isFieldValid = useIsFieldValid(inputRef, error);
   return (
     <MiddleFakeFieldStyle hasError={!isFieldValid}>
       <CenterInputIconStyle aria-hidden>{icon}</CenterInputIconStyle>

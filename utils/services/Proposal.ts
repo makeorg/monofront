@@ -1,7 +1,6 @@
 import { getBaitText } from '@make.org/utils/constants/proposal';
 import { ProposalType, ProposalsType } from '@make.org/types';
 import { ProposalApiService } from '@make.org/api/ProposalApiService';
-import { AxiosResponse } from 'axios';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
 // @todo remove with DepreactedProposalSubmit
@@ -31,7 +30,7 @@ const propose = async (content: string, questionId: string): Promise<void> => {
 
 const getProposal = async (
   proposalId: string
-): Promise<AxiosResponse<ProposalType> | null> => {
+): Promise<ProposalType | null> => {
   try {
     const response = await ProposalApiService.getProposal(proposalId);
 
@@ -45,7 +44,7 @@ const getProposal = async (
 
 const getPopularProposals = async (
   questionId: string
-): Promise<AxiosResponse<ProposalType> | null> => {
+): Promise<ProposalType | null> => {
   try {
     const response = await ProposalApiService.getPopularProposals(questionId);
 
