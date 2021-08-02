@@ -21,7 +21,9 @@ export const ProposalWrapperStyle = styled.div`
   }
 `;
 
-export const ProposalTitleStyle = styled(FourthLevelTitleStyle)`
+export const ProposalTitleStyle = styled(FourthLevelTitleStyle)<{
+  fontColor: string;
+}>`
   font-family: ${MakeFonts.CircularStandardBold};
   text-transform: none;
   color: ${props => props.fontColor};

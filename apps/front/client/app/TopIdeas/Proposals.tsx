@@ -32,7 +32,7 @@ export const TopIdeaDetailsProposals: FC<Props> = ({ topIdea, question }) => {
   const { country } = state.appConfig;
   const [proposals, setProposals] = useState<ProposalType[]>([]);
   const [hasMore, setHasMore] = useState<boolean>(false);
-  const [seed, setSeed] = useState(undefined);
+  const [seed, setSeed] = useState<number | undefined>(undefined);
   const [page, setPage] = useState<number>(0);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isPendingForMore, setIsPendingForMore] = useState<boolean>(false);

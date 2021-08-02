@@ -25,7 +25,8 @@ export const ConsultationPageWrapperStyle = styled.div<{
   box-sizing: border-box;
   width: 100%;
   max-width: ${intToPx(Layouts.ContainerWithPadding)};
-  margin: ${props => (props.isGreatCause ? '20px auto' : '0 auto 20px')};
+  margin: ${({ isGreatCause = false }) =>
+    isGreatCause ? '20px auto' : '0 auto 20px'};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     padding: 0 20px;
     margin: 20px auto;

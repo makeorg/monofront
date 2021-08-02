@@ -45,8 +45,8 @@ const TopIdeaDetailsPage: FC = () => {
   const isMobile = matchMobileDevice(device);
   const { topIdeaId } = useParams<{ topIdeaId: string }>();
   const location = useLocation();
-  const [topIdea, setTopIdea] = useState<TopIdeaType>(null);
-  const hasComments = topIdea && topIdea.comments.length > 0;
+  const [topIdea, setTopIdea] = useState<TopIdeaType | null>(null);
+  const hasComments = !!topIdea && topIdea.comments.length > 0;
 
   // @todo remove or refactor when Municipales is over
   const withPersonalityHeader: boolean = checkIsFeatureActivated(
@@ -99,7 +99,9 @@ const TopIdeaDetailsPage: FC = () => {
       />
       <TopIdeaDetailsSkipLinks hasComments={hasComments} />
       <MobileDescriptionImage question={question} />
-      <ConsultationHeaderWrapperStyle backgroundcolor={question.theme.color}>
+      <ConsultationHeaderWrapperStyle
+        backgroundcolor={question.theme.color || ''}
+      >
         <IntroBanner question={question} />
       </ConsultationHeaderWrapperStyle>
       {/** @todo remove or refactor when Municipales is over */}

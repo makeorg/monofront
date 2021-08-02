@@ -1,5 +1,6 @@
 import { color } from 'athena-design-tokens';
 import i18n from 'i18next';
+import { OpinionVoteParamsType } from '../../types';
 
 export const OPINION_AGREE_KEY = 'agree';
 export const OPINION_DISAGREE_KEY = 'disagree';
@@ -11,7 +12,7 @@ export const OPINION_NONPRIORITY_KEY = 'nonPriority';
 export const OPINION_EXISTS_KEY = 'exists';
 export const OPINION_TOBEPRECISED_KEY = 'toBePrecised';
 
-export const opinionsVoteStaticParams = {
+export const opinionsVoteStaticParams: OpinionVoteParamsType = {
   [OPINION_AGREE_KEY]: {
     label: i18n.t('personality.opinions.vote.agree'),
     color: color.agree,

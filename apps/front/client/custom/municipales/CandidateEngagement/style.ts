@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { ColumnElementStyle } from 'Client/ui/Elements/FlexElements';
+import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { intToPx } from 'Shared/helpers/styled';
+import { intToPx } from '@make.org/utils/helpers/styled';
 import { color } from 'athena-design-tokens';
-import { SeparatorStyle } from 'Client/ui/Elements/Separators';
-import { FourthLevelTitleStyle } from 'Client/ui/Elements/TitleElements';
-import { RedLinkRouterStyle } from 'Client/ui/Elements/LinkElements';
-import { ParagraphStyle } from 'Client/ui/Elements/ParagraphElements';
+import { SeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
+import { FourthLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
+import { RedLinkRouterStyle } from '@make.org/ui/elements/LinkElements';
+import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 
 export const CandidateWrapperStyle = styled.div`
   background-color: ${color.white};

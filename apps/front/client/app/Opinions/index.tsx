@@ -71,7 +71,7 @@ export const Opinions: FC<Props> = ({
   personality,
   privateProfile = false,
 }) => {
-  const [opinions, setOpinions] = useState([]);
+  const [opinions, setOpinions] = useState<PersonalityOpinionType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchPersonnalityOpinions = async () => {

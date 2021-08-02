@@ -213,17 +213,10 @@ export const CandidateDesktopSlider: FC<SliderProps> = ({ personalities }) => {
 };
 
 export const CandidateEngagement: FC<Props> = ({ question }) => {
-  const [personalities, setPersonalities] = useState(null);
   const { dispatch, state } = useAppContext();
-  const personalitiesState: PersonalityType[] =
-    state.questions[question.slug].personalities;
   const { device } = state.appConfig;
   const isMobile = matchMobileDevice(device);
-
-  useEffect(() => {
-    setPersonalities(personalitiesState);
-  }, [personalitiesState]);
-
+  const { personalities } = state.questions[question.slug];
   useEffect(() => {
     dispatch(fechQuestionPersonalities(question.questionId, question.slug));
     // eslint-disable-next-line react-hooks/exhaustive-deps

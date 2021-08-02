@@ -22,7 +22,7 @@ export const MobileDescriptionImage: FC<Props> = ({ question }) => {
         <MobileDescriptionImageStyle
           src={question.descriptionImage}
           alt={question.descriptionImageAlt || ''}
-          width={screenWidth}
+          width={screenWidth || undefined}
         />
       )}
     </>

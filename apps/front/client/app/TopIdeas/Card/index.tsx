@@ -138,7 +138,7 @@ export const TopIdeaCard: FC<Props> = ({
           )}
         </TopIdeaCollapseTriggerStyle>
         <TopIdeaCollapseContentStyle
-          className={isOpened && 'open'}
+          className={isOpened ? 'open' : ''}
           aria-hidden={!isOpened}
         >
           <ScoringContainerStyle>

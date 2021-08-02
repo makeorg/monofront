@@ -10,7 +10,7 @@ import {
 const NUMBER_OF_TAGS_TO_DISPLAY = 4;
 
 type Props = {
-  tags: TagType[];
+  tags: Partial<TagType>[];
 };
 
 export const ProposalFooterWithTagElement: React.FC<Props> = ({ tags }) => {

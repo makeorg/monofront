@@ -15,7 +15,7 @@ type Props = {
 export const Commitment: FC<Props> = ({ userId, topIdeaId, comment }) => {
   const [hasVoted, setHasVoted] = useState(false);
   const [voteValue, setVoteValue] = useState(
-    comment && comment.vote ? comment.vote : null
+    comment && comment.vote ? comment.vote : ''
   );
   const [qualificationValue, setQualificationValue] = useState(
     comment && comment.qualification ? comment.qualification : null
@@ -37,7 +37,7 @@ export const Commitment: FC<Props> = ({ userId, topIdeaId, comment }) => {
   };
 
   const unvote = () => {
-    setVoteValue(null);
+    setVoteValue('');
     setHasVoted(false);
     setQualificationValue(null);
   };
@@ -50,13 +50,13 @@ export const Commitment: FC<Props> = ({ userId, topIdeaId, comment }) => {
     return setQualificationValue(key);
   };
 
-  if (preview || comment) {
+  if ((preview || comment) && voteValue) {
     return (
       <CommitmentPreview
         userId={userId}
         topIdeaId={topIdeaId}
-        vote={voteValue}
-        qualification={qualificationValue}
+        vote={voteValue || ''}
+        qualification={qualificationValue || ''}
         firstComment={firstComment}
         secondComment={secondComment}
         thirdComment={thirdComment}
@@ -73,10 +73,10 @@ export const Commitment: FC<Props> = ({ userId, topIdeaId, comment }) => {
   return (
     <>
       <CommitmentQualification
-        voteValue={voteValue}
+        voteValue={voteValue || ''}
         unvote={unvote}
         qualifications={opinionsVoteStaticParams[voteValue].qualifications}
-        qualificationValue={qualificationValue}
+        qualificationValue={qualificationValue || ''}
         handleQualification={handleQualification}
       />
       <CommitmentForm
