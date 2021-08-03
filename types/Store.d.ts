@@ -8,7 +8,7 @@ import {
 } from './Question';
 import { ProposalType } from './Proposal';
 import { TagType } from './Tag';
-import { PersonalityType } from './User';
+import { CommonUsersProfileType, PersonalityType, UserType } from './User';
 import {
   DemographicNameType,
   ProposalCardType,
@@ -16,6 +16,7 @@ import {
 } from './Card';
 import { MODAL_TYPES } from './enums/modal_types';
 import { LocaleType } from './enums/locales';
+import { OrganisationType } from './Organisation';
 
 // Config State
 export type StateConfig = {
@@ -80,13 +81,11 @@ export type StateNotification = {
 export type StateAuthentication = {
   readonly isLoggedIn: boolean;
   readonly errors: ErrorObjectType[];
-  readonly user?: {
-    userId: string;
-    displayName: string;
-    profile?: any;
-    userType?: string;
-    avatarUrl: string;
-  };
+  readonly user?:
+    | ((UserType | OrganisationType | PersonalityType) & {
+        profile?: PersonalityType | UserProfileType | OrganisationProfileType;
+      })
+    | null;
 };
 
 // Registration State

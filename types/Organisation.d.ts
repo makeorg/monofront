@@ -2,6 +2,7 @@ import { ProposalType } from './Proposal';
 import { VoteType } from './Vote';
 
 export type OrganisationType = {
+  userId: string;
   avatarUrl: string;
   country: string;
   description: string;
@@ -13,6 +14,10 @@ export type OrganisationType = {
   slug: string;
   votesCount: number;
   website: string;
+  email: string;
+  enabled: boolean;
+  emailVerified: boolean;
+  userType: string;
 };
 
 export type OrganisationVoteType = {

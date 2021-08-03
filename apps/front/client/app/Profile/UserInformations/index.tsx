@@ -1,7 +1,12 @@
 import React, { FC } from 'react';
 import { useAppContext } from '@make.org/store';
 import { logout } from '@make.org/store/actions/authentication';
-import { OrganisationType, PersonalityType, UserType } from '@make.org/types';
+import {
+  CommonUsersProfileType,
+  OrganisationType,
+  PersonalityType,
+  UserType,
+} from '@make.org/types';
 import i18n from 'i18next';
 import { getAgeFromDateOfBirth } from '@make.org/utils/helpers/date';
 import { Avatar } from '@make.org/ui/components/Avatar';
@@ -34,7 +39,9 @@ import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { UserDescription } from './Description';
 
 type Props = {
-  user: UserType | PersonalityType | OrganisationType;
+  user: (UserType | PersonalityType | OrganisationType) & {
+    profile: CommonUsersProfileType;
+  };
   navigationBar: React.ReactElement<any>;
 };
 
@@ -46,13 +53,13 @@ export const UserInformations: FC<Props> = ({ user, navigationBar }) => {
   const isPersonality = user.userType === TYPE_PERSONALITY;
   const isBasicUser = user.userType === TYPE_USER;
 
-  const { avatarUrl, displayName, email } = user;
+  const { avatarUrl, email } = user;
   const {
-    firstName,
-    lastName,
-    postalCode,
+    firstName = '',
+    lastName = '',
+    postalCode = '',
     dateOfBirth,
-    profession,
+    profession = '',
     description,
     website,
   } = user.profile;
@@ -72,7 +79,9 @@ export const UserInformations: FC<Props> = ({ user, navigationBar }) => {
               <ScreenReaderItemStyle>
                 {i18n.t('profile.common.labels.organisation')}
               </ScreenReaderItemStyle>
-              {formatOrganisationName(displayName)}
+              {formatOrganisationName(
+                'displayName' in user ? user.displayName : ''
+              )}
               <CertifiedIconStyle aria-hidden focusable="false" />
             </ProfileTitleStyle>
           </ProfileContentWrapperStyle>

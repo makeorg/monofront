@@ -25,7 +25,7 @@ export const ProposalSuccess: React.FC = () => {
       <ProposalSuccessIconStyle aria-hidden focusable="false" />
       <ProposalSuccessTitleStyle>
         {i18n.t('proposal_submit.success.title', {
-          name: user ? user.displayName : '',
+          name: !!user && 'displayName' in user ? user.displayName : '',
         })}
       </ProposalSuccessTitleStyle>
       <ProposalSuccessParagraphStyle>

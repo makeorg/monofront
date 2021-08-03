@@ -26,8 +26,8 @@ export const HeaderAuthentication: React.FC = () => {
   if (user) {
     const isOrganisation = user.userType === TYPE_ORGANISATION;
     const userName = isOrganisation
-      ? formatOrganisationName(user.displayName)
-      : formatUserName(user.displayName);
+      ? formatOrganisationName('displayName' in user ? user.displayName : '')
+      : formatUserName('displayName' in user ? user.displayName : '');
 
     return (
       <ProfileLinkStyle

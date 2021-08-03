@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { SvgExternalLink } from '../Svg/elements';
-import { RedButtonStyle } from './ButtonsElements';
+import { GreyButtonStyle, RedButtonStyle } from './ButtonsElements';
 
 const linkStyle = (linkColor: string) => `
   color: ${linkColor};

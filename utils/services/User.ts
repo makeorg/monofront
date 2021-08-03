@@ -8,6 +8,7 @@ import {
   OrganisationProfileType,
   ErrorObjectType,
   RegisterFormDataType,
+  PersonalityProfileType,
 } from '@make.org/types';
 import { mapErrors } from '@make.org/utils/services/ApiErrors';
 import {
@@ -389,7 +390,9 @@ const getProfile = async (userId: string): Promise<UserProfileType | null> => {
 const getProfileByUserType = async (
   userId: string,
   userType: string
-): Promise<UserProfileType | OrganisationProfileType | null> => {
+): Promise<
+  UserProfileType | OrganisationProfileType | PersonalityProfileType | null
+> => {
   if (userType === TYPE_ORGANISATION) {
     return OrganisationService.getProfile(userId);
   }

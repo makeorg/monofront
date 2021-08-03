@@ -1,9 +1,9 @@
-import { UserType } from '@make.org/types';
+import { OrganisationType, PersonalityType, UserType } from '@make.org/types';
 import { UserService } from '../services/User';
 
 export const authenticationState = async (): Promise<{
   isLoggedIn: boolean;
-  user?: UserType;
+  user: UserType | OrganisationType | PersonalityType | null;
 }> => {
   const user = await UserService.current();
   const profile = user
@@ -19,6 +19,6 @@ export const authenticationState = async (): Promise<{
 
   return {
     isLoggedIn: !!user,
-    user: userWithProfile || undefined,
+    user: userWithProfile,
   };
 };

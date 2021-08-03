@@ -3,15 +3,17 @@ import {
   PersonalityOpinionType,
   PersonalityProfileType,
   ErrorObjectType,
-  UserType,
   UserProfileType,
+  PersonalityType,
 } from '@make.org/types';
 import { PersonalityApiService } from '@make.org/api/PersonalityApiService';
 import { getErrorMessages } from '@make.org/utils/helpers/form';
 import { updatePersonalityErrors } from '@make.org/utils/errors/Messages/Personality';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
-const getPersonalityById = async (userId: string): Promise<null | UserType> => {
+const getPersonalityById = async (
+  userId: string
+): Promise<null | (PersonalityType & { profile: PersonalityProfileType })> => {
   try {
     const response = await PersonalityApiService.getPersonality(userId);
 

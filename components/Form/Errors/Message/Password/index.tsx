@@ -12,8 +12,11 @@ type Props = {
 
 export const ErrorMessageForgotPassword: React.FC<Props> = ({
   inputId = 'password',
-  labelText = i18n.t('common.form.label.password'),
+  labelText,
 }) => {
+  const message = labelText
+    ? labelText.toLowerCase()
+    : i18n.t('common.form.label.password');
   const { dispatch } = useAppContext();
 
   return (
@@ -23,7 +26,7 @@ export const ErrorMessageForgotPassword: React.FC<Props> = ({
           __html: i18n.t(
             'profile.password_update.actual_password.invalid_password',
             {
-              label: `<label for="${inputId}">${labelText.toLowerCase()}</label>`,
+              label: `<label for="${inputId}">${message}</label>`,
             }
           ),
         }}

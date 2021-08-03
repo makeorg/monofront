@@ -69,9 +69,9 @@ export const DeleteAccount: FC<Props> = ({ user }) => {
     setIsSubmitSuccessful(false);
   };
 
-  const handleSubmit = async (
-    event: React.SyntheticEvent<HTMLButtonElement>
-  ) => {
+  const handleSubmit: React.FormEventHandler<
+    HTMLButtonElement | HTMLFormElement
+  > = async event => {
     event.preventDefault();
 
     const success = () => {
@@ -109,7 +109,6 @@ export const DeleteAccount: FC<Props> = ({ user }) => {
           <PasswordInput
             label={i18n.t('profile.delete_account.password')}
             name="password"
-            id="password"
             required
             icon={PasswordFieldIcon}
             value={formValues.password}

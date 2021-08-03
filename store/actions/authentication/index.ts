@@ -1,13 +1,14 @@
 import i18n from 'i18next';
 import {
   ErrorObjectType,
-  PersonalityProfileType,
   StateRoot,
   UserType,
-  UserProfileType,
-  OrganisationProfileType,
   ReducerAction,
   Dispatch,
+  CommonUsersProfileType,
+  OrganisationProfileType,
+  PersonalityProfileType,
+  UserProfileType,
 } from '@make.org/types';
 import {
   trackLoginEmailSuccess,
@@ -55,7 +56,11 @@ export const loginSocialSuccess = (): ReducerAction => ({
 });
 export const setUserInfo = (
   user: UserType,
-  profile: UserProfileType | null
+  profile:
+    | UserProfileType
+    | OrganisationProfileType
+    | PersonalityProfileType
+    | null
 ): ReducerAction => ({
   type: actionTypes.GET_INFO,
   user: {

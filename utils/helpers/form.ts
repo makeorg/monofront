@@ -2,7 +2,7 @@ import i18n from 'i18next';
 import {
   ErrorObjectType,
   OrganisationProfileType,
-  PersonalityType,
+  PersonalityProfileType,
   UserProfileType,
 } from '@make.org/types';
 import { defaultApiError } from '../errors/Messages';
@@ -78,7 +78,9 @@ export const transformFieldValueToProfileValue = (
   initialValue: string | number
 ): string | number | null => setEmptyStringToNull(initialValue);
 
-export const transformProfileToFormData = (profile: UserProfileType): any => {
+export const transformProfileToFormData = (
+  profile: UserProfileType | PersonalityProfileType | OrganisationProfileType
+): any => {
   const formData: { [key: string]: number | string | boolean | null } = {
     ...profile,
   };

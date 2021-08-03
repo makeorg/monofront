@@ -1,4 +1,10 @@
+import { OrganisationProfileType } from './Organisation';
+import { PersonalityProfileType } from './Personality';
 import { ProposalType } from './Proposal';
+
+export type CommonUsersProfileType = OrganisationProfileType &
+  UserProfileType &
+  PersonalityProfileType;
 
 export type PersonalityType = {
   userId: string;
@@ -7,21 +13,24 @@ export type PersonalityType = {
   politicalParty: string;
   avatarUrl: string;
   gender: string;
+  userType: string;
+  email: string;
+  enabled: boolean;
+  emailVerified: boolean;
 };
 
 export type UserType = {
   userId: string;
   email: string;
+  enabled: boolean;
+  emailVerified: boolean;
   displayName: string;
   userType: string;
   roles: string[];
   hasPassword: boolean;
-  enabled: boolean;
-  emailVerified: boolean;
   country: string;
   language: string;
   avatarUrl: string;
-  profile: UserProfileType;
 };
 
 export type UserProfileType = {

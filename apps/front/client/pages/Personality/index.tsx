@@ -1,5 +1,5 @@
 import React, { useEffect, useState, FC } from 'react';
-import { Redirect, match as TypeMatch, useParams } from 'react-router';
+import { Redirect, useParams, RouteComponentProps } from 'react-router';
 import i18n from 'i18next';
 import {
   TabNavStyle,
@@ -34,22 +34,24 @@ import { getHomeLink } from '@make.org/utils/helpers/url';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { CertifiedIconStyle } from '@make.org/components/Proposal/DeprecatedAuthor/Styled';
 import { useAppContext } from '@make.org/store';
+import { PersonalityProfileType, PersonalityType } from '@make.org/types';
 import { UserDescription } from '../../app/Profile/UserInformations/Description';
 import { Opinions } from '../../app/Opinions';
 import { OrganisationProfileSkipLinks } from '../../app/SkipLinks/Organisation';
 import { MetaTags } from '../../app/MetaTags';
 
-type Props = {
-  match: TypeMatch;
-};
-
-const PersonalityPage: FC<Props> = ({ match }) => {
-  const [personality, setPersonality] = useState(null);
+const PersonalityPage: FC<RouteComponentProps<{ userId: string }>> = ({
+  match: {
+    params: { userId },
+  },
+}) => {
+  const [personality, setPersonality] = useState<
+    (PersonalityType & { profile: PersonalityProfileType }) | null
+  >(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const { state } = useAppContext();
   const { device } = state.appConfig;
   const isMobile = matchMobileDevice(device);
-  const { userId } = match.params;
   const { country } = useParams<{ country: string }>();
 
   useEffect(() => {
@@ -57,10 +59,12 @@ const PersonalityPage: FC<Props> = ({ match }) => {
   }, []);
 
   useEffect(() => {
-    PersonalityService.getPersonalityById(userId).then(personalityResponse => {
-      setPersonality(personalityResponse);
+    const getPersonalityById = async () => {
+      const response = await PersonalityService.getPersonalityById(userId);
+      setPersonality(response);
       setIsLoading(false);
-    });
+    };
+    getPersonalityById();
   }, [userId]);
 
   if (!personality && isLoading) {

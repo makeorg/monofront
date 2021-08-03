@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import {
   getFieldError,
   transformFieldValueToProfileValue,
@@ -11,23 +11,25 @@ import { ErrorObjectType, OrganisationProfileType } from '@make.org/types';
 import { CommonProfileFields } from './Common';
 
 type ProfileFormProps = {
-  profile: OrganisationProfileType,
-  handleChange: (name: string, value: string | number | null) => void,
-  errors: ErrorObjectType[],
+  profile: OrganisationProfileType;
+  handleChange: (name: string, value: string | number | null) => void;
+  errors: ErrorObjectType[];
 };
 
-export const OrganisationForm = ({
+export const OrganisationForm: FC<ProfileFormProps> = ({
   profile,
   handleChange,
   errors,
-}: ProfileFormProps) => {
+}) => {
   const organisationNameError = getFieldError('organisationname', errors);
 
   const [values, setValues] = useState<OrganisationProfileType>(
     transformProfileToFormData(profile)
   );
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = event.target;
     setValues({
       ...values,

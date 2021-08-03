@@ -8,7 +8,7 @@ import {
  * @param {*} state
  */
 export const selectAuthentication = (state: StateRoot): StateAuthentication => {
-  const { authentication } = state.user || {};
+  const { authentication } = state.user || { user: {} };
   return authentication;
 };
 

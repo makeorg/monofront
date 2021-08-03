@@ -5,14 +5,20 @@ import { SubmitButton } from '@make.org/components/Form/SubmitButton';
 import { PROFILE_UPDATE_FORMNAME } from '@make.org/utils/constants/form';
 import { TileWithTitle } from '@make.org/ui/components/TileWithTitle';
 import { SubmitSaveIcon } from '@make.org/utils/constants/icons';
-import { UserType, ErrorObjectType, OrganisationProfileType, UserProfileType } from '@make.org/types';
+import {
+  UserType,
+  ErrorObjectType,
+  PersonalityType,
+  OrganisationType,
+  CommonUsersProfileType,
+} from '@make.org/types';
 
 import { getUser } from '@make.org/store/actions/authentication';
 import { FormErrors } from '@make.org/components/Form/Errors';
 import {
   FormRequirementsStyle,
   FormLeftAlignStyle,
-} from '@make.org/components/Form/Styled/Content';
+} from '@make.org/ui/elements/FormElements';
 import { throttle } from '@make.org/utils/helpers/throttle';
 import { FormSuccessMessage } from '@make.org/components/Form/Success';
 import {
@@ -25,22 +31,24 @@ import { OrganisationService } from '@make.org/utils/services/Organisation';
 import { PersonalityService } from '@make.org/utils/services/Personality';
 import { LegalConsent } from '@make.org/components/Auth/Register/LegalConsent';
 import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
+import { useAppContext } from '@make.org/store';
 import { OrganisationForm } from './Organisation';
 import { PersonalityForm } from './Personality';
 import { UserForm } from './User';
-import { useAppContext } from '@make.org/store'
 
 type Props = {
   /** User */
-  user: UserType;
+  user: (UserType | PersonalityType | OrganisationType) & {
+    profile: CommonUsersProfileType;
+  };
 };
 
 export const UpdateInformations: FC<Props> = ({ user }) => {
-  const {dispatch} = useAppContext();
+  const { dispatch } = useAppContext();
 
   let updateProfile: (
     organisationId: string,
-    profile: OrganisationProfileType | UserProfileType,
+    profile: CommonUsersProfileType,
     success: () => void,
     handleErrors: (errors: ErrorObjectType[]) => void
   ) => Promise<null | void>;
@@ -58,7 +66,7 @@ export const UpdateInformations: FC<Props> = ({ user }) => {
       throw new Error(`Unexpected user type "${user.userType}"`);
   }
 
-  const [profile, setProfileValues] = useState<UserProfileType | OrganisationProfileType>({
+  const [profile, setProfileValues] = useState<CommonUsersProfileType>({
     ...user.profile,
     legalMinorConsent: false,
     legalAdvisorApproval: false,
@@ -69,7 +77,9 @@ export const UpdateInformations: FC<Props> = ({ user }) => {
   const [needLegalConsent, displayLegalConsent] = useState<boolean>(false);
   const userIsAChild =
     user.userType === TYPE_USER &&
-    getAgeFromDateOfBirth("dateOfBirth" in profile ? profile.dateOfBirth : "") < 15;
+    Number(
+      getAgeFromDateOfBirth('dateOfBirth' in profile ? profile.dateOfBirth : '')
+    ) < 15;
 
   const handleChange = (
     name: string,
@@ -121,7 +131,7 @@ export const UpdateInformations: FC<Props> = ({ user }) => {
         id={PROFILE_UPDATE_FORMNAME}
         name={PROFILE_UPDATE_FORMNAME}
         onSubmit={userIsAChild ? toggleLegalConsent : throttle(handleSubmit)}
-        className={needLegalConsent && 'hidden'}
+        className={needLegalConsent ? 'hidden' : ''}
       >
         <FormRequirementsStyle>
           {i18n.t('common.form.requirements')}

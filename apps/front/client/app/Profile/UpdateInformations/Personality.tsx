@@ -2,7 +2,7 @@ import React, { useState, FC } from 'react';
 import { UntypedInput } from '@make.org/components/Form/UntypedInput';
 import i18n from 'i18next';
 import { NameFiledIcon } from '@make.org/utils/constants/icons';
-import {  PersonalityProfileType, ErrorObjectType } from '@make.org/types';
+import { PersonalityProfileType, ErrorObjectType } from '@make.org/types';
 import {
   getFieldError,
   transformFieldValueToProfileValue,
@@ -11,9 +11,9 @@ import {
 import { CommonProfileFields } from './Common';
 
 type ProfileFormProps = {
-  profile: PersonalityProfileType,
-  handleChange: (name: string, value: string | number | null) => void,
-  errors: ErrorObjectType[],
+  profile: PersonalityProfileType;
+  handleChange: (name: string, value: string | number | null) => void;
+  errors: ErrorObjectType[];
 };
 
 export const PersonalityForm: FC<ProfileFormProps> = ({
@@ -27,7 +27,9 @@ export const PersonalityForm: FC<ProfileFormProps> = ({
     transformProfileToFormData(profile)
   );
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const onChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = event.target;
     setValues({
       ...values,
