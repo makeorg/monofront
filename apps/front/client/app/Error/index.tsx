@@ -2,11 +2,7 @@ import * as React from 'react';
 import { Logger } from '@make.org/utils/services/Logger';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { setUnexpectedError } from '@make.org/utils/services/DefaultErrorHandler';
-import {
-  NETWORK_ERROR_MESSAGE,
-  NOTIFICATION_LEVEL_ALERT,
-  UNEXPECTED_ERROR_MESSAGE,
-} from '@make.org/utils/constants/notifications';
+import { NOTIF } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
 
 type Props = {
@@ -62,15 +58,15 @@ export const ServiceErrorHandler: React.FC = ({ children }) => {
     ) {
       dispatch(
         displayNotificationBanner(
-          NETWORK_ERROR_MESSAGE,
-          NOTIFICATION_LEVEL_ALERT
+          NOTIF.NETWORK_ERROR_MESSAGE,
+          NOTIF.NOTIFICATION_LEVEL_ALERT
         )
       );
     } else {
       dispatch(
         displayNotificationBanner(
-          UNEXPECTED_ERROR_MESSAGE,
-          NOTIFICATION_LEVEL_ALERT
+          NOTIF.UNEXPECTED_ERROR_MESSAGE,
+          NOTIF.NOTIFICATION_LEVEL_ALERT
         )
       );
     }

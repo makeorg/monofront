@@ -1,11 +1,7 @@
 import React, { useState, FC } from 'react';
 import i18n from 'i18next';
-import {
-  NAVIGATION_ARIA_CLASS,
-  NAVIGATION_ELEMENT_ARIA_CLASS,
-  SEARCH_ELEMENT_ARIA_CLASS,
-  NAVIGATION_ARIA_NEGATIVE_TAB_CLASS,
-} from '@make.org/utils/constants/a11y';
+import { NAVIGATION, SEARCH } from '@make.org/types/enums';
+
 import {
   addAriaHiddenByClass,
   removeAriaHiddenByClass,
@@ -21,14 +17,18 @@ export const MobileMenu: FC = () => {
 
   const toggleExpansion = () => {
     if (isExpanded) {
-      removeAriaHiddenByClass(NAVIGATION_ARIA_CLASS);
-      removeAriaHiddenByClass(NAVIGATION_ELEMENT_ARIA_CLASS);
-      removeAriaHiddenAndNegativeTab(NAVIGATION_ARIA_NEGATIVE_TAB_CLASS);
+      removeAriaHiddenByClass(NAVIGATION.NAVIGATION_ARIA_CLASS);
+      removeAriaHiddenByClass(NAVIGATION.NAVIGATION_ELEMENT_ARIA_CLASS);
+      removeAriaHiddenAndNegativeTab(
+        NAVIGATION.NAVIGATION_ARIA_NEGATIVE_TAB_CLASS
+      );
       unlockBody();
     } else {
-      addAriaHiddenByClass(NAVIGATION_ARIA_CLASS);
-      addAriaHiddenByClass(NAVIGATION_ELEMENT_ARIA_CLASS);
-      addAriaHiddenAndNegativeTab(NAVIGATION_ARIA_NEGATIVE_TAB_CLASS);
+      addAriaHiddenByClass(NAVIGATION.NAVIGATION_ARIA_CLASS);
+      addAriaHiddenByClass(NAVIGATION.NAVIGATION_ELEMENT_ARIA_CLASS);
+      addAriaHiddenAndNegativeTab(
+        NAVIGATION.NAVIGATION_ARIA_NEGATIVE_TAB_CLASS
+      );
       lockBody();
     }
 
@@ -38,7 +38,7 @@ export const MobileMenu: FC = () => {
   return (
     <>
       <MenuOpenTriggerStyle
-        className={`${NAVIGATION_ELEMENT_ARIA_CLASS} ${SEARCH_ELEMENT_ARIA_CLASS}`}
+        className={`${NAVIGATION.NAVIGATION_ELEMENT_ARIA_CLASS} ${SEARCH.SEARCH_ELEMENT_ARIA_CLASS}`}
         aria-label={i18n.t('header.open_menu')}
         onClick={toggleExpansion}
         disabled={isExpanded}

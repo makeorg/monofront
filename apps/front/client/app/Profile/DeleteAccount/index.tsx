@@ -2,7 +2,7 @@ import React, { useState, FC } from 'react';
 import i18n from 'i18next';
 import { UserType, ErrorObjectType } from '@make.org/types';
 
-import { PROFILE_DELETE_ACCOUNT_FORMNAME } from '@make.org/utils/constants/form';
+import { FORM } from '@make.org/types/enums';
 import { PasswordInput } from '@make.org/components/Form/PasswordInput';
 import { UntypedInput } from '@make.org/components/Form/UntypedInput';
 import { SubmitButton } from '@make.org/components/Form/SubmitButton';
@@ -97,7 +97,7 @@ export const DeleteAccount: FC<Props> = ({ user }) => {
 
   return (
     <TileWithTitle title={i18n.t('profile.delete_account.title')}>
-      <form id={PROFILE_DELETE_ACCOUNT_FORMNAME} onSubmit={handleSubmit}>
+      <form id={FORM.PROFILE_DELETE_ACCOUNT_FORMNAME} onSubmit={handleSubmit}>
         <FormParagraphStyle>
           {i18n.t('profile.delete_account.description')}
         </FormParagraphStyle>
@@ -129,7 +129,7 @@ export const DeleteAccount: FC<Props> = ({ user }) => {
         )}
         <SubmitButton
           disabled={!canSubmit}
-          formName={PROFILE_DELETE_ACCOUNT_FORMNAME}
+          formName={FORM.PROFILE_DELETE_ACCOUNT_FORMNAME}
           icon={SubmitThumbsUpIcon}
           label={i18n.t('profile.delete_account.submit_label')}
         />

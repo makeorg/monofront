@@ -4,7 +4,8 @@ import { getSequenceLink } from '@make.org/utils/helpers/url';
 import i18n from 'i18next';
 import { Link } from 'react-router-dom';
 import { trackOpenSequence } from '@make.org/utils/services/Tracking';
-import { COMPONENT_PARAM_SEQUENCE } from '@make.org/utils/constants/tracking';
+import { TRACKING } from '@make.org/types/enums';
+
 import { LinkAsRedButton } from '@make.org/ui/elements/LinkElements';
 import { useAppContext } from '@make.org/store';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
@@ -35,7 +36,7 @@ export const ParticipateBanner: FC<Props> = ({ question }) => {
         <LinkAsRedButton
           as={Link}
           to={sequenceLink}
-          onClick={() => trackOpenSequence(COMPONENT_PARAM_SEQUENCE)}
+          onClick={() => trackOpenSequence(TRACKING.COMPONENT_PARAM_SEQUENCE)}
         >
           {i18n.t('common.participate')}
         </LinkAsRedButton>

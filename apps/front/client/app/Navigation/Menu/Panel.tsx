@@ -9,7 +9,7 @@ import {
 } from '@make.org/utils/helpers/url';
 import { useLocation } from 'react-router';
 import { scrollToTop } from '@make.org/utils/helpers/styled';
-import { JOBS_LINK, NEWS_LINK } from '@make.org/utils//constants/url';
+import { URL } from '@make.org/types/enums';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { getCountryWithConsultations } from '@make.org/utils//helpers/countries';
 import {
@@ -141,7 +141,7 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
                   <MenuExternalLinkStyle
                     target="_blank"
                     rel="noopener"
-                    href={NEWS_LINK}
+                    href={URL.NEWS_LINK}
                   >
                     {i18n.t('main_footer.news')}
                     <> </>
@@ -155,7 +155,7 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
                   <MenuExternalLinkStyle
                     target="_blank"
                     rel="noopener"
-                    href={JOBS_LINK}
+                    href={URL.JOBS_LINK}
                   >
                     {i18n.t('main_footer.jobs')}
                     <> </>

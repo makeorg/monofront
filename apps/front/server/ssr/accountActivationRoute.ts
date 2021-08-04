@@ -1,12 +1,6 @@
 import { initialState } from '@make.org/store/initialState';
 import { Request, Response } from 'express';
-
-import {
-  ACTIVATION_FAILURE_MESSAGE,
-  ACTIVATION_SUCCESS_MESSAGE,
-  NOTIFICATION_LEVEL_ERROR,
-  NOTIFICATION_LEVEL_SUCCESS,
-} from '@make.org/utils/constants/notifications';
+import { NOTIF } from '@make.org/types/enums';
 import { UserService } from '../service/UserService';
 import { reactRender } from '../reactRender';
 import { QuestionService } from '../service/QuestionService';
@@ -20,12 +14,12 @@ export const accountActivationRoute = async (
   // empty question when register on home page
   const questionId = req.query.question || '';
   const notificationError = {
-    contentId: ACTIVATION_FAILURE_MESSAGE,
-    level: NOTIFICATION_LEVEL_ERROR,
+    contentId: NOTIF.ACTIVATION_FAILURE_MESSAGE,
+    level: NOTIF.NOTIFICATION_LEVEL_ERROR,
   };
   const notificationSuccess = {
-    contentId: ACTIVATION_SUCCESS_MESSAGE,
-    level: NOTIFICATION_LEVEL_SUCCESS,
+    contentId: NOTIF.ACTIVATION_SUCCESS_MESSAGE,
+    level: NOTIF.NOTIFICATION_LEVEL_SUCCESS,
   };
 
   if (questionId !== '') {

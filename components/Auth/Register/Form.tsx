@@ -10,7 +10,7 @@ import { getFieldError } from '@make.org/utils/helpers/form';
 import { UntypedInput } from '@make.org/components/Form/UntypedInput';
 import { NumberInput } from '@make.org/components/Form/NumberInput';
 import { PasswordInput } from '@make.org/components/Form/PasswordInput';
-import { REGISTER_FORMNAME } from '@make.org/utils/constants/form';
+import { FORM } from '@make.org/types/enums';
 import { SubmitButton } from '@make.org/ui/components/SubmitButton';
 import {
   EmailFieldIcon,
@@ -67,7 +67,7 @@ export const RegisterForm: React.FC<Props> = ({
 
   return (
     <FormCenterAlignStyle
-      id={REGISTER_FORMNAME}
+      id={FORM.REGISTER_FORMNAME}
       onSubmit={throttle(handleSubmit)}
     >
       <FormRequirementsStyle>
@@ -153,7 +153,7 @@ export const RegisterForm: React.FC<Props> = ({
       </ConditionParagraphStyle>
       <RegisterCheckBox handleLegalField={handleLegalField} required />
       <SubmitButton
-        formName={REGISTER_FORMNAME}
+        formName={FORM.REGISTER_FORMNAME}
         id="authentication-register-submit"
         icon={SubmitThumbsUpIcon}
         label={i18n.t('common.register_label')}

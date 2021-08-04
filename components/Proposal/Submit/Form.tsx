@@ -1,16 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import { QuestionType } from '@make.org/types';
-import { PROPOSAL_SUBMIT_FORMNAME } from '@make.org/utils/constants/form';
+import { FORM, URL } from '@make.org/types/enums';
 import { MAX_PROPOSAL_LENGTH } from '@make.org/utils/constants/proposal';
 import i18n from 'i18next';
 import {
   getLocalizedBaitText,
   proposalHasValidLength,
 } from '@make.org/utils/helpers/proposal';
-import {
-  MODERATION_CHARTER_FR_LINK,
-  MODERATION_CHARTER_EN_LINK,
-} from '@make.org/utils/constants/url';
+
 import {
   trackDisplayProposalField,
   trackClickProposalSubmit,
@@ -89,10 +86,10 @@ export const ProposalForm: React.FC<Props> = ({
   }, []);
 
   return (
-    <ProposalStepWrapperStyle data-cy-container={PROPOSAL_SUBMIT_FORMNAME}>
+    <ProposalStepWrapperStyle data-cy-container={FORM.PROPOSAL_SUBMIT_FORMNAME}>
       <form
-        id={PROPOSAL_SUBMIT_FORMNAME}
-        name={PROPOSAL_SUBMIT_FORMNAME}
+        id={FORM.PROPOSAL_SUBMIT_FORMNAME}
+        name={FORM.PROPOSAL_SUBMIT_FORMNAME}
         onSubmit={throttle(handleSubmit)}
       >
         <ProposalStepTitleStyle className="with-margin-bottom">
@@ -141,7 +138,7 @@ export const ProposalForm: React.FC<Props> = ({
           </GreyNoBackgroundButtonStyle>
           <RedButtonStyle
             type="submit"
-            form={PROPOSAL_SUBMIT_FORMNAME}
+            form={FORM.PROPOSAL_SUBMIT_FORMNAME}
             onClick={trackClickProposalSubmit}
             disabled={disableSubmitButton}
             data-cy-button="proposal-submit"
@@ -155,7 +152,9 @@ export const ProposalForm: React.FC<Props> = ({
         </SpaceBetweenRowStyle>
       </form>
       <ProposalExternalLinkStyle
-        href={isFR ? MODERATION_CHARTER_FR_LINK : MODERATION_CHARTER_EN_LINK}
+        href={
+          isFR ? URL.MODERATION_CHARTER_FR_LINK : URL.MODERATION_CHARTER_EN_LINK
+        }
         target="_blank"
         rel="noopener"
         onClick={trackClickModerationLink}

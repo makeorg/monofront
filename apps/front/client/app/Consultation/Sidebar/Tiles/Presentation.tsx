@@ -6,10 +6,7 @@ import { PresentationTileWithTitleStyle } from '@make.org/ui/components/TileWith
 import { useScreenWidth } from '@make.org/utils/hooks/useMedia';
 import { isGreatCause } from '@make.org/utils/helpers/question';
 import { trackClickLearnMore } from '@make.org/utils/services/Tracking';
-import {
-  FOUNDER_PARTNER,
-  MEDIA_PARTNER,
-} from '@make.org/utils/constants/partner';
+import { PARTNER } from '@make.org/types/enums';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { useAppContext } from '@make.org/store';
 import {
@@ -33,8 +30,8 @@ export const PresentationTile: FC<Props> = ({ question }) => {
   const foundersOrMedia: PartnerType[] = question.partners
     ? question.partners.filter(
         partner =>
-          partner.partnerKind === FOUNDER_PARTNER ||
-          partner.partnerKind === MEDIA_PARTNER
+          partner.partnerKind === PARTNER.FOUNDER_PARTNER ||
+          partner.partnerKind === PARTNER.MEDIA_PARTNER
       )
     : [];
 

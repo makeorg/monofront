@@ -5,7 +5,7 @@ import { getOrganisationProfileLink } from '@make.org/utils/helpers/url';
 import { RedLinkRouterStyle } from '@make.org/ui/elements/LinkElements';
 import { trackClickProposalProfile } from '@make.org/utils/services/Tracking';
 import { formatOrganisationName } from '@make.org/utils/helpers/stringFormatter';
-import { TYPE_ORGANISATION } from '@make.org/utils/constants/user';
+import { USER } from '@make.org/types/enums';
 import { OrganisationsVoteWrapperStyle } from './style';
 
 type Props = {
@@ -33,7 +33,7 @@ export const OrganisationsVote: React.FC<Props> = props => {
               country,
               organisation.organisationSlug
             )}
-            onClick={() => trackClickProposalProfile(TYPE_ORGANISATION)}
+            onClick={() => trackClickProposalProfile(USER.TYPE_ORGANISATION)}
           >
             {formatOrganisationName(organisation.organisationName)}
           </RedLinkRouterStyle>

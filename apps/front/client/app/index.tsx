@@ -7,11 +7,7 @@ import {
   AppWrapperStyle,
   AppMainContentStyle,
 } from '@make.org/ui/elements/MainElements';
-import {
-  NAVIGATION_ARIA_CLASS,
-  PANEL_ARIA_CLASS,
-} from '@make.org/utils/constants/a11y';
-import { MAIN_CONTENT } from '@make.org/utils/constants/ids';
+import { NAVIGATION, PANEL, IDS } from '@make.org/types/enums';
 import { NotificationBanner } from '@make.org/components/Notifications/Banner';
 import { debounce } from '@make.org/utils/helpers/timers';
 import { DEBOUNCE_TIMER } from '@make.org/utils/constants/config';
@@ -77,9 +73,9 @@ export const AppContainer: FC = () => {
                 <MainSkipLinks />
                 <Header />
                 <AppMainContentStyle
-                  id={MAIN_CONTENT}
+                  id={IDS.MAIN_CONTENT}
                   data-cy-container="main"
-                  className={`${NAVIGATION_ARIA_CLASS} ${PANEL_ARIA_CLASS}`}
+                  className={`${NAVIGATION.NAVIGATION_ARIA_CLASS} ${PANEL.PANEL_ARIA_CLASS}`}
                 >
                   <NotificationBanner />
                   <Routes />

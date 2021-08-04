@@ -1,4 +1,3 @@
-
 import React from 'react';
 import i18n from 'i18next';
 import { ProposalType } from '@make.org/types';
@@ -6,8 +5,8 @@ import { DateHelper } from '@make.org/utils/helpers/date';
 import { Avatar } from '@make.org/ui/components/Avatar';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
-import { DATE_CAPITALIZE_LL_FORMAT } from '@make.org/utils/constants/date';
 import { useAppContext } from '@make.org/store';
+import { DATE } from '@make.org/types/enums';
 import {
   AuthorDescriptionStyle,
   AuthorInfosStyle,
@@ -67,7 +66,7 @@ export const DeprecatedProposalAuthor: React.FC<Props> = ({
             <time dateTime={proposal.createdAt}>
               {DateHelper.localizedAndFormattedDate(
                 proposal.createdAt,
-                DATE_CAPITALIZE_LL_FORMAT
+                DATE.DATE_CAPITALIZE_LL_FORMAT
               )}
             </time>
           </>

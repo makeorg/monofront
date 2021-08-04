@@ -7,21 +7,13 @@ import {
   ProposalCardType,
   NoProposalCardType,
 } from '@make.org/types';
-import {
-  CARD_TYPE_EXTRASLIDE_INTRO,
-  CARD_TYPE_PROPOSAL,
-  CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL,
-  CARD_TYPE_EXTRASLIDE_FINAL_CARD,
-  CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD,
-  CARD_TYPE_NO_PROPOSAL_CARD,
-  CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
-} from '@make.org/utils/constants/card';
 import { trackDisplayNoProposalSequence } from '@make.org/utils/services/Tracking';
 import {
   TopComponentContext,
   TopComponentContextValueType,
   TopComponentContextValue,
 } from '@make.org/store/topComponentContext';
+import { CARD } from '@make.org/types/enums';
 import { SequenceCardStyle } from './style';
 import { IntroCard } from './Intro';
 import { PushProposalCard } from './PushProposal';
@@ -40,21 +32,21 @@ type CardProps = {
 
 export const Card: React.FC<CardProps> = ({ card, question }) => {
   switch (card.type) {
-    case CARD_TYPE_PROPOSAL:
+    case CARD.CARD_TYPE_PROPOSAL:
       return <ProposalCard proposalCard={card as ProposalCardType} />;
-    case CARD_TYPE_EXTRASLIDE_INTRO:
+    case CARD.CARD_TYPE_EXTRASLIDE_INTRO:
       return (
         <IntroCard configuration={card.configuration as IntroCardConfigType} />
       );
-    case CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL:
+    case CARD.CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL:
       return <PushProposalCard />;
-    case CARD_TYPE_EXTRASLIDE_FINAL_CARD:
+    case CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD:
       return <FinalCard questionSlug={question.slug} />;
-    case CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD:
+    case CARD.CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD:
       return <SpecialFinalCard questionSlug={question.slug} />;
-    case CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD:
+    case CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD:
       return <ExtraDataCard />;
-    case CARD_TYPE_NO_PROPOSAL_CARD: {
+    case CARD.CARD_TYPE_NO_PROPOSAL_CARD: {
       const { title, description } =
         card.configuration as NoProposalCardConfigType;
       return (
@@ -78,8 +70,8 @@ type Props = {
 };
 
 export const SequenceCard: React.FC<Props> = ({ card, question }) => {
-  const isProposalCard = card.type === CARD_TYPE_PROPOSAL;
-  const isNoProposalCard = card.type === CARD_TYPE_NO_PROPOSAL_CARD;
+  const isProposalCard = card.type === CARD.CARD_TYPE_PROPOSAL;
+  const isNoProposalCard = card.type === CARD.CARD_TYPE_NO_PROPOSAL_CARD;
   const topComponentContext: TopComponentContextValueType =
     TopComponentContextValue.getSequenceProposal();
 

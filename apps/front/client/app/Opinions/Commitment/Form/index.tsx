@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import i18n from 'i18next';
 import { TextArea } from '@make.org/components/Form/TextArea';
-import { PERSONALITY_OPINION_FORMNAME } from '@make.org/utils/constants/form';
+import { FORM } from '@make.org/types/enums';
 import { SubmitButton } from '@make.org/components/Form/SubmitButton';
 import {
   OpinionFormStyle,
@@ -36,7 +36,10 @@ export const CommitmentForm: FC<Props> = ({
     secondComment.length > TEXTAREA_MIN_LENGTH ||
     thirdComment.length > TEXTAREA_MIN_LENGTH;
   return (
-    <OpinionFormStyle id={PERSONALITY_OPINION_FORMNAME} onSubmit={handleSubmit}>
+    <OpinionFormStyle
+      id={FORM.PERSONALITY_OPINION_FORMNAME}
+      onSubmit={handleSubmit}
+    >
       <OpinionFormTitleStyle>
         {i18n.t('personality.opinions.form.title')}
       </OpinionFormTitleStyle>
@@ -79,7 +82,7 @@ export const CommitmentForm: FC<Props> = ({
       <OpinionSubmitWrapperStyle>
         <SubmitButton
           disabled={!canSubmit}
-          formName={PERSONALITY_OPINION_FORMNAME}
+          formName={FORM.PERSONALITY_OPINION_FORMNAME}
           label={i18n.t('personality.opinions.form.validate')}
         />
       </OpinionSubmitWrapperStyle>

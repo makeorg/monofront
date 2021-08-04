@@ -1,7 +1,7 @@
 import 'url-search-params-polyfill';
 import { generatePath } from 'react-router';
 import queryString from 'query-string';
-import { ABOUT_MAKE_LINK } from '@make.org/utils/constants/url';
+import { URL } from '@make.org/types/enums';
 import { env } from '@make.org/assets/env';
 import { UnknownObjectType } from '@make.org/types';
 import {
@@ -474,7 +474,7 @@ export const isPreviewPath = (path: string): boolean =>
 export const getWebflowDynamicLink = (
   language: string,
   route: string
-): string => `${ABOUT_MAKE_LINK}${language}${route}`;
+): string => `${URL.ABOUT_MAKE_LINK}${language}${route}`;
 
 /**
  * Get the password recovery link

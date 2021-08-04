@@ -3,7 +3,7 @@ import { ErrorObjectType } from '@make.org/types';
 import i18n from 'i18next';
 import { PasswordInput } from '@make.org/components/Form/PasswordInput';
 import { SubmitButton } from '@make.org/ui/components/SubmitButton';
-import { PASSWORD_RECOVERY_FORMNAME } from '@make.org/utils/constants/form';
+import { FORM } from '@make.org/types/enums';
 import { FormRequirementsStyle } from '@make.org/ui/elements/FormElements';
 import {
   PasswordFieldIcon,
@@ -59,7 +59,7 @@ export const PasswordRecoveryForm: React.FC = () => {
 
   return (
     <PasswordRecoveryFormStyle
-      id={PASSWORD_RECOVERY_FORMNAME}
+      id={FORM.PASSWORD_RECOVERY_FORMNAME}
       onSubmit={throttle(handleSubmit)}
     >
       <FormRequirementsStyle>
@@ -75,7 +75,7 @@ export const PasswordRecoveryForm: React.FC = () => {
         error={passwordError}
       />
       <SubmitButton
-        formName={PASSWORD_RECOVERY_FORMNAME}
+        formName={FORM.PASSWORD_RECOVERY_FORMNAME}
         icon={SubmitPaperPlaneIcon}
         label={i18n.t('reset_password.send_cta')}
       />

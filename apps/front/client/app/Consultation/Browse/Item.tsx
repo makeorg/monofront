@@ -11,7 +11,7 @@ import {
   getSixteenPerNineRatioHeight,
   matchDesktopDevice,
 } from '@make.org/utils/helpers/styled';
-import { DATE_CAPITALIZE_LL_FORMAT } from '@make.org/utils/constants/date';
+import { DATE } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
 import {
   ConsultationElementPictureStyle,
@@ -164,11 +164,11 @@ export const ConsultationItem: FC<Props> = ({
           {i18n.t('browse.date', {
             startDate: DateHelper.localizedAndFormattedDate(
               startDate,
-              DATE_CAPITALIZE_LL_FORMAT
+              DATE.DATE_CAPITALIZE_LL_FORMAT
             ),
             endDate: DateHelper.localizedAndFormattedDate(
               endDate,
-              DATE_CAPITALIZE_LL_FORMAT
+              DATE.DATE_CAPITALIZE_LL_FORMAT
             ),
           })}
         </ConsultationItemStyle>

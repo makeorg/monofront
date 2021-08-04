@@ -15,10 +15,7 @@ import {
 } from '@make.org/utils/helpers/social';
 import Cookies from 'universal-cookie';
 import { USER_PREFERENCES_COOKIE } from '@make.org/utils/constants/cookies';
-import {
-  NOTIFICATION_LEVEL_INFORMATION,
-  SOCIAL_MEDIA_COOKIES_MESSAGE,
-} from '@make.org/utils/constants/notifications';
+import { NOTIF } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import {
@@ -40,8 +37,8 @@ export const Sharing: React.FC = () => {
   const displayCookieNotification = () =>
     dispatch(
       displayNotificationBanner(
-        SOCIAL_MEDIA_COOKIES_MESSAGE,
-        NOTIFICATION_LEVEL_INFORMATION
+        NOTIF.SOCIAL_MEDIA_COOKIES_MESSAGE,
+        NOTIF.NOTIFICATION_LEVEL_INFORMATION
       )
     );
 

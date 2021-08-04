@@ -1,21 +1,6 @@
 import React from 'react';
-import {
-  SECURE_EXPIRED_MESSAGE,
-  ACTIVATION_SUCCESS_MESSAGE,
-  ACTIVATION_FAILURE_MESSAGE,
-  PASSWORD_RECOVERY_FAILURE_MESSAGE,
-  LOGOUT_SUCCESS_MESSAGE,
-  LOGIN_SUCCESS_MESSAGE,
-  REGISTER_SUCCESS_MESSAGE,
-  REGISTER_SUCCESS_VALIDATE_MESSAGE,
-  NETWORK_ERROR_MESSAGE,
-  UNEXPECTED_ERROR_MESSAGE,
-  VOTE_ONLY_MESSAGE,
-  ACCOUNT_DELETION_SUCCESS_MESSAGE,
-  FIRST_VOTE_TIP_MESSAGE,
-  SOCIAL_MEDIA_COOKIES_MESSAGE,
-  COOKIES_PREFERENCES_UPDATE_MESSAGE,
-} from '@make.org/utils/constants/notifications';
+import { NOTIF } from '@make.org/types/enums';
+
 import { PasswordRecoveryFailureMessage } from '../../Auth/PasswordRecovery/Failure';
 import { SecureExpiredMessage } from '../Banner/SecureExpired';
 import { AccountActivationSuccessMessage } from '../Banner/AccountActivationSuccess';
@@ -46,39 +31,39 @@ export const NotificationMessage: React.FC<Props> = ({
   close,
 }) => {
   switch (name) {
-    case SECURE_EXPIRED_MESSAGE:
+    case NOTIF.SECURE_EXPIRED_MESSAGE:
       return <SecureExpiredMessage />;
-    case ACTIVATION_SUCCESS_MESSAGE:
+    case NOTIF.ACTIVATION_SUCCESS_MESSAGE:
       return <AccountActivationSuccessMessage />;
-    case ACTIVATION_FAILURE_MESSAGE:
+    case NOTIF.ACTIVATION_FAILURE_MESSAGE:
       return <AccountActivationFailureMessage />;
-    case PASSWORD_RECOVERY_FAILURE_MESSAGE:
+    case NOTIF.PASSWORD_RECOVERY_FAILURE_MESSAGE:
       return <PasswordRecoveryFailureMessage />;
-    case LOGOUT_SUCCESS_MESSAGE:
+    case NOTIF.LOGOUT_SUCCESS_MESSAGE:
       return <LogoutSuccessMessage />;
-    case LOGIN_SUCCESS_MESSAGE:
+    case NOTIF.LOGIN_SUCCESS_MESSAGE:
       return <LoginSuccessMessage />;
-    case REGISTER_SUCCESS_VALIDATE_MESSAGE: {
+    case NOTIF.REGISTER_SUCCESS_VALIDATE_MESSAGE: {
       if (params) {
         return <RegisterSuccessValidateMessage email={params.email} />;
       }
       return null;
     }
-    case REGISTER_SUCCESS_MESSAGE:
+    case NOTIF.REGISTER_SUCCESS_MESSAGE:
       return <RegisterSuccessMessage />;
-    case NETWORK_ERROR_MESSAGE:
+    case NOTIF.NETWORK_ERROR_MESSAGE:
       return <NetworkErrorMessage />;
-    case UNEXPECTED_ERROR_MESSAGE:
+    case NOTIF.UNEXPECTED_ERROR_MESSAGE:
       return <UnexpectedErrorMessage />;
-    case VOTE_ONLY_MESSAGE:
+    case NOTIF.VOTE_ONLY_MESSAGE:
       return <VoteOnlyMessage close={close} />;
-    case ACCOUNT_DELETION_SUCCESS_MESSAGE:
+    case NOTIF.ACCOUNT_DELETION_SUCCESS_MESSAGE:
       return <AccountDeletionSuccessMessage />;
-    case FIRST_VOTE_TIP_MESSAGE:
+    case NOTIF.FIRST_VOTE_TIP_MESSAGE:
       return <FirstVoteTip />;
-    case SOCIAL_MEDIA_COOKIES_MESSAGE:
+    case NOTIF.SOCIAL_MEDIA_COOKIES_MESSAGE:
       return <SocialMediaCookiesMessage />;
-    case COOKIES_PREFERENCES_UPDATE_MESSAGE:
+    case NOTIF.COOKIES_PREFERENCES_UPDATE_MESSAGE:
       return <CookiesPreferencesUpdateMessage />;
     default:
       return <></>;

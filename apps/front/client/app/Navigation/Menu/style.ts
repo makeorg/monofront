@@ -5,11 +5,7 @@ import { SpaceBetweenColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Link } from 'react-router-dom';
 import { SvgExternalLinkPlain } from '@make.org/ui/Svg/elements';
-import {
-  SEARCH_DESKTOP_EXPANDED,
-  ADD_SEARCH_DESKTOP_ANIMATION,
-  REMOVE_SEARCH_DESKTOP_ANIMATION,
-} from '@make.org/utils/constants/a11y';
+import { SEARCH } from '@make.org/types/enums';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
 
@@ -134,13 +130,13 @@ export const DesktopMenuItemStyle = styled.li`
   &.with-border {
     border-left: 1px solid ${ShadowColors.BlackZeroOneOpacity};
   }
-  &.${ADD_SEARCH_DESKTOP_ANIMATION} {
+  &.${SEARCH.ADD_SEARCH_DESKTOP_ANIMATION} {
     animation-name: ${fadeOut};
   }
-  &.${REMOVE_SEARCH_DESKTOP_ANIMATION} {
+  &.${SEARCH.REMOVE_SEARCH_DESKTOP_ANIMATION} {
     animation-name: ${fadeIn};
   }
-  &.${SEARCH_DESKTOP_EXPANDED}[aria-hidden='true'] {
+  &.${SEARCH.SEARCH_DESKTOP_EXPANDED}[aria-hidden='true'] {
     display: none;
     visibility: hidden;
   }

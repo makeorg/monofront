@@ -1,4 +1,4 @@
-import { NOTIFICATION_LEVEL_INFORMATION } from '@make.org/utils/constants/notifications';
+import { NOTIF } from '@make.org/types/enums';
 import { Reducer, ReducerAction, StateNotification } from '@make.org/types';
 import {
   CLOSE_NOTIFICATION_BANNER,
@@ -37,7 +37,7 @@ export const notifications_reducer: Reducer = (
           params: action.payload.params || {},
           level: action.payload.level
             ? action.payload.level
-            : NOTIFICATION_LEVEL_INFORMATION,
+            : NOTIF.NOTIFICATION_LEVEL_INFORMATION,
           toDismiss: action.payload.toDismiss
             ? action.payload.toDismiss
             : false,
@@ -55,7 +55,7 @@ export const notifications_reducer: Reducer = (
           contentId: action.payload.contentId,
           level: action.payload.level
             ? action.payload.level
-            : NOTIFICATION_LEVEL_INFORMATION,
+            : NOTIF.NOTIFICATION_LEVEL_INFORMATION,
           toDismiss: action.payload.toDismiss
             ? action.payload.toDismiss
             : false,

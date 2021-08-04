@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { ApiService } from '@make.org/api/ApiService';
 import { apiClient } from '@make.org/api/ApiService/ApiService.client';
-import { KIND_STANDARD } from '@make.org/utils/constants/sequence';
+import { SEQUENCE } from '@make.org/types/enums';
 import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
 import { useAppContext } from '@make.org/store';
 import { setCurrentQuestionSlug } from '@make.org/store/actions/currentQuestion';
@@ -61,8 +61,6 @@ const App: React.FC = () => {
   if (!currentQuestion) {
     return <div>No question yet</div>;
   }
-
-  return <Sequence sequenceKind={KIND_STANDARD} />;
 };
 
 export default App;

@@ -11,7 +11,7 @@ import {
   trackDisplayBrowseResults,
 } from '@make.org/utils/services/Tracking';
 import { SpaceBetweenColumnStyle } from '@make.org/ui/elements/FlexElements';
-import { BROWSE_SECTION } from '@make.org/utils/constants/ids';
+import { IDS } from '@make.org/types/enums';
 import { MetaTags } from '../../app/MetaTags';
 import { BrowseConsultationsTitles } from '../../app/Consultation/Browse/Titles';
 import { BrowseConsultationsHeader } from '../../app/Consultation/Browse/Header';
@@ -75,7 +75,7 @@ const BrowseConsultationsPage: FC = () => {
       <BrowseConsultationsHeader />
       {isLoading ? (
         <>
-          <SpaceBetweenColumnStyle as="section" id={BROWSE_SECTION}>
+          <SpaceBetweenColumnStyle as="section" id={IDS.BROWSE_SECTION}>
             <Spinner />
           </SpaceBetweenColumnStyle>
         </>
@@ -84,7 +84,7 @@ const BrowseConsultationsPage: FC = () => {
           <SpaceBetweenColumnStyle
             as="section"
             aria-labelledby="browse_title"
-            id={BROWSE_SECTION}
+            id={IDS.BROWSE_SECTION}
           >
             <BrowseConsultationsTitles
               total={questionsTotal}
@@ -101,7 +101,7 @@ const BrowseConsultationsPage: FC = () => {
               <Pagination
                 itemsPerPage={CONSULTATIONS_LIMIT}
                 itemsTotal={questionsTotal}
-                scrollToId={BROWSE_SECTION}
+                scrollToId={IDS.BROWSE_SECTION}
               />
             ) : null}
           </SpaceBetweenColumnStyle>

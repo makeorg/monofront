@@ -1,12 +1,8 @@
-import {
-  SEARCH_DESKTOP_EXPANDED,
-  ADD_SEARCH_DESKTOP_ANIMATION,
-  REMOVE_SEARCH_DESKTOP_ANIMATION,
-} from '@make.org/utils/constants/a11y';
+import { SEARCH } from '@make.org/types/enums';
 
 export const addSearchDesktopHidden = (animationTiming = 250): any => {
   const menuItemsCollection = document.querySelectorAll(
-    `.${SEARCH_DESKTOP_EXPANDED}`
+    `.${SEARCH.SEARCH_DESKTOP_EXPANDED}`
   );
   const menuItemsArray = Array.from(menuItemsCollection);
   const searchForm = document.querySelector(`#search`);
@@ -16,7 +12,7 @@ export const addSearchDesktopHidden = (animationTiming = 250): any => {
   }
 
   const menuItemsWithAttribute: any = menuItemsArray.map(menuItems => {
-    menuItems.classList.add(ADD_SEARCH_DESKTOP_ANIMATION);
+    menuItems.classList.add(SEARCH.ADD_SEARCH_DESKTOP_ANIMATION);
     const timer = setTimeout(() => {
       menuItems.setAttribute('aria-hidden', 'true');
       searchForm.classList.add('expanded');
@@ -29,7 +25,7 @@ export const addSearchDesktopHidden = (animationTiming = 250): any => {
 
 export const removeSearchDesktopHidden = (animationTiming = 250): any => {
   const menuItemsCollection = document.querySelectorAll(
-    `.${SEARCH_DESKTOP_EXPANDED}`
+    `.${SEARCH.SEARCH_DESKTOP_EXPANDED}`
   );
   const menuItemsArray = Array.from(menuItemsCollection);
   const searchForm = document.querySelector(`#search`);
@@ -40,8 +36,8 @@ export const removeSearchDesktopHidden = (animationTiming = 250): any => {
 
   const menuItemsWithoutAttribute: any = menuItemsArray.map(menuItems => {
     searchForm.classList.remove('expanded');
-    menuItems.classList.remove(ADD_SEARCH_DESKTOP_ANIMATION);
-    menuItems.classList.add(REMOVE_SEARCH_DESKTOP_ANIMATION);
+    menuItems.classList.remove(SEARCH.ADD_SEARCH_DESKTOP_ANIMATION);
+    menuItems.classList.add(SEARCH.REMOVE_SEARCH_DESKTOP_ANIMATION);
     const firstTimer = setTimeout(() => null, animationTiming);
     const secondTimer = setTimeout(() => {
       menuItems.removeAttribute('aria-hidden');

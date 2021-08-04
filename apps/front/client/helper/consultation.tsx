@@ -1,11 +1,4 @@
-// flow
-import {
-  RESULTS_TOP_IDEAS,
-  RESULTS_CONTROVERSIALS,
-  RESULTS_CARTOGRAPHY,
-  RESULTS_PARTICIPATION,
-} from '@make.org/utils/constants/ids';
-
+import { IDS } from '@make.org/types/enums';
 import i18n from 'i18next';
 import { QuestionType } from '@make.org/types';
 import { isParticipatePage, isResultsPage } from '../../shared/routes';
@@ -38,13 +31,13 @@ export const getCurrentLabel = (
 
 export const getCurrentContainer = (id: string): string => {
   switch (id) {
-    case RESULTS_TOP_IDEAS:
+    case IDS.RESULTS_TOP_IDEAS:
       return 'top-ideas';
-    case RESULTS_CONTROVERSIALS:
+    case IDS.RESULTS_CONTROVERSIALS:
       return 'proposals-controversials';
-    case RESULTS_CARTOGRAPHY:
+    case IDS.RESULTS_CARTOGRAPHY:
       return 'cartography';
-    case RESULTS_PARTICIPATION:
+    case IDS.RESULTS_PARTICIPATION:
       return 'participants-chart';
     default:
       return '';

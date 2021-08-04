@@ -11,10 +11,7 @@ import {
   formatMillionToText,
 } from '@make.org/utils/helpers/numberFormatter';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import {
-  DATE_CAPITALIZE_L_FORMAT,
-  DATE_LOWERCASE_LL_FORMAT,
-} from '@make.org/utils/constants/date';
+import { DATE } from '@make.org/types/enums';
 import {
   FiguresValueStyle,
   FiguresListStyle,
@@ -46,11 +43,11 @@ export const Figures: FC = () => {
             resultsPage
               ? DateHelper.localizedAndFormattedDate(
                   question.endDate || '',
-                  DATE_CAPITALIZE_L_FORMAT
+                  DATE.DATE_CAPITALIZE_L_FORMAT
                 ) || ''
               : DateHelper.localizedAndFormattedDate(
                   question.startDate || '',
-                  DATE_CAPITALIZE_L_FORMAT
+                  DATE.DATE_CAPITALIZE_L_FORMAT
                 ) || ''
           }
         >
@@ -58,11 +55,11 @@ export const Figures: FC = () => {
             ? question &&
               DateHelper.localizedAndFormattedDate(
                 question.endDate || '',
-                DATE_LOWERCASE_LL_FORMAT
+                DATE.DATE_LOWERCASE_LL_FORMAT
               )
             : DateHelper.localizedAndFormattedDate(
                 question.startDate || '',
-                DATE_LOWERCASE_LL_FORMAT
+                DATE.DATE_LOWERCASE_LL_FORMAT
               )}
         </FiguresValueStyle>
       </FiguresListItemStyle>

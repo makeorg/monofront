@@ -19,10 +19,7 @@ import {
 } from '@make.org/store/actions/authentication';
 import { Logger } from '@make.org/utils/services/Logger';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
-import {
-  NOTIFICATION_LEVEL_ALERT,
-  UNEXPECTED_ERROR_MESSAGE,
-} from '@make.org/utils/constants/notifications';
+import { NOTIF } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
 import { FacebookButtonStyle } from './style';
 
@@ -51,8 +48,8 @@ export const FacebookAuthentication: React.FC = () => {
       Logger.logError(`Facebook login failure: ${status}`);
       dispatch(
         displayNotificationBanner(
-          UNEXPECTED_ERROR_MESSAGE,
-          NOTIFICATION_LEVEL_ALERT
+          NOTIF.UNEXPECTED_ERROR_MESSAGE,
+          NOTIF.NOTIFICATION_LEVEL_ALERT
         )
       );
       dispatch(modalClose());

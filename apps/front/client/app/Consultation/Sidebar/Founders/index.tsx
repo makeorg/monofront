@@ -1,10 +1,7 @@
 import React, { FC } from 'react';
 import i18n from 'i18next';
 import { PartnerType } from '@make.org/types';
-import {
-  FOUNDER_PARTNER,
-  MEDIA_PARTNER,
-} from '@make.org/utils/constants/partner';
+import { PARTNER } from '@make.org/types/enums';
 import { SidebarSeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { PartnersList } from '../Partners/List';
 import { FoundersTitleStyle } from './style';
@@ -24,10 +21,10 @@ const PartnersListByType: FC<PartnersTypeListProps> = ({
   partners,
 }) => {
   const founders = partners.filter(
-    partner => partner.partnerKind === FOUNDER_PARTNER
+    partner => partner.partnerKind === PARTNER.FOUNDER_PARTNER
   );
   const medias = partners.filter(
-    partner => partner.partnerKind === MEDIA_PARTNER
+    partner => partner.partnerKind === PARTNER.MEDIA_PARTNER
   );
 
   return isGreatCause ? (

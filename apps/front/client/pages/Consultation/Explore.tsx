@@ -4,17 +4,14 @@ import i18n from 'i18next';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { ThemeProvider } from 'styled-components';
-import {
-  NOTIFICATION_LEVEL_INFORMATION,
-  VOTE_ONLY_MESSAGE,
-} from '@make.org/utils/constants/notifications';
+import { NOTIF, IDS } from '@make.org/types/enums';
 import {
   getProposalsListTitle,
   searchProposals,
 } from '@make.org/utils/helpers/proposal';
 import { useParams } from 'react-router';
+
 import { Pagination } from '@make.org/components/Pagination';
-import { CONSULTATION_NAVIGATION } from '@make.org/utils/constants/ids';
 import { trackDisplayOperationPage } from '@make.org/utils/services/Tracking';
 import { useAppContext } from '@make.org/store';
 import { ProposalsList } from '../../app/Consultation/ProposalsList';
@@ -74,8 +71,8 @@ const ExplorePage: FC = () => {
     if (!question.canPropose) {
       dispatch(
         displayNotificationBanner(
-          VOTE_ONLY_MESSAGE,
-          NOTIFICATION_LEVEL_INFORMATION,
+          NOTIF.VOTE_ONLY_MESSAGE,
+          NOTIF.NOTIFICATION_LEVEL_INFORMATION,
           { questionId: question.questionId },
           true
         )
@@ -103,7 +100,7 @@ const ExplorePage: FC = () => {
       />
       <ParticipateHeader />
       <ParticipateHighlights />
-      <div id={CONSULTATION_NAVIGATION} />
+      <div id={IDS.CONSULTATION_NAVIGATION} />
       <ParticipateNavigation />
       <ParticipateContentStyle>
         <ExploreTitleWrapperStyle>
@@ -121,7 +118,7 @@ const ExplorePage: FC = () => {
               <Pagination
                 itemsPerPage={PROPOSALS_LIMIT}
                 itemsTotal={proposalsTotal}
-                scrollToId={CONSULTATION_NAVIGATION}
+                scrollToId={IDS.CONSULTATION_NAVIGATION}
                 questionSlug={question.slug}
               />
             )}

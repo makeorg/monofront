@@ -1,9 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { ImageDataType } from '@make.org/types';
-import {
-  IMAGE_SOURCE_INTERNAL,
-  IMAGE_SOURCE_EXTERNAL,
-} from '@make.org/utils/constants/image';
+import { IMAGE } from '@make.org/types/enums';
 
 import { useDevicePixelRatio } from '@make.org/utils/hooks/useMedia';
 
@@ -87,8 +84,8 @@ const toImageData = (src: string, alt: string) => ({
   url: src,
   alt,
   source: isInternalSourceUrl(src)
-    ? IMAGE_SOURCE_INTERNAL
-    : IMAGE_SOURCE_EXTERNAL,
+    ? IMAGE.IMAGE_SOURCE_INTERNAL
+    : IMAGE.IMAGE_SOURCE_EXTERNAL,
 });
 
 const defaultPlaceHolderImage =
@@ -170,7 +167,7 @@ export const Image: React.FC<Props> = ({
   } = useMemo(
     () => {
       const result = getSrcValues(
-        source === IMAGE_SOURCE_INTERNAL,
+        source === IMAGE.IMAGE_SOURCE_INTERNAL,
         url,
         width,
         height,

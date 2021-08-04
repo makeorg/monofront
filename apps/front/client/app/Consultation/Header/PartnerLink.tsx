@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useAppContext } from '@make.org/store';
-import { COMPONENT_PARAM_CONSULTATION_HEADER } from '@make.org/utils/constants/tracking';
-import { TYPE_ORGANISATION } from '@make.org/utils/constants/user';
+import { TRACKING, USER } from '@make.org/types/enums';
+
 import { orderPartnersByWeight } from '@make.org/utils/helpers/question';
 import {
   getOrganisationProfileLink,
@@ -60,8 +60,8 @@ export const PartnersList: FC<Props> = ({
                 )}
                 onClick={() =>
                   trackClickPublicProfile(
-                    TYPE_ORGANISATION,
-                    COMPONENT_PARAM_CONSULTATION_HEADER
+                    USER.TYPE_ORGANISATION,
+                    TRACKING.COMPONENT_PARAM_CONSULTATION_HEADER
                   )
                 }
               >
@@ -80,7 +80,9 @@ export const PartnersList: FC<Props> = ({
               linkUrl={getPartnerAnchor(question.aboutUrl)}
               linkText={i18n.t('consultation.partners.commitment_link')}
               tracking={() =>
-                trackClickLearnMore(COMPONENT_PARAM_CONSULTATION_HEADER)
+                trackClickLearnMore(
+                  TRACKING.COMPONENT_PARAM_CONSULTATION_HEADER
+                )
               }
             />
           </HeaderListItemStyle>

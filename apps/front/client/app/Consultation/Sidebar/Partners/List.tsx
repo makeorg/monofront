@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { PartnerType } from '@make.org/types';
 import { Tooltip } from '@make.org/ui/components/Tooltip';
-import { FOUNDER_PARTNER } from '@make.org/utils/constants/partner';
+import { PARTNER } from '@make.org/types/enums';
 import { PartnersListStyle, AvatarWrapperStyle } from '../../Styled/Partners';
 import { PartnerTooltip } from './Tooltip';
 import { PartnerAvatar } from './Avatar';
@@ -13,7 +13,7 @@ const PartnerAvatarWithTooltip: FC<TooltipProps> = ({ partner }) => {
   const content = (
     <PartnerTooltip
       partnerName={partner.name}
-      isFounder={partner.partnerKind === FOUNDER_PARTNER}
+      isFounder={partner.partnerKind === PARTNER.FOUNDER_PARTNER}
     />
   );
 

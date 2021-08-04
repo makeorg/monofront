@@ -7,14 +7,11 @@ import {
 } from '@make.org/utils/helpers/url';
 import { scrollToTop, unlockBody } from '@make.org/utils/helpers/styled';
 import { removeAriaHiddenByClass } from '@make.org/utils/helpers/a11y';
-import {
-  NAVIGATION_ELEMENT_ARIA_CLASS,
-  NAVIGATION_ARIA_CLASS,
-  SEARCH_DESKTOP_EXPANDED,
-} from '@make.org/utils/constants/a11y';
+import { NAVIGATION, SEARCH } from '@make.org/types/enums';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { getCountryWithConsultations } from '@make.org/utils/helpers/countries';
-import { ROUTE_PARTNERSHIP, ROUTE_WHOAREWE } from '../../../../shared/routes';
+import { ROUTE_PARTNERSHIP, ROUTE_WHOAREWE } from '@make.org/utils/routes';
+import { useAppContext } from '@make.org/store';
 import {
   DesktopMenuNavStyle,
   DesktopMenuItemStyle,
@@ -22,7 +19,6 @@ import {
   MenuNewWindowIconStyle,
   DesktopMenuExternalLinkStyle,
 } from './style';
-import { useAppContext } from '../../../../../../store';
 
 export const DesktopMenu: FC = () => {
   const { state } = useAppContext();
@@ -35,8 +31,8 @@ export const DesktopMenu: FC = () => {
   );
 
   useEffect(() => {
-    removeAriaHiddenByClass(NAVIGATION_ARIA_CLASS);
-    removeAriaHiddenByClass(NAVIGATION_ELEMENT_ARIA_CLASS);
+    removeAriaHiddenByClass(NAVIGATION.NAVIGATION_ARIA_CLASS);
+    removeAriaHiddenByClass(NAVIGATION.NAVIGATION_ELEMENT_ARIA_CLASS);
     unlockBody();
   }, []);
 
@@ -63,7 +59,7 @@ export const DesktopMenu: FC = () => {
           </DesktopMenuItemStyle>
         )}
         <DesktopMenuItemStyle
-          className={`${SEARCH_DESKTOP_EXPANDED} with-border`}
+          className={`${SEARCH.SEARCH_DESKTOP_EXPANDED} with-border`}
         >
           <DesktopMenuExternalLinkStyle
             target="_blank"
@@ -77,7 +73,7 @@ export const DesktopMenu: FC = () => {
         </DesktopMenuItemStyle>
         {isFR && (
           <DesktopMenuItemStyle
-            className={`${SEARCH_DESKTOP_EXPANDED} with-border`}
+            className={`${SEARCH.SEARCH_DESKTOP_EXPANDED} with-border`}
           >
             <DesktopMenuExternalLinkStyle
               target="_blank"

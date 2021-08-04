@@ -28,7 +28,7 @@ import {
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { trackClickPublicProfile } from '@make.org/utils/services/Tracking';
-import { TYPE_PERSONALITY } from '@make.org/utils/constants/user';
+import { USER } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
 import { useSlider } from '@make.org/utils/hooks/useSlider';
 import {
@@ -61,7 +61,7 @@ type CandidateProps = {
 
 const handleClickProfile = () => {
   scrollToTop();
-  trackClickPublicProfile(TYPE_PERSONALITY);
+  trackClickPublicProfile(USER.TYPE_PERSONALITY);
 };
 
 export const CandidateItem: FC<CandidateProps> = ({ personality }) => {

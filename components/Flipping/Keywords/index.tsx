@@ -5,7 +5,7 @@ import { Spinner } from '@make.org/ui/components/Loading/Spinner';
 import { getSequenceKeywordLink } from '@make.org/utils/helpers/url';
 import { capitalizeFirstLetter } from '@make.org/utils/helpers/stringFormatter';
 import { trackOpenSequence } from '@make.org/utils/services/Tracking';
-import { COMPONENT_PARAM_SEQUENCE_KEYWORD } from '@make.org/utils/constants/tracking';
+import { TRACKING } from '@make.org/types/enums';
 import {
   ParticipateCardStyle,
   ParticipateCardTitleStyle,
@@ -88,7 +88,7 @@ export const Keywords: FC<Props> = ({ question, isKeywordActive }) => {
                 }
               )}
               onClick={() =>
-                trackOpenSequence(COMPONENT_PARAM_SEQUENCE_KEYWORD)
+                trackOpenSequence(TRACKING.COMPONENT_PARAM_SEQUENCE_KEYWORD)
               }
             >
               {capitalizeFirstLetter(keyword.label)}

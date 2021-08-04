@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import i18n from 'i18next';
-import { NEWSLETTER_UPDATE_FORMNAME } from '@make.org/utils/constants/form';
+import { FORM, USER } from '@make.org/types/enums';
 import {
   ErrorObjectType,
   OrganisationProfileType,
@@ -19,10 +19,7 @@ import { defaultApiError } from '@make.org/utils/errors/Messages';
 import { FormSuccessMessage } from '@make.org/components/Form/Success';
 import { getUser } from '@make.org/store/actions/authentication';
 import { FormRequirementsStyle } from '@make.org/ui/elements/FormElements';
-import {
-  TYPE_ORGANISATION,
-  TYPE_PERSONALITY,
-} from '@make.org/utils/constants/user';
+
 import { PersonalityService } from '@make.org/utils/services/Personality';
 import { useAppContext } from '@make.org/store';
 
@@ -68,7 +65,7 @@ export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
       optInNewsletter,
     };
     switch (userType) {
-      case TYPE_ORGANISATION:
+      case USER.TYPE_ORGANISATION:
         await OrganisationService.update(
           userId,
           newProfile,
@@ -76,7 +73,7 @@ export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
           handleErrors
         );
         break;
-      case TYPE_PERSONALITY:
+      case USER.TYPE_PERSONALITY:
         await PersonalityService.update(
           userId,
           newProfile,
@@ -100,7 +97,7 @@ export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
 
   return (
     <TileWithTitle title={i18n.t('profile.newsletter_update.title')}>
-      <form id={NEWSLETTER_UPDATE_FORMNAME} onSubmit={handleSubmit}>
+      <form id={FORM.NEWSLETTER_UPDATE_FORMNAME} onSubmit={handleSubmit}>
         <FormRequirementsStyle>
           {i18n.t('common.form.requirements')}
         </FormRequirementsStyle>
@@ -114,7 +111,7 @@ export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
         />
         <SubmitButton
           disabled={!canSubmit}
-          formName={NEWSLETTER_UPDATE_FORMNAME}
+          formName={FORM.NEWSLETTER_UPDATE_FORMNAME}
           icon={SubmitSaveIcon}
           label={i18n.t('profile.common.submit_label')}
         />

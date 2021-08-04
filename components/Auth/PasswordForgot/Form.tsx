@@ -3,7 +3,7 @@ import i18n from 'i18next';
 import { UserService } from '@make.org/utils/services/User';
 import { ErrorObjectType } from '@make.org/types';
 import { getFieldError } from '@make.org/utils/helpers/form';
-import { FORGOT_PASSWORD_FORMNAME } from '@make.org/utils/constants/form';
+import { FORM } from '@make.org/types/enums';
 import {
   EmailFieldIcon,
   SubmitPaperPlaneIcon,
@@ -45,7 +45,7 @@ export const ForgotPasswordForm: React.FC = () => {
 
   return (
     <ForgotPasswordFormStyle
-      id={FORGOT_PASSWORD_FORMNAME}
+      id={FORM.FORGOT_PASSWORD_FORMNAME}
       onSubmit={handleSubmit}
     >
       <ForgotPasswordTitleStyle>
@@ -63,7 +63,7 @@ export const ForgotPasswordForm: React.FC = () => {
         error={emailError}
       />
       <SubmitButton
-        formName={FORGOT_PASSWORD_FORMNAME}
+        formName={FORM.FORGOT_PASSWORD_FORMNAME}
         icon={SubmitPaperPlaneIcon}
         label={i18n.t('forgot_password.send_link')}
       />

@@ -1,9 +1,9 @@
-import { KIND_STANDARD } from '@make.org/utils/constants/sequence';
 import React, { FC } from 'react';
 import { Sequence } from '@make.org/components/Sequence/Sequence';
+import { SEQUENCE } from '@make.org/types/enums';
 
 const SequenceStandardPage: FC = () => (
-  <Sequence sequenceKind={KIND_STANDARD} />
+  <Sequence sequenceKind={SEQUENCE.KIND_STANDARD} />
 );
 
 // eslint-disable-next-line import/no-default-export

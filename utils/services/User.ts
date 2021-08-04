@@ -21,10 +21,8 @@ import {
 } from '@make.org/utils/errors/Messages/User';
 import { getErrorMessages } from '@make.org/utils/helpers/form';
 import { PROPOSALS_LISTING_LIMIT } from '@make.org/utils/constants/proposal';
-import {
-  TYPE_ORGANISATION,
-  TYPE_PERSONALITY,
-} from '@make.org/utils/constants/user';
+import { USER } from '@make.org/types/enums';
+
 import { apiClient } from '@make.org/api/ApiService/ApiService.client';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 import { OrganisationService } from './Organisation';
@@ -393,10 +391,10 @@ const getProfileByUserType = async (
 ): Promise<
   UserProfileType | OrganisationProfileType | PersonalityProfileType | null
 > => {
-  if (userType === TYPE_ORGANISATION) {
+  if (userType === USER.TYPE_ORGANISATION) {
     return OrganisationService.getProfile(userId);
   }
-  if (userType === TYPE_PERSONALITY) {
+  if (userType === USER.TYPE_PERSONALITY) {
     return PersonalityService.getProfile(userId);
   }
 

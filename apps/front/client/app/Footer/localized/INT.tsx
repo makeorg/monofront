@@ -6,11 +6,8 @@ import {
   getCookiesPageLink,
 } from '@make.org/utils/helpers/url';
 import { scrollToTop } from '@make.org/utils/helpers/styled';
-import {
-  NAVIGATION_ARIA_NEGATIVE_TAB_CLASS,
-  PANEL_ARIA_NEGATIVE_TAB_CLASS,
-} from '@make.org/utils/constants/a11y';
-import { MAIN_FOOTER } from '@make.org/utils/constants/ids';
+import { NAVIGATION, PANEL, IDS } from '@make.org/types/enums';
+
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { modalShowCountries } from '@make.org/store/actions/modal';
 import { isSequencePage as getIsSequencePage } from '@make.org/utils/routes';
@@ -40,10 +37,10 @@ export const FooterINT: React.FC = () => {
 
   return country ? (
     <FooterStyle
-      id={MAIN_FOOTER}
-      className={`${NAVIGATION_ARIA_NEGATIVE_TAB_CLASS} ${PANEL_ARIA_NEGATIVE_TAB_CLASS} ${
-        isSequencePage && 'extra-mobile-padding-bottom'
-      }`}
+      id={IDS.MAIN_FOOTER}
+      className={`${NAVIGATION.NAVIGATION_ARIA_NEGATIVE_TAB_CLASS} ${
+        PANEL.PANEL_ARIA_NEGATIVE_TAB_CLASS
+      } ${isSequencePage && 'extra-mobile-padding-bottom'}`}
       data-cy-container="footer"
     >
       <FooterNavStyle aria-label={i18n.t('common.footer_nav')}>

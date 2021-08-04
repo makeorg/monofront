@@ -7,7 +7,7 @@ import {
   trackSignupEmailFailure,
 } from '@make.org/utils/services/Tracking';
 
-import { LOGIN_FORMNAME } from '@make.org/utils/constants/form';
+import { FORM, NOTIF } from '@make.org/types/enums';
 import {
   EmailFieldIcon,
   PasswordFieldIcon,
@@ -16,10 +16,7 @@ import {
 import { throttle } from '@make.org/utils/helpers/throttle';
 import { getFieldError } from '@make.org/utils/helpers/form';
 import { loginSuccess, getUser } from '@make.org/store/actions/authentication';
-import {
-  LOGIN_SUCCESS_MESSAGE,
-  NOTIFICATION_LEVEL_SUCCESS,
-} from '@make.org/utils/constants/notifications';
+
 import {
   modalClose,
   modalShowDataPolicyLogin,
@@ -83,8 +80,8 @@ export const LoginForm: React.FC = () => {
       handleGetUser();
       dispatch(
         displayNotificationBanner(
-          LOGIN_SUCCESS_MESSAGE,
-          NOTIFICATION_LEVEL_SUCCESS
+          NOTIF.LOGIN_SUCCESS_MESSAGE,
+          NOTIF.NOTIFICATION_LEVEL_SUCCESS
         )
       );
     };
@@ -110,7 +107,10 @@ export const LoginForm: React.FC = () => {
   };
 
   return (
-    <FormCenterAlignStyle id={LOGIN_FORMNAME} onSubmit={throttle(handleSubmit)}>
+    <FormCenterAlignStyle
+      id={FORM.LOGIN_FORMNAME}
+      onSubmit={throttle(handleSubmit)}
+    >
       <FormRequirementsStyle>
         {i18n.t('common.form.requirements')}
       </FormRequirementsStyle>
@@ -135,7 +135,7 @@ export const LoginForm: React.FC = () => {
         handleChange={handleChange}
       />
       <SubmitButton
-        formName={LOGIN_FORMNAME}
+        formName={FORM.LOGIN_FORMNAME}
         icon={SubmitThumbsUpIcon}
         id="authentication-login-submit"
         label={i18n.t('common.connexion_label')}
