@@ -1,14 +1,4 @@
 {
-  "references": [
-    { "path": "./apps/widget" },
-    { "path": "./apps/front" },
-    { "path": "./store" },
-    { "path": "./ui" },
-    { "path": "./api" },
-    { "path": "./assets" },
-    { "path": "./components" },
-    { "path": "./utils" }
-  ],
   "exclude": [
     "**/node_modules", 
     "**/spec.ts",
@@ -17,7 +7,7 @@
   ],
   "compilerOptions": {
     "baseUrl": "./types/index",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": ["dom", "dom.iterable", "ES2019"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -25,12 +15,12 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
-    "target": "esnext",
+    "jsx": "react",
+    "target": "ES2019",
     "sourceMap": true,
     "rootDir": ".",
     "paths": {

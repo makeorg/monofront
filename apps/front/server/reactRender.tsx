@@ -72,10 +72,6 @@ const renderHtml = (
     .replace('"__REDUX__"', JSON.stringify(appState))
     .replace(new RegExp('__LANG__', 'gi'), appState.appConfig.language)
     .replace(new RegExp('__API_URL__', 'gi'), env.apiUrl() || '')
-    .replace(
-      new RegExp('__PROXY_TARGET_API_URL__', 'gi'),
-      env.proxyTargetApiUrl() || ''
-    )
     .replace(new RegExp('__FRONT_URL__', 'gi'), env.frontUrl() || '')
     .replace(new RegExp('___NONCE_ID___', 'gi'), nonceId)
     .replace(new RegExp('___NODE_ENV___', 'gi'), env.nodeEnv() || 'production')

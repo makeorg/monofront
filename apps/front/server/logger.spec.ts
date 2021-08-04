@@ -6,7 +6,7 @@ describe('Logger', () => {
       const sourceMapConsumer = new Map();
 
       sourceMapConsumer.set('main.f8bc0cfcbcb2b8cf9fc1.js', {
-        originalPositionFor: obj => ({
+        originalPositionFor: (obj: { line: number; column: number }) => ({
           source: 'main.js',
           line: obj.line + 10,
           column: obj.column + 20,

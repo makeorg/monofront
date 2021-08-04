@@ -1,5 +1,3 @@
-
-
 import { useEffect } from 'react';
 import { useLocation } from 'react-router';
 import { setLanguageCode } from '@make.org/store/actions/appConfig';

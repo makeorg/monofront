@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Collapse must match the diff snapshot between Expand vs Collapse Props 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+  <TileSeparatorStyle
+    as="TileSeparatorStyle"
+-   className={false}
++   className="collapsed"
+    noMargin={false}
+  >
+    <CollapseTriggerStyle
+-     aria-expanded={true}
++     aria-expanded={false}
+      onClick={[Function toggleCollapse]}
+    >
+      foo
+      <CollapseIconStyle
+        aria-hidden={true}
+-       iscollapsed={false}
++       iscollapsed={true}
+      >
+        <SvgAngleArrowRight
+          focusable="false"
+        />
+      </CollapseIconStyle>
+    </CollapseTriggerStyle>
+    <CollapseSeparatorStyle />
+    <CollapseContentStyle
+-     aria-hidden={false}
+-     iscollapsed={false}
++     aria-hidden={true}
++     iscollapsed={true}
+    >
+      bar
+    </CollapseContentStyle>
+  </TileSeparatorStyle>
+`;
+
+exports[`Collapse must match the diff snapshot between Tile vs default Collapse Style 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+@@ -1,7 +1,7 @@
+  <TileSeparatorStyle
+-   as="TileWithCollapseWrapperStyle"
++   as="TileSeparatorStyle"
+    className="collapsed"
+    noMargin={false}
+  >
+    <CollapseTriggerStyle
+      aria-expanded={false}
+@@ -15,13 +15,13 @@
+        <SvgAngleArrowRight
+          focusable="false"
+        />
+      </CollapseIconStyle>
+    </CollapseTriggerStyle>
++   <CollapseSeparatorStyle />
+    <CollapseContentStyle
+      aria-hidden={true}
+      iscollapsed={true}
+    >
+-     <CollapseSeparatorStyle />
+      bar
+    </CollapseContentStyle>
+  </TileSeparatorStyle>
+`;
+
+exports[`Collapse must match the snapshot with default Props 1`] = `
+<TileSeparatorStyle
+  as="TileSeparatorStyle"
+  className="collapsed"
+  noMargin={false}
+>
+  <CollapseTriggerStyle
+    aria-expanded={false}
+    onClick={[Function]}
+  >
+    foo
+    <CollapseIconStyle
+      aria-hidden={true}
+      iscollapsed={true}
+    >
+      <SvgAngleArrowRight
+        focusable="false"
+      />
+    </CollapseIconStyle>
+  </CollapseTriggerStyle>
+  <CollapseSeparatorStyle />
+  <CollapseContentStyle
+    aria-hidden={true}
+    iscollapsed={true}
+  >
+    bar
+  </CollapseContentStyle>
+</TileSeparatorStyle>
+`;

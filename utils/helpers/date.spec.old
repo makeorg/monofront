@@ -1,0 +1,231 @@
+import { HomeQuestionType, QuestionTimelineType } from '@make.org/types';
+import MockDate from 'mockdate';
+import { DATE_CAPITALIZE_LL_FORMAT } from '@make.org/utils/constants/date';
+import {
+  DateHelper,
+  getDateOfBirthFromAge,
+  getAgeFromDateOfBirth,
+  isInProgress,
+  getDate,
+  orderByEndDate,
+  chronologicalOrder,
+  getRemainingDays,
+} from './date';
+
+const HomeDefaultQuestion: HomeQuestionType = {
+  questionId: 'foo',
+  questionSlug: 'foo',
+  question: 'foo',
+  operationTitle: 'foo',
+  countries: ['FR'],
+  language: 'fr',
+  theme: {},
+  displayResults: false,
+  aboutUrl: 'foo',
+  actions: 'foo',
+  featured: false,
+  participantsCount: 1234,
+  proposalsCount: 1234,
+};
+
+describe('Date Helper', () => {
+  describe('getDateOfBirthFromAge', () => {
+    it('getDateOfBirthFromAge with valid integer age', () => {
+      MockDate.set('1/1/2019');
+      const dateOfBirth = getDateOfBirthFromAge(32);
+      expect(dateOfBirth).toBe('1987-01-01');
+      MockDate.reset();
+    });
+
+    it('getDateOfBirthFromAge with valid integer age and changing current date', () => {
+      MockDate.set('1/1/2018');
+      const dateOfBirth = getDateOfBirthFromAge(35);
+      expect(dateOfBirth).toBe('1983-01-01');
+      MockDate.reset();
+    });
+
+    it('getDateOfBirthFromAge with valid string age', () => {
+      MockDate.set('1/1/2019');
+      const dateOfBirth = getDateOfBirthFromAge('32');
+      expect(dateOfBirth).toBe('1987-01-01');
+      MockDate.reset();
+    });
+
+    it('getDateOfBirthFromAge without age', () => {
+      const dateOfBirth = getDateOfBirthFromAge();
+      expect(dateOfBirth).toBe('');
+    });
+  });
+
+  describe('getAgeFromDateOfBirth', () => {
+    it('getDateOfBirthFromAge with invalid date', () => {
+      MockDate.set('1/1/2019');
+      const age = getAgeFromDateOfBirth('fooo-bar');
+      expect(age).toBe('');
+    });
+
+    it('getDateOfBirthFromAge with empty date', () => {
+      MockDate.set('1/1/2019');
+      const age = getAgeFromDateOfBirth('');
+      expect(age).toBe('');
+    });
+
+    it('getDateOfBirthFromAge with valid date', () => {
+      MockDate.set('1/1/2019');
+      const age = getAgeFromDateOfBirth('1986-09-29');
+      expect(age).toBe('32');
+    });
+
+    it('getDateOfBirthFromAge with valid date and mounth in future', () => {
+      MockDate.set('1/10/2019');
+      const age = getAgeFromDateOfBirth('1986-09-29');
+      expect(age).toBe('32');
+    });
+  });
+
+  describe('localizedAndFormattedDate', () => {
+    it('localizedAndFormattedDate with valid date', () => {
+      DateHelper.language = 'fr';
+      expect(
+        DateHelper.localizedAndFormattedDate(
+          '2018-10-25T12:45:25.752Z',
+          DATE_CAPITALIZE_LL_FORMAT
+        )
+      ).toBe('25 octobre 2018');
+    });
+
+    it('localizedAndFormattedDate with valid date and en locale', () => {
+      DateHelper.language = 'en';
+      expect(
+        DateHelper.localizedAndFormattedDate(
+          '2018-10-24T12:45:25.752Z',
+          DATE_CAPITALIZE_LL_FORMAT
+        )
+      ).toBe('October 24, 2018');
+    });
+
+    it('localizedAndFormattedDate with invalid date', () => {
+      expect(
+        DateHelper.localizedAndFormattedDate('foo', DATE_CAPITALIZE_LL_FORMAT)
+      ).toBeNull();
+    });
+
+    it('localizedAndFormattedDate with invalid format', () => {
+      expect(
+        DateHelper.localizedAndFormattedDate(
+          '2018-10-24T12:45:25.752Z',
+          undefined
+        )
+      ).toBeNull();
+    });
+  });
+
+  describe('getRemainingDays', () => {
+    it('getRemainingDays with valid date', () => {
+      expect(getRemainingDays('2019-10-25T12:45:25.752Z')).toBe(10);
+    });
+
+    it('getRemainingDays with invalid date', () => {
+      expect(getRemainingDays('foo')).toBeNull();
+    });
+  });
+
+  describe('isInProgress', () => {
+    const startDate = '1980-01-01';
+    let endDate = '2075-01-01';
+
+    it('isInProgress with startDate is null', () => {
+      expect(isInProgress({ startDate: null, endDate })).toBe(true);
+    });
+
+    it('isInProgress with endDate is null', () => {
+      expect(isInProgress({ startDate, endDate: null })).toBe(true);
+    });
+
+    it('consultation is open', () => {
+      expect(isInProgress({ startDate, endDate })).toBe(true);
+    });
+
+    it('consultation is closed', () => {
+      endDate = '1980-01-02';
+      expect(isInProgress({ startDate, endDate })).toBe(false);
+    });
+  });
+
+  describe('getDate', () => {
+    const emptyDate = undefined;
+    const dateString = '1984-02-15';
+    const date = new Date(dateString);
+
+    it('receive an null date', () => {
+      expect(getDate(emptyDate)).toBe(undefined);
+    });
+
+    it('receive a string date', () => {
+      expect(getDate(dateString)).toMatchObject(date);
+    });
+  });
+
+  describe('orderByEndDate', () => {
+    const questionA = { ...HomeDefaultQuestion, endDate: '1980-01-02' };
+    const questionB = { ...HomeDefaultQuestion, endDate: '2075-01-01' };
+    const questionANullDate = { ...HomeDefaultQuestion, endDate: undefined };
+    const questionBNullDate = { ...HomeDefaultQuestion, endDate: undefined };
+
+    it('receive null end date for both questions', () => {
+      expect(orderByEndDate(questionANullDate, questionBNullDate)).toBe(0);
+    });
+
+    it('receive null end date for questionA', () => {
+      expect(orderByEndDate(questionANullDate, questionB)).toBe(-1);
+    });
+
+    it('receive null end date for questionB', () => {
+      expect(orderByEndDate(questionA, questionBNullDate)).toBe(1);
+    });
+
+    it('receive endDates for questionA & questionB', () => {
+      expect(orderByEndDate(questionA, questionB)).toBe(
+        JSON.parse(questionB.endDate) - JSON.parse(questionA.endDate)
+      );
+    });
+  });
+
+  describe('chronologicalOrder', () => {
+    const defaultTimeline = { dateText: 'foo', description: 'foo' };
+    const stepA: QuestionTimelineType = {
+      ...defaultTimeline,
+      date: '1980-01-02',
+    };
+    const stepB: QuestionTimelineType = {
+      ...defaultTimeline,
+      date: '2075-01-01',
+    };
+    const stepANullDate: QuestionTimelineType = {
+      ...defaultTimeline,
+      date: '',
+    };
+    const stepBNullDate: QuestionTimelineType = {
+      ...defaultTimeline,
+      date: '',
+    };
+
+    it('receive null date for both steps', () => {
+      expect(chronologicalOrder(stepANullDate, stepBNullDate)).toBe(0);
+    });
+
+    it('receive null date for stepA', () => {
+      expect(chronologicalOrder(stepANullDate, stepB)).toBe(1);
+    });
+
+    it('receive null date for stepB', () => {
+      expect(chronologicalOrder(stepA, stepBNullDate)).toBe(-1);
+    });
+
+    it('receive dates for stepA & stepB', () => {
+      expect(chronologicalOrder(stepA, stepB)).toBe(
+        JSON.parse(stepA.date) - JSON.parse(stepB.date)
+      );
+    });
+  });
+});

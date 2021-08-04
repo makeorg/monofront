@@ -27,10 +27,7 @@ axiosRetry(axios, {
 
 class ExpressApiServiceSharedClass {
   // eslint-disable-next-line class-methods-use-this
-  callApi(
-    url: string,
-    options: OptionsType = {}
-  ): Promise<void | AxiosResponse> {
+  callApi(url: string, options: OptionsType): Promise<void | AxiosResponse> {
     const defaultHeaders = {
       'Content-Type': 'application/json; charset=UTF-8',
     };

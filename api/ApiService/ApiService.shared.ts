@@ -1,5 +1,5 @@
 /* eslint-disable max-classes-per-file */
-import axios, { Method, AxiosResponse } from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import axiosRetry from 'axios-retry';
 import { Logger } from '@make.org/utils/services/Logger';
 import { APP_NAME } from '@make.org/utils/constants/config';
@@ -14,8 +14,7 @@ const HOSTNAME =
 const LOCATION_PARAMS =
   (typeof window !== 'undefined' && window?.location?.search) || '';
 
-// const API_URL = env.apiUrl(); TO DO
-const API_URL = 'https://api.preprod.makeorg.tech';
+const API_URL = env.apiUrl();
 
 axiosRetry(axios, {
   retries: 5,
@@ -104,10 +103,7 @@ export const handleErrors = (
 
 class ApiServiceSharedClass {
   // eslint-disable-next-line class-methods-use-this
-  callApi(
-    url: string,
-    options: OptionsType = {}
-  ): Promise<void | AxiosResponse> {
+  callApi(url: string, options: OptionsType): Promise<void | AxiosResponse> {
     const paramsQuery = new URLSearchParams(LOCATION_PARAMS).toString();
     const requestId = uuidv4();
     const defaultHeaders: Readonly<Record<string, string | null>> = {

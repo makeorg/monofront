@@ -1,6 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import axiosRetry from 'axios-retry';
 import axios, { AxiosResponse } from 'axios';
+import { OptionsType } from '@make.org/types';
 import { IApiServiceStrategy } from './index';
 import { ApiServiceShared } from './ApiService.shared';
 import { getLocationContext } from './getLocationContext';
@@ -120,10 +121,7 @@ export class ApiServiceClient implements IApiServiceStrategy {
     this._headersListeners.delete(identifier);
   }
 
-  callApi(
-    url: string,
-    options: { proposalId?: string; headers?: Readonly<Record<string, string>> }
-  ): Promise<void | AxiosResponse> {
+  callApi(url: string, options: OptionsType): Promise<void | AxiosResponse> {
     const defaultHeaders = {
       'x-make-country': this._country,
       'x-make-language': this._language,

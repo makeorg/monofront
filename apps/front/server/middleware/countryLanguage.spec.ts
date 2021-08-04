@@ -5,14 +5,16 @@ import {
   getCountryFromRequest,
 } from './countryLanguage';
 
-jest.mock('Shared/i18n');
+jest.mock('i18next');
+
+const mockedi18n = i18n as jest.Mocked<typeof i18n>;
 
 describe('Country Language middelware', () => {
   afterEach(() => {
     jest.clearAllMocks();
     jest.restoreAllMocks();
-    i18n.cloneInstance.mockRestore();
-    i18n.changeLanguage.mockRestore();
+    mockedi18n.cloneInstance.mockRestore();
+    mockedi18n.changeLanguage.mockRestore();
   });
 
   describe('getCountryFromRequest function', () => {
@@ -22,7 +24,7 @@ describe('Country Language middelware', () => {
       });
       const response = httpMocks.createResponse();
 
-      const country = getCountryFromRequest(request, response, () => {});
+      const country = getCountryFromRequest(request);
 
       expect(country).toBe('GB');
     });
@@ -36,7 +38,9 @@ describe('Country Language middelware', () => {
       const response = httpMocks.createResponse();
       jest.spyOn(response, 'redirect');
 
-      countryLanguageMiddleware(request, response, () => {});
+      countryLanguageMiddleware(request, response, () => {
+        console.log('next');
+      });
 
       expect(request.params.country).toBe('FR');
     });
@@ -48,7 +52,9 @@ describe('Country Language middelware', () => {
       const response = httpMocks.createResponse();
       jest.spyOn(response, 'redirect');
 
-      countryLanguageMiddleware(request, response, () => {});
+      countryLanguageMiddleware(request, response, () => {
+        console.log('next');
+      });
 
       expect(request.params.country).toBe('FR');
     });
@@ -60,7 +66,9 @@ describe('Country Language middelware', () => {
       const response = httpMocks.createResponse();
       jest.spyOn(response, 'redirect');
 
-      countryLanguageMiddleware(request, response, () => {});
+      countryLanguageMiddleware(request, response, () => {
+        console.log('next');
+      });
       expect(request.params.country).toBe('FR');
     });
 
@@ -70,7 +78,9 @@ describe('Country Language middelware', () => {
       });
       const response = httpMocks.createResponse();
       jest.spyOn(response, 'redirect');
-      countryLanguageMiddleware(request, response, () => {});
+      countryLanguageMiddleware(request, response, () => {
+        console.log('next');
+      });
       expect(request.params.language).toBe('fr');
     });
 
@@ -80,7 +90,9 @@ describe('Country Language middelware', () => {
       const request = httpMocks.createRequest();
       const response = httpMocks.createResponse();
 
-      countryLanguageMiddleware(request, response, () => {});
+      countryLanguageMiddleware(request, response, () => {
+        console.log('next');
+      });
 
       expect(i18n.cloneInstance).toHaveBeenCalledTimes(1);
       expect(i18n.changeLanguage).toHaveBeenCalledTimes(1);

@@ -2,17 +2,17 @@ import { QuestionExtraSlidesConfigType } from '@make.org/types';
 
 export function transformExtraSlidesConfigFromQuery(
   sequenceExtraSlides: QuestionExtraSlidesConfigType,
-  noIntroCard: boolean,
-  noPushProposalCard: boolean
+  disableIntroCard: boolean,
+  disablePushProposalCard: boolean
 ): QuestionExtraSlidesConfigType {
   const extraSlidesConfig: QuestionExtraSlidesConfigType = {
     ...sequenceExtraSlides,
   };
-  if (noIntroCard) {
+  if (disableIntroCard) {
     delete extraSlidesConfig.introCard;
   }
 
-  if (noPushProposalCard) {
+  if (disablePushProposalCard) {
     delete extraSlidesConfig.pushProposalCard;
   }
 

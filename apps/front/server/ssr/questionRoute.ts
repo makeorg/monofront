@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { getLanguageFromCountryCode } from '@make.org/utils/helpers/countries';
 import { initialState } from '@make.org/store/initialState';
 import { updateTrackingQuestionParam } from '@make.org/store/middleware/question';
+import { isInProgress } from '@make.org/utils/helpers/date';
 import { reactRender } from '../reactRender';
 import { QuestionService } from '../service/QuestionService';
 import { logError } from './helpers/ssr.helper';
@@ -40,6 +41,10 @@ export const questionRoute = async (
 
   if (!question) {
     return reactRender(req, res.status(404), initialState);
+  }
+
+  if (!isInProgress(question) && !question.displayResults) {
+    return res.redirect(question.aboutUrl);
   }
 
   initialState.currentQuestion = questionSlug;

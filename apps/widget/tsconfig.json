@@ -1,9 +1,16 @@
 {
+  "references": [
+    { "path": "../../store" },
+    { "path": "../../ui" },
+    { "path": "../../api" },
+    { "path": "../../assets" },
+    { "path": "../../components" },
+    { "path": "../../utils" }
+  ],
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
+    "outDir": "./dist/types",
+    "rootDir": "../../",
     "composite": true
   },
   "include": [
@@ -14,6 +21,18 @@
     "../../api",
     "../../assets",
     "../../components",
-    "../../utils" 
-, "../front/client/app/Search"  ],
+    "../../utils", 
+    "../front/client/app/Search"
+  ],
+  "paths": {
+    "@make.org/widget": ["../../apps/widget/*"],
+    "@make.org/front": ["../../apps/front/*"],
+    "@make.org/components": ["../../components/*"],
+    "@make.org/types": ["../../types/*"],
+    "@make.org/api": ["../../api/*"],
+    "@make.org/assets": ["../../assets/*"],
+    "@make.org/utils": ["../../utils/*"],
+    "@make.org/ui": ["../../ui/*"],
+    "@make.org/store": ["../../store/*"]
+  }
 }

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TileWithTitle must match the diff snapshot between default vs with Icon 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+  <TileWithTitleStyle>
+    <TileTitleStyle
+      as="h3"
+    >
++     <SvgInfos />
+      foo
+    </TileTitleStyle>
+    <TileSeparatorStyle />
+    bar
+  </TileWithTitleStyle>
+`;
+
+exports[`TileWithTitle must match the snapshot with default Props 1`] = `
+<TileWithTitleStyle>
+  <TileTitleStyle
+    as="h3"
+  >
+    foo
+  </TileTitleStyle>
+  <TileSeparatorStyle />
+  bar
+</TileWithTitleStyle>
+`;

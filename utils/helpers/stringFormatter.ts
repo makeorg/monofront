@@ -3,9 +3,6 @@ export const capitalize = (
   lowerRest = true,
   locales?: string[]
 ): string => {
-  if (!name) {
-    return name;
-  }
   const separators = [' ', '-'];
   return separators.reduce(
     (accumulator, separator) =>

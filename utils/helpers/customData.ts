@@ -13,7 +13,7 @@ const getCustomDataFromQueryParams = (
   if (!queryParams) {
     return {};
   }
-  const customData: Record<string,string> = {};
+  const customData: Record<string, string> = {};
   Object.keys(queryParams).forEach(key => {
     const isValidKey =
       key.startsWith(paramPrefix) && key.length > paramPrefix.length;
@@ -48,7 +48,7 @@ export const formatdDataForHeader = (
     })
     .join(',');
 
-export const getAll = (): any => {
+export const getAll = (): Record<string, string> => {
   try {
     return JSON.parse(sessionStorage.getItem(sessionStorageKey) || '{}') || {};
   } catch (e) {

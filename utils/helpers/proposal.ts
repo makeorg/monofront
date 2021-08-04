@@ -32,13 +32,6 @@ export const proposalHasValidLength = (length = 0): boolean => {
  * Search the first no voted proposal
  * @type {Object|undefined}
  */
-export const searchFirstUnvotedProposal = (
-  proposals: ProposalType[]
-): ProposalType | undefined =>
-  proposals.find(proposal =>
-    proposal.votes.every(vote => vote.hasVoted === false)
-  );
-
 export const searchProposals = async (
   country: string,
   content?: string,

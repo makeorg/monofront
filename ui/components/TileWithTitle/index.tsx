@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
-import { SvgPropsType } from '@make.org/types';
-import { TileSeparatorStyle } from '../../elements/SeparatorsElements';
+import { TileSeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { TileWithTitleStyle, TileTitleStyle } from './style';
 
 type Props = {

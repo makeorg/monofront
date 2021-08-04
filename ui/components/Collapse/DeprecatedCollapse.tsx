@@ -14,7 +14,7 @@ type Props = {
   /** Title of the tile */
   title: string;
   /** Children to render */
-  children: Node | JSX.Element;
+  children: JSX.Element | string;
   /** Set collapse value */
   open?: boolean;
   /** Set collapse styling like a Tile Component */

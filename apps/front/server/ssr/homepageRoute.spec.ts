@@ -4,18 +4,18 @@ import { ViewsService } from '../service/ViewsService';
 import { homepageRoute } from './homepageRoute';
 import { reactRender } from '../reactRender';
 
-jest.mock('Shared/api/ViewsApiService');
+jest.mock('@make.org/api/ViewsApiService');
 jest.mock('../service/ViewsService');
 jest.mock('../reactRender', () => ({ reactRender: jest.fn() }));
 jest.mock('./helpers/ssr.helper', () => ({
   logError: jest.fn(),
 }));
-jest.mock('@make.org/store/initialState', () => ({
-  createInitialState: jest.fn(),
-}));
+
+const mockedViewsService = ViewsService as jest.Mocked<any>;
 
 const country = 'FR';
 const language = 'fr';
+const initialState = createInitialState();
 const request = httpMocks.createRequest({
   params: {
     country,
@@ -31,14 +31,14 @@ describe('Homepage route', () => {
 
   describe('The route', () => {
     it('construct route initial state and render', async () => {
-      ViewsService.getHome.mockReturnValue({
+      mockedViewsService.getHome.mockReturnValue({
         test: 'test',
       });
-      createInitialState.mockReturnValue({});
-      ViewsService.clearCache();
+      mockedViewsService.clearCache();
 
       await homepageRoute(request, response);
       expect(reactRender).toHaveBeenCalledWith(request, response, {
+        ...initialState,
         views: { homepage: { test: 'test', country } },
       });
     });

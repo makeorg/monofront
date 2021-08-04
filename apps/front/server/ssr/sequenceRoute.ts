@@ -13,10 +13,10 @@ export const sequenceRoute = async (
   res: Response
 ): Promise<void> => {
   const { questionSlug, country } = req.params;
-  const introCard: string = req.query.introCard as string;
-  const pushProposal: string = req.query.pushProposal as string;
-  const noIntroCard = JSON.parse(introCard) === false;
-  const noPushProposal = JSON.parse(pushProposal) === false;
+  const { introCard } = req.query;
+  const { pushProposal } = req.query;
+  const noIntroCard = introCard === (false || 'false');
+  const noPushProposal = pushProposal === (false || 'false');
 
   const language = getLanguageFromCountryCode(country);
 
@@ -50,7 +50,7 @@ export const sequenceRoute = async (
   }
 
   if (!isInProgress(question) && !question.displayResults) {
-    return res.redirect(JSON.stringify(question.aboutUrl));
+    return res.redirect(question.aboutUrl);
   }
 
   const { sequenceConfig } = question;

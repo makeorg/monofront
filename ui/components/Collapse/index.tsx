@@ -12,7 +12,7 @@ type Props = {
   /** Title of the tile */
   title: string;
   /** Chidlren to render */
-  children: Node | JSX.Element;
+  children: JSX.Element | string;
   /** Set collapse value */
   open?: boolean;
   /** Optional language to handle lang attribute */
