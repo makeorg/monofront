@@ -1,7 +1,7 @@
+import { FEATURE_FLIPPING } from '@make.org/types/enums';
 import { Logger } from '../services/Logger';
-import * as features from '../constants/featureFlipping';
 
-const featuresList: string[] = Object.values(features);
+const featuresList: string[] = Object.values(FEATURE_FLIPPING);
 
 /**
  * Feature flipping
@@ -18,4 +18,4 @@ export const checkIsFeatureActivated = (
   return [...activesFeatures].includes(featureSlug);
 };
 
-export const getFeatures = (): { [f: string]: string } => features;
+export const getFeatures = (): { [f: string]: string } => FEATURE_FLIPPING;

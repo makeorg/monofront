@@ -6,12 +6,8 @@ import {
   isPushProposalCard,
   isStandardSequence,
 } from '@make.org/utils/helpers/sequence';
-import {
-  KIND_CONTROVERSY,
-  KIND_CONSENSUS,
-  KIND_STANDARD,
-} from '@make.org/utils/constants/sequence';
-import { CARD_TYPE_NO_PROPOSAL_CARD } from '@make.org/utils/constants/card';
+import { SEQUENCE, CARD } from '@make.org/types/enums';
+
 import {
   NoProposalCardType,
   ProposalType,
@@ -79,7 +75,7 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
   }
 
   const noProposalCard: NoProposalCardType = {
-    type: CARD_TYPE_NO_PROPOSAL_CARD,
+    type: CARD.CARD_TYPE_NO_PROPOSAL_CARD,
     configuration: {
       title: getNoProposalCardTitleBySequenceKind(sequenceKind) || '',
       description: isStandardSequence(sequenceKind)
@@ -90,13 +86,13 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
   };
 
   const getMetaTitle = () => {
-    if (sequenceKind === KIND_STANDARD) {
+    if (sequenceKind === SEQUENCE.KIND_STANDARD) {
       return 'meta.sequence.title_standard';
     }
-    if (sequenceKind === KIND_CONTROVERSY) {
+    if (sequenceKind === SEQUENCE.KIND_CONTROVERSY) {
       return 'meta.sequence.title_controversy';
     }
-    if (sequenceKind === KIND_CONSENSUS) {
+    if (sequenceKind === SEQUENCE.KIND_CONSENSUS) {
       return 'meta.sequence.title_popular';
     }
 

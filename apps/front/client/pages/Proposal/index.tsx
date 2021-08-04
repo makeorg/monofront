@@ -9,7 +9,7 @@ import { Spinner } from '@make.org/ui/components/Loading/Spinner';
 import { SingleProposalCard } from '@make.org/components/Proposal/SingleProposalCard';
 import { SingleProposalSharingComponent } from '@make.org/components/Flipping/Sharing/SingleProposal';
 import { checkIsFeatureActivated } from '@make.org/utils/helpers/featureFlipping';
-import { CONSULTATION_SHARE_DISABLE } from '@make.org/utils/constants/featureFlipping';
+import { FEATURE_FLIPPING } from '@make.org/types/enums';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { QuestionService } from '@make.org/utils/services/Question';
 import { ProposalService } from '@make.org/utils/services/Proposal';
@@ -63,7 +63,7 @@ const ProposalPage: FC = () => {
     );
   }
   const isSharingDisabled: boolean = checkIsFeatureActivated(
-    CONSULTATION_SHARE_DISABLE,
+    FEATURE_FLIPPING.CONSULTATION_SHARE_DISABLE,
     question.activeFeatures
   );
 

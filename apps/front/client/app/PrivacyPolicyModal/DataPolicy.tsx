@@ -3,7 +3,7 @@ import i18n from 'i18next';
 import { CheckBox } from '@make.org/components/Form/CheckBox';
 import { SubmitButton } from '@make.org/components/Form/SubmitButton';
 import { getDataPageLink } from '@make.org/utils/helpers/url';
-import { DATA_POLICY_CONSENT } from '@make.org/utils/constants/form';
+import { FORM } from '@make.org/types/enums';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { loginSocial, login } from '@make.org/store/actions/authentication';
 import { modalCloseDataPolicy } from '@make.org/store/actions/modal';
@@ -56,7 +56,7 @@ export const DataPolicy: React.FC = () => {
 
   return (
     <DataPolicyContentStyle
-      id={DATA_POLICY_CONSENT}
+      id={FORM.DATA_POLICY_CONSENT}
       onSubmit={throttle(handleSubmit)}
     >
       <DataPolicyTitleStyle>
@@ -95,7 +95,7 @@ export const DataPolicy: React.FC = () => {
       <ButtonWrapperStyle>
         <SubmitButton
           disabled={!canSubmit}
-          formName={DATA_POLICY_CONSENT}
+          formName={FORM.DATA_POLICY_CONSENT}
           label={i18n.t('data_policy_modal.validate')}
         />
       </ButtonWrapperStyle>

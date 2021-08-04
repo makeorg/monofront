@@ -2,12 +2,7 @@ import React from 'react';
 import i18n from 'i18next';
 import { trackClickBlog } from '@make.org/utils/services/Tracking';
 import { ColumnToRowElementStyle } from '@make.org/ui/elements/FlexElements';
-import {
-  JOBS_LINK,
-  NEWS_LINK,
-  DOTATION_FUNDS_LINK,
-  PRESS_DETAILS_LINK,
-} from '@make.org/utils/constants/url';
+
 import {
   getContactPageLink,
   getA11YPageLink,
@@ -17,11 +12,8 @@ import {
   matchDesktopDevice,
   scrollToTop,
 } from '@make.org/utils/helpers/styled';
-import {
-  NAVIGATION_ARIA_NEGATIVE_TAB_CLASS,
-  PANEL_ARIA_NEGATIVE_TAB_CLASS,
-} from '@make.org/utils/constants/a11y';
-import { MAIN_FOOTER } from '@make.org/utils/constants/ids';
+import { NAVIGATION, PANEL, IDS, URL } from '@make.org/types/enums';
+
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { modalShowCountries } from '@make.org/store/actions/modal';
 import { isSequencePage as getIsSequencePage } from '@make.org/utils/routes';
@@ -56,10 +48,10 @@ export const FooterFR: React.FC = () => {
 
   return (
     <FooterStyle
-      id={MAIN_FOOTER}
-      className={`${NAVIGATION_ARIA_NEGATIVE_TAB_CLASS} ${PANEL_ARIA_NEGATIVE_TAB_CLASS} ${
-        isSequencePage && 'extra-mobile-padding-bottom'
-      }`}
+      id={IDS.MAIN_FOOTER}
+      className={`${NAVIGATION.NAVIGATION_ARIA_NEGATIVE_TAB_CLASS} ${
+        PANEL.PANEL_ARIA_NEGATIVE_TAB_CLASS
+      } ${isSequencePage && 'extra-mobile-padding-bottom'}`}
       data-cy-container="footer"
     >
       <FooterNavStyle aria-label={i18n.t('common.footer_nav')}>
@@ -70,7 +62,7 @@ export const FooterFR: React.FC = () => {
                 <FooterItemHTMLLinkStyle
                   target="_blank"
                   rel="noopener"
-                  href={NEWS_LINK}
+                  href={URL.NEWS_LINK}
                   onClick={() => trackClickBlog('blog list')}
                 >
                   {i18n.t('main_footer.news')}
@@ -84,7 +76,7 @@ export const FooterFR: React.FC = () => {
                 as="a"
                 target="_blank"
                 rel="noopener"
-                href={PRESS_DETAILS_LINK}
+                href={URL.PRESS_DETAILS_LINK}
               >
                 {i18n.t('main_footer.press_details')}
                 <> </>
@@ -96,7 +88,7 @@ export const FooterFR: React.FC = () => {
                 <FooterItemHTMLLinkStyle
                   target="_blank"
                   rel="noopener"
-                  href={JOBS_LINK}
+                  href={URL.JOBS_LINK}
                 >
                   {i18n.t('main_footer.jobs')}
                   <> </>
@@ -109,7 +101,7 @@ export const FooterFR: React.FC = () => {
                 as="a"
                 target="_blank"
                 rel="noopener"
-                href={DOTATION_FUNDS_LINK}
+                href={URL.DOTATION_FUNDS_LINK}
               >
                 {i18n.t('main_footer.dotation_funds')}
                 <> </>

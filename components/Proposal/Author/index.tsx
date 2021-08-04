@@ -9,11 +9,8 @@ import { Avatar } from '@make.org/ui/components/Avatar';
 import { RedLinkRouterStyle } from '@make.org/ui/elements/LinkElements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { trackClickPublicProfile } from '@make.org/utils/services/Tracking';
-import {
-  TYPE_ORGANISATION,
-  TYPE_PERSONALITY,
-  TYPE_USER,
-} from '@make.org/utils/constants/user';
+import { USER } from '@make.org/types/enums';
+
 import {
   formatAuthorName,
   formatOrganisationName,
@@ -51,9 +48,9 @@ export const ProposalAuthorInformations: React.FC<Props> = ({
   const { country } = state.appConfig;
   const { author } = proposal;
 
-  const isOrganisation = author.userType === TYPE_ORGANISATION;
-  const isPersonality = author.userType === TYPE_PERSONALITY;
-  const isBasicUser = author.userType === TYPE_USER;
+  const isOrganisation = author.userType === USER.TYPE_ORGANISATION;
+  const isPersonality = author.userType === USER.TYPE_PERSONALITY;
+  const isBasicUser = author.userType === USER.TYPE_USER;
 
   return (
     <>
@@ -64,7 +61,7 @@ export const ProposalAuthorInformations: React.FC<Props> = ({
         {isOrganisation && (
           <>
             <RedLinkRouterStyle
-              onClick={() => trackClickPublicProfile(TYPE_ORGANISATION)}
+              onClick={() => trackClickPublicProfile(USER.TYPE_ORGANISATION)}
               to={getOrganisationProfileLink(
                 country,
                 author.organisationSlug || ''
@@ -78,7 +75,7 @@ export const ProposalAuthorInformations: React.FC<Props> = ({
         {isPersonality && (
           <>
             <RedLinkRouterStyle
-              onClick={() => trackClickPublicProfile(TYPE_PERSONALITY)}
+              onClick={() => trackClickPublicProfile(USER.TYPE_PERSONALITY)}
               to={getPersonalityProfileLink(country, proposal.userId)}
             >
               {formatAuthorName(author.firstName || '')}

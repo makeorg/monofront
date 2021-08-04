@@ -6,10 +6,7 @@ import {
   removeAriaHiddenAndNegativeTab,
   removeAriaHiddenByClass,
 } from '@make.org/utils/helpers/a11y';
-import {
-  PANEL_ARIA_NEGATIVE_TAB_CLASS,
-  PANEL_ARIA_CLASS,
-} from '@make.org/utils/constants/a11y';
+import { PANEL } from '@make.org/types/enums';
 import { closePanel, removePanelContent } from '@make.org/store/actions/panel/';
 import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
@@ -38,13 +35,13 @@ export const Panel: React.FC = () => {
 
     if (isExpanded) {
       lockBody();
-      addAriaHiddenByClass(PANEL_ARIA_CLASS);
-      addAriaHiddenAndNegativeTab(PANEL_ARIA_NEGATIVE_TAB_CLASS);
+      addAriaHiddenByClass(PANEL.PANEL_ARIA_CLASS);
+      addAriaHiddenAndNegativeTab(PANEL.PANEL_ARIA_NEGATIVE_TAB_CLASS);
       return panelRef.current.removeAttribute('aria-hidden');
     }
 
-    removeAriaHiddenByClass(PANEL_ARIA_CLASS);
-    removeAriaHiddenAndNegativeTab(PANEL_ARIA_NEGATIVE_TAB_CLASS);
+    removeAriaHiddenByClass(PANEL.PANEL_ARIA_CLASS);
+    removeAriaHiddenAndNegativeTab(PANEL.PANEL_ARIA_NEGATIVE_TAB_CLASS);
     const timer = setTimeout(() => {
       if (
         !!panelRef &&

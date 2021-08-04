@@ -10,8 +10,7 @@ import { ContentSeparatorStyle } from '@make.org/ui/elements/SeparatorsElements'
 import { TallCardStyle } from '@make.org/ui/elements/CardsElements';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import { TYPE_ANONYMOUS } from '@make.org/utils/constants/user';
-
+import { USER } from '@make.org/types/enums';
 import {
   TopComponentContext,
   TopComponentContextValueType,
@@ -44,7 +43,7 @@ export const SingleProposalCard: React.FC<Props> = ({ proposal }) => {
     TopComponentContextValue.getSingleProposal();
   const { state } = useAppContext();
   const { country } = state.appConfig;
-  const isAnonymous = proposal.author.userType === TYPE_ANONYMOUS;
+  const isAnonymous = proposal.author.userType === USER.TYPE_ANONYMOUS;
 
   return (
     <TopComponentContext.Provider value={topComponentContext}>

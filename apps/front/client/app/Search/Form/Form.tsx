@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { SvgSearch, SvgDisconnect } from '@make.org/ui/Svg/elements';
-import { SEARCH_FORMNAME } from '@make.org/utils/constants/form';
+import { FORM } from '@make.org/types/enums';
 import { throttle } from '@make.org/utils/helpers/throttle';
 import i18n from 'i18next';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
@@ -69,7 +69,7 @@ export const SearchForm: React.FC<Props> = ({ isExpanded, handleFocus }) => {
 
   return (
     <SearchFormStyle
-      id={SEARCH_FORMNAME}
+      id={FORM.SEARCH_FORMNAME}
       className={isExpanded ? 'expanded' : ''}
       onSubmit={throttle(handleSubmit)}
     >

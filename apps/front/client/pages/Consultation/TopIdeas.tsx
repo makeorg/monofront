@@ -8,7 +8,7 @@ import { trackDisplayTopIdeas } from '@make.org/utils/services/Tracking';
 import { FollowUs } from '@make.org/components/Flipping/FollowUs';
 import i18n from 'i18next';
 import { Spinner } from '@make.org/ui/components/Loading/Spinner';
-import { MUNICIPAL_PERSONALITY_HEADER } from '@make.org/utils/constants/featureFlipping';
+import { FEATURE_FLIPPING } from '@make.org/types/enums';
 import { checkIsFeatureActivated } from '@make.org/utils/helpers/featureFlipping';
 
 import { ThemeProvider } from 'styled-components';
@@ -40,7 +40,7 @@ const TopIdeasPage: FC = () => {
   const hasTopIdeas = topIdeas && topIdeas.length > 0;
   // @todo remove or refactor when Municipales is over
   const withPersonalityHeader: boolean = checkIsFeatureActivated(
-    MUNICIPAL_PERSONALITY_HEADER,
+    FEATURE_FLIPPING.MUNICIPAL_PERSONALITY_HEADER,
     question.activeFeatures
   );
   const initTopIdeas = async () => {

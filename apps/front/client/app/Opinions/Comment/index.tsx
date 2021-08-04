@@ -15,7 +15,7 @@ import { getPersonalityProfileLink } from '@make.org/utils/helpers/url';
 import { Avatar } from '@make.org/ui/components/Avatar';
 import { CertifiedIconStyle } from '@make.org/components/Proposal/DeprecatedAuthor/Styled';
 import { trackClickPublicProfile } from '@make.org/utils/services/Tracking';
-import { TYPE_PERSONALITY } from '@make.org/utils/constants/user';
+import { USER } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
 import {
   CandidateLinkStyle,
@@ -36,7 +36,7 @@ type Props = {
 
 const handleClickProfile = () => {
   scrollToTop();
-  trackClickPublicProfile(TYPE_PERSONALITY);
+  trackClickPublicProfile(USER.TYPE_PERSONALITY);
 };
 
 export const OpinionComment: FC<Props> = ({ comment }) => {

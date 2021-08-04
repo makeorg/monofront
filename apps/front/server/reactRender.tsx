@@ -10,10 +10,7 @@ import { HeadProvider } from 'react-head';
 import i18n from 'i18next';
 import deepFreeze from 'deep-freeze';
 import { initialState } from '@make.org/store/initialState';
-import {
-  NOTIFICATION_LEVEL_INFORMATION,
-  SECURE_EXPIRED_MESSAGE,
-} from '@make.org/utils/constants/notifications';
+import { NOTIF } from '@make.org/types/enums';
 import { env } from '@make.org/assets/env';
 import { SecureExpiredMessage } from '@make.org/components/Notifications/Banner/SecureExpired';
 import {
@@ -148,9 +145,9 @@ export const reactRender = async (
 
   const notificationBanner = secureExpired
     ? {
-        id: SECURE_EXPIRED_MESSAGE,
+        id: NOTIF.SECURE_EXPIRED_MESSAGE,
         content: <SecureExpiredMessage />,
-        level: NOTIFICATION_LEVEL_INFORMATION,
+        level: NOTIF.NOTIFICATION_LEVEL_INFORMATION,
       }
     : {};
 

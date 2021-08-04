@@ -1,13 +1,10 @@
 import { useMemo, useEffect } from 'react';
-import {
-  CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
-  CARD_TYPE_PROPOSAL,
-} from '@make.org/utils/constants/card';
 import { DemographicsTrackingService } from '@make.org/utils/services/DemographicsTracking';
 import { Logger } from '@make.org/utils/services/Logger';
 import { addQuestionToDemographics } from '@make.org/store/actions/sequence';
 import { ProposalCardType, SequenceCardType } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
+import { CARD } from '@make.org/types/enums';
 
 const AFTER_NB_VOTES = 2;
 
@@ -32,7 +29,9 @@ export const useSequenceExtraDataAutoSubmit = (
 
     // has extra data card
     if (
-      cards.find(fCard => fCard.type === CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD)
+      cards.find(
+        fCard => fCard.type === CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD
+      )
     ) {
       return null;
     }
@@ -48,7 +47,7 @@ export const useSequenceExtraDataAutoSubmit = (
     const card = cards
       .filter(
         fCard =>
-          fCard.type === CARD_TYPE_PROPOSAL &&
+          fCard.type === CARD.CARD_TYPE_PROPOSAL &&
           !fCard.state?.votes.some(vote => !!vote && vote.hasVoted === true)
       )
       .sort((a, b) => a.index - b.index)

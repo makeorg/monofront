@@ -2,7 +2,7 @@
 // import english from 'Server/staticData/i18n/en.json';
 // import french from 'Server/staticData/i18n/fr.json';
 
-import { LocaleType } from '../../types/enums';
+import { LocaleType } from '@make.org/types/enums';
 
 // import german from 'Server/staticData/i18n/de.json';
 const english = {};

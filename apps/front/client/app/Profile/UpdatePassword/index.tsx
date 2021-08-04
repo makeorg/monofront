@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import { useAppContext } from '@make.org/store';
 import i18n from 'i18next';
 import { ErrorObjectType } from '@make.org/types';
-import { PASSWORD_UPDATE_FORMNAME } from '@make.org/utils/constants/form';
+import { FORM } from '@make.org/types/enums';
 import { PasswordInput } from '@make.org/components/Form/PasswordInput';
 import { SubmitButton } from '@make.org/components/Form/SubmitButton';
 import {
@@ -104,7 +104,10 @@ export const UpdatePassword: FC<Props> = ({ userId, hasPassword }) => {
 
   return (
     <TileWithTitle title={i18n.t('profile.password_update.title')}>
-      <form id={PASSWORD_UPDATE_FORMNAME} onSubmit={throttle(handleSubmit)}>
+      <form
+        id={FORM.PASSWORD_UPDATE_FORMNAME}
+        onSubmit={throttle(handleSubmit)}
+      >
         <FormRequirementsStyle>
           {i18n.t('common.form.requirements')}
         </FormRequirementsStyle>
@@ -129,7 +132,7 @@ export const UpdatePassword: FC<Props> = ({ userId, hasPassword }) => {
         />
         <SubmitButton
           disabled={!canSubmit}
-          formName={PASSWORD_UPDATE_FORMNAME}
+          formName={FORM.PASSWORD_UPDATE_FORMNAME}
           icon={SubmitThumbsUpIcon}
           label={i18n.t('profile.common.submit_label')}
         />

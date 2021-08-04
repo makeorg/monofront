@@ -1,8 +1,5 @@
 import React, { FC } from 'react';
-import {
-  RESULTS_TOP_IDEAS,
-  RESULTS_CONTROVERSIALS,
-} from '@make.org/utils/constants/ids';
+import { IDS } from '@make.org/types/enums';
 import { getCurrentContainer } from '../../../../helper/consultation';
 import {
   ResultCardStyle,
@@ -33,8 +30,8 @@ export const ResultCard: FC<Props> = ({
   children,
 }) => {
   const currentContainer = getCurrentContainer(id || '');
-  const isTopIdeas = id === RESULTS_TOP_IDEAS || false;
-  const isControversials = id === RESULTS_CONTROVERSIALS || false;
+  const isTopIdeas = id === IDS.RESULTS_TOP_IDEAS || false;
+  const isControversials = id === IDS.RESULTS_CONTROVERSIALS || false;
   return (
     <ResultCardStyle>
       <ResultTitleWrapperStyle isTopIdeas={isTopIdeas}>

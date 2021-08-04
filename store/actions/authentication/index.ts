@@ -18,17 +18,8 @@ import {
 } from '@make.org/utils/services/Tracking';
 import { Logger } from '@make.org/utils/services/Logger';
 import { UserService } from '@make.org/utils/services/User';
-import {
-  ACCOUNT_DELETION_SUCCESS_MESSAGE,
-  LOGIN_SUCCESS_MESSAGE,
-  LOGOUT_SUCCESS_MESSAGE,
-  NOTIFICATION_LEVEL_ALERT,
-  NOTIFICATION_LEVEL_ERROR,
-  NOTIFICATION_LEVEL_SUCCESS,
-  REGISTER_SUCCESS_MESSAGE,
-  REGISTER_SUCCESS_VALIDATE_MESSAGE,
-  UNEXPECTED_ERROR_MESSAGE,
-} from '@make.org/utils/constants/notifications';
+import { NOTIF } from '@make.org/types/enums';
+
 import { modalClose } from '../modal';
 import * as actionTypes from '../../actionTypes';
 import { displayNotificationBanner } from '../notifications';
@@ -84,8 +75,8 @@ export const getUser =
     if (!user) {
       return dispatch(
         displayNotificationBanner(
-          UNEXPECTED_ERROR_MESSAGE,
-          NOTIFICATION_LEVEL_ERROR
+          NOTIF.UNEXPECTED_ERROR_MESSAGE,
+          NOTIF.NOTIFICATION_LEVEL_ERROR
         )
       );
     }
@@ -106,8 +97,8 @@ export const getUser =
     if (afterRegistration && user.emailVerified) {
       return dispatch(
         displayNotificationBanner(
-          REGISTER_SUCCESS_MESSAGE,
-          NOTIFICATION_LEVEL_SUCCESS
+          NOTIF.REGISTER_SUCCESS_MESSAGE,
+          NOTIF.NOTIFICATION_LEVEL_SUCCESS
         )
       );
     }
@@ -115,8 +106,8 @@ export const getUser =
     if (afterRegistration) {
       return dispatch(
         displayNotificationBanner(
-          REGISTER_SUCCESS_VALIDATE_MESSAGE,
-          NOTIFICATION_LEVEL_ALERT,
+          NOTIF.REGISTER_SUCCESS_VALIDATE_MESSAGE,
+          NOTIF.NOTIFICATION_LEVEL_ALERT,
           { email: user.email }
         )
       );
@@ -134,8 +125,8 @@ export const login =
       dispatch(getUser());
       dispatch(
         displayNotificationBanner(
-          LOGIN_SUCCESS_MESSAGE,
-          NOTIFICATION_LEVEL_SUCCESS
+          NOTIF.LOGIN_SUCCESS_MESSAGE,
+          NOTIF.NOTIFICATION_LEVEL_SUCCESS
         )
       );
     };
@@ -177,8 +168,8 @@ export const loginSocial =
       dispatch(getUser());
       dispatch(
         displayNotificationBanner(
-          LOGIN_SUCCESS_MESSAGE,
-          NOTIFICATION_LEVEL_SUCCESS
+          NOTIF.LOGIN_SUCCESS_MESSAGE,
+          NOTIF.NOTIFICATION_LEVEL_SUCCESS
         )
       );
     };
@@ -212,15 +203,15 @@ export const logout =
       if (afterAccountDeletion) {
         return dispatch(
           displayNotificationBanner(
-            ACCOUNT_DELETION_SUCCESS_MESSAGE,
-            NOTIFICATION_LEVEL_SUCCESS
+            NOTIF.ACCOUNT_DELETION_SUCCESS_MESSAGE,
+            NOTIF.NOTIFICATION_LEVEL_SUCCESS
           )
         );
       }
       return dispatch(
         displayNotificationBanner(
-          LOGOUT_SUCCESS_MESSAGE,
-          NOTIFICATION_LEVEL_SUCCESS
+          NOTIF.LOGOUT_SUCCESS_MESSAGE,
+          NOTIF.NOTIFICATION_LEVEL_SUCCESS
         )
       );
     };

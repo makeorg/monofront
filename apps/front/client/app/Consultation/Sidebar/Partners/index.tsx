@@ -10,9 +10,10 @@ import {
   trackClickLearnMore,
   trackOpenSequence,
 } from '@make.org/utils/services/Tracking';
-import { COMPONENT_PARAM_SEQUENCE } from '@make.org/utils/constants/tracking';
+import { TRACKING, PARTNER } from '@make.org/types/enums';
+
 import { isInProgress } from '@make.org/utils/helpers/date';
-import { ACTION_PARTNER } from '@make.org/utils/constants/partner';
+
 import { useAppContext } from '@make.org/store';
 import { ParticipateButtonStyle } from '../../Styled/Partners';
 import { SidebarNewWindowLink } from '../Link';
@@ -29,7 +30,7 @@ export const Partners: FC<Props> = ({ question }) => {
 
   const partners: PartnerType[] = question.partners
     ? question.partners.filter(
-        partner => partner.partnerKind === ACTION_PARTNER
+        partner => partner.partnerKind === PARTNER.ACTION_PARTNER
       )
     : [];
 
@@ -43,7 +44,7 @@ export const Partners: FC<Props> = ({ question }) => {
           <ParticipateButtonStyle
             as={Link}
             to={sequenceLink}
-            onClick={() => trackOpenSequence(COMPONENT_PARAM_SEQUENCE)}
+            onClick={() => trackOpenSequence(TRACKING.COMPONENT_PARAM_SEQUENCE)}
           >
             {i18n.t('common.participate')}
           </ParticipateButtonStyle>

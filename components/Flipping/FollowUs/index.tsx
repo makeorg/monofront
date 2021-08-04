@@ -25,9 +25,9 @@ import {
   RedLinkHTMLElementStyle,
   NewWindowIconStyle,
 } from '@make.org/ui/elements/LinkElements';
-import { ABOUT_MAKE_LINK } from '@make.org/utils/constants/url';
+import { URL, FEATURE_FLIPPING } from '@make.org/types/enums';
 import { checkIsFeatureActivated } from '@make.org/utils/helpers/featureFlipping';
-import { CONSULTATION_FOLLOW_US_ACTIVE } from '@make.org/utils/constants/featureFlipping';
+
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import {
   FollowUsStyle,
@@ -45,7 +45,7 @@ type Props = {
 
 export const FollowUs: FC<Props> = ({ question }) => {
   const isFollowUsActive: boolean = checkIsFeatureActivated(
-    CONSULTATION_FOLLOW_US_ACTIVE,
+    FEATURE_FLIPPING.CONSULTATION_FOLLOW_US_ACTIVE,
     question.activeFeatures
   );
 
@@ -122,7 +122,7 @@ export const FollowUs: FC<Props> = ({ question }) => {
       <RedLinkHTMLElementStyle
         target="_blank"
         rel="noopener"
-        href={ABOUT_MAKE_LINK}
+        href={URL.ABOUT_MAKE_LINK}
         onClick={() => trackClickBlog('blog list')}
       >
         {i18n.t('consultation.followus.discover')}

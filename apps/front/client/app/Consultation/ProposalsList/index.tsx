@@ -8,10 +8,7 @@ import { ProposalType } from '@make.org/types';
 import { Vote } from '@make.org/components/Vote';
 import { DateHelper } from '@make.org/utils/helpers/date';
 import { useParams } from 'react-router';
-import {
-  DATE_CAPITALIZE_L_FORMAT,
-  DATE_LOWERCASE_LL_FORMAT,
-} from '@make.org/utils/constants/date';
+import { DATE } from '@make.org/types/enums';
 import {
   ProposalsListStyle,
   ProposalListItemStyle,
@@ -90,13 +87,13 @@ export const ProposalsList: FC<Props> = ({ isLoading, proposals }) => {
                 dateTime={
                   DateHelper.localizedAndFormattedDate(
                     proposal.createdAt,
-                    DATE_CAPITALIZE_L_FORMAT
+                    DATE.DATE_CAPITALIZE_L_FORMAT
                   ) || ''
                 }
               >
                 {DateHelper.localizedAndFormattedDate(
                   proposal.createdAt,
-                  DATE_LOWERCASE_LL_FORMAT
+                  DATE.DATE_LOWERCASE_LL_FORMAT
                 )}
               </ProposalDateStyle>
             </ProposalCardStyle>

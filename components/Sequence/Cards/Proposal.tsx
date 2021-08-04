@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import i18n from 'i18next';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { ProposalCardType } from '@make.org/types';
-import { CARD_TYPE_PROPOSAL } from '@make.org/utils/constants/card';
 import { useAppContext } from '@make.org/store';
+import { CARD } from '@make.org/types/enums';
 import { Vote } from '../../Vote';
 import { ProposalAuthor } from '../../Proposal/Author';
 import { SequenceProposalStyle } from './style';
@@ -26,7 +26,9 @@ export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
   const { votes = [] } = cards[index].state ? cards[index].state : {};
 
   const getLastCardIndex = () => {
-    const allProposals = cards.filter(card => card.type === CARD_TYPE_PROPOSAL);
+    const allProposals = cards.filter(
+      card => card.type === CARD.CARD_TYPE_PROPOSAL
+    );
     const lastCard = allProposals.pop();
     if (lastCard) {
       return lastCard.index;

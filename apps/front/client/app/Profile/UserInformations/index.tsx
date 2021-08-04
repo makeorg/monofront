@@ -25,11 +25,8 @@ import {
   ProfileMapIconStyle,
 } from '@make.org/ui/elements/ProfileElements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import {
-  TYPE_ORGANISATION,
-  TYPE_PERSONALITY,
-  TYPE_USER,
-} from '@make.org/utils/constants/user';
+import { USER } from '@make.org/types/enums';
+
 import { CertifiedIconStyle } from '@make.org/components/Proposal/DeprecatedAuthor/Styled';
 import {
   formatUserName,
@@ -49,9 +46,9 @@ export const UserInformations: FC<Props> = ({ user, navigationBar }) => {
   const { state, dispatch } = useAppContext();
   const { device } = state.appConfig;
   const isMobile = matchMobileDevice(device);
-  const isOrganisation = user.userType === TYPE_ORGANISATION;
-  const isPersonality = user.userType === TYPE_PERSONALITY;
-  const isBasicUser = user.userType === TYPE_USER;
+  const isOrganisation = user.userType === USER.TYPE_ORGANISATION;
+  const isPersonality = user.userType === USER.TYPE_PERSONALITY;
+  const isBasicUser = user.userType === USER.TYPE_USER;
 
   const { avatarUrl, email } = user;
   const {

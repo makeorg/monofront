@@ -8,7 +8,7 @@ import i18n from 'i18next';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { QuestionType } from '@make.org/types';
 import { useParams } from 'react-router';
-import { CONSULTATION_NAVIGATION } from '@make.org/utils/constants/ids';
+import { IDS } from '@make.org/types/enums';
 import {
   scrollToElementId,
   matchDesktopDevice,
@@ -32,7 +32,7 @@ export const ParticipateNavigation: FC = () => {
   const NavigationPages: PageNavigationType[] = [
     {
       onClickAction: () => {
-        scrollToElementId(CONSULTATION_NAVIGATION);
+        scrollToElementId(IDS.CONSULTATION_NAVIGATION);
         trackClickParticipateTab();
       },
       link: getParticipateLink(country, question.slug),
@@ -43,7 +43,7 @@ export const ParticipateNavigation: FC = () => {
     },
     {
       onClickAction: () => {
-        scrollToElementId(CONSULTATION_NAVIGATION);
+        scrollToElementId(IDS.CONSULTATION_NAVIGATION);
         trackClickExploreTab();
       },
       link: getExploreLink(country, question.slug),

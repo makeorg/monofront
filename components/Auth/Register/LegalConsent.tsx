@@ -1,5 +1,4 @@
 import React, { useState, useEffect, FormEvent, SyntheticEvent } from 'react';
-import { LEGAL_CONSENT_FORMNAME } from '@make.org/utils/constants/form';
 import i18n from 'i18next';
 import {
   SecondLevelTitleStyle,
@@ -7,6 +6,7 @@ import {
 } from '@make.org/ui/elements/TitleElements';
 import { CheckBox } from '@make.org/ui/components/CheckBox';
 import { trackDisplayLegalConsent } from '@make.org/utils/services/Tracking';
+import { FORM } from '@make.org/types/enums';
 import {
   LegalFormStyle,
   LegalIconStyle,
@@ -43,8 +43,8 @@ export const LegalConsent: React.FC<Props> = ({
 
   return (
     <LegalFormStyle
-      id={LEGAL_CONSENT_FORMNAME}
-      name={LEGAL_CONSENT_FORMNAME}
+      id={FORM.LEGAL_CONSENT_FORMNAME}
+      name={FORM.LEGAL_CONSENT_FORMNAME}
       onSubmit={handleSubmit}
       className={!needLegalConsent ? 'hidden' : ''}
     >
@@ -91,7 +91,7 @@ export const LegalConsent: React.FC<Props> = ({
         </LegalCancelStyle>
         <LegalSubmitStyle
           type="submit"
-          form={LEGAL_CONSENT_FORMNAME}
+          form={FORM.LEGAL_CONSENT_FORMNAME}
           disabled={!agreedAllConsents}
         >
           {i18n.t('legal_consent.submit')}

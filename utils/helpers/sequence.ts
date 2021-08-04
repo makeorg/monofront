@@ -4,19 +4,7 @@ import {
   ProposalType,
 } from '@make.org/types';
 import i18n from 'i18next';
-import {
-  CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
-  CARD_TYPE_EXTRASLIDE_FINAL_CARD,
-  CARD_TYPE_EXTRASLIDE_INTRO,
-  CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL,
-  CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD,
-  CARD_TYPE_PROPOSAL,
-} from '../constants/card';
-import {
-  KIND_CONTROVERSY,
-  KIND_CONSENSUS,
-  KIND_STANDARD,
-} from '../constants/sequence';
+import { CARD, SEQUENCE } from '@make.org/types/enums';
 
 /**
  * Build cards array
@@ -51,7 +39,7 @@ export const buildCards = (
     !!introCardParam;
 
   const cards: SequenceCardType[] = proposals.map(proposal => ({
-    type: CARD_TYPE_PROPOSAL,
+    type: CARD.CARD_TYPE_PROPOSAL,
     configuration: { proposal },
     state: { votes: proposal.votes },
     index: 0,
@@ -59,7 +47,7 @@ export const buildCards = (
 
   if (withPushProposalCard) {
     cards.splice(cards.length / 2, 0, {
-      type: CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL,
+      type: CARD.CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL,
       configuration: extraSlidesConfig.pushProposalCard,
       state: { votes: [] },
       index: 0,
@@ -68,7 +56,7 @@ export const buildCards = (
 
   if (withIntroCard) {
     cards.splice(0, 0, {
-      type: CARD_TYPE_EXTRASLIDE_INTRO,
+      type: CARD.CARD_TYPE_EXTRASLIDE_INTRO,
       configuration: extraSlidesConfig.introCard,
       state: { votes: [] },
       index: 0,
@@ -77,7 +65,7 @@ export const buildCards = (
 
   if (withDemographics) {
     cards.splice(withIntroCard ? 3 : 2, 0, {
-      type: CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
+      type: CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
       configuration: undefined,
       state: { votes: [] },
       index: 0,
@@ -86,8 +74,8 @@ export const buildCards = (
 
   cards.splice(cards.length, 0, {
     type: isStandardSequence
-      ? CARD_TYPE_EXTRASLIDE_FINAL_CARD
-      : CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD,
+      ? CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD
+      : CARD.CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD,
     configuration: undefined,
     state: { votes: [] },
     index: 0,
@@ -107,7 +95,7 @@ export const buildCards = (
  * @return {boolean}
  */
 export const isPushProposalCard = (card: SequenceCardType | null) =>
-  card?.type === CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL;
+  card?.type === CARD.CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL;
 
 /**
  * Check if is a standard sequence
@@ -115,7 +103,7 @@ export const isPushProposalCard = (card: SequenceCardType | null) =>
  * @return {boolean}
  */
 export const isStandardSequence = (sequenceKind: string): boolean =>
-  sequenceKind === KIND_STANDARD;
+  sequenceKind === SEQUENCE.KIND_STANDARD;
 
 /**
  * Render title depending on kind
@@ -126,10 +114,10 @@ export const getSequenceTitleBySequenceKind = (
   sequenceKind: string
 ): string | null => {
   switch (sequenceKind) {
-    case KIND_CONTROVERSY: {
+    case SEQUENCE.KIND_CONTROVERSY: {
       return i18n.t('sequence_zone.controversial_title');
     }
-    case KIND_CONSENSUS: {
+    case SEQUENCE.KIND_CONSENSUS: {
       return i18n.t('sequence_zone.popular_title');
     }
     default:
@@ -145,10 +133,10 @@ export const getNoProposalCardTitleBySequenceKind = (
   sequenceKind: string
 ): string | null => {
   switch (sequenceKind) {
-    case KIND_CONTROVERSY: {
+    case SEQUENCE.KIND_CONTROVERSY: {
       return i18n.t('no_proposal_card.title.controversial');
     }
-    case KIND_CONSENSUS: {
+    case SEQUENCE.KIND_CONSENSUS: {
       return i18n.t('no_proposal_card.title.popular');
     }
     default:
@@ -162,5 +150,9 @@ export const getNoProposalCardTitleBySequenceKind = (
  *
  */
 
-export const isKeywordSequence = (sequenceKind: string): boolean =>
-  ![KIND_CONTROVERSY, KIND_CONSENSUS, KIND_STANDARD].includes(sequenceKind);
+export const isKeywordSequence = (sequenceKind: SEQUENCE): boolean =>
+  ![
+    SEQUENCE.KIND_CONTROVERSY,
+    SEQUENCE.KIND_CONSENSUS,
+    SEQUENCE.KIND_STANDARD,
+  ].includes(sequenceKind);

@@ -7,6 +7,7 @@ import {
 } from '@make.org/store/actions/notifications';
 import { useAppContext } from '@make.org/store';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
+import { NOTIF } from '@make.org/types/enums';
 import { NotificationMessage } from '../Message';
 import {
   NotificationWrapperStyle,
@@ -14,7 +15,6 @@ import {
   NotificationCloseButtonStyle,
 } from './style';
 import { NotificationIcon } from '../Icon';
-import { NOTIFICATION_LEVEL_INFORMATION } from '../../../utils/constants/notifications';
 
 export const NotificationBanner: React.FC = () => {
   const notificationRef = useRef<HTMLDivElement>(null);
@@ -48,7 +48,9 @@ export const NotificationBanner: React.FC = () => {
   return (
     <NotificationWrapperStyle ref={notificationRef} role={role} tabIndex={0}>
       <NotificationContentStyle className={level}>
-        <NotificationIcon level={level || NOTIFICATION_LEVEL_INFORMATION} />
+        <NotificationIcon
+          level={level || NOTIF.NOTIFICATION_LEVEL_INFORMATION}
+        />
         <NotificationMessage
           name={contentId}
           params={params}

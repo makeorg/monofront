@@ -12,7 +12,7 @@ import { FollowUs } from '@make.org/components/Flipping/FollowUs';
 import { TopIdeaService } from '@make.org/utils/services/TopIdea';
 import i18n from 'i18next';
 
-import { MUNICIPAL_PERSONALITY_HEADER } from '@make.org/utils/constants/featureFlipping';
+import { FEATURE_FLIPPING } from '@make.org/types/enums';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import { ThemeProvider } from 'styled-components';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
@@ -50,7 +50,7 @@ const TopIdeaDetailsPage: FC = () => {
 
   // @todo remove or refactor when Municipales is over
   const withPersonalityHeader: boolean = checkIsFeatureActivated(
-    MUNICIPAL_PERSONALITY_HEADER,
+    FEATURE_FLIPPING.MUNICIPAL_PERSONALITY_HEADER,
     question.activeFeatures
   );
 

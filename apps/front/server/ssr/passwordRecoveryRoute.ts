@@ -1,9 +1,6 @@
 import { initialState } from '@make.org/store/initialState';
 import { Request, Response } from 'express';
-import {
-  NOTIFICATION_LEVEL_ERROR,
-  PASSWORD_RECOVERY_FAILURE_MESSAGE,
-} from '@make.org/utils/constants/notifications';
+import { NOTIF } from '@make.org/types/enums';
 import { UserService } from '../service/UserService';
 import { reactRender } from '../reactRender';
 import { QuestionService } from '../service/QuestionService';
@@ -65,8 +62,8 @@ export const passwordRecoveryRoute = async (
   };
   const failure = () => {
     initialState.notifications.banner = {
-      contentId: PASSWORD_RECOVERY_FAILURE_MESSAGE,
-      level: NOTIFICATION_LEVEL_ERROR,
+      contentId: NOTIF.PASSWORD_RECOVERY_FAILURE_MESSAGE,
+      level: NOTIF.NOTIFICATION_LEVEL_ERROR,
     };
   };
   await UserService.resetPasswordTokenCheck(

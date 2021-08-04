@@ -7,7 +7,7 @@ import { DeprecatedProposalAuthor } from '@make.org/components/Proposal/Deprecat
 import { getProposalLink, getExploreLink } from '@make.org/utils/helpers/url';
 import { trackClickExploreTab } from '@make.org/utils/services/Tracking';
 import { Spinner } from '@make.org/ui/components/Loading/Spinner';
-import { CONSULTATION_NAVIGATION } from '@make.org/utils/constants/ids';
+import { IDS } from '@make.org/types/enums';
 import { scrollToElementId } from '@make.org/utils/helpers/styled';
 import { ProposalType, QuestionType } from '@make.org/types';
 import {
@@ -52,7 +52,7 @@ export const FeaturedProposals: FC<Props> = ({ question }) => {
 
   const hasFeaturedProposals = featuredProposals.length > 0;
   const handleClick = () => {
-    scrollToElementId(CONSULTATION_NAVIGATION);
+    scrollToElementId(IDS.CONSULTATION_NAVIGATION);
     trackClickExploreTab();
   };
 

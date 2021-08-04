@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  NOTIFICATION_LEVEL_SUCCESS,
-  NOTIFICATION_LEVEL_INFORMATION,
-  NOTIFICATION_LEVEL_ERROR,
-  NOTIFICATION_LEVEL_ALERT,
-} from '@make.org/utils/constants/notifications';
+import { NOTIF } from '@make.org/types/enums';
 import i18n from 'i18next';
 import {
   NotificationAlertStyle,
@@ -22,7 +17,7 @@ export const NotificationIcon: React.FC<Props> = ({
   context = 'banner',
 }) => {
   switch (level) {
-    case NOTIFICATION_LEVEL_INFORMATION:
+    case NOTIF.NOTIFICATION_LEVEL_INFORMATION:
       return (
         <NotificationInfosStyle
           aria-label={i18n.t('common.notifications.icons.information')}
@@ -30,7 +25,7 @@ export const NotificationIcon: React.FC<Props> = ({
           focusable="false"
         />
       );
-    case NOTIFICATION_LEVEL_SUCCESS:
+    case NOTIF.NOTIFICATION_LEVEL_SUCCESS:
       return (
         <NotificationSuccessStyle
           aria-label={i18n.t('common.notifications.icons.success')}
@@ -38,7 +33,7 @@ export const NotificationIcon: React.FC<Props> = ({
           focusable="false"
         />
       );
-    case NOTIFICATION_LEVEL_ERROR:
+    case NOTIF.NOTIFICATION_LEVEL_ERROR:
       return (
         <NotificationAlertStyle
           aria-label={i18n.t('common.notifications.icons.error')}
@@ -46,7 +41,7 @@ export const NotificationIcon: React.FC<Props> = ({
           focusable="false"
         />
       );
-    case NOTIFICATION_LEVEL_ALERT:
+    case NOTIF.NOTIFICATION_LEVEL_ALERT:
       return (
         <NotificationAlertStyle
           aria-label={i18n.t('common.notifications.icons.alert')}

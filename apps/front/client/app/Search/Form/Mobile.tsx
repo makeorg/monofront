@@ -5,10 +5,7 @@ import {
   removeAriaHiddenByClass,
   addAriaHiddenByClass,
 } from '@make.org/utils/helpers/a11y';
-import {
-  SEARCH_ARIA_CLASS,
-  SEARCH_ELEMENT_ARIA_CLASS,
-} from '@make.org/utils/constants/a11y';
+import { SEARCH } from '@make.org/types/enums';
 import {
   SearchFormWrapperStyle,
   SearchFormTriggerStyle,
@@ -25,20 +22,20 @@ export const MobileSearchInput: React.FC = () => {
     event.preventDefault();
 
     if (isExpanded) {
-      removeAriaHiddenByClass(SEARCH_ARIA_CLASS);
-      removeAriaHiddenByClass(SEARCH_ELEMENT_ARIA_CLASS);
+      removeAriaHiddenByClass(SEARCH.SEARCH_ARIA_CLASS);
+      removeAriaHiddenByClass(SEARCH.SEARCH_ELEMENT_ARIA_CLASS);
       return expandForm(!isExpanded);
     }
 
-    addAriaHiddenByClass(SEARCH_ARIA_CLASS);
-    addAriaHiddenByClass(SEARCH_ELEMENT_ARIA_CLASS);
+    addAriaHiddenByClass(SEARCH.SEARCH_ARIA_CLASS);
+    addAriaHiddenByClass(SEARCH.SEARCH_ELEMENT_ARIA_CLASS);
     return expandForm(!isExpanded);
   };
 
   return (
     <>
       <SearchFormTriggerStyle
-        className={SEARCH_ELEMENT_ARIA_CLASS}
+        className={SEARCH.SEARCH_ELEMENT_ARIA_CLASS}
         aria-label={i18n.t('search.form.open_panel')}
         type="button"
         onClick={toggleMobileExpansion}

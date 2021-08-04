@@ -4,31 +4,24 @@ import i18n from 'i18next';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { ThemeProvider } from 'styled-components';
-import {
-  NOTIFICATION_LEVEL_INFORMATION,
-  VOTE_ONLY_MESSAGE,
-} from '@make.org/utils/constants/notifications';
+import { NOTIF, IDS, FEATURE_FLIPPING, TRACKING } from '@make.org/types/enums';
 import { SvgLightning, SvgLike, SvgPeople } from '@make.org/ui/Svg/elements';
 import {
   getSequenceLink,
   getSequenceControversialLink,
   getSequencePopularLink,
 } from '@make.org/utils/helpers/url';
+
 import { ColumnToRowElementStyle } from '@make.org/ui/elements/FlexElements';
-import { CONSULTATION_NAVIGATION } from '@make.org/utils/constants/ids';
 import {
   trackDisplayOperationPage,
   trackOpenSequence,
 } from '@make.org/utils/services/Tracking';
-import {
-  COMPONENT_PARAM_SEQUENCE,
-  COMPONENT_PARAM_SEQUENCE_POPULAR,
-  COMPONENT_PARAM_SEQUENCE_CONTROVERSIAL,
-} from '@make.org/utils/constants/tracking';
+
 import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
 import { Keywords } from '@make.org/components/Flipping/Keywords';
 import { checkIsFeatureActivated } from '@make.org/utils/helpers/featureFlipping';
-import { CONSULTATION_KEYWORD_ACTIVE } from '@make.org/utils/constants/featureFlipping';
+
 import { useAppContext } from '@make.org/store';
 import { Timeline } from '../../app/Consultation/Timeline';
 import { FeaturedProposals } from '../../app/Consultation/Cards/FeaturedProposals';
@@ -63,8 +56,8 @@ const ParticipatePage: FC = () => {
     if (!question.canPropose) {
       dispatch(
         displayNotificationBanner(
-          VOTE_ONLY_MESSAGE,
-          NOTIFICATION_LEVEL_INFORMATION,
+          NOTIF.VOTE_ONLY_MESSAGE,
+          NOTIF.NOTIFICATION_LEVEL_INFORMATION,
           { questionId: question.questionId },
           true
         )
@@ -101,7 +94,7 @@ const ParticipatePage: FC = () => {
   );
 
   const isKeywordActive: boolean = checkIsFeatureActivated(
-    CONSULTATION_KEYWORD_ACTIVE,
+    FEATURE_FLIPPING.CONSULTATION_KEYWORD_ACTIVE,
     question.activeFeatures
   );
 
@@ -117,7 +110,7 @@ const ParticipatePage: FC = () => {
       <ParticipateHeader />
       {!isDesktop && <MobileAbout />}
       <ParticipateHighlights />
-      <div id={CONSULTATION_NAVIGATION} />
+      <div id={IDS.CONSULTATION_NAVIGATION} />
       <ParticipateNavigation />
       <ParticipateContentStyle>
         <ParticipateTitleStyle>
@@ -138,7 +131,9 @@ const ParticipatePage: FC = () => {
                 introCard: false,
               })}
               classes="margin-bottom"
-              onClickAction={() => trackOpenSequence(COMPONENT_PARAM_SEQUENCE)}
+              onClickAction={() =>
+                trackOpenSequence(TRACKING.COMPONENT_PARAM_SEQUENCE)
+              }
             />
             <ColumnToRowElementStyle>
               <ParticipateCTAProposalBloc isKeywordActive={isKeywordActive}>
@@ -162,7 +157,9 @@ const ParticipatePage: FC = () => {
                   classes="margin-bottom desktop-padding-right"
                   isKeywordActive={isKeywordActive}
                   onClickAction={() =>
-                    trackOpenSequence(COMPONENT_PARAM_SEQUENCE_CONTROVERSIAL)
+                    trackOpenSequence(
+                      TRACKING.COMPONENT_PARAM_SEQUENCE_CONTROVERSIAL
+                    )
                   }
                 />
                 <CTAProposal
@@ -179,7 +176,7 @@ const ParticipatePage: FC = () => {
                   classes="margin-bottom desktop-padding-left"
                   isKeywordActive={isKeywordActive}
                   onClickAction={() =>
-                    trackOpenSequence(COMPONENT_PARAM_SEQUENCE_POPULAR)
+                    trackOpenSequence(TRACKING.COMPONENT_PARAM_SEQUENCE_POPULAR)
                   }
                 />
               </ParticipateCTAProposalBloc>

@@ -8,7 +8,7 @@ import { capitalizeFirstLetter } from '@make.org/utils/helpers/stringFormatter';
 import { useParams } from 'react-router';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { isPushProposalCard } from '@make.org/utils/helpers/sequence';
-import { CARD_TYPE_NO_PROPOSAL_CARD } from '@make.org/utils/constants/card';
+import { CARD } from '@make.org/types/enums';
 import { SequenceService } from '@make.org/utils/services/Sequence';
 import { useAppContext } from '@make.org/store';
 import { ProposalSubmit } from '@make.org/components/Proposal/Submit';
@@ -65,7 +65,7 @@ export const SequenceByKeyword: FC = () => {
   }
 
   const noProposalCard: NoProposalCardType = {
-    type: CARD_TYPE_NO_PROPOSAL_CARD,
+    type: CARD.CARD_TYPE_NO_PROPOSAL_CARD,
     configuration: {
       title: i18n.t('no_proposal_card.title.keyword', {
         keyword: capitalizeFirstLetter(keywordLabel),

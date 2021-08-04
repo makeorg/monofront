@@ -4,7 +4,7 @@ import { QuestionType } from '@make.org/types';
 import i18n from 'i18next';
 import { DateHelper } from '@make.org/utils/helpers/date';
 import { Image } from '@make.org/ui/components/Image';
-import { DATE_CAPITALIZE_LL_FORMAT } from '@make.org/utils/constants/date';
+import { DATE } from '@make.org/types/enums';
 import {
   IntroBannerTitleStyle,
   GreatCauseIntroLabelStyle,
@@ -56,14 +56,14 @@ export const IntroBanner: FC<Props> = ({ question }) =>
           <time dateTime={question.startDate}>
             {DateHelper.localizedAndFormattedDate(
               question.startDate,
-              DATE_CAPITALIZE_LL_FORMAT
+              DATE.DATE_CAPITALIZE_LL_FORMAT
             )}
           </time>
           {i18n.t('consultation.tabs.to')}
           <time dateTime={question.endDate}>
             {DateHelper.localizedAndFormattedDate(
               question.endDate,
-              DATE_CAPITALIZE_LL_FORMAT
+              DATE.DATE_CAPITALIZE_LL_FORMAT
             )}
           </time>
         </DefaultBannerTimeStyle>

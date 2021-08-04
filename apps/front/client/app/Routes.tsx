@@ -5,11 +5,7 @@ import loadable from '@loadable/component';
 import { getHomeLink } from '@make.org/utils/helpers/url';
 import { DEFAULT_COUNTRY } from '@make.org/utils/constants/config';
 import { useAppContext } from '@make.org/store';
-import {
-  KIND_CONTROVERSY,
-  KIND_CONSENSUS,
-  KIND_STANDARD,
-} from '@make.org/utils/constants/sequence';
+import { SEQUENCE } from '@make.org/types/enums';
 import { QuestionWrapper } from '../pages/Consultation/QuestionWrapper';
 import { usePageBackgoundColor } from '../hooks/usePageBackgroundColor';
 
@@ -151,17 +147,17 @@ export const Routes: FC = () => {
       </Route>
       <Route path={ROUTE_SEQUENCE}>
         <QuestionWrapper withRedirect>
-          <SequenceByKindPage kind={KIND_STANDARD} />
+          <SequenceByKindPage kind={SEQUENCE.KIND_STANDARD} />
         </QuestionWrapper>
       </Route>
       <Route path={ROUTE_SEQUENCE_POPULAR}>
         <QuestionWrapper withRedirect>
-          <SequenceByKindPage kind={KIND_CONSENSUS} />
+          <SequenceByKindPage kind={SEQUENCE.KIND_CONSENSUS} />
         </QuestionWrapper>
       </Route>
       <Route path={ROUTE_SEQUENCE_CONTROVERSIAL}>
         <QuestionWrapper withRedirect>
-          <SequenceByKindPage kind={KIND_CONTROVERSY} />
+          <SequenceByKindPage kind={SEQUENCE.KIND_CONTROVERSY} />
         </QuestionWrapper>
       </Route>
       <Route path={ROUTE_RESULTS}>

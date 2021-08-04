@@ -1,11 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { color, typography } from 'athena-design-tokens';
-import {
-  NAVIGATION_ARIA_CLASS,
-  NAVIGATION_ELEMENT_ARIA_CLASS,
-  SEARCH_ARIA_CLASS,
-  SEARCH_ELEMENT_ARIA_CLASS,
-} from '@make.org/utils/constants/a11y';
+import { NAVIGATION, SEARCH } from '@make.org/types/enums';
 import { MakeFonts } from '../vars/Fonts';
 
 export const DefaultStylesheet = createGlobalStyle`
@@ -114,14 +109,14 @@ export const DefaultStylesheet = createGlobalStyle`
   }
 
 
-  .${NAVIGATION_ELEMENT_ARIA_CLASS}[aria-hidden="true"],
-  .${NAVIGATION_ARIA_CLASS}[aria-hidden="true"] a,
-  .${NAVIGATION_ARIA_CLASS}[aria-hidden="true"] input,
-  .${NAVIGATION_ARIA_CLASS}[aria-hidden="true"] button,
-  .${SEARCH_ELEMENT_ARIA_CLASS}[aria-hidden="true"],
-  .${SEARCH_ARIA_CLASS}[aria-hidden="true"] a,
-  .${SEARCH_ARIA_CLASS}[aria-hidden="true"] input,
-  .${SEARCH_ARIA_CLASS}[aria-hidden="true"] button {
+  .${NAVIGATION.NAVIGATION_ELEMENT_ARIA_CLASS}[aria-hidden="true"],
+  .${NAVIGATION.NAVIGATION_ARIA_CLASS}[aria-hidden="true"] a,
+  .${NAVIGATION.NAVIGATION_ARIA_CLASS}[aria-hidden="true"] input,
+  .${NAVIGATION.NAVIGATION_ARIA_CLASS}[aria-hidden="true"] button,
+  .${SEARCH.SEARCH_ELEMENT_ARIA_CLASS}[aria-hidden="true"],
+  .${SEARCH.SEARCH_ARIA_CLASS}[aria-hidden="true"] a,
+  .${SEARCH.SEARCH_ARIA_CLASS}[aria-hidden="true"] input,
+  .${SEARCH.SEARCH_ARIA_CLASS}[aria-hidden="true"] button {
     visibility: hidden;
   }
 

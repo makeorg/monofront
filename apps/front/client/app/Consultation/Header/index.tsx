@@ -9,7 +9,7 @@ import {
 import { QuestionType, PartnerType } from '@make.org/types';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
-import { FOUNDER_PARTNER } from '@make.org/utils/constants/partner';
+import { PARTNER } from '@make.org/types/enums';
 import { isResultsPage } from '@make.org/utils/routes';
 import { getCurrentLabel } from '../../../helper/consultation';
 import {
@@ -31,12 +31,12 @@ export const ParticipateHeader: FC = () => {
   const question: QuestionType = selectCurrentQuestion(state);
   const founders: PartnerType[] = question.partners
     ? question.partners.filter(
-        partner => partner.partnerKind === FOUNDER_PARTNER
+        partner => partner.partnerKind === PARTNER.FOUNDER_PARTNER
       )
     : [];
   const partners: PartnerType[] = question.partners
     ? question.partners.filter(
-        partner => partner.partnerKind !== FOUNDER_PARTNER
+        partner => partner.partnerKind !== PARTNER.FOUNDER_PARTNER
       )
     : [];
   const isFeatured = question.featured === true;

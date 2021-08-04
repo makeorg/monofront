@@ -8,12 +8,8 @@ import { isGreatCause } from '@make.org/utils/helpers/question';
 import { CONTACT_EMAIL } from '@make.org/utils/constants/config';
 import { QuestionType } from '@make.org/types';
 import { isResultsPage } from '@make.org/utils/routes';
-import {
-  DATE_DD_MMMM_FORMAT,
-  DATE_DD_MMMM_YYYY_FORMAT,
-  DATE_MMMM_YYYY_FORMAT,
-} from '@make.org/utils/constants/date';
-import { CONSULTATION_TIMELINE_ACTIVE } from '@make.org/utils/constants/featureFlipping';
+import { DATE, FEATURE_FLIPPING } from '@make.org/types/enums';
+
 import { checkIsFeatureActivated } from '@make.org/utils/helpers/featureFlipping';
 import {
   buildTimeline,
@@ -77,21 +73,21 @@ export const Timeline: FC = () => {
     ? i18n.t('consultation.timeline.consultation_from_to', {
         startDate: DateHelper.localizedAndFormattedDate(
           question.startDate,
-          DATE_DD_MMMM_FORMAT
+          DATE.DATE_DD_MMMM_FORMAT
         ),
         endDate: DateHelper.localizedAndFormattedDate(
           question.endDate,
-          DATE_DD_MMMM_YYYY_FORMAT
+          DATE.DATE_DD_MMMM_YYYY_FORMAT
         ),
       })
     : DateHelper.localizedAndFormattedDate(
         question.startDate,
-        DATE_MMMM_YYYY_FORMAT
+        DATE.DATE_MMMM_YYYY_FORMAT
       );
   const timelineSteps = buildTimeline(timeline);
 
   const isTimelineActive: boolean = checkIsFeatureActivated(
-    CONSULTATION_TIMELINE_ACTIVE,
+    FEATURE_FLIPPING.CONSULTATION_TIMELINE_ACTIVE,
     question.activeFeatures
   );
 

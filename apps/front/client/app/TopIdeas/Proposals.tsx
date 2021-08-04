@@ -8,7 +8,8 @@ import i18n from 'i18next';
 import { searchProposals } from '@make.org/utils/helpers/proposal';
 import { ProposalCardTagged } from '@make.org/components/Proposal/ProposalCardTagged';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
-import { COMPONENT_PARAM_DETAIL_IDEAS } from '@make.org/utils/constants/tracking';
+
+import { TRACKING } from '@make.org/types/enums';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import {
   TopComponentContext,
@@ -84,7 +85,7 @@ export const TopIdeaDetailsProposals: FC<Props> = ({ topIdea, question }) => {
       setSeed(apiSeed);
       setPage(page + 1);
     }
-    trackLoadMoreProposals(COMPONENT_PARAM_DETAIL_IDEAS, page);
+    trackLoadMoreProposals(TRACKING.COMPONENT_PARAM_DETAIL_IDEAS, page);
     setIsPendingForMore(false);
   };
 

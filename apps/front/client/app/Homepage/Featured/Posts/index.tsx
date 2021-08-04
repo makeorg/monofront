@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { HomePostType } from '@make.org/types';
 import { trackClickBlog } from '@make.org/utils/services/Tracking';
 import i18n from 'i18next';
-import { ABOUT_MAKE_LINK } from '@make.org/utils/constants/url';
+import { URL } from '@make.org/types/enums';
 import { ExternalLinkIconStyle } from '@make.org/ui/elements/ButtonsElements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import {
@@ -61,7 +61,7 @@ export const FeaturedPosts: FC<Props> = ({ posts }) => {
       <HomepagePageInnerStyle>
         <HomepageQuestionsButtonStyle
           as="a"
-          href={ABOUT_MAKE_LINK}
+          href={URL.ABOUT_MAKE_LINK}
           target="_blank"
           rel="noopener"
           onClick={() => trackClickBlog('blog list')}

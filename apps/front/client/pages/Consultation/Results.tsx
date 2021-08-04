@@ -10,12 +10,7 @@ import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selec
 import { ThemeProvider } from 'styled-components';
 import { ExpressService } from '@make.org/utils/services/Express';
 import { SvgLightBulb, SvgLightning } from '@make.org/ui/Svg/elements';
-import {
-  RESULTS_TOP_IDEAS,
-  RESULTS_CARTOGRAPHY,
-  RESULTS_PARTICIPATION,
-  RESULTS_CONTROVERSIALS,
-} from '@make.org/utils/constants/ids';
+import { IDS } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
 import {
   ParticipateContentStyle,
@@ -134,7 +129,7 @@ const ResultPage: FC = () => {
                 description={i18n.t(
                   'consultation.results.top_ideas.introduction'
                 )}
-                id={RESULTS_TOP_IDEAS}
+                id={IDS.RESULTS_TOP_IDEAS}
               >
                 <TopIdeas
                   topIdeas={questionResults.top_ideas}
@@ -143,7 +138,7 @@ const ResultPage: FC = () => {
               </ResultCard>
               <ResultCard
                 title={i18n.t('consultation.results.cartography.title')}
-                id={RESULTS_CARTOGRAPHY}
+                id={IDS.RESULTS_CARTOGRAPHY}
               >
                 <ResultsSlider
                   data={questionResults.cartography}
@@ -159,7 +154,7 @@ const ResultPage: FC = () => {
                   'consultation.results.proposals.controversials_description'
                 )}
                 icon={ControversyIcon}
-                id={RESULTS_CONTROVERSIALS}
+                id={IDS.RESULTS_CONTROVERSIALS}
               >
                 <ProposalsResults
                   proposals={questionResults.controversials}
@@ -168,7 +163,7 @@ const ResultPage: FC = () => {
               </ResultCard>
               <ResultCard
                 title={i18n.t('consultation.results.participation.title')}
-                id={RESULTS_PARTICIPATION}
+                id={IDS.RESULTS_PARTICIPATION}
               >
                 <ResultsSlider
                   data={questionResults.participation}

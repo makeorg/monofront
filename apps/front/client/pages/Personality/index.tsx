@@ -28,7 +28,7 @@ import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElemen
 import { TileWithTitle } from '@make.org/ui/components/TileWithTitle';
 import { Sharing } from '@make.org/components/Sharing';
 import { PersonalityService } from '@make.org/utils/services/Personality';
-import { TYPE_PERSONALITY } from '@make.org/utils/constants/user';
+import { USER } from '@make.org/types/enums';
 import { trackDisplayPublicProfile } from '@make.org/utils/services/Tracking';
 import { getHomeLink } from '@make.org/utils/helpers/url';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
@@ -55,7 +55,7 @@ const PersonalityPage: FC<RouteComponentProps<{ userId: string }>> = ({
   const { country } = useParams<{ country: string }>();
 
   useEffect(() => {
-    trackDisplayPublicProfile(TYPE_PERSONALITY);
+    trackDisplayPublicProfile(USER.TYPE_PERSONALITY);
   }, []);
 
   useEffect(() => {

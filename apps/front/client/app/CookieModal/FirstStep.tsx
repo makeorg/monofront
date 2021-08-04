@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import i18n from 'i18next';
-import { COOKIE_MODAL } from '@make.org/utils/constants/ids';
+import { IDS } from '@make.org/types/enums';
 import { trackDisplayModalCookieFirstStep } from '@make.org/utils/services/Tracking';
 import {
   SvgSettings,
@@ -39,7 +39,7 @@ export const FirstStepCookie: React.FC<Props> = ({ handleRejectAll }) => {
         >
           {i18n.t('cookie_modal.refuse')}
         </CookieModalButtonWithLinkStyle>
-        <CookieModalTitleStyle id={COOKIE_MODAL}>
+        <CookieModalTitleStyle id={IDS.COOKIE_MODAL}>
           {i18n.t('cookie_modal.title')}
         </CookieModalTitleStyle>
       </CookieModalTitleWrapperStyle>

@@ -29,7 +29,7 @@ import {
   displayNotificationTip,
 } from '@make.org/store/actions/notifications';
 import { useAppContext } from '@make.org/store';
-import { FIRST_VOTE_TIP_MESSAGE } from '@make.org/utils/constants/notifications';
+import { NOTIF } from '@make.org/types/enums';
 import { Qualification } from '../Qualification';
 import { VoteResult } from './Result';
 import {
@@ -139,7 +139,7 @@ export const Vote: React.FC<Props> = ({
     await trackVote(proposalId, voteKey, index, contextType);
     if (isFirstSequenceVote) {
       trackFirstVote(proposalId, voteKey, index);
-      dispatch(dismissNotification(FIRST_VOTE_TIP_MESSAGE));
+      dispatch(dismissNotification(NOTIF.FIRST_VOTE_TIP_MESSAGE));
       dispatch(clearNotificationTip());
     }
     stopPending();
@@ -170,7 +170,9 @@ export const Vote: React.FC<Props> = ({
 
   useEffect((): any => {
     if (isFirstSequenceVote) {
-      dispatch(displayNotificationTip(FIRST_VOTE_TIP_MESSAGE, undefined, true));
+      dispatch(
+        displayNotificationTip(NOTIF.FIRST_VOTE_TIP_MESSAGE, undefined, true)
+      );
 
       return (): void => {
         dispatch(clearNotificationTip());
