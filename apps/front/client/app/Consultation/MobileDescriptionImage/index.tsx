@@ -1,4 +1,3 @@
-// @flow
 import React, { FC } from 'react';
 import { QuestionType } from '@make.org/types';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';

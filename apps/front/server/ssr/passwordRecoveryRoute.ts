@@ -71,8 +71,8 @@ export const passwordRecoveryRoute = async (
     resetToken,
     country,
     language,
-    success,
-    failure,
+    () => success(),
+    () => failure(),
     JSON.stringify(questionId)
   );
 

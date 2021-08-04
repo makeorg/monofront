@@ -115,7 +115,7 @@ export const ParticipateCardExternalIconStyle = styled(SvgExternalLink)`
 `;
 
 export const ParticipateCardStyle = styled.section<{
-  isKeywordActive: boolean;
+  isKeywordActive?: boolean;
 }>`
   display: flex;
   flex-flow: column;

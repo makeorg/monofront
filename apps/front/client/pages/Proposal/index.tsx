@@ -14,8 +14,8 @@ import { isInProgress } from '@make.org/utils/helpers/date';
 import { QuestionService } from '@make.org/utils/services/Question';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { trackDisplayProposalPage } from '@make.org/utils/services/Tracking';
+import { MetaTags } from '@make.org/components/MetaTags';
 import { ProposalSkipLinks } from '../../app/SkipLinks/Proposal';
-import { MetaTags } from '../../app/MetaTags';
 
 const ProposalPage: FC = () => {
   const { proposalId } = useParams<{ proposalId: string }>();

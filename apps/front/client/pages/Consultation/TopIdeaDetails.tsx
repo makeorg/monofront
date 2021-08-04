@@ -1,4 +1,3 @@
-// @flow
 import React, { FC, useEffect, useState } from 'react';
 import {
   getTopIdeasLink,
@@ -19,12 +18,12 @@ import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selec
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { useAppContext } from '@make.org/store';
 import { checkIsFeatureActivated } from '@make.org/utils/helpers/featureFlipping';
+import { MetaTags } from '@make.org/components/MetaTags';
 import { CandidateEngagement } from '../../custom/municipales/CandidateEngagement';
 import { TopIdeaDetailsComments } from '../../app/TopIdeas/Comments';
 import { TopIdeaDetailsProposals } from '../../app/TopIdeas/Proposals';
 import { TopIdeaCard } from '../../app/TopIdeas/Card';
 import { TopIdeaDetailsSkipLinks } from '../../app/SkipLinks/TopIdeaDetails';
-import { MetaTags } from '../../app/MetaTags';
 import { MobileDescriptionImage } from '../../app/Consultation/MobileDescriptionImage';
 import { ConsultationSidebar } from '../../app/Consultation/Sidebar';
 import {

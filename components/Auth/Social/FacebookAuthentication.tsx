@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import FacebookLogin, {
+import {
   ReactFacebookFailureResponse,
   ReactFacebookLoginInfo,
 } from 'react-facebook-login';
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 import { FACEBOOK_PROVIDER_ENUM } from '@make.org/api/UserApiService';
 import { SvgFacebookLogoF } from '@make.org/ui/Svg/elements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
@@ -59,13 +60,14 @@ export const FacebookAuthentication: React.FC = () => {
 
     const success = () => {
       dispatch(loginSocialSuccess());
-      dispatch(getUser());
+      getUser(dispatch, state.modal.isOpen);
+      dispatch(
+        displayNotificationBanner(
+          NOTIF.LOGIN_SUCCESS_MESSAGE,
+          NOTIF.NOTIFICATION_LEVEL_SUCCESS
+        )
+      );
     };
-
-    const handleErrors = () => {
-      trackAuthenticationSocialFailure();
-    };
-    const unexpectedError = () => dispatch(modalClose());
 
     UserService.checkSocialPrivacyPolicy(
       FACEBOOK_PROVIDER_ENUM,
@@ -76,9 +78,9 @@ export const FacebookAuthentication: React.FC = () => {
           modalShowDataPolicySocial(FACEBOOK_PROVIDER_ENUM, accessToken)
         );
       },
-      success,
-      handleErrors,
-      unexpectedError
+      () => success(),
+      () => trackAuthenticationSocialFailure(),
+      () => dispatch(modalClose())
     );
   };
 
@@ -101,14 +103,13 @@ export const FacebookAuthentication: React.FC = () => {
         callback={handleFacebookLoginCallback}
         language={language}
         disableMobileRedirect
-      >
-        {(renderProps: { onClick: () => void }) => (
+        render={(renderProps: { onClick: () => void }) => (
           <FacebookButtonStyle onClick={renderProps.onClick} type="button">
             <SvgFacebookLogoF aria-hidden focusable="false" />
             <ScreenReaderItemStyle>Facebook</ScreenReaderItemStyle>
           </FacebookButtonStyle>
         )}
-      </FacebookLogin>
+      />
     );
   }
   return null;

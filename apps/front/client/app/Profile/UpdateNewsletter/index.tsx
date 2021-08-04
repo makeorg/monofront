@@ -10,7 +10,6 @@ import {
 import { SubmitButton } from '@make.org/components/Form/SubmitButton';
 import { SubmitSaveIcon } from '@make.org/utils/constants/icons';
 import { CheckBox } from '@make.org/components/Form/CheckBox';
-
 import { UserService } from '@make.org/utils/services/User';
 import { OrganisationService } from '@make.org/utils/services/Organisation';
 import { TileWithTitle } from '@make.org/ui/components/TileWithTitle';
@@ -19,7 +18,6 @@ import { defaultApiError } from '@make.org/utils/errors/Messages';
 import { FormSuccessMessage } from '@make.org/components/Form/Success';
 import { getUser } from '@make.org/store/actions/authentication';
 import { FormRequirementsStyle } from '@make.org/ui/elements/FormElements';
-
 import { PersonalityService } from '@make.org/utils/services/Personality';
 import { useAppContext } from '@make.org/store';
 
@@ -33,7 +31,7 @@ type Props = {
 };
 
 export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
-  const { dispatch } = useAppContext();
+  const { dispatch, state } = useAppContext();
   const [optInNewsletter, setOptInNewsletter] = useState<boolean>(
     profile.optInNewsletter
   );
@@ -54,7 +52,7 @@ export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
     const success = () => {
       setIsSubmitSuccessful(true);
       setCanSubmit(false);
-      dispatch(getUser());
+      getUser(dispatch, state.modal.isOpen);
     };
     const handleErrors = () => {
       setErrors([defaultApiError]);
@@ -69,16 +67,16 @@ export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
         await OrganisationService.update(
           userId,
           newProfile,
-          success,
-          handleErrors
+          () => success(),
+          () => handleErrors()
         );
         break;
       case USER.TYPE_PERSONALITY:
         await PersonalityService.update(
           userId,
           newProfile,
-          success,
-          handleErrors
+          () => success(),
+          () => handleErrors()
         );
         break;
       default:
@@ -88,8 +86,8 @@ export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
             ...profile,
             optInNewsletter,
           },
-          success,
-          handleErrors
+          () => success(),
+          () => handleErrors()
         );
         break;
     }

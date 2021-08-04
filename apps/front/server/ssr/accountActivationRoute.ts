@@ -72,8 +72,8 @@ export const accountActivationRoute = async (
     verificationToken,
     country,
     language,
-    success,
-    failure,
+    () => success(),
+    () => failure(),
     JSON.stringify(questionId)
   );
 

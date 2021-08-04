@@ -89,9 +89,9 @@ export const DeleteAccount: FC<Props> = ({ user }) => {
     await UserService.deleteAccount(
       user.userId,
       formValues.password,
-      success,
-      invalidPassword,
-      invalidEmail
+      () => success(),
+      () => invalidPassword(),
+      () => invalidEmail()
     );
   };
 

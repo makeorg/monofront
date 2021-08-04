@@ -35,10 +35,10 @@ import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { CertifiedIconStyle } from '@make.org/components/Proposal/DeprecatedAuthor/Styled';
 import { useAppContext } from '@make.org/store';
 import { PersonalityProfileType, PersonalityType } from '@make.org/types';
+import { MetaTags } from '@make.org/components/MetaTags';
 import { UserDescription } from '../../app/Profile/UserInformations/Description';
 import { Opinions } from '../../app/Opinions';
 import { OrganisationProfileSkipLinks } from '../../app/SkipLinks/Organisation';
-import { MetaTags } from '../../app/MetaTags';
 
 const PersonalityPage: FC<RouteComponentProps<{ userId: string }>> = ({
   match: {

@@ -3,73 +3,76 @@ import {
   trackDisplaySignupForm,
   trackDisplayForgotPasswordForm,
 } from '@make.org/utils/services/Tracking';
-import { Dispatch, ReducerAction } from '@make.org/types';
-import * as actionTypes from '../../actionTypes';
+import { ReducerAction } from '@make.org/types';
+import {
+  MODAL_CLOSE,
+  MODAL_CLOSE_COOKIES,
+  MODAL_SHOW_COOKIES,
+  MODAL_SHOW_LOGIN,
+  MODAL_SHOW_REGISTER,
+  MODAL_SHOW_FORGOT_PASSWORD,
+  MODAL_SHOW_DEPARTMENT_FORM,
+  MODAL_SHOW_SESSION_EXPIRATION,
+  MODAL_CLOSE_SESSION_EXPIRATION,
+  MODAL_SHOW_PROPOSAL_SUCCESS,
+  MODAL_SHOW_COUNTRIES,
+  MODAL_SHOW_DATAPOLICY_LOGIN,
+  MODAL_SHOW_DATAPOLICY_SOCIAL,
+  MODAL_CLOSE_DATAPOLICY,
+} from '../../actionTypes';
 
-export const modalClose =
-  () =>
-  (dispatch: Dispatch): void => {
-    dispatch({ type: actionTypes.MODAL_CLOSE });
-  };
-
-export const modalCloseCookies =
-  () =>
-  (dispatch: Dispatch): void => {
-    dispatch({ type: actionTypes.MODAL_CLOSE_COOKIES });
-  };
-
-export const modalShowCookies =
-  () =>
-  (dispatch: Dispatch): void => {
-    dispatch({ type: actionTypes.MODAL_SHOW_COOKIES });
-  };
-
-export const modalShowLogin =
-  () =>
-  (dispatch: Dispatch): void => {
-    dispatch({ type: actionTypes.MODAL_SHOW_LOGIN });
-    trackDisplaySigninForm();
-  };
-
-export const modalShowRegister =
-  () =>
-  (dispatch: Dispatch): void => {
-    dispatch({ type: actionTypes.MODAL_SHOW_REGISTER });
-    trackDisplaySignupForm();
-  };
-
-export const modalShowForgotPassword =
-  () =>
-  (dispatch: Dispatch): void => {
-    dispatch({ type: actionTypes.MODAL_SHOW_FORGOT_PASSWORD });
-    trackDisplayForgotPasswordForm();
-  };
-
-export const modalShowDepartmentForm = (): ReducerAction => ({
-  type: actionTypes.MODAL_SHOW_DEPARTMENT_FORM,
+export const modalClose = (): ReducerAction => ({
+  type: MODAL_CLOSE,
 });
 
-export const showSessionExpirationModal =
-  () =>
-  (dispatch: Dispatch): void => {
-    dispatch({ type: actionTypes.MODAL_SHOW_SESSION_EXPIRATION });
-  };
-export const closeSessionExpirationModal =
-  () =>
-  (dispatch: Dispatch): void => {
-    dispatch({ type: actionTypes.MODAL_CLOSE_SESSION_EXPIRATION });
-  };
+export const modalCloseCookies = (): ReducerAction => ({
+  type: MODAL_CLOSE_COOKIES,
+});
 
-export const modalShowProposalSuccess =
-  () =>
-  (dispatch: Dispatch): void => {
-    dispatch({ type: actionTypes.MODAL_SHOW_PROPOSAL_SUCCESS });
+export const modalShowCookies = (): ReducerAction => ({
+  type: MODAL_SHOW_COOKIES,
+});
+
+export const modalShowLogin = (): ReducerAction => {
+  trackDisplaySigninForm();
+  return {
+    type: MODAL_SHOW_LOGIN,
   };
+};
+
+export const modalShowRegister = (): ReducerAction => {
+  trackDisplaySignupForm();
+  return {
+    type: MODAL_SHOW_REGISTER,
+  };
+};
+
+export const modalShowForgotPassword = (): ReducerAction => {
+  trackDisplayForgotPasswordForm();
+  return {
+    type: MODAL_SHOW_FORGOT_PASSWORD,
+  };
+};
+
+export const modalShowDepartmentForm = (): ReducerAction => ({
+  type: MODAL_SHOW_DEPARTMENT_FORM,
+});
+
+export const showSessionExpirationModal = (): ReducerAction => ({
+  type: MODAL_SHOW_SESSION_EXPIRATION,
+});
+export const closeSessionExpirationModal = (): ReducerAction => ({
+  type: MODAL_CLOSE_SESSION_EXPIRATION,
+});
+
+export const modalShowProposalSuccess = (): ReducerAction => ({
+  type: MODAL_SHOW_PROPOSAL_SUCCESS,
+});
 
 export const modalShowCountries = (
   focusAfterClose: boolean
 ): ReducerAction => ({
-  type: actionTypes.MODAL_SHOW_COUNTRIES,
+  type: MODAL_SHOW_COUNTRIES,
   payload: { focusAfterClose },
 });
 
@@ -77,7 +80,7 @@ export const modalShowDataPolicyLogin = (
   email: string,
   password: string
 ): ReducerAction => ({
-  type: actionTypes.MODAL_SHOW_DATAPOLICY_LOGIN,
+  type: MODAL_SHOW_DATAPOLICY_LOGIN,
   payload: { email, password },
 });
 
@@ -85,10 +88,10 @@ export const modalShowDataPolicySocial = (
   provider: string,
   token: string
 ): ReducerAction => ({
-  type: actionTypes.MODAL_SHOW_DATAPOLICY_SOCIAL,
+  type: MODAL_SHOW_DATAPOLICY_SOCIAL,
   payload: { provider, token },
 });
 
 export const modalCloseDataPolicy = (): ReducerAction => ({
-  type: actionTypes.MODAL_CLOSE_DATAPOLICY,
+  type: MODAL_CLOSE_DATAPOLICY,
 });

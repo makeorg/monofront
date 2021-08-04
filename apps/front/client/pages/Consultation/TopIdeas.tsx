@@ -1,4 +1,3 @@
-// @flow
 import React, { FC, useEffect, useState } from 'react';
 import { redirectToNotFoundPage } from '@make.org/utils/helpers/url';
 import { QuestionType, TopIdeaType } from '@make.org/types';
@@ -15,10 +14,10 @@ import { ThemeProvider } from 'styled-components';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { useAppContext } from '@make.org/store';
+import { MetaTags } from '@make.org/components/MetaTags';
 import { MobileDescriptionImage } from '../../app/Consultation/MobileDescriptionImage';
 import { TopIdeasSkipLinks } from '../../app/SkipLinks/TopIdeas';
 import { ConsultationSidebar } from '../../app/Consultation/Sidebar';
-import { MetaTags } from '../../app/MetaTags';
 import { CandidateEngagement } from '../../custom/municipales/CandidateEngagement';
 import { TopIdeaCard } from '../../app/TopIdeas/Card';
 import { IntroBanner } from '../../app/Consultation/IntroBanner/index';

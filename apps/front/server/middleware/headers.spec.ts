@@ -6,9 +6,7 @@ describe('Headers response middleware', () => {
     it('set Header for Server Response, should returns "Server : Express"', () => {
       const response = httpMocks.createResponse();
       jest.spyOn(response, 'setHeader');
-      headersResponseMiddleware(response, () => {
-        console.log('next');
-      });
+      headersResponseMiddleware(response, () => undefined);
       expect(response.setHeader).toHaveBeenCalledWith('Server', 'Express');
     });
   });

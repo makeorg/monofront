@@ -1,4 +1,3 @@
-// @flow
 import React, { FC, useEffect, useState } from 'react';
 import { QuestionType, ProposalType, TopIdeaType } from '@make.org/types';
 

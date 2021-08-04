@@ -31,7 +31,7 @@ type TypePasswordValues = {
 };
 
 export const UpdatePassword: FC<Props> = ({ userId, hasPassword }) => {
-  const { dispatch } = useAppContext();
+  const { dispatch, state } = useAppContext();
   const defaultFormValues = {
     newPassword: '',
     actualPassword: '',
@@ -86,19 +86,11 @@ export const UpdatePassword: FC<Props> = ({ userId, hasPassword }) => {
       setErrors([]);
       setIsSubmitSuccessful(true);
       setCanSubmit(false);
-      dispatch(getUser());
-    };
-    const handleErrors = (serviceErrors: ErrorObjectType[]) => {
-      setErrors(serviceErrors);
-      setCanSubmit(false);
+      getUser(dispatch, state.modal.isOpen);
     };
 
-    await UserService.updatePassword(
-      userId,
-      formValues,
-      hasPassword,
-      success,
-      handleErrors
+    await UserService.updatePassword(userId, formValues, hasPassword, () =>
+      success()
     );
   };
 

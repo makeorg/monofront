@@ -30,7 +30,7 @@ import { AuthenticationWrapperStyle } from '../style';
 import { LegalConsent } from './LegalConsent';
 
 export const Register: React.FC = () => {
-  const { dispatch } = useAppContext();
+  const { dispatch, state } = useAppContext();
   const [user, setUser] = useState<RegisterFormDataType>({
     email: '',
     password: '',
@@ -93,10 +93,6 @@ export const Register: React.FC = () => {
   };
 
   const logAndLoadUser = async (email: string, password: string) => {
-    const success = () => {
-      dispatch(getUser(true));
-    };
-    const handleErrors = () => undefined;
     const unexpectedError = () => {
       dispatch(modalClose());
       // @toDo: notify user
@@ -107,9 +103,9 @@ export const Register: React.FC = () => {
       email,
       password,
       undefined,
-      success,
-      handleErrors,
-      unexpectedError
+      () => getUser(dispatch, state.modal.isOpen, true),
+      () => undefined,
+      () => unexpectedError()
     );
   };
 

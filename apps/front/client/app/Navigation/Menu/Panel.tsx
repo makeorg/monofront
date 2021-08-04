@@ -17,7 +17,8 @@ import {
   isBrowseResultsPage,
   ROUTE_WHOAREWE,
   ROUTE_PARTNERSHIP,
-} from '../../../../shared/routes';
+} from '@make.org/utils/routes';
+import { useAppContext } from '@make.org/store';
 import {
   MenuPanelStyle,
   MenuCloseTriggerStyle,
@@ -29,7 +30,6 @@ import {
   MenuExternalLinkStyle,
   MenuNewWindowIconStyle,
 } from './style';
-import { useAppContext } from '../../../../../../store';
 
 type Props = {
   isExpanded: boolean;

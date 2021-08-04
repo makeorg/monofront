@@ -13,7 +13,7 @@ import { ROUTE_PASSWORD_RECOVERY } from '@make.org/utils/routes';
 import { getHomeLink, getParticipateLink } from '@make.org/utils/helpers/url';
 import { useAppContext } from '@make.org/store';
 import i18n from 'i18next';
-import { MetaTags } from '../../app/MetaTags';
+import { MetaTags } from '@make.org/components/MetaTags';
 
 const PasswordRecoveryPage: React.FC = () => {
   const { country } = useParams<{ country: string }>();

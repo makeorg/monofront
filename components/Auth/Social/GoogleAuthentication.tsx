@@ -34,15 +34,17 @@ export const GoogleAuthentication: React.FC = () => {
   const handleGoogleLoginSuccess = (
     response: GoogleLoginResponse | GoogleLoginResponseOffline
   ) => {
-    const success = () => {
+    const success = async () => {
       dispatch(loginSocialSuccess());
-      dispatch(getUser());
+      await getUser(dispatch, state.modal.isOpen);
+      dispatch(
+        displayNotificationBanner(
+          NOTIF.LOGIN_SUCCESS_MESSAGE,
+          NOTIF.NOTIFICATION_LEVEL_SUCCESS
+        )
+      );
     };
 
-    const handleErrors = () => {
-      trackAuthenticationSocialFailure();
-    };
-    const unexpectedError = () => dispatch(modalClose());
     let accessToken = '';
     if ('accessToken' in response) {
       accessToken = response.accessToken;
@@ -55,9 +57,9 @@ export const GoogleAuthentication: React.FC = () => {
       () => {
         dispatch(modalShowDataPolicySocial(GOOGLE_PROVIDER_ENUM, accessToken));
       },
-      success,
-      handleErrors,
-      unexpectedError
+      () => success(),
+      () => trackAuthenticationSocialFailure(),
+      () => dispatch(modalClose())
     );
   };
 

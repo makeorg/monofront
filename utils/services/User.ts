@@ -33,7 +33,7 @@ const updatePassword = async (
   passwords: PasswordsType,
   hasPassword: boolean,
   success: () => void,
-  handleErrors: (errors: ErrorObjectType[]) => void
+  handleErrors?: (errors: ErrorObjectType[]) => void
 ): Promise<void> => {
   const actualPassword =
     hasPassword && passwords.actualPassword ? passwords.actualPassword : '';
@@ -43,7 +43,11 @@ const updatePassword = async (
     await UserApiService.updatePassword(userId, actualPassword, newPassword);
     success();
   } catch (apiServiceError) {
-    if (apiServiceError.status === 400 && apiServiceError.data) {
+    if (
+      apiServiceError.status === 400 &&
+      apiServiceError.data &&
+      handleErrors
+    ) {
       handleErrors(
         getErrorMessages(
           updatePasswordErrors,
@@ -405,7 +409,7 @@ const update = async (
   userId: string,
   profile: UserProfileType,
   success: () => void,
-  handleErrors: (errors: ErrorObjectType[]) => void
+  handleErrors?: (errors: ErrorObjectType[]) => void
 ): Promise<void> => {
   const {
     firstName,
@@ -439,7 +443,7 @@ const update = async (
 
     success();
   } catch (apiServiceError) {
-    if (apiServiceError.status === 400) {
+    if (apiServiceError.status === 400 && handleErrors) {
       handleErrors(
         getErrorMessages(
           updateUserErrors,

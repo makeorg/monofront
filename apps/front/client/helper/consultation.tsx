@@ -1,7 +1,7 @@
 import { IDS } from '@make.org/types/enums';
 import i18n from 'i18next';
 import { QuestionType } from '@make.org/types';
-import { isParticipatePage, isResultsPage } from '../../shared/routes';
+import { isParticipatePage, isResultsPage } from '@make.org/utils/routes';
 
 /**
  * Renders current page Breadcrumb depending on location

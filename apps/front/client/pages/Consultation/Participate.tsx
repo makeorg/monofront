@@ -23,6 +23,7 @@ import { Keywords } from '@make.org/components/Flipping/Keywords';
 import { checkIsFeatureActivated } from '@make.org/utils/helpers/featureFlipping';
 
 import { useAppContext } from '@make.org/store';
+import { MetaTags } from '@make.org/components/MetaTags';
 import { Timeline } from '../../app/Consultation/Timeline';
 import { FeaturedProposals } from '../../app/Consultation/Cards/FeaturedProposals';
 import { ParticipateNavigation } from '../../app/Consultation/Navigation/Participate';
@@ -34,7 +35,6 @@ import { SubmitProposal } from '../../app/Consultation/Cards/SubmitProposal';
 import { ParticipateHighlights } from '../../app/Consultation/Highlights';
 import { ParticipateHeader } from '../../app/Consultation/Header';
 import { CitizenRegister } from '../../app/Consultation/CitizenRegister';
-import { MetaTags } from '../../app/MetaTags';
 import {
   ParticipateContentStyle,
   ParticipateInnerStyle,

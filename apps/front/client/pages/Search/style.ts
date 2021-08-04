@@ -98,12 +98,6 @@ export const SearchBackStyle = styled(UnstyledButtonStyle)`
   }
 `;
 
-export const SearchBackArrowStyle = {
-  fontSize: '11px',
-  marginRight: '4px',
-  fill: color.brandSecondary,
-};
-
 export const SearchResultsProposalListStyle = styled(UnstyledListStyle)`
   padding: 0 20px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
