@@ -1,5 +1,5 @@
 /* eslint-disable import/no-duplicates */
-import { format as formatDate } from 'date-fns';
+import formatDate from 'date-fns/format';
 import fr from 'date-fns/locale/fr';
 import enGB from 'date-fns/locale/en-GB';
 import de from 'date-fns/locale/de';

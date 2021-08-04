@@ -1,4 +1,4 @@
-import { format } from 'date-fns';
+import format from 'date-fns/format';
 
 // for tests : see constants/__mocks__/config.js
 export const SESSION_ID_COOKIE_KEY = 'x-session-id';
