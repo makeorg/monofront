@@ -1,4 +1,3 @@
-// @flow
 import React, { FC, ReactNode } from 'react';
 import { ErrorObjectType } from '@make.org/types';
 import i18n from 'i18next';

@@ -6,9 +6,6 @@ import { getHomeLink } from '@make.org/utils/helpers/url';
 import { DEFAULT_COUNTRY } from '@make.org/utils/constants/config';
 import { useAppContext } from '@make.org/store';
 import { SEQUENCE } from '@make.org/types/enums';
-import { QuestionWrapper } from '../pages/Consultation/QuestionWrapper';
-import { usePageBackgoundColor } from '../hooks/usePageBackgroundColor';
-
 import {
   ROUTE_SEARCH,
   ROUTE_SEARCH_PROPOSALS,
@@ -58,7 +55,9 @@ import {
   ROUTE_STATIC_DATA_DE,
   ROUTE_STATIC_CONTACT_DE,
   ROUTE_STATIC_A11Y_DE,
-} from '../../shared/routes';
+} from '@make.org/utils/routes';
+import { QuestionWrapper } from '../pages/Consultation/QuestionWrapper';
+import { usePageBackgoundColor } from '../hooks/usePageBackgroundColor';
 
 const BrowsePage = loadable(() => import('../pages/Browse'));
 const ParticipatePage = loadable(

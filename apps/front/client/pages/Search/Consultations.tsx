@@ -6,9 +6,9 @@ import { trackDisplaySearchConsultationsResult } from '@make.org/utils/services/
 import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
 import { RouteComponentProps } from 'react-router';
 import { useAppContext } from '@make.org/store';
+import { MetaTags } from '@make.org/components/MetaTags';
 import { BusinessConsultationsList } from '../../app/Search/MainResults/BusinessConsultationItem';
 import { SearchBackButton } from '../../app/Search/BackButton';
-import { MetaTags } from '../../app/MetaTags';
 import {
   SearchPageTitleStyle,
   SearchPageContentStyle,

@@ -8,7 +8,7 @@ import { DefaultStylesheet } from '@make.org/assets/css-in-js/DefaultStyle';
 import { ModernNormalizeStylesheet } from '@make.org/assets/css-in-js/ModernNormalize';
 import { FontFacesStylesheet } from '@make.org/assets/css-in-js/FontFaces';
 import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
-import { MetaTags } from '../../app/MetaTags';
+import { MetaTags } from '@make.org/components/MetaTags';
 import {
   NoCookiesTitleStyle,
   NoCookiesSectionStyle,

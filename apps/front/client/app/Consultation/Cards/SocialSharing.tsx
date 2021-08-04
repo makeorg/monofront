@@ -1,16 +1,20 @@
 import React, { FC } from 'react';
 import i18n from 'i18next';
 import { Sharing } from '@make.org/components/Sharing';
-import { CardStyle, CardTitleStyle, CardDescriptionStyle } from './style';
+import {
+  ParticipateCardStyle,
+  ParticipateCardTitleStyle,
+  ParticipateCardDescriptionStyle,
+} from '@make.org/ui/elements/CardsElements';
 
 export const SocialSharing: FC = () => (
-  <CardStyle className="margin-bottom">
-    <CardTitleStyle>
+  <ParticipateCardStyle className="margin-bottom">
+    <ParticipateCardTitleStyle>
       {i18n.t('consultation.cards.sharing.title')}
-    </CardTitleStyle>
-    <CardDescriptionStyle>
+    </ParticipateCardTitleStyle>
+    <ParticipateCardDescriptionStyle>
       {i18n.t('consultation.cards.sharing.description')}
-    </CardDescriptionStyle>
+    </ParticipateCardDescriptionStyle>
     <Sharing />
-  </CardStyle>
+  </ParticipateCardStyle>
 );

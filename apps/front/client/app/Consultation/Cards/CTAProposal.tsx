@@ -2,13 +2,13 @@ import React, { FC } from 'react';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import i18n from 'i18next';
 import {
-  CardStyle,
-  CardTitleStyle,
-  CardDescriptionStyle,
-  CardLinkStyle,
-  CardSoonStyle,
-  CardSoonIconStyle,
-} from './style';
+  ParticipateCardStyle,
+  ParticipateCardTitleStyle,
+  ParticipateCardDescriptionStyle,
+  ParticipateCardLinkStyle,
+  ParticipateCardSoonStyle,
+  ParticipateCardSoonIconStyle,
+} from '@make.org/ui/elements/CardsElements';
 
 type Props = {
   icon: JSX.Element;
@@ -38,19 +38,21 @@ export const CTAProposal: FC<Props> = ({
   const isActive = proposalCount >= thresold;
 
   return (
-    <CardStyle className={classes} isKeywordActive={isKeywordActive}>
+    <ParticipateCardStyle className={classes} isKeywordActive={isKeywordActive}>
       <ColumnElementStyle>
         {icon}
-        <CardTitleStyle>{title}</CardTitleStyle>
-        <CardDescriptionStyle>{description}</CardDescriptionStyle>
+        <ParticipateCardTitleStyle>{title}</ParticipateCardTitleStyle>
+        <ParticipateCardDescriptionStyle>
+          {description}
+        </ParticipateCardDescriptionStyle>
       </ColumnElementStyle>
       {isActive ? (
-        <CardLinkStyle to={linkHref} onClick={onClickAction}>
+        <ParticipateCardLinkStyle to={linkHref} onClick={onClickAction}>
           {linkText}
-        </CardLinkStyle>
+        </ParticipateCardLinkStyle>
       ) : (
-        <CardSoonStyle>
-          <CardSoonIconStyle
+        <ParticipateCardSoonStyle>
+          <ParticipateCardSoonIconStyle
             width={16}
             height={16}
             aria-hidden
@@ -58,8 +60,8 @@ export const CTAProposal: FC<Props> = ({
           />
           <> </>
           {i18n.t('consultation.cards.soon')}
-        </CardSoonStyle>
+        </ParticipateCardSoonStyle>
       )}
-    </CardStyle>
+    </ParticipateCardStyle>
   );
 };

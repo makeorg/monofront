@@ -6,13 +6,13 @@ import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selec
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import {
-  CardStyle,
-  CardAltTitleStyle,
-  CardAltDescriptionStyle,
-  CardExternalLinkStyle,
-  CardExternalIconStyle,
-  MobileAboutStyle,
-} from './style';
+  ParticipateCardStyle,
+  ParticipateCardAltTitleStyle,
+  ParticipateCardAltDescriptionStyle,
+  ParticipateCardExternalLinkStyle,
+  ParticipateCardExternalIconStyle,
+} from '@make.org/ui/elements/CardsElements';
+import { MobileAboutStyle } from './style';
 
 export const About: FC = () => {
   const { state } = useAppContext();
@@ -21,31 +21,31 @@ export const About: FC = () => {
   const isMobile = matchMobileDevice(device);
   return (
     <>
-      <CardAltTitleStyle as={isMobile ? 'h3' : 'h4'}>
+      <ParticipateCardAltTitleStyle as={isMobile ? 'h3' : 'h4'}>
         {i18n.t('consultation.cards.about.title')}
-      </CardAltTitleStyle>
-      <CardAltDescriptionStyle>
+      </ParticipateCardAltTitleStyle>
+      <ParticipateCardAltDescriptionStyle>
         {i18n.t('consultation.cards.about.description')}
-      </CardAltDescriptionStyle>
-      <CardExternalLinkStyle
+      </ParticipateCardAltDescriptionStyle>
+      <ParticipateCardExternalLinkStyle
         href={question.aboutUrl}
         target="_blank"
         rel="noopener"
       >
         {i18n.t('consultation.cards.about.link')}
-        <CardExternalIconStyle aria-hidden focusable="false" />
+        <ParticipateCardExternalIconStyle aria-hidden focusable="false" />
         <ScreenReaderItemStyle>
           {i18n.t('common.open_new_window')}
         </ScreenReaderItemStyle>
-      </CardExternalLinkStyle>
+      </ParticipateCardExternalLinkStyle>
     </>
   );
 };
 
 export const DesktopAbout: FC = () => (
-  <CardStyle className="margin-bottom">
+  <ParticipateCardStyle className="margin-bottom">
     <About />
-  </CardStyle>
+  </ParticipateCardStyle>
 );
 
 export const MobileAbout: FC = () => (

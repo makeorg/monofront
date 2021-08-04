@@ -50,16 +50,7 @@ export const LoginForm: React.FC = () => {
   const emailError = getFieldError('email', errors);
   const passwordError = getFieldError('password', errors);
 
-  /** Method called when login form succeed */
-  const handleLoginSuccess = () => {
-    dispatch(loginSuccess());
-  };
-
   /** Method called to load user after login */
-  const handleGetUser = () => {
-    dispatch(getUser());
-  };
-
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = event.target;
     setFormValues({
@@ -74,10 +65,10 @@ export const LoginForm: React.FC = () => {
     event.preventDefault();
 
     const success = () => {
-      handleLoginSuccess();
+      dispatch(loginSuccess());
       trackLoginEmailSuccess();
       setErrors([]);
-      handleGetUser();
+      getUser(dispatch, state.modal.isOpen);
       dispatch(
         displayNotificationBanner(
           NOTIF.LOGIN_SUCCESS_MESSAGE,
@@ -85,7 +76,7 @@ export const LoginForm: React.FC = () => {
         )
       );
     };
-    const handleErrors = (serviceErrors: ErrorObjectType[] | undefined) => {
+    const handleErrors = (serviceErrors?: ErrorObjectType[]) => {
       if (serviceErrors) {
         setErrors(serviceErrors);
       }
@@ -100,9 +91,9 @@ export const LoginForm: React.FC = () => {
         dispatch(
           modalShowDataPolicyLogin(formValues.email, formValues.password)
         ),
-      success,
-      handleErrors,
-      unexpectedError
+      () => success(),
+      () => handleErrors(),
+      () => unexpectedError()
     );
   };
 

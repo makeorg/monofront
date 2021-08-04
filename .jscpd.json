@@ -1,7 +1,7 @@
 {
-  "threshold": 1.5,
+  "threshold": 0.15,
   "reporters": ["html", "console"],
-  "ignore": ["**/webpack.config.js", "**/webpack/**", "**/*.sh", "**/node_modules/**","**/__snapshots__/**", "**/__fixtures__/**", "**/*.spec.js", "**/spec.js", "**/i18n/*.json", "**/*.svg", "**/Deprecated/*.js", "**/Deprecated/**/index.js", "**/coverage/**", "**/reports/**"],
+  "ignore": ["**/webpack.config.js", "**/webpack/**", "**/*.sh", "**/node_modules/**","**/__snapshots__/**", "**/__fixtures__/**", "**/*.spec.ts", "**/spec.ts", "**/i18n/*.json", "**/*.svg", "**/Deprecated/*.ts", "**/Deprecated/**/index.ts", "**/coverage/**", "**/reports/**"],
   "absolute": true,
   "output": "./reports",
   "minTokens": 100

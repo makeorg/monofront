@@ -1,4 +1,3 @@
-// @flow
 import React, { FC } from 'react';
 import { ProposalType } from '@make.org/types';
 import { getProposalLink } from '@make.org/utils/helpers/url';

@@ -12,7 +12,7 @@ import {
 } from '@make.org/utils/services/Tracking';
 import { SpaceBetweenColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { IDS } from '@make.org/types/enums';
-import { MetaTags } from '../../app/MetaTags';
+import { MetaTags } from '@make.org/components/MetaTags';
 import { BrowseConsultationsTitles } from '../../app/Consultation/Browse/Titles';
 import { BrowseConsultationsHeader } from '../../app/Consultation/Browse/Header';
 import { BrowseConsultationsList } from '../../app/Consultation/Browse/List';

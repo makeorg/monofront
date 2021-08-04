@@ -1,4 +1,3 @@
-// @flow
 import React, { FC } from 'react';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import {

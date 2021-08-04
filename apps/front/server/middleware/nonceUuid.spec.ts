@@ -10,9 +10,7 @@ describe('Nonce Uuid middelware', () => {
     const response = httpMocks.createResponse();
     mockedUuid.mockReturnValue('1234');
 
-    nonceUuidMiddleware(response, () => {
-      console.log('next');
-    });
+    nonceUuidMiddleware(response, () => undefined);
 
     expect(response.locals.nonce).toEqual('1234');
   });

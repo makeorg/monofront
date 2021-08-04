@@ -38,7 +38,7 @@ export const PasswordRecoveryForm: React.FC = () => {
   }
 
   const handleSubmitForm = (newPassword: string) => {
-    dispatch(passwordRecovery(newPassword));
+    passwordRecovery(newPassword, dispatch, state.user.passwordRecovery);
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

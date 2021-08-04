@@ -12,7 +12,7 @@ import {
 } from '@make.org/utils/routes';
 import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
 import { useAppContext } from '@make.org/store';
-import { MetaTags } from '../../app/MetaTags';
+import { MetaTags } from '@make.org/components/MetaTags';
 import {
   SearchPageWrapperStyle,
   SearchPageTitleStyle,

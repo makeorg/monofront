@@ -12,6 +12,7 @@ import { ExpressService } from '@make.org/utils/services/Express';
 import { SvgLightBulb, SvgLightning } from '@make.org/ui/Svg/elements';
 import { IDS } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
+import { MetaTags } from '@make.org/components/MetaTags';
 import {
   ParticipateContentStyle,
   ParticipateMainContentStyle,
@@ -29,7 +30,6 @@ import { Timeline } from '../../app/Consultation/Timeline';
 import { CitizenRegister } from '../../app/Consultation/CitizenRegister';
 import { ResultCard } from '../../app/Consultation/Results/ResultCard';
 import { ResultsContact } from '../../app/Consultation/Results/Contact';
-import { MetaTags } from '../../app/MetaTags';
 import { ResultsSkipLinks } from '../../app/SkipLinks/Results';
 
 import { NotFoundPage } from '../NotFound';

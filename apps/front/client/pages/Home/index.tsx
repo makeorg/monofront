@@ -6,6 +6,7 @@ import { ViewsService } from '@make.org/utils/services/Views';
 import { Spinner } from '@make.org/ui/components/Loading/Spinner';
 import { MiddlePageWrapperStyle } from '@make.org/ui/elements/MainElements';
 import { useAppContext } from '@make.org/store';
+import { MetaTags } from '@make.org/components/MetaTags';
 import { HighlightsBanner } from '../../app/Homepage/Highlights';
 import { HomepageQuestions } from '../../app/Homepage/Questions';
 import { FeaturedNews } from '../../app/Homepage/Featured';
@@ -13,7 +14,6 @@ import { Hero } from '../../app/Homepage/Hero';
 import { PartnershipBanner } from '../../app/Homepage/Partnership';
 import { InternationalPlaceholder } from '../../app/Homepage/International';
 import { HomepageSkipLinks } from '../../app/SkipLinks/Homepage';
-import { MetaTags } from '../../app/MetaTags';
 import { HomepageWrapperStyle } from './style';
 
 export const HomePage: FC = () => {

@@ -40,13 +40,13 @@ type Props = {
 };
 
 export const UpdateInformations: FC<Props> = ({ user }) => {
-  const { dispatch } = useAppContext();
+  const { dispatch, state } = useAppContext();
 
   let updateProfile: (
     organisationId: string,
     profile: CommonUsersProfileType,
     success: () => void,
-    handleErrors: (errors: ErrorObjectType[]) => void
+    handleErrors: (errors?: ErrorObjectType[]) => void
   ) => Promise<null | void>;
   switch (user.userType) {
     case USER.TYPE_ORGANISATION:
@@ -95,17 +95,24 @@ export const UpdateInformations: FC<Props> = ({ user }) => {
     const success = () => {
       setIsSubmitSuccessful(true);
       setErrors([]);
-      dispatch(getUser());
+      getUser(dispatch, state.modal.isOpen);
     };
-    const handleErrors = (serviceErrors: ErrorObjectType[]) => {
+    const handleErrors = (serviceErrors?: ErrorObjectType[]) => {
+      if (serviceErrors) {
+        setErrors(serviceErrors);
+      }
       setIsSubmitSuccessful(false);
-      setErrors(serviceErrors);
     };
 
     displayLegalConsent(false);
 
     const { userId } = user;
-    await updateProfile(userId, profile, success, handleErrors);
+    await updateProfile(
+      userId,
+      profile,
+      () => success(),
+      () => handleErrors()
+    );
   };
 
   const toggleLegalConsent = (event: React.ChangeEvent<any>) => {

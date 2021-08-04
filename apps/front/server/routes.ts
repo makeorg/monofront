@@ -46,7 +46,7 @@ import {
   ROUTE_STATIC_GTU_DE,
   ROUTE_STATIC_A11Y_DE,
   ROUTE_STATIC_CONTACT_DE,
-} from '../shared/routes';
+} from '@make.org/utils/routes';
 import { countryLanguageMiddleware } from './middleware/countryLanguage';
 import { metricsMiddleware } from './middleware/metrics';
 import { questionResults } from './api/question';

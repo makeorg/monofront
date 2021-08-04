@@ -1,10 +1,10 @@
-import React, { FC } from 'react';
 import {
-  CardStyle,
-  CardTitleStyle,
-  CardDescriptionStyle,
-  CardLinkAsButtonStyle,
-} from './style';
+  ParticipateCardDescriptionStyle,
+  ParticipateCardLinkAsButtonStyle,
+  ParticipateCardStyle,
+  ParticipateCardTitleStyle,
+} from '@make.org/ui/elements/CardsElements';
+import React, { FC } from 'react';
 
 type Props = {
   icon: JSX.Element;
@@ -25,12 +25,14 @@ export const CTAMonoBlock: FC<Props> = ({
   classes = '',
   onClickAction = () => null,
 }) => (
-  <CardStyle className={classes}>
+  <ParticipateCardStyle className={classes}>
     {icon}
-    <CardTitleStyle>{title}</CardTitleStyle>
-    <CardDescriptionStyle>{description}</CardDescriptionStyle>
-    <CardLinkAsButtonStyle to={linkHref} onClick={onClickAction}>
+    <ParticipateCardTitleStyle>{title}</ParticipateCardTitleStyle>
+    <ParticipateCardDescriptionStyle>
+      {description}
+    </ParticipateCardDescriptionStyle>
+    <ParticipateCardLinkAsButtonStyle to={linkHref} onClick={onClickAction}>
       {linkText}
-    </CardLinkAsButtonStyle>
-  </CardStyle>
+    </ParticipateCardLinkAsButtonStyle>
+  </ParticipateCardStyle>
 );

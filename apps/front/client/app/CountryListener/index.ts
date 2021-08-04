@@ -7,7 +7,7 @@ import {
 } from '@make.org/utils/constants/config';
 import { getLanguageFromCountryCode } from '@make.org/utils/helpers/countries';
 import { setCountryCode } from '@make.org/store/actions/appConfig';
-import { ROUTE_COUNTRY, BASE_PREVIEW_PATH } from '../../../shared/routes';
+import { ROUTE_COUNTRY, BASE_PREVIEW_PATH } from '@make.org/utils/routes';
 
 export const CountryListener = (): null => {
   let country = DEFAULT_COUNTRY;

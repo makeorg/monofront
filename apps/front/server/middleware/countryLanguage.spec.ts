@@ -38,9 +38,7 @@ describe('Country Language middelware', () => {
       const response = httpMocks.createResponse();
       jest.spyOn(response, 'redirect');
 
-      countryLanguageMiddleware(request, response, () => {
-        console.log('next');
-      });
+      countryLanguageMiddleware(request, response, () => undefined);
 
       expect(request.params.country).toBe('FR');
     });
@@ -52,9 +50,7 @@ describe('Country Language middelware', () => {
       const response = httpMocks.createResponse();
       jest.spyOn(response, 'redirect');
 
-      countryLanguageMiddleware(request, response, () => {
-        console.log('next');
-      });
+      countryLanguageMiddleware(request, response, () => undefined);
 
       expect(request.params.country).toBe('FR');
     });
@@ -66,9 +62,7 @@ describe('Country Language middelware', () => {
       const response = httpMocks.createResponse();
       jest.spyOn(response, 'redirect');
 
-      countryLanguageMiddleware(request, response, () => {
-        console.log('next');
-      });
+      countryLanguageMiddleware(request, response, () => undefined);
       expect(request.params.country).toBe('FR');
     });
 
@@ -78,9 +72,7 @@ describe('Country Language middelware', () => {
       });
       const response = httpMocks.createResponse();
       jest.spyOn(response, 'redirect');
-      countryLanguageMiddleware(request, response, () => {
-        console.log('next');
-      });
+      countryLanguageMiddleware(request, response, () => undefined);
       expect(request.params.language).toBe('fr');
     });
 
@@ -90,9 +82,7 @@ describe('Country Language middelware', () => {
       const request = httpMocks.createRequest();
       const response = httpMocks.createResponse();
 
-      countryLanguageMiddleware(request, response, () => {
-        console.log('next');
-      });
+      countryLanguageMiddleware(request, response, () => undefined);
 
       expect(i18n.cloneInstance).toHaveBeenCalledTimes(1);
       expect(i18n.changeLanguage).toHaveBeenCalledTimes(1);

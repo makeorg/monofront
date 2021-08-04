@@ -18,7 +18,7 @@ import { CertifiedIconStyle } from '@make.org/components/Proposal/DeprecatedAuth
 import { formatOrganisationName } from '@make.org/utils/helpers/stringFormatter';
 import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
 import { useAppContext } from '@make.org/store';
-import { MetaTags } from '../../app/MetaTags';
+import { MetaTags } from '@make.org/components/MetaTags';
 import {
   SearchPageContentStyle,
   SearchPageResultsStyle,

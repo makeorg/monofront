@@ -1,6 +1,6 @@
 // aflow
 import { Request, Response } from 'express';
-import { ROUTE_COUNTRY_FR } from '../../shared/routes';
+import { ROUTE_COUNTRY_FR } from '@make.org/utils/routes';
 
 export const redirectToCountry = (req: Request, res: Response): void => {
   const xDetectedCountry = req.headers['x-detected-country'];

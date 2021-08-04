@@ -38,9 +38,9 @@ export const DataPolicy: React.FC = () => {
   ) => {
     event.preventDefault();
     if (isLogin) {
-      dispatch(login(email, password, dataPolicyConsent));
+      login(email, password, dataPolicyConsent, dispatch);
     } else {
-      dispatch(loginSocial(provider, token, dataPolicyConsent));
+      loginSocial(provider, token, dataPolicyConsent, dispatch);
     }
     dispatch(modalCloseDataPolicy());
   };

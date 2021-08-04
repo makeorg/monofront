@@ -11,8 +11,10 @@ import { IDS } from '@make.org/types/enums';
 import { scrollToElementId } from '@make.org/utils/helpers/styled';
 import { ProposalType, QuestionType } from '@make.org/types';
 import {
-  CardStyle,
-  CardAltTitleStyle,
+  ParticipateCardStyle,
+  ParticipateCardAltTitleStyle,
+} from '@make.org/ui/elements/CardsElements';
+import {
   FeaturedProposalItemStyle,
   ProposalContentStyle,
   ExploreLinkStyle,
@@ -61,10 +63,10 @@ export const FeaturedProposals: FC<Props> = ({ question }) => {
   }
 
   return (
-    <CardStyle className="margin-bottom">
-      <CardAltTitleStyle>
+    <ParticipateCardStyle className="margin-bottom">
+      <ParticipateCardAltTitleStyle>
         {i18n.t('consultation.cards.featured_proposals.title')}
-      </CardAltTitleStyle>
+      </ParticipateCardAltTitleStyle>
       <>
         {isLoading ? (
           <Spinner />
@@ -97,6 +99,6 @@ export const FeaturedProposals: FC<Props> = ({ question }) => {
       >
         {i18n.t('consultation.navigation.explore_desktop')}
       </ExploreLinkStyle>
-    </CardStyle>
+    </ParticipateCardStyle>
   );
 };

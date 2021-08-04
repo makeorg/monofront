@@ -8,6 +8,7 @@ declare module '*.woff';
 declare module '*.woff2';
 declare module 'webpack-manifest';
 declare module 'glider-js';
+declare module 'react-facebook-login/dist/facebook-login-render-props';
 declare module '*.svg' {
   const content: SVGAElement;
   export default content;
