@@ -27,14 +27,14 @@ import {
   setDataFromQueryParams,
 } from '@make.org/utils/helpers/customData';
 import { StateRoot } from '@make.org/types';
+import { initTrackersFromPreferences } from '@make.org/utils/helpers/cookies';
 import { CountryListener } from './app/CountryListener';
 import { AppContainer } from './app';
 import { cookieIsEnabled, thirdCookieEnabled } from './helper/cookieDetect';
 import { NoCookies } from './pages/Static/NoCookies';
 import { ErrorBoundary, ServiceErrorHandler } from './app/Error';
-// import { initTrackersFromPreferences } from './helper/cookies';
 import { LanguageListener } from './app/LanguageListener';
-import fr from '../i18n/fr.json';
+import { initDevState } from './helper/initDevState';
 
 declare global {
   interface Window {
@@ -42,16 +42,9 @@ declare global {
   }
 }
 
-// TO DO with the SSR
-window.INITIAL_STATE = {
-  ...initialState,
-  appConfig: {
-    ...initialState.appConfig,
-    source: 'core',
-    translations: { fr: { translation: fr } },
-  },
-};
-// END TO DO with the SSR
+if (env.isDev()) {
+  window.INITIAL_STATE = initDevState(initialState);
+}
 
 const serverState = window.INITIAL_STATE || initialState;
 
@@ -129,7 +122,7 @@ const initApp = async (state: StateRoot) => {
 
   const cookies = new Cookies();
   const preferencesCookie = cookies.get(USER_PREFERENCES_COOKIE);
-  // initTrackersFromPreferences(preferencesCookie);
+  initTrackersFromPreferences(preferencesCookie);
 
   // Set date helper language
   DateHelper.language = language;

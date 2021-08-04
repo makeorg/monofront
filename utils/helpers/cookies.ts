@@ -1,9 +1,9 @@
 import { USER_PREFERENCES_COOKIE } from '@make.org/utils/constants/cookies';
 import { FacebookTracking } from '@make.org/utils/services/Trackers/FacebookTracking';
-import { TwitterUniversalTag } from '@make.org/utils/services/Trackers/TwitterTracking';
-import { TWITTER_SCRIPT, twttr } from '@make.org/utils/services/Trackers/twttr';
 import { StateUserCookiesPreferences } from '@make.org/types';
 import Cookies from 'universal-cookie';
+import { TwitterUniversalTag } from '../services/Trackers/TwitterTracking.js';
+import { TWITTER_SCRIPT, twttr } from '../services/Trackers/twttr.js';
 
 // set cookie expiration for user preferences (1 year)
 const today = new Date();
