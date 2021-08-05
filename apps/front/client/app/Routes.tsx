@@ -96,7 +96,7 @@ const AccountActivationPage = loadable(
 
 // const PersonalityPage = loadable(() => import('../pages/Personality'));
 
-// const SearchPage = loadable(() => import('../pages/Search'));
+const SearchPage = loadable(() => import('../pages/Search'));
 
 // const LegalPage = loadable(() => import('../pages/Static/Legal'));
 // const TermsOfUse = loadable(() => import('../pages/Static/TermsOfUse'));
@@ -192,10 +192,10 @@ export const Routes: FC = () => {
       {/* <Route path={ROUTE_PROFILE_OPINIONS} component={ProfileOpinionsPage} /> */}
       {/* <Route path={ROUTE_ORGANISATION_PROPOSALS} component={OrganisationPage} /> */}
       {/* <Route path={ROUTE_ORGANISATION_VOTES} component={OrganisationPage} /> */}
-      {/* <Route path={ROUTE_SEARCH} component={SearchPage} /> */}
-      {/* <Route path={ROUTE_SEARCH_PROPOSALS} component={SearchPage} /> */}
-      {/* <Route path={ROUTE_SEARCH_ORGANISATIONS} component={SearchPage} /> */}
-      {/* <Route path={ROUTE_SEARCH_CONSULTATIONS} component={SearchPage} /> */}
+      <Route path={ROUTE_SEARCH} component={SearchPage} />
+      <Route path={ROUTE_SEARCH_PROPOSALS} component={SearchPage} />
+      <Route path={ROUTE_SEARCH_ORGANISATIONS} component={SearchPage} />
+      <Route path={ROUTE_SEARCH_CONSULTATIONS} component={SearchPage} />
       {/* <Route path={ROUTE_PERSONALITY_PROFILE} component={PersonalityPage} /> */}
       <Redirect
         path={ROUTE_ORGANISATION_PROFILE}
