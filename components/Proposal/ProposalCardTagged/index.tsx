@@ -3,7 +3,7 @@ import { ProposalType } from '@make.org/types';
 import { getProposalLink } from '@make.org/utils/helpers/url';
 import {
   ProposalCardStyle,
-  ProposalStyle,
+  ProposalLinkElementStyle,
   ProposalInnerStyle,
 } from '@make.org/ui/elements/ProposalCardElements';
 import { isInProgress } from '@make.org/utils/helpers/date';
@@ -53,13 +53,13 @@ export const ProposalCardTagged: FC<Props> = ({ proposal, position, size }) => {
           <ScreenReaderItemStyle>
             {i18n.t('proposal_card.content')}
           </ScreenReaderItemStyle>
-          <ProposalStyle
+          <ProposalLinkElementStyle
             id={`card_tagged_proposal_content_${position}`}
             to={proposalLink}
             lang={proposal.question.language}
           >
             {proposal.content}
-          </ProposalStyle>
+          </ProposalLinkElementStyle>
           {canVote ? (
             <Vote
               proposal={proposal}

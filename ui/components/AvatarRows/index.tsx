@@ -8,17 +8,17 @@ type Props = {
 };
 
 const getAvatarKey = (index: number): string => `avatar_${index}`;
-
 const getZindex = (index: number): number => 10 - index;
+const avatarSize = 34;
 
 export const AvatarRows: FC<Props> = ({ avatars }) => (
-  <AvatarRowsStyle>
+  <AvatarRowsStyle avatarSize={avatarSize}>
     {avatars.map((avatar, index) => (
       <AvatarStyle
         key={getAvatarKey(index)}
         style={{ zIndex: getZindex(index) }}
       >
-        <Avatar avatarSize={34} avatarUrl={avatar} />
+        <Avatar avatarSize={avatarSize} avatarUrl={avatar} />
       </AvatarStyle>
     ))}
     {avatars.length > 3 && (

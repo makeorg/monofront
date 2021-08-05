@@ -12,7 +12,8 @@ export const ProposalInnerStyle = styled(ColumnElementStyle)`
   height: 100%;
   justify-content: space-between;
 `;
-export const ProposalStyle = styled(Link)`
+
+const ProposalStyle = `
   width: 100%;
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   font-family: ${MakeFonts.CircularStandardBold};
@@ -27,6 +28,14 @@ export const ProposalStyle = styled(Link)`
   @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
     font-size: ${intToPx(typography.font.fontsize.S.value)};
   }
+`;
+
+export const ProposalLinkElementStyle = styled(Link)`
+  ${ProposalStyle};
+`;
+
+export const ProposalElementStyle = styled.p`
+  ${ProposalStyle};
 `;
 
 export const ProposalCardStyle = styled(CardStyle)`

@@ -56,8 +56,12 @@ import {
   ROUTE_STATIC_CONTACT_DE,
   ROUTE_STATIC_A11Y_DE,
 } from '@make.org/utils/routes';
-import { QuestionWrapper } from '../pages/Consultation/QuestionWrapper';
+import Cookies from 'universal-cookie';
+import { StateUserCookiesPreferences } from '@make.org/types';
+import { USER_PREFERENCES_COOKIE } from '@make.org/utils/constants/cookies';
+import { TwitterUniversalTag } from '@make.org/utils/services/Trackers/TwitterTracking';
 import { usePageBackgoundColor } from '../hooks/usePageBackgroundColor';
+import { QuestionWrapper } from '../pages/Consultation/QuestionWrapper';
 
 const BrowsePage = loadable(() => import('../pages/Browse'));
 const ParticipatePage = loadable(
@@ -77,24 +81,24 @@ const SequenceByKindPage = loadable(
 const SequenceByKeywordPage = loadable(
   () => import('../pages/Consultation/SequenceByKeyword')
 );
-// const PasswordRecoveryPage = loadable(
-//   () => import('../pages/PasswordRecovery')
-// );
-// const NotFoundPage = loadable(() => import('../pages/NotFound'));
+const PasswordRecoveryPage = loadable(
+  () => import('../pages/PasswordRecovery')
+);
+const NotFoundPage = loadable(() => import('../pages/NotFound'));
 const HomePage = loadable(() => import('../pages/Home'));
 const ProposalPage = loadable(() => import('../pages/Proposal'));
 const AccountActivationPage = loadable(
   () => import('../pages/AccountActivation')
 );
-// const ProfileEditPage = loadable(() => import('../pages/Profile/Edit'));
+const ProfileEditPage = loadable(() => import('../pages/Profile/Edit'));
 
-// const ProfilePage = loadable(() => import('../pages/Profile'));
+const ProfilePage = loadable(() => import('../pages/Profile'));
 
-// const ProfileOpinionsPage = loadable(() => import('../pages/Profile/Opinions'));
+const ProfileOpinionsPage = loadable(() => import('../pages/Profile/Opinions'));
 
-// const OrganisationPage = loadable(() => import('../pages/Organisation'));
+const OrganisationPage = loadable(() => import('../pages/Organisation'));
 
-// const PersonalityPage = loadable(() => import('../pages/Personality'));
+const PersonalityPage = loadable(() => import('../pages/Personality'));
 
 const SearchPage = loadable(() => import('../pages/Search'));
 
@@ -106,10 +110,10 @@ const SearchPage = loadable(() => import('../pages/Search'));
 // const CookiesPage = loadable(() => import('../pages/Static/Cookies'));
 
 export const Routes: FC = () => {
-  // const cookies = new Cookies();
-  // const preferencesCookies: StateUserCookiesPreferences = cookies.get(
-  //   USER_PREFERENCES_COOKIE
-  // );
+  const cookies = new Cookies();
+  const preferencesCookies: StateUserCookiesPreferences = cookies.get(
+    USER_PREFERENCES_COOKIE
+  );
   const { state } = useAppContext();
   const location = useLocation();
   const { country } = state.appConfig;
@@ -117,11 +121,11 @@ export const Routes: FC = () => {
 
   usePageBackgoundColor(pathname);
 
-  // React.useEffect(() => {
-  //   if (preferencesCookies?.twitter_tracking) {
-  //     TwitterUniversalTag.pageView();
-  //   }
-  // }, [location.pathname, preferencesCookies]);
+  React.useEffect(() => {
+    if (preferencesCookies?.twitter_tracking) {
+      TwitterUniversalTag.pageView();
+    }
+  }, [location.pathname, preferencesCookies]);
 
   return (
     <Switch>
@@ -184,27 +188,27 @@ export const Routes: FC = () => {
         component={AccountActivationPage}
       />
       <Route path={ROUTE_PROPOSAL} component={ProposalPage} />
-      {/* <Route path={ROUTE_PASSWORD_RECOVERY} component={PasswordRecoveryPage} /> */}
-      {/* <Route path={ROUTE_PROFILE_EDIT} component={ProfileEditPage} /> */}
-      {/* <Route path={ROUTE_PROFILE_PROPOSALS} component={ProfilePage} /> */}
-      {/* <Route path={ROUTE_PROFILE_FAVOURITES} component={ProfilePage} /> */}
-      {/* <Route path={ROUTE_PROFILE_FOLLOWING} component={ProfilePage} /> */}
-      {/* <Route path={ROUTE_PROFILE_OPINIONS} component={ProfileOpinionsPage} /> */}
-      {/* <Route path={ROUTE_ORGANISATION_PROPOSALS} component={OrganisationPage} /> */}
-      {/* <Route path={ROUTE_ORGANISATION_VOTES} component={OrganisationPage} /> */}
+      <Route path={ROUTE_PASSWORD_RECOVERY} component={PasswordRecoveryPage} />
+      <Route path={ROUTE_PROFILE_EDIT} component={ProfileEditPage} />
+      <Route path={ROUTE_PROFILE_PROPOSALS} component={ProfilePage} />
+      <Route path={ROUTE_PROFILE_FAVOURITES} component={ProfilePage} />
+      <Route path={ROUTE_PROFILE_FOLLOWING} component={ProfilePage} />
+      <Route path={ROUTE_PROFILE_OPINIONS} component={ProfileOpinionsPage} />
+      <Route path={ROUTE_ORGANISATION_PROPOSALS} component={OrganisationPage} />
+      <Route path={ROUTE_ORGANISATION_VOTES} component={OrganisationPage} />
       <Route path={ROUTE_SEARCH} component={SearchPage} />
       <Route path={ROUTE_SEARCH_PROPOSALS} component={SearchPage} />
       <Route path={ROUTE_SEARCH_ORGANISATIONS} component={SearchPage} />
       <Route path={ROUTE_SEARCH_CONSULTATIONS} component={SearchPage} />
-      {/* <Route path={ROUTE_PERSONALITY_PROFILE} component={PersonalityPage} /> */}
+      <Route path={ROUTE_PERSONALITY_PROFILE} component={PersonalityPage} />
       <Redirect
         path={ROUTE_ORGANISATION_PROFILE}
         to={ROUTE_ORGANISATION_PROPOSALS}
       />
       <Redirect path={ROUTE_PROFILE} to={ROUTE_PROFILE_PROPOSALS} />
       <Route exact path={ROUTE_COUNTRY} component={HomePage} />
-      {/* <Route path={ROUTE_STATIC_NOTFOUND} component={NotFoundPage} />
-      <Route path={ROUTE_STATIC_COOKIES} component={CookiesPage} /> */}
+      <Route path={ROUTE_STATIC_NOTFOUND} component={NotFoundPage} />
+      {/* <Route path={ROUTE_STATIC_COOKIES} component={CookiesPage} /> */}
 
       {/* Routes used for fr language */}
       {/* <Route path={ROUTE_STATIC_LEGAL_FR} component={LegalPage} />
@@ -225,11 +229,11 @@ export const Routes: FC = () => {
       <Route path={ROUTE_STATIC_CONTACT_DE} component={Contact} />
       <Route path={ROUTE_STATIC_A11Y_DE} component={Accessibility} /> */}
 
-      {/* <Route path={ROUTE_STATIC_NOTFOUND} component={NotFoundPage} /> */}
+      <Route path={ROUTE_STATIC_NOTFOUND} component={NotFoundPage} />
       <Redirect exact path="/" to={getHomeLink(country || DEFAULT_COUNTRY)} />
-      {/* <Redirect path={ROUTE_EXPLORE_ROOT} to={ROUTE_EXPLORE_FIRST_PAGE} /> */}
+      <Redirect path={ROUTE_EXPLORE_ROOT} to={ROUTE_EXPLORE_FIRST_PAGE} />
 
-      {/* <Route component={NotFoundPage} /> */}
+      <Route component={NotFoundPage} />
     </Switch>
   );
 };

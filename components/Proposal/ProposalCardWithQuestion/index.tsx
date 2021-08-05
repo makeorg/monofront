@@ -8,7 +8,7 @@ import {
 import { OrganisationsVote } from '@make.org/components/Vote/Organisation';
 import {
   ProposalCardStyle,
-  ProposalStyle,
+  ProposalLinkElementStyle,
   ProposalInnerStyle,
 } from '@make.org/ui/elements/ProposalCardElements';
 import { isInProgress } from '@make.org/utils/helpers/date';
@@ -65,9 +65,12 @@ export const ProposalCardWithQuestion: React.FC<Props> = ({
           <ScreenReaderItemStyle>
             {i18n.t('proposal_card.content')}
           </ScreenReaderItemStyle>
-          <ProposalStyle to={proposalLink} lang={proposal.question.language}>
+          <ProposalLinkElementStyle
+            to={proposalLink}
+            lang={proposal.question.language}
+          >
             {proposal.content}
-          </ProposalStyle>
+          </ProposalLinkElementStyle>
           {canVote ? (
             <Vote
               proposal={proposal}

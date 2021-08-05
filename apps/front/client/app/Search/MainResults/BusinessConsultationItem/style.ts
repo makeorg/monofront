@@ -5,7 +5,6 @@ import { Elements } from '@make.org/assets/vars/Elements';
 import { DefaultPadding, Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
-import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { SvgAngleArrowRight } from '@make.org/ui/Svg/elements';
 import { Link, LinkProps } from 'react-router-dom';
 
@@ -15,10 +14,12 @@ export const SearchResultsConsultationListStyle = styled(UnstyledListStyle)`
   }
 `;
 
-export const BusinessConsultationsItemWrapperStyle = styled(ParagraphStyle)`
+export const BusinessConsultationsItemWrapperStyle = styled.div`
   display: flex;
   text-decoration: none;
   font-family: ${MakeFonts.CircularStandardBold};
+  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  color: ${color.greyDark};
   width: 100%;
 `;
 

@@ -3,7 +3,7 @@ import i18n from 'i18next';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { ProposalType } from '@make.org/types';
 import {
-  ProposalStyle,
+  ProposalLinkElementStyle,
   ProposalInnerStyle,
 } from '@make.org/ui/elements/ProposalCardElements';
 import { DeprecatedProposalAuthor } from '@make.org/components/Proposal/DeprecatedAuthor';
@@ -48,7 +48,7 @@ export const PopularProposalCard: FC<Props> = ({
         <ScreenReaderItemStyle>
           {i18n.t('proposal_card.content')}
         </ScreenReaderItemStyle>
-        <ProposalStyle
+        <ProposalLinkElementStyle
           id={`popular_proposal_content_${position}`}
           to={getProposalLink(
             country,
@@ -59,7 +59,7 @@ export const PopularProposalCard: FC<Props> = ({
           lang={proposal.question.language}
         >
           {proposal.content}
-        </ProposalStyle>
+        </ProposalLinkElementStyle>
         {canVote ? (
           <Vote
             proposal={proposal}
