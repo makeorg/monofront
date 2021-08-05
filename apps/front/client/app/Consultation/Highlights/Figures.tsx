@@ -42,24 +42,24 @@ export const Figures: FC = () => {
           dateTime={
             resultsPage
               ? DateHelper.localizedAndFormattedDate(
-                  question.endDate || '',
-                  DATE.DATE_CAPITALIZE_L_FORMAT
-                ) || ''
+                  question.endDate,
+                  DATE.P_FORMAT
+                )
               : DateHelper.localizedAndFormattedDate(
-                  question.startDate || '',
-                  DATE.DATE_CAPITALIZE_L_FORMAT
-                ) || ''
+                  question.startDate,
+                  DATE.P_FORMAT
+                )
           }
         >
           {resultsPage
             ? question &&
               DateHelper.localizedAndFormattedDate(
-                question.endDate || '',
-                DATE.DATE_LOWERCASE_LL_FORMAT
+                question.endDate,
+                DATE.PP_FORMAT
               )
             : DateHelper.localizedAndFormattedDate(
-                question.startDate || '',
-                DATE.DATE_LOWERCASE_LL_FORMAT
+                question.startDate,
+                DATE.PP_FORMAT
               )}
         </FiguresValueStyle>
       </FiguresListItemStyle>

@@ -1,6 +1,6 @@
 import { HomeQuestionType, QuestionTimelineType } from '@make.org/types';
 import MockDate from 'mockdate';
-import { DATE_CAPITALIZE_LL_FORMAT } from '@make.org/utils/constants/date';
+import { DATE_PPP_FORMAT } from '@make.org/utils/constants/date';
 import {
   DateHelper,
   getDateOfBirthFromAge,
@@ -89,7 +89,7 @@ describe('Date Helper', () => {
       expect(
         DateHelper.localizedAndFormattedDate(
           '2018-10-25T12:45:25.752Z',
-          DATE_CAPITALIZE_LL_FORMAT
+          DATE_PPP_FORMAT
         )
       ).toBe('25 octobre 2018');
     });
@@ -99,14 +99,14 @@ describe('Date Helper', () => {
       expect(
         DateHelper.localizedAndFormattedDate(
           '2018-10-24T12:45:25.752Z',
-          DATE_CAPITALIZE_LL_FORMAT
+          DATE_PPP_FORMAT
         )
       ).toBe('October 24, 2018');
     });
 
     it('localizedAndFormattedDate with invalid date', () => {
       expect(
-        DateHelper.localizedAndFormattedDate('foo', DATE_CAPITALIZE_LL_FORMAT)
+        DateHelper.localizedAndFormattedDate('foo', DATE_PPP_FORMAT)
       ).toBeNull();
     });
 

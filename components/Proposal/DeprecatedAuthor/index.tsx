@@ -66,7 +66,7 @@ export const DeprecatedProposalAuthor: React.FC<Props> = ({
             <time dateTime={proposal.createdAt}>
               {DateHelper.localizedAndFormattedDate(
                 proposal.createdAt,
-                DATE.DATE_CAPITALIZE_LL_FORMAT
+                DATE.PPP_FORMAT
               )}
             </time>
           </>

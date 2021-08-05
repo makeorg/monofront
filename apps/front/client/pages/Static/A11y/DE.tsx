@@ -193,12 +193,12 @@ export const A11yDE: FC = () => {
               Diese Erklärung wurde am{' '}
               {DateHelper.localizedAndFormattedDate(
                 A11Y_DATE,
-                DATE.DATE_CAPITALIZE_LL_FORMAT
+                DATE.PPP_FORMAT
               )}{' '}
               erstellt. Sie wurde am{' '}
               {DateHelper.localizedAndFormattedDate(
                 A11Y_DATE,
-                DATE.DATE_CAPITALIZE_LL_FORMAT
+                DATE.PPP_FORMAT
               )}{' '}
               aktualisiert.
             </StaticParagraphStyle>

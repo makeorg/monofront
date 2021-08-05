@@ -164,11 +164,11 @@ export const ConsultationItem: FC<Props> = ({
           {i18n.t('browse.date', {
             startDate: DateHelper.localizedAndFormattedDate(
               startDate,
-              DATE.DATE_CAPITALIZE_LL_FORMAT
+              DATE.PPP_FORMAT
             ),
             endDate: DateHelper.localizedAndFormattedDate(
               endDate,
-              DATE.DATE_CAPITALIZE_LL_FORMAT
+              DATE.PPP_FORMAT
             ),
           })}
         </ConsultationItemStyle>

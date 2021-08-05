@@ -92,14 +92,14 @@ export class DateHelperSingleton {
     return this.languageValue;
   }
 
-  localizedAndFormattedDate(date?: string, format?: string): string | null {
+  localizedAndFormattedDate(date?: string, format?: string): string {
     if (!date || !format) {
-      return null;
+      return '';
     }
 
     const objectDate = new Date(date);
     if (Number.isNaN(objectDate.getMonth())) {
-      return null;
+      return '';
     }
     const locale = locales[this.languageValue];
     return formatDate(objectDate, format, {

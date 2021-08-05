@@ -30,7 +30,7 @@ export const DataEN: FC = () => (
           - Dated{' '}
           {DateHelper.localizedAndFormattedDate(
             PRIVACY_POLICY_DATE,
-            DATE.DATE_CAPITALIZE_LL_FORMAT
+            DATE.PPP_FORMAT
           )}{' '}
           -
         </StaticTitleExtra>

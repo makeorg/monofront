@@ -40,11 +40,7 @@ export const TermsOfUseDE: FC = () => {
           <>MAKE.ORG NUTZUNGSBEDINGUNGEN</>
           <StaticTitleExtra>
             - Stand:{' '}
-            {DateHelper.localizedAndFormattedDate(
-              GTU_DATE,
-              DATE.DATE_CAPITALIZE_LL_FORMAT
-            )}{' '}
-            -
+            {DateHelper.localizedAndFormattedDate(GTU_DATE, DATE.PPP_FORMAT)} -
           </StaticTitleExtra>
         </StaticSecondLevelTitleStyle>
         <StaticParagraphStyle>
@@ -1164,11 +1160,8 @@ export const TermsOfUseDE: FC = () => {
             </StaticThirdLevelTitleStyle>
             <StaticParagraphStyle>
               Diese Bedingungen sind am{' '}
-              {DateHelper.localizedAndFormattedDate(
-                GTU_DATE,
-                DATE.DATE_CAPITALIZE_L_FORMAT
-              )}{' '}
-              in Kraft getreten.
+              {DateHelper.localizedAndFormattedDate(GTU_DATE, DATE.P_FORMAT)} in
+              Kraft getreten.
             </StaticParagraphStyle>
           </StaticPrimaryOrderedListItemStyle>
         </StaticPrimaryOrderedListStyle>

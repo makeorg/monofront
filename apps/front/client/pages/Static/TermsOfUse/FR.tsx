@@ -40,11 +40,7 @@ export const TermsOfUseFR: FC = () => {
           Conditions d’utilisation de Make.org
           <StaticTitleExtra>
             - en date du{' '}
-            {DateHelper.localizedAndFormattedDate(
-              GTU_DATE,
-              DATE.DATE_CAPITALIZE_LL_FORMAT
-            )}{' '}
-            -
+            {DateHelper.localizedAndFormattedDate(GTU_DATE, DATE.PPP_FORMAT)} -
           </StaticTitleExtra>
         </StaticSecondLevelTitleStyle>
         <StaticParagraphStyle>
@@ -1162,11 +1158,7 @@ export const TermsOfUseFR: FC = () => {
             </StaticThirdLevelTitleStyle>
             <StaticParagraphStyle>
               Les présentes conditions générales sont entrées en vigueur le{' '}
-              {DateHelper.localizedAndFormattedDate(
-                GTU_DATE,
-                DATE.DATE_CAPITALIZE_L_FORMAT
-              )}
-              .
+              {DateHelper.localizedAndFormattedDate(GTU_DATE, DATE.P_FORMAT)}.
             </StaticParagraphStyle>
           </StaticPrimaryOrderedListItemStyle>
         </StaticPrimaryOrderedListStyle>

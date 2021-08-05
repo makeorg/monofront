@@ -73,16 +73,16 @@ export const Timeline: FC = () => {
     ? i18n.t('consultation.timeline.consultation_from_to', {
         startDate: DateHelper.localizedAndFormattedDate(
           question.startDate,
-          DATE.DATE_DD_MMMM_FORMAT
+          DATE.D_MMMM_FORMAT
         ),
         endDate: DateHelper.localizedAndFormattedDate(
           question.endDate,
-          DATE.DATE_DD_MMMM_YYYY_FORMAT
+          DATE.D_MMMM_YYYY_FORMAT
         ),
       })
     : DateHelper.localizedAndFormattedDate(
         question.startDate,
-        DATE.DATE_MMMM_YYYY_FORMAT
+        DATE.MMMM_YYYY_FORMAT
       );
   const timelineSteps = buildTimeline(timeline);
 

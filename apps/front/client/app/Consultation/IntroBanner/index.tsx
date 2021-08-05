@@ -56,14 +56,14 @@ export const IntroBanner: FC<Props> = ({ question }) =>
           <time dateTime={question.startDate}>
             {DateHelper.localizedAndFormattedDate(
               question.startDate,
-              DATE.DATE_CAPITALIZE_LL_FORMAT
+              DATE.PPP_FORMAT
             )}
           </time>
           {i18n.t('consultation.tabs.to')}
           <time dateTime={question.endDate}>
             {DateHelper.localizedAndFormattedDate(
               question.endDate,
-              DATE.DATE_CAPITALIZE_LL_FORMAT
+              DATE.PPP_FORMAT
             )}
           </time>
         </DefaultBannerTimeStyle>

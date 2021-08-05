@@ -40,11 +40,7 @@ export const TermsOfUseEN: FC = () => {
           <>MAKE.ORG terms of service</>
           <StaticTitleExtra>
             - dated{' '}
-            {DateHelper.localizedAndFormattedDate(
-              GTU_DATE,
-              DATE.DATE_CAPITALIZE_LL_FORMAT
-            )}{' '}
-            -
+            {DateHelper.localizedAndFormattedDate(GTU_DATE, DATE.PPP_FORMAT)} -
           </StaticTitleExtra>
         </StaticSecondLevelTitleStyle>
         <StaticParagraphStyle>
@@ -1156,11 +1152,7 @@ export const TermsOfUseEN: FC = () => {
             </StaticThirdLevelTitleStyle>
             <StaticParagraphStyle>
               The present terms of service came into force on{' '}
-              {DateHelper.localizedAndFormattedDate(
-                GTU_DATE,
-                DATE.DATE_CAPITALIZE_L_FORMAT
-              )}
-              .
+              {DateHelper.localizedAndFormattedDate(GTU_DATE, DATE.P_FORMAT)}.
             </StaticParagraphStyle>
           </StaticPrimaryOrderedListItemStyle>
         </StaticPrimaryOrderedListStyle>

@@ -87,13 +87,13 @@ export const ProposalsList: FC<Props> = ({ isLoading, proposals }) => {
                 dateTime={
                   DateHelper.localizedAndFormattedDate(
                     proposal.createdAt,
-                    DATE.DATE_CAPITALIZE_L_FORMAT
+                    DATE.P_FORMAT
                   ) || ''
                 }
               >
                 {DateHelper.localizedAndFormattedDate(
                   proposal.createdAt,
-                  DATE.DATE_LOWERCASE_LL_FORMAT
+                  DATE.PP_FORMAT
                 )}
               </ProposalDateStyle>
             </ProposalCardStyle>

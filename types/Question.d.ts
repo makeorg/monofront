@@ -165,8 +165,8 @@ export type QuestionType = {
   countries: string[];
   language: string;
   allowedSources: string[];
-  startDate?: string;
-  endDate?: string;
+  startDate: string;
+  endDate: string;
   landingSequenceId: string;
   canPropose: boolean;
   operationKind: 'PUBLIC_CONSULTATION' | 'PRIVATE_CONSULTATION' | 'GREAT_CAUSE';
