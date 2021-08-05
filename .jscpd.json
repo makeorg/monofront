@@ -1,5 +1,5 @@
 {
-  "threshold": 0.2,
+  "threshold": 0.25,
   "reporters": ["html", "console"],
   "ignore": ["**/webpack.config.js", "**/webpack/**", "**/*.sh", "**/node_modules/**","**/__snapshots__/**", "**/__fixtures__/**", "**/*.spec.ts", "**/spec.ts", "**/i18n/*.json", "**/*.svg", "**/Deprecated/*.ts", "**/Deprecated/**/index.ts", "**/coverage/**", "**/reports/**"],
   "absolute": true,

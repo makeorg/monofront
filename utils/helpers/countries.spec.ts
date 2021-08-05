@@ -99,7 +99,7 @@ describe('Countries helper', () => {
     });
 
     it('Unknown DPA', () => {
-      expect(getCountryDPA('CN')).toEqual(null);
+      expect(getCountryDPA('CN')).toEqual({ name: '', link: '#' });
     });
   });
 });

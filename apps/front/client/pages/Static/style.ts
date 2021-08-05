@@ -118,6 +118,11 @@ export const StaticParagraphStyle = styled.p`
   }
 `;
 
+export const StaticPhoneLinkStyle = styled.a`
+  text-decoration: none;
+  color: ${color.greyDark};
+`;
+
 export const StaticStrongStyle = styled.strong`
   font-display: ${MakeFonts.CircularStandardBold};
 `;

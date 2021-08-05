@@ -97,7 +97,7 @@ export const getLanguageFromParams = (
 
 export const getCountryDPA = (
   country: string
-): { name: string; link: string } | null => {
+): { name: string; link: string } => {
   switch (country) {
     case 'AT':
       return {
@@ -130,7 +130,10 @@ export const getCountryDPA = (
         link: 'https://www.edoeb.admin.ch/edoeb/en/home.html',
       };
     case 'CN':
-      return null;
+      return {
+        name: '',
+        link: '#',
+      };
     case 'CY':
       return {
         name: 'Office of the Commissioner for Personal Data Protection',
@@ -197,7 +200,10 @@ export const getCountryDPA = (
         link: 'https://forms.dataprotection.ie/contact',
       };
     case 'IN':
-      return null;
+      return {
+        name: '',
+        link: '#',
+      };
     case 'IT':
       return {
         name: 'Italian Data Protection Authority',
@@ -279,6 +285,9 @@ export const getCountryDPA = (
         link: 'https://www.ftc.gov/tips-advice/business-center/privacy-and-security/privacy-shield',
       };
     default:
-      return null;
+      return {
+        name: '',
+        link: '#',
+      };
   }
 };
