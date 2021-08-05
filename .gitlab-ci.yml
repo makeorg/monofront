@@ -2,7 +2,6 @@ image: makeorg/docker-arch-docker:latest
 
 variables: &global_variables
   IMAGE: "make-front"
-  NODE_IMAGE: "node:12.22-alpine"
   YARN_VERSION: "1.22.5"
 
 cache:
@@ -13,37 +12,29 @@ cache:
 
 stages:
   - check
-  
-lint:
+
+.check:
   stage: check
-  except: 
+  image: "node:12.22-alpine"
+  except:
     - production
-  image: $NODE_IMAGE
   before_script:
-    - export YARN_VERSION="$YARN_VERSION"
-  script:
+    - node -v
     - yarn install --check-files
+
+lint:
+  extends: .check
+  script:
     - yarn eslint ./apps ./ui ./components ./utils ./api ./store
 
 check-types:
-  stage: check
-  except: 
-    - production
-  image: $NODE_IMAGE
-  before_script:
-    - export YARN_VERSION="$YARN_VERSION"
+  extends: .check
   script:
-    - yarn install --check-files
     - yarn tsc --noEmit
 
 test:
-  stage: check
-  image: $NODE_IMAGE
-  before_script:
-    - export YARN_VERSION="$YARN_VERSION"
-  script:    
-    - node -v
-    - yarn install --check-files
+  extends: .check
+  script:
     - yarn jest --coverage
   artifacts:
     expire_in: 1 week
@@ -52,18 +43,11 @@ test:
       - coverage
 
 jscpd:
-  stage: check
-  except: 
-    - production
-  image: $NODE_IMAGE
-  before_script:
-    - export YARN_VERSION="$YARN_VERSION"
+  extends: .check
   script:
-    - yarn install --check-files
     - yarn jscpd
   artifacts:
     expire_in: 1 week
     when: always
     paths:
       - reports
-  
