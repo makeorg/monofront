@@ -54,8 +54,8 @@ export const FooterItemStyle = styled.li`
     content: '.';
     margin: 0 5px;
   }
-  &:last-child :after,
-  &.no-bullet :after {
+  &:last-child:after,
+  &.no-bullet:after {
     display: none;
   }
   color: ${color.greyDark};

@@ -73,7 +73,6 @@ export const FooterFR: React.FC = () => {
             )}
             <FooterItemStyle>
               <FooterItemHTMLLinkStyle
-                as="a"
                 target="_blank"
                 rel="noopener"
                 href={URL.PRESS_DETAILS_LINK}
@@ -98,7 +97,6 @@ export const FooterFR: React.FC = () => {
             )}
             <FooterItemStyle>
               <FooterItemHTMLLinkStyle
-                as="a"
                 target="_blank"
                 rel="noopener"
                 href={URL.DOTATION_FUNDS_LINK}
