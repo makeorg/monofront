@@ -1,14 +1,14 @@
-export const addAriaHiddenAndNegativeTab = (className: string): any => {
+export const addAriaHiddenAndNegativeTab = (className: string): Element[] => {
   /** get elements by className and tranform the NodeList in Array */
   const elementsCollection = document.querySelectorAll(`.${className}`);
   const elementsArray = Array.from(elementsCollection);
 
   if (!elementsCollection || elementsArray.length === 0) {
-    return undefined;
+    return [];
   }
 
   /** map to add interractiveChildren in an Array, set aria-hidden on element to avoid screen reading */
-  const interractiveChildrenArray: any = elementsArray.map(element => {
+  const interractiveChildrenArray = elementsArray.map(element => {
     const childrenCollection = element.querySelectorAll('a, input, button');
     const childrenArray = Array.from(childrenCollection);
 
@@ -22,33 +22,33 @@ export const addAriaHiddenAndNegativeTab = (className: string): any => {
   });
 
   if (!interractiveChildrenArray || interractiveChildrenArray.length === 0) {
-    return undefined;
+    return [];
   }
 
   /** flat interractiveChildren Array, and set tab index on children to avoid focus */
-  const interractiveChildren: any = interractiveChildrenArray.flanyat();
+  const interractiveChildren = interractiveChildrenArray.flat();
 
   return interractiveChildren.map((interractiveChild: any) =>
     interractiveChild.setAttribute('tabindex', '-1')
   );
 };
 
-export const removeAriaHiddenAndNegativeTab = (className: string) => {
+export const removeAriaHiddenAndNegativeTab = (className: string): void => {
   /** get elements by className and tranform the NodeList in Array */
   const elementsCollection = document.querySelectorAll(`.${className}`);
   const elementsArray = Array.from(elementsCollection);
 
   if (!elementsCollection || elementsArray.length === 0) {
-    return undefined;
+    return;
   }
 
   /** map to add interractiveChildren in an Array, remove aria-hidden on element to avoid screen reading */
-  const interractiveChildrenArray: any = elementsArray.map(element => {
+  const interractiveChildrenArray = elementsArray.map(element => {
     const childrenCollection = element.querySelectorAll('a, input, button');
     const childrenArray = Array.from(childrenCollection);
 
     if (!childrenCollection || childrenArray.length === 0) {
-      return undefined;
+      return [];
     }
 
     element.removeAttribute('aria-hidden');
@@ -57,51 +57,39 @@ export const removeAriaHiddenAndNegativeTab = (className: string) => {
   });
 
   if (!interractiveChildrenArray || interractiveChildrenArray.length === 0) {
-    return undefined;
+    return;
   }
 
-  const interractiveChildren: any = interractiveChildrenArray.flat();
+  const interractiveChildren: Element[] = interractiveChildrenArray.flat();
 
   /** flat interractiveChildren Array, and set tab index on children to avoid focus */
-  return interractiveChildren.map((interractiveChild: any) =>
+  interractiveChildren.map(interractiveChild =>
     interractiveChild.removeAttribute('tabindex')
   );
 };
 
-export const addAriaHiddenByClass = (
-  className: string
-): HTMLElement | undefined => {
+export const addAriaHiddenByClass = (className: string): void => {
   /** get elements by className and tranform the NodeList in Array */
   const elementsCollection = document.querySelectorAll(`.${className}`);
   const elementsArray = Array.from(elementsCollection);
 
   if (!elementsCollection || elementsArray.length === 0) {
-    return undefined;
+    return;
   }
 
   /** map on element to set animation and aria-hidden */
-  const elementWithAttribute: any = elementsArray.map(element =>
-    element.setAttribute('aria-hidden', 'true')
-  );
-
-  return elementWithAttribute;
+  elementsArray.map(element => element.setAttribute('aria-hidden', 'true'));
 };
 
-export const removeAriaHiddenByClass = (
-  className: string
-): HTMLElement | undefined => {
+export const removeAriaHiddenByClass = (className: string): void => {
   /** get elements by className and tranform the NodeList in Array */
   const elementsCollection = document.querySelectorAll(`.${className}`);
   const elementsArray = Array.from(elementsCollection);
 
   if (!elementsCollection || elementsArray.length === 0) {
-    return undefined;
+    return;
   }
 
   /** map on element to remove animation and aria-hidden */
-  const elementWithoutAttribute: any = elementsArray.map(element =>
-    element.removeAttribute('aria-hidden')
-  );
-
-  return elementWithoutAttribute;
+  elementsArray.map(element => element.removeAttribute('aria-hidden'));
 };
