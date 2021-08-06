@@ -72,6 +72,8 @@ describe('getQuestionFromState', () => {
     timeline: {},
     controversyCount: 0,
     topProposalCount: 0,
+    startDate: '',
+    endDate: '',
   };
 
   const state = {
