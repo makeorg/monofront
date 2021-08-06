@@ -1,3 +1,5 @@
+import { apiClient } from '@make.org/api/ApiService/ApiService.client';
+
 /** Default prefix matching custom data params in query params */
 const paramPrefix = 'cs_';
 
@@ -83,4 +85,10 @@ export const setDataFromQueryParams = (
 ): void => {
   const dataFromQueryParams = getCustomDataFromQueryParams(queryParams);
   saveAll(dataFromQueryParams);
+};
+
+export const updateRequestContextCustomData = (
+  customData: Record<string, string>
+): void => {
+  apiClient.customData = formatdDataForHeader(customData);
 };

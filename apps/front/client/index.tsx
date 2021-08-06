@@ -14,18 +14,19 @@ import { trackingParamsService } from '@make.org/utils/services/TrackingParamsSe
 import { DateHelper } from '@make.org/utils/helpers/date';
 import { detected as adBlockerDetected } from 'adblockdetect';
 import { track } from '@make.org/utils/services/TrackingService';
-import { updateRequestContextCustomData } from '@make.org/store/middleware/requestContext';
-import { updateTrackingQuestionParam } from '@make.org/store/middleware/question';
+import {
+  updateRequestContextCustomData,
+  getAll,
+  setDataFromQueryParams,
+} from '@make.org/utils/helpers/customData';
+import { updateTrackingQuestionParam } from '@make.org/utils/helpers/question';
 import i18n from 'i18next';
 import { initialState } from '@make.org/store/initialState';
 import { USER_PREFERENCES_COOKIE } from '@make.org/utils/constants/cookies';
 import { getRouteNoCookies } from '@make.org/utils/routes';
 import ContextState from '@make.org/store';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
-import {
-  getAll,
-  setDataFromQueryParams,
-} from '@make.org/utils/helpers/customData';
+
 import { StateRoot } from '@make.org/types';
 import { initTrackersFromPreferences } from '@make.org/utils/helpers/cookies';
 import { CountryListener } from './app/CountryListener';
@@ -35,6 +36,7 @@ import { NoCookies } from './pages/Static/NoCookies';
 import { ErrorBoundary, ServiceErrorHandler } from './app/Error';
 import { LanguageListener } from './app/LanguageListener';
 import { initDevState } from './helper/initDevState';
+import { translationRessources } from '../i18n';
 
 declare global {
   interface Window {
@@ -93,9 +95,6 @@ const initApp = async (state: StateRoot) => {
 
   // Set in session storage some keys from query params
   setDataFromQueryParams(queryParams);
-  const {
-    appConfig: { translations },
-  } = state;
 
   const store = {
     ...state,
@@ -117,7 +116,7 @@ const initApp = async (state: StateRoot) => {
     },
     debug: env.isDev(),
     lng: language || DEFAULT_LANGUAGE,
-    resources: translations,
+    resources: translationRessources,
   });
 
   const cookies = new Cookies();

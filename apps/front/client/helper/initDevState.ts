@@ -1,12 +1,13 @@
 import { StateRoot } from '@make.org/types';
-import fr from '../../i18n/fr.json';
 
 export const initDevState = (initialState: StateRoot): StateRoot => ({
   ...initialState,
   appConfig: {
     ...initialState.appConfig,
     source: 'core',
-    translations: { fr: { translation: fr } },
+    country: 'FR',
+    language: 'fr',
+    device: 'DESKTOP',
     countriesWithConsultations: [
       'AT',
       'BE',

@@ -6,8 +6,11 @@ import { Spinner } from '@make.org/ui/components/Loading/Spinner';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { QuestionType } from '@make.org/types/Question';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
-import { updateTrackingQuestionParam } from '@make.org/store/middleware/question';
-import { getQuestionFromState } from '@make.org/utils/helpers/question';
+import {
+  updateTrackingQuestionParam,
+  getQuestionFromState,
+} from '@make.org/utils/helpers/question';
+
 import {
   removeCurrentQuestionSlug,
   setCurrentQuestionSlug,

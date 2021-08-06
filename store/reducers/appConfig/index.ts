@@ -1,10 +1,13 @@
 import {
+  DEFAULT_COUNTRY,
+  DEFAULT_LANGUAGE,
   DESKTOP_DEVICE,
   MOBILE_DEVICE,
 } from '@make.org/utils/constants/config';
 import i18n from 'i18next';
 import { TRANSLATION_NAMESPACE } from '@make.org/utils/i18n/constants';
 import { Reducer, ReducerAction, StateConfig } from '@make.org/types';
+import { setCountry, setLanguage } from '@make.org/utils/helpers/countries';
 import {
   SET_COUNTRY_CONFIGURATION,
   SET_LANGUAGE_CONFIGURATION,
@@ -14,13 +17,13 @@ import {
 
 // TO DO
 export const appConfig_state: StateConfig = {
-  source: 'widget',
-  language: 'fr',
-  country: 'FR',
+  source: '',
+  language: DEFAULT_LANGUAGE,
+  country: DEFAULT_COUNTRY,
   translations: {},
   queryParams: {},
   countriesWithConsultations: [],
-  device: 'DESKTOP',
+  device: '',
   privacyPolicy: '',
   customData: {},
 };
@@ -31,6 +34,7 @@ export const appConfig_reducer: Reducer = (
 ) => {
   switch (action.type) {
     case SET_LANGUAGE_CONFIGURATION:
+      setLanguage(action.payload.language);
       return {
         ...state,
         language: action.payload.language,
@@ -40,6 +44,8 @@ export const appConfig_reducer: Reducer = (
         ),
       };
     case SET_COUNTRY_CONFIGURATION:
+      setCountry(action.payload.country);
+      setLanguage(action.payload.language, action.payload.country);
       return {
         ...state,
         country: action.payload.country,

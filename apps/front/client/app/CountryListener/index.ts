@@ -26,12 +26,12 @@ export const CountryListener = (): null => {
   useEffect(
     () => {
       if (upperCountry) {
-        dispatch(
+        return dispatch(
           setCountryCode(upperCountry, getLanguageFromCountryCode(upperCountry))
         );
-      } else {
-        dispatch(setCountryCode(DEFAULT_COUNTRY, DEFAULT_LANGUAGE));
       }
+
+      return dispatch(setCountryCode(DEFAULT_COUNTRY, DEFAULT_LANGUAGE));
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [upperCountry]

@@ -1,4 +1,4 @@
-import { updateTrackingQuestionParam } from '@make.org/store/middleware/question';
+import { updateTrackingQuestionParam } from '@make.org/utils/helpers/question';
 import { Request, Response } from 'express';
 import { initialState } from '@make.org/store/initialState';
 import { getLanguageFromCountryCode } from '@make.org/utils/helpers/countries';

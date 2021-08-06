@@ -1,4 +1,5 @@
 import { PartnerType, QuestionType, StateQuestions } from '@make.org/types';
+import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
 
 const GREAT_CAUSE = 'GREAT_CAUSE';
 
@@ -37,4 +38,14 @@ export const getQuestionFromState = (
   }
 
   return questionsInState[slugFoundInState].question;
+};
+
+export const updateTrackingQuestionParam = (question: QuestionType): void => {
+  trackingParamsService.questionId = question.questionId;
+  trackingParamsService.questionSlug = question.slug;
+};
+
+export const clearQuestionParams = (): void => {
+  trackingParamsService.questionId = '';
+  trackingParamsService.questionSlug = '';
 };

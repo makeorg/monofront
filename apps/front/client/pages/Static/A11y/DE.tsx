@@ -191,15 +191,9 @@ export const A11yDE: FC = () => {
             </StaticThirdLevelTitleStyle>
             <StaticParagraphStyle>
               Diese Erklärung wurde am{' '}
-              {DateHelper.localizedAndFormattedDate(
-                A11Y_DATE,
-                DATE.PPP_FORMAT
-              )}{' '}
+              {DateHelper.localizedAndFormattedDate(A11Y_DATE, DATE.PPP_FORMAT)}{' '}
               erstellt. Sie wurde am{' '}
-              {DateHelper.localizedAndFormattedDate(
-                A11Y_DATE,
-                DATE.PPP_FORMAT
-              )}{' '}
+              {DateHelper.localizedAndFormattedDate(A11Y_DATE, DATE.PPP_FORMAT)}{' '}
               aktualisiert.
             </StaticParagraphStyle>
             <StaticFourthLevelTitleStyle>

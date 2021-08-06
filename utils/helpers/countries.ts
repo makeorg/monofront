@@ -52,7 +52,6 @@ export const setCountry = (country: string): void => {
 
 export const setLanguage = (
   language: keyof typeof LocaleType,
-  country: string,
   cloneI18nInstance?: boolean
 ): void => {
   if (cloneI18nInstance) {
@@ -60,9 +59,6 @@ export const setLanguage = (
   }
   i18n.changeLanguage(language || DEFAULT_LANGUAGE);
   DateHelper.language = language || DEFAULT_LANGUAGE;
-  if (languageStorage.isAvailable()) {
-    languageStorage.set(language || DEFAULT_LANGUAGE, country);
-  }
 };
 
 export const getCountryWithConsultations = (

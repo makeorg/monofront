@@ -3,7 +3,6 @@ import {
   getLanguageFromCountryCode,
   setLanguage,
 } from '@make.org/utils/helpers/countries';
-import { LocaleType } from '@make.org/types/enums';
 
 export const getCountryFromRequest = (req: Request): string => {
   const { country } = req.params;
@@ -29,7 +28,7 @@ export const countryLanguageMiddleware = (
 
   req.params.country = formattedCountry;
   req.params.language = language;
-  setLanguage(language, country, true);
+  setLanguage(language, true);
 
   return next();
 };

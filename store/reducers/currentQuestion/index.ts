@@ -1,4 +1,5 @@
 import { Reducer, ReducerAction } from '@make.org/types';
+import { clearQuestionParams } from '@make.org/utils/helpers/question';
 import {
   REMOVE_CURRENT_QUESTION_SLUG,
   SET_CURRENT_QUESTION_SLUG,
@@ -9,8 +10,10 @@ export const currentQuestion_reducer: Reducer = (
   action: ReducerAction
 ): string => {
   switch (action.type) {
-    case REMOVE_CURRENT_QUESTION_SLUG:
+    case REMOVE_CURRENT_QUESTION_SLUG: {
+      clearQuestionParams();
       return '';
+    }
     case SET_CURRENT_QUESTION_SLUG:
       return action.payload.questionSlug;
     default:
