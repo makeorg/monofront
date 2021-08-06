@@ -9,7 +9,7 @@ import {
   NotFoundTitleStyle,
 } from './style';
 
-export const NotFoundPage: FC = () => (
+const NotFoundPage: FC = () => (
   <NotFoundPageContentStyle>
     <MetaTags
       title={i18n.t('meta.not_found.title')}
@@ -22,3 +22,6 @@ export const NotFoundPage: FC = () => (
     </NotFoundPageInnerStyle>
   </NotFoundPageContentStyle>
 );
+
+// default export needed for loadable component
+export default NotFoundPage; // eslint-disable-line import/no-default-export

@@ -1,5 +1,5 @@
+import { createInitialState } from '@make.org/store/initialState';
 import httpMocks from 'node-mocks-http';
-import { createInitialState } from '../../../../store/initialState';
 import { reactRender } from '../reactRender';
 import { defaultRoute } from './defaultRoute';
 

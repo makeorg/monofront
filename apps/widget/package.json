@@ -31,18 +31,6 @@
     "dev": "webpack serve --mode development --progress --hot",
     "prod": "webpack serve --mode production --progress --hot"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
     "@babel/core": "^7.14.8",
     "babel-loader": "^8.2.2",

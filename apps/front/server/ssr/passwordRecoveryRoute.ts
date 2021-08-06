@@ -1,4 +1,4 @@
-import { initialState } from '@make.org/store/initialState';
+import { createInitialState } from '@make.org/store/initialState';
 import { Request, Response } from 'express';
 import { NOTIF } from '@make.org/types/enums';
 import { UserService } from '../service/UserService';
@@ -11,6 +11,8 @@ export const passwordRecoveryRoute = async (
   res: Response
 ): Promise<any> => {
   const { resetToken, userId, country, language } = req.params;
+  const initialState = createInitialState();
+
   initialState.user = {
     ...initialState.user,
     passwordRecovery: {

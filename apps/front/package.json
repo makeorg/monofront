@@ -7,11 +7,11 @@
 				"@loadable/component": "^5.15.0",
 				"@loadable/server": "~5.15.0",
 				"@loadable/webpack-plugin": "^5.15.0",
-				"@make.org/api": "0.1.0",
+				"@make.org/api": "^0.1.0",
 				"@make.org/assets": "0.1.0",
 				"@make.org/components": "0.1.0",
 				"@make.org/store": "0.1.0",
-				"@make.org/types": "0.1.0",
+				"@make.org/types": "^0.1.0",
 				"@make.org/ui": "0.1.0",
 				"@make.org/utils": "0.1.0",
 				"@types/react-router-dom": "^5.1.8",
@@ -22,7 +22,6 @@
 				"babel-register": "^6.26.0",
 				"body-parser": "~1.19.0",
 				"compression": "~1.7.3",
-				"core-js": "^3.14.0",
 				"cors": "^2.8.5",
 				"deep-freeze": "~0.0.1",
 				"dotenv-webpack": "^7.0.3",
@@ -32,8 +31,8 @@
 				"favicons-webpack-plugin": "^5.0.2",
 				"glider-js": "^1.7.7",
 				"helmet-csp": "~3.4.0",
-				"history": "5.0.0",
-				"html-webpack-plugin": "^5.3.1",
+				"history": "^5.0.0",
+				"html-webpack-plugin": "^5.3.2",
 				"http-proxy-middleware": "^2.0.0",
 				"i18next": "^20.3.1",
 				"memory-cache": "~0.2.0",
@@ -61,29 +60,13 @@
 				"url-search-params-polyfill": "^8.1.1",
 				"uuid": "^8.3.0",
 				"webpack": "^5.46.0",
-				"webpack-dev-middleware": "^5.0.0",
-				"webpack-hot-middleware": "^2.25.0",
 				"webpack-manifest": "^1.0.8",
 				"webpack-manifest-plugin": "^3.1.1",
 				"webpack-merge": "^5.8.0",
 				"webpack-node-externals": "^3.0.0",
 				"winston": "~3.3.3"
 		},
-		"browserslist": {
-				"production": [
-						">0.2%",
-						"not dead",
-						"not op_mini all"
-				],
-				"development": [
-						"last 1 chrome version",
-						"last 1 firefox version",
-						"last 1 safari version"
-				]
-		},
 		"devDependencies": {
-				"@babel/plugin-transform-typescript": "^7.14.6",
-				"@babel/preset-typescript": "^7.14.5",
 				"@babel/register": "^7.14.5",
 				"@cypress/code-coverage": "cypress-io/code-coverage",
 				"@loadable/babel-plugin": "~5.13.2",
@@ -105,10 +88,10 @@
 				"@types/ua-parser-js": "^0.7.36",
 				"@types/universal-cookie": "^3.0.0",
 				"@types/webpack": "^5.28.0",
-				"@types/webpack-dev-middleware": "^5.0.1",
-				"@types/webpack-hot-middleware": "^2.25.5",
+				"@types/webpack-env": "^1.16.2",
 				"@wojtekmaj/enzyme-adapter-react-17": "^0.6.1",
 				"babel-loader": "^8.2.2",
+				"babel-plugin-convert-to-json": "^0.1.0",
 				"file-loader": "^6.2.0",
 				"html-validate": "4.13.1",
 				"html-webpack-inline-source-plugin": "1.0.0-beta.2",
@@ -116,11 +99,7 @@
 				"prom-client": "^13.1.0",
 				"react-is": "17.0.2",
 				"regenerator-runtime": "^0.13.7",
-				"ts-loader": "^9.2.3",
-				"ts-node": "^10.0.0",
 				"tsconfig-paths": "^3.9.0",
-				"typescript": "^4.3.5",
-				"webpack": "^5.42.1",
 				"webpack-bundle-analyzer": "^4.4.2",
 				"webpack-cli": "^4.7.2",
 				"webpack-dev-server": "^3.11.2",
@@ -129,8 +108,9 @@
 				"yargs": "^17.0.1"
 		},
 		"scripts": {
-				"dev": "webpack serve --mode development --progress --hot",
+				"dev": "sudo webpack serve --mode development --progress --hot --color --config ./webpack/dev.config.js",
 				"prod": "webpack serve --mode production --progress --hot",
-				"full": "webpack --mode development --progress --color --config ./webpack/config.babel.js"
-		}
+				"server": "pm2-runtime start ecosystem.config.js",
+				"build": "webpack --mode production --progress --color --config ./webpack/build.config.js"
+			}
 }

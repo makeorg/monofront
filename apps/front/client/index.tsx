@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom';
+import { hydrate, render } from 'react-dom';
 import React from 'react';
 import { CookiesProvider } from 'react-cookie';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
@@ -167,10 +167,10 @@ const initApp = async (state: StateRoot) => {
 
   loadableReady(() => {
     const appDom = document.getElementById('app');
-    // TODO const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate;
+    const renderMethod = module.hot ? render : hydrate;
 
     if (!cookieIsEnabled()) {
-      return ReactDOM.hydrate(
+      return hydrate(
         <HeadProvider>
           <ContextState serverState={store}>
             <BrowserRouter>
@@ -195,9 +195,7 @@ const initApp = async (state: StateRoot) => {
       );
     }
 
-    // TODO
-    // return renderMethod(
-    return ReactDOM.hydrate(
+    return renderMethod(
       <CookiesProvider>
         <HeadProvider>
           <ContextState serverState={store}>
@@ -218,7 +216,6 @@ const initApp = async (state: StateRoot) => {
 
 initApp(serverState);
 
-// TODO
-// if (module.hot) {
-//   module.hot.accept();
-// }
+if (module.hot) {
+  module.hot.accept();
+}

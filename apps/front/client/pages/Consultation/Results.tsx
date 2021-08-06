@@ -1,4 +1,5 @@
 import React, { useState, useEffect, FC } from 'react';
+import loadable from '@loadable/component';
 import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
 import { QuestionType, QuestionResultsType } from '@make.org/types';
 import i18n from 'i18next';
@@ -32,7 +33,7 @@ import { ResultCard } from '../../app/Consultation/Results/ResultCard';
 import { ResultsContact } from '../../app/Consultation/Results/Contact';
 import { ResultsSkipLinks } from '../../app/SkipLinks/Results';
 
-import { NotFoundPage } from '../NotFound';
+const NotFoundPage = loadable(() => import('../NotFound'));
 
 const ResultPage: FC = () => {
   const { state } = useAppContext();

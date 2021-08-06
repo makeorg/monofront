@@ -10,11 +10,12 @@ import { ApiServiceError } from './ApiServiceError';
 
 const HOSTNAME =
   (typeof window !== 'undefined' && window?.location?.hostname) || null;
-
 const LOCATION_PARAMS =
   (typeof window !== 'undefined' && window?.location?.search) || '';
 
-const API_URL = env.apiUrl();
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+const API_URL: string = env.apiUrl() || window.API_URL;
 
 axiosRetry(axios, {
   retries: 5,

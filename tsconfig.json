@@ -3,7 +3,8 @@
     "**/node_modules", 
     "**/spec.ts",
     "**/*.spec.ts",
-    "**/*.spec.tsx"
+    "**/*.spec.tsx",
+    "**/bin"
   ],
   "compilerOptions": {
     "baseUrl": "./types/index",

@@ -57,7 +57,7 @@ const BrowseConsultationsPage: FC = () => {
       trackDisplayBrowseResults();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [CONSULTATIONS_STATUS, SORT_ALGORITHM, params]);
+  }, [location.pathname]);
 
   return (
     <>
