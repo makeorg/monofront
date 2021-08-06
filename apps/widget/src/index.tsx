@@ -16,6 +16,7 @@ import App from './App';
 
 // TO DO
 import french from './i18n/fr.json';
+import { initDevState } from '../initDevState';
 
 declare global {
   interface Window {
@@ -23,7 +24,7 @@ declare global {
   }
 }
 
-const serverState = window.INITIAL_STATE || initialState;
+const serverState = initDevState(initialState);
 
 const initApp = (state: StateRoot) => {
   // init languages

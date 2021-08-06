@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from 'react';
+import React, { FC, useEffect } from 'react';
 import { ApiService } from '@make.org/api/ApiService';
 import { apiClient } from '@make.org/api/ApiService/ApiService.client';
 import { SEQUENCE } from '@make.org/types/enums';
@@ -14,7 +14,7 @@ import './App.css';
 
 const QUESTION_ID = '66a9230b-08cb-4f37-8ed8-aa95a8eac19a';
 
-const App: React.FC = () => {
+const App: FC = () => {
   const { dispatch, state } = useAppContext();
   const { currentQuestion, questions, appConfig } = state;
   const { language, country, source } = appConfig;
@@ -62,7 +62,7 @@ const App: React.FC = () => {
     return <div>No question yet</div>;
   }
 
-  return <Sequence sequenceKind={SEQUENCE.KIND_CONSENSUS} />;
+  return <Sequence sequenceKind={SEQUENCE.KIND_STANDARD} />;
 };
 
 export default App;
