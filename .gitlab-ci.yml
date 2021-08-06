@@ -23,7 +23,7 @@ lint:
     - export YARN_VERSION="$YARN_VERSION"
   script:
     - yarn install --check-files
-    - yarn eslint ./apps ./ui ./components ./utils ./api ./store
+    - yarn eslint ./
 
 check-types:
   stage: check

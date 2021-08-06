@@ -1,5 +1,5 @@
 #!/bin/sh
-yarn eslint ./apps ./ui ./components ./utils ./api ./store
+yarn eslint ./
 yarn tsc --noEmit
 yarn jest
 yarn jscpd

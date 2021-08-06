@@ -32,7 +32,7 @@ To launch jscpd `yarn jscpd`
 ## Prepush 
 Before push the following command will be executed `yarn prepush`
 Following commands are runned on prepush :
-  - `yarn eslint ./apps ./ui ./components ./utils ./api ./store`
+  - `yarn eslint ./`
   - `yarn tsc --noEmit`
   - `yarn test`
   - `yarn jscpd`
