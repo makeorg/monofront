@@ -13,5 +13,10 @@
     "i18next": "^20.3.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+  },
+  "browserslist": {},
+  "devDependencies": {
+    "webpack": "^5.49.0",
+    "webpack-cli": "^4.7.2"
   }
 }

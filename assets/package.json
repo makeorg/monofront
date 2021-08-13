@@ -5,9 +5,9 @@
     "sideEffects": false,
     "dependencies": {
         "@make.org/components": "0.1.0",
+        "@make.org/types": "0.1.0",
         "@make.org/ui": "0.1.0",
         "@make.org/utils": "0.1.0",
-        "@make.org/types": "0.1.0",
         "athena-design-tokens": "^0.1.7",
         "react": "^17.0.2",
         "react-test-renderer": "^17.0.2",
@@ -15,6 +15,8 @@
     },
     "devDependencies": {
         "file-loader": "^6.2.0",
-        "react-test-renderer": "^17.0.2"
+        "react-test-renderer": "^17.0.2",
+        "webpack": "^5.45.0",
+        "webpack-cli": "^4.7.2"
     }
 }

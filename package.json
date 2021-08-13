@@ -14,7 +14,7 @@
     "store"
   ],
   "scripts": {
-    "postinstall": "husky install && rm -rf .git/hooks && ln -s ../.husky .git/hooks",
+    "postinstall": "if [ -d .git ]; then husky install && rm -rf .git/hooks && ln -s ../.husky .git/hooks; fi",
     "start:widget": "yarn workspace @make.org/widget dev",
     "prod:widget": "yarn workspace @make.org/widget prod",
     "start:front": "yarn workspace @make.org/front dev",
@@ -26,6 +26,7 @@
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.15.0",
+    "babel-plugin-convert-to-json": "^0.1.0",
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
     "@make.org/api": "^0.1.0",

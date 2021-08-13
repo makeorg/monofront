@@ -62,9 +62,13 @@ module.exports = {
     compress: true,
     port: 3000,
     hot: true,
-    host: 'local.makeorg.tech',
+    host: '0.0.0.0',
     historyApiFallback: true,
     disableHostCheck: true,
     https: true,
+    watchOptions: {
+      aggregateTimeout: 500, // delay before reloading
+      poll: true, // enable polling since fsevents are not supported in docker
+    },
   },
 };

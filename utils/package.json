@@ -26,6 +26,8 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "mockdate": "^3.0.5"
+    "mockdate": "^3.0.5",
+    "webpack": "^5.49.0",
+    "webpack-cli": "^4.7.2"
   }
 }

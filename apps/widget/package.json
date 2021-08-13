@@ -33,7 +33,12 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
+    "@cypress/code-coverage": "^3.9.10",
     "babel-loader": "^8.2.2",
+    "cypress": "^7.4.0",
+    "cypress-cucumber-preprocessor": "^4.1.2",
+    "cypress-html-validate": "^1.5.1",
+    "cypress-wait-until": "^1.7.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
     "ts-loader": "^9.2.3",
