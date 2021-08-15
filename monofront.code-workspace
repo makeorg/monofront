@@ -9,6 +9,10 @@
 			"path": "api"
 		},
 		{
+			"name": "🧑🏼‍🔧 ApiMock",
+			"path": "apimock"
+		},
+		{
 			"name": "👷‍♂️ Apps",
 			"path": "apps"
 		},

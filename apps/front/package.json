@@ -112,7 +112,10 @@
 		},
 		"scripts": {
 				"dev": "webpack serve --mode development --progress --color --config ./webpack/dev.config.js",
+				"ci": "node -r dotenv/config bin/start dotenv_config_path=.env.ci",
+				"test": "node -r dotenv/config bin/start dotenv_config_path=.env.test",
 				"server": "pm2-runtime start ecosystem.config.js",
-				"build": "webpack --mode production --progress --color --config ./webpack/build.config.js"
-		}
+				"build": "webpack --mode production --progress --color --config ./webpack/build.config.js",
+				"cypress:open": "cypress open"
+			}
 }

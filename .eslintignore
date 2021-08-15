@@ -11,3 +11,5 @@ dist
 /*/*/dist
 /test/setup.tsx
 /*/*/webpack
+/apimock
+/*/*/cypress

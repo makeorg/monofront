@@ -1,14 +1,17 @@
-version: "3.7"
+version: "3.9"
 
 services:
     app_make:
+      image: appmake
       build:
         context: .
-        target: base
+        dockerfile: apps/front/Dockerfile
+        target: dev
       ports:
         - 3000:3000
         - 8888:8888
       volumes:
+        &default_volumes
         - .:/home/app
         - /home/app/node_modules
         - /home/app/apps/front/node_modules
@@ -20,7 +23,27 @@ services:
         - /home/app/utils/node_modules
         - /home/app/ui/node_modules
         - /home/app/store/node_modules
-      command: ["lerna", "run", "--scope=@make.org/front", "dev", "--stream"]
-      environment:
-        - CHOKIDAR_USEPOLLING=true # check option
-
+        - /home/app/apimock/node_modules
+        - /home/app/apps/front/dist
+  
+    app_api_mock:
+      image: appapimock
+      build:
+        context: .
+        dockerfile: apps/front/Dockerfile
+        target: apimock
+      ports:
+        - 9000:9000
+      volumes: *default_volumes
+      profiles: ["test"]
+    
+    app_make_test:
+      image: appmaketest
+      build:
+        context: .
+        dockerfile: apps/front/Dockerfile
+        target: test
+      ports:
+        - 9009:9009
+      volumes: *default_volumes
+      profiles: ["test"]

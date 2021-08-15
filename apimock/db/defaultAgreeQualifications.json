@@ -1,0 +1,17 @@
+[
+  {
+    "qualificationKey":"likeIt",
+    "count":9,
+    "hasQualified":false
+  },
+  {
+    "qualificationKey":"doable",
+    "count":11,
+    "hasQualified":false
+  },
+  {
+    "qualificationKey":"platitudeAgree",
+    "count":2,
+    "hasQualified":false
+  }
+]

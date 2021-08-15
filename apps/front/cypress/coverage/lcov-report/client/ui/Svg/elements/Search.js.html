@@ -1,0 +1,131 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for client/ui/Svg/elements/Search.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">client/ui/Svg/elements</a> Search.js</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>2/2</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/0</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>1/1</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>2/2</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-yes">172x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable react/jsx-props-no-spreading */
+import React from 'react';
+&nbsp;
+export const SvgSearch = props =&gt; (
+  &lt;svg width={20} height={20} viewBox="0 0 20 20" {...props}&gt;
+    &lt;g fill="none" fillRule="evenodd"&gt;
+      &lt;g&gt;
+        &lt;path
+          className="tofill"
+          fill="#DE1A42"
+          d="M12.384 12.395c.982-.982 1.473-2.161 1.473-3.538 0-1.376-.49-2.554-1.467-3.532-.979-.979-2.156-1.468-3.533-1.468-1.376 0-2.554.49-3.532 1.468-.979.978-1.468 2.156-1.468 3.532 0 1.377.49 2.554 1.468 3.533.978.978 2.156 1.467 3.532 1.467 1.377 0 2.552-.487 3.527-1.462zm7.187 5.748c0 .387-.14.722-.424 1.004a1.373 1.373 0 01-1.004.424c-.402 0-.737-.14-1.005-.424L13.31 15.33a7.643 7.643 0 01-4.453 1.384 7.72 7.72 0 01-3.052-.62 7.856 7.856 0 01-2.511-1.673 7.856 7.856 0 01-1.675-2.511A7.72 7.72 0 011 8.857a7.72 7.72 0 01.62-3.052 7.856 7.856 0 011.674-2.511 7.856 7.856 0 012.51-1.675A7.72 7.72 0 018.858 1a7.72 7.72 0 013.053.62 7.856 7.856 0 012.51 1.674 7.856 7.856 0 011.675 2.51 7.72 7.72 0 01.62 3.053 7.643 7.643 0 01-1.385 4.453l3.828 3.828c.276.276.413.61.413 1.005z"
+        /&gt;
+        &lt;path d="M0 0h20v20H0z" /&gt;
+      &lt;/g&gt;
+    &lt;/g&gt;
+  &lt;/svg&gt;
+);
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
+                at Fri Aug 06 2021 13:29:13 GMT+0200 (Central European Summer Time)
+            </div>
+        </div>
+        <script src="../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
+    </body>
+</html>
+    

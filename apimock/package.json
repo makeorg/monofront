@@ -1,0 +1,13 @@
+{
+  "name": "@make.org/apimock",
+  "version": "0.1.0",
+  "private": true,
+  "sideEffects": false,
+  "dependencies": {
+    "json-server": "^0.16.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+      "start": "node server.js"
+  }
+}

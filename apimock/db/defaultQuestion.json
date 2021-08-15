@@ -1,0 +1,79 @@
+{
+  "questionId":"51b6b66b-20f9-42c0-afc9-1f56ae628741",
+  "operationId":"80848845-8c7e-48ed-9fa3-48e131255d8e",
+  "wording": {
+    "title": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium",
+    "question":"dolorem ipsum quia dolor sit amet, consectetur, adipisci velit ?",
+    "description":"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id.",
+    "metas": {
+      "title":"metas title",
+      "description":"metas description",
+      "picture":"https://uploads-ssl.webflow.com/59833d390a24e50001b873d8/5ddf8ee9a73bad035e59292e_meta%20%402x.png"
+    }
+  },
+  "question":"Quis autem vel eum iure reprehenderit qui in ea voluptate velit ?",
+  "slug":"egalite-femmes-hommes",
+  "countries": ["FR"],
+  "language":"fr",
+  "allowedSources":["core"],
+  "startDate":"2019-12-03T06:00:00.000Z",
+  "endDate":"2020-01-20T17:00:00.000Z",
+  "landingSequenceId":"f7f8b8d9-cff9-46ec-befa-05014235513c",
+  "canPropose":true,
+  "operationKind":"BUSINESS_CONSULTATION",
+  "shortTitle": "shortTitle",
+  "operationTitle": "operationTitle",
+  "sequenceConfig": {
+    "introCard": {
+      "enabled":true,
+      "title":null,
+      "description":null
+    },
+    "pushProposalCard": {
+      "enabled":true
+    },
+    "finalCard": {
+      "enabled":true,
+      "withSharing":true,
+      "title":"Merci pour votre participation ! ",
+      "share":"Vous souhaitez aller plus loin pour agir ?\nInvitez vos proches et/ou votre communauté à participer",
+      "learnMoreTitle":"","learnMoreTextButton":null,
+      "linkUrl":"https://make.org/FR/consultation/egalite-femmes-hommes/CONSULTATION"
+    }
+  },
+  "aboutUrl":"https://about.make.org",
+  "partners": [
+    {
+      "name":"Le Gouvernement",
+      "logo":"https://uploads-ssl.webflow.com/59833d390a24e50001b873d8/5ddfac50a73badd0515a187b_gouvernement.svg",
+      "link":"https://make.org/FR/profile/le-gouvernement/proposals",
+      "organisation": {
+        "organisationId":"20a746c4-0f91-4dce-afad-106feb647a05",
+        "slug":"le-gouvernement"
+      },
+      "partnerKind":"FOUNDER",
+      "weight":10.0
+    }
+  ],
+  "theme": {
+    "color":"#48267f",
+    "fontColor":"#ffffff"
+  },
+  "consultationImage":null,
+  "descriptionImage":"https://assets.prod.makeorg.tech/assets/content/operations/egalite-femmes-hommes/cb0c0062-37c2-455e-af10-1e2e195a971d.png",
+  "displayResults":false,
+  "operation": {
+    "questions": [
+      
+    ]
+  },
+  "activeFeatures":["consultation-follow-us-active", "keyword-sequence"],
+  "highlights": {
+    "votesTarget": 150000,
+    "votesCount": 100000,
+    "participantsCount": 50000,
+    "proposalsCount": 1500
+  },
+  "controversyCount": 15,
+  "topProposalCount": 15
+}

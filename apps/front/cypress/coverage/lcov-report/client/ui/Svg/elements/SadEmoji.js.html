@@ -1,0 +1,158 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for client/ui/Svg/elements/SadEmoji.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">client/ui/Svg/elements</a> SadEmoji.js</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">50% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>1/2</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/0</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/1</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">50% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>1/2</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+    </div>
+    <div class='status-line medium'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable react/jsx-props-no-spreading */
+import React from 'react';
+&nbsp;
+export const SvgSadEmoji = <span class="fstat-no" title="function not covered" >pr</span>ops =&gt; (
+<span class="cstat-no" title="statement not covered" >  &lt;svg width={45} height={45} viewBox="0 0 45 45" {...props}&gt;</span>
+    &lt;defs&gt;
+      &lt;clipPath&gt;
+        &lt;path d="M0 36h36V0H0v36z" /&gt;
+      &lt;/clipPath&gt;
+    &lt;/defs&gt;
+    &lt;g transform="matrix(1.25 0 0 -1.25 0 45)"&gt;
+      &lt;path
+        d="M36 18c0-9.941-8.059-18-18-18C8.06 0 0 8.059 0 18c0 9.94 8.06 18 18 18 9.941 0 18-8.06 18-18"
+        fill="#ffcc4d"
+      /&gt;
+      &lt;path
+        d="M14 19c0-1.934-1.119-3.5-2.5-3.5S9 17.066 9 19c0 1.933 1.119 3.5 2.5 3.5S14 20.933 14 19m13 0c0-1.934-1.119-3.5-2.5-3.5S22 17.066 22 19c0 1.933 1.119 3.5 2.5 3.5S27 20.933 27 19M5.999 22.5a1 1 0 00-.799 1.6c3.262 4.35 7.616 4.4 7.8 4.4a1 1 0 00.004-2c-.155-.002-3.569-.086-6.204-3.6a1 1 0 00-.801-.4m24.002 0a.997.997 0 00-.801.4c-2.64 3.521-6.061 3.599-6.206 3.6-.55.006-.994.456-.991 1.005A.997.997 0 0023 28.5c.184 0 4.537-.05 7.8-4.4a1 1 0 00-.799-1.6M23.485 7.621c-.012.044-1.146 4.38-5.485 4.38-4.34 0-5.475-4.336-5.485-4.38a.495.495 0 01.231-.544.51.51 0 01.596.06C13.352 7.144 14.356 8 18 8c3.59 0 4.617-.83 4.656-.863a.5.5 0 01.83.484"
+        fill="#664500"
+      /&gt;
+      &lt;path
+        d="M16 5a5 5 0 00-5-5 5 5 0 00-5 5c0 2.762 4 10 5 10s5-7.238 5-10"
+        fill="#5dadec"
+      /&gt;
+    &lt;/g&gt;
+  &lt;/svg&gt;
+);
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
+                at Fri Aug 06 2021 13:29:13 GMT+0200 (Central European Summer Time)
+            </div>
+        </div>
+        <script src="../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
+    </body>
+</html>
+    

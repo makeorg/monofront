@@ -1,0 +1,522 @@
+{
+  "context": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  "key_figures": {
+      "participants": 13835,
+      "proposals": 395,
+      "votes": 42144
+  },
+  "top_ideas": [
+      {
+          "name": "Sed ut perspiciatis",
+          "ideas": [
+              {
+                  "idea": "Unde omnis iste natus error sit voluptatem accusantium doloremque",
+                  "agreement": 94,
+                  "adhesion": 13,
+                  "realistic": 26
+              },
+              {
+                  "idea": "Quae ab illo inventore veritatis",
+                  "agreement": 90,
+                  "adhesion": 13,
+                  "realistic": 24
+              },
+              {
+                  "idea": "Quasi architecto beatae vitae dicta sunt explicabo",
+                  "agreement": 89,
+                  "adhesion": 12,
+                  "realistic": 26
+              },
+              {
+                  "idea": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit",
+                  "agreement": 92,
+                  "adhesion": 11,
+                  "realistic": 26
+              }
+          ]
+      },
+      {
+          "name": "Consequuntur",
+          "ideas": [
+              {
+                  "idea": "Magni dolores eos qui ratione voluptatem sequi nesciunt",
+                  "agreement": 95,
+                  "adhesion": 15,
+                  "realistic": 25
+              }
+          ]
+      },
+      {
+          "name": "Neque porro quisquam",
+          "ideas": [
+              {
+                  "idea": "Qui dolorem ipsum quia dolor sit amet",
+                  "agreement": 92,
+                  "adhesion": 15,
+                  "realistic": 28
+              }
+          ]
+      },
+      {
+          "name": "consectetur, adipisci velit, sed quia non numquam eius ",
+          "ideas": [
+              {
+                  "idea": "modi tempora incidunt ut laboreon",
+                  "agreement": 93,
+                  "adhesion": 11,
+                  "realistic": 30
+              },
+              {
+                  "idea": "Dolore magnam aliquam quaerat voluptatem",
+                  "agreement": 90,
+                  "adhesion": 15,
+                  "realistic": 22
+              },
+              {
+                  "idea": "Ut enim ad minima veniam",
+                  "agreement": 94,
+                  "adhesion": 14,
+                  "realistic": 26
+              }
+          ]
+      }
+  ],
+  "controversials": [
+      {
+          "author": "Isabelle",
+          "content": "quis nostrum exercitationem ullam corporis suscipit laboriosam",
+          "agree": 47,
+          "disagree": 35
+      },
+      {
+          "author": "Nathalie",
+          "content": "Nisi ut aliquid ex ea commodi consequatur",
+          "agree": 33,
+          "disagree": 55
+      },
+      {
+          "author": "Samuel",
+          "content": "Quis autem vel eum iure reprehenderit qui in ea voluptate",
+          "agree": 25,
+          "disagree": 52
+      },
+      {
+          "author": "Laura",
+          "content": "Velit esse quam nihil molestiae consequatu ",
+          "agree": 31,
+          "disagree": 40
+      },
+      {
+          "author": "Amandine",
+          "content": "ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
+          "agree": 52,
+          "disagree": 39
+      },
+      {
+          "author": "Anne-laure",
+          "content": "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihi",
+          "agree": 39,
+          "disagree": 39
+      }
+  ],
+  "rejected": [],
+  "cartography": [
+      {
+          "type": "pie",
+          "unit": "percentage",
+          "name": "Thèmes cités",
+          "legend": "",
+          "data": [
+              {
+                  "label": "Lorem",
+                  "sublabel": "ipsum",
+                  "percent": 17,
+                  "color": "#4c45a5",
+                  "adjustLabel": {
+                      "textAlign": "left",
+                      "xAxis": 1.9,
+                      "yAxis": 1.8
+                  }
+              },
+              {
+                  "label": "Dolor",
+                  "sublabel": "",
+                  "percent": 13,
+                  "color": "#eb7575",
+                  "adjustLabel": {
+                      "textAlign": "left",
+                      "xAxis": 2.3
+                  }
+              },
+              {
+                  "label": "Sit amet",
+                  "sublabel": "",
+                  "percent": 13,
+                  "color": "#eeb29a",
+                  "adjustLabel": {
+                      "textAlign": "left",
+                      "xAxis": 2.3
+                  }
+              },
+              {
+                  "label": "Consectetur",
+                  "sublabel": "",
+                  "percent": 12,
+                  "color": "#ffd674",
+                  "adjustLabel": {
+                      "textAlign": "left",
+                      "xAxis": 2.2,
+                      "yAxis": 2.2
+                  }
+              },
+              {
+                  "label": "Fonctionnement",
+                  "sublabel": "des établissements",
+                  "percent": 13,
+                  "color": "#fff689",
+                  "adjustLabel": {
+                      "textAlign": "right",
+                      "xAxis": 1.8
+                  }
+              },
+              {
+                  "label": "Adipiscing",
+                  "sublabel": "",
+                  "percent": 11,
+                  "color": "#c1ebdd",
+                  "adjustLabel": {
+                      "textAlign": "right",
+                      "xAxis": 1.8
+                  }
+              },
+              {
+                  "label": "Elit",
+                  "sublabel": "Sed do eiusmod",
+                  "percent": 8,
+                  "color": "#59bad4",
+                  "adjustLabel": {
+                      "textAlign": "right",
+                      "xAxis": 1.9,
+                      "yAxis": 1.9
+                  }
+              },
+              {
+                  "label": "Tempor incididunt",
+                  "sublabel": "",
+                  "percent": 5,
+                  "color": "#5985af",
+                  "adjustLabel": {
+                      "textAlign": "right",
+                      "xAxis": 1.9,
+                      "yAxis": 1.8
+                  }
+              },
+              {
+                  "label": "Labore",
+                  "sublabel": "",
+                  "percent": 5,
+                  "color": "#4c45a5",
+                  "adjustLabel": {
+                      "textAlign": "right",
+                      "xAxis": 1.9,
+                      "yAxis": 1.9
+                  }
+              },
+              {
+                  "label": "Dolore magna aliqua",
+                  "sublabel": "Minim veniam",
+                  "percent": 4,
+                  "color": "#eb7575",
+                  "adjustLabel": {
+                      "textAlign": "left",
+                      "yAxis": 2.0
+                  }
+              }
+          ]
+      },
+      {
+          "type": "pie",
+          "unit": "percentage",
+          "name": "Perspiciatis",
+          "legend": "",
+          "data": [
+              {
+                  "label": "Unde/omnis",
+                  "sublabel": "",
+                  "percent": 38,
+                  "color": "#4c45a5",
+                  "adjustLabel": {
+                      "textAlign": "left",
+                      "xAxis": 2.3
+                  }
+              },
+              {
+                  "label": "Architecto",
+                  "sublabel": "",
+                  "percent": 16,
+                  "color": "#eb7575",
+                  "adjustLabel": {
+                      "textAlign": "left",
+                      "xAxis":2.2,
+                      "yAxis":2.2
+                  }
+              },
+              {
+                  "label": "Dolores",
+                  "sublabel": "",
+                  "percent": 13,
+                  "color": "#eeb29a",
+                  "adjustLabel": {
+                      "textAlign": "right",
+                      "xAxis": 1.8
+                  }
+              },
+              {
+                  "label": "Ratione voluptatem ",
+                  "sublabel": "",
+                  "percent": 13,
+                  "color": "#ffd674",
+                  "adjustLabel": {
+                      "textAlign": "right",
+                      "xAxis":1.8
+                  }
+              },
+              {
+                  "label": "Quaerat",
+                  "sublabel": "",
+                  "percent": 11,
+                  "color": "#fff689",
+                  "adjustLabel": {
+                      "textAlign": "right",
+                      "xAxis":1.8
+                  }
+              },
+              {
+                  "label": "Voluptatem",
+                  "sublabel": "",
+                  "percent": 8,
+                  "color": "#c1ebdd",
+                  "adjustLabel": {
+                      "textAlign": "right",
+                      "xAxis":1.9,
+                      "yAxis":1.9
+                  }
+              },
+              {
+                  "label": "Fugiat ",
+                  "sublabel": "de santé",
+                  "percent": 1,
+                  "color": "#59bad4",
+                  "adjustLabel": {
+                      "textAlign": "left",
+                      "yAxis": 2.0
+                  }
+              }
+          ]
+      }
+  ],
+  "participation": [
+      {
+          "type": "histogram",
+          "unit": "percentage",
+          "name": "Participation par région (1/2)",
+          "forcedHigherValue": 28,
+          "legend": {
+              "title": "Répartition des votes",
+              "dimensions": {
+                  "first": "votes",
+                  "second": "population générale"
+              }
+          },
+          "data": [
+              {
+                  "label": "Lorem ipsum",
+                  "bars": {
+                      "first": 27,
+                      "second": 18
+                  }
+              },
+              {
+                  "label": "Consectetur",
+                  "bars": {
+                      "first": 11,
+                      "second": 12
+                  }
+              },
+              {
+                  "label": "Adipiscing",
+                  "bars": {
+                      "first": 7,
+                      "second": 9
+                  }
+              },
+              {
+                  "label": "Tempor incididunt",
+                  "bars": {
+                      "first": 7,
+                      "second": 9
+                  }
+              },
+              {
+                  "label": "Magna",
+                  "bars": {
+                      "first": 8,
+                      "second": 9
+                  }
+              },
+              {
+                  "label": "Enim",
+                  "bars": {
+                      "first": 9,
+                      "second": 8
+                  }
+              },
+              {
+                  "label": "Excepteur",
+                  "bars": {
+                      "first": 9,
+                      "second": 7
+                  }
+              }
+          ]
+      },
+      {
+          "type": "histogram",
+          "unit": "percentage",
+          "name": "Participation par région (2/2)",
+          "forcedHigherValue": 28,
+          "legend": {
+              "title": "Répartition des votes",
+              "dimensions": {
+                  "first": "votes",
+                  "second": "population générale"
+              }
+          },
+          "data": [
+              {
+                  "label": "Vivamus",
+                  "bars": {
+                      "first": 4,
+                      "second": 6
+                  }
+              },
+              {
+                  "label": "Sed",
+                  "bars": {
+                      "first": 6,
+                      "second": 5
+                  }
+              },
+              {
+                  "label": "Nam",
+                  "bars": {
+                      "first": 7,
+                      "second": 5
+                  }
+              },
+              {
+                  "label": "Quidam",
+                  "bars": {
+                      "first": 3,
+                      "second": 4
+                  }
+              },
+              {
+                  "label": "Curabitur",
+                  "bars": {
+                      "first": 3,
+                      "second": 4
+                  }
+              },
+              {
+                  "label": "Aliquam",
+                  "bars": {
+                      "first": 4,
+                      "second": 3
+                  }
+              },
+              {
+                  "label": "Integer",
+                  "bars": {
+                      "first": 1,
+                      "second": 1
+                  }
+              }
+          ]
+      },
+      {
+          "type": "histogram",
+          "unit": "percentage",
+          "name": "Participation par âge",
+          "legend": {
+              "title": "Répartition des votes",
+              "dimensions": {
+                  "first": "votes",
+                  "second": "population générale"
+              }
+          },
+          "data": [
+              {
+                  "label": "18-24 ans",
+                  "bars": {
+                      "first": 1,
+                      "second": 11
+                  }
+              },
+              {
+                  "label": "25-34 ans",
+                  "bars": {
+                      "first": 26,
+                      "second": 15
+                  }
+              },
+              {
+                  "label": "35-44 ans",
+                  "bars": {
+                      "first": 30,
+                      "second": 16
+                  }
+              },
+              {
+                  "label": "45-54 ans",
+                  "bars": {
+                      "first": 10,
+                      "second": 17
+                  }
+              },
+              {
+                  "label": "55-64 ans",
+                  "bars": {
+                      "first": 13,
+                      "second": 16
+                  }
+              },
+              {
+                  "label": "65 ans et plus",
+                  "bars": {
+                      "first": 20,
+                      "second": 25
+                  }
+              }
+          ]
+      },
+      {
+          "type": "pie",
+          "unit": "percentage",
+          "name": "Votes par genre",
+          "legend": "",
+          "data": [
+              {
+                  "label": "hommes",
+                  "percent": 26,
+                  "color": "#4c45a5"
+              },
+              {
+                  "label": "femmes",
+                  "percent": 74,
+                  "color": "#eb7575"
+              }
+          ]
+      }
+  ]
+}

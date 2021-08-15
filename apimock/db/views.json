@@ -1,0 +1,355 @@
+{
+  "home": {
+    "highlights": {
+      "participantsCount": 10,
+      "proposalsCount": 20,
+      "partnersCount": 30
+    },
+    "currentQuestions": [{
+      "questionId": "78cf8534-5a3e-41b5-b3d6-64061dd05b3a",
+      "questionSlug": "bretagne-qualite-vie",
+      "question": "Comment améliorer la qualité de vie en Bretagne ?",
+      "shortTitle": "Qualité de vie",
+      "operationTitle": "Comment améliorer la qualité de vie en Bretagne ?",
+      "consultationImage": null,
+      "country": "FR",
+      "countries": ["FR"],
+      "language": "fr",
+      "startDate": "2019-10-12T22:00:00Z",
+      "endDate": "2020-07-10T22:00:00Z",
+      "theme": {
+        "color": "#b3b5c5",
+        "fontColor": "#ff0000"
+      },
+      "displayResults": false,
+      "resultsLink": null,
+      "aboutUrl": null,
+      "actions": null,
+      "featured": false,
+      "participantsCount": 0,
+      "proposalsCount": 0
+    }, {
+      "questionId": "7b23ef97-d52a-4cca-98aa-d4be75056ccf",
+      "questionSlug": "bretagne-ecologique-durable",
+      "question": "Comment mieux protéger l’environnement en Bretagne ?",
+      "shortTitle": "Environnement",
+      "operationTitle": "Comment faire de la Bretagne une région plus écologique et durable ?",
+      "consultationImage": null,
+      "country": "FR",
+      "countries": ["FR"],
+      "language": "fr",
+      "startDate": "2019-10-12T22:00:00Z",
+      "endDate": "2020-07-31T22:00:00Z",
+      "theme": {
+        "color": "#21816e",
+        "fontColor": "#FFFFFF"
+      },
+      "displayResults": false,
+      "resultsLink": null,
+      "aboutUrl": null,
+      "actions": null,
+      "featured": false,
+      "participantsCount": 0,
+      "proposalsCount": 0
+    }, {
+      "questionId": "f400bc32-d898-494c-a4fb-2099ee8ad55c",
+      "questionSlug": "bretagne-dynamisme-economique",
+      "question": "Comment développer l’emploi en Bretagne ?",
+      "shortTitle": null,
+      "operationTitle": "Comment favoriser le dynamisme économique en Bretagne ?",
+      "consultationImage": null,
+      "country": "FR",
+      "countries": ["FR"],
+      "language": "fr",
+      "startDate": "2019-10-12T22:00:00Z",
+      "endDate": "2020-07-31T22:00:00Z",
+      "theme": {
+        "color": "#a7104f",
+        "fontColor": "#FFFFFF"
+      },
+      "displayResults": false,
+      "resultsLink": null,
+      "aboutUrl": null,
+      "actions": null,
+      "featured": false,
+      "participantsCount": 0,
+      "proposalsCount": 0
+    }, {
+      "questionId": "fabfeda2-ebb0-4307-9ba8-8b82598eeecc",
+      "questionSlug": "bretagne-vivre-ensemble",
+      "question": "Comment rendre la Bretagne plus solidaire (lien social, intergénérationnel, égalité territoriale) ?",
+      "shortTitle": null,
+      "operationTitle": "Comment mieux vivre ensemble en Bretagne ?",
+      "consultationImage": null,
+      "country": "FR",
+      "countries": ["FR"],
+      "language": "fr",
+      "startDate": "2019-10-12T22:00:00Z",
+      "endDate": "2020-07-31T22:00:00Z",
+      "theme": {
+        "color": "#0055aa",
+        "fontColor": "#FFFFFF"
+      },
+      "displayResults": false,
+      "resultsLink": null,
+      "aboutUrl": null,
+      "actions": null,
+      "featured": false,
+      "participantsCount": 0,
+      "proposalsCount": 0
+    }, {
+      "questionId": "66a9230b-08cb-4f37-8ed8-aa95a8eac19a",
+      "questionSlug": "environnement",
+      "question": "Comment agir ensemble dès maintenant pour l'environnement ?",
+      "shortTitle": null,
+      "operationTitle": "Agir ensemble pour l'environnement",
+      "consultationImage": "https://assets.preprod.makeorg.tech/assets/content/operations/environnement/b06f1826-d885-4b5f-801b-d07c945a8ccc.svg",
+      "country": "FR",
+      "countries": ["FR"],
+      "language": "fr",
+      "startDate": "2019-10-16T22:00:00Z",
+      "endDate": "2020-08-31T08:00:00Z",
+      "theme": {
+        
+        
+        "color": "#007d83",
+        "fontColor": "#e5ef5a",
+        "secondaryColor": "#000000",
+        "secondaryFontColor": "#ffffff"
+      },
+      "displayResults": false,
+      "resultsLink": null,
+      "aboutUrl": "https://about.make.org/about-environnement",
+      "actions": null,
+      "featured": true,
+      "participantsCount": 0,
+      "proposalsCount": 0
+    }],
+    "featuredQuestions": [{
+      "questionId": "66a9230b-08cb-4f37-8ed8-aa95a8eac19a",
+      "questionSlug": "environnement",
+      "question": "Comment agir ensemble dès maintenant pour l'environnement ?",
+      "shortTitle": null,
+      "operationTitle": "Agir ensemble pour l'environnement",
+      "consultationImage": "https://assets.preprod.makeorg.tech/assets/content/operations/environnement/b06f1826-d885-4b5f-801b-d07c945a8ccc.svg",
+      "country": "FR",
+      "countries": ["FR"],
+      "language": "fr",
+      "startDate": "2019-10-16T22:00:00Z",
+      "endDate": "2020-08-31T08:00:00Z",
+      "theme": {
+        
+        
+        "color": "#007d83",
+        "fontColor": "#e5ef5a",
+        "secondaryColor": "#000000",
+        "secondaryFontColor": "#ffffff"
+      },
+      "displayResults": false,
+      "resultsLink": null,
+      "aboutUrl": "https://about.make.org/about-environnement",
+      "actions": null,
+      "featured": true,
+      "participantsCount": 0,
+      "proposalsCount": 0
+    }, {
+      "questionId": "3548602e-7592-4ecc-9825-6ce80870cab9",
+      "questionSlug": "chance-aux-jeunes",
+      "question": "Comment donner une chance à chaque jeune ???",
+      "shortTitle": null,
+      "operationTitle": "Comment donner une chance à chaque jeune ?",
+      "consultationImage": "https://assets.preprod.makeorg.tech/assets/avatars/1ebacbca-8c19-4cbd-a809-6c322ed93c38/4c0a6dfb-a509-4173-9a70-aee59b8bf5c6.jpg",
+      "country": "FR",
+      "countries": ["FR"],
+      "language": "fr",
+      "startDate": "2018-08-29T18:00:00Z",
+      "endDate": "2020-05-01T14:00:00Z",
+      "theme": {
+        "color": "#000000",
+        "fontColor": "#FFFFFF"
+      },
+      "displayResults": false,
+      "resultsLink": null,
+      "aboutUrl": null,
+      "actions": null,
+      "featured": true,
+      "participantsCount": 0,
+      "proposalsCount": 0
+    }, {
+      "questionId": "2af93db3-b589-4693-b984-dfd04a5cf534",
+      "questionSlug": "mp894",
+      "question": "Comment tester MP-894 ?",
+      "shortTitle": null,
+      "operationTitle": "Test ",
+      "consultationImage": null,
+      "country": "FR",
+      "countries": ["FR"],
+      "language": "fr",
+      "startDate": "2020-03-07T23:00:00Z",
+      "endDate": "2020-03-30T22:00:00Z",
+      "theme": {
+        "color": "#000000",
+        "fontColor": "#000000"
+      },
+      "displayResults": false,
+      "resultsLink": null,
+      "aboutUrl": null,
+      "actions": null,
+      "featured": true,
+      "participantsCount": 0,
+      "proposalsCount": 0
+    }, {
+      "questionId": "aa35389b-7ba7-44a8-811c-e3a7ee3502fc",
+      "questionSlug": "handicap",
+      "question": "Comment la société peut-elle garantir une vraie place aux personnes handicapées ?",
+      "shortTitle": null,
+      "operationTitle": "Une vraie place pour les personnes handicapées",
+      "consultationImage": "https://assets.preprod.makeorg.tech/assets/content/operations/handicap/a186311c-c668-4e71-8bc8-9a0d48756bb9.svg",
+      "country": "FR",
+      "countries": ["FR"],
+      "language": "fr",
+      "startDate": "2019-05-28T00:00:00Z",
+      "endDate": "2019-09-17T00:00:00Z",
+      "theme": {
+        "color": "#2639ad",
+        "fontColor": "#FFFFFF"
+      },
+      "displayResults": true,
+      "resultsLink": null,
+      "aboutUrl": "https://about.make.org/about-handicap",
+      "actions": null,
+      "featured": true,
+      "participantsCount": 0,
+      "proposalsCount": 0
+    }, {
+      "questionId": "978542c4-4f0b-4382-b447-97f8c0d22fd8",
+      "questionSlug": "test-question",
+      "question": "test-questio",
+      "shortTitle": null,
+      "operationTitle": "test",
+      "consultationImage": null,
+      "country": "FR",
+      "countries": ["FR"],
+      "language": "fr",
+      "startDate": "2019-05-15T00:00:00Z",
+      "endDate": "2019-05-31T00:00:00Z",
+      "theme": {
+        "color": "#000000",
+        "fontColor": "#FFFFFF"
+      },
+      "displayResults": false,
+      "resultsLink": null,
+      "aboutUrl": null,
+      "actions": null,
+      "featured": true,
+      "participantsCount": 0,
+      "proposalsCount": 0
+    }, {
+      "questionId": "0054db0a-9ae0-402b-9189-b88c457d501e",
+      "questionSlug": "aines",
+      "question": "Comment mieux prendre soin de nos aînés ?",
+      "shortTitle": null,
+      "operationTitle": "Comment mieux prendre soin de nos aînés ?",
+      "consultationImage": "https://assets.preprod.makeorg.tech/assets/content/operations/aines/f699ef46-c3f5-4a1b-ab0c-9ec49d127a11.png",
+      "country": "FR",
+      "countries": ["FR"],
+      "language": "fr",
+      "startDate": "2019-01-23T00:00:00Z",
+      "endDate": "2019-05-23T00:00:00Z",
+      "theme": {
+        "color": "#9C6BDA",
+        "fontColor": "#000000"
+      },
+      "displayResults": false,
+      "resultsLink": null,
+      "aboutUrl": "https://about.make.org/about-aines",
+      "actions": null,
+      "featured": true,
+      "participantsCount": 0,
+      "proposalsCount": 0
+    }, {
+      "questionId": "efd59e93-64a2-4e6f-8dcb-c87a879cabf8",
+      "questionSlug": "place-handicap",
+      "question": "Comment donner une vraie place aux personnes handicapées ?",
+      "shortTitle": null,
+      "operationTitle": "Handicap",
+      "consultationImage": null,
+      "country": "FR",
+      "countries": ["FR"],
+      "language": "fr",
+      "startDate": "2019-04-06T00:00:00Z",
+      "endDate": "2019-04-30T00:00:00Z",
+      "theme": {
+        "color": "#000000",
+        "fontColor": "#07e0d0"
+      },
+      "displayResults": true,
+      "resultsLink": null,
+      "aboutUrl": null,
+      "actions": null,
+      "featured": true,
+      "participantsCount": 0,
+      "proposalsCount": 0
+    }, {
+      "questionId": "7108965b-0229-4e00-b313-abb491dee6ac",
+      "questionSlug": "culture",
+      "question": "Comment rendre la culture accessible à tous?",
+      "shortTitle": null,
+      "operationTitle": "Comment rendre la culture accessible à tous?",
+      "consultationImage": "https://image.com",
+      "country": "FR",
+      "countries": ["FR"],
+      "language": "fr",
+      "startDate": "2018-06-27T00:00:00Z",
+      "endDate": "2018-10-05T00:00:00Z",
+      "theme": {
+        "color": "#000000",
+        "fontColor": "#FFFFFF"
+      },
+      "displayResults": false,
+      "resultsLink": null,
+      "aboutUrl": null,
+      "actions": null,
+      "featured": true,
+      "participantsCount": 0,
+      "proposalsCount": 0
+    }, {
+      "questionId": "c27b4109-68d8-4e12-91e2-eebb563f0ce8",
+      "questionSlug": "vff",
+      "question": "Stop aux violences faites aux femmes",
+      "shortTitle": null,
+      "operationTitle": "Stop aux violences faites aux femmes",
+      "consultationImage": null,
+      "country": "FR",
+      "countries": ["FR"],
+      "language": "fr",
+      "startDate": "2018-03-08T00:00:00Z",
+      "endDate": "2018-03-08T00:00:00Z",
+      "theme": {
+        "color": "#000000",
+        "fontColor": "#FFFFFF"
+      },
+      "displayResults": false,
+      "resultsLink": null,
+      "aboutUrl": null,
+      "actions": null,
+      "featured": true,
+      "participantsCount": 0,
+      "proposalsCount": 0
+    }],
+    "posts": [
+      {
+        "title": "first article",
+        "description": "first article description",
+        "picture": "https://via.placeholder.com/28?text=article1",
+        "link": "https://exemple.com"
+      },
+      {
+        "title": "second article",
+        "description": "second article description",
+        "picture": "https://via.placeholder.com/28?text=article2",
+        "link": "https://exemple.com"
+      }
+    ]
+  }
+}

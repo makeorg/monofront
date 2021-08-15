@@ -1,0 +1,23 @@
+{
+  "questionId":"51b6b66b-20f9-42c0-afc9-1f56ae628741",
+  "questionSlug":"egalite-femmes-hommes",
+  "question":"Quis autem vel eum iure reprehenderit qui in ea voluptate velit ?",
+  "shortTitle": "shortTitle",
+  "operationTitle": "operation",
+  "consultationImage": "https://via.placeholder.com/254",
+  "countries":["FR"],
+  "language":"fr",
+  "startDate":"2019-12-03T06:00:00.000Z",
+  "endDate":"2020-01-20T17:00:00.000Z",
+  "theme": {
+    "color":"#48267f",
+    "fontColor":"#ffffff"
+  },
+  "displayResults":false,
+  "resultsLink": null,
+  "aboutUrl":"https://about.make.org",
+  "actions": "",
+  "featured": false,
+  "participantsCount": 1000,
+  "proposalsCount": 10000
+}

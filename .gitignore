@@ -10,3 +10,6 @@
 .env
 yarn-error.log
 lerna-debug.log
+apps/*/cypress/coverage
+apps/*/cypress/screenshots
+apps/*/.nyc_output
