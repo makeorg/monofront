@@ -15,8 +15,8 @@ import { initialState } from '@make.org/store/initialState'; // TO DO
 import App from './App';
 
 // TO DO
-import french from './i18n/fr.json';
 import { initDevState } from '../initDevState';
+import { translationRessources } from './i18n';
 
 declare global {
   interface Window {
@@ -27,17 +27,15 @@ declare global {
 const serverState = initDevState(initialState);
 
 const initApp = (state: StateRoot) => {
+  const { language } = state.appConfig;
   // init languages
   i18n.init({
     interpolation: {
       escapeValue: false,
     },
     debug: env.isDev(),
-    lng: state.appConfig.language || DEFAULT_LANGUAGE, // TO DO
-    resources: {
-      // TO DO
-      fr: { translation: french },
-    },
+    lng: language || DEFAULT_LANGUAGE,
+    resources: translationRessources,
   });
 
   // Render the app
