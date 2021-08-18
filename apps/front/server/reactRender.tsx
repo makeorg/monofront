@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { JSXElementConstructor, ReactElement } from 'react';
 import fs from 'fs';
 import path from 'path';
 import { ChunkExtractor } from '@loadable/server';
@@ -72,6 +72,10 @@ const renderHtml = (
     .replace('"__REDUX__"', JSON.stringify(appState))
     .replace(new RegExp('__LANG__', 'gi'), appState.appConfig.language)
     .replace(new RegExp('__API_URL__', 'gi'), env.apiUrl() || '')
+    .replace(
+      new RegExp('__PROXY_TARGET_API_URL__', 'gi'),
+      env.proxyTargetApiUrl() || ''
+    )
     .replace(new RegExp('__FRONT_URL__', 'gi'), env.frontUrl() || '')
     .replace(new RegExp('___NONCE_ID___', 'gi'), nonceId)
     .replace(new RegExp('___NODE_ENV___', 'gi'), env.nodeEnv() || 'production')
@@ -96,7 +100,6 @@ export const reactRender = async (
   const { country, language } = req.params;
   const { browser, os, device, ua } = parser(req.headers['user-agent']);
   const isMobileOrTablet = device.type === 'mobile' || device.type === 'tablet';
-
   const commonLogs = {
     name: 'react-render',
     app_browser_name: browser.name,
@@ -170,10 +173,13 @@ export const reactRender = async (
   };
 
   const context = {};
+  const headTags:
+    | ReactElement<unknown, string | JSXElementConstructor<any>>[]
+    | undefined = [];
 
   const ReactApp = (
     <CookiesProvider cookies={req.universalCookies}>
-      <HeadProvider>
+      <HeadProvider headTags={headTags}>
         <ContextState serverState={state}>
           <StaticRouter location={req.url} context={context}>
             <AppContainer />

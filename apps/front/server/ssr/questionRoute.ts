@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { getLanguageFromCountryCode } from '@make.org/utils/helpers/countries';
-import { initialState } from '@make.org/store/initialState';
+import { createInitialState } from '@make.org/store/initialState';
 import { updateTrackingQuestionParam } from '@make.org/utils/helpers/question';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { reactRender } from '../reactRender';
@@ -13,6 +13,7 @@ export const questionRoute = async (
 ): Promise<any> => {
   const { questionSlug, country } = req.params;
   const language = getLanguageFromCountryCode(country);
+  const initialState = createInitialState();
 
   const notFound = () => {
     logError({

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, FC } from 'react';
+import loadable from '@loadable/component';
 import { useParams } from 'react-router';
 import { QuestionService } from '@make.org/utils/services/Question';
 import { MiddlePageWrapperStyle } from '@make.org/ui/elements/MainElements';
@@ -17,7 +18,8 @@ import {
 } from '@make.org/store/actions/currentQuestion';
 import { loadQuestion } from '@make.org/store/actions/questions';
 import { useAppContext } from '@make.org/store';
-import { NotFoundPage } from '../NotFound';
+
+const NotFoundPage = loadable(() => import('../NotFound'));
 
 type Props = {
   children: JSX.Element;

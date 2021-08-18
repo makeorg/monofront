@@ -7,6 +7,8 @@ const LoadablePlugin = require('@loadable/webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const DotEnv = require('dotenv-webpack');
 const path = require('path');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
+const { presets, plugins } = require('./babel.config.js');
 
 const clientConfig = envConfigPath => ({
   entry: [
@@ -26,16 +28,19 @@ const clientConfig = envConfigPath => ({
   resolve: {
     extensions: ['*', '.ts', '.tsx', '.js', '.yaml', '.json'],
     alias: {
-      '@make.org/utils': path.resolve(__dirname, '../../../utils'),
-      '@make.org/api': path.resolve(__dirname, '../../../api'),
-      '@make.org/ui': path.resolve(__dirname, '../../../ui'),
-      '@make.org/components': path.resolve(__dirname, '../../../components'),
-      '@make.org/store': path.resolve(__dirname, '../../../store'),
-      '@make.org/assets': path.resolve(__dirname, '../../../assets'),
-      '@make.org/types': path.resolve(__dirname, '../../../types'),
-    },
-    fallback: {
-      fs: false,
+      '@make.org/utils': path.resolve(__dirname, '..', '..', '..', 'utils'),
+      '@make.org/api': path.resolve(__dirname, '..', '..', '..', 'api'),
+      '@make.org/ui': path.resolve(__dirname, '..', '..', '..', 'ui'),
+      '@make.org/components': path.resolve(
+        __dirname,
+        '..',
+        '..',
+        '..',
+        'components'
+      ),
+      '@make.org/store': path.resolve(__dirname, '..', '..', '..', 'store'),
+      '@make.org/assets': path.resolve(__dirname, '..', '..', '..', 'assets'),
+      '@make.org/types': path.resolve(__dirname, '..', '..', '..', 'types'),
     },
   },
   stats: {
@@ -68,8 +73,8 @@ const clientConfig = envConfigPath => ({
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../public/index.html'),
-      filename: path.resolve(__dirname, '../dist/index.html'),
+      template: path.resolve(__dirname, '..', 'public', 'index.html'),
+      filename: './index.html',
       meta: {
         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
         charset: 'utf-8',
@@ -91,9 +96,20 @@ const clientConfig = envConfigPath => ({
       inlineSource: 'runtime~.+\\.js',
       scriptLoading: 'defer',
     }),
+    new WebpackManifestPlugin({
+      fileName: '../webpack-manifest.json',
+    }),
     new LoadablePlugin(),
     new FaviconsWebpackPlugin({
-      logo: path.resolve(__dirname, '../../../assets/images/favicon.png'),
+      logo: path.resolve(
+        __dirname,
+        '..',
+        '..',
+        '..',
+        'assets',
+        'images',
+        'favicon.png'
+      ),
       mode: 'webapp',
       prefix: 'favicon/',
       inject: false,
@@ -119,10 +135,18 @@ const clientConfig = envConfigPath => ({
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
-        use: ['babel-loader', 'ts-loader'],
-        sideEffects: false,
-        exclude: /node_modules/,
+        test: /\.(ts)x?$/,
+        exclude: [
+          '/node_modules/',
+          path.resolve(__dirname, '..', '..', '..', 'node_modules'),
+        ],
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets,
+            plugins,
+          },
+        },
       },
       {
         test: /\.(jpe?g|png|gif|svg|ttf|eot|woff|woff2|manifest|ico|yaml)$/,
@@ -164,7 +188,7 @@ const serverConfig = envConfigPath => ({
     __dirname: true,
   },
   externals: [
-    nodeExternals(),
+    nodeExternals({ allowlist: ['history'] }),
     {
       'webpack-manifest': './webpack-manifest.json',
       sharp: 'commonjs sharp',
@@ -178,25 +202,36 @@ const serverConfig = envConfigPath => ({
   resolve: {
     extensions: ['*', '.ts', '.tsx', '.js', '.yaml', '.json'],
     alias: {
-      '@make.org/utils': path.resolve(__dirname, '../../../utils'),
-      '@make.org/api': path.resolve(__dirname, '../../../api'),
-      '@make.org/ui': path.resolve(__dirname, '../../../ui'),
-      '@make.org/components': path.resolve(__dirname, '../../../components'),
-      '@make.org/store': path.resolve(__dirname, '../../../store'),
-      '@make.org/assets': path.resolve(__dirname, '../../../assets'),
-      '@make.org/types': path.resolve(__dirname, '../../../types'),
-    },
-    fallback: {
-      fs: false,
+      '@make.org/utils': path.resolve(__dirname, '..', '..', '..', 'utils'),
+      '@make.org/api': path.resolve(__dirname, '..', '..', '..', 'api'),
+      '@make.org/ui': path.resolve(__dirname, '..', '..', '..', 'ui'),
+      '@make.org/components': path.resolve(
+        __dirname,
+        '..',
+        '..',
+        '..',
+        'components'
+      ),
+      '@make.org/store': path.resolve(__dirname, '..', '..', '..', 'store'),
+      '@make.org/assets': path.resolve(__dirname, '..', '..', '..', 'assets'),
+      '@make.org/types': path.resolve(__dirname, '..', '..', '..', 'types'),
     },
   },
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
-        use: ['babel-loader', 'ts-loader'],
-        sideEffects: false,
-        exclude: /node_modules/,
+        test: /\.(ts)x?$/,
+        exclude: [
+          '/node_modules/',
+          path.resolve(__dirname, '..', '..', '..', '..', 'node_modules'),
+        ],
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets,
+            plugins,
+          },
+        },
       },
       {
         test: /\.(jpe?g|png|gif|svg|ttf|eot|woff|woff2|manifest|ico|yaml)$/,

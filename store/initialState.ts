@@ -29,8 +29,6 @@ export const initialState: StateRoot = {
   partners: {},
   panel: panel_state,
   session: session_state,
-  question: undefined,
-  proposals: [],
 };
 
 export const createInitialState = (): StateRoot =>

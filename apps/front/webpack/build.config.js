@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { merge } = require('webpack-merge');
-const webpack = require('webpack');
-const { clientConfig, serverConfig } = require('./base.config.babel.js');
+const path = require('path');
+const { clientConfig, serverConfig } = require('./base.config.js');
 
 // Define env file path depending from NODE_ENV
-let envConfigPath = '../.env';
+let envConfigPath = path.resolve(__dirname, '..', '.env');
 if (process.env.NODE_ENV === 'development') {
-  envConfigPath = '../.env.local';
+  envConfigPath = path.resolve(__dirname, '..', '.env.local');
 }
 if (process.env.NODE_ENV === 'test') {
-  envConfigPath = '../.env.test';
+  envConfigPath = path.resolve(__dirname, '..', '.env.test');
 }
 
 // Build client and server configurations
@@ -20,8 +20,6 @@ const server = serverConfig(envConfigPath);
 if (process.env.NODE_ENV === 'development') {
   client.mode = 'development';
   server.mode = 'development';
-  client.entry.push('webpack-hot-middleware/client');
-  client.plugins.push(new webpack.HotModuleReplacementPlugin());
 } else {
   client.mode = 'production';
   server.mode = 'production';

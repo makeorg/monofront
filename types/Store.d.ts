@@ -8,7 +8,7 @@ import {
 } from './Question';
 import { ProposalType } from './Proposal';
 import { TagType } from './Tag';
-import { CommonUsersProfileType, PersonalityType, UserType } from './User';
+import { PersonalityType, UserType } from './User';
 import {
   DemographicNameType,
   ProposalCardType,
@@ -33,8 +33,7 @@ export type StateConfig = {
 
 // Config Homepage
 export type StateViews = {
-  readonly homepage?: HomeViewType;
-  readonly country?: string;
+  homepage?: HomeViewType;
 };
 
 // Proposal State
@@ -184,7 +183,6 @@ export type StateSession = {
 
 // All state
 export type StateRoot = {
-  // common data
   appConfig: StateConfig;
   views: StateViews;
   proposal?: StateProposal;
@@ -197,9 +195,6 @@ export type StateRoot = {
   partners?: StatePartners;
   panel: StatePanel;
   session?: StateSession;
-  // widget data
-  question?: QuestionType;
-  proposals?: ProposalType[];
 };
 
 export type Reducer<State = any, Action = any> = (

@@ -3,7 +3,6 @@ import { LOAD_HOMEPAGE } from '../../actionTypes';
 
 export const views_state: StateViews = {
   homepage: undefined,
-  country: '',
 };
 export const views_reducer = (
   state: StateViews = views_state,

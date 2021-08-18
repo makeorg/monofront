@@ -1,4 +1,4 @@
-import { initialState } from '@make.org/store/initialState';
+import { createInitialState } from '@make.org/store/initialState';
 import { Request, Response } from 'express';
 import { getLanguageFromCountryCode } from '@make.org/utils/helpers/countries';
 import { ViewsService } from '../service/ViewsService';
@@ -10,6 +10,7 @@ export const homepageRoute = async (
   res: Response
 ): Promise<any> => {
   const { country } = req.params;
+  const initialState = createInitialState();
 
   const notFound = () => {
     logError({
@@ -38,11 +39,10 @@ export const homepageRoute = async (
   if (!homepageData) {
     return reactRender(req, res.status(404), initialState);
   }
-  initialState.views = {
-    homepage: {
-      ...homepageData,
-      country,
-    },
+
+  initialState.views.homepage = {
+    ...homepageData,
+    country,
   };
 
   return reactRender(req, res, initialState);
