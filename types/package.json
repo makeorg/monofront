@@ -2,6 +2,7 @@
   "name": "@make.org/types",
   "version": "0.1.0",
   "private": true,
+  "sideEffects": false,
   "dependencies": {
     "axios": "^0.21.1",
     "react": "^17.0.2"
