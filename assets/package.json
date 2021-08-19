@@ -2,6 +2,7 @@
     "name": "@make.org/assets",
     "version": "0.1.0",
     "private": true,
+    "sideEffects": false,
     "dependencies": {
         "@make.org/components": "0.1.0",
         "@make.org/ui": "0.1.0",

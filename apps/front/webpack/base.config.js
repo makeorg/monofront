@@ -56,7 +56,7 @@ const clientConfig = envConfigPath => ({
     moduleIds: 'deterministic',
     minimizer: [new TerserPlugin()],
     concatenateModules: true,
-    runtimeChunk: false, // runtimeChunk + inlineSource is not compatible with loadable-component for now
+    runtimeChunk: true,
     splitChunks: {
       cacheGroups: {
         default: false,
