@@ -30,9 +30,6 @@ export const useIsFieldValid = (
 
   useEffect(() => {
     let validationStatus = true;
-    if (!inputField) {
-      validationStatus = false;
-    }
 
     if (!isRefEmpty) {
       validationStatus = inputField.checkValidity();

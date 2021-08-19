@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const DotenvWebpack = require('dotenv-webpack');
 const Dotenv = require('dotenv');
 const { presets, plugins } = require('./babel.config.js');
@@ -55,7 +54,6 @@ module.exports = {
   },
 
   plugins: [
-    new BundleAnalyzerPlugin(),
     new HtmlWebpackPlugin({
       title: 'Development',
       template: './public/index.html',
@@ -77,10 +75,10 @@ module.exports = {
     host: process.env.HOST,
     historyApiFallback: true,
     disableHostCheck: true,
-    https: true,
+    https: JSON.parse(process.env.HTTPS),
     proxy: {
       '/backend': {
-        target: 'https://api.preprod.makeorg.tech',
+        target: process.env.PROXY_TARGET_API_URL,
         secure: false,
         changeOrigin: true,
         pathRewrite: {

@@ -83,6 +83,7 @@ export const LoginForm: React.FC = () => {
       trackSignupEmailFailure();
     };
     const unexpectedError = () => dispatch(modalClose());
+
     await UserService.checkLoginPrivacyPolicy(
       formValues.email,
       formValues.password,
@@ -92,7 +93,7 @@ export const LoginForm: React.FC = () => {
           modalShowDataPolicyLogin(formValues.email, formValues.password)
         ),
       () => success(),
-      () => handleErrors(),
+      serviceErrors => handleErrors(serviceErrors),
       () => unexpectedError()
     );
   };

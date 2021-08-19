@@ -33,7 +33,7 @@ const updatePassword = async (
   passwords: PasswordsType,
   hasPassword: boolean,
   success: () => void,
-  handleErrors?: (errors: ErrorObjectType[]) => void
+  handleErrors: (errors: ErrorObjectType[]) => void
 ): Promise<void> => {
   const actualPassword =
     hasPassword && passwords.actualPassword ? passwords.actualPassword : '';

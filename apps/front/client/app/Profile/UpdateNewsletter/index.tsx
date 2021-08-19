@@ -54,8 +54,8 @@ export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
       setCanSubmit(false);
       getUser(dispatch, state.modal.isOpen);
     };
-    const handleErrors = () => {
-      setErrors([defaultApiError]);
+    const handleErrors = (serviceErrors: ErrorObjectType[]) => {
+      setErrors(serviceErrors);
       setIsSubmitSuccessful(false);
     };
     const newProfile = {
@@ -68,7 +68,7 @@ export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
           userId,
           newProfile,
           () => success(),
-          () => handleErrors()
+          serviceErrors => handleErrors(serviceErrors)
         );
         break;
       case USER.TYPE_PERSONALITY:
@@ -76,7 +76,7 @@ export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
           userId,
           newProfile,
           () => success(),
-          () => handleErrors()
+          serviceErrors => handleErrors(serviceErrors)
         );
         break;
       default:
@@ -87,7 +87,7 @@ export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
             optInNewsletter,
           },
           () => success(),
-          () => handleErrors()
+          serviceErrors => handleErrors(serviceErrors)
         );
         break;
     }

@@ -46,7 +46,7 @@ export const UpdateInformations: FC<Props> = ({ user }) => {
     organisationId: string,
     profile: CommonUsersProfileType,
     success: () => void,
-    handleErrors: (errors?: ErrorObjectType[]) => void
+    handleErrors: (errors: ErrorObjectType[]) => void
   ) => Promise<null | void>;
   switch (user.userType) {
     case USER.TYPE_ORGANISATION:
@@ -97,10 +97,8 @@ export const UpdateInformations: FC<Props> = ({ user }) => {
       setErrors([]);
       getUser(dispatch, state.modal.isOpen);
     };
-    const handleErrors = (serviceErrors?: ErrorObjectType[]) => {
-      if (serviceErrors) {
-        setErrors(serviceErrors);
-      }
+    const handleErrors = (serviceErrors: ErrorObjectType[]) => {
+      setErrors(serviceErrors);
       setIsSubmitSuccessful(false);
     };
 
@@ -111,7 +109,7 @@ export const UpdateInformations: FC<Props> = ({ user }) => {
       userId,
       profile,
       () => success(),
-      () => handleErrors()
+      serviceErrors => handleErrors(serviceErrors)
     );
   };
 
