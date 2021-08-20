@@ -1,0 +1,26 @@
+version: "3.7"
+
+services:
+    app_make:
+      build:
+        context: .
+        target: base
+      ports:
+        - 3000:3000
+        - 8888:8888
+      volumes:
+        - .:/home/app
+        - /home/app/node_modules
+        - /home/app/apps/front/node_modules
+        - /home/app/apps/widget/node_modules
+        - /home/app/api/node_modules
+        - /home/app/components/node_modules
+        - /home/app/types/node_modules
+        - /home/app/assets/node_modules
+        - /home/app/utils/node_modules
+        - /home/app/ui/node_modules
+        - /home/app/store/node_modules
+      command: ["lerna", "run", "--scope=@make.org/front", "dev", "--stream"]
+      environment:
+        - CHOKIDAR_USEPOLLING=true # check option
+

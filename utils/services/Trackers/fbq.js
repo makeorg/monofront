@@ -1,7 +1,7 @@
 /* eslint-disable */
-export const fbq = {
+    export const fbq = {
   load() {
-    !funct(function (f, b, e, v, n, t, s) {
+    !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
         n.callMethod ?
           n.callMethod.apply(n, arguments) : n.queue.push(arguments)
@@ -11,9 +11,8 @@ export const fbq = {
       t.src = v; s = b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t, s)
     }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js')) /* eslint-enable */
+      'https://connect.facebook.net/en_US/fbevents.js');
   },
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   track(...args) {
     return window.fbq(...args);
   },

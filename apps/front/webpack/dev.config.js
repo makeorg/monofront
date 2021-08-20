@@ -72,10 +72,14 @@ module.exports = {
     compress: true,
     port: process.env.PORT,
     hot: true,
-    host: process.env.HOST,
+    host: '0.0.0.0',
     historyApiFallback: true,
     disableHostCheck: true,
     https: JSON.parse(process.env.HTTPS),
+    watchOptions: {
+      aggregateTimeout: 500, // delay before reloading
+      poll: true, // enable polling since fsevents are not supported in docker
+    },
     proxy: {
       '/backend': {
         target: process.env.PROXY_TARGET_API_URL,

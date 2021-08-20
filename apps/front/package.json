@@ -68,7 +68,7 @@
 		},
 		"devDependencies": {
 				"@babel/register": "^7.14.5",
-				"@cypress/code-coverage": "cypress-io/code-coverage",
+				"@cypress/code-coverage": "^3.9.10",
 				"@loadable/babel-plugin": "~5.13.2",
 				"@simbathesailor/babel-plugin-use-what-changed": "^2.1.0",
 				"@simbathesailor/use-what-changed": "^2.0.0",
@@ -91,7 +91,10 @@
 				"@types/webpack-env": "^1.16.2",
 				"@wojtekmaj/enzyme-adapter-react-17": "^0.6.1",
 				"babel-loader": "^8.2.2",
-				"babel-plugin-convert-to-json": "^0.1.0",
+				"cypress": "^7.4.0",
+				"cypress-cucumber-preprocessor": "^4.1.2",
+				"cypress-html-validate": "^1.5.1",
+				"cypress-wait-until": "^1.7.1",
 				"file-loader": "^6.2.0",
 				"html-validate": "4.13.1",
 				"html-webpack-inline-source-plugin": "1.0.0-beta.2",
@@ -101,13 +104,19 @@
 				"regenerator-runtime": "^0.13.7",
 				"tsconfig-paths": "^3.9.0",
 				"webpack-cli": "^4.7.2",
+				"webpack-dev-middleware": "^5.0.0",
 				"webpack-dev-server": "^3.11.2",
+				"webpack-hot-middleware": "^2.25.0",
+				"webpack-manifest": "^1.0.8",
+				"webpack-manifest-plugin": "^3.1.1",
+				"webpack-merge": "^5.8.0",
+				"webpack-node-externals": "^3.0.0",
 				"yaml-jest": "^1.0.5",
 				"yaml-loader": "^0.6.0",
 				"yargs": "^17.0.1"
 		},
 		"scripts": {
-				"dev": "sudo webpack serve --mode development --progress --color --open --config ./webpack/dev.config.js",
+				"dev": "webpack serve --mode development --progress --color --config ./webpack/dev.config.js",
 				"server": "pm2-runtime start ecosystem.config.js",
 				"build": "webpack --mode production --progress --color --config ./webpack/build.config.js"
 			}
