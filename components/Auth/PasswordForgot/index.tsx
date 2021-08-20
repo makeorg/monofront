@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import i18n from 'i18next';
 import { SecondLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
 import { SmallSeparatorWithMarginStyle } from '@make.org/ui/elements/SeparatorsElements';
@@ -12,7 +12,7 @@ import { ForgotPasswordStyle } from './style';
 /**
  * Renders Forgot Password component
  */
-export const PasswordForgot = () => {
+export const PasswordForgot: FC = () => {
   const { dispatch } = useAppContext();
 
   const handleLoginModal = () => {

@@ -100,7 +100,6 @@
 				"react-is": "17.0.2",
 				"regenerator-runtime": "^0.13.7",
 				"tsconfig-paths": "^3.9.0",
-				"webpack-bundle-analyzer": "^4.4.2",
 				"webpack-cli": "^4.7.2",
 				"webpack-dev-server": "^3.11.2",
 				"yaml-jest": "^1.0.5",
@@ -108,8 +107,7 @@
 				"yargs": "^17.0.1"
 		},
 		"scripts": {
-				"dev": "sudo webpack serve --mode development --progress --hot --color --config ./webpack/dev.config.js",
-				"prod": "webpack serve --mode production --progress --hot",
+				"dev": "sudo webpack serve --mode development --progress --color --open --config ./webpack/dev.config.js",
 				"server": "pm2-runtime start ecosystem.config.js",
 				"build": "webpack --mode production --progress --color --config ./webpack/build.config.js"
 			}

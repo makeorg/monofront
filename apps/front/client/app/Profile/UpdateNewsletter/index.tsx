@@ -14,7 +14,6 @@ import { UserService } from '@make.org/utils/services/User';
 import { OrganisationService } from '@make.org/utils/services/Organisation';
 import { TileWithTitle } from '@make.org/ui/components/TileWithTitle';
 import { FormErrors } from '@make.org/components/Form/Errors';
-import { defaultApiError } from '@make.org/utils/errors/Messages';
 import { FormSuccessMessage } from '@make.org/components/Form/Success';
 import { getUser } from '@make.org/store/actions/authentication';
 import { FormRequirementsStyle } from '@make.org/ui/elements/FormElements';
@@ -54,8 +53,8 @@ export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
       setCanSubmit(false);
       getUser(dispatch, state.modal.isOpen);
     };
-    const handleErrors = () => {
-      setErrors([defaultApiError]);
+    const handleErrors = (serviceErrors: ErrorObjectType[]) => {
+      setErrors(serviceErrors);
       setIsSubmitSuccessful(false);
     };
     const newProfile = {
@@ -68,7 +67,7 @@ export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
           userId,
           newProfile,
           () => success(),
-          () => handleErrors()
+          serviceErrors => handleErrors(serviceErrors)
         );
         break;
       case USER.TYPE_PERSONALITY:
@@ -76,7 +75,7 @@ export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
           userId,
           newProfile,
           () => success(),
-          () => handleErrors()
+          serviceErrors => handleErrors(serviceErrors)
         );
         break;
       default:
@@ -87,7 +86,7 @@ export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
             optInNewsletter,
           },
           () => success(),
-          () => handleErrors()
+          serviceErrors => handleErrors(serviceErrors)
         );
         break;
     }

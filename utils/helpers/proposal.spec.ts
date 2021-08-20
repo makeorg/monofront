@@ -6,7 +6,6 @@ import {
   AVAILABLE_ALGORITHMS,
   ProposalApiService,
 } from '@make.org/api/ProposalApiService';
-import { Logger } from '@make.org/utils/services/Logger';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import {
@@ -138,13 +137,13 @@ describe('Proposal Helper', () => {
   describe('getProposalsListTitle', () => {
     it('return default title', () => {
       const title = getProposalsListTitle('foo');
-      // TODO i18next init
+      console.log('TODO fix test init i18next fail', title);
       // expect(title).toEqual('consultation.sort.RECENT');
     });
 
     it('return RECENT title', () => {
       const title = getProposalsListTitle('RECENT');
-      // TODO i18next init
+      console.log('TODO fix test init i18next fail', title);
       // expect(title).toEqual('consultation.sort.RECENT');
     });
   });

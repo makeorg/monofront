@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 export const TWITTER_SCRIPT = 'https://platform.twitter.com/oct.js';
 export const twttr = {
   initialized() {

@@ -94,7 +94,7 @@ export const buildCards = (
  * @param  {SequenceCardType} card
  * @return {boolean}
  */
-export const isPushProposalCard = (card: SequenceCardType | null) =>
+export const isPushProposalCard = (card: SequenceCardType | null): boolean =>
   card?.type === CARD.CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL;
 
 /**

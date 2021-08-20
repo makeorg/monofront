@@ -33,7 +33,7 @@ const updatePassword = async (
   passwords: PasswordsType,
   hasPassword: boolean,
   success: () => void,
-  handleErrors?: (errors: ErrorObjectType[]) => void
+  handleErrors: (errors: ErrorObjectType[]) => void
 ): Promise<void> => {
   const actualPassword =
     hasPassword && passwords.actualPassword ? passwords.actualPassword : '';
@@ -147,7 +147,7 @@ const login = async (
   password: string,
   approvePrivacyPolicy?: boolean,
   success?: () => void,
-  errors?: (errors: ErrorObjectType[]) => void,
+  errors?: (serviceErrors?: ErrorObjectType[]) => void,
   unexpectedError?: () => void
 ): Promise<void> => {
   try {

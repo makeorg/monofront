@@ -22,8 +22,6 @@ describe('Country Language middelware', () => {
       const request = httpMocks.createRequest({
         params: { country: 'GB' },
       });
-      const response = httpMocks.createResponse();
-
       const country = getCountryFromRequest(request);
 
       expect(country).toBe('GB');

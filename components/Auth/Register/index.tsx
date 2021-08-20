@@ -119,14 +119,19 @@ export const Register: React.FC = () => {
       });
     };
     const handleErrors = (serviceErrors: ErrorObjectType[]) => {
-      trackSignupEmailFailure();
       setErrors(serviceErrors);
+      trackSignupEmailFailure();
     };
     const unexpectedError = () => dispatch(modalClose());
     displayLegalConsent(false);
     setWaitingCallback(true);
 
-    await UserService.register(user, success, handleErrors, unexpectedError);
+    await UserService.register(
+      user,
+      () => success(),
+      serviceErrors => handleErrors(serviceErrors),
+      () => unexpectedError()
+    );
 
     setWaitingCallback(false);
   };

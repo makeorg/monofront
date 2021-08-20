@@ -404,7 +404,7 @@ describe('Sequence Helper', () => {
       const specialTitle = helpers.getSequenceTitleBySequenceKind(
         SEQUENCE.KIND_CONTROVERSY
       );
-      // TODO i18next init
+      console.log('TODO fix test init i18next fail', specialTitle);
       // expect(specialTitle).toEqual('sequence_zone.controversial_title');
     });
 
@@ -412,7 +412,7 @@ describe('Sequence Helper', () => {
       const specialTitle = helpers.getSequenceTitleBySequenceKind(
         SEQUENCE.KIND_CONSENSUS
       );
-      // TODO i18next init
+      console.log('TODO fix test init i18next fail', specialTitle);
       // expect(specialTitle).toEqual('sequence_zone.popular_title');
     });
 

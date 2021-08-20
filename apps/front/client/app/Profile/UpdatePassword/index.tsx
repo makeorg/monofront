@@ -76,21 +76,30 @@ export const UpdatePassword: FC<Props> = ({ userId, hasPassword }) => {
     setIsSubmitSuccessful(false);
   };
 
+  const success = () => {
+    setFormValues(defaultFormValues);
+    setErrors([]);
+    setIsSubmitSuccessful(true);
+    setCanSubmit(false);
+    getUser(dispatch, state.modal.isOpen);
+  };
+
+  const handleErrors = (serviceErrors: ErrorObjectType[]) => {
+    setErrors(serviceErrors);
+    setCanSubmit(false);
+  };
+
   const handleSubmit = async (
     event: React.SyntheticEvent<HTMLButtonElement>
   ): Promise<void> => {
     event.preventDefault();
 
-    const success = () => {
-      setFormValues(defaultFormValues);
-      setErrors([]);
-      setIsSubmitSuccessful(true);
-      setCanSubmit(false);
-      getUser(dispatch, state.modal.isOpen);
-    };
-
-    await UserService.updatePassword(userId, formValues, hasPassword, () =>
-      success()
+    await UserService.updatePassword(
+      userId,
+      formValues,
+      hasPassword,
+      () => success(),
+      serviceErrors => handleErrors(serviceErrors)
     );
   };
 

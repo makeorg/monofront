@@ -1,4 +1,4 @@
-import React, { RefObject, useEffect } from 'react';
+import { RefObject, useEffect } from 'react';
 import { SliderParamsType } from '@make.org/types';
 import Glider from 'glider-js';
 import {
@@ -15,7 +15,7 @@ export const useSlider = (
   sliderRef: RefObject<HTMLDivElement>,
   sliderParams: SliderParamsType,
   canBeInitialize: boolean
-): any => {
+): void => {
   let gliderElement: any;
   useEffect(() => {
     if (!canBeInitialize || !sliderRef.current) {
@@ -28,6 +28,7 @@ export const useSlider = (
     const { interactiveChildren } = sliderParams;
 
     // Init slider with custom params
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     gliderElement = new Glider(sliderRef.current, {
       slidesToShow: sliderParams.slidesToShow
         ? sliderParams.slidesToShow

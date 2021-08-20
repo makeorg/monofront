@@ -32,7 +32,11 @@ export const ForgotPasswordForm: React.FC = () => {
     const handleErrors = (serviceErrors: ErrorObjectType[]) => {
       setErrors(serviceErrors);
     };
-    await UserService.forgotPassword(email.trim(), success, handleErrors);
+    await UserService.forgotPassword(
+      email.trim(),
+      () => success(),
+      serviceErrors => handleErrors(serviceErrors)
+    );
   };
 
   if (isSuccess) {
