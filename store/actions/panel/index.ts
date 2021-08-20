@@ -14,7 +14,7 @@ export const closePanel = (): ReducerAction => ({
   type: PANEL_CLOSE,
 });
 
-export const setPanelContent = (panelContent: any): ReducerAction => ({
+export const setPanelContent = (panelContent: JSX.Element): ReducerAction => ({
   type: PANEL_SET_CONTENT,
   payload: { panelContent },
 });

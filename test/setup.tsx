@@ -29,13 +29,15 @@ jest.mock('@make.org/utils/services/Trackers/FacebookTracking');
 jest.mock('@make.org/utils/services/Trackers/TwitterTracking');
 jest.mock('@make.org/utils/constants/config');
 
-global.window.matchMedia = jest.fn().mockImplementation(query => ({
-  matches: false,
-  media: query,
-  onchange: null,
-  addListener: jest.fn(),
-  removeListener: jest.fn(),
-}));
+if (global.window && global.window.matchMedia) {
+  global.window.matchMedia = jest.fn().mockImplementation(query => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: jest.fn(),
+    removeListener: jest.fn(),
+  }));
+}
 
 function storageMock(): Storage {
   const storage: Record<string, string> = {};
