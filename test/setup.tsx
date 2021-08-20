@@ -29,9 +29,7 @@ jest.mock('@make.org/utils/services/Trackers/FacebookTracking');
 jest.mock('@make.org/utils/services/Trackers/TwitterTracking');
 jest.mock('@make.org/utils/constants/config');
 
-let matchMedia = global.window && global.window.matchMedia;
-
-matchMedia = jest.fn().mockImplementation(query => ({
+global.window.matchMedia = jest.fn().mockImplementation(query => ({
   matches: false,
   media: query,
   onchange: null,

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, FC } from 'react';
+import { useEffect, useRef, useState, FC } from 'react';
 import { useCookies } from 'react-cookie';
 import { useLocation } from 'react-router-dom';
 import { UserService } from '@make.org/utils/services/User';

@@ -14,7 +14,6 @@ import { UserService } from '@make.org/utils/services/User';
 import { OrganisationService } from '@make.org/utils/services/Organisation';
 import { TileWithTitle } from '@make.org/ui/components/TileWithTitle';
 import { FormErrors } from '@make.org/components/Form/Errors';
-import { defaultApiError } from '@make.org/utils/errors/Messages';
 import { FormSuccessMessage } from '@make.org/components/Form/Success';
 import { getUser } from '@make.org/store/actions/authentication';
 import { FormRequirementsStyle } from '@make.org/ui/elements/FormElements';

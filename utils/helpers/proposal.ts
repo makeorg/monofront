@@ -4,7 +4,7 @@ import {
   MAX_PROPOSAL_LENGTH,
   PROPOSALS_LISTING_LIMIT,
 } from '@make.org/utils/constants/proposal';
-import { ProposalsType, ProposalType } from '@make.org/types';
+import { ProposalsType } from '@make.org/types';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import i18n from 'i18next';
 import { TRANSLATION_NAMESPACE } from '@make.org/utils/i18n/constants';

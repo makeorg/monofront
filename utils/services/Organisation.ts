@@ -12,7 +12,6 @@ import {
 } from '@make.org/types';
 import { updateOrganisationErrors } from '@make.org/utils/errors/Messages/Organisation';
 import { getErrorMessages } from '@make.org/utils/helpers/form';
-import { AxiosResponse } from 'axios';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
 const searchOrganisations = async (

@@ -147,7 +147,7 @@ const login = async (
   password: string,
   approvePrivacyPolicy?: boolean,
   success?: () => void,
-  errors?: (errors: ErrorObjectType[]) => void,
+  errors?: (serviceErrors?: ErrorObjectType[]) => void,
   unexpectedError?: () => void
 ): Promise<void> => {
   try {

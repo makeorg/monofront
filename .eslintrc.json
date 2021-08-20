@@ -47,6 +47,7 @@
     "camelcase": "off",
     "no-empty-function": "off",
     "react/no-danger": "off",
-    "@typescript-eslint/no-empty-function": ["error"]
+    "@typescript-eslint/no-empty-function": ["error"],
+    "@typescript-eslint/no-unused-vars": ["error", {  "args": "none" }]
   }
 }
