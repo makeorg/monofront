@@ -9,3 +9,5 @@ node_modules
 dist
 /*/dist
 /*/*/dist
+/test/setup.tsx
+/*/*/webpack
