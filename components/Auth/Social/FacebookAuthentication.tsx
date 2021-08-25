@@ -23,6 +23,7 @@ import { displayNotificationBanner } from '@make.org/store/actions/notifications
 import { NOTIF } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
 import i18n from 'i18next';
+import { closePanel } from '@make.org/store/actions/panel';
 import {
   FacebookButtonStyle,
   SocialButtonLabelStyle,
@@ -58,9 +59,29 @@ export const FacebookAuthentication: React.FC = () => {
           NOTIF.NOTIFICATION_LEVEL_ALERT
         )
       );
+      dispatch(closePanel());
       dispatch(modalClose());
+
       return;
     }
+
+    if (!('email' in response)) {
+      Logger.logError({
+        message: `Facebook login failure no email in profile (login is a phone number or email is not yet confirmed)`,
+        name: 'social-auth',
+      });
+      dispatch(
+        displayNotificationBanner(
+          NOTIF.LOGIN_SOCIAL_MISSING_EMAIL_DATA,
+          NOTIF.NOTIFICATION_LEVEL_ALERT
+        )
+      );
+      dispatch(closePanel());
+      dispatch(modalClose());
+
+      return;
+    }
+
     const { accessToken } = response;
 
     const success = () => {
@@ -84,7 +105,7 @@ export const FacebookAuthentication: React.FC = () => {
         );
       },
       () => success(),
-      () => trackAuthenticationSocialFailure(),
+      () => trackAuthenticationSocialFailure(FACEBOOK_PROVIDER_ENUM),
       () => dispatch(modalClose())
     );
   };

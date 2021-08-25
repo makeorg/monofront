@@ -63,7 +63,7 @@ export const GoogleAuthentication: React.FC = () => {
         dispatch(modalShowDataPolicySocial(GOOGLE_PROVIDER_ENUM, accessToken));
       },
       () => success(),
-      () => trackAuthenticationSocialFailure(),
+      () => trackAuthenticationSocialFailure(GOOGLE_PROVIDER_ENUM),
       () => dispatch(modalClose())
     );
   };
