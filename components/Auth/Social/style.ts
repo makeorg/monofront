@@ -2,44 +2,68 @@ import styled from 'styled-components';
 import { color } from 'athena-design-tokens';
 import { SocialNetworksColors } from '@make.org/assets/vars/Colors';
 import { SvgMailPlain } from '@make.org/ui/Svg/elements';
-import { CenterRowStyle } from '@make.org/ui/elements/FlexElements';
-import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
+import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
+import { intToPx } from '@make.org/utils/helpers/styled';
+import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
 
-export const AuthenticationButtonWrapperStyle = styled(CenterRowStyle)`
+export const AuthenticationButtonWrapperStyle = styled(CenterColumnStyle)`
   width: 100%;
   align-self: center;
   margin: 20px 0;
+  gap: 17px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
+export const SvgLogoWrapperStyle = styled.span`
+  height: 15px;
+  width: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 10px;
+`;
+
+export const SvgLogoFacebookWrapperStyle = styled(SvgLogoWrapperStyle)`
+  background-color: ${SocialNetworksColors.Facebook};
+  fill: white;
+  padding-top: 5px;
 `;
 
 export const SocialButtonStyle = styled.button`
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 38px;
+  width: 100%;
   height: 38px;
   min-width: 38px;
   min-height: 38px;
   padding: 0;
-  margin: 0 10px;
-  border-radius: 50%;
-`;
-
-export const FacebookButtonStyle = styled(SocialButtonStyle)`
-  background-color: ${SocialNetworksColors.Facebook};
-  border: 1px solid ${SocialNetworksColors.Facebook};
-  .tofill {
-    fill: ${color.white};
+  border: black;
+  border-radius: 17.5px;
+  background-color: ${color.white};
+  border: 1px solid ${color.black};
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    width: 250px;
   }
 `;
 
-export const GoogleButtonStyle = styled(SocialButtonStyle)`
-  background-color: ${color.white};
-  border: 1px solid ${color.grey};
+export const SocialButtonLabelStyle = styled.span`
+  font-family: ${MakeFonts.CircularStandardBold};
+  font-size: 14px;
+  font-weight: bold;
+  color: ${color.black};
 `;
 
-export const EmailButtonStyle = styled(RedButtonStyle)`
-  margin: 0 10px;
-`;
+export const FacebookButtonStyle = styled(SocialButtonStyle)``;
+
+export const GoogleButtonStyle = styled(SocialButtonStyle)``;
+
+export const EmailButtonStyle = styled(SocialButtonStyle)``;
 
 export const AuthenticationEmailIconStyle = styled(SvgMailPlain)`
   width: 14px;

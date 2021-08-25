@@ -22,7 +22,12 @@ import { Logger } from '@make.org/utils/services/Logger';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { NOTIF } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
-import { FacebookButtonStyle } from './style';
+import i18n from 'i18next';
+import {
+  FacebookButtonStyle,
+  SocialButtonLabelStyle,
+  SvgLogoFacebookWrapperStyle,
+} from './style';
 
 /**
  * Handles Facebook authentication
@@ -105,7 +110,12 @@ export const FacebookAuthentication: React.FC = () => {
         disableMobileRedirect
         render={(renderProps: { onClick: () => void }) => (
           <FacebookButtonStyle onClick={renderProps.onClick} type="button">
-            <SvgFacebookLogoF aria-hidden focusable="false" />
+            <SvgLogoFacebookWrapperStyle>
+              <SvgFacebookLogoF aria-hidden focusable="false" />
+            </SvgLogoFacebookWrapperStyle>
+            <SocialButtonLabelStyle>
+              {i18n.t('common.social_login.facebook_connect')}
+            </SocialButtonLabelStyle>
             <ScreenReaderItemStyle>Facebook</ScreenReaderItemStyle>
           </FacebookButtonStyle>
         )}

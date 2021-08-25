@@ -21,7 +21,12 @@ import {
 import { Logger } from '@make.org/utils/services/Logger';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { NOTIF } from '@make.org/types/enums';
-import { GoogleButtonStyle } from './style';
+import i18n from 'i18next';
+import {
+  GoogleButtonStyle,
+  SocialButtonLabelStyle,
+  SvgLogoWrapperStyle,
+} from './style';
 import { useAppContext } from '../../../store';
 /**
  * Handles Google authentication
@@ -87,9 +92,14 @@ export const GoogleAuthentication: React.FC = () => {
       buttonText="Google"
       onSuccess={handleGoogleLoginSuccess}
       onFailure={handleGoogleLoginFailure}
-      render={renderProps => (
+      render={(renderProps: { onClick: () => void }) => (
         <GoogleButtonStyle onClick={renderProps.onClick} type="button">
-          <SvgGoogleLogoG aria-hidden focusable="false" />
+          <SvgLogoWrapperStyle>
+            <SvgGoogleLogoG aria-hidden focusable="false" />
+          </SvgLogoWrapperStyle>
+          <SocialButtonLabelStyle>
+            {i18n.t('common.social_login.google_connect')}
+          </SocialButtonLabelStyle>
           <ScreenReaderItemStyle>Google</ScreenReaderItemStyle>
         </GoogleButtonStyle>
       )}

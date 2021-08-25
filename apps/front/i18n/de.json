@@ -29,7 +29,8 @@
       "description": "Unterstütze meinen Vorschlag durch deine Stimmabgabe und lass uns gemeinsam Lösungen für die großen Herausforderungen unserer Zeit entwickeln. Die am meisten unterstützten Ideen werden von Make.org und seinen Kooperationspartnern in die Tat umgesetzt."
     },
     "participate": {
-      "title": "Beteilige dich an der Konsultation „{{question}}“ – Make.org"
+      "title": "Beteilige dich an den Konsultationen – {{question}} – Make.org",
+      "description": "Vorschlagen, abstimmen, handeln: Lass uns gemeinsam Antworten auf die großen Fragen unserer Zeit finden. Die am meisten unterstützten Ideen werden von Make.org und seinen Kooperationspartnern in die Tat umgesetzt."
     },
     "explore": {
       "title": "Entdecke die Vorschläge zur Konsultation „{{question}}“ – Make.org"
@@ -62,31 +63,42 @@
     },
     "browse": {
       "consultations": {
-        "title": "Beteilige dich an den Konsultationen auf Make.org – Make.org",
+        "title": "Beteilige dich an den Konsultationen – Make.org",
         "description": "Vorschlagen, abstimmen, handeln: Lass uns gemeinsam Antworten auf die großen Fragen unserer Zeit finden. Die am meisten unterstützten Ideen werden von Make.org und seinen Kooperationspartnern in die Tat umgesetzt."
       },
       "results": {
-        "title": "Ergebnisse der Konsultationen mit Make.org – Make.org",
+        "title": "Ergebnisse der Konsultationen – Make.org",
         "description": "Entdecke die Ergebnisse unserer Konsultationen sowie die von Make.org und seinen Kooperationspartnern umgesetzten Maßnahmen."
       }
     },
     "legal": {
-      "title": "Impressum – Make.org"
+      "title": "Impressum – Make.org",
+      "description": "Hier findet das Impressum der Website."
+    },
+    "privacy_policy": {
+      "title": "Datenschutzerklärung - Make.org",
+      "description": "Lerne alles über die Verarbeitung deiner persönlichen Daten, wenn du die Website besuchst."
+    },
+    "gtu": {
+      "title": "Nutwungsbedingungen - Make.org",
+      "description": "Erfahre alles über die Nutzungsbedingungen für das Abstimmen und Vorschlagen auf unsere Bürgerbeteiligungsplattform."
     },
     "contact": {
-      "title": "Kontaktiere uns – Make.org"
+      "title": "Kontaktiere uns – Make.org",
+      "description": "Wenn du keine Antwort auf deine Frage findest, kontaktiere uns per E-Mail."
     },
     "no_cookies": {
       "title": "Hoppla! Deine Cookies sind deaktiviert – Make.org"
     },
     "cookies": {
-      "title": "Cookie-Verwaltung – Make.org"
+      "title": "Cookie-Verwaltung – Make.org",
+      "description": "Erfahre alles über die Verwendung von Cookies, wenn du die Plattform besuchst."
     },
     "password-recovery": {
       "title": "Ich erstelle ein neues Passwort – Make.org"
     },
     "a11y": {
-      "title": "Barrierefreiheit-Erklärung – Make.org",
+      "title": "Barrierefreiheit – Make.org",
       "description": "Erfahre mehr über das Engagement von Make.org für digitale Barrierefreiheit. Lass uns gemeinsam Lösungen für die großen Herausforderungen unserer Zeit entwickeln."
     },
     "not_found": {
@@ -162,6 +174,7 @@
       "delete_account_success": "Dein Konto wurde gelöscht. Wir hoffen, dich bald wieder auf Make.org zu sehen!",
       "login_success": "Du hast dich erfolgreich eingeloggt.",
       "logout_success": "Du hast dich erfolgreich abgemeldet.",
+      "login_social_missing_email_data": "Wir können keine gültige E-Mail-Adresse von Ihrem Facebook-Konto abrufen, um sich zu registrieren. Wir laden Sie ein, unser Registrierungsformular per E-Mail zu verwenden.",
       "register_success": "Herzlich willkommen! Du hast dich erfolgreich registriert.",
       "register_validate": "Vielen Dank für deine Anmeldung. Du hast soeben eine E-Mail an {{email}} erhalten, um dein Konto mit einem Klick zu aktivieren.",
       "secure_expired": {
@@ -237,7 +250,13 @@
     "breadcrumbs": "Brotkrumenpfad",
     "million": "Million",
     "million_plural": "Millionen",
-    "close_panel": "Die Dropdown-Liste schließen"
+    "close_panel": "Die Dropdown-Liste schließen",
+    "social_login": {
+      "card_title": "So finden Sie Ihr Abstimmungsverhalten",
+      "facebook_connect": "Mit Facebook fortfahren",
+      "google_connect": "Mit Google fortfahren",
+      "email_register": "Registrieren bei Mail"
+    }
   },
   "header": {
     "logo_alt": "Zur Make.org Startseite gehen",
@@ -514,7 +533,7 @@
       "cookie": "make-cookie-preferences: Dieses Cookie speichert deine Präferenzen in Bezug auf die Verwendung von Cookies auf unserer Website."
     },
     "statistics": {
-      "visitor": "make-visitor-id: Dieses Cookie wird verwendet, um Besuche und erneute Besuche auf unserer Website zu verfolgen und den Datenverkehr auf anonyme und gebündelte Weise zu messen. Dieses Tracking erfolgt nicht auf individueller Ebene.",
+      "visitor": "make-visitor-id: Dieses Cookie wird verwendet, um Besuche auf unserer Website zu verfolgen und den Datenverkehr auf anonyme und gebündelte Weise zu messen. Navigationsereignisse werden an das Analysetool MixPanel gesendet.",
       "tracking": "Facebook-Tracking-Cookie: Dieses Cookie wird verwendet, um Daten zur Nutzung des Dienstes zu sammeln. Diese Daten sind Teil einer gebündelten Analyse, mit deren Hilfe der Dienst verbessert werden soll. Das Cookie wird auch verwendet, um soziodemografische Daten (Alter, Geschlecht, Region) in gebündelter Form zu sammeln und so die Analyse der Konsultationen zu bereichern."
     },
     "social_media": {
@@ -1087,12 +1106,12 @@
   },
   "legal": {
     "title": "Impressum",
-    "make_infos": "Herausgeber der Website: MAKE.ORG, Rechtsform: SAS (kleine Aktiengesellschaft) mit einem Grundkapital von {{make_capital}}, mit Hauptsitz in der {{make_address}}, Frankreich. Eingetragen im RCS de PARIS (Handels- und Firmenregister) unter der Nummer {{make_rcs}} (nachfolgend „MAKE.ORG“ genannt).",
+    "make_infos": "Herausgeber der Website: MAKE.ORG, Rechtsform: Société par Actions Simplifiées (vereinfachte Aktiengesellschaft französischen Rechts) mit einem Grundkapital von {{make_capital}}, mit Hauptsitz in der {{make_address}}, Frankreich. Eingetragen im Handels- und Gesellschaftsregister von PARIS unter der Nummer {{make_rcs}} (nachfolgend „MAKE.ORG“ genannt).",
     "mail": "E-Mail-Adresse: ",
     "make_phone": "Telefonnummer: ",
     "make_phone_number": "{{make_phone_number}}",
     "director": "Verantwortlich für den Inhalt: ",
-    "host": "Seitenbetreiber: ",
+    "host": "Webhost: ",
     "host_address": "{{make_host_address}}, Frankreich",
     "host_phone": "Telefonnummer: ",
     "host_phone_number": "{{host_number}}",
@@ -1105,13 +1124,13 @@
     "button": "Meine Auswahl bestätigen",
     "intro": {
       "title": "Was ist ein Cookie?",
-      "first_paragraph": "Ein Cookie ist eine kleine Textdatei, die unabhängig von der Art des verwendeten Endgeräts (Computer, Smartphone usw.) auf diesem gespeichert und gelesen werden kann, wenn ein Benutzer eine Website oder eine mobile Anwendung besucht.",
+      "first_paragraph": "Ein Cookie ist eine kleine Textdatei, die unabhängig von der Art des verwendeten Endgeräts (Computer, Smartphone usw.) auf diesem gespeichert und gelesen werden kann, wenn Sie eine Website oder eine mobile Anwendung besuchen.",
       "second_paragraph": "Einige Cookies sind für das ordnungsgemäße Funktionieren von Websites oder Apps unerlässlich, andere tragen zur Optimierung der Leistung der Website oder zur Verbesserung der Nutzererfahrung bei."
     },
     "use": {
       "title": "Wie verwenden wir Cookies?",
-      "first_paragraph": "Wenn du unsere Seite aufrufst, werden auf deinem Endgerät Cookies hinterlegt, um deine Nutzererfahrung zu verbessern, die Leistung unserer Seite zu erhöhen und unsere Bürgerkonsultationen zu optimieren.",
-      "second_paragraph": "Die in den Cookies enthaltenen Informationen sind nicht dazu bestimmt, dich persönlich zu identifizieren und werden niemals für andere als die unten angegebenen Zwecke verwendet."
+      "first_paragraph": "Wenn Sie unsere Seite aufrufen, werden auf Ihrem Endgerät Cookies hinterlegt, um Ihre Nutzererfahrung zu verbessern, die Leistung unserer Seite zu erhöhen und unsere Bürgerkonsultationen zu optimieren.",
+      "second_paragraph": "Die in den Cookies enthaltenen Informationen sind nicht dazu bestimmt, Sie persönlich zu identifizieren und werden niemals für andere als die unten angegebenen Zwecke verwendet."
     },
     "partners": {
       "title": "Wer sind unsere Partner?",
@@ -1128,36 +1147,36 @@
       "year_plural": "{{count}} Jahre",
       "technicals": {
         "name": "Technische Cookies:",
-        "description": "Diese Cookies sind für die ordnungsgemäße Funktionsweise der Website unbedingt erforderlich und können nicht deaktiviert werden. Du kannst deinen Browser so einstellen, dass er das Vorhandensein dieser Cookies blockiert oder dich darüber benachrichtigt, aber einige Teile unserer Website können davon betroffen sein. Diese Cookies dienen nicht dazu, dich persönlich zu identifizieren.",
-        "secure": "Make-secure: Sobald du dich in deinem Bürgerbereich auf Make.org eingeloggt hast, stellt dieses Cookie sicher, dass die Verbindung aufrechterhalten wird, während du auf unserer Website navigierst.",
-        "secure-expiration": "Make-secure-expiration: Dieses Cookie wird verwendet, um deine Inaktivität auf der Website zu erkennen und die Verbindung entsprechend zu beenden.",
-        "demographics": "Make-demographics: Dieses Cookie ermöglicht es uns zu wissen, ob auf diesem Gerät bereits demografische Informationen (Altersgruppe, Region, Geschlecht, usw.) abgefragt wurden, um dich bei einem nächsten Besuch nicht erneut zu fragen."
+        "description": "Diese Cookies sind für die ordnungsgemäße Funktionsweise der Website unbedingt erforderlich und können nicht deaktiviert werden. Sie können Ihren Browser so einstellen, dass er das Vorhandensein dieser Cookies blockiert oder Sie darüber benachrichtigt, wodurch einige Teile unserer Website allerdings beeinträchtigt werden können. Diese Cookies dienen nicht dazu, Sie persönlich zu identifizieren.",
+        "secure": "Make-secure: Sobald Sie sich in Ihrem Bürgerbereich auf Make.org eingeloggt haben, stellt dieses Cookie sicher, dass die Verbindung aufrechterhalten wird, während Sie auf unserer Website navigieren.",
+        "secure-expiration": "Make-secure-expiration: Dieses Cookie wird verwendet, um Ihre Inaktivität auf der Website zu erkennen und die Verbindung entsprechend zu beenden.",
+        "demographics": "Make-demographics: Dieses Cookie zeigt uns, ob auf diesem Gerät bereits demografische Informationen (Altersgruppe, Region, Geschlecht, usw.) abgefragt wurden, damit wir Sie ggfs. bei Ihrem nächsten Besuch nicht erneut fragen."
       },
       "preferences": {
         "name": "Präferenz-Cookies:",
-        "description": "Diese Cookies werden verwendet, um deine Präferenzen auf unserer Website zu speichern und so dein Browser-Erlebnis auf Make.org zu verbessern. Du kannst deinen Browser so einstellen, dass er das Vorhandensein dieser Cookies blockiert oder dich darüber benachrichtigt, aber einige Teile unserer Website können davon betroffen sein. Diese Cookies dienen nicht dazu, dich persönlich zu identifizieren.",
-        "google-connect": "Google connect: Diese Cookies ermöglichen es dir, dich zu registrieren und dich in deinem Bürgerbereich anzumelden.",
-        "facebook-connect": "Facebook connect: Diese Cookies ermöglichen es dir, dich zu registrieren und dich in deinem Bürgerbereich anzumelden.",
-        "session-id": "Make-session-id: Dieses Cookie wird verwendet, um alle Aktionen, die du auf der Website durchführst, in einer Sitzung zusammenzufassen.",
-        "session-id-expiration": "Make-session-id-expiration: Mithilfe dieses Cookies kann die entsprechende Benachrichtigung angezeigt werden, dass deine Sitzung abgelaufen ist (nach 20 Minuten) und neu geladen wird.",
-        "user-id": "Make-user-id: Dieses Cookie ermöglicht es, dich zu identifizieren, nachdem du dich in deinem persönlichen Konto auf Make.org angemeldet hast. Mithilfe dieses Cookies wirst du außerdem eingeladen, dich erneut zu anzumelden, indem dein Benutzername vorausgefüllt wird.",
-        "cookie-preferences": "Make-cookie-preferences: Dieses Cookie speichert deine Präferenzen in Bezug auf die Verwendung von Cookies auf unserer Website."
+        "description": "Diese Cookies werden verwendet, um Ihre Präferenzen auf unserer Website zu speichern und so Ihr Browser-Erlebnis auf Make.org zu verbessern. Sie können Ihren Browser so einstellen, dass er das Vorhandensein dieser Cookies blockiert oder Sie darüber benachrichtigt, wodurch einige Teile unserer Website allerdings beeinträchtigt werden können. Diese Cookies dienen nicht dazu, Sie persönlich zu identifizieren.",
+        "google-connect": "Google connect: Diese Cookies ermöglichen es Ihnen, sich zu registrieren und in Ihrem Bürgerbereich anzumelden.",
+        "facebook-connect": "Facebook connect: Diese Cookies ermöglichen es Ihnen, sich zu registrieren und in Ihrem Bürgerbereich anzumelden.",
+        "session-id": "Make-session-id: Dieses Cookie wird verwendet, um alle Aktionen, die Sie auf der Website durchführen, in einer Sitzung zusammenzufassen.",
+        "session-id-expiration": "Make-session-id-expiration: Mithilfe dieses Cookies kann die entsprechende Benachrichtigung angezeigt werden, dass Ihre Sitzung abgelaufen ist (nach 20 Minuten) und neu geladen wird.",
+        "user-id": "Make-user-id: Dieses Cookie ermöglicht es, Sie zu identifizieren, nachdem Sie sich in Ihrem persönlichen Konto auf Make.org angemeldet haben. Mithilfe dieses Cookies werden Sie außerdem eingeladen, sich erneut anzumelden, indem Ihr Benutzername vorausgefüllt wird.",
+        "cookie-preferences": "Make-cookie-preferences: Dieses Cookie speichert Ihre Präferenzen in Bezug auf die Verwendung von Cookies auf unserer Website."
       },
       "statistics": {
         "name": "Statistik-Cookies:",
-        "description": "Diese Cookies dienen dazu, die Besuche auf unserer Website zu analysieren und die Leistung der Website entsprechend zu verbessern. Alle Informationen, die diese Cookies sammeln, werden gebündelt und sind daher anonymisiert. Wenn du diese Cookies nicht akzeptierst, werden wir nicht über deinen erneuten Besuch auf Make.org informiert.",
-        "visitor-id": "make-visitor-id: Dieses Cookie wird verwendet, um einen eindeutigen Besucher zu identifizieren.",
+        "description": "Diese Cookies dienen dazu, die Besuche auf unserer Website zu analysieren und die Leistung der Website entsprechend zu verbessern. Alle Informationen, die diese Cookies sammeln, werden gebündelt und sind daher anonymisiert. Wenn Sie diese Cookies nicht akzeptieren, werden wir nicht über Ihren erneuten Besuch auf Make.org informiert.",
+        "visitor-id": "make-visitor-id: Dieses Cookie wird verwendet, um Besuche auf unserer Website zu verfolgen und den Datenverkehr auf anonyme und gebündelte Weise zu messen. Navigationsereignisse werden an das Analysetool MixPanel gesendet.",
         "visitor-created-at": "make-visitor-created-at: Dieses Cookie wird verwendet, um das Datum des ersten Besuchs auf der Plattform zu erhalten.",
         "facebook-tracking": "Facebook-Tracking-Cookie: Dieses Cookie ermöglicht es uns, Statistiken über die Anzahl der Besucher auf unserer Website zu erstellen. Diese Statistiken helfen uns dabei, unsere Website zu verbessern und die Analyse unserer Konsultationen zu bereichern."
       },
       "social": {
         "name": "Social-Media-Cookies:",
-        "description": "Diese Cookies, die von Drittanbietern aktiviert werden, ermöglichen es dir, Inhalte unserer Website in sozialen Netzwerken zu teilen und helfen uns so, unseren gesellschaftlichen Beitrag zu verstärken. Wenn du der Platzierung dieser Cookies nicht zustimmst, kannst du die Vorteile dieser Sharing-Tools möglicherweise nicht nutzen.",
+        "description": "Diese Cookies, die von Drittanbietern aktiviert werden, ermöglichen es Ihnen, Inhalte unserer Website in sozialen Netzwerken zu teilen und helfen uns so, unseren gesellschaftlichen Beitrag zu verstärken. Wenn Sie der Platzierung dieser Cookies nicht zustimmen, können Sie die Vorteile dieser Sharing-Tools möglicherweise nicht nutzen.",
         "facebook_tracking": "Facebook-Pixel: Diese Cookies werden verwendet, um die Leistung von Facebook-Werbekampagnen für Konsultationen zu verbessern und so die Bürgerbeteiligung zu erhöhen.",
         "twitter_tracking": "Twitter-Pixel: Diese Cookies werden verwendet, um die Leistung von Twitter-Werbekampagnen für Konsultationen zu verbessern und so die Bürgerbeteiligung zu erhöhen.",
-        "facebook_sharing": "Auf Facebook teilen: Dieses Cookie ermöglicht es den Benutzer:innen, Inhalte auf Facebook zu teilen und die Benutzerfreundlichkeit zu verbessern.",
-        "twitter_sharing": "Auf Twitter teilen: Dieses Cookie ermöglicht es den Benutzer:innen, Inhalte auf Twitter zu teilen und die Benutzerfreundlichkeit zu verbessern.",
-        "linkedin_sharing": "Auf LinkedIn teilen: Dieses Cookie ermöglicht es den Benutzer:innen, Inhalte auf LinkedIn zu teilen und die Benutzerfreundlichkeit zu verbessern."
+        "facebook_sharing": "Auf Facebook teilen: Dieses Cookie ermöglicht es Ihnen, Inhalte auf Facebook zu teilen und die Benutzerfreundlichkeit zu verbessern.",
+        "twitter_sharing": "Auf Twitter teilen: Dieses Cookie ermöglicht es Ihnen, Inhalte auf Twitter zu teilen und die Benutzerfreundlichkeit zu verbessern.",
+        "linkedin_sharing": "Dieses Cookie ermöglicht es Ihnen, Inhalte auf LinkedIn zu teilen und die Benutzerfreundlichkeit zu verbessern."
       }
     }
   },

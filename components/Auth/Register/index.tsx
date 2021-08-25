@@ -26,7 +26,10 @@ import { useAppContext } from '@make.org/store';
 import { getUser } from '@make.org/store/actions/authentication';
 import { RegisterForm } from './Form';
 
-import { AuthenticationWrapperStyle } from '../style';
+import {
+  AuthenticationWrapperStyle,
+  SocialRegisterButtonsWrapperStyle,
+} from '../style';
 import { LegalConsent } from './LegalConsent';
 
 export const Register: React.FC = () => {
@@ -161,12 +164,10 @@ export const Register: React.FC = () => {
           {i18n.t('register.title')}
         </SecondLevelTitleStyle>
         <SmallSeparatorWithMarginStyle />
-        <FourthLevelTitleStyle as="h3">
-          {i18n.t('register.social_connect')}
+        <SocialRegisterButtonsWrapperStyle>
           <FacebookAuthentication />
-          {i18n.t('register.or')}
           <GoogleAuthentication />
-        </FourthLevelTitleStyle>
+        </SocialRegisterButtonsWrapperStyle>
         <SeparatorWrapperStyle>
           <SeparatorStyle />
           <TextSeparatorStyle>{i18n.t('register.or')}</TextSeparatorStyle>

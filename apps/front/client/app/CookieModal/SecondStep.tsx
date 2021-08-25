@@ -87,6 +87,9 @@ export const SecondStepCookie: React.FC<Props> = ({
             <CookieModalCookieDetailParagraphStyle>
               {i18n.t('cookie_modal.technicals.expiration')}
             </CookieModalCookieDetailParagraphStyle>
+            <CookieModalCookieDetailParagraphStyle>
+              {i18n.t('cookie_modal.technicals.demographics')}
+            </CookieModalCookieDetailParagraphStyle>
           </ColumnElementStyle>
         </CookieModalElementStyle>
         <CookieModalElementStyle className="with-separator">
@@ -134,9 +137,6 @@ export const SecondStepCookie: React.FC<Props> = ({
             </CookieSectionWrapperStyle>
             <CookieModalCookieDetailParagraphStyle>
               {i18n.t('cookie_modal.statistics.visitor')}
-            </CookieModalCookieDetailParagraphStyle>
-            <CookieModalCookieDetailParagraphStyle>
-              {i18n.t('cookie_modal.statistics.tracking')}
             </CookieModalCookieDetailParagraphStyle>
           </ColumnElementStyle>
         </CookieModalElementStyle>
