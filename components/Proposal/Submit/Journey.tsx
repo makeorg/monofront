@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import {
   trackClickBackProposals,
   trackDisplayProposalSubmitValidation,
@@ -10,6 +10,8 @@ import { proposeSuccess } from '@make.org/store/actions/proposal';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { modalShowProposalSuccess } from '@make.org/store/actions/modal';
 import { useAppContext } from '@make.org/store';
+import { useLocation } from 'react-router';
+import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 import { ProposalForm } from './Form';
 import { ProposalAuthentication } from './Authentication';
 
@@ -20,13 +22,15 @@ const steps = {
 
 export const ProposalJourney: React.FC = () => {
   const { dispatch, state } = useAppContext();
+  const location = useLocation();
+  const pathname = useRef(location.pathname);
   const { isLoggedIn } = selectAuthentication(state);
   const { question } = state.questions[state.currentQuestion];
   const [proposalContent, setProposalContent] = useState('');
   const [proposalStep, setProposalStep] = useState('form');
   const [waiting, setWaiting] = useState(false);
   const baitText = getLocalizedBaitText(
-    question?.language,
+    question?.language || DEFAULT_LANGUAGE,
     question?.questionId
   );
 
@@ -74,6 +78,18 @@ export const ProposalJourney: React.FC = () => {
     }
     setProposalStep(steps.AUTHENTICATION_STEP);
   };
+
+  useEffect(() => {
+    if (pathname.current !== location.pathname) {
+      dispatch(closePanel());
+      dispatch(removePanelContent());
+      pathname.current = location.pathname;
+    }
+  }, [location.pathname, dispatch]);
+
+  if (!question) {
+    return null;
+  }
 
   if (proposalStep === steps.AUTHENTICATION_STEP) {
     return (
