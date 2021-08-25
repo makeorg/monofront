@@ -8,6 +8,7 @@ import { MetaTags } from '@make.org/components/MetaTags';
 import { DateHelper } from '@make.org/utils/helpers/date';
 import { DATE } from '@make.org/types/enums';
 import { RedLinkHTMLElementStyle } from '@make.org/ui/elements/LinkElements';
+import i18n from 'i18next';
 import {
   StaticPageWrapperStyle,
   StaticSecondLevelTitleStyle,
@@ -22,7 +23,10 @@ import {
 
 export const DataEN: FC = () => (
   <>
-    <MetaTags title="Privacy policy - Make.org" />
+    <MetaTags
+      title={i18n.t('meta.privacy_policy.title')}
+      description={i18n.t('meta.privacy_policy.description')}
+    />
     <StaticPageWrapperStyle>
       <StaticSecondLevelTitleStyle>
         Privacy policy

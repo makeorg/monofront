@@ -16,6 +16,7 @@ import {
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { getCountryDPA } from '@make.org/utils/helpers/countries';
 import { getCookiesPageLink } from '@make.org/utils/helpers/url';
+import i18n from 'i18next';
 import {
   StaticPageWrapperStyle,
   StaticSecondLevelTitleStyle,
@@ -37,7 +38,10 @@ export const DataFR: FC = () => {
 
   return (
     <>
-      <MetaTags title="Charte de données personnelles - Make.org" />
+      <MetaTags
+        title={i18n.t('meta.privacy_policy.title')}
+        description={i18n.t('meta.privacy_policy.description')}
+      />
       <StaticPageWrapperStyle>
         <StaticSecondLevelTitleStyle>
           Charte de données personnelles

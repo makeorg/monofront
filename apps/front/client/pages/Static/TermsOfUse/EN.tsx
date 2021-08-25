@@ -12,6 +12,7 @@ import { DateHelper } from '@make.org/utils/helpers/date';
 import { DATE } from '@make.org/types/enums';
 import { RedLinkHTMLElementStyle } from '@make.org/ui/elements/LinkElements';
 import { getDataPageLink } from '@make.org/utils/helpers/url';
+import i18n from 'i18next';
 import {
   StaticPageWrapperStyle,
   StaticSecondLevelTitleStyle,
@@ -34,7 +35,10 @@ export const TermsOfUseEN: FC = () => {
 
   return (
     <>
-      <MetaTags title="Terms of service - Make.org" />
+      <MetaTags
+        title={i18n.t('meta.gtu.title')}
+        description={i18n.t('meta.gtu.description')}
+      />
       <StaticPageWrapperStyle>
         <StaticSecondLevelTitleStyle>
           <>MAKE.ORG terms of service</>

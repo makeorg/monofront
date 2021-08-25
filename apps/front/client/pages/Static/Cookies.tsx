@@ -86,7 +86,10 @@ export const Cookies: FC = () => {
 
   return (
     <>
-      <MetaTags title={i18n.t('meta.cookies.title')} />
+      <MetaTags
+        title={i18n.t('meta.cookies.title')}
+        description={i18n.t('meta.cookies.description')}
+      />
       <StaticPageWrapperStyle>
         <StaticSecondLevelTitleStyle>
           {i18n.t('cookies_management.title')}
@@ -362,11 +365,6 @@ export const Cookies: FC = () => {
                         }),
                       })}
                     </CookieLabelStyle>
-                  </CookieModalCookieDetailParagraphStyle>
-                  <CookieModalCookieDetailParagraphStyle className="cookie-page">
-                    {i18n.t(
-                      'cookies_management.details.statistics.facebook-tracking'
-                    )}
                   </CookieModalCookieDetailParagraphStyle>
                 </ColumnElementStyle>
               </CookieModalElementStyle>
