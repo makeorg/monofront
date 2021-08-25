@@ -55,8 +55,8 @@ export const ROUTE_STATIC_DATA_EN = `${ROUTE_COUNTRY}/data-terms`;
 // routes for de language
 export const ROUTE_STATIC_LEGAL_DE = `${ROUTE_COUNTRY}/impressum`;
 export const ROUTE_STATIC_GTU_DE = `${ROUTE_COUNTRY}/nutzungsbedingungen`;
-export const ROUTE_STATIC_DATA_DE = `${ROUTE_COUNTRY}/datenrichtlinie`;
-export const ROUTE_STATIC_A11Y_DE = `${ROUTE_COUNTRY}/zuganglichkeitserklarung`;
+export const ROUTE_STATIC_DATA_DE = `${ROUTE_COUNTRY}/datenschutzerklärung`;
+export const ROUTE_STATIC_A11Y_DE = `${ROUTE_COUNTRY}/barrierefreiheit`;
 export const ROUTE_STATIC_CONTACT_DE = `${ROUTE_COUNTRY}/kontakt`;
 
 // webflow routes

@@ -24,7 +24,7 @@ export const DesktopMenu: FC = () => {
   const { state } = useAppContext();
   const { country, language, countriesWithConsultations } = state.appConfig;
   const browseConsultationsLink = getBrowseConsultationsLink(country);
-  const isFR = country === 'FR';
+  const displayExtraNavLinks = country === 'DE' || country === 'FR';
   const countryHasConsultations = getCountryWithConsultations(
     country,
     countriesWithConsultations
@@ -71,7 +71,7 @@ export const DesktopMenu: FC = () => {
             {externalLinkIcon}
           </DesktopMenuExternalLinkStyle>
         </DesktopMenuItemStyle>
-        {isFR && (
+        {displayExtraNavLinks && (
           <DesktopMenuItemStyle
             className={`${SEARCH.SEARCH_DESKTOP_EXPANDED} with-border`}
           >
