@@ -1,6 +1,4 @@
-// any can't be typed for data line 16 & 40
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
+import { ApiServiceHeadersType } from '@make.org/types';
 import { v4 as uuidv4 } from 'uuid';
 
 export class ApiServiceError extends Error {
@@ -28,6 +26,8 @@ export class ApiServiceError extends Error {
 
   columnNumber?: string;
 
+  headers?: ApiServiceHeadersType;
+
   clone = (message: string): ApiServiceError =>
     new ApiServiceError(
       message,
@@ -37,19 +37,20 @@ export class ApiServiceError extends Error {
       this.method,
       this.logId,
       this.logged,
-      this.requestId
+      this.requestId,
+      this.headers
     );
 
   constructor(
     message: string,
     status?: number,
-    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     data?: any,
     url?: string,
     method?: string,
     logId?: string,
     logged?: boolean,
-    requestId?: string
+    requestId?: string,
+    headers?: ApiServiceHeadersType
   ) {
     super(message);
     this.status = status;
@@ -61,6 +62,7 @@ export class ApiServiceError extends Error {
     this.logged = logged || false;
     this.name = 'api-service-error';
     this.requestId = requestId;
+    this.headers = headers;
 
     if (Error.captureStackTrace) {
       Error.captureStackTrace(this, ApiServiceError);

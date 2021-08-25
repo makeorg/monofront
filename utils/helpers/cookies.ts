@@ -2,6 +2,7 @@ import { USER_PREFERENCES_COOKIE } from '@make.org/utils/constants/cookies';
 import { FacebookTracking } from '@make.org/utils/services/Trackers/FacebookTracking';
 import { StateUserCookiesPreferences } from '@make.org/types';
 import Cookies from 'universal-cookie';
+import { MixpanelTracking } from '@make.org/utils/services/Trackers/MixpanelTracking';
 import { TwitterUniversalTag } from '../services/Trackers/TwitterTracking.js';
 import { TWITTER_SCRIPT, twttr } from '../services/Trackers/twttr.js';
 
@@ -42,6 +43,9 @@ export const initTrackersFromPreferences = (
     }
     TwitterUniversalTag.init();
   }
+
+  // allways init mixpanel
+  MixpanelTracking.init();
 };
 
 export const removeTrackersFromPreferences = (

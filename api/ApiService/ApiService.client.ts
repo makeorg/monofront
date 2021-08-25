@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import axiosRetry from 'axios-retry';
 import axios, { AxiosResponse } from 'axios';
-import { OptionsType } from '@make.org/types';
+import { ApiServiceHeadersType, OptionsType } from '@make.org/types';
 import { IApiServiceStrategy } from './index';
 import { ApiServiceShared } from './ApiService.shared';
 import { getLocationContext } from './getLocationContext';
@@ -112,7 +112,10 @@ export class ApiServiceClient implements IApiServiceStrategy {
 
   addHeadersListener(
     identifier: string,
-    listener: string | ((args: any) => string)
+    listener:
+      | string
+      | ((args: any) => string)
+      | ((headers: ApiServiceHeadersType) => void)
   ): void {
     this._headersListeners.set(identifier, listener);
   }
@@ -153,13 +156,19 @@ export class ApiServiceClient implements IApiServiceStrategy {
         headers,
       });
 
-      response.then(res =>
-        this._headersListeners.forEach(
-          (listener: (headers: Readonly<Record<string, string>>) => void) =>
-            listener(res && res.headers)
+      response
+        .then(res =>
+          this._headersListeners.forEach(
+            (listener: (headers: Readonly<Record<string, string>>) => void) =>
+              listener(res && res.headers)
+          )
         )
-      );
-
+        .catch(apiServiceError => {
+          this._headersListeners.forEach(
+            (listener: (headers: Readonly<Record<string, string>>) => void) =>
+              listener(apiServiceError.headers)
+          );
+        });
       return response;
     } catch (apiServiceError) {
       if (apiServiceError.status === 401) {

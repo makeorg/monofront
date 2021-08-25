@@ -27,7 +27,7 @@ import { getRouteNoCookies } from '@make.org/utils/routes';
 import ContextState from '@make.org/store';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 
-import { StateRoot } from '@make.org/types';
+import { ApiServiceHeadersType, StateRoot } from '@make.org/types';
 import { initTrackersFromPreferences } from '@make.org/utils/helpers/cookies';
 import { CountryListener } from './app/CountryListener';
 import { AppContainer } from './app';
@@ -91,6 +91,15 @@ const logAndTrackEvent = (eventName: string) => {
 const initApp = async (state: StateRoot) => {
   const { language, country, source, queryParams } = state.appConfig;
 
+  // add listener to update trackingParamsService
+  // should be before first api call (before authenticationState) to get visitorId
+  apiClient.addHeadersListener(
+    'trackingServiceListener',
+    (headers: ApiServiceHeadersType) => {
+      trackingParamsService.visitorId =
+        headers['x-visitor-id'] || trackingParamsService.visitorId;
+    }
+  );
   const authenticationStateData = await authenticationState();
 
   // Set in session storage some keys from query params

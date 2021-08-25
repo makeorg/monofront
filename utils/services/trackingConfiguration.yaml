@@ -155,6 +155,9 @@ CLICK_PROPOSAL_VOTE:
           description: proposal id (internal tracking only)
         - key: nature
           description: vote key (internal tracking only)
+    protected_parameters:
+      - proposalId
+      - nature
 
 CLICK_PROPOSAL_UNVOTE:
     key: click-proposal-unvote
@@ -168,6 +171,9 @@ CLICK_PROPOSAL_UNVOTE:
           description: proposal id (internal tracking only)
         - key: nature
           description: vote key (internal tracking only)
+    protected_parameters:
+      - proposalId
+      - nature
 
 CLICK_SEQUENCE_FIRST_VOTE:
     key: click-sequence-first-vote
@@ -179,6 +185,9 @@ CLICK_SEQUENCE_FIRST_VOTE:
           description: proposal id (internal tracking only)
         - key: nature
           description: vote key (internal tracking only)
+    protected_parameters:
+      - proposalId
+      - nature
 
 CLICK_PROPOSAL_QUALIFY:
     key: click-proposal-qualify
@@ -194,6 +203,10 @@ CLICK_PROPOSAL_QUALIFY:
           description: vote key (internal tracking only)
         - key: type
           description: qualification key (internal tracking only)
+    protected_parameters:
+        - proposalId
+        - type
+        - nature
 
 CLICK_PROPOSAL_UNQUALIFY:
     key: click-proposal-unqualify
@@ -209,6 +222,10 @@ CLICK_PROPOSAL_UNQUALIFY:
           description: vote key (internal tracking only)
         - key: type
           description: qualification key (internal tracking only)
+    protected_parameters:
+        - proposalId
+        - type
+        - nature
 
 CLICK_SEQUENCE_NEXT_CARD:
     key: click-sequence-next-card

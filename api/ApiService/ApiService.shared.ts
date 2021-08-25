@@ -98,7 +98,8 @@ export const handleErrors = (
     method,
     uuid,
     logged,
-    requestId || 'none'
+    requestId || 'none',
+    error.response?.headers
   );
 };
 
