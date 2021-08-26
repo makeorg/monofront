@@ -26,7 +26,10 @@ import { useAppContext } from '@make.org/store';
 import { getUser } from '@make.org/store/actions/authentication';
 import { RegisterForm } from './Form';
 
-import { AuthenticationWrapperStyle } from '../style';
+import {
+  AuthenticationWrapperStyle,
+  SocialRegisterButtonsWrapperStyle,
+} from '../style';
 import { LegalConsent } from './LegalConsent';
 
 export const Register: React.FC = () => {
@@ -56,9 +59,11 @@ export const Register: React.FC = () => {
 
   const handleLegalField = (fieldName: string, value: boolean) => {
     if (!fieldName || value === undefined) {
-      Logger.logError(
-        'HandleLegalField in register form : fieldname or value is missing'
-      );
+      Logger.logError({
+        message:
+          'HandleLegalField in register form : fieldname or value is missing',
+        name: 'register',
+      });
       return null;
     }
     return setUser({
@@ -96,7 +101,7 @@ export const Register: React.FC = () => {
     const unexpectedError = () => {
       dispatch(modalClose());
       // @toDo: notify user
-      Logger.logError(`Login fail for ${email}`);
+      Logger.logError({ message: `Login fail for ${email}`, name: 'register' });
     };
 
     await UserService.login(
@@ -161,12 +166,10 @@ export const Register: React.FC = () => {
           {i18n.t('register.title')}
         </SecondLevelTitleStyle>
         <SmallSeparatorWithMarginStyle />
-        <FourthLevelTitleStyle as="h3">
-          {i18n.t('register.social_connect')}
+        <SocialRegisterButtonsWrapperStyle>
           <FacebookAuthentication />
-          {i18n.t('register.or')}
           <GoogleAuthentication />
-        </FourthLevelTitleStyle>
+        </SocialRegisterButtonsWrapperStyle>
         <SeparatorWrapperStyle>
           <SeparatorStyle />
           <TextSeparatorStyle>{i18n.t('register.or')}</TextSeparatorStyle>

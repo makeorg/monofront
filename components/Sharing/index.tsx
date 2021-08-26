@@ -14,8 +14,7 @@ import {
   linkedinShareUrl,
 } from '@make.org/utils/helpers/social';
 import Cookies from 'universal-cookie';
-import { USER_PREFERENCES_COOKIE } from '@make.org/utils/constants/cookies';
-import { NOTIF } from '@make.org/types/enums';
+import { COOKIE, NOTIF } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import {
@@ -32,7 +31,7 @@ export const Sharing: React.FC = () => {
   const location = useLocation();
   const { dispatch } = useAppContext();
   const cookies = new Cookies();
-  const preferencesCookie = cookies.get(USER_PREFERENCES_COOKIE);
+  const preferencesCookie = cookies.get(COOKIE.USER_PREFERENCES);
 
   const displayCookieNotification = () =>
     dispatch(

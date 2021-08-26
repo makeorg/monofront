@@ -22,7 +22,13 @@ import { Logger } from '@make.org/utils/services/Logger';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { NOTIF } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
-import { FacebookButtonStyle } from './style';
+import i18n from 'i18next';
+import { closePanel } from '@make.org/store/actions/panel';
+import {
+  FacebookButtonStyle,
+  SocialButtonLabelStyle,
+  SvgLogoFacebookWrapperStyle,
+} from './style';
 
 /**
  * Handles Facebook authentication
@@ -40,22 +46,47 @@ export const FacebookAuthentication: React.FC = () => {
     if (!('accessToken' in response)) {
       const { status } = response;
       if (status === 'unknown') {
-        Logger.logInfo(
-          'Facebook auth failed with status unknown. Probably user close popup.'
-        );
+        Logger.logInfo({
+          message:
+            'Facebook auth failed with status unknown. Probably user close popup.',
+          name: 'social-auth',
+        });
 
         return;
       }
-      Logger.logError(`Facebook login failure: ${status}`);
+      Logger.logError({
+        message: `Facebook login failure: ${response?.status}`,
+        name: 'social-auth',
+      });
       dispatch(
         displayNotificationBanner(
           NOTIF.UNEXPECTED_ERROR_MESSAGE,
           NOTIF.NOTIFICATION_LEVEL_ALERT
         )
       );
+      dispatch(closePanel());
       dispatch(modalClose());
+
       return;
     }
+
+    if (!('email' in response)) {
+      Logger.logError({
+        message: `Facebook login failure no email in profile (login is a phone number or email is not yet confirmed)`,
+        name: 'social-auth',
+      });
+      dispatch(
+        displayNotificationBanner(
+          NOTIF.LOGIN_SOCIAL_MISSING_EMAIL_DATA,
+          NOTIF.NOTIFICATION_LEVEL_ALERT
+        )
+      );
+      dispatch(closePanel());
+      dispatch(modalClose());
+
+      return;
+    }
+
     const { accessToken } = response;
 
     const success = () => {
@@ -79,7 +110,7 @@ export const FacebookAuthentication: React.FC = () => {
         );
       },
       () => success(),
-      () => trackAuthenticationSocialFailure(),
+      () => trackAuthenticationSocialFailure(FACEBOOK_PROVIDER_ENUM),
       () => dispatch(modalClose())
     );
   };
@@ -105,7 +136,12 @@ export const FacebookAuthentication: React.FC = () => {
         disableMobileRedirect
         render={(renderProps: { onClick: () => void }) => (
           <FacebookButtonStyle onClick={renderProps.onClick} type="button">
-            <SvgFacebookLogoF aria-hidden focusable="false" />
+            <SvgLogoFacebookWrapperStyle>
+              <SvgFacebookLogoF aria-hidden focusable="false" />
+            </SvgLogoFacebookWrapperStyle>
+            <SocialButtonLabelStyle>
+              {i18n.t('common.social_login.facebook_connect')}
+            </SocialButtonLabelStyle>
             <ScreenReaderItemStyle>Facebook</ScreenReaderItemStyle>
           </FacebookButtonStyle>
         )}

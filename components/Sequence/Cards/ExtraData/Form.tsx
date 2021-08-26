@@ -16,6 +16,8 @@ import {
 } from '@make.org/utils/services/Tracking';
 import { useAppContext } from '@make.org/store';
 import { SubmitButton } from '@make.org/ui/components/SubmitButton';
+import Cookies from 'universal-cookie';
+import { COOKIE } from '@make.org/types/enums';
 import { RadioDemographics } from './Radio';
 import { ExtraDataFormStyle, SkipIconStyle, SubmitWrapperStyle } from './style';
 import { SelectDemographics } from './Select';
@@ -73,6 +75,12 @@ export const ExtraDataForm: React.FC<Props> = ({
   const FORM_NAME = `demographics_${type}`;
   const isMobile = matchMobileDevice(device);
 
+  // set cookie duration to a month with december corner case
+  const expirationDate = new Date();
+  const month = (expirationDate.getMonth() + 1) % 12;
+  expirationDate.setMonth(month);
+  const cookies = new Cookies();
+
   const utmParams = useMemo(() => {
     const params = new URLSearchParams(location.search);
     const accumulator: { [key: string]: string } = {};
@@ -93,10 +101,19 @@ export const ExtraDataForm: React.FC<Props> = ({
       event.preventDefault();
       setIsSubmitDisabled(true);
       setIsSkipDisabled(true);
+      cookies.set(COOKIE.DEMOGRAPHICS, true, {
+        path: '/',
+        expires: expirationDate,
+      });
       const success = () => {
         setIsSubmitDisabled(false);
         setIsSkipDisabled(false);
         dispatch(incrementSequenceIndex());
+        if (value === SKIP_TRACKING_VALUE) {
+          trackClickSkipDemographics(type);
+        } else {
+          trackClickSaveDemographics(type);
+        }
       };
       const error = () => {
         setIsSubmitDisabled(false);
@@ -112,12 +129,10 @@ export const ExtraDataForm: React.FC<Props> = ({
       );
 
       dispatch(persistDemographics(type, value, currentQuestion));
-      trackClickSaveDemographics(type);
     };
 
   const onClickSkip = (event: React.SyntheticEvent<HTMLButtonElement>) => {
     handleSubmit(SKIP_TRACKING_VALUE)(event);
-    trackClickSkipDemographics(type);
   };
 
   useEffect(() => {

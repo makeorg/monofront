@@ -5,10 +5,13 @@ let unexpectedError = (error: ApiServiceError | Error) => {
   const message = 'You should handle unexpected errors (default handler)';
   try {
     if (error instanceof Error) {
-      Logger.logError(`${message}: ${error.message}`);
+      Logger.logError({
+        message: `${message}: ${error.message}`,
+        name: 'services',
+      });
     }
   } catch (e) {
-    Logger.logError(message);
+    Logger.logError({ message, name: 'services' });
   }
 };
 

@@ -41,7 +41,7 @@
 				"query-string": "7.0.0",
 				"react": "^17.0.2",
 				"react-autosize-textarea": "~7.1.0",
-				"react-cookie": "~4.0.0",
+				"react-cookie": "^4.1.1",
 				"react-dom": "^17.0.2",
 				"react-facebook-login": "~4.1.1",
 				"react-google-login": "~5.2.2",
@@ -66,7 +66,7 @@
 				"winston": "~3.3.3"
 		},
 		"devDependencies": {
-				"@babel/core": "^7.15.0", 
+				"@babel/core": "^7.15.0",
 				"@babel/preset-typescript": "^7.15.0",
 				"@babel/register": "^7.14.5",
 				"@cypress/code-coverage": "^3.9.10",

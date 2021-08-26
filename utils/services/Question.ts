@@ -44,9 +44,10 @@ const getDetail = async (
     const { data } = response || {};
     if (country !== undefined && !data?.countries?.includes(country)) {
       notFound();
-      Logger.logError(
-        `Country : ${country} is not defined or available for question : ${questionSlugOrId}. Available countries in question are : ${data.countries}`
-      );
+      Logger.logError({
+        message: `Country : ${country} is not defined or available for question : ${questionSlugOrId}. Available countries in question are : ${data.countries}`,
+        name: 'services',
+      });
 
       return null;
     }

@@ -31,6 +31,7 @@ export const mapErrors = (
       }
       Logger.logError({
         message: `Unexpected error: "field": "${apiErrorField}", "key": "${apiError.key}", "message": "${apiError.message}"`,
+        name: 'services',
         logId,
       });
       return {

@@ -11,7 +11,10 @@ export const checkIsFeatureActivated = (
   activesFeatures: Array<string>
 ): boolean => {
   if (!featuresList.includes(featureSlug)) {
-    Logger.logWarning(`Feature "${featureSlug}" not found`);
+    Logger.logWarning({
+      message: `Feature "${featureSlug}" not found`,
+      name: 'client-helper',
+    });
 
     return false;
   }

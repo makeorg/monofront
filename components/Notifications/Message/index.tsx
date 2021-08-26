@@ -16,6 +16,7 @@ import { AccountDeletionSuccessMessage } from '../Banner/AccountDeletionSuccess'
 import { FirstVoteTip } from '../Tip/FirstVote';
 import { SocialMediaCookiesMessage } from '../Banner/SocialMediaCookies';
 import { CookiesPreferencesUpdateMessage } from '../Banner/CookiesPreferencesUpdate';
+import { LoginSocialMissingDataMessage } from '../Banner/LoginSocialMissingData';
 
 type Props = {
   name: string;
@@ -65,6 +66,9 @@ export const NotificationMessage: React.FC<Props> = ({
       return <SocialMediaCookiesMessage />;
     case NOTIF.COOKIES_PREFERENCES_UPDATE_MESSAGE:
       return <CookiesPreferencesUpdateMessage />;
+    case NOTIF.LOGIN_SOCIAL_MISSING_EMAIL_DATA:
+      return <LoginSocialMissingDataMessage />;
+
     default:
       return <></>;
   }

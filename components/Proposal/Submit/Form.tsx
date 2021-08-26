@@ -46,6 +46,17 @@ type Props = {
   waitingApiCallback: boolean;
 };
 
+const getModerationLinkByLanguage = (language: string) => {
+  switch (language) {
+    case 'fr':
+      return URL.MODERATION_CHARTER_FR_LINK;
+    case 'de':
+      return URL.MODERATION_CHARTER_DE_LINK;
+    default:
+      return URL.MODERATION_CHARTER_EN_LINK;
+  }
+};
+
 export const ProposalForm: React.FC<Props> = ({
   proposalContent,
   setProposalContent,
@@ -58,13 +69,12 @@ export const ProposalForm: React.FC<Props> = ({
   const { state } = useAppContext();
   const inputRef = useRef() as React.MutableRefObject<HTMLTextAreaElement>;
   const question: QuestionType | null = selectCurrentQuestion(state);
-  const { country } = state.appConfig;
+  const { language } = state.appConfig;
   const proposalIsEmpty = proposalContent.length === 0;
   const baitText = getLocalizedBaitText(
     question?.language || '',
     question?.questionId || ''
   );
-  const isFR = country === 'FR';
   const charCounting = proposalIsEmpty
     ? baitText?.length
     : proposalContent.length;
@@ -152,9 +162,7 @@ export const ProposalForm: React.FC<Props> = ({
         </SpaceBetweenRowStyle>
       </form>
       <ProposalExternalLinkStyle
-        href={
-          isFR ? URL.MODERATION_CHARTER_FR_LINK : URL.MODERATION_CHARTER_EN_LINK
-        }
+        href={getModerationLinkByLanguage(language)}
         target="_blank"
         rel="noopener"
         onClick={trackClickModerationLink}

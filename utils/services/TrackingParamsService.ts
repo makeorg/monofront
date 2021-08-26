@@ -20,6 +20,8 @@ class TrackingParamsServiceClass {
 
   _location = '';
 
+  _visitorId = '';
+
   _url?: string = undefined;
 
   _listeners: TrackingParamsListenerType[] = [];
@@ -97,6 +99,18 @@ class TrackingParamsServiceClass {
       this._location = location;
       this._dispatchUpdate();
     }
+  }
+
+  // specific param needed for mixpanel as distuniqueinctId
+  // not present in common params : "this._all"
+  set visitorId(visitorId: string) {
+    if (this._visitorId !== visitorId) {
+      this._visitorId = visitorId;
+    }
+  }
+
+  get visitorId() {
+    return this._visitorId;
   }
 
   _updateDynamicParams() {

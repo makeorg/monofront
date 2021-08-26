@@ -5,7 +5,7 @@ import loadable from '@loadable/component';
 import { getHomeLink } from '@make.org/utils/helpers/url';
 import { DEFAULT_COUNTRY } from '@make.org/utils/constants/config';
 import { useAppContext } from '@make.org/store';
-import { SEQUENCE } from '@make.org/types/enums';
+import { COOKIE, SEQUENCE } from '@make.org/types/enums';
 import {
   ROUTE_SEARCH,
   ROUTE_SEARCH_PROPOSALS,
@@ -58,7 +58,6 @@ import {
 } from '@make.org/utils/routes';
 import Cookies from 'universal-cookie';
 import { StateUserCookiesPreferences } from '@make.org/types';
-import { USER_PREFERENCES_COOKIE } from '@make.org/utils/constants/cookies';
 import { TwitterUniversalTag } from '@make.org/utils/services/Trackers/TwitterTracking';
 import { usePageBackgoundColor } from '../hooks/usePageBackgroundColor';
 import { QuestionWrapper } from '../pages/Consultation/QuestionWrapper';
@@ -112,7 +111,7 @@ const CookiesPage = loadable(() => import('../pages/Static/Cookies'));
 export const Routes: FC = () => {
   const cookies = new Cookies();
   const preferencesCookies: StateUserCookiesPreferences = cookies.get(
-    USER_PREFERENCES_COOKIE
+    COOKIE.USER_PREFERENCES
   );
   const { state } = useAppContext();
   const location = useLocation();

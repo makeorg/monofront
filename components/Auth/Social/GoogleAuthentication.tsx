@@ -21,7 +21,12 @@ import {
 import { Logger } from '@make.org/utils/services/Logger';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { NOTIF } from '@make.org/types/enums';
-import { GoogleButtonStyle } from './style';
+import i18n from 'i18next';
+import {
+  GoogleButtonStyle,
+  SocialButtonLabelStyle,
+  SvgLogoWrapperStyle,
+} from './style';
 import { useAppContext } from '../../../store';
 /**
  * Handles Google authentication
@@ -58,19 +63,25 @@ export const GoogleAuthentication: React.FC = () => {
         dispatch(modalShowDataPolicySocial(GOOGLE_PROVIDER_ENUM, accessToken));
       },
       () => success(),
-      () => trackAuthenticationSocialFailure(),
+      () => trackAuthenticationSocialFailure(GOOGLE_PROVIDER_ENUM),
       () => dispatch(modalClose())
     );
   };
 
   const handleGoogleLoginFailure = (response: any) => {
     if (response?.error === 'popup_closed_by_user') {
-      Logger.logInfo('Google auth popup closed by user');
+      Logger.logInfo({
+        message: 'Google auth popup closed by user',
+        name: 'social-auth',
+      });
 
       return;
     }
 
-    Logger.logError(`Google login failure: ${response?.error}`);
+    Logger.logError({
+      message: `Google login failure: ${response?.error}`,
+      name: 'social-auth',
+    });
     dispatch(
       displayNotificationBanner(
         NOTIF.UNEXPECTED_ERROR_MESSAGE,
@@ -87,9 +98,14 @@ export const GoogleAuthentication: React.FC = () => {
       buttonText="Google"
       onSuccess={handleGoogleLoginSuccess}
       onFailure={handleGoogleLoginFailure}
-      render={renderProps => (
+      render={(renderProps: { onClick: () => void }) => (
         <GoogleButtonStyle onClick={renderProps.onClick} type="button">
-          <SvgGoogleLogoG aria-hidden focusable="false" />
+          <SvgLogoWrapperStyle>
+            <SvgGoogleLogoG aria-hidden focusable="false" />
+          </SvgLogoWrapperStyle>
+          <SocialButtonLabelStyle>
+            {i18n.t('common.social_login.google_connect')}
+          </SocialButtonLabelStyle>
           <ScreenReaderItemStyle>Google</ScreenReaderItemStyle>
         </GoogleButtonStyle>
       )}

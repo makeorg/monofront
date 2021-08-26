@@ -36,6 +36,13 @@ export const AuthenticationTitleStyle = styled(SecondLevelTitleStyle)`
   padding: 0 25px;
 `;
 
+export const SocialRegisterButtonsWrapperStyle = styled.div`
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  gap: 17px;
+`;
+
 export const LegalFormStyle = styled(FormCenterAlignStyle)`
   max-width: 475px;
   &.hidden {

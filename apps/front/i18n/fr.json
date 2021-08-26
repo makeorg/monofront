@@ -2,7 +2,7 @@
   "meta": {
     "home": {
       "title": "Agir avec Make.org - Make.org",
-      "description": "Proposez, votez, agissons : ensemble, trouvons des solutions aux grandes problématiques actuelles. Les plus soutenues seront mises en action par Make.org et ses partenaires.",
+      "description": "Proposez, votez, agissons : ensemble, trouvons des solutions aux grandes problématiques actuelles.",
       "picture": "https://assets.make.org/assets/metas/default_meta-fr.png"
     },
     "organisation": {
@@ -29,7 +29,8 @@
       "description": "Soutenez ma proposition en votant et trouvons ensemble des solutions aux grandes problématiques actuelles. Les plus soutenues seront mises en action par Make.org et ses partenaires."
     },
     "participate": {
-      "title": "Participer à la consultation '{{question}}' - Make.org"
+      "title": "Participez aux consultations – {{question}} – Make.org",
+      "description": "Proposez, votez, agissons : ensemble, trouvons des solutions aux grandes problématiques actuelles."
     },
     "explore": {
       "title": "Explorer les propositions de la consultation '{{question}}' - Make.org"
@@ -62,25 +63,36 @@
     },
     "browse": {
       "consultations": {
-        "title": "Participez aux consultations avec Make.org - Make.org",
-        "description": "Proposez, votez, agissons : ensemble, trouvons des solutions aux grandes problématiques actuelles. Les plus soutenues seront mises en action par Make.org et ses partenaires."
+        "title": "Participez aux consultations - Make.org",
+        "description": "Proposez, votez, agissons : ensemble, trouvons des solutions aux grandes problématiques actuelles."
       },
       "results": {
-        "title": "Résultats des consultations avec Make.org - Make.org",
+        "title": "Résultats des consultations - Make.org",
         "description" : "Découvrez les résultats de nos consultations ainsi que les actions mises en place par Make.org et ses partenaires."
       }
     },
     "legal": {
-      "title": "Mentions légales - Make.org"
+      "title": "Mentions légales - Make.org",
+      "description": "Trouvez ici les mentions légales du site."
+    },
+    "privacy_policy": {
+      "title": "Charte de données personnelles - Make.org",
+      "description": "Tout comprendre sur le traitement de vos données personnelles lors d'une visite sur le site."
+    },
+    "gtu": {
+      "title": "Conditions d’utilisation - Make.org",
+      "description": "Tout savoir sur les conditions d'utilisation pour voter et proposer sur la plateforme d'engagement citoyen."
     },
     "contact": {
-      "title": "Contactez-nous - Make.org"
+      "title": "Contactez-nous - Make.org",
+      "description": "Si vous ne trouvez pas la réponse à votre question, contactez-nous par email."
     },
     "no_cookies": {
       "title": "Ooops ! Vos cookies sont désactivés - Make.org"
     },
     "cookies": {
-      "title": "Gestion des cookies - Make.org"
+      "title": "Gestion des cookies - Make.org",
+      "description": "Découvrez toutes les explications sur l'utilisation des cookies lors de votre visite sur la plateforme."
     },
     "password-recovery": {
       "title": "Je crée un nouveau mot de passe - Make.org"
@@ -156,12 +168,19 @@
         "malformed": "Merci de respecter le format url \"https://example.com\""
       }
     },
+    "social_login": {
+      "card_title": "Pour retrouver l’historique de vos votes",
+      "facebook_connect": "Continuer avec Facebook",
+      "google_connect": "Continuer avec Google",
+      "email_register": "S’inscrire par mail"
+    },
     "notifications": {
       "bad_link": "Ce lien n'est plus valable.",
       "activate_account_success": "Votre compte vient d'être activé. Vous pouvez vous connecter dès maintenant",
       "delete_account_success": "Votre compte a bien été supprimé. Nous espérons vous revoir bientôt sur Make.org !",
       "login_success": "Vous avez été connecté(e) avec succès.",
       "logout_success": "Vous avez été déconnecté(e) avec succès.",
+      "login_social_missing_email_data": "Nous n’arrivons pas à obtenir une adresse email valide depuis votre compte Facebook pour vous inscrire. Nous vous invitons à utiliser notre formulaire d'inscription par email.",
       "register_success": "Bienvenue ! Vous avez été inscrit avec succès.",
       "register_validate": "Merci pour votre inscription. Un mail vient de vous être envoyé à l'adresse {{email}} afin d'activer votre compte en un clic.",
       "secure_expired": {
@@ -553,7 +572,7 @@
       "cookie": "make-cookie-preferences : ce cookie permettra de garder en mémoire vos préférences concernant l‘utilisation des cookies sur notre service."
     },
     "statistics": {
-      "visitor": "make-visitor-id : ce cookie sert à suivre les visites et revisites sur notre service de façon à mesurer le trafic de façon anonyme et agrégée. Ce suivi ne se fait pas au niveau individuel.",
+      "visitor": "make-visitor-id : ce cookie sert à suivre les visites sur notre service de façon à mesurer le trafic de façon anonyme et agrégée. Les événements de navigation sont envoyés à l'outil d'analyse MixPanel.",
       "tracking": "Cookie de tracking Facebook : il sert à recueillir de la donnée de comportement sur le service en vue d'analyses agrégées permettant d’améliorer le service. Il sert également à recueillir les données socio démo (âge, genre, région) de façon agrégée pour enrichir l’analyse de la consultation."
     },
     "social_media": {
@@ -1186,7 +1205,7 @@
       "statistics": {
         "name": "Les cookies de statistiques :",
         "description": "ces cookies sont destinés à analyser les visites sur notre site et à améliorer les performances de ce dernier. Toutes les informations collectées par ces cookies sont agrégées et donc anonymisées. Si vous n‘acceptez pas ces cookies, nous ne serons pas informés de votre revisite.",
-        "visitor-id": "make-visitor-id: ce cookie sert à identifier un visiteur unique.",
+        "visitor-id": "make-visitor-id: ce cookie sert à suivre les visites sur notre service de façon à mesurer le trafic de façon anonyme et agrégée. Les événements de navigation sont envoyés à l'outil d'analyse MixPanel.",
         "visitor-created-at": "make-visitor-created-at : ce cookie sert à obtenir la date de la première visite sur la plateforme.",
         "facebook-tracking": "cookie de tracking Facebook : ce cookie permet de générer des statistiques concernant la fréquentation destinées à améliorer notre site et à enrichir l‘analyse de nos consultations."
       },

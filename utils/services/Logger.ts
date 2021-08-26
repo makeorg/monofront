@@ -23,28 +23,33 @@ class LoggerSingleton {
 
   formatApiServiceError = (error: ApiServiceError) => ({
     message: error.message,
-    name: error.name,
-    fileName: error.fileName,
-    lineNumber: error.lineNumber,
-    columnNumber: error.columnNumber,
+    app_logName: error.name,
+    app_fileName: error.fileName,
+    app_lineNumber: error.lineNumber,
+    app_columnNumber: error.columnNumber,
     stack: error.stack,
-    status: error.status,
-    responseData: error.data,
-    url: error.url,
-    method: error.method,
-    logId: error.logId,
-    requestId: error.requestId,
+    app_status: error.status,
+    app_responseData: error.data,
+    app_url: error.url,
+    app_method: error.method,
+    app_logId: error.logId,
+    app_requestId: error.requestId,
   });
 
-  formatError = (error: Error) => ({
+  formatError = (
+    error: Error & {
+      fileName?: string;
+      lineNumber?: string;
+      columnNumber?: string;
+    }
+  ) => ({
     message: error.message,
-    name: error.name,
-    // TO DO
-    // fileName: error.fileName,
-    // lineNumber: error.lineNumber,
-    // columnNumber: error.columnNumber,
+    app_logName: error.name,
+    app_fileName: error.fileName,
+    app_lineNumber: error.lineNumber,
+    app_columnNumber: error.columnNumber,
+    app_logId: uuidv4(),
     stack: error.stack,
-    logId: uuidv4(),
   });
 
   normalizeData = (
@@ -65,7 +70,15 @@ class LoggerSingleton {
       };
     }
     if (typeof data === 'object') {
-      const formatedData = {
+      const formatedData: {
+        app_logId: string;
+        app_logName: string;
+        stack: string;
+        message: string;
+        name?: string;
+        errorName?: string;
+        logId?: string;
+      } = {
         ...data,
         app_logId: data.app_logId || data.logId || uuidv4(),
         app_logName: data.app_logName || data.name || data.errorName || '-',
@@ -73,9 +86,9 @@ class LoggerSingleton {
         message: data.message || '-',
       };
       // TODO
-      // delete formatedData.name;
-      // delete formatedData.errorName;
-      // delete formatedData.logId;
+      delete formatedData.name;
+      delete formatedData.errorName;
+      delete formatedData.logId;
 
       return formatedData;
     }

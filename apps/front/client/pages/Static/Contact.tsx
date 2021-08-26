@@ -11,7 +11,10 @@ import {
 
 export const Contact: FC = () => (
   <>
-    <MetaTags title={i18n.t('meta.contact.title')} />
+    <MetaTags
+      title={i18n.t('meta.contact.title')}
+      description={i18n.t('meta.contact.description')}
+    />
     <StaticPageWrapperStyle>
       <StaticSecondLevelTitleStyle>
         {i18n.t('contact.contactUs')}

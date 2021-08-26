@@ -6,13 +6,15 @@ import {
   TrackingEventConfigurationType,
 } from '@make.org/types';
 import Cookies from 'universal-cookie';
-import { USER_PREFERENCES_COOKIE } from '@make.org/utils/constants/cookies';
 import { TrackingApiService } from '@make.org/api/TrackingApiService';
+import { COOKIE } from '@make.org/types/enums';
 import trackingConfiguration from './trackingConfiguration.yaml';
 import { FacebookTracking } from './Trackers/FacebookTracking';
 import { TwitterTracking } from './Trackers/TwitterTracking.js';
 import { trackingParamsService } from './TrackingParamsService';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
+import { MixpanelTracking } from './Trackers/MixpanelTracking';
+import { Logger } from './Logger';
 
 const validateParameters = (
   values: TrackingConfigurationParamType,
@@ -52,10 +54,19 @@ Object.keys(trackingConfiguration).forEach(key => {
   const eventConfiguration: TrackingEventConfigurationType =
     trackingConfiguration[key];
   trackingEvent[key] = params => {
-    const { key: eventName, parameters } = eventConfiguration;
+    const {
+      key: eventName,
+      parameters,
+      protected_parameters: protectedParameters,
+    } = eventConfiguration;
+
     validateParameters(params || {}, parameters || []);
 
-    return { eventName: eventName || '', parameters: params || {} };
+    return {
+      eventName: eventName || '',
+      parameters: params || {},
+      protectedParameters: protectedParameters || [],
+    };
   };
 });
 
@@ -84,62 +95,79 @@ export const track = (
   eventName: string,
   parameters: TrackingConfigurationParamType
 ): Promise<any> => {
-  const eventParameters = getEventParameters(parameters);
-
   if (env.isDev()) {
     // eslint-disable-next-line no-console
     console.info(
-      `Tracking: event ${eventName} params ${JSON.stringify(eventParameters)}`
+      `Tracking: event ${eventName} params ${JSON.stringify(parameters)}`
     );
     return Promise.resolve();
   }
   const params = {
     eventName,
-    eventParameters,
+    eventParameters: parameters,
     eventType: 'trackCustom',
   };
 
   return TrackingApiService.track(params);
 };
 
-const trackFacebookPixel = (
-  eventName: string,
-  parameters: TrackingConfigurationParamType
-): void => {
-  const eventParameters: TrackingConfigurationParamType =
-    getEventParameters(parameters);
-
-  FacebookTracking.trackCustom(eventName, eventParameters);
-};
-
-const trackTwitterPixel = (eventName: string | number): void => {
-  TwitterTracking.track(eventName);
-};
-
 export const TrackingService = {
   trackPerformance,
   trackingEvent,
-  track,
-  trackFacebookPixel,
-  trackTwitterPixel,
   sendAllTrackers: ({
     eventName,
     parameters,
+    protectedParameters = [],
   }: {
     eventName: string;
     parameters: TrackingConfigurationParamType;
+    protectedParameters: any;
   }): void => {
     const cookies = new Cookies();
-    const preferencesCookie = cookies.get(USER_PREFERENCES_COOKIE);
+    const preferencesCookie = cookies.get(COOKIE.USER_PREFERENCES);
+    const externalTrackingParameters = Object.keys(parameters)
+      .filter(key => !protectedParameters.includes(key))
+      .reduce(
+        (obj, key) => ({
+          ...obj,
+          [key]: parameters[key],
+        }),
+        {}
+      );
 
-    TrackingService.track(eventName, parameters);
+    // API tracking
+    track(eventName, getEventParameters(parameters));
 
+    // Facebook
     if (preferencesCookie?.facebook_tracking) {
-      TrackingService.trackFacebookPixel(eventName, parameters);
+      FacebookTracking.trackCustom(
+        eventName,
+        getEventParameters(externalTrackingParameters)
+      );
     }
 
+    // Twitter
     if (preferencesCookie?.twitter_tracking) {
-      TrackingService.trackTwitterPixel(Number(eventName));
+      TwitterTracking.track(eventName);
     }
+
+    // Mixpanel
+    if (!trackingParamsService.visitorId) {
+      Logger.logError(
+        `Tracking event "${eventName}" failed due to lack of unique id`
+      );
+      return;
+    }
+
+    MixpanelTracking.track(
+      eventName,
+      // todo fix type
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      getEventParameters({
+        ...externalTrackingParameters,
+        distinctId: trackingParamsService.visitorId,
+      })
+    );
   },
 };

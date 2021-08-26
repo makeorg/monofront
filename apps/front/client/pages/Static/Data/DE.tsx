@@ -12,6 +12,7 @@ import { DATE } from '@make.org/types/enums';
 import { RedLinkHTMLElementStyle } from '@make.org/ui/elements/LinkElements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { getCountryDPA } from '@make.org/utils/helpers/countries';
+import i18n from 'i18next';
 import {
   StaticPageWrapperStyle,
   StaticSecondLevelTitleStyle,
@@ -33,7 +34,10 @@ export const DataDE: FC = () => {
 
   return (
     <>
-      <MetaTags title="Persönliche Datencharta - Make.org" />
+      <MetaTags
+        title={i18n.t('meta.privacy_policy.title')}
+        description={i18n.t('meta.privacy_policy.description')}
+      />
       <StaticPageWrapperStyle>
         <StaticSecondLevelTitleStyle>
           PERSÖNLICHE DATENCHARTA

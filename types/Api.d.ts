@@ -29,6 +29,7 @@ export type ApiServiceHeadersType = {
   'x-make-language'?: string;
   'x-make-question-id'?: string;
   'x-make-custom-data'?: string;
+  'x-visitor-id'?: string;
 };
 
 export type ErrorObjectType = {

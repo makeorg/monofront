@@ -104,7 +104,7 @@ const ParticipatePage: FC = () => {
         title={i18n.t('meta.participate.title', {
           question: question.wording.question,
         })}
-        description={question.wording.metas.description}
+        description={i18n.t('meta.participate.description')}
         picture={question.wording.metas.picture}
       />
       <ParticipateHeader />

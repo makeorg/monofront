@@ -3,7 +3,7 @@
     "home": {
       "title": "Make a change in our society with Make.org -",
       "description": "Finding solutions is easier when working together. Make.org helps you share ideas with forward-thinking people like you. Discover a democratic place where you can discuss, vote and submit your solutions on the big issues you care about.",
-      "picture": "https://assets.make.org/assets/metas/default-meta-en.png"
+      "picture": "https://assets.make.org/assets/metas/default-meta-en.jpg"
     },
     "organisation": {
       "proposals": {
@@ -58,25 +58,37 @@
     },
     "browse": {
       "consultations": {
-        "title": "Contribute to the current consultations on Make.org - Make.org",
+        "title": "Contribute to the current consultations - Make.org",
         "description": "Finding solutions is easier when working together. Make.org helps you share ideas with forward-thinking people like you. Discover a democratic place where you can discuss, vote and submit your solutions on the big issues you care about."
       },
       "results": {
-        "title": "Find out the results on Make.org - Make.org",
+        "title": "Find out the results - Make.org",
         "description": "Find out the results of all our past consultations."
       }
     },
     "legal": {
-      "title": "Legal mentions - Make.org"
+      "title": "Legal mentions - Make.org",
+      "description": "Find out all the legal notice of the website."
+    },
+    "privacy_policy": {
+      "title": "Privacy policy - Make.org",
+      "description": "All of the information about the processing of your personal data during a session on the website."
+    },
+    "gtu": {
+      "title": "Terms of service - Make.org",
+      "description": "Learn everything about the terms of use when you vote and propose a solution on our citizen engagement platform."
     },
     "contact": {
-      "title": "Contact us - Make.org"
+      "title": "Contact us - Make.org",
+      "description": "If you don't find the right answer to your question, then contact us by email."
     },
     "no_cookies": {
       "title": "Looks like your cookies are deactivated - Make.org"
     },
     "cookies": {
-      "title": "Managing cookies - Make.org"
+      "title": "Managing cookies - Make.org",
+      "description": "Discover how the cookies work and how we use them during your visit on the website."
+
     },
     "password-recovery": {
       "title": "Create a new password - Make.org"
@@ -90,7 +102,8 @@
       "description": "The requested page doesn't exist anymore."
     },
     "participate": {
-      "title": "Participate in the consultation '{{question}}' - Make.org"
+      "title": "Contribute to the current consultations - {{question}} - Make.org",
+      "description": "Finding solutions is easier when working together. Discover a democratic place where you can discuss, vote and submit your solutions on the big issues you care about."
     },
     "explore": {
       "title": "Explore solutions of '{{question}}' - Make.org"
@@ -158,6 +171,12 @@
         "malformed": "Please use the right url format \"https://example.com\""
       }
     },
+    "social_login": {
+      "card_title": "To find the history of your votes",
+      "facebook_connect": "Continue with Facebook",
+      "google_connect": "Continue with Google",
+      "email_register": "Sign up with email"
+    },
     "from": "on",
     "email": "Email",
     "propose": "Submit",
@@ -183,6 +202,7 @@
       "delete_account_success": "Your account has been deleted. It was good to have you.",
       "login_success": "You logged in successfully.",
       "logout_success": "You logged out successfully.",
+      "login_social_missing_email_data": "We are unable to get a right address email from your Facebook account to register. Please sign up by email using the form.",
       "register_success": "Welcome, you are now signed up.",
       "register_validate": "Thanks for signing up! We sent you an email at {{email}} to validate your account.",
       "secure_expired": {
@@ -454,7 +474,7 @@
       "cookie": "make-cookie-preferences : this cookie will keep your preferences about the use of cookies on our service."
     },
     "statistics": {
-      "visitor": "make-visitor-id : this cookie is used to track visits and revisits to our service in order to measure traffic in an anonymous and aggregated fashion. This tracking is not done at the individual level.",
+      "visitor": "make-visitor-id : this cookie is used to track visits to our service in order to measure traffic in an anonymous and aggregated fashion. Navigation events are sent to the MixPanel analysis tool.",
       "tracking": "Facebook tracking cookie: it is used to collect behavioral data on the service for aggregate analysis to improve the service. It is also used to collect socio-demographic data (age, gender, region) in an aggregated way to enrich the analysis of the consultation."
     },
     "social_media": {
@@ -1070,7 +1090,7 @@
       "statistics": {
         "name": "Statistics cookies:",
         "description": "these cookies are intended to analyze visits to our website and improve its performance. All information collected by these cookies is aggregated and therefore anonymized. If you do not accept these cookies, we will not be informed of your revisit.",
-        "visitor-id": "make-visitor-id: this cookie is used to identify a unique visitor.",
+        "visitor-id": "make-visitor-id: this cookie is used to track visits to our service in order to measure traffic in an anonymous and aggregated fashion. Navigation events are sent to the MixPanel analysis tool.",
         "visitor-created-at": "make-visitor-created-at : this cookie is used to obtain the date of the first visit on the platform.",
         "facebook-tracking": "Facebook tracking cookie : this cookie allows us to generate statistics on the number of visitors to our website in order to improve our website and to enrich the analysis of our consultations."
       },

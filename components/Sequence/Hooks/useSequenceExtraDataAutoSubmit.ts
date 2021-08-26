@@ -27,6 +27,11 @@ export const useSequenceExtraDataAutoSubmit = (
       return null;
     }
 
+    // no demographics
+    if (!persistedDemographics) {
+      return null;
+    }
+
     // has extra data card
     if (
       cards.find(
@@ -67,9 +72,10 @@ export const useSequenceExtraDataAutoSubmit = (
     if (currentIndex === triggeringIndexValue) {
       const { type = '', value = '' } = persistedDemographics || {};
       if (!type || !value) {
-        Logger.logError(
-          `Unexpected error: no demographic values to send (questionId: ${questionSlug})`
-        );
+        Logger.logError({
+          message: `Unexpected error: no demographic values to send (questionId: ${questionSlug})`,
+          name: 'hooks',
+        });
       }
 
       DemographicsTrackingService.track(type, value, {}, () =>

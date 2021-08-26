@@ -7,10 +7,13 @@ import {
   FACEBOOK_LINK_FR,
   GOOGLE_LINK_EN,
   GOOGLE_LINK_FR,
+  GOOGLE_LINK_DE,
   LINKEDIN_LINK_EN,
   LINKEDIN_LINK_FR,
+  LINKEDIN_LINK_DE,
   TWITTER_LINK_EN,
   TWITTER_LINK_FR,
+  TWITTER_LINK_DE,
 } from '@make.org/utils/constants/config';
 import { trackClickModalCookieSave } from '@make.org/utils/services/Tracking';
 import {
@@ -66,10 +69,23 @@ export const Cookies: FC = () => {
     'DD MMMM YYYY'
   );
   const isFR = country === 'FR';
-  const googleLink = isFR ? GOOGLE_LINK_FR : GOOGLE_LINK_EN;
+  const isDE = country === 'DE';
   const facebookLink = isFR ? FACEBOOK_LINK_FR : FACEBOOK_LINK_EN;
-  const twitterLink = isFR ? TWITTER_LINK_FR : TWITTER_LINK_EN;
-  const linkedInLink = isFR ? LINKEDIN_LINK_FR : LINKEDIN_LINK_EN;
+  const googleLink = () => {
+    if (isFR) return GOOGLE_LINK_FR;
+    if (isDE) return GOOGLE_LINK_DE;
+    return GOOGLE_LINK_EN;
+  };
+  const twitterLink = () => {
+    if (isFR) return TWITTER_LINK_FR;
+    if (isDE) return TWITTER_LINK_DE;
+    return TWITTER_LINK_EN;
+  };
+  const linkedInLink = () => {
+    if (isFR) return LINKEDIN_LINK_FR;
+    if (isDE) return LINKEDIN_LINK_DE;
+    return LINKEDIN_LINK_EN;
+  };
 
   const handlePreferences = () => {
     trackClickModalCookieSave('cookies-accept-preferences');
@@ -86,7 +102,10 @@ export const Cookies: FC = () => {
 
   return (
     <>
-      <MetaTags title={i18n.t('meta.cookies.title')} />
+      <MetaTags
+        title={i18n.t('meta.cookies.title')}
+        description={i18n.t('meta.cookies.description')}
+      />
       <StaticPageWrapperStyle>
         <StaticSecondLevelTitleStyle>
           {i18n.t('cookies_management.title')}
@@ -128,8 +147,7 @@ export const Cookies: FC = () => {
               <StaticSquareListItemStyle>
                 {'Google : '}
                 <RedLinkHTMLElementStyle
-                  as="a"
-                  href={googleLink}
+                  href={googleLink()}
                   target="_blank"
                   rel="noopener"
                 >
@@ -159,7 +177,7 @@ export const Cookies: FC = () => {
                 {'Twitter : '}
                 <RedLinkHTMLElementStyle
                   as="a"
-                  href={twitterLink}
+                  href={twitterLink()}
                   target="_blank"
                   rel="noopener"
                 >
@@ -174,7 +192,7 @@ export const Cookies: FC = () => {
                 {'LinkedIn : '}
                 <RedLinkHTMLElementStyle
                   as="a"
-                  href={linkedInLink}
+                  href={linkedInLink()}
                   target="_blank"
                   rel="noopener"
                 >
@@ -362,11 +380,6 @@ export const Cookies: FC = () => {
                         }),
                       })}
                     </CookieLabelStyle>
-                  </CookieModalCookieDetailParagraphStyle>
-                  <CookieModalCookieDetailParagraphStyle className="cookie-page">
-                    {i18n.t(
-                      'cookies_management.details.statistics.facebook-tracking'
-                    )}
                   </CookieModalCookieDetailParagraphStyle>
                 </ColumnElementStyle>
               </CookieModalElementStyle>
