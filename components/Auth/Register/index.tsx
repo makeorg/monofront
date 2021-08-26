@@ -59,9 +59,11 @@ export const Register: React.FC = () => {
 
   const handleLegalField = (fieldName: string, value: boolean) => {
     if (!fieldName || value === undefined) {
-      Logger.logError(
-        'HandleLegalField in register form : fieldname or value is missing'
-      );
+      Logger.logError({
+        message:
+          'HandleLegalField in register form : fieldname or value is missing',
+        name: 'register',
+      });
       return null;
     }
     return setUser({
@@ -99,7 +101,7 @@ export const Register: React.FC = () => {
     const unexpectedError = () => {
       dispatch(modalClose());
       // @toDo: notify user
-      Logger.logError(`Login fail for ${email}`);
+      Logger.logError({ message: `Login fail for ${email}`, name: 'register' });
     };
 
     await UserService.login(

@@ -2,6 +2,7 @@ export * from './modal_types';
 export * from './locales';
 export * from './a11y';
 export * from './card';
+export * from './cookie';
 export * from './date';
 export * from './form';
 export * from './httpStatus';

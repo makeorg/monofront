@@ -46,13 +46,18 @@ export const FacebookAuthentication: React.FC = () => {
     if (!('accessToken' in response)) {
       const { status } = response;
       if (status === 'unknown') {
-        Logger.logInfo(
-          'Facebook auth failed with status unknown. Probably user close popup.'
-        );
+        Logger.logInfo({
+          message:
+            'Facebook auth failed with status unknown. Probably user close popup.',
+          name: 'social-auth',
+        });
 
         return;
       }
-      Logger.logError(`Facebook login failure: ${status}`);
+      Logger.logError({
+        message: `Facebook login failure: ${response?.status}`,
+        name: 'social-auth',
+      });
       dispatch(
         displayNotificationBanner(
           NOTIF.UNEXPECTED_ERROR_MESSAGE,

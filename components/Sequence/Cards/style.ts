@@ -71,6 +71,13 @@ export const SequenceAltTitleStyle = styled(SequenceTitleStyle)`
   }
 `;
 
+export const SequenceWrapperStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+`;
+
 export const SequenceIntroParagraphStyle = styled.div`
   width: 100%;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};

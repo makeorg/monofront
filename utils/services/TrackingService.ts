@@ -6,8 +6,8 @@ import {
   TrackingEventConfigurationType,
 } from '@make.org/types';
 import Cookies from 'universal-cookie';
-import { USER_PREFERENCES_COOKIE } from '@make.org/utils/constants/cookies';
 import { TrackingApiService } from '@make.org/api/TrackingApiService';
+import { COOKIE } from '@make.org/types/enums';
 import trackingConfiguration from './trackingConfiguration.yaml';
 import { FacebookTracking } from './Trackers/FacebookTracking';
 import { TwitterTracking } from './Trackers/TwitterTracking.js';
@@ -124,7 +124,7 @@ export const TrackingService = {
     protectedParameters: any;
   }): void => {
     const cookies = new Cookies();
-    const preferencesCookie = cookies.get(USER_PREFERENCES_COOKIE);
+    const preferencesCookie = cookies.get(COOKIE.USER_PREFERENCES);
     const externalTrackingParameters = Object.keys(parameters)
       .filter(key => !protectedParameters.includes(key))
       .reduce(

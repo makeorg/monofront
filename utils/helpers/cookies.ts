@@ -1,8 +1,8 @@
-import { USER_PREFERENCES_COOKIE } from '@make.org/utils/constants/cookies';
 import { FacebookTracking } from '@make.org/utils/services/Trackers/FacebookTracking';
 import { StateUserCookiesPreferences } from '@make.org/types';
 import Cookies from 'universal-cookie';
 import { MixpanelTracking } from '@make.org/utils/services/Trackers/MixpanelTracking';
+import { COOKIE } from '@make.org/types/enums';
 import { TwitterUniversalTag } from '../services/Trackers/TwitterTracking.js';
 import { TWITTER_SCRIPT, twttr } from '../services/Trackers/twttr.js';
 
@@ -15,7 +15,7 @@ const cookies = new Cookies();
 export const setPreferencesCookie = (
   preferences: StateUserCookiesPreferences
 ): void => {
-  cookies.set(USER_PREFERENCES_COOKIE, JSON.stringify(preferences), {
+  cookies.set(COOKIE.USER_PREFERENCES, JSON.stringify(preferences), {
     path: '/',
     expires: nextYear,
   });

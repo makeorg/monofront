@@ -70,12 +70,18 @@ export const GoogleAuthentication: React.FC = () => {
 
   const handleGoogleLoginFailure = (response: any) => {
     if (response?.error === 'popup_closed_by_user') {
-      Logger.logInfo('Google auth popup closed by user');
+      Logger.logInfo({
+        message: 'Google auth popup closed by user',
+        name: 'social-auth',
+      });
 
       return;
     }
 
-    Logger.logError(`Google login failure: ${response?.error}`);
+    Logger.logError({
+      message: `Google login failure: ${response?.error}`,
+      name: 'social-auth',
+    });
     dispatch(
       displayNotificationBanner(
         NOTIF.UNEXPECTED_ERROR_MESSAGE,

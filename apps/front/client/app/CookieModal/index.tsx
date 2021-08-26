@@ -21,13 +21,13 @@ import {
   setCookiesPreferencesInApp,
 } from '@make.org/store/actions/user/cookiesPreferences';
 import {
-  USER_PREFERENCES_COOKIE,
   ACCEPT_ALL_PREFERENCES,
   REJECT_ALL_PREFRENCES,
 } from '@make.org/utils/constants/cookies';
 import { StateUserCookiesPreferences } from '@make.org/types';
 import Cookies from 'universal-cookie';
 import { useAppContext } from '@make.org/store';
+import { COOKIE } from '@make.org/types/enums';
 import {
   CookieModalButtonWithLinkStyle,
   CookieModalBannerWrapperStyle,
@@ -61,7 +61,7 @@ export const CookieModal: React.FC = () => {
   const [customization, enableCustomization] = useState(false);
   const cookies = new Cookies();
   const preferencesCookie: StateUserCookiesPreferences = cookies.get(
-    USER_PREFERENCES_COOKIE
+    COOKIE.USER_PREFERENCES
   );
 
   const handleAcceptAll = async () => {

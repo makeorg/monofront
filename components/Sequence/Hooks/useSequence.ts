@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState } from 'react';
 import { buildCards } from '@make.org/utils/helpers/sequence';
 import { SequenceCardType, QuestionType, ProposalType } from '@make.org/types';
 import { scrollToTop } from '@make.org/utils/helpers/styled';
@@ -10,6 +10,8 @@ import {
   setSequenceIndex,
 } from '@make.org/store/actions/sequence';
 import { useAppContext } from '@make.org/store';
+import Cookies from 'universal-cookie';
+import { COOKIE } from '@make.org/types/enums';
 import { useSequenceTracking } from './useSequenceTracking';
 import { useSequenceVoteOnlyNotification } from './useSequenceVoteOnlyNotification';
 import { useSequenceExtraDataAutoSubmit } from './useSequenceExtraDataAutoSubmit';
@@ -41,7 +43,6 @@ export const useSequence = (
   const { proposal, sequence } = state;
   const { hasProposed = false } = proposal || {};
   const { isLoggedIn } = selectAuthentication(state) || {};
-  const persistedDemographics = sequence && sequence.demographics;
   const { currentIndex = 0, votedProposalIds } = sequence || {};
 
   const votedProposalIdsOfQuestion = votedProposalIds[question?.slug] || [];
@@ -63,10 +64,9 @@ export const useSequence = (
 
   // Other
   const isFR = country === 'FR';
-  const withDemographicsCard = useMemo(
-    () => isFR && !persistedDemographics?.type,
-    []
-  );
+  const cookies = new Cookies();
+  const demographicsCookie = cookies.get(COOKIE.DEMOGRAPHICS);
+  const withDemographicsCard = isFR && !demographicsCookie;
 
   // scroll to top
   useEffect(() => {

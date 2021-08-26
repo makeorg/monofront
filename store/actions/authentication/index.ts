@@ -166,7 +166,10 @@ export const loginSocial = async (
   if (!socialToken) {
     dispatch(loginSocialFailure());
     trackAuthenticationSocialFailure(provider);
-    Logger.logInfo(`No token from ${provider} callBack auth`);
+    Logger.logInfo({
+      message: `No token from ${provider} callBack auth`,
+      name: 'social-auth',
+    });
 
     return Promise.resolve();
   }

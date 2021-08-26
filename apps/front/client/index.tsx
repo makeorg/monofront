@@ -22,13 +22,13 @@ import {
 import { updateTrackingQuestionParam } from '@make.org/utils/helpers/question';
 import i18n from 'i18next';
 import { initialState } from '@make.org/store/initialState';
-import { USER_PREFERENCES_COOKIE } from '@make.org/utils/constants/cookies';
 import { getRouteNoCookies } from '@make.org/utils/routes';
 import ContextState from '@make.org/store';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 
 import { ApiServiceHeadersType, StateRoot } from '@make.org/types';
 import { initTrackersFromPreferences } from '@make.org/utils/helpers/cookies';
+import { COOKIE } from '@make.org/types/enums';
 import { CountryListener } from './app/CountryListener';
 import { AppContainer } from './app';
 import { cookieIsEnabled, thirdCookieEnabled } from './helper/cookieDetect';
@@ -129,7 +129,7 @@ const initApp = async (state: StateRoot) => {
   });
 
   const cookies = new Cookies();
-  const preferencesCookie = cookies.get(USER_PREFERENCES_COOKIE);
+  const preferencesCookie = cookies.get(COOKIE.USER_PREFERENCES);
   initTrackersFromPreferences(preferencesCookie);
 
   // Set date helper language

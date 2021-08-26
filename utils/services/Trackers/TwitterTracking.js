@@ -23,7 +23,10 @@ const twitterEventMapping = {
 
 const isTWInitialized = () => {
   if (!twttr.initialized()) {
-    Logger.logWarning('Twitter Tracking not initialized');
+    Logger.logWarning({
+      message: 'Twitter Tracking not initialized',
+      name: 'tracking-init',
+    });
   }
 
   return twttr.initialized();
@@ -38,7 +41,10 @@ export const TwitterTracking = {
     const eventName = twitterEventMapping[action];
 
     if (env.isDev()) {
-      Logger.logInfo(`Tracking Twitter: event ${eventName}`);
+      Logger.logInfo({
+        message: `Tracking Twitter: event ${eventName}`,
+        name: 'tracking-init',
+      });
       return;
     }
 
@@ -74,7 +80,7 @@ export const TwitterUniversalTag = {
   },
   pageView() {
     if (env.isTest() || env.isDev()) {
-      Logger.logInfo('Tracking Twitter: event pageView');
+      Logger.logInfo({message: `Tracking Twitter: event pageView`, name: 'tracking-init'});
       return;
     }
     twq('track', 'PageView');

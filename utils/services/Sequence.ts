@@ -66,21 +66,26 @@ const logCornerCases = (
   uniqueProposals: ProposalType[]
 ) => {
   if (duplicates.length > 0) {
-    Logger.logWarning(
-      `start sequence return duplicate proposals for questionId=${questionId} : ${JSON.stringify(
+    Logger.logWarning({
+      message: `start sequence return duplicate proposals for questionId=${questionId} : ${JSON.stringify(
         duplicates
-      )}`
-    );
+      )}`,
+      name: 'services',
+    });
   }
   if (voted.length > 0) {
-    Logger.logWarning(
-      `start sequence return voted proposals for questionId=${questionId} : ${JSON.stringify(
+    Logger.logWarning({
+      message: `start sequence return voted proposals for questionId=${questionId} : ${JSON.stringify(
         voted
-      )}`
-    );
+      )}`,
+      name: 'services',
+    });
   }
   if (uniqueProposals.length === 0) {
-    Logger.logError(`Empty sequence - questionId: ${questionId}`);
+    Logger.logError({
+      message: `Empty sequence - questionId: ${questionId}`,
+      name: 'services',
+    });
   }
 };
 

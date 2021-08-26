@@ -1,7 +1,5 @@
 import { StateUserCookiesPreferences } from '@make.org/types';
 
-export const USER_PREFERENCES_COOKIE = 'make-cookie-preferences';
-
 export const ACCEPT_ALL_PREFERENCES: StateUserCookiesPreferences = {
   facebook_tracking: true,
   twitter_tracking: true,

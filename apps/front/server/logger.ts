@@ -94,8 +94,7 @@ const getLogFormat = (sourceMapReplace: any) => {
         : data
     );
 
-    // eslint-disable-next-line max-len
-    return `infoTime:${infoTime}  infoLevel:${infoLevel} infoLabel:${infoLabel} message:${message} stackTrace:${infoStack}`;
+    return `infoTime:${infoTime} infoLabel:${infoLabel} infoLevel:${infoLevel} message:${message} stackTrace:${infoStack}`;
   });
 };
 

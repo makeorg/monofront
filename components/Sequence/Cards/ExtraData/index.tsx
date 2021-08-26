@@ -8,20 +8,14 @@ import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
 import { DemographicNameType, DemographicsType } from '@make.org/types';
 import { AGE_RANGES } from '@make.org/utils/constants/demographics';
-import { SequenceIntroParagraphStyle } from '../style';
+import { getRandomFromArray } from '@make.org/utils/helpers/randomFromArray';
+import { SequenceIntroParagraphStyle, SequenceWrapperStyle } from '../style';
 import { ExtraDataDescriptionStyle } from './style';
 import { SubmittedDemographics } from './SubmittedStep';
 import { ExtraDataForm } from './Form';
 
 export const ExtraDataCard: React.FC = () => {
   const { state } = useAppContext();
-  const getRandomType = () => {
-    const randomValue = Math.round(
-      Math.random() * (DEMOGRAPHIC_TYPES.length - 1)
-    );
-
-    return DEMOGRAPHIC_TYPES[randomValue];
-  };
   const { currentQuestion = '' } = state;
   const persistedDemographics = state.sequence.demographics;
   const [type, setType] = useState<DemographicNameType>('age');
@@ -32,7 +26,7 @@ export const ExtraDataCard: React.FC = () => {
 
   // set a random type
   useEffect(() => {
-    const newType = getRandomType();
+    const newType = getRandomFromArray(DEMOGRAPHIC_TYPES);
     setType(newType);
     setDemographics(buildDemographicsByType(newType));
   }, [type]);
@@ -47,7 +41,7 @@ export const ExtraDataCard: React.FC = () => {
 
   if (type && demographics) {
     return (
-      <div data-cy-demographic-type={type}>
+      <SequenceWrapperStyle data-cy-demographic-type={type}>
         <SequenceIntroParagraphStyle>
           {setTitleByType(type)}
         </SequenceIntroParagraphStyle>
@@ -59,7 +53,7 @@ export const ExtraDataCard: React.FC = () => {
           demographics={demographics}
           currentQuestion={currentQuestion}
         />
-      </div>
+      </SequenceWrapperStyle>
     );
   }
 
