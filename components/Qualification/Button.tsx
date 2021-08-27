@@ -40,7 +40,7 @@ export const QualificationButton: React.FC<Props> = ({
   index,
   disableClick = false,
 }) => {
-  const { dispatch } = useAppContext();
+  const { dispatch, state } = useAppContext();
   const [userQualification, setUserQualification] = useState(qualification);
   const { hasQualified, qualificationKey, count } = userQualification;
   const buttonLabel = i18n.t(`qualification.${qualificationKey}`);
@@ -64,7 +64,13 @@ export const QualificationButton: React.FC<Props> = ({
     if (qualificationResult) {
       setIsQualified(true);
       dispatch(
-        actionQualify(proposalId, votedKey, qualificationResult, context)
+        actionQualify(
+          votedKey,
+          qualificationResult,
+          context,
+          dispatch,
+          state.sequence
+        )
       );
       trackQualify(proposalId, qualificationKey, votedKey, index, context);
     }
@@ -82,7 +88,13 @@ export const QualificationButton: React.FC<Props> = ({
     if (qualificationResult) {
       setIsQualified(false);
       dispatch(
-        actionQualify(proposalId, votedKey, qualificationResult, context)
+        actionQualify(
+          votedKey,
+          qualificationResult,
+          context,
+          dispatch,
+          state.sequence
+        )
       );
       trackUnqualify(proposalId, qualificationKey, votedKey, index, context);
     }

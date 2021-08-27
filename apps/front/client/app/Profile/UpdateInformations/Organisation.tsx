@@ -46,6 +46,7 @@ export const OrganisationForm: FC<ProfileFormProps> = ({
       <UntypedInput
         type="text"
         name="organisationName"
+        id="organisationName"
         icon={NameFiledIcon}
         value={organisationName}
         label={i18n.t('common.form.label.organisation')}

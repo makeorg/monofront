@@ -46,6 +46,7 @@ export const PersonalityForm: FC<ProfileFormProps> = ({
       <UntypedInput
         type="text"
         name="firstName"
+        id="firstName"
         icon={NameFiledIcon}
         value={firstName}
         label={i18n.t('common.form.label.personality.firstname', {
@@ -57,6 +58,7 @@ export const PersonalityForm: FC<ProfileFormProps> = ({
       <UntypedInput
         type="text"
         name="lastName"
+        id="lastName"
         icon={NameFiledIcon}
         value={lastName}
         label={i18n.t('common.form.label.personality.lastname', {

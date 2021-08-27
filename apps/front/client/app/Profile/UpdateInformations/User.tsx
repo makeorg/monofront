@@ -70,6 +70,7 @@ export const UserForm: FC<ProfileFormProps> = ({
       <UntypedInput
         type="text"
         name="firstName"
+        id="firstName"
         icon={NameFiledIcon}
         value={firstName}
         label={i18n.t('common.form.label.firstname')}
@@ -91,6 +92,7 @@ export const UserForm: FC<ProfileFormProps> = ({
       <UntypedInput
         type="text"
         name="profession"
+        id="profession"
         icon={JobFieldIcon}
         value={profession}
         label={i18n.t('common.form.label.profession', {
@@ -102,6 +104,7 @@ export const UserForm: FC<ProfileFormProps> = ({
         <CustomPatternInput
           type="text"
           name="postalCode"
+          id="postalCode"
           icon={PostalCodeFieldIcon}
           value={postalCode}
           label={i18n.t('common.form.label.postalcode', {

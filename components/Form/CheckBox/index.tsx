@@ -9,6 +9,8 @@ import {
 type Props = {
   /** Name of the checkbox */
   name: string;
+  /** Id of the checkbox */
+  id?: string;
   /** Label of the checkbox */
   label: string | JSX.Element;
   /** handleLabelClick of the checkbox */
@@ -29,6 +31,7 @@ type Props = {
 
 export const CheckBox: React.FC<Props> = ({
   name,
+  id,
   label,
   handleCheck,
   value,
@@ -50,7 +53,7 @@ export const CheckBox: React.FC<Props> = ({
     <CheckboxWrapper>
       <input
         type="checkbox"
-        id={name}
+        id={id}
         name={name}
         value={value}
         required={required}
@@ -67,7 +70,7 @@ export const CheckBox: React.FC<Props> = ({
         isBlack={isBlack}
         noFontSizeChange={noFontSizeChange}
       >
-        <FakeCheckboxInputStyle aria-hidden>
+        <FakeCheckboxInputStyle aria-hidden data-cy-field={id || name}>
           {isChecked ? <SvgCheck /> : null}
         </FakeCheckboxInputStyle>
         <span>{label}</span>

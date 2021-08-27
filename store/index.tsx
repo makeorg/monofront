@@ -24,6 +24,7 @@ import { appConfig_reducer } from './reducers/appConfig';
 import { questions_reducer } from './reducers/questions';
 import { notifications_reducer } from './reducers/notifications';
 import { views_reducer } from './reducers/views';
+import { session_reducer } from './reducers/session';
 
 export const AppContext = createContext({
   state: initialState,
@@ -45,9 +46,8 @@ const rootReducer = combineReducers({
   user: user_reducer,
   questions: questions_reducer,
   modal: modal_reducer,
-  // partners: undefined,
   panel: panel_reducer,
-  // session: undefined,
+  session: session_reducer,
 });
 
 export const useAllReducers = (

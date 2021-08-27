@@ -112,7 +112,9 @@ export const Vote: React.FC<Props> = ({
     const newVotes = updateAndGetVotes(currentVotes, unvote);
     setCurrentVotes(newVotes);
     setUserVote(undefined);
-    dispatch(actionUnvote(proposal, newVotes, contextType));
+    dispatch(
+      actionUnvote(proposal, newVotes, contextType, dispatch, state.sequence)
+    );
     await trackUnvote(proposalId, voteKey, index, contextType);
     stopPending();
   };
@@ -135,7 +137,9 @@ export const Vote: React.FC<Props> = ({
     const updatedVotes = updateAndGetVotes(currentVotes, vote);
     setCurrentVotes(updatedVotes);
     setUserVote(updatedVotes.find(newVote => newVote.hasVoted === true));
-    dispatch(actionVote(proposal, updatedVotes, contextType));
+    dispatch(
+      actionVote(proposal, updatedVotes, contextType, dispatch, state.sequence)
+    );
     await trackVote(proposalId, voteKey, index, contextType);
     if (isFirstSequenceVote) {
       trackFirstVote(proposalId, voteKey, index);

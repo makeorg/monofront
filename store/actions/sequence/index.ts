@@ -1,5 +1,4 @@
 import {
-  StateRoot,
   ProposalType,
   SequenceCardType,
   QualificationType,
@@ -7,6 +6,7 @@ import {
   ReducerAction,
   Dispatch,
   ProposalCardStateType,
+  StateSequence,
 } from '@make.org/types';
 import { TopComponentContextValue } from '../../topComponentContext';
 import {
@@ -65,15 +65,19 @@ export const setSequenceIndex = (index: number): ReducerAction => ({
   payload: { index },
 });
 
-export const unvote =
-  (proposal: ProposalType, newVotes: VoteType[], context: string) =>
-  (dispatch: Dispatch, getState: () => StateRoot): void => {
-    if (context !== TopComponentContextValue.getSequenceProposal()) {
-      return;
-    }
-    const { sequence } = getState();
-    const { cards = [], currentIndex = 0 } = sequence || {};
+export const unvote = (
+  proposal: ProposalType,
+  newVotes: VoteType[],
+  context: string,
+  dispatch?: Dispatch,
+  sequence?: StateSequence
+): void => {
+  if (context !== TopComponentContextValue.getSequenceProposal()) {
+    return;
+  }
+  const { cards = [], currentIndex = 0 } = sequence || {};
 
+  if (dispatch) {
     dispatch({
       type: SEQUENCE_PROPOSAL_UNVOTE,
       payload: {
@@ -90,17 +94,22 @@ export const unvote =
         votes: newVotes,
       })
     );
-  };
+  }
+};
 
-export const vote =
-  (proposal: ProposalType, newVotes: VoteType[], context: string) =>
-  (dispatch: Dispatch, getState: () => StateRoot): void => {
-    if (context !== TopComponentContextValue.getSequenceProposal()) {
-      return;
-    }
-    const { sequence } = getState();
-    const { cards = [], currentIndex = 0 } = sequence || {};
+export const vote = (
+  proposal: ProposalType,
+  newVotes: VoteType[],
+  context: string,
+  dispatch?: Dispatch,
+  sequence?: StateSequence
+): void => {
+  if (context !== TopComponentContextValue.getSequenceProposal()) {
+    return;
+  }
+  const { cards = [], currentIndex = 0 } = sequence || {};
 
+  if (dispatch) {
     dispatch({
       type: SEQUENCE_PROPOSAL_VOTE,
       payload: {
@@ -116,7 +125,8 @@ export const vote =
         votes: newVotes,
       })
     );
-  };
+  }
+};
 
 const getVotesUpdatedWithQualifification = (
   votes: VoteType[],
@@ -145,34 +155,32 @@ const getVotesUpdatedWithQualifification = (
   return newVotes;
 };
 
-export const qualify =
-  (
-    proposalId: string,
-    votedKey: string,
-    qualification: QualificationType,
-    context: string
-  ) =>
-  (dispatch: Dispatch, getState: () => StateRoot): void => {
-    if (context !== TopComponentContextValue.getSequenceProposal()) {
-      return;
-    }
-    const { sequence } = getState();
-    const { cards = [], currentIndex = 0 } = sequence || {};
-    const proposalSequenceCard = cards[currentIndex];
-    const { votes } = proposalSequenceCard.state || { votes: [] };
-    const newVotes = getVotesUpdatedWithQualifification(
-      votes,
-      votedKey,
-      qualification
-    );
+export const qualify = (
+  votedKey: string,
+  qualification: QualificationType,
+  context: string,
+  dispatch: Dispatch,
+  sequence?: StateSequence
+): void => {
+  if (context !== TopComponentContextValue.getSequenceProposal()) {
+    return;
+  }
+  const { cards = [], currentIndex = 0 } = sequence || {};
+  const proposalSequenceCard = cards[currentIndex];
+  const { votes } = proposalSequenceCard.state || { votes: [] };
+  const newVotes = getVotesUpdatedWithQualifification(
+    votes,
+    votedKey,
+    qualification
+  );
 
-    dispatch(
-      updateSequenceCardState(proposalSequenceCard.index, {
-        ...proposalSequenceCard.state,
-        votes: newVotes,
-      })
-    );
-  };
+  dispatch(
+    updateSequenceCardState(proposalSequenceCard.index, {
+      ...proposalSequenceCard.state,
+      votes: newVotes,
+    })
+  );
+};
 
 export const persistDemographics = (
   type: string,

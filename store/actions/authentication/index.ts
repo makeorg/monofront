@@ -205,30 +205,31 @@ export const loginSocial = async (
   });
 };
 
-export const logout =
-  (afterAccountDeletion?: boolean) =>
-  (dispatch: Dispatch): Promise<void | null> => {
-    const success = () => {
-      dispatch(clearSessionId());
-      dispatch(logoutSuccess());
-      if (afterAccountDeletion) {
-        return dispatch(
-          displayNotificationBanner(
-            NOTIF.ACCOUNT_DELETION_SUCCESS_MESSAGE,
-            NOTIF.NOTIFICATION_LEVEL_SUCCESS
-          )
-        );
-      }
+export const logout = (
+  dispatch: Dispatch,
+  afterAccountDeletion?: boolean
+): Promise<void | null> => {
+  const success = () => {
+    dispatch(clearSessionId());
+    dispatch(logoutSuccess());
+    if (afterAccountDeletion) {
       return dispatch(
         displayNotificationBanner(
-          NOTIF.LOGOUT_SUCCESS_MESSAGE,
+          NOTIF.ACCOUNT_DELETION_SUCCESS_MESSAGE,
           NOTIF.NOTIFICATION_LEVEL_SUCCESS
         )
       );
-    };
-    if (afterAccountDeletion) {
-      return Promise.resolve(success());
     }
-
-    return UserService.logout(success);
+    return dispatch(
+      displayNotificationBanner(
+        NOTIF.LOGOUT_SUCCESS_MESSAGE,
+        NOTIF.NOTIFICATION_LEVEL_SUCCESS
+      )
+    );
   };
+  if (afterAccountDeletion) {
+    return Promise.resolve(success());
+  }
+
+  return UserService.logout(success);
+};

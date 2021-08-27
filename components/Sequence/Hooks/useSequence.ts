@@ -10,7 +10,7 @@ import {
   setSequenceIndex,
 } from '@make.org/store/actions/sequence';
 import { useAppContext } from '@make.org/store';
-import Cookies from 'universal-cookie';
+import { Cookies } from 'react-cookie';
 import { COOKIE } from '@make.org/types/enums';
 import { useSequenceTracking } from './useSequenceTracking';
 import { useSequenceVoteOnlyNotification } from './useSequenceVoteOnlyNotification';

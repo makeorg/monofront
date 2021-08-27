@@ -9,6 +9,9 @@ export const CanonicalUrl: FC = () => {
   const canonicalUrlParams = new URLSearchParams();
   let canonicalSearch = '';
   const value = urlParams.get('query');
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  const FRONT_URL: string = env.frontUrl() || window.FRONT_URL;
 
   // accept only query param for search
   if (value) {
@@ -19,7 +22,7 @@ export const CanonicalUrl: FC = () => {
   return (
     <Link
       rel="canonical"
-      href={`${env.frontUrl()}${pathname}${canonicalSearch}`}
+      href={`${FRONT_URL}${pathname}${canonicalSearch}`}
       data-cy="canonical_url"
     />
   );

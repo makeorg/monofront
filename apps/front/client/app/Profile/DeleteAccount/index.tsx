@@ -75,7 +75,7 @@ export const DeleteAccount: FC<Props> = ({ user }) => {
     event.preventDefault();
 
     const success = () => {
-      dispatch(logout(true));
+      dispatch(logout(dispatch, true));
     };
     const invalidPassword = () => {
       setCanSubmit(false);
@@ -119,6 +119,7 @@ export const DeleteAccount: FC<Props> = ({ user }) => {
           <UntypedInput
             type="email"
             name="email"
+            id="email"
             value={formValues.email}
             icon={EmailFieldIcon}
             label={i18n.t('common.form.label.email')}

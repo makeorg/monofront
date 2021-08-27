@@ -77,6 +77,7 @@ export const RegisterForm: React.FC<Props> = ({
       <UntypedInput
         type="email"
         name="email"
+        id="email"
         icon={EmailFieldIcon}
         value={user.email}
         label={i18n.t('common.form.label.email')}
@@ -94,7 +95,8 @@ export const RegisterForm: React.FC<Props> = ({
       />
       <UntypedInput
         type="text"
-        name="profile.firstname"
+        name="firstname"
+        id="profile.firstname"
         icon={NameFiledIcon}
         error={firstnameError}
         value={user.profile.firstname}
@@ -103,7 +105,8 @@ export const RegisterForm: React.FC<Props> = ({
         handleChange={handleChange}
       />
       <NumberInput
-        name="profile.age"
+        name="age"
+        id="profile.age"
         icon={AgeFieldIcon}
         value={user.profile.age}
         error={ageError}
@@ -116,7 +119,8 @@ export const RegisterForm: React.FC<Props> = ({
       {postCodeValidator.isSupportedCountry(country) && (
         <CustomPatternInput
           type="text"
-          name="profile.postalcode"
+          name="postalcode"
+          id="profile.postalcode"
           icon={PostalCodeFieldIcon}
           value={user.profile.postalcode}
           error={postalcodeError}
@@ -128,7 +132,8 @@ export const RegisterForm: React.FC<Props> = ({
       )}
       <UntypedInput
         type="text"
-        name="profile.profession"
+        name="profession"
+        id="profile.profession"
         icon={JobFieldIcon}
         value={user.profile.profession}
         label={i18n.t('common.form.label.profession', { context: 'optional' })}

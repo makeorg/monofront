@@ -38,7 +38,7 @@ export type TrackingConfigurationParamType =
     description?: string;
     values?: string[];
     optional?: boolean;
-    component?: string;
+    component?: string | undefined;
     page?: string;
     context?: string;
     'social-network'?: string;
@@ -51,7 +51,7 @@ export type TrackingConfigurationParamType =
     'page-number'?: string;
     'card-position'?: string;
     level?: string;
-    [key: string]: string;
+    [key: string | undefined]: string;
   };
 
 export type TrackingEventConfigurationType = {

@@ -8,8 +8,8 @@ let envConfigPath = path.resolve(__dirname, '..', '.env');
 if (process.env.NODE_ENV === 'development') {
   envConfigPath = path.resolve(__dirname, '..', '.env.local');
 }
-if (process.env.NODE_ENV === 'test') {
-  envConfigPath = path.resolve(__dirname, '..', '.env.test');
+if (process.env.NODE_ENV === 'ci') {
+  envConfigPath = path.resolve(__dirname, '..', '.env.ci');
 }
 
 // Build client and server configurations

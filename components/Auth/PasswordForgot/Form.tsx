@@ -59,6 +59,7 @@ export const ForgotPasswordForm: React.FC = () => {
       <UntypedInput
         type="email"
         name="email"
+        id="email"
         icon={EmailFieldIcon}
         value={email}
         label={i18n.t('common.form.label.email')}
