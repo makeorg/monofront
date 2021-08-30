@@ -9,6 +9,10 @@
 			"path": "api"
 		},
 		{
+			"name": "🧑🏼‍🔧 ApiMock",
+			"path": "apimock"
+		},
+		{
 			"name": "👷‍♂️ Apps",
 			"path": "apps"
 		},
@@ -50,7 +54,8 @@
 		"git.ignoreLimitWarning": true,
 		"search.exclude": {
 			"**/dist": true,
-			"**/node_modules": true
+			"**/node_modules": true,
+			"**/cypress/coverage": true
 		},
 	}
   }

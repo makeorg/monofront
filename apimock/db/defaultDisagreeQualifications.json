@@ -1,0 +1,17 @@
+[
+  {
+    "qualificationKey":"noWay",
+    "count":1,
+    "hasQualified":false
+  },
+  {
+    "qualificationKey":"impossible",
+    "count":0,
+    "hasQualified":false
+  },
+  {
+    "qualificationKey":"platitudeDisagree",
+    "count":0,
+    "hasQualified":false
+    }
+]

@@ -11,6 +11,8 @@ import {
 } from '@make.org/ui/elements/FormElements';
 
 type Props = {
+  /** Id of the input */
+  id?: string;
   /** Name of the input */
   name: string;
   /** Icon of the input */
@@ -32,6 +34,7 @@ type Props = {
 };
 
 export const NumberInput: React.FC<Props> = ({
+  id,
   name,
   icon,
   value,
@@ -52,7 +55,7 @@ export const NumberInput: React.FC<Props> = ({
           ref={inputRef}
           type="number"
           name={name}
-          id={name}
+          id={id}
           value={value}
           required={required}
           onChange={throttle(handleChange)}

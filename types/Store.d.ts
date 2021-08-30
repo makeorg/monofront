@@ -119,7 +119,7 @@ export type StateUserCookiesPreferences = {
 
 // User State
 export type StateUser = {
-  readonly authentication: StateAuthentication;
+  authentication: StateAuthentication;
   readonly passwordRecovery: StateUserPasswordRecovery;
   readonly cookiesPreferences: StateUserCookiesPreferences;
 };
@@ -178,7 +178,7 @@ export type StatePanel = {
   readonly panelContent: any;
 };
 export type StateSession = {
-  readonly sessionId: string;
+  sessionId: string;
 };
 
 // All state
@@ -194,7 +194,7 @@ export type StateRoot = {
   modal: StateModal;
   partners?: StatePartners;
   panel: StatePanel;
-  session?: StateSession;
+  session: StateSession;
 };
 
 export type Reducer<State = any, Action = any> = (

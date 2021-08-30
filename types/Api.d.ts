@@ -30,6 +30,7 @@ export type ApiServiceHeadersType = {
   'x-make-question-id'?: string;
   'x-make-custom-data'?: string;
   'x-visitor-id'?: string;
+  'x-session-id'?: string;
 };
 
 export type ErrorObjectType = {

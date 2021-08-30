@@ -1,3 +1,6 @@
+/* eslint-disable spaced-comment */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// todo fix types
 import { env } from '@make.org/assets/env';
 import {
   PerformanceTimingType,
@@ -30,6 +33,7 @@ const validateParameters = (
   }
   expectedParameters.forEach(expectedParam => {
     const { key: expectedKey = '', optional } = expectedParam;
+    //@ts-ignore
     if (!values[expectedKey] && optional !== true) {
       throw new Error(
         `Tracking error : required param not found "${expectedKey}"`
@@ -38,10 +42,12 @@ const validateParameters = (
     if (
       expectedParam.values &&
       expectedParam.values.length &&
+      //@ts-ignore
       !expectedParam.values.find(el => el === values[expectedKey])
     ) {
       throw new Error(
         `Tracking error : invalid "${
+          //@ts-ignore
           values[expectedKey]
         }" value. "${expectedParam.values.toString()}" expected.`
       );
@@ -130,6 +136,7 @@ export const TrackingService = {
       .reduce(
         (obj, key) => ({
           ...obj,
+          //@ts-ignore
           [key]: parameters[key],
         }),
         {}
@@ -161,11 +168,10 @@ export const TrackingService = {
 
     MixpanelTracking.track(
       eventName,
-      // todo fix type
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       getEventParameters({
         ...externalTrackingParameters,
+        // @ts-ignore
         distinctId: trackingParamsService.visitorId,
       })
     );

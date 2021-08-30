@@ -91,32 +91,44 @@ const logAndTrackEvent = (eventName: string) => {
 const initApp = async (state: StateRoot) => {
   const { language, country, source, queryParams } = state.appConfig;
 
-  // add listener to update trackingParamsService
+  const store = {
+    ...state,
+    customData: getAll(), // custom_data already saved in session_storage
+  };
+
+  // add listener to update trackingParamsService && sessionId in state
   // should be before first api call (before authenticationState) to get visitorId
   apiClient.addHeadersListener(
     'trackingServiceListener',
     (headers: ApiServiceHeadersType) => {
       trackingParamsService.visitorId =
         headers['x-visitor-id'] || trackingParamsService.visitorId;
+      store.session.sessionId = headers['x-session-id'] || '';
+      if (env.isDev()) {
+        // set cookie expiration for session (20 minutes)
+        const twentyMinutesLater = new Date();
+        twentyMinutesLater.setMinutes(twentyMinutesLater.getMinutes() + 20);
+        const cookies = new Cookies();
+        const sessionIdCookie = cookies.get(COOKIE.SESSION_ID);
+
+        if (!sessionIdCookie) {
+          cookies.set(COOKIE.SESSION_ID, headers['x-session-id'], {
+            path: '/',
+            expires: twentyMinutesLater,
+          });
+        }
+      }
     }
   );
   const authenticationStateData = await authenticationState();
 
+  store.user.authentication = {
+    ...state.user.authentication,
+    ...authenticationStateData,
+  };
+
   // Set in session storage some keys from query params
   setDataFromQueryParams(queryParams);
-
-  const store = {
-    ...state,
-    user: {
-      ...state.user,
-      authentication: {
-        ...state.user.authentication,
-        ...authenticationStateData,
-      },
-    },
-    session: { sessionId: '' },
-    customData: getAll(), // custom_data already saved in session_storage
-  };
 
   // i18n
   i18n.init({

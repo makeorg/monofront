@@ -4,7 +4,7 @@ const PRODUCTION_DOMAIN = 'make.org';
 // Define server env variables
 const nodeEnv = (): string | undefined => process.env.NODE_ENV;
 const isDev = (): boolean => nodeEnv() === 'development';
-const isTest = (): boolean => nodeEnv() === 'ci';
+const isTest = (): boolean => nodeEnv() === 'test';
 const apiUrl = (): string | undefined => process.env.API_URL;
 const proxyTargetApiUrl = (): string | undefined =>
   process.env.PROXY_TARGET_API_URL;

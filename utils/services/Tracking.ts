@@ -35,14 +35,14 @@ export const trackClickLearnMore = (component?: string): void => {
 
 /* Open Sequence Tracking */
 
-export const trackOpenSequence = (component: string): void => {
+export const trackOpenSequence = (component?: string): void => {
   TrackingService.sendAllTrackers(
-    trackingEvent.CLICK_SEQUENCE_OPEN({ component })
+    trackingEvent.CLICK_SEQUENCE_OPEN({ component: component || '' })
   );
 };
 
 export const trackLoadMoreProposals = (
-  componentName: string,
+  component?: string,
   pageCount?: number
 ): void => {
   const pageNumber = pageCount !== undefined ? pageCount.toString() : '';
@@ -50,7 +50,7 @@ export const trackLoadMoreProposals = (
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_PROPOSAL_VIEW_MORE({
       page: pageNumber,
-      component: componentName,
+      component: component || '',
     })
   );
 };
@@ -232,12 +232,12 @@ export const trackVote = (
   proposalId: string,
   nature: string,
   position?: number,
-  topComponent = ''
+  component?: string
 ): void => {
   const cardPosition: string = getPosition(position);
   const params = {
     'card-position': cardPosition,
-    component: topComponent,
+    component,
     proposalId,
     nature,
   };
@@ -262,12 +262,12 @@ export const trackUnvote = (
   proposalId: string,
   nature: string,
   position?: number,
-  topComponent = ''
+  component?: string
 ): void => {
   const cardPosition = getPosition(position);
   const params = {
     'card-position': cardPosition,
-    component: topComponent,
+    component,
     proposalId,
     nature,
   };
@@ -281,12 +281,12 @@ export const trackQualify = (
   type: string,
   nature: string,
   position?: number,
-  topComponent = ''
+  component?: string
 ): void => {
   const cardPosition = getPosition(position);
   const params = {
     'card-position': cardPosition,
-    component: topComponent,
+    component,
     proposalId,
     type,
     nature,
@@ -300,12 +300,12 @@ export const trackUnqualify = (
   type: string,
   nature: string,
   position?: number,
-  topComponent = ''
+  component?: string
 ): void => {
   const cardPosition = getPosition(position);
   const params = {
     'card-position': cardPosition,
-    component: topComponent,
+    component,
     proposalId,
     type,
     nature,
@@ -449,10 +449,10 @@ export const trackClickBrowseResults = (): void => {
   );
 };
 
-export const trackClickBlog = (componentName: string): void => {
+export const trackClickBlog = (component?: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_VIEW_BLOG({
-      component: componentName,
+      component: component || '',
     })
   );
 };
@@ -481,10 +481,10 @@ export const trackDisplayResultsPage = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_PAGE_RESULTS());
 };
 
-export const trackClickSubscribe = (componentName: string): void => {
+export const trackClickSubscribe = (component?: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_SUBSCRIBE({
-      component: componentName,
+      component: component || '',
     })
   );
 };

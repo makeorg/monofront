@@ -2,7 +2,7 @@ image: makeorg/docker-arch-docker:latest
 
 variables: &global_variables
   IMAGE: "make-front"
-  NODE_IMAGE: "node:12.22-alpine"
+  NODE_IMAGE: "node:16.8-alpine"
   YARN_VERSION: "1.22.5"
 
 cache:
@@ -13,6 +13,7 @@ cache:
 
 stages:
   - check
+  - e2e
   
 lint:
   stage: check
@@ -50,6 +51,30 @@ test:
     when: always
     paths:
       - coverage
+
+e2e-app:
+  variables:
+    <<: *global_variables
+    CYPRESS_CACHE_FOLDER: '$CI_PROJECT_DIR/cache_cypress'
+  stage: e2e
+  needs: []
+  except: 
+    - production
+  image: cypress/browsers:node14.17.0-chrome88-ff89
+  script:
+    - npm install -g lerna@4.0.0
+    - lerna bootstrap
+    - lerna exec --scope=@make.org/front --stream -- NODE_ENV=test yarn build
+    - lerna run --scope=@make.org/front test:cypress:run --stream
+  cache: {}
+  artifacts:
+    expire_in: 1 week
+    when: always
+    paths:
+      - cypress/screenshots
+      - cypress/videos
+      - cypress/coverage
+
 
 jscpd:
   stage: check

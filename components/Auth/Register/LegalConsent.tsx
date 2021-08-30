@@ -62,6 +62,7 @@ export const LegalConsent: React.FC<Props> = ({
       <LegalCheckboxWrapperStyle>
         <CheckBox
           name="legalMinorConsent"
+          id="legalMinorConsent"
           value={JSON.stringify(minorConsent)}
           handleCheck={() => setMinorConsent(!minorConsent)}
           handleChange={() =>
@@ -75,6 +76,7 @@ export const LegalConsent: React.FC<Props> = ({
       <LegalCheckboxWrapperStyle>
         <CheckBox
           name="profile.legalAdvisorApproval"
+          id="legalAdvisorApproval"
           value={JSON.stringify(parentalConsent)}
           handleCheck={() => setParentalConsent(!parentalConsent)}
           handleChange={() =>
@@ -93,6 +95,7 @@ export const LegalConsent: React.FC<Props> = ({
           type="submit"
           form={FORM.LEGAL_CONSENT_FORMNAME}
           disabled={!agreedAllConsents}
+          data-cy-button={FORM.LEGAL_CONSENT_FORMNAME}
         >
           {i18n.t('legal_consent.submit')}
         </LegalSubmitStyle>

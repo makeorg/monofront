@@ -1,0 +1,23 @@
+{
+  "organisationId":"ef5fafb4-226b-4a65-9319-c92289d4c10a",
+  "organisationName":"La Bûcherie ",
+  "slug":"la-bucherie",
+  "avatarUrl":"https://picsum.photos/200/300",
+  "description":null,
+  "publicProfile":true,
+  "proposalsCount":6,
+  "votesCount":10,
+  "language":"fr",
+  "country":"FR",
+  "website":"http://www.compagniedephalsbourg.com/portfolio_page/le-philanthro-lab-2/",
+  "countsByQuestion": {
+    "66a9230b-08cb-4f37-8ed8-aa95a8eac19a": {
+      "proposalsCount":5,
+      "votesCount":9
+    },
+    "81ddc5de-f88b-47ca-80ac-23214513da7f": {
+      "proposalsCount":1,
+      "votesCount":1
+    }
+  }
+}

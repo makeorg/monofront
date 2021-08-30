@@ -16,7 +16,7 @@ import {
 } from '@make.org/utils/services/Tracking';
 import { useAppContext } from '@make.org/store';
 import { SubmitButton } from '@make.org/ui/components/SubmitButton';
-import Cookies from 'universal-cookie';
+import { useCookies } from 'react-cookie';
 import { COOKIE } from '@make.org/types/enums';
 import { RadioDemographics } from './Radio';
 import { ExtraDataFormStyle, SkipIconStyle, SubmitWrapperStyle } from './style';
@@ -79,7 +79,9 @@ export const ExtraDataForm: React.FC<Props> = ({
   const expirationDate = new Date();
   const month = (expirationDate.getMonth() + 1) % 12;
   expirationDate.setMonth(month);
-  const cookies = new Cookies();
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [cookies, setCookie] = useCookies([COOKIE.DEMOGRAPHICS]);
 
   const utmParams = useMemo(() => {
     const params = new URLSearchParams(location.search);
@@ -101,7 +103,7 @@ export const ExtraDataForm: React.FC<Props> = ({
       event.preventDefault();
       setIsSubmitDisabled(true);
       setIsSkipDisabled(true);
-      cookies.set(COOKIE.DEMOGRAPHICS, true, {
+      setCookie(COOKIE.DEMOGRAPHICS, true, {
         path: '/',
         expires: expirationDate,
       });

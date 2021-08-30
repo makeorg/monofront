@@ -14,6 +14,8 @@ type Props = {
   type: string;
   /** Name of the input */
   name: string;
+  /** Id of the input */
+  id?: string;
   /** Icon of the input */
   icon: JSX.Element;
   /** Value of the input */
@@ -31,6 +33,7 @@ type Props = {
 export const UntypedInput: React.FC<Props> = ({
   type,
   name,
+  id,
   icon,
   value,
   label,
@@ -49,7 +52,7 @@ export const UntypedInput: React.FC<Props> = ({
           ref={inputRef}
           type={type}
           name={name}
-          id={name}
+          id={id}
           value={value}
           required={required}
           onChange={handleChange}
