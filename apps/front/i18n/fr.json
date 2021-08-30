@@ -850,6 +850,11 @@
       "explore_mobile": "Explorer",
       "explore_breadcrumb": "Explorer \"{{title}}\""
     },
+    "explore": {
+      "title": "Explorer les propositions",
+      "description": "Utilisez les outils de recherche pour parcourir simplement toutes les propositions de la consultation et identifier celles qui vous semblent prioritaires.",
+      "reset_filters": "Réinitialiser les filtres" 
+    },
     "tabs": {
       "consultation": " Consultation ",
       "action": " Actions ",

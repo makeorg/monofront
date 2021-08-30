@@ -49,7 +49,13 @@ export const SearchResultsProposals: React.FC<RouteComponentProps> = ({
   const isDesktop = matchDesktopDevice(device);
 
   const initProposal = async () => {
-    const result = await searchProposals(country, term, page);
+    const result = await searchProposals(
+      country,
+      undefined,
+      term,
+      undefined,
+      page
+    );
     if (result) {
       const { results, total } = result;
       setProposalsResult(results);
@@ -61,7 +67,14 @@ export const SearchResultsProposals: React.FC<RouteComponentProps> = ({
 
   const loadMoreProposals = async () => {
     setIsLoading(true);
-    const result = await searchProposals(country, term, page, PROPOSALS_LIMIT);
+    const result = await searchProposals(
+      country,
+      undefined,
+      term,
+      undefined,
+      page,
+      PROPOSALS_LIMIT
+    );
     if (result) {
       const { results } = result;
       const newProposalList = [...proposalsResult, ...results];

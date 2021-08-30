@@ -102,33 +102,42 @@ export class ProposalApiService {
   static searchProposals(
     country: string,
     questionId?: string,
+    content?: string,
     tagsIds?: string,
     seed?: number,
     limit = 20,
     skip = 0,
-    sortTypeKey?: string,
-    content?: string,
-    ideaIds?: string,
+    sort?: string,
     order?: string,
+    ideaIds?: string,
+    sortAlgorithm?: string,
+    keywords?: string,
+    isNotVoted?: boolean,
+    userType?: string,
     headers?: ApiServiceHeadersType
   ): Promise<void | AxiosResponse<ProposalsType>> {
-    const params: Record<string, string | number | undefined> = {
+    const params: Record<string, string | boolean | number | undefined> = {
+      country,
       questionId,
       content,
+      tagsIds,
       seed,
       limit,
       skip,
-      tagsIds,
-      country,
-      ideaIds,
+      sort,
       order,
+      ideaIds,
+      sortAlgorithm,
+      keywords,
+      isNotVoted,
+      userType,
     };
 
-    if (sortTypeKey) {
-      const sortType = AVAILABLE_ALGORITHMS[sortTypeKey];
+    if (sort) {
+      const sortType = AVAILABLE_ALGORITHMS[sort];
       params[sortType.key] = sortType.value;
 
-      if (AVAILABLE_ALGORITHMS[sortTypeKey].key === 'sort') {
+      if (AVAILABLE_ALGORITHMS[sort].key === 'sort') {
         params.order = 'DESC';
       }
     }
