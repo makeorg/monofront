@@ -6,10 +6,12 @@ const { clientConfig, serverConfig } = require('./base.config.js');
 // Define env file path depending from NODE_ENV
 let envConfigPath = path.resolve(__dirname, '..', '.env');
 if (process.env.NODE_ENV === 'development') {
+  console.log('>>>>>> Building with development env config');
   envConfigPath = path.resolve(__dirname, '..', '.env.local');
 }
-if (process.env.NODE_ENV === 'ci') {
-  envConfigPath = path.resolve(__dirname, '..', '.env.ci');
+if (process.env.NODE_ENV === 'test') {
+  console.log('>>>>>> Building with test env config');
+  envConfigPath = path.resolve(__dirname, '..', '.env.test');
 }
 
 // Build client and server configurations

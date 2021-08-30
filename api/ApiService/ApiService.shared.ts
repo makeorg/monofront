@@ -13,9 +13,10 @@ const HOSTNAME =
 const LOCATION_PARAMS =
   (typeof window !== 'undefined' && window?.location?.search) || '';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-const API_URL: string = env.apiUrl() || window.API_URL;
+const API_URL: string =
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  env.apiUrl() || (typeof window !== 'undefined' && window.API_URL);
 
 axiosRetry(axios, {
   retries: 5,

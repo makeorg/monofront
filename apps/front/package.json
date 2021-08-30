@@ -3,6 +3,10 @@
 		"version": "0.1.0",
 		"private": true,
 		"sideEffects": false,
+		"engines": {
+			"node": ">=14.17 <=16.8",
+			"yarn": "~1.22"
+		},
 		"dependencies": {
 				"@loadable/component": "^5.15.0",
 				"@loadable/server": "~5.15.0",
@@ -63,6 +67,7 @@
 				"webpack": "^5.46.0",
 				"webpack-manifest": "^1.0.8",
 				"webpack-manifest-plugin": "^3.1.1",
+				"webpack-merge": "^5.8.0",
 				"webpack-node-externals": "^3.0.0",
 				"winston": "~3.3.3",
 				"yargs": "^17.1.1"
@@ -109,19 +114,18 @@
 				"tsconfig-paths": "^3.9.0",
 				"webpack-cli": "^4.7.2",
 				"webpack-dev-server": "^3.11.2",
-				"webpack-merge": "^5.8.0",
 				"yaml-jest": "^1.0.5",
 				"yaml-loader": "^0.6.0"
 		},
 		"scripts": {
-				"dev": "sudo webpack serve --mode development --progress --color --config ./webpack/dev.config.js",
-				"server": "pm2-runtime start ecosystem.config.js",
+				"dev": "webpack serve --mode development --progress --color --config ./webpack/dev.config.js",
 				"build": "webpack --mode production --progress --color --config ./webpack/build.config.js",
+				"server": "pm2-runtime start ecosystem.config.js --only app-production",
+				"server:test": "node ../../apimock/server.js & pm2-runtime start ecosystem.config.js --only app-test",
 				"cypress:run": "cypress run -b chrome --headless",
 				"cypress:open": "cypress open",
-				"ci:server": "node ../../apimock/server.js & node -r dotenv/config bin/start dotenv_config_path=.env.ci",
-				"ci:cypress:open": "env NODE_ENV=ci start-server-and-test ci:server http://localhost:9009 cypress:open",
-				"ci:cypress:run": "env NODE_ENV=ci start-server-and-test ci:server http://localhost:9009 cypress:run",
+				"test:cypress:open": "start-server-and-test server:test http://localhost:9009 cypress:open",
+				"test:cypress:run": "start-server-and-test server:test http://localhost:9009 cypress:run",
 				"documentation": "bin/checkDocumentation.js check",
 				"documentation:fix": "bin/checkDocumentation.js check --fix"
 		}

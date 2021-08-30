@@ -67,9 +67,8 @@ ENV PATH /home/app/node_modules/.bin:$PATH
 ENV CHOKIDAR_USEPOLLING true
 ENV NODE_ENV test
 
-RUN ["./node_modules/.bin/lerna", "run", "--scope=@make.org/front", "build", "--stream"]
-
-CMD ["./node_modules/.bin/lerna", "run", "--scope=@make.org/front", "test", "--stream"]
+RUN ["./node_modules/.bin/lerna", "run", "--scope=@make.org/front",  "build", "--stream"]
+CMD ["./node_modules/.bin/lerna", "run", "--scope=@make.org/front", "test:cypress:open", "--stream"]
 
 EXPOSE 9009
 

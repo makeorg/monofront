@@ -173,7 +173,9 @@ export const UserInformations: FC<Props> = ({ user, navigationBar }) => {
       )}
       <ProfileNavigationStyle>
         {navigationBar}
-        <ProfileInformationButtonStyle onClick={() => dispatch(logout())}>
+        <ProfileInformationButtonStyle
+          onClick={() => dispatch(logout(dispatch))}
+        >
           <SignOutIconStyle aria-hidden focusable="false" />
           {i18n.t('profile.common.log_out')}
         </ProfileInformationButtonStyle>

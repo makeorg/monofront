@@ -2,6 +2,10 @@
   "name": "root",
   "private": true,
   "version": "0.1.0",
+	"engines": {
+    "node": ">=14.17 <=16.8",
+		"yarn": "~1.22"
+	},
   "workspaces": [
     "root",
     "apps/*",

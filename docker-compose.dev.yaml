@@ -1,8 +1,8 @@
 version: "3.9"
 
 services:
-    app_make:
-      image: appmake
+    app_make_dev:
+      image: appmakedev
       build:
         context: .
         dockerfile: apps/front/Dockerfile
@@ -25,6 +25,8 @@ services:
         - /home/app/store/node_modules
         - /home/app/apimock/node_modules
         - /home/app/apps/front/dist
+      profiles: 
+        - dev
   
     app_api_mock:
       image: appapimock
@@ -35,7 +37,8 @@ services:
       ports:
         - 9000:9000
       volumes: *default_volumes
-      profiles: ["test"]
+      profiles: 
+        - test
     
     app_make_test:
       image: appmaketest
@@ -46,4 +49,5 @@ services:
       ports:
         - 9009:9009
       volumes: *default_volumes
-      profiles: ["test"]
+      profiles: 
+        - test
