@@ -73,11 +73,13 @@ describe('Proposal Helper', () => {
       expect(ProposalService.searchProposals).toHaveBeenCalledWith(
         'FR',
         '12345',
+        undefined,
         'foo,bar',
         undefined,
         PROPOSALS_LISTING_LIMIT,
         0,
         AVAILABLE_ALGORITHMS.TAGGED_FIRST.value,
+        undefined,
         undefined
       );
     });
@@ -89,11 +91,13 @@ describe('Proposal Helper', () => {
       expect(ProposalService.searchProposals).toHaveBeenCalledWith(
         'FR',
         '12345',
+        undefined,
         'foo,bar',
         999,
         PROPOSALS_LISTING_LIMIT,
         30,
         AVAILABLE_ALGORITHMS.TAGGED_FIRST.value,
+        undefined,
         undefined
       );
     });

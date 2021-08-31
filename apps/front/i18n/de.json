@@ -811,6 +811,11 @@
       "explore_mobile": "Entdecken",
       "explore_breadcrumb": "„{{title}}“ entdecken"
     },
+    "explore": {
+      "title": "Vorschläge entdecken",
+      "description": "@@consultation.explore.description|fr:Utilisez les outils de recherche pour parcourir simplement toutes les propositions de la consultation et identifier celles qui vous semblent prioritaires.",
+      "reset_filters": "@@consultation.explore.reset_filters|fr:Réinitialiser les filtres"
+    },
     "tabs": {
       "consultation": "Konsultation ",
       "action": "Maßnahmen ",

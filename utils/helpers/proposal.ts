@@ -4,7 +4,7 @@ import {
   MAX_PROPOSAL_LENGTH,
   PROPOSALS_LISTING_LIMIT,
 } from '@make.org/utils/constants/proposal';
-import { ProposalsType } from '@make.org/types';
+import { ProposalsType, TypeFilterAndSortValues } from '@make.org/types';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import i18n from 'i18next';
 import { TRANSLATION_NAMESPACE } from '@make.org/utils/i18n/constants';
@@ -34,27 +34,33 @@ export const proposalHasValidLength = (length = 0): boolean => {
  */
 export const searchProposals = async (
   country: string,
-  content?: string,
-  page = 0,
-  limit = PROPOSALS_LISTING_LIMIT,
-  seed?: number,
   questionId?: string,
+  content?: string,
   tagsIds?: string,
+  seed?: number,
+  limit = PROPOSALS_LISTING_LIMIT,
+  page = 0,
   sortTypeKey?: string,
-  ideaIds?: string
+  orderTypeKey?: string,
+  ideaIds?: string,
+  sortAndFilterParams?: TypeFilterAndSortValues
 ): Promise<ProposalsType | null> => {
   const skip = page * limit;
-
   const result = await ProposalService.searchProposals(
     country,
     questionId,
+    content,
     tagsIds,
     seed,
     limit,
     skip,
     sortTypeKey,
-    content,
-    ideaIds
+    orderTypeKey,
+    ideaIds,
+    sortAndFilterParams && sortAndFilterParams.sortAlgorithm,
+    sortAndFilterParams && sortAndFilterParams.keywords,
+    sortAndFilterParams && sortAndFilterParams.isNotVoted,
+    sortAndFilterParams && sortAndFilterParams.userType
   );
 
   return result;
@@ -76,11 +82,13 @@ export const searchTaggedProposals = async (
   const response = await ProposalService.searchProposals(
     country,
     questionId,
+    undefined,
     tagsIds,
     seed,
     limit,
     skip,
     sortTypeKey,
+    undefined,
     ideaIds
   );
 

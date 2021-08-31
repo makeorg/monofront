@@ -464,7 +464,7 @@
     "technicals": {
       "secure": "make secure : once you have logged into your citizen account on Make.org, this cookie ensures that this connection will be maintained while you are browsing the service.",
       "expiration": "make-secure-expiration : this cookie is used to detect your inactivity on the service in order to make this connection expire.",
-      "demographics": "make-demographics: this cookie allows us to remember if you've already been asked demographics information (age range, region, gender, etc) on this device so that we don't ask you again."
+      "demographics": "make-demographics: this cookie allows us to remember if you've already been asked demographic information (age range, region, gender, etc) on this device so that we don't ask you again."
     },
     "preferences": {
       "authentication": "Google and Facebook authentication cookies: they enable registration and connection to your citizen account via these social networks.",
@@ -669,6 +669,11 @@
       "explore_desktop": "Explore solutions",
       "explore_mobile": "Explore",
       "explore_breadcrumb": "Explore \"{{title}}\""
+    },
+    "explore": {
+      "title": "Explore solutions",
+      "description": "@@consultation.explore.description|fr:Utilisez les outils de recherche pour parcourir simplement toutes les propositions de la consultation et identifier celles qui vous semblent prioritaires.",
+      "reset_filters": "@@consultation.explore.reset_filters|fr:Réinitialiser les filtres"
     },
     "sort": {
       "TAGGED_FIRST": "All the solutions",

@@ -3,7 +3,7 @@ import { color, typography } from 'athena-design-tokens';
 import { intToPx, pxToPercent } from '@make.org/utils/helpers/styled';
 import {
   ColumnElementStyle,
-  ColumnToRowElementStyle,
+  SpaceBetweenRowStyle,
 } from '@make.org/ui/elements/FlexElements';
 import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
@@ -127,11 +127,12 @@ export const ResultsTitleStyle = styled(ParticipateTitleStyle)`
   }
 `;
 
-export const ExploreTitleWrapperStyle = styled(ColumnToRowElementStyle)`
+export const ExploreTitleWrapperStyle = styled(ColumnElementStyle)`
   margin-top: 30px;
+  margin-bottom: 20px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     align-items: baseline;
-    margin-top: 50px;
+    margin-bottom: 30px;
   }
 `;
 
@@ -148,11 +149,31 @@ export const ExploreTitleStyle = styled.h3`
   }
 `;
 
-export const ExploreProposalsCountStyle = styled.span`
+export const ExploreSubTitleWrapperStyle = styled.div`
   font-family: ${MakeFonts.CircularStandardBook};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  color: ${color.greyDark};
   letter-spacing: 0.14px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+`;
+
+export const ExploreProposalsCountStyle = styled.span`
+  font-family: ${MakeFonts.CircularStandardBold};
+  font-size: ${intToPx(typography.font.fontsize.S.value)};
+  color: ${color.black};
+  letter-spacing: 0.12px;
+`;
+export const ExploreDescriptionStyle = styled(SpaceBetweenRowStyle)`
+  width: 100%;
+`;
+
+export const ResetLinkStyle = styled.button`
+  display: inline-flex;
+  align-items: center;
+  font-family: ${MakeFonts.CircularStandardBook};
+  text-decoration: none;
+  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  color: ${color.black};
 `;
 
 export const ParticipateDescriptionStyle = styled.p`

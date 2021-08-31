@@ -1,61 +1,108 @@
 import React, { useEffect, useState, FC } from 'react';
-import { ProposalType, QuestionType } from '@make.org/types';
+import {
+  ProposalType,
+  QuestionKeywordType,
+  QuestionType,
+  TypeFilterAndSortValues,
+} from '@make.org/types';
 import i18n from 'i18next';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { ThemeProvider } from 'styled-components';
 import { NOTIF, IDS } from '@make.org/types/enums';
-import {
-  getProposalsListTitle,
-  searchProposals,
-} from '@make.org/utils/helpers/proposal';
+import { searchProposals } from '@make.org/utils/helpers/proposal';
 import { useParams } from 'react-router';
-
+import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
 import { Pagination } from '@make.org/components/Pagination';
 import { trackDisplayOperationPage } from '@make.org/utils/services/Tracking';
 import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
+import { QuestionService } from '@make.org/utils/services/Question';
 import { ProposalsList } from '../../app/Consultation/ProposalsList';
 import { Timeline } from '../../app/Consultation/Timeline';
 import { ParticipateNavigation } from '../../app/Consultation/Navigation/Participate';
 import { ParticipateHighlights } from '../../app/Consultation/Highlights';
 import { ParticipateHeader } from '../../app/Consultation/Header';
 import { CitizenRegister } from '../../app/Consultation/CitizenRegister';
-
+import { FilterAndSort } from '../../app/Consultation/ExploreFilters';
 import {
   ParticipateContentStyle,
   ParticipateInnerStyle,
-  ExploreTitleWrapperStyle,
+  ExploreSubTitleWrapperStyle,
   ExploreTitleStyle,
   ExploreProposalsCountStyle,
-  ParticipateFullwidthContentStyle,
+  ParticipateSidebarContentStyle,
+  ExploreDescriptionStyle,
+  ParticipateMainContentStyle,
 } from './style';
 
 const ExplorePage: FC = () => {
+  const { state, dispatch } = useAppContext();
   const params: { country: string; pageId: string } = useParams();
   const { country, pageId } = params;
-  const { state, dispatch } = useAppContext();
+  const { device } = state.appConfig;
+  const isDesktop = matchDesktopDevice(device);
   const question: QuestionType = selectCurrentQuestion(state);
   const [proposals, setProposals] = useState<ProposalType[]>([]);
   const [isLoading, setLoading] = useState<boolean>(true);
+  const [keyword, setKeyword] = useState<QuestionKeywordType[]>([]);
   const [proposalsTotal, setProposalsTotal] = useState<number>(0);
-  const feedAlgorithm = 'RECENT';
-  const PROPOSALS_LIMIT = 12;
 
-  const title = getProposalsListTitle(feedAlgorithm);
+  const PROPOSALS_LIMIT = 10;
+  const KEYWORD_THRESHOLD = 5;
   const hasProposals = proposalsTotal > 0;
 
-  const getProposals = async () => {
+  const [filterAndSortValues, setFilterAndSortValues] =
+    useState<TypeFilterAndSortValues>({
+      keywords: undefined,
+      sortAlgorithm: undefined,
+      sort: 'RECENT',
+      isNotVoted: false,
+      userType: undefined,
+    });
+  const defaultValues = {
+    keywords: undefined,
+    sortAlgorithm: undefined,
+    sort: 'RECENT',
+    isNotVoted: false,
+    userType: undefined,
+  };
+
+  // retrieves question Keywords for filter
+  const getQuestionKeywords = async () => {
     setLoading(true);
+    const response = await QuestionService.getQuestionKeywords(
+      question.questionId,
+      KEYWORD_THRESHOLD
+    );
+    if (response) {
+      setKeyword(response);
+      setLoading(false);
+    }
+  };
+
+  // retrieves proposals with corresponding param for sort and filters
+  const getProposals = async (values: TypeFilterAndSortValues) => {
+    setLoading(true);
+    const { keywords, sortAlgorithm, isNotVoted, userType, sort } = values;
+    const sortAndFilterParams: TypeFilterAndSortValues = {
+      keywords,
+      sortAlgorithm,
+      isNotVoted,
+      userType,
+    };
     const response = await searchProposals(
       country,
+      question.questionId,
+      undefined,
       undefined,
       JSON.parse(pageId) - 1,
       PROPOSALS_LIMIT,
       undefined,
-      question.questionId,
+      sort,
       undefined,
-      feedAlgorithm
+      undefined,
+      sortAndFilterParams
     );
 
     if (response) {
@@ -65,6 +112,17 @@ const ExplorePage: FC = () => {
     }
 
     setLoading(false);
+  };
+
+  // handleSubmit for filters
+  const handleSubmit = () => {
+    getProposals(filterAndSortValues);
+  };
+
+  // handleReset for filters
+  const handleReset = () => {
+    setFilterAndSortValues({ ...defaultValues });
+    getProposals(defaultValues);
   };
 
   useEffect(() => {
@@ -81,11 +139,12 @@ const ExplorePage: FC = () => {
   }, [question, dispatch]);
 
   useEffect(() => {
+    getQuestionKeywords();
     trackDisplayOperationPage();
   }, []);
 
   useEffect(() => {
-    getProposals();
+    getProposals(defaultValues);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pageId]);
 
@@ -103,16 +162,21 @@ const ExplorePage: FC = () => {
       <div id={IDS.CONSULTATION_NAVIGATION} />
       <ParticipateNavigation />
       <ParticipateContentStyle>
-        <ExploreTitleWrapperStyle>
-          <ExploreTitleStyle>{title}</ExploreTitleStyle>
-          {hasProposals && (
+        <ExploreTitleStyle>
+          {i18n.t('consultation.explore.title')}
+        </ExploreTitleStyle>
+        <ExploreSubTitleWrapperStyle>
+          {i18n.t('consultation.explore.description')}
+        </ExploreSubTitleWrapperStyle>
+        {hasProposals && (
+          <ExploreDescriptionStyle>
             <ExploreProposalsCountStyle>
               {i18n.t('common.proposal_count', { count: proposalsTotal })}
             </ExploreProposalsCountStyle>
-          )}
-        </ExploreTitleWrapperStyle>
+          </ExploreDescriptionStyle>
+        )}
         <ParticipateInnerStyle>
-          <ParticipateFullwidthContentStyle>
+          <ParticipateMainContentStyle>
             <ProposalsList isLoading={isLoading} proposals={proposals} />
             {proposalsTotal > PROPOSALS_LIMIT && (
               <Pagination
@@ -122,7 +186,18 @@ const ExplorePage: FC = () => {
                 questionSlug={question.slug}
               />
             )}
-          </ParticipateFullwidthContentStyle>
+          </ParticipateMainContentStyle>
+          <ParticipateSidebarContentStyle>
+            {isDesktop && (
+              <FilterAndSort
+                filterAndSortValues={filterAndSortValues}
+                setFilterAndSortValues={setFilterAndSortValues}
+                keywords={keyword}
+                handleSubmit={handleSubmit}
+                handleReset={handleReset}
+              />
+            )}
+          </ParticipateSidebarContentStyle>
         </ParticipateInnerStyle>
       </ParticipateContentStyle>
       <Timeline />
@@ -134,4 +209,4 @@ const ExplorePage: FC = () => {
 };
 
 // default export needed for loadable component
-export default ExplorePage; // eslint-disable-line import/no-default-export
+export default ExplorePage;

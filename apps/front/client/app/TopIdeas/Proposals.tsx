@@ -43,11 +43,12 @@ export const TopIdeaDetailsProposals: FC<Props> = ({ topIdea, question }) => {
   const initProposals = async () => {
     const result = await searchProposals(
       country,
+      question.questionId,
+      undefined,
       undefined,
       page,
       undefined,
       undefined,
-      question.questionId,
       undefined,
       'TOP_SCORE',
       topIdea.ideaId
@@ -67,13 +68,14 @@ export const TopIdeaDetailsProposals: FC<Props> = ({ topIdea, question }) => {
     setIsPendingForMore(true);
     const result = await searchProposals(
       country,
-      undefined,
-      page,
-      undefined,
-      seed,
       question.questionId,
       undefined,
+      undefined,
+      seed,
+      undefined,
+      page,
       'TOP_SCORE',
+      undefined,
       topIdea.ideaId
     );
     if (result) {

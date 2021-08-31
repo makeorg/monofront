@@ -1,6 +1,8 @@
 import { typography, color } from 'athena-design-tokens';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { Elements } from '@make.org/assets/vars/Elements';
+import { BlackBorderButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { Link } from 'react-router-dom';
 import { intToPx } from '@make.org/utils/helpers/styled';
@@ -18,7 +20,7 @@ export const ProposalsListStyle = styled(UnstyledListStyle)`
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 30px;
   }
 `;
@@ -57,4 +59,20 @@ export const ProposalDateStyle = styled.time`
   letter-spacing: 0.13px;
   text-align: center;
   margin-top: 25px;
+`;
+
+export const RegisterCardStyle = styled(ProposalCardStyle)`
+  justify-content: center;
+  gap: 17px;
+`;
+
+export const RegisterLinkCardStyle = styled(BlackBorderButtonStyle)`
+  color: ${color.black};
+`;
+
+export const RegisterCardTitleStyle = styled.span`
+  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  color: ${color.black};
+  text-align: center;
+  font-family: ${MakeFonts.CircularStandardBold};
 `;

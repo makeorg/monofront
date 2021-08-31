@@ -12,4 +12,5 @@ export enum FORM {
   PERSONALITY_OPINION_FORMNAME = 'personality_opinion',
   SEARCH_FORMNAME = 'search',
   PROPOSAL_SUBMIT_FORMNAME = 'proposal_submit',
+  FILTER_AND_SORT = 'filter_and_sort',
 }

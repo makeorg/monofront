@@ -45,7 +45,14 @@ export const MainResultsProposals: React.FC<Props> = ({
 
   const loadMoreProposals = async () => {
     setIsLoading(true);
-    const result = await searchProposals(country, searchTerm, page, 4);
+    const result = await searchProposals(
+      country,
+      undefined,
+      searchTerm,
+      undefined,
+      page,
+      4
+    );
     if (result) {
       const { results } = result;
       const newProposalList = [...proposalsResult, ...results];
