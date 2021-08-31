@@ -5,7 +5,6 @@ import {
   ColumnElementStyle,
   SpaceBetweenRowStyle,
 } from '@make.org/ui/elements/FlexElements';
-import { Link } from 'react-router-dom';
 import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { SvgChat } from '@make.org/ui/Svg/elements';
