@@ -141,7 +141,7 @@ export const ExploreTitleStyle = styled.h3`
   text-transform: none;
   font-size: ${intToPx(typography.font.fontsize.L.value)};
   letter-spacing: 0.5px;
-  margin-bottom: 20px;
+  margin: 40px 0px 20px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.XL.value)};
     margin-bottom: 0;
@@ -154,7 +154,10 @@ export const ExploreSubTitleWrapperStyle = styled.div`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   letter-spacing: 0.14px;
   margin-top: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 35px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    width: 60%;
+  }
 `;
 
 export const ExploreProposalsCountStyle = styled.span`
@@ -171,9 +174,12 @@ export const ResetLinkStyle = styled.button`
   display: inline-flex;
   align-items: center;
   font-family: ${MakeFonts.CircularStandardBook};
-  text-decoration: none;
+  border: none;
+  text-decoration: underline;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  color: ${color.black};
+  color: ${color.grey};
+  margin-bottom: 23px;
+  background-color: transparent;
 `;
 
 export const ParticipateDescriptionStyle = styled.p`

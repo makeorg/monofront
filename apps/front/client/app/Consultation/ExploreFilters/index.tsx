@@ -8,6 +8,16 @@ import {
   FILTER_ORGANISATION,
 } from '@make.org/utils/constants/explore';
 import { ResetLinkStyle } from '../../../pages/Consultation/style';
+import {
+  FilterBlockStyle,
+  FiltersWrapperStyle,
+  FiltersTitleStyle,
+  TransparentButtonFilter,
+  KeywordsListWrapperStyle,
+  KeywordsItemWrapperStyle,
+  RadioAsTransparentButtonLabelStyle,
+  RadioAsTransparentButtonWrapperStyle,
+} from './style';
 
 type Props = {
   filterAndSortValues: TypeFilterAndSortValues;
@@ -100,94 +110,106 @@ export const FilterAndSort: React.FC<Props> = ({
   };
 
   return (
-    <form onSubmit={throttle(handleSubmit)}>
-      <ResetLinkStyle
-        type="button"
-        onClick={() => {
-          handleReset();
-          setCurrentSort(SORT_RECENT);
-        }}
-      >
-        Reset les filtres
-      </ResetLinkStyle>
-      <div>Les sujets qui vous interpellent</div>
-      {keywords.length > 1 && (
-        <ul>
-          {keywords.map(keyword => (
-            <li key={keyword.key}>
-              <input
-                type="button"
-                name="keywords"
-                value={keyword.key}
-                onClick={() => handleChange('keywords', keyword.key)}
-              />
-            </li>
-          ))}
-        </ul>
-      )}
-      {keywords.length === 1 && (
-        <input
+    <FiltersWrapperStyle>
+      <form onSubmit={throttle(handleSubmit)}>
+        <ResetLinkStyle
           type="button"
-          onClick={() => handleChange('keywords', keywords[0].key)}
-          value={keywords[0].key}
-        />
-      )}
-      <div>Trier par</div>
-      <ul>
-        {SORT_ITEMS.map(
-          (item: { name: string; label: string; value?: string }) => (
-            <li key={item.name}>
-              <input
-                id={item.name}
-                type="radio"
-                value={item.value}
-                name="sort"
-                onChange={() => {
-                  handleChange(item.name, item.value);
-                  setCurrentSort(item.name);
-                }}
-                checked={checkCurrentSort(item.name, currentSort)}
-              />
-              <label htmlFor={item.name}>{item.label}</label>
+          onClick={() => {
+            handleReset();
+            setCurrentSort(SORT_RECENT);
+          }}
+        >
+          Reset les filtres
+        </ResetLinkStyle>
+        <FilterBlockStyle>
+          <FiltersTitleStyle>
+            Les sujets qui vous interpellent
+          </FiltersTitleStyle>
+          {keywords.length > 1 && (
+            <KeywordsListWrapperStyle>
+              {keywords.map(keyword => (
+                <KeywordsItemWrapperStyle key={keyword.key}>
+                  <TransparentButtonFilter
+                    type="button"
+                    name="keywords"
+                    value={keyword.key}
+                    onClick={() => handleChange('keywords', keyword.key)}
+                  />
+                </KeywordsItemWrapperStyle>
+              ))}
+            </KeywordsListWrapperStyle>
+          )}
+          {keywords.length === 1 && (
+            <TransparentButtonFilter
+              type="button"
+              onClick={() => handleChange('keywords', keywords[0].key)}
+              value={keywords[0].key}
+            />
+          )}
+        </FilterBlockStyle>
+        <FilterBlockStyle>
+          <FiltersTitleStyle>Trier par</FiltersTitleStyle>
+          <ul>
+            {SORT_ITEMS.map(
+              (item: { name: string; label: string; value?: string }) => (
+                <li key={item.name}>
+                  <RadioAsTransparentButtonWrapperStyle
+                    id={item.name}
+                    type="radio"
+                    value={item.value}
+                    name="sort"
+                    onChange={() => {
+                      handleChange(item.name, item.value);
+                      setCurrentSort(item.name);
+                    }}
+                    checked={checkCurrentSort(item.name, currentSort)}
+                  />
+                  <RadioAsTransparentButtonLabelStyle htmlFor={item.name}>
+                    {item.label}
+                  </RadioAsTransparentButtonLabelStyle>
+                </li>
+              )
+            )}
+          </ul>
+        </FilterBlockStyle>
+        <FilterBlockStyle>
+          <FiltersTitleStyle>Filtrer par</FiltersTitleStyle>
+          <ul>
+            <li>
+              <label htmlFor="isNotVoted">
+                <input
+                  type="checkbox"
+                  id="isNotVoted"
+                  name="isNotVoted"
+                  value={JSON.stringify(filterAndSortValues.isNotVoted)}
+                  checked={filterAndSortValues.isNotVoted}
+                  onChange={() =>
+                    handleChange(
+                      'isNotVoted',
+                      JSON.stringify(filterAndSortValues.isNotVoted)
+                    )
+                  }
+                />
+                Non votées
+              </label>
             </li>
-          )
-        )}
-      </ul>
-      <div>Filtrer par</div>
-      <ul>
-        <li>
-          <label htmlFor="isNotVoted">
-            <input
-              type="checkbox"
-              id="isNotVoted"
-              name="isNotVoted"
-              value={JSON.stringify(filterAndSortValues.isNotVoted)}
-              checked={filterAndSortValues.isNotVoted}
-              onChange={() =>
-                handleChange(
-                  'isNotVoted',
-                  JSON.stringify(filterAndSortValues.isNotVoted)
-                )
-              }
-            />
-            Non votées
-          </label>
-        </li>
-        <li>
-          <label htmlFor="userType">
-            <input
-              type="checkbox"
-              value={FILTER_ORGANISATION}
-              id="userType"
-              name="userType"
-              checked={filterAndSortValues.userType !== undefined}
-              onChange={() => handleChange('userType', FILTER_ORGANISATION)}
-            />
-            Organisation
-          </label>
-        </li>
-      </ul>
-      <button type="submit">Afficher les propositions</button>
-    </form>
+            <li>
+              <label htmlFor="userType">
+                <input
+                  type="checkbox"
+                  value={FILTER_ORGANISATION}
+                  id="userType"
+                  name="userType"
+                  checked={filterAndSortValues.userType !== undefined}
+                  onChange={() => handleChange('userType', FILTER_ORGANISATION)}
+                />
+                Organisation
+              </label>
+            </li>
+          </ul>
+        </FilterBlockStyle>
+        <button type="submit">Afficher les propositions</button>
+      </form>
+    </FiltersWrapperStyle>
   );
 };
