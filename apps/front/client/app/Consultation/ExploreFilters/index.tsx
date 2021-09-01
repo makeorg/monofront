@@ -1,13 +1,25 @@
 import React, { FormEvent, Dispatch, SetStateAction, useState } from 'react';
+import i18n from 'i18next';
 import { throttle } from '@make.org/utils/helpers/throttle';
 import { TypeFilterAndSortValues, QuestionKeywordType } from '@make.org/types';
+import { SvgCheck } from '@make.org/ui/Svg/elements';
+import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import {
   SORT_POPULAR,
   SORT_RECENT,
   SORT_CONTROVERSY,
   FILTER_ORGANISATION,
 } from '@make.org/utils/constants/explore';
-import { ResetLinkStyle } from '../../../pages/Consultation/style';
+import {
+  HiddenCheckbox,
+  StyledCheckbox,
+  CheckboxLabelStyle,
+} from '@make.org/ui/elements/FormElements';
+import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
+import {
+  ResetLinkStyle,
+  ResetLinkButtonWrapperStyle,
+} from '../../../pages/Consultation/style';
 import {
   FilterBlockStyle,
   FiltersWrapperStyle,
@@ -16,7 +28,17 @@ import {
   KeywordsListWrapperStyle,
   KeywordsItemWrapperStyle,
   RadioAsTransparentButtonLabelStyle,
-  RadioAsTransparentButtonWrapperStyle,
+  SvgArrowUp,
+  SvgArrowsGroup,
+  SvgFilterBy,
+  SvgRecent,
+  SvgPopular,
+  SvgControversial,
+  RadioListWrapperStyle,
+  RadioItemWrapperStyle,
+  FilterByWrapperStyle,
+  FilterByElementStyle,
+  RedSubmitButtonWrapperStyle,
 } from './style';
 
 type Props = {
@@ -27,24 +49,45 @@ type Props = {
   handleReset: () => void;
 };
 
-const SORT_ITEMS: Array<{ name: string; label: string; value?: string }> = [
+// handle className for sort and keyword button and radio css
+const handleClassName = (
+  currentValue: string | undefined,
+  elementValue: string
+): string => {
+  if (elementValue === currentValue) {
+    return 'selected';
+  }
+  return '';
+};
+
+// handles sort items for sortAlgorithm
+const SORT_ITEMS: Array<{
+  name: string;
+  icon: JSX.Element;
+  label: string;
+  value?: string;
+}> = [
   {
     name: SORT_RECENT,
-    label: 'Récentes',
+    icon: <SvgRecent />,
+    label: i18n.t('consultation.explore.recent'),
     value: undefined,
   },
   {
     name: SORT_POPULAR,
-    label: 'Populaires',
+    icon: <SvgPopular />,
+    label: i18n.t('consultation.explore.popular'),
     value: SORT_POPULAR,
   },
   {
     name: SORT_CONTROVERSY,
-    label: 'Controversées',
+    icon: <SvgControversial />,
+    label: i18n.t('consultation.explore.controversial'),
     value: SORT_CONTROVERSY,
   },
 ];
 
+// handles filter and sort values updates
 const getUpdatedFilterAndSortValues = (
   currentFilterAndSortValues: TypeFilterAndSortValues,
   name: string,
@@ -102,28 +145,47 @@ export const FilterAndSort: React.FC<Props> = ({
   handleReset,
 }: Props) => {
   const [currentSort, setCurrentSort] = useState<string>(SORT_RECENT);
+  const [currentKeyword, setCurrentKeyword] = useState<string | undefined>(
+    undefined
+  );
+  const [isDisabled, setIsDisabled] = useState<boolean>(true);
   const handleChange = (name: string, value?: string) => {
     const newFilterAndSortValues: TypeFilterAndSortValues =
       getUpdatedFilterAndSortValues(filterAndSortValues, name, value);
-
     setFilterAndSortValues(newFilterAndSortValues);
+    setIsDisabled(false);
+  };
+
+  // helper for onClick keywords
+  const handleKeyword = (key: string) => {
+    if (currentKeyword) {
+      setCurrentKeyword(undefined);
+      return handleChange('keywords', undefined);
+    }
+    setCurrentKeyword(key);
+    return handleChange('keywords', key);
   };
 
   return (
     <FiltersWrapperStyle>
       <form onSubmit={throttle(handleSubmit)}>
-        <ResetLinkStyle
-          type="button"
-          onClick={() => {
-            handleReset();
-            setCurrentSort(SORT_RECENT);
-          }}
-        >
-          Reset les filtres
-        </ResetLinkStyle>
+        <ResetLinkButtonWrapperStyle>
+          <ResetLinkStyle
+            type="button"
+            onClick={() => {
+              handleReset();
+              setIsDisabled(true);
+              setCurrentSort(SORT_RECENT);
+              setCurrentKeyword('');
+            }}
+          >
+            {i18n.t('consultation.explore.reset_filters')}
+          </ResetLinkStyle>
+        </ResetLinkButtonWrapperStyle>
         <FilterBlockStyle>
           <FiltersTitleStyle>
-            Les sujets qui vous interpellent
+            <SvgArrowUp aria-hidden focusable="false" />
+            {i18n.t('consultation.cards.keywords.title')}
           </FiltersTitleStyle>
           {keywords.length > 1 && (
             <KeywordsListWrapperStyle>
@@ -133,8 +195,13 @@ export const FilterAndSort: React.FC<Props> = ({
                     type="button"
                     name="keywords"
                     value={keyword.key}
-                    onClick={() => handleChange('keywords', keyword.key)}
-                  />
+                    onClick={() => {
+                      handleKeyword(keyword.key);
+                    }}
+                    className={handleClassName(currentKeyword, keyword.key)}
+                  >
+                    {keyword.key}
+                  </TransparentButtonFilter>
                 </KeywordsItemWrapperStyle>
               ))}
             </KeywordsListWrapperStyle>
@@ -144,45 +211,63 @@ export const FilterAndSort: React.FC<Props> = ({
               type="button"
               onClick={() => handleChange('keywords', keywords[0].key)}
               value={keywords[0].key}
-            />
+            >
+              {keywords[0].key}
+            </TransparentButtonFilter>
           )}
         </FilterBlockStyle>
         <FilterBlockStyle>
-          <FiltersTitleStyle>Trier par</FiltersTitleStyle>
-          <ul>
+          <FiltersTitleStyle>
+            <SvgArrowsGroup aria-hidden focusable="false" />
+            {i18n.t('consultation.explore.sort_by')}
+          </FiltersTitleStyle>
+          <RadioListWrapperStyle>
             {SORT_ITEMS.map(
-              (item: { name: string; label: string; value?: string }) => (
-                <li key={item.name}>
-                  <RadioAsTransparentButtonWrapperStyle
-                    id={item.name}
-                    type="radio"
-                    value={item.value}
-                    name="sort"
-                    onChange={() => {
-                      handleChange(item.name, item.value);
-                      setCurrentSort(item.name);
-                    }}
-                    checked={checkCurrentSort(item.name, currentSort)}
-                  />
+              (item: {
+                name: string;
+                icon: JSX.Element;
+                label: string;
+                value?: string;
+              }) => (
+                <RadioItemWrapperStyle
+                  key={item.name}
+                  className={handleClassName(currentSort, item.name)}
+                >
+                  <ScreenReaderItemStyle>
+                    <input
+                      id={item.name}
+                      type="radio"
+                      value={item.value}
+                      name="sort"
+                      onChange={() => {
+                        handleChange(item.name, item.value);
+                        setCurrentSort(item.name);
+                      }}
+                      checked={checkCurrentSort(item.name, currentSort)}
+                    />
+                  </ScreenReaderItemStyle>
                   <RadioAsTransparentButtonLabelStyle htmlFor={item.name}>
+                    {item.icon}
                     {item.label}
                   </RadioAsTransparentButtonLabelStyle>
-                </li>
+                </RadioItemWrapperStyle>
               )
             )}
-          </ul>
+          </RadioListWrapperStyle>
         </FilterBlockStyle>
         <FilterBlockStyle>
-          <FiltersTitleStyle>Filtrer par</FiltersTitleStyle>
-          <ul>
-            <li>
-              <label htmlFor="isNotVoted">
-                <input
+          <FiltersTitleStyle>
+            <SvgFilterBy aria-hidden focusable="false" />
+            {i18n.t('consultation.explore.filter_by')}
+          </FiltersTitleStyle>
+          <FilterByWrapperStyle>
+            <FilterByElementStyle>
+              <CheckboxLabelStyle htmlFor="isNotVoted" noFontSizeChange>
+                <HiddenCheckbox
                   type="checkbox"
                   id="isNotVoted"
                   name="isNotVoted"
                   value={JSON.stringify(filterAndSortValues.isNotVoted)}
-                  checked={filterAndSortValues.isNotVoted}
                   onChange={() =>
                     handleChange(
                       'isNotVoted',
@@ -190,25 +275,36 @@ export const FilterAndSort: React.FC<Props> = ({
                     )
                   }
                 />
-                Non votées
-              </label>
-            </li>
-            <li>
-              <label htmlFor="userType">
-                <input
+                <StyledCheckbox checked={filterAndSortValues.isNotVoted}>
+                  <SvgCheck />
+                </StyledCheckbox>
+                {i18n.t('consultation.explore.unvoted')}
+              </CheckboxLabelStyle>
+            </FilterByElementStyle>
+            <FilterByElementStyle>
+              <CheckboxLabelStyle htmlFor="userType" noFontSizeChange>
+                <HiddenCheckbox
                   type="checkbox"
                   value={FILTER_ORGANISATION}
                   id="userType"
                   name="userType"
-                  checked={filterAndSortValues.userType !== undefined}
                   onChange={() => handleChange('userType', FILTER_ORGANISATION)}
                 />
-                Organisation
-              </label>
-            </li>
-          </ul>
+                <StyledCheckbox
+                  checked={filterAndSortValues.userType !== undefined}
+                >
+                  <SvgCheck />
+                </StyledCheckbox>
+                {i18n.t('consultation.explore.organisations_proposals')}
+              </CheckboxLabelStyle>
+            </FilterByElementStyle>
+          </FilterByWrapperStyle>
         </FilterBlockStyle>
-        <button type="submit">Afficher les propositions</button>
+        <RedSubmitButtonWrapperStyle>
+          <RedButtonStyle type="submit" disabled={isDisabled}>
+            {i18n.t('consultation.explore.display_proposals')}
+          </RedButtonStyle>
+        </RedSubmitButtonWrapperStyle>
       </form>
     </FiltersWrapperStyle>
   );

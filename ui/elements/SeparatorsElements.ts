@@ -23,12 +23,8 @@ export const SmallSeparatorWithMarginStyle = styled(SmallSeparatorStyle)`
 
 export const SeparatorWrapperStyle = styled(MiddleRowStyle)`
   width: 100%;
-  margin: 25px 0;
   &.no-margin-top {
     margin-top: 0;
-  }
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin: 35px 0;
   }
 `;
 

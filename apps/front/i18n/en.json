@@ -673,8 +673,17 @@
     },
     "explore": {
       "title": "Explore solutions",
-      "description": "@@consultation.explore.description|fr:Utilisez les outils de recherche pour parcourir simplement toutes les propositions de la consultation et identifier celles qui vous semblent prioritaires.",
-      "reset_filters": "@@consultation.explore.reset_filters|fr:Réinitialiser les filtres"
+      "description": "Use the search tools to easily explore the solutions submitted during the consultation and vote on those you deem interesting.",
+      "reset_filters": "Clear filters",
+      "sort_by": "Sort by",
+      "filter_by": "Filter by",
+      "recent": "Recent",
+      "popular": "Popular",
+      "controversial": "Controversial",
+      "unvoted": "Solutions not yet voted on",
+      "organisations_proposals": "Solutions proposed by organizations",
+      "no_proposal": "No solution",
+      "display_proposals": "Display solutions"
     },
     "sort": {
       "TAGGED_FIRST": "All the solutions",

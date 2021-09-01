@@ -87,7 +87,7 @@ export const FakeCheckboxInputStyle = styled.div`
 `;
 
 export const StyledCheckbox = styled(FakeCheckboxInputStyle)<{
-  checked: boolean;
+  checked: boolean | undefined;
 }>`
   svg {
     visibility: ${props => (props.checked ? 'visible' : 'hidden')};

@@ -83,3 +83,7 @@ export { SvgSwitchLabelChecked } from './SwitchLabelChecked';
 export { SvgSwitchLabelCross } from './SwitchLabelCross';
 export { SvgSelectArrow } from './SelectArrow';
 export { SvgFastForward } from './FastForward';
+export { SvgSmallArrowUp } from './SmallArrowUp';
+export { SvgArrowGroupUpDown } from './ArrowGroupUpDown';
+export { SvgFilter } from './Filter';
+export { SvgSmallClock } from './SmallClock';

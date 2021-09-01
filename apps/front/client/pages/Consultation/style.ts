@@ -170,14 +170,17 @@ export const ExploreDescriptionStyle = styled(SpaceBetweenRowStyle)`
   width: 100%;
 `;
 
+export const ResetLinkButtonWrapperStyle = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+`;
+
 export const ResetLinkStyle = styled.button`
-  display: inline-flex;
-  align-items: center;
   font-family: ${MakeFonts.CircularStandardBook};
   border: none;
   text-decoration: underline;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  color: ${color.grey};
+  color: ${color.black};
   margin-bottom: 23px;
   background-color: transparent;
 `;

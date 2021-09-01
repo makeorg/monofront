@@ -854,7 +854,16 @@
     "explore": {
       "title": "Explorer les propositions",
       "description": "Utilisez les outils de recherche pour parcourir simplement toutes les propositions de la consultation et identifier celles qui vous semblent prioritaires.",
-      "reset_filters": "Réinitialiser les filtres" 
+      "reset_filters": "Réinitialiser les filtres",
+      "sort_by": "Trier par",
+      "filter_by": "Filtrer par",
+      "recent": "Récentes",
+      "popular": "Populaires",
+      "controversial": "Controversées",
+      "unvoted": "Propositions non votées",
+      "organisations_proposals": "Propositions des organisations",
+      "no_proposal": "Aucune proposition",
+      "display_proposals": "Afficher les propositions"
     },
     "tabs": {
       "consultation": " Consultation ",
