@@ -27,7 +27,7 @@ export const ProposalJourney: React.FC = () => {
   const { isLoggedIn } = selectAuthentication(state);
   const { question } = state.questions[state.currentQuestion];
   const [proposalContent, setProposalContent] = useState('');
-  const [proposalStep, setProposalStep] = useState('form');
+  const [proposalStep, setProposalStep] = useState(steps.FORM);
   const [waiting, setWaiting] = useState(false);
   const baitText = getLocalizedBaitText(
     question?.language || DEFAULT_LANGUAGE,

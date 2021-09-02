@@ -97,6 +97,13 @@
   "common": {
     "connexion_label": "Se connecter",
     "register_label": "S'inscrire",
+    "continue": "Continuer",
+    "social_login": {
+      "card_title": "Pour retrouver l’historique de vos votes",
+      "facebook_connect": "Continuer avec Facebook",
+      "google_connect": "Continuer avec Google",
+      "email_register": "S’inscrire par mail"
+    },
     "form": {
       "hide_password": "Masquer le mot de passe",
       "show_password": "Afficher le mot de passe",
@@ -486,6 +493,8 @@
     "social_connect": "Je m’inscris avec",
     "or": "ou",
     "subtitle": "Je m'inscris avec ce formulaire",
+    "step1_title": "S'inscrire par email",
+    "step2_title": "Terminer mon inscription",
     "login_title": "J‘ai déjà un compte.",
     "login_link": "Connexion",
     "gtu_text_first": "En vous inscrivant, vous acceptez nos ",

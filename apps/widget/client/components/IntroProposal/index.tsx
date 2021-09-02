@@ -58,7 +58,7 @@ export const IntroProposal: FC<Props> = ({ handleChange }) => {
             </ScreenReaderItemStyle>
             <SequenceProposalStyle
               lang={proposal.question.language}
-              isWidget={isWidget}
+              className={isWidget ? 'widget' : ''}
             >
               {proposal.content}
             </SequenceProposalStyle>

@@ -1,6 +1,9 @@
 import React, { FC } from 'react';
 import i18n from 'i18next';
-import { SecondLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
+import {
+  SecondLevelTitleStyle,
+  ThirdLevelTitleStyle,
+} from '@make.org/ui/elements/TitleElements';
 import { SmallSeparatorWithMarginStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { RedLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { modalShowLogin } from '@make.org/store/actions/modal';
@@ -12,7 +15,11 @@ import { ForgotPasswordStyle } from './style';
 /**
  * Renders Forgot Password component
  */
-export const PasswordForgot: FC = () => {
+
+type Props = {
+  panel?: boolean;
+};
+export const PasswordForgot: FC<Props> = ({ panel }) => {
   const { dispatch } = useAppContext();
 
   const handleLoginModal = () => {
@@ -21,17 +28,28 @@ export const PasswordForgot: FC = () => {
 
   return (
     <ForgotPasswordStyle aria-labelledby="forgot_password_title">
-      <SecondLevelTitleStyle id="forgot_password_title">
-        {i18n.t('forgot_password.title')}
-      </SecondLevelTitleStyle>
+      {panel ? (
+        <ThirdLevelTitleStyle
+          style={{ marginTop: 32 }}
+          id="forgot_password_title"
+        >
+          {i18n.t('forgot_password.title')}
+        </ThirdLevelTitleStyle>
+      ) : (
+        <SecondLevelTitleStyle id="forgot_password_title">
+          {i18n.t('forgot_password.title')}
+        </SecondLevelTitleStyle>
+      )}
       <SmallSeparatorWithMarginStyle />
       <ForgotPasswordForm />
-      <ExtraAltParagraphStyle>
-        {i18n.t('forgot_password.return')}
-        <RedLinkButtonStyle onClick={handleLoginModal}>
-          {i18n.t('forgot_password.login_link')}
-        </RedLinkButtonStyle>
-      </ExtraAltParagraphStyle>
+      {!panel && (
+        <ExtraAltParagraphStyle>
+          {i18n.t('forgot_password.return')}
+          <RedLinkButtonStyle onClick={handleLoginModal}>
+            {i18n.t('forgot_password.login_link')}
+          </RedLinkButtonStyle>
+        </ExtraAltParagraphStyle>
+      )}
     </ForgotPasswordStyle>
   );
 };

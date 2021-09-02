@@ -16,8 +16,21 @@ import {
   SocialButtonLabelStyle,
 } from '../Social/style';
 
-export const AuthenticationRegisterButtons: React.FC = () => {
+type Props = {
+  onEmailRegister?: () => void;
+};
+
+export const AuthenticationRegisterButtons: React.FC<Props> = ({
+  onEmailRegister,
+}) => {
   const { dispatch } = useAppContext();
+  const onEmailClick = () => {
+    if (onEmailRegister) {
+      onEmailRegister();
+    } else {
+      dispatch(modalShowRegister());
+    }
+  };
   return (
     <AuthenticationButtonWrapperStyle data-cy-container="signup-auth-buttons">
       <GoogleAuthentication />
@@ -28,7 +41,7 @@ export const AuthenticationRegisterButtons: React.FC = () => {
         <SeparatorStyle className="no-margin-top" />
       </SeparatorWrapperStyle>
       <EmailButtonStyle
-        onClick={() => dispatch(modalShowRegister())}
+        onClick={onEmailClick}
         id="authentication-register-button"
         type="button"
       >

@@ -8,11 +8,7 @@ import {
 } from '@make.org/utils/services/Tracking';
 
 import { FORM, NOTIF } from '@make.org/types/enums';
-import {
-  EmailFieldIcon,
-  PasswordFieldIcon,
-  SubmitThumbsUpIcon,
-} from '@make.org/utils/constants/icons';
+import { SubmitThumbsUpIcon } from '@make.org/utils/constants/icons';
 import { throttle } from '@make.org/utils/helpers/throttle';
 import { getFieldError } from '@make.org/utils/helpers/form';
 import { loginSuccess, getUser } from '@make.org/store/actions/authentication';
@@ -29,8 +25,7 @@ import {
 } from '@make.org/ui/elements/FormElements';
 import { FormErrors } from '../../Form/Errors';
 import { SubmitButton } from '../../Form/SubmitButton';
-import { PasswordInput } from '../../Form/PasswordInput';
-import { UntypedInput } from '../../Form/UntypedInput';
+import { EmailPasswordFields } from '../CommonFields/EmailPassword';
 
 type TypeLoginValues = {
   email: string;
@@ -107,24 +102,11 @@ export const LoginForm: React.FC = () => {
         {i18n.t('common.form.requirements')}
       </FormRequirementsStyle>
       <FormErrors errors={errors} />
-      <UntypedInput
-        type="email"
-        name="email"
-        id="email"
-        icon={EmailFieldIcon}
-        value={formValues.email}
-        label={i18n.t('common.form.label.email')}
-        required
-        error={emailError}
-        handleChange={handleChange}
-      />
-      <PasswordInput
-        name="password"
-        icon={PasswordFieldIcon}
-        value={formValues.password}
-        label={i18n.t('common.form.label.password')}
-        required
-        error={passwordError}
+      <EmailPasswordFields
+        emailValue={formValues.email}
+        passwordValue={formValues.password}
+        emailError={emailError}
+        passwordError={passwordError}
         handleChange={handleChange}
       />
       <SubmitButton

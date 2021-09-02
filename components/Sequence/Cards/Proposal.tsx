@@ -55,7 +55,7 @@ export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
       </ScreenReaderItemStyle>
       <SequenceProposalStyle
         lang={proposal.question.language}
-        isWidget={isWidget}
+        className={isWidget ? 'widget' : ''}
       >
         {proposal.content}
       </SequenceProposalStyle>

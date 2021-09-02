@@ -205,7 +205,8 @@ export const FormErrorsContainerStyle = styled.div`
   padding: 15px;
   margin-bottom: 10px;
   border-radius: ${intToPx(Elements.BorderRadius)};
-  background-color: ${color.greyLighter};
+  background-color: ${color.brandSecondary};
+  color: ${color.white};
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
 `;
 

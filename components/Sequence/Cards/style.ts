@@ -104,27 +104,27 @@ export const SequenceIntroParagraphStyle = styled.div`
   }
 `;
 
-export const SequenceProposalStyle = styled.blockquote<{
-  isWidget: boolean;
-}>`
-  font-size: ${props =>
-    props.isWidget ? '14px' : intToPx(typography.font.fontsize.XS.value)};
+export const SequenceProposalStyle = styled.blockquote`
+  font-size: ${intToPx(typography.font.fontsize.XS.value)};
   font-family: ${MakeFonts.CircularStandardBook};
   text-align: center;
   line-height: 1.64;
   letter-spacing: 0.11px;
   min-height: 82px;
+  &.widget {
+    font-size: 14px;
+  }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${props =>
-      props.isWidget
-        ? intToPx(typography.font.fontsize.XS.value)
-        : intToPx(typography.font.fontsize.M.value)};
+    font-size: ${intToPx(typography.font.fontsize.M.value)};
     line-height: 1.5;
     letter-spacing: 0.12px;
     min-height: 60px;
     display: flex;
     align-items: center;
     max-width: 770px;
+    &.widget {
+      font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    }
   }
 `;
 

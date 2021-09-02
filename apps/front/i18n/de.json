@@ -109,6 +109,7 @@
   "common": {
     "connexion_label": "Anmelden",
     "register_label": "Registrieren",
+    "continue": "Weitermachen",
     "form": {
       "hide_password": "Passwort ausblenden",
       "show_password": "Passwort anzeigen",
@@ -463,6 +464,8 @@
     "social_connect": "Ich registriere mich über",
     "or": "oder",
     "subtitle": "Ich registriere mich über dieses Formular",
+    "step1_title": "Per E-Mail abonnieren",
+    "step2_title": "Meine Registrierung abschließen",
     "login_title": "Ich habe bereits ein Konto.",
     "login_link": "Anmelden",
     "gtu_text_first": "Mit der Registrierung erklärst du dich mit unseren {{gtu_link}} ",

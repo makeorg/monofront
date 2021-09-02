@@ -99,6 +99,7 @@
   "common": {
     "connexion_label": "Log in",
     "register_label": "Sign up",
+    "continue": "Continue",
     "form": {
       "hide_password": "Hide password",
       "show_password": "Show password",
@@ -157,6 +158,12 @@
         "submit_success": "Edits saved.",
         "malformed": "Please use the right url format \"https://example.com\""
       }
+    },
+    "social_login": {
+      "card_title": "To find the history of your votes",
+      "facebook_connect": "Continue with Facebook",
+      "google_connect": "Continue with Google",
+      "email_register": "Sign up with email"
     },
     "from": "on",
     "email": "Email",
@@ -398,6 +405,8 @@
     "social_connect": "Sign up with",
     "or": "or",
     "subtitle": "Sign up using this form",
+    "step1_title": "Subscribe by email",
+    "step2_title": "Complete my registration",
     "login_title": "I already have an account.",
     "login_link": "Log in",
     "gtu_text_first": "By signing up, you agree to our ",

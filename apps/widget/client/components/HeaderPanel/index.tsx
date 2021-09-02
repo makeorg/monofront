@@ -27,7 +27,6 @@ export const HeaderPanel: FC = () => {
             {i18n.t('header.logo_alt')}
           </ScreenReaderItemStyle>
         </h1>
-
         <SequenceTitleStyle className={isWidget ? 'widget' : ''}>
           {question.question}
         </SequenceTitleStyle>
