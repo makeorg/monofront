@@ -856,6 +856,7 @@
       "description": "Utilisez les outils de recherche pour parcourir simplement toutes les propositions de la consultation et identifier celles qui vous semblent prioritaires.",
       "reset_filters": "Réinitialiser les filtres",
       "sort_by": "Trier par",
+      "filter": "Filtrer",
       "filter_by": "Filtrer par",
       "recent": "Récentes",
       "popular": "Populaires",

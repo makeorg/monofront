@@ -676,6 +676,7 @@
       "description": "Use the search tools to easily explore the solutions submitted during the consultation and vote on those you deem interesting.",
       "reset_filters": "Clear filters",
       "sort_by": "Sort by",
+      "filter": "Filter",
       "filter_by": "Filter by",
       "recent": "Recent",
       "popular": "Popular",

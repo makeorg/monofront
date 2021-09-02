@@ -2,8 +2,11 @@ import styled from 'styled-components';
 import { color, typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
+import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
+import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import {
+  SvgFilterIcon,
   SvgSmallArrowUp,
   SvgArrowGroupUpDown,
   SvgFilter,
@@ -19,9 +22,9 @@ export const FiltersWrapperStyle = styled(ColumnElementStyle)`
 
 export const FilterBlockStyle = styled.div`
   padding: 30px 20px 20px;
+  margin-bottom: 20px;
   background-color: ${color.white};
   border-radius: 8px;
-  margin-bottom: 20px;
 `;
 
 export const FiltersTitleStyle = styled.h3`
@@ -90,8 +93,6 @@ export const RadioItemWrapperStyle = styled.li`
     margin-bottom: 0px;
   }
   &.selected {
-    color: ${color.black};
-    font-family: ${MakeFonts.CircularStandardBold};
     border: 1px solid ${color.black};
   }
 `;
@@ -104,6 +105,11 @@ export const RadioAsTransparentButtonLabelStyle = styled.label`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   width: 100%;
   text-align: center;
+  &.selected {
+    font-family: ${MakeFonts.CircularStandardBold};
+    color: ${color.black};
+    font-family: ${MakeFonts.CircularStandardBold};
+  }
 `;
 
 export const FilterByWrapperStyle = styled.ul`
@@ -160,5 +166,23 @@ export const SvgControversial = styled(SvgLightning)`
 
 export const RedSubmitButtonWrapperStyle = styled.div`
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
+  padding-left: 20px;
+  margin-top: 30px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    flex-direction: row-reverse;
+  }
+`;
+
+export const FilterPanelStyle = styled(RedButtonStyle)`
+  position: fixed;
+  bottom: 0;
+  width: auto;
+  border-radius: 17.5px;
+  left: 40%;
+  z-index: 5;
+`;
+
+export const SvgFilterPanelStyle = styled(SvgFilterIcon)`
+  margin-right: 12px;
 `;

@@ -13,6 +13,7 @@ import { useParams } from 'react-router';
 import { DATE } from '@make.org/types/enums';
 import { AuthenticationRegisterButtons } from '@make.org/components/Auth/Register/Buttons';
 import { SubmitProposal } from '../Cards/SubmitProposal';
+import { NoProposalWrapperStyle } from '../../../pages/Consultation/style';
 import {
   ProposalsListStyle,
   ProposalListItemStyle,
@@ -121,5 +122,9 @@ export const ProposalsList: FC<Props> = ({ isLoading, proposals }) => {
     );
   }
 
-  return <SubmitProposal />;
+  return (
+    <NoProposalWrapperStyle>
+      <SubmitProposal />
+    </NoProposalWrapperStyle>
+  );
 };

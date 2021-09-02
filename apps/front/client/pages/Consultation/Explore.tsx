@@ -6,6 +6,7 @@ import {
   TypeFilterAndSortValues,
 } from '@make.org/types';
 import i18n from 'i18next';
+import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { ThemeProvider } from 'styled-components';
@@ -18,6 +19,7 @@ import { trackDisplayOperationPage } from '@make.org/utils/services/Tracking';
 import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
 import { QuestionService } from '@make.org/utils/services/Question';
+import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
 import { ProposalsList } from '../../app/Consultation/ProposalsList';
 import { Timeline } from '../../app/Consultation/Timeline';
 import { ParticipateNavigation } from '../../app/Consultation/Navigation/Participate';
@@ -25,6 +27,7 @@ import { ParticipateHighlights } from '../../app/Consultation/Highlights';
 import { ParticipateHeader } from '../../app/Consultation/Header';
 import { CitizenRegister } from '../../app/Consultation/CitizenRegister';
 import { FilterAndSort } from '../../app/Consultation/ExploreFilters';
+import { SortAndFiltersCTA } from '../../app/Consultation/ExploreFilters/FilterAndSortPanel';
 import {
   ParticipateContentStyle,
   ParticipateInnerStyle,
@@ -38,6 +41,7 @@ import {
 
 const ExplorePage: FC = () => {
   const { state, dispatch } = useAppContext();
+  const { isLoggedIn } = selectAuthentication(state);
   const params: { country: string; pageId: string } = useParams();
   const { country, pageId } = params;
   const { device } = state.appConfig;
@@ -48,7 +52,7 @@ const ExplorePage: FC = () => {
   const [keyword, setKeyword] = useState<QuestionKeywordType[]>([]);
   const [proposalsTotal, setProposalsTotal] = useState<number>(0);
 
-  const PROPOSALS_LIMIT = 10;
+  const PROPOSALS_LIMIT = isLoggedIn ? 10 : 9;
   const KEYWORD_THRESHOLD = 5;
   const hasProposals = proposalsTotal > 0;
 
@@ -117,12 +121,19 @@ const ExplorePage: FC = () => {
   // handleSubmit for filters
   const handleSubmit = () => {
     getProposals(filterAndSortValues);
+    if (!isDesktop) {
+      dispatch(closePanel());
+    }
   };
 
   // handleReset for filters
   const handleReset = () => {
     setFilterAndSortValues({ ...defaultValues });
     getProposals(defaultValues);
+    if (!isDesktop) {
+      dispatch(closePanel());
+      dispatch(removePanelContent());
+    }
   };
 
   useEffect(() => {
@@ -168,13 +179,13 @@ const ExplorePage: FC = () => {
         <ExploreSubTitleWrapperStyle>
           {i18n.t('consultation.explore.description')}
         </ExploreSubTitleWrapperStyle>
-        {hasProposals && (
-          <ExploreDescriptionStyle>
-            <ExploreProposalsCountStyle>
-              {i18n.t('common.proposal_count', { count: proposalsTotal })}
-            </ExploreProposalsCountStyle>
-          </ExploreDescriptionStyle>
-        )}
+        <ExploreDescriptionStyle>
+          <ExploreProposalsCountStyle>
+            {hasProposals
+              ? i18n.t('common.proposal_count', { count: proposalsTotal })
+              : i18n.t('consultation.explore.no_proposal')}
+          </ExploreProposalsCountStyle>
+        </ExploreDescriptionStyle>
         <ParticipateInnerStyle>
           <ParticipateMainContentStyle>
             <ProposalsList isLoading={isLoading} proposals={proposals} />
@@ -188,8 +199,16 @@ const ExplorePage: FC = () => {
             )}
           </ParticipateMainContentStyle>
           <ParticipateSidebarContentStyle>
-            {isDesktop && (
+            {isDesktop ? (
               <FilterAndSort
+                filterAndSortValues={filterAndSortValues}
+                setFilterAndSortValues={setFilterAndSortValues}
+                keywords={keyword}
+                handleSubmit={handleSubmit}
+                handleReset={handleReset}
+              />
+            ) : (
+              <SortAndFiltersCTA
                 filterAndSortValues={filterAndSortValues}
                 setFilterAndSortValues={setFilterAndSortValues}
                 keywords={keyword}

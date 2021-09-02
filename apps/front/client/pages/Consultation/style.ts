@@ -5,6 +5,7 @@ import {
   ColumnElementStyle,
   SpaceBetweenRowStyle,
 } from '@make.org/ui/elements/FlexElements';
+import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { SvgChat } from '@make.org/ui/Svg/elements';
@@ -159,6 +160,9 @@ export const ExploreSubTitleWrapperStyle = styled.div`
     width: 60%;
   }
 `;
+export const ExploreDescriptionStyle = styled(SpaceBetweenRowStyle)`
+  width: 100%;
+`;
 
 export const ExploreProposalsCountStyle = styled.span`
   font-family: ${MakeFonts.CircularStandardBold};
@@ -166,13 +170,21 @@ export const ExploreProposalsCountStyle = styled.span`
   color: ${color.black};
   letter-spacing: 0.12px;
 `;
-export const ExploreDescriptionStyle = styled(SpaceBetweenRowStyle)`
+
+export const NoProposalWrapperStyle = styled.div`
   width: 100%;
+  display: flex;
+  flex-flow: column;
+  margin: 45px 0;
 `;
 
 export const ResetLinkButtonWrapperStyle = styled.div`
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
+  padding-left: 20px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    flex-direction: row-reverse;
+  }
 `;
 
 export const ResetLinkStyle = styled.button`
@@ -220,6 +232,23 @@ export const ParticipateSidebarContentStyle = styled(ColumnElementStyle)`
 
 export const ParticipateFullwidthContentStyle = styled(ColumnElementStyle)`
   width: 100%;
+`;
+
+export const ExploreFiltersMobileCTA = styled(RedButtonStyle)`
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-radius: 0px;
+  left: 0;
+  z-index: 5;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    position: sticky;
+    width: auto;
+    align-self: flex-end;
+    border-radius: 20px;
+    bottom: 20px;
+    margin: 40px 0;
+  }
 `;
 
 export const ParticipateCTAProposalBloc = styled.div<{

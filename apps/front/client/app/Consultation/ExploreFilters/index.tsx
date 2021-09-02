@@ -246,7 +246,10 @@ export const FilterAndSort: React.FC<Props> = ({
                       checked={checkCurrentSort(item.name, currentSort)}
                     />
                   </ScreenReaderItemStyle>
-                  <RadioAsTransparentButtonLabelStyle htmlFor={item.name}>
+                  <RadioAsTransparentButtonLabelStyle
+                    htmlFor={item.name}
+                    className={handleClassName(currentSort, item.name)}
+                  >
                     {item.icon}
                     {item.label}
                   </RadioAsTransparentButtonLabelStyle>
