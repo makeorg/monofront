@@ -1,4 +1,5 @@
 import { IntroCardConfigType, PushProposalCardConfigType } from './Card';
+import { ProposalType } from './Proposal';
 
 export type QuestionThemeType = {
   color?: string;
@@ -192,6 +193,9 @@ export type QuestionType = {
   };
   controversyCount: number;
   topProposalCount: number;
+  activeFeatureData: {
+    topProposal?: ProposalType | null;
+  };
 };
 
 export type CountsByQuestionType = {

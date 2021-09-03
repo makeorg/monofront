@@ -16,7 +16,10 @@ import {
 
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import { SpaceBetweenRowStyle } from '@make.org/ui/elements/FlexElements';
+import {
+  FlexElementStyle,
+  SpaceBetweenRowStyle,
+} from '@make.org/ui/elements/FlexElements';
 import {
   GreyNoBackgroundButtonStyle,
   RedButtonStyle,
@@ -26,6 +29,7 @@ import { throttle } from '@make.org/utils/helpers/throttle';
 
 import { LoadingDots } from '@make.org/ui/components/Loading/Dots';
 import { useAppContext } from '@make.org/store';
+import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
 import {
   ProposalStepWrapperStyle,
   ProposalStepTitleStyle,
@@ -67,6 +71,9 @@ export const ProposalForm: React.FC<Props> = ({
   waitingApiCallback,
 }) => {
   const { state } = useAppContext();
+  const { source, device } = state.appConfig;
+  const isWidget = source === 'widget';
+  const isDesktop = matchDesktopDevice(device);
   const inputRef = useRef() as React.MutableRefObject<HTMLTextAreaElement>;
   const question: QuestionType | null = selectCurrentQuestion(state);
   const { language } = state.appConfig;
@@ -94,6 +101,49 @@ export const ProposalForm: React.FC<Props> = ({
   useEffect(() => {
     trackDisplayProposalField();
   }, []);
+
+  const link = (
+    <ProposalExternalLinkStyle
+      href={getModerationLinkByLanguage(language)}
+      target="_blank"
+      rel="noopener"
+      onClick={trackClickModerationLink}
+    >
+      {i18n.t('proposal_submit.form.moderation_link')}
+      <> </>
+      <ProposalExternalLinkIconStyle aria-hidden focusable="false" />
+      <ScreenReaderItemStyle>
+        {i18n.t('common.open_new_window')}
+      </ScreenReaderItemStyle>
+    </ProposalExternalLinkStyle>
+  );
+
+  const buttons = (
+    <FlexElementStyle style={{ justifyContent: 'flex-end' }}>
+      <GreyNoBackgroundButtonStyle
+        bold
+        style={{ marginRight: 20 }}
+        type="button"
+        onClick={handleCancel}
+        data-cy-button="proposal-form-cancel"
+      >
+        {i18n.t('proposal_submit.form.button_cancel')}
+      </GreyNoBackgroundButtonStyle>
+      <RedButtonStyle
+        type="submit"
+        form={FORM.PROPOSAL_SUBMIT_FORMNAME}
+        onClick={trackClickProposalSubmit}
+        disabled={disableSubmitButton}
+        data-cy-button="proposal-submit"
+      >
+        {waitingApiCallback ? (
+          <LoadingDots />
+        ) : (
+          i18n.t('proposal_submit.form.button_submit')
+        )}
+      </RedButtonStyle>
+    </FlexElementStyle>
+  );
 
   return (
     <ProposalStepWrapperStyle data-cy-container={FORM.PROPOSAL_SUBMIT_FORMNAME}>
@@ -138,42 +188,16 @@ export const ProposalForm: React.FC<Props> = ({
             })}
           </ScreenReaderItemStyle>
         </ProposalFieldWrapperStyle>
-        <SpaceBetweenRowStyle>
-          <GreyNoBackgroundButtonStyle
-            type="button"
-            onClick={handleCancel}
-            data-cy-button="proposal-form-cancel"
-          >
-            {i18n.t('proposal_submit.form.button_cancel')}
-          </GreyNoBackgroundButtonStyle>
-          <RedButtonStyle
-            type="submit"
-            form={FORM.PROPOSAL_SUBMIT_FORMNAME}
-            onClick={trackClickProposalSubmit}
-            disabled={disableSubmitButton}
-            data-cy-button="proposal-submit"
-          >
-            {waitingApiCallback ? (
-              <LoadingDots />
-            ) : (
-              i18n.t('proposal_submit.form.button_submit')
-            )}
-          </RedButtonStyle>
-        </SpaceBetweenRowStyle>
+        {isWidget && isDesktop ? (
+          <SpaceBetweenRowStyle>
+            {link}
+            {buttons}
+          </SpaceBetweenRowStyle>
+        ) : (
+          buttons
+        )}
       </form>
-      <ProposalExternalLinkStyle
-        href={getModerationLinkByLanguage(language)}
-        target="_blank"
-        rel="noopener"
-        onClick={trackClickModerationLink}
-      >
-        {i18n.t('proposal_submit.form.moderation_link')}
-        <> </>
-        <ProposalExternalLinkIconStyle aria-hidden focusable="false" />
-        <ScreenReaderItemStyle>
-          {i18n.t('common.open_new_window')}
-        </ScreenReaderItemStyle>
-      </ProposalExternalLinkStyle>
+      {(!isWidget || !isDesktop) && link}
     </ProposalStepWrapperStyle>
   );
 };

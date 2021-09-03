@@ -25,7 +25,8 @@ export const buildCards = (
   isStandardSequence: boolean,
   introCardParam?: boolean,
   pushProposalParam?: boolean,
-  withDemographics?: boolean
+  withDemographics?: boolean,
+  isWidget?: boolean
 ): SequenceCardType[] => {
   const withPushProposalCard: boolean =
     !!extraSlidesConfig.pushProposalCard &&
@@ -36,7 +37,8 @@ export const buildCards = (
   const withIntroCard: boolean =
     !!extraSlidesConfig.introCard &&
     !!extraSlidesConfig.introCard.enabled &&
-    !!introCardParam;
+    !!introCardParam &&
+    !isWidget;
 
   const cards: SequenceCardType[] = proposals.map(proposal => ({
     type: CARD.CARD_TYPE_PROPOSAL,

@@ -16,6 +16,10 @@ export const SequenceContainerStyle = styled(MiddleColumnStyle)`
   max-width: ${intToPx(Layouts.ContainerWithPadding)};
   margin: 0 auto;
   padding: 0 20px;
+  &.widget {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 16px;
+  }
 `;
 
 export const SequenceContentStyle = styled(MiddleColumnStyle)`

@@ -9,6 +9,7 @@ import {
 import { PersonalityApiService } from '@make.org/api/PersonalityApiService';
 import { getErrorMessages } from '@make.org/utils/helpers/form';
 import { updatePersonalityErrors } from '@make.org/utils/errors/Messages/Personality';
+import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
 const getPersonalityById = async (
@@ -18,7 +19,8 @@ const getPersonalityById = async (
     const response = await PersonalityApiService.getPersonality(userId);
 
     return response && response.data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
 
     return null;
@@ -46,7 +48,8 @@ const postPersonnalityComments = async (
     );
 
     return response && response.data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
 
     return null;
@@ -63,7 +66,8 @@ const getPersonnalityOpinion = async (
       questionId
     );
     return response && response.data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
 
     return null;
@@ -77,7 +81,8 @@ const getProfile = async (
     const response = await PersonalityApiService.getProfile(personalityId);
 
     return response && response.data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 401) {
       return null;
     }
@@ -115,7 +120,8 @@ const update = async (
     );
 
     success();
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 400) {
       handleErrors(
         getErrorMessages(

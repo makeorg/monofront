@@ -1,3 +1,4 @@
+import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { QualificationApiService } from '@make.org/api/QualificationApiService';
 import { QualificationType } from '@make.org/types';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
@@ -18,7 +19,8 @@ const qualify = async (
     );
 
     return response && response.data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
     unexpectedError();
 
@@ -42,7 +44,8 @@ const unqualify = async (
     );
 
     return response && response.data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
     unexpectedError();
 

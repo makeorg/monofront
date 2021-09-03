@@ -22,8 +22,8 @@ import {
 import { getErrorMessages } from '@make.org/utils/helpers/form';
 import { PROPOSALS_LISTING_LIMIT } from '@make.org/utils/constants/proposal';
 import { USER } from '@make.org/types/enums';
-
 import { apiClient } from '@make.org/api/ApiService/ApiService.client';
+import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 import { OrganisationService } from './Organisation';
 import { PersonalityService } from './Personality';
@@ -42,7 +42,8 @@ const updatePassword = async (
   try {
     await UserApiService.updatePassword(userId, actualPassword, newPassword);
     success();
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if (
       apiServiceError.status === 400 &&
       apiServiceError.data &&
@@ -74,7 +75,8 @@ const deleteAccount = async (
   try {
     await UserApiService.deleteAccount(userId, password);
     success();
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if (
       apiServiceError.status === 400 &&
       apiServiceError.data &&
@@ -103,7 +105,8 @@ const forgotPassword = async (
   try {
     await UserApiService.forgotPassword(email);
     success();
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 404) {
       errors(Array(emailNotExistError));
       return;
@@ -125,7 +128,8 @@ const register = async (
   try {
     await UserApiService.register(user);
     success();
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 400) {
       errors(
         getErrorMessages(
@@ -155,7 +159,8 @@ const login = async (
     if (success) {
       success();
     }
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if ([400, 401, 403, 404].includes(apiServiceError.status)) {
       if (errors) {
         errors(loginErrors);
@@ -197,7 +202,8 @@ const checkLoginPrivacyPolicy = async (
       return action();
     }
     return login(email, password, undefined, success, failure, unexpectedError);
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if ([400, 401, 403, 404].includes(apiServiceError.status) && failure) {
       return failure(loginErrors);
     }
@@ -224,7 +230,8 @@ const myProposals = async (
     );
 
     return response && response.data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     return defaultUnexpectedError(apiServiceError);
   }
 };
@@ -239,7 +246,8 @@ const myFavourites = async (
     const response = await UserApiService.myFavourites(userId, limit, skip);
 
     return response && response.data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     return defaultUnexpectedError(apiServiceError);
   }
 };
@@ -252,7 +260,8 @@ const logout = async (success?: () => void): Promise<void | null> => {
       return success();
     }
     return null;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 401) {
       if (success) {
         return success();
@@ -282,7 +291,8 @@ const loginSocial = async (
     }
 
     return response && response.data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if (failure) {
       failure();
     }
@@ -323,7 +333,8 @@ const checkSocialPrivacyPolicy = async (
 
     loginSocial(provider, token, undefined, success, failure, unexpectedError);
     return null;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if (failure) {
       failure();
     }
@@ -345,7 +356,8 @@ const changePassword = async (
     }
 
     return;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
     if (failure) {
       failure();
@@ -359,7 +371,8 @@ const current = async (unauthorized?: () => void): Promise<UserType | null> => {
     apiClient.isLogged = true; // @see ApiServiceClient
 
     return response && response.data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 401) {
       apiClient.isLogged = false; // @see ApiServiceClient
       if (unauthorized) {
@@ -379,7 +392,8 @@ const getProfile = async (userId: string): Promise<UserProfileType | null> => {
     const response = await UserApiService.getProfile(userId);
 
     return response && response.data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 401) {
       return null;
     }
@@ -442,7 +456,8 @@ const update = async (
     );
 
     success();
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 400 && handleErrors) {
       handleErrors(
         getErrorMessages(

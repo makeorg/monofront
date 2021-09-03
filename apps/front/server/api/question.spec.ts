@@ -1,8 +1,8 @@
 import httpMocks from 'node-mocks-http';
 import fs from 'fs';
 import cache from 'memory-cache';
+import { APP_SERVER_DIR } from '../paths';
 import { questionResults } from './question';
-import { SERVER_DIR } from '../paths';
 
 jest.mock('memory-cache');
 jest.mock('fs');
@@ -70,7 +70,7 @@ describe('QuestionResults Api', () => {
       questionResults(request, response);
       expect(response.send).toHaveBeenCalledWith('fooCache');
       expect(cache.get).toHaveBeenCalledWith(
-        `${SERVER_DIR}/staticData/questionResults/foo-bar.json`
+        `${APP_SERVER_DIR}/staticData/questionResults/foo-bar.json`
       );
     });
 
@@ -90,10 +90,10 @@ describe('QuestionResults Api', () => {
       questionResults(request, response);
       expect(response.send).toHaveBeenCalledWith(fileContent);
       expect(cache.get).toHaveBeenCalledWith(
-        `${SERVER_DIR}/staticData/questionResults/foo-bar.json`
+        `${APP_SERVER_DIR}/staticData/questionResults/foo-bar.json`
       );
       expect(cache.put).toHaveBeenCalledWith(
-        `${SERVER_DIR}/staticData/questionResults/foo-bar.json`,
+        `${APP_SERVER_DIR}/staticData/questionResults/foo-bar.json`,
         fileContent
       );
     });
@@ -116,7 +116,7 @@ describe('QuestionResults Api', () => {
       questionResults(request, response);
 
       expect(cache.get).toHaveBeenCalledWith(
-        `${SERVER_DIR}/staticData/questionResults/foo-bar.json`
+        `${APP_SERVER_DIR}/staticData/questionResults/foo-bar.json`
       );
       expect(cache.put).not.toHaveBeenCalled();
       expect(response.send).not.toHaveBeenCalled();

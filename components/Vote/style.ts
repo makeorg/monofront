@@ -3,11 +3,14 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 
-export const VoteContainerStyle = styled.div<{ isSequence?: boolean }>`
+export const VoteContainerStyle = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  margin: ${props => (props.isSequence ? '22px 0' : '35px 0 50px')};
+  margin: 35px 0 50px;
+  &.sequence {
+    margin: 22px 0;
+  }
   &.opinions {
     margin: 30px 0 10px;
   }
@@ -17,6 +20,9 @@ export const VoteContainerStyle = styled.div<{ isSequence?: boolean }>`
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     min-width: 250px;
     margin: 30px 0 60px;
+    &.widget {
+      margin: 30px 0 20px;
+    }
     &.opinions {
       margin: 30px 0 10px;
     }

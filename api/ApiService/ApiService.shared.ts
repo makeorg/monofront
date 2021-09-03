@@ -8,15 +8,21 @@ import { env } from '@make.org/assets/env';
 import { ErrorResponse, OptionsType } from '@make.org/types';
 import { ApiServiceError } from './ApiServiceError';
 
+declare global {
+  interface Window {
+    API_URL?: string;
+  }
+}
+
 const HOSTNAME =
   (typeof window !== 'undefined' && window?.location?.hostname) || null;
 const LOCATION_PARAMS =
   (typeof window !== 'undefined' && window?.location?.search) || '';
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 const API_URL: string =
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  env.apiUrl() || (typeof window !== 'undefined' && window.API_URL);
+  env.apiUrl() || (typeof window !== 'undefined' && window?.API_URL);
 
 axiosRetry(axios, {
   retries: 5,
@@ -47,22 +53,18 @@ export const handleErrors = (
 
   let logged;
 
-  const commonArguments = [
-    status,
-    responseData,
-    url,
-    method,
-    uuid,
-    false,
-    requestId || 'none',
-  ];
-
   switch (true) {
     case isServerError:
       Logger.logError(
         new ApiServiceError(
           `API call error - server error - ${error.message}`,
-          ...commonArguments
+          status,
+          responseData,
+          url,
+          method,
+          uuid,
+          false,
+          requestId || 'none'
         )
       );
       logged = true;
@@ -71,7 +73,13 @@ export const handleErrors = (
       Logger.logInfo(
         new ApiServiceError(
           `API call error - client off line - ${error.message}`,
-          ...commonArguments
+          status,
+          responseData,
+          url,
+          method,
+          uuid,
+          false,
+          requestId || 'none'
         )
       );
       logged = true;
@@ -82,7 +90,13 @@ export const handleErrors = (
           `API call error - no request - ${error.message} - ${JSON.stringify(
             error
           )}`,
-          ...commonArguments
+          status,
+          responseData,
+          url,
+          method,
+          uuid,
+          false,
+          requestId || 'none'
         )
       );
       logged = true;

@@ -1,35 +1,82 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { SvgPreviousArrowLeft } from '@make.org/ui/Svg/elements';
 import { color, typography } from 'athena-design-tokens';
-import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
+import {
+  RedStyle,
+  UnstyledButtonStyle,
+} from '@make.org/ui/elements/ButtonsElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { QuestionThemeType, SvgPropsType } from '@make.org/types';
+import { QuestionThemeType } from '@make.org/types';
 
-export const ProgressPreviousButtonStyle = styled(UnstyledButtonStyle)`
+const ProgressWidgetStyle = `
+  &:disabled {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  &:disabled svg {
+    fill: rgba(0, 0, 0, 0.15);
+  }
+`;
+export const ProgressPreviousButtonStyle = styled(UnstyledButtonStyle)<{
+  isWidget?: boolean;
+}>`
   flex: 0;
   padding: 5px 15px;
   border-radius: 20px;
   background-color: ${color.white};
   border-radius: 20px;
+  ${({ isWidget }) =>
+    isWidget
+      ? css`
+          ${ProgressWidgetStyle}
+          margin-right: 9px;
+        `
+      : ''}
   &:disabled .tofill {
     fill: ${color.grey};
   }
+  &.widget {
+    ${ProgressWidgetStyle}
+    margin-right: 9px;
+  }
 `;
 
-export const ProgressIconStyle = styled(SvgPreviousArrowLeft)<SvgPropsType>`
+export const ProgressNextButtonStyle = styled(ProgressPreviousButtonStyle)`
+  ${RedStyle}
+  ${ProgressWidgetStyle}
+`;
+
+export const ProgressIconStyle = styled(SvgPreviousArrowLeft)`
   width: 13px;
+  &.widget {
+    width: 24px;
+  }
+`;
+export const ProgressNextIconStyle = styled(SvgPreviousArrowLeft)`
+  width: 13px;
+  transform: scale(-1, -1);
+  &.widget {
+    width: 24px;
+  }
 `;
 
-export const ProgressCounterStyle = styled.span`
+export const ProgressCounterStyle = styled.span<{ disabled?: boolean }>`
   align-self: center;
   flex: 0;
   color: ${color.greyDark};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  padding: 0 5px;
+  padding: ${({ disabled }) => (disabled ? '9px 12px' : '0 5px')};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    padding: 0 25px;
+    padding: ${({ disabled }) => (disabled ? '9px 12px' : '0 25px')};
   }
+  ${({ disabled }) =>
+    disabled
+      ? css`
+          margin: 0 12px;
+          border-radius: 20px;
+          background-color: ${color.greyLighter};
+        `
+      : ''}
 `;
 
 export const ProgressBarWrapperStyle = styled.div`

@@ -12,6 +12,7 @@ import {
 } from '@make.org/types';
 import { updateOrganisationErrors } from '@make.org/utils/errors/Messages/Organisation';
 import { getErrorMessages } from '@make.org/utils/helpers/form';
+import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
 const searchOrganisations = async (
@@ -22,7 +23,8 @@ const searchOrganisations = async (
     const response = await OrganisationApiService.search(country, content);
 
     return response && response.data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
 
     return null;
@@ -46,7 +48,8 @@ const getOrganisationBySlug = async (
     }
 
     return organisation;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
 
     return null;
@@ -70,7 +73,8 @@ const getProposals = async (
     );
 
     return response && response.data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
 
     return null;
@@ -130,7 +134,8 @@ const getVotes = async (
       total,
       seed,
     };
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
 
     return null;
@@ -144,7 +149,8 @@ const getProfile = async (
     const response = await OrganisationApiService.getProfile(organisationId);
 
     return response && response.data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 401) {
       return null;
     }
@@ -178,7 +184,8 @@ const update = async (
     );
 
     success();
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 400) {
       handleErrors(
         getErrorMessages(

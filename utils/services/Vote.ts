@@ -1,3 +1,4 @@
+import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { VoteApiService } from '@make.org/api/VoteApiService';
 import { VoteType } from '@make.org/types';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
@@ -15,7 +16,8 @@ const vote = async (
     );
 
     return response && response.data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
 
     return null;
@@ -35,7 +37,8 @@ const unvote = async (
     );
 
     return response && response.data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
 
     return null;

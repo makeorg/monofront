@@ -1,5 +1,6 @@
 import { HomeViewType, SearchViewsType } from '@make.org/types';
 import { ViewsApiService } from '@make.org/api/ViewsApiService';
+import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
 const getHome = async (country: string): Promise<HomeViewType | null> => {
@@ -7,7 +8,8 @@ const getHome = async (country: string): Promise<HomeViewType | null> => {
     const response = await ViewsApiService.getHome(country);
 
     return response ? response.data : null;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
 
     return null;
@@ -31,7 +33,8 @@ const searchViews = async (
     );
 
     return searchResponse ? searchResponse.data : null;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
 
     return null;

@@ -46,5 +46,16 @@ export const UIThemeStylesheet = createGlobalStyle`
     @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
       padding: ${intToPx(DefaultPadding.Desktop)};
     }
+    &.widget {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      border-radius: 0;
+    }
   }
 `;

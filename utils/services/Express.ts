@@ -1,5 +1,6 @@
 import { QuestionResultsType } from '@make.org/types';
 import { ExpressApiService } from '@make.org/api/ExpressApiService';
+import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
 const getResults = async (
@@ -10,7 +11,8 @@ const getResults = async (
     const response = await ExpressApiService.getResults(questionSlug);
 
     return response ? response.data : null;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 404) {
       notFound();
 

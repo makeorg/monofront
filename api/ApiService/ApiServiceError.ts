@@ -8,7 +8,7 @@ export class ApiServiceError extends Error {
 
   logId: string;
 
-  status?: number;
+  status: number;
 
   data?: any;
 
@@ -43,7 +43,7 @@ export class ApiServiceError extends Error {
 
   constructor(
     message: string,
-    status?: number,
+    status: number,
     data?: any,
     url?: string,
     method?: string,

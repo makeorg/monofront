@@ -38,6 +38,16 @@ import {
 } from '@make.org/ui/elements/FlexElements';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import {
+  CookieDescriptionStyle,
+  CookieLabelStyle,
+  CookieModalCookieDetailParagraphStyle,
+  CookieModalElementStyle,
+  CookieModalSectionWrapperStyle,
+  CookieSectionWrapperStyle,
+  CookieSVGStyle,
+} from '@make.org/components/CookieModal/style';
+import { CookieSwitch } from '@make.org/components/CookieModal/CookieSwitch';
+import {
   StaticExternalLinkIconStyle,
   StaticPageWrapperStyle,
   StaticParagraphStyle,
@@ -49,16 +59,6 @@ import {
   StaticThirdLevelTitleStyle,
   StaticTitleExtra,
 } from './style';
-import {
-  CookieDescriptionStyle,
-  CookieLabelStyle,
-  CookieModalCookieDetailParagraphStyle,
-  CookieModalElementStyle,
-  CookieModalSectionWrapperStyle,
-  CookieSectionWrapperStyle,
-  CookieSVGStyle,
-} from '../../app/CookieModal/style';
-import { CookieSwitch } from '../../app/CookieModal/CookieSwitch';
 
 export const Cookies: FC = () => {
   const { dispatch, state } = useAppContext();

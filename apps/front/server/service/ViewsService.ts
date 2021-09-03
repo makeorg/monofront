@@ -1,6 +1,7 @@
 import { ViewsApiService } from '@make.org/api/ViewsApiService';
 import cache from 'memory-cache';
 import { HomeViewType } from '@make.org/types/View';
+import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { logError } from '../ssr/helpers/ssr.helper';
 
 const clearCache = (): void => {
@@ -28,7 +29,8 @@ const getHome = async (
     cache.put(CACHE_KEY, response && response.data, 300000);
 
     return response && response.data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 404) {
       return notFound();
     }
@@ -81,7 +83,8 @@ const getCountries = async (
     cache.put(CACHE_KEY, countries.sort(), 300000);
 
     return countries.sort();
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 404) {
       notFound();
       return [];

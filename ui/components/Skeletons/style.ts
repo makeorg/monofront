@@ -24,6 +24,7 @@ export const SequenceSkeletonCardStyle = styled.div`
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     max-height: 365px;
+    min-height: 365px;
     padding: 0 30px;
     margin-top: 30px;
   }

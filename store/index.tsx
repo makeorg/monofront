@@ -11,7 +11,6 @@ import React, {
 import { Dispatch, ReducerAction, StateRoot } from '@make.org/types';
 import { combineReducers, deepEqual, getCurrentTimeFormatted } from './utils';
 
-import { question_reducer } from './reducers/question';
 import { panel_reducer } from './reducers/panel';
 import { modal_reducer } from './reducers/modal';
 import { proposals_reducer } from './reducers/proposals';
@@ -35,7 +34,6 @@ export const useAppContext = (): { state: StateRoot; dispatch: Dispatch } =>
   useContext(AppContext);
 
 const rootReducer = combineReducers({
-  question: question_reducer,
   proposals: proposals_reducer,
   sequence: sequence_reducer,
   appConfig: appConfig_reducer,

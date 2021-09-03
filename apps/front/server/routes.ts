@@ -1,5 +1,11 @@
 import express, { Application, Request, Response, NextFunction } from 'express';
 import serveStatic from 'serve-static';
+import { countryLanguageMiddleware } from '@make.org/utils/middleware/countryLanguage';
+import { metricsMiddleware } from '@make.org/utils/middleware/metrics';
+import {
+  redirectToCountry,
+  redirectCountryLanguageUrl,
+} from '@make.org/utils/middleware/redirect';
 import {
   ROUTE_COUNTRY,
   ROUTE_SEQUENCE,
@@ -38,17 +44,23 @@ import {
   ROUTE_BROWSE_RESULTS,
   BASE_PREVIEW_PATH,
   ROUTE_COUNTRY_LANG,
-  ROUTE_STATIC_A11Y_FR,
   ROUTE_CONSULTATION,
   ROUTE_STATIC_COOKIES,
+  ROUTE_STATIC_A11Y_FR,
   ROUTE_STATIC_LEGAL_DE,
   ROUTE_STATIC_DATA_DE,
   ROUTE_STATIC_GTU_DE,
   ROUTE_STATIC_A11Y_DE,
   ROUTE_STATIC_CONTACT_DE,
 } from '@make.org/utils/routes';
-import { countryLanguageMiddleware } from './middleware/countryLanguage';
-import { metricsMiddleware } from './middleware/metrics';
+import {
+  APP_IMAGES_DIR,
+  APP_REPORTS_DIR,
+  APP_DOC_DIR,
+  APP_ASSETS_DIR,
+  APP_JS_DIR,
+  APP_FAVICON_DIR,
+} from './paths';
 import { questionResults } from './api/question';
 import { loggerApi } from './api/logger';
 import * as technicalPages from './technicalPages';
@@ -59,18 +71,6 @@ import { questionRoute } from './ssr/questionRoute';
 import { sequenceRoute } from './ssr/sequenceRoute';
 import { passwordRecoveryRoute } from './ssr/passwordRecoveryRoute';
 import { homepageRoute } from './ssr/homepageRoute';
-import {
-  redirectToCountry,
-  redirectCountryLanguageUrl,
-} from './middleware/redirect';
-import {
-  IMAGES_DIR,
-  REPORTS_DIR,
-  DOC_DIR,
-  ASSETS_DIR,
-  JS_DIR,
-  FAVICON_DIR,
-} from './paths';
 
 function setCustomCacheControl(res: Response, path: string) {
   if (serveStatic.mime.lookup(path) === 'text/html') {
@@ -83,7 +83,7 @@ export const initRoutes = (app: Application): void => {
   // Static files
   app.use(
     '/assets/favicon',
-    express.static(FAVICON_DIR, {
+    express.static(APP_FAVICON_DIR, {
       maxAge: '1y',
       setHeaders: setCustomCacheControl,
     })
@@ -91,7 +91,7 @@ export const initRoutes = (app: Application): void => {
 
   app.use(
     '/assets',
-    express.static(ASSETS_DIR, {
+    express.static(APP_ASSETS_DIR, {
       maxAge: '1y',
       setHeaders: setCustomCacheControl,
     })
@@ -99,7 +99,7 @@ export const initRoutes = (app: Application): void => {
 
   app.use(
     '/js',
-    express.static(JS_DIR, {
+    express.static(APP_JS_DIR, {
       maxAge: '1y',
       setHeaders: setCustomCacheControl,
     })
@@ -107,7 +107,7 @@ export const initRoutes = (app: Application): void => {
 
   app.use(
     '/images',
-    express.static(IMAGES_DIR, {
+    express.static(APP_IMAGES_DIR, {
       maxAge: '1y',
       setHeaders: setCustomCacheControl,
     })
@@ -115,13 +115,13 @@ export const initRoutes = (app: Application): void => {
 
   app.use(
     '/reports',
-    express.static(REPORTS_DIR, {
+    express.static(APP_REPORTS_DIR, {
       maxAge: '1y',
       setHeaders: setCustomCacheControl,
     })
   );
 
-  app.use('/doc', express.static(DOC_DIR));
+  app.use('/doc', express.static(APP_DOC_DIR));
 
   // API Routes
   app.get('/api/results/:questionSlug', questionResults);

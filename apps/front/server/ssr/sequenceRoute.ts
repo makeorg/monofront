@@ -3,10 +3,10 @@ import { Request, Response } from 'express';
 import { createInitialState } from '@make.org/store/initialState';
 import { getLanguageFromCountryCode } from '@make.org/utils/helpers/countries';
 import { isInProgress } from '@make.org/utils/helpers/date';
+import { logError } from './helpers/ssr.helper';
 import { transformExtraSlidesConfigFromQuery } from './helpers/query.helper';
 import { reactRender } from '../reactRender';
 import { QuestionService } from '../service/QuestionService';
-import { logError } from './helpers/ssr.helper';
 
 export const sequenceRoute = async (
   req: Request,

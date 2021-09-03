@@ -27,16 +27,16 @@ import { StateRoot } from '@make.org/types';
 import { Request, Response } from 'express';
 import { Cookie } from 'universal-cookie';
 import { AppContainer } from '../client/app';
-import { CLIENT_DIR } from './paths';
-import { logError, logInfo } from './ssr/helpers/ssr.helper';
 import { ViewsService } from './service/ViewsService';
+import { APP_CLIENT_DIR } from './paths';
+import { logError, logInfo } from './ssr/helpers/ssr.helper';
 
 deepFreeze(initialState);
 
-const statsFile = path.resolve(CLIENT_DIR, 'loadable-stats.json');
+const statsFile = path.resolve(APP_CLIENT_DIR, 'loadable-stats.json');
 
 const htmlContent = fs.readFileSync(
-  path.join(CLIENT_DIR, 'index.html'),
+  path.join(APP_CLIENT_DIR, 'index.html'),
   'utf8'
 );
 

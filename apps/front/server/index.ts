@@ -9,13 +9,13 @@ import { ApiServiceServer } from '@make.org/api/ApiService/ApiService.server';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import webpackManifest from 'webpack-manifest';
 import { env } from '@make.org/assets/env';
-import { logInfo, logError, logWarning } from './ssr/helpers/ssr.helper';
-import { initRoutes } from './routes';
+import { cspMiddleware } from '@make.org/utils/middleware/contentSecurityPolicy';
+import { headersResponseMiddleware } from '@make.org/utils/middleware/headers';
+import { nonceUuidMiddleware } from '@make.org/utils/middleware/nonceUuid';
 import { serverInitI18n } from './i18n';
-import { cspMiddleware } from './middleware/contentSecurityPolicy';
-import { headersResponseMiddleware } from './middleware/headers';
-import { nonceUuidMiddleware } from './middleware/nonceUuid';
-import { CLIENT_DIR, FAVICON_FILE } from './paths';
+import { initRoutes } from './routes';
+import { APP_CLIENT_DIR, APP_FAVICON_FILE } from './paths';
+import { logError, logInfo, logWarning } from './ssr/helpers/ssr.helper';
 
 serverInitI18n();
 ApiService.strategy = new ApiServiceServer();
@@ -50,7 +50,7 @@ const getApp = () => {
   app.use((req, res, next) => nonceUuidMiddleware(res, next));
   app.use(compression());
   app.use(bodyParser.json());
-  app.use(favicon(`${CLIENT_DIR}/${webpackManifest[FAVICON_FILE]}`));
+  app.use(favicon(`${APP_CLIENT_DIR}/${webpackManifest[APP_FAVICON_FILE]}`));
   app.use(cookiesMiddleware());
   app.use((req, res, next) => headersResponseMiddleware(res, next));
   app.use((req, res, next) => {

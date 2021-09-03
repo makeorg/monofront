@@ -85,7 +85,7 @@ class LoggerSingleton {
         stack: data.stack || '-',
         message: data.message || '-',
       };
-      // TODO
+
       delete formatedData.name;
       delete formatedData.errorName;
       delete formatedData.logId;
@@ -98,9 +98,10 @@ class LoggerSingleton {
         message: JSON.stringify(data),
         app_logId: uuidv4(),
       };
-    } catch (e) {
+    } catch (e: unknown) {
+      const apiServiceError = e as ApiServiceError;
       return {
-        message: e.message,
+        message: apiServiceError.message,
         app_logId: uuidv4(),
       };
     }

@@ -237,7 +237,7 @@ export const trackVote = (
   const cardPosition: string = getPosition(position);
   const params = {
     'card-position': cardPosition,
-    component,
+    component: component || '',
     proposalId,
     nature,
   };
@@ -267,7 +267,7 @@ export const trackUnvote = (
   const cardPosition = getPosition(position);
   const params = {
     'card-position': cardPosition,
-    component,
+    component: component || '',
     proposalId,
     nature,
   };
@@ -286,7 +286,7 @@ export const trackQualify = (
   const cardPosition = getPosition(position);
   const params = {
     'card-position': cardPosition,
-    component,
+    component: component || '',
     proposalId,
     type,
     nature,
@@ -305,7 +305,7 @@ export const trackUnqualify = (
   const cardPosition = getPosition(position);
   const params = {
     'card-position': cardPosition,
-    component,
+    component: component || '',
     proposalId,
     type,
     nature,

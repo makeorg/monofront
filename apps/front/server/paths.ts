@@ -1,14 +1,14 @@
 import path from 'path';
 
-export const BUILD_DIR = path.resolve(__dirname, '..', 'dist');
-export const SERVER_DIR = path.resolve(__dirname, '.');
-export const IMAGES_DIR = path.resolve(__dirname, '.', 'images');
-export const REPORTS_DIR = path.resolve(__dirname, '.', 'reports');
-export const DOC_DIR = path.resolve(__dirname, '..', 'storybook-static');
-export const MAP_DIR = path.join(BUILD_DIR, 'map');
-export const CLIENT_DIR = path.join(BUILD_DIR, 'client');
-export const ASSETS_DIR = path.join(CLIENT_DIR, 'assets');
-export const FAVICON_DIR = path.join(CLIENT_DIR, 'favicon');
-export const JS_DIR = path.join(CLIENT_DIR, 'js');
-export const VERSION_PATH = path.join(CLIENT_DIR, 'version');
-export const FAVICON_FILE = 'favicon/favicon-48x48.png';
+export const APP_BUILD_DIR = path.resolve(__dirname, '..', 'dist');
+export const APP_SERVER_DIR = path.resolve(__dirname, '.');
+export const APP_IMAGES_DIR = path.resolve(__dirname, '.', 'images');
+export const APP_REPORTS_DIR = path.resolve(__dirname, '.', 'reports');
+export const APP_DOC_DIR = path.resolve(__dirname, '..', 'storybook-static');
+export const APP_MAP_DIR = path.join(APP_BUILD_DIR, 'map');
+export const APP_CLIENT_DIR = path.join(APP_BUILD_DIR, 'client');
+export const APP_ASSETS_DIR = path.join(APP_CLIENT_DIR, 'assets');
+export const APP_FAVICON_DIR = path.join(APP_CLIENT_DIR, 'favicon');
+export const APP_JS_DIR = path.join(APP_CLIENT_DIR, 'js');
+export const APP_VERSION_PATH = path.join(APP_CLIENT_DIR, 'version');
+export const APP_FAVICON_FILE = 'favicon/favicon-48x48.png';

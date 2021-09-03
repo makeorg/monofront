@@ -12,7 +12,7 @@ import { useAppContext } from '@make.org/store';
 import { TopComponentContext } from '@make.org/store/topComponentContext';
 import { QualifyButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { qualify as actionQualify } from '@make.org/store/actions/sequence';
-import { CounterStyle } from './style';
+import { CounterStyle, QualifyButtonWrapperStyle } from './style';
 
 type Props = {
   /** qualification object */
@@ -116,29 +116,35 @@ export const QualificationButton: React.FC<Props> = ({
   return (
     <TopComponentContext.Consumer>
       {context => (
-        <QualifyButtonStyle
-          className={isQualified ? 'qualified' : ''}
-          color={voteStaticParams[votedKey].color}
-          onClick={() => handleQualification(context)}
-          aria-label={
-            pendingQualification ? i18n.t('common.loading') : buttonLabel
-          }
-          aria-busy={pendingQualification}
-          data-cy-button="qualification"
-          data-cy-qualification-key={qualificationKey}
-          disabled={disableClick}
-        >
-          {pendingQualification ? (
-            <LoadingDots />
-          ) : (
-            <>
+        <QualifyButtonWrapperStyle>
+          <QualifyButtonStyle
+            className={isQualified ? 'qualified' : ''}
+            color={voteStaticParams[votedKey].color}
+            onClick={() => handleQualification(context)}
+            aria-label={
+              pendingQualification ? i18n.t('common.loading') : buttonLabel
+            }
+            aria-busy={pendingQualification}
+            data-cy-button="qualification"
+            data-cy-qualification-key={qualificationKey}
+            disabled={disableClick}
+          >
+            {pendingQualification ? (
+              <LoadingDots />
+            ) : (
               <span aria-hidden>{buttonLabel}</span>
-              <CounterStyle aria-hidden>
-                {isQualified ? count + 1 : '+1'}
-              </CounterStyle>
-            </>
+            )}
+          </QualifyButtonStyle>
+          {isQualified && (
+            <CounterStyle
+              data-cy-button-qualification-total
+              data-cy-qualification-key={qualificationKey}
+              aria-hidden
+            >
+              {count + 1}
+            </CounterStyle>
           )}
-        </QualifyButtonStyle>
+        </QualifyButtonWrapperStyle>
       )}
     </TopComponentContext.Consumer>
   );

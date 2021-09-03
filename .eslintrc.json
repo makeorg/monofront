@@ -47,6 +47,7 @@
     "camelcase": "off",
     "no-empty-function": "off",
     "react/no-danger": "off",
+    "react/require-default-props": 1,
     "@typescript-eslint/no-empty-function": ["error"],
     "@typescript-eslint/no-unused-vars": ["error", { "args": "none" }],
     "@typescript-eslint/explicit-module-boundary-types": ["error", { "allowArgumentsExplicitlyTypedAsAny": true }]

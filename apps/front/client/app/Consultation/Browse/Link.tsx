@@ -1,6 +1,10 @@
 import React, { FC } from 'react';
 import { HomeQuestionType } from '@make.org/types';
-import { NewWindowIconStyle } from '@make.org/ui/elements/LinkElements';
+import {
+  NewWindowIconStyle,
+  RedHTMLLinkElementStyle,
+  RedLinkElementStyle,
+} from '@make.org/ui/elements/LinkElements';
 import { Link } from 'react-router-dom';
 import i18n from 'i18next';
 import {
@@ -15,10 +19,6 @@ import {
 } from '@make.org/utils/services/Tracking';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { useAppContext } from '@make.org/store';
-import {
-  ConsultationRedLinkElementStyle,
-  ConsultationRedHTMLLinkElementStyle,
-} from './style';
 
 type Props = {
   question: HomeQuestionType;
@@ -48,20 +48,20 @@ export const ConsultationLink: FC<Props> = ({ question, label }) => {
 
   if (openedConsultation) {
     return (
-      <ConsultationRedLinkElementStyle
+      <RedLinkElementStyle
         as={Link}
         to={consultationPath}
         onClick={handleClick}
         data-cy-link={`item-link-${question.questionId}`}
       >
         {label}
-      </ConsultationRedLinkElementStyle>
+      </RedLinkElementStyle>
     );
   }
 
   if (closedConsultationWithoutResults || externalResultLink) {
     return (
-      <ConsultationRedHTMLLinkElementStyle
+      <RedHTMLLinkElementStyle
         href={
           externalResultLink
             ? resultsLink && resultsLink.value
@@ -78,12 +78,12 @@ export const ConsultationLink: FC<Props> = ({ question, label }) => {
         <ScreenReaderItemStyle>
           {i18n.t('common.open_new_window')}
         </ScreenReaderItemStyle>
-      </ConsultationRedHTMLLinkElementStyle>
+      </RedHTMLLinkElementStyle>
     );
   }
 
   return (
-    <ConsultationRedLinkElementStyle
+    <RedLinkElementStyle
       to={
         internalResultLink
           ? getDynamicConsultationLink(
@@ -97,6 +97,6 @@ export const ConsultationLink: FC<Props> = ({ question, label }) => {
       data-cy-link={`item-link-${question.questionId}`}
     >
       {label}
-    </ConsultationRedLinkElementStyle>
+    </RedLinkElementStyle>
   );
 };

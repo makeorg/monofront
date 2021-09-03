@@ -21,7 +21,6 @@ COPY ["assets/package*.json", "./assets/"]
 COPY ["utils/package*.json", "./utils/"]
 COPY ["ui/package*.json", "./ui/"]
 COPY ["store/package*.json", "./store/"]
-COPY ["apimock/package*.json", "./apimock/"]
 COPY lerna.json ./
 
 RUN ["lerna", "bootstrap"]
@@ -31,7 +30,7 @@ COPY . ./
 ############
 # Dev
 ############
-FROM base AS dev
+FROM base AS app-dev
 
 WORKDIR /home/app
 
@@ -45,21 +44,9 @@ CMD ["./node_modules/.bin/lerna", "run", "--scope=@make.org/front", "dev", "--st
 EXPOSE 3000
 
 ############
-# API MOCK
-############
-FROM base AS apimock
-
-WORKDIR /home/app
-
-CMD ["./node_modules/.bin/lerna", "run", "--scope=@make.org/apimock", "start", "--stream"]
-
-EXPOSE 9000
-
-
-############
 # TEST
 ############
-FROM base AS test
+FROM base AS app-test
 
 WORKDIR /home/app
 

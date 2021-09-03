@@ -1,3 +1,4 @@
+import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { UserApiService } from '@make.org/api/UserApiService';
 import { defaultUnexpectedError } from '@make.org/utils/services/DefaultErrorHandler';
 import { logWarning } from '../ssr/helpers/ssr.helper';
@@ -19,7 +20,8 @@ const verifyUser = async (
     });
 
     success();
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if ([400, 404].includes(apiServiceError.status)) {
       failure();
       logWarning({
@@ -49,7 +51,8 @@ const resetPasswordTokenCheck = async (
       'x-make-language': language,
     });
     success();
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if ([400, 404].includes(apiServiceError.status)) {
       failure();
       logWarning({

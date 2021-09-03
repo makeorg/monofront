@@ -1,7 +1,8 @@
 import { Request, Response } from 'express';
 import { simpleHash } from '@make.org/utils/helpers/simpleHash';
 import parser from 'ua-parser-js';
-import { getLoggerInstance } from '../logger';
+import { getLoggerInstance } from '@make.org/utils/helpers/logger';
+import { APP_BUILD_DIR, APP_JS_DIR, APP_MAP_DIR } from '../paths';
 
 export const loggerApi = async (
   req: Request,
@@ -10,7 +11,12 @@ export const loggerApi = async (
   const ua = parser(req.headers['user-agent']);
   const { level, data } = req.body;
   const normalizedData = typeof data === 'string' ? { message: data } : data;
-  const logger = await getLoggerInstance();
+  const logger = await getLoggerInstance(
+    'front-accessible',
+    APP_JS_DIR,
+    APP_BUILD_DIR,
+    APP_MAP_DIR
+  );
   logger.log(level, {
     ...normalizedData,
     app_browser_name: ua.browser.name,

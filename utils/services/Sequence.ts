@@ -1,5 +1,6 @@
 import { QuestionApiService } from '@make.org/api/QuestionApiService';
 import { KeywordSequenceType, ProposalType } from '@make.org/types';
+import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { Logger } from './Logger';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
@@ -130,7 +131,8 @@ const startSequenceByKind = async (
     };
 
     return formattedResponse;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
     return null;
   }
@@ -175,7 +177,8 @@ const startSequenceByKeyword = async (
     };
 
     return formattedResponse;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
     return null;
   }

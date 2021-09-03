@@ -5,6 +5,7 @@ import { ApiServiceHeadersType, OptionsType } from '@make.org/types';
 import { IApiServiceStrategy } from './index';
 import { ApiServiceShared } from './ApiService.shared';
 import { getLocationContext } from './getLocationContext';
+import { ApiServiceError } from './ApiServiceError';
 
 export class ApiServiceClient implements IApiServiceStrategy {
   _language = '';
@@ -131,7 +132,7 @@ export class ApiServiceClient implements IApiServiceStrategy {
       'x-make-source': this._source,
       'x-make-question-id': this._questionId,
       'x-make-location': getLocationContext(
-        window.location.pathname,
+        typeof window !== 'undefined' ? window.location.pathname : '',
         this._questionId,
         options.proposalId || ''
       ),
@@ -170,7 +171,8 @@ export class ApiServiceClient implements IApiServiceStrategy {
           );
         });
       return response;
-    } catch (apiServiceError) {
+    } catch (error: unknown) {
+      const apiServiceError = error as ApiServiceError;
       if (apiServiceError.status === 401) {
         this._isLogged = false;
       }

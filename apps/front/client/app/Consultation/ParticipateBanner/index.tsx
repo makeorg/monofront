@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { trackOpenSequence } from '@make.org/utils/services/Tracking';
 import { TRACKING } from '@make.org/types/enums';
 
-import { LinkAsRedButton } from '@make.org/ui/elements/LinkElements';
+import { SimpleLinkAsRedButton } from '@make.org/ui/elements/LinkElements';
 import { useAppContext } from '@make.org/store';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import {
@@ -33,13 +33,13 @@ export const ParticipateBanner: FC<Props> = ({ question }) => {
           {i18n.t('consultation.banner.title')}
         </ParticipateIntroductionStyle>
         {!isMobile && <ParticipateSeparatorStyle />}
-        <LinkAsRedButton
+        <SimpleLinkAsRedButton
           as={Link}
           to={sequenceLink}
           onClick={() => trackOpenSequence(TRACKING.COMPONENT_PARAM_SEQUENCE)}
         >
           {i18n.t('common.participate')}
-        </LinkAsRedButton>
+        </SimpleLinkAsRedButton>
       </ParticipateInnerStyle>
     </ParticipateWrapperStyle>
   );

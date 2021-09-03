@@ -23,6 +23,8 @@ type Props = {
 export const Tip: React.FC<Props> = ({ isFirstSequenceVote = false }) => {
   const { dispatch, state } = useAppContext();
   const { tip, dismissed } = state.notifications;
+  const { source } = state.appConfig;
+  const isWidget = source === 'widget';
   const { contentId = '', level = '', toDismiss } = tip;
   const isDismissed = dismissed.find(
     (notificationId: string) => notificationId === contentId
@@ -41,8 +43,12 @@ export const Tip: React.FC<Props> = ({ isFirstSequenceVote = false }) => {
 
   return (
     <>
-      {!isFirstSequenceVote && <TriangleUpStyle />}
-      <TipWrapperStyle isFirstSequenceVote={isFirstSequenceVote}>
+      {(!isFirstSequenceVote || (isFirstSequenceVote && isWidget)) && (
+        <TriangleUpStyle isFirstSequenceVote={isFirstSequenceVote} />
+      )}
+      <TipWrapperStyle
+        className={isFirstSequenceVote && !isWidget ? 'first-vote' : ''}
+      >
         <TipCrossStyle
           aria-label={i18n.t('common.notifications.icons.close')}
           onClick={closeNotificationTip}
@@ -52,7 +58,7 @@ export const Tip: React.FC<Props> = ({ isFirstSequenceVote = false }) => {
         <NotificationIcon level={level} context="tip" />
         <NotificationMessage name={contentId} />
       </TipWrapperStyle>
-      {isFirstSequenceVote && <TriangleDownStyle />}
+      {isFirstSequenceVote && !isWidget && <TriangleDownStyle />}
     </>
   );
 };

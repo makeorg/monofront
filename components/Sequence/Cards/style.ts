@@ -34,6 +34,7 @@ export const SequenceCardStyle = styled.section<{ isNoProposalCard?: boolean }>`
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     max-height: 365px;
+    min-height: 365px;
     padding: ${({ isNoProposalCard = false }) =>
       isNoProposalCard ? '70px 30px 40px' : '0 30px'};
     margin-top: 30px;
@@ -106,6 +107,8 @@ export const SequenceProposalStyle = styled.blockquote`
     line-height: 1.5;
     letter-spacing: 0.12px;
     min-height: 60px;
+    display: flex;
+    align-items: center;
     max-width: 770px;
   }
 `;

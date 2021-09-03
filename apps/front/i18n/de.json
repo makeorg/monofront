@@ -318,6 +318,7 @@
     "purpose": "Einleitungskarte",
     "title": "Tausende von Bürger:innen schlagen Lösungen vor.",
     "description": "Äußere dich zu diesen Lösungen und bringe eigene Vorschläge ein. Die besten werden unser weiteres Vorgehen bestimmen.",
+    "description_short": "Äußere dich zu diesen Lösungen.",
     "button": "Starten",
     "partnership": "in Kooperation mit"
   },
@@ -369,9 +370,9 @@
       "field": "Vorschlagfeld",
       "counter": "Dein Vorschlag enthält {{current}} Zeichen von insgesamt {{total}} verfügbaren Zeichen",
       "panel_trigger": "Ich mache einen Vorschlag",
-      "button_cancel": "Abbrechen und weiter abstimmen",
+      "button_cancel": "Abbrechen",
       "button_submit": "Bestätigen",
-      "moderation_link": "Mehr über unsere Moderationscharta erfahren"
+      "moderation_link": "Lesen Sie unsere Moderationscharta"
     },
     "authentication": {
       "button_back": "Meinen Vorschlag ändern",
