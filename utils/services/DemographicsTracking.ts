@@ -1,3 +1,4 @@
+import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { DemographicsTrackingApiService } from '@make.org/api/DemographicsTrackingApiService';
 import { DemographicNameType } from '@make.org/types';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
@@ -29,7 +30,8 @@ export const track = async (
       sanitizeQueryParams(parameters)
     );
     success();
-  } catch (apiServiceError) {
+  } catch (e: unknown) {
+    const apiServiceError = e as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
     if (error) {
       error();

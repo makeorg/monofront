@@ -33,3 +33,7 @@ export const CounterStyle = styled.span`
     font-size: ${intToPx(typography.font.fontsize.S.value)};
   }
 `;
+
+export const QualifyButtonWrapperStyle = styled.div`
+  display: -webkit-box;
+`;

@@ -41,13 +41,11 @@ Feature: Vote on sequence
      And I don't see qualification buttons on the current card
      When I vote "agree" on the current card
      Then "likeIt" qualification button is not highlight on the current card
-     And total "likeIt" qualifications are equal to "+1" on the current card
      When I qualify "likeIt" on the current card
      Then "likeIt" qualification button is highlight on the current card
      And total "likeIt" qualifications are equal to "10" on the current card
      When I unqualify "likeIt" on the current card
      Then "likeIt" qualification button is not highlight on the current card
-     And total "likeIt" qualifications are equal to "+1" on the current card
   Scenario: Track vote
     Given I monitor API "postVote" requests
     And I monitor API "postTracking" requests

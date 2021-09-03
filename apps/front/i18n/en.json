@@ -296,6 +296,7 @@
   "intro_card": {
     "title": "Thousands of citizens submit their solutions.",
     "description": "Give your opinion on these solutions and submit your own.\nIt will help us prioritize our actions and choose which issues to tackle.",
+    "description_short": "Give your opinion on these solutions.",
     "button": "Start",
     "partnership": "in partnership with",
     "purpose": "Introduction card"
@@ -326,9 +327,9 @@
       "field": "Proposal field",
       "counter": "Your solution contains {{current}} characters over {{total}}",
       "panel_trigger": "I write a solution",
-      "button_cancel": "Cancel and keep voting",
+      "button_cancel": "Cancel",
       "button_submit": "Validate",
-      "moderation_link": "Learn more about our moderation charter"
+      "moderation_link": "Read our moderation charter"
     },
     "authentication": {
       "button_back": "Modify my solution",

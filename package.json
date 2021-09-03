@@ -2,10 +2,10 @@
   "name": "root",
   "private": true,
   "version": "0.1.0",
-	"engines": {
+  "engines": {
     "node": ">=14.17 <=16.8",
-		"yarn": "~1.22"
-	},
+    "yarn": "~1.22"
+  },
   "workspaces": [
     "root",
     "apps/*",
@@ -30,7 +30,6 @@
     "cypress:front": "yarn workspace @make.org/front cypress:open"
   },
   "devDependencies": {
-    "babel-plugin-convert-to-json": "^0.1.0",
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
     "@testing-library/jest-dom": "^5.14.1",
@@ -39,6 +38,7 @@
     "@typescript-eslint/eslint-plugin": "^4.28.0",
     "@typescript-eslint/parser": "^4.28.0",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
+    "babel-plugin-convert-to-json": "^0.1.0",
     "enzyme": "^3.11.0",
     "eslint": "^7.29.0",
     "eslint-config-airbnb": "^18.2.1",
@@ -59,8 +59,8 @@
     "jsdom": "^16.6.0",
     "lerna": "4.0.0",
     "prettier": "^2.3.1",
-    "ts-jest": "^27.0.4"
+    "ts-jest": "^27.0.4",
+    "ts-node": "^10.2.1"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

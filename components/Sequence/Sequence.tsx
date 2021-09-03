@@ -45,7 +45,8 @@ export type Props = {
  */
 export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
   const { state } = useAppContext();
-  const { country } = state.appConfig;
+  const { country, source } = state.appConfig;
+  const isWidget = source === 'widget';
   const question: QuestionType = selectCurrentQuestion(state);
 
   const executeStartSequence = async (
@@ -111,17 +112,26 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
         description={question.wording.metas.description}
         picture={question.wording.metas.picture}
       />
-      <SequenceContainerStyle data-cy-container="sequence">
+      <SequenceContainerStyle
+        data-cy-container="sequence"
+        className={isWidget ? 'widget' : ''}
+      >
         <SequenceContentStyle>
-          {isStandardSequence(sequenceKind) ? (
-            <SequenceTitleStyle>{question.question}</SequenceTitleStyle>
-          ) : (
+          {!isWidget && (
             <>
-              <SequenceAltTitleStyle>{question.question}</SequenceAltTitleStyle>
-              <SequenceSpecialTitleStyle>
-                <SequenceSpecialIconStyle aria-hidden focusable={false} />
-                {getSequenceTitleBySequenceKind(sequenceKind)}
-              </SequenceSpecialTitleStyle>
+              {isStandardSequence(sequenceKind) ? (
+                <SequenceTitleStyle>{question.question}</SequenceTitleStyle>
+              ) : (
+                <>
+                  <SequenceAltTitleStyle>
+                    {question.question}
+                  </SequenceAltTitleStyle>
+                  <SequenceSpecialTitleStyle>
+                    <SequenceSpecialIconStyle aria-hidden focusable={false} />
+                    {getSequenceTitleBySequenceKind(sequenceKind)}
+                  </SequenceSpecialTitleStyle>
+                </>
+              )}
             </>
           )}
           <SequenceCard
@@ -132,14 +142,16 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
           />
           {!isEmptySequence && <SequenceProgress />}
         </SequenceContentStyle>
-        <ConsultationPageLinkStyle
-          className={withProposalButton ? '' : 'static'}
-          to={getParticipateLink(country || '', question.slug)}
-          onClick={() => trackClickOperationPage()}
-        >
-          {i18n.t('sequence.more')}
-        </ConsultationPageLinkStyle>
-        {withProposalButton && <ProposalSubmit />}
+        {!isWidget && (
+          <ConsultationPageLinkStyle
+            className={withProposalButton ? '' : 'static'}
+            to={getParticipateLink(country || '', question.slug)}
+            onClick={() => trackClickOperationPage()}
+          >
+            {i18n.t('sequence.more')}
+          </ConsultationPageLinkStyle>
+        )}
+        {!isWidget && withProposalButton && <ProposalSubmit />}
       </SequenceContainerStyle>
     </>
   );

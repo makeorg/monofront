@@ -8,11 +8,6 @@
     { "path": "../../utils" }
   ],
   "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "outDir": "./dist/types",
-    "rootDir": "../../",
-    "composite": true
-  },
   "include": [
     "./src/i18n/fr.json",
     "../../apps/widget",
@@ -21,8 +16,7 @@
     "../../api",
     "../../assets",
     "../../components",
-    "../../utils", 
-    "../front/client/app/Search"
+    "../../utils"
   ],
   "paths": {
     "@make.org/widget": ["../../apps/widget/*"],

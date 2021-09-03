@@ -38,7 +38,9 @@ export const buildDemographicsByType = (type: string): DemographicsType => {
             label: i18n.t('demographics_card.region.select'),
             value: '',
           },
-          ...REGION.sort((a, b) => a.label.localeCompare(b.label)),
+          ...REGION.sort((a, b) =>
+            !a.label ? 0 : a.label.localeCompare(b.label)
+          ),
         ],
       };
     default:

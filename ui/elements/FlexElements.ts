@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 
@@ -59,8 +59,16 @@ export const CenterColumnStyleToRowStyle = styled(ColumnToRowElementStyle)`
   }
 `;
 
-export const MiddleColumnToRowStyle = styled(CenterColumnStyleToRowStyle)`
+export const MiddleColumnToRowStyle = styled(CenterColumnStyleToRowStyle)<{
+  column?: boolean;
+}>`
   justify-content: center;
+  ${({ column }) =>
+    column
+      ? css`
+          flex-direction: column;
+        `
+      : ''}
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     align-items: center;
   }

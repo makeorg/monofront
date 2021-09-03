@@ -14,6 +14,7 @@ import {
   searchTaggedProposals,
   getProposalsListTitle,
 } from './proposal';
+import { Logger } from '../services/Logger';
 
 jest.mock('@make.org/api/ProposalApiService');
 jest.mock('@make.org/utils/services/Logger');
@@ -118,7 +119,7 @@ describe('Proposal Helper', () => {
 
     it('return an empty Array and call Logger when api fail', async () => {
       mockedProposalApiService.searchProposals.mockRejectedValue(
-        new ApiServiceError('Api error')
+        new ApiServiceError('Api error', 404)
       );
 
       const repsonse = await searchTaggedProposals('FR', '12345', [
@@ -129,11 +130,11 @@ describe('Proposal Helper', () => {
       // TODO check regression
       // Expected: [api-service-error: You should handle unexpected errors (default handler): Api error]
       // Received: "You should handle unexpected errors (default handler): Api error"
-      // expect(Logger.logError).toHaveBeenCalledWith(
-      //   new ApiServiceError(
-      //     'You should handle unexpected errors (default handler): Api error'
-      //   )
-      // );
+      expect(Logger.logError).toHaveBeenCalledWith({
+        message:
+          'You should handle unexpected errors (default handler): Api error',
+        name: 'services',
+      });
 
       expect(repsonse).toEqual(null);
     });

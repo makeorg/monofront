@@ -1,29 +1,13 @@
-import { getBaitText } from '@make.org/utils/constants/proposal';
+import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { ProposalType, ProposalsType } from '@make.org/types';
 import { ProposalApiService } from '@make.org/api/ProposalApiService';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
-// @todo remove with DepreactedProposalSubmit
-const deprecatedPropose = async (
-  content: string,
-  questionId: string,
-  success: () => void,
-  unexpectedError: () => void
-): Promise<void> => {
-  const proposalContent = getBaitText() + content;
-
-  ProposalApiService.propose(proposalContent, questionId)
-    .then(success)
-    .catch(apiServiceError => {
-      defaultUnexpectedError(apiServiceError);
-      unexpectedError();
-    });
-};
-
 const propose = async (content: string, questionId: string): Promise<void> => {
   try {
     await ProposalApiService.propose(content.trim(), questionId);
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
   }
 };
@@ -35,7 +19,8 @@ const getProposal = async (
     const response = await ProposalApiService.getProposal(proposalId);
 
     return response && response.data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
 
     return null;
@@ -49,7 +34,8 @@ const getPopularProposals = async (
     const response = await ProposalApiService.getPopularProposals(questionId);
 
     return response && response.data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
 
     return null;
@@ -106,7 +92,8 @@ const searchProposals = async (
       ...data,
       results: results.map((proposal: ProposalType) => updateCountry(proposal)),
     };
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
 
     return null;
@@ -114,8 +101,6 @@ const searchProposals = async (
 };
 
 export const ProposalService = {
-  // @todo remove with DepreactedProposalSubmit
-  deprecatedPropose,
   propose,
   getProposal,
   getPopularProposals,

@@ -11,6 +11,7 @@ import {
 import Cookies from 'universal-cookie';
 import { TrackingApiService } from '@make.org/api/TrackingApiService';
 import { COOKIE } from '@make.org/types/enums';
+import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import trackingConfiguration from './trackingConfiguration.yaml';
 import { FacebookTracking } from './Trackers/FacebookTracking';
 import { TwitterTracking } from './Trackers/TwitterTracking.js';
@@ -92,7 +93,8 @@ const trackPerformance = async (
 ): Promise<void> => {
   try {
     await TrackingApiService.trackPerformance(applicationName, timings);
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
   }
 };

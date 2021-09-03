@@ -1,3 +1,4 @@
+import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { QuestionApiService } from '@make.org/api/QuestionApiService';
 import {
   QuestionType,
@@ -28,7 +29,8 @@ const getQuestions = async (
     );
 
     return response ? response.data : null;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
     return null;
   }
@@ -53,7 +55,8 @@ const getDetail = async (
     }
 
     return data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 404) {
       notFound();
 
@@ -80,7 +83,8 @@ const searchQuestions = async (
     const { data } = response || {};
 
     return data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
 
     return null;
@@ -101,7 +105,8 @@ const getQuestionPopularTags = async (
     const { data } = response || {};
 
     return data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
 
     return null;
@@ -126,7 +131,8 @@ const getQuestionPartners = async (
     const { data } = response || {};
 
     return data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
 
     return null;
@@ -149,7 +155,8 @@ const getQuestionPersonalities = async (
     const { data } = response || {};
 
     return data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
 
     return null;
@@ -172,7 +179,8 @@ const getFeaturedProposals = async (
     const { data } = response || {};
 
     return data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
 
     return null;
@@ -188,7 +196,8 @@ const getQuestionKeywords = async (
     const { data } = response || {};
 
     return data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
 
     return null;

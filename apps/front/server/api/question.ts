@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import cache from 'memory-cache';
 import { env } from '@make.org/assets/env';
-import { SERVER_DIR } from '../paths';
+import { APP_SERVER_DIR } from '../paths';
 
 export const ALLOWED_URL = env.frontUrl();
 
@@ -21,7 +21,7 @@ export const questionResults = (
   }
 
   const questionPath = path.join(
-    SERVER_DIR,
+    APP_SERVER_DIR,
     'staticData/questionResults',
     `${questionSlug}.json`
   );

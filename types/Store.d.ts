@@ -29,6 +29,8 @@ export type StateConfig = {
   readonly privacyPolicy: string;
   readonly queryParams: any;
   readonly customData: Record<string, string>;
+  maintenance?: boolean;
+  unsecure?: boolean;
 };
 
 // Config Homepage
@@ -186,6 +188,7 @@ export type StateRoot = {
   appConfig: StateConfig;
   views: StateViews;
   proposal?: StateProposal;
+  proposals?: ProposalType[];
   sequence: StateSequence;
   currentQuestion: string;
   notifications: StateNotification;

@@ -76,6 +76,8 @@ export const Vote: React.FC<Props> = ({
   const [animateVoteKey, setAnimatedVoteKey] = useState('');
   const [pendingVoteKey, setPendingVoteKey] = useState('');
   const { votedProposalIds } = state.sequence;
+  const { source } = state.appConfig;
+  const isWidget = source === 'widget';
   const votedProposals = votedProposalIds[proposal.question.slug];
   const isFirstSequenceVote = isSequence && !votedProposals;
   const lastProposalOfSequence = isSequence && isLastProposal;
@@ -88,6 +90,18 @@ export const Vote: React.FC<Props> = ({
   const clearWait = async () => {
     clearTimeout(timeout);
   };
+
+  let className = '';
+
+  if (!!isSequence && isWidget) {
+    className = 'sequence widget';
+  }
+  if (isSequence) {
+    className = 'sequence';
+  }
+  if (isWidget) {
+    className = 'widget';
+  }
 
   const stopPending = () => {
     clearWait();
@@ -188,7 +202,7 @@ export const Vote: React.FC<Props> = ({
 
   if (userVote && votedKey) {
     return (
-      <VoteContainerStyle isSequence={!!isSequence}>
+      <VoteContainerStyle className={className}>
         <VoteResult
           proposalId={proposalId}
           votes={currentVotes}
@@ -203,7 +217,7 @@ export const Vote: React.FC<Props> = ({
           votedKey={votedKey}
           index={index}
         />
-        {isSequence && (
+        {isSequence && !isWidget && (
           <SequenceNextCardButtonStyle
             onClick={goToNextCard}
             id={`next-button-${proposal.id}`}
@@ -220,8 +234,10 @@ export const Vote: React.FC<Props> = ({
 
   return (
     <>
-      {isFirstSequenceVote && <Tip isFirstSequenceVote={isFirstSequenceVote} />}
-      <VoteContainerStyle isSequence={!!isSequence}>
+      {isFirstSequenceVote && !isWidget && (
+        <Tip isFirstSequenceVote={isFirstSequenceVote} />
+      )}
+      <VoteContainerStyle className={className}>
         <ScreenReaderItemStyle as="p">
           {i18n.t('vote.intro_title')}
         </ScreenReaderItemStyle>
@@ -242,6 +258,9 @@ export const Vote: React.FC<Props> = ({
           ))}
         </VoteWrapperStyle>
       </VoteContainerStyle>
+      {isFirstSequenceVote && isWidget && (
+        <Tip isFirstSequenceVote={isFirstSequenceVote} />
+      )}
     </>
   );
 };

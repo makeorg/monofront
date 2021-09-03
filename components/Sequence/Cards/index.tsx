@@ -14,6 +14,7 @@ import {
   TopComponentContextValue,
 } from '@make.org/store/topComponentContext';
 import { CARD } from '@make.org/types/enums';
+import { useAppContext } from '@make.org/store';
 import { SequenceCardStyle } from './style';
 import { IntroCard } from './Intro';
 import { PushProposalCard } from './PushProposal';
@@ -31,6 +32,10 @@ type CardProps = {
 };
 
 export const Card: React.FC<CardProps> = ({ card, question }) => {
+  const { state } = useAppContext();
+  const { source } = state.appConfig;
+  const isWidget = source === 'widget';
+
   switch (card.type) {
     case CARD.CARD_TYPE_PROPOSAL:
       return <ProposalCard proposalCard={card as ProposalCardType} />;
@@ -42,8 +47,12 @@ export const Card: React.FC<CardProps> = ({ card, question }) => {
       return <PushProposalCard />;
     case CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD:
       return <FinalCard questionSlug={question.slug} />;
-    case CARD.CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD:
+    case CARD.CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD: {
+      if (isWidget) {
+        return <FinalCard questionSlug={question.slug} />;
+      }
       return <SpecialFinalCard questionSlug={question.slug} />;
+    }
     case CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD:
       return <ExtraDataCard />;
     case CARD.CARD_TYPE_NO_PROPOSAL_CARD: {

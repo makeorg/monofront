@@ -132,7 +132,7 @@ export const CandidateDesktopSlider: FC<SliderProps> = ({ personalities }) => {
   const [slideOffset, setSlideOffset] = useState(0);
   const sliderName = 'candidate_desktop';
   const sliderRef = useRef<HTMLDivElement>(null);
-  let sliderParams: any = {
+  const sliderParams: any = {
     // TO DO
     responsive: [
       {
@@ -144,22 +144,6 @@ export const CandidateDesktopSlider: FC<SliderProps> = ({ personalities }) => {
       },
     ],
   };
-
-  // Dirty Hack for IE11 compatibility :'(
-  const isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
-  if (isIE11) {
-    sliderParams = {
-      responsive: [
-        {
-          breakpoint: Breakpoints.Tablet,
-          settings: {
-            slidesToShow: 6.5,
-            draggable: true,
-          },
-        },
-      ],
-    };
-  }
 
   useSlider(sliderRef, sliderParams, personalities.length > 0);
 

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { color, typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints, DefaultPadding } from '@make.org/assets/vars/Breakpoints';
@@ -44,7 +44,7 @@ export const BasicButtonStyle = `
   text-decoration: none;
 `;
 
-const RedStyle = `
+export const RedStyle = `
   color: ${color.white};
   background-color: ${color.brandSecondary};
   .tofill {
@@ -57,7 +57,7 @@ const RedStyle = `
   }
 `;
 
-const GreyStyle = `
+export const GreyStyle = `
   color: ${color.greyDark};
   background-color: ${color.greyLighter};
   .tofill {
@@ -163,6 +163,22 @@ export const RedLinkButtonStyle = styled(UnstyledButtonStyle)`
   margin: 0 5px;
 `;
 
+export const RedButtonAsLinkStyle = styled(UnstyledButtonStyle)`
+  font-family: ${MakeFonts.TradeGothicBoldCondensed};
+  font-size: ${intToPx(typography.font.fontsize.M.value)};
+  color: ${color.brandSecondary};
+  text-transform: uppercase;
+  font-size: ${intToPx(typography.font.fontsize.M.value)};
+  text-decoration: underline;
+  &:hover,
+  &:focus {
+    color: ${color.brandSecondary};
+  }
+  svg {
+    fill: ${color.brandSecondary};
+  }
+`;
+
 export const CloseButtonStyle = styled(UnstyledButtonStyle)`
   position: absolute;
   top: ${intToPx(DefaultPadding.Mobile)};
@@ -189,11 +205,11 @@ export const NavButtonStyle = styled(UnstyledButtonStyle)`
 export const QualifyButtonStyle = styled.button`
   font-family: ${MakeFonts.CircularStandardBold};
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   border-width: 2px;
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  line-height: 20px;
+  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  line-height: 26px;
   border-style: solid;
   padding: 0 10px;
   border-radius: 36px;
@@ -203,10 +219,6 @@ export const QualifyButtonStyle = styled.button`
   &.qualified {
     color: ${color.white};
     background-color: ${props => props.color};
-  }
-  @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
-    line-height: 26px;
   }
 `;
 
@@ -357,9 +369,18 @@ const BlackBordersStyle = `
   }
 `;
 
-export const GreyNoBackgroundButtonStyle = styled(UnstyledButtonStyle)`
+export const GreyNoBackgroundButtonStyle = styled(UnstyledButtonStyle)<{
+  bold?: boolean;
+}>`
   ${ButtonNoBackgroundStyle};
   ${GreyNoBackgroundStyle};
+  ${({ bold }) =>
+    bold
+      ? css`
+          text-transform: uppercase;
+          font-family: ${MakeFonts.TradeGothicBoldCondensed};
+        `
+      : ''}
 `;
 
 export const RedNoBackgroundButtonStyle = styled(UnstyledButtonStyle)`
@@ -378,4 +399,7 @@ export const BlackBorderButtonStyle = styled.button.attrs(props => ({
 }))`
   ${BasicButtonStyle};
   ${BlackBordersStyle};
+  &.widget {
+    margin-top: 18px;
+  }
 `;

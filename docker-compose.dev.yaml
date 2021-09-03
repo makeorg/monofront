@@ -2,11 +2,11 @@ version: "3.9"
 
 services:
     app_make_dev:
-      image: appmakedev
+      image: app_make_dev
       build:
         context: .
         dockerfile: apps/front/Dockerfile
-        target: dev
+        target: app-dev
       ports:
         - 3000:3000
         - 8888:8888
@@ -15,6 +15,55 @@ services:
         - .:/home/app
         - /home/app/node_modules
         - /home/app/apps/front/node_modules
+        - /home/app/api/node_modules
+        - /home/app/components/node_modules
+        - /home/app/types/node_modules
+        - /home/app/assets/node_modules
+        - /home/app/utils/node_modules
+        - /home/app/ui/node_modules
+        - /home/app/store/node_modules
+        - /home/app/apimock/node_modules
+        - /home/app/apps/front/dist
+      profiles: 
+        - app-dev
+  
+    api_mock:
+      image: api_mock
+      build:
+        context: .
+        dockerfile: apimock/Dockerfile
+        target: api-mock
+      ports:
+        - 9000:9000
+      volumes: *default_volumes
+      profiles: 
+        - app-test
+    
+    app_make_test:
+      image: app_make_test
+      build:
+        context: .
+        dockerfile: apps/front/Dockerfile
+        target: app-test
+      ports:
+        - 9009:9009
+      volumes: *default_volumes
+      profiles: 
+        - app-test
+
+    widget_make_dev:
+      image: widget_make_dev
+      build:
+        context: .
+        dockerfile: apps/widget/Dockerfile
+        target: widget-dev
+      ports:
+        - 3000:3000
+        - 8888:8888
+      volumes:
+        &default_volumes
+        - .:/home/app
+        - /home/app/node_modules
         - /home/app/apps/widget/node_modules
         - /home/app/api/node_modules
         - /home/app/components/node_modules
@@ -26,28 +75,17 @@ services:
         - /home/app/apimock/node_modules
         - /home/app/apps/front/dist
       profiles: 
-        - dev
-  
-    app_api_mock:
-      image: appapimock
+        - widget-dev
+
+    widget_make_ssr:
+      image: widget_make_ssr
       build:
         context: .
-        dockerfile: apps/front/Dockerfile
-        target: apimock
+        dockerfile: apps/widget/Dockerfile
+        target: widget-ssr
       ports:
-        - 9000:9000
+        - 3000:3000
+        - 8888:8888
       volumes: *default_volumes
       profiles: 
-        - test
-    
-    app_make_test:
-      image: appmaketest
-      build:
-        context: .
-        dockerfile: apps/front/Dockerfile
-        target: test
-      ports:
-        - 9009:9009
-      volumes: *default_volumes
-      profiles: 
-        - test
+        - widget-ssr

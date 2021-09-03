@@ -1,6 +1,7 @@
 import { QuestionType } from '@make.org/types/Question';
 import { QuestionApiService } from '@make.org/api/QuestionApiService';
 import cache from 'memory-cache';
+import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { logError } from '../ssr/helpers/ssr.helper';
 
 const clearCache = (): void => {
@@ -38,7 +39,8 @@ const getQuestion = async (
     cache.put(CACHE_KEY, response && response.data, 300000);
 
     return handleData(response && response.data);
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 404) {
       return notFound();
     }

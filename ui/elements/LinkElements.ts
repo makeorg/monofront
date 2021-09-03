@@ -3,8 +3,15 @@ import { color, typography } from 'athena-design-tokens';
 import { Link } from 'react-router-dom';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { SvgExternalLink } from '../Svg/elements';
-import { GreyButtonStyle, RedButtonStyle } from './ButtonsElements';
+import {
+  BasicButtonStyle,
+  GreyButtonStyle,
+  RedButtonStyle,
+  RedStyle,
+  GreyStyle,
+} from './ButtonsElements';
 
 const linkStyle = (linkColor: string) => `
   color: ${linkColor};
@@ -40,6 +47,22 @@ export const LinkAsRedButton = styled(RedButtonStyle)`
     text-decoration: none;
   }
 `;
+
+export const SimpleLinkAsRedButton = styled.a`
+  ${BasicButtonStyle};
+  ${RedStyle};
+  &:disabled {
+    ${GreyStyle};
+  }
+  display: inline-flex;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: ${color.white};
+    text-decoration: none;
+  }
+`;
+
 export const LinkAsGreyButton = styled(GreyButtonStyle)`
   display: inline-flex;
   text-decoration: none;
@@ -47,4 +70,16 @@ export const LinkAsGreyButton = styled(GreyButtonStyle)`
   &:focus {
     text-decoration: none;
   }
+`;
+
+export const RedLinkElementStyle = styled(Link)`
+  ${linkStyle(color.brandSecondary)};
+  text-transform: uppercase;
+  font-family: ${MakeFonts.TradeGothicBoldCondensed};
+`;
+
+export const RedHTMLLinkElementStyle = styled.a`
+  ${linkStyle(color.brandSecondary)};
+  text-transform: uppercase;
+  font-family: ${MakeFonts.TradeGothicBoldCondensed};
 `;

@@ -48,6 +48,9 @@ describe('getQuestionFromState', () => {
         picture: 'foo',
       },
     },
+    activeFeatureData: {
+      topProposal: null,
+    },
     countries: ['FR'],
     language: 'fr',
     allowedSources: ['foo'],

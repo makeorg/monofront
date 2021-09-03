@@ -318,6 +318,7 @@
     "purpose": "Carte d'introduction",
     "title": "Des milliers de citoyens proposent des solutions.",
     "description": "Prenez position sur ces solutions & proposez les vôtres.\nLes meilleures détermineront nos actions.",
+    "description_short": "Prenez position sur ces solutions.",
     "button": "Démarrer",
     "partnership": "en partenariat avec"
   },
@@ -328,7 +329,7 @@
     "register": {
       "description": "Comment suivre les résultats ?",
       "button_intro": "Créez votre",
-      "button_text": "espace citoyen."
+      "button_text": "Inscrivez-vous sur Make.org"
     }
   },
   "no_proposal_card": {
@@ -408,9 +409,9 @@
       "field": "Champs de proposition",
       "counter": "Votre proposition comprend {{current}} caractères sur un total de {{total}} caractères disponibles",
       "panel_trigger": "Je propose une solution",
-      "button_cancel": "Annuler et continuer à voter",
+      "button_cancel": "Annuler",
       "button_submit": "Valider",
-      "moderation_link": "En savoir plus sur notre charte de modération"
+      "moderation_link": "Lire notre charte de modération"
     },
     "authentication": {
       "button_back": "Modifier ma proposition",

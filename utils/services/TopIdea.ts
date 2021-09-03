@@ -1,3 +1,4 @@
+import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { QuestionApiService } from '@make.org/api/QuestionApiService';
 import { TopIdeaType, TopIdeaDetailType } from '@make.org/types';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
@@ -16,8 +17,9 @@ const getTopIdeas = async (
       topIdeasResponse &&
       topIdeasResponse.data.questionTopIdeas.sort(orderByWeight)
     );
-  } catch (apiServiceError) {
-    if (apiServiceError.status === '404') {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
+    if (apiServiceError.status === 404) {
       notFound();
       return null;
     }
@@ -40,7 +42,8 @@ const getTopIdea = async (
     );
 
     return topIdeaResponse && topIdeaResponse.data;
-  } catch (apiServiceError) {
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 404) {
       notFound();
       return null;

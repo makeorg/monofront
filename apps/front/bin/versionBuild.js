@@ -7,7 +7,7 @@ const fs = require('fs');
 const path = require('path');
 const childProcess = require('child_process');
 
-const CLIENT_DIR = path.resolve(process.cwd(), 'dist', 'client');
+const APP_CLIENT_DIR = path.resolve(process.cwd(), 'dist', 'client');
 
 const lastCommit = childProcess
   .execSync('git rev-parse HEAD')
@@ -30,7 +30,7 @@ const version = {
 };
 
 try {
-  const versionPathFile = `${CLIENT_DIR}/version`;
+  const versionPathFile = `${APP_CLIENT_DIR}/version`;
 
   fs.writeFileSync(versionPathFile, JSON.stringify(version, null, 2), 'utf8');
 } catch (error) {

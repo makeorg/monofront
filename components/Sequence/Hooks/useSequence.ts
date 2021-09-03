@@ -44,6 +44,8 @@ export const useSequence = (
   const { hasProposed = false } = proposal || {};
   const { isLoggedIn } = selectAuthentication(state) || {};
   const { currentIndex = 0, votedProposalIds } = sequence || {};
+  const { source } = state.appConfig;
+  const isWidget = source === 'widget';
 
   const votedProposalIdsOfQuestion = votedProposalIds[question?.slug] || [];
 
@@ -112,7 +114,8 @@ export const useSequence = (
       isStandardSequence,
       introCardParam,
       pushProposalParam,
-      withDemographicsCard
+      withDemographicsCard,
+      isWidget
     );
     setCards(buildedCards);
     dispatch(loadSequenceCards(buildedCards));

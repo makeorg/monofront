@@ -1,13 +1,15 @@
 import { Request, Response } from 'express';
 import { env } from '@make.org/assets/env';
 import fs from 'fs';
-import { VERSION_PATH } from './paths';
+import { APP_VERSION_PATH } from './paths';
 
 let versionData: string;
 try {
-  versionData = fs.readFileSync(VERSION_PATH, 'utf8');
-} catch (error) {
-  if (error.code === 'ENOENT') {
+  versionData = fs.readFileSync(APP_VERSION_PATH, 'utf8');
+} catch (error: unknown) {
+  const customError = error as { code: string };
+
+  if (customError.code === 'ENOENT') {
     // eslint-disable-next-line no-console
     console.error('Version file not found');
   } else {
