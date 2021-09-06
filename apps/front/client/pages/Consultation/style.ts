@@ -5,6 +5,7 @@ import {
   ColumnElementStyle,
   SpaceBetweenRowStyle,
 } from '@make.org/ui/elements/FlexElements';
+import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { SvgChat } from '@make.org/ui/Svg/elements';
@@ -141,7 +142,7 @@ export const ExploreTitleStyle = styled.h3`
   text-transform: none;
   font-size: ${intToPx(typography.font.fontsize.L.value)};
   letter-spacing: 0.5px;
-  margin-bottom: 20px;
+  margin: 40px 0px 20px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.XL.value)};
     margin-bottom: 0;
@@ -154,7 +155,13 @@ export const ExploreSubTitleWrapperStyle = styled.div`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   letter-spacing: 0.14px;
   margin-top: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 35px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    width: 60%;
+  }
+`;
+export const ExploreDescriptionStyle = styled(SpaceBetweenRowStyle)`
+  width: 100%;
 `;
 
 export const ExploreProposalsCountStyle = styled.span`
@@ -163,17 +170,31 @@ export const ExploreProposalsCountStyle = styled.span`
   color: ${color.black};
   letter-spacing: 0.12px;
 `;
-export const ExploreDescriptionStyle = styled(SpaceBetweenRowStyle)`
+
+export const NoProposalWrapperStyle = styled.div`
   width: 100%;
+  display: flex;
+  flex-flow: column;
+  margin: 45px 0;
+`;
+
+export const ResetLinkButtonWrapperStyle = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding-left: 20px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    flex-direction: row-reverse;
+  }
 `;
 
 export const ResetLinkStyle = styled.button`
-  display: inline-flex;
-  align-items: center;
   font-family: ${MakeFonts.CircularStandardBook};
-  text-decoration: none;
+  border: none;
+  text-decoration: underline;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   color: ${color.black};
+  margin-bottom: 23px;
+  background-color: transparent;
 `;
 
 export const ParticipateDescriptionStyle = styled.p`
@@ -211,6 +232,23 @@ export const ParticipateSidebarContentStyle = styled(ColumnElementStyle)`
 
 export const ParticipateFullwidthContentStyle = styled(ColumnElementStyle)`
   width: 100%;
+`;
+
+export const ExploreFiltersMobileCTA = styled(RedButtonStyle)`
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-radius: 0px;
+  left: 0;
+  z-index: 5;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    position: sticky;
+    width: auto;
+    align-self: flex-end;
+    border-radius: 20px;
+    bottom: 20px;
+    margin: 40px 0;
+  }
 `;
 
 export const ParticipateCTAProposalBloc = styled.div<{

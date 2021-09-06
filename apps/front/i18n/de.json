@@ -814,8 +814,18 @@
     },
     "explore": {
       "title": "Vorschläge entdecken",
-      "description": "@@consultation.explore.description|fr:Utilisez les outils de recherche pour parcourir simplement toutes les propositions de la consultation et identifier celles qui vous semblent prioritaires.",
-      "reset_filters": "@@consultation.explore.reset_filters|fr:Réinitialiser les filtres"
+      "description": "Nutze die Suchfunktionen, um alle Vorschläge der Konsultation zu entdecken und äußere dich zu denjenigen, die dich interessieren.",
+      "reset_filters": "Filter löschen",
+      "sort_by": "Sortieren nach",
+      "filtrer": "Filtern",
+      "filter_by": "Filtern nach",
+      "recent": "Neueste",
+      "popular": "Beliebteste",
+      "controversial": "Umstrittenste",
+      "unvoted": "Vorschläge, über die nicht abgestimmt wurde",
+      "organisations_proposals": "Vorschläge von Organisationen",
+      "no_proposal": "Kein Vorschlag",
+      "display_proposals": "Vorschläge anzeigen"
     },
     "tabs": {
       "consultation": "Konsultation ",

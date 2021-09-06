@@ -87,7 +87,7 @@ export const FakeCheckboxInputStyle = styled.div`
 `;
 
 export const StyledCheckbox = styled(FakeCheckboxInputStyle)<{
-  checked: boolean;
+  checked: boolean | undefined;
 }>`
   svg {
     visibility: ${props => (props.checked ? 'visible' : 'hidden')};
@@ -96,6 +96,7 @@ export const StyledCheckbox = styled(FakeCheckboxInputStyle)<{
     box-shadow: 0 0 0 2px ${color.grey};
   }
 `;
+
 export const NewWindowIconStyle = styled(SvgExternalLinkPlain)`
   width: 9px;
   height: 9px;
