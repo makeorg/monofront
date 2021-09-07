@@ -60,7 +60,7 @@ e2e-app:
   needs: []
   except: 
     - production
-  image: cypress/browsers:node14.17.0-chrome88-ff89
+  image: cypress/browsers:node14.17.0-chrome91-ff89
   script:
     - npm install -g lerna@4.0.0
     - lerna bootstrap

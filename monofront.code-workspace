@@ -25,6 +25,10 @@
 			"path": "components"
 		},
 		{
+			"name": "🧑🏼‍🌾 Store",
+			"path": "store"
+		},
+		{
 			"name": "👮🏼‍♀️ Types",
 			"path": "types"
 		},
@@ -35,10 +39,6 @@
 		{
 			"name": "🧑🏼‍🔬 Utils",
 			"path": "utils"
-		},
-		{
-			"name": "🧑🏼‍🌾 Store",
-			"path": "store"
 		}
 	],
 	"settings": {
