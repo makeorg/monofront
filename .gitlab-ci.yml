@@ -1,7 +1,9 @@
 image: makeorg/docker-arch-docker:latest
 
 variables: &global_variables
-  IMAGE: "make-front"
+  IMAGE_APP_NAME: "monofront-app"
+  IMAGE_APP_TARGET: "app-production"
+  IMAGE_APP_PATH: "apps/front/Dockerfile"
   NODE_IMAGE: "node:16.8-alpine"
   YARN_VERSION: "1.22.5"
 
@@ -14,6 +16,8 @@ cache:
 stages:
   - check
   - e2e
+  - build
+  - deploy
   
 lint:
   stage: check
@@ -61,11 +65,12 @@ e2e-app:
   except: 
     - production
   image: cypress/browsers:node14.17.0-chrome91-ff89
+  before_script:
+    - export YARN_VERSION="$YARN_VERSION"
   script:
-    - npm install -g lerna@4.0.0
-    - lerna bootstrap
-    - lerna exec --scope=@make.org/front --stream -- NODE_ENV=test yarn build
-    - lerna run --scope=@make.org/front test:cypress:run --stream
+    - yarn install --check-files
+    - NODE_ENV=test yarn workspace @make.org/front build
+    - yarn workspace @make.org/front test:cypress:run
   cache: {}
   artifacts:
     expire_in: 1 week
@@ -74,7 +79,6 @@ e2e-app:
       - cypress/screenshots
       - cypress/videos
       - cypress/coverage
-
 
 jscpd:
   stage: check
@@ -92,3 +96,38 @@ jscpd:
     paths:
       - reports
   
+build-app:
+  stage: build
+  tags:
+    - docker
+  before_script:
+    - export IMAGE_VERSION=`git rev-parse --short=10 HEAD`
+    - mkdir -p /var/lib/docker
+    - mount -t tmpfs -o size=12G tmpfs /var/lib/docker
+    - if [ ! -e /var/run/docker.sock ]; then DOCKER_DRIVER=overlay2 dockerd & fi
+    - until docker ps; do echo "waiting for docker to be up..."; sleep 0.5; done
+    - docker login "https://$NEXUS_URL" --username "$NEXUS_USER" --password "$NEXUS_PASSWORD"
+    - echo $(docker pull $NEXUS_URL/$IMAGE_APP_NAME:$IMAGE_VERSION)
+  script:
+    - >
+      if [[ -z $(docker images -q $NEXUS_URL/$IMAGE_APP_NAME:$IMAGE_VERSION) ]];then
+        DOCKER_BUILDKIT=1 docker build --rm -f $IMAGE_APP_PATH -t $NEXUS_URL/$IMAGE_APP_NAME:$IMAGE_VERSION --target $IMAGE_APP_TARGET .
+        docker push $NEXUS_URL/$IMAGE_APP_NAME:$IMAGE_VERSION
+      fi
+    - docker tag $NEXUS_URL/$IMAGE_APP_NAME:$IMAGE_VERSION $NEXUS_URL/$IMAGE_APP_NAME:$CI_COMMIT_REF_NAME-latest
+    - docker push $NEXUS_URL/$IMAGE_APP_NAME:$CI_COMMIT_REF_NAME-latest
+
+deploy-app-preproduction:
+  stage: deploy
+  environment:
+    name: preproduction
+  only:
+    - preproduction
+  script:
+    - >
+      curl -D - -X "POST"
+      -H "Accept: application/json"
+      -H "Content-Type: application/x-www-form-urlencoded"
+      -H "X-Rundeck-Auth-Token: $APP_RUNDECK_PREPROD_TOKEN"
+      --data-urlencode "argString=-version $CI_COMMIT_REF_NAME-latest"
+      $APP_RUNDECK_PREPROD_URL/api/16/job/$APP_RUNDECK_PREPROD_JOB_ID/run
