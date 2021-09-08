@@ -1,7 +1,7 @@
 image: makeorg/docker-arch-docker:latest
 
 variables: &global_variables
-  IMAGE_APP_NAME: "monofront-app"
+  IMAGE_APP_NAME: "make-front"
   IMAGE_APP_TARGET: "app-production"
   IMAGE_APP_PATH: "apps/front/Dockerfile"
   NODE_IMAGE: "node:16.8-alpine"
