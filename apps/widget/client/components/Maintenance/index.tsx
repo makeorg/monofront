@@ -8,7 +8,7 @@ import {
 } from '@make.org/components/Sequence/Cards/style';
 import MaintenancePicture from '@make.org/assets/images/maintenance.png';
 import { SimpleLinkAsRedButton } from '@make.org/ui/elements/LinkElements';
-import { LogoStyle } from '../SidePanel/style';
+import { LogoStyle } from '../HeaderPanel/style';
 import {
   MaintenanceImageStyle,
   MaintenancePageStyle,

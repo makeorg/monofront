@@ -27,6 +27,8 @@ export const IntroProposal: FC<Props> = ({ handleChange }) => {
   const question: QuestionType = selectCurrentQuestion(state);
   const proposal: ProposalType | null | undefined =
     question.activeFeatureData.topProposal;
+  const { source } = state.appConfig;
+  const isWidget = source === 'widget';
 
   if (!proposal) {
     return null;
@@ -48,6 +50,7 @@ export const IntroProposal: FC<Props> = ({ handleChange }) => {
             data-cy-card-type={CARD.CARD_TYPE_PROPOSAL}
             data-cy-card-number={0}
             aria-live="polite"
+            className={isWidget ? 'widget' : ''}
           >
             <ProposalAuthor proposal={proposal} isSequence />
             <ScreenReaderItemStyle>

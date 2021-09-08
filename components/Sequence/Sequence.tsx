@@ -48,7 +48,6 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
   const { country, source } = state.appConfig;
   const isWidget = source === 'widget';
   const question: QuestionType = selectCurrentQuestion(state);
-
   const executeStartSequence = async (
     questionId: string,
     votedIds: string[]

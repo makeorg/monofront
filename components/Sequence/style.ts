@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography, color } from 'athena-design-tokens';
 
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { GreyLinkStyle } from '@make.org/ui/elements/ButtonsElements';
 import { MiddleColumnStyle } from '@make.org/ui/elements/FlexElements';
+
 import { SvgArrowReturn } from '@make.org/ui/Svg/elements';
 
 export const SequenceContainerStyle = styled(MiddleColumnStyle)`
@@ -17,8 +18,8 @@ export const SequenceContainerStyle = styled(MiddleColumnStyle)`
   margin: 0 auto;
   padding: 0 20px;
   &.widget {
-    background-color: rgba(0, 0, 0, 0.05);
-    padding: 16px;
+    background-color: ${color.greyLighter};
+    padding: 16px 20px;
   }
 `;
 
@@ -62,6 +63,16 @@ export const SequenceTitleStyle = styled.h2`
   margin-top: 30px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${intToPx(typography.font.fontsize.XL.value)};
+  }
+  &.widget {
+    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    letter-spacing: 0.11px;
+    margin-top: 10px;
+    @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+      font-size: ${intToPx(typography.font.fontsize.S.value)};
+      margin-top: 20px;
+      letter-spacing: 0.12px;
+    }
   }
 `;
 

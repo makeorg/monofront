@@ -168,8 +168,14 @@ export const RedButtonAsLinkStyle = styled(UnstyledButtonStyle)`
   font-size: ${intToPx(typography.font.fontsize.M.value)};
   color: ${color.brandSecondary};
   text-transform: uppercase;
-  font-size: ${intToPx(typography.font.fontsize.M.value)};
   text-decoration: underline;
+  &.widget {
+    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    padding: 15px 0px 20px;
+    @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+      padding: 20px 0px;
+    }
+  }
   &:hover,
   &:focus {
     color: ${color.brandSecondary};

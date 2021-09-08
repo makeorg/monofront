@@ -18,7 +18,7 @@ import { getParticipateLink } from '@make.org/utils/helpers/url';
 import { trackClickOperationPage } from '@make.org/utils/services/Tracking';
 import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
 import { WidgetContainer } from '../../style';
-import { SidePanel } from '../SidePanel';
+import { HeaderPanel } from '../HeaderPanel';
 
 export const ClosedConsultation: FC = () => {
   const { state } = useAppContext();
@@ -40,7 +40,7 @@ export const ClosedConsultation: FC = () => {
         description={question.wording.metas.description}
         picture={question.wording.metas.picture}
       />
-      <SidePanel />
+      <HeaderPanel />
       <SequenceContainerStyle data-cy-container="sequence" className="widget">
         <SequenceContentStyle>
           <SequenceCardStyle className="center">

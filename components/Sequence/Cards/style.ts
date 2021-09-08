@@ -29,6 +29,11 @@ export const SequenceCardStyle = styled.section<{ isNoProposalCard?: boolean }>`
   margin: ${({ isNoProposalCard = false }) =>
     isNoProposalCard ? '20px auto 0px' : '20px auto 40px'};
   min-height: 315px;
+  &.widget {
+    margin: 5px 0px 20px;
+    max-height: 295px;
+    min-height: 295px;
+  }
   &.center {
     justify-content: center;
   }
@@ -38,6 +43,9 @@ export const SequenceCardStyle = styled.section<{ isNoProposalCard?: boolean }>`
     padding: ${({ isNoProposalCard = false }) =>
       isNoProposalCard ? '70px 30px 40px' : '0 30px'};
     margin-top: 30px;
+    &.widget {
+      margin-top: 10px;
+    }
   }
 `;
 

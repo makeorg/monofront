@@ -11,7 +11,7 @@ import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selec
 import { QuestionType } from '@make.org/types';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { WidgetContainer } from './style';
-import { SidePanel } from './components/SidePanel';
+import { HeaderPanel } from './components/HeaderPanel';
 import { Maintenance } from './components/Maintenance';
 import { IntroProposal } from './components/IntroProposal';
 import { ClosedConsultation } from './components/ClosedConsultation';
@@ -45,7 +45,7 @@ const App: FC = () => {
 
   return (
     <WidgetContainer>
-      <SidePanel />
+      <HeaderPanel />
       {topProposal ? (
         <IntroProposal handleChange={disableTopProposal} />
       ) : (
