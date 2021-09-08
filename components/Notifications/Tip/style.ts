@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components';
-import { color } from 'athena-design-tokens';
+import { color, typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 
-export const TipWrapperStyle = styled.div`
+export const TipWrapperStyle = styled.div<{ isWidget: boolean }>`
   position: relative;
   font-family: ${MakeFonts.CircularStandardBook};
   background-color: ${color.infos};
@@ -13,12 +13,18 @@ export const TipWrapperStyle = styled.div`
   margin-bottom: 20px;
   padding: 6px 37px 6px 10px;
   border-radius: 2px;
-  font-size: 16px;
+  font-size: ${props =>
+    props.isWidget
+      ? intToPx(typography.font.fontsize.X2S.value)
+      : intToPx(typography.font.fontsize.XS.value)};
   line-height: 1.5;
   letter-spacing: 0.14px;
   &.first-vote {
     margin-top: 20px;
     margin-bottom: 0;
+  }
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    margin-bottom: ${props => (props.isWidget ? '30px' : '20px')};
   }
 `;
 

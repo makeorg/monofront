@@ -56,7 +56,10 @@ export const IntroProposal: FC<Props> = ({ handleChange }) => {
             <ScreenReaderItemStyle>
               {i18n.t('top_proposal_card.content')}
             </ScreenReaderItemStyle>
-            <SequenceProposalStyle lang={proposal.question.language}>
+            <SequenceProposalStyle
+              lang={proposal.question.language}
+              isWidget={isWidget}
+            >
               {proposal.content}
             </SequenceProposalStyle>
             <RedButtonStyle

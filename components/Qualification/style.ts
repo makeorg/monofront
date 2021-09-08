@@ -12,7 +12,7 @@ export const QualificationDataItemStyle = styled(UnstyledListStyle)`
 export const QualificationLabelStyle = styled.span`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   font-family: ${MakeFonts.CircularStandardBold};
-  (props)r: ${props => props.color};
+  color: ${props => props.color};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
   }
@@ -26,11 +26,17 @@ export const QualificationContentStyle = styled.span`
   }
 `;
 
-export const CounterStyle = styled.span`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+export const CounterStyle = styled.span<{ isWidget?: boolean }>`
+  font-size: ${props =>
+    props.isWidget
+      ? intToPx(typography.font.fontsize.X2S.value)
+      : intToPx(typography.font.fontsize.XS.value)};
   margin-left: 10px;
   @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.S.value)};
+    font-size: ${props =>
+      props.isWidget
+        ? intToPx(typography.font.fontsize.X2S.value)
+        : intToPx(typography.font.fontsize.S.value)};
   }
 `;
 

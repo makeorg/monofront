@@ -86,7 +86,11 @@ export const SequenceProgress: React.FC<{
         </ProgressBarWrapperStyle>
         {isWidget && (
           <>
-            <ProgressCounterStyle disabled={disabled} aria-hidden>
+            <ProgressCounterStyle
+              disabled={disabled}
+              aria-hidden
+              isWidget={isWidget}
+            >
               {!disabled && `${index}/${total}`}
             </ProgressCounterStyle>
 

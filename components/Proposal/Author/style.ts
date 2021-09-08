@@ -5,11 +5,17 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { SvgCheckedSymbol } from '@make.org/ui/Svg/elements';
 import { TextColors } from '@make.org/assets/vars/Colors';
 
-export const AuthorInfosStyle = styled.div`
+console.log(typography);
+export const AuthorInfosStyle = styled.div<{
+  isWidget?: boolean;
+}>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${props =>
+    props.isWidget
+      ? intToPx(typography.font.fontsize.X2S.value)
+      : intToPx(typography.font.fontsize.XS.value)};
   letter-spacing: 0.12px;
   color: ${color.greyDark};
 `;

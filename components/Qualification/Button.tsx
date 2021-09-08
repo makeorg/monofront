@@ -41,6 +41,8 @@ export const QualificationButton: React.FC<Props> = ({
   disableClick = false,
 }) => {
   const { dispatch, state } = useAppContext();
+  const { source } = state.appConfig;
+  const isWidget = source === 'widget';
   const [userQualification, setUserQualification] = useState(qualification);
   const { hasQualified, qualificationKey, count } = userQualification;
   const buttonLabel = i18n.t(`qualification.${qualificationKey}`);
@@ -128,6 +130,7 @@ export const QualificationButton: React.FC<Props> = ({
             data-cy-button="qualification"
             data-cy-qualification-key={qualificationKey}
             disabled={disableClick}
+            isWidget={isWidget}
           >
             {pendingQualification ? (
               <LoadingDots />
@@ -140,6 +143,7 @@ export const QualificationButton: React.FC<Props> = ({
               data-cy-button-qualification-total
               data-cy-qualification-key={qualificationKey}
               aria-hidden
+              isWidget={isWidget}
             >
               {count + 1}
             </CounterStyle>

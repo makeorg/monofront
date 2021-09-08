@@ -83,6 +83,9 @@ export const SequenceCard: React.FC<Props> = ({ card, question }) => {
   const isNoProposalCard = card.type === CARD.CARD_TYPE_NO_PROPOSAL_CARD;
   const topComponentContext: TopComponentContextValueType =
     TopComponentContextValue.getSequenceProposal();
+  const { state } = useAppContext();
+  const { source } = state.appConfig;
+  const isWidget = source === 'widget';
 
   useEffect(() => {
     if (isNoProposalCard) {
@@ -95,12 +98,13 @@ export const SequenceCard: React.FC<Props> = ({ card, question }) => {
     <>
       <TopComponentContext.Provider value={topComponentContext}>
         <SequenceCardStyle
-          className={!isProposalCard ? 'center' : ''}
+          className={isWidget ? 'widget' : ''}
           id={`card-${card.index}`}
           data-cy-card-type={card.type}
           data-cy-card-number={!isNoProposalCard && card.index + 1}
           aria-live="polite"
           isNoProposalCard={isNoProposalCard}
+          isProposalCard={isProposalCard}
         >
           <Card card={card} question={question} />
         </SequenceCardStyle>

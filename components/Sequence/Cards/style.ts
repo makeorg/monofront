@@ -14,11 +14,15 @@ import {
 } from '@make.org/ui/elements/FlexElements';
 import { SeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 
-export const SequenceCardStyle = styled.section<{ isNoProposalCard?: boolean }>`
+export const SequenceCardStyle = styled.section<{
+  isNoProposalCard?: boolean;
+  isProposalCard?: boolean;
+}>`
   position: relative;
   display: flex;
   flex-flow: column;
   align-items: center;
+  justify-content: ${props => (props.isProposalCard ? 'center' : '')};
   flex: 1;
   width: 100%;
   padding: ${({ isNoProposalCard = false }) =>
@@ -33,9 +37,6 @@ export const SequenceCardStyle = styled.section<{ isNoProposalCard?: boolean }>`
     margin: 5px 0px 20px;
     max-height: 295px;
     min-height: 295px;
-  }
-  &.center {
-    justify-content: center;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     max-height: 365px;
@@ -103,15 +104,21 @@ export const SequenceIntroParagraphStyle = styled.div`
   }
 `;
 
-export const SequenceProposalStyle = styled.blockquote`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+export const SequenceProposalStyle = styled.blockquote<{
+  isWidget: boolean;
+}>`
+  font-size: ${props =>
+    props.isWidget ? '14px' : intToPx(typography.font.fontsize.XS.value)};
   font-family: ${MakeFonts.CircularStandardBook};
   text-align: center;
   line-height: 1.64;
   letter-spacing: 0.11px;
   min-height: 82px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.M.value)};
+    font-size: ${props =>
+      props.isWidget
+        ? intToPx(typography.font.fontsize.XS.value)
+        : intToPx(typography.font.fontsize.M.value)};
     line-height: 1.5;
     letter-spacing: 0.12px;
     min-height: 60px;

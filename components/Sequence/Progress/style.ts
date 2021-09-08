@@ -60,11 +60,17 @@ export const ProgressNextIconStyle = styled(SvgPreviousArrowLeft)`
   }
 `;
 
-export const ProgressCounterStyle = styled.span<{ disabled?: boolean }>`
+export const ProgressCounterStyle = styled.span<{
+  disabled?: boolean;
+  isWidget?: boolean;
+}>`
   align-self: center;
   flex: 0;
   color: ${color.greyDark};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${props =>
+    props.isWidget
+      ? intToPx(typography.font.fontsize.X2S.value)
+      : intToPx(typography.font.fontsize.XS.value)};
   padding: ${({ disabled }) => (disabled ? '9px 12px' : '0 5px')};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     padding: ${({ disabled }) => (disabled ? '9px 12px' : '0 25px')};

@@ -104,12 +104,13 @@ export const ProposalAuthor: React.FC<Props> = ({
 }) => {
   const { state } = useAppContext();
   const { author } = proposal;
-  const { device } = state.appConfig;
+  const { device, source } = state.appConfig;
   const isMobile = matchMobileDevice(device);
   const avatarSize = setAvatarSize(isMobile, isSequence);
+  const isWidget = source === 'widget';
 
   return (
-    <AuthorInfosStyle>
+    <AuthorInfosStyle isWidget={isWidget}>
       <Avatar
         avatarUrl={author.avatarUrl || ''}
         isSequence

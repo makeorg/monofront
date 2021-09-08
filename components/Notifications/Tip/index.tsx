@@ -47,6 +47,7 @@ export const Tip: React.FC<Props> = ({ isFirstSequenceVote = false }) => {
         <TriangleUpStyle isFirstSequenceVote={isFirstSequenceVote} />
       )}
       <TipWrapperStyle
+        isWidget={isWidget}
         className={isFirstSequenceVote && !isWidget ? 'first-vote' : ''}
       >
         <TipCrossStyle

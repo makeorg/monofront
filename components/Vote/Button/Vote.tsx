@@ -2,6 +2,7 @@ import React from 'react';
 import { Tooltip } from '@make.org/ui/components/Tooltip';
 import { LoadingDots } from '@make.org/ui/components/Loading/Dots';
 import i18n from 'i18next';
+import { useAppContext } from '@make.org/store';
 import { VoteButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { VoteIconStyle } from '@make.org/ui/elements/SvgElements';
 
@@ -33,6 +34,9 @@ const VoteButtonItem = ({
       handleVote();
     }
   };
+  const { state } = useAppContext();
+  const { source } = state.appConfig;
+  const isWidget = source === 'widget';
 
   return (
     <VoteButtonStyle
@@ -46,11 +50,17 @@ const VoteButtonItem = ({
       data-cy-button="vote"
       data-cy-vote-key={voteKey}
       disabled={disableClick}
+      isWidget={isWidget}
     >
       {displayPending && !animateVote ? (
         <LoadingDots />
       ) : (
-        <VoteIconStyle className={buttonClass} aria-hidden focusable="false" />
+        <VoteIconStyle
+          isWidget={isWidget}
+          className={buttonClass}
+          aria-hidden
+          focusable="false"
+        />
       )}
     </VoteButtonStyle>
   );
