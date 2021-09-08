@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { SvgPreviousArrowLeft } from '@make.org/ui/Svg/elements';
 import { color, typography } from 'athena-design-tokens';
 import {
@@ -17,21 +17,12 @@ const ProgressWidgetStyle = `
     fill: rgba(0, 0, 0, 0.15);
   }
 `;
-export const ProgressPreviousButtonStyle = styled(UnstyledButtonStyle)<{
-  isWidget?: boolean;
-}>`
+export const ProgressPreviousButtonStyle = styled(UnstyledButtonStyle)`
   flex: 0;
   padding: 5px 15px;
   border-radius: 20px;
   background-color: ${color.white};
   border-radius: 20px;
-  ${({ isWidget }) =>
-    isWidget
-      ? css`
-          ${ProgressWidgetStyle}
-          margin-right: 9px;
-        `
-      : ''}
   &:disabled .tofill {
     fill: ${color.grey};
   }
@@ -75,14 +66,11 @@ export const ProgressCounterStyle = styled.span<{
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     padding: ${({ disabled }) => (disabled ? '9px 12px' : '0 25px')};
   }
-  ${({ disabled }) =>
-    disabled
-      ? css`
-          margin: 0 12px;
-          border-radius: 20px;
-          background-color: ${color.greyLighter};
-        `
-      : ''}
+  &:disabled {
+    margin: 0 12px;
+    border-radius: 20px;
+    background-color: ${color.greyLighter};
+  }
 `;
 
 export const ProgressBarWrapperStyle = styled.div`
