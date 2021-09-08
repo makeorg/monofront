@@ -109,6 +109,6 @@ COPY --from=base-production /usr/app/node_modules ./node_modules
 
 EXPOSE 8000
 
-CMD [ "pm2-runtime", "start", "ecosystem.config.js" ]
+CMD [ "pm2-runtime", "start", "ecosystem.config.js", "--only", "app-production" ]
 
 HEALTHCHECK --interval=20s CMD curl --fail http://localhost:8000 || exit 1

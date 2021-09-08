@@ -57,27 +57,6 @@
     "webpack-node-externals": "^3.0.0",
     "winston": "~3.3.3"
   },
-  "devDependencies": {
-    "@babel/core": "^7.15.0",
-    "@babel/plugin-proposal-optional-chaining": "^7.14.5",
-    "@babel/preset-typescript": "^7.15.0",
-    "@babel/register": "^7.14.5",
-    "@cypress/code-coverage": "^3.9.10",
-    "@loadable/babel-plugin": "^5.13.2",
-    "@types/memory-cache": "^0.2.1",
-    "babel-loader": "^8.2.2",
-    "cypress": "^7.4.0",
-    "cypress-cucumber-preprocessor": "^4.1.2",
-    "cypress-html-validate": "^1.5.1",
-    "cypress-wait-until": "^1.7.1",
-    "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.3.2",
-    "prom-client": "^13.1.0",
-    "tsconfig-paths": "^3.9.0",
-    "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2",
-    "yaml-loader": "^0.6.0"
-  },
   "scripts": {
     "dev": "webpack serve --mode development --progress --color --config ./webpack/dev.config.js",
     "build": "webpack --mode production --progress --color --config ./webpack/build.config.js",

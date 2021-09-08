@@ -85,7 +85,6 @@ export const SequenceProgress: React.FC<{
           disabled={currentIndex === 0 || disabled}
           aria-label={i18n.t('sequence_progress.previous')}
           data-cy-button="progress-previous"
-          isWidget={isWidget}
         >
           <ProgressIconStyle
             className={isWidget ? 'widget' : ''}
