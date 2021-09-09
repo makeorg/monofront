@@ -6,7 +6,6 @@ import {
 } from '@make.org/utils/services/Tracking';
 import i18n from 'i18next';
 import { resetSequenceVotedProposals } from '@make.org/store/actions/sequence';
-import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
 import {
   LinkAsRedButtonStyle,
   RedButtonAsLinkStyle,
@@ -21,6 +20,7 @@ import {
   SequenceParagraphStyle,
   FinalCardSeparatorStyle,
   FinalCardRegisterStyle,
+  FinalCardWrapperStyle,
 } from './style';
 
 type Props = {
@@ -44,7 +44,7 @@ export const FinalCard: React.FC<Props> = ({ questionSlug }) => {
   }, []);
 
   return (
-    <CenterColumnStyle data-cy-container="final-card">
+    <FinalCardWrapperStyle data-cy-container="final-card">
       <SequenceAltTitleStyle data-cy-container="final-card-title">
         {i18n.t('final_card.title')}
       </SequenceAltTitleStyle>
@@ -93,6 +93,6 @@ export const FinalCard: React.FC<Props> = ({ questionSlug }) => {
           {i18n.t('final_card.register.button_text')}
         </RedButtonAsLinkStyle>
       </FinalCardRegisterStyle>
-    </CenterColumnStyle>
+    </FinalCardWrapperStyle>
   );
 };

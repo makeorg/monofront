@@ -14,6 +14,7 @@ import { BlackBorderButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import {
   SequenceIntroParagraphStyle,
   SequencePushProposalButtonStyle,
+  PushProposalWrapperStyle,
 } from './style';
 import { SkipIconStyle } from './ExtraData/style';
 
@@ -29,8 +30,11 @@ export const PushProposalCard: React.FC = () => {
   }, []);
 
   return (
-    <>
-      <SequenceIntroParagraphStyle className="with-margin-bottom">
+    <PushProposalWrapperStyle>
+      <SequenceIntroParagraphStyle
+        className="with-margin-bottom"
+        isWidget={isWidget}
+      >
         {i18n.t('push_proposal_card.title')}
       </SequenceIntroParagraphStyle>
       <MiddleColumnToRowStyle column>
@@ -52,6 +56,6 @@ export const PushProposalCard: React.FC = () => {
           {i18n.t('push_proposal_card.next-cta')}
         </BlackBorderButtonStyle>
       </MiddleColumnToRowStyle>
-    </>
+    </PushProposalWrapperStyle>
   );
 };

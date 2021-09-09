@@ -5,7 +5,6 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { SvgCheckedSymbol } from '@make.org/ui/Svg/elements';
 import { TextColors } from '@make.org/assets/vars/Colors';
 
-console.log(typography);
 export const AuthorInfosStyle = styled.div<{
   isWidget?: boolean;
 }>`

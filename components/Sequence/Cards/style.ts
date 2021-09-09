@@ -5,13 +5,13 @@ import { color, typography } from 'athena-design-tokens';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import {
-  GreyButtonStyle,
-  RedButtonStyle,
-} from '@make.org/ui/elements/ButtonsElements';
-import {
   CenterColumnStyle,
   SpaceBetweenRowStyle,
 } from '@make.org/ui/elements/FlexElements';
+import {
+  GreyButtonStyle,
+  RedButtonStyle,
+} from '@make.org/ui/elements/ButtonsElements';
 import { SeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 
 export const SequenceCardStyle = styled.section<{
@@ -71,6 +71,10 @@ export const SequenceMainTitleStyle = styled(SequenceTitleStyle)`
   }
 `;
 
+export const FinalCardWrapperStyle = styled(CenterColumnStyle)`
+  margin: auto;
+`;
+
 export const SequenceAltTitleStyle = styled(SequenceTitleStyle)`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   margin-bottom: 10px;
@@ -88,7 +92,15 @@ export const SequenceWrapperStyle = styled.div`
   align-items: center;
 `;
 
-export const SequenceIntroParagraphStyle = styled.div`
+export const PushProposalWrapperStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+`;
+export const SequenceIntroParagraphStyle = styled.div<{ isWidget?: boolean }>`
   width: 100%;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   line-height: 1.5;
@@ -97,7 +109,10 @@ export const SequenceIntroParagraphStyle = styled.div`
     margin-bottom: 15px;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.M.value)};
+    font-size: ${props =>
+      props.isWidget
+        ? intToPx(typography.font.fontsize.XS.value)
+        : intToPx(typography.font.fontsize.M.value)};
     &.with-margin-bottom {
       margin-bottom: 30px;
     }

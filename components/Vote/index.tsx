@@ -241,7 +241,7 @@ export const Vote: React.FC<Props> = ({
         <ScreenReaderItemStyle as="p">
           {i18n.t('vote.intro_title')}
         </ScreenReaderItemStyle>
-        <VoteWrapperStyle>
+        <VoteWrapperStyle isWidget={isWidget}>
           {voteStaticParamsKeys.map((voteKey: string) => (
             <VoteButtonWrapperStyle
               as="li"
