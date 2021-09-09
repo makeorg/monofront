@@ -9,14 +9,14 @@ import { setPanelContent } from '@make.org/store/actions/panel';
 import { ProposalJourney } from '@make.org/components/Proposal/Submit/Journey';
 import { TriggerIconStyle } from '@make.org/components/Proposal/Submit/style';
 import { RedButtonAsLinkStyle } from '@make.org/ui/elements/ButtonsElements';
+import { isInProgress } from '@make.org/utils/helpers/date';
 import { LogoStyle, PanelContainer } from './style';
 
 export const HeaderPanel: FC = () => {
   const { state, dispatch } = useAppContext();
   const question: QuestionType = selectCurrentQuestion(state);
-  const { unsecure, source } = state.appConfig;
-  const canPropose = question.canPropose && !unsecure;
-  const isWidget = source === 'widget';
+  const { unsecure } = state.appConfig;
+  const canPropose = question.canPropose && !unsecure && isInProgress(question);
 
   return (
     <PanelContainer>
@@ -27,13 +27,13 @@ export const HeaderPanel: FC = () => {
             {i18n.t('header.logo_alt')}
           </ScreenReaderItemStyle>
         </h1>
-        <SequenceTitleStyle className={isWidget ? 'widget' : ''}>
+        <SequenceTitleStyle className="widget">
           {question.question}
         </SequenceTitleStyle>
       </div>
       {canPropose && (
         <RedButtonAsLinkStyle
-          className={isWidget ? 'widget' : ''}
+          className="widget"
           onClick={() => dispatch(setPanelContent(<ProposalJourney />))}
           data-cy-button="final-card-register-button"
         >

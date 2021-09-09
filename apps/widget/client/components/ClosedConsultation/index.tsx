@@ -43,7 +43,7 @@ export const ClosedConsultation: FC = () => {
       <HeaderPanel />
       <SequenceContainerStyle data-cy-container="sequence" className="widget">
         <SequenceContentStyle>
-          <SequenceCardStyle className="center">
+          <SequenceCardStyle className="center widget" isProposalCard>
             <SequenceMainTitleStyle>
               {i18n.t('unsecure.title')}
             </SequenceMainTitleStyle>
