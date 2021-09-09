@@ -8,9 +8,13 @@ import { QuestionType } from '@make.org/types';
 import { setPanelContent } from '@make.org/store/actions/panel';
 import { ProposalJourney } from '@make.org/components/Proposal/Submit/Journey';
 import { TriggerIconStyle } from '@make.org/components/Proposal/Submit/style';
-import { RedButtonAsLinkStyle } from '@make.org/ui/elements/ButtonsElements';
 import { isInProgress } from '@make.org/utils/helpers/date';
-import { LogoStyle, PanelContainer } from './style';
+import {
+  MainTitleStyle,
+  LogoStyle,
+  PanelContainer,
+  ProposeButtonStyle,
+} from './style';
 
 export const HeaderPanel: FC = () => {
   const { state, dispatch } = useAppContext();
@@ -20,26 +24,24 @@ export const HeaderPanel: FC = () => {
 
   return (
     <PanelContainer>
-      <div>
-        <h1>
-          <LogoStyle focusable="false" aria-hidden />
-          <ScreenReaderItemStyle>
-            {i18n.t('header.logo_alt')}
-          </ScreenReaderItemStyle>
-        </h1>
-        <SequenceTitleStyle className="widget">
-          {question.question}
-        </SequenceTitleStyle>
-      </div>
+      <MainTitleStyle>
+        <LogoStyle focusable="false" aria-hidden />
+        <ScreenReaderItemStyle>
+          {i18n.t('header.logo_alt')}
+        </ScreenReaderItemStyle>
+      </MainTitleStyle>
+      <SequenceTitleStyle className="widget">
+        {question.question}
+      </SequenceTitleStyle>
       {canPropose && (
-        <RedButtonAsLinkStyle
+        <ProposeButtonStyle
           className="widget"
           onClick={() => dispatch(setPanelContent(<ProposalJourney />))}
           data-cy-button="final-card-register-button"
         >
           <TriggerIconStyle aria-hidden focusable="false" />
           {i18n.t('proposal_submit.form.panel_trigger')}
-        </RedButtonAsLinkStyle>
+        </ProposeButtonStyle>
       )}
     </PanelContainer>
   );

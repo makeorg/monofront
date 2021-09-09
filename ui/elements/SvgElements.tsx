@@ -22,9 +22,7 @@ import {
 } from '../Svg/elements';
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-export const VoteIconStyle = styled(props => <SvgThumbsUp {...props} />)<{
-  isWidget: boolean;
-}>`
+export const VoteIconStyle = styled(props => <SvgThumbsUp {...props} />)`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -41,10 +39,16 @@ export const VoteIconStyle = styled(props => <SvgThumbsUp {...props} />)<{
     transform: translate(-50%, -50%) rotate(-90deg);
   }
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    width: ${props => (props.isWidget ? '18px' : '22px')};
+    width: 22px;
+    &.widget {
+      width: 18px;
+    }
   }
   @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
-    width: ${props => (props.isWidget ? '18px' : '25px')};
+    width: 25px;
+    &.widget {
+      width: 18px;
+    }
   }
 `;
 

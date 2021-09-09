@@ -42,7 +42,7 @@ export const Modal: React.FC = () => {
       <ReactModal
         isOpen={isOpen}
         overlayClassName="modal-overlay"
-        className={isWidget ? 'modal-dialog' : 'modal-dialog widget'}
+        className={isWidget ? 'modal-dialog widget' : 'modal-dialog'}
         shouldReturnFocusAfterClose={focusAfterClose}
       >
         <CloseButtonStyle

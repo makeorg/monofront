@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import {
   SkeletonCardStyle,
   SkeletonRoundStyle,
@@ -6,8 +6,12 @@ import {
   SkeletonVoteWrapperStyle,
 } from './style';
 
-export const ProposalSkeleton: React.FC = () => (
-  <SkeletonCardStyle>
+type Props = {
+  isWidget?: boolean;
+};
+
+export const ProposalSkeleton: FC<Props> = ({ isWidget }) => (
+  <SkeletonCardStyle className={isWidget ? 'widget' : ''}>
     <SkeletonRoundStyle className="avatar" />
     <SkeletonLineStyle className="small name" />
     <SkeletonLineStyle className="medium proposal" />

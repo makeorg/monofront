@@ -8,6 +8,7 @@ import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElemen
 import { voteStaticParams } from '@make.org/utils/constants/vote';
 import { Tooltip } from '@make.org/ui/components/Tooltip';
 import i18n from 'i18next';
+import { useAppContext } from '@make.org/store';
 import {
   VoteResultContainerStyle,
   VoteResultGraphStyle,
@@ -47,6 +48,9 @@ export const VoteResult: React.FC<Props> = ({
   disableClick = false,
   withTooltip = true,
 }) => {
+  const { state } = useAppContext();
+  const { source } = state.appConfig;
+  const isWidget = source === 'widget';
   const votesCount = getTotalVotesCount(votes);
   const voteKeys = Object.keys(voteStaticParams);
   const votesPercent = getVotesPercent(votes, votesCount);
@@ -72,7 +76,6 @@ export const VoteResult: React.FC<Props> = ({
           withTooltip={withTooltip}
         />
       </VoteButtonWrapperStyle>
-
       <ScreenReaderItemStyle as="p">
         {i18n.t('results.total', { count: votesCount })}
       </ScreenReaderItemStyle>
@@ -86,7 +89,7 @@ export const VoteResult: React.FC<Props> = ({
           </li>
         ))}
       </ScreenReaderItemStyle>
-      <VoteResultGraphStyle>
+      <VoteResultGraphStyle className={isWidget ? 'widget' : ''}>
         {voteKeys.map(voteKey => (
           <VoteResultItemStyle key={`${voteKey}_item_${proposalId}`}>
             <Tooltip
@@ -94,6 +97,7 @@ export const VoteResult: React.FC<Props> = ({
               direction="left"
             >
               <VoteResultBarStyle
+                className={isWidget ? 'widget' : ''}
                 aria-label={i18n.t('common.display_tooltip')}
                 color={voteStaticParams[voteKey].color}
                 percent={votesPercent[voteKey]}
@@ -102,7 +106,10 @@ export const VoteResult: React.FC<Props> = ({
           </VoteResultItemStyle>
         ))}
       </VoteResultGraphStyle>
-      <VoteResultTotalLabelStyle aria-hidden>
+      <VoteResultTotalLabelStyle
+        className={isWidget ? 'widget' : ''}
+        aria-hidden
+      >
         {i18n.t('vote.label', { count: votesCount })}
       </VoteResultTotalLabelStyle>
     </VoteResultContainerStyle>

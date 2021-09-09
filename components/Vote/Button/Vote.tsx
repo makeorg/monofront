@@ -53,11 +53,10 @@ const VoteButtonItem = ({
       isWidget={isWidget}
     >
       {displayPending && !animateVote ? (
-        <LoadingDots />
+        <LoadingDots isWidget={isWidget} />
       ) : (
         <VoteIconStyle
-          isWidget={isWidget}
-          className={buttonClass}
+          className={isWidget ? `${buttonClass} widget` : buttonClass}
           aria-hidden
           focusable="false"
         />

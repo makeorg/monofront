@@ -133,7 +133,7 @@ export const QualificationButton: React.FC<Props> = ({
             isWidget={isWidget}
           >
             {pendingQualification ? (
-              <LoadingDots />
+              <LoadingDots isWidget={isWidget} />
             ) : (
               <span aria-hidden>{buttonLabel}</span>
             )}

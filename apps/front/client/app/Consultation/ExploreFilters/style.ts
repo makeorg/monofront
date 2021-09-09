@@ -18,6 +18,7 @@ import {
 export const FiltersWrapperStyle = styled(ColumnElementStyle)`
   width: 100%;
   justify-content: space-between;
+  margin-bottom: 40px;
 `;
 
 export const FilterBlockStyle = styled.div`

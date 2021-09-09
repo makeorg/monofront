@@ -8,7 +8,7 @@ import i18n from 'i18next';
 import { resetSequenceVotedProposals } from '@make.org/store/actions/sequence';
 import {
   LinkAsRedButtonStyle,
-  RedButtonAsLinkStyle,
+  RedLinkButtonStyle,
 } from '@make.org/ui/elements/ButtonsElements';
 
 import { getParticipateLink } from '@make.org/utils/helpers/url';
@@ -86,12 +86,12 @@ export const FinalCard: React.FC<Props> = ({ questionSlug }) => {
       </div>
       <FinalCardRegisterStyle data-cy-container="final-card-register-intro">
         {!isWidget && i18n.t('final_card.register.button_intro')}
-        <RedButtonAsLinkStyle
+        <RedLinkButtonStyle
           onClick={handleClick}
           data-cy-button="final-card-register-button"
         >
           {i18n.t('final_card.register.button_text')}
-        </RedButtonAsLinkStyle>
+        </RedLinkButtonStyle>
       </FinalCardRegisterStyle>
     </FinalCardWrapperStyle>
   );

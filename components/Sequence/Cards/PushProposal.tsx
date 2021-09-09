@@ -10,11 +10,11 @@ import { incrementSequenceIndex } from '@make.org/store/actions/sequence';
 import { setPanelContent } from '@make.org/store/actions/panel';
 import { useAppContext } from '@make.org/store';
 import { ProposalJourney } from '@make.org/components/Proposal/Submit/Journey';
-import { BlackBorderButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import {
   SequenceIntroParagraphStyle,
   SequencePushProposalButtonStyle,
   PushProposalWrapperStyle,
+  SequencePushProposalNextButtonStyle,
 } from './style';
 import { SkipIconStyle } from './ExtraData/style';
 
@@ -44,8 +44,7 @@ export const PushProposalCard: React.FC = () => {
           <PencilIconStyle aria-hidden focusable="false" />
           {i18n.t('common.propose')}
         </SequencePushProposalButtonStyle>
-        <BlackBorderButtonStyle
-          className={isWidget ? 'widget' : ''}
+        <SequencePushProposalNextButtonStyle
           onClick={() => {
             trackClickProposalPushCardIgnore();
             dispatch(incrementSequenceIndex());
@@ -54,7 +53,7 @@ export const PushProposalCard: React.FC = () => {
         >
           <SkipIconStyle aria-hidden focusable="false" />
           {i18n.t('push_proposal_card.next-cta')}
-        </BlackBorderButtonStyle>
+        </SequencePushProposalNextButtonStyle>
       </MiddleColumnToRowStyle>
     </PushProposalWrapperStyle>
   );

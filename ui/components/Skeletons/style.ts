@@ -6,30 +6,6 @@ import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { SeparatorStyle } from '../../elements/SeparatorsElements';
 import { SpaceBetweenRowStyle } from '../../elements/FlexElements';
 
-export const SequenceSkeletonCardStyle = styled.div`
-  position: relative;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  flex: 1;
-  width: 100%;
-  padding: 0 20px;
-  background-color: ${color.white};
-  border-radius: 8px;
-  box-shadow: 0 2px 3px 0 ${ShadowColors.BlackZeroTwoOpacity};
-  margin: 20px auto 40px;
-  min-height: 315px;
-  &.center {
-    justify-content: center;
-  }
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    max-height: 365px;
-    min-height: 365px;
-    padding: 0 30px;
-    margin-top: 30px;
-  }
-`;
-
 export const SkeletonCardStyle = styled.div`
   position: relative;
   display: flex;
@@ -41,6 +17,12 @@ export const SkeletonCardStyle = styled.div`
   background-color: ${color.white};
   border-radius: 8px;
   box-shadow: 0 2px 3px 0 ${ShadowColors.BlackZeroTwoOpacity};
+  max-height: 365px;
+  margin: 20px 0 40px;
+  &.widget {
+    max-height: 235px;
+    margin: 10px 0 10px;
+  }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     padding: 0 30px;
   }

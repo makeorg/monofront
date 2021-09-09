@@ -52,10 +52,9 @@ export const CommitmentQualification: FC<Props> = ({
           isWidget={isWidget}
         >
           <VoteIconStyle
-            className={voteValue}
+            className={isWidget ? `${voteValue} widget` : voteValue}
             aria-hidden
             focusable="false"
-            isWidget={isWidget}
           />
         </VoteButtonStyle>
         <ScreenReaderItemStyle as="p">

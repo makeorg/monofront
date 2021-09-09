@@ -156,6 +156,7 @@ export const SocialButtonStyle = styled(ActiveButtonStyle)`
     padding: 10px 20px;
   }
 `;
+
 export const RedLinkButtonStyle = styled(UnstyledButtonStyle)`
   display: inline-block;
   color: ${color.brandSecondary};
@@ -169,13 +170,6 @@ export const RedButtonAsLinkStyle = styled(UnstyledButtonStyle)`
   color: ${color.brandSecondary};
   text-transform: uppercase;
   text-decoration: underline;
-  &.widget {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
-    padding: 15px 0px 20px;
-    @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-      padding: 20px 0px;
-    }
-  }
   &:hover,
   &:focus {
     color: ${color.brandSecondary};
@@ -218,7 +212,7 @@ export const QualifyButtonStyle = styled.button<{ isWidget?: boolean }>`
     props.isWidget
       ? intToPx(typography.font.fontsize.X2S.value)
       : intToPx(typography.font.fontsize.XS.value)};
-  line-height: 26px;
+  line-height: ${props => (props.isWidget ? '21px' : '26px')};
   border-style: solid;
   padding: 0 10px;
   border-radius: 36px;
@@ -408,7 +402,4 @@ export const BlackBorderButtonStyle = styled.button.attrs(props => ({
 }))`
   ${BasicButtonStyle};
   ${BlackBordersStyle};
-  &.widget {
-    margin-top: 18px;
-  }
 `;

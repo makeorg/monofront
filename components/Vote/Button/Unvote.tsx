@@ -50,9 +50,13 @@ const UnvoteButtonItem: React.FC<ButtonProps> = ({
       isWidget={isWidget}
     >
       {displayPending ? (
-        <LoadingDots />
+        <LoadingDots isWidget={isWidget} />
       ) : (
-        <VoteIconStyle className={buttonClass} aria-hidden focusable="false" />
+        <VoteIconStyle
+          className={isWidget ? `${buttonClass} widget` : buttonClass}
+          aria-hidden
+          focusable="false"
+        />
       )}
     </VoteButtonStyle>
   );

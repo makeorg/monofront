@@ -10,7 +10,7 @@ export const WidgetContainer = styled.div`
   border: 1px solid ${BorderColors.LightGrey};
   flex-direction: column;
   max-width: 320px;
-  height: 551px;
+  height: 550px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     max-width: 634px;
   }

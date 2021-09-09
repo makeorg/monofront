@@ -9,43 +9,50 @@ import {
   SpaceBetweenRowStyle,
 } from '@make.org/ui/elements/FlexElements';
 import {
+  BlackBorderButtonStyle,
   GreyButtonStyle,
   RedButtonStyle,
 } from '@make.org/ui/elements/ButtonsElements';
 import { SeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 
-export const SequenceCardStyle = styled.section<{
-  isNoProposalCard?: boolean;
-  isProposalCard?: boolean;
-}>`
+export const SequenceCardStyle = styled.section`
   position: relative;
   display: flex;
   flex-flow: column;
   align-items: center;
-  justify-content: ${props => (props.isProposalCard ? 'center' : '')};
   flex: 1;
   width: 100%;
-  padding: ${({ isNoProposalCard = false }) =>
-    isNoProposalCard ? '60px 20px' : '0 20px'};
+  padding: 0 20px;
   background-color: ${color.white};
   border-radius: 8px;
   box-shadow: 0 2px 3px 0 ${ShadowColors.BlackZeroTwoOpacity};
-  margin: ${({ isNoProposalCard = false }) =>
-    isNoProposalCard ? '20px auto 0px' : '20px auto 40px'};
+  margin: 20px auto 40px;
   min-height: 315px;
   &.widget {
     margin: 5px 0px 20px;
+    padding: 0 10px;
     max-height: 295px;
     min-height: 295px;
+  }
+  &.center {
+    justify-content: center;
+  }
+  &.no-proposal {
+    justify-content: center;
+    padding: 60px 20px;
+    margin: 20px auto 0px;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     max-height: 365px;
     min-height: 365px;
-    padding: ${({ isNoProposalCard = false }) =>
-      isNoProposalCard ? '70px 30px 40px' : '0 30px'};
+    padding: 0 30px;
     margin-top: 30px;
     &.widget {
       margin-top: 10px;
+      padding: 0 20px;
+    }
+    &.no-proposal {
+      padding: 70px 30px 40px;
     }
   }
 `;
@@ -139,6 +146,7 @@ export const SequenceProposalStyle = styled.blockquote`
     max-width: 770px;
     &.widget {
       font-size: ${intToPx(typography.font.fontsize.XS.value)};
+      align-items: flex-start;
     }
   }
 `;
@@ -159,16 +167,10 @@ export const SequencePushProposalButtonStyle = styled(RedButtonStyle)`
   }
 `;
 
-export const SequencePushProposalNextButtonStyle = styled(GreyButtonStyle)`
-  width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    width: auto;
-    margin: 0 10px;
-    padding-left: 25px;
-    padding-right: 25px;
-  }
+export const SequencePushProposalNextButtonStyle = styled(
+  BlackBorderButtonStyle
+)`
+  margin-top: 15px;
 `;
 
 export const SequenceSignUpNextButtonStyle = styled(GreyButtonStyle)`

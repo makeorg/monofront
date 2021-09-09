@@ -137,7 +137,7 @@ export const ProposalForm: React.FC<Props> = ({
         data-cy-button="proposal-submit"
       >
         {waitingApiCallback ? (
-          <LoadingDots />
+          <LoadingDots isWidget={isWidget} />
         ) : (
           i18n.t('proposal_submit.form.button_submit')
         )}

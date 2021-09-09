@@ -27,7 +27,7 @@ import { ParticipateHighlights } from '../../app/Consultation/Highlights';
 import { ParticipateHeader } from '../../app/Consultation/Header';
 import { CitizenRegister } from '../../app/Consultation/CitizenRegister';
 import { FilterAndSort } from '../../app/Consultation/ExploreFilters';
-import { SortAndFiltersCTA } from '../../app/Consultation/ExploreFilters/FilterAndSortPanel';
+// import { SortAndFiltersCTA } from '../../app/Consultation/ExploreFilters/FilterAndSortPanel';
 import {
   ParticipateContentStyle,
   ParticipateInnerStyle,
@@ -199,7 +199,7 @@ const ExplorePage: FC = () => {
             )}
           </ParticipateMainContentStyle>
           <ParticipateSidebarContentStyle>
-            {isDesktop ? (
+            {isDesktop && (
               <FilterAndSort
                 filterAndSortValues={filterAndSortValues}
                 setFilterAndSortValues={setFilterAndSortValues}
@@ -207,15 +207,16 @@ const ExplorePage: FC = () => {
                 handleSubmit={handleSubmit}
                 handleReset={handleReset}
               />
-            ) : (
-              <SortAndFiltersCTA
-                filterAndSortValues={filterAndSortValues}
-                setFilterAndSortValues={setFilterAndSortValues}
-                keywords={keyword}
-                handleSubmit={handleSubmit}
-                handleReset={handleReset}
-              />
             )}
+            {/* // ) : (
+            //   <SortAndFiltersCTA
+            //     filterAndSortValues={filterAndSortValues}
+            //     setFilterAndSortValues={setFilterAndSortValues}
+            //     keywords={keyword}
+            //     handleSubmit={handleSubmit}
+            //     handleReset={handleReset}
+            //   />
+            // )} */}
           </ParticipateSidebarContentStyle>
         </ParticipateInnerStyle>
       </ParticipateContentStyle>
