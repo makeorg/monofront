@@ -102,7 +102,8 @@
       "card_title": "Pour retrouver l’historique de vos votes",
       "facebook_connect": "Continuer avec Facebook",
       "google_connect": "Continuer avec Google",
-      "email_register": "S’inscrire par mail"
+      "email_register": "S’inscrire par mail",
+      "count_register": "({{count}}/2)"
     },
     "form": {
       "hide_password": "Masquer le mot de passe",
@@ -402,13 +403,15 @@
       "panel_trigger": "Je propose une solution",
       "button_cancel": "Annuler",
       "button_submit": "Valider",
-      "moderation_link": "Lire notre charte de modération"
+      "read_our": "Lire notre",
+      "moderation_link": "charte de modération"
     },
     "authentication": {
       "button_back": "Modifier ma proposition",
       "title": "Pour valider ma proposition",
       "subtitle": "Je m'inscris avec",
-      "button_login": "J’ai déjà un compte, je me connecte"
+      "button_login_text": "J’ai déjà un compte,",
+      "button_login_link": "je me connecte"
     },
     "success": {
       "title": "Merci {{name}} !",

@@ -13,11 +13,15 @@ import { useAppContext } from '@make.org/store';
 import { throttle } from '@make.org/utils/helpers/throttle';
 import { getGTUPageLink } from '@make.org/utils/helpers/url';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import { ConditionParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
+import { ConditionParagraphStylePanel } from '@make.org/ui/elements/ParagraphElements';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { RegisterCheckBox } from '@make.org/components/Form/CheckBox/RegisterCheckbox';
 import { FormErrors } from '../../Form/Errors';
-import { TermsOfUseLinkStyle, NewWindowIconStyle } from '../style';
+import {
+  NewWindowIconStyle,
+  RegisterEmailTitleStyle,
+  PanelTermsOfUseLinkStyle,
+} from '../style';
 import { EmailPasswordFields } from '../CommonFields/EmailPassword';
 import { ExtraInRegisterformationsFields } from '../CommonFields/ExtraRegisterInformations';
 
@@ -55,6 +59,10 @@ export const RegisterFormPanel: React.FC<Props> = ({
       id={FORM.REGISTER_PANEL_FORMNAME}
       onSubmit={throttle(handleSubmit)}
     >
+      <RegisterEmailTitleStyle>
+        {i18n.t('common.social_login.email_register')}{' '}
+        {i18n.t('common.social_login.count_register', { count: step })}
+      </RegisterEmailTitleStyle>
       <FormRequirementsStyle>
         {i18n.t('common.form.requirements')}
       </FormRequirementsStyle>
@@ -68,7 +76,6 @@ export const RegisterFormPanel: React.FC<Props> = ({
             passwordError={passwordError}
             handleChange={handleChange}
           />
-          <RegisterCheckBox handleLegalField={handleLegalField} required />
           <RedButtonStyle
             onClick={() => setStep(2)}
             disabled={!user.password || !user.email}
@@ -88,23 +95,23 @@ export const RegisterFormPanel: React.FC<Props> = ({
             postalcodeError={postalcodeError}
             handleChange={handleChange}
           />
-          <ConditionParagraphStyle>
+          <ConditionParagraphStylePanel>
             <span>
               {i18n.t('register.gtu_text_first')}
-              <TermsOfUseLinkStyle
+              <PanelTermsOfUseLinkStyle
                 href={getGTUPageLink(country, language)}
                 target="_blank"
                 rel="noopener"
               >
                 {i18n.t('register.gtu_link')}
-                <NewWindowIconStyle />
+                <NewWindowIconStyle isGrey />
                 <ScreenReaderItemStyle>
                   {i18n.t('common.open_new_window')}
                 </ScreenReaderItemStyle>
-              </TermsOfUseLinkStyle>
-              {i18n.t('register.gtu_text_second')}
+              </PanelTermsOfUseLinkStyle>
             </span>
-          </ConditionParagraphStyle>
+          </ConditionParagraphStylePanel>
+          <RegisterCheckBox handleLegalField={handleLegalField} required />
           <SubmitButton
             formName={FORM.REGISTER_PANEL_FORMNAME}
             id="authentication-register-submit"

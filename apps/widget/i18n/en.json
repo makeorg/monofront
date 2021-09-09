@@ -163,7 +163,8 @@
       "card_title": "To find the history of your votes",
       "facebook_connect": "Continue with Facebook",
       "google_connect": "Continue with Google",
-      "email_register": "Sign up with email"
+      "email_register": "Sign up with email",
+      "count_register": "({{count}}/2)"
     },
     "from": "on",
     "email": "Email",
@@ -319,13 +320,15 @@
       "panel_trigger": "I write a solution",
       "button_cancel": "Cancel",
       "button_submit": "Validate",
-      "moderation_link": "Read our moderation charter"
+      "read_our": "Read our",
+      "moderation_link": "moderation charter"
     },
     "authentication": {
       "button_back": "Modify my solution",
       "title": "To validate my solution",
       "subtitle": "Sign up with",
-      "button_login": "I already have an account, log me in"
+      "button_login_text": "I already have an account,",
+      "button_login_link": "log me in"
     }
   },
   "vote": {

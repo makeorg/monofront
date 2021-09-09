@@ -45,3 +45,12 @@ export const ConditionParagraphStyle = styled(InlineParagraphStyle)`
     color: ${color.brandSecondary};
   }
 `;
+
+export const ConditionParagraphStylePanel = styled(InlineParagraphStyle)`
+  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  width: 100%;
+  margin-bottom: 20px;
+  a {
+    color: ${color.greyDark};
+  }
+`;

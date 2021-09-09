@@ -372,6 +372,16 @@ const BlackBordersStyle = `
   }
 `;
 
+export const BlackNoBackgroundButtonStyle = styled(UnstyledButtonStyle)`
+  ${ButtonNoBackgroundStyle};
+  background-color: transparent;
+  color: ${color.black};
+  border: none;
+  .tofill {
+    fill: ${color.black};
+  }
+`;
+
 export const GreyNoBackgroundButtonStyle = styled(UnstyledButtonStyle)<{
   bold?: boolean;
 }>`

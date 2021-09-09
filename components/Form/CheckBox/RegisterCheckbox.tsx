@@ -34,7 +34,7 @@ export const RegisterCheckBox: React.FC<Props> = ({
 
   return (
     <CheckboxWrapper>
-      <CheckboxLabelStyle noFontSizeChange>
+      <CheckboxLabelStyle noFontSizeChange={false} isPanel>
         <HiddenCheckbox
           required={required}
           checked={checked}
@@ -50,9 +50,10 @@ export const RegisterCheckBox: React.FC<Props> = ({
             href={getDataPageLink(country, language)}
             target="_blank"
             rel="noopener"
+            isPanel
           >
             {i18n.t('legal_consent.privacy_policy')}
-            <NewWindowIconStyle />
+            <NewWindowIconStyle isGrey />
             <ScreenReaderItemStyle>
               {i18n.t('common.open_new_window')}
             </ScreenReaderItemStyle>

@@ -106,11 +106,30 @@ export const TermsOfUseLinkStyle = styled.a`
   }
 `;
 
-export const NewWindowIconStyle = styled(SvgExternalLinkPlain)`
+export const PanelTermsOfUseLinkStyle = styled(TermsOfUseLinkStyle)`
+  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  &:hover,
+  &:focus {
+    color: ${color.greyDark};
+  }
+`;
+
+console.log(typography);
+console.log(color);
+export const NewWindowIconStyle = styled(SvgExternalLinkPlain)<{
+  isGrey?: boolean;
+}>`
   width: 9px;
   height: 9px;
   padding-left: 2px;
   .tofill {
-    fill: ${color.brandSecondary};
+    fill: ${props => (props.isGrey ? 'color.grey' : 'color.brandSecondary')};
   }
+`;
+
+export const RegisterEmailTitleStyle = styled.h1`
+  text-transform: none;
+  margin: 30px 0px 10px;
+  font-size: ${intToPx(typography.font.fontsize.S.value)};
+  font-family: ${MakeFonts.CircularStandardBold};
 `;

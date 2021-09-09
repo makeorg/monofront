@@ -38,6 +38,7 @@ import {
   ProposalCharCountStyle,
   ProposalExternalLinkStyle,
   ProposalExternalLinkIconStyle,
+  ProposalAuthInlineWrapperStyle,
 } from './style';
 
 type Props = {
@@ -103,19 +104,22 @@ export const ProposalForm: React.FC<Props> = ({
   }, []);
 
   const link = (
-    <ProposalExternalLinkStyle
-      href={getModerationLinkByLanguage(language)}
-      target="_blank"
-      rel="noopener"
-      onClick={trackClickModerationLink}
-    >
-      {i18n.t('proposal_submit.form.moderation_link')}
-      <> </>
-      <ProposalExternalLinkIconStyle aria-hidden focusable="false" />
-      <ScreenReaderItemStyle>
-        {i18n.t('common.open_new_window')}
-      </ScreenReaderItemStyle>
-    </ProposalExternalLinkStyle>
+    <ProposalAuthInlineWrapperStyle>
+      {i18n.t('proposal_submit.form.read_our')}{' '}
+      <ProposalExternalLinkStyle
+        href={getModerationLinkByLanguage(language)}
+        target="_blank"
+        rel="noopener"
+        onClick={trackClickModerationLink}
+      >
+        {i18n.t('proposal_submit.form.moderation_link')}
+        <> </>
+        <ProposalExternalLinkIconStyle aria-hidden focusable="false" />
+        <ScreenReaderItemStyle>
+          {i18n.t('common.open_new_window')}
+        </ScreenReaderItemStyle>
+      </ProposalExternalLinkStyle>
+    </ProposalAuthInlineWrapperStyle>
   );
 
   const buttons = (

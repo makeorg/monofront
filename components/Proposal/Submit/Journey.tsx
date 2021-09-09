@@ -95,7 +95,6 @@ export const ProposalJourney: React.FC = () => {
     return (
       <ProposalAuthentication
         handleStepBack={handleStepBack}
-        handleCancel={handleCancel}
         handleProposeAPICall={handleProposeAPICall}
       />
     );

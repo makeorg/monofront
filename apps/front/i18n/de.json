@@ -256,7 +256,8 @@
       "card_title": "So finden Sie Ihr Abstimmungsverhalten",
       "facebook_connect": "Mit Facebook fortfahren",
       "google_connect": "Mit Google fortfahren",
-      "email_register": "Registrieren bei Mail"
+      "email_register": "Registrieren bei Mail",
+      "count_register": "({{count}}/2)"
     }
   },
   "header": {
@@ -379,7 +380,8 @@
       "button_back": "Meinen Vorschlag ändern",
       "title": "Um meinen Vorschlag zu bestätigen,",
       "subtitle": "registriere ich mich über",
-      "button_login": "Ich habe bereits ein Konto und melde mich an"
+      "button_login_text": "Ich habe bereits ein Konto",
+      "button_login_link": "und melde mich an"
     },
     "success": {
       "title": "Danke, {{name}}!",

@@ -10,6 +10,10 @@ export const SeparatorStyle = styled.div`
   background-color: ${color.grey};
 `;
 
+export const ProposalSubmitAuthSeparator = styled(SeparatorStyle)`
+  max-width: 90px;
+`;
+
 export const SmallSeparatorStyle = styled(SeparatorStyle)`
   max-width: 60px;
 `;

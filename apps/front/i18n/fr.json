@@ -173,7 +173,8 @@
       "card_title": "Pour retrouver l’historique de vos votes",
       "facebook_connect": "Continuer avec Facebook",
       "google_connect": "Continuer avec Google",
-      "email_register": "S’inscrire par mail"
+      "email_register": "S’inscrire par mail",
+      "count_register": "({{count}}/2)"
     },
     "notifications": {
       "bad_link": "Ce lien n'est plus valable.",
@@ -418,7 +419,8 @@
       "button_back": "Modifier ma proposition",
       "title": "Pour valider ma proposition",
       "subtitle": "Je m'inscris avec",
-      "button_login": "J’ai déjà un compte, je me connecte"
+      "button_login_text": "J’ai déjà un compte,",
+      "button_login_link": "je me connecte"
     },
     "success": {
       "title": "Merci {{name}} !",

@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import i18n from 'i18next';
-import { getDataPageLink } from '@make.org/utils/helpers/url';
-import {
-  trackClickPersonnalDataLink,
-  trackDisplayAuthenticationForm,
-} from '@make.org/utils/services/Tracking';
-import { Link } from 'react-router-dom';
+import { trackDisplayAuthenticationForm } from '@make.org/utils/services/Tracking';
 import {
   CenterColumnStyle,
   ColumnElementStyle,
 } from '@make.org/ui/elements/FlexElements';
 import { useAppContext } from '@make.org/store';
-import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { AuthenticationRegisterButtons } from '@make.org/components/Auth/Register/Buttons';
 import { Register } from '@make.org/components/Auth/Register';
@@ -26,15 +20,12 @@ import {
   ProposalBackIconStyle,
   ProposalAuthWrapperStyle,
   ProposalAltStepTitleStyle,
-  ProposalAuthDisclaimerStyle,
-  ProposalAuthSeparatorStyle,
   ProposalAuthLoginStyle,
-  ProposalAuthCancelStyle,
+  ProposalAuthLoginWrapperStyle,
 } from './style';
 
 type Props = {
   handleStepBack: () => void;
-  handleCancel: () => void;
   handleProposeAPICall: () => void;
 };
 
@@ -47,19 +38,11 @@ enum AUTH_STEP {
 
 export const ProposalAuthentication: React.FC<Props> = ({
   handleStepBack,
-  handleCancel,
   handleProposeAPICall,
 }) => {
-  const { state, dispatch } = useAppContext();
+  const { state } = useAppContext();
   const { isLoggedIn, user } = selectAuthentication(state) || {};
-  const { country, language } = state.appConfig;
   const [authStep, setAuthStep] = useState(AUTH_STEP.SOCIAL);
-
-  const handleModerationLink = () => {
-    dispatch(closePanel());
-    dispatch(removePanelContent());
-    trackClickPersonnalDataLink();
-  };
 
   useEffect(() => {
     trackDisplayAuthenticationForm();
@@ -116,30 +99,17 @@ export const ProposalAuthentication: React.FC<Props> = ({
           <ProposalAltStepTitleStyle className="center">
             {i18n.t('proposal_submit.authentication.title')}
           </ProposalAltStepTitleStyle>
-          <ProposalAuthDisclaimerStyle className="with-margin-top">
-            {i18n.t('proposal_submit.authentication.subtitle')}
-          </ProposalAuthDisclaimerStyle>
           <AuthenticationRegisterButtons
             onEmailRegister={() => setAuthStep(AUTH_STEP.REGISTER)}
           />
-          <ProposalAuthDisclaimerStyle>
-            {i18n.t('authentication.commitment')}
-            <Link
-              to={getDataPageLink(country, language)}
-              onClick={handleModerationLink}
-            >
-              {i18n.t('authentication.personal_data')}
-            </Link>
-          </ProposalAuthDisclaimerStyle>
-          <ProposalAuthSeparatorStyle />
-          <ProposalAuthLoginStyle onClick={() => setAuthStep(AUTH_STEP.LOGIN)}>
-            {i18n.t('proposal_submit.authentication.button_login')}
-          </ProposalAuthLoginStyle>
         </ProposalAuthWrapperStyle>
       </ColumnElementStyle>
-      <ProposalAuthCancelStyle onClick={handleCancel}>
-        {i18n.t('proposal_submit.form.button_cancel')}
-      </ProposalAuthCancelStyle>
+      <ProposalAuthLoginWrapperStyle>
+        {i18n.t('proposal_submit.authentication.button_login_text')}{' '}
+        <ProposalAuthLoginStyle onClick={() => setAuthStep(AUTH_STEP.LOGIN)}>
+          {i18n.t('proposal_submit.authentication.button_login_link')}
+        </ProposalAuthLoginStyle>
+      </ProposalAuthLoginWrapperStyle>
     </ProposalStepWrapperStyle>
   );
 };
