@@ -238,10 +238,6 @@ DISPLAY_SIGN_UP_FORM:
     parameters:
         - key: step
           description: register step in proposal journey
-          values:
-            - "1"
-            - "2"
-          optional: true
 
 DISPLAY_SIGN_IN_FORM:
     key: display-signin-form

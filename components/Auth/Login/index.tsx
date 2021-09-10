@@ -73,7 +73,6 @@ export const Login: React.FC<Props> = ({ panel }) => {
         </>
       )}
       <LoginForm />
-
       {!panel && (
         <>
           <ExtraParagraphStyle>

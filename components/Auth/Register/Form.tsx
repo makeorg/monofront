@@ -50,7 +50,7 @@ export const RegisterForm: React.FC<Props> = ({
   const postalcodeError = getFieldError('postalcode', errors);
 
   useEffect(() => {
-    trackDisplaySignupForm();
+    trackDisplaySignupForm('modal');
   }, []);
 
   return (

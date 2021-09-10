@@ -56,7 +56,7 @@ export const RegisterFormPanel: React.FC<Props> = ({
   const postalcodeError = getFieldError('postalcode', errors);
 
   useEffect(() => {
-    trackDisplaySignupForm(step);
+    trackDisplaySignupForm(`${step}`);
   }, [step]);
 
   return (
