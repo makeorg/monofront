@@ -114,8 +114,6 @@ export const PanelTermsOfUseLinkStyle = styled(TermsOfUseLinkStyle)`
   }
 `;
 
-console.log(typography);
-console.log(color);
 export const NewWindowIconStyle = styled(SvgExternalLinkPlain)<{
   isGrey?: boolean;
 }>`

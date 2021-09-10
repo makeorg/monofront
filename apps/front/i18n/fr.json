@@ -526,7 +526,7 @@
     "privacy_make": " de Make.org"
   },
   "forgot_password": {
-    "title": "je réinitialise mon mot de passe",
+    "title": "Je réinitialise mon mot de passe",
     "description": "Merci de renseigner l'adresse email liée à votre compte Make.org pour recevoir le lien de réinitialisation.",
     "success": "Merci, un email vient de vous être envoyé pour vous permettre de mettre à jour votre mot de passe.",
     "return": "Revenir à ",

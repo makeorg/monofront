@@ -25,7 +25,8 @@ export const RegisterCheckBox: React.FC<Props> = ({
 }) => {
   const { state } = useAppContext();
   const [checked, setIsChecked] = useState<boolean>(false);
-  const { country, language } = state.appConfig;
+  const { country, language, source } = state.appConfig;
+  const isWidget = source === 'widget';
 
   const handleChange = () => {
     handleLegalField('approvePrivacyPolicy', !checked);
@@ -34,7 +35,7 @@ export const RegisterCheckBox: React.FC<Props> = ({
 
   return (
     <CheckboxWrapper>
-      <CheckboxLabelStyle noFontSizeChange={false} isPanel>
+      <CheckboxLabelStyle noFontSizeChange={false} isWidget={isWidget}>
         <HiddenCheckbox
           required={required}
           checked={checked}
@@ -50,7 +51,7 @@ export const RegisterCheckBox: React.FC<Props> = ({
             href={getDataPageLink(country, language)}
             target="_blank"
             rel="noopener"
-            isPanel
+            isWidget={isWidget}
           >
             {i18n.t('legal_consent.privacy_policy')}
             <NewWindowIconStyle isGrey />

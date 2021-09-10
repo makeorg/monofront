@@ -215,3 +215,11 @@ export const ProposalAuthLoginWrapperStyle = styled(
   align-items: center;
   margin: auto;
 `;
+
+export const ProposaplAuthSocialLoginWrapperStyle = styled.div`
+  margin: 45px 0px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+`;

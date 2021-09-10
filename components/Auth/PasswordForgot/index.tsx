@@ -1,9 +1,6 @@
 import React, { FC, useEffect } from 'react';
 import i18n from 'i18next';
-import {
-  SecondLevelTitleStyle,
-  ThirdLevelTitleStyle,
-} from '@make.org/ui/elements/TitleElements';
+import { SecondLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
 import { SmallSeparatorWithMarginStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { RedLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { modalShowLogin } from '@make.org/store/actions/modal';
@@ -11,7 +8,7 @@ import { ExtraAltParagraphStyle } from '@make.org/ui/elements/ParagraphElements'
 import { useAppContext } from '@make.org/store';
 import { trackDisplayForgotPasswordForm } from '@make.org/utils/services/Tracking';
 import { ForgotPasswordForm } from './Form';
-import { ForgotPasswordStyle } from './style';
+import { ForgotPasswordStyle, PanelForgotPasswordTitleStyle } from './style';
 
 /**
  * Renders Forgot Password component
@@ -30,26 +27,29 @@ export const PasswordForgot: FC<Props> = ({ panel }) => {
   return (
     <ForgotPasswordStyle aria-labelledby="forgot_password_title">
       {panel ? (
-        <ThirdLevelTitleStyle
+        <PanelForgotPasswordTitleStyle
           style={{ marginTop: 32 }}
           id="forgot_password_title"
+          isPanel
         >
           {i18n.t('forgot_password.title')}
-        </ThirdLevelTitleStyle>
+        </PanelForgotPasswordTitleStyle>
       ) : (
         <SecondLevelTitleStyle id="forgot_password_title">
           {i18n.t('forgot_password.title')}
         </SecondLevelTitleStyle>
       )}
-      <SmallSeparatorWithMarginStyle />
-      <ForgotPasswordForm />
+      <ForgotPasswordForm isPanel={panel} />
       {!panel && (
-        <ExtraAltParagraphStyle>
-          {i18n.t('forgot_password.return')}
-          <RedLinkButtonStyle onClick={() => dispatch(modalShowLogin())}>
-            {i18n.t('forgot_password.login_link')}
-          </RedLinkButtonStyle>
-        </ExtraAltParagraphStyle>
+        <>
+          <SmallSeparatorWithMarginStyle />
+          <ExtraAltParagraphStyle>
+            {i18n.t('forgot_password.return')}
+            <RedLinkButtonStyle onClick={() => dispatch(modalShowLogin())}>
+              {i18n.t('forgot_password.login_link')}
+            </RedLinkButtonStyle>
+          </ExtraAltParagraphStyle>
+        </>
       )}
     </ForgotPasswordStyle>
   );

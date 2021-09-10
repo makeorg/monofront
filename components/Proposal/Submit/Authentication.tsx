@@ -14,6 +14,14 @@ import { ExtraParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { RedLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { PasswordForgot } from '@make.org/components/Auth/PasswordForgot';
 import {
+  ProposalSubmitAuthSeparator,
+  SeparatorProposalAuthLogin,
+  TextSeparatorStyle,
+} from '@make.org/ui/elements/SeparatorsElements';
+import { FacebookAuthentication } from '@make.org/components/Auth/Social/FacebookAuthentication';
+import { GoogleAuthentication } from '@make.org/components/Auth/Social/GoogleAuthentication';
+import { SocialRegisterButtonsWrapperStyle } from '../../Auth/style';
+import {
   ProposalStepWrapperStyle,
   ProposalBackButtonStyle,
   ProposalBackIconWrapperStyle,
@@ -22,6 +30,7 @@ import {
   ProposalAltStepTitleStyle,
   ProposalAuthLoginStyle,
   ProposalAuthLoginWrapperStyle,
+  ProposaplAuthSocialLoginWrapperStyle,
 } from './style';
 
 type Props = {
@@ -71,15 +80,30 @@ export const ProposalAuthentication: React.FC<Props> = ({
           {authStep === AUTH_STEP.REGISTER && <Register panel />}
           {authStep === AUTH_STEP.FORGOT_PASSWORD && <PasswordForgot panel />}
           {authStep === AUTH_STEP.LOGIN && (
-            <ExtraParagraphStyle>
-              {i18n.t('login.forgot_password_title')}
-              <RedLinkButtonStyle
-                onClick={() => setAuthStep(AUTH_STEP.FORGOT_PASSWORD)}
-                type="button"
-              >
-                {i18n.t('login.forgot_password_link')}
-              </RedLinkButtonStyle>
-            </ExtraParagraphStyle>
+            <>
+              <ExtraParagraphStyle>
+                {i18n.t('login.forgot_password_title')}
+                <RedLinkButtonStyle
+                  onClick={() => setAuthStep(AUTH_STEP.FORGOT_PASSWORD)}
+                  type="button"
+                >
+                  {i18n.t('login.forgot_password_link')}
+                </RedLinkButtonStyle>
+              </ExtraParagraphStyle>
+              <ProposaplAuthSocialLoginWrapperStyle>
+                <SeparatorProposalAuthLogin>
+                  <ProposalSubmitAuthSeparator />
+                  <TextSeparatorStyle>
+                    {i18n.t('register.or')}
+                  </TextSeparatorStyle>
+                  <ProposalSubmitAuthSeparator />
+                </SeparatorProposalAuthLogin>
+                <SocialRegisterButtonsWrapperStyle>
+                  <FacebookAuthentication />
+                  <GoogleAuthentication />
+                </SocialRegisterButtonsWrapperStyle>
+              </ProposaplAuthSocialLoginWrapperStyle>
+            </>
           )}
         </CenterColumnStyle>
       </ProposalStepWrapperStyle>

@@ -33,7 +33,7 @@ export const CheckboxWrapper = styled(FlexElementStyle)`
 export const CheckboxLabelStyle = styled.label<{
   isBlack?: boolean;
   noFontSizeChange: boolean;
-  isPanel?: boolean;
+  isWidget?: boolean;
 }>`
   display: inline-flex;
   color: ${props => (props.isBlack ? color.black : color.greyDark)};
@@ -43,14 +43,14 @@ export const CheckboxLabelStyle = styled.label<{
       ? intToPx(typography.font.fontsize.XS.value)
       : intToPx(typography.font.fontsize.X2S.value)};
   a {
-    color: ${props => (props.isPanel ? color.greyDark : color.brandSecondary)};
+    color: ${props => (props.isWidget ? color.greyDark : color.brandSecondary)};
   }
   strong {
     font-family: ${MakeFonts.CircularStandardBold};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${props =>
-      props.isPanel
+      props.isWidget
         ? intToPx(typography.font.fontsize.X2S.value)
         : intToPx(typography.font.fontsize.XS.value)};
   }
@@ -112,16 +112,16 @@ export const NewWindowIconStyle = styled(SvgExternalLinkPlain)<{
   }
 `;
 
-export const DataPolicyNewWindowLinkStyle = styled.a<{ isPanel?: boolean }>`
+export const DataPolicyNewWindowLinkStyle = styled.a<{ isWidget?: boolean }>`
   ${DataPolicyLinkStyle};
-  color: ${props => (props.isPanel ? color.greyDark : color.brandSecondary)};
+  color: ${props => (props.isWidget ? color.greyDark : color.brandSecondary)};
   font-size: ${props =>
-    props.isPanel
+    props.isWidget
       ? intToPx(typography.font.fontsize.X2S.value)
       : intToPx(typography.font.fontsize.XS.value)};
   &:hover,
   &:focus {
-    color: ${props => (props.isPanel ? color.greyDark : color.brandSecondary)};
+    color: ${props => (props.isWidget ? color.greyDark : color.brandSecondary)};
   }
 `;
 

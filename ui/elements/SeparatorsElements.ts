@@ -32,6 +32,10 @@ export const SeparatorWrapperStyle = styled(MiddleRowStyle)`
   }
 `;
 
+export const SeparatorProposalAuthLogin = styled(SeparatorWrapperStyle)`
+  margin-bottom: 40px;
+`;
+
 export const TextSeparatorStyle = styled(MiddleRowStyle)`
   width: 60px;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
