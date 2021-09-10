@@ -146,6 +146,34 @@ const register = async (
   }
 };
 
+// checks email and password validity in panel register
+const checkRegistration = async (
+  email: string,
+  password: string,
+  success?: () => void,
+  errors?: (serviceErrors?: ErrorObjectType[]) => void,
+  unexpectedError?: () => void
+): Promise<void> => {
+  try {
+    await UserApiService.checkRegistration(email, password);
+    if (success) {
+      success();
+    }
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
+    if ([400, 401, 403, 404].includes(apiServiceError.status)) {
+      if (errors) {
+        errors(loginErrors);
+        return;
+      }
+    }
+    defaultUnexpectedError(apiServiceError);
+    if (unexpectedError) {
+      unexpectedError();
+    }
+  }
+};
+
 const login = async (
   email: string,
   password: string,
@@ -479,6 +507,7 @@ export const UserService = {
   deleteAccount,
   forgotPassword,
   register,
+  checkRegistration,
   login,
   myProposals,
   myFavourites,

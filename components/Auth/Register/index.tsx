@@ -101,6 +101,12 @@ export const Register: React.FC<Props> = ({ panel }) => {
     });
   };
 
+  const checkRegistration = async (email: string, password: string) => {
+    // const error => handle Errors
+    // finish call and how to use data
+    await UserService.checkRegistration;
+  };
+
   const logAndLoadUser = async (email: string, password: string) => {
     const unexpectedError = () => {
       dispatch(modalClose());

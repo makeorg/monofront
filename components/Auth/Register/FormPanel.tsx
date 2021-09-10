@@ -55,6 +55,13 @@ export const RegisterFormPanel: React.FC<Props> = ({
   const ageError = getFieldError('dateofbirth', errors);
   const postalcodeError = getFieldError('postalcode', errors);
 
+  const handleFirstStep = () => {
+    // get values in email and password fields
+    // check if these values are ok with api call
+    // if (success) then setStep(2)
+    // if (error) then display error
+  };
+
   useEffect(() => {
     trackDisplaySignupForm(`${step}`);
   }, [step]);
@@ -82,7 +89,7 @@ export const RegisterFormPanel: React.FC<Props> = ({
             handleChange={handleChange}
           />
           <RedButtonStyle
-            onClick={() => setStep(2)}
+            onClick={() => handleFirstStep()}
             disabled={!user.password || !user.email}
           >
             {i18n.t('common.continue')}
