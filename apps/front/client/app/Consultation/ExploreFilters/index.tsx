@@ -17,6 +17,10 @@ import {
 } from '@make.org/ui/elements/FormElements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import {
+  trackClickFilter,
+  trackClickSort,
+} from '@make.org/utils/services/Tracking';
+import {
   ResetLinkStyle,
   ResetLinkButtonWrapperStyle,
 } from '../../../pages/Consultation/style';
@@ -196,6 +200,7 @@ export const FilterAndSort: React.FC<Props> = ({
                   value={keyword.key}
                   onClick={() => {
                     handleKeyword(keyword.key);
+                    trackClickFilter('keyword');
                   }}
                   className={handleClassName(currentKeyword, keyword.key)}
                 >
@@ -241,6 +246,7 @@ export const FilterAndSort: React.FC<Props> = ({
                     onChange={() => {
                       handleChange(item.name, item.value);
                       setCurrentSort(item.name);
+                      trackClickSort(item.name);
                     }}
                     checked={checkCurrentSort(item.name, currentSort)}
                   />
@@ -270,12 +276,13 @@ export const FilterAndSort: React.FC<Props> = ({
                 id="isNotVoted"
                 name="isNotVoted"
                 value={JSON.stringify(filterAndSortValues.isNotVoted)}
-                onChange={() =>
+                onChange={() => {
                   handleChange(
                     'isNotVoted',
                     JSON.stringify(filterAndSortValues.isNotVoted)
-                  )
-                }
+                  );
+                  trackClickFilter('unvoted-proposals');
+                }}
               />
               <StyledCheckbox checked={filterAndSortValues.isNotVoted}>
                 <SvgCheck />
@@ -290,7 +297,10 @@ export const FilterAndSort: React.FC<Props> = ({
                 value={FILTER_ORGANISATION}
                 id="userType"
                 name="userType"
-                onChange={() => handleChange('userType', FILTER_ORGANISATION)}
+                onChange={() => {
+                  handleChange('userType', FILTER_ORGANISATION);
+                  trackClickFilter('organizations-proposals');
+                }}
               />
               <StyledCheckbox
                 checked={filterAndSortValues.userType !== undefined}

@@ -134,9 +134,7 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
             </>
           )}
           <SequenceCard
-            card={
-              !isEmptySequence && !!currentCard ? currentCard : noProposalCard
-            }
+            card={isEmptySequence ? noProposalCard : currentCard}
             question={question}
           />
           {!isEmptySequence && <SequenceProgress />}

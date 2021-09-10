@@ -98,35 +98,6 @@ Following parameters are added to all events.
   
   
 
-  - `click-see-more-community` Click on see all partners
-
-    
-    | param_name | required | description | values |
-    |-|-|-|-|
-    | `component` | false | component name |  |
-  
-  
-
-  - `click-tag-action` On change tags select
-
-    
-    | param_name | required | description | values |
-    |-|-|-|-|
-    | `tag-name` | true | tag label |  |
-    | `nature` | true | tag action type | `unselect`, `select` |
-  
-  
-
-  - `click-filter-action` On change filter select
-
-    
-    | param_name | required | description | values |
-    |-|-|-|-|
-    | `filter-name` | true | filter label |  |
-    | `nature` | true | @toDo - value seems to be allways checked | `checked` |
-  
-  
-
   - `click-proposal-viewmore` Click view more proposals button
 
     
@@ -647,6 +618,29 @@ Following parameters are added to all events.
     |-|-|-|-|
     | `type` | true | type name | `gender`, `age`, `region` |
   
+  
+
+  - `click-filter` Click on filter options to update proposals fitlering and sorting
+
+    
+    | param_name | required | description | values |
+    |-|-|-|-|
+    | `component` | true | component name | `keyword`, `unvoted-proposals`, `organizations-proposals` |
+  
+  
+
+  - `click-sort` Click on sort options to update proposals fitlering and sorting
+
+    
+    | param_name | required | description | values |
+    |-|-|-|-|
+    | `component` | true | component name | `recent`, `popular`, `controversy` |
+  
+  
+
+  - `click-search-proposals` Click on submit button for filtering and sorting proposals
+
+    
   
 
 </auto-generated-tracking-doc>

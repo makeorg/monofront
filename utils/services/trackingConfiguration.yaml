@@ -84,37 +84,6 @@ CLICK_SEQUENCE_OPEN:
             - sequence-controversial
             - sequence-keyword
 
-CLICK_SEE_MORE_COMMUNITY:
-    key: click-see-more-community
-    description: Click on see all partners    
-    parameters:
-      - key: component
-        description: component name
-        optional: true
-
-CLICK_TAG_ACTION:
-    key: click-tag-action
-    description: On change tags select
-    parameters:
-        - key: tag-name
-          description: tag label
-        - key: nature
-          description: tag action type
-          values:
-            - unselect
-            - select
-
-CLICK_FILTER_ACTION:
-    key: click-filter-action
-    description: On change filter select
-    parameters:
-        - key: filter-name
-          description: filter label
-        - key: nature
-          description: '@toDo - value seems to be allways checked'
-          values: 
-            - checked
-
 CLICK_PROPOSAL_VIEW_MORE:
     key: click-proposal-viewmore
     description: Click view more proposals button
@@ -512,21 +481,27 @@ CLICK_BREADCRUMBS:
     parameters:
         - key: level
           description: level of the link in breacrumbs
+
 CLICK_OPERATION_PAGE:
     key: click-operation-page
     description: Click on operation page link
+
 DISPLAY_COOKIE_MODAL_FIRST_STEP:
     key: display-cookies-modal-first-step
     description: Display cookie modal first step
+
 DISPLAY_COOKIE_MODAL_SECOND_STEP:
     key: display-cookies-modal-second-step
     description: Display cookie modal second step
+
 CLICK_COOKIE_MODAL_REFUSE:
     key: click-cookies-close-modal
     description: Close modal without cookies acceptance
+
 CLICK_COOKIE_MODAL_PERSONALIZE:
     key: click-cookies-personalize
     description: Click on personalize button in cookie modal
+
 CLICK_COOKIE_MODAL_SAVE:
     key: click-cookies-save
     description: Click to accept cookies
@@ -536,6 +511,7 @@ CLICK_COOKIE_MODAL_SAVE:
         values:
           - cookies-accept-all
           - cookies-accept-preferences
+
 CLICK_COOKIE_SWITCH_ACCEPT:
     key: click-cookies-accept
     description: Click on switch to accept cookies
@@ -548,6 +524,7 @@ CLICK_COOKIE_SWITCH_ACCEPT:
           - facebook_sharing
           - twitter_sharing
           - linkedin_sharing
+
 CLICK_COOKIE_SWITCH_REFUSE:
     key: click-cookies-refuse
     description: Click switch to refuse cookies
@@ -560,9 +537,11 @@ CLICK_COOKIE_SWITCH_REFUSE:
           - facebook_sharing
           - twitter_sharing
           - linkedin_sharing
+
 CLICK_COOKIE_MODAL_BACK:
     key: click-cookies-back
     description: Click on back button in cookie modal
+
 DISPLAY_DEMOGRAPHICS:
     key: display-demographics
     description: Display demographics card in sequence
@@ -573,6 +552,7 @@ DISPLAY_DEMOGRAPHICS:
           - gender
           - age
           - region
+
 DISPLAY_DEMOGRAPHICS_CONFIRMATION:
     key: display-demographics-confirmation
     description: Display demographics confirmation in sequence
@@ -583,6 +563,7 @@ DISPLAY_DEMOGRAPHICS_CONFIRMATION:
           - gender
           - age
           - region
+
 CLICK_SKIP_DEMOGRAPHICS:
     key: click-skip-demographics
     description: Click on skip button on demographics card in sequence
@@ -593,6 +574,7 @@ CLICK_SKIP_DEMOGRAPHICS:
           - gender
           - age
           - region
+
 CLICK_SAVE_DEMOGRAPHICS:
     key: click-save-demographics
     description: Click on save button on demographics card in sequence
@@ -603,6 +585,7 @@ CLICK_SAVE_DEMOGRAPHICS:
           - gender
           - age
           - region
+
 CLICK_VOTE_DEMOGRAPHICS:
     key: click-vote-demographics
     description: Click on continue button on demographics confirmation card in sequence
@@ -613,3 +596,30 @@ CLICK_VOTE_DEMOGRAPHICS:
           - gender
           - age
           - region
+
+CLICK_FILTER:
+    key: click-filter
+    description: Click on filter options to update proposals fitlering and sorting
+    parameters:
+      - key: component
+        description: component name
+        values:
+          - keyword
+          - unvoted-proposals
+          - organizations-proposals
+
+CLICK_SORT:
+    key: click-sort
+    description: Click on sort options to update proposals fitlering and sorting
+    parameters:
+      - key: component
+        description: component name
+        values:
+          - recent
+          - popular
+          - controversy
+
+CLICK_SEARCH_PROPOSALS:
+    key: click-search-proposals
+    description: Click on submit button for filtering and sorting proposals
+    

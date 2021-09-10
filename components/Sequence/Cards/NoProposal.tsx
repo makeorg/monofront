@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import i18n from 'i18next';
 import { LinkAsRedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
@@ -6,6 +6,7 @@ import { getParticipateLink } from '@make.org/utils/helpers/url';
 import { QuestionType } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
 import { SimpleLinkAsRedButton } from '@make.org/ui/elements/LinkElements';
+import { trackDisplayNoProposalSequence } from '@make.org/utils/services/Tracking';
 import { Sharing } from '../../Sharing';
 import {
   SequenceMainTitleStyle,
@@ -29,6 +30,11 @@ export const NoProposal: React.FC<Props> = ({
   const { device, country, source } = state.appConfig;
   const isWidget = source === 'widget';
   const isDesktop = matchDesktopDevice(device);
+
+  useEffect(() => {
+    trackDisplayNoProposalSequence();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>

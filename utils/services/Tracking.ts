@@ -34,7 +34,6 @@ export const trackClickLearnMore = (component?: string): void => {
 };
 
 /* Open Sequence Tracking */
-
 export const trackOpenSequence = (component?: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_SEQUENCE_OPEN({ component: component || '' })
@@ -206,25 +205,6 @@ export const trackDisplayProposalPushCard = (): void => {
 
 export const trackDisplayFinalCard = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_FINAL_CARD());
-};
-
-/* Tags Tracking */
-export const trackTag = (label: string, action: string): void => {
-  TrackingService.sendAllTrackers(
-    trackingEvent.CLICK_TAG_ACTION({
-      'tag-name': label,
-      nature: action,
-    })
-  );
-};
-
-export const trackFilter = (label: string, action: string): void => {
-  TrackingService.sendAllTrackers(
-    trackingEvent.CLICK_FILTER_ACTION({
-      'filter-name': label,
-      nature: action,
-    })
-  );
 };
 
 /* Votes */
@@ -603,6 +583,22 @@ export const trackClickVoteDemographics = (type: string): void => {
       type,
     })
   );
+};
+
+export const trackClickFilter = (component?: string): void => {
+  TrackingService.sendAllTrackers(
+    trackingEvent.CLICK_FILTER({ component: component || '' })
+  );
+};
+
+export const trackClickSort = (component?: string): void => {
+  TrackingService.sendAllTrackers(
+    trackingEvent.CLICK_SORT({ component: component || '' })
+  );
+};
+
+export const trackClickSearchProposals = (): void => {
+  TrackingService.sendAllTrackers(trackingEvent.CLICK_SEARCH_PROPOSALS());
 };
 /* eslint-disable import/no-default-export */
 export default TrackingService;
