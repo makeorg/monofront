@@ -822,7 +822,6 @@
       "description": "Nutze die Suchfunktionen, um alle Vorschläge der Konsultation zu entdecken und äußere dich zu denjenigen, die dich interessieren.",
       "reset_filters": "Filter löschen",
       "sort_by": "Sortieren nach",
-      "filtrer": "Filtern",
       "filter_by": "Filtern nach",
       "recent": "Neueste",
       "popular": "Beliebteste",
@@ -830,7 +829,8 @@
       "unvoted": "Vorschläge, über die nicht abgestimmt wurde",
       "organisations_proposals": "Vorschläge von Organisationen",
       "no_proposal": "Kein Vorschlag",
-      "display_proposals": "Vorschläge anzeigen"
+      "display_proposals": "Vorschläge anzeigen",
+      "filter": "@@consultation.explore.filter|fr:Filtrer"
     },
     "tabs": {
       "consultation": "Konsultation ",

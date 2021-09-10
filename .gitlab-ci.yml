@@ -49,6 +49,7 @@ test:
   script:    
     - node -v
     - yarn install --check-files
+    - yarn workspace @make.org/front translation
     - yarn jest --coverage
   artifacts:
     expire_in: 1 week

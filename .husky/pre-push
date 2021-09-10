@@ -1,4 +1,5 @@
 #!/bin/sh
+yarn workspace @make.org/front translation
 yarn eslint ./
 yarn tsc --noEmit
 yarn jest

@@ -16,7 +16,7 @@ const { argv } = require('yargs')
   .demandCommand(1)
   .help('h')
   .alias('h', 'help');
-const { getNotifierInstance } = require('./utils/notification.js');
+const { getNotifierInstance } = require('../../../bin/utils/notification.js');
 
 const notifier = getNotifierInstance();
 const documentationDir = path.resolve(process.cwd(), '../../docs');

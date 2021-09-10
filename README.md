@@ -32,6 +32,7 @@ To launch jscpd `yarn jscpd`
 ## Prepush 
 Before push the following command will be executed `yarn prepush`
 Following commands are runned on prepush :
+  - `yarn workspace @make.org/front translation`
   - `yarn eslint ./`
   - `yarn tsc --noEmit`
   - `yarn test`

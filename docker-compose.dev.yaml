@@ -15,6 +15,7 @@ services:
         - .:/home/app
         - /home/app/node_modules
         - /home/app/apps/front/node_modules
+        - /home/app/apps/widget/node_modules
         - /home/app/api/node_modules
         - /home/app/components/node_modules
         - /home/app/types/node_modules
@@ -24,6 +25,7 @@ services:
         - /home/app/store/node_modules
         - /home/app/apimock/node_modules
         - /home/app/apps/front/dist
+        - /home/app/dist
       profiles: 
         - app-dev
   
