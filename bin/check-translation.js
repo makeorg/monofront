@@ -38,7 +38,9 @@ const level2 = '    ';
 const level3 = '    > ';
 
 notifier.newLine();
-notifier.add('Translation check', translationDir).notifyInfo2();
+notifier.add('Translation check', '').notifyInfo2();
+notifier.add('Translation dir', translationDir).notifyInfo();
+notifier.add('Référence language', argv.l).notifyInfo();
 notifier.setPrefix(level1).add('Starting analyse...', '').notifyInfo();
 
 checkTranslation.analyse(translationDir, argv.l).then(response => {

@@ -229,7 +229,7 @@ Following parameters are added to all events.
     
     | param_name | required | description | values |
     |-|-|-|-|
-    | `step` | false | register step in proposal journey | `1`, `2` |
+    | `step` | true | register step in proposal journey |  |
   
   
 

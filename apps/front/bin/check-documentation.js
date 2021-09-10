@@ -76,6 +76,9 @@ const level2 = '    ';
 
 notifier.newLine();
 notifier.add('Documentation check', '').notifyInfo2();
+notifier.add('Configuration file', trackingConfigurationFile).notifyInfo();
+notifier.add('Documentation file', trackingDocumentationFile).notifyInfo();
+
 notifier.setPrefix(level1).add('Starting analyse...', '').notifyInfo();
 
 try {
