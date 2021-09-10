@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import i18n from 'i18next';
 import {
   SecondLevelTitleStyle,
@@ -9,6 +9,7 @@ import { RedLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { modalShowLogin } from '@make.org/store/actions/modal';
 import { ExtraAltParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { useAppContext } from '@make.org/store';
+import { trackDisplayForgotPasswordForm } from '@make.org/utils/services/Tracking';
 import { ForgotPasswordForm } from './Form';
 import { ForgotPasswordStyle } from './style';
 
@@ -22,9 +23,9 @@ type Props = {
 export const PasswordForgot: FC<Props> = ({ panel }) => {
   const { dispatch } = useAppContext();
 
-  const handleLoginModal = () => {
-    dispatch(modalShowLogin());
-  };
+  useEffect(() => {
+    trackDisplayForgotPasswordForm();
+  }, []);
 
   return (
     <ForgotPasswordStyle aria-labelledby="forgot_password_title">
@@ -45,7 +46,7 @@ export const PasswordForgot: FC<Props> = ({ panel }) => {
       {!panel && (
         <ExtraAltParagraphStyle>
           {i18n.t('forgot_password.return')}
-          <RedLinkButtonStyle onClick={handleLoginModal}>
+          <RedLinkButtonStyle onClick={() => dispatch(modalShowLogin())}>
             {i18n.t('forgot_password.login_link')}
           </RedLinkButtonStyle>
         </ExtraAltParagraphStyle>

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent } from 'react';
+import React, { ChangeEvent, FormEvent, useEffect } from 'react';
 import i18n from 'i18next';
 import { ErrorObjectType, RegisterFormDataType } from '@make.org/types';
 import { RegisterCheckBox } from '@make.org/components/Form/CheckBox/RegisterCheckbox';
@@ -15,6 +15,7 @@ import { throttle } from '@make.org/utils/helpers/throttle';
 import { getGTUPageLink } from '@make.org/utils/helpers/url';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { ConditionParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
+import { trackDisplaySignupForm } from '@make.org/utils/services/Tracking';
 import { FormErrors } from '../../Form/Errors';
 import { TermsOfUseLinkStyle, NewWindowIconStyle } from '../style';
 import { EmailPasswordFields } from '../CommonFields/EmailPassword';
@@ -47,6 +48,10 @@ export const RegisterForm: React.FC<Props> = ({
   const firstnameError = getFieldError('firstname', errors);
   const ageError = getFieldError('dateofbirth', errors);
   const postalcodeError = getFieldError('postalcode', errors);
+
+  useEffect(() => {
+    trackDisplaySignupForm();
+  }, []);
 
   return (
     <FormCenterAlignStyle

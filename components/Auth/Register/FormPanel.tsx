@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react';
+import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import i18n from 'i18next';
 import { ErrorObjectType, RegisterFormDataType } from '@make.org/types';
 import {
@@ -16,6 +16,7 @@ import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElemen
 import { ConditionParagraphStylePanel } from '@make.org/ui/elements/ParagraphElements';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { RegisterCheckBox } from '@make.org/components/Form/CheckBox/RegisterCheckbox';
+import { trackDisplaySignupForm } from '@make.org/utils/services/Tracking';
 import { FormErrors } from '../../Form/Errors';
 import {
   NewWindowIconStyle,
@@ -53,6 +54,10 @@ export const RegisterFormPanel: React.FC<Props> = ({
   const firstnameError = getFieldError('firstname', errors);
   const ageError = getFieldError('dateofbirth', errors);
   const postalcodeError = getFieldError('postalcode', errors);
+
+  useEffect(() => {
+    trackDisplaySignupForm(step);
+  }, [step]);
 
   return (
     <FormCenterAlignStyle

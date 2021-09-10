@@ -125,9 +125,11 @@ export const trackClickCloseModal = (modalContext: string): void => {
 };
 
 /* Sign Up */
-export const trackDisplaySignupForm = (step?: string): void => {
+export const trackDisplaySignupForm = (step?: number): void => {
   TrackingService.sendAllTrackers(
-    trackingEvent.DISPLAY_SIGN_UP_FORM({ step: step || '' })
+    trackingEvent.DISPLAY_SIGN_UP_FORM({
+      step: step ? JSON.stringify(step) : '',
+    })
   );
 };
 
