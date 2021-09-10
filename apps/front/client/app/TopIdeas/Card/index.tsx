@@ -8,7 +8,7 @@ import {
   SvgChat,
 } from '@make.org/ui/Svg/elements';
 import { AvatarRows } from '@make.org/ui/components/AvatarRows';
-import { RedLinkRouterStyle } from '@make.org/ui/elements/LinkElements';
+import { RedLinkStyle } from '@make.org/ui/elements/LinkElements';
 import { TopIdeaType } from '@make.org/types';
 import { getTopIdeaDetailsLink } from '@make.org/utils/helpers/url';
 import { useAppContext } from '@make.org/store';
@@ -91,7 +91,7 @@ export const TopIdeaCard: FC<Props> = ({
         <PositionStyle>
           <SvgChat aria-hidden focusable="false" />
           <PositionContentStyle>
-            <RedLinkRouterStyle
+            <RedLinkStyle
               to={getTopIdeaDetailsLink(country, question.slug, topIdea.id)}
               onClick={scrollToTop}
               lang={question.language}
@@ -99,7 +99,7 @@ export const TopIdeaCard: FC<Props> = ({
               {i18n.t('idea_card.position', {
                 count: topIdea.commentsCount,
               })}
-            </RedLinkRouterStyle>
+            </RedLinkStyle>
             {i18n.t('idea_card.candidate', {
               count: topIdea.commentsCount,
             })}

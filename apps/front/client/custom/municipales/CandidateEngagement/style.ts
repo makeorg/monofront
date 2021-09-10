@@ -5,7 +5,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { color } from 'athena-design-tokens';
 import { SeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { FourthLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
-import { RedLinkRouterStyle } from '@make.org/ui/elements/LinkElements';
+import { RedLinkStyle } from '@make.org/ui/elements/LinkElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 
 export const CandidateWrapperStyle = styled.div`
@@ -43,7 +43,7 @@ export const CandidateInformationsStyle = styled(ColumnElementStyle)`
   }
 `;
 
-export const CandidateLinkStyle = styled(RedLinkRouterStyle)`
+export const CandidateLinkStyle = styled(RedLinkStyle)`
   white-space: nowrap;
 `;
 

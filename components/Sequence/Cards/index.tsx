@@ -44,12 +44,13 @@ export const Card: React.FC<CardProps> = ({ card, question }) => {
       );
     case CARD.CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL:
       return <PushProposalCard />;
-    case CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD:
-      return <FinalCard questionSlug={question.slug} />;
-    case CARD.CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD: {
+    case CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD: {
       if (isWidget) {
-        return <FinalCard questionSlug={question.slug} />;
+        return <SpecialFinalCard questionSlug={question.slug} />;
       }
+      return <FinalCard questionSlug={question.slug} />;
+    }
+    case CARD.CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD: {
       return <SpecialFinalCard questionSlug={question.slug} />;
     }
     case CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD:
@@ -87,6 +88,9 @@ export const SequenceCard: React.FC<Props> = ({ card, question }) => {
   }
 
   const isNoProposalCard = card.type === CARD.CARD_TYPE_NO_PROPOSAL_CARD;
+  const isFinalCard = card.type === CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD;
+  const isSpecialFinalCard =
+    card.type === CARD.CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD;
   const topComponentContext: TopComponentContextValueType =
     TopComponentContextValue.getSequenceProposal();
 
@@ -98,6 +102,14 @@ export const SequenceCard: React.FC<Props> = ({ card, question }) => {
 
   if (isWidget) {
     className = 'widget';
+  }
+
+  if (isSpecialFinalCard) {
+    className = 'center';
+  }
+
+  if (isFinalCard && isWidget) {
+    className = 'center widget';
   }
 
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import i18n from 'i18next';
 import { QuestionType } from '@make.org/types';
-import { RedLinkRouterStyle } from '@make.org/ui/elements/LinkElements';
+import { RedLinkStyle } from '@make.org/ui/elements/LinkElements';
 import { scrollToTop } from '@make.org/utils/helpers/styled';
 import { ProposalFooterStyle, PostedInLabelStyle } from '../Styled';
 
@@ -18,12 +18,12 @@ export const ProposalFooterWithQuestionElement: React.FC<Props> = ({
     <PostedInLabelStyle as="span">
       {i18n.t('proposal_card.posted_label')}
     </PostedInLabelStyle>
-    <RedLinkRouterStyle
+    <RedLinkStyle
       to={consultationLink}
       onClick={scrollToTop}
       lang={question.language}
     >
       {question.wording.question}
-    </RedLinkRouterStyle>
+    </RedLinkStyle>
   </ProposalFooterStyle>
 );

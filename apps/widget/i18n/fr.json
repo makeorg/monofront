@@ -351,9 +351,9 @@
     "controversial_title": "Les propositions les plus controversées"
   },
   "special_final_card": {
-    "title": "Merci pour vos votes !",
-    "subtitle": "Vous pouvez continuer à participer à la consultation",
-    "cta_text": "J'accède à la consultation"
+    "title": "Merci d’avoir réagi aux propositions !",
+    "subtitle": "Comment suivre les résultats ?",
+    "cta_text": "Inscrivez-vous sur Make.org"
   },
   "demographics_card": {
     "disclaimer": "Vos informations sont anonymes et permettent à nos résultats d'être représentatifs.",

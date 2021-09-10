@@ -42,6 +42,9 @@ export const BasicButtonStyle = `
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   padding: 10px 20px 7px 20px;
   text-decoration: none;
+  &.widget {
+    font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  }
 `;
 
 export const RedStyle = `

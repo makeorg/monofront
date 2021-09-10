@@ -75,6 +75,9 @@ export const SequenceMainTitleStyle = styled(SequenceTitleStyle)`
   margin-bottom: 20px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.M.value)};
+    &.widget {
+      font-size: ${intToPx(typography.font.fontsize.S.value)};
+    }
   }
 `;
 

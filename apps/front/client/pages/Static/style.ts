@@ -13,7 +13,7 @@ import {
 } from '@make.org/ui/elements/TitleElements';
 import { SmallSeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
-import { RedLinkHTMLElementStyle } from '@make.org/ui/elements/LinkElements';
+import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
 import { SvgExternalLink, SvgBigCheck } from '@make.org/ui/Svg/elements';
 import { StartColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
@@ -293,7 +293,7 @@ export const NoCookiesAltParagraphStyle = styled.p`
   }
 `;
 
-export const NoCookiesLinkStyle = styled(RedLinkHTMLElementStyle)`
+export const NoCookiesLinkStyle = styled(RedHTMLLinkElementStyle)`
   margin-top: 10px;
 `;
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { SpaceBetweenRowStyle } from '@make.org/ui/elements/FlexElements';
 import i18n from 'i18next';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
@@ -7,6 +7,7 @@ import { pxToPercent } from '@make.org/utils/helpers/styled';
 import {
   // trackClickNextOnLastProposal,
   trackClickNextCard,
+  trackClickNextOnLastProposal,
   trackClickPreviousCard,
 } from '@make.org/utils/services/Tracking';
 import { QuestionType } from '@make.org/types';
@@ -16,6 +17,7 @@ import {
   incrementSequenceIndex,
 } from '@make.org/store/actions/sequence';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { CARD } from '@make.org/types/enums';
 import {
   ProgressPreviousButtonStyle,
   ProgressNextButtonStyle,
@@ -42,9 +44,30 @@ export const SequenceProgress: React.FC<{
   const userVote = votes && votes.find(vote => vote.hasVoted === true);
   const index = currentIndex + 1;
   const total = cards ? cards.length : 0;
+  const getLastCardIndex = () => {
+    const allProposals = cards.filter(
+      card => card.type === CARD.CARD_TYPE_PROPOSAL
+    );
+    const lastCard = allProposals.pop();
+    if (lastCard) {
+      return lastCard.index;
+    }
+    return 0;
+  };
+  const [isLastProposalCard, setIsLastProposalCard] = useState(
+    currentIndex === getLastCardIndex()
+  );
+
+  useEffect(() => {
+    setIsLastProposalCard(currentIndex === getLastCardIndex());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIndex]);
 
   const goToNextCard = () => {
     dispatch(incrementSequenceIndex());
+    if (isLastProposalCard) {
+      return trackClickNextOnLastProposal();
+    }
     return trackClickNextCard();
   };
 

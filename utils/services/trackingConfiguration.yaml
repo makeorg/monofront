@@ -235,6 +235,13 @@ DISPLAY_AUTHENTICATION_FORM:
 DISPLAY_SIGN_UP_FORM:
     key: display-signup-form
     description: Display signup form
+    parameters:
+        - key: step
+          description: register step in proposal journey
+          values:
+            - 1
+            - 2
+          optional: true
 
 DISPLAY_SIGN_IN_FORM:
     key: display-signin-form
@@ -623,3 +630,10 @@ CLICK_SEARCH_PROPOSALS:
     key: click-search-proposals
     description: Click on submit button for filtering and sorting proposals
     
+DISPLAY_CHARGE_INTRO_CARD:
+    key: display-charge-intro-card
+    description: Display intro card for heavy load on servers
+    
+CLICK_NEXT_SIGNUP:
+    key: click-next-signup
+    description: Click next on continue button in propsal journey signup step

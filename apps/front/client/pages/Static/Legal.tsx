@@ -10,7 +10,7 @@ import {
   CNIL_NUMBER,
   MAKE_PHONE_NUMBER,
 } from '@make.org/utils/constants/config';
-import { RedLinkHTMLElementStyle } from '@make.org/ui/elements/LinkElements';
+import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
 import { MetaTags } from '@make.org/components/MetaTags';
 import {
   StaticPageWrapperStyle,
@@ -39,9 +39,9 @@ export const LegalPage: FC = () => (
       <StaticParagraphStyle>
         {i18n.t('legal.mail')}
         &nbsp;
-        <RedLinkHTMLElementStyle as="a" href={`mailto:${CONTACT_EMAIL}`}>
+        <RedHTMLLinkElementStyle as="a" href={`mailto:${CONTACT_EMAIL}`}>
           {`${CONTACT_EMAIL}`}
-        </RedLinkHTMLElementStyle>
+        </RedHTMLLinkElementStyle>
       </StaticParagraphStyle>
       <StaticParagraphStyle>
         {i18n.t('legal.make_phone')}

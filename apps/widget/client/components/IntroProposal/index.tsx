@@ -1,4 +1,4 @@
-import React, { FC, Dispatch, SetStateAction } from 'react';
+import React, { FC, Dispatch, SetStateAction, useEffect } from 'react';
 import { ProposalType, QuestionType } from '@make.org/types';
 import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
@@ -17,6 +17,10 @@ import { CARD } from '@make.org/types/enums';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { ProposalAuthor } from '@make.org/components/Proposal/Author';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
+import {
+  trackClickStartSequence,
+  trackDisplayChargeIntroCard,
+} from '@make.org/utils/services/Tracking';
 
 type Props = {
   handleChange: Dispatch<SetStateAction<boolean>>;
@@ -27,6 +31,12 @@ export const IntroProposal: FC<Props> = ({ handleChange }) => {
   const question: QuestionType = selectCurrentQuestion(state);
   const proposal: ProposalType | null | undefined =
     question.activeFeatureData.topProposal;
+
+  useEffect(() => {
+    if (proposal) {
+      trackDisplayChargeIntroCard();
+    }
+  }, [proposal]);
 
   if (!proposal) {
     return null;
@@ -60,7 +70,11 @@ export const IntroProposal: FC<Props> = ({ handleChange }) => {
               {proposal.content}
             </SequenceProposalStyle>
             <RedButtonStyle
-              onClick={() => handleChange(false)}
+              className="widget"
+              onClick={() => {
+                handleChange(false);
+                trackClickStartSequence();
+              }}
               id={`start-button-${proposal.id}`}
               data-cy-button="start-sequence"
             >

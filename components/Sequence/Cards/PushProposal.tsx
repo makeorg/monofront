@@ -39,12 +39,14 @@ export const PushProposalCard: React.FC = () => {
       </SequenceIntroParagraphStyle>
       <MiddleColumnToRowStyle column>
         <SequencePushProposalButtonStyle
+          className={isWidget ? 'widget' : ''}
           onClick={() => dispatch(setPanelContent(<ProposalJourney />))}
         >
           <PencilIconStyle aria-hidden focusable="false" />
           {i18n.t('common.propose')}
         </SequencePushProposalButtonStyle>
         <SequencePushProposalNextButtonStyle
+          className={isWidget ? 'widget' : ''}
           onClick={() => {
             trackClickProposalPushCardIgnore();
             dispatch(incrementSequenceIndex());

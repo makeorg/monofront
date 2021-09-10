@@ -227,6 +227,10 @@ Following parameters are added to all events.
   - `display-signup-form` Display signup form
 
     
+    | param_name | required | description | values |
+    |-|-|-|-|
+    | `step` | false | register step in proposal journey | `1`, `2` |
+  
   
 
   - `display-signin-form` Display signin form
@@ -639,6 +643,16 @@ Following parameters are added to all events.
   
 
   - `click-search-proposals` Click on submit button for filtering and sorting proposals
+
+    
+  
+
+  - `display-charge-intro-card` Display intro card for heavy load on servers
+
+    
+  
+
+  - `click-next-signup` Click next on continue button in propsal journey signup step
 
     
   

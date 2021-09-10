@@ -2,7 +2,7 @@ import React from 'react';
 import { OrganisationSoftType } from '@make.org/types';
 import i18n from 'i18next';
 import { getOrganisationProfileLink } from '@make.org/utils/helpers/url';
-import { RedLinkRouterStyle } from '@make.org/ui/elements/LinkElements';
+import { RedLinkStyle } from '@make.org/ui/elements/LinkElements';
 import { trackClickProposalProfile } from '@make.org/utils/services/Tracking';
 import { formatOrganisationName } from '@make.org/utils/helpers/stringFormatter';
 import { USER } from '@make.org/types/enums';
@@ -28,7 +28,7 @@ export const OrganisationsVote: React.FC<Props> = props => {
           {!!index &&
             index + 1 === organisations.length &&
             i18n.t('profile.organisation.and')}
-          <RedLinkRouterStyle
+          <RedLinkStyle
             to={getOrganisationProfileLink(
               country,
               organisation.organisationSlug
@@ -36,7 +36,7 @@ export const OrganisationsVote: React.FC<Props> = props => {
             onClick={() => trackClickProposalProfile(USER.TYPE_ORGANISATION)}
           >
             {formatOrganisationName(organisation.organisationName)}
-          </RedLinkRouterStyle>
+          </RedLinkStyle>
         </React.Fragment>
       ))}
       {i18n.t('profile.organisation.hasVoted', {

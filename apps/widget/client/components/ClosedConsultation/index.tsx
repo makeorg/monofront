@@ -16,7 +16,7 @@ import {
 } from '@make.org/components/Sequence/Cards/style';
 import { getParticipateLink } from '@make.org/utils/helpers/url';
 import { trackClickOperationPage } from '@make.org/utils/services/Tracking';
-import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
+import { RedUppercaseHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
 import { WidgetContainer } from '../../style';
 import { HeaderPanel } from '../HeaderPanel';
 
@@ -50,12 +50,12 @@ export const ClosedConsultation: FC = () => {
             <SequenceParagraphStyle>
               {i18n.t('unsecure.description')}
             </SequenceParagraphStyle>
-            <RedHTMLLinkElementStyle
+            <RedUppercaseHTMLLinkElementStyle
               href={getParticipateLink(country, question.slug)}
               onClick={() => trackClickOperationPage()}
             >
               {i18n.t('unsecure.link')}
-            </RedHTMLLinkElementStyle>
+            </RedUppercaseHTMLLinkElementStyle>
           </SequenceCardStyle>
           <SequenceProgress disabled />
         </SequenceContentStyle>

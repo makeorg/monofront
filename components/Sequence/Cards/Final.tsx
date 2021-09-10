@@ -10,11 +10,9 @@ import {
   LinkAsRedButtonStyle,
   RedLinkButtonStyle,
 } from '@make.org/ui/elements/ButtonsElements';
-
 import { getParticipateLink } from '@make.org/utils/helpers/url';
 import { modalShowRegister } from '@make.org/store/actions/modal';
 import { useAppContext } from '@make.org/store';
-import { SimpleLinkAsRedButton } from '@make.org/ui/elements/LinkElements';
 import {
   SequenceAltTitleStyle,
   SequenceParagraphStyle,
@@ -29,8 +27,7 @@ type Props = {
 
 export const FinalCard: React.FC<Props> = ({ questionSlug }) => {
   const { dispatch, state } = useAppContext();
-  const { country, source } = state.appConfig;
-  const isWidget = source === 'widget';
+  const { country } = state.appConfig;
 
   const handleClick = () => {
     dispatch(modalShowRegister());
@@ -48,44 +45,21 @@ export const FinalCard: React.FC<Props> = ({ questionSlug }) => {
       <SequenceAltTitleStyle data-cy-container="final-card-title">
         {i18n.t('final_card.title')}
       </SequenceAltTitleStyle>
-      {!isWidget && (
-        <>
-          <SequenceParagraphStyle
-            as="p"
-            data-cy-container="final-card-description"
-          >
-            {i18n.t('final_card.description')}
-          </SequenceParagraphStyle>
-          {isWidget ? (
-            <SimpleLinkAsRedButton
-              href={`https://make.org${getParticipateLink(
-                country,
-                questionSlug
-              )}`}
-              target="__blank"
-            >
-              {i18n.t('final_card.link_text')}
-            </SimpleLinkAsRedButton>
-          ) : (
-            <LinkAsRedButtonStyle
-              to={getParticipateLink(country, questionSlug)}
-              onClick={() => trackClickOperationPage()}
-            >
-              {i18n.t('final_card.link_text')}
-            </LinkAsRedButtonStyle>
-          )}
-          <FinalCardSeparatorStyle />
-        </>
-      )}
-
-      <div
-        style={{ marginBottom: '10px' }}
-        data-cy-container="final-card-register-description"
+      <SequenceParagraphStyle as="p" data-cy-container="final-card-description">
+        {i18n.t('final_card.description')}
+      </SequenceParagraphStyle>
+      <LinkAsRedButtonStyle
+        to={getParticipateLink(country, questionSlug)}
+        onClick={() => trackClickOperationPage()}
       >
+        {i18n.t('final_card.link_text')}
+      </LinkAsRedButtonStyle>
+      <FinalCardSeparatorStyle />
+      <div data-cy-container="final-card-register-description">
         {i18n.t('final_card.register.description')}
       </div>
       <FinalCardRegisterStyle data-cy-container="final-card-register-intro">
-        {!isWidget && i18n.t('final_card.register.button_intro')}
+        {i18n.t('final_card.register.button_intro')}
         <RedLinkButtonStyle
           onClick={handleClick}
           data-cy-button="final-card-register-button"
