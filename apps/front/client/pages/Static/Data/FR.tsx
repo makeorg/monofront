@@ -10,8 +10,8 @@ import { MetaTags } from '@make.org/components/MetaTags';
 import { DateHelper } from '@make.org/utils/helpers/date';
 import { DATE } from '@make.org/types/enums';
 import {
-  RedLinkHTMLElementStyle,
-  RedLinkRouterStyle,
+  RedHTMLLinkElementStyle,
+  RedLinkStyle,
 } from '@make.org/ui/elements/LinkElements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { getCountryDPA } from '@make.org/utils/helpers/countries';
@@ -260,9 +260,9 @@ export const DataFR: FC = () => {
               cookies ne visent pas à vous identifier personnellement et ne sont
               jamais utilisées à d‘autres fins que celles indiquées sur notre
               page de{' '}
-              <RedLinkRouterStyle to={`${getCookiesPageLink(country)}`}>
+              <RedLinkStyle to={`${getCookiesPageLink(country)}`}>
                 gestion des cookies
-              </RedLinkRouterStyle>
+              </RedLinkStyle>
               .
             </StaticParagraphStyle>
           </StaticPrimaryUnorderedListItemStyle>
@@ -293,13 +293,13 @@ export const DataFR: FC = () => {
               L’exercice par les utilisateurs des droits ci-dessus rappelés peut
               être fait par tout moyen, et notamment par l’envoi d’un courriel à
               l’adresse :{' '}
-              <RedLinkHTMLElementStyle as="a" href={`mailto:${CONTACT_EMAIL}`}>
+              <RedHTMLLinkElementStyle as="a" href={`mailto:${CONTACT_EMAIL}`}>
                 {`${CONTACT_EMAIL}`}
-              </RedLinkHTMLElementStyle>
+              </RedHTMLLinkElementStyle>
               . Si les utilisateurs estiment que leurs droits sur les données ne
               sont pas respectés par Make.org, ils peuvent en tout état de cause
               adresser une réclamation à la{' '}
-              <RedLinkHTMLElementStyle
+              <RedHTMLLinkElementStyle
                 as="a"
                 href={`${getCountryDPA(country).link}`}
                 target="_blank"
@@ -310,7 +310,7 @@ export const DataFR: FC = () => {
                 <ScreenReaderItemStyle>
                   Ouverture dans une nouvelle fenêtre
                 </ScreenReaderItemStyle>
-              </RedLinkHTMLElementStyle>
+              </RedHTMLLinkElementStyle>
               .
             </StaticParagraphStyle>
           </StaticPrimaryUnorderedListItemStyle>
@@ -351,9 +351,9 @@ export const DataFR: FC = () => {
               l’article 37 du RGPD est la SELARL FWPA Avocats, 18 rue des
               Pyramides, 75001, Paris, représentée par Maître Jean-Baptiste
               Soufron. Il peut être contacté à l’adresse :{' '}
-              <RedLinkHTMLElementStyle href={`mailto:${CONTACT_EMAIL}`}>
+              <RedHTMLLinkElementStyle href={`mailto:${CONTACT_EMAIL}`}>
                 {`${CONTACT_EMAIL}`}
-              </RedLinkHTMLElementStyle>
+              </RedHTMLLinkElementStyle>
               .
             </StaticParagraphStyle>
           </StaticPrimaryUnorderedListItemStyle>

@@ -10,7 +10,7 @@ import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
 import { DateHelper } from '@make.org/utils/helpers/date';
 import { DATE } from '@make.org/types/enums';
-import { RedLinkHTMLElementStyle } from '@make.org/ui/elements/LinkElements';
+import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
 import { getDataPageLink } from '@make.org/utils/helpers/url';
 import i18n from 'i18next';
 import {
@@ -145,11 +145,11 @@ export const TermsOfUseEN: FC = () => {
               {
                 'The use of the Service also implies the full and unreserved acceptance of Make.org’s Data usage policy, which is an integral part of these GTS and which is available '
               }
-              <RedLinkHTMLElementStyle
+              <RedHTMLLinkElementStyle
                 href={getDataPageLink(country, language)}
               >
                 here.
-              </RedLinkHTMLElementStyle>
+              </RedHTMLLinkElementStyle>
             </StaticParagraphStyle>
             <StaticParagraphStyle>
               The present GTS can be modified at any time and without advance
@@ -198,9 +198,9 @@ export const TermsOfUseEN: FC = () => {
                   The Registered User commits to updating his/her information in
                   his/her Personal Space by contacting Make.org by e-mail
                   at&nbsp;
-                  <RedLinkHTMLElementStyle href={`mailto:${CONTACT_EMAIL}`}>
+                  <RedHTMLLinkElementStyle href={`mailto:${CONTACT_EMAIL}`}>
                     {`${CONTACT_EMAIL}`}
-                  </RedLinkHTMLElementStyle>
+                  </RedHTMLLinkElementStyle>
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
                   The Registered User is informed and accepts that the
@@ -298,9 +298,9 @@ export const TermsOfUseEN: FC = () => {
                 <StaticParagraphStyle>
                   Make.org then conceives of its role as being an intermediary
                   between the citizen proposals and its partners in action. (
-                  <RedLinkHTMLElementStyle href="#anchor_partners">
+                  <RedHTMLLinkElementStyle href="#anchor_partners">
                     See 6.8 Partners in Action
-                  </RedLinkHTMLElementStyle>
+                  </RedHTMLLinkElementStyle>
                   )
                 </StaticParagraphStyle>
               </StaticSecondaryOrderedListItemStyle>
@@ -383,9 +383,9 @@ export const TermsOfUseEN: FC = () => {
                   published Citizen Proposal to be deleted, he/she should make a
                   request to Make.org via e-mail at the following address:
                   &nbsp;
-                  <RedLinkHTMLElementStyle href={`mailto:${CONTACT_EMAIL}`}>
+                  <RedHTMLLinkElementStyle href={`mailto:${CONTACT_EMAIL}`}>
                     {`${CONTACT_EMAIL}`}
-                  </RedLinkHTMLElementStyle>
+                  </RedHTMLLinkElementStyle>
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
                   Make.org will process the User’s deletion request within a
@@ -1045,9 +1045,9 @@ export const TermsOfUseEN: FC = () => {
             <StaticParagraphStyle>
               The Registered User can de-register from the Services at any time
               by making a request by e-mail to this effect to Make.org at&nbsp;
-              <RedLinkHTMLElementStyle href={`mailto:${CONTACT_EMAIL}`}>
+              <RedHTMLLinkElementStyle href={`mailto:${CONTACT_EMAIL}`}>
                 {`${CONTACT_EMAIL}`}
-              </RedLinkHTMLElementStyle>
+              </RedHTMLLinkElementStyle>
             </StaticParagraphStyle>
             <StaticParagraphStyle>
               De-registration will be effective immediately. It will

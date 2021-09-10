@@ -10,7 +10,7 @@ import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
 import { DateHelper } from '@make.org/utils/helpers/date';
 import { DATE } from '@make.org/types/enums';
-import { RedLinkHTMLElementStyle } from '@make.org/ui/elements/LinkElements';
+import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
 import { getDataPageLink } from '@make.org/utils/helpers/url';
 import i18n from 'i18next';
 import {
@@ -152,11 +152,11 @@ export const TermsOfUseDE: FC = () => {
               uneingeschränkte Akzeptanz der
               Make.org-Datenverwendungsrichtlinie, die einen integralen
               Bestandteil dieser TOS bildet und hier verfügbar{' '}
-              <RedLinkHTMLElementStyle
+              <RedHTMLLinkElementStyle
                 href={getDataPageLink(country, language)}
               >
                 ist.
-              </RedLinkHTMLElementStyle>
+              </RedHTMLLinkElementStyle>
             </StaticParagraphStyle>
             <StaticParagraphStyle>
               Diese AGB können jederzeit und ohne Ankündigung von Make.org
@@ -208,9 +208,9 @@ export const TermsOfUseDE: FC = () => {
                   Der Nutzer verpflichtet sich, diese Informationen in seinem
                   Persönlichen Bereich zu aktualisieren, indem er Make.org per
                   E-Mail an{' '}
-                  <RedLinkHTMLElementStyle href={`mailto:${CONTACT_EMAIL_DE}`}>
+                  <RedHTMLLinkElementStyle href={`mailto:${CONTACT_EMAIL_DE}`}>
                     {`${CONTACT_EMAIL_DE}`}
-                  </RedLinkHTMLElementStyle>{' '}
+                  </RedHTMLLinkElementStyle>{' '}
                   kontaktiert.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
@@ -281,9 +281,9 @@ export const TermsOfUseDE: FC = () => {
                 <StaticParagraphStyle>
                   Make.org versteht sich dann als Vermittler zwischen
                   Bürgervorschlägen und Aktionspartnern. (
-                  <RedLinkHTMLElementStyle href="#anchor_partners">
+                  <RedHTMLLinkElementStyle href="#anchor_partners">
                     Siehe 6.8 Aktionspartner
-                  </RedLinkHTMLElementStyle>
+                  </RedHTMLLinkElementStyle>
                   )
                 </StaticParagraphStyle>
               </StaticSecondaryOrderedListItemStyle>
@@ -370,9 +370,9 @@ export const TermsOfUseDE: FC = () => {
                   veröffentlichten Bürgervorschlag löschen lassen möchte, sollte
                   er eine Anfrage per E-Mail an Make.org an die folgende Adresse
                   senden:{' '}
-                  <RedLinkHTMLElementStyle href={`mailto:${CONTACT_EMAIL_DE}`}>
+                  <RedHTMLLinkElementStyle href={`mailto:${CONTACT_EMAIL_DE}`}>
                     {`${CONTACT_EMAIL_DE}`}
-                  </RedLinkHTMLElementStyle>
+                  </RedHTMLLinkElementStyle>
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
                   Der Antrag des Nutzers auf Löschung wird innerhalb einer
@@ -1050,9 +1050,9 @@ export const TermsOfUseDE: FC = () => {
               Der registrierte Benutzer kann sich jederzeit von den Diensten
               abmelden, indem er eine entsprechende Anfrage an Make.org per
               E-Mail an{' '}
-              <RedLinkHTMLElementStyle href={`mailto:${CONTACT_EMAIL_DE}`}>
+              <RedHTMLLinkElementStyle href={`mailto:${CONTACT_EMAIL_DE}`}>
                 {`${CONTACT_EMAIL_DE}`}
-              </RedLinkHTMLElementStyle>
+              </RedHTMLLinkElementStyle>
             </StaticParagraphStyle>
             <StaticParagraphStyle>
               Die Abmeldung ist sofort wirksam. Sie führt zur automatischen

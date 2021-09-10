@@ -3,7 +3,7 @@ import i18n from 'i18next';
 import { OrganisationType, ProposalType } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
 import { VoteIconStyle } from '@make.org/ui/elements/SvgElements';
-import { RedLinkRouterStyle } from '@make.org/ui/elements/LinkElements';
+import { RedLinkStyle } from '@make.org/ui/elements/LinkElements';
 import {
   getOrganisationProfileLink,
   getProposalLink,
@@ -59,14 +59,14 @@ export const ProfileVoteCard: FC<Props> = ({
           <VoteIconStyle className={`${voteKey} voted`} aria-hidden />
         </ProfileHasVotedStyle>
         <div>
-          <RedLinkRouterStyle
+          <RedLinkStyle
             to={getOrganisationProfileLink(
               organisation.country,
               organisation.slug
             )}
           >
             {formatOrganisationName(organisation.organisationName)}
-          </RedLinkRouterStyle>
+          </RedLinkStyle>
           <CertifiedIconStyle aria-hidden focusable="false" />
           &nbsp;
           {i18n.t(`profile.organisation.proposal_${voteKey}`)}

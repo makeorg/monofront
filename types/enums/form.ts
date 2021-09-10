@@ -1,6 +1,7 @@
 export enum FORM {
   LOGIN_FORMNAME = 'login',
   REGISTER_FORMNAME = 'register',
+  REGISTER_PANEL_FORMNAME = 'register-panel',
   LEGAL_CONSENT_FORMNAME = 'legal_consent',
   FORGOT_PASSWORD_FORMNAME = 'forgot_password',
   PASSWORD_RECOVERY_FORMNAME = 'password_recovery',

@@ -4,6 +4,7 @@ import {
   RedButtonStyle,
   GreyNoBackgroundButtonStyle,
   RedNoBackgroundButtonStyle,
+  BlackNoBackgroundButtonStyle,
 } from '@make.org/ui/elements/ButtonsElements';
 import {
   SvgPencil,
@@ -132,8 +133,8 @@ export const ProposalExternalLinkIconStyle = styled(SvgExternalLinkPlain)`
   }
 `;
 
-/** Authentition */
-export const ProposalBackButtonStyle = styled(GreyNoBackgroundButtonStyle)`
+/** Authentication */
+export const ProposalBackButtonStyle = styled(BlackNoBackgroundButtonStyle)`
   text-decoration: none;
   align-self: center;
 `;
@@ -142,7 +143,7 @@ export const ProposalBackIconWrapperStyle = styled.span`
   display: inline-flex;
   padding: 3px 15px;
   border-radius: 20px;
-  background-color: ${color.greyLighter};
+  background-color: ${color.white};
   margin-right: 15px;
 `;
 
@@ -201,4 +202,24 @@ export const ProposalSuccessParagraphStyle = styled.p`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   text-align: center;
   margin: 5px auto 15px;
+`;
+
+export const ProposalAuthInlineWrapperStyle = styled.div`
+  justify-content: inline;
+`;
+
+export const ProposalAuthLoginWrapperStyle = styled(
+  ProposalAuthInlineWrapperStyle
+)`
+  display: -webkit-inline-box;
+  align-items: center;
+  margin: auto;
+`;
+
+export const ProposaplAuthSocialLoginWrapperStyle = styled.div`
+  margin: 45px 0px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
 `;

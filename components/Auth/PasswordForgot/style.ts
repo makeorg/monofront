@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import { typography, color } from 'athena-design-tokens';
+import { intToPx } from '@make.org/utils/helpers/styled';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { FormCenterAlignStyle } from '@make.org/ui/elements/FormElements';
 import { FourthLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
 
@@ -16,6 +19,29 @@ export const ForgotPasswordFormStyle = styled(FormCenterAlignStyle)`
   max-width: 490px;
 `;
 
-export const ForgotPasswordTitleStyle = styled(FourthLevelTitleStyle)`
-  margin-bottom: 20px;
+export const ForgotPasswordTitleStyle = styled(FourthLevelTitleStyle)<{
+  isPanel?: boolean;
+}>`
+  font-size: ${props =>
+    props.isPanel
+      ? intToPx(typography.font.fontsize.XS.value)
+      : intToPx(typography.font.fontsize.S.value)};
+  font-family: ${props =>
+    props.isPanel
+      ? MakeFonts.CircularStandardBook
+      : MakeFonts.CircularStandardBold};
+  text-transform: none;
+  margin-top: 35px;
+  color: ${props => (props.isPanel ? color.greyDark : color.black)};
+  text-transform: ${props => (props.isPanel ? 'none' : 'uppercase')};
+  margin: 20px 0px;
+`;
+
+export const PanelForgotPasswordTitleStyle = styled.h3<{ isPanel?: boolean }>`
+  font-size: ${intToPx(typography.font.fontsize.S.value)};
+  font-family: ${MakeFonts.CircularStandardBold};
+  text-transform: none;
+  margin-top: 35px;
+  color: ${color.black};
+  text-transform: ${props => (props.isPanel ? 'none' : 'uppercase')};
 `;

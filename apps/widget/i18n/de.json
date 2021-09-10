@@ -97,6 +97,14 @@
   "common": {
     "connexion_label": "Anmelden",
     "register_label": "Registrieren",
+    "continue": "Weitermachen",
+    "social_login": {
+      "card_title": "So finden Sie Ihr Abstimmungsverhalten",
+      "facebook_connect": "Mit Facebook fortfahren",
+      "google_connect": "Mit Google fortfahren",
+      "email_register": "Registrieren bei Mail",
+      "count_register": "({{count}}/2)"
+    },
     "form": {
       "hide_password": "Passwort ausblenden",
       "show_password": "Passwort anzeigen",
@@ -356,13 +364,16 @@
       "panel_trigger": "Ich mache einen Vorschlag",
       "button_cancel": "Abbrechen",
       "button_submit": "Bestätigen",
-      "moderation_link": "Lesen Sie unsere Moderationscharta"
+      "read_our": "Lesen Sie unsere",
+      "moderation_link": "Moderationscharta"
     },
     "authentication": {
       "button_back": "Meinen Vorschlag ändern",
       "title": "Um meinen Vorschlag zu bestätigen,",
       "subtitle": "registriere ich mich über",
-      "button_login": "Ich habe bereits ein Konto und melde mich an"
+      "button_login_text": "Ich habe bereits ein Konto",
+      "button_login_link": "und melde mich an"
+
     },
     "success": {
       "title": "Danke, {{name}}!",
@@ -447,6 +458,8 @@
     "social_connect": "Ich registriere mich über",
     "or": "oder",
     "subtitle": "Ich registriere mich über dieses Formular",
+    "step1_title": "Per E-Mail abonnieren",
+    "step2_title": "Meine Registrierung abschließen",
     "login_title": "Ich habe bereits ein Konto.",
     "login_link": "Anmelden",
     "gtu_text_first": "Mit der Registrierung erklärst du dich mit unseren {{gtu_link}} ",

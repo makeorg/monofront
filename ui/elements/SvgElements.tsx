@@ -40,9 +40,15 @@ export const VoteIconStyle = styled(props => <SvgThumbsUp {...props} />)`
   }
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     width: 22px;
+    &.widget {
+      width: 18px;
+    }
   }
   @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
     width: 25px;
+    &.widget {
+      width: 18px;
+    }
   }
 `;
 

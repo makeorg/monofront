@@ -3,7 +3,7 @@ import { HeadProvider } from 'react-head';
 import Logo from '@make.org/assets/images/logo.svg';
 import i18n from 'i18next';
 import { SecondLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
-import { RedLinkHTMLElementStyle } from '@make.org/ui/elements/LinkElements';
+import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
 import { DefaultStylesheet } from '@make.org/assets/css-in-js/DefaultStyle';
 import { ModernNormalizeStylesheet } from '@make.org/assets/css-in-js/ModernNormalize';
 import { FontFacesStylesheet } from '@make.org/assets/css-in-js/FontFaces';
@@ -41,9 +41,9 @@ export const NoCookies: FC = () => (
       </NoCookiesParagraphStyle>
       <NoCookiesParagraphStyle className="column">
         {i18n.t('no_cookies.information')}
-        <RedLinkHTMLElementStyle href={`https://${i18n.t('no_cookies.link')}`}>
+        <RedHTMLLinkElementStyle href={`https://${i18n.t('no_cookies.link')}`}>
           {i18n.t('no_cookies.link')}
-        </RedLinkHTMLElementStyle>
+        </RedHTMLLinkElementStyle>
       </NoCookiesParagraphStyle>
 
       <NoCookiesParagraphStyle>

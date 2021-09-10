@@ -16,9 +16,9 @@ import {
 } from '@make.org/components/Sequence/Cards/style';
 import { getParticipateLink } from '@make.org/utils/helpers/url';
 import { trackClickOperationPage } from '@make.org/utils/services/Tracking';
-import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
+import { RedUppercaseHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
 import { WidgetContainer } from '../../style';
-import { SidePanel } from '../SidePanel';
+import { HeaderPanel } from '../HeaderPanel';
 
 export const ClosedConsultation: FC = () => {
   const { state } = useAppContext();
@@ -40,22 +40,22 @@ export const ClosedConsultation: FC = () => {
         description={question.wording.metas.description}
         picture={question.wording.metas.picture}
       />
-      <SidePanel />
+      <HeaderPanel />
       <SequenceContainerStyle data-cy-container="sequence" className="widget">
         <SequenceContentStyle>
-          <SequenceCardStyle className="center">
+          <SequenceCardStyle className="center widget">
             <SequenceMainTitleStyle>
               {i18n.t('unsecure.title')}
             </SequenceMainTitleStyle>
             <SequenceParagraphStyle>
               {i18n.t('unsecure.description')}
             </SequenceParagraphStyle>
-            <RedHTMLLinkElementStyle
+            <RedUppercaseHTMLLinkElementStyle
               href={getParticipateLink(country, question.slug)}
               onClick={() => trackClickOperationPage()}
             >
               {i18n.t('unsecure.link')}
-            </RedHTMLLinkElementStyle>
+            </RedUppercaseHTMLLinkElementStyle>
           </SequenceCardStyle>
           <SequenceProgress disabled />
         </SequenceContentStyle>

@@ -24,6 +24,14 @@ export const DefaultStylesheet = createGlobalStyle`
     }
   }
 
+  .make-widget {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 550px;
+  }
+
   h1,
   h2,
   h3,

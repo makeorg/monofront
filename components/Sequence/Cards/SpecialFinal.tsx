@@ -6,8 +6,11 @@ import {
   trackDisplayFinalCard,
 } from '@make.org/utils/services/Tracking';
 import { resetSequenceVotedProposals } from '@make.org/store/actions/sequence';
-import { LinkAsRedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { useAppContext } from '@make.org/store';
+import {
+  RedUppercaseLinkElementStyle,
+  RedUppercaseHTMLLinkElementStyle,
+} from '@make.org/ui/elements/LinkElements';
 import { SequenceMainTitleStyle, SequenceParagraphStyle } from './style';
 
 type Props = {
@@ -16,7 +19,8 @@ type Props = {
 
 export const SpecialFinalCard: React.FC<Props> = ({ questionSlug }) => {
   const { dispatch, state } = useAppContext();
-  const { country } = state.appConfig;
+  const { country, source } = state.appConfig;
+  const isWidget = source === 'widget';
 
   useEffect(() => {
     trackDisplayFinalCard();
@@ -25,18 +29,27 @@ export const SpecialFinalCard: React.FC<Props> = ({ questionSlug }) => {
 
   return (
     <>
-      <SequenceMainTitleStyle>
+      <SequenceMainTitleStyle className={isWidget ? 'widget' : ''}>
         {i18n.t('special_final_card.title')}
       </SequenceMainTitleStyle>
       <SequenceParagraphStyle>
         {i18n.t('special_final_card.subtitle')}
       </SequenceParagraphStyle>
-      <LinkAsRedButtonStyle
-        to={getParticipateLink(country, questionSlug)}
-        onClick={() => trackClickOperationPage()}
-      >
-        {i18n.t('special_final_card.cta_text')}
-      </LinkAsRedButtonStyle>
+      {isWidget ? (
+        <RedUppercaseHTMLLinkElementStyle
+          href={`https://make.org${getParticipateLink(country, questionSlug)}`}
+          target="__blank"
+        >
+          {i18n.t('special_final_card.cta_text')}
+        </RedUppercaseHTMLLinkElementStyle>
+      ) : (
+        <RedUppercaseLinkElementStyle
+          to={getParticipateLink(country, questionSlug)}
+          onClick={() => trackClickOperationPage()}
+        >
+          {i18n.t('special_final_card.cta_text')}
+        </RedUppercaseLinkElementStyle>
+      )}
     </>
   );
 };

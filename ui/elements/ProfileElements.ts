@@ -17,7 +17,7 @@ import {
 import { ParagraphStyle } from './ParagraphElements';
 import { SeparatorStyle } from './SeparatorsElements';
 import { GreyButtonStyle, UnstyledButtonStyle } from './ButtonsElements';
-import { RedLinkHTMLElementStyle } from './LinkElements';
+import { RedHTMLLinkElementStyle } from './LinkElements';
 import { SvgLink, SvgLike, SvgMapMarker } from '../Svg/elements';
 
 const TabsOffsetDesktop = 62;
@@ -207,7 +207,7 @@ export const ProfileLinkIconStyle = styled(SvgLink)`
   margin-right: 5px;
 `;
 
-export const ProfileWebsiteLinkStyle = styled(RedLinkHTMLElementStyle)`
+export const ProfileWebsiteLinkStyle = styled(RedHTMLLinkElementStyle)`
   word-break: break-all;
 `;
 

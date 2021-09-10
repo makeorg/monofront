@@ -34,7 +34,7 @@ import {
 } from '@make.org/utils/routes';
 import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
-import { RedLinkHTMLElementStyle } from '@make.org/ui/elements/LinkElements';
+import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { env } from '@make.org/assets/env';
 import { summary } from '@make.org/utils/constants/accessibilitySummary';
@@ -75,9 +75,9 @@ export const A11yFR: FC = () => {
         </StaticParagraphStyle>
         <StaticParagraphStyle>
           {'Cette déclaration d’accessibilité s’applique à '}
-          <RedLinkHTMLElementStyle href={env.frontUrl()}>
+          <RedHTMLLinkElementStyle href={env.frontUrl()}>
             {env.frontUrl()}
-          </RedLinkHTMLElementStyle>
+          </RedHTMLLinkElementStyle>
           .
         </StaticParagraphStyle>
         <FocusBlockWrapperStyle as="section">
@@ -110,7 +110,7 @@ export const A11yFR: FC = () => {
             <StaticParagraphStyle>
               Make.org est en conformité partielle avec le
               <> </>
-              <RedLinkHTMLElementStyle
+              <RedHTMLLinkElementStyle
                 href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/"
                 target="_blank"
                 rel="noopener"
@@ -122,7 +122,7 @@ export const A11yFR: FC = () => {
                 <ScreenReaderItemStyle>
                   {i18n.t('common.open_new_window')}
                 </ScreenReaderItemStyle>
-              </RedLinkHTMLElementStyle>
+              </RedHTMLLinkElementStyle>
               .
             </StaticParagraphStyle>
           </StaticPrimaryOrderedListItemStyle>
@@ -187,7 +187,7 @@ export const A11yFR: FC = () => {
               <StaticSquareListItemStyle>
                 Retrouver la
                 <> </>
-                <RedLinkHTMLElementStyle
+                <RedHTMLLinkElementStyle
                   href="https://gitlab.com/makeorg/platform/front/-/blob/production/package.json"
                   target="_blank"
                   rel="noopener"
@@ -197,7 +197,7 @@ export const A11yFR: FC = () => {
                   <ScreenReaderItemStyle>
                     {i18n.t('common.open_new_window')}
                   </ScreenReaderItemStyle>
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
             </StaticSquareListStyle>
             <StaticFourthLevelTitleStyle>
@@ -219,7 +219,7 @@ export const A11yFR: FC = () => {
               <StaticSquareListItemStyle lang="en">
                 Google Lighthouse
                 <> </>
-                <RedLinkHTMLElementStyle
+                <RedHTMLLinkElementStyle
                   href="https://developers.google.com/web/tools/lighthouse#devtools"
                   target="_blank"
                   rel="noopener"
@@ -229,12 +229,12 @@ export const A11yFR: FC = () => {
                   <ScreenReaderItemStyle lang="fr">
                     {i18n.t('common.open_new_window')}
                   </ScreenReaderItemStyle>
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle lang="en">
                 Google Lighthouse
                 <> </>
-                <RedLinkHTMLElementStyle
+                <RedHTMLLinkElementStyle
                   href="https://github.com/GoogleChrome/lighthouse-ci"
                   target="_blank"
                   rel="noopener"
@@ -244,12 +244,12 @@ export const A11yFR: FC = () => {
                   <ScreenReaderItemStyle lang="fr">
                     {i18n.t('common.open_new_window')}
                   </ScreenReaderItemStyle>
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 <span lang="en">Web Developer</span>
                 <> </>
-                <RedLinkHTMLElementStyle
+                <RedHTMLLinkElementStyle
                   href="https://chrispederick.com/work/web-developer/"
                   target="_blank"
                   rel="noopener"
@@ -259,12 +259,12 @@ export const A11yFR: FC = () => {
                   <ScreenReaderItemStyle>
                     {i18n.t('common.open_new_window')}
                   </ScreenReaderItemStyle>
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 Axe
                 <> </>
-                <RedLinkHTMLElementStyle
+                <RedHTMLLinkElementStyle
                   href="https://www.deque.com/axe/browser-extensions/"
                   target="_blank"
                   rel="noopener"
@@ -274,12 +274,12 @@ export const A11yFR: FC = () => {
                   <ScreenReaderItemStyle>
                     {i18n.t('common.open_new_window')}
                   </ScreenReaderItemStyle>
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle lang="en">
                 WCAG Color contrast checker
                 <> </>
-                <RedLinkHTMLElementStyle
+                <RedHTMLLinkElementStyle
                   href="
               https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf"
                   target="_blank"
@@ -291,7 +291,7 @@ export const A11yFR: FC = () => {
                   <ScreenReaderItemStyle>
                     {i18n.t('common.open_new_window')}
                   </ScreenReaderItemStyle>
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
             </StaticSquareListStyle>
             <StaticFourthLevelTitleStyle>
@@ -301,29 +301,29 @@ export const A11yFR: FC = () => {
             <StaticSquareListStyle>
               <StaticSquareListItemStyle>
                 {"Page d'accueil France : "}
-                <RedLinkHTMLElementStyle href={getHomeLink('FR')}>
+                <RedHTMLLinkElementStyle href={getHomeLink('FR')}>
                   {env.frontUrl() + getHomeLink('FR')}
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {"Page d'accueil Grande Bretagne : "}
-                <RedLinkHTMLElementStyle href={getHomeLink('GB')}>
+                <RedHTMLLinkElementStyle href={getHomeLink('GB')}>
                   {env.frontUrl() + getHomeLink('GB')}
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Page parcourir les consultations : '}
-                <RedLinkHTMLElementStyle
+                <RedHTMLLinkElementStyle
                   href={getBrowseConsultationsLink(country)}
                 >
                   {env.frontUrl() + getBrowseConsultationsLink(country)}
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Page parcourir les résultats : '}
-                <RedLinkHTMLElementStyle href={getBrowseResultsLink(country)}>
+                <RedHTMLLinkElementStyle href={getBrowseResultsLink(country)}>
                   {env.frontUrl() + getBrowseResultsLink(country)}
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Page consultation : '}
@@ -398,78 +398,78 @@ export const A11yFR: FC = () => {
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Page de résultats de recherche : '}
-                <RedLinkHTMLElementStyle
+                <RedHTMLLinkElementStyle
                   href={getRouteSearch(country, 'accessibilité')}
                 >
                   {env.frontUrl() + getRouteSearch(country, 'accessibilité')}
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Page de résultats de recherche des propositions : '}
-                <RedLinkHTMLElementStyle
+                <RedHTMLLinkElementStyle
                   href={getRouteSearchProposals(country, 'accessibilité')}
                 >
                   {env.frontUrl() +
                     getRouteSearchProposals(country, 'accessibilité')}
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Page de résultats de recherche des organisations : '}
-                <RedLinkHTMLElementStyle
+                <RedHTMLLinkElementStyle
                   href={getRouteSearchOrganisations(country, 'association')}
                 >
                   {env.frontUrl() +
                     getRouteSearchOrganisations(country, 'association')}
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Page de résultats de recherche des consultations : '}
-                <RedLinkHTMLElementStyle
+                <RedHTMLLinkElementStyle
                   href={getRouteSearchConsultations(country, 'comment')}
                 >
                   {env.frontUrl() +
                     getRouteSearchConsultations(country, 'comment')}
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Page de mentions légales : '}
-                <RedLinkHTMLElementStyle
+                <RedHTMLLinkElementStyle
                   href={getLegalPageLink(country, language)}
                 >
                   {env.frontUrl() + getLegalPageLink(country, language)}
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {"Page de conditions d'utilisation : "}
-                <RedLinkHTMLElementStyle
+                <RedHTMLLinkElementStyle
                   href={getGTUPageLink(country, language)}
                 >
                   {env.frontUrl() + getGTUPageLink(country, language)}
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Page de politique de données : '}
-                <RedLinkHTMLElementStyle
+                <RedHTMLLinkElementStyle
                   href={getDataPageLink(country, language)}
                 >
                   {env.frontUrl() + getDataPageLink(country, language)}
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {"Page de déclaration d'accessibilité : "}
-                <RedLinkHTMLElementStyle
+                <RedHTMLLinkElementStyle
                   href={getA11YPageLink(country, language)}
                 >
                   {env.frontUrl() + getA11YPageLink(country, language)}
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Page de contact : '}
-                <RedLinkHTMLElementStyle
+                <RedHTMLLinkElementStyle
                   href={getContactPageLink(country, language)}
                 >
                   {env.frontUrl() + getContactPageLink(country, language)}
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
             </StaticSquareListStyle>
           </StaticPrimaryOrderedListItemStyle>
@@ -485,9 +485,9 @@ export const A11yFR: FC = () => {
             </StaticParagraphStyle>
             <StaticParagraphStyle>
               {'Contactez-nous à cette adresse email : '}
-              <RedLinkHTMLElementStyle href={`mailto:${ACCESSIBILITY_EMAIL}`}>
+              <RedHTMLLinkElementStyle href={`mailto:${ACCESSIBILITY_EMAIL}`}>
                 {`${ACCESSIBILITY_EMAIL}`}
-              </RedLinkHTMLElementStyle>
+              </RedHTMLLinkElementStyle>
             </StaticParagraphStyle>
           </StaticPrimaryOrderedListItemStyle>
         </StaticPrimaryOrderedListStyle>

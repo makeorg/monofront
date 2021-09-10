@@ -33,6 +33,7 @@ export const CheckboxWrapper = styled(FlexElementStyle)`
 export const CheckboxLabelStyle = styled.label<{
   isBlack?: boolean;
   noFontSizeChange: boolean;
+  isWidget?: boolean;
 }>`
   display: inline-flex;
   color: ${props => (props.isBlack ? color.black : color.greyDark)};
@@ -42,13 +43,16 @@ export const CheckboxLabelStyle = styled.label<{
       ? intToPx(typography.font.fontsize.XS.value)
       : intToPx(typography.font.fontsize.X2S.value)};
   a {
-    color: ${color.brandSecondary};
+    color: ${props => (props.isWidget ? color.greyDark : color.brandSecondary)};
   }
   strong {
     font-family: ${MakeFonts.CircularStandardBold};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${props =>
+      props.isWidget
+        ? intToPx(typography.font.fontsize.X2S.value)
+        : intToPx(typography.font.fontsize.XS.value)};
   }
 `;
 
@@ -97,17 +101,28 @@ export const StyledCheckbox = styled(FakeCheckboxInputStyle)<{
   }
 `;
 
-export const NewWindowIconStyle = styled(SvgExternalLinkPlain)`
+export const NewWindowIconStyle = styled(SvgExternalLinkPlain)<{
+  isGrey?: boolean;
+}>`
   width: 9px;
   height: 9px;
   padding-left: 2px;
   .tofill {
-    fill: ${color.brandSecondary};
+    fill: ${props => (props.isGrey ? color.greyDark : color.brandSecondary)};
   }
 `;
 
-export const DataPolicyNewWindowLinkStyle = styled.a`
-  ${DataPolicyLinkStyle}
+export const DataPolicyNewWindowLinkStyle = styled.a<{ isWidget?: boolean }>`
+  ${DataPolicyLinkStyle};
+  color: ${props => (props.isWidget ? color.greyDark : color.brandSecondary)};
+  font-size: ${props =>
+    props.isWidget
+      ? intToPx(typography.font.fontsize.X2S.value)
+      : intToPx(typography.font.fontsize.XS.value)};
+  &:hover,
+  &:focus {
+    color: ${props => (props.isWidget ? color.greyDark : color.brandSecondary)};
+  }
 `;
 
 const FormStyle = `
@@ -143,7 +158,7 @@ export const FakeFieldStyle = styled.div<{ hasError: boolean }>`
   width: 100%;
   padding: 0 15px;
   border-radius: 30px;
-  background-color: ${color.greyLighter};
+  background-color: ${color.white};
   border-width: 1px;
   border-style: solid;
   border-color: ${props => (props.hasError ? color.error : color.grey)};
@@ -205,7 +220,8 @@ export const FormErrorsContainerStyle = styled.div`
   padding: 15px;
   margin-bottom: 10px;
   border-radius: ${intToPx(Elements.BorderRadius)};
-  background-color: ${color.greyLighter};
+  background-color: ${color.brandSecondary};
+  color: ${color.white};
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
 `;
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   SequenceCardType,
   QuestionType,
@@ -7,7 +7,6 @@ import {
   ProposalCardType,
   NoProposalCardType,
 } from '@make.org/types';
-import { trackDisplayNoProposalSequence } from '@make.org/utils/services/Tracking';
 import {
   TopComponentContext,
   TopComponentContextValueType,
@@ -45,12 +44,13 @@ export const Card: React.FC<CardProps> = ({ card, question }) => {
       );
     case CARD.CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL:
       return <PushProposalCard />;
-    case CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD:
-      return <FinalCard questionSlug={question.slug} />;
-    case CARD.CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD: {
+    case CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD: {
       if (isWidget) {
-        return <FinalCard questionSlug={question.slug} />;
+        return <SpecialFinalCard questionSlug={question.slug} />;
       }
+      return <FinalCard questionSlug={question.slug} />;
+    }
+    case CARD.CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD: {
       return <SpecialFinalCard questionSlug={question.slug} />;
     }
     case CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD:
@@ -73,34 +73,54 @@ export const Card: React.FC<CardProps> = ({ card, question }) => {
 
 type Props = {
   /** Attribute of the card */
-  card: SequenceCardType | NoProposalCardType;
+  card: SequenceCardType | NoProposalCardType | null;
   /** Object with Dynamic properties used to configure the Sequence (questionId, country, ...) */
   question: QuestionType;
 };
 
 export const SequenceCard: React.FC<Props> = ({ card, question }) => {
-  const isProposalCard = card.type === CARD.CARD_TYPE_PROPOSAL;
+  const { state } = useAppContext();
+  const { source } = state.appConfig;
+  const isWidget = source === 'widget';
+
+  if (!card) {
+    return null;
+  }
+
   const isNoProposalCard = card.type === CARD.CARD_TYPE_NO_PROPOSAL_CARD;
+  const isFinalCard = card.type === CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD;
+  const isSpecialFinalCard =
+    card.type === CARD.CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD;
   const topComponentContext: TopComponentContextValueType =
     TopComponentContextValue.getSequenceProposal();
 
-  useEffect(() => {
-    if (isNoProposalCard) {
-      trackDisplayNoProposalSequence();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  let className = '';
+
+  if (isNoProposalCard) {
+    className = 'no-proposal';
+  }
+
+  if (isWidget) {
+    className = 'widget';
+  }
+
+  if (isSpecialFinalCard) {
+    className = 'center';
+  }
+
+  if (isFinalCard && isWidget) {
+    className = 'center widget';
+  }
 
   return (
     <>
       <TopComponentContext.Provider value={topComponentContext}>
         <SequenceCardStyle
-          className={!isProposalCard ? 'center' : ''}
+          className={className}
           id={`card-${card.index}`}
           data-cy-card-type={card.type}
           data-cy-card-number={!isNoProposalCard && card.index + 1}
           aria-live="polite"
-          isNoProposalCard={isNoProposalCard}
         >
           <Card card={card} question={question} />
         </SequenceCardStyle>

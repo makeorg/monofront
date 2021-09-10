@@ -5,7 +5,7 @@ import i18n from 'i18next';
 import { URL } from '@make.org/types/enums';
 import { ExternalLinkIconStyle } from '@make.org/ui/elements/ButtonsElements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
+import { RedUppercaseHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
 import {
   ConsultationsListStyle,
   ConsultationsListItemStyle,
@@ -46,14 +46,14 @@ export const FeaturedPosts: FC<Props> = ({ posts }) => {
               <ConsultationElementParagraphStyle>
                 {post.description}
               </ConsultationElementParagraphStyle>
-              <RedHTMLLinkElementStyle
+              <RedUppercaseHTMLLinkElementStyle
                 href={post.link || '#'}
                 target="_blank"
                 rel="noopener"
                 onClick={() => trackClickBlog('blog item')}
               >
                 {i18n.t('homepage.posts.link_text')}
-              </RedHTMLLinkElementStyle>
+              </RedUppercaseHTMLLinkElementStyle>
             </ConsultationArticleStyle>
           </ConsultationsListItemStyle>
         ))}

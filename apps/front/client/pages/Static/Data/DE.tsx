@@ -9,7 +9,7 @@ import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
 import { DateHelper } from '@make.org/utils/helpers/date';
 import { DATE } from '@make.org/types/enums';
-import { RedLinkHTMLElementStyle } from '@make.org/ui/elements/LinkElements';
+import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { getCountryDPA } from '@make.org/utils/helpers/countries';
 import i18n from 'i18next';
@@ -296,13 +296,13 @@ export const DataDE: FC = () => {
             <StaticParagraphStyle>
               Benutzer können ihre Rechte wie oben beschrieben auf jede Art und
               Weise ausüben, einschließlich durch Senden einer E-Mail an{' '}
-              <RedLinkHTMLElementStyle href={`mailto:${CONTACT_EMAIL_DE}`}>
+              <RedHTMLLinkElementStyle href={`mailto:${CONTACT_EMAIL_DE}`}>
                 {`${CONTACT_EMAIL_DE}`}
-              </RedLinkHTMLElementStyle>
+              </RedHTMLLinkElementStyle>
               . Wenn Nutzer das Gefühl haben, dass ihre Rechte an ihren Daten
               von Make.org nicht respektiert werden, können sie in jedem Fall
               eine Beschwerde bei der{' '}
-              <RedLinkHTMLElementStyle
+              <RedHTMLLinkElementStyle
                 href={`${getCountryDPA(country).link}`}
                 target="_blank"
                 rel="noopener"
@@ -312,7 +312,7 @@ export const DataDE: FC = () => {
                 <ScreenReaderItemStyle>
                   Openingin a new window
                 </ScreenReaderItemStyle>
-              </RedLinkHTMLElementStyle>{' '}
+              </RedHTMLLinkElementStyle>{' '}
               einreichen.
             </StaticParagraphStyle>
           </StaticPrimaryUnorderedListItemStyle>
@@ -355,9 +355,9 @@ export const DataDE: FC = () => {
               , vertreten durch{' '}
               <span lang="fr">Maître Jean-Baptiste Soufron</span>. Er kann unter
               folgender Adresse kontaktiert werden:{' '}
-              <RedLinkHTMLElementStyle href={`mailto:${CONTACT_EMAIL_DE}`}>
+              <RedHTMLLinkElementStyle href={`mailto:${CONTACT_EMAIL_DE}`}>
                 {`${CONTACT_EMAIL_DE}`}
-              </RedLinkHTMLElementStyle>
+              </RedHTMLLinkElementStyle>
               .
             </StaticParagraphStyle>
           </StaticPrimaryUnorderedListItemStyle>

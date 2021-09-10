@@ -15,7 +15,10 @@ import { searchProposals } from '@make.org/utils/helpers/proposal';
 import { useParams } from 'react-router';
 import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
 import { Pagination } from '@make.org/components/Pagination';
-import { trackDisplayOperationPage } from '@make.org/utils/services/Tracking';
+import {
+  trackClickSearchProposals,
+  trackDisplayOperationPage,
+} from '@make.org/utils/services/Tracking';
 import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
 import { QuestionService } from '@make.org/utils/services/Question';
@@ -27,7 +30,7 @@ import { ParticipateHighlights } from '../../app/Consultation/Highlights';
 import { ParticipateHeader } from '../../app/Consultation/Header';
 import { CitizenRegister } from '../../app/Consultation/CitizenRegister';
 import { FilterAndSort } from '../../app/Consultation/ExploreFilters';
-import { SortAndFiltersCTA } from '../../app/Consultation/ExploreFilters/FilterAndSortPanel';
+// import { SortAndFiltersCTA } from '../../app/Consultation/ExploreFilters/FilterAndSortPanel';
 import {
   ParticipateContentStyle,
   ParticipateInnerStyle,
@@ -121,6 +124,7 @@ const ExplorePage: FC = () => {
   // handleSubmit for filters
   const handleSubmit = () => {
     getProposals(filterAndSortValues);
+    trackClickSearchProposals();
     if (!isDesktop) {
       dispatch(closePanel());
     }
@@ -199,7 +203,7 @@ const ExplorePage: FC = () => {
             )}
           </ParticipateMainContentStyle>
           <ParticipateSidebarContentStyle>
-            {isDesktop ? (
+            {isDesktop && (
               <FilterAndSort
                 filterAndSortValues={filterAndSortValues}
                 setFilterAndSortValues={setFilterAndSortValues}
@@ -207,15 +211,16 @@ const ExplorePage: FC = () => {
                 handleSubmit={handleSubmit}
                 handleReset={handleReset}
               />
-            ) : (
-              <SortAndFiltersCTA
-                filterAndSortValues={filterAndSortValues}
-                setFilterAndSortValues={setFilterAndSortValues}
-                keywords={keyword}
-                handleSubmit={handleSubmit}
-                handleReset={handleReset}
-              />
             )}
+            {/* // ) : (
+            //   <SortAndFiltersCTA
+            //     filterAndSortValues={filterAndSortValues}
+            //     setFilterAndSortValues={setFilterAndSortValues}
+            //     keywords={keyword}
+            //     handleSubmit={handleSubmit}
+            //     handleReset={handleReset}
+            //   />
+            // )} */}
           </ParticipateSidebarContentStyle>
         </ParticipateInnerStyle>
       </ParticipateContentStyle>

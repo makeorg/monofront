@@ -29,7 +29,13 @@ export const DotStyle = styled.span<{ delay: number; duration: number }>`
   animation-timing-function: ease-in-out;
   padding: 0 2px;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  &.widget {
+    font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.L.value)};
+    &.widget {
+      font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+    }
   }
 `;

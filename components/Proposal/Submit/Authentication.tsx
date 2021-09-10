@@ -1,18 +1,26 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import i18n from 'i18next';
-import { getDataPageLink } from '@make.org/utils/helpers/url';
+import { trackDisplayAuthenticationForm } from '@make.org/utils/services/Tracking';
 import {
-  trackClickPersonnalDataLink,
-  trackDisplayAuthenticationForm,
-} from '@make.org/utils/services/Tracking';
-import { Link } from 'react-router-dom';
-import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
+  CenterColumnStyle,
+  ColumnElementStyle,
+} from '@make.org/ui/elements/FlexElements';
 import { useAppContext } from '@make.org/store';
-import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
-import { modalShowLogin } from '@make.org/store/actions/modal';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
-
 import { AuthenticationRegisterButtons } from '@make.org/components/Auth/Register/Buttons';
+import { Register } from '@make.org/components/Auth/Register';
+import { Login } from '@make.org/components/Auth/Login';
+import { ExtraParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
+import { RedLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
+import { PasswordForgot } from '@make.org/components/Auth/PasswordForgot';
+import {
+  ProposalSubmitAuthSeparator,
+  SeparatorProposalAuthLogin,
+  TextSeparatorStyle,
+} from '@make.org/ui/elements/SeparatorsElements';
+import { FacebookAuthentication } from '@make.org/components/Auth/Social/FacebookAuthentication';
+import { GoogleAuthentication } from '@make.org/components/Auth/Social/GoogleAuthentication';
+import { SocialRegisterButtonsWrapperStyle } from '../../Auth/style';
 import {
   ProposalStepWrapperStyle,
   ProposalBackButtonStyle,
@@ -20,32 +28,30 @@ import {
   ProposalBackIconStyle,
   ProposalAuthWrapperStyle,
   ProposalAltStepTitleStyle,
-  ProposalAuthDisclaimerStyle,
-  ProposalAuthSeparatorStyle,
   ProposalAuthLoginStyle,
-  ProposalAuthCancelStyle,
+  ProposalAuthLoginWrapperStyle,
+  ProposaplAuthSocialLoginWrapperStyle,
 } from './style';
 
 type Props = {
   handleStepBack: () => void;
-  handleCancel: () => void;
   handleProposeAPICall: () => void;
 };
 
+enum AUTH_STEP {
+  SOCIAL,
+  LOGIN,
+  REGISTER,
+  FORGOT_PASSWORD,
+}
+
 export const ProposalAuthentication: React.FC<Props> = ({
   handleStepBack,
-  handleCancel,
   handleProposeAPICall,
 }) => {
-  const { state, dispatch } = useAppContext();
+  const { state } = useAppContext();
   const { isLoggedIn, user } = selectAuthentication(state) || {};
-  const { country, language } = state.appConfig;
-
-  const handleModerationLink = () => {
-    dispatch(closePanel());
-    dispatch(removePanelContent());
-    trackClickPersonnalDataLink();
-  };
+  const [authStep, setAuthStep] = useState(AUTH_STEP.SOCIAL);
 
   useEffect(() => {
     trackDisplayAuthenticationForm();
@@ -57,6 +63,52 @@ export const ProposalAuthentication: React.FC<Props> = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoggedIn, user]);
+
+  if (authStep !== AUTH_STEP.SOCIAL) {
+    return (
+      <ProposalStepWrapperStyle>
+        <CenterColumnStyle>
+          <ProposalBackButtonStyle
+            onClick={() => setAuthStep(AUTH_STEP.SOCIAL)}
+          >
+            <ProposalBackIconWrapperStyle>
+              <ProposalBackIconStyle aria-hidden focusable="false" />
+            </ProposalBackIconWrapperStyle>
+            {i18n.t('common.back')}
+          </ProposalBackButtonStyle>
+          {authStep === AUTH_STEP.LOGIN && <Login panel />}
+          {authStep === AUTH_STEP.REGISTER && <Register panel />}
+          {authStep === AUTH_STEP.FORGOT_PASSWORD && <PasswordForgot panel />}
+          {authStep === AUTH_STEP.LOGIN && (
+            <>
+              <ExtraParagraphStyle>
+                {i18n.t('login.forgot_password_title')}
+                <RedLinkButtonStyle
+                  onClick={() => setAuthStep(AUTH_STEP.FORGOT_PASSWORD)}
+                  type="button"
+                >
+                  {i18n.t('login.forgot_password_link')}
+                </RedLinkButtonStyle>
+              </ExtraParagraphStyle>
+              <ProposaplAuthSocialLoginWrapperStyle>
+                <SeparatorProposalAuthLogin>
+                  <ProposalSubmitAuthSeparator />
+                  <TextSeparatorStyle>
+                    {i18n.t('register.or')}
+                  </TextSeparatorStyle>
+                  <ProposalSubmitAuthSeparator />
+                </SeparatorProposalAuthLogin>
+                <SocialRegisterButtonsWrapperStyle>
+                  <FacebookAuthentication />
+                  <GoogleAuthentication />
+                </SocialRegisterButtonsWrapperStyle>
+              </ProposaplAuthSocialLoginWrapperStyle>
+            </>
+          )}
+        </CenterColumnStyle>
+      </ProposalStepWrapperStyle>
+    );
+  }
 
   return (
     <ProposalStepWrapperStyle>
@@ -71,28 +123,17 @@ export const ProposalAuthentication: React.FC<Props> = ({
           <ProposalAltStepTitleStyle className="center">
             {i18n.t('proposal_submit.authentication.title')}
           </ProposalAltStepTitleStyle>
-          <ProposalAuthDisclaimerStyle className="with-margin-top">
-            {i18n.t('proposal_submit.authentication.subtitle')}
-          </ProposalAuthDisclaimerStyle>
-          <AuthenticationRegisterButtons />
-          <ProposalAuthDisclaimerStyle>
-            {i18n.t('authentication.commitment')}
-            <Link
-              to={getDataPageLink(country, language)}
-              onClick={handleModerationLink}
-            >
-              {i18n.t('authentication.personal_data')}
-            </Link>
-          </ProposalAuthDisclaimerStyle>
-          <ProposalAuthSeparatorStyle />
-          <ProposalAuthLoginStyle onClick={() => dispatch(modalShowLogin())}>
-            {i18n.t('proposal_submit.authentication.button_login')}
-          </ProposalAuthLoginStyle>
+          <AuthenticationRegisterButtons
+            onEmailRegister={() => setAuthStep(AUTH_STEP.REGISTER)}
+          />
         </ProposalAuthWrapperStyle>
       </ColumnElementStyle>
-      <ProposalAuthCancelStyle onClick={handleCancel}>
-        {i18n.t('proposal_submit.form.button_cancel')}
-      </ProposalAuthCancelStyle>
+      <ProposalAuthLoginWrapperStyle>
+        {i18n.t('proposal_submit.authentication.button_login_text')}{' '}
+        <ProposalAuthLoginStyle onClick={() => setAuthStep(AUTH_STEP.LOGIN)}>
+          {i18n.t('proposal_submit.authentication.button_login_link')}
+        </ProposalAuthLoginStyle>
+      </ProposalAuthLoginWrapperStyle>
     </ProposalStepWrapperStyle>
   );
 };

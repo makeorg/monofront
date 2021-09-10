@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
+import { useAppContext } from '@make.org/store';
 import {
   VoteContainerStyle,
   VoteWrapperStyle,
@@ -31,41 +32,53 @@ export const CommitmentQualification: FC<Props> = ({
   qualifications,
   qualificationValue,
   handleQualification,
-}) => (
-  <VoteContainerStyle className="opinions">
-    <VoteWrapperStyle>
-      <ScreenReaderItemStyle as="p">
-        {i18n.t(`personality.opinions.vote.${voteValue}`)}
-      </ScreenReaderItemStyle>
-      <VoteButtonStyle
-        aria-label={i18n.t(`personality.opinions.vote.${voteValue}`)}
-        className={`${voteValue} voted`}
-        data-cy-button="vote"
-        data-cy-vote-key={voteValue}
-        onClick={unvote}
-      >
-        <VoteIconStyle className={voteValue} aria-hidden focusable="false" />
-      </VoteButtonStyle>
-      <ScreenReaderItemStyle as="p">
-        {i18n.t('qualification.title')}
-      </ScreenReaderItemStyle>
-      <OpinionQualificationListStyle as={UnstyledListStyle}>
-        {qualifications.map(qualification => (
-          <OpinionQualificationListItemStyle key={qualification}>
-            <QualifyButtonStyle
-              className={
-                qualification === qualificationValue ? 'qualified' : ''
-              }
-              color={opinionsVoteStaticParams[voteValue].color}
-              onClick={() => handleQualification(qualification)}
-              data-cy-button="qualification"
-              data-cy-qualification-key={qualification}
-            >
-              {i18n.t(`personality.opinions.qualification.${qualification}`)}
-            </QualifyButtonStyle>
-          </OpinionQualificationListItemStyle>
-        ))}
-      </OpinionQualificationListStyle>
-    </VoteWrapperStyle>
-  </VoteContainerStyle>
-);
+}) => {
+  const { state } = useAppContext();
+  const { source } = state.appConfig;
+  const isWidget = source === 'widget';
+
+  return (
+    <VoteContainerStyle className="opinions">
+      <VoteWrapperStyle>
+        <ScreenReaderItemStyle as="p">
+          {i18n.t(`personality.opinions.vote.${voteValue}`)}
+        </ScreenReaderItemStyle>
+        <VoteButtonStyle
+          aria-label={i18n.t(`personality.opinions.vote.${voteValue}`)}
+          className={`${voteValue} voted`}
+          data-cy-button="vote"
+          data-cy-vote-key={voteValue}
+          onClick={unvote}
+          isWidget={isWidget}
+        >
+          <VoteIconStyle
+            className={isWidget ? `${voteValue} widget` : voteValue}
+            aria-hidden
+            focusable="false"
+          />
+        </VoteButtonStyle>
+        <ScreenReaderItemStyle as="p">
+          {i18n.t('qualification.title')}
+        </ScreenReaderItemStyle>
+        <OpinionQualificationListStyle as={UnstyledListStyle}>
+          {qualifications.map(qualification => (
+            <OpinionQualificationListItemStyle key={qualification}>
+              <QualifyButtonStyle
+                className={
+                  qualification === qualificationValue ? 'qualified' : ''
+                }
+                color={opinionsVoteStaticParams[voteValue].color}
+                onClick={() => handleQualification(qualification)}
+                data-cy-button="qualification"
+                data-cy-qualification-key={qualification}
+                isWidget={isWidget}
+              >
+                {i18n.t(`personality.opinions.qualification.${qualification}`)}
+              </QualifyButtonStyle>
+            </OpinionQualificationListItemStyle>
+          ))}
+        </OpinionQualificationListStyle>
+      </VoteWrapperStyle>
+    </VoteContainerStyle>
+  );
+};

@@ -38,8 +38,8 @@ import {
 import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
 import {
-  RedLinkHTMLElementStyle,
-  RedLinkRouterStyle,
+  RedHTMLLinkElementStyle,
+  RedLinkStyle,
 } from '@make.org/ui/elements/LinkElements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { env } from '@make.org/assets/env';
@@ -72,26 +72,26 @@ export const A11yDE: FC = () => {
         </StaticSecondLevelTitleStyle>
         <StaticParagraphStyle>
           Make.org verpflichtet sich, seine Website gemäß der{' '}
-          <RedLinkHTMLElementStyle href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX%3A32016L2102">
+          <RedHTMLLinkElementStyle href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX%3A32016L2102">
             {' '}
             Richtlinie (EU) 2016/2102 des Europäischen Parlaments und des Rates
-          </RedLinkHTMLElementStyle>{' '}
+          </RedHTMLLinkElementStyle>{' '}
           barrierefrei zu gestalten.
         </StaticParagraphStyle>
         <StaticParagraphStyle>
           Diese Erklärung zur Barrierefreiheit bezieht sich auf{' '}
-          <RedLinkHTMLElementStyle href={env.frontUrl()}>
+          <RedHTMLLinkElementStyle href={env.frontUrl()}>
             {env.frontUrl()}
-          </RedLinkHTMLElementStyle>
+          </RedHTMLLinkElementStyle>
           .
         </StaticParagraphStyle>
         <StaticParagraphStyle>
           <StaticStrongStyle>Identität des Registranten: </StaticStrongStyle>
           <br /> Make.org <br /> {MAKE_ADDRESS} <br />
           Kontakt:{' '}
-          <RedLinkHTMLElementStyle href={ACCESSIBILITY_EMAIL}>
+          <RedHTMLLinkElementStyle href={ACCESSIBILITY_EMAIL}>
             {ACCESSIBILITY_EMAIL}
-          </RedLinkHTMLElementStyle>
+          </RedHTMLLinkElementStyle>
         </StaticParagraphStyle>
         <StaticPrimaryOrderedListStyle>
           <StaticPrimaryOrderedListItemStyle>
@@ -100,7 +100,7 @@ export const A11yDE: FC = () => {
             </StaticThirdLevelTitleStyle>
             <StaticParagraphStyle>
               Make.org entspricht teilweise den{' '}
-              <RedLinkHTMLElementStyle
+              <RedHTMLLinkElementStyle
                 href="https://www.w3.org/TR/WCAG21/"
                 target="_blank"
                 rel="noopener"
@@ -115,7 +115,7 @@ export const A11yDE: FC = () => {
                 <ScreenReaderItemStyle>
                   {i18n.t('common.open_new_window')}
                 </ScreenReaderItemStyle>
-              </RedLinkHTMLElementStyle>
+              </RedHTMLLinkElementStyle>
               .
             </StaticParagraphStyle>
             <StaticThirdLevelTitleStyle>
@@ -146,9 +146,9 @@ export const A11yDE: FC = () => {
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 Hier finden Sie die{' '}
-                <RedLinkHTMLElementStyle href="https://gitlab.com/makeorg/platform/front/-/blob/production/package.json">
+                <RedHTMLLinkElementStyle href="https://gitlab.com/makeorg/platform/front/-/blob/production/package.json">
                   vollständige Liste der verwendeten Technologien
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
             </StaticSquareListStyle>
             <StaticParagraphStyle>
@@ -169,33 +169,33 @@ export const A11yDE: FC = () => {
             <StaticSquareListStyle>
               <StaticSquareListItemStyle>
                 Google Lighthouse{' '}
-                <RedLinkHTMLElementStyle href="https://developers.google.com/web/tools/lighthouse#devtools">
+                <RedHTMLLinkElementStyle href="https://developers.google.com/web/tools/lighthouse#devtools">
                   DevTools
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 Google Lighthouse{' '}
-                <RedLinkHTMLElementStyle href="https://github.com/GoogleChrome/lighthouse-ci">
+                <RedHTMLLinkElementStyle href="https://github.com/GoogleChrome/lighthouse-ci">
                   CI
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 Web Developer{' '}
-                <RedLinkHTMLElementStyle href="https://chrispederick.com/work/web-developer/">
+                <RedHTMLLinkElementStyle href="https://chrispederick.com/work/web-developer/">
                   Browser-Plug-in
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 Axe{' '}
-                <RedLinkHTMLElementStyle href="https://www.deque.com/axe/browser-extensions/">
+                <RedHTMLLinkElementStyle href="https://www.deque.com/axe/browser-extensions/">
                   Browser-Plug-in
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 WCAG Color contrast checker{' '}
-                <RedLinkHTMLElementStyle href="https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf">
+                <RedHTMLLinkElementStyle href="https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf">
                   Browser-Plug-in
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
             </StaticSquareListStyle>
             <StaticParagraphStyle>
@@ -205,27 +205,27 @@ export const A11yDE: FC = () => {
             <StaticSquareListStyle>
               <StaticSquareListItemStyle>
                 {'Startseite Frankreich : '}
-                <RedLinkRouterStyle to={getHomeLink('FR')}>
+                <RedLinkStyle to={getHomeLink('FR')}>
                   {env.frontUrl() + getHomeLink('FR')}
-                </RedLinkRouterStyle>
+                </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Startseite Großbritannien : '}
-                <RedLinkRouterStyle to={getHomeLink('GB')}>
+                <RedLinkStyle to={getHomeLink('GB')}>
                   {env.frontUrl() + getHomeLink('GB')}
-                </RedLinkRouterStyle>
+                </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Seite zum Durchsuchen von Konsultationen : '}
-                <RedLinkRouterStyle to={getBrowseConsultationsLink('FR')}>
+                <RedLinkStyle to={getBrowseConsultationsLink('FR')}>
                   {env.frontUrl() + getBrowseConsultationsLink('FR')}
-                </RedLinkRouterStyle>
+                </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Ergebnisse der Seitensuche : '}
-                <RedLinkRouterStyle to={getBrowseResultsLink('FR')}>
+                <RedLinkStyle to={getBrowseResultsLink('FR')}>
                   {env.frontUrl() + getBrowseResultsLink('FR')}
-                </RedLinkRouterStyle>
+                </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Konsultationsseite : '}
@@ -299,66 +299,64 @@ export const A11yDE: FC = () => {
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Suchergebnisse Seite : '}
-                <RedLinkRouterStyle to={getRouteSearch('FR', 'accessibilité')}>
+                <RedLinkStyle to={getRouteSearch('FR', 'accessibilité')}>
                   {env.frontUrl() + getRouteSearch('FR', 'accessibilité')}
-                </RedLinkRouterStyle>
+                </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Ergebnisseite der Vorschlagssuche : '}
-                <RedLinkRouterStyle
+                <RedLinkStyle
                   to={getRouteSearchProposals('FR', 'accessibilité')}
                 >
                   {env.frontUrl() +
                     getRouteSearchProposals('FR', 'accessibilité')}
-                </RedLinkRouterStyle>
+                </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Organisationen Suchergebnisseite : '}
-                <RedLinkRouterStyle
+                <RedLinkStyle
                   to={getRouteSearchOrganisations('FR', 'association')}
                 >
                   {env.frontUrl() +
                     getRouteSearchOrganisations('FR', 'association')}
-                </RedLinkRouterStyle>
+                </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Suchergebnisseite für Beratungen : '}
-                <RedLinkRouterStyle
-                  to={getRouteSearchConsultations('FR', 'comment')}
-                >
+                <RedLinkStyle to={getRouteSearchConsultations('FR', 'comment')}>
                   {env.frontUrl() +
                     getRouteSearchConsultations('FR', 'comment')}
-                </RedLinkRouterStyle>
+                </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Rechtliche Seite : '}
-                <RedLinkRouterStyle to={getLegalPageLink(country, language)}>
+                <RedLinkStyle to={getLegalPageLink(country, language)}>
                   {env.frontUrl() + getLegalPageLink(country, language)}
-                </RedLinkRouterStyle>
+                </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Seite mit den Nutzungsbedingungen : '}
-                <RedLinkRouterStyle to={getGTUPageLink(country, language)}>
+                <RedLinkStyle to={getGTUPageLink(country, language)}>
                   {env.frontUrl() + getGTUPageLink(country, language)}
-                </RedLinkRouterStyle>
+                </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Seite zur Datenpolitik : '}
-                <RedLinkRouterStyle to={getDataPageLink(country, language)}>
+                <RedLinkStyle to={getDataPageLink(country, language)}>
                   {env.frontUrl() + getDataPageLink(country, language)}
-                </RedLinkRouterStyle>
+                </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Seite zur Erklärung der Barrierefreiheit : '}
-                <RedLinkRouterStyle to={getA11YPageLink(country, language)}>
+                <RedLinkStyle to={getA11YPageLink(country, language)}>
                   {env.frontUrl() + getA11YPageLink(country, language)}
-                </RedLinkRouterStyle>
+                </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Kontaktseite : '}
-                <RedLinkRouterStyle to={getContactPageLink(country, language)}>
+                <RedLinkStyle to={getContactPageLink(country, language)}>
                   {env.frontUrl() + getContactPageLink(country, language)}
-                </RedLinkRouterStyle>
+                </RedLinkStyle>
               </StaticSquareListItemStyle>
             </StaticSquareListStyle>
           </StaticPrimaryOrderedListItemStyle>
@@ -431,9 +429,9 @@ export const A11yDE: FC = () => {
         </StaticParagraphStyle>
         <StaticParagraphStyle>
           Sie erreichen uns unter dieser E-Mail-Adresse:{' '}
-          <RedLinkHTMLElementStyle href={ACCESSIBILITY_EMAIL}>
+          <RedHTMLLinkElementStyle href={ACCESSIBILITY_EMAIL}>
             {ACCESSIBILITY_EMAIL}
-          </RedLinkHTMLElementStyle>
+          </RedHTMLLinkElementStyle>
         </StaticParagraphStyle>
       </StaticPageWrapperStyle>
     </>

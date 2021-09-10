@@ -19,6 +19,8 @@ type Props = {
  */
 export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
   const { state } = useAppContext();
+  const { source } = state.appConfig;
+  const isWidget = source === 'widget';
 
   const [proposal, setProposal] = useState(proposalCard.configuration.proposal);
   const [index, setIndex] = useState(proposalCard.index);
@@ -51,7 +53,10 @@ export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
       <ScreenReaderItemStyle>
         {i18n.t('proposal_card.content')}
       </ScreenReaderItemStyle>
-      <SequenceProposalStyle lang={proposal.question.language}>
+      <SequenceProposalStyle
+        lang={proposal.question.language}
+        className={isWidget ? 'widget' : ''}
+      >
         {proposal.content}
       </SequenceProposalStyle>
       <Vote

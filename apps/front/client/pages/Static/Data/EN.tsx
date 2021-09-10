@@ -7,7 +7,7 @@ import {
 import { MetaTags } from '@make.org/components/MetaTags';
 import { DateHelper } from '@make.org/utils/helpers/date';
 import { DATE } from '@make.org/types/enums';
-import { RedLinkHTMLElementStyle } from '@make.org/ui/elements/LinkElements';
+import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
 import i18n from 'i18next';
 import {
   StaticPageWrapperStyle,
@@ -211,9 +211,9 @@ export const DataEN: FC = () => (
           <StaticParagraphStyle>
             These rights can be exercised by any means, and notably by sending
             an e-mail to the following address :&nbsp;
-            <RedLinkHTMLElementStyle as="a" href={`mailto:${CONTACT_EMAIL}`}>
+            <RedHTMLLinkElementStyle as="a" href={`mailto:${CONTACT_EMAIL}`}>
               {`${CONTACT_EMAIL}`}
-            </RedLinkHTMLElementStyle>
+            </RedHTMLLinkElementStyle>
           </StaticParagraphStyle>
         </StaticPrimaryUnorderedListItemStyle>
         <StaticPrimaryUnorderedListItemStyle>
@@ -264,9 +264,9 @@ export const DataEN: FC = () => (
           </StaticParagraphStyle>
           <StaticParagraphStyle>
             The DPO can be contacted at the following address:&nbsp;
-            <RedLinkHTMLElementStyle href={`mailto:${CONTACT_EMAIL}`}>
+            <RedHTMLLinkElementStyle href={`mailto:${CONTACT_EMAIL}`}>
               {`${CONTACT_EMAIL}`}
-            </RedLinkHTMLElementStyle>
+            </RedHTMLLinkElementStyle>
           </StaticParagraphStyle>
         </StaticPrimaryUnorderedListItemStyle>
 

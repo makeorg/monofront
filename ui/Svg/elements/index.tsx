@@ -88,3 +88,4 @@ export { SvgArrowGroupUpDown } from './ArrowGroupUpDown';
 export { SvgFilter } from './Filter';
 export { SvgSmallClock } from './SmallClock';
 export { SvgFilterIcon } from './FilterIcon';
+export { SvgSmallLogo } from './SmallLogo';

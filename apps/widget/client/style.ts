@@ -1,4 +1,4 @@
-import { Layouts } from '@make.org/assets/vars/Breakpoints';
+import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { BorderColors } from '@make.org/assets/vars/Colors';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { intToPx } from '@make.org/utils/helpers/styled';
@@ -9,5 +9,9 @@ export const WidgetContainer = styled.div`
   border-radius: ${intToPx(Elements.BorderRadius)};
   border: 1px solid ${BorderColors.LightGrey};
   flex-direction: column;
-  max-width: ${intToPx(Layouts.ContainerWithPadding)};
+  max-width: 320px;
+  height: 550px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    max-width: 634px;
+  }
 `;

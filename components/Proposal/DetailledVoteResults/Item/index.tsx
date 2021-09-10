@@ -7,6 +7,7 @@ import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElemen
 import { HiddenItemStyle } from '@make.org/ui/elements/HiddenElements';
 import { VoteButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { VoteIconStyle } from '@make.org/ui/elements/SvgElements';
+import { useAppContext } from '@make.org/store';
 import { QualificationResults } from '../../../Qualification/Results';
 import {
   DetailledItemStyle,
@@ -24,6 +25,10 @@ type Props = {
 };
 
 export const DetailledResultItem: React.FC<Props> = props => {
+  const { state } = useAppContext();
+  const { source } = state.appConfig;
+  const isWidget = source === 'widget';
+
   const { vote, votePercent } = props;
   const { voteKey, count } = vote;
   const voteColor = voteStaticParams[voteKey].color;
@@ -35,7 +40,11 @@ export const DetailledResultItem: React.FC<Props> = props => {
           {' : '}
         </ScreenReaderItemStyle>
         <VoteButtonStyle className={`${voteKey} voted`} as="span">
-          <VoteIconStyle className={voteKey} aria-hidden focusable="false" />
+          <VoteIconStyle
+            className={isWidget ? `${voteKey} widget` : voteKey}
+            aria-hidden
+            focusable="false"
+          />
         </VoteButtonStyle>
         <VoteDataListStyle as="span">
           <VoteDataBoldItemStyle>

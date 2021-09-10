@@ -48,7 +48,6 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
   const { country, source } = state.appConfig;
   const isWidget = source === 'widget';
   const question: QuestionType = selectCurrentQuestion(state);
-
   const executeStartSequence = async (
     questionId: string,
     votedIds: string[]
@@ -135,9 +134,7 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
             </>
           )}
           <SequenceCard
-            card={
-              !isEmptySequence && !!currentCard ? currentCard : noProposalCard
-            }
+            card={isEmptySequence ? noProposalCard : currentCard}
             question={question}
           />
           {!isEmptySequence && <SequenceProgress />}

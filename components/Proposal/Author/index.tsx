@@ -6,7 +6,7 @@ import {
   getPersonalityProfileLink,
 } from '@make.org/utils/helpers/url';
 import { Avatar } from '@make.org/ui/components/Avatar';
-import { RedLinkRouterStyle } from '@make.org/ui/elements/LinkElements';
+import { RedLinkStyle } from '@make.org/ui/elements/LinkElements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { trackClickPublicProfile } from '@make.org/utils/services/Tracking';
 import { USER } from '@make.org/types/enums';
@@ -45,22 +45,37 @@ export const ProposalAuthorInformations: React.FC<Props> = ({
   isSequence,
 }) => {
   const { state } = useAppContext();
-  const { country } = state.appConfig;
+  const { country, source } = state.appConfig;
   const { author } = proposal;
 
+  const isWidget = source === 'widget';
   const isOrganisation = author.userType === USER.TYPE_ORGANISATION;
   const isPersonality = author.userType === USER.TYPE_PERSONALITY;
   const isBasicUser = author.userType === USER.TYPE_USER;
+
+  let className = '';
+
+  if (isSequence && isWidget) {
+    className = 'sequence widget';
+  }
+
+  if (isSequence) {
+    className = 'sequence';
+  }
+
+  if (isWidget) {
+    className = 'widget';
+  }
 
   return (
     <>
       <ScreenReaderItemStyle>
         {i18n.t('proposal_card.author.from')}
       </ScreenReaderItemStyle>
-      <InfosWrapperStyle className={isSequence ? 'sequence' : ''}>
+      <InfosWrapperStyle className={className}>
         {isOrganisation && (
           <>
-            <RedLinkRouterStyle
+            <RedLinkStyle
               onClick={() => trackClickPublicProfile(USER.TYPE_ORGANISATION)}
               to={getOrganisationProfileLink(
                 country,
@@ -68,18 +83,18 @@ export const ProposalAuthorInformations: React.FC<Props> = ({
               )}
             >
               {formatOrganisationName(author.organisationName || '')}
-            </RedLinkRouterStyle>
+            </RedLinkStyle>
             <CertifiedIconStyle aria-hidden focusable="false" />
           </>
         )}
         {isPersonality && (
           <>
-            <RedLinkRouterStyle
+            <RedLinkStyle
               onClick={() => trackClickPublicProfile(USER.TYPE_PERSONALITY)}
               to={getPersonalityProfileLink(country, proposal.userId)}
             >
               {formatAuthorName(author.firstName || '')}
-            </RedLinkRouterStyle>
+            </RedLinkStyle>
             <CertifiedIconStyle aria-hidden focusable="false" />
           </>
         )}
@@ -90,9 +105,21 @@ export const ProposalAuthorInformations: React.FC<Props> = ({
   );
 };
 
-const setAvatarSize = (isMobile: boolean, isSequence: boolean) => {
+const setAvatarSize = (
+  isMobile: boolean,
+  isSequence: boolean,
+  isWidget: boolean
+) => {
+  if (!isMobile && isWidget) {
+    return 40;
+  }
+
   if (!isMobile && isSequence) {
     return 50;
+  }
+
+  if (isMobile && isWidget) {
+    return 32;
   }
 
   return 36;
@@ -104,12 +131,13 @@ export const ProposalAuthor: React.FC<Props> = ({
 }) => {
   const { state } = useAppContext();
   const { author } = proposal;
-  const { device } = state.appConfig;
+  const { device, source } = state.appConfig;
+  const isWidget = source === 'widget';
   const isMobile = matchMobileDevice(device);
-  const avatarSize = setAvatarSize(isMobile, isSequence);
+  const avatarSize = setAvatarSize(isMobile, isSequence, isWidget);
 
   return (
-    <AuthorInfosStyle>
+    <AuthorInfosStyle className={isWidget ? 'widget' : ''}>
       <Avatar
         avatarUrl={author.avatarUrl || ''}
         isSequence

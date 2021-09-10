@@ -1,4 +1,5 @@
 import React from 'react';
+import { useAppContext } from '@make.org/store';
 import { Tooltip } from '@make.org/ui/components/Tooltip';
 import { LoadingDots } from '@make.org/ui/components/Loading/Dots';
 import i18n from 'i18next';
@@ -30,6 +31,9 @@ const UnvoteButtonItem: React.FC<ButtonProps> = ({
       handleUnvote();
     }
   };
+  const { state } = useAppContext();
+  const { source } = state.appConfig;
+  const isWidget = source === 'widget';
 
   return (
     <VoteButtonStyle
@@ -43,11 +47,16 @@ const UnvoteButtonItem: React.FC<ButtonProps> = ({
       data-cy-button="vote"
       data-cy-vote-key={voteKey}
       disabled={disableClick}
+      isWidget={isWidget}
     >
       {displayPending ? (
-        <LoadingDots />
+        <LoadingDots isWidget={isWidget} />
       ) : (
-        <VoteIconStyle className={buttonClass} aria-hidden focusable="false" />
+        <VoteIconStyle
+          className={isWidget ? `${buttonClass} widget` : buttonClass}
+          aria-hidden
+          focusable="false"
+        />
       )}
     </VoteButtonStyle>
   );

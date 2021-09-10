@@ -59,11 +59,17 @@ export const SocialButtonLabelStyle = styled.span`
   color: ${color.black};
 `;
 
-export const FacebookButtonStyle = styled(SocialButtonStyle)``;
+export const FacebookButtonStyle = styled(SocialButtonStyle)`
+  background-color: transparent;
+`;
 
-export const GoogleButtonStyle = styled(SocialButtonStyle)``;
+export const GoogleButtonStyle = styled(SocialButtonStyle)`
+  background-color: transparent;
+`;
 
-export const EmailButtonStyle = styled(SocialButtonStyle)``;
+export const EmailButtonStyle = styled(SocialButtonStyle)`
+  background-color: transparent;
+`;
 
 export const AuthenticationEmailIconStyle = styled(SvgMailPlain)`
   width: 14px;

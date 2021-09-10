@@ -16,7 +16,11 @@ import { ForgotPasswordFormStyle, ForgotPasswordTitleStyle } from './style';
 /**
  * Renders ForgotPassword Form
  */
-export const ForgotPasswordForm: React.FC = () => {
+type Props = {
+  isPanel?: boolean;
+};
+
+export const ForgotPasswordForm: React.FC<Props> = ({ isPanel }) => {
   const [email, setEmail] = useState<string>('');
   const [isSuccess, setSuccess] = useState<boolean>(false);
   const [errors, setErrors] = useState<ErrorObjectType[]>([]);
@@ -52,7 +56,7 @@ export const ForgotPasswordForm: React.FC = () => {
       id={FORM.FORGOT_PASSWORD_FORMNAME}
       onSubmit={handleSubmit}
     >
-      <ForgotPasswordTitleStyle>
+      <ForgotPasswordTitleStyle isPanel={isPanel}>
         {i18n.t('forgot_password.description')}
       </ForgotPasswordTitleStyle>
       <FormErrors errors={errors} />

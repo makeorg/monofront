@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import i18n from 'i18next';
 import { modalShowRegister } from '@make.org/store/actions/modal';
-import { RedLinkHTMLElementStyle } from '@make.org/ui/elements/LinkElements';
+import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
 import { useAppContext } from '@make.org/store';
 import {
   TeasingHeaderContainerStyle,
@@ -37,9 +37,9 @@ export const TeasingHeader: FC = () => {
             {i18n.t('consultation.municipal.header.candidates')}
           </TeasingHeaderTextStyle>
           <TeasingHeaderSubTextStyle>
-            <RedLinkHTMLElementStyle href="mailto:candidats-municipales@make.org">
+            <RedHTMLLinkElementStyle href="mailto:candidats-municipales@make.org">
               {i18n.t('consultation.municipal.header.contact_us')}
-            </RedLinkHTMLElementStyle>
+            </RedHTMLLinkElementStyle>
           </TeasingHeaderSubTextStyle>
         </TeasingHeaderCenterStyle>
       </TeasingHeaderWrapperStyle>

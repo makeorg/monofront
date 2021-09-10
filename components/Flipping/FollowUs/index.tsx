@@ -22,7 +22,7 @@ import {
 import { TileWithTitle } from '@make.org/ui/components/TileWithTitle';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import {
-  RedLinkHTMLElementStyle,
+  RedHTMLLinkElementStyle,
   NewWindowIconStyle,
 } from '@make.org/ui/elements/LinkElements';
 import { URL, FEATURE_FLIPPING } from '@make.org/types/enums';
@@ -119,7 +119,7 @@ export const FollowUs: FC<Props> = ({ question }) => {
           </LinkedInButtonStyle>
         </FollowUsListItemStyle>
       </FollowUsStyle>
-      <RedLinkHTMLElementStyle
+      <RedHTMLLinkElementStyle
         target="_blank"
         rel="noopener"
         href={URL.ABOUT_MAKE_LINK}
@@ -131,7 +131,7 @@ export const FollowUs: FC<Props> = ({ question }) => {
         <ScreenReaderItemStyle>
           {i18n.t('common.open_new_window')}
         </ScreenReaderItemStyle>
-      </RedLinkHTMLElementStyle>
+      </RedHTMLLinkElementStyle>
     </TileWithTitle>
   );
 };

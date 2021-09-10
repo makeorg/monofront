@@ -99,6 +99,7 @@
   "common": {
     "connexion_label": "Log in",
     "register_label": "Sign up",
+    "continue": "Continue",
     "form": {
       "hide_password": "Hide password",
       "show_password": "Show password",
@@ -157,6 +158,13 @@
         "submit_success": "Edits saved.",
         "malformed": "Please use the right url format \"https://example.com\""
       }
+    },
+    "social_login": {
+      "card_title": "To find the history of your votes",
+      "facebook_connect": "Continue with Facebook",
+      "google_connect": "Continue with Google",
+      "email_register": "Sign up with email",
+      "count_register": "({{count}}/2)"
     },
     "from": "on",
     "email": "Email",
@@ -312,13 +320,15 @@
       "panel_trigger": "I write a solution",
       "button_cancel": "Cancel",
       "button_submit": "Validate",
-      "moderation_link": "Read our moderation charter"
+      "read_our": "Read our",
+      "moderation_link": "moderation charter"
     },
     "authentication": {
       "button_back": "Modify my solution",
       "title": "To validate my solution",
       "subtitle": "Sign up with",
-      "button_login": "I already have an account, log me in"
+      "button_login_text": "I already have an account,",
+      "button_login_link": "log me in"
     }
   },
   "vote": {
@@ -398,6 +408,8 @@
     "social_connect": "Sign up with",
     "or": "or",
     "subtitle": "Sign up using this form",
+    "step1_title": "Subscribe by email",
+    "step2_title": "Complete my registration",
     "login_title": "I already have an account.",
     "login_link": "Log in",
     "gtu_text_first": "By signing up, you agree to our ",
@@ -1192,9 +1204,9 @@
     "controversial_title": "Most controversial solutions"
   },
   "special_final_card": {
-    "title": "Thank you for voting !",
-    "subtitle": "You can continue to participate in the consultation.",
-    "cta_text": "Access the consultation"
+    "title": "Thank you for reacting to the solutions !",
+    "subtitle": "How to follow the results ?",
+    "cta_text": "Register on Make.org"
   },
   "no_proposal_card": {
     "title": {

@@ -12,6 +12,9 @@ export const AuthorInfosStyle = styled.div`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   letter-spacing: 0.12px;
   color: ${color.greyDark};
+  &.widget {
+    font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  }
 `;
 
 export const InfosWrapperStyle = styled.span`
@@ -20,9 +23,17 @@ export const InfosWrapperStyle = styled.span`
   &.sequence {
     margin: 50px auto 5px;
   }
+  &.sequence.widget,
+  &.widget {
+    margin: 40px auto 5px;
+  }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     &.sequence {
       margin: 75px auto 20px;
+    }
+    &.sequence.widget,
+    &.widget {
+      margin: 50px auto 10px;
     }
   }
 `;

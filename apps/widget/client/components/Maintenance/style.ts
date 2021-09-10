@@ -4,7 +4,8 @@ import styled from 'styled-components';
 export const MaintenancePageStyle = styled.div`
   ${ContainerWithPadding}
   width: 100%;
-  min-height: 365px;
+  min-height: 295px;
+  max-height: 295px;
   display: flex;
   align-items: center;
   flex-direction: column;

@@ -23,7 +23,7 @@ import {
 } from '@make.org/utils/helpers/cookies';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { MetaTags } from '@make.org/components/MetaTags';
-import { RedLinkHTMLElementStyle } from '@make.org/ui/elements/LinkElements';
+import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { NOTIF } from '@make.org/types/enums';
 import {
@@ -146,7 +146,7 @@ export const Cookies: FC = () => {
             <StaticSquareListStyle>
               <StaticSquareListItemStyle>
                 {'Google : '}
-                <RedLinkHTMLElementStyle
+                <RedHTMLLinkElementStyle
                   href={googleLink()}
                   target="_blank"
                   rel="noopener"
@@ -156,11 +156,11 @@ export const Cookies: FC = () => {
                   <ScreenReaderItemStyle>
                     {i18n.t('common.open_new_window')}
                   </ScreenReaderItemStyle>
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Facebook : '}
-                <RedLinkHTMLElementStyle
+                <RedHTMLLinkElementStyle
                   as="a"
                   href={facebookLink}
                   target="_blank"
@@ -171,11 +171,11 @@ export const Cookies: FC = () => {
                   <ScreenReaderItemStyle>
                     {i18n.t('common.open_new_window')}
                   </ScreenReaderItemStyle>
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Twitter : '}
-                <RedLinkHTMLElementStyle
+                <RedHTMLLinkElementStyle
                   as="a"
                   href={twitterLink()}
                   target="_blank"
@@ -186,11 +186,11 @@ export const Cookies: FC = () => {
                   <ScreenReaderItemStyle>
                     {i18n.t('common.open_new_window')}
                   </ScreenReaderItemStyle>
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'LinkedIn : '}
-                <RedLinkHTMLElementStyle
+                <RedHTMLLinkElementStyle
                   as="a"
                   href={linkedInLink()}
                   target="_blank"
@@ -201,7 +201,7 @@ export const Cookies: FC = () => {
                   <ScreenReaderItemStyle>
                     {i18n.t('common.open_new_window')}
                   </ScreenReaderItemStyle>
-                </RedLinkHTMLElementStyle>
+                </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
             </StaticSquareListStyle>
           </StaticPrimaryUnorderedListItemStyle>

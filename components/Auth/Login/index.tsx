@@ -4,7 +4,10 @@ import {
   modalShowRegister,
   modalShowForgotPassword,
 } from '@make.org/store/actions/modal';
-import { FourthLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
+import {
+  FourthLevelTitleStyle,
+  ThirdLevelTitleStyle,
+} from '@make.org/ui/elements/TitleElements';
 import {
   ExtraParagraphStyle,
   ExtraAltParagraphStyle,
@@ -23,7 +26,10 @@ import { AuthenticationButtonWrapperStyle } from '../Social/style';
 import { FacebookAuthentication } from '../Social/FacebookAuthentication';
 import { GoogleAuthentication } from '../Social/GoogleAuthentication';
 
-export const Login: React.FC = () => {
+type Props = {
+  panel?: boolean;
+};
+export const Login: React.FC<Props> = ({ panel }) => {
   const { dispatch } = useAppContext();
 
   const handleRegisterModal = () => {
@@ -39,42 +45,57 @@ export const Login: React.FC = () => {
       aria-labelledby="login_title"
       data-cy-container="authentication"
     >
-      <AuthenticationTitleStyle id="login_title">
-        {i18n.t('login.title')}
-      </AuthenticationTitleStyle>
-      <SmallSeparatorWithMarginStyle />
-      <FourthLevelTitleStyle as="h3">
-        {i18n.t('login.social_connect')}
-      </FourthLevelTitleStyle>
-      <AuthenticationButtonWrapperStyle className="small-wrapper">
-        <FacebookAuthentication />
-        <GoogleAuthentication />
-      </AuthenticationButtonWrapperStyle>
-      <SeparatorWrapperStyle className="no-margin-top">
-        <SeparatorStyle className="no-margin-top" />
-        <TextSeparatorStyle>{i18n.t('login.or')}</TextSeparatorStyle>
-        <SeparatorStyle className="no-margin-top" />
-      </SeparatorWrapperStyle>
-      <FourthLevelTitleStyle as="h3">
-        {i18n.t('login.email_connect')}
-      </FourthLevelTitleStyle>
+      {panel ? (
+        <ThirdLevelTitleStyle as="h3" style={{ marginTop: 32 }}>
+          {i18n.t('login.social_connect')}
+        </ThirdLevelTitleStyle>
+      ) : (
+        <>
+          <AuthenticationTitleStyle id="login_title">
+            {i18n.t('login.title')}
+          </AuthenticationTitleStyle>
+          <SmallSeparatorWithMarginStyle />
+          <FourthLevelTitleStyle as="h3">
+            {i18n.t('login.social_connect')}
+          </FourthLevelTitleStyle>
+          <AuthenticationButtonWrapperStyle className="small-wrapper">
+            <FacebookAuthentication />
+            <GoogleAuthentication />
+          </AuthenticationButtonWrapperStyle>
+          <SeparatorWrapperStyle className="no-margin-top">
+            <SeparatorStyle className="no-margin-top" />
+            <TextSeparatorStyle>{i18n.t('login.or')}</TextSeparatorStyle>
+            <SeparatorStyle className="no-margin-top" />
+          </SeparatorWrapperStyle>
+          <FourthLevelTitleStyle as="h3">
+            {i18n.t('login.email_connect')}
+          </FourthLevelTitleStyle>
+        </>
+      )}
       <LoginForm />
-      <ExtraParagraphStyle>
-        {i18n.t('login.forgot_password_title')}
-        <RedLinkButtonStyle onClick={handleForgotPasswordModal} type="button">
-          {i18n.t('login.forgot_password_link')}
-        </RedLinkButtonStyle>
-      </ExtraParagraphStyle>
-      <ExtraAltParagraphStyle>
-        {i18n.t('login.registration_title')}
-        <RedLinkButtonStyle
-          onClick={handleRegisterModal}
-          type="button"
-          data-cy-button="register"
-        >
-          {i18n.t('login.registration_link')}
-        </RedLinkButtonStyle>
-      </ExtraAltParagraphStyle>
+      {!panel && (
+        <>
+          <ExtraParagraphStyle>
+            {i18n.t('login.forgot_password_title')}
+            <RedLinkButtonStyle
+              onClick={handleForgotPasswordModal}
+              type="button"
+            >
+              {i18n.t('login.forgot_password_link')}
+            </RedLinkButtonStyle>
+          </ExtraParagraphStyle>
+          <ExtraAltParagraphStyle>
+            {i18n.t('login.registration_title')}
+            <RedLinkButtonStyle
+              onClick={handleRegisterModal}
+              type="button"
+              data-cy-button="register"
+            >
+              {i18n.t('login.registration_link')}
+            </RedLinkButtonStyle>
+          </ExtraAltParagraphStyle>
+        </>
+      )}
     </AuthenticationWrapperStyle>
   );
 };

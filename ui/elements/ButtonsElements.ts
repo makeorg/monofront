@@ -42,6 +42,9 @@ export const BasicButtonStyle = `
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   padding: 10px 20px 7px 20px;
   text-decoration: none;
+  &.widget {
+    font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  }
 `;
 
 export const RedStyle = `
@@ -156,6 +159,7 @@ export const SocialButtonStyle = styled(ActiveButtonStyle)`
     padding: 10px 20px;
   }
 `;
+
 export const RedLinkButtonStyle = styled(UnstyledButtonStyle)`
   display: inline-block;
   color: ${color.brandSecondary};
@@ -168,7 +172,6 @@ export const RedButtonAsLinkStyle = styled(UnstyledButtonStyle)`
   font-size: ${intToPx(typography.font.fontsize.M.value)};
   color: ${color.brandSecondary};
   text-transform: uppercase;
-  font-size: ${intToPx(typography.font.fontsize.M.value)};
   text-decoration: underline;
   &:hover,
   &:focus {
@@ -202,14 +205,17 @@ export const NavButtonStyle = styled(UnstyledButtonStyle)`
   text-transform: uppercase;
 `;
 
-export const QualifyButtonStyle = styled.button`
+export const QualifyButtonStyle = styled.button<{ isWidget?: boolean }>`
   font-family: ${MakeFonts.CircularStandardBold};
   display: flex;
   justify-content: center;
   width: 100%;
   border-width: 2px;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  line-height: 26px;
+  font-size: ${props =>
+    props.isWidget
+      ? intToPx(typography.font.fontsize.X2S.value)
+      : intToPx(typography.font.fontsize.XS.value)};
+  line-height: ${props => (props.isWidget ? '21px' : '26px')};
   border-style: solid;
   padding: 0 10px;
   border-radius: 36px;
@@ -239,16 +245,16 @@ const InverseRotateButton = keyframes`
 export const VoteButtonStyle = styled.button.attrs(props => ({
   type: 'button',
   ...props,
-}))`
+}))<{ isWidget?: boolean }>`
   position: relative;
   z-index: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 38px;
-  height: 38px;
-  min-width: 38px;
-  min-height: 38px;
+  width: ${props => (props.isWidget ? '36.4px' : '38px')};
+  height: ${props => (props.isWidget ? '36.4px' : '38px')};
+  min-width: ${props => (props.isWidget ? '36.4px' : '38px')};
+  min-height: ${props => (props.isWidget ? '36.4px' : '38px')};
   border-width: 2px;
   border-style: solid;
   border-radius: 50%;
@@ -313,16 +319,16 @@ export const VoteButtonStyle = styled.button.attrs(props => ({
     transform: scale(1);
   }
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    width: 43px;
-    height: 43px;
-    min-width: 43px;
-    min-height: 43px;
+    width: ${props => (props.isWidget ? '36.4px' : '43px')};
+    height: ${props => (props.isWidget ? '36.4px' : '43px')};
+    min-width: ${props => (props.isWidget ? '36.4px' : '43px')};
+    min-height: ${props => (props.isWidget ? '36.4px' : '43px')};
   }
   @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
-    width: 48px;
-    height: 48px;
-    min-width: 48px;
-    min-height: 48px;
+    width: ${props => (props.isWidget ? '36.4px' : '48px')};
+    height: ${props => (props.isWidget ? '36.4px' : '48px')};
+    min-width: ${props => (props.isWidget ? '36.4px' : '48px')};
+    min-height: ${props => (props.isWidget ? '36.4px' : '48px')};
   }
 `;
 
@@ -369,6 +375,16 @@ const BlackBordersStyle = `
   }
 `;
 
+export const BlackNoBackgroundButtonStyle = styled(UnstyledButtonStyle)`
+  ${ButtonNoBackgroundStyle};
+  background-color: transparent;
+  color: ${color.black};
+  border: none;
+  .tofill {
+    fill: ${color.black};
+  }
+`;
+
 export const GreyNoBackgroundButtonStyle = styled(UnstyledButtonStyle)<{
   bold?: boolean;
 }>`
@@ -399,7 +415,4 @@ export const BlackBorderButtonStyle = styled.button.attrs(props => ({
 }))`
   ${BasicButtonStyle};
   ${BlackBordersStyle};
-  &.widget {
-    margin-top: 18px;
-  }
 `;

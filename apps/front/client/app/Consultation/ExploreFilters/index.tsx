@@ -17,6 +17,10 @@ import {
 } from '@make.org/ui/elements/FormElements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import {
+  trackClickFilter,
+  trackClickSort,
+} from '@make.org/utils/services/Tracking';
+import {
   ResetLinkStyle,
   ResetLinkButtonWrapperStyle,
 } from '../../../pages/Consultation/style';
@@ -167,148 +171,152 @@ export const FilterAndSort: React.FC<Props> = ({
   };
 
   return (
-    <FiltersWrapperStyle>
-      <form onSubmit={throttle(handleSubmit)}>
-        <ResetLinkButtonWrapperStyle>
-          <ResetLinkStyle
+    <FiltersWrapperStyle as="form" onSubmit={throttle(handleSubmit)}>
+      <ResetLinkButtonWrapperStyle>
+        <ResetLinkStyle
+          type="button"
+          onClick={() => {
+            handleReset();
+            setIsDisabled(true);
+            setCurrentSort(SORT_RECENT);
+            setCurrentKeyword('');
+          }}
+        >
+          {i18n.t('consultation.explore.reset_filters')}
+        </ResetLinkStyle>
+      </ResetLinkButtonWrapperStyle>
+      <FilterBlockStyle>
+        <FiltersTitleStyle>
+          <SvgArrowUp aria-hidden focusable="false" />
+          {i18n.t('consultation.cards.keywords.title')}
+        </FiltersTitleStyle>
+        {keywords.length > 1 && (
+          <KeywordsListWrapperStyle>
+            {keywords.map(keyword => (
+              <KeywordsItemWrapperStyle key={keyword.key}>
+                <TransparentButtonFilter
+                  type="button"
+                  name="keywords"
+                  value={keyword.key}
+                  onClick={() => {
+                    handleKeyword(keyword.key);
+                    trackClickFilter('keyword');
+                  }}
+                  className={handleClassName(currentKeyword, keyword.key)}
+                >
+                  {keyword.key}
+                </TransparentButtonFilter>
+              </KeywordsItemWrapperStyle>
+            ))}
+          </KeywordsListWrapperStyle>
+        )}
+        {keywords.length === 1 && (
+          <TransparentButtonFilter
             type="button"
-            onClick={() => {
-              handleReset();
-              setIsDisabled(true);
-              setCurrentSort(SORT_RECENT);
-              setCurrentKeyword('');
-            }}
+            onClick={() => handleChange('keywords', keywords[0].key)}
+            value={keywords[0].key}
           >
-            {i18n.t('consultation.explore.reset_filters')}
-          </ResetLinkStyle>
-        </ResetLinkButtonWrapperStyle>
-        <FilterBlockStyle>
-          <FiltersTitleStyle>
-            <SvgArrowUp aria-hidden focusable="false" />
-            {i18n.t('consultation.cards.keywords.title')}
-          </FiltersTitleStyle>
-          {keywords.length > 1 && (
-            <KeywordsListWrapperStyle>
-              {keywords.map(keyword => (
-                <KeywordsItemWrapperStyle key={keyword.key}>
-                  <TransparentButtonFilter
-                    type="button"
-                    name="keywords"
-                    value={keyword.key}
-                    onClick={() => {
-                      handleKeyword(keyword.key);
+            {keywords[0].key}
+          </TransparentButtonFilter>
+        )}
+      </FilterBlockStyle>
+      <FilterBlockStyle>
+        <FiltersTitleStyle>
+          <SvgArrowsGroup aria-hidden focusable="false" />
+          {i18n.t('consultation.explore.sort_by')}
+        </FiltersTitleStyle>
+        <RadioListWrapperStyle>
+          {SORT_ITEMS.map(
+            (item: {
+              name: string;
+              icon: JSX.Element;
+              label: string;
+              value?: string;
+            }) => (
+              <RadioItemWrapperStyle
+                key={item.name}
+                className={handleClassName(currentSort, item.name)}
+              >
+                <ScreenReaderItemStyle>
+                  <input
+                    id={item.name}
+                    type="radio"
+                    value={item.value}
+                    name="sort"
+                    onChange={() => {
+                      handleChange(item.name, item.value);
+                      setCurrentSort(item.name);
+                      trackClickSort(item.name);
                     }}
-                    className={handleClassName(currentKeyword, keyword.key)}
-                  >
-                    {keyword.key}
-                  </TransparentButtonFilter>
-                </KeywordsItemWrapperStyle>
-              ))}
-            </KeywordsListWrapperStyle>
-          )}
-          {keywords.length === 1 && (
-            <TransparentButtonFilter
-              type="button"
-              onClick={() => handleChange('keywords', keywords[0].key)}
-              value={keywords[0].key}
-            >
-              {keywords[0].key}
-            </TransparentButtonFilter>
-          )}
-        </FilterBlockStyle>
-        <FilterBlockStyle>
-          <FiltersTitleStyle>
-            <SvgArrowsGroup aria-hidden focusable="false" />
-            {i18n.t('consultation.explore.sort_by')}
-          </FiltersTitleStyle>
-          <RadioListWrapperStyle>
-            {SORT_ITEMS.map(
-              (item: {
-                name: string;
-                icon: JSX.Element;
-                label: string;
-                value?: string;
-              }) => (
-                <RadioItemWrapperStyle
-                  key={item.name}
+                    checked={checkCurrentSort(item.name, currentSort)}
+                  />
+                </ScreenReaderItemStyle>
+                <RadioAsTransparentButtonLabelStyle
+                  htmlFor={item.name}
                   className={handleClassName(currentSort, item.name)}
                 >
-                  <ScreenReaderItemStyle>
-                    <input
-                      id={item.name}
-                      type="radio"
-                      value={item.value}
-                      name="sort"
-                      onChange={() => {
-                        handleChange(item.name, item.value);
-                        setCurrentSort(item.name);
-                      }}
-                      checked={checkCurrentSort(item.name, currentSort)}
-                    />
-                  </ScreenReaderItemStyle>
-                  <RadioAsTransparentButtonLabelStyle
-                    htmlFor={item.name}
-                    className={handleClassName(currentSort, item.name)}
-                  >
-                    {item.icon}
-                    {item.label}
-                  </RadioAsTransparentButtonLabelStyle>
-                </RadioItemWrapperStyle>
-              )
-            )}
-          </RadioListWrapperStyle>
-        </FilterBlockStyle>
-        <FilterBlockStyle>
-          <FiltersTitleStyle>
-            <SvgFilterBy aria-hidden focusable="false" />
-            {i18n.t('consultation.explore.filter_by')}
-          </FiltersTitleStyle>
-          <FilterByWrapperStyle>
-            <FilterByElementStyle>
-              <CheckboxLabelStyle htmlFor="isNotVoted" noFontSizeChange>
-                <HiddenCheckbox
-                  type="checkbox"
-                  id="isNotVoted"
-                  name="isNotVoted"
-                  value={JSON.stringify(filterAndSortValues.isNotVoted)}
-                  onChange={() =>
-                    handleChange(
-                      'isNotVoted',
-                      JSON.stringify(filterAndSortValues.isNotVoted)
-                    )
-                  }
-                />
-                <StyledCheckbox checked={filterAndSortValues.isNotVoted}>
-                  <SvgCheck />
-                </StyledCheckbox>
-                {i18n.t('consultation.explore.unvoted')}
-              </CheckboxLabelStyle>
-            </FilterByElementStyle>
-            <FilterByElementStyle>
-              <CheckboxLabelStyle htmlFor="userType" noFontSizeChange>
-                <HiddenCheckbox
-                  type="checkbox"
-                  value={FILTER_ORGANISATION}
-                  id="userType"
-                  name="userType"
-                  onChange={() => handleChange('userType', FILTER_ORGANISATION)}
-                />
-                <StyledCheckbox
-                  checked={filterAndSortValues.userType !== undefined}
-                >
-                  <SvgCheck />
-                </StyledCheckbox>
-                {i18n.t('consultation.explore.organisations_proposals')}
-              </CheckboxLabelStyle>
-            </FilterByElementStyle>
-          </FilterByWrapperStyle>
-        </FilterBlockStyle>
-        <RedSubmitButtonWrapperStyle>
-          <RedButtonStyle type="submit" disabled={isDisabled}>
-            {i18n.t('consultation.explore.display_proposals')}
-          </RedButtonStyle>
-        </RedSubmitButtonWrapperStyle>
-      </form>
+                  {item.icon}
+                  {item.label}
+                </RadioAsTransparentButtonLabelStyle>
+              </RadioItemWrapperStyle>
+            )
+          )}
+        </RadioListWrapperStyle>
+      </FilterBlockStyle>
+      <FilterBlockStyle>
+        <FiltersTitleStyle>
+          <SvgFilterBy aria-hidden focusable="false" />
+          {i18n.t('consultation.explore.filter_by')}
+        </FiltersTitleStyle>
+        <FilterByWrapperStyle>
+          <FilterByElementStyle>
+            <CheckboxLabelStyle htmlFor="isNotVoted" noFontSizeChange>
+              <HiddenCheckbox
+                type="checkbox"
+                id="isNotVoted"
+                name="isNotVoted"
+                value={JSON.stringify(filterAndSortValues.isNotVoted)}
+                onChange={() => {
+                  handleChange(
+                    'isNotVoted',
+                    JSON.stringify(filterAndSortValues.isNotVoted)
+                  );
+                  trackClickFilter('unvoted-proposals');
+                }}
+              />
+              <StyledCheckbox checked={filterAndSortValues.isNotVoted}>
+                <SvgCheck />
+              </StyledCheckbox>
+              {i18n.t('consultation.explore.unvoted')}
+            </CheckboxLabelStyle>
+          </FilterByElementStyle>
+          <FilterByElementStyle>
+            <CheckboxLabelStyle htmlFor="userType" noFontSizeChange>
+              <HiddenCheckbox
+                type="checkbox"
+                value={FILTER_ORGANISATION}
+                id="userType"
+                name="userType"
+                onChange={() => {
+                  handleChange('userType', FILTER_ORGANISATION);
+                  trackClickFilter('organizations-proposals');
+                }}
+              />
+              <StyledCheckbox
+                checked={filterAndSortValues.userType !== undefined}
+              >
+                <SvgCheck />
+              </StyledCheckbox>
+              {i18n.t('consultation.explore.organisations_proposals')}
+            </CheckboxLabelStyle>
+          </FilterByElementStyle>
+        </FilterByWrapperStyle>
+      </FilterBlockStyle>
+      <RedSubmitButtonWrapperStyle>
+        <RedButtonStyle type="submit" disabled={isDisabled}>
+          {i18n.t('consultation.explore.display_proposals')}
+        </RedButtonStyle>
+      </RedSubmitButtonWrapperStyle>
     </FiltersWrapperStyle>
   );
 };

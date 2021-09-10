@@ -17,12 +17,12 @@ export const VoteContainerStyle = styled.div`
   &.placeholder {
     margin: 20px 0 10px;
   }
+  &.widget {
+    margin: 10px 0px 5px;
+  }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     min-width: 250px;
     margin: 30px 0 60px;
-    &.widget {
-      margin: 30px 0 20px;
-    }
     &.opinions {
       margin: 30px 0 10px;
     }
@@ -32,13 +32,15 @@ export const VoteContainerStyle = styled.div`
   }
 `;
 
-export const VoteWrapperStyle = styled(UnstyledListStyle)`
+export const VoteWrapperStyle = styled(UnstyledListStyle)<{
+  isWidget?: boolean;
+}>`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 175px;
+  max-width: ${props => (props.isWidget ? '150px' : '175px')};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    max-width: 200px;
+    max-width: ${props => (props.isWidget ? '150px' : '200px')};
   }
 `;
 

@@ -34,7 +34,6 @@ export const trackClickLearnMore = (component?: string): void => {
 };
 
 /* Open Sequence Tracking */
-
 export const trackOpenSequence = (component?: string): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_SEQUENCE_OPEN({ component: component || '' })
@@ -126,8 +125,12 @@ export const trackClickCloseModal = (modalContext: string): void => {
 };
 
 /* Sign Up */
-export const trackDisplaySignupForm = (): void => {
-  TrackingService.sendAllTrackers(trackingEvent.DISPLAY_SIGN_UP_FORM());
+export const trackDisplaySignupForm = (step?: string): void => {
+  TrackingService.sendAllTrackers(
+    trackingEvent.DISPLAY_SIGN_UP_FORM({
+      step: step || '',
+    })
+  );
 };
 
 export const trackSignupEmailSuccess = (): void => {
@@ -206,25 +209,6 @@ export const trackDisplayProposalPushCard = (): void => {
 
 export const trackDisplayFinalCard = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_FINAL_CARD());
-};
-
-/* Tags Tracking */
-export const trackTag = (label: string, action: string): void => {
-  TrackingService.sendAllTrackers(
-    trackingEvent.CLICK_TAG_ACTION({
-      'tag-name': label,
-      nature: action,
-    })
-  );
-};
-
-export const trackFilter = (label: string, action: string): void => {
-  TrackingService.sendAllTrackers(
-    trackingEvent.CLICK_FILTER_ACTION({
-      'filter-name': label,
-      nature: action,
-    })
-  );
 };
 
 /* Votes */
@@ -604,5 +588,30 @@ export const trackClickVoteDemographics = (type: string): void => {
     })
   );
 };
+
+export const trackClickFilter = (component?: string): void => {
+  TrackingService.sendAllTrackers(
+    trackingEvent.CLICK_FILTER({ component: component || '' })
+  );
+};
+
+export const trackClickSort = (component?: string): void => {
+  TrackingService.sendAllTrackers(
+    trackingEvent.CLICK_SORT({ component: component || '' })
+  );
+};
+
+export const trackClickSearchProposals = (): void => {
+  TrackingService.sendAllTrackers(trackingEvent.CLICK_SEARCH_PROPOSALS());
+};
+
+export const trackDisplayChargeIntroCard = (): void => {
+  TrackingService.sendAllTrackers(trackingEvent.DISPLAY_CHARGE_INTRO_CARD());
+};
+
+export const trackClickNextSignup = (): void => {
+  TrackingService.sendAllTrackers(trackingEvent.CLICK_NEXT_SIGNUP());
+};
+
 /* eslint-disable import/no-default-export */
 export default TrackingService;

@@ -25,6 +25,7 @@ import { Logger } from '@make.org/utils/services/Logger';
 import { useAppContext } from '@make.org/store';
 import { getUser } from '@make.org/store/actions/authentication';
 import { RegisterForm } from './Form';
+import { RegisterFormPanel } from './FormPanel';
 
 import {
   AuthenticationWrapperStyle,
@@ -32,7 +33,11 @@ import {
 } from '../style';
 import { LegalConsent } from './LegalConsent';
 
-export const Register: React.FC = () => {
+type Props = {
+  panel?: boolean;
+};
+
+export const Register: React.FC<Props> = ({ panel }) => {
   const { dispatch, state } = useAppContext();
   const [user, setUser] = useState<RegisterFormDataType>({
     email: '',
@@ -41,7 +46,6 @@ export const Register: React.FC = () => {
       firstname: '',
       age: '',
       postalcode: '',
-      profession: '',
       legalMinorConsent: false,
       legalAdvisorApproval: false,
       approvePrivacyPolicy: false,
@@ -131,12 +135,7 @@ export const Register: React.FC = () => {
     displayLegalConsent(false);
     setWaitingCallback(true);
 
-    await UserService.register(
-      user,
-      () => success(),
-      serviceErrors => handleErrors(serviceErrors),
-      () => unexpectedError()
-    );
+    await UserService.register(user, success, handleErrors, unexpectedError);
 
     setWaitingCallback(false);
   };
@@ -159,39 +158,52 @@ export const Register: React.FC = () => {
         aria-labelledby="register_title"
         className={needLegalConsent ? 'hidden' : ''}
       >
-        <SecondLevelTitleStyle
-          id="register_title"
-          data-cy-container="register-modal-title"
-        >
-          {i18n.t('register.title')}
-        </SecondLevelTitleStyle>
-        <SmallSeparatorWithMarginStyle />
-        <SocialRegisterButtonsWrapperStyle>
-          <FacebookAuthentication />
-          <GoogleAuthentication />
-        </SocialRegisterButtonsWrapperStyle>
-        <SeparatorWrapperStyle>
-          <SeparatorStyle />
-          <TextSeparatorStyle>{i18n.t('register.or')}</TextSeparatorStyle>
-          <SeparatorStyle />
-        </SeparatorWrapperStyle>
-        <FourthLevelTitleStyle as="h3">
-          {i18n.t('register.subtitle')}
-        </FourthLevelTitleStyle>
-        <RegisterForm
-          user={user}
-          errors={errors}
-          handleChange={handleChange}
-          handleLegalField={handleLegalField}
-          handleSubmit={userIsAChild ? toggleLegalConsent : handleSubmit}
-          disableSubmit={waitingCallback}
-        />
-        <ExtraParagraphStyle>
-          {i18n.t('register.login_title')}
-          <RedLinkButtonStyle onClick={handleLoginModal}>
-            {i18n.t('register.login_link')}
-          </RedLinkButtonStyle>
-        </ExtraParagraphStyle>
+        {!panel ? (
+          <>
+            <SecondLevelTitleStyle
+              id="register_title"
+              data-cy-container="register-modal-title"
+            >
+              {i18n.t('register.title')}
+            </SecondLevelTitleStyle>
+            <SmallSeparatorWithMarginStyle />
+            <SocialRegisterButtonsWrapperStyle>
+              <FacebookAuthentication />
+              <GoogleAuthentication />
+            </SocialRegisterButtonsWrapperStyle>
+            <SeparatorWrapperStyle>
+              <SeparatorStyle />
+              <TextSeparatorStyle>{i18n.t('register.or')}</TextSeparatorStyle>
+              <SeparatorStyle />
+            </SeparatorWrapperStyle>
+            <FourthLevelTitleStyle as="h3">
+              {i18n.t('register.subtitle')}
+            </FourthLevelTitleStyle>
+            <RegisterForm
+              user={user}
+              errors={errors}
+              handleChange={handleChange}
+              handleLegalField={handleLegalField}
+              handleSubmit={userIsAChild ? toggleLegalConsent : handleSubmit}
+              disableSubmit={waitingCallback}
+            />
+            <ExtraParagraphStyle>
+              {i18n.t('register.login_title')}
+              <RedLinkButtonStyle onClick={handleLoginModal}>
+                {i18n.t('register.login_link')}
+              </RedLinkButtonStyle>
+            </ExtraParagraphStyle>
+          </>
+        ) : (
+          <RegisterFormPanel
+            user={user}
+            errors={errors}
+            handleChange={handleChange}
+            handleLegalField={handleLegalField}
+            handleSubmit={userIsAChild ? toggleLegalConsent : handleSubmit}
+            disableSubmit={waitingCallback}
+          />
+        )}
       </AuthenticationWrapperStyle>
     </>
   );

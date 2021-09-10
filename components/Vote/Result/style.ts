@@ -28,7 +28,12 @@ export const VoteResultGraphStyle = styled(UnstyledListStyle)`
   height: 30px;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 5px;
+  margin-top: 10px;
+  &.widget {
+    height: 20px;
+    max-width: 20px;
+    margin-top: 10px;
+  }
 `;
 
 export const VoteResultItemStyle = styled.li`
@@ -46,6 +51,10 @@ export const VoteResultBarStyle = styled.button<{ percent: number }>`
   background-color: ${props => props.color};
   border: none;
   padding: 0;
+  &.widget {
+    width: 4px;
+    margin: 0 1px;
+  }
 `;
 
 export const VoteResultTotalLabelStyle = styled.p`
@@ -53,4 +62,7 @@ export const VoteResultTotalLabelStyle = styled.p`
   color: ${color.greyDark};
   text-align: center;
   margin-top: 5px;
+  &.widget {
+    font-size: 10px;
+  }
 `;

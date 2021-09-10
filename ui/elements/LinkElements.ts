@@ -30,11 +30,11 @@ export const NewWindowIconStyle = styled(SvgExternalLink)`
   fill: ${color.brandSecondary};
 `;
 
-export const RedLinkRouterStyle = styled(Link)`
+export const RedLinkStyle = styled(Link)`
   ${linkStyle(color.brandSecondary)}
 `;
 
-export const RedLinkHTMLElementStyle = styled.a`
+export const RedHTMLLinkElementStyle = styled.a`
   ${linkStyle(color.brandSecondary)}
 `;
 
@@ -72,13 +72,13 @@ export const LinkAsGreyButton = styled(GreyButtonStyle)`
   }
 `;
 
-export const RedLinkElementStyle = styled(Link)`
+export const RedUppercaseLinkElementStyle = styled(Link)`
   ${linkStyle(color.brandSecondary)};
   text-transform: uppercase;
   font-family: ${MakeFonts.TradeGothicBoldCondensed};
 `;
 
-export const RedHTMLLinkElementStyle = styled.a`
+export const RedUppercaseHTMLLinkElementStyle = styled.a`
   ${linkStyle(color.brandSecondary)};
   text-transform: uppercase;
   font-family: ${MakeFonts.TradeGothicBoldCondensed};

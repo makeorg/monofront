@@ -1,8 +1,3 @@
-import {
-  trackDisplaySigninForm,
-  trackDisplaySignupForm,
-  trackDisplayForgotPasswordForm,
-} from '@make.org/utils/services/Tracking';
 import { ReducerAction } from '@make.org/types';
 import {
   MODAL_CLOSE,
@@ -33,26 +28,17 @@ export const modalShowCookies = (): ReducerAction => ({
   type: MODAL_SHOW_COOKIES,
 });
 
-export const modalShowLogin = (): ReducerAction => {
-  trackDisplaySigninForm();
-  return {
-    type: MODAL_SHOW_LOGIN,
-  };
-};
+export const modalShowLogin = (): ReducerAction => ({
+  type: MODAL_SHOW_LOGIN,
+});
 
-export const modalShowRegister = (): ReducerAction => {
-  trackDisplaySignupForm();
-  return {
-    type: MODAL_SHOW_REGISTER,
-  };
-};
+export const modalShowRegister = (): ReducerAction => ({
+  type: MODAL_SHOW_REGISTER,
+});
 
-export const modalShowForgotPassword = (): ReducerAction => {
-  trackDisplayForgotPasswordForm();
-  return {
-    type: MODAL_SHOW_FORGOT_PASSWORD,
-  };
-};
+export const modalShowForgotPassword = (): ReducerAction => ({
+  type: MODAL_SHOW_FORGOT_PASSWORD,
+});
 
 export const modalShowDepartmentForm = (): ReducerAction => ({
   type: MODAL_SHOW_DEPARTMENT_FORM,

@@ -3,7 +3,7 @@ import { modalShowRegister } from '@make.org/store/actions/modal';
 import { useAppContext } from '@make.org/store';
 import i18n from 'i18next';
 import {
-  SeparatorStyle,
+  ProposalSubmitAuthSeparator,
   SeparatorWrapperStyle,
   TextSeparatorStyle,
 } from '@make.org/ui/elements/SeparatorsElements';
@@ -16,19 +16,32 @@ import {
   SocialButtonLabelStyle,
 } from '../Social/style';
 
-export const AuthenticationRegisterButtons: React.FC = () => {
+type Props = {
+  onEmailRegister?: () => void;
+};
+
+export const AuthenticationRegisterButtons: React.FC<Props> = ({
+  onEmailRegister,
+}) => {
   const { dispatch } = useAppContext();
+  const onEmailClick = () => {
+    if (onEmailRegister) {
+      onEmailRegister();
+    } else {
+      dispatch(modalShowRegister());
+    }
+  };
   return (
     <AuthenticationButtonWrapperStyle data-cy-container="signup-auth-buttons">
-      <GoogleAuthentication />
       <FacebookAuthentication />
+      <GoogleAuthentication />
       <SeparatorWrapperStyle className="no-margin-top no-margin-bottom">
-        <SeparatorStyle className="no-margin-top" />
+        <ProposalSubmitAuthSeparator className="no-margin-top" />
         <TextSeparatorStyle>{i18n.t('login.or')}</TextSeparatorStyle>
-        <SeparatorStyle className="no-margin-top" />
+        <ProposalSubmitAuthSeparator className="no-margin-top" />
       </SeparatorWrapperStyle>
       <EmailButtonStyle
-        onClick={() => dispatch(modalShowRegister())}
+        onClick={onEmailClick}
         id="authentication-register-button"
         type="button"
       >

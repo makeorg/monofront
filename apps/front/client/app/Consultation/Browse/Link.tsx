@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import { HomeQuestionType } from '@make.org/types';
 import {
   NewWindowIconStyle,
-  RedHTMLLinkElementStyle,
-  RedLinkElementStyle,
+  RedUppercaseHTMLLinkElementStyle,
+  RedUppercaseLinkElementStyle,
 } from '@make.org/ui/elements/LinkElements';
 import { Link } from 'react-router-dom';
 import i18n from 'i18next';
@@ -48,20 +48,20 @@ export const ConsultationLink: FC<Props> = ({ question, label }) => {
 
   if (openedConsultation) {
     return (
-      <RedLinkElementStyle
+      <RedUppercaseLinkElementStyle
         as={Link}
         to={consultationPath}
         onClick={handleClick}
         data-cy-link={`item-link-${question.questionId}`}
       >
         {label}
-      </RedLinkElementStyle>
+      </RedUppercaseLinkElementStyle>
     );
   }
 
   if (closedConsultationWithoutResults || externalResultLink) {
     return (
-      <RedHTMLLinkElementStyle
+      <RedUppercaseHTMLLinkElementStyle
         href={
           externalResultLink
             ? resultsLink && resultsLink.value
@@ -78,12 +78,12 @@ export const ConsultationLink: FC<Props> = ({ question, label }) => {
         <ScreenReaderItemStyle>
           {i18n.t('common.open_new_window')}
         </ScreenReaderItemStyle>
-      </RedHTMLLinkElementStyle>
+      </RedUppercaseHTMLLinkElementStyle>
     );
   }
 
   return (
-    <RedLinkElementStyle
+    <RedUppercaseLinkElementStyle
       to={
         internalResultLink
           ? getDynamicConsultationLink(
@@ -97,6 +97,6 @@ export const ConsultationLink: FC<Props> = ({ question, label }) => {
       data-cy-link={`item-link-${question.questionId}`}
     >
       {label}
-    </RedLinkElementStyle>
+    </RedUppercaseLinkElementStyle>
   );
 };

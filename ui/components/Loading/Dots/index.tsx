@@ -1,15 +1,19 @@
-import * as React from 'react';
+import React, { FC } from 'react';
 import { LoadingWrapperStyle, DotStyle } from './style';
 
-export const LoadingDots: React.FC = () => (
+type Props = {
+  isWidget?: boolean;
+};
+
+export const LoadingDots: FC<Props> = ({ isWidget }) => (
   <LoadingWrapperStyle aria-hidden>
-    <DotStyle delay={0} duration={1}>
+    <DotStyle className={isWidget ? 'widget' : ''} delay={0} duration={1}>
       &bull;
     </DotStyle>
-    <DotStyle delay={0.2} duration={1}>
+    <DotStyle className={isWidget ? 'widget' : ''} delay={0.2} duration={1}>
       &bull;
     </DotStyle>
-    <DotStyle delay={0.45} duration={1}>
+    <DotStyle className={isWidget ? 'widget' : ''} delay={0.45} duration={1}>
       &bull;
     </DotStyle>
   </LoadingWrapperStyle>

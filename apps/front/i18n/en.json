@@ -112,6 +112,7 @@
   "common": {
     "connexion_label": "Log in",
     "register_label": "Sign up",
+    "continue": "Continue",
     "form": {
       "hide_password": "Hide password",
       "show_password": "Show password",
@@ -175,7 +176,9 @@
       "card_title": "To find the history of your votes",
       "facebook_connect": "Continue with Facebook",
       "google_connect": "Continue with Google",
-      "email_register": "Sign up with email"
+      "email_register": "Sign up with email",
+      "count_register": "({{count}}/2)"
+
     },
     "from": "on",
     "email": "Email",
@@ -335,7 +338,8 @@
       "button_back": "Modify my solution",
       "title": "To validate my solution",
       "subtitle": "Sign up with",
-      "button_login": "I already have an account, log me in"
+      "button_login_text": "I already have an account,",
+      "button_login_link": "log me in"
     }
   },
   "vote": {
@@ -415,6 +419,8 @@
     "social_connect": "Sign up with",
     "or": "or",
     "subtitle": "Sign up using this form",
+    "step1_title": "Subscribe by email",
+    "step2_title": "Complete my registration",
     "login_title": "I already have an account.",
     "login_link": "Log in",
     "gtu_text_first": "By signing up, you agree to our ",

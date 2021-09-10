@@ -109,6 +109,7 @@
   "common": {
     "connexion_label": "Se connecter",
     "register_label": "S'inscrire",
+    "continue": "Continuer",
     "form": {
       "hide_password": "Masquer le mot de passe",
       "show_password": "Afficher le mot de passe",
@@ -172,7 +173,8 @@
       "card_title": "Pour retrouver l’historique de vos votes",
       "facebook_connect": "Continuer avec Facebook",
       "google_connect": "Continuer avec Google",
-      "email_register": "S’inscrire par mail"
+      "email_register": "S’inscrire par mail",
+      "count_register": "({{count}}/2)"
     },
     "notifications": {
       "bad_link": "Ce lien n'est plus valable.",
@@ -329,7 +331,7 @@
     "register": {
       "description": "Comment suivre les résultats ?",
       "button_intro": "Créez votre",
-      "button_text": "Inscrivez-vous sur Make.org"
+      "button_text": "espace citoyen."
     }
   },
   "no_proposal_card": {
@@ -417,7 +419,8 @@
       "button_back": "Modifier ma proposition",
       "title": "Pour valider ma proposition",
       "subtitle": "Je m'inscris avec",
-      "button_login": "J’ai déjà un compte, je me connecte"
+      "button_login_text": "J’ai déjà un compte,",
+      "button_login_link": "je me connecte"
     },
     "success": {
       "title": "Merci {{name}} !",
@@ -502,6 +505,8 @@
     "social_connect": "Je m’inscris avec",
     "or": "ou",
     "subtitle": "Je m'inscris avec ce formulaire",
+    "step1_title": "S'inscrire par email",
+    "step2_title": "Terminer mon inscription",
     "login_title": "J‘ai déjà un compte.",
     "login_link": "Connexion",
     "gtu_text_first": "En vous inscrivant, vous acceptez nos ",
@@ -521,7 +526,7 @@
     "privacy_make": " de Make.org"
   },
   "forgot_password": {
-    "title": "je réinitialise mon mot de passe",
+    "title": "Je réinitialise mon mot de passe",
     "description": "Merci de renseigner l'adresse email liée à votre compte Make.org pour recevoir le lien de réinitialisation.",
     "success": "Merci, un email vient de vous être envoyé pour vous permettre de mettre à jour votre mot de passe.",
     "return": "Revenir à ",
