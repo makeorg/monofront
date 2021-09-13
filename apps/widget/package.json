@@ -28,6 +28,7 @@
     "body-parser": "~1.19.0",
     "compression": "~1.7.3",
     "cors": "^2.8.5",
+    "deep-freeze": "~0.0.1",
     "dotenv": "^10.0.0",
     "dotenv-webpack": "^7.0.3",
     "express": "~4.17.1",
@@ -86,7 +87,7 @@
     "dev": "webpack serve --mode development --progress --color --config ./webpack/dev.config.js",
     "build": "webpack --mode production --progress --color --config ./webpack/build.config.js",
     "server": "pm2-runtime start ecosystem.config.js --only server-production",
-    "server:dev": "pm2-runtime start ecosystem.config.js --only server-dev",
+    "server:dev": "pm2-runtime start ecosystem.config.js --only widget-dev",
     "server:test": "node ../../apimock/server.js & pm2-runtime start ecosystem.config.js --only serverau -test"
   }
 }

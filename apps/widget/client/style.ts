@@ -9,9 +9,10 @@ export const WidgetContainer = styled.div`
   border-radius: ${intToPx(Elements.BorderRadius)};
   border: 1px solid ${BorderColors.LightGrey};
   flex-direction: column;
+  width: 100%;
   max-width: 320px;
   height: 550px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    max-width: 634px;
+    max-width: 635px;
   }
 `;

@@ -4,7 +4,7 @@ import { WIDGET_BUILD_DIR, WIDGET_JS_DIR, WIDGET_MAP_DIR } from '../paths';
 
 const log = async (level: string, error: any) => {
   const logger = await getLoggerInstance(
-    'widget',
+    'make-widget',
     WIDGET_JS_DIR,
     WIDGET_BUILD_DIR,
     WIDGET_MAP_DIR
@@ -21,5 +21,5 @@ export const logInfo = (info: any): void => {
 };
 
 export const logWarning = (warning: any): void => {
-  log('warning', warning);
+  log('warn', warning);
 };

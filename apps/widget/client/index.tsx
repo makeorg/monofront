@@ -2,10 +2,6 @@ import React from 'react';
 import { render, hydrate } from 'react-dom';
 import { HeadProvider } from 'react-head';
 import { BrowserRouter } from 'react-router-dom';
-import { ModernNormalizeStylesheet } from '@make.org/assets/css-in-js/ModernNormalize';
-import { FontFacesStylesheet } from '@make.org/assets/css-in-js/FontFaces';
-import { DefaultStylesheet } from '@make.org/assets/css-in-js/DefaultStyle';
-import { UIThemeStylesheet } from '@make.org/assets/css-in-js/UITheme';
 import { env } from '@make.org/assets/env';
 import ContextState from '@make.org/store';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
@@ -16,10 +12,11 @@ import { apiClient } from '@make.org/api/ApiService/ApiService.client';
 import { initialState } from '@make.org/store/initialState';
 import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
 import { QuestionService } from '@make.org/utils/services/Question';
-import App from './App';
+import { Logger } from '@make.org/utils/services/Logger';
 import { translationRessources } from '../i18n';
 import { initDevState } from '../initDevState';
 import { transformExtraSlidesConfigFromQuery } from '../server/helpers/query.helper';
+import App from './App';
 
 declare global {
   interface Window {
@@ -33,6 +30,28 @@ if (env.isDev()) {
 }
 
 const serverState = window.INITIAL_STATE || initialState;
+
+window.onerror = (message, source, lineNumber, columnNumber, error) => {
+  if (error && error.stack) {
+    const { stack } = error;
+    const formattedMessage = JSON.stringify(message);
+    const formattedSource = JSON.stringify(source);
+    const formattedLineNumber = JSON.stringify(lineNumber);
+    const formattedColumnNumber = JSON.stringify(columnNumber);
+    Logger.log(
+      {
+        formattedMessage,
+        formattedSource,
+        formattedLineNumber,
+        formattedColumnNumber,
+        stack,
+      },
+      'error'
+    );
+  }
+
+  return false;
+};
 
 ApiService.strategy = apiClient;
 
@@ -97,19 +116,14 @@ const initApp = async (state: StateRoot) => {
   const appDom = document.getElementById('app');
   const renderMethod = module.hot ? render : hydrate;
 
-  // Render the app
-  renderMethod(
+  return renderMethod(
     <HeadProvider>
       <React.StrictMode>
-        <BrowserRouter>
-          <ContextState serverState={store}>
-            <ModernNormalizeStylesheet />
-            <FontFacesStylesheet />
-            <DefaultStylesheet />
-            <UIThemeStylesheet />
+        <ContextState serverState={store}>
+          <BrowserRouter>
             <App />
-          </ContextState>
-        </BrowserRouter>
+          </BrowserRouter>
+        </ContextState>
       </React.StrictMode>
     </HeadProvider>,
     appDom

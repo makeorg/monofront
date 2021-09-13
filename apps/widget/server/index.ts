@@ -57,7 +57,7 @@ const getApp = () => {
   );
   app.use(cookiesMiddleware());
   app.use(secureMiddleware);
-  app.use(maintenanceMiddleware);
+  app.use((req, res, next) => maintenanceMiddleware(req, res, next, logError));
   app.use((req, res, next) => headersResponseMiddleware(res, next));
   app.use((req, res, next) => {
     const localsResponse = res as Response & { locals: { nonce: string } };

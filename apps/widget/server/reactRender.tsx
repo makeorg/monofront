@@ -24,9 +24,12 @@ import { StateRoot } from '@make.org/types';
 import { Request, Response } from 'express';
 import { Cookie } from 'universal-cookie';
 import { getLanguageFromCountryCode } from '@make.org/utils/helpers/countries';
+import deepFreeze from 'deep-freeze';
 import { WIDGET_CLIENT_DIR } from './paths';
+import { logError, logInfo } from './helpers/ssr.helper';
 import App from '../client/App';
-import { logInfo } from './helpers/ssr.helper';
+
+deepFreeze(initialState);
 
 const statsFile = path.resolve(WIDGET_CLIENT_DIR, 'loadable-stats.json');
 
@@ -88,6 +91,9 @@ export const reactRender = async (
   res: Response,
   routeState: StateRoot
 ): Promise<any> => {
+  const { ...queryParams } = req.query;
+  const { country, questionSlug, hash, owner } = req.query;
+
   const { browser, os, device, ua } = parser(req.headers['user-agent']);
   const isMobileOrTablet = device.type === 'mobile' || device.type === 'tablet';
   const commonLogs = {
@@ -103,9 +109,7 @@ export const reactRender = async (
     app_browser_hash: simpleHash(ua),
   };
 
-  const { ...queryParams } = req.query;
-  const { country } = req.query;
-  const language = getLanguageFromCountryCode(country);
+  const language = getLanguageFromCountryCode(country || DEFAULT_COUNTRY);
 
   const state: StateRoot = {
     ...initialState,
@@ -144,6 +148,16 @@ export const reactRender = async (
 
   if (!reactHtml) {
     return res.status(404).end();
+  }
+
+  if (!questionSlug || !country || !hash || !owner) {
+    state.appConfig.maintenance = true;
+    logError({
+      message: 'Missing mandatory query params in request',
+      url: req.originalUrl,
+      ...commonLogs,
+    });
+    return res.send(reactHtml);
   }
 
   // add log here

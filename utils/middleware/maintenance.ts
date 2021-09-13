@@ -1,4 +1,4 @@
-import MaintenanceService from '@make.org/api/MaintenanceService';
+import { MaintenanceService } from '@make.org/utils/services/Maintenance';
 import { NextFunction, Request, Response } from 'express';
 import cache from 'memory-cache';
 
@@ -11,7 +11,7 @@ const getMaintenanceConfigResponse = async () => {
   if (content) {
     return content;
   }
-  const response = await MaintenanceService.getMaintenanceConfig();
+  const response = await MaintenanceService.getConfig();
   cache.put(MAINTENANCE_SERVICE_RESPONSE_CACHE_KEY, response, 300000);
 
   return response;
@@ -19,20 +19,26 @@ const getMaintenanceConfigResponse = async () => {
 
 export const maintenanceMiddleware = async (
   req: Request,
-  res: Response,
-  next: NextFunction
+  res: Response & { maintenance?: boolean },
+  next: NextFunction,
+  logError: (error: any) => void
 ): Promise<void> => {
   const { source } = req.query;
   try {
     const maintenanceConfigResponse = await getMaintenanceConfigResponse();
     const { blockAll, blockedSources } = maintenanceConfigResponse;
-    if (blockAll || blockedSources.includes(source)) {
-      return res.redirect('/maintenance');
+    if (blockAll || (blockedSources && blockedSources.includes(source))) {
+      res.maintenance = true;
     }
 
     return next();
   } catch (error) {
-    console.error(error);
+    if (logError) {
+      logError({
+        message: `Failed to call maintenance config`,
+        name: 'middlewares',
+      });
+    }
     return next();
   }
 };

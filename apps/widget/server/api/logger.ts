@@ -12,7 +12,7 @@ export const loggerApi = async (
   const { level, data } = req.body;
   const normalizedData = typeof data === 'string' ? { message: data } : data;
   const logger = await getLoggerInstance(
-    'front-accessible',
+    'make-widget',
     WIDGET_JS_DIR,
     WIDGET_BUILD_DIR,
     WIDGET_MAP_DIR
