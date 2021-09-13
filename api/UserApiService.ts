@@ -74,20 +74,12 @@ export class UserApiService {
     email: string,
     password: string
   ): Promise<void | AxiosResponse> {
-    const data: Record<string, string | boolean> = {
-      username: email,
-      password,
-    };
     return ApiService.callApi(PATH_USER_CHECK_REGISTRATION, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'application/json',
       },
-      body: Object.keys(data)
-        .map(
-          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
-        )
-        .join('&'),
+      body: JSON.stringify({ email, password }),
     });
   }
 

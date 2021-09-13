@@ -150,27 +150,27 @@ const register = async (
 const checkRegistration = async (
   email: string,
   password: string,
-  success?: () => void,
-  errors?: (serviceErrors?: ErrorObjectType[]) => void,
-  unexpectedError?: () => void
+  success: () => void,
+  errors: (errors: ErrorObjectType[]) => void,
+  unexpectedError: () => void
 ): Promise<void> => {
   try {
     await UserApiService.checkRegistration(email, password);
-    if (success) {
-      success();
-    }
+    success();
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
-    if ([400, 401, 403, 404].includes(apiServiceError.status)) {
-      if (errors) {
-        errors(loginErrors);
-        return;
-      }
+    if (apiServiceError.status === 400) {
+      errors(
+        getErrorMessages(
+          registerErrors,
+          apiServiceError.data,
+          apiServiceError.logId
+        )
+      );
+      return;
     }
     defaultUnexpectedError(apiServiceError);
-    if (unexpectedError) {
-      unexpectedError();
-    }
+    unexpectedError();
   }
 };
 
