@@ -1,12 +1,10 @@
 ############
 # Base
 ############
-FROM node:16-alpine AS base
+FROM node:16.9-alpine AS base
 WORKDIR /home/app
 
 ENV PATH /home/app/node_modules/.bin:$PATH
-#ENV PATH /home/app/apps/front/node_modules/.bin:$PATH
-#ENV PATH /home/app/apps/widget/node_modules/.bin:$PATH
 ENV CHOKIDAR_USEPOLLING true
 
 RUN apk --no-cache add git
@@ -36,8 +34,6 @@ FROM base AS widget-dev
 WORKDIR /home/app
 
 ENV PATH /home/app/node_modules/.bin:$PATH
-#ENV PATH /home/app/apps/front/node_modules/.bin:$PATH
-#ENV PATH /home/app/apps/widget/node_modules/.bin:$PATH
 ENV CHOKIDAR_USEPOLLING true
 
 CMD ["./node_modules/.bin/lerna", "run", "--scope=@make.org/widget", "dev", "--stream"]
@@ -53,8 +49,6 @@ FROM base AS widget-ssr
 WORKDIR /home/app
 
 ENV PATH /home/app/node_modules/.bin:$PATH
-#ENV PATH /home/app/apps/front/node_modules/.bin:$PATH
-#ENV PATH /home/app/apps/widget/node_modules/.bin:$PATH
 ENV CHOKIDAR_USEPOLLING true
 
 RUN ["./node_modules/.bin/lerna", "run", "--scope=@make.org/widget",  "build", "--stream"]
@@ -62,3 +56,48 @@ CMD ["./node_modules/.bin/lerna", "run", "--scope=@make.org/widget", "server:dev
 
 EXPOSE 3000
 
+############
+# BUILD
+############
+FROM keymetrics/pm2:16-alpine AS base-production
+
+WORKDIR /usr/app
+
+COPY ["package*.json", "yarn.lock", "./"]
+COPY ["apps/widget/package*.json", "./apps/widget/"]
+COPY ["api/package*.json", "./api/"]
+COPY ["components/package*.json", "./components/"]
+COPY ["types/package*.json", "./types/"]
+COPY ["assets/package*.json", "./assets/"]
+COPY ["utils/package*.json", "./utils/"]
+COPY ["ui/package*.json", "./ui/"]
+COPY ["store/package*.json", "./store/"]
+RUN yarn install --no-progress --frozen-lockfile
+
+COPY . ./
+RUN yarn workspace @make.org/widget build
+
+# keep only production modules and autoclean
+RUN yarn install --no-progress --frozen-lockfile --check-files --production
+RUN yarn autoclean --force
+
+
+FROM keymetrics/pm2:16-alpine as widget-production
+
+ENV PORT 8000
+
+RUN apk --no-cache add curl
+
+WORKDIR /usr/app/
+COPY --from=base-production /usr/app/apps/widget/dist ./dist
+COPY --from=base-production /usr/app/apps/widget/ecosystem.config.js ./ecosystem.config.js
+COPY --from=base-production /usr/app/apps/widget/bin ./bin
+COPY --from=base-production /usr/app/apps/widget/i18n ./i18n
+
+COPY --from=base-production /usr/app/node_modules ./node_modules
+
+EXPOSE 8000
+
+CMD [ "pm2-runtime", "start", "ecosystem.config.js", "--only", "widget-production" ]
+
+HEALTHCHECK --interval=20s CMD curl --fail http://localhost:8000 || exit 1

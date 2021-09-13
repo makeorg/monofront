@@ -4,6 +4,9 @@ variables: &global_variables
   IMAGE_APP_NAME: "make-front"
   IMAGE_APP_TARGET: "app-production"
   IMAGE_APP_PATH: "apps/front/Dockerfile"
+  IMAGE_WIDGET_NAME: "make-widget-runner"
+  IMAGE_WIDGET_TARGET: "widget-production"
+  IMAGE_WIDGET_PATH: "apps/widget/Dockerfile"
   NODE_IMAGE: "node:16.9-alpine"
   YARN_VERSION: "1.22.5"
 
@@ -118,6 +121,27 @@ build-app:
       fi
     - docker tag $NEXUS_URL/$IMAGE_APP_NAME:$IMAGE_VERSION $NEXUS_URL/$IMAGE_APP_NAME:$CI_COMMIT_REF_NAME-latest
     - docker push $NEXUS_URL/$IMAGE_APP_NAME:$CI_COMMIT_REF_NAME-latest
+
+build-widget:
+  stage: build
+  tags:
+    - docker
+  before_script:
+    - export IMAGE_VERSION=`git rev-parse --short=10 HEAD`
+    - mkdir -p /var/lib/docker
+    - mount -t tmpfs -o size=12G tmpfs /var/lib/docker
+    - if [ ! -e /var/run/docker.sock ]; then DOCKER_DRIVER=overlay2 dockerd & fi
+    - until docker ps; do echo "waiting for docker to be up..."; sleep 0.5; done
+    - docker login "https://$NEXUS_URL" --username "$NEXUS_USER" --password "$NEXUS_PASSWORD"
+    - echo $(docker pull $NEXUS_URL/$IMAGE_WIDGET_NAME:$IMAGE_VERSION)
+  script:
+    - >
+      if [[ -z $(docker images -q $NEXUS_URL/$IMAGE_WIDGET_NAME:$IMAGE_VERSION) ]];then
+        DOCKER_BUILDKIT=1 docker build --rm -f $IMAGE_WIDGET_PATH -t $NEXUS_URL/$IMAGE_WIDGET_NAME:$IMAGE_VERSION --target $IMAGE_WIDGET_TARGET .
+        docker push $NEXUS_URL/$IMAGE_WIDGET_NAME:$IMAGE_VERSION
+      fi
+    - docker tag $NEXUS_URL/$IMAGE_WIDGET_NAME:$IMAGE_VERSION $NEXUS_URL/$IMAGE_WIDGET_NAME:$CI_COMMIT_REF_NAME-latest
+    - docker push $NEXUS_URL/$IMAGE_WIDGET_NAME:$CI_COMMIT_REF_NAME-latest
 
 deploy-app-preproduction:
   stage: deploy

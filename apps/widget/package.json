@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "sideEffects": false,
+  "engines": {
+      "node": ">=14.17 <=16.9",
+      "yarn": "~1.22"
+  },
   "dependencies": {
     "@loadable/component": "^5.15.0",
     "@loadable/server": "~5.15.0",

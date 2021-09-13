@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'server-production',
+      name: 'widget-production',
       script: 'bin/start',
       node_args: '-r dotenv/config',
       exec_mode: 'cluster',
@@ -11,7 +11,7 @@ module.exports = {
       },
     },
     {
-      name: 'server-dev',
+      name: 'widget-dev',
       script: 'bin/start',
       node_args: '-r dotenv/config bin/start dotenv_config_path=.env.local',
       exec_mode: 'cluster',
@@ -21,7 +21,7 @@ module.exports = {
       },
     },
     {
-      name: 'server-test',
+      name: 'widget-test',
       script: 'bin/start',
       node_args: '-r dotenv/config bin/start dotenv_config_path=.env.test',
       exec_mode: 'cluster',
