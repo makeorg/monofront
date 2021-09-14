@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import React, { ChangeEvent, FormEvent, useEffect } from 'react';
 import i18n from 'i18next';
 import { ErrorObjectType, RegisterFormDataType } from '@make.org/types';
 import {
@@ -32,7 +32,9 @@ type Props = {
   handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
   handleLegalField: (fieldName: string, value: boolean) => void;
   handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
+  checkRegistration: () => void;
   disableSubmit: boolean;
+  registerPanelStep: number;
 };
 /**
  * Renders Register Form
@@ -43,11 +45,12 @@ export const RegisterFormPanel: React.FC<Props> = ({
   handleChange,
   handleLegalField,
   handleSubmit,
+  checkRegistration,
   disableSubmit,
+  registerPanelStep,
 }) => {
   const { state } = useAppContext();
   const { country, language } = state.appConfig;
-  const [step, setStep] = useState(1);
 
   const emailError = getFieldError('email', errors);
   const passwordError = getFieldError('password', errors);
@@ -56,8 +59,8 @@ export const RegisterFormPanel: React.FC<Props> = ({
   const postalcodeError = getFieldError('postalcode', errors);
 
   useEffect(() => {
-    trackDisplaySignupForm(`${step}`);
-  }, [step]);
+    trackDisplaySignupForm(`${registerPanelStep}`);
+  }, [registerPanelStep]);
 
   return (
     <FormCenterAlignStyle
@@ -66,13 +69,15 @@ export const RegisterFormPanel: React.FC<Props> = ({
     >
       <RegisterEmailTitleStyle>
         {i18n.t('common.social_login.email_register')}{' '}
-        {i18n.t('common.social_login.count_register', { count: step })}
+        {i18n.t('common.social_login.count_register', {
+          count: registerPanelStep,
+        })}
       </RegisterEmailTitleStyle>
       <FormRequirementsStyle>
         {i18n.t('common.form.requirements')}
       </FormRequirementsStyle>
       <FormErrors errors={errors} />
-      {step === 1 && (
+      {registerPanelStep === 1 && (
         <>
           <EmailPasswordFields
             emailValue={user.email}
@@ -82,14 +87,14 @@ export const RegisterFormPanel: React.FC<Props> = ({
             handleChange={handleChange}
           />
           <RedButtonStyle
-            onClick={() => setStep(2)}
+            onClick={checkRegistration}
             disabled={!user.password || !user.email}
           >
             {i18n.t('common.continue')}
           </RedButtonStyle>
         </>
       )}
-      {step === 2 && (
+      {registerPanelStep === 2 && (
         <>
           <ExtraInRegisterformationsFields
             firstnameValue={user.profile.firstname}

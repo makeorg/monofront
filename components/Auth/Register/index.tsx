@@ -24,6 +24,7 @@ import { UserService } from '@make.org/utils/services/User';
 import { Logger } from '@make.org/utils/services/Logger';
 import { useAppContext } from '@make.org/store';
 import { getUser } from '@make.org/store/actions/authentication';
+import { closePanel } from '@make.org/store/actions/panel';
 import { RegisterForm } from './Form';
 import { RegisterFormPanel } from './FormPanel';
 
@@ -54,6 +55,7 @@ export const Register: React.FC<Props> = ({ panel }) => {
   const [errors, setErrors] = useState<ErrorObjectType[]>([]);
   const [waitingCallback, setWaitingCallback] = useState<boolean>(false);
   const [needLegalConsent, displayLegalConsent] = useState<boolean>(false);
+  const [registerPanelStep, setRegisterPanelStep] = useState<number>(1);
   const userIsAChild =
     user && user.profile && user.profile.age && user.profile.age < 15;
 
@@ -101,6 +103,26 @@ export const Register: React.FC<Props> = ({ panel }) => {
     });
   };
 
+  // checks email and password validity on first step of panel registration
+  const checkRegistration = async () => {
+    const success = () => {
+      setRegisterPanelStep(2);
+      setErrors([]);
+    };
+    const handleErrors = (serviceErrors: ErrorObjectType[]) => {
+      setErrors(serviceErrors);
+    };
+    const unexpectedError = () => dispatch(closePanel());
+
+    await UserService.checkRegistration(
+      user.email,
+      user.password,
+      success,
+      handleErrors,
+      unexpectedError
+    );
+  };
+
   const logAndLoadUser = async (email: string, password: string) => {
     const unexpectedError = () => {
       dispatch(modalClose());
@@ -123,7 +145,11 @@ export const Register: React.FC<Props> = ({ panel }) => {
     const success = () => {
       logAndLoadUser(user.email, user.password).then(() => {
         trackSignupEmailSuccess();
-        dispatch(modalClose());
+        if (panel) {
+          dispatch(closePanel());
+        } else {
+          dispatch(modalClose());
+        }
         setErrors([]);
       });
     };
@@ -202,6 +228,8 @@ export const Register: React.FC<Props> = ({ panel }) => {
             handleLegalField={handleLegalField}
             handleSubmit={userIsAChild ? toggleLegalConsent : handleSubmit}
             disableSubmit={waitingCallback}
+            checkRegistration={checkRegistration}
+            registerPanelStep={registerPanelStep}
           />
         )}
       </AuthenticationWrapperStyle>

@@ -8,6 +8,7 @@ import { ApiService } from './ApiService';
 export const PATH_USER_ME = '/user/me';
 export const PATH_USER_CURRENT = '/user/current';
 export const PATH_USER_PROFILE = '/user/:userId/profile';
+export const PATH_USER_CHECK_REGISTRATION = '/user/check-registration';
 export const PATH_USER_LOGIN = '/oauth/make_access_token';
 export const PATH_USER_GET_TOKEN = '/oauth/access_token';
 export const PATH_USER_LOGOUT = '/logout';
@@ -62,6 +63,23 @@ export class UserApiService {
   static getUserToken(): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_USER_GET_TOKEN, {
       method: 'GET',
+    });
+  }
+
+  /** Check Registration validity
+   * @param  {String} email
+   * @param  {String} password
+   */
+  static checkRegistration(
+    email: string,
+    password: string
+  ): Promise<void | AxiosResponse> {
+    return ApiService.callApi(PATH_USER_CHECK_REGISTRATION, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
     });
   }
 
