@@ -9,7 +9,6 @@ import {
   MODAL_SHOW_DEPARTMENT_FORM,
   MODAL_SHOW_SESSION_EXPIRATION,
   MODAL_CLOSE_SESSION_EXPIRATION,
-  MODAL_SHOW_PROPOSAL_SUCCESS,
   MODAL_SHOW_COUNTRIES,
   MODAL_SHOW_DATAPOLICY_LOGIN,
   MODAL_SHOW_DATAPOLICY_SOCIAL,
@@ -49,10 +48,6 @@ export const showSessionExpirationModal = (): ReducerAction => ({
 });
 export const closeSessionExpirationModal = (): ReducerAction => ({
   type: MODAL_CLOSE_SESSION_EXPIRATION,
-});
-
-export const modalShowProposalSuccess = (): ReducerAction => ({
-  type: MODAL_SHOW_PROPOSAL_SUCCESS,
 });
 
 export const modalShowCountries = (

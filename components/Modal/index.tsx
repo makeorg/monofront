@@ -5,7 +5,6 @@ import { Login } from '@make.org/components/Auth/Login';
 import { Register } from '@make.org/components/Auth/Register';
 import { PasswordForgot } from '@make.org/components/Auth/PasswordForgot';
 import { trackClickCloseModal } from '@make.org/utils/services/Tracking';
-import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
 import i18n from 'i18next';
 import { CloseButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { SvgClose } from '@make.org/ui/Svg/elements';
@@ -19,7 +18,6 @@ const modalContents = {
   [MODAL_TYPES.MODAL_LOGIN]: <Login />,
   [MODAL_TYPES.MODAL_REGISTER]: <Register />,
   [MODAL_TYPES.MODAL_FORGOT_PASSWORD]: <PasswordForgot />,
-  [MODAL_TYPES.MODAL_PROPOSAL_SUCCESS]: <ProposalSuccess />,
   [MODAL_TYPES.MODAL_COUNTRIES]: <SwitchCountry />,
   [MODAL_TYPES.MODAL_DEPARTMENT]: null,
 };
