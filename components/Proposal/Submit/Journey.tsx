@@ -5,15 +5,19 @@ import {
 } from '@make.org/utils/services/Tracking';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { getLocalizedBaitText } from '@make.org/utils/helpers/proposal';
-import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
+import {
+  closePanel,
+  removePanelContent,
+  setPanelContent,
+} from '@make.org/store/actions/panel';
 import { proposeSuccess } from '@make.org/store/actions/proposal';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
-import { modalShowProposalSuccess } from '@make.org/store/actions/modal';
 import { useAppContext } from '@make.org/store';
 import { useLocation } from 'react-router';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 import { ProposalForm } from './Form';
 import { ProposalAuthentication } from './Authentication';
+import { ProposalSuccess } from './Success';
 
 const steps = {
   AUTHENTICATION_STEP: 'authentication',
@@ -24,7 +28,7 @@ export const ProposalJourney: React.FC = () => {
   const { dispatch, state } = useAppContext();
   const location = useLocation();
   const pathname = useRef(location.pathname);
-  const { isLoggedIn } = selectAuthentication(state);
+  const { isLoggedIn, user } = selectAuthentication(state);
   const { question } = state.questions[state.currentQuestion];
   const [proposalContent, setProposalContent] = useState('');
   const [proposalStep, setProposalStep] = useState(steps.FORM);
@@ -64,9 +68,14 @@ export const ProposalJourney: React.FC = () => {
     setWaiting(true);
     await ProposalService.propose(proposalContent, question.questionId);
     setWaiting(false);
-    dispatch(removePanelContent());
-    dispatch(closePanel());
-    dispatch(modalShowProposalSuccess());
+    dispatch(
+      setPanelContent(
+        <ProposalSuccess
+          firstname={user?.profile.firstName}
+          email={user?.email}
+        />
+      )
+    );
     dispatch(proposeSuccess());
     trackDisplayProposalSubmitValidation();
   };

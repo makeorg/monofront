@@ -183,29 +183,48 @@ export const ProposalAuthCancelStyle = styled(GreyNoBackgroundButtonStyle)`
   align-self: center;
 `;
 
-export const ProposalSuccessWrapperStyle = styled(CenterColumnStyle)`
-  max-width: 295px;
+export const ProposalSuccessWrapperStyle = styled(ColumnElementStyle)`
+  max-width: 280px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    max-width: 392px;
+  }
+`;
+
+export const ProposalSuccessRegisterStyle = styled(CenterColumnStyle)`
+  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  color: ${color.greyDark};
+  text-align: center;
+  margin: 10px 0px 15px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    margin-bottom: 30px;
+  }
 `;
 
 export const ProposalSuccessIconStyle = styled(SvgCheckedLightBulb)`
   margin: 10px auto 30px;
 `;
-
 export const ProposalSuccessTitleStyle = styled.h2`
   font-family: ${MakeFonts.CircularStandardBold};
-  font-size: ${intToPx(typography.font.fontsize.L.value)};
+  font-size: ${intToPx(typography.font.fontsize.S.value)};
   line-height: 1.5;
   text-transform: none;
+  text-align: center;
 `;
 
 export const ProposalSuccessParagraphStyle = styled.p`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   text-align: center;
-  margin: 5px auto 15px;
+  margin: 10px auto 30px;
 `;
 
 export const ProposalAuthInlineWrapperStyle = styled.div`
   justify-content: inline;
+`;
+
+export const ProposalSuccessRedButtonStyle = styled(RedButtonStyle)`
+  max-width: 167px;
+  width: 100%;
+  margin: auto;
 `;
 
 export const ProposalAuthLoginWrapperStyle = styled(

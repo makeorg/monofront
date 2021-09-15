@@ -24,7 +24,8 @@ import { UserService } from '@make.org/utils/services/User';
 import { Logger } from '@make.org/utils/services/Logger';
 import { useAppContext } from '@make.org/store';
 import { getUser } from '@make.org/store/actions/authentication';
-import { closePanel } from '@make.org/store/actions/panel';
+import { closePanel, setPanelContent } from '@make.org/store/actions/panel';
+import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
 import { RegisterForm } from './Form';
 import { RegisterFormPanel } from './FormPanel';
 
@@ -146,7 +147,15 @@ export const Register: React.FC<Props> = ({ panel }) => {
       logAndLoadUser(user.email, user.password).then(() => {
         trackSignupEmailSuccess();
         if (panel) {
-          dispatch(closePanel());
+          dispatch(
+            setPanelContent(
+              <ProposalSuccess
+                isRegister
+                email={user.email}
+                firstname={user.profile.firstname}
+              />
+            )
+          );
         } else {
           dispatch(modalClose());
         }

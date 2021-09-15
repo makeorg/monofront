@@ -8,7 +8,6 @@ import {
   MODAL_SHOW_SESSION_EXPIRATION,
   MODAL_CLOSE_SESSION_EXPIRATION,
   MODAL_SHOW_DEPARTMENT_FORM,
-  MODAL_SHOW_PROPOSAL_SUCCESS,
   MODAL_SHOW_COUNTRIES,
   MODAL_CLOSE_COOKIES,
   MODAL_SHOW_COOKIES,
@@ -72,12 +71,6 @@ export const modal_reducer: Reducer = (
         isOpen: true,
         contentType: MODAL_TYPES.MODAL_COUNTRIES,
         focusAfterClose: action.payload.focusAfterClose,
-      };
-    case MODAL_SHOW_PROPOSAL_SUCCESS:
-      return {
-        ...state,
-        isOpen: true,
-        contentType: MODAL_TYPES.MODAL_PROPOSAL_SUCCESS,
       };
     case MODAL_CLOSE:
       return {
