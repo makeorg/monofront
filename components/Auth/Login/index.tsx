@@ -4,10 +4,7 @@ import {
   modalShowRegister,
   modalShowForgotPassword,
 } from '@make.org/store/actions/modal';
-import {
-  FourthLevelTitleStyle,
-  ThirdLevelTitleStyle,
-} from '@make.org/ui/elements/TitleElements';
+import { FourthLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
 import {
   ExtraParagraphStyle,
   ExtraAltParagraphStyle,
@@ -21,7 +18,11 @@ import {
 import { RedLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { useAppContext } from '@make.org/store';
 import { LoginForm } from './Form';
-import { AuthenticationWrapperStyle, AuthenticationTitleStyle } from '../style';
+import {
+  AuthenticationWrapperStyle,
+  AuthenticationTitleStyle,
+  LoginTitleWrapperStyle,
+} from '../style';
 import { AuthenticationButtonWrapperStyle } from '../Social/style';
 import { FacebookAuthentication } from '../Social/FacebookAuthentication';
 import { GoogleAuthentication } from '../Social/GoogleAuthentication';
@@ -46,9 +47,9 @@ export const Login: React.FC<Props> = ({ panel }) => {
       data-cy-container="authentication"
     >
       {panel ? (
-        <ThirdLevelTitleStyle as="h3" style={{ marginTop: 32 }}>
+        <LoginTitleWrapperStyle as="h3" style={{ marginTop: 32 }}>
           {i18n.t('login.social_connect')}
-        </ThirdLevelTitleStyle>
+        </LoginTitleWrapperStyle>
       ) : (
         <>
           <AuthenticationTitleStyle id="login_title">

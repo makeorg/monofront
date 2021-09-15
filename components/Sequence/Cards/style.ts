@@ -112,8 +112,10 @@ export const PushProposalWrapperStyle = styled.div`
 `;
 export const SequenceIntroParagraphStyle = styled.div<{ isWidget?: boolean }>`
   width: 100%;
+  font-family: ${MakeFonts.CircularStandardBook};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   line-height: 1.5;
+  letter-spacing: 0.14px;
   text-align: center;
   &.with-margin-bottom {
     margin-bottom: 15px;
@@ -168,12 +170,22 @@ export const SequencePushProposalButtonStyle = styled(RedButtonStyle)`
     width: auto;
     margin: 0 10px;
   }
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    &.widget {
+      font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    }
+  }
 `;
 
 export const SequencePushProposalNextButtonStyle = styled(
   BlackBorderButtonStyle
 )`
   margin-top: 15px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    &.widget {
+      font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    }
+  }
 `;
 
 export const SequenceSignUpNextButtonStyle = styled(GreyButtonStyle)`

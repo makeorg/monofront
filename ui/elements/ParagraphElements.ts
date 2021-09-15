@@ -40,6 +40,7 @@ export const ExtraAltParagraphStyle = styled(InlineParagraphStyle)`
 `;
 
 export const ConditionParagraphStyle = styled(InlineParagraphStyle)`
+  font-family: ${MakeFonts.CircularStandardBook};
   margin-bottom: 15px;
   a {
     color: ${color.brandSecondary};
@@ -47,6 +48,7 @@ export const ConditionParagraphStyle = styled(InlineParagraphStyle)`
 `;
 
 export const ConditionParagraphStylePanel = styled(InlineParagraphStyle)`
+  font-family: ${MakeFonts.CircularStandardBook};
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   width: 100%;
   margin-bottom: 20px;

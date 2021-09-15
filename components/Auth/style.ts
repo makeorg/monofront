@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-import { SecondLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
+import {
+  SecondLevelTitleStyle,
+  ThirdLevelTitleStyle,
+} from '@make.org/ui/elements/TitleElements';
 import {
   SvgLegalConsent,
   SvgExternalLinkPlain,
@@ -131,4 +134,13 @@ export const RegisterEmailTitleStyle = styled.h1`
   margin: 30px 0px 10px;
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   font-family: ${MakeFonts.CircularStandardBold};
+`;
+
+export const LoginTitleWrapperStyle = styled(ThirdLevelTitleStyle)`
+  margin-bottom: 20px;
+  text-transform: none;
+  font-family: ${MakeFonts.CircularStandardBold};
+  font-size: ${intToPx(typography.font.fontsize.S.value)};
+  line-height: 1.5;
+  letter-spacing: 0.12px;
 `;

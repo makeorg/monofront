@@ -22,6 +22,7 @@ import TextareaAutosize from 'react-autosize-textarea/lib';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
+import { ExtraParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 
 export const PanelTriggerStyle = styled(RedButtonStyle)`
   position: fixed;
@@ -93,6 +94,7 @@ export const ProposalFieldWrapperStyle = styled.div`
 
 export const ProposalTextareaStyle = styled(TextareaAutosize)`
   width: 100%;
+  font-family: ${MakeFonts.CircularStandardBook};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   line-height: 1.5;
   padding: 20px 17px 30px;
@@ -135,6 +137,7 @@ export const ProposalExternalLinkIconStyle = styled(SvgExternalLinkPlain)`
 
 /** Authentication */
 export const ProposalBackButtonStyle = styled(BlackNoBackgroundButtonStyle)`
+  font-family: ${MakeFonts.CircularStandardBook};
   text-decoration: none;
   align-self: center;
 `;
@@ -184,6 +187,7 @@ export const ProposalAuthCancelStyle = styled(GreyNoBackgroundButtonStyle)`
 `;
 
 export const ProposalSuccessWrapperStyle = styled(ColumnElementStyle)`
+  font-family: ${MakeFonts.CircularStandardBook};
   max-width: 280px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     max-width: 392px;
@@ -218,6 +222,7 @@ export const ProposalSuccessParagraphStyle = styled.p`
 `;
 
 export const ProposalAuthInlineWrapperStyle = styled.div`
+  font-family: ${MakeFonts.CircularStandardBook};
   justify-content: inline;
 `;
 
@@ -230,6 +235,7 @@ export const ProposalSuccessRedButtonStyle = styled(RedButtonStyle)`
 export const ProposalAuthLoginWrapperStyle = styled(
   ProposalAuthInlineWrapperStyle
 )`
+  font-family: ${MakeFonts.CircularStandardBook};
   display: -webkit-inline-box;
   align-items: center;
   margin: auto;
@@ -241,4 +247,10 @@ export const ProposaplAuthSocialLoginWrapperStyle = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+`;
+
+export const ProposalSubmitForgotPasswordWrapperStyle = styled(
+  ExtraParagraphStyle
+)`
+  font-family: ${MakeFonts.CircularStandardBook};
 `;

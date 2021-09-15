@@ -20,10 +20,7 @@ import {
 } from '@make.org/store/actions/modal';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { useAppContext } from '@make.org/store';
-import {
-  FormCenterAlignStyle,
-  FormRequirementsStyle,
-} from '@make.org/ui/elements/FormElements';
+import { FormCenterAlignStyle } from '@make.org/ui/elements/FormElements';
 import { FormErrors } from '../../Form/Errors';
 import { SubmitButton } from '../../Form/SubmitButton';
 import { EmailPasswordFields } from '../CommonFields/EmailPassword';
@@ -103,9 +100,6 @@ export const LoginForm: React.FC = () => {
       id={FORM.LOGIN_FORMNAME}
       onSubmit={throttle(handleSubmit)}
     >
-      <FormRequirementsStyle>
-        {i18n.t('common.form.requirements')}
-      </FormRequirementsStyle>
       <FormErrors errors={errors} />
       <EmailPasswordFields
         emailValue={formValues.email}
