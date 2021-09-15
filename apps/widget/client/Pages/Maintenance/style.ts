@@ -1,3 +1,4 @@
+import { SequenceTitleStyle } from '@make.org/components/Sequence/style';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
 import styled from 'styled-components';
 
@@ -25,4 +26,8 @@ export const LogoWrapperStyle = styled.div`
 export const TextContainerStyle = styled.div``;
 export const MaintenanceImageStyle = styled.img`
   width: 300px;
+`;
+
+export const MaintenanceTitleStyle = styled(SequenceTitleStyle)`
+  margin-bottom: 20px;
 `;

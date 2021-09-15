@@ -1,0 +1,672 @@
+{
+    "context": "Les conclusions de cette consultation ont nourri les travaux de la Conférence pour l’avenir de l’Europe. Elles orientent aussi les priorités de la Présidence française de l’Union européenne entre janvier et juin 2022.",
+    "key_figures": {
+        "participants": 50008,
+        "proposals": 2918,
+        "votes": 338330
+    },
+    "top_ideas": [
+        {
+            "name": "Changement climatique et environnement",
+            "ideas": [
+                {
+                    "idea": "Limiter les emballages et améliorer la gestion des déchets",
+                    "agreement": 89,
+                    "adhesion": 25,
+                    "realistic": 26
+                },
+                {
+                    "idea": "Mettre en place une politique écologique européenne plus forte pour lutter contre le changement climatique",
+                    "agreement": 87,
+                    "adhesion": 29,
+                    "realistic": 22
+                },
+                {
+                    "idea": "Développer le transport ferroviaire au sein de l'UE",
+                    "agreement": 81,
+                    "adhesion": 20,
+                    "realistic": 26
+                },
+                {
+                    "idea": "Agir plus fortement pour la protection de la biodiversité",
+                    "agreement": 86,
+                    "adhesion": 23,
+                    "realistic": 22
+                },
+                {
+                    "idea": "Progresser vers une agriculture plus durable",
+                    "agreement": 84,
+                    "adhesion": 22,
+                    "realistic": 23
+                },
+                {
+                    "idea": "Accélérer la transition énergétique",
+                    "agreement": 83,
+                    "adhesion": 23,
+                    "realistic": 22
+                }
+            ]
+        },
+        {
+            "name": "Economie, justice sociale et emploi",
+            "ideas": [
+                {
+                    "idea": "Rendre les pratiques des entreprises et le commerce plus responsables",
+                    "agreement": 86,
+                    "adhesion": 23,
+                    "realistic": 25
+                },
+                {
+                    "idea": "Relocaliser la production en Europe pour plus d'autonomie",
+                    "agreement": 87,
+                    "adhesion": 22,
+                    "realistic": 24
+                },
+                {
+                    "idea": "Lutter contre l'évasion et l'optimisation fiscale",
+                    "agreement": 84,
+                    "adhesion": 24,
+                    "realistic": 21
+                }
+            ]
+        },
+        {
+            "name": "Démocratie européenne",
+            "ideas": [
+                {
+                    "idea": "Mieux communiquer sur le rôle et le travail de l'UE",
+                    "agreement": 83,
+                    "adhesion": 21,
+                    "realistic": 21
+                },
+                {
+                    "idea": "Faire évoluer le fonctionnement démocratique de l'Union Européenne",
+                    "agreement": 76,
+                    "adhesion": 21,
+                    "realistic": 21
+                }
+            ]
+        },
+        {
+            "name": "Valeurs et droits, état de droit, sécurité",
+            "ideas": [
+                {
+                    "idea": "Renforcer les actions en faveur des droits des femmes",
+                    "agreement": 83,
+                    "adhesion": 22,
+                    "realistic": 25
+                },
+                {
+                    "idea": "Renforcer l'action de l'UE pour le respect des droits humains",
+                    "agreement": 84,
+                    "adhesion": 24,
+                    "realistic": 20
+                }
+            ]
+        },
+        {
+            "name": "Education, culture, jeunesse et sport",
+            "ideas": [
+                {
+                    "idea": "Permettre aux jeunes de davantage intéragir et échanger avec d'autres pays de l'UE",
+                    "agreement": 78,
+                    "adhesion": 23,
+                    "realistic": 18
+                }
+            ]
+        },
+        {
+            "name": "Transformation numérique",
+            "ideas": [
+                {
+                    "idea": "Investir dans la recherche scientifique, numérique et environnementale",
+                    "agreement": 83,
+                    "adhesion": 22,
+                    "realistic": 21
+                }
+            ]
+        },
+        {
+            "name": "L'UE dans le Monde",
+            "ideas": [
+                {
+                    "idea": "Rendre l'UE capable de peser sur le plan international",
+                    "agreement": 80,
+                    "adhesion": 19,
+                    "realistic": 19
+                }
+            ]
+        }
+    ],
+    "controversials": [
+        {
+            "id": "9d5a840e-f124-411f-af4c-b7e4ffae5132",
+            "content": "Il faut créer de nouvelles centrales nucléaires pour garantir notre indépendance énergétique et limiter notre empreinte carbone.",
+            "author": "Yassine",
+            "agree": 37,
+            "like_it": 14,
+            "disagree": 44,
+            "no_way": 25,
+            "votes": 116
+        },
+        {
+            "id": "6d94d1fc-339e-47fd-9da8-a9a695bb4982",
+            "content": "Il faut un salaire minimum Européen pour lutter contre le dumping social.",
+            "author": "Erwan",
+            "agree": 48,
+            "like_it": 9,
+            "disagree": 32,
+            "no_way": 8,
+            "votes": 111
+        },{
+            "id": "fa9fc773-15c0-4117-8c86-cbadf7704193",
+            "content": "Il faut avoir un revenu universel pour tous les jeunes de 18 à 25 ans",
+            "author": "Mr",
+            "agree": 39,
+            "like_it": 13,
+            "disagree": 41,
+            "no_way": 16,
+            "votes": 594
+        },{
+            "id": "2c08fa84-ea5d-41e9-870e-2ae277b4fc48",
+            "content": "Il faut s’orienter vers un modèle politique plus socialiste/ libertaire que la tendance européenne néolibérale.",
+            "author": "Niels",
+            "agree": 35,
+            "like_it": 10,
+            "disagree": 37,
+            "no_way": 16,
+            "votes": 216
+        },
+         {
+            "id": "c92c3ba9-9d47-4418-b4b2-2bd76a1cfbfe",
+            "content": "Il faut faire en sorte que l'Europe devienne un pays fédéral ayant une vraie puissance économique politique militaire à travers le monde",
+            "author": "Romain",
+            "agree": 42,
+            "like_it": 14,
+            "disagree": 39,
+            "no_way": 14,
+            "votes": 396
+        },
+        {
+            "id": "d90a084e-8c3d-4bd1-89ef-133ef345319e",
+            "content": "Il faut que les lois et les juridictions de chaque pays priment sur les textes et les instances européennes.",
+            "author": "Damien",
+            "agree": 35,
+            "like_it": 10,
+            "disagree": 44,
+            "no_way": 24,
+            "votes": 175
+        },{
+            "id": "569b67d4-856f-4c0b-b959-4fdaee8847c5",
+            "content": "Il faut que l'union européenne se munisse d'un exécutif fort avec un président à sa tête et un gouvernement avec des ministres compétents",
+            "author": "Thibaut",
+            "agree": 35,
+            "like_it": 12,
+            "disagree": 36,
+            "no_way": 15,
+            "votes": 229
+        },{
+            "id": "58f33a87-dbfa-4c8c-81d0-91bcbbbd61c4",
+            "content": "Il faut créer une assemblée d'adolescents européens pour qu'ils conseillent et proposent des idées aux élus européens.",
+            "author": "Baptiste",
+            "agree": 41,
+            "like_it": 14,
+            "disagree": 39,
+            "no_way": 13,
+            "votes": 362
+        },
+        {
+            "id": "ab48d924-c150-4db5-b771-80f1b68dac5e",
+            "content": "Il faut imposer l'enseignement de 2 langues vivantes minimum pour palier à l'anglais et le réduire au maximum au sein des institutions.",
+            "author": "Xavier",
+            "agree": 37,
+            "like_it": 8,
+            "disagree": 44,
+            "no_way": 17,
+            "votes": 190
+        },
+        {
+            "id": "79a4f4aa-f091-4574-8573-1be07ff040fc",
+            "content": "Il faut créer un système obligatoire d’échange universitaire afin de créer une culture européenne et homogénéiser le niveau des étudiants.",
+            "author": "Octave",
+            "agree": 46,
+            "like_it": 11,
+            "disagree": 37,
+            "no_way": 7,
+            "votes": 150
+        },
+        {
+            "id": "ec657f77-55ee-4af7-9736-eefd059e34c4",
+            "content": "Il faut que la banque centrale européenne se constitue une réserve de bitcoins, en plus de l'or, afin de garantir la monnaie euro.",
+            "author": "John",
+            "agree": 41,
+            "like_it": 7,
+            "disagree": 37,
+            "no_way": 19,
+            "votes": 160
+        },
+        {
+            "id": "6ec253f3-a2c7-44a9-b428-177e15e22290",
+            "content": "Il faut créer une force armée propre à l’UE afin de faire face, de manière crédible, à la Russie et à la Chine.",
+            "author": "Pablo",
+            "agree": 44,
+            "like_it": 11,
+            "disagree": 36,
+            "no_way": 13,
+            "votes": 148
+        },
+        {
+            "id": "6022fa07-a2a4-48fc-b0ee-272d88b5abf9",
+            "content": "Il faut favoriser la natalité plutôt que l'immigration massive",
+            "author": "Ania",
+            "agree": 42,
+            "like_it": 12,
+            "disagree": 39,
+            "no_way": 17,
+            "votes": 173
+        }
+    ],
+    "rejected": [],
+    "cartography": [
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Thèmes cités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Démocratie européenne",
+                    "percent": 24,
+                    "color": "#4B45A5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.35,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Une économie plus forte, ",
+                    "sublabel": "justice sociale et emploi",
+                    "percent": 22,
+                    "color": "#8955BD",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Changement climatique ",
+                    "sublabel": "et environnement",
+                    "percent": 19,
+                    "color": "#EB7575",
+                    "adjustLabel": {
+                        "textAlign": "center",
+                        "yAxis": 2.3
+                    }
+                },
+                {
+                    "label": "Education, culture,",
+                    "sublabel": " jeunesse et sport",
+                    "percent": 15,
+                    "color": "#F5976E",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.75,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Valeurs et droits,",
+                    "sublabel": " état de droit, sécurité",
+                    "percent": 12,
+                    "color": "#EEB298",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.75,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "UE dans le monde",
+                    "percent": 5,
+                    "color": "#FFD266",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Transformation numérique",
+                    "percent": 5,
+                    "color": "#FFF689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.9,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Migration",
+                    "percent": 3,
+                    "color": "#E5FFAE",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.9,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Santé",
+                    "percent": 2,
+                    "color": "#C1EBDD",
+                    "adjustLabel": {
+                        "textAlign": "left"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Solutions citées",
+            "legend": "",
+            "data": [ {
+                    "label": "Favoriser, développer",
+                    "percent": 40,
+                    "color": "#4B45A5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.35,
+                        "yAxis": 1.9
+                    }
+                }, {
+                    "label": "Limiter, réduire, arrêter",
+                    "percent": 15,
+                    "color": "#8955BD",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 2.2
+                    }
+                }, {
+                    "label": "Obliger, imposer",
+                    "percent": 9,
+                    "color": "#EB7575",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.1
+                    }
+                }, {
+                    "label": "Sensibliser, communiquer",
+                    "percent": 9,
+                    "color": "#F5976E",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.75,
+                        "yAxis": 2.1
+                    }
+                }, {
+                    "label": "Conserver, mantenir",
+                    "percent": 9,
+                    "color": "#EEB298",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.75
+                    }
+                }, {
+                    "label": "Changer, adapter",
+                    "percent": 9,
+                    "color": "#FFD266",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.75,
+                        "yAxis": 1.9
+                    }
+                }, {
+                    "label": "Interdire, sanctionner",
+                    "percent": 6,
+                    "color": "#FFF689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.9,
+                        "yAxis": 1.9
+                    }
+                }, {
+                    "label": "Taxer",
+                    "percent": 5,
+                    "color": "#E5FFAE",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.9,
+                        "yAxis": 1.9
+                    }
+                }, {
+                    "label": "Subventionner",
+                    "percent": 1,
+                    "color": "#C1EBDD",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "yAxis": 1.9
+                    }
+                }
+            ]
+        }
+    ],
+    "participation": [
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (1/2)",
+            "forcedHigherValue": 26,
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "Île-de-France",
+                    "bars": {
+                        "first": 22,
+                        "second": 18
+                    }
+                },
+                {
+                    "label": "Auvergne-Rhône-Alpes",
+                    "bars": {
+                        "first": 14,
+                        "second": 12
+                    }
+                },
+                {
+                    "label": "Occitanie",
+                    "bars": {
+                        "first": 9,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Hauts-de-France",
+                    "bars": {
+                        "first": 9,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Grand-Est",
+                    "bars": {
+                        "first": 8,
+                        "second": 8
+                    }
+                },
+                {
+                    "label": "Pays-de-la-Loire",
+                    "bars": {
+                        "first": 7,
+                        "second": 6
+                    }
+                },
+                {
+                    "label": "Provence-Alpes-Côte-d-Azur",
+                    "bars": {
+                        "first": 7,
+                        "second": 8
+                    }
+                }
+            ],
+            "id": "participation_0"
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (2/2)",
+            "forcedHigherValue": 26,
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "Bretagne",
+                    "bars": {
+                        "first": 6,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Nouvelle-Aquitaine",
+                    "bars": {
+                        "first": 6,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Centre-Val-de-Loire",
+                    "bars": {
+                        "first": 5,
+                        "second": 4
+                    }
+                },
+                {
+                    "label": "Normandie",
+                    "bars": {
+                        "first": 4,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Bourgogne-Franche-Comté",
+                    "bars": {
+                        "first": 2,
+                        "second": 4
+                    }
+                },
+                {
+                    "label": "Outre-mer",
+                    "bars": {
+                        "first": 1,
+                        "second": 3
+                    }
+                },
+                {
+                    "label": "Corse",
+                    "bars": {
+                        "first": 0.1,
+                        "second": 0.5
+                    }
+                }
+            ],
+            "id": "participation_1"
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par âge",
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "16-24 ans",
+                    "bars": {
+                        "first": 61,
+                        "second": 12
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "25-34 ans",
+                    "bars": {
+                        "first": 36,
+                        "second": 13
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "35-44 ans",
+                    "bars": {
+                        "first": 1,
+                        "second": 14
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "45-54 ans",
+                    "bars": {
+                        "first": 1,
+                        "second": 14
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "55-64 ans",
+                    "bars": {
+                        "first": 1,
+                        "second": 14
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "65+ ans",
+                    "bars": {
+                        "first": 1,
+                        "second": 23
+                    },
+                    "color": "#8BDAB2"
+                }
+            ],
+            "id": "participation_2"
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Votes par genre",
+            "legend": "",
+            "data": [
+                {
+                    "label": "hommes",
+                    "percent": 52,
+                    "color": "#4c45a5"
+                },
+                {
+                    "label": "femmes",
+                    "percent": 48,
+                    "color": "#eb7575"
+                }
+            ],
+            "id": "participation_3"
+        }
+    ]
+}

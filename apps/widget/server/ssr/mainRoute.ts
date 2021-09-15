@@ -6,30 +6,41 @@ import {
   DEFAULT_COUNTRY,
   DEFAULT_LANGUAGE,
 } from '@make.org/utils/constants/config';
-import { transformExtraSlidesConfigFromQuery } from './helpers/query.helper';
-import { reactRender } from './reactRender';
-import { QuestionService } from './service/QuestionService';
-import { logError, logWarning } from './helpers/ssr.helper';
+import { transformExtraSlidesConfigFromQuery } from '../helpers/query.helper';
+import { reactRender } from '../reactRender';
+import { QuestionService } from '../service/QuestionService';
+import { logError, logWarning } from '../helpers/ssr.helper';
 
 export const mainRoute = async (
   req: Request,
-  res: Response & { unsecure?: boolean }
+  res: Response & { unsecure?: boolean; maintenance?: boolean }
 ): Promise<void | string> => {
-  const {
-    questionSlug = '',
-    country = DEFAULT_COUNTRY,
-    language = DEFAULT_LANGUAGE,
-  } = req.query;
+  const { questionSlug, country, language } = req.query;
   const noIntroCard = true;
   const noPushProposal = false;
 
+  if (!questionSlug || !country) {
+    logWarning({
+      message: `Missing mandatory parameters questionSlug : "${
+        questionSlug || undefined
+      }" and/or country : "${country || undefined}" on source : "${
+        req.query.source
+      }"`,
+      name: 'server-side',
+      url: req.url,
+      query: req.query,
+    });
+
+    return res.redirect('/maintenance');
+  }
+
   let languageFromCountry = DEFAULT_LANGUAGE;
-  const formattedQuestionSlug = questionSlug.toString();
-  const formattedCountry = country.toString();
+  const formattedQuestionSlug = (questionSlug && questionSlug.toString()) || '';
+  const formattedCountry = (country && country.toString()) || DEFAULT_COUNTRY;
   if (!language) {
     languageFromCountry = getLanguageFromCountryCode(formattedCountry);
   }
-  const formattedLanguage = language.toString();
+  const formattedLanguage = language && language.toString();
   const initialState = createInitialState();
 
   const notFound = () => {
@@ -39,6 +50,7 @@ export const mainRoute = async (
       url: req.url,
       query: req.query,
     });
+    return res.redirect('/maintenance');
   };
   const unexpectedError = () => {
     logError({
@@ -47,6 +59,7 @@ export const mainRoute = async (
       url: req.url,
       query: req.query,
     });
+    return res.redirect('/maintenance');
   };
 
   const question = await QuestionService.getQuestion(
@@ -57,19 +70,28 @@ export const mainRoute = async (
     unexpectedError
   );
 
-  if (!question) {
-    initialState.appConfig.maintenance = true;
-    return reactRender(req, res, initialState);
+  if (res.maintenance || !question) {
+    logWarning({
+      message: `Maintenance for "${
+        questionSlug || undefined
+      }" slug on source : "${req.query.source}"`,
+      name: 'server-side',
+      url: req.url,
+      query: req.query,
+    });
+
+    return res.redirect('/maintenance');
   }
 
   if (res.unsecure) {
-    initialState.appConfig.unsecure = true;
     logWarning({
       message: `Unsecure widget for "${questionSlug}" on source : "${req.query.source}"`,
       name: 'server-side',
       url: req.url,
       query: req.query,
     });
+
+    initialState.appConfig.unsecure = true;
   }
 
   const { sequenceConfig } = question;

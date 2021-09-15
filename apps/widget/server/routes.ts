@@ -4,7 +4,8 @@ import { metricsMiddleware } from '@make.org/utils/middleware/metrics';
 import { WIDGET_IMAGES_DIR, WIDGET_ASSETS_DIR, WIDGET_JS_DIR } from './paths';
 import { loggerApi } from './api/logger';
 import * as technicalPages from './technicalPages';
-import { mainRoute } from './mainRoute';
+import { mainRoute } from './ssr/mainRoute';
+import { maintenanceRoute } from './ssr/maintenanceRoute';
 
 function setCustomCacheControl(res: Response, path: string) {
   if (serveStatic.mime.lookup(path) === 'text/html') {
@@ -42,9 +43,10 @@ export const initRoutes = (app: Application): void => {
   app.post('/api/logger', loggerApi);
 
   // Widget Routes
-  app.get('/', metricsMiddleware, mainRoute);
   app.get('/robots.txt', technicalPages.renderRobot);
   app.get('/.well-known/security.txt', technicalPages.renderSecurityTxt);
   app.get('/security.txt', technicalPages.renderSecurityTxt);
   app.get('/version', technicalPages.renderVersion);
+  app.get('/maintenance', metricsMiddleware, maintenanceRoute);
+  app.get('/', metricsMiddleware, mainRoute);
 };

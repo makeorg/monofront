@@ -65,7 +65,7 @@ export const buildCards = (
     });
   }
 
-  if (withDemographics) {
+  if (withDemographics && !isWidget) {
     cards.splice(withIntroCard ? 3 : 2, 0, {
       type: CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
       configuration: undefined,

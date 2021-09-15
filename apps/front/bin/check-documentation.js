@@ -16,7 +16,7 @@ const { argv } = require('yargs')
   .demandCommand(1)
   .help('h')
   .alias('h', 'help');
-const { getNotifierInstance } = require('./utils/notification.js');
+const { getNotifierInstance } = require('../../../bin/utils/notification.js');
 
 const notifier = getNotifierInstance();
 const documentationDir = path.resolve(process.cwd(), '../../docs');
@@ -76,6 +76,9 @@ const level2 = '    ';
 
 notifier.newLine();
 notifier.add('Documentation check', '').notifyInfo2();
+notifier.add('Configuration file', trackingConfigurationFile).notifyInfo();
+notifier.add('Documentation file', trackingDocumentationFile).notifyInfo();
+
 notifier.setPrefix(level1).add('Starting analyse...', '').notifyInfo();
 
 try {

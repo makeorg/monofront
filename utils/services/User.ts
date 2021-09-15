@@ -260,6 +260,10 @@ const myProposals = async (
     return response && response.data;
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
+    if ([401].includes(apiServiceError.status)) {
+      // eslint-disable-next-line consistent-return
+      return;
+    }
     return defaultUnexpectedError(apiServiceError);
   }
 };
@@ -276,6 +280,10 @@ const myFavourites = async (
     return response && response.data;
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
+    if ([401].includes(apiServiceError.status)) {
+      // eslint-disable-next-line consistent-return
+      return;
+    }
     return defaultUnexpectedError(apiServiceError);
   }
 };

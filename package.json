@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "engines": {
-    "node": ">=14.17 <=16.8",
+    "node": ">=14.17 <=16.9",
     "yarn": "~1.22"
   },
   "workspaces": [
@@ -30,6 +30,7 @@
     "cypress:front": "yarn workspace @make.org/front cypress:open"
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.3",
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
     "@testing-library/jest-dom": "^5.14.1",

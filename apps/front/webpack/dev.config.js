@@ -88,7 +88,7 @@ module.exports = {
           '^/backend': '',
         },
         cookieDomainRewrite: {
-          '*': process.env.FRONT_URL,
+          '*': process.env.HOST,
         },
       },
     },

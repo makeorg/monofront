@@ -6,6 +6,7 @@
 /*/*/dist
 /reports
 /coverage
+/*/*/coverage
 .dockerignore
 Dockerfile
 .git

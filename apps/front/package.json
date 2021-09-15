@@ -4,8 +4,8 @@
 		"private": true,
 		"sideEffects": false,
 		"engines": {
-			"node": ">=14.17 <=16.8",
-			"yarn": "~1.22"
+				"node": ">=14.17 <=16.9",
+				"yarn": "~1.22"
 		},
 		"dependencies": {
 				"@loadable/component": "^5.15.0",
@@ -43,6 +43,7 @@
 				"memory-cache": "~0.2.0",
 				"node-mocks-http": "^1.10.1",
 				"pm2": "^4.5.6",
+				"prom-client": "^13.1.0",
 				"query-string": "7.0.0",
 				"react": "^17.0.2",
 				"react-autosize-textarea": "~7.1.0",
@@ -107,7 +108,6 @@
 				"html-validate": "4.13.1",
 				"html-webpack-inline-source-plugin": "1.0.0-beta.2",
 				"html-webpack-plugin": "^5.3.2",
-				"prom-client": "^13.1.0",
 				"react-is": "17.0.2",
 				"regenerator-runtime": "^0.13.7",
 				"start-server-and-test": "^1.13.1",
@@ -126,7 +126,10 @@
 				"cypress:open": "cypress open",
 				"test:cypress:open": "start-server-and-test server:test http://localhost:9009 cypress:open",
 				"test:cypress:run": "start-server-and-test server:test http://localhost:9009 cypress:run",
-				"documentation": "bin/checkDocumentation.js check",
-				"documentation:fix": "bin/checkDocumentation.js check --fix"
+				"documentation": "bin/check-documentation.js check",
+				"documentation:fix": "bin/check-documentation.js check --fix",
+				"translation": "npx babel --out-dir ../../dist/lib --config-file ./webpack/babel.config.js ../../bin/utils && ../../bin/check-translation.js check -d ./i18n -l 'fr'",
+				"translation:fix": "yarn run translation --fix",
+				"accessibility": "bin/checkAccessibility.js check"
 		}
 }

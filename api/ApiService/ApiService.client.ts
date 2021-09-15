@@ -166,8 +166,11 @@ export class ApiServiceClient implements IApiServiceStrategy {
         )
         .catch(apiServiceError => {
           this._headersListeners.forEach(
-            (listener: (headers: Readonly<Record<string, string>>) => void) =>
-              listener(apiServiceError.headers)
+            (listener: (headers: Readonly<Record<string, string>>) => void) => {
+              if (apiServiceError.headers) {
+                listener(apiServiceError.headers);
+              }
+            }
           );
         });
       return response;

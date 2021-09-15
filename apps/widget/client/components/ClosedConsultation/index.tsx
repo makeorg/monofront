@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { ProposalType, QuestionType } from '@make.org/types';
+import { QuestionType } from '@make.org/types';
 import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
@@ -24,12 +24,6 @@ export const ClosedConsultation: FC = () => {
   const { state } = useAppContext();
   const question: QuestionType = selectCurrentQuestion(state);
   const { country } = state.appConfig;
-  const proposal: ProposalType | null | undefined =
-    question.activeFeatureData.topProposal;
-
-  if (!proposal) {
-    return null;
-  }
 
   return (
     <WidgetContainer>
@@ -53,6 +47,7 @@ export const ClosedConsultation: FC = () => {
             <RedUppercaseHTMLLinkElementStyle
               href={getParticipateLink(country, question.slug)}
               onClick={() => trackClickOperationPage()}
+              target="_blank"
             >
               {i18n.t('unsecure.link')}
             </RedUppercaseHTMLLinkElementStyle>
