@@ -13,6 +13,7 @@ import { initialState } from '@make.org/store/initialState';
 import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
 import { QuestionService } from '@make.org/utils/services/Question';
 import { Logger } from '@make.org/utils/services/Logger';
+import { authenticationState } from '@make.org/utils/helpers/auth';
 import { translationRessources } from '../i18n';
 import { initDevState } from '../initDevState';
 import { transformExtraSlidesConfigFromQuery } from '../server/helpers/query.helper';
@@ -112,6 +113,13 @@ const initApp = async (state: StateRoot) => {
   trackingParamsService.language = language;
   trackingParamsService.questionId =
     store.questions[store.currentQuestion]?.question.questionId || '';
+
+  const authenticationStateData = await authenticationState();
+
+  store.user.authentication = {
+    ...state.user.authentication,
+    ...authenticationStateData,
+  };
 
   const appDom = document.getElementById('app');
   const renderMethod = module.hot ? render : hydrate;

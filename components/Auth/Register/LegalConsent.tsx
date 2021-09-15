@@ -75,7 +75,7 @@ export const LegalConsent: React.FC<Props> = ({
       </LegalCheckboxWrapperStyle>
       <LegalCheckboxWrapperStyle>
         <CheckBox
-          name="profile.legalAdvisorApproval"
+          name="legalAdvisorApproval"
           id="legalAdvisorApproval"
           value={JSON.stringify(parentalConsent)}
           handleCheck={() => setParentalConsent(!parentalConsent)}

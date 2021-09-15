@@ -62,10 +62,10 @@ export const Login: React.FC<Props> = ({ panel }) => {
             <FacebookAuthentication />
             <GoogleAuthentication />
           </AuthenticationButtonWrapperStyle>
-          <SeparatorWrapperStyle className="no-margin-top">
-            <SeparatorStyle className="no-margin-top" />
+          <SeparatorWrapperStyle className="margin-bottom">
+            <SeparatorStyle />
             <TextSeparatorStyle>{i18n.t('login.or')}</TextSeparatorStyle>
-            <SeparatorStyle className="no-margin-top" />
+            <SeparatorStyle />
           </SeparatorWrapperStyle>
           <FourthLevelTitleStyle as="h3">
             {i18n.t('login.email_connect')}

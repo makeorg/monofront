@@ -88,6 +88,7 @@ export const SequenceCard: React.FC<Props> = ({ card, question }) => {
   }
 
   const isNoProposalCard = card.type === CARD.CARD_TYPE_NO_PROPOSAL_CARD;
+  const isIntroCard = card.type === CARD.CARD_TYPE_EXTRASLIDE_INTRO;
   const isFinalCard = card.type === CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD;
   const isSpecialFinalCard =
     card.type === CARD.CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD;
@@ -104,7 +105,7 @@ export const SequenceCard: React.FC<Props> = ({ card, question }) => {
     className = 'widget';
   }
 
-  if (isSpecialFinalCard) {
+  if (isSpecialFinalCard || isIntroCard) {
     className = 'center';
   }
 

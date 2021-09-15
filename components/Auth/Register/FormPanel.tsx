@@ -114,7 +114,7 @@ export const RegisterFormPanel: React.FC<Props> = ({
                 rel="noopener"
               >
                 {i18n.t('register.gtu_link')}
-                <NewWindowIconStyle isGrey />
+                <NewWindowIconStyle className="grey" />
                 <ScreenReaderItemStyle>
                   {i18n.t('common.open_new_window')}
                 </ScreenReaderItemStyle>

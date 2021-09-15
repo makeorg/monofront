@@ -206,7 +206,7 @@ export const Register: React.FC<Props> = ({ panel }) => {
               <FacebookAuthentication />
               <GoogleAuthentication />
             </SocialRegisterButtonsWrapperStyle>
-            <SeparatorWrapperStyle>
+            <SeparatorWrapperStyle className="margin-top margin-bottom">
               <SeparatorStyle />
               <TextSeparatorStyle>{i18n.t('register.or')}</TextSeparatorStyle>
               <SeparatorStyle />

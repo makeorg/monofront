@@ -101,14 +101,15 @@ export const StyledCheckbox = styled(FakeCheckboxInputStyle)<{
   }
 `;
 
-export const NewWindowIconStyle = styled(SvgExternalLinkPlain)<{
-  isGrey?: boolean;
-}>`
+export const NewWindowIconStyle = styled(SvgExternalLinkPlain)`
   width: 9px;
   height: 9px;
   padding-left: 2px;
   .tofill {
-    fill: ${props => (props.isGrey ? color.greyDark : color.brandSecondary)};
+    fill: ${color.brandSecondary};
+  }
+  &.grey .tofill {
+    fill: ${color.grey};
   }
 `;
 
@@ -232,6 +233,11 @@ export const FormErrorsIntroStyle = styled.p`
 
 export const FormErrorsListItemStyle = styled.li`
   margin: 0 0 5px;
+  label {
+    color: ${color.white};
+    font-family: ${MakeFonts.CircularStandardBold};
+    text-decoration: underline;
+  }
   &:last-child {
     margin: 0;
   }

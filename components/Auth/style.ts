@@ -114,14 +114,15 @@ export const PanelTermsOfUseLinkStyle = styled(TermsOfUseLinkStyle)`
   }
 `;
 
-export const NewWindowIconStyle = styled(SvgExternalLinkPlain)<{
-  isGrey?: boolean;
-}>`
+export const NewWindowIconStyle = styled(SvgExternalLinkPlain)`
   width: 9px;
   height: 9px;
   padding-left: 2px;
   .tofill {
-    fill: ${props => (props.isGrey ? 'color.grey' : 'color.brandSecondary')};
+    fill: ${color.brandSecondary};
+  }
+  &.grey .tofill {
+    fill: ${color.grey};
   }
 `;
 

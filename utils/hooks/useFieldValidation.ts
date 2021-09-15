@@ -7,15 +7,11 @@ export const useIsFieldValid = (
   initialError: ErrorObjectType | undefined
 ): boolean => {
   const [isFieldValid, setFieldValidation] = useState<boolean>(true);
-  let isInitialErrorEmpty = true;
+  const isInitialErrorEmpty = !initialError?.message;
   let isRefEmpty = true;
   let inputField: HTMLInputElement;
   let filledPostalCode = false;
   let filledWebsite = false;
-
-  if (initialError) {
-    isInitialErrorEmpty = !initialError.message;
-  }
 
   if (ref && ref.current) {
     inputField = ref.current;
@@ -28,6 +24,7 @@ export const useIsFieldValid = (
       inputField.name.toLowerCase() === 'website';
   }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     let validationStatus = true;
 
@@ -62,8 +59,7 @@ export const useIsFieldValid = (
     }
 
     return setFieldValidation(validationStatus);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isRefEmpty, filledPostalCode, filledWebsite, isInitialErrorEmpty]);
+  });
 
   return isFieldValid;
 };
