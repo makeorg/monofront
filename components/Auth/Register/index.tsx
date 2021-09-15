@@ -135,7 +135,7 @@ export const Register: React.FC<Props> = ({ panel }) => {
       email,
       password,
       undefined,
-      () => getUser(dispatch, state.modal.isOpen, true),
+      () => getUser(dispatch, state.modal.isOpen, !panel),
       () => undefined,
       () => unexpectedError()
     );
