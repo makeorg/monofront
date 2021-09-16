@@ -86,8 +86,8 @@
   "scripts": {
     "dev": "webpack serve --mode development --progress --color --config ./webpack/dev.config.js",
     "build": "webpack --mode production --progress --color --config ./webpack/build.config.js",
-    "server": "pm2-runtime start ecosystem.config.js --only server-production",
+    "server": "pm2-runtime start ecosystem.config.js --only widget-production",
     "server:dev": "pm2-runtime start ecosystem.config.js --only widget-dev",
-    "server:test": "node ../../apimock/server.js & pm2-runtime start ecosystem.config.js --only serverau -test"
+    "server:test": "node ../../apimock/server.js & pm2-runtime start ecosystem.config.js --only widget-test"
   }
 }
