@@ -34,12 +34,12 @@ export const Tooltip: React.FC<Props> = ({
   /** Boolean when tooltip is displayed */
   const [displayTooltip, setDisplayTooltip] = useState<boolean>(false);
 
-  const showTooltip = (event: SyntheticEvent<HTMLButtonElement>) => {
+  const showTooltip = (event: SyntheticEvent<HTMLDivElement>) => {
     event.preventDefault();
     setDisplayTooltip(true);
   };
 
-  const hideTooltip = (event: SyntheticEvent<HTMLButtonElement>) => {
+  const hideTooltip = (event: SyntheticEvent<HTMLDivElement>) => {
     event.preventDefault();
     setDisplayTooltip(false);
   };
@@ -54,10 +54,10 @@ export const Tooltip: React.FC<Props> = ({
         {content}
       </TooltipStyle>
       <div
-        onMouseEnter={() => showTooltip}
-        onMouseLeave={() => hideTooltip}
-        onFocus={() => showTooltip}
-        onBlur={() => hideTooltip}
+        onMouseEnter={event => showTooltip(event)}
+        onMouseLeave={event => hideTooltip(event)}
+        onFocus={event => showTooltip(event)}
+        onBlur={event => hideTooltip(event)}
       >
         {children}
       </div>
