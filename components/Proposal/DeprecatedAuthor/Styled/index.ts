@@ -25,7 +25,7 @@ export const AuthorInfosStyle = styled(ParagraphStyle)<{ isSequence: boolean }>`
   align-items: center;
   font-size: ${props => (props.isSequence ? '14px' : '12px')};
   line-height: normal;
-  color: ${color.darkGrey};
+  color: ${color.greyDark};
   font-style: normal;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};

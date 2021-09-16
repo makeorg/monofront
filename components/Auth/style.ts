@@ -124,7 +124,7 @@ export const NewWindowIconStyle = styled(SvgExternalLinkPlain)`
     fill: ${color.brandSecondary};
   }
   &.grey .tofill {
-    fill: ${color.grey};
+    fill: ${color.greyDark};
   }
 `;
 

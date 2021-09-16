@@ -45,7 +45,10 @@ export const ClosedConsultation: FC = () => {
               {i18n.t('unsecure.description')}
             </SequenceParagraphStyle>
             <RedUppercaseHTMLLinkElementStyle
-              href={getParticipateLink(country, question.slug)}
+              href={`https://make.org${getParticipateLink(
+                country,
+                question.slug
+              )}`}
               onClick={() => trackClickOperationPage()}
               target="_blank"
             >
