@@ -16,8 +16,9 @@ import { ForgotPasswordStyle, PanelForgotPasswordTitleStyle } from './style';
 
 type Props = {
   panel?: boolean;
+  loginStep?: () => void;
 };
-export const PasswordForgot: FC<Props> = ({ panel }) => {
+export const PasswordForgot: FC<Props> = ({ panel, loginStep }) => {
   const { dispatch } = useAppContext();
 
   useEffect(() => {
@@ -38,7 +39,7 @@ export const PasswordForgot: FC<Props> = ({ panel }) => {
           {i18n.t('forgot_password.title')}
         </SecondLevelTitleStyle>
       )}
-      <ForgotPasswordForm isPanel={panel} />
+      <ForgotPasswordForm isPanel={panel} loginStep={loginStep} />
       {!panel && (
         <>
           <SmallSeparatorWithMarginStyle />

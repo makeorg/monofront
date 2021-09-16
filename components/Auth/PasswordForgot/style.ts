@@ -22,6 +22,7 @@ export const ForgotPasswordFormStyle = styled(FormCenterAlignStyle)`
 export const ForgotPasswordTitleStyle = styled(FourthLevelTitleStyle)<{
   isPanel?: boolean;
 }>`
+  text-align: center;
   font-size: ${props =>
     props.isPanel
       ? intToPx(typography.font.fontsize.XS.value)

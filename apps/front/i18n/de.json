@@ -374,14 +374,16 @@
       "panel_trigger": "Ich mache einen Vorschlag",
       "button_cancel": "Abbrechen",
       "button_submit": "Bestätigen",
-      "moderation_link": "Lesen Sie unsere Moderationscharta"
+      "read_our": "Lesen Sie unsere",
+      "moderation_link": "Moderationscharta"
     },
     "authentication": {
       "button_back": "Meinen Vorschlag ändern",
       "title": "Um meinen Vorschlag zu bestätigen,",
       "subtitle": "registriere ich mich über",
       "button_login_text": "Ich habe bereits ein Konto",
-      "button_login_link": "und melde mich an"
+      "button_login_link": "und melde mich an",
+      "back_authentication": "Zurück zum Anmeldebildschirm"
     },
     "success": {
       "title": "Danke, {{name}}!",
@@ -482,9 +484,9 @@
     "parental_consent": "Als Elternteil oder Erziehungsberechtigte/r willige ich in die Verarbeitung der personenbezogenen Daten meines Kindes durch Make.org ein.",
     "cancel": "Abbrechen",
     "submit": "Bestätigen",
-    "privacy_policy_text": "Ich akzeptiere die ",
-    "privacy_policy": "Datenschutzerklärung",
-    "privacy_make": "von Make.org"
+    "privacy_policy_first_part": "Ich bin damit einverstanden, dass meine personenbezogenen Daten von Make.org verarbeitet werden, sodass ich gemäß der ",
+    "privacy_policy_link": "Charta",
+    "privacy_policy_last_part": " teilnehmen kann und informiert werde."
   },
   "forgot_password": {
     "title": "Ich setze mein Passwort zurück",

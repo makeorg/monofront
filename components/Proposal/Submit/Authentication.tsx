@@ -78,7 +78,12 @@ export const ProposalAuthentication: React.FC<Props> = ({
           </ProposalBackButtonStyle>
           {authStep === AUTH_STEP.LOGIN && <Login panel />}
           {authStep === AUTH_STEP.REGISTER && <Register panel />}
-          {authStep === AUTH_STEP.FORGOT_PASSWORD && <PasswordForgot panel />}
+          {authStep === AUTH_STEP.FORGOT_PASSWORD && (
+            <PasswordForgot
+              panel
+              loginStep={() => setAuthStep(AUTH_STEP.LOGIN)}
+            />
+          )}
           {authStep === AUTH_STEP.LOGIN && (
             <>
               <ProposalSubmitForgotPasswordWrapperStyle>
