@@ -47,7 +47,7 @@ export const Login: React.FC<Props> = ({ panel }) => {
       data-cy-container="authentication"
     >
       {panel ? (
-        <LoginTitleWrapperStyle as="h3" style={{ marginTop: 32 }}>
+        <LoginTitleWrapperStyle as="h3" className="panel">
           {i18n.t('login.social_connect')}
         </LoginTitleWrapperStyle>
       ) : (

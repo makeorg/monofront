@@ -13,7 +13,7 @@ import {
   SvgStepForward,
   SvgLock,
   SvgUser,
-  SvgChild,
+  SvgBirthday,
   SvgMapMarker,
   SvgSuitcase,
   SvgPaperPlane,
@@ -133,7 +133,7 @@ export const UserIconStyle = styled(props => <SvgUser {...props} />)`
 `;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-export const ChildIconStyle = styled(props => <SvgChild {...props} />)`
+export const BirthdayIconStyle = styled(props => <SvgBirthday {...props} />)`
   ${ButtonIconStyle}
 `;
 

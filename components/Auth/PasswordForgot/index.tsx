@@ -28,9 +28,8 @@ export const PasswordForgot: FC<Props> = ({ panel }) => {
     <ForgotPasswordStyle aria-labelledby="forgot_password_title">
       {panel ? (
         <PanelForgotPasswordTitleStyle
-          style={{ marginTop: 32 }}
+          className="panel"
           id="forgot_password_title"
-          isPanel
         >
           {i18n.t('forgot_password.title')}
         </PanelForgotPasswordTitleStyle>

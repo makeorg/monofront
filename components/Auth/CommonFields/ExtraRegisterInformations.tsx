@@ -14,6 +14,7 @@ import {
   isSupportedCountry,
 } from '@make.org/utils/validator/postCode';
 import { useAppContext } from '@make.org/store';
+import { TwoFieldsRowStyle } from '@make.org/ui/elements/FormElements';
 
 type Props = {
   firstnameValue: string;
@@ -23,6 +24,7 @@ type Props = {
   ageError: ErrorObjectType;
   postalcodeError: ErrorObjectType;
   handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  panel?: boolean;
 };
 
 export const ExtraInRegisterformationsFields: FC<Props> = ({
@@ -33,6 +35,7 @@ export const ExtraInRegisterformationsFields: FC<Props> = ({
   ageError,
   postalcodeError,
   handleChange,
+  panel,
 }) => {
   const { state } = useAppContext();
   const { country } = state.appConfig;
@@ -49,31 +52,33 @@ export const ExtraInRegisterformationsFields: FC<Props> = ({
         required
         handleChange={handleChange}
       />
-      <NumberInput
-        name="age"
-        id="profile.age"
-        icon={AgeFieldIcon}
-        value={ageValue}
-        error={ageError}
-        label={i18n.t('common.form.label.age')}
-        handleChange={handleChange}
-        min={8}
-        max={120}
-        required
-      />
-      {isSupportedCountry(country) && (
-        <CustomPatternInput
-          type="text"
-          name="postalcode"
-          id="profile.postalcode"
-          icon={PostalCodeFieldIcon}
-          value={postalcodeValue}
-          error={postalcodeError}
-          label={i18n.t('common.form.label.postalcode_optional')}
+      <TwoFieldsRowStyle>
+        <NumberInput
+          name="age"
+          id="profile.age"
+          icon={AgeFieldIcon}
+          value={ageValue}
+          error={ageError}
+          label={i18n.t('common.form.label.age')}
           handleChange={handleChange}
-          pattern={html5regexByCountry(country)}
+          min={8}
+          max={120}
+          required
         />
-      )}
+        {isSupportedCountry(country) && (
+          <CustomPatternInput
+            type="text"
+            name="postalcode"
+            id="profile.postalcode"
+            icon={PostalCodeFieldIcon}
+            value={postalcodeValue}
+            error={postalcodeError}
+            label={i18n.t('common.form.label.postalcode_optional')}
+            handleChange={handleChange}
+            pattern={html5regexByCountry(country)}
+          />
+        )}
+      </TwoFieldsRowStyle>
     </>
   );
 };

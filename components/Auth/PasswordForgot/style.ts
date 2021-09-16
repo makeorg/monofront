@@ -37,11 +37,15 @@ export const ForgotPasswordTitleStyle = styled(FourthLevelTitleStyle)<{
   margin: 20px 0px;
 `;
 
-export const PanelForgotPasswordTitleStyle = styled.h3<{ isPanel?: boolean }>`
+export const PanelForgotPasswordTitleStyle = styled.h3`
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   font-family: ${MakeFonts.CircularStandardBold};
   text-transform: none;
   margin-top: 35px;
   color: ${color.black};
-  text-transform: ${props => (props.isPanel ? 'none' : 'uppercase')};
+  text-transform: uppercase;
+  &.panel {
+    margin-top: 32px;
+    text-transform: none;
+  }
 `;

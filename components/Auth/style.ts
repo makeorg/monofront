@@ -15,14 +15,15 @@ import {
   RedButtonStyle,
   UnstyledButtonStyle,
 } from '@make.org/ui/elements/ButtonsElements';
-import { SpaceBetweenRowStyle } from '@make.org/ui/elements/FlexElements';
+import {
+  CenterColumnStyle,
+  SpaceBetweenRowStyle,
+} from '@make.org/ui/elements/FlexElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 
-export const AuthenticationWrapperStyle = styled.section<{
-  className?: string;
-}>`
+export const AuthenticationWrapperStyle = styled.section`
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -39,11 +40,9 @@ export const AuthenticationTitleStyle = styled(SecondLevelTitleStyle)`
   padding: 0 25px;
 `;
 
-export const SocialRegisterButtonsWrapperStyle = styled.div`
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
+export const SocialRegisterButtonsWrapperStyle = styled(CenterColumnStyle)`
   gap: 17px;
+  width: 100%;
 `;
 
 export const LegalFormStyle = styled(FormCenterAlignStyle)`
@@ -143,4 +142,7 @@ export const LoginTitleWrapperStyle = styled(ThirdLevelTitleStyle)`
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   line-height: 1.5;
   letter-spacing: 0.12px;
+  &.panel {
+    margin-top: 32px;
+  }
 `;

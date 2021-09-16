@@ -54,7 +54,7 @@ export const CustomPatternInput: FC<Props> = ({
   const inputRef = useRef<HTMLInputElement>(null);
   const isFieldValid = useIsFieldValid(inputRef, error);
   return (
-    <MiddleFakeFieldStyle hasError={!isFieldValid}>
+    <MiddleFakeFieldStyle hasError={!isFieldValid} className={name}>
       <CenterInputIconStyle aria-hidden>{icon}</CenterInputIconStyle>
       <FieldWrapperStyle>
         <BasicInputStyle

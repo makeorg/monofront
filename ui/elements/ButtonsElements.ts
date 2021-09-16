@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import styled, { css, keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { color, typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints, DefaultPadding } from '@make.org/assets/vars/Breakpoints';
@@ -385,18 +385,9 @@ export const BlackNoBackgroundButtonStyle = styled(UnstyledButtonStyle)`
   }
 `;
 
-export const GreyNoBackgroundButtonStyle = styled(UnstyledButtonStyle)<{
-  bold?: boolean;
-}>`
+export const GreyNoBackgroundButtonStyle = styled(UnstyledButtonStyle)`
   ${ButtonNoBackgroundStyle};
   ${GreyNoBackgroundStyle};
-  ${({ bold }) =>
-    bold
-      ? css`
-          text-transform: uppercase;
-          font-family: ${MakeFonts.TradeGothicBoldCondensed};
-        `
-      : ''}
 `;
 
 export const RedNoBackgroundButtonStyle = styled(UnstyledButtonStyle)`

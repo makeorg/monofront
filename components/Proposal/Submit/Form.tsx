@@ -7,26 +7,16 @@ import {
   getLocalizedBaitText,
   proposalHasValidLength,
 } from '@make.org/utils/helpers/proposal';
-
 import {
   trackDisplayProposalField,
   trackClickProposalSubmit,
   trackClickModerationLink,
 } from '@make.org/utils/services/Tracking';
-
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import {
-  FlexElementStyle,
-  SpaceBetweenRowStyle,
-} from '@make.org/ui/elements/FlexElements';
-import {
-  GreyNoBackgroundButtonStyle,
-  RedButtonStyle,
-} from '@make.org/ui/elements/ButtonsElements';
-
+import { SpaceBetweenRowStyle } from '@make.org/ui/elements/FlexElements';
+import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { throttle } from '@make.org/utils/helpers/throttle';
-
 import { LoadingDots } from '@make.org/ui/components/Loading/Dots';
 import { useAppContext } from '@make.org/store';
 import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
@@ -38,7 +28,8 @@ import {
   ProposalCharCountStyle,
   ProposalExternalLinkStyle,
   ProposalExternalLinkIconStyle,
-  ProposalAuthInlineWrapperStyle,
+  ProposalCancelButtonStyle,
+  ProposalButtonsWrapperStyle,
 } from './style';
 
 type Props = {
@@ -104,35 +95,30 @@ export const ProposalForm: React.FC<Props> = ({
   }, []);
 
   const link = (
-    <ProposalAuthInlineWrapperStyle>
-      {i18n.t('proposal_submit.form.read_our')}{' '}
-      <ProposalExternalLinkStyle
-        href={getModerationLinkByLanguage(language)}
-        target="_blank"
-        rel="noopener"
-        onClick={trackClickModerationLink}
-      >
-        {i18n.t('proposal_submit.form.moderation_link')}
-        <> </>
-        <ProposalExternalLinkIconStyle aria-hidden focusable="false" />
-        <ScreenReaderItemStyle>
-          {i18n.t('common.open_new_window')}
-        </ScreenReaderItemStyle>
-      </ProposalExternalLinkStyle>
-    </ProposalAuthInlineWrapperStyle>
+    <ProposalExternalLinkStyle
+      href={getModerationLinkByLanguage(language)}
+      target="_blank"
+      rel="noopener"
+      onClick={trackClickModerationLink}
+    >
+      {i18n.t('proposal_submit.form.moderation_link')}
+      <> </>
+      <ProposalExternalLinkIconStyle aria-hidden focusable="false" />
+      <ScreenReaderItemStyle>
+        {i18n.t('common.open_new_window')}
+      </ScreenReaderItemStyle>
+    </ProposalExternalLinkStyle>
   );
 
   const buttons = (
-    <FlexElementStyle style={{ justifyContent: 'flex-end' }}>
-      <GreyNoBackgroundButtonStyle
-        bold
-        style={{ marginRight: 20 }}
+    <ProposalButtonsWrapperStyle>
+      <ProposalCancelButtonStyle
         type="button"
         onClick={handleCancel}
         data-cy-button="proposal-form-cancel"
       >
         {i18n.t('proposal_submit.form.button_cancel')}
-      </GreyNoBackgroundButtonStyle>
+      </ProposalCancelButtonStyle>
       <RedButtonStyle
         type="submit"
         form={FORM.PROPOSAL_SUBMIT_FORMNAME}
@@ -146,7 +132,7 @@ export const ProposalForm: React.FC<Props> = ({
           i18n.t('proposal_submit.form.button_submit')
         )}
       </RedButtonStyle>
-    </FlexElementStyle>
+    </ProposalButtonsWrapperStyle>
   );
 
   return (

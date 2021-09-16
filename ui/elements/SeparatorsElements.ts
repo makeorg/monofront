@@ -11,7 +11,7 @@ export const SeparatorStyle = styled.div`
 `;
 
 export const ProposalSubmitAuthSeparator = styled(SeparatorStyle)`
-  max-width: 90px;
+  max-width: 120px;
 `;
 
 export const SmallSeparatorStyle = styled(SeparatorStyle)`

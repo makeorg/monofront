@@ -16,6 +16,7 @@ import {
   SpaceBetweenColumnStyle,
   ColumnElementStyle,
   CenterColumnStyle,
+  FlexElementStyle,
 } from '@make.org/ui/elements/FlexElements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import TextareaAutosize from 'react-autosize-textarea/lib';
@@ -179,6 +180,7 @@ export const ProposalAuthSeparatorStyle = styled.hr`
 `;
 
 export const ProposalAuthLoginStyle = styled(RedNoBackgroundButtonStyle)`
+  display: inline;
   align-self: center;
 `;
 
@@ -221,36 +223,37 @@ export const ProposalSuccessParagraphStyle = styled.p`
   margin: 10px auto 30px;
 `;
 
-export const ProposalAuthInlineWrapperStyle = styled.div`
-  font-family: ${MakeFonts.CircularStandardBook};
-  justify-content: inline;
-`;
-
 export const ProposalSuccessRedButtonStyle = styled(RedButtonStyle)`
   max-width: 167px;
   width: 100%;
   margin: auto;
 `;
 
-export const ProposalAuthLoginWrapperStyle = styled(
-  ProposalAuthInlineWrapperStyle
-)`
+export const ProposalAuthLoginWrapperStyle = styled.div`
   font-family: ${MakeFonts.CircularStandardBook};
+  justify-content: inline;
   display: -webkit-inline-box;
   align-items: center;
   margin: auto;
 `;
 
-export const ProposaplAuthSocialLoginWrapperStyle = styled.div`
+export const ProposalAuthSocialLoginWrapperStyle = styled(CenterColumnStyle)`
   margin: 45px 0px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
+  width: 100%;
 `;
 
 export const ProposalSubmitForgotPasswordWrapperStyle = styled(
   ExtraParagraphStyle
 )`
   font-family: ${MakeFonts.CircularStandardBook};
+`;
+
+export const ProposalButtonsWrapperStyle = styled(FlexElementStyle)`
+  justify-content: flex-end;
+`;
+
+export const ProposalCancelButtonStyle = styled(GreyNoBackgroundButtonStyle)`
+  text-transform: uppercase;
+  font-family: ${MakeFonts.TradeGothicBoldCondensed};
+  margin-right: 20px;
 `;

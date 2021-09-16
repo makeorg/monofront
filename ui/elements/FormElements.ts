@@ -109,7 +109,7 @@ export const NewWindowIconStyle = styled(SvgExternalLinkPlain)`
     fill: ${color.brandSecondary};
   }
   &.grey .tofill {
-    fill: ${color.grey};
+    fill: ${color.darkGrey};
   }
 `;
 
@@ -154,6 +154,11 @@ export const FormRequirementsStyle = styled.p`
   color: ${color.greyDark};
 `;
 
+export const TwoFieldsRowStyle = styled(FlexElementStyle)`
+  width: 100%;
+  justify-content: space-between;
+`;
+
 export const FakeFieldStyle = styled.div<{ hasError: boolean }>`
   display: flex;
   position: relative;
@@ -172,6 +177,16 @@ export const FakeFieldStyle = styled.div<{ hasError: boolean }>`
 
 export const MiddleFakeFieldStyle = styled(FakeFieldStyle)`
   align-items: center;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    &.age {
+      max-width: 150px;
+      margin-bottom: 15px;
+    }
+    &.postalcode {
+      max-width: 300px;
+      margin-bottom: 15px;
+    }
+  }
 `;
 
 export const FieldWrapperStyle = styled.div`

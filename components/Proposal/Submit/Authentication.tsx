@@ -29,7 +29,7 @@ import {
   ProposalAltStepTitleStyle,
   ProposalAuthLoginStyle,
   ProposalAuthLoginWrapperStyle,
-  ProposaplAuthSocialLoginWrapperStyle,
+  ProposalAuthSocialLoginWrapperStyle,
   ProposalSubmitForgotPasswordWrapperStyle,
 } from './style';
 
@@ -90,7 +90,7 @@ export const ProposalAuthentication: React.FC<Props> = ({
                   {i18n.t('login.forgot_password_link')}
                 </RedLinkButtonStyle>
               </ProposalSubmitForgotPasswordWrapperStyle>
-              <ProposaplAuthSocialLoginWrapperStyle>
+              <ProposalAuthSocialLoginWrapperStyle>
                 <SeparatorProposalAuthLogin>
                   <ProposalSubmitAuthSeparator />
                   <TextSeparatorStyle>
@@ -102,7 +102,7 @@ export const ProposalAuthentication: React.FC<Props> = ({
                   <FacebookAuthentication />
                   <GoogleAuthentication />
                 </SocialRegisterButtonsWrapperStyle>
-              </ProposaplAuthSocialLoginWrapperStyle>
+              </ProposalAuthSocialLoginWrapperStyle>
             </>
           )}
         </CenterColumnStyle>

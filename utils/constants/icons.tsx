@@ -5,7 +5,7 @@ import {
   PencilIconStyle,
   LockIconStyle,
   UserIconStyle,
-  ChildIconStyle,
+  BirthdayIconStyle,
   MapMarkerIconStyle,
   SuitcaseIconStyle,
   PaperPlaneIconStyle,
@@ -18,7 +18,7 @@ export const EmailFieldIcon = <EmailIconStyle aria-hidden focusable="false" />;
 export const PasswordFieldIcon = (
   <LockIconStyle aria-hidden focusable="false" />
 );
-export const AgeFieldIcon = <ChildIconStyle aria-hidden focusable="false" />;
+export const AgeFieldIcon = <BirthdayIconStyle aria-hidden focusable="false" />;
 export const NameFiledIcon = <UserIconStyle aria-hidden focusable="false" />;
 export const PostalCodeFieldIcon = (
   <MapMarkerIconStyle aria-hidden focusable="false" />
