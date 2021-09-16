@@ -229,10 +229,14 @@ export const ProposalSuccessRedButtonStyle = styled(RedButtonStyle)`
   margin: auto;
 `;
 
-export const ProposalAuthLoginWrapperStyle = styled.div`
+export const ProposalAuthInlineWrapperStyle = styled.div`
   font-family: ${MakeFonts.CircularStandardBook};
   justify-content: inline;
-  display: -webkit-inline-box;
+`;
+
+export const ProposalAuthLoginWrapperStyle = styled(
+  ProposalAuthInlineWrapperStyle
+)`
   align-items: center;
   margin: auto;
 `;

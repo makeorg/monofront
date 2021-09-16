@@ -55,7 +55,7 @@ export const RegisterCheckBox: React.FC<Props> = ({
           >
             {i18n.t('legal_consent.privacy_policy_link')}
             <NewWindowIconStyle
-              className="grey"
+              className={isWidget ? 'grey' : ''}
               aria-hidden
               focusable="false"
             />

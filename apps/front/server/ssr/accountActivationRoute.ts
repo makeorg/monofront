@@ -1,4 +1,4 @@
-import { initialState } from '@make.org/store/initialState';
+import { createInitialState } from '@make.org/store/initialState';
 import { Request, Response } from 'express';
 import { NOTIF } from '@make.org/types/enums';
 import { UserService } from '../service/UserService';
@@ -10,9 +10,10 @@ export const accountActivationRoute = async (
   req: Request,
   res: Response
 ): Promise<any> => {
+  const routeState = createInitialState();
   const { userId, verificationToken, country, language } = req.params;
   // empty question when register on home page
-  const questionId = req.query.question || '';
+  const questionId = req.query.question?.toString() || '';
   const notificationError = {
     contentId: NOTIF.ACTIVATION_FAILURE_MESSAGE,
     level: NOTIF.NOTIFICATION_LEVEL_ERROR,
@@ -40,21 +41,21 @@ export const accountActivationRoute = async (
       });
     };
     const question = await QuestionService.getQuestion(
-      JSON.stringify(questionId),
+      questionId,
       country,
       language,
-      notFound,
-      unexpectedError
+      () => notFound(),
+      () => unexpectedError()
     );
 
     if (!question) {
-      initialState.notifications.banner = notificationError;
+      routeState.notifications.banner = notificationError;
 
-      return reactRender(req, res, initialState);
+      return reactRender(req, res, routeState);
     }
 
-    initialState.currentQuestion = question.slug;
-    initialState.questions = {
+    routeState.currentQuestion = question.slug;
+    routeState.questions = {
       [question.slug]: {
         question,
       },
@@ -62,10 +63,10 @@ export const accountActivationRoute = async (
   }
 
   const success = () => {
-    initialState.notifications.banner = notificationSuccess;
+    routeState.notifications.banner = notificationSuccess;
   };
   const failure = () => {
-    initialState.notifications.banner = notificationError;
+    routeState.notifications.banner = notificationError;
   };
   await UserService.verifyUser(
     userId,
@@ -74,8 +75,8 @@ export const accountActivationRoute = async (
     language,
     () => success(),
     () => failure(),
-    JSON.stringify(questionId)
+    questionId
   );
 
-  return reactRender(req, res, initialState);
+  return reactRender(req, res, routeState);
 };
