@@ -43,8 +43,8 @@ export const UIThemeStylesheet = createGlobalStyle`
     box-shadow: 0 1px 1px 0 ${ShadowColors.BlackZeroFiveOpacity};
     overflow-y: auto;
     border-radius: 8px;
-    @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-      padding: ${intToPx(DefaultPadding.Desktop)};
+    &.expiration {
+      max-width: 350px;
     }
     &.widget {
       position: absolute;
@@ -56,6 +56,9 @@ export const UIThemeStylesheet = createGlobalStyle`
       display: flex;
       justify-content: center;
       border-radius: 0;
+    }
+    @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+      padding: ${intToPx(DefaultPadding.Desktop)};
     }
   }
 `;
