@@ -51,6 +51,9 @@ export const LegalFormStyle = styled(FormCenterAlignStyle)`
     visibility: hidden;
     display: none;
   }
+  &.panel {
+    margin: 30px 0 30px;
+  }
 `;
 
 export const LegalIconStyle = styled(SvgLegalConsent)`
@@ -59,6 +62,9 @@ export const LegalIconStyle = styled(SvgLegalConsent)`
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     max-width: 150px;
     margin: 65px auto 40px;
+    &.panel {
+      margin: 25px auto 30px;
+    }
   }
 `;
 

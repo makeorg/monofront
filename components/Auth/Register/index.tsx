@@ -188,6 +188,7 @@ export const Register: React.FC<Props> = ({ panel }) => {
         handleLegalField={handleLegalField}
         handleSubmit={handleSubmit}
         toggleLegalConsent={toggleLegalConsent}
+        isPanel={panel}
       />
       <AuthenticationWrapperStyle
         aria-labelledby="register_title"

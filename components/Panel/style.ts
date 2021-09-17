@@ -71,6 +71,7 @@ export const PanelInnerStyle = styled(MiddleColumnStyle)`
   z-index: 15;
   background-color: ${BackgroundColors.LightGrey};
   transition: 0.5s ease-in bottom;
+  overflow-y: auto;
   &.widget {
     height: calc(100% - 36px);
     @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
@@ -93,6 +94,9 @@ export const PanelWrapperStyle = styled.div<{
   width: 100%;
   height: 100%;
   z-index: 10;
+  &.widget {
+    position: absolute;
+  }
   &[aria-hidden='true'] {
     height: 0;
     overflow: hidden;

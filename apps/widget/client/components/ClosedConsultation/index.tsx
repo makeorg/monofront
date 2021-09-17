@@ -16,7 +16,6 @@ import { RedUppercaseHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElem
 import {
   ClosedConsultationDescriptionStyle,
   ClosedConsultationTitleStyle,
-  WidgetContainer,
 } from '../../style';
 import { HeaderPanel } from '../HeaderPanel';
 
@@ -26,7 +25,7 @@ export const ClosedConsultation: FC = () => {
   const { country } = state.appConfig;
 
   return (
-    <WidgetContainer>
+    <>
       <MetaTags
         title={i18n.t('meta.sequence.title_standard', {
           question: question.wording.question,
@@ -58,6 +57,6 @@ export const ClosedConsultation: FC = () => {
           <SequenceProgress disabled />
         </SequenceContentStyle>
       </SequenceContainerStyle>
-    </WidgetContainer>
+    </>
   );
 };

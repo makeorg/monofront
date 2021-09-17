@@ -12,31 +12,26 @@ import {
   MakeSvgSmallLogo,
   MaintenanceParagraphStyle,
 } from './style';
-import { WidgetContainer } from '../../style';
 
 export const MaintenancePage: FC = () => (
   <>
     <MetaTags title={i18n.t('maintenance.subtitle')} />
-    <WidgetContainer>
-      <MakeSvgSmallLogo focusable="false" aria-hidden>
-        <ScreenReaderItemStyle>
-          {i18n.t('header.logo_alt')}
-        </ScreenReaderItemStyle>
-      </MakeSvgSmallLogo>
-      <MaintenancePageStyle>
-        <MaintenanceImageStyle src={MaintenancePicture} />
-        <MaintenanceTitleStyle>Ongoing maintenance</MaintenanceTitleStyle>
-        <SequenceAltTitleStyle>
-          Oops, we’re sorry! Make.org is currently down for maintenance.
-        </SequenceAltTitleStyle>
-        <MaintenanceParagraphStyle as="p">
-          Feel free to come back in few minutes to discover the proposals
-          offered by other citizens and submit yours.
-        </MaintenanceParagraphStyle>
-        <SimpleLinkAsRedButton href="https://make.org" target="__blank">
-          Find out more about Make.org
-        </SimpleLinkAsRedButton>
-      </MaintenancePageStyle>
-    </WidgetContainer>
+    <MakeSvgSmallLogo focusable="false" aria-hidden>
+      <ScreenReaderItemStyle>{i18n.t('header.logo_alt')}</ScreenReaderItemStyle>
+    </MakeSvgSmallLogo>
+    <MaintenancePageStyle>
+      <MaintenanceImageStyle src={MaintenancePicture} />
+      <MaintenanceTitleStyle>Ongoing maintenance</MaintenanceTitleStyle>
+      <SequenceAltTitleStyle>
+        Oops, we’re sorry! Make.org is currently down for maintenance.
+      </SequenceAltTitleStyle>
+      <MaintenanceParagraphStyle as="p">
+        Feel free to come back in few minutes to discover the proposals offered
+        by other citizens and submit yours.
+      </MaintenanceParagraphStyle>
+      <SimpleLinkAsRedButton href="https://make.org" target="__blank">
+        Find out more about Make.org
+      </SimpleLinkAsRedButton>
+    </MaintenancePageStyle>
   </>
 );

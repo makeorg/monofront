@@ -59,7 +59,8 @@ ApiService.strategy = apiClient;
 
 const initApp = async (state: StateRoot) => {
   let store = { ...state };
-  const { source, country, language } = state.appConfig;
+  const { source, country, language, queryParams } = state.appConfig;
+  const trackingSource = queryParams.source;
   // init languages
   i18n.init({
     interpolation: {
@@ -98,7 +99,7 @@ const initApp = async (state: StateRoot) => {
   // add listerner to update apiClient params
   trackingParamsService.addListener({
     onTrackingUpdate: (params: any) => {
-      apiClient.source = params.source;
+      apiClient.source = trackingSource || params.source;
       apiClient.country = params.country;
       apiClient.language = params.language;
       apiClient.location = params.location;
@@ -109,7 +110,7 @@ const initApp = async (state: StateRoot) => {
   });
 
   // Set tracking params
-  trackingParamsService.source = source;
+  trackingParamsService.source = trackingSource || source;
   trackingParamsService.country = country;
   trackingParamsService.language = language;
   trackingParamsService.questionId =

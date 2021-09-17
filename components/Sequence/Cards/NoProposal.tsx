@@ -38,7 +38,9 @@ export const NoProposal: React.FC<Props> = ({
 
   return (
     <>
-      <SequenceMainTitleStyle>{title}</SequenceMainTitleStyle>
+      <SequenceMainTitleStyle className={isWidget ? 'widget' : ''}>
+        {title}
+      </SequenceMainTitleStyle>
       <SequenceParagraphStyle>{description}</SequenceParagraphStyle>
       {isWidget ? (
         <SimpleLinkAsRedButton
@@ -55,7 +57,7 @@ export const NoProposal: React.FC<Props> = ({
           {i18n.t('no_proposal_card.link_text')}
         </LinkAsRedButtonStyle>
       )}
-      {isDesktop && (
+      {isDesktop && !isWidget && (
         <>
           <FinalCardSeparatorStyle />
           <SequenceParagraphStyle>

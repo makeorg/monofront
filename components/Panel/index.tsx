@@ -67,7 +67,11 @@ export const Panel: React.FC = () => {
   }, [isExpanded, isWidget]);
 
   return (
-    <PanelWrapperStyle ref={panelRef} aria-hidden="true">
+    <PanelWrapperStyle
+      className={isWidget ? 'widget' : ''}
+      ref={panelRef}
+      aria-hidden="true"
+    >
       {isExpanded && (
         <>
           <PanelOverlayStyle

@@ -50,7 +50,8 @@ export const RegisterFormPanel: React.FC<Props> = ({
   registerPanelStep,
 }) => {
   const { state } = useAppContext();
-  const { country, language } = state.appConfig;
+  const { country, language, source } = state.appConfig;
+  const isWidget = source === 'widget';
 
   const emailError = getFieldError('email', errors);
   const passwordError = getFieldError('password', errors);
@@ -109,7 +110,11 @@ export const RegisterFormPanel: React.FC<Props> = ({
             <span>
               {i18n.t('register.gtu_text_first')}
               <PanelTermsOfUseLinkStyle
-                href={getGTUPageLink(country, language)}
+                href={
+                  isWidget
+                    ? `https://make.org${getGTUPageLink(country, language)}`
+                    : getGTUPageLink(country, language)
+                }
                 target="_blank"
                 rel="noopener"
               >

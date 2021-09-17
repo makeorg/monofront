@@ -48,7 +48,11 @@ export const RegisterCheckBox: React.FC<Props> = ({
         <span>
           {i18n.t('legal_consent.privacy_policy_first_part')}
           <DataPolicyNewWindowLinkStyle
-            href={getDataPageLink(country, language)}
+            href={
+              isWidget
+                ? `https://make.org${getDataPageLink(country, language)}`
+                : getDataPageLink(country, language)
+            }
             target="_blank"
             rel="noopener"
             isWidget={isWidget}
