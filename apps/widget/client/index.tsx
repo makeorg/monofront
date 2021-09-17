@@ -6,15 +6,20 @@ import { env } from '@make.org/assets/env';
 import ContextState from '@make.org/store';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 import i18n from 'i18next';
-import { StateRoot } from '@make.org/types';
+import { ApiServiceHeadersType, StateRoot } from '@make.org/types';
 import { ApiService } from '@make.org/api/ApiService';
 import { apiClient } from '@make.org/api/ApiService/ApiService.client';
-import { initialState } from '@make.org/store/initialState';
+import { createInitialState } from '@make.org/store/initialState';
 import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
 import { QuestionService } from '@make.org/utils/services/Question';
 import { Logger } from '@make.org/utils/services/Logger';
 import { authenticationState } from '@make.org/utils/helpers/auth';
 import { SessionExpiration } from '@make.org/components/Expiration/Session';
+import {
+  getAll,
+  setDataFromQueryParams,
+} from '@make.org/utils/helpers/customData';
+import { DateHelper } from '@make.org/utils/helpers/date';
 import { translationRessources } from '../i18n';
 import { initDevState } from '../initDevState';
 import { transformExtraSlidesConfigFromQuery } from '../server/helpers/query.helper';
@@ -25,13 +30,6 @@ declare global {
     INITIAL_STATE?: StateRoot;
   }
 }
-
-if (env.isDev()) {
-  // Set state for dev env, pass desired slug
-  window.INITIAL_STATE = initDevState(initialState, 'environnement');
-}
-
-const serverState = window.INITIAL_STATE || initialState;
 
 window.onerror = (message, source, lineNumber, columnNumber, error) => {
   if (error && error.stack) {
@@ -55,21 +53,47 @@ window.onerror = (message, source, lineNumber, columnNumber, error) => {
   return false;
 };
 
+const initialState = createInitialState();
+
+if (env.isDev()) {
+  // Set state for dev env, pass desired slug
+  window.INITIAL_STATE = initDevState(initialState, 'environnement');
+}
+
+const serverState = window.INITIAL_STATE || initialState;
+
 ApiService.strategy = apiClient;
 
 const initApp = async (state: StateRoot) => {
-  let store = { ...state };
   const { source, country, language, queryParams } = state.appConfig;
   const trackingSource = queryParams.source;
-  // init languages
-  i18n.init({
-    interpolation: {
-      escapeValue: false,
+
+  // add listener to update trackingParamsService && sessionId in state
+  // should be before first api call (before authenticationState) to get visitorId
+  apiClient.addHeadersListener(
+    'trackingServiceListener',
+    (headers: ApiServiceHeadersType) => {
+      trackingParamsService.visitorId =
+        headers['x-visitor-id'] || trackingParamsService.visitorId;
+    }
+  );
+  const authenticationStateData = await authenticationState();
+
+  // Set in session storage some keys from query params
+  setDataFromQueryParams(queryParams);
+
+  let store = {
+    ...state,
+    user: {
+      ...state.user,
+      authentication: {
+        ...state.user.authentication,
+        ...authenticationStateData,
+      },
     },
-    debug: env.isDev(),
-    lng: language || DEFAULT_LANGUAGE,
-    resources: translationRessources,
-  });
+    session: { sessionId: '' },
+    customData: getAll(), // custom_data already saved in session_storage
+  };
 
   if (env.isDev()) {
     const question = await QuestionService.getDetail(state.currentQuestion);
@@ -86,7 +110,7 @@ const initApp = async (state: StateRoot) => {
       };
 
       store = {
-        ...state,
+        ...store,
         questions: {
           [question.slug]: {
             question: questionModified,
@@ -95,6 +119,19 @@ const initApp = async (state: StateRoot) => {
       };
     }
   }
+
+  // init languages
+  i18n.init({
+    interpolation: {
+      escapeValue: false,
+    },
+    debug: env.isDev(),
+    lng: language || DEFAULT_LANGUAGE,
+    resources: translationRessources,
+  });
+
+  // Set date helper language
+  DateHelper.language = language;
 
   // add listerner to update apiClient params
   trackingParamsService.addListener({
@@ -116,13 +153,6 @@ const initApp = async (state: StateRoot) => {
   trackingParamsService.questionId =
     store.questions[store.currentQuestion]?.question.questionId || '';
 
-  const authenticationStateData = await authenticationState();
-
-  store.user.authentication = {
-    ...state.user.authentication,
-    ...authenticationStateData,
-  };
-
   const appDom = document.getElementById('app');
   const renderMethod = module.hot ? render : hydrate;
 
@@ -143,3 +173,7 @@ const initApp = async (state: StateRoot) => {
 };
 
 initApp(serverState);
+
+if (module.hot) {
+  module.hot.accept();
+}
