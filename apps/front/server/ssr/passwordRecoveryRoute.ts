@@ -27,7 +27,7 @@ export const passwordRecoveryRoute = async (
     const notFound = () => {
       logError({
         message: `Question not found on activate account questionId='${questionId}'`,
-        name: 'password-recovery',
+        name: 'server-side',
         url: req.url,
         query: req.query,
       });
@@ -35,13 +35,13 @@ export const passwordRecoveryRoute = async (
     const unexpectedError = () => {
       logError({
         message: `Unexpected Error on activate account questionId='${questionId}'`,
-        name: 'password-recovery',
+        name: 'server-side',
         url: req.url,
         query: req.query,
       });
     };
     const question = await QuestionService.getQuestion(
-      JSON.stringify(questionId),
+      questionId.toString(),
       country,
       language,
       notFound,
@@ -75,7 +75,7 @@ export const passwordRecoveryRoute = async (
     language,
     () => success(),
     () => failure(),
-    JSON.stringify(questionId)
+    questionId.toString()
   );
 
   return reactRender(req, res, initialState);

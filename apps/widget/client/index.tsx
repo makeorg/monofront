@@ -63,6 +63,7 @@ if (env.isDev()) {
 const serverState = window.INITIAL_STATE || initialState;
 
 ApiService.strategy = apiClient;
+apiClient.appname = 'widget';
 
 const initApp = async (state: StateRoot) => {
   const { source, country, language, queryParams } = state.appConfig;

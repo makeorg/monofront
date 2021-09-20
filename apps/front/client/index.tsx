@@ -75,6 +75,7 @@ if (env.isDev()) {
 const serverState = window.INITIAL_STATE || initialState;
 
 ApiService.strategy = apiClient;
+apiClient.appname = 'main-front';
 
 const logAndTrackEvent = (eventName: string) => {
   Logger.logInfo({
@@ -103,6 +104,7 @@ const initApp = async (state: StateRoot) => {
     }
   );
   const authenticationStateData = await authenticationState();
+
   // Set in session storage some keys from query params
   setDataFromQueryParams(queryParams);
 
