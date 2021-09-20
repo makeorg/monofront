@@ -7,12 +7,7 @@ import {
 } from '@make.org/store/actions/notifications';
 import { useAppContext } from '@make.org/store';
 import { NotificationMessage } from '../Message';
-import {
-  TipWrapperStyle,
-  TipCrossStyle,
-  TriangleUpStyle,
-  TriangleDownStyle,
-} from './style';
+import { TipWrapperStyle, TipCrossStyle, TriangleDownStyle } from './style';
 import { NotificationIcon } from '../Icon';
 
 type Props = {
@@ -43,12 +38,9 @@ export const Tip: React.FC<Props> = ({ isFirstSequenceVote = false }) => {
 
   return (
     <>
-      {(!isFirstSequenceVote || (isFirstSequenceVote && isWidget)) && (
-        <TriangleUpStyle isFirstSequenceVote={isFirstSequenceVote} />
-      )}
       <TipWrapperStyle
         isWidget={isWidget}
-        className={isFirstSequenceVote && !isWidget ? 'first-vote' : ''}
+        className={isFirstSequenceVote ? 'first-vote' : ''}
       >
         <TipCrossStyle
           aria-label={i18n.t('common.notifications.icons.close')}
@@ -59,7 +51,7 @@ export const Tip: React.FC<Props> = ({ isFirstSequenceVote = false }) => {
         <NotificationIcon level={level} context="tip" />
         <NotificationMessage name={contentId} />
       </TipWrapperStyle>
-      {isFirstSequenceVote && !isWidget && <TriangleDownStyle />}
+      {isFirstSequenceVote && <TriangleDownStyle />}
     </>
   );
 };

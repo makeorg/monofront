@@ -21,7 +21,7 @@ import {
 } from '@make.org/utils/helpers/customData';
 import { updateTrackingQuestionParam } from '@make.org/utils/helpers/question';
 import i18n from 'i18next';
-import { initialState } from '@make.org/store/initialState';
+import { createInitialState } from '@make.org/store/initialState';
 import { getRouteNoCookies } from '@make.org/utils/routes';
 import ContextState from '@make.org/store';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
@@ -43,12 +43,6 @@ declare global {
     INITIAL_STATE?: StateRoot;
   }
 }
-
-if (env.isDev()) {
-  window.INITIAL_STATE = initDevState(initialState);
-}
-
-const serverState = window.INITIAL_STATE || initialState;
 
 window.onerror = (message, source, lineNumber, columnNumber, error) => {
   if (error && error.stack) {
@@ -72,7 +66,16 @@ window.onerror = (message, source, lineNumber, columnNumber, error) => {
   return false;
 };
 
+const initialState = createInitialState();
+
+if (env.isDev()) {
+  window.INITIAL_STATE = initDevState(initialState);
+}
+
+const serverState = window.INITIAL_STATE || initialState;
+
 ApiService.strategy = apiClient;
+apiClient.appname = 'main-front';
 
 const logAndTrackEvent = (eventName: string) => {
   Logger.logInfo({
@@ -91,11 +94,6 @@ const logAndTrackEvent = (eventName: string) => {
 const initApp = async (state: StateRoot) => {
   const { language, country, source, queryParams } = state.appConfig;
 
-  const store = {
-    ...state,
-    customData: getAll(), // custom_data already saved in session_storage
-  };
-
   // add listener to update trackingParamsService && sessionId in state
   // should be before first api call (before authenticationState) to get visitorId
   apiClient.addHeadersListener(
@@ -103,32 +101,25 @@ const initApp = async (state: StateRoot) => {
     (headers: ApiServiceHeadersType) => {
       trackingParamsService.visitorId =
         headers['x-visitor-id'] || trackingParamsService.visitorId;
-      store.session.sessionId = headers['x-session-id'] || '';
-      if (env.isDev()) {
-        // set cookie expiration for session (20 minutes)
-        const twentyMinutesLater = new Date();
-        twentyMinutesLater.setMinutes(twentyMinutesLater.getMinutes() + 20);
-        const cookies = new Cookies();
-        const sessionIdCookie = cookies.get(COOKIE.SESSION_ID);
-
-        if (!sessionIdCookie) {
-          cookies.set(COOKIE.SESSION_ID, headers['x-session-id'], {
-            path: '/',
-            expires: twentyMinutesLater,
-          });
-        }
-      }
     }
   );
   const authenticationStateData = await authenticationState();
 
-  store.user.authentication = {
-    ...state.user.authentication,
-    ...authenticationStateData,
-  };
-
   // Set in session storage some keys from query params
   setDataFromQueryParams(queryParams);
+
+  const store = {
+    ...state,
+    user: {
+      ...state.user,
+      authentication: {
+        ...state.user.authentication,
+        ...authenticationStateData,
+      },
+    },
+    session: { sessionId: '' },
+    customData: getAll(), // custom_data already saved in session_storage
+  };
 
   // i18n
   i18n.init({
@@ -140,6 +131,7 @@ const initApp = async (state: StateRoot) => {
     resources: translationRessources,
   });
 
+  // Cookie preference
   const cookies = new Cookies();
   const preferencesCookie = cookies.get(COOKIE.USER_PREFERENCES);
   initTrackersFromPreferences(preferencesCookie);

@@ -53,6 +53,19 @@ services:
       profiles: 
         - app-test
 
+    app_make_ssr:
+      image: app_make_ssr
+      build:
+        context: .
+        dockerfile: apps/front/Dockerfile
+        target: app-ssr
+      ports:
+        - 3000:3000
+        - 8888:8888
+      volumes: *default_volumes
+      profiles: 
+        - app-ssr
+
     widget_make_dev:
       image: widget_make_dev
       build:

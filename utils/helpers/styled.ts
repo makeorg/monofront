@@ -17,8 +17,8 @@ export const pxToRem = (value: string | number, base = 16): string => {
 
 export const intToPx = (value: number): string => `${value}px`;
 
-export const getBarHeight = (value: number): string => {
-  const barHeight = (value * 30) / 100;
+export const getBarHeight = (value: number, maxHeight: number): string => {
+  const barHeight = (value * maxHeight) / 100;
   return `${barHeight}px`;
 };
 

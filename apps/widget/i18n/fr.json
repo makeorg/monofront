@@ -339,7 +339,7 @@
     "sharing": "Ou donnez plus de portée à cette consultation en la diffusant."
   },
   "push_proposal_card": {
-    "title": "Et vous, avez vous une solution à proposer sur ce sujet ?",
+    "title": "Et vous, avez-vous une solution à proposer sur ce sujet ?",
     "next-cta": "Pas encore, je continue à voter"
   },
   "sequence_progress": {
@@ -411,7 +411,8 @@
       "title": "Pour valider ma proposition",
       "subtitle": "Je m'inscris avec",
       "button_login_text": "J’ai déjà un compte,",
-      "button_login_link": "je me connecte"
+      "button_login_link": "je me connecte",
+      "back_authentication": "Revenir à l'écran de connexion"
     },
     "success": {
       "title": "Merci {{name}} !",
@@ -512,9 +513,9 @@
     "parental_consent": "En tant que titulaire de l'autorité parentale, je consens au traitement des données personnelles de mon enfant par Make.org.",
     "cancel": "Annuler",
     "submit": "Valider",
-    "privacy_policy_text": "J'accepte la ",
-    "privacy_policy": "politique de données",
-    "privacy_make": " de Make.org"
+    "privacy_policy_first_part": "J'accepte que Make.org traite ces données pour que je puisse participer et être informé(e) des résultats selon la ",
+    "privacy_policy_link": "charte",
+    "privacy_policy_last_part": "."
   },
   "forgot_password": {
     "title": "Je réinitialise mon mot de passe",
@@ -1266,7 +1267,7 @@
   },
   "unsecure": {
     "title": "La consultation est maintenant terminée",
-    "description": "Vous souhaitez en savoir plus sur ce sujet ? Découvrez la suite de l'opération et restez informé de toutes nos consultations citoyennes en vous inscrivant sur Make.org",
+    "description": "Vous souhaitez en savoir plus sur ce sujet ? Découvrez la suite de l'opération et restez informé(e) de toutes nos consultations citoyennes en vous inscrivant sur Make.org",
     "link": "Découvrir notre opération"
   }
 }

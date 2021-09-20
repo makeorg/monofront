@@ -8,6 +8,8 @@ import { getLocationContext } from './getLocationContext';
 import { ApiServiceError } from './ApiServiceError';
 
 export class ApiServiceClient implements IApiServiceStrategy {
+  _appname = '';
+
   _language = '';
 
   _country = '';
@@ -33,6 +35,14 @@ export class ApiServiceClient implements IApiServiceStrategy {
       typeof window !== 'undefined' && !!window.document.referrer
         ? window.document.referrer
         : '';
+  }
+
+  set appname(appname: string) {
+    this._appname = appname;
+  }
+
+  get appname(): string {
+    return this._appname;
   }
 
   set language(language: string) {
@@ -127,6 +137,7 @@ export class ApiServiceClient implements IApiServiceStrategy {
 
   callApi(url: string, options: OptionsType): Promise<void | AxiosResponse> {
     const defaultHeaders = {
+      'x-make-app-name': this._appname,
       'x-make-country': this._country,
       'x-make-language': this._language,
       'x-make-source': this._source,

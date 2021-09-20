@@ -10,7 +10,6 @@ import { Spinner } from '@make.org/ui/components/Loading/Spinner';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { QuestionType } from '@make.org/types';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
-import { WidgetContainer } from '../../style';
 import { HeaderPanel } from '../../components/HeaderPanel';
 import { IntroProposal } from '../../components/IntroProposal';
 import { ClosedConsultation } from '../../components/ClosedConsultation';
@@ -26,11 +25,7 @@ export const RootPage: FC = () => {
     useState<boolean>(topProposalIsActive);
 
   if (!currentQuestion) {
-    return (
-      <WidgetContainer>
-        <Spinner />
-      </WidgetContainer>
-    );
+    return <Spinner />;
   }
 
   if (!isInProgress(question) || unsecure) {
@@ -38,7 +33,7 @@ export const RootPage: FC = () => {
   }
 
   return (
-    <WidgetContainer>
+    <>
       <HeaderPanel />
       {topProposal ? (
         <IntroProposal handleChange={disableTopProposal} />
@@ -48,6 +43,6 @@ export const RootPage: FC = () => {
       <Panel />
       <Modal />
       {showDataPolicy && <PrivacyPolicyModal />}
-    </WidgetContainer>
+    </>
   );
 };

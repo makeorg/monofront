@@ -11,7 +11,7 @@ export const SeparatorStyle = styled.div`
 `;
 
 export const ProposalSubmitAuthSeparator = styled(SeparatorStyle)`
-  max-width: 90px;
+  max-width: 120px;
 `;
 
 export const SmallSeparatorStyle = styled(SeparatorStyle)`
@@ -27,8 +27,11 @@ export const SmallSeparatorWithMarginStyle = styled(SmallSeparatorStyle)`
 
 export const SeparatorWrapperStyle = styled(MiddleRowStyle)`
   width: 100%;
-  &.no-margin-top {
-    margin-top: 0;
+  &.margin-top {
+    margin-top: 25px;
+  }
+  &.margin-bottom {
+    margin-bottom: 25px;
   }
 `;
 

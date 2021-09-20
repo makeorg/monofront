@@ -135,7 +135,7 @@ export const Register: React.FC<Props> = ({ panel }) => {
       email,
       password,
       undefined,
-      () => getUser(dispatch, state.modal.isOpen, true),
+      () => getUser(dispatch, state.modal.isOpen, !panel),
       () => undefined,
       () => unexpectedError()
     );
@@ -188,6 +188,7 @@ export const Register: React.FC<Props> = ({ panel }) => {
         handleLegalField={handleLegalField}
         handleSubmit={handleSubmit}
         toggleLegalConsent={toggleLegalConsent}
+        isPanel={panel}
       />
       <AuthenticationWrapperStyle
         aria-labelledby="register_title"
@@ -206,7 +207,7 @@ export const Register: React.FC<Props> = ({ panel }) => {
               <FacebookAuthentication />
               <GoogleAuthentication />
             </SocialRegisterButtonsWrapperStyle>
-            <SeparatorWrapperStyle>
+            <SeparatorWrapperStyle className="margin-top margin-bottom">
               <SeparatorStyle />
               <TextSeparatorStyle>{i18n.t('register.or')}</TextSeparatorStyle>
               <SeparatorStyle />

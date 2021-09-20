@@ -168,7 +168,7 @@ export const ProfileTitleStyle = styled.p`
 export const ProfileContentStyle = styled(ParagraphStyle)`
   margin-bottom: 10px;
   svg {
-    fill: ${color.darkGrey};
+    fill: ${color.greyDark};
   }
   &:last-child {
     margin-bottom: 0;

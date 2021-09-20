@@ -137,7 +137,12 @@ export const FacebookAuthentication: React.FC = () => {
         render={(renderProps: { onClick: () => void }) => (
           <FacebookButtonStyle onClick={renderProps.onClick} type="button">
             <SvgLogoFacebookWrapperStyle>
-              <SvgFacebookLogoF aria-hidden focusable="false" />
+              <SvgFacebookLogoF
+                width={15}
+                height={12}
+                aria-hidden
+                focusable="false"
+              />
             </SvgLogoFacebookWrapperStyle>
             <SocialButtonLabelStyle>
               {i18n.t('common.social_login.facebook_connect')}

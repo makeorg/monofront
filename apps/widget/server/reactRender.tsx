@@ -92,7 +92,7 @@ export const reactRender = async (
   routeState: StateRoot
 ): Promise<any> => {
   const { ...queryParams } = req.query;
-  const { country, questionSlug, hash, owner } = req.query;
+  const { country, questionSlug, hash } = req.query;
 
   const { browser, os, device, ua } = parser(req.headers['user-agent']);
   const isMobileOrTablet = device.type === 'mobile' || device.type === 'tablet';
@@ -150,7 +150,7 @@ export const reactRender = async (
     return res.status(404).end();
   }
 
-  if (!questionSlug || !country || !hash || !owner) {
+  if (!questionSlug || !country || !hash) {
     state.appConfig.maintenance = true;
     logError({
       message: 'Missing mandatory query params in request',

@@ -35,6 +35,20 @@ CMD ["./node_modules/.bin/lerna", "run", "--scope=@make.org/front", "dev", "--st
 EXPOSE 3000
 
 ############
+# SSR
+############
+FROM base AS app-ssr
+
+WORKDIR /home/app
+
+ENV PATH /home/app/node_modules/.bin:$PATH
+
+RUN ["./node_modules/.bin/lerna", "run", "--scope=@make.org/front",  "build", "--stream"]
+CMD ["./node_modules/.bin/lerna", "run", "--scope=@make.org/front", "server:dev", "--stream"]
+
+EXPOSE 3000
+
+############
 # TEST
 ############
 FROM cypress/browsers:node14.17.0-chrome91-ff89 AS app-test

@@ -328,7 +328,8 @@
       "title": "To validate my solution",
       "subtitle": "Sign up with",
       "button_login_text": "I already have an account,",
-      "button_login_link": "log me in"
+      "button_login_link": "log me in",
+      "back_authentication": "Go back to the login screen"
     }
   },
   "vote": {
@@ -1113,9 +1114,9 @@
     "parental_consent": "As a representative of parental authority, I consent to the processing of my child personal data by Make.org.",
     "cancel": "Cancel",
     "submit": "Validate",
-    "privacy_policy_text": "I accept the ",
-    "privacy_policy": "privacy policy",
-    "privacy_make": " of Make.org"
+    "privacy_policy_first_part": "I agree that Make.org processes my personal data to participate and to be informed of the results according to the ",
+    "privacy_policy_link": "notice",
+    "privacy_policy_last_part": "."
   },
   "browse": {
     "page_title": "Browse consultations",

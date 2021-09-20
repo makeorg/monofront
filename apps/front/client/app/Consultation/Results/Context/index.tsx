@@ -26,7 +26,7 @@ export const ResultsContext: FC<Props> = ({ aboutUrl, context }) => (
         onClick={() => trackClickLearnMore()}
       >
         {i18n.t('consultation.cards.about.link')}
-        <NewWindowIconStyle />
+        <NewWindowIconStyle aria-hidden focusable="false" />
         <ScreenReaderItemStyle>
           {i18n.t('common.open_new_window')}
         </ScreenReaderItemStyle>

@@ -35,7 +35,7 @@ export const AuthenticationRegisterButtons: React.FC<Props> = ({
     <AuthenticationButtonWrapperStyle data-cy-container="signup-auth-buttons">
       <FacebookAuthentication />
       <GoogleAuthentication />
-      <SeparatorWrapperStyle className="no-margin-top no-margin-bottom">
+      <SeparatorWrapperStyle>
         <ProposalSubmitAuthSeparator className="no-margin-top" />
         <TextSeparatorStyle>{i18n.t('login.or')}</TextSeparatorStyle>
         <ProposalSubmitAuthSeparator className="no-margin-top" />

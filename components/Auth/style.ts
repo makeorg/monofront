@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-import { SecondLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
+import {
+  SecondLevelTitleStyle,
+  ThirdLevelTitleStyle,
+} from '@make.org/ui/elements/TitleElements';
 import {
   SvgLegalConsent,
   SvgExternalLinkPlain,
@@ -12,14 +15,15 @@ import {
   RedButtonStyle,
   UnstyledButtonStyle,
 } from '@make.org/ui/elements/ButtonsElements';
-import { SpaceBetweenRowStyle } from '@make.org/ui/elements/FlexElements';
+import {
+  CenterColumnStyle,
+  SpaceBetweenRowStyle,
+} from '@make.org/ui/elements/FlexElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 
-export const AuthenticationWrapperStyle = styled.section<{
-  className?: string;
-}>`
+export const AuthenticationWrapperStyle = styled.section`
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -36,11 +40,9 @@ export const AuthenticationTitleStyle = styled(SecondLevelTitleStyle)`
   padding: 0 25px;
 `;
 
-export const SocialRegisterButtonsWrapperStyle = styled.div`
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
+export const SocialRegisterButtonsWrapperStyle = styled(CenterColumnStyle)`
   gap: 17px;
+  width: 100%;
 `;
 
 export const LegalFormStyle = styled(FormCenterAlignStyle)`
@@ -48,6 +50,9 @@ export const LegalFormStyle = styled(FormCenterAlignStyle)`
   &.hidden {
     visibility: hidden;
     display: none;
+  }
+  &.panel {
+    margin: 30px 0 30px;
   }
 `;
 
@@ -57,6 +62,9 @@ export const LegalIconStyle = styled(SvgLegalConsent)`
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     max-width: 150px;
     margin: 65px auto 40px;
+    &.panel {
+      margin: 25px auto 30px;
+    }
   }
 `;
 
@@ -114,14 +122,15 @@ export const PanelTermsOfUseLinkStyle = styled(TermsOfUseLinkStyle)`
   }
 `;
 
-export const NewWindowIconStyle = styled(SvgExternalLinkPlain)<{
-  isGrey?: boolean;
-}>`
+export const NewWindowIconStyle = styled(SvgExternalLinkPlain)`
   width: 9px;
   height: 9px;
   padding-left: 2px;
   .tofill {
-    fill: ${props => (props.isGrey ? 'color.grey' : 'color.brandSecondary')};
+    fill: ${color.brandSecondary};
+  }
+  &.grey .tofill {
+    fill: ${color.greyDark};
   }
 `;
 
@@ -130,4 +139,16 @@ export const RegisterEmailTitleStyle = styled.h1`
   margin: 30px 0px 10px;
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   font-family: ${MakeFonts.CircularStandardBold};
+`;
+
+export const LoginTitleWrapperStyle = styled(ThirdLevelTitleStyle)`
+  margin-bottom: 20px;
+  text-transform: none;
+  font-family: ${MakeFonts.CircularStandardBold};
+  font-size: ${intToPx(typography.font.fontsize.S.value)};
+  line-height: 1.5;
+  letter-spacing: 0.12px;
+  &.panel {
+    margin-top: 32px;
+  }
 `;

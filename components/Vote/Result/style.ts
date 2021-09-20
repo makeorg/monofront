@@ -47,11 +47,12 @@ export const VoteResultBarStyle = styled.button<{ percent: number }>`
   width: 6px;
   min-height: 5px;
   margin: 0 2px;
-  height: ${props => getBarHeight(props.percent)};
+  height: ${props => getBarHeight(props.percent, 30)};
   background-color: ${props => props.color};
   border: none;
   padding: 0;
   &.widget {
+    height: ${props => getBarHeight(props.percent, 20)};
     width: 4px;
     margin: 0 1px;
   }

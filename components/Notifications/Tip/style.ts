@@ -20,7 +20,7 @@ export const TipWrapperStyle = styled.div<{ isWidget: boolean }>`
   line-height: 1.5;
   letter-spacing: 0.14px;
   &.first-vote {
-    margin-top: 20px;
+    margin-top: ${props => (props.isWidget ? '5px' : '20px')};
     margin-bottom: 0;
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {

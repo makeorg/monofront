@@ -2,7 +2,6 @@
 import axios, { AxiosResponse } from 'axios';
 import axiosRetry from 'axios-retry';
 import { Logger } from '@make.org/utils/services/Logger';
-import { APP_NAME } from '@make.org/utils/constants/config';
 import { v4 as uuidv4 } from 'uuid';
 import { env } from '@make.org/assets/env';
 import { ErrorResponse, OptionsType } from '@make.org/types';
@@ -124,7 +123,6 @@ class ApiServiceSharedClass {
     const requestId = uuidv4();
     const defaultHeaders: Readonly<Record<string, string | null>> = {
       'x-hostname': HOSTNAME,
-      'x-make-app-name': APP_NAME,
       'x-make-location': 'core',
       'x-make-external-id': requestId,
     };

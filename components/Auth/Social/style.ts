@@ -47,9 +47,7 @@ export const SocialButtonStyle = styled.button`
   border-radius: 17.5px;
   background-color: ${color.white};
   border: 1px solid ${color.black};
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    width: 250px;
-  }
+  max-width: 300px;
 `;
 
 export const SocialButtonLabelStyle = styled.span`

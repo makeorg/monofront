@@ -70,7 +70,6 @@ export const IntroProposal: FC<Props> = ({ handleChange }) => {
               {proposal.content}
             </SequenceProposalStyle>
             <RedButtonStyle
-              className="widget"
               onClick={() => {
                 handleChange(false);
                 trackClickStartSequence();

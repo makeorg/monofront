@@ -234,9 +234,7 @@ export const Vote: React.FC<Props> = ({
 
   return (
     <>
-      {isFirstSequenceVote && !isWidget && (
-        <Tip isFirstSequenceVote={isFirstSequenceVote} />
-      )}
+      {isFirstSequenceVote && <Tip isFirstSequenceVote={isFirstSequenceVote} />}
       <VoteContainerStyle className={className}>
         <ScreenReaderItemStyle as="p">
           {i18n.t('vote.intro_title')}
@@ -258,9 +256,6 @@ export const Vote: React.FC<Props> = ({
           ))}
         </VoteWrapperStyle>
       </VoteContainerStyle>
-      {isFirstSequenceVote && isWidget && (
-        <Tip isFirstSequenceVote={isFirstSequenceVote} />
-      )}
     </>
   );
 };

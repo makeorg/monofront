@@ -10,7 +10,6 @@ import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { AuthenticationRegisterButtons } from '@make.org/components/Auth/Register/Buttons';
 import { Register } from '@make.org/components/Auth/Register';
 import { Login } from '@make.org/components/Auth/Login';
-import { ExtraParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { RedLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { PasswordForgot } from '@make.org/components/Auth/PasswordForgot';
 import {
@@ -30,7 +29,8 @@ import {
   ProposalAltStepTitleStyle,
   ProposalAuthLoginStyle,
   ProposalAuthLoginWrapperStyle,
-  ProposaplAuthSocialLoginWrapperStyle,
+  ProposalAuthSocialLoginWrapperStyle,
+  ProposalSubmitForgotPasswordWrapperStyle,
 } from './style';
 
 type Props = {
@@ -78,10 +78,15 @@ export const ProposalAuthentication: React.FC<Props> = ({
           </ProposalBackButtonStyle>
           {authStep === AUTH_STEP.LOGIN && <Login panel />}
           {authStep === AUTH_STEP.REGISTER && <Register panel />}
-          {authStep === AUTH_STEP.FORGOT_PASSWORD && <PasswordForgot panel />}
+          {authStep === AUTH_STEP.FORGOT_PASSWORD && (
+            <PasswordForgot
+              panel
+              loginStep={() => setAuthStep(AUTH_STEP.LOGIN)}
+            />
+          )}
           {authStep === AUTH_STEP.LOGIN && (
             <>
-              <ExtraParagraphStyle>
+              <ProposalSubmitForgotPasswordWrapperStyle>
                 {i18n.t('login.forgot_password_title')}
                 <RedLinkButtonStyle
                   onClick={() => setAuthStep(AUTH_STEP.FORGOT_PASSWORD)}
@@ -89,8 +94,8 @@ export const ProposalAuthentication: React.FC<Props> = ({
                 >
                   {i18n.t('login.forgot_password_link')}
                 </RedLinkButtonStyle>
-              </ExtraParagraphStyle>
-              <ProposaplAuthSocialLoginWrapperStyle>
+              </ProposalSubmitForgotPasswordWrapperStyle>
+              <ProposalAuthSocialLoginWrapperStyle>
                 <SeparatorProposalAuthLogin>
                   <ProposalSubmitAuthSeparator />
                   <TextSeparatorStyle>
@@ -102,7 +107,7 @@ export const ProposalAuthentication: React.FC<Props> = ({
                   <FacebookAuthentication />
                   <GoogleAuthentication />
                 </SocialRegisterButtonsWrapperStyle>
-              </ProposaplAuthSocialLoginWrapperStyle>
+              </ProposalAuthSocialLoginWrapperStyle>
             </>
           )}
         </CenterColumnStyle>

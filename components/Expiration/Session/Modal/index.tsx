@@ -21,6 +21,8 @@ ReactModal.setAppElement('#app');
 export const ExpirationSessionModal: React.FC = () => {
   const { dispatch, state } = useAppContext();
   const { showExpirationSession } = state.modal;
+  const { source } = state.appConfig;
+  const isWidget = source === 'widget';
 
   useEffect(() => {
     if (showExpirationSession) {
@@ -38,8 +40,7 @@ export const ExpirationSessionModal: React.FC = () => {
     <ReactModal
       isOpen={showExpirationSession}
       overlayClassName="modal-overlay"
-      className="modal-dialog"
-      style={{ maxWidth: '350px' }}
+      className={isWidget ? 'modal-dialog widget' : 'modal-dialog expiration'}
       shouldCloseOnOverlayClick
     >
       <CloseButtonStyle aria-expanded="false" onClick={handleClose}>

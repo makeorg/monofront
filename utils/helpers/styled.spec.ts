@@ -40,7 +40,7 @@ describe('intToPx', () => {
 
 describe('getBarHeight', () => {
   it('convert a percent value to pixels (30px = 100%) to render vote histogram', () => {
-    expect(getBarHeight(50)).toEqual('15px');
+    expect(getBarHeight(50, 30)).toEqual('15px');
   });
 });
 

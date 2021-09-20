@@ -23,6 +23,7 @@ type Props = {
   handleLegalField: (fieldName: string, value: boolean) => void;
   handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
   toggleLegalConsent: (event: SyntheticEvent<HTMLButtonElement>) => void;
+  isPanel?: boolean;
 };
 
 export const LegalConsent: React.FC<Props> = ({
@@ -30,6 +31,7 @@ export const LegalConsent: React.FC<Props> = ({
   handleLegalField,
   handleSubmit,
   toggleLegalConsent,
+  isPanel,
 }) => {
   const [minorConsent, setMinorConsent] = useState<boolean>(false);
   const [parentalConsent, setParentalConsent] = useState<boolean>(false);
@@ -41,17 +43,31 @@ export const LegalConsent: React.FC<Props> = ({
     }
   }, [needLegalConsent]);
 
+  let className = '';
+
+  if (!needLegalConsent) {
+    className = 'hidden';
+  }
+
+  if (needLegalConsent && isPanel) {
+    className = 'panel';
+  }
+
   return (
     <LegalFormStyle
       id={FORM.LEGAL_CONSENT_FORMNAME}
       name={FORM.LEGAL_CONSENT_FORMNAME}
       onSubmit={handleSubmit}
-      className={!needLegalConsent ? 'hidden' : ''}
+      className={className}
     >
       <SecondLevelTitleStyle id="legal_consent_title">
         {i18n.t('legal_consent.title')}
       </SecondLevelTitleStyle>
-      <LegalIconStyle aria-hidden focusable="false" />
+      <LegalIconStyle
+        aria-hidden
+        focusable="false"
+        className={isPanel ? 'panel' : ''}
+      />
       <FourthLevelTitleStyle as="h3">
         {i18n.t('legal_consent.subtitle')}
       </FourthLevelTitleStyle>
@@ -75,7 +91,7 @@ export const LegalConsent: React.FC<Props> = ({
       </LegalCheckboxWrapperStyle>
       <LegalCheckboxWrapperStyle>
         <CheckBox
-          name="profile.legalAdvisorApproval"
+          name="legalAdvisorApproval"
           id="legalAdvisorApproval"
           value={JSON.stringify(parentalConsent)}
           handleCheck={() => setParentalConsent(!parentalConsent)}

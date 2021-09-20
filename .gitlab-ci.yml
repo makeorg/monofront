@@ -95,7 +95,6 @@ e2e-app:
     - docker
   except: 
     - production
-  when: manual
   before_script: 
     - export IMAGE_VERSION=`git rev-parse --short=10 HEAD`
     - mkdir -p /var/lib/docker
@@ -106,6 +105,7 @@ e2e-app:
 
 build-app:
   extends: .build
+  when: manual
   script:
     - echo $(docker pull $NEXUS_URL/$IMAGE_APP_NAME:$IMAGE_VERSION)
     - >
@@ -134,10 +134,10 @@ build-widget:
     name: preproduction
   only:
     - preproduction
-  when: manual
 
 deploy-app-preproduction:
   extends: .deploy-preproduction
+  when: manual
   script:
     - >
       curl -D - -X "POST"

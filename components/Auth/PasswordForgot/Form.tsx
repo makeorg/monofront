@@ -8,6 +8,7 @@ import {
   EmailFieldIcon,
   SubmitPaperPlaneIcon,
 } from '@make.org/utils/constants/icons';
+import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { UntypedInput } from '../../Form/UntypedInput';
 import { SubmitButton } from '../../Form/SubmitButton';
 import { FormErrors } from '../../Form/Errors';
@@ -18,9 +19,10 @@ import { ForgotPasswordFormStyle, ForgotPasswordTitleStyle } from './style';
  */
 type Props = {
   isPanel?: boolean;
+  loginStep?: () => void;
 };
 
-export const ForgotPasswordForm: React.FC<Props> = ({ isPanel }) => {
+export const ForgotPasswordForm: React.FC<Props> = ({ isPanel, loginStep }) => {
   const [email, setEmail] = useState<string>('');
   const [isSuccess, setSuccess] = useState<boolean>(false);
   const [errors, setErrors] = useState<ErrorObjectType[]>([]);
@@ -45,9 +47,14 @@ export const ForgotPasswordForm: React.FC<Props> = ({ isPanel }) => {
 
   if (isSuccess) {
     return (
-      <ForgotPasswordTitleStyle>
-        {i18n.t('forgot_password.success')}
-      </ForgotPasswordTitleStyle>
+      <>
+        <ForgotPasswordTitleStyle isPanel={isPanel}>
+          {i18n.t('forgot_password.success')}
+        </ForgotPasswordTitleStyle>
+        <RedButtonStyle onClick={loginStep}>
+          {i18n.t('proposal_submit.authentication.back_authentication')}
+        </RedButtonStyle>
+      </>
     );
   }
 

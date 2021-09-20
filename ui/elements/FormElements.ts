@@ -101,14 +101,15 @@ export const StyledCheckbox = styled(FakeCheckboxInputStyle)<{
   }
 `;
 
-export const NewWindowIconStyle = styled(SvgExternalLinkPlain)<{
-  isGrey?: boolean;
-}>`
+export const NewWindowIconStyle = styled(SvgExternalLinkPlain)`
   width: 9px;
   height: 9px;
   padding-left: 2px;
   .tofill {
-    fill: ${props => (props.isGrey ? color.greyDark : color.brandSecondary)};
+    fill: ${color.brandSecondary};
+  }
+  &.grey .tofill {
+    fill: ${color.greyDark};
   }
 `;
 
@@ -147,9 +148,15 @@ export const FormCenterAlignStyle = styled.form`
 `;
 
 export const FormRequirementsStyle = styled.p`
+  font-family: ${MakeFonts.CircularStandardBook};
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   margin: 2.5px 0 15px;
   color: ${color.greyDark};
+`;
+
+export const TwoFieldsRowStyle = styled(FlexElementStyle)`
+  width: 100%;
+  justify-content: space-between;
 `;
 
 export const FakeFieldStyle = styled.div<{ hasError: boolean }>`
@@ -170,6 +177,16 @@ export const FakeFieldStyle = styled.div<{ hasError: boolean }>`
 
 export const MiddleFakeFieldStyle = styled(FakeFieldStyle)`
   align-items: center;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    &.age {
+      max-width: 150px;
+      margin-bottom: 15px;
+    }
+    &.postalcode {
+      max-width: 300px;
+      margin-bottom: 15px;
+    }
+  }
 `;
 
 export const FieldWrapperStyle = styled.div`
@@ -232,6 +249,11 @@ export const FormErrorsIntroStyle = styled.p`
 
 export const FormErrorsListItemStyle = styled.li`
   margin: 0 0 5px;
+  label {
+    color: ${color.white};
+    font-family: ${MakeFonts.CircularStandardBold};
+    text-decoration: underline;
+  }
   &:last-child {
     margin: 0;
   }

@@ -9,15 +9,14 @@ import {
   SequenceContentStyle,
 } from '@make.org/components/Sequence/style';
 import { SequenceProgress } from '@make.org/components/Sequence/Progress';
-import {
-  SequenceCardStyle,
-  SequenceMainTitleStyle,
-  SequenceParagraphStyle,
-} from '@make.org/components/Sequence/Cards/style';
+import { SequenceCardStyle } from '@make.org/components/Sequence/Cards/style';
 import { getParticipateLink } from '@make.org/utils/helpers/url';
 import { trackClickOperationPage } from '@make.org/utils/services/Tracking';
 import { RedUppercaseHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
-import { WidgetContainer } from '../../style';
+import {
+  ClosedConsultationDescriptionStyle,
+  ClosedConsultationTitleStyle,
+} from '../../style';
 import { HeaderPanel } from '../HeaderPanel';
 
 export const ClosedConsultation: FC = () => {
@@ -26,7 +25,7 @@ export const ClosedConsultation: FC = () => {
   const { country } = state.appConfig;
 
   return (
-    <WidgetContainer>
+    <>
       <MetaTags
         title={i18n.t('meta.sequence.title_standard', {
           question: question.wording.question,
@@ -38,14 +37,17 @@ export const ClosedConsultation: FC = () => {
       <SequenceContainerStyle data-cy-container="sequence" className="widget">
         <SequenceContentStyle>
           <SequenceCardStyle className="center widget">
-            <SequenceMainTitleStyle>
+            <ClosedConsultationTitleStyle>
               {i18n.t('unsecure.title')}
-            </SequenceMainTitleStyle>
-            <SequenceParagraphStyle>
+            </ClosedConsultationTitleStyle>
+            <ClosedConsultationDescriptionStyle>
               {i18n.t('unsecure.description')}
-            </SequenceParagraphStyle>
+            </ClosedConsultationDescriptionStyle>
             <RedUppercaseHTMLLinkElementStyle
-              href={getParticipateLink(country, question.slug)}
+              href={`https://make.org${getParticipateLink(
+                country,
+                question.slug
+              )}`}
               onClick={() => trackClickOperationPage()}
               target="_blank"
             >
@@ -55,6 +57,6 @@ export const ClosedConsultation: FC = () => {
           <SequenceProgress disabled />
         </SequenceContentStyle>
       </SequenceContainerStyle>
-    </WidgetContainer>
+    </>
   );
 };

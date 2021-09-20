@@ -70,7 +70,7 @@ export const DataPolicy: React.FC = () => {
           rel="noopener"
         >
           {i18n.t('legal_consent.privacy_policy')}
-          <NewWindowIconStyle />
+          <NewWindowIconStyle aria-hidden focusable="false" />
           <ScreenReaderItemStyle>
             {i18n.t('common.open_new_window')}
           </ScreenReaderItemStyle>

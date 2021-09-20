@@ -46,20 +46,28 @@ export const RegisterCheckBox: React.FC<Props> = ({
           <SvgCheck />
         </StyledCheckbox>
         <span>
-          {i18n.t('legal_consent.privacy_policy_text')}
+          {i18n.t('legal_consent.privacy_policy_first_part')}
           <DataPolicyNewWindowLinkStyle
-            href={getDataPageLink(country, language)}
+            href={
+              isWidget
+                ? `https://make.org${getDataPageLink(country, language)}`
+                : getDataPageLink(country, language)
+            }
             target="_blank"
             rel="noopener"
             isWidget={isWidget}
           >
-            {i18n.t('legal_consent.privacy_policy')}
-            <NewWindowIconStyle isGrey />
+            {i18n.t('legal_consent.privacy_policy_link')}
+            <NewWindowIconStyle
+              className={isWidget ? 'grey' : ''}
+              aria-hidden
+              focusable="false"
+            />
             <ScreenReaderItemStyle>
               {i18n.t('common.open_new_window')}
             </ScreenReaderItemStyle>
           </DataPolicyNewWindowLinkStyle>
-          {i18n.t('legal_consent.privacy_make')}
+          {i18n.t('legal_consent.privacy_policy_last_part')}
         </span>
       </CheckboxLabelStyle>
     </CheckboxWrapper>

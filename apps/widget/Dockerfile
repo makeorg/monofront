@@ -40,7 +40,6 @@ CMD ["./node_modules/.bin/lerna", "run", "--scope=@make.org/widget", "dev", "--s
 
 EXPOSE 3000
 
-
 ############
 # SSR
 ############
@@ -49,7 +48,6 @@ FROM base AS widget-ssr
 WORKDIR /home/app
 
 ENV PATH /home/app/node_modules/.bin:$PATH
-ENV CHOKIDAR_USEPOLLING true
 
 RUN ["./node_modules/.bin/lerna", "run", "--scope=@make.org/widget",  "build", "--stream"]
 CMD ["./node_modules/.bin/lerna", "run", "--scope=@make.org/widget", "server:dev", "--stream"]
