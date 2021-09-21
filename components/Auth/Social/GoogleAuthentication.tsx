@@ -13,9 +13,9 @@ import {
   modalShowDataPolicySocial,
 } from '@make.org/store/actions/modal';
 import { trackAuthenticationSocialFailure } from '@make.org/utils/services/Tracking';
-
 import {
   loginSocialSuccess,
+  loginSocialFailure,
   getUser,
 } from '@make.org/store/actions/authentication';
 import { Logger } from '@make.org/utils/services/Logger';
@@ -41,6 +41,7 @@ export const GoogleAuthentication: React.FC = () => {
   ) => {
     const success = async () => {
       dispatch(loginSocialSuccess());
+
       await getUser(dispatch, state.modal.isOpen);
       dispatch(
         displayNotificationBanner(
@@ -69,6 +70,8 @@ export const GoogleAuthentication: React.FC = () => {
   };
 
   const handleGoogleLoginFailure = (response: any) => {
+    dispatch(loginSocialFailure());
+
     if (response?.error === 'popup_closed_by_user') {
       Logger.logInfo({
         message: 'Google auth popup closed by user',

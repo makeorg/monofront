@@ -16,6 +16,7 @@ import { trackAuthenticationSocialFailure } from '@make.org/utils/services/Track
 
 import {
   loginSocialSuccess,
+  loginSocialFailure,
   getUser,
 } from '@make.org/store/actions/authentication';
 import { Logger } from '@make.org/utils/services/Logger';
@@ -44,7 +45,9 @@ export const FacebookAuthentication: React.FC = () => {
     response: ReactFacebookLoginInfo | ReactFacebookFailureResponse
   ) => {
     if (!('accessToken' in response)) {
+      dispatch(loginSocialFailure());
       const { status } = response;
+
       if (status === 'unknown') {
         Logger.logInfo({
           message:
@@ -71,6 +74,8 @@ export const FacebookAuthentication: React.FC = () => {
     }
 
     if (!('email' in response)) {
+      dispatch(loginSocialFailure());
+
       Logger.logError({
         message: `Facebook login failure no email in profile (login is a phone number or email is not yet confirmed)`,
         name: 'social-auth',

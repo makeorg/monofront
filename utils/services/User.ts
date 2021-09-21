@@ -2,7 +2,6 @@ import { UserApiService } from '@make.org/api/UserApiService';
 import {
   SearchProposalsType,
   PasswordsType,
-  UserAuthType,
   UserType,
   UserProfileType,
   OrganisationProfileType,
@@ -27,6 +26,7 @@ import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 import { OrganisationService } from './Organisation';
 import { PersonalityService } from './Personality';
+import { trackAuthenticationSocialSuccess } from './Tracking';
 
 const updatePassword = async (
   userId: string,
@@ -315,17 +315,18 @@ const loginSocial = async (
   success?: () => void,
   failure?: () => void,
   unexpectedError?: () => void
-): Promise<UserAuthType | void> => {
+): Promise<void> => {
   try {
     const response = await UserApiService.loginSocial(
       provider,
       token,
       approvePrivacyPolicy
     );
+    const created_at = response && response.data.created_at;
     if (success) {
       success();
+      trackAuthenticationSocialSuccess(provider, created_at.toString());
     }
-
     return response && response.data;
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
