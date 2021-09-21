@@ -17,7 +17,7 @@ import { Modal } from '@make.org/components/Modal';
 import { PrivacyPolicyModal } from '@make.org/components/PrivacyPolicyModal';
 import { CookieModal } from '@make.org/components/CookieModal';
 import { SecureExpiration } from '@make.org/components/Expiration/Secure';
-import { SessionExpiration } from '@make.org/components/Expiration/Session';
+import { SessionExpirationWithCoockies } from '@make.org/components/Expiration/Session';
 import { updateDeviceInState } from '../helper/updateDeviceInState';
 import { Header } from './Header';
 import { Footer } from './Footer';
@@ -56,7 +56,7 @@ export const AppContainer: FC = () => {
 
   return (
     <SecureExpiration>
-      <SessionExpiration>
+      <SessionExpirationWithCoockies>
         {hasCountry && <CookieModal />}
         {showDataPolicy && <PrivacyPolicyModal />}
         <ServiceErrorHandler>
@@ -87,7 +87,7 @@ export const AppContainer: FC = () => {
             <Panel />
           </ErrorBoundary>
         </ServiceErrorHandler>
-      </SessionExpiration>
+      </SessionExpirationWithCoockies>
     </SecureExpiration>
   );
 };

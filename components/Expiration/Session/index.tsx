@@ -16,7 +16,10 @@ type Props = {
 const sessionExpirationDateCookieName = 'make-session-id-expiration';
 const apiHeaderListenerName = 'sessionIdListener';
 
-const SessionExpirationHandler: React.FC<Props> = ({ children, cookies }) => {
+const SessionExpirationWithCoockiesHandler: React.FC<Props> = ({
+  children,
+  cookies,
+}) => {
   const { dispatch, state } = useAppContext();
   const { sessionId } = state.session || {};
   const [cookieData, setCookieData] = useState(
@@ -39,9 +42,8 @@ const SessionExpirationHandler: React.FC<Props> = ({ children, cookies }) => {
   useEffect(() => {
     apiClient.addHeadersListener(
       apiHeaderListenerName,
-      (headers: { [key: string]: string }): string => {
+      (headers: { [key: string]: string }): void => {
         setApiSessionId(headers['x-session-id']);
-        return headers['x-session-id'];
       }
     );
 
@@ -104,4 +106,102 @@ const SessionExpirationHandler: React.FC<Props> = ({ children, cookies }) => {
   );
 };
 
-export const SessionExpiration = withCookies(SessionExpirationHandler);
+export const SessionExpirationWithCoockies = withCookies(
+  SessionExpirationWithCoockiesHandler
+);
+
+type Properties = {
+  /** Children content */
+  children: React.ReactNode;
+};
+
+export const SessionExpiration: React.FC<Properties> = ({ children }) => {
+  const { dispatch, state } = useAppContext();
+  const { sessionId } = state.session || {};
+  const { showExpirationSession } = state.modal;
+  const [apiSessionId, setApiSessionId] = useState('');
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const [sessionExpirationDate, setSessionExpirationDate] = useState(tomorrow);
+  const [timer, setTimer] = useState<null | NodeJS.Timeout>(null);
+
+  const showModal = () => {
+    if (!showExpirationSession) {
+      dispatch(showSessionExpirationModal());
+    }
+  };
+
+  // update apiSessionId from api response header
+  useEffect(() => {
+    apiClient.addHeadersListener(
+      apiHeaderListenerName,
+      (headers: { [key: string]: string }): void => {
+        setApiSessionId(headers['x-session-id']);
+        setSessionExpirationDate(new Date(headers['x-session-id-expiration']));
+      }
+    );
+
+    return () => {
+      apiClient.removeHeadersListener(apiHeaderListenerName);
+    };
+  }, []);
+
+  // clear apiSessionId when sessionId is cleared after a logout
+  useEffect(() => {
+    if (!sessionId) {
+      setApiSessionId('');
+    }
+  }, [sessionId]);
+
+  // show modal if sessionId in state not match session id from API response
+  useEffect(() => {
+    const sessionIdHasChanged = !!apiSessionId && apiSessionId !== sessionId;
+    const isInitalSetup = !sessionId;
+
+    if (!isInitalSetup && sessionIdHasChanged) {
+      showModal();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [apiSessionId]);
+
+  // update sessionId from apiSessionId
+  useEffect(() => {
+    if (apiSessionId && apiSessionId !== sessionId) {
+      dispatch(updateSessionId(apiSessionId));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [apiSessionId]);
+
+  // show modal when session expires
+  useEffect(() => {
+    if (!sessionExpirationDate) {
+      return undefined;
+    }
+    const currentDate = new Date();
+    const timeBeforeExpire =
+      sessionExpirationDate.getTime() - currentDate.getTime();
+
+    if (Number.isNaN(timeBeforeExpire) || timeBeforeExpire < 0) {
+      return undefined;
+    }
+
+    if (timer) {
+      clearTimeout(timer);
+    }
+
+    const expirationTimer = setTimeout(() => {
+      showModal();
+    }, timeBeforeExpire);
+    setTimer(expirationTimer);
+
+    return () => clearTimeout(expirationTimer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sessionExpirationDate]);
+
+  return (
+    <>
+      {children}
+      <ExpirationSessionModal />
+    </>
+  );
+};

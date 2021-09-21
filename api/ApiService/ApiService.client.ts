@@ -28,6 +28,8 @@ export class ApiServiceClient implements IApiServiceStrategy {
 
   _isLogged = false;
 
+  _sessionId = '';
+
   _headersListeners: any = new Map();
 
   constructor() {
@@ -117,16 +119,21 @@ export class ApiServiceClient implements IApiServiceStrategy {
     return this._customData;
   }
 
+  set sessionId(sessionId: string) {
+    this._sessionId = sessionId;
+  }
+
+  get sessionId(): string {
+    return this._sessionId;
+  }
+
   set headersListener(listeners: Map<string, string>) {
     this._headersListeners = listeners;
   }
 
   addHeadersListener(
     identifier: string,
-    listener:
-      | string
-      | ((args: any) => string)
-      | ((headers: ApiServiceHeadersType) => void)
+    listener: (headers: ApiServiceHeadersType) => void
   ): void {
     this._headersListeners.set(identifier, listener);
   }
@@ -149,6 +156,7 @@ export class ApiServiceClient implements IApiServiceStrategy {
       ),
       'x-make-referrer': this._referrer,
       'x-make-custom-data': this._customData,
+      'x-session-id': this._sessionId,
     };
 
     const headers = { ...defaultHeaders, ...(options.headers || {}) };
@@ -169,12 +177,17 @@ export class ApiServiceClient implements IApiServiceStrategy {
       });
 
       response
-        .then(res =>
+        .then(res => {
+          const sessionId = res?.headers && res?.headers['x-session-id'];
+          if (sessionId) {
+            this._sessionId = sessionId;
+          }
+
           this._headersListeners.forEach(
             (listener: (headers: Readonly<Record<string, string>>) => void) =>
               listener(res && res.headers)
-          )
-        )
+          );
+        })
         .catch(apiServiceError => {
           this._headersListeners.forEach(
             (listener: (headers: Readonly<Record<string, string>>) => void) => {

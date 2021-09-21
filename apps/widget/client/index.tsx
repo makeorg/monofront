@@ -14,12 +14,12 @@ import { trackingParamsService } from '@make.org/utils/services/TrackingParamsSe
 import { QuestionService } from '@make.org/utils/services/Question';
 import { Logger } from '@make.org/utils/services/Logger';
 import { authenticationState } from '@make.org/utils/helpers/auth';
-import { SessionExpiration } from '@make.org/components/Expiration/Session';
 import {
   getAll,
   setDataFromQueryParams,
 } from '@make.org/utils/helpers/customData';
 import { DateHelper } from '@make.org/utils/helpers/date';
+import { SessionExpiration } from '@make.org/components/Expiration/Session';
 import { translationRessources } from '../i18n';
 import { initDevState } from '../initDevState';
 import { transformExtraSlidesConfigFromQuery } from '../server/helpers/query.helper';
