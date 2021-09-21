@@ -12,7 +12,6 @@ import {
 import {
   trackLoginEmailSuccess,
   trackLoginEmailFailure,
-  trackAuthenticationSocialSuccess,
   trackAuthenticationSocialFailure,
 } from '@make.org/utils/services/Tracking';
 import { Logger } from '@make.org/utils/services/Logger';
@@ -196,14 +195,7 @@ export const loginSocial = async (
     approvePrivacyPolicy,
     () => success(),
     () => failure()
-  ).then(auth => {
-    if (auth) {
-      trackAuthenticationSocialSuccess(
-        provider,
-        auth.account_creation.toString()
-      );
-    }
-  });
+  );
 };
 
 export const logout = (
