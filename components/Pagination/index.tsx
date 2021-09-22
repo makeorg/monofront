@@ -4,9 +4,9 @@ import { getPaginatedRoute } from '@make.org/utils/routes';
 import { trackClickPageNumber } from '@make.org/utils/services/Tracking';
 import { useParams, useRouteMatch } from 'react-router';
 import { scrollToElementId, scrollToTop } from '@make.org/utils/helpers/styled';
+import { InnerPagination } from './InnerPagination';
 import {
   PaginationNavStyle,
-  PaginationTextStyle,
   PaginationLinkStyle,
   PreviousArrowStyle,
   NextArrowStyle,
@@ -73,12 +73,12 @@ export const Pagination: FC<Props> = ({
           <PreviousArrowStyle aria-hidden focusable="false" />
         </PaginationLinkStyle>
       )}
-      <PaginationTextStyle>
-        {i18n.t('common.pagination.index_count', {
-          index: intPageId,
-          total: pagesTotal,
-        })}
-      </PaginationTextStyle>
+      <InnerPagination
+        intPageId={intPageId}
+        pagesTotal={pagesTotal}
+        scrollToId={scrollToId}
+        questionSlug={questionSlug}
+      />
       {intPageId === pagesTotal ? (
         <PaginationDisabledStyle>
           <NextArrowStyle aria-hidden focusable="false" />
