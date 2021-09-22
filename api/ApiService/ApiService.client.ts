@@ -30,6 +30,8 @@ export class ApiServiceClient implements IApiServiceStrategy {
 
   _sessionId = '';
 
+  _token = '';
+
   _headersListeners: any = new Map();
 
   constructor() {
@@ -127,6 +129,14 @@ export class ApiServiceClient implements IApiServiceStrategy {
     return this._sessionId;
   }
 
+  set token(token: string) {
+    this._token = token;
+  }
+
+  get token(): string {
+    return this._token;
+  }
+
   set headersListener(listeners: Map<string, string>) {
     this._headersListeners = listeners;
   }
@@ -143,7 +153,7 @@ export class ApiServiceClient implements IApiServiceStrategy {
   }
 
   callApi(url: string, options: OptionsType): Promise<void | AxiosResponse> {
-    const defaultHeaders = {
+    const defaultHeaders: ApiServiceHeadersType = {
       'x-make-app-name': this._appname,
       'x-make-country': this._country,
       'x-make-language': this._language,
@@ -158,6 +168,10 @@ export class ApiServiceClient implements IApiServiceStrategy {
       'x-make-custom-data': this._customData,
       'x-session-id': this._sessionId,
     };
+
+    if (this._token) {
+      defaultHeaders.Authorization = `Bearer ${this._token}`;
+    }
 
     const headers = { ...defaultHeaders, ...(options.headers || {}) };
 

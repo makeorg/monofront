@@ -131,7 +131,7 @@ export const Register: React.FC<Props> = ({ panel }) => {
       Logger.logError({ message: `Login fail for ${email}`, name: 'register' });
     };
 
-    await UserService.login(
+    return UserService.login(
       email,
       password,
       undefined,

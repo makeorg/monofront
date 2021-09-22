@@ -20,6 +20,11 @@ import {
 } from '@make.org/utils/helpers/customData';
 import { DateHelper } from '@make.org/utils/helpers/date';
 import { SessionExpiration } from '@make.org/components/Expiration/Session';
+import { PATH_USER_LOGIN } from '@make.org/api/UserApiService';
+import {
+  initOauthRefresh,
+  OauthResponseType,
+} from '@make.org/api/OauthRefresh';
 import { translationRessources } from '../i18n';
 import { initDevState } from '../initDevState';
 import { transformExtraSlidesConfigFromQuery } from '../server/helpers/query.helper';
@@ -140,12 +145,36 @@ const initApp = async (state: StateRoot) => {
       apiClient.source = trackingSource || params.source;
       apiClient.country = params.country;
       apiClient.language = params.language;
-      apiClient.location = params.location;
+      apiClient.location = 'widget';
       apiClient.url = params.url;
       apiClient.referrer = params.referrer;
       apiClient.questionId = params.questionId;
     },
   });
+
+  // init oauth utils
+  const retrieveAccessToken = async (
+    refreshToken: string
+  ): Promise<OauthResponseType | null> => {
+    const response: any = await ApiService.callApi(PATH_USER_LOGIN, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `grant_type=refresh_token&refresh_token=${encodeURIComponent(
+        refreshToken
+      )}`,
+    }).catch(error => null);
+
+    return response?.access_token
+      ? {
+          access_token: response.access_token,
+          refresh_token: response.refresh_token,
+        }
+      : null;
+  };
+
+  initOauthRefresh(retrieveAccessToken);
 
   // Set tracking params
   trackingParamsService.source = trackingSource || source;

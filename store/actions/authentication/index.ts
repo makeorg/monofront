@@ -7,6 +7,7 @@ import {
   OrganisationProfileType,
   PersonalityProfileType,
   UserProfileType,
+  UserAuthType,
 } from '@make.org/types';
 import {
   trackLoginEmailSuccess,
@@ -116,7 +117,7 @@ export const login = (
   password: string,
   approvePrivacyPolicy: boolean,
   dispatch: Dispatch
-): Promise<void> => {
+): Promise<UserAuthType | null> => {
   dispatch(loginRequest());
   const success = (): void => {
     dispatch(loginSuccess());

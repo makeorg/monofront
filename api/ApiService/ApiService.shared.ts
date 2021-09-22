@@ -143,7 +143,7 @@ class ApiServiceSharedClass {
 
     const apiUrl = `${API_URL}${url}`;
 
-    return axios(apiUrl, {
+    const axiosOptions = {
       method: options.method,
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
@@ -154,7 +154,11 @@ class ApiServiceSharedClass {
       withCredentials:
         options.withCredentials !== undefined ? options.withCredentials : true,
       httpsAgent: options.httpsAgent || undefined,
-    }).catch(error => handleErrors(error, apiUrl, options.method, requestId));
+    };
+
+    return axios(apiUrl, axiosOptions).catch(error =>
+      handleErrors(error, apiUrl, options.method, requestId)
+    );
   }
 }
 

@@ -24,6 +24,7 @@ import { PROPOSALS_LISTING_LIMIT } from '@make.org/utils/constants/proposal';
 import { USER } from '@make.org/types/enums';
 import { apiClient } from '@make.org/api/ApiService/ApiService.client';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
+import { storeTokens } from '@make.org/api/OauthRefresh';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 import { OrganisationService } from './Organisation';
 import { PersonalityService } from './Personality';
@@ -181,24 +182,38 @@ const login = async (
   success?: () => void,
   errors?: (serviceErrors?: ErrorObjectType[]) => void,
   unexpectedError?: () => void
-): Promise<void> => {
+): Promise<null | UserAuthType> => {
   try {
-    await UserApiService.login(email, password, approvePrivacyPolicy);
+    const response = await UserApiService.login(
+      email,
+      password,
+      approvePrivacyPolicy
+    );
+
+    if (response && response.data) {
+      const userAuth = response.data;
+      storeTokens(userAuth.access_token, userAuth.refresh_token);
+      apiClient.token = userAuth.access_token;
+    }
+
     if (success) {
       success();
     }
+    return response?.data || null;
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
     if ([400, 401, 403, 404].includes(apiServiceError.status)) {
       if (errors) {
         errors(loginErrors);
-        return;
+        return null;
       }
     }
     defaultUnexpectedError(apiServiceError);
     if (unexpectedError) {
       unexpectedError();
     }
+
+    return null;
   }
 };
 
@@ -210,12 +225,12 @@ const checkLoginPrivacyPolicy = async (
   success?: () => void,
   failure?: (args?: ErrorObjectType[]) => void,
   unexpectedError?: () => void
-): Promise<void | null> => {
+): Promise<void> => {
   try {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const response = await UserApiService.loginPrivacyPolicy(email, password);
     if (!response) {
-      return null;
+      return;
     }
 
     const { data } = response;
@@ -227,18 +242,20 @@ const checkLoginPrivacyPolicy = async (
     }
 
     if ((!userAcceptance || userAcceptance < lastVersion) && action) {
-      return action();
+      action();
+      return;
     }
-    return login(email, password, undefined, success, failure, unexpectedError);
+    login(email, password, undefined, success, failure, unexpectedError);
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
     if ([400, 401, 403, 404].includes(apiServiceError.status) && failure) {
-      return failure(loginErrors);
+      failure(loginErrors);
+      return;
     }
     if (failure) {
       failure();
     }
-    return defaultUnexpectedError(apiServiceError);
+    defaultUnexpectedError(apiServiceError);
   }
 };
 
@@ -322,6 +339,13 @@ const loginSocial = async (
       token,
       approvePrivacyPolicy
     );
+
+    if (response && response.data) {
+      const userAuth = response.data;
+      storeTokens(userAuth.access_token, userAuth.refresh_token);
+      apiClient.token = userAuth.access_token;
+    }
+
     if (success) {
       success();
     }
@@ -368,6 +392,7 @@ const checkSocialPrivacyPolicy = async (
     }
 
     loginSocial(provider, token, undefined, success, failure, unexpectedError);
+
     return null;
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
