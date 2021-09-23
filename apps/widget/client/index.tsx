@@ -22,6 +22,7 @@ import { DateHelper } from '@make.org/utils/helpers/date';
 import { SessionExpiration } from '@make.org/components/Expiration/Session';
 import { PATH_USER_LOGIN } from '@make.org/api/UserApiService';
 import {
+  refreshToken,
   initOauthRefresh,
   OauthResponseType,
 } from '@make.org/api/OauthRefresh';
@@ -62,13 +63,15 @@ const initialState = createInitialState();
 
 if (env.isDev()) {
   // Set state for dev env, pass desired slug
-  window.INITIAL_STATE = initDevState(initialState, 'environnement');
+  window.INITIAL_STATE = initDevState(initialState, 'tourisme');
 }
 
 const serverState = window.INITIAL_STATE || initialState;
 
 ApiService.strategy = apiClient;
 apiClient.appname = 'widget';
+apiClient.location = 'widget';
+apiClient.refreshTokenCallback = refreshToken;
 
 const initApp = async (state: StateRoot) => {
   const { source, country, language, queryParams } = state.appConfig;
@@ -145,16 +148,17 @@ const initApp = async (state: StateRoot) => {
       apiClient.source = trackingSource || params.source;
       apiClient.country = params.country;
       apiClient.language = params.language;
-      apiClient.location = 'widget';
       apiClient.url = params.url;
       apiClient.referrer = params.referrer;
       apiClient.questionId = params.questionId;
     },
   });
 
+  trackingParamsService.location = 'widget';
+
   // init oauth utils
   const retrieveAccessToken = async (
-    refreshToken: string
+    token: string
   ): Promise<OauthResponseType | null> => {
     const response: any = await ApiService.callApi(PATH_USER_LOGIN, {
       method: 'POST',
@@ -162,16 +166,13 @@ const initApp = async (state: StateRoot) => {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: `grant_type=refresh_token&refresh_token=${encodeURIComponent(
-        refreshToken
-      )}`,
-    }).catch(error => null);
+        token
+      )}&client_id=0cdd82cb-5cc0-4875-bb54-5c3709449429`,
+    }).catch(error =>
+      Logger.logWarning({ name: 'refreshtokencall', message: error.message })
+    );
 
-    return response?.access_token
-      ? {
-          access_token: response.access_token,
-          refresh_token: response.refresh_token,
-        }
-      : null;
+    return response?.data;
   };
 
   initOauthRefresh(retrieveAccessToken);

@@ -36,19 +36,19 @@ export const storeTokens = (
   configuration.accessToken = accessToken;
 };
 
-export const refreshToken = async (): Promise<string | null> => {
+export const refreshToken = async (): Promise<string> => {
   // eslint-disable-next-line @typescript-eslint/no-shadow
   const { refreshToken } = configuration;
 
   if (!refreshToken) {
-    return null;
+    return '';
   }
 
   const oauthResponse: OauthResponseType | null =
     await configuration.retrieveAccessToken(refreshToken);
   if (!oauthResponse) {
     resetStoredTokens();
-    return null;
+    return '';
   }
 
   const { access_token, refresh_token } = oauthResponse;

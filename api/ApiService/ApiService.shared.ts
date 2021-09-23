@@ -1,6 +1,5 @@
 /* eslint-disable max-classes-per-file */
 import axios, { AxiosResponse } from 'axios';
-import axiosRetry from 'axios-retry';
 import { Logger } from '@make.org/utils/services/Logger';
 import { v4 as uuidv4 } from 'uuid';
 import { env } from '@make.org/assets/env';
@@ -22,11 +21,6 @@ const LOCATION_PARAMS =
 // @ts-ignore
 const API_URL: string =
   env.apiUrl() || (typeof window !== 'undefined' && window?.API_URL);
-
-axiosRetry(axios, {
-  retries: 5,
-  retryDelay: retryCount => retryCount * 100,
-});
 
 /**
  * handle error for http response
@@ -123,7 +117,6 @@ class ApiServiceSharedClass {
     const requestId = uuidv4();
     const defaultHeaders: Readonly<Record<string, string | null>> = {
       'x-hostname': HOSTNAME,
-      'x-make-location': 'core',
       'x-make-external-id': requestId,
     };
 
