@@ -17,7 +17,7 @@ cache:
 
 stages:
   - check
-  - e2e
+#  - e2e
   - build
   - deploy
   
@@ -63,29 +63,29 @@ jscpd:
     paths:
       - reports
 
-e2e-app:
-  variables:
-    <<: *global_variables
-    CYPRESS_CACHE_FOLDER: '$CI_PROJECT_DIR/cache_cypress'
-  stage: e2e
-  needs: []
-  except: 
-    - production
-  image: cypress/browsers:node14.17.0-chrome91-ff89
-  before_script:
-    - export YARN_VERSION="$YARN_VERSION"
-  script:
-    - yarn install --check-files
-    - NODE_ENV=test yarn workspace @make.org/front build
-    - yarn workspace @make.org/front test:cypress:run
-  cache: {}
-  artifacts:
-    expire_in: 1 week
-    when: always
-    paths:
-      - cypress/screenshots
-      - cypress/videos
-      - cypress/coverage
+# e2e-app:
+#  variables:
+#    <<: *global_variables
+#    CYPRESS_CACHE_FOLDER: '$CI_PROJECT_DIR/cache_cypress'
+#  stage: e2e
+#  needs: []
+#  except: 
+#    - production
+#  image: cypress/browsers:node14.17.0-chrome91-ff89
+#  before_script:
+#    - export YARN_VERSION="$YARN_VERSION"
+#  script:
+#    - yarn install --check-files
+#    - NODE_ENV=test yarn workspace @make.org/front build
+#    - yarn workspace @make.org/front test:cypress:run
+#  cache: {}
+#  artifacts:
+#    expire_in: 1 week
+#    when: always
+#    paths:
+#      - cypress/screenshots
+#      - cypress/videos
+#      - cypress/coverage
 
   
 
