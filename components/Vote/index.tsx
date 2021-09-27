@@ -99,7 +99,11 @@ export const Vote: React.FC<Props> = ({
   if (isSequence) {
     className = 'sequence';
   }
-  if (isWidget) {
+  if (isWidget && isFirstSequenceVote) {
+    className = 'widgetFirstVote';
+  }
+
+  if (isWidget && !isFirstSequenceVote) {
     className = 'widget';
   }
 
