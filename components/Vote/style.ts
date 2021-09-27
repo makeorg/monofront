@@ -17,8 +17,11 @@ export const VoteContainerStyle = styled.div`
   &.placeholder {
     margin: 20px 0 10px;
   }
-  &.widget {
+  &.widgetFirstVote {
     margin: 10px 0px 5px;
+  }
+  &.widget {
+    margin-bottom: 5px;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     min-width: 250px;

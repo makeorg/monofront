@@ -73,31 +73,37 @@ export const ProposalAuthorInformations: React.FC<Props> = ({
         {i18n.t('proposal_card.author.from')}
       </ScreenReaderItemStyle>
       <InfosWrapperStyle className={className}>
-        {isOrganisation && (
-          <>
-            <RedLinkStyle
-              onClick={() => trackClickPublicProfile(USER.TYPE_ORGANISATION)}
-              to={getOrganisationProfileLink(
-                country,
-                author.organisationSlug || ''
-              )}
-            >
-              {formatOrganisationName(author.organisationName || '')}
-            </RedLinkStyle>
-            <CertifiedIconStyle aria-hidden focusable="false" />
-          </>
-        )}
-        {isPersonality && (
-          <>
-            <RedLinkStyle
-              onClick={() => trackClickPublicProfile(USER.TYPE_PERSONALITY)}
-              to={getPersonalityProfileLink(country, proposal.userId)}
-            >
-              {formatAuthorName(author.firstName || '')}
-            </RedLinkStyle>
-            <CertifiedIconStyle aria-hidden focusable="false" />
-          </>
-        )}
+        {isOrganisation &&
+          (isWidget ? (
+            formatOrganisationName(author.organisationName || '')
+          ) : (
+            <>
+              <RedLinkStyle
+                onClick={() => trackClickPublicProfile(USER.TYPE_ORGANISATION)}
+                to={getOrganisationProfileLink(
+                  country,
+                  author.organisationSlug || ''
+                )}
+              >
+                {formatOrganisationName(author.organisationName || '')}
+              </RedLinkStyle>
+              <CertifiedIconStyle aria-hidden focusable="false" />
+            </>
+          ))}
+        {isPersonality &&
+          (isWidget ? (
+            formatAuthorName(author.firstName || '')
+          ) : (
+            <>
+              <RedLinkStyle
+                onClick={() => trackClickPublicProfile(USER.TYPE_PERSONALITY)}
+                to={getPersonalityProfileLink(country, proposal.userId)}
+              >
+                {formatAuthorName(author.firstName || '')}
+              </RedLinkStyle>
+              <CertifiedIconStyle aria-hidden focusable="false" />
+            </>
+          ))}
         {isBasicUser && formatAuthorName(author.firstName || '')}
         <ProposalAuthorAge age={author.age} />
       </InfosWrapperStyle>
