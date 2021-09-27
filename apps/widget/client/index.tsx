@@ -20,6 +20,12 @@ import {
 } from '@make.org/utils/helpers/customData';
 import { DateHelper } from '@make.org/utils/helpers/date';
 import { SessionExpiration } from '@make.org/components/Expiration/Session';
+import { PATH_USER_LOGIN } from '@make.org/api/UserApiService';
+import {
+  refreshToken,
+  initOauthRefresh,
+  OauthResponseType,
+} from '@make.org/api/OauthRefresh';
 import { translationRessources } from '../i18n';
 import { initDevState } from '../initDevState';
 import { transformExtraSlidesConfigFromQuery } from '../server/helpers/query.helper';
@@ -57,13 +63,15 @@ const initialState = createInitialState();
 
 if (env.isDev()) {
   // Set state for dev env, pass desired slug
-  window.INITIAL_STATE = initDevState(initialState, 'environnement');
+  window.INITIAL_STATE = initDevState(initialState, 'tourisme');
 }
 
 const serverState = window.INITIAL_STATE || initialState;
 
 ApiService.strategy = apiClient;
 apiClient.appname = 'widget';
+apiClient.location = 'widget';
+apiClient.refreshTokenCallback = refreshToken;
 
 const initApp = async (state: StateRoot) => {
   const { source, country, language, queryParams } = state.appConfig;
@@ -140,12 +148,34 @@ const initApp = async (state: StateRoot) => {
       apiClient.source = trackingSource || params.source;
       apiClient.country = params.country;
       apiClient.language = params.language;
-      apiClient.location = params.location;
       apiClient.url = params.url;
       apiClient.referrer = params.referrer;
       apiClient.questionId = params.questionId;
     },
   });
+
+  trackingParamsService.location = 'widget';
+
+  // init oauth utils
+  const retrieveAccessToken = async (
+    token: string
+  ): Promise<OauthResponseType | null> => {
+    const response: any = await ApiService.callApi(PATH_USER_LOGIN, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `grant_type=refresh_token&refresh_token=${encodeURIComponent(
+        token
+      )}&client_id=0cdd82cb-5cc0-4875-bb54-5c3709449429`,
+    }).catch(error =>
+      Logger.logWarning({ name: 'refreshtokencall', message: error.message })
+    );
+
+    return response?.data;
+  };
+
+  initOauthRefresh(retrieveAccessToken);
 
   // Set tracking params
   trackingParamsService.source = trackingSource || source;

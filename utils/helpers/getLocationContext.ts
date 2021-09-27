@@ -26,9 +26,9 @@ import {
   ROUTE_PARTICIPATE,
   ROUTE_EXPLORE,
   ROUTE_STATIC_COOKIES,
-} from '@make.org/utils/routes';
+} from '../routes';
 
-export const getLocationContext = (
+export const getAppLocationContext = (
   pathname: string,
   questionId: string,
   proposalId: string
@@ -135,8 +135,8 @@ export const getLocationContext = (
     : location.name;
 };
 
-export const getTrackingLocation = (pathname: string): string => {
-  const location = getLocationContext(pathname, '', '');
+export const getAppTrackingLocation = (pathname: string): string => {
+  const location = getAppLocationContext(pathname, '', '');
 
   return location.split(' ').shift() || '';
 };

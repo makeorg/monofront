@@ -1,5 +1,5 @@
 /* eslint-disable  no-underscore-dangle */
-import { getTrackingLocation } from '@make.org/api/ApiService/getLocationContext';
+import { getAppTrackingLocation } from '@make.org/utils/helpers/getLocationContext';
 import {
   TrackingCommonConfigurationParamsType,
   TrackingParamsListenerType,
@@ -119,7 +119,7 @@ class TrackingParamsServiceClass {
         ? window.location.href
         : undefined;
 
-    this._location = getTrackingLocation(window.location.pathname);
+    this._location = getAppTrackingLocation(window.location.pathname);
     this._dispatchUpdate();
   }
 

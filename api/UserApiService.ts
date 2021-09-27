@@ -1,5 +1,9 @@
 import { getDateOfBirthFromAge } from '@make.org/utils/helpers/date';
-import { ApiServiceHeadersType, RegisterFormDataType } from '@make.org/types';
+import {
+  ApiServiceHeadersType,
+  RegisterFormDataType,
+  UserAuthType,
+} from '@make.org/types';
 import { setEmptyStringToNull } from '@make.org/utils/helpers/form';
 import { PROPOSALS_LISTING_LIMIT } from '@make.org/utils/constants/proposal';
 import { AxiosResponse } from 'axios';
@@ -94,7 +98,7 @@ export class UserApiService {
     email: string,
     password: string,
     approvePrivacyPolicy?: boolean
-  ): Promise<void | AxiosResponse> {
+  ): Promise<void | AxiosResponse<UserAuthType>> {
     const data: Record<string, string | boolean> = {
       username: email,
       password,
@@ -137,7 +141,7 @@ export class UserApiService {
     provider: string,
     token: string,
     approvePrivacyPolicy?: boolean
-  ): Promise<void | AxiosResponse> {
+  ): Promise<void | AxiosResponse<UserAuthType>> {
     return ApiService.callApi(PATH_USER_LOGIN_SOCIAL, {
       method: 'POST',
       body: JSON.stringify({

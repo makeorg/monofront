@@ -1,11 +1,12 @@
 /* eslint-disable no-underscore-dangle */
-import axiosRetry from 'axios-retry';
-import axios, { AxiosResponse } from 'axios';
+import { AxiosResponse } from 'axios';
 import { ApiServiceHeadersType, OptionsType } from '@make.org/types';
 import { IApiServiceStrategy } from './index';
 import { ApiServiceShared } from './ApiService.shared';
-import { getLocationContext } from './getLocationContext';
 import { ApiServiceError } from './ApiServiceError';
+import { refreshToken } from '../OauthRefresh';
+
+const RETRIES = 5;
 
 export class ApiServiceClient implements IApiServiceStrategy {
   _appname = '';
@@ -29,6 +30,12 @@ export class ApiServiceClient implements IApiServiceStrategy {
   _isLogged = false;
 
   _sessionId = '';
+
+  _visitorId = '';
+
+  _token: string | null = null;
+
+  _refreshTokenCallback: () => Promise<string> = refreshToken;
 
   _headersListeners: any = new Map();
 
@@ -127,6 +134,30 @@ export class ApiServiceClient implements IApiServiceStrategy {
     return this._sessionId;
   }
 
+  set visitorId(visitorId: string) {
+    this._visitorId = visitorId;
+  }
+
+  get visitorId(): string {
+    return this._sessionId;
+  }
+
+  set token(token: string | null) {
+    this._token = token;
+  }
+
+  get token(): string | null {
+    return this._token;
+  }
+
+  set refreshTokenCallback(callback: () => Promise<string>) {
+    this._refreshTokenCallback = callback;
+  }
+
+  get refreshTokenCallback(): () => Promise<string> {
+    return this._refreshTokenCallback;
+  }
+
   set headersListener(listeners: Map<string, string>) {
     this._headersListeners = listeners;
   }
@@ -142,67 +173,120 @@ export class ApiServiceClient implements IApiServiceStrategy {
     this._headersListeners.delete(identifier);
   }
 
-  callApi(url: string, options: OptionsType): Promise<void | AxiosResponse> {
-    const defaultHeaders = {
-      'x-make-app-name': this._appname,
-      'x-make-country': this._country,
-      'x-make-language': this._language,
-      'x-make-source': this._source,
-      'x-make-question-id': this._questionId,
-      'x-make-location': getLocationContext(
-        typeof window !== 'undefined' ? window.location.pathname : '',
-        this._questionId,
-        options.proposalId || ''
-      ),
-      'x-make-referrer': this._referrer,
-      'x-make-custom-data': this._customData,
-      'x-session-id': this._sessionId,
+  _generateHeaders(
+    optionHeaders?: OptionsType['headers']
+  ): ApiServiceHeadersType {
+    let headers: ApiServiceHeadersType = {
+      ...{
+        'x-make-app-name': this._appname,
+        'x-make-country': this._country,
+        'x-make-language': this._language,
+        'x-make-source': this._source,
+        'x-make-question-id': this._questionId,
+        'x-make-location': this._location,
+        'x-make-referrer': this._referrer,
+        'x-make-custom-data': this._customData,
+        'x-session-id': this._sessionId,
+      },
+      ...optionHeaders,
     };
 
-    const headers = { ...defaultHeaders, ...(options.headers || {}) };
+    if (this._sessionId) {
+      headers = {
+        ...headers,
+        'x-session-id': this._sessionId,
+      };
+    }
 
-    axiosRetry(axios, {
-      retries: 5,
-      retryDelay: retryCount => retryCount * 100,
-      retryCondition: error =>
-        axiosRetry.isNetworkOrIdempotentRequestError(error) ||
-        (error.response && error.response.status === 401 && this._isLogged) ||
-        false,
-    });
+    if (this._visitorId) {
+      headers = {
+        ...headers,
+        'x-visitor-id': this._visitorId,
+      };
+    }
+
+    if (this._token) {
+      headers = {
+        ...headers,
+        Authorization: `Bearer ${this._token}`,
+      };
+    }
+
+    return headers;
+  }
+
+  async _retryApiCall(
+    url: string,
+    options: OptionsType,
+    retry = RETRIES
+  ): Promise<void | AxiosResponse> {
+    const headers: ApiServiceHeadersType = this._generateHeaders(
+      options.headers
+    );
 
     try {
-      const response = ApiServiceShared.callApi(url, {
+      const response = await ApiServiceShared.callApi(url, {
         ...options,
         headers,
       });
 
-      response
-        .then(res => {
-          const sessionId = res?.headers && res?.headers['x-session-id'];
-          if (sessionId) {
-            this._sessionId = sessionId;
-          }
+      this._headersListeners.forEach(
+        (listener: (headers: Readonly<Record<string, string>>) => void) =>
+          response?.headers && listener(response?.headers)
+      );
 
-          this._headersListeners.forEach(
-            (listener: (headers: Readonly<Record<string, string>>) => void) =>
-              listener(res && res.headers)
-          );
-        })
-        .catch(apiServiceError => {
-          this._headersListeners.forEach(
-            (listener: (headers: Readonly<Record<string, string>>) => void) => {
-              if (apiServiceError.headers) {
-                listener(apiServiceError.headers);
-              }
-            }
-          );
-        });
+      return response;
+    } catch (apiServiceError: any) {
+      this._headersListeners.forEach(
+        (listener: (headers: Readonly<Record<string, string>>) => void) =>
+          apiServiceError?.headers && listener(apiServiceError?.headers)
+      );
+
+      if (apiServiceError?.status === 401 && retry > 0 && this._token) {
+        this._token = null;
+        this._token = await this._refreshTokenCallback();
+        await this._retryApiCall(url, options, 0);
+      }
+
+      if (
+        (!apiServiceError?.status || apiServiceError?.status > 403) &&
+        retry > 0
+      ) {
+        const sleep = (ms: number): Promise<void> =>
+          new Promise(resolve => setTimeout(resolve, ms));
+
+        await sleep((RETRIES - retry) * 500);
+
+        return this._retryApiCall(url, options, retry - 1);
+      }
+
+      throw apiServiceError;
+    }
+  }
+
+  async callApi(
+    url: string,
+    options: OptionsType
+  ): Promise<void | AxiosResponse> {
+    try {
+      const response = await this._retryApiCall(url, options);
+
+      const sessionId = response?.headers && response?.headers['x-session-id'];
+      if (sessionId) {
+        this._sessionId = sessionId;
+      }
+      const visitorId = response?.headers && response?.headers['x-visitor-id'];
+      if (visitorId) {
+        this._visitorId = visitorId;
+      }
+
       return response;
     } catch (error: unknown) {
       const apiServiceError = error as ApiServiceError;
       if (apiServiceError.status === 401) {
         this._isLogged = false;
       }
+
       throw apiServiceError;
     }
   }

@@ -25,6 +25,10 @@ type Method =
   | 'UNLINK';
 
 export type ApiServiceHeadersType = {
+  'x-make-app-name'?: string;
+  'x-make-source'?: string;
+  'x-make-location'?: string;
+  'x-make-referrer'?: string;
   'x-make-country'?: string;
   'x-make-language'?: string;
   'x-make-question-id'?: string;
@@ -32,6 +36,7 @@ export type ApiServiceHeadersType = {
   'x-visitor-id'?: string;
   'x-session-id'?: string;
   'x-session-id-expiration'?: string;
+  Authorization?: string;
 };
 
 export type ErrorObjectType = {
