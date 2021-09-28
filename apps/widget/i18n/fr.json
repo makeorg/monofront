@@ -515,7 +515,8 @@
     "submit": "Valider",
     "privacy_policy_first_part": "J'accepte que Make.org traite ces données pour que je puisse participer et être informé(e) des résultats selon la ",
     "privacy_policy_link": "charte",
-    "privacy_policy_last_part": "."
+    "privacy_policy_last_part": ".",
+    "privacy_policy": "politique de données"
   },
   "forgot_password": {
     "title": "Je réinitialise mon mot de passe",

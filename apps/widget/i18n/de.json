@@ -476,7 +476,8 @@
     "submit": "Bestätigen",
     "privacy_policy_first_part": "Ich bin damit einverstanden, dass meine personenbezogenen Daten von Make.org verarbeitet werden, sodass ich gemäß der ",
     "privacy_policy_link": "Charta",
-    "privacy_policy_last_part": " teilnehmen kann und informiert werde."
+    "privacy_policy_last_part": " teilnehmen kann und informiert werde.",
+    "privacy_policy": "Datenschutzerklärung"
   },
   "forgot_password": {
     "title": "Ich setze mein Passwort zurück",

@@ -1116,7 +1116,8 @@
     "submit": "Validate",
     "privacy_policy_first_part": "I agree that Make.org processes my personal data to participate and to be informed of the results according to the ",
     "privacy_policy_link": "notice",
-    "privacy_policy_last_part": "."
+    "privacy_policy_last_part": ".",
+    "privacy_policy": "privacy policy"
   },
   "browse": {
     "page_title": "Browse consultations",
