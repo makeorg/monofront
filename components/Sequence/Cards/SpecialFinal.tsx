@@ -25,7 +25,8 @@ export const SpecialFinalCard: React.FC<Props> = ({ questionSlug }) => {
   useEffect(() => {
     trackDisplayFinalCard();
     return () => dispatch(resetSequenceVotedProposals(questionSlug));
-  }, [questionSlug, dispatch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
