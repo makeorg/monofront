@@ -186,7 +186,6 @@ export class ApiServiceClient implements IApiServiceStrategy {
         'x-make-location': this._location,
         'x-make-referrer': this._referrer,
         'x-make-custom-data': this._customData,
-        'x-session-id': this._sessionId,
       },
       ...optionHeaders,
     };
@@ -268,21 +267,30 @@ export class ApiServiceClient implements IApiServiceStrategy {
     url: string,
     options: OptionsType
   ): Promise<void | AxiosResponse> {
+    const setAttributesFromResponseHeaders = (
+      responseHeaders: ApiServiceHeadersType | null | undefined
+    ) => {
+      if (!responseHeaders) {
+        return;
+      }
+
+      if (responseHeaders['x-visitor-id']) {
+        this._visitorId = responseHeaders['x-visitor-id'];
+      }
+      if (responseHeaders['x-session-id']) {
+        this._sessionId = responseHeaders['x-session-id'];
+      }
+    };
+
     try {
       const response = await this._retryApiCall(url, options);
-
-      const sessionId = response?.headers && response?.headers['x-session-id'];
-      if (sessionId) {
-        this._sessionId = sessionId;
-      }
-      const visitorId = response?.headers && response?.headers['x-visitor-id'];
-      if (visitorId) {
-        this._visitorId = visitorId;
-      }
+      setAttributesFromResponseHeaders(response?.headers);
 
       return response;
     } catch (error: unknown) {
       const apiServiceError = error as ApiServiceError;
+      setAttributesFromResponseHeaders(apiServiceError?.headers);
+
       if (apiServiceError.status === 401) {
         this._isLogged = false;
       }
