@@ -261,3 +261,13 @@ export const ProposalCancelButtonStyle = styled(GreyNoBackgroundButtonStyle)`
   font-family: ${MakeFonts.TradeGothicBoldCondensed};
   margin-right: 20px;
 `;
+
+export const ProposalSubmitButtonsWidgetStyle = styled(FlexElementStyle)`
+  flex-direction: column-reverse;
+  height: 70%;
+  justify-content: space-between;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    flex-direction: row;
+    height: fit-content;
+  }
+`;

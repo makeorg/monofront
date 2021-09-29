@@ -14,12 +14,10 @@ import {
 } from '@make.org/utils/services/Tracking';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import { SpaceBetweenRowStyle } from '@make.org/ui/elements/FlexElements';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { throttle } from '@make.org/utils/helpers/throttle';
 import { LoadingDots } from '@make.org/ui/components/Loading/Dots';
 import { useAppContext } from '@make.org/store';
-import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
 import {
   ProposalStepWrapperStyle,
   ProposalStepTitleStyle,
@@ -31,6 +29,7 @@ import {
   ProposalCancelButtonStyle,
   ProposalButtonsWrapperStyle,
   ProposalAuthInlineWrapperStyle,
+  ProposalSubmitButtonsWidgetStyle,
 } from './style';
 
 type Props = {
@@ -64,9 +63,8 @@ export const ProposalForm: React.FC<Props> = ({
   waitingApiCallback,
 }) => {
   const { state } = useAppContext();
-  const { source, device } = state.appConfig;
+  const { source } = state.appConfig;
   const isWidget = source === 'widget';
-  const isDesktop = matchDesktopDevice(device);
   const inputRef = useRef() as React.MutableRefObject<HTMLTextAreaElement>;
   const question: QuestionType | null = selectCurrentQuestion(state);
   const { language } = state.appConfig;
@@ -182,16 +180,11 @@ export const ProposalForm: React.FC<Props> = ({
             })}
           </ScreenReaderItemStyle>
         </ProposalFieldWrapperStyle>
-        {isWidget && isDesktop ? (
-          <SpaceBetweenRowStyle>
-            {link}
-            {buttons}
-          </SpaceBetweenRowStyle>
-        ) : (
-          buttons
-        )}
+        <ProposalSubmitButtonsWidgetStyle>
+          {link}
+          {buttons}
+        </ProposalSubmitButtonsWidgetStyle>
       </form>
-      {(!isWidget || !isDesktop) && link}
     </ProposalStepWrapperStyle>
   );
 };
