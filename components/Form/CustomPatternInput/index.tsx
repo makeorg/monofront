@@ -2,6 +2,7 @@ import React, { ChangeEvent, FC, useRef } from 'react';
 import { ErrorObjectType } from '@make.org/types';
 import { useIsFieldValid } from '@make.org/utils/hooks/useFieldValidation';
 import { throttle } from '@make.org/utils/helpers/throttle';
+import { useAppContext } from '@make.org/store';
 import {
   BasicInputStyle,
   CenterInputIconStyle,
@@ -53,6 +54,10 @@ export const CustomPatternInput: FC<Props> = ({
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const isFieldValid = useIsFieldValid(inputRef, error);
+  const { state } = useAppContext();
+  const { source } = state.appConfig;
+  const isWidget = source === 'widget';
+
   return (
     <MiddleFakeFieldStyle hasError={!isFieldValid} className={name}>
       <CenterInputIconStyle aria-hidden>{icon}</CenterInputIconStyle>
@@ -70,7 +75,9 @@ export const CustomPatternInput: FC<Props> = ({
           maxLength={maxLength}
           aria-invalid={!isFieldValid}
         />
-        <FloatingLabelStyle htmlFor={name}>{label}</FloatingLabelStyle>
+        <FloatingLabelStyle htmlFor={name} isWidget={isWidget}>
+          {label}
+        </FloatingLabelStyle>
       </FieldWrapperStyle>
     </MiddleFakeFieldStyle>
   );

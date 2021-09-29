@@ -51,8 +51,11 @@ export const ConditionParagraphStylePanel = styled(InlineParagraphStyle)`
   font-family: ${MakeFonts.CircularStandardBook};
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   width: 100%;
-  margin-bottom: 20px;
+  margin: 20px 0px;
   a {
     color: ${color.greyDark};
+  }
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    margin-top: 0px;
   }
 `;

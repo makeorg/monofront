@@ -155,8 +155,13 @@ export const FormRequirementsStyle = styled.p`
 `;
 
 export const TwoFieldsRowStyle = styled(FlexElementStyle)`
+  flex-direction: column;
+  flex-wrap: wrap;
   width: 100%;
   justify-content: space-between;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    flex-direction: row;
+  }
 `;
 
 export const FakeFieldStyle = styled.div<{ hasError: boolean }>`
@@ -218,10 +223,11 @@ export const FieldWrapperStyle = styled.div`
   }
 `;
 
-export const FloatingLabelStyle = styled.label`
+export const FloatingLabelStyle = styled.label<{ isWidget?: boolean }>`
   font-family: ${MakeFonts.CircularStandardBook};
   color: ${color.greyDark};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${props =>
+    props.isWidget ? '14px' : intToPx(typography.font.fontsize.XS.value)};
   line-height: 38px;
   font-weight: normal;
   position: absolute;
@@ -230,6 +236,10 @@ export const FloatingLabelStyle = styled.label`
   top: 0;
   transition: 0.25s ease all;
   white-space: nowrap;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    font-size: ${props =>
+      props.isWidget && intToPx(typography.font.fontsize.XS.value)};
+  }
 `;
 
 export const FormErrorsContainerStyle = styled.div`
