@@ -12,6 +12,9 @@ export const initDevState = (
     device: DESKTOP_DEVICE,
     country: 'FR',
     language: 'fr',
+    queryParams: {
+      source: 'mag_plus',
+    },
   },
   currentQuestion,
 });

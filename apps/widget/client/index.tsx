@@ -68,40 +68,18 @@ if (env.isDev()) {
 
 const serverState = window.INITIAL_STATE || initialState;
 
+// Init API service
 ApiService.strategy = apiClient;
 apiClient.appname = 'widget';
 apiClient.location = 'widget';
 apiClient.refreshTokenCallback = refreshToken;
 
 const initApp = async (state: StateRoot) => {
-  const { source, country, language, queryParams } = state.appConfig;
-  const trackingSource = queryParams.source;
-
-  // add listener to update trackingParamsService && sessionId in state
-  // should be before first api call (before authenticationState) to get visitorId
-  apiClient.addHeadersListener(
-    'trackingServiceListener',
-    (headers: ApiServiceHeadersType) => {
-      trackingParamsService.visitorId =
-        headers['x-visitor-id'] || trackingParamsService.visitorId;
-    }
-  );
-  const authenticationStateData = await authenticationState();
-
-  // Set in session storage some keys from query params
-  setDataFromQueryParams(queryParams);
-
+  // init store
   let store = {
     ...state,
-    user: {
-      ...state.user,
-      authentication: {
-        ...state.user.authentication,
-        ...authenticationStateData,
-      },
-    },
-    session: { sessionId: '' },
     customData: getAll(), // custom_data already saved in session_storage
+    session: { sessionId: '' },
   };
 
   if (env.isDev()) {
@@ -129,33 +107,54 @@ const initApp = async (state: StateRoot) => {
     }
   }
 
-  // init languages
-  i18n.init({
-    interpolation: {
-      escapeValue: false,
-    },
-    debug: env.isDev(),
-    lng: language || DEFAULT_LANGUAGE,
-    resources: translationRessources,
-  });
+  const { source, country, language, queryParams } = store.appConfig;
 
-  // Set date helper language
-  DateHelper.language = language;
+  // Set in session storage some keys from query params
+  setDataFromQueryParams(queryParams);
 
-  // add listerner to update apiClient params
-  trackingParamsService.addListener({
-    onTrackingUpdate: (params: any) => {
-      apiClient.source = trackingSource || params.source;
-      apiClient.country = params.country;
-      apiClient.language = params.language;
-      apiClient.url = params.url;
-      apiClient.referrer = params.referrer;
-      apiClient.questionId = params.questionId;
-    },
-  });
+  // tracking values
+  const currentQuestionId =
+    store.questions[store.currentQuestion]?.question.questionId || '';
+  const currentUrl =
+    typeof window !== 'undefined' &&
+    window.parent &&
+    typeof window.document !== 'undefined' &&
+    window.document.location &&
+    window.location !== window.parent.location
+      ? window.document.referrer
+      : window.location.href;
+  const referrer =
+    typeof window !== 'undefined' && !!window.document?.referrer
+      ? window.document.referrer
+      : '';
 
+  // Set tracking params
+  trackingParamsService.source = queryParams.source || source;
+  trackingParamsService.country = country;
+  trackingParamsService.language = language;
+  trackingParamsService.questionId = currentQuestionId;
   trackingParamsService.location = 'widget';
+  trackingParamsService.url = currentUrl;
+  trackingParamsService.referrer = referrer;
+  trackingParamsService.questionSlug = store.currentQuestion;
 
+  // Set api headers params
+  apiClient.source = queryParams.source || source;
+  apiClient.country = country;
+  apiClient.language = language;
+  apiClient.url = currentUrl;
+  apiClient.referrer = referrer;
+  apiClient.questionId = currentQuestionId;
+
+  // add listener to update trackingParamsService && sessionId in state
+  // should be before first api call (before authenticationState) to get visitorId
+  apiClient.addHeadersListener(
+    'trackingServiceListener',
+    (headers: ApiServiceHeadersType) => {
+      trackingParamsService.visitorId =
+        headers['x-visitor-id'] || trackingParamsService.visitorId;
+    }
+  );
   // init oauth utils
   const retrieveAccessToken = async (
     token: string
@@ -177,12 +176,32 @@ const initApp = async (state: StateRoot) => {
 
   initOauthRefresh(retrieveAccessToken);
 
-  // Set tracking params
-  trackingParamsService.source = trackingSource || source;
-  trackingParamsService.country = country;
-  trackingParamsService.language = language;
-  trackingParamsService.questionId =
-    store.questions[store.currentQuestion]?.question.questionId || '';
+  // check authentication
+  const authenticationStateData = await authenticationState();
+
+  store = {
+    ...store,
+    user: {
+      ...store.user,
+      authentication: {
+        ...store.user.authentication,
+        ...authenticationStateData,
+      },
+    },
+  };
+
+  // init languages
+  i18n.init({
+    interpolation: {
+      escapeValue: false,
+    },
+    debug: env.isDev(),
+    lng: language || DEFAULT_LANGUAGE,
+    resources: translationRessources,
+  });
+
+  // Set date helper language
+  DateHelper.language = language;
 
   const appDom = document.getElementById('app');
   const renderMethod = module.hot ? render : hydrate;

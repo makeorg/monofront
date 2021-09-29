@@ -87,6 +87,10 @@ export type TrackingParamsUpdateType = {
   questionSlug?: string;
 };
 
-export type TrackingParamsListenerType = {
+export type TrackingParamsOnUpdateListenerType = {
   onTrackingUpdate: (params: TrackingParamsUpdateType) => void;
+};
+
+export type TrackingParamsBeforeGetListenerType = {
+  execute: () => void;
 };

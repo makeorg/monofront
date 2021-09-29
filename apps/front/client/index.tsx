@@ -29,6 +29,7 @@ import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 import { ApiServiceHeadersType, StateRoot } from '@make.org/types';
 import { initTrackersFromPreferences } from '@make.org/utils/helpers/cookies';
 import { COOKIE } from '@make.org/types/enums';
+import { getAppTrackingLocation } from '@make.org/utils/helpers/getLocationContext';
 import { CountryListener } from './app/CountryListener';
 import { AppContainer } from './app';
 import { cookieIsEnabled, thirdCookieEnabled } from './helper/cookieDetect';
@@ -139,8 +140,8 @@ const initApp = async (state: StateRoot) => {
   // Set date helper language
   DateHelper.language = language;
 
-  // add listerner to update apiClient params
-  trackingParamsService.addListener({
+  // Set tracking params
+  trackingParamsService.addOnUpdateListener({
     onTrackingUpdate: (params: any) => {
       apiClient.source = params.source;
       apiClient.country = params.country;
@@ -151,11 +152,24 @@ const initApp = async (state: StateRoot) => {
       apiClient.questionId = params.questionId;
     },
   });
-
-  // Set tracking params
   trackingParamsService.source = source;
   trackingParamsService.country = country;
   trackingParamsService.language = language;
+  trackingParamsService.referrer =
+    typeof window !== 'undefined' && !!window.document.referrer
+      ? window.document.referrer
+      : '';
+  trackingParamsService.addBeforeGetListener({
+    execute: () => {
+      trackingParamsService.url =
+        typeof window !== 'undefined' && window && window.location
+          ? window.location.href
+          : 'undefined';
+      trackingParamsService.location = getAppTrackingLocation(
+        window?.location?.pathname
+      );
+    },
+  });
 
   const { currentQuestion, questions, customData } = store;
   if (currentQuestion && questions[currentQuestion]) {

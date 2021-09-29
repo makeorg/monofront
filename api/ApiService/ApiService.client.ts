@@ -186,6 +186,7 @@ export class ApiServiceClient implements IApiServiceStrategy {
         'x-make-location': this._location,
         'x-make-referrer': this._referrer,
         'x-make-custom-data': this._customData,
+        'x-make-url': this._url,
       },
       ...optionHeaders,
     };

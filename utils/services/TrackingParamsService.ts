@@ -1,8 +1,8 @@
 /* eslint-disable  no-underscore-dangle */
-import { getAppTrackingLocation } from '@make.org/utils/helpers/getLocationContext';
 import {
   TrackingCommonConfigurationParamsType,
-  TrackingParamsListenerType,
+  TrackingParamsOnUpdateListenerType,
+  TrackingParamsBeforeGetListenerType,
 } from '@make.org/types';
 
 class TrackingParamsServiceClass {
@@ -24,7 +24,9 @@ class TrackingParamsServiceClass {
 
   _url?: string = undefined;
 
-  _listeners: TrackingParamsListenerType[] = [];
+  _onUpdateListeners: TrackingParamsOnUpdateListenerType[] = [];
+
+  _beforeGetListeners: TrackingParamsBeforeGetListenerType[] = [];
 
   _all: TrackingCommonConfigurationParamsType = {
     location: this._location,
@@ -44,12 +46,14 @@ class TrackingParamsServiceClass {
       this._instance = this;
     }
 
-    this._referrer =
-      typeof window !== 'undefined' && !!window.document.referrer
-        ? window.document.referrer
-        : '';
-
     return this._instance;
+  }
+
+  set url(url: string) {
+    if (this._url !== url) {
+      this._url = url;
+      this._dispatchUpdate();
+    }
   }
 
   set source(source: string) {
@@ -113,16 +117,6 @@ class TrackingParamsServiceClass {
     return this._visitorId;
   }
 
-  _updateDynamicParams() {
-    this._url =
-      typeof window !== 'undefined' && window && window.location
-        ? window.location.href
-        : undefined;
-
-    this._location = getAppTrackingLocation(window.location.pathname);
-    this._dispatchUpdate();
-  }
-
   _dispatchUpdate() {
     this._all = {
       location: this._location,
@@ -134,19 +128,30 @@ class TrackingParamsServiceClass {
       referrer: this._referrer,
       url: this._url,
     };
-    this._listeners.forEach(listener => listener.onTrackingUpdate(this._all));
+    this._onUpdateListeners.forEach(listener =>
+      listener.onTrackingUpdate(this._all)
+    );
   }
 
-  addListener(object: TrackingParamsListenerType) {
+  addOnUpdateListener(object: TrackingParamsOnUpdateListenerType) {
     const requiredMethod = object.onTrackingUpdate;
     if (requiredMethod === undefined) {
       throw new Error('Object does not support the interface.');
     }
-    this._listeners.push(object);
+    this._onUpdateListeners.push(object);
+  }
+
+  addBeforeGetListener(object: TrackingParamsBeforeGetListenerType) {
+    const requiredMethod = object.execute;
+    if (requiredMethod === undefined) {
+      throw new Error('Object does not support the interface.');
+    }
+    this._beforeGetListeners.push(object);
   }
 
   all(): TrackingCommonConfigurationParamsType {
-    this._updateDynamicParams();
+    this._beforeGetListeners.forEach(listener => listener.execute());
+
     return this._all;
   }
 }
