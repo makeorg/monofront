@@ -17,10 +17,14 @@ export const secureMiddleware = async (
     req.originalUrl.indexOf('&hash')
   );
 
+  const formattedBracketsUrl = urlToCheck
+    .replace('%5B', '[')
+    .replace('%5D', ']');
+
   try {
     const checkHashStatus = await SecurityService.checkSecureHash(
       hash?.toString() || '',
-      urlToCheck
+      formattedBracketsUrl
     );
     if (checkHashStatus?.status !== 204) {
       res.unsecure = true;
