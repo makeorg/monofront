@@ -18,6 +18,12 @@ export const mainRoute = async (
   const { questionSlug, country, language } = req.query;
   const noIntroCard = true;
   const noPushProposal = false;
+  const queryArray = Object.keys(req.query);
+
+  if (!queryArray || queryArray.length === 0) {
+    // When widget is called without any param, it redirects to /mainteance without any log
+    return res.redirect('/maintenance');
+  }
 
   if (!questionSlug || !country) {
     logWarning({
