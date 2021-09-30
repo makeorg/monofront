@@ -153,7 +153,9 @@ export const reactRender = async (
   if (!questionSlug || !country || !hash) {
     state.appConfig.maintenance = true;
     logError({
-      message: 'Missing mandatory query params in request',
+      message: `Missing mandatory query params in request - questionSlug: ${
+        questionSlug || undefined
+      } / country : ${country || undefined} / hash : ${hash || undefined}`,
       url: req.originalUrl,
       ...commonLogs,
     });
