@@ -61,6 +61,9 @@ FROM keymetrics/pm2:16-alpine AS base-production
 
 WORKDIR /usr/app
 
+# git commands are necessary to build /version
+RUN apk --no-cache add git
+
 COPY ["package*.json", "yarn.lock", "./"]
 COPY ["apps/widget/package*.json", "./apps/widget/"]
 COPY ["api/package*.json", "./api/"]

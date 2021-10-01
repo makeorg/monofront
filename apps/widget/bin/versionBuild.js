@@ -18,7 +18,7 @@ const branch = childProcess
   .toString()
   .trim();
 
-const projectName = 'make.org-frontend';
+const projectName = 'make.org-widget';
 const dateTime = new Date();
 
 const version = {

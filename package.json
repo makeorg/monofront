@@ -19,7 +19,7 @@
     "apimock"
   ],
   "scripts": {
-    "postinstall": "if [ -d .git ]; then husky install && rm -rf .git/hooks && ln -s ../.husky .git/hooks; fi",
+    "postinstall": "if [ -d .git ] && [ -d .husky ]; then husky install && rm -rf .git/hooks && ln -s ../.husky .git/hooks; fi",
     "start:widget": "yarn workspace @make.org/widget dev",
     "prod:widget": "yarn workspace @make.org/widget prod",
     "start:front": "yarn workspace @make.org/front dev",
