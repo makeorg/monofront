@@ -46,6 +46,7 @@ test:
   script:    
     - yarn workspace @make.org/front translation
     - yarn workspace @make.org/front documentation
+    - yarn workspace @make.org/widget translation
     - yarn jest --coverage
   artifacts:
     expire_in: 1 week
