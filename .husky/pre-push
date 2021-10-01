@@ -1,6 +1,7 @@
 #!/bin/sh
 yarn workspace @make.org/front translation
 yarn workspace @make.org/front documentation
+yarn workspace @make.org/widget translation
 yarn eslint ./
 yarn tsc --noEmit
 yarn jest

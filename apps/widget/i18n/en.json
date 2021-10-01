@@ -1265,8 +1265,13 @@
   },
   "maintenance": {
     "title": "Ongoing maintenance",
-    "subtitle":"Oops, we're sorry! Make.org is currently down for maintenance",
+    "subtitle": "Oops, we're sorry! Make.org is currently down for maintenance",
     "description": "Feel free to come back in few minutes to discover the proposals offered by other citizens and submit yours",
     "button": "Find out more about Make.org"
+  },
+  "unsecure": {
+    "title": "@@unsecure.title|fr:La consultation est maintenant terminée",
+    "description": "@@unsecure.description|fr:Vous souhaitez en savoir plus sur ce sujet ? Découvrez la suite de l'opération et restez informé(e) de toutes nos consultations citoyennes en vous inscrivant sur Make.org",
+    "link": "@@unsecure.link|fr:Découvrir notre opération"
   }
 }
