@@ -1,5 +1,4 @@
 /** Proposal Action */
-export const PROPOSE_SUCCESS = 'PROPOSAL_PROPOSE_SUCCESS';
 export const PROPOSAL_LOAD = 'PROPOSAL_LOAD';
 /** Panel action */
 export const PANEL_OPEN = 'PANEL_OPEN';

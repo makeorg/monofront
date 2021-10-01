@@ -10,7 +10,6 @@ import {
   removePanelContent,
   setPanelContent,
 } from '@make.org/store/actions/panel';
-import { proposeSuccess } from '@make.org/store/actions/proposal';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { useAppContext } from '@make.org/store';
 import { useLocation } from 'react-router';
@@ -76,7 +75,6 @@ export const ProposalJourney: React.FC = () => {
         />
       )
     );
-    dispatch(proposeSuccess());
     trackDisplayProposalSubmitValidation();
   };
 

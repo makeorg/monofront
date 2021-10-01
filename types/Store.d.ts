@@ -40,7 +40,6 @@ export type StateViews = {
 
 // Proposal State
 export type StateProposal = {
-  readonly hasProposed: boolean;
   readonly popularProposals: ProposalType[];
   readonly error?: ErrorObjectType;
   readonly data: any; // to check
