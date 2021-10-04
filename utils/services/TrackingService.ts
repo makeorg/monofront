@@ -17,7 +17,7 @@ import { FacebookTracking } from './Trackers/FacebookTracking';
 import { TwitterTracking } from './Trackers/TwitterTracking.js';
 import { trackingParamsService } from './TrackingParamsService';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
-import { MixpanelTracking } from './Trackers/MixpanelTracking';
+// import { MixpanelTracking } from './Trackers/MixpanelTracking';
 import { Logger } from './Logger';
 
 const validateParameters = (
@@ -165,17 +165,17 @@ export const TrackingService = {
       Logger.logError(
         `Tracking event "${eventName}" failed due to lack of unique id`
       );
-      return;
     }
 
-    MixpanelTracking.track(
-      eventName,
-      // @ts-ignore
-      getEventParameters({
-        ...externalTrackingParameters,
-        // @ts-ignore
-        distinctId: trackingParamsService.visitorId,
-      })
-    );
+    // Todo handle MixpanelTracking init
+    // MixpanelTracking.track(
+    //   eventName,
+    //   // @ts-ignore
+    //   getEventParameters({
+    //     ...externalTrackingParameters,
+    //     // @ts-ignore
+    //     distinctId: trackingParamsService.visitorId,
+    //   })
+    // );
   },
 };
