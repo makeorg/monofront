@@ -26,7 +26,7 @@ import { Cookie } from 'universal-cookie';
 import { getLanguageFromCountryCode } from '@make.org/utils/helpers/countries';
 import deepFreeze from 'deep-freeze';
 import { WIDGET_CLIENT_DIR } from './paths';
-import { logError, logInfo } from './helpers/ssr.helper';
+import { logInfo } from './helpers/ssr.helper';
 import App from '../client/App';
 
 deepFreeze(initialState);
@@ -152,14 +152,6 @@ export const reactRender = async (
 
   if (!questionSlug || !country || !hash) {
     state.appConfig.maintenance = true;
-    logError({
-      message: `Missing mandatory query params in request - questionSlug: ${
-        questionSlug || undefined
-      } / country : ${country || undefined} / hash : ${hash || undefined}`,
-      url: req.originalUrl,
-      ...commonLogs,
-    });
-    return res.send(reactHtml);
   }
 
   // add log here
