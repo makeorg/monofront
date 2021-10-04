@@ -8,6 +8,6 @@
 /coverage
 /*/*/coverage
 .dockerignore
+.husky
 Dockerfile
-.git
 docker-compose.dev.yaml
