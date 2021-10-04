@@ -144,10 +144,11 @@ export const MixpanelTracking = {
   },
   track(eventName: string, eventParameters: MixpanelEventParams): void {
     if (!isMixpanelInitialized()) {
-      Logger.logWarning({
-        message: `Failed to track event ${eventName}: MixpanelTracking should be initialized`,
-        name: 'tracking-init',
-      });
+      // Todo handle cleanly with and without init
+      // Logger.logWarning({
+      //   message: `Failed to track event ${eventName}: MixpanelTracking should be initialized`,
+      //   name: 'tracking-init',
+      // });
       return;
     }
     if (!eventParameters.distinctId) {
