@@ -25,11 +25,15 @@ export const DefaultStylesheet = createGlobalStyle`
   }
 
   .make-widget {
+    position: relative;
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
     min-height: 550px;
+    max-height: 550px;
+    max-width: 635px;
+    margin: 0 auto;
   }
 
   h1,

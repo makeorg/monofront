@@ -293,3 +293,7 @@ export const FinalCardSeparatorStyle = styled(SeparatorStyle)`
 export const FinalCardRegisterStyle = styled.div`
   color: ${color.greyDark};
 `;
+
+export const IntroProposalRedButtonStyle = styled(RedButtonStyle)`
+  margin-top: 15px;
+`;
