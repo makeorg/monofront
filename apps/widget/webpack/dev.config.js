@@ -74,21 +74,21 @@ module.exports = {
     host: '0.0.0.0',
     historyApiFallback: true,
     disableHostCheck: true,
-    https: JSON.parse(process.env.HTTPS),
+    https: JSON.parse(process.env.LOCAL_USE_CERTS),
     watchOptions: {
       aggregateTimeout: 500, // delay before reloading
       poll: true, // enable polling since fsevents are not supported in docker
     },
     proxy: {
       '/backend': {
-        target: process.env.PROXY_TARGET_API_URL,
+        target: process.env.LOCAL_PROXY_API_URL,
         secure: false,
         changeOrigin: true,
         pathRewrite: {
           '^/backend': '',
         },
         cookieDomainRewrite: {
-          '*': process.env.HOST,
+          '*': process.env.LOCAL_COOKIES_DOMAIN_REWRITE,
         },
       },
     },

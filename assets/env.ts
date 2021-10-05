@@ -7,7 +7,7 @@ const isDev = (): boolean => nodeEnv() === 'development';
 const isTest = (): boolean => nodeEnv() === 'test';
 const apiUrl = (): string | undefined => process.env.API_URL;
 const proxyTargetApiUrl = (): string | undefined =>
-  process.env.PROXY_TARGET_API_URL;
+  process.env.LOCAL_PROXY_API_URL || process.env.PROXY_TARGET_API_URL; // need refactor beetween widget and front
 const frontUrl = (): string | undefined => process.env.FRONT_URL;
 const port = (): string | undefined => process.env.PORT;
 const isProductionUrl = (): boolean | undefined =>
