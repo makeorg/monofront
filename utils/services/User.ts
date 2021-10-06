@@ -8,6 +8,7 @@ import {
   ErrorObjectType,
   RegisterFormDataType,
   PersonalityProfileType,
+  UserAuthType,
 } from '@make.org/types';
 import { mapErrors } from '@make.org/utils/services/ApiErrors';
 import {
@@ -27,7 +28,6 @@ import { storeTokens } from '@make.org/api/OauthRefresh';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 import { OrganisationService } from './Organisation';
 import { PersonalityService } from './Personality';
-import { trackAuthenticationSocialSuccess } from './Tracking';
 
 const updatePassword = async (
   userId: string,
@@ -329,10 +329,10 @@ const loginSocial = async (
   provider: string,
   token: string,
   approvePrivacyPolicy?: boolean,
-  success?: () => void,
+  success?: (created_at: string) => void,
   failure?: () => void,
   unexpectedError?: () => void
-): Promise<void> => {
+): Promise<void | UserAuthType> => {
   try {
     const response = await UserApiService.loginSocial(
       provider,
@@ -344,11 +344,10 @@ const loginSocial = async (
       const userAuth = response.data;
       storeTokens(userAuth.access_token, userAuth.refresh_token);
       apiClient.token = userAuth.access_token;
-    }
 
-    if (success) {
-      success();
-      trackAuthenticationSocialSuccess(provider, created_at.toString());
+      if (success) {
+        success(response.data.created_at);
+      }
     }
     return response && response.data;
   } catch (error: unknown) {
@@ -368,7 +367,7 @@ const checkSocialPrivacyPolicy = async (
   token: string,
   privacyPolicyDate: string,
   action?: () => void,
-  success?: () => void,
+  success?: (created_at: string) => void,
   failure?: () => void,
   unexpectedError?: () => void
 ): Promise<void | null> => {

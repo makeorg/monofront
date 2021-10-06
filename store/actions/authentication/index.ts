@@ -161,7 +161,7 @@ export const loginSocial = async (
   socialToken: string,
   approvePrivacyPolicy: boolean,
   dispatch: Dispatch
-): Promise<void> => {
+): Promise<void | UserAuthType> => {
   dispatch(loginSocialRequest(provider));
   if (!socialToken) {
     dispatch(loginSocialFailure());
