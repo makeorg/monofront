@@ -12,7 +12,10 @@ import {
   modalClose,
   modalShowDataPolicySocial,
 } from '@make.org/store/actions/modal';
-import { trackAuthenticationSocialFailure } from '@make.org/utils/services/Tracking';
+import {
+  trackAuthenticationSocialFailure,
+  trackAuthenticationSocialSuccess,
+} from '@make.org/utils/services/Tracking';
 
 import {
   loginSocialSuccess,
@@ -25,7 +28,6 @@ import { NOTIF } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
 import i18n from 'i18next';
 import { closePanel } from '@make.org/store/actions/panel';
-import { trackAuthenticationSocialSuccess } from '../../../utils/services/Tracking';
 import {
   FacebookButtonStyle,
   SocialButtonLabelStyle,

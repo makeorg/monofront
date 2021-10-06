@@ -13,6 +13,7 @@ import {
   trackLoginEmailSuccess,
   trackLoginEmailFailure,
   trackAuthenticationSocialFailure,
+  trackAuthenticationSocialSuccess,
 } from '@make.org/utils/services/Tracking';
 import { Logger } from '@make.org/utils/services/Logger';
 import { UserService } from '@make.org/utils/services/User';
@@ -21,7 +22,6 @@ import { modalClose } from '../modal';
 import * as actionTypes from '../../actionTypes';
 import { displayNotificationBanner } from '../notifications';
 import { clearSessionId } from '../session';
-import { trackAuthenticationSocialSuccess } from '../../../utils/services/Tracking';
 
 export const loginRequest = (): ReducerAction => ({
   type: actionTypes.LOGIN_REQUEST,

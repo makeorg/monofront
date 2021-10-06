@@ -12,7 +12,10 @@ import {
   modalClose,
   modalShowDataPolicySocial,
 } from '@make.org/store/actions/modal';
-import { trackAuthenticationSocialFailure } from '@make.org/utils/services/Tracking';
+import {
+  trackAuthenticationSocialFailure,
+  trackAuthenticationSocialSuccess,
+} from '@make.org/utils/services/Tracking';
 import {
   loginSocialSuccess,
   loginSocialFailure,
@@ -22,7 +25,6 @@ import { Logger } from '@make.org/utils/services/Logger';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { NOTIF } from '@make.org/types/enums';
 import i18n from 'i18next';
-import { trackAuthenticationSocialSuccess } from '../../../utils/services/Tracking';
 import {
   GoogleButtonStyle,
   SocialButtonLabelStyle,
