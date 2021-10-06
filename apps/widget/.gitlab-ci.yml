@@ -15,6 +15,7 @@ cache:
 stages:
   - check
   - build
+  - merge
   - deploy
 
 .check:
@@ -58,15 +59,12 @@ build-widget:
     - docker tag $NEXUS_URL/$IMAGE_NAME:$IMAGE_VERSION $NEXUS_URL/$IMAGE_NAME:$CI_COMMIT_REF_NAME-latest
     - docker push $NEXUS_URL/$IMAGE_NAME:$CI_COMMIT_REF_NAME-latest
 
-.deploy-preproduction:
+deploy-widget-preproduction:
   stage: deploy
   environment:
     name: preproduction
   only:
     - preproduction
-
-deploy-widget-preproduction:
-  extends: .deploy-preproduction
   script:
     - >
       curl -D - -X "POST"
@@ -75,3 +73,18 @@ deploy-widget-preproduction:
       -H "X-Rundeck-Auth-Token: $WIDGET_RUNDECK_PREPROD_TOKEN"
       --data-urlencode "argString=-version $CI_COMMIT_REF_NAME-latest"
       $RUNDECK_PREPROD_URL/api/16/job/$WIDGET_RUNDECK_PREPROD_JOB_ID/run
+
+deploy-widget-production:
+  stage: deploy
+  environment:
+    name: production
+  only:
+    - production
+  script: echo "Running deploy-widget-production..."
+    # - >
+    #   curl -D - -X "POST"
+    #   -H "Accept: application/json"
+    #   -H "Content-Type: application/x-www-form-urlencoded"
+    #   -H "X-Rundeck-Auth-Token: $WIDGET_RUNDECK_PROD_TOKEN"
+    #   --data-urlencode "argString=-version $CI_COMMIT_REF_NAME-latest"
+    #   $RUNDECK_PROD_URL/api/16/job/$RUNDECK_PROD_JOB_ID/run

@@ -12,6 +12,7 @@ cache:
 stages:
   - check
   - apps
+  - merge
   
 .check:
   stage: check
@@ -22,6 +23,19 @@ stages:
     - node -v
     - export YARN_VERSION="$YARN_VERSION"
     - yarn install --check-files
+
+.apps:
+  stage: apps
+  trigger:
+      strategy: depend
+  rules:
+    changes:
+      - api/*
+      - assets/*
+      - components/*
+      - store/*
+      - ui/*
+      - utils/*
 
 lint:
   extends: .check
@@ -54,31 +68,36 @@ jscpd:
       - reports
 
 make-front:
-  stage: apps
+  extends: .apps
   trigger:
       include: apps/front/.gitlab-ci.yml
-      strategy: depend
   rules:
     - changes:
-      - apps/front/*
-      - api/*
-      - assets/*
-      - components/*
-      - store/*
-      - ui/*
-      - utils/*
+      - apps/font/*
 
 make-widget:
-  stage: apps
+  extends: .apps
   trigger:
       include: apps/widget/.gitlab-ci.yml
-      strategy: depend
   rules:
     - changes:
       - apps/widget/*
-      - api/*
-      - assets/*
-      - components/*
-      - store/*
-      - ui/*
-      - utils/*
+
+merge-to-prod:
+  stage: merge
+  when: manual
+  allow_failure: false
+  script: echo "Running merge to prod..."
+    # - mkdir -p ~/.ssh/
+    # - chmod 700 ~/.ssh
+    # - ssh-keyscan -t rsa gitlab.com > ~/.ssh/known_hosts
+    # - echo "${DEPLOY_PRIVATE_KEY}" > ~/.ssh/id_rsa
+    # - chmod 600 ~/.ssh/id_rsa
+    # - export CI_PUSH_REPO=`echo $CI_REPOSITORY_URL | perl -pe 's#.*@(.+?(\:\d+)?)/#git@\1:#'`
+    # - echo "Target repo is ${CI_PUSH_REPO}"
+    # - git config --global user.email "${GITLAB_USER_EMAIL}"
+    # - git config --global user.name "${GITLAB_USER_NAME}"
+    # - git remote set-url origin "${CI_PUSH_REPO}"
+    # - git checkout production
+    # - git merge --ff-only origin/preproduction
+    # - git push origin production:production
