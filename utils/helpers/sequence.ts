@@ -10,7 +10,6 @@ import { CARD, SEQUENCE } from '@make.org/types/enums';
  * Build cards array
  * @param  {ProposalType[]} proposals
  * @param  {QuestionExtraSlidesConfigType} extraSlidesConfig
- * @param  {boolean} hasProposed
  * @param  {boolean} canPropose
  * @param  {boolean} isStandardSequence
  * @param  {string} introCardParam
@@ -20,7 +19,6 @@ import { CARD, SEQUENCE } from '@make.org/types/enums';
 export const buildCards = (
   proposals: ProposalType[],
   extraSlidesConfig: QuestionExtraSlidesConfigType,
-  hasProposed: boolean,
   canPropose: boolean,
   isStandardSequence: boolean,
   introCardParam?: boolean,
@@ -32,8 +30,7 @@ export const buildCards = (
     !!extraSlidesConfig.pushProposalCard &&
     !!extraSlidesConfig.pushProposalCard.enabled &&
     !!canPropose &&
-    !!pushProposalParam &&
-    !hasProposed;
+    !!pushProposalParam;
   const withIntroCard: boolean =
     !!extraSlidesConfig.introCard &&
     !!extraSlidesConfig.introCard.enabled &&

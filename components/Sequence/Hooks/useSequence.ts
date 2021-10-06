@@ -40,8 +40,7 @@ export const useSequence = (
   const { state, dispatch } = useAppContext();
 
   // StateRoot
-  const { proposal, sequence } = state;
-  const { hasProposed = false } = proposal || {};
+  const { sequence } = state;
   const { isLoggedIn } = selectAuthentication(state) || {};
   const { currentIndex = 0, votedProposalIds } = sequence || {};
   const { source } = state.appConfig;
@@ -99,7 +98,7 @@ export const useSequence = (
       setLoading(false);
     };
     loadSequenceData();
-  }, [question, firstProposalParam, isLoggedIn, hasProposed]);
+  }, [question, firstProposalParam, isLoggedIn]);
 
   // build cards
   useEffect(() => {
@@ -109,7 +108,6 @@ export const useSequence = (
     const buildedCards: SequenceCardType[] = buildCards(
       sequenceProposals,
       question.sequenceConfig,
-      hasProposed,
       question.canPropose,
       isStandardSequence,
       introCardParam,
@@ -119,7 +117,7 @@ export const useSequence = (
     );
     setCards(buildedCards);
     dispatch(loadSequenceCards(buildedCards));
-  }, [hasProposed, sequenceProposals]);
+  }, [sequenceProposals]);
 
   // set current card
   useEffect(() => {
