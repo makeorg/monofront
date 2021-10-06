@@ -17,11 +17,11 @@ import {
 import { Logger } from '@make.org/utils/services/Logger';
 import { UserService } from '@make.org/utils/services/User';
 import { NOTIF } from '@make.org/types/enums';
-
 import { modalClose } from '../modal';
 import * as actionTypes from '../../actionTypes';
 import { displayNotificationBanner } from '../notifications';
 import { clearSessionId } from '../session';
+import { trackAuthenticationSocialSuccess } from '../../../utils/services/Tracking';
 
 export const loginRequest = (): ReducerAction => ({
   type: actionTypes.LOGIN_REQUEST,
@@ -174,8 +174,9 @@ export const loginSocial = async (
     return Promise.resolve();
   }
 
-  const success = () => {
+  const success = (created_at: string) => {
     dispatch(loginSocialSuccess());
+    trackAuthenticationSocialSuccess(provider, created_at);
     getUser(dispatch, true);
     dispatch(
       displayNotificationBanner(
@@ -193,8 +194,8 @@ export const loginSocial = async (
     provider,
     socialToken,
     approvePrivacyPolicy,
-    () => success(),
-    () => failure()
+    success,
+    failure
   );
 };
 
