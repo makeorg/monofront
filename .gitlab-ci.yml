@@ -23,6 +23,19 @@ stages:
     - export YARN_VERSION="$YARN_VERSION"
     - yarn install --check-files
 
+.apps:
+  stage: apps
+  trigger:
+      strategy: depend
+  rules:
+    changes:
+      - api/*
+      - assets/*
+      - components/*
+      - store/*
+      - ui/*
+      - utils/*
+
 lint:
   extends: .check
   script:  
@@ -54,31 +67,17 @@ jscpd:
       - reports
 
 make-front:
-  stage: apps
+  extends: .apps
   trigger:
       include: apps/front/.gitlab-ci.yml
-      strategy: depend
   rules:
     - changes:
-      - apps/front/*
-      - api/*
-      - assets/*
-      - components/*
-      - store/*
-      - ui/*
-      - utils/*
+      - apps/font/*
 
 make-widget:
-  stage: apps
+  extends: .apps
   trigger:
       include: apps/widget/.gitlab-ci.yml
-      strategy: depend
   rules:
     - changes:
       - apps/widget/*
-      - api/*
-      - assets/*
-      - components/*
-      - store/*
-      - ui/*
-      - utils/*

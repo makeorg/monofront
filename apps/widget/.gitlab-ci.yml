@@ -15,6 +15,7 @@ cache:
 stages:
   - check
   - build
+  - merge
   - deploy
 
 .check:
@@ -58,15 +59,12 @@ build-widget:
     - docker tag $NEXUS_URL/$IMAGE_NAME:$IMAGE_VERSION $NEXUS_URL/$IMAGE_NAME:$CI_COMMIT_REF_NAME-latest
     - docker push $NEXUS_URL/$IMAGE_NAME:$CI_COMMIT_REF_NAME-latest
 
-.deploy-preproduction:
+deploy-widget-preproduction:
   stage: deploy
   environment:
     name: preproduction
   only:
     - preproduction
-
-deploy-widget-preproduction:
-  extends: .deploy-preproduction
   script:
     - >
       curl -D - -X "POST"
@@ -75,3 +73,39 @@ deploy-widget-preproduction:
       -H "X-Rundeck-Auth-Token: $WIDGET_RUNDECK_PREPROD_TOKEN"
       --data-urlencode "argString=-version $CI_COMMIT_REF_NAME-latest"
       $RUNDECK_PREPROD_URL/api/16/job/$WIDGET_RUNDECK_PREPROD_JOB_ID/run
+
+deploy-widget-production:
+  stage: deploy
+  environment:
+    name: production
+  only:
+    - production
+  script:
+    - >
+      curl -D - -X "POST"
+      -H "Accept: application/json"
+      -H "Content-Type: application/x-www-form-urlencoded"
+      -H "X-Rundeck-Auth-Token: $WIDGET_RUNDECK_PROD_TOKEN"
+      --data-urlencode "argString=-version $CI_COMMIT_REF_NAME-latest"
+      $RUNDECK_PROD_URL/api/16/job/$RUNDECK_PROD_JOB_ID/run
+
+merge-widget-to-prod:
+  stage: merge
+  when: manual
+  only:
+    - preproduction
+  allow_failure: false
+  script:
+    - mkdir -p ~/.ssh/
+    - chmod 700 ~/.ssh
+    - ssh-keyscan -t rsa gitlab.com > ~/.ssh/known_hosts
+    - echo "${DEPLOY_PRIVATE_KEY}" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - export CI_PUSH_REPO=`echo $CI_REPOSITORY_URL | perl -pe 's#.*@(.+?(\:\d+)?)/#git@\1:#'`
+    - echo "Target repo is ${CI_PUSH_REPO}"
+    - git config --global user.email "${GITLAB_USER_EMAIL}"
+    - git config --global user.name "${GITLAB_USER_NAME}"
+    - git remote set-url origin "${CI_PUSH_REPO}"
+    - git checkout production
+    - git merge --ff-only origin/preproduction
+    - git push origin production:production
