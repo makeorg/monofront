@@ -22,6 +22,8 @@ export const TipWrapperStyle = styled.div<{ isWidget: boolean }>`
   &.first-vote {
     margin-top: ${props => (props.isWidget ? '5px' : '20px')};
     margin-bottom: 0;
+    display: flex;
+    align-items: center;
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     margin-bottom: ${props => (props.isWidget ? '30px' : '20px')};

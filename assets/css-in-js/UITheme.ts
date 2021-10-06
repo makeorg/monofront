@@ -30,6 +30,9 @@ export const UIThemeStylesheet = createGlobalStyle`
     @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
       padding: ${intToPx(DefaultPadding.Desktop)};
     }
+    &.widget{
+      position: absolute;
+    }
   }
 
   .modal-dialog {

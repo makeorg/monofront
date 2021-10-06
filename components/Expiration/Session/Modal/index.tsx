@@ -39,7 +39,7 @@ export const ExpirationSessionModal: React.FC = () => {
   return (
     <ReactModal
       isOpen={showExpirationSession}
-      overlayClassName="modal-overlay"
+      overlayClassName={isWidget ? 'modal-overlay widget' : 'modal-overlay'}
       className={isWidget ? 'modal-dialog widget' : 'modal-dialog expiration'}
       shouldCloseOnOverlayClick
     >

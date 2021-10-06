@@ -10,11 +10,11 @@ import {
 } from '@make.org/components/Sequence/style';
 import { SequenceProgress } from '@make.org/components/Sequence/Progress';
 import {
+  IntroProposalRedButtonStyle,
   SequenceCardStyle,
   SequenceProposalStyle,
 } from '@make.org/components/Sequence/Cards/style';
 import { CARD } from '@make.org/types/enums';
-import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { ProposalAuthor } from '@make.org/components/Proposal/Author';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import {
@@ -69,7 +69,7 @@ export const IntroProposal: FC<Props> = ({ handleChange }) => {
             >
               {proposal.content}
             </SequenceProposalStyle>
-            <RedButtonStyle
+            <IntroProposalRedButtonStyle
               onClick={() => {
                 handleChange(false);
                 trackClickStartSequence();
@@ -78,7 +78,7 @@ export const IntroProposal: FC<Props> = ({ handleChange }) => {
               data-cy-button="start-sequence"
             >
               {i18n.t('top_proposal_card.start')}
-            </RedButtonStyle>
+            </IntroProposalRedButtonStyle>
           </SequenceCardStyle>
           <SequenceProgress disabled />
         </SequenceContentStyle>
