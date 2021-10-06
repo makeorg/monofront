@@ -22,6 +22,7 @@ import { Logger } from '@make.org/utils/services/Logger';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { NOTIF } from '@make.org/types/enums';
 import i18n from 'i18next';
+import { trackAuthenticationSocialSuccess } from '../../../utils/services/Tracking';
 import {
   GoogleButtonStyle,
   SocialButtonLabelStyle,
@@ -39,9 +40,9 @@ export const GoogleAuthentication: React.FC = () => {
   const handleGoogleLoginSuccess = (
     response: GoogleLoginResponse | GoogleLoginResponseOffline
   ) => {
-    const success = async () => {
+    const success = async (created_at: string) => {
       dispatch(loginSocialSuccess());
-
+      trackAuthenticationSocialSuccess(GOOGLE_PROVIDER_ENUM, created_at);
       await getUser(dispatch, state.modal.isOpen);
       dispatch(
         displayNotificationBanner(
@@ -63,7 +64,7 @@ export const GoogleAuthentication: React.FC = () => {
       () => {
         dispatch(modalShowDataPolicySocial(GOOGLE_PROVIDER_ENUM, accessToken));
       },
-      () => success(),
+      success,
       () => trackAuthenticationSocialFailure(GOOGLE_PROVIDER_ENUM),
       () => dispatch(modalClose())
     );

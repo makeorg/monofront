@@ -26,7 +26,6 @@ import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 import { OrganisationService } from './Organisation';
 import { PersonalityService } from './Personality';
-import { trackAuthenticationSocialSuccess } from './Tracking';
 
 const updatePassword = async (
   userId: string,
@@ -312,7 +311,7 @@ const loginSocial = async (
   provider: string,
   token: string,
   approvePrivacyPolicy?: boolean,
-  success?: () => void,
+  success?: (created_at: string) => void,
   failure?: () => void,
   unexpectedError?: () => void
 ): Promise<void> => {
@@ -322,12 +321,14 @@ const loginSocial = async (
       token,
       approvePrivacyPolicy
     );
-    const created_at = response && response.data.created_at;
-    if (success) {
-      success();
-      trackAuthenticationSocialSuccess(provider, created_at.toString());
+    if (!response) {
+      throw new Error('No response in login social api call');
     }
-    return response && response.data;
+    const { created_at } = response.data;
+    if (success) {
+      success(created_at);
+    }
+    return response.data;
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
     if (failure) {
@@ -345,7 +346,7 @@ const checkSocialPrivacyPolicy = async (
   token: string,
   privacyPolicyDate: string,
   action?: () => void,
-  success?: () => void,
+  success?: (created_at: string) => void,
   failure?: () => void,
   unexpectedError?: () => void
 ): Promise<void | null> => {

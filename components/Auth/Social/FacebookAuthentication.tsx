@@ -25,6 +25,7 @@ import { NOTIF } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
 import i18n from 'i18next';
 import { closePanel } from '@make.org/store/actions/panel';
+import { trackAuthenticationSocialSuccess } from '../../../utils/services/Tracking';
 import {
   FacebookButtonStyle,
   SocialButtonLabelStyle,
@@ -94,7 +95,7 @@ export const FacebookAuthentication: React.FC = () => {
 
     const { accessToken } = response;
 
-    const success = () => {
+    const success = (created_at: string) => {
       dispatch(loginSocialSuccess());
       getUser(dispatch, state.modal.isOpen);
       dispatch(
@@ -103,6 +104,7 @@ export const FacebookAuthentication: React.FC = () => {
           NOTIF.NOTIFICATION_LEVEL_SUCCESS
         )
       );
+      trackAuthenticationSocialSuccess(FACEBOOK_PROVIDER_ENUM, created_at);
     };
 
     UserService.checkSocialPrivacyPolicy(
@@ -114,7 +116,7 @@ export const FacebookAuthentication: React.FC = () => {
           modalShowDataPolicySocial(FACEBOOK_PROVIDER_ENUM, accessToken)
         );
       },
-      () => success(),
+      success,
       () => trackAuthenticationSocialFailure(FACEBOOK_PROVIDER_ENUM),
       () => dispatch(modalClose())
     );
