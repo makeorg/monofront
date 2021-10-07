@@ -1263,11 +1263,11 @@
     "title": "Wartung im Gange",
     "subtitle": "Ups, es tut uns leid! Make.org wird gerade gewartet",
     "button": "Erfahre mehr über Make.org",
-    "description": "@@maintenance.description|fr:N'hésitez pas à revenir dans quelques minutes pour découvrir les propositions proposées par d'autres citoyens et soumettre les vôtres"
+    "description": "Zögere nicht in einigen Minuten wiederzukommen, um die Vorschläge der anderen Bürgerinnen und Bürger zu entdecken und deine eigenen Vorschläge einzureichen"
   },
   "unsecure": {
-    "title": "@@unsecure.title|fr:La consultation est maintenant terminée",
-    "description": "@@unsecure.description|fr:Vous souhaitez en savoir plus sur ce sujet ? Découvrez la suite de l'opération et restez informé(e) de toutes nos consultations citoyennes en vous inscrivant sur Make.org",
-    "link": "@@unsecure.link|fr:Découvrir notre opération"
+    "title": "Die Konsultation ist nun beendet",
+    "description": "Du möchtest mehr über dieses Thema erfahren? Entdecke den weiteren Verlauf unserer Aktion und bleibe über alle unsere Bürgerkonsultationen informiert, indem du dich auf Make.org registrierst",
+    "link": "Entdecke unsere Aktion"
   }
 }
