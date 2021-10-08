@@ -10,6 +10,11 @@ export const PanelContainer = styled.div`
   background-color: ${BasicColors.PureWhite};
   padding: 20px;
   width: 100%;
+  height: 175px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-evenly;
 `;
 
 export const MainTitleStyle = styled.h1`

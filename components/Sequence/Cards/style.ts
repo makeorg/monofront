@@ -140,6 +140,7 @@ export const SequenceProposalStyle = styled.blockquote`
   min-height: 82px;
   &.widget {
     font-size: 14px;
+    min-height: 0px;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.M.value)};
@@ -152,6 +153,7 @@ export const SequenceProposalStyle = styled.blockquote`
     &.widget {
       font-size: ${intToPx(typography.font.fontsize.XS.value)};
       align-items: flex-start;
+      min-height: 0px;
     }
   }
 `;
@@ -295,5 +297,5 @@ export const FinalCardRegisterStyle = styled.div`
 `;
 
 export const IntroProposalRedButtonStyle = styled(RedButtonStyle)`
-  margin-top: 15px;
+  margin-top: 30px;
 `;

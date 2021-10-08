@@ -67,12 +67,9 @@ export const SequenceTitleStyle = styled.h2`
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
     letter-spacing: 0.11px;
     margin: 0;
-    min-height: 75px;
     @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
       font-size: ${intToPx(typography.font.fontsize.S.value)};
-      margin-top: 20px;
       letter-spacing: 0.12px;
-      min-height: 55px;
     }
   }
 `;
