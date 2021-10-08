@@ -1270,8 +1270,8 @@
     "button": "Find out more about Make.org"
   },
   "unsecure": {
-    "title": "@@unsecure.title|fr:La consultation est maintenant terminée",
-    "description": "@@unsecure.description|fr:Vous souhaitez en savoir plus sur ce sujet ? Découvrez la suite de l'opération et restez informé(e) de toutes nos consultations citoyennes en vous inscrivant sur Make.org",
-    "link": "@@unsecure.link|fr:Découvrir notre opération"
+    "title": "The consultation is now over",
+    "description": "Do you want to learn more about this cause? Be aware of the rest of the project and new consultations by registering on Make.org",
+    "link": "Discover our project"
   }
 }

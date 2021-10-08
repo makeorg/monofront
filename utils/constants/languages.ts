@@ -17,4 +17,8 @@ export const countriesConfiguration = [
     countryCode: 'LU',
     language: LocaleType.fr,
   },
+  {
+    countryCode: 'CH',
+    language: LocaleType.de,
+  },
 ];
