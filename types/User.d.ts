@@ -64,4 +64,5 @@ export type UserAuthType = {
   expires_in: number;
   refresh_token: string;
   account_creation: boolean;
+  created_at: string;
 };

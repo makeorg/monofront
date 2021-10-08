@@ -162,7 +162,7 @@ export const loginSocial = async (
   socialToken: string,
   approvePrivacyPolicy: boolean,
   dispatch: Dispatch
-): Promise<void> => {
+): Promise<void | UserAuthType> => {
   dispatch(loginSocialRequest(provider));
   if (!socialToken) {
     dispatch(loginSocialFailure());
@@ -175,8 +175,9 @@ export const loginSocial = async (
     return Promise.resolve();
   }
 
-  const success = () => {
+  const success = (createdAt: string) => {
     dispatch(loginSocialSuccess());
+    trackAuthenticationSocialSuccess(provider, createdAt);
     getUser(dispatch, true);
     dispatch(
       displayNotificationBanner(
@@ -194,8 +195,8 @@ export const loginSocial = async (
     provider,
     socialToken,
     approvePrivacyPolicy,
-    () => success(),
-    () => failure()
+    success,
+    failure
   ).then(auth => {
     if (auth) {
       trackAuthenticationSocialSuccess(

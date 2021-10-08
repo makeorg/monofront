@@ -12,10 +12,14 @@ import {
   modalClose,
   modalShowDataPolicySocial,
 } from '@make.org/store/actions/modal';
-import { trackAuthenticationSocialFailure } from '@make.org/utils/services/Tracking';
+import {
+  trackAuthenticationSocialFailure,
+  trackAuthenticationSocialSuccess,
+} from '@make.org/utils/services/Tracking';
 
 import {
   loginSocialSuccess,
+  loginSocialFailure,
   getUser,
 } from '@make.org/store/actions/authentication';
 import { Logger } from '@make.org/utils/services/Logger';
@@ -44,6 +48,7 @@ export const FacebookAuthentication: React.FC = () => {
     response: ReactFacebookLoginInfo | ReactFacebookFailureResponse
   ) => {
     if (!('accessToken' in response)) {
+      dispatch(loginSocialFailure());
       const { status } = response;
       if (status === 'unknown') {
         Logger.logInfo({
@@ -71,6 +76,7 @@ export const FacebookAuthentication: React.FC = () => {
     }
 
     if (!('email' in response)) {
+      dispatch(loginSocialFailure());
       Logger.logError({
         message: `Facebook login failure no email in profile (login is a phone number or email is not yet confirmed)`,
         name: 'social-auth',
@@ -89,7 +95,7 @@ export const FacebookAuthentication: React.FC = () => {
 
     const { accessToken } = response;
 
-    const success = () => {
+    const success = (createdAt: string) => {
       dispatch(loginSocialSuccess());
       getUser(dispatch, state.modal.isOpen);
       dispatch(
@@ -98,6 +104,7 @@ export const FacebookAuthentication: React.FC = () => {
           NOTIF.NOTIFICATION_LEVEL_SUCCESS
         )
       );
+      trackAuthenticationSocialSuccess(FACEBOOK_PROVIDER_ENUM, createdAt);
     };
 
     UserService.checkSocialPrivacyPolicy(
@@ -109,7 +116,7 @@ export const FacebookAuthentication: React.FC = () => {
           modalShowDataPolicySocial(FACEBOOK_PROVIDER_ENUM, accessToken)
         );
       },
-      () => success(),
+      success,
       () => trackAuthenticationSocialFailure(FACEBOOK_PROVIDER_ENUM),
       () => dispatch(modalClose())
     );
