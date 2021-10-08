@@ -30,25 +30,28 @@ const getApp = () => {
   }
 
   const { hostname } = new URL(env.frontUrl() || '');
-  const apiProxy = createProxyMiddleware({
-    target: env.proxyTargetApiUrl() || '',
-    pathRewrite: { '^/backend': '' },
-    changeOrigin: true,
-    cookieDomainRewrite: {
-      '*': hostname,
-    },
-    logLevel: 'error',
-    secure: false,
-    logProvider: () => ({
-      log: logInfo,
-      debug: logInfo,
-      info: logInfo,
-      warn: logWarning,
-      error: logError,
-    }),
-  });
 
-  app.use('/backend', apiProxy);
+  if (env.proxyTargetApiUrl()) {
+    const apiProxy = createProxyMiddleware({
+      target: env.proxyTargetApiUrl() || '',
+      pathRewrite: { '^/backend': '' },
+      changeOrigin: true,
+      cookieDomainRewrite: {
+        '*': hostname,
+      },
+      logLevel: 'error',
+      secure: false,
+      logProvider: () => ({
+        log: logInfo,
+        debug: logInfo,
+        info: logInfo,
+        warn: logWarning,
+        error: logError,
+      }),
+    });
+    app.use('/backend', apiProxy);
+  }
+
   app.use((req, res, next) => nonceUuidMiddleware(res, next));
   app.use(compression());
   app.use(bodyParser.json());

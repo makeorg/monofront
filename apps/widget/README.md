@@ -44,3 +44,19 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Environment variables for production
+
+```bash
+# Widget config URL (will be removed in a future release)
+CONFIG_URL=https://widget-configuration-url.com
+
+# PORT
+PORT=8000
+
+# API url
+API_URL=https://api.make.org
+
+# Front url
+FRONT_URL=https://widget.make.org
+```
