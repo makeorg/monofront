@@ -1,12 +1,6 @@
 image: makeorg/docker-arch-docker:latest
 
 variables: &global_variables
-  IMAGE_APP_NAME: "make-front"
-  IMAGE_APP_TARGET: "app-production"
-  IMAGE_APP_PATH: "apps/front/Dockerfile"
-  IMAGE_WIDGET_NAME: "make-widget-runner"
-  IMAGE_WIDGET_TARGET: "widget-production"
-  IMAGE_WIDGET_PATH: "apps/widget/Dockerfile"
   YARN_VERSION: "1.22.5"
 
 cache:
@@ -17,23 +11,137 @@ cache:
 
 stages:
   - check
-#  - e2e
   - build
   - deploy
-  
+  - merge
+
+# Environments
+.preprod:
+  environment: preproduction
+  only:
+    refs:
+      - preproduction
+
+.prod:
+  environment: production
+  only:
+    refs:
+      - production
+  when: manual
+  allow_failure: false
+
+# Applications
+.front:
+  variables:
+    IMAGE_NAME: make-front
+    IMAGE_APP_TARGET: app-production
+    IMAGE_APP_PATH: apps/front/Dockerfile
+    RUNDECK_JOB_ID: $RUNDECK_FRONT_JOB_ID
+  only:
+    changes:
+      - api/**/*
+      - assets/**/*
+      - components/**/*
+      - store/**/*
+      - ui/**/*
+      - utils/**/*
+      - apps/front/**/*
+      - package.json
+      - yarn.lock
+
+.widget:
+  variables:
+    IMAGE_NAME: make-widget
+    IMAGE_APP_TARGET: widget-production
+    IMAGE_APP_PATH: apps/widget/Dockerfile
+    RUNDECK_JOB_ID: $RUNDECK_WIDGET_JOB_ID
+  only:
+    changes:
+      - api/**/*
+      - assets/**/*
+      - components/**/*
+      - store/**/*
+      - ui/**/*
+      - utils/**/*
+      - apps/widget/**/*
+      - package.json
+      - yarn.lock
+
+# Stages
 .check:
   stage: check
-  except: 
+  only:
+    refs:
+      - preproduction
+      - merge_request
+  except:
     - production
   image: "node:16.9-alpine"
-  before_script: 
+  before_script:
     - node -v
     - export YARN_VERSION="$YARN_VERSION"
     - yarn install --check-files
 
+.build:
+  stage: build
+  only:
+    refs:
+      - preproduction
+      - production
+      - merge_request
+  tags:
+    - docker
+  before_script:
+    - export IMAGE_VERSION=`git rev-parse --short=10 HEAD`
+    - mkdir -p /var/lib/docker
+    - mount -t tmpfs -o size=12G tmpfs /var/lib/docker
+    - if [ ! -e /var/run/docker.sock ]; then DOCKER_DRIVER=overlay2 dockerd & fi
+    - until docker ps; do echo "waiting for docker to be up..."; sleep 0.5; done
+    - docker login "https://$NEXUS_URL" --username "$NEXUS_USER" --password "$NEXUS_PASSWORD"
+  script:
+    - echo $(docker pull $NEXUS_URL/$IMAGE_NAME:$IMAGE_VERSION)
+    - >
+      if [[ -z $(docker images -q $NEXUS_URL/$IMAGE_NAME:$IMAGE_VERSION) ]];then
+        DOCKER_BUILDKIT=1 docker build --rm -f $IMAGE_APP_PATH -t $NEXUS_URL/$IMAGE_NAME:$IMAGE_VERSION --target $IMAGE_APP_TARGET .
+        docker push $NEXUS_URL/$IMAGE_NAME:$IMAGE_VERSION
+      fi
+    - docker tag $NEXUS_URL/$IMAGE_NAME:$IMAGE_VERSION $NEXUS_URL/$IMAGE_NAME:$CI_COMMIT_REF_NAME-latest
+    - docker push $NEXUS_URL/$IMAGE_NAME:$CI_COMMIT_REF_NAME-latest
+
+.deploy:
+  stage: deploy
+  script:
+    - >
+      job_id=$(curl -D - -X "POST"
+        -H "Accept: application/json"
+        -H "Content-Type: application/x-www-form-urlencoded"
+        -H "X-Rundeck-Auth-Token: $RUNDECK_TOKEN"
+        --data-urlencode "argString=-version $CI_COMMIT_REF_NAME-latest"
+        $RUNDECK_URL/api/16/job/$RUNDECK_JOB_ID/run
+        | jq -r '.id')
+
+      [[ "${job_id}" =~ ^[0-9]+$ ]] && echo "Job ${job_id} started ..." \
+      || { echo "Rundeck Job is not correctly launched"; exit 1; };
+
+      status='running';
+      while [ "${status}" == 'running' ]; do
+        status=$(curl -s -X "GET" \
+          -H "Accept: application/json" \
+          -H "Content-Type: application/x-www-form-urlencoded" \
+          -H "X-Rundeck-Auth-Token: ${RUNDECK_TOKEN}" \
+          ${RUNDECK_URL}/api/16/execution/${job_id} \
+          | jq -r '.status');
+        [ "${status}" == 'running' ] \
+        && { echo -e "Job ${job_id} is still running ... \nWaiting 5s ..."; sleep 5; };
+      done;
+
+      [ "${status}" != 'succeeded' ] && { echo -e "Job ${job_id} has ${status}."; exit 2; };
+      echo "Job ${job_id} has ${status}.";
+
+# Check
 lint:
   extends: .check
-  script:  
+  script:
     - yarn eslint ./
 
 check-types:
@@ -43,10 +151,7 @@ check-types:
 
 test:
   extends: .check
-  script:    
-    - yarn workspace @make.org/front translation
-    - yarn workspace @make.org/front documentation
-    - yarn workspace @make.org/widget translation
+  script:
     - yarn jest --coverage
   artifacts:
     expire_in: 1 week
@@ -64,97 +169,59 @@ jscpd:
     paths:
       - reports
 
-# e2e-app:
-#  variables:
-#    <<: *global_variables
-#    CYPRESS_CACHE_FOLDER: '$CI_PROJECT_DIR/cache_cypress'
-#  stage: e2e
-#  needs: []
-#  except: 
-#    - production
-#  image: cypress/browsers:node14.17.0-chrome91-ff89
-#  before_script:
-#    - export YARN_VERSION="$YARN_VERSION"
-#  script:
-#    - yarn install --check-files
-#    - NODE_ENV=test yarn workspace @make.org/front build
-#    - yarn workspace @make.org/front test:cypress:run
-#  cache: {}
-#  artifacts:
-#    expire_in: 1 week
-#    when: always
-#    paths:
-#      - cypress/screenshots
-#      - cypress/videos
-#      - cypress/coverage
+# Build
+build-make-front:
+  extends:
+    - .build
+    - .front
 
-  
+build-make-widget:
+  extends:
+    - .build
+    - .widget
 
-.build:
-  stage: build
-  tags:
-    - docker
-  except: 
-    - production
-  before_script: 
-    - export IMAGE_VERSION=`git rev-parse --short=10 HEAD`
-    - mkdir -p /var/lib/docker
-    - mount -t tmpfs -o size=12G tmpfs /var/lib/docker
-    - if [ ! -e /var/run/docker.sock ]; then DOCKER_DRIVER=overlay2 dockerd & fi
-    - until docker ps; do echo "waiting for docker to be up..."; sleep 0.5; done
-    - docker login "https://$NEXUS_URL" --username "$NEXUS_USER" --password "$NEXUS_PASSWORD"
-
-build-app:
-  extends: .build
-  when: manual
-  script:
-    - echo $(docker pull $NEXUS_URL/$IMAGE_APP_NAME:$IMAGE_VERSION)
-    - >
-      if [[ -z $(docker images -q $NEXUS_URL/$IMAGE_APP_NAME:$IMAGE_VERSION) ]];then
-        DOCKER_BUILDKIT=1 docker build --rm -f $IMAGE_APP_PATH -t $NEXUS_URL/$IMAGE_APP_NAME:$IMAGE_VERSION --target $IMAGE_APP_TARGET .
-        docker push $NEXUS_URL/$IMAGE_APP_NAME:$IMAGE_VERSION
-      fi
-    - docker tag $NEXUS_URL/$IMAGE_APP_NAME:$IMAGE_VERSION $NEXUS_URL/$IMAGE_APP_NAME:$CI_COMMIT_REF_NAME-latest
-    - docker push $NEXUS_URL/$IMAGE_APP_NAME:$CI_COMMIT_REF_NAME-latest
-
-build-widget:
-  extends: .build
-  script:
-    - echo $(docker pull $NEXUS_URL/$IMAGE_WIDGET_NAME:$IMAGE_VERSION)
-    - >
-      if [[ -z $(docker images -q $NEXUS_URL/$IMAGE_WIDGET_NAME:$IMAGE_VERSION) ]];then
-        DOCKER_BUILDKIT=1 docker build --rm -f $IMAGE_WIDGET_PATH -t $NEXUS_URL/$IMAGE_WIDGET_NAME:$IMAGE_VERSION --target $IMAGE_WIDGET_TARGET .
-        docker push $NEXUS_URL/$IMAGE_WIDGET_NAME:$IMAGE_VERSION
-      fi
-    - docker tag $NEXUS_URL/$IMAGE_WIDGET_NAME:$IMAGE_VERSION $NEXUS_URL/$IMAGE_WIDGET_NAME:$CI_COMMIT_REF_NAME-latest
-    - docker push $NEXUS_URL/$IMAGE_WIDGET_NAME:$CI_COMMIT_REF_NAME-latest
-
-.deploy-preproduction:
-  stage: deploy
-  environment:
-    name: preproduction
-  only:
-    - preproduction
-
-deploy-app-preproduction:
-  extends: .deploy-preproduction
-  when: manual
-  script:
-    - >
-      curl -D - -X "POST"
-      -H "Accept: application/json"
-      -H "Content-Type: application/x-www-form-urlencoded"
-      -H "X-Rundeck-Auth-Token: $APP_RUNDECK_PREPROD_TOKEN"
-      --data-urlencode "argString=-version $CI_COMMIT_REF_NAME-latest"
-      $RUNDECK_PREPROD_URL/api/16/job/$APP_RUNDECK_PREPROD_JOB_ID/run
+# Deploy
+deploy-front-preproduction:
+  extends:
+    - .deploy
+    - .front
+    - .preprod
 
 deploy-widget-preproduction:
-  extends: .deploy-preproduction
+  extends:
+    - .deploy
+    - .widget
+    - .preprod
+
+deploy-front-production:
+  extends:
+    - .deploy
+    - .front
+    - .prod
+
+deploy-widget-production:
+  extends:
+    - .deploy
+    - .widget
+    - .prod
+
+merge-to-prod:
+  stage: merge
+  when: manual
+  only:
+    - preproduction
+  allow_failure: false
   script:
-    - >
-      curl -D - -X "POST"
-      -H "Accept: application/json"
-      -H "Content-Type: application/x-www-form-urlencoded"
-      -H "X-Rundeck-Auth-Token: $WIDGET_RUNDECK_PREPROD_TOKEN"
-      --data-urlencode "argString=-version $CI_COMMIT_REF_NAME-latest"
-      $RUNDECK_PREPROD_URL/api/16/job/$WIDGET_RUNDECK_PREPROD_JOB_ID/run
+    - mkdir -p ~/.ssh/
+    - chmod 700 ~/.ssh
+    - ssh-keyscan -t rsa gitlab.com > ~/.ssh/known_hosts
+    - echo "${DEPLOY_PRIVATE_KEY}" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - export CI_PUSH_REPO=`echo $CI_REPOSITORY_URL | perl -pe 's#.*@(.+?(\:\d+)?)/#git@\1:#'`
+    - echo "Target repo is ${CI_PUSH_REPO}"
+    - git config --global user.email "${GITLAB_USER_EMAIL}"
+    - git config --global user.name "${GITLAB_USER_NAME}"
+    - git remote set-url origin "${CI_PUSH_REPO}"
+    - git checkout production
+    - git merge --ff-only origin/preproduction
+    - git push origin production:production
