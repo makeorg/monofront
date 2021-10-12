@@ -221,11 +221,12 @@ export const Vote: React.FC<Props> = ({
           votedKey={votedKey}
           index={index}
         />
-        {isSequence && !isWidget && (
+        {isSequence && (
           <SequenceNextCardButtonStyle
             onClick={goToNextCard}
             id={`next-button-${proposal.id}`}
             data-cy-button="next-proposal"
+            className={className}
           >
             {lastProposalOfSequence
               ? i18n.t('proposal_card.validate')

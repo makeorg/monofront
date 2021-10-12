@@ -197,14 +197,7 @@ export const loginSocial = async (
     approvePrivacyPolicy,
     success,
     failure
-  ).then(auth => {
-    if (auth) {
-      trackAuthenticationSocialSuccess(
-        provider,
-        auth.account_creation.toString()
-      );
-    }
-  });
+  );
 };
 
 export const logout = (

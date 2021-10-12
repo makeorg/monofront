@@ -1,31 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { SpaceBetweenRowStyle } from '@make.org/ui/elements/FlexElements';
 import i18n from 'i18next';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { ThemeProvider } from 'styled-components';
 import { pxToPercent } from '@make.org/utils/helpers/styled';
-import {
-  // trackClickNextOnLastProposal,
-  trackClickNextCard,
-  trackClickNextOnLastProposal,
-  trackClickPreviousCard,
-} from '@make.org/utils/services/Tracking';
+import { trackClickPreviousCard } from '@make.org/utils/services/Tracking';
 import { QuestionType } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
-import {
-  decrementSequenceIndex,
-  incrementSequenceIndex,
-} from '@make.org/store/actions/sequence';
+import { decrementSequenceIndex } from '@make.org/store/actions/sequence';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
-import { CARD } from '@make.org/types/enums';
 import {
   ProgressPreviousButtonStyle,
-  ProgressNextButtonStyle,
   ProgressIconStyle,
   ProgressCounterStyle,
   ProgressBarWrapperStyle,
   ProgressBarStyle,
-  ProgressNextIconStyle,
 } from './style';
 
 export const SequenceProgress: React.FC<{
@@ -37,39 +26,8 @@ export const SequenceProgress: React.FC<{
   const question: QuestionType | null = selectCurrentQuestion(state);
   const { theme } = question || {};
   const { cards, currentIndex = 0 } = state.sequence || {};
-  const { votes = [] } =
-    cards[currentIndex] && cards[currentIndex].state
-      ? cards[currentIndex].state
-      : {};
-  const userVote = votes && votes.find(vote => vote.hasVoted === true);
   const index = currentIndex + 1;
   const total = cards ? cards.length : 0;
-  const getLastCardIndex = () => {
-    const allProposals = cards.filter(
-      card => card.type === CARD.CARD_TYPE_PROPOSAL
-    );
-    const lastCard = allProposals.pop();
-    if (lastCard) {
-      return lastCard.index;
-    }
-    return 0;
-  };
-  const [isLastProposalCard, setIsLastProposalCard] = useState(
-    currentIndex === getLastCardIndex()
-  );
-
-  useEffect(() => {
-    setIsLastProposalCard(currentIndex === getLastCardIndex());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentIndex]);
-
-  const goToNextCard = () => {
-    dispatch(incrementSequenceIndex());
-    if (isLastProposalCard) {
-      return trackClickNextOnLastProposal();
-    }
-    return trackClickNextCard();
-  };
 
   const goToPreviousCard = () => {
     dispatch(decrementSequenceIndex());
@@ -98,38 +56,12 @@ export const SequenceProgress: React.FC<{
             total,
           })}
         </ScreenReaderItemStyle>
-        {!isWidget && (
-          <ProgressCounterStyle aria-hidden>
-            {`${index}/${total}`}
-          </ProgressCounterStyle>
-        )}
+        <ProgressCounterStyle aria-hidden className={isWidget ? 'widget' : ''}>
+          {`${index}/${total}`}
+        </ProgressCounterStyle>
         <ProgressBarWrapperStyle>
           <ProgressBarStyle percentWidth={pxToPercent(index, total)} />
         </ProgressBarWrapperStyle>
-        {isWidget && (
-          <>
-            <ProgressCounterStyle
-              disabled={disabled}
-              aria-hidden
-              isWidget={isWidget}
-            >
-              {!disabled && `${index}/${total}`}
-            </ProgressCounterStyle>
-
-            <ProgressNextButtonStyle
-              onClick={goToNextCard}
-              disabled={!(userVote && userVote.voteKey) || disabled}
-              // aria-label={i18n.t('sequence_progress.previous')} TO DO IN I18N
-              data-cy-button="next-proposal"
-            >
-              <ProgressNextIconStyle
-                className={isWidget ? 'widget' : ''}
-                aria-hidden
-                focusable="false"
-              />
-            </ProgressNextButtonStyle>
-          </>
-        )}
       </SpaceBetweenRowStyle>
     </ThemeProvider>
   );
