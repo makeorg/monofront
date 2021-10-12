@@ -29,8 +29,8 @@ export const SequenceCardStyle = styled.section`
   margin: 20px auto 40px;
   min-height: 315px;
   &.widget {
-    margin: 5px 0px 20px;
-    padding: 0 10px;
+    margin: 25px 15px 30px;
+    padding: 0 20px;
     max-height: 295px;
     min-height: 295px;
   }
@@ -48,8 +48,7 @@ export const SequenceCardStyle = styled.section`
     padding: 0 30px;
     margin-top: 30px;
     &.widget {
-      margin-top: 10px;
-      padding: 0 20px;
+      margin: 30px 20px;
     }
     &.no-proposal {
       padding: 70px 30px 40px;
@@ -157,13 +156,19 @@ export const SequenceProposalStyle = styled.blockquote`
     }
   }
 `;
-
 export const SequenceNextCardButtonStyle = styled(RedButtonStyle)`
   position: absolute;
   left: 50%;
   bottom: 0;
   transform: translate(-50%, 50%);
   white-space: nowrap;
+  &.widget {
+    bottom: 4px;
+    font-size: 14px;
+    @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+      font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    }
+  }
 `;
 
 export const SequencePushProposalButtonStyle = styled(RedButtonStyle)`
