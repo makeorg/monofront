@@ -25,7 +25,7 @@ export const InfosWrapperStyle = styled.span`
   }
   &.sequence.widget,
   &.widget {
-    margin: 40px auto 5px;
+    margin: 40px auto 15px;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     &.sequence {
@@ -33,7 +33,7 @@ export const InfosWrapperStyle = styled.span`
     }
     &.sequence.widget,
     &.widget {
-      margin: 50px auto 10px;
+      margin: 50px auto 15px;
     }
   }
 `;
