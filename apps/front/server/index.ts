@@ -1,5 +1,4 @@
 import express, { Response } from 'express';
-import bodyParser from 'body-parser';
 import compression from 'compression';
 import cookiesMiddleware from 'universal-cookie-express';
 import favicon from 'serve-favicon';
@@ -52,7 +51,7 @@ const getApp = () => {
 
   app.use((req, res, next) => nonceUuidMiddleware(res, next));
   app.use(compression());
-  app.use(bodyParser.json());
+  app.use(express.json());
   app.use(favicon(`${APP_CLIENT_DIR}/${webpackManifest[APP_FAVICON_FILE]}`));
   app.use(cookiesMiddleware());
   app.use((req, res, next) => headersResponseMiddleware(res, next));
