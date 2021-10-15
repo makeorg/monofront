@@ -81,7 +81,7 @@ module.exports = {
     },
     proxy: {
       '/backend': {
-        target: process.env.LOCAL_PROXY_API_URL,
+        target: process.env.PROXY_TARGET_API_URL,
         secure: false,
         changeOrigin: true,
         pathRewrite: {

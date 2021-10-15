@@ -3,7 +3,7 @@ import { formatCountWithLanguage } from './numberFormatter';
 describe('numberFormatter', () => {
   const number = 123456;
   it('formatCountWithLocale with count < 1 million', () => {
-    expect(formatCountWithLanguage(number, 'fr')).toEqual(
+    expect(formatCountWithLanguage(number, 'fr')).equal(
       number.toLocaleString('fr')
     );
   });

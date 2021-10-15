@@ -11,16 +11,36 @@ import { env } from '@make.org/assets/env';
 import { cspMiddleware } from '@make.org/utils/middleware/contentSecurityPolicy';
 import { headersResponseMiddleware } from '@make.org/utils/middleware/headers';
 import { nonceUuidMiddleware } from '@make.org/utils/middleware/nonceUuid';
+import { getLoggerInstance, initLogger } from '@make.org/utils/helpers/logger';
+import {
+  errorNormalizer,
+  makeorgApiServiceErrorNormalizer,
+  objectNormalizer,
+  stringNormalizer,
+} from '@make.org/utils/helpers/loggerNormalizer';
 import { serverInitI18n } from './i18n';
 import { initRoutes } from './routes';
-import { APP_CLIENT_DIR, APP_FAVICON_FILE } from './paths';
-import { logError, logInfo, logWarning } from './ssr/helpers/ssr.helper';
+import {
+  APP_BUILD_DIR,
+  APP_CLIENT_DIR,
+  APP_FAVICON_FILE,
+  APP_JS_DIR,
+  APP_MAP_DIR,
+} from './paths';
 
 serverInitI18n();
 ApiService.strategy = new ApiServiceServer();
 // App
 const getApp = () => {
   const app = express();
+  initLogger('frontaccessible', APP_JS_DIR, APP_BUILD_DIR, APP_MAP_DIR, [
+    errorNormalizer,
+    makeorgApiServiceErrorNormalizer,
+    stringNormalizer,
+    objectNormalizer,
+  ]);
+
+  const logger = getLoggerInstance();
 
   if (env.isDev()) {
     app.use(cors());
@@ -39,11 +59,11 @@ const getApp = () => {
       logLevel: 'error',
       secure: false,
       logProvider: () => ({
-        log: logInfo,
-        debug: logInfo,
-        info: logInfo,
-        warn: logWarning,
-        error: logError,
+        log: logger.logInfo,
+        debug: logger.logInfo,
+        info: logger.logInfo,
+        warn: logger.logWarning,
+        error: logger.logError,
       }),
     });
     app.use('/backend', apiProxy);
@@ -54,7 +74,22 @@ const getApp = () => {
   app.use(express.json());
   app.use(favicon(`${APP_CLIENT_DIR}/${webpackManifest[APP_FAVICON_FILE]}`));
   app.use(cookiesMiddleware());
-  app.use((req, res, next) => headersResponseMiddleware(res, next));
+  app.use((req, res, next) =>
+    headersResponseMiddleware(
+      {
+        Server: 'MakeSSR',
+        'X-Powered-By': 'MakeSSR',
+        'Strict-Transport-Security':
+          'max-age=31536000; includeSubDomains; preload',
+        'X-Content-Type-Options': 'nosniff',
+        'X-XSS-Protection': '0',
+        'Referrer-Policy': 'no-referrer-when-downgrade',
+        'X-Frame-Options': 'deny',
+      },
+      res,
+      next
+    )
+  );
   app.use((req, res, next) => {
     const localsResponse = res as Response & { locals: { nonce: string } };
     cspMiddleware(localsResponse, next);

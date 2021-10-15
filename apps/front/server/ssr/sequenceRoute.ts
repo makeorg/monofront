@@ -3,7 +3,7 @@ import { Request, Response } from 'express';
 import { createInitialState } from '@make.org/store/initialState';
 import { getLanguageFromCountryCode } from '@make.org/utils/helpers/countries';
 import { isInProgress } from '@make.org/utils/helpers/date';
-import { logError } from './helpers/ssr.helper';
+import { getLoggerInstance } from '@make.org/utils/helpers/logger';
 import { transformExtraSlidesConfigFromQuery } from './helpers/query.helper';
 import { reactRender } from '../reactRender';
 import { QuestionService } from '../service/QuestionService';
@@ -20,9 +20,10 @@ export const sequenceRoute = async (
 
   const language = getLanguageFromCountryCode(country);
   const initialState = createInitialState();
+  const logger = getLoggerInstance();
 
   const notFound = () => {
-    logError({
+    logger.logError({
       message: `Question not found on sequenceRoute questionSlug='${questionSlug}'`,
       name: 'server-side',
       url: req.url,
@@ -30,7 +31,7 @@ export const sequenceRoute = async (
     });
   };
   const unexpectedError = () => {
-    logError({
+    logger.logError({
       message: `Unexpected Error on sequenceRoute questionSlug='${questionSlug}'`,
       name: 'server-side',
       url: req.url,

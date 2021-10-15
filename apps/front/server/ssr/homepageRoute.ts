@@ -1,9 +1,9 @@
 import { createInitialState } from '@make.org/store/initialState';
 import { Request, Response } from 'express';
 import { getLanguageFromCountryCode } from '@make.org/utils/helpers/countries';
+import { getLoggerInstance } from '@make.org/utils/helpers/logger';
 import { ViewsService } from '../service/ViewsService';
 import { reactRender } from '../reactRender';
-import { logError } from './helpers/ssr.helper';
 
 export const homepageRoute = async (
   req: Request,
@@ -11,9 +11,10 @@ export const homepageRoute = async (
 ): Promise<any> => {
   const { country } = req.params;
   const initialState = createInitialState();
+  const logger = getLoggerInstance();
 
   const notFound = () => {
-    logError({
+    logger.logError({
       message: `Views not found on homepageRoute country='${country}'`,
       name: 'server-side',
       url: req.url,
@@ -21,7 +22,7 @@ export const homepageRoute = async (
     });
   };
   const unexpectedError = () => {
-    logError({
+    logger.logError({
       message: `Unexpected Error on homepageRoute country='${country}'`,
       name: 'server-side',
       url: req.url,

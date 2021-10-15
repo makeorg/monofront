@@ -2,7 +2,7 @@ import { QuestionType } from '@make.org/types/Question';
 import { QuestionApiService } from '@make.org/api/QuestionApiService';
 import cache from 'memory-cache';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
-import { logError } from '../helpers/ssr.helper';
+import { getLoggerInstance } from '@make.org/utils/helpers/logger';
 
 const clearCache = (): void => {
   cache.clear();
@@ -45,7 +45,7 @@ const getQuestion = async (
     if (apiServiceError.status === 404) {
       return notFound();
     }
-    logError(
+    getLoggerInstance().logError(
       apiServiceError.clone(
         `error in server/service/QuestionService/getQuestion: ${apiServiceError.message}`
       )

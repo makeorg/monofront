@@ -3,7 +3,7 @@ import { getLanguageFromCountryCode } from '@make.org/utils/helpers/countries';
 import { createInitialState } from '@make.org/store/initialState';
 import { updateTrackingQuestionParam } from '@make.org/utils/helpers/question';
 import { isInProgress } from '@make.org/utils/helpers/date';
-import { logError } from './helpers/ssr.helper';
+import { getLoggerInstance } from '@make.org/utils/helpers/logger';
 import { reactRender } from '../reactRender';
 import { QuestionService } from '../service/QuestionService';
 
@@ -14,9 +14,10 @@ export const questionRoute = async (
   const { questionSlug, country } = req.params;
   const language = getLanguageFromCountryCode(country);
   const initialState = createInitialState();
+  const logger = getLoggerInstance();
 
   const notFound = () => {
-    logError({
+    logger.logError({
       message: `Question not found on sequenceRoute questionSlug='${questionSlug}'`,
       name: 'server-side',
       url: req.url,
@@ -24,7 +25,7 @@ export const questionRoute = async (
     });
   };
   const unexpectedError = () => {
-    logError({
+    logger.logError({
       message: `Unexpected Error on sequenceRoute questionSlug='${questionSlug}'`,
       name: 'server-side',
       url: req.url,

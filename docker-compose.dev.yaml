@@ -25,6 +25,7 @@ services:
         - /home/app/store/node_modules
         - /home/app/apimock/node_modules
         - /home/app/apps/front/dist
+        - /home/app/apps/widget/dist
         - /home/app/dist
       profiles: 
         - app-dev

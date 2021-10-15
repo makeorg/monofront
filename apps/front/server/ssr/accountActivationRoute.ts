@@ -1,10 +1,10 @@
 import { createInitialState } from '@make.org/store/initialState';
 import { Request, Response } from 'express';
 import { NOTIF } from '@make.org/types/enums';
+import { getLoggerInstance } from '@make.org/utils/helpers/logger';
 import { UserService } from '../service/UserService';
 import { reactRender } from '../reactRender';
 import { QuestionService } from '../service/QuestionService';
-import { logError } from './helpers/ssr.helper';
 
 export const accountActivationRoute = async (
   req: Request,
@@ -23,9 +23,11 @@ export const accountActivationRoute = async (
     level: NOTIF.NOTIFICATION_LEVEL_SUCCESS,
   };
 
+  const logger = getLoggerInstance();
+
   if (questionId !== '') {
     const notFound = () => {
-      logError({
+      logger.logError({
         message: `Question not found on activate account QuestionService.getQuestion with questionId='${questionId}'`,
         name: 'server-side',
         url: req.url,
@@ -33,7 +35,7 @@ export const accountActivationRoute = async (
       });
     };
     const unexpectedError = () => {
-      logError({
+      logger.logError({
         message: `Unexpected error on activate account QuestionService.getQuestion with questionId='${questionId}'`,
         name: 'server-side',
         url: req.url,

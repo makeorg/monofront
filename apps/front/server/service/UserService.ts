@@ -1,7 +1,7 @@
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { UserApiService } from '@make.org/api/UserApiService';
+import { getLoggerInstance } from '@make.org/utils/helpers/logger';
 import { defaultUnexpectedError } from '@make.org/utils/services/DefaultErrorHandler';
-import { logWarning } from '../ssr/helpers/ssr.helper';
 
 const verifyUser = async (
   userId: string,
@@ -24,7 +24,7 @@ const verifyUser = async (
     const apiServiceError = error as ApiServiceError;
     if ([400, 404].includes(apiServiceError.status)) {
       failure();
-      logWarning({
+      getLoggerInstance().logWarning({
         message: `Error in verifyUser for userId ->${userId}, verificationToken -> ${verificationToken} : ${apiServiceError.message}`,
         name: 'services',
       });
@@ -55,7 +55,7 @@ const resetPasswordTokenCheck = async (
     const apiServiceError = error as ApiServiceError;
     if ([400, 404].includes(apiServiceError.status)) {
       failure();
-      logWarning({
+      getLoggerInstance().logWarning({
         message: `Error in resetPasswordTokenCheck for userId -> ${userId} : status -> ${apiServiceError.message}`,
         name: 'services',
       });

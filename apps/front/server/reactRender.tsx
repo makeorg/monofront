@@ -26,10 +26,10 @@ import { TRANSLATION_NAMESPACE } from '@make.org/utils/i18n/constants';
 import { StateRoot } from '@make.org/types';
 import { Request, Response } from 'express';
 import { Cookie } from 'universal-cookie';
+import { getLoggerInstance } from '@make.org/utils/helpers/logger';
 import { AppContainer } from '../client/app';
 import { ViewsService } from './service/ViewsService';
 import { APP_CLIENT_DIR } from './paths';
-import { logError, logInfo } from './ssr/helpers/ssr.helper';
 
 deepFreeze(initialState);
 
@@ -109,8 +109,9 @@ export const reactRender = async (
     app_browser_hash: simpleHash(ua),
   };
 
+  const logger = getLoggerInstance();
   if (!country || !language) {
-    logInfo({
+    logger.logInfo({
       message: 'Country or language not found from request params',
       url: req.originalUrl,
       country: country || 'none',
@@ -124,14 +125,14 @@ export const reactRender = async (
     country,
     language,
     () => {
-      logInfo({
+      logger.logInfo({
         message: 'ViewsService.getCountries return 404',
         url: req.originalUrl,
         ...commonLogs,
       });
     },
     () =>
-      logError({
+      logger.logError({
         message: `ViewsService.getCountries error`,
         url: req.originalUrl,
         ...commonLogs,
@@ -193,7 +194,7 @@ export const reactRender = async (
     return res.status(404).end();
   }
   // add log here
-  logInfo({
+  logger.logInfo({
     message: 'app-served-from-server',
     url: req.originalUrl,
     ...commonLogs,

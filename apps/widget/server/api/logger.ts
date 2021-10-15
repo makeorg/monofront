@@ -2,7 +2,6 @@ import { Request, Response } from 'express';
 import { simpleHash } from '@make.org/utils/helpers/simpleHash';
 import parser from 'ua-parser-js';
 import { getLoggerInstance } from '@make.org/utils/helpers/logger';
-import { WIDGET_BUILD_DIR, WIDGET_JS_DIR, WIDGET_MAP_DIR } from '../paths';
 
 export const loggerApi = async (
   req: Request,
@@ -11,13 +10,9 @@ export const loggerApi = async (
   const ua = parser(req.headers['user-agent']);
   const { level, data } = req.body;
   const normalizedData = typeof data === 'string' ? { message: data } : data;
-  const logger = await getLoggerInstance(
-    'make-widget',
-    WIDGET_JS_DIR,
-    WIDGET_BUILD_DIR,
-    WIDGET_MAP_DIR
-  );
-  logger.log(level, {
+  const logger = getLoggerInstance();
+
+  const dataLog = {
     ...normalizedData,
     app_browser_name: ua.browser.name,
     app_browser_version: ua.browser.version,
@@ -28,7 +23,18 @@ export const loggerApi = async (
     app_device_vendor: ua.device.vendor,
     app_browser_raw: ua.ua,
     app_browser_hash: simpleHash(ua.ua),
-  });
+  };
+
+  switch (level) {
+    case 'info':
+      logger.logInfo(dataLog);
+      break;
+    case 'warn':
+      logger.logWarning(dataLog);
+      break;
+    default:
+      logger.logError(dataLog);
+  }
 
   return res.sendStatus(204);
 };

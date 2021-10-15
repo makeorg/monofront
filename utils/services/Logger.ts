@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import { env } from '@make.org/assets/env';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
@@ -6,7 +6,6 @@ import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 const LOG_INFO = 'info';
 const LOG_WARNING = 'warn';
 const LOG_ERROR = 'error';
-// const onClientSide = typeof window !== 'undefined' && !!window;
 
 let instance: LoggerSingleton | null = null;
 const host = env.frontUrl() || '';
@@ -121,35 +120,22 @@ class LoggerSingleton {
     this.log(data, LOG_WARNING);
   };
 
-  log = async (
+  log = (
     data: string | ApiServiceError | Record<string, string> | Error,
     level: string
-  ): Promise<void | AxiosResponse> => {
+  ): void => {
     if (env.isDev()) {
       // eslint-disable-next-line no-console
       console.log(level, data);
     }
 
-    // TODO handle it cleanly
-    // if (!onClientSide) {
-    //   // eslint-disable-next-line import/no-cycle
-    //   const { logError, logInfo, logWarning } = await import(
-    //     'Server/ssr/helpers/ssr.helper'
-    //   );
+    if (!env.isClientSide()) {
+      console.error('trying to use logger service on server side', level, data);
 
-    //   switch (level) {
-    //     case LOG_INFO:
-    //       logInfo(data);
-    //       break;
-    //     case LOG_WARNING:
-    //       logWarning(data);
-    //       break;
-    //     default:
-    //       logError(data);
-    //   }
-    // }
+      return;
+    }
 
-    return axios('/api/logger', {
+    axios('/api/logger', {
       method: 'POST',
       proxy: {
         host,
@@ -159,12 +145,10 @@ class LoggerSingleton {
         level: level || 'error',
         data: this.normalizeData(data),
       },
-    })
-      .then(() => undefined)
-      .catch(e => {
-        // eslint-disable-next-line no-console
-        console.log('Fail to log error - ', e);
-      });
+    }).catch(e => {
+      // eslint-disable-next-line no-console
+      console.error('Fail to log error - ', e);
+    });
   };
 }
 

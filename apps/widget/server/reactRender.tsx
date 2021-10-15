@@ -25,8 +25,8 @@ import { Request, Response } from 'express';
 import { Cookie } from 'universal-cookie';
 import { getLanguageFromCountryCode } from '@make.org/utils/helpers/countries';
 import deepFreeze from 'deep-freeze';
+import { getLoggerInstance } from '@make.org/utils/helpers/logger';
 import { WIDGET_CLIENT_DIR } from './paths';
-import { logInfo } from './helpers/ssr.helper';
 import App from '../client/App';
 
 deepFreeze(initialState);
@@ -150,7 +150,7 @@ export const reactRender = async (
   }
 
   // add log here
-  logInfo({
+  getLoggerInstance().logInfo({
     message: 'app-served-from-server',
     url: req.originalUrl,
     ...commonLogs,

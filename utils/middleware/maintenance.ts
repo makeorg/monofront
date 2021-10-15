@@ -23,9 +23,12 @@ export const maintenanceMiddleware = async (
   next: NextFunction,
   logError: (error: any) => void
 ): Promise<void> => {
-  const { source } = req.query;
   try {
+    const { source } = req.query;
     const maintenanceConfigResponse = await getMaintenanceConfigResponse();
+    if (!maintenanceConfigResponse) {
+      return next();
+    }
     const { blockAll, blockedSources } = maintenanceConfigResponse;
     if (blockAll || (blockedSources && blockedSources.includes(source))) {
       res.maintenance = true;
@@ -33,12 +36,11 @@ export const maintenanceMiddleware = async (
 
     return next();
   } catch (error) {
-    if (logError) {
-      logError({
-        message: `Failed to call maintenance config`,
-        name: 'middlewares',
-      });
-    }
+    logError({
+      message: `Failed to call maintenance config`,
+      name: 'middlewares',
+    });
+
     return next();
   }
 };

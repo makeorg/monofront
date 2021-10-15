@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { createInitialState } from '@make.org/store/initialState';
+import { getLoggerInstance } from '@make.org/utils/helpers/logger';
 import { reactRender } from '../reactRender';
-import { logWarning } from '../helpers/ssr.helper';
 
 export const maintenanceRoute = async (
   req: Request,
@@ -10,7 +10,7 @@ export const maintenanceRoute = async (
   const initialState = createInitialState();
   initialState.appConfig.maintenance = true;
 
-  logWarning({
+  getLoggerInstance().logWarning({
     message: `Maintenance on source : "${req.query.source}"`,
     name: 'server-side',
     url: req.url,

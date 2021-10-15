@@ -6,10 +6,10 @@ import {
   DEFAULT_COUNTRY,
   DEFAULT_LANGUAGE,
 } from '@make.org/utils/constants/config';
+import { getLoggerInstance } from '@make.org/utils/helpers/logger';
 import { transformExtraSlidesConfigFromQuery } from '../helpers/query.helper';
 import { reactRender } from '../reactRender';
 import { QuestionService } from '../service/QuestionService';
-import { logError, logWarning } from '../helpers/ssr.helper';
 
 export const mainRoute = async (
   req: Request,
@@ -19,6 +19,7 @@ export const mainRoute = async (
   const noIntroCard = true;
   const noPushProposal = false;
   const queryArray = Object.keys(req.query);
+  const logger = getLoggerInstance();
 
   if (!queryArray || queryArray.length === 0) {
     // When widget is called without any param, it redirects to /mainteance without any log
@@ -26,7 +27,7 @@ export const mainRoute = async (
   }
 
   if (!questionSlug || !country) {
-    logWarning({
+    logger.logWarning({
       message: `Missing mandatory parameters questionSlug : "${
         questionSlug || undefined
       }" and/or country : "${country || undefined}" on source : "${
@@ -50,7 +51,7 @@ export const mainRoute = async (
   const initialState = createInitialState();
 
   const notFound = () => {
-    logError({
+    logger.logError({
       message: `Question not found on mainRoute questionSlug='${questionSlug}'`,
       name: 'server-side',
       url: req.url,
@@ -59,7 +60,7 @@ export const mainRoute = async (
     return res.redirect('/maintenance');
   };
   const unexpectedError = () => {
-    logError({
+    logger.logError({
       message: `Unexpected Error on mainRoute questionSlug='${questionSlug}'`,
       name: 'server-side',
       url: req.url,
@@ -77,7 +78,7 @@ export const mainRoute = async (
   );
 
   if (res.maintenance || !question) {
-    logWarning({
+    logger.logWarning({
       message: `Maintenance for "${
         questionSlug || undefined
       }" slug on source : "${req.query.source}"`,
@@ -90,7 +91,7 @@ export const mainRoute = async (
   }
 
   if (res.unsecure) {
-    logWarning({
+    logger.logWarning({
       message: `Unsecure widget for "${questionSlug}" on source : "${req.query.source}"`,
       name: 'server-side',
       url: req.url,

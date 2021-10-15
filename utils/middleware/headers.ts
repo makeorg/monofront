@@ -1,20 +1,15 @@
 import { Response, NextFunction } from 'express';
 
+interface HeaderArray {
+  readonly [name: string]: string;
+}
+
 export const headersResponseMiddleware = (
+  headers: HeaderArray,
   res: Response,
   next: NextFunction
 ): void => {
-  res.setHeader('Server', 'Express');
-  res.setHeader(
-    'Strict-Transport-Security',
-    'max-age=31536000; includeSubDomains; preload'
-  );
-
-  // @toDo
-  // res.setHeader('X-Frame-Options', 'deny');
-  res.setHeader('X-Content-Type-Options', 'nosniff');
-  res.setHeader('X-XSS-Protection', '0');
-  res.setHeader('Referrer-Policy', 'no-referrer-when-downgrade');
+  Object.keys(headers).forEach(key => res.setHeader(key, headers[key]));
 
   return next();
 };

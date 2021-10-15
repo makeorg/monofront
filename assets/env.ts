@@ -1,4 +1,4 @@
-export const onClientSide = typeof window !== 'undefined';
+const isClientSide = (): boolean => typeof window !== 'undefined';
 const PRODUCTION_DOMAIN = 'make.org';
 
 // Define server env variables
@@ -23,4 +23,5 @@ export const env = {
   frontUrl,
   port,
   isProductionUrl,
+  isClientSide,
 };

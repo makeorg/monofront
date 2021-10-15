@@ -1,8 +1,12 @@
 import winston from 'winston';
 import fs from 'fs';
 import path from 'path';
-import sourceMap from 'source-map';
+import sourceMap, {
+  BasicSourceMapConsumer,
+  IndexedSourceMapConsumer,
+} from 'source-map';
 import { env } from '@make.org/assets/env';
+import { DataNormalizer, normalizeData } from './loggerNormalizer';
 
 export const originalFilename = (filename: string): string =>
   filename.replace(/^([^/]+)\.[^/]+?\.js$/, '$1.js');
@@ -10,7 +14,7 @@ export const originalFilename = (filename: string): string =>
 const createSourceMapConsumers = async (
   sourcesPath: string,
   mapPath: string
-) => {
+): Promise<Map<string, BasicSourceMapConsumer | IndexedSourceMapConsumer>> => {
   const sourceMapConsumers = new Map();
   const items = fs.readdirSync(sourcesPath);
   const mapFiles = fs.readdirSync(mapPath);
@@ -19,7 +23,7 @@ const createSourceMapConsumers = async (
     jsFiles.map(async item => {
       const mapFile = `${originalFilename(item)}.map`;
       if (mapFiles.indexOf(mapFile) >= 0) {
-        const contents: any = fs.readFileSync(
+        const contents: string = fs.readFileSync(
           path.join(mapPath, mapFile),
           'utf8'
         );
@@ -34,7 +38,13 @@ const createSourceMapConsumers = async (
   return sourceMapConsumers;
 };
 
-export const formatStack = (stack: string, sourceMapConsumers: any): string => {
+export const formatStack = (
+  stack: string,
+  sourceMapConsumers: Map<
+    string,
+    BasicSourceMapConsumer | IndexedSourceMapConsumer
+  >
+): string => {
   const replacement = (
     coresp: string,
     sourcename: string,
@@ -44,9 +54,13 @@ export const formatStack = (stack: string, sourceMapConsumers: any): string => {
     if (!sourceMapConsumers.has(sourcename)) {
       return coresp;
     }
-    const { source, column, line, name } = sourceMapConsumers
-      .get(sourcename)
-      .originalPositionFor({
+    const sourceMapConsumer = sourceMapConsumers.get(sourcename);
+    if (!sourceMapConsumer) {
+      return coresp;
+    }
+
+    const { source, column, line, name } =
+      sourceMapConsumer.originalPositionFor({
         line: parseInt(sourceline, 10),
         column: parseInt(sourcecolumn, 10),
       });
@@ -65,7 +79,7 @@ export const formatStack = (stack: string, sourceMapConsumers: any): string => {
   return transformedStack;
 };
 
-const getLogFormat = (sourceMapReplace: any) => {
+const getLogFormat = (sourceMapReplace: (stack: string) => string) => {
   const { printf } = winston.format;
 
   return printf(info => {
@@ -81,9 +95,9 @@ const getLogFormat = (sourceMapReplace: any) => {
     delete data.level;
 
     const infoStack =
-      typeof data.stack === 'string'
+      (typeof data.stack === 'string'
         ? sourceMapReplace(data.stack)
-        : data.stack;
+        : data.stack) || '-';
     delete data.stack;
 
     const longFilename =
@@ -103,43 +117,67 @@ const getLogFormat = (sourceMapReplace: any) => {
   });
 };
 
+interface ServerLogger {
+  logError: (x: unknown) => void;
+  logInfo: (x: unknown) => void;
+  logWarning: (x: unknown) => void;
+}
+
+let logger: ServerLogger = {
+  logError: error => console.error('Logger not initialized', error),
+  logInfo: info => console.log('Logger not initialized', info),
+  logWarning: warning => console.warn('Logger not initialized', warning),
+};
+
 const isTestEnv = env.isTest();
 
-let loggerInstance: any;
-export const getLoggerInstance = async (
+export const initLogger = async (
   instanceLabel: string,
   clientSourcesPath: string,
   serverSourcesPath: string,
-  mapPath: string
-): Promise<any> => {
-  if (!loggerInstance) {
-    const { combine, timestamp, label, simple } = winston.format;
-    const sourceMapConsumersClient = await createSourceMapConsumers(
-      clientSourcesPath,
-      mapPath
-    );
-    const sourceMapConsumersServer = await createSourceMapConsumers(
-      serverSourcesPath,
-      mapPath
-    );
-    const sourceMapConsumers = new Map([
-      ...sourceMapConsumersClient,
-      ...sourceMapConsumersServer,
-    ]);
-    const sourceMapReplace = (stack: any) =>
-      formatStack(stack, sourceMapConsumers);
-    const logFormat = getLogFormat(sourceMapReplace);
-    loggerInstance = winston.createLogger({
-      silent: isTestEnv,
-      format: combine(
-        label({ label: instanceLabel }),
-        timestamp(),
-        simple(),
-        logFormat
-      ),
-      transports: [new winston.transports.Console()],
-    });
-  }
+  mapPath: string,
+  dataNormalizers: DataNormalizer[] = []
+): Promise<void> => {
+  const { combine, timestamp, label, simple } = winston.format;
+  const sourceMapConsumersClient = await createSourceMapConsumers(
+    clientSourcesPath,
+    mapPath
+  );
+  const sourceMapConsumersServer = await createSourceMapConsumers(
+    serverSourcesPath,
+    mapPath
+  );
+  const sourceMapConsumers = new Map([
+    ...sourceMapConsumersClient,
+    ...sourceMapConsumersServer,
+  ]);
+  const sourceMapReplace = (stack: string) =>
+    formatStack(stack, sourceMapConsumers);
+  const logFormat = getLogFormat(sourceMapReplace);
+  const winstonLoggerInstance = winston.createLogger({
+    silent: isTestEnv,
+    format: combine(
+      label({ label: instanceLabel }),
+      timestamp(),
+      simple(),
+      logFormat
+    ),
+    transports: [new winston.transports.Console()],
+  });
 
-  return loggerInstance;
+  logger = {
+    logError: error =>
+      winstonLoggerInstance.log('error', normalizeData(error, dataNormalizers)),
+    logInfo: info =>
+      winstonLoggerInstance.log('info', normalizeData(info, dataNormalizers)),
+    logWarning: warning =>
+      winstonLoggerInstance.log(
+        'warn',
+        normalizeData(warning, dataNormalizers)
+      ),
+  };
+
+  return Promise.resolve();
 };
+
+export const getLoggerInstance = (): ServerLogger => logger;

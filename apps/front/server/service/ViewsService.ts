@@ -2,7 +2,7 @@ import { ViewsApiService } from '@make.org/api/ViewsApiService';
 import cache from 'memory-cache';
 import { HomeViewType } from '@make.org/types/View';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
-import { logError } from '../ssr/helpers/ssr.helper';
+import { getLoggerInstance } from '@make.org/utils/helpers/logger';
 
 const clearCache = (): void => {
   cache.clear();
@@ -34,7 +34,7 @@ const getHome = async (
     if (apiServiceError.status === 404) {
       return notFound();
     }
-    logError(
+    getLoggerInstance().logError(
       apiServiceError.clone(
         `error in server/service/ViewsService/getHome: ${apiServiceError.message}`
       )
@@ -89,7 +89,7 @@ const getCountries = async (
       notFound();
       return [];
     }
-    logError(
+    getLoggerInstance().logError(
       apiServiceError.clone(
         `error in server/service/ViewsService/getCountries: ${apiServiceError.message}`
       )
