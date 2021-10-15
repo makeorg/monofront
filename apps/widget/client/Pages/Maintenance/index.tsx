@@ -21,16 +21,17 @@ export const MaintenancePage: FC = () => (
     </MakeSvgSmallLogo>
     <MaintenancePageStyle>
       <MaintenanceImageStyle src={MaintenancePicture} />
-      <MaintenanceTitleStyle>Ongoing maintenance</MaintenanceTitleStyle>
+      <MaintenanceTitleStyle>
+        {i18n.t('maintenance.title')}
+      </MaintenanceTitleStyle>
       <SequenceAltTitleStyle>
-        Oops, we’re sorry! Make.org is currently down for maintenance.
+        {i18n.t('maintenance.subtitle')}
       </SequenceAltTitleStyle>
       <MaintenanceParagraphStyle as="p">
-        Feel free to come back in few minutes to discover the proposals offered
-        by other citizens and submit yours.
+        {i18n.t('maintenance.description')}
       </MaintenanceParagraphStyle>
       <SimpleLinkAsRedButton href="https://make.org" target="__blank">
-        Find out more about Make.org
+        {i18n.t('maintenance.button')}
       </SimpleLinkAsRedButton>
     </MaintenancePageStyle>
   </>
