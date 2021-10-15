@@ -19,9 +19,9 @@ export const SequenceContainerStyle = styled(MiddleColumnStyle)`
   padding: 0 20px;
   &.widget {
     background-color: ${color.greyLighter};
-    padding-bottom: 15px;
-    @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-      padding-bottom: 20px;
+    padding: 0px 15px 15px;
+    @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+      padding: 0px 17px 17px;
     }
   }
 `;

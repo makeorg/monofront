@@ -31,7 +31,7 @@ export const DefaultStylesheet = createGlobalStyle`
     justify-content: center;
     align-items: center;
     min-height: 550px;
-    max-height: 563px;
+    max-height: 550px;
     max-width: 635px;
     margin: 0 auto;
   }
