@@ -19,6 +19,10 @@ export const countriesConfiguration = [
   },
   {
     countryCode: 'CH',
-    language: LocaleType.de,
+    language: LocaleType.fr,
+  },
+  {
+    countryCode: 'BE',
+    language: LocaleType.fr,
   },
 ];
