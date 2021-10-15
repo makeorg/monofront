@@ -1,7 +1,7 @@
 ############
 # Base
 ############
-FROM node:16-alpine AS base
+FROM node:16.9-alpine AS base
 WORKDIR /home/app
 
 ENV PATH /home/app/node_modules/.bin:$PATH
