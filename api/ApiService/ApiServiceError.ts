@@ -10,7 +10,7 @@ export class ApiServiceError extends Error {
 
   status: number;
 
-  data?: any;
+  data?: unknown;
 
   logged?: boolean;
 
@@ -44,7 +44,7 @@ export class ApiServiceError extends Error {
   constructor(
     message: string,
     status: number,
-    data?: any,
+    data?: unknown,
     url?: string,
     method?: string,
     logId?: string,

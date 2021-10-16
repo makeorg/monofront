@@ -1,5 +1,6 @@
 import React from 'react';
-import { Method } from 'axios';
+import https from 'https';
+import http from 'http';
 import { UnknownObjectType } from './Commons';
 
 type Method =
@@ -60,13 +61,62 @@ export type ErrorResponse = {
   request: string;
 };
 
-export type OptionsType = {
-  headers?: Readonly<Record<string, string | boolean | null>>;
+type AxiosConfigType = {
+  'axios-retry'?: IAxiosRetryConfig;
+  url?: string;
+  method?: Method;
+  baseURL?: string;
+  transformRequest?: (data: T, headers: Record<string, string>) => T;
+  transformResponse?: (data: T) => T;
+  headers?: Record<string, string>;
+  params?: Record<string, string> | URLSearchParams;
+  paramsSerializer?: (params: unknown) => string;
+  data?: unknown;
+  timeout?: number;
+  withCredentials?: boolean;
+  adapter?: (config: unknown) => Promise<unknown>;
+  auth?: { username: string; passord: string };
+  responseType?:
+    | 'arraybuffer'
+    | 'document'
+    | 'json'
+    | 'text'
+    | 'stream'
+    | 'blob';
+  responseEncoding?: string;
+  xsrfCookieName?: string;
+  xsrfHeaderName?: string;
+  onUploadProgress?: (progressEvent: unknown) => void;
+  onDownloadProgress?: (progressEvent: unknown) => void;
+  maxContentLength?: number;
+  maxBodyLength?: number;
+  validateStatus?: (status: number) => boolean;
+  maxRedirects?: number;
+  socketPath?: string | null;
+  httpAgent?: http.Agent;
+  httpsAgent?: https.Agent;
+  proxy?: {
+    protocol: string;
+    host: string;
+    port: number;
+    auth?: {
+      username: string;
+      password: string;
+    };
+  };
+  cancelToken?: CancelToken;
+  signal?: AbortController;
+  decompress?: boolean;
+  insecureHTTPParser?: undefined | boolean;
+  silentJSONParsing?: boolean;
+  forcedJSONParsing?: boolean;
+  clarifyTimeoutError?: boolean;
+};
+
+export type OptionsType = AxiosConfigType & {
   allowedHeaders?: string[];
   body?: string;
-  params?: Record<string, string>;
-  method: Method;
-  httpsAgent?: string;
-  withCredentials?: boolean;
   proposalId?: string;
 };
+
+export type ApiServiceResponse = AxiosResponse | void;

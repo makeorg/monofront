@@ -1,7 +1,8 @@
+import { OptionsType } from '@make.org/types';
 import { AxiosResponse } from 'axios';
 
 export interface IApiServiceStrategy {
-  callApi(url: string, options: any): Promise<void | AxiosResponse>;
+  callApi(url: string, options: OptionsType): Promise<void | AxiosResponse>;
   get country(): string;
   get language(): string;
   get source(): string;
@@ -22,7 +23,10 @@ class ApiServiceClass {
     return this.strategyValue;
   }
 
-  callApi(url: string, options = {}): Promise<void | AxiosResponse> {
+  callApi(
+    url: string,
+    options: OptionsType = { method: 'get' }
+  ): Promise<void | AxiosResponse> {
     return this.strategy.callApi(url, options);
   }
 

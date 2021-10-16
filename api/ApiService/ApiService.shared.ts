@@ -1,9 +1,13 @@
 /* eslint-disable max-classes-per-file */
-import axios, { AxiosResponse } from 'axios';
 import { Logger } from '@make.org/utils/services/Logger';
 import { v4 as uuidv4 } from 'uuid';
 import { env } from '@make.org/assets/env';
-import { ErrorResponse, OptionsType } from '@make.org/types';
+import {
+  ApiServiceResponse,
+  ErrorResponse,
+  OptionsType,
+} from '@make.org/types';
+import axios from 'axios';
 import { ApiServiceError } from './ApiServiceError';
 
 declare global {
@@ -116,7 +120,7 @@ export const handleErrors = (
 
 class ApiServiceSharedClass {
   // eslint-disable-next-line class-methods-use-this
-  callApi(url: string, options: OptionsType): Promise<void | AxiosResponse> {
+  callApi(url: string, options: OptionsType): Promise<ApiServiceResponse> {
     const paramsQuery = new URLSearchParams(LOCATION_PARAMS).toString();
     const requestId = uuidv4();
     const defaultHeaders: Readonly<Record<string, string | null>> = {
@@ -153,9 +157,11 @@ class ApiServiceSharedClass {
       httpsAgent: options.httpsAgent || undefined,
     };
 
-    return axios(apiUrl, axiosOptions).catch(error =>
+    const response = axios(apiUrl, axiosOptions).catch(error =>
       handleErrors(error, apiUrl, options.method, requestId)
     );
+
+    return response as ApiServiceResponse;
   }
 }
 

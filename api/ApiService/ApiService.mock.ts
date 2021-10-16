@@ -1,9 +1,12 @@
+import { ApiServiceResponse } from '@make.org/types';
+import { AxiosResponse } from 'axios';
 import { IApiServiceStrategy } from './index';
 
 export class ApiServiceMock implements IApiServiceStrategy {
   // eslint-disable-next-line class-methods-use-this
-  callApi(url: string): Promise<any> {
-    return Promise.resolve(url);
+  callApi(url: string): Promise<ApiServiceResponse> {
+    const result = { data: url } as AxiosResponse;
+    return Promise.resolve(result);
   }
 
   // eslint-disable-next-line class-methods-use-this

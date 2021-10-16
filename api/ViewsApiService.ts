@@ -10,7 +10,7 @@ const COUNTRIES_PATH = '/views/countries';
 
 export class ViewsApiService {
   static getCountries = async (
-    headers?: any
+    headers?: Record<string, string>
   ): Promise<void | AxiosResponse<CountryWithConsulationsType[]>> =>
     ApiService.callApi(COUNTRIES_PATH, {
       method: 'GET',
@@ -19,7 +19,7 @@ export class ViewsApiService {
 
   static getHome = async (
     country: string,
-    headers?: any
+    headers?: Record<string, string>
   ): Promise<void | AxiosResponse<HomeViewType>> =>
     ApiService.callApi(HOMEPAGE_PATH.replace(':country', country), {
       method: 'GET',

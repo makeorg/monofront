@@ -8,9 +8,9 @@
 |`x-hostname` | true |   Current host name. In production is "make.org" |
 |`x-make-app-name`|true|Application name. Is always `main-front`. (other existing application name: "backoffice")|
 |`x-make-source`|true|Source name. Is always `core`. (other existing source name: "huffpost")|
-|`x-make-location`|true|Current page name. See [getLocationContext](../shared/api/ApiService/getLocationContext.js)|
-|`x-make-country`|true|Current ISO country. Refers to the country in the path of url (not an consultation country)|
-|`x-make-language`|true|Current ISO language. Refers to the interface language (not the consultation language)|
+|`x-make-location`|true|Current page name for front app or `widget` for widget app. See [getLocationContext](../shared/api/ApiService/getLocationContext.js)|
+|`x-make-country`|true|Current ISO country. Refers to the country in the path of url (not an consultation country) for front app and consultation country for widget app|
+|`x-make-language`|true|Current ISO language. Refers to the interface language (not the consultation language) for front app and consultation language for widget app|
 |`x-make-question-id`|false|Question id of the consultation (if relevant)|
 |`x-make-referrer`|false|Referrer value|
 |`x-make-custom-data`|false|Custom tracking data. Exemple : `x-make-custom-data: key1=value1,key2=value2`|
@@ -26,11 +26,11 @@ Following parameters are added to all events.
 | param_name | required | description | values |
 |-|-|-|-|
 | `location` | true | Current page name |  |
-| `source` | true | Source name. Is always `core`.  (other existing source name: "huffpost")
+| `source` | true | Source name. Is `core` for front app.  For widget, is the media label that embeds the widget ("huffpost"...)
  |  |
-| `language` | true | Current ISO language. Refers to the interface language (not the consultation language).
+| `language` | true | Current ISO language. Refers to the interface language (not the consultation language) for front app and consultation language for widget.
  |  |
-| `country` | true | Current ISO country. Refers to the country in the path of url (not the consultation country).
+| `country` | true | Current ISO country. Refers to the country in the path of url (not the consultation country) for front app and consultation country for widget.
  |  |
 | `questionId` | false | Question id of the consultation (if relevant) |  |
 | `questionSlug` | false | Question slug of the consultation (if relevant) |  |

@@ -1,15 +1,16 @@
+import { ApiServiceResponse, OptionsType } from '@make.org/types';
 import https from 'https';
 import { ApiServiceShared } from './ApiService.shared';
 import { IApiServiceStrategy } from './index';
 
 export class ApiServiceServer implements IApiServiceStrategy {
   // eslint-disable-next-line class-methods-use-this
-  callApi(url: string, options: any): Promise<any> {
+  callApi(url: string, options: OptionsType): Promise<ApiServiceResponse> {
     const headers = {
       ...options.headers,
     };
 
-    const agent = new https.Agent({
+    const agent: https.Agent = new https.Agent({
       rejectUnauthorized: false,
     });
     const serverOptions = { httpsAgent: agent, ...options };

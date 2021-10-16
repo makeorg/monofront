@@ -1,6 +1,10 @@
 /* eslint-disable no-underscore-dangle */
 import { AxiosResponse } from 'axios';
-import { ApiServiceHeadersType, OptionsType } from '@make.org/types';
+import {
+  ApiServiceHeadersType,
+  ApiServiceResponse,
+  OptionsType,
+} from '@make.org/types';
 import { IApiServiceStrategy } from './index';
 import { ApiServiceShared } from './ApiService.shared';
 import { ApiServiceError } from './ApiServiceError';
@@ -37,7 +41,8 @@ export class ApiServiceClient implements IApiServiceStrategy {
 
   _refreshTokenCallback: () => Promise<string> = refreshToken;
 
-  _headersListeners: any = new Map();
+  _headersListeners: Map<string, (headers: ApiServiceHeadersType) => void> =
+    new Map();
 
   constructor() {
     this._referrer =
@@ -158,7 +163,9 @@ export class ApiServiceClient implements IApiServiceStrategy {
     return this._refreshTokenCallback;
   }
 
-  set headersListener(listeners: Map<string, string>) {
+  set headersListener(
+    listeners: Map<string, (headers: ApiServiceHeadersType) => void>
+  ) {
     this._headersListeners = listeners;
   }
 
@@ -236,7 +243,8 @@ export class ApiServiceClient implements IApiServiceStrategy {
       );
 
       return response;
-    } catch (apiServiceError: any) {
+    } catch (error: unknown) {
+      const apiServiceError = error as ApiServiceError;
       this._headersListeners.forEach(
         (listener: (headers: Readonly<Record<string, string>>) => void) =>
           apiServiceError?.headers && listener(apiServiceError?.headers)
@@ -267,7 +275,7 @@ export class ApiServiceClient implements IApiServiceStrategy {
   async callApi(
     url: string,
     options: OptionsType
-  ): Promise<void | AxiosResponse> {
+  ): Promise<ApiServiceResponse> {
     const setAttributesFromResponseHeaders = (
       responseHeaders: ApiServiceHeadersType | null | undefined
     ) => {

@@ -1,15 +1,16 @@
 /* eslint-disable max-classes-per-file */
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import axiosRetry from 'axios-retry';
+import { ApiServiceResponse } from '@make.org/types';
 import { OptionsType } from '../../types';
 import { handleErrors } from './ApiService.shared';
 
 export class ExpressApiServiceSharedError extends Error {
   status?: number;
 
-  data?: any;
+  data?: unknown;
 
-  constructor(message: string, status?: number, data?: any) {
+  constructor(message: string, status?: number, data?: unknown) {
     super(message);
     this.status = status;
     this.data = data;
@@ -27,7 +28,7 @@ axiosRetry(axios, {
 
 class ExpressApiServiceSharedClass {
   // eslint-disable-next-line class-methods-use-this
-  callApi(url: string, options: OptionsType): Promise<void | AxiosResponse> {
+  callApi(url: string, options: OptionsType): Promise<ApiServiceResponse> {
     const defaultHeaders = {
       'Content-Type': 'application/json; charset=UTF-8',
     };
@@ -35,7 +36,7 @@ class ExpressApiServiceSharedClass {
 
     const apiUrl = `${url}`;
 
-    return axios(apiUrl, {
+    const response = axios(apiUrl, {
       method: options.method,
       headers,
       data: options.body,
@@ -43,6 +44,8 @@ class ExpressApiServiceSharedClass {
       withCredentials: false,
       httpsAgent: options.httpsAgent || undefined,
     }).catch(error => handleErrors(error, apiUrl, options.method));
+
+    return response as ApiServiceResponse;
   }
 }
 
