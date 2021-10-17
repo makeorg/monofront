@@ -130,6 +130,7 @@ class LoggerSingleton {
     }
 
     if (!env.isClientSide()) {
+      // eslint-disable-next-line no-console
       console.error('trying to use logger service on server side', level, data);
 
       return;

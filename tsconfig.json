@@ -12,6 +12,7 @@
     "**/Svg/*.js",
     "**/*.config.js",
     "**/apimock",
+    "**/reports"
   ],
   "compilerOptions": {
     "baseUrl": "./types/index",

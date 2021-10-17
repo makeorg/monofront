@@ -83,6 +83,7 @@ const getLogFormat = (sourceMapReplace: (stack: string) => string) => {
   const { printf } = winston.format;
 
   return printf(info => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const data: any = info instanceof Object ? info : { message: info };
 
     const infoLabel = data.label;
@@ -124,8 +125,11 @@ interface ServerLogger {
 }
 
 let logger: ServerLogger = {
+  // eslint-disable-next-line no-console
   logError: error => console.error('Logger not initialized', error),
+  // eslint-disable-next-line no-console
   logInfo: info => console.log('Logger not initialized', info),
+  // eslint-disable-next-line no-console
   logWarning: warning => console.warn('Logger not initialized', warning),
 };
 

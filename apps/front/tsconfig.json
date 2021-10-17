@@ -17,6 +17,9 @@
     "../../components",
     "../../utils"
   ],
+  "exclude": [
+    "**/coverage"
+  ],
   "paths": {
     "@make.org/widget": ["../../apps/widget/*"],
     "@make.org/front": ["../../apps/front/*"],

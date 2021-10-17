@@ -102,7 +102,7 @@ const trackPerformance = async (
 export const track = (
   eventName: string,
   parameters: TrackingConfigurationParamType
-): Promise<any> => {
+): Promise<void> => {
   if (env.isDev()) {
     // eslint-disable-next-line no-console
     console.info(
@@ -116,7 +116,7 @@ export const track = (
     eventType: 'trackCustom',
   };
 
-  return TrackingApiService.track(params);
+  return TrackingApiService.track(params).then();
 };
 
 export const TrackingService = {
@@ -129,7 +129,7 @@ export const TrackingService = {
   }: {
     eventName: string;
     parameters: TrackingConfigurationParamType;
-    protectedParameters: any;
+    protectedParameters: string[];
   }): void => {
     const cookies = new Cookies();
     const preferencesCookie = cookies.get(COOKIE.USER_PREFERENCES);

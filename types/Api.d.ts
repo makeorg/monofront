@@ -69,7 +69,7 @@ type AxiosConfigType = {
   transformRequest?: (data: T, headers: Record<string, string>) => T;
   transformResponse?: (data: T) => T;
   headers?: Record<string, string>;
-  params?: Record<string, string> | URLSearchParams;
+  params?: Record<string | boolean | number | undefined> | URLSearchParams;
   paramsSerializer?: (params: unknown) => string;
   data?: unknown;
   timeout?: number;

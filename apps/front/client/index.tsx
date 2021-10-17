@@ -26,7 +26,11 @@ import { getRouteNoCookies } from '@make.org/utils/routes';
 import ContextState from '@make.org/store';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 
-import { ApiServiceHeadersType, StateRoot } from '@make.org/types';
+import {
+  ApiServiceHeadersType,
+  StateRoot,
+  TrackingParamsUpdateType,
+} from '@make.org/types';
 import { initTrackersFromPreferences } from '@make.org/utils/helpers/cookies';
 import { COOKIE } from '@make.org/types/enums';
 import { getAppTrackingLocation } from '@make.org/utils/helpers/getLocationContext';
@@ -143,14 +147,28 @@ const initApp = async (state: StateRoot) => {
 
   // Set tracking params
   trackingParamsService.addOnUpdateListener({
-    onTrackingUpdate: (params: any) => {
-      apiClient.source = params.source;
-      apiClient.country = params.country;
-      apiClient.language = params.language;
-      apiClient.location = params.location;
-      apiClient.url = params.url;
-      apiClient.referrer = params.referrer;
-      apiClient.questionId = params.questionId;
+    onTrackingUpdate: (params: TrackingParamsUpdateType) => {
+      if (params.source) {
+        apiClient.source = params.source;
+      }
+      if (params.country) {
+        apiClient.country = params.country;
+      }
+      if (params.language) {
+        apiClient.language = params.language;
+      }
+      if (params.location) {
+        apiClient.location = params.location;
+      }
+      if (params.url) {
+        apiClient.url = params.url;
+      }
+      if (params.referrer) {
+        apiClient.referrer = params.referrer;
+      }
+      if (params.questionId) {
+        apiClient.questionId = params.questionId;
+      }
     },
   });
   trackingParamsService.source = source;

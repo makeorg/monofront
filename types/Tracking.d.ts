@@ -58,13 +58,13 @@ export type TrackingEventConfigurationType = {
   key: string;
   description: string;
   parameters?: TrackingConfigurationParamType[];
-  protected_parameters?: any;
+  protected_parameters?: string[];
 };
 
 export type TrackingEventType = (args?: TrackingConfigurationParamType) => {
   eventName: string;
   parameters: TrackingConfigurationParamType;
-  protectedParameters: any;
+  protectedParameters: string[];
 };
 export type TrackingAllEventsType = {
   [f: string]: TrackingEventType;

@@ -11,7 +11,7 @@ export type DataLog = {
   app_columnNumber?: string;
   stack?: string;
   app_status?: number;
-  app_responseData?: string;
+  app_responseData?: unknown;
   app_url?: string;
   app_method?: string;
   app_requestId?: string;
@@ -48,7 +48,7 @@ const formatError = (
   stack: error.stack,
 });
 
-export const errorNormalizer = (data: any): DataLog => {
+export const errorNormalizer = <T>(data: T): DataLog | T => {
   if (data instanceof Error) {
     return formatError(data);
   }
@@ -56,7 +56,7 @@ export const errorNormalizer = (data: any): DataLog => {
   return data;
 };
 
-export const makeorgApiServiceErrorNormalizer = (data: any): DataLog => {
+export const makeorgApiServiceErrorNormalizer = <T>(data: T): DataLog | T => {
   if (data instanceof ApiServiceError) {
     return formatApiServiceError(data);
   }
@@ -64,7 +64,7 @@ export const makeorgApiServiceErrorNormalizer = (data: any): DataLog => {
   return data;
 };
 
-export const stringNormalizer = (data: any): DataLog => {
+export const stringNormalizer = <T>(data: T): DataLog | T => {
   if (typeof data === 'string') {
     return {
       message: data,
@@ -77,8 +77,10 @@ export const stringNormalizer = (data: any): DataLog => {
   return data;
 };
 
-export const objectNormalizer = (data: any): DataLog => {
+export const objectNormalizer = <T>(data: T): DataLog | T => {
   if (typeof data === 'object') {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const dataObj = data as any;
     const formatedData: {
       app_logId: string;
       app_logName: string;
@@ -88,11 +90,12 @@ export const objectNormalizer = (data: any): DataLog => {
       errorName?: string;
       logId?: string;
     } = {
-      ...data,
-      app_logId: data.app_logId || data.logId || uuidv4(),
-      app_logName: data.app_logName || data.name || data.errorName || '-',
-      stack: data.stack || '-',
-      message: data.message || '-',
+      ...dataObj,
+      app_logId: dataObj.app_logId || dataObj.logId || uuidv4(),
+      app_logName:
+        dataObj.app_logName || dataObj.name || dataObj.errorName || '-',
+      stack: dataObj.stack || '-',
+      message: dataObj.message || '-',
     };
 
     delete formatedData.name;
@@ -120,7 +123,7 @@ export const defaultNormalizer = (data: unknown): DataLog => {
   }
 };
 
-export type DataNormalizer = { (data: unknown): void | DataLog };
+export type DataNormalizer = { <T>(data: T): T | DataLog };
 
 export const normalizeData = (
   data: unknown,
