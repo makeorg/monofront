@@ -33,7 +33,7 @@ const isTWInitialized = () => {
 };
 
 export const TwitterTracking = {
-  track(action: string) {
+  track(action) {
     if (twitterEventMapping[action] === undefined) {
       return;
     }
