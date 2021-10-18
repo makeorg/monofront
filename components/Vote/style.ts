@@ -21,7 +21,7 @@ export const VoteContainerStyle = styled.div`
     margin: 10px 0px 5px;
   }
   &.widget {
-    margin-top: 30px;
+    margin-top: 15px;
     margin-bottom: 5px;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -32,6 +32,9 @@ export const VoteContainerStyle = styled.div`
     }
     &.placeholder {
       margin: 20px 0 10px;
+    }
+    &.widget {
+      margin-top: 30px;
     }
   }
 `;

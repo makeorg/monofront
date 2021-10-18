@@ -165,9 +165,6 @@ export const SequenceNextCardButtonStyle = styled(RedButtonStyle)`
   &.widget {
     bottom: 4px;
     font-size: 14px;
-    @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-      font-size: ${intToPx(typography.font.fontsize.XS.value)};
-    }
   }
 `;
 
