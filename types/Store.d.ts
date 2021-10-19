@@ -191,6 +191,7 @@ export type StateRoot = {
   partners?: StatePartners;
   panel: StatePanel;
   session: StateSession;
+  filterAndSort: StateFilterAndSort;
 };
 
 export type Reducer<State = any, Action = any> = (

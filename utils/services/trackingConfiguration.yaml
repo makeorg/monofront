@@ -610,10 +610,6 @@ CLICK_SORT:
           - recent
           - popular
           - controversy
-
-CLICK_SEARCH_PROPOSALS:
-    key: click-search-proposals
-    description: Click on submit button for filtering and sorting proposals
     
 DISPLAY_CHARGE_INTRO_CARD:
     key: display-charge-intro-card

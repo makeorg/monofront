@@ -14,14 +14,12 @@ import { searchProposals } from '@make.org/utils/helpers/proposal';
 import { useParams } from 'react-router';
 import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
 import { Pagination } from '@make.org/components/Pagination';
-import {
-  trackClickSearchProposals,
-  trackDisplayOperationPage,
-} from '@make.org/utils/services/Tracking';
+import { trackDisplayOperationPage } from '@make.org/utils/services/Tracking';
 import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
 import { QuestionService } from '@make.org/utils/services/Question';
 import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
+import { updateFilterAndSortState } from '@make.org/store/actions/proposals';
 import { ProposalsList } from '../../app/Consultation/ProposalsList';
 import { Timeline } from '../../app/Consultation/Timeline';
 import { ParticipateNavigation } from '../../app/Consultation/Navigation/Participate';
@@ -46,6 +44,8 @@ const ExplorePage: FC = () => {
   const params: { country: string; pageId: string } = useParams();
   const { country, pageId } = params;
   const { device } = state.appConfig;
+  const { filterAndSort } = state;
+
   const isDesktop = matchDesktopDevice(device);
   const question: QuestionType = selectCurrentQuestion(state);
   const [proposals, setProposals] = useState<ProposalType[]>([]);
@@ -57,14 +57,6 @@ const ExplorePage: FC = () => {
   const KEYWORD_THRESHOLD = 5;
   const hasProposals = proposalsTotal > 0;
 
-  const [filterAndSortValues, setFilterAndSortValues] =
-    useState<TypeFilterAndSortValues>({
-      keywords: undefined,
-      sortAlgorithm: undefined,
-      sort: 'RECENT',
-      isNotVoted: false,
-      userType: undefined,
-    });
   const defaultValues = {
     keywords: undefined,
     sortAlgorithm: undefined,
@@ -119,24 +111,20 @@ const ExplorePage: FC = () => {
     setLoading(false);
   };
 
-  // handleSubmit for filters
-  const handleSubmit = () => {
-    getProposals(filterAndSortValues);
-    trackClickSearchProposals();
-    if (!isDesktop) {
-      dispatch(closePanel());
-    }
-  };
-
   // handleReset for filters
   const handleReset = () => {
-    setFilterAndSortValues({ ...defaultValues });
+    dispatch(updateFilterAndSortState(defaultValues));
     getProposals(defaultValues);
     if (!isDesktop) {
       dispatch(closePanel());
       dispatch(removePanelContent());
     }
   };
+
+  useEffect(() => {
+    getProposals(state.filterAndSort);
+    console.log('>>>F&S IN EXPLORE PAGE', filterAndSort);
+  }, [state.filterAndSort]);
 
   useEffect(() => {
     if (!question.canPropose) {
@@ -203,10 +191,8 @@ const ExplorePage: FC = () => {
           <ParticipateSidebarContentStyle>
             {isDesktop && (
               <FilterAndSort
-                filterAndSortValues={filterAndSortValues}
-                setFilterAndSortValues={setFilterAndSortValues}
+                filterAndSortValues={filterAndSort}
                 keywords={keyword}
-                handleSubmit={handleSubmit}
                 handleReset={handleReset}
               />
             )}

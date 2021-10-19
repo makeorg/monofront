@@ -1,4 +1,4 @@
-import React, { FormEvent, Dispatch, SetStateAction } from 'react';
+import React from 'react';
 import i18n from 'i18next';
 import { setPanelContent } from '@make.org/store/actions/panel';
 import { useAppContext } from '@make.org/store';
@@ -8,17 +8,13 @@ import { FilterPanelStyle, SvgFilterPanelStyle } from './style';
 
 type Props = {
   filterAndSortValues: TypeFilterAndSortValues;
-  setFilterAndSortValues: Dispatch<SetStateAction<TypeFilterAndSortValues>>;
   keywords: QuestionKeywordType[];
-  handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
   handleReset: () => void;
 };
 
 export const SortAndFiltersCTA: React.FC<Props> = ({
   filterAndSortValues,
-  setFilterAndSortValues,
   keywords,
-  handleSubmit,
   handleReset,
 }: Props) => {
   const { dispatch } = useAppContext();
@@ -30,9 +26,7 @@ export const SortAndFiltersCTA: React.FC<Props> = ({
           setPanelContent(
             <FilterAndSort
               filterAndSortValues={filterAndSortValues}
-              setFilterAndSortValues={setFilterAndSortValues}
               keywords={keywords}
-              handleSubmit={handleSubmit}
               handleReset={handleReset}
             />
           )

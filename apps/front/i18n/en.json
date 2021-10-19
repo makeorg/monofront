@@ -691,8 +691,7 @@
       "controversial": "Controversial",
       "unvoted": "Waiting for your vote",
       "organisations_proposals": "Proposed by organizations",
-      "no_proposal": "No solution",
-      "display_proposals": "Display solutions"
+      "no_proposal": "No solution"
     },
     "sort": {
       "TAGGED_FIRST": "All the solutions",

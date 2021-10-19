@@ -13,7 +13,10 @@ import { combineReducers, deepEqual, getCurrentTimeFormatted } from './utils';
 
 import { panel_reducer } from './reducers/panel';
 import { modal_reducer } from './reducers/modal';
-import { proposals_reducer } from './reducers/proposals';
+import {
+  filter_and_sort_reducer,
+  proposals_reducer,
+} from './reducers/proposals';
 import { sequence_reducer } from './reducers/sequence';
 import { user_reducer } from './reducers/user';
 import { initialState } from './initialState';
@@ -46,6 +49,7 @@ const rootReducer = combineReducers({
   modal: modal_reducer,
   panel: panel_reducer,
   session: session_reducer,
+  filterAndSort: filter_and_sort_reducer,
 });
 
 export const useAllReducers = (
