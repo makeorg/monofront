@@ -15,3 +15,6 @@ export const REJECT_ALL_PREFRENCES: StateUserCookiesPreferences = {
   twitter_sharing: false,
   linkedin_sharing: false,
 };
+
+export const ENABLE_MIXPANEL = true;
+export const DISABLE_MIXPANEL = false;

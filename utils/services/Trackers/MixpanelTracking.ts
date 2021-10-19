@@ -134,23 +134,30 @@ const mixpnl = {
 };
 
 export const isMixpanelInitialized = (): boolean => !!mixpnl.isLoaded();
+let isEnabled = false;
 
 export const MixpanelTracking = {
   init(): void {
     mixpnl.load();
+    isEnabled = true;
   },
   isInitialized(): void {
     isMixpanelInitialized();
   },
   track(eventName: string, eventParameters: MixpanelEventParams): void {
-    if (!isMixpanelInitialized()) {
-      // Todo handle cleanly with and without init
-      // Logger.logWarning({
-      //   message: `Failed to track event ${eventName}: MixpanelTracking should be initialized`,
-      //   name: 'tracking-init',
-      // });
+    if (!isEnabled) {
       return;
     }
+
+    if (!isMixpanelInitialized()) {
+      // Todo handle cleanly with and without init
+      Logger.logWarning({
+        message: `Failed to track event ${eventName}: MixpanelTracking should be initialized`,
+        name: 'tracking-init',
+      });
+      return;
+    }
+
     if (!eventParameters.distinctId) {
       Logger.logWarning({
         message: `Failed to track event ${eventName}: empty distinctId`,

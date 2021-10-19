@@ -17,7 +17,7 @@ import { FacebookTracking } from './Trackers/FacebookTracking';
 import { TwitterTracking } from './Trackers/TwitterTracking.js';
 import { trackingParamsService } from './TrackingParamsService';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
-// import { MixpanelTracking } from './Trackers/MixpanelTracking';
+import { MixpanelTracking } from './Trackers/MixpanelTracking';
 import { Logger } from './Logger';
 
 const validateParameters = (
@@ -168,14 +168,14 @@ export const TrackingService = {
     }
 
     // Todo handle MixpanelTracking init
-    // MixpanelTracking.track(
-    //   eventName,
-    //   // @ts-ignore
-    //   getEventParameters({
-    //     ...externalTrackingParameters,
-    //     // @ts-ignore
-    //     distinctId: trackingParamsService.visitorId,
-    //   })
-    // );
+    MixpanelTracking.track(
+      eventName,
+      // @ts-ignore
+      getEventParameters({
+        ...parameters,
+        // @ts-ignore
+        distinctId: trackingParamsService.visitorId,
+      })
+    );
   },
 };

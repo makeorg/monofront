@@ -22,6 +22,7 @@ import {
 } from '@make.org/store/actions/user/cookiesPreferences';
 import {
   ACCEPT_ALL_PREFERENCES,
+  ENABLE_MIXPANEL,
   REJECT_ALL_PREFRENCES,
 } from '@make.org/utils/constants/cookies';
 import { StateUserCookiesPreferences } from '@make.org/types';
@@ -69,7 +70,7 @@ export const CookieModal: React.FC = () => {
     trackClickModalCookieSave('cookies-accept-all');
     dispatch(modalCloseCookies());
     setPreferencesCookie(ACCEPT_ALL_PREFERENCES);
-    initTrackersFromPreferences(ACCEPT_ALL_PREFERENCES);
+    initTrackersFromPreferences(ACCEPT_ALL_PREFERENCES, ENABLE_MIXPANEL);
   };
 
   const handleRejectAll = () => {
@@ -94,7 +95,7 @@ export const CookieModal: React.FC = () => {
     dispatch(modalCloseCookies());
     setPreferencesCookie(cookiesPreferences);
     removeTrackersFromPreferences(cookiesPreferences);
-    initTrackersFromPreferences(cookiesPreferences);
+    initTrackersFromPreferences(cookiesPreferences, ENABLE_MIXPANEL);
   };
 
   useEffect(() => {

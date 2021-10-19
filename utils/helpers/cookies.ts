@@ -22,7 +22,8 @@ export const setPreferencesCookie = (
 };
 
 export const initTrackersFromPreferences = (
-  cookiePreferences: StateUserCookiesPreferences
+  cookiePreferences: StateUserCookiesPreferences,
+  enableMixPanel?: boolean
 ): void => {
   const body = document.querySelector('body');
   const twitterScript = document.createElement('script');
@@ -44,8 +45,9 @@ export const initTrackersFromPreferences = (
     TwitterUniversalTag.init();
   }
 
-  // allways init mixpanel
-  MixpanelTracking.init();
+  if (enableMixPanel) {
+    MixpanelTracking.init();
+  }
 };
 
 export const removeTrackersFromPreferences = (

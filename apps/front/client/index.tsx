@@ -30,6 +30,7 @@ import { ApiServiceHeadersType, StateRoot } from '@make.org/types';
 import { initTrackersFromPreferences } from '@make.org/utils/helpers/cookies';
 import { COOKIE } from '@make.org/types/enums';
 import { getAppTrackingLocation } from '@make.org/utils/helpers/getLocationContext';
+import { ENABLE_MIXPANEL } from '@make.org/utils/constants/cookies';
 import { CountryListener } from './app/CountryListener';
 import { AppContainer } from './app';
 import { cookieIsEnabled, thirdCookieEnabled } from './helper/cookieDetect';
@@ -135,7 +136,7 @@ const initApp = async (state: StateRoot) => {
   // Cookie preference
   const cookies = new Cookies();
   const preferencesCookie = cookies.get(COOKIE.USER_PREFERENCES);
-  initTrackersFromPreferences(preferencesCookie);
+  initTrackersFromPreferences(preferencesCookie, ENABLE_MIXPANEL);
 
   // Set date helper language
   DateHelper.language = language;
