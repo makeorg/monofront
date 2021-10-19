@@ -15,7 +15,7 @@ export const MOBILE_DEVICE = 'MOBILE';
 export const DEBOUNCE_TIMER = 250;
 
 export const PRIVACY_POLICY_DATE = format(new Date('05/19/2021'), 'P');
-export const GTU_DATE = '2017/9/30';
+export const GTU_DATE = '2021/10/18';
 export const A11Y_DATE = '2020/10/4';
 
 /** MAKE Informations */
