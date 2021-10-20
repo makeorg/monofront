@@ -58,7 +58,9 @@ import {
 export const A11yFR: FC = () => {
   const { state } = useAppContext();
   const { country, language } = state.appConfig;
-
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  const FRONT_URL: string = env.frontUrl() || window.FRONT_URL;
   return (
     <>
       <MetaTags
@@ -75,8 +77,8 @@ export const A11yFR: FC = () => {
         </StaticParagraphStyle>
         <StaticParagraphStyle>
           {'Cette déclaration d’accessibilité s’applique à '}
-          <RedHTMLLinkElementStyle href={env.frontUrl()}>
-            {env.frontUrl()}
+          <RedHTMLLinkElementStyle href={FRONT_URL}>
+            {FRONT_URL}
           </RedHTMLLinkElementStyle>
           .
         </StaticParagraphStyle>
