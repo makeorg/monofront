@@ -124,7 +124,8 @@ export const Routes: FC = () => {
     if (preferencesCookies?.twitter_tracking) {
       TwitterUniversalTag.pageView();
     }
-  }, [location.pathname, preferencesCookies]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.pathname]);
 
   return (
     <Switch>

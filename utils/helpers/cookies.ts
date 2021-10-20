@@ -3,7 +3,7 @@ import { StateUserCookiesPreferences } from '@make.org/types';
 import Cookies from 'universal-cookie';
 import { MixpanelTracking } from '@make.org/utils/services/Trackers/MixpanelTracking';
 import { COOKIE } from '@make.org/types/enums';
-import { TwitterUniversalTag } from '../services/Trackers/TwitterTracking.js';
+import { TwitterUniversalTag } from '../services/Trackers/TwitterTracking';
 import { TWITTER_SCRIPT, twttr } from '../services/Trackers/twttr.js';
 
 // set cookie expiration for user preferences (1 year)

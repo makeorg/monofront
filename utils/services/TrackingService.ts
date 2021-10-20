@@ -14,7 +14,7 @@ import { COOKIE } from '@make.org/types/enums';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import trackingConfiguration from './trackingConfiguration.yaml';
 import { FacebookTracking } from './Trackers/FacebookTracking';
-import { TwitterTracking } from './Trackers/TwitterTracking.js';
+import { TwitterTracking } from './Trackers/TwitterTracking';
 import { trackingParamsService } from './TrackingParamsService';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 import { MixpanelTracking } from './Trackers/MixpanelTracking';

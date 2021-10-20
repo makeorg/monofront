@@ -1,5 +1,6 @@
 import { env } from '@make.org/assets/env';
 import { TrackingConfigurationParamType } from '@make.org/types';
+import { Logger } from '../Logger';
 import { fbq } from './fbq.js';
 
 const makePixelId = '260470104426586';
@@ -34,9 +35,14 @@ export const isFBInitialized = (): boolean => {
 
 export const FacebookTracking = {
   init(): void {
-    fbq.load();
-    fbq.track('init', makePixelId);
-    initialized = true;
+    try {
+      fbq.load();
+      fbq.track('init', makePixelId);
+      initialized = true;
+    } catch (e) {
+      const error = e as string;
+      Logger.logError(error);
+    }
   },
 
   isInitialized(): boolean {
@@ -56,7 +62,12 @@ export const FacebookTracking = {
       return;
     }
 
-    fbq.track('track', 'PageView');
+    try {
+      fbq.track('track', 'PageView');
+    } catch (e) {
+      const error = e as string;
+      Logger.logError(error);
+    }
   },
 
   trackCustom(
@@ -77,6 +88,11 @@ export const FacebookTracking = {
       return;
     }
 
-    fbq.track('trackSingleCustom', makePixelId, eventName, eventParameters);
+    try {
+      fbq.track('trackSingleCustom', makePixelId, eventName, eventParameters);
+    } catch (e) {
+      const error = e as string;
+      Logger.logError(error);
+    }
   },
 };

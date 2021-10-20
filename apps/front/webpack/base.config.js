@@ -149,7 +149,7 @@ const clientConfig = envConfigPath => ({
         },
       },
       {
-        test: /\.(jpe?g|png|gif|svg|ttf|eot|woff|woff2|manifest|ico|yaml)$/,
+        test: /\.(jpe?g|png|gif|svg|ttf|eot|woff|woff2|manifest|ico)$/,
         use: [
           {
             loader: 'file-loader',
@@ -162,6 +162,11 @@ const clientConfig = envConfigPath => ({
       {
         test: /\.mdx?$/,
         use: ['babel-loader', '@mdx-js/loader'],
+      },
+      {
+        test: /\.ya?ml$/,
+        type: 'json',
+        use: 'yaml-loader',
       },
     ],
   },
