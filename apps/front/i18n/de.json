@@ -829,8 +829,8 @@
       "recent": "Neueste",
       "popular": "Beliebteste",
       "controversial": "Umstrittenste",
-      "unvoted": "Vorschläge, über die nicht abgestimmt wurde",
-      "organisations_proposals": "Vorschläge von Organisationen",
+      "unvoted": "Diejenigen, die auf eure Stimme warten",
+      "organisations_proposals": "Diejenigen, die von Organisationen vorgeschlagen wurden",
       "no_proposal": "Kein Vorschlag",
       "display_proposals": "Vorschläge anzeigen",
       "filter": "@@consultation.explore.filter|fr:Filtrer"

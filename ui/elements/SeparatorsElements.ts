@@ -58,3 +58,8 @@ export const TileSeparatorStyle = styled(SeparatorStyle)`
 export const SidebarSeparatorStyle = styled(SeparatorStyle)`
   margin: 10px 0;
 `;
+
+export const FilterSeparationLineStyle = styled(SeparatorStyle)`
+  background-color: ${color.greyLighter};
+  margin: 30px 0;
+`;

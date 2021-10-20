@@ -19,11 +19,12 @@ export const FiltersWrapperStyle = styled(ColumnElementStyle)`
   width: 100%;
   justify-content: space-between;
   margin-bottom: 40px;
+  margin-top: 45px;
 `;
 
 export const FilterBlockStyle = styled.div`
-  padding: 30px 20px 20px;
-  margin-bottom: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
   background-color: ${color.white};
   border-radius: 8px;
 `;
@@ -32,7 +33,7 @@ export const FiltersTitleStyle = styled.h3`
   display: inline-flex;
   align-items: center;
   font-family: ${MakeFonts.CircularStandardBold};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${intToPx(typography.font.fontsize.S.value)};
   text-transform: none;
   line-height: 1.69;
   letter-spacing: 0.14px;
@@ -56,7 +57,6 @@ export const KeywordsItemWrapperStyle = styled.li`
 export const TransparentButtonFilter = styled.button`
   display: flex;
   justify-content: center;
-  width: 100%;
   padding: 10px 20px;
   border-radius: 8px;
   line-height: 1.31;
@@ -77,7 +77,9 @@ export const RadioListWrapperStyle = styled.ul`
   justify-content: space-between;
   list-style: none;
   text-decoration: none;
-  padding: 0px;
+  padding: 5px;
+  background-color: ${color.greyLighter};
+  border-radius: 8px;
 `;
 
 export const RadioItemWrapperStyle = styled.li`
@@ -85,16 +87,15 @@ export const RadioItemWrapperStyle = styled.li`
   justify-content: center;
   width: 100%;
   border-radius: 8px;
-  border: 1px solid ${color.grey};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   padding: 15px 20px;
-  margin-bottom: 15px;
   text-decoration: none;
   :last-child {
     margin-bottom: 0px;
   }
   &.selected {
-    border: 1px solid ${color.black};
+    background-color: ${color.white};
+    box-shadow: 0px 8px 12px -4px rgba(37, 49, 134, 0.08);
   }
 `;
 
@@ -137,6 +138,7 @@ export const SvgArrowsGroup = styled(SvgArrowGroupUpDown)`
   width: 13px;
   height: 22px;
   margin-right: 12px;
+  margin-left: 2px;
 `;
 
 export const SvgFilterBy = styled(SvgFilter)`

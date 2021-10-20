@@ -869,8 +869,8 @@
       "recent": "Récentes",
       "popular": "Populaires",
       "controversial": "Controversées",
-      "unvoted": "Propositions non votées",
-      "organisations_proposals": "Propositions des organisations",
+      "unvoted": "Celles qui attendent votre vote",
+      "organisations_proposals": "Proposées par des organisations",
       "no_proposal": "Aucune proposition",
       "display_proposals": "Afficher les propositions"
     },

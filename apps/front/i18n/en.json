@@ -689,8 +689,8 @@
       "recent": "Recent",
       "popular": "Popular",
       "controversial": "Controversial",
-      "unvoted": "Solutions not yet voted on",
-      "organisations_proposals": "Solutions proposed by organizations",
+      "unvoted": "Waiting for your vote",
+      "organisations_proposals": "Proposed by organizations",
       "no_proposal": "No solution",
       "display_proposals": "Display solutions"
     },

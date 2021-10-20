@@ -180,11 +180,7 @@ export const NoProposalWrapperStyle = styled.div`
 
 export const ResetLinkButtonWrapperStyle = styled.div`
   display: flex;
-  flex-direction: row;
-  padding-left: 20px;
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    flex-direction: row-reverse;
-  }
+  margin-top: 30px;
 `;
 
 export const ResetLinkStyle = styled.button`
@@ -192,8 +188,8 @@ export const ResetLinkStyle = styled.button`
   border: none;
   text-decoration: underline;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  color: ${color.black};
-  margin-bottom: 23px;
+  color: ${color.greyDark};
+  padding: 0;
   background-color: transparent;
 `;
 

@@ -20,6 +20,7 @@ import {
   trackClickFilter,
   trackClickSort,
 } from '@make.org/utils/services/Tracking';
+import { FilterSeparationLineStyle } from '@make.org/ui/elements/SeparatorsElements';
 import {
   ResetLinkStyle,
   ResetLinkButtonWrapperStyle,
@@ -172,54 +173,6 @@ export const FilterAndSort: React.FC<Props> = ({
 
   return (
     <FiltersWrapperStyle as="form" onSubmit={throttle(handleSubmit)}>
-      <ResetLinkButtonWrapperStyle>
-        <ResetLinkStyle
-          type="button"
-          onClick={() => {
-            handleReset();
-            setIsDisabled(true);
-            setCurrentSort(SORT_RECENT);
-            setCurrentKeyword('');
-          }}
-        >
-          {i18n.t('consultation.explore.reset_filters')}
-        </ResetLinkStyle>
-      </ResetLinkButtonWrapperStyle>
-      <FilterBlockStyle>
-        <FiltersTitleStyle>
-          <SvgArrowUp aria-hidden focusable="false" />
-          {i18n.t('consultation.cards.keywords.title')}
-        </FiltersTitleStyle>
-        {keywords.length > 1 && (
-          <KeywordsListWrapperStyle>
-            {keywords.map(keyword => (
-              <KeywordsItemWrapperStyle key={keyword.key}>
-                <TransparentButtonFilter
-                  type="button"
-                  name="keywords"
-                  value={keyword.key}
-                  onClick={() => {
-                    handleKeyword(keyword.key);
-                    trackClickFilter('keyword');
-                  }}
-                  className={handleClassName(currentKeyword, keyword.key)}
-                >
-                  {keyword.key}
-                </TransparentButtonFilter>
-              </KeywordsItemWrapperStyle>
-            ))}
-          </KeywordsListWrapperStyle>
-        )}
-        {keywords.length === 1 && (
-          <TransparentButtonFilter
-            type="button"
-            onClick={() => handleChange('keywords', keywords[0].key)}
-            value={keywords[0].key}
-          >
-            {keywords[0].key}
-          </TransparentButtonFilter>
-        )}
-      </FilterBlockStyle>
       <FilterBlockStyle>
         <FiltersTitleStyle>
           <SvgArrowsGroup aria-hidden focusable="false" />
@@ -264,6 +217,40 @@ export const FilterAndSort: React.FC<Props> = ({
         </RadioListWrapperStyle>
       </FilterBlockStyle>
       <FilterBlockStyle>
+        <FiltersTitleStyle>
+          <SvgArrowUp aria-hidden focusable="false" />
+          {i18n.t('consultation.cards.keywords.title')}
+        </FiltersTitleStyle>
+        {keywords.length > 1 && (
+          <KeywordsListWrapperStyle>
+            {keywords.map(keyword => (
+              <KeywordsItemWrapperStyle key={keyword.key}>
+                <TransparentButtonFilter
+                  type="button"
+                  name="keywords"
+                  value={keyword.key}
+                  onClick={() => {
+                    handleKeyword(keyword.key);
+                    trackClickFilter('keyword');
+                  }}
+                  className={handleClassName(currentKeyword, keyword.key)}
+                >
+                  {keyword.key}
+                </TransparentButtonFilter>
+              </KeywordsItemWrapperStyle>
+            ))}
+          </KeywordsListWrapperStyle>
+        )}
+        {keywords.length === 1 && (
+          <TransparentButtonFilter
+            type="button"
+            onClick={() => handleChange('keywords', keywords[0].key)}
+            value={keywords[0].key}
+          >
+            {keywords[0].key}
+          </TransparentButtonFilter>
+        )}
+        <FilterSeparationLineStyle />
         <FiltersTitleStyle>
           <SvgFilterBy aria-hidden focusable="false" />
           {i18n.t('consultation.explore.filter_by')}
@@ -311,6 +298,19 @@ export const FilterAndSort: React.FC<Props> = ({
             </CheckboxLabelStyle>
           </FilterByElementStyle>
         </FilterByWrapperStyle>
+        <ResetLinkButtonWrapperStyle>
+          <ResetLinkStyle
+            type="button"
+            onClick={() => {
+              handleReset();
+              setIsDisabled(true);
+              setCurrentSort(SORT_RECENT);
+              setCurrentKeyword('');
+            }}
+          >
+            {i18n.t('consultation.explore.reset_filters')}
+          </ResetLinkStyle>
+        </ResetLinkButtonWrapperStyle>
       </FilterBlockStyle>
       <RedSubmitButtonWrapperStyle>
         <RedButtonStyle type="submit" disabled={isDisabled}>
