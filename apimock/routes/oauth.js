@@ -17,7 +17,7 @@ oauthRouter.post('/make_access_token', (req, res) => {
   ) {
     res
       .cookie('mockIsConnected', true, {
-        sameSite: true,
+        sameSite: 'lax',
         httpOnly: true,
         secure: false,
       })
