@@ -10,14 +10,13 @@ describe('ApiService', () => {
   });
 
   it('get mock strategy instance', () => {
-    expect(ApiService.strategy).equal(mockStrategy);
+    expect(ApiService.strategy).toEqual(mockStrategy);
   });
 
   it('all getter must return foo', () => {
-    expect(ApiService.language).be('foo');
-    expect(ApiService.country).be('foo');
-    expect(ApiService.source).be('foo');
-    expect(ApiService.questionId).be('foo');
+    expect(ApiService.language).toEqual('foo');
+    expect(ApiService.country).toEqual('foo');
+    expect(ApiService.source).toEqual('foo');
   });
 
   it('callApi must call strategy.callApi', () => {

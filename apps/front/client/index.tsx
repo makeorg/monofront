@@ -10,30 +10,21 @@ import { authenticationState } from '@make.org/utils/helpers/auth';
 import { Logger } from '@make.org/utils/services/Logger';
 import { ApiService } from '@make.org/api/ApiService';
 import { apiClient } from '@make.org/api/ApiService/ApiService.client';
-import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
 import { DateHelper } from '@make.org/utils/helpers/date';
 import { detected as adBlockerDetected } from 'adblockdetect';
 import { track } from '@make.org/utils/services/TrackingService';
 import {
-  updateRequestContextCustomData,
   getAll,
   setDataFromQueryParams,
 } from '@make.org/utils/helpers/customData';
-import { updateTrackingQuestionParam } from '@make.org/utils/helpers/question';
 import i18n from 'i18next';
 import { createInitialState } from '@make.org/store/initialState';
 import { getRouteNoCookies } from '@make.org/utils/routes';
 import ContextState from '@make.org/store';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
-
-import {
-  ApiServiceHeadersType,
-  StateRoot,
-  TrackingParamsUpdateType,
-} from '@make.org/types';
+import { StateRoot } from '@make.org/types';
 import { initTrackersFromPreferences } from '@make.org/utils/helpers/cookies';
 import { COOKIE } from '@make.org/types/enums';
-import { getAppTrackingLocation } from '@make.org/utils/helpers/getLocationContext';
 import { ENABLE_MIXPANEL } from '@make.org/utils/constants/cookies';
 import { CountryListener } from './app/CountryListener';
 import { AppContainer } from './app';
@@ -43,6 +34,8 @@ import { ErrorBoundary, ServiceErrorHandler } from './app/Error';
 import { LanguageListener } from './app/LanguageListener';
 import { initDevState } from './helper/initDevState';
 import { translationRessources } from '../i18n';
+import { initApiService } from './apiServiceInit';
+import { initTrackingParamsService } from './trackingParamsServiceInit';
 
 declare global {
   interface Window {
@@ -100,19 +93,13 @@ const logAndTrackEvent = (eventName: string) => {
 const initApp = async (state: StateRoot) => {
   const { language, country, source, queryParams } = state.appConfig;
 
-  // add listener to update trackingParamsService && sessionId in state
-  // should be before first api call (before authenticationState) to get visitorId
-  apiClient.addHeadersListener(
-    'trackingServiceListener',
-    (headers: ApiServiceHeadersType) => {
-      trackingParamsService.visitorId =
-        headers['x-visitor-id'] || trackingParamsService.visitorId;
-    }
-  );
-  const authenticationStateData = await authenticationState();
-
   // Set in session storage some keys from query params
   setDataFromQueryParams(queryParams);
+
+  // init api service before authenticationState to get visitorId
+  initApiService(source, country, language, getAll());
+
+  const authenticationStateData = await authenticationState();
 
   const store = {
     ...state,
@@ -137,67 +124,17 @@ const initApp = async (state: StateRoot) => {
     resources: translationRessources,
   });
 
-  // Cookie preference
-  const cookies = new Cookies();
-  const preferencesCookie = cookies.get(COOKIE.USER_PREFERENCES);
-  initTrackersFromPreferences(preferencesCookie, ENABLE_MIXPANEL);
-
   // Set date helper language
   DateHelper.language = language;
 
-  // Set tracking params
-  trackingParamsService.addOnUpdateListener({
-    onTrackingUpdate: (params: TrackingParamsUpdateType) => {
-      if (params.source) {
-        apiClient.source = params.source;
-      }
-      if (params.country) {
-        apiClient.country = params.country;
-      }
-      if (params.language) {
-        apiClient.language = params.language;
-      }
-      if (params.location) {
-        apiClient.location = params.location;
-      }
-      if (params.url) {
-        apiClient.url = params.url;
-      }
-      if (params.referrer) {
-        apiClient.referrer = params.referrer;
-      }
-      if (params.questionId) {
-        apiClient.questionId = params.questionId;
-      }
-    },
-  });
-  trackingParamsService.source = source;
-  trackingParamsService.country = country;
-  trackingParamsService.language = language;
-  trackingParamsService.referrer =
-    typeof window !== 'undefined' && !!window.document.referrer
-      ? window.document.referrer
-      : '';
-  trackingParamsService.addBeforeGetListener({
-    execute: () => {
-      trackingParamsService.url =
-        typeof window !== 'undefined' && window && window.location
-          ? window.location.href
-          : 'undefined';
-      trackingParamsService.location = getAppTrackingLocation(
-        window?.location?.pathname
-      );
-    },
-  });
+  const { currentQuestion, questions } = store;
 
-  const { currentQuestion, questions, customData } = store;
+  // Init tracking params service
+  let question;
   if (currentQuestion && questions[currentQuestion]) {
-    updateTrackingQuestionParam(questions[currentQuestion].question);
+    question = questions[currentQuestion].question;
   }
-
-  if (customData) {
-    updateRequestContextCustomData(customData);
-  }
+  initTrackingParamsService(source, country, language, question);
 
   // Track cookies availability and adBlockers
   if (adBlockerDetected()) {
@@ -210,6 +147,11 @@ const initApp = async (state: StateRoot) => {
   if (!thirdCookieEnabled(thirdCookieNameToCheck)) {
     logAndTrackEvent('third-cookie-is-disabled');
   }
+
+  // Cookie preference
+  const cookies = new Cookies();
+  const preferencesCookie = cookies.get(COOKIE.USER_PREFERENCES);
+  initTrackersFromPreferences(preferencesCookie, ENABLE_MIXPANEL);
 
   loadableReady(() => {
     const appDom = document.getElementById('app');

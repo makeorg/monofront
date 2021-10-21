@@ -5,21 +5,24 @@ const PRODUCTION_DOMAIN = 'make.org';
 const nodeEnv = (): string | undefined => process.env.NODE_ENV;
 const isDev = (): boolean => nodeEnv() === 'development';
 const isTest = (): boolean => nodeEnv() === 'test';
-const apiUrl = (): string | undefined => process.env.API_URL;
-const proxyTargetApiUrl = (): string | undefined =>
-  process.env.LOCAL_PROXY_API_URL || process.env.PROXY_TARGET_API_URL; // need refactor beetween widget and front
+const apiUrlServerSide = (): string | undefined =>
+  process.env.API_URL_SERVER_SIDE;
+const apiUrlClientSide = (): string | undefined =>
+  process.env.API_URL_CLIENT_SIDE;
 const frontUrl = (): string | undefined => process.env.FRONT_URL;
 const port = (): string | undefined => process.env.PORT;
 const isProductionUrl = (): boolean | undefined =>
   process.env.FRONT_URL?.includes(PRODUCTION_DOMAIN);
+const useLocalProxy = (): string | undefined => process.env.LOCAL_USE_PROXY;
 
 // Export in env object
 export const env = {
   nodeEnv,
   isDev,
   isTest,
-  apiUrl,
-  proxyTargetApiUrl,
+  apiUrlServerSide,
+  apiUrlClientSide,
+  useLocalProxy,
   frontUrl,
   port,
   isProductionUrl,

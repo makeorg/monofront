@@ -144,17 +144,24 @@ const initApp = async (state: StateRoot) => {
   apiClient.language = language;
   apiClient.url = currentUrl;
   apiClient.referrer = referrer;
-  apiClient.questionId = currentQuestionId;
+  apiClient.addbeforeCallListener('globalWidget', (url, options) => {
+    if (trackingParamsService.questionId) {
+      apiClient.customHeaders = {
+        'x-make-question-id': trackingParamsService.questionId,
+      };
+    }
+  });
 
-  // add listener to update trackingParamsService && sessionId in state
-  // should be before first api call (before authenticationState) to get visitorId
+  // add listener to update trackingParamsService
   apiClient.addHeadersListener(
     'trackingServiceListener',
     (headers: ApiServiceHeadersType) => {
-      trackingParamsService.visitorId =
-        headers['x-visitor-id'] || trackingParamsService.visitorId;
+      if (headers['x-visitor-id']) {
+        trackingParamsService.visitorId = headers['x-visitor-id'];
+      }
     }
   );
+
   // init oauth utils
   const retrieveAccessToken = async (
     token: string

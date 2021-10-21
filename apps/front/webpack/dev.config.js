@@ -79,16 +79,21 @@ module.exports = {
       aggregateTimeout: 500, // delay before reloading
       poll: true, // enable polling since fsevents are not supported in docker
     },
+    before: app => {
+      app.post('/api/logger', async (req, res) => {
+        res.send('APi logger');
+      });
+    },
     proxy: {
       '/backend': {
-        target: process.env.PROXY_TARGET_API_URL,
+        target: process.env.API_URL_SERVER_SIDE,
         secure: false,
         changeOrigin: true,
         pathRewrite: {
           '^/backend': '',
         },
         cookieDomainRewrite: {
-          '*': process.env.LOCAL_COOKIES_DOMAIN_REWRITE,
+          '*': new URL(process.env.FRONT_URL).hostname,
         },
       },
     },

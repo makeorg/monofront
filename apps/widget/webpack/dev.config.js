@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const DotenvWebpack = require('dotenv-webpack');
 const Dotenv = require('dotenv');
+const { responseInterceptor } = require('http-proxy-middleware');
 const { presets, plugins } = require('./babel.config.js');
 
 Dotenv.config({ path: './.env.local' });
@@ -79,16 +80,21 @@ module.exports = {
       aggregateTimeout: 500, // delay before reloading
       poll: true, // enable polling since fsevents are not supported in docker
     },
+    before: app => {
+      app.post('/api/logger', async (req, res) => {
+        res.send('APi logger');
+      });
+    },
     proxy: {
       '/backend': {
-        target: process.env.LOCAL_PROXY_API_URL,
+        target: process.env.API_URL_SERVER_SIDE,
         secure: false,
         changeOrigin: true,
         pathRewrite: {
           '^/backend': '',
         },
         cookieDomainRewrite: {
-          '*': process.env.LOCAL_COOKIES_DOMAIN_REWRITE,
+          '*': new URL(process.env.FRONT_URL).hostname,
         },
       },
     },

@@ -53,7 +53,7 @@ const updatePassword = async (
       handleErrors(
         getErrorMessages(
           updatePasswordErrors,
-          apiServiceError.data,
+          apiServiceError.data as ErrorObjectType | ErrorObjectType[],
           apiServiceError.logId
         )
       );
@@ -78,18 +78,20 @@ const deleteAccount = async (
     success();
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
+    const data = apiServiceError.data as ErrorObjectType[];
+
     if (
       apiServiceError.status === 400 &&
-      apiServiceError.data &&
-      apiServiceError.data.shift().key === INVALID_PASSWORD_KEY_ERROR
+      data &&
+      data.shift()?.key === INVALID_PASSWORD_KEY_ERROR
     ) {
       invalidPassword();
       return;
     }
     if (
       apiServiceError.status === 400 &&
-      apiServiceError.data &&
-      apiServiceError.data.shift().key === INVALID_EMAIL_KEY_ERROR
+      data &&
+      data.shift()?.key === INVALID_EMAIL_KEY_ERROR
     ) {
       invalidEmail();
       return;
@@ -113,7 +115,13 @@ const forgotPassword = async (
       return;
     }
     if (apiServiceError.status === 400) {
-      errors(mapErrors(forgotPasswordErrors, apiServiceError.data, 'noLogId'));
+      errors(
+        mapErrors(
+          forgotPasswordErrors,
+          apiServiceError.data as ErrorObjectType[],
+          'noLogId'
+        )
+      );
       return;
     }
     defaultUnexpectedError(apiServiceError);
@@ -135,7 +143,7 @@ const register = async (
       errors(
         getErrorMessages(
           registerErrors,
-          apiServiceError.data,
+          apiServiceError.data as ErrorObjectType[] | ErrorObjectType,
           apiServiceError.logId
         )
       );
@@ -164,7 +172,7 @@ const checkRegistration = async (
       errors(
         getErrorMessages(
           registerErrors,
-          apiServiceError.data,
+          apiServiceError.data as ErrorObjectType[] | ErrorObjectType,
           apiServiceError.logId
         )
       );
@@ -523,7 +531,7 @@ const update = async (
       handleErrors(
         getErrorMessages(
           updateUserErrors,
-          apiServiceError.data,
+          apiServiceError.data as ErrorObjectType[] | ErrorObjectType,
           apiServiceError.logId
         )
       );

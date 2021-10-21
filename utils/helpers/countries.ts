@@ -1,6 +1,7 @@
 import i18n from 'i18next';
 import { CountryType } from '@make.org/types';
 import { LocaleType } from '@make.org/types/enums';
+import { apiClient } from '@make.org/api/ApiService/ApiService.client';
 import { trackingParamsService } from '../services/TrackingParamsService';
 import { DateHelper } from './date';
 import { countriesConfiguration } from '../constants/languages';
@@ -48,6 +49,7 @@ const languageStorage = {
 
 export const setCountry = (country: string): void => {
   trackingParamsService.country = country;
+  apiClient.country = country;
 };
 
 export const setLanguage = (
@@ -59,6 +61,8 @@ export const setLanguage = (
   }
   i18n.changeLanguage(language || DEFAULT_LANGUAGE);
   DateHelper.language = language || DEFAULT_LANGUAGE;
+  trackingParamsService.language = language || DEFAULT_LANGUAGE;
+  apiClient.language = language || DEFAULT_LANGUAGE;
 };
 
 export const getCountryWithConsultations = (

@@ -49,9 +49,9 @@ const getApp = () => {
 
   const { hostname } = new URL(env.frontUrl() || '');
 
-  if (env.proxyTargetApiUrl()) {
+  if (env.useLocalProxy()) {
     const apiProxy = createProxyMiddleware({
-      target: env.proxyTargetApiUrl() || '',
+      target: env.apiUrlServerSide() || '',
       pathRewrite: { '^/backend': '' },
       changeOrigin: true,
       cookieDomainRewrite: {

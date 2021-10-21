@@ -1,10 +1,9 @@
 import { DemographicNameType, DemographicTrackType } from '@make.org/types';
 import { AxiosResponse } from 'axios';
+import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
 import { ApiService } from './ApiService';
 
 export const DEMOGRAPHICS_TRACKING_PATH = '/tracking/demographics';
-
-const SOURCE = 'core';
 
 export class DemographicsTrackingApiService {
   static track(
@@ -15,11 +14,12 @@ export class DemographicsTrackingApiService {
     const contentObj: DemographicTrackType = {
       demographic: name,
       value,
-      questionId: ApiService.questionId,
-      source: SOURCE,
+      questionId: trackingParamsService.questionId,
+      source: ApiService.source,
       country: ApiService.country,
       parameters,
     };
+
     return ApiService.callApi(DEMOGRAPHICS_TRACKING_PATH, {
       method: 'POST',
       body: JSON.stringify(contentObj),

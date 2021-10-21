@@ -43,14 +43,57 @@ Feature: The Home Page
     And I see a link "Voir nos offres" to "https://about.make.org/fr/collaborate" in "partnership" container
 
   Scenario: Country switching redirect to Homepage
-    Given I go to "france homepage"    
+    Given I monitor API "postTracking" requests
+    When I go to "france homepage"    
     Then I see "Changer de pays" in "footer" container
+    And event "display-page-home" should be tracked by Make with parameters values:
+      | name                | value                                                                 |
+      | eventType           | trackCustom                                                           |
+      | country             | FR                                                                    |
+      | language            | fr                                                                    |
+      | source              | core                                                                  |
+      | location            | homepage                                                              |
+      | questionId          |                                                                       |
+      | questionSlug        |                                                                       |
+      | referrer            | http://localhost:9009/__/                                             |
+      | url                 | http://localhost:9009/FR                                              |
+    And some make data header should be sent to "postTracking":
+      | name                | value                                                                 |
+      | app-name            | main-front                                                            |
+      | source              | core                                                                  |
+      | location            | homepage                                                              |
+      | language            | fr                                                                    |
+      | country             | FR                                                                    |
+      | question-id         |                                                                       |
+      | referrer            | http://localhost:9009/__/                                             |
+      | custom-data         |                                                                       |
     When I click on "country-switch-modal" button
     Then I see "Changer de pays" in "country_switch_nav" container
     And I see a "country_switch_GB" link
     When I click on "country_switch_GB" link
     Then I should be redirect to "british homepage"
-    Then I see "Change country" in "footer" container
+    And I see "Change country" in "footer" container
+    And event "display-page-home" should be tracked by Make with parameters values:
+      | name                | value                                                                 |
+      | eventType           | trackCustom                                                           |
+      | country             | GB                                                                    |
+      | language            | en                                                                    |
+      | source              | core                                                                  |
+      | location            | homepage                                                              |
+      | questionId          |                                                                       |
+      | questionSlug        |                                                                       |
+      | referrer            | http://localhost:9009/__/                                             |
+      | url                 | http://localhost:9009/GB                                              |
+    And some make data header should be sent to "postTracking":
+      | name                | value                                                                 |
+      | app-name            | main-front                                                            |
+      | source              | core                                                                  |
+      | location            | homepage                                                              |
+      | language            | en                                                                    |
+      | country             | GB                                                                    |
+      | question-id         |                                                                       |
+      | referrer            | http://localhost:9009/__/                                             |
+      | custom-data         |                                                                       |
 
   Scenario: Track display home page
     Given I monitor API "postTracking" requests

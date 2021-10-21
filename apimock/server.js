@@ -23,7 +23,14 @@ server.use((req, res, next) => {
 });
 // custom headers
 server.use((req, res, next) => {
-  res.header('x-visitor-id', 'fake-visitor-id');
+  res.header('x-visitor-id', 'fake-visitor-id2');
+  res.header('x-session-id', 'fake-session-id2');
+  // needed to avoid logging 'third-cookie-is-disabled'
+  res.cookie('make-session-id-expiration', '2221-10-21T13:24:17.687Z', {
+    sameSite: 'lax',
+    httpOnly: false,
+    secure: false,
+  });
   next();
 });
 server.use('/questions', questionsRouter);

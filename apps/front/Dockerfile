@@ -83,7 +83,7 @@ EXPOSE 9009
 ############
 # BUILD
 ############
-FROM keymetrics/pm2:16.9-alpine AS base-production
+FROM keymetrics/pm2:16-alpine AS base-production
 
 WORKDIR /usr/app
 
@@ -109,7 +109,7 @@ RUN yarn install --no-progress --frozen-lockfile --check-files --production
 RUN yarn autoclean --force
 
 
-FROM keymetrics/pm2:16.9-alpine as app-production
+FROM keymetrics/pm2:16-alpine as app-production
 
 ENV PORT 8000
 

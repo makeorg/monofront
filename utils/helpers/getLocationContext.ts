@@ -30,8 +30,8 @@ import {
 
 export const getAppLocationContext = (
   pathname: string,
-  questionId: string,
-  proposalId: string
+  questionId = '',
+  proposalId = ''
 ): string => {
   const path = pathname.toLowerCase();
 
@@ -60,65 +60,65 @@ export const getAppLocationContext = (
       name: `sequence-keyword ${questionId}`,
     },
     { route: ROUTE_PROPOSAL, name: `proposal-page ${proposalId}` },
-    { route: ROUTE_SEARCH_PROPOSALS, name: 'search-proposals-page' },
-    { route: ROUTE_SEARCH_ORGANISATIONS, name: 'search-organisations-page' },
-    { route: ROUTE_SEARCH_CONSULTATIONS, name: 'search-consultations-page' },
-    { route: ROUTE_SEARCH, name: 'search-page' },
-    { route: ROUTE_PROFILE_EDIT, name: 'private-profile-page' },
+    { route: ROUTE_SEARCH_PROPOSALS, name: `search-proposals-page` },
+    { route: ROUTE_SEARCH_ORGANISATIONS, name: `search-organisations-page` },
+    { route: ROUTE_SEARCH_CONSULTATIONS, name: `search-consultations-page` },
+    { route: ROUTE_SEARCH, name: `search-page` },
+    { route: ROUTE_PROFILE_EDIT, name: `private-profile-page` },
     {
       route: ROUTE_PROFILE_FAVOURITES,
-      name: 'private-profile-page',
+      name: `private-profile-page`,
       exact: true,
       strict: true,
     },
     {
       route: ROUTE_PROFILE_PROPOSALS,
-      name: 'private-profile-page',
+      name: `private-profile-page`,
       exact: true,
       strict: true,
     },
     {
       route: ROUTE_PROFILE_FOLLOWING,
-      name: 'private-profile-page',
+      name: `private-profile-page`,
       exact: true,
       strict: true,
     },
     {
       route: ROUTE_PROFILE_OPINIONS,
-      name: 'private-profile-page',
+      name: `private-profile-page`,
       exact: true,
       strict: true,
     },
     {
       route: ROUTE_ORGANISATION_PROFILE,
-      name: 'public-profile-page',
+      name: `public-profile-page`,
     },
     {
       route: ROUTE_PERSONALITY_PROFILE,
-      name: 'public-profile-page',
+      name: `public-profile-page`,
     },
     {
       route: ROUTE_STATIC_NOCOOKIES,
-      name: 'nocookies-page',
+      name: `nocookies-page`,
     },
     {
       route: ROUTE_STATIC_COOKIES,
-      name: 'cookies-page',
+      name: `cookies-page`,
     },
     {
       route: ROUTE_STATIC_NOTFOUND,
-      name: 'not-found-page',
+      name: `not-found-page`,
     },
     {
       route: ROUTE_BROWSE_CONSULTATIONS,
-      name: 'browse-consultations-page',
+      name: `browse-consultations-page`,
     },
     {
       route: ROUTE_BROWSE_RESULTS,
-      name: 'browse-results-page',
+      name: `browse-results-page`,
     },
-    { route: '/', name: 'homepage', exact: true, strict: true },
-    { route: '/:country', name: 'homepage', exact: true, strict: false },
+    { route: '/', name: `homepage`, exact: true, strict: true },
+    { route: '/:country', name: `homepage`, exact: true, strict: false },
   ];
 
   const location = locations.find(item =>
@@ -135,8 +135,12 @@ export const getAppLocationContext = (
     : location.name;
 };
 
-export const getAppTrackingLocation = (pathname: string): string => {
-  const location = getAppLocationContext(pathname, '', '');
+export const getAppTrackingLocation = (
+  pathname: string,
+  questionId?: string,
+  proposalId?: string
+): string => {
+  const location = getAppLocationContext(pathname, questionId, proposalId);
 
   return location.split(' ').shift() || '';
 };

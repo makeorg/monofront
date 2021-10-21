@@ -19,8 +19,6 @@ export class ApiServiceClient implements IApiServiceStrategy {
 
   _country = '';
 
-  _questionId = '';
-
   _source = '';
 
   _referrer = '';
@@ -37,12 +35,19 @@ export class ApiServiceClient implements IApiServiceStrategy {
 
   _visitorId = '';
 
+  _customHeaders = {};
+
   _token: string | null = null;
 
   _refreshTokenCallback: () => Promise<string> = refreshToken;
 
   _headersListeners: Map<string, (headers: ApiServiceHeadersType) => void> =
     new Map();
+
+  _beforeCallListeners: Map<
+    string,
+    (url: string, options: OptionsType) => void
+  > = new Map();
 
   constructor() {
     this._referrer =
@@ -73,14 +78,6 @@ export class ApiServiceClient implements IApiServiceStrategy {
 
   get country(): string {
     return this._country;
-  }
-
-  set questionId(questionId: string) {
-    this._questionId = questionId;
-  }
-
-  get questionId(): string {
-    return this._questionId;
   }
 
   set isLogged(isLogged: boolean) {
@@ -144,7 +141,7 @@ export class ApiServiceClient implements IApiServiceStrategy {
   }
 
   get visitorId(): string {
-    return this._sessionId;
+    return this._visitorId;
   }
 
   set token(token: string | null) {
@@ -153,6 +150,14 @@ export class ApiServiceClient implements IApiServiceStrategy {
 
   get token(): string | null {
     return this._token;
+  }
+
+  set customHeaders(headers: Record<string, string>) {
+    this._customHeaders = headers;
+  }
+
+  get customHeaders(): Record<string, string> {
+    return this._customHeaders;
   }
 
   set refreshTokenCallback(callback: () => Promise<string>) {
@@ -180,42 +185,57 @@ export class ApiServiceClient implements IApiServiceStrategy {
     this._headersListeners.delete(identifier);
   }
 
+  set beforeCallListener(listeners: Map<string, () => void>) {
+    this._beforeCallListeners = listeners;
+  }
+
+  addbeforeCallListener(
+    identifier: string,
+    listener: (url: string, options: OptionsType) => void
+  ): void {
+    this._beforeCallListeners.set(identifier, listener);
+  }
+
+  removeBeforeCallListener(identifier: string): void {
+    this._headersListeners.delete(identifier);
+  }
+
   _generateHeaders(
     optionHeaders?: OptionsType['headers']
   ): ApiServiceHeadersType {
     let headers: ApiServiceHeadersType = {
       ...{
-        'x-make-app-name': this._appname,
-        'x-make-country': this._country,
-        'x-make-language': this._language,
-        'x-make-source': this._source,
-        'x-make-question-id': this._questionId,
-        'x-make-location': this._location,
-        'x-make-referrer': this._referrer,
-        'x-make-custom-data': this._customData,
-        'x-make-url': this._url,
+        'x-make-app-name': this.appname,
+        'x-make-country': this.country,
+        'x-make-language': this.language,
+        'x-make-source': this.source,
+        'x-make-location': this.location,
+        'x-make-referrer': this.referrer,
+        'x-make-custom-data': this.customData,
+        'x-make-url': this.url,
       },
+      ...this.customHeaders,
       ...optionHeaders,
     };
 
-    if (this._sessionId) {
+    if (this.sessionId) {
       headers = {
         ...headers,
-        'x-session-id': this._sessionId,
+        'x-session-id': this.sessionId,
       };
     }
 
-    if (this._visitorId) {
+    if (this.visitorId) {
       headers = {
         ...headers,
-        'x-visitor-id': this._visitorId,
+        'x-visitor-id': this.visitorId,
       };
     }
 
-    if (this._token) {
+    if (this.token) {
       headers = {
         ...headers,
-        Authorization: `Bearer ${this._token}`,
+        Authorization: `Bearer ${this.token}`,
       };
     }
 
@@ -250,7 +270,7 @@ export class ApiServiceClient implements IApiServiceStrategy {
           apiServiceError?.headers && listener(apiServiceError?.headers)
       );
 
-      if (apiServiceError?.status === 401 && retry > 0 && this._token) {
+      if (apiServiceError?.status === 401 && retry > 0 && this.token) {
         this._token = null;
         this._token = await this._refreshTokenCallback();
         await this._retryApiCall(url, options, 0);
@@ -290,6 +310,8 @@ export class ApiServiceClient implements IApiServiceStrategy {
         this._sessionId = responseHeaders['x-session-id'];
       }
     };
+
+    await this._beforeCallListeners.forEach(listener => listener(url, options));
 
     try {
       const response = await this._retryApiCall(url, options);

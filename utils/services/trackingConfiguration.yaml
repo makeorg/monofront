@@ -6,14 +6,13 @@ COMMON_PARAMETERS:
           description: Current page name
         - key: source
           description: >
-            Source name. Is always `core`. 
-            (other existing source name: "huffpost")
+            Source name. Is `core` for front app.  For widget, is the media label that embeds the widget ("huffpost"...)
         - key: language
           description: >
-            Current ISO language. Refers to the interface language (not the consultation language).
+            Current ISO language. Refers to the interface language (not the consultation language) for front app and consultation language for widget.
         - key: country
           description: >
-            Current ISO country. Refers to the country in the path of url (not the consultation country).
+            Current ISO country. Refers to the country in the path of url (not the consultation country) for front app and consultation country for widget.
         - key: questionId
           description: Question id of the consultation (if relevant)
           optional: true

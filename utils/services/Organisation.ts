@@ -190,7 +190,7 @@ const update = async (
       handleErrors(
         getErrorMessages(
           updateOrganisationErrors,
-          apiServiceError.data,
+          apiServiceError.data as ErrorObjectType[] | ErrorObjectType,
           apiServiceError.logId
         )
       );

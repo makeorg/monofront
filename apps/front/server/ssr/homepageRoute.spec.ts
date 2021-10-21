@@ -7,9 +7,6 @@ import { reactRender } from '../reactRender';
 jest.mock('@make.org/api/ViewsApiService');
 jest.mock('../service/ViewsService');
 jest.mock('../reactRender', () => ({ reactRender: jest.fn() }));
-jest.mock('./helpers/ssr.helper', () => ({
-  logError: jest.fn(),
-}));
 
 const mockedViewsService = ViewsService as jest.Mocked<any>;
 

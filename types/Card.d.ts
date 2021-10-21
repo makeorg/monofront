@@ -18,7 +18,7 @@ export type DemographicTrackType = {
   demographic: string;
   value: string;
   questionId: string;
-  source: 'core';
+  source: string;
   country: string;
   parameters: { [n: string]: string };
 };

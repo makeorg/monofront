@@ -126,7 +126,7 @@ const update = async (
       handleErrors(
         getErrorMessages(
           updatePersonalityErrors,
-          apiServiceError.data,
+          apiServiceError.data as ErrorObjectType[] | ErrorObjectType,
           apiServiceError.logId
         )
       );

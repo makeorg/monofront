@@ -125,6 +125,12 @@ class LoggerSingleton {
     level: string
   ): void => {
     if (env.isDev()) {
+      if (level === 'error') {
+        // eslint-disable-next-line no-console
+        console.error(level, data);
+
+        return;
+      }
       // eslint-disable-next-line no-console
       console.log(level, data);
     }

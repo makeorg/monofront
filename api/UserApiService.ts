@@ -7,6 +7,7 @@ import {
 import { setEmptyStringToNull } from '@make.org/utils/helpers/form';
 import { PROPOSALS_LISTING_LIMIT } from '@make.org/utils/constants/proposal';
 import { AxiosResponse } from 'axios';
+import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
 import { ApiService } from './ApiService';
 
 export const PATH_USER_ME = '/user/me';
@@ -181,7 +182,7 @@ export class UserApiService {
         postalCode: setEmptyStringToNull(postalcode || ''),
         country: ApiService.country,
         language: ApiService.language,
-        questionId: ApiService.questionId,
+        questionId: trackingParamsService.questionId,
         legalMinorConsent,
         legalAdvisorApproval,
         approvePrivacyPolicy,

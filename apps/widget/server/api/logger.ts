@@ -23,6 +23,7 @@ export const loggerApi = async (
     app_device_vendor: ua.device.vendor,
     app_browser_raw: ua.ua,
     app_browser_hash: simpleHash(ua.ua),
+    app_client_side: true,
   };
 
   switch (level) {

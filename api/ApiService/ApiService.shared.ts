@@ -12,7 +12,7 @@ import { ApiServiceError } from './ApiServiceError';
 
 declare global {
   interface Window {
-    API_URL?: string;
+    API_URL_CLIENT_SIDE?: string;
   }
 }
 
@@ -21,10 +21,10 @@ const HOSTNAME =
 const LOCATION_PARAMS =
   (typeof window !== 'undefined' && window?.location?.search) || '';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 const API_URL: string =
-  env.apiUrl() || (typeof window !== 'undefined' && window?.API_URL);
+  typeof window !== 'undefined'
+    ? env.apiUrlClientSide() || window?.API_URL_CLIENT_SIDE || ''
+    : env.apiUrlServerSide() || '';
 
 /**
  * handle error for http response

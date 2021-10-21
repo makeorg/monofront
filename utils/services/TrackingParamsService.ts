@@ -84,6 +84,10 @@ class TrackingParamsServiceClass {
     }
   }
 
+  get questionId() {
+    return this._questionId;
+  }
+
   set questionSlug(questionSlug: string) {
     if (this.questionSlug !== questionSlug) {
       this._questionSlug = questionSlug;

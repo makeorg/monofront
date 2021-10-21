@@ -39,7 +39,7 @@ export const cspMiddleware = (
       ],
       connectSrc: [
         "'self'",
-        env.apiUrl() || '',
+        env.apiUrlClientSide() || '',
         env.frontUrl() || '',
         'https://*.makeorg.tech',
         'https://*.make.org',

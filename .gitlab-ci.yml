@@ -112,12 +112,12 @@ stages:
   stage: deploy
   script:
     - >
-      job_id=$(curl -D - -X "POST"
-        -H "Accept: application/json"
-        -H "Content-Type: application/x-www-form-urlencoded"
-        -H "X-Rundeck-Auth-Token: $RUNDECK_TOKEN"
-        --data-urlencode "argString=-version $CI_COMMIT_REF_NAME-latest"
-        $RUNDECK_URL/api/16/job/$RUNDECK_JOB_ID/run
+      job_id=$(curl -s -X "POST" \
+        -H "Accept: application/json" \
+        -H "Content-Type: application/x-www-form-urlencoded" \
+        -H "X-Rundeck-Auth-Token: ${RUNDECK_TOKEN}" \
+        --data-urlencode "argString=-version $CI_COMMIT_REF_NAME-latest" \
+        ${RUNDECK_URL}/api/16/job/${RUNDECK_JOB_ID}/run \
         | jq -r '.id')
 
       [[ "${job_id}" =~ ^[0-9]+$ ]] && echo "Job ${job_id} started ..." \

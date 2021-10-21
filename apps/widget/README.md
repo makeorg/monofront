@@ -55,7 +55,8 @@ CONFIG_URL=https://widget-configuration-url.com
 PORT=8000
 
 # API url
-API_URL=https://api.make.org
+API_URL_SERVER_SIDE=https://api.make.org
+API_URL_CLIENT_SIDE=https://api.make.org
 
 # Front url
 FRONT_URL=https://widget.make.org

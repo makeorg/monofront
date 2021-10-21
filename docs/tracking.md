@@ -7,7 +7,7 @@
 |`x-hostname` | true |   Current host name. In production is "make.org" |
 |`x-make-app-name`|true|Application name. Is always `main-front`. (other existing application name: "backoffice")|
 |`x-make-source`|true|Source name. Is always `core`. (other existing source name: "huffpost")|
-|`x-make-location`|true|Current page name for front app or `widget` for widget app. See [getLocationContext](../shared/api/ApiService/getLocationContext.js)|
+|`x-make-location`|true|Current page name for front app or `widget` for widget app. See [getLocationContext](../utils/helpers/getLocationContext.js)|
 |`x-make-country`|true|Current ISO country. Refers to the country in the path of url (not an consultation country) for front app and consultation country for widget app|
 |`x-make-language`|true|Current ISO language. Refers to the interface language (not the consultation language) for front app and consultation language for widget app|
 |`x-make-question-id`|false|Question id of the consultation (if relevant)|
