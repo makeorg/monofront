@@ -18,8 +18,7 @@ import { trackDisplayOperationPage } from '@make.org/utils/services/Tracking';
 import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
 import { QuestionService } from '@make.org/utils/services/Question';
-import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
-import { updateFilterAndSortState } from '@make.org/store/actions/proposals';
+import { FILTER_AND_SORT_DEFAULT_VALUES } from '@make.org/utils/constants/filterAndSort';
 import { ProposalsList } from '../../app/Consultation/ProposalsList';
 import { Timeline } from '../../app/Consultation/Timeline';
 import { ParticipateNavigation } from '../../app/Consultation/Navigation/Participate';
@@ -44,8 +43,6 @@ const ExplorePage: FC = () => {
   const params: { country: string; pageId: string } = useParams();
   const { country, pageId } = params;
   const { device } = state.appConfig;
-  const { filterAndSort } = state;
-
   const isDesktop = matchDesktopDevice(device);
   const question: QuestionType = selectCurrentQuestion(state);
   const [proposals, setProposals] = useState<ProposalType[]>([]);
@@ -56,14 +53,6 @@ const ExplorePage: FC = () => {
   const PROPOSALS_LIMIT = 10;
   const KEYWORD_THRESHOLD = 5;
   const hasProposals = proposalsTotal > 0;
-
-  const defaultValues = {
-    keywords: undefined,
-    sortAlgorithm: undefined,
-    sort: 'RECENT',
-    isNotVoted: false,
-    userType: undefined,
-  };
 
   // retrieves question Keywords for filter
   const getQuestionKeywords = async () => {
@@ -111,19 +100,8 @@ const ExplorePage: FC = () => {
     setLoading(false);
   };
 
-  // handleReset for filters
-  const handleReset = () => {
-    dispatch(updateFilterAndSortState(defaultValues));
-    getProposals(defaultValues);
-    if (!isDesktop) {
-      dispatch(closePanel());
-      dispatch(removePanelContent());
-    }
-  };
-
   useEffect(() => {
     getProposals(state.filterAndSort);
-    console.log('>>>F&S IN EXPLORE PAGE', filterAndSort);
   }, [state.filterAndSort]);
 
   useEffect(() => {
@@ -145,7 +123,7 @@ const ExplorePage: FC = () => {
   }, []);
 
   useEffect(() => {
-    getProposals(defaultValues);
+    getProposals(FILTER_AND_SORT_DEFAULT_VALUES);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pageId]);
 
@@ -189,13 +167,7 @@ const ExplorePage: FC = () => {
             )}
           </ParticipateMainContentStyle>
           <ParticipateSidebarContentStyle>
-            {isDesktop && (
-              <FilterAndSort
-                filterAndSortValues={filterAndSort}
-                keywords={keyword}
-                handleReset={handleReset}
-              />
-            )}
+            {isDesktop && <FilterAndSort keywords={keyword} />}
             {/* // ) : (
             //   <SortAndFiltersCTA
             //     filterAndSortValues={filterAndSortValues}

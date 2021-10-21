@@ -646,11 +646,6 @@ Following parameters are added to all events.
   
   
 
-  - `click-search-proposals` Click on submit button for filtering and sorting proposals
-
-    
-  
-
   - `display-charge-intro-card` Display intro card for heavy load on servers
 
     
