@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { color, typography } from 'athena-design-tokens';
+import { Link } from 'react-router-dom';
 import { intToPx, pxToPercent } from '@make.org/utils/helpers/styled';
 import {
   ColumnElementStyle,
@@ -183,7 +184,7 @@ export const ResetLinkButtonWrapperStyle = styled.div`
   margin-top: 30px;
 `;
 
-export const ResetLinkStyle = styled.button`
+export const ResetLinkStyle = styled(Link)`
   font-family: ${MakeFonts.CircularStandardBook};
   border: none;
   text-decoration: underline;

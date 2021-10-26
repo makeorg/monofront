@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import i18n from 'i18next';
 import { SvgCheck } from '@make.org/ui/Svg/elements';
 import { trackClickFilter } from '@make.org/utils/services/Tracking';
+import { useParams } from 'react-router';
 import {
   HiddenCheckbox,
   StyledCheckbox,
@@ -9,12 +10,17 @@ import {
 } from '@make.org/ui/elements/FormElements';
 import { useAppContext } from '@make.org/store';
 import { resetFilterAndSortState } from '@make.org/store/actions/filterAndSort';
-import { QuestionKeywordType, TypeFilterAndSortValues } from '@make.org/types';
+import {
+  QuestionKeywordType,
+  QuestionType,
+  TypeFilterAndSortValues,
+} from '@make.org/types';
 import { FilterSeparationLineStyle } from '@make.org/ui/elements/SeparatorsElements';
 import {
   SORT_RECENT,
   FILTER_ORGANISATION,
 } from '@make.org/utils/constants/explore';
+import { getExploreLink } from '@make.org/utils/helpers/url';
 import {
   ResetLinkStyle,
   ResetLinkButtonWrapperStyle,
@@ -40,6 +46,7 @@ type Props = {
   setCurrentSort: (name: string) => void;
   keywords: QuestionKeywordType[];
   filterAndSortValues: TypeFilterAndSortValues;
+  question: QuestionType;
 };
 
 export const FiltersComponent: React.FC<Props> = ({
@@ -48,11 +55,13 @@ export const FiltersComponent: React.FC<Props> = ({
   setCurrentSort,
   keywords,
   filterAndSortValues,
+  question,
 }: Props) => {
   const [currentKeyword, setCurrentKeyword] = useState<string | undefined>(
     undefined
   );
   const { dispatch } = useAppContext();
+  const { country } = useParams<{ country: string }>();
 
   // helper for onClick keywords
   const handleKeyword = (key: string) => {
@@ -155,12 +164,12 @@ export const FiltersComponent: React.FC<Props> = ({
       </FilterByWrapperStyle>
       <ResetLinkButtonWrapperStyle>
         <ResetLinkStyle
-          type="button"
           onClick={() => {
             dispatch(resetFilterAndSortState());
             setCurrentSort(SORT_RECENT);
             setCurrentKeyword('');
           }}
+          to={getExploreLink(country, question.slug, 1)}
         >
           {i18n.t('consultation.explore.reset_filters')}
         </ResetLinkStyle>

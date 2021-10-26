@@ -18,7 +18,6 @@ import { trackDisplayOperationPage } from '@make.org/utils/services/Tracking';
 import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
 import { QuestionService } from '@make.org/utils/services/Question';
-import { FILTER_AND_SORT_DEFAULT_VALUES } from '@make.org/utils/constants/filterAndSort';
 import { ProposalsList } from '../../app/Consultation/ProposalsList';
 import { Timeline } from '../../app/Consultation/Timeline';
 import { ParticipateNavigation } from '../../app/Consultation/Navigation/Participate';
@@ -123,7 +122,8 @@ const ExplorePage: FC = () => {
   }, []);
 
   useEffect(() => {
-    getProposals(FILTER_AND_SORT_DEFAULT_VALUES);
+    getProposals(state.filterAndSort);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pageId]);
 
