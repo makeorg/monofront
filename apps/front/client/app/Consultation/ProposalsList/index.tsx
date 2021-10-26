@@ -59,7 +59,11 @@ export const ProposalsList: FC<Props> = ({ isLoading, proposals }) => {
     return (
       <ProposalsListStyle>
         {proposals.map((proposal: ProposalType, index: number) => (
-          <ProposalListItemStyle key={proposal.id}>
+          <ProposalListItemStyle
+            key={proposal.id}
+            role="feed"
+            aria-live="assertive"
+          >
             <ProposalCardStyle>
               <ProposalAuthor proposal={proposal} />
               <ScreenReaderItemStyle>
