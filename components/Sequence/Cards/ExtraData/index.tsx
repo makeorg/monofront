@@ -1,61 +1,55 @@
-import {
-  buildDemographicsByType,
-  setTitleByType,
-  DEMOGRAPHIC_TYPES,
-} from '@make.org/utils/helpers/demographics';
-import React, { useEffect, useState } from 'react';
-import i18n from 'i18next';
+import React, { FC } from 'react';
+import { DemographicDataType } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
-import { DemographicNameType, DemographicsType } from '@make.org/types';
-import { AGE_RANGES } from '@make.org/utils/constants/demographics';
-import { getRandomFromArray } from '@make.org/utils/helpers/randomFromArray';
-import { SequenceIntroParagraphStyle, SequenceWrapperStyle } from '../style';
+import { Logger } from '@make.org/utils/services/Logger';
+import i18n from 'i18next';
+import { setDemographicsAsSubmitted } from '@make.org/store/actions/sequence';
+import { SequenceWrapperStyle, SequenceIntroParagraphStyle } from '../style';
+import { ExtraDataForm } from './Form';
 import { ExtraDataDescriptionStyle } from './style';
 import { SubmittedDemographics } from './SubmittedStep';
-import { ExtraDataForm } from './Form';
 
-export const ExtraDataCard: React.FC = () => {
-  const { state } = useAppContext();
-  const { currentQuestion = '' } = state;
-  const persistedDemographics = state.sequence.demographics;
-  const [type, setType] = useState<DemographicNameType>('age');
-  const [demographics, setDemographics] = useState<DemographicsType>({
-    ui: 'radio',
-    data: AGE_RANGES,
-  });
+type Props = {
+  configuration: DemographicDataType;
+};
 
-  // set a random type
-  useEffect(() => {
-    const newType = getRandomFromArray(DEMOGRAPHIC_TYPES);
-    setType(newType);
-    setDemographics(buildDemographicsByType(newType));
-  }, [type]);
+export const ExtraDataCard: FC<Props> = ({ configuration }) => {
+  const { state, dispatch } = useAppContext();
+  const isSubmitted = state.sequence.demographics?.submitted;
 
-  if (
-    typeof persistedDemographics !== 'undefined' &&
-    !!persistedDemographics.type &&
-    !!persistedDemographics.value
-  ) {
-    return <SubmittedDemographics type={persistedDemographics.type} />;
+  // set demographics
+  if (!configuration) {
+    Logger.logError({
+      message: 'No demographic data found',
+      name: 'sequence',
+      configuration,
+    });
+
+    return null;
   }
 
-  if (type && demographics) {
-    return (
-      <SequenceWrapperStyle data-cy-demographic-type={type}>
-        <SequenceIntroParagraphStyle>
-          {setTitleByType(type)}
-        </SequenceIntroParagraphStyle>
-        <ExtraDataDescriptionStyle>
-          {i18n.t('demographics_card.disclaimer')}
-        </ExtraDataDescriptionStyle>
-        <ExtraDataForm
-          type={type}
-          demographics={demographics}
-          currentQuestion={currentQuestion}
-        />
-      </SequenceWrapperStyle>
-    );
-  }
+  const { id, name, layout, title, parameters, token } = configuration;
 
-  return null;
+  const submitSuccess = () => {
+    dispatch(setDemographicsAsSubmitted());
+  };
+
+  return isSubmitted ? (
+    <SubmittedDemographics title={title} name={name} demographicId={id} />
+  ) : (
+    <SequenceWrapperStyle data-cy-demographic-layout={configuration.layout}>
+      <SequenceIntroParagraphStyle>{title}</SequenceIntroParagraphStyle>
+      <ExtraDataDescriptionStyle>
+        {i18n.t('demographics_card.disclaimer')}
+      </ExtraDataDescriptionStyle>
+      <ExtraDataForm
+        demographicId={id}
+        name={name}
+        layout={layout}
+        data={parameters}
+        token={token}
+        submitSuccess={submitSuccess}
+      />
+    </SequenceWrapperStyle>
+  );
 };

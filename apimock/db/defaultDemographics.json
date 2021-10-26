@@ -1,0 +1,17 @@
+{
+  "id": "b2f18e8f-ae7c-48e6-a078-4459a2992cc5",
+  "name": "test tech",
+  "layout": "OneColumnRadio",
+  "title": "wonderful test",
+  "parameters": [
+    {
+      "label": "toto",
+      "value": "foo"
+    },
+    {
+      "label": "tata",
+      "value": "bar"
+    }
+  ],
+  "token": "52gY7b8ICzBO8bgCu1Fa97MWMWCqE9sIzI7dCUPoE/4E8+zCnhd1+EdMZ9JBb1Ka4owMZKkpFRG5yB5QEUygU/rKHdLuY0kQ/4csOQ3b3kAk5xHKuF4NnPMJ/ylgD1U69rCZ+vnzTodRBrStVpTCeFAVRv8cdTNDi8nVK8Gzf9RubQ=="
+}

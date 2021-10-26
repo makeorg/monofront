@@ -6,6 +6,7 @@ import {
   NoProposalCardConfigType,
   ProposalCardType,
   NoProposalCardType,
+  DemographicDataType,
 } from '@make.org/types';
 import {
   TopComponentContext,
@@ -54,7 +55,11 @@ export const Card: React.FC<CardProps> = ({ card, question }) => {
       return <SpecialFinalCard questionSlug={question.slug} />;
     }
     case CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD:
-      return <ExtraDataCard />;
+      return (
+        <ExtraDataCard
+          configuration={card.configuration as DemographicDataType}
+        />
+      );
     case CARD.CARD_TYPE_NO_PROPOSAL_CARD: {
       const { title, description } =
         card.configuration as NoProposalCardConfigType;
@@ -90,6 +95,8 @@ export const SequenceCard: React.FC<Props> = ({ card, question }) => {
   const isNoProposalCard = card.type === CARD.CARD_TYPE_NO_PROPOSAL_CARD;
   const isIntroCard = card.type === CARD.CARD_TYPE_EXTRASLIDE_INTRO;
   const isFinalCard = card.type === CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD;
+  const isDemographicsCard =
+    card.type === CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD;
   const isSpecialFinalCard =
     card.type === CARD.CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD;
   const topComponentContext: TopComponentContextValueType =
@@ -105,7 +112,7 @@ export const SequenceCard: React.FC<Props> = ({ card, question }) => {
     className = 'no-proposal';
   }
 
-  if (isSpecialFinalCard || isIntroCard) {
+  if (isSpecialFinalCard || isIntroCard || isDemographicsCard) {
     className = 'center';
   }
 

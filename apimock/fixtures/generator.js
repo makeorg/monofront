@@ -12,6 +12,7 @@ const defaultDisagreeQualifications = require('../db/defaultDisagreeQualificatio
 const defaultNeutralQualifications = require('../db/defaultNeutralQualifications.json');
 const defaultTopIdea = require('../db/defaultTopIdea.json');
 const defaultSequenceKeyword = require('../db/defaultSequenceKeyword.json');
+const defaultDemographics = require('../db/defaultDemographics.json');
 
 const range = (start, end) => {
   const values = [];
@@ -485,6 +486,8 @@ const countriesWithConsultations = [
   { countryCode: 'SK', activeConsultations: true },
 ];
 
+const demographics = defaultDemographics;
+
 const fixtures = {
   openedHomepageQuestions,
   finishedHomepageQuestions,
@@ -506,6 +509,7 @@ const fixtures = {
   topIdeas,
   countriesWithConsultations,
   keywords,
+  demographics,
 };
 
 module.exports = { fixtures };

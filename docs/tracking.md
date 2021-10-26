@@ -583,7 +583,8 @@ Following parameters are added to all events.
     
     | param_name | required | description | values |
     |-|-|-|-|
-    | `type` | true | type name | `gender`, `age`, `region` |
+    | `name` | true | demographic name |  |
+    | `demographicId` | true | demographic id |  |
   
   
 
@@ -592,7 +593,8 @@ Following parameters are added to all events.
     
     | param_name | required | description | values |
     |-|-|-|-|
-    | `type` | true | type name | `gender`, `age`, `region` |
+    | `name` | true | demographic name |  |
+    | `demographicId` | true | demographic id |  |
   
   
 
@@ -601,7 +603,8 @@ Following parameters are added to all events.
     
     | param_name | required | description | values |
     |-|-|-|-|
-    | `type` | true | type name | `gender`, `age`, `region` |
+    | `name` | true | demographic name |  |
+    | `demographicId` | true | demographic id |  |
   
   
 
@@ -610,7 +613,8 @@ Following parameters are added to all events.
     
     | param_name | required | description | values |
     |-|-|-|-|
-    | `type` | true | type name | `gender`, `age`, `region` |
+    | `name` | true | demographic name |  |
+    | `demographicId` | true | demographic id |  |
   
   
 
@@ -619,7 +623,8 @@ Following parameters are added to all events.
     
     | param_name | required | description | values |
     |-|-|-|-|
-    | `type` | true | type name | `gender`, `age`, `region` |
+    | `name` | true | demographic name |  |
+    | `demographicId` | true | demographic id |  |
   
   
 

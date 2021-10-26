@@ -1,5 +1,9 @@
 import { QuestionApiService } from '@make.org/api/QuestionApiService';
-import { KeywordSequenceType, ProposalType } from '@make.org/types';
+import {
+  SequenceType,
+  ProposalType,
+  DemographicDataType,
+} from '@make.org/types';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { Logger } from './Logger';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
@@ -8,10 +12,6 @@ type Accumulator = {
   unique: ProposalType[];
   duplicates: ProposalType[];
   voted: ProposalType[];
-};
-
-type SequenceByKindResponse = {
-  proposals: ProposalType[];
 };
 
 const getOrderedProposals = (
@@ -93,13 +93,17 @@ const logCornerCases = (
 const startSequenceByKind = async (
   questionId: string,
   includedProposalIds: string[],
-  sequenceKind: string
-): Promise<null | SequenceByKindResponse> => {
+  sequenceKind: string,
+  demographicsCardId?: string,
+  token?: string
+): Promise<SequenceType | null> => {
   try {
     const response = await QuestionApiService.startSequenceByKind(
       questionId,
       includedProposalIds,
-      sequenceKind
+      sequenceKind,
+      demographicsCardId,
+      token
     );
 
     if (!response) {
@@ -128,6 +132,7 @@ const startSequenceByKind = async (
 
     const formattedResponse = {
       proposals: uniqueOrderedProposals,
+      demographics: data.demographics as DemographicDataType,
     };
 
     return formattedResponse;
@@ -142,7 +147,7 @@ const startSequenceByKeyword = async (
   questionId: string,
   includedProposalIds: string[],
   keyword: string
-): Promise<null | KeywordSequenceType> => {
+): Promise<null | SequenceType> => {
   try {
     const response = await QuestionApiService.startSequenceByKeyword(
       questionId,

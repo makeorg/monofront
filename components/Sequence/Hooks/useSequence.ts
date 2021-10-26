@@ -1,7 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { buildCards } from '@make.org/utils/helpers/sequence';
-import { SequenceCardType, QuestionType, ProposalType } from '@make.org/types';
+import {
+  SequenceCardType,
+  QuestionType,
+  ProposalType,
+  DemographicDataType,
+  ExecuteStartSequence,
+} from '@make.org/types';
 import { scrollToTop } from '@make.org/utils/helpers/styled';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import {
@@ -14,7 +20,6 @@ import { Cookies } from 'react-cookie';
 import { COOKIE } from '@make.org/types/enums';
 import { useSequenceTracking } from './useSequenceTracking';
 import { useSequenceVoteOnlyNotification } from './useSequenceVoteOnlyNotification';
-import { useSequenceExtraDataAutoSubmit } from './useSequenceExtraDataAutoSubmit';
 import { useSequenceQueryParams } from './useSequenceQueryParams';
 
 type ReturnFunctionType = {
@@ -22,10 +27,6 @@ type ReturnFunctionType = {
   currentCard: SequenceCardType | null;
   isEmptySequence: boolean;
 };
-type ExecuteStartSequence = (
-  questionId: string,
-  votedIds: string[]
-) => Promise<ProposalType[] | null>;
 
 /**
  * Renders Sequence component with Intro / Push Proposal / Sign Up & Proposal Cards
@@ -55,19 +56,20 @@ export const useSequence = (
   const [sequenceProposals, setSequenceProposals] = useState<ProposalType[]>(
     []
   );
+  const [sequenceDemographic, setSequenceDemographic] = useState<
+    DemographicDataType | undefined
+  >(undefined);
 
   // Sequence hooks
   useSequenceTracking();
   useSequenceVoteOnlyNotification(question);
   const { firstProposalParam, introCardParam, pushProposalParam } =
     useSequenceQueryParams();
-  useSequenceExtraDataAutoSubmit(question?.slug, cards, currentIndex);
 
   // Other
-  const isFR = country === 'FR';
   const cookies = new Cookies();
   const demographicsCookie = cookies.get(COOKIE.DEMOGRAPHICS);
-  const withDemographicsCard = isFR && !demographicsCookie;
+  const withDemographicsCard = !demographicsCookie && sequenceDemographic;
 
   // scroll to top
   useEffect(() => {
@@ -83,16 +85,26 @@ export const useSequence = (
         : votedProposalIdsOfQuestion;
 
       if (question) {
-        const proposals = await executeStartSequence(
+        const response = await executeStartSequence(
           question.questionId,
-          votedIds
+          votedIds,
+          sequenceDemographic?.id,
+          sequenceDemographic?.token
         );
+
+        if (!response) {
+          return;
+        }
+
+        const { proposals, demographics } = response;
+
         if (!proposals || proposals.length === 0) {
           setLoading(false);
         }
 
-        if (proposals) {
+        if (proposals && demographics) {
           setSequenceProposals(proposals);
+          setSequenceDemographic(demographics);
         }
       }
       setLoading(false);
@@ -112,12 +124,12 @@ export const useSequence = (
       isStandardSequence,
       introCardParam,
       pushProposalParam,
-      withDemographicsCard,
+      withDemographicsCard as DemographicDataType,
       isWidget
     );
     setCards(buildedCards);
     dispatch(loadSequenceCards(buildedCards));
-  }, [sequenceProposals]);
+  }, [sequenceProposals, sequenceDemographic]);
 
   // set current card
   useEffect(() => {

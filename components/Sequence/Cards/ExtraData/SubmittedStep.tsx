@@ -1,4 +1,3 @@
-import { setTitleByType } from '@make.org/utils/helpers/demographics';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import React, { useEffect } from 'react';
 import i18n from 'i18next';
@@ -11,21 +10,28 @@ import { useAppContext } from '@make.org/store';
 import { SequenceIntroParagraphStyle, SequenceParagraphStyle } from '../style';
 
 type Props = {
-  type: string;
+  title: string;
+  name: string;
+  demographicId: string;
 };
 
-export const SubmittedDemographics: React.FC<Props> = ({ type }) => {
+export const SubmittedDemographics: React.FC<Props> = ({
+  title,
+  name,
+  demographicId,
+}) => {
   const { dispatch } = useAppContext();
 
   useEffect(() => {
-    trackDisplayDemographicsConfirmation(type);
+    trackDisplayDemographicsConfirmation(name, demographicId);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <>
       <SequenceIntroParagraphStyle className="with-margin-bottom">
-        {setTitleByType(type)}
+        {title}
       </SequenceIntroParagraphStyle>
       <SequenceParagraphStyle>
         {i18n.t('demographics_card.submitted_thanks')}
@@ -37,7 +43,7 @@ export const SubmittedDemographics: React.FC<Props> = ({ type }) => {
         data-cy-button="demographic-continue-vote"
         onClick={() => {
           dispatch(incrementSequenceIndex());
-          trackClickVoteDemographics(type);
+          trackClickVoteDemographics(name, demographicId);
         }}
       >
         {i18n.t('proposal_submit.success.button')}

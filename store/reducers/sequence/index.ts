@@ -1,8 +1,7 @@
 import { Reducer, ReducerAction, StateSequence } from '@make.org/types';
 import {
   SEQUENCE_DECREMENT_INDEX,
-  SEQUENCE_DEMOGRAPHICS_ADD_QUESTION,
-  SEQUENCE_DEMOGRAPHICS_PERSIST,
+  SEQUENCE_DEMOGRAPHICS_SUBMITTED,
   SEQUENCE_INCREMENT_INDEX,
   SEQUENCE_LOAD_CARDS,
   SEQUENCE_LOAD_PROPOSALS,
@@ -99,30 +98,13 @@ export const sequence_reducer: Reducer = (
         ...state,
         currentIndex: state.currentIndex - 1,
       };
-    case SEQUENCE_DEMOGRAPHICS_PERSIST:
+    case SEQUENCE_DEMOGRAPHICS_SUBMITTED:
       return {
         ...state,
         demographics: {
-          type: action.payload.type,
-          value: action.payload.value,
-          questions: [action.payload.questionSlug],
+          submitted: action.payload.submitted,
         },
       };
-    case SEQUENCE_DEMOGRAPHICS_ADD_QUESTION: {
-      if (state.demographics) {
-        return {
-          ...state,
-          demographics: {
-            ...state.demographics,
-            questions: [
-              ...state.demographics.questions,
-              action.payload.questionSlug,
-            ],
-          },
-        };
-      }
-      return state;
-    }
     default:
       return state;
   }

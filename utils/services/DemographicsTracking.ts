@@ -1,6 +1,5 @@
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { DemographicsTrackingApiService } from '@make.org/api/DemographicsTrackingApiService';
-import { DemographicNameType } from '@make.org/types';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
 const PREFIX_QUERY_PARAMS_ACCEPTED = 'utm_';
@@ -16,29 +15,64 @@ const sanitizeQueryParams = (queryParams: { [n: string]: string }) => {
   return queryParamSanitized;
 };
 
-export const track = async (
-  name: DemographicNameType,
+export const trackUnsecure = async (
+  name: string,
   value: string,
-  parameters: { [n: string]: string } = {},
+  questionId: string,
+  source: string,
+  parameters: { [n: string]: string },
   success: () => void,
-  error?: () => void
+  error: () => void
 ): Promise<void> => {
   try {
-    await DemographicsTrackingApiService.track(
+    await DemographicsTrackingApiService.trackUnsecure(
       name,
       value,
+      questionId,
+      source,
       sanitizeQueryParams(parameters)
     );
     success();
-  } catch (e: unknown) {
+  } catch (e) {
     const apiServiceError = e as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
-    if (error) {
-      error();
+    error();
+  }
+};
+
+export const track = async (
+  demographicsCardId: string,
+  token: string,
+  value: string,
+  questionId: string,
+  source: string,
+  parameters: { [n: string]: string },
+  success: () => void,
+  error: (message: string, data: unknown) => void
+): Promise<void> => {
+  try {
+    await DemographicsTrackingApiService.track(
+      demographicsCardId,
+      token,
+      value,
+      questionId,
+      source,
+      sanitizeQueryParams(parameters)
+    );
+    success();
+  } catch (e) {
+    const apiServiceError = e as ApiServiceError;
+    if (apiServiceError.status === 400) {
+      error(apiServiceError.message, apiServiceError.data);
+      return;
     }
+
+    defaultUnexpectedError(apiServiceError);
+    error(apiServiceError.message, null);
   }
 };
 
 export const DemographicsTrackingService = {
   track,
+  trackUnsecure,
 };

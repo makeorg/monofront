@@ -101,18 +101,29 @@ export class QuestionApiService {
     questionId: string,
     includedProposalIds: string[] = [],
     sequenceKind: string,
+    demographicsCardId?: string,
+    token?: string,
     headers: ApiServiceHeadersType = {}
   ): Promise<void | AxiosResponse> {
     let startSequenceUrl = PATH_QUESTION_START_SEQUENCE.replace(
       ':sequenceKind',
       sequenceKind
     ).replace(':questionId', questionId);
-    // remove null value
     const includeParams = includedProposalIds
       .map(proposalId => (proposalId ? `include=${proposalId}` : ''))
       .join('&');
 
-    startSequenceUrl += includeParams ? `?${includeParams}` : '';
+    const demographicParams =
+      demographicsCardId && token
+        ? `demographicsCardId=${encodeURIComponent(
+            demographicsCardId
+          )}&token=${encodeURIComponent(token)}`
+        : '';
+
+    const params = [includeParams, demographicParams]
+      .filter(el => el)
+      .join('&');
+    startSequenceUrl += params ? `?${params}` : '';
 
     return ApiService.callApi(startSequenceUrl, {
       method: 'GET',

@@ -1,6 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { FC, useState } from 'react';
-import { NoProposalCardType, QuestionType } from '@make.org/types';
+import {
+  NoProposalCardType,
+  QuestionType,
+  SequenceType,
+} from '@make.org/types';
 import { trackClickOperationPage } from '@make.org/utils/services/Tracking';
 import { getParticipateLink } from '@make.org/utils/helpers/url';
 import i18n from 'i18next';
@@ -41,16 +45,21 @@ export const SequenceByKeyword: FC = () => {
   const executeStartSequence = async (
     questionId: string,
     votedIds: string[]
-  ) => {
+  ): Promise<SequenceType | null> => {
     const response = await SequenceService.startSequenceByKeyword(
       questionId,
       votedIds,
       keyword
     );
 
-    setKeywordLabel(response?.label || '');
+    if (!response) {
+      return null;
+    }
 
-    return response?.proposals || [];
+    setKeywordLabel(response.label || '');
+    return {
+      proposals: response.proposals || [],
+    };
   };
 
   const { isLoading, currentCard, isEmptySequence } = useSequence(

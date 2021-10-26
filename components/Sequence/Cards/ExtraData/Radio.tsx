@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DemographicDataType } from '@make.org/types';
+import { DemographicParameterType } from '@make.org/types';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import {
   RadioAsButtonWrapperStyle,
@@ -9,7 +9,7 @@ import {
 
 type Props = {
   type: string;
-  data: DemographicDataType[];
+  data: DemographicParameterType[];
   currentValue: string;
   setCurrentValue: (value: string) => void;
 };
@@ -41,11 +41,10 @@ export const RadioDemographics: React.FC<Props> = ({
   setCurrentValue,
 }) => {
   const [focusValue, setFocusValue] = useState<string | null>(null);
-  const isAgeDemographic = type === 'age';
 
   return (
     <ExtraDataRadioGroupStyle
-      className={isAgeDemographic ? 'three-columns' : ''}
+      className={type === 'three-columns' ? 'three-columns' : ''}
     >
       {data.map(demographic => (
         <RadioAsButtonWrapperStyle
@@ -61,7 +60,7 @@ export const RadioDemographics: React.FC<Props> = ({
               id={demographic.value}
               type="radio"
               value={demographic.value}
-              name={type}
+              name="demographic"
               onChange={() => setCurrentValue(demographic.value)}
               onFocus={() => setFocusValue(demographic.value)}
               onBlur={() => setFocusValue(null)}

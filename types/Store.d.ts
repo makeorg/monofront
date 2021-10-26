@@ -9,11 +9,7 @@ import {
 import { ProposalType } from './Proposal';
 import { TagType } from './Tag';
 import { PersonalityType, UserType } from './User';
-import {
-  DemographicNameType,
-  ProposalCardType,
-  SequenceCardType,
-} from './Card';
+import { ProposalCardType, SequenceCardType } from './Card';
 import { MODAL_TYPES } from './enums/modal_types';
 import { LocaleType } from './enums/locales';
 import { OrganisationType } from './Organisation';
@@ -53,9 +49,7 @@ export type StateSequence = {
   readonly proposals: ProposalType[];
   readonly cards: SequenceCardType[] | ProposalCardType[];
   readonly demographics?: {
-    type: DemographicNameType;
-    value: string;
-    questions: string[];
+    submitted: boolean;
   };
 };
 

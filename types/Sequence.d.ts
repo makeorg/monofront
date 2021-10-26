@@ -1,3 +1,4 @@
+import { DemographicDataType } from '.';
 import { ProposalType } from './Proposal';
 
 export type ConsultationType = {
@@ -6,12 +7,15 @@ export type ConsultationType = {
 };
 
 export type SequenceType = {
-  id: string;
   proposals: ProposalType[];
+  label?: string;
+  key?: string;
+  demographics?: DemographicDataType;
 };
 
-export type KeywordSequenceType = {
-  proposals: ProposalType[];
-  label: string;
-  key: string;
-};
+export type ExecuteStartSequence = (
+  questionId: string,
+  votedIds: string[],
+  demographicsCardId?: string,
+  token?: string
+) => Promise<SequenceType | null>;

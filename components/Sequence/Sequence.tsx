@@ -7,11 +7,10 @@ import {
   isStandardSequence,
 } from '@make.org/utils/helpers/sequence';
 import { SEQUENCE, CARD } from '@make.org/types/enums';
-
 import {
   NoProposalCardType,
-  ProposalType,
   QuestionType,
+  SequenceType,
 } from '@make.org/types';
 import i18n from 'i18next';
 import { trackClickOperationPage } from '@make.org/utils/services/Tracking';
@@ -50,17 +49,24 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
   const question: QuestionType = selectCurrentQuestion(state);
   const executeStartSequence = async (
     questionId: string,
-    votedIds: string[]
-  ): Promise<ProposalType[] | null> => {
-    const results = await SequenceService.startSequenceByKind(
+    votedIds: string[],
+    demographicCardId?: string,
+    token?: string
+  ): Promise<SequenceType | null> => {
+    const response = await SequenceService.startSequenceByKind(
       questionId,
       votedIds,
-      sequenceKind
+      sequenceKind,
+      demographicCardId,
+      token
     );
-    if (!!results && 'proposals' in results) {
-      return results.proposals;
+
+    if (!response) {
+      return null;
     }
-    return null;
+
+    const { proposals, demographics } = response;
+    return { proposals: proposals || [], demographics };
   };
 
   const { isLoading, currentCard, isEmptySequence } = useSequence(

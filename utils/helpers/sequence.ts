@@ -2,6 +2,7 @@ import {
   QuestionExtraSlidesConfigType,
   SequenceCardType,
   ProposalType,
+  DemographicDataType,
 } from '@make.org/types';
 import i18n from 'i18next';
 import { CARD, SEQUENCE } from '@make.org/types/enums';
@@ -23,7 +24,7 @@ export const buildCards = (
   isStandardSequence: boolean,
   introCardParam?: boolean,
   pushProposalParam?: boolean,
-  withDemographics?: boolean,
+  sequenceDemographicData?: DemographicDataType,
   isWidget?: boolean
 ): SequenceCardType[] => {
   const withPushProposalCard: boolean =
@@ -62,10 +63,10 @@ export const buildCards = (
     });
   }
 
-  if (withDemographics && !isWidget) {
+  if (sequenceDemographicData && !isWidget) {
     cards.splice(withIntroCard ? 3 : 2, 0, {
       type: CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
-      configuration: undefined,
+      configuration: sequenceDemographicData,
       state: { votes: [] },
       index: 0,
     });

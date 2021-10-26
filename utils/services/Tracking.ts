@@ -549,42 +549,59 @@ export const trackClickModalCookieBack = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_COOKIE_MODAL_BACK());
 };
 
-export const trackDisplayDemographics = (type: string): void => {
+export const trackDisplayDemographics = (
+  name: string,
+  demographicId: string
+): void => {
   TrackingService.sendAllTrackers(
-    trackingEvent.DISPLAY_DEMOGRAPHICS({
-      type,
-    })
+    trackingEvent.DISPLAY_DEMOGRAPHICS({ name, demographicId })
   );
 };
 
-export const trackDisplayDemographicsConfirmation = (type: string): void => {
+export const trackDisplayDemographicsConfirmation = (
+  name: string,
+  demographicId: string
+): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.DISPLAY_DEMOGRAPHICS_CONFIRMATION({
-      type,
+      name,
+      demographicId,
     })
   );
 };
 
-export const trackClickSaveDemographics = (type: string): void => {
+export const trackClickSaveDemographics = (
+  name: string,
+  demographicId: string
+): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_SAVE_DEMOGRAPHICS({
-      type,
+      name,
+      demographicId,
     })
   );
 };
 
-export const trackClickSkipDemographics = (type: string): void => {
+export const trackClickSkipDemographics = (
+  name: string,
+  demographicId: string
+): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_SKIP_DEMOGRAPHICS({
-      type,
+      name,
+      demographicId,
     })
   );
 };
 
-export const trackClickVoteDemographics = (type: string): void => {
+export const trackClickVoteDemographics = (
+  name: string,
+  demographicId: string
+): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_VOTE_DEMOGRAPHICS({
-      type,
+      name,
+      demographicId,
     })
   );
 };

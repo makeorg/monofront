@@ -2,16 +2,18 @@ import { ProposalType } from './Proposal';
 import { QuestionType } from './Question';
 import { VoteType } from './Vote';
 
-export type DemographicDataType = {
+export type DemographicParameterType = {
   label: string;
   value: string;
 };
 
-export type DemographicNameType = 'age' | 'region' | 'gender' | '';
-
-export type DemographicsType = {
-  ui: string;
-  data: DemographicDataType[];
+export type DemographicDataType = {
+  id: string;
+  name: string;
+  layout: 'OneColumnRadio' | 'Select' | 'ThreeColumnsRadio';
+  title: string;
+  parameters: DemographicParameterType[];
+  token: string;
 };
 
 export type DemographicTrackType = {
@@ -62,7 +64,8 @@ export type SequenceCardConfigType =
   | IntroCardConfigType
   | PushProposalCardConfigType
   | ProposalCardConfigType
-  | NoProposalCardConfigType;
+  | NoProposalCardConfigType
+  | DemographicDataType;
 
 export type SequenceCardType = {
   type: string;

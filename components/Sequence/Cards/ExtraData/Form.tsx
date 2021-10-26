@@ -1,13 +1,10 @@
 import React, { SyntheticEvent, useEffect, useMemo, useState } from 'react';
-import { DemographicNameType, DemographicDataType } from '@make.org/types';
+import { DemographicParameterType } from '@make.org/types';
 import { BlackBorderButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import i18n from 'i18next';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { DemographicsTrackingService } from '@make.org/utils/services/DemographicsTracking';
-import {
-  incrementSequenceIndex,
-  persistDemographics,
-} from '@make.org/store/actions/sequence';
+import { incrementSequenceIndex } from '@make.org/store/actions/sequence';
 import { useLocation } from 'react-router';
 import {
   trackClickSaveDemographics,
@@ -18,6 +15,12 @@ import { useAppContext } from '@make.org/store';
 import { SubmitButton } from '@make.org/ui/components/SubmitButton';
 import { useCookies } from 'react-cookie';
 import { COOKIE } from '@make.org/types/enums';
+import {
+  DEMOGRAPHIC_LAYOUT_ONE_COLUMN_RADIO,
+  DEMOGRAPHIC_LAYOUT_SELECT,
+  DEMOGRAPHIC_LAYOUT_THREE_COLUMNS_RADIO,
+} from '@make.org/utils/constants/demographics';
+import { Logger } from '@make.org/utils/services/Logger';
 import { RadioDemographics } from './Radio';
 import { ExtraDataFormStyle, SkipIconStyle, SubmitWrapperStyle } from './style';
 import { SelectDemographics } from './Select';
@@ -25,32 +28,40 @@ import { SelectDemographics } from './Select';
 const SKIP_TRACKING_VALUE = 'SKIPPED';
 
 type Props = {
-  type: DemographicNameType;
-  demographics: {
-    ui: string;
-    data: DemographicDataType[];
-  };
-  currentQuestion: string;
+  demographicId: string;
+  name: string;
+  layout: string;
+  data: DemographicParameterType[];
+  token: string;
+  submitSuccess: () => void;
 };
 
 export const renderFormUI = (
-  type: DemographicNameType,
-  ui: string,
-  data: DemographicDataType[],
+  layout: string,
+  data: DemographicParameterType[],
   currentValue: string,
   setCurrentValue: (value: string) => void
 ): React.ReactNode => {
-  switch (ui) {
-    case 'radio':
+  switch (layout) {
+    case DEMOGRAPHIC_LAYOUT_ONE_COLUMN_RADIO:
       return (
         <RadioDemographics
-          type={type}
+          type="one-column"
           data={data}
           currentValue={currentValue}
           setCurrentValue={setCurrentValue}
         />
       );
-    case 'select':
+    case DEMOGRAPHIC_LAYOUT_THREE_COLUMNS_RADIO:
+      return (
+        <RadioDemographics
+          type="three-columns"
+          data={data}
+          currentValue={currentValue}
+          setCurrentValue={setCurrentValue}
+        />
+      );
+    case DEMOGRAPHIC_LAYOUT_SELECT:
       return (
         <SelectDemographics data={data} setCurrentValue={setCurrentValue} />
       );
@@ -60,19 +71,23 @@ export const renderFormUI = (
 };
 
 export const ExtraDataForm: React.FC<Props> = ({
-  type,
-  demographics,
-  currentQuestion,
+  demographicId,
+  name,
+  layout,
+  data,
+  token,
+  submitSuccess,
 }) => {
   const { dispatch, state } = useAppContext();
   const location = useLocation();
 
-  const { device } = state.appConfig;
+  const { device, source } = state.appConfig;
+  const { currentQuestion } = state;
+  const { question } = state.questions[currentQuestion];
   const [currentValue, setCurrentValue] = useState<string>('');
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(false);
   const [isSkipDisabled, setIsSkipDisabled] = useState(false);
-  const { data, ui } = demographics;
-  const FORM_NAME = `demographics_${type}`;
+  const FORM_NAME = `demographics`;
   const isMobile = matchMobileDevice(device);
 
   // set cookie duration to a month with december corner case
@@ -112,25 +127,32 @@ export const ExtraDataForm: React.FC<Props> = ({
         setIsSkipDisabled(false);
         dispatch(incrementSequenceIndex());
         if (value === SKIP_TRACKING_VALUE) {
-          trackClickSkipDemographics(type);
+          trackClickSkipDemographics(name, demographicId);
         } else {
-          trackClickSaveDemographics(type);
+          trackClickSaveDemographics(name, demographicId);
         }
+        submitSuccess();
       };
-      const error = () => {
+      const error = (message: string, content: unknown) => {
+        Logger.logError({
+          message,
+          body: content as string,
+          name: 'demographics',
+        });
         setIsSubmitDisabled(false);
         setIsSkipDisabled(false);
       };
 
       await DemographicsTrackingService.track(
-        type,
+        demographicId,
+        token,
         value,
+        question.questionId,
+        source,
         utmParams,
         success,
         error
       );
-
-      dispatch(persistDemographics(type, value, currentQuestion));
     };
 
   const onClickSkip = (event: React.SyntheticEvent<HTMLButtonElement>) => {
@@ -142,7 +164,7 @@ export const ExtraDataForm: React.FC<Props> = ({
   }, [currentValue]);
 
   useEffect(() => {
-    trackDisplayDemographics(type);
+    trackDisplayDemographics(name, demographicId);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -153,7 +175,7 @@ export const ExtraDataForm: React.FC<Props> = ({
       onSubmit={handleSubmit(currentValue)}
       method="post"
     >
-      {renderFormUI(type, ui, data, currentValue, setCurrentValue)}
+      {renderFormUI(layout, data, currentValue, setCurrentValue)}
       <SubmitWrapperStyle>
         <BlackBorderButtonStyle
           disabled={isSkipDisabled}

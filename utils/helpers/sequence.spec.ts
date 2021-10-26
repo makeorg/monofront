@@ -1,10 +1,27 @@
-import { ProposalType } from '@make.org/types';
+import { DemographicDataType, ProposalType } from '@make.org/types';
 import { CARD, SEQUENCE } from '@make.org/types/enums';
 import * as helpers from './sequence';
 
 describe('Sequence Helper', () => {
   describe('test buildCards', () => {
     const proposals: ProposalType[] = [];
+    const defaultDemographcis: DemographicDataType = {
+      id: 'fooId',
+      name: 'fooName',
+      layout: 'OneColumnRadio',
+      title: 'fooTitle',
+      parameters: [
+        {
+          label: 'foo',
+          value: 'foo',
+        },
+        {
+          label: 'bar',
+          value: 'bar',
+        },
+      ],
+      token: 'fooToken',
+    };
 
     it("doesn't contain intro card in API conf and in params", () => {
       const extraSlidesConfig = {
@@ -18,14 +35,14 @@ describe('Sequence Helper', () => {
         true,
         introCardParam,
         false,
-        true
+        defaultDemographcis
       );
       expect(cards.length).toBe(2);
       expect(cards).toEqual([
         {
           index: 0,
           type: CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
-          configuration: undefined,
+          configuration: defaultDemographcis,
           state: {
             votes: [],
           },
@@ -53,14 +70,14 @@ describe('Sequence Helper', () => {
         true,
         introCardParam,
         false,
-        true
+        defaultDemographcis
       );
       expect(cards.length).toBe(2);
       expect(cards).toEqual([
         {
           index: 0,
           type: CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
-          configuration: undefined,
+          configuration: defaultDemographcis,
           state: {
             votes: [],
           },
@@ -88,14 +105,14 @@ describe('Sequence Helper', () => {
         true,
         introCardParam,
         false,
-        true
+        defaultDemographcis
       );
       expect(cards.length).toBe(2);
       expect(cards).toEqual([
         {
           index: 0,
           type: CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
-          configuration: undefined,
+          configuration: defaultDemographcis,
           state: {
             votes: [],
           },
@@ -123,7 +140,7 @@ describe('Sequence Helper', () => {
         true,
         introCardParam,
         false,
-        true
+        defaultDemographcis
       );
 
       expect(cards.length).toBe(3);
@@ -139,7 +156,7 @@ describe('Sequence Helper', () => {
         {
           index: 1,
           type: CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
-          configuration: undefined,
+          configuration: defaultDemographcis,
           state: {
             votes: [],
           },
@@ -168,14 +185,14 @@ describe('Sequence Helper', () => {
         true,
         false,
         pushProposalParam,
-        true
+        defaultDemographcis
       );
       expect(cards.length).toBe(2);
       expect(cards).toEqual([
         {
           index: 0,
           type: CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
-          configuration: undefined,
+          configuration: defaultDemographcis,
           state: {
             votes: [],
           },
@@ -204,14 +221,14 @@ describe('Sequence Helper', () => {
         true,
         false,
         pushProposalParam,
-        true
+        defaultDemographcis
       );
       expect(cards.length).toBe(2);
       expect(cards).toEqual([
         {
           index: 0,
           type: CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
-          configuration: undefined,
+          configuration: defaultDemographcis,
           state: {
             votes: [],
           },
@@ -240,14 +257,14 @@ describe('Sequence Helper', () => {
         true,
         false,
         pushProposalParam,
-        true
+        defaultDemographcis
       );
       expect(cards.length).toBe(2);
       expect(cards).toEqual([
         {
           index: 0,
           type: CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
-          configuration: undefined,
+          configuration: defaultDemographcis,
           state: {
             votes: [],
           },
@@ -276,7 +293,7 @@ describe('Sequence Helper', () => {
         true,
         false,
         pushProposalParam,
-        true
+        defaultDemographcis
       );
 
       expect(cards.length).toBe(3);
@@ -292,7 +309,7 @@ describe('Sequence Helper', () => {
         {
           index: 1,
           type: CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
-          configuration: undefined,
+          configuration: defaultDemographcis,
           state: {
             votes: [],
           },
@@ -321,7 +338,7 @@ describe('Sequence Helper', () => {
         true,
         false,
         pushProposalParam,
-        true
+        defaultDemographcis
       );
 
       expect(cards.length).toBe(2);
@@ -329,7 +346,7 @@ describe('Sequence Helper', () => {
         {
           index: 0,
           type: CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
-          configuration: undefined,
+          configuration: defaultDemographcis,
           state: {
             votes: [],
           },
