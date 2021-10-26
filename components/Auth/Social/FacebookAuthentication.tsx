@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import {
   ReactFacebookFailureResponse,
   ReactFacebookLoginInfo,
@@ -34,11 +34,13 @@ import {
   SvgLogoFacebookWrapperStyle,
 } from './style';
 
-/**
- * Handles Facebook authentication
- */
+type Props = {
+  handleProposalAPICall?: () => void;
+};
 
-export const FacebookAuthentication: React.FC = () => {
+export const FacebookAuthentication: FC<Props> = ({
+  handleProposalAPICall,
+}) => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy, language } = state.appConfig;
 
@@ -105,6 +107,9 @@ export const FacebookAuthentication: React.FC = () => {
         )
       );
       trackAuthenticationSocialSuccess(FACEBOOK_PROVIDER_ENUM, createdAt);
+      if (handleProposalAPICall) {
+        handleProposalAPICall();
+      }
     };
 
     UserService.checkSocialPrivacyPolicy(

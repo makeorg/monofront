@@ -5,8 +5,6 @@ import {
   CenterColumnStyle,
   ColumnElementStyle,
 } from '@make.org/ui/elements/FlexElements';
-import { useAppContext } from '@make.org/store';
-import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { AuthenticationRegisterButtons } from '@make.org/components/Auth/Register/Buttons';
 import { Register } from '@make.org/components/Auth/Register';
 import { Login } from '@make.org/components/Auth/Login';
@@ -35,7 +33,7 @@ import {
 
 type Props = {
   handleStepBack: () => void;
-  handleProposeAPICall: () => void;
+  handleProposalAPICall: () => void;
 };
 
 enum AUTH_STEP {
@@ -47,22 +45,13 @@ enum AUTH_STEP {
 
 export const ProposalAuthentication: React.FC<Props> = ({
   handleStepBack,
-  handleProposeAPICall,
+  handleProposalAPICall,
 }) => {
-  const { state } = useAppContext();
-  const { isLoggedIn, user } = selectAuthentication(state) || {};
   const [authStep, setAuthStep] = useState(AUTH_STEP.SOCIAL);
 
   useEffect(() => {
     trackDisplayAuthenticationForm();
   }, []);
-
-  useEffect(() => {
-    if (isLoggedIn && user && user.profile) {
-      handleProposeAPICall();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isLoggedIn, user]);
 
   if (authStep !== AUTH_STEP.SOCIAL) {
     return (
@@ -76,8 +65,12 @@ export const ProposalAuthentication: React.FC<Props> = ({
             </ProposalBackIconWrapperStyle>
             {i18n.t('common.back')}
           </ProposalBackButtonStyle>
-          {authStep === AUTH_STEP.LOGIN && <Login panel />}
-          {authStep === AUTH_STEP.REGISTER && <Register panel />}
+          {authStep === AUTH_STEP.LOGIN && (
+            <Login handleProposalAPICall={handleProposalAPICall} panel />
+          )}
+          {authStep === AUTH_STEP.REGISTER && (
+            <Register handleProposalAPICall={handleProposalAPICall} panel />
+          )}
           {authStep === AUTH_STEP.FORGOT_PASSWORD && (
             <PasswordForgot
               panel
@@ -104,8 +97,12 @@ export const ProposalAuthentication: React.FC<Props> = ({
                   <ProposalSubmitAuthSeparator />
                 </SeparatorProposalAuthLogin>
                 <SocialRegisterButtonsWrapperStyle>
-                  <FacebookAuthentication />
-                  <GoogleAuthentication />
+                  <FacebookAuthentication
+                    handleProposalAPICall={handleProposalAPICall}
+                  />
+                  <GoogleAuthentication
+                    handleProposalAPICall={handleProposalAPICall}
+                  />
                 </SocialRegisterButtonsWrapperStyle>
               </ProposalAuthSocialLoginWrapperStyle>
             </>
@@ -129,6 +126,7 @@ export const ProposalAuthentication: React.FC<Props> = ({
             {i18n.t('proposal_submit.authentication.title')}
           </ProposalAltStepTitleStyle>
           <AuthenticationRegisterButtons
+            handleProposalAPICall={handleProposalAPICall}
             onEmailRegister={() => setAuthStep(AUTH_STEP.REGISTER)}
           />
         </ProposalAuthWrapperStyle>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import GoogleLogin, {
   GoogleLoginResponse,
   GoogleLoginResponseOffline,
@@ -26,16 +26,18 @@ import { Logger } from '@make.org/utils/services/Logger';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { NOTIF } from '@make.org/types/enums';
 import i18n from 'i18next';
+import { useAppContext } from '@make.org/store';
 import {
   GoogleButtonStyle,
   SocialButtonLabelStyle,
   SvgLogoWrapperStyle,
 } from './style';
-import { useAppContext } from '../../../store';
-/**
- * Handles Google authentication
- */
-export const GoogleAuthentication: React.FC = () => {
+
+type Props = {
+  handleProposalAPICall?: () => void;
+};
+
+export const GoogleAuthentication: FC<Props> = ({ handleProposalAPICall }) => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy } = state.appConfig || {};
 
@@ -53,6 +55,9 @@ export const GoogleAuthentication: React.FC = () => {
           NOTIF.NOTIFICATION_LEVEL_SUCCESS
         )
       );
+      if (handleProposalAPICall) {
+        handleProposalAPICall();
+      }
     };
 
     let accessToken = '';

@@ -36,10 +36,11 @@ import {
 import { LegalConsent } from './LegalConsent';
 
 type Props = {
+  handleProposalAPICall?: () => void;
   panel?: boolean;
 };
 
-export const Register: React.FC<Props> = ({ panel }) => {
+export const Register: React.FC<Props> = ({ handleProposalAPICall, panel }) => {
   const { dispatch, state } = useAppContext();
   const [user, setUser] = useState<RegisterFormDataType>({
     email: '',
@@ -158,6 +159,9 @@ export const Register: React.FC<Props> = ({ panel }) => {
           );
         } else {
           dispatch(modalClose());
+        }
+        if (handleProposalAPICall) {
+          handleProposalAPICall();
         }
         setErrors([]);
       });

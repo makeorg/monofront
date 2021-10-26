@@ -60,7 +60,7 @@ export const ProposalJourney: React.FC = () => {
     setProposalStep(steps.FORM);
   };
 
-  const handleProposeAPICall = async () => {
+  const handleProposalAPICall = async () => {
     if (waiting) {
       return;
     }
@@ -80,7 +80,7 @@ export const ProposalJourney: React.FC = () => {
 
   const handleSubmitForm = () => {
     if (isLoggedIn) {
-      handleProposeAPICall();
+      handleProposalAPICall();
       return;
     }
     setProposalStep(steps.AUTHENTICATION_STEP);
@@ -102,7 +102,7 @@ export const ProposalJourney: React.FC = () => {
     return (
       <ProposalAuthentication
         handleStepBack={handleStepBack}
-        handleProposeAPICall={handleProposeAPICall}
+        handleProposalAPICall={handleProposalAPICall}
       />
     );
   }

@@ -28,9 +28,10 @@ import { FacebookAuthentication } from '../Social/FacebookAuthentication';
 import { GoogleAuthentication } from '../Social/GoogleAuthentication';
 
 type Props = {
+  handleProposalAPICall?: () => void;
   panel?: boolean;
 };
-export const Login: React.FC<Props> = ({ panel }) => {
+export const Login: React.FC<Props> = ({ handleProposalAPICall, panel }) => {
   const { dispatch } = useAppContext();
 
   const handleRegisterModal = () => {
@@ -60,8 +61,12 @@ export const Login: React.FC<Props> = ({ panel }) => {
             {i18n.t('login.social_connect')}
           </FourthLevelTitleStyle>
           <AuthenticationButtonWrapperStyle className="small-wrapper">
-            <FacebookAuthentication />
-            <GoogleAuthentication />
+            <FacebookAuthentication
+              handleProposalAPICall={handleProposalAPICall}
+            />
+            <GoogleAuthentication
+              handleProposalAPICall={handleProposalAPICall}
+            />
           </AuthenticationButtonWrapperStyle>
           <SeparatorWrapperStyle className="margin-bottom">
             <SeparatorStyle />
@@ -73,7 +78,7 @@ export const Login: React.FC<Props> = ({ panel }) => {
           </FourthLevelTitleStyle>
         </>
       )}
-      <LoginForm />
+      <LoginForm handleProposalAPICall={handleProposalAPICall} />
       {!panel && (
         <>
           <ExtraParagraphStyle>

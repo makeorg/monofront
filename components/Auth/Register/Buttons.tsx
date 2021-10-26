@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { modalShowRegister } from '@make.org/store/actions/modal';
 import { useAppContext } from '@make.org/store';
 import i18n from 'i18next';
@@ -17,10 +17,12 @@ import {
 } from '../Social/style';
 
 type Props = {
+  handleProposalAPICall?: () => void;
   onEmailRegister?: () => void;
 };
 
-export const AuthenticationRegisterButtons: React.FC<Props> = ({
+export const AuthenticationRegisterButtons: FC<Props> = ({
+  handleProposalAPICall,
   onEmailRegister,
 }) => {
   const { dispatch } = useAppContext();
@@ -33,8 +35,8 @@ export const AuthenticationRegisterButtons: React.FC<Props> = ({
   };
   return (
     <AuthenticationButtonWrapperStyle data-cy-container="signup-auth-buttons">
-      <FacebookAuthentication />
-      <GoogleAuthentication />
+      <FacebookAuthentication handleProposalAPICall={handleProposalAPICall} />
+      <GoogleAuthentication handleProposalAPICall={handleProposalAPICall} />
       <SeparatorWrapperStyle>
         <ProposalSubmitAuthSeparator className="no-margin-top" />
         <TextSeparatorStyle>{i18n.t('login.or')}</TextSeparatorStyle>

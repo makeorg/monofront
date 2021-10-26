@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { ErrorObjectType } from '@make.org/types';
 import i18n from 'i18next';
 import { UserService } from '@make.org/utils/services/User';
@@ -33,7 +33,11 @@ type TypeLoginValues = {
   password: string;
 };
 
-export const LoginForm: React.FC = () => {
+type Props = {
+  handleProposalAPICall?: () => void;
+};
+
+export const LoginForm: FC<Props> = ({ handleProposalAPICall }) => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy } = state.appConfig;
   const defaultFormValues = {
@@ -71,6 +75,9 @@ export const LoginForm: React.FC = () => {
           NOTIF.NOTIFICATION_LEVEL_SUCCESS
         )
       );
+      if (handleProposalAPICall) {
+        handleProposalAPICall();
+      }
     };
     const handleErrors = (serviceErrors?: ErrorObjectType[]) => {
       if (serviceErrors) {
