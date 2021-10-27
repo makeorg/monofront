@@ -25,7 +25,7 @@ import { RadioDemographics } from './Radio';
 import { ExtraDataFormStyle, SkipIconStyle, SubmitWrapperStyle } from './style';
 import { SelectDemographics } from './Select';
 
-const SKIP_TRACKING_VALUE = 'SKIPPED';
+const SKIP_TRACKING_VALUE = null;
 
 type Props = {
   demographicId: string;
@@ -80,8 +80,7 @@ export const ExtraDataForm: React.FC<Props> = ({
 }) => {
   const { dispatch, state } = useAppContext();
   const location = useLocation();
-
-  const { device, source } = state.appConfig;
+  const { device, source, country } = state.appConfig;
   const { currentQuestion } = state;
   const { question } = state.questions[currentQuestion];
   const [currentValue, setCurrentValue] = useState<string>('');
@@ -111,7 +110,7 @@ export const ExtraDataForm: React.FC<Props> = ({
   }, [location.search]);
 
   const handleSubmit =
-    (value: string) =>
+    (value: string | null) =>
     async (
       event: SyntheticEvent<HTMLFormElement> | SyntheticEvent<HTMLButtonElement>
     ) => {
@@ -145,11 +144,12 @@ export const ExtraDataForm: React.FC<Props> = ({
 
       await DemographicsTrackingService.track(
         demographicId,
-        token,
         value,
         question.questionId,
         source,
+        country,
         utmParams,
+        token,
         success,
         error
       );

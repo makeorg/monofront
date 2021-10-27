@@ -5,13 +5,14 @@ export const DEMOGRAPHICS_TRACKING_PATH_UNSECURE = '/tracking/demographics';
 export const DEMOGRAPHICS_TRACKING_PATH = '/tracking/demographics-v2';
 
 type TypeDemographicTrack = {
-  demographic: string;
-  value: string;
+  value: string | null;
   questionId: string;
   source: string;
   country: string;
   parameters: { [n: string]: string };
   token?: string;
+  demographic?: string;
+  demographicsCardId?: string;
 };
 
 export class DemographicsTrackingApiService {
@@ -20,6 +21,7 @@ export class DemographicsTrackingApiService {
     value: string,
     questionId: string,
     source: string,
+    country: string,
     parameters: { [n: string]: string } = {}
   ): Promise<ApiServiceResponse> {
     const contentObj: TypeDemographicTrack = {
@@ -27,7 +29,7 @@ export class DemographicsTrackingApiService {
       value,
       questionId,
       source,
-      country: ApiService.country,
+      country,
       parameters,
     };
 
@@ -48,18 +50,19 @@ export class DemographicsTrackingApiService {
 
   static track(
     demographicsCardId: string,
-    token: string,
-    value: string,
+    value: string | null,
     questionId: string,
     source: string,
-    parameters: { [n: string]: string } = {}
+    country: string,
+    parameters: { [n: string]: string } = {},
+    token: string
   ): Promise<ApiServiceResponse> {
     const contentObj: TypeDemographicTrack = {
-      demographic: demographicsCardId,
+      demographicsCardId,
       value,
       questionId,
       source,
-      country: ApiService.country,
+      country,
       parameters,
       token,
     };

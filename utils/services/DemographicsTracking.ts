@@ -20,6 +20,7 @@ export const trackUnsecure = async (
   value: string,
   questionId: string,
   source: string,
+  country: string,
   parameters: { [n: string]: string },
   success: () => void,
   error: () => void
@@ -30,6 +31,7 @@ export const trackUnsecure = async (
       value,
       questionId,
       source,
+      country,
       sanitizeQueryParams(parameters)
     );
     success();
@@ -42,22 +44,24 @@ export const trackUnsecure = async (
 
 export const track = async (
   demographicsCardId: string,
-  token: string,
-  value: string,
+  value: string | null,
   questionId: string,
   source: string,
+  country: string,
   parameters: { [n: string]: string },
+  token: string,
   success: () => void,
   error: (message: string, data: unknown) => void
 ): Promise<void> => {
   try {
     await DemographicsTrackingApiService.track(
       demographicsCardId,
-      token,
       value,
       questionId,
       source,
-      sanitizeQueryParams(parameters)
+      country,
+      sanitizeQueryParams(parameters),
+      token
     );
     success();
   } catch (e) {
