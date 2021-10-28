@@ -65,7 +65,6 @@ export const SequenceByKeyword: FC = () => {
   const { isLoading, currentCard, isEmptySequence } = useSequence(
     question,
     false,
-    country,
     executeStartSequence
   );
 
@@ -104,9 +103,8 @@ export const SequenceByKeyword: FC = () => {
             <SequenceSpecialIconStyle aria-hidden focusable={false} />
             {capitalizeFirstLetter(keywordLabel)}
           </SequenceSpecialTitleStyle>
-
           <SequenceCard
-            card={currentCard || noProposalCard}
+            card={isEmptySequence ? noProposalCard : currentCard}
             question={question}
           />
           {!isEmptySequence && <SequenceProgress />}

@@ -72,7 +72,6 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
   const { isLoading, currentCard, isEmptySequence } = useSequence(
     question,
     isStandardSequence(sequenceKind),
-    country,
     executeStartSequence
   );
 

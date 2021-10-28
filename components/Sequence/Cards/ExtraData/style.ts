@@ -5,6 +5,7 @@ import { SpaceBetweenRowStyle } from '@make.org/ui/elements/FlexElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { SvgFastForward } from '@make.org/ui/Svg/elements';
 import { intToPx } from '@make.org/utils/helpers/styled';
+import SvgSelectArrow from '@make.org/ui/Svg/source/select-arrow.svg';
 import styled from 'styled-components';
 import { SvgPropsType } from '@make.org/types';
 
@@ -80,8 +81,7 @@ export const SelectStyle = styled.select`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   color: ${color.greyDark};
   appearance: none;
-  background: transparent url(@make.org/ui/Svg/source/select-arrow.svg)
-    no-repeat 95% center;
+  background: transparent url(${SvgSelectArrow as never}) no-repeat 95% center;
 `;
 
 export const SkipIconStyle = styled(SvgFastForward)<SvgPropsType>`

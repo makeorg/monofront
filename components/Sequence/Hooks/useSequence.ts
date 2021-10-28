@@ -34,7 +34,6 @@ type ReturnFunctionType = {
 export const useSequence = (
   question: QuestionType,
   isStandardSequence: boolean,
-  country: string,
   executeStartSequence: ExecuteStartSequence
 ): ReturnFunctionType => {
   // Dispatch
@@ -102,8 +101,11 @@ export const useSequence = (
           setLoading(false);
         }
 
-        if (proposals && demographics) {
+        if (proposals) {
           setSequenceProposals(proposals);
+        }
+
+        if (demographics) {
           setSequenceDemographic(demographics);
         }
       }

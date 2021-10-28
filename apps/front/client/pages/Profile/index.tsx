@@ -11,6 +11,7 @@ import {
   getRouteProfileFavourites,
   getRouteProfileOpinions,
   getRouteProfileProposals,
+  isProfileFavourites,
   isProfileProposals,
   ROUTE_PROFILE_FAVOURITES,
   ROUTE_PROFILE_PROPOSALS,
@@ -48,7 +49,7 @@ const ProfilePage: FC = () => {
   const profileFavouritesLink = getRouteProfileFavourites(country);
   const profileOpinions = getRouteProfileOpinions(country);
   const isProfileProposalsActive = isProfileProposals(pathname);
-  const isProfileFavouritesActive = isProfileProposals(pathname);
+  const isProfileFavouritesActive = isProfileFavourites(pathname);
 
   if (!user) {
     return <Redirect to={getHomeLink(country)} />;
