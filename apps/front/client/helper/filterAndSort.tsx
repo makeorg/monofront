@@ -56,6 +56,17 @@ export const getUpdatedFilterAndSortValues = (
   }
 };
 
+// export const updateFilterAndSortStateValues = (
+//   name: string,
+//   value: string | undefined,
+//   dispatch: Dispatch,
+//   filterAndSort: TypeFilterAndSortValues
+// ): void => {
+//   const newFilterAndSortValues: TypeFilterAndSortValues =
+//     getUpdatedFilterAndSortValues(filterAndSort, name, value);
+//   dispatch(updateFilterAndSortState(newFilterAndSortValues));
+// };
+
 // gets translations for sort label
 export const getSortLabel = (name: string): string | null => {
   switch (name) {

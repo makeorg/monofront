@@ -1,7 +1,6 @@
 import React, { useEffect, useState, FC } from 'react';
 import {
   ProposalType,
-  QuestionKeywordType,
   QuestionType,
   TypeFilterAndSortValues,
 } from '@make.org/types';
@@ -17,7 +16,6 @@ import { Pagination } from '@make.org/components/Pagination';
 import { trackDisplayOperationPage } from '@make.org/utils/services/Tracking';
 import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
-import { QuestionService } from '@make.org/utils/services/Question';
 import { ProposalsList } from '../../app/Consultation/ProposalsList';
 import { Timeline } from '../../app/Consultation/Timeline';
 import { ParticipateNavigation } from '../../app/Consultation/Navigation/Participate';
@@ -46,25 +44,10 @@ const ExplorePage: FC = () => {
   const question: QuestionType = selectCurrentQuestion(state);
   const [proposals, setProposals] = useState<ProposalType[]>([]);
   const [isLoading, setLoading] = useState<boolean>(true);
-  const [keyword, setKeyword] = useState<QuestionKeywordType[]>([]);
   const [proposalsTotal, setProposalsTotal] = useState<number>(0);
 
   const PROPOSALS_LIMIT = 10;
-  const KEYWORD_THRESHOLD = 5;
   const hasProposals = proposalsTotal > 0;
-
-  // retrieves question Keywords for filter
-  const getQuestionKeywords = async () => {
-    setLoading(true);
-    const response = await QuestionService.getQuestionKeywords(
-      question.questionId,
-      KEYWORD_THRESHOLD
-    );
-    if (response) {
-      setKeyword(response);
-      setLoading(false);
-    }
-  };
 
   // retrieves proposals with corresponding param for sort and filters
   const getProposals = async (values: TypeFilterAndSortValues) => {
@@ -117,7 +100,6 @@ const ExplorePage: FC = () => {
   }, [question, dispatch]);
 
   useEffect(() => {
-    getQuestionKeywords();
     trackDisplayOperationPage();
   }, []);
 
@@ -167,7 +149,7 @@ const ExplorePage: FC = () => {
             )}
           </ParticipateMainContentStyle>
           <ParticipateSidebarContentStyle>
-            {isDesktop && <FilterAndSort keywords={keyword} />}
+            {isDesktop && <FilterAndSort />}
             {/* // ) : (
             //   <SortAndFiltersCTA
             //     filterAndSortValues={filterAndSortValues}

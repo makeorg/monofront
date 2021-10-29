@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import i18n from 'i18next';
 import { SvgCheck } from '@make.org/ui/Svg/elements';
 import { trackClickFilter } from '@make.org/utils/services/Tracking';
 import { useParams } from 'react-router';
+import { KEYWORD_THRESHOLD } from '@make.org/utils/constants/config';
+import { QuestionService } from '@make.org/utils/services/Question';
 import {
   HiddenCheckbox,
   StyledCheckbox,
@@ -10,16 +12,10 @@ import {
 } from '@make.org/ui/elements/FormElements';
 import { useAppContext } from '@make.org/store';
 import { resetFilterAndSortState } from '@make.org/store/actions/filterAndSort';
-import {
-  QuestionKeywordType,
-  QuestionType,
-  TypeFilterAndSortValues,
-} from '@make.org/types';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { QuestionKeywordType, QuestionType } from '@make.org/types';
 import { FilterSeparationLineStyle } from '@make.org/ui/elements/SeparatorsElements';
-import {
-  SORT_RECENT,
-  FILTER_ORGANISATION,
-} from '@make.org/utils/constants/explore';
+import { FILTER_ORGANISATION } from '@make.org/utils/constants/explore';
 import { getExploreLink } from '@make.org/utils/helpers/url';
 import {
   ResetLinkStyle,
@@ -38,43 +34,42 @@ import {
 } from './style';
 
 type Props = {
-  handleClassName(
-    currentValue: string | undefined,
-    elementValue: string
-  ): string;
   handleChange: (name: string, value?: string) => void;
-  setCurrentSort: (name: string) => void;
-  keywords: QuestionKeywordType[];
-  filterAndSortValues: TypeFilterAndSortValues;
-  question: QuestionType;
 };
 
-export const FiltersComponent: React.FC<Props> = ({
-  handleClassName,
-  handleChange,
-  setCurrentSort,
-  keywords,
-  filterAndSortValues,
-  question,
-}: Props) => {
-  const [currentKeyword, setCurrentKeyword] = useState<string | undefined>(
-    undefined
-  );
-  const { dispatch } = useAppContext();
+export const FiltersComponent: React.FC<Props> = ({ handleChange }: Props) => {
+  const [keywords, setKeywords] = useState<QuestionKeywordType[]>([]);
+  const { state, dispatch } = useAppContext();
   const { country } = useParams<{ country: string }>();
+  const { filterAndSort } = state;
+  const currentKeyword = filterAndSort.keywords;
+  const question: QuestionType = selectCurrentQuestion(state);
+
+  // retrieves question Keywords for filter
+  const getQuestionKeywords = async () => {
+    const response = await QuestionService.getQuestionKeywords(
+      question.questionId,
+      KEYWORD_THRESHOLD
+    );
+    if (response) {
+      setKeywords(response);
+    }
+  };
 
   // helper for onClick keywords
   const handleKeyword = (key: string) => {
     // unclick on current keyword
     if (currentKeyword === key) {
-      setCurrentKeyword(undefined);
       return handleChange('keywords', undefined);
     }
 
-    setCurrentKeyword(key);
     trackClickFilter('keyword');
     return handleChange('keywords', key);
   };
+
+  useEffect(() => {
+    getQuestionKeywords();
+  }, []);
 
   return (
     <FilterBlockStyle>
@@ -93,7 +88,7 @@ export const FiltersComponent: React.FC<Props> = ({
                 onClick={() => {
                   handleKeyword(keyword.key);
                 }}
-                className={handleClassName(currentKeyword, keyword.key)}
+                className={currentKeyword === keyword.key ? 'selected' : ''}
               >
                 {keyword.key}
               </TransparentButtonFilter>
@@ -109,7 +104,7 @@ export const FiltersComponent: React.FC<Props> = ({
           onClick={() => {
             handleKeyword(keywords[0].key);
           }}
-          className={handleClassName(currentKeyword, keywords[0].key)}
+          className={currentKeyword === keywords[0].key ? 'selected' : ''}
         >
           {keywords[0].key}
         </TransparentButtonFilter>
@@ -126,16 +121,16 @@ export const FiltersComponent: React.FC<Props> = ({
               type="checkbox"
               id="isNotVoted"
               name="isNotVoted"
-              value={JSON.stringify(filterAndSortValues.isNotVoted)}
+              value={JSON.stringify(filterAndSort.isNotVoted)}
               onChange={() => {
                 handleChange(
                   'isNotVoted',
-                  JSON.stringify(filterAndSortValues.isNotVoted)
+                  JSON.stringify(filterAndSort.isNotVoted)
                 );
                 trackClickFilter('unvoted-proposals');
               }}
             />
-            <StyledCheckbox checked={filterAndSortValues.isNotVoted}>
+            <StyledCheckbox checked={filterAndSort.isNotVoted}>
               <SvgCheck />
             </StyledCheckbox>
             {i18n.t('consultation.explore.unvoted')}
@@ -153,9 +148,7 @@ export const FiltersComponent: React.FC<Props> = ({
                 trackClickFilter('organizations-proposals');
               }}
             />
-            <StyledCheckbox
-              checked={filterAndSortValues.userType !== undefined}
-            >
+            <StyledCheckbox checked={filterAndSort.userType !== undefined}>
               <SvgCheck />
             </StyledCheckbox>
             {i18n.t('consultation.explore.organisations_proposals')}
@@ -166,8 +159,6 @@ export const FiltersComponent: React.FC<Props> = ({
         <ResetLinkStyle
           onClick={() => {
             dispatch(resetFilterAndSortState());
-            setCurrentSort(SORT_RECENT);
-            setCurrentKeyword('');
           }}
           to={getExploreLink(country, question.slug, 1)}
         >

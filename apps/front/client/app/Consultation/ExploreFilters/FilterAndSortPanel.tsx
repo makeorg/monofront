@@ -15,9 +15,7 @@ export const SortAndFiltersCTA: React.FC<Props> = ({ keywords }: Props) => {
 
   return (
     <FilterPanelStyle
-      onClick={() =>
-        dispatch(setPanelContent(<FilterAndSort keywords={keywords} />))
-      }
+      onClick={() => dispatch(setPanelContent(<FilterAndSort />))}
       data-cy-button="sortandfilters-panel"
     >
       <SvgFilterPanelStyle aria-hidden focusable="false" />

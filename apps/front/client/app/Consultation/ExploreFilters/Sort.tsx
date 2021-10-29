@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { trackClickSort } from '@make.org/utils/services/Tracking';
+import { SORT_RECENT } from '@make.org/utils/constants/explore';
 import { SORT_ITEMS, getSortLabel } from '../../../helper/filterAndSort';
 import {
   RadioAsTransparentButtonLabelStyle,
@@ -9,13 +10,7 @@ import {
 } from './style';
 
 type Props = {
-  handleClassName(
-    currentValue: string | undefined,
-    elementValue: string
-  ): string;
   handleChange: (name: string, value?: string) => void;
-  currentSort: string;
-  setCurrentSort: (name: string) => void;
 };
 
 const checkCurrentSort = (itemName: string, currentSort: string): boolean => {
@@ -25,42 +20,40 @@ const checkCurrentSort = (itemName: string, currentSort: string): boolean => {
   return false;
 };
 
-export const SortComponent: React.FC<Props> = ({
-  handleClassName,
-  handleChange,
-  currentSort,
-  setCurrentSort,
-}: Props) => (
-  <RadioListWrapperStyle>
-    {SORT_ITEMS.map(
-      (item: { name: string; icon: JSX.Element; value?: string }) => (
-        <RadioItemWrapperStyle
-          key={item.name}
-          className={handleClassName(currentSort, item.name)}
-        >
-          <ScreenReaderItemStyle>
-            <input
-              id={item.name}
-              type="radio"
-              value={item.value}
-              name="sort"
-              onChange={() => {
-                handleChange(item.name, item.value);
-                setCurrentSort(item.name);
-                trackClickSort(item.name);
-              }}
-              checked={checkCurrentSort(item.name, currentSort)}
-            />
-          </ScreenReaderItemStyle>
-          <RadioAsTransparentButtonLabelStyle
-            htmlFor={item.name}
-            className={handleClassName(currentSort, item.name)}
+export const SortComponent: React.FC<Props> = ({ handleChange }: Props) => {
+  const [currentSort, setCurrentSort] = useState<string>(SORT_RECENT);
+  return (
+    <RadioListWrapperStyle defaultValue={SORT_RECENT}>
+      {SORT_ITEMS.map(
+        (item: { name: string; icon: JSX.Element; value?: string }) => (
+          <RadioItemWrapperStyle
+            key={item.name}
+            className={item.name === currentSort ? 'selected' : ''}
           >
-            {item.icon}
-            {getSortLabel(item.name)}
-          </RadioAsTransparentButtonLabelStyle>
-        </RadioItemWrapperStyle>
-      )
-    )}
-  </RadioListWrapperStyle>
-);
+            <ScreenReaderItemStyle>
+              <input
+                id={item.name}
+                type="radio"
+                value={item.value}
+                name="sort"
+                onChange={() => {
+                  handleChange(item.name, item.value);
+                  setCurrentSort(item.name);
+                  trackClickSort(item.name);
+                }}
+                checked={checkCurrentSort(item.name, currentSort)}
+              />
+            </ScreenReaderItemStyle>
+            <RadioAsTransparentButtonLabelStyle
+              htmlFor={item.name}
+              className={item.name === currentSort ? 'selected' : ''}
+            >
+              {item.icon}
+              {getSortLabel(item.name)}
+            </RadioAsTransparentButtonLabelStyle>
+          </RadioItemWrapperStyle>
+        )
+      )}
+    </RadioListWrapperStyle>
+  );
+};

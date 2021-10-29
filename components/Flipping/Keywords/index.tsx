@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useState } from 'react';
 import { QuestionService } from '@make.org/utils/services/Question';
 import i18n from 'i18next';
+import { KEYWORD_THRESHOLD } from '@make.org/utils/constants/config';
 import { Spinner } from '@make.org/ui/components/Loading/Spinner';
 import { getSequenceKeywordLink } from '@make.org/utils/helpers/url';
 import { capitalizeFirstLetter } from '@make.org/utils/helpers/stringFormatter';
@@ -30,7 +31,6 @@ export const Keywords: FC<Props> = ({ question, isKeywordActive }) => {
   const { country } = state.appConfig;
   const [isLoading, setIsLoading] = useState(false);
   const [keywords, setKeywords] = useState<QuestionKeywordType[]>([]);
-  const KEYWORD_THRESHOLD = 5;
 
   const getQuestionKeywords = async () => {
     setIsLoading(true);
