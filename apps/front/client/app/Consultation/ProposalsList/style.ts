@@ -1,5 +1,4 @@
 import { typography, color } from 'athena-design-tokens';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { BlackBorderButtonStyle } from '@make.org/ui/elements/ButtonsElements';
@@ -61,18 +60,6 @@ export const ProposalDateStyle = styled.time`
   margin-top: 25px;
 `;
 
-export const RegisterCardStyle = styled(ProposalCardStyle)`
-  justify-content: center;
-  gap: 17px;
-`;
-
 export const RegisterLinkCardStyle = styled(BlackBorderButtonStyle)`
   color: ${color.black};
-`;
-
-export const RegisterCardTitleStyle = styled.span`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  color: ${color.black};
-  text-align: center;
-  font-family: ${MakeFonts.CircularStandardBold};
 `;

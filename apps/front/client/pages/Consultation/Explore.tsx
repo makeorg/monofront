@@ -6,7 +6,6 @@ import {
   TypeFilterAndSortValues,
 } from '@make.org/types';
 import i18n from 'i18next';
-import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { ThemeProvider } from 'styled-components';
@@ -44,7 +43,6 @@ import {
 
 const ExplorePage: FC = () => {
   const { state, dispatch } = useAppContext();
-  const { isLoggedIn } = selectAuthentication(state);
   const params: { country: string; pageId: string } = useParams();
   const { country, pageId } = params;
   const { device } = state.appConfig;
@@ -55,7 +53,7 @@ const ExplorePage: FC = () => {
   const [keyword, setKeyword] = useState<QuestionKeywordType[]>([]);
   const [proposalsTotal, setProposalsTotal] = useState<number>(0);
 
-  const PROPOSALS_LIMIT = isLoggedIn ? 10 : 9;
+  const PROPOSALS_LIMIT = 10;
   const KEYWORD_THRESHOLD = 5;
   const hasProposals = proposalsTotal > 0;
 

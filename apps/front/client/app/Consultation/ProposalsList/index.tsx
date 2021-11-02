@@ -4,14 +4,11 @@ import { ProposalSkeleton } from '@make.org/ui/components/Skeletons/Proposal';
 import React, { FC } from 'react';
 import { getProposalLink } from '@make.org/utils/helpers/url';
 import i18n from 'i18next';
-import { useAppContext } from '@make.org/store';
-import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { ProposalType } from '@make.org/types';
 import { Vote } from '@make.org/components/Vote';
 import { DateHelper } from '@make.org/utils/helpers/date';
 import { useParams } from 'react-router';
 import { DATE } from '@make.org/types/enums';
-import { AuthenticationRegisterButtons } from '@make.org/components/Auth/Register/Buttons';
 import { SubmitProposal } from '../Cards/SubmitProposal';
 import { NoProposalWrapperStyle } from '../../../pages/Consultation/style';
 import {
@@ -20,8 +17,6 @@ import {
   ProposalCardStyle,
   ProposalLinkStyle,
   ProposalDateStyle,
-  RegisterCardStyle,
-  RegisterCardTitleStyle,
 } from './style';
 
 type Props = {
@@ -45,8 +40,6 @@ const generateSkeletonsList = (count: number) => {
 
 export const ProposalsList: FC<Props> = ({ isLoading, proposals }) => {
   const { country } = useParams<{ country: string }>();
-  const { state } = useAppContext();
-  const { isLoggedIn } = selectAuthentication(state);
   const skeletonsList: SkeletonProps[] = generateSkeletonsList(12);
   const hasProposals = proposals.length > 0;
 
@@ -65,16 +58,6 @@ export const ProposalsList: FC<Props> = ({ isLoading, proposals }) => {
   if (hasProposals) {
     return (
       <ProposalsListStyle>
-        {!isLoggedIn && (
-          <ProposalListItemStyle>
-            <RegisterCardStyle>
-              <RegisterCardTitleStyle>
-                {i18n.t('common.social_login.card_title')}
-              </RegisterCardTitleStyle>
-              <AuthenticationRegisterButtons />
-            </RegisterCardStyle>
-          </ProposalListItemStyle>
-        )}
         {proposals.map((proposal: ProposalType, index: number) => (
           <ProposalListItemStyle key={proposal.id}>
             <ProposalCardStyle>
