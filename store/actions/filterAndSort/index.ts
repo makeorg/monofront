@@ -1,18 +1,24 @@
-import { ReducerAction, TypeFilterAndSortValues } from '@make.org/types';
-import { FILTER_AND_SORT_DEFAULT_VALUES } from '@make.org/utils/constants/filterAndSort';
 import {
-  FILTER_AND_SORT_UPDATE_STATE,
-  FILTER_AND_SORT_RESET_STATE,
-} from '../../actionTypes';
+  ReducerAction,
+  TypeFiltersValues,
+  TypeSortValues,
+} from '@make.org/types';
+import { FILTERS_DEFAULT_VALUES } from '@make.org/utils/constants/filterAndSort';
+import { FILTERS_UPDATE, SORT_UPDATE, FILTERS_RESET } from '../../actionTypes';
 
-export const updateFilterAndSortState = (
-  newFilterAndSortValues: TypeFilterAndSortValues
+export const updateFilters = (
+  newFiltersValues: TypeFiltersValues
 ): ReducerAction => ({
-  type: FILTER_AND_SORT_UPDATE_STATE,
-  payload: newFilterAndSortValues,
+  type: FILTERS_UPDATE,
+  payload: newFiltersValues,
 });
 
-export const resetFilterAndSortState = (): ReducerAction => ({
-  type: FILTER_AND_SORT_RESET_STATE,
-  payload: FILTER_AND_SORT_DEFAULT_VALUES,
+export const updateSort = (newSortValues: TypeSortValues): ReducerAction => ({
+  type: SORT_UPDATE,
+  payload: newSortValues,
+});
+
+export const resetFilters = (): ReducerAction => ({
+  type: FILTERS_RESET,
+  payload: FILTERS_DEFAULT_VALUES,
 });

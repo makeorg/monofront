@@ -176,6 +176,14 @@ export type StateSession = {
   sessionId: string;
 };
 
+export type StateFilterAndSort = {
+  readonly keywords?: string;
+  readonly sortAlgorithm?: string;
+  readonly sort?: string;
+  readonly isNotVoted?: boolean;
+  readonly userType?: string;
+};
+
 // All state
 export type StateRoot = {
   appConfig: StateConfig;

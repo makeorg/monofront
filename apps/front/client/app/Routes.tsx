@@ -60,7 +60,7 @@ import {
 import Cookies from 'universal-cookie';
 import { StateUserCookiesPreferences } from '@make.org/types';
 import { TwitterUniversalTag } from '@make.org/utils/services/Trackers/TwitterTracking';
-import { resetFilterAndSortState } from '@make.org/store/actions/filterAndSort';
+import { resetFilters } from '@make.org/store/actions/filterAndSort';
 import { usePageBackgoundColor } from '../hooks/usePageBackgroundColor';
 import { QuestionWrapper } from '../pages/Consultation/QuestionWrapper';
 
@@ -128,7 +128,7 @@ export const Routes: FC = () => {
     }
     // reset Filter ans Sort State on Explore Page
     if (!isExplorePage(location.pathname)) {
-      dispatch(resetFilterAndSortState());
+      dispatch(resetFilters());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);

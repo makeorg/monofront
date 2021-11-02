@@ -54,7 +54,7 @@ export const KeywordsItemWrapperStyle = styled.li`
     margin-bottom: 0px;
   }
 `;
-export const TransparentButtonFilter = styled.button`
+export const TransparentButtonFilterStyle = styled.button`
   display: flex;
   justify-content: center;
   padding: 10px 20px;

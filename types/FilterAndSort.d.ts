@@ -6,10 +6,13 @@ export type TypeFilterAndSortValues = {
   userType?: string;
 };
 
-export type StateFilterAndSort = {
-  readonly keywords?: string;
-  readonly sortAlgorithm?: string;
-  readonly sort?: string;
-  readonly isNotVoted?: boolean;
-  readonly userType?: string;
+export type TypeSortValues = {
+  sortAlgorithm?: string;
+  sort?: string;
+};
+
+export type TypeFiltersValues = {
+  keywords?: string;
+  isNotVoted?: boolean;
+  userType?: string;
 };
