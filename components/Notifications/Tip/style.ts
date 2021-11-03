@@ -11,7 +11,7 @@ export const TipWrapperStyle = styled.div<{ isWidget: boolean }>`
   background-color: ${color.infos};
   color: ${color.white};
   margin-bottom: 20px;
-  padding: 6px 37px 6px 10px;
+  padding: 6px 17px 6px 10px;
   border-radius: 2px;
   font-size: ${props =>
     props.isWidget
@@ -27,29 +27,6 @@ export const TipWrapperStyle = styled.div<{ isWidget: boolean }>`
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     margin-bottom: ${props => (props.isWidget ? '30px' : '20px')};
-  }
-`;
-
-export const TipCrossStyle = styled(UnstyledButtonStyle)`
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 10px;
-  &:before {
-    content: '';
-    position: absolute;
-    right: 16px;
-    width: 1px;
-    height: 16px;
-    border: 1px solid ${color.greyDark};
-    background-color: ${color.greyDark};
-  }
-  svg {
-    width: 9px;
-    height: 9px;
-  }
-  .tofill {
-    fill: ${color.white};
   }
 `;
 
