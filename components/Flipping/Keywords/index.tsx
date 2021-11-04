@@ -4,7 +4,6 @@ import i18n from 'i18next';
 import { KEYWORD_THRESHOLD } from '@make.org/utils/constants/config';
 import { Spinner } from '@make.org/ui/components/Loading/Spinner';
 import { getSequenceKeywordLink } from '@make.org/utils/helpers/url';
-import { capitalizeFirstLetter } from '@make.org/utils/helpers/stringFormatter';
 import { trackOpenSequence } from '@make.org/utils/services/Tracking';
 import { TRACKING } from '@make.org/types/enums';
 import {
@@ -91,7 +90,7 @@ export const Keywords: FC<Props> = ({ question, isKeywordActive }) => {
                 trackOpenSequence(TRACKING.COMPONENT_PARAM_SEQUENCE_KEYWORD)
               }
             >
-              {capitalizeFirstLetter(keyword.label)}
+              {keyword.label}
               <SvgAngleArrowRight width={17} height={17} />
             </KeywordItemLinkStyle>
           </KeywordListItemStyle>

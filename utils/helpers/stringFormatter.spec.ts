@@ -3,7 +3,6 @@ import {
   formatUserName,
   formatAuthorName,
   formatOrganisationName,
-  capitalizeFirstLetter,
 } from './stringFormatter';
 
 describe('capitalize', () => {
@@ -45,14 +44,6 @@ describe('formatOrganisationName', () => {
   it('should be formatted', () => {
     expect(formatOrganisationName('marie-céCILE de bonne foi')).toBe(
       'Marie-CéCILE De Bonne Foi'
-    );
-  });
-});
-
-describe('capitalizeFirstLetter', () => {
-  it('should be formatted', () => {
-    expect(capitalizeFirstLetter('emballages et déchets')).toBe(
-      'Emballages et déchets'
     );
   });
 });

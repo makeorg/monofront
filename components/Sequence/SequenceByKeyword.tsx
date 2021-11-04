@@ -8,7 +8,6 @@ import {
 import { trackClickOperationPage } from '@make.org/utils/services/Tracking';
 import { getParticipateLink } from '@make.org/utils/helpers/url';
 import i18n from 'i18next';
-import { capitalizeFirstLetter } from '@make.org/utils/helpers/stringFormatter';
 import { useParams } from 'react-router';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { isPushProposalCard } from '@make.org/utils/helpers/sequence';
@@ -76,7 +75,7 @@ export const SequenceByKeyword: FC = () => {
     type: CARD.CARD_TYPE_NO_PROPOSAL_CARD,
     configuration: {
       title: i18n.t('no_proposal_card.title.keyword', {
-        keyword: capitalizeFirstLetter(keywordLabel),
+        keyword: keywordLabel,
       }),
       description: i18n.t('no_proposal_card.description.special'),
     },
@@ -101,7 +100,7 @@ export const SequenceByKeyword: FC = () => {
           <SequenceAltTitleStyle>{question.question}</SequenceAltTitleStyle>
           <SequenceSpecialTitleStyle>
             <SequenceSpecialIconStyle aria-hidden focusable={false} />
-            {capitalizeFirstLetter(keywordLabel)}
+            {keywordLabel}
           </SequenceSpecialTitleStyle>
           <SequenceCard
             card={isEmptySequence ? noProposalCard : currentCard}
