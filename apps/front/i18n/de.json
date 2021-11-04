@@ -1249,6 +1249,7 @@
     "submit_mobile": "Speichern",
     "submit_desktop": "Speichern",
     "submitted_thanks": "Danke für deine Antwort.",
-    "submitted_disclaimer": "Sie wird anonym verwendet, um die Ergebnisse der Konsultation zu analysieren."
+    "submitted_disclaimer": "Sie wird anonym verwendet, um die Ergebnisse der Konsultation zu analysieren.",
+    "select": "Auswählen"
   }
 }

@@ -1256,6 +1256,7 @@
     "submit_mobile": "Save",
     "submit_desktop": "Save and continue",
     "submitted_thanks": "Thank you for your answer.",
-    "submitted_disclaimer": "It will be anonymously used to analyse the results of the consultation."
+    "submitted_disclaimer": "It will be anonymously used to analyse the results of the consultation.",
+    "select": "Choose"
   }
 }

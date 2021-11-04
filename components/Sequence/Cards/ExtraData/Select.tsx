@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import { DemographicParameterType } from '@make.org/types';
+import i18n from 'i18next';
 import { SelectStyle } from './style';
 
 type Props = {
@@ -10,12 +11,25 @@ type Props = {
 export const SelectDemographics: React.FC<Props> = ({
   data,
   setCurrentValue,
-}) => (
-  <SelectStyle onChange={event => setCurrentValue(event.target.value)}>
-    {data.map(demographic => (
-      <option key={demographic.value} value={demographic.value}>
-        {demographic.label}
+}) => {
+  const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    let { value } = event.target;
+    if (value === 'null') {
+      value = JSON.parse(value);
+    }
+    setCurrentValue(value);
+  };
+
+  return (
+    <SelectStyle onChange={handleChange}>
+      <option key="null" value="null">
+        {i18n.t('demographics_card.select')}
       </option>
-    ))}
-  </SelectStyle>
-);
+      {data.map(demographic => (
+        <option key={demographic.value} value={demographic.value}>
+          {demographic.label}
+        </option>
+      ))}
+    </SelectStyle>
+  );
+};

@@ -371,7 +371,8 @@
     "submit_mobile": "Enregistrer",
     "submit_desktop": "Enregistrer et continuer",
     "submitted_thanks": "Merci pour votre réponse.",
-    "submitted_disclaimer": " Elle sera utilisée de façon anonyme pour analyser les résultats de la consultation."
+    "submitted_disclaimer": " Elle sera utilisée de façon anonyme pour analyser les résultats de la consultation.",
+    "select": "Sélectionner"
   },
   "proposal_submit": {
     "form": {
