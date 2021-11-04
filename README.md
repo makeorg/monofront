@@ -1,40 +1,124 @@
-TODO
+# Make.org front end monorepo 
+This project gathers shared pakages and apps for make.org front end products.
+
+## Summary
+1. [Technical Stack](#technical_stack)
+2. [Core concepts](#core_concepts)
+3. [Getting started](#getting_started)
+4. [Shared Packages](#shared_packages)
+5. [Apps](#apps)
+6. [Contributing](#contributing)
+7. [Checks](#contributing)
+8. [TODO](#todo)
 
 
-## Installation 
+## <a name="technical_stack"></a>Technical Stack
+The folowing technologies are used to build and test this repository :
+- <a href="https://github.com/lerna/lerna" target="_blank">Lerna (open in a new tab)</a>
+- <a href="https://github.com/microsoft/TypeScript/" target="_blank">Typescript (open in a new tab)</a>
+- <a href="https://github.com/facebook/react/" target="_blank">React (open in a new tab)</a>
+- <a href="https://styled-components.com/" target="_blank">Styled Components (open in a new tab)</a>
+- <a href="https://jestjs.io/" target="_blank">Jest (open in a new tab)</a>
+- <a href="https://www.cypress.io/" target="_blank">Cypress (open in a new tab)</a>
+- <a href="https://pm2.keymetrics.io/" target="_blank">PM2 (open in a new tab)</a>
 
-- Check Yarn version in [.yvmrc](https://gitlab.com/makeorg/platform/front/-/blob/preproduction/.yvmrc) and prefer using YVM to manage your Yarn version
-- clone repo from [gitlab](https://gitlab.com/makeorg/platform/monofront)
-- add `127.0.0.1       local.makeorg.tech` to hosts file in `/etc/hosts`
-- Install [lerna](https://github.com/lerna/lerna) on your machine with `npm install -g lerna`
-- Run `lerna bootstrap` to install dependencies
+
+## <a name="core_concepts"></a>Core concepts
+The main purpose of this repository is to optimize behaviours between various apps.
+
+To ensure this we adopted a monorepository architecture with lerna and yarn workspace :
+- Front office [applications](./apps)
+- Global packages shared between front office apps
+
+These packages are defined in the [lerna.json](./lerna.json) and root [package.json](./package.json).
+
+During development, to avoid untimely version switching between node versions, we use <a href="https://www.docker.com/" target="_blank">Docker (open in a new tab)</a> and <a href="https://docs.docker.com/compose/install/" target="_blank">Docker Compose (open in a new tab)</a>.
+For further informations, refers to [docker-compose dev configuration](./docker-compose.dev.yaml) and Dockerfiles of each [apps'](./apps).
 
 
-## Development Mode
-:guardsman: Access to make.org tech env are restricted through VPN. Check this with make.org tech team before launching these commands.
-*  :ok_hand: Check `local.makeorg.tech` is setted in hosts
-*  :construction_worker: run dev script for desired application with the [scope](https://github.com/lerna/lerna/tree/main/core/filter-options#--scope-glob) argument : `lerna run --scope=@make.org/front dev --stream` or `lerna run --scope=@make.org/widget dev --stream`
-*  :see_no_evil: visit `https://local.makeorg.tech:3000`
-*  :scream_cat: authorize unsecure certificate
+## <a name="getting_started"></a>Getting started
+- Install <a href="https://classic.yarnpkg.com/" target="_blank">Yarn version 1 (open in a new tab)</a>
+- Check Yarn version in [.yvmrc](./.yvmrc) and prefer using YVM to manage your Yarn version.
+- Clone repo from [gitlab](https://gitlab.com/makeorg/platform/monofront)
+- Add `127.0.0.1       local.makeorg.tech` to hosts file in `/etc/hosts`
+- Install <a href="https://github.com/lerna/lerna" target="_blank">Lerna (open in a new tab)</a> on your machine with `npm install -g lerna`.
+- Run `lerna bootstrap` to install dependencies.
+- Install <a href="https://docs.docker.com/get-docker/" target="_blank">Docker (open in a new tab)</a> and <a href="https://docs.docker.com/compose/install/" target="_blank">Docker Compose (open in a new tab)</a>.
+- Refers to each [apps'](./apps) README file to build and run.
 
-## Unit testing
-*  To launch test `yarn test`
-*  To enable watch mode: `yarn test --watch`
+
+## <a name="shared_packages"></a>Shared Packages
+The purpose of the shared packages is to gather parts of the codebase used to build various apps.
+They are splitted in 8 packages :
+- [API](./api/README.md) : Layers with stategies and splitted services by endpoints.
+- [ApiMock](./apimock/README.md) : Mocked API based on [Core API](https://gitlab.com/makeorg/platform/core-api). Mainly used for functional testing purposes.
+- [Assets](./assets/REAME.md) : Fonts, images, stylesheets and various assets used to build Make.org web interfaces.
+- [Components](./components/REAME.md) : Components with style and business logic used in Make.org apps.
+- [Store](./store/REAME.md) : Actions, reducers and  management for React Context in Make.org apps.
+- [Types](./types/REAME.md) : Types and data models for Make.org objects.
+- [UI](./ui/README.md) : Styles and ui elements without business logic.
+- [Utils](./utils/README.md) : Useful methods, constants, middlewares and hooks to handle i/o tranformation.
+
+
+## <a name="apps"></a>Apps
+For further informations, please refers to each README.md :
+- [Front](./apps/front/README.md)
+- [Widget](./apps/widget/README.md)
+
+
+## <a name="contributing"></a>Contributing
+Refers to [CONTRIBUTING.md](./CONTRIBUTING.md)
+
+
+## <a name="checks"></a>Linting, checking and unit testing
+### Unit testing
+To launch test :
+``` bash
+$ yarn jest
+```
+
+
+To enable watch mode: 
+``` bash
+$ yarn jest --watch
+```
 > then touch the o key to re-launch test only on files changed
-*  To upadte snapshot mode: `yarn test --updateSnapshot`
 
-## Linter
-To launch linter `yarn eslint ./apps ./ui ./components ./utils ./api ./store`
 
-## Detect duplications
-To launch jscpd `yarn jscpd`
+### Linter
+To launch linter :
+``` bash
+$ yarn eslint ./
+```
 
-## Prepush 
+### Detect duplications
+To launch jscpd :
+``` bash
+$ yarn jscpd
+```
+
+### Prepush 
 Before push the following command will be executed `yarn prepush`
 Following commands are runned on prepush :
-  - `yarn workspace @make.org/front translation`
-  - `yarn workspace @make.org/front documentation`
-  - `yarn eslint ./`
-  - `yarn tsc --noEmit`
-  - `yarn test`
-  - `yarn jscpd`
+``` bash
+$ yarn workspace @make.org/front translation
+$ yarn workspace @make.org/front documentation
+$ yarn workspace @make.org/widget translation
+$ yarn eslint ./
+$ yarn tsc --noEmit
+$ yarn jest
+$ yarn jscpd
+```
+
+
+## <a name="todo"></a>TODO
+- [ ] Add `Create a new package` instructions
+- [ ] Add an a11y section
+- [ ] Add Packages README.md
+- [ ] Add CONTRIBUTING.md
+- [ ] Handle source in widget state and isWidget conditional
+- [ ] Adjust eslint config
+- [ ] Clean `any` types
+- [ ] Increase cypress testing coverage
+- [ ] Increase unit testing coverage
+- [ ] Add lighthouse acceptance testing suite
