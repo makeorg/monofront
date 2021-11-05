@@ -79,7 +79,7 @@ export const Vote: React.FC<Props> = ({
   const { source } = state.appConfig;
   const isWidget = source === 'widget';
   const votedProposals = votedProposalIds[proposal.question.slug];
-  const isFirstSequenceVote = isSequence && !votedProposals;
+  const isFirstSequenceVote = isSequence && (!votedProposals || !![]);
   const lastProposalOfSequence = isSequence && isLastProposal;
 
   let timeout: NodeJS.Timeout;
