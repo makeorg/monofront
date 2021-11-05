@@ -656,4 +656,9 @@ Following parameters are added to all events.
     
   
 
+  - `display-no-result` Display no results card when there are no proposals
+
+    
+  
+
 </auto-generated-tracking-doc>

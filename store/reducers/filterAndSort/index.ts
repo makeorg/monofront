@@ -13,6 +13,7 @@ export const filter_and_sort_reducer: Reducer = (
     case SORT_UPDATE:
     case FILTERS_RESET:
       return {
+        ...state,
         ...action.payload,
       };
     default:

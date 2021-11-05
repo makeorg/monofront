@@ -618,3 +618,7 @@ DISPLAY_CHARGE_INTRO_CARD:
 CLICK_NEXT_SIGNUP:
     key: click-next-signup
     description: Click next on continue button in propsal journey signup step
+
+DISPLAY_NO_RESULTS_CARD:
+    key: display-no-result
+    description: Display no results card when there are no proposals 

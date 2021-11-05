@@ -13,7 +13,10 @@ import { searchProposals } from '@make.org/utils/helpers/proposal';
 import { useParams } from 'react-router';
 import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
 import { Pagination } from '@make.org/components/Pagination';
-import { trackDisplayOperationPage } from '@make.org/utils/services/Tracking';
+import {
+  trackDisplayNoResultsCard,
+  trackDisplayOperationPage,
+} from '@make.org/utils/services/Tracking';
 import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
 import { ProposalsList } from '../../app/Consultation/ProposalsList';
@@ -77,6 +80,9 @@ const ExplorePage: FC = () => {
       const { results, total } = response;
       setProposals(results);
       setProposalsTotal(total);
+      if (total === 0) {
+        trackDisplayNoResultsCard();
+      }
     }
 
     setLoading(false);

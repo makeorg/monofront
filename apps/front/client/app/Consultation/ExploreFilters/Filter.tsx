@@ -10,8 +10,8 @@ import {
 } from '@make.org/types';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import {
-  updateFilters,
   resetFilters,
+  updateFilters,
 } from '@make.org/store/actions/filterAndSort';
 import { SvgCheck } from '@make.org/ui/Svg/elements';
 import { trackClickFilter } from '@make.org/utils/services/Tracking';
@@ -24,6 +24,9 @@ import {
 } from '@make.org/ui/elements/FormElements';
 import { FilterSeparationLineStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { FILTER_ORGANISATION } from '@make.org/utils/constants/explore';
+import { checkIsFeatureActivated } from '@make.org/utils/helpers/featureFlipping';
+import { FEATURE_FLIPPING } from '@make.org/types/enums';
+import { getUpdatedFiltersValues } from '../../../helper/filterAndSort';
 import {
   ResetLinkStyle,
   ResetLinkButtonWrapperStyle,
@@ -39,7 +42,6 @@ import {
   FilterBlockStyle,
   SvgArrowUp,
 } from './style';
-import { getUpdatedFiltersValues } from '../../../helper/filterAndSort';
 
 export const FiltersComponent: React.FC = () => {
   const [keywordsCTA, setKeywordsCTA] = useState<QuestionKeywordType[]>([]);
@@ -50,6 +52,11 @@ export const FiltersComponent: React.FC = () => {
   const history = useHistory();
   const { country, pageId } = useParams<{ country: string; pageId: string }>();
   const question: QuestionType = selectCurrentQuestion(state);
+
+  const isKeywordActive: boolean = checkIsFeatureActivated(
+    FEATURE_FLIPPING.CONSULTATION_KEYWORD_ACTIVE,
+    question.activeFeatures
+  );
 
   // retrieves question Keywords for filter
   const getQuestionKeywords = async () => {
@@ -95,43 +102,49 @@ export const FiltersComponent: React.FC = () => {
 
   return (
     <FilterBlockStyle>
-      <FiltersTitleStyle>
-        <SvgArrowUp aria-hidden focusable="false" />
-        {i18n.t('consultation.cards.keywords.title')}
-      </FiltersTitleStyle>
-      {keywordsCTA.length > 1 && (
-        <KeywordsListWrapperStyle>
-          {keywordsCTA.map(keyword => (
-            <KeywordsItemWrapperStyle key={keyword.key}>
-              <TransparentButtonFilterStyle
-                type="button"
-                name="keywords"
-                value={keyword.key}
-                onClick={() => {
-                  handleKeyword(keyword.key);
-                }}
-                className={currentKeyword === keyword.key ? 'selected' : ''}
-              >
-                {keyword.key}
-              </TransparentButtonFilterStyle>
-            </KeywordsItemWrapperStyle>
-          ))}
-        </KeywordsListWrapperStyle>
+      {isKeywordActive && (
+        <>
+          <FiltersTitleStyle>
+            <SvgArrowUp aria-hidden focusable="false" />
+            {i18n.t('consultation.cards.keywords.title')}
+          </FiltersTitleStyle>
+          {keywordsCTA.length > 1 && (
+            <KeywordsListWrapperStyle>
+              {keywordsCTA.map(keyword => (
+                <KeywordsItemWrapperStyle key={keyword.key}>
+                  <TransparentButtonFilterStyle
+                    type="button"
+                    name="keywords"
+                    value={keyword.key}
+                    onClick={() => {
+                      handleKeyword(keyword.key);
+                    }}
+                    className={currentKeyword === keyword.key ? 'selected' : ''}
+                  >
+                    {keyword.key}
+                  </TransparentButtonFilterStyle>
+                </KeywordsItemWrapperStyle>
+              ))}
+            </KeywordsListWrapperStyle>
+          )}
+          {keywordsCTA.length === 1 && (
+            <TransparentButtonFilterStyle
+              type="button"
+              name="keywords"
+              value={keywordsCTA[0].key}
+              onClick={() => {
+                handleKeyword(keywordsCTA[0].key);
+              }}
+              className={
+                currentKeyword === keywordsCTA[0].key ? 'selected' : ''
+              }
+            >
+              {keywordsCTA[0].key}
+            </TransparentButtonFilterStyle>
+          )}
+          <FilterSeparationLineStyle />
+        </>
       )}
-      {keywordsCTA.length === 1 && (
-        <TransparentButtonFilterStyle
-          type="button"
-          name="keywords"
-          value={keywordsCTA[0].key}
-          onClick={() => {
-            handleKeyword(keywordsCTA[0].key);
-          }}
-          className={currentKeyword === keywordsCTA[0].key ? 'selected' : ''}
-        >
-          {keywordsCTA[0].key}
-        </TransparentButtonFilterStyle>
-      )}
-      <FilterSeparationLineStyle />
       <FiltersTitleStyle>
         <SvgFilterBy aria-hidden focusable="false" />
         {i18n.t('consultation.explore.filter_by')}

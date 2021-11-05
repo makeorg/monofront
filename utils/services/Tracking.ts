@@ -618,6 +618,10 @@ export const trackClickSort = (component?: string): void => {
   );
 };
 
+export const trackDisplayNoResultsCard = (): void => {
+  TrackingService.sendAllTrackers(trackingEvent.DISPLAY_NO_RESULTS_CARD());
+};
+
 export const trackDisplayChargeIntroCard = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_CHARGE_INTRO_CARD());
 };
