@@ -69,6 +69,10 @@ export const TransparentButtonFilterStyle = styled.button`
     color: ${color.white};
     font-family: ${MakeFonts.CircularStandardBold};
   }
+  &:hover,
+  &:focus {
+    border: solid 1px ${color.brandPrimary};
+  }
 `;
 
 export const RadioListWrapperStyle = styled.ul`
@@ -107,10 +111,11 @@ export const RadioAsTransparentButtonLabelStyle = styled.label`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   width: 100%;
   text-align: center;
-  &.selected {
+  &.selected,
+  &:hover,
+  &:focus {
     font-family: ${MakeFonts.CircularStandardBold};
     color: ${color.black};
-    font-family: ${MakeFonts.CircularStandardBold};
   }
 `;
 
