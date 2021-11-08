@@ -66,7 +66,7 @@ export const Cookies: FC = () => {
   const { cookiesPreferences } = state.user;
   const formattedDate = DateHelper.localizedAndFormattedDate(
     '2021/3/28',
-    'DD MMMM YYYY'
+    'dd MMMM yyyy'
   );
   const isFR = country === 'FR';
   const isDE = country === 'DE';
@@ -151,7 +151,7 @@ export const Cookies: FC = () => {
                   target="_blank"
                   rel="noopener"
                 >
-                  {googleLink}
+                  {googleLink()}
                   <StaticExternalLinkIconStyle aria-hidden focusable="false" />
                   <ScreenReaderItemStyle>
                     {i18n.t('common.open_new_window')}
@@ -161,7 +161,6 @@ export const Cookies: FC = () => {
               <StaticSquareListItemStyle>
                 {'Facebook : '}
                 <RedHTMLLinkElementStyle
-                  as="a"
                   href={facebookLink}
                   target="_blank"
                   rel="noopener"
@@ -176,12 +175,11 @@ export const Cookies: FC = () => {
               <StaticSquareListItemStyle>
                 {'Twitter : '}
                 <RedHTMLLinkElementStyle
-                  as="a"
                   href={twitterLink()}
                   target="_blank"
                   rel="noopener"
                 >
-                  {twitterLink}
+                  {twitterLink()}
                   <StaticExternalLinkIconStyle aria-hidden focusable="false" />
                   <ScreenReaderItemStyle>
                     {i18n.t('common.open_new_window')}
@@ -191,12 +189,11 @@ export const Cookies: FC = () => {
               <StaticSquareListItemStyle>
                 {'LinkedIn : '}
                 <RedHTMLLinkElementStyle
-                  as="a"
                   href={linkedInLink()}
                   target="_blank"
                   rel="noopener"
                 >
-                  {linkedInLink}
+                  {linkedInLink()}
                   <StaticExternalLinkIconStyle aria-hidden focusable="false" />
                   <ScreenReaderItemStyle>
                     {i18n.t('common.open_new_window')}

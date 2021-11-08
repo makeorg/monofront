@@ -63,7 +63,8 @@ const ParticipatePage: FC = () => {
         )
       );
     }
-  }, [question, dispatch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [question]);
 
   useEffect(() => {
     trackDisplayOperationPage();

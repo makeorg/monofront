@@ -52,7 +52,33 @@ export const ExtraInRegisterformationsFields: FC<Props> = ({
         required
         handleChange={handleChange}
       />
-      <TwoFieldsRowStyle>
+      {isSupportedCountry(country) ? (
+        <TwoFieldsRowStyle>
+          <NumberInput
+            name="age"
+            id="profile.age"
+            icon={AgeFieldIcon}
+            value={ageValue}
+            error={ageError}
+            label={i18n.t('common.form.label.age')}
+            handleChange={handleChange}
+            min={8}
+            max={120}
+            required
+          />
+          <CustomPatternInput
+            type="text"
+            name="postalcode"
+            id="profile.postalcode"
+            icon={PostalCodeFieldIcon}
+            value={postalcodeValue}
+            error={postalcodeError}
+            label={i18n.t('common.form.label.postalcode_optional')}
+            handleChange={handleChange}
+            pattern={html5regexByCountry(country)}
+          />
+        </TwoFieldsRowStyle>
+      ) : (
         <NumberInput
           name="age"
           id="profile.age"
@@ -65,20 +91,7 @@ export const ExtraInRegisterformationsFields: FC<Props> = ({
           max={120}
           required
         />
-        {isSupportedCountry(country) && (
-          <CustomPatternInput
-            type="text"
-            name="postalcode"
-            id="profile.postalcode"
-            icon={PostalCodeFieldIcon}
-            value={postalcodeValue}
-            error={postalcodeError}
-            label={i18n.t('common.form.label.postalcode_optional')}
-            handleChange={handleChange}
-            pattern={html5regexByCountry(country)}
-          />
-        )}
-      </TwoFieldsRowStyle>
+      )}
     </>
   );
 };

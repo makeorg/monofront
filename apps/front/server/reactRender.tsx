@@ -10,9 +10,7 @@ import { HeadProvider } from 'react-head';
 import i18n from 'i18next';
 import deepFreeze from 'deep-freeze';
 import { initialState } from '@make.org/store/initialState';
-import { NOTIF } from '@make.org/types/enums';
 import { env } from '@make.org/assets/env';
-import { SecureExpiredMessage } from '@make.org/components/Notifications/Banner/SecureExpired';
 import {
   DESKTOP_DEVICE,
   MOBILE_DEVICE,
@@ -123,7 +121,7 @@ export const reactRender = async (
     });
   }
 
-  const { secureExpired, ...queryParams } = req.query;
+  const { ...queryParams } = req.query;
   const countriesWithConsultations = await ViewsService.getCountries(
     country,
     language,
@@ -142,14 +140,6 @@ export const reactRender = async (
       })
   );
 
-  const notificationBanner = secureExpired
-    ? {
-        id: NOTIF.SECURE_EXPIRED_MESSAGE,
-        content: <SecureExpiredMessage />,
-        level: NOTIF.NOTIFICATION_LEVEL_INFORMATION,
-      }
-    : {};
-
   const state: StateRoot = {
     ...initialState,
     ...routeState,
@@ -164,11 +154,6 @@ export const reactRender = async (
       countriesWithConsultations,
       device: isMobileOrTablet ? MOBILE_DEVICE : DESKTOP_DEVICE,
       privacyPolicy: PRIVACY_POLICY_DATE,
-    },
-    notifications: {
-      ...initialState.notifications,
-      ...routeState?.notifications,
-      banner: notificationBanner,
     },
   };
 

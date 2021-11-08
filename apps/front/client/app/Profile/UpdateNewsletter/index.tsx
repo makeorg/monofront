@@ -84,6 +84,8 @@ export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
           {
             ...profile,
             optInNewsletter,
+            legalAdvisorApproval: true,
+            legalMinorConsent: true,
           },
           () => success(),
           serviceErrors => handleErrors(serviceErrors)

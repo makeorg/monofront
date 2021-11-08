@@ -18,7 +18,7 @@ export const ProposalJourney: React.FC = () => {
       dispatch(removePanelContent());
       pathname.current = location.pathname;
     }
-  }, [location.pathname, dispatch]);
+  }, [location.pathname]);
 
   if (!question) {
     return null;

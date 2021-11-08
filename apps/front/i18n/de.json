@@ -831,7 +831,8 @@
       "controversial": "Umstrittenste",
       "unvoted": "Diejenigen, die auf eure Stimme warten",
       "organisations_proposals": "Diejenigen, die von Organisationen vorgeschlagen wurden",
-      "no_proposal": "Kein Vorschlag"
+      "no_proposal": "Kein Vorschlag",
+      "filter": "Filtern"
     },
     "tabs": {
       "consultation": "Konsultation ",

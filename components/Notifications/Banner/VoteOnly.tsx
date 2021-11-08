@@ -18,7 +18,7 @@ export const VoteOnlyMessage: React.FC<Props> = ({ close }) => {
     if (!question) {
       dispatch(clearNotificationBanner());
     }
-  }, [question, dispatch]);
+  }, [question]);
 
   if (!question) {
     return null;

@@ -159,8 +159,17 @@ export const TwoFieldsRowStyle = styled(FlexElementStyle)`
   flex-wrap: wrap;
   width: 100%;
   justify-content: space-between;
+  margin-bottom: 15px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     flex-direction: row;
+    > .age {
+      max-width: 150px;
+      margin-bottom: 0;
+    }
+    > .postalcode {
+      max-width: 300px;
+      margin-bottom: 0;
+    }
   }
 `;
 
@@ -182,16 +191,6 @@ export const FakeFieldStyle = styled.div<{ hasError: boolean }>`
 
 export const MiddleFakeFieldStyle = styled(FakeFieldStyle)`
   align-items: center;
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    &.age {
-      max-width: 150px;
-      margin-bottom: 15px;
-    }
-    &.postalcode {
-      max-width: 300px;
-      margin-bottom: 15px;
-    }
-  }
 `;
 
 export const FieldWrapperStyle = styled.div`

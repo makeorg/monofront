@@ -90,6 +90,7 @@ const ExplorePage: FC = () => {
 
   useEffect(() => {
     getProposals(state.filterAndSort);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.filterAndSort]);
 
   useEffect(() => {
@@ -103,7 +104,8 @@ const ExplorePage: FC = () => {
         )
       );
     }
-  }, [question, dispatch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [question]);
 
   useEffect(() => {
     trackDisplayOperationPage();
