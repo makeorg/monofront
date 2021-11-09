@@ -3,10 +3,24 @@ import { ProposalType, ProposalsType } from '@make.org/types';
 import { ProposalApiService } from '@make.org/api/ProposalApiService';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
-const propose = async (content: string, questionId: string): Promise<void> => {
+const propose = async (
+  content: string,
+  questionId: string,
+  success?: () => void,
+  failure?: () => void
+): Promise<void> => {
   try {
     await ProposalApiService.propose(content.trim(), questionId);
+
+    if (success) {
+      success();
+    }
   } catch (error: unknown) {
+    if (failure) {
+      failure();
+      return;
+    }
+
     const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
   }

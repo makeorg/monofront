@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import { QuestionType } from '@make.org/types';
 import { FORM, URL } from '@make.org/types/enums';
 import { MAX_PROPOSAL_LENGTH } from '@make.org/utils/constants/proposal';
@@ -11,13 +11,21 @@ import {
   trackDisplayProposalField,
   trackClickProposalSubmit,
   trackClickModerationLink,
+  trackClickBackProposals,
 } from '@make.org/utils/services/Tracking';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { throttle } from '@make.org/utils/helpers/throttle';
-import { LoadingDots } from '@make.org/ui/components/Loading/Dots';
 import { useAppContext } from '@make.org/store';
+import {
+  closePanel,
+  removePanelContent,
+  setPanelContent,
+} from '@make.org/store/actions/panel';
+import { initProposalPending } from '@make.org/store/actions/pendingProposal';
+import { selectAuthentication } from '@make.org/store/selectors/user.selector';
+import { ProposalService } from '@make.org/utils/services/Proposal';
 import {
   ProposalStepWrapperStyle,
   ProposalStepTitleStyle,
@@ -31,16 +39,7 @@ import {
   ProposalAuthInlineWrapperStyle,
   ProposalSubmitButtonsWidgetStyle,
 } from './style';
-
-type Props = {
-  proposalContent: string;
-  handleValueChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  setProposalContent: (arg: string) => void;
-  handleFieldFocus: () => void;
-  handleCancel: () => void;
-  handleSubmit: () => void;
-  waitingApiCallback: boolean;
-};
+import { ProposalSuccess } from './Success';
 
 const getModerationLinkByLanguage = (language: string) => {
   switch (language) {
@@ -53,31 +52,34 @@ const getModerationLinkByLanguage = (language: string) => {
   }
 };
 
-export const ProposalForm: React.FC<Props> = ({
-  proposalContent,
-  setProposalContent,
-  handleValueChange,
-  handleFieldFocus,
-  handleCancel,
-  handleSubmit,
-  waitingApiCallback,
-}) => {
-  const { state } = useAppContext();
-  const { source } = state.appConfig;
-  const isWidget = source === 'widget';
+export const ProposalForm: FC = () => {
+  const { state, dispatch } = useAppContext();
+  const [proposalContent, setProposalContent] = useState(
+    state.pendingProposal.proposalContent || ''
+  );
   const inputRef = useRef() as React.MutableRefObject<HTMLTextAreaElement>;
   const question: QuestionType | null = selectCurrentQuestion(state);
+  const { isLoggedIn } = selectAuthentication(state);
   const { language } = state.appConfig;
   const proposalIsEmpty = proposalContent.length === 0;
-  const baitText = getLocalizedBaitText(
-    question?.language || '',
-    question?.questionId || ''
-  );
+  const baitText = getLocalizedBaitText(question.language, question.questionId);
   const charCounting = proposalIsEmpty
     ? baitText?.length
     : proposalContent.length;
-  const disableSubmitButton =
-    !proposalHasValidLength(proposalContent.length) || waitingApiCallback;
+  const disableSubmitButton = !proposalHasValidLength(proposalContent.length);
+
+  const handleFieldFocus = () => {
+    if (proposalContent.length === 0) {
+      setProposalContent(baitText);
+    }
+  };
+
+  const handleValueChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    if (proposalContent.length < baitText.length) {
+      return setProposalContent(baitText);
+    }
+    return setProposalContent(event.currentTarget.value);
+  };
 
   const secureFieldValue = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     handleValueChange(event);
@@ -89,60 +91,32 @@ export const ProposalForm: React.FC<Props> = ({
     }
   };
 
+  const handleCancel = () => {
+    dispatch(closePanel());
+    dispatch(removePanelContent());
+    trackClickBackProposals();
+  };
+
+  const handleSubmitForm = async () => {
+    if (isLoggedIn) {
+      await ProposalService.propose(proposalContent, question.questionId, () =>
+        dispatch(setPanelContent(<ProposalSuccess />))
+      );
+    }
+
+    dispatch(initProposalPending(proposalContent));
+  };
+
   useEffect(() => {
     trackDisplayProposalField();
   }, []);
-
-  const link = (
-    <ProposalAuthInlineWrapperStyle>
-      {i18n.t('proposal_submit.form.read_our')}{' '}
-      <ProposalExternalLinkStyle
-        href={getModerationLinkByLanguage(language)}
-        target="_blank"
-        rel="noopener"
-        onClick={trackClickModerationLink}
-      >
-        {i18n.t('proposal_submit.form.moderation_link')}
-        <> </>
-        <ProposalExternalLinkIconStyle aria-hidden focusable="false" />
-        <ScreenReaderItemStyle>
-          {i18n.t('common.open_new_window')}
-        </ScreenReaderItemStyle>
-      </ProposalExternalLinkStyle>
-    </ProposalAuthInlineWrapperStyle>
-  );
-
-  const buttons = (
-    <ProposalButtonsWrapperStyle>
-      <ProposalCancelButtonStyle
-        type="button"
-        onClick={handleCancel}
-        data-cy-button="proposal-form-cancel"
-      >
-        {i18n.t('proposal_submit.form.button_cancel')}
-      </ProposalCancelButtonStyle>
-      <RedButtonStyle
-        type="submit"
-        form={FORM.PROPOSAL_SUBMIT_FORMNAME}
-        onClick={trackClickProposalSubmit}
-        disabled={disableSubmitButton}
-        data-cy-button="proposal-submit"
-      >
-        {waitingApiCallback ? (
-          <LoadingDots isWidget={isWidget} />
-        ) : (
-          i18n.t('proposal_submit.form.button_submit')
-        )}
-      </RedButtonStyle>
-    </ProposalButtonsWrapperStyle>
-  );
 
   return (
     <ProposalStepWrapperStyle data-cy-container={FORM.PROPOSAL_SUBMIT_FORMNAME}>
       <form
         id={FORM.PROPOSAL_SUBMIT_FORMNAME}
         name={FORM.PROPOSAL_SUBMIT_FORMNAME}
-        onSubmit={throttle(handleSubmit)}
+        onSubmit={throttle(handleSubmitForm)}
       >
         <ProposalStepTitleStyle className="with-margin-bottom">
           {question && question.question}
@@ -181,8 +155,40 @@ export const ProposalForm: React.FC<Props> = ({
           </ScreenReaderItemStyle>
         </ProposalFieldWrapperStyle>
         <ProposalSubmitButtonsWidgetStyle>
-          {link}
-          {buttons}
+          <ProposalAuthInlineWrapperStyle>
+            {i18n.t('proposal_submit.form.read_our')}{' '}
+            <ProposalExternalLinkStyle
+              href={getModerationLinkByLanguage(language)}
+              target="_blank"
+              rel="noopener"
+              onClick={trackClickModerationLink}
+            >
+              {i18n.t('proposal_submit.form.moderation_link')}
+              <> </>
+              <ProposalExternalLinkIconStyle aria-hidden focusable="false" />
+              <ScreenReaderItemStyle>
+                {i18n.t('common.open_new_window')}
+              </ScreenReaderItemStyle>
+            </ProposalExternalLinkStyle>
+          </ProposalAuthInlineWrapperStyle>
+          <ProposalButtonsWrapperStyle>
+            <ProposalCancelButtonStyle
+              type="button"
+              onClick={handleCancel}
+              data-cy-button="proposal-form-cancel"
+            >
+              {i18n.t('proposal_submit.form.button_cancel')}
+            </ProposalCancelButtonStyle>
+            <RedButtonStyle
+              type="submit"
+              form={FORM.PROPOSAL_SUBMIT_FORMNAME}
+              onClick={trackClickProposalSubmit}
+              disabled={disableSubmitButton}
+              data-cy-button="proposal-submit"
+            >
+              {i18n.t('proposal_submit.form.button_submit')}
+            </RedButtonStyle>
+          </ProposalButtonsWrapperStyle>
         </ProposalSubmitButtonsWidgetStyle>
       </form>
     </ProposalStepWrapperStyle>

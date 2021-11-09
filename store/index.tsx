@@ -17,7 +17,7 @@ import { proposals_reducer } from './reducers/proposals';
 import { sequence_reducer } from './reducers/sequence';
 import { user_reducer } from './reducers/user';
 import { initialState } from './initialState';
-import { proposal_reducer } from './reducers/proposal';
+import { pendingProposal_reducer } from './reducers/pendingProposal';
 import { currentQuestion_reducer } from './reducers/currentQuestion';
 import { appConfig_reducer } from './reducers/appConfig';
 import { questions_reducer } from './reducers/questions';
@@ -39,7 +39,7 @@ const rootReducer = combineReducers({
   sequence: sequence_reducer,
   appConfig: appConfig_reducer,
   views: views_reducer,
-  proposal: proposal_reducer,
+  pendingProposal: pendingProposal_reducer,
   currentQuestion: currentQuestion_reducer,
   notifications: notifications_reducer,
   user: user_reducer,

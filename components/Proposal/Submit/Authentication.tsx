@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { FC, useEffect } from 'react';
 import i18n from 'i18next';
 import { trackDisplayAuthenticationForm } from '@make.org/utils/services/Tracking';
 import {
@@ -17,6 +17,14 @@ import {
 } from '@make.org/ui/elements/SeparatorsElements';
 import { FacebookAuthentication } from '@make.org/components/Auth/Social/FacebookAuthentication';
 import { GoogleAuthentication } from '@make.org/components/Auth/Social/GoogleAuthentication';
+import { useAppContext } from '@make.org/store';
+import { AUTH_STEP } from '@make.org/types/enums';
+import {
+  modifyProposalPending,
+  resetProposalAuthStep,
+  setProposalAuthStep,
+} from '@make.org/store/actions/pendingProposal';
+import { Dispatch } from '@make.org/types';
 import { SocialRegisterButtonsWrapperStyle } from '../../Auth/style';
 import {
   ProposalStepWrapperStyle,
@@ -31,82 +39,71 @@ import {
   ProposalSubmitForgotPasswordWrapperStyle,
 } from './style';
 
-type Props = {
-  handleStepBack: () => void;
-  handleProposalAPICall: () => void;
+const renderAuthStep = (step: string, dispatch: Dispatch) => {
+  switch (step) {
+    case AUTH_STEP.LOGIN:
+      return (
+        <>
+          <Login panel />
+          <ProposalSubmitForgotPasswordWrapperStyle>
+            {i18n.t('login.forgot_password_title')}
+            <RedLinkButtonStyle
+              onClick={() =>
+                dispatch(setProposalAuthStep(AUTH_STEP.FORGOT_PASSWORD))
+              }
+              type="button"
+            >
+              {i18n.t('login.forgot_password_link')}
+            </RedLinkButtonStyle>
+          </ProposalSubmitForgotPasswordWrapperStyle>
+          <ProposalAuthSocialLoginWrapperStyle>
+            <SeparatorProposalAuthLogin>
+              <ProposalSubmitAuthSeparator />
+              <TextSeparatorStyle>{i18n.t('register.or')}</TextSeparatorStyle>
+              <ProposalSubmitAuthSeparator />
+            </SeparatorProposalAuthLogin>
+            <SocialRegisterButtonsWrapperStyle>
+              <FacebookAuthentication />
+              <GoogleAuthentication />
+            </SocialRegisterButtonsWrapperStyle>
+          </ProposalAuthSocialLoginWrapperStyle>
+        </>
+      );
+    case AUTH_STEP.REGISTER:
+      return <Register panel />;
+    case AUTH_STEP.FORGOT_PASSWORD:
+      return (
+        <PasswordForgot
+          loginStep={() => dispatch(setProposalAuthStep(AUTH_STEP.LOGIN))}
+          panel
+        />
+      );
+    default:
+      return null;
+  }
 };
 
-enum AUTH_STEP {
-  SOCIAL,
-  LOGIN,
-  REGISTER,
-  FORGOT_PASSWORD,
-}
-
-export const ProposalAuthentication: React.FC<Props> = ({
-  handleStepBack,
-  handleProposalAPICall,
-}) => {
-  const [authStep, setAuthStep] = useState(AUTH_STEP.SOCIAL);
+export const ProposalAuthentication: FC = () => {
+  const { state, dispatch } = useAppContext();
+  const { step } = state.pendingProposal.authMode;
 
   useEffect(() => {
     trackDisplayAuthenticationForm();
   }, []);
 
-  if (authStep !== AUTH_STEP.SOCIAL) {
+  if (step) {
     return (
       <ProposalStepWrapperStyle>
         <CenterColumnStyle>
           <ProposalBackButtonStyle
-            onClick={() => setAuthStep(AUTH_STEP.SOCIAL)}
+            onClick={() => dispatch(resetProposalAuthStep())}
           >
             <ProposalBackIconWrapperStyle>
               <ProposalBackIconStyle aria-hidden focusable="false" />
             </ProposalBackIconWrapperStyle>
             {i18n.t('common.back')}
           </ProposalBackButtonStyle>
-          {authStep === AUTH_STEP.LOGIN && (
-            <Login handleProposalAPICall={handleProposalAPICall} panel />
-          )}
-          {authStep === AUTH_STEP.REGISTER && (
-            <Register handleProposalAPICall={handleProposalAPICall} panel />
-          )}
-          {authStep === AUTH_STEP.FORGOT_PASSWORD && (
-            <PasswordForgot
-              panel
-              loginStep={() => setAuthStep(AUTH_STEP.LOGIN)}
-            />
-          )}
-          {authStep === AUTH_STEP.LOGIN && (
-            <>
-              <ProposalSubmitForgotPasswordWrapperStyle>
-                {i18n.t('login.forgot_password_title')}
-                <RedLinkButtonStyle
-                  onClick={() => setAuthStep(AUTH_STEP.FORGOT_PASSWORD)}
-                  type="button"
-                >
-                  {i18n.t('login.forgot_password_link')}
-                </RedLinkButtonStyle>
-              </ProposalSubmitForgotPasswordWrapperStyle>
-              <ProposalAuthSocialLoginWrapperStyle>
-                <SeparatorProposalAuthLogin>
-                  <ProposalSubmitAuthSeparator />
-                  <TextSeparatorStyle>
-                    {i18n.t('register.or')}
-                  </TextSeparatorStyle>
-                  <ProposalSubmitAuthSeparator />
-                </SeparatorProposalAuthLogin>
-                <SocialRegisterButtonsWrapperStyle>
-                  <FacebookAuthentication
-                    handleProposalAPICall={handleProposalAPICall}
-                  />
-                  <GoogleAuthentication
-                    handleProposalAPICall={handleProposalAPICall}
-                  />
-                </SocialRegisterButtonsWrapperStyle>
-              </ProposalAuthSocialLoginWrapperStyle>
-            </>
-          )}
+          {renderAuthStep(step, dispatch)}
         </CenterColumnStyle>
       </ProposalStepWrapperStyle>
     );
@@ -115,7 +112,9 @@ export const ProposalAuthentication: React.FC<Props> = ({
   return (
     <ProposalStepWrapperStyle>
       <ColumnElementStyle>
-        <ProposalBackButtonStyle onClick={handleStepBack}>
+        <ProposalBackButtonStyle
+          onClick={() => dispatch(modifyProposalPending())}
+        >
           <ProposalBackIconWrapperStyle>
             <ProposalBackIconStyle aria-hidden focusable="false" />
           </ProposalBackIconWrapperStyle>
@@ -126,14 +125,17 @@ export const ProposalAuthentication: React.FC<Props> = ({
             {i18n.t('proposal_submit.authentication.title')}
           </ProposalAltStepTitleStyle>
           <AuthenticationRegisterButtons
-            handleProposalAPICall={handleProposalAPICall}
-            onEmailRegister={() => setAuthStep(AUTH_STEP.REGISTER)}
+            onEmailRegister={() =>
+              dispatch(setProposalAuthStep(AUTH_STEP.REGISTER))
+            }
           />
         </ProposalAuthWrapperStyle>
       </ColumnElementStyle>
       <ProposalAuthLoginWrapperStyle>
         {i18n.t('proposal_submit.authentication.button_login_text')}{' '}
-        <ProposalAuthLoginStyle onClick={() => setAuthStep(AUTH_STEP.LOGIN)}>
+        <ProposalAuthLoginStyle
+          onClick={() => dispatch(setProposalAuthStep(AUTH_STEP.LOGIN))}
+        >
           {i18n.t('proposal_submit.authentication.button_login_link')}
         </ProposalAuthLoginStyle>
       </ProposalAuthLoginWrapperStyle>

@@ -10,6 +10,7 @@ import { incrementSequenceIndex } from '@make.org/store/actions/sequence';
 import { setPanelContent } from '@make.org/store/actions/panel';
 import { useAppContext } from '@make.org/store';
 import { ProposalJourney } from '@make.org/components/Proposal/Submit/Journey';
+import { clearProposalPending } from '@make.org/store/actions/pendingProposal';
 import {
   SequenceIntroParagraphStyle,
   SequencePushProposalButtonStyle,
@@ -40,7 +41,10 @@ export const PushProposalCard: React.FC = () => {
       <MiddleColumnToRowStyle column>
         <SequencePushProposalButtonStyle
           className={isWidget ? 'widget' : ''}
-          onClick={() => dispatch(setPanelContent(<ProposalJourney />))}
+          onClick={() => {
+            dispatch(clearProposalPending());
+            dispatch(setPanelContent(<ProposalJourney />));
+          }}
         >
           <PencilIconStyle aria-hidden focusable="false" />
           {i18n.t('common.propose')}

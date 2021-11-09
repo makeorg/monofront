@@ -24,6 +24,10 @@ import {
   FormCenterAlignStyle,
   FormRequirementsStyle,
 } from '@make.org/ui/elements/FormElements';
+import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
+import { ProposalService } from '@make.org/utils/services/Proposal';
+import { setPanelContent } from '@make.org/store/actions/panel';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { FormErrors } from '../../Form/Errors';
 import { SubmitButton } from '../../Form/SubmitButton';
 import { EmailPasswordFields } from '../CommonFields/EmailPassword';
@@ -33,13 +37,11 @@ type TypeLoginValues = {
   password: string;
 };
 
-type Props = {
-  handleProposalAPICall?: () => void;
-};
-
-export const LoginForm: FC<Props> = ({ handleProposalAPICall }) => {
+export const LoginForm: FC = () => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy } = state.appConfig;
+  const { proposalContent } = state.pendingProposal;
+  const question = selectCurrentQuestion(state);
   const defaultFormValues = {
     email: '',
     password: '',
@@ -64,7 +66,7 @@ export const LoginForm: FC<Props> = ({ handleProposalAPICall }) => {
   ) => {
     event.preventDefault();
 
-    const success = () => {
+    const success = async () => {
       dispatch(loginSuccess());
       trackLoginEmailSuccess();
       setErrors([]);
@@ -75,8 +77,13 @@ export const LoginForm: FC<Props> = ({ handleProposalAPICall }) => {
           NOTIF.NOTIFICATION_LEVEL_SUCCESS
         )
       );
-      if (handleProposalAPICall) {
-        handleProposalAPICall();
+
+      if (proposalContent) {
+        await ProposalService.propose(
+          proposalContent,
+          question.questionId,
+          () => dispatch(setPanelContent(<ProposalSuccess />))
+        );
       }
     };
     const handleErrors = (serviceErrors?: ErrorObjectType[]) => {

@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
 import { closePanel } from '@make.org/store/actions/panel';
-import { trackClickKeepVoting } from '@make.org/utils/services/Tracking';
+import {
+  trackClickKeepVoting,
+  trackDisplayProposalSubmitValidation,
+} from '@make.org/utils/services/Tracking';
 import { ProposalStepWrapperStyle } from '@make.org/components/Proposal/Submit/style';
 import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
+import { clearProposalPending } from '@make.org/store/actions/pendingProposal';
+import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import {
   ProposalSuccessWrapperStyle,
   ProposalSuccessTitleStyle,
@@ -15,21 +20,23 @@ import {
 } from './style';
 
 type Props = {
-  firstname?: string;
-  email?: string;
   isRegister?: boolean;
 };
 
-export const ProposalSuccess: React.FC<Props> = ({
-  firstname,
-  email,
-  isRegister,
-}) => {
-  const { dispatch } = useAppContext();
+export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
+  const { state, dispatch } = useAppContext();
+  const { user } = selectAuthentication(state);
+
   const handleCloseButton = () => {
     dispatch(closePanel());
     trackClickKeepVoting();
   };
+
+  useEffect(() => {
+    trackDisplayProposalSubmitValidation();
+    dispatch(clearProposalPending());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <ProposalStepWrapperStyle>
@@ -38,14 +45,14 @@ export const ProposalSuccess: React.FC<Props> = ({
           {isRegister && (
             <ProposalSuccessRegisterStyle>
               {i18n.t('common.notifications.register_validate', {
-                email: email && email,
+                email: user?.email,
               })}
             </ProposalSuccessRegisterStyle>
           )}
           <ProposalSuccessIconStyle aria-hidden focusable="false" />
           <ProposalSuccessTitleStyle>
             {i18n.t('proposal_submit.success.title', {
-              name: firstname || '',
+              name: user?.profile.firstName || '',
             })}
           </ProposalSuccessTitleStyle>
           <ProposalSuccessParagraphStyle>

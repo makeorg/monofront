@@ -7,7 +7,7 @@ import { notifications_state } from './reducers/notifications';
 import { authentication_state } from './reducers/user/authentication';
 import { cookiesPreferences_state } from './reducers/user/cookiesPreferences';
 import { passwordRecovery_state } from './reducers/user/passwordRecovery';
-import { proposal_state } from './reducers/proposal';
+import { pendingProposal_state } from './reducers/pendingProposal';
 import { appConfig_state } from './reducers/appConfig';
 import { questions_state } from './reducers/questions';
 import { views_state } from './reducers/views';
@@ -17,7 +17,7 @@ import { filter_and_sort_state } from './reducers/filterAndSort';
 export const initialState: StateRoot = {
   appConfig: appConfig_state,
   views: views_state,
-  proposal: proposal_state,
+  pendingProposal: pendingProposal_state,
   proposals: proposals_state,
   sequence: sequence_state,
   questions: questions_state,

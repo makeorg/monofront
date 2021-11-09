@@ -35,10 +35,12 @@ export type StateViews = {
 };
 
 // Proposal State
-export type StateProposal = {
-  readonly popularProposals: ProposalType[];
-  readonly error?: ErrorObjectType;
-  readonly data: any; // to check
+export type StatePendingProposal = {
+  readonly proposalContent?: string;
+  readonly authMode: {
+    enable: boolean;
+    step?: undefined;
+  };
 };
 
 // Sequence State
@@ -188,7 +190,7 @@ export type StateFilterAndSort = {
 export type StateRoot = {
   appConfig: StateConfig;
   views: StateViews;
-  proposal?: StateProposal;
+  pendingProposal: StatePendingProposal;
   proposals?: ProposalType[];
   sequence: StateSequence;
   currentQuestion: string;

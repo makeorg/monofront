@@ -26,6 +26,8 @@ import { useAppContext } from '@make.org/store';
 import { getUser } from '@make.org/store/actions/authentication';
 import { closePanel, setPanelContent } from '@make.org/store/actions/panel';
 import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
+import { ProposalService } from '@make.org/utils/services/Proposal';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { RegisterForm } from './Form';
 import { RegisterFormPanel } from './FormPanel';
 
@@ -36,11 +38,10 @@ import {
 import { LegalConsent } from './LegalConsent';
 
 type Props = {
-  handleProposalAPICall?: () => void;
   panel?: boolean;
 };
 
-export const Register: React.FC<Props> = ({ handleProposalAPICall, panel }) => {
+export const Register: React.FC<Props> = ({ panel }) => {
   const { dispatch, state } = useAppContext();
   const [user, setUser] = useState<RegisterFormDataType>({
     email: '',
@@ -58,6 +59,8 @@ export const Register: React.FC<Props> = ({ handleProposalAPICall, panel }) => {
   const [waitingCallback, setWaitingCallback] = useState<boolean>(false);
   const [needLegalConsent, displayLegalConsent] = useState<boolean>(false);
   const [registerPanelStep, setRegisterPanelStep] = useState<number>(1);
+  const { proposalContent } = state.pendingProposal;
+  const question = selectCurrentQuestion(state);
   const userIsAChild =
     user && user.profile && user.profile.age && user.profile.age < 15;
 
@@ -145,25 +148,19 @@ export const Register: React.FC<Props> = ({ handleProposalAPICall, panel }) => {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const success = () => {
-      logAndLoadUser(user.email, user.password).then(() => {
+      logAndLoadUser(user.email, user.password).then(async () => {
         trackSignupEmailSuccess();
-        if (panel) {
-          dispatch(
-            setPanelContent(
-              <ProposalSuccess
-                isRegister
-                email={user.email}
-                firstname={user.profile.firstname}
-              />
-            )
-          );
-        } else {
+        setErrors([]);
+        if (!panel) {
           dispatch(modalClose());
         }
-        if (handleProposalAPICall) {
-          handleProposalAPICall();
+        if (proposalContent && panel) {
+          await ProposalService.propose(
+            proposalContent,
+            question.questionId,
+            () => dispatch(setPanelContent(<ProposalSuccess />))
+          );
         }
-        setErrors([]);
       });
     };
     const handleErrors = (serviceErrors: ErrorObjectType[]) => {

@@ -3,9 +3,17 @@ import i18n from 'i18next';
 import { CheckBox } from '@make.org/components/Form/CheckBox';
 import { SubmitButton } from '@make.org/components/Form/SubmitButton';
 import { getDataPageLink } from '@make.org/utils/helpers/url';
-import { FORM } from '@make.org/types/enums';
+import { FORM, NOTIF } from '@make.org/types/enums';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import { loginSocial, login } from '@make.org/store/actions/authentication';
+import {
+  getUser,
+  loginSuccess,
+  loginFailure,
+  loginRequest,
+  loginSocialRequest,
+  loginSocialFailure,
+  loginSocialSuccess,
+} from '@make.org/store/actions/authentication';
 import { modalCloseDataPolicy } from '@make.org/store/actions/modal';
 import {
   DataPolicyNewWindowLinkStyle,
@@ -13,6 +21,19 @@ import {
 } from '@make.org/ui/elements/FormElements';
 import { throttle } from '@make.org/utils/helpers/throttle';
 import { useAppContext } from '@make.org/store';
+import {
+  trackAuthenticationSocialFailure,
+  trackAuthenticationSocialSuccess,
+  trackLoginEmailFailure,
+  trackLoginEmailSuccess,
+} from '@make.org/utils/services/Tracking';
+import { displayNotificationBanner } from '@make.org/store/actions/notifications';
+import { UserService } from '@make.org/utils/services/User';
+import { Logger } from '@make.org/utils/services/Logger';
+import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
+import { ProposalService } from '@make.org/utils/services/Proposal';
+import { setPanelContent } from '@make.org/store/actions/panel';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import {
   DataPolicyContentStyle,
   DataPolicyTitleStyle,
@@ -24,6 +45,8 @@ export const DataPolicy: React.FC = () => {
   const { dispatch, state } = useAppContext();
   const { country, language } = state.appConfig;
   const { isLogin, extraProps } = state.modal;
+  const { proposalContent } = state.pendingProposal;
+  const question = selectCurrentQuestion(state);
   const { email, password, provider, token } = extraProps;
   // eslint-disable-next-line no-unused-vars
   const [dataPolicyConsent, setDataPolicyConsent] = useState<boolean>(false);
@@ -33,16 +56,93 @@ export const DataPolicy: React.FC = () => {
     setDataPolicyConsent(!dataPolicyConsent);
     setCanSubmit(!canSubmit);
   };
+
+  const commonSuccess = async (): Promise<void> => {
+    getUser(dispatch, true);
+    dispatch(
+      displayNotificationBanner(
+        NOTIF.LOGIN_SUCCESS_MESSAGE,
+        NOTIF.NOTIFICATION_LEVEL_SUCCESS
+      )
+    );
+    if (proposalContent && question) {
+      await ProposalService.propose(proposalContent, question.questionId, () =>
+        dispatch(setPanelContent(<ProposalSuccess />))
+      );
+    }
+
+    dispatch(modalCloseDataPolicy());
+  };
+
+  const loginAuthSuccess = (): void => {
+    dispatch(loginSuccess());
+    trackLoginEmailSuccess();
+    commonSuccess();
+  };
+
+  const loginAuthFailure = (): void => {
+    dispatch(
+      loginFailure({
+        field: 'email',
+        key: 'email_doesnot_exist',
+        message: i18n.t('login.email_doesnot_exist', {
+          emailLabel: `<label for="email">${i18n.t(
+            'common.form.label.email'
+          )}</label>`,
+          passwordLabel: `<label for="password">${i18n.t(
+            'common.form.label.password'
+          )}</label>`,
+        }),
+      })
+    );
+    trackLoginEmailFailure();
+    dispatch(modalCloseDataPolicy());
+  };
+
+  const socialAuthSuccess = (createdAt: string) => {
+    dispatch(loginSocialSuccess());
+    trackAuthenticationSocialSuccess(provider, createdAt);
+    commonSuccess();
+  };
+
+  const socialAuthFailure = () => {
+    dispatch(loginSocialFailure());
+    trackAuthenticationSocialFailure(provider);
+    dispatch(modalCloseDataPolicy());
+  };
+
   const handleSubmit = async (
     event: React.SyntheticEvent<HTMLInputElement>
   ) => {
     event.preventDefault();
     if (isLogin) {
-      login(email, password, dataPolicyConsent, dispatch);
+      dispatch(loginRequest());
+      await UserService.login(
+        email,
+        password,
+        dataPolicyConsent,
+        loginAuthSuccess,
+        loginAuthFailure
+      );
     } else {
-      loginSocial(provider, token, dataPolicyConsent, dispatch);
+      dispatch(loginSocialRequest(provider));
+      if (!token) {
+        dispatch(loginSocialFailure());
+        trackAuthenticationSocialFailure(provider);
+        Logger.logInfo({
+          message: `No token from ${provider} callBack auth`,
+          name: 'social-auth',
+        });
+      }
+
+      UserService.loginSocial(
+        provider,
+        token,
+        dataPolicyConsent,
+        socialAuthSuccess,
+        socialAuthFailure
+      );
     }
-    dispatch(modalCloseDataPolicy());
   };
 
   useEffect(() => {

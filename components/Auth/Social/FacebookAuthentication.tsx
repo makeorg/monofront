@@ -27,24 +27,23 @@ import { displayNotificationBanner } from '@make.org/store/actions/notifications
 import { NOTIF } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
 import i18n from 'i18next';
-import { closePanel } from '@make.org/store/actions/panel';
+import { closePanel, setPanelContent } from '@make.org/store/actions/panel';
+import { ProposalService } from '@make.org/utils/services/Proposal';
+import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import {
   FacebookButtonStyle,
   SocialButtonLabelStyle,
   SvgLogoFacebookWrapperStyle,
 } from './style';
 
-type Props = {
-  handleProposalAPICall?: () => void;
-};
-
-export const FacebookAuthentication: FC<Props> = ({
-  handleProposalAPICall,
-}) => {
+export const FacebookAuthentication: FC = () => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy, language } = state.appConfig;
+  const { proposalContent } = state.pendingProposal;
+  const question = selectCurrentQuestion(state);
 
-  // setting facebook browser to true or false
+  // setting facebook browser to true  or false
   const [isFacebookBrowser, setFacebookBrowser] = useState(false);
   const handleFacebookLoginCallback = (
     response: ReactFacebookLoginInfo | ReactFacebookFailureResponse
@@ -97,7 +96,7 @@ export const FacebookAuthentication: FC<Props> = ({
 
     const { accessToken } = response;
 
-    const success = (createdAt: string) => {
+    const success = async (createdAt: string) => {
       dispatch(loginSocialSuccess());
       getUser(dispatch, state.modal.isOpen);
       dispatch(
@@ -107,8 +106,13 @@ export const FacebookAuthentication: FC<Props> = ({
         )
       );
       trackAuthenticationSocialSuccess(FACEBOOK_PROVIDER_ENUM, createdAt);
-      if (handleProposalAPICall) {
-        handleProposalAPICall();
+
+      if (proposalContent) {
+        await ProposalService.propose(
+          proposalContent,
+          question.questionId,
+          () => dispatch(setPanelContent(<ProposalSuccess />))
+        );
       }
     };
 

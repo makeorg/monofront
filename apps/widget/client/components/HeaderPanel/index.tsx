@@ -9,6 +9,7 @@ import { setPanelContent } from '@make.org/store/actions/panel';
 import { ProposalJourney } from '@make.org/components/Proposal/Submit/Journey';
 import { TriggerIconStyle } from '@make.org/components/Proposal/Submit/style';
 import { isInProgress } from '@make.org/utils/helpers/date';
+import { clearProposalPending } from '@make.org/store/actions/pendingProposal';
 import {
   MainTitleStyle,
   LogoStyle,
@@ -36,7 +37,10 @@ export const HeaderPanel: FC = () => {
       {canPropose && (
         <ProposeButtonStyle
           className="widget"
-          onClick={() => dispatch(setPanelContent(<ProposalJourney />))}
+          onClick={() => {
+            dispatch(clearProposalPending());
+            dispatch(setPanelContent(<ProposalJourney />));
+          }}
           data-cy-button="final-card-register-button"
         >
           <TriggerIconStyle aria-hidden focusable="false" />

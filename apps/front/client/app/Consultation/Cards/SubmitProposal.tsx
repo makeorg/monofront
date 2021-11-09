@@ -10,6 +10,7 @@ import {
   ParticipateCardDescriptionStyle,
   ParticipateCardButtonStyle,
 } from '@make.org/ui/elements/CardsElements';
+import { clearProposalPending } from '@make.org/store/actions/pendingProposal';
 
 export const SubmitProposal: FC = () => {
   const { dispatch } = useAppContext();
@@ -23,7 +24,10 @@ export const SubmitProposal: FC = () => {
         {i18n.t('consultation.cards.submit.description')}
       </ParticipateCardDescriptionStyle>
       <ParticipateCardButtonStyle
-        onClick={() => dispatch(setPanelContent(<ProposalJourney />))}
+        onClick={() => {
+          dispatch(clearProposalPending());
+          dispatch(setPanelContent(<ProposalJourney />));
+        }}
       >
         {i18n.t('consultation.cards.submit.button')}
       </ParticipateCardButtonStyle>

@@ -1,4 +1,3 @@
-import i18n from 'i18next';
 import {
   ErrorObjectType,
   UserType,
@@ -7,15 +6,7 @@ import {
   OrganisationProfileType,
   PersonalityProfileType,
   UserProfileType,
-  UserAuthType,
 } from '@make.org/types';
-import {
-  trackLoginEmailSuccess,
-  trackLoginEmailFailure,
-  trackAuthenticationSocialSuccess,
-  trackAuthenticationSocialFailure,
-} from '@make.org/utils/services/Tracking';
-import { Logger } from '@make.org/utils/services/Logger';
 import { UserService } from '@make.org/utils/services/User';
 import { NOTIF } from '@make.org/types/enums';
 
@@ -110,94 +101,6 @@ export const getUser = async (
     );
   }
   return null;
-};
-
-export const login = (
-  email: string,
-  password: string,
-  approvePrivacyPolicy: boolean,
-  dispatch: Dispatch
-): Promise<UserAuthType | null> => {
-  dispatch(loginRequest());
-  const success = (): void => {
-    dispatch(loginSuccess());
-    trackLoginEmailSuccess();
-    getUser(dispatch, true);
-    dispatch(
-      displayNotificationBanner(
-        NOTIF.LOGIN_SUCCESS_MESSAGE,
-        NOTIF.NOTIFICATION_LEVEL_SUCCESS
-      )
-    );
-  };
-  const errors = (): void => {
-    dispatch(
-      loginFailure({
-        field: 'email',
-        key: 'email_doesnot_exist',
-        message: i18n.t('login.email_doesnot_exist', {
-          emailLabel: `<label for="email">${i18n.t(
-            'common.form.label.email'
-          )}</label>`,
-          passwordLabel: `<label for="password">${i18n.t(
-            'common.form.label.password'
-          )}</label>`,
-        }),
-      })
-    );
-    trackLoginEmailFailure();
-  };
-
-  return UserService.login(
-    email,
-    password,
-    approvePrivacyPolicy,
-    () => success(),
-    () => errors()
-  );
-};
-
-export const loginSocial = async (
-  provider: string,
-  socialToken: string,
-  approvePrivacyPolicy: boolean,
-  dispatch: Dispatch
-): Promise<void | UserAuthType> => {
-  dispatch(loginSocialRequest(provider));
-  if (!socialToken) {
-    dispatch(loginSocialFailure());
-    trackAuthenticationSocialFailure(provider);
-    Logger.logInfo({
-      message: `No token from ${provider} callBack auth`,
-      name: 'social-auth',
-    });
-
-    return Promise.resolve();
-  }
-
-  const success = (createdAt: string) => {
-    dispatch(loginSocialSuccess());
-    trackAuthenticationSocialSuccess(provider, createdAt);
-    getUser(dispatch, true);
-    dispatch(
-      displayNotificationBanner(
-        NOTIF.LOGIN_SUCCESS_MESSAGE,
-        NOTIF.NOTIFICATION_LEVEL_SUCCESS
-      )
-    );
-  };
-  const failure = () => {
-    dispatch(loginSocialFailure());
-    trackAuthenticationSocialFailure(provider);
-  };
-
-  return UserService.loginSocial(
-    provider,
-    socialToken,
-    approvePrivacyPolicy,
-    success,
-    failure
-  );
 };
 
 export const logout = (

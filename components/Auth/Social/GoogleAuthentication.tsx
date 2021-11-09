@@ -27,22 +27,24 @@ import { displayNotificationBanner } from '@make.org/store/actions/notifications
 import { NOTIF } from '@make.org/types/enums';
 import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
+import { ProposalService } from '@make.org/utils/services/Proposal';
+import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
+import { setPanelContent } from '@make.org/store/actions/panel';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import {
   GoogleButtonStyle,
   SocialButtonLabelStyle,
   SvgLogoWrapperStyle,
 } from './style';
 
-type Props = {
-  handleProposalAPICall?: () => void;
-};
-
-export const GoogleAuthentication: FC<Props> = ({ handleProposalAPICall }) => {
+export const GoogleAuthentication: FC = () => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy } = state.appConfig || {};
+  const { proposalContent } = state.pendingProposal;
+  const question = selectCurrentQuestion(state);
 
   /** Google login method callback */
-  const handleGoogleLoginSuccess = (
+  const handleGoogleLoginSuccess = async (
     response: GoogleLoginResponse | GoogleLoginResponseOffline
   ) => {
     const success = async (createdAt: string) => {
@@ -55,8 +57,13 @@ export const GoogleAuthentication: FC<Props> = ({ handleProposalAPICall }) => {
           NOTIF.NOTIFICATION_LEVEL_SUCCESS
         )
       );
-      if (handleProposalAPICall) {
-        handleProposalAPICall();
+
+      if (proposalContent) {
+        await ProposalService.propose(
+          proposalContent,
+          question.questionId,
+          () => dispatch(setPanelContent(<ProposalSuccess />))
+        );
       }
     };
 

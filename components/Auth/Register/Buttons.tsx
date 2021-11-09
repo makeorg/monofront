@@ -17,12 +17,10 @@ import {
 } from '../Social/style';
 
 type Props = {
-  handleProposalAPICall?: () => void;
   onEmailRegister?: () => void;
 };
 
 export const AuthenticationRegisterButtons: FC<Props> = ({
-  handleProposalAPICall,
   onEmailRegister,
 }) => {
   const { dispatch } = useAppContext();
@@ -35,8 +33,8 @@ export const AuthenticationRegisterButtons: FC<Props> = ({
   };
   return (
     <AuthenticationButtonWrapperStyle data-cy-container="signup-auth-buttons">
-      <FacebookAuthentication handleProposalAPICall={handleProposalAPICall} />
-      <GoogleAuthentication handleProposalAPICall={handleProposalAPICall} />
+      <FacebookAuthentication />
+      <GoogleAuthentication />
       <SeparatorWrapperStyle>
         <ProposalSubmitAuthSeparator className="no-margin-top" />
         <TextSeparatorStyle>{i18n.t('login.or')}</TextSeparatorStyle>

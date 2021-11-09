@@ -11,6 +11,7 @@ export * from './ids';
 export * from './image';
 export * from './notifications';
 export * from './partner';
+export * from './pendingProposal';
 export * from './sequence';
 export * from './tracking';
 export * from './url';
