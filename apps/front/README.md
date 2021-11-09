@@ -31,6 +31,26 @@ $ yarn cypress:front
 
 ```
 
+## Running functional tests
+
+Start test environment
+
+```bash
+$ docker-compose -f docker-compose.dev.yaml --profile=front-test up -d
+```
+
+Run all tests
+```bash
+$ yarn cypress:front:run
+```
+
+or open Cypress
+```bash
+$ yarn cypress:front:open
+```
+
+Configure Cypress : [cypress.json](./cypress.json)
+
 ## Environment variables for production
 
 ```bash

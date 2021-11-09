@@ -27,7 +27,10 @@
     "start:apiMock": "yarn workspace @make.org/apimock start",
     "ci:front": "node -r dotenv/config yarn prod:front dotenv_config_path=.env.ci",
     "ci": "env NODE_ENV=ci start-server-and-test prod:front http://localhost:9009",
-    "cypress:front": "yarn workspace @make.org/front cypress:open"
+    "cypress:front:run": "./node_modules/.bin/cypress-tags run -e TAGS='@front' --config-file apps/front/cypress.json",
+    "cypress:widget:run": "./node_modules/.bin/cypress-tags run -e TAGS='@widget' --config-file apps/widget/cypress.json",
+    "cypress:widget:open": "cypress open --config-file apps/widget/cypress.json",
+    "cypress:front:open": "cypress open --config-file apps/front/cypress.json"		
   },
   "devDependencies": {
     "@babel/cli": "^7.14.3",

@@ -19,6 +19,7 @@ COPY ["assets/package*.json", "./assets/"]
 COPY ["utils/package*.json", "./utils/"]
 COPY ["ui/package*.json", "./ui/"]
 COPY ["store/package*.json", "./store/"]
+COPY ["apimock/package*.json", "./apimock/"]
 COPY lerna.json ./
 
 RUN ["lerna", "bootstrap"]

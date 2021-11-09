@@ -117,6 +117,7 @@ export const mainRoute = async (
       question: questionModified,
     },
   };
+
   updateTrackingQuestionParam(questionModified);
 
   return reactRender(req, res, initialState);

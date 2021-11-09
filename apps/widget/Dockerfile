@@ -31,11 +31,6 @@ COPY . ./
 ############
 FROM base AS widget-dev
 
-WORKDIR /home/app
-
-ENV PATH /home/app/node_modules/.bin:$PATH
-ENV CHOKIDAR_USEPOLLING true
-
 CMD ["./node_modules/.bin/lerna", "run", "--scope=@make.org/widget", "dev", "--stream"]
 
 EXPOSE 3000

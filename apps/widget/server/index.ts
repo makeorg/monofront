@@ -1,6 +1,5 @@
 import express, { Response } from 'express';
 import compression from 'compression';
-import cookiesMiddleware from 'universal-cookie-express';
 import favicon from 'serve-favicon';
 import cors from 'cors';
 import { ApiService } from '@make.org/api/ApiService';
@@ -76,7 +75,6 @@ const getApp = () => {
   app.use(
     favicon(`${WIDGET_CLIENT_DIR}/${webpackManifest[WIDGET_FAVICON_FILE]}`)
   );
-  app.use(cookiesMiddleware());
   app.use(secureMiddleware);
   app.use((req, res, next) =>
     maintenanceMiddleware(req, res, next, logger.logError)

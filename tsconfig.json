@@ -1,18 +1,19 @@
 {
   "exclude": [
-    "**/node_modules", 
+    "**/node_modules",
     "**/spec.ts",
     "**/*.spec.ts",
     "**/*.spec.tsx",
     "**/bin",
     "**/coverage",
-    "**/cypress",
+    "./cypress",
     "**/dist",
     "**/Trackers/*.js",
     "**/Svg/*.js",
     "**/*.config.js",
     "**/apimock",
-    "**/reports"
+    "**/reports",
+    "**/*.md"
   ],
   "compilerOptions": {
     "baseUrl": "./types/index",

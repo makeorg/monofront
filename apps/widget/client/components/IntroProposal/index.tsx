@@ -30,7 +30,7 @@ export const IntroProposal: FC<Props> = ({ handleChange }) => {
   const { state } = useAppContext();
   const question: QuestionType = selectCurrentQuestion(state);
   const proposal: ProposalType | null | undefined =
-    question.activeFeatureData.topProposal;
+    question.activeFeatureData?.topProposal;
 
   useEffect(() => {
     if (proposal) {

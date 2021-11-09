@@ -4,7 +4,6 @@ import path from 'path';
 import { ChunkExtractor } from '@loadable/server';
 import ReactDOMServer from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
-import { CookiesProvider } from 'react-cookie';
 import { ServerStyleSheet } from 'styled-components';
 import { HeadProvider } from 'react-head';
 import i18n from 'i18next';
@@ -50,34 +49,43 @@ const renderHtml = (
     return false;
   }
 
-  const extractor = new ChunkExtractor({ statsFile });
+  try {
+    const extractor = new ChunkExtractor({ statsFile });
 
-  const sheet = new ServerStyleSheet();
+    const sheet = new ServerStyleSheet();
 
-  const jsx = extractor.collectChunks(reactApp);
+    const jsx = extractor.collectChunks(reactApp);
 
-  const body = ReactDOMServer.renderToString(sheet.collectStyles(jsx));
-  const styles = sheet.getStyleTags();
-  const scriptTags = extractor.getScriptTags();
-  const linkTags = extractor.getLinkTags();
-  const nonceId = res.locals.nonce;
+    const body = ReactDOMServer.renderToString(sheet.collectStyles(jsx));
+    const styles = sheet.getStyleTags();
+    const scriptTags = extractor.getScriptTags();
+    const linkTags = extractor.getLinkTags();
+    const nonceId = res.locals.nonce;
 
-  const content = htmlContent
-    .replace(/<div id="app"><\/div>/, `<div id="app">${body}</div>`)
-    .replace('<head>', `<head>${linkTags}`)
-    .replace('</head>', `${styles}</head>`)
-    .replace('"__INITIAL_STATE__"', JSON.stringify(appState))
-    .replace(new RegExp('__LANG__', 'gi'), appState.appConfig.language)
-    .replace(
-      new RegExp('___API_URL_CLIENT_SIDE___', 'gi'),
-      env.apiUrlClientSide() || ''
-    )
-    .replace(new RegExp('___NONCE_ID___', 'gi'), nonceId)
-    .replace(new RegExp('___NODE_ENV___', 'gi'), env.nodeEnv() || 'production')
-    .replace(new RegExp('___PORT___', 'gi'), env.port() || '')
-    .replace('</body>', `${scriptTags}</body>`);
+    const content = htmlContent
+      .replace(/<div id="app"><\/div>/, `<div id="app">${body}</div>`)
+      .replace('<head>', `<head>${linkTags}`)
+      .replace('</head>', `${styles}</head>`)
+      .replace('"__INITIAL_STATE__"', JSON.stringify(appState))
+      .replace(new RegExp('__LANG__', 'gi'), appState.appConfig.language)
+      .replace(
+        new RegExp('___API_URL_CLIENT_SIDE___', 'gi'),
+        env.apiUrlClientSide() || ''
+      )
+      .replace(new RegExp('___NONCE_ID___', 'gi'), nonceId)
+      .replace(
+        new RegExp('___NODE_ENV___', 'gi'),
+        env.nodeEnv() || 'production'
+      )
+      .replace(new RegExp('___PORT___', 'gi'), env.port() || '')
+      .replace('</body>', `${scriptTags}</body>`);
 
-  return content;
+    return content;
+  } catch (error) {
+    getLoggerInstance().logError(error);
+
+    return 'Unexpected error';
+  }
 };
 
 declare global {
@@ -135,15 +143,13 @@ export const reactRender = async (
     | undefined = [];
 
   const ReactApp = (
-    <CookiesProvider cookies={req.universalCookies}>
-      <HeadProvider headTags={headTags}>
-        <ContextState serverState={state}>
-          <StaticRouter location={req.url} context={context}>
-            <App />
-          </StaticRouter>
-        </ContextState>
-      </HeadProvider>
-    </CookiesProvider>
+    <HeadProvider headTags={headTags}>
+      <ContextState serverState={state}>
+        <StaticRouter location={req.url} context={context}>
+          <App />
+        </StaticRouter>
+      </ContextState>
+    </HeadProvider>
   );
 
   const reactHtml = renderHtml(ReactApp, state, res);

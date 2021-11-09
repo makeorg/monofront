@@ -7,6 +7,7 @@ const organisationsRouter = require('./routes/organisations.js');
 const viewsRouter = require('./routes/views.js');
 const oauthRouter = require('./routes/oauth.js');
 const sequenceRouter = require('./routes/sequence.js');
+const securityRouter = require('./routes/security.js');
 
 const server = jsonServer.create();
 const middlewares = jsonServer.defaults({ logger: false });
@@ -50,6 +51,7 @@ server.use(
   })
 );
 server.use('/oauth', oauthRouter);
+server.use('/security', securityRouter);
 server.use('/logout', (req, res) => {
   res.clearCookie('mockIsConnected').sendStatus('204');
 });

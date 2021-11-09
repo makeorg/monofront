@@ -53,7 +53,8 @@ services:
         - 9000:9000
       volumes: *default_volumes
       profiles: 
-        - app-test
+        - front-test
+        - widget-test
     
     app_make_test:
       <<: *ssr_service
@@ -78,7 +79,7 @@ services:
         - /home/app/dist
         - ./apps/front/.env.cypress:/home/app/apps/front/.env.local
       profiles: 
-        - app-test
+        - front-test
 
     widget_make_dev:
       image: widget_make_dev
@@ -93,7 +94,7 @@ services:
       profiles: 
         - widget-dev
 
-    widget_make_ssr:
+    widget_make_ssr: &ssr_widget_service
       image: widget_make_ssr
       build:
         context: .
@@ -105,3 +106,30 @@ services:
       volumes: *default_volumes
       profiles: 
         - widget-ssr
+
+
+    widget_make_test:
+      <<: *ssr_widget_service
+      image: widget_make_test
+      ports:
+        - 9008:3000
+        - 8888:8888
+      volumes: 
+        - .:/home/app
+        - /home/app/node_modules
+        - /home/app/apps/front/node_modules
+        - /home/app/apps/widget/node_modules
+        - /home/app/api/node_modules
+        - /home/app/components/node_modules
+        - /home/app/types/node_modules
+        - /home/app/assets/node_modules
+        - /home/app/utils/node_modules
+        - /home/app/ui/node_modules
+        - /home/app/store/node_modules
+        - /home/app/apimock/node_modules
+        - /home/app/apps/front/dist
+        - /home/app/apps/widget/dist
+        - /home/app/dist
+        - ./apps/widget/.env.cypress:/home/app/apps/widget/.env.local
+      profiles: 
+        - widget-test

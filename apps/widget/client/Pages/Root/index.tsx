@@ -20,7 +20,7 @@ export const RootPage: FC = () => {
   const { unsecure } = appConfig;
   const { showDataPolicy } = modal;
   const question: QuestionType = selectCurrentQuestion(state);
-  const topProposalIsActive = question.activeFeatureData.topProposal !== null;
+  const topProposalIsActive = question.activeFeatureData?.topProposal !== null;
   const [topProposal, disableTopProposal] =
     useState<boolean>(topProposalIsActive);
 

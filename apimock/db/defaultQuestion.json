@@ -75,5 +75,8 @@
     "proposalsCount": 1500
   },
   "controversyCount": 15,
-  "topProposalCount": 15
+  "topProposalCount": 15,
+  "activeFeatureData": {
+    "topProposal": null
+  }
 }

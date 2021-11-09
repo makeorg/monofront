@@ -41,7 +41,7 @@ export const HeaderPanel: FC = () => {
             dispatch(clearProposalPending());
             dispatch(setPanelContent(<ProposalJourney />));
           }}
-          data-cy-button="final-card-register-button"
+          data-cy-button="proposal-panel"
         >
           <TriggerIconStyle aria-hidden focusable="false" />
           {i18n.t('proposal_submit.form.panel_trigger')}
