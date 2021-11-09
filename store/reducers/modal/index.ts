@@ -14,6 +14,10 @@ import {
   MODAL_SHOW_DATAPOLICY_LOGIN,
   MODAL_SHOW_DATAPOLICY_SOCIAL,
   MODAL_CLOSE_DATAPOLICY,
+  MODAL_SHOW_SORT,
+  MODAL_CLOSE_SORT,
+  MODAL_SHOW_FILTERS,
+  MODAL_CLOSE_FILTERS,
 } from '../../actionTypes';
 
 export const modal_state: StateModal = {
@@ -21,6 +25,8 @@ export const modal_state: StateModal = {
   contentType: undefined,
   showExpirationSession: false,
   showCookies: false,
+  showSort: false,
+  showFilters: false,
   showDataPolicy: false,
   focusAfterClose: true,
   extraProps: {},
@@ -31,6 +37,26 @@ export const modal_reducer: Reducer = (
   action: ReducerAction
 ): StateModal => {
   switch (action.type) {
+    case MODAL_SHOW_SORT:
+      return {
+        ...state,
+        showSort: true,
+      };
+    case MODAL_SHOW_FILTERS:
+      return {
+        ...state,
+        showFilters: true,
+      };
+    case MODAL_CLOSE_SORT:
+      return {
+        ...state,
+        showSort: false,
+      };
+    case MODAL_CLOSE_FILTERS:
+      return {
+        ...state,
+        showFilters: false,
+      };
     case MODAL_CLOSE_COOKIES:
       return {
         ...state,

@@ -6,10 +6,14 @@ import {
   ColumnElementStyle,
   SpaceBetweenRowStyle,
 } from '@make.org/ui/elements/FlexElements';
-import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
+// import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
-import { SvgChat } from '@make.org/ui/Svg/elements';
+import {
+  SvgArrowGroupUpDown,
+  SvgChat,
+  SvgFiltersMobileIcon,
+} from '@make.org/ui/Svg/elements';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
 
 export const ConsultationHeaderWrapperStyle = styled.div<{
@@ -181,17 +185,23 @@ export const NoProposalWrapperStyle = styled.div`
 
 export const ResetLinkButtonWrapperStyle = styled.div`
   display: flex;
-  margin-top: 30px;
+  margin: 15px auto 0;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    margin: 30px 0 0;
+  }
 `;
-
 export const ResetLinkStyle = styled(Link)`
   font-family: ${MakeFonts.CircularStandardBook};
   border: none;
   text-decoration: underline;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  color: ${color.greyDark};
+  color: ${color.brandSecondary};
   padding: 0;
   background-color: transparent;
+  &:hover,
+  &:focus {
+    color: ${color.brandSecondary};
+  }
 `;
 
 export const ParticipateDescriptionStyle = styled.p`
@@ -231,23 +241,6 @@ export const ParticipateFullwidthContentStyle = styled(ColumnElementStyle)`
   width: 100%;
 `;
 
-export const ExploreFiltersMobileCTA = styled(RedButtonStyle)`
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  border-radius: 0px;
-  left: 0;
-  z-index: 5;
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    position: sticky;
-    width: auto;
-    align-self: flex-end;
-    border-radius: 20px;
-    bottom: 20px;
-    margin: 40px 0;
-  }
-`;
-
 export const ParticipateCTAProposalBloc = styled.div<{
   isKeywordActive: boolean;
 }>`
@@ -262,4 +255,33 @@ export const ParticipateCTAProposalBloc = styled.div<{
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     margin-right: 15px;
   }
+`;
+
+export const FiltersAndSortCTAWrapperStyle = styled(SpaceBetweenRowStyle)`
+  height: 55px;
+  background-color: ${color.white};
+  ${ContainerWithPadding};
+`;
+
+export const FiltersAndSortCTAStyle = styled.button`
+  line-height: 12px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  font-family: ${MakeFonts.TradeGothicBoldCondensed};
+  background-color: ${color.white};
+`;
+
+export const SvgArrowsGroupMobile = styled(SvgArrowGroupUpDown)`
+  width: 8.5px;
+  height: 12px;
+  margin-right: 12px;
+`;
+
+export const SvgFiltersMobile = styled(SvgFiltersMobileIcon)`
+  width: 12px;
+  height: 11.25px;
+  margin-right: 10px;
 `;

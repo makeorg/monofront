@@ -26,6 +26,7 @@ import { ErrorBoundary, ServiceErrorHandler } from './Error';
 import { MainSkipLinks } from './SkipLinks/Main';
 import { CanonicalUrl } from './CanonicalUrl';
 import { Hreflang } from './Hreflang';
+import { SortAndFiltersModale } from './Consultation/ExploreFilters/FiltersAndSortModal';
 
 /**
  * Handles App Business Logic
@@ -34,8 +35,8 @@ export const AppContainer: FC = () => {
   const { dispatch, state } = useAppContext();
 
   const { device, country } = state.appConfig;
-  const { showDataPolicy } = state.modal;
-
+  const { showDataPolicy, showSort, showFilters } = state.modal;
+  const showFiltersOrSortModale = (showSort || showFilters) === true;
   const updateDeviceConfig = debounce(
     () => dispatch(updateDeviceInState(device)),
     DEBOUNCE_TIMER
@@ -59,6 +60,7 @@ export const AppContainer: FC = () => {
       <SessionExpirationWithCoockies>
         {hasCountry && <CookieModal />}
         {showDataPolicy && <PrivacyPolicyModal />}
+        {showFiltersOrSortModale && <SortAndFiltersModale />}
         <ServiceErrorHandler>
           <ErrorBoundary>
             {/** page_wrapper id is used to set page background color in usePageBackgroundColor hook */}

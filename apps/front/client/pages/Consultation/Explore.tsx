@@ -11,7 +11,7 @@ import { ThemeProvider } from 'styled-components';
 import { NOTIF, IDS } from '@make.org/types/enums';
 import { searchProposals } from '@make.org/utils/helpers/proposal';
 import { useParams } from 'react-router';
-import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
+import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { Pagination } from '@make.org/components/Pagination';
 import {
   trackDisplayNoResultsCard,
@@ -19,6 +19,7 @@ import {
 } from '@make.org/utils/services/Tracking';
 import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
+import { modalShowSort, modalShowFilters } from '@make.org/store/actions/modal';
 import { ProposalsList } from '../../app/Consultation/ProposalsList';
 import { Timeline } from '../../app/Consultation/Timeline';
 import { ParticipateNavigation } from '../../app/Consultation/Navigation/Participate';
@@ -26,7 +27,6 @@ import { ParticipateHighlights } from '../../app/Consultation/Highlights';
 import { ParticipateHeader } from '../../app/Consultation/Header';
 import { CitizenRegister } from '../../app/Consultation/CitizenRegister';
 import { FilterAndSort } from '../../app/Consultation/ExploreFilters';
-// import { SortAndFiltersCTA } from '../../app/Consultation/ExploreFilters/FilterAndSortPanel';
 import {
   ParticipateContentStyle,
   ParticipateInnerStyle,
@@ -36,6 +36,10 @@ import {
   ParticipateSidebarContentStyle,
   ExploreDescriptionStyle,
   ParticipateMainContentStyle,
+  FiltersAndSortCTAWrapperStyle,
+  FiltersAndSortCTAStyle,
+  SvgArrowsGroupMobile,
+  SvgFiltersMobile,
 } from './style';
 
 const ExplorePage: FC = () => {
@@ -43,7 +47,7 @@ const ExplorePage: FC = () => {
   const params: { country: string; pageId: string } = useParams();
   const { country, pageId } = params;
   const { device } = state.appConfig;
-  const isDesktop = matchDesktopDevice(device);
+  const isMobile = matchMobileDevice(device);
   const question: QuestionType = selectCurrentQuestion(state);
   const [proposals, setProposals] = useState<ProposalType[]>([]);
   const [isLoading, setLoading] = useState<boolean>(true);
@@ -130,6 +134,18 @@ const ExplorePage: FC = () => {
       <ParticipateHighlights />
       <div id={IDS.CONSULTATION_NAVIGATION} />
       <ParticipateNavigation />
+      {isMobile && (
+        <FiltersAndSortCTAWrapperStyle>
+          <FiltersAndSortCTAStyle onClick={() => dispatch(modalShowSort())}>
+            <SvgArrowsGroupMobile aria-hidden focusable="false" />
+            {i18n.t('consultation.explore.sort')}
+          </FiltersAndSortCTAStyle>
+          <FiltersAndSortCTAStyle onClick={() => dispatch(modalShowFilters())}>
+            <SvgFiltersMobile aria-hidden focusable="false" />
+            {i18n.t('consultation.explore.filter')}
+          </FiltersAndSortCTAStyle>
+        </FiltersAndSortCTAWrapperStyle>
+      )}
       <ParticipateContentStyle>
         <ExploreTitleStyle>
           {i18n.t('consultation.explore.title')}
@@ -157,16 +173,7 @@ const ExplorePage: FC = () => {
             )}
           </ParticipateMainContentStyle>
           <ParticipateSidebarContentStyle>
-            {isDesktop && <FilterAndSort />}
-            {/* // ) : (
-            //   <SortAndFiltersCTA
-            //     filterAndSortValues={filterAndSortValues}
-            //     setFilterAndSortValues={setFilterAndSortValues}
-            //     keywords={keyword}
-            //     handleSubmit={handleSubmit}
-            //     handleReset={handleReset}
-            //   />
-            // )} */}
+            {!isMobile && <FilterAndSort />}
           </ParticipateSidebarContentStyle>
         </ParticipateInnerStyle>
       </ParticipateContentStyle>

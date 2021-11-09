@@ -13,6 +13,10 @@ import {
   MODAL_SHOW_DATAPOLICY_LOGIN,
   MODAL_SHOW_DATAPOLICY_SOCIAL,
   MODAL_CLOSE_DATAPOLICY,
+  MODAL_SHOW_SORT,
+  MODAL_CLOSE_SORT,
+  MODAL_SHOW_FILTERS,
+  MODAL_CLOSE_FILTERS,
 } from '../../actionTypes';
 
 export const modalClose = (): ReducerAction => ({
@@ -75,4 +79,20 @@ export const modalShowDataPolicySocial = (
 
 export const modalCloseDataPolicy = (): ReducerAction => ({
   type: MODAL_CLOSE_DATAPOLICY,
+});
+
+export const modalShowSort = (): ReducerAction => ({
+  type: MODAL_SHOW_SORT,
+});
+
+export const modalCloseSort = (): ReducerAction => ({
+  type: MODAL_CLOSE_SORT,
+});
+
+export const modalShowFilters = (): ReducerAction => ({
+  type: MODAL_SHOW_FILTERS,
+});
+
+export const modalCloseFilters = (): ReducerAction => ({
+  type: MODAL_CLOSE_FILTERS,
 });

@@ -2,11 +2,9 @@ import styled from 'styled-components';
 import { color, typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
-import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import {
-  SvgFilterIcon,
   SvgSmallArrowUp,
   SvgArrowGroupUpDown,
   SvgFilter,
@@ -14,6 +12,7 @@ import {
   SvgLightning,
   SvgSmallClock,
 } from '@make.org/ui/Svg/elements';
+import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 
 export const FiltersWrapperStyle = styled(ColumnElementStyle)`
   width: 100%;
@@ -23,10 +22,13 @@ export const FiltersWrapperStyle = styled(ColumnElementStyle)`
 `;
 
 export const FilterBlockStyle = styled.div`
-  padding: 30px;
+  padding: 20px;
   margin-bottom: 30px;
   background-color: ${color.white};
   border-radius: 8px;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    padding: 30px;
+  }
 `;
 
 export const FiltersTitleStyle = styled.h3`
@@ -182,15 +184,17 @@ export const RedSubmitButtonWrapperStyle = styled.div`
   }
 `;
 
-export const FilterPanelStyle = styled(RedButtonStyle)`
-  position: fixed;
-  bottom: 0;
-  width: auto;
-  border-radius: 17.5px;
-  left: 40%;
-  z-index: 5;
+export const CloseApplyStyle = styled.button`
+  display: flex;
+  flex-direction: row-reverse;
+  color: ${color.greyDark};
+  border: none;
+  background: transparent;
+  padding: 20px 0px 0px 20px;
 `;
 
-export const SvgFilterPanelStyle = styled(SvgFilterIcon)`
-  margin-right: 12px;
+export const FiltersAndSortRedButtonStyle = styled(RedButtonStyle)`
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 0;
 `;

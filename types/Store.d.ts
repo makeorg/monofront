@@ -138,6 +138,8 @@ export type StateModal = {
   readonly showExpirationSession: boolean;
   readonly showDataPolicy: boolean;
   readonly showCookies: boolean;
+  readonly showSort: boolean;
+  readonly showFilters: boolean;
   readonly contentType: keyof typeof MODAL_TYPES | undefined;
   readonly focusAfterClose: boolean;
   readonly extraProps: any;

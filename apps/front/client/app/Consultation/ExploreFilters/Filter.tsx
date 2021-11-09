@@ -3,6 +3,7 @@ import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
 import { useParams, useHistory } from 'react-router';
 import { getExploreLink } from '@make.org/utils/helpers/url';
+import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import {
   TypeFiltersValues,
   QuestionKeywordType,
@@ -26,6 +27,10 @@ import { FilterSeparationLineStyle } from '@make.org/ui/elements/SeparatorsEleme
 import { FILTER_ORGANISATION } from '@make.org/utils/constants/explore';
 import { checkIsFeatureActivated } from '@make.org/utils/helpers/featureFlipping';
 import { FEATURE_FLIPPING } from '@make.org/types/enums';
+import {
+  modalCloseFilters,
+  modalCloseSort,
+} from '@make.org/store/actions/modal';
 import { getUpdatedFiltersValues } from '../../../helper/filterAndSort';
 import {
   ResetLinkStyle,
@@ -41,17 +46,22 @@ import {
   SvgFilterBy,
   FilterBlockStyle,
   SvgArrowUp,
+  FiltersAndSortRedButtonStyle,
 } from './style';
 
 export const FiltersComponent: React.FC = () => {
   const [keywordsCTA, setKeywordsCTA] = useState<QuestionKeywordType[]>([]);
   const { state, dispatch } = useAppContext();
+  const { country, device } = state.appConfig;
   const { keywords, isNotVoted, userType } = state.filterAndSort;
   const currentFiltersValues = { keywords, isNotVoted, userType };
   const currentKeyword = keywords;
   const history = useHistory();
-  const { country, pageId } = useParams<{ country: string; pageId: string }>();
+  const { pageId } = useParams<{ pageId: string }>();
   const question: QuestionType = selectCurrentQuestion(state);
+  const isMobile = matchMobileDevice(device);
+  const { showSort } = state.modal;
+  const isSort = showSort === true;
 
   const isKeywordActive: boolean = checkIsFeatureActivated(
     FEATURE_FLIPPING.CONSULTATION_KEYWORD_ACTIVE,
@@ -94,6 +104,20 @@ export const FiltersComponent: React.FC = () => {
 
     trackClickFilter('keyword');
     handleFiltersChange('keywords', key);
+  };
+
+  // handles reset filters
+  const handleReset = () => {
+    if (isMobile) {
+      if (isSort) {
+        dispatch(modalCloseSort());
+        dispatch(resetFilters());
+      } else {
+        dispatch(modalCloseFilters());
+        dispatch(resetFilters());
+      }
+    }
+    dispatch(resetFilters());
   };
 
   useEffect(() => {
@@ -192,14 +216,23 @@ export const FiltersComponent: React.FC = () => {
           </CheckboxLabelStyle>
         </FilterByElementStyle>
       </FilterByWrapperStyle>
+      {isMobile && (
+        <FiltersAndSortRedButtonStyle
+          onClick={() =>
+            isSort ? dispatch(modalCloseSort()) : dispatch(modalCloseFilters())
+          }
+        >
+          {i18n.t('consultation.explore.filter_and_close')}
+        </FiltersAndSortRedButtonStyle>
+      )}
       <ResetLinkButtonWrapperStyle>
         <ResetLinkStyle
-          onClick={() => {
-            dispatch(resetFilters());
-          }}
+          onClick={() => handleReset()}
           to={getExploreLink(country, question.slug, 1)}
         >
-          {i18n.t('consultation.explore.reset_filters')}
+          {isMobile
+            ? i18n.t('consultation.explore.reset_filters_and_close')
+            : i18n.t('consultation.explore.reset_filters')}
         </ResetLinkStyle>
       </ResetLinkButtonWrapperStyle>
     </FilterBlockStyle>
