@@ -42,7 +42,7 @@ import {
   KeywordsItemWrapperStyle,
   FilterByWrapperStyle,
   FilterByElementStyle,
-  FiltersTitleStyle,
+  FiltersAndSortTitleStyle,
   SvgFilterBy,
   FilterBlockStyle,
   SvgArrowUp,
@@ -128,10 +128,10 @@ export const FiltersComponent: React.FC = () => {
     <FilterBlockStyle>
       {isKeywordActive && (
         <>
-          <FiltersTitleStyle>
+          <FiltersAndSortTitleStyle>
             <SvgArrowUp aria-hidden focusable="false" />
             {i18n.t('consultation.cards.keywords.title')}
-          </FiltersTitleStyle>
+          </FiltersAndSortTitleStyle>
           {keywordsCTA.length > 1 && (
             <KeywordsListWrapperStyle>
               {keywordsCTA.map(keyword => (
@@ -169,10 +169,10 @@ export const FiltersComponent: React.FC = () => {
           <FilterSeparationLineStyle />
         </>
       )}
-      <FiltersTitleStyle>
+      <FiltersAndSortTitleStyle>
         <SvgFilterBy aria-hidden focusable="false" />
         {i18n.t('consultation.explore.filter_by')}
-      </FiltersTitleStyle>
+      </FiltersAndSortTitleStyle>
       <FilterByWrapperStyle>
         <FilterByElementStyle>
           <CheckboxLabelStyle htmlFor="isNotVoted" noFontSizeChange>

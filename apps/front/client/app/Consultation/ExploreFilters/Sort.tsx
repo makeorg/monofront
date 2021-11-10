@@ -25,7 +25,7 @@ import {
   RadioListWrapperStyle,
   RadioItemWrapperStyle,
   FilterBlockStyle,
-  FiltersTitleStyle,
+  FiltersAndSortTitleStyle,
   SvgArrowsGroup,
   FiltersAndSortRedButtonStyle,
 } from './style';
@@ -37,7 +37,9 @@ export const SortComponent: React.FC = () => {
   const { country, device } = state.appConfig;
   const currentSortValues = { sortAlgorithm, sort };
   const { pageId } = useParams<{ pageId: string }>();
-  const [currentSort, setCurrentSort] = useState<string>(SORT_RECENT);
+  const [currentSort, setCurrentSort] = useState<string>(
+    sortAlgorithm || SORT_RECENT
+  );
   const question: QuestionType = selectCurrentQuestion(state);
   const isMobile = matchMobileDevice(device);
   const { showSort } = state.modal;
@@ -60,10 +62,10 @@ export const SortComponent: React.FC = () => {
 
   return (
     <FilterBlockStyle>
-      <FiltersTitleStyle>
+      <FiltersAndSortTitleStyle>
         <SvgArrowsGroup aria-hidden focusable="false" />
         {i18n.t('consultation.explore.sort_by')}
-      </FiltersTitleStyle>
+      </FiltersAndSortTitleStyle>
       <RadioListWrapperStyle defaultValue={SORT_RECENT}>
         {SORT_ITEMS.map(
           (item: { name: string; icon: JSX.Element; value?: string }) => (

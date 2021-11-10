@@ -185,9 +185,11 @@ export const NoProposalWrapperStyle = styled.div`
 
 export const ResetLinkButtonWrapperStyle = styled.div`
   display: flex;
-  margin: 15px auto 0;
+  margin-top: 15px;
+  justify-content: center;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin: 30px 0 0;
+    margin-top: 30px;
+    justify-content: flex-start;
   }
 `;
 export const ResetLinkStyle = styled(Link)`
@@ -274,14 +276,12 @@ export const FiltersAndSortCTAStyle = styled.button`
   background-color: ${color.white};
 `;
 
-export const SvgArrowsGroupMobile = styled(SvgArrowGroupUpDown)`
+export const SvgArrowsGroupDesktopMobile = styled(SvgArrowGroupUpDown)`
   width: 8.5px;
   height: 12px;
   margin-right: 12px;
 `;
 
 export const SvgFiltersMobile = styled(SvgFiltersMobileIcon)`
-  width: 12px;
-  height: 11.25px;
   margin-right: 10px;
 `;

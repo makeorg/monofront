@@ -20,6 +20,7 @@ import {
 import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
 import { modalShowSort, modalShowFilters } from '@make.org/store/actions/modal';
+import { SvgArrowsGroup } from '../../app/Consultation/ExploreFilters/style';
 import { ProposalsList } from '../../app/Consultation/ProposalsList';
 import { Timeline } from '../../app/Consultation/Timeline';
 import { ParticipateNavigation } from '../../app/Consultation/Navigation/Participate';
@@ -38,7 +39,6 @@ import {
   ParticipateMainContentStyle,
   FiltersAndSortCTAWrapperStyle,
   FiltersAndSortCTAStyle,
-  SvgArrowsGroupMobile,
   SvgFiltersMobile,
 } from './style';
 
@@ -137,7 +137,7 @@ const ExplorePage: FC = () => {
       {isMobile && (
         <FiltersAndSortCTAWrapperStyle>
           <FiltersAndSortCTAStyle onClick={() => dispatch(modalShowSort())}>
-            <SvgArrowsGroupMobile aria-hidden focusable="false" />
+            <SvgArrowsGroup aria-hidden focusable="false" />
             {i18n.t('consultation.explore.sort')}
           </FiltersAndSortCTAStyle>
           <FiltersAndSortCTAStyle onClick={() => dispatch(modalShowFilters())}>

@@ -90,3 +90,4 @@ export { SvgFilterIcon } from './FilterIcon';
 export { SvgSmallLogo } from './SmallLogo';
 export { SvgBirthday } from './Birthday';
 export { SvgFiltersMobileIcon } from './FiltersMobileIcon';
+export { SvgRightGreyArrow } from './RightThinGreyArrow';

@@ -8,6 +8,7 @@ export const NavigationWrapperStyle = styled.div`
   top: 0;
   z-index: 2;
   background-color: ${color.white};
+  border-bottom: 2px solid ${color.greyLighter};
 `;
 
 export const NavigationInnerStyle = styled.div`

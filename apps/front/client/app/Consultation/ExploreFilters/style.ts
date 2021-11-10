@@ -11,6 +11,7 @@ import {
   SvgLike,
   SvgLightning,
   SvgSmallClock,
+  SvgRightGreyArrow,
 } from '@make.org/ui/Svg/elements';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 
@@ -23,15 +24,16 @@ export const FiltersWrapperStyle = styled(ColumnElementStyle)`
 
 export const FilterBlockStyle = styled.div`
   padding: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   background-color: ${color.white};
   border-radius: 8px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     padding: 30px;
+    margin-bottom: 30px;
   }
 `;
 
-export const FiltersTitleStyle = styled.h3`
+export const FiltersAndSortTitleStyle = styled.h3`
   display: inline-flex;
   align-items: center;
   font-family: ${MakeFonts.CircularStandardBold};
@@ -142,10 +144,14 @@ export const SvgArrowUp = styled(SvgSmallArrowUp)`
 `;
 
 export const SvgArrowsGroup = styled(SvgArrowGroupUpDown)`
-  width: 13px;
-  height: 22px;
-  margin-right: 12px;
-  margin-left: 2px;
+  width: 11px;
+  height: 16px;
+  margin-right: 11px;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    width: 13px;
+    height: 22px;
+    margin-left: 2px;
+  }
 `;
 
 export const SvgFilterBy = styled(SvgFilter)`
@@ -187,14 +193,21 @@ export const RedSubmitButtonWrapperStyle = styled.div`
 export const CloseApplyStyle = styled.button`
   display: flex;
   flex-direction: row-reverse;
+  align-items: center;
+  width: 100%;
   color: ${color.greyDark};
   border: none;
   background: transparent;
   padding: 20px 0px 0px 20px;
+  padding-right: 20px;
 `;
 
 export const FiltersAndSortRedButtonStyle = styled(RedButtonStyle)`
   display: flex;
   justify-content: center;
   margin: 20px auto 0;
+`;
+
+export const SvgCloseApplyArrow = styled(SvgRightGreyArrow)`
+  margin-left: 10px;
 `;
