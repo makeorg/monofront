@@ -55,12 +55,10 @@ import {
   ROUTE_STATIC_DATA_DE,
   ROUTE_STATIC_CONTACT_DE,
   ROUTE_STATIC_A11Y_DE,
-  isExplorePage,
 } from '@make.org/utils/routes';
 import Cookies from 'universal-cookie';
 import { StateUserCookiesPreferences } from '@make.org/types';
 import { TwitterUniversalTag } from '@make.org/utils/services/Trackers/TwitterTracking';
-import { resetFilters } from '@make.org/store/actions/filterAndSort';
 import { usePageBackgoundColor } from '../hooks/usePageBackgroundColor';
 import { QuestionWrapper } from '../pages/Consultation/QuestionWrapper';
 
@@ -115,7 +113,7 @@ export const Routes: FC = () => {
   const preferencesCookies: StateUserCookiesPreferences = cookies.get(
     COOKIE.USER_PREFERENCES
   );
-  const { state, dispatch } = useAppContext();
+  const { state } = useAppContext();
   const location = useLocation();
   const { country } = state.appConfig;
   const { pathname } = location;
@@ -125,10 +123,6 @@ export const Routes: FC = () => {
   React.useEffect(() => {
     if (preferencesCookies?.twitter_tracking) {
       TwitterUniversalTag.pageView();
-    }
-    // reset Filter ans Sort State on Explore Page
-    if (!isExplorePage(location.pathname)) {
-      dispatch(resetFilters());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);

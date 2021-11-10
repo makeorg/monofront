@@ -1,3 +1,4 @@
+import { ParsedQuery, stringify } from 'query-string';
 import { matchPath, generatePath } from 'react-router';
 
 export const ROUTE_COUNTRY = '/:country(\\w{2})';
@@ -192,8 +193,14 @@ export const getPaginatedRoute = (
   path: string,
   country: string,
   pageId: number,
-  questionSlug?: string
-): string => generatePath(path, { country, pageId, questionSlug });
+  questionSlug?: string,
+  queryParams?: ParsedQuery<string>
+): string =>
+  generatePath(path, { country, pageId, questionSlug }).concat(
+    queryParams && Object.keys(queryParams).length > 0
+      ? `?${stringify(queryParams)}`
+      : ''
+  );
 
 export const isParticipatePage = (
   pathname: string,

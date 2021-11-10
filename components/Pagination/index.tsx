@@ -2,8 +2,12 @@ import React, { FC } from 'react';
 import i18n from 'i18next';
 import { getPaginatedRoute } from '@make.org/utils/routes';
 import { trackClickPageNumber } from '@make.org/utils/services/Tracking';
-import { useParams, useRouteMatch } from 'react-router';
+import { useLocation, useParams, useRouteMatch } from 'react-router';
 import { scrollToElementId, scrollToTop } from '@make.org/utils/helpers/styled';
+import { useAppContext } from '@make.org/store';
+import { QuestionType } from '@make.org/types';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { parse } from 'query-string';
 import {
   PaginationNavStyle,
   PaginationTextStyle,
@@ -17,31 +21,35 @@ type Props = {
   itemsPerPage: number;
   itemsTotal: number;
   scrollToId?: string;
-  questionSlug?: string;
 };
 
 export const Pagination: FC<Props> = ({
   itemsPerPage,
   itemsTotal,
   scrollToId,
-  questionSlug,
 }) => {
+  const { state } = useAppContext();
+  const question: QuestionType = selectCurrentQuestion(state);
   const params: { country: string; pageId: string } = useParams();
   const { country, pageId } = params;
   const { path } = useRouteMatch();
+  const { search } = useLocation();
+  const urlQueryParams = parse(search);
   const intPageId = JSON.parse(pageId);
   const pagesTotal = Math.ceil(itemsTotal / itemsPerPage);
   const previousPageUrl = getPaginatedRoute(
     path,
     country,
     intPageId - 1,
-    questionSlug
+    question && question.slug,
+    urlQueryParams
   );
   const nextPageUrl = getPaginatedRoute(
     path,
     country,
     intPageId + 1,
-    questionSlug
+    question && question.slug,
+    urlQueryParams
   );
 
   const paginateClick = () => {

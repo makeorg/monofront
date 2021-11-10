@@ -1,19 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
-import { useParams, useHistory } from 'react-router';
 import { getExploreLink } from '@make.org/utils/helpers/url';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
+import { useHistory, useLocation } from 'react-router';
 import {
   TypeFiltersValues,
   QuestionKeywordType,
   QuestionType,
 } from '@make.org/types';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
-import {
-  resetFilters,
-  updateFilters,
-} from '@make.org/store/actions/filterAndSort';
 import { SvgCheck } from '@make.org/ui/Svg/elements';
 import { trackClickFilter } from '@make.org/utils/services/Tracking';
 import { KEYWORD_THRESHOLD } from '@make.org/utils/constants/config';
@@ -31,7 +27,8 @@ import {
   modalCloseFilters,
   modalCloseSort,
 } from '@make.org/store/actions/modal';
-import { getUpdatedFiltersValues } from '../../../helper/filterAndSort';
+import { parse, stringify } from 'query-string';
+import { getUpdatedFiltersValues } from '../../../helpers/filterAndSort';
 import {
   ResetLinkStyle,
   ResetLinkButtonWrapperStyle,
@@ -53,11 +50,25 @@ export const FiltersComponent: React.FC = () => {
   const [keywordsCTA, setKeywordsCTA] = useState<QuestionKeywordType[]>([]);
   const { state, dispatch } = useAppContext();
   const { country, device } = state.appConfig;
-  const { keywords, isNotVoted, userType } = state.filterAndSort;
+  const history = useHistory();
+  const { search } = useLocation();
+  const urlQueryParams = parse(search);
+  const {
+    keywords,
+    isNotVoted,
+    userType,
+    sort,
+    sortAlgorithm,
+  }: {
+    keywords?: string;
+    isNotVoted?: boolean;
+    userType?: string;
+    sort?: string;
+    sortAlgorithm?: string;
+  } = urlQueryParams;
+  const currentSortValues = { sort, sortAlgorithm };
   const currentFiltersValues = { keywords, isNotVoted, userType };
   const currentKeyword = keywords;
-  const history = useHistory();
-  const { pageId } = useParams<{ pageId: string }>();
   const question: QuestionType = selectCurrentQuestion(state);
   const isMobile = matchMobileDevice(device);
   const { showSort } = state.modal;
@@ -79,19 +90,19 @@ export const FiltersComponent: React.FC = () => {
     }
   };
 
-  // handles filters values updates in state
+  // handles filters values updates in url
   const handleFiltersChange = (name: string, value?: string) => {
     const newFiltersValues: TypeFiltersValues = getUpdatedFiltersValues(
       currentFiltersValues,
       name,
       value
     );
-    dispatch(updateFilters(newFiltersValues));
-    // redirects to first page when changing filters and/or sort in pagination
-    // to remove when state in url params is done
-    if (pageId !== '1') {
-      history.push(getExploreLink(country, question.slug));
-    }
+
+    history.push({
+      // redirects to first page when changing filters
+      pathname: getExploreLink(country, question.slug),
+      search: stringify({ ...urlQueryParams, ...newFiltersValues }),
+    });
   };
 
   // helper for onClick keywords
@@ -106,25 +117,9 @@ export const FiltersComponent: React.FC = () => {
     handleFiltersChange('keywords', key);
   };
 
-  // handles close modal on sort and filter
-  const handleCloseModal = () => {
-    if (isSort) {
-      dispatch(modalCloseSort());
-    } else {
-      dispatch(modalCloseFilters());
-    }
-  };
-
-  // handles reset filters
-  const handleResetFilters = () => {
-    dispatch(resetFilters());
-    if (isMobile) {
-      dispatch(modalCloseFilters());
-    }
-  };
-
   useEffect(() => {
     getQuestionKeywords();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -185,14 +180,12 @@ export const FiltersComponent: React.FC = () => {
               name="isNotVoted"
               value={JSON.stringify(currentFiltersValues.isNotVoted)}
               onChange={() => {
-                handleFiltersChange(
-                  'isNotVoted',
-                  JSON.stringify(currentFiltersValues.isNotVoted)
-                );
+                handleFiltersChange('isNotVoted');
                 trackClickFilter('unvoted-proposals');
               }}
+              checked={!!currentFiltersValues.isNotVoted}
             />
-            <StyledCheckbox checked={currentFiltersValues.isNotVoted}>
+            <StyledCheckbox isChecked={currentFiltersValues.isNotVoted}>
               <SvgCheck />
             </StyledCheckbox>
             {i18n.t('consultation.explore.unvoted')}
@@ -209,9 +202,10 @@ export const FiltersComponent: React.FC = () => {
                 handleFiltersChange('userType', FILTER_ORGANISATION);
                 trackClickFilter('organizations-proposals');
               }}
+              checked={currentFiltersValues.userType !== undefined}
             />
             <StyledCheckbox
-              checked={currentFiltersValues.userType !== undefined}
+              isChecked={currentFiltersValues.userType !== undefined}
             >
               <SvgCheck />
             </StyledCheckbox>
@@ -220,14 +214,21 @@ export const FiltersComponent: React.FC = () => {
         </FilterByElementStyle>
       </FilterByWrapperStyle>
       {isMobile && (
-        <FiltersAndSortRedButtonStyle onClick={() => handleCloseModal()}>
+        <FiltersAndSortRedButtonStyle
+          onClick={
+            isSort
+              ? () => dispatch(modalCloseSort())
+              : () => dispatch(modalCloseFilters())
+          }
+        >
           {i18n.t('consultation.explore.filter_and_close')}
         </FiltersAndSortRedButtonStyle>
       )}
       <ResetLinkButtonWrapperStyle>
         <ResetLinkStyle
-          onClick={() => handleResetFilters()}
-          to={getExploreLink(country, question.slug, 1)}
+          // eslint-disable-next-line @typescript-eslint/no-empty-function
+          onClick={isMobile ? () => dispatch(modalCloseFilters()) : () => {}}
+          to={getExploreLink(country, question.slug, 1, currentSortValues)}
         >
           {isMobile
             ? i18n.t('consultation.explore.reset_filters_and_close')

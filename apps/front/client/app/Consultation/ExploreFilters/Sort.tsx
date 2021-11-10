@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
 import { useAppContext } from '@make.org/store';
-import { useParams, useHistory } from 'react-router';
+import { useHistory, useLocation } from 'react-router';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import i18n from 'i18next';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { trackClickSort } from '@make.org/utils/services/Tracking';
 import { SORT_RECENT } from '@make.org/utils/constants/explore';
-import { getExploreLink } from '@make.org/utils/helpers/url';
-import { TypeSortValues, QuestionType } from '@make.org/types';
+import { QuestionType, TypeSortValues } from '@make.org/types';
+import { parse, stringify } from 'query-string';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
-import { updateSort } from '@make.org/store/actions/filterAndSort';
 import {
   modalCloseFilters,
   modalCloseSort,
 } from '@make.org/store/actions/modal';
+import { getExploreLink } from '@make.org/utils/helpers/url';
 import {
   checkCurrentSort,
   SORT_ITEMS,
   getSortLabel,
   getUpdatedSortValues,
-} from '../../../helper/filterAndSort';
+} from '../../../helpers/filterAndSort';
 import {
   RadioAsTransparentButtonLabelStyle,
   RadioListWrapperStyle,
@@ -32,32 +32,33 @@ import {
 
 export const SortComponent: React.FC = () => {
   const { state, dispatch } = useAppContext();
-  const history = useHistory();
-  const { sortAlgorithm, sort } = state.filterAndSort;
   const { country, device } = state.appConfig;
+  const history = useHistory();
+  const { search } = useLocation();
+  const urlQueryParams = parse(search);
+  const { sortAlgorithm, sort }: { sortAlgorithm?: string; sort?: string } =
+    urlQueryParams;
   const currentSortValues = { sortAlgorithm, sort };
-  const { pageId } = useParams<{ pageId: string }>();
-  const [currentSort, setCurrentSort] = useState<string>(
-    sortAlgorithm || SORT_RECENT
-  );
   const question: QuestionType = selectCurrentQuestion(state);
+  const [currentSort, setCurrentSort] = useState<string>(
+    sort || sortAlgorithm || SORT_RECENT
+  );
   const isMobile = matchMobileDevice(device);
   const { showSort } = state.modal;
   const isSort = showSort === true;
 
-  // handles sort values updates in state
+  // handles sort values updates in url
   const handleSortChange = (name: string, value?: string) => {
     const newSortValues: TypeSortValues = getUpdatedSortValues(
       currentSortValues,
       name,
       value
     );
-    dispatch(updateSort(newSortValues));
-    // redirects to first page when changing filters and/or sort in pagination
-    // to remove when state in url params is done
-    if (pageId !== '1') {
-      history.push(getExploreLink(country, question.slug));
-    }
+    history.push({
+      // redirects to first page when changing sort
+      pathname: getExploreLink(country, question.slug),
+      search: stringify({ ...urlQueryParams, ...newSortValues }),
+    });
   };
 
   return (
@@ -82,7 +83,7 @@ export const SortComponent: React.FC = () => {
                   onChange={() => {
                     handleSortChange(item.name, item.value);
                     setCurrentSort(item.name);
-                    trackClickSort(item.name);
+                    trackClickSort(item.name.toLowerCase()); // lowercase is needed for sort values
                   }}
                   checked={checkCurrentSort(item.name, currentSort)}
                 />

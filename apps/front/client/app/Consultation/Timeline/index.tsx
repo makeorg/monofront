@@ -15,7 +15,7 @@ import {
   buildTimeline,
   getStepTitle,
   selectStep,
-} from '../../../helper/timeline';
+} from '../../../helpers/timeline';
 import {
   TimelineWrapperStyle,
   TimelineListWrapperStyle,

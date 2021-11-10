@@ -42,7 +42,7 @@ export const RegisterCheckBox: React.FC<Props> = ({
           onChange={handleChange}
           id="registerCheckbox"
         />
-        <StyledCheckbox checked={checked}>
+        <StyledCheckbox isChecked={checked}>
           <SvgCheck />
         </StyledCheckbox>
         <span>

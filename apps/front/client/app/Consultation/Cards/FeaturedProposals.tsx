@@ -14,6 +14,7 @@ import {
   ParticipateCardStyle,
   ParticipateCardAltTitleStyle,
 } from '@make.org/ui/elements/CardsElements';
+import { SORT_RECENT } from '@make.org/utils/constants/explore';
 import {
   FeaturedProposalItemStyle,
   ProposalContentStyle,
@@ -94,7 +95,9 @@ export const FeaturedProposals: FC<Props> = ({ question }) => {
         )}
       </>
       <ExploreLinkStyle
-        to={getExploreLink(country, question.slug, Number(pageId))}
+        to={getExploreLink(country, question.slug, Number(pageId), {
+          sort: SORT_RECENT,
+        })}
         onClick={handleClick}
       >
         {i18n.t('consultation.navigation.explore_desktop')}

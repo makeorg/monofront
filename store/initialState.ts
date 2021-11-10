@@ -12,7 +12,6 @@ import { appConfig_state } from './reducers/appConfig';
 import { questions_state } from './reducers/questions';
 import { views_state } from './reducers/views';
 import { proposals_state } from './reducers/proposals';
-import { filter_and_sort_state } from './reducers/filterAndSort';
 
 export const initialState: StateRoot = {
   appConfig: appConfig_state,
@@ -32,7 +31,6 @@ export const initialState: StateRoot = {
   partners: {},
   panel: panel_state,
   session: session_state,
-  filterAndSort: filter_and_sort_state,
 };
 
 export const createInitialState = (): StateRoot =>

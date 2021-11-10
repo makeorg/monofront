@@ -18,7 +18,7 @@ import { PrivacyPolicyModal } from '@make.org/components/PrivacyPolicyModal';
 import { CookieModal } from '@make.org/components/CookieModal';
 import { SecureExpiration } from '@make.org/components/Expiration/Secure';
 import { SessionExpirationWithCoockies } from '@make.org/components/Expiration/Session';
-import { updateDeviceInState } from '../helper/updateDeviceInState';
+import { updateDeviceInState } from '../helpers/updateDeviceInState';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { Routes } from './Routes';

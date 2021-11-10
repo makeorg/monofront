@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { IDS } from '@make.org/types/enums';
-import { getCurrentContainer } from '../../../../helper/consultation';
+import { getCurrentContainer } from '../../../../helpers/consultation';
 import {
   ResultCardStyle,
   ResultTitleWrapperStyle,

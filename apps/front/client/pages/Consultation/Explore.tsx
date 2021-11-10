@@ -10,7 +10,7 @@ import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selec
 import { ThemeProvider } from 'styled-components';
 import { NOTIF, IDS } from '@make.org/types/enums';
 import { searchProposals } from '@make.org/utils/helpers/proposal';
-import { useParams } from 'react-router';
+import { useParams, useLocation } from 'react-router';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { Pagination } from '@make.org/components/Pagination';
 import {
@@ -20,6 +20,7 @@ import {
 import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
 import { modalShowSort, modalShowFilters } from '@make.org/store/actions/modal';
+import { parse } from 'query-string';
 import { SvgArrowsGroup } from '../../app/Consultation/ExploreFilters/style';
 import { ProposalsList } from '../../app/Consultation/ProposalsList';
 import { Timeline } from '../../app/Consultation/Timeline';
@@ -46,6 +47,8 @@ const ExplorePage: FC = () => {
   const { state, dispatch } = useAppContext();
   const params: { country: string; pageId: string } = useParams();
   const { country, pageId } = params;
+  const { search } = useLocation();
+  const queryParamsValue = parse(search);
   const { device } = state.appConfig;
   const isMobile = matchMobileDevice(device);
   const question: QuestionType = selectCurrentQuestion(state);
@@ -65,6 +68,7 @@ const ExplorePage: FC = () => {
       sortAlgorithm,
       isNotVoted,
       userType,
+      sort,
     };
     const response = await searchProposals(
       country,
@@ -88,14 +92,14 @@ const ExplorePage: FC = () => {
         trackDisplayNoResultsCard();
       }
     }
-
     setLoading(false);
   };
 
+  // used to update proposals with queryParams and pageId
   useEffect(() => {
-    getProposals(state.filterAndSort);
+    getProposals(queryParamsValue);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state.filterAndSort]);
+  }, [pageId, search]);
 
   useEffect(() => {
     if (!question.canPropose) {
@@ -114,12 +118,6 @@ const ExplorePage: FC = () => {
   useEffect(() => {
     trackDisplayOperationPage();
   }, []);
-
-  useEffect(() => {
-    getProposals(state.filterAndSort);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pageId]);
 
   return (
     <ThemeProvider theme={question.theme}>
@@ -174,7 +172,6 @@ const ExplorePage: FC = () => {
                 itemsPerPage={PROPOSALS_LIMIT}
                 itemsTotal={proposalsTotal}
                 scrollToId={IDS.CONSULTATION_NAVIGATION}
-                questionSlug={question.slug}
               />
             )}
           </ParticipateMainContentStyle>

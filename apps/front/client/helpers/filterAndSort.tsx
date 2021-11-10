@@ -59,7 +59,7 @@ export const getUpdatedFiltersValues = (
     case 'isNotVoted':
       return {
         ...currentFiltersValues,
-        isNotVoted: !JSON.parse(value || 'false'),
+        isNotVoted: currentFiltersValues.isNotVoted ? undefined : false,
       };
     case 'userType':
       return {

@@ -211,13 +211,18 @@ export const getParticipateLink = (
 export const getExploreLink = (
   country: string,
   questionSlug: string,
-  pageId = 1
+  pageId = 1,
+  params?: Record<string, string | boolean | undefined>
 ): string =>
   generatePath(ROUTE_EXPLORE, {
     country,
     questionSlug,
     pageId,
-  });
+  }).concat(
+    params && Object.keys(params).length > 0
+      ? `?${queryString.stringify(params)}`
+      : ''
+  );
 
 /**
  * Get the results link

@@ -11,7 +11,7 @@ import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElemen
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { PARTNER } from '@make.org/types/enums';
 import { isResultsPage } from '@make.org/utils/routes';
-import { getCurrentLabel } from '../../../helper/consultation';
+import { getCurrentLabel } from '../../../helpers/consultation';
 import {
   Breadcrumbs,
   BreadcrumbsPagesType,

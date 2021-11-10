@@ -17,6 +17,7 @@ import {
   trackClickExploreTab,
   trackClickParticipateTab,
 } from '@make.org/utils/services/Tracking';
+import { SORT_RECENT } from '@make.org/utils/constants/explore';
 import {
   InnerPagesNavigation,
   PageNavigationType,
@@ -46,7 +47,9 @@ export const ParticipateNavigation: FC = () => {
         scrollToElementId(IDS.CONSULTATION_NAVIGATION);
         trackClickExploreTab();
       },
-      link: getExploreLink(country, question.slug),
+      link: getExploreLink(country, question.slug, 1, {
+        sort: SORT_RECENT,
+      }),
       label: isDesktop
         ? i18n.t('consultation.navigation.explore_desktop')
         : i18n.t('consultation.navigation.explore_mobile'),

@@ -24,7 +24,6 @@ import { questions_reducer } from './reducers/questions';
 import { notifications_reducer } from './reducers/notifications';
 import { views_reducer } from './reducers/views';
 import { session_reducer } from './reducers/session';
-import { filter_and_sort_reducer } from './reducers/filterAndSort';
 
 export const AppContext = createContext({
   state: initialState,
@@ -47,7 +46,6 @@ const rootReducer = combineReducers({
   modal: modal_reducer,
   panel: panel_reducer,
   session: session_reducer,
-  filterAndSort: filter_and_sort_reducer,
 });
 
 export const useAllReducers = (
