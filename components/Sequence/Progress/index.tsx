@@ -50,15 +50,22 @@ export const SequenceProgress: React.FC<{
             focusable="false"
           />
         </ProgressPreviousButtonStyle>
-        <ScreenReaderItemStyle aria-live="polite">
-          {i18n.t('sequence_progress.counter', {
-            current: index,
-            total,
-          })}
-        </ScreenReaderItemStyle>
-        <ProgressCounterStyle aria-hidden className={isWidget ? 'widget' : ''}>
-          {`${index}/${total}`}
-        </ProgressCounterStyle>
+        {!disabled && (
+          <>
+            <ScreenReaderItemStyle aria-live="polite">
+              {i18n.t('sequence_progress.counter', {
+                current: index,
+                total,
+              })}
+            </ScreenReaderItemStyle>
+            <ProgressCounterStyle
+              aria-hidden
+              className={isWidget ? 'widget' : ''}
+            >
+              {`${index}/${total}`}
+            </ProgressCounterStyle>
+          </>
+        )}
         <ProgressBarWrapperStyle>
           <ProgressBarStyle percentWidth={pxToPercent(index, total)} />
         </ProgressBarWrapperStyle>
