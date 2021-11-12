@@ -52,7 +52,7 @@ EXPOSE 3000
 ############
 # TEST
 ############
-FROM cypress/browsers:node14.17.0-chrome91-ff89 AS app-test
+FROM cypress/browsers:node16.5.0-chrome94-ff93 AS app-test
 
 WORKDIR /home/app
 

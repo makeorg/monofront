@@ -23,14 +23,13 @@
     "start:widget": "yarn workspace @make.org/widget dev",
     "prod:widget": "yarn workspace @make.org/widget prod",
     "start:front": "yarn workspace @make.org/front dev",
-    "prod:front": "yarn workspace @make.org/front prod",
     "start:apiMock": "yarn workspace @make.org/apimock start",
-    "ci:front": "node -r dotenv/config yarn prod:front dotenv_config_path=.env.ci",
-    "ci": "env NODE_ENV=ci start-server-and-test prod:front http://localhost:9009",
-    "cypress:front:run": "./node_modules/.bin/cypress-tags run -e TAGS='@front' --config-file apps/front/cypress.json",
-    "cypress:widget:run": "./node_modules/.bin/cypress-tags run -e TAGS='@widget' --config-file apps/widget/cypress.json",
+    "cypress:front:run": "./node_modules/.bin/cypress-tags run -b chrome --headless -e TAGS='@front' --config-file apps/front/cypress.json",
+    "cypress:front:open": "cypress open --config-file apps/front/cypress.json",
+    "cypress:widget:run": "./node_modules/.bin/cypress-tags run -b chrome --headless -e TAGS='@widget' --config-file apps/widget/cypress.json",
     "cypress:widget:open": "cypress open --config-file apps/widget/cypress.json",
-    "cypress:front:open": "cypress open --config-file apps/front/cypress.json"		
+    "ci:cypress:front": "start-server-and-test 'yarn workspace @make.org/front server:test' 9009 'yarn cypress:front:run'",
+    "ci:cypress:widget": "start-server-and-test 'yarn workspace @make.org/widget server:test' 9008 'yarn cypress:widget:run'"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.3",

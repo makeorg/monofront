@@ -138,6 +138,18 @@ stages:
       [ "${status}" != 'succeeded' ] && { echo -e "Job ${job_id} has ${status}."; exit 2; };
       echo "Job ${job_id} has ${status}.";
 
+.e2e:
+  image: cypress/browsers:node16.5.0-chrome94-ff93
+  variables:
+    CYPRESS_CACHE_FOLDER: '$CI_PROJECT_DIR/cache_cypress'
+  artifacts:
+    expire_in: 1 week
+    when: always
+    paths:
+      - cypress/screenshots
+      - cypress/videos
+      - cypress/coverage
+
 # Check
 lint:
   extends: .check
@@ -169,6 +181,24 @@ jscpd:
     paths:
       - reports
 
+e2e-front:
+  extends: 
+    - .check
+    - .e2e
+    - .front
+  script:
+    - yarn workspace @make.org/front build
+    - yarn ci:cypress:front
+
+e2e-widget:
+  extends:
+    - .check
+    - .e2e
+    - .widget
+  script:
+    - yarn workspace @make.org/widget build
+    - yarn ci:cypress:widget
+
 # Build
 build-make-front:
   extends:
@@ -180,6 +210,7 @@ build-make-widget:
     - .build
     - .widget
 
+    
 # Deploy
 deploy-front-preproduction:
   extends:

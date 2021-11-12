@@ -22,15 +22,6 @@ $ docker-compose -f docker-compose.dev.yaml up -d app_make_ssr
 # and go to https://localhost:3000
 ```
 
-Running cypress tests on local :
-
-```bash
-$ docker-compose -f docker-compose.dev.yaml --profile=app-test up
-# when api mock and front are running, start cypress on host :
-$ yarn cypress:front
-
-```
-
 ## Running functional tests
 
 Start test environment
