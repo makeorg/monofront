@@ -29,6 +29,14 @@ export const Hero: FC = () => {
   const hasActiveConsultations =
     homepage && homepage.currentQuestions.length > 0;
 
+  const { featuredQuestions, posts } = homepage || {
+    featuredQuestions: [],
+    posts: [],
+  };
+
+  const hasFeaturedQuestions = featuredQuestions?.length > 0;
+  const hasPosts = posts?.length > 0;
+
   return (
     <HeroWrapperStyle as="section" aria-labelledby="hero-title">
       <HeroContentStyle>
@@ -52,9 +60,10 @@ export const Hero: FC = () => {
                 <WhiteArrowDownIcon aria-hidden focusable="false" />
               </HeroRedButtonStyle>
             )}
-            {isFr && (
+            {isFr && hasFeaturedQuestions && hasPosts && (
               <HeroTransparentButtonStyle
-                to="#featured_questions"
+                as="a"
+                href="#featured_questions"
                 onClick={() => trackClickHomepageDiscover()}
                 data-cy-link="discover-great-causes"
               >
