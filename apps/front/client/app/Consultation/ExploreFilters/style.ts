@@ -211,3 +211,19 @@ export const FiltersAndSortRedButtonStyle = styled(RedButtonStyle)`
 export const SvgCloseApplyArrow = styled(SvgRightGreyArrow)`
   margin-left: 10px;
 `;
+
+export const customModalStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    padding: null,
+    transform: 'translate(-50%, -50%)',
+    borderRadius: '8px',
+    border: null,
+    zIndex: 10,
+    overflow: 'hidden',
+    minWidth: '355px',
+  },
+};

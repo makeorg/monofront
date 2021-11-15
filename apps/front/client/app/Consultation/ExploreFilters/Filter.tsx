@@ -106,18 +106,21 @@ export const FiltersComponent: React.FC = () => {
     handleFiltersChange('keywords', key);
   };
 
-  // handles reset filters
-  const handleReset = () => {
-    if (isMobile) {
-      if (isSort) {
-        dispatch(modalCloseSort());
-        dispatch(resetFilters());
-      } else {
-        dispatch(modalCloseFilters());
-        dispatch(resetFilters());
-      }
+  // handles close modal on sort and filter
+  const handleCloseModal = () => {
+    if (isSort) {
+      dispatch(modalCloseSort());
+    } else {
+      dispatch(modalCloseFilters());
     }
+  };
+
+  // handles reset filters
+  const handleResetFilters = () => {
     dispatch(resetFilters());
+    if (isMobile) {
+      dispatch(modalCloseFilters());
+    }
   };
 
   useEffect(() => {
@@ -217,17 +220,13 @@ export const FiltersComponent: React.FC = () => {
         </FilterByElementStyle>
       </FilterByWrapperStyle>
       {isMobile && (
-        <FiltersAndSortRedButtonStyle
-          onClick={() =>
-            isSort ? dispatch(modalCloseSort()) : dispatch(modalCloseFilters())
-          }
-        >
+        <FiltersAndSortRedButtonStyle onClick={() => handleCloseModal()}>
           {i18n.t('consultation.explore.filter_and_close')}
         </FiltersAndSortRedButtonStyle>
       )}
       <ResetLinkButtonWrapperStyle>
         <ResetLinkStyle
-          onClick={() => handleReset()}
+          onClick={() => handleResetFilters()}
           to={getExploreLink(country, question.slug, 1)}
         >
           {isMobile

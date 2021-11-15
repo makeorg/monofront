@@ -4,7 +4,6 @@ import { SvgPropsType } from '@make.org/types';
 export const SvgRightGreyArrow: React.FC<SvgPropsType> = (
   props: SvgPropsType
 ) => (
-  // eslint-disable-next-line react/jsx-props-no-spreading
   <svg
     width="12"
     height="7"

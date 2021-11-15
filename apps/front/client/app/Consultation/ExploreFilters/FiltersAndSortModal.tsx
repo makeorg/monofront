@@ -7,7 +7,11 @@ import {
   modalCloseFilters,
   modalCloseSort,
 } from '@make.org/store/actions/modal';
-import { CloseApplyStyle, SvgCloseApplyArrow } from './style';
+import {
+  CloseApplyStyle,
+  customModalStyles,
+  SvgCloseApplyArrow,
+} from './style';
 import { SortComponent } from './Sort';
 import { FiltersComponent } from './Filter';
 
@@ -15,22 +19,6 @@ import { FiltersComponent } from './Filter';
 ReactModal.setAppElement('#app');
 
 export const SortAndFiltersModale: React.FC = () => {
-  const customStyles = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      padding: null,
-      transform: 'translate(-50%, -50%)',
-      borderRadius: '8px',
-      border: null,
-      zIndex: 10,
-      overflow: 'hidden',
-      minWidth: '355px',
-    },
-  };
-
   const { dispatch, state } = useAppContext();
   const { device } = state.appConfig;
   const isMobile = matchMobileDevice(device);
@@ -39,7 +27,11 @@ export const SortAndFiltersModale: React.FC = () => {
 
   if (isMobile) {
     return (
-      <ReactModal isOpen style={customStyles} overlayClassName="modal-overlay">
+      <ReactModal
+        isOpen
+        style={customModalStyles}
+        overlayClassName="modal-overlay"
+      >
         <>
           <CloseApplyStyle
             onClick={() =>
