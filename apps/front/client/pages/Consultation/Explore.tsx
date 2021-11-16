@@ -136,11 +136,17 @@ const ExplorePage: FC = () => {
       <ParticipateNavigation />
       {isMobile && (
         <FiltersAndSortCTAWrapperStyle>
-          <FiltersAndSortCTAStyle onClick={() => dispatch(modalShowSort())}>
+          <FiltersAndSortCTAStyle
+            type="button"
+            onClick={() => dispatch(modalShowSort())}
+          >
             <SvgArrowsGroup aria-hidden focusable="false" />
             {i18n.t('consultation.explore.sort')}
           </FiltersAndSortCTAStyle>
-          <FiltersAndSortCTAStyle onClick={() => dispatch(modalShowFilters())}>
+          <FiltersAndSortCTAStyle
+            type="button"
+            onClick={() => dispatch(modalShowFilters())}
+          >
             <SvgFiltersMobile aria-hidden focusable="false" />
             {i18n.t('consultation.explore.filter')}
           </FiltersAndSortCTAStyle>
