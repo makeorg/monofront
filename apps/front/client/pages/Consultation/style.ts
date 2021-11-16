@@ -273,6 +273,7 @@ export const FiltersAndSortCTAStyle = styled.button`
   text-transform: uppercase;
   border: none;
   font-family: ${MakeFonts.TradeGothicBoldCondensed};
+  color: ${color.black};
   background-color: ${color.white};
 `;
 

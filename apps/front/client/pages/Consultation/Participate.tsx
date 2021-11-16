@@ -110,8 +110,8 @@ const ParticipatePage: FC = () => {
       />
       <ParticipateHeader />
       {!isDesktop && <MobileAbout />}
-      <ParticipateHighlights />
       <div id={IDS.CONSULTATION_NAVIGATION} />
+      <ParticipateHighlights />
       <ParticipateNavigation />
       <ParticipateContentStyle>
         <ParticipateTitleStyle>
