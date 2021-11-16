@@ -23,7 +23,10 @@ import { TRANSLATION_NAMESPACE } from '@make.org/utils/i18n/constants';
 import { StateRoot } from '@make.org/types';
 import { Request, Response } from 'express';
 import { Cookie } from 'universal-cookie';
-import { getLanguageFromCountryCode } from '@make.org/utils/helpers/countries';
+import {
+  getLanguageFromCountryCode,
+  setLanguage,
+} from '@make.org/utils/helpers/countries';
 import deepFreeze from 'deep-freeze';
 import { getLoggerInstance } from '@make.org/utils/helpers/logger';
 import { WIDGET_CLIENT_DIR } from './paths';
@@ -108,6 +111,7 @@ export const reactRender = async (
   };
 
   const language = getLanguageFromCountryCode(country || DEFAULT_COUNTRY);
+  setLanguage(language, true);
 
   const state: StateRoot = {
     ...initialState,
