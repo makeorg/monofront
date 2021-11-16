@@ -275,6 +275,19 @@ export const FiltersAndSortCTAStyle = styled.button`
   font-family: ${MakeFonts.TradeGothicBoldCondensed};
   color: ${color.black};
   background-color: ${color.white};
+  color: ${color.black};
+`;
+
+export const FiltersCounterStyle = styled.span`
+  margin-left: 5px;
+  min-width: 20px;
+  line-height: 20px;
+  color: ${color.white};
+  font-family: ${MakeFonts.TradeGothicBoldCondensed};
+  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  background-color: ${color.brandSecondary};
+  text-align: center;
+  border-radius: 30px;
 `;
 
 export const SvgArrowsGroupDesktopMobile = styled(SvgArrowGroupUpDown)`

@@ -41,6 +41,7 @@ import {
   FiltersAndSortCTAWrapperStyle,
   FiltersAndSortCTAStyle,
   SvgFiltersMobile,
+  FiltersCounterStyle,
 } from './style';
 
 const ExplorePage: FC = () => {
@@ -95,6 +96,22 @@ const ExplorePage: FC = () => {
     setLoading(false);
   };
 
+  const countSelectedFilter = (): number => {
+    const filtersValue = [];
+
+    if (queryParamsValue.keywords) {
+      filtersValue.push(queryParamsValue.keywords);
+    }
+    if (queryParamsValue.isNotVoted) {
+      filtersValue.push(queryParamsValue.isNotVoted);
+    }
+    if (queryParamsValue.userType) {
+      filtersValue.push(queryParamsValue.userType);
+    }
+
+    return filtersValue.length;
+  };
+
   // used to update proposals with queryParams and pageId
   useEffect(() => {
     getProposals(queryParamsValue);
@@ -147,6 +164,9 @@ const ExplorePage: FC = () => {
           >
             <SvgFiltersMobile aria-hidden focusable="false" />
             {i18n.t('consultation.explore.filter')}
+            {countSelectedFilter() > 0 && (
+              <FiltersCounterStyle>{countSelectedFilter()}</FiltersCounterStyle>
+            )}
           </FiltersAndSortCTAStyle>
         </FiltersAndSortCTAWrapperStyle>
       )}
