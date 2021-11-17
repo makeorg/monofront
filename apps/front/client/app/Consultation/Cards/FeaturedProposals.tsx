@@ -26,7 +26,7 @@ type Props = {
 };
 
 export const FeaturedProposals: FC<Props> = ({ question }) => {
-  const { country, pageId } = useParams<{ country: string; pageId: string }>();
+  const { country } = useParams<{ country: string; pageId: string }>();
   const [featuredProposals, setFeaturedProposals] = useState<ProposalType[]>(
     []
   );
@@ -95,7 +95,7 @@ export const FeaturedProposals: FC<Props> = ({ question }) => {
         )}
       </>
       <ExploreLinkStyle
-        to={getExploreLink(country, question.slug, Number(pageId), {
+        to={getExploreLink(country, question.slug, 1, {
           sort: SORT_RECENT,
         })}
         onClick={handleClick}

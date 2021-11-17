@@ -59,7 +59,9 @@ import {
 export const A11yDE: FC = () => {
   const { state } = useAppContext();
   const { country, language } = state.appConfig;
-
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  const FRONT_URL: string = env.frontUrl() || window.FRONT_URL;
   return (
     <>
       <MetaTags
@@ -80,8 +82,8 @@ export const A11yDE: FC = () => {
         </StaticParagraphStyle>
         <StaticParagraphStyle>
           Diese Erklärung zur Barrierefreiheit bezieht sich auf{' '}
-          <RedHTMLLinkElementStyle href={env.frontUrl()}>
-            {env.frontUrl()}
+          <RedHTMLLinkElementStyle href={FRONT_URL}>
+            {FRONT_URL}
           </RedHTMLLinkElementStyle>
           .
         </StaticParagraphStyle>
@@ -206,51 +208,51 @@ export const A11yDE: FC = () => {
               <StaticSquareListItemStyle>
                 {'Startseite Frankreich : '}
                 <RedLinkStyle to={getHomeLink('FR')}>
-                  {env.frontUrl() + getHomeLink('FR')}
+                  {FRONT_URL + getHomeLink('FR')}
                 </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Startseite Großbritannien : '}
                 <RedLinkStyle to={getHomeLink('GB')}>
-                  {env.frontUrl() + getHomeLink('GB')}
+                  {FRONT_URL + getHomeLink('GB')}
                 </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Seite zum Durchsuchen von Konsultationen : '}
                 <RedLinkStyle to={getBrowseConsultationsLink('FR')}>
-                  {env.frontUrl() + getBrowseConsultationsLink('FR')}
+                  {FRONT_URL + getBrowseConsultationsLink('FR')}
                 </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Ergebnisse der Seitensuche : '}
                 <RedLinkStyle to={getBrowseResultsLink('FR')}>
-                  {env.frontUrl() + getBrowseResultsLink('FR')}
+                  {FRONT_URL + getBrowseResultsLink('FR')}
                 </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Konsultationsseite : '}
-                {env.frontUrl() + getParticipateLink('FR', 'dynamicslug')}
+                {FRONT_URL + getParticipateLink('FR', 'dynamicslug')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Vorschlagsseite in Reihenfolge : '}
-                {env.frontUrl() + getSequenceLink('FR', 'dynamicslug')}
+                {FRONT_URL + getSequenceLink('FR', 'dynamicslug')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Ergebnisseite einer Abfrage : '}
-                {env.frontUrl() + getResultsLink('FR', 'dynamicslug')}
+                {FRONT_URL + getResultsLink('FR', 'dynamicslug')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Top-Ideen-Seite einer Beratung : '}
-                {env.frontUrl() + getTopIdeasLink('FR', 'dynamicslug')}
+                {FRONT_URL + getTopIdeasLink('FR', 'dynamicslug')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Detailseite einer Top-Idee für eine Beratung : '}
-                {env.frontUrl() +
+                {FRONT_URL +
                   getTopIdeaDetailsLink('FR', 'dynamicslug', 'ideaId')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Vorschlagsseite : '}
-                {env.frontUrl() +
+                {FRONT_URL +
                   getProposalLink(
                     'FR',
                     'dynamicslug',
@@ -260,47 +262,47 @@ export const A11yDE: FC = () => {
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Seite zum Zurücksetzen des Passworts : '}
-                {env.frontUrl() +
+                {FRONT_URL +
                   getPasswordRecoveryLink('FR', 'userId', 'resetToken')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Benutzerprofilseite : '}
-                {env.frontUrl() + getRouteProfile('FR')}
+                {FRONT_URL + getRouteProfile('FR')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Seite zum Bearbeiten des Benutzerprofils : '}
-                {env.frontUrl() + getRouteProfileEdit('FR')}
+                {FRONT_URL + getRouteProfileEdit('FR')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Seite der Benutzer-Vorschlagsliste : '}
-                {env.frontUrl() + getRouteProfileProposals('FR')}
+                {FRONT_URL + getRouteProfileProposals('FR')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 Seite der Liste mit den Lieblingsvorschlägen des Benutzers :
-                {env.frontUrl() + getRouteProfileFavourites('FR')}
+                {FRONT_URL + getRouteProfileFavourites('FR')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Meinungsseite zur Persönlichkeit : '}
-                {env.frontUrl() + getRouteProfileOpinions('FR')}
+                {FRONT_URL + getRouteProfileOpinions('FR')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Öffentliche Profilseite einer Persönlichkeit : '}
-                {env.frontUrl() + getPersonalityProfileLink('FR', 'userId')}
+                {FRONT_URL + getPersonalityProfileLink('FR', 'userId')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Öffentliches Profil Organisation Vorschlagsseite : '}
-                {env.frontUrl() + getRouteOrganisationProposals('FR', 'userId')}
+                {FRONT_URL + getRouteOrganisationProposals('FR', 'userId')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {
                   'Abstimmungsseite eines öffentlichen Profils einer Organisation : '
                 }
-                {env.frontUrl() + getRouteOrganisationVotes('FR', 'userId')}
+                {FRONT_URL + getRouteOrganisationVotes('FR', 'userId')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Suchergebnisse Seite : '}
                 <RedLinkStyle to={getRouteSearch('FR', 'accessibilité')}>
-                  {env.frontUrl() + getRouteSearch('FR', 'accessibilité')}
+                  {FRONT_URL + getRouteSearch('FR', 'accessibilité')}
                 </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
@@ -308,8 +310,7 @@ export const A11yDE: FC = () => {
                 <RedLinkStyle
                   to={getRouteSearchProposals('FR', 'accessibilité')}
                 >
-                  {env.frontUrl() +
-                    getRouteSearchProposals('FR', 'accessibilité')}
+                  {FRONT_URL + getRouteSearchProposals('FR', 'accessibilité')}
                 </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
@@ -317,45 +318,43 @@ export const A11yDE: FC = () => {
                 <RedLinkStyle
                   to={getRouteSearchOrganisations('FR', 'association')}
                 >
-                  {env.frontUrl() +
-                    getRouteSearchOrganisations('FR', 'association')}
+                  {FRONT_URL + getRouteSearchOrganisations('FR', 'association')}
                 </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Suchergebnisseite für Beratungen : '}
                 <RedLinkStyle to={getRouteSearchConsultations('FR', 'comment')}>
-                  {env.frontUrl() +
-                    getRouteSearchConsultations('FR', 'comment')}
+                  {FRONT_URL + getRouteSearchConsultations('FR', 'comment')}
                 </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Rechtliche Seite : '}
                 <RedLinkStyle to={getLegalPageLink(country, language)}>
-                  {env.frontUrl() + getLegalPageLink(country, language)}
+                  {FRONT_URL + getLegalPageLink(country, language)}
                 </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Seite mit den Nutzungsbedingungen : '}
                 <RedLinkStyle to={getGTUPageLink(country, language)}>
-                  {env.frontUrl() + getGTUPageLink(country, language)}
+                  {FRONT_URL + getGTUPageLink(country, language)}
                 </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Seite zur Datenpolitik : '}
                 <RedLinkStyle to={getDataPageLink(country, language)}>
-                  {env.frontUrl() + getDataPageLink(country, language)}
+                  {FRONT_URL + getDataPageLink(country, language)}
                 </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Seite zur Erklärung der Barrierefreiheit : '}
                 <RedLinkStyle to={getA11YPageLink(country, language)}>
-                  {env.frontUrl() + getA11YPageLink(country, language)}
+                  {FRONT_URL + getA11YPageLink(country, language)}
                 </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Kontaktseite : '}
                 <RedLinkStyle to={getContactPageLink(country, language)}>
-                  {env.frontUrl() + getContactPageLink(country, language)}
+                  {FRONT_URL + getContactPageLink(country, language)}
                 </RedLinkStyle>
               </StaticSquareListItemStyle>
             </StaticSquareListStyle>

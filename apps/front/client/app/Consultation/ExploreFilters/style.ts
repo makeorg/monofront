@@ -68,6 +68,7 @@ export const TransparentButtonFilterStyle = styled.button`
   background-color: transparent;
   font-family: ${MakeFonts.CircularStandardBook};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  color: ${color.black};
   &.selected {
     background-color: ${color.brandPrimary};
     color: ${color.white};

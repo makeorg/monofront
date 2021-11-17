@@ -304,13 +304,13 @@ export const A11yFR: FC = () => {
               <StaticSquareListItemStyle>
                 {"Page d'accueil France : "}
                 <RedHTMLLinkElementStyle href={getHomeLink('FR')}>
-                  {env.frontUrl() + getHomeLink('FR')}
+                  {FRONT_URL + getHomeLink('FR')}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {"Page d'accueil Grande Bretagne : "}
                 <RedHTMLLinkElementStyle href={getHomeLink('GB')}>
-                  {env.frontUrl() + getHomeLink('GB')}
+                  {FRONT_URL + getHomeLink('GB')}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
@@ -318,39 +318,39 @@ export const A11yFR: FC = () => {
                 <RedHTMLLinkElementStyle
                   href={getBrowseConsultationsLink(country)}
                 >
-                  {env.frontUrl() + getBrowseConsultationsLink(country)}
+                  {FRONT_URL + getBrowseConsultationsLink(country)}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Page parcourir les résultats : '}
                 <RedHTMLLinkElementStyle href={getBrowseResultsLink(country)}>
-                  {env.frontUrl() + getBrowseResultsLink(country)}
+                  {FRONT_URL + getBrowseResultsLink(country)}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Page consultation : '}
-                {env.frontUrl() + getParticipateLink(country, 'dynamicslug')}
+                {FRONT_URL + getParticipateLink(country, 'dynamicslug')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Page de propositions en séquence : '}
-                {env.frontUrl() + getSequenceLink(country, 'dynamicslug')}
+                {FRONT_URL + getSequenceLink(country, 'dynamicslug')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {"Page de résultat d'une consultation : "}
-                {env.frontUrl() + getResultsLink(country, 'dynamicslug')}
+                {FRONT_URL + getResultsLink(country, 'dynamicslug')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {"Page du top des idées d'une consultation : "}
-                {env.frontUrl() + getTopIdeasLink(country, 'dynamicslug')}
+                {FRONT_URL + getTopIdeasLink(country, 'dynamicslug')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {"Page de détails d'une top idée d'une consultation : "}
-                {env.frontUrl() +
+                {FRONT_URL +
                   getTopIdeaDetailsLink(country, 'dynamicslug', 'ideaId')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Page de proposition : '}
-                {env.frontUrl() +
+                {FRONT_URL +
                   getProposalLink(
                     country,
                     'dynamicslug',
@@ -360,50 +360,49 @@ export const A11yFR: FC = () => {
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Page de réinitialisation du mot de passe : '}
-                {env.frontUrl() +
+                {FRONT_URL +
                   getPasswordRecoveryLink(country, 'userId', 'resetToken')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Page de profil utilisateur : '}
-                {env.frontUrl() + getRouteProfile(country)}
+                {FRONT_URL + getRouteProfile(country)}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {"Page d'édition du profil utilisateur : "}
-                {env.frontUrl() + getRouteProfileEdit(country)}
+                {FRONT_URL + getRouteProfileEdit(country)}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {"Page de la liste des propositions de l'utilisateur : "}
-                {env.frontUrl() + getRouteProfileProposals(country)}
+                {FRONT_URL + getRouteProfileProposals(country)}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {
                   "Page de la liste des propositions favorites de l'utilisateur : "
                 }
-                {env.frontUrl() + getRouteProfileFavourites(country)}
+                {FRONT_URL + getRouteProfileFavourites(country)}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {"Page des opinions d'une personnalité : "}
-                {env.frontUrl() + getRouteProfileOpinions(country)}
+                {FRONT_URL + getRouteProfileOpinions(country)}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {"Page de profil public d'une personnalité : "}
-                {env.frontUrl() + getPersonalityProfileLink(country, 'userId')}
+                {FRONT_URL + getPersonalityProfileLink(country, 'userId')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {"Page de propositions d'un profil public d'organisation : "}
-                {env.frontUrl() +
-                  getRouteOrganisationProposals(country, 'userId')}
+                {FRONT_URL + getRouteOrganisationProposals(country, 'userId')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {"Page de votes d'un profil public d'organisation : "}
-                {env.frontUrl() + getRouteOrganisationVotes(country, 'userId')}
+                {FRONT_URL + getRouteOrganisationVotes(country, 'userId')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Page de résultats de recherche : '}
                 <RedHTMLLinkElementStyle
                   href={getRouteSearch(country, 'accessibilité')}
                 >
-                  {env.frontUrl() + getRouteSearch(country, 'accessibilité')}
+                  {FRONT_URL + getRouteSearch(country, 'accessibilité')}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
@@ -411,7 +410,7 @@ export const A11yFR: FC = () => {
                 <RedHTMLLinkElementStyle
                   href={getRouteSearchProposals(country, 'accessibilité')}
                 >
-                  {env.frontUrl() +
+                  {FRONT_URL +
                     getRouteSearchProposals(country, 'accessibilité')}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
@@ -420,7 +419,7 @@ export const A11yFR: FC = () => {
                 <RedHTMLLinkElementStyle
                   href={getRouteSearchOrganisations(country, 'association')}
                 >
-                  {env.frontUrl() +
+                  {FRONT_URL +
                     getRouteSearchOrganisations(country, 'association')}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
@@ -429,8 +428,7 @@ export const A11yFR: FC = () => {
                 <RedHTMLLinkElementStyle
                   href={getRouteSearchConsultations(country, 'comment')}
                 >
-                  {env.frontUrl() +
-                    getRouteSearchConsultations(country, 'comment')}
+                  {FRONT_URL + getRouteSearchConsultations(country, 'comment')}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
@@ -438,7 +436,7 @@ export const A11yFR: FC = () => {
                 <RedHTMLLinkElementStyle
                   href={getLegalPageLink(country, language)}
                 >
-                  {env.frontUrl() + getLegalPageLink(country, language)}
+                  {FRONT_URL + getLegalPageLink(country, language)}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
@@ -446,7 +444,7 @@ export const A11yFR: FC = () => {
                 <RedHTMLLinkElementStyle
                   href={getGTUPageLink(country, language)}
                 >
-                  {env.frontUrl() + getGTUPageLink(country, language)}
+                  {FRONT_URL + getGTUPageLink(country, language)}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
@@ -454,7 +452,7 @@ export const A11yFR: FC = () => {
                 <RedHTMLLinkElementStyle
                   href={getDataPageLink(country, language)}
                 >
-                  {env.frontUrl() + getDataPageLink(country, language)}
+                  {FRONT_URL + getDataPageLink(country, language)}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
@@ -462,7 +460,7 @@ export const A11yFR: FC = () => {
                 <RedHTMLLinkElementStyle
                   href={getA11YPageLink(country, language)}
                 >
-                  {env.frontUrl() + getA11YPageLink(country, language)}
+                  {FRONT_URL + getA11YPageLink(country, language)}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
@@ -470,7 +468,7 @@ export const A11yFR: FC = () => {
                 <RedHTMLLinkElementStyle
                   href={getContactPageLink(country, language)}
                 >
-                  {env.frontUrl() + getContactPageLink(country, language)}
+                  {FRONT_URL + getContactPageLink(country, language)}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
             </StaticSquareListStyle>
