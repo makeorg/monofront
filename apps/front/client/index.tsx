@@ -22,10 +22,11 @@ import { createInitialState } from '@make.org/store/initialState';
 import { getRouteNoCookies } from '@make.org/utils/routes';
 import ContextState from '@make.org/store';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
-import { StateRoot } from '@make.org/types';
+import { ApiServiceHeadersType, StateRoot } from '@make.org/types';
 import { initTrackersFromPreferences } from '@make.org/utils/helpers/cookies';
 import { COOKIE } from '@make.org/types/enums';
 import { ENABLE_MIXPANEL } from '@make.org/utils/constants/cookies';
+import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
 import { CountryListener } from './app/CountryListener';
 import { AppContainer } from './app';
 import { cookieIsEnabled, thirdCookieEnabled } from './helpers/cookieDetect';
@@ -99,6 +100,16 @@ const initApp = async (state: StateRoot) => {
   // init api service before authenticationState to get visitorId
   initApiService(source, country, language, getAll());
 
+  // add listener to update trackingParamsService
+  // should be before first api call (before authenticationState) to get visitorId
+  apiClient.addHeadersListener(
+    'trackingServiceListener',
+    (headers: ApiServiceHeadersType) => {
+      if (headers['x-visitor-id']) {
+        trackingParamsService.visitorId = headers['x-visitor-id'];
+      }
+    }
+  );
   const authenticationStateData = await authenticationState();
 
   const store = {
