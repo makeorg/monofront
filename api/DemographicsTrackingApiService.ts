@@ -77,6 +77,8 @@ export class DemographicsTrackingApiService {
         'x-make-location',
         'x-make-external-id',
         'x-hostname',
+        // @todo to be reviewed on api side
+        'x-session-id',
       ],
       withCredentials: false,
     });

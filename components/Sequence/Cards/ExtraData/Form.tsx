@@ -88,6 +88,7 @@ export const ExtraDataForm: React.FC<Props> = ({
   const [isSkipDisabled, setIsSkipDisabled] = useState(false);
   const FORM_NAME = `demographics`;
   const isMobile = matchMobileDevice(device);
+  const isWidget = source === 'widget';
 
   // set cookie duration to a month with december corner case
   const expirationDate = new Date();
@@ -117,10 +118,12 @@ export const ExtraDataForm: React.FC<Props> = ({
       event.preventDefault();
       setIsSubmitDisabled(true);
       setIsSkipDisabled(true);
-      setCookie(COOKIE.DEMOGRAPHICS, true, {
-        path: '/',
-        expires: expirationDate,
-      });
+      if (!isWidget) {
+        setCookie(COOKIE.DEMOGRAPHICS, true, {
+          path: '/',
+          expires: expirationDate,
+        });
+      }
       const success = () => {
         setIsSubmitDisabled(false);
         setIsSkipDisabled(false);
