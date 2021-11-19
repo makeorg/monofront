@@ -112,14 +112,16 @@ export const NewWindowIconStyle = styled(SvgExternalLinkPlain)`
     fill: ${color.greyDark};
   }
 `;
-
 export const DataPolicyNewWindowLinkStyle = styled.a<{ isWidget?: boolean }>`
   ${DataPolicyLinkStyle};
   color: ${props => (props.isWidget ? color.greyDark : color.brandSecondary)};
-  font-size: ${props =>
-    props.isWidget
-      ? intToPx(typography.font.fontsize.X2S.value)
-      : intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    font-size: ${props =>
+      props.isWidget
+        ? intToPx(typography.font.fontsize.X2S.value)
+        : intToPx(typography.font.fontsize.XS.value)};
+  }
   &:hover,
   &:focus {
     color: ${props => (props.isWidget ? color.greyDark : color.brandSecondary)};

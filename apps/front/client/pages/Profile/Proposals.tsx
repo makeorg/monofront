@@ -35,7 +35,6 @@ const ProfileProposalsPage: FC<Props> = ({ user }) => {
   });
 
   const { proposals, hasMore, seed, page } = proposalList;
-
   const loadProposals = async () => {
     setIsLoading(true);
     const result = await UserService.myProposals(user.userId, seed, page);
