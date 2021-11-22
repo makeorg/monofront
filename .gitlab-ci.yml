@@ -143,6 +143,7 @@ stages:
   image: cypress/browsers:node16.5.0-chrome94-ff93
   variables:
     CYPRESS_CACHE_FOLDER: '$CI_PROJECT_DIR/cache_cypress'
+  cache: {}
   artifacts:
     expire_in: 1 week
     when: always
