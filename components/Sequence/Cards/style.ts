@@ -29,8 +29,8 @@ export const SequenceCardStyle = styled.section`
   margin: 20px auto 40px;
   min-height: 315px;
   &.widget {
-    margin: 15px 15px 30px;
-    padding: 0 20px;
+    margin: 20px;
+    padding: 15px;
     max-height: 295px;
     min-height: 295px;
   }
@@ -48,7 +48,7 @@ export const SequenceCardStyle = styled.section`
     padding: 0 30px;
     margin-top: 30px;
     &.widget {
-      margin: 20px;
+      margin-top: 20px;
     }
     &.no-proposal {
       padding: 70px 30px 40px;

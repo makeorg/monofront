@@ -1225,43 +1225,12 @@
     "sharing": "Or give more visibility to the consultation by disseminating it."
   },
   "demographics_card": {
-    "disclaimer": "@@demographics_card.disclaimer|fr:Vos informations sont anonymes et permettent à nos résultats d'être représentatifs.",
-    "skip": "@@demographics_card.skip|fr:Passer",
-    "submit_mobile": "@@demographics_card.submit_mobile|fr:Enregistrer",
-    "submit_desktop": "@@demographics_card.submit_desktop|fr:Enregistrer et continuer",
-    "age": {
-      "title": "@@demographics_card.age.title|fr:Quelle est votre tranche d’âge ?"
-    },
-    "gender": {
-      "title": "@@demographics_card.gender.title|fr:Quel est votre genre ?",
-      "male": "@@demographics_card.gender.male|fr:Homme",
-      "female": "@@demographics_card.gender.female|fr:Femme",
-      "other": "@@demographics_card.gender.other|fr:Non-binaire"
-    },
-    "region": {
-      "title": "@@demographics_card.region.title|fr:Quelle est votre région ?",
-      "select": "@@demographics_card.region.select|fr:Selectionner",
-      "FR-ARA": "@@demographics_card.region.FR-ARA|fr:Auvergne-Rhône-Alpes",
-      "FR-BFC": "@@demographics_card.region.FR-BFC|fr:Bourgogne-Franche-Comté",
-      "FR-BRE": "@@demographics_card.region.FR-BRE|fr:Bretagne",
-      "FR-CVL": "@@demographics_card.region.FR-CVL|fr:Centre-Val de Loire",
-      "FR-COR": "@@demographics_card.region.FR-COR|fr:Corse",
-      "FR-GES": "@@demographics_card.region.FR-GES|fr:Grand Est",
-      "FR-HDF": "@@demographics_card.region.FR-HDF|fr:Hauts-de-France",
-      "FR-IDF": "@@demographics_card.region.FR-IDF|fr:Île-de-France",
-      "FR-NOR": "@@demographics_card.region.FR-NOR|fr:Normandie",
-      "FR-NAQ": "@@demographics_card.region.FR-NAQ|fr:Nouvelle-Aquitaine",
-      "FR-OCC": "@@demographics_card.region.FR-OCC|fr:Occitanie",
-      "FR-PDL": "@@demographics_card.region.FR-PDL|fr:Pays de la Loire",
-      "FR-PAC": "@@demographics_card.region.FR-PAC|fr:Provence-Alpes-Côte d'Azur",
-      "FR-GUA": "@@demographics_card.region.FR-GUA|fr:Guadeloupe",
-      "FR-GUF": "@@demographics_card.region.FR-GUF|fr:Guyane",
-      "FR-MTQ": "@@demographics_card.region.FR-MTQ|fr:Martinique",
-      "FR-LRE": "@@demographics_card.region.FR-LRE|fr:La Réunion",
-      "FR-MAY": "@@demographics_card.region.FR-MAY|fr:Mayotte"
-    },
-    "submitted_thanks": "@@demographics_card.submitted_thanks|fr:Merci pour votre réponse.",
-    "submitted_disclaimer": "@@demographics_card.submitted_disclaimer|fr: Elle sera utilisée de façon anonyme pour analyser les résultats de la consultation."
+    "disclaimer": "This informations are anonymous, it will allow the results to be representative.",
+    "skip": "Skip",
+    "submit": "Save",
+    "submitted_thanks": "Thank you for your answer.",
+    "submitted_disclaimer": "It will be anonymously used to analyse the results of the consultation.",
+    "select": "Choose"
   },
   "maintenance": {
     "title": "Ongoing maintenance",

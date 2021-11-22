@@ -358,41 +358,10 @@
   "demographics_card": {
     "disclaimer": "Vos informations sont anonymes et permettent à nos résultats d'être représentatifs.",
     "skip": "Passer",
-    "submit_mobile": "Enregistrer",
-    "submit_desktop": "Enregistrer et continuer",
+    "submit": "Enregistrer",
     "submitted_thanks": "Merci pour votre réponse.",
     "submitted_disclaimer": " Elle sera utilisée de façon anonyme pour analyser les résultats de la consultation.",
-    "age": {
-      "title": "Quelle est votre tranche d’âge ?"
-    },
-    "gender": {
-      "title": "Quel est votre genre ?",
-      "male": "Homme",
-      "female": "Femme",
-      "other": "Non-binaire"
-    },
-    "region": {
-      "title": "Quelle est votre région ?",
-      "select": "Sélectionner",
-      "FR-ARA": "Auvergne-Rhône-Alpes",
-      "FR-BFC": "Bourgogne-Franche-Comté",
-      "FR-BRE": "Bretagne",
-      "FR-CVL": "Centre-Val de Loire",
-      "FR-COR": "Corse",
-      "FR-GES": "Grand Est",
-      "FR-HDF": "Hauts-de-France",
-      "FR-IDF": "Île-de-France",
-      "FR-NOR": "Normandie",
-      "FR-NAQ": "Nouvelle-Aquitaine",
-      "FR-OCC": "Occitanie",
-      "FR-PDL": "Pays de la Loire",
-      "FR-PAC": "Provence-Alpes-Côte d'Azur",  
-      "FR-GUA": "Guadeloupe",
-      "FR-GUF": "Guyane",
-      "FR-MTQ": "Martinique",
-      "FR-LRE": "La Réunion",
-      "FR-MAY": "Mayotte"
-    }
+    "select": "Sélectionner"
   },
   "proposal_submit": {
     "form": {

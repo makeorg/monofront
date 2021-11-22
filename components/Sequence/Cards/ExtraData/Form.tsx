@@ -2,10 +2,10 @@ import React, { SyntheticEvent, useEffect, useMemo, useState } from 'react';
 import { DemographicParameterType } from '@make.org/types';
 import { BlackBorderButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import i18n from 'i18next';
-import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { DemographicsTrackingService } from '@make.org/utils/services/DemographicsTracking';
 import { incrementSequenceIndex } from '@make.org/store/actions/sequence';
 import { useLocation } from 'react-router';
+import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import {
   trackClickSaveDemographics,
   trackClickSkipDemographics,
@@ -87,8 +87,8 @@ export const ExtraDataForm: React.FC<Props> = ({
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(false);
   const [isSkipDisabled, setIsSkipDisabled] = useState(false);
   const FORM_NAME = `demographics`;
-  const isMobile = matchMobileDevice(device);
   const isWidget = source === 'widget';
+  const isMobile = matchMobileDevice(device);
 
   // set cookie duration to a month with december corner case
   const expirationDate = new Date();
@@ -185,17 +185,13 @@ export const ExtraDataForm: React.FC<Props> = ({
           onClick={onClickSkip}
           data-cy-button="skip-demographics"
         >
-          <SkipIconStyle aria-hidden focusable="false" />
+          {!isMobile && <SkipIconStyle aria-hidden focusable="false" />}
           {i18n.t('demographics_card.skip')}
         </BlackBorderButtonStyle>
         <SubmitButton
           formName={FORM_NAME}
           data-cy-button="submit-demographics"
-          label={
-            isMobile
-              ? i18n.t('demographics_card.submit_mobile')
-              : i18n.t('demographics_card.submit_desktop')
-          }
+          label={i18n.t('demographics_card.submit')}
           disabled={isSubmitDisabled}
         />
       </SubmitWrapperStyle>

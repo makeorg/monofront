@@ -1,7 +1,7 @@
 import { typography, color } from 'athena-design-tokens';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
-import { SpaceBetweenRowStyle } from '@make.org/ui/elements/FlexElements';
+import { CenterRowStyle } from '@make.org/ui/elements/FlexElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { SvgFastForward } from '@make.org/ui/Svg/elements';
 import { intToPx } from '@make.org/utils/helpers/styled';
@@ -22,6 +22,11 @@ export const ExtraDataDescriptionStyle = styled(ParagraphStyle)`
   max-width: ${intToPx(MAX_WIDTH)};
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   text-align: center;
+  &.widget {
+    font-size: 14px;
+    max-width: 100%;
+    margin-top: 5px;
+  }
 `;
 
 export const ExtraDataRadioGroupStyle = styled.div<{ className: string }>`
@@ -37,10 +42,32 @@ export const ExtraDataRadioGroupStyle = styled.div<{ className: string }>`
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     margin: 25px 0 35px;
   }
+  &.widget {
+    grid-gap: 5px;
+    margin: 10px 0;
+  }
+  &.widget.three-columns {
+    div:last-of-type {
+      grid-column-start: 2;
+    }
+    @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 425px;
+      justify-content: center;
+      gap: 10px;
+      margin: 30px 0;
+      &.widget > div {
+        width: 95px;
+      }
+    }
+  }
 `;
-export const SubmitWrapperStyle = styled(SpaceBetweenRowStyle)`
+export const SubmitWrapperStyle = styled(CenterRowStyle)`
   width: 100%;
   max-width: 360px;
+  gap: 10px;
 `;
 
 export const RadioAsButtonWrapperStyle = styled.div`
@@ -52,14 +79,17 @@ export const RadioAsButtonWrapperStyle = styled.div`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   padding: 5px 10px;
   text-decoration: none;
-  &.focused {
-    outline-style: auto;
+  &:hover {
+    border: 1px solid ${color.brandPrimary};
   }
   &.selected {
     background-color: ${color.brandPrimary};
   }
   &.selected label {
     color: ${color.white};
+  }
+  &.widget {
+    padding: 2px 10px;
   }
 `;
 
@@ -69,6 +99,13 @@ export const RadioAsButtonLabelStyle = styled.label`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   width: 100%;
   text-align: center;
+
+  &.widget {
+    font-size: 14px;
+    @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+      font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    }
+  }
 `;
 
 export const SelectStyle = styled.select`
@@ -82,6 +119,12 @@ export const SelectStyle = styled.select`
   color: ${color.greyDark};
   appearance: none;
   background: transparent url(${SvgSelectArrow as never}) no-repeat 95% center;
+  -webkit-line-clamp: 1;
+  text-overflow: ellipsis;
+  &.widget {
+    padding: 8px 30px 8px 15px;
+    margin: 30px 0;
+  }
 `;
 
 export const SkipIconStyle = styled(SvgFastForward)<SvgPropsType>`

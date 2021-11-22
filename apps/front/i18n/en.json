@@ -1259,8 +1259,7 @@
   "demographics_card": {
     "disclaimer": "This informations are anonymous, it will allow the results to be representative.",
     "skip": "Skip",
-    "submit_mobile": "Save",
-    "submit_desktop": "Save and continue",
+    "submit": "Save",
     "submitted_thanks": "Thank you for your answer.",
     "submitted_disclaimer": "It will be anonymously used to analyse the results of the consultation.",
     "select": "Choose"

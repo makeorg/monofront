@@ -797,7 +797,7 @@
         "link": "Mehr erfahren"
       },
       "featured_proposals": {
-        "title": "Du hast einen Vorschlag eingereicht"
+        "title": "Sie haben einen Vorschlag eingereicht"
       }
     },
     "timeline": {
@@ -1254,8 +1254,7 @@
   "demographics_card": {
     "disclaimer": "Deine Angaben sind anonym und ermöglichen es, die Ergebnisse möglichst repräsentativ zu gestalten.",
     "skip": "Überspringen",
-    "submit_mobile": "Speichern",
-    "submit_desktop": "Speichern",
+    "submit": "Speichern",
     "submitted_thanks": "Danke für deine Antwort.",
     "submitted_disclaimer": "Sie wird anonym verwendet, um die Ergebnisse der Konsultation zu analysieren.",
     "select": "Auswählen"

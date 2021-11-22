@@ -16,6 +16,8 @@ type Props = {
 export const ExtraDataCard: FC<Props> = ({ configuration }) => {
   const { state, dispatch } = useAppContext();
   const isSubmitted = state.sequence.demographics?.submitted;
+  const { source } = state.appConfig;
+  const isWidget = source === 'widget';
 
   // set demographics
   if (!configuration) {
@@ -39,7 +41,7 @@ export const ExtraDataCard: FC<Props> = ({ configuration }) => {
   ) : (
     <SequenceWrapperStyle data-cy-demographic-layout={configuration.layout}>
       <SequenceIntroParagraphStyle>{title}</SequenceIntroParagraphStyle>
-      <ExtraDataDescriptionStyle>
+      <ExtraDataDescriptionStyle className={isWidget ? 'widget' : ''}>
         {i18n.t('demographics_card.disclaimer')}
       </ExtraDataDescriptionStyle>
       <ExtraDataForm

@@ -116,7 +116,11 @@ export const SequenceCard: React.FC<Props> = ({ card, question }) => {
     className = 'center';
   }
 
-  if ((isFinalCard && isWidget) || (isNoProposalCard && isWidget)) {
+  if (
+    (isFinalCard && isWidget) ||
+    (isNoProposalCard && isWidget) ||
+    (isWidget && isDemographicsCard)
+  ) {
     className = 'center widget';
   }
 

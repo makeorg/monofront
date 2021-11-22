@@ -21,7 +21,7 @@ export const SequenceContainerStyle = styled(MiddleColumnStyle)`
     background-color: ${color.greyLighter};
     padding: 0px 15px 15px;
     @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-      padding: 0px 17px 17px;
+      padding: 0px 20px 20px;
     }
   }
 `;
