@@ -63,11 +63,11 @@ export const getVotesPercent = (
  * @param {number} votesCount
  * @param {number} votesTarget
  */
-export const getVotesRatio = (
+export const getVotesRatioInteger = (
   votesCount: number,
   votesTarget: number
 ): number => {
   const percent = (votesCount * 100) / votesTarget;
 
-  return percent;
+  return Math.round(percent);
 };

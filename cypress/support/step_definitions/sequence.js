@@ -184,6 +184,7 @@ When('I go to card {string}', cardNumber => {
       nextWhileCardTargetNotDisplayed();
     }
   };
+
   cy.waitUntil(() => cy.get(`[data-cy-card-number]`).should('be.visible'));
   cy.get('body')
     .then(body => {

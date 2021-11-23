@@ -81,6 +81,7 @@ stages:
     - node -v
     - export YARN_VERSION="$YARN_VERSION"
     - yarn install --check-files
+  cache: []
 
 .build:
   stage: build

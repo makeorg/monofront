@@ -5,7 +5,7 @@ import { QuestionHighlightsType } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
 import i18n from 'i18next';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
-import { getVotesRatio } from '@make.org/utils/helpers/voteResult';
+import { getVotesRatioInteger } from '@make.org/utils/helpers/voteResult';
 import { isResultsPage } from '@make.org/utils/routes';
 import { formatCountWithLanguage } from '@make.org/utils/helpers/numberFormatter';
 import {
@@ -28,7 +28,7 @@ export const Progress: FC = () => {
   } = selectCurrentQuestion(state);
   const { language } = state.appConfig;
   const { votesCount, votesTarget } = highlights;
-  const votesPercent = getVotesRatio(votesCount, votesTarget);
+  const votesPercent = getVotesRatioInteger(votesCount, votesTarget);
   const location = useLocation();
   const resultsPage = isResultsPage(location.pathname);
 

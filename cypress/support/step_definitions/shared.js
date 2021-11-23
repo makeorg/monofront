@@ -38,7 +38,7 @@ const checkPageExist = page => {
   }
 };
 
-// Given I have already acc@make.org/utils/helpers/urlepted the data policy
+// Given I have already accepted the data policy
 Given('I have already accepted the cookie policy', () => {
   cy.setCookie('make-cookie', 'true');
 });

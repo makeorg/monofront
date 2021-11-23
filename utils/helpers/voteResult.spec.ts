@@ -6,9 +6,9 @@ import {
 } from '@make.org/utils/constants/vote';
 import { BadArgumentError } from '@make.org/utils/errors';
 import {
-  getVotesRatio,
   getVotesPercent,
   getTotalVotesCount,
+  getVotesRatioInteger,
 } from './voteResult';
 
 describe('VoteResult Helper', () => {
@@ -112,9 +112,9 @@ describe('VoteResult Helper', () => {
   });
 
   describe('test getVotesRatio', () => {
-    it('return the ratio with one decimal', () => {
-      const percent = getVotesRatio(155, 1000);
-      expect(percent).toBe(15.5);
+    it('return the ratio with integer number', () => {
+      const percent = getVotesRatioInteger(155, 1000);
+      expect(percent).toBe(16);
     });
   });
 });
