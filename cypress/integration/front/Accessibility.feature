@@ -72,13 +72,3 @@ Feature: Accessibility
   Scenario: Check HTML validity of legal mentions
   Given I go to "legal mentions"
   Then html page should be valid
-
-  Scenario: Check HTML validity of profile page
-  Given I go to "france homepage"
-  And I login with email "test@example.com" and password "abcdefgh"
-  When I go to "profile proposals"
-  Then I see "Mes dernières propositions" in "main" container
-  And html page should be valid  
-  When I go to "profile favourites"
-  Then I see "Mes coups de cœur" in "main" container
-  Then html page should be valid  
