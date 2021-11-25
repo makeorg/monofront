@@ -11,8 +11,8 @@ import { isInProgress } from '@make.org/utils/helpers/date';
 import { QuestionType } from '@make.org/types';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { HeaderPanel } from '../../components/HeaderPanel';
-import { IntroProposal } from '../../components/IntroProposal';
 import { ClosedConsultation } from '../../components/ClosedConsultation';
+import { IntroProposal } from '../../components/IntroProposal';
 
 export const RootPage: FC = () => {
   const { state } = useAppContext();
@@ -23,7 +23,6 @@ export const RootPage: FC = () => {
   const topProposalIsActive = question.activeFeatureData?.topProposal !== null;
   const [topProposal, disableTopProposal] =
     useState<boolean>(topProposalIsActive);
-
   if (!currentQuestion) {
     return <Spinner />;
   }

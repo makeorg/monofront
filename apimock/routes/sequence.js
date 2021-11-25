@@ -26,6 +26,20 @@ sequenceRouter.get('/standard/:questionId', (req, res) => {
   });
 });
 
+// start standard sequence first proposal
+sequenceRouter.get('/standard/:questionId/first-proposal', (req, res) => {
+  const proposalsOfQuestion = fixtures.proposals.filter(
+    proposal => proposal.question.questionId === req.params.questionId
+  );
+  const proposal = proposalsOfQuestion.pop();
+  const sequenceSize = 12;
+
+  return res.send({
+    proposal,
+    sequenceSize,
+  });
+});
+
 sequenceRouter.get('/consensus/:questionId', (req, res) => {
   const proposalsOfQuestion = fixtures.proposals.filter(
     proposal => proposal.question.questionId === req.params.questionId

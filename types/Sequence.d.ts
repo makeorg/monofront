@@ -13,6 +13,11 @@ export type SequenceType = {
   demographics?: DemographicDataType;
 };
 
+export type FirstProposalSequenceType = {
+  proposal: ProposalType;
+  sequenceSize: number;
+};
+
 export type ExecuteStartSequence = (
   questionId: string,
   votedIds: string[],

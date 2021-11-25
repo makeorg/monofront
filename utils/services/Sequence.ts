@@ -3,6 +3,7 @@ import {
   SequenceType,
   ProposalType,
   DemographicDataType,
+  FirstProposalSequenceType,
 } from '@make.org/types';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { Logger } from './Logger';
@@ -143,6 +144,25 @@ const startSequenceByKind = async (
   }
 };
 
+const startSequenceFirstProposal = async (
+  questionId: string
+): Promise<null | FirstProposalSequenceType> => {
+  try {
+    const response = await QuestionApiService.startSequenceFirstProposal(
+      questionId
+    );
+    if (!response) {
+      return null;
+    }
+    const { data } = response;
+    return data;
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
+    defaultUnexpectedError(apiServiceError);
+    return null;
+  }
+};
+
 const startSequenceByKeyword = async (
   questionId: string,
   includedProposalIds: string[],
@@ -192,4 +212,5 @@ const startSequenceByKeyword = async (
 export const SequenceService = {
   startSequenceByKind,
   startSequenceByKeyword,
+  startSequenceFirstProposal,
 };
