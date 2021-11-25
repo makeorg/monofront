@@ -25,18 +25,21 @@ export const buildCards = (
   introCardParam?: boolean,
   pushProposalParam?: boolean,
   sequenceDemographicData?: DemographicDataType,
-  isWidget?: boolean
+  isWidget?: boolean,
+  loadFirstProposal?: boolean
 ): SequenceCardType[] => {
   const withPushProposalCard: boolean =
     !!extraSlidesConfig.pushProposalCard &&
     !!extraSlidesConfig.pushProposalCard.enabled &&
     !!canPropose &&
-    !!pushProposalParam;
+    !!pushProposalParam &&
+    !loadFirstProposal;
   const withIntroCard: boolean =
     !!extraSlidesConfig.introCard &&
     !!extraSlidesConfig.introCard.enabled &&
     !!introCardParam &&
-    !isWidget;
+    !isWidget &&
+    !loadFirstProposal;
 
   const cards: SequenceCardType[] = proposals.map(proposal => ({
     type: CARD.CARD_TYPE_PROPOSAL,
@@ -72,14 +75,16 @@ export const buildCards = (
     });
   }
 
-  cards.splice(cards.length, 0, {
-    type: isStandardSequence
-      ? CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD
-      : CARD.CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD,
-    configuration: undefined,
-    state: { votes: [] },
-    index: 0,
-  });
+  if (!loadFirstProposal) {
+    cards.splice(cards.length, 0, {
+      type: isStandardSequence
+        ? CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD
+        : CARD.CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD,
+      configuration: undefined,
+      state: { votes: [] },
+      index: 0,
+    });
+  }
 
   const cardsIndexed = cards.map((card, index) => ({
     ...card,
@@ -156,3 +161,53 @@ export const isKeywordSequence = (sequenceKind: SEQUENCE): boolean =>
     SEQUENCE.KIND_CONSENSUS,
     SEQUENCE.KIND_STANDARD,
   ].includes(sequenceKind);
+
+/** getSequenceLength
+ * @param  {number} proposalLength
+ * @param  {QuestionExtraSlidesConfigType} extraSlidesConfig
+ * @param  {boolean} canPropose
+ * @param  {boolean} isStandardSequence
+ * @param  {string} introCardParam
+ * @param  {string} pushProposalParam
+ * @param  {string} sequenceDemographicData
+ * @param  {string} isWidget
+ * @return {number}
+ *
+ */
+
+export const getSequenceSize = (
+  proposalLength: number,
+  extraSlidesConfig: QuestionExtraSlidesConfigType,
+  canPropose: boolean,
+  introCardParam?: boolean,
+  pushProposalParam?: boolean,
+  sequenceDemographicData?: DemographicDataType,
+  isWidget?: boolean
+): number => {
+  let sequenceSize = proposalLength + 1; // add one for final card always in sequence
+
+  const withPushProposalCard: boolean =
+    !!extraSlidesConfig.pushProposalCard &&
+    !!extraSlidesConfig.pushProposalCard.enabled &&
+    !!canPropose &&
+    !!pushProposalParam;
+  const withIntroCard: boolean =
+    !!extraSlidesConfig.introCard &&
+    !!extraSlidesConfig.introCard.enabled &&
+    !!introCardParam &&
+    !isWidget;
+
+  if (withPushProposalCard) {
+    sequenceSize += 1;
+  }
+
+  if (withIntroCard) {
+    sequenceSize += 1;
+  }
+
+  if (sequenceDemographicData) {
+    sequenceSize += 1;
+  }
+
+  return sequenceSize;
+};

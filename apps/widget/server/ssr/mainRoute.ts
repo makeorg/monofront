@@ -117,6 +117,10 @@ export const mainRoute = async (
       question: questionModified,
     },
   };
+  initialState.sequence = {
+    ...initialState.sequence,
+    loadFirstProposal: true,
+  };
 
   updateTrackingQuestionParam(questionModified);
 

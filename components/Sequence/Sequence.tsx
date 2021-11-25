@@ -45,6 +45,7 @@ export type Props = {
 export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
   const { state } = useAppContext();
   const { country, source } = state.appConfig;
+  const { isLoading } = state.sequence;
   const isWidget = source === 'widget';
   const question: QuestionType = selectCurrentQuestion(state);
   const executeStartSequence = async (
@@ -66,13 +67,31 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
     }
 
     const { proposals, demographics } = response;
-    return { proposals: proposals || [], demographics };
+    return {
+      proposals: proposals || [],
+      demographics,
+      length: proposals.length,
+    };
   };
 
-  const { isLoading, currentCard, isEmptySequence } = useSequence(
+  const fetchFirstProposal = async (questionId: string) => {
+    const response = await SequenceService.startSequenceFirstProposal(
+      questionId
+    );
+
+    if (!response) {
+      return null;
+    }
+
+    const { proposal, sequenceSize } = response;
+    return { proposals: [proposal], length: sequenceSize };
+  };
+
+  const { currentCard, isEmptySequence, sequenceLength } = useSequence(
     question,
     isStandardSequence(sequenceKind),
-    executeStartSequence
+    executeStartSequence,
+    fetchFirstProposal
   );
 
   if (isLoading) {
@@ -142,7 +161,7 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
             card={isEmptySequence ? noProposalCard : currentCard}
             question={question}
           />
-          {!isEmptySequence && <SequenceProgress />}
+          {!isEmptySequence && <SequenceProgress length={sequenceLength} />}
         </SequenceContentStyle>
         {!isWidget && (
           <ConsultationPageLinkStyle

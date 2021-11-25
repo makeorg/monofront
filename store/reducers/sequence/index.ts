@@ -1,5 +1,6 @@
 import { Reducer, ReducerAction, StateSequence } from '@make.org/types';
 import {
+  SEQUENCE_DISABLE_FIRST_PROPOSAL,
   SEQUENCE_DECREMENT_INDEX,
   SEQUENCE_DEMOGRAPHICS_SUBMITTED,
   SEQUENCE_INCREMENT_INDEX,
@@ -10,14 +11,17 @@ import {
   SEQUENCE_RESET_VOTED_PROPOSALS,
   SEQUENCE_SET_INDEX,
   SEQUENCE_UPDATE_CARD_STATE,
+  SEQUENCE_SET_LOADING,
 } from '../../actionTypes';
 
 export const sequence_state: StateSequence = {
+  isLoading: true,
   questionSlug: undefined,
   currentIndex: 0,
   votedProposalIds: {},
   proposals: [],
   cards: [],
+  loadFirstProposal: false,
 };
 
 export const sequence_reducer: Reducer = (
@@ -104,6 +108,17 @@ export const sequence_reducer: Reducer = (
         demographics: {
           submitted: action.payload.submitted,
         },
+      };
+    case SEQUENCE_DISABLE_FIRST_PROPOSAL:
+      return {
+        ...state,
+        currentIndex: state.currentIndex + 1,
+        loadFirstProposal: false,
+      };
+    case SEQUENCE_SET_LOADING:
+      return {
+        ...state,
+        isLoading: action.payload.isLoading,
       };
     default:
       return state;

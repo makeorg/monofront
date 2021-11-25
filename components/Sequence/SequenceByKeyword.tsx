@@ -35,6 +35,7 @@ import { MetaTags } from '../MetaTags';
 export const SequenceByKeyword: FC = () => {
   const { state } = useAppContext();
   const { country } = state.appConfig;
+  const { isLoading } = state.sequence;
   const params: { encodedKeyword: string } = useParams();
   const { encodedKeyword } = params;
   const keyword = encodedKeyword && decodeURI(encodedKeyword);
@@ -58,10 +59,11 @@ export const SequenceByKeyword: FC = () => {
     setKeywordLabel(response.label || '');
     return {
       proposals: response.proposals || [],
+      length: response.length,
     };
   };
 
-  const { isLoading, currentCard, isEmptySequence } = useSequence(
+  const { currentCard, isEmptySequence, sequenceLength } = useSequence(
     question,
     false,
     executeStartSequence
@@ -106,7 +108,7 @@ export const SequenceByKeyword: FC = () => {
             card={isEmptySequence ? noProposalCard : currentCard}
             question={question}
           />
-          {!isEmptySequence && <SequenceProgress />}
+          {!isEmptySequence && <SequenceProgress length={sequenceLength} />}
         </SequenceContentStyle>
         <ConsultationPageLinkStyle
           className={!withProposalButton ? 'static' : ''}

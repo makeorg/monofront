@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { SpaceBetweenRowStyle } from '@make.org/ui/elements/FlexElements';
 import i18n from 'i18next';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
@@ -17,17 +17,17 @@ import {
   ProgressBarStyle,
 } from './style';
 
-export const SequenceProgress: React.FC<{
+export const SequenceProgress: FC<{
+  length?: number;
   disabled?: boolean;
-}> = ({ disabled }) => {
+}> = ({ disabled, length }) => {
   const { dispatch, state } = useAppContext();
   const { source } = state.appConfig;
   const isWidget = source === 'widget';
   const question: QuestionType | null = selectCurrentQuestion(state);
   const { theme } = question || {};
-  const { cards, currentIndex = 0 } = state.sequence || {};
+  const { currentIndex = 0 } = state.sequence || {};
   const index = currentIndex + 1;
-  const total = cards ? cards.length : 0;
 
   const goToPreviousCard = () => {
     dispatch(decrementSequenceIndex());
@@ -55,19 +55,19 @@ export const SequenceProgress: React.FC<{
             <ScreenReaderItemStyle aria-live="polite">
               {i18n.t('sequence_progress.counter', {
                 current: index,
-                total,
+                total: length,
               })}
             </ScreenReaderItemStyle>
             <ProgressCounterStyle
               aria-hidden
               className={isWidget ? 'widget' : ''}
             >
-              {`${index}/${total}`}
+              {`${index}/${length}`}
             </ProgressCounterStyle>
           </>
         )}
         <ProgressBarWrapperStyle>
-          <ProgressBarStyle percentWidth={pxToPercent(index, total)} />
+          <ProgressBarStyle percentWidth={pxToPercent(index, length || 0)} />
         </ProgressBarWrapperStyle>
       </SpaceBetweenRowStyle>
     </ThemeProvider>

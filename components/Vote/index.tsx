@@ -22,6 +22,7 @@ import {
   vote as actionVote,
   unvote as actionUnvote,
   incrementSequenceIndex,
+  disableFirstProposal,
 } from '@make.org/store/actions/sequence';
 import {
   clearNotificationTip,
@@ -77,11 +78,13 @@ export const Vote: React.FC<Props> = ({
   const [pendingVoteKey, setPendingVoteKey] = useState('');
   const { votedProposalIds } = state.sequence;
   const { source } = state.appConfig;
+  const { loadFirstProposal } = state.sequence;
   const isWidget = source === 'widget';
   const votedProposals = votedProposalIds[proposal.question.slug];
   const hasVotedProposals = votedProposals && votedProposals.length > 0;
   const isFirstSequenceVote = isSequence && !hasVotedProposals;
-  const lastProposalOfSequence = isSequence && isLastProposal;
+  const lastProposalOfSequence =
+    isSequence && isLastProposal && !loadFirstProposal;
 
   let timeout: NodeJS.Timeout;
   const wait = async (ms: number) =>
@@ -176,6 +179,10 @@ export const Vote: React.FC<Props> = ({
     return trackClickNextCard();
   };
 
+  const handleFirstProposalDisabling = () => {
+    dispatch(disableFirstProposal());
+  };
+
   useEffect(() => {
     const stateUserVote = votes && votes.find(vote => vote.hasVoted === true);
     setCurrentVotes(votes);
@@ -224,7 +231,9 @@ export const Vote: React.FC<Props> = ({
         />
         {isSequence && (
           <SequenceNextCardButtonStyle
-            onClick={goToNextCard}
+            onClick={
+              loadFirstProposal ? handleFirstProposalDisabling : goToNextCard
+            }
             id={`next-button-${proposal.id}`}
             data-cy-button="next-proposal"
             className={className}

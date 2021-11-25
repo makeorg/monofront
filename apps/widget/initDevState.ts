@@ -16,5 +16,9 @@ export const initDevState = (
       source: 'mag_plus',
     },
   },
+  sequence: {
+    ...initialState.sequence,
+    loadFirstProposal: true,
+  },
   currentQuestion,
 });

@@ -11,6 +11,7 @@ export type SequenceType = {
   label?: string;
   key?: string;
   demographics?: DemographicDataType;
+  length: number;
 };
 
 export type FirstProposalSequenceType = {
@@ -23,4 +24,8 @@ export type ExecuteStartSequence = (
   votedIds: string[],
   demographicsCardId?: string,
   token?: string
+) => Promise<SequenceType | null>;
+
+export type FetchFirstProposalType = (
+  questionId: string
 ) => Promise<SequenceType | null>;

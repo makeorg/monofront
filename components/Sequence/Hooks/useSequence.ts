@@ -1,12 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
-import { buildCards } from '@make.org/utils/helpers/sequence';
+import { buildCards, getSequenceSize } from '@make.org/utils/helpers/sequence';
 import {
   SequenceCardType,
   QuestionType,
   ProposalType,
   DemographicDataType,
   ExecuteStartSequence,
+  FetchFirstProposalType,
 } from '@make.org/types';
 import { scrollToTop } from '@make.org/utils/helpers/styled';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
@@ -14,6 +15,7 @@ import {
   loadSequenceCards,
   resetSequenceVotedProposals,
   setSequenceIndex,
+  setSequenceLoading,
 } from '@make.org/store/actions/sequence';
 import { useAppContext } from '@make.org/store';
 import { Cookies } from 'react-cookie';
@@ -23,8 +25,8 @@ import { useSequenceVoteOnlyNotification } from './useSequenceVoteOnlyNotificati
 import { useSequenceQueryParams } from './useSequenceQueryParams';
 
 type ReturnFunctionType = {
-  isLoading: boolean;
   currentCard: SequenceCardType | null;
+  sequenceLength: number;
   isEmptySequence: boolean;
 };
 
@@ -34,7 +36,8 @@ type ReturnFunctionType = {
 export const useSequence = (
   question: QuestionType,
   isStandardSequence: boolean,
-  executeStartSequence: ExecuteStartSequence
+  executeStartSequence: ExecuteStartSequence,
+  fetchFirstProposal?: FetchFirstProposalType
 ): ReturnFunctionType => {
   // Dispatch
   const { state, dispatch } = useAppContext();
@@ -42,7 +45,11 @@ export const useSequence = (
   // StateRoot
   const { sequence } = state;
   const { isLoggedIn } = selectAuthentication(state) || {};
-  const { currentIndex = 0, votedProposalIds } = sequence || {};
+  const {
+    currentIndex = 0,
+    votedProposalIds,
+    loadFirstProposal,
+  } = sequence || {};
   const { source } = state.appConfig;
   const isWidget = source === 'widget';
 
@@ -50,7 +57,6 @@ export const useSequence = (
 
   // State
   const [currentCard, setCurrentCard] = useState<SequenceCardType | null>(null);
-  const [isLoading, setLoading] = useState(true);
   const [cards, setCards] = useState<SequenceCardType[]>([]);
   const [sequenceProposals, setSequenceProposals] = useState<ProposalType[]>(
     []
@@ -58,6 +64,7 @@ export const useSequence = (
   const [sequenceDemographic, setSequenceDemographic] = useState<
     DemographicDataType | undefined
   >(undefined);
+  const [sequenceLength, setSequenceLength] = useState<number>(0);
 
   // Sequence hooks
   useSequenceTracking();
@@ -79,27 +86,30 @@ export const useSequence = (
   // load sequence data
   useEffect(() => {
     const loadSequenceData = async () => {
+      dispatch(setSequenceLoading(true));
       const votedIds = firstProposalParam
         ? [firstProposalParam, ...votedProposalIdsOfQuestion]
         : votedProposalIdsOfQuestion;
 
       if (question) {
-        const response = await executeStartSequence(
-          question.questionId,
-          votedIds,
-          sequenceDemographic?.id,
-          sequenceDemographic?.token
-        );
+        let response;
+
+        if (loadFirstProposal && fetchFirstProposal) {
+          response = await fetchFirstProposal(question.questionId);
+        } else {
+          response = await executeStartSequence(
+            question.questionId,
+            votedIds,
+            sequenceDemographic?.id,
+            sequenceDemographic?.token
+          );
+        }
 
         if (!response) {
           return;
         }
 
-        const { proposals, demographics } = response;
-
-        if (!proposals || proposals.length === 0) {
-          setLoading(false);
-        }
+        const { proposals, demographics, length } = response;
 
         if (proposals) {
           setSequenceProposals(proposals);
@@ -108,11 +118,25 @@ export const useSequence = (
         if (demographics) {
           setSequenceDemographic(demographics);
         }
+
+        if (length) {
+          setSequenceLength(
+            getSequenceSize(
+              length,
+              question.sequenceConfig,
+              question.canPropose,
+              introCardParam,
+              pushProposalParam,
+              (!demographicsCookie && demographics) as DemographicDataType,
+              isWidget
+            )
+          );
+        }
       }
-      setLoading(false);
+      dispatch(setSequenceLoading(false));
     };
     loadSequenceData();
-  }, [question, firstProposalParam, isLoggedIn]);
+  }, [question, firstProposalParam, isLoggedIn, loadFirstProposal]);
 
   // build cards
   useEffect(() => {
@@ -127,7 +151,8 @@ export const useSequence = (
       introCardParam,
       pushProposalParam,
       withDemographicsCard as DemographicDataType,
-      isWidget
+      isWidget,
+      loadFirstProposal
     );
     setCards(buildedCards);
     dispatch(loadSequenceCards(buildedCards));
@@ -139,7 +164,6 @@ export const useSequence = (
       return;
     }
     setCurrentCard(cards[currentIndex]);
-    setLoading(false);
   }, [cards, currentIndex]);
 
   // reset voted proposals when unmount
@@ -153,8 +177,8 @@ export const useSequence = (
   );
 
   return {
-    isLoading,
     currentCard,
-    isEmptySequence: sequenceProposals.length === 0,
+    sequenceLength,
+    isEmptySequence: sequenceLength === 0,
   };
 };

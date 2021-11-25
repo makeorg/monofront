@@ -45,6 +45,7 @@ export type StatePendingProposal = {
 
 // Sequence State
 export type StateSequence = {
+  readonly isLoading: boolean;
   readonly currentIndex: number;
   readonly questionSlug?: string;
   readonly votedProposalIds: { [n: string]: string[] };
@@ -53,6 +54,7 @@ export type StateSequence = {
   readonly demographics?: {
     submitted: boolean;
   };
+  readonly loadFirstProposal?: boolean;
 };
 
 // Notification State

@@ -25,7 +25,7 @@ export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
   const [proposal, setProposal] = useState(proposalCard.configuration.proposal);
   const [index, setIndex] = useState(proposalCard.index);
   const { cards = [] } = state.sequence || {};
-  const { votes = [] } = cards[index].state ? cards[index].state : {};
+  const { votes = [] } = cards[index]?.state ? cards[index].state : {};
 
   const getLastCardIndex = () => {
     const allProposals = cards.filter(

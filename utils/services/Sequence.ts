@@ -134,6 +134,7 @@ const startSequenceByKind = async (
     const formattedResponse = {
       proposals: uniqueOrderedProposals,
       demographics: data.demographics as DemographicDataType,
+      length: uniqueOrderedProposals.length,
     };
 
     return formattedResponse;
@@ -199,6 +200,7 @@ const startSequenceByKeyword = async (
       proposals: unique,
       label: data.label,
       key: data.key,
+      length: unique.length,
     };
 
     return formattedResponse;

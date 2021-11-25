@@ -8,8 +8,8 @@ import {
   ProposalCardStateType,
   StateSequence,
 } from '@make.org/types';
-import { TopComponentContextValue } from '../../topComponentContext';
 import {
+  SEQUENCE_DISABLE_FIRST_PROPOSAL,
   SEQUENCE_DECREMENT_INDEX,
   SEQUENCE_DEMOGRAPHICS_SUBMITTED,
   SEQUENCE_INCREMENT_INDEX,
@@ -20,7 +20,9 @@ import {
   SEQUENCE_RESET_VOTED_PROPOSALS,
   SEQUENCE_SET_INDEX,
   SEQUENCE_UPDATE_CARD_STATE,
+  SEQUENCE_SET_LOADING,
 } from '../../actionTypes';
+import { TopComponentContextValue } from '../../topComponentContext';
 
 export const loadSequenceCards = (
   cards: SequenceCardType[]
@@ -184,4 +186,13 @@ export const qualify = (
 export const setDemographicsAsSubmitted = (): ReducerAction => ({
   type: SEQUENCE_DEMOGRAPHICS_SUBMITTED,
   payload: { submitted: true },
+});
+
+export const disableFirstProposal = (): ReducerAction => ({
+  type: SEQUENCE_DISABLE_FIRST_PROPOSAL,
+});
+
+export const setSequenceLoading = (isLoading: boolean): ReducerAction => ({
+  type: SEQUENCE_SET_LOADING,
+  payload: { isLoading },
 });
