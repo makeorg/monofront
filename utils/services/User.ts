@@ -75,6 +75,7 @@ const deleteAccount = async (
 
   try {
     await UserApiService.deleteAccount(userId, password);
+    apiClient.token = null; // @see ApiServiceClient
     success();
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
@@ -313,23 +314,23 @@ const myFavourites = async (
   }
 };
 
-const logout = async (success?: () => void): Promise<void | null> => {
+const logout = async (success?: () => void): Promise<void> => {
   try {
-    apiClient.isLogged = false; // @see ApiServiceClient
     await UserApiService.logout();
+    apiClient.token = null; // @see ApiServiceClient
     if (success) {
-      return success();
+      success();
     }
-    return null;
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 401) {
+      apiClient.token = null; // @see ApiServiceClient
       if (success) {
-        return success();
+        success();
       }
+      return;
     }
     defaultUnexpectedError(apiServiceError);
-    return null;
   }
 };
 
@@ -365,9 +366,12 @@ const loginSocial = async (
       failure();
     }
     if (unexpectedError) {
-      return unexpectedError();
+      unexpectedError();
+    } else {
+      defaultUnexpectedError(apiServiceError);
     }
-    return defaultUnexpectedError(apiServiceError);
+
+    return Promise.resolve();
   }
 };
 
@@ -396,7 +400,8 @@ const checkSocialPrivacyPolicy = async (
     }
 
     if ((!userAcceptance || userAcceptance < lastVersion) && action) {
-      return action();
+      action();
+      return null;
     }
 
     loginSocial(provider, token, undefined, success, failure, unexpectedError);
@@ -407,7 +412,8 @@ const checkSocialPrivacyPolicy = async (
     if (failure) {
       failure();
     }
-    return defaultUnexpectedError(apiServiceError);
+    defaultUnexpectedError(apiServiceError);
+    return null;
   }
 };
 
@@ -437,13 +443,12 @@ const changePassword = async (
 const current = async (unauthorized?: () => void): Promise<UserType | null> => {
   try {
     const response = await UserApiService.current();
-    apiClient.isLogged = true; // @see ApiServiceClient
 
     return response && response.data;
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 401) {
-      apiClient.isLogged = false; // @see ApiServiceClient
+      apiClient.token = null; // @see ApiServiceClient
       if (unauthorized) {
         unauthorized();
       }

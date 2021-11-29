@@ -29,8 +29,6 @@ export class ApiServiceClient implements IApiServiceStrategy {
 
   _customData = '';
 
-  _isLogged = false;
-
   _sessionId = '';
 
   _visitorId = '';
@@ -78,14 +76,6 @@ export class ApiServiceClient implements IApiServiceStrategy {
 
   get country(): string {
     return this._country;
-  }
-
-  set isLogged(isLogged: boolean) {
-    this._isLogged = isLogged;
-  }
-
-  get isLogged(): boolean {
-    return this._isLogged;
   }
 
   set source(source: string) {
@@ -323,7 +313,7 @@ export class ApiServiceClient implements IApiServiceStrategy {
       setAttributesFromResponseHeaders(apiServiceError?.headers);
 
       if (apiServiceError.status === 401) {
-        this._isLogged = false;
+        this._token = null;
       }
 
       throw apiServiceError;
