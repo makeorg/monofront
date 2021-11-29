@@ -13,6 +13,7 @@ const sequenceButtons = {
   'close panel': 'close-panel',
   'cancel proposal form': 'proposal-form-cancel',
   'demographic continue': 'demographic-continue-vote',
+  'accept cookies': 'accept-cookies',
 };
 
 const headerButtons = {

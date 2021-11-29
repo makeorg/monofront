@@ -165,19 +165,37 @@ Then(
 When('I go to card {string}', cardNumber => {
   let previewCard = 0;
   const nextWhileCardTargetNotDisplayed = () => {
+    cy.get(`[data-cy-card-number=${previewCard}]`).should('be.visible');
+
+    // vote when vote button is present to display next button
+    cy.get(`[data-cy-card-number=${previewCard}]`).then(card => {
+      card.find('[data-cy-button=vote]').first().click();
+    });
+
+    // check that next button is visible
+    cy.waitUntil(() =>
+      cy
+        .get(
+          '[data-cy-button=next-proposal], [data-cy-button=push-proposal-next], [data-cy-button=skip-sign-up], [data-cy-button=start-sequence], [data-cy-button=skip-demographics]'
+        )
+        .should('be.visible')
+    );
+
+    // click button to go next card (depending card type)
     cy.get(`[data-cy-card-number=${previewCard}]`)
-      .then(card => {
-        card.find('[data-cy-button=vote]').first().click();
-      })
       .find(
         '[data-cy-button=next-proposal], [data-cy-button=push-proposal-next], [data-cy-button=skip-sign-up], [data-cy-button=start-sequence], [data-cy-button=skip-demographics]'
       )
+      .first()
       .click();
 
+    // wait until next card is displayed
     const expectedCardNumber = (Number(previewCard) + 1).toString();
     cy.waitUntil(() =>
       cy.get(`[data-cy-card-number=${expectedCardNumber}]`).should('be.visible')
     );
+
+    // replay while expected card number not reached
     previewCard = expectedCardNumber;
     if (expectedCardNumber !== cardNumber) {
       nextWhileCardTargetNotDisplayed();
@@ -422,12 +440,5 @@ Then(
 );
 
 When('I select a demographic value', () => {
-  cy.get('[data-cy-demographic-layout]').then(el => {
-    const type = el[0].dataset.cyDemographicType;
-    if (type === 'select') {
-      // ToDo
-    } else {
-      cy.get('[data-cy-demographic-layout] label').first().click();
-    }
-  });
+  cy.get('[data-cy-demographic-layout] label').first().click();
 });

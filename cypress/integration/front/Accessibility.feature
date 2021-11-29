@@ -78,7 +78,7 @@ Feature: Accessibility
   And I login with email "test@example.com" and password "abcdefgh"
   When I go to "profile proposals"
   Then I see "Mes dernières propositions" in "main" container
-  And html page should be valid  
+  And html page should be valid
   When I go to "profile favourites"
   Then I see "Mes coups de cœur" in "main" container
-  Then html page should be valid  
+  Then html page should be valid

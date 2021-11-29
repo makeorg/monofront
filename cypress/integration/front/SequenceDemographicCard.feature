@@ -1,7 +1,7 @@
-@front
+@toDo
 Feature: Demographic sequence card
-  I want to see the demographic sequence card 
-  
+  I want to see the demographic sequence card
+
   Scenario: Display demographic card and skip
     Given I monitor API "postTracking" requests
     And I am on the sequence page of the question "question-0-slug"
@@ -64,7 +64,7 @@ Feature: Demographic sequence card
   Scenario: Submit demographic card
     Given I monitor API "postTracking" requests
     And I am on the sequence page of the question "question-0-slug"
-    When I go to card "4"    
+    When I go to card "4"
     Then current card is a demographic card
     And I see "submit demographics" button on card "4"
     And the "submit demographics" button is disabled
@@ -115,20 +115,16 @@ Feature: Demographic sequence card
   Scenario: Authenticate on demographic card
     Given I monitor API "postTracking" requests
     And I am on the sequence page of the question "question-0-slug"
-    When I go to card "4"    
+    When I go to card "4"
     Then current card is a demographic card
     When I login with email "test@example.com" and password "abcdefgh"
     Then current card is a demographic card
     And progress bar is "4" on "16"
 
+  @front
   Scenario: Don't display demographic card if cookie is set
     Given I have already answered to the demographics card and the cookie is set
     And I am on the sequence page of the question "question-0-slug"
-    When I go to card "4"    
+    When I go to card "4"
     Then card "4" is a proposal card
     And progress bar is "4" on "15"
-
-    
-    
-
-

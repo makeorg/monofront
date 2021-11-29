@@ -142,12 +142,17 @@ export const CookieModal: React.FC = () => {
           </CookieModalRedButtonStyle>
         ) : (
           <>
-            <CookieModalRedButtonStyle type="button" onClick={handleAcceptAll}>
+            <CookieModalRedButtonStyle
+              type="button"
+              onClick={handleAcceptAll}
+              data-cy-button="accept-cookies"
+            >
               {i18n.t('cookie_modal.accept')}
             </CookieModalRedButtonStyle>
             <CookieModalButtonWithLinkStyle
               type="button"
               onClick={handlePersonalize}
+              data-cy-button="personalize-cookies"
             >
               {i18n.t('cookie_modal.personalize')}
             </CookieModalButtonWithLinkStyle>

@@ -11,12 +11,24 @@ const now = new Date();
 const userData = user;
 
 When('I login with email {string} and password {string}', (email, password) => {
+  cy.intercept({
+    url: 'http://localhost:9000/user/privacy-policy',
+    method: 'POST',
+  }).as('postUserPrivacyPolicy');
+  cy.intercept({
+    url: 'http://localhost:9000/oauth/make_access_token',
+    method: 'POST',
+  }).as('postOauthAccessToken');
+
   cy.get(`button[data-cy-button=login]`).scrollIntoView();
   cy.get(`button[data-cy-button=login]`).click();
   cy.get('#login_title').should('be.visible');
   cy.get('[name=email]').type(email);
   cy.get('[name=password]').type(password);
   cy.get('#authentication-login-submit').click();
+
+  cy.wait('@postUserPrivacyPolicy');
+  cy.wait('@postOauthAccessToken');
 });
 
 When(

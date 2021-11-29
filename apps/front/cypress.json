@@ -1,5 +1,4 @@
 {
-  "video": false,
   "baseUrl": "http://localhost:9009",
   "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.2 Mobile/15E148 Safari/604.1",
   "viewportWidth": 375,
@@ -9,5 +8,6 @@
   "chromeWebSecurity": false,
   "env": {
     "application": "front"
-  }
+  },
+  "video": false
 }
