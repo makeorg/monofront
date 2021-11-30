@@ -158,7 +158,7 @@ export const Register: React.FC<Props> = ({ panel }) => {
           await ProposalService.propose(
             proposalContent,
             question.questionId,
-            () => dispatch(setPanelContent(<ProposalSuccess />))
+            () => dispatch(setPanelContent(<ProposalSuccess isRegister />))
           );
         }
       });
