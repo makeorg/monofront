@@ -5,7 +5,10 @@ import { DateHelper, isInProgress } from '@make.org/utils/helpers/date';
 import i18n from 'i18next';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { isGreatCause } from '@make.org/utils/helpers/question';
-import { CONTACT_EMAIL } from '@make.org/utils/constants/config';
+import {
+  CONTACT_EMAIL,
+  CONTACT_EMAIL_DE,
+} from '@make.org/utils/constants/config';
 import { QuestionType } from '@make.org/types';
 import { isResultsPage } from '@make.org/utils/routes';
 import { DATE, FEATURE_FLIPPING } from '@make.org/types/enums';
@@ -43,21 +46,28 @@ const TimelineItem: FC<Props> = ({
   description,
   withLink = false,
   isCurrent = false,
-}) => (
-  <TimelineItemWrapperStyle>
-    <TimelineItemTitleStyle>
-      {title}
-      {isCurrent && <TimelineItemMarkerIsCurrent />}
-    </TimelineItemTitleStyle>
-    <TimelineItemDateStyle>{dateText}</TimelineItemDateStyle>
-    <TimelineItemTextStyle>{description}</TimelineItemTextStyle>
-    {withLink && (
-      <TimelineWorkshopLinkStyle href={`mailto:${CONTACT_EMAIL}`}>
-        {i18n.t('consultation.timeline.workshop_link')}
-      </TimelineWorkshopLinkStyle>
-    )}
-  </TimelineItemWrapperStyle>
-);
+}) => {
+  const { state } = useAppContext();
+  const { country } = state.appConfig;
+  const isDE = country === 'DE';
+  const EMAIL = isDE ? CONTACT_EMAIL_DE : CONTACT_EMAIL;
+
+  return (
+    <TimelineItemWrapperStyle>
+      <TimelineItemTitleStyle>
+        {title}
+        {isCurrent && <TimelineItemMarkerIsCurrent />}
+      </TimelineItemTitleStyle>
+      <TimelineItemDateStyle>{dateText}</TimelineItemDateStyle>
+      <TimelineItemTextStyle>{description}</TimelineItemTextStyle>
+      {withLink && (
+        <TimelineWorkshopLinkStyle href={`mailto:${EMAIL}`}>
+          {i18n.t('consultation.timeline.workshop_link')}
+        </TimelineWorkshopLinkStyle>
+      )}
+    </TimelineItemWrapperStyle>
+  );
+};
 
 export const Timeline: FC = () => {
   const { state } = useAppContext();
