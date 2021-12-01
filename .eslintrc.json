@@ -22,7 +22,7 @@
       "typescript": {}
     }
   },
-  "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier", "cypress"],
   "rules": {
     "import/extensions": [
       "error",
@@ -50,6 +50,9 @@
     "react/require-default-props": 1,
     "@typescript-eslint/no-empty-function": ["error"],
     "@typescript-eslint/no-unused-vars": ["error", { "args": "none" }],
-    "@typescript-eslint/explicit-module-boundary-types": ["error", { "allowArgumentsExplicitlyTypedAsAny": true }]
+    "@typescript-eslint/explicit-module-boundary-types": ["error", { "allowArgumentsExplicitlyTypedAsAny": true }],
+    "cypress/no-assigning-return-values": "error",
+    "cypress/no-unnecessary-waiting": "error",
+    "cypress/no-async-tests": "error"
   }
 }

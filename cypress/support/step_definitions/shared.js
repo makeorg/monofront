@@ -99,10 +99,10 @@ When('I click on {string} link', link => {
 });
 
 When('I click on {string} button', buttonName => {
+  // eslint-disable-next-line cypress/no-unnecessary-waiting
   cy.get(`button[data-cy-button=${getIdentifierButtonByName(buttonName)}]`)
-    .wait(1000) // @toDo try to remove this after removing deprecated sequence
-    // @todo: change this line to not force click on hidden elements
-    .click({ force: true });
+    .wait(1000) // wait is needed here because cypress needs sometimes more time to find element
+    .click({ force: true }); // @todo: change this line to not force click on hidden elements
 });
 
 // accessibility
@@ -155,7 +155,10 @@ Then('I see the canonical url {string} of the page', CanonicalUrl => {
 
 // I see container
 Then('I see {string} container', containerName => {
-  cy.get(`[data-cy-container=${containerName}]`).should('be.visible');
+  cy.get(`[data-cy-container=${containerName}]`)
+    .scrollIntoView()
+    .should('exist')
+    .should('be.visible');
 });
 
 Then("The {string} container doesn't exist", containerName => {

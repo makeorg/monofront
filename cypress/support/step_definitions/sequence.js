@@ -165,8 +165,7 @@ Then(
 When('I go to card {string}', cardNumber => {
   let previewCard = 0;
   const nextWhileCardTargetNotDisplayed = () => {
-    const currentCard = cy.get(`[data-cy-card-number=${previewCard}]`);
-    currentCard
+    cy.get(`[data-cy-card-number=${previewCard}]`)
       .then(card => {
         card.find('[data-cy-button=vote]').first().click();
       })
