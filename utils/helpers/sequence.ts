@@ -205,7 +205,12 @@ export const getSequenceSize = (
     sequenceSize += 1;
   }
 
-  if (sequenceDemographicData) {
+  /**
+   * WARNING
+   * DIRTY HACK TO HANDLE COUNT ON WIDGET - WAITING API TEAM TO HANDLE IT
+   * first-proposal endpoint and question didn't handle demographic card case
+   * */
+  if (sequenceDemographicData || isWidget) {
     sequenceSize += 1;
   }
 
