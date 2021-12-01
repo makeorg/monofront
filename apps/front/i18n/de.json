@@ -907,7 +907,7 @@
       },
       "context": "Der Kontext",
       "cartography": {
-        "title": "Kartierung der Debatte"
+        "title": "Die kartographische Abbildung der Debatte"
       },
       "download": {
         "deprecated_title": "Den vollständigen Bericht erhalten",
@@ -919,14 +919,14 @@
       },
       "top_ideas": {
         "skiplink": "Die besten neuen Ideen",
-        "title": "Die beliebtesten Ideen, zusammengefasst auf {{count}} Achse",
-        "title_plural": "Die beliebtesten Ideen, zusammengefasst auf {{count}} Achsen",
-        "introduction": "Die besten Vorschläge der Bürger:innen werden nach ihrer Veröffentlichung zu größeren Themenfeldern zusammengefasst, die die Konsultation strukturieren. Um diese Ideen einzuordnen, berücksichtigt der Make.org Algorithmus die abgegebenen Stimmen „Ich stimme zu“ und „Ich stimme nicht zu“ sowie die Kennzeichnungen als „Favorit“, „Machbar“, „Unbedeutend“ und „Auf keinen Fall! “.",
-        "axe_title": "Achse {{count}}: {{name}}"
+        "title": "Die beliebtesten Ideen, zusammengefasst auf {{count}} Schwerpunkt",
+        "title_plural": "Die beliebtesten Ideen, zusammengefasst auf {{count}} Schwerpunkten",
+        "introduction": "Die besten Vorschläge der Bürger:innen werden nach ihrer Veröffentlichung auf der Plattform zu größeren Ideen zusammengefasst, die die Konsultation strukturieren. Um diese Ideen einzuordnen, berücksichtigt der Make.org-Algorithmus die abgegebenen Abstimmungen „Ich stimme zu“ und „Ich stimme nicht zu“ sowie die Kennzeichnungen als „Favorit“, „Machbar“, „Unbedeutend“ und „Auf keinen Fall! “.",
+        "axe_title": "Schwerpunkt {{count}}: {{name}}"
       },
       "proposals": {
         "controversials_title": "Die umstrittensten Vorschläge",
-        "controversials_description": "Die „umstrittenen“ Vorschläge spiegeln eine große Spaltung der Gesellschaft wider: Sie werden insgesamt sowohl stark unterstützt als auch klar abgelehnt.",
+        "controversials_description": "Die umstrittenen Vorschläge spiegeln eine große Spaltung der Gesellschaft wider: Sie werden insgesamt sowohl stark unterstützt als auch klar abgelehnt.",
         "rejected": "Die am meisten abgelehnten Vorschläge",
         "rejected_results": "{{disagree}} % dagegen, davon {{no_way}} % auf keinen Fall",
         "controversials_agree": "{{count}} % dafür",

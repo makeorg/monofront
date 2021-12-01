@@ -1,11 +1,5 @@
 {
   "context": "Bürgerkonsultation durchgeführt von Make.org vom 23.09.2021 bis 07.11.2021 rund um die Frage: Bürgerinnen und Bürger aus NRW: Wie wollen wir Europa konkret neu gestalten?",
-  "key_figures": {
-    "participants": 28.0,
-    "votes": 202.2,
-    "proposals": 0.508,
-    "enriched": 0.456
-  },
   "top_ideas": [
     {
       "name": "Klimawandel und Umwelt",
@@ -43,6 +37,35 @@
       ]
     },
     {
+      "name": "Demokratie in Europa",
+      "ideas": [
+        {
+          "idea": "Gewährleistung der Transparenz im Hinblick auf die Arbeitsweise der EU-Institutionen und ihrer Vertreter:innen",
+          "agreement": 86,
+          "adhesion": 27,
+          "realistic": 18
+        },
+        {
+          "idea": "Stärkung des Mitspracherechts der Bürger:innen im Rahmen der Entscheidungsprozesse der EU",
+          "agreement": 72,
+          "adhesion": 17,
+          "realistic": 14
+        },
+        {
+          "idea": "Weiterentwicklung der europäischen demokratischen Prozesse",
+          "agreement": 59,
+          "adhesion": 14,
+          "realistic": 12
+        },
+        {
+          "idea": "Stärkere Förderung   der demokratischen Grundsätze der EU",
+          "agreement": 75,
+          "adhesion": 23,
+          "realistic": 13
+        }
+      ]
+    },
+    {
       "name": "Eine stärkere Wirtschaft, soziale Gerechtigkeit und Beschäftigung",
       "ideas": [
         {
@@ -66,51 +89,6 @@
       ]
     },
     {
-      "name": "Demokratie in Europa",
-      "ideas": [
-        {
-          "idea": "Gewährleistung der Transparenz im Hinblick auf die Arbeitsweise der EU-Institutionen und ihrer Vertreter:innen",
-          "agreement": 86,
-          "adhesion": 27,
-          "realistic": 18
-        },
-        {
-          "idea": "Systematisierung der Beteiligung von Bürger:innen an Entscheidungsprozessen",
-          "agreement": 72,
-          "adhesion": 17,
-          "realistic": 14
-        },
-        {
-          "idea": "Weiterentwicklung der europäischen demokratischen Prozesse",
-          "agreement": 59,
-          "adhesion": 14,
-          "realistic": 12
-        }
-      ]
-    },
-    {
-      "name": "Digitaler Wandel",
-      "ideas": [
-        {
-          "idea": "Förderung der Digitalisierung in Europa durch gemeinsame Investitionen und Infrastrukturen",
-          "agreement": 85,
-          "adhesion": 19,
-          "realistic": 19
-        }
-      ]
-    },
-    {
-      "name": "Werte und Rechte, Rechtsstaatlichkeit, Sicherheit",
-      "ideas": [
-        {
-          "idea": "Einhaltung der Menschen- und Sozialrechte auf europäischem Gebiet",
-          "agreement": 85,
-          "adhesion": 25,
-          "realistic": 14
-        }
-      ]
-    },
-    {
       "name": "Bildung, Kultur, Jugend und Sport",
       "ideas": [
         {
@@ -128,11 +106,6 @@
       ]
     },
     {
-      "name": "Die EU in der Welt",
-      "ideas": [
-      ]
-    },
-    {
       "name": "Migration",
       "ideas": [
         {
@@ -142,45 +115,72 @@
           "realistic": 20
         }
       ]
+    },
+    {
+      "name": "Werte und Rechte, Rechtsstaatlichkeit, Sicherheit",
+      "ideas": [
+        {
+          "idea": "Einhaltung der Menschen- und Sozialrechte auf europäischem Gebiet",
+          "agreement": 85,
+          "adhesion": 25,
+          "realistic": 14
+        }
+      ]
+    },
+    {
+      "name": "Digitaler Wandel",
+      "ideas": [
+        {
+          "idea": "Förderung der Digitalisierung in Europa durch gemeinsame Investitionen und Infrastrukturen",
+          "agreement": 85,
+          "adhesion": 19,
+          "realistic": 19
+        }
+      ]
     }
   ],
-  "controversials": [{
+  "controversials": [
+    {
       "id": "7c766584-a8ef-4cc2-9e07-dc264654d01d",
       "content": "Man sollte neben dem Ausbau von Solarenergie mehr Atomkraftwerke in Europa bauen, um die Pariser Klimaziele zu erreichen.",
       "author": "Wolfgang",
-      "agree": 42,
+      "agree": 41,
       "like_it": 12,
-      "disagree": 42,
+      "disagree": 41,
       "no_way": 25,
       "votes": 220
-    },{
+    },
+    {
       "id": "0ecc8934-6b21-478f-9065-165d1565e46b",
       "content": "Man sollte jegliche Innenstädte in Europa zu Fahrradzonen machen, in denen Fahrräder und Fußgänger Vorrang vor motorisiertem Verkehr haben.",
       "author": "Tobias",
-      "agree": 52,
+      "agree": 51,
       "like_it": 13,
       "disagree": 34,
       "no_way": 12,
       "votes": 365
-    },{
+    },
+    {
       "id": "d8cf22ea-8cc8-4b8b-988e-22348fdbdbc6",
       "content": "Man sollte die Luftqualität in Städten durch strengere Fahrverbote verbessern.",
       "author": "Franziska",
-      "agree": 48,
+      "agree": 47,
       "like_it": 13,
-      "disagree": 40,
+      "disagree": 39,
       "no_way": 12,
       "votes": 250
-    },{
+    },
+    {
       "id": "4101eb24-1ec9-41e4-85eb-d0a036c0742d",
       "content": "Man sollte einen europäischen Bundesstaat einrichten. Europäische Probleme können nur gemeinsam europäisch gelöst werden.",
       "author": "Markus",
       "agree": 46,
       "like_it": 12,
-      "disagree": 34,
+      "disagree": 33,
       "no_way": 12,
       "votes": 506
-    }, {
+    },
+    {
       "id": "92dc397a-ce3d-410f-a1cb-fcca21bb776b",
       "content": "Man sollte neben der nationalen Staatsbürgerschaft eine Europäische Staatsbürgerschaft einführen.",
       "author": "Jascha",
@@ -189,16 +189,18 @@
       "disagree": 31,
       "no_way": 9,
       "votes": 358
-    },{
+    },
+    {
       "id": "60fabcce-f197-474b-abf3-67f4fe0fa362",
       "content": "Man sollte eine permanente, beratende EU-Bürgerversammlung mit zufällig ausgewählten Bürger:innen aus ganz Europa etablieren.",
       "author": "Constantin",
       "agree": 51,
       "like_it": 11,
-      "disagree": 24,
+      "disagree": 23,
       "no_way": 6,
       "votes": 448
-    },{
+    },
+    {
       "id": "47096432-405e-455b-adcc-dbc72841e777",
       "content": "Man sollte ein EU-weites bedingungsloses Grundeinkommen einführen.",
       "author": "Liana",
@@ -207,16 +209,18 @@
       "disagree": 38,
       "no_way": 11,
       "votes": 250
-    }, {
+    },
+    {
       "id": "09da6caf-37f8-40bc-a575-9c7406121fd0",
       "content": "Man sollte in Europa für Jugendliche längere Auslandsaufenthalte (mind. 6 Wochen) als festen Teil der Schulbildung etablieren.",
       "author": "Malika",
-      "agree": 54,
+      "agree": 53,
       "like_it": 15,
       "disagree": 29,
       "no_way": 4,
       "votes": 223
-    },{
+    },
+    {
       "id": "fcc990a5-178a-4ec5-8d2e-c3e449f1a7d3",
       "content": "Man sollte sich auf einen Verteilschlüssel bei Flüchtlingen einigen und die Länder, die keine aufnehmen, aus der EU ausschließen.",
       "author": "Claudia",
@@ -225,25 +229,28 @@
       "disagree": 31,
       "no_way": 8,
       "votes": 233
-    },{
+    },
+    {
       "id": "f5981c7e-ea90-4e46-a696-d70f1e9337d8",
       "content": "Man sollte mehr über eine ausgewogene, vegane Ernährung informieren und diese den Menschen näherbringen.",
       "author": "Lena",
-      "agree": 38,
+      "agree": 37,
       "like_it": 6,
       "disagree": 34,
       "no_way": 8,
       "votes": 362
-    },{
+    },
+    {
       "id": "1c51ae5a-ffe8-4357-a083-c31252e4e193",
       "content": "Man sollte die Drogenpolitik in den EU-Staaten vereinheitlichen (z.B.: Nein bzw. Ja zum Konsum von Cannabis).",
       "author": "Nicola",
-      "agree": 56,
+      "agree": 55,
       "like_it": 7,
-      "disagree": 23,
+      "disagree": 22,
       "no_way": 3,
       "votes": 505
-    },{
+    },
+    {
       "id": "5bf8a0fa-5520-42a0-a324-f105ecd24ca9",
       "content": "Man sollte eine gemeinsame Europäische Armee gründen, um Menschenrechte gegen Russland, China und andere autoritäre Regime durchzusetzen.",
       "author": "Karim",
@@ -264,7 +271,7 @@
       "data": [
         {
           "label": "Institutionelle",
-          "sublabel": " reformen",
+          "sublabel": " Reformen",
           "percent": 19,
           "color": "#4B45A5",
           "adjustLabel": {
@@ -273,8 +280,8 @@
           }
         },
         {
-          "label": "Wirtschaft, arbeit",
-          "sublabel": " und soziales",
+          "label": "Wirtschaft, Arbeit",
+          "sublabel": " und Soziales",
           "percent": 18,
           "color": "#8955BD",
           "adjustLabel": {
@@ -294,7 +301,7 @@
         },
         {
           "label": "Mobilität",
-          "sublabel": " und verkehr",
+          "sublabel": " und Verkehr",
           "percent": 9,
           "color": "#F5976E",
           "adjustLabel": {
@@ -305,7 +312,7 @@
         },
         {
           "label": "Menschenrechte und",
-          "sublabel": " rechtsstaatlichkeit",
+          "sublabel": " Rechtsstaatlichkeit",
           "percent": 9,
           "color": "#EEB298",
           "adjustLabel": {
@@ -326,7 +333,7 @@
         },
         {
           "label": "Energie und",
-          "sublabel": " ressourcen",
+          "sublabel": " Ressourcen",
           "percent": 6,
           "color": "#FFF689",
           "adjustLabel": {
@@ -355,7 +362,7 @@
         },
         {
           "label": "Aufklärung und",
-          "sublabel": " transparenz",
+          "sublabel": " Transparenz",
           "percent": 5,
           "color": "#59BAD4",
           "adjustLabel": {
@@ -384,9 +391,9 @@
       "name": "Beteiligung nach Wohnort",
       "forcedHigherValue": 48,
       "legend": {
-        "title": "Abstimmungen",
+        "title": "STIMMENVERTEILUNG",
         "dimensions": {
-          "first": "votes",
+          "first": "Abstimmungen",
           "second": "Gesamtbevölkerung"
         }
       },
@@ -420,7 +427,7 @@
       "unit": "percentage",
       "name": "Beteiligung nach Alter",
       "legend": {
-        "title": "Abstimmungen",
+        "title": "STIMMENVERTEILUNG",
         "dimensions": {
           "first": "Abstimmungen",
           "second": "Gesamtbevölkerung"
