@@ -8,6 +8,7 @@ import {
   DemographicDataType,
   ExecuteStartSequence,
   FetchFirstProposalType,
+  NoProposalCardType,
 } from '@make.org/types';
 import { scrollToTop } from '@make.org/utils/helpers/styled';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
@@ -16,6 +17,7 @@ import {
   resetSequenceVotedProposals,
   setSequenceIndex,
   setSequenceLoading,
+  setSequenceLength,
 } from '@make.org/store/actions/sequence';
 import { useAppContext } from '@make.org/store';
 import { Cookies } from 'react-cookie';
@@ -25,9 +27,7 @@ import { useSequenceVoteOnlyNotification } from './useSequenceVoteOnlyNotificati
 import { useSequenceQueryParams } from './useSequenceQueryParams';
 
 type ReturnFunctionType = {
-  currentCard: SequenceCardType | null;
-  sequenceLength: number;
-  isEmptySequence: boolean;
+  currentCard: SequenceCardType | NoProposalCardType | null;
 };
 
 /**
@@ -37,6 +37,7 @@ export const useSequence = (
   question: QuestionType,
   isStandardSequence: boolean,
   executeStartSequence: ExecuteStartSequence,
+  noProposalCard: NoProposalCardType,
   fetchFirstProposal?: FetchFirstProposalType
 ): ReturnFunctionType => {
   // Dispatch
@@ -52,11 +53,12 @@ export const useSequence = (
   } = sequence || {};
   const { source } = state.appConfig;
   const isWidget = source === 'widget';
-
   const votedProposalIdsOfQuestion = votedProposalIds[question?.slug] || [];
 
   // State
-  const [currentCard, setCurrentCard] = useState<SequenceCardType | null>(null);
+  const [currentCard, setCurrentCard] = useState<
+    SequenceCardType | NoProposalCardType | null
+  >(null);
   const [cards, setCards] = useState<SequenceCardType[]>([]);
   const [sequenceProposals, setSequenceProposals] = useState<ProposalType[]>(
     []
@@ -64,7 +66,6 @@ export const useSequence = (
   const [sequenceDemographic, setSequenceDemographic] = useState<
     DemographicDataType | undefined
   >(undefined);
-  const [sequenceLength, setSequenceLength] = useState<number>(0);
 
   // Sequence hooks
   useSequenceTracking();
@@ -111,32 +112,38 @@ export const useSequence = (
           return;
         }
 
-        const { proposals, demographics, length } = response;
-
-        if (proposals) {
-          setSequenceProposals(proposals);
+        if (response.proposals) {
+          setSequenceProposals(response.proposals);
         }
 
-        if (demographics) {
-          setSequenceDemographic(demographics);
+        if (response.demographics) {
+          setSequenceDemographic(response.demographics);
         }
 
-        if (length) {
-          setSequenceLength(
-            getSequenceSize(
-              length,
-              question.sequenceConfig,
-              question.canPropose,
-              introCardParam,
-              pushProposalParam,
-              (!demographicsCookie && demographics) as DemographicDataType,
-              isWidget
+        if (response.length) {
+          dispatch(
+            setSequenceLength(
+              getSequenceSize(
+                response.length,
+                question.sequenceConfig,
+                question.canPropose,
+                introCardParam,
+                pushProposalParam,
+                (!demographicsCookie &&
+                  response.demographics) as DemographicDataType,
+                isWidget
+              )
             )
           );
         }
       }
       dispatch(setSequenceLoading(false));
     };
+
+    if (sequence.cards.length > 0 && loadFirstProposal) {
+      return;
+    }
+
     loadSequenceData();
   }, [question, firstProposalParam, isLoggedIn, loadFirstProposal]);
 
@@ -163,6 +170,7 @@ export const useSequence = (
   // set current card
   useEffect(() => {
     if (!cards.length) {
+      setCurrentCard(noProposalCard);
       return;
     }
     setCurrentCard(cards[currentIndex]);
@@ -180,7 +188,5 @@ export const useSequence = (
 
   return {
     currentCard,
-    sequenceLength,
-    isEmptySequence: sequenceLength === 0,
   };
 };

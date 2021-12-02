@@ -21,6 +21,7 @@ import {
   SEQUENCE_SET_INDEX,
   SEQUENCE_UPDATE_CARD_STATE,
   SEQUENCE_SET_LOADING,
+  SEQUENCE_SET_LENGTH,
 } from '../../actionTypes';
 import { TopComponentContextValue } from '../../topComponentContext';
 
@@ -64,6 +65,11 @@ export const decrementSequenceIndex = (): ReducerAction => ({
 export const setSequenceIndex = (index: number): ReducerAction => ({
   type: SEQUENCE_SET_INDEX,
   payload: { index },
+});
+
+export const setSequenceLength = (length: number): ReducerAction => ({
+  type: SEQUENCE_SET_LENGTH,
+  payload: { length },
 });
 
 export const unvote = (

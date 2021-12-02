@@ -7,9 +7,11 @@ import {
   DEFAULT_LANGUAGE,
 } from '@make.org/utils/constants/config';
 import { getLoggerInstance } from '@make.org/utils/helpers/logger';
+import { buildCards, getSequenceSize } from '@make.org/utils/helpers/sequence';
 import { transformExtraSlidesConfigFromQuery } from '../helpers/query.helper';
 import { reactRender } from '../reactRender';
 import { QuestionService } from '../service/QuestionService';
+import { FirstProposalService } from '../service/FirstProposalService';
 
 export const mainRoute = async (
   req: Request,
@@ -50,7 +52,7 @@ export const mainRoute = async (
   const formattedLanguage = language && language.toString();
   const initialState = createInitialState();
 
-  const notFound = () => {
+  const questionNotFound = () => {
     logger.logError({
       message: `Question not found on mainRoute questionSlug='${questionSlug}'`,
       name: 'server-side',
@@ -59,7 +61,7 @@ export const mainRoute = async (
     });
     return res.redirect('/maintenance');
   };
-  const unexpectedError = () => {
+  const questionUnexpectedError = () => {
     logger.logError({
       message: `Unexpected Error on mainRoute questionSlug='${questionSlug}'`,
       name: 'server-side',
@@ -73,9 +75,30 @@ export const mainRoute = async (
     formattedQuestionSlug,
     formattedCountry,
     formattedLanguage || languageFromCountry,
-    notFound,
-    unexpectedError
+    questionNotFound,
+    questionUnexpectedError
   );
+
+  const firstNotFound = () => {
+    logger.logError({
+      message: `FirstProposal not found on mainRoute questionSlug='${questionSlug}'`,
+      name: 'server-side',
+      url: req.url,
+      query: req.query,
+    });
+    return res.redirect('/maintenance');
+  };
+  const firstProposalUnexpectecError = () => {
+    logger.logError({
+      message: `Unexpected Error on mainRoute for first proposal fetch with question='${
+        question && question.questionId
+      }' `,
+      name: 'server-side',
+      url: req.url,
+      query: req.query,
+    });
+    return res.redirect('/maintenance');
+  };
 
   if (res.maintenance || !question) {
     logger.logWarning({
@@ -97,8 +120,22 @@ export const mainRoute = async (
       url: req.url,
       query: req.query,
     });
-
     initialState.appConfig.unsecure = true;
+  }
+
+  const { questionId } = question;
+  const formattedQuestionId = (questionId && questionId.toString()) || '';
+
+  const firstProposal = await FirstProposalService.getFirstProposal(
+    formattedQuestionId,
+    formattedCountry,
+    formattedLanguage || languageFromCountry,
+    firstNotFound,
+    firstProposalUnexpectecError
+  );
+
+  if (!firstProposal) {
+    return res.redirect('/maintenance');
   }
 
   const { sequenceConfig } = question;
@@ -110,6 +147,26 @@ export const mainRoute = async (
       noPushProposal
     ),
   };
+  const cards = buildCards(
+    [firstProposal.proposal],
+    questionModified.sequenceConfig,
+    questionModified.canPropose,
+    true,
+    false,
+    false,
+    undefined,
+    true,
+    true
+  );
+  const sequenceSize = getSequenceSize(
+    firstProposal.sequenceSize,
+    questionModified.sequenceConfig,
+    questionModified.canPropose,
+    false,
+    false,
+    undefined,
+    true
+  );
 
   initialState.currentQuestion = formattedQuestionSlug;
   initialState.questions = {
@@ -119,7 +176,11 @@ export const mainRoute = async (
   };
   initialState.sequence = {
     ...initialState.sequence,
+    isLoading: false,
+    cards,
+    proposals: [firstProposal.proposal],
     loadFirstProposal: true,
+    sequenceSize,
   };
 
   updateTrackingQuestionParam(questionModified);

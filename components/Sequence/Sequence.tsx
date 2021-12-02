@@ -6,7 +6,7 @@ import {
   isPushProposalCard,
   isStandardSequence,
 } from '@make.org/utils/helpers/sequence';
-import { SEQUENCE, CARD } from '@make.org/types/enums';
+import { CARD, SEQUENCE } from '@make.org/types/enums';
 import {
   NoProposalCardType,
   QuestionType,
@@ -45,8 +45,9 @@ export type Props = {
 export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
   const { state } = useAppContext();
   const { country, source } = state.appConfig;
-  const { isLoading } = state.sequence;
+  const { isLoading, sequenceSize, loadFirstProposal, cards } = state.sequence;
   const isWidget = source === 'widget';
+  const isEmptySequence = sequenceSize === 0;
   const question: QuestionType = selectCurrentQuestion(state);
   const executeStartSequence = async (
     questionId: string,
@@ -83,20 +84,15 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
       return null;
     }
 
-    const { proposal, sequenceSize } = response;
-    return { proposals: [proposal], length: sequenceSize };
+    return { proposals: [response.proposal], length: response.sequenceSize };
   };
 
-  const { currentCard, isEmptySequence, sequenceLength } = useSequence(
-    question,
-    isStandardSequence(sequenceKind),
-    executeStartSequence,
-    fetchFirstProposal
-  );
-
-  if (isLoading) {
-    return <SequencePlaceholder />;
-  }
+  const renderFirstCard = () => {
+    if (loadFirstProposal && cards.length > 0) {
+      return cards[0];
+    }
+    return undefined;
+  };
 
   const noProposalCard: NoProposalCardType = {
     type: CARD.CARD_TYPE_NO_PROPOSAL_CARD,
@@ -108,6 +104,18 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
     },
     index: 0,
   };
+
+  const { currentCard } = useSequence(
+    question,
+    isStandardSequence(sequenceKind),
+    executeStartSequence,
+    noProposalCard,
+    fetchFirstProposal
+  );
+
+  if (isLoading) {
+    return <SequencePlaceholder />;
+  }
 
   const getMetaTitle = () => {
     if (sequenceKind === SEQUENCE.KIND_STANDARD) {
@@ -158,10 +166,10 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
             </>
           )}
           <SequenceCard
-            card={isEmptySequence ? noProposalCard : currentCard}
+            card={renderFirstCard() || currentCard}
             question={question}
           />
-          {!isEmptySequence && <SequenceProgress length={sequenceLength} />}
+          {!isEmptySequence && <SequenceProgress length={sequenceSize} />}
         </SequenceContentStyle>
         {!isWidget && (
           <ConsultationPageLinkStyle

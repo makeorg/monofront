@@ -12,6 +12,7 @@ import {
   SEQUENCE_SET_INDEX,
   SEQUENCE_UPDATE_CARD_STATE,
   SEQUENCE_SET_LOADING,
+  SEQUENCE_SET_LENGTH,
 } from '../../actionTypes';
 
 export const sequence_state: StateSequence = {
@@ -22,6 +23,7 @@ export const sequence_state: StateSequence = {
   proposals: [],
   cards: [],
   loadFirstProposal: false,
+  sequenceSize: 0,
 };
 
 export const sequence_reducer: Reducer = (
@@ -91,6 +93,11 @@ export const sequence_reducer: Reducer = (
       return {
         ...state,
         currentIndex: action.payload.index || 0,
+      };
+    case SEQUENCE_SET_LENGTH:
+      return {
+        ...state,
+        sequenceSize: action.payload.length,
       };
     case SEQUENCE_INCREMENT_INDEX:
       return {

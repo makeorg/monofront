@@ -35,7 +35,8 @@ import { MetaTags } from '../MetaTags';
 export const SequenceByKeyword: FC = () => {
   const { state } = useAppContext();
   const { country } = state.appConfig;
-  const { isLoading } = state.sequence;
+  const { isLoading, sequenceSize } = state.sequence;
+  const isEmptySequence = sequenceSize === 0;
   const params: { encodedKeyword: string } = useParams();
   const { encodedKeyword } = params;
   const keyword = encodedKeyword && decodeURI(encodedKeyword);
@@ -63,16 +64,6 @@ export const SequenceByKeyword: FC = () => {
     };
   };
 
-  const { currentCard, isEmptySequence, sequenceLength } = useSequence(
-    question,
-    false,
-    executeStartSequence
-  );
-
-  if (isLoading) {
-    return <SequencePlaceholder />;
-  }
-
   const noProposalCard: NoProposalCardType = {
     type: CARD.CARD_TYPE_NO_PROPOSAL_CARD,
     configuration: {
@@ -83,6 +74,17 @@ export const SequenceByKeyword: FC = () => {
     },
     index: 0,
   };
+
+  const { currentCard } = useSequence(
+    question,
+    false,
+    executeStartSequence,
+    noProposalCard
+  );
+
+  if (isLoading) {
+    return <SequencePlaceholder />;
+  }
 
   const withProposalButton =
     question?.canPropose && !isPushProposalCard(currentCard);
@@ -108,7 +110,7 @@ export const SequenceByKeyword: FC = () => {
             card={isEmptySequence ? noProposalCard : currentCard}
             question={question}
           />
-          {!isEmptySequence && <SequenceProgress length={sequenceLength} />}
+          {!isEmptySequence && <SequenceProgress length={sequenceSize} />}
         </SequenceContentStyle>
         <ConsultationPageLinkStyle
           className={!withProposalButton ? 'static' : ''}

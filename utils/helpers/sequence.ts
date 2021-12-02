@@ -3,6 +3,7 @@ import {
   SequenceCardType,
   ProposalType,
   DemographicDataType,
+  NoProposalCardType,
 } from '@make.org/types';
 import i18n from 'i18next';
 import { CARD, SEQUENCE } from '@make.org/types/enums';
@@ -99,8 +100,9 @@ export const buildCards = (
  * @param  {SequenceCardType} card
  * @return {boolean}
  */
-export const isPushProposalCard = (card: SequenceCardType | null): boolean =>
-  card?.type === CARD.CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL;
+export const isPushProposalCard = (
+  card: SequenceCardType | NoProposalCardType | null
+): boolean => card?.type === CARD.CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL;
 
 /**
  * Check if is a standard sequence

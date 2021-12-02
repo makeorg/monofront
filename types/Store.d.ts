@@ -55,6 +55,7 @@ export type StateSequence = {
     submitted: boolean;
   };
   readonly loadFirstProposal?: boolean;
+  readonly sequenceSize: number;
 };
 
 // Notification State

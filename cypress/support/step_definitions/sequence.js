@@ -49,9 +49,7 @@ Given(
       .replace(':questionSlug', questionSlug)
       .replace(':language', language)
       .replace(':country', country);
-    cy.monitorApiCall('getFirstProposalSequence');
     cy.visit(page);
-    cy.wait('@getFirstProposalSequence', { timeout: 8000 });
   }
 );
 
