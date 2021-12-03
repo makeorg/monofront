@@ -6,7 +6,7 @@ import { getIdentifierButtonByName } from '../mapping.js';
 const sequencePage = {
   front: '/:country/consultation/:questionSlug/selection',
   widget:
-    '/?questionSlug=:questionSlug&source=widget-test&country=:country&language=:language&widgetId=fake-widget-id&hash=fake-hash-id',
+    '/?questionSlug=:questionSlug&source=widget-test&country=:country&language=:language&widgetId=fake-widget-questionid&hash=fake-hash-id',
 };
 const sequencePopularPage = '/FR/consultation/:questionSlug/selection-popular';
 const voteLabel = {
@@ -38,6 +38,20 @@ Given(
     cy.monitorApiCall('getStartSequence');
     cy.visit(page);
     cy.wait('@getStartSequence', { timeout: 8000 });
+  }
+);
+
+// call first proposal of sequence with new endpoint `first-proposal`
+Given(
+  'I am/go on/to the first card of sequence of the question {string} with country {string} and language {string}',
+  (questionSlug, country, language) => {
+    const page = sequencePage[Cypress.env('application')]
+      .replace(':questionSlug', questionSlug)
+      .replace(':language', language)
+      .replace(':country', country);
+    cy.monitorApiCall('getFirstProposalSequence');
+    cy.visit(page);
+    cy.wait('@getFirstProposalSequence', { timeout: 8000 });
   }
 );
 
