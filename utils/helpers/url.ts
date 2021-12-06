@@ -41,8 +41,14 @@ import {
   ROUTE_STATIC_A11Y_DE,
 } from '../routes';
 
+declare global {
+  interface Window {
+    FRONT_URL?: string;
+  }
+}
+
 export const getRelativeCurrentUrl = (pathName: string): string =>
-  `${env.frontUrl()}${pathName}`;
+  `${env.frontUrl() || window.FRONT_URL}${pathName}`;
 
 export const getPartnerAnchor = (aboutUrl: string): string =>
   `${aboutUrl}#partenaires`;

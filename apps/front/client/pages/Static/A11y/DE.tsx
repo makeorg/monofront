@@ -56,12 +56,17 @@ import {
   StaticStrongStyle,
 } from '../style';
 
+declare global {
+  interface Window {
+    FRONT_URL?: string;
+  }
+}
+
 export const A11yDE: FC = () => {
   const { state } = useAppContext();
   const { country, language } = state.appConfig;
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  const FRONT_URL: string = env.frontUrl() || window.FRONT_URL;
+  const FRONT_URL = env.frontUrl() || window.FRONT_URL;
+
   return (
     <>
       <MetaTags

@@ -14,11 +14,17 @@ const proposalId = 'fooProposalId';
 const proposalSlug = 'fooProposalSlug';
 const encodedKeyword = 'fookeyword';
 
+jest.mock('@make.org/assets/env', () => ({
+  env: {
+    frontUrl: jest.fn(),
+  },
+}));
+
 describe('Url Helper', () => {
   it('return relative current url', () => {
     const link = urlHelper.getRelativeCurrentUrl(pathName);
 
-    expect(link).toEqual(env.frontUrl() + pathName);
+    expect(link).toEqual((env.frontUrl() || window.FRONT_URL) + pathName);
   });
 
   it('return about link with #partenaires anchor', () => {

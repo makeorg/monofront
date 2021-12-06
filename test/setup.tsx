@@ -14,10 +14,42 @@ require.extensions['.svg'] = () => {
   console.log('svg file');
 };
 
+const localStorageMock = (() => {
+  let store: Record<string,string> = {};
+
+  return {
+    length: 0,
+    getItem(key: string) {
+      return store[key] || null;
+    },
+    setItem(key: string, value: string) {
+      store[key] = value.toString();
+    },
+    removeItem(key: string) {
+      delete store[key];
+    },
+    clear() {
+      store = {};
+    },
+    key(index: number) {
+      return store[index];
+    }
+  };
+})();
+
 // @ts-ignore
 global.document = new JSDOM('');
 // @ts-ignore
-global.window = document.defaultView;
+global.window = {
+  ...document.defaultView,
+  // @ts-ignore
+  FRONT_URL: jest.fn(),
+  document: {
+    ...document,
+    referrer: ''
+  },
+  sessionStorage: localStorageMock
+}
 
 // @ts-ignore
 global.navigator = { userAgent: 'browser' };

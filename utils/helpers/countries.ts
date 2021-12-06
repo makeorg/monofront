@@ -40,11 +40,11 @@ const languageStorage = {
   get: (country: string) =>
     sessionStorage.getItem(`${languageStorageKey}_${country}`),
   hasValue: (country: string) =>
-    !!sessionStorage.getItem(`${languageStorageKey}_${country}`),
+    !!window.sessionStorage.getItem(`${languageStorageKey}_${country}`),
   delete: (country: string) =>
     sessionStorage.removeItem(`${languageStorageKey}_${country}`),
   isAvailable: () =>
-    typeof window !== 'undefined' && window && !!sessionStorage,
+    typeof window !== 'undefined' && window && !!window.sessionStorage,
 };
 
 export const setCountry = (country: string): void => {
