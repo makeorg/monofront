@@ -888,8 +888,8 @@
       },
       "top_ideas": {
         "skiplink": "Die besten neuen Ideen",
-        "title": "Die beliebtesten Ideen, zusammengefasst auf {{count}} Schwerpunkt",
-        "title_plural": "Die beliebtesten Ideen, zusammengefasst auf {{count}} Schwerpunkten",
+        "title": "Die beliebtesten Ideen, zusammengefasst in {{count}} Schwerpunkt",
+        "title_plural": "Die beliebtesten Ideen, zusammengefasst in {{count}} Schwerpunkten",
         "introduction": "Die besten Vorschläge der Bürger:innen werden nach ihrer Veröffentlichung auf der Plattform zu größeren Ideen zusammengefasst, die die Konsultation strukturieren. Um diese Ideen einzuordnen, berücksichtigt der Make.org-Algorithmus die abgegebenen Abstimmungen „Ich stimme zu“ und „Ich stimme nicht zu“ sowie die Kennzeichnungen als „Favorit“, „Machbar“, „Unbedeutend“ und „Auf keinen Fall! “.",
         "axe_title": "Schwerpunkt {{count}}: {{name}}"
       },

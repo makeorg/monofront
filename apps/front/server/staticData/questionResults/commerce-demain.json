@@ -1,0 +1,606 @@
+{
+    "context": "Consultation citoyenne réalisée par Make.org du 2021-10-20 au 2021-11-19, autour de la question: Comment inventer ensemble les commerces de demain?",
+    "top_ideas": [
+        {
+            "name": "Commerces dans les territoires",
+            "ideas": [
+                {
+                    "idea": "Développer les commerces de proximité et les circuits courts",
+                    "agreement": 94,
+                    "adhesion": 25,
+                    "realistic": 24
+                },
+                {
+                    "idea": "Faciliter l'installation des commerces, particulièrement dans les zones rurales",
+                    "agreement": 92,
+                    "adhesion": 20,
+                    "realistic": 28
+                },
+                {
+                    "idea": "Développer les synergies entre commerces, producteurs et services",
+                    "agreement": 89,
+                    "adhesion": 20,
+                    "realistic": 32
+                },
+                {
+                    "idea": "Limiter le développement des zones commerciales et des grandes surfaces, notamment en périphérie, au profit des commerces de centre-ville",
+                    "agreement": 81,
+                    "adhesion": 18,
+                    "realistic": 27
+                },
+                {
+                    "idea": "Relocaliser la production en France et en Europe et limiter les importations",
+                    "agreement": 87,
+                    "adhesion": 22,
+                    "realistic": 27
+                },
+                {
+                    "idea": "Faire évoluer les modes de gouvernance dans les décisions économiques",
+                    "agreement": 84,
+                    "adhesion": 16,
+                    "realistic": 25
+                }
+            ]
+        },
+        {
+            "name": "Concurrence et équité",
+            "ideas": [
+                {
+                    "idea": "Mettre en place un cadre fiscal favorisant les petits commerces par rapport aux grandes entreprises",
+                    "agreement": 86,
+                    "adhesion": 23,
+                    "realistic": 23
+                },
+                {
+                    "idea": "Garantir une meilleure rémunération des producteurs",
+                    "agreement": 88,
+                    "adhesion": 24,
+                    "realistic": 23
+                },
+                {
+                    "idea": "Mieux encadrer le commerce sur internet",
+                    "agreement": 81,
+                    "adhesion": 20,
+                    "realistic": 26
+                }
+
+            ]
+        },
+        {
+            "name": "Accessibilité des commerces",
+            "ideas": [
+                {
+                    "idea": "Faciliter l'accès aux commerces grâce au développement des transports",
+                    "agreement": 85,
+                    "adhesion": 18,
+                    "realistic": 26
+                },
+                {
+                    "idea": "Diffuser la pratique des commerces ambulants dans les territoires ruraux",
+                    "agreement": 89,
+                    "adhesion": 26,
+                    "realistic": 25
+                },
+                {
+                    "idea": "Améliorer et démocratiser les services de livraison",
+                    "agreement": 81,
+                    "adhesion": 15,
+                    "realistic": 28
+                }
+            ]
+        },
+        {
+            "name": "Production et consommation responsable",
+            "ideas": [
+                {
+                    "idea": "Accentuer la lutte contre les emballages et développer les alternatives",
+                    "agreement": 88,
+                    "adhesion": 20,
+                    "realistic": 26
+                },
+                {
+                    "idea": "Développer les pratiques de l'économie circulaire",
+                    "agreement": 82,
+                    "adhesion": 18,
+                    "realistic": 24
+                },
+                {
+                    "idea": "Augmenter la transparence sur l'origine et la composition des produits",
+                    "agreement": 90,
+                    "adhesion": 27,
+                    "realistic": 23
+                }
+
+            ]
+        },
+        {
+            "name": "Emploi",
+            "ideas": [
+                {
+                    "idea": "Valoriser et développer l'artisanat",
+                    "agreement": 88,
+                    "adhesion": 18,
+                    "realistic": 26
+                },
+                {
+                    "idea": "Faciliter les recrutements dans le secteur du commerce",
+                    "agreement": 80,
+                    "adhesion": 14,
+                    "realistic": 28
+                }
+            ]
+        }
+    ],
+    "controversials": [
+        {
+            "id": "ba598098-9666-4a55-9667-de5b3f7a41a3",
+            "content": "Il faut taxer les locaux commerciaux vacants et imposer aux propriétaires d'entretenir leurs locaux grâce à des outils coercitifs",
+            "author": "Pichot",
+            "agree": 47,
+            "like_it": 8,
+            "disagree": 27,
+            "no_way": 7,
+            "votes": 296
+        },{
+            "id": "4bd23284-33fa-43ab-b534-671930b4b064",
+            "content": "Il faut taxer le foncier non loué pour inciter les propriétaires de baux commerciaux à louer leur local.",
+            "author": "marlène",
+            "agree": 51,
+            "like_it": 10,
+            "disagree": 29,
+            "no_way": 12,
+            "votes": 201
+        },{
+            "id": "0301562d-984e-4442-8a82-a59cd857374e",
+            "content": "Il faut que tous les commerces aient un site internet où l'on peut voir tous leurs articles, à l'ère numérique c'est primordial.",
+            "author": "Mugi",
+            "agree": 42,
+            "like_it": 7,
+            "disagree": 26,
+            "no_way": 7,
+            "votes": 120
+        },{
+            "id": "0dfcaa99-1f23-402f-9236-3a281ae7e1b1",
+            "content": "Il faut surtaxer les commerces sur internet pour valoriser les commerces de proximité",
+            "author": "Sarah",
+            "agree": 51,
+            "like_it": 18,
+            "disagree": 34,
+            "no_way": 14,
+            "votes": 128
+        },{
+            "id": "d4466b08-4556-487b-a7b2-a0f89cf3c0e2",
+            "content": "Il faut assurer une transparence des prix et supprimer les soldes. ",
+            "author": "France",
+            "agree": 46,
+            "like_it": 10,
+            "disagree": 31,
+            "no_way": 10,
+            "votes": 232
+        },{
+            "id": "1d96ea28-dc14-42a4-9e5e-02d0998f1279",
+            "content": "Il faut totalement supprimer les soldes, les dates étant totalement décalées avec les saisons et\nles règles obsolètes.",
+            "author": "CHRISTINE",
+            "agree": 34,
+            "like_it": 4,
+            "disagree": 40,
+            "no_way": 14,
+            "votes": 101
+        },{
+            "id": "adaeb8dc-77fd-4add-b8fd-a84966107161",
+            "content": "Il faut imposer un prix unique sur les produits alimentaires comme cela existe pour le prix du livre.",
+            "author": "Louis",
+            "agree": 47,
+            "like_it": 13,
+            "disagree": 37,
+            "no_way": 16,
+            "votes": 114
+        },{
+            "id": "cdfe6103-0971-4fa6-b314-1b968feb5f04",
+            "content": "Il faut que les prix des commerces de centre-ville soient encadrés pour ne pas être beaucoup plus chers que dans les centres commerciaux",
+            "author": "Maryline",
+            "agree": 40,
+            "like_it": 4,
+            "disagree": 36,
+            "no_way": 8,
+            "votes": 125
+        },{
+            "id": "fbc2d306-cefd-4fc3-9b9c-45b94847df61",
+            "content": "Il faut plus de places de parking au plus près des commerces (ne pas interdire les voitures en ville) et si possible gratuits",
+            "author": "olivia",
+            "agree": 57,
+            "like_it": 8,
+            "disagree": 25,
+            "no_way": 11,
+            "votes": 135
+        },{
+            "id": "768b35a1-9c4d-4e83-8400-e6c5c540326e",
+            "content": "Il faut favoriser l'accès des voitures et leur stationnement et permettre l'accès aux commerces de centre-ville étouffés.",
+            "author": "Philippe",
+            "agree": 51,
+            "like_it": 15,
+            "disagree": 33,
+            "no_way": 20,
+            "votes": 122
+        },{
+            "id": "b2ffdd36-efa6-442a-bc7a-8ef10d52f79f",
+            "content": "Il faut interdire les ouvertures de toutes les grandes surfaces le dimanche (bricolage et autres) pour favoriser le petit commerce",
+            "author": "DANY",
+            "agree": 42,
+            "like_it": 10,
+            "disagree": 45,
+            "no_way": 21,
+            "votes": 106
+        },{
+            "id": "03b2c1dd-5856-480a-9c8b-6c210f160986",
+            "content": "Il faut faciliter l'ouverture des magasins du dimanche pour ceux qui ne peuvent aller y aller le restant de la semaine.",
+            "author": "Louis",
+            "agree": 44,
+            "like_it": 8,
+            "disagree": 42,
+            "no_way": 24,
+            "votes": 106
+        },{
+            "id": "e2de5c65-9fa4-40c9-85a5-15818212ad8d",
+            "content": "Il faut que les produits fruits et légumes qui ne sont pas de saison soient davantage taxés (retour à une TVA à 20% par ex voire plus)",
+            "author": "Ambroise",
+            "agree": 53,
+            "like_it": 10,
+            "disagree": 32,
+            "no_way": 11,
+            "votes": 152
+        }, {
+            "id": "2b263441-bc39-4976-8514-4b4525c417e4",
+            "content": "Il faut imposer de consommer local et créer une taxe aux kilomètres parcourus hors département, hors région, hors pays, hors EU, etc.",
+            "author": "Enora",
+            "agree": 44,
+            "like_it": 11,
+            "disagree": 39,
+            "no_way": 19,
+            "votes": 108
+        }
+    ],
+    "rejected": [],
+    "cartography": [
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Thèmes cités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Types de commerce",
+                    "sublabel": " et concurrence",
+                    "percent": 22,
+                    "color": "#4B45A5",
+                    "adjustLabel": {
+                      "textAlign": "left",
+                      "xAxis": 2.2,
+                      "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Commerce de",
+                    "sublabel": " proximité",
+                    "percent": 19,
+                    "color": "#8955BD",
+                    "adjustLabel": {
+                      "textAlign": "left",
+                      "xAxis": 2.4
+                    }
+                },
+                {
+                    "label": "Aménagement et",
+                    "sublabel": " vie locale",
+                    "percent": 18,
+                    "color": "#EB7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.3,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Cotisations et",
+                    "sublabel": " fiscalité",
+                    "percent": 15,
+                    "color": "#F5976E",
+                    "adjustLabel": {
+                      "textAlign": "center",
+                      "yAxis": 2.3
+                    }
+                },
+                {
+                    "label": "Ecologie",
+                    "percent": 11,
+                    "color": "#EEB298",
+                    "adjustLabel": {
+                      "textAlign": "right",
+                      "xAxis": 1.8,
+                      "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Transport",
+                    "percent": 10,
+                    "color": "#FFD266",
+                    "adjustLabel": {
+                      "textAlign": "right",
+                      "xAxis": 1.75
+                    }
+                },
+                {
+                    "label": "Numérique",
+                    "percent": 6,
+                    "color": "#FFF689",
+                    "adjustLabel": {
+                      "textAlign": "right",
+                      "xAxis": 1.75
+                    }
+                },
+                {
+                    "label": "Bâtiments et locaux",
+                    "percent": 6,
+                    "color": "#E5FFAE",
+                    "adjustLabel": {
+                      "textAlign": "right",
+                      "xAxis": 1.75,
+                      "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Economie et emploi",
+                    "percent": 5,
+                    "color": "#C1EBDD",
+                    "adjustLabel": {
+                      "textAlign": "right",
+                      "xAxis": 1.75,
+                      "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Prix",
+                    "percent": 5,
+                    "color": "#59BAD4",
+                    "adjustLabel": {
+                      "textAlign": "right",
+                      "xAxis": 1.75,
+                      "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Autres",
+                    "percent": 8,
+                    "color": "#5885AE",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "xAxis": 1.8,
+                        "yAxis": 1.8
+                    }
+                }
+            ]
+        }
+    ],
+    "participation": [
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (1/2)",
+            "forcedHigherValue": 19,
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "Île-de-France",
+                    "bars": {
+                        "first": 18,
+                        "second": 18
+                    }
+                },
+                {
+                    "label": "Auvergne-Rhône-Alpes",
+                    "bars": {
+                        "first": 3,
+                        "second": 12
+                    }
+                },
+                {
+                    "label": "Nouvelle-Aquitaine",
+                    "bars": {
+                        "first": 12,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Occitanie",
+                    "bars": {
+                        "first": 11,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Hauts-de-France",
+                    "bars": {
+                        "first": 8,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Grand Est",
+                    "bars": {
+                        "first": 8,
+                        "second": 8
+                    }
+                },
+                {
+                    "label": "Provence-Alpes-Côte d'Azur",
+                    "bars": {
+                        "first": 9,
+                        "second": 8
+                    }
+                }
+            ],
+            "id": "participation_0"
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (2/2)",
+            "forcedHigherValue": 19,
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "Pays de la Loire",
+                    "bars": {
+                        "first": 6,
+                        "second": 6
+                    }
+                },
+                {
+                    "label": "Bretagne",
+                    "bars": {
+                        "first": 6,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Normandie",
+                    "bars": {
+                        "first": 5,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Bourgogne-Franche-Comté",
+                    "bars": {
+                        "first": 6,
+                        "second": 4
+                    }
+                },
+                {
+                    "label": "Centre-Val de Loire",
+                    "bars": {
+                        "first": 6,
+                        "second": 4
+                    }
+                },
+                {
+                    "label": "Outre-mer",
+                    "bars": {
+                        "first": 1,
+                        "second": 3
+                    }
+                },
+                {
+                    "label": "Corse",
+                    "bars": {
+                        "first": 1,
+                        "second": 1
+                    }
+                }
+            ],
+            "id": "participation_1"
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par âge",
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "08-15",
+                    "bars": {
+                        "first": 0,
+                        "second": 10
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "16-24",
+                    "bars": {
+                        "first": 5,
+                        "second": 12
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "25-34",
+                    "bars": {
+                        "first": 11,
+                        "second": 13
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "35-44",
+                    "bars": {
+                        "first": 13,
+                        "second": 14
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "45-54",
+                    "bars": {
+                        "first": 20,
+                        "second": 14
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "55-64",
+                    "bars": {
+                        "first": 25,
+                        "second": 14
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "65+",
+                    "bars": {
+                        "first": 26,
+                        "second": 23
+                    },
+                    "color": "#8BDAB2"
+                }
+            ],
+            "id": "participation_2"
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Votes par genre",
+            "legend": "",
+            "data": [
+                {
+                    "label": "hommes",
+                    "percent": 46,
+                    "color": "#4B45A5"
+                },
+                {
+                    "label": "femmes",
+                    "percent": 54,
+                    "color": "#8955BD"
+                }
+            ],
+            "id": "participation_3"
+        }
+    ]
+}
