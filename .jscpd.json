@@ -21,6 +21,7 @@
     "**/dist/**",
     "**/server/**",
     "**/*.feature",
+    "**/README.md",
     "**/bin/**"
   ],
   "absolute": true,

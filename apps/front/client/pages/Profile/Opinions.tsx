@@ -6,14 +6,11 @@ import { PersonalityService } from '@make.org/utils/services/Personality';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { Redirect } from 'react-router';
 import { getHomeLink } from '@make.org/utils/helpers/url';
-import { getRouteProfileEdit } from '@make.org/utils/routes';
 import { MetaTags } from '@make.org/components/MetaTags';
 import {
   ProfileHeaderStyle,
   ProfilePageContentStyle,
   ProfilePageContentWrapperStyle,
-  ProfilePageSidebarStyle,
-  ProfilePageSidebarWrapperStyle,
 } from '@make.org/ui/elements/ProfileElements';
 import {
   TabListStyle,
@@ -21,9 +18,14 @@ import {
   TabStyle,
 } from '@make.org/ui/elements/TabsElements';
 import { Spinner } from '@make.org/ui/components/Loading/Spinner';
-import { PersonalityProfileType, PersonalityType } from '@make.org/types';
+import {
+  CommonUsersProfileType,
+  OrganisationType,
+  PersonalityProfileType,
+  PersonalityType,
+  UserType,
+} from '@make.org/types';
 import { UserProfileSkipLinks } from '../../app/SkipLinks/Profile';
-import { EditProfileLink } from '../../app/Profile/UserInformations/Navigation';
 import { UserInformations } from '../../app/Profile/UserInformations';
 import { Opinions } from '../../app/Opinions';
 
@@ -60,7 +62,13 @@ const ProfilePage: FC = () => {
     return <Redirect to={getHomeLink(country)} />;
   }
 
-  const NavigationBar = <EditProfileLink link={getRouteProfileEdit(country)} />;
+  const formattedUserType = user as (
+    | UserType
+    | PersonalityType
+    | OrganisationType
+  ) & {
+    profile: CommonUsersProfileType;
+  };
 
   return (
     <>
@@ -68,12 +76,7 @@ const ProfilePage: FC = () => {
       <MetaTags />
       <ProfileHeaderStyle aria-hidden />
       <ProfilePageContentWrapperStyle>
-        <ProfilePageSidebarWrapperStyle>
-          <ProfilePageSidebarStyle id="sidebar_content">
-            {/* @ts-ignore */}
-            <UserInformations user={user} navigationBar={NavigationBar} />
-          </ProfilePageSidebarStyle>
-        </ProfilePageSidebarWrapperStyle>
+        <UserInformations user={formattedUserType} />
         <ProfilePageContentStyle>
           <TabNavStyle
             aria-label={i18n.t('common.secondary_nav')}

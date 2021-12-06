@@ -3,15 +3,13 @@ import React, { FC } from 'react';
 import { generatePath, Link, Redirect } from 'react-router-dom';
 import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
-import { getRouteProfile, ROUTE_PROFILE_EDIT } from '@make.org/utils/routes';
+import { ROUTE_PROFILE_EDIT } from '@make.org/utils/routes';
 import { getHomeLink } from '@make.org/utils/helpers/url';
 import { MetaTags } from '@make.org/components/MetaTags';
 import {
   ProfileHeaderStyle,
   ProfilePageContentStyle,
   ProfilePageContentWrapperStyle,
-  ProfilePageSidebarStyle,
-  ProfilePageSidebarWrapperStyle,
 } from '@make.org/ui/elements/ProfileElements';
 import {
   TabListStyle,
@@ -19,8 +17,13 @@ import {
   TabStyle,
 } from '@make.org/ui/elements/TabsElements';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
+import {
+  CommonUsersProfileType,
+  OrganisationType,
+  PersonalityType,
+  UserType,
+} from '@make.org/types';
 import { UpdateNewsletter } from '../../app/Profile/UpdateNewsletter';
-import { GoToProfileLink } from '../../app/Profile/UserInformations/Navigation';
 import { UserInformations } from '../../app/Profile/UserInformations';
 import { UpdateInformations } from '../../app/Profile/UpdateInformations';
 import { UpdatePassword } from '../../app/Profile/UpdatePassword';
@@ -39,19 +42,24 @@ const ProfileEditPage: FC = () => {
     return <Redirect to={getHomeLink(country)} />;
   }
 
-  const NavigationBar = <GoToProfileLink link={getRouteProfile(country)} />;
+  const formattedUserMultipleType = user as (
+    | UserType
+    | PersonalityType
+    | OrganisationType
+  ) & {
+    profile: CommonUsersProfileType;
+  };
+
+  const formattedUserType = user as UserType & {
+    profile: CommonUsersProfileType;
+  };
 
   return (
     <>
       <MetaTags title={i18n.t('meta.profile.edit.title')} />
       <ProfileHeaderStyle aria-hidden />
       <ProfilePageContentWrapperStyle>
-        <ProfilePageSidebarWrapperStyle>
-          <ProfilePageSidebarStyle>
-            {/* @ts-ignore */}
-            <UserInformations user={user} navigationBar={NavigationBar} />
-          </ProfilePageSidebarStyle>
-        </ProfilePageSidebarWrapperStyle>
+        <UserInformations user={formattedUserMultipleType} getBack />
         <ProfilePageContentStyle>
           <TabNavStyle aria-label={i18n.t('common.secondary_nav')}>
             <TabListStyle as="div">
@@ -62,17 +70,17 @@ const ProfileEditPage: FC = () => {
               </TabStyle>
             </TabListStyle>
           </TabNavStyle>
-          {/* @ts-ignore */}
-          <UpdateInformations user={user} />
-          {/* @ts-ignore */}
-          <UpdatePassword userId={user.userId} hasPassword={user.hasPassword} />
+          <UpdateInformations user={formattedUserType} />
+          <UpdatePassword
+            userId={user.userId}
+            hasPassword={formattedUserType.hasPassword}
+          />
           <UpdateNewsletter
             userId={user.userId}
             userType={user.userType}
             profile={user.profile}
           />
-          {/* @ts-ignore */}
-          <DeleteAccount user={user} />
+          <DeleteAccount user={formattedUserType} />
         </ProfilePageContentStyle>
       </ProfilePageContentWrapperStyle>
     </>

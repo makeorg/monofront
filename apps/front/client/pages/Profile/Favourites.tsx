@@ -1,27 +1,23 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useState, useEffect, FC } from 'react';
 import i18n from 'i18next';
-import { ProposalType, UserType } from '@make.org/types';
-
+import { ProposalType } from '@make.org/types';
 import { UserService } from '@make.org/utils/services/User';
 import { TRACKING } from '@make.org/types/enums';
 import { trackLoadMoreProposals } from '@make.org/utils/services/Tracking';
-import { MetaTags } from '@make.org/components/MetaTags';
-import {
-  ProfileContentHeaderStyle,
-  ProfileTitleSeparatorStyle,
-} from '@make.org/ui/elements/ProfileElements';
-import { ThirdLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
-import { Spinner } from '@make.org/ui/components/Loading/Spinner';
-import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
-import { ProfileProposalCard } from '@make.org/components/Proposal/ProfileProposalCard';
-import { LoadMoreWrapperStyle } from '../../app/Consultation/Styled/Proposal';
+import { useAppContext } from '@make.org/store';
+import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { ProfileFavouritesPlaceholder } from './Placeholders/Favourites';
+import { ProfileProposalsList } from './ProposalsList';
 
-type Props = {
-  user: UserType;
-};
-
-const ProfileFavouritesPage: FC<Props> = ({ user }) => {
+const ProfileFavouritesPage: FC = () => {
+  const { state } = useAppContext();
+  const { user } = selectAuthentication(state);
+  const Placeholder = <ProfileFavouritesPlaceholder />;
+  const titles = {
+    meta: i18n.t('meta.profile.favorites.title'),
+    section: i18n.t('profile.favourites.title'),
+  };
   const [proposals, setProposals] = useState<ProposalType[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [hasMore, setHasMore] = useState<boolean>(false);
@@ -29,6 +25,10 @@ const ProfileFavouritesPage: FC<Props> = ({ user }) => {
 
   const initProposal = async () => {
     setIsLoading(true);
+    if (!user) {
+      setIsLoading(false);
+      return;
+    }
     const result = await UserService.myFavourites(user.userId);
     if (result) {
       const { results, total } = result;
@@ -41,6 +41,10 @@ const ProfileFavouritesPage: FC<Props> = ({ user }) => {
 
   const loadProposals = async () => {
     setIsLoading(true);
+    if (!user) {
+      setIsLoading(false);
+      return;
+    }
     const result = await UserService.myFavourites(user.userId, page);
     if (result) {
       const { results, total } = result;
@@ -62,41 +66,15 @@ const ProfileFavouritesPage: FC<Props> = ({ user }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
-  const proposalsLength = proposals.length;
-  const renderProposals = !!proposalsLength;
-  const renderPlaceholder = !proposalsLength && !isLoading;
-  const displayLoadMoreButton = hasMore && !isLoading;
   return (
-    <>
-      <MetaTags title={i18n.t('meta.profile.favorites.title')} />
-      <ProfileContentHeaderStyle>
-        <ThirdLevelTitleStyle as="h2">
-          {i18n.t('profile.favourites.title')}
-        </ThirdLevelTitleStyle>
-        <ProfileTitleSeparatorStyle />
-      </ProfileContentHeaderStyle>
-      {renderProposals && (
-        <section role="feed" aria-live="polite">
-          {proposals.map((proposal, index) => (
-            <ProfileProposalCard
-              key={proposal.id}
-              proposal={proposal}
-              size={proposalsLength}
-              position={index}
-            />
-          ))}
-        </section>
-      )}
-      {isLoading && <Spinner />}
-      {displayLoadMoreButton && (
-        <LoadMoreWrapperStyle>
-          <RedButtonStyle onClick={clickLoadMore}>
-            {i18n.t('consultation.proposal.load_more')}
-          </RedButtonStyle>
-        </LoadMoreWrapperStyle>
-      )}
-      {renderPlaceholder && <ProfileFavouritesPlaceholder />}
-    </>
+    <ProfileProposalsList
+      titles={titles}
+      proposals={proposals}
+      hasMore={hasMore}
+      isLoading={isLoading}
+      handleLoadMore={clickLoadMore}
+      placeholder={Placeholder}
+    />
   );
 };
 

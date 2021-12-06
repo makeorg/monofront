@@ -24,7 +24,6 @@ import {
   ROUTE_PROFILE_EDIT,
   ROUTE_PROFILE_PROPOSALS,
   ROUTE_PROFILE_FAVOURITES,
-  ROUTE_PROFILE_FOLLOWING,
   ROUTE_ORGANISATION_PROFILE,
   ROUTE_ORGANISATION_PROPOSALS,
   ROUTE_ORGANISATION_VOTES,
@@ -90,9 +89,12 @@ const AccountActivationPage = loadable(
   () => import('../pages/AccountActivation')
 );
 const ProfileEditPage = loadable(() => import('../pages/Profile/Edit'));
-
-const ProfilePage = loadable(() => import('../pages/Profile'));
-
+const ProfileProposalsPage = loadable(
+  () => import('../pages/Profile/Proposals')
+);
+const ProfileFavouritesPage = loadable(
+  () => import('../pages/Profile/Favourites')
+);
 const ProfileOpinionsPage = loadable(() => import('../pages/Profile/Opinions'));
 
 const OrganisationPage = loadable(() => import('../pages/Organisation'));
@@ -190,9 +192,11 @@ export const Routes: FC = () => {
       <Route path={ROUTE_PROPOSAL} component={ProposalPage} />
       <Route path={ROUTE_PASSWORD_RECOVERY} component={PasswordRecoveryPage} />
       <Route path={ROUTE_PROFILE_EDIT} component={ProfileEditPage} />
-      <Route path={ROUTE_PROFILE_PROPOSALS} component={ProfilePage} />
-      <Route path={ROUTE_PROFILE_FAVOURITES} component={ProfilePage} />
-      <Route path={ROUTE_PROFILE_FOLLOWING} component={ProfilePage} />
+      <Route path={ROUTE_PROFILE_PROPOSALS} component={ProfileProposalsPage} />
+      <Route
+        path={ROUTE_PROFILE_FAVOURITES}
+        component={ProfileFavouritesPage}
+      />
       <Route path={ROUTE_PROFILE_OPINIONS} component={ProfileOpinionsPage} />
       <Route path={ROUTE_ORGANISATION_PROPOSALS} component={OrganisationPage} />
       <Route path={ROUTE_ORGANISATION_VOTES} component={OrganisationPage} />
