@@ -47,6 +47,8 @@ stages:
       - ui/**/*
       - utils/**/*
       - apps/front/**/*
+      - cypress/integration/*.feature
+      - cypress/integration/front/*.feature
       - package.json
       - yarn.lock
 
@@ -66,6 +68,8 @@ stages:
       - ui/**/*
       - utils/**/*
       - apps/widget/**/*
+      - cypress/integration/*.feature
+      - cypress/integration/widget/*.feature
       - package.json
       - yarn.lock
 

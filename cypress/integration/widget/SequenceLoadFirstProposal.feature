@@ -65,3 +65,13 @@ Scenario: display first proposal with specific endpoint and progress in sequence
     | referrer            | http://localhost:9008/__/                                           |
     | url                 | http://localhost:9008/?questionSlug=question-0-slug&source=widget-test&country=FR&language=fr&widgetId=fake-widget-questionid&hash=fake-hash-id|
   And card "1" is visible
+
+Scenario: start sequence with include neutral proposal of first card
+  Given I am on the first card of sequence of the question "question-0-slug" with country "FR" and language "fr"
+  Then I vote "neutral" on the current card
+  Then I see neutral qualifications buttons on card "1"
+  Then I see "next proposal" button on card "1"
+  When I click on "next proposal" button    
+  Then card "2" is visible
+  When I click on "previous card" of the current card
+  Then I see neutral qualifications buttons on card "1"

@@ -38,7 +38,7 @@ const endpoints = {
     method: 'GET',
     url: '**/sequences/standard/*/first-proposal',
   },
-  getStartSequence: { method: 'GET', url: '**/sequences/standard/:questionId' },
+  getStartSequence: { method: 'GET', url: '**/sequences/standard/*' },
   getPopularStartSequence: { method: 'GET', url: '**/sequences/consensus/*' },
 };
 

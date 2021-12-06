@@ -9,11 +9,14 @@ const { fixtures } = require('../fixtures/generator');
 const sequenceRouter = jsonServer.create();
 
 // update default proposal votes with voted neutral vote
-const defaultVotes = votes;
-const newVotesWithNeutralVoted = [
-  ...defaultVotes,
-  defaultVotes[2].hasVoted === true,
-];
+const defaultNeutralVote = votes[2];
+const neutralVoted = {
+  ...defaultNeutralVote,
+  hasVoted: true,
+};
+const newVotesWithNeutralVoted = votes.slice(0, 2);
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const pushNeutralVoted = newVotesWithNeutralVoted.push(neutralVoted);
 
 sequenceRouter.get('/standard/:questionId', (req, res) => {
   const proposalsOfQuestion = fixtures.proposals.filter(
