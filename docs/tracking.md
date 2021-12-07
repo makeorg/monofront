@@ -34,7 +34,7 @@ Following parameters are added to all events.
 | `questionId` | false | Question id of the consultation (if relevant) |  |
 | `questionSlug` | false | Question slug of the consultation (if relevant) |  |
 | `referrer` | false | Referer value |  |
-| `url` | true | Current url |  |
+| `url` | false | Current url |  |
 
 
 ### Event list 

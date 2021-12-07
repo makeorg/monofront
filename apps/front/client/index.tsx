@@ -53,10 +53,11 @@ window.onerror = (message, source, lineNumber, columnNumber, error) => {
     const formattedColumnNumber = JSON.stringify(columnNumber);
     Logger.log(
       {
-        formattedMessage,
-        formattedSource,
-        formattedLineNumber,
-        formattedColumnNumber,
+        name: 'global-client',
+        message: formattedMessage,
+        app_sourceError: formattedSource,
+        app_line_error: formattedLineNumber,
+        app_column_error: formattedColumnNumber,
         stack,
       },
       'error'

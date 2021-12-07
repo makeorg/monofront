@@ -24,6 +24,7 @@ COMMON_PARAMETERS:
           optional: true
         - key: url
           description: Current url
+          optional: true
 
 CLICK_MAKEORG_LOGO:     
     key: click-navbar-logo

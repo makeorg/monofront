@@ -46,10 +46,11 @@ window.onerror = (message, source, lineNumber, columnNumber, error) => {
     const formattedColumnNumber = JSON.stringify(columnNumber);
     Logger.log(
       {
-        formattedMessage,
-        formattedSource,
-        formattedLineNumber,
-        formattedColumnNumber,
+        name: 'global-client',
+        message: formattedMessage,
+        app_sourceError: formattedSource,
+        app_line_error: formattedLineNumber,
+        app_column_error: formattedColumnNumber,
         stack,
       },
       'error'
@@ -127,6 +128,15 @@ const initApp = async (state: StateRoot) => {
     typeof window !== 'undefined' && !!window.document?.referrer
       ? window.document.referrer
       : '';
+
+  if (!currentUrl) {
+    Logger.logError({
+      name: 'init-app',
+      message: `No current url. typeof window: ${typeof window}, window.document.referrer: ${
+        window?.document?.referrer
+      }, window.document.href: ${window?.location?.href}`,
+    });
+  }
 
   // Set tracking params
   trackingParamsService.source = queryParams.source || source;
