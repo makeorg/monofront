@@ -71,7 +71,6 @@ export const CommitmentQualification: FC<Props> = ({
                 onClick={() => handleQualification(qualification)}
                 data-cy-button="qualification"
                 data-cy-qualification-key={qualification}
-                isWidget={isWidget}
               >
                 {i18n.t(`personality.opinions.qualification.${qualification}`)}
               </QualifyButtonStyle>

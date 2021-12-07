@@ -202,17 +202,14 @@ export const NavButtonStyle = styled(UnstyledButtonStyle)`
   text-transform: uppercase;
 `;
 
-export const QualifyButtonStyle = styled.button<{ isWidget?: boolean }>`
+export const QualifyButtonStyle = styled.button`
   font-family: ${MakeFonts.CircularStandardBold};
   display: flex;
   justify-content: center;
   width: 100%;
   border-width: 2px;
-  font-size: ${props =>
-    props.isWidget
-      ? intToPx(typography.font.fontsize.X2S.value)
-      : intToPx(typography.font.fontsize.XS.value)};
-  line-height: ${props => (props.isWidget ? '21px' : '26px')};
+  font-size: 14px;
+  line-height: 24px;
   border-style: solid;
   padding: 0 10px;
   border-radius: 36px;
@@ -222,6 +219,9 @@ export const QualifyButtonStyle = styled.button<{ isWidget?: boolean }>`
   &.qualified {
     color: ${color.white};
     background-color: ${props => props.color};
+  }
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    font-size: ${intToPx(typography.font.fontsize.XS.value)};
   }
 `;
 

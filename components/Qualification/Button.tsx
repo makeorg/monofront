@@ -12,7 +12,7 @@ import { useAppContext } from '@make.org/store';
 import { TopComponentContext } from '@make.org/store/topComponentContext';
 import { QualifyButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { qualify as actionQualify } from '@make.org/store/actions/sequence';
-import { CounterStyle, QualifyButtonWrapperStyle } from './style';
+import { QualifyButtonWrapperStyle } from './style';
 
 type Props = {
   /** qualification object */
@@ -44,7 +44,7 @@ export const QualificationButton: React.FC<Props> = ({
   const { source } = state.appConfig;
   const isWidget = source === 'widget';
   const [userQualification, setUserQualification] = useState(qualification);
-  const { hasQualified, qualificationKey, count } = userQualification;
+  const { hasQualified, qualificationKey } = userQualification;
   const buttonLabel = i18n.t(`qualification.${qualificationKey}`);
   const [isQualified, setIsQualified] = useState<boolean>(hasQualified);
   const [pendingQualification, setPendingQualification] =
@@ -130,7 +130,6 @@ export const QualificationButton: React.FC<Props> = ({
             data-cy-button="qualification"
             data-cy-qualification-key={qualificationKey}
             disabled={disableClick}
-            isWidget={isWidget}
           >
             {pendingQualification ? (
               <LoadingDots isWidget={isWidget} />
@@ -138,16 +137,6 @@ export const QualificationButton: React.FC<Props> = ({
               <span aria-hidden>{buttonLabel}</span>
             )}
           </QualifyButtonStyle>
-          {isQualified && (
-            <CounterStyle
-              data-cy-button-qualification-total
-              data-cy-qualification-key={qualificationKey}
-              aria-hidden
-              isWidget={isWidget}
-            >
-              {count + 1}
-            </CounterStyle>
-          )}
         </QualifyButtonWrapperStyle>
       )}
     </TopComponentContext.Consumer>
