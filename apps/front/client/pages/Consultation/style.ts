@@ -9,11 +9,7 @@ import {
 // import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
-import {
-  SvgArrowGroupUpDown,
-  SvgChat,
-  SvgFiltersMobileIcon,
-} from '@make.org/ui/Svg/elements';
+import { SvgChat, SvgFiltersMobileIcon } from '@make.org/ui/Svg/elements';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
 
 export const ConsultationHeaderWrapperStyle = styled.div<{
@@ -288,12 +284,6 @@ export const FiltersCounterStyle = styled.span`
   background-color: ${color.brandSecondary};
   text-align: center;
   border-radius: 30px;
-`;
-
-export const SvgArrowsGroupDesktopMobile = styled(SvgArrowGroupUpDown)`
-  width: 8.5px;
-  height: 12px;
-  margin-right: 12px;
 `;
 
 export const SvgFiltersMobile = styled(SvgFiltersMobileIcon)`
