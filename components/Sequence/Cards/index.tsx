@@ -93,12 +93,6 @@ export const SequenceCard: React.FC<Props> = ({ card, question }) => {
   }
 
   const isNoProposalCard = card.type === CARD.CARD_TYPE_NO_PROPOSAL_CARD;
-  const isIntroCard = card.type === CARD.CARD_TYPE_EXTRASLIDE_INTRO;
-  const isFinalCard = card.type === CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD;
-  const isDemographicsCard =
-    card.type === CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD;
-  const isSpecialFinalCard =
-    card.type === CARD.CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD;
   const topComponentContext: TopComponentContextValueType =
     TopComponentContextValue.getSequenceProposal();
 
@@ -110,18 +104,6 @@ export const SequenceCard: React.FC<Props> = ({ card, question }) => {
 
   if (isNoProposalCard) {
     className = 'no-proposal';
-  }
-
-  if (isSpecialFinalCard || isIntroCard || isDemographicsCard) {
-    className = 'center';
-  }
-
-  if (
-    (isFinalCard && isWidget) ||
-    (isNoProposalCard && isWidget) ||
-    (isWidget && isDemographicsCard)
-  ) {
-    className = 'center widget';
   }
 
   return (

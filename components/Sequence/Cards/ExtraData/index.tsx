@@ -40,10 +40,12 @@ export const ExtraDataCard: FC<Props> = ({ configuration }) => {
     <SubmittedDemographics title={title} name={name} demographicId={id} />
   ) : (
     <SequenceWrapperStyle data-cy-demographic-layout={configuration.layout}>
-      <SequenceIntroParagraphStyle>{title}</SequenceIntroParagraphStyle>
-      <ExtraDataDescriptionStyle className={isWidget ? 'widget' : ''}>
-        {i18n.t('demographics_card.disclaimer')}
-      </ExtraDataDescriptionStyle>
+      <div>
+        <SequenceIntroParagraphStyle>{title}</SequenceIntroParagraphStyle>
+        <ExtraDataDescriptionStyle className={isWidget ? 'widget' : ''}>
+          {i18n.t('demographics_card.disclaimer')}
+        </ExtraDataDescriptionStyle>
+      </div>
       <ExtraDataForm
         demographicId={id}
         name={name}

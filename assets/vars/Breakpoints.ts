@@ -1,5 +1,5 @@
 export const Breakpoints = {
-  LargeMobile: 360,
+  LargeMobile: 480,
   Tablet: 767,
   Desktop: 969,
   LargeDesktop: 1140,

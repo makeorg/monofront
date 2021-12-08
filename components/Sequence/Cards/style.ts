@@ -20,9 +20,10 @@ export const SequenceCardStyle = styled.section`
   display: flex;
   flex-flow: column;
   align-items: center;
+  justify-content: center;
   flex: 1;
   width: 100%;
-  padding: 0 20px;
+  padding: 0 15px;
   background-color: ${color.white};
   border-radius: 8px;
   box-shadow: 0 2px 3px 0 ${ShadowColors.BlackZeroTwoOpacity};
@@ -31,8 +32,8 @@ export const SequenceCardStyle = styled.section`
   &.widget {
     margin: 20px;
     padding: 15px;
-    max-height: 295px;
-    min-height: 295px;
+    max-height: 334px;
+    min-height: 334px;
   }
   &.center {
     justify-content: center;
@@ -97,8 +98,8 @@ export const SequenceAltTitleStyle = styled(SequenceTitleStyle)`
 export const SequenceWrapperStyle = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
-  align-items: center;
+  justify-content: space-evenly;
+  flex: 1;
 `;
 
 export const PushProposalWrapperStyle = styled.div`
@@ -119,11 +120,11 @@ export const SequenceIntroParagraphStyle = styled.div<{ isWidget?: boolean }>`
   &.with-margin-bottom {
     margin-bottom: 15px;
   }
+  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
+    font-size: ${intToPx(typography.font.fontsize.S.value)};
+  }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${props =>
-      props.isWidget
-        ? intToPx(typography.font.fontsize.XS.value)
-        : intToPx(typography.font.fontsize.M.value)};
+    font-size: ${intToPx(typography.font.fontsize.M.value)};
     &.with-margin-bottom {
       margin-bottom: 30px;
     }

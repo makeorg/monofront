@@ -15,70 +15,54 @@ export const ExtraDataFormStyle = styled.form`
   display: flex;
   flex-flow: column;
   align-items: center;
-  width: 100%;
 `;
 
 export const ExtraDataDescriptionStyle = styled(ParagraphStyle)`
-  max-width: ${intToPx(MAX_WIDTH)};
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: 14px;
   text-align: center;
-  &.widget {
-    font-size: 14px;
-    max-width: 100%;
-    margin-top: 5px;
+  line-height: 17px;
+  margin-top: 5px;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    font-size: ${intToPx(typography.font.fontsize.XS.value)};
   }
 `;
 
 export const ExtraDataRadioGroupStyle = styled.div<{ className: string }>`
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 10px;
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  grid-gap: 10px 5px;
   max-width: ${intToPx(MAX_WIDTH)};
-  margin: 15px 0 20px;
   &.three-columns {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin: 25px 0 35px;
-  }
-  &.widget {
-    grid-gap: 5px;
-    margin: 10px 0;
-  }
-  &.widget.three-columns {
-    div:last-of-type {
-      grid-column-start: 2;
-    }
-    @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
+    @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
       max-width: 425px;
-      justify-content: center;
-      gap: 10px;
-      margin: 30px 0;
-      &.widget > div {
-        width: 95px;
-      }
     }
+  }
+  &.one-column > div {
+    width: 100%;
   }
 `;
 export const SubmitWrapperStyle = styled(CenterRowStyle)`
   width: 100%;
-  max-width: 360px;
   gap: 10px;
+  max-height: 32px;
+  margin-top: 20px;
+  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
+    max-height: 35px;
+  }
 `;
 
 export const RadioAsButtonWrapperStyle = styled.div`
   display: flex;
-  justify-content: center;
-  width: 100%;
   border-radius: 20px;
   border: 1px solid ${color.grey};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  padding: 5px 10px;
   text-decoration: none;
+  min-height: 31px;
+  min-width: 72px;
+  align-items: center;
+  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
+    min-width: 97px;
+  }
   &:hover {
     border: 1px solid ${color.brandPrimary};
   }
@@ -87,9 +71,6 @@ export const RadioAsButtonWrapperStyle = styled.div`
   }
   &.selected label {
     color: ${color.white};
-  }
-  &.widget {
-    padding: 2px 10px;
   }
 `;
 
@@ -114,7 +95,6 @@ export const SelectStyle = styled.select`
   border: 1px solid ${color.grey};
   border-radius: 20px;
   padding: 8px 15px;
-  margin: 20px 0 80px;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   color: ${color.greyDark};
   appearance: none;

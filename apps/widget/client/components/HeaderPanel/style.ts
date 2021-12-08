@@ -34,7 +34,4 @@ export const ProposeButtonStyle = styled(RedButtonAsLinkStyle)`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   line-height: ${intToPx(typography.font.fontsize.XS.value)};
   margin-top: 15px;
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin-top: 30px;
-  }
 `;

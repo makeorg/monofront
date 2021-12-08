@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useAppContext } from '@make.org/store';
 import { DemographicParameterType } from '@make.org/types';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import {
@@ -41,27 +40,13 @@ export const RadioDemographics: React.FC<Props> = ({
   currentValue,
   setCurrentValue,
 }) => {
-  const { state } = useAppContext();
-  const { source } = state.appConfig;
-  const isWidget = source === 'widget';
   const [focusValue, setFocusValue] = useState<string | null>(null);
-
-  let className = '';
-
-  if (isWidget && type === 'three-columns') {
-    className = 'widget three-columns';
-  }
-
-  if (isWidget && type === 'one-column') {
-    className = 'widget';
-  }
-
-  if (!isWidget && type === 'three-columns') {
-    className = 'three-columns';
-  }
+  const oneColumnLayout = type === 'one-column';
 
   return (
-    <ExtraDataRadioGroupStyle className={className}>
+    <ExtraDataRadioGroupStyle
+      className={oneColumnLayout ? 'one-column' : 'three-columns'}
+    >
       {data.map(demographic => (
         <RadioAsButtonWrapperStyle
           key={demographic.value}
@@ -82,10 +67,7 @@ export const RadioDemographics: React.FC<Props> = ({
               onBlur={() => setFocusValue(null)}
             />
           </ScreenReaderItemStyle>
-          <RadioAsButtonLabelStyle
-            htmlFor={demographic.value}
-            className={className}
-          >
+          <RadioAsButtonLabelStyle htmlFor={demographic.value}>
             {demographic.label}
           </RadioAsButtonLabelStyle>
         </RadioAsButtonWrapperStyle>
