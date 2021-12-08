@@ -6,6 +6,7 @@ import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { Link } from 'react-router-dom';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
+import { MiddleColumnStyle } from '@make.org/ui/elements/FlexElements';
 
 export const ProposalsListStyle = styled(UnstyledListStyle)`
   width: 100%;
@@ -40,14 +41,20 @@ export const ProposalCardStyle = styled.article`
   justify-content: space-between;
   background-color: ${color.white};
   border-radius: ${intToPx(Elements.BorderRadius)};
-  padding: 45px 25px 15px;
+  padding: 45px 20px 20px;
+  min-height: 300px;
+`;
+
+export const ProposalAndVoteWrapperStyle = styled(MiddleColumnStyle)`
+  flex: 1;
+  width: 100%;
 `;
 
 export const ProposalLinkStyle = styled(Link)`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   letter-spacing: 0.13px;
   text-align: center;
-  margin-top: 10px;
+  margin-bottom: 15px;
   text-decoration: none;
   color: ${color.black};
 `;
@@ -57,7 +64,7 @@ export const ProposalDateStyle = styled.time`
   color: ${color.greyDark};
   letter-spacing: 0.13px;
   text-align: center;
-  margin-top: 25px;
+  margin-top: 15px;
 `;
 
 export const RegisterLinkCardStyle = styled(BlackBorderButtonStyle)`

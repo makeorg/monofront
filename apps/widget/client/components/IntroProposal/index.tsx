@@ -59,7 +59,7 @@ export const IntroProposal: FC<Props> = ({ handleChange }) => {
             data-cy-card-number={0}
             className="widget"
           >
-            <ProposalAuthor proposal={proposal} isSequence />
+            <ProposalAuthor proposal={proposal} />
             <ScreenReaderItemStyle>
               {i18n.t('top_proposal_card.content')}
             </ScreenReaderItemStyle>

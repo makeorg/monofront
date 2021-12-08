@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import i18n from 'i18next';
 import { ProposalType } from '@make.org/types';
+import { useLargeMobile } from '@make.org/utils/hooks/useMedia';
 import {
   getOrganisationProfileLink,
   getPersonalityProfileLink,
@@ -15,7 +16,6 @@ import {
   formatAuthorName,
   formatOrganisationName,
 } from '@make.org/utils/helpers/stringFormatter';
-import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { useAppContext } from '@make.org/store';
 import {
   AuthorInfosStyle,
@@ -26,8 +26,6 @@ import {
 type Props = {
   /** Object with author's properties */
   proposal: ProposalType;
-  /** Enable sequence context & specials styles */
-  isSequence?: boolean;
 };
 
 export const ProposalAuthorAge: React.FC<{ age: number | null }> = ({
@@ -40,10 +38,7 @@ export const ProposalAuthorAge: React.FC<{ age: number | null }> = ({
   return <>{`, ${i18n.t('proposal_card.author.age', { age })}`}</>;
 };
 
-export const ProposalAuthorInformations: React.FC<Props> = ({
-  proposal,
-  isSequence,
-}) => {
+export const ProposalAuthorInformations: FC<Props> = ({ proposal }) => {
   const { state } = useAppContext();
   const { country, source } = state.appConfig;
   const { author } = proposal;
@@ -53,26 +48,12 @@ export const ProposalAuthorInformations: React.FC<Props> = ({
   const isPersonality = author.userType === USER.TYPE_PERSONALITY;
   const isBasicUser = author.userType === USER.TYPE_USER;
 
-  let className = '';
-
-  if (isSequence && isWidget) {
-    className = 'sequence widget';
-  }
-
-  if (isSequence) {
-    className = 'sequence';
-  }
-
-  if (isWidget) {
-    className = 'widget';
-  }
-
   return (
     <>
       <ScreenReaderItemStyle>
         {i18n.t('proposal_card.author.from')}
       </ScreenReaderItemStyle>
-      <InfosWrapperStyle className={className}>
+      <InfosWrapperStyle>
         {isOrganisation &&
           (isWidget ? (
             formatOrganisationName(author.organisationName || '')
@@ -111,45 +92,27 @@ export const ProposalAuthorInformations: React.FC<Props> = ({
   );
 };
 
-const setAvatarSize = (
-  isMobile: boolean,
-  isSequence: boolean,
-  isWidget: boolean
-) => {
-  if (!isMobile && isWidget) {
-    return 40;
-  }
-
-  if (!isMobile && isSequence) {
-    return 50;
-  }
-
-  if (isMobile && isWidget) {
-    return 32;
+const setAvatarSize = (isLargeMobile: boolean) => {
+  if (isLargeMobile) {
+    return 45;
   }
 
   return 36;
 };
 
-export const ProposalAuthor: React.FC<Props> = ({
-  proposal,
-  isSequence = false,
-}) => {
-  const { state } = useAppContext();
+export const ProposalAuthor: FC<Props> = ({ proposal }) => {
   const { author } = proposal;
-  const { device, source } = state.appConfig;
-  const isWidget = source === 'widget';
-  const isMobile = matchMobileDevice(device);
-  const avatarSize = setAvatarSize(isMobile, isSequence, isWidget);
+  const isLargeMobile = useLargeMobile();
+  const avatarSize = setAvatarSize(isLargeMobile);
 
   return (
-    <AuthorInfosStyle className={isWidget ? 'widget' : ''}>
+    <AuthorInfosStyle>
       <Avatar
         avatarUrl={author.avatarUrl || ''}
         isSequence
         avatarSize={avatarSize}
       />
-      <ProposalAuthorInformations proposal={proposal} isSequence={isSequence} />
+      <ProposalAuthorInformations proposal={proposal} />
     </AuthorInfosStyle>
   );
 };

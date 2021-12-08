@@ -6,7 +6,7 @@ import { Image } from '../Image';
 
 export const AvatarStyle = styled.span<{ isSequence?: boolean }>`
   position: ${props => (props.isSequence ? 'absolute' : 'static')};
-  top: ${props => (props.isSequence ? '-6px' : '')};
+  top: ${props => (props.isSequence ? '-17px' : '')};
   left: ${props => (props.isSequence ? '50%' : '')};
   border: ${props => (props.isSequence ? `3px solid ${color.white}` : '')};
   border-radius: ${props => (props.isSequence ? '50%' : '')};

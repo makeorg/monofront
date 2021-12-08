@@ -1,52 +1,20 @@
-import styled, { css } from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import styled from 'styled-components';
+import { color } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 
-export const TipWrapperStyle = styled.div<{ isWidget: boolean }>`
+export const TipWrapperStyle = styled.div`
   position: relative;
   font-family: ${MakeFonts.CircularStandardBook};
   background-color: ${color.infos};
   color: ${color.white};
-  margin-bottom: 20px;
   padding: 6px 17px 6px 10px;
   border-radius: 2px;
-  font-size: ${props =>
-    props.isWidget
-      ? intToPx(typography.font.fontsize.X2S.value)
-      : intToPx(typography.font.fontsize.XS.value)};
+  font-size: 14px;
   line-height: 1.5;
   letter-spacing: 0.14px;
-  &.first-vote {
-    margin-top: ${props => (props.isWidget ? '5px' : '20px')};
-    margin-bottom: 0;
-    display: flex;
-    align-items: center;
-  }
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin-bottom: ${props => (props.isWidget ? '30px' : '20px')};
-  }
-`;
-
-export const TriangleUpStyle = styled.div<{
-  isFirstSequenceVote: boolean;
-}>`
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 6px 9px 6px;
-  border-color: transparent transparent ${color.infos} transparent;
-  ${({ isFirstSequenceVote }) =>
-    isFirstSequenceVote
-      ? css``
-      : css`
-          margin-left: 73%;
-          @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-            margin-left: 440px;
-          }
-        `}
 `;
 
 export const TriangleDownStyle = styled.div`
@@ -55,6 +23,10 @@ export const TriangleDownStyle = styled.div`
   border-style: solid;
   border-width: 9px 6px 0 6px;
   border-color: ${color.infos} transparent transparent transparent;
+  margin-bottom: 5px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    margin-bottom: 10px;
+  }
 `;
 
 export const TipLinkStyle = styled(UnstyledButtonStyle)`

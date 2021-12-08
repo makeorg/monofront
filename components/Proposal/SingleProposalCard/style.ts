@@ -95,6 +95,7 @@ export const ProposalCardContentStyle = styled.blockquote`
   line-height: normal;
   font-family: ${MakeFonts.CircularStandardBook};
   text-align: center;
+  margin-bottom: 20px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.L.value)};
   }

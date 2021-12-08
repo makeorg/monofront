@@ -9,33 +9,18 @@ export const AuthorInfosStyle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  letter-spacing: 0.12px;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.14px;
   color: ${color.greyDark};
-  &.widget {
-    font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
+    font-size: ${intToPx(typography.font.fontsize.XS.value)};
   }
 `;
 
 export const InfosWrapperStyle = styled.span`
   display: inline-flex;
   align-items: center;
-  &.sequence {
-    margin: 50px auto 5px;
-  }
-  &.sequence.widget,
-  &.widget {
-    margin: 40px auto 15px;
-  }
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    &.sequence {
-      margin: 75px auto 20px;
-    }
-    &.sequence.widget,
-    &.widget {
-      margin: 50px auto 15px;
-    }
-  }
 `;
 
 export const CertifiedIconStyle = styled(SvgCheckedSymbol)`

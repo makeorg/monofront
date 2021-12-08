@@ -25,7 +25,6 @@ export const VoteResultGraphStyle = styled(UnstyledListStyle)`
   position: relative;
   display: flex;
   width: 100%;
-  height: 30px;
   justify-content: center;
   align-items: flex-start;
   margin-top: 10px;

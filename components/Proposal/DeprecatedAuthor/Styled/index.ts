@@ -18,12 +18,11 @@ export const AuthorDescriptionStyle = styled.div`
   align-items: center;
 `;
 
-export const AuthorInfosStyle = styled(ParagraphStyle)<{ isSequence: boolean }>`
-  display: ${props => (props.isSequence ? 'flex' : 'inline-flex')};
-  flex-direction: ${props => (props.isSequence ? 'column' : 'row')};
-  height: ${props => (props.isSequence ? '30%' : '')};
+export const AuthorInfosStyle = styled(ParagraphStyle)`
+  display: inline-flex;
+  flex-direction: row;
   align-items: center;
-  font-size: ${props => (props.isSequence ? '14px' : '12px')};
+  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   line-height: normal;
   color: ${color.greyDark};
   font-style: normal;

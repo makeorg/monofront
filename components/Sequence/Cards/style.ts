@@ -7,6 +7,8 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import {
   CenterColumnStyle,
   SpaceBetweenRowStyle,
+  ColumnElementStyle,
+  MiddleColumnStyle,
 } from '@make.org/ui/elements/FlexElements';
 import {
   BlackBorderButtonStyle,
@@ -19,11 +21,12 @@ export const SequenceCardStyle = styled.section`
   position: relative;
   display: flex;
   flex-flow: column;
+  justify-content: space-around;
   align-items: center;
   justify-content: center;
   flex: 1;
   width: 100%;
-  padding: 0 15px;
+  padding: 30px 20px 20px;
   background-color: ${color.white};
   border-radius: 8px;
   box-shadow: 0 2px 3px 0 ${ShadowColors.BlackZeroTwoOpacity};
@@ -31,7 +34,6 @@ export const SequenceCardStyle = styled.section`
   min-height: 315px;
   &.widget {
     margin: 20px;
-    padding: 15px;
     max-height: 334px;
     min-height: 334px;
   }
@@ -46,14 +48,8 @@ export const SequenceCardStyle = styled.section`
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     max-height: 365px;
     min-height: 365px;
-    padding: 0 30px;
     margin-top: 30px;
-    &.widget {
-      margin-top: 20px;
-    }
-    &.no-proposal {
-      padding: 70px 30px 40px;
-    }
+    padding: 40px 30px 30px;
   }
 `;
 
@@ -130,42 +126,47 @@ export const SequenceIntroParagraphStyle = styled.div<{ isWidget?: boolean }>`
     }
   }
 `;
+export const SequenceProposalWrapperStyle = styled(ColumnElementStyle)`
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+`;
+
+export const SequenceProposalAndVoteWrapperStyle = styled(MiddleColumnStyle)`
+  width: 100%;
+`;
 
 export const SequenceProposalStyle = styled.blockquote`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
   font-family: ${MakeFonts.CircularStandardBook};
+  font-size: 14px;
   text-align: center;
-  line-height: 1.64;
-  letter-spacing: 0.11px;
-  min-height: 82px;
-  &.widget {
-    font-size: 14px;
-    min-height: 0px;
+  line-height: 20px;
+  letter-spacing: 0.13px;
+  margin-bottom: 15px;
+  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
+    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    line-height: 24px;
+    letter-spacing: 0.14px;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.M.value)};
-    line-height: 1.5;
+    line-height: 30px;
     letter-spacing: 0.12px;
-    min-height: 60px;
-    display: flex;
-    align-items: center;
-    max-width: 770px;
-    &.widget {
-      font-size: ${intToPx(typography.font.fontsize.XS.value)};
-      align-items: flex-start;
-      min-height: 0px;
-    }
+    max-width: 760px;
   }
 `;
+
+export const SequenceNextWrapperStyle = styled(CenterColumnStyle)`
+  width: 100%;
+  min-height: 35px;
+`;
+
 export const SequenceNextCardButtonStyle = styled(RedButtonStyle)`
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translate(-50%, 50%);
   white-space: nowrap;
-  &.widget {
-    bottom: 4px;
-    font-size: 14px;
+  font-size: 14px;
+  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
+    font-size: ${intToPx(typography.font.fontsize.XS.value)};
   }
 `;
 

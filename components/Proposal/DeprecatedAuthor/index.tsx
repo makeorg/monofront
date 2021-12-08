@@ -4,8 +4,6 @@ import { ProposalType } from '@make.org/types';
 import { DateHelper } from '@make.org/utils/helpers/date';
 import { Avatar } from '@make.org/ui/components/Avatar';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import { matchMobileDevice } from '@make.org/utils/helpers/styled';
-import { useAppContext } from '@make.org/store';
 import { DATE } from '@make.org/types/enums';
 import {
   AuthorDescriptionStyle,
@@ -23,8 +21,6 @@ type Props = {
   withCreationDate?: boolean;
   /** Include formatted proposal status */
   formattedProposalStatus?: string;
-  /** Specifc design for sequence avatar */
-  isSequence?: boolean;
 };
 
 export const DeprecatedProposalAuthor: React.FC<Props> = ({
@@ -32,31 +28,13 @@ export const DeprecatedProposalAuthor: React.FC<Props> = ({
   withAvatar = false,
   withCreationDate = false,
   formattedProposalStatus = false,
-  isSequence = false,
 }) => {
   const { author } = proposal;
-  const { state } = useAppContext();
-  const { device } = state.appConfig;
-  const isMobile = matchMobileDevice(device);
   return (
     <AuthorDescriptionStyle>
-      <AuthorInfosStyle as="div" isSequence={isSequence}>
-        {withAvatar && (
-          <>
-            {isSequence && (
-              <Avatar
-                avatarUrl={author.avatarUrl}
-                isSequence={isSequence}
-                avatarSize={isMobile ? 30 : 50}
-              />
-            )}
-            {!isSequence && <Avatar avatarUrl={author.avatarUrl} />}
-          </>
-        )}
-        <ProposalAuthorInformations
-          proposal={proposal}
-          isSequence={isSequence}
-        />
+      <AuthorInfosStyle as="div">
+        {withAvatar && <Avatar avatarUrl={author.avatarUrl} />}
+        <ProposalAuthorInformations proposal={proposal} />
         {withCreationDate && !!proposal.createdAt && (
           <>
             &nbsp;&bull;&nbsp;

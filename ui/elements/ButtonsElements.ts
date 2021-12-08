@@ -248,10 +248,10 @@ export const VoteButtonStyle = styled.button.attrs(props => ({
   display: flex;
   justify-content: center;
   align-items: center;
-  width: ${props => (props.isWidget ? '36.4px' : '38px')};
-  height: ${props => (props.isWidget ? '36.4px' : '38px')};
-  min-width: ${props => (props.isWidget ? '36.4px' : '38px')};
-  min-height: ${props => (props.isWidget ? '36.4px' : '38px')};
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
   border-width: 2px;
   border-style: solid;
   border-radius: 50%;
@@ -315,17 +315,13 @@ export const VoteButtonStyle = styled.button.attrs(props => ({
   &.voted:focus {
     transform: scale(1);
   }
-  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    width: ${props => (props.isWidget ? '36.4px' : '43px')};
-    height: ${props => (props.isWidget ? '36.4px' : '43px')};
-    min-width: ${props => (props.isWidget ? '36.4px' : '43px')};
-    min-height: ${props => (props.isWidget ? '36.4px' : '43px')};
-  }
   @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
-    width: ${props => (props.isWidget ? '36.4px' : '48px')};
-    height: ${props => (props.isWidget ? '36.4px' : '48px')};
-    min-width: ${props => (props.isWidget ? '36.4px' : '48px')};
-    min-height: ${props => (props.isWidget ? '36.4px' : '48px')};
+    &.sequence {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      min-height: 48px;
+    }
   }
 `;
 

@@ -44,6 +44,9 @@ export const useDesktop = (): boolean =>
 export const useTablet = (): boolean =>
   useMedia(`(min-width: ${intToPx(Breakpoints.Tablet)})`);
 
+export const useLargeMobile = (): boolean =>
+  useMedia(`(min-width: ${intToPx(Breakpoints.LargeMobile)})`);
+
 export const useMobile = (): boolean =>
   useMedia(
     `only screen and (max-device-width: ${intToPx(Breakpoints.Tablet)})`

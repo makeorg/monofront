@@ -7,8 +7,8 @@ import i18n from 'i18next';
 import { ProposalType } from '@make.org/types';
 import { Vote } from '@make.org/components/Vote';
 import { DateHelper } from '@make.org/utils/helpers/date';
-import { useParams } from 'react-router';
 import { DATE } from '@make.org/types/enums';
+import { useAppContext } from '@make.org/store';
 import { SubmitProposal } from '../Cards/SubmitProposal';
 import { NoProposalWrapperStyle } from '../../../pages/Consultation/style';
 import {
@@ -17,6 +17,7 @@ import {
   ProposalCardStyle,
   ProposalLinkStyle,
   ProposalDateStyle,
+  ProposalAndVoteWrapperStyle,
 } from './style';
 
 type Props = {
@@ -26,6 +27,12 @@ type Props = {
 
 type SkeletonProps = {
   id: string;
+};
+
+type CardProps = {
+  proposal: ProposalType;
+  country: string;
+  index: number;
 };
 
 const generateSkeletonsList = (count: number) => {
@@ -38,8 +45,50 @@ const generateSkeletonsList = (count: number) => {
   return skeletonsList;
 };
 
+export const ProposalsCard: FC<CardProps> = ({ proposal, country, index }) => (
+  <ProposalCardStyle>
+    <ProposalAuthor proposal={proposal} />
+    <ProposalAndVoteWrapperStyle>
+      <ScreenReaderItemStyle>
+        {i18n.t('proposal_card.content')}
+      </ScreenReaderItemStyle>
+      <ProposalLinkStyle
+        lang={proposal.question.language}
+        to={getProposalLink(
+          country,
+          proposal.question.slug,
+          proposal.id,
+          proposal.slug
+        )}
+      >
+        {proposal.content}
+      </ProposalLinkStyle>
+      <Vote
+        proposal={proposal}
+        votes={proposal.votes}
+        proposalKey={proposal.proposalKey}
+        index={index}
+      />
+    </ProposalAndVoteWrapperStyle>
+    <ScreenReaderItemStyle>
+      {i18n.t('proposal_card.author.date')}
+    </ScreenReaderItemStyle>
+    <ProposalDateStyle
+      dateTime={
+        DateHelper.localizedAndFormattedDate(
+          proposal.createdAt,
+          DATE.P_FORMAT
+        ) || ''
+      }
+    >
+      {DateHelper.localizedAndFormattedDate(proposal.createdAt, DATE.PP_FORMAT)}
+    </ProposalDateStyle>
+  </ProposalCardStyle>
+);
+
 export const ProposalsList: FC<Props> = ({ isLoading, proposals }) => {
-  const { country } = useParams<{ country: string }>();
+  const { state } = useAppContext();
+  const { country } = state.appConfig;
   const skeletonsList: SkeletonProps[] = generateSkeletonsList(12);
   const hasProposals = proposals.length > 0;
 
@@ -64,45 +113,11 @@ export const ProposalsList: FC<Props> = ({ isLoading, proposals }) => {
             role="feed"
             aria-live="assertive"
           >
-            <ProposalCardStyle>
-              <ProposalAuthor proposal={proposal} />
-              <ScreenReaderItemStyle>
-                {i18n.t('proposal_card.content')}
-              </ScreenReaderItemStyle>
-              <ProposalLinkStyle
-                lang={proposal.question.language}
-                to={getProposalLink(
-                  country,
-                  proposal.question.slug,
-                  proposal.id,
-                  proposal.slug
-                )}
-              >
-                {proposal.content}
-              </ProposalLinkStyle>
-              <Vote
-                proposal={proposal}
-                votes={proposal.votes}
-                proposalKey={proposal.proposalKey}
-                index={index}
-              />
-              <ScreenReaderItemStyle>
-                {i18n.t('proposal_card.author.date')}
-              </ScreenReaderItemStyle>
-              <ProposalDateStyle
-                dateTime={
-                  DateHelper.localizedAndFormattedDate(
-                    proposal.createdAt,
-                    DATE.P_FORMAT
-                  ) || ''
-                }
-              >
-                {DateHelper.localizedAndFormattedDate(
-                  proposal.createdAt,
-                  DATE.PP_FORMAT
-                )}
-              </ProposalDateStyle>
-            </ProposalCardStyle>
+            <ProposalsCard
+              proposal={proposal}
+              country={country}
+              index={index}
+            />
           </ProposalListItemStyle>
         ))}
       </ProposalsListStyle>
