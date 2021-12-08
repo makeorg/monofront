@@ -75,7 +75,9 @@ export const useSequence = (
   // Other
   const cookies = new Cookies();
   const demographicsCookie = cookies.get(COOKIE.DEMOGRAPHICS);
-  const withDemographicsCard = !demographicsCookie && sequenceDemographic;
+  const withDemographicsCard =
+    (!demographicsCookie && sequenceDemographic) ||
+    (isWidget && sequenceDemographic);
 
   // scroll to top
   useEffect(() => {

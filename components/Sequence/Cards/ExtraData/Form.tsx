@@ -13,14 +13,13 @@ import {
 } from '@make.org/utils/services/Tracking';
 import { useAppContext } from '@make.org/store';
 import { SubmitButton } from '@make.org/ui/components/SubmitButton';
-import { useCookies } from 'react-cookie';
-import { COOKIE } from '@make.org/types/enums';
 import {
   DEMOGRAPHIC_LAYOUT_ONE_COLUMN_RADIO,
   DEMOGRAPHIC_LAYOUT_SELECT,
   DEMOGRAPHIC_LAYOUT_THREE_COLUMNS_RADIO,
 } from '@make.org/utils/constants/demographics';
 import { Logger } from '@make.org/utils/services/Logger';
+import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
 import { RadioDemographics } from './Radio';
 import { ExtraDataFormStyle, SkipIconStyle, SubmitWrapperStyle } from './style';
 import { SelectDemographics } from './Select';
@@ -80,24 +79,14 @@ export const ExtraDataForm: React.FC<Props> = ({
 }) => {
   const { dispatch, state } = useAppContext();
   const location = useLocation();
-  const { device, source, country } = state.appConfig;
+  const { device } = state.appConfig;
   const { currentQuestion } = state;
   const { question } = state.questions[currentQuestion];
   const [currentValue, setCurrentValue] = useState<string>('');
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(false);
   const [isSkipDisabled, setIsSkipDisabled] = useState(false);
   const FORM_NAME = `demographics`;
-  const isWidget = source === 'widget';
   const isMobile = matchMobileDevice(device);
-
-  // set cookie duration to a month with december corner case
-  const expirationDate = new Date();
-  const month = (expirationDate.getMonth() + 1) % 12;
-  expirationDate.setMonth(month);
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [cookies, setCookie] = useCookies([COOKIE.DEMOGRAPHICS]);
-
   const utmParams = useMemo(() => {
     const params = new URLSearchParams(location.search);
     const accumulator: { [key: string]: string } = {};
@@ -118,12 +107,6 @@ export const ExtraDataForm: React.FC<Props> = ({
       event.preventDefault();
       setIsSubmitDisabled(true);
       setIsSkipDisabled(true);
-      if (!isWidget) {
-        setCookie(COOKIE.DEMOGRAPHICS, true, {
-          path: '/',
-          expires: expirationDate,
-        });
-      }
       const success = () => {
         setIsSubmitDisabled(false);
         setIsSkipDisabled(false);
@@ -145,12 +128,14 @@ export const ExtraDataForm: React.FC<Props> = ({
         setIsSkipDisabled(false);
       };
 
+      const { source, country } = trackingParamsService.all();
+
       await DemographicsTrackingService.track(
         demographicId,
         value,
         question.questionId,
-        source,
-        country,
+        source || 'no source',
+        country || 'no country',
         utmParams,
         token,
         success,

@@ -9,7 +9,9 @@ import { TWITTER_SCRIPT, twttr } from '../services/Trackers/twttr.js';
 // set cookie expiration for user preferences (1 year)
 const today = new Date();
 const nextYear = new Date();
+const nextMonth = new Date();
 nextYear.setFullYear(today.getFullYear() + 1);
+nextMonth.setMonth(today.getMonth() + 1);
 const cookies = new Cookies();
 
 export const setPreferencesCookie = (
@@ -61,4 +63,11 @@ export const removeTrackersFromPreferences = (
   if (disableFBTacking || disableTWTracking) {
     window.location.reload();
   }
+};
+
+export const setDemographicsCookie = (): void => {
+  cookies.set(COOKIE.DEMOGRAPHICS, JSON.stringify(true), {
+    path: '/',
+    expires: nextMonth,
+  });
 };
