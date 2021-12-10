@@ -127,9 +127,6 @@ describe('Proposal Helper', () => {
         'bar',
       ]);
 
-      // TODO check regression
-      // Expected: [api-service-error: You should handle unexpected errors (default handler): Api error]
-      // Received: "You should handle unexpected errors (default handler): Api error"
       expect(Logger.logError).toHaveBeenCalledWith({
         message:
           'You should handle unexpected errors (default handler): Api error',
@@ -139,17 +136,16 @@ describe('Proposal Helper', () => {
       expect(repsonse).toEqual(null);
     });
   });
+
   describe('getProposalsListTitle', () => {
     it('return default title', () => {
       const title = getProposalsListTitle('foo');
-      console.log('TODO fix test init i18next fail', title);
-      // expect(title).toEqual('consultation.sort.RECENT');
+      expect(title).toEqual('consultation.sort.RECENT');
     });
 
     it('return RECENT title', () => {
       const title = getProposalsListTitle('RECENT');
-      console.log('TODO fix test init i18next fail', title);
-      // expect(title).toEqual('consultation.sort.RECENT');
+      expect(title).toEqual('consultation.sort.RECENT');
     });
   });
 });

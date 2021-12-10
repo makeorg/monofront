@@ -60,6 +60,14 @@ ApiService.strategy = new ApiServiceMock();
 jest.mock('@make.org/utils/services/Trackers/FacebookTracking');
 jest.mock('@make.org/utils/services/Trackers/TwitterTracking');
 jest.mock('@make.org/utils/constants/config');
+jest.mock('i18next', () => ({
+  init: () => {},
+  use: () => {},
+  t: (k:string) => k,
+  cloneInstance: () => {},
+  changeLanguage: () => {}
+}));
+
 
 if (global.window && global.window.matchMedia) {
   global.window.matchMedia = jest.fn().mockImplementation(query => ({

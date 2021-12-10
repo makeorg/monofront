@@ -5,18 +5,7 @@ import {
   getCountryFromRequest,
 } from './countryLanguage';
 
-jest.mock('i18next');
-
-const mockedi18n = i18n as jest.Mocked<typeof i18n>;
-
 describe('Country Language middelware', () => {
-  afterEach(() => {
-    jest.clearAllMocks();
-    jest.restoreAllMocks();
-    mockedi18n.cloneInstance.mockRestore();
-    mockedi18n.changeLanguage.mockRestore();
-  });
-
   describe('getCountryFromRequest function', () => {
     it('country is set by params', () => {
       const request = httpMocks.createRequest({

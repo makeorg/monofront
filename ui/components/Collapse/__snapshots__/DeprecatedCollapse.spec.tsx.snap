@@ -13,7 +13,9 @@ Snapshot Diff:
   >
     <CollapseTriggerStyle
 -     aria-expanded={true}
+-     aria-label="common.shrink_collapse"
 +     aria-expanded={false}
++     aria-label="common.expand_collapse"
       onClick={[Function toggleCollapse]}
     >
       foo
@@ -53,7 +55,7 @@ Snapshot Diff:
   >
     <CollapseTriggerStyle
       aria-expanded={false}
-@@ -15,13 +15,13 @@
+@@ -16,13 +16,13 @@
         <SvgAngleArrowRight
           focusable="false"
         />
@@ -78,6 +80,7 @@ exports[`Collapse must match the snapshot with default Props 1`] = `
 >
   <CollapseTriggerStyle
     aria-expanded={false}
+    aria-label="common.expand_collapse"
     onClick={[Function]}
   >
     foo

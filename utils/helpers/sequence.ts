@@ -14,8 +14,9 @@ import { CARD, SEQUENCE } from '@make.org/types/enums';
  * @param  {QuestionExtraSlidesConfigType} extraSlidesConfig
  * @param  {boolean} canPropose
  * @param  {boolean} isStandardSequence
- * @param  {string} introCardParam
- * @param  {string} pushProposalParam
+ * @param  {boolean|undefined} introCardParam
+ * @param  {boolean|undefined} pushProposalParam
+ * @param  {boolean|undefined} loadFirstProposal
  * @return {SequenceCardType[]}
  */
 export const buildCards = (
@@ -25,22 +26,21 @@ export const buildCards = (
   isStandardSequence: boolean,
   introCardParam?: boolean,
   pushProposalParam?: boolean,
-  sequenceDemographicData?: DemographicDataType,
-  isWidget?: boolean,
   loadFirstProposal?: boolean
 ): SequenceCardType[] => {
-  const withPushProposalCard: boolean =
+  const withPushProposalCard =
     !!extraSlidesConfig.pushProposalCard &&
     !!extraSlidesConfig.pushProposalCard.enabled &&
     !!canPropose &&
     !!pushProposalParam &&
     !loadFirstProposal;
-  const withIntroCard: boolean =
+  const withIntroCard =
     !!extraSlidesConfig.introCard &&
     !!extraSlidesConfig.introCard.enabled &&
     !!introCardParam &&
-    !isWidget &&
     !loadFirstProposal;
+  const withDemographicsCard = extraSlidesConfig.demographics;
+  const withFinalCard = !loadFirstProposal;
 
   const cards: SequenceCardType[] = proposals.map(proposal => ({
     type: CARD.CARD_TYPE_PROPOSAL,
@@ -67,16 +67,16 @@ export const buildCards = (
     });
   }
 
-  if (sequenceDemographicData) {
+  if (withDemographicsCard) {
     cards.splice(withIntroCard ? 3 : 2, 0, {
       type: CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
-      configuration: sequenceDemographicData,
+      configuration: extraSlidesConfig.demographics,
       state: { votes: [] },
       index: 0,
     });
   }
 
-  if (!loadFirstProposal) {
+  if (withFinalCard) {
     cards.splice(cards.length, 0, {
       type: isStandardSequence
         ? CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD
@@ -97,7 +97,7 @@ export const buildCards = (
 
 /**
  * Check if is a proposal card
- * @param  {SequenceCardType} card
+ * @param  {SequenceCardType | NoProposalCardType | null} card
  * @return {boolean}
  */
 export const isPushProposalCard = (
@@ -113,7 +113,7 @@ export const isStandardSequence = (sequenceKind: string): boolean =>
   sequenceKind === SEQUENCE.KIND_STANDARD;
 
 /**
- * Render title depending on kind
+ * Renders title depending on kind
  * @param  {string} sequenceKind
  * @return {string || null}
  */
@@ -134,11 +134,11 @@ export const getSequenceTitleBySequenceKind = (
 
 /** Render NoProposal card title depending on type of sequence
  * @param  {string} sequenceKind
- * @return {string || null}
+ * @return {string}
  */
 export const getNoProposalCardTitleBySequenceKind = (
   sequenceKind: string
-): string | null => {
+): string => {
   switch (sequenceKind) {
     case SEQUENCE.KIND_CONTROVERSY: {
       return i18n.t('no_proposal_card.title.controversial');
@@ -151,53 +151,37 @@ export const getNoProposalCardTitleBySequenceKind = (
   }
 };
 
-/** Render boolean according to sequence kind parameter
- * @param  {string} sequenceKind
- * @return {boolean}
- *
- */
-
-export const isKeywordSequence = (sequenceKind: SEQUENCE): boolean =>
-  ![
-    SEQUENCE.KIND_CONTROVERSY,
-    SEQUENCE.KIND_CONSENSUS,
-    SEQUENCE.KIND_STANDARD,
-  ].includes(sequenceKind);
-
-/** getSequenceLength
+/** Renders the size of the sequence by handle number of proposals and extra slides params
  * @param  {number} proposalLength
  * @param  {QuestionExtraSlidesConfigType} extraSlidesConfig
  * @param  {boolean} canPropose
- * @param  {boolean} isStandardSequence
- * @param  {string} introCardParam
- * @param  {string} pushProposalParam
- * @param  {string} sequenceDemographicData
- * @param  {string} isWidget
+ * @param  {boolean} hasDemographics
+ * @param  {boolean | undefined} introCardParam
+ * @param  {boolean | undefined} pushProposalParam
  * @return {number}
  *
  */
-
 export const getSequenceSize = (
   proposalLength: number,
   extraSlidesConfig: QuestionExtraSlidesConfigType,
   canPropose: boolean,
+  hasDemographics: boolean,
   introCardParam?: boolean,
-  pushProposalParam?: boolean,
-  sequenceDemographicData?: DemographicDataType,
-  isWidget?: boolean
+  pushProposalParam?: boolean
 ): number => {
   let sequenceSize = proposalLength + 1; // add one for final card always in sequence
 
-  const withPushProposalCard: boolean =
+  const withPushProposalCard =
     !!extraSlidesConfig.pushProposalCard &&
     !!extraSlidesConfig.pushProposalCard.enabled &&
     !!canPropose &&
     !!pushProposalParam;
-  const withIntroCard: boolean =
+  const withIntroCard =
     !!extraSlidesConfig.introCard &&
     !!extraSlidesConfig.introCard.enabled &&
-    !!introCardParam &&
-    !isWidget;
+    !!introCardParam;
+  const withDemographicsCard =
+    extraSlidesConfig.demographics || hasDemographics;
 
   if (withPushProposalCard) {
     sequenceSize += 1;
@@ -207,14 +191,31 @@ export const getSequenceSize = (
     sequenceSize += 1;
   }
 
-  /**
-   * WARNING
-   * DIRTY HACK TO HANDLE COUNT ON WIDGET - WAITING API TEAM TO HANDLE IT
-   * first-proposal endpoint and question didn't handle demographic card case
-   * */
-  if (sequenceDemographicData || isWidget) {
+  if (withDemographicsCard) {
     sequenceSize += 1;
   }
 
   return sequenceSize;
+};
+
+/** Handle destructured data for demographics, and add those in extra slides config
+ * @param  {QuestionExtraSlidesConfigType} extraSlidesConfig
+ * @param  {boolean} hasDemographics
+ * @param  {DemographicDataType | undefined} demographicsData
+ * @return {QuestionExtraSlidesConfigType}
+ *
+ */
+export const addDemographicsToSequenceConfig = (
+  extraSlidesConfig: QuestionExtraSlidesConfigType,
+  hasDemographics: boolean,
+  demographicsData?: DemographicDataType
+): QuestionExtraSlidesConfigType => {
+  if (!hasDemographics || !demographicsData) {
+    return extraSlidesConfig;
+  }
+
+  return {
+    ...extraSlidesConfig,
+    demographics: demographicsData,
+  };
 };

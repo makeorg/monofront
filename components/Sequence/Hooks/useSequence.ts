@@ -1,6 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
-import { buildCards, getSequenceSize } from '@make.org/utils/helpers/sequence';
+import {
+  addDemographicsToSequenceConfig,
+  buildCards,
+} from '@make.org/utils/helpers/sequence';
 import {
   SequenceCardType,
   QuestionType,
@@ -76,9 +79,13 @@ export const useSequence = (
   // Other
   const cookies = new Cookies();
   const demographicsCookie = cookies.get(COOKIE.DEMOGRAPHICS);
-  const withDemographicsCard =
-    (!demographicsCookie && sequenceDemographic) ||
-    (isWidget && sequenceDemographic);
+  const withDemographicsCard = !demographicsCookie || isWidget;
+  const extraSlidesConfig = addDemographicsToSequenceConfig(
+    question.sequenceConfig,
+    withDemographicsCard && question.hasDemographics,
+    sequenceDemographic
+  );
+  const introCard = isWidget ? false : introCardParam;
 
   // scroll to top
   useEffect(() => {
@@ -119,23 +126,6 @@ export const useSequence = (
         if (response.demographics) {
           setSequenceDemographic(response.demographics);
         }
-
-        if (response.length) {
-          dispatch(
-            setSequenceLength(
-              getSequenceSize(
-                response.length,
-                question.sequenceConfig,
-                question.canPropose,
-                introCardParam,
-                pushProposalParam,
-                (!demographicsCookie &&
-                  response.demographics) as DemographicDataType,
-                isWidget
-              )
-            )
-          );
-        }
       }
       dispatch(setSequenceLoading(false));
     };
@@ -154,16 +144,15 @@ export const useSequence = (
     }
     const buildedCards: SequenceCardType[] = buildCards(
       sequenceProposals,
-      question.sequenceConfig,
+      extraSlidesConfig,
       question.canPropose,
       isStandardSequence,
-      introCardParam,
+      introCard,
       pushProposalParam,
-      withDemographicsCard as DemographicDataType,
-      isWidget,
       loadFirstProposal
     );
     setCards(buildedCards);
+    dispatch(setSequenceLength(buildedCards.length));
     dispatch(loadSequenceCards(buildedCards));
   }, [sequenceProposals, sequenceDemographic]);
 

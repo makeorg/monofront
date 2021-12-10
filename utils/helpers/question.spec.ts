@@ -77,6 +77,7 @@ describe('getQuestionFromState', () => {
     topProposalCount: 0,
     startDate: '',
     endDate: '',
+    hasDemographics: false,
   };
 
   const state = {

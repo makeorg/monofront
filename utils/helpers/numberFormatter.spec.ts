@@ -1,4 +1,7 @@
-import { formatCountWithLanguage } from './numberFormatter';
+import {
+  formatCountWithLanguage,
+  formatMillionToText,
+} from './numberFormatter';
 
 describe('numberFormatter', () => {
   const number = 123456;
@@ -9,7 +12,6 @@ describe('numberFormatter', () => {
   });
 
   it('formatMillionToText with count > 1 million', () => {
-    console.log('TODO fix test init i18next fail');
-    // expect(formatMillionToText(1234567, 'fr')).toEqual('1.2 common.million');
+    expect(formatMillionToText(1234567, 'fr')).toEqual('1.2 common.million');
   });
 });

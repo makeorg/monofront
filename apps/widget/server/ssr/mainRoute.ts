@@ -59,7 +59,6 @@ export const mainRoute = async (
       url: req.url,
       query: req.query,
     });
-    return res.redirect('/maintenance');
   };
   const questionUnexpectedError = () => {
     logger.logError({
@@ -68,7 +67,6 @@ export const mainRoute = async (
       url: req.url,
       query: req.query,
     });
-    return res.redirect('/maintenance');
   };
 
   const question = await QuestionService.getQuestion(
@@ -86,7 +84,6 @@ export const mainRoute = async (
       url: req.url,
       query: req.query,
     });
-    return res.redirect('/maintenance');
   };
   const firstProposalUnexpectecError = () => {
     logger.logError({
@@ -97,10 +94,9 @@ export const mainRoute = async (
       url: req.url,
       query: req.query,
     });
-    return res.redirect('/maintenance');
   };
 
-  if (res.maintenance || !question) {
+  if (res.maintenance) {
     logger.logWarning({
       message: `Maintenance for "${
         questionSlug || undefined
@@ -121,6 +117,10 @@ export const mainRoute = async (
       query: req.query,
     });
     initialState.appConfig.unsecure = true;
+  }
+
+  if (!question) {
+    return res.redirect('/maintenance');
   }
 
   const { questionId } = question;
@@ -154,18 +154,15 @@ export const mainRoute = async (
     true,
     false,
     false,
-    undefined,
-    true,
-    true
+    undefined
   );
   const sequenceSize = getSequenceSize(
     firstProposal.sequenceSize,
     questionModified.sequenceConfig,
     questionModified.canPropose,
+    questionModified.hasDemographics,
     false,
-    false,
-    undefined,
-    true
+    false
   );
 
   initialState.currentQuestion = formattedQuestionSlug;

@@ -1,3 +1,4 @@
+import { DemographicDataType } from '.';
 import { IntroCardConfigType, PushProposalCardConfigType } from './Card';
 import { ProposalType } from './Proposal';
 
@@ -115,6 +116,7 @@ export type QuestionWordingType = {
 export type QuestionExtraSlidesConfigType = {
   introCard?: IntroCardConfigType;
   pushProposalCard?: PushProposalCardConfigType;
+  demographics?: DemographicDataType;
 };
 
 export type SimpleOperationDataType = {
@@ -196,6 +198,7 @@ export type QuestionType = {
   activeFeatureData: {
     topProposal?: ProposalType | null;
   };
+  hasDemographics: boolean;
 };
 
 export type CountsByQuestionType = {
