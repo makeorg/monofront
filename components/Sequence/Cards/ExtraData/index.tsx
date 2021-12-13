@@ -4,9 +4,9 @@ import { useAppContext } from '@make.org/store';
 import { Logger } from '@make.org/utils/services/Logger';
 import i18n from 'i18next';
 import { setDemographicsAsSubmitted } from '@make.org/store/actions/sequence';
-import { SequenceWrapperStyle, SequenceIntroParagraphStyle } from '../style';
+import { MiddleColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { ExtraDataForm } from './Form';
-import { ExtraDataDescriptionStyle } from './style';
+import { ExtraDataTitleStyle, ExtraDataDescriptionStyle } from './style';
 import { SubmittedDemographics } from './SubmittedStep';
 
 type Props = {
@@ -16,8 +16,6 @@ type Props = {
 export const ExtraDataCard: FC<Props> = ({ configuration }) => {
   const { state, dispatch } = useAppContext();
   const isSubmitted = state.sequence.demographics?.submitted;
-  const { source } = state.appConfig;
-  const isWidget = source === 'widget';
 
   // set demographics
   if (!configuration) {
@@ -39,13 +37,11 @@ export const ExtraDataCard: FC<Props> = ({ configuration }) => {
   return isSubmitted ? (
     <SubmittedDemographics title={title} name={name} demographicId={id} />
   ) : (
-    <SequenceWrapperStyle data-cy-demographic-layout={configuration.layout}>
-      <div>
-        <SequenceIntroParagraphStyle>{title}</SequenceIntroParagraphStyle>
-        <ExtraDataDescriptionStyle className={isWidget ? 'widget' : ''}>
-          {i18n.t('demographics_card.disclaimer')}
-        </ExtraDataDescriptionStyle>
-      </div>
+    <MiddleColumnStyle data-cy-demographic-layout={configuration.layout}>
+      <ExtraDataTitleStyle>{title}</ExtraDataTitleStyle>
+      <ExtraDataDescriptionStyle>
+        {i18n.t('demographics_card.disclaimer')}
+      </ExtraDataDescriptionStyle>
       <ExtraDataForm
         demographicId={id}
         name={name}
@@ -54,6 +50,6 @@ export const ExtraDataCard: FC<Props> = ({ configuration }) => {
         token={token}
         submitSuccess={submitSuccess}
       />
-    </SequenceWrapperStyle>
+    </MiddleColumnStyle>
   );
 };

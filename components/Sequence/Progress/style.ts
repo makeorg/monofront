@@ -15,9 +15,6 @@ export const ProgressPreviousButtonStyle = styled(UnstyledButtonStyle)`
   &:disabled .tofill {
     fill: ${color.grey};
   }
-  &.widget {
-    margin-right: 9px;
-  }
 `;
 
 export const ProgressIconStyle = styled(SvgPreviousArrowLeft)`
@@ -29,16 +26,12 @@ export const ProgressIconStyle = styled(SvgPreviousArrowLeft)`
 
 export const ProgressCounterStyle = styled.span<{
   disabled?: boolean;
-  isWidget?: boolean;
 }>`
   align-self: center;
   flex: 0;
   color: ${color.greyDark};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  padding: ${({ disabled }) => (disabled ? '9px 12px' : '0 5px')};
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    padding: ${({ disabled }) => (disabled ? '9px 12px' : '0 25px')};
-  }
+  padding: 0 10px;
   &:disabled {
     margin: 0 12px;
     border-radius: 20px;
@@ -46,6 +39,12 @@ export const ProgressCounterStyle = styled.span<{
   }
   &.widget {
     font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  }
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    padding: 0 25px;
+    &.widget {
+      padding: 0 10px;
+    }
   }
 `;
 

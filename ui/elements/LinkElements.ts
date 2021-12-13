@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { color, typography } from 'athena-design-tokens';
 import { Link } from 'react-router-dom';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { SvgExternalLink } from '../Svg/elements';
 import {
@@ -15,13 +14,10 @@ import {
 
 const linkStyle = (linkColor: string) => `
   color: ${linkColor};
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${intToPx(typography.font.fontsize.XS.value)};
   &:hover,
   &:focus {
     color: ${linkColor};
-  }
-  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
   }
 `;
 

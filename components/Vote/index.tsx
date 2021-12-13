@@ -168,6 +168,23 @@ export const Vote: React.FC<Props> = ({
     []
   );
 
+  useEffect(
+    () => {
+      if (!setDisplayNextButton) {
+        return;
+      }
+
+      if (userVote && votedKey) {
+        setDisplayNextButton(userVote);
+        return;
+      }
+
+      setDisplayNextButton(undefined);
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [userVote, votedKey]
+  );
+
   if (userVote && votedKey) {
     return (
       <VoteContainerStyle>

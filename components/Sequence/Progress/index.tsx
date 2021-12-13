@@ -38,7 +38,6 @@ export const SequenceProgress: FC<{
     <ThemeProvider theme={theme}>
       <SpaceBetweenRowStyle className="fullwidth" data-cy-container="progress">
         <ProgressPreviousButtonStyle
-          className={isWidget ? 'widget' : ''}
           onClick={goToPreviousCard}
           disabled={currentIndex === 0 || disabled}
           aria-label={i18n.t('sequence_progress.previous')}

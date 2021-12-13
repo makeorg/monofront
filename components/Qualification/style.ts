@@ -40,6 +40,9 @@ export const CounterStyle = styled.span<{ isWidget?: boolean }>`
   }
 `;
 
-export const QualifyButtonWrapperStyle = styled.div`
-  display: -webkit-box;
+export const QualifyButtonWrapperStyle = styled(UnstyledListStyle)`
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  grid-gap: 5px;
 `;

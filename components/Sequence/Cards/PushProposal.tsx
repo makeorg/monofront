@@ -23,24 +23,18 @@ import { SkipIconStyle } from './ExtraData/style';
  * Handles Push Proposal Card Business Logic
  */
 export const PushProposalCard: React.FC = () => {
-  const { dispatch, state } = useAppContext();
-  const { source } = state.appConfig;
-  const isWidget = source === 'widget';
+  const { dispatch } = useAppContext();
   useEffect(() => {
     trackDisplayProposalPushCard();
   }, []);
 
   return (
     <PushProposalWrapperStyle>
-      <SequenceIntroParagraphStyle
-        className="with-margin-bottom"
-        isWidget={isWidget}
-      >
+      <SequenceIntroParagraphStyle className="with-margin-bottom">
         {i18n.t('push_proposal_card.title')}
       </SequenceIntroParagraphStyle>
       <MiddleColumnToRowStyle column>
         <SequencePushProposalButtonStyle
-          className={isWidget ? 'widget' : ''}
           onClick={() => {
             dispatch(clearProposalPending());
             dispatch(setPanelContent(<ProposalJourney />));
@@ -50,7 +44,6 @@ export const PushProposalCard: React.FC = () => {
           {i18n.t('common.propose')}
         </SequencePushProposalButtonStyle>
         <SequencePushProposalNextButtonStyle
-          className={isWidget ? 'widget' : ''}
           onClick={() => {
             trackClickProposalPushCardIgnore();
             dispatch(incrementSequenceIndex());

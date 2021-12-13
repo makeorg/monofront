@@ -19,9 +19,10 @@ const ProposalStyle = `
   font-family: ${MakeFonts.CircularStandardBold};
   align-self: flex-start;
   flex: 1 1 auto;
-  margin-top: 15px;
+  margin: 15px auto;
   text-decoration: none;
   justify-self: flex-start;
+  align-content: flex-start;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
   }
@@ -40,14 +41,12 @@ export const ProposalElementStyle = styled.p`
 
 export const ProposalCardStyle = styled(CardStyle)`
   margin: 20px 0 0;
+  height: 100%;
   &.mobile-radius {
     border-radius: ${intToPx(Elements.BorderRadius)};
   }
-  &:first-child {
-    margin: 0;
-  }
+  &:first-child,
   &:only-child {
     margin: 0;
   }
-  height: 100%;
 `;

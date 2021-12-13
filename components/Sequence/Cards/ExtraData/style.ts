@@ -1,3 +1,7 @@
+import {
+  ActiveButtonStyle,
+  BlackBorderButtonStyle,
+} from '@make.org/ui/elements/ButtonsElements';
 import { typography, color } from 'athena-design-tokens';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
@@ -8,6 +12,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import SvgSelectArrow from '@make.org/ui/Svg/source/select-arrow.svg';
 import styled from 'styled-components';
 import { SvgPropsType } from '@make.org/types';
+import { SequenceIntroParagraphStyle } from '../style';
 
 const MAX_WIDTH = 275;
 
@@ -17,17 +22,28 @@ export const ExtraDataFormStyle = styled.form`
   align-items: center;
 `;
 
-export const ExtraDataDescriptionStyle = styled(ParagraphStyle)`
-  font-size: 14px;
-  text-align: center;
-  line-height: 17px;
-  margin-top: 5px;
+export const ExtraDataTitleStyle = styled(SequenceIntroParagraphStyle)`
+  font-family: ${MakeFonts.CircularStandardBold};
+  font-size: ${intToPx(typography.font.fontsize.XS.value)};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${intToPx(typography.font.fontsize.S.value)};
+  }
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    font-size: ${intToPx(typography.font.fontsize.M.value)};
   }
 `;
 
-export const ExtraDataRadioGroupStyle = styled.div<{ className: string }>`
+export const ExtraDataDescriptionStyle = styled(ParagraphStyle)`
+  font-size: 14px;
+  text-align: center;
+  margin: 5px auto 20px;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    margin-bottom: 30px;
+  }
+`;
+
+export const ExtraDataRadioGroupStyle = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -42,13 +58,27 @@ export const ExtraDataRadioGroupStyle = styled.div<{ className: string }>`
     width: 100%;
   }
 `;
+
 export const SubmitWrapperStyle = styled(CenterRowStyle)`
   width: 100%;
   gap: 10px;
-  max-height: 32px;
   margin-top: 20px;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    margin-top: 30px;
+  }
+`;
+
+export const SkipButtonStyle = styled(BlackBorderButtonStyle)`
+  font-size: 14px;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    max-height: 35px;
+    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  }
+`;
+
+export const SubmitButtonStyle = styled(ActiveButtonStyle)`
+  font-size: 14px;
+  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
+    font-size: ${intToPx(typography.font.fontsize.XS.value)};
   }
 `;
 
@@ -80,7 +110,6 @@ export const RadioAsButtonLabelStyle = styled.label`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   width: 100%;
   text-align: center;
-
   &.widget {
     font-size: 14px;
     @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -101,10 +130,6 @@ export const SelectStyle = styled.select`
   background: transparent url(${SvgSelectArrow as never}) no-repeat 95% center;
   -webkit-line-clamp: 1;
   text-overflow: ellipsis;
-  &.widget {
-    padding: 8px 30px 8px 15px;
-    margin: 30px 0;
-  }
 `;
 
 export const SkipIconStyle = styled(SvgFastForward)<SvgPropsType>`

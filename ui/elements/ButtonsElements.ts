@@ -89,7 +89,7 @@ export const GreyButtonStyle = styled.button.attrs(props => ({
   ${GreyStyle};
 `;
 
-export const LinkAsRedButtonStyle = styled(Link)<any>`
+export const LinkAsRedButtonStyle = styled(Link)`
   ${BasicButtonStyle};
   ${RedStyle};
   &:disabled {
@@ -363,6 +363,7 @@ const BlackBordersStyle = `
   background-color: transparent;
   color: ${color.black};
   border: 1px solid ${color.black};
+  padding: 9px 19px 6px 19px;
   .tofill {
     fill: ${color.black};
   }

@@ -91,13 +91,6 @@ export const SequenceAltTitleStyle = styled(SequenceTitleStyle)`
   }
 `;
 
-export const SequenceWrapperStyle = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  flex: 1;
-`;
-
 export const PushProposalWrapperStyle = styled.div`
   display: flex;
   flex-direction: column;
@@ -106,7 +99,8 @@ export const PushProposalWrapperStyle = styled.div`
   justify-content: space-between;
   margin: auto;
 `;
-export const SequenceIntroParagraphStyle = styled.div<{ isWidget?: boolean }>`
+
+export const SequenceIntroParagraphStyle = styled.div`
   width: 100%;
   font-family: ${MakeFonts.CircularStandardBook};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
@@ -126,6 +120,7 @@ export const SequenceIntroParagraphStyle = styled.div<{ isWidget?: boolean }>`
     }
   }
 `;
+
 export const SequenceProposalWrapperStyle = styled(ColumnElementStyle)`
   justify-content: space-between;
   align-items: center;
@@ -172,14 +167,13 @@ export const SequenceNextCardButtonStyle = styled(RedButtonStyle)`
 
 export const SequencePushProposalButtonStyle = styled(RedButtonStyle)`
   margin: 0 0 10px;
+  font-size: 14px;
+  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
+    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     width: auto;
     margin: 0 10px;
-  }
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    &.widget {
-      font-size: ${intToPx(typography.font.fontsize.XS.value)};
-    }
   }
 `;
 
@@ -187,10 +181,9 @@ export const SequencePushProposalNextButtonStyle = styled(
   BlackBorderButtonStyle
 )`
   margin-top: 15px;
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    &.widget {
-      font-size: ${intToPx(typography.font.fontsize.XS.value)};
-    }
+  font-size: 14px;
+  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
+    font-size: ${intToPx(typography.font.fontsize.XS.value)};
   }
 `;
 

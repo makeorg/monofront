@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react';
 import i18n from 'i18next';
 import { getQualificationIndex } from '@make.org/utils/helpers/qualification';
 import { QualificationType } from '@make.org/types';
-import { SpaceBetweenColumnStyle } from '@make.org/ui/elements/FlexElements';
-import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 
 import { QualificationButton } from './Button';
+import { QualifyButtonWrapperStyle } from './style';
 
 type Props = {
   /** Array with qualifications received from Api */
@@ -41,7 +40,7 @@ export const Qualification: React.FC<Props> = ({
       <ScreenReaderItemStyle as="p">
         {i18n.t('qualification.title')}
       </ScreenReaderItemStyle>
-      <SpaceBetweenColumnStyle as={UnstyledListStyle}>
+      <QualifyButtonWrapperStyle>
         {userQualifications.map(qualification => (
           <li
             key={getQualificationIndex(
@@ -58,7 +57,7 @@ export const Qualification: React.FC<Props> = ({
             />
           </li>
         ))}
-      </SpaceBetweenColumnStyle>
+      </QualifyButtonWrapperStyle>
     </>
   );
 };
