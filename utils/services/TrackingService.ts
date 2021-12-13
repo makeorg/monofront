@@ -20,6 +20,8 @@ import { defaultUnexpectedError } from './DefaultErrorHandler';
 import { MixpanelTracking } from './Trackers/MixpanelTracking';
 import { Logger } from './Logger';
 
+export class TrackingValidationError extends Error {}
+
 const validateParameters = (
   values: TrackingConfigurationParamType,
   expectedParameters: TrackingConfigurationParamType[] = [],
@@ -29,7 +31,7 @@ const validateParameters = (
   const expectedKeys = expectedParameters.map(param => param.key);
   const extraKeys = keys.filter(key => !expectedKeys.find(el => el === key));
   if (extraKeys.length) {
-    throw new Error(
+    throw new TrackingValidationError(
       `Tracking error : find unexpected tracking values "${extraKeys.toString()}" for "${eventName}"`
     );
   }
@@ -37,7 +39,7 @@ const validateParameters = (
     const { key: expectedKey = '', optional } = expectedParam;
     //@ts-ignore
     if (!values[expectedKey] && optional !== true) {
-      throw new Error(
+      throw new TrackingValidationError(
         `Tracking error : required param not found "${expectedKey}"`
       );
     }
@@ -47,7 +49,7 @@ const validateParameters = (
       //@ts-ignore
       !expectedParam.values.find(el => el === values[expectedKey])
     ) {
-      throw new Error(
+      throw new TrackingValidationError(
         `Tracking error : invalid "${
           //@ts-ignore
           values[expectedKey]
@@ -67,8 +69,21 @@ Object.keys(trackingConfiguration).forEach(key => {
       parameters,
       protected_parameters: protectedParameters,
     } = eventConfiguration;
+    try {
+      validateParameters(params || {}, parameters || [], eventName);
+    } catch (e: unknown) {
+      const error = e as TrackingValidationError;
+      Logger.logError({
+        name: 'tracking',
+        message: error.message,
+        app_trackingEvent: eventName || '-',
+        app_trackingParams: JSON.stringify(params || {}),
+        app_trackingParamsConfig: JSON.stringify(parameters || []),
+        stack: error.stack,
+      });
 
-    validateParameters(params || {}, parameters || [], eventName);
+      throw e;
+    }
 
     return {
       eventName: eventName || '',

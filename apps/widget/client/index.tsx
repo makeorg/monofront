@@ -49,8 +49,8 @@ window.onerror = (message, source, lineNumber, columnNumber, error) => {
         name: 'global-client',
         message: formattedMessage,
         app_sourceError: formattedSource,
-        app_line_error: formattedLineNumber,
-        app_column_error: formattedColumnNumber,
+        app_lineError: formattedLineNumber,
+        app_columnError: formattedColumnNumber,
         stack,
       },
       'error'
@@ -116,27 +116,12 @@ const initApp = async (state: StateRoot) => {
   // tracking values
   const currentQuestionId =
     store.questions[store.currentQuestion]?.question.questionId || '';
-  const currentUrl =
-    typeof window !== 'undefined' &&
-    window.parent &&
-    typeof window.document !== 'undefined' &&
-    window.document.location &&
-    window.location !== window.parent.location
-      ? window.document.referrer
-      : window.location.href;
-  const referrer =
-    typeof window !== 'undefined' && !!window.document?.referrer
-      ? window.document.referrer
-      : '';
 
-  if (!currentUrl) {
-    Logger.logError({
-      name: 'init-app',
-      message: `No current url. typeof window: ${typeof window}, window.document.referrer: ${
-        window?.document?.referrer
-      }, window.document.href: ${window?.location?.href}`,
-    });
-  }
+  const referrer = window?.document?.referrer || '';
+  const urlFromIframe =
+    window.top !== window.self ? referrer || 'none (iframe)' : undefined;
+
+  const currentUrl = urlFromIframe || window?.location?.href || 'none';
 
   // Set tracking params
   trackingParamsService.source = queryParams.source || source;

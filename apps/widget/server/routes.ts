@@ -47,6 +47,7 @@ export const initRoutes = (app: Application): void => {
   app.get('/.well-known/security.txt', technicalPages.renderSecurityTxt);
   app.get('/security.txt', technicalPages.renderSecurityTxt);
   app.get('/version', technicalPages.renderVersion);
+  app.get('/demo', technicalPages.renderDemo);
   app.get('/maintenance', metricsMiddleware, maintenanceRoute);
   app.get('/', metricsMiddleware, mainRoute);
 };

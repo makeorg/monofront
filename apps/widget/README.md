@@ -17,6 +17,7 @@ Dev mode :
 ```bash
 $ docker-compose -f docker-compose.dev.yaml up -d --profile=widget-dev up -d
 # and go to https://localhost:3000
+# or go to https://local.makeorg.tech:3000/demo?WIDGET_PARAMS (iframe demo)
 ```
 
 Dev mode with SSR :
@@ -24,6 +25,7 @@ Dev mode with SSR :
 ```bash
 $ docker-compose -f docker-compose.dev.yaml up -d --profile=widget-ssr up -d
 # and go to https://localhost:3000
+# or go to https://local.makeorg.tech:3000/demo?WIDGET_PARAMS (iframe demo)
 ```
 > After changes, you must rebuild your app in docker container :
 ```bash

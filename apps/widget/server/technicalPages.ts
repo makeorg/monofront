@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { env } from '@make.org/assets/env';
 import fs from 'fs';
+import path from 'path';
 import { WIDGET_VERSION_PATH } from './paths';
 
 let versionData: string;
@@ -45,3 +46,25 @@ export function renderSecurityTxt(req: Request, res: Response): Response {
     `Contact: ${env.frontUrl()}/FR/contact\nPreferred-Languages: fr, en\nCanonical: ${env.frontUrl()}/.well-known/security.txt`
   );
 }
+
+let demoTemplate = '';
+export const renderDemo = (req: Request, res: Response): Response => {
+  res.type('text/html');
+
+  if (!demoTemplate) {
+    demoTemplate = fs.readFileSync(
+      path.resolve(__dirname, '../demo-iframe.html'),
+      {
+        encoding: 'utf8',
+        flag: 'r',
+      }
+    );
+  }
+
+  return res.send(
+    demoTemplate.replace(
+      '__URL__',
+      `/?${new URLSearchParams(req.query as any).toString()}`
+    )
+  );
+};

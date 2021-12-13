@@ -8,7 +8,7 @@ const MAINTENANCE_SERVICE_RESPONSE_CACHE_KEY =
 const getMaintenanceConfigResponse = async () => {
   const content = cache.get(MAINTENANCE_SERVICE_RESPONSE_CACHE_KEY);
 
-  if (content) {
+  if (content || content === null) {
     return content;
   }
   const response = await MaintenanceService.getConfig();

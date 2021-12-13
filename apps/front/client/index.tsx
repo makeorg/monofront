@@ -56,8 +56,8 @@ window.onerror = (message, source, lineNumber, columnNumber, error) => {
         name: 'global-client',
         message: formattedMessage,
         app_sourceError: formattedSource,
-        app_line_error: formattedLineNumber,
-        app_column_error: formattedColumnNumber,
+        app_lineError: formattedLineNumber,
+        app_columnError: formattedColumnNumber,
         stack,
       },
       'error'

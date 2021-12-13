@@ -5,15 +5,21 @@ import { getLoggerInstance } from '@make.org/utils/helpers/logger';
 const getConfig = async (): Promise<null | AxiosResponse<any>> => {
   try {
     const response = await MaintenanceApiService.getMaintenanceConfig();
+    if (response === null) {
+      getLoggerInstance().logError({
+        message: `Failed to get maintenance config. Default configuration will be used.`,
+        name: 'services',
+      });
+    }
 
     return response;
   } catch (error: unknown) {
-    const apiServiceError = error as Error;
+    const serviceError = error as Error;
 
     getLoggerInstance().logError({
-      message: `Failed to get maintenance config - ${apiServiceError.message}`,
+      message: `Failed to get maintenance config - ${serviceError.message}`,
       name: 'services',
-      stack: apiServiceError.stack,
+      stack: serviceError.stack,
     });
 
     return null;

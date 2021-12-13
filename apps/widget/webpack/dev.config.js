@@ -1,9 +1,12 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const DotenvWebpack = require('dotenv-webpack');
 const Dotenv = require('dotenv');
-const { responseInterceptor } = require('http-proxy-middleware');
+// const { responseInterceptor } = require('http-proxy-middleware');
+const { readFileSync } = require('fs');
+const querystring = require('querystring');
 const { presets, plugins } = require('./babel.config.js');
 
 Dotenv.config({ path: './.env.local' });
@@ -83,6 +86,21 @@ module.exports = {
     before: app => {
       app.post('/api/logger', async (req, res) => {
         res.send('APi logger');
+      });
+      app.get('/demo', async (req, res) => {
+        res.type('text/html');
+
+        const demoTemplate = readFileSync(
+          path.resolve(__dirname, '../demo-iframe.html'),
+          { encoding: 'utf8', flag: 'r' }
+        );
+
+        return res.send(
+          demoTemplate.replace(
+            '__URL__',
+            `/?${new URLSearchParams(req.query).toString()}`
+          )
+        );
       });
     },
     proxy: {
