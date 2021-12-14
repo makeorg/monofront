@@ -128,6 +128,7 @@ COPY --from=base-production /usr/app/apps/widget/dist ./dist
 COPY --from=base-production /usr/app/apps/widget/ecosystem.config.js ./ecosystem.config.js
 COPY --from=base-production /usr/app/apps/widget/bin ./bin
 COPY --from=base-production /usr/app/apps/widget/i18n ./i18n
+COPY --from=base-production /usr/app/apps/widget/demo-iframe.html ./demo-iframe.html
 
 COPY --from=base-production /usr/app/node_modules ./node_modules
 
