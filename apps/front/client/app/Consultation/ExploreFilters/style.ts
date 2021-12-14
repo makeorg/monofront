@@ -23,13 +23,11 @@ export const FiltersWrapperStyle = styled(ColumnElementStyle)`
 `;
 
 export const FilterBlockStyle = styled.div`
-  padding: 20px;
-  margin-bottom: 10px;
+  padding: 20px 20px 30px;
   background-color: ${color.white};
   border-radius: 8px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     padding: 30px;
-    margin-bottom: 30px;
   }
 `;
 
@@ -50,14 +48,9 @@ export const KeywordsListWrapperStyle = styled.ul`
   flex-wrap: wrap;
   list-style: none;
   padding: 0px;
+  gap: 15px;
 `;
 
-export const KeywordsItemWrapperStyle = styled.li`
-  margin: 0px 15px 15px 0px;
-  :last-child {
-    margin-bottom: 0px;
-  }
-`;
 export const TransparentButtonFilterStyle = styled.button`
   display: flex;
   justify-content: center;
@@ -135,7 +128,7 @@ export const FilterByWrapperStyle = styled.ul`
 export const FilterByElementStyle = styled.li`
   text-decoration: none;
   :first-child {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 `;
 export const SvgArrowUp = styled(SvgSmallArrowUp)`
@@ -195,6 +188,7 @@ export const CloseApplyStyle = styled.button`
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
+  font-size: 14px;
   width: 100%;
   color: ${color.greyDark};
   border: none;
@@ -215,16 +209,14 @@ export const SvgCloseApplyArrow = styled(SvgRightGreyArrow)`
 
 export const customModalStyles = {
   content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
+    position: 'relative',
     padding: null,
-    transform: 'translate(-50%, -50%)',
     borderRadius: '8px',
     border: null,
     zIndex: 10,
-    overflow: 'hidden',
-    minWidth: '355px',
+    overflow: 'auto',
+    inset: 'initial',
+    maxWidth: '470px',
+    margin: 'auto',
   },
 };

@@ -60,6 +60,6 @@ export const SidebarSeparatorStyle = styled(SeparatorStyle)`
 `;
 
 export const FilterSeparationLineStyle = styled(SeparatorStyle)`
-  background-color: ${color.greyLighter};
-  margin: 30px 0;
+  background-color: ${color.grey};
+  margin: 20px 0;
 `;

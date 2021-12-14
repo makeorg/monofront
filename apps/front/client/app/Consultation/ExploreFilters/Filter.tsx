@@ -36,7 +36,6 @@ import {
 import {
   TransparentButtonFilterStyle,
   KeywordsListWrapperStyle,
-  KeywordsItemWrapperStyle,
   FilterByWrapperStyle,
   FilterByElementStyle,
   FiltersAndSortTitleStyle,
@@ -133,7 +132,7 @@ export const FiltersComponent: React.FC = () => {
           {keywordsCTA.length > 1 && (
             <KeywordsListWrapperStyle>
               {keywordsCTA.map(keyword => (
-                <KeywordsItemWrapperStyle key={keyword.key}>
+                <li key={keyword.key}>
                   <TransparentButtonFilterStyle
                     type="button"
                     name="keywords"
@@ -145,7 +144,7 @@ export const FiltersComponent: React.FC = () => {
                   >
                     {keyword.key}
                   </TransparentButtonFilterStyle>
-                </KeywordsItemWrapperStyle>
+                </li>
               ))}
             </KeywordsListWrapperStyle>
           )}
