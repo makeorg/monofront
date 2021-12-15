@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { typography, color } from 'athena-design-tokens';
-
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';

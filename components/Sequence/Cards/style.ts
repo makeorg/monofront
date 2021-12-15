@@ -31,23 +31,14 @@ export const SequenceCardStyle = styled.section`
   border-radius: 8px;
   box-shadow: 0 2px 3px 0 ${ShadowColors.BlackZeroTwoOpacity};
   margin: 20px auto 40px;
-  min-height: 315px;
   &.widget {
-    margin: 20px;
-    max-height: 334px;
-    min-height: 334px;
+    margin: 5px auto 15px;
   }
   &.center {
     justify-content: center;
   }
-  &.no-proposal {
-    justify-content: center;
-    padding: 60px 20px;
-    margin: 20px auto 0px;
-  }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     max-height: 365px;
-    min-height: 365px;
     margin-top: 30px;
     padding: 40px 30px 30px;
   }

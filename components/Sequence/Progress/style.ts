@@ -15,12 +15,15 @@ export const ProgressPreviousButtonStyle = styled(UnstyledButtonStyle)`
   &:disabled .tofill {
     fill: ${color.grey};
   }
+  &.widget {
+    padding: 2px 12px;
+  }
 `;
 
 export const ProgressIconStyle = styled(SvgPreviousArrowLeft)`
   width: 13px;
   &.widget {
-    width: 24px;
+    width: 10px;
   }
 `;
 
@@ -39,6 +42,7 @@ export const ProgressCounterStyle = styled.span<{
   }
   &.widget {
     font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+    line-height: 14px;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     padding: 0 25px;

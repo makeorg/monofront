@@ -29,6 +29,7 @@ import {
 import {
   clearNotificationTip,
   dismissNotification,
+  displayNotificationTip,
 } from '@make.org/store/actions/notifications';
 import { useAppContext } from '@make.org/store';
 import { NOTIF } from '@make.org/types/enums';
@@ -184,6 +185,20 @@ export const Vote: React.FC<Props> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [userVote, votedKey]
   );
+
+  useEffect((): any => {
+    if (isFirstSequenceVote) {
+      dispatch(
+        displayNotificationTip(NOTIF.FIRST_VOTE_TIP_MESSAGE, undefined, true)
+      );
+
+      return (): void => {
+        dispatch(clearNotificationTip());
+      };
+    }
+    return null;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (userVote && votedKey) {
     return (

@@ -4,7 +4,7 @@ import i18n from 'i18next';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { ProposalCardType } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
-import { CARD, NOTIF } from '@make.org/types/enums';
+import { CARD } from '@make.org/types/enums';
 import {
   disableFirstProposal,
   incrementSequenceIndex,
@@ -13,10 +13,6 @@ import {
   trackClickNextCard,
   trackClickNextOnLastProposal,
 } from '@make.org/utils/services/Tracking';
-import {
-  clearNotificationTip,
-  displayNotificationTip,
-} from '@make.org/store/actions/notifications';
 import { Vote } from '../../Vote';
 import { ProposalAuthor } from '../../Proposal/Author';
 import {
@@ -85,20 +81,6 @@ export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
     setIndex(proposalCard.index);
     setIsLastProposalCard(proposalCard.index === getLastCardIndex());
   }, [proposalCard, cards]);
-
-  useEffect((): any => {
-    if (isFirstSequenceVote) {
-      dispatch(
-        displayNotificationTip(NOTIF.FIRST_VOTE_TIP_MESSAGE, undefined, true)
-      );
-
-      return (): void => {
-        dispatch(clearNotificationTip());
-      };
-    }
-    return null;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isFirstSequenceVote]);
 
   return (
     <SequenceProposalWrapperStyle>
