@@ -207,7 +207,7 @@ export const QualifyButtonStyle = styled.button`
   display: flex;
   justify-content: center;
   width: 100%;
-  border-width: 2px;
+  border-width: 1px;
   font-size: 14px;
   line-height: 24px;
   border-style: solid;
@@ -216,6 +216,7 @@ export const QualifyButtonStyle = styled.button`
   border-color: ${props => props.color};
   color: ${props => props.color};
   background-color: ${color.white};
+  min-width: 128px;
   &.qualified {
     color: ${color.white};
     background-color: ${props => props.color};

@@ -26,8 +26,9 @@ export const FilterBlockStyle = styled.div`
   padding: 20px 20px 30px;
   background-color: ${color.white};
   border-radius: 8px;
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     padding: 30px;
+    margin-bottom: 30px;
   }
 `;
 
@@ -218,5 +219,6 @@ export const customModalStyles = {
     inset: 'initial',
     maxWidth: '470px',
     margin: 'auto',
+    width: '100%',
   },
 };
