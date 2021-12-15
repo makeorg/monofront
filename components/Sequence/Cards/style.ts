@@ -31,6 +31,7 @@ export const SequenceCardStyle = styled.section`
   border-radius: 8px;
   box-shadow: 0 2px 3px 0 ${ShadowColors.BlackZeroTwoOpacity};
   margin: 20px auto 40px;
+  min-height: 315px;
   &.widget {
     margin: 5px auto 15px;
   }

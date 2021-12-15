@@ -4,7 +4,7 @@ import i18n from 'i18next';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { ProposalCardType } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
-import { CARD } from '@make.org/types/enums';
+import { CARD, NOTIF } from '@make.org/types/enums';
 import {
   disableFirstProposal,
   incrementSequenceIndex,
@@ -62,7 +62,11 @@ export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
   const { votedProposalIds } = state.sequence;
   const votedProposals = votedProposalIds[proposal.question.slug];
   const hasVotedProposals = votedProposals && votedProposals.length > 0;
-  const isFirstSequenceVote = !hasVotedProposals;
+  const { dismissed } = state.notifications;
+  const isDismissed = dismissed.find(
+    notificationId => notificationId === NOTIF.FIRST_VOTE_TIP_MESSAGE
+  );
+  const displayTooltip = !hasVotedProposals && !isDismissed;
 
   const goToNextCard = () => {
     dispatch(incrementSequenceIndex());
@@ -92,7 +96,7 @@ export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
         <SequenceProposalStyle lang={proposal.question.language}>
           {proposal.content}
         </SequenceProposalStyle>
-        {isFirstSequenceVote && <Tip />}
+        {displayTooltip && <Tip />}
         <Vote
           proposal={proposal}
           votes={votes}
