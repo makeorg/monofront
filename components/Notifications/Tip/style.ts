@@ -10,7 +10,7 @@ export const TipWrapperStyle = styled.div`
   font-family: ${MakeFonts.CircularStandardBook};
   background-color: ${color.infos};
   color: ${color.white};
-  padding: 6px 17px 6px 10px;
+  padding: 6px 10px;
   border-radius: 2px;
   font-size: 14px;
   line-height: 1.5;

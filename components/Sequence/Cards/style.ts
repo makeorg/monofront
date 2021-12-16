@@ -26,14 +26,14 @@ export const SequenceCardStyle = styled.section`
   justify-content: center;
   flex: 1;
   width: 100%;
-  padding: 30px 20px 20px;
+  padding: 40px 20px 20px;
   background-color: ${color.white};
   border-radius: 8px;
   box-shadow: 0 2px 3px 0 ${ShadowColors.BlackZeroTwoOpacity};
   margin: 20px auto 40px;
-  min-height: 315px;
+  min-height: 350px;
   &.widget {
-    margin: 5px auto 15px;
+    margin: 10px auto 15px;
   }
   &.center {
     justify-content: center;

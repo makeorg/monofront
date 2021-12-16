@@ -58,21 +58,23 @@ export const SequenceSpecialIconStyle = styled(SvgArrowReturn)`
 
 export const SequenceTitleStyle = styled.h2`
   font-family: ${MakeFonts.CircularStandardBold};
-  font-size: ${intToPx(typography.font.fontsize.S.value)};
+  font-size: 14px;
+  line-height: 21px;
   letter-spacing: 0.12px;
   align-self: flex-start;
   text-transform: none;
   margin-top: 30px;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    line-height: 24px;
+  }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${intToPx(typography.font.fontsize.XL.value)};
   }
   &.widget {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
-    letter-spacing: 0.11px;
     margin: 0;
     @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
       font-size: ${intToPx(typography.font.fontsize.S.value)};
-      letter-spacing: 0.12px;
     }
   }
 `;
