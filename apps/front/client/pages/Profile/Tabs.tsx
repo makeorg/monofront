@@ -16,7 +16,7 @@ import {
   isProfileProposals,
 } from '@make.org/utils/routes';
 
-const ProfileTabs: FC = () => {
+export const ProfileTabs: FC = () => {
   const { state } = useAppContext();
   const { pathname } = useLocation();
   const { country } = state.appConfig;
@@ -51,6 +51,3 @@ const ProfileTabs: FC = () => {
     </TabNavStyle>
   );
 };
-
-// default export needed for loadable component
-export default ProfileTabs; // eslint-disable-line import/no-default-export

@@ -28,7 +28,7 @@ import { USER } from '@make.org/types/enums';
 import { LoadMoreWrapperStyle } from '../../app/Consultation/Styled/Proposal';
 import { UserProfileSkipLinks } from '../../app/SkipLinks/Profile';
 import { UserInformations } from '../../app/Profile/UserInformations';
-import ProfileTabs from './Tabs';
+import { ProfileTabs } from './Tabs';
 
 type Props = {
   titles: {
@@ -91,7 +91,6 @@ export const ProfileProposalsList: FC<Props> = ({
             </ThirdLevelTitleStyle>
             <ProfileTitleSeparatorStyle />
           </ProfileContentHeaderStyle>
-
           {renderProposals && (
             <section role="feed" aria-live="polite">
               {proposals.map((proposal, index) => (

@@ -97,7 +97,12 @@ const ProfileFavouritesPage = loadable(
 );
 const ProfileOpinionsPage = loadable(() => import('../pages/Profile/Opinions'));
 
-const OrganisationPage = loadable(() => import('../pages/Organisation'));
+const OrganisationProposalsPage = loadable(
+  () => import('../pages/Organisation/Proposals')
+);
+const OrganisationVotesPage = loadable(
+  () => import('../pages/Organisation/Votes')
+);
 
 const PersonalityPage = loadable(() => import('../pages/Personality'));
 
@@ -198,8 +203,14 @@ export const Routes: FC = () => {
         component={ProfileFavouritesPage}
       />
       <Route path={ROUTE_PROFILE_OPINIONS} component={ProfileOpinionsPage} />
-      <Route path={ROUTE_ORGANISATION_PROPOSALS} component={OrganisationPage} />
-      <Route path={ROUTE_ORGANISATION_VOTES} component={OrganisationPage} />
+      <Route
+        path={ROUTE_ORGANISATION_PROPOSALS}
+        component={OrganisationProposalsPage}
+      />
+      <Route
+        path={ROUTE_ORGANISATION_VOTES}
+        component={OrganisationVotesPage}
+      />
       <Route path={ROUTE_SEARCH} component={SearchPage} />
       <Route path={ROUTE_SEARCH_PROPOSALS} component={SearchPage} />
       <Route path={ROUTE_SEARCH_ORGANISATIONS} component={SearchPage} />
