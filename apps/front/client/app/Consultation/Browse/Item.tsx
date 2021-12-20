@@ -2,17 +2,8 @@ import React, { FC } from 'react';
 import { HomeQuestionType } from '@make.org/types';
 import { DateHelper } from '@make.org/utils/helpers/date';
 import i18n from 'i18next';
-import {
-  useScreenMobileContainerWidth,
-  useTablet,
-} from '@make.org/utils/hooks/useMedia';
 import { formatMillionToText } from '@make.org/utils/helpers/numberFormatter';
-import {
-  getSixteenPerNineRatioHeight,
-  matchDesktopDevice,
-} from '@make.org/utils/helpers/styled';
 import { DATE } from '@make.org/types/enums';
-import { useAppContext } from '@make.org/store';
 import {
   ConsultationElementPictureStyle,
   ConsultationElementSubtitleStyle,
@@ -31,21 +22,6 @@ type Props = {
   question: HomeQuestionType;
   resultsContext: boolean;
   itemsCount: number;
-};
-
-export const getHomepageRatio = (
-  height: number,
-  itemsCount: number
-): number => {
-  switch (itemsCount) {
-    case 4:
-      return (height * 255) / 248;
-    case 3:
-      return (height * 353) / 248;
-    default: {
-      return (height * 275) / 124;
-    }
-  }
 };
 
 export const ConsultationItem: FC<Props> = ({
@@ -88,37 +64,12 @@ export const ConsultationItem: FC<Props> = ({
     linkText = i18n.t('browse.results.see_results');
   }
 
-  const isTabletViewport = useTablet();
-  const { state } = useAppContext();
-  const { device } = state.appConfig;
-  let containerWidth = useScreenMobileContainerWidth();
-  const isDesktopInState = matchDesktopDevice(device);
-
-  if (!containerWidth) {
-    containerWidth = 0;
-  }
-
-  let imageWidth = containerWidth;
-  let imageHeight = getSixteenPerNineRatioHeight(containerWidth);
-
-  if (isDesktopInState) {
-    imageWidth = getHomepageRatio(248, itemsCount);
-    imageHeight = 248;
-  }
-
-  if (isTabletViewport && !isDesktopInState) {
-    imageWidth = containerWidth / 2;
-    imageHeight = getSixteenPerNineRatioHeight(containerWidth / 2);
-  }
-
   return (
     <ConsultationArticleStyle>
       <ConsultationElementPictureStyle
         src={descriptionImage || ''}
         alt={descriptionImageAlt || ''}
-        width={imageWidth}
-        height={imageHeight}
-        crop
+        width={555}
       />
       {featured && (
         <ConsultationElementSubtitleStyle>

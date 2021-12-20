@@ -8,8 +8,6 @@ import {
   intToPx,
   getBarHeight,
   getFullWidthDividedByItems,
-  getSixteenPerNineRatioWidth,
-  getSixteenPerNineRatioHeight,
   matchDesktopDevice,
   matchMobileDevice,
 } from './styled';
@@ -47,18 +45,6 @@ describe('getBarHeight', () => {
 describe('getFullWidthDividedByItems', () => {
   it('return a percent value of 100% divided by number of items', () => {
     expect(getFullWidthDividedByItems(4)).toEqual('25%');
-  });
-});
-
-describe('getSixteenPerNineRatioWidth', () => {
-  it('return a width value from a 16:9 ratio', () => {
-    expect(getSixteenPerNineRatioWidth(9)).toEqual(16);
-  });
-});
-
-describe('getSixteenPerNineRatioHeight', () => {
-  it('return a height value from a 16:9 ratio', () => {
-    expect(getSixteenPerNineRatioHeight(16)).toEqual(9);
   });
 });
 

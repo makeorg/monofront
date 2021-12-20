@@ -57,12 +57,6 @@ export const unlockBody = (): void => {
   return body.classList.remove('locked');
 };
 
-export const getSixteenPerNineRatioWidth = (height: number): number =>
-  (height * 16) / 9;
-
-export const getSixteenPerNineRatioHeight = (width: number): number =>
-  (width * 9) / 16;
-
 export const matchDesktopDevice = (device: string): boolean => {
   if (device === DESKTOP_DEVICE) {
     return true;
