@@ -26,7 +26,7 @@ export const SequenceCardStyle = styled.section`
   justify-content: center;
   flex: 1;
   width: 100%;
-  padding: 40px 20px 20px;
+  padding: 25px 20px 20px;
   background-color: ${color.white};
   border-radius: 8px;
   box-shadow: 0 2px 3px 0 ${ShadowColors.BlackZeroTwoOpacity};
@@ -38,6 +38,9 @@ export const SequenceCardStyle = styled.section`
   }
   &.center {
     justify-content: center;
+  }
+  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
+    padding: 40px 20px 20px;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     min-height: 365px;
@@ -130,7 +133,6 @@ export const SequenceProposalStyle = styled.blockquote`
   font-family: ${MakeFonts.CircularStandardBook};
   font-size: 14px;
   text-align: center;
-  line-height: 20px;
   letter-spacing: 0.13px;
   margin-bottom: 15px;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {

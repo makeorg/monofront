@@ -65,7 +65,7 @@ export const SequenceProgress: FC<{
             </ProgressCounterStyle>
           </>
         )}
-        <ProgressBarWrapperStyle>
+        <ProgressBarWrapperStyle className={disabled ? 'disabled' : ''}>
           <ProgressBarStyle percentWidth={pxToPercent(index, length || 0)} />
         </ProgressBarWrapperStyle>
       </SpaceBetweenRowStyle>

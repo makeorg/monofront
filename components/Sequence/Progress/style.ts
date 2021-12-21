@@ -24,20 +24,13 @@ export const ProgressIconStyle = styled(SvgPreviousArrowLeft)`
   }
 `;
 
-export const ProgressCounterStyle = styled.span<{
-  disabled?: boolean;
-}>`
+export const ProgressCounterStyle = styled.span`
   align-self: center;
   flex: 0;
   color: ${color.greyDark};
   padding: 0 10px;
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   line-height: 1;
-  &:disabled {
-    margin: 0 12px;
-    border-radius: 20px;
-    background-color: ${color.greyLighter};
-  }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
     line-height: 1.5;
@@ -57,6 +50,9 @@ export const ProgressBarWrapperStyle = styled.div`
   overflow: hidden;
   background-color: ${color.white};
   border: 1px solid ${color.grey};
+  &.disabled {
+    margin-left: 24px;
+  }
 `;
 
 export const ProgressBarStyle = styled.div<{
