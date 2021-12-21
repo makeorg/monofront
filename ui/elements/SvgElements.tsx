@@ -38,12 +38,9 @@ export const VoteIconStyle = styled(props => <SvgThumbsUp {...props} />)`
   &.other {
     transform: translate(-50%, -50%) rotate(-90deg);
   }
-  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    width: 22px;
-  }
-  @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     &.sequence {
-      width: 25px;
+      width: 20px;
     }
   }
 `;
