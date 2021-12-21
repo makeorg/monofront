@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState, useRef } from 'react';
 import i18n from 'i18next';
 import { getPaginatedRoute } from '@make.org/utils/routes';
 import { trackClickPageNumber } from '@make.org/utils/services/Tracking';
@@ -8,6 +8,7 @@ import { useAppContext } from '@make.org/store';
 import { QuestionType } from '@make.org/types';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { parse } from 'query-string';
+import useOnClickOutside from '@make.org/utils/hooks/useOnClickOutside';
 import {
   PaginationNavStyle,
   PaginationTextStyle,
@@ -15,6 +16,11 @@ import {
   PreviousArrowStyle,
   NextArrowStyle,
   PaginationDisabledStyle,
+  ListItemStyle,
+  ListLinkStyle,
+  DropDownListStyle,
+  DropDownCurrentStyle,
+  DropDownContainerStyle,
 } from './style';
 
 type Props = {
@@ -28,6 +34,7 @@ export const Pagination: FC<Props> = ({
   itemsTotal,
   scrollToId,
 }) => {
+  const ref = useRef(null);
   const { state } = useAppContext();
   const question: QuestionType = selectCurrentQuestion(state);
   const params: { country: string; pageId: string } = useParams();
@@ -37,6 +44,8 @@ export const Pagination: FC<Props> = ({
   const urlQueryParams = parse(search);
   const intPageId = JSON.parse(pageId);
   const pagesTotal = Math.ceil(itemsTotal / itemsPerPage);
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleDropDown = () => pagesTotal > 2 && setIsOpen(!isOpen);
   const previousPageUrl = getPaginatedRoute(
     path,
     country,
@@ -54,13 +63,44 @@ export const Pagination: FC<Props> = ({
 
   const paginateClick = () => {
     trackClickPageNumber(intPageId);
-
+    setIsOpen(false);
     if (scrollToId) {
       return scrollToElementId(scrollToId);
     }
 
     return scrollToTop();
   };
+
+  const onOptionClicked = (page: number) =>
+    getPaginatedRoute(
+      path,
+      country,
+      page,
+      question && question.slug,
+      urlQueryParams
+    );
+
+  const getPages = () => {
+    const pages = [];
+    for (let i = 1; i < pagesTotal; i += 1) {
+      pages.push(
+        <ListItemStyle key={i} className={intPageId === i ? 'selected' : ''}>
+          <ListLinkStyle to={onOptionClicked(i)} onClick={paginateClick}>
+            {i}
+          </ListLinkStyle>
+        </ListItemStyle>
+      );
+    }
+    return pages;
+  };
+
+  const handleClickOutside = () => {
+    if (isOpen) {
+      setIsOpen(false);
+    }
+  };
+
+  useOnClickOutside(ref, handleClickOutside);
 
   return (
     <PaginationNavStyle
@@ -82,11 +122,20 @@ export const Pagination: FC<Props> = ({
         </PaginationLinkStyle>
       )}
       <PaginationTextStyle>
-        {i18n.t('common.pagination.index_count', {
-          index: intPageId,
+        {i18n.t('common.pagination.page')}
+        <DropDownContainerStyle>
+          <DropDownCurrentStyle onClick={toggleDropDown}>
+            {intPageId}
+          </DropDownCurrentStyle>
+          {isOpen && (
+            <DropDownListStyle ref={ref}>{getPages()}</DropDownListStyle>
+          )}
+        </DropDownContainerStyle>
+        {i18n.t('common.pagination.page_total', {
           total: pagesTotal,
         })}
       </PaginationTextStyle>
+
       {intPageId === pagesTotal ? (
         <PaginationDisabledStyle>
           <NextArrowStyle aria-hidden focusable="false" />

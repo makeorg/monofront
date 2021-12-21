@@ -258,7 +258,9 @@
       "title": "paging",
       "next": "Next",
       "previous": "Previous",
-      "index_count": "{{index}} over {{total}} pages"
+      "index_count": "{{index}} over {{total}} pages",
+      "page": "",
+      "page_total": "over {{total}} pages"
     },
     "million": "million",
     "million_plural": "millions",

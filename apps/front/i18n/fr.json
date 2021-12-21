@@ -249,7 +249,9 @@
       "title": "pagination",
       "next": "Page suivante",
       "previous": "Page précédente",
-      "index_count": "Page {{index}} sur {{total}}"
+      "index_count": "Page {{index}} sur {{total}}",
+      "page": "Page",
+      "page_total": "sur {{total}}"
     },
     "max_characters": "caractères maximum",
     "back": "Retour",

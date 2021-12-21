@@ -236,7 +236,9 @@
       "title": "Seitenbezifferung",
       "next": "Nächste Seite",
       "previous": "Nächste Seite",
-      "index_count": "Seite {{index}} von {{total}}"
+      "index_count": "Seite {{index}} von {{total}}",
+      "page": "Seite",
+      "page_total": "von {{total}}"
     },
     "max_characters": "maximale Zeichenanzahl",
     "back": "Zurück",
