@@ -58,24 +58,26 @@ export const SequenceSpecialIconStyle = styled(SvgArrowReturn)`
 
 export const SequenceTitleStyle = styled.h2`
   font-family: ${MakeFonts.CircularStandardBold};
-  font-size: 14px;
-  line-height: 21px;
+  font-size: ${intToPx(typography.font.fontsize.XS.value)};
   letter-spacing: 0.12px;
   align-self: flex-start;
   text-transform: none;
   margin-top: 30px;
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
-    line-height: 24px;
-  }
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.XL.value)};
-  }
   &.widget {
     margin: 0;
-    @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    font-size: 14px;
+  }
+  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
+    font-size: ${intToPx(typography.font.fontsize.S.value)};
+    &.widget {
       font-size: ${intToPx(typography.font.fontsize.S.value)};
     }
+  }
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    font-size: ${intToPx(typography.font.fontsize.L.value)};
+  }
+  @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
+    font-size: ${intToPx(typography.font.fontsize.XL.value)};
   }
 `;
 

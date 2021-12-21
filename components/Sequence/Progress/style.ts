@@ -8,15 +8,12 @@ import { QuestionThemeType } from '@make.org/types';
 
 export const ProgressPreviousButtonStyle = styled(UnstyledButtonStyle)`
   flex: 0;
-  padding: 5px 15px;
+  padding: 2px 12px;
   border-radius: 20px;
   background-color: ${color.white};
   border-radius: 20px;
   &:disabled .tofill {
     fill: ${color.grey};
-  }
-  &.widget {
-    padding: 2px 12px;
   }
 `;
 
@@ -33,21 +30,22 @@ export const ProgressCounterStyle = styled.span<{
   align-self: center;
   flex: 0;
   color: ${color.greyDark};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
   padding: 0 10px;
+  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  line-height: 1;
   &:disabled {
     margin: 0 12px;
     border-radius: 20px;
     background-color: ${color.greyLighter};
   }
-  &.widget {
-    font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-    line-height: 14px;
-  }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    line-height: 1.5;
     padding: 0 25px;
     &.widget {
       padding: 0 10px;
+      font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+      line-height: 1;
     }
   }
 `;

@@ -7,7 +7,7 @@ import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 
 export const PanelContainer = styled.div`
   background-color: ${color.greyLighter};
-  padding: 15px;
+  padding: 15px 15px 5px;
   width: 100%;
   min-height: 125px;
   display: flex;

@@ -30,15 +30,17 @@ export const SequenceCardStyle = styled.section`
   background-color: ${color.white};
   border-radius: 8px;
   box-shadow: 0 2px 3px 0 ${ShadowColors.BlackZeroTwoOpacity};
-  margin: 20px auto 40px;
+  margin: 30px auto;
   min-height: 350px;
   &.widget {
-    margin: 10px auto 15px;
+    min-height: 0;
+    margin: 17px auto 15px;
   }
   &.center {
     justify-content: center;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    min-height: 365px;
     max-height: 365px;
     margin-top: 30px;
     padding: 40px 30px 30px;
@@ -133,12 +135,10 @@ export const SequenceProposalStyle = styled.blockquote`
   margin-bottom: 15px;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
-    line-height: 24px;
     letter-spacing: 0.14px;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.M.value)};
-    line-height: 30px;
     letter-spacing: 0.12px;
     max-width: 760px;
   }

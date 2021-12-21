@@ -1,5 +1,4 @@
 const isClientSide = (): boolean => typeof window !== 'undefined';
-const PRODUCTION_DOMAIN = 'make.org';
 
 // Define server env variables
 const nodeEnv = (): string | undefined => process.env.NODE_ENV;
@@ -11,8 +10,6 @@ const apiUrlClientSide = (): string | undefined =>
   process.env.API_URL_CLIENT_SIDE;
 const frontUrl = (): string | undefined => process.env.FRONT_URL;
 const port = (): string | undefined => process.env.PORT;
-const isProductionUrl = (): boolean | undefined =>
-  process.env.FRONT_URL?.includes(PRODUCTION_DOMAIN);
 const useLocalProxy = (): string | undefined => process.env.LOCAL_USE_PROXY;
 
 // Export in env object
@@ -25,6 +22,5 @@ export const env = {
   useLocalProxy,
   frontUrl,
   port,
-  isProductionUrl,
   isClientSide,
 };

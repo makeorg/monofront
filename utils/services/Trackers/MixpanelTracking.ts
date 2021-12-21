@@ -16,7 +16,11 @@
 import { env } from '@make.org/assets/env';
 import { Logger } from '../Logger';
 
-const MIXPANEL_TOKEN = env.isProductionUrl()
+const PRODUCTION_DOMAIN = 'make.org';
+const FRONT_URL = env.frontUrl() || window.FRONT_URL;
+const isProductionUrl = FRONT_URL?.includes(PRODUCTION_DOMAIN);
+
+const MIXPANEL_TOKEN = isProductionUrl
   ? 'c1b88044cfaf328aeada3e6c16bec5ba'
   : 'd6ee57431516162bc7bbbcd173bb876d';
 const MIXPANEL_SCRIPT_URL =
