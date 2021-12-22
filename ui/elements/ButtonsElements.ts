@@ -202,7 +202,10 @@ export const NavButtonStyle = styled(UnstyledButtonStyle)`
   text-transform: uppercase;
 `;
 
-export const QualifyButtonStyle = styled.button`
+export const QualifyButtonStyle = styled.button.attrs(props => ({
+  type: 'button',
+  ...props,
+}))`
   font-family: ${MakeFonts.CircularStandardBold};
   display: flex;
   justify-content: center;
@@ -243,7 +246,7 @@ const InverseRotateButton = keyframes`
 export const VoteButtonStyle = styled.button.attrs(props => ({
   type: 'button',
   ...props,
-}))<{ isWidget?: boolean }>`
+}))`
   position: relative;
   z-index: 0;
   display: flex;
@@ -330,9 +333,7 @@ export const HidePasswordIconStyle = styled(UnstyledButtonStyle)`
   color: ${color.greyDark};
 `;
 
-export const ExternalLinkIconStyle = styled(SvgExternalLinkPlain)<{
-  className?: string;
-}>`
+export const ExternalLinkIconStyle = styled(SvgExternalLinkPlain)`
   width: 14px;
   height: 14px;
   margin-left: 7px;
