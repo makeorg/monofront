@@ -184,13 +184,13 @@ export const UserInformations: FC<Props> = ({ user, getBack }) => {
         <ProfileNavigationStyle>
           {getBack ? (
             <LinkAsGreyButton to={getRouteProfile(country)} as={Link}>
-              <PencilIconStyle aria-hidden focusable="false" />
-              {i18n.t('profile.informations_update.title')}
+              <AngleArrowLeftIconStyle aria-hidden focusable="false" />
+              {i18n.t('profile.informations_update.link_to_profile')}
             </LinkAsGreyButton>
           ) : (
             <LinkAsGreyButton to={getRouteProfileEdit(country)} as={Link}>
-              <AngleArrowLeftIconStyle aria-hidden focusable="false" />
-              {i18n.t('profile.informations_update.link_to_profile')}
+              <PencilIconStyle aria-hidden focusable="false" />
+              {i18n.t('profile.informations_update.title')}
             </LinkAsGreyButton>
           )}
           <ProfileInformationButtonStyle

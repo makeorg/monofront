@@ -1,12 +1,11 @@
 import { useEffect, useRef, useState, FC } from 'react';
 import { useCookies } from 'react-cookie';
-import { useHistory } from 'react-router';
-import { useLocation } from 'react-router-dom';
 import { UserService } from '@make.org/utils/services/User';
 import { clearSessionId } from '@make.org/store/actions/session';
 import { useAppContext } from '@make.org/store';
 import { NOTIF } from '@make.org/types/enums';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
+import { logoutSuccess } from '@make.org/store/actions/authentication';
 
 type Props = {
   /** Children content */
@@ -23,8 +22,6 @@ export const SecureExpiration: FC<Props> = ({ children }: Props) => {
   );
   const secureExpirationDate = new Date(cookieData);
   const cookieDataRef = useRef(cookieData);
-  const location = useLocation();
-  const history = useHistory();
 
   cookieDataRef.current = cookieData;
 
@@ -46,13 +43,13 @@ export const SecureExpiration: FC<Props> = ({ children }: Props) => {
       } else {
         UserService.logout(() => {
           dispatch(clearSessionId());
+          dispatch(logoutSuccess());
           dispatch(
             displayNotificationBanner(
               NOTIF.SECURE_EXPIRED_MESSAGE,
               NOTIF.NOTIFICATION_LEVEL_INFORMATION
             )
           );
-          history.push(`${location.pathname}?secureExpired=true`);
         });
       }
     }, timeBeforeExpire);
