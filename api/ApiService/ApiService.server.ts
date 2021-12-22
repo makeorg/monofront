@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { ApiServiceResponse, OptionsType } from '@make.org/types';
 import https from 'https';
 import { ApiServiceShared } from './ApiService.shared';
@@ -21,28 +22,45 @@ export class ApiServiceServer implements IApiServiceStrategy {
     });
   }
 
-  // eslint-disable-next-line class-methods-use-this
+  _sessionId = '';
+
+  _country = '';
+
+  _language = '';
+
+  _source = '';
+
+  _questionId = '';
+
+  _referrer = '';
+
   get country(): string {
-    return '';
+    return this._country;
   }
 
-  // eslint-disable-next-line class-methods-use-this
   get language(): string {
-    return '';
+    return this._language;
   }
 
-  // eslint-disable-next-line class-methods-use-this
   get source(): string {
-    return '';
+    return this._source;
   }
 
-  // eslint-disable-next-line class-methods-use-this
   get questionId(): string {
-    return '';
+    return this._questionId;
   }
 
-  // eslint-disable-next-line class-methods-use-this
   get referrer(): string {
-    return '';
+    return this._referrer;
+  }
+
+  set sessionId(sessionId: string) {
+    this._sessionId = sessionId;
+  }
+
+  get sessionId(): string {
+    return this._sessionId;
   }
 }
+
+export const apiServer = new ApiServiceServer();

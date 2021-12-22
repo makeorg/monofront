@@ -1,9 +1,7 @@
 import { ReducerAction, StateSession } from '@make.org/types';
 import { SET_SESSION_ID } from '../../actionTypes';
 
-export const session_state: StateSession = {
-  sessionId: '',
-};
+export const session_state: StateSession = {};
 
 export const session_reducer = (
   state: StateSession = session_state,

@@ -180,7 +180,7 @@ export type StatePanel = {
   readonly panelContent: any;
 };
 export type StateSession = {
-  sessionId: string;
+  sessionId?: string;
 };
 
 // All state

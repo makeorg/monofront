@@ -80,7 +80,6 @@ const initApp = async (state: StateRoot) => {
   let store = {
     ...state,
     customData: getAll(), // custom_data already saved in session_storage
-    session: { sessionId: '' },
   };
 
   if (env.isDev()) {
@@ -134,6 +133,7 @@ const initApp = async (state: StateRoot) => {
   trackingParamsService.questionSlug = store.currentQuestion;
 
   // Set api headers params
+  apiClient.sessionId = store.session.sessionId || '';
   apiClient.source = queryParams.source || source;
   apiClient.country = country;
   apiClient.language = language;

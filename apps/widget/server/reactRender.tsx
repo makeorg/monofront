@@ -28,6 +28,7 @@ import {
 } from '@make.org/utils/helpers/countries';
 import deepFreeze from 'deep-freeze';
 import { getLoggerInstance } from '@make.org/utils/helpers/logger';
+import { apiServer } from '@make.org/api/ApiService/ApiService.server';
 import { WIDGET_CLIENT_DIR } from './paths';
 import App from '../client/App';
 
@@ -134,6 +135,10 @@ export const reactRender = async (
       queryParams,
       device: isMobileOrTablet ? MOBILE_DEVICE : DESKTOP_DEVICE,
       privacyPolicy: PRIVACY_POLICY_DATE,
+    },
+    session: {
+      ...initialState.session,
+      sessionId: apiServer.sessionId,
     },
   };
 
