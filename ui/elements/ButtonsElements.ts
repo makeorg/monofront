@@ -316,7 +316,7 @@ export const VoteButtonStyle = styled.button.attrs(props => ({
   &.voted:focus {
     transform: scale(1);
   }
-  @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     &.sequence {
       width: 48px;
       height: 48px;
