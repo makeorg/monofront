@@ -35,6 +35,7 @@ const getFirstProposal = async (
         'x-make-question-id': questionId,
         'x-make-country': country,
         'x-make-language': language,
+        'x-make-location': 'widget',
       }
     );
 
