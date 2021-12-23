@@ -82,7 +82,7 @@ export const Pagination: FC<Props> = ({
 
   const getPages = () => {
     const pages = [];
-    for (let i = 1; i < pagesTotal; i += 1) {
+    for (let i = 1; i <= pagesTotal; i += 1) {
       pages.push(
         <ListItemStyle key={i} className={intPageId === i ? 'selected' : ''}>
           <ListLinkStyle to={onOptionClicked(i)} onClick={paginateClick}>

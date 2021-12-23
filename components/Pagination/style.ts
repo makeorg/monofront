@@ -40,6 +40,7 @@ const sharedArrowPaginationStyle = `
   width: 40px;
   height: 32px;
   border-radius: 8px;
+  border: 1px solid ${color.greyLighter};
   .tofill {
     fill: ${color.black};
   }`;
@@ -82,6 +83,7 @@ export const DropDownContainerStyle = styled.div`
   width: 60px;
   position: relative;
   border-radius: 8px;
+  border: 1px solid ${color.greyLighter};
 `;
 
 export const DropDownCurrentStyle = styled.div`
