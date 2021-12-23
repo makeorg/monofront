@@ -43,7 +43,7 @@ import {
 
 export const DataPolicy: React.FC = () => {
   const { dispatch, state } = useAppContext();
-  const { country, language } = state.appConfig;
+  const { country, language, source } = state.appConfig;
   const { isLogin, extraProps } = state.modal;
   const { proposalContent } = state.pendingProposal;
   const question = selectCurrentQuestion(state);
@@ -51,6 +51,7 @@ export const DataPolicy: React.FC = () => {
   // eslint-disable-next-line no-unused-vars
   const [dataPolicyConsent, setDataPolicyConsent] = useState<boolean>(false);
   const [canSubmit, setCanSubmit] = useState<boolean>(false);
+  const isWidget = source === 'widget';
   const handleCheck = (event: React.SyntheticEvent<HTMLLabelElement>) => {
     event.preventDefault();
     setDataPolicyConsent(!dataPolicyConsent);
@@ -165,7 +166,11 @@ export const DataPolicy: React.FC = () => {
       <DataPolicyParagraphStyle>
         {i18n.t('data_policy_modal.description')}
         <DataPolicyNewWindowLinkStyle
-          href={getDataPageLink(country, language)}
+          href={
+            isWidget
+              ? `https://make.org${getDataPageLink(country, language)}`
+              : getDataPageLink(country, language)
+          }
           target="_blank"
           rel="noopener"
         >
