@@ -8,7 +8,7 @@ import React, {
 import i18n from 'i18next';
 import {
   trackVote,
-  trackFirstVote,
+  trackSequenceFirstVote,
   trackUnvote,
 } from '@make.org/utils/services/Tracking';
 import { VoteType, ProposalType } from '@make.org/types';
@@ -21,7 +21,10 @@ import {
 import { VoteService } from '@make.org/utils/services/Vote';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { voteStaticParamsKeys } from '@make.org/utils/constants/vote';
-import { TopComponentContext } from '@make.org/store/topComponentContext';
+import {
+  TopComponentContext,
+  TopComponentContextValue,
+} from '@make.org/store/topComponentContext';
 import {
   vote as actionVote,
   unvote as actionUnvote,
@@ -76,7 +79,9 @@ export const Vote: React.FC<Props> = ({
   const { votedProposalIds } = state.sequence;
   const votedProposals = votedProposalIds[proposal.question.slug];
   const hasVotedProposals = votedProposals && votedProposals.length > 0;
-  const isFirstSequenceVote = !hasVotedProposals;
+  const isFirstSequenceVote =
+    !hasVotedProposals &&
+    contextType === TopComponentContextValue.getSequenceProposal();
 
   let timeout: NodeJS.Timeout;
   const wait = async (ms: number) =>
@@ -144,7 +149,7 @@ export const Vote: React.FC<Props> = ({
     );
     await trackVote(proposalId, voteKey, index, contextType);
     if (isFirstSequenceVote) {
-      trackFirstVote(proposalId, voteKey, index);
+      trackSequenceFirstVote(proposalId, voteKey, index);
       dispatch(dismissNotification(NOTIF.FIRST_VOTE_TIP_MESSAGE));
       dispatch(clearNotificationTip());
     }

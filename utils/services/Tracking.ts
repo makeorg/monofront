@@ -229,7 +229,7 @@ export const trackVote = (
   TrackingService.sendAllTrackers(trackingEvent.CLICK_PROPOSAL_VOTE(params));
 };
 
-export const trackFirstVote = (
+export const trackSequenceFirstVote = (
   proposalId: string,
   nature: string,
   position?: number
