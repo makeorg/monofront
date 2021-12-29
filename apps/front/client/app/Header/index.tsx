@@ -50,6 +50,7 @@ export const Header: React.FC = () => {
                   ? trackClickMakeLogo
                   : () =>
                       Logger.logError({
+                        name: 'header-component',
                         message: 'No country on Make.org logo',
                       })
               }

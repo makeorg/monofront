@@ -98,9 +98,9 @@ class LoggerSingleton {
         app_logId: uuidv4(),
       };
     } catch (e: unknown) {
-      const apiServiceError = e as ApiServiceError;
+      const error = e as Error;
       return {
-        message: apiServiceError.message,
+        message: error.message,
         app_logId: uuidv4(),
       };
     }

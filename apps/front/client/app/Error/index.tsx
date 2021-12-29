@@ -26,7 +26,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
 
   componentDidCatch(error: Error): void {
     this.setState({ hasError: true });
-    Logger.logError(JSON.stringify(error));
+    Logger.logError(error);
   }
 
   render(): any {
@@ -49,7 +49,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
 export const ServiceErrorHandler: React.FC = ({ children }) => {
   const { dispatch } = useAppContext();
   setUnexpectedError(error => {
-    Logger.logError(JSON.stringify(error));
+    Logger.logError(error);
     if (
       typeof window !== 'undefined' &&
       window &&

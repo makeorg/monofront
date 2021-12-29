@@ -178,9 +178,10 @@ export const TrackingService = {
 
     // Mixpanel
     if (!trackingParamsService.visitorId) {
-      Logger.logError(
-        `Tracking event "${eventName}" failed due to lack of unique id`
-      );
+      Logger.logError({
+        name: 'tracking',
+        message: `Tracking event "${eventName}" failed due to lack of unique id`,
+      });
     }
 
     // Todo handle MixpanelTracking init
