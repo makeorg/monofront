@@ -53,7 +53,6 @@ export const ProposalStepWrapperStyle = styled(SpaceBetweenColumnStyle)`
   height: 100%;
   padding-top: 20px;
   padding-bottom: 25px;
-  max-width: 720px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     padding-top: 35px;
     padding-bottom: 50px;
@@ -79,19 +78,6 @@ export const ProposalStepTitleStyle = styled.h2`
   }
 `;
 
-export const ProposalStepMandatoryStyle = styled.div`
-  font-family: ${MakeFonts.CircularStandardBook};
-  font-size: 12px;
-  margin-bottom: 15px;
-  color: ${color.greyDark};
-`;
-
-export const ProposalStepLabelStyle = styled.label`
-  font-family: ${MakeFonts.CircularStandardBook};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  margin-bottom: 5px;
-`;
-
 export const ProposalAltStepTitleStyle = styled(ProposalStepTitleStyle)`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   letter-spacing: 0.12px;
@@ -104,7 +90,7 @@ export const ProposalAltStepTitleStyle = styled(ProposalStepTitleStyle)`
 export const ProposalFieldWrapperStyle = styled.div`
   position: relative;
   z-index: 0;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 `;
 
 export const ProposalTextareaStyle = styled(TextareaAutosize)`
@@ -113,11 +99,10 @@ export const ProposalTextareaStyle = styled(TextareaAutosize)`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   line-height: 1.5;
   padding: 20px 17px 30px;
-  border-radius: 8px;
-  border: 1px solid ${color.grey};
+  border: none;
   resize: none;
   max-height: 141px;
-  background-color: ${color.white};
+  background-color: ${color.greyLighter};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${intToPx(typography.font.fontsize.M.value)};
   }
@@ -247,11 +232,6 @@ export const ProposalSuccessRedButtonStyle = styled(RedButtonStyle)`
 export const ProposalAuthInlineWrapperStyle = styled.div`
   font-family: ${MakeFonts.CircularStandardBook};
   justify-content: inline;
-  margin-top: 90px;
-  margin-bottom: 20px;
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin-top: 0;
-  }
 `;
 
 export const ProposalAuthLoginWrapperStyle = styled(
@@ -274,7 +254,6 @@ export const ProposalSubmitForgotPasswordWrapperStyle = styled(
 
 export const ProposalButtonsWrapperStyle = styled(FlexElementStyle)`
   justify-content: flex-end;
-  margin-bottom: 20px;
 `;
 
 export const ProposalCancelButtonStyle = styled(GreyNoBackgroundButtonStyle)`
@@ -284,11 +263,11 @@ export const ProposalCancelButtonStyle = styled(GreyNoBackgroundButtonStyle)`
 `;
 
 export const ProposalSubmitButtonsWidgetStyle = styled(FlexElementStyle)`
-  flex-direction: column;
+  flex-direction: column-reverse;
+  height: 70%;
   justify-content: space-between;
-  align-items: center;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    flex-direction: row-reverse;
+    flex-direction: row;
     height: fit-content;
   }
 `;

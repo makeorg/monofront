@@ -385,7 +385,10 @@
       "button_cancel": "Annuler",
       "button_submit": "Valider",
       "read_our": "Lire notre",
-      "moderation_link": "charte de modération"
+      "moderation_link": "charte de modération",
+      "button_propose": "PROPOSER",
+      "mandatory_field": "Tous les champs sont obligatoires.",
+      "proposal": "Votre proposition :"
     },
     "authentication": {
       "button_back": "Modifier ma proposition",

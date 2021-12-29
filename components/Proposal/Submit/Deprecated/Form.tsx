@@ -6,24 +6,26 @@ import i18n from 'i18next';
 import {
   getLocalizedBaitText,
   proposalHasValidLength,
-  userFirstnameHasValidLength,
 } from '@make.org/utils/helpers/proposal';
 import {
   trackDisplayProposalField,
   trackClickProposalSubmit,
   trackClickModerationLink,
+  trackClickBackProposals,
 } from '@make.org/utils/services/Tracking';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { throttle } from '@make.org/utils/helpers/throttle';
 import { useAppContext } from '@make.org/store';
-import { setPanelContent } from '@make.org/store/actions/panel';
-import { UntypedInput } from '@make.org/components/Form/UntypedInput';
+import {
+  closePanel,
+  removePanelContent,
+  setPanelContent,
+} from '@make.org/store/actions/panel';
 import { initProposalPending } from '@make.org/store/actions/pendingProposal';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { ProposalService } from '@make.org/utils/services/Proposal';
-import { NameFiledIcon } from '@make.org/utils/constants/icons';
 import {
   ProposalStepWrapperStyle,
   ProposalStepTitleStyle,
@@ -32,13 +34,12 @@ import {
   ProposalCharCountStyle,
   ProposalExternalLinkStyle,
   ProposalExternalLinkIconStyle,
+  ProposalCancelButtonStyle,
   ProposalButtonsWrapperStyle,
   ProposalAuthInlineWrapperStyle,
   ProposalSubmitButtonsWidgetStyle,
-  ProposalStepMandatoryStyle,
-  ProposalStepLabelStyle,
 } from './style';
-import { ProposalSuccess } from './Success';
+import { ProposalSuccess } from '../Success';
 
 const getModerationLinkByLanguage = (language: string) => {
   switch (language) {
@@ -51,12 +52,11 @@ const getModerationLinkByLanguage = (language: string) => {
   }
 };
 
-export const ProposalForm: FC = () => {
+export const DeprecatedProposalForm: FC = () => {
   const { state, dispatch } = useAppContext();
   const [proposalContent, setProposalContent] = useState(
     state.pendingProposal.proposalContent || ''
   );
-  const [firstname, setFirstname] = useState('');
   const inputRef = useRef() as React.MutableRefObject<HTMLTextAreaElement>;
   const question: QuestionType | null = selectCurrentQuestion(state);
   const { isLoggedIn } = selectAuthentication(state);
@@ -66,12 +66,8 @@ export const ProposalForm: FC = () => {
   const charCounting = proposalIsEmpty
     ? baitText?.length
     : proposalContent.length;
-  const disableSubmitButton =
-    !proposalHasValidLength(proposalContent.length) &&
-    !userFirstnameHasValidLength(firstname.length);
+  const disableSubmitButton = !proposalHasValidLength(proposalContent.length);
 
-  // need to add firstname to proposalPending for state update and disablebutton
-  // Also check for new strings (english -added some temporary- and ger)
   const handleFieldFocus = () => {
     if (proposalContent.length === 0) {
       setProposalContent(baitText);
@@ -85,18 +81,6 @@ export const ProposalForm: FC = () => {
     return setProposalContent(event.currentTarget.value);
   };
 
-  // const handleCancel = () => {
-  //   dispatch(closePanel());
-  //   dispatch(removePanelContent());
-  //   trackClickBackProposals();
-  // };
-
-  const handleFirstnameChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setFirstname(event.target.value);
-  };
-
   const secureFieldValue = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     handleValueChange(event);
     if (inputRef && typeof inputRef.current !== 'undefined') {
@@ -105,6 +89,12 @@ export const ProposalForm: FC = () => {
         setProposalContent(baitText);
       }
     }
+  };
+
+  const handleCancel = () => {
+    dispatch(closePanel());
+    dispatch(removePanelContent());
+    trackClickBackProposals();
   };
 
   const handleSubmitForm = async () => {
@@ -138,26 +128,6 @@ export const ProposalForm: FC = () => {
           <ScreenReaderItemStyle as="label" htmlFor="proposal">
             {i18n.t('proposal_submit.form.field')}
           </ScreenReaderItemStyle>
-          {!isLoggedIn && (
-            <>
-              <ProposalStepMandatoryStyle>
-                {i18n.t('proposal_submit.form.mandatory_field')}
-              </ProposalStepMandatoryStyle>
-              <UntypedInput
-                type="text"
-                name="firstName"
-                id="firstName"
-                value={firstname}
-                icon={NameFiledIcon}
-                label={i18n.t('common.form.label.firstname')}
-                required
-                handleChange={handleFirstnameChange}
-              />
-            </>
-          )}
-          <ProposalStepLabelStyle className="with-margin-bottom">
-            {i18n.t('proposal_submit.form.proposal')}
-          </ProposalStepLabelStyle>
           <ProposalTextareaStyle
             ref={inputRef}
             name="proposal"
@@ -185,17 +155,6 @@ export const ProposalForm: FC = () => {
           </ScreenReaderItemStyle>
         </ProposalFieldWrapperStyle>
         <ProposalSubmitButtonsWidgetStyle>
-          <ProposalButtonsWrapperStyle>
-            <RedButtonStyle
-              type="submit"
-              form={FORM.PROPOSAL_SUBMIT_FORMNAME}
-              onClick={trackClickProposalSubmit}
-              disabled={disableSubmitButton}
-              data-cy-button="proposal-submit"
-            >
-              {i18n.t('proposal_submit.form.button_propose')}
-            </RedButtonStyle>
-          </ProposalButtonsWrapperStyle>
           <ProposalAuthInlineWrapperStyle>
             {i18n.t('proposal_submit.form.read_our')}{' '}
             <ProposalExternalLinkStyle
@@ -212,6 +171,24 @@ export const ProposalForm: FC = () => {
               </ScreenReaderItemStyle>
             </ProposalExternalLinkStyle>
           </ProposalAuthInlineWrapperStyle>
+          <ProposalButtonsWrapperStyle>
+            <ProposalCancelButtonStyle
+              type="button"
+              onClick={handleCancel}
+              data-cy-button="proposal-form-cancel"
+            >
+              {i18n.t('proposal_submit.form.button_cancel')}
+            </ProposalCancelButtonStyle>
+            <RedButtonStyle
+              type="submit"
+              form={FORM.PROPOSAL_SUBMIT_FORMNAME}
+              onClick={trackClickProposalSubmit}
+              disabled={disableSubmitButton}
+              data-cy-button="proposal-submit"
+            >
+              {i18n.t('proposal_submit.form.button_submit')}
+            </RedButtonStyle>
+          </ProposalButtonsWrapperStyle>
         </ProposalSubmitButtonsWidgetStyle>
       </form>
     </ProposalStepWrapperStyle>

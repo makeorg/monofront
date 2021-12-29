@@ -3,6 +3,7 @@ import {
   MIN_PROPOSAL_LENGTH,
   MAX_PROPOSAL_LENGTH,
   PROPOSALS_LISTING_LIMIT,
+  MIN_USER_FIRSTNAME_LENGTH,
 } from '@make.org/utils/constants/proposal';
 import { ProposalsType, TypeFilterAndSortValues } from '@make.org/types';
 import { ProposalService } from '@make.org/utils/services/Proposal';
@@ -26,6 +27,14 @@ export const proposalHasValidLength = (length = 0): boolean => {
   }
 
   return length >= MIN_PROPOSAL_LENGTH && length <= MAX_PROPOSAL_LENGTH;
+};
+
+export const userFirstnameHasValidLength = (length = 0): boolean => {
+  if (length === 0) {
+    return false;
+  }
+
+  return length >= MIN_USER_FIRSTNAME_LENGTH;
 };
 
 /**

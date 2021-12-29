@@ -16,6 +16,8 @@
     "**/*.svg", 
     "**/Deprecated/*.ts", 
     "**/Deprecated/**/index.ts", 
+    "**/components/Proposal/Submit/Deprecated/Form.tsx**", 
+    "**/components/Proposal/Submit/Deprecated/style.ts**", 
     "**/coverage/**", 
     "**/reports/**", 
     "**/dist/**",

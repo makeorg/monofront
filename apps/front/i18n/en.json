@@ -335,7 +335,10 @@
       "button_cancel": "Cancel",
       "button_submit": "Validate",
       "read_our": "Read our",
-      "moderation_link": "moderation charter"
+      "moderation_link": "moderation charter",
+      "button_propose": "PROPOSER",
+      "mandatory_field": "Tous les champs sont obligatoires.",
+      "proposal": "Votre proposition :"
     },
     "authentication": {
       "button_back": "Modify my solution",

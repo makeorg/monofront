@@ -377,7 +377,10 @@
       "button_cancel": "Abbrechen",
       "button_submit": "Bestätigen",
       "read_our": "Lesen Sie unsere",
-      "moderation_link": "Moderationscharta"
+      "moderation_link": "Moderationscharta",
+      "button_propose": "PROPOSER",
+      "mandatory_field": "Tous les champs sont obligatoires.",
+      "proposal": "Votre proposition :"
     },
     "authentication": {
       "button_back": "Meinen Vorschlag ändern",
