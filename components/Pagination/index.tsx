@@ -1,4 +1,4 @@
-import React, { FC, useState, useRef } from 'react';
+import React, { FC, useState, useRef, useEffect } from 'react';
 import i18n from 'i18next';
 import { getPaginatedRoute } from '@make.org/utils/routes';
 import { trackClickPageNumber } from '@make.org/utils/services/Tracking';
@@ -34,7 +34,7 @@ export const Pagination: FC<Props> = ({
   itemsTotal,
   scrollToId,
 }) => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLUListElement>(null);
   const { state } = useAppContext();
   const question: QuestionType = selectCurrentQuestion(state);
   const params: { country: string; pageId: string } = useParams();
@@ -45,7 +45,7 @@ export const Pagination: FC<Props> = ({
   const intPageId = JSON.parse(pageId);
   const pagesTotal = Math.ceil(itemsTotal / itemsPerPage);
   const [isOpen, setIsOpen] = useState(false);
-  const toggleDropDown = () => pagesTotal > 2 && setIsOpen(!isOpen);
+  const toggleDropDown = () => pagesTotal > 2 && setIsOpen(true);
   const previousPageUrl = getPaginatedRoute(
     path,
     country,
@@ -84,7 +84,11 @@ export const Pagination: FC<Props> = ({
     const pages = [];
     for (let i = 1; i <= pagesTotal; i += 1) {
       pages.push(
-        <ListItemStyle key={i} className={intPageId === i ? 'selected' : ''}>
+        <ListItemStyle
+          key={i}
+          id={i.toString()}
+          className={intPageId === i ? 'selected' : ''}
+        >
           <ListLinkStyle to={onOptionClicked(i)} onClick={paginateClick}>
             {i}
           </ListLinkStyle>
@@ -99,6 +103,17 @@ export const Pagination: FC<Props> = ({
       setIsOpen(false);
     }
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      const page: number = intPageId > 2 ? intPageId - 2 : intPageId;
+      const offset = document.getElementById(page.toString())?.offsetTop;
+      if (ref.current && offset) {
+        ref.current.scrollTo(0, offset);
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen]);
 
   useOnClickOutside(ref, handleClickOutside);
 
