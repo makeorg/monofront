@@ -67,17 +67,15 @@ COPY ["assets/package*.json", "./assets/"]
 COPY ["utils/package*.json", "./utils/"]
 COPY ["ui/package*.json", "./ui/"]
 COPY ["store/package*.json", "./store/"]
+COPY ["apimock/package*.json", "./apimock/"]
 COPY lerna.json ./
 
 RUN ["lerna", "bootstrap"]
 
 COPY . ./
 
-ENV PATH /home/app/node_modules/.bin:$PATH
-ENV NODE_ENV test
-
-RUN ["./node_modules/.bin/lerna", "run", "--scope=@make.org/front",  "build", "--stream"]
-CMD ["./node_modules/.bin/lerna", "run", "--scope=@make.org/front", "test:cypress:open", "--stream"]
+RUN ["yarn", "workspace", "@make.org/front", "build"]
+CMD ["yarn", "ci:cypress:front"]
 
 EXPOSE 9009
 

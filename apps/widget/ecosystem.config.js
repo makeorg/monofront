@@ -30,5 +30,9 @@ module.exports = {
         NODE_ENV: 'test',
       },
     },
+    {
+      name: 'api-mock',
+      script: '../../apimock/server.js',
+    },
   ],
 };

@@ -59,7 +59,7 @@ WORKDIR /home/app
 
 ENV PATH /home/app/node_modules/.bin:$PATH
 
-RUN apk --no-cache add git
+#RUN apt-get install git
 RUN npm install -g lerna@4.0.0
 
 COPY ["package*.json", "yarn.lock", "./"]
@@ -78,15 +78,10 @@ RUN ["lerna", "bootstrap"]
 
 COPY . ./
 
-ENV NODE_ENV ci
-
-RUN ["./node_modules/.bin/lerna", "run", "--scope=@make.org/widget",  "build", "--stream"]
-RUN ["./node_modules/.bin/lerna", "run", "--scope=@make.org/apimock", "start", "--stream"]
-RUN [ "pm2-runtime", "start", "ecosystem.config.js", "--only", "widget-test" ]
-CMD ["./node_modules/.bin/lerna", "run", "--scope=@make.org/widget", "cypress:front:run", "--stream"]
+RUN ["yarn", "workspace", "@make.org/widget", "build"]
+CMD ["yarn", "ci:cypress:widget"]
 
 EXPOSE 9009
-
 
 ############
 # BUILD

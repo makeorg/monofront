@@ -254,9 +254,6 @@ const serverConfig = envConfigPath => ({
     ],
   },
   plugins: [
-    new DotEnv({
-      path: envConfigPath,
-    }),
     new webpack.optimize.LimitChunkCountPlugin({
       maxChunks: 1,
     }),

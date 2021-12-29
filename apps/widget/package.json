@@ -75,8 +75,10 @@
     "cypress-html-validate": "^1.5.1",
     "cypress-wait-until": "^1.7.1",
     "file-loader": "^6.2.0",
+    "html-validate": "4.13.1",
     "html-webpack-plugin": "^5.3.2",
     "prom-client": "^13.1.0",
+    "start-server-and-test": "^1.13.1",
     "tsconfig-paths": "^3.9.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2",
@@ -87,7 +89,7 @@
     "build": "webpack --mode production --progress --color --config ./webpack/build.config.js && node bin/versionBuild.js",
     "server": "pm2-runtime start ecosystem.config.js --only widget-production",
     "server:dev": "pm2-runtime start ecosystem.config.js --only widget-dev",
-    "server:test": "node ../../apimock/server.js & pm2-runtime start ecosystem.config.js --only widget-test",
+    "server:test": "pm2-runtime start ecosystem.config.js --only 'api-mock,widget-test'",
     "translation": "npx babel --out-dir ../../dist/lib --config-file ./webpack/babel.config.js ../../bin/utils && ../../bin/check-translation.js check -d ./i18n -l 'fr'",
     "translation:fix": "yarn run translation --fix"
   }
