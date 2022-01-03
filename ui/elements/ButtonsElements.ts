@@ -144,6 +144,29 @@ export const ActiveButtonStyle = styled.button.attrs(props => ({
   }
 `;
 
+export const ActiveButtonCenterStyle = styled.button.attrs(props => ({
+  type: 'button',
+  ...props,
+}))`
+  ${BasicButtonStyle};
+  color: ${color.white};
+  background-color: ${color.brandSecondary};
+  align-self: center;
+  margin-top: 30px;
+  svg,
+  .tofill {
+    fill: ${color.white};
+  }
+  &:disabled {
+    color: ${color.greyDark};
+    background-color: ${color.grey};
+    svg,
+    .tofill {
+      fill: ${color.greyDark};
+    }
+  }
+`;
+
 export const SocialButtonStyle = styled(ActiveButtonStyle)`
   width: 100%;
   margin: 0 5px;
@@ -162,6 +185,13 @@ export const RedLinkButtonStyle = styled(UnstyledButtonStyle)`
   color: ${color.brandSecondary};
   text-decoration: underline;
   margin: 0 5px;
+`;
+
+export const LinkButtonStyle = styled(UnstyledButtonStyle)`
+  display: inline-block;
+  text-decoration: underline;
+  margin: 0 5px;
+  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
 `;
 
 export const RedButtonAsLinkStyle = styled(UnstyledButtonStyle)`

@@ -148,7 +148,6 @@ export const LoginTitleWrapperStyle = styled(ThirdLevelTitleStyle)`
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   line-height: 1.5;
   letter-spacing: 0.12px;
-  align-self: flex-start;
   &.panel {
     margin-top: 32px;
   }

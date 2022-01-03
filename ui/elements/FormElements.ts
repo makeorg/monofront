@@ -139,6 +139,11 @@ const FormStyle = `
   }
 `;
 
+export const FormRightAlignStyle = styled.form`
+  ${FormStyle};
+  align-items: flex-end;
+`;
+
 export const FormLeftAlignStyle = styled.form`
   ${FormStyle};
   align-items: flex-start;
@@ -154,6 +159,14 @@ export const FormRequirementsStyle = styled.p`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   margin: 2.5px 0 15px;
   color: ${color.greyDark};
+`;
+
+export const FormRequirementsLeftStyle = styled.p`
+  font-family: ${MakeFonts.CircularStandardBook};
+  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  margin: 2.5px 0 15px;
+  color: ${color.greyDark};
+  align-self: flex-start;
 `;
 
 export const TwoFieldsRowStyle = styled(FlexElementStyle)`

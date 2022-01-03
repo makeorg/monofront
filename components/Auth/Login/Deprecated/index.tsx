@@ -17,20 +17,20 @@ import {
 } from '@make.org/ui/elements/SeparatorsElements';
 import { RedLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { useAppContext } from '@make.org/store';
-import { LoginForm } from './Form';
+import { DeprecatedLoginForm as LoginForm } from './Form';
 import {
   AuthenticationWrapperStyle,
   AuthenticationTitleStyle,
   LoginTitleWrapperStyle,
-} from '../style';
-import { AuthenticationButtonWrapperStyle } from '../Social/style';
-import { FacebookAuthentication } from '../Social/FacebookAuthentication';
-import { GoogleAuthentication } from '../Social/GoogleAuthentication';
+} from './style';
+import { AuthenticationButtonWrapperStyle } from '../../Social/style';
+import { FacebookAuthentication } from '../../Social/FacebookAuthentication';
+import { GoogleAuthentication } from '../../Social/GoogleAuthentication';
 
 type Props = {
   panel?: boolean;
 };
-export const Login: React.FC<Props> = ({ panel }) => {
+export const DeprecatedLogin: React.FC<Props> = ({ panel }) => {
   const { dispatch } = useAppContext();
 
   const handleRegisterModal = () => {
@@ -48,7 +48,7 @@ export const Login: React.FC<Props> = ({ panel }) => {
     >
       {panel ? (
         <LoginTitleWrapperStyle as="h3" className="panel">
-          {i18n.t('login.connect')}
+          {i18n.t('login.social_connect')}
         </LoginTitleWrapperStyle>
       ) : (
         <>
@@ -57,7 +57,7 @@ export const Login: React.FC<Props> = ({ panel }) => {
           </AuthenticationTitleStyle>
           <SmallSeparatorWithMarginStyle />
           <FourthLevelTitleStyle as="h3">
-            {i18n.t('login.connect')}
+            {i18n.t('login.social_connect')}
           </FourthLevelTitleStyle>
           <AuthenticationButtonWrapperStyle className="small-wrapper">
             <FacebookAuthentication />
@@ -73,7 +73,7 @@ export const Login: React.FC<Props> = ({ panel }) => {
           </FourthLevelTitleStyle>
         </>
       )}
-      <LoginForm handleForgotPasswordModal={handleForgotPasswordModal} />
+      <LoginForm />
       {!panel && (
         <>
           <ExtraParagraphStyle>

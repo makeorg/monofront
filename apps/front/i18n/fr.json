@@ -114,6 +114,7 @@
       "hide_password": "Masquer le mot de passe",
       "show_password": "Afficher le mot de passe",
       "requirements": "Tous les champs sont obligatoires sauf indication contraire.",
+      "requirements_short": "Tous les champs sont obligatoires.",
       "label": {
         "email": "E-mail",
         "password": "Mot de passe",
@@ -392,10 +393,14 @@
     },
     "authentication": {
       "button_back": "Modifier ma proposition",
+      "back": "Retour",
       "title": "Pour valider ma proposition",
+      "last_step_red": "plus qu'une étape ",
+      "last_step": "pour envoyer votre proposition !",
       "subtitle": "Je m'inscris avec",
       "button_login_text": "J’ai déjà un compte,",
       "button_login_link": "je me connecte",
+      "button_login": "Se connecter",
       "back_authentication": "Revenir à l'écran de connexion"
     },
     "success": {
@@ -467,11 +472,13 @@
   "login": {
     "title": "J‘ai déjà un compte",
     "social_connect": "Je me connecte avec",
+    "connect": "Se connecter",
     "or": "ou",
     "button_connect": "Je me connecte",
     "email_connect": "Je me connecte avec mon adresse e-mail",
     "forgot_password_title": "Oups, j’ai",
     "forgot_password_link": "oublié mon mot de passe ?",
+    "forgot_password": "Mot de passe oublié ?",
     "registration_title": "Je n’ai pas de compte,",
     "registration_link": "je m’en crée un.",
     "email_doesnot_exist": "Votre {{emailLabel}} ou {{passwordLabel}} est incorrect."

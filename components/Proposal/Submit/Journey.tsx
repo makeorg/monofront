@@ -3,7 +3,9 @@ import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
 import { useAppContext } from '@make.org/store';
 import { useLocation } from 'react-router';
 import { DeprecatedProposalForm as ProposalForm } from './Deprecated/Form';
-import { ProposalAuthentication } from './Authentication';
+import { DeprecatedProposalAuthentication as ProposalAuthentication } from './Deprecated/Authentication';
+// import { ProposalForm } from './Form';
+// import { ProposalAuthentication } from './Authentication';
 
 export const ProposalJourney: React.FC = () => {
   const { dispatch, state } = useAppContext();

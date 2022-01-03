@@ -3,7 +3,6 @@ import { color, typography } from 'athena-design-tokens';
 import {
   RedButtonStyle,
   GreyNoBackgroundButtonStyle,
-  RedNoBackgroundButtonStyle,
   BlackNoBackgroundButtonStyle,
 } from '@make.org/ui/elements/ButtonsElements';
 import {
@@ -60,6 +59,18 @@ export const ProposalStepWrapperStyle = styled(SpaceBetweenColumnStyle)`
   }
 `;
 
+export const ProposalStepWrapperColumnStyle = styled.div`
+  ${ContainerWithPadding};
+  height: 100%;
+  padding-top: 20px;
+  padding-bottom: 25px;
+  max-width: 720px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    padding-top: 35px;
+    padding-bottom: 50px;
+  }
+`;
+
 export const ProposalStepTitleStyle = styled.h2`
   font-family: ${MakeFonts.CircularStandardBold};
   font-size: ${intToPx(typography.font.fontsize.S.value)};
@@ -90,6 +101,10 @@ export const ProposalStepLabelStyle = styled.label`
   font-family: ${MakeFonts.CircularStandardBook};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   margin-bottom: 5px;
+`;
+
+export const ProposalStepLabelRedStyle = styled.span`
+  color: red;
 `;
 
 export const ProposalAltStepTitleStyle = styled(ProposalStepTitleStyle)`
@@ -154,8 +169,16 @@ export const ProposalExternalLinkIconStyle = styled(SvgExternalLinkPlain)`
 /** Authentication */
 export const ProposalBackButtonStyle = styled(BlackNoBackgroundButtonStyle)`
   font-family: ${MakeFonts.CircularStandardBook};
-  text-decoration: none;
-  align-self: center;
+  text-align: left;
+  max-width: 470px;
+  display: inline;
+  width: 100%;
+`;
+
+export const ProposalBackButtonCenterStyle = styled(
+  BlackNoBackgroundButtonStyle
+)`
+  font-family: ${MakeFonts.CircularStandardBook};
 `;
 
 export const ProposalBackIconWrapperStyle = styled.span`
@@ -194,7 +217,7 @@ export const ProposalAuthSeparatorStyle = styled.hr`
   margin: 25px auto;
 `;
 
-export const ProposalAuthLoginStyle = styled(RedNoBackgroundButtonStyle)`
+export const ProposalAuthLoginStyle = styled(BlackNoBackgroundButtonStyle)`
   display: inline;
   align-self: center;
 `;
@@ -258,6 +281,8 @@ export const ProposalAuthLoginWrapperStyle = styled(
   ProposalAuthInlineWrapperStyle
 )`
   align-items: center;
+  display: flex;
+  justify-content: center;
   margin: auto;
 `;
 

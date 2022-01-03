@@ -157,7 +157,8 @@
         "invalid_postal_code_dynamic": "The {{label}} must have 5 numbers.",
         "submit_success": "Edits saved.",
         "malformed": "Please use the right url format \"https://example.com\""
-      }
+      },
+      "requirements_short": "@@common.form.requirements_short|fr:Tous les champs sont obligatoires."
     },
     "social_login": {
       "card_title": "To find the history of your votes",
@@ -324,9 +325,9 @@
       "button_submit": "Validate",
       "read_our": "Read our",
       "moderation_link": "moderation charter",
-      "button_propose": "PROPOSER",
-      "mandatory_field": "Tous les champs sont obligatoires.",
-      "proposal": "Votre proposition :"
+      "button_propose": "@@proposal_submit.form.button_propose|fr:PROPOSER",
+      "mandatory_field": "@@proposal_submit.form.mandatory_field|fr:Tous les champs sont obligatoires.",
+      "proposal": "@@proposal_submit.form.proposal|fr:Votre proposition :"
     },
     "authentication": {
       "button_back": "Modify my solution",
@@ -334,7 +335,11 @@
       "subtitle": "Sign up with",
       "button_login_text": "I already have an account,",
       "button_login_link": "log me in",
-      "back_authentication": "Go back to the login screen"
+      "back_authentication": "Go back to the login screen",
+      "last_step_red": "@@proposal_submit.authentication.last_step_red|fr:plus qu'une étape ",
+      "last_step": "@@proposal_submit.authentication.last_step|fr:pour envoyer votre proposition !",
+      "back": "@@proposal_submit.authentication.back|fr:Retour",
+      "button_login": "@@proposal_submit.authentication.button_login|fr:Se connecter"
     }
   },
   "vote": {
@@ -407,7 +412,9 @@
     "forgot_password_link": "I forgot my password.",
     "registration_title": "I don’t have an account,",
     "registration_link": "let's create one.",
-    "email_doesnot_exist": "Invalid login or password."
+    "email_doesnot_exist": "Invalid login or password.",
+    "connect": "@@login.connect|fr:Se connecter",
+    "forgot_password": "@@login.forgot_password|fr:Mot de passe oublié ?"
   },
   "register": {
     "title": "Create an account",

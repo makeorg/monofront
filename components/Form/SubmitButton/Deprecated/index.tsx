@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActiveButtonCenterStyle } from '@make.org/ui/elements/ButtonsElements';
+import { ActiveButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 
 type Props = {
   /** Name of the input */
@@ -14,24 +14,20 @@ type Props = {
   icon?: React.ReactElement;
 };
 
-export const SubmitButton: React.FC<Props> = ({
+export const DeprecatedSubmitButton: React.FC<Props> = ({
   formName,
   icon,
   id,
   label,
   disabled,
 }) => (
-  <ActiveButtonCenterStyle
-    type="submit"
-    form={formName}
-    id={id}
-    disabled={disabled}
-  >
+  <ActiveButtonStyle type="submit" form={formName} id={id} disabled={disabled}>
+    {icon}
     {label}
-  </ActiveButtonCenterStyle>
+  </ActiveButtonStyle>
 );
 
-SubmitButton.defaultProps = {
+DeprecatedSubmitButton.defaultProps = {
   id: undefined,
   disabled: false,
 };

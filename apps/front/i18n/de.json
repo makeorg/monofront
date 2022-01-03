@@ -167,7 +167,8 @@
         "invalid_postal_code_dynamic": "Die {{label}} muss 5 Ziffern lang sein.",
         "submit_success": "Die Änderungen wurden gespeichert.",
         "malformed": "Bitte beachte das URL-Format „https://beispiel.de“"
-      }
+      },
+      "requirements_short": "@@common.form.requirements_short|fr:Tous les champs sont obligatoires."
     },
     "notifications": {
       "bad_link": "Dieser Link ist nicht mehr gültig.",
@@ -378,9 +379,9 @@
       "button_submit": "Bestätigen",
       "read_our": "Lesen Sie unsere",
       "moderation_link": "Moderationscharta",
-      "button_propose": "PROPOSER",
-      "mandatory_field": "Tous les champs sont obligatoires.",
-      "proposal": "Votre proposition :"
+      "button_propose": "@@proposal_submit.form.button_propose|fr:PROPOSER",
+      "mandatory_field": "@@proposal_submit.form.mandatory_field|fr:Tous les champs sont obligatoires.",
+      "proposal": "@@proposal_submit.form.proposal|fr:Votre proposition :"
     },
     "authentication": {
       "button_back": "Meinen Vorschlag ändern",
@@ -388,7 +389,11 @@
       "subtitle": "registriere ich mich über",
       "button_login_text": "Ich habe bereits ein Konto",
       "button_login_link": "und melde mich an",
-      "back_authentication": "Zurück zum Anmeldebildschirm"
+      "back_authentication": "Zurück zum Anmeldebildschirm",
+      "back": "@@proposal_submit.authentication.back|fr:Retour",
+      "last_step_red": "@@proposal_submit.authentication.last_step_red|fr:plus qu'une étape ",
+      "last_step": "@@proposal_submit.authentication.last_step|fr:pour envoyer votre proposition !",
+      "button_login": "@@proposal_submit.authentication.button_login|fr:Se connecter"
     },
     "success": {
       "title": "Danke, {{name}}!",
@@ -466,7 +471,9 @@
     "forgot_password_link": "mein Passwort vergessen?",
     "registration_title": "Ich habe kein Konto",
     "registration_link": "und erstelle eins für mich.",
-    "email_doesnot_exist": "Deine {{emailLabel}} oder dein {{passwordLabel}} ist falsch."
+    "email_doesnot_exist": "Deine {{emailLabel}} oder dein {{passwordLabel}} ist falsch.",
+    "connect": "@@login.connect|fr:Se connecter",
+    "forgot_password": "@@login.forgot_password|fr:Mot de passe oublié ?"
   },
   "register": {
     "title": "Ein Konto erstellen",
@@ -833,7 +840,7 @@
       "sort": "Sortieren",
       "sort_continue": "Fortfahren mit der Sortierung",
       "filters_continue": "Mit diesen Filtern weitermachen",
-      "filter": "Filter",
+      "filter": "Filtern",
       "filter_and_close": "Filtern und schließen",
       "sort_by": "Sortieren nach",
       "sort_and_close": "Sortieren und schließen",
@@ -843,8 +850,7 @@
       "controversial": "Umstrittenste",
       "unvoted": "Diejenigen, die auf eure Stimme warten",
       "organisations_proposals": "Diejenigen, die von Organisationen vorgeschlagen wurden",
-      "no_proposal": "Kein Vorschlag",
-      "filter": "Filtern"
+      "no_proposal": "Kein Vorschlag"
     },
     "tabs": {
       "consultation": "Konsultation ",

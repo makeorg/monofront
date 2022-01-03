@@ -7,7 +7,6 @@ import {
   trackLoginEmailSuccess,
   trackSignupEmailFailure,
 } from '@make.org/utils/services/Tracking';
-import { LinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { FORM, NOTIF } from '@make.org/types/enums';
 import { SubmitThumbsUpIcon } from '@make.org/utils/constants/icons';
 import { throttle } from '@make.org/utils/helpers/throttle';
@@ -20,28 +19,23 @@ import {
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { useAppContext } from '@make.org/store';
 import {
-  FormRightAlignStyle,
-  FormRequirementsLeftStyle,
+  FormCenterAlignStyle,
+  FormRequirementsStyle,
 } from '@make.org/ui/elements/FormElements';
 import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { setPanelContent } from '@make.org/store/actions/panel';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
-import { FormErrors } from '../../Form/Errors';
-import { DeprecatedSubmitButton as SubmitButton } from '../../Form/SubmitButton/Deprecated';
-// import { SubmitButton } from '../../Form/SubmitButton';
-import { EmailPasswordFields } from '../CommonFields/EmailPassword';
+import { FormErrors } from '../../../Form/Errors';
+import { DeprecatedSubmitButton as SubmitButton } from '../../../Form/SubmitButton/Deprecated';
+import { EmailPasswordFields } from '../../CommonFields/EmailPassword';
 
 type TypeLoginValues = {
   email: string;
   password: string;
 };
 
-type Props = {
-  handleForgotPasswordModal?: () => void;
-};
-
-export const LoginForm: FC<Props> = ({ handleForgotPasswordModal }) => {
+export const DeprecatedLoginForm: FC = () => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy } = state.appConfig;
   const { proposalContent } = state.pendingProposal;
@@ -117,13 +111,13 @@ export const LoginForm: FC<Props> = ({ handleForgotPasswordModal }) => {
   }, []);
 
   return (
-    <FormRightAlignStyle
+    <FormCenterAlignStyle
       id={FORM.LOGIN_FORMNAME}
       onSubmit={throttle(handleSubmit)}
     >
-      <FormRequirementsLeftStyle>
-        {i18n.t('common.form.requirements_short')}
-      </FormRequirementsLeftStyle>
+      <FormRequirementsStyle>
+        {i18n.t('common.form.requirements')}
+      </FormRequirementsStyle>
       <FormErrors errors={errors} />
       <EmailPasswordFields
         emailValue={formValues.email}
@@ -132,15 +126,12 @@ export const LoginForm: FC<Props> = ({ handleForgotPasswordModal }) => {
         passwordError={passwordError}
         handleChange={handleChange}
       />
-      <LinkButtonStyle onClick={handleForgotPasswordModal} type="button">
-        {i18n.t('login.forgot_password')}
-      </LinkButtonStyle>
       <SubmitButton
         formName={FORM.LOGIN_FORMNAME}
         icon={SubmitThumbsUpIcon}
         id="authentication-login-submit"
         label={i18n.t('common.connexion_label')}
       />
-    </FormRightAlignStyle>
+    </FormCenterAlignStyle>
   );
 };
