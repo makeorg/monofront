@@ -84,7 +84,7 @@ const logCornerCases = (
     });
   }
   if (uniqueProposals.length === 0) {
-    Logger.logError({
+    Logger.logWarning({
       message: `Empty sequence - questionId: ${questionId}`,
       name: 'services',
     });

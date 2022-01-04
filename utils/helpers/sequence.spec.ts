@@ -441,4 +441,32 @@ describe('Sequence Helper', () => {
       expect(extraSlidesWithDemographics).toEqual(extraSlidesConfig);
     });
   });
+
+  describe('Handle no proposals card depending on context', () => {
+    it('with keyword', () => {
+      const noProposalsWithKeyword = {
+        type: CARD.CARD_TYPE_NO_PROPOSAL_CARD,
+        configuration: {
+          title: 'no_proposal_card.title.keyword',
+          description: 'no_proposal_card.description.special',
+        },
+        index: 0,
+      };
+      const CardWithKeyword = helpers.setNoProposalsCard('foo');
+      expect(CardWithKeyword).toEqual(noProposalsWithKeyword);
+    });
+
+    it('without keyword', () => {
+      const noProposalsWithoutKeyword = {
+        type: CARD.CARD_TYPE_NO_PROPOSAL_CARD,
+        configuration: {
+          title: 'no_proposal_card.title.regular',
+          description: 'no_proposal_card.description.special',
+        },
+        index: 0,
+      };
+      const CardWithKeyword = helpers.setNoProposalsCard();
+      expect(CardWithKeyword).toEqual(noProposalsWithoutKeyword);
+    });
+  });
 });

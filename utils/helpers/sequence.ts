@@ -219,3 +219,28 @@ export const addDemographicsToSequenceConfig = (
     demographics: demographicsData,
   };
 };
+
+/** Handle no proposals card depending on context
+ * @param  {string|undefined} keyword
+ * @return {NoProposalCardType}
+ *
+ */
+
+export const setNoProposalsCard = (keyword?: string): NoProposalCardType => {
+  const title = keyword
+    ? i18n.t('no_proposal_card.title.keyword', {
+        keyword,
+      })
+    : i18n.t('no_proposal_card.title.regular');
+
+  const noProposalsCard: NoProposalCardType = {
+    type: CARD.CARD_TYPE_NO_PROPOSAL_CARD,
+    configuration: {
+      title,
+      description: i18n.t('no_proposal_card.description.special'),
+    },
+    index: 0,
+  };
+
+  return noProposalsCard;
+};

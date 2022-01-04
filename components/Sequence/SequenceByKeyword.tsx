@@ -1,17 +1,14 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { FC, useState } from 'react';
-import {
-  NoProposalCardType,
-  QuestionType,
-  SequenceType,
-} from '@make.org/types';
+import { QuestionType, SequenceType } from '@make.org/types';
 import { trackClickOperationPage } from '@make.org/utils/services/Tracking';
 import { getParticipateLink } from '@make.org/utils/helpers/url';
 import i18n from 'i18next';
 import { useParams } from 'react-router';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
-import { isPushProposalCard } from '@make.org/utils/helpers/sequence';
-import { CARD } from '@make.org/types/enums';
+import {
+  isPushProposalCard,
+  setNoProposalsCard,
+} from '@make.org/utils/helpers/sequence';
 import { SequenceService } from '@make.org/utils/services/Sequence';
 import { useAppContext } from '@make.org/store';
 import { ProposalSubmit } from '@make.org/components/Proposal/Submit';
@@ -40,7 +37,11 @@ export const SequenceByKeyword: FC = () => {
   const params: { encodedKeyword: string } = useParams();
   const { encodedKeyword } = params;
   const keyword = encodedKeyword && decodeURI(encodedKeyword);
-  const [keywordLabel, setKeywordLabel] = useState<string>('');
+  const [keywordLabel, setKeywordLabel] = useState<string | undefined>(
+    undefined
+  );
+  const noProposalCard = setNoProposalsCard(keywordLabel);
+
   const question: QuestionType = selectCurrentQuestion(state);
 
   const executeStartSequence = async (
@@ -62,17 +63,6 @@ export const SequenceByKeyword: FC = () => {
       proposals: response.proposals || [],
       length: response.length,
     };
-  };
-
-  const noProposalCard: NoProposalCardType = {
-    type: CARD.CARD_TYPE_NO_PROPOSAL_CARD,
-    configuration: {
-      title: i18n.t('no_proposal_card.title.keyword', {
-        keyword: keywordLabel,
-      }),
-      description: i18n.t('no_proposal_card.description.special'),
-    },
-    index: 0,
   };
 
   const { currentCard } = useSequence(
