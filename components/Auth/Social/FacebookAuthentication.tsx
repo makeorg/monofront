@@ -145,7 +145,7 @@ export const FacebookAuthentication: FC = () => {
     return (
       <FacebookLogin
         appId="317128238675603"
-        version="8.0"
+        version="12.0"
         fields="name,email,picture,birthday"
         callback={handleFacebookLoginCallback}
         language={language}
