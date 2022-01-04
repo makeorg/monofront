@@ -41,7 +41,8 @@ const htmlContent = fs.readFileSync(
 const renderHtml = (
   reactApp: JSX.Element,
   appState: StateRoot,
-  pwaManifest: any,
+  metaTags: any,
+  pwaManifest: unknown,
   res: Response
 ) => {
   if (!htmlContent) {
@@ -64,7 +65,9 @@ const renderHtml = (
     .replace(/<div id="app"><\/div>/, `<div id="app">${body}</div>`)
     .replace(
       '<head>',
-      `<head>${linkTags}<link rel="manifest" href="${pwaManifest}" />`
+      `<head>${ReactDOMServer.renderToString(
+        metaTags
+      )}${linkTags}<link rel="manifest" href="${pwaManifest}" />`
     )
     .replace('</head>', `${styles}</head>`)
     .replace('"__REDUX__"', JSON.stringify(appState))
@@ -159,7 +162,7 @@ export const reactRender = async (
 
   const context = {};
   const headTags:
-    | ReactElement<unknown, string | JSXElementConstructor<any>>[]
+    | ReactElement<unknown, string | JSXElementConstructor<unknown>>[]
     | undefined = [];
 
   const ReactApp = (
@@ -176,7 +179,7 @@ export const reactRender = async (
 
   const pwaManifest = webpackManifest['favicon/manifest.json'];
 
-  const reactHtml = renderHtml(ReactApp, state, pwaManifest, res);
+  const reactHtml = renderHtml(ReactApp, state, headTags, pwaManifest, res);
 
   if (!reactHtml) {
     return res.status(404).end();
