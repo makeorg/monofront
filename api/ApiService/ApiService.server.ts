@@ -22,8 +22,6 @@ export class ApiServiceServer implements IApiServiceStrategy {
     });
   }
 
-  _sessionId = '';
-
   _country = '';
 
   _language = '';
@@ -52,14 +50,6 @@ export class ApiServiceServer implements IApiServiceStrategy {
 
   get referrer(): string {
     return this._referrer;
-  }
-
-  set sessionId(sessionId: string) {
-    this._sessionId = sessionId;
-  }
-
-  get sessionId(): string {
-    return this._sessionId;
   }
 }
 

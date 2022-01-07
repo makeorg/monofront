@@ -148,7 +148,7 @@ export const mainRoute = async (
     ),
   };
   const cards = buildCards(
-    [firstProposal.proposal],
+    [firstProposal.data.proposal],
     questionModified.sequenceConfig,
     questionModified.canPropose,
     true,
@@ -157,7 +157,7 @@ export const mainRoute = async (
     undefined
   );
   const sequenceSize = getSequenceSize(
-    firstProposal.sequenceSize,
+    firstProposal.data.sequenceSize,
     questionModified.sequenceConfig,
     questionModified.canPropose,
     questionModified.hasDemographics,
@@ -175,9 +175,13 @@ export const mainRoute = async (
     ...initialState.sequence,
     isLoading: false,
     cards,
-    proposals: [firstProposal.proposal],
+    proposals: [firstProposal.data.proposal],
     loadFirstProposal: true,
     sequenceSize,
+  };
+  initialState.session = {
+    ...initialState.session,
+    sessionId: firstProposal.sessionId,
   };
 
   updateTrackingQuestionParam(questionModified);

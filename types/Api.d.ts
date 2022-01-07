@@ -38,6 +38,9 @@ export type ApiServiceHeadersType = {
   'x-session-id'?: string;
   'x-session-id-expiration'?: string;
   Authorization?: string;
+  'Cache-Control'?: string;
+  Pragma?: string;
+  Expires?: string;
 };
 
 export type ErrorObjectType = {

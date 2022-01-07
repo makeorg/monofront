@@ -85,6 +85,9 @@ const getApp = () => {
         'X-XSS-Protection': '0',
         'Referrer-Policy': 'no-referrer-when-downgrade',
         'X-Frame-Options': 'deny',
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        Pragma: 'no-cache',
+        Expires: '0',
       },
       res,
       next

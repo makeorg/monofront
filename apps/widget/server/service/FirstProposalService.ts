@@ -2,7 +2,6 @@ import { FirstProposalSequenceType } from '@make.org/types';
 import { QuestionApiService } from '@make.org/api/QuestionApiService';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { getLoggerInstance } from '@make.org/utils/helpers/logger';
-import { apiServer } from '@make.org/api/ApiService/ApiService.server';
 
 /**
  * Warning : Do not put cache. This will be handle on API side
@@ -11,7 +10,7 @@ import { apiServer } from '@make.org/api/ApiService/ApiService.server';
  * @param {string} language
  * @param {() => void} notFound
  * @param {() => void} unexpectedError
- * @returns Promise<FirstProposalSequenceType | void>
+ * @returns Promise<{ data: FirstProposalSequenceType; sessionId: string } | void>
  */
 const getFirstProposal = async (
   questionId: string,
@@ -19,13 +18,13 @@ const getFirstProposal = async (
   language: string,
   notFound: () => void,
   unexpectedError: () => void
-): Promise<FirstProposalSequenceType | void> => {
-  const handleData = (data: FirstProposalSequenceType) => {
+): Promise<{ data: FirstProposalSequenceType; sessionId: string } | void> => {
+  const handleData = (data: FirstProposalSequenceType, sessionId: string) => {
     if (!data) {
       return notFound();
     }
 
-    return data;
+    return { data, sessionId: sessionId || '' };
   };
 
   try {
@@ -36,11 +35,13 @@ const getFirstProposal = async (
         'x-make-country': country,
         'x-make-language': language,
         'x-make-location': 'widget',
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        Pragma: 'no-cache',
+        Expires: '0',
       }
     );
 
-    apiServer.sessionId = response?.headers['x-session-id'];
-    return handleData(response?.data);
+    return handleData(response?.data, response?.headers['x-session-id']);
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 404) {
