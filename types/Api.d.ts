@@ -40,7 +40,6 @@ export type ApiServiceHeadersType = {
   Authorization?: string;
   'Cache-Control'?: string;
   Pragma?: string;
-  Expires?: string;
 };
 
 export type ErrorObjectType = {

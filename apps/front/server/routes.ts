@@ -73,9 +73,10 @@ import { passwordRecoveryRoute } from './ssr/passwordRecoveryRoute';
 import { homepageRoute } from './ssr/homepageRoute';
 
 function setCustomCacheControl(res: Response, path: string) {
-  if (serveStatic.mime.lookup(path) === 'text/html') {
-    // Custom Cache-Control for HTML files
-    res.setHeader('Cache-Control', 'public, max-age=0');
+  if (serveStatic.mime.lookup(path) !== 'text/html') {
+    res.setHeader('Cache-Control', 'public, max-age=31536000');
+    res.removeHeader('Expires');
+    res.removeHeader('Pragma');
   }
 }
 
@@ -84,7 +85,6 @@ export const initRoutes = (app: Application): void => {
   app.use(
     '/assets/favicon',
     express.static(APP_FAVICON_DIR, {
-      maxAge: '1y',
       setHeaders: setCustomCacheControl,
     })
   );
@@ -92,7 +92,6 @@ export const initRoutes = (app: Application): void => {
   app.use(
     '/assets',
     express.static(APP_ASSETS_DIR, {
-      maxAge: '1y',
       setHeaders: setCustomCacheControl,
     })
   );
@@ -100,7 +99,6 @@ export const initRoutes = (app: Application): void => {
   app.use(
     '/js',
     express.static(APP_JS_DIR, {
-      maxAge: '1y',
       setHeaders: setCustomCacheControl,
     })
   );
@@ -108,7 +106,6 @@ export const initRoutes = (app: Application): void => {
   app.use(
     '/images',
     express.static(APP_IMAGES_DIR, {
-      maxAge: '1y',
       setHeaders: setCustomCacheControl,
     })
   );
@@ -116,7 +113,6 @@ export const initRoutes = (app: Application): void => {
   app.use(
     '/reports',
     express.static(APP_REPORTS_DIR, {
-      maxAge: '1y',
       setHeaders: setCustomCacheControl,
     })
   );

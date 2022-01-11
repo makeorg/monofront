@@ -8,9 +8,10 @@ import { mainRoute } from './ssr/mainRoute';
 import { maintenanceRoute } from './ssr/maintenanceRoute';
 
 function setCustomCacheControl(res: Response, path: string) {
-  if (serveStatic.mime.lookup(path) === 'text/html') {
-    // Custom Cache-Control for HTML files
-    res.setHeader('Cache-Control', 'public, max-age=0');
+  if (serveStatic.mime.lookup(path) !== 'text/html') {
+    res.setHeader('Cache-Control', 'public, max-age=31536000');
+    res.removeHeader('Expires');
+    res.removeHeader('Pragma');
   }
 }
 
@@ -19,7 +20,6 @@ export const initRoutes = (app: Application): void => {
   app.use(
     '/assets',
     express.static(WIDGET_ASSETS_DIR, {
-      maxAge: '1y',
       setHeaders: setCustomCacheControl,
     })
   );
@@ -27,7 +27,6 @@ export const initRoutes = (app: Application): void => {
   app.use(
     '/js',
     express.static(WIDGET_JS_DIR, {
-      maxAge: '1y',
       setHeaders: setCustomCacheControl,
     })
   );
@@ -35,7 +34,6 @@ export const initRoutes = (app: Application): void => {
   app.use(
     '/images',
     express.static(WIDGET_IMAGES_DIR, {
-      maxAge: '1y',
       setHeaders: setCustomCacheControl,
     })
   );
