@@ -105,3 +105,5 @@ export const QUESTION_PERSONALITIES_LOAD = 'QUESTION_PERSONALITIES_LOAD';
 /* Views actions */
 export const LOAD_HOMEPAGE = 'LOAD_HOMEPAGE';
 export const FETCH_HOMEPAGE = 'FETCH_HOMEPAGE';
+/* Sequence Label */
+export const SEQUENCE_SET_LABEL = 'SEQUENCE_SET_LABEL';

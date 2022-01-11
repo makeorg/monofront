@@ -56,6 +56,7 @@ export type StateSequence = {
   };
   readonly loadFirstProposal?: boolean;
   readonly sequenceSize: number;
+  readonly sequenceLabel: string;
 };
 
 // Notification State

@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { QuestionType, SequenceType } from '@make.org/types';
 import { trackClickOperationPage } from '@make.org/utils/services/Tracking';
 import { getParticipateLink } from '@make.org/utils/helpers/url';
@@ -32,15 +32,11 @@ import { MetaTags } from '../MetaTags';
 export const SequenceByKeyword: FC = () => {
   const { state } = useAppContext();
   const { country } = state.appConfig;
-  const { isLoading, sequenceSize } = state.sequence;
+  const { isLoading, sequenceSize, sequenceLabel } = state.sequence;
   const isEmptySequence = sequenceSize === 0;
   const params: { encodedKeyword: string } = useParams();
   const { encodedKeyword } = params;
   const keyword = encodedKeyword && decodeURI(encodedKeyword);
-  const [keywordLabel, setKeywordLabel] = useState<string | undefined>(
-    undefined
-  );
-  const noProposalCard = setNoProposalsCard(keywordLabel);
 
   const question: QuestionType = selectCurrentQuestion(state);
 
@@ -53,17 +49,17 @@ export const SequenceByKeyword: FC = () => {
       votedIds,
       keyword
     );
-
     if (!response) {
       return null;
     }
 
-    setKeywordLabel(response.label || '');
     return {
       proposals: response.proposals || [],
       length: response.length,
     };
   };
+
+  const noProposalCard = setNoProposalsCard(sequenceLabel);
 
   const { currentCard } = useSequence(
     question,
@@ -83,7 +79,7 @@ export const SequenceByKeyword: FC = () => {
     <>
       <MetaTags
         title={i18n.t('meta.sequence.title_keyword', {
-          keywordLabel,
+          keywordLabel: sequenceLabel,
           question: question.wording.question,
         })}
         description={question.wording.metas.description}
@@ -94,7 +90,7 @@ export const SequenceByKeyword: FC = () => {
           <SequenceAltTitleStyle>{question.question}</SequenceAltTitleStyle>
           <SequenceSpecialTitleStyle>
             <SequenceSpecialIconStyle aria-hidden focusable={false} />
-            {keywordLabel}
+            {sequenceLabel}
           </SequenceSpecialTitleStyle>
           <SequenceCard
             card={isEmptySequence ? noProposalCard : currentCard}

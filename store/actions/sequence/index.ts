@@ -22,6 +22,7 @@ import {
   SEQUENCE_UPDATE_CARD_STATE,
   SEQUENCE_SET_LOADING,
   SEQUENCE_SET_LENGTH,
+  SEQUENCE_SET_LABEL,
 } from '../../actionTypes';
 import { TopComponentContextValue } from '../../topComponentContext';
 
@@ -70,6 +71,11 @@ export const setSequenceIndex = (index: number): ReducerAction => ({
 export const setSequenceLength = (length: number): ReducerAction => ({
   type: SEQUENCE_SET_LENGTH,
   payload: { length },
+});
+
+export const setSequenceLabel = (label: string): ReducerAction => ({
+  type: SEQUENCE_SET_LABEL,
+  payload: { label },
 });
 
 export const unvote = (

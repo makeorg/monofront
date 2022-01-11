@@ -13,6 +13,7 @@ import {
 } from '@make.org/ui/elements/CardsElements';
 import { SvgAngleArrowRight, SvgArrowUp } from '@make.org/ui/Svg/elements';
 import { QuestionKeywordType, QuestionType } from '@make.org/types';
+import { setSequenceLabel } from '@make.org/store/actions/sequence';
 import {
   KeywordsListWrapperStyle,
   KeywordListItemStyle,
@@ -26,7 +27,7 @@ type Props = {
 };
 
 export const Keywords: FC<Props> = ({ question, isKeywordActive }) => {
-  const { state } = useAppContext();
+  const { state, dispatch } = useAppContext();
   const { country } = state.appConfig;
   const [isLoading, setIsLoading] = useState(false);
   const [keywords, setKeywords] = useState<QuestionKeywordType[]>([]);
@@ -86,9 +87,10 @@ export const Keywords: FC<Props> = ({ question, isKeywordActive }) => {
                   pushProposal: false,
                 }
               )}
-              onClick={() =>
-                trackOpenSequence(TRACKING.COMPONENT_PARAM_SEQUENCE_KEYWORD)
-              }
+              onClick={() => {
+                dispatch(setSequenceLabel(keyword.label));
+                trackOpenSequence(TRACKING.COMPONENT_PARAM_SEQUENCE_KEYWORD);
+              }}
             >
               {keyword.label}
               <SvgAngleArrowRight width={17} height={17} />

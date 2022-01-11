@@ -13,6 +13,7 @@ import {
   SEQUENCE_UPDATE_CARD_STATE,
   SEQUENCE_SET_LOADING,
   SEQUENCE_SET_LENGTH,
+  SEQUENCE_SET_LABEL,
 } from '../../actionTypes';
 
 export const sequence_state: StateSequence = {
@@ -24,6 +25,7 @@ export const sequence_state: StateSequence = {
   cards: [],
   loadFirstProposal: false,
   sequenceSize: 0,
+  sequenceLabel: '',
 };
 
 export const sequence_reducer: Reducer = (
@@ -98,6 +100,11 @@ export const sequence_reducer: Reducer = (
       return {
         ...state,
         sequenceSize: action.payload.length,
+      };
+    case SEQUENCE_SET_LABEL:
+      return {
+        ...state,
+        sequenceLabel: action.payload.label,
       };
     case SEQUENCE_INCREMENT_INDEX:
       return {

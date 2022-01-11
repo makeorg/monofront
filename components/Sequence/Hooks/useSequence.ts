@@ -114,7 +114,6 @@ export const useSequence = (
             sequenceDemographic?.token
           );
         }
-
         if (!response) {
           return;
         }
@@ -160,6 +159,7 @@ export const useSequence = (
   useEffect(() => {
     if (!cards.length) {
       setCurrentCard(noProposalCard);
+      dispatch(setSequenceLength(0));
       return;
     }
     setCurrentCard(cards[currentIndex]);
