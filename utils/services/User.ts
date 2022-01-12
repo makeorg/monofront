@@ -338,7 +338,7 @@ const loginSocial = async (
   provider: string,
   token: string,
   approvePrivacyPolicy?: boolean,
-  success?: (createdAt: string) => void,
+  success?: (isNewAccount: boolean) => void,
   failure?: () => void,
   unexpectedError?: () => void
 ): Promise<UserAuthType | void> => {
@@ -355,7 +355,7 @@ const loginSocial = async (
       apiClient.token = userAuth.access_token;
 
       if (success) {
-        success(response.data.created_at);
+        success(response.data.account_creation);
       }
     }
 
@@ -380,7 +380,7 @@ const checkSocialPrivacyPolicy = async (
   token: string,
   privacyPolicyDate: string,
   action?: () => void,
-  success?: (createdAt: string) => void,
+  success?: (isNewAccount: boolean) => void,
   failure?: () => void,
   unexpectedError?: () => void
 ): Promise<void | null> => {

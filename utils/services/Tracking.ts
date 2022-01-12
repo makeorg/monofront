@@ -148,12 +148,12 @@ export const trackDisplaySigninForm = (): void => {
 
 export const trackAuthenticationSocialSuccess = (
   socialNetwork: string,
-  accountCreation: string
+  accountCreation: boolean
 ): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.AUTHEN_SOCIAL_SUCCESS({
       'social-network': socialNetwork,
-      'account-creation': accountCreation,
+      'account-creation': accountCreation ? 'true' : 'false',
     })
   );
 };

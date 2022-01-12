@@ -100,9 +100,9 @@ export const DataPolicy: React.FC = () => {
     dispatch(modalCloseDataPolicy());
   };
 
-  const socialAuthSuccess = (createdAt: string) => {
+  const socialAuthSuccess = (isNewAccount: boolean) => {
     dispatch(loginSocialSuccess());
-    trackAuthenticationSocialSuccess(provider, createdAt);
+    trackAuthenticationSocialSuccess(provider, isNewAccount);
     commonSuccess();
   };
 

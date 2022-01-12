@@ -47,9 +47,9 @@ export const GoogleAuthentication: FC = () => {
   const handleGoogleLoginSuccess = async (
     response: GoogleLoginResponse | GoogleLoginResponseOffline
   ) => {
-    const success = async (createdAt: string) => {
+    const success = async (isNewAccount: boolean) => {
       dispatch(loginSocialSuccess());
-      trackAuthenticationSocialSuccess(GOOGLE_PROVIDER_ENUM, createdAt);
+      trackAuthenticationSocialSuccess(GOOGLE_PROVIDER_ENUM, isNewAccount);
       await getUser(dispatch, state.modal.isOpen);
       dispatch(
         displayNotificationBanner(

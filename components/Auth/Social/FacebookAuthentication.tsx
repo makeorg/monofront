@@ -96,7 +96,7 @@ export const FacebookAuthentication: FC = () => {
 
     const { accessToken } = response;
 
-    const success = async (createdAt: string) => {
+    const success = async (isNewAccount: boolean) => {
       dispatch(loginSocialSuccess());
       getUser(dispatch, state.modal.isOpen);
       dispatch(
@@ -105,7 +105,7 @@ export const FacebookAuthentication: FC = () => {
           NOTIF.NOTIFICATION_LEVEL_SUCCESS
         )
       );
-      trackAuthenticationSocialSuccess(FACEBOOK_PROVIDER_ENUM, createdAt);
+      trackAuthenticationSocialSuccess(FACEBOOK_PROVIDER_ENUM, isNewAccount);
 
       if (proposalContent) {
         await ProposalService.propose(
