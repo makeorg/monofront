@@ -158,7 +158,8 @@
         "submit_success": "Edits saved.",
         "malformed": "Please use the right url format \"https://example.com\""
       },
-      "requirements_short": "@@common.form.requirements_short|fr:Tous les champs sont obligatoires."
+      "requirements_short": "@@common.form.requirements_short|fr:Tous les champs sont obligatoires.",
+      "post_code": "@@common.form.post_code|fr:Le code postal nous permet d'analyser les résultats par zone géographique."
     },
     "social_login": {
       "card_title": "To find the history of your votes",
@@ -1129,7 +1130,10 @@
     "privacy_policy_first_part": "I agree that Make.org processes my personal data to participate and to be informed of the results according to the ",
     "privacy_policy_link": "notice",
     "privacy_policy_last_part": ".",
-    "privacy_policy": "privacy policy"
+    "privacy_policy": "privacy policy",
+    "make_protect": "@@legal_consent.make_protect|fr:Make.org s'engage à protéger vos",
+    "make_protect_link": "@@legal_consent.make_protect_link|fr:données personnelles.",
+    "opt_out": "@@legal_consent.opt_out|fr:Je m'oppose à recevoir des e-mails commerciaux de Make.org pour me tenir au courant de nouveaux projets (optionnel)"
   },
   "browse": {
     "page_title": "Browse consultations",

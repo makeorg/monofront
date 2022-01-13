@@ -15,6 +15,8 @@ import {
   SeparatorProposalAuthLogin,
   TextSeparatorStyle,
 } from '@make.org/ui/elements/SeparatorsElements';
+import { getDataPageLink } from '@make.org/utils/helpers/url';
+import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { FacebookAuthentication } from '@make.org/components/Auth/Social/FacebookAuthentication';
 import { GoogleAuthentication } from '@make.org/components/Auth/Social/GoogleAuthentication';
 import { useAppContext } from '@make.org/store';
@@ -37,6 +39,9 @@ import {
   ProposalAuthLoginWrapperStyle,
   ProposalAuthSocialLoginWrapperStyle,
   ProposalStepLabelRedStyle,
+  DataPolicyWrapperStyle,
+  NewWindowIconStyle,
+  DataPolicyNewWindowLinkStyle,
 } from './style';
 
 const renderAuthStep = (step: string, dispatch: Dispatch) => {
@@ -74,6 +79,8 @@ const renderAuthStep = (step: string, dispatch: Dispatch) => {
 
 export const ProposalAuthentication: FC = () => {
   const { state, dispatch } = useAppContext();
+  const { country, language, source } = state.appConfig;
+  const isWidget = source === 'widget';
   const { step } = state.pendingProposal.authMode;
 
   useEffect(() => {
@@ -124,6 +131,25 @@ export const ProposalAuthentication: FC = () => {
           {i18n.t('proposal_submit.authentication.button_login')}
         </ProposalAuthLoginStyle>
       </ProposalAuthLoginWrapperStyle>
+      <DataPolicyWrapperStyle>
+        {i18n.t('legal_consent.make_protect')}{' '}
+        <DataPolicyNewWindowLinkStyle
+          href={
+            isWidget
+              ? `https://make.org${getDataPageLink(country, language)}`
+              : getDataPageLink(country, language)
+          }
+          target="_blank"
+          rel="noopener"
+        >
+          {i18n.t('legal_consent.make_protect_link')}
+          <> </>
+          <NewWindowIconStyle aria-hidden focusable="false" />
+          <ScreenReaderItemStyle>
+            {i18n.t('common.open_new_window')}
+          </ScreenReaderItemStyle>
+        </DataPolicyNewWindowLinkStyle>
+      </DataPolicyWrapperStyle>
     </ProposalStepWrapperColumnStyle>
   );
 };

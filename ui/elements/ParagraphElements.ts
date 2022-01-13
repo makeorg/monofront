@@ -59,3 +59,11 @@ export const ConditionParagraphStylePanel = styled(InlineParagraphStyle)`
     margin-top: 0px;
   }
 `;
+
+export const ConditionParagraphBlackStylePanel = styled(InlineParagraphStyle)`
+  font-family: ${MakeFonts.CircularStandardBook};
+  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  width: 100%;
+  margin-bottom: 15px;
+  color: ${color.black};
+`;

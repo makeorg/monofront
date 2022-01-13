@@ -163,7 +163,8 @@
         "submit_success": "Die Änderungen wurden gespeichert.",
         "malformed": "Bitte beachte das URL-Format „https://beispiel.de“"
       },
-      "requirements_short": "@@common.form.requirements_short|fr:Tous les champs sont obligatoires."
+      "requirements_short": "@@common.form.requirements_short|fr:Tous les champs sont obligatoires.",
+      "post_code": "@@common.form.post_code|fr:Le code postal nous permet d'analyser les résultats par zone géographique."
     },
     "notifications": {
       "bad_link": "Dieser Link ist nicht mehr gültig.",
@@ -489,7 +490,10 @@
     "privacy_policy_first_part": "Ich bin damit einverstanden, dass meine personenbezogenen Daten von Make.org verarbeitet werden, sodass ich gemäß der ",
     "privacy_policy_link": "Charta",
     "privacy_policy_last_part": " teilnehmen kann und informiert werde.",
-    "privacy_policy": "Datenschutzerklärung"
+    "privacy_policy": "Datenschutzerklärung",
+    "make_protect": "@@legal_consent.make_protect|fr:Make.org s'engage à protéger vos",
+    "make_protect_link": "@@legal_consent.make_protect_link|fr:données personnelles.",
+    "opt_out": "@@legal_consent.opt_out|fr:Je m'oppose à recevoir des e-mails commerciaux de Make.org pour me tenir au courant de nouveaux projets (optionnel)"
   },
   "forgot_password": {
     "title": "Ich setze mein Passwort zurück",

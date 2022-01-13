@@ -81,6 +81,19 @@ export const RedButtonStyle = styled.button.attrs(props => ({
   }
 `;
 
+export const RedButtonCenterStyle = styled.button.attrs(props => ({
+  type: 'button',
+  ...props,
+}))`
+  ${BasicButtonStyle};
+  ${RedStyle};
+  align-self: center;
+  margin-top: 30px;
+  &:disabled {
+    ${GreyStyle};
+  }
+`;
+
 export const GreyButtonStyle = styled.button.attrs(props => ({
   type: 'button',
   ...props,
@@ -152,7 +165,7 @@ export const ActiveButtonCenterStyle = styled.button.attrs(props => ({
   color: ${color.white};
   background-color: ${color.brandSecondary};
   align-self: center;
-  margin-top: 30px;
+  margin: 30px 0;
   svg,
   .tofill {
     fill: ${color.white};

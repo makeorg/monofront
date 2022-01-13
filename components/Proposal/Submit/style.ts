@@ -317,3 +317,24 @@ export const ProposalSubmitButtonsWidgetStyle = styled(FlexElementStyle)`
     height: fit-content;
   }
 `;
+
+export const DataPolicyWrapperStyle = styled.span`
+  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  color: ${color.greyDark};
+  margin-top: 30px;
+  display: block;
+  text-align: center;
+`;
+
+export const NewWindowIconStyle = styled(SvgExternalLinkPlain)`
+  width: 12px;
+  height: 12px;
+  padding-left: 2px;
+  .tofill {
+    fill: ${color.brandSecondary};
+  }
+`;
+
+export const DataPolicyNewWindowLinkStyle = styled.a`
+  color: ${color.brandSecondary};
+`;

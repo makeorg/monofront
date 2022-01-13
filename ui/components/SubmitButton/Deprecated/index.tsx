@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActiveButtonCenterStyle } from '../../elements/ButtonsElements';
+import { ActiveButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 
 type Props = {
   /** Name of the input */
@@ -11,12 +11,12 @@ type Props = {
   /** disabled interaction */
   disabled?: boolean;
   /** Icon of the input */
-  icon?: React.ReactNode;
+  icon?: React.ReactElement;
   /** Icon of the input */
   'data-cy-button'?: string;
 };
 
-export const SubmitButton: React.FC<Props> = ({
+export const DeprecatedSubmitButton: React.FC<Props> = ({
   formName,
   icon,
   id,
@@ -24,13 +24,14 @@ export const SubmitButton: React.FC<Props> = ({
   disabled,
   'data-cy-button': dataCyButton,
 }) => (
-  <ActiveButtonCenterStyle
+  <ActiveButtonStyle
     data-cy-button={dataCyButton}
     type="submit"
     form={formName}
     id={id}
     disabled={disabled}
   >
+    {icon}
     {label}
-  </ActiveButtonCenterStyle>
+  </ActiveButtonStyle>
 );

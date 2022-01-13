@@ -7,7 +7,7 @@ import {
   HiddenCheckbox,
   StyledCheckbox,
   CheckboxWrapper,
-  CheckboxLabelStyle,
+  CheckboxLabelCenterStyle,
   NewWindowIconStyle,
   DataPolicyNewWindowLinkStyle,
 } from '@make.org/ui/elements/FormElements';
@@ -35,7 +35,7 @@ export const RegisterCheckBox: React.FC<Props> = ({
 
   return (
     <CheckboxWrapper>
-      <CheckboxLabelStyle noFontSizeChange={false} isWidget={isWidget}>
+      <CheckboxLabelCenterStyle noFontSizeChange={false} isWidget={isWidget}>
         <HiddenCheckbox
           required={required}
           checked={checked}
@@ -69,7 +69,7 @@ export const RegisterCheckBox: React.FC<Props> = ({
           </DataPolicyNewWindowLinkStyle>
           {i18n.t('legal_consent.privacy_policy_last_part')}
         </span>
-      </CheckboxLabelStyle>
+      </CheckboxLabelCenterStyle>
     </CheckboxWrapper>
   );
 };

@@ -114,6 +114,11 @@ export const TermsOfUseLinkStyle = styled.a`
   }
 `;
 
+export const TermsOfUseLinkBlackStyle = styled(TermsOfUseLinkStyle)`
+  color: ${color.black};
+  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+`;
+
 export const PanelTermsOfUseLinkStyle = styled(TermsOfUseLinkStyle)`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   &:hover,
@@ -152,4 +157,11 @@ export const LoginTitleWrapperStyle = styled(ThirdLevelTitleStyle)`
   &.panel {
     margin-top: 32px;
   }
+`;
+
+export const PostCodeWrapperStyle = styled.span`
+  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  color: ${color.greyDark};
+  margin-bottom: 30px;
+  margin-top: -10px;
 `;

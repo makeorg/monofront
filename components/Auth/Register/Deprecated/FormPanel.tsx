@@ -2,30 +2,30 @@ import React, { ChangeEvent, FormEvent, useEffect } from 'react';
 import i18n from 'i18next';
 import { ErrorObjectType, RegisterFormDataType } from '@make.org/types';
 import {
-  FormLeftAlignStyle,
+  FormCenterAlignStyle,
   FormRequirementsStyle,
 } from '@make.org/ui/elements/FormElements';
 import { getFieldError } from '@make.org/utils/helpers/form';
 import { FORM } from '@make.org/types/enums';
-import { SubmitButton } from '@make.org/ui/components/SubmitButton';
+import { DeprecatedSubmitButton as SubmitButton } from '@make.org/ui/components/SubmitButton/Deprecated';
+// import { SubmitButton} from '@make.org/ui/components/SubmitButton/Deprecated';
+import { SubmitThumbsUpIcon } from '@make.org/utils/constants/icons';
 import { useAppContext } from '@make.org/store';
 import { throttle } from '@make.org/utils/helpers/throttle';
 import { getGTUPageLink } from '@make.org/utils/helpers/url';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import { ConditionParagraphBlackStylePanel } from '@make.org/ui/elements/ParagraphElements';
-import { RedButtonCenterStyle } from '@make.org/ui/elements/ButtonsElements';
-import { OptOutCheckBox } from '@make.org/components/Form/CheckBox/OptOutCheckbox';
+import { ConditionParagraphStylePanel } from '@make.org/ui/elements/ParagraphElements';
+import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { RegisterCheckBox } from '@make.org/components/Form/CheckBox/RegisterCheckbox';
 import { trackDisplaySignupForm } from '@make.org/utils/services/Tracking';
-import { FormErrors } from '../../Form/Errors';
+import { FormErrors } from '../../../Form/Errors';
 import {
   NewWindowIconStyle,
   RegisterEmailTitleStyle,
-  TermsOfUseLinkBlackStyle,
-  PostCodeWrapperStyle,
-} from '../style';
-import { EmailPasswordFields } from '../CommonFields/EmailPassword';
-import { AgePostcode } from '../CommonFields/AgePostcode';
+  PanelTermsOfUseLinkStyle,
+} from '../../style';
+import { EmailPasswordFields } from '../../CommonFields/EmailPassword';
+import { ExtraInRegisterformationsFields } from '../../CommonFields/ExtraRegisterInformations';
 
 type Props = {
   user: RegisterFormDataType;
@@ -40,7 +40,7 @@ type Props = {
 /**
  * Renders Register Form
  */
-export const RegisterFormPanel: React.FC<Props> = ({
+export const DeprecatedRegisterFormPanel: React.FC<Props> = ({
   user,
   errors,
   handleChange,
@@ -56,6 +56,7 @@ export const RegisterFormPanel: React.FC<Props> = ({
 
   const emailError = getFieldError('email', errors);
   const passwordError = getFieldError('password', errors);
+  const firstnameError = getFieldError('firstname', errors);
   const ageError = getFieldError('dateofbirth', errors);
   const postalcodeError = getFieldError('postalcode', errors);
 
@@ -64,7 +65,7 @@ export const RegisterFormPanel: React.FC<Props> = ({
   }, [registerPanelStep]);
 
   return (
-    <FormLeftAlignStyle
+    <FormCenterAlignStyle
       id={FORM.REGISTER_PANEL_FORMNAME}
       onSubmit={throttle(handleSubmit)}
     >
@@ -75,7 +76,7 @@ export const RegisterFormPanel: React.FC<Props> = ({
         })}
       </RegisterEmailTitleStyle>
       <FormRequirementsStyle>
-        {i18n.t('common.form.requirements_short')}
+        {i18n.t('common.form.requirements')}
       </FormRequirementsStyle>
       <FormErrors errors={errors} />
       {registerPanelStep === 1 && (
@@ -87,58 +88,59 @@ export const RegisterFormPanel: React.FC<Props> = ({
             passwordError={passwordError}
             handleChange={handleChange}
           />
-          <RedButtonCenterStyle
+          <RedButtonStyle
             onClick={checkRegistration}
             disabled={!user.password || !user.email}
           >
             {i18n.t('common.continue')}
-          </RedButtonCenterStyle>
+          </RedButtonStyle>
         </>
       )}
       {registerPanelStep === 2 && (
         <>
-          <AgePostcode
+          <ExtraInRegisterformationsFields
+            firstnameValue={user.profile.firstname}
             ageValue={user.profile.age}
             postalcodeValue={user.profile.postalcode}
+            firstnameError={firstnameError}
             ageError={ageError}
             postalcodeError={postalcodeError}
             handleChange={handleChange}
           />
-          <PostCodeWrapperStyle>
-            {i18n.t('common.form.post_code')}
-          </PostCodeWrapperStyle>
-          <ConditionParagraphBlackStylePanel>
-            {i18n.t('register.gtu_text_first')}
-            <TermsOfUseLinkBlackStyle
-              href={
-                isWidget
-                  ? `https://make.org${getGTUPageLink(country, language)}`
-                  : getGTUPageLink(country, language)
-              }
-              target="_blank"
-              rel="noopener"
-            >
-              {i18n.t('register.gtu_link')}
-              <NewWindowIconStyle
-                className="grey"
-                aria-hidden
-                focusable="false"
-              />
-              <ScreenReaderItemStyle>
-                {i18n.t('common.open_new_window')}
-              </ScreenReaderItemStyle>
-            </TermsOfUseLinkBlackStyle>
-          </ConditionParagraphBlackStylePanel>
+          <ConditionParagraphStylePanel>
+            <span>
+              {i18n.t('register.gtu_text_first')}
+              <PanelTermsOfUseLinkStyle
+                href={
+                  isWidget
+                    ? `https://make.org${getGTUPageLink(country, language)}`
+                    : getGTUPageLink(country, language)
+                }
+                target="_blank"
+                rel="noopener"
+              >
+                {i18n.t('register.gtu_link')}
+                <NewWindowIconStyle
+                  className="grey"
+                  aria-hidden
+                  focusable="false"
+                />
+                <ScreenReaderItemStyle>
+                  {i18n.t('common.open_new_window')}
+                </ScreenReaderItemStyle>
+              </PanelTermsOfUseLinkStyle>
+            </span>
+          </ConditionParagraphStylePanel>
           <RegisterCheckBox handleLegalField={handleLegalField} required />
-          <OptOutCheckBox />
           <SubmitButton
             formName={FORM.REGISTER_PANEL_FORMNAME}
             id="authentication-register-submit"
+            icon={SubmitThumbsUpIcon}
             label={i18n.t('common.register_label')}
             disabled={disableSubmit}
           />
         </>
       )}
-    </FormLeftAlignStyle>
+    </FormCenterAlignStyle>
   );
 };
