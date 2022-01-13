@@ -27,7 +27,7 @@ import {
 import { Dispatch } from '@make.org/types';
 import { SocialRegisterButtonsWrapperStyle } from '../../../Auth/style';
 import {
-  ProposalStepWrapperStyle,
+  ProposalFormWrapperStyle,
   ProposalBackButtonStyle,
   ProposalBackIconWrapperStyle,
   ProposalBackIconStyle,
@@ -93,7 +93,7 @@ export const DeprecatedProposalAuthentication: FC = () => {
 
   if (step) {
     return (
-      <ProposalStepWrapperStyle>
+      <ProposalFormWrapperStyle>
         <CenterColumnStyle>
           <ProposalBackButtonStyle
             onClick={() => dispatch(resetProposalAuthStep())}
@@ -105,12 +105,12 @@ export const DeprecatedProposalAuthentication: FC = () => {
           </ProposalBackButtonStyle>
           {renderAuthStep(step, dispatch)}
         </CenterColumnStyle>
-      </ProposalStepWrapperStyle>
+      </ProposalFormWrapperStyle>
     );
   }
 
   return (
-    <ProposalStepWrapperStyle>
+    <ProposalFormWrapperStyle>
       <ColumnElementStyle>
         <ProposalBackButtonStyle
           onClick={() => dispatch(modifyProposalPending())}
@@ -139,6 +139,6 @@ export const DeprecatedProposalAuthentication: FC = () => {
           {i18n.t('proposal_submit.authentication.button_login_link')}
         </ProposalAuthLoginStyle>
       </ProposalAuthLoginWrapperStyle>
-    </ProposalStepWrapperStyle>
+    </ProposalFormWrapperStyle>
   );
 };

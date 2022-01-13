@@ -10,12 +10,15 @@ import {
   SvgExternalLinkPlain,
   SvgArrowLeft,
   SvgCheckedLightBulb,
+  SvgBlueManOnBench,
+  SvgBlueManWalking,
 } from '@make.org/ui/Svg/elements';
 import {
   SpaceBetweenColumnStyle,
   ColumnElementStyle,
   CenterColumnStyle,
   FlexElementStyle,
+  CenterRowStyle,
 } from '@make.org/ui/elements/FlexElements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import TextareaAutosize from 'react-autosize-textarea/lib';
@@ -23,6 +26,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
 import { ExtraParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
+import { Image } from '@make.org/ui/components/Image';
 
 export const PanelTriggerStyle = styled(RedButtonStyle)`
   position: fixed;
@@ -47,15 +51,14 @@ export const TriggerIconStyle = styled(SvgPencil)`
   margin-right: 7px;
 `;
 
-export const ProposalStepWrapperStyle = styled(SpaceBetweenColumnStyle)`
+export const ProposalFormWrapperStyle = styled(SpaceBetweenColumnStyle)`
   ${ContainerWithPadding};
   height: 100%;
   padding-top: 20px;
   padding-bottom: 25px;
   max-width: 720px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    padding-top: 35px;
-    padding-bottom: 50px;
+    padding: 0 50px 50px 0px;
   }
 `;
 
@@ -108,10 +111,10 @@ export const ProposalStepLabelRedStyle = styled.span`
 `;
 
 export const ProposalAltStepTitleStyle = styled(ProposalStepTitleStyle)`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${intToPx(typography.font.fontsize.S.value)};
   letter-spacing: 0.12px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.S.value)};
+    font-size: ${intToPx(typography.font.fontsize.XL.value)};
   }
 `;
 
@@ -178,7 +181,11 @@ export const ProposalBackButtonStyle = styled(BlackNoBackgroundButtonStyle)`
 export const ProposalBackButtonCenterStyle = styled(
   BlackNoBackgroundButtonStyle
 )`
+  align-self: start;
   font-family: ${MakeFonts.CircularStandardBook};
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    align-self: center;
+  }
 `;
 
 export const ProposalBackIconWrapperStyle = styled.span`
@@ -195,10 +202,7 @@ export const ProposalBackIconStyle = styled(SvgArrowLeft)`
 `;
 
 export const ProposalAuthWrapperStyle = styled(ColumnElementStyle)`
-  margin-top: 60px;
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin-top: 75px;
-  }
+  margin-top: 30px;
 `;
 
 export const ProposalAuthDisclaimerStyle = styled.p`
@@ -337,4 +341,42 @@ export const NewWindowIconStyle = styled(SvgExternalLinkPlain)`
 
 export const DataPolicyNewWindowLinkStyle = styled.a`
   color: ${color.brandSecondary};
+`;
+
+export const BlueShapeImageStyle = styled(Image)`
+  opacity: 0.4;
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+`;
+
+export const BlueManOnBench = styled(SvgBlueManOnBench)`
+  padding-bottom: 40px;
+  width: 248px;
+  min-height: 237px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    padding-bottom: 0px;
+  }
+`;
+
+export const BlueManWalking = styled(SvgBlueManWalking)``;
+
+export const ProposalImagesWrapperStyle = styled(CenterRowStyle)`
+  position: relative;
+  width: 100%;
+`;
+
+export const ProposalStepWrapperStyle = styled(FlexElementStyle)<{
+  isAuthentication: boolean;
+}>`
+  align-items: center;
+  padding-top: 30px;
+  flex-flow: column;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    align-items: ${props => (props.isAuthentication ? 'center' : 'start')};
+    justify-content: space-between;
+    padding-top: 80px;
+    flex-flow: row;
+  }
 `;

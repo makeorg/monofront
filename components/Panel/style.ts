@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { color } from 'athena-design-tokens';
-import { MiddleColumnStyle } from '@make.org/ui/elements/FlexElements';
+import { StartColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { BackgroundColors, ShadowColors } from '@make.org/assets/vars/Colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { SvgClose } from '@make.org/ui/Svg/elements';
@@ -62,7 +62,8 @@ export const PanelCloseIconStyle = styled(SvgClose)`
   }
 `;
 
-export const PanelInnerStyle = styled(MiddleColumnStyle)`
+export const PanelInnerStyle = styled(StartColumnStyle)`
+  align-items: center;
   position: absolute;
   bottom: -100%;
   left: 0;

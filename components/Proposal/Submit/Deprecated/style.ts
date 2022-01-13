@@ -48,7 +48,7 @@ export const TriggerIconStyle = styled(SvgPencil)`
   margin-right: 7px;
 `;
 
-export const ProposalStepWrapperStyle = styled(SpaceBetweenColumnStyle)`
+export const ProposalFormWrapperStyle = styled(SpaceBetweenColumnStyle)`
   ${ContainerWithPadding};
   height: 100%;
   padding-top: 20px;

@@ -27,7 +27,7 @@ import { initProposalPending } from '@make.org/store/actions/pendingProposal';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import {
-  ProposalStepWrapperStyle,
+  ProposalFormWrapperStyle,
   ProposalStepTitleStyle,
   ProposalTextareaStyle,
   ProposalFieldWrapperStyle,
@@ -112,7 +112,7 @@ export const DeprecatedProposalForm: FC = () => {
   }, []);
 
   return (
-    <ProposalStepWrapperStyle data-cy-container={FORM.PROPOSAL_SUBMIT_FORMNAME}>
+    <ProposalFormWrapperStyle data-cy-container={FORM.PROPOSAL_SUBMIT_FORMNAME}>
       <form
         id={FORM.PROPOSAL_SUBMIT_FORMNAME}
         name={FORM.PROPOSAL_SUBMIT_FORMNAME}
@@ -191,6 +191,6 @@ export const DeprecatedProposalForm: FC = () => {
           </ProposalButtonsWrapperStyle>
         </ProposalSubmitButtonsWidgetStyle>
       </form>
-    </ProposalStepWrapperStyle>
+    </ProposalFormWrapperStyle>
   );
 };

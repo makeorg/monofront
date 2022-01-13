@@ -14,6 +14,8 @@ import {
   SeparatorProposalAuthLogin,
   TextSeparatorStyle,
 } from '@make.org/ui/elements/SeparatorsElements';
+import BlueShape from '@make.org/assets/images/blueShape.png';
+import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { getDataPageLink } from '@make.org/utils/helpers/url';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { FacebookAuthentication } from '@make.org/components/Auth/Social/FacebookAuthentication';
@@ -28,7 +30,7 @@ import {
 import { Dispatch } from '@make.org/types';
 import { SocialRegisterButtonsWrapperStyle } from '../../Auth/style';
 import {
-  ProposalStepWrapperStyle,
+  ProposalFormWrapperStyle,
   ProposalStepWrapperColumnStyle,
   ProposalBackButtonStyle,
   ProposalBackButtonCenterStyle,
@@ -41,9 +43,13 @@ import {
   DataPolicyWrapperStyle,
   NewWindowIconStyle,
   DataPolicyNewWindowLinkStyle,
+  ProposalStepWrapperStyle,
+  BlueShapeImageStyle,
+  BlueManWalking,
+  ProposalImagesWrapperStyle,
 } from './style';
 
-const renderAuthStep = (step: string, dispatch: Dispatch) => {
+const renderAuthStep = (step: string | undefined, dispatch: Dispatch) => {
   switch (step) {
     case AUTH_STEP.LOGIN:
       return (
@@ -78,10 +84,11 @@ const renderAuthStep = (step: string, dispatch: Dispatch) => {
 
 export const ProposalAuthentication: FC = () => {
   const { state, dispatch } = useAppContext();
-  const { country, language, source } = state.appConfig;
+  const { country, language, source, device } = state.appConfig;
   const isWidget = source === 'widget';
   const { step } = state.pendingProposal.authMode;
   const { firstname } = state.pendingProposal;
+  const isMobile = matchMobileDevice(device);
 
   useEffect(() => {
     trackDisplayAuthenticationForm();
@@ -89,7 +96,7 @@ export const ProposalAuthentication: FC = () => {
 
   if (step) {
     return (
-      <ProposalStepWrapperStyle>
+      <ProposalFormWrapperStyle>
         <CenterColumnStyle>
           <ProposalBackButtonStyle
             onClick={() => dispatch(resetProposalAuthStep())}
@@ -98,60 +105,73 @@ export const ProposalAuthentication: FC = () => {
           </ProposalBackButtonStyle>
           {renderAuthStep(step, dispatch)}
         </CenterColumnStyle>
-      </ProposalStepWrapperStyle>
+      </ProposalFormWrapperStyle>
     );
   }
 
   return (
-    <ProposalStepWrapperColumnStyle>
-      <ColumnElementStyle>
-        <ProposalBackButtonCenterStyle
-          onClick={() => dispatch(modifyProposalPending())}
-        >
-          {i18n.t('proposal_submit.authentication.back')}
-        </ProposalBackButtonCenterStyle>
-        <ProposalAuthWrapperStyle>
-          <ProposalAltStepTitleStyle className="center">
-            {firstname}
-            {', '}
-            <ProposalStepLabelRedStyle>
-              {i18n.t('proposal_submit.authentication.last_step_red')}
-            </ProposalStepLabelRedStyle>
-            {i18n.t('proposal_submit.authentication.last_step')}
-          </ProposalAltStepTitleStyle>
-          <AuthenticationRegisterButtons
-            onEmailRegister={() =>
-              dispatch(setProposalAuthStep(AUTH_STEP.REGISTER))
-            }
-          />
-        </ProposalAuthWrapperStyle>
-      </ColumnElementStyle>
-      <ProposalAuthLoginWrapperStyle>
-        <ProposalAuthLoginStyle
-          onClick={() => dispatch(setProposalAuthStep(AUTH_STEP.LOGIN))}
-        >
-          {i18n.t('proposal_submit.authentication.button_login')}
-        </ProposalAuthLoginStyle>
-      </ProposalAuthLoginWrapperStyle>
-      <DataPolicyWrapperStyle>
-        {i18n.t('legal_consent.make_protect')}{' '}
-        <DataPolicyNewWindowLinkStyle
-          href={
-            isWidget
-              ? `https://make.org${getDataPageLink(country, language)}`
-              : getDataPageLink(country, language)
-          }
-          target="_blank"
-          rel="noopener"
-        >
-          {i18n.t('legal_consent.make_protect_link')}
-          <> </>
-          <NewWindowIconStyle aria-hidden focusable="false" />
-          <ScreenReaderItemStyle>
-            {i18n.t('common.open_new_window')}
-          </ScreenReaderItemStyle>
-        </DataPolicyNewWindowLinkStyle>
-      </DataPolicyWrapperStyle>
-    </ProposalStepWrapperColumnStyle>
+    <>
+      <ProposalStepWrapperStyle isAuthentication>
+        <ProposalStepWrapperColumnStyle>
+          <ColumnElementStyle>
+            <ProposalBackButtonCenterStyle
+              onClick={() => dispatch(modifyProposalPending())}
+            >
+              {i18n.t('proposal_submit.authentication.back')}
+            </ProposalBackButtonCenterStyle>
+            <ProposalAuthWrapperStyle>
+              <ProposalAltStepTitleStyle className="center">
+                {firstname}
+                {', '}
+                <ProposalStepLabelRedStyle>
+                  {i18n.t('proposal_submit.authentication.last_step_red')}
+                </ProposalStepLabelRedStyle>
+                {i18n.t('proposal_submit.authentication.last_step')}
+              </ProposalAltStepTitleStyle>
+              <AuthenticationRegisterButtons
+                onEmailRegister={() =>
+                  dispatch(setProposalAuthStep(AUTH_STEP.REGISTER))
+                }
+              />
+            </ProposalAuthWrapperStyle>
+          </ColumnElementStyle>
+          <ProposalAuthLoginWrapperStyle>
+            <ProposalAuthLoginStyle
+              onClick={() => dispatch(setProposalAuthStep(AUTH_STEP.LOGIN))}
+            >
+              {i18n.t('proposal_submit.authentication.button_login')}
+            </ProposalAuthLoginStyle>
+          </ProposalAuthLoginWrapperStyle>
+          <DataPolicyWrapperStyle>
+            {i18n.t('legal_consent.make_protect')}{' '}
+            <DataPolicyNewWindowLinkStyle
+              href={
+                isWidget
+                  ? `https://make.org${getDataPageLink(country, language)}`
+                  : getDataPageLink(country, language)
+              }
+              target="_blank"
+              rel="noopener"
+            >
+              {i18n.t('legal_consent.make_protect_link')}
+              <> </>
+              <NewWindowIconStyle aria-hidden focusable="false" />
+              <ScreenReaderItemStyle>
+                {i18n.t('common.open_new_window')}
+              </ScreenReaderItemStyle>
+            </DataPolicyNewWindowLinkStyle>
+          </DataPolicyWrapperStyle>
+        </ProposalStepWrapperColumnStyle>
+        {!isWidget && !isMobile && (
+          <BlueManWalking aria-hidden focusable="false" />
+        )}
+      </ProposalStepWrapperStyle>
+      {!isWidget && isMobile && (
+        <ProposalImagesWrapperStyle>
+          <BlueManWalking aria-hidden focusable="false" />
+        </ProposalImagesWrapperStyle>
+      )}
+      {!isWidget && <BlueShapeImageStyle src={BlueShape} alt="" />}
+    </>
   );
 };

@@ -6,7 +6,7 @@ import {
   trackClickKeepVoting,
   trackDisplayProposalSubmitValidation,
 } from '@make.org/utils/services/Tracking';
-import { ProposalStepWrapperStyle } from '@make.org/components/Proposal/Submit/style';
+import { ProposalFormWrapperStyle } from '@make.org/components/Proposal/Submit/style';
 import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { clearProposalPending } from '@make.org/store/actions/pendingProposal';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
@@ -39,7 +39,7 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
   }, []);
 
   return (
-    <ProposalStepWrapperStyle>
+    <ProposalFormWrapperStyle>
       <CenterColumnStyle>
         <ProposalSuccessWrapperStyle as="section">
           {isRegister && (
@@ -63,6 +63,6 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
           </ProposalSuccessRedButtonStyle>
         </ProposalSuccessWrapperStyle>
       </CenterColumnStyle>
-    </ProposalStepWrapperStyle>
+    </ProposalFormWrapperStyle>
   );
 };
