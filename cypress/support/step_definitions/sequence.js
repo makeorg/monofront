@@ -79,6 +79,28 @@ Given(
   }
 );
 
+// Display sequence page for common tests between widget and front
+Given(
+  'I am/go on/to the common sequence page of the question {string}',
+  questionSlug => {
+    const page = sequencePage[Cypress.env('application')]
+      .replace(':questionSlug', questionSlug)
+      .replace(':language', 'fr')
+      .replace(':country', 'FR');
+    const widgetUrl = sequencePage.widget
+      .replace(':questionSlug', questionSlug)
+      .replace(':language', 'fr')
+      .replace(':country', 'FR');
+    if (page === widgetUrl) {
+      cy.visit(page);
+    } else {
+      cy.monitorApiCall('getStartSequence');
+      cy.visit(`${page}?introCard=false`);
+      cy.wait('@getStartSequence', { timeout: 8000 });
+    }
+  }
+);
+
 Given(
   'I am/go on/to the sequence popular page of the question {string}',
   questionSlug => {
