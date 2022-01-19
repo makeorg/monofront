@@ -1,0 +1,671 @@
+{
+    "context": "Cette consultation s'inscrit dans une démarche collective pour définir, avec les citoyens,  la feuille de route de l’action sociale et de la santé pour les 5 prochaines années de la Ville de Mulhouse : Mulhouse solidaire, les états généraux de l’action sociale et de la santé.",
+    "key_figures": {
+        "participants": 8305,
+        "votes": 84840,
+        "proposals": 580
+    },
+    "top_ideas": [
+        {
+            "name": "Aide sociale et prise en charge",
+            "ideas": [
+                {
+                    "idea": "Renforcer le système d'aide alimentaire",
+                    "agreement": 83,
+                    "adhesion": 22,
+                    "realistic": 26
+                },
+                {
+                    "idea": "Renforcer l’accueil et la prise en charge des personnes en situation de difficulté sociale",
+                    "agreement": 75,
+                    "adhesion": 14,
+                    "realistic": 20
+                },
+                {
+                    "idea": "Renforcer le système de protection des femmes et des enfants victimes de violences",
+                    "agreement": 86,
+                    "adhesion": 25,
+                    "realistic": 25
+                }
+
+
+            ]
+        },
+        {
+            "name": "Logement",
+            "ideas": [
+                {
+                    "idea": "Réglementer les conditions de location et l'entretien des logements insalubres",
+                    "agreement": 85,
+                    "adhesion": 20,
+                    "realistic": 27
+                },
+                {
+                    "idea": "Faciliter l'accès au logement pour les plus précaires",
+                    "agreement": 78,
+                    "adhesion": 14,
+                    "realistic": 19
+                }
+            ]
+        },
+        {
+            "name": "Structures et acteurs sociaux",
+            "ideas": [
+                {
+                    "idea": "Faciliter et améliorer l'accès aux démarches administratives et judiciaires",
+                    "agreement": 86,
+                    "adhesion": 18,
+                    "realistic": 31
+                },
+                {
+                    "idea": "Soutenir davantage le réseau associatif",
+                    "agreement": 78,
+                    "adhesion": 13,
+                    "realistic": 25
+                },
+                {
+                    "idea": "Mieux faire connaître les services et acteurs sociaux de la ville",
+                    "agreement": 74,
+                    "adhesion": 8,
+                    "realistic": 21
+                },
+                {
+                    "idea": "Améliorer le système de transports pour certains publics",
+                    "agreement": 78,
+                    "adhesion": 12,
+                    "realistic": 26
+                }
+
+
+            ]
+        },
+        {
+            "name": "Emploi",
+            "ideas": [
+                {
+                    "idea": "Accompagner vers l’insertion professionnelle, notamment les jeunes",
+                    "agreement": 78,
+                    "adhesion": 18,
+                    "realistic": 24
+                }
+            ]
+        },
+        {
+            "name": "Santé",
+            "ideas": [
+                {
+                    "idea": "Améliorer l'offre de soin en ville et à l'hôpital",
+                    "agreement": 86,
+                    "adhesion": 21,
+                    "realistic": 25
+                },
+                {
+                    "idea": "Mieux inclure les personnes en situation de handicap",
+                    "agreement": 83,
+                    "adhesion": 18,
+                    "realistic": 24
+                }
+            ]
+        },
+        {
+            "name": "Parentalité et jeunesse",
+            "ideas": [
+                {
+                    "idea": "Développer les structures d'accueil et les aides à la parentalité",
+                    "agreement": 81,
+                    "adhesion": 21,
+                    "realistic": 23
+                },
+                {
+                    "idea": "Lutter contre des formes de violence et d'exclusion chez les jeunes et les enfants",
+                    "agreement": 89,
+                    "adhesion": 24,
+                    "realistic": 23
+                }
+            ]
+        },
+{
+            "name": "Liens sociaux",
+            "ideas": [
+                {
+                    "idea": "Développer des liens de solidarité et d'entraide entre les habitants de la ville",
+                    "agreement": 79,
+                    "adhesion": 16,
+                    "realistic": 16
+                },
+                {
+                    "idea": "Créer du lien intergénérationnel, dans les structures et en ville",
+                    "agreement": 82,
+                    "adhesion": 21,
+                    "realistic": 22
+                }
+
+
+            ]
+        },
+        {
+            "name": "Numérique",
+            "ideas": [
+                {
+                    "idea": "Faciliter la formation et l’accès au numérique",
+                    "agreement": 70,
+                    "adhesion": 12,
+                    "realistic": 26
+                }
+            ]
+        },
+        {
+            "name": "Culture",
+            "ideas": [
+                {
+                    "idea": "Démocratiser l'accès aux activités sportives et culturelles, notamment pour les publics précaires",
+                    "agreement": 71,
+                    "adhesion": 18,
+                    "realistic": 25
+                }
+            ]
+        },
+        {
+            "name": "Gestion urbaine et bien-être dans la ville",
+            "ideas": [
+                {
+                    "idea": "Favoriser des pratiques de recyclage",
+                    "agreement": 76,
+                    "adhesion": 15,
+                    "realistic": 22
+                },
+                {
+                    "idea": "Améliorer la circulation des vélos et des trottinettes en ville",
+                    "agreement": 76,
+                    "adhesion": 19,
+                    "realistic": 21
+                },
+                {
+                    "idea": "Faciliter l'implantation des entreprises locales",
+                    "agreement": 77,
+                    "adhesion": 25,
+                    "realistic": 12
+                },
+                {
+                    "idea": "Sécuriser les déplacements piétons et le stationnement",
+                    "agreement": 77,
+                    "adhesion": 13,
+                    "realistic": 34
+                },
+                {
+                    "idea": "Prévenir certaines formes de délinquance dans les espaces urbains",
+                    "agreement": 77,
+                    "adhesion": 15,
+                    "realistic": 27
+                },
+                {
+                    "idea": "Développer des actions en matière de propreté urbaine",
+                    "agreement": 86,
+                    "adhesion": 22,
+                    "realistic": 25
+                },
+                {
+                    "idea": "Réduire voire interdire les nuisances sonores",
+                    "agreement": 77,
+                    "adhesion": 13,
+                    "realistic": 19
+                },
+                {
+                    "idea": "Rendre la ville plus attractive",
+                    "agreement": 74,
+                    "adhesion": 19,
+                    "realistic": 22
+                },
+                {
+                    "idea": "Végétaliser davantage la ville",
+                    "agreement": 87,
+                    "adhesion": 29,
+                    "realistic": 19
+                },
+                {
+                    "idea": "Favoriser la participation citoyenne",
+                    "agreement": 65,
+                    "adhesion": 8,
+                    "realistic": 26
+                }
+            ]
+        }
+
+
+
+
+
+    ],
+    "controversials": [
+        {
+            "id": "dab31def-93b8-46a6-988e-a35524a1968d",
+            "content": "Il faut aider au paiement des protections absorbantes (couches adultes ou enfants)",
+            "author": "Jeanne",
+            "agree": 39,
+            "like_it": 6,
+            "disagree": 31,
+            "no_way": 4,
+            "votes": 50
+        },
+        {
+            "id": "9c238542-5df3-4687-8e5c-105ee6472634",
+            "content": "Il faut donner des aides pour l'achat de produits d’hygiène et ménagers",
+            "author": "Jeanne",
+            "agree": 32,
+            "like_it": 6,
+            "disagree": 43,
+            "no_way": 12,
+            "votes": 66
+        },
+        {
+            "id": "04aa9708-e6e9-4636-aa68-79e2fc21a401",
+            "content": "Il faut financer des séjours de vacances aux familles défavorisées",
+            "author": "Magalie",
+            "agree": 34,
+            "like_it": 8,
+            "disagree": 41,
+            "no_way": 16,
+            "votes": 131
+        },
+        {
+            "id": "544018db-cbbf-4dc0-b685-531e8a22f2cd",
+            "content": "Il faut aider financièrement les précaires à payer leur facture d'électricité ou de gaz à la sortie de l'hiver",
+            "author": "Magalie",
+            "agree": 53,
+            "like_it": 10,
+            "disagree": 30,
+            "no_way": 10,
+            "votes": 138
+        },
+        {
+            "id": "fca9eaaa-1850-43a0-8e2e-c8d75f414925",
+            "content": "Il faut installer des frigos solidaires dans la ville",
+            "author": "Jeanne",
+            "agree": 39,
+            "like_it": 10,
+            "disagree": 38,
+            "no_way": 11,
+            "votes": 98
+        },
+        {
+            "id": "4e98eca5-6d0c-4054-a6f9-0beafe4e06bb",
+            "content": "Il faut accueillir dignement les personnes étrangères pour enrichir Mulhouse",
+            "author": "Odile",
+            "agree": 43,
+            "like_it": 10,
+            "disagree": 26,
+            "no_way": 14,
+            "votes": 128
+        },
+        {
+            "id": "bc162795-b16f-4bcd-9c66-fefdd89c2abd",
+            "content": "Il faut faciliter l'installation des jeunes ou des précaires en apportant une garantie de loyer par la ville",
+            "author": "Magalie",
+            "agree": 44,
+            "like_it": 11,
+            "disagree": 28,
+            "no_way": 8,
+            "votes": 130
+        },
+        {
+            "id": "0c2d6301-d81b-4749-a568-87eaa4112fad",
+            "content": "Il faut trouver une solution pour pouvoir mettre des personnes au chômage devant les passages piétons pour faire traverser nos enfants",
+            "author": "Jessica",
+            "agree": 42,
+            "like_it": 5,
+            "disagree": 33,
+            "no_way": 7,
+            "votes": 132
+        },
+        {
+
+            "id": "f4af8f91-d6d7-4d5b-9908-df9355ef7ba0",
+            "content": "Il faut un revenu pour les jeunes sans travail de moins de 25 ans. ",
+            "author": "Pierrette",
+            "agree": 37,
+            "like_it": 7,
+            "disagree": 38,
+            "no_way": 18,
+            "votes": 127
+        }
+    ],
+    "rejected": [],
+    "cartography": [
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Thèmes cités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Logement",
+                    "percent": 15,
+                    "color": "#4B45A5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Bien-être ",
+                    "sublabel": "dans la ville",
+                    "percent": 14,
+                    "color": "#8955BD",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.25
+                    }
+                },
+                {
+                    "label": "Entraide",
+                    "percent": 12,
+                    "color": "#EB7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Circulation et ",
+                    "sublabel": "transports",
+                    "percent": 11,
+                    "color": "#F5976E",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.1,
+                        "yAxis": 2.15
+                    }
+                },
+                {
+                    "label": "Offre de soin",
+                    "percent": 6,
+                    "color": "#EEB298",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.15
+                    }
+                },
+                {
+                    "label": "Emploi",
+                    "percent": 6,
+                    "color": "#FFD266",
+                    "adjustLabel": {
+                      "textAlign": "right",
+                      "xAxis": 1.8,
+                      "yAxis": 2.15
+                    }
+                },
+                {
+                    "label": "Cultures et ",
+                    "sublabel": "loisirs",
+                    "percent": 6,
+                    "color": "#FFF689",
+                    "adjustLabel": {
+                      "textAlign": "right",
+                      "xAxis": 1.8,
+                      "yAxis": 2.15
+                    }
+                },
+                {
+                    "label": "Jeunesse",
+                    "percent": 6,
+                    "color": "#E5FFAE",
+                    "adjustLabel": {
+                      "textAlign": "right",
+                      "xAxis": 1.8,
+                      "yAxis": 2.05
+                    }
+                },
+                {
+                    "label": "Services publics ",
+                    "sublabel": "et sociaux",
+                    "percent": 5,
+                    "color": "#C1EBDD",
+                    "adjustLabel": {
+                      "textAlign": "right",
+                      "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Autres",
+                    "percent": 23,
+                    "color": "#FFF",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "yAxis": 1.8
+                    }
+                }
+            ]
+        }
+    ],
+    "participation": [
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (1/2)",
+            "forcedHigherValue": 15,
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "Bourtzwiller",
+                    "bars": {
+                        "first": 6,
+                        "second": 11
+                    }
+                },
+                {
+                    "label": "Vauban / Neppert / Sellier",
+                    "bars": {
+                        "first": 5,
+                        "second": 10
+                    }
+                },
+                {
+                    "label": "Cité-briand",
+                    "bars": {
+                        "first": 6,
+                        "second": 8
+                    }
+                },
+                {
+                    "label": "Coteaux",
+                    "bars": {
+                        "first": 5,
+                        "second": 8
+                    }
+                },
+                {
+                    "label": "Rebberg",
+                    "bars": {
+                        "first": 10,
+                        "second": 7
+                    }
+                },
+                {
+                    "label": "Franklin-fridolin",
+                    "bars": {
+                        "first": 3,
+                        "second": 6
+                    }
+                },
+                {
+                    "label": "Europe / Nouveau bassin / Nordfeld",
+                    "bars": {
+                        "first": 14,
+                        "second": 6
+                    }
+                }
+            ],
+            "id": "participation_0"
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (2/2)",
+            "forcedHigherValue": 15,
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "Drouot / Barbanègre",
+                    "bars": {
+                        "first": 4,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Dornach",
+                    "bars": {
+                        "first": 14,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Daguerre",
+                    "bars": {
+                        "first": 4,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Fonderie",
+                    "bars": {
+                        "first": 6,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Centre historique",
+                    "bars": {
+                        "first": 14,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Wolf-Wagner",
+                    "bars": {
+                        "first": 3,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Doller",
+                    "bars": {
+                        "first": 2,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Haut-poirier",
+                    "bars": {
+                        "first": 2,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Brustlein",
+                    "bars": {
+                        "first": 2,
+                        "second": 4
+                    }
+                }
+            ],
+            "id": "participation_1"
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par âge",
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "16-24",
+                    "bars": {
+                        "first": 10,
+                        "second": 16
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "25-34",
+                    "bars": {
+                        "first": 25,
+                        "second": 17
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "35-44",
+                    "bars": {
+                        "first": 25,
+                        "second": 17
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "45-54",
+                    "bars": {
+                        "first": 20,
+                        "second": 16
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "55-64",
+                    "bars": {
+                        "first": 12,
+                        "second": 13
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "65+",
+                    "bars": {
+                        "first": 8,
+                        "second": 21
+                    },
+                    "color": "#8BDAB2"
+                }
+            ],
+            "id": "participation_2"
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Votes par genre",
+            "legend": "",
+            "data": [
+                {
+                    "label": "hommes",
+                    "percent": 38,
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "femmes",
+                    "percent": 62,
+                    "color": "#8BDAB2"
+                }
+            ],
+            "id": "participation_3"
+        }
+    ]
+}
