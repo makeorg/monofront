@@ -657,12 +657,12 @@
                 {
                     "label": "hommes",
                     "percent": 38,
-                    "color": "#8BDAB2"
+                    "color": "#4B45A5"
                 },
                 {
                     "label": "femmes",
                     "percent": 62,
-                    "color": "#8BDAB2"
+                    "color": "#8955BD"
                 }
             ],
             "id": "participation_3"
