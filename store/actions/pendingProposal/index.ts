@@ -8,11 +8,13 @@ import {
 } from '../../actionTypes';
 
 export const initProposalPending = (
-  proposalContent: string
+  proposalContent: string,
+  firstname?: string
 ): ReducerAction => ({
   type: PROPOSAL_INIT_PENDING,
   payload: {
     proposalContent,
+    firstname,
     authMode: {
       enable: true,
     },

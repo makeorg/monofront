@@ -28,22 +28,22 @@ import { closePanel, setPanelContent } from '@make.org/store/actions/panel';
 import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
-import { RegisterForm } from './Form';
-import { DeprecatedRegisterFormPanel as RegisterFormPanel } from './Deprecated/FormPanel';
+import { RegisterForm } from '../Form';
+import { DeprecatedRegisterFormPanel as RegisterFormPanel } from './FormPanel';
 // import { RegisterFormPanel } from './FormPanel';
 import {
   AuthenticationWrapperStyle,
   SocialRegisterButtonsWrapperStyle,
-} from '../style';
-import { LegalConsent } from './LegalConsent';
+} from '../../style';
+import { LegalConsent } from '../LegalConsent';
 
 type Props = {
   panel?: boolean;
 };
 
-export const Register: React.FC<Props> = ({ panel }) => {
+export const DeprecatedRegister: React.FC<Props> = ({ panel }) => {
   const { dispatch, state } = useAppContext();
-  const { proposalContent, firstname } = state.pendingProposal;
+  const { proposalContent } = state.pendingProposal;
   const [user, setUser] = useState<RegisterFormDataType>({
     email: '',
     password: '',
@@ -154,7 +154,7 @@ export const Register: React.FC<Props> = ({ panel }) => {
         if (!panel) {
           dispatch(modalClose());
         }
-        if (proposalContent && firstname && panel) {
+        if (proposalContent && panel) {
           await ProposalService.propose(
             proposalContent,
             question.questionId,

@@ -56,7 +56,9 @@ export const ProposalForm: FC = () => {
   const [proposalContent, setProposalContent] = useState(
     state.pendingProposal.proposalContent || ''
   );
-  const [firstname, setFirstname] = useState('');
+  const [firstname, setFirstname] = useState(
+    state.pendingProposal.firstname || ''
+  );
   const inputRef = useRef() as React.MutableRefObject<HTMLTextAreaElement>;
   const question: QuestionType | null = selectCurrentQuestion(state);
   const { isLoggedIn } = selectAuthentication(state);
@@ -70,8 +72,6 @@ export const ProposalForm: FC = () => {
     !proposalHasValidLength(proposalContent.length) &&
     !userFirstnameHasValidLength(firstname.length);
 
-  // need to add firstname to proposalPending for state update and disablebutton
-  // Also check for new strings (english -added some temporary- and ger)
   const handleFieldFocus = () => {
     if (proposalContent.length === 0) {
       setProposalContent(baitText);
@@ -114,7 +114,7 @@ export const ProposalForm: FC = () => {
       );
     }
 
-    dispatch(initProposalPending(proposalContent));
+    dispatch(initProposalPending(proposalContent, firstname));
   };
 
   useEffect(() => {

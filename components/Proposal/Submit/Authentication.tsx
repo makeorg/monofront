@@ -6,7 +6,8 @@ import {
   ColumnElementStyle,
 } from '@make.org/ui/elements/FlexElements';
 import { AuthenticationRegisterButtons } from '@make.org/components/Auth/Register/Buttons';
-import { Register } from '@make.org/components/Auth/Register';
+// import { Register } from '@make.org/components/Auth/Register';
+import { DeprecatedRegister as Register } from '@make.org/components/Auth/Register/Deprecated';
 import { DeprecatedLogin as Login } from '@make.org/components/Auth/Login/Deprecated/index';
 // import { Login } from '@make.org/components/Auth/Login/index';
 import { PasswordForgot } from '@make.org/components/Auth/PasswordForgot';
@@ -82,6 +83,7 @@ export const ProposalAuthentication: FC = () => {
   const { country, language, source } = state.appConfig;
   const isWidget = source === 'widget';
   const { step } = state.pendingProposal.authMode;
+  const { firstname } = state.pendingProposal;
 
   useEffect(() => {
     trackDisplayAuthenticationForm();
@@ -112,6 +114,8 @@ export const ProposalAuthentication: FC = () => {
         </ProposalBackButtonCenterStyle>
         <ProposalAuthWrapperStyle>
           <ProposalAltStepTitleStyle className="center">
+            {firstname}
+            {', '}
             <ProposalStepLabelRedStyle>
               {i18n.t('proposal_submit.authentication.last_step_red')}
             </ProposalStepLabelRedStyle>

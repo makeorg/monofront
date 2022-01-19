@@ -6,7 +6,7 @@ import {
   ColumnElementStyle,
 } from '@make.org/ui/elements/FlexElements';
 import { AuthenticationRegisterButtons } from '@make.org/components/Auth/Register/Buttons';
-import { Register } from '@make.org/components/Auth/Register';
+import { DeprecatedRegister as Register } from '@make.org/components/Auth/Register/Deprecated';
 import { DeprecatedLogin as Login } from '@make.org/components/Auth/Login/Deprecated/index';
 import { RedLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { PasswordForgot } from '@make.org/components/Auth/PasswordForgot';

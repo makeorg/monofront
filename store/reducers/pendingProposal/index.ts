@@ -23,6 +23,7 @@ export const pendingProposal_reducer: Reducer = (
       return {
         ...state,
         proposalContent: action.payload.proposalContent,
+        firstname: action.payload.firstname,
         authMode: action.payload.authMode,
       };
     case PROPOSAL_CLEAR_PENDING:

@@ -21,6 +21,7 @@ import {
   loginSocialSuccess,
   loginSocialFailure,
   getUser,
+  getUserRegister,
 } from '@make.org/store/actions/authentication';
 import { Logger } from '@make.org/utils/services/Logger';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
@@ -37,10 +38,14 @@ import {
   SvgLogoWrapperStyle,
 } from './style';
 
-export const GoogleAuthentication: FC = () => {
+type Props = {
+  isRegister?: boolean;
+};
+
+export const GoogleAuthentication: FC<Props> = ({ isRegister }) => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy } = state.appConfig || {};
-  const { proposalContent } = state.pendingProposal;
+  const { proposalContent, firstname } = state.pendingProposal;
   const question = selectCurrentQuestion(state);
 
   /** Google login method callback */
@@ -50,7 +55,12 @@ export const GoogleAuthentication: FC = () => {
     const success = async (isNewAccount: boolean) => {
       dispatch(loginSocialSuccess());
       trackAuthenticationSocialSuccess(GOOGLE_PROVIDER_ENUM, isNewAccount);
-      await getUser(dispatch, state.modal.isOpen);
+      // @todo need to clean after AB/testing
+      if (firstname && isRegister) {
+        await getUserRegister(dispatch, firstname);
+      } else {
+        await getUser(dispatch, state.modal.isOpen);
+      }
       dispatch(
         displayNotificationBanner(
           NOTIF.LOGIN_SUCCESS_MESSAGE,
