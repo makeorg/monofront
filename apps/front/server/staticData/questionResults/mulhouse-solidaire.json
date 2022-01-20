@@ -444,13 +444,13 @@
         {
             "type": "histogram",
             "unit": "percentage",
-            "name": "Participation par région (1/2)",
+            "name": "Participation par quartier (1/2)",
             "forcedHigherValue": 15,
             "legend": {
                 "title": "Répartition des votes",
                 "dimensions": {
                     "first": "votes",
-                    "second": "population générale"
+                    "second": "population de Mulhouse"
                 }
             },
             "data": [
@@ -509,13 +509,13 @@
         {
             "type": "histogram",
             "unit": "percentage",
-            "name": "Participation par région (2/2)",
+            "name": "Participation par quartier (2/2)",
             "forcedHigherValue": 15,
             "legend": {
                 "title": "Répartition des votes",
                 "dimensions": {
                     "first": "votes",
-                    "second": "population générale"
+                    "second": "population de Mulhouse"
                 }
             },
             "data": [
@@ -593,7 +593,7 @@
                 "title": "Répartition des votes",
                 "dimensions": {
                     "first": "votes",
-                    "second": "population générale"
+                    "second": "population de Mulhouse"
                 }
             },
             "data": [
