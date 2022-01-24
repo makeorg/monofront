@@ -159,6 +159,9 @@ export const useSequence = (
   useEffect(() => {
     if (!cards.length) {
       setCurrentCard(noProposalCard);
+      if (!isWidget) {
+        dispatch(setSequenceLength(0));
+      }
       return;
     }
     setCurrentCard(cards[currentIndex]);
