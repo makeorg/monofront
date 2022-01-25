@@ -31,7 +31,7 @@ type Props = {
   user: RegisterFormDataType;
   errors: ErrorObjectType[];
   handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  handleLegalField: (fieldName: string, value: boolean) => void;
+  handleCheckbox: (fieldName: string, value: boolean) => void;
   handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
   checkRegistration: () => void;
   disableSubmit: boolean;
@@ -44,7 +44,7 @@ export const RegisterFormPanel: React.FC<Props> = ({
   user,
   errors,
   handleChange,
-  handleLegalField,
+  handleCheckbox,
   handleSubmit,
   checkRegistration,
   disableSubmit,
@@ -129,8 +129,8 @@ export const RegisterFormPanel: React.FC<Props> = ({
               </ScreenReaderItemStyle>
             </TermsOfUseLinkBlackStyle>
           </ConditionParagraphBlackStylePanel>
-          <RegisterCheckBox handleLegalField={handleLegalField} required />
-          <OptOutCheckBox />
+          <RegisterCheckBox handleCheckbox={handleCheckbox} required />
+          <OptOutCheckBox handleCheckbox={handleCheckbox} />
           <SubmitButton
             formName={FORM.REGISTER_PANEL_FORMNAME}
             id="authentication-register-submit"

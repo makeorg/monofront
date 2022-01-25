@@ -168,6 +168,7 @@ export class UserApiService {
       legalMinorConsent,
       legalAdvisorApproval,
       approvePrivacyPolicy,
+      optInNewsletter,
     } = user.profile;
     const { email, password } = user;
 
@@ -183,6 +184,7 @@ export class UserApiService {
         country: ApiService.country,
         language: ApiService.language,
         questionId: trackingParamsService.questionId,
+        optIn: optInNewsletter,
         legalMinorConsent,
         legalAdvisorApproval,
         approvePrivacyPolicy,

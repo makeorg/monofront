@@ -20,7 +20,7 @@ import {
 
 type Props = {
   needLegalConsent: boolean;
-  handleLegalField: (fieldName: string, value: boolean) => void;
+  handleCheckbox: (fieldName: string, value: boolean) => void;
   handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
   toggleLegalConsent: (event: SyntheticEvent<HTMLButtonElement>) => void;
   isPanel?: boolean;
@@ -28,7 +28,7 @@ type Props = {
 
 export const LegalConsent: React.FC<Props> = ({
   needLegalConsent,
-  handleLegalField,
+  handleCheckbox,
   handleSubmit,
   toggleLegalConsent,
   isPanel,
@@ -81,9 +81,7 @@ export const LegalConsent: React.FC<Props> = ({
           id="legalMinorConsent"
           value={JSON.stringify(minorConsent)}
           handleCheck={() => setMinorConsent(!minorConsent)}
-          handleChange={() =>
-            handleLegalField('legalMinorConsent', minorConsent)
-          }
+          handleChange={() => handleCheckbox('legalMinorConsent', minorConsent)}
           label={i18n.t('legal_consent.minor_consent')}
           isChecked={minorConsent}
           required
@@ -96,7 +94,7 @@ export const LegalConsent: React.FC<Props> = ({
           value={JSON.stringify(parentalConsent)}
           handleCheck={() => setParentalConsent(!parentalConsent)}
           handleChange={() =>
-            handleLegalField('legalAdvisorApproval', parentalConsent)
+            handleCheckbox('legalAdvisorApproval', parentalConsent)
           }
           label={i18n.t('legal_consent.parental_consent')}
           isChecked={parentalConsent}

@@ -15,12 +15,12 @@ import { useAppContext } from '@make.org/store';
 
 type Props = {
   /** Method called on change legal field */
-  handleLegalField: (fieldName: string, value: boolean) => void;
+  handleCheckbox: (fieldName: string, value: boolean) => void;
   /** Is input required or optional */
   required?: boolean;
 };
 export const RegisterCheckBox: React.FC<Props> = ({
-  handleLegalField,
+  handleCheckbox,
   required = false,
 }) => {
   const { state } = useAppContext();
@@ -29,7 +29,7 @@ export const RegisterCheckBox: React.FC<Props> = ({
   const isWidget = source === 'widget';
 
   const handleChange = () => {
-    handleLegalField('approvePrivacyPolicy', !checked);
+    handleCheckbox('approvePrivacyPolicy', !checked);
     setIsChecked(!checked);
   };
 

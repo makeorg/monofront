@@ -31,6 +31,7 @@ type Props = {
 
 export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
   const { dispatch, state } = useAppContext();
+  // to remember : optInNewsletter has been swapped for an optOut boolean (might be changed later)
   const [optInNewsletter, setOptInNewsletter] = useState<boolean>(
     profile.optInNewsletter
   );
@@ -106,7 +107,7 @@ export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
           value="newsletter"
           handleCheck={handleCheck}
           label={i18n.t('profile.newsletter_update.optin_label')}
-          isChecked={optInNewsletter}
+          isChecked={!optInNewsletter}
         />
         <SubmitButton
           disabled={!canSubmit}

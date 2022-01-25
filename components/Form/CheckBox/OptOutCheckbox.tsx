@@ -11,21 +11,22 @@ import { useAppContext } from '@make.org/store';
 
 type Props = {
   /** Method called on change legal field */
-  //   handleLegalField: (fieldName: string, value: boolean) => void;
+  handleCheckbox: (fieldName: string, value: boolean) => void;
   /** Is input required or optional */
   required?: boolean;
 };
 export const OptOutCheckBox: React.FC<Props> = ({
-  //   handleLegalField,
+  handleCheckbox,
   required = false,
 }) => {
   const { state } = useAppContext();
-  const [checked, setIsChecked] = useState<boolean>(false);
+  // to remember : optInNewsletter has been swapped for an optOut boolean (might be changed later)
+  const [checked, setIsChecked] = useState<boolean>(true);
   const { source } = state.appConfig;
   const isWidget = source === 'widget';
 
   const handleChange = () => {
-    // handleLegalField('approvePrivacyPolicy', !checked);
+    handleCheckbox('optInNewsletter', !checked);
     setIsChecked(!checked);
   };
 
@@ -36,9 +37,9 @@ export const OptOutCheckBox: React.FC<Props> = ({
           required={required}
           checked={checked}
           onChange={handleChange}
-          id="optoutCheckbox"
+          id="optInNewsletter"
         />
-        <StyledCheckbox isChecked={checked}>
+        <StyledCheckbox isChecked={!checked}>
           <SvgCheck />
         </StyledCheckbox>
         <span>{i18n.t('legal_consent.opt_out')}</span>

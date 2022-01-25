@@ -54,6 +54,7 @@ export const Register: React.FC<Props> = ({ panel }) => {
       legalMinorConsent: false,
       legalAdvisorApproval: false,
       approvePrivacyPolicy: false,
+      optInNewsletter: false,
     },
   });
   const [errors, setErrors] = useState<ErrorObjectType[]>([]);
@@ -68,11 +69,11 @@ export const Register: React.FC<Props> = ({ panel }) => {
     dispatch(modalShowLogin());
   };
 
-  const handleLegalField = (fieldName: string, value: boolean) => {
+  const handleCheckbox = (fieldName: string, value: boolean) => {
     if (!fieldName || value === undefined) {
       Logger.logError({
         message:
-          'HandleLegalField in register form : fieldname or value is missing',
+          'handleCheckbox in register form : fieldname or value is missing',
         name: 'register',
       });
       return null;
@@ -186,7 +187,7 @@ export const Register: React.FC<Props> = ({ panel }) => {
     <>
       <LegalConsent
         needLegalConsent={needLegalConsent}
-        handleLegalField={handleLegalField}
+        handleCheckbox={handleCheckbox}
         handleSubmit={handleSubmit}
         toggleLegalConsent={toggleLegalConsent}
         isPanel={panel}
@@ -220,7 +221,7 @@ export const Register: React.FC<Props> = ({ panel }) => {
               user={user}
               errors={errors}
               handleChange={handleChange}
-              handleLegalField={handleLegalField}
+              handleCheckbox={handleCheckbox}
               handleSubmit={userIsAChild ? toggleLegalConsent : handleSubmit}
               disableSubmit={waitingCallback}
             />
@@ -236,7 +237,7 @@ export const Register: React.FC<Props> = ({ panel }) => {
             user={user}
             errors={errors}
             handleChange={handleChange}
-            handleLegalField={handleLegalField}
+            handleCheckbox={handleCheckbox}
             handleSubmit={userIsAChild ? toggleLegalConsent : handleSubmit}
             disableSubmit={waitingCallback}
             checkRegistration={checkRegistration}

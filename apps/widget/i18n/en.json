@@ -591,8 +591,8 @@
       }
     },
     "newsletter_update": {
-      "title": "Manage my email settings",
-      "optin_label": "By clicking, you accept to receive emails by Make.org. Your email address will never be shared to any third party."
+      "title": "Manage my preferences",
+      "optin_label": "I am opposed to receiving marketing e-mails to inform me of projects conducted by Make.org"
     },
     "delete_account": {
       "title": "Delete my account",
@@ -1133,7 +1133,7 @@
     "privacy_policy": "privacy policy",
     "make_protect": "@@legal_consent.make_protect|fr:Make.org s'engage à protéger vos",
     "make_protect_link": "@@legal_consent.make_protect_link|fr:données personnelles.",
-    "opt_out": "@@legal_consent.opt_out|fr:Je m'oppose à recevoir des e-mails commerciaux de Make.org pour me tenir au courant de nouveaux projets (optionnel)"
+    "opt_out": "@@legal_consent.opt_out|fr:Je m'oppose à recevoir des emails marketing de Make.org pour me tenir au courant de nouveaux projets"
   },
   "browse": {
     "page_title": "Browse consultations",

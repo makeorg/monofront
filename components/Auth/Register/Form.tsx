@@ -2,6 +2,7 @@ import React, { ChangeEvent, FormEvent, useEffect } from 'react';
 import i18n from 'i18next';
 import { ErrorObjectType, RegisterFormDataType } from '@make.org/types';
 import { RegisterCheckBox } from '@make.org/components/Form/CheckBox/RegisterCheckbox';
+import { OptOutCheckBox } from '@make.org/components/Form/CheckBox/OptOutCheckbox';
 import {
   FormCenterAlignStyle,
   FormRequirementsStyle,
@@ -25,7 +26,7 @@ type Props = {
   user: RegisterFormDataType;
   errors: ErrorObjectType[];
   handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  handleLegalField: (fieldName: string, value: boolean) => void;
+  handleCheckbox: (fieldName: string, value: boolean) => void;
   handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
   disableSubmit: boolean;
 };
@@ -36,7 +37,7 @@ export const RegisterForm: React.FC<Props> = ({
   user,
   errors,
   handleChange,
-  handleLegalField,
+  handleCheckbox,
   handleSubmit,
   disableSubmit,
 }) => {
@@ -95,7 +96,8 @@ export const RegisterForm: React.FC<Props> = ({
           {i18n.t('register.gtu_text_second')}
         </span>
       </ConditionParagraphStyle>
-      <RegisterCheckBox handleLegalField={handleLegalField} required />
+      <RegisterCheckBox handleCheckbox={handleCheckbox} required />
+      <OptOutCheckBox handleCheckbox={handleCheckbox} />
       <SubmitButton
         formName={FORM.REGISTER_FORMNAME}
         id="authentication-register-submit"

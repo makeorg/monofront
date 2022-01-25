@@ -5,6 +5,7 @@ export type RegisterFormProfileDataType = {
   legalMinorConsent: boolean;
   legalAdvisorApproval: boolean;
   approvePrivacyPolicy: boolean;
+  optInNewsletter: boolean;
 };
 
 export type RegisterFormDataType = {

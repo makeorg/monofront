@@ -123,7 +123,7 @@ export const UpdateInformations: FC<Props> = ({ user }) => {
       <CenterColumnStyle>
         <LegalConsent
           needLegalConsent={needLegalConsent}
-          handleLegalField={handleChange}
+          handleCheckbox={handleChange}
           handleSubmit={throttle(handleSubmit)}
           toggleLegalConsent={toggleLegalConsent}
         />

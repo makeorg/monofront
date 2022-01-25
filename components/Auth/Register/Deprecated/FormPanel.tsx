@@ -17,6 +17,7 @@ import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElemen
 import { ConditionParagraphStylePanel } from '@make.org/ui/elements/ParagraphElements';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { RegisterCheckBox } from '@make.org/components/Form/CheckBox/RegisterCheckbox';
+import { OptOutCheckBox } from '@make.org/components/Form/CheckBox/OptOutCheckbox';
 import { trackDisplaySignupForm } from '@make.org/utils/services/Tracking';
 import { FormErrors } from '../../../Form/Errors';
 import {
@@ -31,7 +32,7 @@ type Props = {
   user: RegisterFormDataType;
   errors: ErrorObjectType[];
   handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  handleLegalField: (fieldName: string, value: boolean) => void;
+  handleCheckbox: (fieldName: string, value: boolean) => void;
   handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
   checkRegistration: () => void;
   disableSubmit: boolean;
@@ -44,7 +45,7 @@ export const DeprecatedRegisterFormPanel: React.FC<Props> = ({
   user,
   errors,
   handleChange,
-  handleLegalField,
+  handleCheckbox,
   handleSubmit,
   checkRegistration,
   disableSubmit,
@@ -131,7 +132,8 @@ export const DeprecatedRegisterFormPanel: React.FC<Props> = ({
               </PanelTermsOfUseLinkStyle>
             </span>
           </ConditionParagraphStylePanel>
-          <RegisterCheckBox handleLegalField={handleLegalField} required />
+          <RegisterCheckBox handleCheckbox={handleCheckbox} required />
+          <OptOutCheckBox handleCheckbox={handleCheckbox} />
           <SubmitButton
             formName={FORM.REGISTER_PANEL_FORMNAME}
             id="authentication-register-submit"
