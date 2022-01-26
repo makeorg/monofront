@@ -100,14 +100,16 @@ export const TermsOfUseEN: FC = () => {
               government authorities and, above all, the citizens who are
               subjected to it. We are very anxious to ensure the truth of
               information posted on our website and in both these{' '}
-              <abbr
-                lang="en"
-                title="Web Content Accessibility Guidelines - Version 2.1"
-              >
-                WCAG 2.1
+              <abbr lang="en" title="General Terms of service">
+                GTS
               </abbr>{' '}
-              and our Moderation Charter we set out the measures we adopt to
-              this end.
+              and our{' '}
+              <RedHTMLLinkElementStyle
+                href={getDataPageLink(country, language)}
+              >
+                Moderation Charter
+              </RedHTMLLinkElementStyle>{' '}
+              we set out the measures we adopt to this end.
             </StaticParagraphStyle>
           </StaticPrimaryOrderedListItemStyle>
           <StaticPrimaryOrderedListItemStyle>

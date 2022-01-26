@@ -102,7 +102,12 @@ export const TermsOfUseDE: FC = () => {
               Medien, staatliche Institutionen und vor allem für davon
               betroffene Bürger:innen geworden. Der Wahrheitsgehalt der auf
               unserer Website bereitgestellten Informationen liegt uns daher
-              besonders am Herzen. In diesen ANB und unserer Moderationscharta
+              besonders am Herzen. In diesen ANB und unserer{' '}
+              <RedHTMLLinkElementStyle
+                href={getDataPageLink(country, language)}
+              >
+                Moderationscharta
+              </RedHTMLLinkElementStyle>{' '}
               erläutern wir, welche Maßnahmen wir in diesem Sinne ergreifen.
             </StaticParagraphStyle>
           </StaticPrimaryOrderedListItemStyle>

@@ -106,8 +106,13 @@ export const TermsOfUseFR: FC = () => {
               <abbr lang="fr" title="Conditions générales d'utilisation">
                 CGUS
               </abbr>{' '}
-              et de notre Charte de modération les mesures que nous prenons en
-              ce sens.
+              et de notre{' '}
+              <RedHTMLLinkElementStyle
+                href={getDataPageLink(country, language)}
+              >
+                Charte de modération
+              </RedHTMLLinkElementStyle>{' '}
+              les mesures que nous prenons en ce sens.
             </StaticParagraphStyle>
           </StaticPrimaryOrderedListItemStyle>
           <StaticPrimaryOrderedListItemStyle>
@@ -176,7 +181,7 @@ export const TermsOfUseFR: FC = () => {
               <abbr lang="fr" title="Conditions générales d'utilisation">
                 CGUS
               </abbr>{' '}
-              et est disponible
+              et est disponible{' '}
               <RedHTMLLinkElementStyle
                 href={getDataPageLink(country, language)}
               >
