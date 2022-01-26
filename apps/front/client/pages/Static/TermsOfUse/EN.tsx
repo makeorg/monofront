@@ -94,6 +94,21 @@ export const TermsOfUseEN: FC = () => {
               Register (RCS) of Paris under number {MAKE_RCS} (hereinafter
               “Make.org”).
             </StaticParagraphStyle>
+            <StaticParagraphStyle>
+              The fight against the diffusion of false information on the
+              Internet has become a major issue for civil society, the media,
+              government authorities and, above all, the citizens who are
+              subjected to it. We are very anxious to ensure the truth of
+              information posted on our website and in both these{' '}
+              <abbr
+                lang="en"
+                title="Web Content Accessibility Guidelines - Version 2.1"
+              >
+                WCAG 2.1
+              </abbr>{' '}
+              and our Moderation Charter we set out the measures we adopt to
+              this end.
+            </StaticParagraphStyle>
           </StaticPrimaryOrderedListItemStyle>
           <StaticPrimaryOrderedListItemStyle>
             <StaticThirdLevelTitleStyle>
@@ -128,23 +143,38 @@ export const TermsOfUseEN: FC = () => {
               ACCEPTANCE OF THE GENERAL TERMS OF SERVICE
             </StaticThirdLevelTitleStyle>
             <StaticParagraphStyle>
-              The present General Terms of Service (hereinafter “GTS”) have as
-              their goal to define the means by which the User may access and
-              use the Services. They constitute a contract between Make.org and
-              the Users of the Service. They invalidate and replace all prior
-              provisions and constitute the totality of all of the rights and
-              obligations of the parties. The GTS are communicated to each User,
-              who is responsible for being aware of them.
+              The present General Terms of Service (hereinafter{' '}
+              <abbr lang="en" title="General Terms of service">
+                GTS
+              </abbr>{' '}
+              ) have as their goal to define the means by which the User may
+              access and use the Services. They constitute a contract between
+              Make.org and the Users of the Service. They invalidate and replace
+              all prior provisions and constitute the totality of all of the
+              rights and obligations of the parties. The{' '}
+              <abbr lang="en" title="General Terms of service">
+                GTS
+              </abbr>{' '}
+              are communicated to each User, who is responsible for being aware
+              of them.
             </StaticParagraphStyle>
             <StaticParagraphStyle>
               The use of the Service implies the full and unreserved acceptance
-              of the present GTS. Non-acceptance thus implies an absence of any
-              right to use the Service.
+              of the present{' '}
+              <abbr lang="en" title="General Terms of service">
+                GTS
+              </abbr>{' '}
+              . Non-acceptance thus implies an absence of any right to use the
+              Service.
             </StaticParagraphStyle>
             <StaticParagraphStyle>
-              {
-                'The use of the Service also implies the full and unreserved acceptance of Make.org’s Data usage policy, which is an integral part of these GTS and which is available '
-              }
+              The use of the Service also implies the full and unreserved
+              acceptance of Make.org’s Data usage policy, which is an integral
+              part of these{' '}
+              <abbr lang="en" title="General Terms of service">
+                GTS
+              </abbr>{' '}
+              and which is available
               <RedHTMLLinkElementStyle
                 href={getDataPageLink(country, language)}
               >
@@ -152,11 +182,22 @@ export const TermsOfUseEN: FC = () => {
               </RedHTMLLinkElementStyle>
             </StaticParagraphStyle>
             <StaticParagraphStyle>
-              The present GTS can be modified at any time and without advance
-              notice by Make.org. Any modification shall take immediate effect
-              as of the publication of the new version of the GTS on the Site.
-              The User is thus asked to regularly consult the latest version of
-              the GTS on the site. Otherwise, the User will be deemed to have
+              The present{' '}
+              <abbr lang="en" title="General Terms of service">
+                GTS
+              </abbr>{' '}
+              can be modified at any time and without advance notice by
+              Make.org. Any modification shall take immediate effect as of the
+              publication of the new version of the{' '}
+              <abbr lang="en" title="General Terms of service">
+                GTS
+              </abbr>{' '}
+              on the Site. The User is thus asked to regularly consult the
+              latest version of the{' '}
+              <abbr lang="en" title="General Terms of service">
+                GTS
+              </abbr>{' '}
+              on the site. Otherwise, the User will be deemed to have
               unreservedly accepted the new version of the General Terms of Use.
             </StaticParagraphStyle>
           </StaticPrimaryOrderedListItemStyle>
@@ -337,8 +378,11 @@ export const TermsOfUseEN: FC = () => {
                 </StaticFourthLevelTitleStyle>
                 <StaticParagraphStyle>
                   The publication of a User’s Citizen Proposal is subject to
-                  moderation in the conditions defined by the present GTS.
-                  Therequest for publication of a Citizen Proposal will be
+                  moderation in the conditions defined by the present{' '}
+                  <abbr lang="en" title="General Terms of service">
+                    GTS
+                  </abbr>
+                  . Therequest for publication of a Citizen Proposal will be
                   processed as quickly as possible by Make.org’s teams, with the
                   aim of responding in under 48 hours.
                 </StaticParagraphStyle>
@@ -943,7 +987,15 @@ export const TermsOfUseEN: FC = () => {
                   authors, who grant Make.org a non-exclusive, transferable and
                   free licence, for France and the entire world, for all online
                   use and for any mode of dissemination, for the duration of
-                  these GTS and for all of the uses intended for by these GTS.
+                  these{' '}
+                  <abbr lang="en" title="General Terms of service">
+                    GTS
+                  </abbr>{' '}
+                  and for all of the uses intended for by these{' '}
+                  <abbr lang="en" title="General Terms of service">
+                    GTS
+                  </abbr>
+                  .
                 </StaticParagraphStyle>
               </StaticSecondaryOrderedListItemStyle>
             </StaticSecondaryOrderedListStyle>
@@ -1075,7 +1127,11 @@ export const TermsOfUseEN: FC = () => {
             <StaticParagraphStyle>
               Any User who does not accept the modified terms of service must
               de-register from the Services by means of the methods provided for
-              in the present GTS.
+              in the present{' '}
+              <abbr lang="en" title="General Terms of service">
+                GTS
+              </abbr>
+              .
             </StaticParagraphStyle>
             <StaticParagraphStyle>
               Any User who makes use of the Services at a date after the

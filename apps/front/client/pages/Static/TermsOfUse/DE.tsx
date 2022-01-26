@@ -96,6 +96,15 @@ export const TermsOfUseDE: FC = () => {
               im Handels- und Gesellschaftsregister von PARIS unter der Nummer{' '}
               {MAKE_RCS} (im Folgenden &rdquo;Make.org&rdquo;) betrieben.
             </StaticParagraphStyle>
+            <StaticParagraphStyle>
+              Der Kampf gegen die Verbreitung falscher Informationen im Internet
+              ist zu einer wichtigen Herausforderung für die Zivilgesellschaft,
+              Medien, staatliche Institutionen und vor allem für davon
+              betroffene Bürger:innen geworden. Der Wahrheitsgehalt der auf
+              unserer Website bereitgestellten Informationen liegt uns daher
+              besonders am Herzen. In diesen ANB und unserer Moderationscharta
+              erläutern wir, welche Maßnahmen wir in diesem Sinne ergreifen.
+            </StaticParagraphStyle>
           </StaticPrimaryOrderedListItemStyle>
           <StaticPrimaryOrderedListItemStyle>
             <StaticThirdLevelTitleStyle>
@@ -134,18 +143,25 @@ export const TermsOfUseDE: FC = () => {
             </StaticThirdLevelTitleStyle>
             <StaticParagraphStyle>
               Der Zweck dieser Allgemeinen Geschäftsbedingungen (im Folgenden
-              &rdquo;AGB&rdquo;) ist es, die Bedingungen zu definieren, unter
-              denen der Benutzer auf die Dienste zugreifen und diese nutzen
-              kann. Sie stellen einen Vertrag zwischen Make.org und den Nutzern
-              des Dienstes dar. Sie ersetzen alle früheren Bestimmungen und
-              stellen die Gesamtheit der Rechte und Pflichten der Parteien dar.
-              Die GCUS werden jedem Benutzer mitgeteilt, der sie liest.
+              &rdquo;
+              <abbr lang="de" title="Allgemeine Geschäftsbedingungen ">
+                AGB
+              </abbr>
+              &rdquo;) ist es, die Bedingungen zu definieren, unter denen der
+              Benutzer auf die Dienste zugreifen und diese nutzen kann. Sie
+              stellen einen Vertrag zwischen Make.org und den Nutzern des
+              Dienstes dar. Sie ersetzen alle früheren Bestimmungen und stellen
+              die Gesamtheit der Rechte und Pflichten der Parteien dar. Die GCUS
+              werden jedem Benutzer mitgeteilt, der sie liest.
             </StaticParagraphStyle>
             <StaticParagraphStyle>
               Die Nutzung des Dienstes setzt die vollständige und
-              uneingeschränkte Annahme dieser AGB voraus. Die Nichtakzeptanz der
-              Nutzungsbedingungen bedeutet den Verzicht auf die Nutzung des
-              Dienstes.
+              uneingeschränkte Annahme dieser{' '}
+              <abbr lang="de" title="Allgemeine Geschäftsbedingungen ">
+                AGB
+              </abbr>{' '}
+              voraus. Die Nichtakzeptanz der Nutzungsbedingungen bedeutet den
+              Verzicht auf die Nutzung des Dienstes.
             </StaticParagraphStyle>
             <StaticParagraphStyle>
               Die Nutzung des Dienstes impliziert auch die vollständige und
@@ -159,13 +175,20 @@ export const TermsOfUseDE: FC = () => {
               </RedHTMLLinkElementStyle>
             </StaticParagraphStyle>
             <StaticParagraphStyle>
-              Diese AGB können jederzeit und ohne Ankündigung von Make.org
-              geändert werden. Jede Änderung wird unmittelbar mit der
-              Veröffentlichung der neuen Version der AVB auf der Website
-              wirksam. Der Benutzer wird daher aufgefordert, regelmäßig die
-              neueste Version der AGB auf der Website zu konsultieren. Tun Sie
-              dies nicht, wird davon ausgegangen, dass Sie die neue Version der
-              Allgemeinen Nutzungsbedingungen vorbehaltlos akzeptieren.
+              Diese{' '}
+              <abbr lang="de" title="Allgemeine Geschäftsbedingungen ">
+                AGB
+              </abbr>{' '}
+              können jederzeit und ohne Ankündigung von Make.org geändert
+              werden. Jede Änderung wird unmittelbar mit der Veröffentlichung
+              der neuen Version der AVB auf der Website wirksam. Der Benutzer
+              wird daher aufgefordert, regelmäßig die neueste Version der{' '}
+              <abbr lang="de" title="Allgemeine Geschäftsbedingungen ">
+                AGB
+              </abbr>{' '}
+              auf der Website zu konsultieren. Tun Sie dies nicht, wird davon
+              ausgegangen, dass Sie die neue Version der Allgemeinen
+              Nutzungsbedingungen vorbehaltlos akzeptieren.
             </StaticParagraphStyle>
           </StaticPrimaryOrderedListItemStyle>
           <StaticPrimaryOrderedListItemStyle>

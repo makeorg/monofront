@@ -95,6 +95,20 @@ export const TermsOfUseFR: FC = () => {
               {MAKE_ADDRESS}, immatriculée au RCS de PARIS sous le numéro{' '}
               {MAKE_RCS} (ci-après« Make.org »).
             </StaticParagraphStyle>
+            <StaticParagraphStyle>
+              Make.org n&apos;est pas un opérateur de plateforme en ligne
+              relevant du champ d&apos;application de la loi n° 2018-1202 du 22
+              décembre 2018 relative à la lutte contre la manipulation de
+              l&apos;information. A ce titre, nous ne sommes donc pas soumis aux
+              obligations y afférentes. La véracité des informations mises en
+              ligne sur notre site nous tient cependant à cœur, et nous
+              détaillons au sein des présentes{' '}
+              <abbr lang="fr" title="Conditions générales d'utilisation">
+                CGUS
+              </abbr>{' '}
+              et de notre Charte de modération les mesures que nous prenons en
+              ce sens.
+            </StaticParagraphStyle>
           </StaticPrimaryOrderedListItemStyle>
           <StaticPrimaryOrderedListItemStyle>
             <StaticThirdLevelTitleStyle>
@@ -131,25 +145,38 @@ export const TermsOfUseFR: FC = () => {
               ACCEPTATION DES CONDITIONS GÉNÉRALES
             </StaticThirdLevelTitleStyle>
             <StaticParagraphStyle>
-              Les présentes Conditions Générales d’Utilisation (ci-après « CGUS
+              Les présentes Conditions Générales d’Utilisation (ci-après «{' '}
+              <abbr lang="fr" title="Conditions générales d'utilisation">
+                CGUS
+              </abbr>{' '}
               ») ont pour objet de définir les modalités selon lesquelles
               l’Utilisateur pourra accéder et utiliser les Services. Elles
               constituent un contrat entre Make.org et les Utilisateurs du
               Service. Elles annulent et remplacent toutes les dispositions
               antérieures et constituent l’intégralité des droits et obligations
-              des parties. Les CGUS sont communiquées à chaque Utilisateur qui
-              en prend connaissance.
+              des parties. Les{' '}
+              <abbr lang="fr" title="Conditions générales d'utilisation">
+                CGUS
+              </abbr>{' '}
+              sont communiquées à chaque Utilisateur qui en prend connaissance.
             </StaticParagraphStyle>
             <StaticParagraphStyle>
               L’utilisation du Service implique l’acceptation entière et sans
-              réserve des présentes CGUS. La non-acceptation entraîne ainsi la
-              renonciation à l’utilisation de celui-ci.
+              réserve des présentes{' '}
+              <abbr lang="fr" title="Conditions générales d'utilisation">
+                CGUS
+              </abbr>{' '}
+              . La non-acceptation entraîne ainsi la renonciation à
+              l’utilisation de celui-ci.
             </StaticParagraphStyle>
             <StaticParagraphStyle>
               L’utilisation du Service implique également l’acceptation entière
               et sans réserve de la Politique d’utilisation des données de
-              Make.org qui fait partie intégrante des présentes CGUS et est
-              disponible
+              Make.org qui fait partie intégrante des présentes{' '}
+              <abbr lang="fr" title="Conditions générales d'utilisation">
+                CGUS
+              </abbr>{' '}
+              et est disponible
               <RedHTMLLinkElementStyle
                 href={getDataPageLink(country, language)}
               >
@@ -157,13 +184,23 @@ export const TermsOfUseFR: FC = () => {
               </RedHTMLLinkElementStyle>
             </StaticParagraphStyle>
             <StaticParagraphStyle>
-              Les présentes CGUS sont modifiables à tout moment et sans préavis
-              par Make.org. Toute modification prendra effet immédiatement à
-              compter de la mise en ligne de la nouvelle version des CGUS sur le
-              Site. L’Utilisateur est donc invité à consulter régulièrement la
-              dernière version des CGUS sur le Site. À défaut, il sera réputé
-              accepter sans réserve la nouvelle version des Conditions Générales
-              d’Utilisation.
+              Les présentes{' '}
+              <abbr lang="fr" title="Conditions générales d'utilisation">
+                CGUS
+              </abbr>{' '}
+              sont modifiables à tout moment et sans préavis par Make.org. Toute
+              modification prendra effet immédiatement à compter de la mise en
+              ligne de la nouvelle version des{' '}
+              <abbr lang="fr" title="Conditions générales d'utilisation">
+                CGUS
+              </abbr>{' '}
+              sur le Site. L’Utilisateur est donc invité à consulter
+              régulièrement la dernière version des{' '}
+              <abbr lang="fr" title="Conditions générales d'utilisation">
+                CGUS
+              </abbr>{' '}
+              sur le Site. À défaut, il sera réputé accepter sans réserve la
+              nouvelle version des Conditions Générales d’Utilisation.
             </StaticParagraphStyle>
           </StaticPrimaryOrderedListItemStyle>
           <StaticPrimaryOrderedListItemStyle>
@@ -320,10 +357,13 @@ export const TermsOfUseFR: FC = () => {
                 <StaticParagraphStyle>
                   La publication de la Proposition Citoyenne de l’Utilisateur
                   est soumise à modération dans les conditions définies aux
-                  présentes CGUS. La demande de publication d’une Proposition
-                  Citoyenne sera traitée le plus rapidement qu’il est possible
-                  aux équipes de Make.org, avec l’objectif de répondre en moins
-                  de 48 heures.
+                  présentes{' '}
+                  <abbr lang="fr" title="Conditions générales d'utilisation">
+                    CGUS
+                  </abbr>{' '}
+                  . La demande de publication d’une Proposition Citoyenne sera
+                  traitée le plus rapidement qu’il est possible aux équipes de
+                  Make.org, avec l’objectif de répondre en moins de 48 heures.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
                   Le service de modération de Make.org examine chaque
@@ -939,8 +979,11 @@ export const TermsOfUseFR: FC = () => {
                   d’exploitation non-exclusive, transférable et gratuite, pour
                   la France et pour l’ensemble du monde, pour tout usage en
                   ligne et pour tout mode de diffusion, pendant la durée des
-                  présentes CGUS et pour l’ensemble des usages visés par
-                  celles-ci.
+                  présentes{' '}
+                  <abbr lang="fr" title="Conditions générales d'utilisation">
+                    CGUS
+                  </abbr>{' '}
+                  et pour l’ensemble des usages visés par celles-ci.
                 </StaticParagraphStyle>
               </StaticSecondaryOrderedListItemStyle>
             </StaticSecondaryOrderedListStyle>
