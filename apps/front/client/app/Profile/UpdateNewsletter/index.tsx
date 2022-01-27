@@ -16,7 +16,6 @@ import { TileWithTitle } from '@make.org/ui/components/TileWithTitle';
 import { FormErrors } from '@make.org/components/Form/Errors';
 import { FormSuccessMessage } from '@make.org/components/Form/Success';
 import { getUser } from '@make.org/store/actions/authentication';
-import { FormRequirementsStyle } from '@make.org/ui/elements/FormElements';
 import { PersonalityService } from '@make.org/utils/services/Personality';
 import { useAppContext } from '@make.org/store';
 
@@ -98,9 +97,6 @@ export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
   return (
     <TileWithTitle title={i18n.t('profile.newsletter_update.title')}>
       <form id={FORM.NEWSLETTER_UPDATE_FORMNAME} onSubmit={handleSubmit}>
-        <FormRequirementsStyle>
-          {i18n.t('common.form.requirements')}
-        </FormRequirementsStyle>
         <FormErrors errors={errors} />
         <CheckBox
           name="optInNewsletter"

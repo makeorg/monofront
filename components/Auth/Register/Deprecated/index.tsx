@@ -54,7 +54,7 @@ export const DeprecatedRegister: React.FC<Props> = ({ panel }) => {
       legalMinorConsent: false,
       legalAdvisorApproval: false,
       approvePrivacyPolicy: false,
-      optInNewsletter: false,
+      optInNewsletter: true,
     },
   });
   const [errors, setErrors] = useState<ErrorObjectType[]>([]);
