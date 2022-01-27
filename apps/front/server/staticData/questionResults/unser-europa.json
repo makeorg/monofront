@@ -1,0 +1,752 @@
+{
+  "context": "Diese Konsultation ist Teil des partizipativen Prozesses der Konferenz über die Zukunft Europas. Junge Bürgerinnen und Bürger in Deutschland teilten auf der Plattform von Make.org ihre Prioritäten und Wünsche für das Europa von morgen mit. Diese werden in die europäischen und deutschen politischen Entscheidungsprozesse eingebunden",
+  "key_figures": {
+    "participants": 45015,
+    "votes": 392164,
+    "proposals": 620
+  },
+  "top_ideas": [
+    {
+      "name": "Klimawandel und Umwelt",
+      "ideas": [
+        {
+          "idea": "Umsetzung einer stärkeren und nachhaltigeren europäischen Umweltpolitik",
+          "agreement": 87,
+          "adhesion": 25,
+          "realistic": 22
+        },
+        {
+          "idea": "Verbesserung des öffentlichen Nah- und Fernverkehrs in der EU",
+          "agreement": 83,
+          "adhesion": 26,
+          "realistic": 20
+        },
+        {
+          "idea": "Entwicklung einer stärkeren Tierschutzpolitik",
+          "agreement": 83,
+          "adhesion": 24,
+          "realistic": 20
+        },
+        {
+          "idea": "Förderung der Produktion und des Verbrauchs von erneuerbaren Energien",
+          "agreement": 79,
+          "adhesion": 21,
+          "realistic": 19
+        }
+      ]
+    },
+    {
+      "name": "Demokratie in Europa",
+      "ideas": [
+        {
+          "idea": "Gewährleistung der Transparenz im Hinblick auf die Arbeitsweise der EU-Institutionen",
+          "agreement": 83,
+          "adhesion": 26,
+          "realistic": 19
+        },
+        {
+          "idea": "Regulierung der Wählbarkeit und Arbeitsbedingungen von Politiker:innen",
+          "agreement": 81,
+          "adhesion": 24,
+          "realistic": 19
+        },
+        {
+          "idea": "Stärkere Einbeziehung der Bürger:innen in die Politik",
+          "agreement": 81,
+          "adhesion": 20,
+          "realistic": 22
+        },
+        {
+          "idea": "Bekämpfung von ideologischem Extremismus",
+          "agreement": 69,
+          "adhesion": 17,
+          "realistic": 16
+        }
+      ]
+    },
+    {
+      "name": "Wirtschaft, soziale Gerechtigkeit und Beschäftigung",
+      "ideas": [
+        {
+          "idea": "Schutz und Harmonisierung der Arbeitsbedingungen in der EU",
+          "agreement": 77,
+          "adhesion": 18,
+          "realistic": 18
+        },
+        {
+          "idea": "Vorbeugung von Armut",
+          "agreement": 85,
+          "adhesion": 27,
+          "realistic": 18
+        },
+        {
+          "idea": "Einführung einer gemeinsamen Politik zur besseren Bewältigung der Gesundheitskrise",
+          "agreement": 74,
+          "adhesion": 15,
+          "realistic": 18
+        },
+        {
+          "idea": " und Aufwertung des Pflegeberufs",
+          "agreement": 90,
+          "adhesion": 28,
+          "realistic": 23
+        }
+      ]
+    },
+    {
+      "name": "Gesundheit",
+      "ideas": [
+        {
+          "idea": "Förderung des Schutzes der psychischen Gesundheit",
+          "agreement": 86,
+          "adhesion": 30,
+          "realistic": 20
+        },
+        {
+          "idea": "Sicherstellung einer zugänglicheren und gleichwertigeren Gesundheitsversorgung",
+          "agreement": 81,
+          "adhesion": 29,
+          "realistic": 16
+        }
+      ]
+    },
+    {
+      "name": "Migration",
+      "ideas": [
+        {
+          "idea": "Änderung der Bedingungen für die Aufnahme und den Aufenthalt von Migrant:innen",
+          "agreement": 72,
+          "adhesion": 24,
+          "realistic": 15
+        }
+      ]
+    },
+    {
+      "name": "Werte und Rechte, Rechtsstaatlichkeit, Sicherheit",
+      "ideas": [
+        {
+          "idea": "Sicherstellung des Schutzes der Menschenrechte innerhalb der EU und in anderen Ländern",
+          "agreement": 86,
+          "adhesion": 29,
+          "realistic": 20
+        }
+      ]
+    },
+    {
+      "name": "Bildung, Kultur, Jugend und Sport",
+      "ideas": [
+        {
+          "idea": "Modernisierung des europäischen Bildungssystems",
+          "agreement": 88,
+          "adhesion": 31,
+          "realistic": 18
+        }
+      ]
+    }
+  ],
+  "controversials": [
+    {
+      "id": "4c9530fb-4adc-462c-a3e7-e09f08511ada",
+      "content": "Man sollte europaweit zeitnah aus der Atomkraft aussteigen, damit nie wieder schreckliche Katastrophen passieren.",
+      "author": "Bennet",
+      "agree": 41,
+      "like_it": 11,
+      "disagree": 45,
+      "no_way": 24,
+      "votes": 573
+    },
+    {
+      "id": "d1f5731b-0e0b-49a2-8790-1a4dbc9e09d9",
+      "content": "Man sollte Kinder früh genug (vor 18!) über ihre Zukunft mitbestimmen lassen: durch Wahlen und Kinderräte mit Entscheidungsmacht.",
+      "author": "Johanna",
+      "agree": 53,
+      "like_it": 14,
+      "disagree": 34,
+      "no_way": 19,
+      "votes": 562
+    },
+    {
+      "id": "45b88f49-3f7b-431f-94c4-88567e189dad",
+      "content": "Man sollte dem EU-Parlament mehr Kompetenzen zuweisen und die Verteilung von Kompetenzen in der EU transparenter gestalten.",
+      "author": "Konstantin",
+      "agree": 54,
+      "like_it": 12,
+      "disagree": 23,
+      "no_way": 11,
+      "votes": 598
+    },
+    {
+      "id": "2dea4f5b-278c-4f49-834e-29db0796716f",
+      "content": "Man sollte europaweit mit Vermögenssteuern den Reichtum umverteilen.",
+      "author": "Charlotte",
+      "agree": 52,
+      "like_it": 13,
+      "disagree": 31,
+      "no_way": 12,
+      "votes": 554
+    },
+    {
+      "id": "6e4d0e3a-f97e-42bd-a1bc-2e8950eca205",
+      "content": "Man sollte die EZB unter die Kontrolle des EU-Parlaments stellen, anstatt sie weiter dem Einfluss von Banken und der Finanzlobby auszusetzen",
+      "author": "Marvin",
+      "agree": 47,
+      "like_it": 8,
+      "disagree": 20,
+      "no_way": 7,
+      "votes": 546
+    },
+    {
+      "id": "b157bcc3-6ac2-425a-9458-8039ebac3d19",
+      "content": "Man sollte Werbung für Alkohol und Tabak verbieten. Auch Dinge wie Kaugummizigaretten sollten verboten werden.",
+      "author": "Florian",
+      "agree": 47,
+      "like_it": 8,
+      "disagree": 37,
+      "no_way": 8,
+      "votes": 568
+    },
+    {
+      "id": "a78cb8a1-95ae-4718-99d7-bb4dd04d874d",
+      "content": "Man sollte auf eine weitgehend fleischfreie Zukunft hinarbeiten und z.B. in öffentlichen Einrichtungen vegetarische Gerichte anbieten.",
+      "author": "Liselotte",
+      "agree": 45,
+      "like_it": 13,
+      "disagree": 42,
+      "no_way": 21,
+      "votes": 564
+    },
+    {
+      "id": "725eb3f1-2fc1-4f9f-a5bc-c300c7a9308c",
+      "content": "Man sollte umfangreiche Studien zum Vergleich von Marihuana und Alkohol/Zigaretten beauftragen, um eine EU-weite Legalisierung anzudenken.",
+      "author": "Paul",
+      "agree": 59,
+      "like_it": 11,
+      "disagree": 22,
+      "no_way": 7,
+      "votes": 628
+    },
+    {
+      "id": "1c65c7b1-a6a0-4626-bd61-55bbac90875f",
+      "content": "Man sollte eine Impfpflicht einführen, da jeden Tag Menschenleben gefährdet werden. (Die Impfung ist erforscht und nur ein kleiner Pieks.)",
+      "author": "emma",
+      "agree": 53,
+      "like_it": 16,
+      "disagree": 32,
+      "no_way": 18,
+      "votes": 572
+    },
+    {
+      "id": "0be84736-3673-4977-8e17-b17be70f0eee",
+      "content": "Man sollte eine europäische Armee mit einer einheitlichen Verteidigungsstrategie aufsetzen.",
+      "author": "Christoph",
+      "agree": 42,
+      "like_it": 10,
+      "disagree": 35,
+      "no_way": 11,
+      "votes": 550
+    },
+    {
+      "id": "b3f8cee9-889c-4e7f-beae-7494c6fd25f5",
+      "content": "Man sollte den Handel mit diktatorischen Staaten, wie bspw. Russland und Nordkorea - vor allem China - vollständig unterbinden.",
+      "author": "Elisa",
+      "agree": 34,
+      "like_it": 5,
+      "disagree": 44,
+      "no_way": 12,
+      "votes": 588
+    },
+    {
+      "id": "f235d69b-f699-4351-bd9d-c503a107a631",
+      "content": "Man sollte die EU in eine Art \"Vereinigte Staaten Europas\" verwandeln, um international zwischen den \"Big Playern\" bestehen zu können.",
+      "author": "Jens",
+      "agree": 29,
+      "like_it": 9,
+      "disagree": 47,
+      "no_way": 17,
+      "votes": 565
+    },
+    {
+      "id": "4c6551a0-7056-4b46-a21b-25bebdd57c65",
+      "content": "Man sollte den Druck auf Israel erhöhen, bis es seinen illegalen Siedlungsbau im Westjordanland beendet und Palästina als Staat anerkennt.",
+      "author": "Marvin",
+      "agree": 43,
+      "like_it": 10,
+      "disagree": 24,
+      "no_way": 10,
+      "votes": 554
+    },
+    {
+      "id": "e1fcf407-6ec4-4cb1-8786-cb89af2b62bd",
+      "content": "Man sollte staatliche Seenotrettung im Mittelmeer einführen und für organisierte, humane Migration sorgen.",
+      "author": "Kalle",
+      "agree": 51,
+      "like_it": 11,
+      "disagree": 32,
+      "no_way": 14,
+      "votes": 553
+    },
+    {
+      "id": "0e4f0485-265e-4792-8dd2-43aad81e9b1e",
+      "content": "Man sollte Staaten, welche die Rechte von LGBTQIA*-Menschen einschränken, die EU-Subventionen streichen.",
+      "author": "Sina",
+      "agree": 57,
+      "like_it": 23,
+      "disagree": 30,
+      "no_way": 12,
+      "votes": 704
+    }
+  ],
+  "rejected": [],
+  "cartography": [
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Angesprochene Themen",
+      "legend": "",
+      "data": [
+        {
+          "label": "Institutionelle Reformen",
+          "percent": 18,
+          "color": "#4B45A5",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.2
+          }
+        },
+        {
+          "label": "Sicherstellung des Schutzes",
+          "sublabel": " der Menschenrechte",
+          "percent": 14,
+          "color": "#8955BD",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.35
+          }
+        },
+        {
+          "label": "Wirtschaft, Arbeit",
+          "sublabel": " und Soziales",
+          "percent": 14,
+          "color": "#EB7575",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.2,
+            "yAxis": 2.2
+          }
+        },
+        {
+          "label": "Bildungssystem",
+          "percent": 12,
+          "color": "#F5976E",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.1,
+            "yAxis": 2.15
+          }
+        },
+        {
+          "label": "Gesundheit",
+          "percent": 9,
+          "color": "#EEB298",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.8,
+            "yAxis": 2.1
+          }
+        },
+        {
+          "label": "Umwelt",
+          "percent": 8,
+          "color": "#FFD266",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.8,
+            "yAxis": 2.1
+          }
+        },
+        {
+          "label": "Die EU in der Welt",
+          "percent": 6,
+          "color": "#FFF689",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.8,
+            "yAxis": 2.1
+          }
+        },
+        {
+          "label": "Sicherheit",
+          "percent": 6,
+          "color": "#E5FFAE",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.8
+          }
+        },
+        {
+          "label": "Aufklärung und",
+          "sublabel": " Transparenz",
+          "percent": 5,
+          "color": "#C1EBDD",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.8,
+            "yAxis": 2.1
+          }
+        },
+        {
+          "label": "Energie und",
+          "sublabel": " Ressourcen",
+          "percent": 5,
+          "color": "#59BAD4",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.8,
+            "yAxis": 2.1
+          }
+        },{
+          "label": "Migration",
+          "percent": 5,
+          "color": "#5887AF",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.8,
+            "yAxis": 2.1
+          }
+        },
+        {
+          "label": "Sonstiges",
+          "percent": 17,
+          "color": "#ffffff",
+          "adjustLabel": {
+              "hidePercent": true,
+              "yAxis": 1.8
+          }
+        }
+      ]
+    },
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Genannte Lösungen",
+      "legend": "",
+      "data": [
+        {
+          "label": "fördern, entwicklen",
+          "sublabel": "",
+          "percent": 38,
+          "color": "#4B45A5",
+          "adjustLabel": {
+              "textAlign": "left",
+              "xAxis": 2.2,
+              "yAxis": 1.7
+          }
+        },
+        {
+          "label": "einschränken, abbauen,",
+          "sublabel": " abschaffen",
+          "percent": 26,
+          "color": "#8955BD",
+          "adjustLabel": {
+              "textAlign": "left",
+              "xAxis": 2.2,
+              "yAxis": 2.2
+          }
+        },
+        {
+          "label": "verbieten, bestrafen",
+          "sublabel": "",
+          "percent": 10,
+          "color": "#EB7575",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.8,
+            "yAxis": 2.1
+          }
+        },
+        {
+          "label": "aufklären, sensibilisieren,",
+          "sublabel": " kommunizieren",
+          "percent": 10,
+          "color": "#F5976E",
+          "adjustLabel": {
+              "textAlign": "right",
+              "xAxis": 1.8
+          }
+        },
+        {
+          "label": "ändern, anpassen",
+          "sublabel": "",
+          "percent": 8,
+          "color": "#EEB298",
+          "adjustLabel": {
+              "textAlign": "right",
+              "xAxis": 1.8,
+              "yAxis": 1.8
+          }
+        },
+        {
+          "label": "subventionieren",
+          "percent": 5,
+          "color": "#FFD266",
+          "adjustLabel": {
+              "textAlign": "right",
+              "xAxis": 1.9,
+              "yAxis": 1.8
+          }
+        },
+        {
+          "label": "behalten, bewahren",
+          "percent": 3,
+          "color": "#FFF689",
+          "adjustLabel": {
+              "textAlign": "right",
+              "xAxis": 1.95
+          }
+        },
+        {
+          "label": "besteuern",
+          "percent": 1,
+          "color": "#E5FFAE",
+          "adjustLabel": {
+              "textAlign": "left",
+              "yAxis": 1.8
+          }
+        }
+      ]
+    }
+  ],
+  "participation": [
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Beteiligung nach Wohnort (1/2)",
+      "forcedHigherValue": 23,
+      "legend": {
+        "title": "Stimmenverteilung",
+        "dimensions": {
+          "first": "Teilnehmer:innen",
+          "second": "Gesamtbevölkerung"
+        }
+      },
+      "data": [
+        {
+          "label": "Nordrhein-Westfalen",
+          "bars": {
+            "first": 17,
+            "second": 22
+          }
+        },
+        {
+          "label": "Bayern",
+          "bars": {
+            "first": 18,
+            "second": 16
+          }
+        },
+        {
+          "label": "Baden-Württemberg",
+          "bars": {
+            "first": 14,
+            "second": 13
+          }
+        },
+        {
+          "label": "Niedersachsen",
+          "bars": {
+            "first": 11,
+            "second": 10
+          }
+        },
+        {
+          "label": "Hessen",
+          "bars": {
+            "first": 7,
+            "second": 8
+          }
+        },
+        {
+          "label": "Rheinland-Pfalz",
+          "bars": {
+            "first": 4,
+            "second": 5
+          }
+        },
+        {
+          "label": "Sachsen",
+          "bars": {
+            "first": 7,
+            "second": 5
+          }
+        }
+      ],
+      "id": "participation_0"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Beteiligung nach Wohnort (2/2)",
+      "forcedHigherValue": 23,
+      "legend": {
+        "title": "Stimmenverteilung",
+        "dimensions": {
+          "first": "Teilnehmer:innen",
+          "second": "Gesamtbevölkerung"
+        }
+      },
+      "data": [
+        {
+          "label": "Berlin",
+          "bars": {
+            "first": 4,
+            "second": 4
+          }
+        },
+        {
+          "label": "Schleswig-Holstein",
+          "bars": {
+            "first": 4,
+            "second": 3
+          }
+        },
+        {
+          "label": "Brandenburg",
+          "bars": {
+            "first": 3,
+            "second": 3
+          }
+        },
+        {
+          "label": "Sachsen-Anhalt",
+          "bars": {
+            "first": 2,
+            "second": 3
+          }
+        },
+        {
+          "label": "Thüringen",
+          "bars": {
+            "first": 3,
+            "second": 2
+          }
+        },
+        {
+          "label": "Hamburg",
+          "bars": {
+            "first": 2,
+            "second": 2
+          }
+        },
+        {
+          "label": "Mecklenburg-Vorpommern",
+          "bars": {
+            "first": 2,
+            "second": 2
+          }
+        },
+        {
+          "label": "Saarland",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        },
+        {
+          "label": "Bremen",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        }
+      ],
+      "id": "participation_1"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Beteiligung nach Alter",
+      "legend": {
+        "title": "Stimmenverteilung",
+        "dimensions": {
+          "first": "Teilnehmer:innen",
+          "second": "Gesamtbevölkerung"
+        }
+      },
+      "data": [
+        {
+          "label": "08-15",
+          "bars": {
+            "first": 10,
+            "second": 8
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "16-24",
+          "bars": {
+            "first": 71,
+            "second": 10
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "25-29",
+          "bars": {
+            "first": 10,
+            "second": 6
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "30-34",
+          "bars": {
+            "first": 6,
+            "second": 7
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "35-44",
+          "bars": {
+            "first": 2,
+            "second": 14
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "45+",
+          "bars": {
+            "first": 1,
+            "second": 55
+          },
+          "color": "#8BDAB2"
+        }
+      ],
+      "id": "participation_2"
+    },
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Beteiligung nach Geschlecht",
+      "legend": "",
+      "data": [
+        {
+          "label": "männlich",
+          "percent": 66,
+          "color": "#4B45A5"
+        },
+        {
+          "label": "weiblich",
+          "percent": 25,
+          "color": "#EB7575"
+        },
+        {
+          "label": "nichtbinär",
+          "percent": 8,
+          "color": "#8BDAB2"
+        }
+      ],
+      "id": "participation_3"
+    }
+  ]
+}
