@@ -6,10 +6,8 @@ import {
   ColumnElementStyle,
 } from '@make.org/ui/elements/FlexElements';
 import { AuthenticationRegisterButtons } from '@make.org/components/Auth/Register/Buttons';
-// import { Register } from '@make.org/components/Auth/Register';
-import { DeprecatedRegister as Register } from '@make.org/components/Auth/Register/Deprecated';
-import { DeprecatedLogin as Login } from '@make.org/components/Auth/Login/Deprecated/index';
-// import { Login } from '@make.org/components/Auth/Login/index';
+import { Register } from '@make.org/components/Auth/Register';
+import { Login } from '@make.org/components/Auth/Login/index';
 import { PasswordForgot } from '@make.org/components/Auth/PasswordForgot';
 import {
   ProposalSubmitAuthSeparator,

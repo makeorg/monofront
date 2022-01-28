@@ -29,8 +29,7 @@ import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { RegisterForm } from './Form';
-import { DeprecatedRegisterFormPanel as RegisterFormPanel } from './Deprecated/FormPanel';
-// import { RegisterFormPanel } from './FormPanel';
+import { RegisterFormPanel } from './FormPanel';
 import {
   AuthenticationWrapperStyle,
   SocialRegisterButtonsWrapperStyle,

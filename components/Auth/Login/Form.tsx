@@ -28,8 +28,7 @@ import { ProposalService } from '@make.org/utils/services/Proposal';
 import { setPanelContent } from '@make.org/store/actions/panel';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { FormErrors } from '../../Form/Errors';
-import { DeprecatedSubmitButton as SubmitButton } from '../../Form/SubmitButton/Deprecated';
-// import { SubmitButton } from '../../Form/SubmitButton';
+import { SubmitButton } from '../../Form/SubmitButton';
 import { EmailPasswordFields } from '../CommonFields/EmailPassword';
 
 type TypeLoginValues = {
