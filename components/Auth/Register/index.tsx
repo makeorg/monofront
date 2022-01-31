@@ -47,7 +47,7 @@ export const Register: React.FC<Props> = ({ panel }) => {
     email: '',
     password: '',
     profile: {
-      firstname: '',
+      firstname: firstname || '',
       age: '',
       postalcode: '',
       legalMinorConsent: false,

@@ -1,8 +1,8 @@
+/* eslint-disable prettier/prettier */
 import React, { FC, useEffect } from 'react';
 import i18n from 'i18next';
 import { trackDisplayAuthenticationForm } from '@make.org/utils/services/Tracking';
 import {
-  CenterColumnStyle,
   ColumnElementStyle,
 } from '@make.org/ui/elements/FlexElements';
 import { AuthenticationRegisterButtons } from '@make.org/components/Auth/Register/Buttons';
@@ -47,6 +47,7 @@ import {
   BlueShapeImageStyle,
   BlueManWalking,
   ProposalImagesWrapperStyle,
+  LoginWrapperStyle,
 } from './style';
 
 const renderAuthStep = (step: string | undefined, dispatch: Dispatch) => {
@@ -97,14 +98,14 @@ export const ProposalAuthentication: FC = () => {
   if (step) {
     return (
       <ProposalFormWrapperStyle>
-        <CenterColumnStyle>
+        <LoginWrapperStyle>
           <ProposalBackButtonStyle
             onClick={() => dispatch(resetProposalAuthStep())}
           >
             {i18n.t('common.back')}
           </ProposalBackButtonStyle>
           {renderAuthStep(step, dispatch)}
-        </CenterColumnStyle>
+        </LoginWrapperStyle>
       </ProposalFormWrapperStyle>
     );
   }
@@ -120,9 +121,8 @@ export const ProposalAuthentication: FC = () => {
               {i18n.t('proposal_submit.authentication.back')}
             </ProposalBackButtonCenterStyle>
             <ProposalAuthWrapperStyle>
-              <ProposalAltStepTitleStyle className="center">
-                {firstname}
-                {', '}
+              <ProposalAltStepTitleStyle>
+                {firstname}{', '}
                 <ProposalStepLabelRedStyle>
                   {i18n.t('proposal_submit.authentication.last_step_red')}
                 </ProposalStepLabelRedStyle>
@@ -169,9 +169,10 @@ export const ProposalAuthentication: FC = () => {
       {!isWidget && isMobile && (
         <ProposalImagesWrapperStyle>
           <BlueManWalking aria-hidden focusable="false" />
+          <BlueShapeImageStyle src={BlueShape} alt="" />
         </ProposalImagesWrapperStyle>
       )}
-      {!isWidget && <BlueShapeImageStyle src={BlueShape} alt="" />}
+      {!isWidget && !isMobile && <BlueShapeImageStyle src={BlueShape} alt="" />}
     </>
   );
 };

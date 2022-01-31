@@ -66,8 +66,9 @@ export const ProposalForm: FC = () => {
     ? baitText?.length
     : proposalContent.length;
   const disableSubmitButton =
-    !proposalHasValidLength(proposalContent.length) &&
+    !proposalHasValidLength(proposalContent.length) ||
     !userFirstnameHasValidLength(firstname.length);
+
   const { source } = state.appConfig;
   const isWidget = source === 'widget';
 
@@ -83,12 +84,6 @@ export const ProposalForm: FC = () => {
     }
     return setProposalContent(event.currentTarget.value);
   };
-
-  // const handleCancel = () => {
-  //   dispatch(closePanel());
-  //   dispatch(removePanelContent());
-  //   trackClickBackProposals();
-  // };
 
   const handleFirstnameChange = (
     event: React.ChangeEvent<HTMLInputElement>

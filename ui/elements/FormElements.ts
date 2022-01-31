@@ -314,14 +314,13 @@ export const CenterInputIconStyle = styled(InputIconStyle)`
 export const TextAreaIconStyle = styled(InputIconStyle)`
   margin-top: 10px;
 `;
-
 export const BasicInputStyle = styled.input`
   border: none;
   background: transparent;
   background-color: transparent;
   width: 100%;
-  font-family: ${MakeFonts.CircularStandardBold};
-  color: ${color.greyDark};
+  font-family: ${MakeFonts.CircularStandardBook};
+  color: ${color.black};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   line-height: 38px;
   padding: 0 5px;

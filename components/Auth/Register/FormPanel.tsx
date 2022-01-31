@@ -75,7 +75,9 @@ export const RegisterFormPanel: React.FC<Props> = ({
         })}
       </RegisterEmailTitleStyle>
       <FormRequirementsStyle>
-        {i18n.t('common.form.requirements_short')}
+        {registerPanelStep === 1
+          ? i18n.t('common.form.requirements_short')
+          : i18n.t('common.form.requirements')}
       </FormRequirementsStyle>
       <FormErrors errors={errors} />
       {registerPanelStep === 1 && (

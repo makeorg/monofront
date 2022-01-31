@@ -24,7 +24,6 @@ import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import TextareaAutosize from 'react-autosize-textarea/lib';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
 import { ExtraParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { Image } from '@make.org/ui/components/Image';
 
@@ -52,24 +51,22 @@ export const TriggerIconStyle = styled(SvgPencil)`
 `;
 
 export const ProposalFormWrapperStyle = styled(SpaceBetweenColumnStyle)`
-  ${ContainerWithPadding};
+  width: 100%;
   height: 100%;
-  padding-top: 20px;
-  padding-bottom: 25px;
+  padding: 0px 30px 25px;
   max-width: 720px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    padding: 0 50px 50px 0px;
+    margin: 0 50px 50px 0px;
+    padding: 0px 0px 25px;
   }
 `;
 
 export const ProposalStepWrapperColumnStyle = styled.div`
-  ${ContainerWithPadding};
+  width: 100%;
   height: 100%;
-  padding-top: 20px;
-  padding-bottom: 25px;
+  padding: 0px 30px 25px;
   max-width: 720px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    padding-top: 35px;
     padding-bottom: 50px;
   }
 `;
@@ -111,10 +108,12 @@ export const ProposalStepLabelRedStyle = styled.span`
 `;
 
 export const ProposalAltStepTitleStyle = styled(ProposalStepTitleStyle)`
+  width: 100%;
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   letter-spacing: 0.12px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${intToPx(typography.font.fontsize.XL.value)};
+    text-align: center;
   }
 `;
 
@@ -360,23 +359,38 @@ export const BlueManOnBench = styled(SvgBlueManOnBench)`
   }
 `;
 
-export const BlueManWalking = styled(SvgBlueManWalking)``;
+export const BlueManWalking = styled(SvgBlueManWalking)`
+  padding-bottom: 30px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    position: absolute;
+    bottom: 20%;
+    padding-bottom: 0px;
+    right: -15%;
+  }
+`;
 
 export const ProposalImagesWrapperStyle = styled(CenterRowStyle)`
   position: relative;
   width: 100%;
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
 `;
 
 export const ProposalStepWrapperStyle = styled(FlexElementStyle)<{
   isAuthentication: boolean;
 }>`
+  position: relative;
   align-items: center;
-  padding-top: 30px;
   flex-flow: column;
+  padding-top: 30px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     align-items: ${props => (props.isAuthentication ? 'center' : 'start')};
     justify-content: space-between;
-    padding-top: 80px;
     flex-flow: row;
   }
+`;
+
+export const LoginWrapperStyle = styled(CenterColumnStyle)`
+  padding-top: 30px;
 `;
