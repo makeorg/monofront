@@ -526,3 +526,14 @@ export const getAccountActivationLink = (
     userId,
     verificationToken,
   });
+
+export const getModerationLinkByLanguage = (language: string): string => {
+  switch (language) {
+    case 'fr':
+      return URL.MODERATION_CHARTER_FR_LINK;
+    case 'de':
+      return URL.MODERATION_CHARTER_DE_LINK;
+    default:
+      return URL.MODERATION_CHARTER_EN_LINK;
+  }
+};

@@ -11,8 +11,13 @@ import { MetaTags } from '@make.org/components/MetaTags';
 import { DateHelper } from '@make.org/utils/helpers/date';
 import { DATE } from '@make.org/types/enums';
 import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
-import { getDataPageLink } from '@make.org/utils/helpers/url';
+import {
+  getDataPageLink,
+  getModerationLinkByLanguage,
+} from '@make.org/utils/helpers/url';
 import i18n from 'i18next';
+import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
+
 import {
   StaticPageWrapperStyle,
   StaticSecondLevelTitleStyle,
@@ -27,6 +32,7 @@ import {
   StaticSecondaryOrderedListStyle,
   StaticSecondaryOrderedListItemStyle,
   StaticStrongStyle,
+  StaticExternalLinkIconStyle,
 } from '../style';
 
 export const TermsOfUseDE: FC = () => {
@@ -104,9 +110,15 @@ export const TermsOfUseDE: FC = () => {
               unserer Website bereitgestellten Informationen liegt uns daher
               besonders am Herzen. In diesen ANB und unserer{' '}
               <RedHTMLLinkElementStyle
-                href={getDataPageLink(country, language)}
+                href={getModerationLinkByLanguage(language)}
+                target="_blank"
+                rel="noopener"
               >
                 Moderationscharta
+                <StaticExternalLinkIconStyle aria-hidden focusable="false" />
+                <ScreenReaderItemStyle>
+                  {i18n.t('common.open_new_window')}
+                </ScreenReaderItemStyle>
               </RedHTMLLinkElementStyle>{' '}
               erläutern wir, welche Maßnahmen wir in diesem Sinne ergreifen.
             </StaticParagraphStyle>
@@ -175,9 +187,15 @@ export const TermsOfUseDE: FC = () => {
               Bestandteil dieser TOS bildet und hier verfügbar{' '}
               <RedHTMLLinkElementStyle
                 href={getDataPageLink(country, language)}
+                target="_blank"
+                rel="noopener"
               >
-                ist.
-              </RedHTMLLinkElementStyle>
+                ist
+                <StaticExternalLinkIconStyle aria-hidden focusable="false" />
+                <ScreenReaderItemStyle>
+                  {i18n.t('common.open_new_window')}
+                </ScreenReaderItemStyle>
+              </RedHTMLLinkElementStyle>{' '}
             </StaticParagraphStyle>
             <StaticParagraphStyle>
               Diese{' '}

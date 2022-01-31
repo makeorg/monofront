@@ -11,8 +11,14 @@ import { MetaTags } from '@make.org/components/MetaTags';
 import { DateHelper } from '@make.org/utils/helpers/date';
 import { DATE } from '@make.org/types/enums';
 import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
-import { getDataPageLink } from '@make.org/utils/helpers/url';
+import {
+  getDataPageLink,
+  getModerationLinkByLanguage,
+} from '@make.org/utils/helpers/url';
 import i18n from 'i18next';
+
+import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
+
 import {
   StaticPageWrapperStyle,
   StaticSecondLevelTitleStyle,
@@ -27,6 +33,7 @@ import {
   StaticSecondaryOrderedListStyle,
   StaticSecondaryOrderedListItemStyle,
   StaticStrongStyle,
+  StaticExternalLinkIconStyle,
 } from '../style';
 
 export const TermsOfUseFR: FC = () => {
@@ -108,9 +115,15 @@ export const TermsOfUseFR: FC = () => {
               </abbr>{' '}
               et de notre{' '}
               <RedHTMLLinkElementStyle
-                href={getDataPageLink(country, language)}
+                href={getModerationLinkByLanguage(language)}
+                target="_blank"
+                rel="noopener"
               >
                 Charte de modération
+                <StaticExternalLinkIconStyle aria-hidden focusable="false" />
+                <ScreenReaderItemStyle>
+                  {i18n.t('common.open_new_window')}
+                </ScreenReaderItemStyle>
               </RedHTMLLinkElementStyle>{' '}
               les mesures que nous prenons en ce sens.
             </StaticParagraphStyle>
@@ -184,9 +197,15 @@ export const TermsOfUseFR: FC = () => {
               et est disponible{' '}
               <RedHTMLLinkElementStyle
                 href={getDataPageLink(country, language)}
+                target="_blank"
+                rel="noopener"
               >
-                ici.
-              </RedHTMLLinkElementStyle>
+                ici
+                <StaticExternalLinkIconStyle aria-hidden focusable="false" />
+                <ScreenReaderItemStyle>
+                  {i18n.t('common.open_new_window')}
+                </ScreenReaderItemStyle>
+              </RedHTMLLinkElementStyle>{' '}
             </StaticParagraphStyle>
             <StaticParagraphStyle>
               Les présentes{' '}

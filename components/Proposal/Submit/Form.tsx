@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import { QuestionType } from '@make.org/types';
-import { FORM, URL } from '@make.org/types/enums';
+import { FORM } from '@make.org/types/enums';
 import { MAX_PROPOSAL_LENGTH } from '@make.org/utils/constants/proposal';
 import i18n from 'i18next';
 import {
@@ -8,6 +8,7 @@ import {
   proposalHasValidLength,
   userFirstnameHasValidLength,
 } from '@make.org/utils/helpers/proposal';
+import { getModerationLinkByLanguage } from '@make.org/utils/helpers/url';
 import {
   trackDisplayProposalField,
   trackClickProposalSubmit,
@@ -26,6 +27,7 @@ import { ProposalService } from '@make.org/utils/services/Proposal';
 import { NameFiledIcon } from '@make.org/utils/constants/icons';
 import BlueShape from '@make.org/assets/images/blueShape.png';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
+import { ProposalSuccess } from './Success';
 import {
   ProposalImagesWrapperStyle,
   ProposalFormWrapperStyle,
@@ -44,18 +46,6 @@ import {
   BlueShapeImageStyle,
   BlueManOnBench,
 } from './style';
-import { ProposalSuccess } from './Success';
-
-const getModerationLinkByLanguage = (language: string) => {
-  switch (language) {
-    case 'fr':
-      return URL.MODERATION_CHARTER_FR_LINK;
-    case 'de':
-      return URL.MODERATION_CHARTER_DE_LINK;
-    default:
-      return URL.MODERATION_CHARTER_EN_LINK;
-  }
-};
 
 export const ProposalForm: FC = () => {
   const { state, dispatch } = useAppContext();
