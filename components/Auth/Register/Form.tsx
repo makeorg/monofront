@@ -93,7 +93,6 @@ export const RegisterForm: React.FC<Props> = ({
               {i18n.t('common.open_new_window')}
             </ScreenReaderItemStyle>
           </TermsOfUseLinkStyle>
-          {i18n.t('register.gtu_text_second')}
         </span>
       </ConditionParagraphStyle>
       <RegisterCheckBox handleCheckbox={handleCheckbox} required />

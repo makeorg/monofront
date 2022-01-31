@@ -428,7 +428,7 @@
     "login_link": "Log in",
     "gtu_text_first": "By signing up, you agree to our ",
     "gtu_text_second": " and consent to receive emails from Make.org (we only send when necessary).",
-    "gtu_link": "terms of service"
+    "gtu_link": "terms of service."
   },
   "forgot_password": {
     "title": "Reset my password",
@@ -1133,7 +1133,7 @@
     "privacy_policy": "privacy policy",
     "make_protect": "@@legal_consent.make_protect|fr:Make.org s'engage à protéger vos",
     "make_protect_link": "@@legal_consent.make_protect_link|fr:données personnelles.",
-    "opt_out": "@@legal_consent.opt_out|fr:Je m'oppose à recevoir des emails marketing de Make.org pour me tenir au courant de nouveaux projets"
+    "opt_out": "I am opposed to receiving marketing e-mails to inform me of projects conducted by Make.org."
   },
   "browse": {
     "page_title": "Browse consultations",

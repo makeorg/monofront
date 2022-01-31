@@ -495,7 +495,7 @@
     "login_link": "Connexion",
     "gtu_text_first": "En vous inscrivant, vous acceptez nos ",
     "gtu_text_second": " et acceptez de recevoir des e-mails (peu nombreux) de Make.org.",
-    "gtu_link": "conditions générales d’utilisation"
+    "gtu_link": "conditions générales d’utilisation."
   },
   "legal_consent": {
     "title": "Autorisation légale",
@@ -511,7 +511,7 @@
     "privacy_policy": "politique de données",
     "make_protect": "Make.org s'engage à protéger vos ",
     "make_protect_link": " données personnelles.",
-    "opt_out": "Je m'oppose à recevoir des emails marketing de Make.org pour me tenir au courant de nouveaux projets"
+    "opt_out": "Je m'oppose à recevoir des emails marketing de Make.org pour me tenir au courant de nouveaux projets."
   },
   "forgot_password": {
     "title": "Je réinitialise mon mot de passe",
