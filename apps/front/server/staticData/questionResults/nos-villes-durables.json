@@ -1,0 +1,567 @@
+{
+    "context": "Consultation citoyenne réalisée par Make.org du 2021-11-09 au 2022-01-07, autour de la question: Comment construire des villes plus durables, pour tous ?",
+    "key_figures": {
+        "participants": 39180,
+        "votes": 212111,
+        "proposals": 1469
+    },
+    "top_ideas": [
+        {
+            "name": "Paysages urbains et cadre de vie",
+            "ideas": [
+                {
+                    "idea": "Végétaliser et donner une place à la nature dans les villes",
+                    "agreement": 91,
+                    "adhesion": 29,
+                    "realistic": 29
+                },
+                {
+                    "idea": "Repenser l'organisation et la conception des quartiers",
+                    "agreement": 83,
+                    "adhesion": 18,
+                    "realistic": 30
+                },
+                {
+                    "idea": "Sensibiliser au civisme pour améliorer le cadre de vie et l'environnement",
+                    "agreement": 82,
+                    "adhesion": 18,
+                    "realistic": 27
+                }
+            ]
+        },
+        {
+            "name": "Ressources et énergie",
+            "ideas": [
+                {
+                    "idea": "Réhabiliter, rénover et recycler l'habitat existant",
+                    "agreement": 87,
+                    "adhesion": 21,
+                    "realistic": 32
+                },{
+                    "idea": "Accélérer la transition énergétique",
+                    "agreement": 84,
+                    "adhesion": 17,
+                    "realistic": 32
+                },
+
+                {
+                    "idea": "Améliorer la gestion de l'eau de pluie et des eaux usées",
+                    "agreement": 90,
+                    "adhesion": 21,
+                    "realistic": 33
+                },
+                {
+                    "idea": "Optimiser les systèmes d'éclairage et les publicités lumineuses",
+                    "agreement": 86,
+                    "adhesion": 27,
+                    "realistic": 31
+                }
+            ]
+        },
+        {
+            "name": "Mobilités",
+            "ideas": [
+                {
+                    "idea": "Progresser vers de nouvelles mobilités",
+                    "agreement": 89,
+                    "adhesion": 19,
+                    "realistic": 36
+                }
+            ]
+        },
+        {
+            "name": "Commerces, alimentation et déchets",
+            "ideas": [
+                {
+                    "idea": "Valoriser les commerces et producteurs locaux",
+                    "agreement": 89,
+                    "adhesion": 23,
+                    "realistic": 32
+                },{
+                    "idea": "Limiter les déchets et améliorer leur gestion",
+                    "agreement": 89,
+                    "adhesion": 28,
+                    "realistic": 30
+                }
+
+            ]
+        },
+        {
+            "name": "Social et solidarités",
+            "ideas": [
+                {
+                    "idea": "Favoriser la ville pour tous",
+                    "agreement": 84,
+                    "adhesion": 19,
+                    "realistic": 27
+                }
+            ]
+        }
+    ],
+    "controversials": [{
+            "id": "bb0e6b6c-d37e-4172-8037-ffa77e3123fa",
+            "content": "Il faut densifier plutôt que favoriser l'étalement urbain et pour cela inciter à limiter le nombre de constructions de maisons",
+            "author": "RGH",
+            "agree": 41,
+            "like_it": 9,
+            "disagree": 39,
+            "no_way": 17,
+            "votes": 144
+        },  {
+            "id": "f4e43d41-f33e-4d25-b1a1-32d09919a7e5",
+            "content": "Il faut interdire la création de nouveaux lotissements pour favoriser les centre-bourgs",
+            "author": "Grégoire",
+            "agree": 44,
+            "like_it": 9,
+            "disagree": 32,
+            "no_way": 11,
+            "votes": 132
+        },{
+            "id": "029dbc08-3012-4a89-b1a2-acd277ed9d58",
+            "content": "Il faut enfouir les bâtiments et les infrastructures dans des forêts urbaines avec des végétaux proliférants, filtrants, absorbants",
+            "author": "Dominique",
+            "agree": 49,
+            "like_it": 10,
+            "disagree": 26,
+            "no_way": 8,
+            "votes": 124
+        },{
+            "id": "bee4a916-ac6f-4977-b88a-064a553fb4aa",
+            "content": "Il faut définir une quantité maximum d’énergie et d’eau par personne détaxée. Et surtaxer toutes les consommations au-delà",
+            "author": "Jacques",
+            "agree": 44,
+            "like_it": 11,
+            "disagree": 42,
+            "no_way": 22,
+            "votes": 133
+        },{
+            "id": "fe2040b5-e323-4162-bb3a-da7eab41fd83",
+            "content": "Il faut instaurer des permis de construire sous condition de production d’énergie renouvelable pour le desservir",
+            "author": "Robert",
+            "agree": 48,
+            "like_it": 10,
+            "disagree": 30,
+            "no_way": 9,
+            "votes": 127
+        },{
+            "id": "487341aa-8f48-449f-b1b1-f87518f7af1f",
+            "content": "Il faut déployer davantage d’énergie nucléaire (neutre du point de vue du bilan carbone et aussi indépendance énergétique de notre pays)",
+            "author": "Yacine",
+            "agree": 56,
+            "like_it": 14,
+            "disagree": 28,
+            "no_way": 18,
+            "votes": 164
+        },{
+            "id": "ea820b63-98ab-422b-be9b-9205c109aeb7",
+            "content": "Il faut calculer l'empreinte carbone personnelle par usage",
+            "author": "M.",
+            "agree": 40,
+            "like_it": 8,
+            "disagree": 31,
+            "no_way": 7,
+            "votes": 134
+        },{
+            "id": "7701320a-7095-427c-bfb2-6c7a5d5fa3c1",
+            "content": "Il faut des villes sans voiture avec des routes aménagées seulement pour les vélos, trottinettes, piétons, bus, tram et ambulances",
+            "author": "Itmatters",
+            "agree": 38,
+            "like_it": 13,
+            "disagree": 50,
+            "no_way": 17,
+            "votes": 151
+        },{
+            "id": "9cb58069-56cb-45cf-ae81-91e9c9f0b974",
+            "content": "Il faut rendre accessibles les véhicules électriques à tout le monde et surtout à ceux qui vivent à la campagne",
+            "author": "sifdin",
+            "agree": 45,
+            "like_it": 7,
+            "disagree": 36,
+            "no_way": 19,
+            "votes": 128
+        },{
+            "id": "39173fae-e195-41ac-9402-486624c7e3c2",
+            "content": "Il faut installer des détecteurs de bruits dans nos rues comme il y a des détecteurs de vitesse pour encourager les gens à vivre ensemble.",
+            "author": "Louis",
+            "agree": 48,
+            "like_it": 17,
+            "disagree": 29,
+            "no_way": 7,
+            "votes": 138
+        },{
+            "id": "320bf4ea-ae52-45d4-af03-5414706b8d43",
+            "content": "Il faut nourrir les habitants des villes avec des légumes bio produits localement dans la ville (sur les toits, dans les espaces verts)",
+            "author": "michelle",
+            "agree": 47,
+            "like_it": 8,
+            "disagree": 29,
+            "no_way": 3,
+            "votes": 124
+        }, {
+            "id": "d7186f36-cd79-49bb-82e6-42ba7521fe48",
+            "content": "Il faut limiter le nombre de logements sociaux à un certain pourcentage de la ville (par exemple, pas plus de 25 ou 30% maximum).",
+            "author": "Rémi",
+            "agree": 45,
+            "like_it": 9,
+            "disagree": 33,
+            "no_way": 14,
+            "votes": 126
+        },{
+            "id": "5eac7ac2-11e3-43ef-8b08-dd0015961172",
+            "content": "Il faut arrêter toutes ces participations citoyennes où quelques individus monopolisent la parole et prennent donc le pouvoir sans être élus",
+            "author": "Benoît",
+            "agree": 43,
+            "like_it": 12,
+            "disagree": 35,
+            "no_way": 21,
+            "votes": 128
+        },{
+            "id": "7dacc5c1-09b7-4b69-aad1-ab92f51c7d4b",
+            "content": "Il faut promouvoir la limitation des naissances et aborder de front le problème de la surpopulation",
+            "author": "Chaktori",
+            "agree": 45,
+            "like_it": 9,
+            "disagree": 40,
+            "no_way": 21,
+            "votes": 132
+        }
+    ],
+    "rejected": [],
+    "cartography": [
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Thèmes cités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Mobilités",
+                    "percent": 19,
+                    "color": "#4B45A5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Construction et rénovation",
+                    "percent": 17,
+                    "color": "#8955BD",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.35
+                    }
+                },
+                {
+                    "label": "Nature et ",
+                    "sublabel": "biodiversité",
+                    "percent": 15,
+                    "color": "#EB7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Aménagements urbains ",
+                    "sublabel": "et paysagers",
+                    "percent": 13,
+                    "color": "#F5976E",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.1,
+                        "yAxis": 2.15
+                    }
+                },
+                {
+                    "label": "Secteur public",
+                    "sublabel": " et gouvernance",
+                    "percent": 11,
+                    "color": "#EEB298",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Energie",
+                    "percent": 10,
+                    "color": "#FFD266",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Social et",
+                    "sublabel": " inclusion",
+                    "percent": 10,
+                    "color": "#FFF689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Commerces et",
+                    "sublabel": " entreprises",
+                    "percent": 9,
+                    "color": "#E5FFAE",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Communication et",
+                    "sublabel": " image",
+                    "percent": 6,
+                    "color": "#C1EBDD",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2
+                    }
+                },
+                {
+                    "label": "Gestion des déchets",
+                    "percent": 5,
+                    "color": "#59BAD4",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Autres",
+                    "percent": 4,
+                    "color": "#FFF",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "xAxis": 1.8,
+                        "yAxis": 1.7
+                    }
+                }
+            ]
+        }
+    ],
+    "participation": [
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (1/2)",
+            "forcedHigherValue": 28,
+            "legend": {
+                "title": "Participation par région (1/2)",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "Île-de-France",
+                    "bars": {
+                        "first": 27,
+                        "second": 18
+                    }
+                },
+                {
+                    "label": "Auvergne-Rhône-Alpes",
+                    "bars": {
+                        "first": 12,
+                        "second": 12
+                    }
+                },
+                {
+                    "label": "Nouvelle-Aquitaine",
+                    "bars": {
+                        "first": 8,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Occitanie",
+                    "bars": {
+                        "first": 7,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Hauts-de-France",
+                    "bars": {
+                        "first": 6,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Grand Est",
+                    "bars": {
+                        "first": 7,
+                        "second": 8
+                    }
+                },
+                {
+                    "label": "Provence-Alpes-Côte d'Azur",
+                    "bars": {
+                        "first": 7,
+                        "second": 8
+                    }
+                }
+            ],
+            "id": "participation_0"
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (2/2)",
+            "forcedHigherValue": 28,
+            "legend": {
+                "title": "Participation par région (2/2)",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "Pays de la Loire",
+                    "bars": {
+                        "first": 6,
+                        "second": 6
+                    }
+                },
+                {
+                    "label": "Bretagne",
+                    "bars": {
+                        "first": 5,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Normandie",
+                    "bars": {
+                        "first": 5,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Bourgogne-Franche-Comté",
+                    "bars": {
+                        "first": 3,
+                        "second": 4
+                    }
+                },
+                {
+                    "label": "Centre-Val de Loire",
+                    "bars": {
+                        "first": 3,
+                        "second": 4
+                    }
+                },
+                {
+                    "label": "Outre-mer",
+                    "bars": {
+                        "first": 4,
+                        "second": 3
+                    }
+                },
+                {
+                    "label": "Corse",
+                    "bars": {
+                        "first": 1,
+                        "second": 1
+                    }
+                }
+            ],
+            "id": "participation_1"
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par âge",
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "16-24",
+                    "bars": {
+                        "first": 14,
+                        "second": 13
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "25-34",
+                    "bars": {
+                        "first": 18,
+                        "second": 14
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "35-44",
+                    "bars": {
+                        "first": 13,
+                        "second": 15
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "45-54",
+                    "bars": {
+                        "first": 14,
+                        "second": 16
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "55-64",
+                    "bars": {
+                        "first": 18,
+                        "second": 16
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "65+",
+                    "bars": {
+                        "first": 23,
+                        "second": 26
+                    },
+                    "color": "#8BDAB2"
+                }
+            ],
+            "id": "participation_2"
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Votes par genre",
+            "legend": "",
+            "data": [
+                {
+                    "label": "hommes",
+                    "percent": 53,
+                    "color": "#4B45A5"
+                },
+                {
+                    "label": "femmes",
+                    "percent": 47,
+                    "color": "#8955BD"
+                }
+            ],
+            "id": "participation_3"
+        }
+    ]
+}
