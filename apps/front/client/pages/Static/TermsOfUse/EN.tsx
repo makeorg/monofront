@@ -10,7 +10,10 @@ import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
 import { DateHelper } from '@make.org/utils/helpers/date';
 import { DATE } from '@make.org/types/enums';
-import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
+import {
+  RedHTMLLinkElementStyle,
+  RedLinkStyle,
+} from '@make.org/ui/elements/LinkElements';
 import {
   getDataPageLink,
   getModerationLinkByLanguage,
@@ -190,17 +193,10 @@ export const TermsOfUseEN: FC = () => {
                 GTS
               </abbr>{' '}
               and which is available{' '}
-              <RedHTMLLinkElementStyle
-                href={getDataPageLink(country, language)}
-                target="_blank"
-                rel="noopener"
-              >
+              <RedLinkStyle to={getDataPageLink(country, language)}>
                 here
-                <StaticExternalLinkIconStyle aria-hidden focusable="false" />
-                <ScreenReaderItemStyle>
-                  {i18n.t('common.open_new_window')}
-                </ScreenReaderItemStyle>
-              </RedHTMLLinkElementStyle>{' '}
+              </RedLinkStyle>
+              .
             </StaticParagraphStyle>
             <StaticParagraphStyle>
               The present{' '}
