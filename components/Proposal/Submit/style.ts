@@ -50,24 +50,28 @@ export const TriggerIconStyle = styled(SvgPencil)`
   margin-right: 7px;
 `;
 
-export const ProposalFormWrapperStyle = styled(SpaceBetweenColumnStyle)`
+export const ProposalFormWrapperStyle = styled(SpaceBetweenColumnStyle)<{
+  isWidget?: boolean;
+}>`
   width: 100%;
   height: 100%;
-  padding: 0px 30px 25px;
+  padding: ${props => (props.isWidget ? '0px 15px 25px' : '0px 30px 25px')};
   max-width: 720px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin: 0 50px 50px 0px;
-    padding: 0px 0px 25px;
+    margin: ${props => (props.isWidget ? '0px' : '0 50px 50px 0px')};
+    padding: ${props => (props.isWidget ? '0px 15px 25px' : '0px 0px 25px')};
   }
 `;
 
-export const ProposalStepWrapperColumnStyle = styled.div`
+export const ProposalStepWrapperColumnStyle = styled.div<{
+  isWidget: boolean;
+}>`
   width: 100%;
   height: 100%;
-  padding: 0px 30px 25px;
+  padding: ${props => (props.isWidget ? '0px 15px 25px' : '0px 30px 25px')};
   max-width: 720px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    padding-bottom: 50px;
+    padding: ${props => (props.isWidget ? '0px 15px 25px' : '0px 0px 50px')};
   }
 `;
 
@@ -106,14 +110,18 @@ export const ProposalStepLabelStyle = styled.label`
 export const ProposalStepLabelRedStyle = styled.span`
   color: red;
 `;
-
-export const ProposalAltStepTitleStyle = styled(ProposalStepTitleStyle)`
+export const ProposalAltStepTitleStyle = styled(ProposalStepTitleStyle)<{
+  isWidget?: boolean;
+}>`
   width: 100%;
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   letter-spacing: 0.12px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.XL.value)};
-    text-align: center;
+    font-size: ${props =>
+      props.isWidget
+        ? intToPx(typography.font.fontsize.S.value)
+        : intToPx(typography.font.fontsize.XL.value)};
+    text-align: ${props => (props.isWidget ? 'start' : 'center')};
   }
 `;
 
@@ -179,11 +187,13 @@ export const ProposalBackButtonStyle = styled(BlackNoBackgroundButtonStyle)`
 
 export const ProposalBackButtonCenterStyle = styled(
   BlackNoBackgroundButtonStyle
-)`
+)<{
+  isWidget?: boolean;
+}>`
   align-self: start;
   font-family: ${MakeFonts.CircularStandardBook};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    align-self: center;
+    align-self: ${props => (props.isWidget ? 'start' : 'center')};
   }
 `;
 
@@ -379,11 +389,12 @@ export const ProposalImagesWrapperStyle = styled(CenterRowStyle)`
 
 export const ProposalStepWrapperStyle = styled(FlexElementStyle)<{
   isAuthentication: boolean;
+  isWidget: boolean;
 }>`
   position: relative;
   align-items: center;
   flex-flow: column;
-  padding-top: 30px;
+  padding-top: ${props => (props.isWidget ? '15px' : '30px')};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     align-items: ${props => (props.isAuthentication ? 'center' : 'start')};
     justify-content: space-between;
@@ -391,6 +402,8 @@ export const ProposalStepWrapperStyle = styled(FlexElementStyle)<{
   }
 `;
 
-export const LoginWrapperStyle = styled(CenterColumnStyle)`
-  padding-top: 30px;
+export const LoginWrapperStyle = styled(CenterColumnStyle)<{
+  isWidget: boolean;
+}>`
+  padding-top: ${props => (props.isWidget ? '15px' : '30px')};
 `;

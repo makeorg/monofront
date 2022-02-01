@@ -40,6 +40,7 @@ export const ExtraAltParagraphStyle = styled(InlineParagraphStyle)`
 `;
 
 export const ConditionParagraphStyle = styled(InlineParagraphStyle)`
+  width: 100%;
   font-family: ${MakeFonts.CircularStandardBook};
   margin-bottom: 15px;
   a {

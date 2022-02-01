@@ -117,8 +117,9 @@ export const ProposalForm: FC = () => {
 
   return (
     <>
-      <ProposalStepWrapperStyle isAuthentication={false}>
+      <ProposalStepWrapperStyle isAuthentication={false} isWidget={isWidget}>
         <ProposalFormWrapperStyle
+          isWidget={isWidget}
           data-cy-container={FORM.PROPOSAL_SUBMIT_FORMNAME}
         >
           <form

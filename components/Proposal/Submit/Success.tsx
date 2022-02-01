@@ -26,6 +26,8 @@ type Props = {
 export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
   const { state, dispatch } = useAppContext();
   const { user } = selectAuthentication(state);
+  const { source } = state.appConfig;
+  const isWidget = source === 'widget';
 
   const handleCloseButton = () => {
     dispatch(closePanel());
@@ -39,7 +41,7 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
   }, []);
 
   return (
-    <ProposalFormWrapperStyle>
+    <ProposalFormWrapperStyle isWidget={isWidget}>
       <CenterColumnStyle>
         <ProposalSuccessWrapperStyle as="section">
           {isRegister && (

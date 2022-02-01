@@ -97,8 +97,8 @@ export const ProposalAuthentication: FC = () => {
 
   if (step) {
     return (
-      <ProposalFormWrapperStyle>
-        <LoginWrapperStyle>
+      <ProposalFormWrapperStyle isWidget={isWidget}>
+        <LoginWrapperStyle isWidget={isWidget}>
           <ProposalBackButtonStyle
             onClick={() => dispatch(resetProposalAuthStep())}
           >
@@ -112,16 +112,16 @@ export const ProposalAuthentication: FC = () => {
 
   return (
     <>
-      <ProposalStepWrapperStyle isAuthentication>
-        <ProposalStepWrapperColumnStyle>
+      <ProposalStepWrapperStyle isWidget={isWidget} isAuthentication>
+        <ProposalStepWrapperColumnStyle isWidget={isWidget}>
           <ColumnElementStyle>
-            <ProposalBackButtonCenterStyle
+            <ProposalBackButtonCenterStyle isWidget={isWidget}
               onClick={() => dispatch(modifyProposalPending())}
             >
               {i18n.t('proposal_submit.authentication.back')}
             </ProposalBackButtonCenterStyle>
             <ProposalAuthWrapperStyle>
-              <ProposalAltStepTitleStyle>
+              <ProposalAltStepTitleStyle isWidget={isWidget}>
                 {firstname}{', '}
                 <ProposalStepLabelRedStyle>
                   {i18n.t('proposal_submit.authentication.last_step_red')}
