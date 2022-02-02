@@ -552,13 +552,18 @@
             "data": [
                 {
                     "label": "hommes",
-                    "percent": 53,
+                    "percent": 52,
                     "color": "#4B45A5"
                 },
                 {
                     "label": "femmes",
-                    "percent": 47,
-                    "color": "#8955BD"
+                    "percent": 46,
+                    "color": "#EB7575"
+                },
+                {
+                    "label": "non binaire",
+                    "percent": 2,
+                    "color": "#EEB298"
                 }
             ],
             "id": "participation_3"
