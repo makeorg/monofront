@@ -12,7 +12,7 @@ import { RedLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { PasswordForgot } from '@make.org/components/Auth/PasswordForgot';
 import {
   ProposalSubmitAuthSeparator,
-  SeparatorProposalAuthLogin,
+  DeprecatedSeparatorProposalAuthLogin,
   TextSeparatorStyle,
 } from '@make.org/ui/elements/SeparatorsElements';
 import { FacebookAuthentication } from '@make.org/components/Auth/Social/FacebookAuthentication';
@@ -57,11 +57,11 @@ const renderAuthStep = (step: string, dispatch: Dispatch) => {
             </RedLinkButtonStyle>
           </ProposalSubmitForgotPasswordWrapperStyle>
           <ProposalAuthSocialLoginWrapperStyle>
-            <SeparatorProposalAuthLogin>
+            <DeprecatedSeparatorProposalAuthLogin>
               <ProposalSubmitAuthSeparator />
               <TextSeparatorStyle>{i18n.t('register.or')}</TextSeparatorStyle>
               <ProposalSubmitAuthSeparator />
-            </SeparatorProposalAuthLogin>
+            </DeprecatedSeparatorProposalAuthLogin>
             <SocialRegisterButtonsWrapperStyle>
               <FacebookAuthentication />
               <GoogleAuthentication />

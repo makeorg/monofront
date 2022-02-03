@@ -84,13 +84,10 @@ export const ProposalStepTitleStyle = styled.h2`
     text-align: center;
   }
   &.with-margin-bottom {
-    margin-bottom: 25px;
+    margin-bottom: 5px;
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${intToPx(typography.font.fontsize.XL.value)};
-    &.with-margin-bottom {
-      margin-bottom: 35px;
-    }
   }
 `;
 
@@ -101,14 +98,14 @@ export const ProposalStepMandatoryStyle = styled.div`
   color: ${color.greyDark};
 `;
 
-export const ProposalStepLabelStyle = styled.label`
+export const ProposalStepLabelStyle = styled.div`
   font-family: ${MakeFonts.CircularStandardBook};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   margin-bottom: 5px;
 `;
 
 export const ProposalStepLabelRedStyle = styled.span`
-  color: red;
+  color: ${color.brandSecondary};
 `;
 export const ProposalAltStepTitleStyle = styled(ProposalStepTitleStyle)<{
   isWidget?: boolean;
@@ -116,6 +113,7 @@ export const ProposalAltStepTitleStyle = styled(ProposalStepTitleStyle)<{
   width: 100%;
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   letter-spacing: 0.12px;
+  margin-bottom: 10px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${props =>
       props.isWidget
@@ -300,7 +298,7 @@ export const ProposalAuthLoginWrapperStyle = styled(
 `;
 
 export const ProposalAuthSocialLoginWrapperStyle = styled(CenterColumnStyle)`
-  margin: 45px 0px;
+  margin: 0 0 45px;
   width: 100%;
 `;
 

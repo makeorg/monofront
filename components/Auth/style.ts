@@ -141,13 +141,13 @@ export const NewWindowIconStyle = styled(SvgExternalLinkPlain)`
 
 export const RegisterEmailTitleStyle = styled.h1`
   text-transform: none;
-  margin: 30px 0px 10px;
+  margin: 30px 0px 5px;
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   font-family: ${MakeFonts.CircularStandardBold};
 `;
 
 export const LoginTitleWrapperStyle = styled(ThirdLevelTitleStyle)`
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   text-transform: none;
   font-family: ${MakeFonts.CircularStandardBold};
   font-size: ${intToPx(typography.font.fontsize.S.value)};

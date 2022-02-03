@@ -35,8 +35,14 @@ export const SeparatorWrapperStyle = styled(MiddleRowStyle)`
   }
 `;
 
-export const SeparatorProposalAuthLogin = styled(SeparatorWrapperStyle)`
+export const DeprecatedSeparatorProposalAuthLogin = styled(
+  SeparatorWrapperStyle
+)`
   margin-bottom: 40px;
+`;
+
+export const SeparatorProposalAuthLogin = styled(SeparatorWrapperStyle)`
+  margin-bottom: 15px;
 `;
 
 export const TextSeparatorStyle = styled(MiddleRowStyle)`
