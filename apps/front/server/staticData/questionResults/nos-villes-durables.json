@@ -26,6 +26,12 @@
                     "agreement": 82,
                     "adhesion": 18,
                     "realistic": 27
+                },
+                {
+                    "idea": "Optimiser les systèmes d'éclairage et les publicités lumineuses",
+                    "agreement": 86,
+                    "adhesion": 27,
+                    "realistic": 31
                 }
             ]
         },
@@ -49,12 +55,6 @@
                     "agreement": 90,
                     "adhesion": 21,
                     "realistic": 33
-                },
-                {
-                    "idea": "Optimiser les systèmes d'éclairage et les publicités lumineuses",
-                    "agreement": 86,
-                    "adhesion": 27,
-                    "realistic": 31
                 }
             ]
         },
