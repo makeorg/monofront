@@ -1,5 +1,5 @@
 {
-  "context": "Diese Konsultation ist Teil des partizipativen Prozesses der Konferenz über die Zukunft Europas. Junge Bürgerinnen und Bürger in Deutschland teilten auf der Plattform von Make.org ihre Prioritäten und Wünsche für das Europa von morgen mit. Diese werden in die europäischen und deutschen politischen Entscheidungsprozesse eingebunden",
+  "context": "Diese Konsultation ist Teil des partizipativen Prozesses der Konferenz zur Zukunft Europas.  Junge Bürgerinnen und Bürger in Deutschland teilten auf der Plattform von Make.org ihre Prioritäten und Wünsche für das Europa von morgen mit. Diese werden in die europäischen und deutschen politischen Entscheidungsprozesse eingebunden.",
   "key_figures": {
     "participants": 45015,
     "votes": 392164,
@@ -86,7 +86,7 @@
           "realistic": 18
         },
         {
-          "idea": " und Aufwertung des Pflegeberufs",
+          "idea": "Stärkung und Aufwertung des Pflegeberufs",
           "agreement": 90,
           "adhesion": 28,
           "realistic": 23
@@ -97,16 +97,16 @@
       "name": "Gesundheit",
       "ideas": [
         {
-          "idea": "Förderung des Schutzes der psychischen Gesundheit",
-          "agreement": 86,
-          "adhesion": 30,
-          "realistic": 20
-        },
-        {
           "idea": "Sicherstellung einer zugänglicheren und gleichwertigeren Gesundheitsversorgung",
           "agreement": 81,
           "adhesion": 29,
           "realistic": 16
+        },
+        {
+          "idea": "Förderung des Schutzes der psychischen Gesundheit",
+          "agreement": 86,
+          "adhesion": 30,
+          "realistic": 20
         }
       ]
     },
@@ -314,8 +314,8 @@
           }
         },
         {
-          "label": "Sicherstellung des Schutzes",
-          "sublabel": " der Menschenrechte",
+          "label": "Menschenrechte",
+          "sublabel": " und Rechtsstaatlichkeit",
           "percent": 14,
           "color": "#8955BD",
           "adjustLabel": {
