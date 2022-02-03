@@ -6,7 +6,6 @@ import i18n from 'i18next';
 import {
   getLocalizedBaitText,
   proposalHasValidLength,
-  userFirstnameHasValidLength,
 } from '@make.org/utils/helpers/proposal';
 import { getModerationLinkByLanguage } from '@make.org/utils/helpers/url';
 import {
@@ -65,9 +64,8 @@ export const ProposalForm: FC = () => {
   const charCounting = proposalIsEmpty
     ? baitText?.length
     : proposalContent.length;
-  const disableSubmitButton =
-    !proposalHasValidLength(proposalContent.length) ||
-    !userFirstnameHasValidLength(firstname.length);
+
+  const disableSubmitButton = !proposalHasValidLength(proposalContent.length);
 
   const { source } = state.appConfig;
   const isWidget = source === 'widget';

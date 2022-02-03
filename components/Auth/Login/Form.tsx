@@ -8,7 +8,7 @@ import {
   trackSignupEmailFailure,
 } from '@make.org/utils/services/Tracking';
 import { LinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
-import { FORM, NOTIF } from '@make.org/types/enums';
+import { FORM, NOTIF, AUTH_STEP } from '@make.org/types/enums';
 import { SubmitThumbsUpIcon } from '@make.org/utils/constants/icons';
 import { throttle } from '@make.org/utils/helpers/throttle';
 import { getFieldError } from '@make.org/utils/helpers/form';
@@ -17,6 +17,7 @@ import {
   modalClose,
   modalShowDataPolicyLogin,
 } from '@make.org/store/actions/modal';
+import { setProposalAuthStep } from '@make.org/store/actions/pendingProposal';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { useAppContext } from '@make.org/store';
 import {
@@ -36,11 +37,7 @@ type TypeLoginValues = {
   password: string;
 };
 
-type Props = {
-  handleForgotPasswordModal?: () => void;
-};
-
-export const LoginForm: FC<Props> = ({ handleForgotPasswordModal }) => {
+export const LoginForm: FC = () => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy } = state.appConfig;
   const { proposalContent } = state.pendingProposal;
@@ -131,7 +128,10 @@ export const LoginForm: FC<Props> = ({ handleForgotPasswordModal }) => {
         passwordError={passwordError}
         handleChange={handleChange}
       />
-      <LinkButtonStyle onClick={handleForgotPasswordModal} type="button">
+      <LinkButtonStyle
+        onClick={() => dispatch(setProposalAuthStep(AUTH_STEP.FORGOT_PASSWORD))}
+        type="button"
+      >
         {i18n.t('login.forgot_password')}
       </LinkButtonStyle>
       <SubmitButton
