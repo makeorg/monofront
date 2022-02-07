@@ -567,6 +567,7 @@
     },
     "statistics": {
       "visitor": "make-visitor-id : ce cookie sert à suivre les visites sur notre service de façon à mesurer le trafic de façon anonyme et agrégée. Les événements de navigation sont envoyés à l'outil d'analyse MixPanel.",
+      "created-at": "make-visitor-created-at : ce cookie sert à obtenir la date de la première visite sur la plateforme.",
       "tracking": "Cookie de tracking Facebook : il sert à recueillir de la donnée de comportement sur le service en vue d'analyses agrégées permettant d’améliorer le service. Il sert également à recueillir les données socio démo (âge, genre, région) de façon agrégée pour enrichir l’analyse de la consultation."
     },
     "social_media": {

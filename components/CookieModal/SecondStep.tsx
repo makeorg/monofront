@@ -138,6 +138,9 @@ export const SecondStepCookie: React.FC<Props> = ({
             <CookieModalCookieDetailParagraphStyle>
               {i18n.t('cookie_modal.statistics.visitor')}
             </CookieModalCookieDetailParagraphStyle>
+            <CookieModalCookieDetailParagraphStyle>
+              {i18n.t('cookie_modal.statistics.created-at')}
+            </CookieModalCookieDetailParagraphStyle>
           </ColumnElementStyle>
         </CookieModalElementStyle>
         <CookieModalElementStyle>

@@ -495,6 +495,7 @@
     },
     "statistics": {
       "visitor": "make-visitor-id : this cookie is used to track visits to our service in order to measure traffic in an anonymous and aggregated fashion. Navigation events are sent to the MixPanel analysis tool.",
+      "created-at": "make-visitor-created-at : this cookie is used to obtain the date of the first visit on the platform.",
       "tracking": "Facebook tracking cookie: it is used to collect behavioral data on the service for aggregate analysis to improve the service. It is also used to collect socio-demographic data (age, gender, region) in an aggregated way to enrich the analysis of the consultation."
     },
     "social_media": {
