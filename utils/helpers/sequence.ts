@@ -166,16 +166,14 @@ export const getSequenceSize = (
   extraSlidesConfig: QuestionExtraSlidesConfigType,
   canPropose: boolean,
   hasDemographics: boolean,
-  introCardParam?: boolean,
-  pushProposalParam?: boolean
+  introCardParam?: boolean
 ): number => {
   let sequenceSize = proposalLength + 1; // add one for final card always in sequence
 
   const withPushProposalCard =
     !!extraSlidesConfig.pushProposalCard &&
     !!extraSlidesConfig.pushProposalCard.enabled &&
-    !!canPropose &&
-    !!pushProposalParam;
+    !!canPropose;
   const withIntroCard =
     !!extraSlidesConfig.introCard &&
     !!extraSlidesConfig.introCard.enabled &&

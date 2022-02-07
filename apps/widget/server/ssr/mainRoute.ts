@@ -147,6 +147,7 @@ export const mainRoute = async (
       noPushProposal
     ),
   };
+
   const cards = buildCards(
     [firstProposal.data.proposal],
     questionModified.sequenceConfig,
@@ -161,7 +162,6 @@ export const mainRoute = async (
     questionModified.sequenceConfig,
     questionModified.canPropose,
     questionModified.hasDemographics,
-    false,
     false
   );
 

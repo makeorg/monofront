@@ -355,8 +355,7 @@ describe('Sequence Helper', () => {
         extraSlidesConfig,
         true,
         false,
-        true,
-        undefined
+        true
       );
       expect(sequenceSize).toEqual(12);
     });
@@ -370,8 +369,7 @@ describe('Sequence Helper', () => {
         extraSlidesConfig,
         true,
         false,
-        undefined,
-        true
+        undefined
       );
       expect(sequenceSize).toEqual(12);
     });
