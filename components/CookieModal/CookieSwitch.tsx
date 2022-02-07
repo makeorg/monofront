@@ -1,5 +1,7 @@
 import React from 'react';
 import { SwitchButton } from '@make.org/ui/components/Switch';
+import Cookies from 'universal-cookie';
+import { COOKIE } from '@make.org/types/enums';
 import {
   trackClickCookieSwitchAccept,
   trackClickCookieSwitchRefuse,
@@ -16,6 +18,7 @@ import {
 type Props = {
   value: keyof StateUserCookiesPreferences;
   description: string;
+  // eslint-disable-next-line react/require-default-props
   onCookiePage?: boolean;
 };
 
@@ -27,6 +30,9 @@ export const CookieSwitch: React.FC<Props> = ({
   const { dispatch, state } = useAppContext();
   const { cookiesPreferences } = state.user;
 
+  const cookies = new Cookies();
+  const preferencesCookieValueOnLoad = cookies.get(COOKIE.USER_PREFERENCES);
+
   return (
     <CookieModalElementSwitchWrapperStyle>
       <CookieModalCookieDetailParagraphStyle
@@ -35,7 +41,7 @@ export const CookieSwitch: React.FC<Props> = ({
         {description}
         <CookieSwitchWrapperStyle>
           <SwitchButton
-            value={cookiesPreferences[value]}
+            value={preferencesCookieValueOnLoad[value]}
             onEnabling={() => {
               dispatch(
                 setCookiesPreferencesInApp({
