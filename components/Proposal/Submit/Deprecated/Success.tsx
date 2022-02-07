@@ -17,13 +17,14 @@ import {
   ProposalSuccessIconStyle,
   ProposalSuccessRegisterStyle,
   ProposalSuccessRedButtonStyle,
-} from './style';
+} from '../style';
 
 type Props = {
+  // eslint-disable-next-line react/require-default-props
   isRegister?: boolean;
 };
 
-export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
+export const DeprecatedProposalSuccess: React.FC<Props> = ({ isRegister }) => {
   const { state, dispatch } = useAppContext();
   const { user } = selectAuthentication(state);
   const { source } = state.appConfig;

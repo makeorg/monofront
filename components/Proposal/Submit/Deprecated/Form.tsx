@@ -39,7 +39,7 @@ import {
   ProposalAuthInlineWrapperStyle,
   ProposalSubmitButtonsWidgetStyle,
 } from './style';
-import { ProposalSuccess } from '../Success';
+import { DeprecatedProposalSuccess } from './Success';
 
 const getModerationLinkByLanguage = (language: string) => {
   switch (language) {
@@ -100,7 +100,7 @@ export const DeprecatedProposalForm: FC = () => {
   const handleSubmitForm = async () => {
     if (isLoggedIn) {
       await ProposalService.propose(proposalContent, question.questionId, () =>
-        dispatch(setPanelContent(<ProposalSuccess />))
+        dispatch(setPanelContent(<DeprecatedProposalSuccess />))
       );
     }
 

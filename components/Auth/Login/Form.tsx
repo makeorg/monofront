@@ -24,7 +24,7 @@ import {
   FormRightAlignStyle,
   FormRequirementsLeftStyle,
 } from '@make.org/ui/elements/FormElements';
-import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
+import { DeprecatedProposalSuccess } from '@make.org/components/Proposal/Submit/Deprecated/Success';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { setPanelContent } from '@make.org/store/actions/panel';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
@@ -82,7 +82,7 @@ export const LoginForm: FC = () => {
         await ProposalService.propose(
           proposalContent,
           question.questionId,
-          () => dispatch(setPanelContent(<ProposalSuccess />))
+          () => dispatch(setPanelContent(<DeprecatedProposalSuccess />))
         );
       }
     };

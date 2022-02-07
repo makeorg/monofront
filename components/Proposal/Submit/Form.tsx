@@ -26,7 +26,7 @@ import { ProposalService } from '@make.org/utils/services/Proposal';
 import { NameFiledIcon } from '@make.org/utils/constants/icons';
 import BlueShape from '@make.org/assets/images/blueShape.png';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
-import { ProposalSuccess } from './Success';
+import { DeprecatedProposalSuccess } from '@make.org/components/Proposal/Submit/Deprecated/Success';
 import {
   ProposalImagesWrapperStyle,
   ProposalFormWrapperStyle,
@@ -102,7 +102,7 @@ export const ProposalForm: FC = () => {
   const handleSubmitForm = async () => {
     if (isLoggedIn) {
       await ProposalService.propose(proposalContent, question.questionId, () =>
-        dispatch(setPanelContent(<ProposalSuccess />))
+        dispatch(setPanelContent(<DeprecatedProposalSuccess />))
       );
     }
 

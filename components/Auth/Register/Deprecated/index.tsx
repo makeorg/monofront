@@ -25,7 +25,7 @@ import { Logger } from '@make.org/utils/services/Logger';
 import { useAppContext } from '@make.org/store';
 import { getUser } from '@make.org/store/actions/authentication';
 import { closePanel, setPanelContent } from '@make.org/store/actions/panel';
-import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
+import { DeprecatedProposalSuccess } from '@make.org/components/Proposal/Submit/Deprecated/Success';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { RegisterForm } from '../Form';
@@ -159,7 +159,10 @@ export const DeprecatedRegister: React.FC<Props> = ({ panel }) => {
           await ProposalService.propose(
             proposalContent,
             question.questionId,
-            () => dispatch(setPanelContent(<ProposalSuccess isRegister />))
+            () =>
+              dispatch(
+                setPanelContent(<DeprecatedProposalSuccess isRegister />)
+              )
           );
         }
       });
