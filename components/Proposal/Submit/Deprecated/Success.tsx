@@ -17,7 +17,7 @@ import {
   ProposalSuccessIconStyle,
   ProposalSuccessRegisterStyle,
   ProposalSuccessRedButtonStyle,
-} from '../style';
+} from './style';
 
 type Props = {
   // eslint-disable-next-line react/require-default-props
