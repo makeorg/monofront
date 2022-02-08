@@ -32,6 +32,7 @@ export const CookieSwitch: React.FC<Props> = ({
 
   const cookies = new Cookies();
   const preferencesCookieValueOnLoad = cookies.get(COOKIE.USER_PREFERENCES);
+  const { showCookies } = state.modal;
 
   return (
     <CookieModalElementSwitchWrapperStyle>
@@ -41,7 +42,11 @@ export const CookieSwitch: React.FC<Props> = ({
         {description}
         <CookieSwitchWrapperStyle>
           <SwitchButton
-            value={preferencesCookieValueOnLoad[value]}
+            value={
+              showCookies
+                ? cookiesPreferences[value]
+                : preferencesCookieValueOnLoad[value]
+            }
             onEnabling={() => {
               dispatch(
                 setCookiesPreferencesInApp({
