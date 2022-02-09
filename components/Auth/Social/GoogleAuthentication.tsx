@@ -39,10 +39,10 @@ import {
 } from './style';
 
 type Props = {
-  isRegister?: boolean;
+  updateFirstname?: boolean;
 };
 
-export const GoogleAuthentication: FC<Props> = ({ isRegister }) => {
+export const GoogleAuthentication: FC<Props> = ({ updateFirstname }) => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy } = state.appConfig || {};
   const { proposalContent, firstname } = state.pendingProposal;
@@ -56,7 +56,7 @@ export const GoogleAuthentication: FC<Props> = ({ isRegister }) => {
       dispatch(loginSocialSuccess());
       trackAuthenticationSocialSuccess(GOOGLE_PROVIDER_ENUM, isNewAccount);
       // @todo need to clean after AB/testing
-      if (firstname && isRegister) {
+      if (firstname && updateFirstname) {
         await getUserRegister(dispatch, firstname);
       } else {
         await getUser(dispatch, state.modal.isOpen);

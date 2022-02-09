@@ -71,12 +71,15 @@ export const getUserRegister = async (
 
     if (profile && 'firstName' in profile && 'dateOfBirth' in profile) {
       const success = async () => {
-        dispatch(
-          setUserInfo(
-            { ...user, displayName: firstname },
-            { ...profile, firstName: firstname }
-          )
-        );
+        const updatedUser = await UserService.current();
+        if (updatedUser) {
+          dispatch(
+            setUserInfo(
+              { ...updatedUser, displayName: firstname },
+              { ...profile, firstName: firstname }
+            )
+          );
+        }
       };
       await UserService.update(
         user.userId,

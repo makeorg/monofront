@@ -33,8 +33,8 @@ export const AuthenticationRegisterButtons: FC<Props> = ({
   };
   return (
     <AuthenticationButtonWrapperStyle data-cy-container="signup-auth-buttons">
-      <FacebookAuthentication isRegister />
-      <GoogleAuthentication isRegister />
+      <FacebookAuthentication updateFirstname />
+      <GoogleAuthentication updateFirstname />
       <SeparatorWrapperStyle>
         <ProposalSubmitAuthSeparator className="no-margin-top" />
         <TextSeparatorStyle>{i18n.t('login.or')}</TextSeparatorStyle>

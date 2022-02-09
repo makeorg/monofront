@@ -39,10 +39,10 @@ import {
 } from './style';
 
 type Props = {
-  isRegister?: boolean;
+  updateFirstname?: boolean;
 };
 
-export const FacebookAuthentication: FC<Props> = ({ isRegister }) => {
+export const FacebookAuthentication: FC<Props> = ({ updateFirstname }) => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy, language } = state.appConfig;
   const { proposalContent, firstname } = state.pendingProposal;
@@ -104,7 +104,7 @@ export const FacebookAuthentication: FC<Props> = ({ isRegister }) => {
     const success = async (isNewAccount: boolean) => {
       dispatch(loginSocialSuccess());
       // @todo need to clean after AB/testing
-      if (firstname && isRegister) {
+      if (firstname && updateFirstname) {
         await getUserRegister(dispatch, firstname);
       } else {
         await getUser(dispatch, state.modal.isOpen);

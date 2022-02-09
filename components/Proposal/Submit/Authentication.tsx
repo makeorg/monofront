@@ -63,8 +63,8 @@ const renderAuthStep = (step: string | undefined, dispatch: Dispatch) => {
               <ProposalSubmitAuthSeparator />
             </SeparatorProposalAuthLogin>
             <SocialRegisterButtonsWrapperStyle>
-              <FacebookAuthentication />
-              <GoogleAuthentication />
+              <FacebookAuthentication updateFirstname/>
+              <GoogleAuthentication updateFirstname/>
             </SocialRegisterButtonsWrapperStyle>
           </ProposalAuthSocialLoginWrapperStyle>
         </>
