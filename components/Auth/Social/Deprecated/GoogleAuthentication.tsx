@@ -29,20 +29,22 @@ import { NOTIF } from '@make.org/types/enums';
 import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
 import { ProposalService } from '@make.org/utils/services/Proposal';
-import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
+import { DeprecatedProposalSuccess } from '@make.org/components/Proposal/Submit/Deprecated/Success';
 import { setPanelContent } from '@make.org/store/actions/panel';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import {
   GoogleButtonStyle,
   SocialButtonLabelStyle,
   SvgLogoWrapperStyle,
-} from './style';
+} from '../style';
 
 type Props = {
   updateFirstname?: boolean;
 };
 
-export const GoogleAuthentication: FC<Props> = ({ updateFirstname }) => {
+export const DeprecatedGoogleAuthentication: FC<Props> = ({
+  updateFirstname,
+}) => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy } = state.appConfig || {};
   const { proposalContent, firstname } = state.pendingProposal;
@@ -72,7 +74,7 @@ export const GoogleAuthentication: FC<Props> = ({ updateFirstname }) => {
         await ProposalService.propose(
           proposalContent,
           question.questionId,
-          () => dispatch(setPanelContent(<ProposalSuccess />))
+          () => dispatch(setPanelContent(<DeprecatedProposalSuccess />))
         );
       }
     };

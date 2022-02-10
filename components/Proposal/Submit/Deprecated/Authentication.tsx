@@ -5,7 +5,7 @@ import {
   CenterColumnStyle,
   ColumnElementStyle,
 } from '@make.org/ui/elements/FlexElements';
-import { AuthenticationRegisterButtons } from '@make.org/components/Auth/Register/Buttons';
+import { DeprecatedAuthenticationRegisterButtons } from '@make.org/components/Auth/Register/Deprecated/Buttons';
 import { DeprecatedRegister as Register } from '@make.org/components/Auth/Register/Deprecated';
 import { DeprecatedLogin as Login } from '@make.org/components/Auth/Login/Deprecated/index';
 import { RedLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
@@ -15,8 +15,8 @@ import {
   DeprecatedSeparatorProposalAuthLogin,
   TextSeparatorStyle,
 } from '@make.org/ui/elements/SeparatorsElements';
-import { FacebookAuthentication } from '@make.org/components/Auth/Social/FacebookAuthentication';
-import { GoogleAuthentication } from '@make.org/components/Auth/Social/GoogleAuthentication';
+import { DeprecatedFacebookAuthentication } from '@make.org/components/Auth/Social/Deprecated/FacebookAuthentication';
+import { DeprecatedGoogleAuthentication } from '@make.org/components/Auth/Social/Deprecated/GoogleAuthentication';
 import { useAppContext } from '@make.org/store';
 import { AUTH_STEP } from '@make.org/types/enums';
 import {
@@ -63,8 +63,8 @@ const renderAuthStep = (step: string, dispatch: Dispatch) => {
               <ProposalSubmitAuthSeparator />
             </DeprecatedSeparatorProposalAuthLogin>
             <SocialRegisterButtonsWrapperStyle>
-              <FacebookAuthentication />
-              <GoogleAuthentication />
+              <DeprecatedFacebookAuthentication />
+              <DeprecatedGoogleAuthentication />
             </SocialRegisterButtonsWrapperStyle>
           </ProposalAuthSocialLoginWrapperStyle>
         </>
@@ -124,7 +124,7 @@ export const DeprecatedProposalAuthentication: FC = () => {
           <ProposalAltStepTitleStyle className="center">
             {i18n.t('proposal_submit.authentication.title')}
           </ProposalAltStepTitleStyle>
-          <AuthenticationRegisterButtons
+          <DeprecatedAuthenticationRegisterButtons
             onEmailRegister={() =>
               dispatch(setProposalAuthStep(AUTH_STEP.REGISTER))
             }

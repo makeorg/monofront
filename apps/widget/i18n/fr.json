@@ -67,7 +67,7 @@
       },
       "results": {
         "title": "Résultats des consultations avec Make.org - Make.org",
-        "description" : "Découvrez les résultats de nos consultations ainsi que les actions mises en place par Make.org et ses partenaires."
+        "description": "Découvrez les résultats de nos consultations ainsi que les actions mises en place par Make.org et ses partenaires."
       }
     },
     "legal": {
@@ -196,10 +196,10 @@
       "unexpected_error": "Nous rencontrons actuellement une erreur, merci de réessayer ultérieurement.",
       "network_error": "Il est impossible d'accéder à l'intégralité du contenu de Make.org car il semblerait que vous soyez hors ligne",
       "vote_only": {
-          "message": "La consultation \"{{title}}\" ne peut plus recevoir de nouvelles propositions, mais continuez à voter pour départager les propositions existantes.",
-          "button": "j'ai compris"
+        "message": "La consultation \"{{title}}\" ne peut plus recevoir de nouvelles propositions, mais continuez à voter pour départager les propositions existantes.",
+        "button": "j'ai compris"
       },
-      "vote_on_proposal" : "Votez sur cette proposition",
+      "vote_on_proposal": "Votez sur cette proposition",
       "cookies": {
         "social_media": "Afin d'accéder à cette fonctionnalité, vous devez autoriser les cookies concernés sur la page ",
         "cookie_page": "Gestion des cookies",
@@ -234,7 +234,7 @@
       "next": "Aller à l'élement suivant",
       "index_count": "Élément {{index}} sur {{total}}"
     },
-    "pagination":{
+    "pagination": {
       "title": "pagination",
       "next": "Page suivante",
       "previous": "Page précédente",
@@ -337,7 +337,7 @@
     },
     "description": {
       "regular": "Il n'y a pas de nouvelles proposition pour le moment.",
-      "special": "Continuez à voter pour nous aider à identifier les priorités."  
+      "special": "Continuez à voter pour nous aider à identifier les priorités."
     },
     "link_text": "J'accède à la consultation",
     "sharing": "Ou donnez plus de portée à cette consultation en la diffusant."
@@ -351,7 +351,7 @@
     "counter": "Élément {{current}} sur {{total}}"
   },
   "sequence_zone": {
-    "popular_title":"Les propositions les plus populaires",
+    "popular_title": "Les propositions les plus populaires",
     "controversial_title": "Les propositions les plus controversées"
   },
   "special_final_card": {
@@ -399,7 +399,12 @@
       "description": "Votre proposition est maintenant en cours de modération par nos équipes.",
       "button": "Continuer à voter",
       "tooltip_title": "En cours de modération",
-      "tooltip_description": "Votre proposition sera traitée par nos équipes sous 48h, en attendant vous pouvez la retrouver dès maintenant dans votre profil."
+      "tooltip_description": "Votre proposition sera traitée par nos équipes sous 48h, en attendant vous pouvez la retrouver dès maintenant dans votre profil.",
+      "grats": "Félicitations {{name}}, ",
+      "proposal_sent": "votre proposition a été envoyée ",
+      "activate": "Activez votre compte en un click",
+      "link": "Cliquez sur le lien d'activation qui vous a été envoyé à l'adresse : {{mail}}",
+      "question": "Une question ? Vous pouvez nous contacter à : "
     }
   },
   "vote": {
@@ -532,7 +537,7 @@
   "cookie_modal": {
     "title": "Exprimez-vous chez Make.org dans le respect de votre vie privée",
     "description": "Dans un souci d’optimiser encore davantage notre service et votre expérience, nous sollicitons votre consentement aux cookies que nous et nos partenaires souhaitons utiliser lors de votre visite.",
-    "details" :{
+    "details": {
       "title": "De quels cookies s’agit-il ?",
       "technicals": "<strong>Techniques :</strong> des cookies indispensables pour faire fonctionner le site",
       "preferences": "<strong>Préférences :</strong> des cookies pour améliorer votre expérience lors de votre navigation sur le site",
@@ -583,18 +588,18 @@
       "error_message": "Votre mot de passe n'a pas pu être remplacé."
     }
   },
-  "data_policy_modal":{
+  "data_policy_modal": {
     "title": "Mise à jour de notre politique de données",
     "description": "Make.org s’engage à respecter vos données personnelles à chacune de vos visites sur le site. Pour poursuivre votre navigation en étant connecté(e) sur Make.org vous devez accepter notre mise à jour de la {{data_policy_link}} ",
     "data_policy_link": "politique de données.",
     "consent": "<strong>J'accepte la nouvelle politique de données</strong> et je pourrai utiliser mon espace citoyen Make.org",
     "validate": "Je valide",
     "stay": "Je reste",
-    "leave":"Je quitte",
+    "leave": "Je quitte",
     "refusal_title": "Etes-vous sûr(e) de vouloir quitter ?",
     "refusal_description_first_part": "En refusant notre nouvelle ",
     "refusal_description_second_part": ", vous ne pourrez plus avoir accès à votre espace citoyen Make.org."
-},
+  },
   "not_found": {
     "intro": "oups",
     "title": "Erreur 404",
@@ -730,22 +735,22 @@
         "preview_confirm": "Confirmer et publier"
       },
       "preview": {
-        "agree" : "Je suis <span>d'accord</span>.",
-        "agree_priority" : "Je suis <span>d'accord</span>, c'est une idée <span>prioritaire</span>.",
-        "agree_doable" : "Je suis <span>d'accord</span>, c'est une idée <span>réaliste</span>.",
-        "disagree" : "Je ne suis <span>pas d'accord</span>.",
-        "disagree_noWay" : "Je ne suis <span>pas d'accord</span>, je ne veux <span>surtout pas</span> reprendre cette idée.",
-        "disagree_nonPriority" : "Je ne suis <span>pas d'accord</span>, c'est une idée <span>non prioritaire</span>.",
-        "other" : "Cette proposition <span>existe déjà</span>  ou <span>est à préciser</span> .",
-        "other_exists" : "Cette proposition <span>existe déjà</span> .",
-        "other_toBePrecised" : "Cette proposition est <span>à préciser</span> ."
+        "agree": "Je suis <span>d'accord</span>.",
+        "agree_priority": "Je suis <span>d'accord</span>, c'est une idée <span>prioritaire</span>.",
+        "agree_doable": "Je suis <span>d'accord</span>, c'est une idée <span>réaliste</span>.",
+        "disagree": "Je ne suis <span>pas d'accord</span>.",
+        "disagree_noWay": "Je ne suis <span>pas d'accord</span>, je ne veux <span>surtout pas</span> reprendre cette idée.",
+        "disagree_nonPriority": "Je ne suis <span>pas d'accord</span>, c'est une idée <span>non prioritaire</span>.",
+        "other": "Cette proposition <span>existe déjà</span>  ou <span>est à préciser</span> .",
+        "other_exists": "Cette proposition <span>existe déjà</span> .",
+        "other_toBePrecised": "Cette proposition est <span>à préciser</span> ."
       }
     },
     "disclaimer": {
       "title": "Informations",
-      "subtitle_first": "Comment prendre position sur une idée citoyenne ?", 
+      "subtitle_first": "Comment prendre position sur une idée citoyenne ?",
       "description_first": "Sur chaque idée, vous avez la possibilité d'apporter un vote (\"d'accord\", \"pas d'accord\" ou \"autre\") et une qualification pour préciser votre avis. Cette prise de position ouvrira 3 champs,  dans lesquels vous pourrez rédiger vos 3 mesures phares et/ou préciser votre position.",
-      "subtitle_second": "Comment modifier mes réponses publiées ?", 
+      "subtitle_second": "Comment modifier mes réponses publiées ?",
       "description_second": "Si vous souhaitez modifier vos mesures après avoir cliqué sur \"Publier\", contactez nos équipes à l'adresse {{mailto}}"
     }
   },
@@ -898,7 +903,7 @@
         "title": "La méthodologie",
         "description": "La méthodologie repose sur une modération fine des propositions recueillies. Elles sont d’abord soumises à validation au regard de leur conformité à la Charte Make.org, puis classées selon un balisage thématique. Les algorithmes développés par les équipes de Make.org garantissent ensuite à chacune des propositions validées un niveau égal d’exposition, et organisent une compétition entre elles. Grâce à ce roulement permanent, Make.org identifie les propositions faisant le plus consensus auprès des citoyens avant de les analyser et de les regrouper en grandes idées."
       },
-      
+
       "participation": {
         "title": "Les participants à la consultation"
       },
@@ -906,7 +911,7 @@
       "cartography": {
         "title": "La cartographie du débat"
       },
-      "download": { 
+      "download": {
         "deprecated_title": "Obtenir le rapport complet",
         "title": "Obtenez le rapport complet",
         "type": "Format : {{extension}} - Poids : {{weight}}",
@@ -920,7 +925,7 @@
         "title_plural": "Le top des idées plébiscitées, regroupées en {{count}} axes",
         "introduction": "À leur arrivée sur la plateforme, les meilleures propositions des citoyens sont regroupées en grandes idées qui structurent la consultation. Pour classer ces idées, l’algorithme Make.org tient compte des votes « pour » et « contre » ainsi que des mentions « coup de coeur », « réaliste », « banalité » et « surtout pas ! ».",
         "axe_title": "Axe {{count}} : {{name}}"
-      },  
+      },
       "proposals": {
         "controversials_title": "Les propositions les plus controversées",
         "controversials_description": "Les propositions “controversées” témoignent d’un clivage important au sein de la société : elles recueillent globalement autant d’adhésion forte que de net rejet.",
@@ -960,7 +965,7 @@
         "contact_us": "Contactez-nous !"
       },
       "position": {
-        "title":"Découvrez les réponses des candidats à vos priorités."
+        "title": "Découvrez les réponses des candidats à vos priorités."
       }
     },
     "popular_proposals": {
@@ -970,7 +975,7 @@
   "browse": {
     "short_page_title": "Parcourir",
     "page_title": "Parcourir les consultations",
-    "title":"Participez aux consultations en cours",
+    "title": "Participez aux consultations en cours",
     "initiative": "Grande cause Make.org",
     "nav_consultations_desktop": "Les consultations en cours",
     "nav_consultations_mobile": "Consultations",
@@ -988,7 +993,7 @@
       "proposals_plural": "propositions",
       "empty": "Nous sommes désolés, aucune consultation n'est diponible actuellement dans votre pays."
     },
-    "results":{
+    "results": {
       "all": "Tous les résultats",
       "label": "Consultations terminées",
       "title": "Découvrez les résultats",
@@ -1036,22 +1041,22 @@
       "status": "Label de l'opération : ",
       "link": "Aller sur la page de la consultation : {{name}}"
     },
-    "title" : "Page d'accueil",
-    "hero":{
+    "title": "Page d'accueil",
+    "hero": {
       "title": "Ensemble, nous avons le pouvoir d'améliorer la société",
       "description": "Donnez votre avis sur des sujets de société qui vous tiennent à coeur en participant à nos consultations citoyennes. Ensemble, citoyens, associations et entreprises, définissons nos priorités et réalisons des changements concrets.",
       "participate": "Participez aux consultations",
       "discover": "Découvrez nos grandes causes"
     },
-    "highlights":{
+    "highlights": {
       "title": "Make.org en quelques chiffres",
-      "participants":{
+      "participants": {
         "subtitle": "de participant(e)s"
       },
-      "proposals":{
+      "proposals": {
         "subtitle": "propositions déposées"
       },
-      "partners":{
+      "partners": {
         "subtitle": "associations & entreprises engagées"
       }
     },
@@ -1072,7 +1077,7 @@
     "international": {
       "subtitle": "Consultations nationales",
       "title": "Make.org est également disponible en France sur les sujets nationaux",
-      "button": "Découvrir" 
+      "button": "Découvrir"
     }
   },
   "search": {
@@ -1131,7 +1136,7 @@
     "contactUs": "Contactez-nous",
     "paragraph": "Une idée, une suggestion, un bug ? N’hésitez pas à nous contacter en envoyant un e-mail à notre adresse :"
   },
-  "legal":{
+  "legal": {
     "title": "Mentions légales",
     "make_infos": "Editeur du site : MAKE.ORG, Société par Actions Simplifiées au capital de {{make_capital}}, ayant son siège social au {{make_address}}, immatriculée au RCS de PARIS sous le numéro {{make_rcs}} (ci-après« MAKE.ORG »).",
     "mail": "Adresse de courrier électronique : ",
@@ -1139,7 +1144,7 @@
     "make_phone_number": "{{make_phone_number}}",
     "director": "Directeur de Publication : ",
     "host": "Hébergeur du site : ",
-    "host_address": "{{make_host_address}} FRANCE", 
+    "host_address": "{{make_host_address}} FRANCE",
     "host_phone": "Numéro de téléphone : ",
     "host_phone_number": "{{host_number}}",
     "cnil": "Numéro de déclaration CNIL : ",
@@ -1250,7 +1255,7 @@
   },
   "maintenance": {
     "title": "Maintenance en cours",
-    "subtitle":"Oops, nous sommes désolé! Make.org est actuellement en maintenance",
+    "subtitle": "Oops, nous sommes désolé! Make.org est actuellement en maintenance",
     "description": "N'hésitez pas à revenir dans quelques minutes pour découvrir les propositions proposées par d'autres citoyens et soumettre les vôtres",
     "button": "En savoir plus sur Make.org"
   },

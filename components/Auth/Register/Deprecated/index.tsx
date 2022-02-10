@@ -13,8 +13,8 @@ import {
 } from '@make.org/ui/elements/SeparatorsElements';
 import { RedLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { ExtraParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
-import { FacebookAuthentication } from '@make.org/components/Auth/Social/FacebookAuthentication';
-import { GoogleAuthentication } from '@make.org/components/Auth/Social/GoogleAuthentication';
+import { DeprecatedFacebookAuthentication } from '@make.org/components/Auth/Social/Deprecated/FacebookAuthentication';
+import { DeprecatedGoogleAuthentication } from '@make.org/components/Auth/Social/Deprecated/GoogleAuthentication';
 import { modalShowLogin, modalClose } from '@make.org/store/actions/modal';
 import {
   trackSignupEmailSuccess,
@@ -208,8 +208,8 @@ export const DeprecatedRegister: React.FC<Props> = ({ panel }) => {
             </SecondLevelTitleStyle>
             <SmallSeparatorWithMarginStyle />
             <SocialRegisterButtonsWrapperStyle>
-              <FacebookAuthentication />
-              <GoogleAuthentication />
+              <DeprecatedFacebookAuthentication />
+              <DeprecatedGoogleAuthentication />
             </SocialRegisterButtonsWrapperStyle>
             <SeparatorWrapperStyle className="margin-top margin-bottom">
               <SeparatorStyle />

@@ -326,7 +326,12 @@
       "description": "Your solution will be moderated by our team.",
       "button": "Keep voting",
       "tooltip_title": "@@proposal_submit.success.tooltip_title|fr:En cours de modération",
-      "tooltip_description": "@@proposal_submit.success.tooltip_description|fr:Votre proposition sera traitée par nos équipes sous 48h, en attendant vous pouvez la retrouver dès maintenant dans votre profil."
+      "tooltip_description": "@@proposal_submit.success.tooltip_description|fr:Votre proposition sera traitée par nos équipes sous 48h, en attendant vous pouvez la retrouver dès maintenant dans votre profil.",
+      "grats": "@@proposal_submit.success.grats|fr:Félicitations {{name}}, ",
+      "proposal_sent": "@@proposal_submit.success.proposal_sent|fr:votre proposition a été envoyée ",
+      "activate": "@@proposal_submit.success.activate|fr:Activez votre compte en un click",
+      "link": "@@proposal_submit.success.link|fr:Cliquez sur le lien d'activation qui vous a été envoyé à l'adresse : {{mail}}",
+      "question": "@@proposal_submit.success.question|fr:Une question ? Vous pouvez nous contacter à : "
     },
     "form": {
       "bait": "We should ",

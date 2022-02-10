@@ -24,8 +24,8 @@ import {
   LoginTitleWrapperStyle,
 } from './style';
 import { AuthenticationButtonWrapperStyle } from '../../Social/style';
-import { FacebookAuthentication } from '../../Social/FacebookAuthentication';
-import { GoogleAuthentication } from '../../Social/GoogleAuthentication';
+import { DeprecatedFacebookAuthentication } from '../../Social/Deprecated/FacebookAuthentication';
+import { DeprecatedGoogleAuthentication } from '../../Social/Deprecated/GoogleAuthentication';
 
 type Props = {
   panel?: boolean;
@@ -60,8 +60,8 @@ export const DeprecatedLogin: React.FC<Props> = ({ panel }) => {
             {i18n.t('login.social_connect')}
           </FourthLevelTitleStyle>
           <AuthenticationButtonWrapperStyle className="small-wrapper">
-            <FacebookAuthentication />
-            <GoogleAuthentication />
+            <DeprecatedFacebookAuthentication />
+            <DeprecatedGoogleAuthentication />
           </AuthenticationButtonWrapperStyle>
           <SeparatorWrapperStyle className="margin-bottom">
             <SeparatorStyle />

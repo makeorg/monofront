@@ -26,6 +26,7 @@ import {
 import { initProposalPending } from '@make.org/store/actions/pendingProposal';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { ProposalService } from '@make.org/utils/services/Proposal';
+import { DeprecatedProposalSuccess } from '@make.org/components/Proposal/Submit//Deprecated/Success';
 import {
   ProposalFormWrapperStyle,
   ProposalStepTitleStyle,
@@ -39,7 +40,6 @@ import {
   ProposalAuthInlineWrapperStyle,
   ProposalSubmitButtonsWidgetStyle,
 } from './style';
-import { DeprecatedProposalSuccess } from './Success';
 
 const getModerationLinkByLanguage = (language: string) => {
   switch (language) {

@@ -25,6 +25,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { ExtraParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { Image } from '@make.org/ui/components/Image';
+import { AvatarStyle } from '@make.org/ui/components/Avatar/style';
 
 export const PanelTriggerStyle = styled(RedButtonStyle)`
   position: fixed;
@@ -362,4 +363,116 @@ export const LoginWrapperStyle = styled(CenterColumnStyle)<{
   isWidget: boolean;
 }>`
   padding-top: ${props => (props.isWidget ? '15px' : '30px')};
+`;
+
+export const ProposalSuccessWrapperStyle = styled(ColumnElementStyle)`
+  font-family: ${MakeFonts.CircularStandardBook};
+  margin-top: 30px;
+  max-width: 505px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    margin-top: 60px;
+  }
+`;
+
+export const ProposalSuccessTitle = styled.h2`
+  font-family: ${MakeFonts.CircularStandardBold};
+  font-size: ${intToPx(typography.font.fontsize.S.value)};
+  line-height: 1.5;
+  text-transform: none;
+  text-align: left;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    font-size: ${intToPx(typography.font.fontsize.XL.value)};
+    line-height: 39px;
+    text-align: center;
+  }
+`;
+
+export const ProposalSuccessTitleBlackStyle = styled(ProposalSuccessTitle)`
+  display: inline;
+  color: ${color.black};
+`;
+
+export const ProposalSuccessTitleGreenStyle = styled(ProposalSuccessTitle)`
+  color: #507a1f;
+`;
+
+export const ProposalSuccessRedButtonStyle = styled(RedButtonStyle)`
+  max-width: 167px;
+  width: 100%;
+  margin: auto;
+  margin-top: 30px;
+`;
+
+export const ProposalSuccessTitleBlockStyle = styled.div`
+  display: flex;
+`;
+
+export const ProposalSuccessParagraphStyle = styled.p`
+  font-size: 14px;
+  text-align: left;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    text-align: center;
+`;
+
+export const ProposalSuccessParagraphActivateStyle = styled(
+  ProposalSuccessParagraphStyle
+)`
+  font-weight: 700;
+`;
+
+export const ProposalSuccessParagraphLinkStyle = styled(
+  ProposalSuccessParagraphStyle
+)`
+  font-weight: 400;
+`;
+
+export const ProposalSuccessContactStyle = styled.p`
+  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  color: ${color.greyDark};
+  margin-top: 20px;
+  text-align: center;
+`;
+
+export const ProposalSuccessContactLinkStyle = styled.a`
+  display: inline;
+  text-decoration: underline;
+  cursor: pointer;
+  color: ${color.greyDark};
+`;
+
+export const ProposalSuccessCardStyle = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    margin-bottom: 30px;
+`;
+
+export const ProposalSuccessProposalStyle = styled.p`
+  text-align: center;
+  line-height: 24px;
+  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+`;
+
+export const ProposalSuccessAvatarStyle = styled(AvatarStyle)`
+  position: absolute;
+  top: -17px;
+  left: 50%;
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  transform: translateX(-50%);
+`;
+
+export const ProposalSuccessNameStyle = styled.p`
+  font-size: 14px;
+  color: ${color.greyDark};
+  margin-bottom: 20px;
+  margin-top: 10px;
 `;
