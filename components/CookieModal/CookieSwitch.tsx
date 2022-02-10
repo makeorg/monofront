@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { SwitchButton } from '@make.org/ui/components/Switch';
 import Cookies from 'universal-cookie';
 import { COOKIE } from '@make.org/types/enums';
@@ -9,6 +9,7 @@ import {
 import { setCookiesPreferencesInApp } from '@make.org/store/actions/user/cookiesPreferences';
 import { StateUserCookiesPreferences } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
+import { env } from '@make.org/assets/env';
 import {
   CookieModalCookieDetailParagraphStyle,
   CookieModalElementSwitchWrapperStyle,
@@ -29,10 +30,19 @@ export const CookieSwitch: React.FC<Props> = ({
 }) => {
   const { dispatch, state } = useAppContext();
   const { cookiesPreferences } = state.user;
+  const [preferenceValue, setPreferenceValue] = useState(false);
+  const cookies = env.isClientSide() && new Cookies();
 
-  const cookies = new Cookies();
-  const preferencesCookieValueOnLoad = cookies.get(COOKIE.USER_PREFERENCES);
-  const { showCookies } = state.modal;
+  useEffect(() => {
+    if (cookies) {
+      const preferencesFromCookie = cookies.get(COOKIE.USER_PREFERENCES);
+
+      if (preferencesFromCookie) {
+        setPreferenceValue(preferencesFromCookie[value]);
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cookies]);
 
   return (
     <CookieModalElementSwitchWrapperStyle>
@@ -42,11 +52,7 @@ export const CookieSwitch: React.FC<Props> = ({
         {description}
         <CookieSwitchWrapperStyle>
           <SwitchButton
-            value={
-              showCookies
-                ? cookiesPreferences[value]
-                : preferencesCookieValueOnLoad[value]
-            }
+            value={preferenceValue}
             onEnabling={() => {
               dispatch(
                 setCookiesPreferencesInApp({
