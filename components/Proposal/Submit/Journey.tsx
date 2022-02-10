@@ -45,7 +45,7 @@ export const ProposalJourney: React.FC = () => {
   }
 
   if (authMode.enable) {
-    if (question.slug === 'environnement') {
+    if (question.slug === 'mafrance2022') {
       return (
         <Experiment name={variant}>
           <Variant name={oldVariant}>
@@ -60,7 +60,7 @@ export const ProposalJourney: React.FC = () => {
     return <DeprecatedProposalAuthentication />;
   }
 
-  if (question.slug === 'environnement') {
+  if (question.slug === 'mafrance2022') {
     return (
       <Experiment name={variant}>
         <Variant name={oldVariant}>
