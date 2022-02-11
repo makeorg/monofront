@@ -1,5 +1,7 @@
 import styled, { StyledComponent } from 'styled-components';
 import { color } from 'athena-design-tokens';
+import { UnstyledButtonStyle } from './ButtonsElements';
+import { SvgClose, SvgInfos } from '../Svg/elements';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const TooltipStyle = styled.div<{ as: StyledComponent<'div', any> }>`
@@ -20,7 +22,7 @@ export const TooltipStyle = styled.div<{ as: StyledComponent<'div', any> }>`
   }
 `;
 
-export const VerticalTooptipStyle = styled(TooltipStyle)`
+export const VerticalToolptipStyle = styled(TooltipStyle)`
   transform: translate(-50%, 0);
   left: 50%;
   &:after {
@@ -42,7 +44,7 @@ export const HorizontalTooltipStyle = styled(TooltipStyle)`
   }
 `;
 
-export const TopTooltipStyle = styled(VerticalTooptipStyle)`
+export const TopTooltipStyle = styled(VerticalToolptipStyle)`
   bottom: calc(100% + 10px);
   &:after {
     top: 100%;
@@ -50,7 +52,7 @@ export const TopTooltipStyle = styled(VerticalTooptipStyle)`
   }
 `;
 
-export const BottomTooltipStyle = styled(VerticalTooptipStyle)`
+export const BottomTooltipStyle = styled(VerticalToolptipStyle)`
   top: calc(100% + 10px);
   &:after {
     bottom: 100%;
@@ -72,4 +74,81 @@ export const RightTooltipStyle = styled(HorizontalTooltipStyle)`
     right: 100%;
     border-right: 5px solid ${color.greyDark};
   }
+`;
+
+const ProposalTooltipCommonStyle = `
+  background-color: ${color.infos};
+  position: absolute;
+  z-index: 1;
+  border-radius: 2px;
+  color: ${color.white};
+`;
+
+export const ProposalTooltipDescriptionStyle = styled.div`
+  ${ProposalTooltipCommonStyle}
+  display: flex;
+  align-self: center;
+  top: 62px;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: left;
+  padding: 5px 0px 5px 10px;
+  display: flex;
+  width: 315px;
+`;
+
+export const ProposalTooltipLabelStyle = styled(UnstyledButtonStyle)`
+  ${ProposalTooltipCommonStyle}
+  display: flex;
+  align-self: center;
+  font-size: 12px;
+  text-align: center;
+  padding: 5px 10px;
+  &:after {
+    content: '';
+    position: absolute;
+  }
+`;
+
+export const ProposalTooltipInfoIconStyle = styled(SvgInfos)`
+  margin: 6px 0px 10px 10px;
+  width: 15px;
+  height: 15px;
+`;
+
+export const ProposalTooltipCloseButtonStyle = styled.button`
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  padding: none;
+`;
+
+export const ProposalTooltipCloseIconStyle = styled(SvgClose)`
+  width: 10px;
+  height: 10px;
+  margin: 0px 10px;
+  background-color: transparent;
+  .tofill {
+    fill: ${color.white};
+  }
+`;
+
+export const ProposalTooltipVerticalSeparatorStyle = styled.div`
+  border: 0.5px solid ${color.white};
+  background-color: ${color.white};
+  opacity: 0.3;
+  height: 84px;
+  margin-left: 10px;
+`;
+
+export const ProposalTriangleUpStyle = styled.div`
+  position: absolute;
+  display: flex;
+  align-self: center;
+  top: 52px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0px 7px 10px 7px;
+  border-color: transparent transparent ${color.infos} transparent;
 `;

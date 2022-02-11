@@ -324,7 +324,9 @@
     "success": {
       "title": "Thank you {{name}}!",
       "description": "Your solution will be moderated by our team.",
-      "button": "Keep voting"
+      "button": "Keep voting",
+      "tooltip_title": "@@proposal_submit.success.tooltip_title|fr:En cours de modération",
+      "tooltip_description": "@@proposal_submit.success.tooltip_description|fr:Votre proposition sera traitée par nos équipes sous 48h, en attendant vous pouvez la retrouver dès maintenant dans votre profil."
     },
     "form": {
       "bait": "We should ",

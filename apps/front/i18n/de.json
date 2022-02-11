@@ -399,7 +399,9 @@
     "success": {
       "title": "Danke, {{name}}!",
       "description": "Dein Vorschlag wird jetzt von unseren Teams moderiert.",
-      "button": "Weiter abstimmen"
+      "button": "Weiter abstimmen",
+      "tooltip_title": "@@proposal_submit.success.tooltip_title|fr:En cours de modération",
+      "tooltip_description": "@@proposal_submit.success.tooltip_description|fr:Votre proposition sera traitée par nos équipes sous 48h, en attendant vous pouvez la retrouver dès maintenant dans votre profil."
     }
   },
   "vote": {

@@ -397,7 +397,9 @@
     "success": {
       "title": "Merci {{name}} !",
       "description": "Votre proposition est maintenant en cours de modération par nos équipes.",
-      "button": "Continuer à voter"
+      "button": "Continuer à voter",
+      "tooltip_title": "En cours de modération",
+      "tooltip_description": "Votre proposition sera traitée par nos équipes sous 48h, en attendant vous pouvez la retrouver dès maintenant dans votre profil."
     }
   },
   "vote": {

@@ -216,7 +216,6 @@ export const ProposalSuccessTitleStyle = styled.h2`
   text-transform: none;
   text-align: center;
 `;
-
 export const ProposalSuccessParagraphStyle = styled.p`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   text-align: center;
