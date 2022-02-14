@@ -63,6 +63,10 @@ export const ProposalFormWrapperStyle = styled(SpaceBetweenColumnStyle)<{
   }
 `;
 
+export const ProposalFormSuccessWrapperStyle = styled(ProposalFormWrapperStyle)`
+  margin: 0px;
+`;
+
 export const ProposalStepWrapperColumnStyle = styled.div<{
   isWidget: boolean;
 }>`

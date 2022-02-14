@@ -6,7 +6,7 @@ import {
   trackClickKeepVoting,
   trackDisplayProposalSubmitValidation,
 } from '@make.org/utils/services/Tracking';
-import { ProposalFormWrapperStyle } from '@make.org/components/Proposal/Submit/style';
+import { ProposalFormSuccessWrapperStyle } from '@make.org/components/Proposal/Submit/style';
 import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { clearProposalPending } from '@make.org/store/actions/pendingProposal';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
@@ -54,14 +54,13 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
   }, []);
 
   return (
-    <ProposalFormWrapperStyle isWidget={isWidget}>
+    <ProposalFormSuccessWrapperStyle isWidget={isWidget}>
       <CenterColumnStyle>
         <ProposalSuccessWrapperStyle as="section">
           <ProposalSuccessTitleBlackStyle>
             {i18n.t('proposal_submit.success.grats', {
               name: user?.profile.firstName || '',
             })}
-            recommandations
           </ProposalSuccessTitleBlackStyle>
           <ProposalSuccessTitleGreenStyle>
             {i18n.t('proposal_submit.success.proposal_sent')}
@@ -117,6 +116,6 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
           </ProposalSuccessRedButtonStyle>
         </ProposalSuccessWrapperStyle>
       </CenterColumnStyle>
-    </ProposalFormWrapperStyle>
+    </ProposalFormSuccessWrapperStyle>
   );
 };
