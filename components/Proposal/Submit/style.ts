@@ -411,23 +411,30 @@ export const ProposalSuccessTitleBlockStyle = styled.div`
   display: flex;
 `;
 
+export const ProposalSuccessParagraphWrapperStyle = styled.div`
+  margin-top: 30px;
+`;
+
 export const ProposalSuccessParagraphStyle = styled.p`
   font-size: 14px;
+  line-height: 21px;
   text-align: left;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     text-align: center;
+    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    line-height: 24px;
+  }
 `;
-
 export const ProposalSuccessParagraphActivateStyle = styled(
   ProposalSuccessParagraphStyle
 )`
-  font-weight: 700;
+  font-family: ${MakeFonts.CircularStandardBold};
 `;
 
 export const ProposalSuccessParagraphLinkStyle = styled(
   ProposalSuccessParagraphStyle
 )`
-  font-weight: 400;
+  font-family: ${MakeFonts.CircularStandardBook};
 `;
 
 export const ProposalSuccessContactStyle = styled.p`
@@ -454,15 +461,17 @@ export const ProposalSuccessCardStyle = styled.div`
   border-radius: 8px;
   padding: 20px;
   margin-top: 30px;
-  margin-bottom: 40px;
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin-bottom: 30px;
 `;
 
 export const ProposalSuccessProposalStyle = styled.p`
   text-align: center;
-  line-height: 24px;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: 14px;
+  line-height: 21px;
+  margin-bottom: 20px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    line-height: 24px;
+    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  }
 `;
 
 export const ProposalSuccessAvatarStyle = styled(AvatarStyle)`

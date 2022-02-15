@@ -6,13 +6,17 @@ import {
   trackClickKeepVoting,
   trackDisplayProposalSubmitValidation,
 } from '@make.org/utils/services/Tracking';
-import { ProposalFormSuccessWrapperStyle } from '@make.org/components/Proposal/Submit/style';
+import {
+  ProposalFormSuccessWrapperStyle,
+  ProposalSuccessParagraphWrapperStyle,
+} from '@make.org/components/Proposal/Submit/style';
 import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { clearProposalPending } from '@make.org/store/actions/pendingProposal';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { CONTACT_EMAIL } from '@make.org/utils/constants/config';
 import { AvatarImageStyle } from '@make.org/ui/components/Avatar/style';
 import { SvgEmptyAvatar } from '@make.org/ui/Svg/elements';
+import { ProposalTooltip } from '../../../ui/components/Tooltip/ProposalTooltip';
 import {
   ProposalSuccessWrapperStyle,
   ProposalSuccessTitleGreenStyle,
@@ -20,7 +24,6 @@ import {
   ProposalSuccessParagraphActivateStyle,
   ProposalSuccessParagraphLinkStyle,
   ProposalSuccessRedButtonStyle,
-  ProposalSuccessParagraphStyle,
   ProposalSuccessContactStyle,
   ProposalSuccessContactLinkStyle,
   ProposalSuccessCardStyle,
@@ -41,15 +44,14 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
   const { source } = state.appConfig;
   const isWidget = source === 'widget';
   const avatarSize = 36;
-
   const handleCloseButton = () => {
     dispatch(closePanel());
     trackClickKeepVoting();
+    dispatch(clearProposalPending());
   };
 
   useEffect(() => {
     trackDisplayProposalSubmitValidation();
-    dispatch(clearProposalPending());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -92,7 +94,7 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
             <ProposalSuccessProposalStyle>
               {proposalContent}
             </ProposalSuccessProposalStyle>
-
+            <ProposalTooltip />
             <ProposalSuccessContactStyle>
               {i18n.t('proposal_submit.success.question')}
               <ProposalSuccessContactLinkStyle href={`mailto:${CONTACT_EMAIL}`}>
@@ -100,17 +102,18 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
               </ProposalSuccessContactLinkStyle>
             </ProposalSuccessContactStyle>
           </ProposalSuccessCardStyle>
-
-          <ProposalSuccessParagraphStyle>
-            <ProposalSuccessParagraphActivateStyle>
-              {i18n.t('proposal_submit.success.activate')}
-            </ProposalSuccessParagraphActivateStyle>
-            <ProposalSuccessParagraphLinkStyle>
-              {i18n.t('proposal_submit.success.link', {
-                mail: user?.email || '',
-              })}
-            </ProposalSuccessParagraphLinkStyle>
-          </ProposalSuccessParagraphStyle>
+          {isRegister && (
+            <ProposalSuccessParagraphWrapperStyle>
+              <ProposalSuccessParagraphActivateStyle>
+                {i18n.t('proposal_submit.success.activate')}
+              </ProposalSuccessParagraphActivateStyle>
+              <ProposalSuccessParagraphLinkStyle>
+                {i18n.t('proposal_submit.success.link', {
+                  mail: user?.email || '',
+                })}
+              </ProposalSuccessParagraphLinkStyle>
+            </ProposalSuccessParagraphWrapperStyle>
+          )}
           <ProposalSuccessRedButtonStyle onClick={handleCloseButton}>
             {i18n.t('proposal_submit.success.button')}
           </ProposalSuccessRedButtonStyle>

@@ -36,11 +36,11 @@ export const ProposalTooltip: React.FC = () => {
 
   return (
     <>
-      {displayTooltip && <DisplayTooltip />}
       <ProposalTooltipLabelStyle role="tooltip" onClick={handleClick}>
         {i18n.t('proposal_submit.success.tooltip_title')}
         <ProposalTooltipInfoIconStyle aria-hidden focusable="false" />
       </ProposalTooltipLabelStyle>
+      {displayTooltip && <DisplayTooltip />}
     </>
   );
 };

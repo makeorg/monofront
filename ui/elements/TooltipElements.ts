@@ -78,7 +78,6 @@ export const RightTooltipStyle = styled(HorizontalTooltipStyle)`
 
 const ProposalTooltipCommonStyle = `
   background-color: ${color.infos};
-  position: absolute;
   z-index: 1;
   border-radius: 2px;
   color: ${color.white};
@@ -86,9 +85,10 @@ const ProposalTooltipCommonStyle = `
 
 export const ProposalTooltipDescriptionStyle = styled.div`
   ${ProposalTooltipCommonStyle}
+  position: absolute;
   display: flex;
   align-self: center;
-  top: 62px;
+  top: 80%;
   font-size: 14px;
   line-height: 21px;
   text-align: left;
@@ -145,7 +145,7 @@ export const ProposalTriangleUpStyle = styled.div`
   position: absolute;
   display: flex;
   align-self: center;
-  top: 52px;
+  top: 75%;
   width: 0;
   height: 0;
   border-style: solid;

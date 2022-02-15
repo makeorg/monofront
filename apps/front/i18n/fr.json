@@ -412,7 +412,7 @@
       "tooltip_description": "Votre proposition sera traitée par nos équipes sous 48h, en attendant vous pouvez la retrouver dès maintenant dans votre profil.",
       "grats": "Félicitations {{name}}, ",
       "proposal_sent": "votre proposition a été envoyée ",
-      "activate": "Activez votre compte en un click",
+      "activate": "Activez votre compte en un clic",
       "link": "Cliquez sur le lien d'activation qui vous a été envoyé à l'adresse : {{mail}}",
       "question": "Une question ? Vous pouvez nous contacter à : "
     }
