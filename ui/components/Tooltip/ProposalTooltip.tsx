@@ -8,6 +8,7 @@ import {
   ProposalTooltipVerticalSeparatorStyle,
   ProposalTooltipDescriptionStyle,
   ProposalTriangleUpStyle,
+  ProposalTooltipWrapperStyle,
 } from '../../elements/TooltipElements';
 
 export const ProposalTooltip: React.FC = () => {
@@ -35,12 +36,12 @@ export const ProposalTooltip: React.FC = () => {
   );
 
   return (
-    <>
+    <ProposalTooltipWrapperStyle>
       <ProposalTooltipLabelStyle role="tooltip" onClick={handleClick}>
         {i18n.t('proposal_submit.success.tooltip_title')}
         <ProposalTooltipInfoIconStyle aria-hidden focusable="false" />
       </ProposalTooltipLabelStyle>
       {displayTooltip && <DisplayTooltip />}
-    </>
+    </ProposalTooltipWrapperStyle>
   );
 };

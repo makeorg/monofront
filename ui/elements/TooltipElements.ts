@@ -83,17 +83,23 @@ const ProposalTooltipCommonStyle = `
   color: ${color.white};
 `;
 
+export const ProposalTooltipWrapperStyle = styled.div`
+  position: relative;
+`;
+
 export const ProposalTooltipDescriptionStyle = styled.div`
   ${ProposalTooltipCommonStyle}
   position: absolute;
   display: flex;
   align-self: center;
-  top: 80%;
+  top: 45px;
   font-size: 14px;
   line-height: 21px;
   text-align: left;
   padding: 5px 0px 5px 10px;
   display: flex;
+  left: 50%;
+  transform: translate(-50%);
   width: 315px;
 `;
 
@@ -104,6 +110,7 @@ export const ProposalTooltipLabelStyle = styled(UnstyledButtonStyle)`
   font-size: 12px;
   text-align: center;
   padding: 5px 10px;
+  height: 28px;
   &:after {
     content: '';
     position: absolute;
@@ -145,7 +152,9 @@ export const ProposalTriangleUpStyle = styled.div`
   position: absolute;
   display: flex;
   align-self: center;
-  top: 75%;
+  top: 35px;
+  left: 50%;
+  transform: translate(-50%);
   width: 0;
   height: 0;
   border-style: solid;
