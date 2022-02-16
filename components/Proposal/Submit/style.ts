@@ -372,6 +372,7 @@ export const LoginWrapperStyle = styled(CenterColumnStyle)<{
 export const ProposalSuccessWrapperStyle = styled(ColumnElementStyle)`
   font-family: ${MakeFonts.CircularStandardBook};
   margin-top: 30px;
+  margin-bottom: 30px;
   max-width: 505px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     margin-top: 60px;
