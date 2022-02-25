@@ -6,6 +6,7 @@ import {
   trackClickKeepVoting,
   trackDisplayProposalSubmitValidation,
 } from '@make.org/utils/services/Tracking';
+import { getAgeFromDateOfBirth } from '@make.org/utils/helpers/date';
 import {
   ProposalFormSuccessWrapperStyle,
   ProposalSuccessParagraphWrapperStyle,
@@ -35,6 +36,17 @@ import {
 type Props = {
   // eslint-disable-next-line react/require-default-props
   isRegister?: boolean;
+};
+
+export const ProposalAuthorAge: React.FC<{ dateOfBirth: string | null }> = ({
+  dateOfBirth,
+}) => {
+  if (!dateOfBirth) {
+    return null;
+  }
+  const age = getAgeFromDateOfBirth(dateOfBirth);
+
+  return <>{`, ${i18n.t('proposal_card.author.age', { age })}`}</>;
 };
 
 export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
@@ -90,6 +102,7 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
             </ProposalSuccessAvatarStyle>
             <ProposalSuccessNameStyle>
               {user?.profile.firstName}
+              <ProposalAuthorAge dateOfBirth={user?.profile.dateOfBirth} />
             </ProposalSuccessNameStyle>
             <ProposalSuccessProposalStyle>
               {proposalContent}
