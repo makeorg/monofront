@@ -12,7 +12,7 @@ import { useAppContext } from '@make.org/store';
 import { throttle } from '@make.org/utils/helpers/throttle';
 import { getGTUPageLink } from '@make.org/utils/helpers/url';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import { ConditionParagraphBlackStylePanel } from '@make.org/ui/elements/ParagraphElements';
+import { ConditionParagraphMarginStylePanel } from '@make.org/ui/elements/ParagraphElements';
 import { RedButtonCenterStyle } from '@make.org/ui/elements/ButtonsElements';
 import { OptOutCheckBox } from '@make.org/components/Form/CheckBox/OptOutCheckbox';
 import { RegisterCheckBox } from '@make.org/components/Form/CheckBox/RegisterCheckbox';
@@ -21,7 +21,7 @@ import { FormErrors } from '../../Form/Errors';
 import {
   NewWindowIconStyle,
   RegisterEmailTitleStyle,
-  TermsOfUseLinkBlackStyle,
+  TermsOfUseLinkGreyStyle,
   PostCodeWrapperStyle,
 } from '../style';
 import { EmailPasswordFields } from '../CommonFields/EmailPassword';
@@ -109,9 +109,9 @@ export const RegisterFormPanel: React.FC<Props> = ({
           <PostCodeWrapperStyle>
             {i18n.t('common.form.post_code')}
           </PostCodeWrapperStyle>
-          <ConditionParagraphBlackStylePanel>
+          <ConditionParagraphMarginStylePanel>
             {i18n.t('register.gtu_text_first')}
-            <TermsOfUseLinkBlackStyle
+            <TermsOfUseLinkGreyStyle
               href={
                 isWidget
                   ? `https://make.org${getGTUPageLink(country, language)}`
@@ -129,8 +129,8 @@ export const RegisterFormPanel: React.FC<Props> = ({
               <ScreenReaderItemStyle>
                 {i18n.t('common.open_new_window')}
               </ScreenReaderItemStyle>
-            </TermsOfUseLinkBlackStyle>
-          </ConditionParagraphBlackStylePanel>
+            </TermsOfUseLinkGreyStyle>
+          </ConditionParagraphMarginStylePanel>
           <RegisterCheckBox handleCheckbox={handleCheckbox} required />
           <OptOutCheckBox handleCheckbox={handleCheckbox} />
           <SubmitButton

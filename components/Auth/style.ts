@@ -114,9 +114,12 @@ export const TermsOfUseLinkStyle = styled.a`
   }
 `;
 
-export const TermsOfUseLinkBlackStyle = styled(TermsOfUseLinkStyle)`
-  color: ${color.black};
+export const TermsOfUseLinkGreyStyle = styled(TermsOfUseLinkStyle)`
+  color: ${color.greyDark};
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  }
 `;
 
 export const PanelTermsOfUseLinkStyle = styled(TermsOfUseLinkStyle)`
