@@ -111,7 +111,6 @@ export const SearchMainResults: React.FC<Props> = ({ location }) => {
                     count={proposalsCount}
                     link={getRouteSearchProposals(country, term)}
                   />
-
                   <MainResultsProposals
                     searchTerm={term}
                     proposals={data.proposals.results}

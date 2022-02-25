@@ -36,8 +36,12 @@ export const MainResultsProposals: React.FC<Props> = ({
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [proposalsResult, setProposalsResult] =
     useState<ProposalType[]>(proposals);
+  const PROPOSALS_LIMIT = 4;
   const getMoreButton =
-    count > 4 && count !== proposalsResult.length && !isLoading;
+    count > PROPOSALS_LIMIT && count !== proposalsResult.length && !isLoading;
+
+  // Page increment need to be reset if the serach term is changing
+  useEffect(() => setPage(1), [searchTerm]);
 
   useEffect(() => {
     setProposalsResult(proposals);
@@ -50,9 +54,11 @@ export const MainResultsProposals: React.FC<Props> = ({
       undefined,
       searchTerm,
       undefined,
-      page,
-      4
+      undefined,
+      PROPOSALS_LIMIT,
+      page
     );
+
     if (result) {
       const { results } = result;
       const newProposalList = [...proposalsResult, ...results];

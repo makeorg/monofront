@@ -54,6 +54,8 @@ export const SearchResultsProposals: React.FC<RouteComponentProps> = ({
       undefined,
       term,
       undefined,
+      undefined,
+      PROPOSALS_LIMIT,
       page
     );
     if (result) {
@@ -72,8 +74,9 @@ export const SearchResultsProposals: React.FC<RouteComponentProps> = ({
       undefined,
       term,
       undefined,
-      page,
-      PROPOSALS_LIMIT
+      undefined,
+      PROPOSALS_LIMIT,
+      page
     );
     if (result) {
       const { results } = result;
