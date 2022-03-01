@@ -7,7 +7,7 @@ import { ApiServiceServer } from '@make.org/api/ApiService/ApiService.server';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import webpackManifest from 'webpack-manifest';
 import { env } from '@make.org/assets/env';
-import { cspMiddleware } from '@make.org/utils/middleware/contentSecurityPolicy';
+import { widgetCspMiddleware } from '@make.org/utils/middleware/contentSecurityPolicy';
 import { headersResponseMiddleware } from '@make.org/utils/middleware/headers';
 import { nonceUuidMiddleware } from '@make.org/utils/middleware/nonceUuid';
 import { secureMiddleware } from '@make.org/utils/middleware/secure';
@@ -99,7 +99,7 @@ const getApp = () => {
   );
   app.use((req, res, next) => {
     const localsResponse = res as Response & { locals: { nonce: string } };
-    cspMiddleware(req, localsResponse, next);
+    widgetCspMiddleware(req, localsResponse, next);
   });
 
   initRoutes(app);
