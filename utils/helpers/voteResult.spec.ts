@@ -7,6 +7,7 @@ import {
 import { BadArgumentError } from '@make.org/utils/errors';
 import {
   getVotesPercent,
+  getVotesPercentFromScore,
   getTotalVotesCount,
   getVotesRatioInteger,
 } from './voteResult';
@@ -32,6 +33,7 @@ describe('VoteResult Helper', () => {
             },
           ],
           hasVoted: false,
+          score: 0.97,
         },
         {
           count: 2,
@@ -44,6 +46,7 @@ describe('VoteResult Helper', () => {
             },
           ],
           hasVoted: false,
+          score: 0.25,
         },
         {
           count: 3,
@@ -56,6 +59,7 @@ describe('VoteResult Helper', () => {
             },
           ],
           hasVoted: false,
+          score: 0.94,
         },
       ];
       const votesCount = getTotalVotesCount(votes);
@@ -77,6 +81,7 @@ describe('VoteResult Helper', () => {
             },
           ],
           hasVoted: false,
+          score: 0.69,
         },
         {
           count: 3,
@@ -89,6 +94,7 @@ describe('VoteResult Helper', () => {
             },
           ],
           hasVoted: false,
+          score: 0.64,
         },
         {
           count: 4,
@@ -101,6 +107,7 @@ describe('VoteResult Helper', () => {
             },
           ],
           hasVoted: false,
+          score: 0.11,
         },
       ];
 
@@ -116,5 +123,56 @@ describe('VoteResult Helper', () => {
       const percent = getVotesRatioInteger(155, 1000);
       expect(percent).toBe(16);
     });
+  });
+});
+
+describe('test getVotesPercentFromScore', () => {
+  it('calculate percent per vote Type', () => {
+    const votes: VoteType[] = [
+      {
+        count: 3,
+        voteKey: VOTE_AGREE_KEY,
+        qualifications: [
+          {
+            qualificationKey: 'foo',
+            count: 0,
+            hasQualified: false,
+          },
+        ],
+        hasVoted: false,
+        score: 0.67,
+      },
+      {
+        count: 3,
+        voteKey: VOTE_DISAGREE_KEY,
+        qualifications: [
+          {
+            qualificationKey: 'foo',
+            count: 0,
+            hasQualified: false,
+          },
+        ],
+        hasVoted: false,
+        score: 0.64,
+      },
+      {
+        count: 4,
+        voteKey: VOTE_NEUTRAL_KEY,
+        qualifications: [
+          {
+            qualificationKey: 'foo',
+            count: 0,
+            hasQualified: false,
+          },
+        ],
+        hasVoted: false,
+        score: 0.97,
+      },
+    ];
+
+    const votesPercent = getVotesPercentFromScore(votes);
+    expect(votesPercent[VOTE_AGREE_KEY]).toBe(67);
+    expect(votesPercent[VOTE_DISAGREE_KEY]).toBe(64);
+    expect(votesPercent[VOTE_NEUTRAL_KEY]).toBe(97);
   });
 });

@@ -1,8 +1,5 @@
 import React, { useRef } from 'react';
-import {
-  getTotalVotesCount,
-  getVotesPercent,
-} from '@make.org/utils/helpers/voteResult';
+import { getVotesPercentFromScore } from '@make.org/utils/helpers/voteResult';
 import { VoteType, SliderParamsType } from '@make.org/types';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import i18n from 'i18next';
@@ -22,8 +19,7 @@ type Props = {
 
 export const DetailledVoteResults: React.FC<Props> = props => {
   const { votes, proposalId } = props;
-  const totalVotesCount = getTotalVotesCount(votes);
-  const votesPercent = getVotesPercent(votes, totalVotesCount);
+  const votesPercent = getVotesPercentFromScore(votes);
   const { state } = useAppContext();
   const { device } = state.appConfig;
   const isMobile = matchMobileDevice(device);

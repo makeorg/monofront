@@ -1,8 +1,20 @@
 import { getVoteKey, updateAndGetVotes } from './vote';
 
 const votes = [
-  { voteKey: 'vote1', count: 2, qualifications: [], hasVoted: false },
-  { voteKey: 'vote2', count: 2, qualifications: [], hasVoted: false },
+  {
+    voteKey: 'vote1',
+    count: 2,
+    qualifications: [],
+    hasVoted: false,
+    score: 0.56,
+  },
+  {
+    voteKey: 'vote2',
+    count: 2,
+    qualifications: [],
+    hasVoted: false,
+    score: 0.64,
+  },
 ];
 
 describe('vote', () => {
@@ -19,6 +31,7 @@ describe('vote', () => {
         count: 2,
         qualifications: [],
         hasVoted: false,
+        score: 0.67,
       })
     ).toEqual(votes);
   });
@@ -30,10 +43,23 @@ describe('vote', () => {
         count: 3,
         qualifications: [],
         hasVoted: true,
+        score: 0.56,
       })
     ).toEqual([
-      { voteKey: 'vote1', count: 3, qualifications: [], hasVoted: true },
-      { voteKey: 'vote2', count: 2, qualifications: [], hasVoted: false },
+      {
+        voteKey: 'vote1',
+        count: 3,
+        qualifications: [],
+        hasVoted: true,
+        score: 0.56,
+      },
+      {
+        voteKey: 'vote2',
+        count: 2,
+        qualifications: [],
+        hasVoted: false,
+        score: 0.64,
+      },
     ]);
   });
 });
