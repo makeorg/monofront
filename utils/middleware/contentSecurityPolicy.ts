@@ -1,9 +1,11 @@
 import csp from 'helmet-csp';
 import { env } from '@make.org/assets/env';
-import { Response, NextFunction } from 'express';
+import { NextFunction } from 'express';
+import { IncomingMessage, ServerResponse } from 'http';
 
 export const cspMiddleware = (
-  res: Response & { locals: { nonce: string } },
+  req: IncomingMessage,
+  res: ServerResponse & { locals: { nonce: string } },
   next: NextFunction
 ): void => {
   csp({
@@ -53,6 +55,5 @@ export const cspMiddleware = (
       frameAncestors: ["'none'"],
       manifestSrc: ["'self'"],
     },
-  });
-  return next();
+  })(req, res, next);
 };

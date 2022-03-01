@@ -95,7 +95,7 @@ const getApp = () => {
   );
   app.use((req, res, next) => {
     const localsResponse = res as Response & { locals: { nonce: string } };
-    cspMiddleware(localsResponse, next);
+    cspMiddleware(req, localsResponse, next);
   });
 
   initRoutes(app);
