@@ -32,11 +32,12 @@ export const StaticPageWrapperStyle = styled.div`
 export const FocusBlockWrapperStyle = styled(StartColumnStyle)`
   margin: 30px 0 15px;
   flex-direction: column;
+  align-items: flex-start;
   background-color: ${color.white};
-  padding: 20px 20px 0px;
+  padding: 20px;
   border-radius: 8px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    padding: 30px 40px 0px 30px;
+    padding: 30px 40px;
   }
 `;
 
@@ -53,9 +54,12 @@ export const FocusBlockParagraphStyle = styled.p`
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   margin-bottom: 20px;
   line-height: 1.5;
-  letter-spacing: 0.12px;
+  letter-spacing: 0.14px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+  }
+  &.no-margin {
+    margin-bottom: 0;
   }
 `;
 

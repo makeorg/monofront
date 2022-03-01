@@ -104,10 +104,42 @@ export const A11yFR: FC = () => {
             énonçant des normes d&apos;accessibilité auxquelles nos équipes de
             conception et techniques cherchent à se rapprocher au maximum.
           </FocusBlockParagraphStyle>
-          <FocusBlockParagraphStyle>
+          <FocusBlockParagraphStyle className="no-margin">
             De façon transparente, cette page a pour but d&apos;indiquer
             l&apos;état actuel de l&apos;accessibilité de Make.org.
           </FocusBlockParagraphStyle>
+        </FocusBlockWrapperStyle>
+        <FocusBlockWrapperStyle as="section">
+          <FocusBlockTitleStyle>
+            Découvrez notre engagement pour l’accessibilité numérique
+          </FocusBlockTitleStyle>
+          <FocusBlockParagraphStyle>
+            Pour que la démocratie reste l’affaire de toutes et tous, la prise
+            en compte des enjeux d&apos;inclusion et d’accessibilité est
+            essentielle. L’exercice de la citoyenneté est un droit fondamental
+            qui ne doit pas se voir inquiété ou limité par une ou des situations
+            de handicap.{' '}
+            <strong>
+              C’est pourquoi Démocratie Ouverte et Make.org, deux acteurs de
+              l’innovation démocratique, ont travaillé aux côtés du CNCPH à
+              l’élaboration d’une charte d&apos;accessibilité des outils de de
+              participation citoyenne.
+            </strong>{' '}
+            Cette charte, signée le 17 décembre 2021, 2021, officialise les
+            engagements précédents des deux organisations acte la volonté de
+            continuer en ce sens.
+          </FocusBlockParagraphStyle>
+          <RedHTMLLinkElementStyle
+            href={`${FRONT_URL}/convention/cncph.html`}
+            target="_blank"
+            rel="noopener"
+          >
+            Télécharger la Charte (version html)
+            <StaticExternalLinkIconStyle aria-hidden focusable="false" />
+            <ScreenReaderItemStyle>
+              {i18n.t('common.open_new_window')}
+            </ScreenReaderItemStyle>
+          </RedHTMLLinkElementStyle>
         </FocusBlockWrapperStyle>
         <StaticPrimaryOrderedListStyle>
           <StaticPrimaryOrderedListItemStyle>
