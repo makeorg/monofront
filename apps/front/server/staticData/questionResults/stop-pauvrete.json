@@ -1,0 +1,536 @@
+{
+    "context": "Consultation citoyenne réalisée par Make.org du 2021-11-29 au 2022-01-16, autour de la question: Comment l'Etat, les entreprises et les associations peuvent-ils mettre fin à l'extrême pauvreté et aux inégalités dans le monde ?",
+    "key_figures": {
+        "participants": 23658,
+        "votes": 166610,
+        "proposals": 877
+    },
+    "top_ideas": [
+        {
+            "name": "Finance et fiscalité",
+            "ideas": [
+                {
+                    "idea": "Lutter contre l'évasion et l'optimisation fiscale",
+                    "agreement": 88,
+                    "adhesion": 24,
+                    "realistic": 29
+                },
+                {
+                    "idea": "Mieux réguler et taxer la spéculation pour lutter contre la pauvreté",
+                    "agreement": 82,
+                    "adhesion": 20,
+                    "realistic": 23
+                },
+                {
+                    "idea": "Mieux encadrer l'utilisation des aides dans les pays en voie de développement",
+                    "agreement": 84,
+                    "adhesion": 20,
+                    "realistic": 24
+                }
+            ]
+        },
+        {
+            "name": "Besoins fondamentaux",
+            "ideas": [
+                {
+                    "idea": "Renforcer la souveraineté alimentaire des pays en voie de développement via l'agriculture",
+                    "agreement": 81,
+                    "adhesion": 18,
+                    "realistic": 29
+                },
+                {
+                    "idea": "Mettre fin au gaspillage et redistribuer les invendus",
+                    "agreement": 88,
+                    "adhesion": 21,
+                    "realistic": 29
+                },{
+                    "idea": "Faire évoluer et renforcer les systèmes de santé mondial",
+                    "agreement": 83,
+                    "adhesion": 21,
+                    "realistic": 24
+                },
+                
+                {
+                    "idea": "Améliorer les systèmes éducatifs",
+                    "agreement": 83,
+                    "adhesion": 17,
+                    "realistic": 26
+                },
+                {
+                    "idea": "Faciliter l'accès au logement",
+                    "agreement": 82,
+                    "adhesion": 16,
+                    "realistic": 27
+                }
+            ]
+        },
+        {
+            "name": "Economie et emploi",
+            "ideas": [
+                {
+                    "idea": "Aider au développement de l'économie locale des pays pauvres",
+                    "agreement": 83,
+                    "adhesion": 21,
+                    "realistic": 26
+                },{
+                    "idea": "Améliorer les systèmes de rémunération des travailleurs",
+                    "agreement": 83,
+                    "adhesion": 19,
+                    "realistic": 22
+                },
+                
+                {
+                    "idea": "Renforcer la lutte contre le lobbying des entreprises",
+                    "agreement": 77,
+                    "adhesion": 21,
+                    "realistic": 19
+                }
+            ]
+        },
+        {
+            "name": "Démocratie et politique internationale",
+            "ideas": [
+                {
+                    "idea": "Cesser de soutenir politiquement et économiquement les pays ne respectant pas les droits humains",
+                    "agreement": 83,
+                    "adhesion": 22,
+                    "realistic": 23
+                },
+                {
+                    "idea": "Renforcer la lutte pour les droits des femmes à travers le Monde",
+                    "agreement": 82,
+                    "adhesion": 21,
+                    "realistic": 18
+                }
+            ]
+        }
+    ],
+    "controversials":[{
+            "id": "3cb04ec3-eb42-4dc5-b39a-dbbcd7fd1ae9",
+            "content": "Il faut admettre que la France est un pays riche et que la solidarité doit d'abord être pour les pays où des gens meurent de faim",
+            "author": "Benoît",
+            "agree": 32,
+            "like_it": 5,
+            "disagree": 45,
+            "no_way": 18,
+            "votes": 179
+        },{
+            "id": "75e71345-30e9-4198-b435-b0372cad3cff",
+            "content": "Il faut financer les associations locales directement sans passer par les gouvernements",
+            "author": "Claude",
+            "agree": 42,
+            "like_it": 6,
+            "disagree": 32,
+            "no_way": 11,
+            "votes": 182
+        },{
+            "id": "5b4ce651-911e-4448-a360-3ec463a745c4",
+            "content": "Il faut que toute entreprise (petite à grosse) verse 1% de ses bénéfices à un fond destiné à la lutte climatique et contre la pauvreté.",
+            "author": "Rémi",
+            "agree": 46,
+            "like_it": 9,
+            "disagree": 39,
+            "no_way": 9,
+            "votes": 191
+        },{
+            "id": "99bd9f83-4e29-4545-8002-b1c7e28325ec",
+            "content": "Il faut arrêter les logements locatifs, les gens doivent pouvoir accéder à un logement dont ils sont propriétaires dès qu'ils travaillent",
+            "author": "Stéphane",
+            "agree": 27,
+            "like_it": 7,
+            "disagree": 46,
+            "no_way": 16,
+            "votes": 188
+        },{
+            "id": "ce21de96-e0fa-48d0-8686-31c66acc1d16",
+            "content": "Il faut des campagnes de stérilisation dans les pays qui n'ont pas les ressources nécessaires pour nourrir leur population.",
+            "author": "Edouard",
+            "agree": 40,
+            "like_it": 9,
+            "disagree": 53,
+            "no_way": 27,
+            "votes": 195
+        },{
+            "id": "a03afbb8-553f-43da-9146-a28f6c1074f8",
+            "content": "Il faut que l'État fixe les salaires en trois catégories (A, B, C) pour le public/privé sans différences entre les métiers et plus de SMIC",
+            "author": "Axel",
+            "agree": 33,
+            "like_it": 3,
+            "disagree": 43,
+            "no_way": 21,
+            "votes": 184
+        },{
+            "id": "83a330af-d801-4b91-a5ca-a125730b1d49",
+            "content": "Il faut mettre le SMIC à plus de 3000€ comme en Suisse et, bien sûr réajuster tous les salaires au dessus !",
+            "author": "Jean-François",
+            "agree": 30,
+            "like_it": 6,
+            "disagree": 44,
+            "no_way": 10,
+            "votes": 182
+        },{
+            "id": "0646447d-67a9-478c-8ed4-65ac10871666",
+            "content": "Il faut un revenu universel au nom des droits de l'homme et de sa dignité.",
+            "author": "virginie",
+            "agree": 47,
+            "like_it": 14,
+            "disagree": 39,
+            "no_way": 19,
+            "votes": 212
+        },{
+            "id": "c1516095-5c7e-437f-8126-c61d51eace81",
+            "content": "Il faut supprimer le droit de véto des Etats à l'O.N.U. et renforcer son autorité, les Etats devenant des Régions : un peu comme les Etats-U",
+            "author": "Paul",
+            "agree": 35,
+            "like_it": 4,
+            "disagree": 34,
+            "no_way": 17,
+            "votes": 199
+        }, {
+            "id": "cfaed95b-49ce-4388-ad85-ad559b8faa71",
+            "content": "Il faut réduire les guerres en faisant qu'un état n'intervienne jamais en dehors de son sol : moins de guerres = moins de pauvreté",
+            "author": "lebonsens",
+            "agree": 32,
+            "like_it": 5,
+            "disagree": 46,
+            "no_way": 11,
+            "votes": 184
+        },{
+            "id": "d43f5576-fdc3-4e03-b210-099f8b949beb",
+            "content": "Il faut réduire les dépenses militaires notamment en supprimant les armes nucléaires",
+            "author": "Annie et Joel",
+            "agree": 38,
+            "like_it": 9,
+            "disagree": 44,
+            "no_way": 26,
+            "votes": 188
+        },{
+            "id": "f29c90b8-cf15-4fa8-8611-24a458b11092",
+            "content": "Il faut mettre en place des abattements fiscaux pour les diasporas qui contribuent au développement de leur pays d’origine",
+            "author": "Ibrahim",
+            "agree": 31,
+            "like_it": 4,
+            "disagree": 36,
+            "no_way": 24,
+            "votes": 184
+        }, {
+            "id": "7c2fa11a-7981-4c4e-b4ec-d2be77e7e2cd",
+            "content": "Il faut utiliser le budget de la lutte contre l'immigration pour améliorer leur vie dans les pays d'origine ou pour les accueillir",
+            "author": "Stella",
+            "agree": 46,
+            "like_it": 10,
+            "disagree": 36,
+            "no_way": 18,
+            "votes": 183
+        }
+    ],
+    "rejected": [],
+    "cartography": [
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Thèmes cités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Démocratie et ",
+                    "sublabel": "politiques locales",
+                    "percent": 25,
+                    "color": "#4B45A5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.35
+                    }
+                },
+                {
+                    "label": "Economie ",
+                    "sublabel": "responsable",
+                    "percent": 23,
+                    "color": "#8955BD",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Fiscalité et flux ",
+                    "sublabel": " financiers illicites",
+                    "percent": 20,
+                    "color": "#EB7575",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.75,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Politique",
+                    "sublabel": " internationale",
+                    "percent": 13,
+                    "color": "#F5976E",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.75,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Santé et",
+                    "sublabel": " besoins fondamentaux",
+                    "percent": 11,
+                    "color": "#EEB298",
+                    "adjustLabel": {
+                      "textAlign": "right",
+                      "xAxis": 1.8,
+                      "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Droits humains",
+                    "percent": 6,
+                    "color": "#FFD266",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Education",
+                    "percent": 5,
+                    "color": "#FFF689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Autres",
+                    "percent": 22,
+                    "color": "#FFF",
+                    "adjustLabel": {
+                        "textAlign": "left"
+                    }
+                }
+            ]
+        }
+    ],
+    "participation": [
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (1/2)",
+            "forcedHigherValue": 19,
+            "legend": {
+                "title": "Participation par région (1/2)",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "Île-de-France",
+                    "bars": {
+                        "first": 18,
+                        "second": 18
+                    }
+                },
+                {
+                    "label": "Auvergne-Rhône-Alpes",
+                    "bars": {
+                        "first": 11,
+                        "second": 12
+                    }
+                },
+                {
+                    "label": "Nouvelle-Aquitaine",
+                    "bars": {
+                        "first": 8,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Occitanie",
+                    "bars": {
+                        "first": 10,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Hauts-de-France",
+                    "bars": {
+                        "first": 6,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Grand Est",
+                    "bars": {
+                        "first": 10,
+                        "second": 8
+                    }
+                },
+                {
+                    "label": "Provence-Alpes-Côte d'Azur",
+                    "bars": {
+                        "first": 9,
+                        "second": 8
+                    }
+                }
+            ],
+            "id": "participation_0"
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (2/2)",
+            "forcedHigherValue": 19,
+            "legend": {
+                "title": "Participation par région (2/2)",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "Pays de la Loire",
+                    "bars": {
+                        "first": 6,
+                        "second": 6
+                    }
+                },
+                {
+                    "label": "Bretagne",
+                    "bars": {
+                        "first": 6,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Normandie",
+                    "bars": {
+                        "first": 5,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Bourgogne-Franche-Comté",
+                    "bars": {
+                        "first": 3,
+                        "second": 4
+                    }
+                },
+                {
+                    "label": "Centre-Val de Loire",
+                    "bars": {
+                        "first": 4,
+                        "second": 4
+                    }
+                },
+                {
+                    "label": "Outre-mer",
+                    "bars": {
+                        "first": 3,
+                        "second": 3
+                    }
+                },
+                {
+                    "label": "Corse",
+                    "bars": {
+                        "first": 1,
+                        "second": 1
+                    }
+                }
+            ],
+            "id": "participation_1"
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par âge",
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "16-24",
+                    "bars": {
+                        "first": 25,
+                        "second": 13
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "25-34",
+                    "bars": {
+                        "first": 13,
+                        "second": 14
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "35-44",
+                    "bars": {
+                        "first": 8,
+                        "second": 15
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "45-54",
+                    "bars": {
+                        "first": 10,
+                        "second": 16
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "55-64",
+                    "bars": {
+                        "first": 20,
+                        "second": 16
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "65+",
+                    "bars": {
+                        "first": 24,
+                        "second": 26
+                    },
+                    "color": "#8BDAB2"
+                }
+            ],
+            "id": "participation_2"
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Votes par genre",
+            "legend": "",
+            "data": [
+                {
+                    "label": "hommes",
+                    "percent": 61,
+                    "color": "#4B45A5"
+                },
+                {
+                    "label": "femmes",
+                    "percent": 37,
+                    "color": "#EB7575"
+                }, {
+                    "label": "non binaire",
+                    "percent": 2,
+                    "color": "#8BDAB2"
+                }
+            ],
+            "id": "participation_3"
+        }
+    ]
+}
