@@ -2,9 +2,7 @@
 import React, { FC, useEffect } from 'react';
 import i18n from 'i18next';
 import { trackDisplayAuthenticationForm } from '@make.org/utils/services/Tracking';
-import {
-  ColumnElementStyle,
-} from '@make.org/ui/elements/FlexElements';
+import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import { AuthenticationRegisterButtons } from '@make.org/components/Auth/Register/Buttons';
 import { Register } from '@make.org/components/Auth/Register';
 import { Login } from '@make.org/components/Auth/Login/index';
@@ -63,8 +61,8 @@ const renderAuthStep = (step: string | undefined, dispatch: Dispatch) => {
               <ProposalSubmitAuthSeparator />
             </SeparatorProposalAuthLogin>
             <SocialRegisterButtonsWrapperStyle>
-              <FacebookAuthentication updateFirstname/>
-              <GoogleAuthentication updateFirstname/>
+              <FacebookAuthentication updateFirstname />
+              <GoogleAuthentication updateFirstname />
             </SocialRegisterButtonsWrapperStyle>
           </ProposalAuthSocialLoginWrapperStyle>
         </>
@@ -100,7 +98,11 @@ export const ProposalAuthentication: FC = () => {
       <ProposalFormWrapperStyle isWidget={isWidget}>
         <LoginWrapperStyle isWidget={isWidget}>
           <ProposalBackButtonStyle
-            onClick={() => dispatch(resetProposalAuthStep())}
+            onClick={() =>
+              step === AUTH_STEP.FORGOT_PASSWORD
+                ? dispatch(setProposalAuthStep(AUTH_STEP.LOGIN))
+                : dispatch(resetProposalAuthStep())
+            }
           >
             {i18n.t('common.back')}
           </ProposalBackButtonStyle>
@@ -115,14 +117,16 @@ export const ProposalAuthentication: FC = () => {
       <ProposalStepWrapperStyle isWidget={isWidget} isAuthentication>
         <ProposalStepWrapperColumnStyle isWidget={isWidget}>
           <ColumnElementStyle>
-            <ProposalBackButtonCenterStyle isWidget={isWidget}
+            <ProposalBackButtonCenterStyle
+              isWidget={isWidget}
               onClick={() => dispatch(modifyProposalPending())}
             >
               {i18n.t('proposal_submit.authentication.back')}
             </ProposalBackButtonCenterStyle>
             <ProposalAuthWrapperStyle>
               <ProposalAltStepTitleStyle isWidget={isWidget}>
-                {firstname}{', '}
+                {firstname}
+                {', '}
                 <ProposalStepLabelRedStyle>
                   {i18n.t('proposal_submit.authentication.last_step_red')}
                 </ProposalStepLabelRedStyle>
