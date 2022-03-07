@@ -120,6 +120,7 @@ COPY --from=base-production /usr/app/apps/front/ecosystem.config.js ./ecosystem.
 COPY --from=base-production /usr/app/apps/front/bin ./bin
 COPY --from=base-production /usr/app/apps/front/i18n ./i18n
 COPY --from=base-production /usr/app/apps/front/server/staticData ./server/staticData
+COPY --from=base-production /usr/app/apps/front/server/convention ./server/convention
 
 COPY --from=base-production /usr/app/node_modules ./node_modules
 
