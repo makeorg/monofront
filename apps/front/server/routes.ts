@@ -60,6 +60,7 @@ import {
   APP_ASSETS_DIR,
   APP_JS_DIR,
   APP_FAVICON_DIR,
+  APP_CONVENTION_DIR,
 } from './paths';
 import { questionResults } from './api/question';
 import { loggerApi } from './api/logger';
@@ -78,6 +79,10 @@ function setCustomCacheControl(res: Response, path: string) {
     res.removeHeader('Expires');
     res.removeHeader('Pragma');
   }
+}
+
+function setAttachementContentDisposition(res: Response, path: string) {
+  res.setHeader('Content-Disposition', 'attachment');
 }
 
 export const initRoutes = (app: Application): void => {
@@ -114,6 +119,13 @@ export const initRoutes = (app: Application): void => {
     '/reports',
     express.static(APP_REPORTS_DIR, {
       setHeaders: setCustomCacheControl,
+    })
+  );
+
+  app.use(
+    '/convention',
+    express.static(APP_CONVENTION_DIR, {
+      setHeaders: setAttachementContentDisposition,
     })
   );
 
