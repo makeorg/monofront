@@ -58,34 +58,6 @@ export const getVotesPercent = (
 };
 
 /**
- * calculate the percent by vote key
- *
- * @param {VoteType} votes
- * @param {number} votesScore
- */
-export const getVotesPercentFromScore = (
-  votes: VoteType[]
-): { [n: string]: number } => {
-  const agreeVote: VoteType | undefined = votes.find(
-    vote => vote.voteKey === VOTE_AGREE_KEY
-  );
-  const disagreeVote: VoteType | undefined = votes.find(
-    vote => vote.voteKey === VOTE_DISAGREE_KEY
-  );
-  const neutralVote: VoteType | undefined = votes.find(
-    vote => vote.voteKey === VOTE_NEUTRAL_KEY
-  );
-
-  return {
-    [VOTE_AGREE_KEY]: agreeVote ? Math.round(agreeVote.score * 100) : 0,
-    [VOTE_DISAGREE_KEY]: disagreeVote
-      ? Math.round(disagreeVote.score * 100)
-      : 0,
-    [VOTE_NEUTRAL_KEY]: neutralVote ? Math.round(neutralVote.score * 100) : 0,
-  };
-};
-
-/**
  * calculate the vote ratio betweem votesCount and votesTarget
  *
  * @param {number} votesCount
