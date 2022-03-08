@@ -51,7 +51,7 @@ export const FocusBlockTitleStyle = styled.strong`
 
 export const FocusBlockParagraphStyle = styled.p`
   color: ${color.greyDark};
-  font-size: ${intToPx(typography.font.fontsize.S.value)};
+  font-size: ${intToPx(typography.font.fontsize.XS.value)};
   margin-bottom: 20px;
   line-height: 1.5;
   letter-spacing: 0.14px;
