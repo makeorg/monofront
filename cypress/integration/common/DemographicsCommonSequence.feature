@@ -22,7 +22,7 @@ Feature: Demographic sequence card
   Then current card is a demographic card
   And I see "skip demographics" button on card "3"
   And common event "display-demographics" on question "question-0-slug" should be tracked by Make with parameters values:
-      | name                | value                                                                             | value                                   |
+      | name                | frontValue                                                                        | widgetValue                             |
       | eventType           | trackCustom                                                                       | trackCustom                             |
       | country             | FR                                                                                | FR                                      |
       | language            | fr                                                                                | fr                                      |

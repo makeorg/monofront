@@ -87,11 +87,7 @@ Given(
       .replace(':questionSlug', questionSlug)
       .replace(':language', 'fr')
       .replace(':country', 'FR');
-    const widgetUrl = sequencePage.widget
-      .replace(':questionSlug', questionSlug)
-      .replace(':language', 'fr')
-      .replace(':country', 'FR');
-    if (page === widgetUrl) {
+    if (Cypress.env('application') === 'widget') {
       cy.visit(page);
     } else {
       cy.monitorApiCall('getStartSequence');

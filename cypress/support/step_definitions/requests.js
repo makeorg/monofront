@@ -13,12 +13,6 @@ export const xhrTrackingRequests = { list: {} };
 // register asserts by endpoint
 export const asserts = { list: {} };
 
-const sequencePage = {
-  front: '/:country/consultation/:questionSlug/selection',
-  widget:
-    '/?questionSlug=:questionSlug&source=widget-test&country=:country&language=:language&widgetId=fake-widget-questionid&hash=fake-hash-id',
-};
-
 Then(
   'some make data header should be sent to {string}:',
   (endpoint, expectedHeaders) => {
@@ -87,38 +81,26 @@ Then(
 Then(
   'common event {string} on question {string} should be tracked by Make with parameters values:',
   (trackerName, questionSlug, commonExpectedParameters) => {
-    const page = sequencePage[Cypress.env('application')]
-      .replace(':questionSlug', questionSlug)
-      .replace(':language', 'fr')
-      .replace(':country', 'FR');
-    const widgetUrl = sequencePage.widget
-      .replace(':questionSlug', questionSlug)
-      .replace(':language', 'fr')
-      .replace(':country', 'FR');
-
     const currentExpectedParameters = commonExpectedParameters.rawTable;
 
     // reorders expectedParameters for widget and front env
     const expectedParameters = () => {
+      let slicedArrayDatas = [];
       // reorders array for widget values
-      if (page === widgetUrl) {
-        const slicedArrayDatas = [];
+      if (Cypress.env('application') === 'widget') {
         currentExpectedParameters.map(currentExpectedParameter => {
           const keys = currentExpectedParameter.slice(0, 1);
           const values = currentExpectedParameter.slice(2);
           const param = keys.concat(values);
           slicedArrayDatas.push(param);
         });
-        const newExpectedParameters = slicedArrayDatas.slice(1);
-        return newExpectedParameters;
+      } else {
+        // reorders array for front values
+        slicedArrayDatas = currentExpectedParameters.map(
+          currentExpectedParameter => currentExpectedParameter.slice(0, 2)
+        );
       }
-
-      // reorders array for front values
-      const slicedArrayDatas = currentExpectedParameters.map(
-        currentExpectedParameter => currentExpectedParameter.slice(0, 2)
-      );
-      const newExpectedParameters = slicedArrayDatas.slice(1);
-      return newExpectedParameters;
+      return slicedArrayDatas.slice(1);
     };
 
     // checks equality between request body and expected data
