@@ -16,7 +16,7 @@ export const DataPolicyContentStyle = styled.form`
   max-height: 501px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     width: 536px;
-    max-height: 356px;
+    max-height: 366px;
     padding: 20px 30px 30px;
   }
 `;
@@ -47,7 +47,6 @@ export const DataPolicyParagraphStyle = styled.p<{ isRefusal?: boolean }>`
 `;
 
 export const ButtonWrapperStyle = styled(FlexElementStyle)`
-  margin-top: 15px;
   width: 100%;
   flex-flow: row-reverse;
 `;
