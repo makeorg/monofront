@@ -91,7 +91,7 @@
       "title": "Hoppla! Deine Cookies sind deaktiviert – Make.org"
     },
     "cookies": {
-      "title": "Cookie-Verwaltung – Make.org",
+      "title": "Cookie-Richtlinie – Make.org",
       "description": "Erfahre alles über die Verwendung von Cookies, wenn du die Plattform besuchst."
     },
     "password-recovery": {
@@ -534,7 +534,7 @@
     "moderation_charter": "Moderationscharta",
     "press_details": "Presseschau",
     "a11y": "Barrierefreiheit",
-    "cookies": "Cookie-Verwaltung"
+    "cookies": "Cookie-Richtlinie"
   },
   "cookie_modal": {
     "title": "Äußere dich auf Make.org und schütze dabei deine Privatsphäre",
@@ -1172,7 +1172,7 @@
     "cnil_number": "{{cnil_number}}"
   },
   "cookies_management": {
-    "title": "Cookie-Verwaltung",
+    "title": "Cookie-Richtlinie",
     "dated": "– vom {{date}} –",
     "button": "Meine Auswahl bestätigen",
     "intro": {

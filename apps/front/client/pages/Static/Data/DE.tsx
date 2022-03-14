@@ -40,7 +40,7 @@ export const DataDE: FC = () => {
       />
       <StaticPageWrapperStyle>
         <StaticSecondLevelTitleStyle>
-          PERSÖNLICHE DATENCHARTA
+          DATENSCHUTZERKLÄRUNG
           <StaticTitleExtra>
             - Stand:{' '}
             {DateHelper.localizedAndFormattedDate(
