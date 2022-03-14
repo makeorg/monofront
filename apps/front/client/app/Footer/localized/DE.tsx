@@ -6,8 +6,11 @@ import {
   getContactPageLink,
   getCookiesPageLink,
 } from '@make.org/utils/helpers/url';
-import { scrollToTop } from '@make.org/utils/helpers/styled';
-import { NAVIGATION, PANEL, IDS } from '@make.org/types/enums';
+import {
+  matchDesktopDevice,
+  scrollToTop,
+} from '@make.org/utils/helpers/styled';
+import { NAVIGATION, PANEL, IDS, URL } from '@make.org/types/enums';
 
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { modalShowCountries } from '@make.org/store/actions/modal';
@@ -24,8 +27,12 @@ import {
   FooterItemAltLinkStyle,
   FooterCountryIconStyle,
   FooterContactIconStyle,
+  FooterWrapperFirstListStyle,
+  FooterItemHTMLLinkStyle,
+  FooterSeparatorStyle,
 } from '../style';
 import { FooterCommonLinks } from '../CommonLinks';
+import { FooterExternalLink } from '../ExternalLink';
 
 /**
  * Renders Main Footer
@@ -33,8 +40,9 @@ import { FooterCommonLinks } from '../CommonLinks';
 export const FooterDE: React.FC = () => {
   const { dispatch, state } = useAppContext();
   const location = useLocation();
-  const { country, language } = state.appConfig;
+  const { country, language, device } = state.appConfig;
   const isSequencePage = getIsSequencePage(location.pathname);
+  const isDesktop = matchDesktopDevice(device);
 
   return country ? (
     <FooterStyle
@@ -45,6 +53,36 @@ export const FooterDE: React.FC = () => {
       data-cy-container="footer"
     >
       <FooterNavStyle aria-label={i18n.t('common.footer_nav')}>
+        <ColumnToRowElementStyle>
+          <FooterWrapperFirstListStyle>
+            {isDesktop && (
+              <FooterItemStyle>
+                <FooterItemHTMLLinkStyle
+                  target="_blank"
+                  rel="noopener"
+                  href={URL.JOBS_LINK_DE}
+                >
+                  {i18n.t('main_footer.jobs')}
+                  <> </>
+                  <FooterExternalLink />
+                </FooterItemHTMLLinkStyle>
+              </FooterItemStyle>
+            )}
+          </FooterWrapperFirstListStyle>
+          <FooterWrapperThirdListStyle as="div">
+            <FooterItemStyle as="div">
+              <FooterItemAltLinkStyle
+                onClick={scrollToTop}
+                to={getContactPageLink(country, language)}
+              >
+                <FooterContactIconStyle aria-hidden focusable="false" />
+                <> </>
+                {i18n.t('main_footer.contact')}
+              </FooterItemAltLinkStyle>
+            </FooterItemStyle>
+          </FooterWrapperThirdListStyle>
+        </ColumnToRowElementStyle>
+        <FooterSeparatorStyle />
         <ColumnToRowElementStyle>
           <FooterWrapperSecondListStyle>
             <FooterCommonLinks />
@@ -66,7 +104,7 @@ export const FooterDE: React.FC = () => {
             </FooterItemStyle>
           </FooterWrapperSecondListStyle>
           <FooterWrapperThirdListStyle>
-            <FooterItemStyle className="no-bullet">
+            <FooterItemStyle as="div">
               <FooterItemAltLinkStyle
                 className="underline"
                 as={UnstyledButtonStyle}
@@ -77,16 +115,6 @@ export const FooterDE: React.FC = () => {
                 <FooterCountryIconStyle aria-hidden focusable="false" />
                 <> </>
                 {i18n.t('main_footer.country')}
-              </FooterItemAltLinkStyle>
-            </FooterItemStyle>
-            <FooterItemStyle>
-              <FooterItemAltLinkStyle
-                onClick={scrollToTop}
-                to={getContactPageLink(country, language)}
-              >
-                <FooterContactIconStyle aria-hidden focusable="false" />
-                <> </>
-                {i18n.t('main_footer.contact')}
               </FooterItemAltLinkStyle>
             </FooterItemStyle>
           </FooterWrapperThirdListStyle>

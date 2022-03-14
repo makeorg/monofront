@@ -1,5 +1,6 @@
 export enum URL {
   JOBS_LINK = 'https://about.make.org/jobs',
+  JOBS_LINK_DE = 'https://about.make.org/de/jobs-de',
   MODERATION_CHARTER_FR_LINK = 'https://about.make.org/moderation',
   MODERATION_CHARTER_EN_LINK = 'https://about.make.org/en/moderation',
   MODERATION_CHARTER_DE_LINK = 'https://about.make.org/de/moderation-charter',

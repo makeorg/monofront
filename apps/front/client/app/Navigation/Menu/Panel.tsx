@@ -49,6 +49,7 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
   const onBrowseResultsPage = isBrowseResultsPage(location.pathname);
   const displayExtraNavLinks = country === 'DE' || country === 'FR';
   const isFR = country === 'FR';
+  const isDE = country === 'DE';
   const countryHasConsultations = getCountryWithConsultations(
     country,
     countriesWithConsultations
@@ -154,21 +155,23 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
                     </ScreenReaderItemStyle>
                   </MenuExternalLinkStyle>
                 </MenuItemStyle>
-                <MenuItemStyle>
-                  <MenuExternalLinkStyle
-                    target="_blank"
-                    rel="noopener"
-                    href={URL.JOBS_LINK}
-                  >
-                    {i18n.t('main_footer.jobs')}
-                    <> </>
-                    <MenuNewWindowIconStyle aria-hidden focusable="false" />
-                    <ScreenReaderItemStyle>
-                      {i18n.t('common.open_new_window')}
-                    </ScreenReaderItemStyle>
-                  </MenuExternalLinkStyle>
-                </MenuItemStyle>
               </>
+            )}
+            {(isFR || isDE) && (
+              <MenuItemStyle>
+                <MenuExternalLinkStyle
+                  target="_blank"
+                  rel="noopener"
+                  href={isFR ? URL.JOBS_LINK : URL.JOBS_LINK_DE}
+                >
+                  {i18n.t('main_footer.jobs')}
+                  <> </>
+                  <MenuNewWindowIconStyle aria-hidden focusable="false" />
+                  <ScreenReaderItemStyle>
+                    {i18n.t('common.open_new_window')}
+                  </ScreenReaderItemStyle>
+                </MenuExternalLinkStyle>
+              </MenuItemStyle>
             )}
           </UnstyledListStyle>
         </MenuNavStyle>
