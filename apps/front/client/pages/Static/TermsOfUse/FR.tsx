@@ -395,8 +395,7 @@ export const TermsOfUseFR: FC = () => {
                   proposant les mêmes Solutions avec des adresses électroniques
                   différentes. Toujours dans le but de laisser la parole à tous
                   les Utilisateurs, chacun pourra déposer 100 propositions
-                  maximum sur la même consultation pendant 30 jours glissants.
-                  Au-delà de ce seuil, nous ne serons plus en capacité
+                  maximum. Au-delà de ce seuil, nous ne serons plus en capacité
                   d’accepter les propositions et nous notifierons l’Utilisateur
                   concerné par email pour lui expliquer les raisons de ce seuil
                   et l’accompagner dans son usage optimal de la plateforme.

@@ -410,11 +410,11 @@ export const TermsOfUseEN: FC = () => {
                   submit a Citizen Proposal that already exists. Users must also
                   not spam the Service by proposing the same Solutions from
                   different e-mail addresses. One User is allowed to submit a
-                  maximum of 100 solutions for each consultation during 30
-                  rolling days, in order to give enough space for every User to
-                  express themselves. Beyond this threshold, new solutions won’t
-                  be moderated by our team, the User will be notified by email
-                  and we will guide him in his correct use of the platform.
+                  maximum of 100 solutions for each consultation, in order to
+                  give enough space for every User to express themselves. Beyond
+                  this threshold, new solutions won’t be moderated by our team,
+                  the User will be notified by email and we will guide him in
+                  his correct use of the platform.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
                   Once a User’s Citizen Proposal has been validated, it will be
