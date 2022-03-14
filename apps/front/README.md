@@ -70,3 +70,7 @@ API_URL_CLIENT_SIDE=https://api.make.org
 # Front url
 FRONT_URL=https://make.org
 ```
+
+## Specificities
+### Results page
+Check [RESULTS.MD](./server/staticData/RESULTS.MD).

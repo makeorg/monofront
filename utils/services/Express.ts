@@ -25,6 +25,10 @@ const getResults = async (
   }
 };
 
+/* @todo this service is only used by 'front' app
+ * Delete it when 'results page' is automated
+ * Or refactor it to define the service and his layers in the 'front' app
+ */
 export const ExpressService = {
   getResults,
 };
