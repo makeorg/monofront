@@ -1,0 +1,600 @@
+{
+    "context": "Consultation citoyenne réalisée par Make.org du 2022-01-04 au 2022-02-21, autour de la question: Comment favoriser l'accès au droit pour lutter contre les injustices ?",
+    "key_figures": {
+      "participants": 25990,
+      "votes": 134389,
+      "proposals": 1056
+    },
+    "top_ideas": [
+      {
+        "name": "Fonctionnement de la justice",
+        "ideas": [
+          {
+            "idea": "Donner plus de moyens humains et financiers à la Justice pour améliorer son fonctionnement",
+            "agreement": 91,
+            "adhesion": 25,
+            "realistic": 36
+          },
+          {
+            "idea": "Garantir la déontologie des professions juridiques et le bon déroulé des procédures",
+            "agreement": 84,
+            "adhesion": 22,
+            "realistic": 31
+          },
+          {
+            "idea": "Garantir une plus grande indépendance et impartialité de la justice",
+            "agreement": 93,
+            "adhesion": 26,
+            "realistic": 28
+          },
+          {
+            "idea": "Réduire les délais de procédure et de jugement",
+            "agreement": 94,
+            "adhesion": 28,
+            "realistic": 34
+          }
+        ]
+      },
+      {
+        "name": "Liens justice/justiciables",
+        "ideas": [
+          {
+            "idea": "Simplifier les textes et les procédures pour favoriser leur accès",
+            "agreement": 84,
+            "adhesion": 19,
+            "realistic": 35
+          },
+          {
+            "idea": "Rendre la justice financièrement plus accessible",
+            "agreement": 83,
+            "adhesion": 24,
+            "realistic": 26
+          },
+          {
+            "idea": "Mieux acceuillir et prendre en charge les victimes",
+            "agreement": 90,
+            "adhesion": 23,
+            "realistic": 35
+          },
+          {
+            "idea": "Renforcer l'orientation des justiciables et un meilleur suivi des démarches",
+            "agreement": 88,
+            "adhesion": 23,
+            "realistic": 30
+          }
+        ]
+      },
+      {
+        "name": "Services autour de la justice",
+        "ideas": [
+          {
+            "idea": "Developper les métiers et services de conciliation",
+            "agreement": 83,
+            "adhesion": 15,
+            "realistic": 35
+          },
+          {
+            "idea": "Développer les maisons de justice et du droit, notamment dans les territoires",
+            "agreement": 87,
+            "adhesion": 17,
+            "realistic": 31
+          },
+          {
+            "idea": "Developper en faire connaitre les permanences juridiques",
+            "agreement": 85,
+            "adhesion": 18,
+            "realistic": 33
+          },
+          {
+            "idea": "Créer un service public du droit",
+            "agreement": 77,
+            "adhesion": 17,
+            "realistic": 30
+          },
+          {
+            "idea": "Developper les ressources numériques du droit",
+            "agreement": 81,
+            "adhesion": 18,
+            "realistic": 25
+          }
+        ]
+      },
+      {
+        "name": "Peines de justices",
+        "ideas": [
+          {
+            "idea": "Appliquer plus rapidemment et plus strictement les peines",
+            "agreement": 88,
+            "adhesion": 24,
+            "realistic": 31
+          },
+          {
+            "idea": "Proposer des peines alternatives en fonction des circonstances",
+            "agreement": 88,
+            "adhesion": 22,
+            "realistic": 33
+          }
+        ]
+      },
+      {
+        "name": "Communication",
+        "ideas": [
+          {
+            "idea": "Diffuser davantage l'enseignement du droit à l'école",
+            "agreement": 86,
+            "adhesion": 24,
+            "realistic": 30
+          },
+          {
+            "idea": "Renforcer l'information au droit du grand public",
+            "agreement": 87,
+            "adhesion": 18,
+            "realistic": 36
+          }
+        ]
+      }
+    ],
+    "controversials": [
+      {
+        "id": "83e02690-2ce5-4e88-8bc7-d883760fc187",
+        "content": "Il faut sortir le parquet des tribunaux et les former ailleurs qu'à l'ENM",
+        "author": "Rémi",
+        "agree": 33,
+        "like_it": 9,
+        "disagree": 27,
+        "no_way": 12,
+        "votes": 252
+      },
+      {
+        "id": "2d77f22b-d2eb-49fb-ab19-a8db106f4b05",
+        "content": "Il faut créer une formation unique magistrat avocat",
+        "author": "SCP",
+        "agree": 39,
+        "like_it": 6,
+        "disagree": 24,
+        "no_way": 9,
+        "votes": 146
+      },
+      {
+        "id": "f239f092-dae0-4eef-b4ac-1f538e5d82f0",
+        "content": "Il faut un véritable service public de la Justice, égal entre tous, par l'emploi d'avocats fonctionnaires et non privés.",
+        "author": "Fox",
+        "agree": 52,
+        "like_it": 11,
+        "disagree": 32,
+        "no_way": 18,
+        "votes": 254
+      },
+      {
+        "id": "a265f4f2-956b-45d3-9649-e730d5780d8e",
+        "content": "Il faut un corps d'avocat non libéraux (fonctionnaires payes par l'Etat).",
+        "author": "Alain",
+        "agree": 41,
+        "like_it": 9,
+        "disagree": 34,
+        "no_way": 21,
+        "votes": 138
+      },
+      {
+        "id": "b249c5e2-4c21-4337-8c21-d85bbc8ce836",
+        "content": "Il faut des citoyens lambdas qui auraient le rôle de rapporteur afin de contrôler les débats et pièces justificatives",
+        "author": "Bruno",
+        "agree": 35,
+        "like_it": 5,
+        "disagree": 39,
+        "no_way": 13,
+        "votes": 208
+      },
+      {
+        "id": "8e62f77e-dbb7-432e-af69-c2009ce0218c",
+        "content": "Il faut un contrôle régulier des juges fait par un tirage au sort de citoyens",
+        "author": "marie",
+        "agree": 47,
+        "like_it": 10,
+        "disagree": 29,
+        "no_way": 12,
+        "votes": 232
+      },
+      {
+        "id": "08c2548c-262a-4e95-834a-0daac74c1e92",
+        "content": "Il faut que le client rémunère moins l'avocat lorsqu’il perd le procès.",
+        "author": "Claude",
+        "agree": 43,
+        "like_it": 5,
+        "disagree": 37,
+        "no_way": 14,
+        "votes": 912
+      },
+      {
+        "id": "e1efc1d2-67f6-41a0-aa9e-60a201393e4b",
+        "content": "Il faut que les avocats baissent leurs tarifs en lien avec le résultat attendu",
+        "author": "Michel",
+        "agree": 52,
+        "like_it": 12,
+        "disagree": 30,
+        "no_way": 9,
+        "votes": 140
+      },
+      {
+        "id": "8c5d8792-57e0-4e8f-a6e7-d09eaff37885",
+        "content": "Il faut remettre en place la peine de mort pour des causes de barbarisme et ne plus relâcher les prisonniers pour bonne conduite",
+        "author": "Francoise",
+        "agree": 45,
+        "like_it": 14,
+        "disagree": 45,
+        "no_way": 24,
+        "votes": 136
+      },
+      {
+        "id": "d2cbf360-862c-4ad4-8b90-ac3df714be83",
+        "content": "Il faut rétablir la peine de mort pour les délits les plus graves (terroristes reconnus) et appliquer les lois déjà existantes.",
+        "author": "yanick",
+        "agree": 42,
+        "like_it": 15,
+        "disagree": 51,
+        "no_way": 27,
+        "votes": 138
+      },
+      {
+        "id": "c30607c7-4a3a-4663-8db4-5af84795080e",
+        "content": "Il faut des peines de prison fermes et automatiques pour les délits du quotidien",
+        "author": "Wolftan",
+        "agree": 45,
+        "like_it": 11,
+        "disagree": 37,
+        "no_way": 17,
+        "votes": 137
+      },
+      {
+        "id": "1370bc6b-e05e-4cd7-a332-6ca11f2e725f",
+        "content": "Il faut une sanction automatique de prison ferme pour les plaintes infondées (agression, viols etc...)",
+        "author": "Wolftan",
+        "agree": 43,
+        "like_it": 8,
+        "disagree": 35,
+        "no_way": 10,
+        "votes": 143
+      }
+    ],
+    "rejected": [],
+    "cartography": [
+      {
+        "type": "pie",
+        "unit": "percentage",
+        "name": "Thèmes cités",
+        "legend": "",
+        "data": [
+          {
+            "label": "Fonctionnement de la justice",
+            "percent": 22,
+            "color": "#4B45A5",
+            "adjustLabel": {
+              "textAlign": "left",
+              "xAxis": 2.35
+            }
+          },
+          {
+            "label": "Mesures spécifiques",
+            "percent": 13,
+            "color": "#8955BD",
+            "adjustLabel": {
+              "textAlign": "left",
+              "xAxis": 2.35
+            }
+          },
+          {
+            "label": "Procédures et textes",
+            "percent": 11,
+            "color": "#EB7575",
+            "adjustLabel": {
+              "textAlign": "left",
+              "xAxis": 2.2,
+              "yAxis": 2.2
+            }
+          },
+          {
+            "label": "Application et modification des peines",
+            "percent": 11,
+            "color": "#F5976E",
+            "adjustLabel": {
+              "textAlign": "left",
+              "xAxis": 2,
+              "yAxis": 2.2
+            }
+          },
+          {
+            "label": "Modification et",
+            "sublabel": "application de la loi",
+            "percent": 9,
+            "color": "#EEB298",
+            "adjustLabel": {
+              "textAlign": "right",
+              "xAxis": 1.8,
+              "yAxis": 2.1
+            }
+          },
+          {
+            "label": "Coûts et charges",
+            "percent": 8,
+            "color": "#FFD266",
+            "adjustLabel": {
+              "textAlign": "right",
+              "xAxis": 1.8,
+              "yAxis": 2
+            }
+          },
+          {
+            "label": "Services autour",
+            "sublabel": "de la justice",
+            "percent": 7,
+            "color": "#FFF689",
+            "adjustLabel": {
+              "textAlign": "right",
+              "xAxis": 1.85,
+              "yAxis": 1.9
+            }
+          },
+          {
+            "label": "Communication",
+            "sublabel": "et sensibilisation",
+            "percent": 6,
+            "color": "#E5FFAE",
+            "adjustLabel": {
+              "textAlign": "right",
+              "xAxis": 1.9,
+              "yAxis": 1.9
+            }
+          },
+          {
+            "label": "Moyens et financement",
+            "percent": 6,
+            "color": "#C1EBDD",
+            "adjustLabel": {
+              "textAlign": "right",
+              "xAxis": 1.9,
+              "yAxis": 1.9
+            }
+          },
+          {
+            "label": "Milieu scolaire",
+            "percent": 5,
+            "color": "#59BAD4",
+            "adjustLabel": {
+              "textAlign": "right",
+              "xAxis": 1.9,
+              "yAxis": 2
+            }
+          },
+          {
+            "label": "Autres",
+            "percent": 6,
+            "color": "#FFF",
+            "adjustLabel": {
+              "hidePercent": true,
+              "textAlign": "left",
+              "xAxis": 2.2
+            }
+          }
+        ]
+      }
+    ],
+    "participation": [
+      {
+        "type": "histogram",
+        "unit": "percentage",
+        "name": "Participation par région (1/2)",
+        "forcedHigherValue": 19,
+        "legend": {
+          "title": "Participation par région (1/2)",
+          "dimensions": {
+            "first": "votes",
+            "second": "population générale"
+          }
+        },
+        "data": [
+          {
+            "label": "Île-de-France",
+            "bars": {
+              "first": 15,
+              "second": 18
+            }
+          },
+          {
+            "label": "Auvergne-Rhône-Alpes",
+            "bars": {
+              "first": 12,
+              "second": 12
+            }
+          },
+          {
+            "label": "Nouvelle-Aquitaine",
+            "bars": {
+              "first": 11,
+              "second": 9
+            }
+          },
+          {
+            "label": "Occitanie",
+            "bars": {
+              "first": 11,
+              "second": 9
+            }
+          },
+          {
+            "label": "Hauts-de-France",
+            "bars": {
+              "first": 6,
+              "second": 9
+            }
+          },
+          {
+            "label": "Grand Est",
+            "bars": {
+              "first": 7,
+              "second": 8
+            }
+          },
+          {
+            "label": "Provence-Alpes-Côte d'Azur",
+            "bars": {
+              "first": 9,
+              "second": 8
+            }
+          }
+        ],
+        "id": "participation_0"
+      },
+      {
+        "type": "histogram",
+        "unit": "percentage",
+        "name": "Participation par région (2/2)",
+        "forcedHigherValue": 19,
+        "legend": {
+          "title": "Participation par région (2/2)",
+          "dimensions": {
+            "first": "votes",
+            "second": "population générale"
+          }
+        },
+        "data": [
+          {
+            "label": "Pays de la Loire",
+            "bars": {
+              "first": 3,
+              "second": 6
+            }
+          },
+          {
+            "label": "Bretagne",
+            "bars": {
+              "first": 5,
+              "second": 5
+            }
+          },
+          {
+            "label": "Normandie",
+            "bars": {
+              "first": 6,
+              "second": 5
+            }
+          },
+          {
+            "label": "Bourgogne-Franche-Comté",
+            "bars": {
+              "first": 6,
+              "second": 4
+            }
+          },
+          {
+            "label": "Centre-Val de Loire",
+            "bars": {
+              "first": 4,
+              "second": 4
+            }
+          },
+          {
+            "label": "Outre-mer",
+            "bars": {
+              "first": 4,
+              "second": 3
+            }
+          },
+          {
+            "label": "Corse",
+            "bars": {
+              "first": 1,
+              "second": 1
+            }
+          }
+        ],
+        "id": "participation_1"
+      },
+      {
+        "type": "histogram",
+        "unit": "percentage",
+        "name": "Participation par âge",
+        "legend": {
+          "title": "Répartition des votes",
+          "dimensions": {
+            "first": "votes",
+            "second": "population générale"
+          }
+        },
+        "data": [
+          {
+            "label": "16-24",
+            "bars": {
+              "first": 7,
+              "second": 13
+            },
+            "color": "#8BDAB2"
+          },
+          {
+            "label": "25-34",
+            "bars": {
+              "first": 10,
+              "second": 14
+            },
+            "color": "#8BDAB2"
+          },
+          {
+            "label": "35-44",
+            "bars": {
+              "first": 10,
+              "second": 15
+            },
+            "color": "#8BDAB2"
+          },
+          {
+            "label": "45-54",
+            "bars": {
+              "first": 16,
+              "second": 16
+            },
+            "color": "#8BDAB2"
+          },
+          {
+            "label": "55-64",
+            "bars": {
+              "first": 24,
+              "second": 16
+            },
+            "color": "#8BDAB2"
+          },
+          {
+            "label": "65+",
+            "bars": {
+              "first": 33,
+              "second": 26
+            },
+            "color": "#8BDAB2"
+          }
+        ],
+        "id": "participation_2"
+      },
+      {
+        "type": "pie",
+        "unit": "percentage",
+        "name": "Votes par genre",
+        "legend": "",
+        "data": [
+          {
+            "label": "hommes",
+            "percent": 43,
+            "color": "#4B45A5"
+          },
+          {
+            "label": "femmes",
+            "percent": 55,
+            "color": "#8955BD"
+          },
+          {
+            "label": "non-binaire",
+            "percent": 2,
+            "color": "#EEB298"
+          }
+        ],
+        "id": "participation_3"
+      }
+    ]
+  }
