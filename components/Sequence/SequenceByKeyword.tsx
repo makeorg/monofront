@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { QuestionType, SequenceType } from '@make.org/types';
 import { trackClickOperationPage } from '@make.org/utils/services/Tracking';
 import { getParticipateLink } from '@make.org/utils/helpers/url';
@@ -32,11 +32,12 @@ import { MetaTags } from '../MetaTags';
 export const SequenceByKeyword: FC = () => {
   const { state } = useAppContext();
   const { country } = state.appConfig;
-  const { isLoading, sequenceSize, sequenceLabel } = state.sequence;
+  const { isLoading, sequenceSize } = state.sequence;
   const isEmptySequence = sequenceSize === 0;
   const params: { encodedKeyword: string } = useParams();
   const { encodedKeyword } = params;
   const keyword = encodedKeyword && decodeURI(encodedKeyword);
+  const [sequenceLabel, setSequenceLabel] = useState<string>('');
 
   const question: QuestionType = selectCurrentQuestion(state);
 
@@ -52,7 +53,9 @@ export const SequenceByKeyword: FC = () => {
     if (!response) {
       return null;
     }
-
+    if (response.label) {
+      setSequenceLabel(response.label);
+    }
     return {
       proposals: response.proposals || [],
       length: response.length,
