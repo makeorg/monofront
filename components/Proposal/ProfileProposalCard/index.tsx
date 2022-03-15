@@ -33,6 +33,19 @@ export const ProfileProposalCard: FC<Props> = ({
   const formattedProposalStatus = proposal.status.toLowerCase();
   const isProposalAccepted = formattedProposalStatus === 'accepted';
 
+  const isOldProposalWithoutCountry = !proposal.context.country;
+  const proposalLink = isOldProposalWithoutCountry
+    ? '#'
+    : getProposalLink(
+        proposal.context.country,
+        proposal.question.slug,
+        proposal.id,
+        proposal.slug
+      );
+  const participateLink = isOldProposalWithoutCountry
+    ? '#'
+    : getParticipateLink(proposal.context.country, proposal.question.slug);
+
   return (
     <ProfileProposalCardStyle
       aria-posinset={position}
@@ -52,12 +65,7 @@ export const ProfileProposalCard: FC<Props> = ({
       {isProposalAccepted ? (
         <ProposalLinkElementStyle
           id={`proposal_card__proposal_content_${position}`}
-          to={getProposalLink(
-            proposal.context.country,
-            proposal.question.slug,
-            proposal.id,
-            proposal.slug
-          )}
+          to={proposalLink}
           lang={proposal.question.language}
         >
           {proposal.content}
@@ -75,10 +83,7 @@ export const ProfileProposalCard: FC<Props> = ({
       )}
       <ProposalFooterWithQuestionElement
         question={proposal.question}
-        consultationLink={getParticipateLink(
-          proposal.context.country,
-          proposal.question.slug
-        )}
+        consultationLink={participateLink}
       />
     </ProfileProposalCardStyle>
   );
