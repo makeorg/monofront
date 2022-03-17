@@ -395,10 +395,11 @@ export const TermsOfUseFR: FC = () => {
                   proposant les mêmes Solutions avec des adresses électroniques
                   différentes. Toujours dans le but de laisser la parole à tous
                   les Utilisateurs, chacun pourra déposer 100 propositions
-                  maximum. Au-delà de ce seuil, nous ne serons plus en capacité
-                  d’accepter les propositions et nous notifierons l’Utilisateur
-                  concerné par email pour lui expliquer les raisons de ce seuil
-                  et l’accompagner dans son usage optimal de la plateforme.
+                  maximum sur la même consultation. Au-delà de ce seuil, nous ne
+                  serons plus en capacité d’accepter les propositions et nous
+                  notifierons l’Utilisateur concerné par email pour lui
+                  expliquer les raisons de ce seuil et l’accompagner dans son
+                  usage optimal de la plateforme.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
                   Dès validation de la Proposition citoyenne de l’Utilisateur,
