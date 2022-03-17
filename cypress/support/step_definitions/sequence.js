@@ -197,9 +197,26 @@ When('I go to card {string}', cardNumber => {
   const nextWhileCardTargetNotDisplayed = () => {
     cy.get(`[data-cy-card-number=${previewCard}]`).should('be.visible');
 
-    // vote when vote button is present to display next button
     cy.get(`[data-cy-card-number=${previewCard}]`).then(card => {
-      card.find('[data-cy-button=vote]').first().click();
+      const voteButtons = card.find('[data-cy-button=vote]');
+
+      // for proposals only : click on vote button
+      if (voteButtons.length) {
+        // wait for vote button to exist in DOM again
+        cy.waitUntil(
+          () =>
+            cy
+              .get('[data-cy-button=vote]')
+              .should('exist')
+              .should('be.visible'),
+          cy
+            .get('[data-cy-vote-key=agree]')
+            .should('exist')
+            .should('be.visible')
+        );
+        // click on vote button
+        cy.get('[data-cy-vote-key=agree]').click({ force: true });
+      }
     });
 
     // check that next button is visible
@@ -208,6 +225,7 @@ When('I go to card {string}', cardNumber => {
         .get(
           '[data-cy-button=next-proposal], [data-cy-button=push-proposal-next], [data-cy-button=skip-sign-up], [data-cy-button=start-sequence], [data-cy-button=skip-demographics]'
         )
+        .should('exist')
         .should('be.visible')
     );
 

@@ -49,6 +49,7 @@ stages:
       - apps/front/**/*
       - cypress/integration/*.feature
       - cypress/integration/front/*.feature
+      - cypress/support/**
       - package.json
       - yarn.lock
 
@@ -70,6 +71,7 @@ stages:
       - apps/widget/**/*
       - cypress/integration/*.feature
       - cypress/integration/widget/*.feature
+      - cypress/support/**
       - package.json
       - yarn.lock
 
