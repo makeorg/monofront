@@ -30,6 +30,7 @@ const getDefaultDirectives = (
     'https://*.webflow.com',
     'https://*.facebook.com',
     'https://*.facebook.net',
+    'https://analytics.twitter.com',
     'data:',
   ],
   connectSrc: [
