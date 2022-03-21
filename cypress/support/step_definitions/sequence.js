@@ -1,3 +1,7 @@
+/* eslint-disable cypress/no-unnecessary-waiting */
+/* eslint-disable cypress/no-assigning-return-values */
+/* eslint-disable no-plusplus */
+/* eslint-disable no-loop-func */
 /* eslint-disable no-undef */
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Then, Given, When } from 'cypress-cucumber-preprocessor/steps';
@@ -193,77 +197,54 @@ Then(
 );
 
 When('I go to card {string}', cardNumber => {
-  let previewCard = 0;
-  const nextWhileCardTargetNotDisplayed = () => {
-    cy.get(`[data-cy-card-number=${previewCard}]`).should('be.visible');
+  for (let currentCard = 1; currentCard < cardNumber; currentCard++) {
+    // check if current card is visible
+    cy.get(`[data-cy-card-number=${currentCard}]`)
+      .should('exist')
+      .should('be.visible');
 
-    cy.get(`[data-cy-card-number=${previewCard}]`).then(card => {
+    cy.get(`[data-cy-card-number=${currentCard}]`).then(card => {
       const voteButtons = card.find('[data-cy-button=vote]');
 
-      // for proposals only : click on vote button
+      // for proposals only
       if (voteButtons.length) {
-        // wait for vote button to exist in DOM again
-        cy.waitUntil(
-          () =>
-            cy
-              .get('[data-cy-button=vote]')
-              .should('exist')
-              .should('be.visible'),
+        // wait for vote button to exist in DOM
+        cy.waitUntil(() =>
           cy
             .get('[data-cy-vote-key=agree]')
             .should('exist')
             .should('be.visible')
         );
-        // click on vote button
-        cy.get('[data-cy-vote-key=agree]').click({ force: true });
-      }
-    });
+        // click on vote agree button
+        cy.monitorApiCall('postVote');
+        cy.get(`[data-cy-button=vote][data-cy-vote-key=agree]`)
+          .first()
+          .then(el => el.get(0).click());
+        cy.wait(10000);
+        cy.wait('@postVote');
 
-    // check that next button is visible
-    cy.waitUntil(() =>
-      cy
-        .get(
-          '[data-cy-button=next-proposal], [data-cy-button=push-proposal-next], [data-cy-button=skip-sign-up], [data-cy-button=start-sequence], [data-cy-button=skip-demographics]'
+        // check next-proposal button exists in DOM
+        cy.get('[data-cy-button=next-proposal]')
+          .should('exist')
+          .should('be.visible');
+        // click on next-proposal button
+        cy.get('[data-cy-button=next-proposal]').click();
+      } else {
+        // check for various next button exist in DOM
+        cy.get(
+          '[data-cy-button=push-proposal-next], [data-cy-button=skip-sign-up], [data-cy-button=start-sequence], [data-cy-button=skip-demographics]'
         )
-        .should('exist')
-        .should('be.visible')
-    );
-
-    // click button to go next card (depending card type)
-    cy.get(`[data-cy-card-number=${previewCard}]`)
-      .find(
-        '[data-cy-button=next-proposal], [data-cy-button=push-proposal-next], [data-cy-button=skip-sign-up], [data-cy-button=start-sequence], [data-cy-button=skip-demographics]'
-      )
-      .first()
-      .click();
-
-    // wait until next card is displayed
-    const expectedCardNumber = (Number(previewCard) + 1).toString();
-    cy.waitUntil(() =>
-      cy.get(`[data-cy-card-number=${expectedCardNumber}]`).should('be.visible')
-    );
-
-    // replay while expected card number not reached
-    previewCard = expectedCardNumber;
-    if (expectedCardNumber !== cardNumber) {
-      nextWhileCardTargetNotDisplayed();
-    }
-  };
-
-  cy.waitUntil(() => cy.get(`[data-cy-card-number]`).should('be.visible'));
-  cy.get('body')
-    .then(body => {
-      const card = body.find('[data-cy-card-number]');
-      if (card.length) {
-        return parseInt(card[0].dataset.cyCardNumber, 10);
+          .should('exist')
+          .should('be.visible');
+        // click on next button
+        cy.get(
+          '[data-cy-button=push-proposal-next], [data-cy-button=skip-sign-up], [data-cy-button=start-sequence], [data-cy-button=skip-demographics]'
+        )
+          .first()
+          .click();
       }
-
-      throw new Error('Card not found');
-    })
-    .then(number => {
-      previewCard = number;
-      nextWhileCardTargetNotDisplayed();
     });
+  }
 });
 
 Then('card {string} is visible', cardNumber => {
