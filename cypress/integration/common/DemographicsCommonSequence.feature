@@ -3,7 +3,7 @@ Feature: Demographic sequence card
 
   Scenario: Display demographic card and skip
   Given I am on the common sequence page of the question "question-0-slug"
-  When I go to card "3"
+  When I go to card "3" from card "1"
   Then current card is a demographic card
   And I see "skip demographics" button on card "3"
   When I click on "skip demographics" button
@@ -18,7 +18,7 @@ Feature: Demographic sequence card
   Scenario: Display demographic card and skip tracking
   Given I monitor API "postTracking" requests
   And I am on the common sequence page of the question "question-0-slug"
-  When I go to card "3"
+  When I go to card "3" from card "1"
   Then current card is a demographic card
   And I see "skip demographics" button on card "3"
   And common event "display-demographics" on question "question-0-slug" should be tracked by Make with parameters values:

@@ -196,56 +196,60 @@ Then(
   }
 );
 
-When('I go to card {string}', cardNumber => {
-  for (let currentCard = 1; currentCard < cardNumber; currentCard++) {
-    // check if current card is visible
-    cy.get(`[data-cy-card-number=${currentCard}]`)
-      .should('exist')
-      .should('be.visible');
+When(
+  'I go to card {string} from card {string}',
+  (cardNumber, currentCardPosition) => {
+    for (
+      let currentCard = currentCardPosition;
+      currentCard < cardNumber;
+      currentCard++
+    ) {
+      // check if current card is visible
+      cy.get(`[data-cy-card-number=${currentCard}]`)
+        .should('exist')
+        .should('be.visible');
 
-    cy.get(`[data-cy-card-number=${currentCard}]`).then(card => {
-      const voteButtons = card.find('[data-cy-button=vote]');
+      cy.get(`[data-cy-card-number=${currentCard}]`).then(card => {
+        const voteButtons = card.find('[data-cy-button=vote]');
 
-      // for proposals only
-      if (voteButtons.length) {
-        // wait for vote button to exist in DOM
-        cy.waitUntil(() =>
-          cy
-            .get('[data-cy-vote-key=agree]')
+        // for proposals only
+        if (voteButtons.length) {
+          // wait for vote button to exist in DOM
+          cy.waitUntil(() =>
+            cy
+              .get('[data-cy-vote-key=agree]')
+              .should('exist')
+              .should('be.visible')
+          );
+          // click on vote agree button
+          cy.get(`[data-cy-button=vote][data-cy-vote-key=agree]`)
+            .first()
+            .then(el => el.get(0).click());
+
+          // check next-proposal button exists in DOM
+          cy.get('[data-cy-button=next-proposal]')
             .should('exist')
-            .should('be.visible')
-        );
-        // click on vote agree button
-        cy.monitorApiCall('postVote');
-        cy.get(`[data-cy-button=vote][data-cy-vote-key=agree]`)
-          .first()
-          .then(el => el.get(0).click());
-        cy.wait(10000);
-        cy.wait('@postVote');
-
-        // check next-proposal button exists in DOM
-        cy.get('[data-cy-button=next-proposal]')
-          .should('exist')
-          .should('be.visible');
-        // click on next-proposal button
-        cy.get('[data-cy-button=next-proposal]').click();
-      } else {
-        // check for various next button exist in DOM
-        cy.get(
-          '[data-cy-button=push-proposal-next], [data-cy-button=skip-sign-up], [data-cy-button=start-sequence], [data-cy-button=skip-demographics]'
-        )
-          .should('exist')
-          .should('be.visible');
-        // click on next button
-        cy.get(
-          '[data-cy-button=push-proposal-next], [data-cy-button=skip-sign-up], [data-cy-button=start-sequence], [data-cy-button=skip-demographics]'
-        )
-          .first()
-          .click();
-      }
-    });
+            .should('be.visible');
+          // click on next-proposal button
+          cy.get('[data-cy-button=next-proposal]').click();
+        } else {
+          // check for various next button exist in DOM
+          cy.get(
+            '[data-cy-button=push-proposal-next], [data-cy-button=skip-sign-up], [data-cy-button=start-sequence], [data-cy-button=skip-demographics]'
+          )
+            .should('exist')
+            .should('be.visible');
+          // click on next button
+          cy.get(
+            '[data-cy-button=push-proposal-next], [data-cy-button=skip-sign-up], [data-cy-button=start-sequence], [data-cy-button=skip-demographics]'
+          )
+            .first()
+            .click();
+        }
+      });
+    }
   }
-});
+);
 
 Then('card {string} is visible', cardNumber => {
   cy.get(`[data-cy-card-number=${cardNumber}]`).should('be.visible');

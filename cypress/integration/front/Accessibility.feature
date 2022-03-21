@@ -18,16 +18,13 @@ Feature: Accessibility
   Then html page should be valid
 
   Scenario: Check HTML validity of sequence page
-  Given I go to "sequence" page of the question "question-4-slug"
-  Then current card is a intro card
-  And html page should be valid
-  When I click on 'start-sequence' button
+  Given I am on the sequence page of the question "question-0-slug" with intro card disabled
   Then html page should be valid
-  When I go to card "3"
+  When I go to card "2" from card "1"
   Then html page should be valid
-  When I go to card "4"
+  When I go to card "4" from card "2"
   Then html page should be valid
-  When I go to card "5"
+  When I go to card "5" from card "4"
   Then html page should be valid
 
   Scenario: Check HTML validity of browse consultations
@@ -52,7 +49,7 @@ Feature: Accessibility
   And html page should be valid
 
   #Scenario: Check HTML validity of top idea
-  #Given I go to "top idea" page of the question "question-1-slug"
+  #Given I go to "top idea" page of the question "question-0-slug"
   #Then html page should be valid
 
   Scenario: Check HTML validity of search
