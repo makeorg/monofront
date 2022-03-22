@@ -1,16 +1,13 @@
 import React from 'react';
-import i18n from 'i18next';
 import {
   getTotalVotesCount,
   getVotesPercent,
 } from '@make.org/utils/helpers/voteResult';
 import { voteStaticParams } from '@make.org/utils/constants/vote';
-import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { VoteType } from '@make.org/types';
 import {
   VoteProgressContainerStyle,
   VoteProgressWrapperStyle,
-  VoteCounterStyle,
   VoteProgressItemStyle,
 } from '../style';
 
@@ -30,12 +27,6 @@ export const VoteProgress: React.FC<Props> = props => {
   const votesPercent = getVotesPercent(votes, votesCount);
   return (
     <VoteProgressContainerStyle>
-      <VoteCounterStyle>
-        <ScreenReaderItemStyle as="span">
-          {i18n.t('results.static_total')}
-        </ScreenReaderItemStyle>
-        {i18n.t('vote.label', { count: votesCount })}
-      </VoteCounterStyle>
       <VoteProgressWrapperStyle>
         {votes.map(vote => (
           <VoteProgressItemStyle

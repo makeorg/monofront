@@ -414,7 +414,6 @@
     "agree": "Ich stimme zu",
     "disagree": "Ich stimme nicht zu",
     "neutral": "Neutral",
-    "label": "{{count}} Stimme",
     "label_plural": "{{count}} Stimmen",
     "with_percent": "{{votedKey}}: {{votedPercent}} %"
   },

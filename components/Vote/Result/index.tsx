@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   getTotalVotesCount,
-  getVotesPercent,
+  getVotesPercentFromScore,
 } from '@make.org/utils/helpers/voteResult';
 import { VoteType } from '@make.org/types';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
@@ -13,7 +13,6 @@ import {
   VoteResultContainerStyle,
   VoteResultGraphStyle,
   VoteResultItemStyle,
-  VoteResultTotalLabelStyle,
   VoteResultBarStyle,
 } from './style';
 import { UnvoteButton } from '../Button/Unvote';
@@ -53,7 +52,7 @@ export const VoteResult: React.FC<Props> = ({
   const isWidget = source === 'widget';
   const votesCount = getTotalVotesCount(votes);
   const voteKeys = Object.keys(voteStaticParams);
-  const votesPercent = getVotesPercent(votes, votesCount);
+  const votesPercent = getVotesPercentFromScore(votes);
   const tooltipContent = (percent: number, voteKey: string) => (
     <>
       <p>{i18n.t(`vote.${voteKey}`)}</p>
@@ -106,12 +105,6 @@ export const VoteResult: React.FC<Props> = ({
           </VoteResultItemStyle>
         ))}
       </VoteResultGraphStyle>
-      <VoteResultTotalLabelStyle
-        className={isWidget ? 'widget' : ''}
-        aria-hidden
-      >
-        {i18n.t('vote.label', { count: votesCount })}
-      </VoteResultTotalLabelStyle>
     </VoteResultContainerStyle>
   );
 };

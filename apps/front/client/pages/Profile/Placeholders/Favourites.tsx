@@ -18,7 +18,6 @@ import {
   VoteResultContainerStyle,
   VoteResultGraphStyle,
   VoteResultItemStyle,
-  VoteResultTotalLabelStyle,
 } from '@make.org/components/Vote/Result/style';
 import {
   QualifyButtonStyle,
@@ -90,9 +89,6 @@ export const ProfileFavouritesPlaceholder: FC = () => (
               </Tooltip>
             </VoteResultItemStyle>
           </VoteResultGraphStyle>
-          <VoteResultTotalLabelStyle>
-            {i18n.t('vote.label', { count: 4242 })}
-          </VoteResultTotalLabelStyle>
         </VoteResultContainerStyle>
         <SpaceBetweenColumnStyle>
           <QualifyButtonStyle
