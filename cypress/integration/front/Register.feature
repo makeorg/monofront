@@ -29,6 +29,7 @@ Feature: Register
     And I click on "register" button
     Then I see the register form
     When I register with email "unique@example.com" and password "TestMake" and firstname "testfirstname" and age "36" and I accept the data policy before submitting
+    Then register form is closed
     Then event "signup-email-success" should be tracked by Make with parameters values:
       | name                | value                                                               |
       | eventType           | trackCustom                                                         |

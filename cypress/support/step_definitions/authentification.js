@@ -130,7 +130,7 @@ Then('I see the register form', () => {
   cy.get('form').should('exist');
 });
 
-Then('Register form is closed', () => {
+Then('register form is closed', () => {
   cy.get('form').should('not.visible');
 });
 

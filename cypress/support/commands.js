@@ -46,8 +46,7 @@ Cypress.Commands.add('getEndpointParams', name => endpoints[name]);
 
 Cypress.Commands.add('monitorApiCall', aliasName => {
   if (!Object.keys(cy.state('aliases') || {}).includes(aliasName)) {
-    cy.server();
-    cy.route(endpoints[aliasName]).as(aliasName);
+    cy.intercept(endpoints[aliasName]).as(aliasName);
   }
 });
 

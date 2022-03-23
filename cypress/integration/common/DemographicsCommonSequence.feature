@@ -1,4 +1,4 @@
-@widget @front
+@todo
 Feature: Demographic sequence card
 
   Scenario: Display demographic card and skip
