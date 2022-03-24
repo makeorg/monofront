@@ -7,7 +7,9 @@ import {
   DEFAULT_LANGUAGE,
 } from '@make.org/utils/constants/config';
 import { getLoggerInstance } from '@make.org/utils/helpers/logger';
-import { buildCards, getSequenceSize } from '@make.org/utils/helpers/sequence';
+import { getSequenceSize } from '@make.org/utils/helpers/sequence';
+import { CARD, NOTIF } from '@make.org/types/enums';
+import { SequenceCardType } from '@make.org/types';
 import { transformExtraSlidesConfigFromQuery } from '../helpers/query.helper';
 import { reactRender } from '../reactRender';
 import { QuestionService } from '../service/QuestionService';
@@ -150,15 +152,14 @@ export const mainRoute = async (
     ),
   };
 
-  const cards = buildCards(
-    [firstProposal.data.proposal],
-    questionModified.sequenceConfig,
-    questionModified.canPropose,
-    true,
-    false,
-    false,
-    undefined
-  );
+  const cards: SequenceCardType[] = [
+    {
+      type: CARD.CARD_TYPE_PROPOSAL,
+      configuration: { proposal: firstProposal.data.proposal },
+      state: { votes: firstProposal.data.proposal.votes },
+      index: 0,
+    },
+  ];
   const sequenceSize = getSequenceSize(
     firstProposal.data.sequenceSize,
     questionModified.sequenceConfig,
@@ -181,6 +182,11 @@ export const mainRoute = async (
     loadFirstProposal: true,
     sequenceSize,
     sequenceKind: formattedSequenceKind,
+  };
+  initialState.notifications.tip = {
+    contentId: NOTIF.FIRST_VOTE_TIP_MESSAGE,
+    level: NOTIF.NOTIFICATION_LEVEL_INFORMATION,
+    toDismiss: true,
   };
   initialState.session = {
     ...initialState.session,

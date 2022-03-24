@@ -3,6 +3,17 @@ import { QuestionApiService } from '@make.org/api/QuestionApiService';
 import cache from 'memory-cache';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { getLoggerInstance } from '@make.org/utils/helpers/logger';
+import {
+  DemographicDataType,
+  ProposalType,
+  SequenceType,
+} from '@make.org/types';
+import {
+  getOrderedProposals,
+  removeDuplicatedAndVotedProposals,
+} from '@make.org/utils/helpers/proposal';
+import { logSequenceCornerCases } from '@make.org/utils/helpers/sequence';
+import { defaultUnexpectedError } from '@make.org/utils/services/DefaultErrorHandler';
 
 const clearCache = (): void => {
   cache.clear();
@@ -54,7 +65,95 @@ const getQuestion = async (
   }
 };
 
+/**
+ * Start sequence by kind
+ * !!! Warning, the reponse must not be kept in cache !!!
+ * @param  {String} questionId
+ * @param  {String} country
+ * @param  {String} language
+ * @param  {String} sequenceKind
+ * @param  {String} sessionId?
+ * @param  {String} demographicsCardId
+ * @param  {String} token
+ *
+ * @return {Promise}
+ */
+const startSequenceByKind = async (
+  questionId: string,
+  country: string,
+  language: string,
+  sequenceKind: string,
+  sessionId?: string,
+  demographicsCardId?: string,
+  token?: string
+): Promise<{ sequence: SequenceType; sessionId: string } | void> => {
+  try {
+    const response = await QuestionApiService.startSequenceByKind(
+      questionId,
+      [],
+      sequenceKind,
+      demographicsCardId,
+      token,
+      {
+        'x-make-question-id': questionId,
+        'x-make-country': country,
+        'x-make-language': language,
+        'x-session-id': sessionId || '',
+      }
+    );
+
+    if (!response) {
+      return;
+    }
+
+    const { data } = response;
+    const orderedProposals = getOrderedProposals(data.proposals, []);
+    const {
+      unique: uniqueOrderedProposals,
+      duplicates,
+      voted,
+    } = orderedProposals.reduce(removeDuplicatedAndVotedProposals([]), {
+      unique: [],
+      duplicates: [],
+      voted: [],
+    });
+
+    logSequenceCornerCases(
+      questionId,
+      duplicates,
+      voted,
+      uniqueOrderedProposals
+    );
+
+    const formatResponse = (
+      proposals: ProposalType[],
+      demographics: DemographicDataType,
+      length: number
+    ) => ({
+      proposals,
+      demographics,
+      length,
+    });
+
+    const sequence = formatResponse(
+      uniqueOrderedProposals,
+      data.demographics as DemographicDataType,
+      uniqueOrderedProposals.length
+    );
+
+    // eslint-disable-next-line consistent-return
+    return {
+      sequence,
+      sessionId: response?.headers['x-session-id'],
+    };
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
+    defaultUnexpectedError(apiServiceError);
+  }
+};
+
 export const QuestionService = {
   getQuestion,
   clearCache,
+  startSequenceByKind,
 };

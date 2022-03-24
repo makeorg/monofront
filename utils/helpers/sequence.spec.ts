@@ -468,3 +468,5 @@ describe('Sequence Helper', () => {
     });
   });
 });
+
+// TEST getMetalTitleBySequenceKind

@@ -53,6 +53,7 @@ import {
   ROUTE_STATIC_A11Y_DE,
   ROUTE_STATIC_CONTACT_DE,
 } from '@make.org/utils/routes';
+import { sequenceByKindRoute } from './ssr/sequenceByKindRoute';
 import {
   APP_IMAGES_DIR,
   APP_REPORTS_DIR,
@@ -169,9 +170,9 @@ export const initRoutes = (app: Application): void => {
   addGetWithPreview(ROUTE_RESULTS, frontMiddlewares, questionRoute);
   app.get(ROUTE_TOP_IDEAS, frontMiddlewares, questionRoute);
   app.get(ROUTE_TOP_IDEA_DETAILS, frontMiddlewares, questionRoute);
-  app.get(ROUTE_SEQUENCE, frontMiddlewares, sequenceRoute);
-  app.get(ROUTE_SEQUENCE_POPULAR, frontMiddlewares, sequenceRoute);
-  app.get(ROUTE_SEQUENCE_CONTROVERSIAL, frontMiddlewares, sequenceRoute);
+  app.get(ROUTE_SEQUENCE, frontMiddlewares, sequenceByKindRoute);
+  app.get(ROUTE_SEQUENCE_POPULAR, frontMiddlewares, sequenceByKindRoute);
+  app.get(ROUTE_SEQUENCE_CONTROVERSIAL, frontMiddlewares, sequenceByKindRoute);
   app.get(ROUTE_SEQUENCE_KEYWORD, frontMiddlewares, sequenceRoute);
   app.get(ROUTE_ACCOUNT_ACTIVATION, frontMiddlewares, accountActivationRoute);
   app.get(ROUTE_PROPOSAL, frontMiddlewares, defaultRoute);

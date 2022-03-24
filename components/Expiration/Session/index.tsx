@@ -17,7 +17,7 @@ type Props = {
 const sessionExpirationDateCookieName = 'make-session-id-expiration';
 const apiHeaderListenerName = 'sessionIdListener';
 
-const SessionExpirationWithCoockiesHandler: React.FC<Props> = ({
+const SessionExpirationWithCookiesHandler: React.FC<Props> = ({
   children,
   cookies,
 }) => {
@@ -108,7 +108,7 @@ const SessionExpirationWithCoockiesHandler: React.FC<Props> = ({
 };
 
 export const SessionExpirationWithCoockies = withCookies(
-  SessionExpirationWithCoockiesHandler
+  SessionExpirationWithCookiesHandler
 );
 
 type Properties = {

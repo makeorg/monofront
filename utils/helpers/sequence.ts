@@ -1,3 +1,4 @@
+import { Logger } from '@make.org/utils/services/Logger';
 import {
   QuestionExtraSlidesConfigType,
   SequenceCardType,
@@ -16,7 +17,6 @@ import { CARD, SEQUENCE } from '@make.org/types/enums';
  * @param  {boolean} isStandardSequence
  * @param  {boolean|undefined} introCardParam
  * @param  {boolean|undefined} pushProposalParam
- * @param  {boolean|undefined} loadFirstProposal
  * @return {SequenceCardType[]}
  */
 export const buildCards = (
@@ -25,22 +25,18 @@ export const buildCards = (
   canPropose: boolean,
   isStandardSequence: boolean,
   introCardParam?: boolean,
-  pushProposalParam?: boolean,
-  loadFirstProposal?: boolean
+  pushProposalParam?: boolean
 ): SequenceCardType[] => {
   const withPushProposalCard =
     !!extraSlidesConfig.pushProposalCard &&
     !!extraSlidesConfig.pushProposalCard.enabled &&
     !!canPropose &&
-    !!pushProposalParam &&
-    !loadFirstProposal;
+    !!pushProposalParam;
   const withIntroCard =
     !!extraSlidesConfig.introCard &&
     !!extraSlidesConfig.introCard.enabled &&
-    !!introCardParam &&
-    !loadFirstProposal;
+    !!introCardParam;
   const withDemographicsCard = extraSlidesConfig.demographics;
-  const withFinalCard = !loadFirstProposal;
 
   const cards: SequenceCardType[] = proposals.map(proposal => ({
     type: CARD.CARD_TYPE_PROPOSAL,
@@ -76,16 +72,14 @@ export const buildCards = (
     });
   }
 
-  if (withFinalCard) {
-    cards.splice(cards.length, 0, {
-      type: isStandardSequence
-        ? CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD
-        : CARD.CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD,
-      configuration: undefined,
-      state: { votes: [] },
-      index: 0,
-    });
-  }
+  cards.splice(cards.length, 0, {
+    type: isStandardSequence
+      ? CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD
+      : CARD.CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD,
+    configuration: undefined,
+    state: { votes: [] },
+    index: 0,
+  });
 
   const cardsIndexed = cards.map((card, index) => ({
     ...card,
@@ -103,6 +97,25 @@ export const buildCards = (
 export const isPushProposalCard = (
   card: SequenceCardType | NoProposalCardType | null
 ): boolean => card?.type === CARD.CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL;
+
+/**
+ * Renders Meta title depending on kind
+ * @param  {string} sequenceKind
+ * @return {string || null}
+ */
+export const getMetalTitleBySequenceKind = (sequenceKind?: string): string => {
+  if (sequenceKind === SEQUENCE.KIND_STANDARD) {
+    return 'meta.sequence.title_standard';
+  }
+  if (sequenceKind === SEQUENCE.KIND_CONTROVERSY) {
+    return 'meta.sequence.title_controversy';
+  }
+  if (sequenceKind === SEQUENCE.KIND_CONSENSUS) {
+    return 'meta.sequence.title_popular';
+  }
+
+  return '';
+};
 
 /**
  * Check if is a standard sequence
@@ -243,4 +256,54 @@ export const setNoProposalsCard = (keyword?: string): NoProposalCardType => {
   };
 
   return noProposalsCard;
+};
+
+export const logSequenceCornerCases = (
+  questionId: string,
+  duplicates: ProposalType[],
+  voted: ProposalType[],
+  uniqueProposals: ProposalType[]
+): void => {
+  if (duplicates.length > 0) {
+    Logger.logWarning({
+      message: `start sequence return duplicate proposals for questionId=${questionId} : ${JSON.stringify(
+        duplicates
+      )}`,
+      name: 'services',
+    });
+  }
+  if (voted.length > 0) {
+    Logger.logWarning({
+      message: `start sequence return voted proposals for questionId=${questionId} : ${JSON.stringify(
+        voted
+      )}`,
+      name: 'services',
+    });
+  }
+  if (uniqueProposals.length === 0) {
+    Logger.logWarning({
+      message: `Empty sequence - questionId: ${questionId}`,
+      name: 'services',
+    });
+  }
+};
+
+/** Get no proposals card depending on sequence kind
+ * @param  {string|undefined} sequenceKind
+ * @return {NoProposalCardType}
+ *
+ */
+export const getNoProposalCard = (sequenceKind: string): NoProposalCardType => {
+  const noProposalCard: NoProposalCardType = {
+    type: CARD.CARD_TYPE_NO_PROPOSAL_CARD,
+    configuration: {
+      title: getNoProposalCardTitleBySequenceKind(sequenceKind) || '',
+      description: isStandardSequence(sequenceKind)
+        ? i18n.t('no_proposal_card.description.regular')
+        : i18n.t('no_proposal_card.description.special'),
+    },
+    index: 0,
+  };
+
+  return noProposalCard;
 };

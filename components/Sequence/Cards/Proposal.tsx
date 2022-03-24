@@ -8,6 +8,8 @@ import { CARD, NOTIF } from '@make.org/types/enums';
 import {
   disableFirstProposal,
   incrementSequenceIndex,
+  setSequenceLength,
+  setSequenceLoading,
 } from '@make.org/store/actions/sequence';
 import {
   trackClickNextCard,
@@ -77,6 +79,8 @@ export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
   };
 
   const handleFirstProposalDisabling = () => {
+    dispatch(setSequenceLoading(true));
+    dispatch(setSequenceLength(0));
     dispatch(disableFirstProposal());
   };
 

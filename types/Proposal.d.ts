@@ -54,3 +54,9 @@ export type ProposalsType = {
   seed?: number;
   results: ProposalType[];
 };
+
+export type ProposalAccumulator = {
+  unique: ProposalType[];
+  duplicates: ProposalType[];
+  voted: ProposalType[];
+};

@@ -94,9 +94,14 @@ const logAndTrackEvent = (eventName: string) => {
 
 const initApp = async (state: StateRoot) => {
   const { language, country, source, queryParams } = state.appConfig;
+  const { sessionId } = state.session;
+  const cookies = new Cookies();
 
   // Set in session storage some keys from query params
   setDataFromQueryParams(queryParams);
+
+  const sessionIdCookie = cookies.get(COOKIE.SESSION_ID);
+  apiClient.sessionId = sessionIdCookie || sessionId || '';
 
   // init api service before authenticationState to get visitorId
   initApiService(source, country, language, getAll());
@@ -122,7 +127,10 @@ const initApp = async (state: StateRoot) => {
         ...authenticationStateData,
       },
     },
-    session: { sessionId: '' },
+    session: {
+      ...state.session,
+      sessionId,
+    },
     customData: getAll(), // custom_data already saved in session_storage
   };
 
@@ -161,7 +169,6 @@ const initApp = async (state: StateRoot) => {
   }
 
   // Cookie preference
-  const cookies = new Cookies();
   const preferencesCookie = cookies.get(COOKIE.USER_PREFERENCES);
   initTrackersFromPreferences(preferencesCookie, ENABLE_MIXPANEL);
 

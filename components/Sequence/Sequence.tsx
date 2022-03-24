@@ -1,17 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 import {
-  getNoProposalCardTitleBySequenceKind,
+  getMetalTitleBySequenceKind,
+  getNoProposalCard,
   getSequenceTitleBySequenceKind,
   isPushProposalCard,
   isStandardSequence,
 } from '@make.org/utils/helpers/sequence';
-import { CARD, SEQUENCE } from '@make.org/types/enums';
-import {
-  NoProposalCardType,
-  QuestionType,
-  SequenceType,
-} from '@make.org/types';
+import { QuestionType, SequenceType } from '@make.org/types';
 import i18n from 'i18next';
 import { trackClickOperationPage } from '@make.org/utils/services/Tracking';
 import { SequenceService } from '@make.org/utils/services/Sequence';
@@ -45,7 +41,7 @@ export type Props = {
 export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
   const { state } = useAppContext();
   const { country, source } = state.appConfig;
-  const { isLoading, sequenceSize, loadFirstProposal, cards } = state.sequence;
+  const { isLoading, sequenceSize } = state.sequence;
   const isWidget = source === 'widget';
   const isEmptySequence = sequenceSize === 0;
   const question: QuestionType = selectCurrentQuestion(state);
@@ -75,61 +71,16 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
     };
   };
 
-  const fetchFirstProposal = async (questionId: string) => {
-    const response = await SequenceService.startSequenceFirstProposal(
-      questionId
-    );
-
-    if (!response) {
-      return null;
-    }
-
-    return { proposals: [response.proposal], length: response.sequenceSize };
-  };
-
-  const renderFirstCard = () => {
-    if (loadFirstProposal && cards.length > 0) {
-      return cards[0];
-    }
-    return undefined;
-  };
-
-  const noProposalCard: NoProposalCardType = {
-    type: CARD.CARD_TYPE_NO_PROPOSAL_CARD,
-    configuration: {
-      title: getNoProposalCardTitleBySequenceKind(sequenceKind) || '',
-      description: isStandardSequence(sequenceKind)
-        ? i18n.t('no_proposal_card.description.regular')
-        : i18n.t('no_proposal_card.description.special'),
-    },
-    index: 0,
-  };
-
   const { currentCard } = useSequence(
     question,
     isStandardSequence(sequenceKind),
     executeStartSequence,
-    noProposalCard,
-    fetchFirstProposal
+    getNoProposalCard(sequenceKind)
   );
 
   if (isLoading) {
     return <SequencePlaceholder />;
   }
-
-  const getMetaTitle = () => {
-    if (sequenceKind === SEQUENCE.KIND_STANDARD) {
-      return 'meta.sequence.title_standard';
-    }
-    if (sequenceKind === SEQUENCE.KIND_CONTROVERSY) {
-      return 'meta.sequence.title_controversy';
-    }
-    if (sequenceKind === SEQUENCE.KIND_CONSENSUS) {
-      return 'meta.sequence.title_popular';
-    }
-
-    return null;
-  };
 
   const withProposalButton =
     question?.canPropose && !isPushProposalCard(currentCard);
@@ -137,7 +88,7 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
   return (
     <>
       <MetaTags
-        title={i18n.t(getMetaTitle() || '', {
+        title={i18n.t(getMetalTitleBySequenceKind(sequenceKind) || '', {
           question: question.wording.question,
         })}
         description={question.wording.metas.description}
@@ -165,10 +116,7 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
               )}
             </>
           )}
-          <SequenceCard
-            card={renderFirstCard() || currentCard}
-            question={question}
-          />
+          <SequenceCard card={currentCard} question={question} />
           {!isEmptySequence && <SequenceProgress length={sequenceSize} />}
         </SequenceContentStyle>
         {!isWidget && (
