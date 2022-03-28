@@ -49,6 +49,7 @@ export type StateSequence = {
   readonly isLoading: boolean;
   readonly currentIndex: number;
   readonly questionSlug?: string;
+  readonly sequenceKind?: string;
   readonly votedProposalIds: { [n: string]: string[] };
   readonly proposals: ProposalType[];
   readonly cards: SequenceCardType[] | ProposalCardType[];

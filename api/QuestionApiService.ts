@@ -8,7 +8,7 @@ const PATH_QUESTIONS_SEARCH = '/questions/search';
 const PATH_QUESTION_DETAIL = '/questions/:questionSlugOrId/details';
 const PATH_QUESTION_START_SEQUENCE = '/sequences/:sequenceKind/:questionId';
 const PATH_QUESTION_START_SEQUENCE_FIRST_PROPOSAL =
-  '/sequences/standard/:questionId/first-proposal';
+  '/sequences/:sequenceKind/:questionId/first-proposal';
 const PATH_QUESTION_START_SEQUENCE_KEYWORD =
   '/sequences/keyword/:questionId/:keywordKey';
 const PATH_QUESTION_PARTNERS = '/questions/:questionId/partners';
@@ -101,13 +101,14 @@ export class QuestionApiService {
 
   static startSequenceFirstProposal(
     questionId: string,
+    sequenceKind?: string,
     headers: ApiServiceHeadersType = {}
   ): Promise<void | AxiosResponse> {
     const startSequenceProposalUrl =
       PATH_QUESTION_START_SEQUENCE_FIRST_PROPOSAL.replace(
-        ':questionId',
-        questionId
-      );
+        ':sequenceKind',
+        sequenceKind || 'standard'
+      ).replace(':questionId', questionId);
     return ApiService.callApi(startSequenceProposalUrl, {
       method: 'GET',
       headers,

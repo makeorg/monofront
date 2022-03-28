@@ -17,6 +17,7 @@ import { WidgetContainerStyle } from '../../style';
 export const RootPage: FC = () => {
   const { state } = useAppContext();
   const { currentQuestion, appConfig, modal } = state;
+  const { sequenceKind } = state.sequence;
   const { unsecure } = appConfig;
   const { showDataPolicy } = modal;
   // @Todo : in logic use the following constant to update widget container style :
@@ -41,7 +42,7 @@ export const RootPage: FC = () => {
       {topProposal ? (
         <IntroProposal handleChange={disableTopProposal} />
       ) : (
-        <Sequence sequenceKind={SEQUENCE.KIND_STANDARD} />
+        <Sequence sequenceKind={sequenceKind || SEQUENCE.KIND_STANDARD} />
       )}
       <Panel />
       <Modal />

@@ -20,6 +20,7 @@ export const sequence_state: StateSequence = {
   isLoading: true,
   questionSlug: undefined,
   currentIndex: 0,
+  sequenceKind: undefined,
   votedProposalIds: {},
   proposals: [],
   cards: [],

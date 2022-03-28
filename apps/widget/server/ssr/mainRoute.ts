@@ -17,7 +17,7 @@ export const mainRoute = async (
   req: Request,
   res: Response & { unsecure?: boolean; maintenance?: boolean }
 ): Promise<void | string> => {
-  const { questionSlug, country, language } = req.query;
+  const { questionSlug, country, language, sequenceKind } = req.query;
   const noIntroCard = true;
   const noPushProposal = false;
   const queryArray = Object.keys(req.query);
@@ -50,6 +50,7 @@ export const mainRoute = async (
     languageFromCountry = getLanguageFromCountryCode(formattedCountry);
   }
   const formattedLanguage = language && language.toString();
+  const formattedSequenceKind = sequenceKind && sequenceKind.toString();
   const initialState = createInitialState();
 
   const questionNotFound = () => {
@@ -131,7 +132,8 @@ export const mainRoute = async (
     formattedCountry,
     formattedLanguage || languageFromCountry,
     firstNotFound,
-    firstProposalUnexpectecError
+    firstProposalUnexpectecError,
+    formattedSequenceKind
   );
 
   if (!firstProposal) {
@@ -178,6 +180,7 @@ export const mainRoute = async (
     proposals: [firstProposal.data.proposal],
     loadFirstProposal: true,
     sequenceSize,
+    sequenceKind: formattedSequenceKind,
   };
   initialState.session = {
     ...initialState.session,

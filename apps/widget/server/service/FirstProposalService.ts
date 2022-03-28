@@ -10,6 +10,7 @@ import { getLoggerInstance } from '@make.org/utils/helpers/logger';
  * @param {string} language
  * @param {() => void} notFound
  * @param {() => void} unexpectedError
+ * @param {string} sequenceKind
  * @returns Promise<{ data: FirstProposalSequenceType; sessionId: string } | void>
  */
 const getFirstProposal = async (
@@ -17,7 +18,8 @@ const getFirstProposal = async (
   country: string,
   language: string,
   notFound: () => void,
-  unexpectedError: () => void
+  unexpectedError: () => void,
+  sequenceKind?: string
 ): Promise<{ data: FirstProposalSequenceType; sessionId: string } | void> => {
   const handleData = (data: FirstProposalSequenceType, sessionId: string) => {
     if (!data) {
@@ -30,6 +32,7 @@ const getFirstProposal = async (
   try {
     const response = await QuestionApiService.startSequenceFirstProposal(
       questionId,
+      sequenceKind,
       {
         'x-make-question-id': questionId,
         'x-make-country': country,
