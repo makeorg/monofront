@@ -15,7 +15,6 @@ import {
   MOBILE_DEVICE,
   PRIVACY_POLICY_DATE,
 } from '@make.org/utils/constants/config';
-import { simpleHash } from '@make.org/utils/helpers/simpleHash';
 import parser from 'ua-parser-js';
 import ContextState from '@make.org/store';
 import { TRANSLATION_NAMESPACE } from '@make.org/utils/i18n/constants';
@@ -103,20 +102,8 @@ export const reactRender = async (
   const { ...queryParams } = req.query;
   const { country, questionSlug, hash } = req.query;
 
-  const { browser, os, device, ua } = parser(req.headers['user-agent']);
+  const { device } = parser(req.headers['user-agent']);
   const isMobileOrTablet = device.type === 'mobile' || device.type === 'tablet';
-  const commonLogs = {
-    name: 'react-render',
-    app_browser_name: browser.name,
-    app_browser_version: browser.version,
-    app_os_name: os.name,
-    app_os_version: os.version,
-    app_device_model: device.model,
-    app_device_type: device.type,
-    app_device_vendor: device.vendor,
-    app_browser_raw: ua,
-    app_browser_hash: simpleHash(ua),
-  };
 
   const language = getLanguageFromCountryCode(country || DEFAULT_COUNTRY);
   setLanguage(language, true);
@@ -161,13 +148,6 @@ export const reactRender = async (
   if (!questionSlug || !country || !hash) {
     state.appConfig.maintenance = true;
   }
-
-  // add log here
-  getLoggerInstance().logInfo({
-    message: 'app-served-from-server',
-    url: req.originalUrl,
-    ...commonLogs,
-  });
 
   return res.send(reactHtml);
 };

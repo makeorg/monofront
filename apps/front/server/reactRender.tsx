@@ -184,12 +184,6 @@ export const reactRender = async (
   if (!reactHtml) {
     return res.status(404).end();
   }
-  // add log here
-  logger.logInfo({
-    message: 'app-served-from-server',
-    url: req.originalUrl,
-    ...commonLogs,
-  });
 
   return res.send(reactHtml);
 };
