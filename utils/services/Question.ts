@@ -12,6 +12,11 @@ import {
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 import { Logger } from './Logger';
 
+const QUESTION_STATUS_OPEN = 'open';
+const QUESTION_STATUS_FINISHED = 'finished';
+const QUESTION_SORT_FEATURED = 'featured';
+const QUESTION_SORT_CHRONOLOGICAL = 'chronological';
+
 const getQuestions = async (
   country: string,
   status?: string,
@@ -35,6 +40,32 @@ const getQuestions = async (
     return null;
   }
 };
+
+const getOpenedConsultations = async (
+  country: string,
+  limit?: number,
+  skip?: number
+): Promise<{ total: number; results: HomeQuestionType[] } | null> =>
+  getQuestions(
+    country,
+    QUESTION_STATUS_OPEN,
+    QUESTION_SORT_FEATURED,
+    limit,
+    skip
+  );
+
+const getFinishedConsultations = async (
+  country: string,
+  limit?: number,
+  skip?: number
+): Promise<{ total: number; results: HomeQuestionType[] } | null> =>
+  getQuestions(
+    country,
+    QUESTION_STATUS_FINISHED,
+    QUESTION_SORT_CHRONOLOGICAL,
+    limit,
+    skip
+  );
 
 const getDetail = async (
   questionSlugOrId: string,
@@ -205,7 +236,8 @@ const getQuestionKeywords = async (
 };
 
 export const QuestionService = {
-  getQuestions,
+  getOpenedConsultations,
+  getFinishedConsultations,
   getDetail,
   searchQuestions,
   getQuestionPopularTags,

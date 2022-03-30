@@ -30,12 +30,15 @@ export const scrollToTop = (): void | null => {
   return window.scrollTo(0, app.getBoundingClientRect().top);
 };
 
+// eslint-disable-next-line consistent-return
 export const scrollToElementId = (elementId: string): void | null => {
+  const sleep = (time: number) =>
+    new Promise(resolve => setTimeout(resolve, time));
   const element = document.getElementById(elementId);
   if (!element) {
     return null;
   }
-  return element.scrollIntoView();
+  sleep(10).then(() => element.scrollIntoView());
 };
 
 export const getFullWidthDividedByItems = (count: number): string =>

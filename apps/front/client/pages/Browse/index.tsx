@@ -1,4 +1,10 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, {
+  FC,
+  MutableRefObject,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { HomeQuestionType } from '@make.org/types';
 import { QuestionService } from '@make.org/utils/services/Question';
 import { Pagination } from '@make.org/components/Pagination';
@@ -17,6 +23,20 @@ import { BrowseConsultationsTitles } from '../../app/Consultation/Browse/Titles'
 import { BrowseConsultationsHeader } from '../../app/Consultation/Browse/Header';
 import { BrowseConsultationsList } from '../../app/Consultation/Browse/List';
 
+type consultationListType = 'opened' | 'finished';
+type consultationDataType = {
+  total: number;
+  results: HomeQuestionType[];
+} | null;
+
+const CONSULTATION_LIST_LIMIT = 8;
+
+const getCacheKey = (
+  consultationType: consultationListType,
+  country: string,
+  page: number
+) => `${consultationType}${country}${page}`;
+
 const BrowseConsultationsPage: FC = () => {
   const location = useLocation();
   const params = useParams<{ country: string; pageId: string }>();
@@ -27,51 +47,166 @@ const BrowseConsultationsPage: FC = () => {
   const [questionsTotal, setTotal] = useState<number>(0);
   const currentPageId = parseInt(pageId, 10);
 
-  const CONSULTATIONS_STATUS = consultationsPage ? 'open' : 'finished';
-  const SORT_ALGORITHM = consultationsPage ? 'featured' : 'chronological';
-  const CONSULTATIONS_LIMIT = 8;
-  const CONSULTATIONS_SKIP = CONSULTATIONS_LIMIT * (currentPageId - 1);
+  const cache: MutableRefObject<{
+    [cachekey: string]: { total: number; results: HomeQuestionType[] } | null;
+  }> = useRef({});
 
-  const initConsultationsList = async () => {
-    setIsLoading(true);
-    const response = await QuestionService.getQuestions(
-      country,
-      CONSULTATIONS_STATUS,
-      SORT_ALGORITHM,
-      CONSULTATIONS_LIMIT,
-      CONSULTATIONS_SKIP
-    );
+  const currentConsultationListType: consultationListType = consultationsPage
+    ? 'opened'
+    : 'finished';
 
-    if (response) {
-      setQuestions(response.results);
-      setTotal(response.total);
-      setIsLoading(false);
+  const fetchDataAndCache = async (
+    argCountry: string,
+    argConsultationType: consultationListType,
+    page: number
+  ): Promise<consultationDataType> => {
+    const cacheKey = getCacheKey(argConsultationType, argCountry, page);
+    if (cache.current[cacheKey]) {
+      return Promise.resolve(cache.current[cacheKey]);
     }
+
+    const args: [string, number, number] = [
+      argCountry,
+      CONSULTATION_LIST_LIMIT,
+      CONSULTATION_LIST_LIMIT * (page - 1),
+    ];
+
+    let data: consultationDataType = { results: [], total: 0 };
+    if (argConsultationType === 'opened') {
+      data = await QuestionService.getOpenedConsultations(...args);
+    }
+    if (argConsultationType === 'finished') {
+      data = await QuestionService.getFinishedConsultations(...args);
+    }
+
+    cache.current[cacheKey] = data;
+
+    return data;
+  };
+
+  /**
+   * First, pretech and cache some data :
+   * - data from the next and preview pages of the current consultation list
+   * - data from the page 1 of the other consultation list
+   *
+   * Second, preserve only some data in cache :
+   * - cache related to the current page of the current list
+   * - cache related to the next page and the preview page of the current list
+   * - cache related to the page 1 and the page 2 of the two lists (to avoid API call when switching list)
+   *
+   * Possible improvement : preserve cache when unmount
+   */
+  const prefetchAndManageCache = async (
+    currentConsultationType: consultationListType,
+    currentPage: number,
+    currentConsultationTotal: number
+  ) => {
+    const nextPage =
+      currentPage <
+      Math.ceil(currentConsultationTotal / CONSULTATION_LIST_LIMIT)
+        ? currentPage + 1
+        : null;
+    const previewPage = currentPage > 1 ? currentPage - 1 : null;
+    const otherList =
+      currentConsultationType === 'opened' ? 'finished' : 'opened';
+
+    const calls = [];
+    calls.push(fetchDataAndCache(country, otherList, 1));
+    if (nextPage) {
+      calls.push(fetchDataAndCache(country, currentConsultationType, nextPage));
+    }
+    if (previewPage) {
+      calls.push(
+        fetchDataAndCache(country, currentConsultationType, previewPage)
+      );
+    }
+
+    await Promise.all(calls);
+
+    const cleanCache = () => {
+      const cacheKeyToKeep: string[] = [];
+      cacheKeyToKeep.push(getCacheKey('opened', country, 1));
+      cacheKeyToKeep.push(getCacheKey('finished', country, 1));
+      cacheKeyToKeep.push(getCacheKey('opened', country, 2));
+      cacheKeyToKeep.push(getCacheKey('finished', country, 2));
+      cacheKeyToKeep.push(
+        getCacheKey(currentConsultationListType, country, currentPage)
+      );
+      if (previewPage) {
+        cacheKeyToKeep.push(
+          getCacheKey(currentConsultationType, country, previewPage)
+        );
+      }
+      if (nextPage) {
+        cacheKeyToKeep.push(
+          getCacheKey(currentConsultationType, country, nextPage)
+        );
+      }
+
+      const newCache: {
+        [cachekey: string]: consultationDataType;
+      } = {};
+      cacheKeyToKeep.forEach(key => {
+        if (cache.current[key]) {
+          newCache[key] = cache.current[key];
+        }
+      });
+
+      cache.current = newCache;
+    };
+
+    cleanCache();
+  };
+
+  const loadConsultations = async () => {
+    setIsLoading(true);
+    const data = await fetchDataAndCache(
+      country,
+      currentConsultationListType,
+      currentPageId
+    );
+    if (data) {
+      setQuestions(data.results);
+      setTotal(data.total);
+    }
+    setIsLoading(false);
+    prefetchAndManageCache(
+      currentConsultationListType,
+      currentPageId,
+      data?.total || 0
+    );
   };
 
   useEffect(() => {
-    initConsultationsList();
-    if (consultationsPage) {
+    loadConsultations();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [country, currentConsultationListType, currentPageId]);
+
+  useEffect(() => {
+    if (currentConsultationListType === 'opened') {
       trackDisplayBrowseConsultations();
-    } else {
+    }
+    if (currentConsultationListType === 'finished') {
       trackDisplayBrowseResults();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location.pathname]);
+  }, [currentConsultationListType, country]);
 
   return (
     <>
-      {consultationsPage ? (
+      {currentConsultationListType === 'opened' && (
         <MetaTags
           title={i18n.t('meta.browse.consultations.title')}
           description={i18n.t('meta.browse.consultations.description')}
         />
-      ) : (
+      )}
+      {currentConsultationListType === 'finished' && (
         <MetaTags
           title={i18n.t('meta.browse.results.title')}
           description={i18n.t('meta.browse.results.description')}
         />
       )}
+
       <BrowseConsultationsHeader />
       {isLoading ? (
         <>
@@ -93,13 +228,13 @@ const BrowseConsultationsPage: FC = () => {
             {questions && (
               <BrowseConsultationsList
                 questions={questions}
-                resultsContext={!consultationsPage}
+                resultsContext={currentConsultationListType === 'finished'}
                 total={questionsTotal}
               />
             )}
-            {questionsTotal > CONSULTATIONS_LIMIT ? (
+            {questionsTotal > CONSULTATION_LIST_LIMIT ? (
               <Pagination
-                itemsPerPage={CONSULTATIONS_LIMIT}
+                itemsPerPage={CONSULTATION_LIST_LIMIT}
                 itemsTotal={questionsTotal}
                 scrollToId={IDS.BROWSE_SECTION}
               />
