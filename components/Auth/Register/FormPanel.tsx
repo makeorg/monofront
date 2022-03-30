@@ -25,7 +25,7 @@ import {
   PostCodeWrapperStyle,
 } from '../style';
 import { EmailPasswordFields } from '../CommonFields/EmailPassword';
-import { AgePostcode } from '../CommonFields/AgePostcode';
+import { ExtraInRegisterformationsFields } from '../CommonFields/ExtraRegisterInformations';
 
 type Props = {
   user: RegisterFormDataType;
@@ -56,6 +56,7 @@ export const RegisterFormPanel: React.FC<Props> = ({
 
   const emailError = getFieldError('email', errors);
   const passwordError = getFieldError('password', errors);
+  const firstnameError = getFieldError('firstname', errors);
   const ageError = getFieldError('dateofbirth', errors);
   const postalcodeError = getFieldError('postalcode', errors);
 
@@ -99,9 +100,11 @@ export const RegisterFormPanel: React.FC<Props> = ({
       )}
       {registerPanelStep === 2 && (
         <>
-          <AgePostcode
+          <ExtraInRegisterformationsFields
+            firstnameValue={user.profile.firstname}
             ageValue={user.profile.age}
             postalcodeValue={user.profile.postalcode}
+            firstnameError={firstnameError}
             ageError={ageError}
             postalcodeError={postalcodeError}
             handleChange={handleChange}

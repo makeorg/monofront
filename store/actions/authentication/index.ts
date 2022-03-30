@@ -54,46 +54,6 @@ export const logoutSuccess = (): ReducerAction => ({
   type: actionTypes.LOGOUT,
 });
 
-export const getUserRegister = async (
-  dispatch: Dispatch,
-  firstname: string
-): Promise<void | null> => {
-  const user = await UserService.current();
-
-  if (user) {
-    const profile:
-      | UserProfileType
-      | OrganisationProfileType
-      | PersonalityProfileType
-      | null = user
-      ? await UserService.getProfileByUserType(user.userId, user.userType)
-      : null;
-
-    if (profile && 'firstName' in profile && 'dateOfBirth' in profile) {
-      const success = async () => {
-        const updatedUser = await UserService.current();
-        if (updatedUser) {
-          dispatch(
-            setUserInfo(
-              { ...updatedUser, displayName: firstname },
-              { ...profile, firstName: firstname }
-            )
-          );
-        }
-      };
-      await UserService.update(
-        user.userId,
-        {
-          ...profile,
-          firstName: firstname,
-        },
-        success
-      );
-    }
-  }
-  return null;
-};
-
 export const getUser = async (
   dispatch: Dispatch,
   isModalOpen?: boolean,

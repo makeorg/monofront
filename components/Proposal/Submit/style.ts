@@ -88,7 +88,7 @@ export const ProposalStepTitleStyle = styled.h2`
     text-align: center;
   }
   &.with-margin-bottom {
-    margin-bottom: 5px;
+    margin-bottom: 25px;
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${intToPx(typography.font.fontsize.XL.value)};

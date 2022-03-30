@@ -137,7 +137,7 @@ export const DataFR: FC = () => {
             </StaticListTitleStyle>
             <StaticSquareListStyle>
               <StaticSquareListItemStyle>
-                Adresse email
+                Adresse e-mail
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 Mot de passe

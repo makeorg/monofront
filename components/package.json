@@ -11,8 +11,6 @@
     "@make.org/types": "0.1.0",
     "@make.org/ui": "0.1.0",
     "@make.org/utils": "0.1.0",
-    "@marvelapp/react-ab-test": "^3.1.0",
-    "@types/marvelapp__react-ab-test": "^3.1.0",
     "@types/react": "^17.0.11",
     "athena-design-tokens": "^0.1.7",
     "enzyme": "^3.11.0",

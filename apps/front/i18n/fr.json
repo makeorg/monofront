@@ -85,7 +85,7 @@
     },
     "contact": {
       "title": "Contactez-nous - Make.org",
-      "description": "Si vous ne trouvez pas la réponse à votre question, contactez-nous par email."
+      "description": "Si vous ne trouvez pas la réponse à votre question, contactez-nous par e-mail."
     },
     "no_cookies": {
       "title": "Ooops ! Vos cookies sont désactivés - Make.org"
@@ -115,7 +115,7 @@
       "show_password": "Afficher le mot de passe",
       "requirements": "Tous les champs sont obligatoires sauf indication contraire.",
       "requirements_short": "Tous les champs sont obligatoires.",
-      "post_code": "Le code postal nous permet d'analyser les résultats par zone géographique.",
+      "post_code": "Le code postal nous permet d’analyser les résultats par zone géographique.",
       "label": {
         "email": "E-mail",
         "password": "Mot de passe",
@@ -149,12 +149,12 @@
       },
       "messages": {
         "errors_notification": "Nous avons trouvé des erreurs dans ce formulaire :",
-        "invalid_email": "Veuillez respecter le format email.",
+        "invalid_email": "Veuillez respecter le format e-mail.",
         "invalid_email_dynamic": "Veuillez respecter le format {{label}}.",
-        "already_registered": "Cet email existe déjà.",
+        "already_registered": "Cet e-mail existe déjà.",
         "already_registered_dynamic": "Cet {{label}} existe déjà.",
-        "email_doesnot_exist": "Cet email n'est pas associé à votre compte, merci de bien vouloir saisir votre email à nouveau.",
-        "email_doesnot_exist_dynamic": "Cet {{label}} n'est pas associé à votre compte, merci de bien vouloir saisir votre email à nouveau.",
+        "email_doesnot_exist": "Cet e-mail n'est pas associé à votre compte, merci de bien vouloir saisir votre e-mail à nouveau.",
+        "email_doesnot_exist_dynamic": "Cet {{label}} n'est pas associé à votre compte, merci de bien vouloir saisir votre e-mail à nouveau.",
         "invalid_password": "Votre mot de passe doit contenir au moins 8 caractères.",
         "invalid_password_dynamic": "Votre {{label}} doit contenir au moins 8 caractères.",
         "api_error": "Oups ! Nous rencontrons quelques difficultés avec le chargement de cette page. Merci de bien vouloir réessayer ultérieurement.",
@@ -175,7 +175,7 @@
       "card_title": "Pour retrouver l’historique de vos votes",
       "facebook_connect": "Continuer avec Facebook",
       "google_connect": "Continuer avec Google",
-      "email_register": "S’inscrire par mail",
+      "email_register": "S’inscrire par e-mail",
       "count_register": "({{count}}/2)"
     },
     "notifications": {
@@ -184,9 +184,9 @@
       "delete_account_success": "Votre compte a bien été supprimé. Nous espérons vous revoir bientôt sur Make.org !",
       "login_success": "Vous avez été connecté(e) avec succès.",
       "logout_success": "Vous avez été déconnecté(e) avec succès.",
-      "login_social_missing_email_data": "Nous n’arrivons pas à obtenir une adresse email valide depuis votre compte Facebook pour vous inscrire. Nous vous invitons à utiliser notre formulaire d'inscription par email.",
+      "login_social_missing_email_data": "Nous n’arrivons pas à obtenir une adresse e-mail valide depuis votre compte Facebook pour vous inscrire. Nous vous invitons à utiliser notre formulaire d'inscription par e-mail.",
       "register_success": "Bienvenue ! Vous avez été inscrit avec succès.",
-      "register_validate": "Merci pour votre inscription. Un mail vient de vous être envoyé à l'adresse {{email}} afin d'activer votre compte en un clic.",
+      "register_validate": "Merci pour votre inscription. Un e-mail vient de vous être envoyé à l'adresse {{email}} afin d'activer votre compte en un clic.",
       "secure_expired": {
         "first_sentence": "Nous sommes désolés, vous avez été déconnecté car il nous semble que vous êtes parti",
         "second_sentence": "Connectez-vous à nouveau pour continuer à voter, proposer et agir sur Make.org.",
@@ -220,7 +220,7 @@
       }
     },
     "from": "sur",
-    "email": "Email",
+    "email": "E-Mail",
     "propose": "Proposer",
     "click_there": "cliquez ici",
     "open_new_window": "Ouverture dans un nouvel onglet",
@@ -396,7 +396,7 @@
       "button_back": "Modifier ma proposition",
       "back": "Retour",
       "title": "Pour valider ma proposition",
-      "last_step_red": "plus qu'une étape ",
+      "last_step_red": "Plus qu'une étape ",
       "last_step": "pour envoyer votre proposition !",
       "subtitle": "Je m'inscris avec",
       "button_login_text": "J’ai déjà un compte,",
@@ -413,7 +413,7 @@
       "grats": "Félicitations {{name}}, ",
       "proposal_sent": "votre proposition a été envoyée ",
       "activate": "Activez votre compte en un clic",
-      "link": "Cliquez sur le lien d'activation qui vous a été envoyé à l'adresse : {{mail}}",
+      "link": "Confirmer votre adresse e-mail en un clic pour garantir l’authenticité de votre compte. Cliquez sur le lien d’activation qui vous a été envoyé à : {{mail}}",
       "question": "Une question ? Vous pouvez nous contacter à : "
     }
   },
@@ -495,7 +495,7 @@
     "social_connect": "Je m’inscris avec",
     "or": "ou",
     "subtitle": "Je m'inscris avec ce formulaire",
-    "step1_title": "S'inscrire par email",
+    "step1_title": "S'inscrire par e-mail",
     "step2_title": "Terminer mon inscription",
     "login_title": "J‘ai déjà un compte.",
     "login_link": "Connexion",
@@ -517,16 +517,16 @@
     "privacy_policy": "politique de données",
     "make_protect": "Make.org s'engage à protéger vos ",
     "make_protect_link": " données personnelles.",
-    "opt_out": "Je m'oppose à recevoir des emails marketing de Make.org pour me tenir au courant de nouveaux projets."
+    "opt_out": "Je m'oppose à recevoir des e-mails marketing de Make.org pour me tenir au courant de nouveaux projets."
   },
   "forgot_password": {
     "title": "Je réinitialise mon mot de passe",
-    "description": "Merci de renseigner l'adresse email liée à votre compte Make.org pour recevoir le lien de réinitialisation.",
-    "success": "Merci, un email vient de vous être envoyé pour vous permettre de mettre à jour votre mot de passe.",
+    "description": "Merci de renseigner l'adresse e-mail liée à votre compte Make.org pour recevoir le lien de réinitialisation.",
+    "success": "Merci, un e-mail vient de vous être envoyé pour vous permettre de mettre à jour votre mot de passe.",
     "return": "Revenir à ",
     "login_link": "l’écran de connexion",
     "send_link": "recevoir l'e-mail",
-    "email_doesnot_exist": "Nous ne trouvons pas de compte associé à cet email."
+    "email_doesnot_exist": "Nous ne trouvons pas de compte associé à cet e-mail."
   },
   "main_footer": {
     "jobs": "Jobs",
@@ -680,14 +680,14 @@
     },
     "newsletter_update": {
       "title": "Gérer mes préférences",
-      "optin_label": "Je m'oppose à recevoir des emails marketing de Make.org pour me tenir au courant de nouveaux projets"
+      "optin_label": "Je m'oppose à recevoir des e-mails marketing de Make.org pour me tenir au courant de nouveaux projets"
     },
     "delete_account": {
       "title": "Demander la suppression de mon compte",
       "description": "Attention, cette action est irréversible. Vous perdrez vos propositions, leurs statistiques détaillées, ainsi que les propositions sur lesquelles vous vous êtes prononcé(e).",
       "password": "J'indique mon mot de passe",
       "submit_label": "Demander la suppression de mon compte",
-      "wrong_email": "Cet email n'est pas associé à votre compte, merci de bien vouloir saisir votre email à nouveau.",
+      "wrong_email": "Cet e-mail n'est pas associé à votre compte, merci de bien vouloir saisir votre e-mail à nouveau.",
       "wrong_password": "Votre mot de passe est incorrect."
     },
     "organisation": {
@@ -789,7 +789,7 @@
     },
     "citizen_account": {
       "title": "Votre espace citoyen sur Make.org",
-      "description": "Grâce à votre compte personnel vous avez accès aux résultats de vos propositions, à l’historique de vos votes et vous recevrez les résultats des consultations. En vous inscrivant chez nous, vous serez informé par email des prochaines consultations citoyennes et vous serez convié à nos événements participatifs.",
+      "description": "Grâce à votre compte personnel vous avez accès aux résultats de vos propositions, à l’historique de vos votes et vous recevrez les résultats des consultations. En vous inscrivant chez nous, vous serez informé par e-mail des prochaines consultations citoyennes et vous serez convié à nos événements participatifs.",
       "button_text": "Je m’inscris"
     },
     "cards": {

@@ -397,7 +397,7 @@ export const TermsOfUseFR: FC = () => {
                   les Utilisateurs, chacun pourra déposer 100 propositions
                   maximum sur la même consultation. Au-delà de ce seuil, nous ne
                   serons plus en capacité d’accepter les propositions et nous
-                  notifierons l’Utilisateur concerné par email pour lui
+                  notifierons l’Utilisateur concerné par e-mail pour lui
                   expliquer les raisons de ce seuil et l’accompagner dans son
                   usage optimal de la plateforme.
                 </StaticParagraphStyle>
@@ -432,7 +432,7 @@ export const TermsOfUseFR: FC = () => {
                 <StaticParagraphStyle>
                   Dans l’hypothèse où un Utilisateur inscrit souhaiterait que sa
                   Proposition citoyenne publiée fasse l’objet d’une suppression,
-                  il adressera sa demande par mail à Make.org à l’adresse
+                  il adressera sa demande par e-mail à Make.org à l’adresse
                   suivante :&nbsp;
                   <RedHTMLLinkElementStyle href={`mailto:${CONTACT_EMAIL}`}>
                     {`${CONTACT_EMAIL}`}

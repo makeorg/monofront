@@ -14,7 +14,10 @@ import {
 import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { clearProposalPending } from '@make.org/store/actions/pendingProposal';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
-import { CONTACT_EMAIL } from '@make.org/utils/constants/config';
+import {
+  CONTACT_EMAIL,
+  CONTACT_EMAIL_DE,
+} from '@make.org/utils/constants/config';
 import { AvatarImageStyle } from '@make.org/ui/components/Avatar/style';
 import { SvgEmptyAvatar } from '@make.org/ui/Svg/elements';
 import { ProposalTooltip } from '../../../ui/components/Tooltip/ProposalTooltip';
@@ -53,7 +56,9 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
   const { state, dispatch } = useAppContext();
   const { user } = selectAuthentication(state);
   const proposalContent = state.pendingProposal.proposalContent || '';
-  const { source } = state.appConfig;
+  const { source, country } = state.appConfig;
+  const isDE = country === 'DE';
+  const EMAIL = isDE ? CONTACT_EMAIL_DE : CONTACT_EMAIL;
   const isWidget = source === 'widget';
   const avatarSize = 36;
   const handleCloseButton = () => {
@@ -110,8 +115,8 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
             <ProposalTooltip />
             <ProposalSuccessContactStyle>
               {i18n.t('proposal_submit.success.question')}
-              <ProposalSuccessContactLinkStyle href={`mailto:${CONTACT_EMAIL}`}>
-                {CONTACT_EMAIL}
+              <ProposalSuccessContactLinkStyle href={`mailto:${EMAIL}`}>
+                {EMAIL}
               </ProposalSuccessContactLinkStyle>
             </ProposalSuccessContactStyle>
           </ProposalSuccessCardStyle>

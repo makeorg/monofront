@@ -9,10 +9,9 @@ Feature: Propose on sequence
     When I click on "open propose panel" button
     Then I see "proposal_submit" container
     And I see a link "charte de modération" to "https://about.make.org/moderation" in "proposal_submit" container
-    And I see a button "cancel proposal form" in "proposal_submit" container with label "Annuler"
-    And I see a button "proposal submit" in "proposal_submit" container with label "Valider"
+    And I see a button "proposal submit" in "proposal_submit" container with label "PROPOSER"
     And I see a "close panel" button
-    When I click on "cancel proposal form" button
+    When I click on "close panel" button
     Then The "proposal_submit" container doesn't exist
 
   Scenario: submit button activation

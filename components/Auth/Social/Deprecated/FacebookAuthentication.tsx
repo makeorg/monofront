@@ -21,7 +21,6 @@ import {
   loginSocialSuccess,
   loginSocialFailure,
   getUser,
-  getUserRegister,
 } from '@make.org/store/actions/authentication';
 import { Logger } from '@make.org/utils/services/Logger';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
@@ -38,16 +37,10 @@ import {
   SvgLogoFacebookWrapperStyle,
 } from '../style';
 
-type Props = {
-  updateFirstname?: boolean;
-};
-
-export const DeprecatedFacebookAuthentication: FC<Props> = ({
-  updateFirstname,
-}) => {
+export const DeprecatedFacebookAuthentication: FC = () => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy, language } = state.appConfig;
-  const { proposalContent, firstname } = state.pendingProposal;
+  const { proposalContent } = state.pendingProposal;
   const question = selectCurrentQuestion(state);
 
   // setting facebook browser to true  or false
@@ -86,7 +79,7 @@ export const DeprecatedFacebookAuthentication: FC<Props> = ({
     if (!('email' in response)) {
       dispatch(loginSocialFailure());
       Logger.logError({
-        message: `Facebook login failure no email in profile (login is a phone number or email is not yet confirmed)`,
+        message: `Facebook login failure no e-mail in profile (login is a phone number or e-mail is not yet confirmed)`,
         name: 'social-auth',
       });
       dispatch(
@@ -105,12 +98,8 @@ export const DeprecatedFacebookAuthentication: FC<Props> = ({
 
     const success = async (isNewAccount: boolean) => {
       dispatch(loginSocialSuccess());
-      // @todo need to clean after AB/testing
-      if (firstname && updateFirstname) {
-        await getUserRegister(dispatch, firstname);
-      } else {
-        await getUser(dispatch, state.modal.isOpen);
-      }
+      await getUser(dispatch, state.modal.isOpen);
+
       dispatch(
         displayNotificationBanner(
           NOTIF.LOGIN_SUCCESS_MESSAGE,

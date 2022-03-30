@@ -521,7 +521,7 @@ export const A11yFR: FC = () => {
               autre forme.
             </StaticParagraphStyle>
             <StaticParagraphStyle>
-              {'Contactez-nous à cette adresse email : '}
+              {'Contactez-nous à cette adresse e-mail : '}
               <RedHTMLLinkElementStyle href={`mailto:${ACCESSIBILITY_EMAIL}`}>
                 {`${ACCESSIBILITY_EMAIL}`}
               </RedHTMLLinkElementStyle>

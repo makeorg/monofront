@@ -19,11 +19,9 @@ import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { throttle } from '@make.org/utils/helpers/throttle';
 import { useAppContext } from '@make.org/store';
 import { setPanelContent } from '@make.org/store/actions/panel';
-import { UntypedInput } from '@make.org/components/Form/UntypedInput';
 import { initProposalPending } from '@make.org/store/actions/pendingProposal';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { ProposalService } from '@make.org/utils/services/Proposal';
-import { NameFiledIcon } from '@make.org/utils/constants/icons';
 import BlueShape from '@make.org/assets/images/blueShape.png';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
@@ -39,8 +37,6 @@ import {
   ProposalButtonsWrapperStyle,
   ProposalAuthInlineWrapperStyle,
   ProposalSubmitButtonsWidgetStyle,
-  ProposalStepMandatoryStyle,
-  ProposalStepLabelStyle,
   ProposalStepWrapperStyle,
   BlueShapeImageStyle,
   BlueManOnBench,
@@ -50,9 +46,6 @@ export const ProposalForm: FC = () => {
   const { state, dispatch } = useAppContext();
   const [proposalContent, setProposalContent] = useState(
     state.pendingProposal.proposalContent || ''
-  );
-  const [firstname, setFirstname] = useState(
-    state.pendingProposal.firstname || ''
   );
   const inputRef = useRef() as React.MutableRefObject<HTMLTextAreaElement>;
   const question: QuestionType | null = selectCurrentQuestion(state);
@@ -83,12 +76,6 @@ export const ProposalForm: FC = () => {
     return setProposalContent(event.currentTarget.value);
   };
 
-  const handleFirstnameChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setFirstname(event.target.value);
-  };
-
   const secureFieldValue = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     handleValueChange(event);
     if (inputRef && typeof inputRef.current !== 'undefined') {
@@ -106,7 +93,7 @@ export const ProposalForm: FC = () => {
       );
     }
 
-    dispatch(initProposalPending(proposalContent, firstname));
+    dispatch(initProposalPending(proposalContent));
   };
 
   useEffect(() => {
@@ -135,26 +122,6 @@ export const ProposalForm: FC = () => {
               <ScreenReaderItemStyle as="label" htmlFor="proposal">
                 {i18n.t('proposal_submit.form.field')}
               </ScreenReaderItemStyle>
-              {!isLoggedIn && (
-                <>
-                  <ProposalStepMandatoryStyle>
-                    {i18n.t('proposal_submit.form.mandatory_field')}
-                  </ProposalStepMandatoryStyle>
-                  <UntypedInput
-                    type="text"
-                    name="firstName"
-                    id="firstName"
-                    value={firstname}
-                    icon={NameFiledIcon}
-                    label={i18n.t('common.form.label.firstname')}
-                    required
-                    handleChange={handleFirstnameChange}
-                  />
-                </>
-              )}
-              <ProposalStepLabelStyle className="with-margin-bottom">
-                {i18n.t('proposal_submit.form.proposal')}
-              </ProposalStepLabelStyle>
               <ProposalTextareaStyle
                 ref={inputRef}
                 name="proposal"

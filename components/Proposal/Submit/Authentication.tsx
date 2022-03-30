@@ -61,8 +61,8 @@ const renderAuthStep = (step: string | undefined, dispatch: Dispatch) => {
               <ProposalSubmitAuthSeparator />
             </SeparatorProposalAuthLogin>
             <SocialRegisterButtonsWrapperStyle>
-              <FacebookAuthentication updateFirstname />
-              <GoogleAuthentication updateFirstname />
+              <FacebookAuthentication />
+              <GoogleAuthentication />
             </SocialRegisterButtonsWrapperStyle>
           </ProposalAuthSocialLoginWrapperStyle>
         </>
@@ -86,7 +86,6 @@ export const ProposalAuthentication: FC = () => {
   const { country, language, source, device } = state.appConfig;
   const isWidget = source === 'widget';
   const { step } = state.pendingProposal.authMode;
-  const { firstname } = state.pendingProposal;
   const isMobile = matchMobileDevice(device);
 
   useEffect(() => {
@@ -125,8 +124,6 @@ export const ProposalAuthentication: FC = () => {
             </ProposalBackButtonCenterStyle>
             <ProposalAuthWrapperStyle>
               <ProposalAltStepTitleStyle isWidget={isWidget}>
-                {firstname}
-                {', '}
                 <ProposalStepLabelRedStyle>
                   {i18n.t('proposal_submit.authentication.last_step_red')}
                 </ProposalStepLabelRedStyle>
@@ -140,12 +137,14 @@ export const ProposalAuthentication: FC = () => {
             </ProposalAuthWrapperStyle>
           </ColumnElementStyle>
           <ProposalAuthLoginWrapperStyle>
+            {i18n.t('proposal_submit.authentication.button_login_text')}&nbsp;
             <ProposalAuthLoginStyle
               onClick={() => dispatch(setProposalAuthStep(AUTH_STEP.LOGIN))}
             >
-              {i18n.t('proposal_submit.authentication.button_login')}
+              {i18n.t('proposal_submit.authentication.button_login_link')}
             </ProposalAuthLoginStyle>
           </ProposalAuthLoginWrapperStyle>
+
           <DataPolicyWrapperStyle>
             {i18n.t('legal_consent.make_protect')}{' '}
             <DataPolicyNewWindowLinkStyle

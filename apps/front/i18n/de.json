@@ -169,7 +169,7 @@
         "malformed": "Bitte beachte das URL-Format „https://beispiel.de“"
       },
       "requirements_short": "@@common.form.requirements_short|fr:Tous les champs sont obligatoires.",
-      "post_code": "@@common.form.post_code|fr:Le code postal nous permet d'analyser les résultats par zone géographique."
+      "post_code": "Anhand der Postleitzahl können wir die Ergebnisse nach geografischen Gebieten analysieren."
     },
     "notifications": {
       "bad_link": "Dieser Link ist nicht mehr gültig.",
@@ -260,7 +260,7 @@
       "card_title": "So finden Sie Ihr Abstimmungsverhalten",
       "facebook_connect": "Mit Facebook fortfahren",
       "google_connect": "Mit Google fortfahren",
-      "email_register": "Registrieren bei Mail",
+      "email_register": "Registrieren bei E-Mail",
       "count_register": "({{count}}/2)"
     }
   },
@@ -392,21 +392,21 @@
       "button_login_link": "und melde mich an",
       "back_authentication": "Zurück zum Anmeldebildschirm",
       "back": "@@proposal_submit.authentication.back|fr:Retour",
-      "last_step_red": "@@proposal_submit.authentication.last_step_red|fr:plus qu'une étape ",
-      "last_step": "@@proposal_submit.authentication.last_step|fr:pour envoyer votre proposition !",
+      "last_step_red": "Es bleibt nur noch ein Schritt ",
+      "last_step": "um deinen Vorschlag einzureichen !",
       "button_login": "@@proposal_submit.authentication.button_login|fr:Se connecter"
     },
     "success": {
       "title": "Danke, {{name}}!",
       "description": "Dein Vorschlag wird jetzt von unseren Teams moderiert.",
       "button": "Weiter abstimmen",
-      "tooltip_title": "@@proposal_submit.success.tooltip_title|fr:En cours de modération",
-      "tooltip_description": "@@proposal_submit.success.tooltip_description|fr:Votre proposition sera traitée par nos équipes sous 48h, en attendant vous pouvez la retrouver dès maintenant dans votre profil.",
+      "tooltip_title": "Wird gerade moderiert",
+      "tooltip_description": "Dein Vorschlag wird innerhalb von 48 Stunden von unseren Teams  bearbeitet. In der Zwischenzeit kannst du ihn ab sofort in deinem Profil finden.",
       "grats": "@@proposal_submit.success.grats|fr:Félicitations {{name}}, ",
       "proposal_sent": "@@proposal_submit.success.proposal_sent|fr:votre proposition a été envoyée ",
       "activate": "@@proposal_submit.success.activate|fr:Activez votre compte en un click",
-      "link": "@@proposal_submit.success.link|fr:Cliquez sur le lien d'activation qui vous a été envoyé à l'adresse : {{mail}}",
-      "question": "@@proposal_submit.success.question|fr:Une question ? Vous pouvez nous contacter à : "
+      "link": "Bestätige deine E-Mail-Adresse mit einem Klick, um die Gültigkeit deines Kontos zu gewährleisten. Klicke auf den Aktivierungslink, der dir an diese Adresse geschickt wurde : {{mail}}. ",
+      "question": "Du hast noch Fragen? Kontaktiere uns unter : "
     }
   },
   "vote": {
@@ -507,8 +507,8 @@
     "privacy_policy_link": "Charta",
     "privacy_policy_last_part": " teilnehmen kann und informiert werde.",
     "privacy_policy": "Datenschutzerklärung",
-    "make_protect": "@@legal_consent.make_protect|fr:Make.org s'engage à protéger vos ",
-    "make_protect_link": "@@legal_consent.make_protect_link|fr: données personnelles.",
+    "make_protect": "Make.org verpflichtet sich, ",
+    "make_protect_link": "deine persönlichen Daten zu schützen.",
     "opt_out": "Ich möchte keine Marketing-E-Mails mit Informationen über von Make.org durchgeführte Projekte erhalten."
   },
   "forgot_password": {

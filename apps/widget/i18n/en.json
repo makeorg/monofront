@@ -137,12 +137,12 @@
       },
       "messages": {
         "errors_notification": "Errors found in the form :",
-        "invalid_email": "The email format is not valid.",
-        "invalid_email_dynamic": "Please use the right email format {{label}}.",
-        "already_registered": "This email has already been registered.",
+        "invalid_email": "The e-mail format is not valid.",
+        "invalid_email_dynamic": "Please use the right e-mail format {{label}}.",
+        "already_registered": "This e-mail has already been registered.",
         "already_registered_dynamic": "This {{label}} already exists.",
-        "email_doesnot_exist": "This email is not related to your account. Please try again with a different email.",
-        "email_doesnot_exist_dynamic": "This {{label}} is not related to your account. Please try again with a different email.",
+        "email_doesnot_exist": "This e-mail is not related to your account. Please try again with a different e-mail.",
+        "email_doesnot_exist_dynamic": "This {{label}} is not related to your account. Please try again with a different e-mail.",
         "invalid_password": "Your password must be at least 8-character long.",
         "invalid_password_dynamic": "Your {{label}} must be at least 8-character long.",
         "api_error": "Sorry, this page cannot load at the moment. Please try again later.",
@@ -159,17 +159,17 @@
         "malformed": "Please use the right url format \"https://example.com\""
       },
       "requirements_short": "@@common.form.requirements_short|fr:Tous les champs sont obligatoires.",
-      "post_code": "@@common.form.post_code|fr:Le code postal nous permet d'analyser les résultats par zone géographique."
+      "post_code": "The postcode allows us to analyse the results by geographical area."
     },
     "social_login": {
       "card_title": "To find the history of your votes",
       "facebook_connect": "Continue with Facebook",
       "google_connect": "Continue with Google",
-      "email_register": "Sign up with email",
+      "email_register": "Sign up with e-mail",
       "count_register": "({{count}}/2)"
     },
     "from": "on",
-    "email": "Email",
+    "email": "E-Mail",
     "propose": "Submit",
     "click_there": "Click here",
     "open_new_window": "Open in a new window",
@@ -194,7 +194,7 @@
       "login_success": "You logged in successfully.",
       "logout_success": "You logged out successfully.",
       "register_success": "Welcome, you are now signed up.",
-      "register_validate": "Thanks for signing up! We sent you an email at {{email}} to validate your account.",
+      "register_validate": "Thanks for signing up! We sent you an e-mail at {{email}} to validate your account.",
       "secure_expired": {
         "first_sentence": "We logged you out as we thought you were gone.",
         "second_sentence": "Log in again to keep voting and submitting your solutions.",
@@ -315,13 +315,13 @@
       "title": "Thank you {{name}}!",
       "description": "Your solution will be moderated by our team.",
       "button": "Keep voting",
-      "tooltip_title": "@@proposal_submit.success.tooltip_title|fr:En cours de modération",
-      "tooltip_description": "@@proposal_submit.success.tooltip_description|fr:Votre proposition sera traitée par nos équipes sous 48h, en attendant vous pouvez la retrouver dès maintenant dans votre profil.",
-      "grats": "@@proposal_submit.success.grats|fr:Félicitations {{name}}, ",
-      "proposal_sent": "@@proposal_submit.success.proposal_sent|fr:votre proposition a été envoyée ",
+      "tooltip_title": "Under moderation",
+      "tooltip_description": "Your solution will be processed by our teams within 48 hours, in the meantime you can already find it in your profile.",
+      "grats": "Congratulations {{name}}, ",
+      "proposal_sent": "your proposal has been submitted ",
       "activate": "@@proposal_submit.success.activate|fr:Activez votre compte en un click",
-      "link": "@@proposal_submit.success.link|fr:Cliquez sur le lien d'activation qui vous a été envoyé à l'adresse : {{mail}}",
-      "question": "@@proposal_submit.success.question|fr:Une question ? Vous pouvez nous contacter à : "
+      "link": "Confirm your email address in one click to ensure the authenticity of your account. Click on the activation link that you received at : {{mail}}",
+      "question": "Do you have a question? Please contact us at : "
     },
     "form": {
       "bait": "We should ",
@@ -344,8 +344,8 @@
       "button_login_text": "I already have an account,",
       "button_login_link": "log me in",
       "back_authentication": "Go back to the login screen",
-      "last_step_red": "@@proposal_submit.authentication.last_step_red|fr:plus qu'une étape ",
-      "last_step": "@@proposal_submit.authentication.last_step|fr:pour envoyer votre proposition !",
+      "last_step_red": "Only one step left ",
+      "last_step": "to send your solution !",
       "back": "@@proposal_submit.authentication.back|fr:Retour",
       "button_login": "@@proposal_submit.authentication.button_login|fr:Se connecter"
     }
@@ -415,7 +415,7 @@
     "social_connect": "Sign up with",
     "or": "or",
     "button_connect": "Sign up",
-    "email_connect": "Sign up with my email",
+    "email_connect": "Sign up with my e-mail",
     "forgot_password_title": "Oops,",
     "forgot_password_link": "I forgot my password.",
     "registration_title": "I don’t have an account,",
@@ -429,18 +429,18 @@
     "social_connect": "Sign up with",
     "or": "or",
     "subtitle": "Sign up using this form",
-    "step1_title": "Subscribe by email",
+    "step1_title": "Subscribe by e-mail",
     "step2_title": "Complete my registration",
     "login_title": "I already have an account.",
     "login_link": "Log in",
     "gtu_text_first": "By signing up, you agree to our ",
-    "gtu_text_second": " and consent to receive emails from Make.org (we only send when necessary).",
+    "gtu_text_second": " and consent to receive e-mails from Make.org (we only send when necessary).",
     "gtu_link": "terms of service."
   },
   "forgot_password": {
     "title": "Reset my password",
-    "description": "Enter the email you signed up with to reset your password.",
-    "success": "Thank you. We sent you an email to reset your password.",
+    "description": "Enter the e-mail you signed up with to reset your password.",
+    "success": "Thank you. We sent you an e-mail to reset your password.",
     "return": "Go back to ",
     "login_link": "the login screen",
     "send_link": "receive the e-mail",
@@ -573,7 +573,7 @@
         "organisation": "Name of the organization: ",
         "firstname": "First name: ",
         "lastname": "Last name: ",
-        "email": "Email: ",
+        "email": "E-Mail: ",
         "postal_code": "Postcode: ",
         "age": "Age: ",
         "profession": "Job: ",
@@ -797,7 +797,7 @@
     },
     "citizen_account": {
       "title": "Your citizen account on Make.org",
-      "description": "Thanks to your personal account you have access to the results of your solutions and the records for your votes, as well as receiving the results of the consultations. By registering with us, you will be informed by email of the next citizen consultations and you will be invited to our participative events.",
+      "description": "Thanks to your personal account you have access to the results of your solutions and the records for your votes, as well as receiving the results of the consultations. By registering with us, you will be informed by e-mail of the next citizen consultations and you will be invited to our participative events.",
       "button_text": "I register"
     },
     "cards": {
@@ -942,7 +942,7 @@
       "title": "Information",
       "subtitle_first": "How to give your opinion on a citizen idea?",
       "description_first": "You can vote for any idea with (\"Agree\", \"Disagree\" or \"Neutral\") along with a term to specify your thoughts. This will generate three new fields, in which you can detail your three key measures and/or explain your opinion.",
-      "description_second": "If you want to edit your measures after clicking \"Publish\", send us an email at {{mailto}}",
+      "description_second": "If you want to edit your measures after clicking \"Publish\", send us an e-mail at {{mailto}}",
       "subtitle_second": "How can I modify my answers ?"
     }
   },
@@ -1045,12 +1045,12 @@
   },
   "contact": {
     "contactUs": "Contact us",
-    "paragraph": "Have an suggestion or want to report a bug? Feel free to send us an email:"
+    "paragraph": "Have an suggestion or want to report a bug? Feel free to send us an e-mail:"
   },
   "legal": {
     "title": "Legal mentions",
     "make_infos": "Website's publisher: MAKE.ORG, Société par Actions Simplifiées with a capital of {{make_capital}}, having its headquarters at {{make_address}} FRANCE, registered with the RCS of PARIS under the number {{make_rcs}} (here after 'MAKE.ORG').",
-    "mail": "Email: ",
+    "mail": "E-Mail: ",
     "make_phone": "Phone number: ",
     "make_phone_number": "{{make_phone_number}}",
     "director": "Head of publishing: ",
@@ -1139,8 +1139,8 @@
     "privacy_policy_link": "notice",
     "privacy_policy_last_part": ".",
     "privacy_policy": "privacy policy",
-    "make_protect": "@@legal_consent.make_protect|fr:Make.org s'engage à protéger vos",
-    "make_protect_link": "@@legal_consent.make_protect_link|fr:données personnelles.",
+    "make_protect": "Make.org is committed to protecting your ",
+    "make_protect_link": "personal data.",
     "opt_out": "I am opposed to receiving marketing e-mails to inform me of projects conducted by Make.org."
   },
   "browse": {

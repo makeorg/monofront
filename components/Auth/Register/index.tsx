@@ -42,12 +42,12 @@ type Props = {
 
 export const Register: React.FC<Props> = ({ panel }) => {
   const { dispatch, state } = useAppContext();
-  const { proposalContent, firstname } = state.pendingProposal;
+  const { proposalContent } = state.pendingProposal;
   const [user, setUser] = useState<RegisterFormDataType>({
     email: '',
     password: '',
     profile: {
-      firstname: firstname || '',
+      firstname: '',
       age: '',
       postalcode: '',
       legalMinorConsent: false,
@@ -154,7 +154,7 @@ export const Register: React.FC<Props> = ({ panel }) => {
         if (!panel) {
           dispatch(modalClose());
         }
-        if (proposalContent && firstname && panel) {
+        if (proposalContent && panel) {
           await ProposalService.propose(
             proposalContent,
             question.questionId,

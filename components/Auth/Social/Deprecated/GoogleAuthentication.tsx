@@ -21,7 +21,6 @@ import {
   loginSocialSuccess,
   loginSocialFailure,
   getUser,
-  getUserRegister,
 } from '@make.org/store/actions/authentication';
 import { Logger } from '@make.org/utils/services/Logger';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
@@ -38,16 +37,10 @@ import {
   SvgLogoWrapperStyle,
 } from '../style';
 
-type Props = {
-  updateFirstname?: boolean;
-};
-
-export const DeprecatedGoogleAuthentication: FC<Props> = ({
-  updateFirstname,
-}) => {
+export const DeprecatedGoogleAuthentication: FC = () => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy } = state.appConfig || {};
-  const { proposalContent, firstname } = state.pendingProposal;
+  const { proposalContent } = state.pendingProposal;
   const question = selectCurrentQuestion(state);
 
   /** Google login method callback */
@@ -57,12 +50,8 @@ export const DeprecatedGoogleAuthentication: FC<Props> = ({
     const success = async (isNewAccount: boolean) => {
       dispatch(loginSocialSuccess());
       trackAuthenticationSocialSuccess(GOOGLE_PROVIDER_ENUM, isNewAccount);
-      // @todo need to clean after AB/testing
-      if (firstname && updateFirstname) {
-        await getUserRegister(dispatch, firstname);
-      } else {
-        await getUser(dispatch, state.modal.isOpen);
-      }
+      await getUser(dispatch, state.modal.isOpen);
+
       dispatch(
         displayNotificationBanner(
           NOTIF.LOGIN_SUCCESS_MESSAGE,

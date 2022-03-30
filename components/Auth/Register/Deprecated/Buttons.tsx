@@ -33,8 +33,8 @@ export const DeprecatedAuthenticationRegisterButtons: FC<Props> = ({
   };
   return (
     <AuthenticationButtonWrapperStyle data-cy-container="signup-auth-buttons">
-      <DeprecatedFacebookAuthentication updateFirstname />
-      <DeprecatedGoogleAuthentication updateFirstname />
+      <DeprecatedFacebookAuthentication />
+      <DeprecatedGoogleAuthentication />
       <SeparatorWrapperStyle>
         <ProposalSubmitAuthSeparator className="no-margin-top" />
         <TextSeparatorStyle>{i18n.t('login.or')}</TextSeparatorStyle>

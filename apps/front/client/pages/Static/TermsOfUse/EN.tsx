@@ -413,7 +413,7 @@ export const TermsOfUseEN: FC = () => {
                   maximum of 100 solutions for each consultation, in order to
                   give enough space for every User to express themselves. Beyond
                   this threshold, new solutions won’t be moderated by our team,
-                  the User will be notified by email and we will guide him in
+                  the User will be notified by e-mail and we will guide him in
                   his correct use of the platform.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
