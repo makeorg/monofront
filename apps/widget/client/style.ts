@@ -10,7 +10,7 @@ import { SequenceMainTitleStyle } from '../../../components/Sequence/Cards/style
 export const WidgetContainerStyle = styled(ColumnElementStyle)`
   border: 1px solid ${BorderColors.LightGrey};
   width: 100%;
-  height: 550px;
+  height: 572px;
   position: relative;
   overflow: hidden;
   max-width: 635px;

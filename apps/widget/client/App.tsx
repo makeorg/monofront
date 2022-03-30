@@ -4,7 +4,6 @@ import { FontFacesStylesheet } from '@make.org/assets/css-in-js/FontFaces';
 import { ModernNormalizeStylesheet } from '@make.org/assets/css-in-js/ModernNormalize';
 import { UIThemeStylesheet } from '@make.org/assets/css-in-js/UITheme';
 import { Routes } from './Routes';
-import { WidgetContainerStyle } from './style';
 
 const App: FC = () => (
   <>
@@ -12,9 +11,7 @@ const App: FC = () => (
     <FontFacesStylesheet />
     <DefaultStylesheet />
     <UIThemeStylesheet />
-    <WidgetContainerStyle>
-      <Routes />
-    </WidgetContainerStyle>
+    <Routes />
   </>
 );
 

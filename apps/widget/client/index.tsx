@@ -64,7 +64,7 @@ const initialState = createInitialState();
 
 if (env.isDev()) {
   // Set state for dev env, pass desired slug
-  window.INITIAL_STATE = initDevState(initialState, 'tourisme');
+  window.INITIAL_STATE = initDevState(initialState, 'environnement');
 }
 
 const serverState = window.INITIAL_STATE || initialState;

@@ -10,13 +10,19 @@ import { ProposalJourney } from '@make.org/components/Proposal/Submit/Journey';
 import { TriggerIconStyle } from '@make.org/components/Proposal/Submit/style';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { clearProposalPending } from '@make.org/store/actions/pendingProposal';
+
 import {
   MainTitleStyle,
   LogoStyle,
   PanelContainer,
   ProposeButtonStyle,
+  KindLabelWrapperStyle,
+  KindLabelTextStyle,
+  KindLabelStyle,
+  KindLabelControversyIconStyle,
+  // KindLabelPopularIconStyle, /!\ TODO: problem with popular svg
+  InnerPanelWrapperStyle,
 } from './style';
-
 export const HeaderPanel: FC = () => {
   const { state, dispatch } = useAppContext();
   const question: QuestionType = selectCurrentQuestion(state);
@@ -34,19 +40,27 @@ export const HeaderPanel: FC = () => {
       <SequenceTitleStyle className="widget">
         {question.question}
       </SequenceTitleStyle>
-      {canPropose && (
-        <ProposeButtonStyle
-          className="widget"
-          onClick={() => {
-            dispatch(clearProposalPending());
-            dispatch(setPanelContent(<ProposalJourney />));
-          }}
-          data-cy-button="proposal-panel"
-        >
-          <TriggerIconStyle aria-hidden focusable="false" />
-          {i18n.t('proposal_submit.form.panel_trigger')}
-        </ProposeButtonStyle>
-      )}
+      <InnerPanelWrapperStyle>
+        {canPropose && (
+          <ProposeButtonStyle
+            className="widget"
+            onClick={() => {
+              dispatch(clearProposalPending());
+              dispatch(setPanelContent(<ProposalJourney />));
+            }}
+            data-cy-button="proposal-panel"
+          >
+            <TriggerIconStyle aria-hidden focusable="false" />
+            {i18n.t('proposal_submit.form.panel_trigger')}
+          </ProposeButtonStyle>
+        )}
+        <KindLabelWrapperStyle>
+          <KindLabelStyle>
+            <KindLabelControversyIconStyle />
+            <KindLabelTextStyle>Propositions populaires</KindLabelTextStyle>
+          </KindLabelStyle>
+        </KindLabelWrapperStyle>
+      </InnerPanelWrapperStyle>
     </PanelContainer>
   );
 };

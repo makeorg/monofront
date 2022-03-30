@@ -13,6 +13,7 @@ import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selec
 import { HeaderPanel } from '../../components/HeaderPanel';
 import { ClosedConsultation } from '../../components/ClosedConsultation';
 import { IntroProposal } from '../../components/IntroProposal';
+import { WidgetContainerStyle } from '../../style';
 
 export const RootPage: FC = () => {
   const { state } = useAppContext();
@@ -32,7 +33,7 @@ export const RootPage: FC = () => {
   }
 
   return (
-    <>
+    <WidgetContainerStyle>
       <HeaderPanel />
       {topProposal ? (
         <IntroProposal handleChange={disableTopProposal} />
@@ -42,6 +43,6 @@ export const RootPage: FC = () => {
       <Panel />
       <Modal />
       {showDataPolicy && <PrivacyPolicyModal />}
-    </>
+    </WidgetContainerStyle>
   );
 };
