@@ -8,7 +8,7 @@ This project gathers shared pakages and apps for make.org front end products.
 4. [Shared Packages](#shared_packages)
 5. [Apps](#apps)
 6. [Contributing](#contributing)
-7. [Checks](#contributing)
+7. [Tooling](#tooling)
 8. [TODO](#todo)
 
 
@@ -70,7 +70,7 @@ For further informations, please refers to each README.md :
 Refers to [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 
-## <a name="checks"></a>Linting, checking and unit testing
+## <a name="tooling"></a>Tooling
 ### Unit testing
 To launch test :
 ``` bash
@@ -110,6 +110,8 @@ $ yarn jest
 $ yarn jscpd
 ```
 
+### Convert SVG to React Component
+Refers to @make.org/ui [README.md](./ui/README.md).
 
 ## <a name="todo"></a>TODO
 - [ ] Add `Create a new package` instructions
