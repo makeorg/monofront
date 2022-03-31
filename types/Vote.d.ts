@@ -6,4 +6,7 @@ export type VoteType = {
   score: number;
   qualifications: QualificationType[];
   hasVoted: boolean;
+  agree?: any;
+  disagree?: any;
+  neutral?: any;
 };

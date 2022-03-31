@@ -32,6 +32,9 @@ export const updateAndGetVotes = (
   votesToUpdate: VoteType[],
   vote: VoteType
 ): VoteType[] =>
+  // @todo Temporary fix following changes of Vote structure. Will probably need a complete refacto
   votesToUpdate.map(oldVote =>
-    oldVote.voteKey === vote.voteKey ? vote : oldVote
+    oldVote.voteKey === vote[oldVote.voteKey as keyof VoteType]?.voteKey
+      ? vote[oldVote.voteKey as keyof VoteType]
+      : oldVote
   );

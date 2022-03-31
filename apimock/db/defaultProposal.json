@@ -28,7 +28,8 @@
           "hasQualified":false
         }
       ],
-      "hasVoted":false
+      "hasVoted":false,
+      "score": 0.30
     },
     {
       "voteKey":"disagree",
@@ -50,7 +51,8 @@
           "hasQualified":false
         }
       ],
-      "hasVoted":false
+      "hasVoted":false,
+      "score": 0.50
     },
     {
       "voteKey":"neutral",
@@ -72,7 +74,8 @@
           "hasQualified":false
         }
       ],
-      "hasVoted":false
+      "hasVoted":false, 
+      "score": 0.30
     }
   ],
   "context":{

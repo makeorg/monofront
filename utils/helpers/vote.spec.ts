@@ -2,18 +2,25 @@ import { getVoteKey, updateAndGetVotes } from './vote';
 
 const votes = [
   {
-    voteKey: 'vote1',
+    voteKey: 'agree',
     count: 2,
     qualifications: [],
     hasVoted: false,
     score: 0.56,
   },
   {
-    voteKey: 'vote2',
+    voteKey: 'disagree',
     count: 2,
     qualifications: [],
     hasVoted: false,
     score: 0.64,
+  },
+  {
+    voteKey: 'neutral',
+    count: 2,
+    qualifications: [],
+    hasVoted: false,
+    score: 0.67,
   },
 ];
 
@@ -27,11 +34,18 @@ describe('vote', () => {
   it('updateAndGetVotes function with unknown vote key', () => {
     expect(
       updateAndGetVotes(votes, {
-        voteKey: 'vote3',
-        count: 2,
+        neutral: {
+          voteKey: 'neutral',
+          count: 2,
+          qualifications: [],
+          hasVoted: false,
+          score: 0.67,
+        },
+        voteKey: 'agree',
+        count: 3,
         qualifications: [],
-        hasVoted: false,
-        score: 0.67,
+        hasVoted: true,
+        score: 0.56,
       })
     ).toEqual(votes);
   });
@@ -39,7 +53,28 @@ describe('vote', () => {
   it('updateAndGetVotes function with known vote key', () => {
     expect(
       updateAndGetVotes(votes, {
-        voteKey: 'vote1',
+        agree: {
+          voteKey: 'agree',
+          count: 3,
+          qualifications: [],
+          hasVoted: true,
+          score: 0.56,
+        },
+        disagree: {
+          voteKey: 'disagree',
+          count: 2,
+          qualifications: [],
+          hasVoted: false,
+          score: 0.64,
+        },
+        neutral: {
+          voteKey: 'neutral',
+          count: 2,
+          qualifications: [],
+          hasVoted: false,
+          score: 0.67,
+        },
+        voteKey: 'agree',
         count: 3,
         qualifications: [],
         hasVoted: true,
@@ -47,18 +82,25 @@ describe('vote', () => {
       })
     ).toEqual([
       {
-        voteKey: 'vote1',
+        voteKey: 'agree',
         count: 3,
         qualifications: [],
         hasVoted: true,
         score: 0.56,
       },
       {
-        voteKey: 'vote2',
+        voteKey: 'disagree',
         count: 2,
         qualifications: [],
         hasVoted: false,
         score: 0.64,
+      },
+      {
+        voteKey: 'neutral',
+        count: 2,
+        qualifications: [],
+        hasVoted: false,
+        score: 0.67,
       },
     ]);
   });
