@@ -4,7 +4,7 @@
   "private": true,
   "sideEffects": false,
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "~0.26.1",
     "react": "^17.0.2"
   },
   "browserslist": {},

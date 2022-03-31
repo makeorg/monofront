@@ -40,6 +40,7 @@ export type ApiServiceHeadersType = {
   Authorization?: string;
   'Cache-Control'?: string;
   Pragma?: string;
+  'set-cookie'?: string[];
 };
 
 export type ErrorObjectType = {
@@ -70,7 +71,7 @@ type AxiosConfigType = {
   baseURL?: string;
   transformRequest?: (data: T, headers: Record<string, string>) => T;
   transformResponse?: (data: T) => T;
-  headers?: Record<string, string>;
+  headers?: Record<string, string | string[]>;
   params?: Record<string | boolean | number | undefined> | URLSearchParams;
   paramsSerializer?: (params: unknown) => string;
   data?: unknown;

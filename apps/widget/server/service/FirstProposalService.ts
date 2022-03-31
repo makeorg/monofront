@@ -40,7 +40,7 @@ const getFirstProposal = async (
       }
     );
 
-    return handleData(response?.data, response?.headers['x-session-id']);
+    return handleData(response?.data, response?.headers['x-session-id'] || '');
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 404) {

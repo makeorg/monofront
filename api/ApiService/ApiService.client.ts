@@ -256,7 +256,7 @@ export class ApiServiceClient implements IApiServiceStrategy {
     } catch (error: unknown) {
       const apiServiceError = error as ApiServiceError;
       this._headersListeners.forEach(
-        (listener: (headers: Readonly<Record<string, string>>) => void) =>
+        (listener: (headers: Readonly<ApiServiceHeadersType>) => void) =>
           apiServiceError?.headers && listener(apiServiceError?.headers)
       );
 

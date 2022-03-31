@@ -7,8 +7,8 @@
     "@make.org/assets": "0.1.0",
     "@make.org/types": "0.1.0",
     "@make.org/utils": "0.1.0",
-    "axios": "^0.21.1",
-    "axios-retry": "^3.1.9",
+    "axios": "~0.26.1",
+    "axios-retry": "~3.2.4",
     "react-router": "^5.2.0",
     "uuid": "^8.3.2"
   },

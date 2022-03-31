@@ -4,6 +4,7 @@ import { showSessionExpirationModal } from '@make.org/store/actions/modal';
 import { apiClient } from '@make.org/api/ApiService/ApiService.client';
 import { updateSessionId } from '@make.org/store/actions/session';
 import { useAppContext } from '@make.org/store';
+import { ApiServiceHeadersType } from '@make.org/types';
 import { ExpirationSessionModal } from './Modal';
 
 type Props = {
@@ -42,8 +43,8 @@ const SessionExpirationWithCoockiesHandler: React.FC<Props> = ({
   useEffect(() => {
     apiClient.addHeadersListener(
       apiHeaderListenerName,
-      (headers: { [key: string]: string }): void => {
-        setApiSessionId(headers['x-session-id']);
+      (headers: ApiServiceHeadersType): void => {
+        setApiSessionId(headers['x-session-id'] || '');
       }
     );
 
@@ -135,9 +136,11 @@ export const SessionExpiration: React.FC<Properties> = ({ children }) => {
   useEffect(() => {
     apiClient.addHeadersListener(
       apiHeaderListenerName,
-      (headers: { [key: string]: string }): void => {
-        setApiSessionId(headers['x-session-id']);
-        setSessionExpirationDate(new Date(headers['x-session-id-expiration']));
+      (headers: ApiServiceHeadersType): void => {
+        setApiSessionId(headers['x-session-id'] || '');
+        setSessionExpirationDate(
+          new Date(headers['x-session-id-expiration'] || tomorrow)
+        );
       }
     );
 

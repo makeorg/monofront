@@ -12,7 +12,7 @@
     "@make.org/ui": "0.1.0",
     "@make.org/utils": "0.1.0",
     "athena-design-tokens": "^0.1.7",
-    "axios": "^0.21.1",
+    "axios": "~0.26.1",
     "date-fns": "^2.22.1",
     "express": "^4.17.1",
     "express-prom-bundle": "^6.4.1",
