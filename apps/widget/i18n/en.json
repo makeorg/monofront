@@ -400,7 +400,11 @@
   "sequence": {
     "return": "Vote for solutions",
     "title": "Vote for the solutions of the consultation: ",
-    "more": "Learn more about the consultation"
+    "more": "Learn more about the consultation",
+    "label": {
+      "controversial": "@@sequence.label.controversial|fr:Propositions controversées",
+      "popular": "@@sequence.label.popular|fr:Propositions populaires"
+    }
   },
   "authentication": {
     "title": "Sign up to submit your solution",

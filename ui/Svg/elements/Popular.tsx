@@ -1,51 +1,35 @@
+/* eslint-disable react/style-prop-object */
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
 
 export const SvgPopular: React.FC<SvgPropsType> = (props: SvgPropsType) => (
-  <svg width={24} height={23} fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g filter="url(#popular_svg__a)">
+  <svg
+    width={20}
+    height={20}
+    {...props}
+    version="1.1"
+    id="Calque_1"
+    x="0px"
+    y="0px"
+    viewBox="0 0 20 20"
+    xmlSpace="preserve"
+  >
+    <g>
       <path
-        d="m12.549 18.785 7.425-7.442c1.825-1.828 2.094-4.836.367-6.758a4.766 4.766 0 0 0-3.418-1.583 4.756 4.756 0 0 0-3.497 1.397L12.03 5.797 10.825 4.59C9.001 2.76 6 2.492 4.082 4.222a4.775 4.775 0 0 0-1.58 3.425 4.785 4.785 0 0 0 1.394 3.505l7.616 7.633a.732.732 0 0 0 1.037 0Z"
         fill="#D5153C"
+        d="M10,18c-0.5,0-1.1-0.2-1.4-0.6l-6-6.2c-1-1.1-1.6-2.5-1.5-4c0.1-1.5,0.7-2.9,1.9-3.9C3.8,2.4,4.9,2,6.2,2
+			C7.6,2,9,2.6,10,3.6c1-1,2.4-1.6,3.8-1.6c1.2,0,2.4,0.4,3.3,1.2c1.1,1,1.8,2.4,1.9,3.9c0.1,1.5-0.5,3-1.5,4.1l-6,6.2
+			C11.1,17.8,10.5,18,10,18z"
       />
       <path
-        d="M12.718 3.692h0a5.765 5.765 0 0 1 4.233-1.69 5.757 5.757 0 0 1 4.134 1.915l-8.367-.225Zm0 0-.688.69m.688-.69-.688.69m0 0-.497-.499C9.384 1.73 5.778 1.345 3.413 3.48l8.617.903Z"
-        stroke="#fff"
-        strokeWidth={2}
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        fill="#FFFFFF"
+        d="M13.8,3c0.9,0,1.9,0.3,2.6,1c1.9,1.7,2,4.7,0.3,6.5l-6,6.2C10.5,16.9,10.3,17,10,17c-0.3,0-0.5-0.1-0.7-0.3
+			l-6-6.2C1.5,8.6,1.6,5.6,3.5,4c0.8-0.7,1.7-1,2.6-1c1.2,0,2.4,0.5,3.2,1.4L10,5l0.6-0.6C11.5,3.5,12.7,3,13.8,3 M13.8,1L13.8,1
+			c-1.4,0-2.7,0.5-3.8,1.3C8.9,1.5,7.5,1,6.2,1C4.7,1,3.3,1.5,2.2,2.5C0.9,3.6,0.1,5.3,0,7.1c-0.1,1.8,0.6,3.5,1.8,4.8l6,6.2
+			C8.4,18.7,9.2,19,10,19c0.8,0,1.6-0.3,2.2-0.9l6-6.2c1.2-1.3,1.9-3,1.8-4.8c-0.1-1.8-0.9-3.4-2.2-4.6C16.7,1.5,15.3,1,13.8,1
+			L13.8,1z"
       />
     </g>
-    <defs>
-      <filter
-        id="popular_svg__a"
-        x={-1.5}
-        y={0}
-        width={27.002}
-        height={24}
-        filterUnits="userSpaceOnUse"
-        colorInterpolationFilters="sRGB"
-      >
-        <feFlood floodOpacity={0} result="BackgroundImageFix" />
-        <feColorMatrix
-          in="SourceAlpha"
-          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          result="hardAlpha"
-        />
-        <feOffset dy={1} />
-        <feGaussianBlur stdDeviation={1} />
-        <feComposite in2="hardAlpha" operator="out" />
-        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.32 0" />
-        <feBlend
-          in2="BackgroundImageFix"
-          result="effect1_dropShadow_3031_3804"
-        />
-        <feBlend
-          in="SourceGraphic"
-          in2="effect1_dropShadow_3031_3804"
-          result="shape"
-        />
-      </filter>
-    </defs>
   </svg>
 );

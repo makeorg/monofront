@@ -1,5 +1,6 @@
 import { typography, color } from 'athena-design-tokens';
 import { RedButtonAsLinkStyle } from '@make.org/ui/elements/ButtonsElements';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import {
   SvgSmallLogo,
   SvgControversy,
@@ -62,24 +63,24 @@ export const KindLabelWrapperStyle = styled.div`
   align-items: center;
 `;
 
-export const KindLabelStyle = styled.div`
+export const KindLabelBackgroundStyle = styled.div`
   border-radius: 8px;
   background-color: ${color.greyLighter};
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
+  margin: 15px 0;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     margin: 0;
   }
 `;
 
 export const KindLabelTextStyle = styled.span`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   line-height: ${intToPx(typography.font.fontsize.XS.value)};
-  font-weight: 700;
+  font-family: ${MakeFonts.CircularStandardBold};
   padding: 8px;
-  letter-spacing: 0.22px;
+  letter-spacing: 0.12px;
 `;
 
 export const KindLabelControversyIconStyle = styled(SvgControversy)`
@@ -89,7 +90,7 @@ export const KindLabelControversyIconStyle = styled(SvgControversy)`
 `;
 
 export const KindLabelPopularIconStyle = styled(SvgPopular)`
-  width: 20px;
+  width: 24px;
   height: 24px;
   margin-left: 8px;
 `;

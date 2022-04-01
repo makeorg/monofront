@@ -1,52 +1,35 @@
+/* eslint-disable react/style-prop-object */
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
 
 export const SvgControversy: React.FC<SvgPropsType> = (props: SvgPropsType) => (
-  <svg width={20} height={24} fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g filter="url(#controversy_svg__b)" clipPath="url(#controversy_svg__a)">
+  <svg
+    width={20}
+    height={20}
+    version="1.1"
+    id="Calque_1"
+    x="0px"
+    y="0px"
+    viewBox="0 0 20 20"
+    {...props}
+  >
+    <g>
       <path
-        d="M14.261 9h-3.626l1.344-4.031c.125-.5-.25-.969-.719-.969H6.758c-.375 0-.719.281-.75.656l-1 7.5c-.063.469.28.844.75.844h3.689l-1.438 6.094c-.094.468.25.906.719.906.281 0 .531-.125.656-.375l5.503-9.5C15.199 9.656 14.824 9 14.26 9Z"
-        fill="#FFE360"
+        fill="#F7B502"
+        d="M7.1,18.5c-0.4,0-0.8-0.1-1.1-0.4c-0.8-0.5-1-1.5-0.7-2.4L7,11.9H5.1c-0.8,0-1.6-0.5-1.8-1.2
+		C3,9.9,3.2,9,3.9,8.5L11.6,2c0.4-0.3,0.8-0.5,1.3-0.5c0.4,0,0.8,0.1,1.1,0.4c0.8,0.5,1,1.5,0.7,2.4L13,8.1h1.9
+		c0.8,0,1.6,0.5,1.8,1.2c0.3,0.7,0.1,1.6-0.5,2.1L8.4,18C8,18.3,7.6,18.5,7.1,18.5z"
       />
       <path
-        d="M14.261 8h-2.239l.906-2.715.012-.036.01-.038C13.225 4.106 12.405 3 11.26 3H6.758c-.821 0-1.65.604-1.744 1.543l-.998 7.481C3.87 13.117 4.71 14 5.758 14h2.425l-1.148 4.864-.004.017-.003.017c-.21 1.051.563 2.102 1.7 2.102.57 0 1.201-.263 1.534-.895l5.477-9.457C16.49 9.472 15.553 8 14.261 8Z"
-        stroke="#fff"
-        strokeWidth={2}
+        fill="#FFFFFF"
+        d="M12.9,2.5c0.2,0,0.4,0.1,0.6,0.2c0.4,0.3,0.5,0.7,0.3,1.1l-2.3,5.3l3.4,0c0.4,0,0.8,0.2,0.9,0.6
+		c0.2,0.3,0.1,0.8-0.2,1l-7.8,6.5c-0.2,0.2-0.4,0.3-0.7,0.3c-0.2,0-0.4-0.1-0.6-0.2c-0.4-0.3-0.5-0.7-0.3-1.1l2.3-5.3H5.1
+		c-0.4,0-0.8-0.2-0.9-0.6c-0.1-0.4,0-0.8,0.3-1l7.8-6.5C12.4,2.6,12.7,2.5,12.9,2.5 M12.9,0.5c-0.7,0-1.4,0.3-1.9,0.7L3.2,7.8
+		c-1,0.8-1.3,2.1-0.8,3.3c0.4,1.1,1.6,1.9,2.8,1.9h0.3l-1.1,2.5c-0.6,1.3-0.1,2.8,1,3.6c0.5,0.4,1.1,0.5,1.7,0.5
+		c0.7,0,1.4-0.3,2-0.7l7.7-6.5c1-0.8,1.3-2.2,0.8-3.3c-0.5-1.1-1.6-1.8-2.7-1.8l-0.3,0l1.1-2.5c0.6-1.3,0.1-2.8-1-3.6
+		C14.1,0.7,13.5,0.5,12.9,0.5L12.9,0.5z"
       />
     </g>
-    <defs>
-      <clipPath id="controversy_svg__a">
-        <path fill="#fff" d="M0 0h20v24H0z" />
-      </clipPath>
-      <filter
-        id="controversy_svg__b"
-        x={0.999}
-        y={1}
-        width={18.014}
-        height={24}
-        filterUnits="userSpaceOnUse"
-        colorInterpolationFilters="sRGB"
-      >
-        <feFlood floodOpacity={0} result="BackgroundImageFix" />
-        <feColorMatrix
-          in="SourceAlpha"
-          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          result="hardAlpha"
-        />
-        <feOffset dy={1} />
-        <feGaussianBlur stdDeviation={1} />
-        <feComposite in2="hardAlpha" operator="out" />
-        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.32 0" />
-        <feBlend
-          in2="BackgroundImageFix"
-          result="effect1_dropShadow_3031_4490"
-        />
-        <feBlend
-          in="SourceGraphic"
-          in2="effect1_dropShadow_3031_4490"
-          result="shape"
-        />
-      </filter>
-    </defs>
   </svg>
 );

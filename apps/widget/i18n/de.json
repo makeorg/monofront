@@ -449,7 +449,11 @@
   "sequence": {
     "return": "Zurück zu den Vorschlägen",
     "title": "Stimme über die Vorschläge der Konsultation ab:",
-    "more": "Die gesamte Konsultation aufrufen"
+    "more": "Die gesamte Konsultation aufrufen",
+    "label": {
+      "controversial": "@@sequence.label.controversial|fr:Propositions controversées",
+      "popular": "@@sequence.label.popular|fr:Propositions populaires"
+    }
   },
   "authentication": {
     "title": "Registriere dich, um deinen Vorschlag zu bestätigen",

@@ -457,7 +457,11 @@
   "sequence": {
     "return": "Revenir aux propositions",
     "title": "Votez sur les propostions de la consultation : ",
-    "more": "Accéder à toute la consultation"
+    "more": "Accéder à toute la consultation",
+    "label": {
+      "controversial": "Propositions controversées",
+      "popular": "Propositions populaires"
+    }
   },
   "authentication": {
     "title": "Inscrivez-vous pour valider votre proposition",

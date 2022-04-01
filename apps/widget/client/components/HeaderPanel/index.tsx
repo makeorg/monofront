@@ -10,7 +10,10 @@ import { ProposalJourney } from '@make.org/components/Proposal/Submit/Journey';
 import { TriggerIconStyle } from '@make.org/components/Proposal/Submit/style';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { clearProposalPending } from '@make.org/store/actions/pendingProposal';
-
+import {
+  isStandardSequence,
+  isPopularSequence,
+} from '@make.org/utils/helpers/sequence';
 import {
   MainTitleStyle,
   LogoStyle,
@@ -18,13 +21,17 @@ import {
   ProposeButtonStyle,
   KindLabelWrapperStyle,
   KindLabelTextStyle,
-  KindLabelStyle,
+  KindLabelBackgroundStyle,
   KindLabelControversyIconStyle,
-  // KindLabelPopularIconStyle, /!\ TODO: problem with popular svg
+  KindLabelPopularIconStyle,
   InnerPanelWrapperStyle,
 } from './style';
+
 export const HeaderPanel: FC = () => {
   const { state, dispatch } = useAppContext();
+  // const { sequenceKind } = state.sequence;
+  const sequenceKind = 'popular';
+  const isPopularSequenceKind = isPopularSequence(sequenceKind);
   const question: QuestionType = selectCurrentQuestion(state);
   const { unsecure } = state.appConfig;
   const canPropose = question.canPropose && !unsecure && isInProgress(question);
@@ -54,12 +61,22 @@ export const HeaderPanel: FC = () => {
             {i18n.t('proposal_submit.form.panel_trigger')}
           </ProposeButtonStyle>
         )}
-        <KindLabelWrapperStyle>
-          <KindLabelStyle>
-            <KindLabelControversyIconStyle />
-            <KindLabelTextStyle>Propositions populaires</KindLabelTextStyle>
-          </KindLabelStyle>
-        </KindLabelWrapperStyle>
+        {!isStandardSequence(sequenceKind) && (
+          <KindLabelWrapperStyle>
+            <KindLabelBackgroundStyle>
+              {isPopularSequenceKind ? (
+                <KindLabelPopularIconStyle />
+              ) : (
+                <KindLabelControversyIconStyle />
+              )}
+              <KindLabelTextStyle>
+                {isPopularSequenceKind
+                  ? i18n.t('sequence.label.popular')
+                  : i18n.t('sequence.label.controversial')}
+              </KindLabelTextStyle>
+            </KindLabelBackgroundStyle>
+          </KindLabelWrapperStyle>
+        )}
       </InnerPanelWrapperStyle>
     </PanelContainer>
   );

@@ -1,6 +1,6 @@
 export { SvgControversy } from './Controversy';
 export { SvgPopular } from './Popular';
-export { SvgThumb } from './Thumb';
+export { SvgBlueArrow } from './BlueArrow';
 export { SvgEmptyAvatar } from './EmptyAvatar';
 export { SvgAngleArrowRight } from './AngleArrowRight';
 export { SvgAngleArrowLeft } from './AngleArrowLeft';
