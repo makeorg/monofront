@@ -71,6 +71,14 @@ API_URL_CLIENT_SIDE=https://api.make.org
 FRONT_URL=https://make.org
 ```
 
+## Updating packages
+[Lerna Update Wizard](https://github.com/Anifacted/lerna-update-wizard) is installed to manage packages across workspaces.
+
+```bash
+$ lernaupdate
+```
+
+
 ## Specificities
 ### Results page
 Check [RESULTS.MD](./server/staticData/RESULTS.MD).
