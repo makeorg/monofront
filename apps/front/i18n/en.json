@@ -343,9 +343,7 @@
       "button_submit": "Validate",
       "read_our": "Read our",
       "moderation_link": "moderation charter",
-      "button_propose": "@@proposal_submit.form.button_propose|fr:PROPOSER",
-      "mandatory_field": "@@proposal_submit.form.mandatory_field|fr:Tous les champs sont obligatoires.",
-      "proposal": "@@proposal_submit.form.proposal|fr:Votre proposition :"
+      "button_propose": "Validate"
     },
     "authentication": {
       "button_back": "Modify my solution",

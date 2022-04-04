@@ -380,9 +380,7 @@
       "button_submit": "Bestätigen",
       "read_our": "Lesen Sie unsere",
       "moderation_link": "Moderationscharta",
-      "button_propose": "@@proposal_submit.form.button_propose|fr:PROPOSER",
-      "mandatory_field": "@@proposal_submit.form.mandatory_field|fr:Tous les champs sont obligatoires.",
-      "proposal": "@@proposal_submit.form.proposal|fr:Votre proposition :"
+      "button_propose": "Bestätigen"
     },
     "authentication": {
       "button_back": "Meinen Vorschlag ändern",
