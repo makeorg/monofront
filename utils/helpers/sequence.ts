@@ -112,7 +112,7 @@ export const isPushProposalCard = (
 export const isStandardSequence = (sequenceKind: string): boolean =>
   sequenceKind === SEQUENCE.KIND_STANDARD;
 
-export const isPopularSequence = (sequenceKind: string): boolean =>
+export const isConsensusSequence = (sequenceKind: string): boolean =>
   sequenceKind === SEQUENCE.KIND_CONSENSUS;
 /**
  * Renders title depending on kind

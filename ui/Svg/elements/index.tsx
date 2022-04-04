@@ -1,6 +1,3 @@
-export { SvgControversy } from './Controversy';
-export { SvgPopular } from './Popular';
-export { SvgBlueArrow } from './BlueArrow';
 export { SvgEmptyAvatar } from './EmptyAvatar';
 export { SvgAngleArrowRight } from './AngleArrowRight';
 export { SvgAngleArrowLeft } from './AngleArrowLeft';

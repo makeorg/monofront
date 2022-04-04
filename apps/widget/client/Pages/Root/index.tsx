@@ -5,7 +5,6 @@ import { Sequence } from '@make.org/components/Sequence/Sequence';
 import { Modal } from '@make.org/components/Modal';
 import { Panel } from '@make.org/components/Panel';
 import { PrivacyPolicyModal } from '@make.org/components/PrivacyPolicyModal';
-// import { isStandardSequence } from '@make.org/utils/helpers/sequence';
 import { Spinner } from '@make.org/ui/components/Loading/Spinner';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { QuestionType } from '@make.org/types';
@@ -17,10 +16,11 @@ import { WidgetContainerStyle } from '../../style';
 
 export const RootPage: FC = () => {
   const { state } = useAppContext();
-  // const { sequenceKind } = state.sequence;
   const { currentQuestion, appConfig, modal } = state;
   const { unsecure } = appConfig;
   const { showDataPolicy } = modal;
+  // @Todo : in logic use the following constant to update widget container style :
+  // const { sequenceKind } = state.sequence;
   // const isStandardSequenceKind = isStandardSequence(sequenceKind);
   const question: QuestionType = selectCurrentQuestion(state);
   const topProposalIsActive = question.activeFeatureData?.topProposal !== null;

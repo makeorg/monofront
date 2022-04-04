@@ -7,13 +7,14 @@ import { typography } from 'athena-design-tokens';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import { SequenceMainTitleStyle } from '../../../components/Sequence/Cards/style';
 
+// @toDo: update container style with props as pentioned hereunder
 // export const WidgetContainerStyle = styled(ColumnElementStyle)<{ iStandardSequence: boolean }>`
 /* height: ${props => (props.iStandardSequence ? '550px' : '572px')}; */
 
 export const WidgetContainerStyle = styled(ColumnElementStyle)`
   border: 1px solid ${BorderColors.LightGrey};
   width: 100%;
-  height: 572px;
+  height: 550px;
   position: relative;
   overflow: hidden;
   max-width: 635px;

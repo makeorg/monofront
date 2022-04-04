@@ -1,11 +1,8 @@
 import { typography, color } from 'athena-design-tokens';
 import { RedButtonAsLinkStyle } from '@make.org/ui/elements/ButtonsElements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
-import {
-  SvgSmallLogo,
-  SvgControversy,
-  SvgPopular,
-} from '@make.org/ui/Svg/elements';
+import { Image } from '@make.org/ui/components/Image';
+import { SvgSmallLogo } from '@make.org/ui/Svg/elements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
@@ -83,13 +80,13 @@ export const KindLabelTextStyle = styled.span`
   letter-spacing: 0.12px;
 `;
 
-export const KindLabelControversyIconStyle = styled(SvgControversy)`
+export const KindLabelControversyIconStyle = styled(Image)`
   width: 20px;
   height: 24px;
   margin-left: 8px;
 `;
 
-export const KindLabelPopularIconStyle = styled(SvgPopular)`
+export const KindLabelPopularIconStyle = styled(Image)`
   width: 24px;
   height: 24px;
   margin-left: 8px;

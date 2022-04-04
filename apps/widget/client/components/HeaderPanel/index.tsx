@@ -12,8 +12,10 @@ import { isInProgress } from '@make.org/utils/helpers/date';
 import { clearProposalPending } from '@make.org/store/actions/pendingProposal';
 import {
   isStandardSequence,
-  isPopularSequence,
+  isConsensusSequence,
 } from '@make.org/utils/helpers/sequence';
+import controversyIcon from '@make.org/assets/images/controversyIcon.png';
+import popularIcon from '@make.org/assets/images/popularIcon.png';
 import {
   MainTitleStyle,
   LogoStyle,
@@ -22,16 +24,17 @@ import {
   KindLabelWrapperStyle,
   KindLabelTextStyle,
   KindLabelBackgroundStyle,
-  KindLabelControversyIconStyle,
   KindLabelPopularIconStyle,
+  KindLabelControversyIconStyle,
   InnerPanelWrapperStyle,
 } from './style';
 
 export const HeaderPanel: FC = () => {
   const { state, dispatch } = useAppContext();
   // const { sequenceKind } = state.sequence;
-  const sequenceKind = 'popular';
-  const isPopularSequenceKind = isPopularSequence(sequenceKind);
+  // @toDo: in logic use sequenceKind from state (see above in comment) instead of const sequenceKind (see hereunder)
+  const sequenceKind = 'consensus';
+  const isConsensusSequenceKind = isConsensusSequence(sequenceKind);
   const question: QuestionType = selectCurrentQuestion(state);
   const { unsecure } = state.appConfig;
   const canPropose = question.canPropose && !unsecure && isInProgress(question);
@@ -64,13 +67,13 @@ export const HeaderPanel: FC = () => {
         {!isStandardSequence(sequenceKind) && (
           <KindLabelWrapperStyle>
             <KindLabelBackgroundStyle>
-              {isPopularSequenceKind ? (
-                <KindLabelPopularIconStyle />
+              {isConsensusSequenceKind ? (
+                <KindLabelPopularIconStyle src={popularIcon} alt="" />
               ) : (
-                <KindLabelControversyIconStyle />
+                <KindLabelControversyIconStyle src={controversyIcon} alt="" />
               )}
               <KindLabelTextStyle>
-                {isPopularSequenceKind
+                {isConsensusSequenceKind
                   ? i18n.t('sequence.label.popular')
                   : i18n.t('sequence.label.controversial')}
               </KindLabelTextStyle>
