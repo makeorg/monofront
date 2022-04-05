@@ -30,7 +30,7 @@ import {
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { UserService } from '@make.org/utils/services/User';
 import { Logger } from '@make.org/utils/services/Logger';
-import { DeprecatedProposalSuccess } from '@make.org/components/Proposal/Submit/Deprecated/Success';
+import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { setPanelContent } from '@make.org/store/actions/panel';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
@@ -68,7 +68,7 @@ export const DataPolicy: React.FC = () => {
     );
     if (proposalContent && question) {
       await ProposalService.propose(proposalContent, question.questionId, () =>
-        dispatch(setPanelContent(<DeprecatedProposalSuccess />))
+        dispatch(setPanelContent(<ProposalSuccess />))
       );
     }
 

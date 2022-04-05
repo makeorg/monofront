@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 import { modalClose } from '@make.org/store/actions/modal';
-import { DeprecatedLogin as Login } from '@make.org/components/Auth/Login/Deprecated/index';
-// import { Register } from '@make.org/components/Auth/Register';
-import { DeprecatedRegister as Register } from '@make.org/components/Auth/Register/Deprecated';
+import { Login } from '@make.org/components/Auth/Login/index';
+import { Register } from '@make.org/components/Auth/Register';
 import { PasswordForgot } from '@make.org/components/Auth/PasswordForgot';
 import { trackClickCloseModal } from '@make.org/utils/services/Tracking';
 import i18n from 'i18next';
