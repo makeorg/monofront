@@ -2,6 +2,7 @@ import React, { FC, useState } from 'react';
 import { SEQUENCE } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
 import { Sequence } from '@make.org/components/Sequence/Sequence';
+import { isStandardSequence } from '@make.org/utils/helpers/sequence';
 import { Modal } from '@make.org/components/Modal';
 import { Panel } from '@make.org/components/Panel';
 import { PrivacyPolicyModal } from '@make.org/components/PrivacyPolicyModal';
@@ -20,9 +21,9 @@ export const RootPage: FC = () => {
   const { sequenceKind } = state.sequence;
   const { unsecure } = appConfig;
   const { showDataPolicy } = modal;
-  // @Todo : in logic use the following constant to update widget container style :
-  // const { sequenceKind } = state.sequence;
-  // const isStandardSequenceKind = isStandardSequence(sequenceKind);
+  const isStandardSequenceKind = sequenceKind
+    ? isStandardSequence(sequenceKind)
+    : true;
   const question: QuestionType = selectCurrentQuestion(state);
   const topProposalIsActive = question.activeFeatureData?.topProposal !== null;
   const [topProposal, disableTopProposal] =
@@ -36,8 +37,7 @@ export const RootPage: FC = () => {
   }
 
   return (
-    // <WidgetContainerStyle isStandardSequenceKind>
-    <WidgetContainerStyle>
+    <WidgetContainerStyle isStandardSequenceKind={isStandardSequenceKind}>
       <HeaderPanel />
       {topProposal ? (
         <IntroProposal handleChange={disableTopProposal} />

@@ -31,10 +31,12 @@ import {
 
 export const HeaderPanel: FC = () => {
   const { state, dispatch } = useAppContext();
-  // const { sequenceKind } = state.sequence;
-  // @toDo: in logic use sequenceKind from state (see above in comment) instead of const sequenceKind (see hereunder)
-  const sequenceKind = 'consensus';
-  const isConsensusSequenceKind = isConsensusSequence(sequenceKind);
+  const { sequenceKind } = state.sequence;
+  const isConsensusSequenceKind =
+    sequenceKind && isConsensusSequence(sequenceKind);
+  const isStandardSequenceKind = sequenceKind
+    ? isStandardSequence(sequenceKind)
+    : true;
   const question: QuestionType = selectCurrentQuestion(state);
   const { unsecure } = state.appConfig;
   const canPropose = question.canPropose && !unsecure && isInProgress(question);
@@ -64,7 +66,7 @@ export const HeaderPanel: FC = () => {
             {i18n.t('proposal_submit.form.panel_trigger')}
           </ProposeButtonStyle>
         )}
-        {!isStandardSequence(sequenceKind) && (
+        {sequenceKind && !isStandardSequenceKind && (
           <KindLabelWrapperStyle>
             <KindLabelBackgroundStyle>
               {isConsensusSequenceKind ? (
