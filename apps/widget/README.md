@@ -73,3 +73,17 @@ API_URL_CLIENT_SIDE=https://api.make.org
 # Front url
 FRONT_URL=https://widget.make.org
 ```
+
+## Running controversial and popular sequences in Dev mode
+In Dev mode, update sequenceKind param in initDevState in : 
+
+```bash
+Apps/widget/initDevState
+```
+
+with corresponding param : 
+
+```bash
+standard / consensus / controversy
+```
+

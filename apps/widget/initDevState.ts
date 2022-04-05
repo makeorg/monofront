@@ -19,6 +19,7 @@ export const initDevState = (
   sequence: {
     ...initialState.sequence,
     loadFirstProposal: true,
+    sequenceKind: 'standard',
   },
   currentQuestion,
 });

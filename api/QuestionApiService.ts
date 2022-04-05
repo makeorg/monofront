@@ -1,6 +1,7 @@
 import { generatePath } from 'react-router';
 import { ApiServiceHeadersType } from '@make.org/types';
 import { AxiosResponse } from 'axios';
+import { SEQUENCE } from '@make.org/types/enums';
 import { ApiService } from './ApiService';
 
 const PATH_QUESTIONS_LIST = '/questions';
@@ -107,7 +108,7 @@ export class QuestionApiService {
     const startSequenceProposalUrl =
       PATH_QUESTION_START_SEQUENCE_FIRST_PROPOSAL.replace(
         ':sequenceKind',
-        sequenceKind || 'standard'
+        sequenceKind || SEQUENCE.KIND_STANDARD
       ).replace(':questionId', questionId);
     return ApiService.callApi(startSequenceProposalUrl, {
       method: 'GET',
