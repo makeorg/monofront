@@ -170,7 +170,7 @@
         "submit_success": "Edits saved.",
         "malformed": "Please use the right url format \"https://example.com\""
       },
-      "requirements_short": "@@common.form.requirements_short|fr:Tous les champs sont obligatoires.",
+      "requirements_short": "All fields are mandatory.",
       "post_code": "The postcode allows us to analyse the results by geographical area."
     },
     "social_login": {
@@ -329,8 +329,8 @@
       "tooltip_description": "Your solution will be processed by our teams within 48 hours, in the meantime you can already find it in your profile.",
       "grats": "Congratulations {{name}}, ",
       "proposal_sent": "your proposal has been submitted ",
-      "activate": "@@proposal_submit.success.activate|fr:Activez votre compte en un click",
-      "link": "Confirm your email address in one click to ensure the authenticity of your account. Click on the activation link that you received at : {{mail}}",
+      "activate": "Confirm your email address in one click ",
+      "link": "to ensure the authenticity of your account. Click on the activation link that you received at : {{mail}}",
       "question": "Do you have a question? Please contact us at : "
     },
     "form": {
@@ -352,7 +352,7 @@
       "button_login_text": "I already have an account,",
       "button_login_link": "log me in",
       "back_authentication": "Go back to the login screen",
-      "back": "@@proposal_submit.authentication.back|fr:Retour",
+      "back": "Back",
       "last_step_red": "Only one step left ",
       "last_step": "to send your solution !",
       "button_login": "@@proposal_submit.authentication.button_login|fr:Se connecter"

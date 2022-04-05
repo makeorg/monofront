@@ -163,7 +163,7 @@
         "submit_success": "Die Änderungen wurden gespeichert.",
         "malformed": "Bitte beachte das URL-Format „https://beispiel.de“"
       },
-      "requirements_short": "@@common.form.requirements_short|fr:Tous les champs sont obligatoires.",
+      "requirements_short": "Alle Felder sind erforderlich.",
       "post_code": "Anhand der Postleitzahl können wir die Ergebnisse nach geografischen Gebieten analysieren. "
     },
     "notifications": {
@@ -378,7 +378,7 @@
       "button_login_text": "Ich habe bereits ein Konto",
       "button_login_link": "und melde mich an",
       "back_authentication": "Zurück zum Anmeldebildschirm",
-      "back": "@@proposal_submit.authentication.back|fr:Retour",
+      "back": "Zurück",
       "subtitle": "@@proposal_submit.authentication.subtitle|fr:Je m'inscris avec",
       "button_login": "@@proposal_submit.authentication.button_login|fr:Se connecter",
       "last_step_red": "Es bleibt nur noch ein Schritt ",
@@ -392,7 +392,7 @@
       "tooltip_description": "Dein Vorschlag wird innerhalb von 48 Stunden von unseren Teams  bearbeitet. In der Zwischenzeit kannst du ihn ab sofort in deinem Profil finden.",
       "grats": "Herzlichen Glückwunsch {{name}}, ",
       "proposal_sent": "dein Vorschlag wurde abgeschickt ",
-      "activate": "@@proposal_submit.success.activate|fr:Activez votre compte en un click",
+      "activate": "Bestätige deine E-Mail-Adresse mit einem Klick",
       "link": "Bestätige deine E-Mail-Adresse mit einem Klick, um die Gültigkeit deines Kontos zu gewährleisten. Klicke auf den Aktivierungslink, der dir an diese Adresse geschickt wurde : {{mail}}. ",
       "question": "Du hast noch Fragen? Kontaktiere uns unter : "
     }

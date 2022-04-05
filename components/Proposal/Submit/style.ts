@@ -426,9 +426,7 @@ export const ProposalSuccessParagraphStyle = styled.p`
     line-height: 24px;
   }
 `;
-export const ProposalSuccessParagraphActivateStyle = styled(
-  ProposalSuccessParagraphStyle
-)`
+export const ProposalSuccessSpanStyle = styled.span`
   font-family: ${MakeFonts.CircularStandardBold};
 `;
 

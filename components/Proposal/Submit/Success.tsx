@@ -25,7 +25,7 @@ import {
   ProposalSuccessWrapperStyle,
   ProposalSuccessTitleGreenStyle,
   ProposalSuccessTitleBlackStyle,
-  ProposalSuccessParagraphActivateStyle,
+  ProposalSuccessSpanStyle,
   ProposalSuccessParagraphLinkStyle,
   ProposalSuccessRedButtonStyle,
   ProposalSuccessContactStyle,
@@ -122,10 +122,10 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
           </ProposalSuccessCardStyle>
           {isRegister && (
             <ProposalSuccessParagraphWrapperStyle>
-              <ProposalSuccessParagraphActivateStyle>
-                {i18n.t('proposal_submit.success.activate')}
-              </ProposalSuccessParagraphActivateStyle>
               <ProposalSuccessParagraphLinkStyle>
+                <ProposalSuccessSpanStyle>
+                  {i18n.t('proposal_submit.success.activate')}
+                </ProposalSuccessSpanStyle>
                 {i18n.t('proposal_submit.success.link', {
                   mail: user?.email || '',
                 })}

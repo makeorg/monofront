@@ -17,6 +17,7 @@ import { RedButtonCenterStyle } from '@make.org/ui/elements/ButtonsElements';
 import { OptOutCheckBox } from '@make.org/components/Form/CheckBox/OptOutCheckbox';
 import { RegisterCheckBox } from '@make.org/components/Form/CheckBox/RegisterCheckbox';
 import { trackDisplaySignupForm } from '@make.org/utils/services/Tracking';
+import { isSupportedCountry } from '@make.org/utils/validator/postCode';
 import { FormErrors } from '../../Form/Errors';
 import {
   NewWindowIconStyle,
@@ -109,9 +110,11 @@ export const RegisterFormPanel: React.FC<Props> = ({
             postalcodeError={postalcodeError}
             handleChange={handleChange}
           />
-          <PostCodeWrapperStyle>
-            {i18n.t('common.form.post_code')}
-          </PostCodeWrapperStyle>
+          {isSupportedCountry(country) && (
+            <PostCodeWrapperStyle>
+              {i18n.t('common.form.post_code')}
+            </PostCodeWrapperStyle>
+          )}
           <ConditionParagraphMarginStylePanel>
             {i18n.t('register.gtu_text_first')}
             <TermsOfUseLinkGreyStyle
