@@ -256,6 +256,7 @@ export const ProposalAuthLoginWrapperStyle = styled(
 )`
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin: auto;
 `;

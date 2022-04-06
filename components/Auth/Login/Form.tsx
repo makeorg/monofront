@@ -37,7 +37,11 @@ type TypeLoginValues = {
   password: string;
 };
 
-export const LoginForm: FC = () => {
+type Props = {
+  panel?: boolean;
+};
+
+export const LoginForm: FC<Props> = ({ panel }) => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy } = state.appConfig;
   const { proposalContent } = state.pendingProposal;
@@ -128,12 +132,16 @@ export const LoginForm: FC = () => {
         passwordError={passwordError}
         handleChange={handleChange}
       />
-      <LinkButtonStyle
-        onClick={() => dispatch(setProposalAuthStep(AUTH_STEP.FORGOT_PASSWORD))}
-        type="button"
-      >
-        {i18n.t('login.forgot_password')}
-      </LinkButtonStyle>
+      {panel && (
+        <LinkButtonStyle
+          onClick={() =>
+            dispatch(setProposalAuthStep(AUTH_STEP.FORGOT_PASSWORD))
+          }
+          type="button"
+        >
+          {i18n.t('login.forgot_password')}
+        </LinkButtonStyle>
+      )}
       <SubmitButton
         formName={FORM.LOGIN_FORMNAME}
         icon={SubmitThumbsUpIcon}
