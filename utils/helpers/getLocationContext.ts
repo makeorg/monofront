@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import { SEQUENCE } from '@make.org/types/enums';
 import {
   ROUTE_SEQUENCE,
   ROUTE_SEQUENCE_POPULAR,
@@ -143,4 +145,15 @@ export const getAppTrackingLocation = (
   const location = getAppLocationContext(pathname, questionId, proposalId);
 
   return location.split(' ').shift() || '';
+};
+
+// get sequenceKindLocation for widget
+export const getSequenceKindLocation = (sequenceKind?: string) => {
+  if (sequenceKind === SEQUENCE.KIND_CONTROVERSY) {
+    return 'widget-controversial';
+  }
+  if (sequenceKind === SEQUENCE.KIND_CONSENSUS) {
+    return 'widget-popular';
+  }
+  return 'widget';
 };

@@ -26,6 +26,7 @@ import {
   initOauthRefresh,
   OauthResponseType,
 } from '@make.org/api/OauthRefresh';
+import { getSequenceKindLocation } from '@make.org/utils/helpers/getLocationContext';
 import { translationRessources } from '../i18n';
 import { initDevState } from '../initDevState';
 import { transformExtraSlidesConfigFromQuery } from '../server/helpers/query.helper';
@@ -72,10 +73,11 @@ const serverState = window.INITIAL_STATE || initialState;
 // Init API service
 ApiService.strategy = apiClient;
 apiClient.appname = 'widget';
-apiClient.location = 'widget';
 apiClient.refreshTokenCallback = refreshToken;
 
 const initApp = async (state: StateRoot) => {
+  const { sequenceKind } = state.sequence;
+
   // init store
   let store = {
     ...state,
@@ -122,12 +124,17 @@ const initApp = async (state: StateRoot) => {
 
   const currentUrl = urlFromIframe || window?.location?.href || 'none';
 
+  const sequenceKindLocation = getSequenceKindLocation(sequenceKind);
+
+  // Init Api service location
+  apiClient.location = sequenceKindLocation;
+
   // Set tracking params
   trackingParamsService.source = queryParams.source || source;
   trackingParamsService.country = country;
   trackingParamsService.language = language;
   trackingParamsService.questionId = currentQuestionId;
-  trackingParamsService.location = 'widget';
+  trackingParamsService.location = sequenceKindLocation;
   trackingParamsService.url = currentUrl;
   trackingParamsService.referrer = referrer;
   trackingParamsService.questionSlug = store.currentQuestion;

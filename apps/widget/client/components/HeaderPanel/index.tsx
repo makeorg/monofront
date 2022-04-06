@@ -23,7 +23,6 @@ import {
   ProposeButtonStyle,
   KindLabelWrapperStyle,
   KindLabelTextStyle,
-  KindLabelBackgroundStyle,
   KindLabelPopularIconStyle,
   KindLabelControversyIconStyle,
   InnerPanelWrapperStyle,
@@ -68,18 +67,16 @@ export const HeaderPanel: FC = () => {
         )}
         {sequenceKind && !isStandardSequenceKind && (
           <KindLabelWrapperStyle>
-            <KindLabelBackgroundStyle>
-              {isConsensusSequenceKind ? (
-                <KindLabelPopularIconStyle src={popularIcon} alt="" />
-              ) : (
-                <KindLabelControversyIconStyle src={controversyIcon} alt="" />
-              )}
-              <KindLabelTextStyle>
-                {isConsensusSequenceKind
-                  ? i18n.t('sequence.label.popular')
-                  : i18n.t('sequence.label.controversial')}
-              </KindLabelTextStyle>
-            </KindLabelBackgroundStyle>
+            {isConsensusSequenceKind ? (
+              <KindLabelPopularIconStyle src={popularIcon} alt="" />
+            ) : (
+              <KindLabelControversyIconStyle src={controversyIcon} alt="" />
+            )}
+            <KindLabelTextStyle>
+              {isConsensusSequenceKind
+                ? i18n.t('sequence.label.popular')
+                : i18n.t('sequence.label.controversial')}
+            </KindLabelTextStyle>
           </KindLabelWrapperStyle>
         )}
       </InnerPanelWrapperStyle>

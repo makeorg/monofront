@@ -3,7 +3,7 @@
 COMMON_PARAMETERS:
     parameters:
         - key: location
-          description: Current page name
+          description: Current page name on front or sequence kind for widget
         - key: source
           description: >
             Source name. Is `core` for front app.  For widget, is the media label that embeds the widget ("huffpost"...)

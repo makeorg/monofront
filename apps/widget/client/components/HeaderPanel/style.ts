@@ -28,7 +28,7 @@ export const InnerPanelWrapperStyle = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
@@ -48,7 +48,7 @@ export const LogoStyle = styled(SvgSmallLogo)`
 export const ProposeButtonStyle = styled(RedButtonAsLinkStyle)`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   line-height: ${intToPx(typography.font.fontsize.XS.value)};
-  align-self: flex-start;
+  align-self: center;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     align-self: auto;
   }
@@ -58,16 +58,10 @@ export const KindLabelWrapperStyle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-export const KindLabelBackgroundStyle = styled.div`
   border-radius: 8px;
   background-color: ${color.greyLighter};
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 15px 0;
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     margin: 0;
   }
 `;
