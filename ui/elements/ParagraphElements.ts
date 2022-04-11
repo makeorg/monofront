@@ -67,7 +67,7 @@ export const ConditionParagraphMarginStylePanel = styled(InlineParagraphStyle)`
   width: 100%;
   margin-bottom: 15px;
   color: ${color.greyDark};
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
   }
 `;

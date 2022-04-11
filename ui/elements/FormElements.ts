@@ -179,7 +179,7 @@ export const TwoFieldsRowStyle = styled(FlexElementStyle)`
   width: 100%;
   justify-content: space-between;
   margin-bottom: 15px;
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     flex-direction: row;
     > .age {
       max-width: 150px;

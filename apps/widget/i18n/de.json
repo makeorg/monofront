@@ -392,7 +392,7 @@
       "tooltip_description": "Dein Vorschlag wird innerhalb von 48 Stunden von unseren Teams  bearbeitet. In der Zwischenzeit kannst du ihn ab sofort in deinem Profil finden.",
       "grats": "Herzlichen Glückwunsch {{name}}, ",
       "proposal_sent": "dein Vorschlag wurde abgeschickt ",
-      "activate": "Bestätige deine E-Mail-Adresse mit einem Klick",
+      "activate": "Bestätige deine E-Mail-Adresse mit einem Klick ",
       "link": "Bestätige deine E-Mail-Adresse mit einem Klick, um die Gültigkeit deines Kontos zu gewährleisten. Klicke auf den Aktivierungslink, der dir an diese Adresse geschickt wurde : {{mail}}. ",
       "question": "Du hast noch Fragen? Kontaktiere uns unter : "
     }
