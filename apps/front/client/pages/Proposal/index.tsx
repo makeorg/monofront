@@ -46,14 +46,10 @@ const ProposalPage: FC = () => {
         }
       };
       getDetail();
+      trackDisplayProposalPage();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [proposal]);
-
-  useEffect(() => {
-    trackDisplayProposalPage();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   if (!question) {
     return (
