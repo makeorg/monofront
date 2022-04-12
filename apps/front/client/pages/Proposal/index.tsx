@@ -11,45 +11,35 @@ import { SingleProposalSharingComponent } from '@make.org/components/Flipping/Sh
 import { checkIsFeatureActivated } from '@make.org/utils/helpers/featureFlipping';
 import { FEATURE_FLIPPING } from '@make.org/types/enums';
 import { isInProgress } from '@make.org/utils/helpers/date';
-import { QuestionService } from '@make.org/utils/services/Question';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { trackDisplayProposalPage } from '@make.org/utils/services/Tracking';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { MetaTags } from '@make.org/components/MetaTags';
+import { useAppContext } from '@make.org/store';
+import { setCurrentQuestionSlug } from '@make.org/store/actions/currentQuestion';
+import { updateTrackingQuestionParam } from '@make.org/utils/helpers/question';
 import { ProposalSkipLinks } from '../../app/SkipLinks/Proposal';
 
 const ProposalPage: FC = () => {
   const { proposalId } = useParams<{ proposalId: string }>();
   const [proposal, setProposal] = useState<ProposalType | undefined>();
-  const [question, setQuestion] = useState<QuestionType | undefined>();
+  const { state, dispatch } = useAppContext();
+  const question: QuestionType = selectCurrentQuestion(state);
+
   useEffect(() => {
     const getProposal = async () => {
       const response = await ProposalService.getProposal(proposalId);
       if (response) {
         setProposal(response);
+        dispatch(setCurrentQuestionSlug(response.question.slug));
+        updateTrackingQuestionParam(response.question);
       } else {
         setProposal(undefined);
       }
     };
     getProposal();
+    trackDisplayProposalPage();
   }, [proposalId]);
-
-  useEffect(() => {
-    if (proposal) {
-      const getDetail = async () => {
-        const response = await QuestionService.getDetail(
-          proposal.question.questionId
-        );
-        if (response) {
-          setQuestion(response);
-        } else {
-          setQuestion(question);
-        }
-      };
-      getDetail();
-      trackDisplayProposalPage();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [proposal]);
 
   if (!question) {
     return (
