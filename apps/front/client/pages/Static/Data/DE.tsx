@@ -237,11 +237,6 @@ export const DataDE: FC = () => {
                 Konsultationen, vor allem im Hinblick auf die Veröffentlichung.
               </StaticSquareListItemStyle>
             </StaticSquareListStyle>
-            <StaticParagraphStyle>
-              Schließlich stehen die Daten zur Teilnahme an der Konsultation
-              anonymisiert in Open Source zur Verfügung - natürlich mit Ausnahme
-              der Daten zur Identität der Nutzer und der Verbindungsdaten.
-            </StaticParagraphStyle>
           </StaticPrimaryUnorderedListItemStyle>
           <StaticPrimaryUnorderedListItemStyle>
             <StaticThirdLevelTitleStyle>COOKIES</StaticThirdLevelTitleStyle>

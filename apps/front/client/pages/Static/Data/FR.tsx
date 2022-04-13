@@ -243,12 +243,6 @@ export const DataFR: FC = () => {
                 de valorisation, notamment éditoriale, de celles-ci.
               </StaticSquareListItemStyle>
             </StaticSquareListStyle>
-            <StaticParagraphStyle>
-              Enfin, les données relatives à la participation à la consultation
-              sont disponibles de manière anonymisée en open source –à
-              l’exclusion, évidemment, des données relatives à l’identité des
-              utilisateurs ainsi que des données de connexion.
-            </StaticParagraphStyle>
           </StaticPrimaryUnorderedListItemStyle>
           <StaticPrimaryUnorderedListItemStyle>
             <StaticThirdLevelTitleStyle>COOKIES </StaticThirdLevelTitleStyle>
