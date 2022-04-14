@@ -14,6 +14,7 @@ import {
   SEQUENCE_SET_LOADING,
   SEQUENCE_SET_LENGTH,
   SEQUENCE_SET_LABEL,
+  SEQUENCE_DEMOGRAPHICS_RENDER,
 } from '../../actionTypes';
 
 export const sequence_state: StateSequence = {
@@ -27,6 +28,10 @@ export const sequence_state: StateSequence = {
   loadFirstProposal: false,
   sequenceSize: 0,
   sequenceLabel: '',
+  demographics: {
+    submitted: false,
+    renderCard: true,
+  },
 };
 
 export const sequence_reducer: Reducer = (
@@ -121,7 +126,16 @@ export const sequence_reducer: Reducer = (
       return {
         ...state,
         demographics: {
+          ...state.demographics,
           submitted: action.payload.submitted,
+        },
+      };
+    case SEQUENCE_DEMOGRAPHICS_RENDER:
+      return {
+        ...state,
+        demographics: {
+          ...state.demographics,
+          renderCard: action.payload.renderCard,
         },
       };
     case SEQUENCE_DISABLE_FIRST_PROPOSAL:

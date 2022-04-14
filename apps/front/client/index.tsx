@@ -106,6 +106,9 @@ const initApp = async (state: StateRoot) => {
   // init api service before authenticationState to get visitorId
   initApiService(source, country, language, getAll());
 
+  // Get demographics cookie to render demographics card if cookie is not there
+  const demographicsCookie = cookies.get(COOKIE.DEMOGRAPHICS);
+
   // add listener to update trackingParamsService
   // should be before first api call (before authenticationState) to get visitorId
   apiClient.addHeadersListener(
@@ -130,6 +133,13 @@ const initApp = async (state: StateRoot) => {
     session: {
       ...state.session,
       sessionId,
+    },
+    sequence: {
+      ...state.sequence,
+      demographics: {
+        ...state.sequence.demographics,
+        renderCard: !demographicsCookie,
+      },
     },
     customData: getAll(), // custom_data already saved in session_storage
   };

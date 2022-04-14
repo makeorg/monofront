@@ -15,7 +15,7 @@ type Props = {
 
 export const ExtraDataCard: FC<Props> = ({ configuration }) => {
   const { state, dispatch } = useAppContext();
-  const isSubmitted = state.sequence.demographics?.submitted;
+  const isSubmitted = state.sequence.demographics.submitted;
 
   // set demographics
   if (!configuration) {

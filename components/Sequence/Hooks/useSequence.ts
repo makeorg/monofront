@@ -20,10 +20,9 @@ import {
   setSequenceLoading,
   setSequenceLength,
   loadSequenceProposals,
+  disableDemographicsCard,
 } from '@make.org/store/actions/sequence';
 import { useAppContext } from '@make.org/store';
-import { Cookies } from 'react-cookie';
-import { COOKIE } from '@make.org/types/enums';
 import { useSequenceTracking } from './useSequenceTracking';
 import { useSequenceVoteOnlyNotification } from './useSequenceVoteOnlyNotification';
 import { useSequenceQueryParams } from './useSequenceQueryParams';
@@ -47,8 +46,14 @@ export const useSequence = (
   // StateRoot
   const { sequence } = state;
   const { isLoggedIn } = selectAuthentication(state) || {};
-  const { currentIndex, votedProposalIds, cards, sequenceSize, isLoading } =
-    sequence || {};
+  const {
+    currentIndex,
+    votedProposalIds,
+    cards,
+    sequenceSize,
+    isLoading,
+    demographics,
+  } = sequence || {};
   const { source } = state.appConfig;
   const isWidget = source === 'widget';
   const votedProposalIdsOfQuestion = votedProposalIds[question?.slug] || [];
@@ -64,9 +69,6 @@ export const useSequence = (
     useSequenceQueryParams();
 
   // Other
-  const cookies = new Cookies();
-  const demographicsCookie = cookies.get(COOKIE.DEMOGRAPHICS);
-  const withDemographicsCard = !demographicsCookie || isWidget;
   const introCard = isWidget ? false : introCardParam;
 
   // Load sequence data
@@ -107,7 +109,7 @@ export const useSequence = (
 
         const extraSlidesConfig = addDemographicsToSequenceConfig(
           question.sequenceConfig,
-          withDemographicsCard && question.hasDemographics,
+          demographics.renderCard && question.hasDemographics,
           sequenceDemographics
         );
 
@@ -157,6 +159,7 @@ export const useSequence = (
       dispatch(resetSequenceVotedProposals(question?.slug));
       dispatch(setSequenceLength(0));
       dispatch(setSequenceIndex(0));
+      dispatch(disableDemographicsCard());
     },
     []
   );

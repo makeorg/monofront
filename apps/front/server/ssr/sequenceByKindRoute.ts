@@ -10,6 +10,7 @@ import {
 } from '@make.org/utils/helpers/sequence';
 import { COOKIE, NOTIF, SEQUENCE } from '@make.org/types/enums';
 import { Cookie } from 'universal-cookie';
+import { sequence_state } from '@make.org/store/reducers/sequence';
 import { transformExtraSlidesConfigFromQuery } from './helpers/query.helper';
 import { reactRender } from '../reactRender';
 import { QuestionService } from '../service/QuestionService';
@@ -21,8 +22,8 @@ export const sequenceByKindRoute = async (
   const { questionSlug, country } = req.params;
   const { introCard } = req.query;
   const { pushProposal } = req.query;
-  const introCardParam = introCard?.toLowerCase() !== 'false';
-  const pushProposalParam = pushProposal?.toLowerCase() !== 'false';
+  const withIntroCardParam = introCard?.toLowerCase() !== 'false';
+  const withPushProposalParam = pushProposal?.toLowerCase() !== 'false';
 
   const language = getLanguageFromCountryCode(country);
   const initialState = createInitialState();
@@ -70,8 +71,8 @@ export const sequenceByKindRoute = async (
     ...questionResponse,
     sequenceConfig: transformExtraSlidesConfigFromQuery(
       sequenceConfig,
-      introCardParam,
-      pushProposalParam
+      !withIntroCardParam,
+      !withPushProposalParam
     ),
   };
 
@@ -99,8 +100,8 @@ export const sequenceByKindRoute = async (
     extraSlidesConfig,
     questionModified.canPropose,
     true,
-    introCardParam,
-    pushProposalParam
+    withIntroCardParam,
+    withPushProposalParam
   );
 
   initialState.currentQuestion = questionSlug;
@@ -110,14 +111,12 @@ export const sequenceByKindRoute = async (
     },
   };
   initialState.sequence = {
+    ...sequence_state,
     isLoading: false,
-    currentIndex: 0,
     questionSlug,
-    votedProposalIds: {},
     proposals: sequenceResponse.sequence.proposals,
     cards,
     sequenceSize: cards.length,
-    sequenceLabel: '',
   };
   initialState.session = {
     sessionId: sessionIdFromCookie || sequenceResponse.sessionId,

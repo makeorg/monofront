@@ -53,8 +53,9 @@ export type StateSequence = {
   readonly votedProposalIds: { [n: string]: string[] };
   readonly proposals: ProposalType[];
   readonly cards: SequenceCardType[] | ProposalCardType[];
-  readonly demographics?: {
+  readonly demographics: {
     submitted: boolean;
+    renderCard: boolean;
   };
   readonly loadFirstProposal?: boolean;
   readonly sequenceSize: number;

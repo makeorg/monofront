@@ -23,6 +23,7 @@ import {
   SEQUENCE_SET_LOADING,
   SEQUENCE_SET_LENGTH,
   SEQUENCE_SET_LABEL,
+  SEQUENCE_DEMOGRAPHICS_RENDER,
 } from '../../actionTypes';
 import { TopComponentContextValue } from '../../topComponentContext';
 
@@ -198,6 +199,11 @@ export const qualify = (
 export const setDemographicsAsSubmitted = (): ReducerAction => ({
   type: SEQUENCE_DEMOGRAPHICS_SUBMITTED,
   payload: { submitted: true },
+});
+
+export const disableDemographicsCard = (): ReducerAction => ({
+  type: SEQUENCE_DEMOGRAPHICS_RENDER,
+  payload: { renderCard: false },
 });
 
 export const disableFirstProposal = (): ReducerAction => ({

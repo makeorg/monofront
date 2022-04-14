@@ -9,7 +9,7 @@ type Props = {
 
 const SequenceStandardPage: FC<Props> = ({ kind }) => {
   const { state } = useAppContext();
-  const isSubmitted = state.sequence.demographics?.submitted;
+  const isSubmitted = state.sequence.demographics.submitted;
 
   useEffect(() => {
     if (isSubmitted) {
