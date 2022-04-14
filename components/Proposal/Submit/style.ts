@@ -393,7 +393,11 @@ export const ProposalSuccessTitle = styled.h2`
   }
 `;
 
-export const ProposalSuccessTitleBlackStyle = styled(ProposalSuccessTitle)`
+export const ProposalSuccessTitleBlackStyle = styled(
+  ProposalSuccessTitle
+).attrs({
+  as: 'span',
+})`
   display: inline;
   color: ${color.black};
 `;

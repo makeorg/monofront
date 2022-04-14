@@ -21,6 +21,8 @@ export const ProposalJourney: React.FC = () => {
   }, [location.pathname]);
 
   if (!question) {
+    dispatch(closePanel());
+    dispatch(removePanelContent());
     return null;
   }
 
