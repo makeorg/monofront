@@ -16,14 +16,12 @@ import { trackDisplayProposalPage } from '@make.org/utils/services/Tracking';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { MetaTags } from '@make.org/components/MetaTags';
 import { useAppContext } from '@make.org/store';
-import { setCurrentQuestionSlug } from '@make.org/store/actions/currentQuestion';
-import { updateTrackingQuestionParam } from '@make.org/utils/helpers/question';
 import { ProposalSkipLinks } from '../../app/SkipLinks/Proposal';
 
 const ProposalPage: FC = () => {
   const { proposalId } = useParams<{ proposalId: string }>();
-  const [proposal, setProposal] = useState<ProposalType | undefined>();
-  const { state, dispatch } = useAppContext();
+  const [proposal, setProposal] = useState<ProposalType | undefined>(undefined);
+  const { state } = useAppContext();
   const question: QuestionType = selectCurrentQuestion(state);
 
   useEffect(() => {
@@ -31,10 +29,6 @@ const ProposalPage: FC = () => {
       const response = await ProposalService.getProposal(proposalId);
       if (response) {
         setProposal(response);
-        dispatch(setCurrentQuestionSlug(response.question.slug));
-        updateTrackingQuestionParam(response.question);
-      } else {
-        setProposal(undefined);
       }
     };
     getProposal();

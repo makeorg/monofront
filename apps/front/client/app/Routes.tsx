@@ -190,11 +190,15 @@ export const Routes: FC = () => {
           <TopIdeasPage />
         </QuestionWrapper>
       </Route>
+      <Route path={ROUTE_PROPOSAL}>
+        <QuestionWrapper>
+          <ProposalPage />
+        </QuestionWrapper>
+      </Route>
       <Route
         path={ROUTE_ACCOUNT_ACTIVATION}
         component={AccountActivationPage}
       />
-      <Route path={ROUTE_PROPOSAL} component={ProposalPage} />
       <Route path={ROUTE_PASSWORD_RECOVERY} component={PasswordRecoveryPage} />
       <Route path={ROUTE_PROFILE_EDIT} component={ProfileEditPage} />
       <Route path={ROUTE_PROFILE_PROPOSALS} component={ProfileProposalsPage} />
