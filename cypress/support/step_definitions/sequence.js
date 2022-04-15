@@ -26,9 +26,7 @@ Given(
       .replace(':questionSlug', questionSlug)
       .replace(':language', 'fr')
       .replace(':country', 'FR');
-    cy.monitorApiCall('getStartSequence');
     cy.visit(page);
-    cy.wait('@getStartSequence', { timeout: 8000 });
   }
 );
 
@@ -39,9 +37,7 @@ Given(
       .replace(':questionSlug', questionSlug)
       .replace(':language', language)
       .replace(':country', country);
-    cy.monitorApiCall('getStartSequence');
     cy.visit(page);
-    cy.wait('@getStartSequence', { timeout: 8000 });
   }
 );
 
@@ -64,9 +60,7 @@ Given(
       .replace(':questionSlug', questionSlug)
       .replace(':language', 'fr')
       .replace(':country', 'FR');
-    cy.monitorApiCall('getStartSequence');
     cy.visit(`${page}?firstProposal=${firstProposalId}`);
-    cy.wait('@getStartSequence', { timeout: 8000 });
   }
 );
 
@@ -77,9 +71,7 @@ Given(
       .replace(':questionSlug', questionSlug)
       .replace(':language', 'fr')
       .replace(':country', 'FR');
-    cy.monitorApiCall('getStartSequence');
     cy.visit(`${page}?introCard=false`);
-    cy.wait('@getStartSequence', { timeout: 8000 });
   }
 );
 
@@ -94,9 +86,7 @@ Given(
     if (Cypress.env('application') === 'widget') {
       cy.visit(page);
     } else {
-      cy.monitorApiCall('getStartSequence');
       cy.visit(`${page}?introCard=false`);
-      cy.wait('@getStartSequence', { timeout: 8000 });
     }
   }
 );
@@ -105,9 +95,7 @@ Given(
   'I am/go on/to the sequence popular page of the question {string}',
   questionSlug => {
     const page = sequencePopularPage.replace(':questionSlug', questionSlug);
-    cy.monitorApiCall('getPopularStartSequence');
     cy.visit(page);
-    cy.wait('@getPopularStartSequence', { timeout: 8000 });
   }
 );
 

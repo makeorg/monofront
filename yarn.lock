@@ -4289,13 +4289,6 @@
   dependencies:
     "@types/react" "*"
 
-"@types/marvelapp__react-ab-test@^3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@types/marvelapp__react-ab-test/-/marvelapp__react-ab-test-3.1.0.tgz#d0b31f49868cce0c1ed77b78eca81ceeaff2cd13"
-  integrity sha512-sOVwcg9TXvTSvyz6cxvZp6BZiKhpKh1qGS3AWpsqDeu9R/8C2jLb6PIau+yDQM7RZbNIltaHjFACfRRCPvY/Cg==
-  dependencies:
-    "@types/react" "*"
-
 "@types/memory-cache@^0.2.1":
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/@types/memory-cache/-/memory-cache-0.2.1.tgz#00caf5d737e4acc100f5b98152c635edabdb00d7"

@@ -72,14 +72,16 @@ const getQuestion = async (
  * @param  {String} country
  * @param  {String} language
  * @param  {String} sequenceKind
+ * @param  {Array<String>} votedIds
  * @param  {String} sessionId?
- * @param  {String} demographicsCardId
- * @param  {String} token
+ * @param  {String} demographicsCardId?
+ * @param  {String} token?
  *
  * @return {Promise}
  */
 const startSequenceByKind = async (
   questionId: string,
+  includedProposalIds: string[],
   country: string,
   language: string,
   sequenceKind: string,
@@ -90,7 +92,7 @@ const startSequenceByKind = async (
   try {
     const response = await QuestionApiService.startSequenceByKind(
       questionId,
-      [],
+      includedProposalIds,
       sequenceKind,
       demographicsCardId,
       token,
@@ -107,16 +109,22 @@ const startSequenceByKind = async (
     }
 
     const { data } = response;
-    const orderedProposals = getOrderedProposals(data.proposals, []);
+    const orderedProposals = getOrderedProposals(
+      data.proposals,
+      includedProposalIds
+    );
     const {
       unique: uniqueOrderedProposals,
       duplicates,
       voted,
-    } = orderedProposals.reduce(removeDuplicatedAndVotedProposals([]), {
-      unique: [],
-      duplicates: [],
-      voted: [],
-    });
+    } = orderedProposals.reduce(
+      removeDuplicatedAndVotedProposals(includedProposalIds),
+      {
+        unique: [],
+        duplicates: [],
+        voted: [],
+      }
+    );
 
     logSequenceCornerCases(
       questionId,

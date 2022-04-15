@@ -11,6 +11,11 @@ import {
 import { COOKIE, NOTIF, SEQUENCE } from '@make.org/types/enums';
 import { Cookie } from 'universal-cookie';
 import { sequence_state } from '@make.org/store/reducers/sequence';
+import { ProposalCardType, SequenceCardType } from '@make.org/types';
+import {
+  getSequenceControversialLink,
+  getSequencePopularLink,
+} from '@make.org/utils/helpers/url';
 import { transformExtraSlidesConfigFromQuery } from './helpers/query.helper';
 import { reactRender } from '../reactRender';
 import { QuestionService } from '../service/QuestionService';
@@ -20,10 +25,24 @@ export const sequenceByKindRoute = async (
   res: Response
 ): Promise<void> => {
   const { questionSlug, country } = req.params;
-  const { introCard } = req.query;
-  const { pushProposal } = req.query;
+  const { firstProposal, introCard, pushProposal } = req.query;
+  const popularUrl = getSequencePopularLink(country, questionSlug, req.query);
+  const controversyUrl = getSequenceControversialLink(
+    country,
+    questionSlug,
+    req.query
+  );
+  let sequenceKind = SEQUENCE.KIND_STANDARD;
+
+  if (req.url === popularUrl) {
+    sequenceKind = SEQUENCE.KIND_CONSENSUS;
+  }
+  if (req.url === controversyUrl) {
+    sequenceKind = SEQUENCE.KIND_CONTROVERSY;
+  }
+
   const withIntroCardParam = introCard?.toLowerCase() !== 'false';
-  const withPushProposalParam = pushProposal?.toLowerCase() !== 'false';
+  const withPushProposalCardParam = pushProposal?.toLowerCase() !== 'false';
 
   const language = getLanguageFromCountryCode(country);
   const initialState = createInitialState();
@@ -50,6 +69,8 @@ export const sequenceByKindRoute = async (
     });
   };
 
+  const votedIds = firstProposal ? [firstProposal] : [];
+
   const questionResponse = await QuestionService.getQuestion(
     questionSlug,
     country,
@@ -67,21 +88,22 @@ export const sequenceByKindRoute = async (
   }
 
   const { sequenceConfig } = questionResponse;
+  // Handle query parameters for extra slides config (introCard, pushProposalCard, finalCard)
   const questionModified = {
     ...questionResponse,
     sequenceConfig: transformExtraSlidesConfigFromQuery(
       sequenceConfig,
       !withIntroCardParam,
-      !withPushProposalParam
+      !withPushProposalCardParam
     ),
   };
 
   const sequenceResponse = await QuestionService.startSequenceByKind(
     questionResponse.questionId,
+    votedIds,
     country,
     language,
-    SEQUENCE.KIND_STANDARD,
-    undefined,
+    sequenceKind,
     sessionIdFromCookie
   );
 
@@ -89,20 +111,25 @@ export const sequenceByKindRoute = async (
     return reactRender(req, res.status(404), initialState);
   }
 
+  // Handle demographics Card
   const extraSlidesConfig = addDemographicsToSequenceConfig(
     questionModified.sequenceConfig,
     !demographicsCookie && questionModified.hasDemographics,
     sequenceResponse.sequence.demographics
   );
 
-  const cards = buildCards(
-    sequenceResponse.sequence.proposals,
-    extraSlidesConfig,
-    questionModified.canPropose,
-    true,
-    withIntroCardParam,
-    withPushProposalParam
-  );
+  // Define Sequence cards, array must stay empty if there is no proposals
+  let cards: SequenceCardType[] | ProposalCardType[] = [];
+  if (sequenceResponse.sequence.proposals.length > 0) {
+    cards = buildCards(
+      sequenceResponse.sequence.proposals,
+      extraSlidesConfig,
+      questionModified.canPropose,
+      true,
+      withIntroCardParam,
+      withPushProposalCardParam
+    );
+  }
 
   initialState.currentQuestion = questionSlug;
   initialState.questions = {
@@ -117,6 +144,7 @@ export const sequenceByKindRoute = async (
     proposals: sequenceResponse.sequence.proposals,
     cards,
     sequenceSize: cards.length,
+    sequenceKind,
   };
   initialState.session = {
     sessionId: sessionIdFromCookie || sequenceResponse.sessionId,
