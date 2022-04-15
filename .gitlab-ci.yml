@@ -48,6 +48,7 @@ stages:
       - utils/**/*
       - apps/front/**/*
       - cypress/integration/*.feature
+      - cypress/integration/common/*.feature
       - cypress/integration/front/*.feature
       - cypress/support/**
       - package.json
@@ -70,6 +71,7 @@ stages:
       - utils/**/*
       - apps/widget/**/*
       - cypress/integration/*.feature
+      - cypress/integration/common/*.feature
       - cypress/integration/widget/*.feature
       - cypress/support/**
       - package.json
@@ -191,7 +193,7 @@ jscpd:
       - reports
 
 e2e-front:
-  extends: 
+  extends:
     - .check
     - .e2e
     - .front
@@ -219,7 +221,7 @@ build-make-widget:
     - .build
     - .widget
 
-    
+
 # Deploy
 deploy-front-preproduction:
   extends:
