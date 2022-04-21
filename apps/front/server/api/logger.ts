@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { simpleHash } from '@make.org/utils/helpers/simpleHash';
 import parser from 'ua-parser-js';
 import { getLoggerInstance } from '@make.org/utils/helpers/logger';
+import { LogLevelType } from '@make.org/types/enums/logLevel';
 
 export const loggerApi = async (
   req: Request,
@@ -27,10 +28,10 @@ export const loggerApi = async (
   };
 
   switch (level) {
-    case 'info':
+    case LogLevelType.info:
       logger.logInfo(dataLog);
       break;
-    case 'warn':
+    case LogLevelType.warn:
       logger.logWarning(dataLog);
       break;
     default:

@@ -27,6 +27,7 @@ import { initTrackersFromPreferences } from '@make.org/utils/helpers/cookies';
 import { COOKIE } from '@make.org/types/enums';
 import { ENABLE_MIXPANEL } from '@make.org/utils/constants/cookies';
 import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
+import { LogLevelType } from '@make.org/types/enums/logLevel';
 import { CountryListener } from './app/CountryListener';
 import { AppContainer } from './app';
 import { cookieIsEnabled, thirdCookieEnabled } from './helpers/cookieDetect';
@@ -60,7 +61,7 @@ window.onerror = (message, source, lineNumber, columnNumber, error) => {
         app_columnError: formattedColumnNumber,
         stack,
       },
-      'error'
+      LogLevelType.error
     );
   }
 

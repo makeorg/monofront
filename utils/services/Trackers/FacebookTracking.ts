@@ -3,9 +3,13 @@ import { TrackingConfigurationParamType } from '@make.org/types';
 import { Logger } from '../Logger';
 import { fbq } from './fbq.js';
 
-const makePixelId = '260470104426586';
-
 let initialized = false;
+declare global {
+  interface Window {
+    FB_PIXEL_ID?: string;
+  }
+}
+const makePixelId = env.isClientSide() ? window?.FB_PIXEL_ID : env.fbPixelId();
 
 type FacebookEventParams = {
   source?: string;
@@ -72,6 +76,7 @@ export const FacebookTracking = {
 
   trackCustom(
     eventName: string,
+    eventId: string,
     eventParameters: FacebookEventParams | TrackingConfigurationParamType
   ): void {
     if (!isFBInitialized()) {
@@ -83,13 +88,16 @@ export const FacebookTracking = {
       console.info(
         `Tracking Custom Facebook (${makePixelId})
         event => ${eventName}
+        eventId => ${eventId}
         params => ${JSON.stringify(eventParameters)}`
       );
       return;
     }
 
     try {
-      fbq.track('trackSingleCustom', makePixelId, eventName, eventParameters);
+      fbq.track('trackSingleCustom', makePixelId, eventName, eventParameters, {
+        eventID: eventId,
+      });
     } catch (e) {
       const error = e as string;
       Logger.logError(error);

@@ -12,6 +12,7 @@ import Cookies from 'universal-cookie';
 import { TrackingApiService } from '@make.org/api/TrackingApiService';
 import { COOKIE } from '@make.org/types/enums';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
+import { v4 as uuidv4 } from 'uuid';
 import trackingConfiguration from './trackingConfiguration.yaml';
 import { FacebookTracking } from './Trackers/FacebookTracking';
 import { TwitterTracking } from './Trackers/TwitterTracking';
@@ -19,6 +20,7 @@ import { trackingParamsService } from './TrackingParamsService';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 import { MixpanelTracking } from './Trackers/MixpanelTracking';
 import { Logger } from './Logger';
+import { ExpressService } from './Express';
 
 export class TrackingValidationError extends Error {}
 
@@ -163,11 +165,25 @@ export const TrackingService = {
     // API tracking
     track(eventName, getEventParameters(parameters));
 
+    const eventId = uuidv4();
+
     // Facebook
     if (preferencesCookie?.facebook_tracking) {
       FacebookTracking.trackCustom(
         eventName,
+        eventId,
         getEventParameters(externalTrackingParameters)
+      );
+    }
+
+    // Facebook API conversion
+    if (preferencesCookie?.facebook_tracking) {
+      ExpressService.sendFbEventConversion(
+        eventName,
+        eventId,
+        getEventParameters(externalTrackingParameters),
+        trackingParamsService.url,
+        trackingParamsService.visitorId
       );
     }
 

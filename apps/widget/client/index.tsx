@@ -27,6 +27,7 @@ import {
   OauthResponseType,
 } from '@make.org/api/OauthRefresh';
 import { getSequenceKindLocation } from '@make.org/utils/helpers/getLocationContext';
+import { LogLevelType } from '@make.org/types/enums/logLevel';
 import { translationRessources } from '../i18n';
 import { initDevState } from '../initDevState';
 import { transformExtraSlidesConfigFromQuery } from '../server/helpers/query.helper';
@@ -54,7 +55,7 @@ window.onerror = (message, source, lineNumber, columnNumber, error) => {
         app_columnError: formattedColumnNumber,
         stack,
       },
-      'error'
+      LogLevelType.error
     );
   }
 

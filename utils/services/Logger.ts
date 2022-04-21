@@ -1,15 +1,10 @@
-import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import { env } from '@make.org/assets/env';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
-
-const LOG_INFO = 'info';
-const LOG_WARNING = 'warn';
-const LOG_ERROR = 'error';
+import { ExpressService } from '@make.org/utils/services/Express';
+import { LogLevelType } from '@make.org/types/enums/logLevel';
 
 let instance: LoggerSingleton | null = null;
-const host = env.frontUrl() || '';
-const port = env.port() || '';
 
 class LoggerSingleton {
   constructor() {
@@ -109,20 +104,20 @@ class LoggerSingleton {
   logError = (
     error: string | ApiServiceError | Record<string, string> | Error
   ) => {
-    this.log(error, LOG_ERROR);
+    this.log(error, LogLevelType.error);
   };
 
   logInfo = (data: string | ApiServiceError | Record<string, string>) => {
-    this.log(data, LOG_INFO);
+    this.log(data, LogLevelType.info);
   };
 
   logWarning = (data: string | ApiServiceError | Record<string, string>) => {
-    this.log(data, LOG_WARNING);
+    this.log(data, LogLevelType.warn);
   };
 
   log = (
     data: string | ApiServiceError | Record<string, string> | Error,
-    level: string
+    level: LogLevelType
   ): void => {
     if (env.isDev()) {
       if (level === 'error') {
@@ -142,20 +137,7 @@ class LoggerSingleton {
       return;
     }
 
-    axios('/api/logger', {
-      method: 'POST',
-      proxy: {
-        host,
-        port: parseInt(port, 10),
-      },
-      data: {
-        level: level || 'error',
-        data: this.normalizeData(data),
-      },
-    }).catch(e => {
-      // eslint-disable-next-line no-console
-      console.error('Fail to log error - ', e);
-    });
+    ExpressService.log(data, level || LogLevelType.error);
   };
 }
 

@@ -11,6 +11,9 @@ const apiUrlClientSide = (): string | undefined =>
 const frontUrl = (): string | undefined => process.env.FRONT_URL;
 const port = (): string | undefined => process.env.PORT;
 const useLocalProxy = (): string | undefined => process.env.LOCAL_USE_PROXY;
+const fbPixelId = (): string => process.env.FB_PIXEL_ID || '';
+const fbConversionToken = (): string =>
+  process.env.FB_CONVERSION_TOKEN || 'undefined';
 
 // Export in env object
 export const env = {
@@ -23,4 +26,6 @@ export const env = {
   frontUrl,
   port,
   isClientSide,
+  fbPixelId,
+  fbConversionToken,
 };

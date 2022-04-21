@@ -6,6 +6,7 @@ import sourceMap, {
   IndexedSourceMapConsumer,
 } from 'source-map';
 import { env } from '@make.org/assets/env';
+import { LogLevelType } from '@make.org/types/enums/logLevel';
 import { DataNormalizer, normalizeData } from './loggerNormalizer';
 
 export const originalFilename = (filename: string): string =>
@@ -171,12 +172,18 @@ export const initLogger = async (
 
   logger = {
     logError: error =>
-      winstonLoggerInstance.log('error', normalizeData(error, dataNormalizers)),
+      winstonLoggerInstance.log(
+        LogLevelType.error,
+        normalizeData(error, dataNormalizers)
+      ),
     logInfo: info =>
-      winstonLoggerInstance.log('info', normalizeData(info, dataNormalizers)),
+      winstonLoggerInstance.log(
+        LogLevelType.info,
+        normalizeData(info, dataNormalizers)
+      ),
     logWarning: warning =>
       winstonLoggerInstance.log(
-        'warn',
+        LogLevelType.warn,
         normalizeData(warning, dataNormalizers)
       ),
   };

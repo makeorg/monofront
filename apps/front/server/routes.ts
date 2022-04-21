@@ -53,6 +53,7 @@ import {
   ROUTE_STATIC_A11Y_DE,
   ROUTE_STATIC_CONTACT_DE,
 } from '@make.org/utils/routes';
+import { fBConversionApi } from '@make.org/utils/services/FBApiConversion';
 import { sequenceByKindRoute } from './ssr/sequenceByKindRoute';
 import {
   APP_IMAGES_DIR,
@@ -135,6 +136,7 @@ export const initRoutes = (app: Application): void => {
   // API Routes
   app.get('/api/results/:questionSlug', questionResults);
   app.post('/api/logger', loggerApi);
+  app.post('/api/conversion', fBConversionApi);
 
   const frontMiddlewares = [countryLanguageMiddleware, metricsMiddleware];
 

@@ -99,7 +99,7 @@ type AxiosConfigType = {
   httpAgent?: http.Agent;
   httpsAgent?: https.Agent;
   proxy?: {
-    protocol: string;
+    protocol?: string;
     host: string;
     port: number;
     auth?: {
@@ -118,7 +118,7 @@ type AxiosConfigType = {
 
 export type OptionsType = AxiosConfigType & {
   allowedHeaders?: string[];
-  body?: string;
+  body?: unknown;
   proposalId?: string;
 };
 

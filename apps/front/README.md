@@ -69,6 +69,10 @@ API_URL_CLIENT_SIDE=https://api.make.org
 
 # Front url
 FRONT_URL=https://make.org
+
+# Tracking
+FB_PIXEL_ID=
+FB_CONVERSION_TOKEN=
 ```
 
 ## Updating packages

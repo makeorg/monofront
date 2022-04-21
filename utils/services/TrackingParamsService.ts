@@ -49,11 +49,15 @@ class TrackingParamsServiceClass {
     return this._instance;
   }
 
-  set url(url: string) {
+  set url(url: string | undefined) {
     if (this._url !== url) {
       this._url = url;
       this._dispatchUpdate();
     }
+  }
+
+  get url() {
+    return this._url;
   }
 
   set source(source: string) {

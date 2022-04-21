@@ -76,6 +76,7 @@ const renderHtml = (
       new RegExp('___API_URL_CLIENT_SIDE___', 'gi'),
       env.apiUrlClientSide() || ''
     )
+    .replace(new RegExp('___FB_PIXEL_ID___', 'gi'), env.fbPixelId() || '')
     .replace(new RegExp('__FRONT_URL__', 'gi'), env.frontUrl() || '')
     .replace(new RegExp('___NONCE_ID___', 'gi'), nonceId)
     .replace(new RegExp('___NODE_ENV___', 'gi'), env.nodeEnv() || 'production')
