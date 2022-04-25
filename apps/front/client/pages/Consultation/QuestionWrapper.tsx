@@ -96,7 +96,11 @@ export const QuestionWrapper: FC<Props> = ({ children, withRedirect }) => {
   }, [currentQuestion]);
 
   useEffect(() => {
-    if (displayPanel === 'propose' && currentQuestion) {
+    if (
+      displayPanel === 'propose' &&
+      currentQuestion &&
+      currentQuestion.canPropose
+    ) {
       dispatch(clearProposalPending());
       dispatch(setPanelContent(<ProposalJourney />));
     }
