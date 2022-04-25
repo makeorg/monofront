@@ -320,7 +320,7 @@
       "grats": "Congratulations {{name}}, ",
       "proposal_sent": "your proposal has been submitted ",
       "activate": "Confirm your email address in one click ",
-      "link": "Confirm your email address in one click to ensure the authenticity of your account. Click on the activation link that you received at : {{mail}}",
+      "link": "to ensure the authenticity of your account. Click on the activation link that you received at : {{mail}}",
       "question": "Do you have a question? Please contact us at : "
     },
     "form": {
