@@ -11,7 +11,11 @@ import {
 import { COOKIE, NOTIF, SEQUENCE } from '@make.org/types/enums';
 import { Cookie } from 'universal-cookie';
 import { sequence_state } from '@make.org/store/reducers/sequence';
-import { ProposalCardType, SequenceCardType } from '@make.org/types';
+import {
+  ApiServiceHeadersType,
+  ProposalCardType,
+  SequenceCardType,
+} from '@make.org/types';
 import {
   getSequenceControversialLink,
   getSequencePopularLink,
@@ -33,12 +37,15 @@ export const sequenceByKindRoute = async (
     req.query
   );
   let sequenceKind = SEQUENCE.KIND_STANDARD;
+  let sequenceLocation = 'sequence';
 
   if (req.url === popularUrl) {
     sequenceKind = SEQUENCE.KIND_CONSENSUS;
+    sequenceLocation = 'sequence-popular';
   }
   if (req.url === controversyUrl) {
     sequenceKind = SEQUENCE.KIND_CONTROVERSY;
+    sequenceLocation = 'sequence-controversial';
   }
 
   const withIntroCardParam = introCard?.toLowerCase() !== 'false';
@@ -97,14 +104,20 @@ export const sequenceByKindRoute = async (
       !withPushProposalCardParam
     ),
   };
+  sequenceLocation = `${sequenceLocation} ${questionModified.questionId}`;
+  const sequenceMandatoryRequestHeaders: ApiServiceHeadersType = {
+    'x-make-question-id': questionModified.questionId,
+    'x-make-country': country,
+    'x-make-language': language,
+    'x-session-id': sessionIdFromCookie || '',
+    'x-make-location': sequenceLocation,
+  };
 
   const sequenceResponse = await QuestionService.startSequenceByKind(
     questionResponse.questionId,
     votedIds,
-    country,
-    language,
     sequenceKind,
-    sessionIdFromCookie
+    sequenceMandatoryRequestHeaders
   );
 
   if (!sequenceResponse) {

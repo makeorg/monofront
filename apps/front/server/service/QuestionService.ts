@@ -4,6 +4,7 @@ import cache from 'memory-cache';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { getLoggerInstance } from '@make.org/utils/helpers/logger';
 import {
+  ApiServiceHeadersType,
   DemographicDataType,
   ProposalType,
   SequenceType,
@@ -75,33 +76,24 @@ const getQuestion = async (
  * @param  {Array<String>} votedIds
  * @param  {String} sessionId?
  * @param  {String} demographicsCardId?
- * @param  {String} token?
+ * @param  {Object} headers?
  *
  * @return {Promise}
  */
 const startSequenceByKind = async (
   questionId: string,
   includedProposalIds: string[],
-  country: string,
-  language: string,
   sequenceKind: string,
-  sessionId?: string,
-  demographicsCardId?: string,
-  token?: string
+  mandatoryRequestHeaders: ApiServiceHeadersType
 ): Promise<{ sequence: SequenceType; sessionId: string } | void> => {
   try {
     const response = await QuestionApiService.startSequenceByKind(
       questionId,
       includedProposalIds,
       sequenceKind,
-      demographicsCardId,
-      token,
-      {
-        'x-make-question-id': questionId,
-        'x-make-country': country,
-        'x-make-language': language,
-        'x-session-id': sessionId || '',
-      }
+      undefined,
+      undefined,
+      mandatoryRequestHeaders
     );
 
     if (!response) {
