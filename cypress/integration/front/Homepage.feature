@@ -99,7 +99,8 @@ Feature: The Home Page
   Scenario: Track display home page
     Given I monitor API "postTracking" requests
     When I go to "france homepage"
-    Then event "display-page-home" should be tracked by Make with parameters values:
+    Then I see "Ensemble, nous avons le pouvoir d'améliorer la société" in "main" container
+    And event "display-page-home" should be tracked by Make with parameters values:
       | name                | value                                                                 |
       | eventType           | trackCustom                                                           |
       | country             | FR                                                                    |
@@ -124,7 +125,8 @@ Feature: The Home Page
   Scenario: Track display home page on british version
     Given I monitor API "postTracking" requests
     When I go to "british homepage"
-    Then event "display-page-home" should be tracked by Make with parameters values:
+    Then I see "Together, we can change society for the better" in "main" container
+    And event "display-page-home" should be tracked by Make with parameters values:
       | name                | value                                                                 |
       | eventType           | trackCustom                                                           |
       | country             | GB                                                                    |
