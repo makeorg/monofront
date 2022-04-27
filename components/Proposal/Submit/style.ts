@@ -356,7 +356,7 @@ export const ProposalStepWrapperStyle = styled(FlexElementStyle)<{
   position: relative;
   align-items: center;
   flex-flow: column;
-  width: 100%;
+  width: ${props => (props.isWidget ? '100%' : 'auto')};
   padding-top: ${props => (props.isWidget ? '15px' : '30px')};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     align-items: ${props => (props.isAuthentication ? 'center' : 'start')};
