@@ -110,6 +110,15 @@
     "connexion_label": "Anmelden",
     "register_label": "Registrieren",
     "continue": "Weitermachen",
+    "register_panel": {
+      "welcome": "Herzlich willkommen {{name}} !",
+      "greeting": "Wir freuen uns, dass du zu unseren engagierten Nutzerinnen und Nutzern gehörst !",
+      "mail_confirmation_strong": "Bestätige deine E-Mail-Adresse mit einem Klick, ",
+      "mail_confirmation": "um die Gültigkeit deines Kontos zu gewährleisten. Klicke auf den Aktivierungslink, der dir an diese Adresse geschickt wurde : ",
+      "onboarding": "Gib deine Meinung zu gesellschaftlichen Themen ab, die dir am Herzen liegen, indem du an unseren Bürgerkonsultationen teilnimmst.",
+      "cta": "Take part in consultations",
+      "cta_access": "Ich rufe die Konsultation auf"
+    },
     "form": {
       "hide_password": "Passwort ausblenden",
       "show_password": "Passwort anzeigen",

@@ -110,6 +110,15 @@
     "connexion_label": "Se connecter",
     "register_label": "S'inscrire",
     "continue": "Continuer",
+    "register_panel": {
+      "welcome": "Bienvenue {{name}} !",
+      "greeting": "Nous sommes ravis de vous compter parmi nos utilisateurs engagés !",
+      "mail_confirmation_strong": "Confirmez votre adresse e-mail en un clic ",
+      "mail_confirmation": " pour garantir l’authenticité de votre compte. Cliquez sur le lien d’activation qui vous a été envoyé à : ",
+      "onboarding": "Donnez votre avis sur des sujets de société qui vous tiennent à coeur en participant à nos consultations citoyennes.",
+      "cta": "Participer aux consultations",
+      "cta_access": "J'accède à la consultation"
+    },
     "form": {
       "hide_password": "Masquer le mot de passe",
       "show_password": "Afficher le mot de passe",
@@ -515,7 +524,7 @@
     "privacy_policy": "politique de données",
     "make_protect": "Make.org s'engage à protéger vos",
     "make_protect_link": " données personnelles.",
-    "opt_in":"J'accepte de recevoir des emails de Make.org pour me tenir au courant de l'actualité des consultations en cours et à venir."
+    "opt_in": "J'accepte de recevoir des emails de Make.org pour me tenir au courant de l'actualité des consultations en cours et à venir."
   },
   "forgot_password": {
     "title": "Je réinitialise mon mot de passe",

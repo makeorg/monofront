@@ -1,5 +1,28 @@
 import React from 'react';
+import { useAppContext } from '@make.org/store';
 import { getAppLocationContext } from '@make.org/utils/helpers/getLocationContext';
+import { LinkAsRedButtonBottomMobileStyle } from '@make.org/ui/elements/ButtonsElements';
+import { SvgRegisterSuccess } from '@make.org/ui/Svg/elements';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { QuestionType } from '@make.org/types';
+import { selectAuthentication } from '@make.org/store/selectors/user.selector';
+import {
+  getBrowseConsultationsLink,
+  getParticipateLink,
+} from '@make.org/utils/helpers/url';
+import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
+import i18n from 'i18next';
+import {
+  RegisterPanelSuccessWrapperStyle,
+  LoginTitleWrapperCenterStyle,
+  RegisterPanelSubTitleWrapperStyle,
+  RegisterPanelSuccessParagraphStyle,
+  RegisterPanelSuccessParagraphContainerStyle,
+} from '../../style';
+
+type Props = {
+  isSocial?: boolean;
+};
 
 const consultationLocations = new Set([
   'sequence',
@@ -8,17 +31,61 @@ const consultationLocations = new Set([
   'page-results',
 ]);
 
-export const RegisterConfirmation: React.FC = () => {
+export const RegisterConfirmation: React.FC<Props> = ({ isSocial }) => {
+  const { dispatch, state } = useAppContext();
+  const { country } = state.appConfig;
+  const question: QuestionType = selectCurrentQuestion(state);
   const location = getAppLocationContext(window?.location?.pathname).trim();
   const isConsultation = consultationLocations.has(location);
+  const { user } = selectAuthentication(state);
+
+  const handleClick = () => {
+    dispatch(closePanel());
+    dispatch(removePanelContent());
+  };
 
   return (
-    <div>
+    <RegisterPanelSuccessWrapperStyle>
+      <LoginTitleWrapperCenterStyle>
+        {i18n.t('common.register_panel.welcome', {
+          name: user?.profile.firstName || '',
+        })}
+      </LoginTitleWrapperCenterStyle>
+      <RegisterPanelSubTitleWrapperStyle>
+        {i18n.t('common.register_panel.greeting')}
+      </RegisterPanelSubTitleWrapperStyle>
+      <SvgRegisterSuccess />
+      <RegisterPanelSuccessParagraphContainerStyle>
+        {!isSocial && (
+          <RegisterPanelSuccessParagraphStyle>
+            <strong>
+              {i18n.t('common.register_panel.mail_confirmation_strong')}
+            </strong>
+
+            {i18n.t('common.register_panel.mail_confirmation')}
+          </RegisterPanelSuccessParagraphStyle>
+        )}
+        {isConsultation && (
+          <RegisterPanelSuccessParagraphStyle>
+            {i18n.t('common.register_panel.onboarding')}
+          </RegisterPanelSuccessParagraphStyle>
+        )}
+      </RegisterPanelSuccessParagraphContainerStyle>
       {isConsultation ? (
-        <div>Consultation page</div>
+        <LinkAsRedButtonBottomMobileStyle
+          to={getParticipateLink(country, question.slug)}
+          onClick={handleClick}
+        >
+          {i18n.t('common.register_panel.cta_access')}
+        </LinkAsRedButtonBottomMobileStyle>
       ) : (
-        <div>Register confirmation !</div>
+        <LinkAsRedButtonBottomMobileStyle
+          to={getBrowseConsultationsLink(country)}
+          onClick={handleClick}
+        >
+          {i18n.t('common.register_panel.cta')}
+        </LinkAsRedButtonBottomMobileStyle>
       )}
-    </div>
+    </RegisterPanelSuccessWrapperStyle>
   );
 };

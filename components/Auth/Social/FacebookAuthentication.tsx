@@ -35,6 +35,7 @@ import {
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { RegisterConfirmation } from '../Register/Steps/RegisterConfirmation';
 import {
   FacebookButtonStyle,
   SocialButtonLabelStyle,
@@ -125,7 +126,7 @@ export const FacebookAuthentication: React.FC<Props> = ({ panel }) => {
       }
 
       if (!proposalContent && isPanel) {
-        dispatch(setPanelContent(<div>Register confirmation social</div>));
+        dispatch(setPanelContent(<RegisterConfirmation isSocial />));
       }
       trackAuthenticationSocialSuccess(FACEBOOK_PROVIDER_ENUM, isNewAccount);
 

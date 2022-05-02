@@ -21,7 +21,6 @@ import {
   trackAuthenticationSocialFailure,
   trackAuthenticationSocialSuccess,
 } from '@make.org/utils/services/Tracking';
-
 import {
   loginSocialSuccess,
   loginSocialFailure,
@@ -35,6 +34,7 @@ import { useAppContext } from '@make.org/store';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { RegisterConfirmation } from '../Register/Steps/RegisterConfirmation';
 import {
   GoogleButtonStyle,
   SocialButtonLabelStyle,
@@ -79,7 +79,7 @@ export const GoogleAuthentication: React.FC<Props> = ({ panel }) => {
       }
 
       if (!proposalContent && isPanel) {
-        dispatch(setPanelContent(<div>Register confirmation social</div>));
+        dispatch(setPanelContent(<RegisterConfirmation isSocial />));
       }
 
       if (proposalContent) {

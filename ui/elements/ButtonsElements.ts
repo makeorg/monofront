@@ -110,6 +110,13 @@ export const LinkAsRedButtonStyle = styled(Link)`
   }
 `;
 
+export const LinkAsRedButtonBottomMobileStyle = styled(LinkAsRedButtonStyle)`
+  margin: auto auto 0px;
+  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
+    margin: 0;
+  }
+`;
+
 export const WhiteButtonStyle = styled.button.attrs(props => ({
   type: 'button',
   ...props,

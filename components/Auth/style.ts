@@ -159,6 +159,14 @@ export const LoginTitleWrapperStyle = styled(ThirdLevelTitleStyle)`
   align-self: flex-start;
 `;
 
+export const LoginTitleWrapperCenterStyle = styled(LoginTitleWrapperStyle)`
+  margin: 0px;
+  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
+    font-size: ${intToPx(typography.font.fontsize.XL.value)};
+    align-self: center;
+  }
+`;
+
 export const PostCodeWrapperStyle = styled.span`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   font-family: ${MakeFonts.CircularStandardBook};
@@ -194,4 +202,39 @@ export const PersonalDataGreyLinkStyle = styled.a`
   text-decoration: underline;
   align-items: center;
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+`;
+
+export const RegisterPanelSuccessWrapperStyle = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  height: 100%;
+  max-width: 720px;
+  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
+    text-align: center;
+  }
+`;
+
+export const RegisterPanelSubTitleWrapperStyle = styled(
+  LoginTitleWrapperCenterStyle
+)`
+  color: ${color.brandSecondary};
+  margin-bottom: 35px;
+`;
+
+export const RegisterPanelSuccessParagraphContainerStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+  gap: 30px;
+`;
+
+export const RegisterPanelSuccessParagraphStyle = styled.p`
+  font-size: 14px;
+  font-family: ${MakeFonts.CircularStandardBook};
+  color: ${color.black};
+  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
+    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  }
 `;
