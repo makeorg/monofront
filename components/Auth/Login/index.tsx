@@ -1,8 +1,8 @@
 import React from 'react';
 import i18n from 'i18next';
 import {
-  modalShowRegister,
   modalShowForgotPassword,
+  modalClose,
 } from '@make.org/store/actions/modal';
 import { FourthLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
 import {
@@ -17,6 +17,8 @@ import {
 } from '@make.org/ui/elements/SeparatorsElements';
 import { RedLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { useAppContext } from '@make.org/store';
+import { Register } from '@make.org/components/Auth/Register';
+import { setPanelContent } from '@make.org/store/actions/panel';
 import { LoginForm } from './Form';
 import {
   AuthenticationWrapperStyle,
@@ -34,7 +36,8 @@ export const Login: React.FC<Props> = ({ panel }) => {
   const { dispatch } = useAppContext();
 
   const handleRegisterModal = () => {
-    dispatch(modalShowRegister());
+    dispatch(modalClose());
+    dispatch(setPanelContent(<Register panel />));
   };
 
   const handleForgotPasswordModal = () => {

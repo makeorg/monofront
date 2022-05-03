@@ -11,8 +11,9 @@ import {
   RedLinkButtonStyle,
 } from '@make.org/ui/elements/ButtonsElements';
 import { getParticipateLink } from '@make.org/utils/helpers/url';
-import { modalShowRegister } from '@make.org/store/actions/modal';
 import { useAppContext } from '@make.org/store';
+import { Register } from '@make.org/components/Auth/Register';
+import { setPanelContent } from '@make.org/store/actions/panel';
 import {
   SequenceAltTitleStyle,
   SequenceParagraphStyle,
@@ -30,7 +31,7 @@ export const FinalCard: React.FC<Props> = ({ questionSlug }) => {
   const { country } = state.appConfig;
 
   const handleClick = () => {
-    dispatch(modalShowRegister());
+    dispatch(setPanelContent(<Register panel />));
     trackClickCitizenRegister();
   };
 

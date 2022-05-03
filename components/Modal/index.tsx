@@ -2,7 +2,6 @@ import React from 'react';
 import ReactModal from 'react-modal';
 import { modalClose } from '@make.org/store/actions/modal';
 import { Login } from '@make.org/components/Auth/Login/index';
-import { Register } from '@make.org/components/Auth/Register';
 import { PasswordForgot } from '@make.org/components/Auth/PasswordForgot';
 import { trackClickCloseModal } from '@make.org/utils/services/Tracking';
 import i18n from 'i18next';
@@ -16,7 +15,6 @@ ReactModal.setAppElement('#app');
 
 const modalContents = {
   [MODAL_TYPES.MODAL_LOGIN]: <Login />,
-  [MODAL_TYPES.MODAL_REGISTER]: <Register />,
   [MODAL_TYPES.MODAL_FORGOT_PASSWORD]: <PasswordForgot />,
   [MODAL_TYPES.MODAL_COUNTRIES]: <SwitchCountry />,
   [MODAL_TYPES.MODAL_DEPARTMENT]: null,

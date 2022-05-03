@@ -34,6 +34,10 @@ CLICK_PERSONNAL_DATA_LINK:
     key: click-personal-data-link
     description: Click data page link
 
+CLICK_CLOSE_PANEL:
+    key: click-close-panel
+    description: Close panel
+    
 CLICK_CLOSE_MODAL:
     key: click-close-modal
     description: Close modal
@@ -42,7 +46,6 @@ CLICK_CLOSE_MODAL:
           description: Modal context
           values: 
             - MODAL_LOGIN
-            - MODAL_REGISTER
             - MODAL_FORGOT_PASSWORD
             - MODAL_DEPARTMENT
             - MODAL_COUNTRIES

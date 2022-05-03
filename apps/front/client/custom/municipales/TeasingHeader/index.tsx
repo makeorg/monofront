@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import i18n from 'i18next';
-import { modalShowRegister } from '@make.org/store/actions/modal';
+import { setPanelContent } from '@make.org/store/actions/panel';
+import { Register } from '@make.org/components/Auth/Register';
 import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
 import { useAppContext } from '@make.org/store';
 import {
@@ -21,7 +22,7 @@ export const TeasingHeader: FC = () => {
             {i18n.t('consultation.municipal.header.candidates_answers')}
           </TeasingHeaderTextStyle>
           <TeasingHeaderSubTextStyle
-            onClick={() => dispatch(modalShowRegister())}
+            onClick={() => dispatch(setPanelContent(<Register panel />))}
             dangerouslySetInnerHTML={{
               __html: i18n.t(
                 'consultation.municipal.header.candidates_subscribe',

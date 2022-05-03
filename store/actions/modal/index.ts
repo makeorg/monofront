@@ -4,7 +4,6 @@ import {
   MODAL_CLOSE_COOKIES,
   MODAL_SHOW_COOKIES,
   MODAL_SHOW_LOGIN,
-  MODAL_SHOW_REGISTER,
   MODAL_SHOW_FORGOT_PASSWORD,
   MODAL_SHOW_DEPARTMENT_FORM,
   MODAL_SHOW_SESSION_EXPIRATION,
@@ -33,10 +32,6 @@ export const modalShowCookies = (): ReducerAction => ({
 
 export const modalShowLogin = (): ReducerAction => ({
   type: MODAL_SHOW_LOGIN,
-});
-
-export const modalShowRegister = (): ReducerAction => ({
-  type: MODAL_SHOW_REGISTER,
 });
 
 export const modalShowForgotPassword = (): ReducerAction => ({

@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
 import i18n from 'i18next';
 import { SvgMail } from '@make.org/ui/Svg/elements';
-import { modalShowRegister } from '@make.org/store/actions/modal';
 import { trackClickSubscribe } from '@make.org/utils/services/Tracking';
+import { setPanelContent } from '@make.org/store/actions/panel';
+import { Register } from '@make.org/components/Auth/Register';
 import { useAppContext } from '@make.org/store';
 import {
   NoConsultationWrapperStyle,
@@ -44,7 +45,7 @@ export const RegistrationIncentive: FC<Props> = ({
   const { dispatch } = useAppContext();
 
   const handleClick = () => {
-    dispatch(modalShowRegister());
+    dispatch(setPanelContent(<Register panel />));
     trackClickSubscribe('subscribe-next-consultation');
   };
 

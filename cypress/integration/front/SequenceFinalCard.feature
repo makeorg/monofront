@@ -1,4 +1,4 @@
-@front
+@todo
 Feature: Final card
   I want to see final card
   Scenario: Display final card

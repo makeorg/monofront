@@ -124,6 +124,10 @@ export const trackClickCloseModal = (modalContext: string): void => {
   );
 };
 
+export const trackingClickClosePanel = (): void => {
+  TrackingService.sendAllTrackers(trackingEvent.CLICK_CLOSE_PANEL());
+};
+
 /* Sign Up */
 export const trackDisplaySignupForm = (step?: string): void => {
   TrackingService.sendAllTrackers(

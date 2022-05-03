@@ -10,6 +10,7 @@ import { PANEL } from '@make.org/types/enums';
 import { closePanel, removePanelContent } from '@make.org/store/actions/panel/';
 import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
+import { trackingClickClosePanel } from '@make.org/utils/services/Tracking';
 import {
   PanelWrapperStyle,
   PanelOverlayStyle,
@@ -28,6 +29,7 @@ export const Panel: React.FC = () => {
 
   const handleCloseAndRemove = () => {
     dispatch(closePanel());
+    dispatch(trackingClickClosePanel());
     dispatch(removePanelContent());
   };
 

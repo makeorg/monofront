@@ -1,4 +1,4 @@
-@front
+@todo
 Feature: Register
   I want to check register modal behaviour
 
