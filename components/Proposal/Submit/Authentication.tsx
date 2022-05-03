@@ -68,7 +68,7 @@ const renderAuthStep = (step: string | undefined, dispatch: Dispatch) => {
         </>
       );
     case AUTH_STEP.REGISTER:
-      return <Register panel />;
+      return <Register proposalSubmit />;
     case AUTH_STEP.FORGOT_PASSWORD:
       return (
         <PasswordForgot

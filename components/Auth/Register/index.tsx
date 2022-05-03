@@ -1,20 +1,7 @@
 import React, { FormEvent, SyntheticEvent, useState } from 'react';
 import i18n from 'i18next';
 import { RegisterFormDataType, ErrorObjectType } from '@make.org/types';
-import {
-  SecondLevelTitleStyle,
-  FourthLevelTitleStyle,
-} from '@make.org/ui/elements/TitleElements';
-import {
-  SmallSeparatorWithMarginStyle,
-  SeparatorWrapperStyle,
-  TextSeparatorStyle,
-  SeparatorStyle,
-} from '@make.org/ui/elements/SeparatorsElements';
 import { RedLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
-import { ExtraParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
-import { FacebookAuthentication } from '@make.org/components/Auth/Social/FacebookAuthentication';
-import { GoogleAuthentication } from '@make.org/components/Auth/Social/GoogleAuthentication';
 import { modalShowLogin, modalClose } from '@make.org/store/actions/modal';
 import {
   trackSignupEmailSuccess,
@@ -29,18 +16,14 @@ import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { RegisterForm } from './Form';
-import { RegisterFormPanel } from './FormPanel';
-import {
-  AuthenticationWrapperStyle,
-  SocialRegisterButtonsWrapperStyle,
-} from '../style';
+import { AuthenticationWrapperStyle, RegisterParagraphStyle } from '../style';
 import { LegalConsent } from './LegalConsent';
 
 type Props = {
-  panel?: boolean;
+  proposalSubmit?: boolean;
 };
 
-export const Register: React.FC<Props> = ({ panel }) => {
+export const Register: React.FC<Props> = ({ proposalSubmit }) => {
   const { dispatch, state } = useAppContext();
   const { proposalContent } = state.pendingProposal;
   const [user, setUser] = useState<RegisterFormDataType>({
@@ -59,8 +42,9 @@ export const Register: React.FC<Props> = ({ panel }) => {
   const [errors, setErrors] = useState<ErrorObjectType[]>([]);
   const [waitingCallback, setWaitingCallback] = useState<boolean>(false);
   const [needLegalConsent, displayLegalConsent] = useState<boolean>(false);
-  const [registerPanelStep, setRegisterPanelStep] = useState<number>(1);
+  const [registerStep, setRegisterStep] = useState<number>(1);
   const question = selectCurrentQuestion(state);
+  const isProposalSubmit = proposalSubmit && proposalSubmit === true;
   const userIsAChild =
     user && user.profile && user.profile.age && user.profile.age < 15;
 
@@ -111,7 +95,7 @@ export const Register: React.FC<Props> = ({ panel }) => {
   // checks email and password validity on first step of panel registration
   const checkRegistration = async () => {
     const success = () => {
-      setRegisterPanelStep(2);
+      setRegisterStep(2);
       setErrors([]);
     };
     const handleErrors = (serviceErrors: ErrorObjectType[]) => {
@@ -139,7 +123,7 @@ export const Register: React.FC<Props> = ({ panel }) => {
       email,
       password,
       undefined,
-      () => getUser(dispatch, state.modal.isOpen, !panel),
+      () => getUser(dispatch, state.modal.isOpen, !proposalSubmit),
       () => undefined,
       () => unexpectedError()
     );
@@ -151,10 +135,10 @@ export const Register: React.FC<Props> = ({ panel }) => {
       logAndLoadUser(user.email, user.password).then(async () => {
         trackSignupEmailSuccess();
         setErrors([]);
-        if (!panel) {
+        if (!proposalSubmit) {
           dispatch(modalClose());
         }
-        if (proposalContent && panel) {
+        if (proposalContent && proposalSubmit) {
           await ProposalService.propose(
             proposalContent,
             question.questionId,
@@ -189,60 +173,29 @@ export const Register: React.FC<Props> = ({ panel }) => {
         handleCheckbox={handleCheckbox}
         handleSubmit={handleSubmit}
         toggleLegalConsent={toggleLegalConsent}
-        isPanel={panel}
+        isProposalSubmit={isProposalSubmit}
       />
       <AuthenticationWrapperStyle
         aria-labelledby="register_title"
         className={needLegalConsent ? 'hidden' : ''}
       >
-        {!panel ? (
-          <>
-            <SecondLevelTitleStyle
-              id="register_title"
-              data-cy-container="register-modal-title"
-            >
-              {i18n.t('register.title')}
-            </SecondLevelTitleStyle>
-            <SmallSeparatorWithMarginStyle />
-            <SocialRegisterButtonsWrapperStyle>
-              <FacebookAuthentication />
-              <GoogleAuthentication />
-            </SocialRegisterButtonsWrapperStyle>
-            <SeparatorWrapperStyle className="margin-top margin-bottom">
-              <SeparatorStyle />
-              <TextSeparatorStyle>{i18n.t('register.or')}</TextSeparatorStyle>
-              <SeparatorStyle />
-            </SeparatorWrapperStyle>
-            <FourthLevelTitleStyle as="h3">
-              {i18n.t('register.subtitle')}
-            </FourthLevelTitleStyle>
-            <RegisterForm
-              user={user}
-              errors={errors}
-              handleChange={handleChange}
-              handleCheckbox={handleCheckbox}
-              handleSubmit={userIsAChild ? toggleLegalConsent : handleSubmit}
-              disableSubmit={waitingCallback}
-            />
-            <ExtraParagraphStyle>
-              {i18n.t('register.login_title')}
-              <RedLinkButtonStyle onClick={handleLoginModal}>
-                {i18n.t('register.login_link')}
-              </RedLinkButtonStyle>
-            </ExtraParagraphStyle>
-          </>
-        ) : (
-          <RegisterFormPanel
-            user={user}
-            errors={errors}
-            handleChange={handleChange}
-            handleCheckbox={handleCheckbox}
-            handleSubmit={userIsAChild ? toggleLegalConsent : handleSubmit}
-            disableSubmit={waitingCallback}
-            checkRegistration={checkRegistration}
-            registerPanelStep={registerPanelStep}
-          />
-        )}
+        <RegisterForm
+          user={user}
+          errors={errors}
+          handleChange={handleChange}
+          handleCheckbox={handleCheckbox}
+          handleSubmit={userIsAChild ? toggleLegalConsent : handleSubmit}
+          disableSubmit={waitingCallback}
+          registerStep={registerStep}
+          checkRegistration={checkRegistration}
+          isProposalSubmit={isProposalSubmit}
+        />
+        <RegisterParagraphStyle>
+          {i18n.t('register.login_title')}
+          <RedLinkButtonStyle onClick={handleLoginModal}>
+            {i18n.t('register.login_link')}
+          </RedLinkButtonStyle>
+        </RegisterParagraphStyle>
       </AuthenticationWrapperStyle>
     </>
   );

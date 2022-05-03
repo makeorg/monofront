@@ -7,20 +7,20 @@ import { RegisterEmailTitleStyle } from '../style';
 
 type Props = {
   errors: ErrorObjectType[];
-  registerPanelStep: number;
+  registerStep: number;
 };
 
 // Renders Title form for both regular register and proposal submit one
-export const TitleForm: React.FC<Props> = ({ errors, registerPanelStep }) => (
+export const TitleForm: React.FC<Props> = ({ errors, registerStep }) => (
   <>
     <RegisterEmailTitleStyle>
       {i18n.t('common.social_login.email_register')}{' '}
       {i18n.t('common.social_login.count_register', {
-        count: registerPanelStep,
+        count: registerStep,
       })}
     </RegisterEmailTitleStyle>
     <FormRequirementsStyle>
-      {registerPanelStep === 1
+      {registerStep === 1
         ? i18n.t('common.form.requirements_short')
         : i18n.t('common.form.requirements')}
     </FormRequirementsStyle>

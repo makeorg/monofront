@@ -61,10 +61,7 @@ export const LegalIconStyle = styled(SvgLegalConsent)`
   margin: 25px auto 30px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     max-width: 150px;
-    margin: 65px auto 40px;
-    &.panel {
-      margin: 25px auto 30px;
-    }
+    margin: 25px auto 30px;
   }
 `;
 
@@ -168,4 +165,10 @@ export const PostCodeWrapperStyle = styled.span`
   color: ${color.greyDark};
   margin-bottom: 30px;
   margin-top: -10px;
+`;
+
+export const RegisterParagraphStyle = styled.p`
+  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  margin-top: 15px;
+  display: inline;
 `;

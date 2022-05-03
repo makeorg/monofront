@@ -495,8 +495,8 @@
     "subtitle": "Je m'inscris avec ce formulaire",
     "step1_title": "S'inscrire par e-mail",
     "step2_title": "Terminer mon inscription",
-    "login_title": "J‘ai déjà un compte.",
-    "login_link": "Connexion",
+    "login_title": "J‘ai déjà un compte,",
+    "login_link": "je me connecte",
     "gtu_text_first": "En vous inscrivant, vous acceptez nos ",
     "gtu_text_second": " et acceptez de recevoir des e-mails (peu nombreux) de Make.org.",
     "gtu_link": "conditions générales d’utilisation."

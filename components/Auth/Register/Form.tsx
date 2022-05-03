@@ -1,18 +1,20 @@
-import React, { ChangeEvent, FormEvent } from 'react';
+import React, { ChangeEvent, FormEvent, useEffect } from 'react';
 import i18n from 'i18next';
 import { ErrorObjectType, RegisterFormDataType } from '@make.org/types';
-import { FormCenterAlignStyle } from '@make.org/ui/elements/FormElements';
+import { FormLeftAlignStyle } from '@make.org/ui/elements/FormElements';
 import { getFieldError } from '@make.org/utils/helpers/form';
 import { FORM } from '@make.org/types/enums';
 import { throttle } from '@make.org/utils/helpers/throttle';
+import { trackDisplaySignupForm } from '@make.org/utils/services/Tracking';
 import {
   SeparatorStyle,
   SeparatorWrapperStyle,
   TextSeparatorStyle,
 } from '@make.org/ui/elements/SeparatorsElements';
-import { SocialRegisterButtonsWrapperStyle } from '../style';
 import { TitleForm } from './Title';
 import { FirstStepRegister } from './FirstStep';
+import { SecondStepRegister } from './SecondStep';
+import { SocialRegisterButtonsWrapperStyle } from '../style';
 import { FacebookAuthentication } from '../Social/FacebookAuthentication';
 import { GoogleAuthentication } from '../Social/GoogleAuthentication';
 
@@ -22,7 +24,10 @@ type Props = {
   handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
   handleCheckbox: (fieldName: string, value: boolean) => void;
   handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
+  checkRegistration: () => void;
   disableSubmit: boolean;
+  registerStep: number;
+  isProposalSubmit?: boolean;
 };
 /**
  * Renders Register Form
@@ -33,7 +38,10 @@ export const RegisterForm: React.FC<Props> = ({
   handleChange,
   handleCheckbox,
   handleSubmit,
+  checkRegistration,
   disableSubmit,
+  registerStep,
+  isProposalSubmit,
 }) => {
   const emailError = getFieldError('email', errors);
   const passwordError = getFieldError('password', errors);
@@ -41,13 +49,17 @@ export const RegisterForm: React.FC<Props> = ({
   const ageError = getFieldError('dateofbirth', errors);
   const postalcodeError = getFieldError('postalcode', errors);
 
+  useEffect(() => {
+    trackDisplaySignupForm(`${registerStep}`);
+  }, [registerStep]);
+
   return (
-    <FormCenterAlignStyle
-      id={FORM.REGISTER_FORMNAME}
+    <FormLeftAlignStyle
+      id={FORM.REGISTER_PANEL_FORMNAME}
       onSubmit={throttle(handleSubmit)}
     >
-      <TitleForm errors={errors} registerPanelStep={registerPanelStep} />
-      {registerPanelStep === 1 && (
+      <TitleForm errors={errors} registerStep={registerStep} />
+      {registerStep === 1 && (
         <FirstStepRegister
           user={user}
           emailError={emailError}
@@ -56,16 +68,20 @@ export const RegisterForm: React.FC<Props> = ({
           checkRegistration={checkRegistration}
         />
       )}
-      <SeparatorWrapperStyle className="margin-top margin-bottom">
-        <SeparatorStyle />
-        <TextSeparatorStyle>{i18n.t('register.or')}</TextSeparatorStyle>
-        <SeparatorStyle />
-      </SeparatorWrapperStyle>
-      <SocialRegisterButtonsWrapperStyle>
-        <FacebookAuthentication />
-        <GoogleAuthentication />
-      </SocialRegisterButtonsWrapperStyle>
-      {registerPanelStep === 2 && (
+      {!isProposalSubmit && (
+        <>
+          <SeparatorWrapperStyle className="margin-top margin-bottom">
+            <SeparatorStyle />
+            <TextSeparatorStyle>{i18n.t('register.or')}</TextSeparatorStyle>
+            <SeparatorStyle />
+          </SeparatorWrapperStyle>
+          <SocialRegisterButtonsWrapperStyle>
+            <FacebookAuthentication />
+            <GoogleAuthentication />
+          </SocialRegisterButtonsWrapperStyle>
+        </>
+      )}
+      {registerStep === 2 && (
         <SecondStepRegister
           user={user}
           firstnameError={firstnameError}
@@ -76,6 +92,6 @@ export const RegisterForm: React.FC<Props> = ({
           disableSubmit={disableSubmit}
         />
       )}
-    </FormCenterAlignStyle>
+    </FormLeftAlignStyle>
   );
 };
