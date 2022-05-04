@@ -70,7 +70,6 @@ export const ProposalFormSuccessWrapperStyle = styled(ProposalFormWrapperStyle)`
 export const ProposalStepWrapperColumnStyle = styled.div<{
   isWidget: boolean;
 }>`
-  width: 100%;
   height: 100%;
   padding: ${props => (props.isWidget ? '0px 15px 25px' : '0px 30px 25px')};
   max-width: 720px;
@@ -356,12 +355,13 @@ export const ProposalStepWrapperStyle = styled(FlexElementStyle)<{
   position: relative;
   align-items: center;
   flex-flow: column;
-  width: ${props => (props.isWidget ? '100%' : 'auto')};
+  width: 100%;
   padding-top: ${props => (props.isWidget ? '15px' : '30px')};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     align-items: ${props => (props.isAuthentication ? 'center' : 'start')};
     justify-content: space-between;
     flex-flow: row;
+    width: auto;
   }
 `;
 

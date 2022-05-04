@@ -164,6 +164,7 @@ export const LoginTitleWrapperStyle = styled(ThirdLevelTitleStyle)`
 
 export const PostCodeWrapperStyle = styled.span`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-family: ${MakeFonts.CircularStandardBook};
   color: ${color.greyDark};
   margin-bottom: 30px;
   margin-top: -10px;
