@@ -41,6 +41,7 @@ const callFbApiConversion = (
     data_processing_options_state: 0,
     opt_out: false,
     action_source: 'website',
+    event_time: Math.floor(new Date().getTime() / 1000),
   });
 
   axios({
@@ -55,7 +56,7 @@ const callFbApiConversion = (
       message: error.message,
       name: 'fb-api-conversion',
       app_request_data: {
-        data: [data],
+        data: [preparedData],
       },
       app_response_data: error?.response?.data,
     });

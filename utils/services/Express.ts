@@ -51,7 +51,6 @@ const sendFbEventConversion = (
 ): void => {
   const data: FbEventClientType = {
     event_name: eventName,
-    event_time: Math.floor(new Date().getTime() / 1000),
     user_data: {
       client_user_agent: navigator.userAgent || navigator.vendor,
       external_id: trackingParamsService.visitorId,

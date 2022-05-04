@@ -8,7 +8,6 @@ export type FbUserDataType = {
 
 export type FbEventClientType = {
   event_name: string;
-  event_time: number;
   user_data: FbUserDataType;
   event_source_url?: string;
   event_id?: string; // The event_id and event_name parameters are used to deduplicate events sent by both Meta Pixel and the Conversions API
@@ -29,4 +28,5 @@ export type FbEventType = FbEventClientType & {
   data_processing_options?: ['LDU']; // Limited Data Use - see https://developers.facebook.com/docs/marketing-apis/data-processing-options
   data_processing_options_country: 1 | 0; // 1 => US, 0 => geoloc
   data_processing_options_state: 1000 | 0; // 1000 => California, 0 => geoloc
+  event_time: number;
 };
