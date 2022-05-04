@@ -26,6 +26,10 @@ export const NewWindowIconStyle = styled(SvgExternalLink)`
   fill: ${color.brandSecondary};
 `;
 
+export const NewWindowGreyIconStyle = styled(NewWindowIconStyle)`
+  fill: ${color.greyDark};
+`;
+
 export const RedLinkStyle = styled(Link)`
   ${linkStyle(color.brandSecondary)}
 `;

@@ -10,7 +10,6 @@ type Props = {
   registerStep: number;
 };
 
-// Renders Title form for both regular register and proposal submit one
 export const TitleForm: React.FC<Props> = ({ errors, registerStep }) => (
   <>
     <RegisterEmailTitleStyle>

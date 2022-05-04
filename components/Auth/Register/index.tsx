@@ -1,8 +1,7 @@
 import React, { FormEvent, SyntheticEvent, useState } from 'react';
 import i18n from 'i18next';
 import { RegisterFormDataType, ErrorObjectType } from '@make.org/types';
-import { RedLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
-import { modalShowLogin, modalClose } from '@make.org/store/actions/modal';
+import { modalClose } from '@make.org/store/actions/modal';
 import {
   trackSignupEmailSuccess,
   trackSignupEmailFailure,
@@ -15,9 +14,17 @@ import { closePanel, setPanelContent } from '@make.org/store/actions/panel';
 import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
+import { NewWindowGreyIconStyle } from '@make.org/ui/elements/LinkElements';
+import { resetProposalAuthStep } from '@make.org/store/actions/pendingProposal';
 import { RegisterForm } from './Form';
-import { AuthenticationWrapperStyle, RegisterParagraphStyle } from '../style';
+import {
+  AuthenticationWrapperStyle,
+  GreyParagraphStyle,
+  PersonalDataGreyLinkStyle,
+} from '../style';
 import { LegalConsent } from './LegalConsent';
+import { ProposalBackButtonStyle } from '../../Proposal/Submit/style';
 
 type Props = {
   proposalSubmit?: boolean;
@@ -47,9 +54,10 @@ export const Register: React.FC<Props> = ({ proposalSubmit }) => {
   const isProposalSubmit = proposalSubmit && proposalSubmit === true;
   const userIsAChild =
     user && user.profile && user.profile.age && user.profile.age < 15;
-
-  const handleLoginModal = () => {
-    dispatch(modalShowLogin());
+  const isSecondStep = registerStep === 2;
+  const handleReturn = () => {
+    dispatch(resetProposalAuthStep());
+    setRegisterStep(1);
   };
 
   const handleCheckbox = (fieldName: string, value: boolean) => {
@@ -179,6 +187,11 @@ export const Register: React.FC<Props> = ({ proposalSubmit }) => {
         aria-labelledby="register_title"
         className={needLegalConsent ? 'hidden' : ''}
       >
+        {isSecondStep && !isProposalSubmit && (
+          <ProposalBackButtonStyle onClick={handleReturn}>
+            {i18n.t('common.back')}
+          </ProposalBackButtonStyle>
+        )}
         <RegisterForm
           user={user}
           errors={errors}
@@ -190,12 +203,18 @@ export const Register: React.FC<Props> = ({ proposalSubmit }) => {
           checkRegistration={checkRegistration}
           isProposalSubmit={isProposalSubmit}
         />
-        <RegisterParagraphStyle>
-          {i18n.t('register.login_title')}
-          <RedLinkButtonStyle onClick={handleLoginModal}>
-            {i18n.t('register.login_link')}
-          </RedLinkButtonStyle>
-        </RegisterParagraphStyle>
+        {!isProposalSubmit && !isSecondStep && (
+          <GreyParagraphStyle>
+            {i18n.t('legal_consent.make_protect')}&nbsp;
+            <PersonalDataGreyLinkStyle>
+              {i18n.t('legal_consent.make_protect_link')}
+            </PersonalDataGreyLinkStyle>
+            <NewWindowGreyIconStyle aria-hidden focusable="false" />
+            <ScreenReaderItemStyle>
+              {i18n.t('common.open_new_window')}
+            </ScreenReaderItemStyle>
+          </GreyParagraphStyle>
+        )}
       </AuthenticationWrapperStyle>
     </>
   );

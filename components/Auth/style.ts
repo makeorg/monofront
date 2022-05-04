@@ -172,3 +172,27 @@ export const RegisterParagraphStyle = styled.p`
   margin-top: 15px;
   display: inline;
 `;
+
+export const GreyParagraphStyle = styled.p`
+  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  color: ${color.greyDark};
+  margin-top: 45px;
+  display: flex;
+  flex-flow: wrap;
+  max-width: 80%;
+  justify-content: center;
+`;
+
+export const PersonalDataGreyLinkStyle = styled.a`
+  display: inline;
+  font-family: ${MakeFonts.CircularStandardBook};
+  color: ${color.greyDark};
+  text-transform: none;
+  text-decoration: underline;
+  align-items: center;
+  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  &:hover,
+  &:focus {
+    color: ${color.greyDark};
+  }
+`;

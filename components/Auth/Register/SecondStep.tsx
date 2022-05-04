@@ -40,7 +40,6 @@ export const SecondStepRegister: React.FC<Props> = ({
 
   const { country, language, source } = state.appConfig;
   const isWidget = source === 'widget';
-
   return (
     <>
       <ExtraInRegisterformationsFields

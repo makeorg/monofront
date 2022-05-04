@@ -398,7 +398,7 @@
       "last_step": "pour envoyer votre proposition !",
       "subtitle": "Je m'inscris avec",
       "button_login_text": "J’ai déjà un compte,",
-      "button_login_link": "je me connecte",
+      "button_login_link": "je me connecte.",
       "button_login": "Se connecter",
       "back_authentication": "Revenir à l'écran de connexion"
     },
@@ -496,7 +496,7 @@
     "step1_title": "S'inscrire par e-mail",
     "step2_title": "Terminer mon inscription",
     "login_title": "J‘ai déjà un compte,",
-    "login_link": "je me connecte",
+    "login_link": "je me connecte.",
     "gtu_text_first": "En vous inscrivant, vous acceptez nos ",
     "gtu_text_second": " et acceptez de recevoir des e-mails (peu nombreux) de Make.org.",
     "gtu_link": "conditions générales d’utilisation."
