@@ -35,7 +35,7 @@ type Props = {
 export const Login: React.FC<Props> = ({ panel }) => {
   const { dispatch } = useAppContext();
 
-  const handleRegisterModal = () => {
+  const handleRegisterPanel = () => {
     dispatch(modalClose());
     dispatch(setPanelContent(<Register panel />));
   };
@@ -91,7 +91,7 @@ export const Login: React.FC<Props> = ({ panel }) => {
           <ExtraAltParagraphStyle>
             {i18n.t('login.registration_title')}
             <RedLinkButtonStyle
-              onClick={handleRegisterModal}
+              onClick={handleRegisterPanel}
               type="button"
               data-cy-button="register"
             >

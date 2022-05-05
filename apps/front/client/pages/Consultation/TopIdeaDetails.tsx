@@ -10,16 +10,12 @@ import { trackDisplayTopIdeas } from '@make.org/utils/services/Tracking';
 import { FollowUs } from '@make.org/components/Flipping/FollowUs';
 import { TopIdeaService } from '@make.org/utils/services/TopIdea';
 import i18n from 'i18next';
-
-import { FEATURE_FLIPPING } from '@make.org/types/enums';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import { ThemeProvider } from 'styled-components';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { useAppContext } from '@make.org/store';
-import { checkIsFeatureActivated } from '@make.org/utils/helpers/featureFlipping';
 import { MetaTags } from '@make.org/components/MetaTags';
-import { CandidateEngagement } from '../../custom/municipales/CandidateEngagement';
 import { TopIdeaDetailsComments } from '../../app/TopIdeas/Comments';
 import { TopIdeaDetailsProposals } from '../../app/TopIdeas/Proposals';
 import { TopIdeaCard } from '../../app/TopIdeas/Card';
@@ -46,12 +42,6 @@ const TopIdeaDetailsPage: FC = () => {
   const location = useLocation();
   const [topIdea, setTopIdea] = useState<TopIdeaType | null>(null);
   const hasComments = !!topIdea && topIdea.comments.length > 0;
-
-  // @todo remove or refactor when Municipales is over
-  const withPersonalityHeader: boolean = checkIsFeatureActivated(
-    FEATURE_FLIPPING.MUNICIPAL_PERSONALITY_HEADER,
-    question.activeFeatures
-  );
 
   const parentPages: BreadcrumbsPagesType[] = [
     {
@@ -103,8 +93,6 @@ const TopIdeaDetailsPage: FC = () => {
       >
         <IntroBanner question={question} />
       </ConsultationHeaderWrapperStyle>
-      {/** @todo remove or refactor when Municipales is over */}
-      {withPersonalityHeader && <CandidateEngagement question={question} />}
       <ConsultationPageWrapperStyle>
         <ConsultationSidebar question={question} />
         <ConsultationPageContentStyle id="main" data-cy-container="main">

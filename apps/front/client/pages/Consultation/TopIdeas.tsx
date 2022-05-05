@@ -1,15 +1,11 @@
 import React, { FC, useEffect, useState } from 'react';
 import { redirectToNotFoundPage } from '@make.org/utils/helpers/url';
 import { QuestionType, TopIdeaType } from '@make.org/types';
-
 import { TopIdeaService } from '@make.org/utils/services/TopIdea';
 import { trackDisplayTopIdeas } from '@make.org/utils/services/Tracking';
 import { FollowUs } from '@make.org/components/Flipping/FollowUs';
 import i18n from 'i18next';
 import { Spinner } from '@make.org/ui/components/Loading/Spinner';
-import { FEATURE_FLIPPING } from '@make.org/types/enums';
-import { checkIsFeatureActivated } from '@make.org/utils/helpers/featureFlipping';
-
 import { ThemeProvider } from 'styled-components';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
@@ -18,7 +14,6 @@ import { MetaTags } from '@make.org/components/MetaTags';
 import { MobileDescriptionImage } from '../../app/Consultation/MobileDescriptionImage';
 import { TopIdeasSkipLinks } from '../../app/SkipLinks/TopIdeas';
 import { ConsultationSidebar } from '../../app/Consultation/Sidebar';
-import { CandidateEngagement } from '../../custom/municipales/CandidateEngagement';
 import { TopIdeaCard } from '../../app/TopIdeas/Card';
 import { IntroBanner } from '../../app/Consultation/IntroBanner/index';
 import {
@@ -37,11 +32,7 @@ const TopIdeasPage: FC = () => {
   const isMobile = matchMobileDevice(device);
   const [topIdeas, setTopIdeas] = useState<TopIdeaType[]>([]);
   const hasTopIdeas = topIdeas && topIdeas.length > 0;
-  // @todo remove or refactor when Municipales is over
-  const withPersonalityHeader: boolean = checkIsFeatureActivated(
-    FEATURE_FLIPPING.MUNICIPAL_PERSONALITY_HEADER,
-    question.activeFeatures
-  );
+
   const initTopIdeas = async () => {
     const results = await TopIdeaService.getTopIdeas(question.questionId, () =>
       redirectToNotFoundPage(country)
@@ -76,8 +67,6 @@ const TopIdeasPage: FC = () => {
       >
         <IntroBanner question={question} />
       </ConsultationHeaderWrapperStyle>
-      {/** @todo remove or refactor when Municipales is over */}
-      {withPersonalityHeader && <CandidateEngagement question={question} />}
       <ConsultationPageWrapperStyle isGreatCause={false}>
         <ConsultationSidebar question={question} />
         <ConsultationPageContentStyle id="main" data-cy-container="main">
