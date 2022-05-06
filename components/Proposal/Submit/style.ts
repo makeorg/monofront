@@ -294,6 +294,7 @@ export const ProposalSubmitButtonsWidgetStyle = styled(FlexElementStyle)`
 
 export const DataPolicyWrapperStyle = styled.span`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-family: ${MakeFonts.CircularStandardBook};
   color: ${color.greyDark};
   margin-top: 30px;
   display: block;
@@ -387,10 +388,12 @@ export const ProposalSuccessTitle = styled.h2`
   line-height: 1.5;
   text-transform: none;
   text-align: left;
+  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
+    text-align: center;
+  }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${intToPx(typography.font.fontsize.XL.value)};
     line-height: 39px;
-    text-align: center;
   }
 `;
 
