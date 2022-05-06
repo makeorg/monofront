@@ -45,7 +45,7 @@ export const RegistrationIncentive: FC<Props> = ({
   const { dispatch } = useAppContext();
 
   const handleClick = () => {
-    dispatch(setPanelContent(<Register panel />));
+    dispatch(setPanelContent(<Register />));
     trackClickSubscribe('subscribe-next-consultation');
   };
 

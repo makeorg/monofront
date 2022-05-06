@@ -10,12 +10,12 @@ import { ConditionParagraphMarginStylePanel } from '@make.org/ui/elements/Paragr
 import { OptOutCheckBox } from '@make.org/components/Form/CheckBox/OptOutCheckbox';
 import { RegisterCheckBox } from '@make.org/components/Form/CheckBox/RegisterCheckbox';
 import { isSupportedCountry } from '@make.org/utils/validator/postCode';
-import { ExtraInRegisterformationsFields } from '../CommonFields/ExtraRegisterInformations';
+import { ExtraInRegisterformationsFields } from '../../CommonFields/ExtraRegisterInformations';
 import {
   NewWindowIconStyle,
   TermsOfUseLinkGreyStyle,
   PostCodeWrapperStyle,
-} from '../style';
+} from '../../style';
 
 type Props = {
   user: RegisterFormDataType;

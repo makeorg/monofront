@@ -28,7 +28,7 @@ export const SearchRegister: React.FC = () => {
           {i18n.t('search.sidebar.register.title')}
         </FourthLevelTitleStyle>
         <SeachRegisterButtonStyle
-          onClick={() => dispatch(setPanelContent(<Register panel />))}
+          onClick={() => dispatch(setPanelContent(<Register />))}
         >
           <ThumbsUpIconStyle aria-hidden focusable="false" />
           {i18n.t('common.register_label')}

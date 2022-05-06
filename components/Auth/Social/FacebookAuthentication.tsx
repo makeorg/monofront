@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   ReactFacebookFailureResponse,
   ReactFacebookLoginInfo,
@@ -27,7 +27,11 @@ import { displayNotificationBanner } from '@make.org/store/actions/notifications
 import { NOTIF } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
 import i18n from 'i18next';
-import { closePanel, setPanelContent } from '@make.org/store/actions/panel';
+import {
+  closePanel,
+  removePanelContent,
+  setPanelContent,
+} from '@make.org/store/actions/panel';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
@@ -37,11 +41,24 @@ import {
   SvgLogoFacebookWrapperStyle,
 } from './style';
 
-export const FacebookAuthentication: FC = () => {
+type Props = {
+  panel?: boolean;
+};
+
+export const FacebookAuthentication: React.FC<Props> = ({ panel }) => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy, language } = state.appConfig;
   const { proposalContent } = state.pendingProposal;
   const question = selectCurrentQuestion(state);
+  const isPanel = panel && panel === true;
+  const handleClose = () => {
+    if (isPanel) {
+      dispatch(closePanel());
+      dispatch(removePanelContent());
+    } else {
+      dispatch(modalClose());
+    }
+  };
 
   // setting facebook browser to true  or false
   const [isFacebookBrowser, setFacebookBrowser] = useState(false);
@@ -70,8 +87,7 @@ export const FacebookAuthentication: FC = () => {
           NOTIF.NOTIFICATION_LEVEL_ALERT
         )
       );
-      dispatch(closePanel());
-      dispatch(modalClose());
+      handleClose();
 
       return;
     }
@@ -88,8 +104,7 @@ export const FacebookAuthentication: FC = () => {
           NOTIF.NOTIFICATION_LEVEL_ALERT
         )
       );
-      dispatch(closePanel());
-      dispatch(modalClose());
+      handleClose();
 
       return;
     }
@@ -128,7 +143,7 @@ export const FacebookAuthentication: FC = () => {
       },
       success,
       () => trackAuthenticationSocialFailure(FACEBOOK_PROVIDER_ENUM),
-      () => dispatch(modalClose())
+      () => handleClose()
     );
   };
 

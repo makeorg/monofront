@@ -38,10 +38,10 @@ type TypeLoginValues = {
 };
 
 type Props = {
-  panel?: boolean;
+  isProposalSubmit?: boolean;
 };
 
-export const LoginForm: FC<Props> = ({ panel }) => {
+export const LoginForm: FC<Props> = ({ isProposalSubmit }) => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy } = state.appConfig;
   const { proposalContent } = state.pendingProposal;
@@ -132,7 +132,7 @@ export const LoginForm: FC<Props> = ({ panel }) => {
         passwordError={passwordError}
         handleChange={handleChange}
       />
-      {panel && (
+      {isProposalSubmit && (
         <LinkButtonStyle
           onClick={() =>
             dispatch(setProposalAuthStep(AUTH_STEP.FORGOT_PASSWORD))

@@ -5,20 +5,20 @@ import {
   SeparatorWrapperStyle,
   TextSeparatorStyle,
 } from '@make.org/ui/elements/SeparatorsElements';
-import { FacebookAuthentication } from '../Social/FacebookAuthentication';
-import { GoogleAuthentication } from '../Social/GoogleAuthentication';
+import { FacebookAuthentication } from '../../Social/FacebookAuthentication';
+import { GoogleAuthentication } from '../../Social/GoogleAuthentication';
 import {
   AuthenticationButtonWrapperStyle,
   AuthenticationEmailIconStyle,
   EmailButtonStyle,
   SocialButtonLabelStyle,
-} from '../Social/style';
+} from '../../Social/style';
 
 type Props = {
   onEmailRegister?: () => void;
 };
 
-export const AuthenticationRegisterButtons: FC<Props> = ({
+export const ProposalSubmitAuthenticationRegisterButtons: FC<Props> = ({
   onEmailRegister,
 }) => (
   <AuthenticationButtonWrapperStyle data-cy-container="signup-auth-buttons">

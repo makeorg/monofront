@@ -31,7 +31,7 @@ export const FinalCard: React.FC<Props> = ({ questionSlug }) => {
   const { country } = state.appConfig;
 
   const handleClick = () => {
-    dispatch(setPanelContent(<Register panel />));
+    dispatch(setPanelContent(<Register />));
     trackClickCitizenRegister();
   };
 

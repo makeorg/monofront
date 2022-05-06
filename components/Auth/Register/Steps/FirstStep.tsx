@@ -2,7 +2,7 @@ import React, { ChangeEvent } from 'react';
 import i18n from 'i18next';
 import { RedButtonCenterStyle } from '@make.org/ui/elements/ButtonsElements';
 import { ErrorObjectType, RegisterFormDataType } from '@make.org/types';
-import { EmailPasswordFields } from '../CommonFields/EmailPassword';
+import { EmailPasswordFields } from '../../CommonFields/EmailPassword';
 
 type Props = {
   user: RegisterFormDataType;

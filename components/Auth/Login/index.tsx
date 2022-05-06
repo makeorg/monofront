@@ -30,14 +30,13 @@ import { FacebookAuthentication } from '../Social/FacebookAuthentication';
 import { GoogleAuthentication } from '../Social/GoogleAuthentication';
 
 type Props = {
-  panel?: boolean;
+  isProposalSubmit?: boolean;
 };
-export const Login: React.FC<Props> = ({ panel }) => {
+export const Login: React.FC<Props> = ({ isProposalSubmit }) => {
   const { dispatch } = useAppContext();
-
   const handleRegisterPanel = () => {
     dispatch(modalClose());
-    dispatch(setPanelContent(<Register panel />));
+    dispatch(setPanelContent(<Register />));
   };
 
   const handleForgotPasswordModal = () => {
@@ -49,8 +48,8 @@ export const Login: React.FC<Props> = ({ panel }) => {
       aria-labelledby="login_title"
       data-cy-container="authentication"
     >
-      {panel ? (
-        <LoginTitleWrapperStyle as="h3" className="panel">
+      {isProposalSubmit ? (
+        <LoginTitleWrapperStyle as="h3" className="proposalSubmit">
           {i18n.t('login.connect')}
         </LoginTitleWrapperStyle>
       ) : (
@@ -76,8 +75,8 @@ export const Login: React.FC<Props> = ({ panel }) => {
           </FourthLevelTitleStyle>
         </>
       )}
-      <LoginForm panel={panel} />
-      {!panel && (
+      <LoginForm isProposalSubmit={isProposalSubmit} />
+      {!isProposalSubmit && (
         <>
           <ExtraParagraphStyle>
             {i18n.t('login.forgot_password_title')}

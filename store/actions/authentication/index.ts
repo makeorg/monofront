@@ -9,6 +9,7 @@ import {
 } from '@make.org/types';
 import { UserService } from '@make.org/utils/services/User';
 import { NOTIF } from '@make.org/types/enums';
+import { closePanel, removePanelContent } from '../panel';
 
 import { modalClose } from '../modal';
 import * as actionTypes from '../../actionTypes';
@@ -81,6 +82,9 @@ export const getUser = async (
   }
   if (isModalOpen) {
     dispatch(modalClose());
+  } else {
+    dispatch(closePanel());
+    dispatch(removePanelContent());
   }
   if (afterRegistration && user.emailVerified) {
     return dispatch(

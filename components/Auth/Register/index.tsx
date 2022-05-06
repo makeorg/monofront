@@ -1,7 +1,11 @@
 import React, { FormEvent, SyntheticEvent, useState } from 'react';
 import i18n from 'i18next';
 import { RegisterFormDataType, ErrorObjectType } from '@make.org/types';
-import { modalClose } from '@make.org/store/actions/modal';
+import {
+  closePanel,
+  setPanelContent,
+  removePanelContent,
+} from '@make.org/store/actions/panel/';
 import {
   trackSignupEmailSuccess,
   trackSignupEmailFailure,
@@ -10,27 +14,26 @@ import { UserService } from '@make.org/utils/services/User';
 import { Logger } from '@make.org/utils/services/Logger';
 import { useAppContext } from '@make.org/store';
 import { getUser } from '@make.org/store/actions/authentication';
-import { closePanel, setPanelContent } from '@make.org/store/actions/panel';
 import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { NewWindowGreyIconStyle } from '@make.org/ui/elements/LinkElements';
 import { resetProposalAuthStep } from '@make.org/store/actions/pendingProposal';
-import { RegisterForm } from './Form';
+import { RegisterForm } from './Forms/Form';
 import {
   AuthenticationWrapperStyle,
   GreyParagraphStyle,
   PersonalDataGreyLinkStyle,
 } from '../style';
-import { LegalConsent } from './LegalConsent';
+import { LegalConsent } from './Forms/LegalConsent';
 import { ProposalBackButtonStyle } from '../../Proposal/Submit/style';
 
 type Props = {
-  proposalSubmit?: boolean;
+  isProposalSubmit?: boolean;
 };
 
-export const Register: React.FC<Props> = ({ proposalSubmit }) => {
+export const Register: React.FC<Props> = ({ isProposalSubmit }) => {
   const { dispatch, state } = useAppContext();
   const { proposalContent } = state.pendingProposal;
   const [user, setUser] = useState<RegisterFormDataType>({
@@ -51,7 +54,6 @@ export const Register: React.FC<Props> = ({ proposalSubmit }) => {
   const [needLegalConsent, displayLegalConsent] = useState<boolean>(false);
   const [registerStep, setRegisterStep] = useState<number>(1);
   const question = selectCurrentQuestion(state);
-  const isProposalSubmit = proposalSubmit && proposalSubmit === true;
   const userIsAChild =
     user && user.profile && user.profile.age && user.profile.age < 15;
   const isSecondStep = registerStep === 2;
@@ -122,7 +124,7 @@ export const Register: React.FC<Props> = ({ proposalSubmit }) => {
 
   const logAndLoadUser = async (email: string, password: string) => {
     const unexpectedError = () => {
-      dispatch(modalClose());
+      dispatch(closePanel());
       // @toDo: notify user
       Logger.logError({ message: `Login fail for ${email}`, name: 'register' });
     };
@@ -131,7 +133,7 @@ export const Register: React.FC<Props> = ({ proposalSubmit }) => {
       email,
       password,
       undefined,
-      () => getUser(dispatch, state.modal.isOpen, !proposalSubmit),
+      () => getUser(dispatch, state.modal.isOpen, !isProposalSubmit),
       () => undefined,
       () => unexpectedError()
     );
@@ -143,10 +145,10 @@ export const Register: React.FC<Props> = ({ proposalSubmit }) => {
       logAndLoadUser(user.email, user.password).then(async () => {
         trackSignupEmailSuccess();
         setErrors([]);
-        if (!proposalSubmit) {
-          dispatch(modalClose());
-        }
-        if (proposalContent && proposalSubmit) {
+        dispatch(closePanel());
+        dispatch(removePanelContent());
+        // Display the proposal in the proposal submit context
+        if (proposalContent && isProposalSubmit) {
           await ProposalService.propose(
             proposalContent,
             question.questionId,
@@ -159,7 +161,7 @@ export const Register: React.FC<Props> = ({ proposalSubmit }) => {
       setErrors(serviceErrors);
       trackSignupEmailFailure();
     };
-    const unexpectedError = () => dispatch(modalClose());
+    const unexpectedError = () => dispatch(closePanel());
     displayLegalConsent(false);
     setWaitingCallback(true);
 

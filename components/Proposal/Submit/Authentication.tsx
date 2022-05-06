@@ -3,7 +3,7 @@ import React, { FC, useEffect } from 'react';
 import i18n from 'i18next';
 import { trackDisplayAuthenticationForm } from '@make.org/utils/services/Tracking';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
-import { AuthenticationRegisterButtons } from '@make.org/components/Auth/Register/Buttons';
+import { ProposalSubmitAuthenticationRegisterButtons } from '@make.org/components/Auth/Register/AuthenticationButtons/ProposalSubmitAuthenticationButtons';
 import { Register } from '@make.org/components/Auth/Register';
 import { Login } from '@make.org/components/Auth/Login/index';
 import { PasswordForgot } from '@make.org/components/Auth/PasswordForgot';
@@ -53,7 +53,7 @@ const renderAuthStep = (step: string | undefined, dispatch: Dispatch) => {
     case AUTH_STEP.LOGIN:
       return (
         <>
-          <Login panel />
+          <Login isProposalSubmit />
           <ProposalAuthSocialLoginWrapperStyle>
             <SeparatorProposalAuthLogin>
               <ProposalSubmitAuthSeparator />
@@ -68,7 +68,7 @@ const renderAuthStep = (step: string | undefined, dispatch: Dispatch) => {
         </>
       );
     case AUTH_STEP.REGISTER:
-      return <Register proposalSubmit />;
+      return <Register isProposalSubmit />;
     case AUTH_STEP.FORGOT_PASSWORD:
       return (
         <PasswordForgot
@@ -129,7 +129,7 @@ export const ProposalAuthentication: FC = () => {
                 </ProposalStepLabelRedStyle>
                 {i18n.t('proposal_submit.authentication.last_step')}
               </ProposalAltStepTitleStyle>
-              <AuthenticationRegisterButtons
+              <ProposalSubmitAuthenticationRegisterButtons
                 onEmailRegister={() =>
                   dispatch(setProposalAuthStep(AUTH_STEP.REGISTER))
                 }

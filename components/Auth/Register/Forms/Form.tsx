@@ -1,28 +1,14 @@
 import React, { ChangeEvent, FormEvent, useEffect } from 'react';
-import i18n from 'i18next';
 import { ErrorObjectType, RegisterFormDataType } from '@make.org/types';
 import { FormLeftAlignStyle } from '@make.org/ui/elements/FormElements';
 import { getFieldError } from '@make.org/utils/helpers/form';
 import { FORM } from '@make.org/types/enums';
 import { throttle } from '@make.org/utils/helpers/throttle';
 import { trackDisplaySignupForm } from '@make.org/utils/services/Tracking';
-import { useAppContext } from '@make.org/store';
-import {
-  SeparatorStyle,
-  SeparatorWrapperStyle,
-  TextSeparatorStyle,
-} from '@make.org/ui/elements/SeparatorsElements';
-import { RedLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
-import { modalShowLogin } from '@make.org/store/actions/modal';
 import { TitleForm } from './Title';
-import { FirstStepRegister } from './FirstStep';
-import { SecondStepRegister } from './SecondStep';
-import {
-  RegisterParagraphStyle,
-  SocialRegisterButtonsWrapperStyle,
-} from '../style';
-import { FacebookAuthentication } from '../Social/FacebookAuthentication';
-import { GoogleAuthentication } from '../Social/GoogleAuthentication';
+import { FirstStepRegister } from '../Steps/FirstStep';
+import { SecondStepRegister } from '../Steps/SecondStep';
+import { SocialAuthenticationButtons } from '../AuthenticationButtons/SocialAuthenticationButtons';
 
 type Props = {
   user: RegisterFormDataType;
@@ -54,11 +40,6 @@ export const RegisterForm: React.FC<Props> = ({
   const firstnameError = getFieldError('firstname', errors);
   const ageError = getFieldError('dateofbirth', errors);
   const postalcodeError = getFieldError('postalcode', errors);
-  const { dispatch } = useAppContext();
-
-  const handleLoginModal = () => {
-    dispatch(modalShowLogin());
-  };
 
   useEffect(() => {
     trackDisplaySignupForm(`${registerStep}`);
@@ -79,25 +60,7 @@ export const RegisterForm: React.FC<Props> = ({
             handleChange={handleChange}
             checkRegistration={checkRegistration}
           />
-          {!isProposalSubmit && (
-            <>
-              <SeparatorWrapperStyle className="margin-top margin-bottom">
-                <SeparatorStyle />
-                <TextSeparatorStyle>{i18n.t('register.or')}</TextSeparatorStyle>
-                <SeparatorStyle />
-              </SeparatorWrapperStyle>
-              <SocialRegisterButtonsWrapperStyle>
-                <GoogleAuthentication />
-                <FacebookAuthentication />
-              </SocialRegisterButtonsWrapperStyle>
-              <RegisterParagraphStyle>
-                {i18n.t('register.login_title')}
-                <RedLinkButtonStyle onClick={handleLoginModal}>
-                  {i18n.t('register.login_link')}
-                </RedLinkButtonStyle>
-              </RegisterParagraphStyle>
-            </>
-          )}
+          {!isProposalSubmit && <SocialAuthenticationButtons />}
         </>
       )}
       {registerStep === 2 && (

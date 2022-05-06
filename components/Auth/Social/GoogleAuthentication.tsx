@@ -1,10 +1,15 @@
-import React, { FC } from 'react';
+import React from 'react';
 import GoogleLogin, {
   GoogleLoginResponse,
   GoogleLoginResponseOffline,
 } from 'react-google-login';
 import { GOOGLE_PROVIDER_ENUM } from '@make.org/api/UserApiService';
 import { GOOGLE_LOGIN_ID } from '@make.org/utils/constants/config';
+import {
+  closePanel,
+  removePanelContent,
+  setPanelContent,
+} from '@make.org/store/actions/panel/';
 import { SvgGoogleLogoG } from '@make.org/ui/Svg/elements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { UserService } from '@make.org/utils/services/User';
@@ -29,7 +34,6 @@ import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
-import { setPanelContent } from '@make.org/store/actions/panel';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import {
   GoogleButtonStyle,
@@ -37,11 +41,24 @@ import {
   SvgLogoWrapperStyle,
 } from './style';
 
-export const GoogleAuthentication: FC = () => {
+type Props = {
+  panel?: boolean;
+};
+
+export const GoogleAuthentication: React.FC<Props> = ({ panel }) => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy } = state.appConfig || {};
   const { proposalContent } = state.pendingProposal;
   const question = selectCurrentQuestion(state);
+  const isPanel = panel && panel === true;
+  const handleClose = () => {
+    if (isPanel) {
+      dispatch(closePanel());
+      dispatch(removePanelContent());
+    } else {
+      dispatch(modalClose());
+    }
+  };
 
   /** Google login method callback */
   const handleGoogleLoginSuccess = async (
@@ -82,7 +99,7 @@ export const GoogleAuthentication: FC = () => {
       },
       success,
       () => trackAuthenticationSocialFailure(GOOGLE_PROVIDER_ENUM),
-      () => dispatch(modalClose())
+      () => handleClose()
     );
   };
 
@@ -107,7 +124,7 @@ export const GoogleAuthentication: FC = () => {
         NOTIF.NOTIFICATION_LEVEL_ALERT
       )
     );
-    dispatch(modalClose());
+    handleClose();
   };
 
   return (

@@ -17,7 +17,7 @@ export const CitizenRegister: FC = () => {
   const { dispatch, state } = useAppContext();
 
   const handleClick = () => {
-    dispatch(setPanelContent(<Register panel />));
+    dispatch(setPanelContent(<Register />));
     trackClickCitizenRegister();
   };
 

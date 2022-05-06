@@ -154,7 +154,7 @@ export const LoginTitleWrapperStyle = styled(ThirdLevelTitleStyle)`
   line-height: 1.5;
   letter-spacing: 0.12px;
   align-self: flex-start;
-  &.panel {
+  &.proposalSubmit {
     margin-top: 32px;
   }
 `;

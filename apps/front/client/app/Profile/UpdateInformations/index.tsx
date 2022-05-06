@@ -21,11 +21,10 @@ import {
 } from '@make.org/ui/elements/FormElements';
 import { throttle } from '@make.org/utils/helpers/throttle';
 import { FormSuccessMessage } from '@make.org/components/Form/Success';
-
 import { getAgeFromDateOfBirth } from '@make.org/utils/helpers/date';
 import { OrganisationService } from '@make.org/utils/services/Organisation';
 import { PersonalityService } from '@make.org/utils/services/Personality';
-import { LegalConsent } from '@make.org/components/Auth/Register/LegalConsent';
+import { LegalConsent } from '@make.org/components/Auth/Register/Forms/LegalConsent';
 import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { useAppContext } from '@make.org/store';
 import { OrganisationForm } from './Organisation';
