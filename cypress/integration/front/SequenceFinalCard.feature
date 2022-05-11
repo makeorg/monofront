@@ -1,4 +1,4 @@
-@todo
+@front
 Feature: Final card
   I want to see final card
   Scenario: Display final card
@@ -9,5 +9,5 @@ Feature: Final card
     And I see a link "J'accède à la consultation" to "/FR/consultation/question-3-slug/participate" in "final-card" container
     And I see "Comment suivre les résultats ?" in "final-card-register-description" container
     When I click on "final-card-register-button" button
-    Then I see "Créer un compte" in "register-modal-title" container
+    Then I see "S’inscrire par e-mail (1/2)" in "register-panel-title" container
     

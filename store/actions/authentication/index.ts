@@ -83,6 +83,7 @@ export const getUser = async (
   if (isModalOpen) {
     dispatch(modalClose());
   } else {
+    // @Todo remove when connect moved to panel, atm this closePanel closes the panel in proposal register too, hiding the success register panel
     dispatch(closePanel());
     dispatch(removePanelContent());
   }

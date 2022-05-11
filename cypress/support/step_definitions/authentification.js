@@ -12,11 +12,11 @@ const userData = user;
 
 When('I login with email {string} and password {string}', (email, password) => {
   cy.intercept({
-    url: 'http://localhost:9000/user/privacy-policy',
+    url: '/user/privacy-policy',
     method: 'POST',
   }).as('postUserPrivacyPolicy');
   cy.intercept({
-    url: 'http://localhost:9000/oauth/make_access_token',
+    url: '/oauth/make_access_token',
     method: 'POST',
   }).as('postOauthAccessToken');
 
@@ -36,54 +36,63 @@ When(
   (email, password) => {
     cy.get('#email').type(email);
     cy.get('#password').type(password);
-    cy.get('#authentication-register-submit').click();
-  }
-);
-
-When(
-  'I register with email {string} and password {string} and firstname {string} and age {string} and I accept the data policy before submitting',
-  (email, password, firstname, age) => {
-    const emailValue =
-      email === 'unique@example.com' ? `${guid()}-fake@example.com` : email;
-    cy.get('[name=email]').type(emailValue);
-    cy.get('[name=password]').type(password);
-    cy.get('[name=firstname]').type(firstname);
-    cy.get('[name=age]').type(age);
-    cy.get('#registerCheckbox').click({ force: true });
-    cy.intercept({ method: 'POST', url: 'http://localhost:9000/user' }, req => {
+    cy.intercept({ method: 'POST', url: '/user/check-registration' }, req => {
       expect(req.body).to.include({
-        password: 'TestMake',
-        firstName: 'testfirstname',
-        dateOfBirth: '1986-01-01',
-        approvePrivacyPolicy: true,
+        email: userData.email,
+        password: userData.password,
       }),
         req.reply({
           statusCode: 200,
           body: {
             ...userData,
-            email: emailValue,
+            email,
+            password,
+            lastConnection: now.toISOString(),
+          },
+        });
+    }).as('postUser');
+    cy.get('#authentication-register-submit').click();
+    cy.wait('@postUser');
+  }
+);
+
+When(
+  'I register with firstname {string} and age {string} and I accept the data policy before submitting',
+  (firstname, age) => {
+    cy.get('[name=firstname]').type(firstname);
+    cy.get('[name=age]').type(age);
+    cy.get('#registerCheckbox').click({ force: true });
+    cy.intercept({ method: 'POST', url: '/user' }, req => {
+      expect(req.body).to.include({
+        password: userData.password,
+        firstName: userData.firstName,
+        dateOfBirth: userData.profile.dateOfBirth,
+        approvePrivacyPolicy: userData.approvePrivacyPolicy,
+      }),
+        req.reply({
+          statusCode: 200,
+          body: {
+            ...userData,
+            email: 'unique@example.com',
             firstName: firstname,
             lastConnection: now.toISOString(),
           },
         });
     }).as('postUser');
-    cy.intercept(
-      { method: 'POST', url: 'http://localhost:9000/oauth/make_access_token' },
-      req => {
-        expect(req.body).to.include('TestMake'),
-          req.reply({
-            token_type: 'Bearer',
-            access_token: '1000000d-100f-11b2-9bff-00000000000a',
-            expires_in: 300,
-            refresh_token: '2000000d-100f-11b2-9bff-00000000000b',
-            refresh_expires_in: 1500,
-            created_at: now.toISOString(),
-          });
-      }
-    ).as('postLogin');
+    cy.intercept({ method: 'POST', url: '/oauth/make_access_token' }, req => {
+      expect(req.body).to.include('TestMake'),
+        req.reply({
+          token_type: 'Bearer',
+          access_token: '1000000d-100f-11b2-9bff-00000000000a',
+          expires_in: 300,
+          refresh_token: '2000000d-100f-11b2-9bff-00000000000b',
+          refresh_expires_in: 1500,
+          created_at: now.toISOString(),
+        });
+    }).as('postLogin');
     cy.get('#authentication-register-submit').click();
-    cy.wait('@postUser', { timeout: 8000 });
-    cy.wait('@postLogin', { timeout: 8000 });
+    cy.wait('@postUser');
+    cy.wait('@postLogin');
   }
 );
 
@@ -102,10 +111,11 @@ When('I register with a missing password', () => {
 });
 
 When('I register with a missing firstname', () => {
-  cy.get('[name=password]').type('testCypress');
+  cy.get('[name=age]').type('35');
 });
 
 When('I register with a missing age', () => {
+  cy.get('[name=age]').clear();
   cy.get('[name=firstname]').type('firstnameCypress');
 });
 
@@ -114,8 +124,6 @@ When('I register with a missing data policy', () => {
 });
 
 When('I register as minor', () => {
-  cy.get('[name=email]').type('unique@example.com');
-  cy.get('[name=password]').type('testCypress');
   cy.get('[name=firstname]').type('firstnameCypress');
   cy.get('[name=age]').type('10');
   cy.get('#registerCheckbox').click({ force: true });
@@ -160,4 +168,9 @@ Then('I see {string} message as {string} error', (errorMessage, field) => {
 
 Then('I see {string} as message error', errorMessage => {
   cy.get('#authentication-login-error').children().contains(errorMessage);
+});
+
+Then('I clear the field', () => {
+  cy.get('#email').clear();
+  cy.get('#password').clear();
 });

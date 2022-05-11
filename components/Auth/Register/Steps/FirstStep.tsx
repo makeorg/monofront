@@ -30,6 +30,7 @@ export const FirstStepRegister: React.FC<Props> = ({
     <RedButtonCenterStyle
       onClick={checkRegistration}
       disabled={!user.password || !user.email}
+      id="authentication-register-submit"
     >
       {i18n.t('common.continue')}
     </RedButtonCenterStyle>

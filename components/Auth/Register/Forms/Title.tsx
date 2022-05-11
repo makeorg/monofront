@@ -12,7 +12,7 @@ type Props = {
 
 export const TitleForm: React.FC<Props> = ({ errors, registerStep }) => (
   <>
-    <RegisterEmailTitleStyle>
+    <RegisterEmailTitleStyle data-cy-container="register-panel-title">
       {i18n.t('common.social_login.email_register')}{' '}
       {i18n.t('common.social_login.count_register', {
         count: registerStep,
