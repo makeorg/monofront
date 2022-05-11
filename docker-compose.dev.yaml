@@ -1,135 +1,133 @@
-version: "3.9"
+version: '3.9'
 
 services:
-    app_make_dev: &dev_service
-      image: app_make_dev
-      build:
-        context: .
-        dockerfile: apps/front/Dockerfile
-        target: app-dev
-      ports:
-        - 3000:3000
-        - 8888:8888
-      volumes:
-        &default_volumes
-        - .:/home/app
-        - /home/app/node_modules
-        - /home/app/apps/front/node_modules
-        - /home/app/apps/widget/node_modules
-        - /home/app/api/node_modules
-        - /home/app/components/node_modules
-        - /home/app/types/node_modules
-        - /home/app/assets/node_modules
-        - /home/app/utils/node_modules
-        - /home/app/ui/node_modules
-        - /home/app/store/node_modules
-        - /home/app/apimock/node_modules
-        - /home/app/apps/front/dist
-        - /home/app/apps/widget/dist
-        - /home/app/dist
-      profiles: 
-        - app-dev
-  
-    app_make_ssr: &ssr_service
-      image: app_make_ssr
-      build:
-        context: .
-        dockerfile: apps/front/Dockerfile
-        target: app-ssr
-      ports:
-        - 3000:3000
-        - 8888:8888
-      volumes: *default_volumes
-      profiles:
-        - app-ssr
+  app_make_dev: &dev_service
+    image: app_make_dev
+    build:
+      context: .
+      dockerfile: apps/front/Dockerfile
+      target: app-dev
+    ports:
+      - 3000:3000
+      - 8888:8888
+    volumes: &default_volumes
+      - .:/home/app
+      - /home/app/node_modules
+      - /home/app/apps/front/node_modules
+      - /home/app/apps/widget/node_modules
+      - /home/app/api/node_modules
+      - /home/app/components/node_modules
+      - /home/app/types/node_modules
+      - /home/app/assets/node_modules
+      - /home/app/utils/node_modules
+      - /home/app/ui/node_modules
+      - /home/app/store/node_modules
+      - /home/app/apimock/node_modules
+      - /home/app/apps/front/dist
+      - /home/app/apps/widget/dist
+      - /home/app/dist
+    profiles:
+      - app-dev
 
-    api_mock:
-      image: api_mock
-      build:
-        context: .
-        dockerfile: apimock/Dockerfile
-        target: api-mock
-      ports:
-        - 9000:9000
-      volumes: *default_volumes
-      profiles: 
-        - front-test
-        - widget-test
-    
-    app_make_test:
-      <<: *ssr_service
-      image: app_make_test
-      ports:
-        - 9009:3000
-      volumes: 
-        - .:/home/app
-        - /home/app/node_modules
-        - /home/app/apps/front/node_modules
-        - /home/app/apps/widget/node_modules
-        - /home/app/api/node_modules
-        - /home/app/components/node_modules
-        - /home/app/types/node_modules
-        - /home/app/assets/node_modules
-        - /home/app/utils/node_modules
-        - /home/app/ui/node_modules
-        - /home/app/store/node_modules
-        - /home/app/apimock/node_modules
-        - /home/app/apps/front/dist
-        - /home/app/apps/widget/dist
-        - /home/app/dist
-        - ./apps/front/.env.cypress:/home/app/apps/front/.env.local
-      profiles: 
-        - front-test
+  app_make_ssr: &ssr_service
+    image: app_make_ssr
+    build:
+      context: .
+      dockerfile: apps/front/Dockerfile
+      target: app-ssr
+    ports:
+      - 3000:3000
+      - 8888:8888
+    volumes: *default_volumes
+    profiles:
+      - app-ssr
 
-    widget_make_dev:
-      image: widget_make_dev
-      build:
-        context: .
-        dockerfile: apps/widget/Dockerfile
-        target: widget-dev
-      ports:
-        - 3000:3000
-        - 8888:8888
-      volumes: *default_volumes
-      profiles: 
-        - widget-dev
+  api_mock:
+    image: api_mock
+    build:
+      context: .
+      dockerfile: apimock/Dockerfile
+      target: api-mock
+    ports:
+      - 9000:9000
+    volumes: *default_volumes
+    profiles:
+      - front-test
+      - widget-test
 
-    widget_make_ssr: &ssr_widget_service
-      image: widget_make_ssr
-      build:
-        context: .
-        dockerfile: apps/widget/Dockerfile
-        target: widget-ssr
-      ports:
-        - 3000:3000
-        - 8888:8888
-      volumes: *default_volumes
-      profiles: 
-        - widget-ssr
+  app_make_test:
+    <<: *ssr_service
+    image: app_make_test
+    ports:
+      - 9009:3000
+    volumes:
+      - .:/home/app
+      - /home/app/node_modules
+      - /home/app/apps/front/node_modules
+      - /home/app/apps/widget/node_modules
+      - /home/app/api/node_modules
+      - /home/app/components/node_modules
+      - /home/app/types/node_modules
+      - /home/app/assets/node_modules
+      - /home/app/utils/node_modules
+      - /home/app/ui/node_modules
+      - /home/app/store/node_modules
+      - /home/app/apimock/node_modules
+      - /home/app/apps/front/dist
+      - /home/app/apps/widget/dist
+      - /home/app/dist
+      - ./apps/front/.env.cypress:/home/app/apps/front/.env.local
+    profiles:
+      - front-test
 
+  widget_make_dev:
+    image: widget_make_dev
+    build:
+      context: .
+      dockerfile: apps/widget/Dockerfile
+      target: widget-dev
+    ports:
+      - 3000:3000
+      - 8888:8888
+    volumes: *default_volumes
+    profiles:
+      - widget-dev
 
-    widget_make_test:
-      <<: *ssr_widget_service
-      image: widget_make_test
-      ports:
-        - 9008:3000
-        - 8888:8888
-      volumes: 
-        - .:/home/app
-        - /home/app/node_modules
-        - /home/app/apps/front/node_modules
-        - /home/app/apps/widget/node_modules
-        - /home/app/api/node_modules
-        - /home/app/components/node_modules
-        - /home/app/types/node_modules
-        - /home/app/assets/node_modules
-        - /home/app/utils/node_modules
-        - /home/app/ui/node_modules
-        - /home/app/store/node_modules
-        - /home/app/apimock/node_modules
-        - /home/app/apps/front/dist
-        - /home/app/apps/widget/dist
-        - /home/app/dist
-        - ./apps/widget/.env.cypress:/home/app/apps/widget/.env.local
-      profiles: 
-        - widget-test
+  widget_make_ssr: &ssr_widget_service
+    image: widget_make_ssr
+    build:
+      context: .
+      dockerfile: apps/widget/Dockerfile
+      target: widget-ssr
+    ports:
+      - 3000:3000
+      - 8888:8888
+    volumes: *default_volumes
+    profiles:
+      - widget-ssr
+
+  widget_make_test:
+    <<: *ssr_widget_service
+    image: widget_make_test
+    ports:
+      - 9008:3000
+      - 8888:8888
+    volumes:
+      - .:/home/app
+      - /home/app/node_modules
+      - /home/app/apps/front/node_modules
+      - /home/app/apps/widget/node_modules
+      - /home/app/api/node_modules
+      - /home/app/components/node_modules
+      - /home/app/types/node_modules
+      - /home/app/assets/node_modules
+      - /home/app/utils/node_modules
+      - /home/app/ui/node_modules
+      - /home/app/store/node_modules
+      - /home/app/apimock/node_modules
+      - /home/app/apps/front/dist
+      - /home/app/apps/widget/dist
+      - /home/app/dist
+      - ./apps/widget/.env.cypress:/home/app/apps/widget/.env.local
+    profiles:
+      - widget-test

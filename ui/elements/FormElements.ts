@@ -12,16 +12,12 @@ import { UnstyledButtonStyle } from './ButtonsElements';
 const DataPolicyLinkStyle = `
 display: inline-flex;
 font-family: ${MakeFonts.CircularStandardBook};
-color: ${color.brandSecondary};
+color: ${color.greyDark};
 text-transform: none;
 text-decoration: underline;
 align-items: center;
 font-size: ${intToPx(typography.font.fontsize.XS.value)};
 line-height: 1.31;
-&:hover,
-&:focus {
-  color: ${color.brandSecondary};
-}
 `;
 
 export const CheckboxWrapper = styled(FlexElementStyle)`
@@ -43,7 +39,7 @@ export const CheckboxLabelStyle = styled.label<{
       ? intToPx(typography.font.fontsize.XS.value)
       : intToPx(typography.font.fontsize.X2S.value)};
   a {
-    color: ${props => (props.isWidget ? color.greyDark : color.brandSecondary)};
+    color: ${color.greyDark};
   }
   strong {
     font-family: ${MakeFonts.CircularStandardBold};
@@ -64,6 +60,7 @@ export const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   // Hide checkbox visually but remain accessible to screen readers.
   // Source: https://polished.js.org/docs/#hidevisually
   border: 0;
+
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   height: 1px;
@@ -109,26 +106,16 @@ export const NewWindowIconStyle = styled(SvgExternalLinkPlain)`
   width: 9px;
   height: 9px;
   padding-left: 2px;
-  .tofill {
-    fill: ${color.brandSecondary};
-  }
-  &.grey .tofill {
-    fill: ${color.greyDark};
-  }
 `;
 export const DataPolicyNewWindowLinkStyle = styled.a<{ isWidget?: boolean }>`
   ${DataPolicyLinkStyle};
-  color: ${props => (props.isWidget ? color.greyDark : color.brandSecondary)};
+  color: ${color.greyDark};
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${props =>
       props.isWidget
         ? intToPx(typography.font.fontsize.X2S.value)
         : intToPx(typography.font.fontsize.XS.value)};
-  }
-  &:hover,
-  &:focus {
-    color: ${props => (props.isWidget ? color.greyDark : color.brandSecondary)};
   }
 `;
 

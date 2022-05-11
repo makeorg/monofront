@@ -14,7 +14,6 @@ import {
   isSupportedCountry,
 } from '@make.org/utils/validator/postCode';
 import { useAppContext } from '@make.org/store';
-import { TwoFieldsRowStyle } from '@make.org/ui/elements/FormElements';
 
 type Props = {
   firstnameValue: string;
@@ -53,7 +52,7 @@ export const ExtraInRegisterformationsFields: FC<Props> = ({
         handleChange={handleChange}
       />
       {isSupportedCountry(country) ? (
-        <TwoFieldsRowStyle>
+        <>
           <NumberInput
             name="age"
             id="profile.age"
@@ -77,7 +76,7 @@ export const ExtraInRegisterformationsFields: FC<Props> = ({
             handleChange={handleChange}
             pattern={html5regexByCountry(country)}
           />
-        </TwoFieldsRowStyle>
+        </>
       ) : (
         <NumberInput
           name="age"

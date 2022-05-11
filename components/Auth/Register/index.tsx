@@ -25,6 +25,7 @@ import {
   AuthenticationWrapperStyle,
   GreyParagraphStyle,
   PersonalDataGreyLinkStyle,
+  RegisterFormUtilsAlignementWrapperStyle,
 } from '../style';
 import { LegalConsent } from './Forms/LegalConsent';
 import { ProposalBackButtonStyle } from '../../Proposal/Submit/style';
@@ -180,7 +181,7 @@ export const Register: React.FC<Props> = ({ isProposalSubmit }) => {
     displayLegalConsent(!needLegalConsent);
   };
   return (
-    <>
+    <RegisterFormUtilsAlignementWrapperStyle>
       <LegalConsent
         needLegalConsent={needLegalConsent}
         handleCheckbox={handleCheckbox}
@@ -221,6 +222,6 @@ export const Register: React.FC<Props> = ({ isProposalSubmit }) => {
           </GreyParagraphStyle>
         )}
       </AuthenticationWrapperStyle>
-    </>
+    </RegisterFormUtilsAlignementWrapperStyle>
   );
 };

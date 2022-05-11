@@ -36,6 +36,13 @@ export const AuthenticationWrapperStyle = styled.section`
   }
 `;
 
+export const RegisterFormUtilsAlignementWrapperStyle = styled.div`
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
 export const AuthenticationTitleStyle = styled(SecondLevelTitleStyle)`
   padding: 0 25px;
 `;
@@ -99,16 +106,12 @@ export const LegalSubmitStyle = styled(RedButtonStyle)`
 export const TermsOfUseLinkStyle = styled.a`
   display: inline;
   font-family: ${MakeFonts.CircularStandardBook};
-  color: ${color.brandSecondary};
+  color: ${color.greyDark};
   text-transform: none;
   text-decoration: underline;
   align-items: center;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   line-height: 1.31;
-  &:hover,
-  &:focus {
-    color: ${color.brandSecondary};
-  }
 `;
 
 export const TermsOfUseLinkGreyStyle = styled(TermsOfUseLinkStyle)`
@@ -171,6 +174,7 @@ export const RegisterParagraphStyle = styled.p`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   margin-top: 15px;
   display: inline;
+  align-self: center;
 `;
 
 export const GreyParagraphStyle = styled.p`
@@ -191,8 +195,4 @@ export const PersonalDataGreyLinkStyle = styled.a`
   text-decoration: underline;
   align-items: center;
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  &:hover,
-  &:focus {
-    color: ${color.greyDark};
-  }
 `;
