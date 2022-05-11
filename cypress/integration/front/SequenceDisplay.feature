@@ -27,5 +27,5 @@ Feature: Sequence display
       | language            | fr                                                                  |
     And event "click-start-sequence" should not be tracked by Make
   Scenario: Closed question redirect sequence to about page
-    Given I go to "sequence" page of the question "question-10-slug"
+    Given I go to the sequence page of the question "question-10-slug" with no client load check
     Then I see the "about" page

@@ -1,4 +1,4 @@
-import React, { useEffect, FC } from 'react';
+import React, { useEffect, FC, useState } from 'react';
 import { ModernNormalizeStylesheet } from '@make.org/assets/css-in-js/ModernNormalize';
 import { FontFacesStylesheet } from '@make.org/assets/css-in-js/FontFaces';
 import { DefaultStylesheet } from '@make.org/assets/css-in-js/DefaultStyle';
@@ -18,6 +18,7 @@ import { PrivacyPolicyModal } from '@make.org/components/PrivacyPolicyModal';
 import { CookieModal } from '@make.org/components/CookieModal';
 import { SecureExpiration } from '@make.org/components/Expiration/Secure';
 import { SessionExpirationWithCoockies } from '@make.org/components/Expiration/Session';
+import { env } from '@make.org/assets/env';
 import { updateDeviceInState } from '../helpers/updateDeviceInState';
 import { Header } from './Header';
 import { Footer } from './Footer';
@@ -41,7 +42,7 @@ export const AppContainer: FC = () => {
     () => dispatch(updateDeviceInState(device)),
     DEBOUNCE_TIMER
   );
-
+  const [isClientSide, setIsClientSide] = useState(false);
   const hasCountry = country && country !== null;
 
   useEffect(() => {
@@ -49,6 +50,10 @@ export const AppContainer: FC = () => {
     window.addEventListener('resize', updateDeviceConfig);
     return () => window.removeEventListener('resize', updateDeviceConfig);
   }, [updateDeviceConfig]);
+
+  useEffect(() => {
+    setIsClientSide(env.isClientSide());
+  }, []);
 
   useEffect(() => {
     updateDeviceConfig();
@@ -65,7 +70,10 @@ export const AppContainer: FC = () => {
           <ErrorBoundary>
             {/** page_wrapper id is used to set page background color in usePageBackgroundColor hook */}
             <>
-              <AppWrapperStyle id="page_wrapper">
+              <AppWrapperStyle
+                id="page_wrapper"
+                data-cy-client-loaded={isClientSide}
+              >
                 <CanonicalUrl />
                 <Hreflang />
                 <ModernNormalizeStylesheet />

@@ -300,6 +300,39 @@ const generateProposals = (question, author, count) => {
   }));
 };
 
+const generateFirstProposal = (question, author) => {
+  switch (question.slug) {
+    case 'question-5-slug':
+      return [];
+    default:
+      break;
+  }
+
+  return {
+    ...defaultProposal,
+    id: `proposal-${question.slug}-first-id`,
+    slug: `proposal-${question.slug}-first-slug`,
+    content: `proposal-${question.slug}-first-content`,
+    question: {
+      questionId: question.questionId,
+      slug: question.slug,
+      wording: {
+        title: question.wording.title,
+        question: question.wording.question,
+      },
+      startDate: question.startDate,
+      endDate: question.endDate,
+      countries: ['FR'],
+      language: 'fr',
+    },
+    author: {
+      ...defaultProposal.author,
+      ...author,
+    },
+  };
+};
+
+
 const generatePartners = count =>
   range(0, count).map(number => ({
     ...defaultPartner,
@@ -344,6 +377,10 @@ const authorProposal = {
 const proposals = questions
   .map(question => generateProposals(question, authorProposal, 24))
   .flat();
+const firstProposals = questions
+  .map(question => generateFirstProposal(question, authorProposal))
+  .flat();
+
 const partners = generatePartners(5);
 const popularTags = generatePopularTags(4);
 const tags = generateTags(4);
@@ -488,16 +525,56 @@ const countriesWithConsultations = [
 
 const demographics = defaultDemographics;
 
+const voteAgree = {
+  ...defaultVote,
+  voteKey: 'agree',
+  hasVoted: true,
+  qualifications: defaultAgreeQualifications,
+  agree: {
+    ...defaultVote.agree,
+    hasVoted: true,
+    qualifications: defaultAgreeQualifications,
+  },
+};
+
+const voteDisagree = {
+  ...defaultVote,
+  voteKey: 'disagree',
+  hasVoted: true,
+  qualifications: defaultDisagreeQualifications,
+  disagree: {
+    ...defaultVote.disagree,
+    hasVoted: true,
+    qualifications: defaultDisagreeQualifications,
+  },
+};
+
+const voteNeutral = {
+  ...defaultVote,
+  voteKey: 'neutral',
+  hasVoted: true,
+  qualifications: defaultNeutralQualifications,
+  neutral: {
+    ...defaultVote.neutral,
+    hasVoted: true,
+    qualifications: defaultNeutralQualifications,
+  },
+};
+
 const fixtures = {
   openedHomepageQuestions,
   finishedHomepageQuestions,
   upcomingHomepageQuestions,
   questions,
   proposals,
+  firstProposals,
   partners,
   popularTags,
   tags,
   vote: defaultVote,
+  voteAgree,
+  voteDisagree,
+  voteNeutral,
   homeView,
   foreignHomeView,
   organisations,

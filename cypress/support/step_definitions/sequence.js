@@ -31,6 +31,17 @@ Given(
 );
 
 Given(
+  'I am/go on/to the sequence (page )of the question {string} with no client load check',
+  questionSlug => {
+    const page = sequencePage[Cypress.env('application')]
+      .replace(':questionSlug', questionSlug)
+      .replace(':language', 'fr')
+      .replace(':country', 'FR');
+    cy.visit(page, { noLoadCheck: true });
+  }
+);
+
+Given(
   'I am/go on/to the sequence (page )of the question {string} with country {string} and language {string}',
   (questionSlug, country, language) => {
     const page = sequencePage[Cypress.env('application')]
@@ -71,7 +82,11 @@ Given(
       .replace(':questionSlug', questionSlug)
       .replace(':language', 'fr')
       .replace(':country', 'FR');
-    cy.visit(`${page}?introCard=false`);
+    if (Cypress.env('application') === 'widget') {
+      cy.visit(page);
+    } else {
+      cy.visit(`${page}?introCard=false`);
+    }
   }
 );
 
@@ -101,23 +116,17 @@ Given(
 
 When('I click on {string} of the sequence', buttonName => {
   const button = getIdentifierButtonByName(buttonName);
-  cy.get(`[data-cy-button=${button}]`)
-    .first()
-    .then(el => el.get(0).click());
+  cy.get(`[data-cy-button=${button}]`).first().click();
 });
 
 When('I click on {string} of the current card', buttonName => {
   const button = getIdentifierButtonByName(buttonName);
-  cy.get(`[data-cy-button=${button}]`)
-    .first()
-    .then(el => el.get(0).click());
+  cy.get(`[data-cy-button=${button}]`).first().click();
 });
 
 When('I vote {string} on proposal {string}', (voteType, proposalNumber) => {
   cy.monitorApiCall('postVote');
-  cy.get(`#${voteLabel[voteType]}-${proposalNumber}`).then(el =>
-    el.get(0).click()
-  );
+  cy.get(`#${voteLabel[voteType]}-${proposalNumber}`).click();
   cy.wait('@postVote');
 });
 
@@ -127,15 +136,13 @@ When('I vote {string} on the first proposal of sequence', voteType => {
     `[data-cy-card-type=PROPOSAL_CARD] [data-cy-button=vote][data-cy-vote-key=${voteType}]`
   )
     .first()
-    .then(el => el.get(0).click());
+    .click();
   cy.wait('@postVote');
 });
 
 When('I vote {string} on the current card', voteType => {
   cy.monitorApiCall('postVote');
-  cy.get(`[data-cy-button=vote][data-cy-vote-key=${voteType}]`)
-    .first()
-    .then(el => el.get(0).click());
+  cy.get(`[data-cy-button=vote][data-cy-vote-key=${voteType}]`).first().click();
   cy.wait('@postVote');
 });
 
@@ -145,7 +152,7 @@ When('I qualify {string} on the current card', qualificationType => {
     `[data-cy-button=qualification][data-cy-qualification-key=${qualificationType}]`
   )
     .first()
-    .then(el => el.get(0).click());
+    .click();
   cy.wait('@postQualify');
 });
 
@@ -155,15 +162,13 @@ When('I unqualify {string} on the current card', qualificationType => {
     `[data-cy-button=qualification][data-cy-qualification-key=${qualificationType}]`
   )
     .first()
-    .then(el => el.get(0).click());
+    .click();
   cy.wait('@postUnqualify');
 });
 
 When('I unvote on the current card', () => {
   cy.monitorApiCall('postUnvote');
-  cy.get(`[data-cy-button=vote]`)
-    .first()
-    .then(el => el.get(0).click());
+  cy.get(`[data-cy-button=vote]`).first().click();
   cy.wait('@postUnvote');
 });
 
@@ -212,7 +217,7 @@ When(
           // click on vote agree button
           cy.get(`[data-cy-button=vote][data-cy-vote-key=agree]`)
             .first()
-            .then(el => el.get(0).click());
+            .click();
 
           // check next-proposal button exists in DOM
           cy.get('[data-cy-button=next-proposal]')
@@ -439,24 +444,6 @@ Then(
     )
       .first()
       .should('have.not.css', 'background-color', 'rgb(80, 122, 31)');
-  }
-);
-
-Then('total votes are equal to {string}', voteCount => {
-  cy.get('[data-cy-container=sequence]').should(
-    'contain',
-    `${voteCount} votes`
-  );
-});
-
-Then(
-  'total {string} qualifications are equal to {string} on the current card',
-  (qualificationType, total) => {
-    cy.get(
-      `[data-cy-button-qualification-total][data-cy-qualification-key=${qualificationType}]`
-    )
-      .first()
-      .contains(total);
   }
 );
 

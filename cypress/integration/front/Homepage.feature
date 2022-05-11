@@ -65,9 +65,9 @@ Feature: The Home Page
       | location            | homepage                                                              |
       | language            | fr                                                                    |
       | country             | FR                                                                    |
-      | question-id         |                                                                       |
+      | question-id         | null                                                                  |
       | referrer            | http://localhost:9009/__/                                             |
-      | custom-data         |                                                                       |
+      | custom-data         | null                                                                  |
     When I click on "country-switch-modal" button
     Then I see "Changer de pays" in "country_switch_nav" container
     And I see a "country_switch_GB" link
@@ -92,9 +92,9 @@ Feature: The Home Page
       | location            | homepage                                                              |
       | language            | en                                                                    |
       | country             | GB                                                                    |
-      | question-id         |                                                                       |
+      | question-id         | null                                                                  |
       | referrer            | http://localhost:9009/__/                                             |
-      | custom-data         |                                                                       |
+      | custom-data         | null                                                                  |
 
   Scenario: Track display home page
     Given I monitor API "postTracking" requests
@@ -118,9 +118,9 @@ Feature: The Home Page
       | location            | homepage                                                              |
       | language            | fr                                                                    |
       | country             | FR                                                                    |
-      | question-id         |                                                                       |
+      | question-id         | null                                                                  |
       | referrer            | http://localhost:9009/__/                                             |
-      | custom-data         |                                                                       |
+      | custom-data         | null                                                                  |
 
   Scenario: Track display home page on british version
     Given I monitor API "postTracking" requests
@@ -144,6 +144,6 @@ Feature: The Home Page
       | location            | homepage                                                              |
       | language            | en                                                                    |
       | country             | GB                                                                    |
-      | question-id         |                                                                       |
+      | question-id         | null                                                                  |
       | referrer            | http://localhost:9009/__/                                             |
-      | custom-data         |                                                                       |
+      | custom-data         | null                                                                  |

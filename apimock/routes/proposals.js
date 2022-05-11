@@ -4,20 +4,23 @@ const { fixtures } = require('../fixtures/generator');
 const proposalsRouter = jsonServer.create();
 
 proposalsRouter.use('/:proposalId/vote', (req, res) => {
-  res.send({
-    ...fixtures.vote,
-    hasVoted: true,
-    voteKey: req.body.voteKey,
-    qualifications: fixtures.qualifications[req.body.voteKey],
-  });
+  switch (req.body.voteKey) {
+    case 'agree':
+      res.send(fixtures.voteAgree);
+      break;
+    case 'disagree':
+      res.send(fixtures.voteDisagree);
+      break;
+    case 'neutral':
+      res.send(fixtures.voteNeutral);
+      break;
+    default:
+      res.sendStatus(400);
+  }
 });
 
 proposalsRouter.use('/:proposalId/unvote', (req, res) => {
-  res.send({
-    ...fixtures.vote,
-    hasVoted: false,
-    voteKey: req.body.voteKey,
-  });
+  res.send(fixtures.vote);
 });
 
 proposalsRouter.use('/:proposalId/qualification', (req, res) => {

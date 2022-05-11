@@ -82,6 +82,7 @@ export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
     dispatch(setSequenceLoading(true));
     dispatch(setSequenceLength(0));
     dispatch(disableFirstProposal());
+    trackClickNextCard();
   };
 
   useEffect(() => {

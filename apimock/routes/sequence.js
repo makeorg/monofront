@@ -30,6 +30,8 @@ sequenceRouter.get('/standard/:questionId', (req, res) => {
     includes.forEach(proposalId => {
       const currentProposal = fixtures.proposals.find(
         proposal => proposal.id === proposalId
+      ) || fixtures.firstProposals.find(
+        proposal => proposal.id === proposalId
       );
       proposals[index] = {
         ...currentProposal,
@@ -47,7 +49,7 @@ sequenceRouter.get('/standard/:questionId', (req, res) => {
 
 // start standard sequence first proposal
 sequenceRouter.get('/standard/:questionId/first-proposal', (req, res) => {
-  const proposalsOfQuestion = fixtures.proposals.filter(
+  const proposalsOfQuestion = fixtures.firstProposals.filter(
     proposal => proposal.question.questionId === req.params.questionId
   );
   const proposal = proposalsOfQuestion.pop();
@@ -71,6 +73,8 @@ sequenceRouter.get('/consensus/:questionId', (req, res) => {
     let index = 0;
     includes.forEach(proposalId => {
       proposals[index] = fixtures.proposals.find(
+        proposal => proposal.id === proposalId
+      ) || fixtures.firstProposals.find(
         proposal => proposal.id === proposalId
       );
       index += 1;

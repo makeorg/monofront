@@ -62,4 +62,11 @@ Cypress.Commands.add('waitForAll', aliasName => {
   cy.wait(`@${aliasName}`);
 });
 
+Cypress.Commands.overwrite('visit', (originalFn, url, options) => {
+  if (!options?.noLoadCheck) {
+    cy.get('[data-cy-client-loaded=true]', { timeout: 10000 });
+  }
+  originalFn(url, options);
+});
+
 // Cypress.Cookies.debug(true);

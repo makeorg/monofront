@@ -73,9 +73,9 @@ Feature: Accessibility
   Scenario: Check HTML validity of profile page
   Given I go to "france homepage"
   And I login with email "test@example.com" and password "abcdefgh"
-  When I go to "profile proposals"
+  When I click on "header-profile" link
   Then I see "Mes dernières propositions" in "main" container
   And html page should be valid
-  When I go to "profile favourites"
+  When I click on "tab-favorites" link
   Then I see "Mes coups de cœur" in "main" container
   Then html page should be valid

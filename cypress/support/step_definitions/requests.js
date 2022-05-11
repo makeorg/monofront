@@ -13,6 +13,29 @@ export const xhrTrackingRequests = { list: {} };
 // register asserts by endpoint
 export const asserts = { list: {} };
 
+const getExpectedValue = values => {
+  switch (Cypress.env('application')) {
+    case 'widget': {
+      if (values.widgetValue === undefined && values.value === undefined) {
+        throw new Error('Missing widgetValue column');
+      }
+      const value =
+        values.widgetValue !== undefined ? values.widgetValue : values.value;
+
+      return value === 'null' ? null : value;
+    }
+    default: {
+      if (values.frontValue === undefined && values.value === undefined) {
+        throw new Error('Missing frontValue column');
+      }
+      const value =
+        values.frontValue !== undefined ? values.frontValue : values.value;
+
+      return value === 'null' ? null : value;
+    }
+  }
+};
+
 Then(
   'some make data header should be sent to {string}:',
   (endpoint, expectedHeaders) => {
@@ -23,8 +46,7 @@ Then(
       expectedHeaders.hashes().forEach(expectedHeader => {
         const headerValue =
           xhrRequest.request.headers[`x-make-${expectedHeader.name}`];
-        const expectedValue =
-          expectedHeader.value === '' ? null : expectedHeader.value;
+        const expectedValue = getExpectedValue(expectedHeader);
         expect(
           headerValue ? headerValue.trim() : null,
           `header x-make-${expectedHeader.name} on ${endpoint}`
@@ -61,67 +83,12 @@ Then(
           expect(
             body.eventType,
             `tracking Make ${expectedParameter.name}`
-          ).to.equal(expectedParameter.value);
+          ).to.equal(getExpectedValue(expectedParameter));
         } else {
           expect(
             body.eventParameters[expectedParameter.name],
             `tracking Make ${expectedParameter.name}`
-          ).to.equal(expectedParameter.value);
-        }
-      });
-    };
-    if (!asserts.list.postTracking) {
-      asserts.list.postTracking = [];
-    }
-    asserts.list.postTracking.push(assertCallback);
-  }
-);
-
-// Tracking event test for common tests
-Then(
-  'common event {string} on question {string} should be tracked by Make with parameters values:',
-  (trackerName, questionSlug, commonExpectedParameters) => {
-    const currentExpectedParameters = commonExpectedParameters.rawTable;
-
-    // reorders expectedParameters for widget and front env
-    const expectedParameters = () => {
-      let slicedArrayDatas = [];
-      // reorders array for widget values
-      if (Cypress.env('application') === 'widget') {
-        currentExpectedParameters.map(currentExpectedParameter => {
-          const keys = currentExpectedParameter.slice(0, 1);
-          const values = currentExpectedParameter.slice(2);
-          const param = keys.concat(values);
-          slicedArrayDatas.push(param);
-        });
-      } else {
-        // reorders array for front values
-        slicedArrayDatas = currentExpectedParameters.map(
-          currentExpectedParameter => currentExpectedParameter.slice(0, 2)
-        );
-      }
-      return slicedArrayDatas.slice(1);
-    };
-
-    // checks equality between request body and expected data
-    const assertCallback = async () => {
-      const expectedParametersData = await expectedParameters();
-      expect(xhrTrackingRequests.list).to.have.any.keys(trackerName);
-      const xhrRequest = xhrTrackingRequests.list[trackerName].shift();
-      expect(xhrRequest, `Track "${trackerName}" not called`).to.not.be
-        .undefined;
-      expectedParametersData.forEach(expectedParameterData => {
-        const body = xhrRequest.request.body || {};
-        if (expectedParameterData[0] === 'eventType') {
-          expect(
-            body.eventType,
-            `tracking Make ${expectedParameterData[0]}`
-          ).to.equal(expectedParameterData[1]);
-        } else {
-          expect(
-            body.eventParameters[expectedParameterData[0]],
-            `tracking Make ${expectedParameterData[0]}`
-          ).to.equal(expectedParameterData[1]);
+          ).to.equal(getExpectedValue(expectedParameter));
         }
       });
     };

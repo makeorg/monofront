@@ -19,13 +19,17 @@ import {
 } from '../../style';
 import { HeaderPanel } from '../HeaderPanel';
 
-export const ClosedConsultation: FC = () => {
+type Props = {
+  dataCyClientLoaded: boolean;
+};
+
+export const ClosedConsultation: FC<Props> = ({ dataCyClientLoaded }) => {
   const { state } = useAppContext();
   const question: QuestionType = selectCurrentQuestion(state);
   const { country } = state.appConfig;
 
   return (
-    <>
+    <div data-cy-client-loaded={dataCyClientLoaded}>
       <MetaTags
         title={i18n.t('meta.sequence.title_standard', {
           question: question.wording.question,
@@ -57,6 +61,6 @@ export const ClosedConsultation: FC = () => {
           <SequenceProgress disabled />
         </SequenceContentStyle>
       </SequenceContainerStyle>
-    </>
+    </div>
   );
 };

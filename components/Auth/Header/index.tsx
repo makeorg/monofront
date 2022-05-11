@@ -35,6 +35,7 @@ export const HeaderAuthentication: React.FC = () => {
         to={getRouteProfile(country)}
         onClick={trackClickProfile}
         aria-label={i18n.t('common.header_authentication_nav')}
+        data-cy-link="header-profile"
       >
         <Avatar avatarUrl={user.avatarUrl} />
         {isDesktop && userName}

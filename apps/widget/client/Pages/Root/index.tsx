@@ -15,6 +15,7 @@ import { QuestionType } from '@make.org/types';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { MetaTags } from '@make.org/components/MetaTags';
 import i18n from 'i18next';
+import { env } from '@make.org/assets/env';
 import { HeaderPanel } from '../../components/HeaderPanel';
 import { ClosedConsultation } from '../../components/ClosedConsultation';
 import { IntroProposal } from '../../components/IntroProposal';
@@ -37,6 +38,11 @@ export const RootPage: FC = () => {
   const [widgetcards, setWidgetCards] = useState(
     <FirstProposal sequenceKind={sequenceKind || SEQUENCE.KIND_STANDARD} />
   );
+  const [isClientSide, setIsClientSide] = useState(false);
+
+  useEffect(() => {
+    setIsClientSide(env.isClientSide());
+  }, []);
 
   useEffect(() => {
     if (topProposal) {
@@ -61,11 +67,14 @@ export const RootPage: FC = () => {
   }
 
   if (!isInProgress(question) || unsecure) {
-    return <ClosedConsultation />;
+    return <ClosedConsultation dataCyClientLoaded={isClientSide} />;
   }
 
   return (
-    <WidgetContainerStyle isStandardSequenceKind={isStandardSequenceKind}>
+    <WidgetContainerStyle
+      isStandardSequenceKind={isStandardSequenceKind}
+      data-cy-client-loaded={isClientSide}
+    >
       <MetaTags
         title={i18n.t(getMetalTitleBySequenceKind(sequenceKind), {
           question: question.wording.question,

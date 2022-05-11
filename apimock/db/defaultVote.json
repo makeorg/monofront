@@ -20,7 +20,7 @@
       }
     ],
     "hasVoted":false,
-    "score":0.50 
+    "score":0.50
   },
   "disagree": {
     "voteKey":"disagree",
@@ -43,7 +43,7 @@
         }
     ],
     "hasVoted":false,
-    "score":0.50 
+    "score":0.50
   },
   "neutral": {
     "voteKey":"neutral",
@@ -65,28 +65,28 @@
         "hasQualified":false
       }
     ],
-    "hasVoted":true,
+    "hasVoted":false,
     "score": 0.50 
   },
-    "voteKey":"neutral",
-    "count":5,
-    "qualifications":[
-      {
-        "qualificationKey":"doNotUnderstand",
-        "count":2,
-        "hasQualified":false
-      },
-      {
-        "qualificationKey":"noOpinion",
-        "count":4,
-        "hasQualified":false
-      },
-      {
-        "qualificationKey":"doNotCare",
-        "count":6,
-        "hasQualified":false
-      }
-    ],
-    "hasVoted":true,
-    "score":0.50 
+  "voteKey":"neutral",
+  "count":5,
+  "qualifications":[
+    {
+      "qualificationKey":"doNotUnderstand",
+      "count":2,
+      "hasQualified":false
+    },
+    {
+      "qualificationKey":"noOpinion",
+      "count":4,
+      "hasQualified":false
+    },
+    {
+      "qualificationKey":"doNotCare",
+      "count":6,
+      "hasQualified":false
+    }
+  ],
+  "hasVoted":false,
+  "score":0.50
 }
