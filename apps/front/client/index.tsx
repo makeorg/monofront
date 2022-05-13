@@ -181,7 +181,12 @@ const initApp = async (state: StateRoot) => {
 
   // Cookie preference
   const preferencesCookie = cookies.get(COOKIE.USER_PREFERENCES);
-  initTrackersFromPreferences(preferencesCookie, ENABLE_MIXPANEL);
+  const visitorIdFromCookie = cookies.get(COOKIE.VISITOR_ID);
+  initTrackersFromPreferences(
+    preferencesCookie,
+    visitorIdFromCookie,
+    ENABLE_MIXPANEL
+  );
 
   loadableReady(() => {
     const appDom = document.getElementById('app');

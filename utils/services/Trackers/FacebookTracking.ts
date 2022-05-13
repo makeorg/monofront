@@ -38,10 +38,10 @@ export const isFBInitialized = (): boolean => {
 };
 
 export const FacebookTracking = {
-  init(): void {
+  init(uniqueCustomerId: string): void {
     try {
       fbq.load();
-      fbq.track('init', makePixelId);
+      fbq.track('init', makePixelId, { external_id: uniqueCustomerId });
       initialized = true;
     } catch (e) {
       const error = e as string;

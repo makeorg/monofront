@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
+import Cookies from 'universal-cookie';
 import { DateHelper } from '@make.org/utils/helpers/date';
 import {
   FACEBOOK_LINK_EN,
@@ -25,7 +26,7 @@ import { displayNotificationBanner } from '@make.org/store/actions/notifications
 import { MetaTags } from '@make.org/components/MetaTags';
 import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import { NOTIF } from '@make.org/types/enums';
+import { COOKIE, NOTIF } from '@make.org/types/enums';
 import {
   SvgLoudSpeaker,
   SvgSettings,
@@ -60,7 +61,7 @@ import {
   StaticTitleExtra,
 } from './style';
 
-export const Cookies: FC = () => {
+export const CookiesPage: FC = () => {
   const { dispatch, state } = useAppContext();
   const { country } = state.appConfig;
   const { cookiesPreferences } = state.user;
@@ -86,12 +87,14 @@ export const Cookies: FC = () => {
     if (isDE) return LINKEDIN_LINK_DE;
     return LINKEDIN_LINK_EN;
   };
+  const cookies = new Cookies();
+  const visitorIdFromCookie = cookies.get(COOKIE.VISITOR_ID);
 
   const handlePreferences = () => {
     trackClickModalCookieSave('cookies-accept-preferences');
     setPreferencesCookie(cookiesPreferences);
     removeTrackersFromPreferences(cookiesPreferences);
-    initTrackersFromPreferences(cookiesPreferences);
+    initTrackersFromPreferences(cookiesPreferences, visitorIdFromCookie);
     dispatch(
       displayNotificationBanner(
         NOTIF.COOKIES_PREFERENCES_UPDATE_MESSAGE,
@@ -444,4 +447,4 @@ export const Cookies: FC = () => {
 };
 
 // eslint-disable-next-line import/no-default-export
-export default Cookies;
+export default CookiesPage;

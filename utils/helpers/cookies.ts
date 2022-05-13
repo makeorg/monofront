@@ -3,6 +3,7 @@ import { StateUserCookiesPreferences } from '@make.org/types';
 import Cookies from 'universal-cookie';
 import { MixpanelTracking } from '@make.org/utils/services/Trackers/MixpanelTracking';
 import { COOKIE } from '@make.org/types/enums';
+import { v4 as uuidv4 } from 'uuid';
 import { TwitterUniversalTag } from '../services/Trackers/TwitterTracking';
 import { TWITTER_SCRIPT, twttr } from '../services/Trackers/twttr.js';
 
@@ -25,6 +26,7 @@ export const setPreferencesCookie = (
 
 export const initTrackersFromPreferences = (
   cookiePreferences: StateUserCookiesPreferences,
+  visitorId?: string,
   enableMixPanel?: boolean
 ): void => {
   const body = document.querySelector('body');
@@ -37,7 +39,7 @@ export const initTrackersFromPreferences = (
     cookiePreferences?.facebook_tracking &&
     !FacebookTracking.isInitialized()
   ) {
-    FacebookTracking.init();
+    FacebookTracking.init(visitorId || uuidv4());
   }
 
   if (cookiePreferences?.twitter_tracking && !twttr.initialized()) {

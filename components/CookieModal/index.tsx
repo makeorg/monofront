@@ -64,13 +64,18 @@ export const CookieModal: React.FC = () => {
   const preferencesCookie: StateUserCookiesPreferences = cookies.get(
     COOKIE.USER_PREFERENCES
   );
+  const visitorIdFromCookie = cookies.get(COOKIE.VISITOR_ID);
 
   const handleAcceptAll = async () => {
     dispatch(acceptAllCookiesPreferences());
     trackClickModalCookieSave('cookies-accept-all');
     dispatch(modalCloseCookies());
     setPreferencesCookie(ACCEPT_ALL_PREFERENCES);
-    initTrackersFromPreferences(ACCEPT_ALL_PREFERENCES, ENABLE_MIXPANEL);
+    initTrackersFromPreferences(
+      ACCEPT_ALL_PREFERENCES,
+      visitorIdFromCookie,
+      ENABLE_MIXPANEL
+    );
   };
 
   const handleRejectAll = () => {
@@ -95,7 +100,11 @@ export const CookieModal: React.FC = () => {
     dispatch(modalCloseCookies());
     setPreferencesCookie(cookiesPreferences);
     removeTrackersFromPreferences(cookiesPreferences);
-    initTrackersFromPreferences(cookiesPreferences, ENABLE_MIXPANEL);
+    initTrackersFromPreferences(
+      cookiesPreferences,
+      visitorIdFromCookie,
+      ENABLE_MIXPANEL
+    );
   };
 
   useEffect(() => {
