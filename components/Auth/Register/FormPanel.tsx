@@ -14,7 +14,7 @@ import { getGTUPageLink } from '@make.org/utils/helpers/url';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { ConditionParagraphMarginStylePanel } from '@make.org/ui/elements/ParagraphElements';
 import { RedButtonCenterStyle } from '@make.org/ui/elements/ButtonsElements';
-import { OptOutCheckBox } from '@make.org/components/Form/CheckBox/OptOutCheckbox';
+import { OptInCheckBox } from '@make.org/components/Form/CheckBox/OptInCheckbox';
 import { RegisterCheckBox } from '@make.org/components/Form/CheckBox/RegisterCheckbox';
 import { trackDisplaySignupForm } from '@make.org/utils/services/Tracking';
 import { isSupportedCountry } from '@make.org/utils/validator/postCode';
@@ -138,7 +138,7 @@ export const RegisterFormPanel: React.FC<Props> = ({
             </TermsOfUseLinkGreyStyle>
           </ConditionParagraphMarginStylePanel>
           <RegisterCheckBox handleCheckbox={handleCheckbox} required />
-          <OptOutCheckBox handleCheckbox={handleCheckbox} />
+          <OptInCheckBox handleCheckbox={handleCheckbox} />
           <SubmitButton
             formName={FORM.REGISTER_PANEL_FORMNAME}
             id="authentication-register-submit"

@@ -15,13 +15,12 @@ type Props = {
   /** Is input required or optional */
   required?: boolean;
 };
-export const OptOutCheckBox: React.FC<Props> = ({
+export const OptInCheckBox: React.FC<Props> = ({
   handleCheckbox,
   required = false,
 }) => {
   const { state } = useAppContext();
-  // to remember : optInNewsletter has been swapped for an optOut boolean (might be changed later)
-  const [checked, setIsChecked] = useState<boolean>(true);
+  const [checked, setIsChecked] = useState<boolean>(false);
   const { source } = state.appConfig;
   const isWidget = source === 'widget';
 
@@ -39,10 +38,10 @@ export const OptOutCheckBox: React.FC<Props> = ({
           onChange={handleChange}
           id="optInNewsletter"
         />
-        <StyledCheckbox isChecked={!checked}>
+        <StyledCheckbox isChecked={checked}>
           <SvgCheck />
         </StyledCheckbox>
-        <span>{i18n.t('legal_consent.opt_out')}</span>
+        <span>{i18n.t('legal_consent.opt_in')}</span>
       </CheckboxLabelCenterStyle>
     </CheckboxWrapper>
   );

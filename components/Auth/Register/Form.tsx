@@ -2,7 +2,7 @@ import React, { ChangeEvent, FormEvent, useEffect } from 'react';
 import i18n from 'i18next';
 import { ErrorObjectType, RegisterFormDataType } from '@make.org/types';
 import { RegisterCheckBox } from '@make.org/components/Form/CheckBox/RegisterCheckbox';
-import { OptOutCheckBox } from '@make.org/components/Form/CheckBox/OptOutCheckbox';
+import { OptInCheckBox } from '@make.org/components/Form/CheckBox/OptInCheckbox';
 import {
   FormCenterAlignStyle,
   FormRequirementsStyle,
@@ -96,7 +96,7 @@ export const RegisterForm: React.FC<Props> = ({
         </span>
       </ConditionParagraphStyle>
       <RegisterCheckBox handleCheckbox={handleCheckbox} required />
-      <OptOutCheckBox handleCheckbox={handleCheckbox} />
+      <OptInCheckBox handleCheckbox={handleCheckbox} />
       <SubmitButton
         formName={FORM.REGISTER_FORMNAME}
         id="authentication-register-submit"

@@ -53,7 +53,7 @@ export const Register: React.FC<Props> = ({ panel }) => {
       legalMinorConsent: false,
       legalAdvisorApproval: false,
       approvePrivacyPolicy: false,
-      optInNewsletter: true,
+      optInNewsletter: false,
     },
   });
   const [errors, setErrors] = useState<ErrorObjectType[]>([]);

@@ -502,7 +502,7 @@
     "privacy_policy": "Datenschutzerklärung",
     "make_protect": "Make.org verpflichtet sich, ",
     "make_protect_link": "deine persönlichen Daten zu schützen.",
-    "opt_out": "Ich möchte keine Marketing-E-Mails mit Informationen über von Make.org durchgeführte Projekte erhalten."
+    "opt_in": "Ich stimme zu, E-Mails von Make.org zu erhalten, welche mich über laufende und zukünftige Konsultationen in Kenntnis setzen."
   },
   "forgot_password": {
     "title": "Ich setze mein Passwort zurück",
@@ -665,7 +665,7 @@
     },
     "newsletter_update": {
       "title": "Meine Einstellungen verwalten",
-      "optin_label": "Ich möchte keine Marketing-E-Mails mit Informationen über von Make.org durchgeführte Projekte erhalten"
+      "optin_label": "Ich stimme zu, E-Mails von Make.org zu erhalten, welche mich über laufende und zukünftige Konsultationen in Kenntnis setzen."
     },
     "delete_account": {
       "title": "Löschung meines Kontos beantragen",
