@@ -9,8 +9,6 @@ import {
 } from '@make.org/types';
 import { UserService } from '@make.org/utils/services/User';
 import { NOTIF } from '@make.org/types/enums';
-import { closePanel, removePanelContent } from '../panel';
-
 import { modalClose } from '../modal';
 import * as actionTypes from '../../actionTypes';
 import { displayNotificationBanner } from '../notifications';
@@ -82,10 +80,6 @@ export const getUser = async (
   }
   if (isModalOpen) {
     dispatch(modalClose());
-  } else {
-    // @Todo remove when connect moved to panel, atm this closePanel closes the panel in proposal register too, hiding the success register panel
-    dispatch(closePanel());
-    dispatch(removePanelContent());
   }
   if (afterRegistration && user.emailVerified) {
     return dispatch(

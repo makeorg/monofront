@@ -130,6 +130,11 @@ export const FacebookAuthentication: React.FC<Props> = ({ panel }) => {
           () => dispatch(setPanelContent(<ProposalSuccess />))
         );
       }
+      // @todo clean isPanel when login is no longer in modal
+      if (isPanel && !proposalContent) {
+        dispatch(closePanel());
+        dispatch(removePanelContent());
+      }
     };
 
     UserService.checkSocialPrivacyPolicy(

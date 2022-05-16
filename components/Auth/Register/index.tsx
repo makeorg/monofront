@@ -145,8 +145,11 @@ export const Register: React.FC<Props> = ({ isProposalSubmit }) => {
       logAndLoadUser(user.email, user.password).then(async () => {
         trackSignupEmailSuccess();
         setErrors([]);
-        dispatch(closePanel());
-        dispatch(removePanelContent());
+        if (!proposalContent && !isProposalSubmit) {
+          dispatch(closePanel());
+          dispatch(removePanelContent());
+        }
+
         // Display the proposal in the proposal submit context
         if (proposalContent && isProposalSubmit) {
           await ProposalService.propose(

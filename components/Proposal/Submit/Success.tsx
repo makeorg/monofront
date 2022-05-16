@@ -70,6 +70,7 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
   useEffect(() => {
     trackDisplayProposalSubmitValidation();
     // eslint-disable-next-line react-hooks/exhaustive-deps
+    return () => dispatch(clearProposalPending());
   }, []);
 
   return (

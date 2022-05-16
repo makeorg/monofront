@@ -88,8 +88,12 @@ export const ProposalForm: FC = () => {
 
   const handleSubmitForm = async () => {
     if (isLoggedIn) {
-      await ProposalService.propose(proposalContent, question.questionId, () =>
-        dispatch(setPanelContent(<ProposalSuccess />))
+      await ProposalService.propose(
+        proposalContent,
+        question.questionId,
+        () => {
+          dispatch(setPanelContent(<ProposalSuccess />));
+        }
       );
     }
 
