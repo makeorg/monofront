@@ -181,10 +181,9 @@ const initApp = async (state: StateRoot) => {
 
   // Cookie preference
   const preferencesCookie = cookies.get(COOKIE.USER_PREFERENCES);
-  const visitorIdFromCookie = cookies.get(COOKIE.VISITOR_ID);
   initTrackersFromPreferences(
     preferencesCookie,
-    visitorIdFromCookie,
+    trackingParamsService.visitorId,
     ENABLE_MIXPANEL
   );
 

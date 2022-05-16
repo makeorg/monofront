@@ -29,6 +29,7 @@ import { StateUserCookiesPreferences } from '@make.org/types';
 import Cookies from 'universal-cookie';
 import { useAppContext } from '@make.org/store';
 import { COOKIE } from '@make.org/types/enums';
+import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
 import {
   CookieModalButtonWithLinkStyle,
   CookieModalBannerWrapperStyle,
@@ -64,7 +65,6 @@ export const CookieModal: React.FC = () => {
   const preferencesCookie: StateUserCookiesPreferences = cookies.get(
     COOKIE.USER_PREFERENCES
   );
-  const visitorIdFromCookie = cookies.get(COOKIE.VISITOR_ID);
 
   const handleAcceptAll = async () => {
     dispatch(acceptAllCookiesPreferences());
@@ -73,7 +73,7 @@ export const CookieModal: React.FC = () => {
     setPreferencesCookie(ACCEPT_ALL_PREFERENCES);
     initTrackersFromPreferences(
       ACCEPT_ALL_PREFERENCES,
-      visitorIdFromCookie,
+      trackingParamsService.visitorId,
       ENABLE_MIXPANEL
     );
   };
@@ -102,7 +102,7 @@ export const CookieModal: React.FC = () => {
     removeTrackersFromPreferences(cookiesPreferences);
     initTrackersFromPreferences(
       cookiesPreferences,
-      visitorIdFromCookie,
+      trackingParamsService.visitorId,
       ENABLE_MIXPANEL
     );
   };

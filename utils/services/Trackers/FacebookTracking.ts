@@ -1,5 +1,6 @@
 import { env } from '@make.org/assets/env';
 import { TrackingConfigurationParamType } from '@make.org/types';
+import { ExpressService } from '@make.org/utils/services/Express';
 import { Logger } from '../Logger';
 import { fbq } from './fbq.js';
 
@@ -38,10 +39,21 @@ export const isFBInitialized = (): boolean => {
 };
 
 export const FacebookTracking = {
-  init(uniqueCustomerId: string): void {
+  init(externalId?: string): void {
     try {
       fbq.load();
-      fbq.track('init', makePixelId, { external_id: uniqueCustomerId });
+      if (externalId) {
+        fbq.track('init', makePixelId, {
+          external_id: externalId,
+        });
+      } else {
+        Logger.logWarning({
+          name: 'tracking-facebook',
+          messager: 'Tracking is init without external id',
+        });
+        fbq.track('init', makePixelId);
+      }
+
       initialized = true;
     } catch (e) {
       const error = e as string;
@@ -77,7 +89,9 @@ export const FacebookTracking = {
   trackCustom(
     eventName: string,
     eventId: string,
-    eventParameters: FacebookEventParams | TrackingConfigurationParamType
+    eventParameters: FacebookEventParams | TrackingConfigurationParamType,
+    url: string | undefined,
+    vistorId: string
   ): void {
     if (!isFBInitialized()) {
       return;
@@ -94,6 +108,7 @@ export const FacebookTracking = {
       return;
     }
 
+    // pixel FB
     try {
       fbq.track('trackSingleCustom', makePixelId, eventName, eventParameters, {
         eventID: eventId,
@@ -102,5 +117,14 @@ export const FacebookTracking = {
       const error = e as string;
       Logger.logError(error);
     }
+
+    // Facebook API conversion
+    ExpressService.sendFbEventConversion(
+      eventName,
+      eventId,
+      eventParameters,
+      url,
+      vistorId
+    );
   },
 };

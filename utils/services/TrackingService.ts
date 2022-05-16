@@ -20,7 +20,6 @@ import { trackingParamsService } from './TrackingParamsService';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 import { MixpanelTracking } from './Trackers/MixpanelTracking';
 import { Logger } from './Logger';
-import { ExpressService } from './Express';
 
 export class TrackingValidationError extends Error {}
 
@@ -167,18 +166,9 @@ export const TrackingService = {
 
     const eventId = uuidv4();
 
-    // Facebook
     if (preferencesCookie?.facebook_tracking) {
+      // Facebook
       FacebookTracking.trackCustom(
-        eventName,
-        eventId,
-        getEventParameters(externalTrackingParameters)
-      );
-    }
-
-    // Facebook API conversion
-    if (preferencesCookie?.facebook_tracking) {
-      ExpressService.sendFbEventConversion(
         eventName,
         eventId,
         getEventParameters(externalTrackingParameters),

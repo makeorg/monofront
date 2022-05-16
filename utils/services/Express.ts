@@ -5,7 +5,6 @@ import {
 import { ExpressApiService } from '@make.org/api/ExpressApiService';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { FbEventClientType } from '@make.org/types/FbEvents';
-import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
 import { LogLevelType } from '@make.org/types/enums/logLevel';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 import { Logger } from './Logger';
@@ -53,19 +52,17 @@ const sendFbEventConversion = (
     event_name: eventName,
     user_data: {
       client_user_agent: navigator.userAgent || navigator.vendor,
-      external_id: trackingParamsService.visitorId,
+      external_id: visitorId,
     },
-    event_source_url: trackingParamsService.url || '',
+    event_source_url: url || '',
     event_id: eventId,
 
     custom_data: params,
   };
 
-  ExpressApiService.sendFbEventConversion(data)
-    .catch(error => {
-      Logger.logError(error);
-    })
-    .then(res => console.log(res));
+  ExpressApiService.sendFbEventConversion(data).catch(error => {
+    Logger.logError(error);
+  });
 };
 
 /* @todo this service is only used by 'front' app
