@@ -41,13 +41,17 @@ const log = (
   });
 };
 
-const sendFbEventConversion = (
+const sleep = (ms: number): Promise<void> =>
+  new Promise(resolve => setTimeout(resolve, ms));
+
+let pendindFbEvents = 0;
+const sendFbEventConversion = async (
   eventName: string,
   eventId: string,
   params: TrackingConfigurationParamType,
   url: string | undefined,
   visitorId: string
-): void => {
+): Promise<void> => {
   const data: FbEventClientType = {
     event_name: eventName,
     user_data: {
@@ -60,9 +64,22 @@ const sendFbEventConversion = (
     custom_data: params,
   };
 
-  ExpressApiService.sendFbEventConversion(data).catch(error => {
-    Logger.logError(error);
-  });
+  pendindFbEvents += 1;
+  if (pendindFbEvents > 100) {
+    Logger.logWarning({
+      name: 'tracking-facebook',
+      message: `More than 100 tasks pending.  Pending: ${pendindFbEvents}`,
+    });
+  }
+  await sleep(3000);
+  ExpressApiService.sendFbEventConversion(data)
+    .then(() => {
+      pendindFbEvents -= 1;
+    })
+    .catch(error => {
+      pendindFbEvents -= 1;
+      Logger.logError(error);
+    });
 };
 
 /* @todo this service is only used by 'front' app
