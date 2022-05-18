@@ -28,10 +28,10 @@ export const SmallSeparatorWithMarginStyle = styled(SmallSeparatorStyle)`
 export const SeparatorWrapperStyle = styled(MiddleRowStyle)`
   width: 100%;
   &.margin-top {
-    margin-top: 25px;
+    margin-top: 30px;
   }
   &.margin-bottom {
-    margin-bottom: 25px;
+    margin-bottom: 15px;
   }
 `;
 
@@ -47,6 +47,7 @@ export const SeparatorProposalAuthLogin = styled(SeparatorWrapperStyle)`
 
 export const TextSeparatorStyle = styled(MiddleRowStyle)`
   width: 60px;
+  line-height: 24px;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
 `;
 

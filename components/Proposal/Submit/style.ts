@@ -10,21 +10,17 @@ import {
   SvgExternalLinkPlain,
   SvgArrowLeft,
   SvgBlueManOnBench,
-  SvgBlueManWalking,
 } from '@make.org/ui/Svg/elements';
 import {
-  SpaceBetweenColumnStyle,
   ColumnElementStyle,
   CenterColumnStyle,
   FlexElementStyle,
-  CenterRowStyle,
 } from '@make.org/ui/elements/FlexElements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import TextareaAutosize from 'react-autosize-textarea/lib';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { ExtraParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
-import { Image } from '@make.org/ui/components/Image';
 import { AvatarStyle } from '@make.org/ui/components/Avatar/style';
 
 export const PanelTriggerStyle = styled(RedButtonStyle)`
@@ -50,17 +46,18 @@ export const TriggerIconStyle = styled(SvgPencil)`
   margin-right: 7px;
 `;
 
-export const ProposalFormWrapperStyle = styled(SpaceBetweenColumnStyle)<{
+export const ProposalFormWrapperStyle = styled.div<{
   isWidget?: boolean;
 }>`
   width: 100%;
   height: 100%;
-  padding: ${props => (props.isWidget ? '0px 15px 25px' : '0px 30px 25px')};
   max-width: 720px;
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin: ${props => (props.isWidget ? '0px' : '0 50px 50px 0px')};
-    padding: ${props => (props.isWidget ? '0px 15px 25px' : '0px 0px 25px')};
-  }
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+`;
+export const ProposalFormStyle = styled.form`
+  width: 100%;
 `;
 
 export const ProposalFormSuccessWrapperStyle = styled(ProposalFormWrapperStyle)`
@@ -71,11 +68,7 @@ export const ProposalStepWrapperColumnStyle = styled.div<{
   isWidget: boolean;
 }>`
   height: 100%;
-  padding: ${props => (props.isWidget ? '0px 15px 25px' : '0px 30px 25px')};
   max-width: 720px;
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    padding: ${props => (props.isWidget ? '0px 15px 25px' : '0px 0px 50px')};
-  }
 `;
 
 export const ProposalStepTitleStyle = styled.h2`
@@ -180,21 +173,20 @@ export const ProposalExternalLinkIconStyle = styled(SvgExternalLinkPlain)`
 /** Authentication */
 export const ProposalBackButtonStyle = styled(BlackNoBackgroundButtonStyle)`
   font-family: ${MakeFonts.CircularStandardBook};
+  width: 100%;
   text-align: left;
   max-width: 470px;
   display: inline;
-  width: 100%;
+  margin-bottom: 30px;
 `;
 
-export const ProposalBackButtonCenterStyle = styled(
-  BlackNoBackgroundButtonStyle
-)<{
+export const ProposalBackButtonCenterStyle = styled(ProposalBackButtonStyle)<{
   isWidget?: boolean;
 }>`
-  align-self: start;
-  font-family: ${MakeFonts.CircularStandardBook};
+  text-align: center;
+  align-self: center;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    align-self: ${props => (props.isWidget ? 'start' : 'center')};
+    text-align: ${props => (props.isWidget ? 'left' : 'center')};
   }
 `;
 
@@ -209,10 +201,6 @@ export const ProposalBackIconWrapperStyle = styled.span`
 export const ProposalBackIconStyle = styled(SvgArrowLeft)`
   width: 12px;
   height: 13px;
-`;
-
-export const ProposalAuthWrapperStyle = styled(ColumnElementStyle)`
-  margin-top: 30px;
 `;
 
 export const ProposalAuthDisclaimerStyle = styled.p`
@@ -234,6 +222,8 @@ export const ProposalAuthSeparatorStyle = styled.hr`
 export const ProposalAuthLoginStyle = styled(BlackNoBackgroundButtonStyle)`
   display: inline;
   align-self: center;
+  color: ${color.brandSecondary};
+  font-size: ${intToPx(typography.font.fontsize.XS.value)};
 `;
 
 export const ProposalAuthCancelStyle = styled(GreyNoBackgroundButtonStyle)`
@@ -258,6 +248,7 @@ export const ProposalAuthLoginWrapperStyle = styled(
   flex-wrap: wrap;
   justify-content: center;
   margin: auto;
+  font-size: ${intToPx(typography.font.fontsize.XS.value)};
 `;
 
 export const ProposalAuthSocialLoginWrapperStyle = styled(CenterColumnStyle)`
@@ -305,21 +296,16 @@ export const NewWindowIconStyle = styled(SvgExternalLinkPlain)`
   width: 12px;
   height: 12px;
   padding-left: 2px;
-  .tofill {
-    fill: ${color.brandSecondary};
-  }
 `;
 
 export const DataPolicyNewWindowLinkStyle = styled.a`
-  color: ${color.brandSecondary};
-`;
-
-export const BlueShapeImageStyle = styled(Image)`
-  opacity: 0.4;
-  position: absolute;
-  z-index: -1;
-  bottom: 0;
-  left: 0;
+  display: inline;
+  font-family: ${MakeFonts.CircularStandardBook};
+  color: ${color.greyDark};
+  text-transform: none;
+  text-decoration: underline;
+  align-items: center;
+  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
 `;
 
 export const BlueManOnBench = styled(SvgBlueManOnBench)`
@@ -328,25 +314,8 @@ export const BlueManOnBench = styled(SvgBlueManOnBench)`
   min-height: 237px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     padding-bottom: 0px;
+    margin-left: 170px;
   }
-`;
-
-export const BlueManWalking = styled(SvgBlueManWalking)`
-  padding-bottom: 30px;
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    position: absolute;
-    bottom: 20%;
-    padding-bottom: 0px;
-    right: -15%;
-  }
-`;
-
-export const ProposalImagesWrapperStyle = styled(CenterRowStyle)`
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex: 1;
-  align-items: flex-end;
 `;
 
 export const ProposalStepWrapperStyle = styled(FlexElementStyle)<{
@@ -357,7 +326,6 @@ export const ProposalStepWrapperStyle = styled(FlexElementStyle)<{
   align-items: center;
   flex-flow: column;
   width: 100%;
-  padding-top: ${props => (props.isWidget ? '15px' : '30px')};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     align-items: ${props => (props.isAuthentication ? 'center' : 'start')};
     justify-content: space-between;
@@ -374,12 +342,8 @@ export const LoginWrapperStyle = styled(CenterColumnStyle)<{
 
 export const ProposalSuccessWrapperStyle = styled(ColumnElementStyle)`
   font-family: ${MakeFonts.CircularStandardBook};
-  margin-top: 30px;
   margin-bottom: 30px;
   max-width: 505px;
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin-top: 60px;
-  }
 `;
 
 export const ProposalSuccessTitle = styled.h2`

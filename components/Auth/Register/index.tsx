@@ -10,6 +10,7 @@ import {
   trackSignupEmailSuccess,
   trackSignupEmailFailure,
 } from '@make.org/utils/services/Tracking';
+import { getDataPageLink } from '@make.org/utils/helpers/url';
 import { UserService } from '@make.org/utils/services/User';
 import { Logger } from '@make.org/utils/services/Logger';
 import { useAppContext } from '@make.org/store';
@@ -37,6 +38,7 @@ type Props = {
 export const Register: React.FC<Props> = ({ isProposalSubmit }) => {
   const { dispatch, state } = useAppContext();
   const { proposalContent } = state.pendingProposal;
+  const { country, language } = state.appConfig;
   const [user, setUser] = useState<RegisterFormDataType>({
     email: '',
     password: '',
@@ -212,7 +214,11 @@ export const Register: React.FC<Props> = ({ isProposalSubmit }) => {
         {!isProposalSubmit && !isSecondStep && (
           <GreyParagraphStyle>
             {i18n.t('legal_consent.make_protect')}&nbsp;
-            <PersonalDataGreyLinkStyle>
+            <PersonalDataGreyLinkStyle
+              href={getDataPageLink(country, language)}
+              target="_blank"
+              rel="noopener"
+            >
               {i18n.t('legal_consent.make_protect_link')}
             </PersonalDataGreyLinkStyle>
             <NewWindowGreyIconStyle aria-hidden focusable="false" />

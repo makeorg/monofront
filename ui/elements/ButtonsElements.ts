@@ -88,7 +88,7 @@ export const RedButtonCenterStyle = styled.button.attrs(props => ({
   ${BasicButtonStyle};
   ${RedStyle};
   align-self: center;
-  margin-top: 30px;
+  margin-top: 15px;
   &:disabled {
     ${GreyStyle};
   }

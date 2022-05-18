@@ -12,8 +12,6 @@ import {
   SeparatorProposalAuthLogin,
   TextSeparatorStyle,
 } from '@make.org/ui/elements/SeparatorsElements';
-import BlueShape from '@make.org/assets/images/blueShape.png';
-import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { getDataPageLink } from '@make.org/utils/helpers/url';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { FacebookAuthentication } from '@make.org/components/Auth/Social/FacebookAuthentication';
@@ -26,26 +24,21 @@ import {
   setProposalAuthStep,
 } from '@make.org/store/actions/pendingProposal';
 import { Dispatch } from '@make.org/types';
+import { NewWindowGreyIconStyle } from '@make.org/ui/elements/LinkElements';
 import { SocialRegisterButtonsWrapperStyle } from '../../Auth/style';
 import {
   ProposalFormWrapperStyle,
   ProposalStepWrapperColumnStyle,
   ProposalBackButtonStyle,
   ProposalBackButtonCenterStyle,
-  ProposalAuthWrapperStyle,
   ProposalAltStepTitleStyle,
   ProposalAuthLoginStyle,
   ProposalAuthLoginWrapperStyle,
   ProposalAuthSocialLoginWrapperStyle,
   ProposalStepLabelRedStyle,
   DataPolicyWrapperStyle,
-  NewWindowIconStyle,
   DataPolicyNewWindowLinkStyle,
   ProposalStepWrapperStyle,
-  BlueShapeImageStyle,
-  BlueManWalking,
-  ProposalImagesWrapperStyle,
-  LoginWrapperStyle,
 } from './style';
 
 const renderAuthStep = (step: string | undefined, dispatch: Dispatch) => {
@@ -61,8 +54,8 @@ const renderAuthStep = (step: string | undefined, dispatch: Dispatch) => {
               <ProposalSubmitAuthSeparator />
             </SeparatorProposalAuthLogin>
             <SocialRegisterButtonsWrapperStyle>
-              <FacebookAuthentication />
               <GoogleAuthentication />
+              <FacebookAuthentication />
             </SocialRegisterButtonsWrapperStyle>
           </ProposalAuthSocialLoginWrapperStyle>
         </>
@@ -83,10 +76,9 @@ const renderAuthStep = (step: string | undefined, dispatch: Dispatch) => {
 
 export const ProposalAuthentication: FC = () => {
   const { state, dispatch } = useAppContext();
-  const { country, language, source, device } = state.appConfig;
+  const { country, language, source } = state.appConfig;
   const isWidget = source === 'widget';
   const { step } = state.pendingProposal.authMode;
-  const isMobile = matchMobileDevice(device);
 
   useEffect(() => {
     trackDisplayAuthenticationForm();
@@ -95,18 +87,16 @@ export const ProposalAuthentication: FC = () => {
   if (step) {
     return (
       <ProposalFormWrapperStyle isWidget={isWidget}>
-        <LoginWrapperStyle isWidget={isWidget}>
-          <ProposalBackButtonStyle
-            onClick={() =>
-              step === AUTH_STEP.FORGOT_PASSWORD
-                ? dispatch(setProposalAuthStep(AUTH_STEP.LOGIN))
-                : dispatch(resetProposalAuthStep())
-            }
-          >
-            {i18n.t('common.back')}
-          </ProposalBackButtonStyle>
-          {renderAuthStep(step, dispatch)}
-        </LoginWrapperStyle>
+        <ProposalBackButtonStyle
+          onClick={() =>
+            step === AUTH_STEP.FORGOT_PASSWORD
+              ? dispatch(setProposalAuthStep(AUTH_STEP.LOGIN))
+              : dispatch(resetProposalAuthStep())
+          }
+        >
+          {i18n.t('common.back')}
+        </ProposalBackButtonStyle>
+        {renderAuthStep(step, dispatch)}
       </ProposalFormWrapperStyle>
     );
   }
@@ -122,19 +112,17 @@ export const ProposalAuthentication: FC = () => {
             >
               {i18n.t('proposal_submit.authentication.back')}
             </ProposalBackButtonCenterStyle>
-            <ProposalAuthWrapperStyle>
-              <ProposalAltStepTitleStyle isWidget={isWidget}>
-                <ProposalStepLabelRedStyle>
-                  {i18n.t('proposal_submit.authentication.last_step_red')}
-                </ProposalStepLabelRedStyle>
-                {i18n.t('proposal_submit.authentication.last_step')}
-              </ProposalAltStepTitleStyle>
-              <ProposalSubmitAuthenticationRegisterButtons
-                onEmailRegister={() =>
-                  dispatch(setProposalAuthStep(AUTH_STEP.REGISTER))
-                }
-              />
-            </ProposalAuthWrapperStyle>
+            <ProposalAltStepTitleStyle isWidget={isWidget}>
+              <ProposalStepLabelRedStyle>
+                {i18n.t('proposal_submit.authentication.last_step_red')}
+              </ProposalStepLabelRedStyle>
+              {i18n.t('proposal_submit.authentication.last_step')}
+            </ProposalAltStepTitleStyle>
+            <ProposalSubmitAuthenticationRegisterButtons
+              onEmailRegister={() =>
+                dispatch(setProposalAuthStep(AUTH_STEP.REGISTER))
+              }
+            />
           </ColumnElementStyle>
           <ProposalAuthLoginWrapperStyle>
             {i18n.t('proposal_submit.authentication.button_login_text')}&nbsp;
@@ -157,25 +145,14 @@ export const ProposalAuthentication: FC = () => {
               rel="noopener"
             >
               {i18n.t('legal_consent.make_protect_link')}
-              <> </>
-              <NewWindowIconStyle aria-hidden focusable="false" />
+              <NewWindowGreyIconStyle aria-hidden focusable="false" />
               <ScreenReaderItemStyle>
                 {i18n.t('common.open_new_window')}
               </ScreenReaderItemStyle>
             </DataPolicyNewWindowLinkStyle>
           </DataPolicyWrapperStyle>
         </ProposalStepWrapperColumnStyle>
-        {!isWidget && !isMobile && (
-          <BlueManWalking aria-hidden focusable="false" />
-        )}
       </ProposalStepWrapperStyle>
-      {!isWidget && isMobile && (
-        <ProposalImagesWrapperStyle>
-          <BlueManWalking aria-hidden focusable="false" />
-          <BlueShapeImageStyle src={BlueShape} alt="" />
-        </ProposalImagesWrapperStyle>
-      )}
-      {!isWidget && !isMobile && <BlueShapeImageStyle src={BlueShape} alt="" />}
     </>
   );
 };

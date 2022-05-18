@@ -26,7 +26,6 @@ import { MakeFonts } from '@make.org/assets/vars/Fonts';
 export const AuthenticationWrapperStyle = styled.section`
   display: flex;
   flex-flow: column;
-  justify-content: center;
   align-items: center;
   width: 100%;
   max-width: 470px;
@@ -37,8 +36,8 @@ export const AuthenticationWrapperStyle = styled.section`
 `;
 
 export const RegisterFormUtilsAlignementWrapperStyle = styled.div`
-  padding: 20px;
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
 `;
@@ -144,9 +143,10 @@ export const NewWindowIconStyle = styled(SvgExternalLinkPlain)`
 
 export const RegisterEmailTitleStyle = styled.h1`
   text-transform: none;
-  margin: 30px 0px 5px;
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   font-family: ${MakeFonts.CircularStandardBold};
+  line-height: 27px;
+  margin-bottom: 5px;
 `;
 
 export const LoginTitleWrapperStyle = styled(ThirdLevelTitleStyle)`
@@ -157,9 +157,6 @@ export const LoginTitleWrapperStyle = styled(ThirdLevelTitleStyle)`
   line-height: 1.5;
   letter-spacing: 0.12px;
   align-self: flex-start;
-  &.proposalSubmit {
-    margin-top: 32px;
-  }
 `;
 
 export const PostCodeWrapperStyle = styled.span`
@@ -180,11 +177,12 @@ export const RegisterParagraphStyle = styled.p`
 export const GreyParagraphStyle = styled.p`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   color: ${color.greyDark};
-  margin-top: 45px;
   display: flex;
   flex-flow: wrap;
   max-width: 80%;
   justify-content: center;
+  margin: auto;
+  margin-bottom: 0px;
 `;
 
 export const PersonalDataGreyLinkStyle = styled.a`

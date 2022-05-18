@@ -22,8 +22,8 @@ export const ProposalSubmitAuthenticationRegisterButtons: FC<Props> = ({
   onEmailRegister,
 }) => (
   <AuthenticationButtonWrapperStyle data-cy-container="signup-auth-buttons">
-    <FacebookAuthentication />
     <GoogleAuthentication />
+    <FacebookAuthentication />
     <SeparatorWrapperStyle>
       <ProposalSubmitAuthSeparator className="no-margin-top" />
       <TextSeparatorStyle>{i18n.t('login.or')}</TextSeparatorStyle>

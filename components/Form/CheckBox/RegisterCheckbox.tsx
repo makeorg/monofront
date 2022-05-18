@@ -5,7 +5,7 @@ import { getDataPageLink } from '@make.org/utils/helpers/url';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import {
   HiddenCheckbox,
-  StyledCheckbox,
+  StyledCheckboxRightMargin,
   CheckboxWrapper,
   CheckboxLabelCenterStyle,
   NewWindowIconStyle,
@@ -42,9 +42,9 @@ export const RegisterCheckBox: React.FC<Props> = ({
           onChange={handleChange}
           id="registerCheckbox"
         />
-        <StyledCheckbox isChecked={checked}>
+        <StyledCheckboxRightMargin isChecked={checked}>
           <SvgCheck />
-        </StyledCheckbox>
+        </StyledCheckboxRightMargin>
         <span>
           {i18n.t('legal_consent.privacy_policy_first_part')}
           <DataPolicyNewWindowLinkStyle

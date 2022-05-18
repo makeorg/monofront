@@ -22,11 +22,9 @@ import { setPanelContent } from '@make.org/store/actions/panel';
 import { initProposalPending } from '@make.org/store/actions/pendingProposal';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { ProposalService } from '@make.org/utils/services/Proposal';
-import BlueShape from '@make.org/assets/images/blueShape.png';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
 import {
-  ProposalImagesWrapperStyle,
   ProposalFormWrapperStyle,
   ProposalStepTitleStyle,
   ProposalTextareaStyle,
@@ -38,8 +36,8 @@ import {
   ProposalAuthInlineWrapperStyle,
   ProposalSubmitButtonsWidgetStyle,
   ProposalStepWrapperStyle,
-  BlueShapeImageStyle,
   BlueManOnBench,
+  ProposalFormStyle,
 } from './style';
 
 export const ProposalForm: FC = () => {
@@ -111,7 +109,7 @@ export const ProposalForm: FC = () => {
           isWidget={isWidget}
           data-cy-container={FORM.PROPOSAL_SUBMIT_FORMNAME}
         >
-          <form
+          <ProposalFormStyle
             id={FORM.PROPOSAL_SUBMIT_FORMNAME}
             name={FORM.PROPOSAL_SUBMIT_FORMNAME}
             onSubmit={throttle(handleSubmitForm)}
@@ -187,19 +185,12 @@ export const ProposalForm: FC = () => {
                 </ProposalExternalLinkStyle>
               </ProposalAuthInlineWrapperStyle>
             </ProposalSubmitButtonsWidgetStyle>
-          </form>
+          </ProposalFormStyle>
         </ProposalFormWrapperStyle>
         {!isWidget && !isMobile && (
           <BlueManOnBench aria-hidden focusable="false" />
         )}
       </ProposalStepWrapperStyle>
-      {!isWidget && isMobile && (
-        <ProposalImagesWrapperStyle>
-          <BlueManOnBench aria-hidden focusable="false" />
-          <BlueShapeImageStyle src={BlueShape} alt="" />
-        </ProposalImagesWrapperStyle>
-      )}
-      {!isWidget && !isMobile && <BlueShapeImageStyle src={BlueShape} alt="" />}
     </>
   );
 };

@@ -62,8 +62,8 @@ export const Login: React.FC<Props> = ({ isProposalSubmit }) => {
             {i18n.t('login.connect')}
           </FourthLevelTitleStyle>
           <AuthenticationButtonWrapperStyle className="small-wrapper">
-            <FacebookAuthentication />
             <GoogleAuthentication />
+            <FacebookAuthentication />
           </AuthenticationButtonWrapperStyle>
           <SeparatorWrapperStyle className="margin-bottom">
             <SeparatorStyle />

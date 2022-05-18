@@ -42,11 +42,9 @@ export const PanelForgotPasswordTitleStyle = styled.h3`
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   font-family: ${MakeFonts.CircularStandardBold};
   text-transform: none;
-  margin-top: 35px;
   color: ${color.black};
   text-transform: uppercase;
   &.panel {
-    margin-top: 32px;
     text-transform: none;
   }
 `;

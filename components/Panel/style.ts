@@ -73,6 +73,7 @@ export const PanelInnerStyle = styled(StartColumnStyle)`
   background-color: ${BackgroundColors.LightGrey};
   transition: 0.5s ease-in bottom;
   overflow-y: auto;
+  padding: 30px 20px;
   &.widget {
     height: calc(100% - 36px);
     @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
@@ -84,6 +85,7 @@ export const PanelInnerStyle = styled(StartColumnStyle)`
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     height: calc(100% - 100px);
+    padding: 50px 30px;
   }
 `;
 export const PanelWrapperStyle = styled.div<{

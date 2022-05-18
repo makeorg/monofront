@@ -102,6 +102,10 @@ export const StyledCheckbox = styled(FakeCheckboxInputStyle)<{
   }
 `;
 
+export const StyledCheckboxRightMargin = styled(StyledCheckbox)`
+  margin: 0 8px 0 0;
+`;
+
 export const NewWindowIconStyle = styled(SvgExternalLinkPlain)`
   width: 9px;
   height: 9px;
@@ -148,7 +152,7 @@ export const FormCenterAlignStyle = styled.form`
 export const FormRequirementsStyle = styled.p`
   font-family: ${MakeFonts.CircularStandardBook};
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  margin: 2.5px 0 15px;
+  margin-bottom: 20px;
   color: ${color.greyDark};
 `;
 
