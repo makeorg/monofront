@@ -7,7 +7,7 @@ import { SubmitButton } from '@make.org/ui/components/SubmitButton';
 import { getGTUPageLink } from '@make.org/utils/helpers/url';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { ConditionParagraphMarginStylePanel } from '@make.org/ui/elements/ParagraphElements';
-import { OptOutCheckBox } from '@make.org/components/Form/CheckBox/OptOutCheckbox';
+import { OptInCheckBox } from '@make.org/components/Form/CheckBox/OptInCheckbox';
 import { RegisterCheckBox } from '@make.org/components/Form/CheckBox/RegisterCheckbox';
 import { isSupportedCountry } from '@make.org/utils/validator/postCode';
 import { ExtraInRegisterformationsFields } from '../../CommonFields/ExtraRegisterInformations';
@@ -75,7 +75,7 @@ export const SecondStepRegister: React.FC<Props> = ({
         </TermsOfUseLinkGreyStyle>
       </ConditionParagraphMarginStylePanel>
       <RegisterCheckBox handleCheckbox={handleCheckbox} required />
-      <OptOutCheckBox handleCheckbox={handleCheckbox} />
+      <OptInCheckBox handleCheckbox={handleCheckbox} />
       <SubmitButton
         formName={FORM.REGISTER_PANEL_FORMNAME}
         id="authentication-register-submit"
