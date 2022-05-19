@@ -181,6 +181,7 @@ export const GreyParagraphStyle = styled.p`
   flex-flow: wrap;
   max-width: 80%;
   justify-content: center;
+  align-items: center;
   margin: auto;
   margin-bottom: 0px;
 `;

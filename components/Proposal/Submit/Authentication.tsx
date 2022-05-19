@@ -134,7 +134,7 @@ export const ProposalAuthentication: FC = () => {
           </ProposalAuthLoginWrapperStyle>
 
           <DataPolicyWrapperStyle>
-            {i18n.t('legal_consent.make_protect')}{' '}
+            {i18n.t('legal_consent.make_protect')}&nbsp;
             <DataPolicyNewWindowLinkStyle
               href={
                 isWidget

@@ -69,6 +69,8 @@ export const ProposalStepWrapperColumnStyle = styled.div<{
 }>`
   height: 100%;
   max-width: 720px;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const ProposalStepTitleStyle = styled.h2`
@@ -109,7 +111,7 @@ export const ProposalAltStepTitleStyle = styled(ProposalStepTitleStyle)<{
   width: 100%;
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   letter-spacing: 0.12px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${props =>
       props.isWidget
@@ -247,7 +249,7 @@ export const ProposalAuthLoginWrapperStyle = styled(
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: auto;
+  margin: 15px 0 0 0;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
 `;
 
@@ -285,11 +287,14 @@ export const ProposalSubmitButtonsWidgetStyle = styled(FlexElementStyle)`
 
 export const DataPolicyWrapperStyle = styled.span`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  font-family: ${MakeFonts.CircularStandardBook};
   color: ${color.greyDark};
-  margin-top: 30px;
-  display: block;
-  text-align: center;
+  display: flex;
+  flex-flow: wrap;
+  max-width: 80%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 0px;
 `;
 
 export const NewWindowIconStyle = styled(SvgExternalLinkPlain)`
@@ -326,6 +331,7 @@ export const ProposalStepWrapperStyle = styled(FlexElementStyle)<{
   align-items: center;
   flex-flow: column;
   width: 100%;
+  height: 100%;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     align-items: ${props => (props.isAuthentication ? 'center' : 'start')};
     justify-content: space-between;

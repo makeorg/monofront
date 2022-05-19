@@ -10,7 +10,6 @@ import { MakeFonts } from '@make.org/assets/vars/Fonts';
 export const AuthenticationButtonWrapperStyle = styled(CenterColumnStyle)`
   width: 100%;
   align-self: center;
-  margin: 20px 0;
   gap: 17px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     align-items: center;

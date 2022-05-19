@@ -159,7 +159,7 @@ export const FormRequirementsStyle = styled.p`
 export const FormRequirementsLeftStyle = styled.p`
   font-family: ${MakeFonts.CircularStandardBook};
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  margin: 2.5px 0 15px;
+  margin-bottom: 20px;
   color: ${color.greyDark};
   align-self: flex-start;
 `;
