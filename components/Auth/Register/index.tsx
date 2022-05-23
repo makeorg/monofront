@@ -1,11 +1,7 @@
 import React, { FormEvent, SyntheticEvent, useState } from 'react';
 import i18n from 'i18next';
 import { RegisterFormDataType, ErrorObjectType } from '@make.org/types';
-import {
-  closePanel,
-  setPanelContent,
-  removePanelContent,
-} from '@make.org/store/actions/panel/';
+import { closePanel, setPanelContent } from '@make.org/store/actions/panel/';
 import {
   trackSignupEmailSuccess,
   trackSignupEmailFailure,
@@ -25,6 +21,7 @@ import {
   setRegisterStep,
 } from '@make.org/store/actions/pendingProposal';
 import { RegisterForm } from './Forms/Form';
+import { RegisterConfirmation } from './Steps/RegisterConfirmation';
 import {
   AuthenticationWrapperStyle,
   GreyParagraphStyle,
@@ -138,7 +135,7 @@ export const Register: React.FC<Props> = ({ isProposalSubmit }) => {
       email,
       password,
       undefined,
-      () => getUser(dispatch, state.modal.isOpen, !isProposalSubmit),
+      () => getUser(dispatch, state.modal.isOpen),
       () => undefined,
       () => unexpectedError()
     );
@@ -151,8 +148,7 @@ export const Register: React.FC<Props> = ({ isProposalSubmit }) => {
         trackSignupEmailSuccess();
         setErrors([]);
         if (!proposalContent && !isProposalSubmit) {
-          dispatch(closePanel());
-          dispatch(removePanelContent());
+          dispatch(setPanelContent(<RegisterConfirmation />));
         }
 
         // Display the proposal in the proposal submit context

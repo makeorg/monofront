@@ -115,12 +115,18 @@ export const FacebookAuthentication: React.FC<Props> = ({ panel }) => {
       dispatch(loginSocialSuccess());
       await getUser(dispatch, state.modal.isOpen);
 
-      dispatch(
-        displayNotificationBanner(
-          NOTIF.LOGIN_SUCCESS_MESSAGE,
-          NOTIF.NOTIFICATION_LEVEL_SUCCESS
-        )
-      );
+      if (!isPanel && !proposalContent) {
+        dispatch(
+          displayNotificationBanner(
+            NOTIF.LOGIN_SUCCESS_MESSAGE,
+            NOTIF.NOTIFICATION_LEVEL_SUCCESS
+          )
+        );
+      }
+
+      if (!proposalContent && isPanel) {
+        dispatch(setPanelContent(<div>Register confirmation social</div>));
+      }
       trackAuthenticationSocialSuccess(FACEBOOK_PROVIDER_ENUM, isNewAccount);
 
       if (proposalContent) {
@@ -129,11 +135,6 @@ export const FacebookAuthentication: React.FC<Props> = ({ panel }) => {
           question.questionId,
           () => dispatch(setPanelContent(<ProposalSuccess />))
         );
-      }
-      // @todo clean isPanel when login is no longer in modal
-      if (isPanel && !proposalContent) {
-        dispatch(closePanel());
-        dispatch(removePanelContent());
       }
     };
 

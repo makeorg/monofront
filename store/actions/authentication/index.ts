@@ -55,8 +55,7 @@ export const logoutSuccess = (): ReducerAction => ({
 
 export const getUser = async (
   dispatch: Dispatch,
-  isModalOpen?: boolean,
-  afterRegistration?: boolean
+  isModalOpen?: boolean
 ): Promise<void | null> => {
   const user = await UserService.current();
   if (!user) {
@@ -81,24 +80,7 @@ export const getUser = async (
   if (isModalOpen) {
     dispatch(modalClose());
   }
-  if (afterRegistration && user.emailVerified) {
-    return dispatch(
-      displayNotificationBanner(
-        NOTIF.REGISTER_SUCCESS_MESSAGE,
-        NOTIF.NOTIFICATION_LEVEL_SUCCESS
-      )
-    );
-  }
 
-  if (afterRegistration) {
-    return dispatch(
-      displayNotificationBanner(
-        NOTIF.REGISTER_SUCCESS_VALIDATE_MESSAGE,
-        NOTIF.NOTIFICATION_LEVEL_ALERT,
-        { email: user.email }
-      )
-    );
-  }
   return null;
 };
 

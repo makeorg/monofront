@@ -7,8 +7,6 @@ import { AccountActivationSuccessMessage } from '../Banner/AccountActivationSucc
 import { AccountActivationFailureMessage } from '../Banner/AccountActivationFailure';
 import { LogoutSuccessMessage } from '../Banner/LogoutSuccess';
 import { LoginSuccessMessage } from '../Banner/LoginSuccess';
-import { RegisterSuccessValidateMessage } from '../Banner/RegisterSuccessValidate';
-import { RegisterSuccessMessage } from '../Banner/RegisterSuccess';
 import { NetworkErrorMessage } from '../Banner/NetworkError';
 import { UnexpectedErrorMessage } from '../Banner/UnexpectedError';
 import { VoteOnlyMessage } from '../Banner/VoteOnly';
@@ -20,17 +18,10 @@ import { LoginSocialMissingDataMessage } from '../Banner/LoginSocialMissingData'
 
 type Props = {
   name: string;
-  params?: {
-    email: string;
-  };
   close?: () => void;
 };
 
-export const NotificationMessage: React.FC<Props> = ({
-  name,
-  params,
-  close,
-}) => {
+export const NotificationMessage: React.FC<Props> = ({ name, close }) => {
   switch (name) {
     case NOTIF.SECURE_EXPIRED_MESSAGE:
       return <SecureExpiredMessage />;
@@ -44,14 +35,6 @@ export const NotificationMessage: React.FC<Props> = ({
       return <LogoutSuccessMessage />;
     case NOTIF.LOGIN_SUCCESS_MESSAGE:
       return <LoginSuccessMessage />;
-    case NOTIF.REGISTER_SUCCESS_VALIDATE_MESSAGE: {
-      if (params) {
-        return <RegisterSuccessValidateMessage email={params.email} />;
-      }
-      return null;
-    }
-    case NOTIF.REGISTER_SUCCESS_MESSAGE:
-      return <RegisterSuccessMessage />;
     case NOTIF.NETWORK_ERROR_MESSAGE:
       return <NetworkErrorMessage />;
     case NOTIF.UNEXPECTED_ERROR_MESSAGE:

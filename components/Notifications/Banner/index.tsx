@@ -51,11 +51,7 @@ export const NotificationBanner: React.FC = () => {
         <NotificationIcon
           level={level || NOTIF.NOTIFICATION_LEVEL_INFORMATION}
         />
-        <NotificationMessage
-          name={contentId}
-          params={params}
-          close={closeNotificationBanner}
-        />
+        <NotificationMessage name={contentId} close={closeNotificationBanner} />
       </NotificationContentStyle>
       <NotificationCloseButtonStyle
         aria-expanded="false"
