@@ -62,7 +62,9 @@ export const RegisterConfirmation: React.FC<Props> = ({ isSocial }) => {
               {i18n.t('common.register_panel.mail_confirmation_strong')}
             </strong>
 
-            {i18n.t('common.register_panel.mail_confirmation')}
+            {i18n.t('common.register_panel.mail_confirmation', {
+              mail: user?.email || '',
+            })}
           </RegisterPanelSuccessParagraphStyle>
         )}
         {isConsultation && (

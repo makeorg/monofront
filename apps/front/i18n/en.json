@@ -116,7 +116,7 @@
       "welcome": "Welcome {{name}} !",
       "greeting": "We are delighted to count you among our committed users !",
       "mail_confirmation_strong": "Confirm your email address with one click ",
-      "mail_confirmation": " to ensure the authenticity of your account. Click on the activation link that was sent to you at : ",
+      "mail_confirmation": " to ensure the authenticity of your account. Click on the activation link that was sent to you at : {{mail}}",
       "onboarding": "Give your opinion on social issues that are important to you by participating in our citizen consultations.",
       "cta": "Take part in consultations",
       "cta_access": "Access to the consultation"

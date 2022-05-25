@@ -114,7 +114,7 @@
       "welcome": "Bienvenue {{name}} !",
       "greeting": "Nous sommes ravis de vous compter parmi nos utilisateurs engagés !",
       "mail_confirmation_strong": "Confirmez votre adresse e-mail en un clic ",
-      "mail_confirmation": " pour garantir l’authenticité de votre compte. Cliquez sur le lien d’activation qui vous a été envoyé à : ",
+      "mail_confirmation": " pour garantir l’authenticité de votre compte. Cliquez sur le lien d’activation qui vous a été envoyé à : {{mail}}",
       "onboarding": "Donnez votre avis sur des sujets de société qui vous tiennent à coeur en participant à nos consultations citoyennes.",
       "cta": "Participer aux consultations",
       "cta_access": "J'accède à la consultation"
