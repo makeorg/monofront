@@ -19,5 +19,6 @@
   "actions": "",
   "featured": false,
   "participantsCount": 1000,
-  "proposalsCount": 10000
+  "proposalsCount": 10000,
+  "votesCount": 10000
 }

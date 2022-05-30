@@ -859,7 +859,9 @@
       "controversial": "Umstrittenste",
       "unvoted": "Diejenigen, die auf eure Stimme warten",
       "organisations_proposals": "Diejenigen, die von Organisationen vorgeschlagen wurden",
-      "no_proposal": "Kein Vorschlag"
+      "no_proposal": "Kein Vorschlag",
+      "validated_proposals": "<strong>{{count}} bestätigt Vorschläg</strong> passend zu deiner Suche",
+      "validated_proposals_plural": "<strong>{{count}} bestätigte Vorschläge</strong> passend zu deiner Suche"
     },
     "tabs": {
       "consultation": "Konsultation ",
@@ -1009,6 +1011,8 @@
       "contributors_plural": "Teilnehmer:innen",
       "proposals": "Vorschlag",
       "proposals_plural": "Vorschläge",
+      "votes": "Stimme",
+      "votes_plural": "Stimmen",
       "empty": "Es tut uns leid, in deinem Land ist derzeit keine Konsultation verfügbar."
     },
     "results": {

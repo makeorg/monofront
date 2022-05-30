@@ -713,7 +713,9 @@
       "controversial": "Controversial",
       "unvoted": "Waiting for your vote",
       "organisations_proposals": "Proposed by organizations",
-      "no_proposal": "No solution"
+      "no_proposal": "No solution",
+      "validated_proposals": "<strong>{{count}} validated proposal</strong> matching your search",
+      "validated_proposals_plural": "<strong>{{count}} validated proposals</strong> matching your search"
     },
     "sort": {
       "TAGGED_FIRST": "All the solutions",
@@ -1188,6 +1190,8 @@
       "contributors_plural": "Participants",
       "proposals": "Solution",
       "proposals_plural": "Solutions",
+      "votes": "Vote",
+      "votes_plural": "Votes",
       "empty": "Unfortunately, we have no consultation open in this country."
     },
     "results": {

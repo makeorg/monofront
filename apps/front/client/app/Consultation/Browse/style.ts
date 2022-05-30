@@ -5,6 +5,7 @@ import {
   SvgPeople,
   SvgLightBulb,
   SvgFist,
+  SvgThumbsUp,
 } from '@make.org/ui/Svg/elements';
 import { Link } from 'react-router-dom';
 import {
@@ -192,6 +193,15 @@ export const ConsultationActionIconStyle = styled(SvgFist)`
   margin-right: 21px;
   .tofill {
     fill: ${color.brandSecondary};
+  }
+`;
+
+export const ConsultationVoteIconStyle = styled(SvgThumbsUp)`
+  min-width: 15px;
+  min-height: 13px;
+  margin-right: 20px;
+  .tofill {
+    fill: rgb(37, 49, 134);
   }
 `;
 

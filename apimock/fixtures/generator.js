@@ -332,7 +332,6 @@ const generateFirstProposal = (question, author) => {
   };
 };
 
-
 const generatePartners = count =>
   range(0, count).map(number => ({
     ...defaultPartner,
@@ -405,6 +404,7 @@ const generateHomeView = () => {
       consultationImage: questions[number].wording.metas.picture,
       participantsCount: `${12 + number}`,
       proposalsCount: `${12 + number}`,
+      votesCount: `${12 + number}`,
       aboutUrl: questions[number].aboutUrl,
       startDate,
       endDate: futureEndDate,
@@ -419,6 +419,7 @@ const generateHomeView = () => {
       consultationImage: questions[number].wording.metas.picture,
       participantsCount: `${12 + number}`,
       proposalsCount: `${12 + number}`,
+      votesCount: `${12 + number}`,
       aboutUrl: questions[number].aboutUrl,
       startDate,
       endDate: pastEndDate,

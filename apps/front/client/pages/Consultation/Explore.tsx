@@ -178,11 +178,17 @@ const ExplorePage: FC = () => {
           {i18n.t('consultation.explore.description')}
         </ExploreSubTitleWrapperStyle>
         <ExploreDescriptionStyle>
-          <ExploreProposalsCountStyle>
-            {hasProposals
-              ? i18n.t('common.proposal_count', { count: proposalsTotal })
-              : i18n.t('consultation.explore.no_proposal')}
-          </ExploreProposalsCountStyle>
+          {hasProposals ? (
+            <ExploreProposalsCountStyle
+              dangerouslySetInnerHTML={{
+                __html: i18n.t('consultation.explore.validated_proposals', {
+                  count: proposalsTotal,
+                }),
+              }}
+            />
+          ) : (
+            i18n.t('consultation.explore.no_proposal')
+          )}
         </ExploreDescriptionStyle>
         <ParticipateInnerStyle>
           <ParticipateMainContentStyle>

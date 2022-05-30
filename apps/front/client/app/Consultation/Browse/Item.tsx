@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { HomeQuestionType } from '@make.org/types';
-import { DateHelper } from '@make.org/utils/helpers/date';
+import { DateHelper, isInProgress } from '@make.org/utils/helpers/date';
 import i18n from 'i18next';
 import { formatMillionToText } from '@make.org/utils/helpers/numberFormatter';
 import { DATE } from '@make.org/types/enums';
@@ -15,20 +15,16 @@ import {
   ConsultationLightIconStyle,
   ConsultationItemStyle,
   ConsultationActionIconStyle,
+  ConsultationVoteIconStyle,
 } from './style';
 import { ConsultationLink } from './Link';
 
 type Props = {
   question: HomeQuestionType;
   resultsContext: boolean;
-  itemsCount: number;
 };
 
-export const ConsultationItem: FC<Props> = ({
-  question,
-  resultsContext,
-  itemsCount,
-}) => {
+export const ConsultationItem: FC<Props> = ({ question, resultsContext }) => {
   const {
     descriptionImage,
     descriptionImageAlt,
@@ -40,6 +36,7 @@ export const ConsultationItem: FC<Props> = ({
     proposalsCount,
     language,
     actions,
+    votesCount,
   } = question;
   const hasTopIdeas =
     resultsContext && resultsLink && resultsLink.value === 'top-ideas';
@@ -49,6 +46,7 @@ export const ConsultationItem: FC<Props> = ({
     resultsContext && resultsLink && resultsLink.kind === 'external';
   const hasContributors = participantsCount > 0;
   const hasProposals = proposalsCount > 0;
+  const hasVotes = votesCount > 0;
 
   let linkText = i18n.t('browse.consultations.participate');
 
@@ -91,7 +89,8 @@ export const ConsultationItem: FC<Props> = ({
             })}`}
           </ConsultationItemStyle>
         )}
-        {hasProposals && (
+        {/* Display proposals count only for ended consultations */}
+        {hasProposals && !isInProgress(question) && (
           <ConsultationItemStyle>
             <ConsultationLightIconStyle aria-hidden focusable="false" />
             <> </>
@@ -107,6 +106,22 @@ export const ConsultationItem: FC<Props> = ({
             <ConsultationActionIconStyle aria-hidden focusable="false" />
             <> </>
             {actions}
+          </ConsultationItemStyle>
+        )}
+        {hasVotes && (
+          <ConsultationItemStyle>
+            <ConsultationVoteIconStyle
+              width={15}
+              height={13}
+              aria-hidden
+              focusable="false"
+            />
+            <> </>
+            {formatMillionToText(votesCount, language)}
+            <> </>
+            {` ${i18n.t('browse.consultations.votes', {
+              count: votesCount,
+            })}`}
           </ConsultationItemStyle>
         )}
         <ConsultationItemStyle>

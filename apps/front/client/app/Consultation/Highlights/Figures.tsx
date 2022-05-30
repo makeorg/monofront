@@ -83,13 +83,23 @@ export const Figures: FC = () => {
       </FiguresListItemStyle>
       <FiguresListItemStyle>
         <HigthlightsTitleStyle>
-          {i18n.t('consultation.highlights.participant', {
-            count: question.highlights.participantsCount,
-          })}
+          {resultsPage
+            ? i18n.t('consultation.highlights.participant', {
+                count: question.highlights.participantsCount,
+              })
+            : i18n.t('consultation.highlights.proposals')}
         </HigthlightsTitleStyle>
         <ScreenReaderItemStyle> : </ScreenReaderItemStyle>
         <FiguresValueStyle className="mobile-extra-margin-bottom">
-          {formatMillionToText(question.highlights.participantsCount, language)}
+          {resultsPage
+            ? formatMillionToText(
+                question.highlights.participantsCount,
+                language
+              )
+            : formatCountWithLanguage(
+                question.highlights.proposalsCount,
+                language
+              )}
         </FiguresValueStyle>
       </FiguresListItemStyle>
     </FiguresListStyle>

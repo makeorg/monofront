@@ -27,7 +27,8 @@
       "actions": null,
       "featured": false,
       "participantsCount": 0,
-      "proposalsCount": 0
+      "proposalsCount": 0,
+      "votesCount": 0
     }, {
       "questionId": "7b23ef97-d52a-4cca-98aa-d4be75056ccf",
       "questionSlug": "bretagne-ecologique-durable",
@@ -50,7 +51,8 @@
       "actions": null,
       "featured": false,
       "participantsCount": 0,
-      "proposalsCount": 0
+      "proposalsCount": 0,
+      "votesCount": 0
     }, {
       "questionId": "f400bc32-d898-494c-a4fb-2099ee8ad55c",
       "questionSlug": "bretagne-dynamisme-economique",
@@ -73,7 +75,8 @@
       "actions": null,
       "featured": false,
       "participantsCount": 0,
-      "proposalsCount": 0
+      "proposalsCount": 0,
+      "votesCount": 0
     }, {
       "questionId": "fabfeda2-ebb0-4307-9ba8-8b82598eeecc",
       "questionSlug": "bretagne-vivre-ensemble",
@@ -96,7 +99,8 @@
       "actions": null,
       "featured": false,
       "participantsCount": 0,
-      "proposalsCount": 0
+      "proposalsCount": 0,
+      "votesCount": 0
     }, {
       "questionId": "66a9230b-08cb-4f37-8ed8-aa95a8eac19a",
       "questionSlug": "environnement",
@@ -123,7 +127,8 @@
       "actions": null,
       "featured": true,
       "participantsCount": 0,
-      "proposalsCount": 0
+      "proposalsCount": 0,
+      "votesCount": 0
     }],
     "featuredQuestions": [{
       "questionId": "66a9230b-08cb-4f37-8ed8-aa95a8eac19a",
@@ -151,7 +156,8 @@
       "actions": null,
       "featured": true,
       "participantsCount": 0,
-      "proposalsCount": 0
+      "proposalsCount": 0,
+      "votesCount": 0
     }, {
       "questionId": "3548602e-7592-4ecc-9825-6ce80870cab9",
       "questionSlug": "chance-aux-jeunes",
@@ -174,7 +180,8 @@
       "actions": null,
       "featured": true,
       "participantsCount": 0,
-      "proposalsCount": 0
+      "proposalsCount": 0,
+      "votesCount": 0
     }, {
       "questionId": "2af93db3-b589-4693-b984-dfd04a5cf534",
       "questionSlug": "mp894",
@@ -197,7 +204,8 @@
       "actions": null,
       "featured": true,
       "participantsCount": 0,
-      "proposalsCount": 0
+      "proposalsCount": 0,
+      "votesCount": 0
     }, {
       "questionId": "aa35389b-7ba7-44a8-811c-e3a7ee3502fc",
       "questionSlug": "handicap",
@@ -220,7 +228,8 @@
       "actions": null,
       "featured": true,
       "participantsCount": 0,
-      "proposalsCount": 0
+      "proposalsCount": 0,
+      "votesCount": 0
     }, {
       "questionId": "978542c4-4f0b-4382-b447-97f8c0d22fd8",
       "questionSlug": "test-question",
@@ -243,7 +252,8 @@
       "actions": null,
       "featured": true,
       "participantsCount": 0,
-      "proposalsCount": 0
+      "proposalsCount": 0,
+      "votesCount": 0
     }, {
       "questionId": "0054db0a-9ae0-402b-9189-b88c457d501e",
       "questionSlug": "aines",
@@ -266,7 +276,8 @@
       "actions": null,
       "featured": true,
       "participantsCount": 0,
-      "proposalsCount": 0
+      "proposalsCount": 0,
+      "votesCount": 0
     }, {
       "questionId": "efd59e93-64a2-4e6f-8dcb-c87a879cabf8",
       "questionSlug": "place-handicap",
@@ -289,7 +300,8 @@
       "actions": null,
       "featured": true,
       "participantsCount": 0,
-      "proposalsCount": 0
+      "proposalsCount": 0,
+      "votesCount": 0
     }, {
       "questionId": "7108965b-0229-4e00-b313-abb491dee6ac",
       "questionSlug": "culture",
@@ -312,7 +324,8 @@
       "actions": null,
       "featured": true,
       "participantsCount": 0,
-      "proposalsCount": 0
+      "proposalsCount": 0,
+      "votesCount": 0
     }, {
       "questionId": "c27b4109-68d8-4e12-91e2-eebb563f0ce8",
       "questionSlug": "vff",
@@ -335,7 +348,8 @@
       "actions": null,
       "featured": true,
       "participantsCount": 0,
-      "proposalsCount": 0
+      "proposalsCount": 0,
+      "votesCount": 0
     }],
     "posts": [
       {

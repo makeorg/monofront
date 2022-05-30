@@ -53,7 +53,6 @@ export const BrowseConsultationsList: FC<Props> = ({
             key={question.questionId}
             question={question}
             resultsContext={resultsContext}
-            itemsCount={ITEMS_PER_ROW}
           />
         </ConsultationsListItemStyle>
       ))}

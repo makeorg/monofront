@@ -166,10 +166,14 @@ export const ExploreDescriptionStyle = styled(SpaceBetweenRowStyle)`
 `;
 
 export const ExploreProposalsCountStyle = styled.span`
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${MakeFonts.CircularStandardBook};
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   color: ${color.black};
   letter-spacing: 0.12px;
+  > strong {
+    font-family: ${MakeFonts.CircularStandardBold};
+    font-weight: normal;
+  }
 `;
 
 export const NoProposalWrapperStyle = styled.div`

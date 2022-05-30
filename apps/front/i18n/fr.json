@@ -867,7 +867,9 @@
       "controversial": "Controversées",
       "unvoted": "Celles qui attendent votre vote",
       "organisations_proposals": "Proposées par des organisations",
-      "no_proposal": "Aucune proposition"
+      "no_proposal": "<strong>Aucune proposition</strong>",
+      "validated_proposals": "<strong>{{count}} proposition validée</strong> correspondant à votre recherche",
+      "validated_proposals_plural": "<strong>{{count}} propositions validées</strong> correspondant à votre recherche"
     },
     "tabs": {
       "consultation": " Consultation ",
@@ -1018,6 +1020,8 @@
       "contributors_plural": "participants",
       "proposals": "proposition",
       "proposals_plural": "propositions",
+      "votes": "vote",
+      "votes_plural": "votes",
       "empty": "Nous sommes désolés, aucune consultation n'est diponible actuellement dans votre pays."
     },
     "results": {

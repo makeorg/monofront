@@ -250,6 +250,7 @@ export type HomeQuestionType = {
   featured: boolean;
   participantsCount: number;
   proposalsCount: number;
+  votesCount: number;
 };
 
 export type QuestionKeywordType = {
