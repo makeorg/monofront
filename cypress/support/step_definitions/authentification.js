@@ -90,9 +90,20 @@ When(
           created_at: now.toISOString(),
         });
     }).as('postLogin');
+    cy.intercept({ method: 'GET', url: '/user/current' }, req => {
+      req.reply(userData);
+    }).as('getUser');
+    cy.intercept(
+      { method: 'GET', url: `/user/${userData.userId}/profile` },
+      req => {
+        req.reply(userData);
+      }
+    ).as('getProfile');
     cy.get('#authentication-register-submit').click();
     cy.wait('@postUser');
     cy.wait('@postLogin');
+    cy.wait('@getUser');
+    cy.wait('@getProfile');
   }
 );
 

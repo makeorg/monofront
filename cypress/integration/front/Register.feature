@@ -32,6 +32,8 @@ Feature: Register
     When I register with email "emailValue@example.com" and password "TestMake"
     Then I see "S’inscrire par e-mail (2/2)" in "register-panel-title" container
     When I register with firstname "testfirstname" and age "36" and I accept the data policy before submitting
+    Then I see "Bienvenue testfirstname !" in "register-confirmation-panel-title" container
+    And I see "emailValue@example.com" in "register-confirmation-panel-mail" container
     Then register form is closed
     Then event "signup-email-success" should be tracked by Make with parameters values:
       | name                | value                                                               |

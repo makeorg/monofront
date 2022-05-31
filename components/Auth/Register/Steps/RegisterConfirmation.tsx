@@ -46,7 +46,7 @@ export const RegisterConfirmation: React.FC<Props> = ({ isSocial }) => {
 
   return (
     <RegisterPanelSuccessWrapperStyle>
-      <LoginTitleWrapperCenterStyle>
+      <LoginTitleWrapperCenterStyle data-cy-container="register-confirmation-panel-title">
         {i18n.t('common.register_panel.welcome', {
           name: user?.profile.firstName || '',
         })}
@@ -57,7 +57,7 @@ export const RegisterConfirmation: React.FC<Props> = ({ isSocial }) => {
       <SvgRegisterSuccess />
       <RegisterPanelSuccessParagraphContainerStyle>
         {!isSocial && (
-          <RegisterPanelSuccessParagraphStyle>
+          <RegisterPanelSuccessParagraphStyle data-cy-container="register-confirmation-panel-mail">
             <strong>
               {i18n.t('common.register_panel.mail_confirmation_strong')}
             </strong>
