@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useAppContext } from '@make.org/store';
 import { getAppLocationContext } from '@make.org/utils/helpers/getLocationContext';
 import { LinkAsRedButtonBottomMobileStyle } from '@make.org/ui/elements/ButtonsElements';
@@ -6,6 +6,7 @@ import { SvgRegisterSuccess } from '@make.org/ui/Svg/elements';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { QuestionType } from '@make.org/types';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
+import { trackDisplayPanelSignupValidation } from '@make.org/utils/services/Tracking';
 import {
   getBrowseConsultationsLink,
   getParticipateLink,
@@ -29,6 +30,9 @@ const consultationLocations = new Set([
   'page-participate',
   'page-explore',
   'page-results',
+  'sequence-popular',
+  'sequence-controversial',
+  'sequence-keyword',
 ]);
 
 export const RegisterConfirmation: React.FC<Props> = ({ isSocial }) => {
@@ -43,6 +47,11 @@ export const RegisterConfirmation: React.FC<Props> = ({ isSocial }) => {
     dispatch(closePanel());
     dispatch(removePanelContent());
   };
+
+  useEffect(() => {
+    trackDisplayPanelSignupValidation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <RegisterPanelSuccessWrapperStyle>
@@ -67,11 +76,9 @@ export const RegisterConfirmation: React.FC<Props> = ({ isSocial }) => {
             })}
           </RegisterPanelSuccessParagraphStyle>
         )}
-        {isConsultation && (
-          <RegisterPanelSuccessParagraphStyle>
-            {i18n.t('common.register_panel.onboarding')}
-          </RegisterPanelSuccessParagraphStyle>
-        )}
+        <RegisterPanelSuccessParagraphStyle>
+          {i18n.t('common.register_panel.onboarding')}
+        </RegisterPanelSuccessParagraphStyle>
       </RegisterPanelSuccessParagraphContainerStyle>
       {isConsultation ? (
         <LinkAsRedButtonBottomMobileStyle

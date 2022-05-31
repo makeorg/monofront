@@ -666,4 +666,9 @@ Following parameters are added to all events.
     
   
 
+  - `display-signup-validation` Display success panel after successful register (not in proposal)
+
+    
+  
+
 </auto-generated-tracking-doc>

@@ -108,6 +108,12 @@ export const trackDisplayProposalSubmitValidation = (): void => {
   );
 };
 
+export const trackDisplayPanelSignupValidation = (): void => {
+  TrackingService.sendAllTrackers(
+    trackingEvent.DISPLAY_PANEL_SIGNUP_VALIDATION()
+  );
+};
+
 export const trackClickKeepVoting = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_KEEP_VOTING());
 };
