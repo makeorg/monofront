@@ -11,6 +11,10 @@ viewsRouter.get('/home-page/GB', (req, res) => {
   res.send(fixtures.foreignHomeView);
 });
 
+viewsRouter.get('/home-page/DE', (req, res) => {
+  res.send(fixtures.foreignHomeView);
+});
+
 viewsRouter.get('/countries', (req, res) => {
   res.send(fixtures.countriesWithConsultations);
 });

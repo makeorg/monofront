@@ -28,7 +28,7 @@ const plugins = [
 ];
 
 // instrument code for coverage
-if (process.env.NODE_ENV === 'ci') {
+if (process.env.NODE_ENV === 'test') {
   plugins.push('istanbul');
 }
 

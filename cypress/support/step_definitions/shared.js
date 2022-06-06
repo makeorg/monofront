@@ -8,6 +8,7 @@ export const pages = {
   homepage: '/',
   'france homepage': '/FR',
   'british homepage': '/GB',
+  'german homepage': '/DE',
   sequence: '/FR/consultation/:questionSlug/selection',
   'general terms of use': '/FR/conditions-dutilisation',
   'data policy': '/FR/politique-donnees',
@@ -68,6 +69,11 @@ Given('I go/am to/on {string}', targetPage => {
 Given('I go/am to/on {string} from Great Britain', targetPage => {
   checkPageExist(targetPage);
   cy.visit(pages[targetPage], { headers: { 'x-detected-country': 'GB' } });
+});
+
+Given('I go/am to/on {string} from Germany', targetPage => {
+  checkPageExist(targetPage);
+  cy.visit(pages[targetPage], { headers: { 'x-detected-country': 'DE' } });
 });
 
 Given(

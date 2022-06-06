@@ -1,14 +1,30 @@
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import React from 'react';
 import i18n from 'i18next';
-import { FooterLinkIconStyle } from './style';
+import {
+  FooterItemHTMLLinkStyle,
+  FooterItemStyle,
+  FooterLinkIconStyle,
+} from './style';
+import { FooterLinkType } from './localized/Common';
 
-export const FooterExternalLink: React.FC = () => (
-  <>
-    <FooterLinkIconStyle aria-hidden focusable="false" />
-    <> </>
-    <ScreenReaderItemStyle>
-      {i18n.t('common.open_new_window')}
-    </ScreenReaderItemStyle>
-  </>
+export const FooterExternalLink: React.FC<{ externalLink: FooterLinkType }> = ({
+  externalLink,
+}) => (
+  <FooterItemStyle>
+    <FooterItemHTMLLinkStyle
+      target="_blank"
+      rel="noopener"
+      href={externalLink.url}
+      onClick={externalLink.onClick}
+    >
+      {externalLink.label}
+      <> </>
+      <FooterLinkIconStyle aria-hidden focusable="false" />
+      <> </>
+      <ScreenReaderItemStyle>
+        {i18n.t('common.open_new_window')}
+      </ScreenReaderItemStyle>
+    </FooterItemHTMLLinkStyle>
+  </FooterItemStyle>
 );
