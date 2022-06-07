@@ -40,8 +40,9 @@ export type StatePendingProposal = {
   readonly firstname?: string;
   readonly authMode: {
     enable: boolean;
-    step?: undefined;
+    authStep?: undefined;
   };
+  readonly registerStep: number;
 };
 
 // Sequence State

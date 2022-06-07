@@ -20,7 +20,10 @@ import { ProposalService } from '@make.org/utils/services/Proposal';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { NewWindowGreyIconStyle } from '@make.org/ui/elements/LinkElements';
-import { resetProposalAuthStep } from '@make.org/store/actions/pendingProposal';
+import {
+  resetProposalAuthStep,
+  setRegisterStep,
+} from '@make.org/store/actions/pendingProposal';
 import { RegisterForm } from './Forms/Form';
 import {
   AuthenticationWrapperStyle,
@@ -37,7 +40,7 @@ type Props = {
 
 export const Register: React.FC<Props> = ({ isProposalSubmit }) => {
   const { dispatch, state } = useAppContext();
-  const { proposalContent } = state.pendingProposal;
+  const { proposalContent, registerStep } = state.pendingProposal;
   const { country, language } = state.appConfig;
   const [user, setUser] = useState<RegisterFormDataType>({
     email: '',
@@ -55,14 +58,13 @@ export const Register: React.FC<Props> = ({ isProposalSubmit }) => {
   const [errors, setErrors] = useState<ErrorObjectType[]>([]);
   const [waitingCallback, setWaitingCallback] = useState<boolean>(false);
   const [needLegalConsent, displayLegalConsent] = useState<boolean>(false);
-  const [registerStep, setRegisterStep] = useState<number>(1);
   const question = selectCurrentQuestion(state);
   const userIsAChild =
     user && user.profile && user.profile.age && user.profile.age < 15;
   const isSecondStep = registerStep === 2;
   const handleReturn = () => {
+    dispatch(setRegisterStep(1));
     dispatch(resetProposalAuthStep());
-    setRegisterStep(1);
   };
 
   const handleCheckbox = (fieldName: string, value: boolean) => {
@@ -108,7 +110,7 @@ export const Register: React.FC<Props> = ({ isProposalSubmit }) => {
   // checks email and password validity on first step of panel registration
   const checkRegistration = async () => {
     const success = () => {
-      setRegisterStep(2);
+      dispatch(setRegisterStep(2));
       setErrors([]);
     };
     const handleErrors = (serviceErrors: ErrorObjectType[]) => {

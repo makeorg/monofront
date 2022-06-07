@@ -5,6 +5,7 @@ import {
   PROPOSAL_MODIFY_PENDING,
   PROPOSAL_SET_STEP,
   PROPOSAL_RESET_STEP,
+  PROPOSAL_REGISTER_STEP,
 } from '../../actionTypes';
 
 export const pendingProposal_state: StatePendingProposal = {
@@ -12,6 +13,7 @@ export const pendingProposal_state: StatePendingProposal = {
   authMode: {
     enable: false,
   },
+  registerStep: 1,
 };
 
 export const pendingProposal_reducer: Reducer = (
@@ -38,12 +40,20 @@ export const pendingProposal_reducer: Reducer = (
     case PROPOSAL_SET_STEP:
       return {
         ...state,
-        authMode: { ...state.authMode, step: action.payload.authMode.step },
+        authMode: {
+          ...state.authMode,
+          authStep: action.payload.authMode.authStep,
+        },
       };
     case PROPOSAL_RESET_STEP:
       return {
         ...state,
         authMode: { enable: true },
+      };
+    case PROPOSAL_REGISTER_STEP:
+      return {
+        ...state,
+        registerStep: action.payload,
       };
     default:
       return state;

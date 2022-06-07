@@ -22,6 +22,7 @@ import {
   modifyProposalPending,
   resetProposalAuthStep,
   setProposalAuthStep,
+  setRegisterStep,
 } from '@make.org/store/actions/pendingProposal';
 import { Dispatch } from '@make.org/types';
 import { NewWindowGreyIconStyle } from '@make.org/ui/elements/LinkElements';
@@ -41,8 +42,8 @@ import {
   ProposalStepWrapperStyle,
 } from './style';
 
-const renderAuthStep = (step: string | undefined, dispatch: Dispatch) => {
-  switch (step) {
+const renderAuthStep = (authStep: string | undefined, dispatch: Dispatch) => {
+  switch (authStep) {
     case AUTH_STEP.LOGIN:
       return (
         <>
@@ -78,25 +79,30 @@ export const ProposalAuthentication: FC = () => {
   const { state, dispatch } = useAppContext();
   const { country, language, source } = state.appConfig;
   const isWidget = source === 'widget';
-  const { step } = state.pendingProposal.authMode;
+  const { authStep } = state.pendingProposal.authMode;
+  const { registerStep } = state.pendingProposal;
 
   useEffect(() => {
     trackDisplayAuthenticationForm();
   }, []);
 
-  if (step) {
+  const handleBackButton = () => {
+    if (authStep === AUTH_STEP.FORGOT_PASSWORD) {
+      return dispatch(setProposalAuthStep(AUTH_STEP.LOGIN));
+    }
+    if (authStep === AUTH_STEP.REGISTER && registerStep === 2) {
+      return dispatch(setRegisterStep(1));
+    }
+    return dispatch(resetProposalAuthStep());
+  };
+
+  if (authStep) {
     return (
       <ProposalFormWrapperStyle isWidget={isWidget}>
-        <ProposalBackButtonStyle
-          onClick={() =>
-            step === AUTH_STEP.FORGOT_PASSWORD
-              ? dispatch(setProposalAuthStep(AUTH_STEP.LOGIN))
-              : dispatch(resetProposalAuthStep())
-          }
-        >
+        <ProposalBackButtonStyle onClick={handleBackButton}>
           {i18n.t('common.back')}
         </ProposalBackButtonStyle>
-        {renderAuthStep(step, dispatch)}
+        {renderAuthStep(authStep, dispatch)}
       </ProposalFormWrapperStyle>
     );
   }
