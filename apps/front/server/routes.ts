@@ -90,7 +90,7 @@ function setAttachementContentDisposition(res: Response, path: string) {
 export const initRoutes = (app: Application): void => {
   // Static files
   app.use(
-    '/assets/favicon',
+    '/favicon',
     express.static(APP_FAVICON_DIR, {
       setHeaders: setCustomCacheControl,
     })
