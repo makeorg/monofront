@@ -78,7 +78,8 @@ export const ConsultationItem: FC<Props> = ({ question, resultsContext }) => {
         {question.question}
       </ConsultationElementTitleStyle>
       <ConsultationElementParagraphStyle>
-        {hasContributors && (
+        {/* Display contributors count only for ended consultations */}
+        {hasContributors && !isInProgress(question) && (
           <ConsultationItemStyle>
             <ConsultationPeopleIconStyle aria-hidden focusable="false" />
             <> </>
@@ -89,8 +90,7 @@ export const ConsultationItem: FC<Props> = ({ question, resultsContext }) => {
             })}`}
           </ConsultationItemStyle>
         )}
-        {/* Display proposals count only for ended consultations */}
-        {hasProposals && !isInProgress(question) && (
+        {hasProposals && (
           <ConsultationItemStyle>
             <ConsultationLightIconStyle aria-hidden focusable="false" />
             <> </>
