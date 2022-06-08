@@ -15,19 +15,22 @@ export const useInternalLinks = (
   country: string,
   language: string
 ): FooterLinkType[] => {
-  const [internalLinks, setInternaLinks] = useState<FooterLinkType[]>(
-    setCommonInternalLinks(country, language)
-  );
+  const [internalLinks, setInternaLinks] = useState<FooterLinkType[]>([]);
 
   useEffect(() => {
+    if (!country || !language) {
+      setInternaLinks([]);
+    }
     const commonInternalLinks = setCommonInternalLinks(country, language);
+
+    setCommonInternalLinks(country, language);
     if (language === 'fr' || language === 'de') {
       const extraInternalLinks = setCommonExtraLinks(country, language);
       const links = commonInternalLinks.concat(extraInternalLinks);
       setInternaLinks(links);
     }
 
-    if (country === 'en') {
+    if (language === 'en') {
       const extraINTInternalLinks = setINTExtraLinks(country);
       const INTLinks = commonInternalLinks.concat(extraINTInternalLinks);
       setInternaLinks(INTLinks);
@@ -42,10 +45,14 @@ export const useExternalLinks = (
   language: string,
   isDesktop: boolean
 ): FooterLinkType[] => {
-  const [externalLinks, setExternalLinks] =
-    useState<FooterLinkType[]>(setINTExternalLinks);
+  const [externalLinks, setExternalLinks] = useState<FooterLinkType[]>([]);
 
   useEffect(() => {
+    if (!country || !language) {
+      setExternalLinks([]);
+    }
+    setExternalLinks(setINTExternalLinks());
+
     if (language === 'fr') {
       setExternalLinks(setFRExternalLinks(isDesktop));
     }
