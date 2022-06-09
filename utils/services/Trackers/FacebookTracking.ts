@@ -75,6 +75,12 @@ export const FacebookTracking = {
     }
 
     if (env.isDev()) {
+      // eslint-disable-next-line no-console
+      console.info(
+        `Tracking  Facebook (${makePixelId})
+        track PageView`
+      );
+
       return;
     }
 
@@ -105,6 +111,7 @@ export const FacebookTracking = {
         eventId => ${eventId}
         params => ${JSON.stringify(eventParameters)}`
       );
+
       return;
     }
 

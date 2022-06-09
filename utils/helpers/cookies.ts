@@ -39,10 +39,12 @@ export const initTrackersFromPreferences = (
 
   if (shouldInitFbPixel && visitorId) {
     FacebookTracking.init(visitorId);
+    FacebookTracking.pageView();
   }
 
   if (shouldInitFbPixel && !visitorId) {
     FacebookTracking.init();
+    FacebookTracking.pageView();
   }
 
   if (cookiePreferences?.twitter_tracking && !twttr.initialized()) {
