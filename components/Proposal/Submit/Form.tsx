@@ -24,6 +24,7 @@ import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
+import { ProposalAuthentication } from './Authentication';
 import {
   ProposalFormWrapperStyle,
   ProposalStepTitleStyle,
@@ -42,33 +43,33 @@ import {
 
 export const ProposalForm: FC = () => {
   const { state, dispatch } = useAppContext();
-  const [proposalContent, setProposalContent] = useState(
-    state.pendingProposal.proposalContent || ''
+  const [pendingProposal, setProposalContent] = useState(
+    state.pendingProposal.pendingProposal || ''
   );
   const inputRef = useRef() as React.MutableRefObject<HTMLTextAreaElement>;
   const question: QuestionType | null = selectCurrentQuestion(state);
   const { isLoggedIn } = selectAuthentication(state);
   const { language, device } = state.appConfig;
   const isMobile = matchMobileDevice(device);
-  const proposalIsEmpty = proposalContent.length === 0;
+  const proposalIsEmpty = pendingProposal.length === 0;
   const baitText = getLocalizedBaitText(question.language, question.questionId);
   const charCounting = proposalIsEmpty
     ? baitText?.length
-    : proposalContent.length;
+    : pendingProposal.length;
 
-  const disableSubmitButton = !proposalHasValidLength(proposalContent.length);
+  const disableSubmitButton = !proposalHasValidLength(pendingProposal.length);
 
   const { source } = state.appConfig;
   const isWidget = source === 'widget';
 
   const handleFieldFocus = () => {
-    if (proposalContent.length === 0) {
+    if (pendingProposal.length === 0) {
       setProposalContent(baitText);
     }
   };
 
   const handleValueChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    if (proposalContent.length < baitText.length) {
+    if (pendingProposal.length < baitText.length) {
       return setProposalContent(baitText);
     }
     return setProposalContent(event.currentTarget.value);
@@ -87,7 +88,7 @@ export const ProposalForm: FC = () => {
   const handleSubmitForm = async () => {
     if (isLoggedIn) {
       await ProposalService.propose(
-        proposalContent,
+        pendingProposal,
         question.questionId,
         () => {
           dispatch(setPanelContent(<ProposalSuccess />));
@@ -95,7 +96,8 @@ export const ProposalForm: FC = () => {
       );
     }
 
-    dispatch(initProposalPending(proposalContent));
+    dispatch(initProposalPending(pendingProposal));
+    dispatch(setPanelContent(<ProposalAuthentication />));
   };
 
   useEffect(() => {
@@ -129,7 +131,7 @@ export const ProposalForm: FC = () => {
                 name="proposal"
                 id="proposal"
                 data-cy-field="proposal"
-                value={proposalContent}
+                value={pendingProposal}
                 onChange={secureFieldValue}
                 onFocus={handleFieldFocus}
                 autoCapitalize="none"
@@ -148,7 +150,7 @@ export const ProposalForm: FC = () => {
               </ProposalCharCountStyle>
               <ScreenReaderItemStyle aria-live="polite">
                 {i18n.t('proposal_submit.form.counter', {
-                  current: proposalContent.length,
+                  current: pendingProposal.length,
                   total: MAX_PROPOSAL_LENGTH,
                 })}
               </ScreenReaderItemStyle>

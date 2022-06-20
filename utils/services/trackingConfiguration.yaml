@@ -44,7 +44,6 @@ CLICK_CLOSE_MODAL:
     - key: context
       description: Modal context
       values:
-        - MODAL_LOGIN
         - MODAL_FORGOT_PASSWORD
         - MODAL_DEPARTMENT
         - MODAL_COUNTRIES

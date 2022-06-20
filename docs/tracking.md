@@ -60,7 +60,7 @@ Following parameters are added to all events.
     
     | param_name | required | description | values |
     |-|-|-|-|
-    | `context` | true | Modal context | `MODAL_LOGIN`, `MODAL_FORGOT_PASSWORD`, `MODAL_DEPARTMENT`, `MODAL_COUNTRIES`, `MODAL_PROPOSAL_SUCCESS` |
+    | `context` | true | Modal context | `MODAL_FORGOT_PASSWORD`, `MODAL_DEPARTMENT`, `MODAL_COUNTRIES`, `MODAL_PROPOSAL_SUCCESS` |
   
   
 

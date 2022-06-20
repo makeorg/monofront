@@ -36,12 +36,8 @@ export type StateViews = {
 
 // Proposal State
 export type StatePendingProposal = {
-  readonly proposalContent?: string;
+  readonly pendingProposal?: string;
   readonly firstname?: string;
-  readonly authMode: {
-    enable: boolean;
-    authStep?: undefined;
-  };
   readonly registerStep: number;
 };
 

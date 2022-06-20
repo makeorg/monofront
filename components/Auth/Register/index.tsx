@@ -16,10 +16,7 @@ import { ProposalService } from '@make.org/utils/services/Proposal';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { NewWindowGreyIconStyle } from '@make.org/ui/elements/LinkElements';
-import {
-  resetProposalAuthStep,
-  setRegisterStep,
-} from '@make.org/store/actions/pendingProposal';
+import { setRegisterStep } from '@make.org/store/actions/pendingProposal';
 import { RegisterForm } from './Forms/Form';
 import { RegisterConfirmation } from './Steps/RegisterConfirmation';
 import {
@@ -30,14 +27,12 @@ import {
 } from '../style';
 import { LegalConsent } from './Forms/LegalConsent';
 import { ProposalBackButtonStyle } from '../../Proposal/Submit/style';
+import { ProposalAuthentication } from '../../Proposal/Submit/Authentication';
+import { Login } from '../Login';
 
-type Props = {
-  isProposalSubmit?: boolean;
-};
-
-export const Register: React.FC<Props> = ({ isProposalSubmit }) => {
+export const Register: React.FC = () => {
   const { dispatch, state } = useAppContext();
-  const { proposalContent, registerStep } = state.pendingProposal;
+  const { pendingProposal, registerStep } = state.pendingProposal;
   const { country, language } = state.appConfig;
   const [user, setUser] = useState<RegisterFormDataType>({
     email: '',
@@ -60,8 +55,15 @@ export const Register: React.FC<Props> = ({ isProposalSubmit }) => {
     user && user.profile && user.profile.age && user.profile.age < 15;
   const isSecondStep = registerStep === 2;
   const handleReturn = () => {
-    dispatch(setRegisterStep(1));
-    dispatch(resetProposalAuthStep());
+    if (isSecondStep) {
+      dispatch(setRegisterStep(1));
+      return;
+    }
+    if (pendingProposal) {
+      dispatch(setPanelContent(<ProposalAuthentication />));
+      return;
+    }
+    dispatch(setPanelContent(<Login />));
   };
 
   const handleCheckbox = (fieldName: string, value: boolean) => {
@@ -147,14 +149,14 @@ export const Register: React.FC<Props> = ({ isProposalSubmit }) => {
       logAndLoadUser(user.email, user.password).then(async () => {
         trackSignupEmailSuccess();
         setErrors([]);
-        if (!proposalContent && !isProposalSubmit) {
+        if (!pendingProposal) {
           dispatch(setPanelContent(<RegisterConfirmation />));
         }
 
         // Display the proposal in the proposal submit context
-        if (proposalContent && isProposalSubmit) {
+        if (pendingProposal) {
           await ProposalService.propose(
-            proposalContent,
+            pendingProposal,
             question.questionId,
             () => dispatch(setPanelContent(<ProposalSuccess isRegister />))
           );
@@ -187,17 +189,17 @@ export const Register: React.FC<Props> = ({ isProposalSubmit }) => {
         handleCheckbox={handleCheckbox}
         handleSubmit={handleSubmit}
         toggleLegalConsent={toggleLegalConsent}
-        isProposalSubmit={isProposalSubmit}
       />
       <AuthenticationWrapperStyle
         aria-labelledby="register_title"
         className={needLegalConsent ? 'hidden' : ''}
       >
-        {isSecondStep && !isProposalSubmit && (
+        {(isSecondStep || pendingProposal) && (
           <ProposalBackButtonStyle onClick={handleReturn}>
             {i18n.t('common.back')}
           </ProposalBackButtonStyle>
         )}
+
         <RegisterForm
           user={user}
           errors={errors}
@@ -207,9 +209,8 @@ export const Register: React.FC<Props> = ({ isProposalSubmit }) => {
           disableSubmit={waitingCallback}
           registerStep={registerStep}
           checkRegistration={checkRegistration}
-          isProposalSubmit={isProposalSubmit}
         />
-        {!isProposalSubmit && !isSecondStep && (
+        {!pendingProposal && !isSecondStep && (
           <GreyParagraphStyle>
             {i18n.t('legal_consent.make_protect')}&nbsp;
             <PersonalDataGreyLinkStyle

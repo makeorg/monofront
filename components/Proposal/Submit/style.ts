@@ -254,7 +254,6 @@ export const ProposalAuthLoginWrapperStyle = styled(
 `;
 
 export const ProposalAuthSocialLoginWrapperStyle = styled(CenterColumnStyle)`
-  margin: 0 0 45px;
   width: 100%;
 `;
 

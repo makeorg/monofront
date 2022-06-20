@@ -1,7 +1,7 @@
 import React from 'react';
 import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
-import { modalShowLogin } from '@make.org/store/actions/modal';
+import { setPanelContent } from '@make.org/store/actions/panel';
 import {
   SeparatorStyle,
   SeparatorWrapperStyle,
@@ -12,13 +12,14 @@ import {
   RegisterParagraphStyle,
   SocialRegisterButtonsWrapperStyle,
 } from '../../style';
+import { Login } from '../../Login';
 import { FacebookAuthentication } from '../../Social/FacebookAuthentication';
 import { GoogleAuthentication } from '../../Social/GoogleAuthentication';
 
 export const SocialAuthenticationButtons: React.FC = () => {
   const { dispatch } = useAppContext();
   const handleLoginModal = () => {
-    dispatch(modalShowLogin());
+    dispatch(setPanelContent(<Login />));
   };
 
   return (
@@ -29,8 +30,8 @@ export const SocialAuthenticationButtons: React.FC = () => {
         <SeparatorStyle />
       </SeparatorWrapperStyle>
       <SocialRegisterButtonsWrapperStyle>
-        <GoogleAuthentication panel />
-        <FacebookAuthentication panel />
+        <GoogleAuthentication isRegister />
+        <FacebookAuthentication isRegister />
       </SocialRegisterButtonsWrapperStyle>
       <RegisterParagraphStyle>
         {i18n.t('register.login_title')}

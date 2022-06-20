@@ -12,7 +12,10 @@ import {
   ProposalSuccessParagraphWrapperStyle,
 } from '@make.org/components/Proposal/Submit/style';
 import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
-import { clearProposalPending } from '@make.org/store/actions/pendingProposal';
+import {
+  clearProposalPending,
+  setRegisterStep,
+} from '@make.org/store/actions/pendingProposal';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import {
   CONTACT_EMAIL,
@@ -55,7 +58,7 @@ export const ProposalAuthorAge: React.FC<{ dateOfBirth: string | null }> = ({
 export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
   const { state, dispatch } = useAppContext();
   const { user } = selectAuthentication(state);
-  const proposalContent = state.pendingProposal.proposalContent || '';
+  const pendingProposal = state.pendingProposal.pendingProposal || '';
   const { source, country } = state.appConfig;
   const isDE = country === 'DE';
   const EMAIL = isDE ? CONTACT_EMAIL_DE : CONTACT_EMAIL;
@@ -63,6 +66,7 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
   const avatarSize = 36;
   const handleCloseButton = () => {
     dispatch(closePanel());
+    dispatch(setRegisterStep(1));
     trackClickKeepVoting();
     dispatch(clearProposalPending());
   };
@@ -111,7 +115,7 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
               <ProposalAuthorAge dateOfBirth={user?.profile.dateOfBirth} />
             </ProposalSuccessNameStyle>
             <ProposalSuccessProposalStyle>
-              {proposalContent}
+              {pendingProposal}
             </ProposalSuccessProposalStyle>
             <ProposalTooltip />
             <ProposalSuccessContactStyle>

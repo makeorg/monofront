@@ -8,7 +8,7 @@ import {
   trackSignupEmailFailure,
 } from '@make.org/utils/services/Tracking';
 import { LinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
-import { FORM, NOTIF, AUTH_STEP } from '@make.org/types/enums';
+import { FORM, NOTIF } from '@make.org/types/enums';
 import { SubmitThumbsUpIcon } from '@make.org/utils/constants/icons';
 import { throttle } from '@make.org/utils/helpers/throttle';
 import { getFieldError } from '@make.org/utils/helpers/form';
@@ -17,7 +17,6 @@ import {
   modalClose,
   modalShowDataPolicyLogin,
 } from '@make.org/store/actions/modal';
-import { setProposalAuthStep } from '@make.org/store/actions/pendingProposal';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { useAppContext } from '@make.org/store';
 import {
@@ -26,25 +25,26 @@ import {
 } from '@make.org/ui/elements/FormElements';
 import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
 import { ProposalService } from '@make.org/utils/services/Proposal';
-import { setPanelContent } from '@make.org/store/actions/panel';
+import {
+  setPanelContent,
+  closePanel,
+  removePanelContent,
+} from '@make.org/store/actions/panel';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { FormErrors } from '../../Form/Errors';
 import { SubmitButton } from '../../Form/SubmitButton';
 import { EmailPasswordFields } from '../CommonFields/EmailPassword';
+import { PasswordForgot } from '../PasswordForgot';
 
 type TypeLoginValues = {
   email: string;
   password: string;
 };
 
-type Props = {
-  isProposalSubmit?: boolean;
-};
-
-export const LoginForm: FC<Props> = ({ isProposalSubmit }) => {
+export const LoginForm: FC = () => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy } = state.appConfig;
-  const { proposalContent } = state.pendingProposal;
+  const { pendingProposal } = state.pendingProposal;
   const question = selectCurrentQuestion(state);
   const defaultFormValues = {
     email: '',
@@ -82,16 +82,19 @@ export const LoginForm: FC<Props> = ({ isProposalSubmit }) => {
         )
       );
 
-      if (!proposalContent) {
+      if (!pendingProposal) {
         dispatch(
           displayNotificationBanner(
             NOTIF.LOGIN_SUCCESS_MESSAGE,
             NOTIF.NOTIFICATION_LEVEL_SUCCESS
           )
         );
+        dispatch(closePanel());
+        dispatch(removePanelContent());
         return;
       }
-      await ProposalService.propose(proposalContent, question.questionId, () =>
+
+      await ProposalService.propose(pendingProposal, question.questionId, () =>
         dispatch(setPanelContent(<ProposalSuccess />))
       );
     };
@@ -137,21 +140,18 @@ export const LoginForm: FC<Props> = ({ isProposalSubmit }) => {
         passwordError={passwordError}
         handleChange={handleChange}
       />
-      {isProposalSubmit && (
-        <LinkButtonStyle
-          onClick={() =>
-            dispatch(setProposalAuthStep(AUTH_STEP.FORGOT_PASSWORD))
-          }
-          type="button"
-        >
-          {i18n.t('login.forgot_password')}
-        </LinkButtonStyle>
-      )}
+      <LinkButtonStyle
+        onClick={() => dispatch(setPanelContent(<PasswordForgot />))}
+        type="button"
+      >
+        {i18n.t('login.forgot_password')}
+      </LinkButtonStyle>
       <SubmitButton
         formName={FORM.LOGIN_FORMNAME}
         icon={SubmitThumbsUpIcon}
         id="authentication-login-submit"
         label={i18n.t('common.connexion_label')}
+        disabled={!formValues.email || !formValues.password}
       />
     </FormRightAlignStyle>
   );

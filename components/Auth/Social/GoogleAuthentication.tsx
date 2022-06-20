@@ -13,10 +13,7 @@ import {
 import { SvgGoogleLogoG } from '@make.org/ui/Svg/elements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { UserService } from '@make.org/utils/services/User';
-import {
-  modalClose,
-  modalShowDataPolicySocial,
-} from '@make.org/store/actions/modal';
+import { modalShowDataPolicySocial } from '@make.org/store/actions/modal';
 import {
   trackAuthenticationSocialFailure,
   trackAuthenticationSocialSuccess,
@@ -42,22 +39,18 @@ import {
 } from './style';
 
 type Props = {
-  panel?: boolean;
+  isRegister?: boolean;
 };
 
-export const GoogleAuthentication: React.FC<Props> = ({ panel }) => {
+export const GoogleAuthentication: React.FC<Props> = ({ isRegister }) => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy } = state.appConfig || {};
-  const { proposalContent } = state.pendingProposal;
+  const { pendingProposal } = state.pendingProposal;
   const question = selectCurrentQuestion(state);
-  const isPanel = panel && panel === true;
+
   const handleClose = () => {
-    if (isPanel) {
-      dispatch(closePanel());
-      dispatch(removePanelContent());
-    } else {
-      dispatch(modalClose());
-    }
+    dispatch(closePanel());
+    dispatch(removePanelContent());
   };
 
   /** Google login method callback */
@@ -69,7 +62,9 @@ export const GoogleAuthentication: React.FC<Props> = ({ panel }) => {
       trackAuthenticationSocialSuccess(GOOGLE_PROVIDER_ENUM, isNewAccount);
       await getUser(dispatch, state.modal.isOpen);
 
-      if (!isPanel && !proposalContent) {
+      if (!pendingProposal && !isRegister) {
+        dispatch(closePanel());
+        dispatch(removePanelContent());
         dispatch(
           displayNotificationBanner(
             NOTIF.LOGIN_SUCCESS_MESSAGE,
@@ -78,13 +73,13 @@ export const GoogleAuthentication: React.FC<Props> = ({ panel }) => {
         );
       }
 
-      if (!proposalContent && isPanel) {
+      if (!pendingProposal && isRegister) {
         dispatch(setPanelContent(<RegisterConfirmation isSocial />));
       }
 
-      if (proposalContent) {
+      if (pendingProposal) {
         await ProposalService.propose(
-          proposalContent,
+          pendingProposal,
           question.questionId,
           () => dispatch(setPanelContent(<ProposalSuccess />))
         );

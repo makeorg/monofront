@@ -1,103 +1,71 @@
 import React from 'react';
 import i18n from 'i18next';
-import {
-  modalShowForgotPassword,
-  modalClose,
-} from '@make.org/store/actions/modal';
-import { FourthLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
-import {
-  ExtraParagraphStyle,
-  ExtraAltParagraphStyle,
-} from '@make.org/ui/elements/ParagraphElements';
-import {
-  SmallSeparatorWithMarginStyle,
-  SeparatorWrapperStyle,
-  TextSeparatorStyle,
-  SeparatorStyle,
-} from '@make.org/ui/elements/SeparatorsElements';
+import { ExtraBlackParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { RedLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { useAppContext } from '@make.org/store';
 import { Register } from '@make.org/components/Auth/Register';
 import { setPanelContent } from '@make.org/store/actions/panel';
-import { LoginForm } from './Form';
+import {
+  ProposalSubmitAuthSeparator,
+  SeparatorProposalAuthLogin,
+  TextSeparatorStyle,
+} from '@make.org/ui/elements/SeparatorsElements';
+import { FacebookAuthentication } from '@make.org/components/Auth/Social/FacebookAuthentication';
+import { GoogleAuthentication } from '@make.org/components/Auth/Social/GoogleAuthentication';
+import {
+  ProposalAuthSocialLoginWrapperStyle,
+  ProposalBackButtonStyle,
+} from '../../Proposal/Submit/style';
 import {
   AuthenticationWrapperStyle,
-  AuthenticationTitleStyle,
   LoginTitleWrapperStyle,
+  SocialRegisterButtonsWrapperStyle,
 } from '../style';
-import { AuthenticationButtonWrapperStyle } from '../Social/style';
-import { FacebookAuthentication } from '../Social/FacebookAuthentication';
-import { GoogleAuthentication } from '../Social/GoogleAuthentication';
+import { LoginForm } from './Form';
+import { ProposalAuthentication } from '../../Proposal/Submit/Authentication';
 
-type Props = {
-  isProposalSubmit?: boolean;
-};
-export const Login: React.FC<Props> = ({ isProposalSubmit }) => {
-  const { dispatch } = useAppContext();
-  const handleRegisterPanel = () => {
-    dispatch(modalClose());
-    dispatch(setPanelContent(<Register />));
-  };
-
-  const handleForgotPasswordModal = () => {
-    dispatch(modalShowForgotPassword());
-  };
+export const Login: React.FC = () => {
+  const { dispatch, state } = useAppContext();
+  const { pendingProposal } = state.pendingProposal;
 
   return (
     <AuthenticationWrapperStyle
       aria-labelledby="login_title"
       data-cy-container="authentication"
     >
-      {isProposalSubmit ? (
-        <LoginTitleWrapperStyle as="h3" className="proposalSubmit">
-          {i18n.t('login.connect')}
-        </LoginTitleWrapperStyle>
-      ) : (
-        <>
-          <AuthenticationTitleStyle id="login_title">
-            {i18n.t('login.title')}
-          </AuthenticationTitleStyle>
-          <SmallSeparatorWithMarginStyle />
-          <FourthLevelTitleStyle as="h3">
-            {i18n.t('login.connect')}
-          </FourthLevelTitleStyle>
-          <AuthenticationButtonWrapperStyle className="small-wrapper">
-            <GoogleAuthentication />
-            <FacebookAuthentication />
-          </AuthenticationButtonWrapperStyle>
-          <SeparatorWrapperStyle className="margin-bottom">
-            <SeparatorStyle />
-            <TextSeparatorStyle>{i18n.t('login.or')}</TextSeparatorStyle>
-            <SeparatorStyle />
-          </SeparatorWrapperStyle>
-          <FourthLevelTitleStyle as="h3">
-            {i18n.t('login.email_connect')}
-          </FourthLevelTitleStyle>
-        </>
+      {pendingProposal && (
+        <ProposalBackButtonStyle
+          onClick={() => dispatch(setPanelContent(<ProposalAuthentication />))}
+        >
+          {i18n.t('common.back')}
+        </ProposalBackButtonStyle>
       )}
-      <LoginForm isProposalSubmit={isProposalSubmit} />
-      {!isProposalSubmit && (
-        <>
-          <ExtraParagraphStyle>
-            {i18n.t('login.forgot_password_title')}
-            <RedLinkButtonStyle
-              onClick={handleForgotPasswordModal}
-              type="button"
-            >
-              {i18n.t('login.forgot_password_link')}
-            </RedLinkButtonStyle>
-          </ExtraParagraphStyle>
-          <ExtraAltParagraphStyle>
-            {i18n.t('login.registration_title')}
-            <RedLinkButtonStyle
-              onClick={handleRegisterPanel}
-              type="button"
-              data-cy-button="register"
-            >
-              {i18n.t('login.registration_link')}
-            </RedLinkButtonStyle>
-          </ExtraAltParagraphStyle>
-        </>
+      <LoginTitleWrapperStyle as="h3" className="proposalSubmit">
+        {i18n.t('login.connect')}
+      </LoginTitleWrapperStyle>
+      <LoginForm />
+      <ProposalAuthSocialLoginWrapperStyle>
+        <SeparatorProposalAuthLogin>
+          <ProposalSubmitAuthSeparator />
+          <TextSeparatorStyle>{i18n.t('register.or')}</TextSeparatorStyle>
+          <ProposalSubmitAuthSeparator />
+        </SeparatorProposalAuthLogin>
+        <SocialRegisterButtonsWrapperStyle>
+          <GoogleAuthentication />
+          <FacebookAuthentication />
+        </SocialRegisterButtonsWrapperStyle>
+      </ProposalAuthSocialLoginWrapperStyle>
+      {!pendingProposal && (
+        <ExtraBlackParagraphStyle>
+          {i18n.t('login.registration_title')}
+          <RedLinkButtonStyle
+            onClick={() => dispatch(setPanelContent(<Register />))}
+            type="button"
+            data-cy-button="register"
+          >
+            {i18n.t('login.registration_link')}
+          </RedLinkButtonStyle>
+        </ExtraBlackParagraphStyle>
       )}
     </AuthenticationWrapperStyle>
   );

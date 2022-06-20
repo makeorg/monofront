@@ -8,10 +8,7 @@ import { FACEBOOK_PROVIDER_ENUM } from '@make.org/api/UserApiService';
 import { SvgFacebookLogoF } from '@make.org/ui/Svg/elements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { UserService } from '@make.org/utils/services/User';
-import {
-  modalClose,
-  modalShowDataPolicySocial,
-} from '@make.org/store/actions/modal';
+import { modalShowDataPolicySocial } from '@make.org/store/actions/modal';
 import {
   trackAuthenticationSocialFailure,
   trackAuthenticationSocialSuccess,
@@ -43,22 +40,18 @@ import {
 } from './style';
 
 type Props = {
-  panel?: boolean;
+  isRegister?: boolean;
 };
 
-export const FacebookAuthentication: React.FC<Props> = ({ panel }) => {
+export const FacebookAuthentication: React.FC<Props> = ({ isRegister }) => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy, language } = state.appConfig;
-  const { proposalContent } = state.pendingProposal;
+  const { pendingProposal } = state.pendingProposal;
   const question = selectCurrentQuestion(state);
-  const isPanel = panel && panel === true;
+
   const handleClose = () => {
-    if (isPanel) {
-      dispatch(closePanel());
-      dispatch(removePanelContent());
-    } else {
-      dispatch(modalClose());
-    }
+    dispatch(closePanel());
+    dispatch(removePanelContent());
   };
 
   // setting facebook browser to true  or false
@@ -116,7 +109,9 @@ export const FacebookAuthentication: React.FC<Props> = ({ panel }) => {
       dispatch(loginSocialSuccess());
       await getUser(dispatch, state.modal.isOpen);
 
-      if (!isPanel && !proposalContent) {
+      if (!isRegister && !pendingProposal) {
+        dispatch(closePanel());
+        dispatch(removePanelContent());
         dispatch(
           displayNotificationBanner(
             NOTIF.LOGIN_SUCCESS_MESSAGE,
@@ -125,14 +120,14 @@ export const FacebookAuthentication: React.FC<Props> = ({ panel }) => {
         );
       }
 
-      if (!proposalContent && isPanel) {
+      if (!pendingProposal && isRegister) {
         dispatch(setPanelContent(<RegisterConfirmation isSocial />));
       }
       trackAuthenticationSocialSuccess(FACEBOOK_PROVIDER_ENUM, isNewAccount);
 
-      if (proposalContent) {
+      if (pendingProposal) {
         await ProposalService.propose(
-          proposalContent,
+          pendingProposal,
           question.questionId,
           () => dispatch(setPanelContent(<ProposalSuccess />))
         );

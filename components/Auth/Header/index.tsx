@@ -10,11 +10,11 @@ import { getRouteProfile } from '@make.org/utils/routes';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { SvgUser } from '@make.org/ui/Svg/elements';
 import i18n from 'i18next';
-import { modalShowLogin } from '@make.org/store/actions/modal';
+import { setPanelContent } from '@make.org/store/actions/panel';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
 import { useAppContext } from '@make.org/store';
-
+import { Login } from '../Login';
 import { ProfileLinkStyle } from './style';
 
 export const HeaderAuthentication: React.FC = () => {
@@ -47,7 +47,7 @@ export const HeaderAuthentication: React.FC = () => {
     <ProfileLinkStyle
       className={SEARCH.SEARCH_ELEMENT_ARIA_CLASS}
       as={UnstyledButtonStyle}
-      onClick={() => dispatch(modalShowLogin())}
+      onClick={() => dispatch(setPanelContent(<Login />))}
       data-cy-button="login"
       type="button"
     >

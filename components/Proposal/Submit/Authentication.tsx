@@ -6,106 +6,32 @@ import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import { ProposalSubmitAuthenticationRegisterButtons } from '@make.org/components/Auth/Register/AuthenticationButtons/ProposalSubmitAuthenticationButtons';
 import { Register } from '@make.org/components/Auth/Register';
 import { Login } from '@make.org/components/Auth/Login/index';
-import { PasswordForgot } from '@make.org/components/Auth/PasswordForgot';
-import {
-  ProposalSubmitAuthSeparator,
-  SeparatorProposalAuthLogin,
-  TextSeparatorStyle,
-} from '@make.org/ui/elements/SeparatorsElements';
 import { getDataPageLink } from '@make.org/utils/helpers/url';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import { FacebookAuthentication } from '@make.org/components/Auth/Social/FacebookAuthentication';
-import { GoogleAuthentication } from '@make.org/components/Auth/Social/GoogleAuthentication';
 import { useAppContext } from '@make.org/store';
-import { AUTH_STEP } from '@make.org/types/enums';
-import {
-  modifyProposalPending,
-  resetProposalAuthStep,
-  setProposalAuthStep,
-  setRegisterStep,
-} from '@make.org/store/actions/pendingProposal';
-import { Dispatch } from '@make.org/types';
+import { setPanelContent } from '@make.org/store/actions/panel';
 import { NewWindowGreyIconStyle } from '@make.org/ui/elements/LinkElements';
-import { SocialRegisterButtonsWrapperStyle } from '../../Auth/style';
 import {
-  ProposalFormWrapperStyle,
   ProposalStepWrapperColumnStyle,
-  ProposalBackButtonStyle,
   ProposalBackButtonCenterStyle,
   ProposalAltStepTitleStyle,
   ProposalAuthLoginStyle,
   ProposalAuthLoginWrapperStyle,
-  ProposalAuthSocialLoginWrapperStyle,
   ProposalStepLabelRedStyle,
   DataPolicyWrapperStyle,
   DataPolicyNewWindowLinkStyle,
   ProposalStepWrapperStyle,
 } from './style';
-
-const renderAuthStep = (authStep: string | undefined, dispatch: Dispatch) => {
-  switch (authStep) {
-    case AUTH_STEP.LOGIN:
-      return (
-        <>
-          <Login isProposalSubmit />
-          <ProposalAuthSocialLoginWrapperStyle>
-            <SeparatorProposalAuthLogin>
-              <ProposalSubmitAuthSeparator />
-              <TextSeparatorStyle>{i18n.t('register.or')}</TextSeparatorStyle>
-              <ProposalSubmitAuthSeparator />
-            </SeparatorProposalAuthLogin>
-            <SocialRegisterButtonsWrapperStyle>
-              <GoogleAuthentication />
-              <FacebookAuthentication />
-            </SocialRegisterButtonsWrapperStyle>
-          </ProposalAuthSocialLoginWrapperStyle>
-        </>
-      );
-    case AUTH_STEP.REGISTER:
-      return <Register isProposalSubmit />;
-    case AUTH_STEP.FORGOT_PASSWORD:
-      return (
-        <PasswordForgot
-          loginStep={() => dispatch(setProposalAuthStep(AUTH_STEP.LOGIN))}
-          panel
-        />
-      );
-    default:
-      return null;
-  }
-};
+import { ProposalForm } from './Form';
 
 export const ProposalAuthentication: FC = () => {
   const { state, dispatch } = useAppContext();
   const { country, language, source } = state.appConfig;
   const isWidget = source === 'widget';
-  const { authStep } = state.pendingProposal.authMode;
-  const { registerStep } = state.pendingProposal;
 
   useEffect(() => {
     trackDisplayAuthenticationForm();
   }, []);
-
-  const handleBackButton = () => {
-    if (authStep === AUTH_STEP.FORGOT_PASSWORD) {
-      return dispatch(setProposalAuthStep(AUTH_STEP.LOGIN));
-    }
-    if (authStep === AUTH_STEP.REGISTER && registerStep === 2) {
-      return dispatch(setRegisterStep(1));
-    }
-    return dispatch(resetProposalAuthStep());
-  };
-
-  if (authStep) {
-    return (
-      <ProposalFormWrapperStyle isWidget={isWidget}>
-        <ProposalBackButtonStyle onClick={handleBackButton}>
-          {i18n.t('common.back')}
-        </ProposalBackButtonStyle>
-        {renderAuthStep(authStep, dispatch)}
-      </ProposalFormWrapperStyle>
-    );
-  }
 
   return (
     <>
@@ -114,7 +40,7 @@ export const ProposalAuthentication: FC = () => {
           <ColumnElementStyle>
             <ProposalBackButtonCenterStyle
               isWidget={isWidget}
-              onClick={() => dispatch(modifyProposalPending())}
+              onClick={() => dispatch(setPanelContent(<ProposalForm />))}
             >
               {i18n.t('proposal_submit.authentication.back')}
             </ProposalBackButtonCenterStyle>
@@ -125,15 +51,13 @@ export const ProposalAuthentication: FC = () => {
               {i18n.t('proposal_submit.authentication.last_step')}
             </ProposalAltStepTitleStyle>
             <ProposalSubmitAuthenticationRegisterButtons
-              onEmailRegister={() =>
-                dispatch(setProposalAuthStep(AUTH_STEP.REGISTER))
-              }
+              onEmailRegister={() => dispatch(setPanelContent(<Register />))}
             />
           </ColumnElementStyle>
           <ProposalAuthLoginWrapperStyle>
             {i18n.t('proposal_submit.authentication.button_login_text')}&nbsp;
             <ProposalAuthLoginStyle
-              onClick={() => dispatch(setProposalAuthStep(AUTH_STEP.LOGIN))}
+              onClick={() => dispatch(setPanelContent(<Login />))}
             >
               {i18n.t('proposal_submit.authentication.button_login_link')}
             </ProposalAuthLoginStyle>

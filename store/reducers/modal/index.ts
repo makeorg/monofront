@@ -1,7 +1,6 @@
 import { Reducer, ReducerAction, StateModal } from '@make.org/types';
 import { MODAL_TYPES } from '@make.org/types/enums';
 import {
-  MODAL_SHOW_LOGIN,
   MODAL_SHOW_FORGOT_PASSWORD,
   MODAL_CLOSE,
   MODAL_SHOW_SESSION_EXPIRATION,
@@ -65,12 +64,6 @@ export const modal_reducer: Reducer = (
       return {
         ...state,
         showCookies: true,
-      };
-    case MODAL_SHOW_LOGIN:
-      return {
-        ...state,
-        isOpen: true,
-        contentType: MODAL_TYPES.MODAL_LOGIN,
       };
     case MODAL_SHOW_FORGOT_PASSWORD:
       return {

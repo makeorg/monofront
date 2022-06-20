@@ -1,5 +1,6 @@
 import React, { ChangeEvent, FormEvent, useEffect } from 'react';
 import { ErrorObjectType, RegisterFormDataType } from '@make.org/types';
+import { useAppContext } from '@make.org/store';
 import { FormLeftAlignStyle } from '@make.org/ui/elements/FormElements';
 import { getFieldError } from '@make.org/utils/helpers/form';
 import { FORM } from '@make.org/types/enums';
@@ -19,7 +20,6 @@ type Props = {
   checkRegistration: () => void;
   disableSubmit: boolean;
   registerStep: number;
-  isProposalSubmit?: boolean;
 };
 /**
  * Renders Register Form
@@ -33,13 +33,14 @@ export const RegisterForm: React.FC<Props> = ({
   checkRegistration,
   disableSubmit,
   registerStep,
-  isProposalSubmit,
 }) => {
   const emailError = getFieldError('email', errors);
   const passwordError = getFieldError('password', errors);
   const firstnameError = getFieldError('firstname', errors);
   const ageError = getFieldError('dateofbirth', errors);
   const postalcodeError = getFieldError('postalcode', errors);
+  const { state } = useAppContext();
+  const { pendingProposal } = state.pendingProposal;
 
   useEffect(() => {
     trackDisplaySignupForm(`${registerStep}`);
@@ -60,7 +61,7 @@ export const RegisterForm: React.FC<Props> = ({
             handleChange={handleChange}
             checkRegistration={checkRegistration}
           />
-          {!isProposalSubmit && <SocialAuthenticationButtons />}
+          {!pendingProposal && <SocialAuthenticationButtons />}
         </>
       )}
       {registerStep === 2 && (

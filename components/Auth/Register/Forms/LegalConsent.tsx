@@ -7,6 +7,7 @@ import {
 import { CheckBox } from '@make.org/components/Form/CheckBox';
 import { trackDisplayLegalConsent } from '@make.org/utils/services/Tracking';
 import { FORM } from '@make.org/types/enums';
+import { useAppContext } from '@make.org/store';
 import {
   LegalFormStyle,
   LegalIconStyle,
@@ -23,7 +24,6 @@ type Props = {
   handleCheckbox: (fieldName: string, value: boolean) => void;
   handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
   toggleLegalConsent: (event: SyntheticEvent<HTMLButtonElement>) => void;
-  isProposalSubmit?: boolean;
 };
 
 export const LegalConsent: React.FC<Props> = ({
@@ -31,11 +31,12 @@ export const LegalConsent: React.FC<Props> = ({
   handleCheckbox,
   handleSubmit,
   toggleLegalConsent,
-  isProposalSubmit,
 }) => {
   const [minorConsent, setMinorConsent] = useState<boolean>(false);
   const [parentalConsent, setParentalConsent] = useState<boolean>(false);
   const agreedAllConsents = minorConsent && parentalConsent;
+  const { state } = useAppContext();
+  const { pendingProposal } = state.pendingProposal;
 
   useEffect(() => {
     if (needLegalConsent) {
@@ -49,7 +50,7 @@ export const LegalConsent: React.FC<Props> = ({
     className = 'hidden';
   }
 
-  if (needLegalConsent && isProposalSubmit) {
+  if (needLegalConsent && pendingProposal) {
     className = 'panel';
   }
 

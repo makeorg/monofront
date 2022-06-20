@@ -13,6 +13,7 @@ import {
 } from '@make.org/utils/helpers/url';
 import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
 import i18n from 'i18next';
+import { setRegisterStep } from '@make.org/store/actions/pendingProposal';
 import {
   RegisterPanelSuccessWrapperStyle,
   LoginTitleWrapperCenterStyle,
@@ -46,6 +47,7 @@ export const RegisterConfirmation: React.FC<Props> = ({ isSocial }) => {
   const handleClick = () => {
     dispatch(closePanel());
     dispatch(removePanelContent());
+    dispatch(setRegisterStep(1));
   };
 
   useEffect(() => {

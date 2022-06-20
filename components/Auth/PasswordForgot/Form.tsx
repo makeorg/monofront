@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import i18n from 'i18next';
 import { UserService } from '@make.org/utils/services/User';
+import { useAppContext } from '@make.org/store';
 import { ErrorObjectType } from '@make.org/types';
 import { getFieldError } from '@make.org/utils/helpers/form';
 import { FORM } from '@make.org/types/enums';
+import { setPanelContent } from '@make.org/store/actions/panel';
 import {
   EmailFieldIcon,
   SubmitPaperPlaneIcon,
 } from '@make.org/utils/constants/icons';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
+import { Login } from '../Login';
 import { UntypedInput } from '../../Form/UntypedInput';
 import { SubmitButton } from '../../Form/SubmitButton';
 import { FormErrors } from '../../Form/Errors';
@@ -17,12 +20,9 @@ import { ForgotPasswordFormStyle, ForgotPasswordTitleStyle } from './style';
 /**
  * Renders ForgotPassword Form
  */
-type Props = {
-  isPanel?: boolean;
-  loginStep?: () => void;
-};
 
-export const ForgotPasswordForm: React.FC<Props> = ({ isPanel, loginStep }) => {
+export const ForgotPasswordForm: React.FC = () => {
+  const { dispatch } = useAppContext();
   const [email, setEmail] = useState<string>('');
   const [isSuccess, setSuccess] = useState<boolean>(false);
   const [errors, setErrors] = useState<ErrorObjectType[]>([]);
@@ -48,10 +48,10 @@ export const ForgotPasswordForm: React.FC<Props> = ({ isPanel, loginStep }) => {
   if (isSuccess) {
     return (
       <>
-        <ForgotPasswordTitleStyle isPanel={isPanel}>
+        <ForgotPasswordTitleStyle>
           {i18n.t('forgot_password.success')}
         </ForgotPasswordTitleStyle>
-        <RedButtonStyle onClick={loginStep}>
+        <RedButtonStyle onClick={() => dispatch(setPanelContent(<Login />))}>
           {i18n.t('proposal_submit.authentication.back_authentication')}
         </RedButtonStyle>
       </>
@@ -63,7 +63,7 @@ export const ForgotPasswordForm: React.FC<Props> = ({ isPanel, loginStep }) => {
       id={FORM.FORGOT_PASSWORD_FORMNAME}
       onSubmit={handleSubmit}
     >
-      <ForgotPasswordTitleStyle isPanel={isPanel}>
+      <ForgotPasswordTitleStyle>
         {i18n.t('forgot_password.description')}
       </ForgotPasswordTitleStyle>
       <FormErrors errors={errors} />
