@@ -49,8 +49,8 @@ export const TopIdeaDetailsProposals: FC<Props> = ({ topIdea, question }) => {
       page,
       undefined,
       undefined,
-      undefined,
       'TOP_SCORE',
+      undefined,
       topIdea.ideaId
     );
 
