@@ -12,6 +12,15 @@ import { NotificationBanner } from '@make.org/components/Notifications/Banner';
 import { debounce } from '@make.org/utils/helpers/timers';
 import { DEBOUNCE_TIMER } from '@make.org/utils/constants/config';
 import { useAppContext } from '@make.org/store';
+import {
+  setPanelContent,
+  closePanel,
+  removePanelContent,
+} from '@make.org/store/actions/panel';
+import { Login } from '@make.org/components/Auth/Login';
+import { Register } from '@make.org/components/Auth/Register';
+import { selectAuthentication } from '@make.org/store/selectors/user.selector';
+import { useLocation } from 'react-router';
 import { Panel } from '@make.org/components/Panel';
 import { Modal } from '@make.org/components/Modal';
 import { PrivacyPolicyModal } from '@make.org/components/PrivacyPolicyModal';
@@ -19,6 +28,7 @@ import { CookieModal } from '@make.org/components/CookieModal';
 import { SecureExpiration } from '@make.org/components/Expiration/Secure';
 import { SessionExpirationWithCoockies } from '@make.org/components/Expiration/Session';
 import { env } from '@make.org/assets/env';
+import { parse } from 'query-string';
 import { updateDeviceInState } from '../helpers/updateDeviceInState';
 import { Header } from './Header';
 import { Footer } from './Footer';
@@ -34,7 +44,6 @@ import { SortAndFiltersModale } from './Consultation/ExploreFilters/FiltersAndSo
  */
 export const AppContainer: FC = () => {
   const { dispatch, state } = useAppContext();
-
   const { device, country } = state.appConfig;
   const { showDataPolicy, showSort, showFilters } = state.modal;
   const showFiltersOrSortModale = (showSort || showFilters) === true;
@@ -44,6 +53,26 @@ export const AppContainer: FC = () => {
   );
   const [isClientSide, setIsClientSide] = useState(false);
   const hasCountry = country && country !== null;
+  const { search } = useLocation();
+  const urlQueryParams = parse(search);
+  const { displayPanel } = urlQueryParams;
+  const { isLoggedIn } = selectAuthentication(state);
+
+  useEffect(() => {
+    if (displayPanel === 'signin' && !isLoggedIn) {
+      dispatch(setPanelContent(<Login />));
+    }
+
+    if (displayPanel === 'signup' && !isLoggedIn) {
+      dispatch(setPanelContent(<Register />));
+    }
+
+    return () => {
+      dispatch(closePanel());
+      dispatch(removePanelContent());
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [displayPanel]);
 
   useEffect(() => {
     // Handle device state after resize
