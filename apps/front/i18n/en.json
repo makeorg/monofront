@@ -372,6 +372,7 @@
     "agree": "Agree",
     "disagree": "Disagree",
     "neutral": "I am neutral",
+    "label": "{{count}} vote",
     "label_plural": "{{count}} votes",
     "with_percent": "{{votedKey}} : {{votedPercent}}%"
   },

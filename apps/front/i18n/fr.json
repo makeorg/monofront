@@ -429,6 +429,7 @@
     "agree": "D'accord",
     "disagree": "Pas d'accord",
     "neutral": "Vote neutre",
+    "label": "{{count}} vote",
     "label_plural": "{{count}} votes",
     "with_percent": "{{votedKey}} : {{votedPercent}}%"
   },

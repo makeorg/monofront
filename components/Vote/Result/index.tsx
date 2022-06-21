@@ -14,6 +14,7 @@ import {
   VoteResultGraphStyle,
   VoteResultItemStyle,
   VoteResultBarStyle,
+  VoteResultTotalLabelStyle,
 } from './style';
 import { UnvoteButton } from '../Button/Unvote';
 import { VoteButtonWrapperStyle } from '../style';
@@ -105,6 +106,12 @@ export const VoteResult: React.FC<Props> = ({
           </VoteResultItemStyle>
         ))}
       </VoteResultGraphStyle>
+      <VoteResultTotalLabelStyle
+        className={isWidget ? 'widget' : ''}
+        aria-hidden
+      >
+        {i18n.t('vote.label', { count: votesCount })}
+      </VoteResultTotalLabelStyle>
     </VoteResultContainerStyle>
   );
 };

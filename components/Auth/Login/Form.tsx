@@ -82,13 +82,18 @@ export const LoginForm: FC<Props> = ({ isProposalSubmit }) => {
         )
       );
 
-      if (proposalContent) {
-        await ProposalService.propose(
-          proposalContent,
-          question.questionId,
-          () => dispatch(setPanelContent(<ProposalSuccess />))
+      if (!proposalContent) {
+        dispatch(
+          displayNotificationBanner(
+            NOTIF.LOGIN_SUCCESS_MESSAGE,
+            NOTIF.NOTIFICATION_LEVEL_SUCCESS
+          )
         );
+        return;
       }
+      await ProposalService.propose(proposalContent, question.questionId, () =>
+        dispatch(setPanelContent(<ProposalSuccess />))
+      );
     };
     const handleErrors = (serviceErrors?: ErrorObjectType[]) => {
       if (serviceErrors) {

@@ -191,6 +191,7 @@ export const Vote: React.FC<Props> = ({
     [userVote, votedKey]
   );
 
+  // eslint-disable-next-line consistent-return
   useEffect((): any => {
     if (isFirstSequenceVote) {
       dispatch(
@@ -201,7 +202,6 @@ export const Vote: React.FC<Props> = ({
         dispatch(clearNotificationTip());
       };
     }
-    return null;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
