@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   getTotalVotesCount,
-  getVotesPercent,
+  getVotesPercentFromScore,
 } from '@make.org/utils/helpers/voteResult';
 import { voteStaticParams } from '@make.org/utils/constants/vote';
 import { VoteType } from '@make.org/types';
@@ -27,7 +27,7 @@ type Props = {
 export const VoteProgress: React.FC<Props> = props => {
   const { votes, proposalId } = props;
   const votesCount = getTotalVotesCount(votes);
-  const votesPercent = getVotesPercent(votes, votesCount);
+  const votesPercent = getVotesPercentFromScore(votes);
   return (
     <VoteProgressContainerStyle>
       <VoteCounterStyle>

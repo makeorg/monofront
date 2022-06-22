@@ -6,7 +6,6 @@ import {
 } from '@make.org/utils/constants/vote';
 import { BadArgumentError } from '@make.org/utils/errors';
 import {
-  getVotesPercent,
   getVotesPercentFromScore,
   getTotalVotesCount,
   getVotesRatioInteger,
@@ -64,57 +63,6 @@ describe('VoteResult Helper', () => {
       ];
       const votesCount = getTotalVotesCount(votes);
       expect(votesCount).toBe(6);
-    });
-  });
-
-  describe('test getVotesPercent', () => {
-    it('calculate percent per vote Type', () => {
-      const votes: VoteType[] = [
-        {
-          count: 3,
-          voteKey: VOTE_AGREE_KEY,
-          qualifications: [
-            {
-              qualificationKey: 'foo',
-              count: 0,
-              hasQualified: false,
-            },
-          ],
-          hasVoted: false,
-          score: 0.69,
-        },
-        {
-          count: 3,
-          voteKey: VOTE_DISAGREE_KEY,
-          qualifications: [
-            {
-              qualificationKey: 'foo',
-              count: 0,
-              hasQualified: false,
-            },
-          ],
-          hasVoted: false,
-          score: 0.64,
-        },
-        {
-          count: 4,
-          voteKey: VOTE_NEUTRAL_KEY,
-          qualifications: [
-            {
-              qualificationKey: 'foo',
-              count: 0,
-              hasQualified: false,
-            },
-          ],
-          hasVoted: false,
-          score: 0.11,
-        },
-      ];
-
-      const votesPercent = getVotesPercent(votes, 10);
-      expect(votesPercent[VOTE_AGREE_KEY]).toBe(30);
-      expect(votesPercent[VOTE_DISAGREE_KEY]).toBe(30);
-      expect(votesPercent[VOTE_NEUTRAL_KEY]).toBe(40);
     });
   });
 

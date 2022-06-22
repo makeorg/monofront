@@ -6,14 +6,12 @@ import i18n from 'i18next';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { VoteButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { VoteIconStyle } from '@make.org/ui/elements/SvgElements';
-import { HiddenItemStyle } from '@make.org/ui/elements/HiddenElements';
 import { QualificationResults } from '../../../Qualification/Results';
 import {
   DetailledItemStyle,
   VoteDataListStyle,
   VoteDataBoldItemStyle,
   QualificationDataListStyle,
-  VoteDataItemStyle,
 } from '../style';
 
 type Props = {
@@ -25,7 +23,7 @@ type Props = {
 
 export const DetailledResultItem: React.FC<Props> = props => {
   const { vote, votePercent } = props;
-  const { voteKey, count } = vote;
+  const { voteKey } = vote;
   const voteColor = voteStaticParams[voteKey].color;
 
   return (
@@ -42,11 +40,6 @@ export const DetailledResultItem: React.FC<Props> = props => {
           <VoteDataBoldItemStyle>
             {i18n.t('common.percent', { percent: votePercent })}
           </VoteDataBoldItemStyle>
-          <HiddenItemStyle aria-hidden> (</HiddenItemStyle>
-          <VoteDataItemStyle>
-            {i18n.t('vote.label', { count })}
-          </VoteDataItemStyle>
-          <HiddenItemStyle aria-hidden>) </HiddenItemStyle>
         </VoteDataListStyle>
       </FlexElementStyle>
       <ScreenReaderItemStyle>
