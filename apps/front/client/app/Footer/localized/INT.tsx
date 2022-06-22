@@ -11,10 +11,15 @@ export const setINTExternalLinks = (): FooterLinkType[] => [
   },
 ];
 
-export const setINTExtraLinks = (country: string): FooterLinkType[] => [
-  {
-    label: i18n.t('main_footer.cookies'),
-    url: getCookiesPageLink(country),
-    onClick: scrollToTop,
-  },
-];
+export const setINTExtraLinks = (country: string): FooterLinkType[] => {
+  if (!country) {
+    return [];
+  }
+  return [
+    {
+      label: i18n.t('main_footer.cookies'),
+      url: getCookiesPageLink(country),
+      onClick: scrollToTop,
+    },
+  ];
+};
