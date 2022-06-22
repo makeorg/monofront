@@ -15,8 +15,9 @@ const getQuestion = async (
   notFound: () => void,
   unexpectedError: () => void
 ): Promise<QuestionType | void> => {
+  const upperCountry = country.toUpperCase();
   const handleData = (data: QuestionType) => {
-    if (!data.countries?.includes(country) || !data) {
+    if (!data.countries?.includes(upperCountry) || !data) {
       return notFound();
     }
 
@@ -32,7 +33,7 @@ const getQuestion = async (
   try {
     const response = await QuestionApiService.getDetail(questionIdOrSlug, {
       'x-make-question-id': questionIdOrSlug,
-      'x-make-country': country,
+      'x-make-country': upperCountry,
       'x-make-language': language,
     });
 

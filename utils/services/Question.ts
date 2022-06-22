@@ -75,10 +75,15 @@ const getDetail = async (
   try {
     const response = await QuestionApiService.getDetail(questionSlugOrId);
     const { data } = response || {};
-    if (country !== undefined && !data?.countries?.includes(country)) {
+    if (
+      country !== undefined &&
+      !data?.countries?.includes(country.toUpperCase())
+    ) {
       notFound();
       Logger.logError({
-        message: `Country : ${country} is not defined or available for question : ${questionSlugOrId}. Available countries in question are : ${data.countries}`,
+        message: `Country : ${country.toUpperCase()} is not defined or available for question : ${questionSlugOrId}. Available countries in question are : ${
+          data.countries
+        }`,
         name: 'services',
       });
 
