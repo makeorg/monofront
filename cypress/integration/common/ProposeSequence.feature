@@ -1,4 +1,4 @@
-@front
+@widget @front
 Feature: Propose on sequence
   I want to propose on sequence
   Scenario: display propose panel
