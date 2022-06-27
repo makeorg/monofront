@@ -1277,10 +1277,10 @@
   },
   "no_proposal_card": {
     "title": {
-      "regular": "Thank you for your wonderful contribution !",
-      "popular": "You  have voted on all popular proposals.",
-      "controversial": "You  have voted on all controversial proposals.",
-      "keyword": "You  have voted on all \"{{keyword}}\" proposals."
+      "regular": "Thank you for your contribution !",
+      "popular": "You have voted on all popular proposals.",
+      "controversial": "You have voted on all controversial proposals.",
+      "keyword": "You have voted on all \"{{keyword}}\" proposals."
     },
     "description": {
       "regular": "There are no new proposals at the moment.",
