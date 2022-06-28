@@ -10,23 +10,52 @@ import * as user from '../../fixtures/user.json';
 const now = new Date();
 const userData = user;
 
-When('I login with email {string} and password {string}', (email, password) => {
-  cy.intercept({
-    url: '/user/privacy-policy',
-    method: 'POST',
-  }).as('postUserPrivacyPolicy');
-  cy.intercept({
-    url: '/oauth/make_access_token',
-    method: 'POST',
-  }).as('postOauthAccessToken');
+When('I login with valid identifiers', () => {
+  cy.intercept(
+    {
+      url: '/user/privacy-policy',
+      method: 'POST',
+    },
+    req => {
+      req.reply({
+        statusCode: 200,
+        body: {
+          privacyPolicyApprovalDate: userData.privacyPolicyApprovalDate,
+        },
+      });
+    }
+  ).as('postUserPrivacyPolicy');
+  cy.intercept({ method: 'POST', url: '/oauth/make_access_token' }, req => {
+    expect(req.body).to.include('TestMake'),
+      req.reply({
+        statusCode: 200,
+        token_type: 'Bearer',
+        access_token: '1000000d-100f-11b2-9bff-00000000000a',
+        expires_in: 300,
+        refresh_token: '2000000d-100f-11b2-9bff-00000000000b',
+        refresh_expires_in: 1500,
+        created_at: now.toISOString(),
+      });
+  }).as('postLogin');
+  cy.intercept({ method: 'GET', url: '/user/current' }, req => {
+    req.reply(userData);
+  }).as('getUser');
+  cy.intercept(
+    { method: 'GET', url: `/user/${userData.userId}/profile` },
+    req => {
+      req.reply(userData);
+    }
+  ).as('getProfile');
 
   cy.get(`button[data-cy-button=login]`).scrollIntoView();
-  cy.get(`button[data-cy-button=login]`).click();
-  cy.get('[name=email]').type(email);
-  cy.get('[name=password]').type(password);
+  cy.get(`button[data-cy-button=login]`).click({ force: true });
+  cy.get('[name=email]').type(userData.email);
+  cy.get('[name=password]').type(userData.password);
   cy.get('#authentication-login-submit').click();
   cy.wait('@postUserPrivacyPolicy');
-  cy.wait('@postOauthAccessToken');
+  cy.wait('@postLogin');
+  cy.wait('@getUser');
+  cy.wait('@getProfile');
 });
 
 When(
@@ -80,6 +109,7 @@ When(
     cy.intercept({ method: 'POST', url: '/oauth/make_access_token' }, req => {
       expect(req.body).to.include('TestMake'),
         req.reply({
+          statusCode: 200,
           token_type: 'Bearer',
           access_token: '1000000d-100f-11b2-9bff-00000000000a',
           expires_in: 300,
@@ -144,19 +174,27 @@ Then('I see the legal consent form', () => {
 });
 
 Then('I see the register form', () => {
-  cy.get('form').should('exist');
+  cy.get('[data-cy-container=register-form]').should('exist');
 });
 
 Then('register form is closed', () => {
-  cy.get('form').should('not.visible');
+  cy.get('[data-cy-container=register-form]').should('not.exist');
+});
+
+Then('login form is closed', () => {
+  cy.get('[data-cy-container=login-form]').should('not.exist');
+});
+
+Then('banner is closed', () => {
+  cy.get(`[data-cy-container=banner]`).should('not.exist');
 });
 
 Then('I see the login form', () => {
-  cy.get('#login_title').should('visible');
+  cy.get('[data-cy-container=login-form]').should('visible');
 });
 
 Then('I should not see login form', () => {
-  cy.get('#login_title').should('not.visible');
+  cy.get('[data-cy-container=login-form]').should('not.visible');
 });
 
 Then('Sign up form is closed', () => {

@@ -72,7 +72,9 @@ Feature: Accessibility
 
   Scenario: Check HTML validity of profile page
   Given I go to "france homepage"
-  And I login with email "test@example.com" and password "abcdefgh"
+  When I login with valid identifiers
+  Then login form is closed
+  Then I click on "close-banner" button
   When I click on "header-profile" link
   Then I see "Mes dernières propositions" in "main" container
   And html page should be valid

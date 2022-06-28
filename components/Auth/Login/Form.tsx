@@ -128,6 +128,7 @@ export const LoginForm: FC = () => {
     <FormRightAlignStyle
       id={FORM.LOGIN_FORMNAME}
       onSubmit={throttle(handleSubmit)}
+      data-cy-container="login-form"
     >
       <FormRequirementsLeftStyle>
         {i18n.t('common.form.requirements_short')}
@@ -152,6 +153,7 @@ export const LoginForm: FC = () => {
         id="authentication-login-submit"
         label={i18n.t('common.connexion_label')}
         disabled={!formValues.email || !formValues.password}
+        data-cy-button="login"
       />
     </FormRightAlignStyle>
   );

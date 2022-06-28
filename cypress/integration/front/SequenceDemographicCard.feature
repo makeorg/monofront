@@ -7,7 +7,7 @@ Feature: Demographic sequence card
     And I am on the common sequence page of the question "question-0-slug"
     When I go to card "3" from card "1"
     Then current card is a demographic card
-    When I login with email "test@example.com" and password "abcdefgh"
+    When I login with valid identifiers
     Then current card is a demographic card
     And progress bar is "3" on "15"
 

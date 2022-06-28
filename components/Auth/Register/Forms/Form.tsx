@@ -50,6 +50,7 @@ export const RegisterForm: React.FC<Props> = ({
     <FormLeftAlignStyle
       id={FORM.REGISTER_PANEL_FORMNAME}
       onSubmit={throttle(handleSubmit)}
+      data-cy-container="register-form"
     >
       <TitleForm errors={errors} registerStep={registerStep} />
       {registerStep === 1 && (

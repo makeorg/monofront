@@ -46,7 +46,12 @@ export const NotificationBanner: React.FC = () => {
   const role = level === 'alert' ? 'alert' : 'assertive';
 
   return (
-    <NotificationWrapperStyle ref={notificationRef} role={role} tabIndex={0}>
+    <NotificationWrapperStyle
+      ref={notificationRef}
+      role={role}
+      tabIndex={0}
+      data-cy-container="banner"
+    >
       <NotificationContentStyle className={level}>
         <NotificationIcon
           level={level || NOTIF.NOTIFICATION_LEVEL_INFORMATION}
@@ -56,6 +61,7 @@ export const NotificationBanner: React.FC = () => {
       <NotificationCloseButtonStyle
         aria-expanded="false"
         onClick={closeNotificationBanner}
+        data-cy-button="close-banner"
       >
         <SvgDisconnect aria-hidden focusable="false" />
         <ScreenReaderItemStyle>

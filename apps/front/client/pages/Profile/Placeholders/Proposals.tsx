@@ -9,7 +9,7 @@ import {
 
 export const ProfileProposalsPlaceholder: FC = () => (
   <CenterColumnStyle>
-    <SvgLightBulb style={LightBulbStyle} />
+    <SvgLightBulb style={LightBulbStyle} focusable="false" />
     <PlaceholderParagraphStyle>
       {i18n.t('profile.proposals.text')}
     </PlaceholderParagraphStyle>

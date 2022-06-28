@@ -40,7 +40,11 @@ export const Login: React.FC = () => {
           {i18n.t('common.back')}
         </ProposalBackButtonStyle>
       )}
-      <LoginTitleWrapperStyle as="h3" className="proposalSubmit">
+      <LoginTitleWrapperStyle
+        as="h3"
+        className="proposalSubmit"
+        data-cy-container="login-panel-title"
+      >
         {i18n.t('login.connect')}
       </LoginTitleWrapperStyle>
       <LoginForm />
