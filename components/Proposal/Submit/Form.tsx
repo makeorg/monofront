@@ -96,8 +96,11 @@ export const ProposalForm: FC = () => {
       );
     }
 
+    if (!isLoggedIn) {
+      dispatch(setPanelContent(<ProposalAuthentication />));
+    }
+
     dispatch(initProposalPending(pendingProposal));
-    dispatch(setPanelContent(<ProposalAuthentication />));
   };
 
   useEffect(() => {
