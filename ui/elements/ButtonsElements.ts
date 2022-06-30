@@ -88,9 +88,16 @@ export const RedButtonCenterStyle = styled.button.attrs(props => ({
   ${BasicButtonStyle};
   ${RedStyle};
   align-self: center;
-  margin-top: 15px;
+  margin: 15px 0 0 0;
   &:disabled {
     ${GreyStyle};
+  }
+`;
+
+export const RedButtonProposalStyle = styled(RedButtonCenterStyle)`
+  margin: auto auto 0px;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    margin: 15px 0 0 0;
   }
 `;
 
@@ -112,7 +119,7 @@ export const LinkAsRedButtonStyle = styled(Link)`
 
 export const LinkAsRedButtonBottomMobileStyle = styled(LinkAsRedButtonStyle)`
   margin: auto auto 0px;
-  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     margin: 0;
   }
 `;
@@ -184,6 +191,13 @@ export const ActiveButtonCenterStyle = styled.button.attrs(props => ({
     .tofill {
       fill: ${color.greyDark};
     }
+  }
+`;
+
+export const ActiveButtonCenterBottomStyle = styled(ActiveButtonCenterStyle)`
+  margin: auto auto 0px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    margin: 30px 0;
   }
 `;
 

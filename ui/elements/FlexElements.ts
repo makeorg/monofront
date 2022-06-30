@@ -39,6 +39,10 @@ export const CenterColumnStyle = styled(ColumnElementStyle)`
   align-items: center;
 `;
 
+export const CenterColumnHeightStyle = styled(CenterColumnStyle)`
+  height: 100%;
+`;
+
 export const MiddleColumnStyle = styled(CenterColumnStyle)`
   justify-content: center;
 `;

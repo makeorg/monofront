@@ -5,10 +5,7 @@ import { PasswordInput } from '@make.org/components/Form/PasswordInput';
 import { SubmitButton } from '@make.org/ui/components/SubmitButton';
 import { FORM } from '@make.org/types/enums';
 import { FormRequirementsStyle } from '@make.org/ui/elements/FormElements';
-import {
-  PasswordFieldIcon,
-  SubmitPaperPlaneIcon,
-} from '@make.org/utils/constants/icons';
+import { PasswordFieldIcon } from '@make.org/utils/constants/icons';
 import { passwordRecovery } from '@make.org/store/actions/user/passwordRecovery';
 import { throttle } from '@make.org/utils/helpers/throttle';
 import { selectPasswordRecovery } from '@make.org/store/selectors/user.selector';
@@ -76,7 +73,6 @@ export const PasswordRecoveryForm: React.FC = () => {
       />
       <SubmitButton
         formName={FORM.PASSWORD_RECOVERY_FORMNAME}
-        icon={SubmitPaperPlaneIcon}
         label={i18n.t('reset_password.send_cta')}
       />
     </PasswordRecoveryFormStyle>

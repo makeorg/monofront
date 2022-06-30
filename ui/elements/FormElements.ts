@@ -144,6 +144,11 @@ export const FormLeftAlignStyle = styled.form`
   align-items: flex-start;
 `;
 
+export const FormLeftAlignHeightStyle = styled(FormLeftAlignStyle)`
+  height: 100%;
+  justify-content: flex-start;
+`;
+
 export const FormCenterAlignStyle = styled.form`
   ${FormStyle};
   align-items: center;

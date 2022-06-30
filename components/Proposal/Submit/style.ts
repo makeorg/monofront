@@ -58,6 +58,9 @@ export const ProposalFormWrapperStyle = styled.div<{
 `;
 export const ProposalFormStyle = styled.form`
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 `;
 
 export const ProposalFormSuccessWrapperStyle = styled(ProposalFormWrapperStyle)`
@@ -125,7 +128,10 @@ export const ProposalAltStepTitleStyle = styled(ProposalStepTitleStyle)<{
 export const ProposalFieldWrapperStyle = styled.div`
   position: relative;
   z-index: 0;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    margin-bottom: 30px;
+  
 `;
 
 export const ProposalTextareaStyle = styled(TextareaAutosize)`
@@ -235,8 +241,8 @@ export const ProposalAuthCancelStyle = styled(GreyNoBackgroundButtonStyle)`
 export const ProposalAuthInlineWrapperStyle = styled.div`
   font-family: ${MakeFonts.CircularStandardBook};
   justify-content: inline;
-  margin-top: 90px;
   margin-bottom: 20px;
+  align-self: flex-start;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     margin-top: 0;
   }
@@ -250,6 +256,7 @@ export const ProposalAuthLoginWrapperStyle = styled(
   flex-wrap: wrap;
   justify-content: center;
   margin: 15px 0 0 0;
+  align-self: center;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
 `;
 
@@ -265,7 +272,10 @@ export const ProposalSubmitForgotPasswordWrapperStyle = styled(
 
 export const ProposalButtonsWrapperStyle = styled(FlexElementStyle)`
   justify-content: flex-end;
-  margin-bottom: 20px;
+  margin: auto auto 0px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    margin: 0 0 20px 0;
+  }
 `;
 
 export const ProposalCancelButtonStyle = styled(GreyNoBackgroundButtonStyle)`
@@ -275,9 +285,10 @@ export const ProposalCancelButtonStyle = styled(GreyNoBackgroundButtonStyle)`
 `;
 
 export const ProposalSubmitButtonsWidgetStyle = styled(FlexElementStyle)`
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     flex-direction: row-reverse;
     height: fit-content;
@@ -347,7 +358,7 @@ export const LoginWrapperStyle = styled(CenterColumnStyle)<{
 
 export const ProposalSuccessWrapperStyle = styled(ColumnElementStyle)`
   font-family: ${MakeFonts.CircularStandardBook};
-  margin-bottom: 30px;
+  height: 100%;
   max-width: 505px;
 `;
 
@@ -375,15 +386,17 @@ export const ProposalSuccessTitleBlackStyle = styled(
   color: ${color.black};
 `;
 
-export const ProposalSuccessTitleGreenStyle = styled(ProposalSuccessTitle)`
-  color: #507a1f;
+export const ProposalSuccessTitleStyle = styled(ProposalSuccessTitle)`
+  color: ${color.brandSecondary};
 `;
 
 export const ProposalSuccessRedButtonStyle = styled(RedButtonStyle)`
   max-width: 167px;
   width: 100%;
-  margin: auto;
-  margin-top: 30px;
+  margin: auto auto 0px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    margin: 30px auto;
+  }
 `;
 
 export const ProposalSuccessTitleBlockStyle = styled.div`

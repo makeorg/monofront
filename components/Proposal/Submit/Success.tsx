@@ -11,7 +11,7 @@ import {
   ProposalFormSuccessWrapperStyle,
   ProposalSuccessParagraphWrapperStyle,
 } from '@make.org/components/Proposal/Submit/style';
-import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
+import { CenterColumnHeightStyle } from '@make.org/ui/elements/FlexElements';
 import {
   clearProposalPending,
   setRegisterStep,
@@ -26,7 +26,7 @@ import { SvgEmptyAvatar } from '@make.org/ui/Svg/elements';
 import { ProposalTooltip } from '../../../ui/components/Tooltip/ProposalTooltip';
 import {
   ProposalSuccessWrapperStyle,
-  ProposalSuccessTitleGreenStyle,
+  ProposalSuccessTitleStyle,
   ProposalSuccessTitleBlackStyle,
   ProposalSuccessSpanStyle,
   ProposalSuccessParagraphLinkStyle,
@@ -79,17 +79,17 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
 
   return (
     <ProposalFormSuccessWrapperStyle isWidget={isWidget}>
-      <CenterColumnStyle>
+      <CenterColumnHeightStyle>
         <ProposalSuccessWrapperStyle as="section">
           <ProposalSuccessTitleBlackStyle>
             {i18n.t('proposal_submit.success.grats', {
               name: user?.profile.firstName || '',
             })}
           </ProposalSuccessTitleBlackStyle>
-          <ProposalSuccessTitleGreenStyle>
+          <ProposalSuccessTitleStyle>
             {i18n.t('proposal_submit.success.proposal_sent')}
             <ProposalSuccessTitleBlackStyle>!</ProposalSuccessTitleBlackStyle>
-          </ProposalSuccessTitleGreenStyle>
+          </ProposalSuccessTitleStyle>
           <ProposalSuccessCardStyle>
             <ProposalSuccessAvatarStyle>
               {user?.avatarUrl ? (
@@ -141,7 +141,7 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
             {i18n.t('proposal_submit.success.button')}
           </ProposalSuccessRedButtonStyle>
         </ProposalSuccessWrapperStyle>
-      </CenterColumnStyle>
+      </CenterColumnHeightStyle>
     </ProposalFormSuccessWrapperStyle>
   );
 };

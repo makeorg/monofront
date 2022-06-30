@@ -3,7 +3,7 @@ import { useAppContext } from '@make.org/store';
 import i18n from 'i18next';
 import { ErrorObjectType, RegisterFormDataType } from '@make.org/types';
 import { FORM } from '@make.org/types/enums';
-import { SubmitButton } from '@make.org/ui/components/SubmitButton';
+import { SubmitButtonBottom } from '@make.org/ui/components/SubmitButton/submitButtonBottom';
 import { getGTUPageLink } from '@make.org/utils/helpers/url';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { ConditionParagraphMarginStylePanel } from '@make.org/ui/elements/ParagraphElements';
@@ -77,7 +77,7 @@ export const SecondStepRegister: React.FC<Props> = ({
       </ConditionParagraphMarginStylePanel>
       <RegisterCheckBox handleCheckbox={handleCheckbox} required />
       <OptInCheckBox handleCheckbox={handleCheckbox} />
-      <SubmitButton
+      <SubmitButtonBottom
         formName={FORM.REGISTER_PANEL_FORMNAME}
         id="authentication-register-submit"
         label={i18n.t('common.register_label')}

@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FormEvent, useEffect } from 'react';
 import { ErrorObjectType, RegisterFormDataType } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
-import { FormLeftAlignStyle } from '@make.org/ui/elements/FormElements';
+import { FormLeftAlignHeightStyle } from '@make.org/ui/elements/FormElements';
 import { getFieldError } from '@make.org/utils/helpers/form';
 import { FORM } from '@make.org/types/enums';
 import { throttle } from '@make.org/utils/helpers/throttle';
@@ -47,7 +47,7 @@ export const RegisterForm: React.FC<Props> = ({
   }, [registerStep]);
 
   return (
-    <FormLeftAlignStyle
+    <FormLeftAlignHeightStyle
       id={FORM.REGISTER_PANEL_FORMNAME}
       onSubmit={throttle(handleSubmit)}
       data-cy-container="register-form"
@@ -76,6 +76,6 @@ export const RegisterForm: React.FC<Props> = ({
           disableSubmit={disableSubmit}
         />
       )}
-    </FormLeftAlignStyle>
+    </FormLeftAlignHeightStyle>
   );
 };

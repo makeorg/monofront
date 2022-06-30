@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActiveButtonCenterStyle } from '../../elements/ButtonsElements';
+import { ActiveButtonCenterBottomStyle } from '../../elements/ButtonsElements';
 
 type Props = {
   /** Name of the input */
@@ -10,17 +10,18 @@ type Props = {
   id?: string;
   /** disabled interaction */
   disabled?: boolean;
+  /** Icon of the input */
   'data-cy-button'?: string;
 };
 
-export const SubmitButton: React.FC<Props> = ({
+export const SubmitButtonBottom: React.FC<Props> = ({
   formName,
   id,
   label,
   disabled,
   'data-cy-button': dataCyButton,
 }) => (
-  <ActiveButtonCenterStyle
+  <ActiveButtonCenterBottomStyle
     data-cy-button={dataCyButton}
     type="submit"
     form={formName}
@@ -28,5 +29,5 @@ export const SubmitButton: React.FC<Props> = ({
     disabled={disabled}
   >
     {label}
-  </ActiveButtonCenterStyle>
+  </ActiveButtonCenterBottomStyle>
 );
