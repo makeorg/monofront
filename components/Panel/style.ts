@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { color } from 'athena-design-tokens';
 import { StartColumnStyle } from '@make.org/ui/elements/FlexElements';
-import { BackgroundColors, ShadowColors } from '@make.org/assets/vars/Colors';
+import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { SvgClose } from '@make.org/ui/Svg/elements';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
@@ -70,10 +70,11 @@ export const PanelInnerStyle = styled(StartColumnStyle)`
   width: 100%;
   height: calc(100% - 65px);
   z-index: 15;
-  background-color: ${BackgroundColors.LightGrey};
+  background-color: #f2f4fc;
   transition: 0.5s ease-in bottom;
   overflow-y: auto;
   padding: 30px 20px;
+  border-radius: 8px 8px 0 0;
   &.widget {
     height: calc(100% - 36px);
     @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
