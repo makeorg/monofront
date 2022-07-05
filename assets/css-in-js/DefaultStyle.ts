@@ -34,6 +34,7 @@ export const DefaultStylesheet = createGlobalStyle`
     max-height: 550px;
     max-width: 635px;
     margin: 0 auto;
+    background-color: #f2f2f2;
   }
 
   h1,

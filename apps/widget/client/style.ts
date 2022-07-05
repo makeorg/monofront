@@ -16,6 +16,7 @@ export const WidgetContainerStyle = styled(ColumnElementStyle)<{
   position: relative;
   overflow: hidden;
   max-width: 635px;
+  background-color: #f2f2f2;
 `;
 
 export const ClosedConsultationTitleStyle = styled(SequenceMainTitleStyle)`

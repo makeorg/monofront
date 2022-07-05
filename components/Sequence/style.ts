@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography, color } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
@@ -17,7 +17,7 @@ export const SequenceContainerStyle = styled(MiddleColumnStyle)`
   margin: 0 auto;
   padding: 0 20px;
   &.widget {
-    background-color: ${color.greyLighter};
+    background-color: #f2f2f2;
     padding: 0px 15px 15px;
     @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
       padding: 0px 20px 20px;
