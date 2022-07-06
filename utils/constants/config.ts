@@ -1,11 +1,12 @@
 import format from 'date-fns/format';
+import { LocaleType } from '@make.org/types/enums';
 
 // for tests : see constants/__mocks__/config.js
 export const SESSION_ID_COOKIE_KEY = 'x-session-id';
 export const GOOGLE_LOGIN_ID =
   '810331964280-qtdupbrjusihad3b5da51i5p66qpmhmr.apps.googleusercontent.com';
 
-export const DEFAULT_LANGUAGE = 'en';
+export const DEFAULT_LANGUAGE: LocaleType = LocaleType.en;
 export const DEFAULT_COUNTRY = 'FR';
 export const NONE_COUNTRY = 'OO';
 

@@ -53,16 +53,6 @@ describe('Country Language middelware', () => {
       expect(request.params.country).toBe('FR');
     });
 
-    it('clanguage Capitalize into Request params', () => {
-      const request = httpMocks.createRequest({
-        params: { country: 'FR' },
-      });
-      const response = httpMocks.createResponse();
-      jest.spyOn(response, 'redirect');
-      countryLanguageMiddleware(request, response, () => undefined);
-      expect(request.params.language).toBe('fr');
-    });
-
     it('must call i18n changeLanguage on a new instance', () => {
       jest.spyOn(i18n, 'changeLanguage');
       jest.spyOn(i18n, 'cloneInstance');

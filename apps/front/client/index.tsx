@@ -223,8 +223,8 @@ const initApp = async (state: StateRoot) => {
           <ContextState serverState={store}>
             <BrowserRouter>
               <React.StrictMode>
-                <CountryListener />
                 <LanguageListener />
+                <CountryListener />
                 <AppContainer />
               </React.StrictMode>
             </BrowserRouter>

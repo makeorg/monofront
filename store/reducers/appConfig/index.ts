@@ -45,15 +45,9 @@ export const appConfig_reducer: Reducer = (
       };
     case SET_COUNTRY_CONFIGURATION:
       setCountry(action.payload.country);
-      setLanguage(action.payload.language, action.payload.country);
       return {
         ...state,
         country: action.payload.country,
-        language: action.payload.language,
-        translations: i18n.getResourceBundle(
-          action.payload.language,
-          TRANSLATION_NAMESPACE
-        ),
       };
     case SET_DESKTOP_DEVICE:
       return {

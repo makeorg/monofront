@@ -26,7 +26,9 @@ Given(
       .replace(':questionSlug', questionSlug)
       .replace(':language', 'fr')
       .replace(':country', 'FR');
-    cy.visit(page);
+    cy.visit(page, {
+      headers: { 'Accept-language': 'fr' },
+    });
   }
 );
 
@@ -37,7 +39,13 @@ Given(
       .replace(':questionSlug', questionSlug)
       .replace(':language', 'fr')
       .replace(':country', 'FR');
-    cy.visit(page, { noLoadCheck: true });
+    cy.visit(
+      page,
+      { noLoadCheck: true },
+      {
+        headers: { 'Accept-language': 'fr' },
+      }
+    );
   }
 );
 
@@ -48,7 +56,9 @@ Given(
       .replace(':questionSlug', questionSlug)
       .replace(':language', language)
       .replace(':country', country);
-    cy.visit(page);
+    cy.visit(page, {
+      headers: { 'Accept-language': 'fr' },
+    });
   }
 );
 
@@ -60,7 +70,9 @@ Given(
       .replace(':questionSlug', questionSlug)
       .replace(':language', language)
       .replace(':country', country);
-    cy.visit(page);
+    cy.visit(page, {
+      headers: { 'Accept-language': 'fr' },
+    });
   }
 );
 
@@ -71,7 +83,9 @@ Given(
       .replace(':questionSlug', questionSlug)
       .replace(':language', 'fr')
       .replace(':country', 'FR');
-    cy.visit(`${page}?firstProposal=${firstProposalId}`);
+    cy.visit(`${page}?firstProposal=${firstProposalId}`, {
+      headers: { 'Accept-language': 'fr' },
+    });
   }
 );
 
@@ -85,7 +99,9 @@ Given(
     if (Cypress.env('application') === 'widget') {
       cy.visit(page);
     } else {
-      cy.visit(`${page}?introCard=false`);
+      cy.visit(`${page}?introCard=false`, {
+        headers: { 'Accept-language': 'fr' },
+      });
     }
   }
 );
@@ -101,7 +117,9 @@ Given(
     if (Cypress.env('application') === 'widget') {
       cy.visit(page);
     } else {
-      cy.visit(`${page}?introCard=false`);
+      cy.visit(`${page}?introCard=false`, {
+        headers: { 'Accept-language': 'fr' },
+      });
     }
   }
 );
@@ -110,7 +128,9 @@ Given(
   'I am/go on/to the sequence popular page of the question {string}',
   questionSlug => {
     const page = sequencePopularPage.replace(':questionSlug', questionSlug);
-    cy.visit(page);
+    cy.visit(page, {
+      headers: { 'Accept-language': 'fr' },
+    });
   }
 );
 

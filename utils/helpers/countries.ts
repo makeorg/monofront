@@ -4,7 +4,6 @@ import { LocaleType } from '@make.org/types/enums';
 import { apiClient } from '@make.org/api/ApiService/ApiService.client';
 import { trackingParamsService } from '../services/TrackingParamsService';
 import { DateHelper } from './date';
-import { countriesConfiguration } from '../constants/languages';
 import { DEFAULT_LANGUAGE } from '../constants/config';
 
 export const compareCountriesByName = (
@@ -18,33 +17,6 @@ export const compareCountriesByName = (
     return 1;
   }
   return 0;
-};
-
-export const getLanguageFromCountryCode = (
-  countryCode: string
-): keyof typeof LocaleType => {
-  const countryConfiguration = countriesConfiguration.find(
-    countryConf => countryConf.countryCode === countryCode
-  );
-  const language = countryConfiguration
-    ? countryConfiguration.language
-    : DEFAULT_LANGUAGE;
-
-  return language;
-};
-
-const languageStorageKey = 'language';
-const languageStorage = {
-  set: (language: string, country: string) =>
-    sessionStorage.setItem(`${languageStorageKey}_${country}`, language),
-  get: (country: string) =>
-    sessionStorage.getItem(`${languageStorageKey}_${country}`),
-  hasValue: (country: string) =>
-    !!window.sessionStorage.getItem(`${languageStorageKey}_${country}`),
-  delete: (country: string) =>
-    sessionStorage.removeItem(`${languageStorageKey}_${country}`),
-  isAvailable: () =>
-    typeof window !== 'undefined' && window && !!window.sessionStorage,
 };
 
 export const setCountry = (country: string): void => {
@@ -78,21 +50,6 @@ export const getCountryWithConsultations = (
   }
 
   return countryHasConsultations;
-};
-
-export const getLanguageFromParams = (
-  countryCode: string,
-  queryLanguageParam?: string
-): string => {
-  if (queryLanguageParam) {
-    return queryLanguageParam.toLowerCase();
-  }
-
-  if (languageStorage.isAvailable() && languageStorage.hasValue(countryCode)) {
-    return languageStorage.get(countryCode) || '';
-  }
-
-  return getLanguageFromCountryCode(countryCode);
 };
 
 export const getCountryDPA = (

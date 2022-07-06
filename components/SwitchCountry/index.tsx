@@ -1,11 +1,7 @@
 import React from 'react';
 import i18n from 'i18next';
 import { getHomeLink } from '@make.org/utils/helpers/url';
-import { setCountryCode } from '@make.org/store/actions/appConfig';
-import {
-  compareCountriesByName,
-  getLanguageFromParams,
-} from '@make.org/utils/helpers/countries';
+import { compareCountriesByName } from '@make.org/utils/helpers/countries';
 import { modalClose } from '@make.org/store/actions/modal';
 import { useAppContext } from '@make.org/store';
 import {
@@ -36,8 +32,6 @@ export const SwitchCountry: React.FC = () => {
     if (country === countryCode) {
       return () => null;
     }
-
-    dispatch(setCountryCode(countryCode, getLanguageFromParams(countryCode)));
 
     return dispatch(modalClose());
   };

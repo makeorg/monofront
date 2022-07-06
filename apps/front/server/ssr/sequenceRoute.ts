@@ -1,7 +1,6 @@
 import { updateTrackingQuestionParam } from '@make.org/utils/helpers/question';
 import { Request, Response } from 'express';
 import { createInitialState } from '@make.org/store/initialState';
-import { getLanguageFromCountryCode } from '@make.org/utils/helpers/countries';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { getLoggerInstance } from '@make.org/utils/helpers/logger';
 import { transformExtraSlidesConfigFromQuery } from './helpers/query.helper';
@@ -12,13 +11,12 @@ export const sequenceRoute = async (
   req: Request,
   res: Response
 ): Promise<void> => {
-  const { questionSlug, country } = req.params;
+  const { questionSlug, country, language } = req.params;
   const { introCard } = req.query;
   const { pushProposal } = req.query;
   const noIntroCard = introCard === (false || 'false');
   const noPushProposal = pushProposal === (false || 'false');
 
-  const language = getLanguageFromCountryCode(country);
   const initialState = createInitialState();
   const logger = getLoggerInstance();
 
