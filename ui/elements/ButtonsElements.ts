@@ -59,7 +59,7 @@ export const RedStyle = `
 
 export const GreyStyle = `
   color: ${color.greyDark};
-  background-color: ${color.greyLighter};
+  background-color: ${color.grey};
   .tofill {
     fill: ${color.brandSecondary};
   }

@@ -20,7 +20,8 @@ export const PasswordForgot: FC = () => {
   const { dispatch, state } = useAppContext();
   const { pendingProposal } = state.pendingProposal;
 
-  const content = pendingProposal ? <ProposalAuthentication /> : <Login />;
+  const content = () =>
+    pendingProposal ? <ProposalAuthentication /> : <Login />;
 
   useEffect(() => {
     trackDisplayForgotPasswordForm();
@@ -37,7 +38,7 @@ export const PasswordForgot: FC = () => {
         <ExtraAltParagraphStyle>
           {i18n.t('forgot_password.return')}
           <RedLinkButtonStyle
-            onClick={() => dispatch(setPanelContent(content))}
+            onClick={() => dispatch(setPanelContent(content()))}
           >
             {i18n.t('forgot_password.login_link')}
           </RedLinkButtonStyle>
