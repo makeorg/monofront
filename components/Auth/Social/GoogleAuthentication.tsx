@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import GoogleLogin, {
   GoogleLoginResponse,
   GoogleLoginResponseOffline,
@@ -46,6 +46,8 @@ export const GoogleAuthentication: React.FC<Props> = ({ isRegister }) => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy } = state.appConfig || {};
   const { pendingProposal } = state.pendingProposal;
+  const [disabled, setDisabled] = useState(false);
+
   const question = selectCurrentQuestion(state);
 
   const handleClose = () => {
@@ -104,7 +106,18 @@ export const GoogleAuthentication: React.FC<Props> = ({ isRegister }) => {
     );
   };
 
-  const handleGoogleLoginFailure = (response: any) => {
+  const handleGoogleLoadFailure = () => {
+    Logger.logInfo({
+      message: `Google login load failure`,
+      name: 'social-auth',
+    });
+    setDisabled(true);
+  };
+
+  const handleGoogleLoginFailure = (response: {
+    error: string;
+    details: string;
+  }) => {
     dispatch(loginSocialFailure());
     if (response?.error === 'popup_closed_by_user') {
       Logger.logInfo({
@@ -115,8 +128,18 @@ export const GoogleAuthentication: React.FC<Props> = ({ isRegister }) => {
       return;
     }
 
+    if (response?.error === 'idpiframe_initialization_failed') {
+      Logger.logInfo({
+        message: `Google login failure: idpiframe_initialization_failed - ${response?.details}`,
+        name: 'social-auth',
+      });
+      setDisabled(true);
+
+      return;
+    }
+
     Logger.logError({
-      message: `Google login failure: ${response?.error}`,
+      message: `Google login failure: ${response?.error} - ${response?.details}`,
       name: 'social-auth',
     });
     dispatch(
@@ -135,8 +158,13 @@ export const GoogleAuthentication: React.FC<Props> = ({ isRegister }) => {
       buttonText="Google"
       onSuccess={handleGoogleLoginSuccess}
       onFailure={handleGoogleLoginFailure}
+      onScriptLoadFailure={handleGoogleLoadFailure}
       render={(renderProps: { onClick: () => void }) => (
-        <GoogleButtonStyle onClick={renderProps.onClick} type="button">
+        <GoogleButtonStyle
+          onClick={renderProps.onClick}
+          type="button"
+          disabled={disabled}
+        >
           <SvgLogoWrapperStyle>
             <SvgGoogleLogoG aria-hidden focusable="false" />
           </SvgLogoWrapperStyle>

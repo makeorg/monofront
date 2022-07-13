@@ -47,6 +47,7 @@ export const SocialButtonStyle = styled.button`
   background-color: ${color.white};
   border: 1px solid ${color.black};
   max-width: 300px;
+  opacity: ${props => (props.disabled ? 0.5 : 1)};
 `;
 
 export const SocialButtonLabelStyle = styled.span`
