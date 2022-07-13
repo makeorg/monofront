@@ -4,6 +4,7 @@ import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { SvgCheckedSymbol } from '@make.org/ui/Svg/elements';
 import { TextColors } from '@make.org/assets/vars/Colors';
+import { RedLinkStyle } from '@make.org/ui/elements/LinkElements';
 
 export const AuthorInfosStyle = styled.div`
   display: flex;
@@ -23,8 +24,15 @@ export const InfosWrapperStyle = styled.span`
   align-items: center;
 `;
 
+export const AuthorLinkStyle = styled(RedLinkStyle)`
+  text-align: center;
+  align-items: center;
+`;
+
 export const CertifiedIconStyle = styled(SvgCheckedSymbol)`
+  flex: none;
   margin-left: 5px;
+  margin-bottom: -2px;
   .tofill {
     fill: ${TextColors.Blue};
   }

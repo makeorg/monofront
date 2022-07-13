@@ -7,7 +7,6 @@ import {
   getPersonalityProfileLink,
 } from '@make.org/utils/helpers/url';
 import { Avatar } from '@make.org/ui/components/Avatar';
-import { RedLinkStyle } from '@make.org/ui/elements/LinkElements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { trackClickPublicProfile } from '@make.org/utils/services/Tracking';
 import { USER } from '@make.org/types/enums';
@@ -21,6 +20,7 @@ import {
   AuthorInfosStyle,
   InfosWrapperStyle,
   CertifiedIconStyle,
+  AuthorLinkStyle,
 } from './style';
 
 type Props = {
@@ -59,7 +59,7 @@ export const ProposalAuthorInformations: FC<Props> = ({ proposal }) => {
             formatOrganisationName(author.organisationName || '')
           ) : (
             <>
-              <RedLinkStyle
+              <AuthorLinkStyle
                 onClick={() => trackClickPublicProfile(USER.TYPE_ORGANISATION)}
                 to={getOrganisationProfileLink(
                   country,
@@ -67,8 +67,8 @@ export const ProposalAuthorInformations: FC<Props> = ({ proposal }) => {
                 )}
               >
                 {formatOrganisationName(author.organisationName || '')}
-              </RedLinkStyle>
-              <CertifiedIconStyle aria-hidden focusable="false" />
+                <CertifiedIconStyle aria-hidden focusable="false" />
+              </AuthorLinkStyle>
             </>
           ))}
         {isPersonality &&
@@ -76,12 +76,12 @@ export const ProposalAuthorInformations: FC<Props> = ({ proposal }) => {
             formatAuthorName(author.firstName || '')
           ) : (
             <>
-              <RedLinkStyle
+              <AuthorLinkStyle
                 onClick={() => trackClickPublicProfile(USER.TYPE_PERSONALITY)}
                 to={getPersonalityProfileLink(country, proposal.userId)}
               >
                 {formatAuthorName(author.firstName || '')}
-              </RedLinkStyle>
+              </AuthorLinkStyle>
               <CertifiedIconStyle aria-hidden focusable="false" />
             </>
           ))}
