@@ -101,13 +101,6 @@ export const ConsultationItem: FC<Props> = ({ question, resultsContext }) => {
             })}`}
           </ConsultationItemStyle>
         )}
-        {actions && (
-          <ConsultationItemStyle className="red">
-            <ConsultationActionIconStyle aria-hidden focusable="false" />
-            <> </>
-            {actions}
-          </ConsultationItemStyle>
-        )}
         {hasVotes && (
           <ConsultationItemStyle>
             <ConsultationVoteIconStyle
@@ -122,6 +115,13 @@ export const ConsultationItem: FC<Props> = ({ question, resultsContext }) => {
             {` ${i18n.t('browse.consultations.votes', {
               count: votesCount,
             })}`}
+          </ConsultationItemStyle>
+        )}
+        {actions && (
+          <ConsultationItemStyle className="red">
+            <ConsultationActionIconStyle aria-hidden focusable="false" />
+            <> </>
+            {actions}
           </ConsultationItemStyle>
         )}
         <ConsultationItemStyle>
