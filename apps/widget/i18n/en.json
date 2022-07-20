@@ -333,7 +333,7 @@
       "button_submit": "Validate",
       "read_our": "Read our",
       "moderation_link": "moderation charter",
-      "button_propose": "Validate"
+      "button_propose": "Submit"
     },
     "authentication": {
       "button_back": "Modify my solution",
@@ -790,12 +790,12 @@
       "progress_btn": "Participate",
       "start_date": "Consultation start date",
       "end_date": "Consultation end date",
-      "proposals": "Proposals",
+      "proposals": "Solutions",
       "progress_total": "Total number of votes"
     },
     "participate": {
       "title": "How to participate in this consultation ?",
-      "description": "We count on everyone's action to improve the common good. Therefore we need thousands of citizen solutions and opinions during our consultations."
+      "description": "We count on everyone's action to defend the general interest. Therefore we need thousands of citizen solutions and opinions during our consultations."
     },
     "citizen_account": {
       "title": "Your citizen account on Make.org",
@@ -806,7 +806,7 @@
       "soon": "Coming up",
       "submit": {
         "title": "Write a solution",
-        "description": "Tell your ideas with as many people as possible. Each proposal will be studied before being put to the vote of the citizens.",
+        "description": "Share your ideas with as many people as possible. Each proposal will be modarated before being put to the vote of the citizens.",
         "button": "I write a solution"
       },
       "interact": {
@@ -1239,12 +1239,12 @@
   "no_proposal_card": {
     "title": {
       "regular": "Thank you for your contribution !",
-      "popular": "You have voted on all popular proposals.",
-      "controversial": "You have voted on all controversial proposals.",
-      "keyword": "You have voted on all \"{{keyword}}\" proposals."
+      "popular": "You have voted on all popular solutions.",
+      "controversial": "You have voted on all controversial solutions.",
+      "keyword": "You have voted on all \"{{keyword}}\" solutions."
     },
     "description": {
-      "regular": "There are no new proposals at the moment.",
+      "regular": "There are no new solutions at the moment.",
       "special": "Keep voting to help us set our priorities."
     },
     "link_text": "I access to the consultation",
@@ -1261,7 +1261,7 @@
   "maintenance": {
     "title": "Ongoing maintenance",
     "subtitle": "Oops, we're sorry! Make.org is currently down for maintenance",
-    "description": "Feel free to come back in few minutes to discover the proposals offered by other citizens and submit yours",
+    "description": "Feel free to come back in few minutes to discover the solutions offered by other citizens and submit yours",
     "button": "Find out more about Make.org"
   },
   "unsecure": {

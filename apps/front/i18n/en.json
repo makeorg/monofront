@@ -352,7 +352,7 @@
       "button_submit": "Validate",
       "read_our": "Read our",
       "moderation_link": "moderation charter",
-      "button_propose": "Validate"
+      "button_propose": "Submit"
     },
     "authentication": {
       "button_back": "Modify my solution",
@@ -725,7 +725,7 @@
       "organisations_proposals": "Proposed by organizations",
       "no_proposal": "No solution",
       "validated_proposals": "<strong>{{count}} validated proposal</strong> matching your search",
-      "validated_proposals_plural": "<strong>{{count}} validated proposals</strong> matching your search"
+      "validated_proposals_plural": "<strong>{{count}} validated solutions</strong> matching your search"
     },
     "sort": {
       "TAGGED_FIRST": "All the solutions",
@@ -827,12 +827,12 @@
       "progress_btn": "Participate",
       "start_date": "Consultation start date",
       "end_date": "Consultation end date",
-      "proposals": "Proposals",
+      "proposals": "Solutions",
       "progress_total": "Total number of votes"
     },
     "participate": {
       "title": "How to participate in this consultation ?",
-      "description": "We count on everyone's action to improve the common good. Therefore we need thousands of citizen solutions and opinions during our consultations."
+      "description": "We count on everyone's action to defend the general interest. Therefore we need thousands of citizen solutions and opinions during our consultations."
     },
     "citizen_account": {
       "title": "Your citizen account on Make.org",
@@ -843,7 +843,7 @@
       "soon": "Coming up",
       "submit": {
         "title": "Write a solution",
-        "description": "Tell your ideas with as many people as possible. Each proposal will be studied before being put to the vote of the citizens.",
+        "description": "Share your ideas with as many people as possible. Each solution will be moderated before being put to the vote of the citizens.",
         "button": "I write a solution"
       },
       "interact": {
@@ -933,7 +933,7 @@
   },
   "idea_details": {
     "current_page": "Idea details",
-    "proposals": "solutions associated",
+    "proposals": "Solutions associated",
     "comments": "They gave their opinion"
   },
   "personality": {
@@ -1278,12 +1278,12 @@
   "no_proposal_card": {
     "title": {
       "regular": "Thank you for your contribution !",
-      "popular": "You have voted on all popular proposals.",
-      "controversial": "You have voted on all controversial proposals.",
-      "keyword": "You have voted on all \"{{keyword}}\" proposals."
+      "popular": "You have voted on all popular solutions.",
+      "controversial": "You have voted on all controversial solutions.",
+      "keyword": "You have voted on all \"{{keyword}}\" solutions."
     },
     "description": {
-      "regular": "There are no new proposals at the moment.",
+      "regular": "There are no new solutions at the moment.",
       "special": "Keep voting to help us set our priorities."
     },
     "link_text": "I access to the consultation",
