@@ -80,7 +80,7 @@
       "description": "Lerne alles über die Verarbeitung deiner persönlichen Daten, wenn du die Website besuchst."
     },
     "gtu": {
-      "title": "Nutwungsbedingungen - Make.org",
+      "title": "Nutzungsbedingungen - Make.org",
       "description": "Erfahre alles über die Nutzungsbedingungen für das Abstimmen und Vorschlagen auf unsere Bürgerbeteiligungsplattform."
     },
     "contact": {
@@ -512,7 +512,7 @@
     "cancel": "Abbrechen",
     "submit": "Bestätigen",
     "privacy_policy_first_part": "Ich bin damit einverstanden, dass meine personenbezogenen Daten von Make.org verarbeitet werden, sodass ich gemäß der ",
-    "privacy_policy_link": "Charta",
+    "privacy_policy_link": "Datenschutzerklärung",
     "privacy_policy_last_part": " teilnehmen kann und informiert werde.",
     "privacy_policy": "Datenschutzerklärung",
     "make_protect": "Make.org verpflichtet sich,",
@@ -536,7 +536,7 @@
     "data": "Datenschutzerklärung",
     "country": "Anderes Land wählen",
     "contact": "Kontakt",
-    "news": "Neuigkeiten",
+    "news": "Unsere Neuigkeiten",
     "dotation_funds": "Make.org Stiftungsfonds",
     "moderation_charter": "Moderationscharta",
     "press_details": "Presseschau",
