@@ -28,6 +28,8 @@ export const NewWindowIconStyle = styled(SvgExternalLink)`
 
 export const NewWindowGreyIconStyle = styled(NewWindowIconStyle)`
   fill: ${color.greyDark};
+  width: 15px;
+  height: 10px;
 `;
 
 export const RedLinkStyle = styled(Link)`
@@ -82,4 +84,8 @@ export const RedUppercaseHTMLLinkElementStyle = styled.a`
   ${linkStyle(color.brandSecondary)};
   text-transform: uppercase;
   font-family: ${MakeFonts.TradeGothicBoldCondensed};
+  & svg {
+    max-width: 16px;
+    max-height: 14px;
+  }
 `;

@@ -3,10 +3,7 @@ import {
   SecondLevelTitleStyle,
   ThirdLevelTitleStyle,
 } from '@make.org/ui/elements/TitleElements';
-import {
-  SvgLegalConsent,
-  SvgExternalLinkPlain,
-} from '@make.org/ui/Svg/elements';
+import { SvgLegalConsent, SvgExternalLink } from '@make.org/ui/Svg/elements';
 import { SmallSeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { FormCenterAlignStyle } from '@make.org/ui/elements/FormElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
@@ -129,9 +126,9 @@ export const PanelTermsOfUseLinkStyle = styled(TermsOfUseLinkStyle)`
   }
 `;
 
-export const NewWindowIconStyle = styled(SvgExternalLinkPlain)`
-  width: 9px;
-  height: 9px;
+export const NewWindowIconStyle = styled(SvgExternalLink)`
+  width: 15px;
+  height: 10px;
   padding-left: 2px;
   .tofill {
     fill: ${color.brandSecondary};
@@ -190,8 +187,10 @@ export const GreyParagraphStyle = styled.p`
   max-width: 80%;
   justify-content: center;
   align-items: center;
-  margin: auto;
-  margin-bottom: 0px;
+  margin: 0;
+  & svg {
+    margin-left: 2px;
+  }
 `;
 
 export const PersonalDataGreyLinkStyle = styled.a`

@@ -54,4 +54,5 @@ export const PartnershipParagraphStyle = styled.p`
 
 export const PartnershipRedButton = styled(LinkAsRedButton)`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  fill: ${color.white};
 `;

@@ -4,7 +4,7 @@ import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { SpaceBetweenColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Link } from 'react-router-dom';
-import { SvgExternalLinkPlain } from '@make.org/ui/Svg/elements';
+import { SvgExternalLink } from '@make.org/ui/Svg/elements';
 import { SEARCH } from '@make.org/types/enums';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
@@ -104,7 +104,7 @@ export const MenuExternalLinkStyle = styled.a`
   padding: 0 30px;
 `;
 
-export const MenuNewWindowIconStyle = styled(SvgExternalLinkPlain)`
+export const MenuNewWindowIconStyle = styled(SvgExternalLink)`
   width: 10px;
   margin-left: 5px;
 `;

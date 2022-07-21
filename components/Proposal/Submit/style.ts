@@ -7,7 +7,7 @@ import {
 } from '@make.org/ui/elements/ButtonsElements';
 import {
   SvgPencil,
-  SvgExternalLinkPlain,
+  SvgExternalLink,
   SvgArrowLeft,
   SvgBlueManOnBench,
 } from '@make.org/ui/Svg/elements';
@@ -168,7 +168,7 @@ export const ProposalExternalLinkStyle = styled.a`
   }
 `;
 
-export const ProposalExternalLinkIconStyle = styled(SvgExternalLinkPlain)`
+export const ProposalExternalLinkIconStyle = styled(SvgExternalLink)`
   width: 10px;
   height: 10px;
   margin-left: 5px;
@@ -307,7 +307,7 @@ export const DataPolicyWrapperStyle = styled.span`
   margin-bottom: 0px;
 `;
 
-export const NewWindowIconStyle = styled(SvgExternalLinkPlain)`
+export const NewWindowIconStyle = styled(SvgExternalLink)`
   width: 12px;
   height: 12px;
   padding-left: 2px;

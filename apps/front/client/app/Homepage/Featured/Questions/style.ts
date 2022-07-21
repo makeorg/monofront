@@ -27,7 +27,7 @@ export const FeaturedLinkStyle = styled.a`
 export const FeaturedLinkIconStyle = styled(SvgAngleArrowRight)`
   width: 12px;
   height: 12px;
-  margin-left: 15px;
+  margin-left: 10px;
   .tofill {
     fill: ${color.brandSecondary};
   }

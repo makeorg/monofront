@@ -33,6 +33,7 @@ export const FooterNavStyle = styled.nav`
 
 export const FooterWrapperFirstListStyle = styled(UnstyledListStyle)`
   padding: 20px 0;
+  fill: ${color.greyDark};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     padding: 27px 0 20px;
   }

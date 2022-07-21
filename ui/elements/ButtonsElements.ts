@@ -4,7 +4,7 @@ import { color, typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints, DefaultPadding } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
-import { SvgExternalLinkPlain } from '../Svg/elements';
+import { SvgExternalLink } from '../Svg/elements';
 
 export const ButtonsWrapperStyle = styled.div`
   display: flex;
@@ -397,7 +397,7 @@ export const HidePasswordIconStyle = styled(UnstyledButtonStyle)`
   color: ${color.greyDark};
 `;
 
-export const ExternalLinkIconStyle = styled(SvgExternalLinkPlain)`
+export const ExternalLinkIconStyle = styled(SvgExternalLink)`
   width: 14px;
   height: 14px;
   margin-left: 7px;

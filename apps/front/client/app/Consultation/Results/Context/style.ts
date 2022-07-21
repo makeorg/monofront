@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { typography } from 'athena-design-tokens';
-import { SvgExternalLinkPlain } from '@make.org/ui/Svg/elements';
+import { SvgExternalLink } from '@make.org/ui/Svg/elements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 
 const ResultContextLinkStyle = `
@@ -13,7 +13,7 @@ align-items: center;
 font-size: ${intToPx(typography.font.fontsize.XS.value)};
 line-height: 1.31;
 `;
-export const NewWindowIconStyle = styled(SvgExternalLinkPlain)`
+export const NewWindowIconStyle = styled(SvgExternalLink)`
   width: 9px;
   height: 9px;
   padding-left: 2px;

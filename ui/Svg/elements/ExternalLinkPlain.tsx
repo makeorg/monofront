@@ -2,14 +2,22 @@
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
 
-export const SvgExternalLinkPlain: React.FC<SvgPropsType> = (
+export const SvgExternalLink: React.FC<SvgPropsType> = (
   props: SvgPropsType
 ) => (
-  <svg width={12} height={12} viewBox="0 0 12 12" {...props}>
+  <svg
+    width={16}
+    height={14}
+    viewBox="0 0 16 14"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
-      className="tofill"
       fillRule="evenodd"
-      d="M12.5.893v10.214c0 .77-.624 1.393-1.393 1.393H.893c-.77 0-1.393-.624-1.393-1.393V.893C-.5.123.124-.5.893-.5h10.214c.77 0 1.393.624 1.393 1.393zm-2.554.464H6.697c-.618 0-.93.75-.492 1.189l.928.928-5.674 5.674a.348.348 0 000 .492l.9.9a.347.347 0 00.493 0l5.674-5.673.928.928c.436.436 1.189.13 1.189-.492v-3.25a.697.697 0 00-.697-.696z"
+      clipRule="evenodd"
+      d="M2.857 0h14.286A2.858 2.858 0 0 1 20 2.857v14.286A2.857 2.857 0 0 1 17.143 20H2.857A2.857 2.857 0 0 1 0 17.143V2.857A2.857 2.857 0 0 1 2.857 0Zm11.457 13.691c.267-.11.44-.37.44-.66h-.04v-7.11a.671.671 0 0 0-.675-.674H6.968a.714.714 0 0 0-.504 1.217l2.02 1.982-3.033 3.032c-.558.598-.554 1.5.003 2.058l1.01 1.01c.558.559 1.46.56 2.019.002l3.032-3.032 2.02 2.02a.714.714 0 0 0 .779.155Z"
+      fill="#000"
     />
   </svg>
 );

@@ -5,7 +5,7 @@ import { color, typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
-import { SvgExternalLinkPlain } from '../Svg/elements';
+import { SvgExternalLink } from '../Svg/elements';
 import { FlexElementStyle } from './FlexElements';
 import { UnstyledButtonStyle } from './ButtonsElements';
 
@@ -106,9 +106,9 @@ export const StyledCheckboxRightMargin = styled(StyledCheckbox)`
   margin: 0 8px 0 0;
 `;
 
-export const NewWindowIconStyle = styled(SvgExternalLinkPlain)`
-  width: 9px;
-  height: 9px;
+export const NewWindowIconStyle = styled(SvgExternalLink)`
+  width: 15px;
+  height: 10px;
   padding-left: 2px;
 `;
 export const DataPolicyNewWindowLinkStyle = styled.a<{ isWidget?: boolean }>`
