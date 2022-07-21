@@ -58,7 +58,6 @@ const ExplorePage: FC = () => {
   const [proposalsTotal, setProposalsTotal] = useState<number>(0);
 
   const PROPOSALS_LIMIT = 10;
-  const hasProposals = proposalsTotal > 0;
 
   // retrieves proposals with corresponding param for sort and filters
   const getProposals = async (values: TypeFilterAndSortValues) => {
@@ -178,17 +177,13 @@ const ExplorePage: FC = () => {
           {i18n.t('consultation.explore.description')}
         </ExploreSubTitleWrapperStyle>
         <ExploreDescriptionStyle>
-          {hasProposals ? (
-            <ExploreProposalsCountStyle
-              dangerouslySetInnerHTML={{
-                __html: i18n.t('consultation.explore.validated_proposals', {
-                  count: proposalsTotal,
-                }),
-              }}
-            />
-          ) : (
-            i18n.t('consultation.explore.no_proposal')
-          )}
+          <ExploreProposalsCountStyle
+            dangerouslySetInnerHTML={{
+              __html: i18n.t('consultation.explore.validated_proposals', {
+                count: proposalsTotal,
+              }),
+            }}
+          />
         </ExploreDescriptionStyle>
         <ParticipateInnerStyle>
           <ParticipateMainContentStyle>

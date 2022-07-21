@@ -982,8 +982,8 @@
       "participate": "Teilnehmen",
       "contributors": "Teilnehmer:in",
       "contributors_plural": "Teilnehmer:innen",
-      "proposals": "Vorschlag",
-      "proposals_plural": "Vorschläge",
+      "proposals": "vorschlag",
+      "proposals_plural": "vorschläge",
       "empty": "Es tut uns leid, in deinem Land ist derzeit keine Konsultation verfügbar."
     },
     "results": {

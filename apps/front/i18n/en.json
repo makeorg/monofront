@@ -337,7 +337,7 @@
       "tooltip_title": "Under moderation",
       "tooltip_description": "Your solution will be processed by our teams within 48 hours, in the meantime you can already find it in your profile.",
       "grats": "Congratulations {{name}}, ",
-      "proposal_sent": "your proposal has been submitted ",
+      "proposal_sent": "your solution has been submitted ",
       "activate": "Confirm your email address in one click ",
       "link": "to ensure the authenticity of your account. Click on the activation link that you received at : {{mail}}",
       "question": "Do you have a question? Please contact us at : "
@@ -345,7 +345,7 @@
     "form": {
       "bait": "We should ",
       "title": "Write a solution using 140 characters max, then click on the \"Submit\" button",
-      "field": "Proposal field",
+      "field": "Solution field",
       "counter": "Your solution contains {{current}} characters over {{total}}",
       "panel_trigger": "I write a solution",
       "button_cancel": "Cancel",
@@ -628,11 +628,11 @@
       "password": "Enter my password"
     },
     "organisation": {
-      "proposal_agree": "agrees with the proposal",
-      "proposal_disagree": "disagrees with the proposal",
+      "proposal_agree": "agrees with the solution",
+      "proposal_disagree": "disagrees with the solution",
       "and": " and ",
-      "hasVoted": " voted on this proposal.",
-      "hasVoted_plural": " voted on this proposal.",
+      "hasVoted": " voted on this solution.",
+      "hasVoted_plural": " voted on this solution.",
       "sharing_title": "Partagez ce profil"
     }
   },
@@ -724,7 +724,7 @@
       "unvoted": "Waiting for your vote",
       "organisations_proposals": "Proposed by organizations",
       "no_proposal": "No solution",
-      "validated_proposals": "<strong>{{count}} validated proposal</strong> matching your search",
+      "validated_proposals": "<strong>{{count}} validated solution</strong> matching your search",
       "validated_proposals_plural": "<strong>{{count}} validated solutions</strong> matching your search"
     },
     "sort": {
@@ -1198,10 +1198,10 @@
       "participate": "Participate",
       "contributors": "Participant",
       "contributors_plural": "Participants",
-      "proposals": "Solution",
-      "proposals_plural": "Solutions",
-      "votes": "Vote",
-      "votes_plural": "Votes",
+      "proposals": "solution",
+      "proposals_plural": "solutions",
+      "votes": "vote",
+      "votes_plural": "votes",
       "empty": "Unfortunately, we have no consultation open in this country."
     },
     "results": {
