@@ -141,7 +141,8 @@ export class UserApiService {
   static loginSocial(
     provider: string,
     token: string,
-    approvePrivacyPolicy?: boolean
+    approvePrivacyPolicy?: boolean,
+    optIn?: boolean
   ): Promise<void | AxiosResponse<UserAuthType>> {
     return ApiService.callApi(PATH_USER_LOGIN_SOCIAL, {
       method: 'POST',
@@ -151,6 +152,7 @@ export class UserApiService {
         country: ApiService.country,
         language: ApiService.language,
         approvePrivacyPolicy,
+        optIn,
       }),
     });
   }

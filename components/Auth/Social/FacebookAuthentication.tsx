@@ -38,6 +38,7 @@ import {
   SocialButtonLabelStyle,
   SvgLogoFacebookWrapperStyle,
 } from './style';
+import { OptInGTU } from '../Register/Steps/OptInGTU';
 
 type Props = {
   isRegister?: boolean;
@@ -134,18 +135,38 @@ export const FacebookAuthentication: React.FC<Props> = ({ isRegister }) => {
       }
     };
 
+    const failure = () =>
+      trackAuthenticationSocialFailure(FACEBOOK_PROVIDER_ENUM);
+
+    const unexpectedError = () => handleClose();
+
+    const updateDataPolicy = () => {
+      dispatch(modalShowDataPolicySocial(FACEBOOK_PROVIDER_ENUM, accessToken));
+    };
+
+    const validateDataPolicy = () => {
+      dispatch(
+        setPanelContent(
+          <OptInGTU
+            provider={FACEBOOK_PROVIDER_ENUM}
+            token={accessToken}
+            success={success}
+            failure={failure}
+            unexpectedError={unexpectedError}
+          />
+        )
+      );
+    };
+
     UserService.checkSocialPrivacyPolicy(
       FACEBOOK_PROVIDER_ENUM,
       accessToken,
       privacyPolicy,
-      () => {
-        dispatch(
-          modalShowDataPolicySocial(FACEBOOK_PROVIDER_ENUM, accessToken)
-        );
-      },
+      updateDataPolicy,
+      validateDataPolicy,
       success,
-      () => trackAuthenticationSocialFailure(FACEBOOK_PROVIDER_ENUM),
-      () => handleClose()
+      failure,
+      unexpectedError
     );
   };
 

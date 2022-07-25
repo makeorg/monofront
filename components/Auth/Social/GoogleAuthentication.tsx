@@ -37,6 +37,7 @@ import {
   SocialButtonLabelStyle,
   SvgLogoWrapperStyle,
 } from './style';
+import { OptInGTU } from '../Register/Steps/OptInGTU';
 
 type Props = {
   isRegister?: boolean;
@@ -93,16 +94,38 @@ export const GoogleAuthentication: React.FC<Props> = ({ isRegister }) => {
       accessToken = response.accessToken;
     }
 
+    const updateDataPolicy = () => {
+      dispatch(modalShowDataPolicySocial(GOOGLE_PROVIDER_ENUM, accessToken));
+    };
+
+    const failure = () =>
+      trackAuthenticationSocialFailure(GOOGLE_PROVIDER_ENUM);
+
+    const unexpectedError = () => handleClose();
+
+    const validateDataPolicy = () => {
+      dispatch(
+        setPanelContent(
+          <OptInGTU
+            provider={GOOGLE_PROVIDER_ENUM}
+            token={accessToken}
+            success={success}
+            failure={failure}
+            unexpectedError={unexpectedError}
+          />
+        )
+      );
+    };
+
     UserService.checkSocialPrivacyPolicy(
       GOOGLE_PROVIDER_ENUM,
       accessToken,
       privacyPolicy,
-      () => {
-        dispatch(modalShowDataPolicySocial(GOOGLE_PROVIDER_ENUM, accessToken));
-      },
+      updateDataPolicy,
+      validateDataPolicy,
       success,
-      () => trackAuthenticationSocialFailure(GOOGLE_PROVIDER_ENUM),
-      () => handleClose()
+      failure,
+      unexpectedError
     );
   };
 

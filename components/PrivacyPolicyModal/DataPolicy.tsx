@@ -32,7 +32,11 @@ import { UserService } from '@make.org/utils/services/User';
 import { Logger } from '@make.org/utils/services/Logger';
 import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
 import { ProposalService } from '@make.org/utils/services/Proposal';
-import { setPanelContent } from '@make.org/store/actions/panel';
+import {
+  closePanel,
+  removePanelContent,
+  setPanelContent,
+} from '@make.org/store/actions/panel';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import {
   DataPolicyContentStyle,
@@ -73,6 +77,8 @@ export const DataPolicy: React.FC = () => {
     }
 
     dispatch(modalCloseDataPolicy());
+    dispatch(closePanel());
+    dispatch(removePanelContent());
   };
 
   const loginAuthSuccess = (): void => {
@@ -98,6 +104,8 @@ export const DataPolicy: React.FC = () => {
     );
     trackLoginEmailFailure();
     dispatch(modalCloseDataPolicy());
+    dispatch(closePanel());
+    dispatch(removePanelContent());
   };
 
   const socialAuthSuccess = (isNewAccount: boolean) => {
@@ -140,6 +148,7 @@ export const DataPolicy: React.FC = () => {
         provider,
         token,
         dataPolicyConsent,
+        undefined,
         socialAuthSuccess,
         socialAuthFailure
       );

@@ -338,6 +338,7 @@ const loginSocial = async (
   provider: string,
   token: string,
   approvePrivacyPolicy?: boolean,
+  optIn?: boolean,
   success?: (isNewAccount: boolean) => void,
   failure?: () => void,
   unexpectedError?: () => void
@@ -346,7 +347,8 @@ const loginSocial = async (
     const response = await UserApiService.loginSocial(
       provider,
       token,
-      approvePrivacyPolicy
+      approvePrivacyPolicy,
+      optIn
     );
 
     if (response && response.data) {
@@ -379,7 +381,8 @@ const checkSocialPrivacyPolicy = async (
   provider: string,
   token: string,
   privacyPolicyDate: string,
-  action?: () => void,
+  updateAction?: () => void,
+  validateAction?: () => void,
   success?: (isNewAccount: boolean) => void,
   failure?: () => void,
   unexpectedError?: () => void
@@ -395,16 +398,30 @@ const checkSocialPrivacyPolicy = async (
     const lastVersion = new Date(privacyPolicyDate);
 
     let userAcceptance;
+
+    if (data?.privacyPolicyApprovalDate === null && validateAction) {
+      validateAction();
+      return null;
+    }
+
     if (data?.privacyPolicyApprovalDate != null) {
       userAcceptance = new Date(data.privacyPolicyApprovalDate);
     }
 
-    if ((!userAcceptance || userAcceptance < lastVersion) && action) {
-      action();
+    if ((!userAcceptance || userAcceptance < lastVersion) && updateAction) {
+      updateAction();
       return null;
     }
 
-    loginSocial(provider, token, undefined, success, failure, unexpectedError);
+    loginSocial(
+      provider,
+      token,
+      true,
+      undefined,
+      success,
+      failure,
+      unexpectedError
+    );
 
     return null;
   } catch (error: unknown) {
