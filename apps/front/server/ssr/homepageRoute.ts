@@ -1,5 +1,6 @@
 import { createInitialState } from '@make.org/store/initialState';
 import { Request, Response } from 'express';
+import { getLanguageFromCountryCode } from '@make.org/utils/helpers/countries';
 import { getLoggerInstance } from '@make.org/utils/helpers/logger';
 import { ViewsService } from '../service/ViewsService';
 import { reactRender } from '../reactRender';
@@ -8,7 +9,7 @@ export const homepageRoute = async (
   req: Request,
   res: Response
 ): Promise<any> => {
-  const { country, language } = req.params;
+  const { country } = req.params;
   const initialState = createInitialState();
   const logger = getLoggerInstance();
 
@@ -31,7 +32,7 @@ export const homepageRoute = async (
 
   const homepageData = await ViewsService.getHome(
     country,
-    language,
+    getLanguageFromCountryCode(country),
     notFound,
     unexpectedError
   );

@@ -1,7 +1,11 @@
 import { useAppContext } from '@make.org/store';
 import { useEffect } from 'react';
 import { match, useRouteMatch } from 'react-router';
-import { DEFAULT_COUNTRY } from '@make.org/utils/constants/config';
+import {
+  DEFAULT_COUNTRY,
+  DEFAULT_LANGUAGE,
+} from '@make.org/utils/constants/config';
+import { getLanguageFromCountryCode } from '@make.org/utils/helpers/countries';
 import { setCountryCode } from '@make.org/store/actions/appConfig';
 import { ROUTE_COUNTRY, BASE_PREVIEW_PATH } from '@make.org/utils/routes';
 
@@ -22,11 +26,13 @@ export const CountryListener = (): null => {
   useEffect(
     () => {
       if (upperCountry) {
-        dispatch(setCountryCode(upperCountry));
+        dispatch(
+          setCountryCode(upperCountry, getLanguageFromCountryCode(upperCountry))
+        );
         return;
       }
 
-      dispatch(setCountryCode(DEFAULT_COUNTRY));
+      dispatch(setCountryCode(DEFAULT_COUNTRY, DEFAULT_LANGUAGE));
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [upperCountry]

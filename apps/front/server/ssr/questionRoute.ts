@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { getLanguageFromCountryCode } from '@make.org/utils/helpers/countries';
 import { createInitialState } from '@make.org/store/initialState';
 import { updateTrackingQuestionParam } from '@make.org/utils/helpers/question';
 import { isInProgress } from '@make.org/utils/helpers/date';
@@ -10,7 +11,8 @@ export const questionRoute = async (
   req: Request,
   res: Response
 ): Promise<any> => {
-  const { questionSlug, country, language } = req.params;
+  const { questionSlug, country } = req.params;
+  const language = getLanguageFromCountryCode(country);
   const initialState = createInitialState();
   const logger = getLoggerInstance();
 

@@ -1,6 +1,7 @@
 import { updateTrackingQuestionParam } from '@make.org/utils/helpers/question';
 import { Request, Response } from 'express';
 import { createInitialState } from '@make.org/store/initialState';
+import { getLanguageFromCountryCode } from '@make.org/utils/helpers/countries';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { getLoggerInstance } from '@make.org/utils/helpers/logger';
 import {
@@ -27,7 +28,7 @@ export const sequenceByKindRoute = async (
   req: Request & Cookie,
   res: Response
 ): Promise<void> => {
-  const { questionSlug, country, language } = req.params;
+  const { questionSlug, country } = req.params;
   const { firstProposal, introCard, pushProposal } = req.query;
   const popularUrl = getSequencePopularLink(country, questionSlug, req.query);
   const controversyUrl = getSequenceControversialLink(
@@ -50,6 +51,7 @@ export const sequenceByKindRoute = async (
   const withIntroCardParam = introCard?.toLowerCase() !== 'false';
   const withPushProposalCardParam = pushProposal?.toLowerCase() !== 'false';
 
+  const language = getLanguageFromCountryCode(country);
   const initialState = createInitialState();
   const logger = getLoggerInstance();
 

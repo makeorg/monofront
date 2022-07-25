@@ -1,6 +1,7 @@
 import { updateTrackingQuestionParam } from '@make.org/utils/helpers/question';
 import { Request, Response } from 'express';
 import { createInitialState } from '@make.org/store/initialState';
+import { getLanguageFromCountryCode } from '@make.org/utils/helpers/countries';
 import {
   DEFAULT_COUNTRY,
   DEFAULT_LANGUAGE,
@@ -44,8 +45,12 @@ export const mainRoute = async (
     return res.redirect('/maintenance');
   }
 
+  let languageFromCountry = DEFAULT_LANGUAGE;
   const formattedQuestionSlug = (questionSlug && questionSlug.toString()) || '';
   const formattedCountry = (country && country.toString()) || DEFAULT_COUNTRY;
+  if (!language) {
+    languageFromCountry = getLanguageFromCountryCode(formattedCountry);
+  }
   const formattedLanguage = language && language.toString();
   const formattedSequenceKind = sequenceKind && sequenceKind.toString();
   const initialState = createInitialState();
@@ -70,7 +75,7 @@ export const mainRoute = async (
   const question = await QuestionService.getQuestion(
     formattedQuestionSlug,
     formattedCountry,
-    formattedLanguage || DEFAULT_LANGUAGE,
+    formattedLanguage || languageFromCountry,
     questionNotFound,
     questionUnexpectedError
   );
@@ -127,7 +132,7 @@ export const mainRoute = async (
   const firstProposal = await FirstProposalService.getFirstProposal(
     formattedQuestionId,
     formattedCountry,
-    formattedLanguage || DEFAULT_LANGUAGE,
+    formattedLanguage || languageFromCountry,
     firstNotFound,
     firstProposalUnexpectecError,
     formattedSequenceKind
