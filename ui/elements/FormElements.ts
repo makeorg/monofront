@@ -31,7 +31,10 @@ export const CheckboxLabelStyle = styled.label<{
   noFontSizeChange: boolean;
   isWidget?: boolean;
 }>`
-  display: inline-flex;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 5px;
   color: ${props => (props.isBlack ? color.black : color.greyDark)};
   font-family: ${MakeFonts.CircularStandardBook};
   font-size: ${props =>
@@ -79,7 +82,7 @@ export const FakeCheckboxInputStyle = styled.div`
   height: 14px;
   min-width: 14px;
   border: 1px solid ${color.grey};
-  margin: 4px 8px 0 0;
+  margin: 0 8px 0 0;
   z-index: 0;
   svg {
     fill: ${color.brandSecondary};

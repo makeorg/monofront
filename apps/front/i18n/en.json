@@ -119,7 +119,9 @@
       "mail_confirmation": " to ensure the authenticity of your account. Click on the activation link that was sent to you at : {{mail}}",
       "onboarding": "Give your opinion on social issues that are important to you by participating in our citizen consultations.",
       "cta": "Take part in consultations",
-      "cta_access": "Access to the consultation"
+      "cta_access": "Access to the consultation",
+      "optin_cgu_title": "Finalisez votre inscription",
+      "optin_cgu_subtitle": "en quelques clics"
     },
     "form": {
       "hide_password": "Hide password",

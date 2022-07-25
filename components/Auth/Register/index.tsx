@@ -18,6 +18,7 @@ import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElemen
 import { NewWindowGreyIconStyle } from '@make.org/ui/elements/LinkElements';
 import { setRegisterStep } from '@make.org/store/actions/pendingProposal';
 import { RegisterForm } from './Forms/Form';
+// import { RegisterConfirmation } from './Steps/RegisterConfirmation';
 import { RegisterConfirmation } from './Steps/RegisterConfirmation';
 import {
   AuthenticationWrapperStyle,
@@ -54,6 +55,7 @@ export const Register: React.FC = () => {
   const userIsAChild =
     user && user.profile && user.profile.age && user.profile.age < 15;
   const isSecondStep = registerStep === 2;
+
   const handleReturn = () => {
     if (isSecondStep) {
       dispatch(setRegisterStep(1));
@@ -151,6 +153,11 @@ export const Register: React.FC = () => {
         setErrors([]);
         if (!pendingProposal) {
           dispatch(setPanelContent(<RegisterConfirmation />));
+          // Replace <RegisterConfirmation /> with :
+          //   <OptInCGU
+          //   disableSubmit
+          //   handleCheckbox={handleCheckbox}
+          // />
         }
 
         // Display the proposal in the proposal submit context

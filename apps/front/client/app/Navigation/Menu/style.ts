@@ -105,7 +105,8 @@ export const MenuExternalLinkStyle = styled.a`
 `;
 
 export const MenuNewWindowIconStyle = styled(SvgExternalLink)`
-  width: 10px;
+  width: 14px;
+  height: 14px;
   margin-left: 5px;
 `;
 

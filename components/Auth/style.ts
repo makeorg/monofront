@@ -215,6 +215,12 @@ export const RegisterPanelSuccessWrapperStyle = styled.section`
   }
 `;
 
+export const RegisterPanelOptInWrapperStyle = styled(
+  RegisterPanelSuccessWrapperStyle
+)`
+  text-align: left;
+`;
+
 export const RegisterPanelSubTitleWrapperStyle = styled(
   LoginTitleWrapperCenterStyle
 )`

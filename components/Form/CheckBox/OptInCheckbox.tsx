@@ -5,7 +5,7 @@ import {
   HiddenCheckbox,
   StyledCheckbox,
   CheckboxWrapper,
-  CheckboxLabelCenterStyle,
+  CheckboxLabelStyle,
 } from '@make.org/ui/elements/FormElements';
 import { useAppContext } from '@make.org/store';
 
@@ -31,7 +31,7 @@ export const OptInCheckBox: React.FC<Props> = ({
 
   return (
     <CheckboxWrapper>
-      <CheckboxLabelCenterStyle noFontSizeChange={false} isWidget={isWidget}>
+      <CheckboxLabelStyle noFontSizeChange={false} isWidget={isWidget}>
         <HiddenCheckbox
           required={required}
           checked={checked}
@@ -42,7 +42,7 @@ export const OptInCheckBox: React.FC<Props> = ({
           <SvgCheck />
         </StyledCheckbox>
         <span>{i18n.t('legal_consent.opt_in')}</span>
-      </CheckboxLabelCenterStyle>
+      </CheckboxLabelStyle>
     </CheckboxWrapper>
   );
 };
