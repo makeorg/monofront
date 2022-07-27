@@ -27,3 +27,16 @@ export const twitterMakeUrl = 'https://twitter.com/Make_org';
 export const instagramMakeUrl = 'https://www.instagram.com/make_org/';
 export const facebookMakeUrl = 'https://www.facebook.com/Make.org/';
 export const linkedinMakeUrl = 'https://fr.linkedin.com/company/make.org';
+
+const TrustedUris = [
+  'https://local.makeorg.tech:3000',
+  'https://localhost:90009',
+  'https://localhost:90008',
+  'https://www.preprod.makeorg.tech',
+  'https://make.org',
+  'https://widget.preprod.makeorg.tech/',
+  'https://widget.make.org',
+];
+
+export const setSocialConnect = (frontUrl?: string): string | undefined =>
+  TrustedUris.find(uri => uri === frontUrl);

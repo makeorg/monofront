@@ -12,6 +12,8 @@ import {
 } from '@make.org/ui/elements/SeparatorsElements';
 import { FacebookAuthentication } from '@make.org/components/Auth/Social/FacebookAuthentication';
 import { GoogleAuthentication } from '@make.org/components/Auth/Social/GoogleAuthentication';
+import { env } from '@make.org/assets/env';
+import { setSocialConnect } from '@make.org/utils/helpers/social';
 import {
   ProposalAuthSocialLoginWrapperStyle,
   ProposalBackButtonStyle,
@@ -27,6 +29,7 @@ import { ProposalAuthentication } from '../../Proposal/Submit/Authentication';
 export const Login: React.FC = () => {
   const { dispatch, state } = useAppContext();
   const { pendingProposal } = state.pendingProposal;
+  const FRONT_URL = env.frontUrl() || window.FRONT_URL;
 
   return (
     <AuthenticationWrapperStyle
@@ -49,15 +52,19 @@ export const Login: React.FC = () => {
       </LoginTitleWrapperStyle>
       <LoginForm />
       <ProposalAuthSocialLoginWrapperStyle>
-        <SeparatorProposalAuthLogin>
-          <ProposalSubmitAuthSeparator />
-          <TextSeparatorStyle>{i18n.t('register.or')}</TextSeparatorStyle>
-          <ProposalSubmitAuthSeparator />
-        </SeparatorProposalAuthLogin>
-        <SocialRegisterButtonsWrapperStyle>
-          <GoogleAuthentication />
-          <FacebookAuthentication />
-        </SocialRegisterButtonsWrapperStyle>
+        {setSocialConnect(FRONT_URL) && (
+          <>
+            <SeparatorProposalAuthLogin>
+              <ProposalSubmitAuthSeparator />
+              <TextSeparatorStyle>{i18n.t('register.or')}</TextSeparatorStyle>
+              <ProposalSubmitAuthSeparator />
+            </SeparatorProposalAuthLogin>
+            <SocialRegisterButtonsWrapperStyle>
+              <GoogleAuthentication />
+              <FacebookAuthentication />
+            </SocialRegisterButtonsWrapperStyle>
+          </>
+        )}
       </ProposalAuthSocialLoginWrapperStyle>
       {!pendingProposal && (
         <ExtraBlackParagraphStyle>

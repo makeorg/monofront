@@ -5,6 +5,8 @@ import {
   SeparatorWrapperStyle,
   TextSeparatorStyle,
 } from '@make.org/ui/elements/SeparatorsElements';
+import { env } from '@make.org/assets/env';
+import { setSocialConnect } from '@make.org/utils/helpers/social';
 import { FacebookAuthentication } from '../../Social/FacebookAuthentication';
 import { GoogleAuthentication } from '../../Social/GoogleAuthentication';
 import {
@@ -20,28 +22,36 @@ type Props = {
 
 export const ProposalSubmitAuthenticationRegisterButtons: FC<Props> = ({
   onEmailRegister,
-}) => (
-  <AuthenticationButtonWrapperStyle data-cy-container="signup-auth-buttons">
-    <GoogleAuthentication isRegister />
-    <FacebookAuthentication isRegister />
-    <SeparatorWrapperStyle>
-      <ProposalSubmitAuthSeparator className="no-margin-top" />
-      <TextSeparatorStyle>{i18n.t('login.or')}</TextSeparatorStyle>
-      <ProposalSubmitAuthSeparator className="no-margin-top" />
-    </SeparatorWrapperStyle>
-    <EmailButtonStyle
-      onClick={onEmailRegister}
-      id="authentication-register-button"
-      type="button"
-    >
-      <AuthenticationEmailIconStyle
-        aria-hidden
-        focusable="false"
+}) => {
+  const FRONT_URL = env.frontUrl() || window.FRONT_URL;
+
+  return (
+    <AuthenticationButtonWrapperStyle data-cy-container="signup-auth-buttons">
+      {setSocialConnect(FRONT_URL) && (
+        <>
+          <GoogleAuthentication isRegister />
+          <FacebookAuthentication isRegister />
+          <SeparatorWrapperStyle>
+            <ProposalSubmitAuthSeparator className="no-margin-top" />
+            <TextSeparatorStyle>{i18n.t('login.or')}</TextSeparatorStyle>
+            <ProposalSubmitAuthSeparator className="no-margin-top" />
+          </SeparatorWrapperStyle>
+        </>
+      )}
+      <EmailButtonStyle
+        onClick={onEmailRegister}
+        id="authentication-register-button"
         type="button"
-      />
-      <SocialButtonLabelStyle>
-        {i18n.t('common.social_login.email_register')}
-      </SocialButtonLabelStyle>
-    </EmailButtonStyle>
-  </AuthenticationButtonWrapperStyle>
-);
+      >
+        <AuthenticationEmailIconStyle
+          aria-hidden
+          focusable="false"
+          type="button"
+        />
+        <SocialButtonLabelStyle>
+          {i18n.t('common.social_login.email_register')}
+        </SocialButtonLabelStyle>
+      </EmailButtonStyle>
+    </AuthenticationButtonWrapperStyle>
+  );
+};
