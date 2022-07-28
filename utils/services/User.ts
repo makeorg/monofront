@@ -416,7 +416,7 @@ const checkSocialPrivacyPolicy = async (
     loginSocial(
       provider,
       token,
-      true,
+      undefined,
       undefined,
       success,
       failure,

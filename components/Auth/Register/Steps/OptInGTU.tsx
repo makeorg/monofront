@@ -37,7 +37,6 @@ export const OptInGTU: React.FC<Props> = ({
 
   const { country, language, source } = state.appConfig;
   const isWidget = source === 'widget';
-  const [canSubmit, setCanSubmit] = useState<boolean>(false);
   const [acceptDataPolicy, setAcceptDataPolicy] = useState<boolean>(false);
   const [optinNewsletter, setOptinNewsletter] = useState<boolean>(false);
 
@@ -86,21 +85,19 @@ export const OptInGTU: React.FC<Props> = ({
       <RegisterCheckBox
         handleCheckbox={() => {
           setAcceptDataPolicy(!acceptDataPolicy);
-          setCanSubmit(true);
         }}
         required
       />
       <OptInCheckBox
         handleCheckbox={() => {
           setOptinNewsletter(!optinNewsletter);
-          setCanSubmit(true);
         }}
       />
       <SubmitButtonBottom
         formName={FORM.DATA_POLICY_CONSENT}
         id="authentication-register-submit"
         label={i18n.t('common.register_label')}
-        disabled={!canSubmit}
+        disabled={!acceptDataPolicy}
       />
     </RegisterPanelOptInWrapperStyle>
   );
