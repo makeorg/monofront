@@ -139,8 +139,8 @@ export const NewWindowLinkStyle = styled.a`
 
 export const NewWindowIconStyle = styled(SvgExternalLink)`
   margin-left: 5px;
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   fill: ${props =>
     props.theme.fontColor ? props.theme.fontColor : color.brandSecondary};
 `;
