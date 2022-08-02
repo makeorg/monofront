@@ -83,7 +83,7 @@ const getApp = () => {
           'max-age=31536000; includeSubDomains; preload',
         'X-Content-Type-Options': 'nosniff',
         'X-XSS-Protection': '0',
-        'Referrer-Policy': 'no-referrer-when-downgrade',
+        'Referrer-Policy': 'strict-origin-when-cross-origin',
         'X-Frame-Options': 'deny',
         'Cache-Control': 'no-cache, no-store, must-revalidate',
         Expires: '0',
