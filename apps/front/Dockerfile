@@ -82,7 +82,7 @@ EXPOSE 9009
 ############
 # BUILD
 ############
-FROM keymetrics/pm2:16-alpine AS base-production
+FROM node:16.9-alpine AS base-production
 
 WORKDIR /usr/app
 
@@ -108,7 +108,7 @@ RUN yarn install --no-progress --frozen-lockfile --check-files --production
 RUN yarn autoclean --force
 
 
-FROM keymetrics/pm2:16-alpine as app-production
+FROM node:16.9-alpine as app-production
 
 ENV PORT 8000
 
@@ -126,6 +126,6 @@ COPY --from=base-production /usr/app/node_modules ./node_modules
 
 EXPOSE 8000
 
-CMD [ "pm2-runtime", "start", "ecosystem.config.js", "--only", "app-production" ]
+CMD [ "node_modules/.bin/pm2-runtime", "start", "ecosystem.config.js", "--only", "app-production" ]
 
 HEALTHCHECK --interval=20s CMD curl --fail http://localhost:8000 || exit 1
