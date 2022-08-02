@@ -29,17 +29,6 @@ const twitterEventMapping = {
   [trackingConfiguration.CLICK_PROPOSAL_VIEW_MORE.key]: 'o2q9q', // = click-proposal-viewmore on twitter
 };
 
-const isTWInitialized = () => {
-  if (!twttr.initialized()) {
-    Logger.logWarning({
-      message: 'Twitter Tracking not initialized',
-      name: 'tracking-init',
-    });
-  }
-
-  return twttr.initialized();
-};
-
 export const TwitterTracking = {
   track(action: string): void {
     // @ts-ignore
@@ -55,7 +44,11 @@ export const TwitterTracking = {
       return;
     }
 
-    if (!isTWInitialized()) {
+    if (!twttr.initialized()) {
+      Logger.logWarning({
+        message: `Twitter Tracking not initialized. Action : ${action}`,
+        name: 'tracking-init',
+      });
       return;
     }
 

@@ -27,16 +27,7 @@ type FacebookEventParams = {
   questionSlug?: string;
 };
 
-export const isFBInitialized = (): boolean => {
-  if (!initialized) {
-    // eslint-disable-next-line no-console
-    console.warn(
-      'Facebook Tracking not initialized before using call FacebookTracking.init with required params'
-    );
-  }
-
-  return initialized;
-};
+export const isFBInitialized = (): boolean => initialized;
 
 export const FacebookTracking = {
   init(externalId?: string): void {
@@ -71,6 +62,11 @@ export const FacebookTracking = {
 
   pageView(): void {
     if (!isFBInitialized()) {
+      // eslint-disable-next-line no-console
+      Logger.logWarning({
+        message: 'Facebook Tracking not initialized before using call FacebookTracking.init with required params - event: PageView',
+        name: 'tracking-init',
+      });
       return;
     }
 
@@ -100,6 +96,11 @@ export const FacebookTracking = {
     vistorId: string
   ): void {
     if (!isFBInitialized()) {
+      // eslint-disable-next-line no-console
+      Logger.logWarning({
+        message: `Facebook Tracking not initialized before using call FacebookTracking.init with required params - event: ${eventName}`,
+        name: 'tracking-init',
+      });
       return;
     }
 
