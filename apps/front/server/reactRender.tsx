@@ -115,7 +115,7 @@ export const reactRender = async (
   };
 
   const logger = getLoggerInstance();
-  if (!country || !language) {
+  if (res.statusCode !== 404 && !(country && language)) {
     logger.logInfo({
       message: 'Country or language not found from request params',
       url: req.originalUrl,
