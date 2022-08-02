@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React, { FC } from 'react';
 import { HomePostType } from '@make.org/types';
 import { trackClickBlog } from '@make.org/utils/services/Tracking';

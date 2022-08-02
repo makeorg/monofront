@@ -1,3 +1,4 @@
+/* eslint-disable import/no-import-module-exports */
 import React from 'react';
 import { render, hydrate } from 'react-dom';
 import { HeadProvider } from 'react-head';

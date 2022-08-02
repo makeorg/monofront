@@ -42,7 +42,9 @@ const log = (
 };
 
 const sleep = (ms: number): Promise<void> =>
-  new Promise(resolve => setTimeout(resolve, ms));
+  new Promise(resolve => {
+    setTimeout(resolve, ms);
+  });
 
 let pendindFbEvents = 0;
 const sendFbEventConversion = async (

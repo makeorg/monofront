@@ -45,8 +45,6 @@ class TrackingParamsServiceClass {
     if (!this._instance) {
       this._instance = this;
     }
-
-    return this._instance;
   }
 
   set url(url: string | undefined) {
@@ -164,6 +162,4 @@ class TrackingParamsServiceClass {
   }
 }
 
-const instance = new TrackingParamsServiceClass();
-
-export const trackingParamsService = instance;
+export const trackingParamsService = new TrackingParamsServiceClass();

@@ -5,6 +5,7 @@ export const views_state: StateViews = {
   homepage: undefined,
 };
 export const views_reducer = (
+  // eslint-disable-next-line default-param-last
   state: StateViews = views_state,
   action: ReducerAction
 ): StateViews => {

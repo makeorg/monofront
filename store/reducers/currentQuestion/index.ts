@@ -6,6 +6,7 @@ import {
 } from '../../actionTypes';
 
 export const currentQuestion_reducer: Reducer = (
+  // eslint-disable-next-line default-param-last
   state = '',
   action: ReducerAction
 ): string => {

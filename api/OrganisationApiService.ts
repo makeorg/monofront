@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
 import { PROPOSALS_LISTING_LIMIT } from '@make.org/utils/constants/proposal';
+import { OrganisationVotesType } from '@make.org/types';
 import { ApiService } from './ApiService';
-import { OrganisationVotesType } from '../types';
 
 export const ORGANISATIONS_PATH = '/organisations';
 export const ORGANISATION_PROPOSALS_PATH =

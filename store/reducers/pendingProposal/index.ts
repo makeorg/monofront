@@ -11,6 +11,7 @@ export const pendingProposal_state: StatePendingProposal = {
 };
 
 export const pendingProposal_reducer: Reducer = (
+  // eslint-disable-next-line default-param-last
   state = pendingProposal_state,
   action: ReducerAction
 ): StatePendingProposal => {

@@ -64,7 +64,8 @@ export const FacebookTracking = {
     if (!isFBInitialized()) {
       // eslint-disable-next-line no-console
       Logger.logWarning({
-        message: 'Facebook Tracking not initialized before using call FacebookTracking.init with required params - event: PageView',
+        message:
+          'Facebook Tracking not initialized before using call FacebookTracking.init with required params - event: PageView',
         name: 'tracking-init',
       });
       return;

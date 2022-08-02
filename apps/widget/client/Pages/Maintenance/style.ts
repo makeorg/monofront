@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { SequenceParagraphStyle } from '@make.org/components/Sequence/Cards/style';
-import { SvgSmallLogo } from '../../../../../ui/Svg/elements/SmallLogo';
+import { SvgSmallLogo } from '@make.org/ui/Svg/elements/SmallLogo';
 
 export const MaintenancePageStyle = styled.div`
   ${ContainerWithPadding}

@@ -1,8 +1,7 @@
 /* eslint-disable max-classes-per-file */
 import axios from 'axios';
 import axiosRetry from 'axios-retry';
-import { ApiServiceResponse } from '@make.org/types';
-import { OptionsType } from '../../types';
+import { ApiServiceResponse, OptionsType } from '@make.org/types';
 import { handleErrors } from './ApiService.shared';
 
 export class ExpressApiServiceSharedError extends Error {

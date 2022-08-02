@@ -68,13 +68,11 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
   }
 
   return (
-    <>
-      <SequenceContainerStyle data-cy-container="sequence" className="widget">
-        <SequenceContentStyle>
-          <SequenceCard card={currentCard} question={question} />
-          {!isEmptySequence && <SequenceProgress length={sequenceSize} />}
-        </SequenceContentStyle>
-      </SequenceContainerStyle>
-    </>
+    <SequenceContainerStyle data-cy-container="sequence" className="widget">
+      <SequenceContentStyle>
+        <SequenceCard card={currentCard} question={question} />
+        {!isEmptySequence && <SequenceProgress length={sequenceSize} />}
+      </SequenceContentStyle>
+    </SequenceContainerStyle>
   );
 };

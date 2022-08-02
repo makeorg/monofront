@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React, { FC } from 'react';
 import { useAppContext } from '@make.org/store';
 import { TRACKING, USER } from '@make.org/types/enums';

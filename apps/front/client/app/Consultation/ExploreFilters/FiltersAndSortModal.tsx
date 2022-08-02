@@ -32,20 +32,16 @@ export const SortAndFiltersModale: React.FC = () => {
         style={customModalStyles}
         overlayClassName="modal-overlay"
       >
-        <>
-          <CloseApplyStyle
-            onClick={() =>
-              isSort
-                ? dispatch(modalCloseSort())
-                : dispatch(modalCloseFilters())
-            }
-          >
-            <SvgCloseApplyArrow aria-hidden focusable="false" />
-            {isSort
-              ? i18n.t('consultation.explore.sort_continue')
-              : i18n.t('consultation.explore.filters_continue')}
-          </CloseApplyStyle>
-        </>
+        <CloseApplyStyle
+          onClick={() =>
+            isSort ? dispatch(modalCloseSort()) : dispatch(modalCloseFilters())
+          }
+        >
+          <SvgCloseApplyArrow aria-hidden focusable="false" />
+          {isSort
+            ? i18n.t('consultation.explore.sort_continue')
+            : i18n.t('consultation.explore.filters_continue')}
+        </CloseApplyStyle>
         {isSort ? <SortComponent /> : <FiltersComponent />}
       </ReactModal>
     );

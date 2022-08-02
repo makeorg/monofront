@@ -10,6 +10,18 @@ import { getAgeFromDateOfBirth } from '@make.org/utils/helpers/date';
 import {
   ProposalFormSuccessWrapperStyle,
   ProposalSuccessParagraphWrapperStyle,
+  ProposalSuccessWrapperStyle,
+  ProposalSuccessTitleStyle,
+  ProposalSuccessTitleBlackStyle,
+  ProposalSuccessSpanStyle,
+  ProposalSuccessParagraphLinkStyle,
+  ProposalSuccessRedButtonStyle,
+  ProposalSuccessContactStyle,
+  ProposalSuccessContactLinkStyle,
+  ProposalSuccessCardStyle,
+  ProposalSuccessProposalStyle,
+  ProposalSuccessAvatarStyle,
+  ProposalSuccessNameStyle,
 } from '@make.org/components/Proposal/Submit/style';
 import { CenterColumnHeightStyle } from '@make.org/ui/elements/FlexElements';
 import {
@@ -23,21 +35,7 @@ import {
 } from '@make.org/utils/constants/config';
 import { AvatarImageStyle } from '@make.org/ui/components/Avatar/style';
 import { SvgEmptyAvatar } from '@make.org/ui/Svg/elements';
-import { ProposalTooltip } from '../../../ui/components/Tooltip/ProposalTooltip';
-import {
-  ProposalSuccessWrapperStyle,
-  ProposalSuccessTitleStyle,
-  ProposalSuccessTitleBlackStyle,
-  ProposalSuccessSpanStyle,
-  ProposalSuccessParagraphLinkStyle,
-  ProposalSuccessRedButtonStyle,
-  ProposalSuccessContactStyle,
-  ProposalSuccessContactLinkStyle,
-  ProposalSuccessCardStyle,
-  ProposalSuccessProposalStyle,
-  ProposalSuccessAvatarStyle,
-  ProposalSuccessNameStyle,
-} from './style';
+import { ProposalTooltip } from '@make.org/ui/components/Tooltip/ProposalTooltip';
 
 type Props = {
   // eslint-disable-next-line react/require-default-props
@@ -52,6 +50,7 @@ export const ProposalAuthorAge: React.FC<{ dateOfBirth: string | null }> = ({
   }
   const age = getAgeFromDateOfBirth(dateOfBirth);
 
+  // eslint-disable-next-line react/jsx-no-useless-fragment
   return <>{`, ${i18n.t('proposal_card.author.age', { age })}`}</>;
 };
 

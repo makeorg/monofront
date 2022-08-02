@@ -8,6 +8,7 @@ import {
 export const questions_state: StateQuestions = {};
 
 export const questions_reducer = (
+  // eslint-disable-next-line default-param-last
   state: StateQuestions = questions_state,
   action: ReducerAction
 ): StateQuestions => {

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React, { FC } from 'react';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import i18n from 'i18next';

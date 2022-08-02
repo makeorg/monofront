@@ -50,7 +50,7 @@ export const TermsOfUseDE: FC = () => {
       />
       <StaticPageWrapperStyle>
         <StaticSecondLevelTitleStyle>
-          <>MAKE.ORG NUTZUNGSBEDINGUNGEN</>
+          MAKE.ORG NUTZUNGSBEDINGUNGEN
           <StaticTitleExtra>
             - Stand:{' '}
             {DateHelper.localizedAndFormattedDate(GTU_DATE, DATE.PPP_FORMAT)} -

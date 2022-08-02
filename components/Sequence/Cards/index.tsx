@@ -107,18 +107,16 @@ export const SequenceCard: React.FC<Props> = ({ card, question }) => {
   }
 
   return (
-    <>
-      <TopComponentContext.Provider value={topComponentContext}>
-        <SequenceCardStyle
-          className={className}
-          id={`card-${card.index}`}
-          data-cy-card-type={card.type}
-          data-cy-card-number={!isNoProposalCard && card.index + 1}
-          aria-live="polite"
-        >
-          <Card card={card} question={question} />
-        </SequenceCardStyle>
-      </TopComponentContext.Provider>
-    </>
+    <TopComponentContext.Provider value={topComponentContext}>
+      <SequenceCardStyle
+        className={className}
+        id={`card-${card.index}`}
+        data-cy-card-type={card.type}
+        data-cy-card-number={!isNoProposalCard && card.index + 1}
+        aria-live="polite"
+      >
+        <Card card={card} question={question} />
+      </SequenceCardStyle>
+    </TopComponentContext.Provider>
   );
 };

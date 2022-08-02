@@ -11,11 +11,11 @@
     "@make.org/types": "0.1.0",
     "@make.org/ui": "0.1.0",
     "@make.org/utils": "0.1.0",
-    "@types/react": "^17.0.11",
+    "@types/react": "^17.0.48",
     "athena-design-tokens": "^0.1.7",
     "enzyme": "^3.11.0",
     "i18next": "^20.3.4",
-    "query-string": "^7.0.1",
+    "query-string": "^7.1.1",
     "react": "^17.0.2",
     "react-autosize-textarea": "^7.1.0",
     "react-cookie": "^4.1.1",
@@ -23,17 +23,17 @@
     "react-facebook-login": "^4.1.1",
     "react-google-login": "^5.2.2",
     "react-head": "^3.4.0",
-    "react-modal": "^3.14.3",
-    "react-router": "^5.2.0",
-    "react-router-dom": "^5.2.0",
-    "styled-components": "^5.3.0",
+    "react-modal": "^3.15.1",
+    "react-router": "^5.3.3",
+    "react-router-dom": "^5.3.3",
+    "styled-components": "5.3.5",
     "universal-cookie": "^4.0.4"
   },
   "devDependencies": {
-    "@types/react-facebook-login": "^4.1.4",
-    "@types/react-router": "^5.1.16",
-    "core-js": "^3.16.2",
-    "webpack": "^5.49.0",
-    "webpack-cli": "^4.7.2"
+    "@types/react-facebook-login": "4.1.5",
+    "@types/react-router": "5.1.18",
+    "core-js": "^3.24.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
   }
 }

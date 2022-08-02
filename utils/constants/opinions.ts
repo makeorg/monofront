@@ -1,6 +1,6 @@
 import { color } from 'athena-design-tokens';
 import i18n from 'i18next';
-import { OpinionVoteParamsType } from '../../types';
+import { OpinionVoteParamsType } from '@make.org/types';
 
 export const OPINION_AGREE_KEY = 'agree';
 export const OPINION_DISAGREE_KEY = 'disagree';

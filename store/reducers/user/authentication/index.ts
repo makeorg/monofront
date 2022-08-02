@@ -8,6 +8,7 @@ export const authentication_state: StateAuthentication = {
 };
 
 export const authentication_reducer: Reducer = (
+  // eslint-disable-next-line default-param-last
   state = authentication_state,
   action: ReducerAction
 ): StateAuthentication => {

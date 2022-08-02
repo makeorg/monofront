@@ -27,7 +27,7 @@ import { session_reducer } from './reducers/session';
 
 export const AppContext = createContext({
   state: initialState,
-  dispatch: (arg: ReducerAction) => {}, // eslint-disable-line
+  dispatch: (arg: ReducerAction) => { }, // eslint-disable-line
 });
 
 export const useAppContext = (): { state: StateRoot; dispatch: Dispatch } =>
@@ -103,6 +103,8 @@ const ContextState: React.FC<{ serverState?: StateRoot }> = ({
   }, [state]);
 
   return (
+    // @toDo remove next comment and fix
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <AppContext.Provider value={{ state, dispatch: dispatchLogged }}>
       {children}
     </AppContext.Provider>

@@ -29,6 +29,7 @@ export const appConfig_state: StateConfig = {
 };
 
 export const appConfig_reducer: Reducer = (
+  // eslint-disable-next-line default-param-last
   state = appConfig_state,
   action: ReducerAction
 ) => {

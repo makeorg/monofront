@@ -71,16 +71,13 @@ const renderHtml = (
     )
     .replace('</head>', `${styles}</head>`)
     .replace('"__REDUX__"', JSON.stringify(appState))
-    .replace(new RegExp('__LANG__', 'gi'), appState.appConfig.language)
-    .replace(
-      new RegExp('___API_URL_CLIENT_SIDE___', 'gi'),
-      env.apiUrlClientSide() || ''
-    )
-    .replace(new RegExp('___FB_PIXEL_ID___', 'gi'), env.fbPixelId() || '')
-    .replace(new RegExp('__FRONT_URL__', 'gi'), env.frontUrl() || '')
-    .replace(new RegExp('___NONCE_ID___', 'gi'), nonceId)
-    .replace(new RegExp('___NODE_ENV___', 'gi'), env.nodeEnv() || 'production')
-    .replace(new RegExp('___PORT___', 'gi'), env.port() || '')
+    .replace(/__LANG__/gi, appState.appConfig.language)
+    .replace(/___API_URL_CLIENT_SIDE___/gi, env.apiUrlClientSide() || '')
+    .replace(/___FB_PIXEL_ID___/gi, env.fbPixelId() || '')
+    .replace(/__FRONT_URL__/gi, env.frontUrl() || '')
+    .replace(/___NONCE_ID___/gi, nonceId)
+    .replace(/___NODE_ENV___/gi, env.nodeEnv() || 'production')
+    .replace(/___PORT___/gi, env.port() || '')
     .replace('</body>', `${scriptTags}</body>`);
 
   return content;

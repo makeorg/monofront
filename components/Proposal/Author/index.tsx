@@ -35,6 +35,7 @@ export const ProposalAuthorAge: React.FC<{ age: number | null }> = ({
     return null;
   }
 
+  // eslint-disable-next-line react/jsx-no-useless-fragment
   return <>{`, ${i18n.t('proposal_card.author.age', { age })}`}</>;
 };
 
@@ -58,18 +59,16 @@ export const ProposalAuthorInformations: FC<Props> = ({ proposal }) => {
           (isWidget ? (
             formatOrganisationName(author.organisationName || '')
           ) : (
-            <>
-              <AuthorLinkStyle
-                onClick={() => trackClickPublicProfile(USER.TYPE_ORGANISATION)}
-                to={getOrganisationProfileLink(
-                  country,
-                  author.organisationSlug || ''
-                )}
-              >
-                {formatOrganisationName(author.organisationName || '')}
-                <CertifiedIconStyle aria-hidden focusable="false" />
-              </AuthorLinkStyle>
-            </>
+            <AuthorLinkStyle
+              onClick={() => trackClickPublicProfile(USER.TYPE_ORGANISATION)}
+              to={getOrganisationProfileLink(
+                country,
+                author.organisationSlug || ''
+              )}
+            >
+              {formatOrganisationName(author.organisationName || '')}
+              <CertifiedIconStyle aria-hidden focusable="false" />
+            </AuthorLinkStyle>
           ))}
         {isPersonality &&
           (isWidget ? (

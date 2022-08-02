@@ -13,24 +13,22 @@ type Props = {
 };
 
 export const ResultsContext: FC<Props> = ({ aboutUrl, context }) => (
-  <>
-    <ResultCardSidebar
-      title={i18n.t('consultation.results.context')}
-      description={context}
-      isContext
+  <ResultCardSidebar
+    title={i18n.t('consultation.results.context')}
+    description={context}
+    isContext
+  >
+    <ResultContextNewWindowLinkStyle
+      href={aboutUrl}
+      target="_blank"
+      rel="noopener"
+      onClick={() => trackClickLearnMore()}
     >
-      <ResultContextNewWindowLinkStyle
-        href={aboutUrl}
-        target="_blank"
-        rel="noopener"
-        onClick={() => trackClickLearnMore()}
-      >
-        {i18n.t('consultation.cards.about.link')}
-        <NewWindowIconStyle aria-hidden focusable="false" />
-        <ScreenReaderItemStyle>
-          {i18n.t('common.open_new_window')}
-        </ScreenReaderItemStyle>
-      </ResultContextNewWindowLinkStyle>
-    </ResultCardSidebar>
-  </>
+      {i18n.t('consultation.cards.about.link')}
+      <NewWindowIconStyle aria-hidden focusable="false" />
+      <ScreenReaderItemStyle>
+        {i18n.t('common.open_new_window')}
+      </ScreenReaderItemStyle>
+    </ResultContextNewWindowLinkStyle>
+  </ResultCardSidebar>
 );

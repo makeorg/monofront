@@ -78,6 +78,7 @@ export class DateHelperSingleton {
 
   constructor(language: keyof typeof LocaleType) {
     if (!instance) {
+      // eslint-disable-next-line @typescript-eslint/no-this-alias
       instance = this;
     }
 

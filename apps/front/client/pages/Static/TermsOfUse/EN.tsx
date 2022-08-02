@@ -51,7 +51,7 @@ export const TermsOfUseEN: FC = () => {
       />
       <StaticPageWrapperStyle>
         <StaticSecondLevelTitleStyle>
-          <>MAKE.ORG terms of service</>
+          MAKE.ORG terms of service
           <StaticTitleExtra>
             - dated{' '}
             {DateHelper.localizedAndFormattedDate(GTU_DATE, DATE.PPP_FORMAT)} -

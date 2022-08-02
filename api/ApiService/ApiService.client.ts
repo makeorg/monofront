@@ -271,7 +271,9 @@ export class ApiServiceClient implements IApiServiceStrategy {
         retry > 0
       ) {
         const sleep = (ms: number): Promise<void> =>
-          new Promise(resolve => setTimeout(resolve, ms));
+          new Promise(resolve => {
+            setTimeout(resolve, ms);
+          });
 
         await sleep((RETRIES - retry) * 500);
 

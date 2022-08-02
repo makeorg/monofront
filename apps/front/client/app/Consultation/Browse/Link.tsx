@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React, { FC } from 'react';
 import { HomeQuestionType } from '@make.org/types';
 import {

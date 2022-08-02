@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React from 'react';
 import i18n from 'i18next';
 import { ColumnToRowElementStyle } from '@make.org/ui/elements/FlexElements';
@@ -46,7 +47,7 @@ export const Footer: React.FC = () => {
   const internalLinks = useInternalLinks(country, language);
 
   if (!country) {
-    return <></>;
+    return null;
   }
 
   return (

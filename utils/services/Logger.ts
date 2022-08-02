@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import { v4 as uuidv4 } from 'uuid';
 import { env } from '@make.org/assets/env';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
@@ -9,10 +10,9 @@ let instance: LoggerSingleton | null = null;
 class LoggerSingleton {
   constructor() {
     if (!instance) {
+      // eslint-disable-next-line @typescript-eslint/no-this-alias
       instance = this;
     }
-
-    return instance;
   }
 
   formatApiServiceError = (error: ApiServiceError) => ({

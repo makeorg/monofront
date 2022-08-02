@@ -15,7 +15,7 @@ require.extensions['.svg'] = () => {
 };
 
 const localStorageMock = (() => {
-  let store: Record<string,string> = {};
+  let store: Record<string, string> = {};
 
   return {
     length: 0,
@@ -61,11 +61,11 @@ jest.mock('@make.org/utils/services/Trackers/FacebookTracking');
 jest.mock('@make.org/utils/services/Trackers/TwitterTracking');
 jest.mock('@make.org/utils/constants/config');
 jest.mock('i18next', () => ({
-  init: () => {},
-  use: () => {},
-  t: (k:string) => k,
-  cloneInstance: () => {},
-  changeLanguage: () => {}
+  init: () => { },
+  use: () => { },
+  t: (k: string) => k,
+  cloneInstance: () => { },
+  changeLanguage: () => { }
 }));
 
 

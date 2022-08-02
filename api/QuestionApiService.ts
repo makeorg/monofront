@@ -118,6 +118,7 @@ export class QuestionApiService {
 
   static startSequenceByKind(
     questionId: string,
+    // eslint-disable-next-line default-param-last
     includedProposalIds: string[] = [],
     sequenceKind: string,
     demographicsCardId?: string,
@@ -152,6 +153,7 @@ export class QuestionApiService {
 
   static startSequenceByKeyword(
     questionId: string,
+    // eslint-disable-next-line default-param-last
     includedProposalIds: string[] = [],
     keyword: string,
     headers: ApiServiceHeadersType = {}

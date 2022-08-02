@@ -33,7 +33,9 @@ export const scrollToTop = (): void | null => {
 // eslint-disable-next-line consistent-return
 export const scrollToElementId = (elementId: string): void | null => {
   const sleep = (time: number) =>
-    new Promise(resolve => setTimeout(resolve, time));
+    new Promise(resolve => {
+      setTimeout(resolve, time);
+    });
   const element = document.getElementById(elementId);
   if (!element) {
     return null;

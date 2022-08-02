@@ -6,7 +6,7 @@ import { NOTIF } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
 
 type Props = {
-  children: any;
+  children: React.ReactNode;
 };
 
 type State = {
@@ -39,7 +39,8 @@ export class ErrorBoundary extends React.Component<Props, State> {
       // You can render any custom fallback UI
       return <h1>Un problème est survenu.</h1>;
     }
-    return <>{children}</>;
+
+    return children;
   }
 }
 
@@ -72,5 +73,6 @@ export const ServiceErrorHandler: React.FC = ({ children }) => {
     }
   });
 
+  // eslint-disable-next-line react/jsx-no-useless-fragment
   return <>{children}</>;
 };

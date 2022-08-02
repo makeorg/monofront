@@ -27,13 +27,11 @@ export const FirstProposal: React.FC<Props> = ({ sequenceKind }) => {
   const noProposalCard: NoProposalCardType = getNoProposalCard(sequenceKind);
 
   return (
-    <>
-      <SequenceContainerStyle data-cy-container="sequence" className="widget">
-        <SequenceContentStyle>
-          <SequenceCard card={cards[0] || noProposalCard} question={question} />
-          {!isEmptySequence && <SequenceProgress length={sequenceSize} />}
-        </SequenceContentStyle>
-      </SequenceContainerStyle>
-    </>
+    <SequenceContainerStyle data-cy-container="sequence" className="widget">
+      <SequenceContentStyle>
+        <SequenceCard card={cards[0] || noProposalCard} question={question} />
+        {!isEmptySequence && <SequenceProgress length={sequenceSize} />}
+      </SequenceContentStyle>
+    </SequenceContainerStyle>
   );
 };

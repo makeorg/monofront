@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React, { FC } from 'react';
 import { SvgClose, SvgLogoBlack } from '@make.org/ui/Svg/elements';
 import i18n from 'i18next';
@@ -140,22 +141,20 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
               </MenuItemStyle>
             )}
             {isFR && (
-              <>
-                <MenuItemStyle>
-                  <MenuExternalLinkStyle
-                    target="_blank"
-                    rel="noopener"
-                    href={URL.NEWS_LINK}
-                  >
-                    {i18n.t('main_footer.news')}
-                    <> </>
-                    <MenuNewWindowIconStyle aria-hidden focusable="false" />
-                    <ScreenReaderItemStyle>
-                      {i18n.t('common.open_new_window')}
-                    </ScreenReaderItemStyle>
-                  </MenuExternalLinkStyle>
-                </MenuItemStyle>
-              </>
+              <MenuItemStyle>
+                <MenuExternalLinkStyle
+                  target="_blank"
+                  rel="noopener"
+                  href={URL.NEWS_LINK}
+                >
+                  {i18n.t('main_footer.news')}
+                  <> </>
+                  <MenuNewWindowIconStyle aria-hidden focusable="false" />
+                  <ScreenReaderItemStyle>
+                    {i18n.t('common.open_new_window')}
+                  </ScreenReaderItemStyle>
+                </MenuExternalLinkStyle>
+              </MenuItemStyle>
             )}
             {(isFR || isDE) && (
               <MenuItemStyle>

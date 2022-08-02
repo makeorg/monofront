@@ -69,6 +69,7 @@ const getFinishedConsultations = async (
 
 const getDetail = async (
   questionSlugOrId: string,
+  // eslint-disable-next-line default-param-last
   notFound: () => void = () => null,
   country?: string
 ): Promise<QuestionType | null> => {

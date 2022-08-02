@@ -54,7 +54,7 @@ export class DemographicsTrackingApiService {
     questionId: string,
     source: string,
     country: string,
-    parameters: { [n: string]: string } = {},
+    parameters: { [n: string]: string },
     token: string
   ): Promise<ApiServiceResponse> {
     const contentObj: TypeDemographicTrack = {

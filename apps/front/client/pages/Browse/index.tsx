@@ -209,38 +209,34 @@ const BrowseConsultationsPage: FC = () => {
 
       <BrowseConsultationsHeader />
       {isLoading ? (
-        <>
-          <SpaceBetweenColumnStyle as="section" id={IDS.BROWSE_SECTION}>
-            <Spinner />
-          </SpaceBetweenColumnStyle>
-        </>
+        <SpaceBetweenColumnStyle as="section" id={IDS.BROWSE_SECTION}>
+          <Spinner />
+        </SpaceBetweenColumnStyle>
       ) : (
-        <>
-          <SpaceBetweenColumnStyle
-            as="section"
-            aria-labelledby="browse_title"
-            id={IDS.BROWSE_SECTION}
-          >
-            <BrowseConsultationsTitles
+        <SpaceBetweenColumnStyle
+          as="section"
+          aria-labelledby="browse_title"
+          id={IDS.BROWSE_SECTION}
+        >
+          <BrowseConsultationsTitles
+            total={questionsTotal}
+            sectionTitleId="browse_title"
+          />
+          {questions && (
+            <BrowseConsultationsList
+              questions={questions}
+              resultsContext={currentConsultationListType === 'finished'}
               total={questionsTotal}
-              sectionTitleId="browse_title"
             />
-            {questions && (
-              <BrowseConsultationsList
-                questions={questions}
-                resultsContext={currentConsultationListType === 'finished'}
-                total={questionsTotal}
-              />
-            )}
-            {questionsTotal > CONSULTATION_LIST_LIMIT ? (
-              <Pagination
-                itemsPerPage={CONSULTATION_LIST_LIMIT}
-                itemsTotal={questionsTotal}
-                scrollToId={IDS.BROWSE_SECTION}
-              />
-            ) : null}
-          </SpaceBetweenColumnStyle>
-        </>
+          )}
+          {questionsTotal > CONSULTATION_LIST_LIMIT ? (
+            <Pagination
+              itemsPerPage={CONSULTATION_LIST_LIMIT}
+              itemsTotal={questionsTotal}
+              scrollToId={IDS.BROWSE_SECTION}
+            />
+          ) : null}
+        </SpaceBetweenColumnStyle>
       )}
     </>
   );

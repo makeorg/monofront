@@ -1,5 +1,6 @@
 export const capitalize = (
   name: string,
+  // eslint-disable-next-line default-param-last
   lowerRest = true,
   locales?: string[]
 ): string => {

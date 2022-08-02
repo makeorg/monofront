@@ -2,10 +2,12 @@ import { BorderColors } from '@make.org/assets/vars/Colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
-import { SequenceParagraphStyle } from '@make.org/components/Sequence/Cards/style';
+import {
+  SequenceParagraphStyle,
+  SequenceMainTitleStyle,
+} from '@make.org/components/Sequence/Cards/style';
 import { typography } from 'athena-design-tokens';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
-import { SequenceMainTitleStyle } from '../../../components/Sequence/Cards/style';
 
 export const WidgetContainerStyle = styled(ColumnElementStyle)<{
   isStandardSequenceKind: boolean;

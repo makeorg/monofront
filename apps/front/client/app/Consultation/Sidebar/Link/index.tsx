@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React, { FC } from 'react';
 import i18n from 'i18next';
 import { NewWindowIconStyle } from '@make.org/ui/elements/LinkElements';

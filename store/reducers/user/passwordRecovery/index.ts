@@ -15,6 +15,7 @@ export const passwordRecovery_state: StateUserPasswordRecovery = {
 };
 
 export const passwordRecovery_reducer: Reducer = (
+  // eslint-disable-next-line default-param-last
   state = passwordRecovery_state,
   action: ReducerAction
 ): StateUserPasswordRecovery => {

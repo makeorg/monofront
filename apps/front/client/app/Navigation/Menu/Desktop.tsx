@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React, { useEffect, FC } from 'react';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import i18n from 'i18next';

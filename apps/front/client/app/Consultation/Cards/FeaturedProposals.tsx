@@ -68,32 +68,32 @@ export const FeaturedProposals: FC<Props> = ({ question }) => {
       <ParticipateCardAltTitleStyle>
         {i18n.t('consultation.cards.featured_proposals.title')}
       </ParticipateCardAltTitleStyle>
-      <>
-        {isLoading ? (
-          <Spinner />
-        ) : (
-          <UnstyledListStyle>
-            {featuredProposals.map(featuredProposal => (
-              <FeaturedProposalItemStyle key={featuredProposal.id}>
-                <DeprecatedProposalAuthor
-                  proposal={featuredProposal}
-                  withAvatar
-                />
-                <ProposalContentStyle
-                  to={getProposalLink(
-                    country,
-                    question.slug,
-                    featuredProposal.id,
-                    featuredProposal.slug
-                  )}
-                >
-                  {featuredProposal.content}
-                </ProposalContentStyle>
-              </FeaturedProposalItemStyle>
-            ))}
-          </UnstyledListStyle>
-        )}
-      </>
+
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <UnstyledListStyle>
+          {featuredProposals.map(featuredProposal => (
+            <FeaturedProposalItemStyle key={featuredProposal.id}>
+              <DeprecatedProposalAuthor
+                proposal={featuredProposal}
+                withAvatar
+              />
+              <ProposalContentStyle
+                to={getProposalLink(
+                  country,
+                  question.slug,
+                  featuredProposal.id,
+                  featuredProposal.slug
+                )}
+              >
+                {featuredProposal.content}
+              </ProposalContentStyle>
+            </FeaturedProposalItemStyle>
+          ))}
+        </UnstyledListStyle>
+      )}
+
       <ExploreLinkStyle
         to={getExploreLink(country, question.slug, 1, {
           sort: SORT_RECENT,

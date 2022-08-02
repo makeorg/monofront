@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React, { FC, useEffect, useRef, useState } from 'react';
 import { QuestionType } from '@make.org/types';
 import { FORM } from '@make.org/types/enums';
@@ -108,94 +109,86 @@ export const ProposalForm: FC = () => {
   }, []);
 
   return (
-    <>
-      <ProposalStepWrapperStyle isAuthentication={false} isWidget={isWidget}>
-        <ProposalFormWrapperStyle
-          isWidget={isWidget}
-          data-cy-container={FORM.PROPOSAL_SUBMIT_FORMNAME}
+    <ProposalStepWrapperStyle isAuthentication={false} isWidget={isWidget}>
+      <ProposalFormWrapperStyle
+        isWidget={isWidget}
+        data-cy-container={FORM.PROPOSAL_SUBMIT_FORMNAME}
+      >
+        <ProposalFormStyle
+          id={FORM.PROPOSAL_SUBMIT_FORMNAME}
+          name={FORM.PROPOSAL_SUBMIT_FORMNAME}
+          onSubmit={throttle(handleSubmitForm)}
         >
-          <ProposalFormStyle
-            id={FORM.PROPOSAL_SUBMIT_FORMNAME}
-            name={FORM.PROPOSAL_SUBMIT_FORMNAME}
-            onSubmit={throttle(handleSubmitForm)}
-          >
-            <ProposalStepTitleStyle className="with-margin-bottom">
-              {question && question.question}
-            </ProposalStepTitleStyle>
-            <ScreenReaderItemStyle>
-              {i18n.t('proposal_submit.form.title')}
+          <ProposalStepTitleStyle className="with-margin-bottom">
+            {question && question.question}
+          </ProposalStepTitleStyle>
+          <ScreenReaderItemStyle>
+            {i18n.t('proposal_submit.form.title')}
+          </ScreenReaderItemStyle>
+          <ProposalFieldWrapperStyle>
+            <ScreenReaderItemStyle as="label" htmlFor="proposal">
+              {i18n.t('proposal_submit.form.field')}
             </ScreenReaderItemStyle>
-            <ProposalFieldWrapperStyle>
-              <ScreenReaderItemStyle as="label" htmlFor="proposal">
-                {i18n.t('proposal_submit.form.field')}
-              </ScreenReaderItemStyle>
-              <ProposalTextareaStyle
-                ref={inputRef}
-                name="proposal"
-                id="proposal"
-                data-cy-field="proposal"
-                value={pendingProposal}
-                onChange={secureFieldValue}
-                onFocus={handleFieldFocus}
-                autoCapitalize="none"
-                autoComplete="off"
-                placeholder={`${baitText} ...`}
-                rows={6}
-                spellCheck
-                maxLength={MAX_PROPOSAL_LENGTH}
-                lang={question ? question.language : ''}
-              />
-              <ProposalCharCountStyle
-                aria-hidden
-                data-cy-container="char-count"
+            <ProposalTextareaStyle
+              ref={inputRef}
+              name="proposal"
+              id="proposal"
+              data-cy-field="proposal"
+              value={pendingProposal}
+              onChange={secureFieldValue}
+              onFocus={handleFieldFocus}
+              autoCapitalize="none"
+              autoComplete="off"
+              placeholder={`${baitText} ...`}
+              rows={6}
+              spellCheck
+              maxLength={MAX_PROPOSAL_LENGTH}
+              lang={question ? question.language : ''}
+            />
+            <ProposalCharCountStyle aria-hidden data-cy-container="char-count">
+              {`${charCounting} / ${MAX_PROPOSAL_LENGTH}`}
+            </ProposalCharCountStyle>
+            <ScreenReaderItemStyle aria-live="polite">
+              {i18n.t('proposal_submit.form.counter', {
+                current: pendingProposal.length,
+                total: MAX_PROPOSAL_LENGTH,
+              })}
+            </ScreenReaderItemStyle>
+          </ProposalFieldWrapperStyle>
+          <ProposalSubmitButtonsWidgetStyle>
+            <ProposalButtonsWrapperStyle>
+              <RedButtonStyle
+                type="submit"
+                form={FORM.PROPOSAL_SUBMIT_FORMNAME}
+                onClick={trackClickProposalSubmit}
+                disabled={disableSubmitButton}
+                data-cy-button="proposal-submit"
               >
-                {`${charCounting} / ${MAX_PROPOSAL_LENGTH}`}
-              </ProposalCharCountStyle>
-              <ScreenReaderItemStyle aria-live="polite">
-                {i18n.t('proposal_submit.form.counter', {
-                  current: pendingProposal.length,
-                  total: MAX_PROPOSAL_LENGTH,
-                })}
-              </ScreenReaderItemStyle>
-            </ProposalFieldWrapperStyle>
-            <ProposalSubmitButtonsWidgetStyle>
-              <ProposalButtonsWrapperStyle>
-                <RedButtonStyle
-                  type="submit"
-                  form={FORM.PROPOSAL_SUBMIT_FORMNAME}
-                  onClick={trackClickProposalSubmit}
-                  disabled={disableSubmitButton}
-                  data-cy-button="proposal-submit"
-                >
-                  {i18n.t('proposal_submit.form.button_propose')}
-                </RedButtonStyle>
-              </ProposalButtonsWrapperStyle>
-              <ProposalAuthInlineWrapperStyle>
-                {i18n.t('proposal_submit.form.read_our')}{' '}
-                <ProposalExternalLinkStyle
-                  href={getModerationLinkByLanguage(language)}
-                  target="_blank"
-                  rel="noopener"
-                  onClick={trackClickModerationLink}
-                >
-                  {i18n.t('proposal_submit.form.moderation_link')}
-                  <> </>
-                  <ProposalExternalLinkIconStyle
-                    aria-hidden
-                    focusable="false"
-                  />
-                  <ScreenReaderItemStyle>
-                    {i18n.t('common.open_new_window')}
-                  </ScreenReaderItemStyle>
-                </ProposalExternalLinkStyle>
-              </ProposalAuthInlineWrapperStyle>
-            </ProposalSubmitButtonsWidgetStyle>
-          </ProposalFormStyle>
-        </ProposalFormWrapperStyle>
-        {!isWidget && !isMobile && (
-          <BlueManOnBench aria-hidden focusable="false" />
-        )}
-      </ProposalStepWrapperStyle>
-    </>
+                {i18n.t('proposal_submit.form.button_propose')}
+              </RedButtonStyle>
+            </ProposalButtonsWrapperStyle>
+            <ProposalAuthInlineWrapperStyle>
+              {i18n.t('proposal_submit.form.read_our')}{' '}
+              <ProposalExternalLinkStyle
+                href={getModerationLinkByLanguage(language)}
+                target="_blank"
+                rel="noopener"
+                onClick={trackClickModerationLink}
+              >
+                {i18n.t('proposal_submit.form.moderation_link')}
+                <> </>
+                <ProposalExternalLinkIconStyle aria-hidden focusable="false" />
+                <ScreenReaderItemStyle>
+                  {i18n.t('common.open_new_window')}
+                </ScreenReaderItemStyle>
+              </ProposalExternalLinkStyle>
+            </ProposalAuthInlineWrapperStyle>
+          </ProposalSubmitButtonsWidgetStyle>
+        </ProposalFormStyle>
+      </ProposalFormWrapperStyle>
+      {!isWidget && !isMobile && (
+        <BlueManOnBench aria-hidden focusable="false" />
+      )}
+    </ProposalStepWrapperStyle>
   );
 };

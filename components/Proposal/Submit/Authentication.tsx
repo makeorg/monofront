@@ -34,8 +34,7 @@ export const ProposalAuthentication: FC = () => {
   }, []);
 
   return (
-    <>
-      <ProposalStepWrapperStyle isWidget={isWidget} isAuthentication>
+    <ProposalStepWrapperStyle isWidget={isWidget} isAuthentication>
         <ProposalStepWrapperColumnStyle isWidget={isWidget}>
           <ColumnElementStyle>
             <ProposalBackButtonCenterStyle
@@ -83,6 +82,5 @@ export const ProposalAuthentication: FC = () => {
           </DataPolicyWrapperStyle>
         </ProposalStepWrapperColumnStyle>
       </ProposalStepWrapperStyle>
-    </>
   );
 };

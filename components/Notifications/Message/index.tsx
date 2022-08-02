@@ -53,6 +53,7 @@ export const NotificationMessage: React.FC<Props> = ({ name, close }) => {
       return <LoginSocialMissingDataMessage />;
 
     default:
+      // eslint-disable-next-line react/jsx-no-useless-fragment
       return <></>;
   }
 };

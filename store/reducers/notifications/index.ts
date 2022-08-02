@@ -15,6 +15,7 @@ export const notifications_state: StateNotification = {
 };
 
 export const notifications_reducer: Reducer = (
+  // eslint-disable-next-line default-param-last
   state = notifications_state,
   action: ReducerAction
 ) => {

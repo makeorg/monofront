@@ -16,14 +16,13 @@ export const MobileDescriptionImage: FC<Props> = ({ question }) => {
   const screenWidth = useScreenWidth();
 
   return (
-    <>
-      {isMobile && question.descriptionImage && (
-        <MobileDescriptionImageStyle
-          src={question.descriptionImage}
-          alt={question.descriptionImageAlt || ''}
-          width={screenWidth || undefined}
-        />
-      )}
-    </>
+    (isMobile && question.descriptionImage && (
+      <MobileDescriptionImageStyle
+        src={question.descriptionImage}
+        alt={question.descriptionImageAlt || ''}
+        width={screenWidth || undefined}
+      />
+    )) ||
+    null
   );
 };

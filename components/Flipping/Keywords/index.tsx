@@ -14,12 +14,12 @@ import {
 import { SvgAngleArrowRight, SvgArrowUp } from '@make.org/ui/Svg/elements';
 import { QuestionKeywordType, QuestionType } from '@make.org/types';
 import { setSequenceLabel } from '@make.org/store/actions/sequence';
+import { useAppContext } from '@make.org/store';
 import {
   KeywordsListWrapperStyle,
   KeywordListItemStyle,
   KeywordItemLinkStyle,
 } from './style';
-import { useAppContext } from '../../../store';
 
 type Props = {
   question: QuestionType;

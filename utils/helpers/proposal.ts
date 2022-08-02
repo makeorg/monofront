@@ -1,3 +1,4 @@
+/* eslint-disable default-param-last */
 import {
   getBaitText,
   MIN_PROPOSAL_LENGTH,

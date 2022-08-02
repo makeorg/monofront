@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React, { FC } from 'react';
 import { QuestionType } from '@make.org/types';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';

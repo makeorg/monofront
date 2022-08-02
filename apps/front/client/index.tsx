@@ -1,3 +1,4 @@
+/* eslint-disable import/no-import-module-exports */
 import { hydrate, render } from 'react-dom';
 import React from 'react';
 import { CookiesProvider } from 'react-cookie';

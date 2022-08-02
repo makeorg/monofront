@@ -28,29 +28,27 @@ export const MainResultsProposalsMobile: React.FC<Props> = ({ proposals }) => {
     TopComponentContextValue.getSearchResultProposalList();
 
   return (
-    <>
-      <TopComponentContext.Provider value={topComponentContext}>
-        <GliderStylesheet />
-        <div className={`${SEARCH_SLIDER} glider-contain`}>
-          <div className={`${SEARCH_SLIDER} glider`} ref={sliderRef}>
-            <SearchSliderListStyle className={`${SEARCH_SLIDER} glider-track`}>
-              {proposals.map((proposal, index) => (
-                <SearchSliderListItemStyle
-                  key={proposal.id}
-                  className={SEARCH_SLIDER}
-                >
-                  <ProposalCardWithQuestion
-                    proposal={proposal}
-                    position={index + 1}
-                    size={proposals.length}
-                    withMobileRadius
-                  />
-                </SearchSliderListItemStyle>
-              ))}
-            </SearchSliderListStyle>
-          </div>
+    <TopComponentContext.Provider value={topComponentContext}>
+      <GliderStylesheet />
+      <div className={`${SEARCH_SLIDER} glider-contain`}>
+        <div className={`${SEARCH_SLIDER} glider`} ref={sliderRef}>
+          <SearchSliderListStyle className={`${SEARCH_SLIDER} glider-track`}>
+            {proposals.map((proposal, index) => (
+              <SearchSliderListItemStyle
+                key={proposal.id}
+                className={SEARCH_SLIDER}
+              >
+                <ProposalCardWithQuestion
+                  proposal={proposal}
+                  position={index + 1}
+                  size={proposals.length}
+                  withMobileRadius
+                />
+              </SearchSliderListItemStyle>
+            ))}
+          </SearchSliderListStyle>
         </div>
-      </TopComponentContext.Provider>
-    </>
+      </div>
+    </TopComponentContext.Provider>
   );
 };

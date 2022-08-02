@@ -1,5 +1,8 @@
 import { AxiosResponse } from 'axios';
-import { CountryWithConsulationsType, HomeViewType } from '../types/View';
+import {
+  CountryWithConsulationsType,
+  HomeViewType,
+} from '@make.org/types/View';
 import { ApiService } from './ApiService';
 
 // @todo remove it when ready on API side

@@ -53,6 +53,7 @@
     "@typescript-eslint/explicit-module-boundary-types": ["error", { "allowArgumentsExplicitlyTypedAsAny": true }],
     "cypress/no-assigning-return-values": "error",
     "cypress/no-unnecessary-waiting": "error",
-    "cypress/no-async-tests": "error"
+    "cypress/no-async-tests": "error",
+    "react/function-component-definition": [2, {"namedComponents": "arrow-function", "unnamedComponents": "arrow-function"}]
   }
 }

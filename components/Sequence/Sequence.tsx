@@ -99,23 +99,20 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
         className={isWidget ? 'widget' : ''}
       >
         <SequenceContentStyle>
-          {!isWidget && (
-            <>
-              {isStandardSequence(sequenceKind) ? (
-                <SequenceTitleStyle>{question.question}</SequenceTitleStyle>
-              ) : (
-                <>
-                  <SequenceAltTitleStyle>
-                    {question.question}
-                  </SequenceAltTitleStyle>
-                  <SequenceSpecialTitleStyle>
-                    <SequenceSpecialIconStyle aria-hidden focusable={false} />
-                    {getSequenceTitleBySequenceKind(sequenceKind)}
-                  </SequenceSpecialTitleStyle>
-                </>
-              )}
-            </>
-          )}
+          {!isWidget &&
+            (isStandardSequence(sequenceKind) ? (
+              <SequenceTitleStyle>{question.question}</SequenceTitleStyle>
+            ) : (
+              <>
+                <SequenceAltTitleStyle>
+                  {question.question}
+                </SequenceAltTitleStyle>
+                <SequenceSpecialTitleStyle>
+                  <SequenceSpecialIconStyle aria-hidden focusable={false} />
+                  {getSequenceTitleBySequenceKind(sequenceKind)}
+                </SequenceSpecialTitleStyle>
+              </>
+            ))}
           <SequenceCard card={currentCard} question={question} />
           {!isEmptySequence && <SequenceProgress length={sequenceSize} />}
         </SequenceContentStyle>

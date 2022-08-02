@@ -18,6 +18,7 @@ export const cookiesPreferences_state: StateUserCookiesPreferences = {
 };
 
 export const cookiesPreferences_reducer: Reducer = (
+  // eslint-disable-next-line default-param-last
   state: StateUserCookiesPreferences = cookiesPreferences_state,
   action: ReducerAction
 ): StateUserCookiesPreferences => {

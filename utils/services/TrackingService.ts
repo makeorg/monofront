@@ -25,6 +25,7 @@ export class TrackingValidationError extends Error {}
 
 const validateParameters = (
   values: TrackingConfigurationParamType,
+  // eslint-disable-next-line default-param-last
   expectedParameters: TrackingConfigurationParamType[] = [],
   eventName: string
 ) => {

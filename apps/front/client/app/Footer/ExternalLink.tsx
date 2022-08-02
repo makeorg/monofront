@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import React from 'react';
 import i18n from 'i18next';

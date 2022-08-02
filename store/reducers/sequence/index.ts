@@ -35,6 +35,7 @@ export const sequence_state: StateSequence = {
 };
 
 export const sequence_reducer: Reducer = (
+  // eslint-disable-next-line default-param-last
   state: StateSequence = sequence_state,
   action: ReducerAction
 ): StateSequence => {
