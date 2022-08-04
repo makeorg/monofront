@@ -515,11 +515,11 @@
     "submit": "Bestätigen",
     "privacy_policy_first_part": "Ich bin damit einverstanden, dass meine personenbezogenen Daten von Make.org verarbeitet werden, sodass ich gemäß der ",
     "privacy_policy_link": "Datenschutzerklärung",
-    "privacy_policy_last_part": " teilnehmen kann und informiert werde.",
+    "privacy_policy_last_part": " teilnehmen kann und informiert werde. (obligatorisch)",
     "privacy_policy": "Datenschutzerklärung",
     "make_protect": "Make.org verpflichtet sich,",
     "make_protect_link": "deine persönlichen Daten zu schützen.",
-    "opt_in": "Ich stimme zu, E-Mails von Make.org zu erhalten, welche mich über laufende und zukünftige Konsultationen in Kenntnis setzen."
+    "opt_in": "Ich stimme zu, E-Mails von Make.org zu erhalten, welche mich über laufende und zukünftige Konsultationen in Kenntnis setzen. (optional)"
   },
   "forgot_password": {
     "title": "Ich setze mein Passwort zurück",

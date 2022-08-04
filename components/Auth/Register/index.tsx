@@ -132,7 +132,10 @@ export const Register: React.FC = () => {
     const unexpectedError = () => {
       dispatch(closePanel());
       // @toDo: notify user
-      Logger.logError({ message: `Login fail for ${email}`, name: 'register' });
+      Logger.logError({
+        message: `Login fail for ${email}`,
+        name: 'register',
+      });
     };
 
     return UserService.login(

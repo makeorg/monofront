@@ -82,7 +82,7 @@ export const FakeCheckboxInputStyle = styled.div`
   height: 14px;
   min-width: 14px;
   border: 1px solid ${color.grey};
-  margin: 0 8px 0 0;
+  margin: 4px 8px 0 0;
   z-index: 0;
   svg {
     fill: ${color.brandSecondary};
@@ -106,7 +106,7 @@ export const StyledCheckbox = styled(FakeCheckboxInputStyle)<{
 `;
 
 export const StyledCheckboxRightMargin = styled(StyledCheckbox)`
-  margin: 0 8px 0 0;
+  margin: 4px 8px 0 0;
 `;
 
 export const NewWindowIconStyle = styled(SvgExternalLink)`

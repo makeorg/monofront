@@ -524,11 +524,11 @@
     "submit": "Valider",
     "privacy_policy_first_part": "J'accepte que Make.org traite ces données pour que je puisse participer et être informé(e) des résultats selon la ",
     "privacy_policy_link": "charte",
-    "privacy_policy_last_part": ".",
+    "privacy_policy_last_part": ". (obligatoire)",
     "privacy_policy": "politique de données",
     "make_protect": "Make.org s'engage à protéger vos",
     "make_protect_link": " données personnelles.",
-    "opt_in": "J'accepte de recevoir des emails de Make.org pour me tenir au courant de l'actualité des consultations en cours et à venir."
+    "opt_in": "J'accepte de recevoir des emails de Make.org pour me tenir au courant de l'actualité des consultations en cours et à venir. (optionnel)"
   },
   "forgot_password": {
     "title": "Je réinitialise mon mot de passe",

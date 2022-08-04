@@ -10,6 +10,9 @@ import { OptInCheckBox } from '@make.org/components/Form/CheckBox/OptInCheckbox'
 import { RegisterCheckBox } from '@make.org/components/Form/CheckBox/RegisterCheckbox';
 import { throttle } from '@make.org/utils/helpers/throttle';
 import { UserService } from '@make.org/utils/services/User';
+import { setRegisterStep } from '@make.org/store/actions/pendingProposal';
+import { ProposalBackButtonStyle } from '../../../Proposal/Submit/style';
+
 import {
   NewWindowIconStyle,
   TermsOfUseLinkGreyStyle,
@@ -33,7 +36,7 @@ export const OptInGTU: React.FC<Props> = ({
   failure,
   unexpectedError,
 }) => {
-  const { state } = useAppContext();
+  const { dispatch, state } = useAppContext();
 
   const { country, language, source } = state.appConfig;
   const isWidget = source === 'widget';
@@ -52,12 +55,19 @@ export const OptInGTU: React.FC<Props> = ({
     );
   };
 
+  const handleReturn = () => {
+    dispatch(setRegisterStep(2));
+  };
+
   return (
     <RegisterPanelOptInWrapperStyle
       as="form"
       id={FORM.DATA_POLICY_CONSENT}
       onSubmit={throttle(handleSubmit)}
     >
+      <ProposalBackButtonStyle onClick={handleReturn}>
+        {i18n.t('common.back')}
+      </ProposalBackButtonStyle>
       <LoginTitleWrapperCenterStyle>
         {i18n.t('common.register_panel.optin_cgu_title')}
       </LoginTitleWrapperCenterStyle>
