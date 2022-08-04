@@ -183,7 +183,6 @@ export const ProposalBackButtonStyle = styled(BlackNoBackgroundButtonStyle)`
   font-family: ${MakeFonts.CircularStandardBook};
   width: 100%;
   text-align: left;
-  max-width: 470px;
   display: inline;
   margin-bottom: 30px;
 `;
