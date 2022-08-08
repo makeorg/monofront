@@ -18,8 +18,7 @@ import {
 } from '../../../pages/Home/style';
 import { BrowseConsultationsList } from '../../Consultation/Browse/List';
 import { ConsultationElementTitleStyle } from '../../Consultation/Browse/style';
-import { HomepageQuestionsButtonStyle } from './style';
-import { FeaturedSeparatorStyle } from '../Featured/Posts/style';
+import { HomepageQuestionsButtonStyle, FeaturedSeparatorStyle } from './style';
 
 type Props = {
   currentQuestions: HomeQuestionType[] | [];

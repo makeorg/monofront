@@ -120,7 +120,6 @@
       "cta_access": "J'accède à la consultation",
       "optin_cgu_title": "Finalisez votre inscription",
       "optin_cgu_subtitle": "en quelques clics"
-
     },
     "form": {
       "hide_password": "Masquer le mot de passe",
@@ -1109,6 +1108,7 @@
       "title": "Make.org passe à l’action sur les grands sujets de société"
     },
     "posts": {
+      "title": "Notre actualité",
       "link_text": "Lire l'article",
       "see_all": "Voir toute l'actualité"
     },

@@ -9,7 +9,8 @@ import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
 import { HighlightsBanner } from '../../app/Homepage/Highlights';
 import { HomepageQuestions } from '../../app/Homepage/Questions';
-import { FeaturedNews } from '../../app/Homepage/Featured';
+import { FeaturedQuestions } from '../../app/Homepage/Featured/Questions';
+import { FeaturedPosts } from '../../app/Homepage/Featured/Posts';
 import { Hero } from '../../app/Homepage/Hero';
 import { PartnershipBanner } from '../../app/Homepage/Partnership';
 import { InternationalPlaceholder } from '../../app/Homepage/International';
@@ -79,12 +80,10 @@ export const HomePage: FC = () => {
             ) : (
               <InternationalPlaceholder />
             )}
-            {hasFeaturedQuestions && hasPosts && (
-              <FeaturedNews
-                questions={homepage.featuredQuestions}
-                posts={homepage.posts}
-              />
+            {hasFeaturedQuestions && (
+              <FeaturedQuestions questions={homepage.featuredQuestions} />
             )}
+            {hasPosts && <FeaturedPosts posts={homepage.posts} />}
           </HomepageWrapperStyle>
           {displayPartnership && <PartnershipBanner />}
         </>

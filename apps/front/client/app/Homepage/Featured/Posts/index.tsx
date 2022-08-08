@@ -15,7 +15,11 @@ import {
   ConsultationElementTitleStyle,
   ConsultationElementParagraphStyle,
 } from '../../../Consultation/Browse/style';
-import { HomepagePageInnerStyle } from '../../../../pages/Home/style';
+import {
+  HomepageSectionTitleStyle,
+  HomepageSectionStyle,
+  HomepagePageInnerStyle,
+} from '../../../../pages/Home/style';
 import { HomepageQuestionsButtonStyle } from '../../Questions/style';
 
 type Props = {
@@ -30,7 +34,19 @@ export const FeaturedPosts: FC<Props> = ({ posts }) => {
   }
 
   return (
-    <>
+    <HomepageSectionStyle
+      as="section"
+      aria-labelledby="featured_posts_title"
+      id="featured_posts"
+    >
+      <HomepagePageInnerStyle>
+        <HomepageSectionTitleStyle
+          data-cy-container="featured_posts_title"
+          id="featured_posts_title"
+        >
+          {i18n.t('homepage.posts.title')}
+        </HomepageSectionTitleStyle>
+      </HomepagePageInnerStyle>
       <ConsultationsListStyle>
         {posts.map(post => (
           <ConsultationsListItemStyle itemsPerRow={3} key={post.title}>
@@ -76,6 +92,6 @@ export const FeaturedPosts: FC<Props> = ({ posts }) => {
           </ScreenReaderItemStyle>
         </HomepageQuestionsButtonStyle>
       </HomepagePageInnerStyle>
-    </>
+    </HomepageSectionStyle>
   );
 };

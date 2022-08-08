@@ -36,6 +36,10 @@ Feature: The Home Page
     And I see "Make.org passe à l’action sur les grands sujets de société" in "featured_questions_title" container
     And I see a link "operationTitle_5" to "/FR/consultation/question-5-slug/participate" in "featured_questions_navigation" container
 
+  Scenario: Homepage has featuredPosts section
+    Given I go to "france homepage"
+    And I see "Notre actualité" in "featured_posts_title" container
+
   Scenario: Homepage has partnership section
     Given I go to "france homepage"
     Then I see "Devenir partenaire" in "partnership_subtitle" container
