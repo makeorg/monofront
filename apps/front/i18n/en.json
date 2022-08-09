@@ -440,8 +440,8 @@
     "registration_title": "I don’t have an account,",
     "registration_link": "let's create one.",
     "email_doesnot_exist": "Invalid login or password.",
-    "connect": "Sign up with",
-    "forgot_password": "@@login.forgot_password|fr:Mot de passe oublié ?"
+    "connect": "Sign up",
+    "forgot_password": "Forgot password?"
   },
   "register": {
     "title": "Create an account",
@@ -768,7 +768,7 @@
         "title": "Top emerging ideas, grouped into {{count}} themes",
         "introduction": ", The best citizen solutions are grouped into big ideas that structure the consultation. To classify these ideas, the Make.org algorithm takes into account the votes 'Agree' and 'Disagree' as well as the mentions 'Genius', 'Obvious', 'Irrelevant !' and 'Nonsense'.",
         "title_plural": "Top ideas is merged in {{count}} topics",
-        "axe_title": "@@consultation.results.top_ideas.axe_title|fr:Axe {{count}} : {{name}}"
+        "axe_title": "Axis {{count}} : {{name}}"
       },
       "proposals": {
         "controversials_title": "Most discussed solutions",
@@ -776,7 +776,7 @@
         "rejected_results": "{{disagree}}% 'Disagree' including {{no_way}}% 'Irrelevant !'",
         "controversials_agree": "{{count}}% 'Agree'",
         "controversials_disagree": "{{count}}% 'Disagree'",
-        "controversials_description": "@@consultation.results.proposals.controversials_description|fr:Les idées “controversées” témoignent d’un clivage important au sein de la société : elles recueillent globalement autant d’adhésion forte que de net rejet."
+        "controversials_description": "“Controversial” ideas reflect a significant divide in society: they are both strongly supported and strongly rejected."
       },
       "table": {
         "name": "Name",
@@ -785,9 +785,9 @@
         "percentage": "percentage"
       },
       "breadcrumb": "Results of \"{{title}}\"",
-      "title": "@@consultation.results.title|fr:Que retenir de cette consultation ?",
+      "title": "What to take away from the consultation?",
       "participation": {
-        "title": "@@consultation.results.participation.title|fr:Les participants à la consultation"
+        "title": "Consultation’s participants"
       }
     },
     "close": "Close",
@@ -889,7 +889,7 @@
       "timeline_title_great_cause": "What are the highlights of this great cause?",
       "timeline_title_consultation": "What are the highlights of this consultation?",
       "workshop_link": "Contact us to participate",
-      "consultation_from_to": "@@consultation.timeline.consultation_from_to|fr:Du {{startDate}} au {{endDate}}"
+      "consultation_from_to": "From {{startDate}} to {{endDate}}"
     }
   },
   "sharing": {
@@ -1200,7 +1200,7 @@
       "subtitle": "Each vote is important ! Vote and write solutons to resolve problems of our society.",
       "participate": "Participate",
       "contributors": "Participant",
-      "contributors_plural": "Participants",
+      "contributors_plural": "participants",
       "proposals": "solution",
       "proposals_plural": "solutions",
       "votes": "vote",
@@ -1226,7 +1226,7 @@
     "one_result": "Sign up to be aware of new results.",
     "subscribe": "Sign up",
     "past_questions": "You can also check on the results of our past consultations",
-    "short_page_title": "@@browse.short_page_title|fr:Parcourir"
+    "short_page_title": "Browse"
   },
   "countries": {
     "AT": "Austria",

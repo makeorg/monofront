@@ -62,8 +62,8 @@ export const TermsOfUseEN: FC = () => {
           publishes an internet site and makes services available to the public.
         </StaticParagraphStyle>
         <StaticParagraphStyle>
-          To do so, it allows Users to make Proposals on the site. Other Users
-          who so choose can then vote on or comment on these Proposals to
+          To do so, it allows Users to submit Solutions on the site. Other Users
+          who so choose can then vote on or comment on these Solutions to
           support them, the goal being to create conversations in society on
           questions of general interest, especially on economic, social, civic
           and citizenship issues. The ideas that emerge can then be taken up by
@@ -229,7 +229,7 @@ export const TermsOfUseEN: FC = () => {
                 </StaticFourthLevelTitleStyle>
                 <StaticParagraphStyle>
                   The site is open to the public and all Users can visit it and
-                  vote on the Proposals.
+                  vote on the Solutions.
                 </StaticParagraphStyle>
               </StaticSecondaryOrderedListItemStyle>
               <StaticSecondaryOrderedListItemStyle className="section5">
@@ -238,9 +238,9 @@ export const TermsOfUseEN: FC = () => {
                 </StaticFourthLevelTitleStyle>
                 <StaticParagraphStyle>
                   All users may vote on the site, but only registered Users may
-                  make citizen Proposals. To this end, those who would like to
-                  make Proposals can register on the site by completing the form
-                  provided for that purpose. They must then provide all the
+                  submit citizen Solutions. To this end, those who would like to
+                  submit Solutions can register on the site by completing the
+                  form provided for that purpose. They must then provide all the
                   information marked as mandatory. Any incomplete registration
                   will not be validated.
                 </StaticParagraphStyle>
@@ -338,24 +338,24 @@ export const TermsOfUseEN: FC = () => {
             <StaticSecondaryOrderedListStyle>
               <StaticSecondaryOrderedListItemStyle className="section6">
                 <StaticFourthLevelTitleStyle>
-                  Citizen Proposals
+                  Citizen Solutions
                 </StaticFourthLevelTitleStyle>
                 <StaticParagraphStyle>
                   The platform offers Users the chance to vote on citizen
-                  Proposals that have been proposed by other Users.
+                  Solutions that have been proposed by other Users.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
-                  The citizen proposals filed with Make.org each have an equal
+                  The citizen solutions filed with Make.org each have an equal
                   chance of being transformed into actions.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
                   It’s through his or her vote that the user can enable a
-                  proposal to become a citizen Action that Make.org commits
+                  solution to become a citizen Action that Make.org commits
                   itself to furthering.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
                   Make.org then conceives of its role as being an intermediary
-                  between the citizen proposals and its partners in action. (
+                  between the citizen solutions and its partners in action. (
                   <RedHTMLLinkElementStyle href="#anchor_partners">
                     See 6.8 Partners in Action
                   </RedHTMLLinkElementStyle>
@@ -364,50 +364,50 @@ export const TermsOfUseEN: FC = () => {
               </StaticSecondaryOrderedListItemStyle>
               <StaticSecondaryOrderedListItemStyle className="section6">
                 <StaticFourthLevelTitleStyle>
-                  Formulating a Citizen Proposal
+                  Formulating a Citizen Solution
                 </StaticFourthLevelTitleStyle>
                 <StaticParagraphStyle>
-                  Registered Users can voice their own Citizen Proposals, which
+                  Registered Users can voice their own Citizen Solutions, which
                   are intended to be published, commented on, analysed and
                   debated, and which will be submitted to the votes of Users.
                 </StaticParagraphStyle>
               </StaticSecondaryOrderedListItemStyle>
               <StaticSecondaryOrderedListItemStyle className="section6">
                 <StaticFourthLevelTitleStyle>
-                  Form and content of Citizen Proposals
+                  Form and content of Citizen Solutions
                 </StaticFourthLevelTitleStyle>
                 <StaticParagraphStyle>
-                  Each Citizen Proposal shall begin with “We should” and contain
-                  a maximum of 140 characters. The Citizen Proposal should be
+                  Each Citizen Solution shall begin with “We should” and contain
+                  a maximum of 140 characters. The Citizen Solution should be
                   readable and written in English, and in such a way that it can
                   be understood by all, and without any abbreviations or an
                   excessive use of capital letters.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
-                  The proposal must not contain any elements that are contrary
+                  The solution must not contain any elements that are contrary
                   to the law or public morals or whose terms would contravene
                   the provisions of these General Terms of Service.
                 </StaticParagraphStyle>
               </StaticSecondaryOrderedListItemStyle>
               <StaticSecondaryOrderedListItemStyle className="section6">
                 <StaticFourthLevelTitleStyle>
-                  Moderation and publication of Citizen Proposals
+                  Moderation and publication of Citizen Solutions
                 </StaticFourthLevelTitleStyle>
                 <StaticParagraphStyle>
-                  The publication of a User’s Citizen Proposal is subject to
+                  The publication of a User’s Citizen Solution is subject to
                   moderation in the conditions defined by the present{' '}
                   <abbr lang="en" title="General Terms of service">
                     GTS
                   </abbr>
-                  . Therequest for publication of a Citizen Proposal will be
+                  . Therequest for publication of a Citizen Solution will be
                   processed as quickly as possible by Make.org’s teams, with the
                   aim of responding in under 48 hours.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
-                  Make.org’s moderation team examines each Citizen Proposal
+                  Make.org’s moderation team examines each Citizen Solution
                   before publishing it online. As a result, Users should take
-                  care not to submit a Citizen Proposal more than once or to
-                  submit a Citizen Proposal that already exists. Users must also
+                  care not to submit a Citizen Solution more than once or to
+                  submit a Citizen Solution that already exists. Users must also
                   not spam the Service by proposing the same Solutions from
                   different e-mail addresses. One User is allowed to submit a
                   maximum of 100 solutions for each consultation, in order to
@@ -417,15 +417,15 @@ export const TermsOfUseEN: FC = () => {
                   his correct use of the platform.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
-                  Once a User’s Citizen Proposal has been validated, it will be
+                  Once a User’s Citizen Solution has been validated, it will be
                   published on the Service and a publication notification will
                   be sent to its author.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
-                  In the event that a User’s Citizen Proposal is rejected, an
+                  In the event that a User’s Citizen Solution is rejected, an
                   e-mail will be sent to the User notifying him/her of said
                   rejection. The User will then be free to submit a new Citizen
-                  Proposal.
+                  Solution.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
                   Once published on the Service, it will be highlighted on the
@@ -441,12 +441,12 @@ export const TermsOfUseEN: FC = () => {
               </StaticSecondaryOrderedListItemStyle>
               <StaticSecondaryOrderedListItemStyle className="section6">
                 <StaticFourthLevelTitleStyle>
-                  Request for the deletion of a Citizen Proposal by a Registered
+                  Request for the deletion of a Citizen Solution by a Registered
                   User
                 </StaticFourthLevelTitleStyle>
                 <StaticParagraphStyle>
                   In the event that a Registered User would like his or her
-                  published Citizen Proposal to be deleted, he/she should make a
+                  published Citizen Solution to be deleted, he/she should make a
                   request to Make.org via e-mail at the following address:
                   &nbsp;
                   <RedHTMLLinkElementStyle href={`mailto:${CONTACT_EMAIL}`}>
@@ -460,31 +460,31 @@ export const TermsOfUseEN: FC = () => {
               </StaticSecondaryOrderedListItemStyle>
               <StaticSecondaryOrderedListItemStyle className="section6">
                 <StaticFourthLevelTitleStyle>
-                  Voting on a Citizen Proposal
+                  Voting on a Citizen Solution
                 </StaticFourthLevelTitleStyle>
                 <StaticParagraphStyle>
                   All Users can make their voices heard by means of voting on
-                  the citizen proposals presented on the Site, without having to
+                  the citizen solutions presented on the Site, without having to
                   create an account, by clicking on the “Agree”, “Disagree” or
                   “Blank Vote” buttons.
                 </StaticParagraphStyle>
               </StaticSecondaryOrderedListItemStyle>
               <StaticSecondaryOrderedListItemStyle className="section6">
                 <StaticFourthLevelTitleStyle>
-                  Use of Citizen Proposals
+                  Use of Citizen Solutions
                 </StaticFourthLevelTitleStyle>
                 <StaticParagraphStyle>
                   <StaticStrongStyle>
                     Use for statistical purposes :&nbsp;
                   </StaticStrongStyle>
-                  Make.org may use Citizen Proposals, aggregated or not and
+                  Make.org may use Citizen Solutions, aggregated or not and
                   expunged of all personal data, including compilations and
                   syntheses, for statistical purposes, for the purposes of
                   studies or for any other purpose.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
                   <StaticStrongStyle>Use for debates :&nbsp;</StaticStrongStyle>
-                  Citizen Proposals published on the Service could be selected
+                  Citizen Solutions published on the Service could be selected
                   by Make.org in order to be analysed, commented on and/or
                   debated on the occasion of public debates organised by
                   Make.org or its partners.
@@ -493,7 +493,7 @@ export const TermsOfUseEN: FC = () => {
                   <StaticStrongStyle>
                     Use for the purposes of reports and studies :&nbsp;
                   </StaticStrongStyle>
-                  Citizen Proposals published on the Service, as well as the
+                  Citizen Solutions published on the Service, as well as the
                   votes attributed to them, could be selected by Make.org with
                   the aim of carrying out, in particular, analyses, reports and
                   studies for statistical and research purposes or for the
@@ -505,7 +505,7 @@ export const TermsOfUseEN: FC = () => {
                   </StaticStrongStyle>
                   Make.org may publish or co-publish white papers for
                   non-commercial purposes that make use of, in whole or in part,
-                  Citizen Proposals.
+                  Citizen Solutions.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
                   <StaticStrongStyle>
@@ -513,11 +513,11 @@ export const TermsOfUseEN: FC = () => {
                   </StaticStrongStyle>
                   Make.org may publish or co-publish white papers for
                   non-commercial purposes that make use of, in whole or in part,
-                  Citizen Proposals.
+                  Citizen Solutions.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
                   <StaticStrongStyle>Editorial use :&nbsp;</StaticStrongStyle>
-                  Citizen Proposals, and the votes attributed to them, could
+                  Citizen Solutions, and the votes attributed to them, could
                   moreover be used, commented on and analysed by Make.org and/or
                   partner journalists in the creation of editorial content.
                 </StaticParagraphStyle>
@@ -525,22 +525,22 @@ export const TermsOfUseEN: FC = () => {
                   <StaticStrongStyle>
                     Use for communication purposes :&nbsp;
                   </StaticStrongStyle>
-                  Citizen Proposals could also be used by Make.org on the Site
+                  Citizen Solutions could also be used by Make.org on the Site
                   and be used for display purposes on advertising spaces
                   operated by Make.org’s partners. In such a case, the use of a
-                  Citizen Proposal on said advertising spaces will lead to the
-                  Proposal being published anonymously, whether the Proposal had
+                  Citizen Solution on said advertising spaces will lead to the
+                  Solution being published anonymously, whether the Solution had
                   been published anonymously on the Site or with the User’s
                   first name, age and region, if the User had included such
                   information.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
                   <StaticStrongStyle>
-                    Making Citizen Proposals a Reality :&nbsp;
+                    Making Citizen Solutions a Reality :&nbsp;
                   </StaticStrongStyle>
-                  Finally, proposals may be transformed into concrete action,
+                  Finally, solutions may be transformed into concrete action,
                   either directly by Users, or by means of Make.org’s partners
-                  in action, with the Users behind such Proposals and those who
+                  in action, with the Users behind such Solutions and those who
                   voted for them understanding this and expressly agreeing to
                   it.
                 </StaticParagraphStyle>
@@ -554,21 +554,21 @@ export const TermsOfUseEN: FC = () => {
                 </StaticFourthLevelTitleStyle>
                 <StaticParagraphStyle>
                   Make.org will mobilise civil society actors (companies,
-                  institutions, NGOs) to take up the cause of the proposals that
+                  institutions, NGOs) to take up the cause of the solutions that
                   received the most support on the platform and to make them a
                   reality.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
                   At any moment, and without Make.org making any request, these
-                  partners in action may take any proposal present in the
+                  partners in action may take any solution present in the
                   “Actions Space” and attempt to put it into action directly.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
                   Make.org conceives of its role as being an intermediary
-                  between the citizen proposals and its partners in action.
+                  between the citizen solutions and its partners in action.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
-                  Make.org engages to then ensure that the proposals are put
+                  Make.org engages to then ensure that the solutions are put
                   into action effectively and that they receive appropriate
                   media exposure.
                 </StaticParagraphStyle>
@@ -635,16 +635,16 @@ export const TermsOfUseEN: FC = () => {
                   is solely responsible.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
-                  The User pledges not to publish any proposals of a promotional
+                  The User pledges not to publish any solutions of a promotional
                   nature or to promote services for commercial gain. The User
-                  pledges not to publish proposals that are not serious or that
+                  pledges not to publish solutions that are not serious or that
                   are off topic. The User pledges to make strictly personal use
                   of the Services. It is therefore forbidden to cede, grant or
                   transfer all or part of his/her rights or obligations as
                   discussed herein to any third party in any way whatsoever.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
-                  The User pledges not to publish any proposals that promote or
+                  The User pledges not to publish any solutions that promote or
                   denigrate any parties, organisations or public figures.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
@@ -658,7 +658,7 @@ export const TermsOfUseEN: FC = () => {
                   of politeness and courtesy.
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
-                  The User pledges not to make any remarks or proposals that are
+                  The User pledges not to make any remarks or solutions that are
                   contrary to the law or public morals and particularly, without
                   this list being exhaustive:
                 </StaticParagraphStyle>
@@ -712,7 +712,7 @@ export const TermsOfUseEN: FC = () => {
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
                   The User accepts that Make.org, as provider of the Service,
-                  will reproduce the User’s proposals according to Make.org’s
+                  will reproduce the User’s solutions according to Make.org’s
                   standards of indexing, layout and emphasis.
                 </StaticParagraphStyle>
               </StaticSecondaryOrderedListItemStyle>
@@ -997,10 +997,10 @@ export const TermsOfUseEN: FC = () => {
               </StaticSecondaryOrderedListItemStyle>
               <StaticSecondaryOrderedListItemStyle className="section12">
                 <StaticFourthLevelTitleStyle>
-                  Ownership of Citizen Proposals
+                  Ownership of Citizen Solutions
                 </StaticFourthLevelTitleStyle>
                 <StaticParagraphStyle>
-                  The Citizen Proposals themselves are the property of their
+                  The Citizen Solutions themselves are the property of their
                   authors, who grant Make.org a non-exclusive, transferable and
                   free licence, for France and the entire world, for all online
                   use and for any mode of dissemination, for the duration of
@@ -1097,7 +1097,7 @@ export const TermsOfUseEN: FC = () => {
             <StaticParagraphStyle>
               As the Services are free of charge, Make.org may delete, at any
               moment and without any warning, and for any reason, the
-              publication of a Citizen Proposal, temporarily or permanently.
+              publication of a Citizen Solution, temporarily or permanently.
             </StaticParagraphStyle>
             <StaticParagraphStyle>
               Similarly, as the Services are free of charge, Make.org may, at
@@ -1126,7 +1126,7 @@ export const TermsOfUseEN: FC = () => {
             <StaticParagraphStyle>
               De-registration will be effective immediately. It will
               automatically lead to the deletion of the Registered User’s
-              Account as well as of his/her Proposals.
+              Account as well as of his/her Solutions.
             </StaticParagraphStyle>
           </StaticPrimaryOrderedListItemStyle>
           <StaticPrimaryOrderedListItemStyle>

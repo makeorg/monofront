@@ -379,7 +379,7 @@
       "button_login_link": "und melde mich an",
       "back_authentication": "Zurück zum Anmeldebildschirm",
       "back": "Zurück",
-      "subtitle": "@@proposal_submit.authentication.subtitle|fr:Je m'inscris avec",
+      "subtitle": "registriere ich mich über",
       "button_login": "Ich verbinde mich mit",
       "last_step_red": "Es bleibt nur noch ein Schritt ",
       "last_step": "um deinen Vorschlag einzureichen !"
@@ -473,7 +473,7 @@
     "registration_link": "und erstelle eins für mich.",
     "email_doesnot_exist": "Deine {{emailLabel}} oder dein {{passwordLabel}} ist falsch.",
     "connect": "Ich verbinde mich mit",
-    "forgot_password": "@@login.forgot_password|fr:Mot de passe oublié ?"
+    "forgot_password": "Passwort vergessen?"
   },
   "register": {
     "title": "Ein Konto erstellen",

@@ -490,7 +490,7 @@
     "registration_link": "und erstelle eins für mich.",
     "email_doesnot_exist": "Deine {{emailLabel}} oder dein {{passwordLabel}} ist falsch.",
     "connect": "Ich verbinde mich mit",
-    "forgot_password": "@@login.forgot_password|fr:Mot de passe oublié ?"
+    "forgot_password": "Passwort vergessen?"
   },
   "register": {
     "title": "Ein Konto erstellen",
