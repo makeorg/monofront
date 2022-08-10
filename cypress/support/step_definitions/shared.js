@@ -63,17 +63,33 @@ Given('I go to 404 FR page', () => {
 
 Given('I go/am to/on {string}', targetPage => {
   checkPageExist(targetPage);
-  cy.visit(pages[targetPage]);
+  cy.visit(pages[targetPage], {
+    headers: { 'Accept-language': 'fr' },
+  });
 });
+
+Given(
+  'I go/am to/on {string} with a browser language {string}',
+  (targetPage, language) => {
+    checkPageExist(targetPage);
+    cy.visit(pages[targetPage], {
+      headers: { 'Accept-language': language },
+    });
+  }
+);
 
 Given('I go/am to/on {string} from Great Britain', targetPage => {
   checkPageExist(targetPage);
-  cy.visit(pages[targetPage], { headers: { 'x-detected-country': 'GB' } });
+  cy.visit(pages[targetPage], {
+    headers: { 'x-detected-country': 'GB', 'Accept-language': 'en' },
+  });
 });
 
 Given('I go/am to/on {string} from Germany', targetPage => {
   checkPageExist(targetPage);
-  cy.visit(pages[targetPage], { headers: { 'x-detected-country': 'DE' } });
+  cy.visit(pages[targetPage], {
+    headers: { 'x-detected-country': 'DE', 'Accept-language': 'de' },
+  });
 });
 
 Given(

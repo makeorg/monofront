@@ -11,6 +11,7 @@ import { initialState } from '@make.org/store/initialState';
 import { env } from '@make.org/assets/env';
 import {
   DEFAULT_COUNTRY,
+  DEFAULT_LANGUAGE,
   DESKTOP_DEVICE,
   MOBILE_DEVICE,
   PRIVACY_POLICY_DATE,
@@ -21,10 +22,7 @@ import { TRANSLATION_NAMESPACE } from '@make.org/utils/i18n/constants';
 import { StateRoot } from '@make.org/types';
 import { Request, Response } from 'express';
 import { Cookie } from 'universal-cookie';
-import {
-  getLanguageFromCountryCode,
-  setLanguage,
-} from '@make.org/utils/helpers/countries';
+import { setLanguage } from '@make.org/utils/helpers/countries';
 import deepFreeze from 'deep-freeze';
 import { getLoggerInstance } from '@make.org/utils/helpers/logger';
 import { WIDGET_CLIENT_DIR } from './paths';
@@ -93,14 +91,16 @@ export const reactRender = async (
   res: Response,
   routeState: StateRoot
 ): Promise<any> => {
+  // @todo refacto query, why 2 lines ?
   const { ...queryParams } = req.query;
-  const { country, questionSlug, hash } = req.query;
+  const { country, questionSlug, hash, language } = req.query;
 
   const { device } = parser(req.headers['user-agent']);
   const isMobileOrTablet = device.type === 'mobile' || device.type === 'tablet';
 
-  const language = getLanguageFromCountryCode(country || DEFAULT_COUNTRY);
-  setLanguage(language, true);
+  const avaliableLanguage = language || DEFAULT_LANGUAGE;
+
+  setLanguage(avaliableLanguage, true);
 
   const state: StateRoot = {
     ...initialState,
@@ -109,9 +109,12 @@ export const reactRender = async (
       ...initialState.appConfig,
       ...routeState?.appConfig,
       source: 'widget',
-      language,
+      language: avaliableLanguage,
       country: country || DEFAULT_COUNTRY,
-      translations: i18n.getResourceBundle(language, TRANSLATION_NAMESPACE),
+      translations: i18n.getResourceBundle(
+        avaliableLanguage,
+        TRANSLATION_NAMESPACE
+      ),
       queryParams,
       device: isMobileOrTablet ? MOBILE_DEVICE : DESKTOP_DEVICE,
       privacyPolicy: PRIVACY_POLICY_DATE,

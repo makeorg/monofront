@@ -6,12 +6,9 @@ import {
   SET_MOBILE_DEVICE,
 } from '../../actionTypes';
 
-export const setCountryCode = (
-  country: string,
-  language: string
-): ReducerAction => ({
+export const setCountryCode = (country: string): ReducerAction => ({
   type: SET_COUNTRY_CONFIGURATION,
-  payload: { country, language },
+  payload: { country },
 });
 
 export const setLanguageCode = (language: string): ReducerAction => ({

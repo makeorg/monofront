@@ -19,7 +19,9 @@ Given(
     cy.intercept('GET', 'http://localhost:9009/api/results/question-0-slug', {
       fixture: 'results.json',
     }).as('getResultsPageData');
-    cy.visit(page);
+    cy.visit(page, {
+      headers: { 'Accept-language': 'fr' },
+    });
     cy.wait('@getResultsPageData', { timeout: 8000 });
   }
 );
@@ -31,7 +33,9 @@ When(
     cy.intercept('GET', 'http://localhost:9009/api/results/question-0-slug', {
       fixture: 'results.json',
     }).as('getResultsPageData');
-    cy.visit(page);
+    cy.visit(page, {
+      headers: { 'Accept-language': 'fr' },
+    });
     cy.wait('@getResultsPageData', { timeout: 8000 });
   }
 );

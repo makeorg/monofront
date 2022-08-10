@@ -2,8 +2,6 @@ import {
   compareCountriesByName,
   getCountryDPA,
   getCountryWithConsultations,
-  getLanguageFromCountryCode,
-  getLanguageFromParams,
 } from './countries';
 
 jest.mock('@make.org/utils/constants/config', () => ({
@@ -41,27 +39,6 @@ describe('Countries helper', () => {
 
     it('compare array with same values', () => {
       expect(compareCountriesByName(same[0], same[1])).toBe(0);
-    });
-  });
-
-  describe('getLanguageFromCountry function', () => {
-    it('language is known', () => {
-      expect(getLanguageFromCountryCode('FR')).toBe('fr');
-    });
-
-    it('language is unknown', () => {
-      expect(getLanguageFromCountryCode('GB')).toBe('en');
-    });
-  });
-
-  describe('getLanguageFromParams function', () => {
-    const countryCode = 'FR';
-    it('with query language param', () => {
-      expect(getLanguageFromParams(countryCode, 'FR')).toBe('fr');
-    });
-
-    it('without params and localStorage', () => {
-      expect(getLanguageFromParams(countryCode)).toBe('fr');
     });
   });
 
