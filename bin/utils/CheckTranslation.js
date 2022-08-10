@@ -54,6 +54,8 @@ const getMissingKeys = (keysToCheck, referenceKeys) => {
   return keysToAdd;
 };
 
+const getDeduplicatedKeys = referenceKeys => new Set(referenceKeys);
+
 const getTranslationFilenames = directory =>
   fs
     .readdirSync(directory, { withFileTypes: true })
@@ -124,10 +126,42 @@ const addKey = (translationObj, referenceObj, concatKey, mainLanguageLabel) => {
   });
 };
 
+const getUnusedKeys = (allKeys, appDirectory) => {
+  const keys = new Set();
+
+  allKeys.forEach(key => {
+    process.stdout.write(`-- ${key}`);
+    process.stdout.write("\r\x1b[K")
+    const { spawnSync} = require('child_process');
+    const child = spawnSync(
+      'grep',
+      [
+        '-rl',
+        '--include=*.js',
+        '--include=*.ts',
+        '--include=*.tsx',
+        '--exclude-dir=dist',
+        '--exclude-dir=node_modules',
+        key,
+        appDirectory
+      ],
+      {
+        encoding: 'utf-8'
+      }
+    );
+    if (child.status!==0) {
+      keys.add(key);
+    }
+  });
+
+  return keys;
+}
+
 export const analyseTranslation = (transObj, mainTransObj) => {
   const referenceKeys = allKeys(mainTransObj.trans);
   const extraKeys = getExtraKeys(allKeys(transObj.trans), referenceKeys);
   const missingKeys = getMissingKeys(allKeys(transObj.trans), referenceKeys);
+  
   const fixedTrans = { ...transObj.trans };
   extraKeys.forEach(key => {
     removeKey(fixedTrans, key);
@@ -143,7 +177,7 @@ export const analyseTranslation = (transObj, mainTransObj) => {
     missingKeys,
     original: transObj.trans,
     fixedTrans,
-    filename: transObj.filename,
+    filename: transObj.filename
   };
 };
 
@@ -166,6 +200,7 @@ export const analyse = async (translationFilesDir, mainLanguage = 'fr') => {
   const failedResults = [];
   allTransObj.forEach(transObj => {
     const result = analyseTranslation(transObj, mainTransObj);
+
     if (result.extraKeysCount || result.missingKeysCount) {
       failedResults.push(result);
     }
@@ -176,6 +211,92 @@ export const analyse = async (translationFilesDir, mainLanguage = 'fr') => {
     totalTransCount: allTransObj.length,
     transList: allTransObj.map(item => item.language),
   };
+};
+
+export const listUnusedKeys = async (translationFilesDir, language = 'fr', appDirectory = '../..') => {
+
+  console.log('-------------- analyse code in ', process.cwd() + '/' + appDirectory);
+  const translations = await loadTranslationObjFromFilenames(
+    await getTranslationFilenames(translationFilesDir),
+    translationFilesDir
+  );
+  const mainTransObj = translations.find(
+    transObj => transObj.language === language
+  );
+
+  const referenceKeys = allKeys(mainTransObj.trans);
+  const deduplicatedKeys = getDeduplicatedKeys(referenceKeys);
+  const baseKeys = new Set();
+  deduplicatedKeys.forEach(key => {
+    const withoutPrefixCount = /([0-9]+\.)?(.+)/.exec(key)[2];
+    const withoutPrefixCountAndPluralSuffix = withoutPrefixCount.endsWith('_plural') ? withoutPrefixCount.slice(0, -7) : withoutPrefixCount;
+    baseKeys.add(withoutPrefixCountAndPluralSuffix);
+  });
+
+  return getUnusedKeys(baseKeys, appDirectory);
+};
+
+const getOrphanKeys = (actualKeys, appDirectory) => {
+
+  const { spawnSync} = require('child_process');
+  const child = spawnSync(
+    'grep',
+    [
+      '-rPo',
+      '--include=*.js',
+      '--include=*.ts',
+      '--include=*.tsx',
+      '--exclude-dir=dist',
+      '--exclude-dir=node_modules',
+      "(?<=i18n\\.t\\(')[^']*",
+      appDirectory
+    ],
+    {
+      encoding: 'utf-8'
+    }
+  );
+
+  const results = child.stdout.trim().split('\n').map(str => {
+    const strParts = str.split(":");
+    if (!strParts[0] || !strParts[1]) {
+      throw 'Failed to split grep line result';
+    }
+
+    return {
+      file: strParts[0],
+      key: strParts[1]
+    };
+  }, {});
+
+  const orphans = new Set();
+  results.forEach(item => {
+    if (!actualKeys.has(item.key)) {
+      orphans.add(item.key);
+    }
+  });
+
+  return orphans;
+}
+
+export const listOrphanKeys = async (translationFilesDir, language = 'fr', appDirectory = '.') => {
+  console.log('-------------- analyse code in ', process.cwd() + '/' + appDirectory);
+  const translations = await loadTranslationObjFromFilenames(
+    await getTranslationFilenames(translationFilesDir),
+    translationFilesDir
+  );
+  const mainTransObj = translations.find(
+    transObj => transObj.language === language
+  );
+
+  const referenceKeys = allKeys(mainTransObj.trans);
+  const deduplicatedKeys = getDeduplicatedKeys(referenceKeys);
+  const baseKeys = new Set();
+  deduplicatedKeys.forEach(key => {
+    baseKeys.add(/([0-9]+\.)?(.+)/.exec(key)[2]);
+  });
+
+
+  return getOrphanKeys(baseKeys, appDirectory);
 };
 
 export const fixTranslationFile = (filePath, fixedTrans) => {

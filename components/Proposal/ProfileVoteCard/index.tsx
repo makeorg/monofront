@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useMemo } from 'react';
 import i18n from 'i18next';
 import { OrganisationType, ProposalType } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
@@ -49,11 +49,20 @@ export const ProfileVoteCard: FC<Props> = ({
 }) => {
   const { state } = useAppContext();
   const { country } = state.appConfig;
+  const transVoteMap = useMemo(
+    () =>
+      new Map([
+        ['agree', i18n.t('profile.organisation.proposal_agree')],
+        ['disagree', i18n.t('profile.organisation.proposal_disagree')],
+        ['neutral', i18n.t('profile.organisation.proposal_neutral')],
+      ]),
+    [i18n.language]
+  );
   return (
     <ProfileVoteWrapperStyle aria-posinset={position} aria-setsize={size}>
       <ProfileVoteTitleStyle>
         <ProfileHasVotedStyle
-          aria-label={i18n.t(`vote.${voteKey}`)}
+          aria-label={transVoteMap.get(voteKey) || voteKey}
           className={`${voteKey} voted`}
         >
           <VoteIconStyle className={`${voteKey} voted`} aria-hidden />
@@ -69,7 +78,7 @@ export const ProfileVoteCard: FC<Props> = ({
           </RedLinkStyle>
           <CertifiedIconStyle aria-hidden focusable="false" />
           &nbsp;
-          {i18n.t(`profile.organisation.proposal_${voteKey}`)}
+          {transVoteMap.get(voteKey) || voteKey}
         </div>
       </ProfileVoteTitleStyle>
       <ProfileVoteCardStyle>

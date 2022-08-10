@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import {
   getTotalVotesCount,
   getVotesPercentFromScore,
@@ -54,17 +54,36 @@ export const VoteResult: React.FC<Props> = ({
   const votesCount = getTotalVotesCount(votes);
   const voteKeys = Object.keys(voteStaticParams);
   const votesPercent = getVotesPercentFromScore(votes);
+  const transVoteMap = useMemo(
+    () =>
+      new Map([
+        ['agree', i18n.t('vote.agree')],
+        ['disagree', i18n.t('vote.disagree')],
+        ['neutral', i18n.t('vote.neutral')],
+      ]),
+    [i18n.language]
+  );
   const tooltipContent = (percent: number, voteKey: string) => (
     <>
-      <p>{i18n.t(`vote.${voteKey}`)}</p>
+      <p>{transVoteMap.get(voteKey) || voteKey}</p>
       <p>{i18n.t('common.percent', { percent })}</p>
     </>
+  );
+
+  const transResultVoteMap = useMemo(
+    () =>
+      new Map([
+        ['agree', i18n.t('results.voted.agree')],
+        ['disagree', i18n.t('results.voted.disagree')],
+        ['neutral', i18n.t('results.voted.neutral')],
+      ]),
+    [i18n.language]
   );
 
   return (
     <VoteResultContainerStyle>
       <ScreenReaderItemStyle as="p">
-        {i18n.t(`results.voted.${votedKey}`)}
+        {transResultVoteMap.get(votedKey) || votedKey}
       </ScreenReaderItemStyle>
       <VoteButtonWrapperStyle>
         <UnvoteButton
@@ -83,7 +102,7 @@ export const VoteResult: React.FC<Props> = ({
         {voteKeys.map(voteKey => (
           <li key={`${voteKey}_percent_${proposalId}`}>
             {i18n.t('vote.with_percent', {
-              votedKey: i18n.t(`vote.${voteKey}`),
+              votedKey: transVoteMap.get(voteKey) || voteKey,
               votedPercent: votesPercent[voteKey],
             })}
           </li>

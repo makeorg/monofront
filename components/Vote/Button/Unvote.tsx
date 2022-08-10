@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Tooltip } from '@make.org/ui/components/Tooltip';
 import { LoadingDots } from '@make.org/ui/components/Loading/Dots';
 import i18n from 'i18next';
@@ -31,10 +31,22 @@ const UnvoteButtonItem: React.FC<ButtonProps> = ({
     }
   };
 
+  const transVoteMap = useMemo(
+    () =>
+      new Map([
+        ['agree', i18n.t('vote.agree')],
+        ['disagree', i18n.t('vote.disagree')],
+        ['neutral', i18n.t('vote.neutral')],
+      ]),
+    [i18n.language]
+  );
+
   return (
     <VoteButtonStyle
       aria-label={
-        displayPending ? i18n.t('common.loading') : i18n.t(`vote.${voteKey}`)
+        displayPending
+          ? i18n.t('common.loading')
+          : transVoteMap.get(voteKey) || voteKey
       }
       className={buttonClass}
       onClick={handleAPICall}

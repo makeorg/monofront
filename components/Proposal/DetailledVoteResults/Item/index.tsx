@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { VoteType } from '@make.org/types';
 import { voteStaticParams } from '@make.org/utils/constants/vote';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
@@ -26,11 +26,21 @@ export const DetailledResultItem: React.FC<Props> = props => {
   const { voteKey } = vote;
   const voteColor = voteStaticParams[voteKey].color;
 
+  const transVoteMap = useMemo(
+    () =>
+      new Map([
+        ['agree', i18n.t('vote.agree')],
+        ['disagree', i18n.t('vote.disagree')],
+        ['neutral', i18n.t('vote.neutral')],
+      ]),
+    [i18n.language]
+  );
+
   return (
     <DetailledItemStyle className={voteKey}>
       <FlexElementStyle>
         <ScreenReaderItemStyle>
-          {i18n.t(`vote.${voteKey}`)}
+          {transVoteMap.get(voteKey) || voteKey}
           {' : '}
         </ScreenReaderItemStyle>
         <VoteButtonStyle className={`${voteKey} voted`} as="span">
@@ -43,7 +53,7 @@ export const DetailledResultItem: React.FC<Props> = props => {
         </VoteDataListStyle>
       </FlexElementStyle>
       <ScreenReaderItemStyle>
-        {i18n.t(`qualification.static_repartition`)}
+        {i18n.t('qualification.static_repartition')}
       </ScreenReaderItemStyle>
       <QualificationDataListStyle>
         {vote.qualifications.map(qualification => (

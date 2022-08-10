@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { QualificationService } from '@make.org/utils/services/Qualification';
 import {
   trackQualify,
@@ -39,12 +39,29 @@ export const QualificationButton: React.FC<Props> = ({
   index,
   disableClick = false,
 }) => {
+  const qualificationTransMap = useMemo(
+    () =>
+      new Map([
+        ['likeIt', i18n.t('qualification.likeIt')],
+        ['doable', i18n.t('qualification.doable')],
+        ['platitudeAgree', i18n.t('qualification.platitudeAgree')],
+        ['noWay', i18n.t('qualification.noWay')],
+        ['impossible', i18n.t('qualification.impossible')],
+        ['platitudeDisagree', i18n.t('qualification.platitudeDisagree')],
+        ['platitudeDisagree', i18n.t('qualification.platitudeDisagree')],
+        ['noOpinion', i18n.t('qualification.noOpinion')],
+        ['doNotUnderstand', i18n.t('qualification.doNotUnderstand')],
+        ['doNotCare', i18n.t('qualification.doNotCare')],
+      ]),
+    [i18n.language]
+  );
+
   const { dispatch, state } = useAppContext();
   const { source } = state.appConfig;
   const isWidget = source === 'widget';
   const [userQualification, setUserQualification] = useState(qualification);
   const { hasQualified, qualificationKey } = userQualification;
-  const buttonLabel = i18n.t(`qualification.${qualificationKey}`);
+  const buttonLabel = qualificationTransMap.get(qualificationKey) || '';
   const [isQualified, setIsQualified] = useState<boolean>(hasQualified);
   const [pendingQualification, setPendingQualification] =
     useState<boolean>(false);

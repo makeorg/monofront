@@ -25,6 +25,11 @@ export const PieChart: FC<PieChartType> = ({ unit, name, legend, data }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [canvasRef.current]);
 
+  const translatedUnit =
+    unit === 'percentage'
+      ? i18n.t('consultation.results.table.percentage')
+      : unit;
+
   return (
     <PieChartWrapperStyle>
       <PieChartTitleStyle>{name}</PieChartTitleStyle>
@@ -37,7 +42,7 @@ export const PieChart: FC<PieChartType> = ({ unit, name, legend, data }) => {
               <th>{i18n.t('consultation.results.table.name')}</th>
               <th>
                 {i18n.t('consultation.results.table.value_with_unit', {
-                  unit: i18n.t(`consultation.results.table.${unit}`),
+                  unit: translatedUnit,
                 })}
               </th>
             </tr>

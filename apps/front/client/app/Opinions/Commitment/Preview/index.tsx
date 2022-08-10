@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useMemo } from 'react';
 import i18n from 'i18next';
 import { PersonalityService } from '@make.org/utils/services/Personality';
 import { SvgThumbsUp } from '@make.org/ui/Svg/elements';
@@ -59,6 +59,50 @@ export const CommitmentPreview: FC<Props> = ({
     }
   };
 
+  const opinionsPreviewTransMap = useMemo(
+    () =>
+      new Map([
+        ['agree_', i18n.t('personality.opinions.preview.agree')],
+        ['disagree_', i18n.t('personality.opinions.preview.disagree')],
+        ['neutral_', i18n.t('personality.opinions.preview.neutral')],
+        ['agree_likeIt', i18n.t('personality.opinions.preview.agree_likeIt')],
+        ['agree_doable', i18n.t('personality.opinions.preview.agree_doable')],
+        [
+          'agree_platitudeAgree',
+          i18n.t('personality.opinions.preview.agree_platitudeAgree'),
+        ],
+        [
+          'disagree_noWay',
+          i18n.t('personality.opinions.preview.disagree_noWay'),
+        ],
+        [
+          'disagree_impossible',
+          i18n.t('personality.opinions.preview.disagree_impossible'),
+        ],
+        [
+          'disagree_platitudeDisagree',
+          i18n.t('personality.opinions.preview.disagree_platitudeDisagree'),
+        ],
+        [
+          'disagree_platitudeDisagree',
+          i18n.t('personality.opinions.preview.disagree_platitudeDisagree'),
+        ],
+        [
+          'neutral_noOpinion',
+          i18n.t('personality.opinions.preview.neutral_noOpinion'),
+        ],
+        [
+          'neutral_doNotUnderstand',
+          i18n.t('personality.opinions.preview.neutral_doNotUnderstand'),
+        ],
+        [
+          'neutral_doNotCare',
+          i18n.t('personality.opinions.preview.neutral_doNotCare'),
+        ],
+      ]),
+    [i18n.language]
+  );
+
   return (
     <>
       <CommitmentPreviewSeparatorStyle />
@@ -72,9 +116,8 @@ export const CommitmentPreview: FC<Props> = ({
         <CommitmentPreviewOpinionsParagraphStyle
           color={opinionsVoteStaticParams[vote].color}
           dangerouslySetInnerHTML={{
-            __html: qualification
-              ? i18n.t(`personality.opinions.preview.${vote}_${qualification}`)
-              : i18n.t(`personality.opinions.preview.${vote}`),
+            __html:
+              opinionsPreviewTransMap.get(`${vote}_${qualification}`) || '-',
           }}
         />
       </CommitmentPreviewOpinionsWrapperStyle>

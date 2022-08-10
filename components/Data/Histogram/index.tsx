@@ -63,6 +63,11 @@ export const Histogram: FC<HistogramType> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [listRef.current]);
 
+  const translatedUnit =
+    unit === 'percentage'
+      ? i18n.t('consultation.results.table.percentage')
+      : unit;
+
   return (
     <HistogramWrapperStyle>
       <HistogramTitleStyle>{name}</HistogramTitleStyle>
@@ -75,14 +80,14 @@ export const Histogram: FC<HistogramType> = ({
               <th scope="col">
                 {legend.dimensions.first}
                 {` (${i18n.t('consultation.results.table.value_with_unit', {
-                  unit: i18n.t(`consultation.results.table.${unit}`),
+                  unit: translatedUnit,
                 })})`}
               </th>
               {legend.dimensions.second && (
                 <th scope="col">
                   {legend.dimensions.second}
                   {` (${i18n.t('consultation.results.table.value_with_unit', {
-                    unit: i18n.t(`consultation.results.table.${unit}`),
+                    unit: translatedUnit,
                   })})`}
                 </th>
               )}

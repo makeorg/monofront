@@ -87,3 +87,13 @@ with corresponding param :
 standard / consensus / controversy
 ```
 
+## i18n
+List unused keys in translation files
+``` bash
+$ yarn workspace @make.org/widget  translation:unused-keys
+```
+
+List keys without translation in code
+``` bash
+$ yarn workspace @make.org/widget  translation:orphan-keys
+```

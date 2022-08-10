@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import i18n from 'i18next';
 import { ProposalType } from '@make.org/types';
 import { DateHelper } from '@make.org/utils/helpers/date';
@@ -27,9 +27,21 @@ export const DeprecatedProposalAuthor: React.FC<Props> = ({
   proposal,
   withAvatar = false,
   withCreationDate = false,
-  formattedProposalStatus = false,
+  formattedProposalStatus = '',
 }) => {
   const { author } = proposal;
+
+  const transMapStatus = useMemo(
+    () =>
+      new Map([
+        ['accepted', i18n.t('proposal_card.status.accepted')],
+        ['refused', i18n.t('proposal_card.status.refused')],
+        ['postponed', i18n.t('proposal_card.status.postponed')],
+        ['pending', i18n.t('proposal_card.status.pending')],
+      ]),
+    [i18n.language]
+  );
+
   return (
     <AuthorDescriptionStyle>
       <AuthorInfosStyle as="div">
@@ -55,7 +67,7 @@ export const DeprecatedProposalAuthor: React.FC<Props> = ({
           <ScreenReaderItemStyle>
             {i18n.t('proposal_card.status.title')}
           </ScreenReaderItemStyle>
-          {i18n.t(`proposal_card.status.${formattedProposalStatus}`)}
+          {transMapStatus.get(formattedProposalStatus) || ''}
         </ProposalStatusStyle>
       )}
     </AuthorDescriptionStyle>

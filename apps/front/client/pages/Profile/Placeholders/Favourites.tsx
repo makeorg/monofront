@@ -27,9 +27,9 @@ import {
 import { Tooltip } from '@make.org/ui/components/Tooltip';
 import { CounterStyle } from '@make.org/components/Qualification/style';
 
-const tooltipContent = (percent: number, voteKey: string) => (
+const tooltipContent = (percent: number, label: string) => (
   <>
-    <p>{i18n.t(`vote.${voteKey}`)}</p>
+    <p>{label}</p>
     <p>{i18n.t('common.percent', { percent })}</p>
   </>
 );
@@ -55,7 +55,7 @@ export const ProfileFavouritesPlaceholder: FC = () => (
           <VoteResultGraphStyle>
             <VoteResultItemStyle>
               <Tooltip
-                content={tooltipContent(100, 'agree')}
+                content={tooltipContent(100, i18n.t('vote.agree'))}
                 direction="bottom"
               >
                 <VoteResultBarStyle
@@ -67,7 +67,7 @@ export const ProfileFavouritesPlaceholder: FC = () => (
             </VoteResultItemStyle>
             <VoteResultItemStyle>
               <Tooltip
-                content={tooltipContent(0, 'disagree')}
+                content={tooltipContent(0, i18n.t('vote.disagree'))}
                 direction="bottom"
               >
                 <VoteResultBarStyle
@@ -79,7 +79,7 @@ export const ProfileFavouritesPlaceholder: FC = () => (
             </VoteResultItemStyle>
             <VoteResultItemStyle>
               <Tooltip
-                content={tooltipContent(0, 'neutral')}
+                content={tooltipContent(0, i18n.t('vote.neutral'))}
                 direction="bottom"
               >
                 <VoteResultBarStyle

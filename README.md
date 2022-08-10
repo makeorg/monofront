@@ -110,6 +110,20 @@ $ yarn jest
 $ yarn jscpd
 ```
 
+### i18n
+List unused keys in translation files
+``` bash
+$ yarn workspace @make.org/front  translation:unused-keys
+```
+
+List keys without translation in code
+``` bash
+$ yarn workspace @make.org/front  translation:orphan-keys
+```
+
+This scripts uses ```grep``` command. A linux system is require.
+
+
 ### Convert SVG to React Component
 Refers to @make.org/ui [README.md](./ui/README.md).
 

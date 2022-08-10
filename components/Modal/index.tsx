@@ -31,26 +31,22 @@ export const Modal: React.FC = () => {
     }
   };
 
-  if (isOpen) {
-    return (
-      <ReactModal
-        isOpen={isOpen}
-        overlayClassName="modal-overlay"
-        className={isWidget ? 'modal-dialog widget' : 'modal-dialog'}
-        shouldReturnFocusAfterClose={focusAfterClose}
+  return (
+    <ReactModal
+      isOpen={isOpen}
+      overlayClassName="modal-overlay"
+      className={isWidget ? 'modal-dialog widget' : 'modal-dialog'}
+      shouldReturnFocusAfterClose={focusAfterClose}
+    >
+      <CloseButtonStyle
+        aria-label={i18n.t('modal.close')}
+        aria-expanded="false"
+        onClick={handleCloseWithTracking}
+        type="button"
       >
-        <CloseButtonStyle
-          aria-label={i18n.t('modal.close')}
-          aria-expanded="false"
-          onClick={handleCloseWithTracking}
-          type="button"
-        >
-          <SvgClose aria-hidden focusable="false" />
-        </CloseButtonStyle>
-        {!!contentType && modalContents[contentType]}
-      </ReactModal>
-    );
-  }
-
-  return null;
+        <SvgClose aria-hidden focusable="false" />
+      </CloseButtonStyle>
+      {!!contentType && modalContents[contentType]}
+    </ReactModal>
+  );
 };
