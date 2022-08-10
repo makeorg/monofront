@@ -1,10 +1,11 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography, color } from 'athena-design-tokens';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { GreyLinkStyle } from '@make.org/ui/elements/ButtonsElements';
 import { MiddleColumnStyle } from '@make.org/ui/elements/FlexElements';
+import { Image } from '@make.org/ui/components/Image';
 
 import { SvgArrowReturn } from '@make.org/ui/Svg/elements';
 
@@ -31,9 +32,9 @@ export const SequenceContentStyle = styled(MiddleColumnStyle)`
 `;
 
 export const SequenceAltTitleStyle = styled.h2`
-  font-family: ${MakeFonts.CircularStandardBook};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  letter-spacing: 0.14px;
+  font-family: ${MakeFonts.CircularStandardBold};
+  font-size: ${intToPx(typography.font.fontsize.XL.value)};
+  letter-spacing: 0.5px;
   align-self: flex-start;
   text-transform: none;
   margin-top: 30px;
@@ -41,11 +42,16 @@ export const SequenceAltTitleStyle = styled.h2`
 
 export const SequenceSpecialTitleStyle = styled.div`
   font-family: ${MakeFonts.CircularStandardBold};
-  font-size: ${intToPx(typography.font.fontsize.S.value)};
+  display: flex;
+  border-radius: 8px;
   letter-spacing: 0.12px;
+  padding: 5px 10px;
+  background-color: ${color.greyLighter};
+  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  margin-top: 20px;
   align-self: flex-start;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.XL.value)};
+    font-size: ${intToPx(typography.font.fontsize.S.value)};
   }
 `;
 
@@ -97,4 +103,16 @@ export const ConsultationPageLinkStyle = styled(GreyLinkStyle)<{
       margin: 40px 0;
     }
   }
+`;
+
+export const KindLabelControversyIconStyle = styled(Image)`
+  width: 20px;
+  height: 24px;
+  margin-right: 5px;
+`;
+
+export const KindLabelPopularIconStyle = styled(Image)`
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
 `;

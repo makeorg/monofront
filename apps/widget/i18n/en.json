@@ -1229,8 +1229,8 @@
     "US": "USA"
   },
   "sequence_zone": {
-    "popular_title": "Most popular solutions",
-    "controversial_title": "Most controversial solutions"
+    "popular_title": "Popular solutions",
+    "controversial_title": "Controversial solutions"
   },
   "special_final_card": {
     "title": "Thank you for reacting to the solutions !",

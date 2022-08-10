@@ -372,8 +372,8 @@
     "counter": "Élément {{current}} sur {{total}}"
   },
   "sequence_zone": {
-    "popular_title": "Les propositions les plus populaires",
-    "controversial_title": "Les propositions les plus controversées"
+    "popular_title": "Propositions populaires",
+    "controversial_title": "Propositions controversées"
   },
   "special_final_card": {
     "title": "Merci pour vos votes !",

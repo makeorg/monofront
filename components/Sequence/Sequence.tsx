@@ -6,6 +6,7 @@ import {
   getSequenceTitleBySequenceKind,
   isPushProposalCard,
   isStandardSequence,
+  isConsensusSequence,
 } from '@make.org/utils/helpers/sequence';
 import { QuestionType, SequenceType } from '@make.org/types';
 import i18n from 'i18next';
@@ -14,6 +15,8 @@ import { SequenceService } from '@make.org/utils/services/Sequence';
 import { getParticipateLink } from '@make.org/utils/helpers/url';
 import { useAppContext } from '@make.org/store';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import controversyIcon from '@make.org/assets/images/controversyIcon.png';
+import popularIcon from '@make.org/assets/images/popularIcon.png';
 import { MetaTags } from '../MetaTags';
 import { ProposalSubmit } from '../Proposal/Submit';
 import { SequenceCard } from './Cards';
@@ -25,9 +28,10 @@ import {
   ConsultationPageLinkStyle,
   SequenceContentStyle,
   SequenceAltTitleStyle,
-  SequenceSpecialIconStyle,
   SequenceSpecialTitleStyle,
   SequenceTitleStyle,
+  KindLabelPopularIconStyle,
+  KindLabelControversyIconStyle,
 } from './style';
 
 export type Props = {
@@ -45,6 +49,9 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
   const isWidget = source === 'widget';
   const isEmptySequence = sequenceSize === 0;
   const question: QuestionType = selectCurrentQuestion(state);
+  const isConsensusSequenceKind =
+    sequenceKind && isConsensusSequence(sequenceKind);
+
   const executeStartSequence = async (
     questionId: string,
     votedIds: string[],
@@ -108,7 +115,14 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
                   {question.question}
                 </SequenceAltTitleStyle>
                 <SequenceSpecialTitleStyle>
-                  <SequenceSpecialIconStyle aria-hidden focusable={false} />
+                  {isConsensusSequenceKind ? (
+                    <KindLabelPopularIconStyle src={popularIcon} alt="" />
+                  ) : (
+                    <KindLabelControversyIconStyle
+                      src={controversyIcon}
+                      alt=""
+                    />
+                  )}
                   {getSequenceTitleBySequenceKind(sequenceKind)}
                 </SequenceSpecialTitleStyle>
               </>

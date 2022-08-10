@@ -13,6 +13,9 @@ const sequencePage = {
     '/?questionSlug=:questionSlug&source=widget-test&country=:country&language=:language&widgetId=fake-widget-questionid&hash=fake-hash-id',
 };
 const sequencePopularPage = '/FR/consultation/:questionSlug/selection-popular';
+const sequenceControversialPage =
+  '/FR/consultation/:questionSlug/selection-controversial';
+
 const voteLabel = {
   "D'accord": 'agree',
   "Pas d'accord": 'disagree',
@@ -110,6 +113,17 @@ Given(
   'I am/go on/to the sequence popular page of the question {string}',
   questionSlug => {
     const page = sequencePopularPage.replace(':questionSlug', questionSlug);
+    cy.visit(page);
+  }
+);
+
+Given(
+  'I am/go on/to the sequence controversial page of the question {string}',
+  questionSlug => {
+    const page = sequenceControversialPage.replace(
+      ':questionSlug',
+      questionSlug
+    );
     cy.visit(page);
   }
 );
