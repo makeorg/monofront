@@ -47,7 +47,7 @@ export const SequenceSpecialTitleStyle = styled.div`
   letter-spacing: 0.12px;
   padding: 5px 10px;
   background-color: ${color.greyLighter};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${intToPx(typography.font.fontsize.S.value)};
   margin-top: 20px;
   align-self: flex-start;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
