@@ -1247,6 +1247,11 @@
     "SK": "Slowakei",
     "US": "USA"
   },
+  "languages": {
+    "fr": "Français",
+    "en": "English",
+    "de": "Deutsch"
+  },
   "demographics_card": {
     "disclaimer": "Deine Angaben sind anonym und ermöglichen es, die Ergebnisse möglichst repräsentativ zu gestalten.",
     "skip": "Überspringen",

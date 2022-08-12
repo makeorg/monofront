@@ -1,6 +1,5 @@
 import express, { Application, Request, Response, NextFunction } from 'express';
 import serveStatic from 'serve-static';
-import { countryLanguageMiddleware } from '@make.org/utils/middleware/countryLanguage';
 import { metricsMiddleware } from '@make.org/utils/middleware/metrics';
 import {
   redirectToCountry,
@@ -54,6 +53,7 @@ import {
   ROUTE_STATIC_CONTACT_DE,
 } from '@make.org/utils/routes';
 import { fBConversionApi } from '@make.org/utils/services/FBApiConversion';
+import { countryLanguageMiddleware } from '../middleware/countryLanguage';
 import { sequenceByKindRoute } from './ssr/sequenceByKindRoute';
 import {
   APP_IMAGES_DIR,

@@ -27,6 +27,7 @@ import { Cookie } from 'universal-cookie';
 import { getLoggerInstance } from '@make.org/utils/helpers/logger';
 import { AppContainer } from '../client/app';
 import { ViewsService } from './service/ViewsService';
+import { translationRessoucesLanguages } from '../i18n';
 import { APP_CLIENT_DIR } from './paths';
 
 deepFreeze(initialState);
@@ -152,6 +153,7 @@ export const reactRender = async (
       country,
       translations: i18n.getResourceBundle(language, TRANSLATION_NAMESPACE),
       queryParams,
+      availableTranslations: translationRessoucesLanguages,
       countriesWithConsultations,
       device: isMobileOrTablet ? MOBILE_DEVICE : DESKTOP_DEVICE,
       privacyPolicy: PRIVACY_POLICY_DATE,

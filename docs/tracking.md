@@ -671,4 +671,14 @@ Following parameters are added to all events.
     
   
 
+  - `click-confirm-language-country` Click on confirm button in switch country/language (footer)
+
+    
+    | param_name | required | description | values |
+    |-|-|-|-|
+    | `newCountry` | true | new selected country |  |
+    | `newLanguage` | true | new selected language |  |
+  
+  
+
 </auto-generated-tracking-doc>

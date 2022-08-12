@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
 import { setLanguage } from '@make.org/utils/helpers/countries';
 import { LocaleType } from '@make.org/types/enums';
-import { translationRessoucesLanguages } from '../../apps/front/i18n/index';
-import { DEFAULT_LANGUAGE } from '../constants/config';
+import { translationRessoucesLanguages } from '@make.org/front/i18n/index';
+import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 
 export const getCountryFromRequest = (req: Request): string => {
   const { country } = req.params;

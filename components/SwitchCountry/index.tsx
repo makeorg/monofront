@@ -1,21 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import i18n from 'i18next';
 import { getHomeLink } from '@make.org/utils/helpers/url';
+import {
+  setCountryCode,
+  setLanguageCode,
+} from '@make.org/store/actions/appConfig';
+import { LocaleType } from '@make.org/types/enums';
 import { compareCountriesByName } from '@make.org/utils/helpers/countries';
+import { useHistory } from 'react-router';
 import { modalClose } from '@make.org/store/actions/modal';
 import { useAppContext } from '@make.org/store';
+import { trackClickConfirmLanguageCountry } from '@make.org/utils/services/Tracking';
 import {
-  CountryLinkStyle,
   CountryListStyle,
   SelectedCountryIconStyle,
   SwitchCountryTitleStyle,
 } from './style';
 
+// @todo the file name and components name will need to be changed/updated in the ticket with styles.
+
 export const SwitchCountry: React.FC = () => {
+  const history = useHistory();
   const { dispatch, state } = useAppContext();
-  const { country, countriesWithConsultations } = state.appConfig;
+  const {
+    country,
+    countriesWithConsultations,
+    language,
+    availableTranslations,
+  } = state.appConfig;
+  const [newLanguage, setNewLanguage] = useState(language);
+  const [newCountry, setNewCountry] = useState(country);
   const countries: {
     isoCode: string;
+    name: string;
+  }[] = [];
+  const languages: {
+    isoCode: keyof typeof LocaleType;
     name: string;
   }[] = [];
 
@@ -61,6 +81,11 @@ export const SwitchCountry: React.FC = () => {
     ['US', i18n.t('countries.US')],
   ]);
 
+  const languagesTransMap = new Map([
+    ['fr', i18n.t('languages.fr')],
+    ['en', i18n.t('languages.en')],
+    ['de', i18n.t('languages.de')],
+  ]);
   countriesWithConsultations.map(countryCode =>
     countries.push({
       isoCode: countryCode,
@@ -68,14 +93,22 @@ export const SwitchCountry: React.FC = () => {
     })
   );
 
+  availableTranslations?.map(langue =>
+    languages.push({
+      isoCode: langue as keyof typeof LocaleType,
+      name: languagesTransMap.get(langue) || langue,
+    })
+  );
+
   countries.sort(compareCountriesByName);
+  languages.sort(compareCountriesByName);
 
-  const switchCountry = (countryCode: string) => {
-    if (country === countryCode) {
-      return () => null;
-    }
-
-    return dispatch(modalClose());
+  const updateCountryLanguage = () => {
+    dispatch(setCountryCode(newCountry));
+    dispatch(setLanguageCode(newLanguage));
+    trackClickConfirmLanguageCountry(newCountry, newLanguage);
+    dispatch(modalClose());
+    return history.replace(getHomeLink(newCountry));
   };
 
   return (
@@ -89,21 +122,51 @@ export const SwitchCountry: React.FC = () => {
       <CountryListStyle>
         {countries.map(item => (
           <li key={item.isoCode}>
-            <CountryLinkStyle
-              to={getHomeLink(item.isoCode)}
-              onClick={() => switchCountry(item.isoCode)}
+            <button
+              type="button"
+              onClick={() => setNewCountry(item.isoCode)}
               className={item.isoCode === country ? 'selected' : ''}
               aria-current={item.isoCode === country}
-              data-cy-link={`country_switch_${item.isoCode}`}
+              data-cy-button={`country_switch_${item.isoCode}`}
             >
               {item.name}
-              {item.isoCode === country && (
+              {item.isoCode === newCountry && (
                 <SelectedCountryIconStyle aria-hidden focusable="false" />
               )}
-            </CountryLinkStyle>
+            </button>
           </li>
         ))}
       </CountryListStyle>
+      <SwitchCountryTitleStyle id="switch_language_title">
+        Change langue
+      </SwitchCountryTitleStyle>
+      <CountryListStyle>
+        {languages.map(item => (
+          <li key={item.isoCode}>
+            <button
+              type="button"
+              onClick={() => setNewLanguage(item.isoCode)}
+              className={item.isoCode === language ? 'selected' : ''}
+              aria-current={item.isoCode === language}
+              data-cy-button={`language_switch_${item.isoCode}`}
+            >
+              {item.name}
+              {item.isoCode === newLanguage && (
+                <SelectedCountryIconStyle aria-hidden focusable="false" />
+              )}
+            </button>
+          </li>
+        ))}
+      </CountryListStyle>
+      <button
+        type="button"
+        onClick={() => {
+          updateCountryLanguage();
+        }}
+        data-cy-button="confirm-country-language-switch"
+      >
+        valider
+      </button>
     </nav>
   );
 };

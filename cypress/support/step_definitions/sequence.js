@@ -144,7 +144,9 @@ Given(
       ':questionSlug',
       questionSlug
     );
-    cy.visit(page);
+    cy.visit(page, {
+      headers: { 'Accept-language': 'fr' },
+    });
   }
 );
 

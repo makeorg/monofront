@@ -22,6 +22,7 @@ export const appConfig_state: StateConfig = {
   country: DEFAULT_COUNTRY,
   translations: {},
   queryParams: {},
+  availableTranslations: [],
   countriesWithConsultations: [],
   device: '',
   privacyPolicy: '',

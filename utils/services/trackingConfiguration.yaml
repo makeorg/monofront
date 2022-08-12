@@ -628,3 +628,12 @@ DISPLAY_NO_RESULTS_CARD:
 DISPLAY_PANEL_SIGNUP_VALIDATION:
   key: display-signup-validation
   description: Display success panel after successful register (not in proposal)
+
+CLICK_CONFIRM_LANGUAGE_COUNTRY:
+  key: click-confirm-language-country
+  description: Click on confirm button in switch country/language (footer)
+  parameters:
+    - key: newCountry
+      description: new selected country
+    - key: newLanguage
+      description: new selected language

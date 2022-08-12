@@ -9,7 +9,6 @@ import {
   scrollToTop,
 } from '@make.org/utils/helpers/styled';
 import { NAVIGATION, PANEL, IDS } from '@make.org/types/enums';
-
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { modalShowCountries } from '@make.org/store/actions/modal';
 import { isSequencePage as getIsSequencePage } from '@make.org/utils/routes';

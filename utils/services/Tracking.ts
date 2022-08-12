@@ -640,5 +640,15 @@ export const trackClickNextSignup = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_NEXT_SIGNUP());
 };
 
+// Switch country/language
+export const trackClickConfirmLanguageCountry = (
+  newCountry: string,
+  newLanguage: string
+): void => {
+  TrackingService.sendAllTrackers(
+    trackingEvent.CLICK_CONFIRM_LANGUAGE_COUNTRY({ newCountry, newLanguage })
+  );
+};
+
 /* eslint-disable import/no-default-export */
 export default TrackingService;

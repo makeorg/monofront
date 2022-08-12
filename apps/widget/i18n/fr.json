@@ -1256,6 +1256,11 @@
     "SK": "Slovaquie",
     "US": "USA"
   },
+  "languages": {
+    "fr": "Français",
+    "en": "English",
+    "de": "Deutsch"
+  },
   "maintenance": {
     "title": "Maintenance en cours",
     "subtitle": "Oops, nous sommes désolé! Make.org est actuellement en maintenance",

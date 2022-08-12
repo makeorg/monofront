@@ -6,18 +6,19 @@ import {
   QuestionResultsType,
   CountsByQuestionType,
 } from './Question';
+import { LocaleType } from './enums';
 import { ProposalType } from './Proposal';
 import { TagType } from './Tag';
 import { PersonalityType, UserType } from './User';
 import { ProposalCardType, SequenceCardType } from './Card';
 import { MODAL_TYPES } from './enums/modal_types';
-import { LocaleType } from './enums/locales';
 import { OrganisationType } from './Organisation';
 
 // Config State
 export type StateConfig = {
   readonly source: string;
   readonly language: keyof typeof LocaleType;
+  availableTranslations?: string[];
   readonly country: string;
   readonly translations: any;
   readonly countriesWithConsultations: string[];

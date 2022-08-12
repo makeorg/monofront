@@ -74,8 +74,9 @@ Feature: The Home Page
       | custom-data         | null                                                                  |
     When I click on "country-switch-modal" button
     Then I see "Changer de pays" in "country_switch_nav" container
-    And I see a "country_switch_GB" link
-    When I click on "country_switch_GB" link
+    And I see a "country_switch_GB" button
+    When I click on "country_switch_GB" button
+    And I click on "confirm-country-language-switch" button
     Then I should be redirect to "british homepage"
     And I see "Changer de pays" in "footer" container
     And event "display-page-home" should be tracked by Make with parameters values:

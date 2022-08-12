@@ -1296,5 +1296,10 @@
     "SI": "Slovénie",
     "SK": "Slovaquie",
     "US": "USA"
+  },
+  "languages": {
+    "fr": "Français",
+    "en": "English",
+    "de": "Deutsch"
   }
 }

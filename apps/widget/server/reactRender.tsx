@@ -98,9 +98,9 @@ export const reactRender = async (
   const { device } = parser(req.headers['user-agent']);
   const isMobileOrTablet = device.type === 'mobile' || device.type === 'tablet';
 
-  const avaliableLanguage = language || DEFAULT_LANGUAGE;
+  const availableLanguage = language || DEFAULT_LANGUAGE;
 
-  setLanguage(avaliableLanguage, true);
+  setLanguage(availableLanguage, true);
 
   const state: StateRoot = {
     ...initialState,
@@ -109,10 +109,10 @@ export const reactRender = async (
       ...initialState.appConfig,
       ...routeState?.appConfig,
       source: 'widget',
-      language: avaliableLanguage,
+      language: availableLanguage,
       country: country || DEFAULT_COUNTRY,
       translations: i18n.getResourceBundle(
-        avaliableLanguage,
+        availableLanguage,
         TRANSLATION_NAMESPACE
       ),
       queryParams,

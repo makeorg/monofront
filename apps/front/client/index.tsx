@@ -36,7 +36,7 @@ import { NoCookies } from './pages/Static/NoCookies';
 import { ErrorBoundary, ServiceErrorHandler } from './app/Error';
 import { LanguageListener } from './app/LanguageListener';
 import { initDevState } from './helpers/initDevState';
-import { translationRessources } from '../i18n';
+import { translationRessources, translationRessoucesLanguages } from '../i18n';
 import { initApiService } from './apiServiceInit';
 import { initTrackingParamsService } from './trackingParamsServiceInit';
 
@@ -142,6 +142,10 @@ const initApp = async (state: StateRoot) => {
         ...state.sequence.demographics,
         renderCard: !demographicsCookie,
       },
+    },
+    appConfig: {
+      ...state.appConfig,
+      availableTranslations: translationRessoucesLanguages,
     },
     customData: getAll(), // custom_data already saved in session_storage
   };
