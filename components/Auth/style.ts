@@ -136,6 +136,10 @@ export const NewWindowIconStyle = styled(SvgExternalLink)`
   &.grey .tofill {
     fill: ${color.greyDark};
   }
+  &.grey {
+    fill: ${color.greyDark};
+    color: ${color.greyDark};
+  }
 `;
 
 export const RegisterEmailTitleStyle = styled.h1`
@@ -161,6 +165,9 @@ export const LoginTitleWrapperCenterStyle = styled(LoginTitleWrapperStyle)`
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${intToPx(typography.font.fontsize.XL.value)};
     align-self: center;
+  }
+  &.red {
+    color: ${color.brandSecondary};
   }
 `;
 
@@ -224,6 +231,9 @@ export const RegisterPanelOptInWrapperStyle = styled(
 export const RegisterPanelSubTitleWrapperStyle = styled(
   LoginTitleWrapperCenterStyle
 )`
+  &.dark {
+    color: ${color.black};
+  }
   color: ${color.brandSecondary};
   margin-bottom: 35px;
 `;

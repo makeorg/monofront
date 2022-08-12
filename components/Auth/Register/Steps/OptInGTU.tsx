@@ -10,7 +10,8 @@ import { OptInCheckBox } from '@make.org/components/Form/CheckBox/OptInCheckbox'
 import { RegisterCheckBox } from '@make.org/components/Form/CheckBox/RegisterCheckbox';
 import { throttle } from '@make.org/utils/helpers/throttle';
 import { UserService } from '@make.org/utils/services/User';
-import { setRegisterStep } from '@make.org/store/actions/pendingProposal';
+import { setPanelContent } from '@make.org/store/actions/panel/';
+import { Register } from '@make.org/components/Auth/Register';
 import { ProposalBackButtonStyle } from '../../../Proposal/Submit/style';
 
 import {
@@ -56,7 +57,7 @@ export const OptInGTU: React.FC<Props> = ({
   };
 
   const handleReturn = () => {
-    dispatch(setRegisterStep(2));
+    dispatch(setPanelContent(<Register />));
   };
 
   return (
@@ -68,10 +69,10 @@ export const OptInGTU: React.FC<Props> = ({
       <ProposalBackButtonStyle onClick={handleReturn}>
         {i18n.t('common.back')}
       </ProposalBackButtonStyle>
-      <LoginTitleWrapperCenterStyle>
+      <LoginTitleWrapperCenterStyle className="red">
         {i18n.t('common.register_panel.optin_cgu_title')}
       </LoginTitleWrapperCenterStyle>
-      <RegisterPanelSubTitleWrapperStyle>
+      <RegisterPanelSubTitleWrapperStyle className="dark">
         {i18n.t('common.register_panel.optin_cgu_subtitle')}
       </RegisterPanelSubTitleWrapperStyle>
       <ConditionParagraphMarginStylePanel>

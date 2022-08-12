@@ -113,6 +113,10 @@ export const NewWindowIconStyle = styled(SvgExternalLink)`
   width: 15px;
   height: 10px;
   padding-left: 2px;
+  &.grey {
+    fill: ${color.greyDark};
+    color: ${color.greyDark};
+  }
 `;
 export const DataPolicyNewWindowLinkStyle = styled.a<{ isWidget?: boolean }>`
   ${DataPolicyLinkStyle};
