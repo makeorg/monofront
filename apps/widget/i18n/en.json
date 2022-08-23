@@ -423,7 +423,7 @@
     "registration_title": "I don’t have an account,",
     "registration_link": "let's create one.",
     "email_doesnot_exist": "Invalid login or password.",
-    "connect": "Sign up",
+    "connect": "Log in",
     "forgot_password": "Forgot password?"
   },
   "register": {
