@@ -8,5 +8,6 @@ export enum URL {
   DOTATION_FUNDS_LINK = 'https://foundation.make.org',
   NEWS_LINK = 'https://about.make.org',
   NEWS_LINK_DE = 'https://about.make.org/de/blog',
+  NEWS_LINK_GB = 'https://about.make.org/en/blog',
   PRESS_DETAILS_LINK = 'https://about.make.org/les-medias-en-parlent',
 }

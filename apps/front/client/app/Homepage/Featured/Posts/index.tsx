@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import React, { FC } from 'react';
+import { useAppContext } from '@make.org/store';
 import { HomePostType } from '@make.org/types';
 import { trackClickBlog } from '@make.org/utils/services/Tracking';
 import i18n from 'i18next';
@@ -27,11 +28,25 @@ type Props = {
 };
 
 export const FeaturedPosts: FC<Props> = ({ posts }) => {
+  const { state } = useAppContext();
+  const { country } = state.appConfig;
+  const isDE = country === 'DE';
+  const isGB = country === 'GB';
   const noFeaturedPosts = posts.length === 0;
 
   if (noFeaturedPosts) {
     return null;
   }
+
+  const blogLink = () => {
+    if (isDE) {
+      return URL.NEWS_LINK_DE;
+    }
+    if (isGB) {
+      return URL.NEWS_LINK_GB;
+    }
+    return URL.ABOUT_MAKE_LINK;
+  };
 
   return (
     <HomepageSectionStyle
@@ -78,7 +93,7 @@ export const FeaturedPosts: FC<Props> = ({ posts }) => {
       <HomepagePageInnerStyle>
         <HomepageQuestionsButtonStyle
           as="a"
-          href={URL.ABOUT_MAKE_LINK}
+          href={blogLink()}
           target="_blank"
           rel="noopener"
           onClick={() => trackClickBlog('blog list')}
