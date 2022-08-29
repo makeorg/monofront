@@ -31,7 +31,7 @@ Feature: The footer
     And I see a link "Politique de données" to "/FR/politique-donnees" in "footer" container
     And I see a link "Déclaration d'accessibilité" to "/FR/declaration-accessibilite" in "footer" container
     And I see a link "Gestion des cookies" to "/FR/cookies" in "footer" container
-    And I see "Changer de pays" in "footer" container
+    And I see "France" in "footer" container
 
 
   Scenario: English Mobile Footer is complete
@@ -41,7 +41,7 @@ Feature: The footer
     And I see a link "Terms of use" to "/GB/terms-of-use" in "footer" container
     And I see a link "Data use policy" to "/GB/data-terms" in "footer" container
     And I see a link "Use of cookies" to "/GB/cookies" in "footer" container
-    And I see "Change country" in "footer" container
+    And I see "Great Britain" in "footer" container
     And I see a link "Contact" to "/GB/contact" in "footer" container
 
   Scenario: German Mobile Footer is complete
@@ -52,5 +52,5 @@ Feature: The footer
     And I see a link "Datenschutzerklärung" to "/DE/datenschutzerklärung" in "footer" container
     And I see a link "Barrierefreiheit" to "/DE/barrierefreiheit" in "footer" container
     And I see a link "Cookie-Richtlinie" to "/DE/cookies" in "footer" container
-    And I see "Anderes Land wählen" in "footer" container
+    And I see "Deutschland" in "footer" container
     And I see a link "Kontakt" to "/DE/kontakt" in "footer" container

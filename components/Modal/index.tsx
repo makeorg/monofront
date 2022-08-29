@@ -8,13 +8,11 @@ import { CloseButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { SvgClose } from '@make.org/ui/Svg/elements';
 import { useAppContext } from '@make.org/store';
 import { MODAL_TYPES } from '@make.org/types/enums';
-import { SwitchCountry } from '../SwitchCountry';
 
 ReactModal.setAppElement('#app');
 
 const modalContents = {
   [MODAL_TYPES.MODAL_FORGOT_PASSWORD]: <PasswordForgot />,
-  [MODAL_TYPES.MODAL_COUNTRIES]: <SwitchCountry />,
   [MODAL_TYPES.MODAL_DEPARTMENT]: null,
 };
 

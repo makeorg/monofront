@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-useless-fragment */
-import React, { FC } from 'react';
-import { SvgClose, SvgLogoBlack } from '@make.org/ui/Svg/elements';
+import React, { FC, useState, useEffect } from 'react';
+import { SvgClose } from '@make.org/ui/Svg/elements';
 import i18n from 'i18next';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import {
@@ -13,13 +13,17 @@ import { scrollToTop } from '@make.org/utils/helpers/styled';
 import { URL } from '@make.org/types/enums';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { getCountryWithConsultations } from '@make.org/utils//helpers/countries';
+import { getCountriesTransMap } from '@make.org/front/client/helpers/translationsMap';
 import {
   isBrowseConsultationsPage,
   isBrowseResultsPage,
   ROUTE_WHOAREWE,
   ROUTE_PARTNERSHIP,
 } from '@make.org/utils/routes';
+import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { useAppContext } from '@make.org/store';
+import { setPanelContent } from '@make.org/store/actions/panel';
+import { SwitchCountryLanguage } from '../../SwitchCountryLanguage';
 import {
   MenuPanelStyle,
   MenuCloseTriggerStyle,
@@ -30,6 +34,9 @@ import {
   MenuInternalLinkStyle,
   MenuExternalLinkStyle,
   MenuNewWindowIconStyle,
+  MenuItemCountryLanguageLinkStyle,
+  MenuItemCountryLanguageIconStyle,
+  MenuBulletPointStyle,
 } from './style';
 
 type Props = {
@@ -39,7 +46,11 @@ type Props = {
 
 export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
   const location = useLocation();
-  const { state } = useAppContext();
+  const { state, dispatch } = useAppContext();
+  const [countriesTransMap, setCountriesTransMap] = useState(
+    getCountriesTransMap()
+  );
+
   const { country, language, countriesWithConsultations } = state.appConfig;
   const browseConsultationsLink =
     country && getBrowseConsultationsLink(country);
@@ -60,6 +71,10 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
     scrollToTop();
     toggleExpansion();
   };
+
+  useEffect(() => {
+    setCountriesTransMap(getCountriesTransMap());
+  }, [country, language]);
 
   return (
     <MenuPanelStyle
@@ -174,7 +189,18 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
             )}
           </UnstyledListStyle>
         </MenuNavStyle>
-        <SvgLogoBlack aria-hidden focusable="false" />
+        <MenuItemCountryLanguageLinkStyle
+          as={UnstyledButtonStyle}
+          onClick={() => dispatch(setPanelContent(<SwitchCountryLanguage />))}
+          data-cy-button="country-switch-nav-panel"
+          type="button"
+        >
+          <MenuItemCountryLanguageIconStyle aria-hidden focusable="false" />
+          <> </>
+          {countriesTransMap.get(country)}
+          <MenuBulletPointStyle>&nbsp;{`\u2022`}&nbsp;</MenuBulletPointStyle>
+          {language.charAt(0).toUpperCase() + language.slice(1)}
+        </MenuItemCountryLanguageLinkStyle>
       </MenuInnerStyle>
     </MenuPanelStyle>
   );

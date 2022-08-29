@@ -1,23 +1,9 @@
 import i18n from 'i18next';
-import { CountryType } from '@make.org/types';
 import { LocaleType } from '@make.org/types/enums';
 import { apiClient } from '@make.org/api/ApiService/ApiService.client';
 import { trackingParamsService } from '../services/TrackingParamsService';
 import { DateHelper } from './date';
 import { DEFAULT_LANGUAGE } from '../constants/config';
-
-export const compareCountriesByName = (
-  a: CountryType,
-  b: CountryType
-): number => {
-  if (a.name < b.name) {
-    return -1;
-  }
-  if (a.name > b.name) {
-    return 1;
-  }
-  return 0;
-};
 
 export const setCountry = (country: string): void => {
   trackingParamsService.country = country;

@@ -81,9 +81,7 @@ export const FooterItemHTMLLinkStyle = styled.a`
 
 export const FooterItemAltLinkStyle = styled(FooterItemLinkStyle)`
   color: ${color.black};
-  &.underline {
-    text-decoration: underline;
-  }
+  font-family: ${MakeFonts.CircularStandardBold};
   .tofill {
     fill: ${color.black};
   }
@@ -127,4 +125,8 @@ export const FooterCountryIconStyle = styled(SvgWorldMap)`
 
 export const FooterContactIconStyle = styled(SvgMailPlain)`
   margin-right: 10px;
+`;
+
+export const FooterBulletPointStyle = styled.span`
+  font-size: 12px;
 `;

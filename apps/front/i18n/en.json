@@ -120,8 +120,8 @@
       "onboarding": "Give your opinion on social issues that are important to you by participating in our citizen consultations.",
       "cta": "Take part in consultations",
       "cta_access": "Access to the consultation",
-      "optin_cgu_title": "Finalisez votre inscription",
-      "optin_cgu_subtitle": "en quelques clics"
+      "optin_cgu_title": "Complete your registration",
+      "optin_cgu_subtitle": "in a few clicks"
     },
     "form": {
       "hide_password": "Hide password",
@@ -1304,5 +1304,11 @@
     "submitted_thanks": "Thank you for your answer.",
     "submitted_disclaimer": "It will be anonymously used to analyse the results of the consultation.",
     "select": "Choose"
+  },
+  "language_switch": {
+    "country_title": "Your country",
+    "country_subtitle": "Your country selection defines the available consultations.",
+    "language_title": "Your language",
+    "confirm": "Confirm"
   }
 }

@@ -1,8 +1,7 @@
 /* eslint-disable react/jsx-no-useless-fragment */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import i18n from 'i18next';
 import { ColumnToRowElementStyle } from '@make.org/ui/elements/FlexElements';
-
 import { getContactPageLink } from '@make.org/utils/helpers/url';
 import {
   matchDesktopDevice,
@@ -10,10 +9,12 @@ import {
 } from '@make.org/utils/helpers/styled';
 import { NAVIGATION, PANEL, IDS } from '@make.org/types/enums';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
-import { modalShowCountries } from '@make.org/store/actions/modal';
+import { setPanelContent } from '@make.org/store/actions/panel';
 import { isSequencePage as getIsSequencePage } from '@make.org/utils/routes';
 import { useLocation } from 'react-router';
 import { useAppContext } from '@make.org/store';
+import { getCountriesTransMap } from '@make.org/front/client/helpers/translationsMap';
+import { SwitchCountryLanguage } from '../SwitchCountryLanguage';
 import { FooterExternalLink } from './ExternalLink';
 import {
   useExternalLinks,
@@ -30,6 +31,7 @@ import {
   FooterItemAltLinkStyle,
   FooterCountryIconStyle,
   FooterContactIconStyle,
+  FooterBulletPointStyle,
 } from './style';
 import { FooterInternalLink } from './InternalLink';
 
@@ -40,10 +42,17 @@ export const Footer: React.FC = () => {
   const { dispatch, state } = useAppContext();
   const location = useLocation();
   const { country, device, language } = state.appConfig;
+  const [countriesTransMap, setCountriesTransMap] = useState(
+    getCountriesTransMap()
+  );
   const isDesktop = matchDesktopDevice(device);
   const isSequencePage = getIsSequencePage(location.pathname);
   const externalLinks = useExternalLinks(country, language, isDesktop);
   const internalLinks = useInternalLinks(country, language);
+
+  useEffect(() => {
+    setCountriesTransMap(getCountriesTransMap());
+  }, [country, language]);
 
   if (!country) {
     return null;
@@ -102,15 +111,20 @@ export const Footer: React.FC = () => {
           <FooterWrapperThirdListStyle as="div">
             <FooterItemStyle as="div">
               <FooterItemAltLinkStyle
-                className="underline"
                 as={UnstyledButtonStyle}
-                onClick={() => dispatch(modalShowCountries(false))}
-                data-cy-button="country-switch-modal"
+                onClick={() =>
+                  dispatch(setPanelContent(<SwitchCountryLanguage />))
+                }
+                data-cy-button="country-language-switch-panel"
                 type="button"
               >
                 <FooterCountryIconStyle aria-hidden focusable="false" />
                 <> </>
-                {i18n.t('main_footer.country')}
+                {countriesTransMap.get(country)}
+                <FooterBulletPointStyle>
+                  &nbsp;{`\u2022`}&nbsp;
+                </FooterBulletPointStyle>
+                {language.charAt(0).toUpperCase() + language.slice(1)}
               </FooterItemAltLinkStyle>
             </FooterItemStyle>
           </FooterWrapperThirdListStyle>

@@ -4,7 +4,7 @@ import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { SpaceBetweenColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Link } from 'react-router-dom';
-import { SvgExternalLink } from '@make.org/ui/Svg/elements';
+import { SvgExternalLink, SvgWorldMap } from '@make.org/ui/Svg/elements';
 import { SEARCH } from '@make.org/types/enums';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
@@ -40,6 +40,7 @@ export const MenuPanelStyle = styled.div`
   background-color: #f2f2f2; // custom color to avoid rbga value
   box-shadow: 0px 0px 20px ${ShadowColors.BlackZeroEightOpacity};
   transition: 0.5s ease-in left;
+  overflow: auto;
   &.expanded {
     left: 0;
   }
@@ -160,4 +161,21 @@ export const DesktopMenuInternalLinkStyle = styled(Link)`
 
 export const DesktopMenuExternalLinkStyle = styled.a`
   ${DesktopLinkStyle};
+`;
+
+export const MenuItemCountryLanguageLinkStyle = styled(Link)`
+  display: inline-flex;
+  align-items: center;
+  font-family: ${MakeFonts.CircularStandardBold};
+  text-decoration: none;
+  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  color: ${color.black};
+`;
+
+export const MenuItemCountryLanguageIconStyle = styled(SvgWorldMap)`
+  margin-right: 10px;
+`;
+
+export const MenuBulletPointStyle = styled.span`
+  font-size: 12px;
 `;

@@ -1301,5 +1301,11 @@
     "fr": "Français",
     "en": "English",
     "de": "Deutsch"
+  },
+  "language_switch": {
+    "country_title": "Votre pays",
+    "country_subtitle": "Le choix de votre pays détermine les consultations disponibles.",
+    "language_title": "Votre langue",
+    "confirm": "Confirmer"
   }
 }

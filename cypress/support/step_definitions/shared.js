@@ -401,3 +401,17 @@ When(
 Then('The mouse is focused in {string} field', field => {
   cy.focused().should('have.attr', 'id').and('eq', field);
 });
+
+// I see radio
+Then('I see (a )(the ){string} radio', buttonName => {
+  cy.get(
+    `input[data-cy-radio=${getIdentifierButtonByName(buttonName)}]`
+  ).should('exist');
+});
+
+When('I click on {string} radio', buttonName => {
+  // eslint-disable-next-line cypress/no-unnecessary-waiting
+  cy.get(`input[data-cy-radio=${getIdentifierButtonByName(buttonName)}]`)
+    .wait(1000) // wait is needed here because cypress needs sometimes more time to find element
+    .click({ force: true }); // @todo: change this line to not force click on hidden elements
+});

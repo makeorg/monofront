@@ -14,7 +14,7 @@ Feature: Accessibility
   When I click on "mobile-header-close-menu" button
   And I click on "mobile-search" button
   Then html page should be valid
-  And I click on "country-switch-modal" button
+  And I click on "country-language-switch-panel" button
   Then html page should be valid
 
   Scenario: Check HTML validity of sequence page

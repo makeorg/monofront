@@ -50,7 +50,7 @@ Feature: The Home Page
   Scenario: Country switching redirect to Homepage
     Given I monitor API "postTracking" requests
     When I go to "france homepage"    
-    Then I see "Changer de pays" in "footer" container
+    Then I see "France" in "footer" container
     And event "display-page-home" should be tracked by Make with parameters values:
       | name                | value                                                                 |
       | eventType           | trackCustom                                                           |
@@ -72,13 +72,13 @@ Feature: The Home Page
       | question-id         | null                                                                  |
       | referrer            | http://localhost:9009/__/                                             |
       | custom-data         | null                                                                  |
-    When I click on "country-switch-modal" button
-    Then I see "Changer de pays" in "country_switch_nav" container
-    And I see a "country_switch_GB" button
-    When I click on "country_switch_GB" button
+    When I click on "country-language-switch-panel" button
+    Then I see "Votre pays" in "country_switch_nav" container
+    And I see a "country_switch_GB" radio
+    When I click on "country_switch_GB" radio
     And I click on "confirm-country-language-switch" button
     Then I should be redirect to "british homepage"
-    And I see "Changer de pays" in "footer" container
+    And I see "Grande Bretagne" in "footer" container
     And event "display-page-home" should be tracked by Make with parameters values:
       | name                | value                                                                 |
       | eventType           | trackCustom                                                           |

@@ -6,7 +6,6 @@ import {
   MODAL_SHOW_SESSION_EXPIRATION,
   MODAL_CLOSE_SESSION_EXPIRATION,
   MODAL_SHOW_DEPARTMENT_FORM,
-  MODAL_SHOW_COUNTRIES,
   MODAL_CLOSE_COOKIES,
   MODAL_SHOW_COOKIES,
   MODAL_SHOW_DATAPOLICY_LOGIN,
@@ -76,13 +75,6 @@ export const modal_reducer: Reducer = (
         ...state,
         isOpen: true,
         contentType: MODAL_TYPES.MODAL_DEPARTMENT,
-      };
-    case MODAL_SHOW_COUNTRIES:
-      return {
-        ...state,
-        isOpen: true,
-        contentType: MODAL_TYPES.MODAL_COUNTRIES,
-        focusAfterClose: action.payload.focusAfterClose,
       };
     case MODAL_CLOSE:
       return {

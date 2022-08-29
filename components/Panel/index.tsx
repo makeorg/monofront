@@ -79,18 +79,20 @@ export const Panel: React.FC = () => {
       {isExpanded && (
         <>
           <PanelOverlayStyle
+            type="button"
             onClick={handleCloseAndRemove}
             className={isExpanded && 'expanded'}
             aria-label={i18n.t('common.close_panel')}
             data-cy-button="close-panel-overlay"
           />
           <PanelCloseButtonStyle
+            type="button"
             onClick={handleCloseAndRemove}
             className={className}
             aria-label={i18n.t('common.close_panel')}
             data-cy-button="close-panel"
           >
-            <PanelCloseIconStyle aria-hidden />
+            <PanelCloseIconStyle aria-hidden focusable="false" />
           </PanelCloseButtonStyle>
         </>
       )}
