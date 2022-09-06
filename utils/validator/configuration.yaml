@@ -1,0 +1,9 @@
+---
+# configuration list
+
+#regex validation for postal code in forms for supported countries
+postCode :
+ FR: ^(?:[0-8]\d|9[0-8])\d{3}$
+ DE: ^\d{5}$
+
+ 

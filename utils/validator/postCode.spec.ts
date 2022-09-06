@@ -1,9 +1,5 @@
-import {
-  isSupportedCountry,
-  regexByCountry,
-  html5regexByCountry,
-  validate,
-} from './postCode';
+import { isSupportedCountry } from './postCode';
+import configuration from './configuration.yaml';
 
 describe('Post code validator', () => {
   describe('language support', () => {
@@ -17,28 +13,27 @@ describe('Post code validator', () => {
       expect(isSupportedCountry('ZZ')).toBeFalsy();
     });
   });
-  describe('regex validation', () => {
-    it('get regex FR', () => {
-      expect(regexByCountry('FR')).toEqual(/^(?:[0-8]\d|9[0-8])\d{3}$/);
+
+  describe('check regex from yaml', () => {
+    const check = (postalCode: string, country: string) => {
+      const reg = new RegExp(configuration.postCode[country]);
+      return reg.test(postalCode);
+    };
+
+    it('check post code FR ok', () => {
+      expect(check('38460', 'FR')).toBeTruthy();
     });
-    it('get html5 regex FR', () => {
-      expect(html5regexByCountry('FR')).toEqual('^(?:[0-8]\\d|9[0-8])\\d{3}$');
+    it('check post code FR ko', () => {
+      expect(check('99060', 'FR')).toBeFalsy();
     });
-  });
-  describe('validate post codes', () => {
-    it('validate post code FR ok', () => {
-      expect(validate('38460', 'FR')).toBeTruthy();
+    it('check post code with spaces for country FR ko', () => {
+      expect(check('38 460', 'FR')).toBeFalsy();
     });
-    it('validate post code FR ko', () => {
-      expect(validate('99060', 'FR')).toBeFalsy();
+    it('check post code DE ok', () => {
+      expect(check('56734', 'DE')).toBeTruthy();
     });
-    it('validate post code with spaces for country FR ko', () => {
-      expect(validate('38 460', 'FR')).toBeFalsy();
-    });
-    it('validate post code for country ZZ throws exception', () => {
-      expect(() => validate('1111', 'ZZ')).toThrowError(
-        'Country code not supported: Z'
-      );
+    it('check post code DE ko', () => {
+      expect(check('5673', 'DE')).toBeFalsy();
     });
   });
 });

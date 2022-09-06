@@ -10,6 +10,7 @@ const config: Config.InitialOptions = {
   transform: {
     '^.+\\.(ts|tsx|js)$': 'ts-jest',
     '^.+\\.ya?ml$': 'yaml-jest',
+    '\\.yaml$': 'jest-transform-yaml',
   },
   snapshotSerializers: [require.resolve('snapshot-diff/serializer.js')],
   setupFilesAfterEnv: ['<rootDir>/test/setup.tsx'],

@@ -25,7 +25,7 @@ type Props = {
   /** Label of the input */
   label: string;
   /** Custom validation pattern */
-  pattern: string;
+  pattern: string | undefined;
   /** Mehtod called on change event */
   handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
   /** Object containing field errors */
