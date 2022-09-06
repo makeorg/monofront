@@ -140,7 +140,7 @@ export const SwitchCountryLanguage: React.FC = () => {
       onSubmit={updateCountryLanguage}
       id={FORM.COUNTRY_LANGUAGE_SWITCH_FORMNAME}
       aria-labelledby="switch_country_title"
-      data-cy-container="country_switch_nav"
+      data-cy-container="country_language_switch_nav"
     >
       <div>
         <SwitchCountryLanguageTitleStyle>

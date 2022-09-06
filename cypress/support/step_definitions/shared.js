@@ -415,3 +415,19 @@ When('I click on {string} radio', buttonName => {
     .wait(1000) // wait is needed here because cypress needs sometimes more time to find element
     .click({ force: true }); // @todo: change this line to not force click on hidden elements
 });
+
+When(
+  'I click on {string} and {string} radios',
+  (firstButtonName, secondButtonName) => {
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.get(`input[data-cy-radio=${getIdentifierButtonByName(firstButtonName)}]`)
+      .wait(1000) // wait is needed here because cypress needs sometimes more time to find element
+      .click({ force: true }); // @todo: change this line to not force click on hidden elements
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.get(
+      `input[data-cy-radio=${getIdentifierButtonByName(secondButtonName)}]`
+    )
+      .wait(1000) // wait is needed here because cypress needs sometimes more time to find element
+      .click({ force: true }); // @todo: change this line to not force click on hidden elements
+  }
+);

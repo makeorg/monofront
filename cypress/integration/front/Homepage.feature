@@ -73,7 +73,7 @@ Feature: The Home Page
       | referrer            | http://localhost:9009/__/                                             |
       | custom-data         | null                                                                  |
     When I click on "country-language-switch-panel" button
-    Then I see "Votre pays" in "country_switch_nav" container
+    Then I see "Votre pays" in "country_language_switch_nav" container
     And I see a "country_switch_GB" radio
     When I click on "country_switch_GB" radio
     And I click on "confirm-country-language-switch" button
@@ -96,6 +96,113 @@ Feature: The Home Page
       | source              | core                                                                  |
       | location            | homepage                                                              |
       | language            | fr                                                                    |
+      | country             | GB                                                                    |
+      | question-id         | null                                                                  |
+      | referrer            | http://localhost:9009/__/                                             |
+      | custom-data         | null                                                                  |
+
+  Scenario: Language switching
+    Given I monitor API "postTracking" requests
+    When I go to "france homepage"    
+    Then I see "France" in "footer" container
+    And event "display-page-home" should be tracked by Make with parameters values:
+      | name                | value                                                                 |
+      | eventType           | trackCustom                                                           |
+      | country             | FR                                                                    |
+      | language            | fr                                                                    |
+      | source              | core                                                                  |
+      | location            | homepage                                                              |
+      | questionId          |                                                                       |
+      | questionSlug        |                                                                       |
+      | referrer            | http://localhost:9009/__/                                             |
+      | url                 | http://localhost:9009/FR                                              |
+    And some make data header should be sent to "postTracking":
+      | name                | value                                                                 |
+      | app-name            | main-front                                                            |
+      | source              | core                                                                  |
+      | location            | homepage                                                              |
+      | language            | fr                                                                    |
+      | country             | FR                                                                    |
+      | question-id         | null                                                                  |
+      | referrer            | http://localhost:9009/__/                                             |
+      | custom-data         | null                                                                  |
+    When I click on "country-language-switch-panel" button
+    Then I see "Votre pays" in "country_language_switch_nav" container
+    And I see a "language_switch_en" radio
+    When I click on "language_switch_en" radio
+    And I click on "confirm-country-language-switch" button
+    And I see "France" in "footer" container
+    And event "display-page-home" should be tracked by Make with parameters values:
+      | name                | value                                                                 |
+      | eventType           | trackCustom                                                           |
+      | country             | FR                                                                    |
+      | language            | en                                                                    |
+      | source              | core                                                                  |
+      | location            | homepage                                                              |
+      | questionId          |                                                                       |
+      | questionSlug        |                                                                       |
+      | referrer            | http://localhost:9009/__/                                             |
+      | url                 | http://localhost:9009/FR                                              |
+    And some make data header should be sent to "postTracking":
+      | name                | value                                                                 |
+      | app-name            | main-front                                                            |
+      | source              | core                                                                  |
+      | location            | homepage                                                              |
+      | language            | en                                                                    |
+      | country             | FR                                                                    |
+      | question-id         | null                                                                  |
+      | referrer            | http://localhost:9009/__/                                             |
+      | custom-data         | null                                                                  |
+
+  Scenario: Language and country switching redirect to Homepage
+    Given I monitor API "postTracking" requests
+    When I go to "france homepage"    
+    Then I see "France" in "footer" container
+    And event "display-page-home" should be tracked by Make with parameters values:
+      | name                | value                                                                 |
+      | eventType           | trackCustom                                                           |
+      | country             | FR                                                                    |
+      | language            | fr                                                                    |
+      | source              | core                                                                  |
+      | location            | homepage                                                              |
+      | questionId          |                                                                       |
+      | questionSlug        |                                                                       |
+      | referrer            | http://localhost:9009/__/                                             |
+      | url                 | http://localhost:9009/FR                                              |
+    And some make data header should be sent to "postTracking":
+      | name                | value                                                                 |
+      | app-name            | main-front                                                            |
+      | source              | core                                                                  |
+      | location            | homepage                                                              |
+      | language            | fr                                                                    |
+      | country             | FR                                                                    |
+      | question-id         | null                                                                  |
+      | referrer            | http://localhost:9009/__/                                             |
+      | custom-data         | null                                                                  |
+    When I click on "country-language-switch-panel" button
+    Then I see "Votre pays" in "country_language_switch_nav" container
+    And I see a "language_switch_en" radio
+    And I see a "country_switch_GB" radio
+    When I click on "language_switch_en" and "country_switch_GB" radios
+    And I click on "confirm-country-language-switch" button
+    And I see "Great Britain" in "footer" container
+    And event "display-page-home" should be tracked by Make with parameters values:
+      | name                | value                                                                 |
+      | eventType           | trackCustom                                                           |
+      | country             | GB                                                                    |
+      | language            | en                                                                    |
+      | source              | core                                                                  |
+      | location            | homepage                                                              |
+      | questionId          |                                                                       |
+      | questionSlug        |                                                                       |
+      | referrer            | http://localhost:9009/__/                                             |
+      | url                 | http://localhost:9009/GB                                              |
+    And some make data header should be sent to "postTracking":
+      | name                | value                                                                 |
+      | app-name            | main-front                                                            |
+      | source              | core                                                                  |
+      | location            | homepage                                                              |
+      | language            | en                                                                    |
       | country             | GB                                                                    |
       | question-id         | null                                                                  |
       | referrer            | http://localhost:9009/__/                                             |
