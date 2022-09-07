@@ -11,11 +11,13 @@ beforeEach(() => {
   cy.setCookie(
     'make-cookie-preferences',
     JSON.stringify({
-      facebook_tracking: true,
-      twitter_tracking: true,
-      facebook_sharing: true,
-      twitter_sharing: true,
-      linkedin_sharing: true,
+      tracking_consent: {
+        facebook_tracking: true,
+        twitter_tracking: true,
+        facebook_sharing: true,
+        twitter_sharing: true,
+        linkedin_sharing: true,
+      },
     })
   );
 });

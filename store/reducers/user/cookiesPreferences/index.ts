@@ -10,11 +10,13 @@ import {
 } from '../../../actionTypes';
 
 export const cookiesPreferences_state: StateUserCookiesPreferences = {
-  facebook_tracking: false,
-  twitter_tracking: false,
-  facebook_sharing: false,
-  twitter_sharing: false,
-  linkedin_sharing: false,
+  tracking_consent: {
+    facebook_tracking: false,
+    twitter_tracking: false,
+    facebook_sharing: false,
+    twitter_sharing: false,
+    linkedin_sharing: false,
+  },
 };
 
 export const cookiesPreferences_reducer: Reducer = (
@@ -31,20 +33,24 @@ export const cookiesPreferences_reducer: Reducer = (
     case ACCEPT_ALL_COOKIES_PREFERENCES:
       return {
         ...state,
-        facebook_tracking: true,
-        twitter_tracking: true,
-        facebook_sharing: true,
-        twitter_sharing: true,
-        linkedin_sharing: true,
+        tracking_consent: {
+          facebook_tracking: true,
+          twitter_tracking: true,
+          facebook_sharing: true,
+          twitter_sharing: true,
+          linkedin_sharing: true,
+        },
       };
     case REJECT_ALL_COOKIES_PREFERENCES:
       return {
         ...state,
-        facebook_tracking: false,
-        twitter_tracking: false,
-        facebook_sharing: false,
-        twitter_sharing: false,
-        linkedin_sharing: false,
+        tracking_consent: {
+          facebook_tracking: false,
+          twitter_tracking: false,
+          facebook_sharing: false,
+          twitter_sharing: false,
+          linkedin_sharing: false,
+        },
       };
 
     default:

@@ -2,7 +2,7 @@ import { FacebookTracking } from '@make.org/utils/services/Trackers/FacebookTrac
 import { StateUserCookiesPreferences } from '@make.org/types';
 import Cookies from 'universal-cookie';
 import { MixpanelTracking } from '@make.org/utils/services/Trackers/MixpanelTracking';
-import { COOKIE } from '@make.org/types/enums';
+import { COOKIE, LocaleType } from '@make.org/types/enums';
 import { TwitterUniversalTag } from '../services/Trackers/TwitterTracking';
 import { TWITTER_SCRIPT, twttr } from '../services/Trackers/twttr.js';
 
@@ -14,13 +14,43 @@ nextYear.setFullYear(today.getFullYear() + 1);
 nextMonth.setMonth(today.getMonth() + 1);
 const cookies = new Cookies();
 
-export const setPreferencesCookie = (
+export const getTrackingConsentFromPreferencesCookie =
+  (): StateUserCookiesPreferences =>
+    cookies.get(COOKIE.USER_PREFERENCES)?.tracking_consent;
+
+export const getLanguageFromPreferencesCookie = (): keyof typeof LocaleType =>
+  cookies.get(COOKIE.USER_PREFERENCES)?.language;
+
+export const setTrackingConsentFromPreferencesCookie = (
   preferences: StateUserCookiesPreferences
 ): void => {
-  cookies.set(COOKIE.USER_PREFERENCES, JSON.stringify(preferences), {
-    path: '/',
-    expires: nextYear,
-  });
+  cookies.set(
+    COOKIE.USER_PREFERENCES,
+    JSON.stringify({
+      tracking_consent: preferences.tracking_consent,
+      language: getLanguageFromPreferencesCookie(),
+    }),
+    {
+      path: '/',
+      expires: nextYear,
+    }
+  );
+};
+
+export const setLanguageFromPreferencesCookie = (
+  languageCookie: keyof typeof LocaleType
+): void => {
+  cookies.set(
+    COOKIE.USER_PREFERENCES,
+    JSON.stringify({
+      tracking_consent: getTrackingConsentFromPreferencesCookie(),
+      language: languageCookie,
+    }),
+    {
+      path: '/',
+      expires: nextYear,
+    }
+  );
 };
 
 export const initTrackersFromPreferences = (
@@ -35,7 +65,8 @@ export const initTrackersFromPreferences = (
   twitterScript.src = TWITTER_SCRIPT;
 
   const shouldInitFbPixel =
-    cookiePreferences?.facebook_tracking && !FacebookTracking.isInitialized();
+    cookiePreferences?.tracking_consent?.facebook_tracking &&
+    !FacebookTracking.isInitialized();
 
   if (shouldInitFbPixel && visitorId) {
     FacebookTracking.init(visitorId);
@@ -47,7 +78,10 @@ export const initTrackersFromPreferences = (
     FacebookTracking.pageView();
   }
 
-  if (cookiePreferences?.twitter_tracking && !twttr.initialized()) {
+  if (
+    cookiePreferences?.tracking_consent?.twitter_tracking &&
+    !twttr.initialized()
+  ) {
     if (body) {
       body.appendChild(twitterScript);
     }
@@ -63,9 +97,11 @@ export const removeTrackersFromPreferences = (
   cookiePreferences: StateUserCookiesPreferences
 ): void => {
   const disableFBTacking =
-    !cookiePreferences.facebook_tracking && FacebookTracking.isInitialized();
+    !cookiePreferences.tracking_consent?.facebook_tracking &&
+    FacebookTracking.isInitialized();
   const disableTWTracking =
-    !cookiePreferences.twitter_tracking && twttr.initialized();
+    !cookiePreferences.tracking_consent?.twitter_tracking &&
+    twttr.initialized();
 
   if (disableFBTacking || disableTWTracking) {
     window.location.reload();

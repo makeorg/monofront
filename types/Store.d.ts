@@ -112,11 +112,13 @@ export type StateUserPasswordRecovery = {
 };
 
 export type StateUserCookiesPreferences = {
-  readonly facebook_tracking: boolean;
-  readonly twitter_tracking: boolean;
-  readonly facebook_sharing: boolean;
-  readonly twitter_sharing: boolean;
-  readonly linkedin_sharing: boolean;
+  tracking_consent: {
+    facebook_tracking: boolean;
+    twitter_tracking: boolean;
+    facebook_sharing: boolean;
+    twitter_sharing: boolean;
+    linkedin_sharing: boolean;
+  };
 };
 
 // User State

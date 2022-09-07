@@ -11,10 +11,11 @@ import {
   trackClickModalCookieRefuse,
 } from '@make.org/utils/services/Tracking';
 import {
-  setPreferencesCookie,
   initTrackersFromPreferences,
   removeTrackersFromPreferences,
-} from '@make.org/utils/helpers/cookies';
+  setTrackingConsentFromPreferencesCookie,
+  getTrackingConsentFromPreferencesCookie,
+} from '@make.org/utils/helpers/clientCookies';
 import {
   acceptAllCookiesPreferences,
   rejectAllCookiesPreferences,
@@ -25,10 +26,7 @@ import {
   ENABLE_MIXPANEL,
   REJECT_ALL_PREFRENCES,
 } from '@make.org/utils/constants/cookies';
-import { StateUserCookiesPreferences } from '@make.org/types';
-import Cookies from 'universal-cookie';
 import { useAppContext } from '@make.org/store';
-import { COOKIE } from '@make.org/types/enums';
 import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
 import {
   CookieModalButtonWithLinkStyle,
@@ -61,16 +59,13 @@ export const CookieModal: React.FC = () => {
   const { showCookies } = state.modal;
   const { cookiesPreferences } = state.user;
   const [customization, enableCustomization] = useState(false);
-  const cookies = new Cookies();
-  const preferencesCookie: StateUserCookiesPreferences = cookies.get(
-    COOKIE.USER_PREFERENCES
-  );
+  const preferencesCookie = getTrackingConsentFromPreferencesCookie();
 
   const handleAcceptAll = async () => {
     dispatch(acceptAllCookiesPreferences());
     trackClickModalCookieSave('cookies-accept-all');
     dispatch(modalCloseCookies());
-    setPreferencesCookie(ACCEPT_ALL_PREFERENCES);
+    setTrackingConsentFromPreferencesCookie(ACCEPT_ALL_PREFERENCES);
     initTrackersFromPreferences(
       ACCEPT_ALL_PREFERENCES,
       trackingParamsService.visitorId,
@@ -82,7 +77,7 @@ export const CookieModal: React.FC = () => {
     dispatch(rejectAllCookiesPreferences());
     trackClickModalCookieRefuse();
     dispatch(modalCloseCookies());
-    setPreferencesCookie(REJECT_ALL_PREFRENCES);
+    setTrackingConsentFromPreferencesCookie(REJECT_ALL_PREFRENCES);
     removeTrackersFromPreferences(REJECT_ALL_PREFRENCES);
   };
 
@@ -98,7 +93,7 @@ export const CookieModal: React.FC = () => {
   const handlePreferences = () => {
     trackClickModalCookieSave('cookies-accept-preferences');
     dispatch(modalCloseCookies());
-    setPreferencesCookie(cookiesPreferences);
+    setTrackingConsentFromPreferencesCookie(cookiesPreferences);
     removeTrackersFromPreferences(cookiesPreferences);
     initTrackersFromPreferences(
       cookiesPreferences,

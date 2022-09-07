@@ -17,7 +17,7 @@ import {
 } from './style';
 
 type Props = {
-  value: keyof StateUserCookiesPreferences;
+  value: keyof StateUserCookiesPreferences['tracking_consent'];
   description: string;
   // eslint-disable-next-line react/require-default-props
   onCookiePage?: boolean;
@@ -35,7 +35,9 @@ export const CookieSwitch: React.FC<Props> = ({
 
   useEffect(() => {
     if (cookies) {
-      const preferencesFromCookie = cookies.get(COOKIE.USER_PREFERENCES);
+      const preferencesFromCookie = cookies.get(
+        COOKIE.USER_PREFERENCES
+      )?.tracking_consent;
 
       if (preferencesFromCookie) {
         setPreferenceValue(preferencesFromCookie[value]);
@@ -56,8 +58,10 @@ export const CookieSwitch: React.FC<Props> = ({
             onEnabling={() => {
               dispatch(
                 setCookiesPreferencesInApp({
-                  ...cookiesPreferences,
-                  [value]: true,
+                  tracking_consent: {
+                    ...cookiesPreferences.tracking_consent,
+                    [value]: true,
+                  },
                 })
               );
               trackClickCookieSwitchAccept(value);
@@ -65,8 +69,10 @@ export const CookieSwitch: React.FC<Props> = ({
             onDisabling={() => {
               dispatch(
                 setCookiesPreferencesInApp({
-                  ...cookiesPreferences,
-                  [value]: false,
+                  tracking_consent: {
+                    ...cookiesPreferences.tracking_consent,
+                    [value]: false,
+                  },
                 })
               );
               trackClickCookieSwitchRefuse(value);

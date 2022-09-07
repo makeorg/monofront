@@ -6,11 +6,13 @@ Then('I have already accepted the cookie policy', () => {
   cy.setCookie(
     'make-cookie-preferences',
     JSON.stringify({
-      facebook_tracking: true,
-      twitter_tracking: true,
-      facebook_sharing: true,
-      twitter_sharing: true,
-      linkedin_sharing: true,
+      tracking_consent: {
+        facebook_tracking: true,
+        twitter_tracking: true,
+        facebook_sharing: true,
+        twitter_sharing: true,
+        linkedin_sharing: true,
+      },
     })
   );
 });
@@ -20,11 +22,13 @@ Then('I accept the cookie policy', () => {
     'have.property',
     'value',
     JSON.stringify({
-      facebook_tracking: true,
-      twitter_tracking: true,
-      facebook_sharing: true,
-      twitter_sharing: true,
-      linkedin_sharing: true,
+      tracking_consent: {
+        facebook_tracking: true,
+        twitter_tracking: true,
+        facebook_sharing: true,
+        twitter_sharing: true,
+        linkedin_sharing: true,
+      },
     })
   );
 });

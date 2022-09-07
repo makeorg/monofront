@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from 'react';
 import { Sequence } from '@make.org/components/Sequence/Sequence';
 import { useAppContext } from '@make.org/store';
-import { setDemographicsCookie } from '@make.org/utils/helpers/cookies';
+import { setDemographicsCookie } from '@make.org/utils/helpers/clientCookies';
 
 type Props = {
   kind: 'standard' | 'controversy' | 'consensus';

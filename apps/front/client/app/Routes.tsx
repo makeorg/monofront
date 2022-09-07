@@ -128,7 +128,7 @@ export const Routes: FC = () => {
   usePageBackgoundColor(pathname);
 
   React.useEffect(() => {
-    if (preferencesCookies?.twitter_tracking) {
+    if (preferencesCookies?.tracking_consent?.twitter_tracking) {
       TwitterUniversalTag.pageView();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

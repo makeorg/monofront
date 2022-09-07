@@ -19,8 +19,8 @@ import { trackClickModalCookieSave } from '@make.org/utils/services/Tracking';
 import {
   initTrackersFromPreferences,
   removeTrackersFromPreferences,
-  setPreferencesCookie,
-} from '@make.org/utils/helpers/cookies';
+  setTrackingConsentFromPreferencesCookie,
+} from '@make.org/utils/helpers/clientCookies';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { MetaTags } from '@make.org/components/MetaTags';
 import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
@@ -90,7 +90,7 @@ export const CookiesPage: FC = () => {
 
   const handlePreferences = () => {
     trackClickModalCookieSave('cookies-accept-preferences');
-    setPreferencesCookie(cookiesPreferences);
+    setTrackingConsentFromPreferencesCookie(cookiesPreferences);
     removeTrackersFromPreferences(cookiesPreferences);
     initTrackersFromPreferences(
       cookiesPreferences,

@@ -1,12 +1,13 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router';
 import { setLanguageCode } from '@make.org/store/actions/appConfig';
+import { getLanguageFromPreferencesCookie } from '@make.org/utils/helpers/clientCookies';
 import { useAppContext } from '@make.org/store';
 
 export const LanguageListener = (): null => {
   const { dispatch } = useAppContext();
   const query = new URLSearchParams(useLocation().search);
-  const language = query.get('lang');
+  const language = getLanguageFromPreferencesCookie() || query.get('lang');
 
   useEffect(
     () => {

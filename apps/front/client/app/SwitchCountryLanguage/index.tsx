@@ -11,6 +11,7 @@ import { useAppContext } from '@make.org/store';
 import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { trackClickConfirmLanguageCountry } from '@make.org/utils/services/Tracking';
+import { setLanguageFromPreferencesCookie } from '@make.org/utils/helpers/clientCookies';
 import {
   getCountriesTransMap,
   getLanguagesTransMap,
@@ -98,6 +99,7 @@ export const SwitchCountryLanguage: React.FC = () => {
   );
 
   const updateCountryLanguage = () => {
+    setLanguageFromPreferencesCookie(newLanguage);
     dispatch(setCountryCode(newCountry));
     dispatch(setLanguageCode(newLanguage));
     trackClickConfirmLanguageCountry(newCountry, newLanguage);
