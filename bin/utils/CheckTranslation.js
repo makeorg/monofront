@@ -190,8 +190,8 @@ export const analyse = async (translationFilesDir, mainLanguage = 'fr') => {
   const mainTransObj = translations.find(
     transObj => transObj.language === mainLanguage
   );
-  if (!mainTransObj) {
-    throw new Error(`Main translation "${mainLanguage}" not found`);
+  if (mainTransObj === undefined) {
+    throw new Error(`Translation for language "${language}" not found. Available languages: "${translations.map(item => item.language).toString()}"`);
   }
   const allTransObj = translations.filter(
     transObj => transObj.language !== mainLanguage
@@ -223,6 +223,9 @@ export const listUnusedKeys = async (translationFilesDir, language = 'fr', appDi
   const mainTransObj = translations.find(
     transObj => transObj.language === language
   );
+  if (mainTransObj === undefined) {
+    throw new Error(`Translation for language "${language}" not found. Available languages: "${translations.map(item => item.language).toString()}"`);
+  }
 
   const referenceKeys = allKeys(mainTransObj.trans);
   const deduplicatedKeys = getDeduplicatedKeys(referenceKeys);
@@ -287,6 +290,9 @@ export const listOrphanKeys = async (translationFilesDir, language = 'fr', appDi
   const mainTransObj = translations.find(
     transObj => transObj.language === language
   );
+  if (mainTransObj === undefined) {
+    throw new Error(`Translation for language "${language}" not found. Available languages: "${translations.map(item => item.language).toString()}"`);
+  }
 
   const referenceKeys = allKeys(mainTransObj.trans);
   const deduplicatedKeys = getDeduplicatedKeys(referenceKeys);

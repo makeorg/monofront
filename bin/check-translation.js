@@ -2,57 +2,13 @@
 
 const path = require('path');
 
-
-
-/**
-const { argv } = require('yargs')
-  .usage('Usage: $0 <command> [options]')
-  .command('check')
-  .example(
-    '$0 check -d ./translationDir -l ',
-    'Check translation files in dir translationDir'
-  )
-  .alias('d', 'directory')
-  .nargs('d', 1)
-  .describe('d', 'Translation files directory')
-  .alias('l', 'reference language')
-  .nargs('l', 1)
-  .describe('l', 'Reference language')
-  .option('fix', {
-    describe: 'Fix invalid translation files',
-    default: false,
-    type: 'boolean',
-  })
-  .demandOption(['d', 'l'])
-  .command('list-unused')
-  .example(
-    '$0 check -d ./translationDir -l ',
-    'List unused translation keys'
-  )
-  .alias('d', 'directory')
-  .nargs('d', 1)
-  .describe('d', 'Translation files directory')
-  .alias('l', 'reference language')
-  .nargs('l', 1)
-  .describe('l', 'Reference language')
-  .demandOption(['d', 'l'])
-  .help('h')
-  .alias('h', 'help');
-
-*/
-
 const { getNotifierInstance } = require('./utils/notification.js');
-
 const notifier = getNotifierInstance();
-
-
-
 const checkTranslation = require('../dist/lib/CheckTranslation.js');
 
 const level1 = '\n\r>>> ';
 const level2 = '    ';
 const level3 = '    > ';
-
 
 const check = argv => {
   const translationDir = path.resolve(process.cwd(), argv.d);
@@ -158,6 +114,12 @@ const listUnused = argv => {
 
 
       process.exit(0);
+  }).catch ((e) => {
+    notifier
+    .add('', e.stack || e.message)
+    .notifyError();
+
+    process.exit(1);
   });
 }
 
@@ -193,6 +155,12 @@ const listOrphan = argv => {
 
 
       process.exit(0);
+  }).catch ((e) => {
+    notifier
+    .add('', e.stack || e.message)
+    .notifyError();
+
+    process.exit(1);
   });
 }
 

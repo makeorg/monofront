@@ -113,12 +113,12 @@ $ yarn jscpd
 ### i18n
 List unused keys in translation files
 ``` bash
-$ yarn workspace @make.org/front  translation:unused-keys
+$ yarn workspace @make.org/front  translation:unused-keys -d ./i18n -l fr
 ```
 
 List keys without translation in code
 ``` bash
-$ yarn workspace @make.org/front  translation:orphan-keys
+$ yarn workspace @make.org/front  translation:orphan-keys -d ./i18n -l fr
 ```
 
 This scripts uses ```grep``` command. A linux system is require.
