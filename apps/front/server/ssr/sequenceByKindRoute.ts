@@ -29,20 +29,16 @@ export const sequenceByKindRoute = async (
 ): Promise<void> => {
   const { questionSlug, country, language } = req.params;
   const { firstProposal, introCard, pushProposal } = req.query;
-  const popularUrl = getSequencePopularLink(country, questionSlug, req.query);
-  const controversyUrl = getSequenceControversialLink(
-    country,
-    questionSlug,
-    req.query
-  );
+  const popularPath = getSequencePopularLink(country, questionSlug);
+  const controversyPath = getSequenceControversialLink(country, questionSlug);
   let sequenceKind = SEQUENCE.KIND_STANDARD;
   let sequenceLocation = 'sequence';
 
-  if (req.url === popularUrl) {
+  if (req.path === popularPath) {
     sequenceKind = SEQUENCE.KIND_CONSENSUS;
     sequenceLocation = 'sequence-popular';
   }
-  if (req.url === controversyUrl) {
+  if (req.path === controversyPath) {
     sequenceKind = SEQUENCE.KIND_CONTROVERSY;
     sequenceLocation = 'sequence-controversial';
   }
