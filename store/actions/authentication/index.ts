@@ -74,7 +74,10 @@ export const getUser = async (
     | null = user
     ? await UserService.getProfileByUserType(user.userId, user.userType)
     : null;
-  if (profile && 'firstName' in profile) {
+  if (
+    (profile && 'firstName' in profile) ||
+    (profile && 'organisationName' in profile)
+  ) {
     dispatch(setUserInfo(user, profile));
   }
   if (isModalOpen) {
