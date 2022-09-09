@@ -10,7 +10,10 @@ import { incrementSequenceIndex } from '@make.org/store/actions/sequence';
 import { setPanelContent } from '@make.org/store/actions/panel';
 import { useAppContext } from '@make.org/store';
 import { ProposalJourney } from '@make.org/components/Proposal/Submit/Journey';
-import { clearProposalPending } from '@make.org/store/actions/pendingProposal';
+import {
+  clearProposalPending,
+  setProposalSource,
+} from '@make.org/store/actions/pendingProposal';
 import {
   SequenceIntroParagraphStyle,
   SequencePushProposalButtonStyle,
@@ -24,6 +27,7 @@ import { SkipIconStyle } from './ExtraData/style';
  */
 export const PushProposalCard: React.FC = () => {
   const { dispatch } = useAppContext();
+
   useEffect(() => {
     trackDisplayProposalPushCard();
   }, []);
@@ -37,6 +41,7 @@ export const PushProposalCard: React.FC = () => {
         <SequencePushProposalButtonStyle
           onClick={() => {
             dispatch(clearProposalPending());
+            dispatch(setProposalSource('from-proposal-push-card'));
             dispatch(setPanelContent(<ProposalJourney />));
           }}
         >

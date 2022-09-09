@@ -40,6 +40,7 @@ export type StatePendingProposal = {
   readonly pendingProposal?: string;
   readonly firstname?: string;
   readonly registerStep: number;
+  readonly source?: string;
 };
 
 // Sequence State

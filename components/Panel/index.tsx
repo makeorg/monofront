@@ -11,7 +11,10 @@ import { closePanel, removePanelContent } from '@make.org/store/actions/panel/';
 import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
 import { trackingClickClosePanel } from '@make.org/utils/services/Tracking';
-import { clearProposalPending } from '@make.org/store/actions/pendingProposal';
+import {
+  clearProposalPending,
+  setProposalSource,
+} from '@make.org/store/actions/pendingProposal';
 import {
   PanelWrapperStyle,
   PanelOverlayStyle,
@@ -33,6 +36,7 @@ export const Panel: React.FC = () => {
     dispatch(trackingClickClosePanel());
     dispatch(removePanelContent());
     dispatch(clearProposalPending());
+    dispatch(setProposalSource(''));
   };
 
   useEffect(() => {

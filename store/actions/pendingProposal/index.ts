@@ -3,6 +3,7 @@ import {
   PROPOSAL_CLEAR_PENDING,
   PROPOSAL_INIT_PENDING,
   PROPOSAL_REGISTER_STEP,
+  PROPOSAL_PENDING_SOURCE,
 } from '../../actionTypes';
 
 export const initProposalPending = (
@@ -21,4 +22,9 @@ export const clearProposalPending = (): ReducerAction => ({
 export const setRegisterStep = (registerStep: number): ReducerAction => ({
   type: PROPOSAL_REGISTER_STEP,
   payload: registerStep,
+});
+
+export const setProposalSource = (proposalSource: string): ReducerAction => ({
+  type: PROPOSAL_PENDING_SOURCE,
+  payload: proposalSource,
 });

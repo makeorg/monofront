@@ -26,6 +26,7 @@ import {
 import { CenterColumnHeightStyle } from '@make.org/ui/elements/FlexElements';
 import {
   clearProposalPending,
+  setProposalSource,
   setRegisterStep,
 } from '@make.org/store/actions/pendingProposal';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
@@ -73,7 +74,10 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
   useEffect(() => {
     trackDisplayProposalSubmitValidation();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    return () => dispatch(clearProposalPending());
+    return () => {
+      dispatch(clearProposalPending());
+      dispatch(setProposalSource(''));
+    };
   }, []);
 
   return (

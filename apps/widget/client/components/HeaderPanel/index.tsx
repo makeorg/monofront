@@ -9,7 +9,10 @@ import { setPanelContent } from '@make.org/store/actions/panel';
 import { ProposalJourney } from '@make.org/components/Proposal/Submit/Journey';
 import { TriggerIconStyle } from '@make.org/components/Proposal/Submit/style';
 import { isInProgress } from '@make.org/utils/helpers/date';
-import { clearProposalPending } from '@make.org/store/actions/pendingProposal';
+import {
+  clearProposalPending,
+  setProposalSource,
+} from '@make.org/store/actions/pendingProposal';
 import {
   isStandardSequence,
   isConsensusSequence,
@@ -39,7 +42,6 @@ export const HeaderPanel: FC = () => {
   const question: QuestionType = selectCurrentQuestion(state);
   const { unsecure } = state.appConfig;
   const canPropose = question.canPropose && !unsecure && isInProgress(question);
-
   return (
     <PanelContainer>
       <MainTitleStyle>
@@ -57,6 +59,7 @@ export const HeaderPanel: FC = () => {
             className="widget"
             onClick={() => {
               dispatch(clearProposalPending());
+              dispatch(setProposalSource('from-header-panel'));
               dispatch(setPanelContent(<ProposalJourney />));
             }}
             data-cy-button="proposal-panel"

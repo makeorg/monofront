@@ -108,7 +108,7 @@ export const ProposalForm: FC = () => {
   };
 
   useEffect(() => {
-    trackDisplayProposalField();
+    trackDisplayProposalField(state.pendingProposal.source);
   }, []);
 
   return (

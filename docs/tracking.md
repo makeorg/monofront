@@ -299,6 +299,10 @@ Following parameters are added to all events.
   - `display-proposal-field` Display proposal form
 
     
+    | param_name | required | description | values |
+    |-|-|-|-|
+    | `ux_context` | false | track which button was clicked to display the proposal panel |  |
+  
   
 
   - `click-proposal-submit` Click proposal submit button

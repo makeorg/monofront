@@ -90,8 +90,10 @@ export const trackClickPersonnalDataLink = (): void => {
 };
 
 /* Proposal Submit */
-export const trackDisplayProposalField = (): void => {
-  TrackingService.sendAllTrackers(trackingEvent.DISPLAY_PROPOSAL_FIELD());
+export const trackDisplayProposalField = (source?: string): void => {
+  TrackingService.sendAllTrackers(
+    trackingEvent.DISPLAY_PROPOSAL_FIELD({ ux_context: source || '' })
+  );
 };
 
 export const trackClickProposalSubmit = (): void => {

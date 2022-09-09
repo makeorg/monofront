@@ -290,6 +290,10 @@ CLICK_CITIZEN_REGISTER:
 DISPLAY_PROPOSAL_FIELD:
   key: display-proposal-field
   description: Display proposal form
+  parameters:
+    - key: ux_context
+      description: track which button was clicked to display the proposal panel
+      optional: true
 
 CLICK_PROPOSAL_SUBMIT:
   key: click-proposal-submit

@@ -3,11 +3,13 @@ import {
   PROPOSAL_CLEAR_PENDING,
   PROPOSAL_INIT_PENDING,
   PROPOSAL_REGISTER_STEP,
+  PROPOSAL_PENDING_SOURCE,
 } from '../../actionTypes';
 
 export const pendingProposal_state: StatePendingProposal = {
   pendingProposal: undefined,
   registerStep: 1,
+  source: '',
 };
 
 export const pendingProposal_reducer: Reducer = (
@@ -21,6 +23,11 @@ export const pendingProposal_reducer: Reducer = (
         ...state,
         pendingProposal: action.payload.pendingProposal,
         firstname: action.payload.firstname,
+      };
+    case PROPOSAL_PENDING_SOURCE:
+      return {
+        ...pendingProposal_state,
+        source: action.payload,
       };
     case PROPOSAL_CLEAR_PENDING:
       return {
