@@ -153,6 +153,7 @@ export const SwitchCountryLanguage: React.FC = () => {
             <MultilingualRadioItemWrapperStyle
               tabIndex={0}
               key={item.isoCode}
+              lang={item.isoCode}
               className={item.isoCode === newLanguage ? 'selected' : ''}
               onKeyPress={event =>
                 handleLanguageKeypress(

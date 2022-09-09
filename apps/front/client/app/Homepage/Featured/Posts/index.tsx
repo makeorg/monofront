@@ -27,26 +27,26 @@ type Props = {
   posts: HomePostType[];
 };
 
+const setLangAndLinksByCountry = (
+  country: string
+): { link: string; lang: string } => {
+  if (country === 'DE') {
+    return { link: URL.NEWS_LINK_DE, lang: 'de' };
+  }
+  if (country === 'GB') {
+    return { link: URL.NEWS_LINK_GB, lang: 'en' };
+  }
+  return { link: URL.NEWS_LINK, lang: 'fr' };
+};
+
 export const FeaturedPosts: FC<Props> = ({ posts }) => {
   const { state } = useAppContext();
   const { country } = state.appConfig;
-  const isDE = country === 'DE';
-  const isGB = country === 'GB';
   const noFeaturedPosts = posts.length === 0;
 
   if (noFeaturedPosts) {
     return null;
   }
-
-  const blogLink = () => {
-    if (isDE) {
-      return URL.NEWS_LINK_DE;
-    }
-    if (isGB) {
-      return URL.NEWS_LINK_GB;
-    }
-    return URL.ABOUT_MAKE_LINK;
-  };
 
   return (
     <HomepageSectionStyle
@@ -64,7 +64,11 @@ export const FeaturedPosts: FC<Props> = ({ posts }) => {
       </HomepagePageInnerStyle>
       <ConsultationsListStyle>
         {posts.map(post => (
-          <ConsultationsListItemStyle itemsPerRow={3} key={post.title}>
+          <ConsultationsListItemStyle
+            itemsPerRow={3}
+            key={post.title}
+            lang={setLangAndLinksByCountry(country).lang}
+          >
             <ConsultationArticleStyle>
               <ConsultationElementPictureStyle
                 width={353}
@@ -93,7 +97,7 @@ export const FeaturedPosts: FC<Props> = ({ posts }) => {
       <HomepagePageInnerStyle>
         <HomepageQuestionsButtonStyle
           as="a"
-          href={blogLink()}
+          href={setLangAndLinksByCountry(country).link}
           target="_blank"
           rel="noopener"
           onClick={() => trackClickBlog('blog list')}
