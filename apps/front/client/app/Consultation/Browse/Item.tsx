@@ -35,7 +35,7 @@ export const ConsultationItem: FC<Props> = ({ question, resultsContext }) => {
     resultsLink,
     participantsCount,
     proposalsCount,
-    language,
+    returnedLanguage,
     actions,
     votesCount,
   } = question;
@@ -75,7 +75,7 @@ export const ConsultationItem: FC<Props> = ({ question, resultsContext }) => {
           {i18n.t('browse.initiative')}
         </ConsultationElementSubtitleStyle>
       )}
-      <ConsultationElementTitleStyle lang={question.language}>
+      <ConsultationElementTitleStyle lang={question.returnedLanguage}>
         {question.question}
       </ConsultationElementTitleStyle>
       <ConsultationElementParagraphStyle>
@@ -84,7 +84,7 @@ export const ConsultationItem: FC<Props> = ({ question, resultsContext }) => {
           <ConsultationItemStyle>
             <ConsultationPeopleIconStyle aria-hidden focusable="false" />
             <> </>
-            {formatMillionToText(participantsCount, language)}
+            {formatMillionToText(participantsCount, returnedLanguage)}
             <> </>
             {` ${i18n.t('browse.consultations.contributors', {
               count: participantsCount,
@@ -95,7 +95,7 @@ export const ConsultationItem: FC<Props> = ({ question, resultsContext }) => {
           <ConsultationItemStyle>
             <ConsultationLightIconStyle aria-hidden focusable="false" />
             <> </>
-            {formatMillionToText(proposalsCount, language)}
+            {formatMillionToText(proposalsCount, returnedLanguage)}
             <> </>
             {` ${i18n.t('browse.consultations.proposals', {
               count: proposalsCount,
@@ -111,7 +111,7 @@ export const ConsultationItem: FC<Props> = ({ question, resultsContext }) => {
               focusable="false"
             />
             <> </>
-            {formatMillionToText(votesCount, language)}
+            {formatMillionToText(votesCount, returnedLanguage)}
             <> </>
             {` ${i18n.t('browse.consultations.votes', {
               count: votesCount,

@@ -166,7 +166,7 @@ export type QuestionType = {
   question: string;
   slug: string;
   countries: string[];
-  language: string;
+  returnedLanguage: string;
   allowedSources: string[];
   startDate: string;
   endDate: string;
@@ -239,7 +239,7 @@ export type HomeQuestionType = {
   descriptionImage?: string;
   descriptionImageAlt?: string;
   countries: string[];
-  language: string;
+  returnedLanguage: string;
   startDate?: string;
   endDate?: string;
   theme: QuestionThemeType;

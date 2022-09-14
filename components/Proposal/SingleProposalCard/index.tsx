@@ -54,7 +54,7 @@ export const SingleProposalCard: React.FC<Props> = ({ proposal }) => {
           <ScreenReaderItemStyle>
             {i18n.t('proposal_card.content')}
           </ScreenReaderItemStyle>
-          <ProposalCardContentStyle lang={proposal.question.language}>
+          <ProposalCardContentStyle lang={proposal.question.returnedLanguage}>
             {proposal.content}
           </ProposalCardContentStyle>
           {isConsultationOpened ? (
@@ -77,7 +77,7 @@ export const SingleProposalCard: React.FC<Props> = ({ proposal }) => {
               dangerouslySetInnerHTML={{
                 __html: i18n.t('proposal_page.footer_text', {
                   operation_name: `<a 
-                  lang=${proposal.question.language}
+                  lang=${proposal.question.returnedLanguage}
                   href="${getParticipateLink(
                     country,
                     proposal.question.slug

@@ -25,7 +25,8 @@ const getQuestion = async (
   country: string,
   language: string,
   notFound: () => void,
-  unexpectedError: () => void
+  unexpectedError: () => void,
+  preferedLanguage?: string
 ): Promise<QuestionType | void> => {
   const upperCountry = country.toUpperCase();
   const handleData = (data: QuestionType) => {
@@ -43,11 +44,15 @@ const getQuestion = async (
   }
 
   try {
-    const response = await QuestionApiService.getDetail(questionIdOrSlug, {
-      'x-make-question-id': questionIdOrSlug,
-      'x-make-country': upperCountry,
-      'x-make-language': language,
-    });
+    const response = await QuestionApiService.getDetail(
+      questionIdOrSlug,
+      preferedLanguage,
+      {
+        'x-make-question-id': questionIdOrSlug,
+        'x-make-country': upperCountry,
+        'x-make-language': language,
+      }
+    );
 
     cache.put(CACHE_KEY, response && response.data, 300000);
 

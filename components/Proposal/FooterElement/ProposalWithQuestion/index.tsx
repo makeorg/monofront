@@ -21,7 +21,7 @@ export const ProposalFooterWithQuestionElement: React.FC<Props> = ({
     <RedLinkStyle
       to={consultationLink}
       onClick={scrollToTop}
-      lang={question.language}
+      lang={question.returnedLanguage}
     >
       {question.wording.question}
     </RedLinkStyle>

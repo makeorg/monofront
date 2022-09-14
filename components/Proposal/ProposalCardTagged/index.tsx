@@ -56,7 +56,7 @@ export const ProposalCardTagged: FC<Props> = ({ proposal, position, size }) => {
           <ProposalLinkElementStyle
             id={`card_tagged_proposal_content_${position}`}
             to={proposalLink}
-            lang={proposal.question.language}
+            lang={proposal.question.returnedLanguage}
           >
             {proposal.content}
           </ProposalLinkElementStyle>

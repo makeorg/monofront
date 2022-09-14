@@ -98,7 +98,7 @@ export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
         <ScreenReaderItemStyle>
           {i18n.t('proposal_card.content')}
         </ScreenReaderItemStyle>
-        <SequenceProposalStyle lang={proposal.question.language}>
+        <SequenceProposalStyle lang={proposal.question.returnedLanguage}>
           {proposal.content}
         </SequenceProposalStyle>
         {displayTooltip && <Tip />}

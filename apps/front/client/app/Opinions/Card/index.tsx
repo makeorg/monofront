@@ -50,7 +50,7 @@ export const OpinionCard: FC<Props> = ({ userId, opinion, position = 0 }) => {
           id={`idea_content_${position}`}
           to={getTopIdeaDetailsLink(country, question.slug, topIdea.id)}
           onClick={scrollToTop}
-          lang={question.language}
+          lang={question.returnedLanguage}
         >
           {topIdea.name}
         </TopIdeaContentStyle>

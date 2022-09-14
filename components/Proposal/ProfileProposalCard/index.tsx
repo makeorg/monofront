@@ -66,14 +66,14 @@ export const ProfileProposalCard: FC<Props> = ({
         <ProposalLinkElementStyle
           id={`proposal_card__proposal_content_${position}`}
           to={proposalLink}
-          lang={proposal.question.language}
+          lang={proposal.question.returnedLanguage}
         >
           {proposal.content}
         </ProposalLinkElementStyle>
       ) : (
         <ProposalElementStyle
           id={`proposal_card__proposal_content_${position}`}
-          lang={proposal.question.language}
+          lang={proposal.question.returnedLanguage}
         >
           {proposal.content}
         </ProposalElementStyle>

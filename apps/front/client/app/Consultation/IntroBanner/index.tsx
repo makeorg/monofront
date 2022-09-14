@@ -27,7 +27,7 @@ export const IntroBanner: FC<Props> = ({ question }) =>
           <GreatCauseIntroLabelStyle>
             {i18n.t('consultation.header.label_great_cause')}
           </GreatCauseIntroLabelStyle>
-          <span lang={question.language}>
+          <span lang={question.returnedLanguage}>
             <Image
               src={question.consultationImage}
               alt={question.consultationImageAlt || question.wording.question}
@@ -40,14 +40,16 @@ export const IntroBanner: FC<Props> = ({ question }) =>
           <GreatCauseIntroLabelStyle>
             {i18n.t('consultation.header.label_great_cause')}
           </GreatCauseIntroLabelStyle>
-          <span lang={question.language}>{question.wording.question}</span>
+          <span lang={question.returnedLanguage}>
+            {question.wording.question}
+          </span>
         </GreatCauseIntroBannerTitleStyle>
       )}
     </IntroWrapperStyle>
   ) : (
     <IntroWrapperStyle as="header" id="intro">
       <DefaultBannerMainContainer>
-        <DefaultBannerTitleStyle lang={question.language}>
+        <DefaultBannerTitleStyle lang={question.returnedLanguage}>
           {question.wording.question}
         </DefaultBannerTitleStyle>
         <DefaultBannerTimeStyle>

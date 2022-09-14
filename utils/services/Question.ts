@@ -22,7 +22,8 @@ const getQuestions = async (
   status?: string,
   sortAlgorithm?: string,
   limit?: number,
-  skip?: number
+  skip?: number,
+  preferedLanguage?: string
 ): Promise<{ total: number; results: HomeQuestionType[] } | null> => {
   try {
     const response = await QuestionApiService.getQuestions(
@@ -30,10 +31,21 @@ const getQuestions = async (
       status,
       sortAlgorithm,
       limit,
-      skip
+      skip,
+      preferedLanguage
     );
 
-    return response ? response.data : null;
+    if (!response) {
+      return null;
+    }
+
+    // @todo clean when API updated (this line is used to handle retrocompat for future deprecated language)
+
+    return {
+      ...response.data,
+      returnedLanguage:
+        response.data.returnedLanguage || response.data.language,
+    };
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);
@@ -71,10 +83,14 @@ const getDetail = async (
   questionSlugOrId: string,
   // eslint-disable-next-line default-param-last
   notFound: () => void = () => null,
-  country?: string
+  country?: string,
+  preferedLanguage?: string
 ): Promise<QuestionType | null> => {
   try {
-    const response = await QuestionApiService.getDetail(questionSlugOrId);
+    const response = await QuestionApiService.getDetail(
+      questionSlugOrId,
+      preferedLanguage
+    );
     const { data } = response || {};
     if (
       country !== undefined &&
@@ -91,7 +107,17 @@ const getDetail = async (
       return null;
     }
 
-    return data;
+    if (!response) {
+      return null;
+    }
+
+    // @todo clean when API updated (this line is used to handle retrocompat for future deprecated language)
+
+    return {
+      ...response.data,
+      returnedLanguage:
+        response.data.returnedLanguage || response.data.language,
+    };
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 404) {
@@ -109,17 +135,27 @@ const getDetail = async (
 const searchQuestions = async (
   country: string,
   language: string,
-  content: string
+  content: string,
+  preferedLanguage?: string
 ): Promise<{ total: number; results: QuestionType[] } | null> => {
   try {
     const response = await QuestionApiService.searchQuestions(
       country,
       language,
-      content
+      content,
+      preferedLanguage
     );
-    const { data } = response || {};
+    if (!response) {
+      return null;
+    }
 
-    return data;
+    // @todo clean when API updated (this line is used to handle retrocompat for future deprecated language)
+
+    return {
+      ...response.data,
+      returnedLanguage:
+        response.data.returnedLanguage || response.data.language,
+    };
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);

@@ -82,7 +82,7 @@ export const TopIdeaCard: FC<Props> = ({
           id={`idea_content_${position}`}
           to={getTopIdeaDetailsLink(country, question.slug, topIdea.id)}
           onClick={scrollToTop}
-          lang={question.language}
+          lang={question.returnedLanguage}
         >
           {topIdea.name}
         </TopIdeaContentStyle>
@@ -94,7 +94,7 @@ export const TopIdeaCard: FC<Props> = ({
             <RedLinkStyle
               to={getTopIdeaDetailsLink(country, question.slug, topIdea.id)}
               onClick={scrollToTop}
-              lang={question.language}
+              lang={question.returnedLanguage}
             >
               {i18n.t('idea_card.position', {
                 count: topIdea.commentsCount,

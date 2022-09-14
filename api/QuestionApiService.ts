@@ -29,6 +29,7 @@ export class QuestionApiService {
     sortAlgorithm?: string, // Chronological, Featured
     limit?: number,
     skip?: number,
+    preferedLanguage?: string,
     headers: ApiServiceHeadersType = {}
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(generatePath(PATH_QUESTIONS_LIST), {
@@ -40,6 +41,7 @@ export class QuestionApiService {
         sortAlgorithm,
         limit,
         skip,
+        preferedLanguage,
       },
     });
   }
@@ -64,6 +66,7 @@ export class QuestionApiService {
 
   static getDetail(
     questionSlugOrId: string,
+    preferedLanguage?: string,
     headers: ApiServiceHeadersType = {}
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
@@ -71,6 +74,9 @@ export class QuestionApiService {
       {
         method: 'GET',
         headers,
+        params: {
+          preferedLanguage,
+        },
       }
     );
   }
@@ -177,8 +183,9 @@ export class QuestionApiService {
 
   static searchQuestions(
     country: string,
-    language: string,
     content: string,
+    language: string,
+    preferedLanguage?: string,
     sort = 'endDate',
     order = 'DESC',
     headers: ApiServiceHeadersType = {}
@@ -192,6 +199,7 @@ export class QuestionApiService {
         language,
         sort,
         order,
+        preferedLanguage,
       },
     });
   }

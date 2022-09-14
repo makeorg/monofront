@@ -52,7 +52,7 @@ describe('getQuestionFromState', () => {
       topProposal: null,
     },
     countries: ['FR'],
-    language: 'fr',
+    returnedLanguage: 'fr',
     allowedSources: ['foo'],
     question: 'foo',
     landingSequenceId: 'foo',

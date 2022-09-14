@@ -3,9 +3,12 @@ import { ViewsApiService } from '@make.org/api/ViewsApiService';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
-const getHome = async (country: string): Promise<HomeViewType | null> => {
+const getHome = async (
+  country: string,
+  preferedLanguage?: string
+): Promise<HomeViewType | null> => {
   try {
-    const response = await ViewsApiService.getHome(country);
+    const response = await ViewsApiService.getHome(country, preferedLanguage);
 
     return response ? response.data : null;
   } catch (error: unknown) {
@@ -19,6 +22,7 @@ const getHome = async (country: string): Promise<HomeViewType | null> => {
 const searchViews = async (
   content: string,
   country: string,
+  preferedLanguage?: string,
   proposalLimit = 4,
   questionLimit = 4,
   organisationLimit = 4
@@ -29,7 +33,8 @@ const searchViews = async (
       country,
       proposalLimit,
       questionLimit,
-      organisationLimit
+      organisationLimit,
+      preferedLanguage
     );
 
     return searchResponse ? searchResponse.data : null;

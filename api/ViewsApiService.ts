@@ -22,11 +22,15 @@ export class ViewsApiService {
 
   static getHome = async (
     country: string,
+    preferedLanguage?: string,
     headers?: Record<string, string>
   ): Promise<void | AxiosResponse<HomeViewType>> =>
     ApiService.callApi(HOMEPAGE_PATH.replace(':country', country), {
       method: 'GET',
       headers,
+      params: {
+        preferedLanguage,
+      },
     });
 
   static searchViews = async (
@@ -34,7 +38,8 @@ export class ViewsApiService {
     country: string,
     proposalLimit: number,
     questionLimit: number,
-    organisationLimit: number
+    organisationLimit: number,
+    preferedLanguage?: string
   ): Promise<void | AxiosResponse> =>
     ApiService.callApi(
       SEARCH_VIEWS_PATH.replace(':content', content)
@@ -44,6 +49,9 @@ export class ViewsApiService {
         .replace(':country', country),
       {
         method: 'GET',
+        params: {
+          preferedLanguage,
+        },
       }
     );
 }

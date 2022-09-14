@@ -67,7 +67,7 @@ export const ProposalCardWithQuestion: React.FC<Props> = ({
           </ScreenReaderItemStyle>
           <ProposalLinkElementStyle
             to={proposalLink}
-            lang={proposal.question.language}
+            lang={proposal.question.returnedLanguage}
           >
             {proposal.content}
           </ProposalLinkElementStyle>

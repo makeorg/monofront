@@ -53,7 +53,10 @@ export const ProposalForm: FC = () => {
   const { device, language } = state.appConfig;
   const isMobile = matchMobileDevice(device);
   const proposalIsEmpty = pendingProposal.length === 0;
-  const baitText = getLocalizedBaitText(question.language, question.questionId);
+  const baitText = getLocalizedBaitText(
+    question.returnedLanguage,
+    question.questionId
+  );
   const charCounting = proposalIsEmpty
     ? baitText?.length
     : pendingProposal.length;
@@ -143,7 +146,7 @@ export const ProposalForm: FC = () => {
               rows={6}
               spellCheck
               maxLength={MAX_PROPOSAL_LENGTH}
-              lang={question ? question.language : ''}
+              lang={question ? question.returnedLanguage : ''}
             />
             <ProposalCharCountStyle aria-hidden data-cy-container="char-count">
               {`${charCounting} / ${MAX_PROPOSAL_LENGTH}`}

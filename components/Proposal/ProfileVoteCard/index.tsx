@@ -98,7 +98,7 @@ export const ProfileVoteCard: FC<Props> = ({
                 proposal.id,
                 proposal.slug
               )}
-              lang={proposal.question.language}
+              lang={proposal.question.returnedLanguage}
             >
               {proposal.content}
             </ProposalLinkElementStyle>

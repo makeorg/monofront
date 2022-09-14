@@ -78,7 +78,7 @@ export const ProposalsResults: FC<Props> = ({
           <ScreenReaderItemStyle>
             {i18n.t('proposal_card.content')}
           </ScreenReaderItemStyle>
-          <ResultsProposalContentStyle as="p" lang={question.language}>
+          <ResultsProposalContentStyle as="p" lang={question.returnedLanguage}>
             {proposal.content}
           </ResultsProposalContentStyle>
           {isRejected ? (

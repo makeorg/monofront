@@ -37,12 +37,12 @@ export const TopIdeas: FC<Props> = ({ topIdeas, question }) => {
             name: topIdea.name,
           })}
           open={index === 0}
-          language={question.language}
+          language={question.returnedLanguage}
         >
           <UnstyledListStyle>
             {topIdea.ideas.map((idea: any) => (
               <TopIdeaListItemStyle key={idea.idea}>
-                <TopIdeaItemTitleStyle lang={question.language}>
+                <TopIdeaItemTitleStyle lang={question.returnedLanguage}>
                   {idea.idea}
                 </TopIdeaItemTitleStyle>
                 <ThemeResultsWrapperStyle>

@@ -53,7 +53,7 @@ export const ProposalsCard: FC<CardProps> = ({ proposal, country, index }) => (
         {i18n.t('proposal_card.content')}
       </ScreenReaderItemStyle>
       <ProposalLinkStyle
-        lang={proposal.question.language}
+        lang={proposal.question.returnedLanguage}
         to={getProposalLink(
           country,
           proposal.question.slug,
