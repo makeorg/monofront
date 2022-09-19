@@ -132,28 +132,7 @@ Feature: The Home Page
     When I click on "language_switch_en" radio
     And I click on "confirm-country-language-switch" button
     And I see "France" in "footer" container
-    And event "display-page-home" should be tracked by Make with parameters values:
-      | name                | value                                                                 |
-      | eventType           | trackCustom                                                           |
-      | country             | FR                                                                    |
-      | language            | en                                                                    |
-      | source              | core                                                                  |
-      | location            | homepage                                                              |
-      | questionId          |                                                                       |
-      | questionSlug        |                                                                       |
-      | referrer            | http://localhost:9009/__/                                             |
-      | url                 | http://localhost:9009/FR                                              |
-    And some make data header should be sent to "postTracking":
-      | name                | value                                                                 |
-      | app-name            | main-front                                                            |
-      | source              | core                                                                  |
-      | location            | homepage                                                              |
-      | language            | en                                                                    |
-      | country             | FR                                                                    |
-      | question-id         | null                                                                  |
-      | referrer            | http://localhost:9009/__/                                             |
-      | custom-data         | null                                                                  |
-
+   
   Scenario: Language and country switching redirect to Homepage
     Given I monitor API "postTracking" requests
     When I go to "france homepage"    

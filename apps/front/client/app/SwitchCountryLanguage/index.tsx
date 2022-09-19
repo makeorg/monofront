@@ -106,7 +106,9 @@ export const SwitchCountryLanguage: React.FC = () => {
     dispatch(closePanel());
     dispatch(removePanelContent());
 
-    history.push(getHomeLink(newCountry));
+    if (newCountry !== country) {
+      history.push(getHomeLink(newCountry));
+    }
   };
 
   const handleLanguageKeypress = (
