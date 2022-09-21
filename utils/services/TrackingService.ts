@@ -167,7 +167,7 @@ export const TrackingService = {
 
     const eventId = uuidv4();
 
-    if (preferencesCookie?.facebook_tracking) {
+    if (preferencesCookie?.tracking_consent?.facebook_tracking) {
       // Facebook
       FacebookTracking.trackCustom(
         eventName,
@@ -179,7 +179,7 @@ export const TrackingService = {
     }
 
     // Twitter
-    if (preferencesCookie?.twitter_tracking) {
+    if (preferencesCookie?.tracking_consent?.twitter_tracking) {
       TwitterTracking.track(eventName);
     }
 

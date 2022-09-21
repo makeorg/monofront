@@ -44,7 +44,7 @@ export const Sharing: React.FC = () => {
   return (
     <SharingStyle as={UnstyledListStyle}>
       <li>
-        {preferencesCookie?.facebook_sharing ? (
+        {preferencesCookie?.tracking_consent?.facebook_sharing ? (
           <FacebookButtonStyle
             rel="noopener"
             aria-label={i18n.t('sharing.facebook')}
@@ -65,7 +65,7 @@ export const Sharing: React.FC = () => {
         )}
       </li>
       <li>
-        {preferencesCookie?.twitter_sharing ? (
+        {preferencesCookie?.tracking_consent?.twitter_sharing ? (
           <TwitterButtonStyle
             rel="noopener"
             aria-label={i18n.t('sharing.twitter')}
@@ -86,7 +86,7 @@ export const Sharing: React.FC = () => {
         )}
       </li>
       <li>
-        {preferencesCookie?.linkedin_sharing ? (
+        {preferencesCookie?.tracking_consent?.linkedin_sharing ? (
           <LinkedInButtonStyle
             rel="noopener"
             aria-label={i18n.t('sharing.linkedin')}
