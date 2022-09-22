@@ -173,6 +173,8 @@ const update = async (
       description,
       website,
       optInNewsletter,
+      crmCountry,
+      crmLanguage,
     } = profile;
     await OrganisationApiService.update(
       organisationId,
@@ -180,7 +182,9 @@ const update = async (
       avatarUrl,
       description,
       website,
-      optInNewsletter
+      optInNewsletter,
+      crmCountry,
+      crmLanguage
     );
 
     success();

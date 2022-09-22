@@ -22,6 +22,8 @@
     "genderName": null,
     "postalCode": "94120",
     "locale": null,
+    "crmCountry": "France",
+    "crmLanguage": "Français",
     "optInNewsletter": true,
     "socioProfessionalCategory": null,
     "registerQuestionId": null,

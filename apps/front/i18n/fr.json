@@ -669,7 +669,8 @@
         "profession": "Profession : ",
         "biography": "Biographie : ",
         "website": "Site Internet : ",
-        "political_party": "Parti politique : "
+        "political_party": "Parti politique : ",
+        "select": "Sélectionner"
       }
     },
     "informations_update": {
@@ -688,8 +689,9 @@
         "trigger": "Avez-vous oublié votre mot de passe ?"
       }
     },
-    "newsletter_update": {
-      "title": "Gérer mes préférences",
+    "communication_preferences": {
+      "title": "Gérer mes préférences de communication",
+      "description": "Sélectionnez votre pays et la langue dans laquelle vous souhaitez recevoir des emails de Make.org.",
       "optin_label": "J'accepte de recevoir des emails de Make.org pour me tenir au courant de l'actualité des consultations en cours et à venir."
     },
     "delete_account": {

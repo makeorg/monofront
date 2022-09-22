@@ -151,6 +151,8 @@ export class UserApiService {
         token,
         country: ApiService.country,
         language: ApiService.language,
+        crmCountry: ApiService.country,
+        crmLanguage: ApiService.language,
         approvePrivacyPolicy,
         optIn,
       }),
@@ -185,6 +187,8 @@ export class UserApiService {
         postalCode: setEmptyStringToNull(postalcode || ''),
         country: ApiService.country,
         language: ApiService.language,
+        crmCountry: ApiService.country,
+        crmLanguage: ApiService.language,
         questionId: trackingParamsService.questionId,
         optIn: optInNewsletter,
         legalMinorConsent,
@@ -205,6 +209,8 @@ export class UserApiService {
     postalCode: string,
     optInNewsletter: boolean,
     website: string,
+    crmCountry: string,
+    crmLanguage: string,
     legalMinorConsent?: boolean,
     legalAdvisorApproval?: boolean
   ): Promise<void | AxiosResponse> {
@@ -222,6 +228,8 @@ export class UserApiService {
         website,
         legalMinorConsent,
         legalAdvisorApproval,
+        crmCountry,
+        crmLanguage,
       }),
     });
   }

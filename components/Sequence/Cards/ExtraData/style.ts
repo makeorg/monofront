@@ -9,7 +9,7 @@ import { CenterRowStyle } from '@make.org/ui/elements/FlexElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { SvgFastForward } from '@make.org/ui/Svg/elements';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import SvgSelectArrow from '@make.org/ui/Svg/source/select-arrow.svg';
+import SvgSelectArrow from '@make.org/ui/Svg/source/selectArrow.svg';
 import styled from 'styled-components';
 import { SvgPropsType } from '@make.org/types';
 import { SequenceIntroParagraphStyle } from '../style';

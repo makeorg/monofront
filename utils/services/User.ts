@@ -528,6 +528,8 @@ const update = async (
     avatarUrl,
     legalMinorConsent,
     legalAdvisorApproval,
+    crmCountry,
+    crmLanguage,
   } = profile;
 
   try {
@@ -542,6 +544,8 @@ const update = async (
       postalCode,
       optInNewsletter,
       website,
+      crmCountry,
+      crmLanguage,
       legalMinorConsent,
       legalAdvisorApproval
     );

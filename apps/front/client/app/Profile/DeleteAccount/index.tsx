@@ -1,7 +1,10 @@
 import React, { useState, FC } from 'react';
 import i18n from 'i18next';
 import { UserType, ErrorObjectType } from '@make.org/types';
-
+import {
+  FormLeftAlignStyle,
+  FormRequirementsStyle,
+} from '@make.org/ui/elements/FormElements';
 import { FORM } from '@make.org/types/enums';
 import { PasswordInput } from '@make.org/components/Form/PasswordInput';
 import { UntypedInput } from '@make.org/components/Form/UntypedInput';
@@ -15,7 +18,6 @@ import { TileWithTitle } from '@make.org/ui/components/TileWithTitle';
 import { logout } from '@make.org/store/actions/authentication';
 import { UserService } from '@make.org/utils/services/User';
 import { FormErrors } from '@make.org/components/Form/Errors';
-import { FormRequirementsStyle } from '@make.org/ui/elements/FormElements';
 import { getFieldError } from '@make.org/utils/helpers/form';
 import { ErrorMessageForgotPassword } from '@make.org/components/Form/Errors/Message/Password';
 import { FormSuccessMessage } from '@make.org/components/Form/Success';
@@ -97,7 +99,10 @@ export const DeleteAccount: FC<Props> = ({ user }) => {
 
   return (
     <TileWithTitle title={i18n.t('profile.delete_account.title')}>
-      <form id={FORM.PROFILE_DELETE_ACCOUNT_FORMNAME} onSubmit={handleSubmit}>
+      <FormLeftAlignStyle
+        id={FORM.PROFILE_DELETE_ACCOUNT_FORMNAME}
+        onSubmit={handleSubmit}
+      >
         <FormParagraphStyle>
           {i18n.t('profile.delete_account.description')}
         </FormParagraphStyle>
@@ -135,7 +140,7 @@ export const DeleteAccount: FC<Props> = ({ user }) => {
           label={i18n.t('profile.delete_account.submit_label')}
         />
         {isSubmitSuccessful && <FormSuccessMessage />}
-      </form>
+      </FormLeftAlignStyle>
     </TileWithTitle>
   );
 };

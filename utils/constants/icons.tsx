@@ -11,6 +11,7 @@ import {
   PaperPlaneIconStyle,
   SaveFileIconStyle,
   LinkIconStyle,
+  SmallEarthIconStyle,
 } from '@make.org/ui/elements/SvgElements';
 
 /** Form Icons */
@@ -20,7 +21,7 @@ export const PasswordFieldIcon = (
 );
 export const AgeFieldIcon = <BirthdayIconStyle aria-hidden focusable="false" />;
 export const NameFiledIcon = <UserIconStyle aria-hidden focusable="false" />;
-export const PostalCodeFieldIcon = (
+export const MapMarkerIcon = (
   <MapMarkerIconStyle aria-hidden focusable="false" />
 );
 export const WebsiteLinkFieldIcon = (
@@ -38,4 +39,7 @@ export const SubmitPaperPlaneIcon = (
 );
 export const SubmitSaveIcon = (
   <SaveFileIconStyle aria-hidden focusable="false" />
+);
+export const SelectLanguageFieldIcon = (
+  <SmallEarthIconStyle aria-hidden focusable="false" />
 );

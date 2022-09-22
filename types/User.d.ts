@@ -45,6 +45,8 @@ export type UserProfileType = {
   website: string;
   legalMinorConsent?: boolean;
   legalAdvisorApproval?: boolean;
+  crmCountry: string;
+  crmLanguage: string;
 };
 
 export type PasswordsType = {

@@ -107,6 +107,8 @@ const update = async (
       website,
       optInNewsletter,
       politicalParty,
+      crmCountry,
+      crmLanguage,
     } = profile;
     await PersonalityApiService.update(
       personalityId,
@@ -116,7 +118,9 @@ const update = async (
       description,
       website,
       optInNewsletter,
-      politicalParty
+      politicalParty,
+      crmCountry,
+      crmLanguage
     );
 
     success();

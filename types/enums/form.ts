@@ -7,7 +7,7 @@ export enum FORM {
   PASSWORD_RECOVERY_FORMNAME = 'password_recovery',
   PASSWORD_UPDATE_FORMNAME = 'password_update',
   PROFILE_UPDATE_FORMNAME = 'profile_update',
-  NEWSLETTER_UPDATE_FORMNAME = 'newsletter_update',
+  COMMUNICATION_UPDATE_FORMNANE = 'communication_update',
   DATA_POLICY_CONSENT = 'data_policy_consent',
   PROFILE_DELETE_ACCOUNT_FORMNAME = 'profile_delete_account',
   PERSONALITY_OPINION_FORMNAME = 'personality_opinion',

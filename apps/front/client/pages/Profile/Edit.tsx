@@ -23,7 +23,7 @@ import {
   PersonalityType,
   UserType,
 } from '@make.org/types';
-import { UpdateNewsletter } from '../../app/Profile/UpdateNewsletter';
+import { UpdateCommunicationPreferences } from '../../app/Profile/UpdateCommunicationsPreferences';
 import { UserInformations } from '../../app/Profile/UserInformations';
 import { UpdateInformations } from '../../app/Profile/UpdateInformations';
 import { UpdatePassword } from '../../app/Profile/UpdatePassword';
@@ -75,7 +75,7 @@ const ProfileEditPage: FC = () => {
             userId={user.userId}
             hasPassword={formattedUserType.hasPassword}
           />
-          <UpdateNewsletter
+          <UpdateCommunicationPreferences
             userId={user.userId}
             userType={user.userType}
             profile={user.profile}

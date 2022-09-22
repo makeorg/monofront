@@ -50,4 +50,6 @@ export type OrganisationProfileType = {
   description: string;
   website: string;
   optInNewsletter: boolean;
+  crmCountry: string;
+  crmLanguage: string;
 };

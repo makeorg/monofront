@@ -14,7 +14,7 @@ import i18n from 'i18next';
 import {
   NameFiledIcon,
   AgeFieldIcon,
-  PostalCodeFieldIcon,
+  MapMarkerIcon,
   JobFieldIcon,
   DescriptionFieldIcon,
 } from '@make.org/utils/constants/icons';
@@ -105,7 +105,7 @@ export const UserForm: FC<ProfileFormProps> = ({
           type="text"
           name="postalCode"
           id="postalCode"
-          icon={PostalCodeFieldIcon}
+          icon={MapMarkerIcon}
           value={postalCode}
           label={i18n.t('common.form.label.postalcode', {
             context: 'optional',

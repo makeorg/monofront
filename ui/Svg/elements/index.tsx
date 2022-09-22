@@ -89,3 +89,4 @@ export { SvgFiltersMobileIcon } from './FiltersMobileIcon';
 export { SvgRightGreyArrow } from './RightThinGreyArrow';
 export { SvgBlueManOnBench } from './BlueManOnBench';
 export { SvgRegisterSuccess } from './RegisterSuccess';
+export { SvgSmallEarth } from './SmallEarth';

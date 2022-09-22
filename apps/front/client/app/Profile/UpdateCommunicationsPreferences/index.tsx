@@ -1,6 +1,7 @@
-import React, { FC, useState } from 'react';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React, { FC, useState, useEffect } from 'react';
 import i18n from 'i18next';
-import { FORM, USER } from '@make.org/types/enums';
+import { FORM, USER, LocaleType } from '@make.org/types/enums';
 import {
   ErrorObjectType,
   OrganisationProfileType,
@@ -8,7 +9,11 @@ import {
   UserProfileType,
 } from '@make.org/types';
 import { SubmitButton } from '@make.org/components/Form/SubmitButton';
-import { SubmitSaveIcon } from '@make.org/utils/constants/icons';
+import {
+  SubmitSaveIcon,
+  MapMarkerIcon,
+  SelectLanguageFieldIcon,
+} from '@make.org/utils/constants/icons';
 import { CheckBox } from '@make.org/components/Form/CheckBox';
 import { UserService } from '@make.org/utils/services/User';
 import { OrganisationService } from '@make.org/utils/services/Organisation';
@@ -18,6 +23,14 @@ import { FormSuccessMessage } from '@make.org/components/Form/Success';
 import { getUser } from '@make.org/store/actions/authentication';
 import { PersonalityService } from '@make.org/utils/services/Personality';
 import { useAppContext } from '@make.org/store';
+import { FormLeftAlignStyle } from '@make.org/ui/elements/FormElements';
+import { SelectWithIcon } from '@make.org/components/Form/SelectWithIcon';
+import {
+  getCountriesTransMap,
+  getLanguagesTransMap,
+} from '@make.org/front/client/helpers/translationsMap';
+import { getCountriesAndLanguages } from '@make.org/front/client/helpers/LanguagesAndCountries';
+import { FormParagraphStyle } from '../Styled/Forms';
 
 type Props = {
   /** User id */
@@ -28,14 +41,61 @@ type Props = {
   profile: UserProfileType & OrganisationProfileType & PersonalityProfileType;
 };
 
-export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
+export const UpdateCommunicationPreferences: FC<Props> = ({
+  userId,
+  userType,
+  profile,
+}) => {
   const { dispatch, state } = useAppContext();
   const [optInNewsletter, setOptInNewsletter] = useState<boolean>(
     profile.optInNewsletter
   );
+  const {
+    availableTranslations,
+    countriesWithConsultations,
+    language,
+    country,
+  } = state.appConfig;
+  const { crmLanguage, crmCountry } = profile;
+  const [crmNewLanguage, setNewCrmLanguage] = useState(crmLanguage);
+  const [crmNewCountry, setNewCrmCountry] = useState(crmCountry);
   const [isSubmitSuccessful, setIsSubmitSuccessful] = useState<boolean>(false);
   const [canSubmit, setCanSubmit] = useState<boolean>(false);
   const [errors, setErrors] = useState<ErrorObjectType[]>([]);
+  const [countriesTransMap, setCountriesTransMap] = useState(
+    getCountriesTransMap()
+  );
+  const [languagesTransMap, setLanguagesTransMap] = useState(
+    getLanguagesTransMap()
+  );
+
+  useEffect(() => {
+    setCountriesTransMap(getCountriesTransMap());
+  }, [country]);
+
+  useEffect(() => {
+    setLanguagesTransMap(getLanguagesTransMap());
+  }, [language]);
+
+  // helper to retreive available countries and languages
+  const { countries, languages } = getCountriesAndLanguages(
+    countriesWithConsultations,
+    countriesTransMap,
+    languagesTransMap,
+    language,
+    availableTranslations
+  );
+
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const { name, value } = event.target;
+    if (name === 'country') {
+      setNewCrmCountry(value);
+    }
+    if (name === 'language') {
+      setNewCrmLanguage(value as keyof typeof LocaleType);
+    }
+    setCanSubmit(true);
+  };
 
   const handleCheck = (event: React.SyntheticEvent<HTMLLabelElement>) => {
     event.preventDefault();
@@ -52,12 +112,16 @@ export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
       setCanSubmit(false);
       getUser(dispatch, state.modal.isOpen);
     };
+
     const handleErrors = (serviceErrors: ErrorObjectType[]) => {
       setErrors(serviceErrors);
       setIsSubmitSuccessful(false);
     };
+
     const newProfile = {
       ...profile,
+      crmCountry: crmNewCountry,
+      crmLanguage: crmNewLanguage,
       optInNewsletter,
     };
     switch (userType) {
@@ -82,6 +146,8 @@ export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
           userId,
           {
             ...profile,
+            crmCountry: crmNewCountry,
+            crmLanguage: crmNewLanguage,
             optInNewsletter,
             legalAdvisorApproval: true,
             legalMinorConsent: true,
@@ -94,24 +160,44 @@ export const UpdateNewsletter: FC<Props> = ({ userId, userType, profile }) => {
   };
 
   return (
-    <TileWithTitle title={i18n.t('profile.newsletter_update.title')}>
-      <form id={FORM.NEWSLETTER_UPDATE_FORMNAME} onSubmit={handleSubmit}>
+    <TileWithTitle title={i18n.t('profile.communication_preferences.title')}>
+      <FormLeftAlignStyle
+        id={FORM.COMMUNICATION_UPDATE_FORMNANE}
+        onSubmit={handleSubmit}
+      >
+        <FormParagraphStyle>
+          {i18n.t('profile.communication_preferences.description')}
+        </FormParagraphStyle>
+        <SelectWithIcon
+          name="country"
+          icon={MapMarkerIcon}
+          defaultValue={crmCountry}
+          data={countries}
+          handleChange={handleChange}
+        />
+        <SelectWithIcon
+          name="language"
+          icon={SelectLanguageFieldIcon}
+          defaultValue={crmNewLanguage}
+          data={languages}
+          handleChange={handleChange}
+        />
         <FormErrors errors={errors} />
         <CheckBox
           name="optInNewsletter"
           value="newsletter"
           handleCheck={handleCheck}
-          label={i18n.t('profile.newsletter_update.optin_label')}
+          label={i18n.t('profile.communication_preferences.optin_label')}
           isChecked={optInNewsletter}
         />
         <SubmitButton
           disabled={!canSubmit}
-          formName={FORM.NEWSLETTER_UPDATE_FORMNAME}
+          formName={FORM.COMMUNICATION_UPDATE_FORMNANE}
           icon={SubmitSaveIcon}
           label={i18n.t('profile.common.submit_label')}
         />
         {isSubmitSuccessful && <FormSuccessMessage />}
-      </form>
+      </FormLeftAlignStyle>
     </TileWithTitle>
   );
 };

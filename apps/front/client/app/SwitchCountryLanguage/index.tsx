@@ -12,6 +12,7 @@ import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { trackClickConfirmLanguageCountry } from '@make.org/utils/services/Tracking';
 import { setLanguageFromPreferencesCookie } from '@make.org/utils/helpers/clientCookies';
+import { getCountriesAndLanguages } from '@make.org/front/client/helpers/LanguagesAndCountries';
 import {
   getCountriesTransMap,
   getLanguagesTransMap,
@@ -25,11 +26,6 @@ import {
   CountryLanguageSwitchRedButtonStyle,
   SwitchCountryLanguageContainerStyle,
 } from './style';
-
-type SortType = {
-  isoCode: string;
-  name: string;
-};
 
 export const SwitchCountryLanguage: React.FC = () => {
   const history = useHistory();
@@ -68,34 +64,13 @@ export const SwitchCountryLanguage: React.FC = () => {
     }
   }, []);
 
-  const countries: {
-    isoCode: string;
-    name: string;
-  }[] = [];
-  const languages: {
-    isoCode: keyof typeof LocaleType;
-    name: string;
-  }[] = [];
-
-  countriesWithConsultations.map(countryCode =>
-    countries.push({
-      isoCode: countryCode,
-      name: countriesTransMap.get(countryCode) || countryCode,
-    })
-  );
-
-  availableTranslations?.map(langue =>
-    languages.push({
-      isoCode: langue as keyof typeof LocaleType,
-      name: languagesTransMap.get(langue) || langue,
-    })
-  );
-
-  countries.sort((a: SortType, b: SortType) =>
-    new Intl.Collator(language).compare(a.name, b.name)
-  );
-  languages.sort((a: SortType, b: SortType) =>
-    new Intl.Collator(language).compare(a.name, b.name)
+  // helper to retreive available countries and languages
+  const { countries, languages } = getCountriesAndLanguages(
+    countriesWithConsultations,
+    countriesTransMap,
+    languagesTransMap,
+    language,
+    availableTranslations
   );
 
   const updateCountryLanguage = () => {

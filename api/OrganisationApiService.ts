@@ -59,7 +59,9 @@ export class OrganisationApiService {
     avatarUrl: string,
     description: string,
     website: string,
-    optInNewsletter: boolean
+    optInNewsletter: boolean,
+    crmCountry: string,
+    crmLanguage: string
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       ORGANISATION_PROFILE.replace(':organisationId', organisationId),
@@ -72,6 +74,8 @@ export class OrganisationApiService {
           description,
           website,
           optInNewsletter,
+          crmCountry,
+          crmLanguage,
         }),
       }
     );

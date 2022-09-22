@@ -88,7 +88,9 @@ export class PersonalityApiService {
     description: string,
     website: string,
     optInNewsletter: boolean,
-    politicalParty: string
+    politicalParty: string,
+    crmCountry: string,
+    crmLanguage: string
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       PERSONALITY_PROFILE.replace(':personalityId', personalityId),
@@ -102,6 +104,8 @@ export class PersonalityApiService {
           website,
           optInNewsletter,
           politicalParty,
+          crmCountry,
+          crmLanguage,
         }),
       }
     );

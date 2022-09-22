@@ -5,7 +5,7 @@ import { color, typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
-import { SvgExternalLink } from '../Svg/elements';
+import { SvgExternalLink, SvgSelectArrow } from '../Svg/elements';
 import { FlexElementStyle } from './FlexElements';
 import { UnstyledButtonStyle } from './ButtonsElements';
 
@@ -195,7 +195,7 @@ export const TwoFieldsRowStyle = styled(FlexElementStyle)`
   }
 `;
 
-export const FakeFieldStyle = styled.div<{ hasError: boolean }>`
+export const FakeFieldStyle = styled.div<{ hasError?: boolean }>`
   display: flex;
   position: relative;
   width: 100%;
@@ -327,6 +327,21 @@ export const BasicInputStyle = styled.input`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   line-height: 38px;
   padding: 0 5px;
+`;
+
+export const BasicSelectStyle = styled.select`
+  margin: 10px 0px;
+  border: none;
+  background-color: transparent;
+  background: transparent url(${SvgSelectArrow as never}) no-repeat 95% center;
+  min-width: 100%;
+  font-family: ${MakeFonts.CircularStandardBook};
+  color: ${color.black};
+  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  line-height: 24px;
+  padding: 0 5px;
+  -webkit-line-clamp: 1;
+  text-overflow: ellipsis;
 `;
 
 export const FormSuccessMessageStyle = styled.p`

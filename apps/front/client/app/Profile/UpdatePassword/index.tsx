@@ -13,7 +13,10 @@ import { TileWithTitle } from '@make.org/ui/components/TileWithTitle';
 import { getUser } from '@make.org/store/actions/authentication';
 import { UserService } from '@make.org/utils/services/User';
 import { throttle } from '@make.org/utils/helpers/throttle';
-import { FormRequirementsStyle } from '@make.org/ui/elements/FormElements';
+import {
+  FormRequirementsStyle,
+  FormLeftAlignStyle,
+} from '@make.org/ui/elements/FormElements';
 import { FormErrors } from '@make.org/components/Form/Errors';
 import { getFieldError } from '@make.org/utils/helpers/form';
 import { FormSuccessMessage } from '@make.org/components/Form/Success';
@@ -105,7 +108,7 @@ export const UpdatePassword: FC<Props> = ({ userId, hasPassword }) => {
 
   return (
     <TileWithTitle title={i18n.t('profile.password_update.title')}>
-      <form
+      <FormLeftAlignStyle
         id={FORM.PASSWORD_UPDATE_FORMNAME}
         onSubmit={throttle(handleSubmit)}
       >
@@ -138,7 +141,7 @@ export const UpdatePassword: FC<Props> = ({ userId, hasPassword }) => {
           label={i18n.t('profile.common.submit_label')}
         />
         {isSubmitSuccessful && <FormSuccessMessage />}
-      </form>
+      </FormLeftAlignStyle>
     </TileWithTitle>
   );
 };

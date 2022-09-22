@@ -27,4 +27,6 @@ export type PersonalityProfileType = {
   website: string;
   politicalParty: string;
   gender: string;
+  crmCountry: string;
+  crmLanguage: string;
 };

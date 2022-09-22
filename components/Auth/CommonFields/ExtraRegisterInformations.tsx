@@ -4,7 +4,7 @@ import i18n from 'i18next';
 import {
   AgeFieldIcon,
   NameFiledIcon,
-  PostalCodeFieldIcon,
+  MapMarkerIcon,
 } from '@make.org/utils/constants/icons';
 import { ErrorObjectType } from '@make.org/types';
 import { NumberInput } from '@make.org/components/Form/NumberInput';
@@ -69,7 +69,7 @@ export const ExtraInRegisterformationsFields: FC<Props> = ({
             type="text"
             name="postalcode"
             id="profile.postalcode"
-            icon={PostalCodeFieldIcon}
+            icon={MapMarkerIcon}
             value={postalcodeValue}
             error={postalcodeError}
             label={i18n.t('common.form.label.postalcode_optional')}

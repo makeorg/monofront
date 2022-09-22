@@ -60,6 +60,8 @@ userRouter.use('/:id/profile', (req, res) => {
       profession: 'developer',
       description: null,
       postalCode: '75000',
+      crmCountry: 'France',
+      crmLanguage: 'Français',
       optInNewsletter: false,
       website: null,
     });
