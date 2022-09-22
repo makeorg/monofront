@@ -71,7 +71,7 @@ export const UpdateCommunicationPreferences: FC<Props> = ({
 
   useEffect(() => {
     setCountriesTransMap(getCountriesTransMap());
-  }, [country]);
+  }, [country, language]);
 
   useEffect(() => {
     setLanguagesTransMap(getLanguagesTransMap());
