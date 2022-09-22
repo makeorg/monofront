@@ -47,7 +47,7 @@ import {
 
 export const DataPolicy: React.FC = () => {
   const { dispatch, state } = useAppContext();
-  const { country, language, source } = state.appConfig;
+  const { country, source } = state.appConfig;
   const { isLogin, extraProps } = state.modal;
   const { pendingProposal } = state.pendingProposal;
   const question = selectCurrentQuestion(state);
@@ -177,8 +177,8 @@ export const DataPolicy: React.FC = () => {
         <DataPolicyNewWindowLinkStyle
           href={
             isWidget
-              ? `https://make.org${getDataPageLink(country, language)}`
-              : getDataPageLink(country, language)
+              ? `https://make.org${getDataPageLink(country)}`
+              : getDataPageLink(country)
           }
           target="_blank"
           rel="noopener"

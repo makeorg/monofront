@@ -5,12 +5,12 @@ import { A11yDE } from './DE';
 
 export const A11y: FC = () => {
   const { state } = useAppContext();
-  const { language } = state.appConfig;
+  const { country } = state.appConfig;
 
-  switch (language) {
-    case 'fr':
+  switch (country) {
+    case 'FR':
       return <A11yFR />;
-    case 'de':
+    case 'DE':
       return <A11yDE />;
     default:
       return null;

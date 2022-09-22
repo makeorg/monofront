@@ -33,7 +33,7 @@ import { Login } from '../Login';
 export const Register: React.FC = () => {
   const { dispatch, state } = useAppContext();
   const { pendingProposal, registerStep } = state.pendingProposal;
-  const { country, language } = state.appConfig;
+  const { country } = state.appConfig;
   const [user, setUser] = useState<RegisterFormDataType>({
     email: '',
     password: '',
@@ -218,7 +218,7 @@ export const Register: React.FC = () => {
           <GreyParagraphStyle>
             {i18n.t('legal_consent.make_protect')}&nbsp;
             <PersonalDataGreyLinkStyle
-              href={getDataPageLink(country, language)}
+              href={getDataPageLink(country)}
               target="_blank"
               rel="noopener"
             >

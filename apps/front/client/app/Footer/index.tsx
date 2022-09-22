@@ -89,7 +89,7 @@ export const Footer: React.FC = () => {
             <FooterItemStyle as="div">
               <FooterItemAltLinkStyle
                 onClick={scrollToTop}
-                to={getContactPageLink(country, language)}
+                to={getContactPageLink(country)}
               >
                 <FooterContactIconStyle aria-hidden focusable="false" />
                 <> </>

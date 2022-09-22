@@ -41,7 +41,7 @@ import {
 
 export const TermsOfUseFR: FC = () => {
   const { state } = useAppContext();
-  const { country, language } = state.appConfig;
+  const { country } = state.appConfig;
 
   return (
     <>
@@ -118,7 +118,7 @@ export const TermsOfUseFR: FC = () => {
               </abbr>{' '}
               et de notre{' '}
               <RedHTMLLinkElementStyle
-                href={getModerationLinkByLanguage(language)}
+                href={getModerationLinkByLanguage(country)}
                 target="_blank"
                 rel="noopener"
               >
@@ -198,10 +198,7 @@ export const TermsOfUseFR: FC = () => {
                 CGUS
               </abbr>{' '}
               et est disponible{' '}
-              <RedLinkStyle to={getDataPageLink(country, language)}>
-                ici
-              </RedLinkStyle>
-              .
+              <RedLinkStyle to={getDataPageLink(country)}>ici</RedLinkStyle>.
             </StaticParagraphStyle>
             <StaticParagraphStyle>
               Les présentes{' '}

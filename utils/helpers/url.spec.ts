@@ -105,21 +105,18 @@ describe('Url Helper', () => {
   it('return MultiLang Link', () => {
     const linkFR = urlHelper.getMultiLangStaticLink(
       'FR',
-      'fr',
       ROUTE_STATIC_GTU_FR,
       ROUTE_STATIC_GTU_EN,
       ROUTE_STATIC_GTU_DE
     );
     const linkEN = urlHelper.getMultiLangStaticLink(
       'GB',
-      'en',
       ROUTE_STATIC_GTU_FR,
       ROUTE_STATIC_GTU_EN,
       ROUTE_STATIC_GTU_DE
     );
     const linkDE = urlHelper.getMultiLangStaticLink(
       'DE',
-      'de',
       ROUTE_STATIC_GTU_FR,
       ROUTE_STATIC_GTU_EN,
       ROUTE_STATIC_GTU_DE

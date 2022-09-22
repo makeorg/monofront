@@ -55,15 +55,14 @@ export const getPartnerAnchor = (aboutUrl: string): string =>
 
 export const getMultiLangStaticLink = (
   country: string,
-  language: string,
   FRLink: string,
   ENLink: string,
   DELink: string
 ): string => {
-  switch (language) {
-    case 'fr':
+  switch (country) {
+    case 'FR':
       return generatePath(FRLink, { country });
-    case 'de':
+    case 'DE':
       return generatePath(DELink, { country });
     default:
       return generatePath(ENLink, { country });
@@ -362,10 +361,9 @@ export const getPersonalityProfileLink = (
  * @param  {string} country
  * @return {string}
  */
-export const getContactPageLink = (country: string, language: string): string =>
+export const getContactPageLink = (country: string): string =>
   getMultiLangStaticLink(
     country,
-    language,
     ROUTE_STATIC_CONTACT_FR,
     // same uri as french version
     ROUTE_STATIC_CONTACT_FR,
@@ -379,10 +377,9 @@ export const getContactPageLink = (country: string, language: string): string =>
  * @param  {string} lamguage
  * @return {string}
  */
-export const getDataPageLink = (country: string, language: string): string =>
+export const getDataPageLink = (country: string): string =>
   getMultiLangStaticLink(
     country,
-    language,
     ROUTE_STATIC_DATA_FR,
     ROUTE_STATIC_DATA_EN,
     ROUTE_STATIC_DATA_DE
@@ -392,13 +389,11 @@ export const getDataPageLink = (country: string, language: string): string =>
  * Get the GTU page link
  *
  * @param  {string} country
- * @param  {string} lamguage
  * @return {string}
  */
-export const getGTUPageLink = (country: string, language: string): string =>
+export const getGTUPageLink = (country: string): string =>
   getMultiLangStaticLink(
     country,
-    language,
     ROUTE_STATIC_GTU_FR,
     ROUTE_STATIC_GTU_EN,
     ROUTE_STATIC_GTU_DE
@@ -408,13 +403,11 @@ export const getGTUPageLink = (country: string, language: string): string =>
  * Get the Legal page link
  *
  * @param  {string} country
- * @param  {string} lamguage
  * @return {string}
  */
-export const getLegalPageLink = (country: string, language: string): string =>
+export const getLegalPageLink = (country: string): string =>
   getMultiLangStaticLink(
     country,
-    language,
     ROUTE_STATIC_LEGAL_FR,
     ROUTE_STATIC_LEGAL_EN,
     ROUTE_STATIC_LEGAL_DE
@@ -426,10 +419,9 @@ export const getLegalPageLink = (country: string, language: string): string =>
  * @param  {string} country
  * @return {string}
  */
-export const getA11YPageLink = (country: string, language: string): string =>
+export const getA11YPageLink = (country: string): string =>
   getMultiLangStaticLink(
     country,
-    language,
     ROUTE_STATIC_A11Y_FR,
     // todo EN Translation for a11y page
     ROUTE_STATIC_A11Y_FR,
@@ -528,11 +520,11 @@ export const getAccountActivationLink = (
     verificationToken,
   });
 
-export const getModerationLinkByLanguage = (language: string): string => {
-  switch (language) {
-    case 'fr':
+export const getModerationLinkByLanguage = (country: string): string => {
+  switch (country) {
+    case 'FR':
       return URL.MODERATION_CHARTER_FR_LINK;
-    case 'de':
+    case 'DE':
       return URL.MODERATION_CHARTER_DE_LINK;
     default:
       return URL.MODERATION_CHARTER_EN_LINK;

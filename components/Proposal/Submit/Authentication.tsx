@@ -26,7 +26,7 @@ import { ProposalForm } from './Form';
 
 export const ProposalAuthentication: FC = () => {
   const { state, dispatch } = useAppContext();
-  const { country, language, source } = state.appConfig;
+  const { country, source } = state.appConfig;
   const isWidget = source === 'widget';
 
   useEffect(() => {
@@ -35,52 +35,52 @@ export const ProposalAuthentication: FC = () => {
 
   return (
     <ProposalStepWrapperStyle isWidget={isWidget} isAuthentication>
-        <ProposalStepWrapperColumnStyle isWidget={isWidget}>
-          <ColumnElementStyle>
-            <ProposalBackButtonCenterStyle
-              isWidget={isWidget}
-              onClick={() => dispatch(setPanelContent(<ProposalForm />))}
-            >
-              {i18n.t('proposal_submit.authentication.back')}
-            </ProposalBackButtonCenterStyle>
-            <ProposalAltStepTitleStyle isWidget={isWidget}>
-              <ProposalStepLabelRedStyle>
-                {i18n.t('proposal_submit.authentication.last_step_red')}
-              </ProposalStepLabelRedStyle>
-              {i18n.t('proposal_submit.authentication.last_step')}
-            </ProposalAltStepTitleStyle>
-            <ProposalSubmitAuthenticationRegisterButtons
-              onEmailRegister={() => dispatch(setPanelContent(<Register />))}
-            />
-          </ColumnElementStyle>
-          <ProposalAuthLoginWrapperStyle>
-            {i18n.t('proposal_submit.authentication.button_login_text')}&nbsp;
-            <ProposalAuthLoginStyle
-              onClick={() => dispatch(setPanelContent(<Login />))}
-            >
-              {i18n.t('proposal_submit.authentication.button_login_link')}
-            </ProposalAuthLoginStyle>
-          </ProposalAuthLoginWrapperStyle>
+      <ProposalStepWrapperColumnStyle isWidget={isWidget}>
+        <ColumnElementStyle>
+          <ProposalBackButtonCenterStyle
+            isWidget={isWidget}
+            onClick={() => dispatch(setPanelContent(<ProposalForm />))}
+          >
+            {i18n.t('proposal_submit.authentication.back')}
+          </ProposalBackButtonCenterStyle>
+          <ProposalAltStepTitleStyle isWidget={isWidget}>
+            <ProposalStepLabelRedStyle>
+              {i18n.t('proposal_submit.authentication.last_step_red')}
+            </ProposalStepLabelRedStyle>
+            {i18n.t('proposal_submit.authentication.last_step')}
+          </ProposalAltStepTitleStyle>
+          <ProposalSubmitAuthenticationRegisterButtons
+            onEmailRegister={() => dispatch(setPanelContent(<Register />))}
+          />
+        </ColumnElementStyle>
+        <ProposalAuthLoginWrapperStyle>
+          {i18n.t('proposal_submit.authentication.button_login_text')}&nbsp;
+          <ProposalAuthLoginStyle
+            onClick={() => dispatch(setPanelContent(<Login />))}
+          >
+            {i18n.t('proposal_submit.authentication.button_login_link')}
+          </ProposalAuthLoginStyle>
+        </ProposalAuthLoginWrapperStyle>
 
-          <DataPolicyWrapperStyle>
-            {i18n.t('legal_consent.make_protect')}&nbsp;
-            <DataPolicyNewWindowLinkStyle
-              href={
-                isWidget
-                  ? `https://make.org${getDataPageLink(country, language)}`
-                  : getDataPageLink(country, language)
-              }
-              target="_blank"
-              rel="noopener"
-            >
-              {i18n.t('legal_consent.make_protect_link')}
-              <NewWindowGreyIconStyle aria-hidden focusable="false" />
-              <ScreenReaderItemStyle>
-                {i18n.t('common.open_new_window')}
-              </ScreenReaderItemStyle>
-            </DataPolicyNewWindowLinkStyle>
-          </DataPolicyWrapperStyle>
-        </ProposalStepWrapperColumnStyle>
-      </ProposalStepWrapperStyle>
+        <DataPolicyWrapperStyle>
+          {i18n.t('legal_consent.make_protect')}&nbsp;
+          <DataPolicyNewWindowLinkStyle
+            href={
+              isWidget
+                ? `https://make.org${getDataPageLink(country)}`
+                : getDataPageLink(country)
+            }
+            target="_blank"
+            rel="noopener"
+          >
+            {i18n.t('legal_consent.make_protect_link')}
+            <NewWindowGreyIconStyle aria-hidden focusable="false" />
+            <ScreenReaderItemStyle>
+              {i18n.t('common.open_new_window')}
+            </ScreenReaderItemStyle>
+          </DataPolicyNewWindowLinkStyle>
+        </DataPolicyWrapperStyle>
+      </ProposalStepWrapperColumnStyle>
+    </ProposalStepWrapperStyle>
   );
 };

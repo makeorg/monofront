@@ -39,7 +39,7 @@ export const OptInGTU: React.FC<Props> = ({
 }) => {
   const { dispatch, state } = useAppContext();
 
-  const { country, language, source } = state.appConfig;
+  const { country, source } = state.appConfig;
   const isWidget = source === 'widget';
   const [acceptDataPolicy, setAcceptDataPolicy] = useState<boolean>(false);
   const [optinNewsletter, setOptinNewsletter] = useState<boolean>(false);
@@ -80,8 +80,8 @@ export const OptInGTU: React.FC<Props> = ({
         <TermsOfUseLinkGreyStyle
           href={
             isWidget
-              ? `https://make.org${getGTUPageLink(country, language)}`
-              : getGTUPageLink(country, language)
+              ? `https://make.org${getGTUPageLink(country)}`
+              : getGTUPageLink(country)
           }
           target="_blank"
           rel="noopener"

@@ -26,7 +26,7 @@ export const RefusalConfirmation: React.FC<Props> = ({
   toggleConfirmation,
 }) => {
   const { dispatch, state } = useAppContext();
-  const { country, language } = state.appConfig;
+  const { country } = state.appConfig;
   const handleClick = () => {
     toggleConfirmation();
   };
@@ -42,7 +42,7 @@ export const RefusalConfirmation: React.FC<Props> = ({
       <DataPolicyParagraphStyle isRefusal>
         {i18n.t('data_policy_modal.refusal_description_first_part')}
         <DataPolicyNewWindowLinkStyle
-          href={getDataPageLink(country, language)}
+          href={getDataPageLink(country)}
           target="_blank"
           rel="noopener"
         >

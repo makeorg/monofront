@@ -40,7 +40,7 @@ import {
 
 export const TermsOfUseDE: FC = () => {
   const { state } = useAppContext();
-  const { country, language } = state.appConfig;
+  const { country } = state.appConfig;
 
   return (
     <>
@@ -113,7 +113,7 @@ export const TermsOfUseDE: FC = () => {
               unserer Website bereitgestellten Informationen liegt uns daher
               besonders am Herzen. In diesen ANB und unserer{' '}
               <RedHTMLLinkElementStyle
-                href={getModerationLinkByLanguage(language)}
+                href={getModerationLinkByLanguage(country)}
                 target="_blank"
                 rel="noopener"
               >
@@ -188,10 +188,7 @@ export const TermsOfUseDE: FC = () => {
               uneingeschränkte Akzeptanz der
               Make.org-Datenverwendungsrichtlinie, die einen integralen
               Bestandteil dieser TOS bildet und hier verfügbar{' '}
-              <RedLinkStyle to={getDataPageLink(country, language)}>
-                ist
-              </RedLinkStyle>
-              .
+              <RedLinkStyle to={getDataPageLink(country)}>ist</RedLinkStyle>.
             </StaticParagraphStyle>
             <StaticParagraphStyle>
               Diese{' '}

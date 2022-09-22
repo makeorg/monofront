@@ -39,7 +39,7 @@ export const SecondStepRegister: React.FC<Props> = ({
 }) => {
   const { state } = useAppContext();
 
-  const { country, language, source } = state.appConfig;
+  const { country, source } = state.appConfig;
   const isWidget = source === 'widget';
   return (
     <>
@@ -62,8 +62,8 @@ export const SecondStepRegister: React.FC<Props> = ({
         <TermsOfUseLinkGreyStyle
           href={
             isWidget
-              ? `https://make.org${getGTUPageLink(country, language)}`
-              : getGTUPageLink(country, language)
+              ? `https://make.org${getGTUPageLink(country)}`
+              : getGTUPageLink(country)
           }
           target="_blank"
           rel="noopener"

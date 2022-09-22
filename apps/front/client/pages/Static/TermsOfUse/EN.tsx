@@ -41,7 +41,7 @@ import {
 
 export const TermsOfUseEN: FC = () => {
   const { state } = useAppContext();
-  const { country, language } = state.appConfig;
+  const { country } = state.appConfig;
 
   return (
     <>
@@ -115,7 +115,7 @@ export const TermsOfUseEN: FC = () => {
               </abbr>{' '}
               and our{' '}
               <RedHTMLLinkElementStyle
-                href={getModerationLinkByLanguage(language)}
+                href={getModerationLinkByLanguage(country)}
                 target="_blank"
                 rel="noopener"
               >
@@ -193,10 +193,7 @@ export const TermsOfUseEN: FC = () => {
                 GTS
               </abbr>{' '}
               and which is available{' '}
-              <RedLinkStyle to={getDataPageLink(country, language)}>
-                here
-              </RedLinkStyle>
-              .
+              <RedLinkStyle to={getDataPageLink(country)}>here</RedLinkStyle>.
             </StaticParagraphStyle>
             <StaticParagraphStyle>
               The present{' '}

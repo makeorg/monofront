@@ -15,45 +15,39 @@ export type FooterLinkType = {
   isDesktop?: boolean;
 };
 
-export const setCommonInternalLinks = (
-  country: string,
-  language: string
-): FooterLinkType[] => {
-  if (!country || !language) {
+export const setCommonInternalLinks = (country: string): FooterLinkType[] => {
+  if (!country) {
     return [];
   }
 
   return [
     {
       label: i18n.t('main_footer.legal'),
-      url: getLegalPageLink(country, language),
+      url: getLegalPageLink(country),
       onClick: scrollToTop,
     },
     {
       label: i18n.t('main_footer.terms'),
-      url: getGTUPageLink(country, language),
+      url: getGTUPageLink(country),
       onClick: scrollToTop,
     },
     {
       label: i18n.t('main_footer.data'),
-      url: getDataPageLink(country, language),
+      url: getDataPageLink(country),
       onClick: scrollToTop,
     },
   ];
 };
 
-export const setCommonExtraLinks = (
-  country: string,
-  language: string
-): FooterLinkType[] => {
-  if (!country || !language) {
+export const setCommonExtraLinks = (country: string): FooterLinkType[] => {
+  if (!country) {
     return [];
   }
 
   return [
     {
       label: i18n.t('main_footer.a11y'),
-      url: getA11YPageLink(country, language),
+      url: getA11YPageLink(country),
       onClick: scrollToTop,
     },
     {

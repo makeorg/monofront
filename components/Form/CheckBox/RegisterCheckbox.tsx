@@ -25,7 +25,7 @@ export const RegisterCheckBox: React.FC<Props> = ({
 }) => {
   const { state } = useAppContext();
   const [checked, setIsChecked] = useState<boolean>(false);
-  const { country, language, source } = state.appConfig;
+  const { country, source } = state.appConfig;
   const isWidget = source === 'widget';
 
   const handleChange = () => {
@@ -50,8 +50,8 @@ export const RegisterCheckBox: React.FC<Props> = ({
           <DataPolicyNewWindowLinkStyle
             href={
               isWidget
-                ? `https://make.org${getDataPageLink(country, language)}`
-                : getDataPageLink(country, language)
+                ? `https://make.org${getDataPageLink(country)}`
+                : getDataPageLink(country)
             }
             target="_blank"
             rel="noopener"
