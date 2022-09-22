@@ -1,0 +1,545 @@
+{
+    "context": "Consultation citoyenne réalisée par Make.org du 2022-03-29 au 2022-06-19, autour de la question: Ensemble, comment pouvons-nous transformer les rues des grandes villes pour faire face aux enjeux du XXIe siècle ?",
+    "key_figures": {
+        "visitors": 25411,
+        "votes": 204689,
+        "proposals": 783
+    },
+    "top_ideas": [
+        {
+            "name": "Mobilités",
+            "ideas": [
+                {
+                    "idea": "Progresser vers des mobilités durable",
+                    "agreement": 83,
+                    "adhesion": 16,
+                    "realistic": 27
+                }
+            ]
+        },
+        {
+            "name": "Nature et ressources",
+            "ideas": [
+                {
+                    "idea": "Favoriser le retour de la nature en ville",
+                    "agreement": 90,
+                    "adhesion": 25,
+                    "realistic": 24
+                },
+                {
+                    "idea": "Améliorer la gestion de l'eau de pluie au sein des villes",
+                    "agreement": 91,
+                    "adhesion": 20,
+                    "realistic": 27
+                }
+            ]
+        },
+        {
+            "name": "Social et culturel",
+            "ideas": [
+                {
+                    "idea": "Développer des rues plus inclusives",
+                    "agreement": 87,
+                    "adhesion": 18,
+                    "realistic": 30
+                },
+                {
+                    "idea": "Créer des lieux et des espaces urbains de rencontres et de lien social",
+                    "agreement": 80,
+                    "adhesion": 16,
+                    "realistic": 21
+                },
+                {
+                    "idea": "Venir en aide aux sans domicile fixe",
+                    "agreement": 72,
+                    "adhesion": 12,
+                    "realistic": 21
+                }
+            ]
+        },
+        {
+            "name": "Urbanisme et habitat",
+            "ideas": [
+                {
+                    "idea": "Favoriser et développer la rénovation urbaine",
+                    "agreement": 83,
+                    "adhesion": 14,
+                    "realistic": 25
+                },
+                {
+                    "idea": "Réintégrer la parole des habitants dans l'élaboration des projets urbains",
+                    "agreement": 81,
+                    "adhesion": 14,
+                    "realistic": 25
+                },
+                {
+                    "idea": "Optimiser la gestion des travaux au sein des villes",
+                    "agreement": 71,
+                    "adhesion": 16,
+                    "realistic": 25
+                }
+            ]
+        },
+        {
+            "name": "Déchets",
+            "ideas": [
+                {
+                    "idea": "Améliorer la gestion des déchets au sein des villes et la durabilité des produits",
+                    "agreement": 81,
+                    "adhesion": 18,
+                    "realistic": 25
+                },
+                {
+                    "idea": "Multiplier les toilettes publiques au sein des villes",
+                    "agreement": 84,
+                    "adhesion": 15,
+                    "realistic": 25
+                },
+                {
+                    "idea": "Lutter contre les jets de déchets dans l'espace public",
+                    "agreement": 88,
+                    "adhesion": 23,
+                    "realistic": 22
+                }
+            ]
+        },
+        {
+            "name": "Commerces et production",
+            "ideas": [
+                {
+                    "idea": "Redynamiser l'activité commerciale au sein des villes",
+                    "agreement": 82,
+                    "adhesion": 15,
+                    "realistic": 26
+                },
+                {
+                    "idea": "Développer l'agriculture urbaine",
+                    "agreement": 79,
+                    "adhesion": 17,
+                    "realistic": 23
+                }
+            ]
+        },
+
+        {
+            "name": "Energie",
+            "ideas": [
+                {
+                    "idea": "Optimiser la gestion des éclairages urbains",
+                    "agreement": 87,
+                    "adhesion": 23,
+                    "realistic": 28
+                }
+            ]
+        }
+    ],
+    "controversials":[{
+            "id": "edc4b128-dd18-4055-bd89-ac431d1447ef",
+            "content": "Il faut réduire fortement les véhicules motorisés et réduire la place donnée à la voiture (largeur voie et stationnement)",
+            "author": "Marie-Christine",
+            "agree": 39,
+            "like_it": 8,
+            "disagree": 49,
+            "no_way": 20,
+            "votes": 266
+        },
+        {
+            "id": "92d84b90-ea48-451f-b229-5fa0af50849d",
+            "content": "Il faut interdire les trottinettes en ville car trop d’accidents",
+            "author": "Luc",
+            "agree": 38,
+            "like_it": 9,
+            "disagree": 38,
+            "no_way": 13,
+            "votes": 254
+        },{
+            "id": "6a7882bb-7c00-4dd4-aca8-6f96d723fcda",
+            "content": "Il faut supprimer le stationnement sur les rues bordant les jardins publics pour étendre la végétation et les usages du jardin sur la rue",
+            "author": "Yann-fanch",
+            "agree": 35,
+            "like_it": 7,
+            "disagree": 40,
+            "no_way": 10,
+            "votes": 259
+        },
+        {
+            "id": "de919b64-05e3-4cdb-bd9f-75b0f67ab2d8",
+            "content": "Il faut favoriser l’occupation de la rue par des artistes.",
+            "author": "Karim",
+            "agree": 36,
+            "like_it": 6,
+            "disagree": 35,
+            "no_way": 13,
+            "votes": 261
+        },{
+            "id": "a4858e23-0095-48c3-8538-e28cc135f085",
+            "content": "Il faut taxer fortement et contrôler les propriétaires d'hébergements touristiques et de résidences secondaires",
+            "author": "Julien",
+            "agree": 40,
+            "like_it": 5,
+            "disagree": 41,
+            "no_way": 17,
+            "votes": 265
+        },
+        {
+            "id": "db660e4a-93ef-4092-ad75-ed14b9ea4163",
+            "content": "Il faut interdire les chiens en ville ou faire payer un impôt aux propriétaires pour que les salissures soient nettoyées",
+            "author": "Carmen",
+            "agree": 30,
+            "like_it": 6,
+            "disagree": 59,
+            "no_way": 29,
+            "votes": 262
+        },{
+            "id": "07ab53b3-e6c7-46fe-8dc8-c8c67b91faa0",
+            "content": "Il faut limiter la taille des terrasses de restaurants pour éviter les nuisances sonores",
+            "author": "Annie",
+            "agree": 46,
+            "like_it": 7,
+            "disagree": 30,
+            "no_way": 10,
+            "votes": 260
+        },
+        {
+            "id": "9a25b75f-b6cf-447b-b326-a4345def37b6",
+            "content": "Il faut interdire les fast-foods et les lieux de malbouffe dans les rues piétonnes.",
+            "author": "Louis",
+            "agree": 35,
+            "like_it": 8,
+            "disagree": 41,
+            "no_way": 9,
+            "votes": 268
+        },{
+            "id": "40f9a5a0-7542-4dc8-aec6-e4de07a27080",
+            "content": "Il faut créer des longs potagers entre les routes et les trottoirs afin que chaque citoyen puisse profiter de son petit espace de culture.",
+            "author": "Marcellin",
+            "agree": 41,
+            "like_it": 10,
+            "disagree": 39,
+            "no_way": 8,
+            "votes": 258
+        }
+    ],
+
+    "rejected": [],
+    "cartography": [
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Thèmes cités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Transports et déplacements",
+                    "percent": 32,
+                    "color": "#4B45A5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Biodiversité et climat",
+                    "percent": 28,
+                    "color": "#8955BD",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Confort en ville",
+                    "percent": 11,
+                    "color": "#EB7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Gouvernance",
+                    "percent": 9,
+                    "color": "#F5976E",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.7,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Stationnement",
+                    "percent": 8,
+                    "color": "#EEB298",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.7,
+                        "yAxis": 2.1
+                    }
+                },
+                {
+                    "label": "Commerces",
+                    "percent": 8,
+                    "color": "#FFD266",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Gestion des",
+                    "sublabel": " déchets",
+                    "percent": 7,
+                    "color": "#FFF689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Accessibilité et",
+                    "sublabel": " inclusion",
+                    "percent": 6,
+                    "color": "#E5FFAE",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Autres",
+                    "percent": 18,
+                    "color": "#FFF",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "textAlign": "left",
+                        "yAxis": 1.8
+                    }
+                }
+            ]
+        }
+    ],
+    "participation": [
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (1/2)",
+            "forcedHigherValue": 22,
+            "legend": {
+                "title": "Participation par région (1/2)",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "Île-de-France",
+                    "bars": {
+                        "first": 21,
+                        "second": 18
+                    }
+                },
+                {
+                    "label": "Auvergne-Rhône-Alpes",
+                    "bars": {
+                        "first": 13,
+                        "second": 12
+                    }
+                },
+                {
+                    "label": "Nouvelle-Aquitaine",
+                    "bars": {
+                        "first": 8,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Occitanie",
+                    "bars": {
+                        "first": 7,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Hauts-de-France",
+                    "bars": {
+                        "first": 9,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Grand Est",
+                    "bars": {
+                        "first": 8,
+                        "second": 8
+                    }
+                },
+                {
+                    "label": "Provence-Alpes-Côte d'Azur",
+                    "bars": {
+                        "first": 9,
+                        "second": 8
+                    }
+                }
+            ],
+            "id": "participation_0"
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (2/2)",
+            "forcedHigherValue": 22,
+            "legend": {
+                "title": "Participation par région (2/2)",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "Pays de la Loire",
+                    "bars": {
+                        "first": 5,
+                        "second": 6
+                    }
+                },
+                {
+                    "label": "Bretagne",
+                    "bars": {
+                        "first": 5,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Normandie",
+                    "bars": {
+                        "first": 5,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Bourgogne-Franche-Comté",
+                    "bars": {
+                        "first": 3,
+                        "second": 4
+                    }
+                },
+                {
+                    "label": "Centre-Val de Loire",
+                    "bars": {
+                        "first": 4,
+                        "second": 4
+                    }
+                },
+                {
+                    "label": "Outre-mer",
+                    "bars": {
+                        "first": 3,
+                        "second": 3
+                    }
+                },
+                {
+                    "label": "Corse",
+                    "bars": {
+                        "first": 1,
+                        "second": 1
+                    }
+                }
+            ],
+            "id": "participation_1"
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par âge",
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "16-24",
+                    "bars": {
+                        "first": 13,
+                        "second": 13
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "25-34",
+                    "bars": {
+                        "first": 15,
+                        "second": 14
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "35-44",
+                    "bars": {
+                        "first": 16,
+                        "second": 15
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "45-54",
+                    "bars": {
+                        "first": 16,
+                        "second": 16
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "55-64",
+                    "bars": {
+                        "first": 18,
+                        "second": 16
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "65+",
+                    "bars": {
+                        "first": 22,
+                        "second": 26
+                    },
+                    "color": "#8BDAB2"
+                }
+            ],
+            "id": "participation_2"
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Votes par genre",
+            "legend": "",
+            "data": [
+                {
+                    "label": "hommes",
+                    "percent": 46,
+                    "color": "#4B45A5"
+                },
+                {
+                    "label": "femmes",
+                    "percent": 52,
+                    "color": "#EB7575"
+                },
+                {
+                    "label": "non-binaire",
+                    "percent": 2,
+                    "color": "#8BDAB2"
+                }
+            ],
+            "id": "participation_3"
+        }
+    ]
+}
