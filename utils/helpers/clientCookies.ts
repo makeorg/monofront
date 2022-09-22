@@ -37,7 +37,7 @@ export const setTrackingConsentFromPreferencesCookie = (
   );
 };
 
-export const setLanguageFromPreferencesCookie = (
+export const setLanguageInPreferenceCookie = (
   languageCookie: keyof typeof LocaleType
 ): void => {
   cookies.set(

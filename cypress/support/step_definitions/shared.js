@@ -78,6 +78,16 @@ Given(
   }
 );
 
+Given(
+  'I go/am to/on {string} with a browser language {string} and query params {string}',
+  (targetPage, language, queryParams) => {
+    checkPageExist(targetPage);
+    cy.visit(`${pages[targetPage]}?${queryParams}`, {
+      headers: { 'Accept-language': language },
+    });
+  }
+);
+
 Given('I go/am to/on {string} from Great Britain', targetPage => {
   checkPageExist(targetPage);
   cy.visit(pages[targetPage], {
@@ -166,6 +176,10 @@ Then(
   }
 );
 
+Then("I don't see {string} in url", params => {
+  cy.url().should('not.include', params);
+});
+
 // I see canonical url
 Then('I see the canonical url {string} of the page', CanonicalUrl => {
   cy.get(`[data-cy=canonical_url]`)
@@ -188,9 +202,7 @@ Then("The {string} container doesn't exist", containerName => {
 });
 
 Then('I see {string} in {string} container', (text, containerName) => {
-  cy.get(`[data-cy-container=${containerName}]`)
-    .first()
-    .should('contain', text);
+  cy.get(`[data-cy-container=${containerName}]`).should('contain', text);
 });
 
 // I see link
@@ -266,17 +278,14 @@ Then(
   }
 );
 
-Then(
-  'I see a button {string} with label {string}',
-  (buttonName, containerName, label) => {
-    cy.get(`button[data-cy-button=${getIdentifierButtonByName(buttonName)}]`)
-      .first()
-      .scrollIntoView()
-      .contains(new RegExp(label))
-      .should('exist')
-      .and('be.visible');
-  }
-);
+Then('I see a button {string} with label {string}', (buttonName, label) => {
+  cy.get(`button[data-cy-button=${getIdentifierButtonByName(buttonName)}]`)
+    .first()
+    .scrollIntoView()
+    .contains(new RegExp(label))
+    .should('exist')
+    .and('be.visible');
+});
 
 Then(
   'I see a button {string} in {string} container with label {string}',

@@ -25,6 +25,10 @@ const headerButtons = {
   'search clear': 'search-clear',
 };
 
+const footerButtons = {
+  'country language switch': 'country-language-switch-panel',
+};
+
 const notificationButtons = {
   'cookie accept': 'cookie-accept',
 };
@@ -33,6 +37,7 @@ const buttonIdentifiers = {
   ...sequenceButtons,
   ...headerButtons,
   ...notificationButtons,
+  ...footerButtons,
 };
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types

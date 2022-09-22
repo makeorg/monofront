@@ -15,19 +15,36 @@ export const getCountryFromRequest = (req: Request): string => {
   return '';
 };
 
+const setCookieLanguage = (req: Request & Cookie, language: string): void => {
+  const preferences = req.universalCookies.get(COOKIE.USER_PREFERENCES) || {};
+
+  req.universalCookies.set(COOKIE.USER_PREFERENCES, {
+    ...preferences,
+    language,
+  });
+};
+
 export const getUserLanguage = (
   req: Request & Cookie
 ): keyof typeof LocaleType => {
+  if (translationRessoucesLanguages.includes(req.query?.lang)) {
+    setCookieLanguage(req, req.query.lang);
+
+    return LocaleType[req.query.lang as keyof typeof LocaleType];
+  }
+
   const cookieLanguage = req.universalCookies.get(COOKIE.USER_PREFERENCES)
     ?.language as keyof typeof LocaleType;
 
-  if (!cookieLanguage) {
-    const language = (req.acceptsLanguages(translationRessoucesLanguages) ||
-      DEFAULT_LANGUAGE) as keyof typeof LocaleType;
-
-    return LocaleType[language];
+  if (translationRessoucesLanguages.includes(cookieLanguage)) {
+    return cookieLanguage;
   }
-  return cookieLanguage;
+
+  const language = (req.acceptsLanguages(translationRessoucesLanguages) ||
+    DEFAULT_LANGUAGE) as keyof typeof LocaleType;
+  setCookieLanguage(req, language);
+
+  return LocaleType[language];
 };
 
 export const countryLanguageMiddleware = (

@@ -21,7 +21,7 @@ export const HomePage: FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { dispatch, state } = useAppContext();
   const {
-    appConfig: { country, language },
+    appConfig: { country },
     views: { homepage },
   } = state;
   const isFR = country === 'FR';
@@ -56,7 +56,7 @@ export const HomePage: FC = () => {
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [country, language]);
+  }, [country]);
 
   return (
     <>

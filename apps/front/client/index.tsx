@@ -22,13 +22,8 @@ import i18n from 'i18next';
 import { createInitialState } from '@make.org/store/initialState';
 import { getRouteNoCookies } from '@make.org/utils/routes';
 import ContextState from '@make.org/store';
-import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 import { ApiServiceHeadersType, StateRoot } from '@make.org/types';
-import {
-  initTrackersFromPreferences,
-  getLanguageFromPreferencesCookie,
-  setLanguageFromPreferencesCookie,
-} from '@make.org/utils/helpers/clientCookies';
+import { initTrackersFromPreferences } from '@make.org/utils/helpers/clientCookies';
 import { COOKIE } from '@make.org/types/enums';
 import { ENABLE_MIXPANEL } from '@make.org/utils/constants/cookies';
 import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
@@ -102,21 +97,14 @@ const initApp = async (state: StateRoot) => {
   const { language, country, source, queryParams } = state.appConfig;
   const { sessionId } = state.session;
   const cookies = new Cookies();
-  const languageCookie = getLanguageFromPreferencesCookie();
-  const userLanguage = languageCookie || language || DEFAULT_LANGUAGE;
   // Set in session storage some keys from query params
   setDataFromQueryParams(queryParams);
-
-  // init language cookie if none is present
-  if (!languageCookie) {
-    setLanguageFromPreferencesCookie(language);
-  }
 
   const sessionIdCookie = cookies.get(COOKIE.SESSION_ID);
   apiClient.sessionId = sessionIdCookie || sessionId || '';
 
   // init api service before authenticationState to get visitorId
-  initApiService(source, country, userLanguage, getAll());
+  initApiService(source, country, language, getAll());
 
   // Get demographics cookie to render demographics card if cookie is not there
   const demographicsCookie = cookies.get(COOKIE.DEMOGRAPHICS);
@@ -166,12 +154,12 @@ const initApp = async (state: StateRoot) => {
       escapeValue: false,
     },
     debug: env.isDev(),
-    lng: userLanguage,
+    lng: language,
     resources: translationRessources,
   });
 
   // Set date helper language
-  DateHelper.language = userLanguage;
+  DateHelper.language = language;
 
   const { currentQuestion, questions } = store;
 
@@ -180,7 +168,7 @@ const initApp = async (state: StateRoot) => {
   if (currentQuestion && questions[currentQuestion]) {
     question = questions[currentQuestion].question;
   }
-  initTrackingParamsService(source, country, userLanguage, question);
+  initTrackingParamsService(source, country, language, question);
 
   // Track cookies availability and adBlockers
   if (adBlockerDetected()) {

@@ -6,12 +6,12 @@ import {
   setLanguageCode,
 } from '@make.org/store/actions/appConfig';
 import { LocaleType, FORM } from '@make.org/types/enums';
-import { useHistory } from 'react-router';
+import { useHistory, useLocation } from 'react-router';
 import { useAppContext } from '@make.org/store';
 import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { trackClickConfirmLanguageCountry } from '@make.org/utils/services/Tracking';
-import { setLanguageFromPreferencesCookie } from '@make.org/utils/helpers/clientCookies';
+import { setLanguageInPreferenceCookie } from '@make.org/utils/helpers/clientCookies';
 import { getCountriesAndLanguages } from '@make.org/front/client/helpers/LanguagesAndCountries';
 import {
   getCountriesTransMap,
@@ -63,6 +63,7 @@ export const SwitchCountryLanguage: React.FC = () => {
       parent.scrollTop = offset - height / 2 + countryDivHeight / 2;
     }
   }, []);
+  const { search } = useLocation();
 
   // helper to retreive available countries and languages
   const { countries, languages } = getCountriesAndLanguages(
@@ -74,7 +75,7 @@ export const SwitchCountryLanguage: React.FC = () => {
   );
 
   const updateCountryLanguage = () => {
-    setLanguageFromPreferencesCookie(newLanguage);
+    setLanguageInPreferenceCookie(newLanguage);
     dispatch(setCountryCode(newCountry));
     dispatch(setLanguageCode(newLanguage));
     trackClickConfirmLanguageCountry(newCountry, newLanguage);
@@ -83,6 +84,15 @@ export const SwitchCountryLanguage: React.FC = () => {
 
     if (newCountry !== country) {
       history.push(getHomeLink(newCountry));
+    }
+    if (newLanguage !== language) {
+      const queryParams = new URLSearchParams(search);
+      if (queryParams.has('lang')) {
+        queryParams.delete('lang');
+        history.replace({
+          search: queryParams.toString(),
+        });
+      }
     }
   };
 
