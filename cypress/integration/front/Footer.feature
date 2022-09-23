@@ -62,7 +62,7 @@ Feature: The footer
     Given I go to "france homepage" with a browser language "en"
     Then I see an external link "Press" to "https://about.make.org/les-medias-en-parlent" in "footer" container
     And I see an external link "Endowment fund" to "https://foundation.make.org" in "footer" container
-    And I see an external link "Moderation charter" to "https://about.make.org/moderation" in "footer" container
+    And I see an external link "Moderation charter" to "https://about.make.org/en/moderation" in "footer" container
     And I see a link "Contact" to "/FR/contact" in "footer" container
     And I see a link "Legal notice" to "/FR/mentions-legales" in "footer" container
     And I see a link "Terms of use" to "/FR/conditions-dutilisation" in "footer" container
@@ -75,7 +75,7 @@ Feature: The footer
     Given I go to "france homepage" with a browser language "de"
     Then I see an external link "Presseschau" to "https://about.make.org/les-medias-en-parlent" in "footer" container
     And I see an external link "Make.org Stiftungsfonds" to "https://foundation.make.org" in "footer" container
-    And I see an external link "Moderationscharta" to "https://about.make.org/moderation" in "footer" container
+    And I see an external link "Moderationscharta" to "https://about.make.org/de/moderation-charter" in "footer" container
     And I see a link "Kontakt" to "/FR/contact" in "footer" container
     And I see a link "Impressum" to "/FR/mentions-legales" in "footer" container
     And I see a link "Nutzungsbedingungen" to "/FR/conditions-dutilisation" in "footer" container
@@ -86,7 +86,7 @@ Feature: The footer
 
   Scenario: English Mobile Footer in french
     Given I go to "british homepage" with a browser language "fr"
-    Then I see an external link "Charte de modération" to "https://about.make.org/en/moderation" in "footer" container
+    Then I see an external link "Charte de modération" to "https://about.make.org/moderation" in "footer" container
     And I see a link "Mentions légales" to "/GB/legal-mentions" in "footer" container
     And I see a link "Conditions d'utilisation" to "/GB/terms-of-use" in "footer" container
     And I see a link "Politique de données" to "/GB/data-terms" in "footer" container

@@ -51,14 +51,14 @@ export const useExternalLinks = (
     if (!country) {
       setExternalLinks([]);
     }
-    setExternalLinks(setINTExternalLinks());
+    setExternalLinks(setINTExternalLinks(language));
 
     if (country === 'FR') {
-      setExternalLinks(setFRExternalLinks(isDesktop));
+      setExternalLinks(setFRExternalLinks(isDesktop, language));
     }
 
     if (country === 'DE') {
-      setExternalLinks(setDEExternalLinks(isDesktop));
+      setExternalLinks(setDEExternalLinks(isDesktop, language));
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps

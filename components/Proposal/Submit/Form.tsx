@@ -50,7 +50,7 @@ export const ProposalForm: FC = () => {
   const inputRef = useRef() as React.MutableRefObject<HTMLTextAreaElement>;
   const question: QuestionType | null = selectCurrentQuestion(state);
   const { isLoggedIn } = selectAuthentication(state);
-  const { country, device } = state.appConfig;
+  const { device, language } = state.appConfig;
   const isMobile = matchMobileDevice(device);
   const proposalIsEmpty = pendingProposal.length === 0;
   const baitText = getLocalizedBaitText(question.language, question.questionId);
@@ -170,7 +170,7 @@ export const ProposalForm: FC = () => {
             <ProposalAuthInlineWrapperStyle>
               {i18n.t('proposal_submit.form.read_our')}{' '}
               <ProposalExternalLinkStyle
-                href={getModerationLinkByLanguage(country)}
+                href={getModerationLinkByLanguage(language)}
                 target="_blank"
                 rel="noopener"
                 onClick={trackClickModerationLink}

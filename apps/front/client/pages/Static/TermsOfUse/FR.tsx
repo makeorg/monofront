@@ -41,7 +41,7 @@ import {
 
 export const TermsOfUseFR: FC = () => {
   const { state } = useAppContext();
-  const { country } = state.appConfig;
+  const { country, language } = state.appConfig;
 
   return (
     <>
@@ -118,7 +118,7 @@ export const TermsOfUseFR: FC = () => {
               </abbr>{' '}
               et de notre{' '}
               <RedHTMLLinkElementStyle
-                href={getModerationLinkByLanguage(country)}
+                href={getModerationLinkByLanguage(language)}
                 target="_blank"
                 rel="noopener"
               >

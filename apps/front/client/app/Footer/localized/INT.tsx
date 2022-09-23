@@ -1,13 +1,15 @@
 import i18n from 'i18next';
-import { URL } from '@make.org/types/enums';
-import { getCookiesPageLink } from '@make.org/utils/helpers/url';
+import {
+  getCookiesPageLink,
+  getModerationLinkByLanguage,
+} from '@make.org/utils/helpers/url';
 import { scrollToTop } from '@make.org/utils/helpers/styled';
 import { FooterLinkType } from './Common';
 
-export const setINTExternalLinks = (): FooterLinkType[] => [
+export const setINTExternalLinks = (language: string): FooterLinkType[] => [
   {
     label: i18n.t('main_footer.moderation_charter'),
-    url: URL.MODERATION_CHARTER_EN_LINK,
+    url: getModerationLinkByLanguage(language),
   },
 ];
 

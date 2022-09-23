@@ -520,11 +520,11 @@ export const getAccountActivationLink = (
     verificationToken,
   });
 
-export const getModerationLinkByLanguage = (country: string): string => {
-  switch (country) {
-    case 'FR':
+export const getModerationLinkByLanguage = (language: string): string => {
+  switch (language) {
+    case 'fr':
       return URL.MODERATION_CHARTER_FR_LINK;
-    case 'DE':
+    case 'de':
       return URL.MODERATION_CHARTER_DE_LINK;
     default:
       return URL.MODERATION_CHARTER_EN_LINK;

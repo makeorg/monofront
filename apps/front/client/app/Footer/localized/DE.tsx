@@ -2,9 +2,13 @@
 import i18n from 'i18next';
 import { trackClickBlog } from '@make.org/utils/services/Tracking';
 import { URL } from '@make.org/types/enums';
+import { getModerationLinkByLanguage } from '@make.org/utils/helpers/url';
 import { FooterLinkType } from './Common';
 
-export const setDEExternalLinks = (isDesktop: boolean): FooterLinkType[] => [
+export const setDEExternalLinks = (
+  isDesktop: boolean,
+  language: string
+): FooterLinkType[] => [
   {
     label: i18n.t('main_footer.news'),
     url: URL.NEWS_LINK_DE,
@@ -18,6 +22,6 @@ export const setDEExternalLinks = (isDesktop: boolean): FooterLinkType[] => [
   },
   {
     label: i18n.t('main_footer.moderation_charter'),
-    url: URL.MODERATION_CHARTER_DE_LINK,
+    url: getModerationLinkByLanguage(language),
   },
 ];

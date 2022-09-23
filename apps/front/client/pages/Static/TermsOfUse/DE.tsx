@@ -40,7 +40,7 @@ import {
 
 export const TermsOfUseDE: FC = () => {
   const { state } = useAppContext();
-  const { country } = state.appConfig;
+  const { country, language } = state.appConfig;
 
   return (
     <>
@@ -113,7 +113,7 @@ export const TermsOfUseDE: FC = () => {
               unserer Website bereitgestellten Informationen liegt uns daher
               besonders am Herzen. In diesen ANB und unserer{' '}
               <RedHTMLLinkElementStyle
-                href={getModerationLinkByLanguage(country)}
+                href={getModerationLinkByLanguage(language)}
                 target="_blank"
                 rel="noopener"
               >
