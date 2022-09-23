@@ -83,17 +83,24 @@ When(
   }
 );
 
+// Register with or without postal code completed
 When(
-  'I register with firstname {string} and age {string} and I accept the data policy before submitting',
-  (firstname, age) => {
+  'I register with firstname {string} and age {string} and postal code {string} and I accept the data policy before submitting',
+  (firstname, age, postalcode) => {
     cy.get('[name=firstname]').type(firstname);
     cy.get('[name=age]').type(age);
+    cy.get('[name=postalcode]')
+      .clear()
+      .then(() => {
+        if (postalcode) cy.get('[name=postalcode]').type(postalcode);
+      });
     cy.get('#registerCheckbox').click({ force: true });
     cy.intercept({ method: 'POST', url: '/user' }, req => {
       expect(req.body).to.include({
         password: userData.password,
         firstName: userData.firstName,
         dateOfBirth: userData.profile.dateOfBirth,
+        postalCode: postalcode ? userData.profile?.postalCode : null,
         approvePrivacyPolicy: userData.approvePrivacyPolicy,
       }),
         req.reply({
@@ -158,6 +165,12 @@ When('I register with a missing age', () => {
   cy.get('[name=firstname]').type('firstnameCypress');
 });
 
+When('I register with an invalid postal code', () => {
+  cy.get('[name=age]').type('35');
+  cy.get('[name=firstname]').type('firstnameCypress');
+  cy.get('[name=postalcode]').type('941');
+});
+
 When('I register with a missing data policy', () => {
   cy.get('[name=age]').type('35');
 });
@@ -217,7 +230,6 @@ Then('I see {string} as message error', errorMessage => {
   cy.get('#authentication-login-error').children().contains(errorMessage);
 });
 
-Then('I clear the field', () => {
-  cy.get('#email').clear();
-  cy.get('#password').clear();
+Then('I clear the {string} field', fieldName => {
+  cy.get(`[name=${fieldName}]`).clear();
 });

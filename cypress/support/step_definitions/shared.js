@@ -440,3 +440,8 @@ When(
       .click({ force: true }); // @todo: change this line to not force click on hidden elements
   }
 );
+
+// I don't see field
+Then("I don't see the {string} field", fieldname => {
+  cy.get(`[name=${fieldname}]`).should('not.exist');
+});
