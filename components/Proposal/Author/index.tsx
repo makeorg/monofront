@@ -85,7 +85,7 @@ export const ProposalAuthorInformations: FC<Props> = ({ proposal }) => {
             </>
           ))}
         {isBasicUser && formatAuthorName(author.firstName || '')}
-        <ProposalAuthorAge age={author.age} />
+        {isBasicUser && <ProposalAuthorAge age={author.age} />}
       </InfosWrapperStyle>
     </>
   );

@@ -22,6 +22,7 @@ export const AuthorInfosStyle = styled.div`
 export const InfosWrapperStyle = styled.span`
   display: inline-flex;
   align-items: center;
+  line-break: anywhere;
 `;
 
 export const AuthorLinkStyle = styled(RedLinkStyle)`
