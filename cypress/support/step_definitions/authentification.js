@@ -233,3 +233,9 @@ Then('I see {string} as message error', errorMessage => {
 Then('I clear the {string} field', fieldName => {
   cy.get(`[name=${fieldName}]`).clear();
 });
+
+Then('I display the register panel', () => {
+  cy.get(`button[data-cy-button=login]`).click({ force: true }); // @todo: change this line to not force click on hidden elements
+  cy.get(`button[data-cy-button=register]`).click({ force: true }); // @todo: change this line to not force click on hidden elements
+  cy.get('[data-cy-container=register-form]').should('exist');
+});
