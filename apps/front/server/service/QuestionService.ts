@@ -54,9 +54,15 @@ const getQuestion = async (
       }
     );
 
-    cache.put(CACHE_KEY, response && response.data, 300000);
+    const formattedResponse = response && {
+      ...response.data,
+      returnedLanguage:
+        response.data.returnedLanguage || response.data.language,
+    };
 
-    return handleData(response && response.data);
+    cache.put(CACHE_KEY, formattedResponse, 300000);
+
+    return handleData(formattedResponse);
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 404) {

@@ -41,11 +41,15 @@ const getQuestion = async (
         'x-make-language': language,
       }
     );
-
+    const formattedResponse = response && {
+      ...response.data,
+      returnedLanguage:
+        response.data.returnedLanguage || response.data.language,
+    };
     // 900,000 milliseconds = 5 minutes
-    cache.put(CACHE_KEY, response && response.data, 900000);
+    cache.put(CACHE_KEY, formattedResponse, 900000);
 
-    return handleData(response && response.data);
+    return handleData(formattedResponse);
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 404) {
