@@ -9,28 +9,14 @@ const getDefaultDirectives = (
   baseUri: ["'self'"],
   defaultSrc: ["'none'"],
   fontSrc: ["'self'"],
-  scriptSrc: [
-    "'self'",
-    'https://connect.facebook.net',
-    'https://staticxx.facebook.com',
-    'https://static.ads-twitter.com',
-    'https://apis.google.com',
-    'https://analytics.twitter.com',
-    'https://sc-static.net',
-    'https://cdn.mxpnl.com',
-    `'nonce-${res.locals.nonce}'`,
-  ],
+  scriptSrc: ["'self'", 'https://cdn.mxpnl.com', `'nonce-${res.locals.nonce}'`],
   styleSrc: ["'self'", "'unsafe-inline'"],
   imgSrc: [
     "'self'",
-    'https://t.co',
     'https://*.makeorg.tech',
     'https://*.make.org',
     'https://*.placebymake.org',
     'https://*.webflow.com',
-    'https://*.facebook.com',
-    'https://*.facebook.net',
-    'https://analytics.twitter.com',
     'data:',
   ],
   connectSrc: [
@@ -40,12 +26,10 @@ const getDefaultDirectives = (
     'https://*.makeorg.tech',
     'https://*.make.org',
     'https://*.placebymake.org',
-    'https://*.facebook.com',
-    'https://*.facebook.net',
     'https://api-eu.mixpanel.com',
   ],
-  formAction: ["'self'", 'https://www.facebook.com/tr/'],
-  frameSrc: ['https://*.facebook.com', 'https://*.google.com', "'self'"],
+  formAction: ["'self'"],
+  frameSrc: ["'self'"],
   objectSrc: ["'none'"],
   mediaSrc: ["'none'"],
   manifestSrc: ["'self'"],
@@ -56,8 +40,41 @@ export const cspMiddleware = (
   res: ServerResponse & { locals: { nonce: string } },
   next: NextFunction
 ): void => {
+  const defaultDirectives = getDefaultDirectives(res);
   csp({
-    directives: { ...getDefaultDirectives(res), frameAncestors: ["'none'"] },
+    directives: {
+      ...defaultDirectives,
+      frameAncestors: ["'none'"],
+      scriptSrc: [
+        ...defaultDirectives.scriptSrc,
+        'https://connect.facebook.net',
+        'https://staticxx.facebook.com',
+        'https://static.ads-twitter.com',
+        'https://apis.google.com',
+        'https://analytics.twitter.com',
+      ],
+      imgSrc: [
+        ...defaultDirectives.imgSrc,
+        'https://t.co',
+        'https://*.facebook.com',
+        'https://*.facebook.net',
+        'https://analytics.twitter.com',
+      ],
+      connectSrc: [
+        ...defaultDirectives.connectSrc,
+        'https://*.facebook.com',
+        'https://*.facebook.net',
+      ],
+      formAction: [
+        ...defaultDirectives.formAction,
+        'https://www.facebook.com/tr/',
+      ],
+      frameSrc: [
+        ...defaultDirectives.frameSrc,
+        'https://*.facebook.com',
+        'https://*.google.com',
+      ],
+    },
   })(req, res, next);
 };
 
@@ -67,6 +84,9 @@ export const widgetCspMiddleware = (
   next: NextFunction
 ): void => {
   csp({
-    directives: getDefaultDirectives(res),
+    directives: {
+      ...getDefaultDirectives(res),
+      cookieScope: 'none',
+    },
   })(req, res, next);
 };
