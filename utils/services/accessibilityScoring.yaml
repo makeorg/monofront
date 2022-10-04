@@ -1,0 +1,793 @@
+- 
+  test: "1.1.1"
+  success: true
+- 
+  test: "1.1.2"
+  success: null
+- 
+  test: "1.1.3"
+  success: null
+- 
+  test: "1.1.4"
+  success: null
+- 
+  test: "1.1.5"
+  success: true
+-
+  test: "1.1.6"
+  success: null
+-
+  test: "1.1.7"
+  success: null
+-
+  test: "1.1.8"
+  success: false
+  toDo: add a button to switch beetween pie chart and table
+-
+  test: "1.2.1"
+  success: true
+-
+  test: "1.2.2"
+  success: null
+-
+  test: "1.2.3"
+  success: null
+-
+  test: "1.2.4"
+  success: true
+-
+  test: "1.2.5"
+  success: null
+-
+  test: "1.2.6"
+  success: null
+-
+  test: "1.3.1"
+  success: true
+-
+  test: "1.3.2"
+  success: null
+-
+  test: "1.3.3"
+  success: null
+-
+  test: "1.3.4"
+  success: null
+-
+  test: "1.3.5"
+  success: null
+-
+  test: "1.3.6"
+  success: true
+-
+  test: "1.3.7"
+  success: null
+-
+  test: "1.3.8"
+  success: null
+-
+  test: "1.3.9"
+  success: true
+-
+  test: "1.4.1"
+  success: null
+-
+  test: "1.4.2"
+  success: null
+-
+  test: "1.4.3"
+  success: null
+-
+  test: "1.4.4"
+  success: null
+-
+  test: "1.4.5"
+  success: null
+-
+  test: "1.4.6"
+  success: null
+-
+  test: "1.4.7"
+  success: null
+-
+  test: "1.5.1"
+  success: null
+-
+  test: "1.5.2"
+  success: null
+-
+  test: "1.6.1"
+  success: null
+-
+  test: "1.6.2"
+  success: null
+-
+  test: "1.6.3"
+  success: null
+-
+  test: "1.6.4"
+  success: null
+-
+  test: "1.6.5"
+  success: null
+-
+  test: "1.6.6"
+  success: null
+-
+  test: "1.6.7"
+  success: null
+-
+  test: "1.6.8"
+  success: null
+-
+  test: "1.7.1"
+  success: null
+-
+  test: "1.7.2"
+  success: null
+-
+  test: "1.7.3"
+  success: null
+-
+  test: "1.7.4"
+  success: null
+-
+  test: "1.7.5"
+  success: null
+-
+  test: "1.7.6"
+  success: null
+-
+  test: "1.8.1"
+  success: true
+-
+  test: "1.8.2"
+  success: null
+-
+  test: "1.8.3"
+  success: null
+-
+  test: "1.8.4"
+  success: null
+-
+  test: "1.8.5"
+  success: null
+-
+  test: "1.9.1"
+  success: null
+-
+  test: "1.9.2"
+  success: null
+-
+  test: "1.9.3"
+  success: null
+-
+  test: "1.9.4"
+  success: null
+-
+  test: "1.9.5"
+  success: null
+-
+  test: "2.1.1"
+  success: false
+  toDo: find a way to add a title to social login iframes
+-
+  test: "2.2.1"
+  success: false
+  toDo: see toDo 2.1.1
+-
+  test: "3.1.1"
+  success: true
+-
+  test: "3.1.2"
+  success: true
+-
+  test: "3.1.3"
+  success: true
+-
+  test: "3.1.4"
+  success: true
+-
+  test: "3.1.5"
+  success: null
+-
+  test: "3.1.6"
+  success: null
+-
+  test: "3.2.1"
+  success: true
+-
+  test: "3.2.2"
+  success: true
+-
+  test: "3.2.3"
+  success: true
+-
+  test: "3.2.4"
+  success: true
+-
+  test: "3.2.5"
+  success: null
+-
+  test: "3.3.1"
+  success: true
+-
+  test: "3.3.2"
+  success: true
+-
+  test: "3.3.3"
+  success: true
+-
+  test: "3.3.4"
+  success: null
+-
+  test: "4.1.1"
+  success: null
+-
+  test: "4.1.2"
+  success: null
+-
+  test: "4.1.3"
+  success: null
+-
+  test: "4.1.4"
+  success: null
+-
+  test: "4.2.1"
+  success: null
+-
+  test: "4.2.2"
+  success: null
+-
+  test: "4.2.3"
+  success: null
+-
+  test: "4.3.1"
+  success: null
+-
+  test: "4.3.2"
+  success: null
+-
+  test: "4.4.1"
+  success: null
+-
+  test: "4.5.1"
+  success: null
+-
+  test: "4.5.2"
+  success: null
+-
+  test: "4.6.1"
+  success: null
+-
+  test: "4.6.2"
+  success: null
+-
+  test: "4.7.1"
+  success: null
+-
+  test: "4.8.1"
+  success: null
+-
+  test: "4.8.2"
+  success: null
+-
+  test: "4.9.1"
+  success: null
+-
+  test: "4.9.2"
+  success: null
+-
+  test: "4.10.1"
+  success: null
+-
+  test: "4.11.1"
+  success: null
+-
+  test: "4.11.2"
+  success: null
+-
+  test: "4.11.3"
+  success: null
+-
+  test: "4.12.1"
+  success: null
+-
+  test: "4.12.2"
+  success: null
+-
+  test: "4.13.1"
+  success: null
+-
+  test: "4.13.2"
+  success: null
+-
+  test: "5.1.1"
+  success: true
+-
+  test: "5.2.1"
+  success: true
+-
+  test: "5.3.1"
+  success: null
+-
+  test: "5.4.1"
+  success: true
+-
+  test: "5.5.1"
+  success: true
+-
+  test: "5.6.1"
+  success: true
+-
+  test: "5.6.2"
+  success: true
+-
+  test: "5.6.3"
+  success: true
+-
+  test: "5.7.1"
+  success: true
+-
+  test: "5.7.2"
+  success: true
+-
+  test: "5.7.3"
+  success: true
+-
+  test: "5.7.4"
+  success: null
+-
+  test: "5.7.5"
+  success: null
+-
+  test: "5.8.1"
+  success: true
+-
+  test: "6.1.1"
+  success: true
+-
+  test: "6.1.2"
+  success: true
+-
+  test: "6.1.3"
+  success: true
+-
+  test: "6.1.4"
+  success: true
+-
+  test: "6.1.5"
+  success: true
+-
+  test: "6.2.1"
+  success: true
+-
+  test: "7.1.1"
+  success: false
+  toDo: evaluate criteria with vocal reader
+-
+  test: "7.1.2"
+  success: false
+  toDo: evaluate criteria with vocal reader
+-
+  test: "7.1.3"
+  success: true
+-
+  test: "7.2.1"
+  success: null
+-
+  test: "7.2.2"
+  success: null
+-
+  test: "7.3.1"
+  success: true
+-
+  test: "7.3.2"
+  success: true
+-
+  test: "7.4.1"
+  success: false
+  toDo: find a way to manage end of session modal
+-
+  test: "7.5.1"
+  success: false
+  toDo: rewrite status on notification messages
+-
+  test: "7.5.2"
+  success: false
+-
+  test: "7.5.3"
+  success: false
+-
+  test: "8.1.1"
+  success: true
+-
+  test: "8.1.2"
+  success: true
+-
+  test: "8.1.3"
+  success: true
+-
+  test: "8.2.1"
+  success: false
+  toDo: add auto check and fix
+-
+  test: "8.3.1"
+  success: true
+-
+  test: "8.4.1"
+  success: true
+-
+  test: "8.5.1"
+  success: true
+-
+  test: "8.6.1"
+  success: false
+  toDo: Cf internal channel accessibilite-fix
+-
+  test: "8.7.1"
+  success: false
+  toDo: need check - ensure correct language usage (moderation) 
+-
+  test: "8.8.1"
+  success: true
+-
+  test: "8.9.1"
+  success: true
+-
+  test: "8.10.1"
+  success: null
+-
+  test: "8.10.2"
+  success: null
+-
+  test: "9.1.1"
+  success: true
+-
+  test: "9.1.2"
+  success: true
+-
+  test: "9.1.3"
+  success: true
+-
+  test: "9.2.1"
+  success: true
+-
+  test: "9.3.1"
+  success: true
+-
+  test: "9.3.2"
+  success: true
+-
+  test: "9.3.3"
+  success: null
+-
+  test: "9.4.1"
+  success: null
+-
+  test: "9.4.2"
+  success: true
+-
+  test: "10.1.1"
+  success: true
+-
+  test: "10.1.2"
+  success: true
+-
+  test: "10.1.3"
+  success: true
+-
+  test: "10.2.1"
+  success: true
+-
+  test: "10.3.1"
+  success: true
+-
+  test: "10.4.1"
+  success: true
+-
+  test: "10.4.2"
+  success: true
+-
+  test: "10.4.3"
+  success: true
+-
+  test: "10.5.1"
+  success: true
+-
+  test: "10.5.2"
+  success: true
+-
+  test: "10.5.3"
+  success: null
+-
+  test: "10.6.1"
+  success: true
+-
+  test: "10.7.1"
+  success: false
+  toDo: improve focus style - fix focus on forms and search page (questions)
+-
+  test: "10.8.1"
+  success: false
+  toDo: need vocal reader check
+-
+  test: "10.9.1"
+  success: true
+-
+  test: "10.9.2"
+  success: true
+-
+  test: "10.9.3"
+  success: null
+-
+  test: "10.9.4"
+  success: true
+-
+  test: "10.10.1"
+  success: true
+-
+  test: "10.10.2"
+  success: true
+-
+  test: "10.10.3"
+  success: true
+-
+  test: "10.10.4"
+  success: true
+-
+  test: "10.11.1"
+  success: true
+-
+  test: "10.11.2"
+  success: true
+-
+  test: "10.12.1"
+  success: true
+-
+  test: "10.13.1"
+  success: false
+-
+  test: "10.13.2"
+  success: false
+-
+  test: "10.13.3"
+  success: true
+-
+  test: "10.14.1"
+  success: true
+-
+  test: "10.14.2"
+  success: true
+-
+  test: "11.1.1"
+  success: true
+-
+  test: "11.2.1"
+  success: true
+-
+  test: "11.3.1"
+  success: true
+-
+  test: "11.2.1"
+  success: true
+-
+  test: "11.2.2"
+  success: null
+-
+  test: "11.2.3"
+  success: null
+-
+  test: "11.2.4"
+  success: null
+-
+  test: "11.2.5"
+  success: true
+-
+  test: "11.2.6"
+  success: true
+-
+  test: "11.3.1"
+  success: true
+-
+  test: "11.3.2"
+  success: true
+-
+  test: "11.4.1"
+  success: true
+-
+  test: "11.4.2"
+  success: true
+-
+  test: "11.4.3"
+  success: true
+-
+  test: "11.5.1"
+  success: null
+-
+  test: "11.6.1"
+  success: null
+-
+  test: "11.7.1"
+  success: null
+-
+  test: "11.8.1"
+  success: null
+-
+  test: "11.8.2"
+  success: null
+-
+  test: "11.8.3"
+  success: null
+-
+  test: "11.9.1"
+  success: true
+-
+  test: "11.9.2"
+  success: true
+-
+  test: "11.10.1"
+  success: true
+-
+  test: "11.10.2"
+  success: true
+-
+  test: "11.10.3"
+  success: true
+-
+  test: "11.10.4"
+  success: null
+-
+  test: "11.10.5"
+  success: false
+  toDo: | 
+    need conception with design team.
+    check "aia-invalid" 
+    check error message should provide instructions : data type, required field, format, example...
+-
+  test: "11.10.6"
+  success: true
+-
+  test: "11.10.7"
+  success: true
+-
+  test: "11.11.1"
+  success: true
+-
+  test: "11.11.2"
+  success: true
+-
+  test: "11.12.1"
+  success: null
+-
+  test: "11.12.2"
+  success: null
+-
+  test: "11.13.1"
+  success: true
+-
+  test: "12.1.1"
+  success: false
+  toDo: add a site map
+-
+  test: "12.2.1"
+  success: true
+-
+  test: "12.3.1"
+  success: null
+-
+  test: "12.3.2"
+  success: null
+-
+  test: "12.3.3"
+  success: null
+-
+  test: "12.4.1"
+  success: null
+-
+  test: "12.4.2"
+  success: null
+-
+  test: "12.4.3"
+  success: null
+-
+  test: "12.5.1"
+  success: true
+-
+  test: "12.5.2"
+  success: true
+-
+  test: "12.5.3"
+  success: true
+-
+  test: "12.6.1"
+  success: true
+-
+  test: "12.7.1"
+  success: true
+-
+  test: "12.7.2"
+  success: true
+-
+  test: "12.8.1"
+  success: true
+-
+  test: "12.8.2"
+  success: false
+  toDo: implement a scroll to top using anchor 
+-
+  test: "12.9.1"
+  success: true
+-
+  test: "12.10.1"
+  success: null
+-
+  test: "12.11.1"
+  success: true
+-
+  test: "13.1.1"
+  success: true
+-
+  test: "13.1.2"
+  success: null
+-
+  test: "13.1.3"
+  success: false
+  toDo: implement server redirect, check redirects to about.make.org, check secure redirect
+-
+  test: "13.1.4"
+  success: false
+  toDo: need conception with product and design team about session/secure expiration
+-
+  test: "13.2.1"
+  success: false
+  toDo: need conception with product and design team about session/secure expiration
+-
+  test: "13.3.1"
+  success: true
+-
+  test: "13.4.1"
+  success: true
+-
+  test: "13.5.1"
+  success: null
+-
+  test: "13.6.1"
+  success: null
+-
+  test: "13.7.1"
+  success: null
+-
+  test: "13.7.2"
+  success: null
+-
+  test: "13.7.3"
+  success: null
+-
+  test: "13.8.1"
+  success: null
+-
+  test: "13.8.2"
+  success: null
+-
+  test: "13.9.1"
+  success: true
+-
+  test: "13.10.1"
+  success: true
+-
+  test: "13.10.2"
+  success: false
+  toDo: add navigation buttons for mobile slider
+-
+  test: "13.11.1"
+  success: true
+-
+  test: "13.12.1"
+  success: null
+-
+  test: "13.12.2"
+  success: null
+-
+  test: "13.12.3"
+  success: null

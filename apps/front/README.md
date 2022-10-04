@@ -86,3 +86,18 @@ $ lernaupdate
 ## Specificities
 ### Results page
 Check [RESULTS.MD](./server/staticData/RESULTS.MD).
+
+## Accessibility page
+See page: [ACCESSIBILITY.MD](../../docs/accessibility.md).
+
+Run accessibility test: 
+```bash
+yarn workspace @make.org/front accessibility
+```
+
+Fix accessibility: 
+```bash
+yarn workspace @make.org/front accessibility:fix
+```
+
+

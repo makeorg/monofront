@@ -25,7 +25,8 @@
     "**/bin/**",
     "**/apimock/db/deprecatedHomePageQuestion.json",
     "**/apimock/db/deprecatedQuestion.json",
-    "**/apimock/db/deprecatedViews.json"
+    "**/apimock/db/deprecatedViews.json",
+    "**/docs"
   ],
   "absolute": true,
   "output": "./reports",

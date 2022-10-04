@@ -128,6 +128,7 @@
 				"translation:fix": "yarn run translation --fix",
 				"translation:unused-keys": "npx babel --out-dir ../../dist/lib --config-file ./webpack/babel.config.js ../../bin/utils && ../../bin/check-translation.js list-unused",
 				"translation:orphan-keys": "npx babel --out-dir ../../dist/lib --config-file ./webpack/babel.config.js ../../bin/utils && ../../bin/check-translation.js list-orphan",
-				"accessibility": "bin/checkAccessibility.js check"
+				"accessibility": "bin/check-accessibility.js check",
+				"accessibility:fix": "bin/check-accessibility.js check --fix"
 		}
 }
