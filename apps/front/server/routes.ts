@@ -51,9 +51,16 @@ import {
   ROUTE_STATIC_GTU_DE,
   ROUTE_STATIC_A11Y_DE,
   ROUTE_STATIC_CONTACT_DE,
+  ROUTE_REDIRECT_CONSULTATIONS,
+  ROUTE_REDIRECT_EXPLORE,
+  ROUTE_REDIRECT_PARTICIPATE,
+  ROUTE_REDIRECT_SEQUENCE,
+  ROUTE_REDIRECT_SEQUENCE_CONTROVERSY,
+  ROUTE_REDIRECT_SEQUENCE_POPULAR,
 } from '@make.org/utils/routes';
 import { fBConversionApi } from '@make.org/utils/services/FBApiConversion';
 import { countryLanguageMiddleware } from '../middleware/countryLanguage';
+import { redirectToCountryMiddleware } from '../middleware/redirect';
 import { sequenceByKindRoute } from './ssr/sequenceByKindRoute';
 import {
   APP_IMAGES_DIR,
@@ -139,6 +146,10 @@ export const initRoutes = (app: Application): void => {
   app.post('/api/conversion', fBConversionApi);
 
   const frontMiddlewares = [countryLanguageMiddleware, metricsMiddleware];
+  const redirectMiddlewares = [
+    countryLanguageMiddleware,
+    redirectToCountryMiddleware,
+  ];
 
   // manage preview routes
   const addGetWithPreview = (
@@ -160,6 +171,15 @@ export const initRoutes = (app: Application): void => {
   app.get('/.well-known/security.txt', technicalPages.renderSecurityTxt);
   app.get('/security.txt', technicalPages.renderSecurityTxt);
   app.get('/version', technicalPages.renderVersion);
+
+  // These redirect routes are specific for handling geolocalisation and redirection for consultations urls
+  app.get(ROUTE_REDIRECT_CONSULTATIONS, redirectMiddlewares);
+  app.get(ROUTE_REDIRECT_PARTICIPATE, redirectMiddlewares);
+  app.get(ROUTE_REDIRECT_EXPLORE, redirectMiddlewares);
+  app.get(ROUTE_REDIRECT_SEQUENCE, redirectMiddlewares);
+  app.get(ROUTE_REDIRECT_SEQUENCE_POPULAR, redirectMiddlewares);
+  app.get(ROUTE_REDIRECT_SEQUENCE_CONTROVERSY, redirectMiddlewares);
+
   app.get(`${ROUTE_COUNTRY_LANG}`, redirectCountryLanguageUrl);
   app.get(`${ROUTE_COUNTRY_LANG}/*`, redirectCountryLanguageUrl);
   app.get(ROUTE_COUNTRY, frontMiddlewares, homepageRoute);

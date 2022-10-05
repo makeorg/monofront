@@ -1,6 +1,13 @@
 import { ParsedQuery, stringify } from 'query-string';
 import { matchPath, generatePath } from 'react-router';
 
+export const ROUTE_REDIRECT_CONSULTATIONS = `/consultation/:questionSlug/consultation`;
+export const ROUTE_REDIRECT_PARTICIPATE = `/consultation/:questionSlug/participate`;
+export const ROUTE_REDIRECT_EXPLORE = `/consultation/:questionSlug/explore/page/:pageId`;
+export const ROUTE_REDIRECT_SEQUENCE = `/consultation/:questionSlug/selection`;
+export const ROUTE_REDIRECT_SEQUENCE_POPULAR = `/consultation/:questionSlug/selection-popular`;
+export const ROUTE_REDIRECT_SEQUENCE_CONTROVERSY = `/consultation/:questionSlug/selection-controversial`;
+
 export const ROUTE_COUNTRY = '/:country(\\w{2})';
 export const ROUTE_COUNTRY_LANG = '/:country(\\w{2})-:language(\\w{2})';
 export const ROUTE_COUNTRY_FR = '/FR';
