@@ -86,7 +86,6 @@ export const widgetCspMiddleware = (
   csp({
     directives: {
       ...getDefaultDirectives(res),
-      cookieScope: 'none',
     },
   })(req, res, next);
 };
