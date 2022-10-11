@@ -7,6 +7,7 @@ export const ROUTE_REDIRECT_EXPLORE = `/consultation/:questionSlug/explore/page/
 export const ROUTE_REDIRECT_SEQUENCE = `/consultation/:questionSlug/selection`;
 export const ROUTE_REDIRECT_SEQUENCE_POPULAR = `/consultation/:questionSlug/selection-popular`;
 export const ROUTE_REDIRECT_SEQUENCE_CONTROVERSY = `/consultation/:questionSlug/selection-controversial`;
+export const ROUTE_REDIRECT_RESULTS = `/consultation/:questionSlug/results`;
 
 export const ROUTE_COUNTRY = '/:country(\\w{2})';
 export const ROUTE_COUNTRY_LANG = '/:country(\\w{2})-:language(\\w{2})';

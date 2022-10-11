@@ -57,6 +57,7 @@ import {
   ROUTE_REDIRECT_SEQUENCE,
   ROUTE_REDIRECT_SEQUENCE_CONTROVERSY,
   ROUTE_REDIRECT_SEQUENCE_POPULAR,
+  ROUTE_REDIRECT_RESULTS,
 } from '@make.org/utils/routes';
 import { fBConversionApi } from '@make.org/utils/services/FBApiConversion';
 import { countryLanguageMiddleware } from '../middleware/countryLanguage';
@@ -179,6 +180,7 @@ export const initRoutes = (app: Application): void => {
   app.get(ROUTE_REDIRECT_SEQUENCE, redirectMiddlewares);
   app.get(ROUTE_REDIRECT_SEQUENCE_POPULAR, redirectMiddlewares);
   app.get(ROUTE_REDIRECT_SEQUENCE_CONTROVERSY, redirectMiddlewares);
+  app.get(ROUTE_REDIRECT_RESULTS, redirectMiddlewares);
 
   app.get(`${ROUTE_COUNTRY_LANG}`, redirectCountryLanguageUrl);
   app.get(`${ROUTE_COUNTRY_LANG}/*`, redirectCountryLanguageUrl);
