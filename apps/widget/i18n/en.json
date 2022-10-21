@@ -315,6 +315,7 @@
       "title": "Thank you {{name}}!",
       "description": "Your solution will be moderated by our team.",
       "button": "Keep voting",
+      "other_idea": "I have another idea",
       "tooltip_title": "Under moderation",
       "tooltip_description": "Your solution will be processed by our teams within 48 hours, in the meantime you can already find it in your profile.",
       "grats": "Congratulations {{name}}, ",

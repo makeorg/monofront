@@ -410,6 +410,7 @@
       "title": "Danke, {{name}}!",
       "description": "Dein Vorschlag wird jetzt von unseren Teams moderiert.",
       "button": "Weiter abstimmen",
+      "other_idea": "Ich habe eine andere Idee",
       "tooltip_title": "Wird gerade moderiert",
       "tooltip_description": "Dein Vorschlag wird innerhalb von 48 Stunden von unseren Teams  bearbeitet. In der Zwischenzeit kannst du ihn ab sofort in deinem Profil finden.",
       "grats": "Herzlichen Glückwunsch {{name}}, ",

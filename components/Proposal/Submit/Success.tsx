@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
-import { closePanel } from '@make.org/store/actions/panel';
+import { closePanel, setPanelContent } from '@make.org/store/actions/panel';
 import {
   trackClickKeepVoting,
   trackDisplayProposalSubmitValidation,
 } from '@make.org/utils/services/Tracking';
 import { getAgeFromDateOfBirth } from '@make.org/utils/helpers/date';
+import { ProposalJourney } from '@make.org/components/Proposal/Submit/Journey';
 import {
   ProposalFormSuccessWrapperStyle,
   ProposalSuccessParagraphWrapperStyle,
@@ -69,6 +70,11 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
     dispatch(setRegisterStep(1));
     trackClickKeepVoting();
     dispatch(clearProposalPending());
+  };
+
+  const handleOtherIdeaButton = () => {
+    dispatch(clearProposalPending());
+    dispatch(setPanelContent(<ProposalJourney />));
   };
 
   useEffect(() => {
@@ -140,6 +146,9 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
               </ProposalSuccessParagraphLinkStyle>
             </ProposalSuccessParagraphWrapperStyle>
           )}
+          <ProposalSuccessRedButtonStyle onClick={handleOtherIdeaButton}>
+            {i18n.t('proposal_submit.success.other_idea')}
+          </ProposalSuccessRedButtonStyle>
           <ProposalSuccessRedButtonStyle onClick={handleCloseButton}>
             {i18n.t('proposal_submit.success.button')}
           </ProposalSuccessRedButtonStyle>

@@ -396,6 +396,7 @@
       "title": "Merci {{name}} !",
       "description": "Votre proposition est maintenant en cours de modération par nos équipes.",
       "button": "Continuer à voter",
+      "other_idea": "J’ai une autre idée",
       "tooltip_title": "En cours de modération",
       "tooltip_description": "Votre proposition sera traitée par nos équipes sous 48h, en attendant vous pouvez la retrouver dès maintenant dans votre profil.",
       "grats": "Félicitations {{name}}, ",
