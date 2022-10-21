@@ -1246,7 +1246,7 @@
   },
   "no_proposal_card": {
     "title": {
-      "regular": "Thank you for your contribution !",
+      "regular": "Thank you for your contribution!",
       "popular": "You have voted on all popular solutions.",
       "controversial": "You have voted on all controversial solutions.",
       "keyword": "You have voted on all \"{{keyword}}\" solutions."
@@ -1255,8 +1255,8 @@
       "regular": "There are no new solutions at the moment.",
       "special": "Keep voting to help us set our priorities."
     },
-    "link_text": "I access to the consultation",
-    "sharing": "Or give more visibility to the consultation by disseminating it."
+    "link_text": "Go to the consultation",
+    "sharing": "Or give more visibility to the consultation by sharing it."
   },
   "demographics_card": {
     "disclaimer": "This informations are anonymous, it will allow the results to be representative.",
