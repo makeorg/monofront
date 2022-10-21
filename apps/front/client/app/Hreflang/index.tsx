@@ -5,8 +5,15 @@ import { isHomepageWithLocale } from '@make.org/utils/routes';
 import { useLocation } from 'react-router';
 import { translationRessoucesLanguages } from '../../../i18n';
 
+declare global {
+  interface Window {
+    FRONT_URL?: string;
+  }
+}
+
 export const Hreflang: FC = () => {
   const { pathname } = useLocation();
+  const FRONT_URL = env.frontUrl() || window.FRONT_URL;
 
   if (!isHomepageWithLocale(pathname)) {
     return null;
@@ -19,7 +26,7 @@ export const Hreflang: FC = () => {
           key={language}
           rel="alternate"
           hrefLang={language}
-          href={`${env.frontUrl()}${pathname}?lang=${language}`}
+          href={`${FRONT_URL}${pathname}?lang=${language}`}
         />
       ))}
     </>
