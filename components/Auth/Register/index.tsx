@@ -52,7 +52,7 @@ export const Register: React.FC = () => {
   const [needLegalConsent, displayLegalConsent] = useState<boolean>(false);
   const question = selectCurrentQuestion(state);
   const userIsAChild =
-    user && user.profile && user.profile.age && user.profile.age < 15;
+    user && user.profile && user.profile.age && user.profile.age < 16;
   const isSecondStep = registerStep === 2;
 
   const handleReturn = () => {

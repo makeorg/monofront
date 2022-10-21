@@ -177,7 +177,7 @@ When('I register with a missing data policy', () => {
 
 When('I register as minor', () => {
   cy.get('[name=firstname]').type('firstnameCypress');
-  cy.get('[name=age]').type('10');
+  cy.get('[name=age]').type('15');
   cy.get('#registerCheckbox').click({ force: true });
   cy.get('#authentication-register-submit').click();
 });
