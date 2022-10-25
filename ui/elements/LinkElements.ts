@@ -21,6 +21,10 @@ const linkStyle = (linkColor: string) => `
   }
 `;
 
+export const BlackLinkStyle = styled(Link)`
+  ${linkStyle(color.black)}
+`;
+
 export const NewWindowIconStyle = styled(SvgExternalLink)`
   margin-left: 5px;
   fill: ${color.brandSecondary};

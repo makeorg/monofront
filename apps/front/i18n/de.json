@@ -417,7 +417,8 @@
       "proposal_sent": "dein Vorschlag wurde abgeschickt ",
       "activate": "Bestätige deine E-Mail-Adresse mit einem Klick",
       "link": ", um die Gültigkeit deines Kontos zu gewährleisten. Klicke auf den Aktivierungslink, der dir an diese Adresse geschickt wurde : {{mail}}. ",
-      "question": "Du hast noch Fragen? Kontaktiere uns unter : "
+      "question": "Du hast noch Fragen? Kontaktiere uns unter : ",
+      "consultation_access": "Ich rufe die Konsultation auf"
     }
   },
   "vote": {

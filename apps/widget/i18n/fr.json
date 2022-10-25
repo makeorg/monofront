@@ -403,7 +403,8 @@
       "proposal_sent": "votre proposition a été envoyée ",
       "activate": "Confirmez votre adresse e-mail en un clic ",
       "link": "pour garantir l’authenticité de votre compte. Cliquez sur le lien d’activation qui vous a été envoyé à : {{mail}}",
-      "question": "Une question ? Vous pouvez nous contacter à : "
+      "question": "Une question ? Vous pouvez nous contacter à : ",
+      "consultation_access": "J'accède à la consultation"
     }
   },
   "vote": {

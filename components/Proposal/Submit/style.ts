@@ -4,7 +4,9 @@ import {
   RedButtonStyle,
   GreyNoBackgroundButtonStyle,
   BlackNoBackgroundButtonStyle,
+  BlackBorderButtonStyle,
 } from '@make.org/ui/elements/ButtonsElements';
+import { BlackLinkStyle } from '@make.org/ui/elements/LinkElements';
 import {
   SvgPencil,
   SvgExternalLink,
@@ -56,6 +58,7 @@ export const ProposalFormWrapperStyle = styled.div<{
   display: flex;
   flex-direction: column;
 `;
+
 export const ProposalFormStyle = styled.form`
   width: 100%;
   display: flex;
@@ -131,7 +134,7 @@ export const ProposalFieldWrapperStyle = styled.div`
   margin-bottom: 20px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     margin-bottom: 30px;
-  
+  }
 `;
 
 export const ProposalTextareaStyle = styled(TextareaAutosize)`
@@ -398,6 +401,17 @@ export const ProposalSuccessRedButtonStyle = styled(RedButtonStyle)`
   }
 `;
 
+export const ProposalSuccessTransparentButtonstyle = styled(
+  BlackBorderButtonStyle
+)`
+  max-width: 167px;
+  width: 100%;
+  margin: auto auto 0px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    margin: 30px auto;
+  }
+`;
+
 export const ProposalSuccessTitleBlockStyle = styled.div`
   display: flex;
 `;
@@ -477,4 +491,18 @@ export const ProposalSuccessNameStyle = styled.p`
   color: ${color.greyDark};
   margin-bottom: 20px;
   margin-top: 10px;
+`;
+
+export const ProposalSuccessButtonWrapperStyle = styled.div`
+  margin: 15px 0px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    flex-direction: row-reverse;
+  }
+`;
+
+export const ProposalSuccessLinkStyle = styled(BlackLinkStyle)`
+  margin: 0px auto;
 `;

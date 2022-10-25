@@ -42,6 +42,7 @@ export const ProposalSubmitAuthenticationRegisterButtons: FC<Props> = ({
         onClick={onEmailRegister}
         id="authentication-register-button"
         type="button"
+        data-cy-button="email-button-register"
       >
         <AuthenticationEmailIconStyle
           aria-hidden

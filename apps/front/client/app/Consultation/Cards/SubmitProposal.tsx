@@ -28,6 +28,7 @@ export const SubmitProposal: FC = () => {
           dispatch(clearProposalPending());
           dispatch(setPanelContent(<ProposalJourney />));
         }}
+        data-cy-button="proposal-button"
       >
         {i18n.t('consultation.cards.submit.button')}
       </ParticipateCardButtonStyle>

@@ -1,9 +1,15 @@
 import React, { useEffect } from 'react';
 import i18n from 'i18next';
+import { useHistory, useLocation } from 'react-router';
 import { useAppContext } from '@make.org/store';
 import { closePanel, setPanelContent } from '@make.org/store/actions/panel';
 import {
+  getParticipateLink,
+  getSequenceLink,
+} from '@make.org/utils/helpers/url';
+import {
   trackClickKeepVoting,
+  trackDisplayProposalField,
   trackDisplayProposalSubmitValidation,
 } from '@make.org/utils/services/Tracking';
 import { getAgeFromDateOfBirth } from '@make.org/utils/helpers/date';
@@ -23,6 +29,9 @@ import {
   ProposalSuccessProposalStyle,
   ProposalSuccessAvatarStyle,
   ProposalSuccessNameStyle,
+  ProposalSuccessTransparentButtonstyle,
+  ProposalSuccessButtonWrapperStyle,
+  ProposalSuccessLinkStyle,
 } from '@make.org/components/Proposal/Submit/style';
 import { CenterColumnHeightStyle } from '@make.org/ui/elements/FlexElements';
 import {
@@ -30,14 +39,17 @@ import {
   setProposalSource,
   setRegisterStep,
 } from '@make.org/store/actions/pendingProposal';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import {
   CONTACT_EMAIL,
   CONTACT_EMAIL_DE,
 } from '@make.org/utils/constants/config';
+import { isSequencePage as getIsSequencePage } from '@make.org/utils/routes';
 import { AvatarImageStyle } from '@make.org/ui/components/Avatar/style';
 import { SvgEmptyAvatar } from '@make.org/ui/Svg/elements';
 import { ProposalTooltip } from '@make.org/ui/components/Tooltip/ProposalTooltip';
+import { QuestionType } from '@make.org/types';
 
 type Props = {
   // eslint-disable-next-line react/require-default-props
@@ -59,8 +71,12 @@ export const ProposalAuthorAge: React.FC<{ dateOfBirth: string | null }> = ({
 export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
   const { state, dispatch } = useAppContext();
   const { user } = selectAuthentication(state);
+  const history = useHistory();
+  const location = useLocation();
   const pendingProposal = state.pendingProposal.pendingProposal || '';
   const { source, country } = state.appConfig;
+  const isSequencePage = getIsSequencePage(location.pathname);
+  const question: QuestionType = selectCurrentQuestion(state);
   const isDE = country === 'DE';
   const EMAIL = isDE ? CONTACT_EMAIL_DE : CONTACT_EMAIL;
   const isWidget = source === 'widget';
@@ -70,11 +86,15 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
     dispatch(setRegisterStep(1));
     trackClickKeepVoting();
     dispatch(clearProposalPending());
+    if (!isSequencePage && !isWidget) {
+      history.push(getSequenceLink(country, question.slug));
+    }
   };
 
   const handleOtherIdeaButton = () => {
     dispatch(clearProposalPending());
     dispatch(setPanelContent(<ProposalJourney />));
+    trackDisplayProposalField('new_idea');
   };
 
   useEffect(() => {
@@ -90,7 +110,7 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
     <ProposalFormSuccessWrapperStyle isWidget={isWidget}>
       <CenterColumnHeightStyle>
         <ProposalSuccessWrapperStyle as="section">
-          <ProposalSuccessTitleBlackStyle>
+          <ProposalSuccessTitleBlackStyle data-cy-container="success-congrats">
             {i18n.t('proposal_submit.success.grats', {
               name: user?.profile.firstName || '',
             })}
@@ -146,12 +166,30 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
               </ProposalSuccessParagraphLinkStyle>
             </ProposalSuccessParagraphWrapperStyle>
           )}
-          <ProposalSuccessRedButtonStyle onClick={handleOtherIdeaButton}>
-            {i18n.t('proposal_submit.success.other_idea')}
-          </ProposalSuccessRedButtonStyle>
-          <ProposalSuccessRedButtonStyle onClick={handleCloseButton}>
-            {i18n.t('proposal_submit.success.button')}
-          </ProposalSuccessRedButtonStyle>
+          <ProposalSuccessButtonWrapperStyle>
+            {!isWidget && (
+              <ProposalSuccessRedButtonStyle
+                onClick={handleOtherIdeaButton}
+                data-cy-button="keep-proposing"
+              >
+                {i18n.t('proposal_submit.success.other_idea')}
+              </ProposalSuccessRedButtonStyle>
+            )}
+            <ProposalSuccessTransparentButtonstyle
+              onClick={handleCloseButton}
+              data-cy-button="keep-voting"
+            >
+              {i18n.t('proposal_submit.success.button')}
+            </ProposalSuccessTransparentButtonstyle>
+          </ProposalSuccessButtonWrapperStyle>
+          {!isWidget && (
+            <ProposalSuccessLinkStyle
+              to={getParticipateLink(country, question.slug)}
+              onClick={() => dispatch(closePanel())}
+            >
+              {i18n.t('proposal_submit.success.consultation_access')}
+            </ProposalSuccessLinkStyle>
+          )}
         </ProposalSuccessWrapperStyle>
       </CenterColumnHeightStyle>
     </ProposalFormSuccessWrapperStyle>

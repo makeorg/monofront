@@ -33,11 +33,27 @@ const notificationButtons = {
   'cookie accept': 'cookie-accept',
 };
 
+const participateButtons = {
+  'display propose panel': 'proposal-button',
+};
+
+const registerButtons = {
+  'email register': 'email-button-register',
+};
+
+const proposalJourneyButtons = {
+  'keep voting': 'keep-voting',
+  'keep proposing': 'keep-proposing',
+};
+
 const buttonIdentifiers = {
   ...sequenceButtons,
   ...headerButtons,
   ...notificationButtons,
   ...footerButtons,
+  ...participateButtons,
+  ...registerButtons,
+  ...proposalJourneyButtons,
 };
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
