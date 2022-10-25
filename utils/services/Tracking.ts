@@ -67,6 +67,10 @@ export const trackClickOperationPage = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_OPERATION_PAGE());
 };
 
+export const trackClickRelaunchSequence = (): void => {
+  TrackingService.sendAllTrackers(trackingEvent.CLICK_RELAUNCH_SEQUENCE());
+};
+
 /* Header Tracking */
 export const trackClickMakeLogo = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_MAKEORG_LOGO());

@@ -460,6 +460,11 @@ export const GreyLinkStyle = styled(Link)`
   ${GreyNoBackgroundStyle};
 `;
 
+export const BlackBorderLinkStyle = styled(Link)`
+  ${BasicButtonStyle};
+  ${BlackBordersStyle};
+`;
+
 export const BlackBorderButtonStyle = styled.button.attrs(props => ({
   type: 'button',
   ...props,

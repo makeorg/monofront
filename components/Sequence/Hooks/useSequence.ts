@@ -21,6 +21,7 @@ import {
   setSequenceLength,
   loadSequenceProposals,
   disableDemographicsCard,
+  relaunchSequence,
 } from '@make.org/store/actions/sequence';
 import { useAppContext } from '@make.org/store';
 import { useSequenceTracking } from './useSequenceTracking';
@@ -53,6 +54,7 @@ export const useSequence = (
     sequenceSize,
     isLoading,
     demographics,
+    sequenceRelaunch,
   } = sequence || {};
   const { source } = state.appConfig;
   const isWidget = source === 'widget';
@@ -69,15 +71,16 @@ export const useSequence = (
     useSequenceQueryParams();
 
   // Other
-  const introCard = isWidget ? false : introCardParam;
+  const introCardCheck = isWidget ? false : introCardParam;
+
+  const votedIdsCheck = firstProposalParam
+    ? [firstProposalParam, ...votedProposalIdsOfQuestion]
+    : votedProposalIdsOfQuestion;
 
   // Load sequence data
-  const loadSequenceData = async () => {
+  const loadSequenceData = async (introCard: boolean, votedIds: string[]) => {
     dispatch(setSequenceLoading(true));
     dispatch(setSequenceLength(0));
-    const votedIds = firstProposalParam
-      ? [firstProposalParam, ...votedProposalIdsOfQuestion]
-      : votedProposalIdsOfQuestion;
 
     if (question) {
       let buildedCards: SequenceCardType[] = [];
@@ -136,13 +139,31 @@ export const useSequence = (
       return;
     }
     scrollToTop();
-    loadSequenceData();
+    loadSequenceData(introCardCheck, votedIdsCheck);
   }, []);
+
+  const cleanSequence = () => {
+    dispatch(loadSequenceProposals([]));
+    dispatch(loadSequenceCards([]));
+    dispatch(resetSequenceVotedProposals(question?.slug));
+    dispatch(setSequenceLength(0));
+    dispatch(setSequenceIndex(0));
+    dispatch(disableDemographicsCard());
+  };
+
+  // Used to reset and restart sequence
+  useEffect(() => {
+    if (sequenceRelaunch) {
+      cleanSequence();
+      loadSequenceData(false, []);
+      dispatch(relaunchSequence(false));
+    }
+  }, [sequenceRelaunch]);
 
   // Update when user logged in
   useEffect(() => {
     if (isLoggedIn) {
-      loadSequenceData();
+      loadSequenceData(introCardCheck, votedIdsCheck);
     }
   }, [isLoggedIn]);
 
@@ -154,12 +175,7 @@ export const useSequence = (
   // Reset sequence when unmount
   useEffect(
     () => () => {
-      dispatch(loadSequenceProposals([]));
-      dispatch(loadSequenceCards([]));
-      dispatch(resetSequenceVotedProposals(question?.slug));
-      dispatch(setSequenceLength(0));
-      dispatch(setSequenceIndex(0));
-      dispatch(disableDemographicsCard());
+      cleanSequence();
     },
     []
   );

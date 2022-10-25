@@ -343,6 +343,7 @@
     "title": "Merci d’avoir réagi aux propositions !",
     "description": "Continuez à voter pour nous aider à identifier les priorités.",
     "link_text": "J'accède à la consultation",
+    "continue": "Je continue à voter",
     "register": {
       "description": "Comment suivre les résultats ?",
       "button_intro": "Créez votre",

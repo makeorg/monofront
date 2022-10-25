@@ -321,6 +321,7 @@
     "title": "Thank you for reacting to the solutions !",
     "description": "Keep voting to help us identify our priorities.",
     "link_text": "Access to the consultation",
+    "continue": "Continue voting",
     "register": {
       "description": "How to follow the results ?",
       "button_intro": "Create your",

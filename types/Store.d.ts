@@ -56,6 +56,7 @@ export type StateSequence = {
     submitted: boolean;
     renderCard: boolean;
   };
+  readonly sequenceRelaunch?: boolean;
   readonly loadFirstProposal?: boolean;
   readonly sequenceSize: number;
   readonly sequenceLabel: string;

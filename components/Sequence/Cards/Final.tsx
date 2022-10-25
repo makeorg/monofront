@@ -3,12 +3,17 @@ import {
   trackDisplayFinalCard,
   trackClickOperationPage,
   trackClickCitizenRegister,
+  trackClickRelaunchSequence,
 } from '@make.org/utils/services/Tracking';
 import i18n from 'i18next';
-import { resetSequenceVotedProposals } from '@make.org/store/actions/sequence';
 import {
-  LinkAsRedButtonStyle,
+  resetSequenceVotedProposals,
+  relaunchSequence,
+} from '@make.org/store/actions/sequence';
+import {
+  RedButtonStyle,
   RedLinkButtonStyle,
+  BlackBorderLinkStyle,
 } from '@make.org/ui/elements/ButtonsElements';
 import { getParticipateLink } from '@make.org/utils/helpers/url';
 import { useAppContext } from '@make.org/store';
@@ -20,6 +25,8 @@ import {
   FinalCardSeparatorStyle,
   FinalCardRegisterStyle,
   FinalCardWrapperStyle,
+  SkipIconStyle,
+  ButtonsContainerStyle,
 } from './style';
 
 type Props = {
@@ -49,12 +56,24 @@ export const FinalCard: React.FC<Props> = ({ questionSlug }) => {
       <SequenceParagraphStyle as="p" data-cy-container="final-card-description">
         {i18n.t('final_card.description')}
       </SequenceParagraphStyle>
-      <LinkAsRedButtonStyle
-        to={getParticipateLink(country, questionSlug)}
-        onClick={() => trackClickOperationPage()}
-      >
-        {i18n.t('final_card.link_text')}
-      </LinkAsRedButtonStyle>
+      <ButtonsContainerStyle>
+        <BlackBorderLinkStyle
+          to={getParticipateLink(country, questionSlug)}
+          onClick={() => trackClickOperationPage()}
+        >
+          {i18n.t('final_card.link_text')}
+        </BlackBorderLinkStyle>
+        <RedButtonStyle
+          data-cy-button="final-card-relaunch-sequence"
+          onClick={() => {
+            trackClickRelaunchSequence();
+            dispatch(relaunchSequence(true));
+          }}
+        >
+          <SkipIconStyle aria-hidden focusable="false" />
+          {i18n.t('final_card.continue')}
+        </RedButtonStyle>
+      </ButtonsContainerStyle>
       <FinalCardSeparatorStyle />
       <div data-cy-container="final-card-register-description">
         {i18n.t('final_card.register.description')}

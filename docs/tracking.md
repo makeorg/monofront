@@ -208,6 +208,11 @@ Following parameters are added to all events.
     
   
 
+  - `click-relaunch-sequence` Click relaunch sequence button of sequence final card
+
+    
+  
+
   - `display-intro-card` Display intro card
 
     

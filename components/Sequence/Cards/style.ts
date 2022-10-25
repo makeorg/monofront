@@ -4,6 +4,7 @@ import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { color, typography } from 'athena-design-tokens';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
+import { SvgFastForward } from '@make.org/ui/Svg/elements';
 import {
   CenterColumnStyle,
   SpaceBetweenRowStyle,
@@ -16,6 +17,7 @@ import {
   RedButtonStyle,
 } from '@make.org/ui/elements/ButtonsElements';
 import { SeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
+import { SvgPropsType } from '@make.org/types';
 
 export const SequenceCardStyle = styled.section`
   position: relative;
@@ -289,4 +291,21 @@ export const FinalCardRegisterStyle = styled.div`
 
 export const IntroProposalRedButtonStyle = styled(RedButtonStyle)`
   margin-top: 30px;
+`;
+
+export const SkipIconStyle = styled(SvgFastForward)<SvgPropsType>`
+  margin-right: 5px;
+  width: 16px;
+  fill: white;
+`;
+
+export const ButtonsContainerStyle = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    flex-direction: row;
+  }
 `;

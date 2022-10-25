@@ -19,6 +19,7 @@ import {
   SEQUENCE_PROPOSAL_VOTE,
   SEQUENCE_RESET_VOTED_PROPOSALS,
   SEQUENCE_SET_INDEX,
+  SEQUENCE_RELAUNCH,
   SEQUENCE_UPDATE_CARD_STATE,
   SEQUENCE_SET_LOADING,
   SEQUENCE_SET_LENGTH,
@@ -54,6 +55,11 @@ export const loadSequenceProposals = (
 ): ReducerAction => ({
   type: SEQUENCE_LOAD_PROPOSALS,
   payload: { proposals },
+});
+
+export const relaunchSequence = (relaunch: boolean): ReducerAction => ({
+  type: SEQUENCE_RELAUNCH,
+  payload: { relaunch },
 });
 
 export const incrementSequenceIndex = (): ReducerAction => ({

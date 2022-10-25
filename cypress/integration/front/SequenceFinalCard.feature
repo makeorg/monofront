@@ -11,3 +11,9 @@ Feature: Final card
     When I click on "final-card-register-button" button
     Then I see "S’inscrire par e-mail (1/2)" in "register-panel-title" container
     
+  Scenario: click on "continue voting" button
+    Given I am on the sequence page of the question "question-3-slug"
+    When I go to card "6" from card "1"
+    Then I see "Merci d’avoir réagi aux propositions !" in "final-card-title" container
+    When I click on "final-card-relaunch-sequence" button
+    Then card "1" is visible

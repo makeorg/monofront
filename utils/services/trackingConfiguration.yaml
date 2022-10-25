@@ -216,6 +216,10 @@ CLICK_PROPOSAL_PUSH_CARD_IGNORE:
   key: click-proposal-push-card-ignore
   description: Click next card button of push proposal card
 
+CLICK_RELAUNCH_SEQUENCE:
+  key: click-relaunch-sequence
+  description: Click relaunch sequence button of sequence final card
+
 DISPLAY_INTRO_CARD:
   key: display-intro-card
   description: Display intro card

@@ -15,6 +15,7 @@ import {
   SEQUENCE_SET_LENGTH,
   SEQUENCE_SET_LABEL,
   SEQUENCE_DEMOGRAPHICS_RENDER,
+  SEQUENCE_RELAUNCH,
 } from '../../actionTypes';
 
 export const sequence_state: StateSequence = {
@@ -28,6 +29,7 @@ export const sequence_state: StateSequence = {
   loadFirstProposal: false,
   sequenceSize: 0,
   sequenceLabel: '',
+  sequenceRelaunch: false,
   demographics: {
     submitted: false,
     renderCard: true,
@@ -51,6 +53,11 @@ export const sequence_reducer: Reducer = (
         cards,
       };
     }
+    case SEQUENCE_RELAUNCH:
+      return {
+        ...state,
+        sequenceRelaunch: action.payload.relaunch,
+      };
     case SEQUENCE_LOAD_CARDS:
       return {
         ...state,
