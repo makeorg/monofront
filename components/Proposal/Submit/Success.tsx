@@ -9,7 +9,6 @@ import {
 } from '@make.org/utils/helpers/url';
 import {
   trackClickKeepVoting,
-  trackDisplayProposalField,
   trackDisplayProposalSubmitValidation,
 } from '@make.org/utils/services/Tracking';
 import { getAgeFromDateOfBirth } from '@make.org/utils/helpers/date';
@@ -94,7 +93,7 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
   const handleOtherIdeaButton = () => {
     dispatch(clearProposalPending());
     dispatch(setPanelContent(<ProposalJourney />));
-    trackDisplayProposalField('new_idea');
+    dispatch(setProposalSource('new_idea'));
   };
 
   useEffect(() => {
