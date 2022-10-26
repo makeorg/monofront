@@ -395,7 +395,7 @@ export const ProposalSuccessTitleStyle = styled(ProposalSuccessTitle)`
 export const ProposalSuccessRedButtonStyle = styled(RedButtonStyle)`
   max-width: 167px;
   width: 100%;
-  margin: auto auto 0px;
+  margin: 30px auto 0px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     margin: 30px auto;
   }
@@ -406,7 +406,7 @@ export const ProposalSuccessTransparentButtonstyle = styled(
 )`
   max-width: 167px;
   width: 100%;
-  margin: auto auto 0px;
+  margin: 30px auto 0px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     margin: 30px auto;
   }
@@ -500,9 +500,10 @@ export const ProposalSuccessButtonWrapperStyle = styled.div`
   flex-wrap: wrap;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     flex-direction: row-reverse;
+    margin: 0px 0px;
   }
 `;
 
 export const ProposalSuccessLinkStyle = styled(BlackLinkStyle)`
-  margin: 0px auto;
+  margin: 30px auto;
 `;
