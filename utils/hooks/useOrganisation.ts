@@ -8,7 +8,7 @@ import { useParams } from 'react-router';
 import { OrganisationService } from '../services/Organisation';
 
 export const useOrganisation = (
-  loadMore?: boolean,
+  loadMore?: number,
   loadProposals?: boolean,
   loadVotes?: boolean
 ): {

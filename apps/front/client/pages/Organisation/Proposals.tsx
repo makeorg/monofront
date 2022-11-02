@@ -33,14 +33,14 @@ import { OrganisationProfileTabs } from './Tabs';
 const OrganisationProposalsPage: FC = () => {
   const { state } = useAppContext();
   const { country } = state.appConfig;
-  const [loadMoreProposals, setLoadMoreProposals] = useState(false);
+  const [loadMoreProposals, setLoadMoreProposals] = useState(0);
   const { organisation, proposals, isLoading, hasMore, page } = useOrganisation(
     loadMoreProposals,
     true
   );
 
   const clickLoadMore = () => {
-    setLoadMoreProposals(true);
+    setLoadMoreProposals(page);
     trackLoadMoreProposals(TRACKING.COMPONENT_PARAM_PROPOSALS, page);
   };
 

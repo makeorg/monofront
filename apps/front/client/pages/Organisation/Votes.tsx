@@ -29,7 +29,7 @@ import { OrganisationProfileTabs } from './Tabs';
 const OrganisationVotesPage: FC = () => {
   const { state } = useAppContext();
   const { country } = state.appConfig;
-  const [loadMoreVotes, setLoadMoreVotes] = useState(false);
+  const [loadMoreVotes, setLoadMoreVotes] = useState(0);
   const { organisation, votes, isLoading, hasMore, page } = useOrganisation(
     loadMoreVotes,
     false,
@@ -42,7 +42,7 @@ const OrganisationVotesPage: FC = () => {
   const displayLoadMoreButton = hasMore && !isLoading;
 
   const clickLoadMore = () => {
-    setLoadMoreVotes(true);
+    setLoadMoreVotes(page);
     trackLoadMoreProposals(TRACKING.COMPONENT_PARAM_PROPOSALS, page);
   };
 
