@@ -4,13 +4,13 @@
 FROM node:16.9-alpine AS base
 WORKDIR /home/app
 
-ENV PATH /home/app/node_modules/.bin:$PATH
 ENV CHOKIDAR_USEPOLLING true
 
-RUN apk --no-cache add git
-RUN npm install -g lerna@4.0.0
+# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
+RUN apk add --no-cache libc6-compat
+RUN apk add --no-cache git
 
-COPY ["package*.json", "yarn.lock", "./"]
+COPY ["package*.json", "yarn.lock", ".yarnrc.yml", "./"]
 COPY ["apps/widget/package*.json", "./apps/widget/"]
 COPY ["api/package*.json", "./api/"]
 COPY ["components/package*.json", "./components/"]
@@ -20,18 +20,22 @@ COPY ["utils/package*.json", "./utils/"]
 COPY ["ui/package*.json", "./ui/"]
 COPY ["store/package*.json", "./store/"]
 COPY ["apimock/package*.json", "./apimock/"]
-COPY lerna.json ./
+COPY [".yarn", "./.yarn"]
 
-RUN ["lerna", "bootstrap"]
+RUN ["corepack", "enable", "yarn"]
+RUN ["corepack", "prepare"]
 
-COPY . ./
+RUN ["yarn", "workspaces", "focus", "@make.org/widget"]
 
 ############
 # Dev
 ############
 FROM base AS widget-dev
 
-CMD ["./node_modules/.bin/lerna", "run", "--scope=@make.org/widget", "dev", "--stream"]
+COPY . ./
+
+RUN ["yarn", "workspaces", "focus", "@make.org/widget"]
+CMD ["yarn", "workspace", "@make.org/widget", "dev"]
 
 EXPOSE 3000
 
@@ -42,74 +46,29 @@ FROM base AS widget-ssr
 
 WORKDIR /home/app
 
-ENV PATH /home/app/node_modules/.bin:$PATH
+COPY . ./
 
-RUN ["./node_modules/.bin/lerna", "run", "--scope=@make.org/widget",  "build", "--stream"]
-CMD ["./node_modules/.bin/lerna", "run", "--scope=@make.org/widget", "server:dev", "--stream"]
+RUN ["yarn", "workspaces", "focus", "@make.org/widget"]
+RUN ["yarn", "workspace", "@make.org/widget",  "build"]
+CMD ["yarn", "workspace", "@make.org/widget", "server:dev"]
 
 EXPOSE 3000
 
 
-############
-# TEST
-############
-FROM cypress/browsers:node16.5.0-chrome94-ff93 AS widget-test
-
-WORKDIR /home/app
-
-ENV PATH /home/app/node_modules/.bin:$PATH
-
-#RUN apt-get install git
-RUN npm install -g lerna@4.0.0
-
-COPY ["package*.json", "yarn.lock", "./"]
-COPY ["apps/widget/package*.json", "./apps/widget/"]
-COPY ["api/package*.json", "./api/"]
-COPY ["components/package*.json", "./components/"]
-COPY ["types/package*.json", "./types/"]
-COPY ["assets/package*.json", "./assets/"]
-COPY ["utils/package*.json", "./utils/"]
-COPY ["ui/package*.json", "./ui/"]
-COPY ["store/package*.json", "./store/"]
-COPY ["apimock/package*.json", "./apimock/"]
-COPY lerna.json ./
-
-RUN ["lerna", "bootstrap"]
-
-COPY . ./
-
-RUN ["yarn", "workspace", "@make.org/widget", "build"]
-CMD ["yarn", "ci:cypress:widget"]
-
-EXPOSE 9009
-
-############
-# BUILD
-############
-FROM node:16.9-alpine AS base-production
+###################
+# BUILD PRODUCTION
+###################
+FROM base AS base-production
 
 WORKDIR /usr/app
 
-# git commands are necessary to build /version
-RUN apk --no-cache add git
-
-COPY ["package*.json", "yarn.lock", "./"]
-COPY ["apps/widget/package*.json", "./apps/widget/"]
-COPY ["api/package*.json", "./api/"]
-COPY ["components/package*.json", "./components/"]
-COPY ["types/package*.json", "./types/"]
-COPY ["assets/package*.json", "./assets/"]
-COPY ["utils/package*.json", "./utils/"]
-COPY ["ui/package*.json", "./ui/"]
-COPY ["store/package*.json", "./store/"]
-RUN yarn install --no-progress --frozen-lockfile
-
 COPY . ./
-RUN yarn workspace @make.org/widget build
 
-# keep only production modules and autoclean
-RUN yarn install --no-progress --frozen-lockfile --check-files --production
-RUN yarn autoclean --force
+RUN ["yarn", "workspaces", "focus", "@make.org/widget"]
+RUN ["yarn", "workspace", "@make.org/widget",  "build"]
+
+RUN ["rm", "-rf", "node_modules"]
+RUN ["yarn", "workspaces", "focus", "@make.org/widget", "--production"]
 
 
 FROM node:16.9-alpine as widget-production
@@ -124,7 +83,6 @@ COPY --from=base-production /usr/app/apps/widget/ecosystem.config.js ./ecosystem
 COPY --from=base-production /usr/app/apps/widget/bin ./bin
 COPY --from=base-production /usr/app/apps/widget/i18n ./i18n
 COPY --from=base-production /usr/app/apps/widget/demo-iframe.html ./demo-iframe.html
-
 COPY --from=base-production /usr/app/node_modules ./node_modules
 
 EXPOSE 8000

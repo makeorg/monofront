@@ -6,8 +6,7 @@
   "dependencies": {
     "json-server": "^0.16.1"
   },
-  "devDependencies": {},
   "scripts": {
-      "start": "node server.js"
+    "start": "node server.js"
   }
 }

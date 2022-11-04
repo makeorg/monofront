@@ -4,8 +4,9 @@
   "version": "0.1.0",
   "engines": {
     "node": ">=14.17 <=16.9",
-    "yarn": "~1.22"
+    "yarn": "~3.2"
   },
+  "packageManager": "yarn@3.2.3",
   "workspaces": [
     "root",
     "apps/*",
@@ -19,15 +20,15 @@
     "apimock"
   ],
   "scripts": {
-    "postinstall": "if [ -d .git ] && [ -d .husky ]; then husky install && rm -rf .git/hooks && ln -s ../.husky .git/hooks; fi",
+    "postinstall": "node -e \"try { require('husky').install(); } catch (e) {console.error('Husky init failed')}\"",
     "start:widget": "yarn workspace @make.org/widget dev",
     "prod:widget": "yarn workspace @make.org/widget prod",
     "start:front": "yarn workspace @make.org/front dev",
     "start:apiMock": "yarn workspace @make.org/apimock start",
-    "cypress:front:run": "./node_modules/.bin/cypress-tags run -b chrome --headless -e TAGS='@front' --config-file apps/front/cypress.json",
-    "cypress:front:open": "cypress open --config-file apps/front/cypress.json",
-    "cypress:widget:run": "./node_modules/.bin/cypress-tags run -b chrome --headless -e TAGS='@widget' --config-file apps/widget/cypress.json",
-    "cypress:widget:open": "cypress open --config-file apps/widget/cypress.json",
+    "cypress:front:run": "yarn cypress-tags run --config-file apps/front/cypress.json -b chrome --headless -e TAGS='@front'",
+    "cypress:front:open": "yarn cypress open --config-file apps/front/cypress.json",
+    "cypress:widget:run": "yarn cypress-tags run --config-file apps/widget/cypress.json -b chrome --headless -e TAGS='@widget'",
+    "cypress:widget:open": "yarn cypress open --config-file apps/widget/cypress.json",
     "ci:cypress:front": "start-server-and-test 'yarn workspace @make.org/front server:test' 9009 'yarn cypress:front:run'",
     "ci:cypress:widget": "start-server-and-test 'yarn workspace @make.org/widget server:test' 9008 'yarn cypress:widget:run'"
   },
@@ -35,14 +36,20 @@
     "@babel/cli": "7.18.10",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^12.1.4",
+    "@cypress/code-coverage": "3.10.0",
     "@svgr/cli": "^6.3.1",
     "@testing-library/jest-dom": "^5.16.5",
+    "@types/cypress-cucumber-preprocessor": "^4",
     "@types/enzyme": "^3.10.12",
     "@types/jsdom": "^16.2.15",
     "@typescript-eslint/eslint-plugin": "^5.32.0",
     "@typescript-eslint/parser": "^5.32.0",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
     "babel-plugin-convert-to-json": "^0.1.0",
+    "cypress": "^7.4.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-html-validate": "^1.5.1",
+    "cypress-wait-until": "1.7.2",
     "enzyme": "^3.11.0",
     "eslint": "^8.21.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -63,9 +70,9 @@
     "jest-transform-yaml": "1.0.0",
     "jscpd": "^3.3.26",
     "jsdom": "^16.6.0",
-    "lerna": "4.0.0",
     "lerna-update-wizard": "^1.1.2",
     "prettier": "^2.3.1",
+    "start-server-and-test": "^1.13.1",
     "ts-jest": "27.1.5",
     "ts-node": "10.9.1",
     "typescript": "^4.7.4"

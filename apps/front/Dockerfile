@@ -4,13 +4,13 @@
 FROM node:16.9-alpine AS base
 WORKDIR /home/app
 
-ENV PATH /home/app/node_modules/.bin:$PATH
 ENV CHOKIDAR_USEPOLLING true
 
+# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
+RUN apk add --no-cache libc6-compat
 RUN apk --no-cache add git
-RUN npm install -g lerna@4.0.0
 
-COPY ["package*.json", "yarn.lock", "./"]
+COPY ["package*.json", "yarn.lock", ".yarnrc.yml", "./"]
 COPY ["apps/front/package*.json", "./apps/front/"]
 COPY ["api/package*.json", "./api/"]
 COPY ["components/package*.json", "./components/"]
@@ -20,18 +20,22 @@ COPY ["utils/package*.json", "./utils/"]
 COPY ["ui/package*.json", "./ui/"]
 COPY ["store/package*.json", "./store/"]
 COPY ["apimock/package*.json", "./apimock/"]
-COPY lerna.json ./
+COPY [".yarn", "./.yarn"]
 
-RUN ["lerna", "bootstrap"]
+RUN ["corepack", "enable", "yarn"]
+RUN ["corepack", "prepare"]
 
-COPY . ./
+RUN ["yarn", "workspaces", "focus", "@make.org/front"]
 
 ############
 # Dev
 ############
 FROM base AS app-dev
 
-CMD ["./node_modules/.bin/lerna", "run", "--scope=@make.org/front", "dev", "--stream"]
+COPY . ./
+
+RUN ["yarn", "workspaces", "focus", "@make.org/front"]
+CMD ["yarn", "workspace", "@make.org/front", "dev"]
 
 EXPOSE 3000
 
@@ -42,70 +46,28 @@ FROM base AS app-ssr
 
 WORKDIR /home/app
 
-ENV PATH /home/app/node_modules/.bin:$PATH
+COPY . ./
 
-RUN ["./node_modules/.bin/lerna", "run", "--scope=@make.org/front",  "build", "--stream"]
-CMD ["./node_modules/.bin/lerna", "run", "--scope=@make.org/front", "server:dev", "--stream"]
+RUN ["yarn", "workspaces", "focus", "@make.org/front"]
+RUN ["yarn", "workspace", "@make.org/front",  "build"]
+CMD ["yarn", "workspace", "@make.org/front", "server:dev"]
 
 EXPOSE 3000
 
 ############
-# TEST
-############
-FROM cypress/browsers:node16.5.0-chrome94-ff93 AS app-test
-
-WORKDIR /home/app
-
-RUN npm install -g lerna@4.0.0
-
-COPY ["package*.json", "yarn.lock", "./"]
-COPY ["apps/front/package*.json", "./apps/front/"]
-COPY ["api/package*.json", "./api/"]
-COPY ["components/package*.json", "./components/"]
-COPY ["types/package*.json", "./types/"]
-COPY ["assets/package*.json", "./assets/"]
-COPY ["utils/package*.json", "./utils/"]
-COPY ["ui/package*.json", "./ui/"]
-COPY ["store/package*.json", "./store/"]
-COPY ["apimock/package*.json", "./apimock/"]
-COPY lerna.json ./
-
-RUN ["lerna", "bootstrap"]
-
-COPY . ./
-
-RUN ["yarn", "workspace", "@make.org/front", "build"]
-CMD ["yarn", "ci:cypress:front"]
-
-EXPOSE 9009
-
-############
 # BUILD
 ############
-FROM node:16.9-alpine AS base-production
+FROM base AS base-production
 
 WORKDIR /usr/app
 
-# git commands are necessary to build /version
-RUN apk --no-cache add git
-
-COPY ["package*.json", "yarn.lock", "./"]
-COPY ["apps/front/package*.json", "./apps/front/"]
-COPY ["api/package*.json", "./api/"]
-COPY ["components/package*.json", "./components/"]
-COPY ["types/package*.json", "./types/"]
-COPY ["assets/package*.json", "./assets/"]
-COPY ["utils/package*.json", "./utils/"]
-COPY ["ui/package*.json", "./ui/"]
-COPY ["store/package*.json", "./store/"]
-RUN yarn install --no-progress --frozen-lockfile
-
 COPY . ./
-RUN yarn workspace @make.org/front build
 
-# keep only production modules and autoclean
-RUN yarn install --no-progress --frozen-lockfile --check-files --production
-RUN yarn autoclean --force
+RUN ["yarn", "workspaces", "focus", "@make.org/front"]
+RUN ["yarn", "workspace", "@make.org/front",  "build"]
+
+RUN ["rm", "-rf", "node_modules"]
+RUN ["yarn", "workspaces", "focus", "@make.org/front", "--production"]
 
 
 FROM node:16.9-alpine as app-production
@@ -121,7 +83,6 @@ COPY --from=base-production /usr/app/apps/front/bin ./bin
 COPY --from=base-production /usr/app/apps/front/i18n ./i18n
 COPY --from=base-production /usr/app/apps/front/server/staticData ./server/staticData
 COPY --from=base-production /usr/app/apps/front/server/convention ./server/convention
-
 COPY --from=base-production /usr/app/node_modules ./node_modules
 
 EXPOSE 8000

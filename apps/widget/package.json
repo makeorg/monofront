@@ -5,7 +5,7 @@
   "sideEffects": false,
   "engines": {
     "node": ">=14.17 <=16.9",
-    "yarn": "~1.22"
+    "yarn": "~3.2"
   },
   "dependencies": {
     "@loadable/component": "5.15.2",
@@ -62,17 +62,17 @@
   },
   "devDependencies": {
     "@babel/core": "7.18.10",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/plugin-proposal-optional-chaining": "7.18.9",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
     "@babel/preset-typescript": "7.18.6",
     "@babel/register": "7.18.9",
-    "@cypress/code-coverage": "3.10.0",
     "@loadable/babel-plugin": "^5.13.2",
+    "@types/babel__preset-env": "^7",
     "@types/memory-cache": "^0.2.2",
     "babel-loader": "8.2.5",
-    "cypress": "^7.4.0",
-    "cypress-cucumber-preprocessor": "^4.3.1",
-    "cypress-html-validate": "^1.5.1",
-    "cypress-wait-until": "1.7.2",
+    "babel-plugin-convert-to-json": "^0.1.0",
     "file-loader": "^6.2.0",
     "html-validate": "4.13.1",
     "html-webpack-plugin": "^5.5.0",

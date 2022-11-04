@@ -30,7 +30,7 @@ $ docker-compose -f docker-compose.dev.yaml --profile=app-ssr up -d
 # get the id of the running container
 $ docker ps
 # launch the build script in the container
-$ docker exec -it CONTAINER_ID lerna run --scope @make.org/front build --stream
+$ docker exec -it CONTAINER_ID yarn workspace @make.org/front build
 # Restart the container
 $ docker-compose -f docker-compose.dev.yaml up -d --profile=app-ssr restart
 ```
@@ -79,7 +79,7 @@ FB_CONVERSION_TOKEN=
 [Lerna Update Wizard](https://github.com/Anifacted/lerna-update-wizard) is installed to manage packages across workspaces.
 
 ```bash
-$ lernaupdate
+$ yarn lernaupdate
 ```
 
 

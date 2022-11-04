@@ -12,3 +12,11 @@ lerna-debug.log
 /**/.nyc_output
 /**/Svg/svgr
 *.tsbuildinfo
+
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

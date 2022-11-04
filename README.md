@@ -14,7 +14,6 @@ This project gathers shared pakages and apps for make.org front end products.
 
 ## <a name="technical_stack"></a>Technical Stack
 The folowing technologies are used to build and test this repository :
-- <a href="https://github.com/lerna/lerna" target="_blank">Lerna (open in a new tab)</a>
 - <a href="https://github.com/microsoft/TypeScript/" target="_blank">Typescript (open in a new tab)</a>
 - <a href="https://github.com/facebook/react/" target="_blank">React (open in a new tab)</a>
 - <a href="https://styled-components.com/" target="_blank">Styled Components (open in a new tab)</a>
@@ -26,23 +25,25 @@ The folowing technologies are used to build and test this repository :
 ## <a name="core_concepts"></a>Core concepts
 The main purpose of this repository is to optimize behaviours between various apps.
 
-To ensure this we adopted a monorepository architecture with lerna and yarn workspace :
+To ensure this we adopted a monorepository architecture with yarn workspace :
 - Front office [applications](./apps)
 - Global packages shared between front office apps
 
-These packages are defined in the [lerna.json](./lerna.json) and root [package.json](./package.json).
+These packages are defined in the root [package.json](./package.json).
 
 During development, to avoid untimely version switching between node versions, we use <a href="https://www.docker.com/" target="_blank">Docker (open in a new tab)</a> and <a href="https://docs.docker.com/compose/install/" target="_blank">Docker Compose (open in a new tab)</a>.
 For further informations, refers to [docker-compose dev configuration](./docker-compose.dev.yaml) and Dockerfiles of each [apps'](./apps).
 
 
 ## <a name="getting_started"></a>Getting started
-- Install <a href="https://classic.yarnpkg.com/" target="_blank">Yarn version 1 (open in a new tab)</a>
-- Check Yarn version in [.yvmrc](./.yvmrc) and prefer using YVM to manage your Yarn version.
+- Enable <a href="https://yarnpkg.com/getting-started/install" target="_blank">Yarn with corepack (open in a new tab)</a>
+```bash
+corepack enable yarn
+corepack prepare
+```
 - Clone repo from [gitlab](https://gitlab.com/makeorg/platform/monofront)
 - Add `127.0.0.1       local.makeorg.tech` to hosts file in `/etc/hosts`
-- Install <a href="https://github.com/lerna/lerna" target="_blank">Lerna (open in a new tab)</a> on your machine with `npm install -g lerna`.
-- Run `lerna bootstrap` to install dependencies.
+- Run `yarn install` to install dependencies.
 - Install <a href="https://docs.docker.com/get-docker/" target="_blank">Docker (open in a new tab)</a> and <a href="https://docs.docker.com/compose/install/" target="_blank">Docker Compose (open in a new tab)</a>.
 - Refers to each [apps'](./apps) README file to build and run.
 

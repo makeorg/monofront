@@ -6,13 +6,14 @@ WORKDIR /home/app
 
 ENV PATH /home/app/node_modules/.bin:$PATH
 
-RUN npm install -g lerna@4.0.0
-
-COPY ["package*.json", "yarn.lock", "./"]
+COPY ["package*.json", "yarn.lock", ".yarnrc.yml", "./"]
 COPY ["apimock/package*.json", "./apimock/"]
-COPY lerna.json ./
+COPY [".yarn", "./.yarn"]
 
-RUN ["lerna", "bootstrap"]
+RUN ["corepack", "enable", "yarn"]
+RUN ["corepack", "prepare"]
+
+RUN ["yarn", "workspaces", "focus", "@make.org/apimock"]
 
 COPY . ./
 
@@ -22,7 +23,7 @@ COPY . ./
 FROM base AS api-mock
 WORKDIR /home/app
 
-CMD ["./node_modules/.bin/lerna", "run", "--scope=@make.org/apimock", "start", "--stream"]
+CMD ["yarn", "workspace", "@make.org/apimock", "start"]
 
 EXPOSE 9000
 

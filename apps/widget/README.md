@@ -37,7 +37,7 @@ $ docker-compose -f docker-compose.dev.yaml up -d --profile=widget-ssr up -d
 # get the id of the running container
 $ docker ps
 # launch the build script in the container
-$ docker exec -it CONTAINER_ID lerna run --scope @make.org/widget build --stream
+$ docker exec -it CONTAINER_ID yarn workspace @make.org/widget build
 # Restart the container
 $ docker-compose -f docker-compose.dev.yaml up -d --profile=widget-ssr restart
 ```
