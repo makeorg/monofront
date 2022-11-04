@@ -33,3 +33,5 @@ declare module '*.jpeg' {
   const data: any;
   export default data;
 }
+declare module '@make.org/utils/services/Trackers/fbq.js';
+declare module '@make.org/utils/services/Trackers/twttr.js';

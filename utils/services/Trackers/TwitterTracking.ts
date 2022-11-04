@@ -8,9 +8,9 @@
 /* eslint-disable no-unused-expressions */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { env } from '@make.org/assets/env';
+import { twttr } from '@make.org/utils/services/Trackers/twttr.js';
 import { Logger } from '../Logger';
 import trackingConfiguration from '../trackingConfiguration.yaml';
-import { twttr } from './twttr.js';
 
 const TWITTER_UNIVERSAL_MAKE_TAG = 'o2q8v';
 const twitterEventMapping = {

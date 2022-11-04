@@ -1,8 +1,8 @@
 import { env } from '@make.org/assets/env';
 import { TrackingConfigurationParamType } from '@make.org/types';
 import { ExpressService } from '@make.org/utils/services/Express';
-import { Logger } from '../Logger';
-import { fbq } from './fbq.js';
+import { fbq } from '@make.org/utils/services/Trackers/fbq.js';
+import { Logger } from '@make.org/utils/services/Logger';
 
 let initialized = false;
 declare global {

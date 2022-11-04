@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, RouteComponentProps } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import i18n from 'i18next';
 import { getOrganisationProfileLink } from '@make.org/utils/helpers/url';
 import { OrganisationType, OrganisationsType } from '@make.org/types';
@@ -19,6 +19,7 @@ import { formatOrganisationName } from '@make.org/utils/helpers/stringFormatter'
 import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
 import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
+import { RouteComponentProps } from 'react-router';
 import {
   SearchPageContentStyle,
   SearchPageResultsStyle,

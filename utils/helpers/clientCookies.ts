@@ -5,8 +5,11 @@ import { MixpanelTracking } from '@make.org/utils/services/Trackers/MixpanelTrac
 import { COOKIE, LocaleType } from '@make.org/types/enums';
 import { env } from '@make.org/assets/env';
 import { hotjar } from 'react-hotjar';
-import { TwitterUniversalTag } from '../services/Trackers/TwitterTracking';
-import { TWITTER_SCRIPT, twttr } from '../services/Trackers/twttr.js';
+import {
+  TWITTER_SCRIPT,
+  twttr,
+} from '@make.org/utils/services/Trackers/twttr.js';
+import { TwitterUniversalTag } from '@make.org/utils/services/Trackers/TwitterTracking';
 
 declare global {
   interface Window {

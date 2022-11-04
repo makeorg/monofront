@@ -1,21 +1,7 @@
 {
+  "extends": "../tsconfig.json",
   "references": [
     { "path": "../assets" },
     { "path": "../utils" }
   ],
-  "extends": "../tsconfig.json",
-  "compilerOptions": {
-    "composite": true  
-  },
-  "paths": {
-    "@make.org/widget": ["../apps/widget/*"],
-    "@make.org/front": ["../apps/front/*"],
-    "@make.org/components": ["../components/*"],
-    "@make.org/types": ["../types/*"],
-    "@make.org/api": ["../api/*"],
-    "@make.org/assets": ["../assets/*"],
-    "@make.org/utils": ["../utils/*"],
-    "@make.org/ui": ["../ui/*"],
-    "@make.org/store": ["../store/*"]
-  }
 }

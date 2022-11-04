@@ -1,6 +1,6 @@
-import german from './de.json';
-import english from './en.json';
-import french from './fr.json';
+import german from '@make.org/widget/i18n/de.json';
+import english from '@make.org/widget/i18n/en.json';
+import french from '@make.org/widget/i18n/fr.json';
 
 export const translationRessources = {
   en: { translation: english },

@@ -1,4 +1,5 @@
 {
+  "extends": "../../tsconfig.json",
   "references": [
     { "path": "../../store" },
     { "path": "../../ui" },
@@ -7,7 +8,6 @@
     { "path": "../../components" },
     { "path": "../../utils" }
   ],
-  "extends": "../../tsconfig.json",
   "include": [
     "./src/i18n/fr.json",
     "../../apps/widget",
@@ -17,16 +17,5 @@
     "../../assets",
     "../../components",
     "../../utils"
-  ],
-  "paths": {
-    "@make.org/widget": ["../../apps/widget/*"],
-    "@make.org/front": ["../../apps/front/*"],
-    "@make.org/components": ["../../components/*"],
-    "@make.org/types": ["../../types/*"],
-    "@make.org/api": ["../../api/*"],
-    "@make.org/assets": ["../../assets/*"],
-    "@make.org/utils": ["../../utils/*"],
-    "@make.org/ui": ["../../ui/*"],
-    "@make.org/store": ["../../store/*"]
-  }
+  ]
 }

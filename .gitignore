@@ -11,3 +11,4 @@ lerna-debug.log
 /**/cypress/screenshots
 /**/.nyc_output
 /**/Svg/svgr
+*.tsbuildinfo

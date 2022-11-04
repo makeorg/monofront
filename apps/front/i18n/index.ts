@@ -1,7 +1,7 @@
 import { LocaleType } from '@make.org/types/enums';
-import german from './de.json';
-import english from './en.json';
-import french from './fr.json';
+import german from '@make.org/front/i18n/de.json';
+import english from '@make.org/front/i18n/en.json';
+import french from '@make.org/front/i18n/fr.json';
 
 export const translationRessources = {
   [LocaleType.en]: { translation: english },
