@@ -1,0 +1,766 @@
+{
+  "context": "Consultation citoyenne réalisée par Make.org du 2022-06-27 au 2022-09-30, autour de la question: Comment permettre à chacun de mieux s'informer ?",
+  "key_figures": {
+    "visitors": 113227,
+    "votes": 526858,
+    "proposals": 2023
+  },
+  "top_ideas": [
+    {
+      "name": "Education aux médias et à l'information",
+      "ideas": [
+        {
+          "idea": "Encourager une lecture critique de l'information",
+          "agreement": 88,
+          "adhesion": 28,
+          "realistic": 29
+        },
+        {
+          "idea": "Renforcer l'éducation aux médias et à l'information à l'école",
+          "agreement": 87,
+          "adhesion": 24,
+          "realistic": 27
+        },
+        {
+          "idea": "Former tous les publics aux techniques de vérification de l’information et à la détection des fake news",
+          "agreement": 89,
+          "adhesion": 22,
+          "realistic": 27
+        }
+      ]
+    },
+    {
+      "name": "Régulation",
+      "ideas": [
+        {
+          "idea": "Réguler plus efficacement les réseaux sociaux",
+          "agreement": 79,
+          "adhesion": 24,
+          "realistic": 18
+        },
+        {
+          "idea": "Sanctionner la diffusion de fake news",
+          "agreement": 80,
+          "adhesion": 22,
+          "realistic": 27
+        }
+      ]
+    },
+    {
+      "name": "Diversité de l'information et pratiques journalistiques",
+      "ideas": [
+        {
+          "idea": "Proposer une information plus diversifiée",
+          "agreement": 82,
+          "adhesion": 20,
+          "realistic": 24
+        },
+        {
+          "idea": "Renforcer le fact checking",
+          "agreement": 84,
+          "adhesion": 23,
+          "realistic": 25
+        },
+        {
+          "idea": "Sourcer et référencer autant que possible les informations publiées",
+          "agreement": 84,
+          "adhesion": 18,
+          "realistic": 32
+        },
+        {
+          "idea": "Ne pas céder à la culture du buzz et du sensationnel",
+          "agreement": 84,
+          "adhesion": 22,
+          "realistic": 23
+        },
+        {
+          "idea": "Exiger davantage d'expertise dans le traitement de l'information",
+          "agreement": 82,
+          "adhesion": 20,
+          "realistic": 27
+        },
+        {
+          "idea": "Améliorer la protection des journalistes et des lanceurs d'alerte",
+          "agreement": 81,
+          "adhesion": 22,
+          "realistic": 24
+        }
+      ]
+    },
+    {
+      "name": "Gouvernance et financement des médias",
+      "ideas": [
+        {
+          "idea": "Assurer l'indépendance éditoriale des médias",
+          "agreement": 83,
+          "adhesion": 27,
+          "realistic": 22
+        },
+        {
+          "idea": "Lutter contre la concentration des médias",
+          "agreement": 79,
+          "adhesion": 25,
+          "realistic": 22
+        },
+        {
+          "idea": "Accroître la transparence sur le financement et les intérêts des médias",
+          "agreement": 84,
+          "adhesion": 17,
+          "realistic": 31
+        }
+      ]
+    }
+  ],
+  "controversials": [
+    {
+      "id": "29bea4a7-738d-4663-ad7d-2ab14a02f596",
+      "content": "Il faut interdire l’accès aux réseaux sociaux aux jeunes de - de 16 ans compte tenu de l’ensemble des mauvais usages qui y sont faits.",
+      "author": "Michel",
+      "agree": 36,
+      "like_it": 8,
+      "disagree": 44,
+      "no_way": 7,
+      "votes": 306
+    },
+    {
+      "id": "978e8435-d321-47f8-99d9-9dd262ab3ab8",
+      "content": "Il faut interdire l’accès aux réseaux sociaux avant 16 ans car des lieux d'information sans règles qui influencent fortement les jeunes",
+      "author": "Aznar",
+      "agree": 45,
+      "like_it": 8,
+      "disagree": 34,
+      "no_way": 10,
+      "votes": 305
+    },
+    {
+      "id": "dd4a3172-10de-415e-a700-ce83928d05f7",
+      "content": "Il faut offrir des abonnements gratuits à un bouquet de grands médias aux jeunes adultes.",
+      "author": "DE FACTO",
+      "agree": 40,
+      "like_it": 13,
+      "disagree": 33,
+      "no_way": 9,
+      "votes": 312
+    },
+    {
+      "id": "f2def14c-6f61-4319-8260-74473c572b10",
+      "content": "Il faut considérer les réseaux sociaux comme une addiction possible et donc les interdire aux mineurs.",
+      "author": "Fabienne",
+      "agree": 36,
+      "like_it": 6,
+      "disagree": 37,
+      "no_way": 9,
+      "votes": 292
+    },
+    {
+      "id": "faeba012-6802-44d5-8fa9-604056d8ab74",
+      "content": "Il faut interdire les réseaux sociaux au moins de 18 ans pour éviter les drames des \"informations\" relayées sur des rumeurs",
+      "author": "Julien",
+      "agree": 36,
+      "like_it": 8,
+      "disagree": 41,
+      "no_way": 5,
+      "votes": 300
+    },
+    {
+      "id": "779e02d5-bb36-4fd6-841f-0365aac8de28",
+      "content": "Il faut un label indépendant étiquetant les journaux et/ou leurs articles par orientation politique s'il en est.",
+      "author": "Alexis",
+      "agree": 38,
+      "like_it": 5,
+      "disagree": 35,
+      "no_way": 13,
+      "votes": 306
+    },
+    {
+      "id": "0b103766-9075-4003-a131-5a9d14b063ce",
+      "content": "Il faut exiger que les médias numériques puissent s'engager à épargner aux lecteurs la surinformation sur le sport, le festival de Cannes...",
+      "author": "Louis",
+      "agree": 33,
+      "like_it": 8,
+      "disagree": 32,
+      "no_way": 11,
+      "votes": 284
+    },
+    {
+      "id": "f6875520-26c7-424c-ba89-b2faab207b27",
+      "content": "Il faut imposer un âge minimum (16 ans) pour accéder à un réseau. Avant, les enfants/ados manquent de capacités d'analyse et de critique.",
+      "author": "Fabienne",
+      "agree": 44,
+      "like_it": 7,
+      "disagree": 32,
+      "no_way": 7,
+      "votes": 282
+    },
+    {
+      "id": "23c0bbf6-c1b5-443a-8c70-31a8d1c5f77c",
+      "content": "Il faut interdire aux enseignants d’utiliser les réseaux sociaux pour communiquer avec les élèves car d’autres supports « propres » existent",
+      "author": "Michel",
+      "agree": 44,
+      "like_it": 9,
+      "disagree": 30,
+      "no_way": 9,
+      "votes": 289
+    },
+    {
+      "id": "01705ed1-217b-4b3d-96bf-3eae9777a614",
+      "content": "Il faut conditionner les commentaires (sur les réseaux aussi) à une brève série de questions attestant qu’on a bien lu (compris) l’article",
+      "author": "Maxime",
+      "agree": 40,
+      "like_it": 11,
+      "disagree": 34,
+      "no_way": 5,
+      "votes": 290
+    },
+    {
+      "id": "a78acffa-9484-4fd3-811e-3fe9a42e3418",
+      "content": "Il faut arrêter de diffuser les commentaires des lecteurs sur les articles d'informations (souvent partisans et haineux)",
+      "author": "stéphane",
+      "agree": 48,
+      "like_it": 12,
+      "disagree": 27,
+      "no_way": 11,
+      "votes": 284
+    },
+    {
+      "id": "ff1c3e2b-179d-418e-8c8f-2a18dec44958",
+      "content": "Il faut limiter les informations inutiles aux lecteurs",
+      "author": "Lionel",
+      "agree": 33,
+      "like_it": 4,
+      "disagree": 35,
+      "no_way": 13,
+      "votes": 284
+    },
+    {
+      "id": "8f993a09-8bcb-45d2-a289-1e2dbd228cdd",
+      "content": "Il faut que chaque information soit dotée d'un score de fiabilité, par exemple via un système informatique Européen basé sur l'IA.",
+      "author": "yves",
+      "agree": 32,
+      "like_it": 4,
+      "disagree": 33,
+      "no_way": 12,
+      "votes": 283
+    },
+    {
+      "id": "47713c6d-bd89-49d7-b4cc-baa8de49ae5a",
+      "content": "Il faut lutter contre la surabondance d'informations non essentielles dans les médias comme le foot, la musique...",
+      "author": "Louis",
+      "agree": 32,
+      "like_it": 5,
+      "disagree": 42,
+      "no_way": 19,
+      "votes": 284
+    },
+    {
+      "id": "7b42cf28-49d2-4bab-9309-8d4dfc05bc98",
+      "content": "Il faut limiter les tarifs des abonnements d'information (Le Monde, Les Échos, etc.) pour avoir accès à des articles de qualité",
+      "author": "Chloé",
+      "agree": 41,
+      "like_it": 9,
+      "disagree": 29,
+      "no_way": 6,
+      "votes": 282
+    },
+    {
+      "id": "5cea6d94-2276-4048-a175-a837fb39a56b",
+      "content": "Il faut une chaîne composée de citoyens qui vérifient la véracité des infos",
+      "author": "Emmanuelle",
+      "agree": 29,
+      "like_it": 6,
+      "disagree": 39,
+      "no_way": 7,
+      "votes": 283
+    },
+    {
+      "id": "a40cd492-03d1-4c33-88b5-4b8c18ddd403",
+      "content": "Il faut un droit de filtrage volontaire des informations plus poussées. On est harcelé d'infos qui ne nous intéressent pas ou sans intérêt.",
+      "author": "Louis",
+      "agree": 44,
+      "like_it": 8,
+      "disagree": 28,
+      "no_way": 12,
+      "votes": 285
+    },
+    {
+      "id": "60cd392d-17c8-4175-afba-0a1121dcf703",
+      "content": "Il faut que les médias veillent à consulter l'ensemble de la société dans toutes ses diversités avant d'émettre un avis sur un sujet.",
+      "author": "LOIC",
+      "agree": 32,
+      "like_it": 4,
+      "disagree": 40,
+      "no_way": 11,
+      "votes": 284
+    },
+    {
+      "id": "e4673c87-3799-43da-a5bb-c9cb5bdb6bcd",
+      "content": "Il faut rendre l'information de qualité gratuite et la mauvaise payante pour des services publics de l'information, indépendants.",
+      "author": "Hubert",
+      "agree": 36,
+      "like_it": 6,
+      "disagree": 30,
+      "no_way": 4,
+      "votes": 282
+    },
+    {
+      "id": "50824d3e-fdaf-4c6b-b0fb-de1e9e6d2570",
+      "content": "Il faut interdire toute forme d'anonymat. C'est applicable pour l'émetteur d'une information écrite et pour la réaction du lecteur",
+      "author": "Philippe",
+      "agree": 46,
+      "like_it": 8,
+      "disagree": 26,
+      "no_way": 14,
+      "votes": 284
+    },
+    {
+      "id": "262c3ef0-f326-4ae9-a7d7-0ee7d7e57989",
+      "content": "Il faut imposer aux chaînes d'info continue l'expression et le commentaire des actualités par des voix représentatives des citoyens",
+      "author": "p",
+      "agree": 30,
+      "like_it": 4,
+      "disagree": 30,
+      "no_way": 12,
+      "votes": 281
+    },
+    {
+      "id": "b814ff4d-79d5-42d2-902a-be3f0a0234de",
+      "content": "Il faut créer un système d'abonnement \"catalogue\" regroupant différents médias indépendants à prix attractif (style Netflix)",
+      "author": "Astrée",
+      "agree": 36,
+      "like_it": 7,
+      "disagree": 26,
+      "no_way": 10,
+      "votes": 284
+    },
+    {
+      "id": "e13a14e4-c7ae-41f8-bd23-207d2c8cad2a",
+      "content": "Il faut un logo présent dans chaque média qui garantit que la personne qui parle est bien un journaliste diplômé autorisé à donner de l'info",
+      "author": "Rodolphe",
+      "agree": 49,
+      "like_it": 9,
+      "disagree": 25,
+      "no_way": 8,
+      "votes": 282
+    },
+    {
+      "id": "2cace5ab-7156-4d64-9a81-8d78eb0872f9",
+      "content": "Il faut supprimer les commentaires sur les articles écrits par des vrais journalistes, et ne proposer que de l’info factuelle et vérifiée.",
+      "author": "Yan",
+      "agree": 46,
+      "like_it": 8,
+      "disagree": 25,
+      "no_way": 9,
+      "votes": 284
+    },
+    {
+      "id": "94a5bd9c-5697-4e08-8053-a38c2c6f6cae",
+      "content": "Il faut que les médias d'informations nous accordent un droit à la déconnexion. Je n'en peux plus de me lever avec 50 notifications.",
+      "author": "Louis",
+      "agree": 34,
+      "like_it": 5,
+      "disagree": 28,
+      "no_way": 3,
+      "votes": 284
+    },
+    {
+      "id": "ab8f54a6-0bbf-48c3-a88d-5a6cc9327b2c",
+      "content": "Il faut rendre gratuits les sites d'informations \"mainstream\" en insérant des pubs avant la lecture des articles pour financer les journaux.",
+      "author": "Eddy",
+      "agree": 28,
+      "like_it": 4,
+      "disagree": 44,
+      "no_way": 22,
+      "votes": 282
+    },
+    {
+      "id": "814acd99-2744-44d6-b146-36be80f149a1",
+      "content": "Il faut mettre en valeur les commentaires d'articles intéressants par un vote de 1 à 5 pour lutter contre la désinformation populiste.",
+      "author": "Raymond",
+      "agree": 34,
+      "like_it": 3,
+      "disagree": 28,
+      "no_way": 8,
+      "votes": 282
+    },
+    {
+      "id": "6475a5e9-615e-44f2-bec0-e7098fa96326",
+      "content": "Il faut un Netflix de la presse, qui permettrait avec un abonnement de pouvoir lire en ligne un nombre d articles des principaux journaux",
+      "author": "Céline",
+      "agree": 34,
+      "like_it": 4,
+      "disagree": 26,
+      "no_way": 12,
+      "votes": 283
+    },
+    {
+      "id": "4b8a3587-bc86-41e5-9388-99b08cf47f62",
+      "content": "Les journaux télévisés devraient être contrôlés par des représentants de téléspectateurs avec diffusion régulière de leurs constats.",
+      "author": "henri",
+      "agree": 27,
+      "like_it": 4,
+      "disagree": 36,
+      "no_way": 15,
+      "votes": 282
+    },
+    {
+      "id": "b13cbb89-527a-4158-b8fb-34409c04cd6d",
+      "content": "Il faut un score de neutralité des média affiché sur leurs plateformes pour connaître leurs orientations.",
+      "author": "Morgan",
+      "agree": 42,
+      "like_it": 12,
+      "disagree": 26,
+      "no_way": 3,
+      "votes": 287
+    },
+    {
+      "id": "026e5115-150a-4717-b35d-aaf3b7390eee",
+      "content": "Il faut que les lecteurs puissent s'exprimer. Actuellement, leur liberté d'expression est de niveau nord-coréen, voire moindre !",
+      "author": "Robert",
+      "agree": 24,
+      "like_it": 5,
+      "disagree": 40,
+      "no_way": 8,
+      "votes": 282
+    },
+    {
+      "id": "8d663fd1-4c3f-425c-ad62-0c017183f4cf",
+      "content": "Il faut interdire les commentaires des lecteurs sur les réseaux sociaux.",
+      "author": "Anne",
+      "agree": 25,
+      "like_it": 5,
+      "disagree": 49,
+      "no_way": 24,
+      "votes": 292
+    },
+    {
+      "id": "5b208b2f-6af3-4417-a1ed-f22b4c574e5b",
+      "content": "Il faut en plus de pouvoir aimer ou détester une info indiquer un taux de véracité.",
+      "author": "Lixing",
+      "agree": 43,
+      "like_it": 10,
+      "disagree": 24,
+      "no_way": 4,
+      "votes": 282
+    },
+    {
+      "id": "c8546ee2-419b-4dd3-8093-89ac95bb2df0",
+      "content": "Il faut une IA de l'information qui centralise les faits, agrège les informations relatives, trie et attribue un InfoScore",
+      "author": "Barak",
+      "agree": 23,
+      "like_it": 4,
+      "disagree": 47,
+      "no_way": 27,
+      "votes": 284
+    },
+    {
+      "id": "65421412-2916-4b50-923c-67efedcc7ffc",
+      "content": "Il faut arrêter de vouloir être informés. Plus on est informé, plus on est saturé et moins on est informé.",
+      "author": "Gérald",
+      "agree": 23,
+      "like_it": 3,
+      "disagree": 52,
+      "no_way": 28,
+      "votes": 284
+    }
+  ],
+  "rejected": [],
+  "cartography": [
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Thèmes cités",
+      "legend": "",
+      "data": [
+        {
+          "label": "Pratique journalistique et ligne éditoriale",
+          "percent": 24,
+          "color": "#4B45A5",
+          "adjustLabel": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "label": "Éducation et sensibilisation aux médias",
+          "percent": 20,
+          "color": "#8955BD",
+          "adjustLabel": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "label": "Financements et gouvernance des médias",
+          "percent": 14,
+          "color": "#EB7575",
+          "adjustLabel": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "label": "Régulation de l'information et des réseaux sociaux",
+          "percent": 12,
+          "color": "#F5976E",
+          "adjustLabel": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "label": "Diversité de l'information",
+          "percent": 10,
+          "color": "#EEB298",
+          "adjustLabel": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "label": "Accès à l'information",
+          "percent": 8,
+          "color": "#FFD266",
+          "adjustLabel": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "label": "Experts et intervenants",
+          "percent": 6,
+          "color": "#FFF689",
+          "adjustLabel": {
+            "textAlign": "left"
+          }
+        }
+      ]
+    },
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Solutions citées",
+      "legend": "",
+      "data": []
+    },
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Acteurs cités",
+      "legend": "",
+      "data": []
+    }
+  ],
+  "participation": [
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par région (1/2)",
+      "forcedHigherValue": 21,
+      "legend": {
+        "title": "Participation par région (1/2)",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "Île-de-France",
+          "bars": {
+            "first": 20,
+            "second": 18
+          }
+        },
+        {
+          "label": "Auvergne-Rhône-Alpes",
+          "bars": {
+            "first": 16,
+            "second": 12
+          }
+        },
+        {
+          "label": "Nouvelle-Aquitaine",
+          "bars": {
+            "first": 8,
+            "second": 9
+          }
+        },
+        {
+          "label": "Occitanie",
+          "bars": {
+            "first": 9,
+            "second": 9
+          }
+        },
+        {
+          "label": "Hauts-de-France",
+          "bars": {
+            "first": 5,
+            "second": 9
+          }
+        },
+        {
+          "label": "Grand Est",
+          "bars": {
+            "first": 11,
+            "second": 8
+          }
+        },
+        {
+          "label": "Provence-Alpes-Côte d'Azur",
+          "bars": {
+            "first": 6,
+            "second": 8
+          }
+        }
+      ],
+      "id": "participation_0"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par région (2/2)",
+      "forcedHigherValue": 21,
+      "legend": {
+        "title": "Participation par région (2/2)",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "Pays de la Loire",
+          "bars": {
+            "first": 5,
+            "second": 6
+          }
+        },
+        {
+          "label": "Bretagne",
+          "bars": {
+            "first": 6,
+            "second": 5
+          }
+        },
+        {
+          "label": "Normandie",
+          "bars": {
+            "first": 3,
+            "second": 5
+          }
+        },
+        {
+          "label": "Bourgogne-Franche-Comté",
+          "bars": {
+            "first": 6,
+            "second": 4
+          }
+        },
+        {
+          "label": "Centre-Val de Loire",
+          "bars": {
+            "first": 3,
+            "second": 4
+          }
+        },
+        {
+          "label": "Outre-mer",
+          "bars": {
+            "first": 1,
+            "second": 3
+          }
+        },
+        {
+          "label": "Corse",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        }
+      ],
+      "id": "participation_1"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par âge",
+      "legend": {
+        "title": "Répartition des votes",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "16-24",
+          "bars": {
+            "first": 7,
+            "second": 13
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "25-34",
+          "bars": {
+            "first": 16,
+            "second": 14
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "35-44",
+          "bars": {
+            "first": 19,
+            "second": 15
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "45-54",
+          "bars": {
+            "first": 16,
+            "second": 16
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "55-64",
+          "bars": {
+            "first": 18,
+            "second": 16
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "65+",
+          "bars": {
+            "first": 24,
+            "second": 26
+          },
+          "color": "#8BDAB2"
+        }
+      ],
+      "id": "participation_2"
+    },
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Votes par genre",
+      "legend": "",
+      "data": [
+        {
+          "label": "hommes",
+          "percent": 66,
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "femmes",
+          "percent": 31,
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "non-binaire",
+          "percent": 3,
+          "color": "#EEB298"
+        }
+      ],
+      "id": "participation_3"
+    }
+  ]
+}
