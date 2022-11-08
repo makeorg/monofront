@@ -472,35 +472,47 @@
       "legend": "",
       "data": [
         {
-          "label": "Pratique journalistique et ligne éditoriale",
+          "label": "Pratique journalistique",
+          "sublabel": "et ligne éditoriale",
           "percent": 24,
           "color": "#4B45A5",
           "adjustLabel": {
-            "textAlign": "left"
+            "textAlign": "left",
+            "xAxis": 2.1,
+            "yAxis": 1.8
           }
         },
         {
-          "label": "Éducation et sensibilisation aux médias",
+          "label": "Éducation et",
+          "sublabel": "sensibilisation aux médias",
           "percent": 20,
           "color": "#8955BD",
           "adjustLabel": {
-            "textAlign": "left"
+            "textAlign": "left",
+            "xAxis": 2.1,
+            "yAxis": 2.3
           }
         },
         {
-          "label": "Financements et gouvernance des médias",
+          "label": "Financements",
+          "sublabel": "et gouvernance des médias",
           "percent": 14,
           "color": "#EB7575",
           "adjustLabel": {
-            "textAlign": "left"
+            "textAlign": "left",
+            "xAxis": 2.2,
+            "yAxis": 2.3
           }
         },
         {
-          "label": "Régulation de l'information et des réseaux sociaux",
+          "label": "Régulation de l'information",
+          "sublabel": "et des réseaux sociaux",
           "percent": 12,
           "color": "#F5976E",
           "adjustLabel": {
-            "textAlign": "left"
+            "textAlign": "right",
+            "xAxis": 1.8,
+            "yAxis": 2.15
           }
         },
         {
@@ -508,7 +520,9 @@
           "percent": 10,
           "color": "#EEB298",
           "adjustLabel": {
-            "textAlign": "left"
+            "textAlign": "right",
+            "xAxis": 1.8,
+            "yAxis": 2
           }
         },
         {
@@ -516,7 +530,9 @@
           "percent": 8,
           "color": "#FFD266",
           "adjustLabel": {
-            "textAlign": "left"
+            "textAlign": "right",
+            "xAxis": 1.8,
+            "yAxis": 1.9
           }
         },
         {
@@ -524,24 +540,11 @@
           "percent": 6,
           "color": "#FFF689",
           "adjustLabel": {
-            "textAlign": "left"
+            "textAlign": "left",
+            "yAxis": 1.9
           }
         }
       ]
-    },
-    {
-      "type": "pie",
-      "unit": "percentage",
-      "name": "Solutions citées",
-      "legend": "",
-      "data": []
-    },
-    {
-      "type": "pie",
-      "unit": "percentage",
-      "name": "Acteurs cités",
-      "legend": "",
-      "data": []
     }
   ],
   "participation": [
