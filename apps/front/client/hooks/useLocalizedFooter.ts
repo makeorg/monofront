@@ -23,18 +23,21 @@ export const useInternalLinks = (
     }
     const commonInternalLinks = setCommonInternalLinks(country);
 
-    setCommonInternalLinks(country);
     if (country === 'FR' || country === 'DE') {
       const extraInternalLinks = setCommonExtraLinks(country);
       const links = commonInternalLinks.concat(extraInternalLinks);
       setInternaLinks(links);
+      return;
     }
 
     if (country === 'GB') {
       const extraINTInternalLinks = setINTExtraLinks(country);
       const INTLinks = commonInternalLinks.concat(extraINTInternalLinks);
       setInternaLinks(INTLinks);
+      return;
     }
+
+    setInternaLinks(commonInternalLinks);
   }, [country, language]);
 
   return internalLinks;
@@ -51,15 +54,18 @@ export const useExternalLinks = (
     if (!country) {
       setExternalLinks([]);
     }
-    setExternalLinks(setINTExternalLinks(language));
 
     if (country === 'FR') {
       setExternalLinks(setFRExternalLinks(isDesktop, language));
+      return;
     }
 
     if (country === 'DE') {
       setExternalLinks(setDEExternalLinks(isDesktop, language));
+      return;
     }
+
+    setExternalLinks(setINTExternalLinks(language));
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [country, language]);
