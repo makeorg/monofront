@@ -268,12 +268,30 @@ SIGN_IN_EMAIL_SUCCESS:
   key: signin-email-success
   description: On sign in by email success
 
-AUTHEN_SOCIAL_FAILURE:
-  key: authen-social-failure
-  description: On social authentication fail
+CLICK_SOCIAL_CONNECT:
+  key: click-social-connect
+  description: Click on a social connect CTA (sign in/ sign up)
   parameters:
     - key: social-network
-      description: provider name
+      description: Social network name
+      required: true
+      values:
+        - google_people
+        - facebook
+
+AUTHEN_SOCIAL_FAILURE:
+  key: authen-social-failure
+  description: When social authentication fails
+  parameters:
+    - key: social-network
+      description: Social network name
+      required: true
+      values: 
+        - google_people
+        - facebook
+    - key: error-message
+      description: Error message from provider
+      required: true 
 
 SIGN_UP_EMAIL_FAILURE:
   key: signup-email-failure

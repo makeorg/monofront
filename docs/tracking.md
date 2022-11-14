@@ -272,12 +272,22 @@ Following parameters are added to all events.
     
   
 
-  - `authen-social-failure` On social authentication fail
+  - `click-social-connect` Click on a social connect CTA (sign in/ sign up)
 
     
     | param_name | required | description | values |
     |-|-|-|-|
-    | `social-network` | true | provider name |  |
+    | `social-network` | true | Social network name | `google_people`, `facebook` |
+  
+  
+
+  - `authen-social-failure` When social authentication fails
+
+    
+    | param_name | required | description | values |
+    |-|-|-|-|
+    | `social-network` | true | Social network name | `google_people`, `facebook` |
+    | `error-message` | true | Error message from provider |  |
   
   
 

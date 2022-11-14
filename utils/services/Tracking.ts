@@ -174,12 +174,22 @@ export const trackAuthenticationSocialSuccess = (
   );
 };
 
+export const trackClickSocialConnect = (socialNetwork: string): void => {
+  TrackingService.sendAllTrackers(
+    trackingEvent.CLICK_SOCIAL_CONNECT({
+      'social-network': socialNetwork,
+    })
+  );
+};
+
 export const trackAuthenticationSocialFailure = (
-  socialNetwork?: string
+  socialNetwork: string,
+  errorMessage: string
 ): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.AUTHEN_SOCIAL_FAILURE({
-      'social-network': socialNetwork || '',
+      'social-network': socialNetwork,
+      'error-message': errorMessage,
     })
   );
 };

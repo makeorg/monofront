@@ -17,6 +17,7 @@ import { modalShowDataPolicySocial } from '@make.org/store/actions/modal';
 import {
   trackAuthenticationSocialFailure,
   trackAuthenticationSocialSuccess,
+  trackClickSocialConnect,
 } from '@make.org/utils/services/Tracking';
 import {
   loginSocialSuccess,
@@ -99,7 +100,10 @@ export const GoogleAuthentication: React.FC<Props> = ({ isRegister }) => {
     };
 
     const failure = () =>
-      trackAuthenticationSocialFailure(GOOGLE_PROVIDER_ENUM);
+      trackAuthenticationSocialFailure(
+        GOOGLE_PROVIDER_ENUM,
+        'Login social failure'
+      );
 
     const unexpectedError = () => handleClose();
 
@@ -143,28 +147,38 @@ export const GoogleAuthentication: React.FC<Props> = ({ isRegister }) => {
   }) => {
     dispatch(loginSocialFailure());
     if (response?.error === 'popup_closed_by_user') {
+      const popupClosedError = 'Google auth popup closed by user';
       Logger.logInfo({
-        message: 'Google auth popup closed by user',
+        message: popupClosedError,
         name: 'social-auth',
       });
+      trackAuthenticationSocialFailure(GOOGLE_PROVIDER_ENUM, popupClosedError);
 
       return;
     }
 
     if (response?.error === 'idpiframe_initialization_failed') {
+      const googleIframeFailure = `Google login failure: idpiframe_initialization_failed - ${response?.details}`;
       Logger.logInfo({
-        message: `Google login failure: idpiframe_initialization_failed - ${response?.details}`,
+        message: googleIframeFailure,
         name: 'social-auth',
       });
+      trackAuthenticationSocialFailure(
+        GOOGLE_PROVIDER_ENUM,
+        googleIframeFailure
+      );
       setDisabled(true);
 
       return;
     }
 
+    const googleLoginFailure = `Google login failure: ${response?.error} - ${response?.details}`;
     Logger.logError({
-      message: `Google login failure: ${response?.error} - ${response?.details}`,
+      message: googleLoginFailure,
       name: 'social-auth',
     });
+    trackAuthenticationSocialFailure(GOOGLE_PROVIDER_ENUM, googleLoginFailure);
+
     dispatch(
       displayNotificationBanner(
         NOTIF.UNEXPECTED_ERROR_MESSAGE,
@@ -179,6 +193,7 @@ export const GoogleAuthentication: React.FC<Props> = ({ isRegister }) => {
       clientId={GOOGLE_LOGIN_ID}
       scope="https://www.googleapis.com/auth/user.birthday.read"
       buttonText="Google"
+      onRequest={() => trackClickSocialConnect(GOOGLE_PROVIDER_ENUM)}
       onSuccess={handleGoogleLoginSuccess}
       onFailure={handleGoogleLoginFailure}
       onScriptLoadFailure={handleGoogleLoadFailure}

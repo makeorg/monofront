@@ -116,7 +116,7 @@ export const DataPolicy: React.FC = () => {
 
   const socialAuthFailure = () => {
     dispatch(loginSocialFailure());
-    trackAuthenticationSocialFailure(provider);
+    trackAuthenticationSocialFailure(provider, 'Login social failure');
     dispatch(modalCloseDataPolicy());
   };
 
@@ -137,9 +137,10 @@ export const DataPolicy: React.FC = () => {
       dispatch(loginSocialRequest(provider));
       if (!token) {
         dispatch(loginSocialFailure());
-        trackAuthenticationSocialFailure(provider);
+        const tokenError = `No token from ${provider} callBack auth`;
+        trackAuthenticationSocialFailure(provider, tokenError);
         Logger.logInfo({
-          message: `No token from ${provider} callBack auth`,
+          message: tokenError,
           name: 'social-auth',
         });
       }
