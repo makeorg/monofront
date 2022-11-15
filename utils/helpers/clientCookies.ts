@@ -3,8 +3,16 @@ import { StateUserCookiesPreferences } from '@make.org/types';
 import Cookies from 'universal-cookie';
 import { MixpanelTracking } from '@make.org/utils/services/Trackers/MixpanelTracking';
 import { COOKIE, LocaleType } from '@make.org/types/enums';
+import { env } from '@make.org/assets/env';
+import { hotjar } from 'react-hotjar';
 import { TwitterUniversalTag } from '../services/Trackers/TwitterTracking';
 import { TWITTER_SCRIPT, twttr } from '../services/Trackers/twttr.js';
+
+declare global {
+  interface Window {
+    HOTJAR_TOKEN?: string;
+  }
+}
 
 // set cookie expiration for user preferences (1 year)
 const today = new Date();
@@ -63,6 +71,12 @@ export const initTrackersFromPreferences = (
   twitterScript.setAttribute('type', 'text/javascript');
   twitterScript.setAttribute('async', 'true');
   twitterScript.src = TWITTER_SCRIPT;
+  const hotjarToken = env.isClientSide()
+    ? window?.HOTJAR_TOKEN
+    : env.hotjarToken();
+  const hotjarVersion = 6;
+
+  hotjar.initialize(Number(hotjarToken), hotjarVersion);
 
   const shouldInitFbPixel =
     cookiePreferences?.tracking_consent?.facebook_tracking &&

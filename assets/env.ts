@@ -14,6 +14,7 @@ const useLocalProxy = (): string | undefined => process.env.LOCAL_USE_PROXY;
 const fbPixelId = (): string => process.env.FB_PIXEL_ID || '';
 const fbConversionToken = (): string =>
   process.env.FB_CONVERSION_TOKEN || 'undefined';
+const hotjarToken = (): string => process.env.HOTJAR_TOKEN || '';
 
 // Export in env object
 export const env = {
@@ -28,4 +29,5 @@ export const env = {
   isClientSide,
   fbPixelId,
   fbConversionToken,
+  hotjarToken,
 };

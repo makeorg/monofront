@@ -52,6 +52,8 @@ export const cspMiddleware = (
         'https://static.ads-twitter.com',
         'https://apis.google.com',
         'https://analytics.twitter.com',
+        'https://static.hotjar.com',
+        'https://script.hotjar.com',
       ],
       imgSrc: [
         ...defaultDirectives.imgSrc,
@@ -64,6 +66,7 @@ export const cspMiddleware = (
         ...defaultDirectives.connectSrc,
         'https://*.facebook.com',
         'https://*.facebook.net',
+        'https://in.hotjar.com',
       ],
       formAction: [
         ...defaultDirectives.formAction,
@@ -73,6 +76,7 @@ export const cspMiddleware = (
         ...defaultDirectives.frameSrc,
         'https://*.facebook.com',
         'https://*.google.com',
+        'https://vars.hotjar.com/',
       ],
     },
   })(req, res, next);

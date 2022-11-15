@@ -1248,7 +1248,8 @@
         "description": "ces cookies sont destinés à analyser les visites sur notre site et à améliorer les performances de ce dernier. Toutes les informations collectées par ces cookies sont agrégées et donc anonymisées. Si vous n‘acceptez pas ces cookies, nous ne serons pas informés de votre revisite.",
         "visitor-id": "make-visitor-id: ce cookie sert à suivre les visites sur notre service de façon à mesurer le trafic de façon anonyme et agrégée. Les événements de navigation sont envoyés à l'outil d'analyse MixPanel.",
         "visitor-created-at": "make-visitor-created-at : ce cookie sert à obtenir la date de la première visite sur la plateforme.",
-        "facebook-tracking": "cookie de tracking Facebook : ce cookie permet de générer des statistiques concernant la fréquentation destinées à améliorer notre site et à enrichir l‘analyse de nos consultations."
+        "facebook-tracking": "cookie de tracking Facebook : ce cookie permet de générer des statistiques concernant la fréquentation destinées à améliorer notre site et à enrichir l‘analyse de nos consultations.",
+        "hotjar": "Hotjar : Il s’agit d’un outil permettant de réaliser de l’analyse comportementale de l'utilisation du site Web. Pour en savoir plus : "
       },
       "social": {
         "name": "Les cookies « réseaux sociaux » :",

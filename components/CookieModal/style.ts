@@ -156,6 +156,9 @@ export const CookieModalCookieDetailParagraphStyle = styled(FlexElementStyle)`
     margin-top: 20px;
     padding-top: 20px;
   }
+  &.block {
+    display: block;
+  }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     flex-direction: row;
     justify-content: space-between;

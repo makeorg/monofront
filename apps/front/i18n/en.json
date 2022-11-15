@@ -1157,7 +1157,8 @@
         "description": "these cookies are intended to analyze visits to our website and improve its performance. All information collected by these cookies is aggregated and therefore anonymized. If you do not accept these cookies, we will not be informed of your revisit.",
         "visitor-id": "make-visitor-id: this cookie is used to track visits to our service in order to measure traffic in an anonymous and aggregated fashion. Navigation events are sent to the MixPanel analysis tool.",
         "visitor-created-at": "make-visitor-created-at : this cookie is used to obtain the date of the first visit on the platform.",
-        "facebook-tracking": "Facebook tracking cookie : this cookie allows us to generate statistics on the number of visitors to our website in order to improve our website and to enrich the analysis of our consultations."
+        "facebook-tracking": "Facebook tracking cookie : this cookie allows us to generate statistics on the number of visitors to our website in order to improve our website and to enrich the analysis of our consultations.",
+        "hotjar": "Hotjar: This is a tool for performing behavioural analysis of website usage. For more information: "
       },
       "social": {
         "name": "\"Social network\" cookies:",
@@ -1274,7 +1275,6 @@
     "SK": "Slovakia",
     "US": "USA",
     "UA": "Ukraine"
-
   },
   "languages": {
     "fr": "Français",

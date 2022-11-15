@@ -79,6 +79,7 @@ const renderHtml = (
     .replace(/___NONCE_ID___/gi, nonceId)
     .replace(/___NODE_ENV___/gi, env.nodeEnv() || 'production')
     .replace(/___PORT___/gi, env.port() || '')
+    .replace(/___HOTJAR_TOKEN___/gi, env.hotjarToken() || '')
     .replace('</body>', `${scriptTags}</body>`);
 
   return content;

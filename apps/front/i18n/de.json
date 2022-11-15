@@ -1239,7 +1239,8 @@
         "description": "Diese Cookies dienen dazu, die Besuche auf unserer Website zu analysieren und die Leistung der Website entsprechend zu verbessern. Alle Informationen, die diese Cookies sammeln, werden gebündelt und sind daher anonymisiert. Wenn Sie diese Cookies nicht akzeptieren, werden wir nicht über Ihren erneuten Besuch auf Make.org informiert.",
         "visitor-id": "make-visitor-id: Dieses Cookie wird verwendet, um Besuche auf unserer Website zu verfolgen und den Datenverkehr auf anonyme und gebündelte Weise zu messen. Navigationsereignisse werden an das Analysetool MixPanel gesendet.",
         "visitor-created-at": "make-visitor-created-at: Dieses Cookie wird verwendet, um das Datum des ersten Besuchs auf der Plattform zu erhalten.",
-        "facebook-tracking": "Facebook-Tracking-Cookie: Dieses Cookie ermöglicht es uns, Statistiken über die Anzahl der Besucher auf unserer Website zu erstellen. Diese Statistiken helfen uns dabei, unsere Website zu verbessern und die Analyse unserer Konsultationen zu bereichern."
+        "facebook-tracking": "Facebook-Tracking-Cookie: Dieses Cookie ermöglicht es uns, Statistiken über die Anzahl der Besucher auf unserer Website zu erstellen. Diese Statistiken helfen uns dabei, unsere Website zu verbessern und die Analyse unserer Konsultationen zu bereichern.",
+        "hotjar": "Hotjar: Dies ist ein Tool, mit dem eine Verhaltensanalyse der Nutzung der Website durchgeführt werden kann. Weitere Informationen: "
       },
       "social": {
         "name": "Social-Media-Cookies:",
