@@ -67,6 +67,8 @@ export const cspMiddleware = (
         'https://*.facebook.com',
         'https://*.facebook.net',
         'https://in.hotjar.com',
+        'https://ws7.hotjar.com',
+        'wss://ws7.hotjar.com',
       ],
       formAction: [
         ...defaultDirectives.formAction,
