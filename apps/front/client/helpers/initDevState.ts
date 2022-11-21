@@ -48,6 +48,7 @@ export const initDevState = (initialState: StateRoot): StateRoot => ({
       'SI',
       'SK',
       'US',
+      'UA',
     ],
   },
 });
