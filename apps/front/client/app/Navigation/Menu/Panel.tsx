@@ -90,7 +90,7 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
       >
         <SvgClose aria-hidden focusable="false" />
         <ScreenReaderItemStyle>
-          {i18n.t('header.close_menu')}
+          <>{i18n.t('header.close_menu')}</>
         </ScreenReaderItemStyle>
       </MenuCloseTriggerStyle>
       <MenuInnerStyle>
@@ -98,7 +98,7 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
           <UnstyledListStyle>
             <MenuItemStyle>
               <MenuItemTitleStyle>
-                {i18n.t('browse.page_title')}
+                <>{i18n.t('browse.page_title')}</>
               </MenuItemTitleStyle>
               <UnstyledListStyle>
                 {!!browseConsultationsLink && countryHasConsultations && (
@@ -108,7 +108,7 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
                       to={browseConsultationsLink}
                       onClick={handleInternalNavigation}
                     >
-                      {i18n.t('browse.nav_consultations_desktop')}
+                      <>{i18n.t('browse.nav_consultations_desktop')}</>
                     </MenuInternalLinkStyle>
                   </MenuItemStyle>
                 )}
@@ -119,7 +119,7 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
                       to={browseResultsLink}
                       onClick={handleInternalNavigation}
                     >
-                      {i18n.t('browse.nav_results_desktop')}
+                      <>{i18n.t('browse.nav_results_desktop')}</>
                     </MenuInternalLinkStyle>
                   </MenuItemStyle>
                 )}
@@ -131,7 +131,7 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
                 rel="noopener"
                 href={getWebflowDynamicLink(language, ROUTE_WHOAREWE)}
               >
-                {i18n.t('main_footer.whoarewe')}
+                <>{i18n.t('main_footer.whoarewe')}</>
                 <> </>
                 <MenuNewWindowIconStyle aria-hidden focusable="false" />
                 <ScreenReaderItemStyle>
@@ -146,11 +146,11 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
                   rel="noopener"
                   href={getWebflowDynamicLink(language, ROUTE_PARTNERSHIP)}
                 >
-                  {i18n.t('homepage.partnership.subtitle')}
+                  <>{i18n.t('homepage.partnership.subtitle')}</>
                   <> </>
                   <MenuNewWindowIconStyle aria-hidden focusable="false" />
                   <ScreenReaderItemStyle>
-                    {i18n.t('common.open_new_window')}
+                    <>{i18n.t('common.open_new_window')}</>
                   </ScreenReaderItemStyle>
                 </MenuExternalLinkStyle>
               </MenuItemStyle>
@@ -162,11 +162,11 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
                   rel="noopener"
                   href={URL.NEWS_LINK}
                 >
-                  {i18n.t('main_footer.news')}
+                  <>{i18n.t('main_footer.news')}</>
                   <> </>
                   <MenuNewWindowIconStyle aria-hidden focusable="false" />
                   <ScreenReaderItemStyle>
-                    {i18n.t('common.open_new_window')}
+                    <>{i18n.t('common.open_new_window')}</>
                   </ScreenReaderItemStyle>
                 </MenuExternalLinkStyle>
               </MenuItemStyle>
@@ -178,11 +178,11 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
                   rel="noopener"
                   href={isFR ? URL.JOBS_LINK : URL.JOBS_LINK_DE}
                 >
-                  {i18n.t('main_footer.jobs')}
+                  <>{i18n.t('main_footer.jobs')}</>
                   <> </>
                   <MenuNewWindowIconStyle aria-hidden focusable="false" />
                   <ScreenReaderItemStyle>
-                    {i18n.t('common.open_new_window')}
+                    <>{i18n.t('common.open_new_window')}</>
                   </ScreenReaderItemStyle>
                 </MenuExternalLinkStyle>
               </MenuItemStyle>

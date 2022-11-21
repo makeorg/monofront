@@ -136,7 +136,7 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
             to={getParticipateLink(country || '', question.slug)}
             onClick={() => trackClickOperationPage()}
           >
-            {i18n.t('sequence.more')}
+            <>{i18n.t('sequence.more')}</>
           </ConsultationPageLinkStyle>
         )}
         {!isWidget && withProposalButton && <ProposalSubmit />}

@@ -57,6 +57,8 @@ export const TopIdeaCard: FC<Props> = ({
       <TopIdeaCardHeaderStyle aria-hidden>
         <span>{topIdea.label}</span>
         {withDetails && (
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore: remove after upgrade to react18
           <TopIdeaLinkStyle
             to={getTopIdeaDetailsLink(country, question.slug, topIdea.id)}
             onClick={scrollToTop}
@@ -96,9 +98,11 @@ export const TopIdeaCard: FC<Props> = ({
               onClick={scrollToTop}
               lang={question.returnedLanguage}
             >
-              {i18n.t('idea_card.position', {
-                count: topIdea.commentsCount,
-              })}
+              <>
+                {i18n.t('idea_card.position', {
+                  count: topIdea.commentsCount,
+                })}
+              </>
             </RedLinkStyle>
             {i18n.t('idea_card.candidate', {
               count: topIdea.commentsCount,

@@ -24,6 +24,8 @@ export const CanonicalUrl: FC = () => {
   }
 
   return (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore: remove after upgrade to react18
     <Link
       rel="canonical"
       href={`${FRONT_URL}${pathname}${canonicalSearch}`}

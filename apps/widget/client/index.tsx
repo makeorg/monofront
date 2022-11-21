@@ -218,6 +218,8 @@ const initApp = async (state: StateRoot) => {
   const renderMethod = module.hot ? render : hydrate;
 
   return renderMethod(
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore: remove after upgrade to react18
     <HeadProvider>
       <React.StrictMode>
         <ContextState serverState={store}>

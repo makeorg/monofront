@@ -46,7 +46,7 @@ export const Partners: FC<Props> = ({ question }) => {
             to={sequenceLink}
             onClick={() => trackOpenSequence(TRACKING.COMPONENT_PARAM_SEQUENCE)}
           >
-            {i18n.t('common.participate')}
+            <>{i18n.t('common.participate')}</>
           </ParticipateButtonStyle>
           <FourthLevelTitleStyle as="h3">
             {i18n.t('consultation.partners.commitment_title')}

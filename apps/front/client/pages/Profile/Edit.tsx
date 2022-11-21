@@ -65,7 +65,7 @@ const ProfileEditPage: FC = () => {
             <TabListStyle as="div">
               <TabStyle as="div" isSelected>
                 <Link to={editProfileLink}>
-                  {i18n.t('profile.tabs.manage_account')}
+                  <>{i18n.t('profile.tabs.manage_account')}</>
                 </Link>
               </TabStyle>
             </TabListStyle>

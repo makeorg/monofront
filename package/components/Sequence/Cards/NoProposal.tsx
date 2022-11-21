@@ -47,21 +47,21 @@ export const NoProposal: React.FC<Props> = ({
           href={`https://make.org${getParticipateLink(country, question.slug)}`}
           target="__blank"
         >
-          {i18n.t('no_proposal_card.link_text')}
+          <>{i18n.t('no_proposal_card.link_text')}</>
         </SimpleLinkAsRedButton>
       ) : (
         <LinkAsRedButtonStyle
           to={getParticipateLink(country, question.slug)}
           data-cy-link="go-participate-page"
         >
-          {i18n.t('no_proposal_card.link_text')}
+          <>{i18n.t('no_proposal_card.link_text')}</>
         </LinkAsRedButtonStyle>
       )}
       {isDesktop && !isWidget && (
         <>
           <FinalCardSeparatorStyle />
           <SequenceParagraphStyle>
-            {i18n.t('no_proposal_card.sharing')}
+            <>{i18n.t('no_proposal_card.sharing')}</>
           </SequenceParagraphStyle>
           <Sharing />
         </>

@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck : remove them after update to react 18
 import React from 'react';
 import i18n from 'i18next';
 import { Title, Meta } from 'react-head';

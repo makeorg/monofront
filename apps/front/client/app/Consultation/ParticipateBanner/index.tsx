@@ -38,7 +38,7 @@ export const ParticipateBanner: FC<Props> = ({ question }) => {
           to={sequenceLink}
           onClick={() => trackOpenSequence(TRACKING.COMPONENT_PARAM_SEQUENCE)}
         >
-          {i18n.t('common.participate')}
+          <>{i18n.t('common.participate')}</>
         </SimpleLinkAsRedButton>
       </ParticipateInnerStyle>
     </ParticipateWrapperStyle>

@@ -58,28 +58,33 @@ export const RegisterConfirmation: React.FC<Props> = ({ isSocial }) => {
   return (
     <RegisterPanelSuccessWrapperStyle>
       <LoginTitleWrapperCenterStyle data-cy-container="register-confirmation-panel-title">
-        {i18n.t('common.register_panel.welcome', {
-          name: user?.profile.firstName || '',
-        })}
+        <>
+          {i18n.t('common.register_panel.welcome', {
+            name: user?.profile.firstName || '',
+          })}
+        </>
       </LoginTitleWrapperCenterStyle>
       <RegisterPanelSubTitleWrapperStyle>
-        {i18n.t('common.register_panel.greeting')}
+        <>{i18n.t('common.register_panel.greeting')}</>
       </RegisterPanelSubTitleWrapperStyle>
       <SvgRegisterSuccess />
       <RegisterPanelSuccessParagraphContainerStyle>
         {!isSocial && (
           <RegisterPanelSuccessParagraphStyle data-cy-container="register-confirmation-panel-mail">
             <strong>
-              {i18n.t('common.register_panel.mail_confirmation_strong')}
+              {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
+              <>{i18n.t('common.register_panel.mail_confirmation_strong')}</>
             </strong>
 
-            {i18n.t('common.register_panel.mail_confirmation', {
-              mail: user?.email || '',
-            })}
+            <>
+              {i18n.t('common.register_panel.mail_confirmation', {
+                mail: user?.email || '',
+              })}
+            </>
           </RegisterPanelSuccessParagraphStyle>
         )}
         <RegisterPanelSuccessParagraphStyle>
-          {i18n.t('common.register_panel.onboarding')}
+          <>{i18n.t('common.register_panel.onboarding')}</>
         </RegisterPanelSuccessParagraphStyle>
       </RegisterPanelSuccessParagraphContainerStyle>
       {isConsultation ? (
@@ -87,14 +92,14 @@ export const RegisterConfirmation: React.FC<Props> = ({ isSocial }) => {
           to={getParticipateLink(country, question.slug)}
           onClick={handleClick}
         >
-          {i18n.t('common.register_panel.cta_access')}
+          <>{i18n.t('common.register_panel.cta_access')}</>
         </LinkAsRedButtonBottomMobileStyle>
       ) : (
         <LinkAsRedButtonBottomMobileStyle
           to={getBrowseConsultationsLink(country)}
           onClick={handleClick}
         >
-          {i18n.t('common.register_panel.cta')}
+          <>{i18n.t('common.register_panel.cta')}</>
         </LinkAsRedButtonBottomMobileStyle>
       )}
     </RegisterPanelSuccessWrapperStyle>

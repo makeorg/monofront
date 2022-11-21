@@ -189,6 +189,8 @@ export const GoogleAuthentication: React.FC<Props> = ({ isRegister }) => {
   };
 
   return (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore: remove comment after upgrade to react18
     <GoogleLogin
       clientId={GOOGLE_LOGIN_ID}
       scope="https://www.googleapis.com/auth/user.birthday.read"
@@ -207,7 +209,7 @@ export const GoogleAuthentication: React.FC<Props> = ({ isRegister }) => {
             <SvgGoogleLogoG aria-hidden focusable="false" />
           </SvgLogoWrapperStyle>
           <SocialButtonLabelStyle>
-            {i18n.t('common.social_login.google_connect')}
+            <>{i18n.t('common.social_login.google_connect')}</>
           </SocialButtonLabelStyle>
           <ScreenReaderItemStyle>Google</ScreenReaderItemStyle>
         </GoogleButtonStyle>

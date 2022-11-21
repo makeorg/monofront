@@ -8,6 +8,8 @@ import { mainRoute } from './ssr/mainRoute';
 import { maintenanceRoute } from './ssr/maintenanceRoute';
 
 function setCustomCacheControl(res: Response, path: string) {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore: remove comment after upgrade
   if (serveStatic.mime.lookup(path) !== 'text/html') {
     res.setHeader('Cache-Control', 'public, max-age=31536000');
     res.removeHeader('Expires');

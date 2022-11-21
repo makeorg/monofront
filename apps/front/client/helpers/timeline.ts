@@ -43,18 +43,19 @@ export const selectStep = (
     workshop?: QuestionTimelineType;
     action?: QuestionTimelineType;
   },
-  currentStep: 'string',
-  nextStep: string | undefined
+  currentStep: 'result' | 'workshop' | 'action',
+  nextStep: 'result' | 'workshop' | 'action' | undefined
 ): boolean => {
+  if (!timeline[currentStep]) {
+    return false;
+  }
   const today = Date.now();
-  // Todo refactor to remove ts-ignore
-  // @ts-ignore
-  const currentStepDate = Date.parse(timeline[currentStep].date);
+
+  const currentStepDate = Date.parse(timeline[currentStep]?.date || '');
   let nextStepDate = today;
 
   if (nextStep) {
-    // @ts-ignore
-    nextStepDate = Date.parse(timeline[nextStep].date);
+    nextStepDate = Date.parse(timeline[nextStep]?.date || '');
   }
 
   const isBetweenSteps = today >= currentStepDate && today <= nextStepDate;

@@ -22,6 +22,8 @@ export const Hreflang: FC = () => {
   return (
     <>
       {translationRessoucesLanguages.map(language => (
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore: remove after upgrade to react18
         <Link
           key={language}
           rel="alternate"

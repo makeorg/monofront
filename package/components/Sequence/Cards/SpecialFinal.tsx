@@ -31,24 +31,24 @@ export const SpecialFinalCard: React.FC<Props> = ({ questionSlug }) => {
   return (
     <>
       <SequenceMainTitleStyle className={isWidget ? 'widget' : ''}>
-        {i18n.t('special_final_card.title')}
+        <>{i18n.t('special_final_card.title')}</>
       </SequenceMainTitleStyle>
       <SequenceParagraphStyle>
-        {i18n.t('special_final_card.subtitle')}
+        <>{i18n.t('special_final_card.subtitle')}</>
       </SequenceParagraphStyle>
       {isWidget ? (
         <RedUppercaseHTMLLinkElementStyle
           href={`https://make.org${getParticipateLink(country, questionSlug)}`}
           target="__blank"
         >
-          {i18n.t('special_final_card.cta_text')}
+          <>{i18n.t('special_final_card.cta_text')}</>
         </RedUppercaseHTMLLinkElementStyle>
       ) : (
         <RedUppercaseLinkElementStyle
           to={getParticipateLink(country, questionSlug)}
           onClick={() => trackClickOperationPage()}
         >
-          {i18n.t('special_final_card.cta_text')}
+          <>{i18n.t('special_final_card.cta_text')}</>
         </RedUppercaseLinkElementStyle>
       )}
     </>

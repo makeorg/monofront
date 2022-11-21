@@ -106,7 +106,7 @@ export const SequenceByKeyword: FC = () => {
           to={getParticipateLink(country, question.slug)}
           onClick={trackClickOperationPage}
         >
-          {i18n.t('sequence.more')}
+          <>{i18n.t('sequence.more')}</>
         </ConsultationPageLinkStyle>
         {withProposalButton && <ProposalSubmit />}
       </SequenceContainerStyle>

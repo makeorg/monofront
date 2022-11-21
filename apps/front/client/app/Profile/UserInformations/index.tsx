@@ -185,12 +185,12 @@ export const UserInformations: FC<Props> = ({ user, getBack }) => {
           {getBack ? (
             <LinkAsGreyButton to={getRouteProfile(country)} as={Link}>
               <AngleArrowLeftIconStyle aria-hidden focusable="false" />
-              {i18n.t('profile.informations_update.link_to_profile')}
+              <>{i18n.t('profile.informations_update.link_to_profile')}</>
             </LinkAsGreyButton>
           ) : (
             <LinkAsGreyButton to={getRouteProfileEdit(country)} as={Link}>
               <PencilIconStyle aria-hidden focusable="false" />
-              {i18n.t('profile.informations_update.title')}
+              <>{i18n.t('profile.informations_update.title')}</>
             </LinkAsGreyButton>
           )}
           <ProfileInformationButtonStyle

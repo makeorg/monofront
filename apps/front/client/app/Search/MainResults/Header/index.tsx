@@ -23,7 +23,7 @@ export const MainResultsHeader: React.FC<Props> = ({ title, count, link }) => (
       </MainResultsTitleWrapperStyle>
       {count > 4 && (
         <RedLinkStyle to={link}>
-          {i18n.t('search.main_results.view_all')}
+          <>{i18n.t('search.main_results.view_all')}</>
         </RedLinkStyle>
       )}
     </MainResultsHeaderContentStyle>

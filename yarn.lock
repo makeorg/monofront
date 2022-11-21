@@ -2799,7 +2799,7 @@ __metadata:
     "@make.org/utils": 0.1.0
     axios: ~0.26.1
     axios-retry: ~3.2.6
-    react-router: ^5.3.3
+    react-router: ^5.3.4
     uuid: ^8.3.2
     webpack: ^5.74.0
     webpack-cli: ^4.10.0
@@ -2843,9 +2843,9 @@ __metadata:
     "@make.org/types": 0.1.0
     "@make.org/ui": 0.1.0
     "@make.org/utils": 0.1.0
-    "@types/react": ^17.0.48
+    "@types/react": ^17.0.52
     "@types/react-facebook-login": 4.1.5
-    "@types/react-router": 5.1.18
+    "@types/react-router": 5.1.19
     athena-design-tokens: ^0.1.7
     core-js: ^3.24.1
     enzyme: ^3.11.0
@@ -2857,10 +2857,10 @@ __metadata:
     react-dom: ^17.0.2
     react-facebook-login: ^4.1.1
     react-google-login: ^5.2.2
-    react-head: ^3.4.0
+    react-head: ^3.4.2
     react-modal: ^3.15.1
-    react-router: ^5.3.3
-    react-router-dom: ^5.3.3
+    react-router: ^5.3.4
+    react-router-dom: ^5.3.4
     styled-components: 5.3.5
     universal-cookie: ^4.0.4
     webpack: ^5.74.0
@@ -2893,22 +2893,22 @@ __metadata:
     "@simbathesailor/babel-plugin-use-what-changed": ^2.1.0
     "@simbathesailor/use-what-changed": ^2.0.0
     "@svgr/cli": ^6.3.1
-    "@types/babel__preset-env": ^7
-    "@types/compression": ^1.7.1
+    "@types/babel__preset-env": ^7.9.2
+    "@types/compression": ^1.7.2
     "@types/cors": ^2.8.12
     "@types/deep-freeze": ^0.1.2
-    "@types/express": ^4.17.13
+    "@types/express": ^4.17.14
     "@types/loadable__server": ^5.12.6
     "@types/memory-cache": ^0.2.2
-    "@types/node": ^18.6.4
-    "@types/react": ^17.0.48
-    "@types/react-dom": ^17.0.17
+    "@types/node": ^18.11.9
+    "@types/react": ^17.0.52
+    "@types/react-dom": ^17.0.18
     "@types/react-router-dom": 5.3.3
     "@types/serve-favicon": ^2.5.3
     "@types/ua-parser-js": ^0.7.36
     "@types/universal-cookie": ^3.0.0
     "@types/webpack": ^5.28.0
-    "@types/webpack-env": 1.17.0
+    "@types/webpack-env": 1.18.0
     adblockdetect: ^0.0.2
     athena-design-tokens: ^0.1.7
     axios: ~0.26.1
@@ -2938,7 +2938,7 @@ __metadata:
     js-yaml: ^4.1.0
     memory-cache: ~0.2.0
     node-mocks-http: ^1.11.0
-    pm2: ~5.2.0
+    pm2: ~5.2.2
     prom-client: ^13.1.0
     query-string: ^7.1.1
     react: ^17.0.2
@@ -2947,11 +2947,11 @@ __metadata:
     react-dom: ^17.0.2
     react-facebook-login: ~4.1.1
     react-google-login: ~5.2.2
-    react-head: ~3.4.0
+    react-head: ~3.4.2
     react-is: 17.0.2
     react-modal: ^3.15.1
-    react-router: ^5.3.3
-    react-router-dom: ^5.3.3
+    react-router: ^5.3.4
+    react-router-dom: ^5.3.4
     regenerator-runtime: ^0.13.7
     serve-favicon: ^2.5.0
     serve-static: ~1.14.2
@@ -2986,8 +2986,8 @@ __metadata:
     "@make.org/api": 0.1.0
     "@make.org/types": 0.1.0
     "@make.org/utils": 0.1.0
-    "@types/react": ^17.0.48
-    "@types/react-dom": ^17.0.17
+    "@types/react": ^17.0.52
+    "@types/react-dom": ^17.0.18
     axios: ~0.26.1
     i18next: ^20.3.4
     react: ^17.0.2
@@ -3016,20 +3016,20 @@ __metadata:
     "@make.org/types": 0.1.0
     "@make.org/ui": 0.1.0
     "@make.org/utils": 0.1.0
-    "@types/node": ^18.6.4
-    "@types/react": ^17.0.48
-    "@types/styled-components": 5.1.25
+    "@types/node": ^18.11.9
+    "@types/react": ^17.0.52
+    "@types/styled-components": 5.1.26
     athena-design-tokens: ^0.1.7
     core-js: ^3.24.1
     i18next: ^20.3.4
     react: ^17.0.2
     react-autosize-textarea: ^7.1.0
     react-dom: ^17.0.2
-    react-router-dom: ^5.3.3
+    react-router-dom: ^5.3.4
     react-test-renderer: ^17.0.2
     snapshot-diff: ^0.9.0
     styled-components: 5.3.5
-    typescript: ^4.7.4
+    typescript: ~4.8.0
     webpack: ^5.74.0
     webpack-cli: ^4.10.0
   languageName: unknown
@@ -3061,9 +3061,9 @@ __metadata:
     query-string: ^7.1.1
     react: ^17.0.2
     react-hotjar: ^5.2.0
-    react-router: ^5.3.3
+    react-router: ^5.3.4
     source-map: ^0.7.3
-    typescript: ^4.7.4
+    typescript: ~4.8.0
     universal-cookie: ^4.0.4
     url-search-params-polyfill: ^8.1.1
     uuid: ^8.3.2
@@ -3098,11 +3098,11 @@ __metadata:
     "@testing-library/jest-dom": 5.16.5
     "@testing-library/react": ^11.1.0
     "@testing-library/user-event": ^12.1.10
-    "@types/babel__preset-env": ^7
-    "@types/jest": ^26.0.15
+    "@types/babel__preset-env": ^7.9.2
+    "@types/jest": ^26.0.24
     "@types/memory-cache": ^0.2.2
-    "@types/react": ^17.0.48
-    "@types/react-dom": ^17.0.17
+    "@types/react": ^17.0.52
+    "@types/react-dom": ^17.0.18
     athena-design-tokens: ^0.1.7
     babel-loader: 8.2.5
     babel-plugin-convert-to-json: ^0.1.0
@@ -3121,13 +3121,13 @@ __metadata:
     http-proxy-middleware: 2.0.6
     i18next: ^20.3.4
     memory-cache: ~0.2.0
-    pm2: ~5.2.0
+    pm2: ~5.2.2
     prom-client: ^13.1.0
     react: ^17.0.2
-    react-cookie: ~4.0.0
+    react-cookie: ~4.0.3
     react-dom: ^17.0.2
-    react-head: ^3.4.0
-    react-router-dom: ^5.3.3
+    react-head: ^3.4.2
+    react-router-dom: ^5.3.4
     serve-favicon: ^2.5.0
     serve-static: ~1.14.2
     source-map: ^0.7.3
@@ -3746,7 +3746,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/babel__preset-env@npm:^7":
+"@types/babel__preset-env@npm:^7.9.2":
   version: 7.9.2
   resolution: "@types/babel__preset-env@npm:7.9.2"
   checksum: a905ed92a3f602384966153e74a94790425e98af54e392a7fcfb5c5ded2f2a58c49a9fa64a0cb506fbffb8169ad25b56ea87983c812a4fb880f0716668c8c085
@@ -3800,7 +3800,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/compression@npm:^1.7.1":
+"@types/compression@npm:^1.7.2":
   version: 1.7.2
   resolution: "@types/compression@npm:1.7.2"
   dependencies:
@@ -3832,7 +3832,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/cypress-cucumber-preprocessor@npm:^4":
+"@types/cypress-cucumber-preprocessor@npm:^4.0.1":
   version: 4.0.1
   resolution: "@types/cypress-cucumber-preprocessor@npm:4.0.1"
   checksum: 7c8a61252917931dc61be50037777e54b04eff6b975bb37b55a56b05f46defe0aaea746c9ba032e502522059039dfe0be42002f3f5b448ff7e3c599aa2a991f3
@@ -3901,7 +3901,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/express@npm:*, @types/express@npm:^4.17.13":
+"@types/express@npm:*, @types/express@npm:^4.17.14":
   version: 4.17.14
   resolution: "@types/express@npm:4.17.14"
   dependencies:
@@ -4009,7 +4009,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:^26.0.15":
+"@types/jest@npm:^26.0.24":
   version: 26.0.24
   resolution: "@types/jest@npm:26.0.24"
   dependencies:
@@ -4090,7 +4090,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^18.6.4":
+"@types/node@npm:*, @types/node@npm:^18.11.9":
   version: 18.11.9
   resolution: "@types/node@npm:18.11.9"
   checksum: cc0aae109e9b7adefc32eecb838d6fad931663bb06484b5e9cbbbf74865c721b03d16fd8d74ad90e31dbe093d956a7c2c306ba5429ba0c00f3f7505103d7a496
@@ -4160,7 +4160,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^17.0.17":
+"@types/react-dom@npm:^17.0.18":
   version: 17.0.18
   resolution: "@types/react-dom@npm:17.0.18"
   dependencies:
@@ -4189,23 +4189,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-router@npm:*":
+"@types/react-router@npm:*, @types/react-router@npm:5.1.19":
   version: 5.1.19
   resolution: "@types/react-router@npm:5.1.19"
   dependencies:
     "@types/history": ^4.7.11
     "@types/react": "*"
   checksum: 3536c3dec7af1f12fed2bea246eb143bd893ee66d4e58c1d3fe734cbd67d8a0aedac0bba9255c58fc69dbd32ae17ad280d6866916aee32653a705178e4a544dc
-  languageName: node
-  linkType: hard
-
-"@types/react-router@npm:5.1.18":
-  version: 5.1.18
-  resolution: "@types/react-router@npm:5.1.18"
-  dependencies:
-    "@types/history": ^4.7.11
-    "@types/react": "*"
-  checksum: f08b37ee822f9f9ff904ffd0778fe2bb7c717ed3ee311610382ee024d02a35169bd3301ecde863cac21aae8fdee919501e8ea22bad0260c02c10cfbdba5c71be
   languageName: node
   linkType: hard
 
@@ -4220,7 +4210,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^17, @types/react@npm:^17.0.48":
+"@types/react@npm:^17, @types/react@npm:^17.0.52":
   version: 17.0.52
   resolution: "@types/react@npm:17.0.52"
   dependencies:
@@ -4294,14 +4284,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/styled-components@npm:5.1.25":
-  version: 5.1.25
-  resolution: "@types/styled-components@npm:5.1.25"
+"@types/styled-components@npm:5.1.26":
+  version: 5.1.26
+  resolution: "@types/styled-components@npm:5.1.26"
   dependencies:
     "@types/hoist-non-react-statics": "*"
     "@types/react": "*"
     csstype: ^3.0.2
-  checksum: 60ce64f13283b01da54fd3a4c5703769d8575c979d5ec6b67ad124c2d4df980c9b96bb91af87e03f6447a816a5d2b0270c63eefad60cfa885091b594984525f5
+  checksum: 84f53b3101739b20d1731554fb7735bc2f3f5d050a8b392e9845403c8c8bbd729737d033978649f9195a97b557875b010d46e35a4538564a2d0dbcce661dbf76
   languageName: node
   linkType: hard
 
@@ -4337,14 +4327,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/webpack-env@npm:1.17.0":
-  version: 1.17.0
-  resolution: "@types/webpack-env@npm:1.17.0"
-  checksum: 9ad4d208c4429c9427191d1f4c92e4c43e530384c17a6bc298acb89003fc47fcde1d8372e50acefa3061e9100e57fd9d616e96def875afd06c0c2afe508f298e
-  languageName: node
-  linkType: hard
-
-"@types/webpack-env@npm:^1.17":
+"@types/webpack-env@npm:1.18.0, @types/webpack-env@npm:^1.18.0":
   version: 1.18.0
   resolution: "@types/webpack-env@npm:1.18.0"
   checksum: ecf4daa31cb37d474ac0ce058d83a3cadeb9881ca8107ae93c2299eaa9954943aae09b43e143c62ccbe4288a14db00c918c9debd707afe17c3998f873eaabc59
@@ -4405,7 +4388,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.32.0":
+"@typescript-eslint/eslint-plugin@npm:^5.43.0":
   version: 5.43.0
   resolution: "@typescript-eslint/eslint-plugin@npm:5.43.0"
   dependencies:
@@ -4428,7 +4411,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^5.32.0":
+"@typescript-eslint/parser@npm:^5.43.0":
   version: 5.43.0
   resolution: "@typescript-eslint/parser@npm:5.43.0"
   dependencies:
@@ -16555,7 +16538,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pm2@npm:~5.2.0":
+"pm2@npm:~5.2.2":
   version: 5.2.2
   resolution: "pm2@npm:5.2.2"
   dependencies:
@@ -17285,7 +17268,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-cookie@npm:~4.0.0":
+"react-cookie@npm:~4.0.3":
   version: 4.0.3
   resolution: "react-cookie@npm:4.0.3"
   dependencies:
@@ -17333,7 +17316,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-head@npm:^3.4.0, react-head@npm:~3.4.0":
+"react-head@npm:^3.4.2, react-head@npm:~3.4.2":
   version: 3.4.2
   resolution: "react-head@npm:3.4.2"
   dependencies:
@@ -17395,7 +17378,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router-dom@npm:^5.3.3":
+"react-router-dom@npm:^5.3.4":
   version: 5.3.4
   resolution: "react-router-dom@npm:5.3.4"
   dependencies:
@@ -17412,7 +17395,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router@npm:5.3.4, react-router@npm:^5.3.3":
+"react-router@npm:5.3.4, react-router@npm:^5.3.4":
   version: 5.3.4
   resolution: "react-router@npm:5.3.4"
   dependencies:
@@ -18091,12 +18074,12 @@ __metadata:
     "@cypress/code-coverage": 3.10.0
     "@svgr/cli": ^6.3.1
     "@testing-library/jest-dom": ^5.16.5
-    "@types/cypress-cucumber-preprocessor": ^4
+    "@types/cypress-cucumber-preprocessor": ^4.0.1
     "@types/enzyme": ^3.10.12
     "@types/jsdom": ^16.2.15
-    "@types/webpack-env": ^1.17
-    "@typescript-eslint/eslint-plugin": ^5.32.0
-    "@typescript-eslint/parser": ^5.32.0
+    "@types/webpack-env": ^1.18.0
+    "@typescript-eslint/eslint-plugin": ^5.43.0
+    "@typescript-eslint/parser": ^5.43.0
     "@wojtekmaj/enzyme-adapter-react-17": ^0.6.3
     babel-plugin-convert-to-json: ^0.1.0
     cypress: ^7.4.0
@@ -18128,7 +18111,7 @@ __metadata:
     start-server-and-test: ^1.13.1
     ts-jest: 27.1.5
     ts-node: 10.9.1
-    typescript: ^4.7.4
+    typescript: ~4.8.0
   languageName: unknown
   linkType: soft
 
@@ -19659,8 +19642,8 @@ __metadata:
   linkType: hard
 
 "systeminformation@npm:^5.7":
-  version: 5.14.3
-  resolution: "systeminformation@npm:5.14.3"
+  version: 5.14.4
+  resolution: "systeminformation@npm:5.14.4"
   bin:
     systeminformation: lib/cli.js
   conditions: (os=darwin | os=linux | os=win32 | os=freebsd | os=openbsd | os=netbsd | os=sunos | os=android)
@@ -20341,7 +20324,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.6.4, typescript@npm:^4.7.4":
+"typescript@npm:^4.6.4":
   version: 4.9.3
   resolution: "typescript@npm:4.9.3"
   bin:
@@ -20351,13 +20334,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.6.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.7.4#~builtin<compat/typescript>":
+"typescript@npm:~4.8.0":
+  version: 4.8.4
+  resolution: "typescript@npm:4.8.4"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 3e4f061658e0c8f36c820802fa809e0fd812b85687a9a2f5430bc3d0368e37d1c9605c3ce9b39df9a05af2ece67b1d844f9f6ea8ff42819f13bcb80f85629af0
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^4.6.4#~builtin<compat/typescript>":
   version: 4.9.3
   resolution: "typescript@patch:typescript@npm%3A4.9.3#~builtin<compat/typescript>::version=4.9.3&hash=a1c5e5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: ef65c22622d864497d0a0c5db693523329b3284c15fe632e93ad9aa059e8dc38ef3bd767d6f26b1e5ecf9446f49bd0f6c4e5714a2eeaf352805dc002479843d1
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@~4.8.0#~builtin<compat/typescript>":
+  version: 4.8.4
+  resolution: "typescript@patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=a1c5e5"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 563a0ef47abae6df27a9a3ab38f75fc681f633ccf1a3502b1108e252e187787893de689220f4544aaf95a371a4eb3141e4a337deb9895de5ac3c1ca76430e5f0
   languageName: node
   linkType: hard
 

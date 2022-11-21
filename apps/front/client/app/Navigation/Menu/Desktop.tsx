@@ -55,7 +55,7 @@ export const DesktopMenu: FC = () => {
               to={browseConsultationsLink}
               onClick={scrollToTop}
             >
-              {i18n.t('browse.page_title')}
+              <>{i18n.t('browse.page_title')}</>
             </DesktopMenuInternalLinkStyle>
           </DesktopMenuItemStyle>
         )}
@@ -67,7 +67,7 @@ export const DesktopMenu: FC = () => {
             rel="noopener"
             href={getWebflowDynamicLink(language, ROUTE_WHOAREWE)}
           >
-            {i18n.t('main_footer.whoarewe')}
+            <>{i18n.t('main_footer.whoarewe')}</>
             <> </>
             {externalLinkIcon}
           </DesktopMenuExternalLinkStyle>
@@ -81,7 +81,7 @@ export const DesktopMenu: FC = () => {
               rel="noopener"
               href={getWebflowDynamicLink(language, ROUTE_PARTNERSHIP)}
             >
-              {i18n.t('homepage.partnership.subtitle')}
+              <>{i18n.t('homepage.partnership.subtitle')}</>
               <> </>
               {externalLinkIcon}
             </DesktopMenuExternalLinkStyle>

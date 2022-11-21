@@ -87,6 +87,8 @@ export const Footer: React.FC = () => {
           </FooterWrapperFirstListStyle>
           <FooterWrapperThirdListStyle as="div">
             <FooterItemStyle as="div">
+              {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+              {/* @ts-ignore: remove after upgrade to react18 */}
               <FooterItemAltLinkStyle
                 onClick={scrollToTop}
                 to={getContactPageLink(country)}

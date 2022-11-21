@@ -29,7 +29,7 @@ export const InternationalPlaceholder: FC = () => (
         to={getHomeLink('FR')}
         data-cy-link="international-placeholder-link"
       >
-        {i18n.t('homepage.international.button')}
+        <>{i18n.t('homepage.international.button')}</>
       </HomepageQuestionsButtonStyle>
     </HomepagePageInnerStyle>
   </HomepageSectionStyle>

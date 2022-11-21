@@ -91,6 +91,8 @@ export const AppContainer: FC = () => {
 
   return (
     <SecureExpiration>
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+      {/* @ts-ignore: 'assets'remove after upgrade to react18 */}
       <SessionExpirationWithCoockies>
         {hasCountry && <CookieModal />}
         {showDataPolicy && <PrivacyPolicyModal />}

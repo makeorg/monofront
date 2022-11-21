@@ -196,6 +196,8 @@ const initApp = async (state: StateRoot) => {
 
     if (!cookieIsEnabled()) {
       return hydrate(
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore: remove after upgrade to react18
         <HeadProvider>
           <ContextState serverState={store}>
             <BrowserRouter>
@@ -222,6 +224,8 @@ const initApp = async (state: StateRoot) => {
 
     return renderMethod(
       <CookiesProvider>
+        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+        {/* @ts-ignore: remove after upgrade to react18 */}
         <HeadProvider>
           <ContextState serverState={store}>
             <BrowserRouter>

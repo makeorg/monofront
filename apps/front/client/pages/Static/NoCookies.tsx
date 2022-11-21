@@ -22,6 +22,8 @@ export const NoCookies: FC = () => (
     <FontFacesStylesheet />
     <ModernNormalizeStylesheet />
     <DefaultStylesheet />
+    {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+    {/* @ts-ignore: remove after upgrade to react18 */}
     <HeadProvider>
       <MetaTags title="meta.no_cookies.title" />
     </HeadProvider>

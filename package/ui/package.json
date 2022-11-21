@@ -8,19 +8,18 @@
     "@make.org/types": "0.1.0",
     "@make.org/ui": "0.1.0",
     "@make.org/utils": "0.1.0",
-    "@types/node": "^18.6.4",
-    "@types/react": "^17.0.48",
-    "@types/styled-components": "5.1.25",
+    "@types/node": "^18.11.9",
+    "@types/react": "^17.0.52",
+    "@types/styled-components": "5.1.26",
     "athena-design-tokens": "^0.1.7",
     "i18next": "^20.3.4",
     "react": "^17.0.2",
     "react-autosize-textarea": "^7.1.0",
     "react-dom": "^17.0.2",
-    "react-router-dom": "^5.3.3",
+    "react-router-dom": "^5.3.4",
     "react-test-renderer": "^17.0.2",
     "snapshot-diff": "^0.9.0",
-    "styled-components": "5.3.5",
-    "typescript": "^4.7.4"
+    "styled-components": "5.3.5"
   },
   "browserslist": {
     "production": [
@@ -37,6 +36,7 @@
   "devDependencies": {
     "core-js": "^3.24.1",
     "snapshot-diff": "^0.9.0",
+    "typescript": "~4.8.0",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"
   },

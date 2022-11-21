@@ -168,6 +168,8 @@ export const reactRender = async (
 
   const ReactApp = (
     <CookiesProvider cookies={req.universalCookies}>
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+      {/* @ts-ignore: remove after upgrade to react18 */}
       <HeadProvider headTags={headTags}>
         <ContextState serverState={state}>
           <StaticRouter location={req.url} context={context}>

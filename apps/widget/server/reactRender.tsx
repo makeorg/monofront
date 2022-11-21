@@ -127,6 +127,8 @@ export const reactRender = async (
     | undefined = [];
 
   const ReactApp = (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore: remove comment after upgrade to react18
     <HeadProvider headTags={headTags}>
       <ContextState serverState={state}>
         <StaticRouter location={req.url} context={context}>
