@@ -13,7 +13,8 @@
     "**/*.config.js",
     "**/apimock",
     "**/reports",
-    "**/*.md"
+    "**/*.md",
+    "**/*/resolveTsconfigPathsToAlias.js"
   ],
   "compilerOptions": {
     "rootDir": ".",
@@ -37,13 +38,12 @@
     "paths": {
       "@make.org/widget": ["./apps/widget/*"],
       "@make.org/front": ["./apps/front/*"],
-      "@make.org/components": ["./components/*"],
-      "@make.org/types": ["./types/*"],
-      "@make.org/api": ["./api/*"],
-      "@make.org/assets": ["./assets/*"],
-      "@make.org/utils": ["./utils/*"],
-      "@make.org/ui": ["./ui/*"],
-      "@make.org/store": ["./store/*"]
+      "@make.org/types": ["./package/types/*"],
+      "@make.org/api": ["./package/api/*"],
+      "@make.org/assets": ["./package/assets/*"],
+      "@make.org/ui": ["./package/ui/*"],
+      "@make.org/utils": ["./package/utils/*"],
+      "@make.org/store": ["./package/store/*"]
     }
   }
 }

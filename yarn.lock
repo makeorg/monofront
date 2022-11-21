@@ -2790,9 +2790,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@make.org/api@0.1.0, @make.org/api@^0.1.0, @make.org/api@workspace:api":
+"@make.org/api@0.1.0, @make.org/api@^0.1.0, @make.org/api@workspace:package/api":
   version: 0.0.0-use.local
-  resolution: "@make.org/api@workspace:api"
+  resolution: "@make.org/api@workspace:package/api"
   dependencies:
     "@make.org/assets": 0.1.0
     "@make.org/types": 0.1.0
@@ -2814,9 +2814,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@make.org/assets@0.1.0, @make.org/assets@^0.1.0, @make.org/assets@workspace:assets":
+"@make.org/assets@0.1.0, @make.org/assets@^0.1.0, @make.org/assets@workspace:package/assets":
   version: 0.0.0-use.local
-  resolution: "@make.org/assets@workspace:assets"
+  resolution: "@make.org/assets@workspace:package/assets"
   dependencies:
     "@make.org/components": 0.1.0
     "@make.org/types": 0.1.0
@@ -2832,9 +2832,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@make.org/components@0.1.0, @make.org/components@workspace:components":
+"@make.org/components@0.1.0, @make.org/components@workspace:package/components":
   version: 0.0.0-use.local
-  resolution: "@make.org/components@workspace:components"
+  resolution: "@make.org/components@workspace:package/components"
   dependencies:
     "@make.org/api": 0.1.0
     "@make.org/assets": 0.1.0
@@ -2979,9 +2979,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@make.org/store@0.1.0, @make.org/store@workspace:store":
+"@make.org/store@0.1.0, @make.org/store@workspace:package/store":
   version: 0.0.0-use.local
-  resolution: "@make.org/store@workspace:store"
+  resolution: "@make.org/store@workspace:package/store"
   dependencies:
     "@make.org/api": 0.1.0
     "@make.org/types": 0.1.0
@@ -2997,9 +2997,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@make.org/types@0.1.0, @make.org/types@^0.1.0, @make.org/types@workspace:types":
+"@make.org/types@0.1.0, @make.org/types@^0.1.0, @make.org/types@workspace:package/types":
   version: 0.0.0-use.local
-  resolution: "@make.org/types@workspace:types"
+  resolution: "@make.org/types@workspace:package/types"
   dependencies:
     axios: ~0.26.1
     react: ^17.0.2
@@ -3008,9 +3008,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@make.org/ui@0.1.0, @make.org/ui@workspace:ui":
+"@make.org/ui@0.1.0, @make.org/ui@workspace:package/ui":
   version: 0.0.0-use.local
-  resolution: "@make.org/ui@workspace:ui"
+  resolution: "@make.org/ui@workspace:package/ui"
   dependencies:
     "@make.org/assets": 0.1.0
     "@make.org/types": 0.1.0
@@ -3035,9 +3035,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@make.org/utils@0.1.0, @make.org/utils@workspace:utils":
+"@make.org/utils@0.1.0, @make.org/utils@workspace:package/utils":
   version: 0.0.0-use.local
-  resolution: "@make.org/utils@workspace:utils"
+  resolution: "@make.org/utils@workspace:package/utils"
   dependencies:
     "@make.org/api": 0.1.0
     "@make.org/assets": 0.1.0

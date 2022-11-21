@@ -1,21 +1,21 @@
 {
   "extends": "../../tsconfig.json",
   "references": [
-    { "path": "../../store" },
-    { "path": "../../ui" },
-    { "path": "../../api" },
-    { "path": "../../assets" },
-    { "path": "../../components" },
-    { "path": "../../utils" }
+    { "path": "../../package/store" },
+    { "path": "../../package/ui" },
+    { "path": "../../package/api" },
+    { "path": "../../package/assets" },
+    { "path": "../../package/components" },
+    { "path": "../../package/utils" }
   ],
   "include": [
     "./src/i18n/fr.json",
     "../../apps/widget",
-    "../../store",
-    "../../ui",
-    "../../api",
-    "../../assets",
-    "../../components",
-    "../../utils"
+    "../../package/store",
+    "../../package/ui",
+    "../../package/api",
+    "../../package/assets",
+    "../../package/components",
+    "../../package/utils"
   ]
 }

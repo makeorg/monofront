@@ -9,7 +9,11 @@ import React, {
   createContext,
 } from 'react';
 import { Dispatch, ReducerAction, StateRoot } from '@make.org/types';
-import { combineReducers, deepEqual, getCurrentTimeFormatted } from './utils';
+import {
+  combineReducers,
+  deepEqual,
+  getCurrentTimeFormatted,
+} from '@make.org/store/utils';
 
 import { panel_reducer } from './reducers/panel';
 import { modal_reducer } from './reducers/modal';

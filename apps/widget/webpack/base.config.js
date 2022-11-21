@@ -9,6 +9,7 @@ const DotEnv = require('dotenv-webpack');
 const path = require('path');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const { presets, plugins } = require('./babel.config.js');
+const resolveTsconfigPathsToAlias = require('./resolveTsconfigPathsToAlias.js');
 
 const clientConfig = envConfigPath => ({
   entry: [
@@ -27,21 +28,7 @@ const clientConfig = envConfigPath => ({
   },
   resolve: {
     extensions: ['*', '.ts', '.tsx', '.js', '.yaml', '.json'],
-    alias: {
-      '@make.org/utils': path.resolve(__dirname, '..', '..', '..', 'utils'),
-      '@make.org/api': path.resolve(__dirname, '..', '..', '..', 'api'),
-      '@make.org/ui': path.resolve(__dirname, '..', '..', '..', 'ui'),
-      '@make.org/components': path.resolve(
-        __dirname,
-        '..',
-        '..',
-        '..',
-        'components'
-      ),
-      '@make.org/store': path.resolve(__dirname, '..', '..', '..', 'store'),
-      '@make.org/assets': path.resolve(__dirname, '..', '..', '..', 'assets'),
-      '@make.org/types': path.resolve(__dirname, '..', '..', '..', 'types'),
-    },
+    alias: resolveTsconfigPathsToAlias(),
   },
   stats: {
     hash: true,
@@ -106,6 +93,7 @@ const clientConfig = envConfigPath => ({
         '..',
         '..',
         '..',
+        'package',
         'assets',
         'images',
         'favicon.png'
@@ -206,21 +194,7 @@ const serverConfig = envConfigPath => ({
   },
   resolve: {
     extensions: ['*', '.ts', '.tsx', '.js', '.yaml', '.json'],
-    alias: {
-      '@make.org/utils': path.resolve(__dirname, '..', '..', '..', 'utils'),
-      '@make.org/api': path.resolve(__dirname, '..', '..', '..', 'api'),
-      '@make.org/ui': path.resolve(__dirname, '..', '..', '..', 'ui'),
-      '@make.org/components': path.resolve(
-        __dirname,
-        '..',
-        '..',
-        '..',
-        'components'
-      ),
-      '@make.org/store': path.resolve(__dirname, '..', '..', '..', 'store'),
-      '@make.org/assets': path.resolve(__dirname, '..', '..', '..', 'assets'),
-      '@make.org/types': path.resolve(__dirname, '..', '..', '..', 'types'),
-    },
+    alias: resolveTsconfigPathsToAlias(),
   },
   module: {
     rules: [

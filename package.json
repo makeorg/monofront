@@ -10,13 +10,11 @@
   "workspaces": [
     "root",
     "apps/*",
-    "api",
     "components",
     "types",
     "assets",
-    "utils",
+    "package/*",
     "ui",
-    "store",
     "apimock"
   ],
   "scripts": {

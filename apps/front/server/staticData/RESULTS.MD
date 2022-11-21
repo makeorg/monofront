@@ -20,8 +20,8 @@ file name : stop-pauvrete.json
 
 ## API endpoint
 The endpoint is defined by an Express API :
-- [ExpressApiService](../../../../api/ExpressApiService.ts)
-- [ExpressService](../../../../utils/services/Express.ts)
+- [ExpressApiService](../../../../package/api/ExpressApiService.ts)
+- [ExpressService](../../../../package/utils/services/Express.ts)
 - The JSON / file serving in [../api/question.ts](../api/question.ts)
 - A route in [routes.ts line 135](../routes.ts#L135)
 

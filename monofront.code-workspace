@@ -6,7 +6,7 @@
 		},
 		{
 			"name": "🧑🏼‍🔧 API",
-			"path": "api"
+			"path": "package/api"
 		},
 		{
 			"name": "🧑🏼‍🔧 ApiMock",
@@ -18,27 +18,27 @@
 		},
 		{
 			"name": "👨‍🎓 Assets",
-			"path": "assets"
+			"path": "package/assets"
 		},
 		{
 			"name": "🧑🏼‍🏭 Components",
-			"path": "components"
+			"path": "package/components"
 		},
 		{
 			"name": "🧑🏼‍🌾 Store",
-			"path": "store"
+			"path": "package/store"
 		},
 		{
 			"name": "👮🏼‍♀️ Types",
-			"path": "types"
+			"path": "package/types"
 		},
 		{
 			"name": "🧑🏼‍🎨 UI",
-			"path": "ui"
+			"path": "package/ui"
 		},
 		{
 			"name": "🧑🏼‍🔬 Utils",
-			"path": "utils"
+			"path": "package/utils"
 		}
 	],
 	"settings": {

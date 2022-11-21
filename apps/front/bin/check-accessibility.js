@@ -23,9 +23,11 @@ const { ESLint } = require('eslint');
 const eslint = new ESLint({ fix: true });
 const { getNotifierInstance } = require('../../../bin/utils/notification.js');
 
-const dataRelativePath = '../../utils/services/accessibilityScoring.yaml';
+const dataRelativePath =
+  '../../package/utils/services/accessibilityScoring.yaml';
 const docRelativePath = '../../docs/accessibility.md';
-const constantRelativePath = '../../utils/constants/accessibilitySummary.ts';
+const constantRelativePath =
+  '../../package/utils/constants/accessibilitySummary.ts';
 const configuration = {
   dataFile: path.resolve(process.cwd(), dataRelativePath),
   documentationFile: path.resolve(process.cwd(), docRelativePath),

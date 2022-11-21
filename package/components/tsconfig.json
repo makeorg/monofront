@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.json",
+  "references": [
+    { "path": "../../package/store" },
+    { "path": "../../package/ui" },
+    { "path": "../../package/api" },
+    { "path": "../../package/assets" },
+    { "path": "../../package/utils" }
+  ]  
+}

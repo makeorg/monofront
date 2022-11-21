@@ -8,6 +8,7 @@ const Dotenv = require('dotenv');
 const { readFileSync } = require('fs');
 const querystring = require('querystring');
 const { presets, plugins } = require('./babel.config.js');
+const resolveTsconfigPathsToAlias = require('./resolveTsconfigPathsToAlias.js');
 
 Dotenv.config({ path: './.env.local' });
 
@@ -39,21 +40,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.js', '.tsx', 'yaml'],
-    alias: {
-      '@make.org/utils': path.resolve(__dirname, '..', '..', '..', 'utils'),
-      '@make.org/api': path.resolve(__dirname, '..', '..', '..', 'api'),
-      '@make.org/ui': path.resolve(__dirname, '..', '..', '..', 'ui'),
-      '@make.org/components': path.resolve(
-        __dirname,
-        '..',
-        '..',
-        '..',
-        'components'
-      ),
-      '@make.org/store': path.resolve(__dirname, '..', '..', '..', 'store'),
-      '@make.org/assets': path.resolve(__dirname, '..', '..', '..', 'assets'),
-      '@make.org/types': path.resolve(__dirname, '..', '..', '..', 'types'),
-    },
+    alias: resolveTsconfigPathsToAlias(),
   },
 
   plugins: [

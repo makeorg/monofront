@@ -15,13 +15,13 @@ services:
       - /home/app/node_modules
       - /home/app/apps/front/node_modules
       - /home/app/apps/widget/node_modules
-      - /home/app/api/node_modules
-      - /home/app/components/node_modules
-      - /home/app/types/node_modules
-      - /home/app/assets/node_modules
-      - /home/app/utils/node_modules
-      - /home/app/ui/node_modules
-      - /home/app/store/node_modules
+      - /home/app/package/api/node_modules
+      - /home/app/package/components/node_modules
+      - /home/app/package/types/node_modules
+      - /home/app/package/assets/node_modules
+      - /home/app/package/utils/node_modules
+      - /home/app/package/ui/node_modules
+      - /home/app/package/store/node_modules
       - /home/app/apimock/node_modules
       - /home/app/apps/front/dist
       - /home/app/apps/widget/dist
@@ -65,13 +65,13 @@ services:
       - /home/app/node_modules
       - /home/app/apps/front/node_modules
       - /home/app/apps/widget/node_modules
-      - /home/app/api/node_modules
-      - /home/app/components/node_modules
-      - /home/app/types/node_modules
-      - /home/app/assets/node_modules
-      - /home/app/utils/node_modules
-      - /home/app/ui/node_modules
-      - /home/app/store/node_modules
+      - /home/app/package/api/node_modules
+      - /home/app/package/components/node_modules
+      - /home/app/package/types/node_modules
+      - /home/app/package/assets/node_modules
+      - /home/app/package/utils/node_modules
+      - /home/app/package/ui/node_modules
+      - /home/app/package/store/node_modules
       - /home/app/apimock/node_modules
       - /home/app/apps/front/dist
       - /home/app/apps/widget/dist
@@ -117,13 +117,13 @@ services:
       - /home/app/node_modules
       - /home/app/apps/front/node_modules
       - /home/app/apps/widget/node_modules
-      - /home/app/api/node_modules
-      - /home/app/components/node_modules
-      - /home/app/types/node_modules
-      - /home/app/assets/node_modules
-      - /home/app/utils/node_modules
-      - /home/app/ui/node_modules
-      - /home/app/store/node_modules
+      - /home/app/package/api/node_modules
+      - /home/app/package/components/node_modules
+      - /home/app/package/types/node_modules
+      - /home/app/package/assets/node_modules
+      - /home/app/package/utils/node_modules
+      - /home/app/package/ui/node_modules
+      - /home/app/package/store/node_modules
       - /home/app/apimock/node_modules
       - /home/app/apps/front/dist
       - /home/app/apps/widget/dist

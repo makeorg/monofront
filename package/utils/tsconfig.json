@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": [
+    "./services/Trackers/fbq.js",
+    "./services/Trackers/twttr.js",
+  ],
+  "references": [
+    { "path": "../../package/api" },
+    { "path": "../../package/assets" },
+    { "path": "../../package/components" },
+    { "path": "../../package/store" },
+    { "path": "../../package/ui" }
+  ]
+}

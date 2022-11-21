@@ -40,12 +40,7 @@ stages:
   only:
     changes:
       - .gitlab-ci.yml
-      - api/**/*
-      - assets/**/*
-      - components/**/*
-      - store/**/*
-      - ui/**/*
-      - utils/**/*
+      - package/**/*
       - apps/front/**/*
       - cypress/integration/*.feature
       - cypress/integration/common/*.feature
@@ -63,12 +58,7 @@ stages:
   only:
     changes:
       - .gitlab-ci.yml
-      - api/**/*
-      - assets/**/*
-      - components/**/*
-      - store/**/*
-      - ui/**/*
-      - utils/**/*
+      - package/**/*
       - apps/widget/**/*
       - cypress/integration/*.feature
       - cypress/integration/common/*.feature

@@ -51,14 +51,14 @@ corepack prepare
 ## <a name="shared_packages"></a>Shared Packages
 The purpose of the shared packages is to gather parts of the codebase used to build various apps.
 They are splitted in 8 packages :
-- [API](./api/README.md) : Layers with stategies and splitted services by endpoints.
+- [API](./package/api/README.md) : Layers with stategies and splitted services by endpoints.
 - [ApiMock](./apimock/README.md) : Mocked API based on [Core API](https://gitlab.com/makeorg/platform/core-api). Mainly used for functional testing purposes.
-- [Assets](./assets/REAME.md) : Fonts, images, stylesheets and various assets used to build Make.org web interfaces.
-- [Components](./components/REAME.md) : Components with style and business logic used in Make.org apps.
-- [Store](./store/REAME.md) : Actions, reducers and  management for React Context in Make.org apps.
-- [Types](./types/REAME.md) : Types and data models for Make.org objects.
-- [UI](./ui/README.md) : Styles and ui elements without business logic.
-- [Utils](./utils/README.md) : Useful methods, constants, middlewares and hooks to handle i/o tranformation.
+- [Assets](./package/assets/REAME.md) : Fonts, images, stylesheets and various assets used to build Make.org web interfaces.
+- [Components](./package/components/REAME.md) : Components with style and business logic used in Make.org apps.
+- [Store](./package/store/REAME.md) : Actions, reducers and  management for React Context in Make.org apps.
+- [Types](./package/types/REAME.md) : Types and data models for Make.org objects.
+- [UI](./package/ui/README.md) : Styles and ui elements without business logic.
+- [Utils](./package/utils/README.md) : Useful methods, constants, middlewares and hooks to handle i/o tranformation.
 
 
 ## <a name="apps"></a>Apps
@@ -126,7 +126,7 @@ This scripts uses ```grep``` command. A linux system is require.
 
 
 ### Convert SVG to React Component
-Refers to @make.org/ui [README.md](./ui/README.md).
+Refers to @make.org/ui [README.md](./package/ui/README.md).
 
 ## <a name="todo"></a>TODO
 - [ ] Add `Create a new package` instructions
