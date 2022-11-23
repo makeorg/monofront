@@ -342,13 +342,12 @@ export const DataFR: FC = () => {
             </StaticThirdLevelTitleStyle>
             <StaticParagraphStyle>
               Le délégué à la protection des données désigné en application de
-              l’article 37 du RGPD est la SELARL FWPA Avocats, 18 rue des
-              Pyramides, 75001, Paris, représentée par Maître Jean-Baptiste
-              Soufron. Il peut être contacté à l’adresse :{' '}
+              l’article 37 du RGPD est Fieldfisher Belgium,{' '}
               <RedHTMLLinkElementStyle href={`mailto:${CONTACT_EMAIL}`}>
                 {`${CONTACT_EMAIL}`}
               </RedHTMLLinkElementStyle>
-              .
+              , l&apos;Arsenal, Bd Louis Schmidt 29 box 15, 1040 Bruxelles,
+              Belgique.
             </StaticParagraphStyle>
           </StaticPrimaryUnorderedListItemStyle>
         </StaticPrimaryUnorderedListStyle>

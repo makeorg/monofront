@@ -259,15 +259,12 @@ export const DataEN: FC = () => (
           </StaticThirdLevelTitleStyle>
           <StaticParagraphStyle>
             The data protection officer designated pursuant to Article 37 of the
-            European Data Protection Regulation is the law firm FWPA, located at
-            18 Rue des Pyramides, 75001, Paris, represented by Jean-Baptiste
-            Soufron.
-          </StaticParagraphStyle>
-          <StaticParagraphStyle>
-            The DPO can be contacted at the following address:&nbsp;
+            European Data Protection Regulation is Fieldfisher Belgium,{' '}
             <RedHTMLLinkElementStyle href={`mailto:${CONTACT_EMAIL}`}>
               {`${CONTACT_EMAIL}`}
             </RedHTMLLinkElementStyle>
+            , l&apos;Arsenal, Bd Louis Schmidt 29 box 15, 1040 Brussels,
+            Belgium.
           </StaticParagraphStyle>
         </StaticPrimaryUnorderedListItemStyle>
 

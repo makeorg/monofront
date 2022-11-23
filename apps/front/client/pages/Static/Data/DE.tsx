@@ -343,17 +343,12 @@ export const DataDE: FC = () => {
             </StaticThirdLevelTitleStyle>
             <StaticParagraphStyle>
               Der gemäß Artikel 37 der DSGVO bestellte Datenschutzbeauftragte
-              ist{' '}
-              <span lang="fr">
-                SELARL FWPA Avocats, 18 rue des Pyramides, 75001, Paris
-              </span>
-              , vertreten durch{' '}
-              <span lang="fr">Maître Jean-Baptiste Soufron</span>. Er kann unter
-              folgender Adresse kontaktiert werden:{' '}
+              ist Fieldfisher Belgium,{' '}
               <RedHTMLLinkElementStyle href={`mailto:${CONTACT_EMAIL_DE}`}>
                 {`${CONTACT_EMAIL_DE}`}
               </RedHTMLLinkElementStyle>
-              .
+              , l&apos;Arsenal, Bd Louis Schmidt 29 box 15, 1040 Brüssels,
+              Belgien.
             </StaticParagraphStyle>
           </StaticPrimaryUnorderedListItemStyle>
         </StaticPrimaryUnorderedListStyle>
