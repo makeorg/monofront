@@ -25,6 +25,7 @@ import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
+import { LoadingDots } from '@make.org/ui/components/Loading/Dots';
 import { ProposalAuthentication } from './Authentication';
 import {
   ProposalFormWrapperStyle,
@@ -44,9 +45,11 @@ import {
 
 export const ProposalForm: FC = () => {
   const { state, dispatch } = useAppContext();
-  const [pendingProposal, setProposalContent] = useState(
+  const [pendingProposal, setProposalContent] = useState<string>(
     state.pendingProposal.pendingProposal || ''
   );
+  const [waitingForAPIResponse, setWaitingForAPIResponse] =
+    useState<boolean>(false);
   const inputRef = useRef() as React.MutableRefObject<HTMLTextAreaElement>;
   const question: QuestionType | null = selectCurrentQuestion(state);
   const { isLoggedIn } = selectAuthentication(state);
@@ -61,7 +64,7 @@ export const ProposalForm: FC = () => {
     ? baitText?.length
     : pendingProposal.length;
 
-  const disableSubmitButton = !proposalHasValidLength(pendingProposal.length);
+  const validProposalLength = proposalHasValidLength(pendingProposal.length);
 
   const { source } = state.appConfig;
   const isWidget = source === 'widget';
@@ -90,6 +93,7 @@ export const ProposalForm: FC = () => {
   };
 
   const handleSubmitForm = async () => {
+    setWaitingForAPIResponse(true);
     if (isLoggedIn) {
       await ProposalService.propose(
         pendingProposal,
@@ -105,6 +109,7 @@ export const ProposalForm: FC = () => {
     }
 
     dispatch(initProposalPending(pendingProposal));
+    setWaitingForAPIResponse(false);
   };
 
   useEffect(() => {
@@ -126,11 +131,11 @@ export const ProposalForm: FC = () => {
             {question && question.question}
           </ProposalStepTitleStyle>
           <ScreenReaderItemStyle>
-            {i18n.t('proposal_submit.form.title')}
+            <>{i18n.t('proposal_submit.form.title')}</>
           </ScreenReaderItemStyle>
           <ProposalFieldWrapperStyle>
             <ScreenReaderItemStyle as="label" htmlFor="proposal">
-              {i18n.t('proposal_submit.form.field')}
+              <>{i18n.t('proposal_submit.form.field')}</>
             </ScreenReaderItemStyle>
             <ProposalTextareaStyle
               ref={inputRef}
@@ -152,10 +157,12 @@ export const ProposalForm: FC = () => {
               {`${charCounting} / ${MAX_PROPOSAL_LENGTH}`}
             </ProposalCharCountStyle>
             <ScreenReaderItemStyle aria-live="polite">
-              {i18n.t('proposal_submit.form.counter', {
-                current: pendingProposal.length,
-                total: MAX_PROPOSAL_LENGTH,
-              })}
+              <>
+                {i18n.t('proposal_submit.form.counter', {
+                  current: pendingProposal.length,
+                  total: MAX_PROPOSAL_LENGTH,
+                })}
+              </>
             </ScreenReaderItemStyle>
           </ProposalFieldWrapperStyle>
           <ProposalSubmitButtonsWidgetStyle>
@@ -164,27 +171,36 @@ export const ProposalForm: FC = () => {
                 type="submit"
                 form={FORM.PROPOSAL_SUBMIT_FORMNAME}
                 onClick={trackClickProposalSubmit}
-                disabled={disableSubmitButton}
+                disabled={!validProposalLength || waitingForAPIResponse}
                 data-cy-button="proposal-submit"
               >
-                {i18n.t('proposal_submit.form.button_propose')}
+                {waitingForAPIResponse ? (
+                  <LoadingDots />
+                ) : (
+                  <>{i18n.t('proposal_submit.form.button_propose')}</>
+                )}
               </RedButtonStyle>
             </ProposalButtonsWrapperStyle>
             <ProposalAuthInlineWrapperStyle>
-              {i18n.t('proposal_submit.form.read_our')}{' '}
-              <ProposalExternalLinkStyle
-                href={getModerationLinkByLanguage(language)}
-                target="_blank"
-                rel="noopener"
-                onClick={trackClickModerationLink}
-              >
-                {i18n.t('proposal_submit.form.moderation_link')}
-                <> </>
-                <ProposalExternalLinkIconStyle aria-hidden focusable="false" />
-                <ScreenReaderItemStyle>
-                  {i18n.t('common.open_new_window')}
-                </ScreenReaderItemStyle>
-              </ProposalExternalLinkStyle>
+              <>
+                {i18n.t('proposal_submit.form.read_our')}{' '}
+                <ProposalExternalLinkStyle
+                  href={getModerationLinkByLanguage(language)}
+                  target="_blank"
+                  rel="noopener"
+                  onClick={trackClickModerationLink}
+                >
+                  <> {i18n.t('proposal_submit.form.moderation_link')}</>
+                  <> </>
+                  <ProposalExternalLinkIconStyle
+                    aria-hidden
+                    focusable="false"
+                  />
+                  <ScreenReaderItemStyle>
+                    <>{i18n.t('common.open_new_window')}</>
+                  </ScreenReaderItemStyle>
+                </ProposalExternalLinkStyle>
+              </>
             </ProposalAuthInlineWrapperStyle>
           </ProposalSubmitButtonsWidgetStyle>
         </ProposalFormStyle>
