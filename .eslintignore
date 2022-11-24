@@ -1,5 +1,6 @@
 *.css
 *.svg
+/types
 reports
 coverage
 .husky
@@ -14,3 +15,4 @@ dist
 /apimock
 /*/*/cypress
 /bin
+webpack.config.cjs

@@ -15,6 +15,7 @@ module.exports = {
         'ui',
         'utils',
         'widget',
+        'translator',
       ],
     ],
     'subject-case': () => [

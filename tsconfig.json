@@ -14,8 +14,11 @@
     "**/apimock",
     "**/reports",
     "**/*.md",
-    "**/*/resolveTsconfigPathsToAlias.js"
+    "**/resolveTsconfigPathsToAlias.js",
+    "**/ecosystem.config.cjs",
+    "**/webpack.config.cjs"
   ],
+  "include": ["apps", "package"],
   "compilerOptions": {
     "rootDir": ".",
     "baseUrl": "./types/index",
@@ -35,6 +38,9 @@
     "target": "ES2021",
     "sourceMap": true,
     "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "declarationDir": "./types",
     "paths": {
       "@make.org/widget": ["./apps/widget/*"],
       "@make.org/front": ["./apps/front/*"],
@@ -43,7 +49,9 @@
       "@make.org/assets": ["./package/assets/*"],
       "@make.org/ui": ["./package/ui/*"],
       "@make.org/utils": ["./package/utils/*"],
-      "@make.org/store": ["./package/store/*"]
+      "@make.org/store": ["./package/store/*"],
+      "@make.org/translator": ["./package/translator/src/*"],
+      "@make.org/logger": ["./package/logger/*"]
     }
   }
 }

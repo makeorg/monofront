@@ -1,0 +1,23 @@
+{
+    "presets": [
+        "@babel/preset-typescript",
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "node": "16.0"
+                },
+                "modules": false
+            }
+        ]
+    ],
+    "plugins": ["babel-plugin-add-import-extension"],
+    "ignore": [
+      "node_modules",
+      "dist",
+      "**/*.stories.*",
+      "**/__tests__",
+      "**/__mocks__",
+      "**/test-utils"
+    ]
+}

@@ -63,7 +63,7 @@
 				"universal-cookie": "~4.0.4",
 				"universal-cookie-express": "~4.0.0",
 				"url-search-params-polyfill": "^8.1.1",
-				"uuid": "^8.3.0",
+				"uuid": "^8.3.2",
 				"webpack": "^5.74.0",
 				"webpack-manifest": "^1.0.8",
 				"webpack-manifest-plugin": "^3.1.1",
@@ -98,6 +98,7 @@
 				"@types/serve-favicon": "^2.5.3",
 				"@types/ua-parser-js": "^0.7.36",
 				"@types/universal-cookie": "^3.0.0",
+				"@types/uuid": "^8.3.4",
 				"@types/webpack": "^5.28.0",
 				"@types/webpack-env": "1.18.0",
 				"babel-loader": "8.2.5",
@@ -119,7 +120,7 @@
 		"scripts": {
 				"dev": "webpack serve --mode development --progress --color --config ./webpack/dev.config.js",
 				"dev:mock": "webpack serve --mode development --node-env mock --progress --color --config ./webpack/dev.config.js",
-				"build": "webpack --mode production --progress --color --config ./webpack/build.config.js && node bin/versionBuild.js",
+				"build": "webpack --mode production --progress --color --config ./webpack/build.config.js && yarn version-build",
 				"server": "pm2-runtime start ecosystem.config.js --only app-production",
 				"server:dev": "pm2-runtime start ecosystem.config.js --only app-dev",
 				"server:test": "pm2-runtime start ecosystem.config.js --only 'api-mock,app-test'",
@@ -130,6 +131,7 @@
 				"translation:unused-keys": "npx babel --out-dir ../../dist/lib --config-file ./webpack/babel.config.js ../../bin/utils && ../../bin/check-translation.js list-unused",
 				"translation:orphan-keys": "npx babel --out-dir ../../dist/lib --config-file ./webpack/babel.config.js ../../bin/utils && ../../bin/check-translation.js list-orphan",
 				"accessibility": "bin/check-accessibility.js check",
-				"accessibility:fix": "bin/check-accessibility.js check --fix"
+				"accessibility:fix": "bin/check-accessibility.js check --fix",
+				"version-build": "../../bin/version-build.js generate -d './dist/client' -p 'Make.org-frontend'"
 		}
 }

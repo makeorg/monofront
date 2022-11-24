@@ -1,7 +1,8 @@
 version: '3.9'
 
 services:
-  app_make_dev: &dev_service
+  app_make_dev:
+    &dev_service
     image: app_make_dev
     build:
       context: .
@@ -10,11 +11,13 @@ services:
     ports:
       - 3000:3000
       - 8888:8888
-    volumes: &default_volumes
+    volumes:
+      &default_volumes
       - .:/home/app
       - /home/app/node_modules
       - /home/app/apps/front/node_modules
       - /home/app/apps/widget/node_modules
+      - /home/app/apps/translator/node_modules
       - /home/app/package/api/node_modules
       - /home/app/package/components/node_modules
       - /home/app/package/types/node_modules
@@ -22,6 +25,7 @@ services:
       - /home/app/package/utils/node_modules
       - /home/app/package/ui/node_modules
       - /home/app/package/store/node_modules
+      - /home/app/package/logger/node_modules
       - /home/app/apimock/node_modules
       - /home/app/apps/front/dist
       - /home/app/apps/widget/dist
@@ -43,7 +47,8 @@ services:
     profiles:
       - app-dev-mock
 
-  app_make_ssr: &ssr_service
+  app_make_ssr:
+    &ssr_service
     image: app_make_ssr
     build:
       context: .
@@ -108,7 +113,8 @@ services:
     profiles:
       - widget-dev
 
-  widget_make_ssr: &ssr_widget_service
+  widget_make_ssr:
+    &ssr_widget_service
     image: widget_make_ssr
     build:
       context: .
@@ -146,3 +152,30 @@ services:
       - ./apps/widget/.env.cypress:/home/app/apps/widget/.env.local
     profiles:
       - widget-test
+
+  translator_dev:
+    image: translator_dev
+    build:
+      context: .
+      dockerfile: apps/translator/Dockerfile
+      target: app-dev
+    ports:
+      - 3000:3000
+      - 8888:8888
+    volumes: *default_volumes
+    profiles:
+      - translator-dev
+
+  translator_prod:
+    image: translator_prod
+    build:
+      context: apps/translator
+      target: app-production
+    ports:
+      - 3000:8000
+    volumes:
+      - /usr/app/dist
+      - /usr/app/node_modules
+      - ./apps/translator/.env:/usr/app/.env
+    profiles:
+      - translator-prod

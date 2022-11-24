@@ -67,6 +67,20 @@ stages:
       - package.json
       - yarn.lock
 
+.translator:
+  variables:
+    IMAGE_NAME: make-translator
+    IMAGE_APP_TARGET: app-production
+    IMAGE_APP_PATH: apps/translator/Dockerfile
+    RUNDECK_JOB_ID: $RUNDECK_TRANSLATOR_JOB_ID
+  only:
+    changes:
+      - .gitlab-ci.yml
+      - package/**/*
+      - apps/translator/**/*
+      - package.json
+      - yarn.lock
+
 # Stages
 .check:
   stage: check
@@ -144,7 +158,7 @@ stages:
 .e2e:
   image: cypress/browsers:node16.14.0-chrome99-ff97
   variables:
-    CYPRESS_CACHE_FOLDER: '$CI_PROJECT_DIR/cache_cypress'
+    CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache_cypress"
   artifacts:
     expire_in: 1 week
     when: always
@@ -213,6 +227,10 @@ build-make-widget:
     - .build
     - .widget
 
+build-make-translator:
+  extends:
+    - .build
+    - .translator
 
 # Deploy
 deploy-front-preproduction:
@@ -227,6 +245,12 @@ deploy-widget-preproduction:
     - .widget
     - .preprod
 
+deploy-translator-preproduction:
+  extends:
+    - .deploy
+    - .translator
+    - .preprod
+
 deploy-front-production:
   extends:
     - .deploy
@@ -237,6 +261,12 @@ deploy-widget-production:
   extends:
     - .deploy
     - .widget
+    - .prod
+
+deploy-translator-production:
+  extends:
+    - .deploy
+    - .translator
     - .prod
 
 merge-to-prod:
