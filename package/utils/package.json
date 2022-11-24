@@ -26,7 +26,7 @@
     "react": "^17.0.2",
     "react-hotjar": "^5.2.0",
     "react-router": "^5.3.4",
-    "source-map": "^0.7.3",
+    "source-map": "^0.6.1",
     "universal-cookie": "^4.0.4",
     "url-search-params-polyfill": "^8.1.1",
     "uuid": "^8.3.2",
