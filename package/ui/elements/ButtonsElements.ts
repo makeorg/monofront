@@ -392,6 +392,12 @@ export const BlackNoBackgroundButtonStyle = styled(UnstyledButtonStyle)`
   }
 `;
 
+export const GreyNoBackgroundButtonStyle = styled(UnstyledButtonStyle)`
+  ${ButtonNoBackgroundStyle};
+  ${GreyNoBackgroundStyle};
+  margin-bottom: 10px;
+`;
+
 export const GreyLinkStyle = styled(Link)`
   ${ButtonNoBackgroundStyle};
   ${GreyNoBackgroundStyle};

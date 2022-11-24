@@ -15,6 +15,8 @@ import {
   trackClickNextCard,
   trackClickNextOnLastProposal,
 } from '@make.org/utils/services/Tracking';
+import { getProposalContent } from '@make.org/utils/helpers/proposal';
+import { ShowTranslation } from '../../Proposal/ShowTranslationElement';
 import { Vote } from '../../Vote';
 import { ProposalAuthor } from '../../Proposal/Author';
 import {
@@ -43,6 +45,7 @@ export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
   const { votes = [] } = cards[index]?.state ? cards[index].state : {};
   const votedProposal = votes.find(vote => vote.hasVoted === true);
   const [displayNextButton, setDisplayNextButton] = useState(votedProposal);
+  const [showOriginal, setShowOriginal] = useState<boolean>(false);
 
   const getLastCardIndex = () => {
     const allProposals = cards.filter(
@@ -69,6 +72,10 @@ export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
     notificationId => notificationId === NOTIF.FIRST_VOTE_TIP_MESSAGE
   );
   const displayTooltip = !hasVotedProposals && !isDismissed;
+  const { proposalContent, proposalLanguage } = getProposalContent(
+    showOriginal,
+    proposal
+  );
 
   const goToNextCard = () => {
     dispatch(incrementSequenceIndex());
@@ -98,8 +105,8 @@ export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
         <ScreenReaderItemStyle>
           {i18n.t('proposal_card.content')}
         </ScreenReaderItemStyle>
-        <SequenceProposalStyle lang={proposal.question.returnedLanguage}>
-          {proposal.content}
+        <SequenceProposalStyle lang={proposalLanguage}>
+          {proposalContent}
         </SequenceProposalStyle>
         {displayTooltip && <Tip />}
         <Vote
@@ -123,6 +130,12 @@ export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
               ? i18n.t('proposal_card.validate')
               : i18n.t('proposal_card.next')}
           </SequenceNextCardButtonStyle>
+        )}
+        {!displayNextButton && !!proposal.translatedLanguage && (
+          <ShowTranslation
+            showOriginal={showOriginal}
+            onClickAction={() => setShowOriginal(!showOriginal)}
+          />
         )}
       </SequenceNextWrapperStyle>
     </SequenceProposalWrapperStyle>

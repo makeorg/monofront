@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import i18n from 'i18next';
 import { Link } from 'react-router-dom';
 import { ProposalType } from '@make.org/types';
@@ -17,6 +17,8 @@ import {
   TopComponentContextValue,
 } from '@make.org/store/topComponentContext';
 import { useAppContext } from '@make.org/store';
+import { getProposalContent } from '@make.org/utils/helpers/proposal';
+import { ShowTranslation } from '../ShowTranslationElement';
 import { DetailledVoteResults } from '../DetailledVoteResults';
 import { Vote } from '../../Vote';
 import { DeprecatedProposalAuthor } from '../DeprecatedAuthor';
@@ -44,6 +46,11 @@ export const SingleProposalCard: React.FC<Props> = ({ proposal }) => {
   const { state } = useAppContext();
   const { country } = state.appConfig;
   const isAnonymous = proposal.author.userType === USER.TYPE_ANONYMOUS;
+  const [showOriginal, setShowOriginal] = useState<boolean>(false);
+  const { proposalContent, proposalLanguage } = getProposalContent(
+    showOriginal,
+    proposal
+  );
 
   return (
     <TopComponentContext.Provider value={topComponentContext}>
@@ -54,8 +61,8 @@ export const SingleProposalCard: React.FC<Props> = ({ proposal }) => {
           <ScreenReaderItemStyle>
             {i18n.t('proposal_card.content')}
           </ScreenReaderItemStyle>
-          <ProposalCardContentStyle lang={proposal.question.returnedLanguage}>
-            {proposal.content}
+          <ProposalCardContentStyle lang={proposalLanguage}>
+            {proposalContent}
           </ProposalCardContentStyle>
           {isConsultationOpened ? (
             <Vote
@@ -70,6 +77,12 @@ export const SingleProposalCard: React.FC<Props> = ({ proposal }) => {
             />
           )}
         </InnerProposalStyle>
+        {!!proposal.translatedLanguage && (
+          <ShowTranslation
+            showOriginal={showOriginal}
+            onClickAction={() => setShowOriginal(!showOriginal)}
+          />
+        )}
         <ProposalFooterStyle>
           <ContentSeparatorStyle />
           <FooterContentStyle>

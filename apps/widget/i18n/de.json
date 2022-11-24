@@ -293,6 +293,8 @@
     "next": "Nächster Vorschlag",
     "validate": "Bestätigen",
     "content": "Inhalt des Vorschlags: ",
+    "original": "Siehe original",
+    "translation": "Übersetzung ansehen",
     "number": "Karte Nummer {{current}} von {{total}}",
     "posted_label": "Geschrieben in",
     "author": {

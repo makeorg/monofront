@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import i18n from 'i18next';
 import { ProposalType } from '@make.org/types';
 import { AuthorWrapperStyle } from '@make.org/components/Proposal/DeprecatedAuthor/Styled';
@@ -12,6 +12,8 @@ import {
   getParticipateLink,
   getProposalLink,
 } from '@make.org/utils/helpers/url';
+import { getProposalContent } from '@make.org/utils/helpers/proposal';
+import { ShowTranslation } from '../ShowTranslationElement';
 import { ProfileProposalCardStyle } from './style';
 import { DetailledVoteResults } from '../DetailledVoteResults';
 import { ProposalFooterWithQuestionElement } from '../FooterElement/ProposalWithQuestion';
@@ -30,6 +32,11 @@ export const ProfileProposalCard: FC<Props> = ({
   position,
   size,
 }) => {
+  const [showOriginal, setShowOriginal] = useState<boolean>(false);
+  const { proposalContent, proposalLanguage } = getProposalContent(
+    showOriginal,
+    proposal
+  );
   const formattedProposalStatus = proposal.status.toLowerCase();
   const isProposalAccepted = formattedProposalStatus === 'accepted';
 
@@ -63,20 +70,36 @@ export const ProfileProposalCard: FC<Props> = ({
         <>{i18n.t('proposal_card.content')}</>
       </ScreenReaderItemStyle>
       {isProposalAccepted ? (
-        <ProposalLinkElementStyle
-          id={`proposal_card__proposal_content_${position}`}
-          to={proposalLink}
-          lang={proposal.question.returnedLanguage}
-        >
-          {proposal.content}
-        </ProposalLinkElementStyle>
+        <>
+          <ProposalLinkElementStyle
+            id={`proposal_card__proposal_content_${position}`}
+            to={proposalLink}
+            lang={proposalLanguage}
+          >
+            {proposalContent}
+          </ProposalLinkElementStyle>
+          {!!proposal.translatedLanguage && (
+            <ShowTranslation
+              showOriginal={showOriginal}
+              onClickAction={() => setShowOriginal(!showOriginal)}
+            />
+          )}
+        </>
       ) : (
-        <ProposalElementStyle
-          id={`proposal_card__proposal_content_${position}`}
-          lang={proposal.question.returnedLanguage}
-        >
-          {proposal.content}
-        </ProposalElementStyle>
+        <>
+          <ProposalElementStyle
+            id={`proposal_card__proposal_content_${position}`}
+            lang={proposalLanguage}
+          >
+            {proposalContent}
+          </ProposalElementStyle>
+          {!!proposal.translatedLanguage && (
+            <ShowTranslation
+              showOriginal={showOriginal}
+              onClickAction={() => setShowOriginal(!showOriginal)}
+            />
+          )}
+        </>
       )}
       {isProposalAccepted && (
         <DetailledVoteResults votes={proposal.votes} proposalId={proposal.id} />

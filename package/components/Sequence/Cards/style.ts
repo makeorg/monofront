@@ -150,6 +150,7 @@ export const SequenceProposalStyle = styled.blockquote`
 export const SequenceNextWrapperStyle = styled(CenterColumnStyle)`
   width: 100%;
   min-height: 35px;
+  justify-content: center;
 `;
 
 export const SequenceNextCardButtonStyle = styled(RedButtonStyle)`

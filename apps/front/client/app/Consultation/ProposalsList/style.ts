@@ -63,5 +63,4 @@ export const ProposalDateStyle = styled.time`
   color: ${color.greyDark};
   letter-spacing: 0.13px;
   text-align: center;
-  margin-top: 15px;
 `;

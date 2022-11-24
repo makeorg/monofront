@@ -2,7 +2,6 @@ import React, { FC, useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import i18n from 'i18next';
 import { ProposalType, QuestionType } from '@make.org/types';
-
 import { useParams } from 'react-router';
 import { MiddlePageWrapperStyle } from '@make.org/ui/elements/MainElements';
 import { Spinner } from '@make.org/ui/components/Loading/Spinner';

@@ -1,7 +1,7 @@
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { ProposalAuthor } from '@make.org/components/Proposal/Author';
 import { ProposalSkeleton } from '@make.org/ui/components/Skeletons/Proposal';
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { getProposalLink } from '@make.org/utils/helpers/url';
 import i18n from 'i18next';
 import { ProposalType } from '@make.org/types';
@@ -9,6 +9,8 @@ import { Vote } from '@make.org/components/Vote';
 import { DateHelper } from '@make.org/utils/helpers/date';
 import { DATE } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
+import { ShowTranslation } from '@make.org/components/Proposal/ShowTranslationElement';
+import { getProposalContent } from '@make.org/utils/helpers/proposal';
 import { SubmitProposal } from '../Cards/SubmitProposal';
 import { NoProposalWrapperStyle } from '../../../pages/Consultation/style';
 import {
@@ -45,46 +47,61 @@ const generateSkeletonsList = (count: number) => {
   return skeletonsList;
 };
 
-const ProposalsCard: FC<CardProps> = ({ proposal, country, index }) => (
-  <ProposalCardStyle>
-    <ProposalAuthor proposal={proposal} />
-    <ProposalAndVoteWrapperStyle>
-      <ScreenReaderItemStyle>
-        {i18n.t('proposal_card.content')}
-      </ScreenReaderItemStyle>
-      <ProposalLinkStyle
-        lang={proposal.question.returnedLanguage}
-        to={getProposalLink(
-          country,
-          proposal.question.slug,
-          proposal.id,
-          proposal.slug
-        )}
-      >
-        {proposal.content}
-      </ProposalLinkStyle>
-      <Vote
-        proposal={proposal}
-        votes={proposal.votes}
-        proposalKey={proposal.proposalKey}
-        index={index}
+export const ProposalsCard: FC<CardProps> = ({ proposal, country, index }) => {
+  const [showOriginal, setShowOriginal] = useState<boolean>(false);
+  const { proposalContent, proposalLanguage } = getProposalContent(
+    showOriginal,
+    proposal
+  );
+
+  return (
+    <ProposalCardStyle>
+      <ProposalAuthor proposal={proposal} />
+      <ProposalAndVoteWrapperStyle>
+        <ScreenReaderItemStyle>
+          {i18n.t('proposal_card.content')}
+        </ScreenReaderItemStyle>
+        <ProposalLinkStyle
+          lang={proposalLanguage}
+          to={getProposalLink(
+            country,
+            proposal.question.slug,
+            proposal.id,
+            proposal.slug
+          )}
+        >
+          {proposalContent}
+        </ProposalLinkStyle>
+        <Vote
+          proposal={proposal}
+          votes={proposal.votes}
+          proposalKey={proposal.proposalKey}
+          index={index}
+        />
+      </ProposalAndVoteWrapperStyle>
+      <ShowTranslation
+        showOriginal={showOriginal}
+        onClickAction={() => setShowOriginal(!showOriginal)}
       />
-    </ProposalAndVoteWrapperStyle>
-    <ScreenReaderItemStyle>
-      {i18n.t('proposal_card.author.date')}
-    </ScreenReaderItemStyle>
-    <ProposalDateStyle
-      dateTime={
-        DateHelper.localizedAndFormattedDate(
+      <ScreenReaderItemStyle>
+        {i18n.t('proposal_card.author.date')}
+      </ScreenReaderItemStyle>
+      <ProposalDateStyle
+        dateTime={
+          DateHelper.localizedAndFormattedDate(
+            proposal.createdAt,
+            DATE.P_FORMAT
+          ) || ''
+        }
+      >
+        {DateHelper.localizedAndFormattedDate(
           proposal.createdAt,
-          DATE.P_FORMAT
-        ) || ''
-      }
-    >
-      {DateHelper.localizedAndFormattedDate(proposal.createdAt, DATE.PP_FORMAT)}
-    </ProposalDateStyle>
-  </ProposalCardStyle>
-);
+          DATE.PP_FORMAT
+        )}
+      </ProposalDateStyle>
+    </ProposalCardStyle>
+  );
+};
 
 export const ProposalsList: FC<Props> = ({ isLoading, proposals }) => {
   const { state } = useAppContext();

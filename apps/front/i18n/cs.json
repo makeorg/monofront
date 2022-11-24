@@ -317,6 +317,8 @@
     "next": "Následující návrh",
     "validate": "Potvrdit",
     "content": "Obsah návrhu: ",
+    "original": "Zobrazit v originále",
+    "translation": "Viz překlad",
     "number": "Karta číslo {{current}} z {{total}}",
     "posted_label": "Zveřejněno v ",
     "author": {

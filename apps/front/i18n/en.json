@@ -305,6 +305,8 @@
       "title": "Solution status:"
     },
     "content": "Solution content",
+    "original": "View original",
+    "translation": "View translation",
     "validate": "Validate"
   },
   "intro_card": {

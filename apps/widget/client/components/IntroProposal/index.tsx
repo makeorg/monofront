@@ -1,8 +1,15 @@
-import React, { FC, Dispatch, SetStateAction, useEffect } from 'react';
+import React, {
+  FC,
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useState,
+} from 'react';
 import { ProposalType, QuestionType } from '@make.org/types';
 import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { ShowTranslation } from '@make.org/components/Proposal/ShowTranslationElement';
 import { MetaTags } from '@make.org/components/MetaTags';
 import {
   SequenceContainerStyle,
@@ -21,6 +28,7 @@ import {
   trackClickStartSequence,
   trackDisplayChargeIntroCard,
 } from '@make.org/utils/services/Tracking';
+import { getProposalContent } from '@make.org/utils/helpers/proposal';
 
 type Props = {
   handleChange: Dispatch<SetStateAction<boolean>>;
@@ -31,6 +39,11 @@ export const IntroProposal: FC<Props> = ({ handleChange }) => {
   const question: QuestionType = selectCurrentQuestion(state);
   const proposal: ProposalType | null | undefined =
     question.activeFeatureData?.topProposal;
+  const [showOriginal, setShowOriginal] = useState<boolean>(false);
+  const { proposalContent, proposalLanguage } = getProposalContent(
+    showOriginal,
+    proposal
+  );
 
   useEffect(() => {
     if (proposal) {
@@ -63,12 +76,15 @@ export const IntroProposal: FC<Props> = ({ handleChange }) => {
             <ScreenReaderItemStyle>
               {i18n.t('top_proposal_card.content')}
             </ScreenReaderItemStyle>
-            <SequenceProposalStyle
-              lang={proposal.question.returnedLanguage}
-              className="widget"
-            >
-              {proposal.content}
+            <SequenceProposalStyle lang={proposalLanguage} className="widget">
+              {proposalContent}
             </SequenceProposalStyle>
+            {!!proposal.translatedLanguage && (
+              <ShowTranslation
+                showOriginal={showOriginal}
+                onClickAction={() => setShowOriginal(!showOriginal)}
+              />
+            )}
             <IntroProposalRedButtonStyle
               onClick={() => {
                 handleChange(false);

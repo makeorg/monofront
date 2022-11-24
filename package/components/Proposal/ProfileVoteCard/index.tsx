@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react';
+import React, { FC, useMemo, useState } from 'react';
 import i18n from 'i18next';
 import { OrganisationType, ProposalType } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
@@ -17,6 +17,8 @@ import {
   ProposalLinkElementStyle,
 } from '@make.org/ui/elements/ProposalCardElements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
+import { getProposalContent } from '@make.org/utils/helpers/proposal';
+import { ShowTranslation } from '../ShowTranslationElement';
 import { CertifiedIconStyle } from '../Author/style';
 import {
   ProfileVoteCardStyle,
@@ -58,6 +60,12 @@ export const ProfileVoteCard: FC<Props> = ({
       ]),
     [i18n.language]
   );
+  const [showOriginal, setShowOriginal] = useState<boolean>(false);
+  const { proposalContent, proposalLanguage } = getProposalContent(
+    showOriginal,
+    proposal
+  );
+
   return (
     <ProfileVoteWrapperStyle aria-posinset={position} aria-setsize={size}>
       <ProfileVoteTitleStyle>
@@ -98,10 +106,16 @@ export const ProfileVoteCard: FC<Props> = ({
                 proposal.id,
                 proposal.slug
               )}
-              lang={proposal.question.returnedLanguage}
+              lang={proposalLanguage}
             >
-              {proposal.content}
+              {proposalContent}
             </ProposalLinkElementStyle>
+            {!!proposal.translatedLanguage && (
+              <ShowTranslation
+                showOriginal={showOriginal}
+                onClickAction={() => setShowOriginal(!showOriginal)}
+              />
+            )}
             <VoteResultElement
               proposalId={proposal.id}
               votes={proposal.votes}

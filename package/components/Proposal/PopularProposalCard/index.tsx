@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import i18n from 'i18next';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { ProposalType } from '@make.org/types';
@@ -11,6 +11,8 @@ import { AuthorWrapperStyle } from '@make.org/components/Proposal/DeprecatedAuth
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { getProposalLink } from '@make.org/utils/helpers/url';
 import { useAppContext } from '@make.org/store';
+import { getProposalContent } from '@make.org/utils/helpers/proposal';
+import { ShowTranslation } from '../ShowTranslationElement';
 import { Vote } from '../../Vote';
 import { DetailledVoteResults } from '../DetailledVoteResults';
 import {
@@ -36,6 +38,12 @@ export const PopularProposalCard: FC<Props> = ({
   const { state } = useAppContext();
   const { country } = state.appConfig;
   const canVote = isInProgress(proposal.question);
+  const [showOriginal, setShowOriginal] = useState<boolean>(false);
+  const { proposalContent, proposalLanguage } = getProposalContent(
+    showOriginal,
+    proposal
+  );
+
   return (
     <PopularProposalWrapperStyle aria-posinset={position} aria-setsize={size}>
       <PopularProposalHeader aria-hidden>
@@ -56,10 +64,16 @@ export const PopularProposalCard: FC<Props> = ({
             proposal.id,
             proposal.slug
           )}
-          lang={proposal.question.returnedLanguage}
+          lang={proposalLanguage}
         >
-          {proposal.content}
+          {proposalContent}
         </ProposalLinkElementStyle>
+        {!!proposal.translatedLanguage && (
+          <ShowTranslation
+            showOriginal={showOriginal}
+            onClickAction={() => setShowOriginal(!showOriginal)}
+          />
+        )}
         {canVote ? (
           <Vote
             proposal={proposal}

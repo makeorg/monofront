@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Vote } from '@make.org/components/Vote';
 import { ProposalType } from '@make.org/types';
 import {
@@ -16,6 +16,8 @@ import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElemen
 import i18n from 'i18next';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import { useAppContext } from '@make.org/store';
+import { getProposalContent } from '@make.org/utils/helpers/proposal';
+import { ShowTranslation } from '../ShowTranslationElement';
 import { AuthorWrapperStyle } from '../DeprecatedAuthor/Styled';
 import { DetailledVoteResults } from '../DetailledVoteResults';
 import { DeprecatedProposalAuthor } from '../DeprecatedAuthor';
@@ -50,6 +52,11 @@ export const ProposalCardWithQuestion: React.FC<Props> = ({
     proposal.slug
   );
   const canVote = isInProgress(proposal.question);
+  const [showOriginal, setShowOriginal] = useState<boolean>(false);
+  const { proposalContent, proposalLanguage } = getProposalContent(
+    showOriginal,
+    proposal
+  );
 
   return (
     <ProposalCardStyle
@@ -65,12 +72,15 @@ export const ProposalCardWithQuestion: React.FC<Props> = ({
           <ScreenReaderItemStyle>
             <>{i18n.t('proposal_card.content')}</>
           </ScreenReaderItemStyle>
-          <ProposalLinkElementStyle
-            to={proposalLink}
-            lang={proposal.question.returnedLanguage}
-          >
-            {proposal.content}
+          <ProposalLinkElementStyle to={proposalLink} lang={proposalLanguage}>
+            {proposalContent}
           </ProposalLinkElementStyle>
+          {!!proposal.translatedLanguage && (
+            <ShowTranslation
+              showOriginal={showOriginal}
+              onClickAction={() => setShowOriginal(!showOriginal)}
+            />
+          )}
           {canVote ? (
             <Vote
               proposal={proposal}

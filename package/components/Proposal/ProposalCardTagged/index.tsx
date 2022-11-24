@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { ProposalType } from '@make.org/types';
 import { getProposalLink } from '@make.org/utils/helpers/url';
 import {
@@ -11,6 +11,8 @@ import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElemen
 import i18n from 'i18next';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import { useAppContext } from '@make.org/store';
+import { getProposalContent } from '@make.org/utils/helpers/proposal';
+import { ShowTranslation } from '../ShowTranslationElement';
 import { AuthorWrapperStyle } from '../DeprecatedAuthor/Styled';
 import { DetailledVoteResults } from '../DetailledVoteResults';
 import { OrganisationsVote } from '../../Vote/Organisation';
@@ -38,6 +40,11 @@ export const ProposalCardTagged: FC<Props> = ({ proposal, position, size }) => {
     proposal.slug
   );
   const canVote = isInProgress(proposal.question);
+  const [showOriginal, setShowOriginal] = useState<boolean>(false);
+  const { proposalContent, proposalLanguage } = getProposalContent(
+    showOriginal,
+    proposal
+  );
 
   return (
     <ProposalCardStyle aria-posinset={position} aria-setsize={size}>
@@ -56,10 +63,16 @@ export const ProposalCardTagged: FC<Props> = ({ proposal, position, size }) => {
           <ProposalLinkElementStyle
             id={`card_tagged_proposal_content_${position}`}
             to={proposalLink}
-            lang={proposal.question.returnedLanguage}
+            lang={proposalLanguage}
           >
-            {proposal.content}
+            {proposalContent}
           </ProposalLinkElementStyle>
+          {!!proposal.translatedLanguage && (
+            <ShowTranslation
+              showOriginal={showOriginal}
+              onClickAction={() => setShowOriginal(!showOriginal)}
+            />
+          )}
           {canVote ? (
             <Vote
               proposal={proposal}

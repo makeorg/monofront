@@ -156,3 +156,32 @@ export const removeDuplicatedAndVotedProposals =
 
     return accumulator;
   };
+
+/**
+ * Rendering proposal content and language
+ * @param {showOriginal} boolean
+ * @param {proposal} ProposalType
+ *
+ * @return {{ proposalContent: string; proposalLanguage: string;}}
+ */
+export const getProposalContent = (
+  showOriginal: boolean,
+  proposal?: ProposalType | null
+): {
+  proposalContent?: string;
+  proposalLanguage?: string;
+} => {
+  const isTranslated = !!proposal?.translatedLanguage && !showOriginal;
+
+  const proposalContent = isTranslated
+    ? proposal?.translatedContent
+    : proposal?.content;
+  const proposalLanguage = isTranslated
+    ? proposal?.translatedLanguage
+    : proposal?.contentLanguage;
+
+  return {
+    proposalContent,
+    proposalLanguage,
+  };
+};

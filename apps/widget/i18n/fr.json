@@ -293,6 +293,8 @@
     "next": "Proposition suivante",
     "validate": "Valider",
     "content": "Contenu de la proposition : ",
+    "original": "Voir l'original",
+    "translation": "Voir la traduction",
     "number": "Carte numéro {{current}} sur {{total}}",
     "posted_label": "Postée dans ",
     "author": {
