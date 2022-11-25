@@ -1298,7 +1298,8 @@
   "languages": {
     "fr": "Français",
     "en": "English",
-    "de": "Deutsch"
+    "de": "Deutsch",
+    "uk": "Українська"
   },
   "demographics_card": {
     "disclaimer": "Deine Angaben sind anonym und ermöglichen es, die Ergebnisse möglichst repräsentativ zu gestalten.",

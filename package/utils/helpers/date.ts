@@ -3,6 +3,7 @@ import formatDate from 'date-fns/format';
 import fr from 'date-fns/locale/fr';
 import enGB from 'date-fns/locale/en-GB';
 import de from 'date-fns/locale/de';
+import uk from 'date-fns/locale/uk';
 import { HomeQuestionType, QuestionTimelineType } from '@make.org/types';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 import { LocaleType } from '@make.org/types/enums';
@@ -11,6 +12,7 @@ const locales: { [key: string]: Locale } = {
   [LocaleType.fr]: fr,
   [LocaleType.en]: enGB,
   [LocaleType.de]: de,
+  [LocaleType.uk]: uk,
 };
 
 export const getDateOfBirthFromAge = (age: string | number = ''): string => {

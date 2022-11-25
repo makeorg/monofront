@@ -1307,7 +1307,8 @@
   "languages": {
     "fr": "Français",
     "en": "English",
-    "de": "Deutsch"
+    "de": "Deutsch",
+    "uk": "Українська"
   },
   "language_switch": {
     "country_title": "Votre pays",

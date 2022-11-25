@@ -1279,7 +1279,8 @@
   "languages": {
     "fr": "Français",
     "en": "English",
-    "de": "Deutsch"
+    "de": "Deutsch",
+    "uk": "Українська"
   },
   "sequence_zone": {
     "popular_title": "Popular solutions",
