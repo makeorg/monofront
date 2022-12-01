@@ -19,6 +19,11 @@ export const HeroPictures: FC = () => {
     HeroSmallDevices = `${imageCommonPath}/homepage_mobile_de.png`;
   }
 
+  if (country === 'UA') {
+    HeroDesktop = `${imageCommonPath}/hero-desktop-ua.png`;
+    HeroSmallDevices = `${imageCommonPath}/hero-phone-ua.png`;
+  }
+
   let HeroPictureWidth = 335;
   let HeroPictureHeight = 202;
 
