@@ -26,7 +26,8 @@
     "**/apimock/db/deprecatedHomePageQuestion.json",
     "**/apimock/db/deprecatedQuestion.json",
     "**/apimock/db/deprecatedViews.json",
-    "**/docs"
+    "**/docs",
+    "**/apps/front/client/pages/Static/A11y/UA.tsx"
   ],
   "absolute": true,
   "output": "./reports",
