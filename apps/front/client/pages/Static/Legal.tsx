@@ -61,7 +61,7 @@ export const LegalPage: FC = () => {
         </StaticParagraphStyle>
         <StaticParagraphStyle>
           {i18n.t('legal.director')}
-          Axel Dauchez
+          Аксель Дошез (Axel Dauchez)
         </StaticParagraphStyle>
         <StaticParagraphStyle>
           {i18n.t('legal.host')}
