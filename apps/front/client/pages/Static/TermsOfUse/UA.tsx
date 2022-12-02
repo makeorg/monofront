@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import {
-  CONTACT_EMAIL,
   GTU_DATE,
   MAKE_ADDRESS,
   MAKE_CAPITAL,
@@ -14,14 +13,13 @@ import {
   RedHTMLLinkElementStyle,
   RedLinkStyle,
 } from '@make.org/ui/elements/LinkElements';
+import { getContactMailByCountry } from '@make.org/utils/helpers/countries';
 import {
   getDataPageLink,
   getModerationLinkByLanguage,
 } from '@make.org/utils/helpers/url';
 import i18n from 'i18next';
-
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-
 import {
   StaticPageWrapperStyle,
   StaticSecondLevelTitleStyle,
@@ -41,7 +39,11 @@ import {
 
 export const TermsOfUseUK: FC = () => {
   const { state } = useAppContext();
-  const { country, language } = state.appConfig;
+  const { country, language, countriesWithConsultations } = state.appConfig;
+  const contactMailByCountry = getContactMailByCountry(
+    country,
+    countriesWithConsultations
+  );
 
   return (
     <>
@@ -248,8 +250,10 @@ export const TermsOfUseUK: FC = () => {
                   Зареєстрований користувач зобов’язується актуалізувати цю
                   інформацію у своєму Особистому кабінеті, звернувшись до
                   Make.org за електронною адресою&nbsp;
-                  <RedHTMLLinkElementStyle href={`mailto:${CONTACT_EMAIL}`}>
-                    {`${CONTACT_EMAIL}`}
+                  <RedHTMLLinkElementStyle
+                    href={`mailto:${contactMailByCountry}`}
+                  >
+                    {`${contactMailByCountry}`}
                   </RedHTMLLinkElementStyle>
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
@@ -415,8 +419,10 @@ export const TermsOfUseUK: FC = () => {
                   опубліковану ним Громадську пропозицію, він повинен надіслати
                   свій запит електронною поштою за наступною адресою Make.org:
                   &nbsp;
-                  <RedHTMLLinkElementStyle href={`mailto:${CONTACT_EMAIL}`}>
-                    {`${CONTACT_EMAIL}`}
+                  <RedHTMLLinkElementStyle
+                    href={`mailto:${contactMailByCountry}`}
+                  >
+                    {`${contactMailByCountry}`}
                   </RedHTMLLinkElementStyle>
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
@@ -1058,8 +1064,8 @@ export const TermsOfUseUK: FC = () => {
               Зареєстрований Користувач може в будь-який момент відмовитися від
               реєстрації на Сервісі, надіславши відповідний запит на адресу
               Make.org електронною поштою за адресою&nbsp;
-              <RedHTMLLinkElementStyle href={`mailto:${CONTACT_EMAIL}`}>
-                {`${CONTACT_EMAIL}`}
+              <RedHTMLLinkElementStyle href={`mailto:${contactMailByCountry}`}>
+                {`${contactMailByCountry}`}
               </RedHTMLLinkElementStyle>
             </StaticParagraphStyle>
             <StaticParagraphStyle>

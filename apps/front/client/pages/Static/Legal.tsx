@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import i18n from 'i18next';
 import {
-  CONTACT_EMAIL,
   HOST_ADDRESS,
   MAKE_ADDRESS,
   MAKE_CAPITAL,
@@ -9,8 +8,8 @@ import {
   HOST_PHONE_NUMBER,
   CNIL_NUMBER,
   MAKE_PHONE_NUMBER,
-  CONTACT_EMAIL_DE,
 } from '@make.org/utils/constants/config';
+import { getContactMailByCountry } from '@make.org/utils/helpers/countries';
 import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
 import { MetaTags } from '@make.org/components/MetaTags';
 import { useAppContext } from '@make.org/store';
@@ -23,9 +22,11 @@ import {
 
 export const LegalPage: FC = () => {
   const { state } = useAppContext();
-  const { country } = state.appConfig;
-  const isDE = country === 'DE';
-  const EMAIL = isDE ? CONTACT_EMAIL_DE : CONTACT_EMAIL;
+  const { country, countriesWithConsultations } = state.appConfig;
+  const contactMailByCountry = getContactMailByCountry(
+    country,
+    countriesWithConsultations
+  );
 
   return (
     <>
@@ -47,8 +48,11 @@ export const LegalPage: FC = () => {
         <StaticParagraphStyle>
           {i18n.t('legal.mail')}
           &nbsp;
-          <RedHTMLLinkElementStyle as="a" href={`mailto:${EMAIL}`}>
-            {`${EMAIL}`}
+          <RedHTMLLinkElementStyle
+            as="a"
+            href={`mailto:${contactMailByCountry}`}
+          >
+            {`${contactMailByCountry}`}
           </RedHTMLLinkElementStyle>
         </StaticParagraphStyle>
         <StaticParagraphStyle>

@@ -38,6 +38,22 @@ export const getCountryWithConsultations = (
   return countryHasConsultations;
 };
 
+export const getContactMailByCountry = (
+  country: string,
+  countriesWithConsultations: string[]
+): string => {
+  const countryHasConsultations = countriesWithConsultations.find(
+    countryWithConsultations => countryWithConsultations === country
+  );
+
+  if (!countryHasConsultations) {
+    return `contact@make.org`;
+  }
+
+  const isoCode = country.toLocaleLowerCase();
+  return `contact-${isoCode}@make.org`;
+};
+
 export const getCountryDPA = (
   country: string
 ): { name: string; link: string } => {

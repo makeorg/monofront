@@ -2,10 +2,7 @@ import { MetaTags } from '@make.org/components/MetaTags';
 import React, { FC } from 'react';
 import i18n from 'i18next';
 import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
-import {
-  CONTACT_EMAIL,
-  CONTACT_EMAIL_DE,
-} from '@make.org/utils/constants/config';
+import { getContactMailByCountry } from '@make.org/utils/helpers/countries';
 import { useAppContext } from '@make.org/store';
 import {
   StaticPageWrapperStyle,
@@ -15,9 +12,11 @@ import {
 
 export const Contact: FC = () => {
   const { state } = useAppContext();
-  const { country } = state.appConfig;
-  const isDE = country === 'DE';
-  const EMAIL = isDE ? CONTACT_EMAIL_DE : CONTACT_EMAIL;
+  const { country, countriesWithConsultations } = state.appConfig;
+  const contactMailByCountry = getContactMailByCountry(
+    country,
+    countriesWithConsultations
+  );
 
   return (
     <>
@@ -31,8 +30,8 @@ export const Contact: FC = () => {
         </StaticSecondLevelTitleStyle>
         <StaticParagraphStyle>
           {i18n.t('contact.paragraph')}{' '}
-          <RedHTMLLinkElementStyle href={`mailto:${EMAIL}`}>
-            {`${EMAIL}`}
+          <RedHTMLLinkElementStyle href={`mailto:${contactMailByCountry}`}>
+            {`${contactMailByCountry}`}
           </RedHTMLLinkElementStyle>
         </StaticParagraphStyle>
       </StaticPageWrapperStyle>

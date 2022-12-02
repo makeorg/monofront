@@ -20,8 +20,6 @@ export const GTU_DATE = '2021/10/18';
 export const A11Y_DATE = '2020/10/4';
 
 /** MAKE Informations */
-export const CONTACT_EMAIL = 'contact@make.org';
-export const CONTACT_EMAIL_DE = 'contact-de@make.org';
 export const MAKE_PHONE_NUMBER = '(+33)1 84 25 15 74';
 export const MAKE_ADDRESS = '13-15 Rue de la Bûcherie 75005 Paris';
 export const MAKE_CAPITAL = '1.056.017,00 €';

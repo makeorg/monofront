@@ -40,10 +40,7 @@ import {
 } from '@make.org/store/actions/pendingProposal';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
-import {
-  CONTACT_EMAIL,
-  CONTACT_EMAIL_DE,
-} from '@make.org/utils/constants/config';
+import { getContactMailByCountry } from '@make.org/utils/helpers/countries';
 import { isSequencePage as getIsSequencePage } from '@make.org/utils/routes';
 import { AvatarImageStyle } from '@make.org/ui/components/Avatar/style';
 import { SvgEmptyAvatar } from '@make.org/ui/Svg/elements';
@@ -73,11 +70,13 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
   const history = useHistory();
   const location = useLocation();
   const pendingProposal = state.pendingProposal.pendingProposal || '';
-  const { source, country } = state.appConfig;
+  const { source, country, countriesWithConsultations } = state.appConfig;
   const isSequencePage = getIsSequencePage(location.pathname);
   const question: QuestionType = selectCurrentQuestion(state);
-  const isDE = country === 'DE';
-  const EMAIL = isDE ? CONTACT_EMAIL_DE : CONTACT_EMAIL;
+  const contactMailByCountry = getContactMailByCountry(
+    country,
+    countriesWithConsultations
+  );
   const isWidget = source === 'widget';
   const avatarSize = 36;
   const handleCloseButton = () => {
@@ -150,8 +149,10 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
             <ProposalTooltip />
             <ProposalSuccessContactStyle>
               <>{i18n.t('proposal_submit.success.question')}</>
-              <ProposalSuccessContactLinkStyle href={`mailto:${EMAIL}`}>
-                {EMAIL}
+              <ProposalSuccessContactLinkStyle
+                href={`mailto:${contactMailByCountry}`}
+              >
+                {contactMailByCountry}
               </ProposalSuccessContactLinkStyle>
             </ProposalSuccessContactStyle>
           </ProposalSuccessCardStyle>

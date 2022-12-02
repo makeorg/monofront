@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import {
-  CONTACT_EMAIL,
   PRIVACY_POLICY_DATE,
   MAKE_ADDRESS,
   MAKE_RCS,
@@ -14,7 +13,10 @@ import {
   RedLinkStyle,
 } from '@make.org/ui/elements/LinkElements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import { getCountryDPA } from '@make.org/utils/helpers/countries';
+import {
+  getCountryDPA,
+  getContactMailByCountry,
+} from '@make.org/utils/helpers/countries';
 import { getCookiesPageLink } from '@make.org/utils/helpers/url';
 import i18n from 'i18next';
 import {
@@ -34,7 +36,11 @@ import {
 
 export const DataFR: FC = () => {
   const { state } = useAppContext();
-  const { country } = state.appConfig;
+  const { country, countriesWithConsultations } = state.appConfig;
+  const contactMailByCountry = getContactMailByCountry(
+    country,
+    countriesWithConsultations
+  );
 
   return (
     <>
@@ -287,8 +293,11 @@ export const DataFR: FC = () => {
               L’exercice par les utilisateurs des droits ci-dessus rappelés peut
               être fait par tout moyen, et notamment par l’envoi d’un courriel à
               l’adresse :{' '}
-              <RedHTMLLinkElementStyle as="a" href={`mailto:${CONTACT_EMAIL}`}>
-                {`${CONTACT_EMAIL}`}
+              <RedHTMLLinkElementStyle
+                as="a"
+                href={`mailto:${contactMailByCountry}`}
+              >
+                {`${contactMailByCountry}`}
               </RedHTMLLinkElementStyle>
               . Si les utilisateurs estiment que leurs droits sur les données ne
               sont pas respectés par Make.org, ils peuvent en tout état de cause
@@ -343,8 +352,8 @@ export const DataFR: FC = () => {
             <StaticParagraphStyle>
               Le délégué à la protection des données désigné en application de
               l’article 37 du RGPD est Fieldfisher Belgium,{' '}
-              <RedHTMLLinkElementStyle href={`mailto:${CONTACT_EMAIL}`}>
-                {`${CONTACT_EMAIL}`}
+              <RedHTMLLinkElementStyle href={`mailto:${contactMailByCountry}`}>
+                {`${contactMailByCountry}`}
               </RedHTMLLinkElementStyle>
               , l&apos;Arsenal, Bd Louis Schmidt 29 box 15, 1040 Bruxelles,
               Belgique.

@@ -5,15 +5,12 @@ import { DateHelper, isInProgress } from '@make.org/utils/helpers/date';
 import i18n from 'i18next';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { isGreatCause } from '@make.org/utils/helpers/question';
-import {
-  CONTACT_EMAIL,
-  CONTACT_EMAIL_DE,
-} from '@make.org/utils/constants/config';
 import { QuestionType } from '@make.org/types';
 import { isResultsPage } from '@make.org/utils/routes';
 import { DATE, FEATURE_FLIPPING } from '@make.org/types/enums';
 
 import { checkIsFeatureActivated } from '@make.org/utils/helpers/featureFlipping';
+import { getContactMailByCountry } from '@make.org/utils/helpers/countries';
 import {
   buildTimeline,
   getStepTitle,
@@ -48,9 +45,11 @@ const TimelineItem: FC<Props> = ({
   isCurrent = false,
 }) => {
   const { state } = useAppContext();
-  const { country } = state.appConfig;
-  const isDE = country === 'DE';
-  const EMAIL = isDE ? CONTACT_EMAIL_DE : CONTACT_EMAIL;
+  const { country, countriesWithConsultations } = state.appConfig;
+  const contactMailByCountry = getContactMailByCountry(
+    country,
+    countriesWithConsultations
+  );
 
   return (
     <TimelineItemWrapperStyle>
@@ -61,7 +60,7 @@ const TimelineItem: FC<Props> = ({
       <TimelineItemDateStyle>{dateText}</TimelineItemDateStyle>
       <TimelineItemTextStyle>{description}</TimelineItemTextStyle>
       {withLink && (
-        <TimelineWorkshopLinkStyle href={`mailto:${EMAIL}`}>
+        <TimelineWorkshopLinkStyle href={`mailto:${contactMailByCountry}`}>
           {i18n.t('consultation.timeline.workshop_link')}
         </TimelineWorkshopLinkStyle>
       )}

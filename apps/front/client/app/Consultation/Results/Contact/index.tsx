@@ -1,12 +1,9 @@
 import React, { FC } from 'react';
 import i18n from 'i18next';
-import {
-  CONTACT_EMAIL,
-  CONTACT_EMAIL_DE,
-} from '@make.org/utils/constants/config';
 import { QuestionType } from '@make.org/types';
 import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
 import { useAppContext } from '@make.org/store';
+import { getContactMailByCountry } from '@make.org/utils/helpers/countries';
 import { ResultCardSidebar } from '../ResultCardSidebar';
 
 type Props = {
@@ -14,11 +11,13 @@ type Props = {
 };
 export const ResultsContact: FC<Props> = ({ question }) => {
   const { state } = useAppContext();
-  const { country } = state.appConfig;
-  const isDE = country === 'DE';
-  const EMAIL = isDE ? CONTACT_EMAIL_DE : CONTACT_EMAIL;
+  const { country, countriesWithConsultations } = state.appConfig;
+  const contactMailByCountry = getContactMailByCountry(
+    country,
+    countriesWithConsultations
+  );
 
-  const mailToHref = `mailto:${EMAIL}?subject=${i18n.t(
+  const mailToHref = `mailto:${contactMailByCountry}?subject=${i18n.t(
     'consultation.results.download.email_object'
   )} - ${question.question}`;
 
@@ -28,7 +27,7 @@ export const ResultsContact: FC<Props> = ({ question }) => {
       description={i18n.t('consultation.results.download.contact')}
     >
       <RedHTMLLinkElementStyle href={mailToHref}>
-        {EMAIL}
+        {contactMailByCountry}
       </RedHTMLLinkElementStyle>
     </ResultCardSidebar>
   );

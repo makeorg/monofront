@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import {
-  CONTACT_EMAIL_DE,
   GTU_DATE,
   MAKE_ADDRESS,
   MAKE_CAPITAL,
@@ -14,13 +13,13 @@ import {
   RedHTMLLinkElementStyle,
   RedLinkStyle,
 } from '@make.org/ui/elements/LinkElements';
+import { getContactMailByCountry } from '@make.org/utils/helpers/countries';
 import {
   getDataPageLink,
   getModerationLinkByLanguage,
 } from '@make.org/utils/helpers/url';
 import i18n from 'i18next';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-
 import {
   StaticPageWrapperStyle,
   StaticSecondLevelTitleStyle,
@@ -40,7 +39,11 @@ import {
 
 export const TermsOfUseDE: FC = () => {
   const { state } = useAppContext();
-  const { country, language } = state.appConfig;
+  const { country, language, countriesWithConsultations } = state.appConfig;
+  const contactMailByCountry = getContactMailByCountry(
+    country,
+    countriesWithConsultations
+  );
 
   return (
     <>
@@ -247,8 +250,10 @@ export const TermsOfUseDE: FC = () => {
                   Der Nutzer verpflichtet sich, diese Informationen in seinem
                   Persönlichen Bereich zu aktualisieren, indem er Make.org per
                   E-Mail an{' '}
-                  <RedHTMLLinkElementStyle href={`mailto:${CONTACT_EMAIL_DE}`}>
-                    {`${CONTACT_EMAIL_DE}`}
+                  <RedHTMLLinkElementStyle
+                    href={`mailto:${contactMailByCountry}`}
+                  >
+                    {`${contactMailByCountry}`}
                   </RedHTMLLinkElementStyle>{' '}
                   kontaktiert.
                 </StaticParagraphStyle>
@@ -416,8 +421,10 @@ export const TermsOfUseDE: FC = () => {
                   veröffentlichten Bürgervorschlag löschen lassen möchte, sollte
                   er eine Anfrage per E-Mail an Make.org an die folgende Adresse
                   senden:{' '}
-                  <RedHTMLLinkElementStyle href={`mailto:${CONTACT_EMAIL_DE}`}>
-                    {`${CONTACT_EMAIL_DE}`}
+                  <RedHTMLLinkElementStyle
+                    href={`mailto:${contactMailByCountry}`}
+                  >
+                    {`${contactMailByCountry}`}
                   </RedHTMLLinkElementStyle>
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
@@ -1096,8 +1103,8 @@ export const TermsOfUseDE: FC = () => {
               Der registrierte Benutzer kann sich jederzeit von den Diensten
               abmelden, indem er eine entsprechende Anfrage an Make.org per
               E-Mail an{' '}
-              <RedHTMLLinkElementStyle href={`mailto:${CONTACT_EMAIL_DE}`}>
-                {`${CONTACT_EMAIL_DE}`}
+              <RedHTMLLinkElementStyle href={`mailto:${contactMailByCountry}`}>
+                {`${contactMailByCountry}`}
               </RedHTMLLinkElementStyle>
             </StaticParagraphStyle>
             <StaticParagraphStyle>
