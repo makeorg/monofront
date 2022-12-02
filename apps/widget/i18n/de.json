@@ -46,13 +46,11 @@
     },
     "top-ideas": {
       "title": "Die besten Ideen aus der Konsultation „{{question}}“ – Make.org",
-      "description": "Entdecke die besten Ideen aus der Konsultation „{{question}}“",
-      "picture": "https://assets.make.org/assets/metas/meta-top-ideas.jpg"
+      "description": "Entdecke die besten Ideen aus der Konsultation „{{question}}“"
     },
     "top-idea-details": {
       "title": "Die Einzelheiten zur Idee „{{idea}}“ aus der Konsultation „{{question}}“ – Make.org",
-      "description": "Entdecke alle Vorschläge zur Idee „{{idea}}“ aus der Konsultation „{{question}}“",
-      "picture": "https://assets.make.org/assets/metas/meta-top-ideas.jpg"
+      "description": "Entdecke alle Vorschläge zur Idee „{{idea}}“ aus der Konsultation „{{question}}“"
     },
     "search": {
       "main_results": "Suche – Ergebnisse für „{{term}}“ – Make.org",

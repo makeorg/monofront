@@ -38,13 +38,11 @@
     },
     "top-ideas": {
       "title": "Top ideas on the consultation '{{question}}' - Make.org",
-      "description": "Learn more about the top ideas on the consultation'{{question}}'",
-      "picture": "https://assets.make.org/assets/metas/meta-top-ideas.jpg"
+      "description": "Learn more about the top ideas on the consultation'{{question}}'"
     },
     "top-idea-details": {
       "title": "Details of the idea '{{idea}}' from the consultation '{{question}}' - Make.org",
-      "description": "Learn more about the solutions related to this idea.",
-      "picture": "https://assets.make.org/assets/metas/meta-top-ideas.jpg"
+      "description": "Learn more about the solutions related to this idea."
     },
     "search": {
       "main_results": "Search - Results for '{{term}}' - Make.org",

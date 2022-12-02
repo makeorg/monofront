@@ -58,7 +58,6 @@ const TopIdeasPage: FC = () => {
         description={i18n.t('meta.top-ideas.description', {
           question: question.wording.question,
         })}
-        picture={i18n.t('meta.top-ideas.picture')}
       />
       <TopIdeasSkipLinks />
       <MobileDescriptionImage question={question} />

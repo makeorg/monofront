@@ -3,7 +3,7 @@
     "home": {
       "title": "Діяти разом із Make.org — Make.org",
       "description": "Пропонувати, голосувати, діяти — знайдемо разом шляхи розв’язання головних питань сьогодення.",
-      "picture": "https://assets.make.org/assets/metas/default_meta-fr.png"
+      "picture": "https://assets.make.org/assets/metas/default-meta-uk.png"
     },
     "organisation": {
       "proposals": {
@@ -47,13 +47,11 @@
     },
     "top-ideas": {
       "title": "Найпопулярніші ідеї для публічної консультації '{{question}}' — Make.org",
-      "description": "Дізнайтеся найпопулярніші ідеї для публічної консультації '{{question}}’",
-      "picture": "https://assets.make.org/assets/metas/meta-top-ideas.jpg"
+      "description": "Дізнайтеся найпопулярніші ідеї для публічної консультації '{{question}}’"
     },
     "top-idea-details": {
       "title": "Детальний опис ідеї '{{idea}}’ публічної консультації '{{question}}’ — Make.org",
-      "description": "Ознайомтеся з усіма пропозиціями до ідеї {{idea}} з публічної консультації '{{question}}’",
-      "picture": "https://assets.make.org/assets/metas/meta-top-ideas.jpg"
+      "description": "Ознайомтеся з усіма пропозиціями до ідеї {{idea}} з публічної консультації '{{question}}’"
     },
     "search": {
       "main_results": "Пошук — Результати для «{{term}}» — Make.org",
