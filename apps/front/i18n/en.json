@@ -574,14 +574,6 @@
       },
       "card_title": "We should support quality solutions."
     },
-    "following": {
-      "title": "My following list",
-      "description": {
-        "introduction": "You don't follow any organization at the moment.",
-        "explanation_step_one": "Go on the profile page of an organization.",
-        "explanation_step_two": "Click on \" Follow \" to subscribe to receive news from this organisation in your feed."
-      }
-    },
     "common": {
       "log_out": "Log out",
       "age": "{{age}}",

@@ -637,14 +637,6 @@
       },
       "card_title": "Gute Vorschläge müssen unterstützt werden."
     },
-    "following": {
-      "title": "Profile, denen ich folge",
-      "description": {
-        "introduction": "Du folgst derzeit keiner Organisation auf Make.org.",
-        "explanation_step_one": "Rufe das Profil einer Organisation auf.",
-        "explanation_step_two": "Klicke auf „Folgen“, um den Newsfeed dieser Organisation zu abonnieren."
-      }
-    },
     "common": {
       "infos": "Meine persönlichen Daten",
       "log_out": "Ich melde mich ab",

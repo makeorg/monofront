@@ -48,7 +48,9 @@ export const HighlightsBanner: FC<Props> = ({ highlights }) => {
           </FiguresStyle>
           <> </>
           <SubtitleFiguresStyle>
-            {i18n.t('homepage.highlights.participants.subtitle')}
+            {i18n.t('homepage.highlights.participants.subtitle', {
+              count: participantsCount,
+            })}
           </SubtitleFiguresStyle>
           <FigureSeparationLineStyle />
         </HighlightFigureContainerStyle>
@@ -60,7 +62,9 @@ export const HighlightsBanner: FC<Props> = ({ highlights }) => {
           </FiguresStyle>
           <> </>
           <SubtitleFiguresStyle>
-            {i18n.t('homepage.highlights.proposals.subtitle')}
+            {i18n.t('homepage.highlights.proposals.subtitle', {
+              count: proposalsCount,
+            })}
           </SubtitleFiguresStyle>
           <FigureSeparationLineStyle />
         </HighlightFigureContainerStyle>
@@ -72,7 +76,9 @@ export const HighlightsBanner: FC<Props> = ({ highlights }) => {
           </FiguresStyle>
           <> </>
           <SubtitleFiguresStyle>
-            {i18n.t('homepage.highlights.partners.subtitle')}
+            {i18n.t('homepage.highlights.partners.subtitle', {
+              count: partnersCount,
+            })}
           </SubtitleFiguresStyle>
           <FigureSeparationLineStyle />
         </HighlightFigureContainerStyle>

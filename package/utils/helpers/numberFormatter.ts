@@ -16,7 +16,7 @@ export const formatMillionToText = (
     number /= oneMillion;
 
     return `${number.toFixed(1)} ${i18n.t('common.million', {
-      count: number,
+      count,
     })}`;
   }
 

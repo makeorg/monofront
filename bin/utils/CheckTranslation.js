@@ -18,6 +18,16 @@ const allKeys = (obj, current = '') => {
   return all.flat();
 };
 
+const bypassPluralKeys = (key) => {
+  const pluralKeysSuffix = /_plural|_one|_few|_many|_other/gm;
+
+  if(key.match(pluralKeysSuffix)) {
+    return;
+  }
+  
+  return key;
+}
+
 const decomposeKey = key => {
   const decomposedKeys = [];
   key.split('.').reduce(accumulator => {
@@ -35,7 +45,7 @@ const getExtraKeys = (keysToCheck, referenceKeys) => {
   const allKeysToCheck = new Set(keysToCheck.map(decomposeKey).flat());
 
   allKeysToCheck.forEach(key => {
-    if (!allReferenceKeys.has(key)) {
+    if (!allReferenceKeys.has(key) && bypassPluralKeys(key)) {
       keysToRemove.add(key);
     }
   });
@@ -46,7 +56,7 @@ const getExtraKeys = (keysToCheck, referenceKeys) => {
 const getMissingKeys = (keysToCheck, referenceKeys) => {
   const keysToAdd = new Set();
   referenceKeys.forEach(key => {
-    if (!keysToCheck.includes(key)) {
+    if (!keysToCheck.includes(key) && bypassPluralKeys(key)) {
       keysToAdd.add(key);
     }
   });

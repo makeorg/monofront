@@ -627,14 +627,6 @@
       },
       "card_title": "Il faut soutenir des propositions de qualité."
     },
-    "following": {
-      "title": "Mes profils suivis",
-      "description": {
-        "introduction": "Vous ne suiviez aucun profil d'organisation présente sur Make.org pour le moment.",
-        "explanation_step_one": "Rendez-vous sur le profil d'une organisation.",
-        "explanation_step_two": "Cliquez sur \" Suivre \" pour vous abonner au fil d'actualité de cette organisation."
-      }
-    },
     "common": {
       "infos": "Mes informations personnelles",
       "log_out": "Je me déconnecte",
