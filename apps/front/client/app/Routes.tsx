@@ -59,6 +59,7 @@ import {
   ROUTE_STATIC_DATA_UK,
   ROUTE_STATIC_CONTACT_UK,
   ROUTE_STATIC_A11Y_UK,
+  ROUTE_STATIC_COOKIES_UK,
 } from '@make.org/utils/routes';
 import Cookies from 'universal-cookie';
 import { StateUserCookiesPreferences } from '@make.org/types';
@@ -259,6 +260,7 @@ export const Routes: FC = () => {
       <Route path={ROUTE_STATIC_DATA_UK} component={Data} />
       <Route path={ROUTE_STATIC_CONTACT_UK} component={Contact} />
       <Route path={ROUTE_STATIC_A11Y_UK} component={Accessibility} />
+      <Route path={ROUTE_STATIC_COOKIES_UK} component={CookiesPage} />
 
       <Route path={ROUTE_STATIC_NOTFOUND} component={NotFoundPage} />
       <Redirect exact path="/" to={getHomeLink(country || DEFAULT_COUNTRY)} />
