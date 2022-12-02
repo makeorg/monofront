@@ -3,6 +3,7 @@ import { useAppContext } from '@make.org/store';
 import { TermsOfUseFR } from './FR';
 import { TermsOfUseEN } from './EN';
 import { TermsOfUseDE } from './DE';
+import { TermsOfUseUK } from './UA';
 
 export const TermsOfUse: FC = () => {
   const { state } = useAppContext();
@@ -13,6 +14,8 @@ export const TermsOfUse: FC = () => {
       return <TermsOfUseFR />;
     case 'de':
       return <TermsOfUseDE />;
+    case 'uk':
+      return <TermsOfUseUK />;
     default:
       return <TermsOfUseEN />;
   }

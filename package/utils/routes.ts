@@ -68,6 +68,13 @@ export const ROUTE_STATIC_DATA_DE = `${ROUTE_COUNTRY}/datenschutzerklärung`;
 export const ROUTE_STATIC_A11Y_DE = `${ROUTE_COUNTRY}/barrierefreiheit`;
 export const ROUTE_STATIC_CONTACT_DE = `${ROUTE_COUNTRY}/kontakt`;
 
+// routes for uk language
+export const ROUTE_STATIC_LEGAL_UK = ROUTE_STATIC_LEGAL_EN;
+export const ROUTE_STATIC_GTU_UK = ROUTE_STATIC_GTU_EN;
+export const ROUTE_STATIC_DATA_UK = ROUTE_STATIC_DATA_EN;
+export const ROUTE_STATIC_A11Y_UK = `${ROUTE_COUNTRY}/accessibility`;
+export const ROUTE_STATIC_CONTACT_UK = `${ROUTE_COUNTRY}/contact`;
+
 // webflow routes
 export const ROUTE_WHOAREWE = '/about-us';
 export const ROUTE_PARTNERSHIP = '/collaborate';

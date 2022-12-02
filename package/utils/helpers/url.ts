@@ -39,6 +39,11 @@ import {
   ROUTE_STATIC_LEGAL_DE,
   ROUTE_STATIC_CONTACT_DE,
   ROUTE_STATIC_A11Y_DE,
+  ROUTE_STATIC_CONTACT_UK,
+  ROUTE_STATIC_DATA_UK,
+  ROUTE_STATIC_GTU_UK,
+  ROUTE_STATIC_LEGAL_UK,
+  ROUTE_STATIC_A11Y_UK,
 } from '../routes';
 
 declare global {
@@ -57,13 +62,16 @@ export const getMultiLangStaticLink = (
   country: string,
   FRLink: string,
   ENLink: string,
-  DELink: string
+  DELink: string,
+  UALink: string
 ): string => {
   switch (country) {
     case 'FR':
       return generatePath(FRLink, { country });
     case 'DE':
       return generatePath(DELink, { country });
+    case 'UA':
+      return generatePath(UALink, { country });
     default:
       return generatePath(ENLink, { country });
   }
@@ -367,14 +375,15 @@ export const getContactPageLink = (country: string): string =>
     ROUTE_STATIC_CONTACT_FR,
     // same uri as french version
     ROUTE_STATIC_CONTACT_FR,
-    ROUTE_STATIC_CONTACT_DE
+    ROUTE_STATIC_CONTACT_DE,
+    ROUTE_STATIC_CONTACT_UK
   );
 
 /**
  * Get the data page link
  *
  * @param  {string} country
- * @param  {string} lamguage
+ * @param  {string} language
  * @return {string}
  */
 export const getDataPageLink = (country: string): string =>
@@ -382,7 +391,8 @@ export const getDataPageLink = (country: string): string =>
     country,
     ROUTE_STATIC_DATA_FR,
     ROUTE_STATIC_DATA_EN,
-    ROUTE_STATIC_DATA_DE
+    ROUTE_STATIC_DATA_DE,
+    ROUTE_STATIC_DATA_UK
   );
 
 /**
@@ -396,7 +406,8 @@ export const getGTUPageLink = (country: string): string =>
     country,
     ROUTE_STATIC_GTU_FR,
     ROUTE_STATIC_GTU_EN,
-    ROUTE_STATIC_GTU_DE
+    ROUTE_STATIC_GTU_DE,
+    ROUTE_STATIC_GTU_UK
   );
 
 /**
@@ -410,7 +421,8 @@ export const getLegalPageLink = (country: string): string =>
     country,
     ROUTE_STATIC_LEGAL_FR,
     ROUTE_STATIC_LEGAL_EN,
-    ROUTE_STATIC_LEGAL_DE
+    ROUTE_STATIC_LEGAL_DE,
+    ROUTE_STATIC_LEGAL_UK
   );
 
 /**
@@ -425,7 +437,8 @@ export const getA11YPageLink = (country: string): string =>
     ROUTE_STATIC_A11Y_FR,
     // todo EN Translation for a11y page
     ROUTE_STATIC_A11Y_FR,
-    ROUTE_STATIC_A11Y_DE
+    ROUTE_STATIC_A11Y_DE,
+    ROUTE_STATIC_A11Y_UK
   );
 
 /**
@@ -526,6 +539,8 @@ export const getModerationLinkByLanguage = (language: string): string => {
       return URL.MODERATION_CHARTER_FR_LINK;
     case 'de':
       return URL.MODERATION_CHARTER_DE_LINK;
+    case 'uk':
+      return URL.MODERATION_CHARTER_UK_LINK;
     default:
       return URL.MODERATION_CHARTER_EN_LINK;
   }

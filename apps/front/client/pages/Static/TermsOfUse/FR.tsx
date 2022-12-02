@@ -485,16 +485,6 @@ export const TermsOfUseFR: FC = () => {
                 </StaticParagraphStyle>
                 <StaticParagraphStyle>
                   <StaticStrongStyle>
-                    Utilisation à des fins de rapport et d’études :&nbsp;
-                  </StaticStrongStyle>
-                  Les Propositions citoyennes publiées sur le Service, ainsi que
-                  les votes y afférents, pourront être sélectionnés par Make.org
-                  afin de réaliser notamment des analyses, rapports et études à
-                  des fins statistiques et de recherches ou de donner lieu à la
-                  création de projets de réformes.
-                </StaticParagraphStyle>
-                <StaticParagraphStyle>
-                  <StaticStrongStyle>
                     Publication de livres blancs :&nbsp;
                   </StaticStrongStyle>
                   Make.org pourra éditer ou coéditer des livres blancs à
@@ -1087,12 +1077,6 @@ export const TermsOfUseFR: FC = () => {
               En raison de la gratuité des Services, Make.org pourra supprimer à
               tout moment et sans préavis, pour toute raison, temporairement ou
               définitivement, la publication d’une Proposition Citoyenne.
-            </StaticParagraphStyle>
-            <StaticParagraphStyle>
-              De même, en raison de la gratuité des services, Make.org pourra à
-              tout moment et sans préavis, pour toute raison, temporairement ou
-              définitivement, procéder à la modification ou à la suppression
-              partielle ou totale des Services.
             </StaticParagraphStyle>
             <StaticParagraphStyle>
               De même, en raison de la gratuité des services, Make.org pourra à

@@ -3,6 +3,7 @@ import {
   ROUTE_STATIC_GTU_DE,
   ROUTE_STATIC_GTU_EN,
   ROUTE_STATIC_GTU_FR,
+  ROUTE_STATIC_GTU_UK,
 } from '@make.org/utils/routes';
 import * as urlHelper from './url';
 
@@ -107,23 +108,34 @@ describe('Url Helper', () => {
       'FR',
       ROUTE_STATIC_GTU_FR,
       ROUTE_STATIC_GTU_EN,
-      ROUTE_STATIC_GTU_DE
+      ROUTE_STATIC_GTU_DE,
+      ROUTE_STATIC_GTU_UK
     );
     const linkEN = urlHelper.getMultiLangStaticLink(
       'GB',
       ROUTE_STATIC_GTU_FR,
       ROUTE_STATIC_GTU_EN,
-      ROUTE_STATIC_GTU_DE
+      ROUTE_STATIC_GTU_DE,
+      ROUTE_STATIC_GTU_UK
     );
     const linkDE = urlHelper.getMultiLangStaticLink(
       'DE',
       ROUTE_STATIC_GTU_FR,
       ROUTE_STATIC_GTU_EN,
-      ROUTE_STATIC_GTU_DE
+      ROUTE_STATIC_GTU_DE,
+      ROUTE_STATIC_GTU_UK
+    );
+    const linkUA = urlHelper.getMultiLangStaticLink(
+      'UA',
+      ROUTE_STATIC_GTU_FR,
+      ROUTE_STATIC_GTU_EN,
+      ROUTE_STATIC_GTU_DE,
+      ROUTE_STATIC_GTU_UK
     );
 
     expect(linkFR).toEqual(`/FR/conditions-dutilisation`);
     expect(linkEN).toEqual(`/GB/terms-of-use`);
     expect(linkDE).toEqual(`/DE/nutzungsbedingungen`);
+    expect(linkUA).toEqual(`/UA/terms-of-use`);
   });
 });
