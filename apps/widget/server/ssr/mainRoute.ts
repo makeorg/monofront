@@ -70,9 +70,9 @@ export const mainRoute = async (
   const question = await QuestionService.getQuestion(
     formattedQuestionSlug,
     formattedCountry,
-    formattedLanguage || DEFAULT_LANGUAGE,
     questionNotFound,
-    questionUnexpectedError
+    questionUnexpectedError,
+    formattedLanguage || DEFAULT_LANGUAGE
   );
 
   const firstNotFound = () => {

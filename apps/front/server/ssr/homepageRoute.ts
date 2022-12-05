@@ -31,9 +31,9 @@ export const homepageRoute = async (
 
   const homepageData = await ViewsService.getHome(
     country,
-    language,
     notFound,
-    unexpectedError
+    unexpectedError,
+    language
   );
 
   if (!homepageData) {

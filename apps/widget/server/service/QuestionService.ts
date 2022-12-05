@@ -11,10 +11,9 @@ const clearCache = (): void => {
 const getQuestion = async (
   questionIdOrSlug: string,
   country: string,
-  language: string,
   notFound: () => void,
   unexpectedError: () => void,
-  preferedLanguage?: string
+  preferedLanguage: string
 ): Promise<QuestionType | void> => {
   const upperCountry = country.toUpperCase();
   const handleData = (data: QuestionType) => {
@@ -38,7 +37,7 @@ const getQuestion = async (
       {
         'x-make-question-id': questionIdOrSlug,
         'x-make-country': upperCountry,
-        'x-make-language': language,
+        'x-make-language': preferedLanguage,
       }
     );
     const formattedResponse = response && {

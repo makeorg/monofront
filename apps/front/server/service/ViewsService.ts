@@ -10,10 +10,9 @@ const clearCache = (): void => {
 
 const getHome = async (
   country: string,
-  language: string,
   notFound: () => void,
   unexpectedError: () => void,
-  preferedLanguage?: string
+  preferedLanguage: string
 ): Promise<void | HomeViewType> => {
   const CACHE_KEY = `HOMEPAGE_${country}`;
   const contentFromCache: HomeViewType = cache.get(CACHE_KEY);
@@ -24,7 +23,7 @@ const getHome = async (
   try {
     const response = await ViewsApiService.getHome(country, preferedLanguage, {
       'x-make-country': country,
-      'x-make-language': language,
+      'x-make-language': preferedLanguage,
     });
 
     cache.put(CACHE_KEY, response && response.data, 300000);

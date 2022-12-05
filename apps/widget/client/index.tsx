@@ -85,9 +85,15 @@ const initApp = async (state: StateRoot) => {
     ...state,
     customData: getAll(), // custom_data already saved in session_storage
   };
+  const { language } = store.appConfig;
 
   if (env.isDev()) {
-    const question = await QuestionService.getDetail(state.currentQuestion);
+    const question = await QuestionService.getDetail(
+      state.currentQuestion,
+      language || DEFAULT_LANGUAGE,
+      undefined,
+      undefined
+    );
 
     if (question) {
       const { sequenceConfig } = question;
@@ -111,7 +117,7 @@ const initApp = async (state: StateRoot) => {
     }
   }
 
-  const { source, country, language, queryParams } = store.appConfig;
+  const { source, country, queryParams } = store.appConfig;
 
   // Set in session storage some keys from query params
   setDataFromQueryParams(queryParams);

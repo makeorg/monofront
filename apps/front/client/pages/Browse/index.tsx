@@ -19,6 +19,7 @@ import {
 import { SpaceBetweenColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { IDS } from '@make.org/types/enums';
 import { MetaTags } from '@make.org/components/MetaTags';
+import { useAppContext } from '@make.org/store';
 import { BrowseConsultationsTitles } from '../../app/Consultation/Browse/Titles';
 import { BrowseConsultationsHeader } from '../../app/Consultation/Browse/Header';
 import { BrowseConsultationsList } from '../../app/Consultation/Browse/List';
@@ -33,12 +34,15 @@ const CONSULTATION_LIST_LIMIT = 8;
 
 const getCacheKey = (
   consultationType: consultationListType,
+  language: string,
   country: string,
   page: number
-) => `${consultationType}${country}${page}`;
+) => `${consultationType}${country}${language}${page}`;
 
 const BrowseConsultationsPage: FC = () => {
   const location = useLocation();
+  const { state } = useAppContext();
+  const { language } = state.appConfig;
   const params = useParams<{ country: string; pageId: string }>();
   const { country, pageId } = params;
   const consultationsPage = isBrowseConsultationsPage(location.pathname);
@@ -57,16 +61,23 @@ const BrowseConsultationsPage: FC = () => {
 
   const fetchDataAndCache = async (
     argCountry: string,
+    argLanguage: string,
     argConsultationType: consultationListType,
     page: number
   ): Promise<consultationDataType> => {
-    const cacheKey = getCacheKey(argConsultationType, argCountry, page);
+    const cacheKey = getCacheKey(
+      argConsultationType,
+      argLanguage,
+      argCountry,
+      page
+    );
     if (cache.current[cacheKey]) {
       return Promise.resolve(cache.current[cacheKey]);
     }
 
-    const args: [string, number, number] = [
+    const args: [string, string, number, number] = [
       argCountry,
+      argLanguage,
       CONSULTATION_LIST_LIMIT,
       CONSULTATION_LIST_LIMIT * (page - 1),
     ];
@@ -99,7 +110,8 @@ const BrowseConsultationsPage: FC = () => {
   const prefetchAndManageCache = async (
     currentConsultationType: consultationListType,
     currentPage: number,
-    currentConsultationTotal: number
+    currentConsultationTotal: number,
+    preferedLanguage: string
   ) => {
     const nextPage =
       currentPage <
@@ -111,13 +123,25 @@ const BrowseConsultationsPage: FC = () => {
       currentConsultationType === 'opened' ? 'finished' : 'opened';
 
     const calls = [];
-    calls.push(fetchDataAndCache(country, otherList, 1));
+    calls.push(fetchDataAndCache(country, preferedLanguage, otherList, 1));
     if (nextPage) {
-      calls.push(fetchDataAndCache(country, currentConsultationType, nextPage));
+      calls.push(
+        fetchDataAndCache(
+          country,
+          preferedLanguage,
+          currentConsultationType,
+          nextPage
+        )
+      );
     }
     if (previewPage) {
       calls.push(
-        fetchDataAndCache(country, currentConsultationType, previewPage)
+        fetchDataAndCache(
+          country,
+          preferedLanguage,
+          currentConsultationType,
+          previewPage
+        )
       );
     }
 
@@ -125,21 +149,40 @@ const BrowseConsultationsPage: FC = () => {
 
     const cleanCache = () => {
       const cacheKeyToKeep: string[] = [];
-      cacheKeyToKeep.push(getCacheKey('opened', country, 1));
-      cacheKeyToKeep.push(getCacheKey('finished', country, 1));
-      cacheKeyToKeep.push(getCacheKey('opened', country, 2));
-      cacheKeyToKeep.push(getCacheKey('finished', country, 2));
+      cacheKeyToKeep.push(getCacheKey('opened', country, preferedLanguage, 1));
       cacheKeyToKeep.push(
-        getCacheKey(currentConsultationListType, country, currentPage)
+        getCacheKey('finished', country, preferedLanguage, 1)
+      );
+      cacheKeyToKeep.push(getCacheKey('opened', country, preferedLanguage, 2));
+      cacheKeyToKeep.push(
+        getCacheKey('finished', country, preferedLanguage, 2)
+      );
+      cacheKeyToKeep.push(
+        getCacheKey(
+          currentConsultationListType,
+          country,
+          preferedLanguage,
+          currentPage
+        )
       );
       if (previewPage) {
         cacheKeyToKeep.push(
-          getCacheKey(currentConsultationType, country, previewPage)
+          getCacheKey(
+            currentConsultationType,
+            country,
+            preferedLanguage,
+            previewPage
+          )
         );
       }
       if (nextPage) {
         cacheKeyToKeep.push(
-          getCacheKey(currentConsultationType, country, nextPage)
+          getCacheKey(
+            currentConsultationType,
+            country,
+            preferedLanguage,
+            nextPage
+          )
         );
       }
 
@@ -162,6 +205,7 @@ const BrowseConsultationsPage: FC = () => {
     setIsLoading(true);
     const data = await fetchDataAndCache(
       country,
+      language,
       currentConsultationListType,
       currentPageId
     );
@@ -173,7 +217,8 @@ const BrowseConsultationsPage: FC = () => {
     prefetchAndManageCache(
       currentConsultationListType,
       currentPageId,
-      data?.total || 0
+      data?.total || 0,
+      language
     );
   };
 

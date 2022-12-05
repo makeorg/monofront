@@ -34,9 +34,9 @@ export const questionRoute = async (
   const question = await QuestionService.getQuestion(
     questionSlug,
     country,
-    language,
     notFound,
-    unexpectedError
+    unexpectedError,
+    language
   );
 
   if (!question) {

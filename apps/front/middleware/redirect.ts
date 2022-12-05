@@ -37,9 +37,9 @@ export const redirectToCountryMiddleware = async (
   const question = await QuestionService.getQuestion(
     formattedQuestionSlug,
     formattedCountry,
-    formattedLanguage || DEFAULT_LANGUAGE,
     questionNotFound,
-    questionUnexpectedError
+    questionUnexpectedError,
+    formattedLanguage || DEFAULT_LANGUAGE
   );
 
   if (question && question.countries.includes(formattedCountry)) {

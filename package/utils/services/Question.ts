@@ -19,20 +19,20 @@ const QUESTION_SORT_CHRONOLOGICAL = 'chronological';
 
 const getQuestions = async (
   country: string,
+  preferedLanguage: string,
   status?: string,
   sortAlgorithm?: string,
   limit?: number,
-  skip?: number,
-  preferedLanguage?: string
+  skip?: number
 ): Promise<{ total: number; results: HomeQuestionType[] } | null> => {
   try {
     const response = await QuestionApiService.getQuestions(
       country,
+      preferedLanguage,
       status,
       sortAlgorithm,
       limit,
-      skip,
-      preferedLanguage
+      skip
     );
 
     if (!response) {
@@ -55,11 +55,13 @@ const getQuestions = async (
 
 const getOpenedConsultations = async (
   country: string,
+  preferedLanguage: string,
   limit?: number,
   skip?: number
 ): Promise<{ total: number; results: HomeQuestionType[] } | null> =>
   getQuestions(
     country,
+    preferedLanguage,
     QUESTION_STATUS_OPEN,
     QUESTION_SORT_FEATURED,
     limit,
@@ -68,11 +70,13 @@ const getOpenedConsultations = async (
 
 const getFinishedConsultations = async (
   country: string,
+  preferedLanguage: string,
   limit?: number,
   skip?: number
 ): Promise<{ total: number; results: HomeQuestionType[] } | null> =>
   getQuestions(
     country,
+    preferedLanguage,
     QUESTION_STATUS_FINISHED,
     QUESTION_SORT_CHRONOLOGICAL,
     limit,
@@ -81,10 +85,10 @@ const getFinishedConsultations = async (
 
 const getDetail = async (
   questionSlugOrId: string,
+  preferedLanguage: string,
   // eslint-disable-next-line default-param-last
   notFound: () => void = () => null,
-  country?: string,
-  preferedLanguage?: string
+  country?: string
 ): Promise<QuestionType | null> => {
   try {
     const response = await QuestionApiService.getDetail(
@@ -134,14 +138,12 @@ const getDetail = async (
 
 const searchQuestions = async (
   country: string,
-  language: string,
   content: string,
-  preferedLanguage?: string
+  preferedLanguage: string
 ): Promise<{ total: number; results: QuestionType[] } | null> => {
   try {
     const response = await QuestionApiService.searchQuestions(
       country,
-      language,
       content,
       preferedLanguage
     );

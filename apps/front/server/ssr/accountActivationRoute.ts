@@ -45,9 +45,9 @@ export const accountActivationRoute = async (
     const question = await QuestionService.getQuestion(
       questionId,
       country,
-      language,
       () => notFound(),
-      () => unexpectedError()
+      () => unexpectedError(),
+      language
     );
 
     if (!question) {

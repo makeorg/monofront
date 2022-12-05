@@ -33,7 +33,7 @@ export type Props = {
 
 export const SearchMainResults: React.FC<Props> = ({ location }) => {
   const { state } = useAppContext();
-  const { country, device } = state.appConfig;
+  const { country, device, language } = state.appConfig;
   const params = new URLSearchParams(location.search);
   const term = params.get('query') || '';
 
@@ -56,7 +56,11 @@ export const SearchMainResults: React.FC<Props> = ({ location }) => {
 
   useEffect(() => {
     async function fetchData() {
-      const searchResult = await ViewsService.searchViews(term, country);
+      const searchResult = await ViewsService.searchViews(
+        term,
+        country,
+        language
+      );
       setData(searchResult || data);
       setIsLoading(false);
     }

@@ -44,9 +44,9 @@ export const passwordRecoveryRoute = async (
     const question = await QuestionService.getQuestion(
       questionId.toString(),
       country,
-      language,
       notFound,
-      unexpectedError
+      unexpectedError,
+      language
     );
 
     if (question) {

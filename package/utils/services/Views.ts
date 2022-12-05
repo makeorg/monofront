@@ -5,7 +5,7 @@ import { defaultUnexpectedError } from './DefaultErrorHandler';
 
 const getHome = async (
   country: string,
-  preferedLanguage?: string
+  preferedLanguage: string
 ): Promise<HomeViewType | null> => {
   try {
     const response = await ViewsApiService.getHome(country, preferedLanguage);
@@ -22,7 +22,7 @@ const getHome = async (
 const searchViews = async (
   content: string,
   country: string,
-  preferedLanguage?: string,
+  preferedLanguage: string,
   proposalLimit = 4,
   questionLimit = 4,
   organisationLimit = 4

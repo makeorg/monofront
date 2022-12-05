@@ -34,8 +34,8 @@ export const SearchConsultations: React.FC<RouteComponentProps> = ({
     setIsLoading(true);
     const response = await QuestionService.searchQuestions(
       country,
-      language,
-      term
+      term,
+      language
     );
     if (response) {
       const { results, total } = response;

@@ -40,8 +40,9 @@ export const QuestionWrapper: FC<Props> = ({ children, withRedirect }) => {
   const params: {
     country: string;
     questionSlug: string;
+    language: string;
   } = useParams();
-  const { country, questionSlug } = params;
+  const { country, questionSlug, language } = params;
   const questionsInState = state.questions;
   const currentQuestion: QuestionType = selectCurrentQuestion(state);
   const currentQuestionSlug = state.currentQuestion;
@@ -63,6 +64,7 @@ export const QuestionWrapper: FC<Props> = ({ children, withRedirect }) => {
   const updateQuestion = async () => {
     const questionDetails = await QuestionService.getDetail(
       questionSlug,
+      language,
       () => setAlternativeContent(<NotFoundPage />),
       country
     );

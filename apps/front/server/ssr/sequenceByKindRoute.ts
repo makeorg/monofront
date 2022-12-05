@@ -75,9 +75,9 @@ export const sequenceByKindRoute = async (
   const questionResponse = await QuestionService.getQuestion(
     questionSlug,
     country,
-    language,
     notFound,
-    unexpectedError
+    unexpectedError,
+    language
   );
 
   if (!questionResponse) {

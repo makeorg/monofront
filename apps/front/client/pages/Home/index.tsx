@@ -21,7 +21,7 @@ export const HomePage: FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { dispatch, state } = useAppContext();
   const {
-    appConfig: { country },
+    appConfig: { country, language },
     views: { homepage },
   } = state;
   const isFR = country === 'FR';
@@ -34,7 +34,8 @@ export const HomePage: FC = () => {
   const initHomepage = async () => {
     setIsLoading(true);
     const homepageResponse: HomeViewType | null = await ViewsService.getHome(
-      country
+      country,
+      language
     );
     if (homepageResponse && country) {
       dispatch(loadHomepage(homepageResponse, country));

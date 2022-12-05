@@ -25,11 +25,11 @@ export const PATH_QUESTION_KEYWORDS = '/questions/:questionId/keywords';
 export class QuestionApiService {
   static getQuestions(
     country: string,
+    preferedLanguage: string,
     status?: string, // Upcoming, Open, Finished
     sortAlgorithm?: string, // Chronological, Featured
     limit?: number,
     skip?: number,
-    preferedLanguage?: string,
     headers: ApiServiceHeadersType = {}
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(generatePath(PATH_QUESTIONS_LIST), {
@@ -66,7 +66,7 @@ export class QuestionApiService {
 
   static getDetail(
     questionSlugOrId: string,
-    preferedLanguage?: string,
+    preferedLanguage: string,
     headers: ApiServiceHeadersType = {}
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
@@ -184,8 +184,7 @@ export class QuestionApiService {
   static searchQuestions(
     country: string,
     content: string,
-    language: string,
-    preferedLanguage?: string,
+    preferedLanguage: string,
     sort = 'endDate',
     order = 'DESC',
     headers: ApiServiceHeadersType = {}
@@ -196,7 +195,6 @@ export class QuestionApiService {
       params: {
         questionContent: content,
         country,
-        language,
         sort,
         order,
         preferedLanguage,
