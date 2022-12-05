@@ -3,4 +3,5 @@ export enum LocaleType {
   en = 'en',
   de = 'de',
   uk = 'uk',
+  cs = 'cs',
 }

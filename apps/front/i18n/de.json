@@ -1293,7 +1293,8 @@
     "fr": "Français",
     "en": "English",
     "de": "Deutsch",
-    "uk": "Українська"
+    "uk": "Українська",
+    "cs": "Česky"
   },
   "demographics_card": {
     "disclaimer": "Deine Angaben sind anonym und ermöglichen es, die Ergebnisse möglichst repräsentativ zu gestalten.",

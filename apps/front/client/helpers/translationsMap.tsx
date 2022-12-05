@@ -50,4 +50,5 @@ export const getLanguagesTransMap = (): Map<string, string> =>
     ['en', i18n.t('languages.en')],
     ['de', i18n.t('languages.de')],
     ['uk', i18n.t('languages.uk')],
+    ['cs', i18n.t('languages.cs')],
   ]);
