@@ -1184,11 +1184,12 @@
   },
   "legal": {
     "title": "Zákonné oznámení",
-    "make_infos": "Editor webových stránek: MAKE.ORG, zjednodušená akciová společnost s kapitálem {{make_capital}}, se sídlem {{make_address}}, registrovaná u RCS PARIS pod číslem {{make_rcs}} (dále jen „MAKE.ORG“)).",
+    "make_infos": "Editor webových stránek: MAKE.ORG, zjednodušená akciová společnost s kapitálem {{make_capital}}, se sídlem na adrese {{make_address}}, registrovaná u RCS PARIS pod číslem {{make_rcs}} (dále jen „MAKE.ORG“)).",
     "mail": "Emailová adresa : ",
     "make_phone": "Telefonní číslo: ",
     "make_phone_number": "{{make_phone_number}}",
     "director": "Ředitel publikace: ",
+    "name": "Axel Dauchez",
     "host": "Hostitel webových stránek: ",
     "host_address": "{{make_host_address}} FRANCIE",
     "host_phone": "Telefonní číslo: ",
