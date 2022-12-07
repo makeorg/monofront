@@ -1198,25 +1198,25 @@
     "cnil_number": "{{cnil_number}}"
   },
   "cookies_management": {
-    "title": "Správa souborů cookie",
+    "title": "SPRÁVA SOUBORŮ COOKIE",
     "dated": "- dne {{date}} -",
-    "button": "Potvrdit můj výběr",
+    "button": "POTVRDIT MŮJ VÝBĚR",
     "intro": {
-      "title": "Co je to soubor cookie?",
+      "title": "CO JE TO SOUBOR COOKIE?",
       "first_paragraph": "Cookie je malý počítačový soubor, který lze umístit a přečíst, když uživatel internetu navštíví webovou stránku nebo mobilní aplikaci, bez ohledu na typ použitého terminálu (počítač, chytrý telefon atd.).",
       "second_paragraph": "Některé soubory cookies jsou nezbytné pro správné fungování stránek nebo aplikací, jiné pomáhají optimalizovat jejich výkon na stránce nebo zlepšit zážitek uživatelů internetu."
     },
     "use": {
-      "title": "Jak soubory cookies používáme?",
-      "first_paragraph": "Když se připojíš k našim webovým stránkám, na tvůj terminál jsou umístěny soubory cookies. Jejich účel je zpříjemnit ti tvůj čas strávených na stránkách, zvýšit výkonnost našich stránek a optimalizovat naše občanské konzultace.",
+      "title": "JAK SOUBORY COOKIES POUŽÍVÁME?",
+      "first_paragraph": "Když se připojíš k našim webovým stránkám, na tvůj terminál jsou umístěny soubory cookies. Jejich účelem je zpříjemnit ti tvůj čas strávený na stránkách, zvýšit výkonnost našich stránek a optimalizovat naše občanské konzultace.",
       "second_paragraph": "Informace obsažené v souborech cookies nejsou určeny k tomu, aby tě osobně identifikovaly, a nikdy se nepoužívají k jiným účelům, než je uvedeno níže."
     },
     "partners": {
-      "title": "Kdo jsou naši partneři?",
+      "title": "KDO JSOU NAŠI PARTNEŘI?",
       "intro": "Kromě souborů cookies vytvořených a spravovaných společností Make jsou soubory cookies na naše stránky umístěny také následujícími partnery:"
     },
     "details": {
-      "title": "Jaké soubory cookies používáme?",
+      "title": "JAKÉ SOUBORY COOKIES POUŽÍVÁME?",
       "intro": "Soubory cookies umístěné na našich stránkách jsou následující:",
       "mandatory": "Vždy aktivní",
       "duration": "Trvání: {{duration}}",
@@ -1226,16 +1226,16 @@
       "year_plural": "{{count}} roky/let",
       "technicals": {
         "name": "Technické soubory cookies:",
-        "description": "Tyto soubory cookies jsou nezbytné pro provoz stránek a nelze je zakázat. Svůj prohlížeč můžeš nakonfigurovat tak, aby blokoval nebo byl informován o existenci těchto souborů cookies, ale některé části našeho webu tak mohou být ovlivněny. Tyto soubory cookies nejsou určeny k tomu, aby tě osobně identifikovaly.",
-        "secure": "make-secure: jakmile se připojíš ke svému účtu občana na Make.org, tento soubor cookie zaručuje, že toto připojení bude zachováno i během navigování službou.",
+        "description": "Tyto soubory cookies jsou nezbytné pro provoz stránek a nelze je zakázat. Svůj prohlížeč můžeš nakonfigurovat tak, aby blokoval nebo byl informován o existenci těchto souborů cookies, ale některé části našeho webu tak mohou být tímto postupem ovlivněny. Tyto soubory cookies nejsou určeny k tomu, aby tě osobně identifikovaly.",
+        "secure": "make-secure: jakmile se připojíš ke svému účtu občana na Make.org, tento soubor cookie zaručuje, že toto připojení bude zachováno i během navigování.",
         "secure-expiration": "make-secure-expiration: tento soubor cookie se používá k detekci tvé nečinnosti ve službě za účelem ukončení platnosti tohoto připojení.",
         "demographics": "make-demographics: tento soubor cookie nám umožňuje vědět, zda jsme tě na tomto zařízení již požádali o demografické údaje (věková skupina, region, pohlaví atd.), abychom se tě na ně při budoucí návštěvě znovu neptali."
       },
       "preferences": {
         "name": "Preferenční soubory cookies:",
-        "description": "tyto soubory cookies se používají k zapamatování tvých preferencí na našich stránkách a tím ke zlepšení zážitku z tvého pobytu na našich webových stránkách a navigace nimi. Svůj prohlížeč můžeš nakonfigurovat tak, aby blokoval nebo byl informován o existenci těchto souborů cookies, ale některé části našeho webu tak mohou být ovlivněny. Tyto soubory cookies nejsou určeny k tomu, aby tě osobně identifikovaly.",
-        "google-connect": "Google connect: tyto soubory cookies umožňují registraci a připojení se do vašeho účtu občana.",
-        "facebook-connect": "Facebok connect: tyto soubory cookies umožňují registraci a připojení se do vašeho účtu občana.",
+        "description": "tyto soubory cookies se používají k zapamatování tvých preferencí na našich stránkách a tím ke zlepšení zážitku z tvého pobytu na našich webových stránkách a navigace nimi. Svůj prohlížeč můžeš nakonfigurovat tak, aby blokoval nebo byl informován o existenci těchto souborů cookies, ale některé části našeho webu tak mohou být ovlivněny. Tyto soubory cookies nejsou určeny k tomu, aby tě osobně identifikovaly. ",
+        "google-connect": "Google connect: tyto soubory cookies umožňují registraci a připojení do vašeho účtu občana.",
+        "facebook-connect": "Facebok connect: tyto soubory cookies umožňují registraci a připojení do vašeho účtu občana.",
         "session-id": "make-session-id: tento soubor cookie se používá k seskupení všech akcí, které na stránce provádíš, do relace.",
         "session-id-expiration": "make-session-id-expiration: tento soubor cookie ti umožňuje zobrazit upozornění oznamující, vypršení tvé relace (po 20 minutách), a proto bude znovu načtena.",
         "user-id": "make-user-id: tento soubor cookie tě po připojení do osobního účtu na Make.org identifikuje. Použije se k předvyplnění tvých přihlašovacích údajů.",
@@ -1243,20 +1243,20 @@
       },
       "statistics": {
         "name": "Statistické soubory cookies:",
-        "description": "tyto soubory cookies jsou určeny k analýze návštěv našich stránek a ke zlepšení jejich výkonu. Všechny informace shromážděné těmito soubory cookie jsou agregované, a tedy anonymizované. Pokud tyto soubory cookies zakážeš, nebudeme o tvé další návštěvě informováni.",
-        "visitor-id": "make-visitor-id: tento soubor cookie se používá ke sledování návštěv naší služby za účelem měření návštěvnosti anonymním a agregovaným způsobem. Události procházení se odesílají do analytického nástroje MixPanel.",
+        "description": "tyto soubory cookies jsou určeny k analýze návštěv našich stránek a ke zlepšení jejich výkonu. Všechny informace shromážděné těmito soubory cookie jsou agregované, a tedy anonymizované. Pokud tyto soubory cookies zakážeš, nebudeme o tvé další návštěvě informováni. Vždy aktivní",
+        "visitor-id": "make-visitor-id: tento soubor cookie se používá k identifikaci jedinečného návštěvníka.",
         "visitor-created-at": "make-visitor-created-at: tento soubor cookie se používá k získání data první návštěvy platformy.",
         "facebook-tracking": "Sledovací cookie Facebooku: tento soubor cookie se používá ke generování statistik návštěvnosti za účelem zlepšení našich stránek a obohacení analýzy našich konzultací.",
-        "hotjar": "@@cookies_management.details.statistics.hotjar|fr:Hotjar : Il s’agit d’un outil permettant de réaliser de l’analyse comportementale de l'utilisation du site Web. Pour en savoir plus : "
+        "hotjar": "Soubory cookies Hotjar: Jedná se o nástroj pro provádění behaviorální analýzy používání internetových stránek. Více informací: "
       },
       "social": {
         "name": "Soubory cookies „sociální sítě“:",
-        "description": "tyto soubory cookies, aktivované třetími stranami, ti umožňují sdílet obsah našich stránek na sociálních sítích a pomáhají nám tak optimalizovat náš dopad. Pokud nesouhlasíš s ukládáním těchto souborů cookies, možná nebudeš moci tyto nástroje pro sdílení využívat.",
+        "description": "tyto soubory cookies, aktivované třetími stranami, ti umožňují sdílet obsah našich stránek na sociálních sítích a pomáhají nám tak optimalizovat náš dopad. Pokud nesouhlasíš s ukládáním těchto souborů cookies, je možné, že nebudeš moci tyto nástroje pro sdílení využívat.",
         "facebook_tracking": "pixel Facebook: tyto soubory cookies se používají k optimalizaci výkonu kampaní propagujících konzultace na Facebooku za účelem zvýšení účasti občanů.",
         "twitter_tracking": "pixel Twitter: tyto soubory cookies se používají k optimalizaci výkonu kampaní propagujících konzultace na Facebooku za účelem zvýšení účasti občanů.",
         "facebook_sharing": "sdílení na Facebooku: tento soubor cookie umožňuje uživateli sdílet obsah na Facebooku a zlepšit uživatelskou přívětivost.",
         "twitter_sharing": "sdílení na Twitteru: tento soubor cookie umožňuje uživateli sdílet obsah na Twitteru a zlepšit uživatelskou přívětivost.",
-        "linkedin_sharing": "sdílení na LinkedInu: tento soubor cookie umožňuje uživateli sdílet obsah na LinkedInu a zlepšit uživatelskou přívětivost."
+        "linkedin_sharing": "sdílení na LinkedInu: tento soubor cookie umožňuje uživateli sdílet obsah na Linkedinu a zlepšit uživatelskou přívětivost."
       }
     }
   },
