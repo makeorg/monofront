@@ -62,7 +62,7 @@ declare global {
   }
 }
 
-export const A11yUA: FC = () => {
+export const A11yCZ: FC = () => {
   const { state } = useAppContext();
   const { country } = state.appConfig;
   const FRONT_URL = env.frontUrl() || window.FRONT_URL;
@@ -75,15 +75,14 @@ export const A11yUA: FC = () => {
       />
       <StaticPageWrapperStyle>
         <StaticSecondLevelTitleStyle>
-          ДЕКЛАРАЦІЯ ПРО ДОСТУПНІСТЬ
+          PROHLÁŠENÍ O PŘÍSTUPNOSTI
         </StaticSecondLevelTitleStyle>
         <StaticParagraphStyle>
-          Make.org зобов’язується зробити свій вебсайт загальнодоступним
-          відповідно до статті 47 закону Франції № 2005-102 від 11 лютого 2005
-          року.
+          Make.org se zavazuje zpřístupnit své internetové stránky v souladu s
+          článkem 47 zákona č. 2005-102 ze dne 11. února 2005.{' '}
         </StaticParagraphStyle>
         <StaticParagraphStyle>
-          {'Ця декларація доступності застосовується до вебсайту '}
+          {'Toto prohlášení o přístupnosti se vztahuje na web '}
           <RedHTMLLinkElementStyle href={FRONT_URL}>
             {FRONT_URL}
           </RedHTMLLinkElementStyle>
@@ -92,51 +91,49 @@ export const A11yUA: FC = () => {
         <FocusBlockWrapperStyle as="section">
           <FocusBlockCheckIconStyle aria-hidden focusable="false" />
           <FocusBlockTitleStyle>
-            {`${summary.criteria.pourcentOk}% `}
-            критеріїв{' '}
+            {`Je splněno ${summary.criteria.pourcentOk}% kritérií`}{' '}
             <abbr
               lang="fr"
               title="Référentiel Général d’Amélioration de l’Accessibilité"
             >
               RGAA
             </abbr>{' '}
-            4.0 виконано
+            4.0
           </FocusBlockTitleStyle>
           <FocusBlockParagraphStyle>
-            Make.org прагне покращити доступність та інклюзивність у цифровому
-            світі. RGAA є авторитетним документом, що встановлює стандарти
-            доступності, яких наші проєктні та технічні команди намагаються
-            максимально дотримуватися.
+            Make.org se zavázala zlepšovat digitální dostupnost a začlenění.
+            RGAA (General Repository for Improving Accessibility) je
+            autoritativní dokument stanovující standardy přístupnosti, kterým se
+            naše projekční a technické týmy snaží co nejvíce přiblížit.
           </FocusBlockParagraphStyle>
           <FocusBlockParagraphStyle className="no-margin">
-            Ця сторінка має на меті показати поточний стан доступності Make.org
-            у прозорий спосіб.
+            Tato stránka má transparentním způsobem ukázat aktuální stav
+            přístupnosti Make.org.
           </FocusBlockParagraphStyle>
         </FocusBlockWrapperStyle>
         <FocusBlockWrapperStyle as="section">
           <FocusBlockTitleStyle>
-            Дізнайтеся про нашу залученість до цифрової доступності
+            Seznamte se s našim závazkem vůči digitální dostupnosti
           </FocusBlockTitleStyle>
           <FocusBlockParagraphStyle>
-            Щоб демократія залишалася справою кожного, необхідно враховувати
-            питання інклюзії та доступності.{' '}
+            Aby demokracie zůstala záležitostí všech, je nezbytné vzít v úvahu
+            otázky začlenění a dostupnosti. Výkon občanství je základním právem,
+            které by nemělo být narušeno nebo omezeno jednou nebo více situacemi
+            zdravotního postižení.
             <strong>
-              Здійснення громадянських принципів є основоположним правом, яке не
-              повинно ставитися під загрозу або обмежуватися однією або кількома
-              ситуаціями обмежених можливостей.
+              To je důvod, proč Démocratie Ouverte a Make.org, dva hráči v
+              oblasti demokratických inovací, spolupracovali společně s CNCPH na
+              vytvoření charty přístupnosti nástrojů pro zapojení občanů.
             </strong>{' '}
-            Саме тому Démocratie Ouverte та Make.org, два суб’єкти демократичних
-            інновацій, працювали разом із CNCPH над розробкою Кодексу
-            доступності інструментів для участі громадян. Цей Кодекс, підписаний
-            17 грудня 2021 року, формалізує попередні зобов’язання двох
-            організацій і демонструє волю продовжувати рух у цьому напрямку.
+            Tato charta 2021, podepsaná 17. prosince 2021, formalizuje předchozí
+            závazky obou organizací a vyjadřuje vůli pokračovat tímto směrem.
           </FocusBlockParagraphStyle>
           <RedHTMLLinkElementStyle
             href={`${FRONT_URL}/convention/cncph.html`}
             target="_blank"
             rel="noopener"
           >
-            Завантажити Кодекс (html-версію)
+            Stáhnout si chartu (html verze){' '}
             <StaticExternalLinkIconStyle aria-hidden focusable="false" />
             <ScreenReaderItemStyle>
               {i18n.t('common.open_new_window')}
@@ -145,12 +142,9 @@ export const A11yUA: FC = () => {
         </FocusBlockWrapperStyle>
         <StaticPrimaryOrderedListStyle>
           <StaticPrimaryOrderedListItemStyle>
-            <StaticThirdLevelTitleStyle>
-              СТАН ВІДПОВІДНОСТІ
-            </StaticThirdLevelTitleStyle>
+            <StaticThirdLevelTitleStyle>STAV SHODY</StaticThirdLevelTitleStyle>
             <StaticParagraphStyle>
-              Make.org частково відповідає вимогам
-              <> </>
+              Make.org je částečně v souladu s
               <RedHTMLLinkElementStyle
                 href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/"
                 target="_blank"
@@ -172,69 +166,69 @@ export const A11yUA: FC = () => {
           </StaticPrimaryOrderedListItemStyle>
           <StaticPrimaryOrderedListItemStyle>
             <StaticThirdLevelTitleStyle>
-              РЕЗУЛЬТАТИ ПЕРЕВІРКИ
+              VÝSLEDKY TESTŮ
             </StaticThirdLevelTitleStyle>
             <StaticParagraphStyle>
-              Проведений внутрішній аудит відповідності свідчить про те, що:{' '}
+              Interní audit shody ukazuje následující:
             </StaticParagraphStyle>
             <StaticSquareListStyle>
               <StaticSquareListItemStyle>
-                {`${summary.test.successOk} перевірок успішно завершені;`}
+                {`${summary.test.successOk} testů bylo provedeno úspěšně.`}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {`${summary.test.successKo} перевірки були неуспішними;`}
+                {`${summary.test.successKo} testů se nezdařilo.`}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {`${summary.test.successNa} перевірок стосуються незастосовних критеріїв;`}
+                {`${summary.test.successNa} testů se týká nepoužitelných kritérií.`}
               </StaticSquareListItemStyle>
             </StaticSquareListStyle>
             <StaticSquareListStyle>
               <StaticSquareListItemStyle>
-                {`${summary.criteria.successOk} критеріїв виконано;`}
+                {`${summary.criteria.successOk} kritérií je dodržováno.`}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {`${summary.criteria.successKo} критеріїв не виконано;`}
+                {`${summary.criteria.successKo} kritérií není dodržováno.`}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {`${summary.criteria.successNa} критерії не є застосовними.`}
+                {`${summary.criteria.successNa} kritérií není použitelných.`}
               </StaticSquareListItemStyle>
             </StaticSquareListStyle>
             <StaticParagraphStyle>
-              {` Тобто ${summary.criteria.pourcentOk}% критеріїв `}
+              {`Což ukazuje, že ${summary.criteria.pourcentOk}% kritérií `}
               <abbr title="Référentiel Général d’Amélioration de l’Accessibilité">
                 RGAA 4.0
               </abbr>
               <> </>
-              виконано.
+              je respektováno.
             </StaticParagraphStyle>
           </StaticPrimaryOrderedListItemStyle>
           <StaticPrimaryOrderedListItemStyle>
             <StaticThirdLevelTitleStyle>
-              СТВОРЕННЯ ДЕКЛАРАЦІЇ ДОСТУПНОСТІ
+              STANOVENÍ TOHOTO PROHLÁŠENÍ O DOSTUPNOSTI
             </StaticThirdLevelTitleStyle>
             <StaticParagraphStyle>
-              Ця декларація була створена 4 листопада 2020 року. Оновлено 4
-              листопада 2020 року.
+              Toto prohlášení bylo učiněno dne 4. listopadu 2020. Bylo
+              aktualizováno dne 4. listopadu 2020.
             </StaticParagraphStyle>
             <StaticFourthLevelTitleStyle>
-              Технології, використані під час створення сайту Make.org:
+              Technologie použité pro vytvoření internetových stránek Make.org:
             </StaticFourthLevelTitleStyle>
             <StaticSquareListStyle>
               <StaticSquareListItemStyle>HTML5</StaticSquareListItemStyle>
               <StaticSquareListItemStyle>CSS</StaticSquareListItemStyle>
               <StaticSquareListItemStyle>Javascript</StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                React JS версії 16
+                React JS verze 16
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                Переглянути
+                Na odkazu
                 <> </>
                 <RedHTMLLinkElementStyle
                   href="https://gitlab.com/makeorg/platform/front/-/blob/production/package.json"
                   target="_blank"
                   rel="noopener"
                 >
-                  повний список використаних технологій
+                  najdete úplný seznam použitých technologií
                   <StaticExternalLinkIconStyle aria-hidden focusable="false" />
                   <ScreenReaderItemStyle>
                     {i18n.t('common.open_new_window')}
@@ -243,8 +237,8 @@ export const A11yUA: FC = () => {
               </StaticSquareListItemStyle>
             </StaticSquareListStyle>
             <StaticFourthLevelTitleStyle>
-              Користувацькі агенти, допоміжні технології та інструменти, що
-              використовуються для перевірки доступності:
+              Uživatelské agenty, asistenční technologie a nástroje používané k
+              ověření přístupnosti:
             </StaticFourthLevelTitleStyle>
             <StaticSquareListStyle>
               <StaticSquareListItemStyle>
@@ -255,7 +249,7 @@ export const A11yUA: FC = () => {
               </StaticSquareListItemStyle>
             </StaticSquareListStyle>
             <StaticFourthLevelTitleStyle>
-              Під час оцінювання використовувався наступний інструментарій:
+              Při hodnocení byly použity následující nástroje:
             </StaticFourthLevelTitleStyle>
             <StaticSquareListStyle>
               <StaticSquareListItemStyle lang="en">
@@ -296,7 +290,7 @@ export const A11yUA: FC = () => {
                   target="_blank"
                   rel="noopener"
                 >
-                  розширення браузера
+                  rozšíření prohlížeče
                   <StaticExternalLinkIconStyle aria-hidden focusable="false" />
                   <ScreenReaderItemStyle>
                     {i18n.t('common.open_new_window')}
@@ -311,7 +305,7 @@ export const A11yUA: FC = () => {
                   target="_blank"
                   rel="noopener"
                 >
-                  розширення браузера
+                  rozšíření prohlížeče
                   <StaticExternalLinkIconStyle aria-hidden focusable="false" />
                   <ScreenReaderItemStyle>
                     {i18n.t('common.open_new_window')}
@@ -328,7 +322,7 @@ export const A11yUA: FC = () => {
                   rel="noopener"
                   lang="fr"
                 >
-                  розширення браузера
+                  rozšíření prohlížeče
                   <StaticExternalLinkIconStyle aria-hidden focusable="false" />
                   <ScreenReaderItemStyle>
                     {i18n.t('common.open_new_window')}
@@ -337,23 +331,23 @@ export const A11yUA: FC = () => {
               </StaticSquareListItemStyle>
             </StaticSquareListStyle>
             <StaticFourthLevelTitleStyle>
-              Сторінки сайту, які пройшли перевірку на відповідність:
+              Stránky webu, které byly předmětem kontroly souladu:
             </StaticFourthLevelTitleStyle>
             <StaticSquareListStyle>
               <StaticSquareListItemStyle>
-                {'Головна сторінка (Франція): '}
+                {'Domovská stránka, Francie: '}
                 <RedHTMLLinkElementStyle href={getHomeLink('FR')}>
                   {FRONT_URL + getHomeLink('FR')}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Головна сторінка (Велика Британія): '}
+                {'Domovská stránka, Velká Británie: '}
                 <RedHTMLLinkElementStyle href={getHomeLink('GB')}>
                   {FRONT_URL + getHomeLink('GB')}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Сторінка перегляду публічних консультацій: '}
+                {'Stránka Procházet konzultace: '}
                 <RedHTMLLinkElementStyle
                   href={getBrowseConsultationsLink(country)}
                 >
@@ -361,36 +355,34 @@ export const A11yUA: FC = () => {
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Сторінка перегляду результатів: '}
+                {'Stránka Procházet výsledky: '}
                 <RedHTMLLinkElementStyle href={getBrowseResultsLink(country)}>
                   {FRONT_URL + getBrowseResultsLink(country)}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Сторінка публічної консультації: '}
+                {'Stránka Konzultace: '}
                 {FRONT_URL + getParticipateLink(country, 'dynamicslug')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Сторінка з пропозиціями: '}
+                {'Stránka Návrhy v sekvenci: '}
                 {FRONT_URL + getSequenceLink(country, 'dynamicslug')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Сторінка результатів публічних консультацій: '}
+                {'Stránka Výsledek konzultace: '}
                 {FRONT_URL + getResultsLink(country, 'dynamicslug')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Сторінка найпопулярніших ідей публічних консультацій: '}
+                {'Stránka Nejlepší nápady konzultace: '}
                 {FRONT_URL + getTopIdeasLink(country, 'dynamicslug')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {
-                  'Сторінка з подробицями щодо найпопулярнішої ідеї публічної консультації: '
-                }
+                {'Stránka s detaily nejlepšího nápadu konzultace: '}
                 {FRONT_URL +
                   getTopIdeaDetailsLink(country, 'dynamicslug', 'ideaId')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Сторінка пропозиції: '}
+                {'Stránka Návrh: '}
                 {FRONT_URL +
                   getProposalLink(
                     country,
@@ -400,44 +392,44 @@ export const A11yUA: FC = () => {
                   )}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Сторінка скидання паролю: '}
+                {'Stránka Obnovit heslo: '}
                 {FRONT_URL +
                   getPasswordRecoveryLink(country, 'userId', 'resetToken')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Сторінка профілю користувача: '}
+                {'Stránka Profil uživatele: '}
                 {FRONT_URL + getRouteProfile(country)}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Сторінка редагування профілю користувача: '}
+                {'Stránka Editace profilu uživatele: '}
                 {FRONT_URL + getRouteProfileEdit(country)}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Сторінка з переліком пропозицій користувача: '}
+                {'Stránka Seznam návrhů uživatele: '}
                 {FRONT_URL + getRouteProfileProposals(country)}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Сторінка з переліком обраних пропозицій користувача: '}
+                {'Stránka Seznamu oblíbených návrhů uživatele: '}
                 {FRONT_URL + getRouteProfileFavourites(country)}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Сторінка думок особистості: '}
+                {'Stránka Názory osobnosti: '}
                 {FRONT_URL + getRouteProfileOpinions(country)}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Публічна сторінка профілю особистості: '}
+                {'Stránka Veřejný profil osobnosti: '}
                 {FRONT_URL + getPersonalityProfileLink(country, 'userId')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Публічний профіль сторінки пропозиції організації: '}
+                {'Stránka Návrhy veřejného profilu organizace: '}
                 {FRONT_URL + getRouteOrganisationProposals(country, 'userId')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Сторінка голосування в профілі громадської організації: '}
+                {'Stránka Hlasy veřejného profilu organizace: '}
                 {FRONT_URL + getRouteOrganisationVotes(country, 'userId')}
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Сторінка результатів пошуку: '}
+                {'Stránka Výsledky vyhledávání: '}
                 <RedHTMLLinkElementStyle
                   href={getRouteSearch(country, 'accessibilité')}
                 >
@@ -445,7 +437,7 @@ export const A11yUA: FC = () => {
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Сторінка результатів пошуку пропозицій: '}
+                {'Stránka Výsledky vyhledávání návrhů: '}
                 <RedHTMLLinkElementStyle
                   href={getRouteSearchProposals(country, 'accessibilité')}
                 >
@@ -454,7 +446,7 @@ export const A11yUA: FC = () => {
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Сторінка результатів пошуку організацій: '}
+                {'Stránka Výsledky vyhledávání organizací: '}
                 <RedHTMLLinkElementStyle
                   href={getRouteSearchOrganisations(country, 'association')}
                 >
@@ -463,7 +455,7 @@ export const A11yUA: FC = () => {
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Сторінка результатів пошуку публічних консультацій: '}
+                {'Stránka Výsledky vyhledávání konzultací: '}
                 <RedHTMLLinkElementStyle
                   href={getRouteSearchConsultations(country, 'comment')}
                 >
@@ -471,31 +463,31 @@ export const A11yUA: FC = () => {
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Сторінка юридичної інформації: '}
+                {'Stránka Zákonná oznámení: '}
                 <RedHTMLLinkElementStyle href={getLegalPageLink(country)}>
                   {FRONT_URL + getLegalPageLink(country)}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'PСторінка умов користування: '}
+                {'Stránka Podmínky použití: '}
                 <RedHTMLLinkElementStyle href={getGTUPageLink(country)}>
                   {FRONT_URL + getGTUPageLink(country)}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Сторінка політики обробки даних: '}
+                {'Stránka Datové zásady: '}
                 <RedHTMLLinkElementStyle href={getDataPageLink(country)}>
                   {FRONT_URL + getDataPageLink(country)}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Сторінка декларації доступності: '}
+                {'Strana Prohlášení o přístupu: '}
                 <RedHTMLLinkElementStyle href={getA11YPageLink(country)}>
                   {FRONT_URL + getA11YPageLink(country)}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
-                {'Сторінка з контактними даними: '}
+                {'Stránka Kontakt: '}
                 <RedHTMLLinkElementStyle href={getContactPageLink(country)}>
                   {FRONT_URL + getContactPageLink(country)}
                 </RedHTMLLinkElementStyle>
@@ -504,15 +496,15 @@ export const A11yUA: FC = () => {
           </StaticPrimaryOrderedListItemStyle>
           <StaticPrimaryOrderedListItemStyle>
             <StaticThirdLevelTitleStyle>
-              ЗВОРОТНИЙ ЗВ’ЯЗОК І КОНТАКТ
+              ZPĚTNÁ VAZBA A KONTAKT
             </StaticThirdLevelTitleStyle>
             <StaticParagraphStyle>
-              Якщо ви не можете отримати доступ до вмісту або послуги,
-              зверніться до менеджера вебсайту, щоб він скерував вас на доступну
-              альтернативу або надав можливість отримати вміст у іншій формі.
+              Pokud nemáte přístup k obsahu nebo službě, můžete kontaktovat
+              správce webu, který vás přesměruje na dostupnou alternativu nebo
+              vám pomůže získat obsah jinou formou.
             </StaticParagraphStyle>
             <StaticParagraphStyle>
-              {'Зв’яжіться з нами за цією електронною адресою: '}
+              {'Kontaktujte nás na této e-mailové adrese: '}
               <RedHTMLLinkElementStyle href={`mailto:${ACCESSIBILITY_EMAIL}`}>
                 {`${ACCESSIBILITY_EMAIL}`}
               </RedHTMLLinkElementStyle>
@@ -525,4 +517,4 @@ export const A11yUA: FC = () => {
 };
 
 // default export needed for loadable component
-export default A11yUA; // eslint-disable-line import/no-default-export
+export default A11yCZ; // eslint-disable-line import/no-default-export

@@ -28,8 +28,8 @@
     "**/apimock/db/deprecatedViews.json",
     "**/docs",
     "**/apps/front/client/pages/Static/A11y/UA.tsx",
+    "**/apps/front/client/pages/Static/A11y/CZ.tsx",
     "**/apps/front/client/pages/Static/Data/UA.tsx"
-
   ],
   "absolute": true,
   "output": "./reports",
