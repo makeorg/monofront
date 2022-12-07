@@ -33,7 +33,7 @@ import { Login } from '../Login';
 export const Register: React.FC = () => {
   const { dispatch, state } = useAppContext();
   const { pendingProposal, registerStep } = state.pendingProposal;
-  const { country } = state.appConfig;
+  const { country, language } = state.appConfig;
   const [user, setUser] = useState<RegisterFormDataType>({
     email: '',
     password: '',
@@ -200,7 +200,7 @@ export const Register: React.FC = () => {
       >
         {(isSecondStep || pendingProposal) && (
           <ProposalBackButtonStyle onClick={handleReturn}>
-            {i18n.t('common.back')}
+            <>{i18n.t('common.back')}</>
           </ProposalBackButtonStyle>
         )}
 
@@ -216,17 +216,17 @@ export const Register: React.FC = () => {
         />
         {!pendingProposal && !isSecondStep && (
           <GreyParagraphStyle>
-            {i18n.t('legal_consent.make_protect')}&nbsp;
+            <>{i18n.t('legal_consent.make_protect')}&nbsp;</>{' '}
             <PersonalDataGreyLinkStyle
-              href={getDataPageLink(country)}
+              href={getDataPageLink(country, language)}
               target="_blank"
               rel="noopener"
             >
-              {i18n.t('legal_consent.make_protect_link')}
+              <>{i18n.t('legal_consent.make_protect_link')}</>{' '}
             </PersonalDataGreyLinkStyle>
             <NewWindowGreyIconStyle aria-hidden focusable="false" />
             <ScreenReaderItemStyle>
-              {i18n.t('common.open_new_window')}
+              <>{i18n.t('common.open_new_window')}</>{' '}
             </ScreenReaderItemStyle>
           </GreyParagraphStyle>
         )}

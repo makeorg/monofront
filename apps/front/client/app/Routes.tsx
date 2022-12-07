@@ -28,19 +28,19 @@ import {
   ROUTE_ORGANISATION_PROPOSALS,
   ROUTE_ORGANISATION_VOTES,
   ROUTE_COUNTRY,
+  ROUTE_STATIC_CONTACT,
+  ROUTE_STATIC_LEGAL,
+  ROUTE_STATIC_GTU,
+  ROUTE_STATIC_DATA,
   ROUTE_STATIC_LEGAL_FR,
   ROUTE_STATIC_GTU_FR,
   ROUTE_STATIC_DATA_FR,
-  ROUTE_STATIC_CONTACT_FR,
   ROUTE_RESULTS,
   ROUTE_TOP_IDEAS,
   ROUTE_PERSONALITY_PROFILE,
   ROUTE_TOP_IDEA_DETAILS,
   ROUTE_PROFILE_OPINIONS,
   ROUTE_STATIC_NOTFOUND,
-  ROUTE_STATIC_LEGAL_EN,
-  ROUTE_STATIC_GTU_EN,
-  ROUTE_STATIC_DATA_EN,
   ROUTE_BROWSE_CONSULTATIONS,
   ROUTE_BROWSE_RESULTS,
   BASE_PREVIEW_PATH,
@@ -54,18 +54,6 @@ import {
   ROUTE_STATIC_DATA_DE,
   ROUTE_STATIC_CONTACT_DE,
   ROUTE_STATIC_A11Y_DE,
-  ROUTE_STATIC_LEGAL_UK,
-  ROUTE_STATIC_GTU_UK,
-  ROUTE_STATIC_DATA_UK,
-  ROUTE_STATIC_CONTACT_UK,
-  ROUTE_STATIC_A11Y_UK,
-  ROUTE_STATIC_COOKIES_UK,
-  ROUTE_STATIC_LEGAL_CS,
-  ROUTE_STATIC_GTU_CS,
-  ROUTE_STATIC_DATA_CS,
-  ROUTE_STATIC_CONTACT_CS,
-  ROUTE_STATIC_A11Y_CS,
-  ROUTE_STATIC_COOKIES_CS,
 } from '@make.org/utils/routes';
 import Cookies from 'universal-cookie';
 import { StateUserCookiesPreferences } from '@make.org/types';
@@ -238,20 +226,20 @@ export const Routes: FC = () => {
       />
       <Redirect path={ROUTE_PROFILE} to={ROUTE_PROFILE_PROPOSALS} />
       <Route exact path={ROUTE_COUNTRY} component={HomePage} />
+
+      {/* Defaults routes for static pages (url in en language) */}
       <Route path={ROUTE_STATIC_NOTFOUND} component={NotFoundPage} />
       <Route path={ROUTE_STATIC_COOKIES} component={CookiesPage} />
+      <Route path={ROUTE_STATIC_CONTACT} component={Contact} />
+      <Route path={ROUTE_STATIC_LEGAL} component={LegalPage} />
+      <Route path={ROUTE_STATIC_GTU} component={TermsOfUse} />
+      <Route path={ROUTE_STATIC_DATA} component={Data} />
 
       {/* Routes used for fr language */}
       <Route path={ROUTE_STATIC_LEGAL_FR} component={LegalPage} />
       <Route path={ROUTE_STATIC_GTU_FR} component={TermsOfUse} />
       <Route path={ROUTE_STATIC_DATA_FR} component={Data} />
-      <Route path={ROUTE_STATIC_CONTACT_FR} component={Contact} />
       <Route path={ROUTE_STATIC_A11Y_FR} component={Accessibility} />
-
-      {/* Routes used for en language */}
-      <Route path={ROUTE_STATIC_LEGAL_EN} component={LegalPage} />
-      <Route path={ROUTE_STATIC_GTU_EN} component={TermsOfUse} />
-      <Route path={ROUTE_STATIC_DATA_EN} component={Data} />
 
       {/* Routes used for de language */}
       <Route path={ROUTE_STATIC_LEGAL_DE} component={LegalPage} />
@@ -259,22 +247,6 @@ export const Routes: FC = () => {
       <Route path={ROUTE_STATIC_DATA_DE} component={Data} />
       <Route path={ROUTE_STATIC_CONTACT_DE} component={Contact} />
       <Route path={ROUTE_STATIC_A11Y_DE} component={Accessibility} />
-
-      {/* Routes used for uk language */}
-      <Route path={ROUTE_STATIC_LEGAL_UK} component={LegalPage} />
-      <Route path={ROUTE_STATIC_GTU_UK} component={TermsOfUse} />
-      <Route path={ROUTE_STATIC_DATA_UK} component={Data} />
-      <Route path={ROUTE_STATIC_CONTACT_UK} component={Contact} />
-      <Route path={ROUTE_STATIC_A11Y_UK} component={Accessibility} />
-      <Route path={ROUTE_STATIC_COOKIES_UK} component={CookiesPage} />
-
-      {/* Routes used for cs language */}
-      <Route path={ROUTE_STATIC_LEGAL_CS} component={LegalPage} />
-      <Route path={ROUTE_STATIC_GTU_CS} component={TermsOfUse} />
-      <Route path={ROUTE_STATIC_DATA_CS} component={Data} />
-      <Route path={ROUTE_STATIC_CONTACT_CS} component={Contact} />
-      <Route path={ROUTE_STATIC_A11Y_CS} component={Accessibility} />
-      <Route path={ROUTE_STATIC_COOKIES_CS} component={CookiesPage} />
 
       <Route path={ROUTE_STATIC_NOTFOUND} component={NotFoundPage} />
       <Redirect exact path="/" to={getHomeLink(country || DEFAULT_COUNTRY)} />

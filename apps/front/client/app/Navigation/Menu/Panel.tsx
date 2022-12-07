@@ -6,6 +6,7 @@ import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import {
   getBrowseConsultationsLink,
   getBrowseResultsLink,
+  getNewsLinkByCountry,
   getWebflowDynamicLink,
 } from '@make.org/utils/helpers/url';
 import { useLocation } from 'react-router';
@@ -157,22 +158,20 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
                 </MenuExternalLinkStyle>
               </MenuItemStyle>
             )}
-            {isFR && (
-              <MenuItemStyle>
-                <MenuExternalLinkStyle
-                  target="_blank"
-                  rel="noopener"
-                  href={URL.NEWS_LINK}
-                >
-                  <>{i18n.t('main_footer.news')}</>
-                  <> </>
-                  <MenuNewWindowIconStyle aria-hidden focusable="false" />
-                  <ScreenReaderItemStyle>
-                    <>{i18n.t('common.open_new_window')}</>
-                  </ScreenReaderItemStyle>
-                </MenuExternalLinkStyle>
-              </MenuItemStyle>
-            )}
+            <MenuItemStyle>
+              <MenuExternalLinkStyle
+                target="_blank"
+                rel="noopener"
+                href={getNewsLinkByCountry(country)}
+              >
+                <>{i18n.t('main_footer.news')}</>
+                <> </>
+                <MenuNewWindowIconStyle aria-hidden focusable="false" />
+                <ScreenReaderItemStyle>
+                  <>{i18n.t('common.open_new_window')}</>
+                </ScreenReaderItemStyle>
+              </MenuExternalLinkStyle>
+            </MenuItemStyle>
             {(isFR || isDE) && (
               <MenuItemStyle>
                 <MenuExternalLinkStyle

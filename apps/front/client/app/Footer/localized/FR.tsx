@@ -4,15 +4,11 @@ import { URL } from '@make.org/types/enums';
 import { getModerationLinkByLanguage } from '@make.org/utils/helpers/url';
 import { FooterLinkType } from './Common';
 
-export const setFRExternalLinks = (
-  isDesktop: boolean,
-  language: string
-): FooterLinkType[] => [
+export const setFRExternalLinks = (language: string): FooterLinkType[] => [
   {
     label: i18n.t('main_footer.news'),
-    url: URL.NEWS_LINK,
+    url: URL.NEWS_LINK_FR,
     onClick: () => trackClickBlog('blog list'),
-    isDesktop,
   },
   {
     label: i18n.t('main_footer.press_details'),
@@ -21,7 +17,6 @@ export const setFRExternalLinks = (
   {
     label: i18n.t('main_footer.jobs'),
     url: URL.JOBS_LINK,
-    isDesktop,
   },
   {
     label: i18n.t('main_footer.dotation_funds'),

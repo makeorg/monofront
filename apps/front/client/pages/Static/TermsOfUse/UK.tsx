@@ -186,7 +186,7 @@ export const TermsOfUseUK: FC = () => {
                 CGUS
               </abbr>{' '}
               і доступна за{' '}
-              <RedLinkStyle to={getDataPageLink(country)}>
+              <RedLinkStyle to={getDataPageLink(country, language)}>
                 посиланням
               </RedLinkStyle>
               .

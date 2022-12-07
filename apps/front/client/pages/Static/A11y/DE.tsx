@@ -64,7 +64,7 @@ declare global {
 
 export const A11yDE: FC = () => {
   const { state } = useAppContext();
-  const { country } = state.appConfig;
+  const { country, language } = state.appConfig;
   const FRONT_URL = env.frontUrl() || window.FRONT_URL;
 
   return (
@@ -334,32 +334,32 @@ export const A11yDE: FC = () => {
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Rechtliche Seite : '}
-                <RedLinkStyle to={getLegalPageLink(country)}>
-                  {FRONT_URL + getLegalPageLink(country)}
+                <RedLinkStyle to={getLegalPageLink(country, language)}>
+                  {FRONT_URL + getLegalPageLink(country, language)}
                 </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Seite mit den Nutzungsbedingungen : '}
-                <RedLinkStyle to={getGTUPageLink(country)}>
-                  {FRONT_URL + getGTUPageLink(country)}
+                <RedLinkStyle to={getGTUPageLink(country, language)}>
+                  {FRONT_URL + getGTUPageLink(country, language)}
                 </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Seite zur Datenpolitik : '}
-                <RedLinkStyle to={getDataPageLink(country)}>
-                  {FRONT_URL + getDataPageLink(country)}
+                <RedLinkStyle to={getDataPageLink(country, language)}>
+                  {FRONT_URL + getDataPageLink(country, language)}
                 </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Seite zur Erklärung der Barrierefreiheit : '}
-                <RedLinkStyle to={getA11YPageLink(country)}>
-                  {FRONT_URL + getA11YPageLink(country)}
+                <RedLinkStyle to={getA11YPageLink(country, language)}>
+                  {FRONT_URL + getA11YPageLink(country, language)}
                 </RedLinkStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Kontaktseite : '}
-                <RedLinkStyle to={getContactPageLink(country)}>
-                  {FRONT_URL + getContactPageLink(country)}
+                <RedLinkStyle to={getContactPageLink(country, language)}>
+                  {FRONT_URL + getContactPageLink(country, language)}
                 </RedLinkStyle>
               </StaticSquareListItemStyle>
             </StaticSquareListStyle>

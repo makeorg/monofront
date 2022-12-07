@@ -64,7 +64,7 @@ declare global {
 
 export const A11yCS: FC = () => {
   const { state } = useAppContext();
-  const { country } = state.appConfig;
+  const { country, language } = state.appConfig;
   const FRONT_URL = env.frontUrl() || window.FRONT_URL;
 
   return (
@@ -464,32 +464,42 @@ export const A11yCS: FC = () => {
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Stránka Zákonná oznámení: '}
-                <RedHTMLLinkElementStyle href={getLegalPageLink(country)}>
-                  {FRONT_URL + getLegalPageLink(country)}
+                <RedHTMLLinkElementStyle
+                  href={getLegalPageLink(country, language)}
+                >
+                  {FRONT_URL + getLegalPageLink(country, language)}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Stránka Podmínky použití: '}
-                <RedHTMLLinkElementStyle href={getGTUPageLink(country)}>
-                  {FRONT_URL + getGTUPageLink(country)}
+                <RedHTMLLinkElementStyle
+                  href={getGTUPageLink(country, language)}
+                >
+                  {FRONT_URL + getGTUPageLink(country, language)}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Stránka Datové zásady: '}
-                <RedHTMLLinkElementStyle href={getDataPageLink(country)}>
-                  {FRONT_URL + getDataPageLink(country)}
+                <RedHTMLLinkElementStyle
+                  href={getDataPageLink(country, language)}
+                >
+                  {FRONT_URL + getDataPageLink(country, language)}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Strana Prohlášení o přístupu: '}
-                <RedHTMLLinkElementStyle href={getA11YPageLink(country)}>
-                  {FRONT_URL + getA11YPageLink(country)}
+                <RedHTMLLinkElementStyle
+                  href={getA11YPageLink(country, language)}
+                >
+                  {FRONT_URL + getA11YPageLink(country, language)}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
               <StaticSquareListItemStyle>
                 {'Stránka Kontakt: '}
-                <RedHTMLLinkElementStyle href={getContactPageLink(country)}>
-                  {FRONT_URL + getContactPageLink(country)}
+                <RedHTMLLinkElementStyle
+                  href={getContactPageLink(country, language)}
+                >
+                  {FRONT_URL + getContactPageLink(country, language)}
                 </RedHTMLLinkElementStyle>
               </StaticSquareListItemStyle>
             </StaticSquareListStyle>

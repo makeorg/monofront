@@ -1,3 +1,4 @@
+import { LocaleType } from '@make.org/types/enums';
 import { useEffect, useState } from 'react';
 import {
   FooterLinkType,
@@ -6,10 +7,7 @@ import {
 } from '../app/Footer/localized/Common';
 import { setDEExternalLinks } from '../app/Footer/localized/DE';
 import { setFRExternalLinks } from '../app/Footer/localized/FR';
-import {
-  setINTExternalLinks,
-  setINTExtraLinks,
-} from '../app/Footer/localized/INT';
+import { setINTExternalLinks } from '../app/Footer/localized/INT';
 
 export const useInternalLinks = (
   country: string,
@@ -18,22 +16,15 @@ export const useInternalLinks = (
   const [internalLinks, setInternaLinks] = useState<FooterLinkType[]>([]);
 
   useEffect(() => {
-    if (!country) {
+    if (!country || !language) {
       setInternaLinks([]);
     }
-    const commonInternalLinks = setCommonInternalLinks(country);
+    const commonInternalLinks = setCommonInternalLinks(country, language);
 
-    if (country === 'FR' || country === 'DE') {
-      const extraInternalLinks = setCommonExtraLinks(country);
+    if (language !== [LocaleType.en].toString()) {
+      const extraInternalLinks = setCommonExtraLinks(country, language);
       const links = commonInternalLinks.concat(extraInternalLinks);
       setInternaLinks(links);
-      return;
-    }
-
-    if (country === 'GB') {
-      const extraINTInternalLinks = setINTExtraLinks(country);
-      const INTLinks = commonInternalLinks.concat(extraINTInternalLinks);
-      setInternaLinks(INTLinks);
       return;
     }
 
@@ -45,8 +36,7 @@ export const useInternalLinks = (
 
 export const useExternalLinks = (
   country: string,
-  language: string,
-  isDesktop: boolean
+  language: string
 ): FooterLinkType[] => {
   const [externalLinks, setExternalLinks] = useState<FooterLinkType[]>([]);
 
@@ -56,12 +46,12 @@ export const useExternalLinks = (
     }
 
     if (country === 'FR') {
-      setExternalLinks(setFRExternalLinks(isDesktop, language));
+      setExternalLinks(setFRExternalLinks(language));
       return;
     }
 
     if (country === 'DE') {
-      setExternalLinks(setDEExternalLinks(isDesktop, language));
+      setExternalLinks(setDEExternalLinks(language));
       return;
     }
 

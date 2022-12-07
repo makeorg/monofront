@@ -34,9 +34,9 @@ const setLangAndLinksByCountry = (
     return { link: URL.NEWS_LINK_DE, lang: 'de' };
   }
   if (country === 'GB') {
-    return { link: URL.NEWS_LINK_GB, lang: 'en' };
+    return { link: URL.NEWS_LINK_EN, lang: 'en' };
   }
-  return { link: URL.NEWS_LINK, lang: 'fr' };
+  return { link: URL.NEWS_LINK_FR, lang: 'fr' };
 };
 
 export const FeaturedPosts: FC<Props> = ({ posts }) => {

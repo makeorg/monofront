@@ -15,44 +15,50 @@ export type FooterLinkType = {
   isDesktop?: boolean;
 };
 
-export const setCommonInternalLinks = (country: string): FooterLinkType[] => {
-  if (!country) {
+export const setCommonInternalLinks = (
+  country: string,
+  language: string
+): FooterLinkType[] => {
+  if (!country || !language) {
     return [];
   }
 
   return [
     {
       label: i18n.t('main_footer.legal'),
-      url: getLegalPageLink(country),
+      url: getLegalPageLink(country, language),
       onClick: scrollToTop,
     },
     {
       label: i18n.t('main_footer.terms'),
-      url: getGTUPageLink(country),
+      url: getGTUPageLink(country, language),
       onClick: scrollToTop,
     },
     {
       label: i18n.t('main_footer.data'),
-      url: getDataPageLink(country),
+      url: getDataPageLink(country, language),
+      onClick: scrollToTop,
+    },
+    {
+      label: i18n.t('main_footer.cookies'),
+      url: getCookiesPageLink(country),
       onClick: scrollToTop,
     },
   ];
 };
 
-export const setCommonExtraLinks = (country: string): FooterLinkType[] => {
-  if (!country) {
+export const setCommonExtraLinks = (
+  country: string,
+  language: string
+): FooterLinkType[] => {
+  if (!country || !language) {
     return [];
   }
 
   return [
     {
       label: i18n.t('main_footer.a11y'),
-      url: getA11YPageLink(country),
-      onClick: scrollToTop,
-    },
-    {
-      label: i18n.t('main_footer.cookies'),
-      url: getCookiesPageLink(country),
+      url: getA11YPageLink(country, language),
       onClick: scrollToTop,
     },
   ];

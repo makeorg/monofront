@@ -188,7 +188,10 @@ export const TermsOfUseCS: FC = () => {
                 OPP
               </abbr>{' '}
               a jsou k dispozici{' '}
-              <RedLinkStyle to={getDataPageLink(country)}>zde</RedLinkStyle>.
+              <RedLinkStyle to={getDataPageLink(country, language)}>
+                zde
+              </RedLinkStyle>
+              .
             </StaticParagraphStyle>
             <StaticParagraphStyle>
               Tyto{' '}

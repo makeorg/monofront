@@ -25,7 +25,7 @@ export const RegisterCheckBox: React.FC<Props> = ({
 }) => {
   const { state } = useAppContext();
   const [checked, setIsChecked] = useState<boolean>(false);
-  const { country, source } = state.appConfig;
+  const { country, language, source } = state.appConfig;
   const isWidget = source === 'widget';
 
   const handleChange = () => {
@@ -46,28 +46,28 @@ export const RegisterCheckBox: React.FC<Props> = ({
           <SvgCheck />
         </StyledCheckboxRightMargin>
         <span>
-          {i18n.t('legal_consent.privacy_policy_first_part')}
+          {i18n.t('legal_consent.privacy_policy_first_part')}{' '}
           <DataPolicyNewWindowLinkStyle
             href={
               isWidget
-                ? `https://make.org${getDataPageLink(country)}`
-                : getDataPageLink(country)
+                ? `https://make.org${getDataPageLink(country, language)}`
+                : getDataPageLink(country, language)
             }
             target="_blank"
             rel="noopener"
             isWidget={isWidget}
           >
-            {i18n.t('legal_consent.privacy_policy_link')}
+            <>{i18n.t('legal_consent.privacy_policy_link')}</>{' '}
             <NewWindowIconStyle
               className="grey"
               aria-hidden
               focusable="false"
             />
             <ScreenReaderItemStyle>
-              {i18n.t('common.open_new_window')}
+              <>{i18n.t('common.open_new_window')}</>{' '}
             </ScreenReaderItemStyle>
           </DataPolicyNewWindowLinkStyle>
-          {i18n.t('legal_consent.privacy_policy_last_part')}
+          {i18n.t('legal_consent.privacy_policy_last_part')}{' '}
         </span>
       </CheckboxLabelStyle>
     </CheckboxWrapper>

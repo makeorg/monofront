@@ -1,10 +1,8 @@
 import { env } from '@make.org/assets/env';
 import {
-  ROUTE_STATIC_GTU_CS,
+  ROUTE_STATIC_GTU,
   ROUTE_STATIC_GTU_DE,
-  ROUTE_STATIC_GTU_EN,
   ROUTE_STATIC_GTU_FR,
-  ROUTE_STATIC_GTU_UK,
 } from '@make.org/utils/routes';
 import * as urlHelper from './url';
 
@@ -107,44 +105,39 @@ describe('Url Helper', () => {
   it('return MultiLang Link', () => {
     const linkFR = urlHelper.getMultiLangStaticLink(
       'FR',
+      'fr',
+      ROUTE_STATIC_GTU,
       ROUTE_STATIC_GTU_FR,
-      ROUTE_STATIC_GTU_EN,
-      ROUTE_STATIC_GTU_DE,
-      ROUTE_STATIC_GTU_UK,
-      ROUTE_STATIC_GTU_CS
+      ROUTE_STATIC_GTU_DE
     );
     const linkEN = urlHelper.getMultiLangStaticLink(
       'GB',
+      'en',
+      ROUTE_STATIC_GTU,
       ROUTE_STATIC_GTU_FR,
-      ROUTE_STATIC_GTU_EN,
-      ROUTE_STATIC_GTU_DE,
-      ROUTE_STATIC_GTU_UK,
-      ROUTE_STATIC_GTU_CS
+      ROUTE_STATIC_GTU_DE
     );
     const linkDE = urlHelper.getMultiLangStaticLink(
       'DE',
+      'de',
+      ROUTE_STATIC_GTU,
       ROUTE_STATIC_GTU_FR,
-      ROUTE_STATIC_GTU_EN,
-      ROUTE_STATIC_GTU_DE,
-      ROUTE_STATIC_GTU_UK,
-      ROUTE_STATIC_GTU_CS
+      ROUTE_STATIC_GTU_DE
     );
     const linkUA = urlHelper.getMultiLangStaticLink(
       'UA',
+      'uk',
+      ROUTE_STATIC_GTU,
       ROUTE_STATIC_GTU_FR,
-      ROUTE_STATIC_GTU_EN,
-      ROUTE_STATIC_GTU_DE,
-      ROUTE_STATIC_GTU_UK,
-      ROUTE_STATIC_GTU_CS
+      ROUTE_STATIC_GTU_DE
     );
 
     const linkCZ = urlHelper.getMultiLangStaticLink(
       'CZ',
+      'cs',
+      ROUTE_STATIC_GTU,
       ROUTE_STATIC_GTU_FR,
-      ROUTE_STATIC_GTU_EN,
-      ROUTE_STATIC_GTU_DE,
-      ROUTE_STATIC_GTU_UK,
-      ROUTE_STATIC_GTU_CS
+      ROUTE_STATIC_GTU_DE
     );
 
     expect(linkFR).toEqual(`/FR/conditions-dutilisation`);

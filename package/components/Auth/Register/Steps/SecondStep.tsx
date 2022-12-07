@@ -39,7 +39,7 @@ export const SecondStepRegister: React.FC<Props> = ({
 }) => {
   const { state } = useAppContext();
 
-  const { country, source } = state.appConfig;
+  const { country, language, source } = state.appConfig;
   const isWidget = source === 'widget';
   return (
     <>
@@ -54,24 +54,24 @@ export const SecondStepRegister: React.FC<Props> = ({
       />
       {isSupportedCountry(country) && (
         <PostCodeWrapperStyle>
-          {i18n.t('common.form.post_code')}
+          <>{i18n.t('common.form.post_code')}</>
         </PostCodeWrapperStyle>
       )}
       <ConditionParagraphMarginStylePanel>
-        {i18n.t('register.gtu_text_first')}
+        <>{i18n.t('register.gtu_text_first')}</>
         <TermsOfUseLinkGreyStyle
           href={
             isWidget
-              ? `https://make.org${getGTUPageLink(country)}`
-              : getGTUPageLink(country)
+              ? `https://make.org${getGTUPageLink(country, language)}`
+              : getGTUPageLink(country, language)
           }
           target="_blank"
           rel="noopener"
         >
-          {i18n.t('register.gtu_link')}
+          <>{i18n.t('register.gtu_link')}</>
           <NewWindowIconStyle className="grey" aria-hidden focusable="false" />
           <ScreenReaderItemStyle>
-            {i18n.t('common.open_new_window')}
+            <>{i18n.t('common.open_new_window')}</>{' '}
           </ScreenReaderItemStyle>
         </TermsOfUseLinkGreyStyle>
       </ConditionParagraphMarginStylePanel>

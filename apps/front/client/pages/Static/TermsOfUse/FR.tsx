@@ -199,7 +199,10 @@ export const TermsOfUseFR: FC = () => {
                 CGUS
               </abbr>{' '}
               et est disponible{' '}
-              <RedLinkStyle to={getDataPageLink(country)}>ici</RedLinkStyle>.
+              <RedLinkStyle to={getDataPageLink(country, language)}>
+                ici
+              </RedLinkStyle>
+              .
             </StaticParagraphStyle>
             <StaticParagraphStyle>
               Les présentes{' '}

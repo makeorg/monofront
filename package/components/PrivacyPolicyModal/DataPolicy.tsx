@@ -47,7 +47,7 @@ import {
 
 export const DataPolicy: React.FC = () => {
   const { dispatch, state } = useAppContext();
-  const { country, source } = state.appConfig;
+  const { country, language, source } = state.appConfig;
   const { isLogin, extraProps } = state.modal;
   const { pendingProposal } = state.pendingProposal;
   const question = selectCurrentQuestion(state);
@@ -171,23 +171,23 @@ export const DataPolicy: React.FC = () => {
       onSubmit={throttle(handleSubmit)}
     >
       <DataPolicyTitleStyle>
-        {i18n.t('data_policy_modal.title')}
+        <>{i18n.t('data_policy_modal.title')}</>{' '}
       </DataPolicyTitleStyle>
       <DataPolicyParagraphStyle>
-        {i18n.t('data_policy_modal.description')}
+        <>{i18n.t('data_policy_modal.description')}</>{' '}
         <DataPolicyNewWindowLinkStyle
           href={
             isWidget
-              ? `https://make.org${getDataPageLink(country)}`
-              : getDataPageLink(country)
+              ? `https://make.org${getDataPageLink(country, language)}`
+              : getDataPageLink(country, language)
           }
           target="_blank"
           rel="noopener"
         >
-          {i18n.t('legal_consent.privacy_policy')}
+          <>{i18n.t('legal_consent.privacy_policy')}</>{' '}
           <NewWindowIconStyle aria-hidden focusable="false" />
           <ScreenReaderItemStyle>
-            {i18n.t('common.open_new_window')}
+            <>{i18n.t('common.open_new_window')}</>{' '}
           </ScreenReaderItemStyle>
         </DataPolicyNewWindowLinkStyle>
       </DataPolicyParagraphStyle>

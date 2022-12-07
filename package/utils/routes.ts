@@ -48,41 +48,24 @@ export const ROUTE_ORGANISATION_VOTES = `${ROUTE_ORGANISATION_PROFILE}/votes`;
 export const ROUTE_STATIC_NOTFOUND = `${ROUTE_COUNTRY}/not-found`;
 export const ROUTE_STATIC_NOCOOKIES = `${ROUTE_COUNTRY_FR}/no-cookies`;
 export const ROUTE_STATIC_COOKIES = `${ROUTE_COUNTRY}/cookies`;
+export const ROUTE_STATIC_CONTACT = `${ROUTE_COUNTRY}/contact`;
+export const ROUTE_STATIC_LEGAL = `${ROUTE_COUNTRY}/legal-mentions`;
+export const ROUTE_STATIC_GTU = `${ROUTE_COUNTRY}/terms-of-use`;
+export const ROUTE_STATIC_DATA = `${ROUTE_COUNTRY}/data-terms`;
+export const ROUTE_STATIC_A11Y = `${ROUTE_COUNTRY}/accessibility`;
 
-// routes for fr language
+// Translated routes for fr language
 export const ROUTE_STATIC_LEGAL_FR = `${ROUTE_COUNTRY}/mentions-legales`;
 export const ROUTE_STATIC_GTU_FR = `${ROUTE_COUNTRY}/conditions-dutilisation`;
 export const ROUTE_STATIC_DATA_FR = `${ROUTE_COUNTRY}/politique-donnees`;
 export const ROUTE_STATIC_A11Y_FR = `${ROUTE_COUNTRY}/declaration-accessibilite`;
-export const ROUTE_STATIC_CONTACT_FR = `${ROUTE_COUNTRY}/contact`;
 
-// routes for en language
-export const ROUTE_STATIC_LEGAL_EN = `${ROUTE_COUNTRY}/legal-mentions`;
-export const ROUTE_STATIC_GTU_EN = `${ROUTE_COUNTRY}/terms-of-use`;
-export const ROUTE_STATIC_DATA_EN = `${ROUTE_COUNTRY}/data-terms`;
-
-// routes for de language
+// Translated routes for de language
 export const ROUTE_STATIC_LEGAL_DE = `${ROUTE_COUNTRY}/impressum`;
 export const ROUTE_STATIC_GTU_DE = `${ROUTE_COUNTRY}/nutzungsbedingungen`;
 export const ROUTE_STATIC_DATA_DE = `${ROUTE_COUNTRY}/datenschutzerklärung`;
 export const ROUTE_STATIC_A11Y_DE = `${ROUTE_COUNTRY}/barrierefreiheit`;
 export const ROUTE_STATIC_CONTACT_DE = `${ROUTE_COUNTRY}/kontakt`;
-
-// routes for uk language
-export const ROUTE_STATIC_LEGAL_UK = ROUTE_STATIC_LEGAL_EN;
-export const ROUTE_STATIC_GTU_UK = ROUTE_STATIC_GTU_EN;
-export const ROUTE_STATIC_DATA_UK = ROUTE_STATIC_DATA_EN;
-export const ROUTE_STATIC_A11Y_UK = `${ROUTE_COUNTRY}/accessibility`;
-export const ROUTE_STATIC_CONTACT_UK = `${ROUTE_COUNTRY}/contact`;
-export const ROUTE_STATIC_COOKIES_UK = `${ROUTE_COUNTRY}/cookies`;
-
-// routes for cs language
-export const ROUTE_STATIC_LEGAL_CS = ROUTE_STATIC_LEGAL_EN;
-export const ROUTE_STATIC_GTU_CS = ROUTE_STATIC_GTU_EN;
-export const ROUTE_STATIC_DATA_CS = ROUTE_STATIC_DATA_EN;
-export const ROUTE_STATIC_A11Y_CS = `${ROUTE_COUNTRY}/accessibility`;
-export const ROUTE_STATIC_CONTACT_CS = `${ROUTE_COUNTRY}/contact`;
-export const ROUTE_STATIC_COOKIES_CS = `${ROUTE_COUNTRY}/cookies`;
 
 // webflow routes
 export const ROUTE_WHOAREWE = '/about-us';

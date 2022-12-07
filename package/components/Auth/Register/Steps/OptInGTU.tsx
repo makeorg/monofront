@@ -39,7 +39,7 @@ export const OptInGTU: React.FC<Props> = ({
 }) => {
   const { dispatch, state } = useAppContext();
 
-  const { country, source } = state.appConfig;
+  const { country, language, source } = state.appConfig;
   const isWidget = source === 'widget';
   const [acceptDataPolicy, setAcceptDataPolicy] = useState<boolean>(false);
   const [optinNewsletter, setOptinNewsletter] = useState<boolean>(false);
@@ -67,29 +67,29 @@ export const OptInGTU: React.FC<Props> = ({
       onSubmit={throttle(handleSubmit)}
     >
       <ProposalBackButtonStyle onClick={handleReturn}>
-        {i18n.t('common.back')}
+        <>{i18n.t('common.back')}</>
       </ProposalBackButtonStyle>
       <LoginTitleWrapperCenterStyle className="red">
-        {i18n.t('common.register_panel.optin_cgu_title')}
+        <>{i18n.t('common.register_panel.optin_cgu_title')}</>{' '}
       </LoginTitleWrapperCenterStyle>
       <RegisterPanelSubTitleWrapperStyle className="dark">
-        {i18n.t('common.register_panel.optin_cgu_subtitle')}
+        <>{i18n.t('common.register_panel.optin_cgu_subtitle')}</>{' '}
       </RegisterPanelSubTitleWrapperStyle>
       <ConditionParagraphMarginStylePanel>
-        {i18n.t('register.gtu_text_first')}
+        <>{i18n.t('register.gtu_text_first')}</>{' '}
         <TermsOfUseLinkGreyStyle
           href={
             isWidget
-              ? `https://make.org${getGTUPageLink(country)}`
-              : getGTUPageLink(country)
+              ? `https://make.org${getGTUPageLink(country, language)}`
+              : getGTUPageLink(country, language)
           }
           target="_blank"
           rel="noopener"
         >
-          {i18n.t('register.gtu_link')}
+          <>{i18n.t('register.gtu_link')}</>{' '}
           <NewWindowIconStyle className="grey" aria-hidden focusable="false" />
           <ScreenReaderItemStyle>
-            {i18n.t('common.open_new_window')}
+            <>{i18n.t('common.open_new_window')}</>{' '}
           </ScreenReaderItemStyle>
         </TermsOfUseLinkGreyStyle>
       </ConditionParagraphMarginStylePanel>

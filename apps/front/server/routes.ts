@@ -28,7 +28,6 @@ import {
   ROUTE_SEARCH_PROPOSALS,
   ROUTE_SEARCH_ORGANISATIONS,
   ROUTE_STATIC_LEGAL_FR,
-  ROUTE_STATIC_CONTACT_FR,
   ROUTE_STATIC_DATA_FR,
   ROUTE_STATIC_GTU_FR,
   ROUTE_RESULTS,
@@ -36,9 +35,6 @@ import {
   ROUTE_TOP_IDEA_DETAILS,
   ROUTE_PERSONALITY_PROFILE,
   ROUTE_PROFILE_OPINIONS,
-  ROUTE_STATIC_GTU_EN,
-  ROUTE_STATIC_DATA_EN,
-  ROUTE_STATIC_LEGAL_EN,
   ROUTE_BROWSE_CONSULTATIONS,
   ROUTE_BROWSE_RESULTS,
   BASE_PREVIEW_PATH,
@@ -58,6 +54,10 @@ import {
   ROUTE_REDIRECT_SEQUENCE_CONTROVERSY,
   ROUTE_REDIRECT_SEQUENCE_POPULAR,
   ROUTE_REDIRECT_RESULTS,
+  ROUTE_STATIC_CONTACT,
+  ROUTE_STATIC_LEGAL,
+  ROUTE_STATIC_DATA,
+  ROUTE_STATIC_GTU,
 } from '@make.org/utils/routes';
 import { fBConversionApi } from '@make.org/utils/services/FBApiConversion';
 import { countryLanguageMiddleware } from '../middleware/countryLanguage';
@@ -220,18 +220,16 @@ export const initRoutes = (app: Application): void => {
   app.get(ROUTE_SEARCH_ORGANISATIONS, frontMiddlewares, defaultRoute);
   app.get(ROUTE_SEARCH_CONSULTATIONS, frontMiddlewares, defaultRoute);
   app.get(ROUTE_STATIC_COOKIES, frontMiddlewares, defaultRoute);
+  app.get(ROUTE_STATIC_CONTACT, frontMiddlewares, defaultRoute);
+  app.get(ROUTE_STATIC_LEGAL, frontMiddlewares, defaultRoute);
+  app.get(ROUTE_STATIC_DATA, frontMiddlewares, defaultRoute);
+  app.get(ROUTE_STATIC_GTU, frontMiddlewares, defaultRoute);
 
   // routes for fr language
   app.get(ROUTE_STATIC_LEGAL_FR, frontMiddlewares, defaultRoute);
   app.get(ROUTE_STATIC_DATA_FR, frontMiddlewares, defaultRoute);
   app.get(ROUTE_STATIC_GTU_FR, frontMiddlewares, defaultRoute);
   app.get(ROUTE_STATIC_A11Y_FR, frontMiddlewares, defaultRoute);
-  app.get(ROUTE_STATIC_CONTACT_FR, frontMiddlewares, defaultRoute);
-
-  // routes for en language
-  app.get(ROUTE_STATIC_LEGAL_EN, frontMiddlewares, defaultRoute);
-  app.get(ROUTE_STATIC_DATA_EN, frontMiddlewares, defaultRoute);
-  app.get(ROUTE_STATIC_GTU_EN, frontMiddlewares, defaultRoute);
 
   // routes for de language
   app.get(ROUTE_STATIC_LEGAL_DE, frontMiddlewares, defaultRoute);

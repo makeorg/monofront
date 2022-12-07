@@ -191,7 +191,10 @@ export const TermsOfUseDE: FC = () => {
               uneingeschränkte Akzeptanz der
               Make.org-Datenverwendungsrichtlinie, die einen integralen
               Bestandteil dieser TOS bildet und hier verfügbar{' '}
-              <RedLinkStyle to={getDataPageLink(country)}>ist</RedLinkStyle>.
+              <RedLinkStyle to={getDataPageLink(country, language)}>
+                ist
+              </RedLinkStyle>
+              .
             </StaticParagraphStyle>
             <StaticParagraphStyle>
               Diese{' '}

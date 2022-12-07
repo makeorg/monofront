@@ -26,7 +26,7 @@ export const RefusalConfirmation: React.FC<Props> = ({
   toggleConfirmation,
 }) => {
   const { dispatch, state } = useAppContext();
-  const { country } = state.appConfig;
+  const { country, language } = state.appConfig;
   const handleClick = () => {
     toggleConfirmation();
   };
@@ -37,29 +37,29 @@ export const RefusalConfirmation: React.FC<Props> = ({
   return (
     <DataPolicyContentStyle>
       <DataPolicyTitleStyle>
-        {i18n.t('data_policy_modal.refusal_title')}
+        <> {i18n.t('data_policy_modal.refusal_title')}</>{' '}
       </DataPolicyTitleStyle>
       <DataPolicyParagraphStyle isRefusal>
-        {i18n.t('data_policy_modal.refusal_description_first_part')}
+        <>{i18n.t('data_policy_modal.refusal_description_first_part')}</>{' '}
         <DataPolicyNewWindowLinkStyle
-          href={getDataPageLink(country)}
+          href={getDataPageLink(country, language)}
           target="_blank"
           rel="noopener"
         >
-          {i18n.t('legal_consent.privacy_policy')}
+          <>{i18n.t('legal_consent.privacy_policy')}</>{' '}
           <NewWindowIconStyle aria-hidden focusable="false" />
           <ScreenReaderItemStyle>
-            {i18n.t('common.open_new_window')}
+            <>{i18n.t('common.open_new_window')}</>{' '}
           </ScreenReaderItemStyle>
         </DataPolicyNewWindowLinkStyle>
-        {i18n.t('data_policy_modal.refusal_description_second_part')}
+        <>{i18n.t('data_policy_modal.refusal_description_second_part')}</>{' '}
       </DataPolicyParagraphStyle>
       <ButtonWrapperStyle>
         <RedButtonStyle type="button" onClick={handleClick}>
-          {i18n.t('data_policy_modal.stay')}
+          <>{i18n.t('data_policy_modal.stay')}</>{' '}
         </RedButtonStyle>
         <RefusalWhiteButtonStyle type="button" onClick={handleClose}>
-          {i18n.t('data_policy_modal.leave')}
+          <>{i18n.t('data_policy_modal.leave')}</>{' '}
         </RefusalWhiteButtonStyle>
       </ButtonWrapperStyle>
     </DataPolicyContentStyle>

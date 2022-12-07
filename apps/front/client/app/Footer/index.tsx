@@ -3,10 +3,7 @@ import React, { useState, useEffect } from 'react';
 import i18n from 'i18next';
 import { ColumnToRowElementStyle } from '@make.org/ui/elements/FlexElements';
 import { getContactPageLink } from '@make.org/utils/helpers/url';
-import {
-  matchDesktopDevice,
-  scrollToTop,
-} from '@make.org/utils/helpers/styled';
+import { scrollToTop } from '@make.org/utils/helpers/styled';
 import { NAVIGATION, PANEL, IDS } from '@make.org/types/enums';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { setPanelContent } from '@make.org/store/actions/panel';
@@ -41,13 +38,12 @@ import { FooterInternalLink } from './InternalLink';
 export const Footer: React.FC = () => {
   const { dispatch, state } = useAppContext();
   const location = useLocation();
-  const { country, device, language } = state.appConfig;
+  const { country, language } = state.appConfig;
   const [countriesTransMap, setCountriesTransMap] = useState(
     getCountriesTransMap()
   );
-  const isDesktop = matchDesktopDevice(device);
   const isSequencePage = getIsSequencePage(location.pathname);
-  const externalLinks = useExternalLinks(country, language, isDesktop);
+  const externalLinks = useExternalLinks(country, language);
   const internalLinks = useInternalLinks(country, language);
 
   useEffect(() => {
@@ -69,21 +65,12 @@ export const Footer: React.FC = () => {
       <FooterNavStyle aria-label={i18n.t('common.footer_nav') || undefined}>
         <ColumnToRowElementStyle>
           <FooterWrapperFirstListStyle>
-            {externalLinks.map(externalLink =>
-              externalLink.isDesktop ? (
-                isDesktop && (
-                  <FooterExternalLink
-                    key={externalLink.url}
-                    externalLink={externalLink}
-                  />
-                )
-              ) : (
-                <FooterExternalLink
-                  key={externalLink.url}
-                  externalLink={externalLink}
-                />
-              )
-            )}
+            {externalLinks.map(externalLink => (
+              <FooterExternalLink
+                key={externalLink.url}
+                externalLink={externalLink}
+              />
+            ))}
           </FooterWrapperFirstListStyle>
           <FooterWrapperThirdListStyle as="div">
             <FooterItemStyle as="div">
@@ -91,7 +78,7 @@ export const Footer: React.FC = () => {
               {/* @ts-ignore: remove after upgrade to react18 */}
               <FooterItemAltLinkStyle
                 onClick={scrollToTop}
-                to={getContactPageLink(country)}
+                to={getContactPageLink(country, language)}
               >
                 <FooterContactIconStyle aria-hidden focusable="false" />
                 <> </>

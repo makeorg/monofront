@@ -195,7 +195,10 @@ export const TermsOfUseEN: FC = () => {
                 GTS
               </abbr>{' '}
               and which is available{' '}
-              <RedLinkStyle to={getDataPageLink(country)}>here</RedLinkStyle>.
+              <RedLinkStyle to={getDataPageLink(country, language)}>
+                here
+              </RedLinkStyle>
+              .
             </StaticParagraphStyle>
             <StaticParagraphStyle>
               The present{' '}
