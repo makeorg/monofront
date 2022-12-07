@@ -3,7 +3,7 @@ import german from '@make.org/front/i18n/de.json';
 import english from '@make.org/front/i18n/en.json';
 import french from '@make.org/front/i18n/fr.json';
 import ukrainian from '@make.org/front/i18n/uk.json';
-import czech from '@make.org/front/i18n/cz.json';
+import czech from '@make.org/front/i18n/cs.json';
 
 export const translationRessources = {
   [LocaleType.en]: { translation: english },

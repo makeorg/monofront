@@ -266,11 +266,13 @@
     },
     "max_characters": "max znaků",
     "back": "Návrat",
-    "proposal_count": "{{count}} návrh",
-    "proposal_count_plural": "{{count}} návrhy/ů",
+    "proposal_count_one": "{{count}} návrh",
+    "proposal_count_few": "{{count}} návrhy",
+    "proposal_count_other": "{{count}} návrhů",
     "breadcrumbs": "Drobečková navigace",
-    "million": "milion",
-    "million_plural": "miliony/ů",
+    "million_one": "milion",
+    "million_few": "miliony",
+    "million_other": "milionů",
     "close_panel": "Zavřít rozevírací panel"
   },
   "header": {
@@ -290,12 +292,13 @@
     "number": "Nápad č. {{ count }}",
     "content": "Obsah nápadu: ",
     "link": "Podívat se na detail nápadu",
-    "associated_proposals": "{{count}} související návrh",
-    "associated_proposals_plural": "{{count}} související/ch návrhy/ů",
-    "position": "{{ count }} stanovisko",
-    "position_plural": "{{ count }} stanoviska/stanovisek",
-    "candidate": " kandidát tohoto nápadu.",
-    "candidate_plural": " kandidáti/ů tohoto nápadu.",
+    "associated_proposals_one": "{{count}} související návrh",
+    "associated_proposals_few": "{{count}} související návrhy",
+    "associated_proposals_other": "{{count}} souvisejících návrhů",
+    "position_one": "{{ count }} stanovisko",
+    "position_other": "{{ count }} stanoviska/stanovisek",
+    "candidate_one": " kandidát tohoto nápadu.",
+    "candidate_other": " kandidáti/ů tohoto nápadu.",
     "open": "Zobrazit skóre nápadu",
     "close": "Skrýt skóre nápadu",
     "expand": " - Kliknutím zobrazíš skóre nápadu",
@@ -432,8 +435,9 @@
     "agree": "Souhlasím",
     "disagree": "Nesouhlasím",
     "neutral": "Neutrální hlas",
-    "label": "{{count}} hlas",
-    "label_plural": "{{count}} hlasy/ů",
+    "label_one": "{{count}} hlas",
+    "label_few": "{{count}} hlasy",
+    "label_other": "{{count}} hlasů",
     "with_percent": "{{votedKey}}: {{votedPercent}}%"
   },
   "unvote": {
@@ -442,8 +446,9 @@
   "results": {
     "static_total": "Tento návrh získal: ",
     "static_repartition": "S distribucí: ",
-    "total": "Tento návrh získal {{count}} hlasů s rozdělením: ",
-    "total_plural": "Tento návrh získal {{count}} hlasy/ů s rozdělením: ",
+    "total_one": "Tento návrh získal {{count}} hlasů s rozdělením: ",
+    "total_few": "Tento návrh získal {{count}} hlasy s rozdělením: ",
+    "total_other": "Tento návrh získal {{count}} hlasů s rozdělením: ",
     "voted": {
       "agree": "U tohoto návrhu jsem hlasoval/a „Souhlasím“.",
       "disagree": "U tohoto návrhu jsem hlasoval/a „Nesouhlasím“.",
@@ -699,8 +704,9 @@
       "proposal_agree": "s tímto návrhem souhlasí",
       "proposal_disagree": "s tímto návrhem nesouhlasí",
       "and": " a ",
-      "hasVoted": " hlasoval/a o tomto návrhu.",
-      "hasVoted_plural": " hlasovali o tomto návrhu.",
+      "hasVoted_one": " hlasoval/a o tomto návrhu.",
+      "hasVoted_few": " hlasovali/y o tomto návrhu.",
+      "hasVoted_other": " hlasovalo o tomto návrhu.",
       "sharing_title": "Sdílej tento profil"
     }
   },
@@ -777,11 +783,11 @@
     "highlights": {
       "start_date": "Datum zahájení",
       "end_date": "Datum ukončení konzultace",
-      "remaining": "Zbývající den",
-      "proposals": "Návrhy",
-      "remaining_plural": "Zbývající dny",
-      "participant": "Účastník/účastnice",
-      "participant_plural": "Účastníci/účastnice",
+      "remaining_one": "Zbývající den",
+      "remaining_other": "Zbývající dny",
+      "participant_one": "účastník/nice",
+      "participant_few": "účastníci/e",
+      "participant_other": "účastníků/ič",
       "progress_title": "Náš volební cíl",
       "progress_total": "Celkový počet hlasů",
       "progress_target": " z {{votesTarget}} hlasů ({{percent}} %)",
@@ -875,8 +881,9 @@
       "unvoted": "Ty, které čekají na tvůj hlas",
       "organisations_proposals": "Navrženo organizacemi",
       "no_proposal": "<strong>Žádný návrh</strong>",
-      "validated_proposals": "<strong>{{count}} ověřený návrh</strong> odpovídající tvým kritériím vyhledávání",
-      "validated_proposals_plural": "<strong>{{count}} ověřené/ých návrhů</strong> odpovídajících tvým kritériím vyhledávání"
+      "validated_proposals_one": "<strong>{{count}} ověřený návrh</strong> odpovídající tvým kritériím vyhledávání",
+      "validated_proposals_few": "<strong>{{count}} ověřené návrhy</strong> odpovídající tvým kritériím vyhledávání",
+      "validated_proposals_other": "<strong>{{count}} ověřených návrhů</strong> odpovídajících tvým kritériím vyhledávání"
     },
     "tabs": {
       "consultation": " Konzultace ",
@@ -956,8 +963,9 @@
       },
       "top_ideas": {
         "skiplink": "To nejlepší z vyplývajících nápadů",
-        "title": "To nejlepší z prosazovaných nápadů, seskupených v {{count}} ose",
-        "title_plural": "To nejlepší z prosazovaných nápadů, seskupených v {{count}} osách",
+        "title_one": "To nejlepší z prosazovaných nápadů, seskupených v {{count}} tématu",
+        "title_few": "To nejlepší z prosazovaných nápadů, seskupených ve {{count}} tématech",
+        "title_other": "To nejlepší z prosazovaných nápadů, seskupených v {{count}} tématech",
         "introduction": "Po příchodu na platformu, jsou nejlepší návrhy občanů seskupeny do skupin hlavních nápadů, které strukturují konzultace. Pro klasifikaci těchto nápadů bere algoritmus Make.org v úvahu hlasy „pro“ a „proti“ a také zmínky „oblíbený“, „realistický“, „banalita“ a „hlavně to ne!“ .",
         "axe_title": "Osa {{count}}: {{name}}"
       },
@@ -983,10 +991,12 @@
     "sortby": "Seřadit podle: ",
     "local_actors": {
       "title": "Nejaktivnější sdružení",
-      "proposals": "{{count}} návrh",
-      "proposals_plural": "{{count}} návrhy/ů",
-      "votes": "{{count}} hlas",
-      "votes_plural": "{{count}} hlasy/ů",
+      "proposals_one": "{{count}} návrh",
+      "proposals_few": "{{count}} návrhy",
+      "proposals_other": "{{count}} návrhů",
+      "votes_one": "{{count}} hlas",
+      "votes_few": "{{count}} hlasy",
+      "votes_other": "{{count}} hlasů",
       "participate": "Zastupuješ sdružení a chceš se zúčastnit naší konzultace? {{ contact_us }}",
       "contact_us": "Kontaktuj nás!",
       "more": "Zobrazit více"
@@ -1022,12 +1032,15 @@
       "title": "Zúčastni se probíhajících konzultací",
       "subtitle": "Tvůj názor je důležitý! Hlasuj a navrhuj řešení, která ovlivní různá společenská témata a aktuální problémy.",
       "participate": "Zúčastnit se",
-      "contributors": "účastník",
-      "contributors_plural": "účastníci",
-      "proposals": "návrh",
-      "proposals_plural": "návrhy",
-      "votes": "hlas",
-      "votes_plural": "hlasy",
+      "contributors_one": "účastník/nice",
+      "contributors_few": "účastníci/e",
+      "contributors_other": "účastníků/ič",
+      "proposals_one": "{{count}} návrh",
+      "proposals_few": "{{count}} návrhy",
+      "proposals_other": "{{count}} návrhů",
+      "votes_one": "hlas",
+      "votes_few": "hlasy",
+      "votes_other": "hlasů",
       "empty": "Je nám líto, ale ve tvé zemi nejsou momentálně k dispozici žádné konzultace."
     },
     "results": {
@@ -1088,13 +1101,19 @@
     "highlights": {
       "title": "Make.org v číslech",
       "participants": {
-        "subtitle": "účastníci/ků a účastnic/e"
+        "subtitle_one": "účastník/nice",
+        "subtitle_few": "účastníci/e",
+        "subtitle_other": "účastníků/ič"
       },
       "proposals": {
-        "subtitle": "předložené/ých návrhy/ů"
+        "subtitle_one": "představený návr",
+        "subtitle_few": "představené návrhy",
+        "subtitle_other": "představených návrhů"
       },
       "partners": {
-        "subtitle": "angažovaná/ých sdružení a podniky/ů"
+        "subtitle_one": "angažované srdužení a podnik",
+        "subtitle_few": "angažovaná sdružení a podniky",
+        "subtitle_other": "angažovaných sdružení a podniků"
       }
     },
     "featured_questions": {
@@ -1122,22 +1141,27 @@
     "titles": {
       "loading": "Probíhá vyhledávání...",
       "no_results": "Žádný výsledek",
-      "main_results": "{{count}} výsledek pro „{{term}}“",
-      "main_results_plural": "{{count}} výsledky/ů pro „{{term}}“",
-      "proposals": "{{count}} návrh pro „{{term}}\"",
-      "proposals_plural": "{{count}} návrhy/ů pro „{{term}}\"",
-      "operations": "{{count}} mise pro „{{term}}\"",
-      "operations_plural": "{{count}} mise/í pro „{{term}}\"",
-      "organisations": "{{count}} organizace/í „{{term}}\"",
-      "organisations_plural": "{{count}} organizace/í „{{term}}\"",
+      "main_results_one": "{{count}} výsledek pro „{{term}}“",
+      "main_results_few": "{{count}} výsledky pro „{{term}}“",
+      "main_results_other": "{{count}} výsledků pro „{{term}}“",
+      "proposals_one": "{{count}} návrh pro „{{term}}\"",
+      "proposals_few": "{{count}} návrhy pro „{{term}}\"",
+      "proposals_other": "{{count}} návrhů pro „{{term}}\"",
+      "operations_one": "{{count}} mise pro „{{term}}\"",
+      "operations_few": "{{count}} mise pro „{{term}}\"",
+      "operations_other": "{{count}} misí pro „{{term}}\"",
+      "organisations_one": "{{count}} organizace „{{term}}\"",
+      "organisations_few": "{{count}} organizace „{{term}}\"",
+      "organisations_other": "{{count}} organizací „{{term}}\"",
       "main_results_empty_term": "0 výsledků"
     },
     "main_results": {
       "proposal": "Návrh",
       "organisation": "Organizace",
       "operation": "Mise",
-      "results": "{{count}} výsledek",
-      "results_plural": "{{count}} výsledky/ů",
+      "results_one": "{{count}} výsledek",
+      "results_few": "{{count}} výsledky",
+      "results_other": "{{count}} výsledků",
       "view_all": "Zobrazit vše",
       "no_results": "Nenašli jsme žádné výsledky odpovídající tvým kritériím vyhledávání „{{term}}“",
       "no_query": "Hledáš návrh, nápad, konzultaci? Zadej kritéria do vyhledávání!",
@@ -1214,8 +1238,9 @@
       "duration": "Trvání: {{duration}}",
       "session": "Relace",
       "month": "{{count}} měsíc/e/ů",
-      "year": "{{count}} rok",
-      "year_plural": "{{count}} roky/let",
+      "year_one": "{{count}} rok",
+      "year_few": "{{count}} roky",
+      "year_other": "{{count}} let",
       "technicals": {
         "name": "Technické soubory cookies:",
         "description": "Tyto soubory cookies jsou nezbytné pro provoz stránek a nelze je zakázat. Svůj prohlížeč můžeš nakonfigurovat tak, aby blokoval nebo byl informován o existenci těchto souborů cookies, ale některé části našeho webu tak mohou být tímto postupem ovlivněny. Tyto soubory cookies nejsou určeny k tomu, aby tě osobně identifikovaly.",
