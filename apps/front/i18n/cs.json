@@ -109,11 +109,11 @@
     "register_label": "Registrovat se",
     "continue": "Pokračovat",
     "register_panel": {
-      "welcome": "Vítej, {{name}}!",
+      "welcome": "Vítej!",
       "greeting": "Jsme rádi, že tě můžeme počítat mezi naše angažované uživatele!",
       "mail_confirmation_strong": "Z důvodu ověření pravosti tvého účtu, prosím, potvrď svou e-mailovou adresu. ",
       "mail_confirmation": " Stačí jedno kliknutí. Klikni na aktivační odkaz, který ti byl zaslán na adresu: {{mail}}",
-      "onboarding": "Vyjádři svůj názor na sociální otázky, které jsou pro tebe důležité, zúčastni se na našich občanských konzultacích.",
+      "onboarding": "Vyjádři svůj názor na sociální otázky, které jsou pro tebe důležité, zúčastni se našich občanských konzultací.",
       "cta": "Zúčastnit se konzultací",
       "cta_access": "Chci se připojit ke konzultaci",
       "optin_cgu_title": "Dokonči registraci,",
@@ -834,7 +834,7 @@
         "description": "Tví přátelé mají nápady a názory, které si také zaslouží být vyslyšeny. Zvětši dopad této konzultace, sdílej ji podle tvých vlastních sil a úvahy."
       },
       "about": {
-        "title": "Proč tato konzultace?",
+        "title": "Proč právě tato konzultace?",
         "description": "Proč byla tato konzultace zahájena? Jaké jsou problematiky? Kdo ji inicioval?",
         "link": "Zjistit více"
       },
@@ -855,7 +855,7 @@
     },
     "navigation": {
       "introduction": "Projdi si další témata probíraná během konzultace: {{name}}",
-      "participate_desktop": "zúčastnit se konzultace",
+      "participate_desktop": "Zúčastnit se konzultace",
       "participate_mobile": "Zúčastnit se",
       "participate_breadcrumb": "Zúčastnit se „{{title}}“",
       "explore_desktop": "Projít si návrhy",
@@ -902,7 +902,7 @@
       "POPULAR": "Nejoblíbenější"
     },
     "presentation": {
-      "title": "Proč tato konzultace?",
+      "title": "Proč právě tato konzultace?",
       "link_text": "Zjistit více"
     },
     "followus": {
@@ -1094,7 +1094,7 @@
     "title": "Domovská stránka",
     "hero": {
       "title": "Společně máme dostatek síly vylepšit společnost",
-      "description": "Vyjádři svůj názor na sociální otázky, které jsou pro tebe důležité, zúčastni se na našich občanských konzultacích. Pojďme společně, občané, sdružení a podniky, definovat naše priority a provést konkrétní změny.",
+      "description": "Vyjádři svůj názor na sociální otázky, které jsou pro tebe důležité, zúčastni se našich občanských konzultací. Pojďme společně, občané, sdružení a podniky, definovat naše priority a provést konkrétní změny.",
       "participate": "Zúčastni se konzultací",
       "discover": "Seznam se s Hlavními případy"
     },
@@ -1204,8 +1204,7 @@
     "mail": "Emailová adresa : ",
     "make_phone": "Telefonní číslo: ",
     "make_phone_number": "{{make_phone_number}}",
-    "director": "Ředitel publikace: ",
-    "name": "Axel Dauchez",
+    "director": "Ředitel publikace: {{make_director_name}}",
     "host": "Hostitel webových stránek: ",
     "host_address": "{{make_host_address}} FRANCIE",
     "host_phone": "Telefonní číslo: ",
