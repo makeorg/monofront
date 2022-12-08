@@ -4,6 +4,7 @@ import { DataFR } from './FR';
 import { DataEN } from './EN';
 import { DataDE } from './DE';
 import { DataUA } from './UA';
+import { DataCS } from './CS';
 
 export const Data: FC = () => {
   const { state } = useAppContext();
@@ -16,6 +17,8 @@ export const Data: FC = () => {
       return <DataDE />;
     case 'uk':
       return <DataUA />;
+    case 'cs':
+      return <DataCS />;
     default:
       return <DataEN />;
   }
