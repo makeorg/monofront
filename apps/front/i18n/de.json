@@ -769,8 +769,9 @@
     "highlights": {
       "start_date": "Startdatum",
       "end_date": "Enddatum der Konsultation",
+      "proposals_one": "Vorschlag",
+      "proposals_other": "Vorschläge",
       "remaining_one": "Verbleibende Tage",
-      "proposals_one": "Vorschläge",
       "remaining_other": "Verbleibende Tage",
       "participant_one": "Teilnehmer:in",
       "participant_other": "Teilnehmer:innen",

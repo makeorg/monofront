@@ -66,7 +66,9 @@ export const Figures: FC = () => {
       <FiguresListItemStyle>
         <HigthlightsTitleStyle>
           {resultsPage
-            ? i18n.t('consultation.highlights.proposals')
+            ? i18n.t('consultation.highlights.proposals', {
+                count: question.highlights.proposalsCount,
+              })
             : i18n.t('consultation.highlights.remaining', {
                 count: remainingDays || 0,
               })}
@@ -87,7 +89,9 @@ export const Figures: FC = () => {
             ? i18n.t('consultation.highlights.participant', {
                 count: question.highlights.participantsCount,
               })
-            : i18n.t('consultation.highlights.proposals')}
+            : i18n.t('consultation.highlights.proposals', {
+                count: question.highlights.proposalsCount,
+              })}
         </HigthlightsTitleStyle>
         <ScreenReaderItemStyle> : </ScreenReaderItemStyle>
         <FiguresValueStyle className="mobile-extra-margin-bottom">

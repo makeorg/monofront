@@ -816,6 +816,8 @@
     "highlights": {
       "remaining_one": "Remaining day",
       "remaining_other": "Remaining days",
+      "proposals_one": "Solution",
+      "proposals_other": "Solutions",
       "participant_one": "Participant",
       "participant_other": "Participants",
       "progress_title": "Our votes target",
