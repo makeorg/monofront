@@ -3,7 +3,7 @@ import { useAppContext } from '@make.org/store';
 import { TermsOfUseFR } from './FR';
 import { TermsOfUseEN } from './EN';
 import { TermsOfUseDE } from './DE';
-import { TermsOfUseUK } from './UA';
+import { TermsOfUseUK } from './UK';
 
 export const TermsOfUse: FC = () => {
   const { state } = useAppContext();

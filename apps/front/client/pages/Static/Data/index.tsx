@@ -3,8 +3,8 @@ import { useAppContext } from '@make.org/store';
 import { DataFR } from './FR';
 import { DataEN } from './EN';
 import { DataDE } from './DE';
-import { DataUA } from './UA';
 import { DataCS } from './CS';
+import { DataUK } from './UK';
 
 export const Data: FC = () => {
   const { state } = useAppContext();
@@ -16,7 +16,7 @@ export const Data: FC = () => {
     case 'de':
       return <DataDE />;
     case 'uk':
-      return <DataUA />;
+      return <DataUK />;
     case 'cs':
       return <DataCS />;
     default:

@@ -62,7 +62,7 @@ declare global {
   }
 }
 
-export const A11yUA: FC = () => {
+export const A11yUK: FC = () => {
   const { state } = useAppContext();
   const { country } = state.appConfig;
   const FRONT_URL = env.frontUrl() || window.FRONT_URL;
@@ -525,4 +525,4 @@ export const A11yUA: FC = () => {
 };
 
 // default export needed for loadable component
-export default A11yUA; // eslint-disable-line import/no-default-export
+export default A11yUK; // eslint-disable-line import/no-default-export

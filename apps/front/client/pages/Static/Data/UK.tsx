@@ -24,7 +24,7 @@ import {
   StaticSquareListItemStyle,
 } from '../style';
 
-export const DataUA: FC = () => {
+export const DataUK: FC = () => {
   const { state } = useAppContext();
   const { country, countriesWithConsultations } = state.appConfig;
   const contactMailByCountry = getContactMailByCountry(
@@ -379,4 +379,4 @@ export const DataUA: FC = () => {
 };
 
 // default export needed for loadable component
-export default DataUA; // eslint-disable-line import/no-default-export
+export default DataUK; // eslint-disable-line import/no-default-export
