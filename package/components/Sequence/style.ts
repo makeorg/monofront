@@ -33,6 +33,7 @@ export const SequenceContentStyle = styled(MiddleColumnStyle)`
 
 export const SequenceAltTitleStyle = styled.h2`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.XL.value)};
   letter-spacing: 0.5px;
   align-self: flex-start;
@@ -42,6 +43,7 @@ export const SequenceAltTitleStyle = styled.h2`
 
 export const SequenceSpecialTitleStyle = styled.div`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   display: flex;
   border-radius: 8px;
   letter-spacing: 0.12px;
@@ -61,6 +63,7 @@ export const SequenceSpecialIconStyle = styled(SvgArrowReturn)`
 
 export const SequenceTitleStyle = styled.h2`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   letter-spacing: 0.12px;
   align-self: flex-start;

@@ -52,6 +52,7 @@ export const SocialButtonStyle = styled.button`
 
 export const SocialButtonLabelStyle = styled.span`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: 14px;
   font-weight: bold;
   color: ${color.black};

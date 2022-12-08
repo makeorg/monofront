@@ -61,6 +61,7 @@ export const SequenceIntroButtonStyle = styled(RedButtonStyle)`
 
 const SequenceTitleStyle = styled.div`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   text-align: center;
 `;
 

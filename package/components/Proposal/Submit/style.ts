@@ -81,6 +81,7 @@ export const ProposalStepWrapperColumnStyle = styled.div<{
 
 export const ProposalStepTitleStyle = styled.h2`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   line-height: 1.5;
   text-transform: none;
@@ -366,6 +367,7 @@ export const ProposalSuccessWrapperStyle = styled(ColumnElementStyle)`
 
 export const ProposalSuccessTitle = styled.h2`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   line-height: 1.5;
   text-transform: none;
@@ -432,6 +434,7 @@ export const ProposalSuccessParagraphStyle = styled.p`
 `;
 export const ProposalSuccessSpanStyle = styled.span`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
 `;
 
 export const ProposalSuccessParagraphLinkStyle = styled(

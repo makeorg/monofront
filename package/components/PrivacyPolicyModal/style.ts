@@ -25,6 +25,7 @@ export const DataPolicyTitleStyle = styled.h2`
   display: flex;
   margin-top: 47px;
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   text-transform: none;
   line-height: 1.5;

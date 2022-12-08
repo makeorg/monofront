@@ -7,6 +7,7 @@ import { typography } from 'athena-design-tokens';
 export const ThirdLevelTitleCircularStyle = styled.h3`
   font-size: ${intToPx(typography.font.fontsize.L.value)};
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   text-transform: none;
 `;
 

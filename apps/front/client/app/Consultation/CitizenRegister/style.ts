@@ -17,6 +17,7 @@ export const CitizenRegisterContentStyle = styled(FlexElementStyle)`
 
 export const CitizenRegisterTitleStyle = styled.h4`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   text-transform: none;
   font-size: ${intToPx(typography.font.fontsize.L.value)};
   margin: 15px 0 10px;

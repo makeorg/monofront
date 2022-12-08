@@ -39,6 +39,7 @@ export const TallCardStyle = styled(CardStyle)`
 
 export const ParticipateCardTitleStyle = styled.h4`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   text-transform: none;
   font-size: ${intToPx(typography.font.fontsize.L.value)};
   margin: 15px 0 10px;
@@ -50,6 +51,7 @@ export const ParticipateCardTitleStyle = styled.h4`
 
 export const ParticipateCardAltTitleStyle = styled.h4`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   text-transform: none;
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   margin-bottom: 10px;

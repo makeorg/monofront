@@ -35,6 +35,7 @@ export const ThumbsUpWrapperStyle = styled.span`
 
 export const PlaceholderParagraphStyle = styled(ParagraphStyle)`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   margin: ${intToPx(DefaultPadding.Mobile)} 0 0;
   padding: 0 10px;
   text-align: center;
@@ -55,6 +56,7 @@ export const FavouritesProposalStyle = styled.p`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   line-height: normal;
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-weight: bold;
   text-align: center;
   margin-top: 10px;

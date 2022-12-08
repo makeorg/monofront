@@ -20,6 +20,7 @@ export const CollapseWrapperStyle = styled(ColumnElementStyle)`
 
 export const CollapseTriggerStyle = styled(UnstyledButtonStyle)`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   display: inline-block;
   justify-content: start;
   width: 100%;

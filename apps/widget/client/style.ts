@@ -23,6 +23,7 @@ export const WidgetContainerStyle = styled(ColumnElementStyle)<{
 
 export const ClosedConsultationTitleStyle = styled(SequenceMainTitleStyle)`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   line-height: 1.5;
   letter-spacing: 0.14px;

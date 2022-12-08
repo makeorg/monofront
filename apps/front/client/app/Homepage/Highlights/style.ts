@@ -71,6 +71,7 @@ export const HeartIconStyle = styled(SvgHandHeart)`
 
 export const FiguresStyle = styled.span`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.L.value)};
   color: ${color.black};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {

@@ -35,6 +35,7 @@ export const DescriptionStyle = styled(ParagraphStyle)`
   > span,
   > a {
     font-family: ${MakeFonts.CircularStandardBold};
+    font-weight: bold;
     color: ${color.black};
     text-decoration: underline;
   }

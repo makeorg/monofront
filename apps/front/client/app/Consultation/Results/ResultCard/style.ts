@@ -35,6 +35,7 @@ export const ResultCardIconStyle = styled.span<{ focusable: string }>`
 
 export const ResultCardTitleStyle = styled.h4`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   text-transform: none;
   font-size: ${intToPx(typography.font.fontsize.L.value)};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {

@@ -37,6 +37,7 @@ export const BrowseHeaderInnerStyle = styled.div`
 
 export const BrowseHeaderTitleStyle = styled.h2`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.X3L.value)};
   margin-bottom: 24px;
   text-transform: none;
@@ -62,6 +63,7 @@ export const BrowseNavItemStyle = styled.li`
 
 export const BrowseNavLinkStyle = styled(Link)`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   text-decoration: none;
   padding-bottom: 8px;
@@ -154,6 +156,7 @@ export const ConsultationElementTitleStyle = styled.h3`
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   color: ${color.black};
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   margin-bottom: 20px;
 `;
 

@@ -70,6 +70,7 @@ export const HigthlightsTitleStyle = styled.span`
 export const FiguresValueStyle = styled.span`
   display: block;
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.L.value)};
   letter-spacing: 0.5px;
   margin-bottom: 20px;
@@ -126,6 +127,7 @@ export const VotesTargetStyle = styled.span`
   color: ${color.greyDark};
   span {
     font-family: ${MakeFonts.CircularStandardBold};
+    font-weight: bold;
     font-size: ${intToPx(typography.font.fontsize.XL.value)};
     color: ${color.black};
     font-weigth: bolder;

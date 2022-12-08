@@ -25,6 +25,7 @@ export const ProposalTitleStyle = styled(FourthLevelTitleStyle)<{
   fontColor: string;
 }>`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   text-transform: none;
   color: ${props => props.fontColor};
   margin: 5px 0 10px;

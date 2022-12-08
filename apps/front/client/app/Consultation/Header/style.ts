@@ -59,6 +59,7 @@ export const HeaderLabelStyle = styled.span`
 
 export const HeaderTitleStyle = styled.h2`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.X2L.value)};
   text-transform: none;
   color: ${props =>
@@ -88,6 +89,7 @@ export const HeaderListWrapperStyle = styled.div`
 
 export const HeaderListLabelStyle = styled.span`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   color: ${props =>
     props.theme.fontColor ? props.theme.fontColor : color.black};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};

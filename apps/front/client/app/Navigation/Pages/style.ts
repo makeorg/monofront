@@ -14,6 +14,7 @@ export const PagesItemStyle = styled.li`
 
 export const PagesLinkStyle = styled(Link)`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   text-decoration: none;
   padding-bottom: 14px;

@@ -27,6 +27,7 @@ export const PopularProposalTagStyle = styled.div`
   padding-top: 15px;
   border-top: 1px solid ${color.greyLighter};
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   &::first-letter {
     text-transform: uppercase;
   }

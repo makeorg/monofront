@@ -31,6 +31,7 @@ export const TimelineListWrapperStyle = styled.ul`
 
 export const TimelineTitleStyle = styled.h4`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   text-transform: none;
   font-size: ${intToPx(typography.font.fontsize.L.value)};
   margin: 40px 0;
@@ -66,6 +67,7 @@ export const TimelineItemMarkerIsCurrent = styled.span`
 
 export const TimelineItemDateStyle = styled.span`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.M.value)};
   font-weight: bold;
   color: ${color.black};

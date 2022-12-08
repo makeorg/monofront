@@ -113,6 +113,7 @@ export const ParticipateContentStyle = styled.section`
 
 export const ParticipateTitleStyle = styled.h3`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   text-transform: none;
   font-size: ${intToPx(typography.font.fontsize.X2L.value)};
   margin: 40px 0 15px;
@@ -140,6 +141,7 @@ export const ExploreTitleWrapperStyle = styled(ColumnElementStyle)`
 
 export const ExploreTitleStyle = styled.h3`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   text-transform: none;
   font-size: ${intToPx(typography.font.fontsize.L.value)};
   letter-spacing: 0.5px;
@@ -172,6 +174,7 @@ export const ExploreProposalsCountStyle = styled.span`
   letter-spacing: 0.12px;
   > strong {
     font-family: ${MakeFonts.CircularStandardBold};
+    font-weight: bold;
     font-weight: normal;
   }
 `;

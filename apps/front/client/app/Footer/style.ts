@@ -82,6 +82,7 @@ export const FooterItemHTMLLinkStyle = styled.a`
 export const FooterItemAltLinkStyle = styled(FooterItemLinkStyle)`
   color: ${color.black};
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   .tofill {
     fill: ${color.black};
   }

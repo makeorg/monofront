@@ -83,6 +83,7 @@ export const ResultsAvatarStyle = styled(AvatarStyle)`
 
 const ResultsItemStyle = styled.span`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
 `;
 
 export const ResultsLikeItStyle = styled(ResultsItemStyle)`

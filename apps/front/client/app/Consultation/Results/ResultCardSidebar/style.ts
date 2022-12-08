@@ -21,6 +21,7 @@ export const ResultCardSidebarStyle = styled.section<{ isContext: boolean }>`
 
 export const ResultCardSidebarTitleStyle = styled.h4`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   text-transform: none;
   line-height: 1.5;

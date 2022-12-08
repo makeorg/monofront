@@ -36,6 +36,7 @@ export const FiltersAndSortTitleStyle = styled.h3`
   display: inline-flex;
   align-items: center;
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   text-transform: none;
   line-height: 1.69;
@@ -67,6 +68,7 @@ export const TransparentButtonFilterStyle = styled.button`
     background-color: ${color.brandPrimary};
     color: ${color.white};
     font-family: ${MakeFonts.CircularStandardBold};
+    font-weight: bold;
   }
   &:hover,
   &:focus {
@@ -114,6 +116,7 @@ export const RadioAsTransparentButtonLabelStyle = styled.label`
   &:hover,
   &:focus {
     font-family: ${MakeFonts.CircularStandardBold};
+    font-weight: bold;
     color: ${color.black};
   }
 `;

@@ -72,6 +72,7 @@ export const DefaultStylesheet = createGlobalStyle`
 
   label {
     font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
     color: ${color.black};
   }
 

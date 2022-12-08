@@ -17,6 +17,7 @@ const ProposalStyle = `
   width: 100%;
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   align-self: flex-start;
   flex: 1 1 auto;
   margin: 15px auto;

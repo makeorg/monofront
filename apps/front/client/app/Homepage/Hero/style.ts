@@ -51,6 +51,7 @@ export const ColumnToRowToColumnStyle = styled(ColumnToRowElementStyle)`
 
 export const HeroTitleStyle = styled.h2`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.X3L.value)};
   color: ${color.black};
   margin-bottom: 30px;

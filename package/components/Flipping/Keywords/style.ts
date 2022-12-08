@@ -30,6 +30,7 @@ export const KeywordItemLinkStyle = styled(Link)`
   letter-spacing: 0.14px;
   line-height: 1.5;
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   text-decoration: none;
   max-width: 80%;

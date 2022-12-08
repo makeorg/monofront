@@ -51,6 +51,7 @@ export const CookieModalButtonWithLinkStyle = styled(UnstyledButtonStyle)`
 
 export const CookieModalTitleStyle = styled.h2`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   text-transform: none;
   letter-spacing: 0.12px;
@@ -105,6 +106,7 @@ export const CookieModalElementStyle = styled.li`
   margin-bottom: 10px;
   strong {
     font-family: ${MakeFonts.CircularStandardBold};
+    font-weight: bold;
   }
   &.with-separator {
     border-bottom: 1px solid ${color.grey};

@@ -146,6 +146,7 @@ export const RegisterEmailTitleStyle = styled.h1`
   text-transform: none;
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   line-height: 27px;
   margin-bottom: 5px;
 `;
@@ -154,6 +155,7 @@ export const LoginTitleWrapperStyle = styled(ThirdLevelTitleStyle)`
   margin-bottom: 5px;
   text-transform: none;
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   line-height: 1.5;
   letter-spacing: 0.12px;

@@ -20,6 +20,7 @@ export const SwitchCountryLanguageContainerStyle = styled.form`
 
 export const SwitchCountryLanguageTitleStyle = styled.h2`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   text-transform: none;
   font-size: ${intToPx(typography.font.fontsize.L.value)};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -64,6 +65,7 @@ export const CountryLinkStyle = styled(Link)`
   min-width: 225px;
   &.selected {
     font-family: ${MakeFonts.CircularStandardBold};
+    font-weight: bold;
     background-color: ${color.white};
   }
 `;
@@ -90,6 +92,7 @@ export const MultilingualTransparentButtonFilterStyle = styled.button`
     background-color: ${color.brandPrimary};
     color: ${color.white};
     font-family: ${MakeFonts.CircularStandardBold};
+    font-weight: bold;
   }
   &:hover,
   &:focus {
@@ -137,6 +140,7 @@ export const MultilingualRadioItemWrapperStyle = styled.li`
   }
   &:focus {
     font-family: ${MakeFonts.CircularStandardBold};
+    font-weight: bold;
     color: ${color.black};
   }
 `;
@@ -153,6 +157,7 @@ export const MultilingualRadioAsTransparentButtonLabelStyle = styled.label`
   &:hover,
   &:focus {
     font-family: ${MakeFonts.CircularStandardBold};
+    font-weight: bold;
     color: ${color.black};
   }
 `;

@@ -24,6 +24,7 @@ export const ExtraDataFormStyle = styled.form`
 
 export const ExtraDataTitleStyle = styled(SequenceIntroParagraphStyle)`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.S.value)};

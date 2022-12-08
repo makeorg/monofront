@@ -22,6 +22,7 @@ export const TopIdeaCardHeaderStyle = styled(PopularProposalHeader)`
   justify-content: space-between;
   align-items: center;
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   background-color: ${color.grey};
 `;
 
@@ -46,6 +47,7 @@ export const TopIdeaContentStyle = styled(Link)`
   width: 100%;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   align-self: flex-start;
   flex: 1 1 auto;
   margin-top: 15px;

@@ -16,6 +16,7 @@ export const OpinionFormStyle = styled.form`
 
 export const OpinionFormTitleStyle = styled(ParagraphStyle)`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   margin-bottom: 20px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     margin-bottom: 30px;

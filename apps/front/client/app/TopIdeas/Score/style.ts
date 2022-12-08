@@ -40,6 +40,7 @@ export const ScoringTextStyle = styled.span`
 export const ScoringPercentageStyle = styled.span`
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     margin-bottom: 5px;
   }

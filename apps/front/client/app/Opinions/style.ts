@@ -9,6 +9,7 @@ export const DisclaimerSubtitleStyle = styled.h4`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   color: ${color.black};
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   text-transform: none;
   margin-bottom: 5px;
   &.margin-top {

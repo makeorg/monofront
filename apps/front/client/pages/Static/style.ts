@@ -43,6 +43,7 @@ export const FocusBlockWrapperStyle = styled(StartColumnStyle)`
 
 export const FocusBlockTitleStyle = styled.strong`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.XL.value)};
   margin-bottom: 10px;
   line-height: 1.5;
@@ -82,6 +83,7 @@ export const StaticThirdLevelTitleStyle = styled(ThirdLevelTitleStyle)`
 export const StaticFourthLevelTitleStyle = styled(FourthLevelTitleStyle)`
   display: inline-flex;
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   text-transform: none;
   margin: 15px 0 5px;
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
@@ -183,6 +185,7 @@ export const StaticSecondaryOrderedListItemStyle = styled.li`
   counter-increment: reset-articles;
   &:before {
     font-family: ${MakeFonts.CircularStandardBold};
+    font-weight: bold;
     font-size: ${intToPx(typography.font.fontsize.X2S.value)};
     line-height: 15px;
     margin-right: 10px;
@@ -275,6 +278,7 @@ export const NoCookiesParagraphStyle = styled(ParagraphStyle)`
     display: flex;
     flex-flow: column;
     font-family: ${MakeFonts.CircularStandardBold};
+    font-weight: bold;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     margin-bottom: 30px;

@@ -33,6 +33,7 @@ export const PartnershipSubtitleStyle = styled.span`
 
 export const PartnershipTitleStyle = styled.h2`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.X2L.value)};
   letter-spacing: 0.5px;
   color: ${color.white};

@@ -35,6 +35,7 @@ export const HomepageSectionStyle = styled(ColumnElementStyle)`
 
 export const HomepageSectionTitleStyle = styled.h2`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.X2L.value)};
   color: ${color.black};
   margin-bottom: 30px;

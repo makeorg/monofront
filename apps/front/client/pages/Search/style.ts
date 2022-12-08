@@ -49,6 +49,7 @@ export const MainResultsContainerStyle = styled.div`
 
 export const NoResultsStyle = styled.p`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   @media (max-width: ${intToPx(Breakpoints.Tablet)}) {
     margin: 0 20px;

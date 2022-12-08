@@ -70,6 +70,7 @@ export const KindLabelTextStyle = styled.span`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   line-height: ${intToPx(typography.font.fontsize.XS.value)};
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   padding: 8px;
   letter-spacing: 0.12px;
 `;

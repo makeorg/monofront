@@ -84,6 +84,7 @@ export const MenuItemStyle = styled.li`
 
 export const MenuItemTitleStyle = styled.span`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   padding: 0 30px;
 `;
 
@@ -94,6 +95,7 @@ export const MenuInternalLinkStyle = styled(Link)`
   padding: 0 30px;
   &.current {
     font-family: ${MakeFonts.CircularStandardBold};
+    font-weight: bold;
   }
 `;
 
@@ -167,6 +169,7 @@ export const MenuItemCountryLanguageLinkStyle = styled(Link)`
   display: inline-flex;
   align-items: center;
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   text-decoration: none;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   color: ${color.black};

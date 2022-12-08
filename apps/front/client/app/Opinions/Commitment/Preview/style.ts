@@ -41,6 +41,7 @@ export const CommitmentPreviewOpinionsIconWrapperStyle = styled.div<{
 
 export const CommitmentPreviewOpinionsParagraphStyle = styled(ParagraphStyle)`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   color: ${color.black};
   span {
     color: ${props => props.color};

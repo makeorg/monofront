@@ -46,6 +46,7 @@ export const CheckboxLabelStyle = styled.label<{
   }
   strong {
     font-family: ${MakeFonts.CircularStandardBold};
+    font-weight: bold;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${props =>
@@ -275,6 +276,7 @@ export const FormErrorsContainerStyle = styled.div`
 
 export const FormErrorsIntroStyle = styled.p`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   margin: 0 0 10px;
 `;
 
@@ -283,6 +285,7 @@ export const FormErrorsListItemStyle = styled.li`
   label {
     color: ${color.white};
     font-family: ${MakeFonts.CircularStandardBold};
+    font-weight: bold;
     text-decoration: underline;
   }
   &:last-child {
@@ -296,6 +299,7 @@ export const FormErrorsListItemStyle = styled.li`
 export const CustomErrorTriggerStyle = styled(UnstyledButtonStyle)`
   display: inline-flex;
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   text-decoration: underline;
   margin-left: 5px;
 `;
@@ -364,6 +368,7 @@ export const BasicTextAreaStyle = styled(TextareaAutosize)`
   background: transparent;
   background-color: transparent;
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   color: ${color.greyDark};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   padding: 10px 5px;

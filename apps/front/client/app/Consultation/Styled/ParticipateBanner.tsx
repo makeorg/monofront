@@ -43,6 +43,7 @@ export const ParticipateInnerStyle = styled(ColumnToRowElementStyle)`
 export const ParticipateIntroductionStyle = styled(ThirdLevelTitleStyle)`
   display: inline-flex;
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   color: ${props =>
     props.theme.secondaryFontColor
       ? props.theme.secondaryFontColor

@@ -271,6 +271,7 @@ export const QualifyButtonStyle = styled.button.attrs(props => ({
   ...props,
 }))`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   display: flex;
   justify-content: center;
   width: 100%;

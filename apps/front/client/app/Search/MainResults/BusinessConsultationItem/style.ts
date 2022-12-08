@@ -18,6 +18,7 @@ export const BusinessConsultationsItemWrapperStyle = styled.div`
   display: flex;
   text-decoration: none;
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   color: ${color.greyDark};
   width: 100%;
@@ -41,6 +42,7 @@ export const BusinessConsultationsItemStatusStyle = styled.p`
 
 const BusinessConsultationsLinkStyle = `
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   color: ${color.greyDark};
   &:hover,
   &:focus {

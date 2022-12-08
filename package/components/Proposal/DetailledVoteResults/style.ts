@@ -54,6 +54,7 @@ export const VoteDataItemStyle = styled.span`
 export const VoteDataBoldItemStyle = styled(VoteDataItemStyle)`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
   }
@@ -75,6 +76,7 @@ export const VoteProgressContainerStyle = styled(CenterColumnStyle)`
 
 export const VoteCounterStyle = styled(ParagraphStyle)`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
 `;
 
 export const VoteProgressWrapperStyle = styled(FlexElementStyle)`

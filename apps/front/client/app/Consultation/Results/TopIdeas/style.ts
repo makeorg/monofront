@@ -32,12 +32,14 @@ export const ThemeResultsDetailsStyle = styled(ParagraphStyle)`
 
 export const ThemeAgreeResultsStyle = styled(ParagraphStyle)`
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   color: ${props => props.color};
 `;
 
 export const ThemeQualifiedStyle = styled.span`
   display: inline-flex;
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   color: ${color.black};
   margin: 0 15px 0 5px;
 `;
@@ -59,6 +61,7 @@ export const TopIdeaItemTitleStyle = styled.p`
     margin-bottom: 15px;
   }
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   letter-spacing: 0.14px;
 `;

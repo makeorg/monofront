@@ -41,6 +41,7 @@ export const ForgotPasswordTitleStyle = styled(FourthLevelTitleStyle)<{
 export const PanelForgotPasswordTitleStyle = styled.h3`
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   font-family: ${MakeFonts.CircularStandardBold};
+  font-weight: bold;
   text-transform: none;
   color: ${color.black};
   text-transform: uppercase;
