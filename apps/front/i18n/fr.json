@@ -1184,7 +1184,7 @@
     "mail": "Adresse de courrier électronique : ",
     "make_phone": "Numéro de téléphone : ",
     "make_phone_number": "{{make_phone_number}}",
-    "director": "Directeur de Publication : ",
+    "director": "Directeur de Publication : {{make_director_name}}",
     "host": "Hébergeur du site : ",
     "host_address": "{{make_host_address}} FRANCE",
     "host_phone": "Numéro de téléphone : ",

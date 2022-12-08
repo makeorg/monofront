@@ -28,6 +28,7 @@ export const HOST_ADDRESS = 'OVH, 2 rue Kellermann, 59100 Roubaix';
 export const HOST_PHONE_NUMBER = '(+33)8 99 70 17 61';
 export const CNIL_NUMBER = '2005312';
 export const ACCESSIBILITY_EMAIL = 'accessibility@make.org';
+export const MAKE_DIRECTOR_NAME = 'Axel Dauchez';
 
 /** Social medias */
 export const GOOGLE_LINK_FR = 'https://policies.google.com/privacy?hl=fr&gl=fr';

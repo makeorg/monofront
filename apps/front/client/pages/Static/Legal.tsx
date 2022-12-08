@@ -8,6 +8,7 @@ import {
   HOST_PHONE_NUMBER,
   CNIL_NUMBER,
   MAKE_PHONE_NUMBER,
+  MAKE_DIRECTOR_NAME,
 } from '@make.org/utils/constants/config';
 import { getContactMailByCountry } from '@make.org/utils/helpers/countries';
 import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
@@ -64,8 +65,9 @@ export const LegalPage: FC = () => {
           </StaticPhoneLinkStyle>
         </StaticParagraphStyle>
         <StaticParagraphStyle>
-          {i18n.t('legal.director')}
-          Аксель Дошез (Axel Dauchez)
+          {i18n.t('legal.director', {
+            make_director_name: MAKE_DIRECTOR_NAME,
+          })}
         </StaticParagraphStyle>
         <StaticParagraphStyle>
           {i18n.t('legal.host')}

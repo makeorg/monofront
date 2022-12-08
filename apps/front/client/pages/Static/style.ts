@@ -117,6 +117,7 @@ export const StaticParagraphStyle = styled.p`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   line-height: 2;
   color: ${color.greyDark};
+  white-space: pre-line;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
   }

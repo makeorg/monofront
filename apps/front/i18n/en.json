@@ -1092,7 +1092,7 @@
     "mail": "Email: ",
     "make_phone": "Phone number: ",
     "make_phone_number": "{{make_phone_number}}",
-    "director": "Head of publishing: ",
+    "director": "Head of publishing: {{make_director_name}}",
     "host": "Webite host: ",
     "host_address": "{{make_host_address}} FRANCE",
     "host_phone": "Phone number: ",
