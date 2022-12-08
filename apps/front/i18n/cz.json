@@ -3,7 +3,7 @@
     "home": {
       "title": "Zapoj se s Make.org - Make.org",
       "description": "Představ své návrhy, hlasuj a jednejme společně: společně najdeme řešení dnešních hlavních problémů.",
-      "picture": "https://assets.make.org/assets/metas/default_meta-fr.png"
+      "picture": "https://assets.make.org/assets/metas/default-meta-cs.png"
     },
     "organisation": {
       "proposals": {
@@ -644,14 +644,6 @@
         "explanation": "Návrh můžeš do oblíbených položek umístit ihned poté, co jsi pro tento návrh hlasoval/a jako „Souhlasím“."
       },
       "card_title": "Je třeba podporovat kvalitní návrhy."
-    },
-    "following": {
-      "title": "Profily, které sleduji",
-      "description": {
-        "introduction": "Zatím na Make.org nesleduješ žádný profil organizace.",
-        "explanation_step_one": "Shledáme se na profilu organizace.",
-        "explanation_step_two": "Kliknutím na „Sledovat“ se přihlásíš k odběru novinek dané organizace."
-      }
     },
     "common": {
       "infos": "Moje osobní údaje",
