@@ -12,7 +12,7 @@
     "@types/react": "^17.0.52",
     "@types/styled-components": "5.1.26",
     "athena-design-tokens": "^0.1.7",
-    "i18next": "^20.3.4",
+    "i18next": "22.1.4",
     "react": "^17.0.2",
     "react-autosize-textarea": "^7.1.0",
     "react-dom": "^17.0.2",

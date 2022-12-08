@@ -266,11 +266,11 @@
     },
     "max_characters": "симв. максимум",
     "back": "Назад",
-    "proposal_count": "{{count}} пропозиція",
+    "proposal_count_one": "{{count}} пропозиція",
     "proposal_count_few": "{{count}} пропозиції",
     "proposal_count_many": "{{count}} пропозицій",
     "breadcrumbs": "відображення шляху",
-    "million": "мільйон",
+    "million_one": "мільйон",
     "million_few": "мільйони",
     "million_many": "мільйонів",
     "close_panel": "Закрити розкривне меню"
@@ -292,12 +292,10 @@
     "number": "Ідея № {{ count }}",
     "content": "Суть ідеї: ",
     "link": "Переглянути детальний опис ідеї",
-    "associated_proposals": "{{count}} пов’язана пропозиція",
+    "associated_proposals_one": "{{count}} пов’язана пропозиція",
     "associated_proposals_few": "{{count}} пов’язані пропозиції",
     "associated_proposals_many": "{{count}} пов’язаних пропозицій",
-    "position": "{{ count }} висловлення думки",
     "position_plural": "{{ count }} висловлень думки",
-    "candidate": " кандидата щодо цієї ідеї.",
     "candidate_plural": " кандидатів щодо цієї ідеї.",
     "open": "Показати рейтинг ідеї",
     "close": "Приховати рейтинг ідеї",
@@ -435,7 +433,7 @@
     "agree": "За",
     "disagree": "Проти",
     "neutral": "Утримуюся",
-    "label": "{{count}} голос",
+    "label_one": "{{count}} голос",
     "label_few": "{{count}} голоси",
     "label_many": "{{count}} голосів",
     "with_percent": "{{votedKey}}: {{votedPercent}}%"
@@ -446,7 +444,7 @@
   "results": {
     "static_total": "Ця пропозиція отримала: ",
     "static_repartition": "З розподілом: ",
-    "total": "Ця пропозиція набрала {{count}} голос, з розподілом: ",
+    "total_one": "Ця пропозиція набрала {{count}} голос, з розподілом: ",
     "total_few": "Ця пропозиція набрала {{count}} голоси, з розподілом: ",
     "total_many": "Ця пропозиція набрала {{count}} голосів, з розподілом: ",
     "voted": {
@@ -704,7 +702,7 @@
       "proposal_agree": "погоджується із цією пропозицією",
       "proposal_disagree": "не погоджується із цією пропозицією",
       "and": " і ",
-      "hasVoted": " проголосував(ла) за цю пропозицію.",
+      "hasVoted_one": " проголосував(ла) за цю пропозицію.",
       "hasVoted_few": " проголосували за цю пропозицію.",
       "hasVoted_many": " проголосували за цю пропозицію.",
       "sharing_title": "Поділитися профілем"
@@ -783,10 +781,9 @@
     "highlights": {
       "start_date": "Дата початку",
       "end_date": "Дата закінчення публічної консультації",
-      "remaining": "День залишився",
-      "proposals": "Пропозиції",
+      "remaining_one": "День залишився",
       "remaining_plural": "Днів залишилося",
-      "participant": "учасник",
+      "participant_one": "учасник",
       "participant_few": "учасники",
       "participant_many": "учасників",
       "progress_title": "Наша мета голосування",
@@ -882,7 +879,7 @@
       "unvoted": "Ті, хто чекає на ваш голос",
       "organisations_proposals": "Запропоновано організаціями",
       "no_proposal": "<strong>Жодних пропозицій</strong>",
-      "validated_proposals": "<strong>{{count}} затверджена пропозиція, </strong> що відповідає вашим критеріям пошуку",
+      "validated_proposals_one": "<strong>{{count}} затверджена пропозиція, </strong> що відповідає вашим критеріям пошуку",
       "validated_proposals_few": "<strong>{{count}} затверджені пропозиції, </strong> що відповідають вашим критеріям пошуку",
       "validated_proposals_many": "<strong>{{count}} затверджених пропозицій, </strong> що відповідають вашим критеріям пошуку"
     },
@@ -964,7 +961,7 @@
       },
       "top_ideas": {
         "skiplink": "Топ найкращих нових ідей",
-        "title": "Топ схвалених ідей, згрупованих за {{count}} тематикою",
+        "title_one": "Топ схвалених ідей, згрупованих за {{count}} тематикою",
         "title_few": "Топ схвалених ідей, згрупованих за {{count}} тематиками",
         "title_many": "Топ схвалених ідей, згрупованих за {{count}} тематиками",
         "introduction": "Після появи на платформі найкращі пропозиції від громадян групуються у великі ідеї, які структурують публічну консультацію. Для ранжування цих ідей алгоритм Make.org враховує голоси «за» і «проти», а також згадки «обране», «реалістичне», «банальне» і «категорично проти! ».",
@@ -992,10 +989,10 @@
     "sortby": "Сортувати за: ",
     "local_actors": {
       "title": "Найактивніші асоціації",
-      "proposals": "{{count}} пропозиція для «{{term}}»",
+      "proposals_one": "{{count}} пропозиція для «{{term}}»",
       "proposals_few": "{{count}} пропозиції для «{{term}}»",
       "proposals_many": "{{count}} пропозицій для «{{term}}»",
-      "votes": "{{count}} голос",
+      "votes_one": "{{count}} голос",
       "votes_few": "{{count}} голоси",
       "votes_many": "{{count}} голосів",
       "participate": "Ви представляєте асоціацію та бажаєте взяти участь у нашій публічній консультації? {{ contact_us }}",
@@ -1033,13 +1030,13 @@
       "title": "Взяти участь в активних консультаціях",
       "subtitle": "Ваш голос важливий! Голосуйте за та/або пропонуйте рішення, щоб мати вплив на різноманітні актуальні громадські питання.",
       "participate": "Узяти участь",
-      "contributors": "учасник",
+      "contributors_one": "учасник",
       "contributors_few": "учасники",
       "contributors_many": "учасників",
-      "proposals": "пропозиція",
+      "proposals_one": "пропозиція",
       "proposals_few": "пропозиції",
       "proposals_many": "пропозицій",
-      "votes": "голос",
+      "votes_one": "голос",
       "votes_few": "голоси",
       "votes_many": "голосів",
       "empty": "На жаль, наразі публічні консультації у вашій країні не проводяться."
@@ -1102,17 +1099,17 @@
     "highlights": {
       "title": "Make.org у цифрах",
       "participants": {
-        "subtitle": "учасник",
+        "subtitle_one": "учасник",
         "subtitle_few": "учасники",
         "subtitle_many": "учасників"
       },
       "proposals": {
-        "subtitle": "поданих пропозицій",
+        "subtitle_one": "поданих пропозицій",
         "subtitle_few": "подана пропозиція",
         "subtitle_many": "поданих пропозицій"
       },
       "partners": {
-        "subtitle": "залучена асоціація і компанія",
+        "subtitle_one": "залучена асоціація і компанія",
         "subtitle_few": "залучені асоціації і компанії",
         "subtitle_many": "залучених асоціацій і компаній"
       }
@@ -1142,16 +1139,16 @@
     "titles": {
       "loading": "Пошук…",
       "no_results": "Результати відсутні",
-      "main_results": "{{count}} результат для «{{term}}»",
+      "main_results_one": "{{count}} результат для «{{term}}»",
       "main_results_few": "{{count}} результати для «{{term}}»",
       "main_results_many": "{{count}} результатів для «{{term}}»",
-      "proposals": "{{count}} пропозиція для «{{term}}»",
+      "proposals_one": "{{count}} пропозиція для «{{term}}»",
       "proposals_few": "{{count}} пропозиції для «{{term}}»",
       "proposals_many": "{{count}} пропозицій для «{{term}}»",
-      "operations": "{{count}} дія для «{{term}}»",
+      "operations_one": "{{count}} дія для «{{term}}»",
       "operations_few": "{{count}} дії для «{{term}}»",
       "operations_many": "{{count}} дій для «{{term}}»",
-      "organisations": "{{count}} організація для «{{term}}»",
+      "organisations_one": "{{count}} організація для «{{term}}»",
       "organisations_few": "{{count}} організації для «{{term}}»",
       "organisations_many": "{{count}} організацій для «{{term}}»",
       "main_results_empty_term": "0 результатів"
@@ -1160,7 +1157,7 @@
       "proposal": "Пропозиція",
       "organisation": "Організація",
       "operation": "Дія",
-      "results": "{{count}} результат",
+      "results_one": "{{count}} результат",
       "results_few": "{{count}} результати",
       "results_many": "{{count}} результатів",
       "view_all": "Див. усе",
@@ -1238,7 +1235,7 @@
       "duration": "Тривалість: {{duration}}",
       "session": "Сеанс",
       "month": "{{count}} міс.",
-      "year": "{{count}} рік",
+      "year_one": "{{count}} рік",
       "year_few": "{{count}} роки",
       "year_many": "{{count}} років",
       "technicals": {

@@ -266,11 +266,11 @@
     },
     "max_characters": "caractères maximum",
     "back": "Retour",
-    "proposal_count": "{{count}} proposition",
-    "proposal_count_plural": "{{count}} propositions",
+    "proposal_count_one": "{{count}} proposition",
+    "proposal_count_other": "{{count}} propositions",
     "breadcrumbs": "fil d'ariane",
-    "million": "million",
-    "million_plural": "millions",
+    "million_one": "million",
+    "million_other": "millions",
     "close_panel": "Fermer le panneau déroulant"
   },
   "header": {
@@ -290,12 +290,12 @@
     "number": "Idée n°{{ count }}",
     "content": "Contenu de l'idée : ",
     "link": "Voir le détail de l'idée",
-    "associated_proposals": "{{count}} proposition associée",
-    "associated_proposals_plural": "{{count}} propositions associées",
-    "position": "{{ count }} prise de position",
-    "position_plural": "{{ count }} prises de position",
-    "candidate": " de candidat sur cette idée.",
-    "candidate_plural": " de candidats sur cette idée.",
+    "associated_proposals_one": "{{count}} proposition associée",
+    "associated_proposals_other": "{{count}} propositions associées",
+    "position_one": "{{ count }} prise de position",
+    "position_other": "{{ count }} prises de position",
+    "candidate_one": " de candidat sur cette idée.",
+    "candidate_other": " de candidats sur cette idée.",
     "open": "Afficher le score de l'idée",
     "close": "Masquer le score de l’idée",
     "expand": " - Cliquez pour afficher le score de l'idée",
@@ -432,8 +432,8 @@
     "agree": "D'accord",
     "disagree": "Pas d'accord",
     "neutral": "Vote neutre",
-    "label": "{{count}} vote",
-    "label_plural": "{{count}} votes",
+    "label_one": "{{count}} vote",
+    "label_other": "{{count}} votes",
     "with_percent": "{{votedKey}} : {{votedPercent}}%"
   },
   "unvote": {
@@ -442,8 +442,8 @@
   "results": {
     "static_total": "Cette proposition a récolté : ",
     "static_repartition": "Avec pour répartition : ",
-    "total": "Cette proposition a récolté {{count}} vote, avec comme répartition : ",
-    "total_plural": "Cette proposition a récolté {{count}} votes, avec comme répartition : ",
+    "total_one": "Cette proposition a récolté {{count}} vote, avec comme répartition : ",
+    "total_other": "Cette proposition a récolté {{count}} votes, avec comme répartition : ",
     "voted": {
       "agree": "J'ai voté \"D'accord\" sur cette proposition.",
       "disagree": "J'ai voté \"Pas d'accord\" sur cette proposition.",
@@ -699,8 +699,8 @@
       "proposal_agree": "est d'accord avec cette proposition",
       "proposal_disagree": "n'est pas d'accord avec cette proposition",
       "and": " et ",
-      "hasVoted": " a voté sur cette proposition.",
-      "hasVoted_plural": " ont voté sur cette proposition.",
+      "hasVoted_one": " a voté sur cette proposition.",
+      "hasVoted_other": " ont voté sur cette proposition.",
       "sharing_title": "Partagez ce profil"
     }
   },
@@ -777,11 +777,11 @@
     "highlights": {
       "start_date": "Date de lancement",
       "end_date": "Date de fin de la consultation",
-      "remaining": "Jour restant",
-      "proposals": "Propositions",
-      "remaining_plural": "Jours restants",
-      "participant": "Participant",
-      "participant_plural": "Participants",
+      "remaining_one": "Jour restant",
+      "proposals_one": "Propositions",
+      "remaining_other": "Jours restants",
+      "participant_one": "Participant",
+      "participant_other": "Participants",
       "progress_title": "Notre objectif de votes",
       "progress_total": "Nombre total de votes",
       "progress_target": " sur {{votesTarget}} votes ({{percent}}%)",
@@ -875,8 +875,8 @@
       "unvoted": "Celles qui attendent votre vote",
       "organisations_proposals": "Proposées par des organisations",
       "no_proposal": "<strong>Aucune proposition</strong>",
-      "validated_proposals": "<strong>{{count}} proposition validée</strong> correspondant à votre recherche",
-      "validated_proposals_plural": "<strong>{{count}} propositions validées</strong> correspondant à votre recherche"
+      "validated_proposals_one": "<strong>{{count}} proposition validée</strong> correspondant à votre recherche",
+      "validated_proposals_other": "<strong>{{count}} propositions validées</strong> correspondant à votre recherche"
     },
     "tabs": {
       "consultation": " Consultation ",
@@ -957,8 +957,8 @@
       },
       "top_ideas": {
         "skiplink": "Le top des idées émergentes",
-        "title": "Le top des idées plébiscitées, regroupées en {{count}} axe",
-        "title_plural": "Le top des idées plébiscitées, regroupées en {{count}} axes",
+        "title_one": "Le top des idées plébiscitées, regroupées en {{count}} axe",
+        "title_other": "Le top des idées plébiscitées, regroupées en {{count}} axes",
         "introduction": "À leur arrivée sur la plateforme, les meilleures propositions des citoyens sont regroupées en grandes idées qui structurent la consultation. Pour classer ces idées, l’algorithme Make.org tient compte des votes « pour » et « contre » ainsi que des mentions « coup de coeur », « réaliste », « banalité » et « surtout pas ! ».",
         "axe_title": "Axe {{count}} : {{name}}"
       },
@@ -984,10 +984,10 @@
     "sortby": "Trier par: ",
     "local_actors": {
       "title": "Les associations les plus actives",
-      "proposals": "{{ count }} proposition",
-      "proposals_plural": "{{ count }} propositions",
-      "votes": "{{ count }} vote",
-      "votes_plural": "{{ count }} votes",
+      "proposals_one": "{{ count }} proposition",
+      "proposals_other": "{{ count }} propositions",
+      "votes_one": "{{ count }} vote",
+      "votes_other": "{{ count }} votes",
       "participate": "Vous êtes une association et souhaitez participer à notre consultation ? {{ contact_us }}",
       "contact_us": "Contactez-nous !",
       "more": "Voir plus"
@@ -1023,12 +1023,12 @@
       "title": "Participez aux consultations en cours",
       "subtitle": "Votre avis compte ! Votez et proposez des solutions pour créer de l'impact sur divers sujets de société et problématiques actuelles.",
       "participate": "Participer",
-      "contributors": "participant",
-      "contributors_plural": "participants",
-      "proposals": "proposition",
-      "proposals_plural": "propositions",
-      "votes": "vote",
-      "votes_plural": "votes",
+      "contributors_one": "participant",
+      "contributors_other": "participants",
+      "proposals_one": "proposition",
+      "proposals_other": "propositions",
+      "votes_one": "vote",
+      "votes_other": "votes",
       "empty": "Nous sommes désolés, aucune consultation n'est diponible actuellement dans votre pays."
     },
     "results": {
@@ -1089,13 +1089,16 @@
     "highlights": {
       "title": "Make.org en quelques chiffres",
       "participants": {
-        "subtitle": "de participant(e)s"
+        "subtitle_one": "de participant(e)",
+        "subtitle_other": "de participant(e)s"
       },
       "proposals": {
-        "subtitle": "propositions déposées"
+        "subtitle_one": "proposition déposée",
+        "subtitle_other": "propositions déposées"
       },
       "partners": {
-        "subtitle": "associations & entreprises engagées"
+        "subtitle_one": "association & entreprise engagée",
+        "subtitle_other": "associations & entreprises engagées"
       }
     },
     "featured_questions": {
@@ -1123,22 +1126,22 @@
     "titles": {
       "loading": "Recherche en cours...",
       "no_results": "Aucun résultat",
-      "main_results": "{{count}} résultat pour « {{term}} »",
-      "main_results_plural": "{{count}} résultats pour « {{term}} »",
-      "proposals": "{{count}} proposition pour « {{term}} »",
-      "proposals_plural": "{{count}} propositions pour « {{term}} »",
-      "operations": "{{count}} operation pour « {{term}} »",
-      "operations_plural": "{{count}} operations pour « {{term}} »",
-      "organisations": "{{count}} organisations pour « {{term}} »",
-      "organisations_plural": "{{count}} organisations pour « {{term}} »",
+      "main_results_one": "{{count}} résultat pour « {{term}} »",
+      "main_results_other": "{{count}} résultats pour « {{term}} »",
+      "proposals_one": "{{count}} proposition pour « {{term}} »",
+      "proposals_other": "{{count}} propositions pour « {{term}} »",
+      "operations_one": "{{count}} operation pour « {{term}} »",
+      "operations_other": "{{count}} operations pour « {{term}} »",
+      "organisations_one": "{{count}} organisations pour « {{term}} »",
+      "organisations_other": "{{count}} organisations pour « {{term}} »",
       "main_results_empty_term": "0 résultat"
     },
     "main_results": {
       "proposal": "Proposition",
       "organisation": "Organisation",
       "operation": "Opération",
-      "results": "{{count}} résultat",
-      "results_plural": "{{count}} résultats",
+      "results_one": "{{count}} résultat",
+      "results_other": "{{count}} résultats",
       "view_all": "Voir tout",
       "no_results": "Nous n'avons trouvé aucun résultat pour votre recherche « {{term}} »",
       "no_query": "Vous cherchez une proposition, une idée, une consultation ? Tapez votre recherche !",
@@ -1214,8 +1217,8 @@
       "duration": "Durée : {{duration}}",
       "session": "Session",
       "month": "{{count}} mois",
-      "year": "{{count}} an",
-      "year_plural": "{{count}} ans",
+      "year_one": "{{count}} an",
+      "year_other": "{{count}} ans",
       "technicals": {
         "name": "Les cookies techniques :",
         "description": "ces cookies sont nécessaires au fonctionnement du site et ne peuvent pas être désactivés. Vous pouvez configurer votre navigateur afin de bloquer ou être informé de l‘existence de ces cookies, mais certaines parties de notre site peuvent être affectées. Ces cookies ne visent pas à vous identifier personnellement.",

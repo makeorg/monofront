@@ -260,8 +260,8 @@
     },
     "max_characters": "maximum characters",
     "back": "Back",
-    "proposal_count": "{{count}} solution",
-    "proposal_count_plural": "{{count}} solutions",
+    "proposal_count_one": "{{count}} solution",
+    "proposal_count_other": "{{count}} solutions",
     "breadcrumbs": "Breadcrumbs",
     "pagination": {
       "title": "paging",
@@ -271,8 +271,8 @@
       "page": "",
       "page_total": "over {{total}} pages"
     },
-    "million": "million",
-    "million_plural": "millions",
+    "million_one": "million",
+    "million_other": "millions",
     "close_panel": "Close the panel"
   },
   "header": {
@@ -375,8 +375,8 @@
     "agree": "Agree",
     "disagree": "Disagree",
     "neutral": "I am neutral",
-    "label": "{{count}} vote",
-    "label_plural": "{{count}} votes",
+    "label_one": "{{count}} vote",
+    "label_other": "{{count}} votes",
     "with_percent": "{{votedKey}} : {{votedPercent}}%"
   },
   "unvote": {
@@ -397,8 +397,8 @@
     },
     "static_total": "This solution got: ",
     "static_repartition": "With the following results: ",
-    "total": "This solution {{count}} votes, with the following results: ",
-    "total_plural": "This solution got {{count}} votes, with the following results: ",
+    "total_one": "This solution {{count}} votes, with the following results: ",
+    "total_other": "This solution got {{count}} votes, with the following results: ",
     "voted": {
       "agree": "I voted \"Agree\" with this solution.",
       "disagree": "I voted \"Disagree\" with this solution.",
@@ -628,8 +628,8 @@
       "proposal_agree": "agrees with the solution",
       "proposal_disagree": "disagrees with the solution",
       "and": " and ",
-      "hasVoted": " voted on this solution.",
-      "hasVoted_plural": " voted on this solution.",
+      "hasVoted_one": " voted on this solution.",
+      "hasVoted_other": " voted on this solution.",
       "sharing_title": "Partagez ce profil"
     }
   },
@@ -721,8 +721,8 @@
       "unvoted": "Waiting for your vote",
       "organisations_proposals": "Proposed by organizations",
       "no_proposal": "No solution",
-      "validated_proposals": "<strong>{{count}} validated solution</strong> matching your search",
-      "validated_proposals_plural": "<strong>{{count}} validated solutions</strong> matching your search"
+      "validated_proposals_one": "<strong>{{count}} validated solution</strong> matching your search",
+      "validated_proposals_other": "<strong>{{count}} validated solutions</strong> matching your search"
     },
     "sort": {
       "TAGGED_FIRST": "All the solutions",
@@ -760,9 +760,9 @@
       },
       "top_ideas": {
         "skiplink": "Top emerging ideas",
-        "title": "Top emerging ideas, grouped into {{count}} themes",
         "introduction": ", The best citizen solutions are grouped into big ideas that structure the consultation. To classify these ideas, the Make.org algorithm takes into account the votes 'Agree' and 'Disagree' as well as the mentions 'Genius', 'Obvious', 'Irrelevant !' and 'Nonsense'.",
-        "title_plural": "Top ideas is merged in {{count}} topics",
+        "title_one": "Top emerging ideas, grouped into {{count}} themes",
+        "title_other": "Top ideas is merged in {{count}} topics",
         "axe_title": "Axis {{count}} : {{name}}"
       },
       "proposals": {
@@ -790,10 +790,10 @@
     "sortby": "Sort by: ",
     "local_actors": {
       "title": "Most active associations",
-      "proposals": "{{ count }} solution",
-      "proposals_plural": "{{ count }} solutions",
-      "votes": "{{ count }} vote",
-      "votes_plural": "{{ count }} votes",
+      "proposals_one": "{{ count }} solution",
+      "proposals_other": "{{ count }} solutions",
+      "votes_one": "{{ count }} vote",
+      "votes_other": "{{ count }} votes",
       "participate": "Are you an association? And do you want to participate in the consultation? {{ contact_us }}",
       "contact_us": "Contact us",
       "more": "See more"
@@ -814,17 +814,16 @@
       "title": "The {{ count }} most popular solutions by topic"
     },
     "highlights": {
-      "remaining": "Remaining day",
-      "remaining_plural": "Remaining days",
-      "participant": "Participant",
-      "participant_plural": "Participants",
+      "remaining_one": "Remaining day",
+      "remaining_other": "Remaining days",
+      "participant_one": "Participant",
+      "participant_other": "Participants",
       "progress_title": "Our votes target",
       "progress_target": " over {{votesTarget}} votes ({{percent}}%)",
       "progress_description": "The more votes a solution receives, the more likely it is to become a real change in society.",
       "progress_btn": "Participate",
       "start_date": "Consultation start date",
       "end_date": "Consultation end date",
-      "proposals": "Solutions",
       "progress_total": "Total number of votes"
     },
     "participate": {
@@ -914,12 +913,12 @@
     "number": "Idea number {{ count }}",
     "content": "Idea content : ",
     "link": "View idea details",
-    "associated_proposals": "{{count}} solution associated",
-    "associated_proposals_plural": "{{count}} solutions associated",
-    "position": "{{ count }} opinion",
-    "position_plural": "{{ count }} opinions",
-    "candidate": "candidate for this idea.",
-    "candidate_plural": "candidates for this idea.",
+    "associated_proposals_one": "{{count}} solution associated",
+    "associated_proposals_other": "{{count}} solutions associated",
+    "position_one": "{{ count }} opinion",
+    "position_other": "{{ count }} opinions",
+    "candidate_one": "candidate for this idea.",
+    "candidate_other": "candidates for this idea.",
     "open": "Display the idea score",
     "close": "Hide the idea score",
     "expand": " - Click to display the idea score",
@@ -991,13 +990,16 @@
     "highlights": {
       "title": "Make.org in numbers",
       "participants": {
-        "subtitle": "participants"
+        "subtitle_one": "participant",
+        "subtitle_other": "participants"
       },
       "proposals": {
-        "subtitle": "solutions submitted"
+        "subtitle_one": "solution submitted",
+        "subtitle_other": "solutions submitted"
       },
       "partners": {
-        "subtitle": "associations & partners"
+        "subtitle_one": "association & partner",
+        "subtitle_other": "associations & partners"
       }
     },
     "title": "Homepage",
@@ -1032,22 +1034,22 @@
     "titles": {
       "loading": "Searching...",
       "no_results": "No result found",
-      "main_results": "{{count}} result for '{{term}}'",
-      "main_results_plural": "{{count}} results for '{{term}}'",
-      "proposals": "{{count}} solution for '{{term}}'",
-      "proposals_plural": "{{count}} solutions for '{{term}}'",
-      "operations": "{{count}} operation for '{{term}}'",
-      "operations_plural": "{{count}} operations for '{{term}}'",
-      "organisations": "{{count}} organizations for '{{term}}'",
-      "organisations_plural": "{{count}} organizations for '{{term}}'",
+      "main_results_one": "{{count}} result for '{{term}}'",
+      "main_results_other": "{{count}} results for '{{term}}'",
+      "proposals_one": "{{count}} solution for '{{term}}'",
+      "proposals_other": "{{count}} solutions for '{{term}}'",
+      "operations_one": "{{count}} operation for '{{term}}'",
+      "operations_other": "{{count}} operations for '{{term}}'",
+      "organisations_one": "{{count}} organizations for '{{term}}'",
+      "organisations_other": "{{count}} organizations for '{{term}}'",
       "main_results_empty_term": "0 result"
     },
     "main_results": {
       "proposal": "Solution",
       "organisation": "Organization",
       "operation": "Operation",
-      "results": "{{count}} result",
-      "results_plural": "{{count}} results",
+      "results_one": "{{count}} result",
+      "results_other": "{{count}} results",
       "view_all": "See all",
       "no_results": "No result found for your search '{{term}}'",
       "no_query": "Search",
@@ -1123,8 +1125,8 @@
       "duration": "Duration : {{duration}}",
       "session": "Session",
       "month": "{{count}} month",
-      "year": "{{count}} year",
-      "year_plural": "{{count}} years",
+      "year_one": "{{count}} year",
+      "year_other": "{{count}} years",
       "technicals": {
         "name": "Technical cookies:",
         "description": "these cookies are necessary for the functioning of the website and cannot be disabled. You can set your browser to block or be informed of the existence of these cookies, but some parts of our website may be affected. These cookies are not intended to identify you personally.",
@@ -1195,12 +1197,12 @@
       "title": "Participate to the current consultations",
       "subtitle": "Each vote is important ! Vote and write solutons to resolve problems of our society.",
       "participate": "Participate",
-      "contributors": "Participant",
-      "contributors_plural": "participants",
-      "proposals": "solution",
-      "proposals_plural": "solutions",
-      "votes": "vote",
-      "votes_plural": "votes",
+      "contributors_one": "Participant",
+      "contributors_other": "participants",
+      "proposals_one": "solution",
+      "proposals_other": "solutions",
+      "votes_one": "vote",
+      "votes_other": "votes",
       "empty": "Unfortunately, we have no consultation open in this country."
     },
     "results": {

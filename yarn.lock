@@ -1444,12 +1444,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.0, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.0, @babel/runtime@npm:^7.18.9, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.7.7, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.0, @babel/runtime@npm:^7.18.9, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.7.7, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
   version: 7.20.1
   resolution: "@babel/runtime@npm:7.20.1"
   dependencies:
     regenerator-runtime: ^0.13.10
   checksum: 00567a333d3357925742a6f5e39394dcc0af6e6029103fe188158bf7ae8b0b3ee3c6c0f68fccc217f0a6cfa455f6be252298baf56b3f5ff37b34313b170cd9f6
+  languageName: node
+  linkType: hard
+
+"@babel/runtime@npm:^7.20.6":
+  version: 7.20.6
+  resolution: "@babel/runtime@npm:7.20.6"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: 42a8504db21031b1859fbc0f52d698a3d2f5ada9519eb76c6f96a7e657d8d555732a18fe71ef428a67cc9fc81ca0d3562fb7afdc70549c5fec343190cbaa9b03
   languageName: node
   linkType: hard
 
@@ -2855,7 +2864,7 @@ __metadata:
     athena-design-tokens: ^0.1.7
     core-js: ^3.24.1
     enzyme: ^3.11.0
-    i18next: ^20.3.4
+    i18next: 22.1.4
     query-string: ^7.1.1
     react: ^17.0.2
     react-autosize-textarea: ^7.1.0
@@ -2940,7 +2949,7 @@ __metadata:
     html-webpack-inline-source-plugin: 1.0.0-beta.2
     html-webpack-plugin: ^5.5.0
     http-proxy-middleware: 2.0.6
-    i18next: ^20.3.1
+    i18next: 22.1.4
     js-yaml: ^4.1.0
     memory-cache: ~0.2.0
     node-mocks-http: ^1.11.0
@@ -2995,7 +3004,7 @@ __metadata:
     "@types/react": ^17.0.52
     "@types/react-dom": ^17.0.18
     axios: ~0.26.1
-    i18next: ^20.3.4
+    i18next: 22.1.4
     react: ^17.0.2
     react-dom: ^17.0.2
     webpack: ^5.74.0
@@ -3027,7 +3036,7 @@ __metadata:
     "@types/styled-components": 5.1.26
     athena-design-tokens: ^0.1.7
     core-js: ^3.24.1
-    i18next: ^20.3.4
+    i18next: 22.1.4
     react: ^17.0.2
     react-autosize-textarea: ^7.1.0
     react-dom: ^17.0.2
@@ -3060,7 +3069,7 @@ __metadata:
     express-prom-bundle: ^6.5.0
     glider-js: ^1.7.7
     helmet-csp: ^3.4.0
-    i18next: ^20.3.4
+    i18next: 22.1.4
     memory-cache: ^0.2.0
     mockdate: ^3.0.5
     node-mocks-http: ^1.11.0
@@ -3125,7 +3134,7 @@ __metadata:
     html-validate: 4.13.1
     html-webpack-plugin: ^5.5.0
     http-proxy-middleware: 2.0.6
-    i18next: ^20.3.4
+    i18next: 22.1.4
     memory-cache: ~0.2.0
     pm2: ~5.2.2
     prom-client: ^13.1.0
@@ -11850,12 +11859,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:^20.3.1, i18next@npm:^20.3.4":
-  version: 20.6.1
-  resolution: "i18next@npm:20.6.1"
+"i18next@npm:22.1.4":
+  version: 22.1.4
+  resolution: "i18next@npm:22.1.4"
   dependencies:
-    "@babel/runtime": ^7.12.0
-  checksum: 313cd4b17f9092eaf8ca92a02bb74d099f4a8b26de6e38018f438ce6f706220e5f72d865e1f50d815e13504ec38bc77e0f6341f670ca5162689f8d11a859e564
+    "@babel/runtime": ^7.20.6
+  checksum: bd51364957f705fce025e17bbad9d750059a956f6fbe2447e54dc47c7563109961e1ac420468b67179bbd9c96f12d7c50237e21f6b219912683c51c0f814a64c
   languageName: node
   linkType: hard
 
@@ -17667,7 +17676,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"regenerator-runtime@npm:^0.13.10, regenerator-runtime@npm:^0.13.3, regenerator-runtime@npm:^0.13.7":
+"regenerator-runtime@npm:^0.13.10, regenerator-runtime@npm:^0.13.11, regenerator-runtime@npm:^0.13.3, regenerator-runtime@npm:^0.13.7":
   version: 0.13.11
   resolution: "regenerator-runtime@npm:0.13.11"
   checksum: 27481628d22a1c4e3ff551096a683b424242a216fee44685467307f14d58020af1e19660bf2e26064de946bad7eff28950eae9f8209d55723e2d9351e632bbb4

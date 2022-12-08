@@ -259,11 +259,11 @@
     },
     "max_characters": "maximale Zeichenanzahl",
     "back": "Zurück",
-    "proposal_count": "{{count}} Vorschlag",
-    "proposal_count_plural": "{{count}} Vorschläge",
+    "proposal_count_one": "{{count}} Vorschlag",
+    "proposal_count_other": "{{count}} Vorschläge",
     "breadcrumbs": "Brotkrumenpfad",
-    "million": "Million",
-    "million_plural": "Millionen",
+    "million_one": "Million",
+    "million_other": "Millionen",
     "close_panel": "Die Dropdown-Liste schließen",
     "social_login": {
       "card_title": "So finden Sie Ihr Abstimmungsverhalten",
@@ -290,12 +290,12 @@
     "number": "Idee Nr. {{ count }}",
     "content": "Inhalt der Idee: ",
     "link": "Einzelheiten zur Idee anzeigen",
-    "associated_proposals": "{{ count }} dazugehöriger Vorschlag",
-    "associated_proposals_plural": "{{ count }} dazugehörige Vorschläge",
-    "position": "{{ count }} Stellungnahme",
-    "position_plural": "{{ count }} Stellungnahmen",
-    "candidate": "Kandidat:in für diese Idee.",
-    "candidate_plural": "Kandidat:innen für diese Idee.",
+    "associated_proposals_one": "{{ count }} dazugehöriger Vorschlag",
+    "associated_proposals_other": "{{ count }} dazugehörige Vorschläge",
+    "position_one": "{{ count }} Stellungnahme",
+    "position_other": "{{ count }} Stellungnahmen",
+    "candidate_one": "Kandidat:in für diese Idee.",
+    "candidate_other": "Kandidat:innen für diese Idee.",
     "open": "Anzahl der abgegebenen Stimmen anzeigen",
     "close": "Anzahl der abgegebenen Stimmen ausblenden",
     "expand": "- Hier klicken, um die Anzahl der abgegebenen Stimmen zu sehen",
@@ -424,8 +424,8 @@
     "agree": "Ich stimme zu",
     "disagree": "Ich stimme nicht zu",
     "neutral": "Neutral",
-    "label": "{{count}} Stimme",
-    "label_plural": "{{count}} Stimmen",
+    "label_one": "{{count}} Stimme",
+    "label_other": "{{count}} Stimmen",
     "with_percent": "{{votedKey}}: {{votedPercent}} %"
   },
   "unvote": {
@@ -434,8 +434,8 @@
   "results": {
     "static_total": "Dieser Vorschlag erhielt: ",
     "static_repartition": "Mit folgender Aufteilung: ",
-    "total": "Dieser Vorschlag erhielt {{count}} Stimme mit folgender Aufteilung: ",
-    "total_plural": "Dieser Vorschlag erhielt {{count}} Stimmen mit folgender Aufteilung: ",
+    "total_one": "Dieser Vorschlag erhielt {{count}} Stimme mit folgender Aufteilung: ",
+    "total_other": "Dieser Vorschlag erhielt {{count}} Stimmen mit folgender Aufteilung: ",
     "voted": {
       "agree": "Ich habe bei diesem Vorschlag mit „Ich stimme zu“ gestimmt.",
       "disagree": "Ich habe bei diesem Vorschlag mit „Ich stimme nicht zu“ gestimmt.",
@@ -691,8 +691,8 @@
       "proposal_agree": "ist mit diesem Vorschlag einverstanden",
       "proposal_disagree": "ist mit diesem Vorschlag nicht einverstanden",
       "and": "und ",
-      "hasVoted": "hat über diesen Vorschlag abgestimmt.",
-      "hasVoted_plural": "haben über diesen Vorschlag abgestimmt.",
+      "hasVoted_one": "hat über diesen Vorschlag abgestimmt.",
+      "hasVoted_other": "haben über diesen Vorschlag abgestimmt.",
       "sharing_title": "Teile dieses Profil"
     }
   },
@@ -769,11 +769,11 @@
     "highlights": {
       "start_date": "Startdatum",
       "end_date": "Enddatum der Konsultation",
-      "remaining": "Verbleibende Tage",
-      "proposals": "Vorschläge",
-      "remaining_plural": "Verbleibende Tage",
-      "participant": "Teilnehmer:in",
-      "participant_plural": "Teilnehmer:innen",
+      "remaining_one": "Verbleibende Tage",
+      "proposals_one": "Vorschläge",
+      "remaining_other": "Verbleibende Tage",
+      "participant_one": "Teilnehmer:in",
+      "participant_other": "Teilnehmer:innen",
       "progress_title": "Unser Abstimmungsziel",
       "progress_total": "Gesamtzahl der Stimmen",
       "progress_target": " von {{votesTarget}} Stimmen ({{percent}} %)",
@@ -867,8 +867,8 @@
       "unvoted": "Diejenigen, die auf eure Stimme warten",
       "organisations_proposals": "Diejenigen, die von Organisationen vorgeschlagen wurden",
       "no_proposal": "Kein Vorschlag",
-      "validated_proposals": "<strong>{{count}} bestätigt Vorschläg</strong> passend zu deiner Suche",
-      "validated_proposals_plural": "<strong>{{count}} bestätigte Vorschläge</strong> passend zu deiner Suche"
+      "validated_proposals_one": "<strong>{{count}} bestätigt Vorschläg</strong> passend zu deiner Suche",
+      "validated_proposals_other": "<strong>{{count}} bestätigte Vorschläge</strong> passend zu deiner Suche"
     },
     "tabs": {
       "consultation": "Konsultation ",
@@ -948,8 +948,8 @@
       },
       "top_ideas": {
         "skiplink": "Die besten neuen Ideen",
-        "title": "Die beliebtesten Ideen, zusammengefasst in {{count}} Schwerpunkt",
-        "title_plural": "Die beliebtesten Ideen, zusammengefasst in {{count}} Schwerpunkten",
+        "title_one": "Die beliebtesten Ideen, zusammengefasst in {{count}} Schwerpunkt",
+        "title_other": "Die beliebtesten Ideen, zusammengefasst in {{count}} Schwerpunkten",
         "introduction": "Die besten Vorschläge der Bürger:innen werden nach ihrer Veröffentlichung auf der Plattform zu größeren Ideen zusammengefasst, die die Konsultation strukturieren. Um diese Ideen einzuordnen, berücksichtigt der Make.org-Algorithmus die abgegebenen Abstimmungen „Ich stimme zu“ und „Ich stimme nicht zu“ sowie die Kennzeichnungen als „Favorit“, „Machbar“, „Unbedeutend“ und „Auf keinen Fall! “.",
         "axe_title": "Schwerpunkt {{count}}: {{name}}"
       },
@@ -975,10 +975,10 @@
     "sortby": "Sortieren nach: ",
     "local_actors": {
       "title": "Die aktivsten Verbände und Vereine",
-      "proposals": "{{ count }} Vorschlag",
-      "proposals_plural": "{{ count }} Vorschläge",
-      "votes": "{{ count }} Stimme",
-      "votes_plural": "{{ count }} Stimmen",
+      "proposals_one": "{{ count }} Vorschlag",
+      "proposals_other": "{{ count }} Vorschläge",
+      "votes_one": "{{ count }} Stimme",
+      "votes_other": "{{ count }} Stimmen",
       "participate": "Ihr seid ein Verein oder ein Verband und möchtet an unserer Konsultation teilnehmen? {{ contact_us }}",
       "contact_us": "Kontaktiert uns!",
       "more": "Mehr ansehen"
@@ -1014,12 +1014,12 @@
       "title": "An laufenden Konsultationen teilnehmen",
       "subtitle": "Deine Meinung zählt! Stimme ab und schlage Lösungen vor, um Einfluss auf verschiedene gesellschaftliche Themen und aktuelle Herausforderungen zu nehmen.",
       "participate": "Teilnehmen",
-      "contributors": "Teilnehmer:in",
-      "contributors_plural": "Teilnehmer:innen",
-      "proposals": "vorschlag",
-      "proposals_plural": "Vorschläge",
-      "votes": "stimme",
-      "votes_plural": "Stimmen",
+      "contributors_one": "Teilnehmer:in",
+      "contributors_other": "Teilnehmer:innen",
+      "proposals_one": "vorschlag",
+      "proposals_other": "Vorschläge",
+      "votes_one": "stimme",
+      "votes_other": "Stimmen",
       "empty": "Es tut uns leid, in deinem Land ist derzeit keine Konsultation verfügbar."
     },
     "results": {
@@ -1080,13 +1080,16 @@
     "highlights": {
       "title": "Make.org in Zahlen",
       "participants": {
-        "subtitle": "Teilnehmer:innen"
+        "subtitle_one": "Teilnehmer:innen",
+        "subtitle_other": "Teilnehmer:innen"
       },
       "proposals": {
-        "subtitle": "eingereichte Vorschläge"
+        "subtitle_one": "eingereichte Vorschläge",
+        "subtitle_other": "eingereichte Vorschläge"
       },
       "partners": {
-        "subtitle": "engagierte Organisationen"
+        "subtitle_one": "engagierte Organisationen",
+        "subtitle_other": "engagierte Organisationen"
       }
     },
     "featured_questions": {
@@ -1114,22 +1117,22 @@
     "titles": {
       "loading": "Suche läuft ...",
       "no_results": "Keine Ergebnisse",
-      "main_results": "{{count}} Ergebnis für „{{term}}“",
-      "main_results_plural": "{{count}} Ergebnisse für „{{term}}“",
-      "proposals": "{{count}} Vorschlag für „{{term}}“",
-      "proposals_plural": "{{count}} Vorschläge für „{{term}}“",
-      "operations": "{{count}} Maßnahme für „{{term}}“",
-      "operations_plural": "{{count}} Maßnahmen für „{{term}}“",
-      "organisations": "{{count}} Organisation für „{{term}}“",
-      "organisations_plural": "{{count}} Organisationen für „{{term}}“",
+      "main_results_one": "{{count}} Ergebnis für „{{term}}“",
+      "main_results_other": "{{count}} Ergebnisse für „{{term}}“",
+      "proposals_one": "{{count}} Vorschlag für „{{term}}“",
+      "proposals_other": "{{count}} Vorschläge für „{{term}}“",
+      "operations_one": "{{count}} Maßnahme für „{{term}}“",
+      "operations_other": "{{count}} Maßnahmen für „{{term}}“",
+      "organisations_one": "{{count}} Organisation für „{{term}}“",
+      "organisations_other": "{{count}} Organisationen für „{{term}}“",
       "main_results_empty_term": "0 Ergebnisse"
     },
     "main_results": {
       "proposal": "Vorschlag",
       "organisation": "Organisation",
       "operation": "Aktion",
-      "results": "{{count}} Ergebnis",
-      "results_plural": "{{count}} Ergebnisse",
+      "results_one": "{{count}} Ergebnis",
+      "results_other": "{{count}} Ergebnisse",
       "view_all": "Alles ansehen",
       "no_results": "Wir haben keine Ergebnisse für deine Suche zu „{{term}}“ gefunden",
       "no_query": "Du suchst einen Vorschlag, eine Idee oder eine Konsultation? Gib deinen Suchbegriff ein!",
@@ -1205,8 +1208,8 @@
       "duration": "Dauer: {{duration}}",
       "session": "Sitzung",
       "month": "{{count}} Monat",
-      "year": "{{count}} Jahr",
-      "year_plural": "{{count}} Jahre",
+      "year_one": "{{count}} Jahr",
+      "year_other": "{{count}} Jahre",
       "technicals": {
         "name": "Technische Cookies:",
         "description": "Diese Cookies sind für die ordnungsgemäße Funktionsweise der Website unbedingt erforderlich und können nicht deaktiviert werden. Sie können Ihren Browser so einstellen, dass er das Vorhandensein dieser Cookies blockiert oder Sie darüber benachrichtigt, wodurch einige Teile unserer Website allerdings beeinträchtigt werden können. Diese Cookies dienen nicht dazu, Sie persönlich zu identifizieren.",
