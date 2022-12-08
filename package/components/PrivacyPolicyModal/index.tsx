@@ -41,7 +41,7 @@ export const PrivacyPolicyModal: React.FC = () => {
       data-cy-container="cookie-modal"
     >
       <CloseButtonStyle
-        aria-label={i18n.t('modal.close')}
+        aria-label={i18n.t('modal.close') || undefined}
         aria-expanded="false"
         onClick={handleClick}
         type="button"

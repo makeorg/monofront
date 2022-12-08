@@ -47,7 +47,7 @@ export const Sharing: React.FC = () => {
         {preferencesCookie?.tracking_consent?.facebook_sharing ? (
           <FacebookButtonStyle
             rel="noopener"
-            aria-label={i18n.t('sharing.facebook')}
+            aria-label={i18n.t('sharing.facebook') || undefined}
             as="a"
             href={facebookShareUrl(location.pathname)}
             onClick={() => trackClickShare('facebook')}
@@ -56,7 +56,7 @@ export const Sharing: React.FC = () => {
           </FacebookButtonStyle>
         ) : (
           <FacebookButtonStyle
-            aria-label={i18n.t('sharing.facebook')}
+            aria-label={i18n.t('sharing.facebook') || undefined}
             onClick={displayCookieNotification}
             type="button"
           >
@@ -68,7 +68,7 @@ export const Sharing: React.FC = () => {
         {preferencesCookie?.tracking_consent?.twitter_sharing ? (
           <TwitterButtonStyle
             rel="noopener"
-            aria-label={i18n.t('sharing.twitter')}
+            aria-label={i18n.t('sharing.twitter') || undefined}
             as="a"
             href={twitterShareUrl(location.pathname, '', '')}
             onClick={() => trackClickShare('twitter')}
@@ -77,7 +77,7 @@ export const Sharing: React.FC = () => {
           </TwitterButtonStyle>
         ) : (
           <TwitterButtonStyle
-            aria-label={i18n.t('sharing.twitter')}
+            aria-label={i18n.t('sharing.twitter') || undefined}
             onClick={displayCookieNotification}
             type="button"
           >
@@ -89,7 +89,7 @@ export const Sharing: React.FC = () => {
         {preferencesCookie?.tracking_consent?.linkedin_sharing ? (
           <LinkedInButtonStyle
             rel="noopener"
-            aria-label={i18n.t('sharing.linkedin')}
+            aria-label={i18n.t('sharing.linkedin') || undefined}
             as="a"
             href={linkedinShareUrl(location.pathname)}
             onClick={() => trackClickShare('linkedin')}
@@ -98,7 +98,7 @@ export const Sharing: React.FC = () => {
           </LinkedInButtonStyle>
         ) : (
           <LinkedInButtonStyle
-            aria-label={i18n.t('sharing.linkedin')}
+            aria-label={i18n.t('sharing.linkedin') || undefined}
             onClick={displayCookieNotification}
             type="button"
           >

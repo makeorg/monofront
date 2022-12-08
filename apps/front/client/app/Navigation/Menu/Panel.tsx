@@ -94,7 +94,9 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
         </ScreenReaderItemStyle>
       </MenuCloseTriggerStyle>
       <MenuInnerStyle>
-        <MenuNavStyle aria-label={i18n.t('header.main_navigation')}>
+        <MenuNavStyle
+          aria-label={i18n.t('header.main_navigation') || undefined}
+        >
           <UnstyledListStyle>
             <MenuItemStyle>
               <MenuItemTitleStyle>

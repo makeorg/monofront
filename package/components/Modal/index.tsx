@@ -37,7 +37,7 @@ export const Modal: React.FC = () => {
       shouldReturnFocusAfterClose={focusAfterClose}
     >
       <CloseButtonStyle
-        aria-label={i18n.t('modal.close')}
+        aria-label={i18n.t('modal.close') || undefined}
         aria-expanded="false"
         onClick={handleCloseWithTracking}
         type="button"

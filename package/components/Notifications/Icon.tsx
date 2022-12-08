@@ -20,7 +20,9 @@ export const NotificationIcon: React.FC<Props> = ({
     case NOTIF.NOTIFICATION_LEVEL_INFORMATION:
       return (
         <NotificationInfosStyle
-          aria-label={i18n.t('common.notifications.icons.information')}
+          aria-label={
+            i18n.t('common.notifications.icons.information') || undefined
+          }
           className={context}
           focusable="false"
         />
@@ -28,7 +30,7 @@ export const NotificationIcon: React.FC<Props> = ({
     case NOTIF.NOTIFICATION_LEVEL_SUCCESS:
       return (
         <NotificationSuccessStyle
-          aria-label={i18n.t('common.notifications.icons.success')}
+          aria-label={i18n.t('common.notifications.icons.success') || undefined}
           className={context}
           focusable="false"
         />
@@ -36,7 +38,7 @@ export const NotificationIcon: React.FC<Props> = ({
     case NOTIF.NOTIFICATION_LEVEL_ERROR:
       return (
         <NotificationAlertStyle
-          aria-label={i18n.t('common.notifications.icons.error')}
+          aria-label={i18n.t('common.notifications.icons.error') || undefined}
           className={context}
           focusable="false"
         />
@@ -44,7 +46,7 @@ export const NotificationIcon: React.FC<Props> = ({
     case NOTIF.NOTIFICATION_LEVEL_ALERT:
       return (
         <NotificationAlertStyle
-          aria-label={i18n.t('common.notifications.icons.alert')}
+          aria-label={i18n.t('common.notifications.icons.alert') || undefined}
           className={context}
           focusable="false"
         />

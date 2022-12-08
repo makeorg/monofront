@@ -30,7 +30,7 @@ export const Breadcrumbs: FC<Props> = ({ parentPages, currentPage }) => {
   const indexOffset = initialIndex + 1;
 
   return (
-    <nav aria-label={i18n.t('common.breadcrumbs')}>
+    <nav aria-label={i18n.t('common.breadcrumbs') || undefined}>
       <BreadcrumbsWrapperStyle as="ol">
         <BreadcrumbsListStyle>
           <HomeIconStyle aria-hidden focusable="false" />

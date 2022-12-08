@@ -40,7 +40,7 @@ export const SequenceProgress: FC<{
         <ProgressPreviousButtonStyle
           onClick={goToPreviousCard}
           disabled={currentIndex === 0 || disabled}
-          aria-label={i18n.t('sequence_progress.previous')}
+          aria-label={i18n.t('sequence_progress.previous') || undefined}
           data-cy-button="progress-previous"
         >
           <ProgressIconStyle

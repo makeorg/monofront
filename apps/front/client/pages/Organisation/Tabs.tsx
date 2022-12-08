@@ -36,7 +36,7 @@ export const OrganisationProfileTabs: FC = () => {
 
   return (
     <TabNavStyle
-      aria-label={i18n.t('common.secondary_nav')}
+      aria-label={i18n.t('common.secondary_nav') || undefined}
       id="organisation_nav"
     >
       <TabListStyle>

@@ -20,7 +20,7 @@ type Props = {
 };
 
 export const Breadcrumbs: FC<Props> = ({ parentPages, currentPage }) => (
-  <nav aria-label={i18n.t('common.breadcrumbs')}>
+  <nav aria-label={i18n.t('common.breadcrumbs') || undefined}>
     <BreadcrumbsListStyleDeprecated as="ol">
       {parentPages.map(parentPage => (
         <BreadcrumbsListItemStyleDeprecated key={parentPage.link}>

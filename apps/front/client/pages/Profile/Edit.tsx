@@ -61,7 +61,7 @@ const ProfileEditPage: FC = () => {
       <ProfilePageContentWrapperStyle>
         <UserInformations user={formattedUserMultipleType} getBack />
         <ProfilePageContentStyle>
-          <TabNavStyle aria-label={i18n.t('common.secondary_nav')}>
+          <TabNavStyle aria-label={i18n.t('common.secondary_nav') || undefined}>
             <TabListStyle as="div">
               <TabStyle as="div" isSelected>
                 <Link to={editProfileLink}>

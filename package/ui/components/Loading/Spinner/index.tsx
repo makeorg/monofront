@@ -10,7 +10,10 @@ import {
 } from './style';
 
 export const Spinner: React.FC = () => (
-  <SpinnerContainerStyle as="aside" aria-label={i18n.t('common.loading')}>
+  <SpinnerContainerStyle
+    as="aside"
+    aria-label={i18n.t('common.loading') || undefined}
+  >
     <SpinnerWrapperStyle>
       <SpinnerFirstRingStyle aria-hidden />
       <SpinnerSecondRingStyle aria-hidden />

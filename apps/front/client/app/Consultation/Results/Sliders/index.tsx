@@ -71,7 +71,7 @@ export const ResultsSlider: FC<Props> = ({ data, sliderName, styleClass }) => {
         </ResultsSliderStyle>
         <ResultsSliderArrowsStyle
           className={`${sliderName} glider-prev`}
-          aria-label={i18n.t('common.slider.previous')}
+          aria-label={i18n.t('common.slider.previous') || undefined}
         >
           <SvgChevronArrowLeft
             aria-hidden
@@ -81,7 +81,7 @@ export const ResultsSlider: FC<Props> = ({ data, sliderName, styleClass }) => {
         </ResultsSliderArrowsStyle>
         <ResultsSliderArrowsStyle
           className={`${sliderName} glider-next`}
-          aria-label={i18n.t('common.slider.next')}
+          aria-label={i18n.t('common.slider.next') || undefined}
         >
           <SvgChevronArrowRight
             aria-hidden

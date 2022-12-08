@@ -10,7 +10,7 @@ import {
 
 type Props = {
   /** Content of the button */
-  content: string | JSX.Element;
+  content?: string | JSX.Element;
   /** Content of the Tooltip */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   children: any;

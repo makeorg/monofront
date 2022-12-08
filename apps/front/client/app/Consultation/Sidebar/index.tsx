@@ -20,7 +20,7 @@ export const ConsultationSidebar: FC<Props> = ({ question }) => {
   return (
     <ConsultationPageSidebarStyle
       id="sidebar_content"
-      aria-label={i18n.t('common.sidebar_area')}
+      aria-label={i18n.t('common.sidebar_area') || undefined}
       bottomAffix={isGreatCause(question.operationKind)}
     >
       <PresentationTile question={question} />

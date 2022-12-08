@@ -119,7 +119,7 @@ export const Pagination: FC<Props> = ({
 
   return (
     <PaginationNavStyle
-      aria-label={i18n.t('common.pagination.title')}
+      aria-label={i18n.t('common.pagination.title') || undefined}
       data-cy-container="pagination"
     >
       {intPageId === 1 ? (
@@ -128,7 +128,7 @@ export const Pagination: FC<Props> = ({
         </PaginationDisabledStyle>
       ) : (
         <PaginationLinkStyle
-          aria-label={i18n.t('common.pagination.previous')}
+          aria-label={i18n.t('common.pagination.previous') || undefined}
           onClick={paginateClick}
           data-cy-link="pagination-previous"
           to={previousPageUrl}
@@ -157,7 +157,7 @@ export const Pagination: FC<Props> = ({
         </PaginationDisabledStyle>
       ) : (
         <PaginationLinkStyle
-          aria-label={i18n.t('common.pagination.next')}
+          aria-label={i18n.t('common.pagination.next') || undefined}
           onClick={paginateClick}
           data-cy-link="pagination-next"
           to={nextPageUrl}

@@ -52,7 +52,7 @@ export const SecondStepCookie: React.FC<Props> = ({
         <CookieModalBackButtonStyle
           type="button"
           onClick={handleBack}
-          aria-label={i18n.t('cookie_modal.back')}
+          aria-label={i18n.t('cookie_modal.back') || undefined}
         >
           <SvgArrowLeft width="10" height="10" aria-hidden focusable="false" />
         </CookieModalBackButtonStyle>

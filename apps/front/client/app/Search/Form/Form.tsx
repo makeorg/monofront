@@ -102,7 +102,7 @@ export const SearchForm: React.FC<Props> = ({ isExpanded, handleFocus }) => {
       <> </>
       {hasSubmit ? (
         <SearchButtonStyle
-          aria-label={i18n.t('search.form.flush')}
+          aria-label={i18n.t('search.form.flush') || undefined}
           type="button"
           onClick={handleFlush}
           data-cy-button="search-clear"

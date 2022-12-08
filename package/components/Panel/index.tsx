@@ -86,14 +86,14 @@ export const Panel: React.FC = () => {
             type="button"
             onClick={handleCloseAndRemove}
             className={isExpanded && 'expanded'}
-            aria-label={i18n.t('common.close_panel')}
+            aria-label={i18n.t('common.close_panel') || undefined}
             data-cy-button="close-panel-overlay"
           />
           <PanelCloseButtonStyle
             type="button"
             onClick={handleCloseAndRemove}
             className={className}
-            aria-label={i18n.t('common.close_panel')}
+            aria-label={i18n.t('common.close_panel') || undefined}
             data-cy-button="close-panel"
           >
             <PanelCloseIconStyle aria-hidden focusable="false" />

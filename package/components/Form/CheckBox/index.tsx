@@ -12,7 +12,7 @@ type Props = {
   /** Id of the checkbox */
   id?: string;
   /** Label of the checkbox */
-  label: string | JSX.Element;
+  label: string | JSX.Element | null;
   /** handleLabelClick of the checkbox */
   handleCheck: (event: React.SyntheticEvent<HTMLLabelElement>) => void;
   /** Value of the checkbox */

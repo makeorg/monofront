@@ -47,7 +47,9 @@ export const DesktopMenu: FC = () => {
   );
 
   return (
-    <DesktopMenuNavStyle aria-label={i18n.t('header.main_navigation')}>
+    <DesktopMenuNavStyle
+      aria-label={i18n.t('header.main_navigation') || undefined}
+    >
       <UnstyledListStyle>
         {countryHasConsultations && (
           <DesktopMenuItemStyle className="with-border">

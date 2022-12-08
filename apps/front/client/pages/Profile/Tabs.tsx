@@ -27,7 +27,10 @@ export const ProfileTabs: FC = () => {
   const isProfileFavouritesActive = isProfileFavourites(pathname);
 
   return (
-    <TabNavStyle aria-label={i18n.t('common.secondary_nav')} id="profile_nav">
+    <TabNavStyle
+      aria-label={i18n.t('common.secondary_nav') || undefined}
+      id="profile_nav"
+    >
       <TabListStyle>
         <TabStyle isSelected={isProfileProposalsActive}>
           <Link

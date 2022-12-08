@@ -6,11 +6,11 @@ import { Title, Meta } from 'react-head';
 
 type Props = {
   /** String used for title tag in header */
-  title?: string;
+  title?: string | null;
   /** String used for description tag in header */
-  description?: string;
+  description?: string | null;
   /** String used for image itemprop meta tag in header */
-  picture?: string;
+  picture?: string | null;
 };
 
 export const MetaTags: React.FC<Props> = ({ title, description, picture }) => (

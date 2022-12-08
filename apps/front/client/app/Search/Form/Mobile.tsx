@@ -36,7 +36,7 @@ export const MobileSearchInput: React.FC = () => {
     <>
       <SearchFormTriggerStyle
         className={SEARCH.SEARCH_ELEMENT_ARIA_CLASS}
-        aria-label={i18n.t('search.form.open_panel')}
+        aria-label={i18n.t('search.form.open_panel') || undefined}
         type="button"
         onClick={toggleMobileExpansion}
         disabled={isExpanded}

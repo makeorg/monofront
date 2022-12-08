@@ -79,7 +79,7 @@ const ProfilePage: FC = () => {
         <UserInformations user={formattedUserType} />
         <ProfilePageContentStyle>
           <TabNavStyle
-            aria-label={i18n.t('common.secondary_nav')}
+            aria-label={i18n.t('common.secondary_nav') || undefined}
             id="organisation_nav"
           >
             <TabListStyle as="div">

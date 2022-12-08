@@ -7,7 +7,7 @@ import { CustomErrorTriggerStyle } from '@make.org/ui/elements/FormElements';
 
 type Props = {
   inputId?: string;
-  labelText?: string;
+  labelText?: string | null;
 };
 
 export const ErrorMessageForgotPassword: React.FC<Props> = ({

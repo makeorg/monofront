@@ -51,8 +51,8 @@ export const DeprecatedCollapse: FC<Props> = ({
         aria-expanded={!isCollapsed}
         aria-label={
           isCollapsed
-            ? i18n.t('common.expand_collapse', { name: title })
-            : i18n.t('common.shrink_collapse', { name: title })
+            ? i18n.t('common.expand_collapse', { name: title }) || undefined
+            : i18n.t('common.shrink_collapse', { name: title }) || undefined
         }
         lang={language}
       >

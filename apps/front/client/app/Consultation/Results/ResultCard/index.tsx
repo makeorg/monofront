@@ -15,7 +15,7 @@ type Props = {
   /** T;tle to render */
   title: string;
   /** O;tional description to render */
-  description?: string;
+  description?: string | null;
   /** O;tional id to render */
   id: string;
   /** C;ildren to render */

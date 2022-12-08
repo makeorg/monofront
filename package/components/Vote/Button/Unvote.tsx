@@ -45,7 +45,7 @@ const UnvoteButtonItem: React.FC<ButtonProps> = ({
     <VoteButtonStyle
       aria-label={
         displayPending
-          ? i18n.t('common.loading')
+          ? i18n.t('common.loading') || undefined
           : transVoteMap.get(voteKey) || voteKey
       }
       className={buttonClass}
@@ -90,7 +90,7 @@ export const UnvoteButton: React.FC<Props> = ({
 }) => {
   if (withTooltip) {
     return (
-      <Tooltip content={i18n.t('unvote.title')} direction="left">
+      <Tooltip content={i18n.t('unvote.title') || undefined} direction="left">
         <UnvoteButtonItem
           voteKey={voteKey}
           buttonClass={buttonClass}

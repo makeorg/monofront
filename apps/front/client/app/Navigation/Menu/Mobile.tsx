@@ -39,7 +39,7 @@ export const MobileMenu: FC = () => {
     <>
       <MenuOpenTriggerStyle
         className={`${NAVIGATION.NAVIGATION_ELEMENT_ARIA_CLASS} ${SEARCH.SEARCH_ELEMENT_ARIA_CLASS}`}
-        aria-label={i18n.t('header.open_menu')}
+        aria-label={i18n.t('header.open_menu') || undefined}
         onClick={toggleExpansion}
         disabled={isExpanded}
         data-cy-button="mobile-header-menu"

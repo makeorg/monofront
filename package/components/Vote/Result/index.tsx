@@ -117,7 +117,7 @@ export const VoteResult: React.FC<Props> = ({
             >
               <VoteResultBarStyle
                 className={isWidget ? 'widget' : ''}
-                aria-label={i18n.t('common.display_tooltip')}
+                aria-label={i18n.t('common.display_tooltip') || undefined}
                 color={voteStaticParams[voteKey].color}
                 percent={votesPercent[voteKey]}
               />

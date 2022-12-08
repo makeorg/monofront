@@ -59,7 +59,7 @@ export const RegistrationIncentive: FC<Props> = ({
       </ConsultationElementTitleStyle>
       <NoConsultationButtonStyle
         onClick={handleClick}
-        aria-label={i18n.t('common.register_label')}
+        aria-label={i18n.t('common.register_label') || undefined}
         data-cy-link="subscribe"
       >
         {i18n.t('browse.subscribe')}

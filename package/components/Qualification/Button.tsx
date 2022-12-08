@@ -139,7 +139,9 @@ export const QualificationButton: React.FC<Props> = ({
           color={voteStaticParams[votedKey].color}
           onClick={() => handleQualification(context)}
           aria-label={
-            pendingQualification ? i18n.t('common.loading') : buttonLabel
+            pendingQualification
+              ? i18n.t('common.loading') || undefined
+              : buttonLabel
           }
           aria-busy={pendingQualification}
           data-cy-button="qualification"

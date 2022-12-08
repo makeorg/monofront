@@ -66,7 +66,7 @@ export const Footer: React.FC = () => {
       } ${isSequencePage && 'extra-mobile-padding-bottom'}`}
       data-cy-container="footer"
     >
-      <FooterNavStyle aria-label={i18n.t('common.footer_nav')}>
+      <FooterNavStyle aria-label={i18n.t('common.footer_nav') || undefined}>
         <ColumnToRowElementStyle>
           <FooterWrapperFirstListStyle>
             {externalLinks.map(externalLink =>

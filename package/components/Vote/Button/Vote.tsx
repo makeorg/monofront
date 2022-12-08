@@ -48,7 +48,7 @@ const VoteButtonItem = ({
     <VoteButtonStyle
       aria-label={
         displayPending
-          ? i18n.t('common.loading')
+          ? i18n.t('common.loading') || undefined
           : transVoteMap.get(voteKey) || voteKey
       }
       className={buttonClass}
