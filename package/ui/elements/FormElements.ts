@@ -37,6 +37,7 @@ export const CheckboxLabelStyle = styled.label<{
   margin-top: 5px;
   color: ${props => (props.isBlack ? color.black : color.greyDark)};
   font-family: ${MakeFonts.CircularStandardBook};
+  font-weight: normal;
   font-size: ${props =>
     props.noFontSizeChange
       ? intToPx(typography.font.fontsize.XS.value)

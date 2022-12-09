@@ -175,7 +175,6 @@ export const ExploreProposalsCountStyle = styled.span`
   > strong {
     font-family: ${MakeFonts.CircularStandardBold};
     font-weight: bold;
-    font-weight: normal;
   }
 `;
 

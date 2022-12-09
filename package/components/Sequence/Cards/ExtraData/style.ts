@@ -107,6 +107,7 @@ export const RadioAsButtonWrapperStyle = styled.div`
 
 export const RadioAsButtonLabelStyle = styled.label`
   font-family: ${MakeFonts.CircularStandardBook};
+  font-weight: normal;
   color: ${color.greyDark};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   width: 100%;

@@ -108,6 +108,7 @@ export const RadioAsTransparentButtonLabelStyle = styled.label`
   display: inline-flex;
   align-items: center;
   font-family: ${MakeFonts.CircularStandardBook};
+  font-weight: normal;
   color: ${color.greyDark};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   width: 100%;
