@@ -109,7 +109,7 @@
     "register_label": "Registrovat se",
     "continue": "Pokračovat",
     "register_panel": {
-      "welcome": "Vítej!",
+      "welcome": "Vítej v týmu!",
       "greeting": "Jsme rádi, že tě můžeme počítat mezi naše angažované uživatele!",
       "mail_confirmation_strong": "Z důvodu ověření pravosti tvého účtu, prosím, potvrď svou e-mailovou adresu. ",
       "mail_confirmation": " Stačí jedno kliknutí. Klikni na aktivační odkaz, který ti byl zaslán na adresu: {{mail}}",
@@ -416,13 +416,13 @@
       "back_authentication": "Vrátit se na přihlašovací obrazovku"
     },
     "success": {
-      "title": "Děkujeme {{name}}!",
+      "title": "Děkujeme!",
       "description": "Tvůj návrh je nyní pracováván našimi týmy moderátorů.",
       "button": "Pokračovat v hlasování",
       "other_idea": "Mám jiný nápad",
       "tooltip_title": "Je zpracováván",
       "tooltip_description": "Tvůj návrh bude našimi týmy zpracován do 48 hodin, zatím ho můžeš najít ve svém profilu.",
-      "grats": "Gratulujeme, {{name}}, ",
+      "grats": "Gratulujeme, ",
       "proposal_sent": "tvůj návrh byl odeslán ",
       "activate": "Z důvodu ověření pravosti tvého účtu, prosím, potvrď svou e-mailovou adresu. ",
       "link": "Stačí jedno kliknutí. Klikni na aktivační odkaz, který ti byl zaslán na adresu: {{mail}}",
@@ -717,11 +717,11 @@
       "votes": "Zaujmutí stanoviska"
     },
     "proposals": {
-      "title": "Nejnovější návrhy uživatele/uživatelky {{name}}:",
+      "title": "{{name}} a jeho/její nejnovější návrhy:",
       "text": "{{name}} na Make.org ještě nepředložil/a žádný návrh."
     },
     "votes": {
-      "title": "Nejnovější stanoviska uživatele/uživatelky {{name}}:",
+      "title": "{{name}} a jeho/její nejnovější stanoviska:",
       "text": "{{name}} na Make.org ještě nezaujal/a žádné stanovisko."
     }
   },
@@ -788,9 +788,9 @@
       "participant_one": "účastník/nice",
       "participant_few": "účastníci/e",
       "participant_other": "účastníků/ič",
-      "proposals_one": "návrh",
-      "proposals_few": "návrhy",
-      "proposals_other": "návrhů",
+      "proposals_one": "Návrh",
+      "proposals_few": "Návrhy",
+      "proposals_other": "Návrhů",
       "progress_title": "Náš volební cíl",
       "progress_total": "Celkový počet hlasů",
       "progress_target": " z {{votesTarget}} hlasů ({{percent}} %)",
