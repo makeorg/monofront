@@ -5,6 +5,7 @@ import { TermsOfUseFR } from './FR';
 import { TermsOfUseEN } from './EN';
 import { TermsOfUseDE } from './DE';
 import { TermsOfUseUK } from './UK';
+import { TermsOfUseCS } from './CS';
 
 export const TermsOfUse: FC = () => {
   const { state } = useAppContext();
@@ -17,6 +18,8 @@ export const TermsOfUse: FC = () => {
       return <TermsOfUseDE />;
     case [LocaleType.uk].toString():
       return <TermsOfUseUK />;
+    case [LocaleType.cs].toString():
+      return <TermsOfUseCS />;
     default:
       return <TermsOfUseEN />;
   }
