@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { useAppContext } from '@make.org/store';
+import { LocaleType } from '@make.org/types/enums';
 import { TermsOfUseFR } from './FR';
 import { TermsOfUseEN } from './EN';
 import { TermsOfUseDE } from './DE';
@@ -10,11 +11,11 @@ export const TermsOfUse: FC = () => {
   const { language } = state.appConfig;
 
   switch (language) {
-    case 'fr':
+    case [LocaleType.fr].toString():
       return <TermsOfUseFR />;
-    case 'de':
+    case [LocaleType.de].toString():
       return <TermsOfUseDE />;
-    case 'uk':
+    case [LocaleType.uk].toString():
       return <TermsOfUseUK />;
     default:
       return <TermsOfUseEN />;

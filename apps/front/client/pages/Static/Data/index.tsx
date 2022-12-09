@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { useAppContext } from '@make.org/store';
+import { LocaleType } from '@make.org/types/enums';
 import { DataFR } from './FR';
 import { DataEN } from './EN';
 import { DataDE } from './DE';
@@ -11,13 +12,13 @@ export const Data: FC = () => {
   const { language } = state.appConfig;
 
   switch (language) {
-    case 'fr':
+    case [LocaleType.fr].toString():
       return <DataFR />;
-    case 'de':
+    case [LocaleType.de].toString():
       return <DataDE />;
-    case 'uk':
+    case [LocaleType.uk].toString():
       return <DataUK />;
-    case 'cs':
+    case [LocaleType.cs].toString():
       return <DataCS />;
     default:
       return <DataEN />;

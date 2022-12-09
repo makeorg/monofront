@@ -1,7 +1,7 @@
 import 'url-search-params-polyfill';
 import { generatePath } from 'react-router';
 import queryString from 'query-string';
-import { URL } from '@make.org/types/enums';
+import { LocaleType, URL } from '@make.org/types/enums';
 import { env } from '@make.org/assets/env';
 import { UnknownObjectType } from '@make.org/types';
 import {
@@ -535,12 +535,14 @@ export const getAccountActivationLink = (
 
 export const getModerationLinkByLanguage = (language: string): string => {
   switch (language) {
-    case 'fr':
+    case [LocaleType.fr].toString():
       return URL.MODERATION_CHARTER_FR_LINK;
-    case 'de':
+    case [LocaleType.de].toString():
       return URL.MODERATION_CHARTER_DE_LINK;
-    case 'uk':
+    case [LocaleType.uk].toString():
       return URL.MODERATION_CHARTER_UK_LINK;
+    case [LocaleType.cs].toString():
+      return URL.MODERATION_CHARTER_CS_LINK;
     default:
       return URL.MODERATION_CHARTER_EN_LINK;
   }

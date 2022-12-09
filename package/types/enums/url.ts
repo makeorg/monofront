@@ -5,6 +5,7 @@ export enum URL {
   MODERATION_CHARTER_EN_LINK = 'https://about.make.org/en/moderation',
   MODERATION_CHARTER_DE_LINK = 'https://about.make.org/de/moderation-charter',
   MODERATION_CHARTER_UK_LINK = 'https://about.make.org/uk/moderation',
+  MODERATION_CHARTER_CS_LINK = 'https://about.make.org/cs/moderation',
   ABOUT_MAKE_LINK = 'https://about.make.org/',
   DOTATION_FUNDS_LINK = 'https://foundation.make.org',
   NEWS_LINK = 'https://about.make.org',
