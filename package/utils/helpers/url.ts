@@ -44,6 +44,11 @@ import {
   ROUTE_STATIC_GTU_UK,
   ROUTE_STATIC_LEGAL_UK,
   ROUTE_STATIC_A11Y_UK,
+  ROUTE_STATIC_CONTACT_CS,
+  ROUTE_STATIC_DATA_CS,
+  ROUTE_STATIC_GTU_CS,
+  ROUTE_STATIC_LEGAL_CS,
+  ROUTE_STATIC_A11Y_CS,
 } from '../routes';
 
 declare global {
@@ -63,7 +68,8 @@ export const getMultiLangStaticLink = (
   FRLink: string,
   ENLink: string,
   DELink: string,
-  UALink: string
+  UALink: string,
+  CZLink: string
 ): string => {
   switch (country) {
     case 'FR':
@@ -72,6 +78,8 @@ export const getMultiLangStaticLink = (
       return generatePath(DELink, { country });
     case 'UA':
       return generatePath(UALink, { country });
+    case 'CZ':
+      return generatePath(CZLink, { country });
     default:
       return generatePath(ENLink, { country });
   }
@@ -376,7 +384,8 @@ export const getContactPageLink = (country: string): string =>
     // same uri as french version
     ROUTE_STATIC_CONTACT_FR,
     ROUTE_STATIC_CONTACT_DE,
-    ROUTE_STATIC_CONTACT_UK
+    ROUTE_STATIC_CONTACT_UK,
+    ROUTE_STATIC_CONTACT_CS
   );
 
 /**
@@ -392,7 +401,8 @@ export const getDataPageLink = (country: string): string =>
     ROUTE_STATIC_DATA_FR,
     ROUTE_STATIC_DATA_EN,
     ROUTE_STATIC_DATA_DE,
-    ROUTE_STATIC_DATA_UK
+    ROUTE_STATIC_DATA_UK,
+    ROUTE_STATIC_DATA_CS
   );
 
 /**
@@ -407,7 +417,8 @@ export const getGTUPageLink = (country: string): string =>
     ROUTE_STATIC_GTU_FR,
     ROUTE_STATIC_GTU_EN,
     ROUTE_STATIC_GTU_DE,
-    ROUTE_STATIC_GTU_UK
+    ROUTE_STATIC_GTU_UK,
+    ROUTE_STATIC_GTU_CS
   );
 
 /**
@@ -422,7 +433,8 @@ export const getLegalPageLink = (country: string): string =>
     ROUTE_STATIC_LEGAL_FR,
     ROUTE_STATIC_LEGAL_EN,
     ROUTE_STATIC_LEGAL_DE,
-    ROUTE_STATIC_LEGAL_UK
+    ROUTE_STATIC_LEGAL_UK,
+    ROUTE_STATIC_LEGAL_CS
   );
 
 /**
@@ -438,7 +450,8 @@ export const getA11YPageLink = (country: string): string =>
     // todo EN Translation for a11y page
     ROUTE_STATIC_A11Y_FR,
     ROUTE_STATIC_A11Y_DE,
-    ROUTE_STATIC_A11Y_UK
+    ROUTE_STATIC_A11Y_UK,
+    ROUTE_STATIC_A11Y_CS
   );
 
 /**

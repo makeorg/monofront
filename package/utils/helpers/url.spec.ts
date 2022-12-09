@@ -1,5 +1,6 @@
 import { env } from '@make.org/assets/env';
 import {
+  ROUTE_STATIC_GTU_CS,
   ROUTE_STATIC_GTU_DE,
   ROUTE_STATIC_GTU_EN,
   ROUTE_STATIC_GTU_FR,
@@ -109,33 +110,47 @@ describe('Url Helper', () => {
       ROUTE_STATIC_GTU_FR,
       ROUTE_STATIC_GTU_EN,
       ROUTE_STATIC_GTU_DE,
-      ROUTE_STATIC_GTU_UK
+      ROUTE_STATIC_GTU_UK,
+      ROUTE_STATIC_GTU_CS
     );
     const linkEN = urlHelper.getMultiLangStaticLink(
       'GB',
       ROUTE_STATIC_GTU_FR,
       ROUTE_STATIC_GTU_EN,
       ROUTE_STATIC_GTU_DE,
-      ROUTE_STATIC_GTU_UK
+      ROUTE_STATIC_GTU_UK,
+      ROUTE_STATIC_GTU_CS
     );
     const linkDE = urlHelper.getMultiLangStaticLink(
       'DE',
       ROUTE_STATIC_GTU_FR,
       ROUTE_STATIC_GTU_EN,
       ROUTE_STATIC_GTU_DE,
-      ROUTE_STATIC_GTU_UK
+      ROUTE_STATIC_GTU_UK,
+      ROUTE_STATIC_GTU_CS
     );
     const linkUA = urlHelper.getMultiLangStaticLink(
       'UA',
       ROUTE_STATIC_GTU_FR,
       ROUTE_STATIC_GTU_EN,
       ROUTE_STATIC_GTU_DE,
-      ROUTE_STATIC_GTU_UK
+      ROUTE_STATIC_GTU_UK,
+      ROUTE_STATIC_GTU_CS
+    );
+
+    const linkCZ = urlHelper.getMultiLangStaticLink(
+      'CZ',
+      ROUTE_STATIC_GTU_FR,
+      ROUTE_STATIC_GTU_EN,
+      ROUTE_STATIC_GTU_DE,
+      ROUTE_STATIC_GTU_UK,
+      ROUTE_STATIC_GTU_CS
     );
 
     expect(linkFR).toEqual(`/FR/conditions-dutilisation`);
     expect(linkEN).toEqual(`/GB/terms-of-use`);
     expect(linkDE).toEqual(`/DE/nutzungsbedingungen`);
     expect(linkUA).toEqual(`/UA/terms-of-use`);
+    expect(linkCZ).toEqual(`/CZ/terms-of-use`);
   });
 });
