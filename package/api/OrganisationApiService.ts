@@ -30,7 +30,7 @@ export class OrganisationApiService {
 
   static getOrganisationProposals(
     organisationId: string,
-    seed?: number,
+    preferedLanguage?: string,
     limit: number = PROPOSALS_LISTING_LIMIT,
     skip = 0
   ): Promise<void | AxiosResponse> {
@@ -38,7 +38,13 @@ export class OrganisationApiService {
       ORGANISATION_PROPOSALS_PATH.replace(':organisationId', organisationId),
       {
         method: 'GET',
-        params: { sort: 'createdAt', order: 'desc', seed, limit, skip },
+        params: {
+          sort: 'createdAt',
+          order: 'desc',
+          limit,
+          skip,
+          preferedLanguage,
+        },
       }
     );
   }

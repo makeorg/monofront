@@ -63,7 +63,7 @@ export const ProposalCardWithQuestion: React.FC<Props> = ({
       <ProposalInnerStyle>
         <ColumnElementStyle>
           <ScreenReaderItemStyle>
-            {i18n.t('proposal_card.content')}
+            <>{i18n.t('proposal_card.content')}</>
           </ScreenReaderItemStyle>
           <ProposalLinkElementStyle
             to={proposalLink}

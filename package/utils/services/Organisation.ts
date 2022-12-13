@@ -58,8 +58,9 @@ const getOrganisationBySlug = async (
 
 const getProposals = async (
   organisationId: string,
-  seed?: number,
-  page = 0
+  // eslint-disable-next-line default-param-last
+  page = 0,
+  preferedLanguage?: string
 ): Promise<null | ProposalsType> => {
   const limit = PROPOSALS_LISTING_LIMIT;
   const skip = page * limit;
@@ -67,7 +68,7 @@ const getProposals = async (
   try {
     const response = await OrganisationApiService.getOrganisationProposals(
       organisationId,
-      seed,
+      preferedLanguage,
       limit,
       skip
     );

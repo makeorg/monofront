@@ -88,7 +88,7 @@ export const ProfileVoteCard: FC<Props> = ({
           </AuthorWrapperStyle>
           <ProposalInnerStyle>
             <ScreenReaderItemStyle>
-              {i18n.t('proposal_card.content')}
+              <>{i18n.t('proposal_card.content')}</>
             </ScreenReaderItemStyle>
             <ProposalLinkElementStyle
               id={`vote_card_proposal_content_${position}`}

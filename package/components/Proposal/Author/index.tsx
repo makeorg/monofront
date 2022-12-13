@@ -50,7 +50,7 @@ export const ProposalAuthorInformations: FC<Props> = ({ proposal }) => {
   return (
     <>
       <ScreenReaderItemStyle>
-        {i18n.t('proposal_card.author.from')}
+        <>{i18n.t('proposal_card.author.from')}</>
       </ScreenReaderItemStyle>
       <InfosWrapperStyle>
         {isOrganisation &&

@@ -17,7 +17,8 @@ const startSequenceByKind = async (
   includedProposalIds: string[],
   sequenceKind: string,
   demographicsCardId?: string,
-  token?: string
+  token?: string,
+  preferedLanguage?: string
 ): Promise<SequenceType | null> => {
   try {
     const response = await QuestionApiService.startSequenceByKind(
@@ -25,7 +26,8 @@ const startSequenceByKind = async (
       includedProposalIds,
       sequenceKind,
       demographicsCardId,
-      token
+      token,
+      preferedLanguage
     );
 
     if (!response) {
@@ -72,11 +74,13 @@ const startSequenceByKind = async (
 };
 
 const startSequenceFirstProposal = async (
-  questionId: string
+  questionId: string,
+  preferedLanguage?: string
 ): Promise<null | FirstProposalSequenceType> => {
   try {
     const response = await QuestionApiService.startSequenceFirstProposal(
-      questionId
+      questionId,
+      preferedLanguage
     );
     if (!response) {
       return null;
@@ -93,13 +97,15 @@ const startSequenceFirstProposal = async (
 const startSequenceByKeyword = async (
   questionId: string,
   includedProposalIds: string[],
-  keyword: string
+  keyword: string,
+  preferedLanguage?: string
 ): Promise<null | SequenceType> => {
   try {
     const response = await QuestionApiService.startSequenceByKeyword(
       questionId,
       includedProposalIds,
-      keyword
+      keyword,
+      preferedLanguage
     );
 
     if (!response) {

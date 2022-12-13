@@ -60,7 +60,7 @@ export const ProfileProposalCard: FC<Props> = ({
         />
       </AuthorWrapperStyle>
       <ScreenReaderItemStyle>
-        {i18n.t('proposal_card.content')}
+        <>{i18n.t('proposal_card.content')}</>
       </ScreenReaderItemStyle>
       {isProposalAccepted ? (
         <ProposalLinkElementStyle

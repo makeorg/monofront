@@ -4,7 +4,6 @@ export type TopComponentContextValueType = string;
 
 export const TopComponentContextValue = {
   getProposalList: (): string => 'proposal-list',
-  getPopularProposals: (): string => 'popular-proposals-showcase',
   getPopularProposalsTop: (): string => 'top-proposals',
   getControversialProposals: (): string => 'controversial-proposals-showcase',
   getTopideaProposalList: (): string => 'top-idea-proposal-list',

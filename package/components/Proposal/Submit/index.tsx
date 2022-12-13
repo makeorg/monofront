@@ -18,7 +18,7 @@ export const ProposalSubmit: React.FC = () => {
       data-cy-button="proposal-panel"
     >
       <TriggerIconStyle aria-hidden focusable="false" />
-      {i18n.t('proposal_submit.form.panel_trigger')}
+      <>{i18n.t('proposal_submit.form.panel_trigger')}</>
     </PanelTriggerStyle>
   );
 };

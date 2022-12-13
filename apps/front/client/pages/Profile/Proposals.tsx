@@ -24,7 +24,6 @@ const ProfileProposalsPage: FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [hasMore, setHasMore] = useState<boolean>(false);
   const [page, setPage] = useState<number>(0);
-  const [apiSeed, setaApiSeed] = useState<number | undefined>(undefined);
 
   const loadProposals = async () => {
     setIsLoading(true);
@@ -32,14 +31,13 @@ const ProfileProposalsPage: FC = () => {
       setIsLoading(false);
       return;
     }
-    const result = await UserService.myProposals(user.userId, apiSeed, page);
+    const result = await UserService.myProposals(user.userId, page);
     if (result) {
-      const { results, total, seed } = result;
+      const { results, total } = result;
       const newProposalList = [...proposals, ...results];
       setProposals(newProposalList);
       setHasMore(newProposalList.length < total);
       setPage(page + 1);
-      setaApiSeed(seed);
     }
     setIsLoading(false);
   };

@@ -270,15 +270,16 @@ const checkLoginPrivacyPolicy = async (
 
 const myProposals = async (
   userId: string,
-  seed?: number,
-  page = 0
+  // eslint-disable-next-line default-param-last
+  page = 0,
+  preferedLanguage?: string
 ): Promise<SearchProposalsType | void> => {
   const limit = PROPOSALS_LISTING_LIMIT;
   const skip = page * limit;
   try {
     const response = await UserApiService.myProposals(
       userId,
-      seed,
+      preferedLanguage,
       limit,
       skip
     );
@@ -296,12 +297,19 @@ const myProposals = async (
 
 const myFavourites = async (
   userId: string,
-  page = 0
+  // eslint-disable-next-line default-param-last
+  page = 0,
+  preferedLanguage?: string
 ): Promise<SearchProposalsType | void> => {
   const limit = PROPOSALS_LISTING_LIMIT;
   const skip = page * limit;
   try {
-    const response = await UserApiService.myFavourites(userId, limit, skip);
+    const response = await UserApiService.myFavourites(
+      userId,
+      preferedLanguage,
+      limit,
+      skip
+    );
 
     return response && response.data;
   } catch (error: unknown) {

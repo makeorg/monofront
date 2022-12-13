@@ -32,9 +32,9 @@ export const VoteProgress: React.FC<Props> = props => {
     <VoteProgressContainerStyle>
       <VoteCounterStyle>
         <ScreenReaderItemStyle as="span">
-          {i18n.t('results.static_total')}
+          <>{i18n.t('results.static_total')}</>
         </ScreenReaderItemStyle>
-        {i18n.t('vote.label', { count: votesCount })}
+        <>{i18n.t('vote.label', { count: votesCount })}</>
       </VoteCounterStyle>
       <VoteProgressWrapperStyle>
         {votes.map(vote => (

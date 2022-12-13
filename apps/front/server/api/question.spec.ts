@@ -20,7 +20,7 @@ describe('QuestionResults Api', () => {
     jest.clearAllMocks();
   });
 
-  describe('resonse Header in quesion results api', () => {
+  describe('response Header in question results api', () => {
     it('set Header for Access Allow Origin and content Type', () => {
       const request = httpMocks.createRequest({
         params: { questionSlug: 'foo' },
@@ -35,7 +35,7 @@ describe('QuestionResults Api', () => {
     });
   });
 
-  describe('question Slug params validtion', () => {
+  describe('question Slug params validation', () => {
     it('question Slug is not a valid slug', () => {
       const request = httpMocks.createRequest({
         params: { questionSlug: 'foo$<ttt' },

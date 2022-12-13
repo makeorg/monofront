@@ -51,7 +51,7 @@ export const ProposalCardTagged: FC<Props> = ({ proposal, position, size }) => {
       <ProposalInnerStyle>
         <ColumnElementStyle>
           <ScreenReaderItemStyle>
-            {i18n.t('proposal_card.content')}
+            <>{i18n.t('proposal_card.content')}</>
           </ScreenReaderItemStyle>
           <ProposalLinkElementStyle
             id={`card_tagged_proposal_content_${position}`}

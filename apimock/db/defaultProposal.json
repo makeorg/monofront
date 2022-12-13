@@ -2,6 +2,9 @@
   "id":"bfd7a085-bd4a-460a-a022-76542899fb93",
   "userId":"ef5fafb4-226b-4a65-9319-c92289d4c10a",
   "content":"Il faut gagner la place numéro 1 dans le top des assos !",
+  "contentLanguage": "fr",
+  "translatedContent": "You have to win the number 1 place in the top associations!",
+  "translatedLanguage": "en",
   "slug":"il-faut-gagner-la-place-numero-1-dans-le-top-des-assos",
   "status":"Accepted",
   "createdAt":"2019-12-09T15:33:53.768Z",
@@ -85,10 +88,10 @@
     "question":null,
     "getParameters":[],
     "country": "FR",
-    "language": "fr"
+    "questionLanguage": "fr",
+    "proposalLanguage": "fr",
+    "clientLanguage": "fr"
   },
-  "trending":null,
-  "labels":[],
   "author":{
     "firstName":null,
     "organisationName":"La Bûcherie ",
@@ -99,7 +102,6 @@
     "userType":"ORGANISATION"
   },
   "organisations":[],
-  "themeId":null,
   "tags":[
     {
       "tagId":"587c42ed-8f3f-42fa-a984-59a0b0151184",
@@ -115,6 +117,11 @@
         "display":true
       }
   ],
+  "selectedStakeTag": {
+    "tagId": "11111111-2222-3333-4444-555555555555",
+    "label": "string",
+    "display": true
+  },
   "myProposal":false,
   "idea":"a8f7b025-6cce-48ae-a214-89192b4c363a",
   "question":{
@@ -124,11 +131,17 @@
       "title":"Agir ensemble pour l'environnement",
       "question":"Comment agir ensemble dès maintenant pour l'environnement ?"
     },
+    "preferedLanguage": "fr",
+    "returnedLanguage": "fr", 
+    "countries": ["FR", "GB"],
+    "languages": ["fr", "en"], 
     "startDate":"2019-10-16T22:00:00.000Z",
-    "endDate":"2020-01-05T23:00:00.000Z",
-    "countries": ["FR"],
-    "language":"fr"  
+    "endDate":"2020-01-05T23:00:00.000Z"
   },
   "operationId":"8ae27769-c052-444d-825f-609599bd2044",
-  "proposalKey":"3157cfa81f5ef0a07907e6f719548519d77c2f741f63d0937f8d8783501382417b84f23705949c436aa02376a8a380355e6cb6e539f31d4a8da097fca395834f"
+  "proposalKey":"3157cfa81f5ef0a07907e6f719548519d77c2f741f63d0937f8d8783501382417b84f23705949c436aa02376a8a380355e6cb6e539f31d4a8da097fca395834f",
+  "keywords": {
+    "key": "arbres",
+    "value": "Arbres"
+  }
 }

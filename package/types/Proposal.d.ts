@@ -1,4 +1,4 @@
-import { QuestionType } from './Question';
+import { ProposalQuestionType } from './Question';
 import { OrganisationSoftType } from './Organisation';
 import { VoteType } from './Vote';
 import { TagType } from './Tag';
@@ -20,33 +20,55 @@ export type ContextType = {
   location: string;
   question: string;
   country: string;
-  language: string;
+  questionLanguage: string;
+  proposalLanguage: string;
+  clientLanguage: string;
   getParameters: Array<string>;
+};
+
+export type ProposalQuestionType = {
+  questionId: string;
+  slug: string;
+  wording: {
+    title: string;
+    question: string;
+  };
+  preferedLanguage: string;
+  returnedLanguage: string;
+  countries: Array<string>;
+  languages: Array<string>;
+  startDate: string;
+  endDate: string;
+};
+
+export type ProposalKeywordsType = {
+  key: string;
+  label: string;
 };
 
 export type ProposalType = {
   id: string;
   userId: string;
   content: string;
+  contentLanguage: string;
+  translatedContent: string;
+  translatedLanguage: string;
   slug: string;
   status: string;
   createdAt: string;
   updatedAt: string;
   votes: VoteType[];
   context: ContextType;
-  trending: string;
-  labels: any[]; // TO DELETE ?
   author: AuthorType;
   organisations: OrganisationSoftType[];
-  themeId: string;
   tags: Partial<TagType>[];
   selectedStakeTag: Partial<TagType>;
   myProposal: boolean;
   idea: string;
-  questionId: string;
+  question: ProposalQuestionType;
   operationId: string;
   proposalKey: string;
-  question: QuestionType;
+  keywords: ProposalKeywords[];
 };
 
 export type ProposalsType = {

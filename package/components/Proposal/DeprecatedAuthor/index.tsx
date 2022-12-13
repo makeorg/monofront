@@ -51,7 +51,7 @@ export const DeprecatedProposalAuthor: React.FC<Props> = ({
           <>
             &nbsp;&bull;&nbsp;
             <ScreenReaderItemStyle>
-              {i18n.t('proposal_card.author.date')}
+              <>{i18n.t('proposal_card.author.date')}</>
             </ScreenReaderItemStyle>
             <time dateTime={proposal.createdAt}>
               {DateHelper.localizedAndFormattedDate(
@@ -65,7 +65,7 @@ export const DeprecatedProposalAuthor: React.FC<Props> = ({
       {formattedProposalStatus && (
         <ProposalStatusStyle className={`status-${formattedProposalStatus}`}>
           <ScreenReaderItemStyle>
-            {i18n.t('proposal_card.status.title')}
+            <>{i18n.t('proposal_card.status.title')}</>
           </ScreenReaderItemStyle>
           {transMapStatus.get(formattedProposalStatus) || ''}
         </ProposalStatusStyle>

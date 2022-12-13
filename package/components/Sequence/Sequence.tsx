@@ -56,14 +56,16 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
     questionId: string,
     votedIds: string[],
     demographicCardId?: string,
-    token?: string
+    token?: string,
+    preferedLanguage?: string
   ): Promise<SequenceType | null> => {
     const response = await SequenceService.startSequenceByKind(
       questionId,
       votedIds,
       sequenceKind,
       demographicCardId,
-      token
+      token,
+      preferedLanguage
     );
 
     if (!response) {

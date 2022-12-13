@@ -50,9 +50,6 @@ export class ViewsApiService {
         .replace(':preferedLanguage', preferedLanguage),
       {
         method: 'GET',
-        params: {
-          preferedLanguage,
-        },
       }
     );
 }

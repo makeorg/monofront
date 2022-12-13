@@ -43,12 +43,14 @@ export const SequenceByKeyword: FC = () => {
 
   const executeStartSequence = async (
     questionId: string,
-    votedIds: string[]
+    votedIds: string[],
+    preferedLanguage?: string
   ): Promise<SequenceType | null> => {
     const response = await SequenceService.startSequenceByKeyword(
       questionId,
       votedIds,
-      keyword
+      keyword,
+      preferedLanguage
     );
     if (!response) {
       return null;

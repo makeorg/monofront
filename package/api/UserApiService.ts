@@ -364,13 +364,19 @@ export class UserApiService {
    */
   static myProposals(
     userId: string,
-    seed?: number,
+    preferedLanguage?: string,
     limit: number = PROPOSALS_LISTING_LIMIT,
     skip = 0
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_USER_PROPOSALS.replace(':userId', userId), {
       method: 'GET',
-      params: { sort: 'createdAt', order: 'desc', seed, limit, skip },
+      params: {
+        sort: 'createdAt',
+        order: 'desc',
+        limit,
+        skip,
+        preferedLanguage,
+      },
     });
   }
 
@@ -380,12 +386,13 @@ export class UserApiService {
    */
   static myFavourites(
     userId: string,
+    preferedLanguage?: string,
     limit: number = PROPOSALS_LISTING_LIMIT,
     skip = 0
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_USER_FAVOURITES.replace(':userId', userId), {
       method: 'GET',
-      params: { qualifications: 'likeIt', limit, skip },
+      params: { qualifications: 'likeIt', limit, skip, preferedLanguage },
     });
   }
 

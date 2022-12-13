@@ -109,6 +109,7 @@ export class QuestionApiService {
   static startSequenceFirstProposal(
     questionId: string,
     sequenceKind?: string,
+    preferedLanguage?: string,
     headers: ApiServiceHeadersType = {}
   ): Promise<void | AxiosResponse> {
     const startSequenceProposalUrl =
@@ -119,6 +120,9 @@ export class QuestionApiService {
     return ApiService.callApi(startSequenceProposalUrl, {
       method: 'GET',
       headers,
+      params: {
+        preferedLanguage,
+      },
     });
   }
 
@@ -129,6 +133,7 @@ export class QuestionApiService {
     sequenceKind: string,
     demographicsCardId?: string,
     token?: string,
+    preferedLanguage?: string,
     headers: ApiServiceHeadersType = {}
   ): Promise<void | AxiosResponse> {
     let startSequenceUrl = PATH_QUESTION_START_SEQUENCE.replace(
@@ -146,14 +151,17 @@ export class QuestionApiService {
           )}&token=${encodeURIComponent(token)}`
         : '';
 
-    const params = [includeParams, demographicParams]
+    const urlParams = [includeParams, demographicParams]
       .filter(el => el)
       .join('&');
-    startSequenceUrl += params ? `?${params}` : '';
+    startSequenceUrl += urlParams ? `?${urlParams}` : '';
 
     return ApiService.callApi(startSequenceUrl, {
       method: 'GET',
       headers,
+      params: {
+        preferedLanguage,
+      },
     });
   }
 
@@ -162,6 +170,7 @@ export class QuestionApiService {
     // eslint-disable-next-line default-param-last
     includedProposalIds: string[] = [],
     keyword: string,
+    preferedLanguage?: string,
     headers: ApiServiceHeadersType = {}
   ): Promise<void | AxiosResponse> {
     let startSequenceUrl = PATH_QUESTION_START_SEQUENCE_KEYWORD.replace(
@@ -178,6 +187,9 @@ export class QuestionApiService {
     return ApiService.callApi(startSequenceUrl, {
       method: 'GET',
       headers,
+      params: {
+        preferedLanguage,
+      },
     });
   }
 
@@ -237,6 +249,7 @@ export class QuestionApiService {
     maxPartnerProposals: number,
     limit: number,
     seed?: number,
+    preferedLanguage?: string,
     headers: ApiServiceHeadersType = {}
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
@@ -248,6 +261,7 @@ export class QuestionApiService {
           maxPartnerProposals,
           limit,
           seed,
+          preferedLanguage,
         },
       }
     );

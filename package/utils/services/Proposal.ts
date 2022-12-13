@@ -27,25 +27,14 @@ const propose = async (
 };
 
 const getProposal = async (
-  proposalId: string
+  proposalId: string,
+  preferedLanguage?: string
 ): Promise<ProposalType | null> => {
   try {
-    const response = await ProposalApiService.getProposal(proposalId);
-
-    return response && response.data;
-  } catch (error: unknown) {
-    const apiServiceError = error as ApiServiceError;
-    defaultUnexpectedError(apiServiceError);
-
-    return null;
-  }
-};
-
-const getPopularProposals = async (
-  questionId: string
-): Promise<ProposalType | null> => {
-  try {
-    const response = await ProposalApiService.getPopularProposals(questionId);
+    const response = await ProposalApiService.getProposal(
+      proposalId,
+      preferedLanguage
+    );
 
     return response && response.data;
   } catch (error: unknown) {
@@ -117,6 +106,5 @@ const searchProposals = async (
 export const ProposalService = {
   propose,
   getProposal,
-  getPopularProposals,
   searchProposals,
 };

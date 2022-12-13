@@ -41,7 +41,7 @@ export const DetailledVoteResults: React.FC<Props> = props => {
       />
       <GliderStylesheet />
       <ScreenReaderItemStyle>
-        {i18n.t('results.static_repartition')}
+        <>{i18n.t('results.static_repartition')}</>
       </ScreenReaderItemStyle>
       {isMobile ? (
         <div className={`${sliderName} glider-contain`}>

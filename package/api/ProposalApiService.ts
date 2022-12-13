@@ -37,14 +37,15 @@ export class ProposalApiService {
       body: JSON.stringify({
         content,
         questionId,
-        country: ApiService.country,
         language: ApiService.language,
+        country: ApiService.country,
       }),
     });
   }
 
   static getProposal(
     proposalId: string,
+    preferedLanguage?: string,
     headers: ApiServiceHeadersType = {}
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
@@ -53,19 +54,9 @@ export class ProposalApiService {
         method: 'GET',
         headers,
         proposalId,
-      }
-    );
-  }
-
-  static getPopularProposals(
-    questionId: string,
-    headers: ApiServiceHeadersType = {}
-  ): Promise<void | AxiosResponse> {
-    return ApiService.callApi(
-      PATH_TOP_PROPOSALS.replace(':questionId', questionId),
-      {
-        method: 'GET',
-        headers,
+        params: {
+          preferedLanguage,
+        },
       }
     );
   }

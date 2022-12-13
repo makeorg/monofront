@@ -48,7 +48,6 @@ export const useOrganisation = (
     setIsLoading(true);
     const proposalsResponse = await OrganisationService.getProposals(
       organisation.organisationId,
-      seed,
       page
     );
     if (proposalsResponse) {

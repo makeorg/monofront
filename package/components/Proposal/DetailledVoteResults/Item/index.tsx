@@ -48,12 +48,12 @@ export const DetailledResultItem: React.FC<Props> = props => {
         </VoteButtonStyle>
         <VoteDataListStyle as="span">
           <VoteDataBoldItemStyle>
-            {i18n.t('common.percent', { percent: votePercent })}
+            <>{i18n.t('common.percent', { percent: votePercent })}</>
           </VoteDataBoldItemStyle>
         </VoteDataListStyle>
       </FlexElementStyle>
       <ScreenReaderItemStyle>
-        {i18n.t('qualification.static_repartition')}
+        <>{i18n.t('qualification.static_repartition')}</>
       </ScreenReaderItemStyle>
       <QualificationDataListStyle>
         {vote.qualifications.map(qualification => (
