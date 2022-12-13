@@ -63,7 +63,6 @@ export const ProposalAuthentication: FC = () => {
             {i18n.t('proposal_submit.authentication.button_login_link')}{' '}
           </ProposalAuthLoginStyle>
         </ProposalAuthLoginWrapperStyle>
-
         <DataPolicyWrapperStyle>
           {i18n.t('legal_consent.make_protect')}&nbsp;{' '}
           <DataPolicyNewWindowLinkStyle
