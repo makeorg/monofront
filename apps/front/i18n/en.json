@@ -760,7 +760,7 @@
       },
       "top_ideas": {
         "skiplink": "Top emerging ideas",
-        "introduction": ", The best citizen solutions are grouped into big ideas that structure the consultation. To classify these ideas, the Make.org algorithm takes into account the votes 'Agree' and 'Disagree' as well as the mentions 'Genius', 'Obvious', 'Irrelevant !' and 'Nonsense'.",
+        "introduction": "The best citizen solutions are grouped into big ideas that structure the consultation. To classify these ideas, the Make.org algorithm takes into account the votes 'Agree' and 'Disagree' as well as the mentions 'Genius', 'Obvious', 'Irrelevant !' and 'Nonsense'.",
         "title_one": "Top emerging ideas, grouped into {{count}} themes",
         "title_other": "Top ideas is merged in {{count}} topics",
         "axe_title": "Axis {{count}} : {{name}}"
@@ -1301,7 +1301,7 @@
     "sharing": "Or give more visibility to the consultation by sharing it."
   },
   "demographics_card": {
-    "disclaimer": "This informations are anonymous, it will allow the results to be representative.",
+    "disclaimer": "This information is anonymous, it will allow the results to be representative.",
     "skip": "Skip",
     "submit": "Save",
     "submitted_thanks": "Thank you for your answer.",
