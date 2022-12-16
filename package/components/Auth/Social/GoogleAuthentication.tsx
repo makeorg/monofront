@@ -209,7 +209,7 @@ export const GoogleAuthentication: React.FC<Props> = ({ isRegister }) => {
             <SvgGoogleLogoG aria-hidden focusable="false" />
           </SvgLogoWrapperStyle>
           <SocialButtonLabelStyle>
-            <>{i18n.t('common.social_login.google_connect')}</>
+            {i18n.t('common.social_login.google_connect')}
           </SocialButtonLabelStyle>
           <ScreenReaderItemStyle>Google</ScreenReaderItemStyle>
         </GoogleButtonStyle>

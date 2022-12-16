@@ -52,7 +52,7 @@ export const SingleProposalCard: React.FC<Props> = ({ proposal }) => {
           <DeprecatedProposalAuthor proposal={proposal} />
           {!isAnonymous && <ProposalCardSeparatorStyle />}
           <ScreenReaderItemStyle>
-            <>{i18n.t('proposal_card.content')}</>
+            {i18n.t('proposal_card.content')}
           </ScreenReaderItemStyle>
           <ProposalCardContentStyle lang={proposal.question.returnedLanguage}>
             {proposal.content}
@@ -92,14 +92,14 @@ export const SingleProposalCard: React.FC<Props> = ({ proposal }) => {
                   as={Link}
                   to={getSequenceLink(country, proposal.question.slug)}
                 >
-                  <>{i18n.t('proposal_page.button_1')}</>
+                  {i18n.t('proposal_page.button_1')}
                 </ButtonStyle>
               )}
               <ButtonStyle
                 as={Link}
                 to={getParticipateLink(country, proposal.question.slug)}
               >
-                <>{i18n.t('proposal_page.button_2')}</>
+                {i18n.t('proposal_page.button_2')}
               </ButtonStyle>
             </ButtonWrapperStyle>
           </FooterContentStyle>

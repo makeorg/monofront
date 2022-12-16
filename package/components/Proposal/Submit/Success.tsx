@@ -116,7 +116,7 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
             </>
           </ProposalSuccessTitleBlackStyle>
           <ProposalSuccessTitleStyle>
-            <>{i18n.t('proposal_submit.success.proposal_sent')}</>
+            {i18n.t('proposal_submit.success.proposal_sent')}
             <ProposalSuccessTitleBlackStyle>!</ProposalSuccessTitleBlackStyle>
           </ProposalSuccessTitleStyle>
           <ProposalSuccessCardStyle>
@@ -148,7 +148,7 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
             </ProposalSuccessProposalStyle>
             <ProposalTooltip />
             <ProposalSuccessContactStyle>
-              <>{i18n.t('proposal_submit.success.question')}</>
+              {i18n.t('proposal_submit.success.question')}
               <ProposalSuccessContactLinkStyle
                 href={`mailto:${contactMailByCountry}`}
               >
@@ -160,13 +160,11 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
             <ProposalSuccessParagraphWrapperStyle>
               <ProposalSuccessParagraphLinkStyle>
                 <ProposalSuccessSpanStyle>
-                  <>{i18n.t('proposal_submit.success.activate')}</>
+                  {i18n.t('proposal_submit.success.activate')}
                 </ProposalSuccessSpanStyle>
-                <>
-                  {i18n.t('proposal_submit.success.link', {
-                    mail: user?.email || '',
-                  })}
-                </>
+                {i18n.t('proposal_submit.success.link', {
+                  mail: user?.email || '',
+                })}
               </ProposalSuccessParagraphLinkStyle>
             </ProposalSuccessParagraphWrapperStyle>
           )}
@@ -176,14 +174,14 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
                 onClick={handleOtherIdeaButton}
                 data-cy-button="keep-proposing"
               >
-                <>{i18n.t('proposal_submit.success.other_idea')}</>
+                {i18n.t('proposal_submit.success.other_idea')}
               </ProposalSuccessRedButtonStyle>
             )}
             <ProposalSuccessTransparentButtonstyle
               onClick={handleCloseButton}
               data-cy-button="keep-voting"
             >
-              <>{i18n.t('proposal_submit.success.button')}</>
+              {i18n.t('proposal_submit.success.button')}
             </ProposalSuccessTransparentButtonstyle>
           </ProposalSuccessButtonWrapperStyle>
           {!isWidget && (
@@ -191,7 +189,7 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
               to={getParticipateLink(country, question.slug)}
               onClick={() => dispatch(closePanel())}
             >
-              <>{i18n.t('proposal_submit.success.consultation_access')}</>
+              {i18n.t('proposal_submit.success.consultation_access')}
             </ProposalSuccessLinkStyle>
           )}
         </ProposalSuccessWrapperStyle>

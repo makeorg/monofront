@@ -171,10 +171,10 @@ export const DataPolicy: React.FC = () => {
       onSubmit={throttle(handleSubmit)}
     >
       <DataPolicyTitleStyle>
-        <>{i18n.t('data_policy_modal.title')}</>{' '}
+        {i18n.t('data_policy_modal.title')}{' '}
       </DataPolicyTitleStyle>
       <DataPolicyParagraphStyle>
-        <>{i18n.t('data_policy_modal.description')}</>{' '}
+        {i18n.t('data_policy_modal.description')}{' '}
         <DataPolicyNewWindowLinkStyle
           href={
             isWidget
@@ -184,10 +184,10 @@ export const DataPolicy: React.FC = () => {
           target="_blank"
           rel="noopener"
         >
-          <>{i18n.t('legal_consent.privacy_policy')}</>{' '}
+          {i18n.t('legal_consent.privacy_policy')}{' '}
           <NewWindowIconStyle aria-hidden focusable="false" />
           <ScreenReaderItemStyle>
-            <>{i18n.t('common.open_new_window')}</>{' '}
+            {i18n.t('common.open_new_window')}{' '}
           </ScreenReaderItemStyle>
         </DataPolicyNewWindowLinkStyle>
       </DataPolicyParagraphStyle>

@@ -65,7 +65,7 @@ export const RegisterConfirmation: React.FC<Props> = ({ isSocial }) => {
         </>
       </LoginTitleWrapperCenterStyle>
       <RegisterPanelSubTitleWrapperStyle>
-        <>{i18n.t('common.register_panel.greeting')}</>
+        {i18n.t('common.register_panel.greeting')}
       </RegisterPanelSubTitleWrapperStyle>
       <SvgRegisterSuccess />
       <RegisterPanelSuccessParagraphContainerStyle>
@@ -73,7 +73,7 @@ export const RegisterConfirmation: React.FC<Props> = ({ isSocial }) => {
           <RegisterPanelSuccessParagraphStyle data-cy-container="register-confirmation-panel-mail">
             <strong>
               {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
-              <>{i18n.t('common.register_panel.mail_confirmation_strong')}</>
+              {i18n.t('common.register_panel.mail_confirmation_strong')}
             </strong>
 
             <>
@@ -84,7 +84,7 @@ export const RegisterConfirmation: React.FC<Props> = ({ isSocial }) => {
           </RegisterPanelSuccessParagraphStyle>
         )}
         <RegisterPanelSuccessParagraphStyle>
-          <>{i18n.t('common.register_panel.onboarding')}</>
+          {i18n.t('common.register_panel.onboarding')}
         </RegisterPanelSuccessParagraphStyle>
       </RegisterPanelSuccessParagraphContainerStyle>
       {isConsultation ? (
@@ -92,14 +92,14 @@ export const RegisterConfirmation: React.FC<Props> = ({ isSocial }) => {
           to={getParticipateLink(country, question.slug)}
           onClick={handleClick}
         >
-          <>{i18n.t('common.register_panel.cta_access')}</>
+          {i18n.t('common.register_panel.cta_access')}
         </LinkAsRedButtonBottomMobileStyle>
       ) : (
         <LinkAsRedButtonBottomMobileStyle
           to={getBrowseConsultationsLink(country)}
           onClick={handleClick}
         >
-          <>{i18n.t('common.register_panel.cta')}</>
+          {i18n.t('common.register_panel.cta')}
         </LinkAsRedButtonBottomMobileStyle>
       )}
     </RegisterPanelSuccessWrapperStyle>

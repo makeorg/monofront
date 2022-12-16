@@ -57,14 +57,14 @@ export const RegisterCheckBox: React.FC<Props> = ({
             rel="noopener"
             isWidget={isWidget}
           >
-            <>{i18n.t('legal_consent.privacy_policy_link')}</>{' '}
+            {i18n.t('legal_consent.privacy_policy_link')}{' '}
             <NewWindowIconStyle
               className="grey"
               aria-hidden
               focusable="false"
             />
             <ScreenReaderItemStyle>
-              <>{i18n.t('common.open_new_window')}</>{' '}
+              {i18n.t('common.open_new_window')}{' '}
             </ScreenReaderItemStyle>
           </DataPolicyNewWindowLinkStyle>
           {i18n.t('legal_consent.privacy_policy_last_part')}{' '}

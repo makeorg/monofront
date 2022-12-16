@@ -16,7 +16,7 @@ export const SocialMediaCookiesMessage: React.FC = () => {
         to={getCookiesPageLink(country)}
         onClick={() => dispatch(clearNotificationBanner())}
       >
-        <>{i18n.t('common.notifications.cookies.cookie_page')}</>
+        {i18n.t('common.notifications.cookies.cookie_page')}
       </WhiteLink>
       .
     </>

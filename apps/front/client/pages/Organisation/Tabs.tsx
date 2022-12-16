@@ -45,7 +45,7 @@ export const OrganisationProfileTabs: FC = () => {
             to={organisationProposalsLink}
             aria-current={isOrganisationProposalsActive}
           >
-            <>{i18n.t('organisation.tabs.proposals')}</>
+            {i18n.t('organisation.tabs.proposals')}
           </Link>
         </TabStyle>
         <TabStyle isSelected={isOrganisationVotesActive}>
@@ -53,7 +53,7 @@ export const OrganisationProfileTabs: FC = () => {
             to={organisationFavouritesLink}
             aria-current={isOrganisationVotesActive}
           >
-            <>{i18n.t('organisation.tabs.votes')}</>
+            {i18n.t('organisation.tabs.votes')}
           </Link>
         </TabStyle>
       </TabListStyle>

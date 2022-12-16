@@ -38,7 +38,7 @@ export const ProfileTabs: FC = () => {
             aria-current={isProfileProposalsActive}
             data-cy-link="tab-proposals"
           >
-            <>{i18n.t('profile.tabs.proposals')}</>
+            {i18n.t('profile.tabs.proposals')}
           </Link>
         </TabStyle>
         <TabStyle isSelected={isProfileFavouritesActive}>
@@ -48,7 +48,7 @@ export const ProfileTabs: FC = () => {
             className="inline"
             data-cy-link="tab-favorites"
           >
-            <>{i18n.t('profile.tabs.favourites')}</>
+            {i18n.t('profile.tabs.favourites')}
             <ProfileTabIconStyle aria-hidden focusable="false" />
           </Link>
         </TabStyle>

@@ -54,11 +54,11 @@ export const SecondStepRegister: React.FC<Props> = ({
       />
       {isSupportedCountry(country) && (
         <PostCodeWrapperStyle>
-          <>{i18n.t('common.form.post_code')}</>
+          {i18n.t('common.form.post_code')}
         </PostCodeWrapperStyle>
       )}
       <ConditionParagraphMarginStylePanel>
-        <>{i18n.t('register.gtu_text_first')}</>
+        {i18n.t('register.gtu_text_first')}
         <TermsOfUseLinkGreyStyle
           href={
             isWidget
@@ -68,10 +68,10 @@ export const SecondStepRegister: React.FC<Props> = ({
           target="_blank"
           rel="noopener"
         >
-          <>{i18n.t('register.gtu_link')}</>
+          {i18n.t('register.gtu_link')}
           <NewWindowIconStyle className="grey" aria-hidden focusable="false" />
           <ScreenReaderItemStyle>
-            <>{i18n.t('common.open_new_window')}</>{' '}
+            {i18n.t('common.open_new_window')}{' '}
           </ScreenReaderItemStyle>
         </TermsOfUseLinkGreyStyle>
       </ConditionParagraphMarginStylePanel>

@@ -66,7 +66,7 @@ export const FeaturedProposals: FC<Props> = ({ question }) => {
   return (
     <ParticipateCardStyle className="margin-bottom">
       <ParticipateCardAltTitleStyle>
-        <>{i18n.t('consultation.cards.featured_proposals.title')}</>
+        {i18n.t('consultation.cards.featured_proposals.title')}
       </ParticipateCardAltTitleStyle>
 
       {isLoading ? (
@@ -100,7 +100,7 @@ export const FeaturedProposals: FC<Props> = ({ question }) => {
         })}
         onClick={handleClick}
       >
-        <>{i18n.t('consultation.navigation.explore_desktop')}</>
+        {i18n.t('consultation.navigation.explore_desktop')}
       </ExploreLinkStyle>
     </ParticipateCardStyle>
   );

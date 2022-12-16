@@ -127,7 +127,7 @@ export const FiltersComponent: React.FC = () => {
         <>
           <FiltersAndSortTitleStyle>
             <SvgArrowUp aria-hidden focusable="false" />
-            <>{i18n.t('consultation.cards.keywords.title')}</>
+            {i18n.t('consultation.cards.keywords.title')}
           </FiltersAndSortTitleStyle>
           {keywordsCTA.length > 1 && (
             <KeywordsListWrapperStyle>
@@ -168,7 +168,7 @@ export const FiltersComponent: React.FC = () => {
       )}
       <FiltersAndSortTitleStyle>
         <SvgFilterBy aria-hidden focusable="false" />
-        <>{i18n.t('consultation.explore.filter_by')}</>
+        {i18n.t('consultation.explore.filter_by')}
       </FiltersAndSortTitleStyle>
       <FilterByWrapperStyle>
         <FilterByElementStyle>
@@ -187,7 +187,7 @@ export const FiltersComponent: React.FC = () => {
             <StyledCheckbox isChecked={currentFiltersValues.isNotVoted}>
               <SvgCheck />
             </StyledCheckbox>
-            <>{i18n.t('consultation.explore.unvoted')}</>
+            {i18n.t('consultation.explore.unvoted')}
           </CheckboxLabelStyle>
         </FilterByElementStyle>
         <FilterByElementStyle>
@@ -208,7 +208,7 @@ export const FiltersComponent: React.FC = () => {
             >
               <SvgCheck />
             </StyledCheckbox>
-            <>{i18n.t('consultation.explore.organisations_proposals')}</>
+            {i18n.t('consultation.explore.organisations_proposals')}
           </CheckboxLabelStyle>
         </FilterByElementStyle>
       </FilterByWrapperStyle>
@@ -229,11 +229,9 @@ export const FiltersComponent: React.FC = () => {
           onClick={isMobile ? () => dispatch(modalCloseFilters()) : () => {}}
           to={getExploreLink(country, question.slug, 1, currentSortValues)}
         >
-          {isMobile ? (
-            <>{i18n.t('consultation.explore.reset_filters_and_close')}</>
-          ) : (
-            <>{i18n.t('consultation.explore.reset_filters')}</>
-          )}
+          {isMobile
+            ? i18n.t('consultation.explore.reset_filters_and_close')
+            : i18n.t('consultation.explore.reset_filters')}
         </ResetLinkStyle>
       </ResetLinkButtonWrapperStyle>
     </FilterBlockStyle>

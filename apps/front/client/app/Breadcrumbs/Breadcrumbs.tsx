@@ -38,7 +38,7 @@ export const Breadcrumbs: FC<Props> = ({ parentPages, currentPage }) => {
             to={getHomeLink(country)}
             onClick={() => trackClickBreadcrumbs(initialIndex)}
           >
-            <>{i18n.t('homepage.title')}</>
+            {i18n.t('homepage.title')}
           </BreadcrumbsLinkStyle>
           <ArrowIconStyle aria-hidden focusable="false" />
         </BreadcrumbsListStyle>

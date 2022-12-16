@@ -41,32 +41,31 @@ export const ProposalAuthentication: FC = () => {
             isWidget={isWidget}
             onClick={() => dispatch(setPanelContent(<ProposalForm />))}
           >
-            <> {i18n.t('proposal_submit.authentication.back')}</>{' '}
+            {i18n.t('proposal_submit.authentication.back')}{' '}
           </ProposalBackButtonCenterStyle>
           <ProposalAltStepTitleStyle isWidget={isWidget}>
             <ProposalStepLabelRedStyle>
-              <>{i18n.t('proposal_submit.authentication.last_step_red')}</>{' '}
+              {i18n.t('proposal_submit.authentication.last_step_red')}{' '}
             </ProposalStepLabelRedStyle>
-            <>{i18n.t('proposal_submit.authentication.last_step')}</>{' '}
+            {i18n.t('proposal_submit.authentication.last_step')}{' '}
           </ProposalAltStepTitleStyle>
           <ProposalSubmitAuthenticationRegisterButtons
             onEmailRegister={() => dispatch(setPanelContent(<Register />))}
           />
         </ColumnElementStyle>
         <ProposalAuthLoginWrapperStyle>
-          <>
-            {' '}
+          {' '}
             {i18n.t('proposal_submit.authentication.button_login_text')}&nbsp;
-          </>{' '}
+          {' '}
           <ProposalAuthLoginStyle
             onClick={() => dispatch(setPanelContent(<Login />))}
           >
-            <>{i18n.t('proposal_submit.authentication.button_login_link')}</>{' '}
+            {i18n.t('proposal_submit.authentication.button_login_link')}{' '}
           </ProposalAuthLoginStyle>
         </ProposalAuthLoginWrapperStyle>
 
         <DataPolicyWrapperStyle>
-          <>{i18n.t('legal_consent.make_protect')}&nbsp;</>{' '}
+          {i18n.t('legal_consent.make_protect')}&nbsp;{' '}
           <DataPolicyNewWindowLinkStyle
             href={
               isWidget
@@ -76,10 +75,10 @@ export const ProposalAuthentication: FC = () => {
             target="_blank"
             rel="noopener"
           >
-            <>{i18n.t('legal_consent.make_protect_link')}</>{' '}
+            {i18n.t('legal_consent.make_protect_link')}{' '}
             <NewWindowGreyIconStyle aria-hidden focusable="false" />
             <ScreenReaderItemStyle>
-              <>{i18n.t('common.open_new_window')}</>{' '}
+              {i18n.t('common.open_new_window')}{' '}
             </ScreenReaderItemStyle>
           </DataPolicyNewWindowLinkStyle>
         </DataPolicyWrapperStyle>

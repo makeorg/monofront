@@ -67,16 +67,16 @@ export const OptInGTU: React.FC<Props> = ({
       onSubmit={throttle(handleSubmit)}
     >
       <ProposalBackButtonStyle onClick={handleReturn}>
-        <>{i18n.t('common.back')}</>
+        {i18n.t('common.back')}
       </ProposalBackButtonStyle>
       <LoginTitleWrapperCenterStyle className="red">
-        <>{i18n.t('common.register_panel.optin_cgu_title')}</>{' '}
+        {i18n.t('common.register_panel.optin_cgu_title')}{' '}
       </LoginTitleWrapperCenterStyle>
       <RegisterPanelSubTitleWrapperStyle className="dark">
-        <>{i18n.t('common.register_panel.optin_cgu_subtitle')}</>{' '}
+        {i18n.t('common.register_panel.optin_cgu_subtitle')}{' '}
       </RegisterPanelSubTitleWrapperStyle>
       <ConditionParagraphMarginStylePanel>
-        <>{i18n.t('register.gtu_text_first')}</>{' '}
+        {i18n.t('register.gtu_text_first')}{' '}
         <TermsOfUseLinkGreyStyle
           href={
             isWidget
@@ -86,10 +86,10 @@ export const OptInGTU: React.FC<Props> = ({
           target="_blank"
           rel="noopener"
         >
-          <>{i18n.t('register.gtu_link')}</>{' '}
+          {i18n.t('register.gtu_link')}{' '}
           <NewWindowIconStyle className="grey" aria-hidden focusable="false" />
           <ScreenReaderItemStyle>
-            <>{i18n.t('common.open_new_window')}</>{' '}
+            {i18n.t('common.open_new_window')}{' '}
           </ScreenReaderItemStyle>
         </TermsOfUseLinkGreyStyle>
       </ConditionParagraphMarginStylePanel>

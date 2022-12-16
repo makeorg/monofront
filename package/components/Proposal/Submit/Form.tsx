@@ -131,11 +131,11 @@ export const ProposalForm: FC = () => {
             {question && question.question}
           </ProposalStepTitleStyle>
           <ScreenReaderItemStyle>
-            <>{i18n.t('proposal_submit.form.title')}</>
+            {i18n.t('proposal_submit.form.title')}
           </ScreenReaderItemStyle>
           <ProposalFieldWrapperStyle>
             <ScreenReaderItemStyle as="label" htmlFor="proposal">
-              <>{i18n.t('proposal_submit.form.field')}</>
+              {i18n.t('proposal_submit.form.field')}
             </ScreenReaderItemStyle>
             <ProposalTextareaStyle
               ref={inputRef}
@@ -157,12 +157,10 @@ export const ProposalForm: FC = () => {
               {`${charCounting} / ${MAX_PROPOSAL_LENGTH}`}
             </ProposalCharCountStyle>
             <ScreenReaderItemStyle aria-live="polite">
-              <>
-                {i18n.t('proposal_submit.form.counter', {
-                  current: pendingProposal.length,
-                  total: MAX_PROPOSAL_LENGTH,
-                })}
-              </>
+              {i18n.t('proposal_submit.form.counter', {
+                current: pendingProposal.length,
+                total: MAX_PROPOSAL_LENGTH,
+              })}
             </ScreenReaderItemStyle>
           </ProposalFieldWrapperStyle>
           <ProposalSubmitButtonsWidgetStyle>
@@ -177,7 +175,7 @@ export const ProposalForm: FC = () => {
                 {waitingForAPIResponse ? (
                   <LoadingDots />
                 ) : (
-                  <>{i18n.t('proposal_submit.form.button_propose')}</>
+                  i18n.t('proposal_submit.form.button_propose')
                 )}
               </RedButtonStyle>
             </ProposalButtonsWrapperStyle>
@@ -190,14 +188,14 @@ export const ProposalForm: FC = () => {
                   rel="noopener"
                   onClick={trackClickModerationLink}
                 >
-                  <> {i18n.t('proposal_submit.form.moderation_link')}</>
+                  {i18n.t('proposal_submit.form.moderation_link')}
                   <> </>
                   <ProposalExternalLinkIconStyle
                     aria-hidden
                     focusable="false"
                   />
                   <ScreenReaderItemStyle>
-                    <>{i18n.t('common.open_new_window')}</>
+                    {i18n.t('common.open_new_window')}
                   </ScreenReaderItemStyle>
                 </ProposalExternalLinkStyle>
               </>
