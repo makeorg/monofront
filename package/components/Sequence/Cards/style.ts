@@ -272,3 +272,10 @@ export const ButtonsContainerStyle = styled.div`
     flex-direction: row;
   }
 `;
+
+export const SequenceCardHeaderWrapperStyle = styled.header`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+`;

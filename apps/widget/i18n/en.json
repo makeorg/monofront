@@ -288,6 +288,9 @@
     "translation": "View translation",
     "validate": "Validate"
   },
+  "report_translations": {
+    "button": "Solution options"
+  },
   "intro_card": {
     "title": "Thousands of citizens submit their solutions.",
     "description": "Give your opinion on these solutions and submit your own.\nIt will help us prioritize our actions and choose which issues to tackle.",

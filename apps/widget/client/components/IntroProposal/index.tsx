@@ -21,6 +21,7 @@ import {
   SequenceCardStyle,
   SequenceProposalStyle,
 } from '@make.org/components/Sequence/Cards/style';
+import { ReportOptionsButton } from '@make.org/components/ReportOptions/Button';
 import { CARD } from '@make.org/types/enums';
 import { ProposalAuthor } from '@make.org/components/Proposal/Author';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
@@ -72,6 +73,7 @@ export const IntroProposal: FC<Props> = ({ handleChange }) => {
             data-cy-card-number={0}
             className="widget"
           >
+            {!showOriginal && <ReportOptionsButton />}
             <ProposalAuthor proposal={proposal} />
             <ScreenReaderItemStyle>
               {i18n.t('top_proposal_card.content')}

@@ -297,6 +297,7 @@
       "from": "Proposition de : ",
       "date": "published on: "
     },
+
     "status": {
       "accepted": "Published",
       "refused": "Refused",
@@ -308,6 +309,9 @@
     "original": "View original",
     "translation": "View translation",
     "validate": "Validate"
+  },
+  "report_translations": {
+    "button": "Solution options"
   },
   "intro_card": {
     "title": "Thousands of citizens submit their solutions.",

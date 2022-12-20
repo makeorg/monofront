@@ -11,6 +11,7 @@ import {
   ProposalLinkElementStyle,
   ProposalInnerStyle,
 } from '@make.org/ui/elements/ProposalCardElements';
+import { ReportOptionsButton } from '@make.org/components/ReportOptions/Button';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import i18n from 'i18next';
@@ -64,6 +65,7 @@ export const ProposalCardWithQuestion: React.FC<Props> = ({
       aria-posinset={position}
       aria-setsize={size}
     >
+      {!showOriginal && <ReportOptionsButton />}
       <AuthorWrapperStyle>
         <DeprecatedProposalAuthor proposal={proposal} withAvatar />
       </AuthorWrapperStyle>

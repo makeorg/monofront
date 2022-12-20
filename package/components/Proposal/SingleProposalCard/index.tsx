@@ -6,6 +6,7 @@ import {
   getSequenceLink,
   getParticipateLink,
 } from '@make.org/utils/helpers/url';
+import { ReportOptionsButton } from '@make.org/components/ReportOptions/Button';
 import { ContentSeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { TallCardStyle } from '@make.org/ui/elements/CardsElements';
 import { isInProgress } from '@make.org/utils/helpers/date';
@@ -56,6 +57,7 @@ export const SingleProposalCard: React.FC<Props> = ({ proposal }) => {
     <TopComponentContext.Provider value={topComponentContext}>
       <TallCardStyle id="proposal_card">
         <InnerProposalStyle>
+          {!showOriginal && <ReportOptionsButton />}
           <DeprecatedProposalAuthor proposal={proposal} />
           {!isAnonymous && <ProposalCardSeparatorStyle />}
           <ScreenReaderItemStyle>

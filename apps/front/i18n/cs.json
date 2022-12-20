@@ -334,6 +334,9 @@
       "pending": "Čeká na moderování"
     }
   },
+  "report_translations": {
+    "button": "Možnosti návrhu"
+  },
   "intro_card": {
     "purpose": "Úvodní karta",
     "title": "Tisíce občanů nabízejí řešení.",

@@ -9,6 +9,7 @@ import {
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import i18n from 'i18next';
+import { ReportOptionsButton } from '@make.org/components/ReportOptions/Button';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import { useAppContext } from '@make.org/store';
 import { getProposalContent } from '@make.org/utils/helpers/proposal';
@@ -48,6 +49,7 @@ export const ProposalCardTagged: FC<Props> = ({ proposal, position, size }) => {
 
   return (
     <ProposalCardStyle aria-posinset={position} aria-setsize={size}>
+      {!showOriginal && <ReportOptionsButton />}
       <AuthorWrapperStyle>
         <DeprecatedProposalAuthor
           proposal={proposal}

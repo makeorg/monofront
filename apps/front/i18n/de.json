@@ -331,6 +331,9 @@
       "pending": "Wartet auf Freigabe"
     }
   },
+  "report_translations": {
+    "button": "Vorschlagsoptionen"
+  },
   "intro_card": {
     "purpose": "Einleitungskarte",
     "title": "Tausende von Bürger:innen schlagen Lösungen vor.",

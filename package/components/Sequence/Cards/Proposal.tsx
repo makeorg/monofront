@@ -5,6 +5,7 @@ import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElemen
 import { ProposalCardType } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
 import { CARD, NOTIF } from '@make.org/types/enums';
+import { ReportOptionsButton } from '@make.org/components/ReportOptions/Button';
 import {
   disableFirstProposal,
   incrementSequenceIndex,
@@ -100,6 +101,7 @@ export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
 
   return (
     <SequenceProposalWrapperStyle>
+      {!showOriginal && <ReportOptionsButton />}
       <ProposalAuthor proposal={proposal} />
       <SequenceProposalAndVoteWrapperStyle>
         <ScreenReaderItemStyle>

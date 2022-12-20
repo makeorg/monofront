@@ -80,3 +80,4 @@ export { SvgRightGreyArrow } from './RightThinGreyArrow';
 export { SvgBlueManOnBench } from './BlueManOnBench';
 export { SvgRegisterSuccess } from './RegisterSuccess';
 export { SvgSmallEarth } from './SmallEarth';
+export { SvgOptions } from './Options';

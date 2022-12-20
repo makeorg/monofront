@@ -6,6 +6,7 @@ import {
   ProposalLinkElementStyle,
   ProposalInnerStyle,
 } from '@make.org/ui/elements/ProposalCardElements';
+import { ReportOptionsButton } from '@make.org/components/ReportOptions/Button';
 import { DeprecatedProposalAuthor } from '@make.org/components/Proposal/DeprecatedAuthor';
 import { AuthorWrapperStyle } from '@make.org/components/Proposal/DeprecatedAuthor/Styled';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
@@ -49,6 +50,7 @@ export const PopularProposalCard: FC<Props> = ({
       <PopularProposalHeader aria-hidden>
         {`#${position}`}
       </PopularProposalHeader>
+      {!showOriginal && <ReportOptionsButton />}
       <AuthorWrapperStyle>
         <DeprecatedProposalAuthor proposal={proposal} withAvatar />
       </AuthorWrapperStyle>

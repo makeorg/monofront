@@ -310,6 +310,9 @@
       "pending": "En attente de modération"
     }
   },
+  "report_translations": {
+    "button": "Options de la proposition"
+  },
   "intro_card": {
     "purpose": "Carte d'introduction",
     "title": "Des milliers de citoyens proposent des solutions.",

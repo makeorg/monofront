@@ -4,6 +4,7 @@ import { ProposalSkeleton } from '@make.org/ui/components/Skeletons/Proposal';
 import React, { FC, useState } from 'react';
 import { getProposalLink } from '@make.org/utils/helpers/url';
 import i18n from 'i18next';
+import { ReportOptionsButton } from '@make.org/components/ReportOptions/Button';
 import { ProposalType } from '@make.org/types';
 import { Vote } from '@make.org/components/Vote';
 import { DateHelper } from '@make.org/utils/helpers/date';
@@ -56,6 +57,7 @@ export const ProposalsCard: FC<CardProps> = ({ proposal, country, index }) => {
 
   return (
     <ProposalCardStyle>
+      {!showOriginal && <ReportOptionsButton />}
       <ProposalAuthor proposal={proposal} />
       <ProposalAndVoteWrapperStyle>
         <ScreenReaderItemStyle>

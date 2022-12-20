@@ -34,6 +34,7 @@
     ]
   },
   "devDependencies": {
+    "@svgr/cli": "^6.3.1",
     "core-js": "^3.24.1",
     "snapshot-diff": "^0.9.0",
     "typescript": "~4.8.0",
