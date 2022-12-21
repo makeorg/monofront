@@ -1,14 +1,6 @@
 @front
 Feature: The Home Page
-  I want to vist the Make.org home page
-
-  Scenario: Redirect to france Homepage
-    Given I go to "homepage"
-    Then I should be redirect to "france homepage"
-
-  Scenario: Redirect to british Homepage
-    Given I go to "homepage" from Great Britain
-    Then I should be redirect to "british homepage"
+  I want to visit the Make.org home page
   
   Scenario: Homepage has a title
     Given I go to "france homepage"

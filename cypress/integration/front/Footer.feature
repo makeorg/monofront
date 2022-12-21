@@ -17,8 +17,6 @@ Feature: The footer
     Then I see "footer" container
     When I go to 404 FR page
     Then I see "footer" container
-    When I go to 404 page
-    Then I see "footer" container
   
   Scenario: France Mobile Footer is complete
     Given I go to "france homepage"

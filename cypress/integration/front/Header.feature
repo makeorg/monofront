@@ -17,8 +17,6 @@ Feature: The header
     Then I see "header" container
     When I go to 404 FR page
     Then I see "header" container
-    When I go to 404 page
-    Then I see "header" container
   
   Scenario: Header is complete
     Given I am on "homepage"

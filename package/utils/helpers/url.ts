@@ -41,6 +41,7 @@ import {
   ROUTE_STATIC_LEGAL,
   ROUTE_STATIC_A11Y,
 } from '../routes';
+import { DEFAULT_COUNTRY } from '../constants/config';
 
 declare global {
   interface Window {
@@ -461,12 +462,17 @@ export const getHomeLink = (country: string): string =>
         country,
       })
     : '/';
+
 /**
  * Get the Not found page link
  *
  * @param  {string} country
  * @return {string}
  */
+export const getNotFoundPath = (country?: string): string =>
+  generatePath(ROUTE_STATIC_NOTFOUND, {
+    country: country || DEFAULT_COUNTRY,
+  });
 
 export const redirectToNotFoundPage = (country: string): void => {
   window.location.pathname = generatePath(ROUTE_STATIC_NOTFOUND, {

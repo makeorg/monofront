@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Redirect, useLocation } from 'react-router';
 import loadable from '@loadable/component';
-import { getHomeLink } from '@make.org/utils/helpers/url';
+import { getHomeLink, getNotFoundPath } from '@make.org/utils/helpers/url';
 import { DEFAULT_COUNTRY } from '@make.org/utils/constants/config';
 import { useAppContext } from '@make.org/store';
 import { COOKIE, SEQUENCE } from '@make.org/types/enums';
@@ -252,7 +252,8 @@ export const Routes: FC = () => {
       <Redirect exact path="/" to={getHomeLink(country || DEFAULT_COUNTRY)} />
       <Redirect path={ROUTE_EXPLORE_ROOT} to={ROUTE_EXPLORE_FIRST_PAGE} />
 
-      <Route component={NotFoundPage} />
+      {/* @todo To optimize, should be handled on server side */}
+      <Redirect to={getNotFoundPath(country)} />
     </Switch>
   );
 };

@@ -25,6 +25,7 @@ export const pages = {
   'legal mentions': 'FR/mentions-legales',
   'profile proposals': '/FR/profile/proposals',
   'profile favourites': '/FR/profile/favourites',
+  'not found page': '/FR/not-found',
 };
 
 export const container = {
@@ -53,12 +54,12 @@ Given(
 );
 
 // navigation
-Given('I go to 404 page', () => {
+Given('I go to an unknown page', () => {
   cy.visit('/fakeurl', { failOnStatusCode: false });
 });
 
-Given('I go to 404 FR page', () => {
-  cy.visit('/FR/fakeurl', { failOnStatusCode: false });
+Given('I go/am to/on 404 FR page', () => {
+  cy.visit('/FR/not-found');
 });
 
 Given('I go/am to/on {string}', targetPage => {
