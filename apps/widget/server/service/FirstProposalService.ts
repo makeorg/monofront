@@ -2,7 +2,7 @@ import { FirstProposalSequenceType } from '@make.org/types';
 import { QuestionApiService } from '@make.org/api/QuestionApiService';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { getLoggerInstance } from '@make.org/utils/helpers/logger';
-import { getSequenceKindLocation } from '@make.org/utils/helpers/getLocationContext';
+import { getWidgetLocation } from '../../utils/helpers/location';
 
 /**
  * Warning : Do not put cache. This will be handle on API side
@@ -30,7 +30,7 @@ const getFirstProposal = async (
     return { data, sessionId: sessionId || '' };
   };
 
-  const sequenceKindLocation = getSequenceKindLocation(sequenceKind);
+  const widgetLocation = getWidgetLocation(sequenceKind);
 
   try {
     const response = await QuestionApiService.startSequenceFirstProposal(
@@ -40,7 +40,7 @@ const getFirstProposal = async (
         'x-make-question-id': questionId,
         'x-make-country': country,
         'x-make-language': language,
-        'x-make-location': sequenceKindLocation,
+        'x-make-location': widgetLocation,
         'Cache-Control': 'no-cache, no-store, must-revalidate',
         Pragma: 'no-cache',
       }

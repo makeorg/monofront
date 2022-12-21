@@ -27,12 +27,12 @@ import {
   initOauthRefresh,
   OauthResponseType,
 } from '@make.org/api/OauthRefresh';
-import { getSequenceKindLocation } from '@make.org/utils/helpers/getLocationContext';
 import { LogLevelType } from '@make.org/types/enums/logLevel';
 import { translationRessources } from '../i18n';
 import { initDevState } from '../initDevState';
 import { transformExtraSlidesConfigFromQuery } from '../server/helpers/query.helper';
 import App from './App';
+import { getWidgetLocation } from '../utils/helpers/location';
 
 declare global {
   interface Window {
@@ -126,17 +126,17 @@ const initApp = async (state: StateRoot) => {
 
   const currentUrl = urlFromIframe || window?.location?.href || 'none';
 
-  const sequenceKindLocation = getSequenceKindLocation(sequenceKind);
+  const widgetLocation = getWidgetLocation(sequenceKind);
 
   // Init Api service location
-  apiClient.location = sequenceKindLocation;
+  apiClient.location = widgetLocation;
 
   // Set tracking params
   trackingParamsService.source = queryParams.source || source;
   trackingParamsService.country = country;
   trackingParamsService.language = language;
   trackingParamsService.questionId = currentQuestionId;
-  trackingParamsService.location = sequenceKindLocation;
+  trackingParamsService.location = widgetLocation;
   trackingParamsService.url = currentUrl;
   trackingParamsService.referrer = referrer;
   trackingParamsService.questionSlug = store.currentQuestion;

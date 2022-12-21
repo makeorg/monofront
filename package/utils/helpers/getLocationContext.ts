@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { SEQUENCE } from '@make.org/types/enums';
 import {
   ROUTE_SEQUENCE,
   ROUTE_SEQUENCE_POPULAR,
@@ -16,7 +14,6 @@ import {
   ROUTE_PROFILE_EDIT,
   ROUTE_PROFILE_FAVOURITES,
   ROUTE_PROFILE_PROPOSALS,
-  ROUTE_PROFILE_FOLLOWING,
   ROUTE_RESULTS,
   ROUTE_TOP_IDEAS,
   ROUTE_TOP_IDEA_DETAILS,
@@ -28,6 +25,7 @@ import {
   ROUTE_PARTICIPATE,
   ROUTE_EXPLORE,
   ROUTE_STATIC_COOKIES,
+  ROUTE_COUNTRY,
 } from '../routes';
 
 export const getAppLocationContext = (
@@ -46,12 +44,6 @@ export const getAppLocationContext = (
       name: `page-top-idea-details ${questionId}`,
     },
     { route: ROUTE_TOP_IDEAS, name: `page-top-ideas ${questionId}` },
-    {
-      route: ROUTE_SEQUENCE,
-      name: `sequence ${questionId}`,
-      exact: true,
-      strict: true,
-    },
     { route: ROUTE_SEQUENCE_POPULAR, name: `sequence-popular ${questionId}` },
     {
       route: ROUTE_SEQUENCE_CONTROVERSIAL,
@@ -60,6 +52,10 @@ export const getAppLocationContext = (
     {
       route: ROUTE_SEQUENCE_KEYWORD,
       name: `sequence-keyword ${questionId}`,
+    },
+    {
+      route: ROUTE_SEQUENCE,
+      name: `sequence ${questionId}`,
     },
     { route: ROUTE_PROPOSAL, name: `proposal-page ${proposalId}` },
     { route: ROUTE_SEARCH_PROPOSALS, name: `search-proposals-page` },
@@ -70,26 +66,14 @@ export const getAppLocationContext = (
     {
       route: ROUTE_PROFILE_FAVOURITES,
       name: `private-profile-page`,
-      exact: true,
-      strict: true,
     },
     {
       route: ROUTE_PROFILE_PROPOSALS,
       name: `private-profile-page`,
-      exact: true,
-      strict: true,
-    },
-    {
-      route: ROUTE_PROFILE_FOLLOWING,
-      name: `private-profile-page`,
-      exact: true,
-      strict: true,
     },
     {
       route: ROUTE_PROFILE_OPINIONS,
       name: `private-profile-page`,
-      exact: true,
-      strict: true,
     },
     {
       route: ROUTE_ORGANISATION_PROFILE,
@@ -120,7 +104,7 @@ export const getAppLocationContext = (
       name: `browse-results-page`,
     },
     { route: '/', name: `homepage`, exact: true, strict: true },
-    { route: '/:country', name: `homepage`, exact: true, strict: false },
+    { route: ROUTE_COUNTRY, name: `homepage`, exact: true, strict: false },
   ];
 
   const location = locations.find(item =>
@@ -145,15 +129,4 @@ export const getAppTrackingLocation = (
   const location = getAppLocationContext(pathname, questionId, proposalId);
 
   return location.split(' ').shift() || '';
-};
-
-// get sequenceKindLocation for widget
-export const getSequenceKindLocation = (sequenceKind?: string) => {
-  if (sequenceKind === SEQUENCE.KIND_CONTROVERSY) {
-    return 'widget-controversial';
-  }
-  if (sequenceKind === SEQUENCE.KIND_CONSENSUS) {
-    return 'widget-popular';
-  }
-  return 'widget';
 };

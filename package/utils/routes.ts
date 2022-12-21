@@ -39,7 +39,6 @@ export const ROUTE_PROFILE = `${ROUTE_COUNTRY}/profile`;
 export const ROUTE_PROFILE_EDIT = `${ROUTE_PROFILE}/edit`;
 export const ROUTE_PROFILE_PROPOSALS = `${ROUTE_PROFILE}/proposals`;
 export const ROUTE_PROFILE_FAVOURITES = `${ROUTE_PROFILE}/favourites`;
-export const ROUTE_PROFILE_FOLLOWING = `${ROUTE_PROFILE}/following`;
 export const ROUTE_PROFILE_OPINIONS = `${ROUTE_PROFILE}/opinions`;
 export const ROUTE_PERSONALITY_PROFILE = `${ROUTE_PROFILE}/personality/:userId`;
 export const ROUTE_ORGANISATION_PROFILE = `${ROUTE_PROFILE}/organisation/:organisationSlug`;
