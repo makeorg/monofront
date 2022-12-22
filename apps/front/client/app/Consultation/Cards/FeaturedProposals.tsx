@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import i18n from 'i18next';
+import { useAppContext } from '@make.org/store';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { QuestionService } from '@make.org/utils/services/Question';
 import { DeprecatedProposalAuthor } from '@make.org/components/Proposal/DeprecatedAuthor';
@@ -26,6 +27,7 @@ type Props = {
 };
 
 export const FeaturedProposals: FC<Props> = ({ question }) => {
+  const { state } = useAppContext();
   const { country } = useParams<{ country: string; pageId: string }>();
   const [featuredProposals, setFeaturedProposals] = useState<ProposalType[]>(
     []
@@ -33,11 +35,13 @@ export const FeaturedProposals: FC<Props> = ({ question }) => {
   const [isLoading, setIsLoading] = useState(false);
   const maxPartnerProposals = 1;
   const limit = 4;
+  const { language } = state.appConfig;
 
   const getProposals = async () => {
     const response = await QuestionService.getFeaturedProposals(
       question.questionId,
       maxPartnerProposals,
+      language,
       limit
     );
 

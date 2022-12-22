@@ -44,7 +44,7 @@ export const SequenceByKeyword: FC = () => {
   const executeStartSequence = async (
     questionId: string,
     votedIds: string[],
-    preferedLanguage?: string
+    preferedLanguage: string
   ): Promise<SequenceType | null> => {
     const response = await SequenceService.startSequenceByKeyword(
       questionId,

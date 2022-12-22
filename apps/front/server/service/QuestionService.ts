@@ -95,17 +95,17 @@ const startSequenceByKind = async (
   questionId: string,
   includedProposalIds: string[],
   sequenceKind: string,
-  mandatoryRequestHeaders: ApiServiceHeadersType,
-  preferedLanguage?: string
+  preferedLanguage: string,
+  mandatoryRequestHeaders: ApiServiceHeadersType
 ): Promise<{ sequence: SequenceType; sessionId: string } | void> => {
   try {
     const response = await QuestionApiService.startSequenceByKind(
       questionId,
       includedProposalIds,
       sequenceKind,
-      undefined,
-      undefined,
       preferedLanguage,
+      undefined,
+      undefined,
       mandatoryRequestHeaders
     );
 

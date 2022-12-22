@@ -364,7 +364,7 @@ export class UserApiService {
    */
   static myProposals(
     userId: string,
-    preferedLanguage?: string,
+    preferedLanguage: string,
     limit: number = PROPOSALS_LISTING_LIMIT,
     skip = 0
   ): Promise<void | AxiosResponse> {

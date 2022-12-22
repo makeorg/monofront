@@ -30,7 +30,7 @@ export class OrganisationApiService {
 
   static getOrganisationProposals(
     organisationId: string,
-    preferedLanguage?: string,
+    preferedLanguage: string,
     limit: number = PROPOSALS_LISTING_LIMIT,
     skip = 0
   ): Promise<void | AxiosResponse> {

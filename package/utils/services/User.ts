@@ -272,7 +272,7 @@ const myProposals = async (
   userId: string,
   // eslint-disable-next-line default-param-last
   page = 0,
-  preferedLanguage?: string
+  preferedLanguage: string
 ): Promise<SearchProposalsType | void> => {
   const limit = PROPOSALS_LISTING_LIMIT;
   const skip = page * limit;

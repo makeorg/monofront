@@ -5,6 +5,7 @@ import {
 } from '@make.org/types';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
+import { useAppContext } from '@make.org/store';
 import { OrganisationService } from '../services/Organisation';
 
 export const useOrganisation = (
@@ -31,6 +32,9 @@ export const useOrganisation = (
   const [hasMore, setHasMore] = useState<boolean>(false);
   const [seed, setSeed] = useState<number | undefined>(undefined);
   const [page, setPage] = useState<number>(0);
+  const { state } = useAppContext();
+
+  const { language } = state.appConfig;
 
   const fetchOrganisation = async () => {
     const response = await OrganisationService.getOrganisationBySlug(
@@ -48,7 +52,8 @@ export const useOrganisation = (
     setIsLoading(true);
     const proposalsResponse = await OrganisationService.getProposals(
       organisation.organisationId,
-      page
+      page,
+      language
     );
     if (proposalsResponse) {
       const { results, total, seed: apiSeed } = proposalsResponse;

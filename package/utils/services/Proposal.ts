@@ -28,7 +28,7 @@ const propose = async (
 
 const getProposal = async (
   proposalId: string,
-  preferedLanguage?: string
+  preferedLanguage: string
 ): Promise<ProposalType | null> => {
   try {
     const response = await ProposalApiService.getProposal(

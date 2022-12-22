@@ -17,11 +17,10 @@ import { getWidgetLocation } from '../../utils/helpers/location';
 const getFirstProposal = async (
   questionId: string,
   country: string,
-  language: string,
   notFound: () => void,
   unexpectedError: () => void,
-  sequenceKind?: string,
-  preferedLanguage?: string
+  preferedLanguage: string,
+  sequenceKind?: string
 ): Promise<{ data: FirstProposalSequenceType; sessionId: string } | void> => {
   const handleData = (data: FirstProposalSequenceType, sessionId: string) => {
     if (!data) {
@@ -36,12 +35,12 @@ const getFirstProposal = async (
   try {
     const response = await QuestionApiService.startSequenceFirstProposal(
       questionId,
-      sequenceKind,
       preferedLanguage,
+      sequenceKind,
       {
         'x-make-question-id': questionId,
         'x-make-country': country,
-        'x-make-language': language,
+        'x-make-language': preferedLanguage,
         'x-make-location': widgetLocation,
         'Cache-Control': 'no-cache, no-store, must-revalidate',
         Pragma: 'no-cache',

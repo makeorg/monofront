@@ -22,6 +22,7 @@ export type FirstProposalSequenceType = {
 export type ExecuteStartSequence = (
   questionId: string,
   votedIds: string[],
+  preferedLanguage: string,
   demographicsCardId?: string,
   token?: string
 ) => Promise<SequenceType | null>;

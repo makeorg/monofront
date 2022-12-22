@@ -108,8 +108,8 @@ export class QuestionApiService {
 
   static startSequenceFirstProposal(
     questionId: string,
+    preferedLanguage: string,
     sequenceKind?: string,
-    preferedLanguage?: string,
     headers: ApiServiceHeadersType = {}
   ): Promise<void | AxiosResponse> {
     const startSequenceProposalUrl =
@@ -131,9 +131,9 @@ export class QuestionApiService {
     // eslint-disable-next-line default-param-last
     includedProposalIds: string[] = [],
     sequenceKind: string,
+    preferedLanguage: string,
     demographicsCardId?: string,
     token?: string,
-    preferedLanguage?: string,
     headers: ApiServiceHeadersType = {}
   ): Promise<void | AxiosResponse> {
     let startSequenceUrl = PATH_QUESTION_START_SEQUENCE.replace(
@@ -170,7 +170,7 @@ export class QuestionApiService {
     // eslint-disable-next-line default-param-last
     includedProposalIds: string[] = [],
     keyword: string,
-    preferedLanguage?: string,
+    preferedLanguage: string,
     headers: ApiServiceHeadersType = {}
   ): Promise<void | AxiosResponse> {
     let startSequenceUrl = PATH_QUESTION_START_SEQUENCE_KEYWORD.replace(
@@ -247,9 +247,9 @@ export class QuestionApiService {
   static getFeaturedProposals(
     questionId: string,
     maxPartnerProposals: number,
+    preferedLanguage: string,
     limit: number,
     seed?: number,
-    preferedLanguage?: string,
     headers: ApiServiceHeadersType = {}
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(

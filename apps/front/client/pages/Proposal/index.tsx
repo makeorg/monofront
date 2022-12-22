@@ -21,18 +21,19 @@ const ProposalPage: FC = () => {
   const { proposalId } = useParams<{ proposalId: string }>();
   const [proposal, setProposal] = useState<ProposalType | undefined>(undefined);
   const { state } = useAppContext();
+  const { language } = state.appConfig;
   const question: QuestionType = selectCurrentQuestion(state);
 
   useEffect(() => {
     const getProposal = async () => {
-      const response = await ProposalService.getProposal(proposalId);
+      const response = await ProposalService.getProposal(proposalId, language);
       if (response) {
         setProposal(response);
       }
     };
     getProposal();
     trackDisplayProposalPage();
-  }, [proposalId]);
+  }, [proposalId, language]);
 
   if (!question) {
     return (

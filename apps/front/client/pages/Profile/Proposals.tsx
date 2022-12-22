@@ -19,19 +19,19 @@ const ProfileProposalsPage: FC = () => {
     meta: i18n.t('meta.profile.proposals.title'),
     section: i18n.t('profile.proposals.title'),
   };
+  const { language } = state.appConfig;
 
   const [proposals, setProposals] = useState<ProposalType[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [hasMore, setHasMore] = useState<boolean>(false);
   const [page, setPage] = useState<number>(0);
-
   const loadProposals = async () => {
     setIsLoading(true);
     if (!user) {
       setIsLoading(false);
       return;
     }
-    const result = await UserService.myProposals(user.userId, page);
+    const result = await UserService.myProposals(user.userId, page, language);
     if (result) {
       const { results, total } = result;
       const newProposalList = [...proposals, ...results];

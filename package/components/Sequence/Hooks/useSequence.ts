@@ -56,7 +56,7 @@ export const useSequence = (
     demographics,
     sequenceRelaunch,
   } = sequence || {};
-  const { source } = state.appConfig;
+  const { source, language } = state.appConfig;
   const isWidget = source === 'widget';
   const votedProposalIdsOfQuestion = votedProposalIds[question?.slug] || [];
 
@@ -88,6 +88,7 @@ export const useSequence = (
       const response = await executeStartSequence(
         question.questionId,
         votedIds,
+        language,
         sequenceDemographics?.id,
         sequenceDemographics?.token
       );

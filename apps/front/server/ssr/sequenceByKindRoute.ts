@@ -111,6 +111,7 @@ export const sequenceByKindRoute = async (
     questionResponse.questionId,
     votedIds,
     sequenceKind,
+    language,
     sequenceMandatoryRequestHeaders
   );
 

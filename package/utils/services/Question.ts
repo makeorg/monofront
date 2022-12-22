@@ -241,17 +241,17 @@ const getQuestionPersonalities = async (
 const getFeaturedProposals = async (
   questionId: string,
   maxPartnerProposals: number,
+  preferedLanguage: string,
   limit: number,
-  seed?: number,
-  preferedLanguage?: string
+  seed?: number
 ): Promise<{ total: number; results: ProposalType[] } | null> => {
   try {
     const response = await QuestionApiService.getFeaturedProposals(
       questionId,
       maxPartnerProposals,
+      preferedLanguage,
       limit,
-      seed,
-      preferedLanguage
+      seed
     );
     const { data } = response || {};
 

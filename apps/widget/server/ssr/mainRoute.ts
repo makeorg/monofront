@@ -127,9 +127,9 @@ export const mainRoute = async (
   const firstProposal = await FirstProposalService.getFirstProposal(
     formattedQuestionId,
     formattedCountry,
-    formattedLanguage || DEFAULT_LANGUAGE,
     firstNotFound,
     firstProposalUnexpectecError,
+    formattedLanguage || DEFAULT_LANGUAGE,
     formattedSequenceKind
   );
 
