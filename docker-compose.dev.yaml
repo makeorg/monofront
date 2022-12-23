@@ -28,6 +28,20 @@ services:
       - /home/app/dist
     profiles:
       - app-dev
+     
+  app_make_dev_mock:
+    <<: *dev_service
+    image: app_make_dev_mock
+    build:
+      context: .
+      dockerfile: apps/front/Dockerfile
+      target: app-dev-mock
+    ports:
+      - 3000:3000
+      - 8888:8888
+    volumes: *default_volumes
+    profiles:
+      - app-dev-mock
 
   app_make_ssr: &ssr_service
     image: app_make_ssr
@@ -54,6 +68,7 @@ services:
     profiles:
       - front-test
       - widget-test
+      - app-dev-mock
 
   app_make_test:
     <<: *ssr_service

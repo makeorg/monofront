@@ -40,6 +40,18 @@ CMD ["yarn", "workspace", "@make.org/front", "dev"]
 EXPOSE 3000
 
 ############
+# Dev
+############
+FROM base AS app-dev-mock
+
+COPY . ./
+
+RUN ["yarn", "workspaces", "focus", "@make.org/front"]
+CMD ["yarn", "workspace", "@make.org/front", "dev:mock"]
+
+EXPOSE 3000
+
+############
 # SSR
 ############
 FROM base AS app-ssr
