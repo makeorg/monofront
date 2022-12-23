@@ -1,0 +1,603 @@
+{
+    "context": "Consultation citoyenne réalisée par Make.org du 2022-10-11 au 2022-11-20, autour de la question: Les Dialogues Parisiens : Comment bien vivre à Paris demain ?",
+    "key_figures": {
+        "visitors": 172666,
+        "votes": 2529775,
+        "proposals": 10167
+    },
+    "top_ideas": [
+        {
+            "name": "Mobilités",
+            "ideas": [
+                {
+                    "idea": "Mieux sécuriser la circulation des vélos, trottinettes et deux roues",
+                    "agreement": 88,
+                    "adhesion": 27,
+                    "realistic": 27
+                },
+                {
+                    "idea": "Améliorer la qualité des transports en commun",
+                    "agreement": 89,
+                    "adhesion": 29,
+                    "realistic": 24
+                },
+                {
+                    "idea": "Lutter contre la pollution sonore due aux véhicules",
+                    "agreement": 87,
+                    "adhesion": 29,
+                    "realistic": 23
+                },
+                {
+                    "idea": "Créer davantage de parkings relais",
+                    "agreement": 83,
+                    "adhesion": 24,
+                    "realistic": 21
+                }
+            ]
+        },
+        {
+            "name": "Propreté et aménagement urbain",
+            "ideas": [
+                {
+                    "idea": "Végétaliser davantage l'espace public",
+                    "agreement": 92,
+                    "adhesion": 35,
+                    "realistic": 17
+                },
+                {
+                    "idea": "Renforcer les services de nettoyage",
+                    "agreement": 87,
+                    "adhesion": 27,
+                    "realistic": 25
+                },
+                {
+                    "idea": "Lutter contre le jet et l'abandon de déchets sur la voie publique",
+                    "agreement": 87,
+                    "adhesion": 30,
+                    "realistic": 22
+                },
+                {
+                    "idea": "Optimiser l'éclairage et les enseignes lumineuses",
+                    "agreement": 86,
+                    "adhesion": 26,
+                    "realistic": 25
+                },
+                {
+                    "idea": "Mieux organiser les travaux et chantiers",
+                    "agreement": 82,
+                    "adhesion": 23,
+                    "realistic": 27
+                },
+                {
+                    "idea": "Préserver le mobilier urbain",
+                    "agreement": 90,
+                    "adhesion": 35,
+                    "realistic": 17
+                },
+                {
+                    "idea": "Multiplier et améliorer les toilettes publiques",
+                    "agreement": 83,
+                    "adhesion": 17,
+                    "realistic": 27
+                },
+                {
+                    "idea": "Installer davantage de panneaux solaires",
+                    "agreement": 77,
+                    "adhesion": 21,
+                    "realistic": 20
+                }
+
+            ]
+        },
+        {
+            "name": "Sécurité",
+            "ideas": [
+                {
+                    "idea": "Lutter contre l'insécurité de l'espace public",
+                    "agreement": 85,
+                    "adhesion": 25,
+                    "realistic": 25
+                }
+            ]
+        },
+        {
+            "name": "Logement",
+            "ideas": [
+                {
+                    "idea": "Accélérer la rénovation et l'isolation des bâtiments",
+                    "agreement": 78,
+                    "adhesion": 21,
+                    "realistic": 24
+                }
+            ]
+        },
+        {
+            "name": "Santé et social",
+            "ideas": [
+                {
+                    "idea": "Rendre l'espace public plus accessible",
+                    "agreement": 87,
+                    "adhesion": 28,
+                    "realistic": 22
+                },
+                {
+                    "idea": "Venir en aide aux sans domicile fixe",
+                    "agreement": 80,
+                    "adhesion": 18,
+                    "realistic": 23
+                }
+            ]
+        },
+        {
+            "name": "Economie et commerces",
+            "ideas": [
+                {
+                    "idea": "Favoriser les commerces locaux",
+                    "agreement": 88,
+                    "adhesion": 28,
+                    "realistic": 21
+                },
+                {
+                    "idea": "Développer l'économie circulaire",
+                    "agreement": 78,
+                    "adhesion": 23,
+                    "realistic": 20
+                }
+            ]
+        }
+    ],
+    "controversials": [
+        {
+            "id": "34efaa5c-ccff-4828-bd4f-f83d21e5a208",
+            "content": "Il faut fermer le centre de Paris aux voitures (sauf riverains, taxis, livraisons, artisans et personnes à mobilité réduite)",
+            "author": "Emile",
+            "agree": 46,
+            "like_it": 21,
+            "disagree": 45,
+            "no_way": 27,
+            "votes": 769
+        },
+        {
+            "id": "afc0692a-f823-4164-9bad-33b9ebb8967c",
+            "content": "Il faut rouvrir en urgence les rues fermées à la circulatiton (Rivoli, rues aux écoles...) afin de rétablir un trafic supportable",
+            "author": "Loic",
+            "agree": 46,
+            "like_it": 20,
+            "disagree": 46,
+            "no_way": 31,
+            "votes": 608
+        },
+        {
+            "id": "2c94ef40-6da8-4b4d-ac83-7ede26de7351",
+            "content": "Il faut interdire les deux-roues motorisés thermique dans Paris, trop de bruit et de pollution.",
+            "author": "Sir",
+            "agree": 44,
+            "like_it": 18,
+            "disagree": 43,
+            "no_way": 19,
+            "votes": 2408
+        },
+        {
+            "id": "efb2ebd1-8218-4563-a840-7e8fd09110fd",
+            "content": "Il faut une immigration choisie et non subie. D’abord accueillir des gens avec des cultures semblables plutôt que des gens inassimilables",
+            "author": "Jean",
+            "agree": 39,
+            "like_it": 15,
+            "disagree": 42,
+            "no_way": 22,
+            "votes": 536
+        },
+        {
+            "id": "9ef9c239-cfbc-4891-8da9-390cf0c58a5d",
+            "content": "Il faut supprimer les terrasses éphémères des bistrots qui étaient seulement destinées au Covid. Les salles sont vides à l’intérieur.",
+            "author": "Christophe",
+            "agree": 43,
+            "like_it": 12,
+            "disagree": 41,
+            "no_way": 23,
+            "votes": 541
+        },
+        {
+            "id": "53034df5-2334-4f3f-b21f-07e3ebb9448a",
+            "content": "Il faut rendre les terrasses non fumeur, ce ne sont pas les non fumeurs qui doivent s'adapter",
+            "author": "Ben",
+            "agree": 41,
+            "like_it": 13,
+            "disagree": 39,
+            "no_way": 18,
+            "votes": 527
+        },
+        {
+            "id": "e2cf1137-d8df-4dc7-a32e-a38644e84ffe",
+            "content": "Il faut mettre de la vidéo-verbalisation avec l'appuie des drones pour verbaliser les engins circulant a contre-sens ou sur les trottoirs",
+            "author": "Wichy",
+            "agree": 41,
+            "like_it": 12,
+            "disagree": 40,
+            "no_way": 15,
+            "votes": 508
+        },
+        {
+            "id": "ac39f8e7-0d5e-4261-a1b8-83cae6ea9266",
+            "content": "Il faut immatriculer vélos et trottinettes et installer des radars automatiques à vélos et trottinettes partout dans Paris.",
+            "author": "Catherine",
+            "agree": 48,
+            "like_it": 14,
+            "disagree": 39,
+            "no_way": 12,
+            "votes": 518
+        },
+        {
+            "id": "9af78683-c167-4b28-8eeb-912ed9896b3a",
+            "content": "Il faut remettre la limitation à 50 kilomètres par heure sur les grands axes de la ville.",
+            "author": "Julien",
+            "agree": 53,
+            "like_it": 17,
+            "disagree": 33,
+            "no_way": 20,
+            "votes": 535
+        },
+        {
+            "id": "485db19a-dff2-4983-8ea3-a8eedb7415c0",
+            "content": "Il faut introduire une contribution pour les détenteurs de chiens dans Paris, pour financer un système de gestion des déjections canines",
+            "author": "Loreley",
+            "agree": 48,
+            "like_it": 13,
+            "disagree": 35,
+            "no_way": 13,
+            "votes": 514
+        },
+        {
+            "id": "c4f63eb4-976c-4509-914a-1ca6801f9a2f",
+            "content": "Il faut interdire en zone urbaine les salles de consommation de drogues, les haltes soins ou autres structures qui ne visent pas le sevrage",
+            "author": "Alex",
+            "agree": 39,
+            "like_it": 12,
+            "disagree": 35,
+            "no_way": 17,
+            "votes": 450
+        },
+        {
+            "id": "1fb3f577-28e6-4b98-8a69-f2862895ec27",
+            "content": "Il faut rendre les transports en commun gratuits afin de limiter l'usage de la voiture dans Paris",
+            "author": "Morgane",
+            "agree": 54,
+            "like_it": 20,
+            "disagree": 32,
+            "no_way": 14,
+            "votes": 556
+        },
+        {
+            "id": "093f3a66-c9e9-4645-b118-6fccea9b2c8e",
+            "content": "Il faut un quota de logements sociaux dans toutes les constructions et réhabilitations pour favoriser la mixité sociale.",
+            "author": "Serge",
+            "agree": 48,
+            "like_it": 10,
+            "disagree": 34,
+            "no_way": 17,
+            "votes": 445
+        },
+        {
+            "id": "36cd3f23-d7b8-4074-a21b-65b44e1c239c",
+            "content": "Il faut arrêter de construire des pistes cyclables à contre sens.",
+            "author": "Vanessa",
+            "agree": 57,
+            "like_it": 24,
+            "disagree": 29,
+            "no_way": 15,
+            "votes": 465
+        }
+    ],
+    "rejected": [],
+    "cartography": [
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Thèmes cités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Circulation",
+                    "percent": 26,
+                    "color": "#4B45A5",
+                    "adjustLabel": {
+                      "textAlign": "left",
+                      "xAxis": 2.2,
+                      "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Sécurité en ville",
+                    "percent": 16,
+                    "color": "#8955BD",
+                    "adjustLabel": {
+                      "textAlign": "left",
+                      "xAxis": 2.4
+                    }
+                },
+                {
+                    "label": "Propreté et gestion des déchets",
+                    "percent": 11,
+                    "color": "#EB7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.3,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Climat et biodiversité",
+                    "percent": 9,
+                    "color": "#F5976E",
+                    "adjustLabel": {
+                      "textAlign": "center",
+                      "yAxis": 2.3
+                    }
+                },
+                {
+                    "label": "Transports en commun",
+                    "percent": 8,
+                    "color": "#EEB298",
+                    "adjustLabel": {
+                      "textAlign": "right",
+                      "xAxis": 1.75
+                    }
+                },
+                {
+                    "label": "Logement",
+                    "percent": 6,
+                    "color": "#FFD266",
+                    "adjustLabel": {
+                      "textAlign": "right",
+                      "xAxis": 1.75
+                    }
+                },
+                {
+                    "label": "Autres",
+                    "percent": 21,
+                    "color": "#FFF",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "xAxis": 1.8,
+                        "yAxis": 1.8
+                    }
+                }
+            ]
+        }
+    ],
+    "participation": [
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (1/2)",
+            "forcedHigherValue": 12,
+            "legend": {
+                "title": "Participation par région (1/2)",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "15ème arrondissement",
+                    "bars": {
+                        "first": 8,
+                        "second": 11
+                    }
+                },
+                {
+                    "label": "20ème arrondissement",
+                    "bars": {
+                        "first": 6,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "18ème arrondissement",
+                    "bars": {
+                        "first": 7,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "19ème arrondissement",
+                    "bars": {
+                        "first": 6,
+                        "second": 8
+                    }
+                },
+                {
+                    "label": "13ème arrondissement",
+                    "bars": {
+                        "first": 6,
+                        "second": 8
+                    }
+                },
+                {
+                    "label": "17ème arrondissement",
+                    "bars": {
+                        "first": 6,
+                        "second": 8
+                    }
+                },
+                {
+                    "label": "16ème arrondissement",
+                    "bars": {
+                        "first": 5,
+                        "second": 8
+                    }
+                }
+            ],
+            "id": "participation_0"
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (2/2)",
+            "forcedHigherValue": 12,
+            "legend": {
+                "title": "Participation par région (2/2)",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "11ème arrondissement",
+                    "bars": {
+                        "first": 8,
+                        "second": 7
+                    }
+                },
+                {
+                    "label": "14ème arrondissement",
+                    "bars": {
+                        "first": 5,
+                        "second": 6
+                    }
+                },
+                {
+                    "label": "12ème arrondissement",
+                    "bars": {
+                        "first": 7,
+                        "second": 6
+                    }
+                },
+                {
+                    "label": "Paris Centre",
+                    "bars": {
+                        "first": 7,
+                        "second": 4
+                    }
+                },
+                {
+                    "label": "10ème arrondissement",
+                    "bars": {
+                        "first": 4,
+                        "second": 4
+                    }
+                },
+                {
+                    "label": "9ème arrondissement",
+                    "bars": {
+                        "first": 3,
+                        "second": 3
+                    }
+                },
+                {
+                    "label": "5ème arrondissement",
+                    "bars": {
+                        "first": 3,
+                        "second": 3
+                    }
+                },
+                {
+                    "label": "7ème arrondissement",
+                    "bars": {
+                        "first": 2,
+                        "second": 2
+                    }
+                },
+                {
+                    "label": "6ème arrondissement",
+                    "bars": {
+                        "first": 2,
+                        "second": 2
+                    }
+                },
+                {
+                    "label": "8ème arrondissement",
+                    "bars": {
+                        "first": 2,
+                        "second": 2
+                    }
+                }
+            ],
+            "id": "participation_1"
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par âge",
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "16-24",
+                    "bars": {
+                        "first": 9,
+                        "second": 17
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "25-34",
+                    "bars": {
+                        "first": 29,
+                        "second": 18
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "35-44",
+                    "bars": {
+                        "first": 18,
+                        "second": 18
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "45-54",
+                    "bars": {
+                        "first": 18,
+                        "second": 13
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "55-64",
+                    "bars": {
+                        "first": 13,
+                        "second": 14
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "65+",
+                    "bars": {
+                        "first": 13,
+                        "second": 20
+                    },
+                    "color": "#8BDAB2"
+                }
+            ],
+            "id": "participation_2"
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Votes par genre",
+            "legend": "",
+            "data": [
+                {
+                    "label": "hommes",
+                    "percent": 49,
+                    "color": "#4B45A5"
+                },
+                {
+                    "label": "femmes",
+                    "percent": 51,
+                    "color": "#8955BD"
+                }
+            ],
+            "id": "participation_3"
+        }
+    ]
+}
