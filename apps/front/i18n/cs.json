@@ -273,7 +273,8 @@
     "million_one": "milion",
     "million_few": "miliony",
     "million_other": "milionů",
-    "close_panel": "Zavřít rozevírací panel"
+    "close_panel": "Zavřít rozevírací panel",
+    "close": "Zavřít"
   },
   "header": {
     "logo_alt": "Přejít na domovskou stránku Make.org",
@@ -335,7 +336,11 @@
     }
   },
   "report_translations": {
-    "button": "Možnosti návrhu"
+    "button": "Možnosti návrhu",
+  "confirmation": {
+    "title": "Děkujeme za zprávu!",
+    "description": "Náš tým ji co nejdříve prošetří."
+  }
   },
   "intro_card": {
     "purpose": "Úvodní karta",
@@ -994,7 +999,6 @@
       "breadcrumb": "Výsledky „{{title}}\"",
       "title": "Co si z této konzultace vzít?"
     },
-    "close": "Zavřít",
     "reset": "Obnovit",
     "sortby": "Seřadit podle: ",
     "local_actors": {

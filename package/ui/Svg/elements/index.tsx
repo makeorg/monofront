@@ -78,6 +78,6 @@ export { SvgBirthday } from './Birthday';
 export { SvgFiltersMobileIcon } from './FiltersMobileIcon';
 export { SvgRightGreyArrow } from './RightThinGreyArrow';
 export { SvgBlueManOnBench } from './BlueManOnBench';
-export { SvgRegisterSuccess } from './RegisterSuccess';
+export { SvgMailSuccess } from './MailSuccess';
 export { SvgSmallEarth } from './SmallEarth';
 export { SvgOptions } from './Options';

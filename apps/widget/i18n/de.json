@@ -247,7 +247,8 @@
     "breadcrumbs": "Brotkrumenpfad",
     "million_one": "Million",
     "million_other": "Millionen",
-    "close_panel": "Die Dropdown-Liste schließen"
+    "close_panel": "Die Dropdown-Liste schließen",
+    "close": "Schließen"
   },
   "header": {
     "logo_alt": "Zur Make.org Startseite gehen",
@@ -311,7 +312,11 @@
     }
   },
   "report_translations": {
-    "button": "Vorschlagsoptionen"
+    "button": "Vorschlagsoptionen",
+  "confirmation": {
+    "title": "Vielen Dank für die Meldung!",
+    "description": "Unser Team wird sie so schnell wie möglich untersuchen."
+  }
   },
   "intro_card": {
     "purpose": "Einleitungskarte",
@@ -935,7 +940,6 @@
       "breadcrumb": "Ergebnisse für „{{title}}“",
       "title": "Was können wir aus dieser Konsultation lernen?"
     },
-    "close": "Schließen",
     "reset": "Zurücksetzen",
     "sortby": "Sortieren nach: ",
     "local_actors": {

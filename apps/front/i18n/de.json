@@ -265,6 +265,7 @@
     "million_one": "Million",
     "million_other": "Millionen",
     "close_panel": "Die Dropdown-Liste schließen",
+    "close": "Schließen",
     "social_login": {
       "card_title": "So finden Sie Ihr Abstimmungsverhalten",
       "facebook_connect": "Mit Facebook fortfahren",
@@ -332,8 +333,12 @@
     }
   },
   "report_translations": {
-    "button": "Vorschlagsoptionen"
-  },
+    "button": "Vorschlagsoptionen",
+  "confirmation": {
+    "title": "Vielen Dank für die Meldung!",
+    "description": "Unser Team wird sie so schnell wie möglich untersuchen."
+  }
+},
   "intro_card": {
     "purpose": "Einleitungskarte",
     "title": "Tausende von Bürger:innen schlagen Lösungen vor.",
@@ -976,7 +981,6 @@
       "breadcrumb": "Ergebnisse für „{{title}}“",
       "title": "Was können wir aus dieser Konsultation lernen?"
     },
-    "close": "Schließen",
     "reset": "Zurücksetzen",
     "sortby": "Sortieren nach: ",
     "local_actors": {

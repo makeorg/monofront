@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useAppContext } from '@make.org/store';
 import { getAppLocationContext } from '@make.org/utils/helpers/getLocationContext';
 import { LinkAsRedButtonBottomMobileStyle } from '@make.org/ui/elements/ButtonsElements';
-import { SvgRegisterSuccess } from '@make.org/ui/Svg/elements';
+import { SvgMailSuccess } from '@make.org/ui/Svg/elements';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { QuestionType } from '@make.org/types';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
@@ -67,7 +67,7 @@ export const RegisterConfirmation: React.FC<Props> = ({ isSocial }) => {
       <RegisterPanelSubTitleWrapperStyle>
         {i18n.t('common.register_panel.greeting')}
       </RegisterPanelSubTitleWrapperStyle>
-      <SvgRegisterSuccess />
+      <SvgMailSuccess />
       <RegisterPanelSuccessParagraphContainerStyle>
         {!isSocial && (
           <RegisterPanelSuccessParagraphStyle data-cy-container="register-confirmation-panel-mail">

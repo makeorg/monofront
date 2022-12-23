@@ -273,7 +273,8 @@
     },
     "million_one": "million",
     "million_other": "millions",
-    "close_panel": "Close the panel"
+    "close_panel": "Close the panel",
+    "close": "Close"
   },
   "header": {
     "logo_alt": "Go to the Make.org website",
@@ -311,8 +312,12 @@
     "validate": "Validate"
   },
   "report_translations": {
-    "button": "Solution options"
-  },
+    "button": "Solution options",
+  "confirmation": {
+    "title": "Thank you for the report!",
+    "description": "Our team will investigate it as soon as possible."
+  }
+},
   "intro_card": {
     "title": "Thousands of citizens submit their solutions.",
     "description": "Give your opinion on these solutions and submit your own.\nIt will help us prioritize our actions and choose which issues to tackle.",
@@ -791,7 +796,6 @@
         "title": "Consultation’s participants"
       }
     },
-    "close": "Close",
     "reset": "Reinitialize",
     "sortby": "Sort by: ",
     "local_actors": {

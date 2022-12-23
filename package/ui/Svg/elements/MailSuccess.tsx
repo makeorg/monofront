@@ -2,7 +2,7 @@
 import React, { FC } from 'react';
 import { SvgPropsType } from '@make.org/types';
 
-export const SvgRegisterSuccess: FC<SvgPropsType> = (props: SvgPropsType) => (
+export const SvgMailSuccess: FC<SvgPropsType> = (props: SvgPropsType) => (
   <svg
     width={113}
     height={119}

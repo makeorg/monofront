@@ -247,7 +247,8 @@
     "breadcrumbs": "fil d'ariane",
     "million_one": "million",
     "million_other": "millions",
-    "close_panel": "Fermer le panneau déroulant"
+    "close_panel": "Fermer le panneau déroulant",
+    "close": "Fermer"
   },
   "header": {
     "logo_alt": "Aller à l'accueil du site Make.org",
@@ -311,7 +312,11 @@
     }
   },
   "report_translations": {
-    "button": "Options de la proposition"
+    "button": "Options de la proposition",
+  "confirmation": {
+    "title": "Merci pour le signalement !",
+    "description": "Notre équipe va l'étudier dans les plus brefs délais."
+  }
   },
   "intro_card": {
     "purpose": "Carte d'introduction",
@@ -944,7 +949,6 @@
       "breadcrumb": "Résultats de \"{{title}}\"",
       "title": "Que retenir de cette consultation ?"
     },
-    "close": "Fermer",
     "reset": "Réinitialiser",
     "sortby": "Trier par: ",
     "local_actors": {
