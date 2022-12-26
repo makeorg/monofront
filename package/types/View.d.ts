@@ -37,6 +37,7 @@ export type HomeViewType = {
   featuredQuestions: HomeQuestionType[];
   posts: HomePostType[];
   country?: string;
+  language?: string;
 };
 
 export type SearchViewsType = {

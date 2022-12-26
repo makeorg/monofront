@@ -43,6 +43,7 @@ export const homepageRoute = async (
   initialState.views.homepage = {
     ...homepageData,
     country,
+    language,
   };
 
   return reactRender(req, res, initialState);

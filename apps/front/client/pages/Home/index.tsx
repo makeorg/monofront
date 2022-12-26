@@ -38,7 +38,7 @@ export const HomePage: FC = () => {
       language
     );
     if (homepageResponse && country) {
-      dispatch(loadHomepage(homepageResponse, country));
+      dispatch(loadHomepage(homepageResponse, country, language));
     }
     setIsLoading(false);
   };
@@ -52,12 +52,16 @@ export const HomePage: FC = () => {
 
   useEffect(() => {
     trackDisplayHomepage();
-    if (!homepage || homepage.country !== country) {
+    if (
+      !homepage ||
+      homepage.country !== country ||
+      homepage.language !== language
+    ) {
       initHomepage();
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [country]);
+  }, [country, language]);
 
   return (
     <>

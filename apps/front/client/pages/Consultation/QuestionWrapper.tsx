@@ -38,11 +38,10 @@ type Props = {
 export const QuestionWrapper: FC<Props> = ({ children, withRedirect }) => {
   const { dispatch, state } = useAppContext();
   const params: {
-    country: string;
     questionSlug: string;
-    language: string;
   } = useParams();
-  const { country, questionSlug, language } = params;
+  const { questionSlug } = params;
+  const { country, language } = state.appConfig;
   const questionsInState = state.questions;
   const currentQuestion: QuestionType = selectCurrentQuestion(state);
   const currentQuestionSlug = state.currentQuestion;
@@ -76,7 +75,7 @@ export const QuestionWrapper: FC<Props> = ({ children, withRedirect }) => {
   };
 
   useEffect(() => {
-    if (!questionIsInState) {
+    if (!questionIsInState || questionIsInState.returnedLanguage !== language) {
       updateQuestion();
     }
 
@@ -87,7 +86,7 @@ export const QuestionWrapper: FC<Props> = ({ children, withRedirect }) => {
     return () => dispatch(removeCurrentQuestionSlug());
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [questionSlug]);
+  }, [questionSlug, language]);
 
   useEffect(() => {
     if (currentQuestion) {

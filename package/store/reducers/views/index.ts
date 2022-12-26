@@ -16,6 +16,7 @@ export const views_reducer = (
         homepage: {
           ...action.payload.homepage,
           country: action.payload.country,
+          language: action.payload.language,
         },
       };
     default:
