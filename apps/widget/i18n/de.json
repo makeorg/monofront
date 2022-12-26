@@ -313,10 +313,18 @@
   },
   "report_translations": {
     "button": "Vorschlagsoptionen",
-  "confirmation": {
-    "title": "Vielen Dank für die Meldung!",
-    "description": "Unser Team wird sie so schnell wie möglich untersuchen."
-  }
+    "confirmation": {
+      "title": "Vielen Dank für die Meldung!",
+      "description": "Unser Team wird sie so schnell wie möglich untersuchen."
+    },
+    "form": {
+      "title": "Automatische Übersetzung melden",
+      "unclear": "Unverständliche Übersetzung",
+      "error": "Fehler in der Übersetzung",
+      "false_info": "Enthält eine falsche Information",
+      "offensive": "Anstößiger Vorschlag",
+      "report": "Report"
+    }
   },
   "intro_card": {
     "purpose": "Einleitungskarte",

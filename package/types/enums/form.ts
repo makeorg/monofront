@@ -15,4 +15,5 @@ export enum FORM {
   PROPOSAL_SUBMIT_FORMNAME = 'proposal_submit',
   FILTER_AND_SORT = 'filter_and_sort',
   COUNTRY_LANGUAGE_SWITCH_FORMNAME = 'country_language_switch',
+  REPORT_TRANSLATION = 'report_translation',
 }

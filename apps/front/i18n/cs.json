@@ -337,10 +337,18 @@
   },
   "report_translations": {
     "button": "Možnosti návrhu",
-  "confirmation": {
-    "title": "Děkujeme za zprávu!",
-    "description": "Náš tým ji co nejdříve prošetří."
-  }
+    "confirmation": {
+      "title": "Děkujeme za zprávu!",
+      "description": "Náš tým ji co nejdříve prošetří."
+    },
+    "form": {
+      "title": "Strojový překlad zprávy",
+      "unclear": "Nejasný překlad",
+      "error": "Chyba v překladu",
+      "false_info": "Obsahuje nepravdivé informace",
+      "offensive": "Ofenzivní řešení",
+      "report": "Nahlásit"
+    }
   },
   "intro_card": {
     "purpose": "Úvodní karta",

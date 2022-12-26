@@ -313,10 +313,18 @@
   },
   "report_translations": {
     "button": "Options de la proposition",
-  "confirmation": {
-    "title": "Merci pour le signalement !",
-    "description": "Notre équipe va l'étudier dans les plus brefs délais."
-  }
+    "confirmation": {
+      "title": "Merci pour le signalement !",
+      "description": "Notre équipe va l'étudier dans les plus brefs délais."
+    },
+    "form": {
+      "title": "Signaler la traduction automatique",
+      "unclear": "Traduction incompréhensible",
+      "error": "Erreur dans la traduction",
+      "false_info": "Contient une information fausse",
+      "offensive": "Proposition offensante",
+      "report": "Signaler"
+    }
   },
   "intro_card": {
     "purpose": "Carte d'introduction",

@@ -1,9 +1,12 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography, color } from 'athena-design-tokens';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { SvgMailSuccess } from '@make.org/ui/Svg/elements';
+import {
+  SvgPreviousArrowLeft,
+  SvgMailSuccess,
+} from '@make.org/ui/Svg/elements';
 
 export const ReportWrapperStyle = styled.section`
   display: flex;
@@ -49,4 +52,88 @@ export const ReportButtonWrapperStyle = styled.div`
 
 export const SvgConfirmationStyle = styled(SvgMailSuccess)`
   align-self: center;
+`;
+
+export const ReportFormWrapperStyle = styled.ul`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  list-style: none;
+  text-decoration: none;
+  padding: 5px;
+  background-color: ${color.greyLighter};
+  border-radius: 8px;
+  width: 375px;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    width: 420px;
+    margin-bottom: 50px;
+  }
+`;
+
+export const ReportFormItemWrapperStyle = styled.li`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-radius: 8px;
+  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  padding: 15px 20px;
+  text-decoration: none;
+  :last-child {
+    margin-bottom: 0px;
+  }
+  &.selected {
+    background-color: ${color.white};
+    box-shadow: 0px 8px 12px -4px rgba(37, 49, 134, 0.08);
+  }
+`;
+
+export const ReportFormAsTransparentButtonLabelStyle = styled.label`
+  display: inline-flex;
+  align-items: center;
+  font-family: ${MakeFonts.CircularStandardBook};
+  font-weight: normal;
+  color: ${color.greyDark};
+  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  width: 100%;
+  text-align: center;
+  &.selected,
+  &:hover,
+  &:focus {
+    font-family: ${MakeFonts.CircularStandardBold};
+    font-weight: bold;
+    color: ${color.black};
+  }
+`;
+
+export const ReportFormSvgWrapperStyle = styled.div`
+  display: inline-flex;
+  margin-right: 10px;
+`;
+
+export const ReportFormBackIconStyle = styled(SvgPreviousArrowLeft)`
+  width: 15px;
+`;
+
+export const ReportFormIconButtonWrapperStyle = styled.div`
+  padding: 2px 12px;
+  border-radius: 20px;
+  background-color: ${color.white};
+  margin-right: 10px;
+  border-radius: 20px;
+  width: 45px;
+  height: 23px;
+`;
+
+export const ReportFormBackButtonWrapperStyle = styled.button`
+  display: inline-flex;
+  flex-flow: wrap;
+  align-items: left;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  margin: 0 auto 30px;
+  width: 375px;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    width: 420px;
+  }
 `;

@@ -81,3 +81,7 @@ export { SvgBlueManOnBench } from './BlueManOnBench';
 export { SvgMailSuccess } from './MailSuccess';
 export { SvgSmallEarth } from './SmallEarth';
 export { SvgOptions } from './Options';
+export { SvgQuestionMark } from './QuestionMark';
+export { SvgErrorTranslation } from './ErrorTranslation';
+export { SvgCrossFakeInfo } from './CrossFakeInfo';
+export { SvgOffensif } from './Offensif';

@@ -313,11 +313,19 @@
   },
   "report_translations": {
     "button": "Solution options",
-  "confirmation": {
-    "title": "Thank you for the report!",
-    "description": "Our team will investigate it as soon as possible."
-  }
-},
+    "confirmation": {
+      "title": "Thank you for the report!",
+      "description": "Our team will investigate it as soon as possible."
+    },
+    "form": {
+      "title": "Report an automatic translation",
+      "unclear": "Unclear translation",
+      "error": "Error in translation",
+      "false_info": "Contains false information",
+      "offensive": "Offensive solution",
+      "report": "Report"
+    }
+  },
   "intro_card": {
     "title": "Thousands of citizens submit their solutions.",
     "description": "Give your opinion on these solutions and submit your own.\nIt will help us prioritize our actions and choose which issues to tackle.",
