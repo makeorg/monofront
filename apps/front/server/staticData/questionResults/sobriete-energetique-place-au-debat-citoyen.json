@@ -1,0 +1,814 @@
+{
+  "context": "Consultation citoyenne réalisée par Make.org du 2022-10-16 au 2022-11-30, autour de la question: Comment atteindre la sobriété énergétique individuellement et collectivement sur le territoire de l’Eurométropole de Strasbourg ?",
+  "key_figures": {
+    "visitors": 22082,
+    "votes": 335246,
+    "proposals": 1100
+  },
+  "top_ideas": [
+    {
+      "name": "Transports",
+      "ideas": [
+        {
+          "idea": "Développer le réseau de trains et les transports en commun dans l'Eurométropole",
+          "agreement": 87,
+          "adhesion": 25,
+          "realistic": 19
+        },
+        {
+          "idea": "Développer le réseau cyclable",
+          "agreement": 81,
+          "adhesion": 18,
+          "realistic": 23
+        }
+      ]
+    },
+    {
+      "name": "Isolation et chauffage",
+      "ideas": [
+        {
+          "idea": "Mieux investir et réglementer l'isolation des bâtiments publics",
+          "agreement": 91,
+          "adhesion": 15,
+          "realistic": 28
+        },
+        {
+          "idea": "Renforcer les aides à l'isolation des logements",
+          "agreement": 84,
+          "adhesion": 18,
+          "realistic": 25
+        },
+        {
+          "idea": "Mieux maîtriser la chaleur dans les structures commerciales",
+          "agreement": 87,
+          "adhesion": 17,
+          "realistic": 27
+        },
+        {
+          "idea": "Végétaliser davantage les espaces urbains pour réguler les températures",
+          "agreement": 87,
+          "adhesion": 23,
+          "realistic": 23
+        }
+      ]
+    },
+    {
+      "name": "Sources d'énergie",
+      "ideas": [
+        {
+          "idea": "Développer l'installation de panneaux photovoltaïques sur le mobilier urbain et les parkings",
+          "agreement": 84,
+          "adhesion": 16,
+          "realistic": 27
+        },
+        {
+          "idea": "Multiplier les systèmes de récupération d'eau, y compris chez des particuliers",
+          "agreement": 87,
+          "adhesion": 22,
+          "realistic": 23
+        }
+      ]
+    },
+    {
+      "name": "Eclairages",
+      "ideas": [
+        {
+          "idea": "Réduire l'impact énergétique des éclairages urbains",
+          "agreement": 82,
+          "adhesion": 14,
+          "realistic": 25
+        },
+        {
+          "idea": "Interdire les enseignes lumineuses et les panneaux publicitaires numériques",
+          "agreement": 91,
+          "adhesion": 23,
+          "realistic": 28
+        },
+        {
+          "idea": "Éteindre systématiquement les éclairages dans les bureaux et magasins la nuit",
+          "agreement": 92,
+          "adhesion": 26,
+          "realistic": 28
+        }
+      ]
+    },
+    {
+      "name": "Consommation d'énergie",
+      "ideas": [
+        {
+          "idea": "Favoriser les produits locaux et les circuits courts",
+          "agreement": 87,
+          "adhesion": 21,
+          "realistic": 23
+        },
+        {
+          "idea": "Sensibiliser dès le plus jeune âge à la sobriété",
+          "agreement": 80,
+          "adhesion": 15,
+          "realistic": 26
+        }
+      ]
+    },
+    {
+      "name": "Déchets",
+      "ideas": [
+        {
+          "idea": "Améliorer la collecte des déchets et leur valorisation énergétique",
+          "agreement": 82,
+          "adhesion": 14,
+          "realistic": 25
+        },
+        {
+          "idea": "Valoriser les initiatives de consigne de verre sur le territoire",
+          "agreement": 87,
+          "adhesion": 22,
+          "realistic": 27
+        }
+      ]
+    }
+  ],
+  "controversials": [
+    {
+      "id": "a595964a-2aa3-4ce6-bb8c-580fe953e81e",
+      "content": "Il faut créer une Zone à Faible Bruit afin de mettre à l'écart les véhicules bruyants et donc souvent dangereux et polluants (motos...)",
+      "author": "Guillaume",
+      "agree": 44,
+      "like_it": 11,
+      "disagree": 33,
+      "no_way": 7,
+      "votes": 324
+    },
+    {
+      "id": "31b3df5d-98b3-4f81-a5a0-f81b6a90345f",
+      "content": "Il faut soutenir financièrement les citoyens dans l’achat de véhicules électriques et augmenter les stations de recharge",
+      "author": "Frédéric",
+      "agree": 44,
+      "like_it": 6,
+      "disagree": 37,
+      "no_way": 20,
+      "votes": 330
+    },
+    {
+      "id": "5f4b3a8d-3c3f-4f02-a005-5fc90a5b98b9",
+      "content": "Il faut interdire l'atterrissage et le décollage de jets privés sur l'aéroport et l'aérodrome de Strasbourg (hors atterrissage d'urgence).",
+      "author": "Pascal",
+      "agree": 45,
+      "like_it": 11,
+      "disagree": 34,
+      "no_way": 8,
+      "votes": 342
+    },
+    {
+      "id": "6236e503-a18b-49c3-987f-6bd10c03bcef",
+      "content": "Il faut arrêter le chauffage dans les églises et bâtiments historiques très déperditifs que l'on ne peut isoler par l'extérieur.",
+      "author": "Fabien",
+      "agree": 40,
+      "like_it": 3,
+      "disagree": 35,
+      "no_way": 11,
+      "votes": 320
+    },
+    {
+      "id": "f3380d50-2a6f-4d3b-a5bb-bea5646f0a82",
+      "content": "Il faut interdire de climatiser quand la température ambiante est inférieure ou égale à 26 degrés, et verbaliser si ce n'est pas respecté",
+      "author": "Lysianne",
+      "agree": 48,
+      "like_it": 7,
+      "disagree": 34,
+      "no_way": 8,
+      "votes": 341
+    },
+    {
+      "id": "93a7a736-3285-4aeb-950e-fb295af8c2c1",
+      "content": "Il faut interdire la climatisation dans les nouvelles constructions",
+      "author": "Arnaud",
+      "agree": 29,
+      "like_it": 6,
+      "disagree": 49,
+      "no_way": 17,
+      "votes": 328
+    },
+    {
+      "id": "9f44cbfc-733f-45cd-932e-e1e1493c478b",
+      "content": "Il faut développer la géothermie de moyenne surface et l'imposer comme énergie de chauffage pour toutes les nouvelles constructions. ",
+      "author": "stéphanie",
+      "agree": 33,
+      "like_it": 3,
+      "disagree": 31,
+      "no_way": 13,
+      "votes": 329
+    },
+    {
+      "id": "70df03c3-93ff-4c8f-8442-db955b4383c7",
+      "content": "Il faut réduire la voilure du marché de Noël (quantité de commerçants, étendue, lumières) et sur les autres événements de surconsommation",
+      "author": "Raphaël",
+      "agree": 31,
+      "like_it": 6,
+      "disagree": 47,
+      "no_way": 26,
+      "votes": 334
+    },
+    {
+      "id": "afc33d55-dc48-4345-9fbe-fef15eea538b",
+      "content": "Il faut moins chauffer chez soi quand on est en bonne santé et qu'on a pas d'enfants en bas âge. On peut vivre parfaitement bien à 18°.",
+      "author": "Stanislas",
+      "agree": 37,
+      "like_it": 2,
+      "disagree": 43,
+      "no_way": 9,
+      "votes": 322
+    },
+    {
+      "id": "d0a2437c-2a5c-4de0-ac2a-b789693664a5",
+      "content": "Il faut mettre en place une tarification progressive de l'eau : plus on est gros consommateur, plus le m3 d'eau est cher",
+      "author": "Flo",
+      "agree": 43,
+      "like_it": 8,
+      "disagree": 40,
+      "no_way": 18,
+      "votes": 328
+    },
+    {
+      "id": "00203c52-067f-42f8-a9b0-09be94f4dcf8",
+      "content": "Il faut proposer une option de repas complet végétal quotidiennement dans toute la restauration collective (y compris hôpitaux)",
+      "author": "Mathieu",
+      "agree": 49,
+      "like_it": 10,
+      "disagree": 28,
+      "no_way": 11,
+      "votes": 320
+    },
+    {
+      "id": "978f3e56-2a82-40b2-8b46-fec496cede4b",
+      "content": "Il faut supprimer les souffleurs de feuilles bruyants et polluants rendant sourds et remplacer par des râteaux bons pour la santé",
+      "author": "michel",
+      "agree": 45,
+      "like_it": 8,
+      "disagree": 30,
+      "no_way": 3,
+      "votes": 322
+    }
+  ],
+  "rejected": [],
+  "cartography": [
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Thèmes cités",
+      "legend": "",
+      "data": [
+        {
+          "label": "Mobilités douces et collectives ",
+          "percent": 18,
+          "color": "#4B45A5",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.2,
+            "yAxis": 1.9
+          }
+        },
+        {
+          "label": "Aménagement urbain",
+          "percent": 12,
+          "color": "#8955BD",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.4
+          }
+        },
+        {
+          "label": "Eclairage",
+          "percent": 12,
+          "color": "#EB7575",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.3,
+            "yAxis": 2.2
+          }
+        },
+        {
+          "label": "Voiture et circulation",
+          "percent": 10,
+          "color": "#F5976E",
+          "adjustLabel": {
+            "textAlign": "center",
+            "yAxis": 2.3
+          }
+        },
+        {
+          "label": "Rénovation énergétique",
+          "percent": 9,
+          "color": "#EEB298",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.8,
+            "yAxis": 2.2
+          }
+        },
+        {
+          "label": "Déchets",
+          "percent": 7,
+          "color": "#FFD266",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.75
+          }
+        },
+        {
+          "label": "Sources d'énergie",
+          "percent": 7,
+          "color": "#FFF689",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.75
+          }
+        },
+        {
+          "label": "Sensibilisation ",
+          "percent": 6,
+          "color": "#E5FFAE",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.75,
+            "yAxis": 1.9
+          }
+        },
+        {
+          "label": "Usages domestiques",
+          "percent": 5,
+          "color": "#C1EBDD",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.75,
+            "yAxis": 1.9
+          }
+        },
+        {
+          "label": "Chauffage",
+          "percent": 5,
+          "color": "#59BAD4",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.75,
+            "yAxis": 1.9
+          }
+        },
+        {
+          "label": "Autres",
+          "percent": 5,
+          "color": "#FFF",
+          "adjustLabel": {
+            "hidePercent": true,
+            "xAxis": 1.8,
+            "yAxis": 1.8
+        }
+        }
+      ]
+    },
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Acteurs cités",
+      "legend": "",
+      "data": [
+        {
+          "label": "Pouvoirs publics",
+          "percent": 55,
+          "color": "#4B45A5",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.3,
+            "yAxis": 2.2
+          }
+        },
+        {
+          "label": "Entreprises",
+          "percent": 12,
+          "color": "#8955BD",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.75,
+            "yAxis": 1.9
+          }
+        },
+        {
+          "label": "Citoyens",
+          "percent": 10,
+          "color": "#EB7575",
+          "adjustLabel": {
+            "textAlign": "center",
+            "xAxis": 1.8,
+            "yAxis": 1.9
+          }
+        }
+      ]
+    }
+  ],
+  "participation": [
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par région (1/5)",
+      "forcedHigherValue": 58,
+      "legend": {
+        "title": "Participation par région (1/5)",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "Strasbourg",
+          "bars": {
+            "first": 56,
+            "second": 57
+          }
+        },
+        {
+          "label": "Schiltigheim",
+          "bars": {
+            "first": 5,
+            "second": 7
+          }
+        },
+        {
+          "label": "Illkirch-Graffenstaden",
+          "bars": {
+            "first": 6,
+            "second": 6
+          }
+        },
+        {
+          "label": "Bischheim",
+          "bars": {
+            "first": 2,
+            "second": 4
+          }
+        },
+        {
+          "label": "Lingolsheim",
+          "bars": {
+            "first": 3,
+            "second": 4
+          }
+        },
+        {
+          "label": "Ostwald",
+          "bars": {
+            "first": 2,
+            "second": 2
+          }
+        },
+        {
+          "label": "Hoenheim",
+          "bars": {
+            "first": 2,
+            "second": 2
+          }
+        }
+      ],
+      "id": "participation_0"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par région (2/5)",
+      "forcedHigherValue": 58,
+      "legend": {
+        "title": "Participation par région (2/5)",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "Souffelweyersheim",
+          "bars": {
+            "first": 2,
+            "second": 2
+          }
+        },
+        {
+          "label": "Geispolsheim",
+          "bars": {
+            "first": 1,
+            "second": 2
+          }
+        },
+        {
+          "label": "Reichstett",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        },
+        {
+          "label": "Achenheim",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        },
+        {
+          "label": "Lipsheim",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        },
+        {
+          "label": "Lampertheim",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        },
+        {
+          "label": "Holtzheim",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        }
+      ],
+      "id": "participation_1"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par région (3/5)",
+      "forcedHigherValue": 58,
+      "legend": {
+        "title": "Participation par région (3/5)",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "Plobsheim",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        },
+        {
+          "label": "Wolfisheim",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        },
+        {
+          "label": "Eschau",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        },
+        {
+          "label": "Mundolsheim",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        },
+        {
+          "label": "Fegersheim",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        },
+        {
+          "label": "Vendenheim",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        },
+        {
+          "label": "La wantzenau",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        }
+      ],
+      "id": "participation_2"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par région (4/5)",
+      "forcedHigherValue": 58,
+      "legend": {
+        "title": "Participation par région (4/5)",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "Eckbolsheim",
+          "bars": {
+            "first": 2,
+            "second": 1
+          }
+        },
+        {
+          "label": "Oberhausbergen",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        },
+        {
+          "label": "Niederhausbergen",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        },
+        {
+          "label": "Osthoffen",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        },
+        {
+          "label": "Kolbsheim",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        },
+        {
+          "label": "Breuschwickersheim",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        },
+        {
+          "label": "Blaesheim",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        }
+      ],
+      "id": "participation_3"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par région (5/5)",
+      "forcedHigherValue": 58,
+      "legend": {
+        "title": "Participation par région (5/5)",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "Mittelhausbergen",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        },
+        {
+          "label": "Eckwersheim",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        },
+        {
+          "label": "Hangenbieten",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        },
+        {
+          "label": "Entzheim",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        },
+        {
+          "label": "Oberschaeffolsheim",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        },
+        {
+          "label": "J’habite hors-Eurométropole",
+          "bars": {
+            "first": 5,
+            "second": 1
+          }
+        }
+      ],
+      "id": "participation_4"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par âge",
+      "legend": {
+        "title": "Répartition des votes",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "16-24",
+          "bars": {
+            "first": 13,
+            "second": 13
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "25-34",
+          "bars": {
+            "first": 23,
+            "second": 14
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "35-44",
+          "bars": {
+            "first": 21,
+            "second": 15
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "45-54",
+          "bars": {
+            "first": 15,
+            "second": 16
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "55-64",
+          "bars": {
+            "first": 16,
+            "second": 16
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "65+",
+          "bars": {
+            "first": 12,
+            "second": 26
+          },
+          "color": "#8BDAB2"
+        }
+      ],
+      "id": "participation_2"
+    },
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Votes par genre",
+      "legend": "",
+      "data": [
+        {
+          "label": "hommes",
+          "percent": 47,
+          "color": "#4B45A5"
+        },
+        {
+          "label": "femmes",
+          "percent": 51,
+          "color": "#8955BD"
+        },
+        {
+          "label": "non-binaire",
+          "percent": 2,
+          "color": "#EEB298"
+        }
+      ],
+      "id": "participation_3"
+    }
+  ]
+}
