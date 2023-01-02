@@ -16,7 +16,6 @@ import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selec
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
-import { TopIdeaDetailsComments } from '../../app/TopIdeas/Comments';
 import { TopIdeaDetailsProposals } from '../../app/TopIdeas/Proposals';
 import { TopIdeaCard } from '../../app/TopIdeas/Card';
 import { TopIdeaDetailsSkipLinks } from '../../app/SkipLinks/TopIdeaDetails';
@@ -100,10 +99,7 @@ const TopIdeaDetailsPage: FC = () => {
             {topIdea && <TopIdeaCard topIdea={topIdea} />}
           </ColumnElementStyle>
           {topIdea && (
-            <>
-              <TopIdeaDetailsComments comments={topIdea && topIdea.comments} />
-              <TopIdeaDetailsProposals topIdea={topIdea} question={question} />
-            </>
+            <TopIdeaDetailsProposals topIdea={topIdea} question={question} />
           )}
         </ConsultationPageContentStyle>
       </ConsultationPageWrapperStyle>

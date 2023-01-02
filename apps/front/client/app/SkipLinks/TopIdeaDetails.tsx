@@ -21,15 +21,6 @@ export const TopIdeaDetailsSkipLinks: React.FC<Props> = ({ hasComments }) => (
         })}
       </SkipLink>
     </li>
-    {hasComments && (
-      <li>
-        <SkipLink as="a" href="#comments_list">
-          {i18n.t('skip_links.dynamic_section', {
-            name: i18n.t('idea_details.comments'),
-          })}
-        </SkipLink>
-      </li>
-    )}
     <li>
       <SkipLink as="a" href="#proposals_list">
         {i18n.t('skip_links.dynamic_section', {
