@@ -44,7 +44,7 @@ import { SortAndFiltersModale } from './Consultation/ExploreFilters/FiltersAndSo
  */
 export const AppContainer: FC = () => {
   const { dispatch, state } = useAppContext();
-  const { device, country } = state.appConfig;
+  const { device, country, language } = state.appConfig;
   const { showDataPolicy, showSort, showFilters } = state.modal;
   const showFiltersOrSortModale = (showSort || showFilters) === true;
   const updateDeviceConfig = debounce(
@@ -101,31 +101,32 @@ export const AppContainer: FC = () => {
           <ErrorBoundary>
             {/** page_wrapper id is used to set page background color in usePageBackgroundColor hook */}
 
-            <AppWrapperStyle
-              id="page_wrapper"
-              data-cy-client-loaded={isClientSide}
-            >
-              <CanonicalUrl />
-              <Hreflang />
-              <ModernNormalizeStylesheet />
-              <FontFacesStylesheet />
-              <DefaultStylesheet />
-              <UIThemeStylesheet />
-              <MainSkipLinks />
-              <Header />
-              <AppMainContentStyle
-                id={IDS.MAIN_CONTENT}
-                data-cy-container="main"
-                className={`${NAVIGATION.NAVIGATION_ARIA_CLASS} ${PANEL.PANEL_ARIA_CLASS}`}
+            <div lang={language}>
+              <AppWrapperStyle
+                id="page_wrapper"
+                data-cy-client-loaded={isClientSide}
               >
-                <NotificationBanner />
-                <Routes />
-              </AppMainContentStyle>
-              <Modal />
-              <Footer />
-            </AppWrapperStyle>
-
-            <Panel />
+                <CanonicalUrl />
+                <Hreflang />
+                <ModernNormalizeStylesheet />
+                <FontFacesStylesheet />
+                <DefaultStylesheet />
+                <UIThemeStylesheet />
+                <MainSkipLinks />
+                <Header />
+                <AppMainContentStyle
+                  id={IDS.MAIN_CONTENT}
+                  data-cy-container="main"
+                  className={`${NAVIGATION.NAVIGATION_ARIA_CLASS} ${PANEL.PANEL_ARIA_CLASS}`}
+                >
+                  <NotificationBanner />
+                  <Routes />
+                </AppMainContentStyle>
+                <Modal />
+                <Footer />
+              </AppWrapperStyle>
+              <Panel />
+            </div>
           </ErrorBoundary>
         </ServiceErrorHandler>
       </SessionExpirationWithCoockies>

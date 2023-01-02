@@ -20,19 +20,15 @@ import { ProposalCardWithQuestion } from '@make.org/components/Proposal/Proposal
 import { Spinner } from '@make.org/ui/components/Loading/Spinner';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { MiddlePageWrapperStyle } from '@make.org/ui/elements/MainElements';
-import { Redirect } from 'react-router';
-import { getHomeLink } from '@make.org/utils/helpers/url';
-import { useAppContext } from '@make.org/store';
 import { useOrganisation } from '@make.org/utils/hooks/useOrganisation';
 import { LoadMoreWrapperStyle } from '../../app/Consultation/Styled/Proposal';
 import { OrganisationProposalsPlaceholder } from './Placeholders/Proposals';
 import { OrganisationProfileSkipLinks } from '../../app/SkipLinks/Organisation';
 import { OrganisationProfileSidebar } from './Sidebar';
 import { OrganisationProfileTabs } from './Tabs';
+import NotFoundPage from '../NotFound';
 
 const OrganisationProposalsPage: FC = () => {
-  const { state } = useAppContext();
-  const { country } = state.appConfig;
   const [loadMoreProposals, setLoadMoreProposals] = useState(0);
   const { organisation, proposals, isLoading, hasMore, page } = useOrganisation(
     loadMoreProposals,
@@ -61,7 +57,7 @@ const OrganisationProposalsPage: FC = () => {
   }
 
   if (!organisation) {
-    return <Redirect to={getHomeLink(country)} />;
+    return <NotFoundPage />;
   }
 
   return (

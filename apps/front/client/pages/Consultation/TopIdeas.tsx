@@ -27,7 +27,7 @@ import {
 
 const TopIdeasPage: FC = () => {
   const { state } = useAppContext();
-  const { country, device } = state.appConfig;
+  const { country, device, language } = state.appConfig;
   const question: QuestionType = selectCurrentQuestion(state);
   const isMobile = matchMobileDevice(device);
   const [topIdeas, setTopIdeas] = useState<TopIdeaType[]>([]);
@@ -43,7 +43,7 @@ const TopIdeasPage: FC = () => {
   useEffect(() => {
     initTopIdeas();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [language]);
 
   useEffect(() => {
     trackDisplayTopIdeas('top-ideas');

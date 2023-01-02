@@ -8,7 +8,7 @@ import { ApiService } from './ApiService';
 // @todo remove it when ready on API side
 const HOMEPAGE_PATH = '/views/home-page/:country';
 const SEARCH_VIEWS_PATH =
-  '/views/search?content=:content&proposalLimit=:proposalLimit&questionLimit=:questionLimit&organisationLimit=:organisationLimit&country=:country';
+  '/views/search?content=:content&proposalLimit=:proposalLimit&questionLimit=:questionLimit&organisationLimit=:organisationLimit&country=:country&preferedLanguage=:preferedLanguage';
 const COUNTRIES_PATH = '/views/countries';
 
 export class ViewsApiService {
@@ -46,7 +46,8 @@ export class ViewsApiService {
         .replace(':proposalLimit', proposalLimit.toString())
         .replace(':questionLimit', questionLimit.toString())
         .replace(':organisationLimit', organisationLimit.toString())
-        .replace(':country', country),
+        .replace(':country', country)
+        .replace(':preferedLanguage', preferedLanguage),
       {
         method: 'GET',
         params: {

@@ -149,19 +149,19 @@ const BrowseConsultationsPage: FC = () => {
 
     const cleanCache = () => {
       const cacheKeyToKeep: string[] = [];
-      cacheKeyToKeep.push(getCacheKey('opened', country, preferedLanguage, 1));
+      cacheKeyToKeep.push(getCacheKey('opened', preferedLanguage, country, 1));
       cacheKeyToKeep.push(
         getCacheKey('finished', country, preferedLanguage, 1)
       );
-      cacheKeyToKeep.push(getCacheKey('opened', country, preferedLanguage, 2));
+      cacheKeyToKeep.push(getCacheKey('opened', preferedLanguage, country, 2));
       cacheKeyToKeep.push(
-        getCacheKey('finished', country, preferedLanguage, 2)
+        getCacheKey('finished', preferedLanguage, country, 2)
       );
       cacheKeyToKeep.push(
         getCacheKey(
           currentConsultationListType,
-          country,
           preferedLanguage,
+          country,
           currentPage
         )
       );
@@ -169,8 +169,8 @@ const BrowseConsultationsPage: FC = () => {
         cacheKeyToKeep.push(
           getCacheKey(
             currentConsultationType,
-            country,
             preferedLanguage,
+            country,
             previewPage
           )
         );
@@ -179,8 +179,8 @@ const BrowseConsultationsPage: FC = () => {
         cacheKeyToKeep.push(
           getCacheKey(
             currentConsultationType,
-            country,
             preferedLanguage,
+            country,
             nextPage
           )
         );
@@ -225,7 +225,7 @@ const BrowseConsultationsPage: FC = () => {
   useEffect(() => {
     loadConsultations();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [country, currentConsultationListType, currentPageId]);
+  }, [country, language, currentConsultationListType, currentPageId]);
 
   useEffect(() => {
     if (currentConsultationListType === 'opened') {

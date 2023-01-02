@@ -48,7 +48,7 @@ export const SearchConsultations: React.FC<RouteComponentProps> = ({
   useEffect(() => {
     initQuestions();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [term]);
+  }, [term, language]);
 
   useEffect(() => {
     trackDisplaySearchConsultationsResult();

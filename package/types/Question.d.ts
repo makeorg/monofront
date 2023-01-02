@@ -111,6 +111,7 @@ export type QuestionWordingType = {
   description: string;
   title: string;
   metas: MetasType;
+  questions: Record<string, string>; // @toDo : remove after update of proposal multilingue endpoints
 };
 
 export type QuestionExtraSlidesConfigType = {
@@ -199,6 +200,7 @@ export type QuestionType = {
     topProposal?: ProposalType | null;
   };
   hasDemographics: boolean;
+  languages: string[];
 };
 
 export type CountsByQuestionType = {

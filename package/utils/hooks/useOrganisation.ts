@@ -42,6 +42,7 @@ export const useOrganisation = (
 
   const fetchProposals = async () => {
     if (!organisation) {
+      setIsLoading(false);
       return;
     }
     setIsLoading(true);

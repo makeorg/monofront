@@ -38,7 +38,9 @@ describe('getQuestionFromState', () => {
     questionId: '1234',
     slug: mockedSlug,
     operationId: '1234',
+    languages: ['fr'],
     wording: {
+      questions: { fr: 'foo' },
       question: 'foo',
       description: 'foo',
       title: 'foo',

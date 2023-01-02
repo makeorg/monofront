@@ -67,7 +67,7 @@ export const SearchMainResults: React.FC<Props> = ({ location }) => {
 
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [term]);
+  }, [term, language]);
 
   return (
     <SearchPageWrapperStyle>

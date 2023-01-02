@@ -36,7 +36,7 @@ export const orderByWeight = (
 export const PartnersList: FC<Props> = ({ partners }) => (
   <PartnersListStyle>
     {partners.sort(orderByWeight).map(partner => (
-      <AvatarWrapperStyle key={partner.name}>
+      <AvatarWrapperStyle key={`${partner.name}-${partner.weight}`}>
         <PartnerAvatarWithTooltip
           key={`avatar_with_tooltip_${partner.name}`}
           partner={partner}
