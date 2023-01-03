@@ -6,6 +6,7 @@ import {
   ProposalLinkElementStyle,
   ProposalInnerStyle,
 } from '@make.org/ui/elements/ProposalCardElements';
+import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import i18n from 'i18next';
@@ -31,7 +32,7 @@ type Props = {
 };
 
 export const ProposalCardTagged: FC<Props> = ({ proposal, position, size }) => {
-  const { state } = useAppContext();
+  const { state, dispatch } = useAppContext();
   const { country } = state.appConfig;
 
   const proposalLink = getProposalLink(
@@ -47,9 +48,17 @@ export const ProposalCardTagged: FC<Props> = ({ proposal, position, size }) => {
     proposal
   );
 
+  const switchProposalContent = () => {
+    setShowOriginal(!showOriginal);
+    dispatch(closePanel());
+    dispatch(removePanelContent());
+  };
+
   return (
     <ProposalCardStyle aria-posinset={position} aria-setsize={size}>
-      {!showOriginal && <ReportOptionsButton />}
+      {!showOriginal && (
+        <ReportOptionsButton switchProposalContent={switchProposalContent} />
+      )}
       <AuthorWrapperStyle>
         <DeprecatedProposalAuthor
           proposal={proposal}

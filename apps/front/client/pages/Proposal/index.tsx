@@ -23,7 +23,6 @@ const ProposalPage: FC = () => {
   const { state } = useAppContext();
   const { language } = state.appConfig;
   const question: QuestionType = selectCurrentQuestion(state);
-
   useEffect(() => {
     const getProposal = async () => {
       const response = await ProposalService.getProposal(proposalId, language);

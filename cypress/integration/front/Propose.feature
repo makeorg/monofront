@@ -15,7 +15,7 @@ Feature: Propose in panel
         When I click on "email register" button
         And I register with email "emailValue@example.com" and password "TestMake"
         Then I see "Sign up with e-mail (2/2)" in "register-panel-title" container
-        When I register with firstname "testfirstname" and age "36" and postal code "94120" and I accept the data policy before submitting
+        When I register with firstname "testfirstname" and age "37" and postal code "94120" and I accept the data policy before submitting
         And I see the "keep voting" button
         When I click on "keep voting" button
         Then I am on the common sequence page of the question "question-0-slug"
@@ -30,7 +30,7 @@ Feature: Propose in panel
         Then I see the "email register" button
         When I click on "email register" button
         And I register with email "emailValue@example.com" and password "TestMake"
-        And I register with firstname "testfirstname" and age "36" and postal code "94120" and I accept the data policy before submitting
+        And I register with firstname "testfirstname" and age "37" and postal code "94120" and I accept the data policy before submitting
         And I see the "keep proposing" button
         When I click on "keep proposing" button
         Then I see "proposal_submit" container

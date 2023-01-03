@@ -33,9 +33,13 @@ import { getProposalContent } from '@make.org/utils/helpers/proposal';
 
 type Props = {
   handleChange: Dispatch<SetStateAction<boolean>>;
+  switchProposalContent: () => void;
 };
 
-export const IntroProposal: FC<Props> = ({ handleChange }) => {
+export const IntroProposal: FC<Props> = ({
+  handleChange,
+  switchProposalContent,
+}) => {
   const { state } = useAppContext();
   const question: QuestionType = selectCurrentQuestion(state);
   const proposal: ProposalType | null | undefined =
@@ -73,7 +77,11 @@ export const IntroProposal: FC<Props> = ({ handleChange }) => {
             data-cy-card-number={0}
             className="widget"
           >
-            {!showOriginal && <ReportOptionsButton />}
+            {!showOriginal && (
+              <ReportOptionsButton
+                switchProposalContent={switchProposalContent}
+              />
+            )}
             <ProposalAuthor proposal={proposal} />
             <ScreenReaderItemStyle>
               {i18n.t('top_proposal_card.content')}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   SequenceCardType,
   QuestionType,
@@ -8,6 +8,7 @@ import {
   NoProposalCardType,
   DemographicDataType,
 } from '@make.org/types';
+import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
 import {
   TopComponentContext,
   TopComponentContextValueType,
@@ -32,13 +33,24 @@ type CardProps = {
 };
 
 const Card: React.FC<CardProps> = ({ card, question }) => {
-  const { state } = useAppContext();
+  const { state, dispatch } = useAppContext();
   const { source } = state.appConfig;
   const isWidget = source === 'widget';
+  const [showOriginal, setShowOriginal] = useState<boolean>(false);
 
+  const switchProposalContent = () => {
+    setShowOriginal(!showOriginal);
+    dispatch(closePanel());
+    dispatch(removePanelContent());
+  };
   switch (card.type) {
     case CARD.CARD_TYPE_PROPOSAL:
-      return <ProposalCard proposalCard={card as ProposalCardType} />;
+      return (
+        <ProposalCard
+          proposalCard={card as ProposalCardType}
+          switchProposalContent={switchProposalContent}
+        />
+      );
     case CARD.CARD_TYPE_EXTRASLIDE_INTRO:
       return (
         <IntroCard configuration={card.configuration as IntroCardConfigType} />

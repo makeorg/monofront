@@ -1,6 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
 import { QuestionType, ProposalType, TopIdeaType } from '@make.org/types';
-
 import { trackLoadMoreProposals } from '@make.org/utils/services/Tracking';
 import { Spinner } from '@make.org/ui/components/Loading/Spinner';
 import i18n from 'i18next';

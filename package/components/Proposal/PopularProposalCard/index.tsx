@@ -6,6 +6,7 @@ import {
   ProposalLinkElementStyle,
   ProposalInnerStyle,
 } from '@make.org/ui/elements/ProposalCardElements';
+import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
 import { ReportOptionsButton } from '@make.org/components/ReportOptions/Button';
 import { DeprecatedProposalAuthor } from '@make.org/components/Proposal/DeprecatedAuthor';
 import { AuthorWrapperStyle } from '@make.org/components/Proposal/DeprecatedAuthor/Styled';
@@ -36,7 +37,7 @@ export const PopularProposalCard: FC<Props> = ({
   position = 0,
   size = 0,
 }) => {
-  const { state } = useAppContext();
+  const { state, dispatch } = useAppContext();
   const { country } = state.appConfig;
   const canVote = isInProgress(proposal.question);
   const [showOriginal, setShowOriginal] = useState<boolean>(false);
@@ -45,12 +46,20 @@ export const PopularProposalCard: FC<Props> = ({
     proposal
   );
 
+  const switchProposalContent = () => {
+    setShowOriginal(!showOriginal);
+    dispatch(closePanel());
+    dispatch(removePanelContent());
+  };
+
   return (
     <PopularProposalWrapperStyle aria-posinset={position} aria-setsize={size}>
       <PopularProposalHeader aria-hidden>
         {`#${position}`}
       </PopularProposalHeader>
-      {!showOriginal && <ReportOptionsButton />}
+      {!showOriginal && (
+        <ReportOptionsButton switchProposalContent={switchProposalContent} />
+      )}
       <AuthorWrapperStyle>
         <DeprecatedProposalAuthor proposal={proposal} withAvatar />
       </AuthorWrapperStyle>

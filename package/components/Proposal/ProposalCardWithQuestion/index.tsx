@@ -35,6 +35,7 @@ type Props = {
   withOrganisations?: boolean;
   /** Enable radius on Mobile */
   withMobileRadius?: boolean;
+  switchProposalContent: () => void;
 };
 
 export const ProposalCardWithQuestion: React.FC<Props> = ({
@@ -43,6 +44,7 @@ export const ProposalCardWithQuestion: React.FC<Props> = ({
   size,
   withOrganisations = false,
   withMobileRadius = false,
+  switchProposalContent,
 }) => {
   const { state } = useAppContext();
   const { country } = state.appConfig;
@@ -65,7 +67,9 @@ export const ProposalCardWithQuestion: React.FC<Props> = ({
       aria-posinset={position}
       aria-setsize={size}
     >
-      {!showOriginal && <ReportOptionsButton />}
+      {!showOriginal && (
+        <ReportOptionsButton switchProposalContent={switchProposalContent} />
+      )}
       <AuthorWrapperStyle>
         <DeprecatedProposalAuthor proposal={proposal} withAvatar />
       </AuthorWrapperStyle>

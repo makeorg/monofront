@@ -6,12 +6,26 @@ import { useAppContext } from '@make.org/store';
 import { SvgOptions } from '@make.org/ui/Svg/elements';
 import { ReportOptionsButtonStyle } from './style';
 
-export const ReportOptionsButton: React.FC = () => {
+type Props = {
+  switchProposalContent: () => void;
+};
+
+export const ReportOptionsButton: React.FC<Props> = ({
+  switchProposalContent,
+}) => {
   const { dispatch } = useAppContext();
   return (
     <ReportOptionsButtonStyle
       aria-label={i18n.t('report_translations.button') || undefined}
-      onClick={() => dispatch(setPanelContent(<FirstStepReportOptions />))}
+      onClick={() =>
+        dispatch(
+          setPanelContent(
+            <FirstStepReportOptions
+              switchProposalContent={switchProposalContent}
+            />
+          )
+        )
+      }
     >
       <SvgOptions aria-hidden focusable="false" />
     </ReportOptionsButtonStyle>

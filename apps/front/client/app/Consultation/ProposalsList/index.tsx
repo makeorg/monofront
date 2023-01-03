@@ -4,6 +4,7 @@ import { ProposalSkeleton } from '@make.org/ui/components/Skeletons/Proposal';
 import React, { FC, useState } from 'react';
 import { getProposalLink } from '@make.org/utils/helpers/url';
 import i18n from 'i18next';
+import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
 import { ReportOptionsButton } from '@make.org/components/ReportOptions/Button';
 import { ProposalType } from '@make.org/types';
 import { Vote } from '@make.org/components/Vote';
@@ -54,10 +55,19 @@ export const ProposalsCard: FC<CardProps> = ({ proposal, country, index }) => {
     showOriginal,
     proposal
   );
+  const { dispatch } = useAppContext();
+
+  const switchProposalContent = () => {
+    setShowOriginal(!showOriginal);
+    dispatch(closePanel());
+    dispatch(removePanelContent());
+  };
 
   return (
     <ProposalCardStyle>
-      {!showOriginal && <ReportOptionsButton />}
+      {!showOriginal && (
+        <ReportOptionsButton switchProposalContent={switchProposalContent} />
+      )}
       <ProposalAuthor proposal={proposal} />
       <ProposalAndVoteWrapperStyle>
         <ScreenReaderItemStyle>

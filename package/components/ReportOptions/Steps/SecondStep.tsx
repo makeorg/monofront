@@ -53,7 +53,11 @@ export const ReportOptionsLabel: Array<{
   },
 ];
 
-export const SecondStepForm: React.FC = () => {
+type Props = {
+  switchProposalContent: () => void;
+};
+
+export const SecondStepForm: React.FC<Props> = ({ switchProposalContent }) => {
   const { dispatch } = useAppContext();
   const [currentReport, setCurrentReport] = useState<string>('unclear');
   const checkCurrentReport = (
@@ -73,7 +77,15 @@ export const SecondStepForm: React.FC = () => {
   return (
     <>
       <ReportFormBackButtonWrapperStyle
-        onClick={() => dispatch(setPanelContent(<FirstStepReportOptions />))}
+        onClick={() =>
+          dispatch(
+            setPanelContent(
+              <FirstStepReportOptions
+                switchProposalContent={switchProposalContent}
+              />
+            )
+          )
+        }
       >
         <ReportFormIconButtonWrapperStyle>
           <ReportFormBackIconStyle />

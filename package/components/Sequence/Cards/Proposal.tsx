@@ -32,12 +32,16 @@ import { Tip } from '../../Notifications/Tip';
 type Props = {
   /** Proposal card */
   proposalCard: ProposalCardType;
+  switchProposalContent: () => void;
 };
 
 /**
  * Handles Proposal Card Business Logic
  */
-export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
+export const ProposalCard: React.FC<Props> = ({
+  proposalCard,
+  switchProposalContent,
+}) => {
   const { state, dispatch } = useAppContext();
 
   const [proposal, setProposal] = useState(proposalCard.configuration.proposal);
@@ -101,7 +105,9 @@ export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
 
   return (
     <SequenceProposalWrapperStyle>
-      {!showOriginal && <ReportOptionsButton />}
+      {!showOriginal && (
+        <ReportOptionsButton switchProposalContent={switchProposalContent} />
+      )}
       <ProposalAuthor proposal={proposal} />
       <SequenceProposalAndVoteWrapperStyle>
         <ScreenReaderItemStyle>

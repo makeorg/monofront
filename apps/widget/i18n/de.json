@@ -313,6 +313,11 @@
   },
   "report_translations": {
     "button": "Vorschlagsoptionen",
+    "see_original_button": "Siehe Original",
+    "first_step": {
+      "title": "Automatische Übersetzung",
+      "text": "Die Übersetzungen der Vorschläge erfolgen automatisch. Wenn dir ein Fehler auffällt, zögere nicht, uns darauf hinzuweisen!"
+    },
     "confirmation": {
       "title": "Vielen Dank für die Meldung!",
       "description": "Unser Team wird sie so schnell wie möglich untersuchen."

@@ -29,7 +29,7 @@ Feature: Register
     Then I display the register panel
     When I register with email "emailValue@example.com" and password "TestMake"
     Then I see "S’inscrire par e-mail (2/2)" in "register-panel-title" container
-    When I register with firstname "testfirstname" and age "36" and postal code "94120" and I accept the data policy before submitting
+    When I register with firstname "testfirstname" and age "37" and postal code "94120" and I accept the data policy before submitting
     Then I see "Bienvenue testfirstname !" in "register-confirmation-panel-title" container
     And I see "emailValue@example.com" in "register-confirmation-panel-mail" container
     Then register form is closed
@@ -86,7 +86,7 @@ Feature: Register
     When I display the register panel
     And I register with email "emailValue@example.com" and password "TestMake"
     Then I see "S’inscrire par e-mail (2/2)" in "register-panel-title" container
-    When I register with firstname "testfirstname" and age "36" and postal code "" and I accept the data policy before submitting
+    When I register with firstname "testfirstname" and age "37" and postal code "" and I accept the data policy before submitting
     Then I see "Bienvenue testfirstname !" in "register-confirmation-panel-title" container
 
   Scenario: Register with valid and invalid postal code on DE page
@@ -99,7 +99,7 @@ Feature: Register
     When I clear the "firstname" field
     And I clear the "age" field
     And I clear the "postalcode" field
-    And I register with firstname "testfirstname" and age "36" and postal code "94120" and I accept the data policy before submitting
+    And I register with firstname "testfirstname" and age "37" and postal code "94120" and I accept the data policy before submitting
     Then I see "Herzlich willkommen testfirstname !" in "register-confirmation-panel-title" container
 
   Scenario: Check register in DE without completed postal code
@@ -107,7 +107,7 @@ Feature: Register
     When I display the register panel
     And I register with email "emailValue@example.com" and password "TestMake"
     Then I see "Registrieren bei E-Mail (2/2)" in "register-panel-title" container
-    When I register with firstname "testfirstname" and age "36" and postal code "" and I accept the data policy before submitting
+    When I register with firstname "testfirstname" and age "37" and postal code "" and I accept the data policy before submitting
     Then I see "Herzlich willkommen testfirstname !" in "register-confirmation-panel-title" container
 
   Scenario: Check postal code is not displayed on GB page

@@ -85,3 +85,5 @@ export { SvgQuestionMark } from './QuestionMark';
 export { SvgErrorTranslation } from './ErrorTranslation';
 export { SvgCrossFakeInfo } from './CrossFakeInfo';
 export { SvgOffensif } from './Offensif';
+export { SvgTranslation } from './Translation';
+export { SvgWarning } from './Warning';

@@ -1,4 +1,7 @@
 {
+  "compilerOptions": {
+    "jsx": "react"
+  },
   "extends": "../../tsconfig.json",
   "references": [
     { "path": "../../package/store" },

@@ -2,6 +2,7 @@ import React, { FC, useEffect, useState } from 'react';
 import { SEQUENCE } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
 import { Sequence } from '@make.org/components/Sequence/Sequence';
+import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
 import {
   getMetalTitleBySequenceKind,
   isStandardSequence,
@@ -23,7 +24,7 @@ import { WidgetContainerStyle } from '../../style';
 import { FirstProposal } from '../../components/FirstProposal';
 
 export const RootPage: FC = () => {
-  const { state } = useAppContext();
+  const { state, dispatch } = useAppContext();
   const { currentQuestion, appConfig, modal } = state;
   const { sequenceKind, loadFirstProposal } = state.sequence;
   const { unsecure } = appConfig;
@@ -39,14 +40,24 @@ export const RootPage: FC = () => {
     <FirstProposal sequenceKind={sequenceKind || SEQUENCE.KIND_STANDARD} />
   );
   const [isClientSide, setIsClientSide] = useState(false);
-
+  const [showOriginal, setShowOriginal] = useState<boolean>(false);
+  const switchProposalContent = () => {
+    setShowOriginal(!showOriginal);
+    dispatch(closePanel());
+    dispatch(removePanelContent());
+  };
   useEffect(() => {
     setIsClientSide(env.isClientSide());
   }, []);
 
   useEffect(() => {
     if (topProposal) {
-      setWidgetCards(<IntroProposal handleChange={disableTopProposal} />);
+      setWidgetCards(
+        <IntroProposal
+          switchProposalContent={switchProposalContent}
+          handleChange={disableTopProposal}
+        />
+      );
       return;
     }
 

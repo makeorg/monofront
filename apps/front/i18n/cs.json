@@ -337,6 +337,11 @@
   },
   "report_translations": {
     "button": "Možnosti návrhu",
+    "see_original_button": "Viz originál ",
+    "first_step": {
+      "title": "Strojový překlad",
+      "text": "Překlady řešení jsou automatické. Pokud si všimnete chyby, dejte nám prosím vědět!"
+    },
     "confirmation": {
       "title": "Děkujeme za zprávu!",
       "description": "Náš tým ji co nejdříve prošetří."

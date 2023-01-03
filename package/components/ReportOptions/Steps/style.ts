@@ -20,6 +20,19 @@ export const ReportWrapperStyle = styled.section`
   }
 `;
 
+export const ReportFirstStepWrapperStyle = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  height: auto;
+  max-width: 420px;
+  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
+    text-align: left;
+  }
+`;
+
 export const ReportTitleStyle = styled.h1`
   display: flex;
   justify-content: flex-start;
@@ -136,4 +149,31 @@ export const ReportFormBackButtonWrapperStyle = styled.button`
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     width: 420px;
   }
+`;
+
+export const ReportOptionsWrapperStyle = styled.div`
+  width: 100%;
+`;
+
+export const ReportOptionsButtonStyle = styled.button`
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 0;
+  border-color: transparent;
+  margin: 10px 0;
+  height: 40px;
+`;
+
+export const ReportOptionsButtonTextStyle = styled.p`
+  padding-left: 10px;
+  font-weight: bold;
+`;
+
+export const ReportOptionsSeparatorStyle = styled.div`
+  height: 1px;
+  width: 100%;
+  background-color: ${color.grey};
 `;

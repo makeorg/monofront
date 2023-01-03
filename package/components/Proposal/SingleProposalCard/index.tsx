@@ -6,6 +6,7 @@ import {
   getSequenceLink,
   getParticipateLink,
 } from '@make.org/utils/helpers/url';
+import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
 import { ReportOptionsButton } from '@make.org/components/ReportOptions/Button';
 import { ContentSeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { TallCardStyle } from '@make.org/ui/elements/CardsElements';
@@ -44,7 +45,7 @@ export const SingleProposalCard: React.FC<Props> = ({ proposal }) => {
   const isConsultationOpened = isInProgress(proposal.question);
   const topComponentContext: TopComponentContextValueType =
     TopComponentContextValue.getSingleProposal();
-  const { state } = useAppContext();
+  const { state, dispatch } = useAppContext();
   const { country } = state.appConfig;
   const isAnonymous = proposal.author.userType === USER.TYPE_ANONYMOUS;
   const [showOriginal, setShowOriginal] = useState<boolean>(false);
@@ -53,11 +54,21 @@ export const SingleProposalCard: React.FC<Props> = ({ proposal }) => {
     proposal
   );
 
+  const switchProposalContent = () => {
+    setShowOriginal(!showOriginal);
+    dispatch(closePanel());
+    dispatch(removePanelContent());
+  };
+
   return (
     <TopComponentContext.Provider value={topComponentContext}>
       <TallCardStyle id="proposal_card">
         <InnerProposalStyle>
-          {!showOriginal && <ReportOptionsButton />}
+          {!showOriginal && (
+            <ReportOptionsButton
+              switchProposalContent={switchProposalContent}
+            />
+          )}
           <DeprecatedProposalAuthor proposal={proposal} />
           {!isAnonymous && <ProposalCardSeparatorStyle />}
           <ScreenReaderItemStyle>
