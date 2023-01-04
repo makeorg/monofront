@@ -1,10 +1,4 @@
-import React, {
-  FC,
-  Dispatch,
-  SetStateAction,
-  useEffect,
-  useState,
-} from 'react';
+import React, { FC, Dispatch, SetStateAction, useEffect } from 'react';
 import { ProposalType, QuestionType } from '@make.org/types';
 import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
@@ -15,6 +9,7 @@ import {
   SequenceContainerStyle,
   SequenceContentStyle,
 } from '@make.org/components/Sequence/style';
+import { useSwitchProposalContent } from '@make.org/utils/hooks/useSwitchProposalContent';
 import { SequenceProgress } from '@make.org/components/Sequence/Progress';
 import {
   IntroProposalRedButtonStyle,
@@ -33,18 +28,15 @@ import { getProposalContent } from '@make.org/utils/helpers/proposal';
 
 type Props = {
   handleChange: Dispatch<SetStateAction<boolean>>;
-  switchProposalContent: () => void;
 };
 
-export const IntroProposal: FC<Props> = ({
-  handleChange,
-  switchProposalContent,
-}) => {
+export const IntroProposal: FC<Props> = ({ handleChange }) => {
   const { state } = useAppContext();
   const question: QuestionType = selectCurrentQuestion(state);
   const proposal: ProposalType | null | undefined =
     question.activeFeatureData?.topProposal;
-  const [showOriginal, setShowOriginal] = useState<boolean>(false);
+  const { switchProposalContent, showOriginal, setShowOriginal } =
+    useSwitchProposalContent();
   const { proposalContent, proposalLanguage } = getProposalContent(
     showOriginal,
     proposal
@@ -77,9 +69,10 @@ export const IntroProposal: FC<Props> = ({
             data-cy-card-number={0}
             className="widget"
           >
-            {!showOriginal && (
+            {!!proposal.translatedContent && (
               <ReportOptionsButton
                 switchProposalContent={switchProposalContent}
+                showOriginal={showOriginal}
               />
             )}
             <ProposalAuthor proposal={proposal} />
@@ -89,7 +82,7 @@ export const IntroProposal: FC<Props> = ({
             <SequenceProposalStyle lang={proposalLanguage} className="widget">
               {proposalContent}
             </SequenceProposalStyle>
-            {!!proposal.translatedLanguage && (
+            {!!proposal.translatedContent && (
               <ShowTranslation
                 showOriginal={showOriginal}
                 onClickAction={() => setShowOriginal(!showOriginal)}

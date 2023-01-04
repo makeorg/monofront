@@ -6,6 +6,7 @@ import { ProposalCardType } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
 import { CARD, NOTIF } from '@make.org/types/enums';
 import { ReportOptionsButton } from '@make.org/components/ReportOptions/Button';
+import { useSwitchProposalContent } from '@make.org/utils/hooks/useSwitchProposalContent';
 import {
   disableFirstProposal,
   incrementSequenceIndex,
@@ -32,16 +33,13 @@ import { Tip } from '../../Notifications/Tip';
 type Props = {
   /** Proposal card */
   proposalCard: ProposalCardType;
-  switchProposalContent: () => void;
 };
 
 /**
  * Handles Proposal Card Business Logic
  */
-export const ProposalCard: React.FC<Props> = ({
-  proposalCard,
-  switchProposalContent,
-}) => {
+
+export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
   const { state, dispatch } = useAppContext();
 
   const [proposal, setProposal] = useState(proposalCard.configuration.proposal);
@@ -50,7 +48,8 @@ export const ProposalCard: React.FC<Props> = ({
   const { votes = [] } = cards[index]?.state ? cards[index].state : {};
   const votedProposal = votes.find(vote => vote.hasVoted === true);
   const [displayNextButton, setDisplayNextButton] = useState(votedProposal);
-  const [showOriginal, setShowOriginal] = useState<boolean>(false);
+  const { switchProposalContent, showOriginal, setShowOriginal } =
+    useSwitchProposalContent();
 
   const getLastCardIndex = () => {
     const allProposals = cards.filter(
@@ -105,8 +104,11 @@ export const ProposalCard: React.FC<Props> = ({
 
   return (
     <SequenceProposalWrapperStyle>
-      {!showOriginal && (
-        <ReportOptionsButton switchProposalContent={switchProposalContent} />
+      {!!proposal.translatedContent && (
+        <ReportOptionsButton
+          switchProposalContent={switchProposalContent}
+          showOriginal={showOriginal}
+        />
       )}
       <ProposalAuthor proposal={proposal} />
       <SequenceProposalAndVoteWrapperStyle>
@@ -142,7 +144,7 @@ export const ProposalCard: React.FC<Props> = ({
               : i18n.t('proposal_card.next')}
           </SequenceNextCardButtonStyle>
         )}
-        {!displayNextButton && !!proposal.translatedLanguage && (
+        {!displayNextButton && !!proposal.translatedContent && (
           <ShowTranslation
             showOriginal={showOriginal}
             onClickAction={() => setShowOriginal(!showOriginal)}

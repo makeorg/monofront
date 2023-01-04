@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Vote } from '@make.org/components/Vote';
 import { ProposalType } from '@make.org/types';
 import {
@@ -11,6 +11,7 @@ import {
   ProposalLinkElementStyle,
   ProposalInnerStyle,
 } from '@make.org/ui/elements/ProposalCardElements';
+import { useSwitchProposalContent } from '@make.org/utils/hooks/useSwitchProposalContent';
 import { ReportOptionsButton } from '@make.org/components/ReportOptions/Button';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
@@ -35,7 +36,6 @@ type Props = {
   withOrganisations?: boolean;
   /** Enable radius on Mobile */
   withMobileRadius?: boolean;
-  switchProposalContent: () => void;
 };
 
 export const ProposalCardWithQuestion: React.FC<Props> = ({
@@ -44,7 +44,6 @@ export const ProposalCardWithQuestion: React.FC<Props> = ({
   size,
   withOrganisations = false,
   withMobileRadius = false,
-  switchProposalContent,
 }) => {
   const { state } = useAppContext();
   const { country } = state.appConfig;
@@ -55,7 +54,8 @@ export const ProposalCardWithQuestion: React.FC<Props> = ({
     proposal.slug
   );
   const canVote = isInProgress(proposal.question);
-  const [showOriginal, setShowOriginal] = useState<boolean>(false);
+  const { switchProposalContent, showOriginal, setShowOriginal } =
+    useSwitchProposalContent();
   const { proposalContent, proposalLanguage } = getProposalContent(
     showOriginal,
     proposal
@@ -67,8 +67,11 @@ export const ProposalCardWithQuestion: React.FC<Props> = ({
       aria-posinset={position}
       aria-setsize={size}
     >
-      {!showOriginal && (
-        <ReportOptionsButton switchProposalContent={switchProposalContent} />
+      {!!proposal.translatedContent && (
+        <ReportOptionsButton
+          switchProposalContent={switchProposalContent}
+          showOriginal={showOriginal}
+        />
       )}
       <AuthorWrapperStyle>
         <DeprecatedProposalAuthor proposal={proposal} withAvatar />
@@ -81,7 +84,7 @@ export const ProposalCardWithQuestion: React.FC<Props> = ({
           <ProposalLinkElementStyle to={proposalLink} lang={proposalLanguage}>
             {proposalContent}
           </ProposalLinkElementStyle>
-          {!!proposal.translatedLanguage && (
+          {!!proposal.translatedContent && (
             <ShowTranslation
               showOriginal={showOriginal}
               onClickAction={() => setShowOriginal(!showOriginal)}

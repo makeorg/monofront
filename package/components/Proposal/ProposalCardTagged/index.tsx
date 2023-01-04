@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { ProposalType } from '@make.org/types';
 import { getProposalLink } from '@make.org/utils/helpers/url';
 import {
@@ -6,7 +6,7 @@ import {
   ProposalLinkElementStyle,
   ProposalInnerStyle,
 } from '@make.org/ui/elements/ProposalCardElements';
-import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
+import { useSwitchProposalContent } from '@make.org/utils/hooks/useSwitchProposalContent';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import i18n from 'i18next';
@@ -32,7 +32,7 @@ type Props = {
 };
 
 export const ProposalCardTagged: FC<Props> = ({ proposal, position, size }) => {
-  const { state, dispatch } = useAppContext();
+  const { state } = useAppContext();
   const { country } = state.appConfig;
 
   const proposalLink = getProposalLink(
@@ -42,22 +42,20 @@ export const ProposalCardTagged: FC<Props> = ({ proposal, position, size }) => {
     proposal.slug
   );
   const canVote = isInProgress(proposal.question);
-  const [showOriginal, setShowOriginal] = useState<boolean>(false);
+  const { switchProposalContent, showOriginal, setShowOriginal } =
+    useSwitchProposalContent();
   const { proposalContent, proposalLanguage } = getProposalContent(
     showOriginal,
     proposal
   );
 
-  const switchProposalContent = () => {
-    setShowOriginal(!showOriginal);
-    dispatch(closePanel());
-    dispatch(removePanelContent());
-  };
-
   return (
     <ProposalCardStyle aria-posinset={position} aria-setsize={size}>
-      {!showOriginal && (
-        <ReportOptionsButton switchProposalContent={switchProposalContent} />
+      {!!proposal.translatedContent && (
+        <ReportOptionsButton
+          switchProposalContent={switchProposalContent}
+          showOriginal={showOriginal}
+        />
       )}
       <AuthorWrapperStyle>
         <DeprecatedProposalAuthor
@@ -78,7 +76,7 @@ export const ProposalCardTagged: FC<Props> = ({ proposal, position, size }) => {
           >
             {proposalContent}
           </ProposalLinkElementStyle>
-          {!!proposal.translatedLanguage && (
+          {!!proposal.translatedContent && (
             <ShowTranslation
               showOriginal={showOriginal}
               onClickAction={() => setShowOriginal(!showOriginal)}

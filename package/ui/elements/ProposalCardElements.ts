@@ -41,6 +41,7 @@ export const ProposalElementStyle = styled.p`
 `;
 
 export const ProposalCardStyle = styled(CardStyle)`
+  position: relative;
   margin: 20px 0 0;
   height: 100%;
   &.mobile-radius {

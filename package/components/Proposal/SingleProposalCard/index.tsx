@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import i18n from 'i18next';
 import { Link } from 'react-router-dom';
 import { ProposalType } from '@make.org/types';
@@ -6,13 +6,13 @@ import {
   getSequenceLink,
   getParticipateLink,
 } from '@make.org/utils/helpers/url';
-import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
 import { ReportOptionsButton } from '@make.org/components/ReportOptions/Button';
 import { ContentSeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { TallCardStyle } from '@make.org/ui/elements/CardsElements';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { USER } from '@make.org/types/enums';
+import { useSwitchProposalContent } from '@make.org/utils/hooks/useSwitchProposalContent';
 import {
   TopComponentContext,
   TopComponentContextValueType,
@@ -45,28 +45,24 @@ export const SingleProposalCard: React.FC<Props> = ({ proposal }) => {
   const isConsultationOpened = isInProgress(proposal.question);
   const topComponentContext: TopComponentContextValueType =
     TopComponentContextValue.getSingleProposal();
-  const { state, dispatch } = useAppContext();
+  const { state } = useAppContext();
   const { country } = state.appConfig;
   const isAnonymous = proposal.author.userType === USER.TYPE_ANONYMOUS;
-  const [showOriginal, setShowOriginal] = useState<boolean>(false);
+  const { switchProposalContent, showOriginal, setShowOriginal } =
+    useSwitchProposalContent();
   const { proposalContent, proposalLanguage } = getProposalContent(
     showOriginal,
     proposal
   );
 
-  const switchProposalContent = () => {
-    setShowOriginal(!showOriginal);
-    dispatch(closePanel());
-    dispatch(removePanelContent());
-  };
-
   return (
     <TopComponentContext.Provider value={topComponentContext}>
       <TallCardStyle id="proposal_card">
         <InnerProposalStyle>
-          {!showOriginal && (
+          {!!proposal.translatedContent && (
             <ReportOptionsButton
               switchProposalContent={switchProposalContent}
+              showOriginal={showOriginal}
             />
           )}
           <DeprecatedProposalAuthor proposal={proposal} />
@@ -90,7 +86,7 @@ export const SingleProposalCard: React.FC<Props> = ({ proposal }) => {
             />
           )}
         </InnerProposalStyle>
-        {!!proposal.translatedLanguage && (
+        {!!proposal.translatedContent && (
           <ShowTranslation
             showOriginal={showOriginal}
             onClickAction={() => setShowOriginal(!showOriginal)}

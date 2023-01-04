@@ -1,9 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { ProposalType, SliderParamsType } from '@make.org/types';
 import { useSlider } from '@make.org/utils/hooks/useSlider';
 import { GliderStylesheet } from '@make.org/assets/css-in-js/GliderStyle';
-import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
-import { useAppContext } from '@make.org/store';
 import {
   TopComponentContext,
   TopComponentContextValue,
@@ -23,19 +21,12 @@ const SearchSliderParams: SliderParamsType = {
 };
 
 export const MainResultsProposalsMobile: React.FC<Props> = ({ proposals }) => {
-  const { dispatch } = useAppContext();
   const sliderRef = useRef<HTMLDivElement>(null);
   const hasProposals = proposals.length > 0;
   useSlider(sliderRef, SearchSliderParams, hasProposals);
   const topComponentContext: TopComponentContextValueType =
     TopComponentContextValue.getSearchResultProposalList();
-  const [showOriginal, setShowOriginal] = useState<boolean>(false);
 
-  const switchProposalContent = () => {
-    setShowOriginal(!showOriginal);
-    dispatch(closePanel());
-    dispatch(removePanelContent());
-  };
   return (
     <TopComponentContext.Provider value={topComponentContext}>
       <GliderStylesheet />
@@ -52,7 +43,6 @@ export const MainResultsProposalsMobile: React.FC<Props> = ({ proposals }) => {
                   position={index + 1}
                   size={proposals.length}
                   withMobileRadius
-                  switchProposalContent={switchProposalContent}
                 />
               </SearchSliderListItemStyle>
             ))}

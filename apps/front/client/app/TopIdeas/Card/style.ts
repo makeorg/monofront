@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { color, typography } from 'athena-design-tokens';
-import { PopularProposalHeader } from '@make.org/components/Proposal/PopularProposalCard/style';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
@@ -8,6 +7,7 @@ import { SvgIdea, SvgLike, SvgThumbsUp } from '@make.org/ui/Svg/elements';
 import { Link } from 'react-router-dom';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
+import { Elements } from '@make.org/assets/vars/Elements';
 import { CardStyle } from '@make.org/ui/elements/CardsElements';
 
 export const TopIdeaCardStyle = styled(CardStyle)`
@@ -17,13 +17,17 @@ export const TopIdeaCardStyle = styled(CardStyle)`
   justify-content: flex-start;
 `;
 
-export const TopIdeaCardHeaderStyle = styled(PopularProposalHeader)`
+export const TopIdeaCardHeaderStyle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: ${MakeFonts.CircularStandardBold};
   font-weight: bold;
   background-color: ${color.grey};
+  color: ${color.black};
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  border-radius: ${intToPx(Elements.BorderRadius)};
 `;
 
 export const TopIdeaLinkStyle = styled(Link)`

@@ -1,10 +1,10 @@
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { ProposalAuthor } from '@make.org/components/Proposal/Author';
 import { ProposalSkeleton } from '@make.org/ui/components/Skeletons/Proposal';
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { getProposalLink } from '@make.org/utils/helpers/url';
 import i18n from 'i18next';
-import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
+import { useSwitchProposalContent } from '@make.org/utils/hooks/useSwitchProposalContent';
 import { ReportOptionsButton } from '@make.org/components/ReportOptions/Button';
 import { ProposalType } from '@make.org/types';
 import { Vote } from '@make.org/components/Vote';
@@ -50,23 +50,20 @@ const generateSkeletonsList = (count: number) => {
 };
 
 export const ProposalsCard: FC<CardProps> = ({ proposal, country, index }) => {
-  const [showOriginal, setShowOriginal] = useState<boolean>(false);
+  const { switchProposalContent, showOriginal, setShowOriginal } =
+    useSwitchProposalContent();
   const { proposalContent, proposalLanguage } = getProposalContent(
     showOriginal,
     proposal
   );
-  const { dispatch } = useAppContext();
-
-  const switchProposalContent = () => {
-    setShowOriginal(!showOriginal);
-    dispatch(closePanel());
-    dispatch(removePanelContent());
-  };
 
   return (
     <ProposalCardStyle>
-      {!showOriginal && (
-        <ReportOptionsButton switchProposalContent={switchProposalContent} />
+      {!!proposal.translatedContent && (
+        <ReportOptionsButton
+          switchProposalContent={switchProposalContent}
+          showOriginal={showOriginal}
+        />
       )}
       <ProposalAuthor proposal={proposal} />
       <ProposalAndVoteWrapperStyle>
@@ -91,10 +88,12 @@ export const ProposalsCard: FC<CardProps> = ({ proposal, country, index }) => {
           index={index}
         />
       </ProposalAndVoteWrapperStyle>
-      <ShowTranslation
-        showOriginal={showOriginal}
-        onClickAction={() => setShowOriginal(!showOriginal)}
-      />
+      {!!proposal.translatedContent && (
+        <ShowTranslation
+          showOriginal={showOriginal}
+          onClickAction={() => setShowOriginal(!showOriginal)}
+        />
+      )}
       <ScreenReaderItemStyle>
         {i18n.t('proposal_card.author.date')}
       </ScreenReaderItemStyle>

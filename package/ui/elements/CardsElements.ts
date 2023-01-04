@@ -18,6 +18,7 @@ import { LinkAsRedButtonStyle, RedButtonStyle } from './ButtonsElements';
 export const CardStyle = styled.article`
   display: flex;
   flex-flow: column;
+  position: relative;
   justify-content: space-between;
   width: 100%;
   flex: 1 1 auto;

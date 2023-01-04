@@ -12,10 +12,21 @@ export const AuthorWrapperStyle = styled.div`
   border-bottom: 1px solid ${color.greyLighter};
 `;
 
+export const AuthorContainerStyle = styled.div`
+  display: flex;
+  width: auto;
+`;
+
 export const AuthorDescriptionStyle = styled.div`
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+
+export const AuthorReportButton = styled.div`
+  display: flex;
+  width: 40px;
 `;
 
 export const AuthorInfosStyle = styled(ParagraphStyle)`

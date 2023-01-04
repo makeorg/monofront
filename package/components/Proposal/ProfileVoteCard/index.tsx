@@ -1,4 +1,4 @@
-import React, { FC, useMemo, useState } from 'react';
+import React, { FC, useMemo } from 'react';
 import i18n from 'i18next';
 import { OrganisationType, ProposalType } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
@@ -10,6 +10,7 @@ import {
 } from '@make.org/utils/helpers/url';
 import { formatOrganisationName } from '@make.org/utils/helpers/stringFormatter';
 import { CardStyle } from '@make.org/ui/elements/CardsElements';
+import { useSwitchProposalContent } from '@make.org/utils/hooks/useSwitchProposalContent';
 import { AuthorWrapperStyle } from '@make.org/components/Proposal/DeprecatedAuthor/Styled';
 import { DeprecatedProposalAuthor } from '@make.org/components/Proposal/DeprecatedAuthor';
 import {
@@ -20,6 +21,7 @@ import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElemen
 import { getProposalContent } from '@make.org/utils/helpers/proposal';
 import { ShowTranslation } from '../ShowTranslationElement';
 import { CertifiedIconStyle } from '../Author/style';
+import { ReportOptionsButton } from '../../ReportOptions/Button';
 import {
   ProfileVoteCardStyle,
   ProfileVoteWrapperStyle,
@@ -60,7 +62,8 @@ export const ProfileVoteCard: FC<Props> = ({
       ]),
     [i18n.language]
   );
-  const [showOriginal, setShowOriginal] = useState<boolean>(false);
+  const { switchProposalContent, showOriginal, setShowOriginal } =
+    useSwitchProposalContent();
   const { proposalContent, proposalLanguage } = getProposalContent(
     showOriginal,
     proposal
@@ -91,6 +94,12 @@ export const ProfileVoteCard: FC<Props> = ({
       </ProfileVoteTitleStyle>
       <ProfileVoteCardStyle>
         <CardStyle as="div">
+          {!!proposal.translatedContent && (
+            <ReportOptionsButton
+              switchProposalContent={switchProposalContent}
+              showOriginal={showOriginal}
+            />
+          )}
           <AuthorWrapperStyle>
             <DeprecatedProposalAuthor proposal={proposal} withAvatar />
           </AuthorWrapperStyle>
@@ -110,7 +119,7 @@ export const ProfileVoteCard: FC<Props> = ({
             >
               {proposalContent}
             </ProposalLinkElementStyle>
-            {!!proposal.translatedLanguage && (
+            {!!proposal.translatedContent && (
               <ShowTranslation
                 showOriginal={showOriginal}
                 onClickAction={() => setShowOriginal(!showOriginal)}

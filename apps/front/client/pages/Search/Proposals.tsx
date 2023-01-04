@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ProposalType } from '@make.org/types';
 import i18n from 'i18next';
-import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
 import { searchProposals } from '@make.org/utils/helpers/proposal';
 import { ProposalCardWithQuestion } from '@make.org/components/Proposal/ProposalCardWithQuestion';
 import { Spinner } from '@make.org/ui/components/Loading/Spinner';
@@ -35,7 +34,7 @@ export const SearchResultsProposals: React.FC<RouteComponentProps> = ({
   location,
   history,
 }) => {
-  const { state, dispatch } = useAppContext();
+  const { state } = useAppContext();
   const { country, device } = state.appConfig;
   const params = new URLSearchParams(location.search);
   const term = params.get('query') || '';
@@ -48,12 +47,6 @@ export const SearchResultsProposals: React.FC<RouteComponentProps> = ({
     proposalsCount > proposalsResult.length &&
     !isLoading;
   const isDesktop = matchDesktopDevice(device);
-  const [showOriginal, setShowOriginal] = useState<boolean>(false);
-  const switchProposalContent = () => {
-    setShowOriginal(!showOriginal);
-    dispatch(closePanel());
-    dispatch(removePanelContent());
-  };
 
   const initProposal = async () => {
     const result = await searchProposals(
@@ -136,7 +129,6 @@ export const SearchResultsProposals: React.FC<RouteComponentProps> = ({
                     proposal={proposal}
                     position={index + 1}
                     size={proposalsResult.length}
-                    switchProposalContent={switchProposalContent}
                   />
                 </SearchResultsProposalItemStyle>
               ))}

@@ -16,10 +16,12 @@ import {
 
 type Props = {
   switchProposalContent: () => void;
+  showOriginal: boolean;
 };
 
 export const FirstStepReportOptions: React.FC<Props> = ({
   switchProposalContent,
+  showOriginal,
 }) => {
   const { dispatch } = useAppContext();
 
@@ -37,7 +39,9 @@ export const FirstStepReportOptions: React.FC<Props> = ({
         <ReportOptionsButtonStyle onClick={switchProposalContent}>
           <SvgTranslation />
           <ReportOptionsButtonTextStyle>
-            {i18n.t('report_translations.see_original_button')}
+            {!showOriginal
+              ? i18n.t('proposal_card.original')
+              : i18n.t('proposal_card.translation')}
           </ReportOptionsButtonTextStyle>
         </ReportOptionsButtonStyle>
         <ReportOptionsSeparatorStyle />
@@ -49,6 +53,7 @@ export const FirstStepReportOptions: React.FC<Props> = ({
                 setPanelContent(
                   <SecondStepForm
                     switchProposalContent={switchProposalContent}
+                    showOriginal={showOriginal}
                   />
                 )
               )

@@ -1,9 +1,10 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import i18n from 'i18next';
 import { ProposalType } from '@make.org/types';
 import { AuthorWrapperStyle } from '@make.org/components/Proposal/DeprecatedAuthor/Styled';
 import { DeprecatedProposalAuthor } from '@make.org/components/Proposal/DeprecatedAuthor';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
+import { useSwitchProposalContent } from '@make.org/utils/hooks/useSwitchProposalContent';
 import {
   ProposalElementStyle,
   ProposalLinkElementStyle,
@@ -32,7 +33,8 @@ export const ProfileProposalCard: FC<Props> = ({
   position,
   size,
 }) => {
-  const [showOriginal, setShowOriginal] = useState<boolean>(false);
+  const { switchProposalContent, showOriginal, setShowOriginal } =
+    useSwitchProposalContent();
   const { proposalContent, proposalLanguage } = getProposalContent(
     showOriginal,
     proposal
@@ -64,6 +66,8 @@ export const ProfileProposalCard: FC<Props> = ({
           proposal={proposal}
           withAvatar
           formattedProposalStatus={formattedProposalStatus}
+          switchProposalContent={switchProposalContent}
+          showOriginal={showOriginal}
         />
       </AuthorWrapperStyle>
       <ScreenReaderItemStyle>
@@ -78,7 +82,7 @@ export const ProfileProposalCard: FC<Props> = ({
           >
             {proposalContent}
           </ProposalLinkElementStyle>
-          {!!proposal.translatedLanguage && (
+          {!!proposal.translatedContent && (
             <ShowTranslation
               showOriginal={showOriginal}
               onClickAction={() => setShowOriginal(!showOriginal)}
@@ -93,7 +97,7 @@ export const ProfileProposalCard: FC<Props> = ({
           >
             {proposalContent}
           </ProposalElementStyle>
-          {!!proposal.translatedLanguage && (
+          {!!proposal.translatedContent && (
             <ShowTranslation
               showOriginal={showOriginal}
               onClickAction={() => setShowOriginal(!showOriginal)}

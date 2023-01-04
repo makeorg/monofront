@@ -8,10 +8,12 @@ import { ReportOptionsButtonStyle } from './style';
 
 type Props = {
   switchProposalContent: () => void;
+  showOriginal: boolean;
 };
 
 export const ReportOptionsButton: React.FC<Props> = ({
   switchProposalContent,
+  showOriginal,
 }) => {
   const { dispatch } = useAppContext();
   return (
@@ -22,6 +24,7 @@ export const ReportOptionsButton: React.FC<Props> = ({
           setPanelContent(
             <FirstStepReportOptions
               switchProposalContent={switchProposalContent}
+              showOriginal={showOriginal}
             />
           )
         )

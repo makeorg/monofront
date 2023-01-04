@@ -146,6 +146,7 @@ export const ReportFormBackButtonWrapperStyle = styled.button`
   background-color: transparent;
   margin: 0 auto 30px;
   width: 375px;
+  align-items: center;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     width: 420px;
   }

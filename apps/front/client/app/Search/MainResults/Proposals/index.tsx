@@ -3,7 +3,6 @@ import { ProposalType } from '@make.org/types';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { ProposalCardWithQuestion } from '@make.org/components/Proposal/ProposalCardWithQuestion';
 import i18n from 'i18next';
-import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
 import { searchProposals } from '@make.org/utils/helpers/proposal';
 import { Spinner } from '@make.org/ui/components/Loading/Spinner';
 import {
@@ -30,7 +29,7 @@ export const MainResultsProposals: React.FC<Props> = ({
   proposals,
   count,
 }) => {
-  const { state, dispatch } = useAppContext();
+  const { state } = useAppContext();
   const { country, device } = state.appConfig;
   const isMobile = matchMobileDevice(device);
   const [page, setPage] = useState<number>(1);
@@ -40,7 +39,6 @@ export const MainResultsProposals: React.FC<Props> = ({
   const PROPOSALS_LIMIT = 4;
   const getMoreButton =
     count > PROPOSALS_LIMIT && count !== proposalsResult.length && !isLoading;
-  const [showOriginal, setShowOriginal] = useState<boolean>(false);
 
   // Page increment need to be reset if the serach term is changing
   useEffect(() => setPage(1), [searchTerm]);
@@ -70,12 +68,6 @@ export const MainResultsProposals: React.FC<Props> = ({
     setIsLoading(false);
   };
 
-  const switchProposalContent = () => {
-    setShowOriginal(!showOriginal);
-    dispatch(closePanel());
-    dispatch(removePanelContent());
-  };
-
   if (isMobile) {
     return <MainResultsProposalsMobile proposals={proposals} />;
   }
@@ -92,7 +84,6 @@ export const MainResultsProposals: React.FC<Props> = ({
                 proposal={proposal}
                 position={index + 1}
                 size={proposalsResult.length}
-                switchProposalContent={switchProposalContent}
               />
             </MainResultsProposalsItemStyle>
           ))}

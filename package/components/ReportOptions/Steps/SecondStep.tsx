@@ -55,9 +55,13 @@ export const ReportOptionsLabel: Array<{
 
 type Props = {
   switchProposalContent: () => void;
+  showOriginal: boolean;
 };
 
-export const SecondStepForm: React.FC<Props> = ({ switchProposalContent }) => {
+export const SecondStepForm: React.FC<Props> = ({
+  switchProposalContent,
+  showOriginal,
+}) => {
   const { dispatch } = useAppContext();
   const [currentReport, setCurrentReport] = useState<string>('unclear');
   const checkCurrentReport = (
@@ -82,6 +86,7 @@ export const SecondStepForm: React.FC<Props> = ({ switchProposalContent }) => {
             setPanelContent(
               <FirstStepReportOptions
                 switchProposalContent={switchProposalContent}
+                showOriginal={showOriginal}
               />
             )
           )

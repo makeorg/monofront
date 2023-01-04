@@ -171,7 +171,7 @@ export const getProposalContent = (
   proposalContent?: string;
   proposalLanguage?: string;
 } => {
-  const isTranslated = !!proposal?.translatedLanguage && !showOriginal;
+  const isTranslated = !!proposal?.translatedContent && !showOriginal;
 
   const proposalContent = isTranslated
     ? proposal?.translatedContent

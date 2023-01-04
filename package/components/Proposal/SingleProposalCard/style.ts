@@ -18,6 +18,7 @@ import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 export const InnerProposalStyle = styled(MiddleColumnStyle)`
   width: 100%;
   flex: 1 1 auto;
+  position: relative;
 `;
 
 export const ProposalFooterStyle = styled.footer`
