@@ -3,7 +3,6 @@
 /* eslint-disable no-undef */
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { When, Then } from 'cypress-cucumber-preprocessor/steps';
-
 import { guid } from '../index.js';
 import * as user from '../../fixtures/user.json';
 
@@ -98,10 +97,10 @@ When(
     cy.intercept({ method: 'POST', url: '/user' }, req => {
       expect(req.body).to.include({
         password: userData.password,
-        firstName: userData.firstName,
-        dateOfBirth: userData.profile.dateOfBirth,
+        firstName: firstname,
+        dateOfBirth: `${new Date().getFullYear() - Number(age)}-01-01`,
         postalCode: postalcode ? userData.profile?.postalCode : null,
-        approvePrivacyPolicy: userData.approvePrivacyPolicy,
+        approvePrivacyPolicy: true,
       }),
         req.reply({
           statusCode: 200,
