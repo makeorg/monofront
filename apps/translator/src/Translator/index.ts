@@ -2,7 +2,7 @@ import {
   TranslationError,
   TranslatorProvider,
 } from './TranslatorProvider/types';
-import { deeplProvider } from './TranslatorProvider/DeeplProver';
+import { deeplProvider } from './TranslatorProvider/DeeplProvider';
 import {
   SupportedLanguages,
   TranslationDemand,
