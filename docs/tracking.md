@@ -700,4 +700,32 @@ Following parameters are added to all events.
   
   
 
+  - `display-solution-options-panel` display panel to report a translated solution
+
+    
+  
+
+  - `display-untranslated-solution` display untranslated solution
+
+    
+    | param_name | required | description | values |
+    |-|-|-|-|
+    | `type` | true | type name | `card`, `option-panel` |
+  
+  
+
+  - `display-report-options` display report options panel to report a translated solution
+
+    
+  
+
+  - `report-solution` submit a report option for a translated solution
+
+    
+    | param_name | required | description | values |
+    |-|-|-|-|
+    | `type` | true | type name | `unclear-translation`, `translation-error`, `false-information`, `offensive-solution` |
+  
+  
+
 </auto-generated-tracking-doc>

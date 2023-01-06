@@ -11,6 +11,7 @@ import {
   SvgCrossFakeInfo,
   SvgOffensif,
 } from '@make.org/ui/Svg/elements';
+import { trackReportSolution } from '@make.org/utils/services/Tracking';
 import { FirstStepReportOptions } from './FirstStep';
 import { ReportTranslationConfirmation } from './Confirmation';
 import {
@@ -32,22 +33,22 @@ export const ReportOptionsLabel: Array<{
   label: string;
 }> = [
   {
-    name: 'unclear',
+    name: 'unclear-translation',
     icon: <SvgQuestionMark />,
     label: i18n.t('report_translations.form.unclear'),
   },
   {
-    name: 'error',
+    name: 'translation-error',
     icon: <SvgErrorTranslation />,
     label: i18n.t('report_translations.form.error'),
   },
   {
-    name: 'false information',
+    name: 'false-information',
     icon: <SvgCrossFakeInfo />,
     label: i18n.t('report_translations.form.false_info'),
   },
   {
-    name: 'offensive',
+    name: 'offensive-solution',
     icon: <SvgOffensif />,
     label: i18n.t('report_translations.form.offensive'),
   },
@@ -76,6 +77,16 @@ export const SecondStepForm: React.FC<Props> = ({
 
   const handleSubmit = () => {
     dispatch(setPanelContent(<ReportTranslationConfirmation />));
+    trackReportSolution(currentReport);
+  };
+
+  const handleReportOptionsKeypress = (
+    event: React.KeyboardEvent<HTMLLIElement>,
+    name: string
+  ): void => {
+    if (event.key === 'Enter') {
+      setCurrentReport(name);
+    }
   };
 
   return (
@@ -110,11 +121,19 @@ export const SecondStepForm: React.FC<Props> = ({
           {ReportOptionsLabel.map(
             (item: { name: string; icon: JSX.Element; label?: string }) => (
               <ReportFormItemWrapperStyle
+                tabIndex={0}
                 key={item.name}
                 className={item.name === currentReport ? 'selected' : ''}
+                onKeyPress={event =>
+                  handleReportOptionsKeypress(
+                    event as React.KeyboardEvent<HTMLLIElement>,
+                    item.name
+                  )
+                }
               >
                 <ScreenReaderItemStyle>
                   <input
+                    tabIndex={-1}
                     id={item.name}
                     type="radio"
                     value={item.name}

@@ -662,3 +662,33 @@ CLICK_CONFIRM_LANGUAGE_COUNTRY:
       description: new selected country
     - key: newLanguage
       description: new selected language
+
+DISPLAY_SOLUTION_OPTIONS_PANEL:
+  key: display-solution-options-panel
+  description: display panel to report a translated solution
+
+DISPLAY_UNTRANSLATED_SOLUTION: 
+  key: display-untranslated-solution
+  description: display untranslated solution
+  parameters:
+    - key: type
+      description: type name
+      values: 
+        - card
+        - option-panel
+
+DISPLAY_REPORT_OPTIONS:
+  key: display-report-options
+  description: display report options panel to report a translated solution
+
+REPORT_SOLUTION:
+  key: report-solution
+  description: submit a report option for a translated solution
+  parameters:
+    - key: type
+      description: type name
+      values:
+        - unclear-translation
+        - translation-error
+        - false-information
+        - offensive-solution

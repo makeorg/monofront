@@ -636,5 +636,26 @@ export const trackClickConfirmLanguageCountry = (
   );
 };
 
+// Report a translated solution
+export const trackDisplaySolutionOptionsPanel = (): void => {
+  TrackingService.sendAllTrackers(
+    trackingEvent.DISPLAY_SOLUTION_OPTIONS_PANEL()
+  );
+};
+
+export const trackDisplayUntranslatedSolution = (type: string): void => {
+  TrackingService.sendAllTrackers(
+    trackingEvent.DISPLAY_UNTRANSLATED_SOLUTION({ type })
+  );
+};
+
+export const trackDisplayReportOptions = (): void => {
+  TrackingService.sendAllTrackers(trackingEvent.DISPLAY_REPORT_OPTIONS());
+};
+
+export const trackReportSolution = (type: string): void => {
+  TrackingService.sendAllTrackers(trackingEvent.REPORT_SOLUTION({ type }));
+};
+
 /* eslint-disable import/no-default-export */
 export default TrackingService;

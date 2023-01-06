@@ -3,6 +3,10 @@ import { SvgTranslation, SvgWarning } from '@make.org/ui/Svg/elements';
 import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
 import { setPanelContent } from '@make.org/store/actions/panel';
+import {
+  trackDisplayReportOptions,
+  trackDisplayUntranslatedSolution,
+} from '@make.org/utils/services/Tracking';
 import { SecondStepForm } from './SecondStep';
 import {
   ReportFirstStepWrapperStyle,
@@ -24,6 +28,23 @@ export const FirstStepReportOptions: React.FC<Props> = ({
   showOriginal,
 }) => {
   const { dispatch } = useAppContext();
+  const handleClickDisplayProposal = () => {
+    switchProposalContent();
+    if (!showOriginal) {
+      trackDisplayUntranslatedSolution('option-panel');
+    }
+  };
+  const handleClickDisplayReportPanel = () => {
+    dispatch(
+      setPanelContent(
+        <SecondStepForm
+          switchProposalContent={switchProposalContent}
+          showOriginal={showOriginal}
+        />
+      )
+    );
+    trackDisplayReportOptions();
+  };
 
   return (
     <ReportFirstStepWrapperStyle>
@@ -36,7 +57,7 @@ export const FirstStepReportOptions: React.FC<Props> = ({
         </ReportTextStyle>
       </header>
       <ReportOptionsWrapperStyle>
-        <ReportOptionsButtonStyle onClick={switchProposalContent}>
+        <ReportOptionsButtonStyle onClick={handleClickDisplayProposal}>
           <SvgTranslation />
           <ReportOptionsButtonTextStyle>
             {!showOriginal
@@ -47,18 +68,7 @@ export const FirstStepReportOptions: React.FC<Props> = ({
         <ReportOptionsSeparatorStyle />
         <ReportOptionsButtonStyle>
           <SvgWarning />
-          <ReportOptionsButtonTextStyle
-            onClick={() =>
-              dispatch(
-                setPanelContent(
-                  <SecondStepForm
-                    switchProposalContent={switchProposalContent}
-                    showOriginal={showOriginal}
-                  />
-                )
-              )
-            }
-          >
+          <ReportOptionsButtonTextStyle onClick={handleClickDisplayReportPanel}>
             {i18n.t('report_translations.form.report')}
           </ReportOptionsButtonTextStyle>
         </ReportOptionsButtonStyle>
