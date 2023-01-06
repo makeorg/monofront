@@ -69,7 +69,7 @@ stages:
 
 .translator:
   variables:
-    IMAGE_NAME: make-translator
+    IMAGE_NAME: translator
     IMAGE_APP_TARGET: app-production
     IMAGE_APP_PATH: apps/translator/Dockerfile
     RUNDECK_JOB_ID: $RUNDECK_TRANSLATOR_JOB_ID
