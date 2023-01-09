@@ -61,13 +61,8 @@ sequenceRouter.get('/standard/:questionId/first-proposal', (req, res) => {
   });
 });
 
-sequenceRouter.get('/consensus/:questionId', (req, res) => {
-  const proposalsOfQuestion = fixtures.proposals.filter(
-    proposal => proposal.question.questionId === req.params.questionId
-  );
-
-  const proposals = proposalsOfQuestion.slice(12, 24);
-
+// returns proposals sequence with demographics
+const getProposals = (proposals, req, res) => {
   if (req.query && req.query.include) {
     const includes = [req.query.include].flat();
     let index = 0;
@@ -85,6 +80,16 @@ sequenceRouter.get('/consensus/:questionId', (req, res) => {
     proposals,
     demographics: fixtures.demographics,
   });
+}
+
+sequenceRouter.get('/consensus/:questionId', (req, res) => {
+  const proposalsOfQuestion = fixtures.proposals.filter(
+    proposal => proposal.question.questionId === req.params.questionId
+  );
+
+  const proposals = proposalsOfQuestion.slice(12, 24);
+  getProposals(proposals, req, res);
+
 });
 
 sequenceRouter.get('/controversy/:questionId', (req, res) => {
@@ -93,24 +98,19 @@ sequenceRouter.get('/controversy/:questionId', (req, res) => {
   );
 
   const proposals = proposalsOfQuestion.slice(12, 24);
+  getProposals(proposals, req, res);
 
-  if (req.query && req.query.include) {
-    const includes = [req.query.include].flat();
-    let index = 0;
-    includes.forEach(proposalId => {
-      proposals[index] = fixtures.proposals.find(
-        proposal => proposal.id === proposalId
-      ) || fixtures.firstProposals.find(
-        proposal => proposal.id === proposalId
-      );
-      index += 1;
-    });
-  }
+});
 
-  return res.send({
-    proposals,
-    demographics: fixtures.demographics,
-  });
+
+sequenceRouter.get('/keyword/:questionId/:keyword', (req, res) => {
+  const proposalsOfQuestion = fixtures.proposals.filter(
+    proposal => proposal.question.questionId === req.params.questionId
+  );
+
+  const proposals = proposalsOfQuestion.slice(12, 24);
+  getProposals(proposals, req, res);
+
 });
 
 module.exports = sequenceRouter;
