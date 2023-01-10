@@ -1,0 +1,564 @@
+{
+  "context": "Consultation citoyenne réalisée par Make.org du 2022-09-21 au 2022-11-16, autour de la question: Quelles solutions pour faire des économies d’énergie au quotidien ?",
+  "key_figures": {
+    "visitors": 75201,
+    "votes": 405458,
+    "proposals": 1491
+  },
+  "top_ideas": [
+    {
+      "name": "Éclairages publics et commerciaux",
+      "ideas": [
+        {
+          "idea": "Éteindre systématiquement les éclairages dans les bureaux et magasins la nuit",
+          "agreement": 90,
+          "adhesion": 19,
+          "realistic": 36
+        },
+        {
+          "idea": "Interdire les panneaux publicitaires numériques et enseignes lumineuses",
+          "agreement": 86,
+          "adhesion": 18,
+          "realistic": 33
+        },
+        {
+          "idea": "Réduire l'impact énergétique des éclairages urbains",
+          "agreement": 85,
+          "adhesion": 17,
+          "realistic": 32
+        }
+      ]
+    },
+    {
+      "name": "Transports",
+      "ideas": [
+        {
+          "idea": "Développer massivement les transports en commun sur le territoire",
+          "agreement": 79,
+          "adhesion": 21,
+          "realistic": 24
+        }
+      ]
+    },
+    {
+      "name": "Isolation et chauffage",
+      "ideas": [
+        {
+          "idea": "Accélérer et généraliser l'isolation et la rénovation énergétique des bâtiments",
+          "agreement": 85,
+          "adhesion": 17,
+          "realistic": 31
+        },
+        {
+          "idea": "Mieux réguler le chauffage et la climatisation dans les magasins, bureaux et administrations",
+          "agreement": 82,
+          "adhesion": 13,
+          "realistic": 32
+        }
+      ]
+    },
+    {
+      "name": "Énergies renouvelables",
+      "ideas": [
+        {
+          "idea": "Développer l'énergie solaire, en particulier sur les bâtiments publics, commerciaux, et les parkings",
+          "agreement": 81,
+          "adhesion": 19,
+          "realistic": 28
+        }
+      ]
+    },
+    {
+      "name": "Comportements individuels",
+      "ideas": [
+        {
+          "idea": "Exiger l'exemplarité des institutions en matière de sobriété énergétique",
+          "agreement": 76,
+          "adhesion": 19,
+          "realistic": 26
+        }
+      ]
+    },
+    {
+      "name": "Modes de production et de consommation",
+      "ideas": [
+        {
+          "idea": "Privilégier la production et la consommation locale",
+          "agreement": 83,
+          "adhesion": 24,
+          "realistic": 22
+        },
+        {
+          "idea": "Augmenter la durée de vie des produits",
+          "agreement": 81,
+          "adhesion": 19,
+          "realistic": 27
+        },
+        {
+          "idea": "Limiter la production et l’usage d'emballages",
+          "agreement": 81,
+          "adhesion": 19,
+          "realistic": 29
+        }
+      ]
+    },
+    {
+      "name": "Gestion des ressources",
+      "ideas": [
+        {
+          "idea": "Végétaliser les villes et l'habitat",
+          "agreement": 86,
+          "adhesion": 24,
+          "realistic": 28
+        },
+        {
+          "idea": "Améliorer la gestion de l'eau",
+          "agreement": 80,
+          "adhesion": 16,
+          "realistic": 31
+        }
+      ]
+    }
+  ],
+  "controversials": [
+    {
+      "id": "8ff8f082-0eab-47c2-874c-84036dab4dc9",
+      "content": "Il faut passer de 130 à 110 km/h sur autoroute = baisse de consommation de l'ordre de 25% sur le carburant",
+      "author": "Marion",
+      "agree": 41,
+      "like_it": 9,
+      "disagree": 40,
+      "no_way": 22,
+      "votes": 304
+    },
+    {
+      "id": "db62ebde-277a-4d48-a133-dd9f7ceab190",
+      "content": "Il faut un compte carbone. Chaque consommation (maison, transport, achats) est mesurée, avec bilan mensuel par SMS pour sensibiliser",
+      "author": "Marion",
+      "agree": 33,
+      "like_it": 8,
+      "disagree": 37,
+      "no_way": 13,
+      "votes": 297
+    },
+    {
+      "id": "a4f35729-1aff-4918-9976-6e5a7254098c",
+      "content": "Il faut accélerer sur l'installation de parcs éoliens maritimes",
+      "author": "Paul",
+      "agree": 44,
+      "like_it": 10,
+      "disagree": 32,
+      "no_way": 18,
+      "votes": 298
+    },
+    {
+      "id": "b09797cc-b81e-465c-a472-5e0af29c0a58",
+      "content": "Il faut réduire la circulation automobile",
+      "author": "Christian",
+      "agree": 45,
+      "like_it": 5,
+      "disagree": 33,
+      "no_way": 7,
+      "votes": 296
+    },
+    {
+      "id": "48649852-60cb-42f4-8890-46923a1c775c",
+      "content": "Il faut interdire le décollage d'un avion s'il n'est pas rempli à 95%",
+      "author": "Jhonny",
+      "agree": 44,
+      "like_it": 7,
+      "disagree": 33,
+      "no_way": 5,
+      "votes": 292
+    },
+    {
+      "id": "f720ff86-81b3-40b6-a66b-eb6eb3ea2001",
+      "content": "Il faut prioriser le télétravail",
+      "author": "nico",
+      "agree": 42,
+      "like_it": 6,
+      "disagree": 30,
+      "no_way": 16,
+      "votes": 300
+    },
+    {
+      "id": "0559b068-d3e3-4f87-8c41-b906ae81d983",
+      "content": "Il faut favoriser les véhicules à moteur hybride.",
+      "author": "philippe",
+      "agree": 44,
+      "like_it": 5,
+      "disagree": 28,
+      "no_way": 13,
+      "votes": 291
+    },
+    {
+      "id": "33ad340e-170a-42fa-899f-cbbf6992dc8d",
+      "content": "Il faut obliger les propriétaires à équiper leur habitation de 8 panneaux solaires pour avoir 3 KW minimum de production énergie électrique.",
+      "author": "Alain",
+      "agree": 31,
+      "like_it": 4,
+      "disagree": 42,
+      "no_way": 9,
+      "votes": 294
+    },
+    {
+      "id": "3b5fd1b9-36af-4058-9e1f-63dd64a8fd99",
+      "content": "Il faut limiter l'utilisation des appareils connectés",
+      "author": "Christine",
+      "agree": 45,
+      "like_it": 4,
+      "disagree": 27,
+      "no_way": 9,
+      "votes": 296
+    }
+  ],
+  "rejected": [],
+  "cartography": [
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Thèmes cités",
+      "legend": "",
+      "data": [
+        {
+          "label": "Transports",
+          "percent": 24,
+          "color": "#4B45A5",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.05,
+            "yAxis": 1.8
+          }
+        },
+        {
+          "label": "Eclairage",
+          "percent": 15,
+          "color": "#8955BD",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.3
+          }
+        },
+        {
+          "label": "Sources d'énergie",
+          "percent": 15,
+          "color": "#EB7575",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.2,
+            "yAxis": 2.2
+          }
+        },
+        {
+          "label": "Production/consommation",
+          "percent": 13,
+          "color": "#F5976E",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.15,
+            "yAxis": 2.2
+          }
+        },
+        {
+          "label": "Usages domestiques",
+          "percent": 11,
+          "color": "#EEB298",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.8,
+            "yAxis": 2.1
+          }
+        },
+        {
+          "label": "Rénovation énergétique",
+          "percent": 9,
+          "color": "#FFD266",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.9,
+            "yAxis": 2
+          }
+        },
+        {
+          "label": "Fiscalité",
+          "percent": 8,
+          "color": "#FFF689",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.87,
+            "yAxis": 2
+          }
+        },
+        {
+          "label": "Chauffage",
+          "percent": 7,
+          "color": "#E5FFAE",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.9,
+            "yAxis": 1.9
+          }
+        },
+        {
+          "label": "Gestion de l'eau",
+          "percent": 5,
+          "color": "#C1EBDD",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.9,
+            "yAxis": 1.9
+          }
+        },
+        {
+          "label": "Numérique",
+          "percent": 5,
+          "color": "#59BAD4",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.85,
+            "yAxis": 1.9
+          }
+        },
+        {
+          "label": "Responsabilités des institutions",
+          "percent": 5,
+          "color": "#5885AE",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.85,
+            "yAxis": 1.95
+          }
+        },
+        {
+          "label": "Autres",
+          "percent": 16,
+          "color": "#FFF",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.85,
+            "yAxis": 1.9
+          }
+        }
+      ]
+    }  
+],
+  "participation": [
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par région (1/2)",
+      "forcedHigherValue": 19,
+      "legend": {
+        "title": "Participation par région (1/2)",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "Île-de-France",
+          "bars": {
+            "first": 8,
+            "second": 18
+          }
+        },
+        {
+          "label": "Auvergne-Rhône-Alpes",
+          "bars": {
+            "first": 14,
+            "second": 12
+          }
+        },
+        {
+          "label": "Nouvelle-Aquitaine",
+          "bars": {
+            "first": 16,
+            "second": 9
+          }
+        },
+        {
+          "label": "Occitanie",
+          "bars": {
+            "first": 9,
+            "second": 9
+          }
+        },
+        {
+          "label": "Hauts-de-France",
+          "bars": {
+            "first": 5,
+            "second": 9
+          }
+        },
+        {
+          "label": "Grand Est",
+          "bars": {
+            "first": 9,
+            "second": 8
+          }
+        },
+        {
+          "label": "Provence-Alpes-Côte d'Azur",
+          "bars": {
+            "first": 8,
+            "second": 8
+          }
+        }
+      ],
+      "id": "participation_0"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par région (2/2)",
+      "forcedHigherValue": 19,
+      "legend": {
+        "title": "Participation par région (2/2)",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "Pays de la Loire",
+          "bars": {
+            "first": 7,
+            "second": 6
+          }
+        },
+        {
+          "label": "Bretagne",
+          "bars": {
+            "first": 5,
+            "second": 5
+          }
+        },
+        {
+          "label": "Normandie",
+          "bars": {
+            "first": 4,
+            "second": 5
+          }
+        },
+        {
+          "label": "Bourgogne-Franche-Comté",
+          "bars": {
+            "first": 5,
+            "second": 4
+          }
+        },
+        {
+          "label": "Centre-Val de Loire",
+          "bars": {
+            "first": 8,
+            "second": 4
+          }
+        },
+        {
+          "label": "Outre-mer",
+          "bars": {
+            "first": 1,
+            "second": 3
+          }
+        },
+        {
+          "label": "Corse",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        }
+      ],
+      "id": "participation_1"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par âge",
+      "legend": {
+        "title": "Répartition des votes",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "16-24",
+          "bars": {
+            "first": 3,
+            "second": 13
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "25-34",
+          "bars": {
+            "first": 7,
+            "second": 14
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "35-44",
+          "bars": {
+            "first": 12,
+            "second": 15
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "45-54",
+          "bars": {
+            "first": 16,
+            "second": 16
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "55-64",
+          "bars": {
+            "first": 26,
+            "second": 16
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "65+",
+          "bars": {
+            "first": 36,
+            "second": 26
+          },
+          "color": "#8BDAB2"
+        }
+      ],
+      "id": "participation_2"
+    },
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Votes par genre",
+      "legend": "",
+      "data": [
+        {
+          "label": "hommes",
+          "percent": 47,
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "femmes",
+          "percent": 51,
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "non-binaire",
+          "percent": 2,
+          "color": "#EEB298"
+        }
+      ],
+      "id": "participation_3"
+    }
+  ]
+}
