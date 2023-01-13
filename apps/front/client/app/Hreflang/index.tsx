@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { Link } from 'react-head';
 import { env } from '@make.org/assets/env';
-import { isHomepageWithLocale } from '@make.org/utils/routes';
 import { useLocation } from 'react-router';
 import { translationRessoucesLanguages } from '../../../i18n';
+import { handleSearchParams } from '../../helpers/url';
 
 declare global {
   interface Window {
@@ -12,12 +12,8 @@ declare global {
 }
 
 export const Hreflang: FC = () => {
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
   const FRONT_URL = env.frontUrl() || window.FRONT_URL;
-
-  if (!isHomepageWithLocale(pathname)) {
-    return null;
-  }
 
   return (
     <>
@@ -28,7 +24,10 @@ export const Hreflang: FC = () => {
           key={language}
           rel="alternate"
           hrefLang={language}
-          href={`${FRONT_URL}${pathname}?lang=${language}`}
+          href={`${FRONT_URL}${pathname}${handleSearchParams(
+            search,
+            language
+          )}`}
         />
       ))}
     </>
