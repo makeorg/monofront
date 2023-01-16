@@ -19,7 +19,7 @@ const getFirstProposal = async (
   country: string,
   notFound: () => void,
   unexpectedError: () => void,
-  preferedLanguage: string,
+  preferredLanguage: string,
   sequenceKind?: string
 ): Promise<{ data: FirstProposalSequenceType; sessionId: string } | void> => {
   const handleData = (data: FirstProposalSequenceType, sessionId: string) => {
@@ -35,12 +35,12 @@ const getFirstProposal = async (
   try {
     const response = await QuestionApiService.startSequenceFirstProposal(
       questionId,
-      preferedLanguage,
+      preferredLanguage,
       sequenceKind,
       {
         'x-make-question-id': questionId,
         'x-make-country': country,
-        'x-make-language': preferedLanguage,
+        'x-make-language': preferredLanguage,
         'x-make-location': widgetLocation,
         'Cache-Control': 'no-cache, no-store, must-revalidate',
         Pragma: 'no-cache',

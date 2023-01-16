@@ -25,7 +25,7 @@ const PATH_QUESTION_KEYWORDS = '/questions/:questionId/keywords';
 export class QuestionApiService {
   static getQuestions(
     country: string,
-    preferedLanguage: string,
+    preferredLanguage: string,
     status?: string, // Upcoming, Open, Finished
     sortAlgorithm?: string, // Chronological, Featured
     limit?: number,
@@ -41,7 +41,7 @@ export class QuestionApiService {
         sortAlgorithm,
         limit,
         skip,
-        preferedLanguage,
+        preferredLanguage,
       },
     });
   }
@@ -66,7 +66,7 @@ export class QuestionApiService {
 
   static getDetail(
     questionSlugOrId: string,
-    preferedLanguage: string,
+    preferredLanguage: string,
     headers: ApiServiceHeadersType = {}
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
@@ -75,7 +75,7 @@ export class QuestionApiService {
         method: 'GET',
         headers,
         params: {
-          preferedLanguage,
+          preferredLanguage,
         },
       }
     );
@@ -108,7 +108,7 @@ export class QuestionApiService {
 
   static startSequenceFirstProposal(
     questionId: string,
-    preferedLanguage: string,
+    preferredLanguage: string,
     sequenceKind?: string,
     headers: ApiServiceHeadersType = {}
   ): Promise<void | AxiosResponse> {
@@ -121,7 +121,7 @@ export class QuestionApiService {
       method: 'GET',
       headers,
       params: {
-        preferedLanguage,
+        preferredLanguage,
       },
     });
   }
@@ -131,7 +131,7 @@ export class QuestionApiService {
     // eslint-disable-next-line default-param-last
     includedProposalIds: string[] = [],
     sequenceKind: string,
-    preferedLanguage: string,
+    preferredLanguage: string,
     demographicsCardId?: string,
     token?: string,
     headers: ApiServiceHeadersType = {}
@@ -160,7 +160,7 @@ export class QuestionApiService {
       method: 'GET',
       headers,
       params: {
-        preferedLanguage,
+        preferredLanguage,
       },
     });
   }
@@ -170,7 +170,7 @@ export class QuestionApiService {
     // eslint-disable-next-line default-param-last
     includedProposalIds: string[] = [],
     keyword: string,
-    preferedLanguage: string,
+    preferredLanguage: string,
     headers: ApiServiceHeadersType = {}
   ): Promise<void | AxiosResponse> {
     let startSequenceUrl = PATH_QUESTION_START_SEQUENCE_KEYWORD.replace(
@@ -188,7 +188,7 @@ export class QuestionApiService {
       method: 'GET',
       headers,
       params: {
-        preferedLanguage,
+        preferredLanguage,
       },
     });
   }
@@ -196,7 +196,7 @@ export class QuestionApiService {
   static searchQuestions(
     country: string,
     content: string,
-    preferedLanguage: string,
+    preferredLanguage: string,
     sort = 'endDate',
     order = 'DESC',
     headers: ApiServiceHeadersType = {}
@@ -209,7 +209,7 @@ export class QuestionApiService {
         country,
         sort,
         order,
-        preferedLanguage,
+        preferredLanguage,
       },
     });
   }
@@ -247,7 +247,7 @@ export class QuestionApiService {
   static getFeaturedProposals(
     questionId: string,
     maxPartnerProposals: number,
-    preferedLanguage: string,
+    preferredLanguage: string,
     limit: number,
     seed?: number,
     headers: ApiServiceHeadersType = {}
@@ -261,7 +261,7 @@ export class QuestionApiService {
           maxPartnerProposals,
           limit,
           seed,
-          preferedLanguage,
+          preferredLanguage,
         },
       }
     );

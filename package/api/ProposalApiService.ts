@@ -45,7 +45,7 @@ export class ProposalApiService {
 
   static getProposal(
     proposalId: string,
-    preferedLanguage: string,
+    preferredLanguage: string,
     headers: ApiServiceHeadersType = {}
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
@@ -55,7 +55,7 @@ export class ProposalApiService {
         headers,
         proposalId,
         params: {
-          preferedLanguage,
+          preferredLanguage,
         },
       }
     );

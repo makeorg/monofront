@@ -364,7 +364,7 @@ export class UserApiService {
    */
   static myProposals(
     userId: string,
-    preferedLanguage: string,
+    preferredLanguage: string,
     limit: number = PROPOSALS_LISTING_LIMIT,
     skip = 0
   ): Promise<void | AxiosResponse> {
@@ -375,7 +375,7 @@ export class UserApiService {
         order: 'desc',
         limit,
         skip,
-        preferedLanguage,
+        preferredLanguage,
       },
     });
   }
@@ -386,13 +386,13 @@ export class UserApiService {
    */
   static myFavourites(
     userId: string,
-    preferedLanguage?: string,
+    preferredLanguage?: string,
     limit: number = PROPOSALS_LISTING_LIMIT,
     skip = 0
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_USER_FAVOURITES.replace(':userId', userId), {
       method: 'GET',
-      params: { qualifications: 'likeIt', limit, skip, preferedLanguage },
+      params: { qualifications: 'likeIt', limit, skip, preferredLanguage },
     });
   }
 

@@ -19,7 +19,7 @@ const QUESTION_SORT_CHRONOLOGICAL = 'chronological';
 
 const getQuestions = async (
   country: string,
-  preferedLanguage: string,
+  preferredLanguage: string,
   status?: string,
   sortAlgorithm?: string,
   limit?: number,
@@ -28,7 +28,7 @@ const getQuestions = async (
   try {
     const response = await QuestionApiService.getQuestions(
       country,
-      preferedLanguage,
+      preferredLanguage,
       status,
       sortAlgorithm,
       limit,
@@ -55,13 +55,13 @@ const getQuestions = async (
 
 const getOpenedConsultations = async (
   country: string,
-  preferedLanguage: string,
+  preferredLanguage: string,
   limit?: number,
   skip?: number
 ): Promise<{ total: number; results: HomeQuestionType[] } | null> =>
   getQuestions(
     country,
-    preferedLanguage,
+    preferredLanguage,
     QUESTION_STATUS_OPEN,
     QUESTION_SORT_FEATURED,
     limit,
@@ -70,13 +70,13 @@ const getOpenedConsultations = async (
 
 const getFinishedConsultations = async (
   country: string,
-  preferedLanguage: string,
+  preferredLanguage: string,
   limit?: number,
   skip?: number
 ): Promise<{ total: number; results: HomeQuestionType[] } | null> =>
   getQuestions(
     country,
-    preferedLanguage,
+    preferredLanguage,
     QUESTION_STATUS_FINISHED,
     QUESTION_SORT_CHRONOLOGICAL,
     limit,
@@ -85,7 +85,7 @@ const getFinishedConsultations = async (
 
 const getDetail = async (
   questionSlugOrId: string,
-  preferedLanguage: string,
+  preferredLanguage: string,
   // eslint-disable-next-line default-param-last
   notFound: () => void = () => null,
   country?: string
@@ -93,7 +93,7 @@ const getDetail = async (
   try {
     const response = await QuestionApiService.getDetail(
       questionSlugOrId,
-      preferedLanguage
+      preferredLanguage
     );
     const { data } = response || {};
     if (
@@ -139,13 +139,13 @@ const getDetail = async (
 const searchQuestions = async (
   country: string,
   content: string,
-  preferedLanguage: string
+  preferredLanguage: string
 ): Promise<{ total: number; results: QuestionType[] } | null> => {
   try {
     const response = await QuestionApiService.searchQuestions(
       country,
       content,
-      preferedLanguage
+      preferredLanguage
     );
     if (!response) {
       return null;
@@ -241,7 +241,7 @@ const getQuestionPersonalities = async (
 const getFeaturedProposals = async (
   questionId: string,
   maxPartnerProposals: number,
-  preferedLanguage: string,
+  preferredLanguage: string,
   limit: number,
   seed?: number
 ): Promise<{ total: number; results: ProposalType[] } | null> => {
@@ -249,7 +249,7 @@ const getFeaturedProposals = async (
     const response = await QuestionApiService.getFeaturedProposals(
       questionId,
       maxPartnerProposals,
-      preferedLanguage,
+      preferredLanguage,
       limit,
       seed
     );

@@ -5,10 +5,10 @@ import { defaultUnexpectedError } from './DefaultErrorHandler';
 
 const getHome = async (
   country: string,
-  preferedLanguage: string
+  preferredLanguage: string
 ): Promise<HomeViewType | null> => {
   try {
-    const response = await ViewsApiService.getHome(country, preferedLanguage);
+    const response = await ViewsApiService.getHome(country, preferredLanguage);
 
     return response ? response.data : null;
   } catch (error: unknown) {
@@ -22,7 +22,7 @@ const getHome = async (
 const searchViews = async (
   content: string,
   country: string,
-  preferedLanguage: string,
+  preferredLanguage: string,
   proposalLimit = 4,
   questionLimit = 4,
   organisationLimit = 4
@@ -34,7 +34,7 @@ const searchViews = async (
       proposalLimit,
       questionLimit,
       organisationLimit,
-      preferedLanguage
+      preferredLanguage
     );
 
     return searchResponse ? searchResponse.data : null;

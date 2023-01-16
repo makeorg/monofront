@@ -132,7 +132,7 @@
       "title": "Agir ensemble pour l'environnement",
       "question": "Comment agir ensemble dès maintenant pour l'environnement ?"
     },
-    "preferedLanguage": "fr",
+    "preferredLanguage": "fr",
     "returnedLanguage": "fr",
     "countries": ["FR", "GB"],
     "languages": ["fr", "en"],

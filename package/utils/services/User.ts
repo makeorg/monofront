@@ -272,14 +272,14 @@ const myProposals = async (
   userId: string,
   // eslint-disable-next-line default-param-last
   page = 0,
-  preferedLanguage: string
+  preferredLanguage: string
 ): Promise<SearchProposalsType | void> => {
   const limit = PROPOSALS_LISTING_LIMIT;
   const skip = page * limit;
   try {
     const response = await UserApiService.myProposals(
       userId,
-      preferedLanguage,
+      preferredLanguage,
       limit,
       skip
     );
@@ -299,14 +299,14 @@ const myFavourites = async (
   userId: string,
   // eslint-disable-next-line default-param-last
   page = 0,
-  preferedLanguage?: string
+  preferredLanguage?: string
 ): Promise<SearchProposalsType | void> => {
   const limit = PROPOSALS_LISTING_LIMIT;
   const skip = page * limit;
   try {
     const response = await UserApiService.myFavourites(
       userId,
-      preferedLanguage,
+      preferredLanguage,
       limit,
       skip
     );

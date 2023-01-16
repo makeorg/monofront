@@ -25,7 +25,7 @@ const getQuestion = async (
   country: string,
   notFound: () => void,
   unexpectedError: () => void,
-  preferedLanguage: string
+  preferredLanguage: string
 ): Promise<QuestionType | void> => {
   const upperCountry = country.toUpperCase();
   const handleData = (data: QuestionType) => {
@@ -45,11 +45,11 @@ const getQuestion = async (
   try {
     const response = await QuestionApiService.getDetail(
       questionIdOrSlug,
-      preferedLanguage,
+      preferredLanguage,
       {
         'x-make-question-id': questionIdOrSlug,
         'x-make-country': upperCountry,
-        'x-make-language': preferedLanguage,
+        'x-make-language': preferredLanguage,
       }
     );
 
@@ -95,7 +95,7 @@ const startSequenceByKind = async (
   questionId: string,
   includedProposalIds: string[],
   sequenceKind: string,
-  preferedLanguage: string,
+  preferredLanguage: string,
   mandatoryRequestHeaders: ApiServiceHeadersType
 ): Promise<{ sequence: SequenceType; sessionId: string } | void> => {
   try {
@@ -103,7 +103,7 @@ const startSequenceByKind = async (
       questionId,
       includedProposalIds,
       sequenceKind,
-      preferedLanguage,
+      preferredLanguage,
       undefined,
       undefined,
       mandatoryRequestHeaders

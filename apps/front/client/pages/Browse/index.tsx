@@ -111,7 +111,7 @@ const BrowseConsultationsPage: FC = () => {
     currentConsultationType: consultationListType,
     currentPage: number,
     currentConsultationTotal: number,
-    preferedLanguage: string
+    preferredLanguage: string
   ) => {
     const nextPage =
       currentPage <
@@ -123,12 +123,12 @@ const BrowseConsultationsPage: FC = () => {
       currentConsultationType === 'opened' ? 'finished' : 'opened';
 
     const calls = [];
-    calls.push(fetchDataAndCache(country, preferedLanguage, otherList, 1));
+    calls.push(fetchDataAndCache(country, preferredLanguage, otherList, 1));
     if (nextPage) {
       calls.push(
         fetchDataAndCache(
           country,
-          preferedLanguage,
+          preferredLanguage,
           currentConsultationType,
           nextPage
         )
@@ -138,7 +138,7 @@ const BrowseConsultationsPage: FC = () => {
       calls.push(
         fetchDataAndCache(
           country,
-          preferedLanguage,
+          preferredLanguage,
           currentConsultationType,
           previewPage
         )
@@ -149,18 +149,18 @@ const BrowseConsultationsPage: FC = () => {
 
     const cleanCache = () => {
       const cacheKeyToKeep: string[] = [];
-      cacheKeyToKeep.push(getCacheKey('opened', preferedLanguage, country, 1));
+      cacheKeyToKeep.push(getCacheKey('opened', preferredLanguage, country, 1));
       cacheKeyToKeep.push(
-        getCacheKey('finished', country, preferedLanguage, 1)
+        getCacheKey('finished', country, preferredLanguage, 1)
       );
-      cacheKeyToKeep.push(getCacheKey('opened', preferedLanguage, country, 2));
+      cacheKeyToKeep.push(getCacheKey('opened', preferredLanguage, country, 2));
       cacheKeyToKeep.push(
-        getCacheKey('finished', preferedLanguage, country, 2)
+        getCacheKey('finished', preferredLanguage, country, 2)
       );
       cacheKeyToKeep.push(
         getCacheKey(
           currentConsultationListType,
-          preferedLanguage,
+          preferredLanguage,
           country,
           currentPage
         )
@@ -169,7 +169,7 @@ const BrowseConsultationsPage: FC = () => {
         cacheKeyToKeep.push(
           getCacheKey(
             currentConsultationType,
-            preferedLanguage,
+            preferredLanguage,
             country,
             previewPage
           )
@@ -179,7 +179,7 @@ const BrowseConsultationsPage: FC = () => {
         cacheKeyToKeep.push(
           getCacheKey(
             currentConsultationType,
-            preferedLanguage,
+            preferredLanguage,
             country,
             nextPage
           )

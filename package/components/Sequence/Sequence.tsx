@@ -55,7 +55,7 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
   const executeStartSequence = async (
     questionId: string,
     votedIds: string[],
-    preferedLanguage: string,
+    preferredLanguage: string,
     demographicCardId?: string,
     token?: string
   ): Promise<SequenceType | null> => {
@@ -63,7 +63,7 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
       questionId,
       votedIds,
       sequenceKind,
-      preferedLanguage,
+      preferredLanguage,
       demographicCardId,
       token
     );

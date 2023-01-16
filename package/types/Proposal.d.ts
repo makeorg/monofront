@@ -33,7 +33,7 @@ export type ProposalQuestionType = {
     title: string;
     question: string;
   };
-  preferedLanguage: string;
+  preferredLanguage: string;
   returnedLanguage: string;
   countries: Array<string>;
   languages: Array<string>;
