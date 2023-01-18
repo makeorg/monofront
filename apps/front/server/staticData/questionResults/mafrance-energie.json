@@ -340,8 +340,8 @@
           }
         }
       ]
-    }  
-],
+    }
+  ],
   "participation": [
     {
       "type": "histogram",
@@ -545,7 +545,7 @@
         {
           "label": "hommes",
           "percent": 47,
-          "color": "#8BDAB2"
+          "color": "#4B45A5"
         },
         {
           "label": "femmes",
