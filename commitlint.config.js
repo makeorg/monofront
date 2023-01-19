@@ -16,6 +16,7 @@ module.exports = {
         'utils',
         'widget',
         'translator',
+        'designsystem',
       ],
     ],
     'subject-case': () => [

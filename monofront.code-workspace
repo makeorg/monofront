@@ -39,7 +39,11 @@
 		{
 			"name": "🧑🏼‍🔬 Utils",
 			"path": "package/utils"
-		}
+		},
+		{
+			"name": "🧑🏼‍🔬 DesginSystem",
+			"path": "package/designsystem"
+		},
 	],
 	"settings": {
 		"javascript.validate.enable": false,  

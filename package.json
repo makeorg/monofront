@@ -11,8 +11,8 @@
     "root",
     "apps/*",
     "types",
-    "package/*",
-    "apimock"
+    "apimock",
+    "package/*"
   ],
   "scripts": {
     "postinstall": "node -e \"try { require('husky').install(); } catch (e) {console.error('Husky init failed')}\"",

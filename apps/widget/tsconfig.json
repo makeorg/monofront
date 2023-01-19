@@ -6,7 +6,8 @@
     { "path": "../../package/api" },
     { "path": "../../package/assets" },
     { "path": "../../package/components" },
-    { "path": "../../package/utils" }
+    { "path": "../../package/utils" },
+    { "path": "../../package/designsystem" }
   ],
   "include": [
     "./src/i18n/fr.json",
@@ -16,6 +17,7 @@
     "../../package/api",
     "../../package/assets",
     "../../package/components",
-    "../../package/utils"
+    "../../package/utils",
+    "../../package/designsystem"
   ]
 }

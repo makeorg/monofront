@@ -1,0 +1,17 @@
+{
+  "name": "@make.org/designsystem",
+  "version": "0.1.0",
+  "private": true,
+  "sideEffects": false,
+  "dependencies": {
+    "@types/styled-components": "5.1.26",
+    "athena-design-tokens": "^0.1.7",
+    "styled-components": "5.3.5"
+  },
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.3"
+  }
+}

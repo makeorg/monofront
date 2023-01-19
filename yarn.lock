@@ -2928,6 +2928,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@make.org/designsystem@0.1.0, @make.org/designsystem@workspace:package/designsystem":
+  version: 0.0.0-use.local
+  resolution: "@make.org/designsystem@workspace:package/designsystem"
+  dependencies:
+    "@types/styled-components": 5.1.26
+    athena-design-tokens: ^0.1.7
+    styled-components: 5.3.5
+    typescript: ^4.9.3
+  languageName: unknown
+  linkType: soft
+
 "@make.org/front@workspace:apps/front":
   version: 0.0.0-use.local
   resolution: "@make.org/front@workspace:apps/front"
@@ -2946,6 +2957,7 @@ __metadata:
     "@make.org/api": ^0.1.0
     "@make.org/assets": 0.1.0
     "@make.org/components": 0.1.0
+    "@make.org/designsystem": 0.1.0
     "@make.org/store": 0.1.0
     "@make.org/types": ^0.1.0
     "@make.org/ui": 0.1.0
@@ -3208,6 +3220,7 @@ __metadata:
     "@make.org/api": ^0.1.0
     "@make.org/assets": ^0.1.0
     "@make.org/components": 0.1.0
+    "@make.org/designsystem": 0.1.0
     "@make.org/store": 0.1.0
     "@make.org/types": 0.1.0
     "@make.org/ui": 0.1.0

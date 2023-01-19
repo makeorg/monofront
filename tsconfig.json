@@ -51,7 +51,8 @@
       "@make.org/utils": ["./package/utils/*"],
       "@make.org/store": ["./package/store/*"],
       "@make.org/translator": ["./package/translator/src/*"],
-      "@make.org/logger": ["./package/logger/*"]
+      "@make.org/logger": ["./package/logger/*"],
+      "@make.org/designsystem": ["./package/designsystem/*"]
     }
   }
 }
