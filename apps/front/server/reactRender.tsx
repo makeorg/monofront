@@ -24,7 +24,7 @@ import { TRANSLATION_NAMESPACE } from '@make.org/utils/i18n/constants';
 import { StateRoot } from '@make.org/types';
 import { Request, Response } from 'express';
 import { Cookie } from 'universal-cookie';
-import { getLoggerInstance } from '@make.org/utils/helpers/logger';
+import { getLoggerInstance } from '@make.org/logger';
 import { AppContainer } from '../client/app';
 import { ViewsService } from './service/ViewsService';
 import { translationRessoucesLanguages } from '../i18n';

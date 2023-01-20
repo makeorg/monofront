@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { simpleHash } from '@make.org/utils/helpers/simpleHash';
 import parser from 'ua-parser-js';
-import { getLoggerInstance } from '@make.org/utils/helpers/logger';
+import { getLoggerInstance } from '@make.org/logger';
 import { LogLevelType } from '@make.org/types/enums/logLevel';
 
 export const loggerApi = async (

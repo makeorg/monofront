@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import axios from 'axios';
-import { getLoggerInstance } from '@make.org/utils/helpers/logger';
+import { getLoggerInstance } from '@make.org/logger';
 import { FbEventType, FbEventClientType } from '@make.org/types/FbEvents';
 import crypto from 'crypto';
 import { env } from '@make.org/assets/env';

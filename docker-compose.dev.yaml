@@ -94,6 +94,7 @@ services:
       - /home/app/package/ui/node_modules
       - /home/app/package/store/node_modules
       - /home/app/package/designsystem/node_modules
+      - /home/app/package/logger/node_modules
       - /home/app/apimock/node_modules
       - /home/app/apps/front/dist
       - /home/app/apps/widget/dist
@@ -148,6 +149,7 @@ services:
       - /home/app/package/ui/node_modules
       - /home/app/package/store/node_modules
       - /home/app/package/designsystem/node_modules
+      - /home/app/package/logger/node_modules
       - /home/app/apimock/node_modules
       - /home/app/apps/front/dist
       - /home/app/apps/widget/dist

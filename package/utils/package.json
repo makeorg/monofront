@@ -7,6 +7,7 @@
     "@make.org/api": "0.1.0",
     "@make.org/assets": "0.1.0",
     "@make.org/components": "0.1.0",
+    "@make.org/logger": "workspace:^",
     "@make.org/store": "0.1.0",
     "@make.org/types": "0.1.0",
     "@make.org/ui": "0.1.0",

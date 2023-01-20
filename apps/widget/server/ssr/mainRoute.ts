@@ -5,7 +5,7 @@ import {
   DEFAULT_COUNTRY,
   DEFAULT_LANGUAGE,
 } from '@make.org/utils/constants/config';
-import { getLoggerInstance } from '@make.org/utils/helpers/logger';
+import { getLoggerInstance } from '@make.org/logger';
 import { getSequenceSize } from '@make.org/utils/helpers/sequence';
 import { CARD, NOTIF } from '@make.org/types/enums';
 import { SequenceCardType } from '@make.org/types';

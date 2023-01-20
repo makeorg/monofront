@@ -2,7 +2,7 @@ import { ViewsApiService } from '@make.org/api/ViewsApiService';
 import cache from 'memory-cache';
 import { HomeViewType } from '@make.org/types/View';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
-import { getLoggerInstance } from '@make.org/utils/helpers/logger';
+import { getLoggerInstance } from '@make.org/logger';
 
 const clearCache = (): void => {
   cache.clear();

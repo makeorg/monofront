@@ -11,13 +11,17 @@ import { env } from '@make.org/assets/env';
 import { cspMiddleware } from '@make.org/utils/middleware/contentSecurityPolicy';
 import { headersResponseMiddleware } from '@make.org/utils/middleware/headers';
 import { nonceUuidMiddleware } from '@make.org/utils/middleware/nonceUuid';
-import { getLoggerInstance, initLogger } from '@make.org/utils/helpers/logger';
+import { getLoggerInstance, initLogger } from '@make.org/logger';
 import {
   errorNormalizer,
-  makeorgApiServiceErrorNormalizer,
   objectNormalizer,
   stringNormalizer,
-} from '@make.org/utils/helpers/loggerNormalizer';
+} from '@make.org/logger/loggerNormalizer';
+import { makeorgApiServiceErrorNormalizer } from '@make.org/utils/helpers/loggerNormalizer';
+import {
+  getStackTransformer,
+  oneLineTransformer,
+} from '@make.org/logger/loggerTransformer';
 import { serverInitI18n } from './i18n';
 import { initRoutes } from './routes';
 import {
@@ -33,12 +37,22 @@ ApiService.strategy = new ApiServiceServer();
 // App
 const getApp = () => {
   const app = express();
-  initLogger('frontaccessible', APP_JS_DIR, APP_BUILD_DIR, APP_MAP_DIR, [
-    errorNormalizer,
-    makeorgApiServiceErrorNormalizer,
-    stringNormalizer,
-    objectNormalizer,
-  ]);
+  
+  getStackTransformer(APP_JS_DIR, APP_BUILD_DIR, APP_MAP_DIR).then(
+    stackTransformer => initLogger(
+      'frontaccessible',
+      [
+        errorNormalizer,
+        makeorgApiServiceErrorNormalizer,
+        stringNormalizer,
+        objectNormalizer,
+      ],
+      [
+        stackTransformer,
+        oneLineTransformer,
+      ]
+    )
+  );
 
   const logger = getLoggerInstance();
 

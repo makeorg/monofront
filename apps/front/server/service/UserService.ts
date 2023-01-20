@@ -1,6 +1,6 @@
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { UserApiService } from '@make.org/api/UserApiService';
-import { getLoggerInstance } from '@make.org/utils/helpers/logger';
+import { getLoggerInstance } from '@make.org/logger';
 import { defaultUnexpectedError } from '@make.org/utils/services/DefaultErrorHandler';
 
 const verifyUser = async (

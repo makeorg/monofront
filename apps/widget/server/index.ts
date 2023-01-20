@@ -12,13 +12,14 @@ import { headersResponseMiddleware } from '@make.org/utils/middleware/headers';
 import { nonceUuidMiddleware } from '@make.org/utils/middleware/nonceUuid';
 import { secureMiddleware } from '@make.org/utils/middleware/secure';
 import { maintenanceMiddleware } from '@make.org/utils/middleware/maintenance';
-import { getLoggerInstance, initLogger } from '@make.org/utils/helpers/logger';
+import { getLoggerInstance, initLogger } from '@make.org/logger';
+import { makeorgApiServiceErrorNormalizer } from '@make.org/utils/helpers/loggerNormalizer';
 import {
   errorNormalizer,
-  makeorgApiServiceErrorNormalizer,
   objectNormalizer,
   stringNormalizer,
-} from '@make.org/utils/helpers/loggerNormalizer';
+} from '@make.org/logger/loggerNormalizer';
+
 import { initRoutes } from './routes';
 import { serverInitI18n } from './i18n';
 import {
@@ -28,18 +29,29 @@ import {
   WIDGET_JS_DIR,
   WIDGET_MAP_DIR,
 } from './paths';
+import { getStackTransformer, oneLineTransformer } from '@make.org/logger/loggerTransformer';
 
 serverInitI18n();
 ApiService.strategy = new ApiServiceServer();
 // App
 const getApp = () => {
   const app = express();
-  initLogger('make-widget', WIDGET_JS_DIR, WIDGET_BUILD_DIR, WIDGET_MAP_DIR, [
-    errorNormalizer,
-    makeorgApiServiceErrorNormalizer,
-    stringNormalizer,
-    objectNormalizer,
-  ]);
+  
+  getStackTransformer(WIDGET_JS_DIR, WIDGET_BUILD_DIR, WIDGET_MAP_DIR).then (
+    stackTransformer => initLogger(
+      'make-widget',
+      [
+        errorNormalizer,
+        makeorgApiServiceErrorNormalizer,
+        stringNormalizer,
+        objectNormalizer,
+      ],
+      [
+        stackTransformer,
+        oneLineTransformer,
+      ]
+    )
+  );
   const logger = getLoggerInstance();
 
   if (env.isDev()) {

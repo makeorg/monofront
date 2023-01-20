@@ -1,6 +1,6 @@
 import MaintenanceApiService from '@make.org/api/MaintenanceApiService';
 import { AxiosResponse } from 'axios';
-import { getLoggerInstance } from '@make.org/utils/helpers/logger';
+import { getLoggerInstance } from '@make.org/logger';
 
 const getConfig = async (): Promise<null | AxiosResponse<any>> => {
   try {

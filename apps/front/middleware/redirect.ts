@@ -3,7 +3,7 @@ import {
   DEFAULT_LANGUAGE,
   DEFAULT_COUNTRY,
 } from '@make.org/utils/constants/config';
-import { getLoggerInstance } from '@make.org/utils/helpers/logger';
+import { getLoggerInstance } from '@make.org/logger';
 import { QuestionService } from '../server/service/QuestionService';
 
 export const redirectToCountryMiddleware = async (

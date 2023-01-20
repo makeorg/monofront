@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { createInitialState } from '@make.org/store/initialState';
-import { getLoggerInstance } from '@make.org/utils/helpers/logger';
+import { getLoggerInstance } from '@make.org/logger';
 import { reactRender } from '../reactRender';
 
 export const maintenanceRoute = async (

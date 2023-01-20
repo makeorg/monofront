@@ -20,6 +20,7 @@ COPY ["package/utils/package*.json", "./package/utils/"]
 COPY ["package/ui/package*.json", "./package/ui/"]
 COPY ["package/designsystem/package*.json", "./package/designsystem/"]
 COPY ["package/store/package*.json", "./package/store/"]
+COPY ["package/logger/package*.json", "./package/logger/"]
 COPY ["apimock/package*.json", "./apimock/"]
 COPY [".yarn", "./.yarn"]
 

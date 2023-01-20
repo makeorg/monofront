@@ -1,6 +1,6 @@
 import { createInitialState } from '@make.org/store/initialState';
 import { Request, Response } from 'express';
-import { getLoggerInstance } from '@make.org/utils/helpers/logger';
+import { getLoggerInstance } from '@make.org/logger';
 import { ViewsService } from '../service/ViewsService';
 import { reactRender } from '../reactRender';
 

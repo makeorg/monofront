@@ -108,7 +108,7 @@ export const getStackTransformer = async (
       columnNumber?: number;
     }
   ): DataLog | T => {
-    if (!data.stack) {
+    if (!data.stack || data.stack === '-') {
       return data;
     }
 

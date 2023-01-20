@@ -9,6 +9,7 @@
     { "path": "../../package/assets" },
     { "path": "../../package/components" },
     { "path": "../../package/store" },
-    { "path": "../../package/ui" }
+    { "path": "../../package/ui" },
+    { "path": "../../package/logger" }
   ]
 }
