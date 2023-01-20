@@ -3,7 +3,7 @@ import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '../helpers/styled';
 import { Logger } from '../services/Logger';
 
-export const useMedia = (query: string): boolean => {
+const useMedia = (query: string): boolean => {
   const [value, setValue] = useState(false);
 
   useEffect(() => {
@@ -38,19 +38,11 @@ export const useMedia = (query: string): boolean => {
   return value;
 };
 
-export const useDesktop = (): boolean =>
-  useMedia(`(min-width: ${intToPx(Breakpoints.Desktop)})`);
-
 export const useTablet = (): boolean =>
   useMedia(`(min-width: ${intToPx(Breakpoints.Tablet)})`);
 
 export const useLargeMobile = (): boolean =>
   useMedia(`(min-width: ${intToPx(Breakpoints.LargeMobile)})`);
-
-export const useMobile = (): boolean =>
-  useMedia(
-    `only screen and (max-device-width: ${intToPx(Breakpoints.Tablet)})`
-  );
 
 export const useScreenWidth = (): number | null => {
   const hasWindowObject = typeof window === 'object';

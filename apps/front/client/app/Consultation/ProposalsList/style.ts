@@ -1,7 +1,6 @@
 import { typography, color } from 'athena-design-tokens';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { Elements } from '@make.org/assets/vars/Elements';
-import { BlackBorderButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { Link } from 'react-router-dom';
 import { intToPx } from '@make.org/utils/helpers/styled';
@@ -65,8 +64,4 @@ export const ProposalDateStyle = styled.time`
   letter-spacing: 0.13px;
   text-align: center;
   margin-top: 15px;
-`;
-
-export const RegisterLinkCardStyle = styled(BlackBorderButtonStyle)`
-  color: ${color.black};
 `;

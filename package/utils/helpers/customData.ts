@@ -36,9 +36,8 @@ const getCustomDataFromQueryParams = (
  */
 const escapeValue = (value: string): string =>
   value.replace(/=/g, '%3D').replace(/,/g, '%2C');
-export const formatdDataForHeader = (
-  customData: Record<string, string>
-): string =>
+
+const formatdDataForHeader = (customData: Record<string, string>): string =>
   Object.keys(customData)
     .map(key => {
       const value: string =
@@ -58,10 +57,7 @@ export const getAll = (): Record<string, string> => {
   }
 };
 
-export const saveAll = (
-  customData: Record<string, string>,
-  merge = true
-): boolean => {
+const saveAll = (customData: Record<string, string>, merge = true): boolean => {
   try {
     const newCustomData = merge
       ? {

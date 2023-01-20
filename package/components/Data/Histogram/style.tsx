@@ -96,7 +96,7 @@ export const HistogramBarStyle = styled.div<{
   transition: height 0.25s ease-in;
 `;
 
-export const HistogramCommonLabelStyle = styled.p`
+const HistogramCommonLabelStyle = styled.p`
   font-size: 6px;
   font-family: ${MakeFonts.CircularStandardBook};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -108,7 +108,7 @@ export const HistogramLegendLabelStyle = styled(HistogramCommonLabelStyle)`
   margin: 2.5px 0;
 `;
 
-export const HistogramAbsoluteLabelStyle = styled(HistogramCommonLabelStyle)`
+const HistogramAbsoluteLabelStyle = styled(HistogramCommonLabelStyle)`
   position: absolute;
   z-index: 2;
 `;

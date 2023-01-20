@@ -33,7 +33,7 @@ export const SvgLogoFacebookWrapperStyle = styled(SvgLogoWrapperStyle)`
   padding-top: 5px;
 `;
 
-export const SocialButtonStyle = styled.button`
+const SocialButtonStyle = styled.button`
   display: inline-flex;
   justify-content: center;
   align-items: center;

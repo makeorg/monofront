@@ -1,6 +1,6 @@
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 
-export type DataLog = {
+type DataLog = {
   message: string;
   app_logId: string;
   name?: string;
@@ -31,7 +31,9 @@ const formatApiServiceError = (error: ApiServiceError): DataLog => ({
   app_requestId: error.requestId,
 });
 
-export const makeorgApiServiceErrorNormalizer = <T>(data: T): DataLog | undefined => {
+export const makeorgApiServiceErrorNormalizer = <T>(
+  data: T
+): DataLog | undefined => {
   if (data instanceof ApiServiceError) {
     return formatApiServiceError(data);
   }

@@ -56,7 +56,7 @@ export const SpaceBetweenColumnStyle = styled(ColumnElementStyle)`
 `;
 
 /* Column To Row Elements */
-export const CenterColumnStyleToRowStyle = styled(ColumnToRowElementStyle)`
+const CenterColumnStyleToRowStyle = styled(ColumnToRowElementStyle)`
   align-items: center;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     justify-content: center;
@@ -75,12 +75,5 @@ export const MiddleColumnToRowStyle = styled(CenterColumnStyleToRowStyle)<{
       : ''}
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     align-items: center;
-  }
-`;
-
-export const SpaceBetweenColumnToRowStyle = styled(ColumnToRowElementStyle)`
-  align-items: center;
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    justify-content: space-between;
   }
 `;

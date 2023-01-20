@@ -15,7 +15,7 @@ const sanitizeQueryParams = (queryParams: { [n: string]: string }) => {
   return queryParamSanitized;
 };
 
-export const trackUnsecure = async (
+const trackUnsecure = async (
   name: string,
   value: string,
   questionId: string,
@@ -42,7 +42,7 @@ export const trackUnsecure = async (
   }
 };
 
-export const track = async (
+const track = async (
   demographicsCardId: string,
   value: string | null,
   questionId: string,

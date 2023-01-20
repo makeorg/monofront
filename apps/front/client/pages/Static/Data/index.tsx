@@ -7,7 +7,7 @@ import { DataDE } from './DE';
 import { DataCS } from './CS';
 import { DataUK } from './UK';
 
-export const Data: FC = () => {
+const Data: FC = () => {
   const { state } = useAppContext();
   const { language } = state.appConfig;
 

@@ -21,7 +21,7 @@ export const FollowUsListItemStyle = styled.li`
   }
 `;
 
-export const FollowUsButtonStyle = styled(UnstyledButtonStyle)`
+const FollowUsButtonStyle = styled(UnstyledButtonStyle)`
   width: 40px;
   height: 40px;
   font-size: ${intToPx(typography.font.fontsize.S.value)};

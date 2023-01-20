@@ -37,21 +37,19 @@ ApiService.strategy = new ApiServiceServer();
 // App
 const getApp = () => {
   const app = express();
-  
+
   getStackTransformer(APP_JS_DIR, APP_BUILD_DIR, APP_MAP_DIR).then(
-    stackTransformer => initLogger(
-      'frontaccessible',
-      [
-        errorNormalizer,
-        makeorgApiServiceErrorNormalizer,
-        stringNormalizer,
-        objectNormalizer,
-      ],
-      [
-        stackTransformer,
-        oneLineTransformer,
-      ]
-    )
+    stackTransformer =>
+      initLogger(
+        'frontaccessible',
+        [
+          errorNormalizer,
+          makeorgApiServiceErrorNormalizer,
+          stringNormalizer,
+          objectNormalizer,
+        ],
+        [stackTransformer, oneLineTransformer]
+      )
   );
 
   const logger = getLoggerInstance();

@@ -6,7 +6,7 @@ import { AxiosResponse } from 'axios';
 import { ApiService } from './ApiService';
 
 const PATH_POST_TRACKING = '/tracking/front';
-export const PATH_PERFORMANCE = '/tracking/performance';
+const PATH_PERFORMANCE = '/tracking/performance';
 
 export class TrackingApiService {
   static track = async (

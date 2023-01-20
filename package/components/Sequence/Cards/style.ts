@@ -7,13 +7,11 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { SvgFastForward } from '@make.org/ui/Svg/elements';
 import {
   CenterColumnStyle,
-  SpaceBetweenRowStyle,
   ColumnElementStyle,
   MiddleColumnStyle,
 } from '@make.org/ui/elements/FlexElements';
 import {
   BlackBorderButtonStyle,
-  GreyButtonStyle,
   RedButtonStyle,
 } from '@make.org/ui/elements/ButtonsElements';
 import { SeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
@@ -184,10 +182,6 @@ export const SequencePushProposalNextButtonStyle = styled(
   }
 `;
 
-export const SequenceSignUpNextButtonStyle = styled(GreyButtonStyle)`
-  margin-top: 20px;
-`;
-
 export const SequenceParagraphStyle = styled(CenterColumnStyle)`
   width: 100%;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
@@ -242,39 +236,6 @@ export const SequencePlaceholderLineStyle = styled.div<{ className?: string }>`
       max-width: 375px;
     }
   }
-`;
-
-export const SequencePlaceholderRoundStyle = styled.div`
-  display: flex;
-  height: 45px;
-  width: 45px;
-  border-radius: 50%;
-  animation: ${SequenceFadeInAnimation} 1.5s infinite;
-  &.avatar {
-    position: absolute;
-    top: -6px;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 3px solid ${color.white};
-  }
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    height: 56px;
-    width: 56px;
-  }
-`;
-
-export const SequencePlaceholderVoteWrapperStyle = styled(SpaceBetweenRowStyle)`
-  margin-top: 30px;
-  width: 100%;
-  max-width: 175px;
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    max-width: 190px;
-  }
-`;
-
-export const SequenceSeparatorStyle = styled(SeparatorStyle)`
-  max-width: 80px;
-  margin: 10px auto 20px;
 `;
 
 export const FinalCardSeparatorStyle = styled(SeparatorStyle)`

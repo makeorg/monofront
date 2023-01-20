@@ -14,7 +14,7 @@ import {
 } from '@make.org/ui/elements/CardsElements';
 import { MobileAboutStyle } from './style';
 
-export const About: FC = () => {
+const About: FC = () => {
   const { state } = useAppContext();
   const question: QuestionType = selectCurrentQuestion(state);
   const { device } = state.appConfig;

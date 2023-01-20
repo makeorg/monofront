@@ -20,5 +20,3 @@ export const checkIsFeatureActivated = (
   }
   return [...activesFeatures].includes(featureSlug);
 };
-
-export const getFeatures = (): { [f: string]: string } => FEATURE_FLIPPING;

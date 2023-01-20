@@ -20,8 +20,6 @@ export const MaintenancePageStyle = styled.div`
   }
 `;
 
-export const TextContainerStyle = styled.div``;
-
 export const MaintenanceImageStyle = styled.img`
   width: 300px;
   margin: 130px auto 40px;

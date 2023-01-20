@@ -8,10 +8,10 @@ import {
   getSupportedLanguages,
 } from '../Controllers/Main.controller';
 
-export const SUPPORTED_LANGUAGE_PATH = '/supported-languages';
-export const VERSION_PATH = '/version';
-export const TRANSLATE_PATH = '/translate';
-export const ROOT_PATH = '/';
+const SUPPORTED_LANGUAGE_PATH = '/supported-languages';
+const VERSION_PATH = '/version';
+const TRANSLATE_PATH = '/translate';
+const ROOT_PATH = '/';
 
 export const UNSECURED_ROUTES = [
   VERSION_PATH,

@@ -29,7 +29,7 @@ import { notifications_reducer } from './reducers/notifications';
 import { views_reducer } from './reducers/views';
 import { session_reducer } from './reducers/session';
 
-export const AppContext = createContext({
+const AppContext = createContext({
   state: initialState,
   dispatch: (arg: ReducerAction) => { }, // eslint-disable-line
 });
@@ -52,7 +52,7 @@ const rootReducer = combineReducers({
   session: session_reducer,
 });
 
-export const useAllReducers = (
+const useAllReducers = (
   serverState?: StateRoot
 ): {
   state: StateRoot;

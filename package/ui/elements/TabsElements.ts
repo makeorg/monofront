@@ -91,8 +91,4 @@ const TabStyle = styled.li<{ isSelected?: boolean }>`
   }
 `;
 
-export const FullWidthTabStyle = styled(TabStyle)`
-  flex: 1 1 auto;
-`;
-
 export { TabStyle, TabListStyle };

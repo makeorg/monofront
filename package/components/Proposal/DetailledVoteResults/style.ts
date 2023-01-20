@@ -11,7 +11,7 @@ import {
 } from '@make.org/ui/elements/FlexElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 
-export const DetailledContainer = `
+const DetailledContainer = `
   width: 100%;
   max-width: 750px;
   align-self: center;
@@ -42,7 +42,7 @@ export const VoteDataListStyle = styled(ColumnElementStyle)`
   justify-content: center;
 `;
 
-export const VoteDataItemStyle = styled.span`
+const VoteDataItemStyle = styled.span`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   color: ${color.greyDark};
   margin: 3px 0;

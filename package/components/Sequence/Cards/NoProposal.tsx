@@ -14,7 +14,7 @@ import {
   FinalCardSeparatorStyle,
 } from './style';
 
-export type Props = {
+type Props = {
   /** Object with Dynamic properties used to configure the Sequence (questionId, country, ...) */
   question: QuestionType;
   title: string;

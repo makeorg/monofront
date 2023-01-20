@@ -1,8 +1,8 @@
 import { ApiServiceResponse } from '@make.org/types';
 import { ApiService } from './ApiService';
 
-export const DEMOGRAPHICS_TRACKING_PATH_UNSECURE = '/tracking/demographics';
-export const DEMOGRAPHICS_TRACKING_PATH = '/tracking/demographics-v2';
+const DEMOGRAPHICS_TRACKING_PATH_UNSECURE = '/tracking/demographics';
+const DEMOGRAPHICS_TRACKING_PATH = '/tracking/demographics-v2';
 
 type TypeDemographicTrack = {
   value: string | null;

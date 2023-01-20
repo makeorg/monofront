@@ -150,7 +150,7 @@ const mixpnl = {
   },
 };
 
-export const isMixpanelInitialized = (): boolean => !!mixpnl.isLoaded();
+const isMixpanelInitialized = (): boolean => !!mixpnl.isLoaded();
 let isEnabled = false;
 
 export const MixpanelTracking = {

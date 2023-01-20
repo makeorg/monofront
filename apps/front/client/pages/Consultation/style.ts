@@ -9,7 +9,7 @@ import {
 // import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
-import { SvgChat, SvgFiltersMobileIcon } from '@make.org/ui/Svg/elements';
+import { SvgFiltersMobileIcon } from '@make.org/ui/Svg/elements';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
 
 export const ConsultationHeaderWrapperStyle = styled.div<{
@@ -39,7 +39,7 @@ export const ConsultationPageWrapperStyle = styled.div<{
   }
 `;
 
-export const ContentElementStyle = styled(ColumnElementStyle)`
+const ContentElementStyle = styled(ColumnElementStyle)`
   width: 100%;
   height: 100%;
 `;
@@ -88,13 +88,6 @@ export const TopIdeaDetailsPageTitleStyle = styled(TopIdeasPageTitleStyle)`
   }
 `;
 
-export const TopIdeaDetailsIconStyle = styled(SvgChat)`
-  margin-right: 15px;
-  .tofill {
-    fill: ${color.black};
-  }
-`;
-
 export const TopIdeasListStyle = styled.ol`
   margin: 0;
   padding: 0;
@@ -127,15 +120,6 @@ export const ResultsTitleStyle = styled(ParticipateTitleStyle)`
   margin: 60px 0 40px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     margin: 60px 0px;
-  }
-`;
-
-export const ExploreTitleWrapperStyle = styled(ColumnElementStyle)`
-  margin-top: 30px;
-  margin-bottom: 20px;
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    align-items: baseline;
-    margin-bottom: 30px;
   }
 `;
 
@@ -239,10 +223,6 @@ export const ParticipateSidebarContentStyle = styled(ColumnElementStyle)`
     margin-left: ${pxToPercent(30, 1140)};
     width: ${pxToPercent(360, 1140)};
   }
-`;
-
-export const ParticipateFullwidthContentStyle = styled(ColumnElementStyle)`
-  width: 100%;
 `;
 
 export const ParticipateCTAProposalBloc = styled.div<{

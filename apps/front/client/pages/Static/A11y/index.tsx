@@ -6,7 +6,7 @@ import { A11yDE } from './DE';
 import { A11yUK } from './UK';
 import { A11yCS } from './CS';
 
-export const A11y: FC = () => {
+const A11y: FC = () => {
   const { state } = useAppContext();
   const { language } = state.appConfig;
 

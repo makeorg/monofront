@@ -3,7 +3,6 @@ import { color } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 
 export const TipWrapperStyle = styled.div`
   position: relative;
@@ -26,17 +25,5 @@ export const TriangleDownStyle = styled.div`
   margin-bottom: 5px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     margin-bottom: 10px;
-  }
-`;
-
-export const TipLinkStyle = styled(UnstyledButtonStyle)`
-  display: inline;
-  color: ${color.white};
-  text-decoration: underline;
-  margin-left: 5px;
-  font-family: ${MakeFonts.CircularStandardBook};
-  &:hover,
-  &:focus {
-    color: ${color.white};
   }
 `;

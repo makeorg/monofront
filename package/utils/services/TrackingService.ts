@@ -21,7 +21,7 @@ import { defaultUnexpectedError } from './DefaultErrorHandler';
 import { MixpanelTracking } from './Trackers/MixpanelTracking';
 import { Logger } from './Logger';
 
-export class TrackingValidationError extends Error {}
+class TrackingValidationError extends Error {}
 
 const validateParameters = (
   values: TrackingConfigurationParamType,

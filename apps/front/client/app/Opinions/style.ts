@@ -3,7 +3,6 @@ import { color, typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
-import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 
 export const DisclaimerSubtitleStyle = styled.h4`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
@@ -25,8 +24,4 @@ export const OpinionCardListItemStyle = styled.li`
   &:last-child {
     margin-bottom: 0;
   }
-`;
-
-export const OpinionCommentAuthorStyle = styled(FlexElementStyle)`
-  align-items: center;
 `;

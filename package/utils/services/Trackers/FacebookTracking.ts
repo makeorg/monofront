@@ -27,7 +27,7 @@ type FacebookEventParams = {
   questionSlug?: string;
 };
 
-export const isFBInitialized = (): boolean => initialized;
+const isFBInitialized = (): boolean => initialized;
 
 export const FacebookTracking = {
   init(externalId?: string): void {

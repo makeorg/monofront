@@ -31,7 +31,7 @@ type CardProps = {
   question: QuestionType;
 };
 
-export const Card: React.FC<CardProps> = ({ card, question }) => {
+const Card: React.FC<CardProps> = ({ card, question }) => {
   const { state } = useAppContext();
   const { source } = state.appConfig;
   const isWidget = source === 'widget';

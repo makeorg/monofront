@@ -34,7 +34,7 @@ export const loginSocialFailure = (): ReducerAction => ({
 export const loginSocialSuccess = (): ReducerAction => ({
   type: actionTypes.LOGIN_SOCIAL_SUCCESS,
 });
-export const setUserInfo = (
+const setUserInfo = (
   user: UserType,
   profile:
     | UserProfileType

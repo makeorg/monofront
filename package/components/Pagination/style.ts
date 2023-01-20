@@ -55,12 +55,12 @@ export const PaginationDisabledStyle = styled.span`
   background-color: ${color.grey};
 `;
 
-export const MobileStyle = `
+const MobileStyle = `
   width: 10px;
   height: 17px;
 `;
 
-export const DesktopStyle = `
+const DesktopStyle = `
   width: 7px;
   height: 12px;
 `;

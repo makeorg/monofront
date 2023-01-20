@@ -7,7 +7,6 @@ import {
   SvgFist,
   SvgThumbsUp,
 } from '@make.org/ui/Svg/elements';
-import { Link } from 'react-router-dom';
 import {
   intToPx,
   getFullWidthDividedByItems,
@@ -44,44 +43,6 @@ export const BrowseHeaderTitleStyle = styled.h2`
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.X4L.value)};
     margin-bottom: 33px;
-  }
-`;
-
-export const BrowseNavItemStyle = styled.li`
-  display: inline-flex;
-  flex-wrap: wrap;
-  max-width: 106px;
-  margin-right: 45px;
-  &:last-child {
-    margin-right: 0;
-  }
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    max-width: 228px;
-    margin-right: 80px;
-  }
-`;
-
-export const BrowseNavLinkStyle = styled(Link)`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  text-decoration: none;
-  padding-bottom: 8px;
-  color: ${color.greyDark};
-  border-bottom: 2px solid transparent;
-  &:hover,
-  &:focus {
-    color: ${color.black};
-  }
-  &.selected,
-  &.selected:hover,
-  &.selected:focus {
-    color: ${color.brandSecondary};
-    border-bottom: 2px solid ${color.brandSecondary};
-  }
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
-    padding-bottom: 14px;
   }
 `;
 

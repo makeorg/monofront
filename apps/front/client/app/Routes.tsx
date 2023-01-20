@@ -66,9 +66,7 @@ const ParticipatePage = loadable(
   () => import('../pages/Consultation/Participate')
 );
 const ExplorePage = loadable(() => import('../pages/Consultation/Explore'));
-export const ResultsPage = loadable(
-  () => import('../pages/Consultation/Results')
-);
+const ResultsPage = loadable(() => import('../pages/Consultation/Results'));
 const TopIdeasPage = loadable(() => import('../pages/Consultation/TopIdeas'));
 const TopIdeaDetailsPage = loadable(
   () => import('../pages/Consultation/TopIdeaDetails')

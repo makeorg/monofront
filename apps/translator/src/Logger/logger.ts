@@ -11,7 +11,7 @@ import {
 import { oneLineTransformer } from '@make.org/logger/loggerTransformer';
 import { Response } from 'express';
 
-export interface CustomServerLogger {
+interface CustomServerLogger {
   logError: (x: object, res: Response) => void;
   logInfo: (x: object, res: Response) => void;
   logWarning: (x: object, res: Response) => void;

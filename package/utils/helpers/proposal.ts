@@ -1,6 +1,5 @@
 /* eslint-disable default-param-last */
 import {
-  getBaitText,
   MIN_PROPOSAL_LENGTH,
   MAX_PROPOSAL_LENGTH,
   PROPOSALS_LISTING_LIMIT,
@@ -16,15 +15,6 @@ import i18n from 'i18next';
 import { TRANSLATION_NAMESPACE } from '@make.org/utils/i18n/constants';
 import { Logger } from '@make.org/utils/services/Logger';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
-import { AVAILABLE_ALGORITHMS } from '@make.org/api/ProposalApiService';
-
-export const getProposalLength = (content = ''): number => {
-  if (content === '') {
-    return getBaitText().length;
-  }
-
-  return (getBaitText() + content).length;
-};
 
 export const proposalHasValidLength = (length = 0): boolean => {
   if (length === 0) {
@@ -70,53 +60,6 @@ export const searchProposals = async (
   );
 
   return result;
-};
-
-export const searchTaggedProposals = async (
-  country: string,
-  questionId: string,
-  TagIdsArray: string[] = [],
-  seed?: number,
-  page = 0,
-  sortTypeKey = AVAILABLE_ALGORITHMS.TAGGED_FIRST.value,
-  ideaIds?: string
-): Promise<ProposalsType | null> => {
-  const limit = PROPOSALS_LISTING_LIMIT;
-  const skip = page * limit;
-  const tagsIds = TagIdsArray.length ? TagIdsArray.join(',') : undefined;
-
-  const response = await ProposalService.searchProposals(
-    country,
-    questionId,
-    undefined,
-    tagsIds,
-    seed,
-    limit,
-    skip,
-    sortTypeKey,
-    undefined,
-    ideaIds
-  );
-
-  return response;
-};
-
-export const getProposalCardIndex = (index = 0): string =>
-  `proposal_list_card_${index}`;
-
-/**
- * Rendering title depending on feed algorithm type
- * @type {string}
- * @param {string} sortKey
- * @return {string}
- */
-export const getProposalsListTitle = (sortKey: string): string => {
-  switch (sortKey) {
-    case 'RECENT':
-      return i18n.t('consultation.sort.RECENT');
-    default:
-      return i18n.t('consultation.sort.RECENT');
-  }
 };
 
 /**

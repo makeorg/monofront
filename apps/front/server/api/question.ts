@@ -5,7 +5,7 @@ import cache from 'memory-cache';
 import { env } from '@make.org/assets/env';
 import { APP_SERVER_DIR } from '../paths';
 
-export const ALLOWED_URL = env.frontUrl();
+const ALLOWED_URL = env.frontUrl();
 
 export const questionResults = (
   req: Request,

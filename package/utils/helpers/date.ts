@@ -77,7 +77,7 @@ type DateHelperSingletonType = {
 
 let instance: DateHelperSingletonType | null = null;
 
-export class DateHelperSingleton {
+class DateHelperSingleton {
   languageValue: keyof typeof LocaleType;
 
   constructor(language: keyof typeof LocaleType) {
@@ -130,7 +130,7 @@ export const getRemainingDays = (
   );
 };
 
-export const getDate = (dateString?: string): Date | null => {
+const getDate = (dateString?: string): Date | null => {
   if (!dateString) {
     return null;
   }

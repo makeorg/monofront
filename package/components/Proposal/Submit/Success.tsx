@@ -52,7 +52,7 @@ type Props = {
   isRegister?: boolean;
 };
 
-export const ProposalAuthorAge: React.FC<{ dateOfBirth: string | null }> = ({
+const ProposalAuthorAge: React.FC<{ dateOfBirth: string | null }> = ({
   dateOfBirth,
 }) => {
   if (!dateOfBirth) {

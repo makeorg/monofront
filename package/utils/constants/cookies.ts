@@ -21,4 +21,3 @@ export const REJECT_ALL_PREFRENCES: StateUserCookiesPreferences = {
 };
 
 export const ENABLE_MIXPANEL = true;
-export const DISABLE_MIXPANEL = false;

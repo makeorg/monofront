@@ -10,7 +10,7 @@ export const SharingStyle = styled(SpaceBetweenRowStyle)`
   max-width: 150px;
 `;
 
-export const SharingButtonStyle = styled(UnstyledButtonStyle)`
+const SharingButtonStyle = styled(UnstyledButtonStyle)`
   width: 40px;
   height: 40px;
   font-size: ${intToPx(typography.font.fontsize.S.value)};

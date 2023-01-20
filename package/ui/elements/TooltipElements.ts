@@ -22,7 +22,7 @@ export const TooltipStyle = styled.div<{ as: StyledComponent<'div', any> }>`
   }
 `;
 
-export const VerticalToolptipStyle = styled(TooltipStyle)`
+const VerticalToolptipStyle = styled(TooltipStyle)`
   transform: translate(-50%, 0);
   left: 50%;
   &:after {
@@ -33,7 +33,7 @@ export const VerticalToolptipStyle = styled(TooltipStyle)`
   }
 `;
 
-export const HorizontalTooltipStyle = styled(TooltipStyle)`
+const HorizontalTooltipStyle = styled(TooltipStyle)`
   transform: translate(0, -50%);
   top: 50%;
   &:after {

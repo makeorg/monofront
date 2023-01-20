@@ -47,17 +47,9 @@ export const ProfilePageContentWrapperStyle = styled.div`
   }
 `;
 
-export const ContentElementStyle = styled(ColumnElementStyle)`
+const ContentElementStyle = styled(ColumnElementStyle)`
   width: 100%;
   height: 100%;
-`;
-
-export const ProfilePageWithoutTabsContentStyle = styled(ContentElementStyle)`
-  margin: ${intToPx(DefaultPadding.Mobile)} 0 30px;
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin: 90px 0 0;
-    width: ${pxToPercent(780, 1140)};
-  }
 `;
 
 export const ProfilePageContentStyle = styled(ContentElementStyle)`

@@ -20,6 +20,10 @@ import {
   stringNormalizer,
 } from '@make.org/logger/loggerNormalizer';
 
+import {
+  getStackTransformer,
+  oneLineTransformer,
+} from '@make.org/logger/loggerTransformer';
 import { initRoutes } from './routes';
 import { serverInitI18n } from './i18n';
 import {
@@ -29,28 +33,25 @@ import {
   WIDGET_JS_DIR,
   WIDGET_MAP_DIR,
 } from './paths';
-import { getStackTransformer, oneLineTransformer } from '@make.org/logger/loggerTransformer';
 
 serverInitI18n();
 ApiService.strategy = new ApiServiceServer();
 // App
 const getApp = () => {
   const app = express();
-  
-  getStackTransformer(WIDGET_JS_DIR, WIDGET_BUILD_DIR, WIDGET_MAP_DIR).then (
-    stackTransformer => initLogger(
-      'make-widget',
-      [
-        errorNormalizer,
-        makeorgApiServiceErrorNormalizer,
-        stringNormalizer,
-        objectNormalizer,
-      ],
-      [
-        stackTransformer,
-        oneLineTransformer,
-      ]
-    )
+
+  getStackTransformer(WIDGET_JS_DIR, WIDGET_BUILD_DIR, WIDGET_MAP_DIR).then(
+    stackTransformer =>
+      initLogger(
+        'make-widget',
+        [
+          errorNormalizer,
+          makeorgApiServiceErrorNormalizer,
+          stringNormalizer,
+          objectNormalizer,
+        ],
+        [stackTransformer, oneLineTransformer]
+      )
   );
   const logger = getLoggerInstance();
 

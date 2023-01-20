@@ -35,7 +35,7 @@ export const loadSequenceCards = (
   payload: { cards },
 });
 
-export const updateSequenceCardState = (
+const updateSequenceCardState = (
   index: number,
   newCardState: ProposalCardStateType
 ): ReducerAction => ({

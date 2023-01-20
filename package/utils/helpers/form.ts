@@ -1,4 +1,3 @@
-import i18n from 'i18next';
 import {
   ErrorObjectType,
   OrganisationProfileType,
@@ -31,15 +30,6 @@ export const setNullToEmptyString = (
   }
 
   return !initialValue ? '' : initialValue;
-};
-
-export const errorTranslation = (message: string): string => {
-  const translatedError = i18n.t(message);
-  if (translatedError === undefined) {
-    return message;
-  }
-
-  return translatedError;
 };
 
 export const getFieldError = (

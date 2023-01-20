@@ -57,10 +57,6 @@ export const CheckboxLabelStyle = styled.label<{
   }
 `;
 
-export const CheckboxLabelCenterStyle = styled(CheckboxLabelStyle)`
-  align-items: center;
-`;
-
 export const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   // Hide checkbox visually but remain accessible to screen readers.
   // Source: https://polished.js.org/docs/#hidevisually
@@ -178,25 +174,6 @@ export const FormRequirementsLeftStyle = styled.p`
   align-self: flex-start;
 `;
 
-export const TwoFieldsRowStyle = styled(FlexElementStyle)`
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: space-between;
-  margin-bottom: 15px;
-  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    flex-direction: row;
-    > .age {
-      max-width: 150px;
-      margin-bottom: 0;
-    }
-    > .postalcode {
-      max-width: 300px;
-      margin-bottom: 0;
-    }
-  }
-`;
-
 export const FakeFieldStyle = styled.div<{ hasError?: boolean }>`
   display: flex;
   position: relative;
@@ -305,7 +282,7 @@ export const CustomErrorTriggerStyle = styled(UnstyledButtonStyle)`
   margin-left: 5px;
 `;
 
-export const InputIconStyle = styled.span`
+const InputIconStyle = styled.span`
   display: flex;
   color: ${color.brandSecondary};
   font-size: ${intToPx(typography.font.fontsize.S.value)};

@@ -179,16 +179,6 @@ export const SvgControversial = styled(SvgLightning)`
   fill: #f7b500;
 `;
 
-export const RedSubmitButtonWrapperStyle = styled.div`
-  display: flex;
-  flex-direction: row;
-  padding-left: 20px;
-  margin-top: 30px;
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    flex-direction: row-reverse;
-  }
-`;
-
 export const CloseApplyStyle = styled.button`
   display: flex;
   flex-direction: row-reverse;

@@ -1,8 +1,5 @@
 import styled from 'styled-components';
-import {
-  SecondLevelTitleStyle,
-  ThirdLevelTitleStyle,
-} from '@make.org/ui/elements/TitleElements';
+import { ThirdLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
 import { SvgLegalConsent, SvgExternalLink } from '@make.org/ui/Svg/elements';
 import { SmallSeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { FormCenterAlignStyle } from '@make.org/ui/elements/FormElements';
@@ -37,10 +34,6 @@ export const RegisterFormUtilsAlignementWrapperStyle = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
-`;
-
-export const AuthenticationTitleStyle = styled(SecondLevelTitleStyle)`
-  padding: 0 25px;
 `;
 
 export const SocialRegisterButtonsWrapperStyle = styled(CenterColumnStyle)`
@@ -99,7 +92,7 @@ export const LegalSubmitStyle = styled(RedButtonStyle)`
   }
 `;
 
-export const TermsOfUseLinkStyle = styled.a`
+const TermsOfUseLinkStyle = styled.a`
   display: inline;
   font-family: ${MakeFonts.CircularStandardBook};
   color: ${color.greyDark};
@@ -115,14 +108,6 @@ export const TermsOfUseLinkGreyStyle = styled(TermsOfUseLinkStyle)`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  }
-`;
-
-export const PanelTermsOfUseLinkStyle = styled(TermsOfUseLinkStyle)`
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  &:hover,
-  &:focus {
-    color: ${color.greyDark};
   }
 `;
 

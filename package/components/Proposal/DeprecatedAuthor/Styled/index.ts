@@ -31,10 +31,6 @@ export const AuthorInfosStyle = styled(ParagraphStyle)`
   }
 `;
 
-export const InfosWrapperStyle = styled.span`
-  display: 'inline-flex';
-`;
-
 export const ProposalStatusStyle = styled.span`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   color: ${color.white};

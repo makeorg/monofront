@@ -7,11 +7,9 @@ import {
   SvgThumbsUp,
   SvgEnvelope,
   SvgPencil,
-  SvgClapping,
   SvgSignOut,
   SvgAngleArrowLeft,
   SvgPlayButton,
-  SvgStepForward,
   SvgLock,
   SvgUser,
   SvgBirthday,
@@ -64,21 +62,7 @@ const ButtonIconStyle = `
   }
 `;
 
-export const ProposalIconStyle = styled(props => <SvgPencil {...props} />)`
-  ${ButtonIconStyle};
-  &.closed {
-    margin: 0;
-    @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-      margin-right: 5px;
-    }
-  }
-`;
-
 export const EmailIconStyle = styled(props => <SvgEnvelope {...props} />)`
-  ${ButtonIconStyle}
-`;
-
-export const ClappingIconStyle = styled(props => <SvgClapping {...props} />)`
   ${ButtonIconStyle}
 `;
 
@@ -101,10 +85,6 @@ export const ThumbsUpIconStyle = styled(props => <SvgThumbsUp {...props} />)`
 `;
 
 export const PlayIconStyle = styled(props => <SvgPlayButton {...props} />)`
-  ${ButtonIconStyle}
-`;
-
-export const ForwardIconStyle = styled(props => <SvgStepForward {...props} />)`
   ${ButtonIconStyle}
 `;
 

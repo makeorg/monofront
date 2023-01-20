@@ -59,17 +59,6 @@ export const SecuredExpirationStyle = styled.span`
   flex: 1;
 `;
 
-export const SvgIconStyle = {
-  minWidth: '19px',
-  marginRight: '10px',
-};
-
-export const SvgCheckStyle = {
-  fill: color.agree,
-  minWidth: '22px',
-  marginRight: '10px',
-};
-
 export const VoteOnlyMessageStyle = styled(ColumnToRowElementStyle)`
   align-items: flex-start;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {

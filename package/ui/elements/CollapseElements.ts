@@ -84,7 +84,3 @@ export const CollapseContentStyle = styled.div<{
 export const CollapseSeparatorStyle = styled(SeparatorStyle)`
   margin: 10px 0;
 `;
-
-export const TileWithCollapseSeparatorStyle = styled(SeparatorStyle)`
-  margin: 8px 0 16px;
-`;

@@ -28,9 +28,7 @@ type Props = {
   proposal: ProposalType;
 };
 
-export const ProposalAuthorAge: React.FC<{ age: number | null }> = ({
-  age,
-}) => {
+const ProposalAuthorAge: React.FC<{ age: number | null }> = ({ age }) => {
   if (!age) {
     return null;
   }

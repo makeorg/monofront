@@ -7,7 +7,7 @@ import { TermsOfUseDE } from './DE';
 import { TermsOfUseUK } from './UK';
 import { TermsOfUseCS } from './CS';
 
-export const TermsOfUse: FC = () => {
+const TermsOfUse: FC = () => {
   const { state } = useAppContext();
   const { language } = state.appConfig;
 

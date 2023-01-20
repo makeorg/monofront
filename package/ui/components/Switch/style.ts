@@ -1,11 +1,5 @@
 import styled from 'styled-components';
 
-export const SwitchButtonInternalWrapperStyle = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
 export const SwitchButtonStyle = styled.button<{ isChecked: boolean }>`
   margin: 0;
   padding: 0;

@@ -17,7 +17,7 @@ import { InternationalPlaceholder } from '../../app/Homepage/International';
 import { HomepageSkipLinks } from '../../app/SkipLinks/Homepage';
 import { HomepageWrapperStyle } from './style';
 
-export const HomePage: FC = () => {
+const HomePage: FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { dispatch, state } = useAppContext();
   const {

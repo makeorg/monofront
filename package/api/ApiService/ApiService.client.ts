@@ -12,7 +12,7 @@ import { refreshToken } from '../OauthRefresh';
 
 const RETRIES = 5;
 
-export class ApiServiceClient implements IApiServiceStrategy {
+class ApiServiceClient implements IApiServiceStrategy {
   _appname = '';
 
   _language = '';

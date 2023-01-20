@@ -39,7 +39,7 @@ type Props = {
   submitSuccess: () => void;
 };
 
-export const renderFormUI = (
+const renderFormUI = (
   layout: string,
   data: DemographicParameterType[],
   currentValue: string,

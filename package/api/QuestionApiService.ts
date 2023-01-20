@@ -20,7 +20,7 @@ const PATH_QUESTION_TOP_IDEA_DETAILS =
   '/questions/:questionId/top-ideas/:topIdeaId';
 const PATH_QUESTION_FEATURED_PROPOSALS =
   '/questions/:questionId/featured-proposals';
-export const PATH_QUESTION_KEYWORDS = '/questions/:questionId/keywords';
+const PATH_QUESTION_KEYWORDS = '/questions/:questionId/keywords';
 
 export class QuestionApiService {
   static getQuestions(

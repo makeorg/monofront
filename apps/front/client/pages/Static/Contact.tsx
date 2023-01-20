@@ -10,7 +10,7 @@ import {
   StaticParagraphStyle,
 } from './style';
 
-export const Contact: FC = () => {
+const Contact: FC = () => {
   const { state } = useAppContext();
   const { country, countriesWithConsultations } = state.appConfig;
   const contactMailByCountry = getContactMailByCountry(

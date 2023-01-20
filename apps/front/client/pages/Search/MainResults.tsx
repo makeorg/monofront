@@ -27,7 +27,7 @@ import { MainResultsProposals } from '../../app/Search/MainResults/Proposals';
 import { MainResultsOrganisations } from '../../app/Search/MainResults/Organisations';
 import { SearchRegister } from '../../app/Search/Register';
 
-export type Props = {
+type Props = {
   location: Location;
 };
 

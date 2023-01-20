@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
-import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { SecondLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
 
 export const SearchPageWrapperStyle = styled.div`
@@ -40,13 +39,6 @@ export const MainResultsSectionStyle = styled.section`
   }
 `;
 
-export const MainResultsContainerStyle = styled.div`
-  padding: 0 20px;
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    padding: 0;
-  }
-`;
-
 export const NoResultsStyle = styled.p`
   font-family: ${MakeFonts.CircularStandardBold};
   font-weight: bold;
@@ -75,27 +67,6 @@ export const SearchPageTitleStyle = styled(SecondLevelTitleStyle)`
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     padding: 0;
     margin-bottom: 35px;
-  }
-`;
-
-export const SearchBackStyle = styled(UnstyledButtonStyle)`
-  display: flex;
-  align-items: flex-end;
-  margin-bottom: 10px;
-  margin-left: 0;
-  color: ${color.brandSecondary};
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  padding: 0;
-  text-decoration: underline;
-  &:hover,
-  &:focus {
-    color: ${color.brandSecondary};
-  }
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  }
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
   }
 `;
 

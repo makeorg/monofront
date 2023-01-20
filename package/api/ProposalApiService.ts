@@ -2,44 +2,15 @@ import { ApiServiceHeadersType, ProposalsType } from '@make.org/types';
 import { AxiosResponse } from 'axios';
 import { ApiService } from './ApiService';
 
-export const PATH_PROPOSALS = '/proposals';
-export const PATH_TOP_PROPOSALS = '/questions/:questionId/top-proposals';
-export const PATH_PROPOSAL_GET = '/proposals/:proposalId';
-
-type TypeSort =
-  | 'content'
-  | 'slug'
-  | 'createdAt'
-  | 'updatedAt'
-  | 'trending'
-  | 'labels'
-  | 'country'
-  | 'language'
-  | 'popular';
-
-type TypeFeedAlgortithms = {
-  CONTROVERSY: { key: string; value: string };
-  ACTORS: { key: string; value: string };
-  POPULAR: { key: string; value: TypeSort };
-  REALISTIC: { key: string; value: string };
-  RECENT: { key: string; value: string };
-  TAGGED_FIRST: { key: string; value: string };
-};
-
-export const PROPOSALS_FEED_ALGORITHMS: TypeFeedAlgortithms = {
-  TAGGED_FIRST: { key: 'sortAlgorithm', value: 'taggedFirst' },
-  POPULAR: { key: 'sortAlgorithm', value: 'popular' },
-  ACTORS: { key: 'userType', value: 'ORGANISATION,PERSONALITY' },
-  RECENT: { key: 'sort', value: 'createdAt' },
-  REALISTIC: { key: 'sortAlgorithm', value: 'realistic' },
-  CONTROVERSY: { key: 'sortAlgorithm', value: 'controversy' },
-};
+const PATH_PROPOSALS = '/proposals';
+const PATH_TOP_PROPOSALS = '/questions/:questionId/top-proposals';
+const PATH_PROPOSAL_GET = '/proposals/:proposalId';
 
 type TypeAvailableAlgorithms = {
   [name: string]: { key: string; value: string };
 };
 
-export const AVAILABLE_ALGORITHMS: TypeAvailableAlgorithms = {
+const AVAILABLE_ALGORITHMS: TypeAvailableAlgorithms = {
   TAGGED_FIRST: { key: 'sortAlgorithm', value: 'taggedFirst' },
   POPULAR: { key: 'sortAlgorithm', value: 'popular' },
   ACTORS: { key: 'userType', value: 'ORGANISATION,PERSONALITY' },

@@ -15,10 +15,6 @@ export const trackDisplayOperationPage = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_PAGE_OPERATION());
 };
 
-export const trackClickActionsTab = (): void => {
-  TrackingService.sendAllTrackers(trackingEvent.CLICK_ACTIONS_TAB());
-};
-
 export const trackClickParticipateTab = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_PARTICIPATE_TAB());
 };
@@ -76,21 +72,12 @@ export const trackClickMakeLogo = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_MAKEORG_LOGO());
 };
 
-/* Moderation Text Tracking */
-export const trackDisplayModerationText = (): void => {
-  TrackingService.sendAllTrackers(trackingEvent.DISPLAY_MODERATION_TEXT());
-};
-
 export const trackClickModerationLink = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_MODERATION_LINK());
 };
 
 export const trackDisplayAuthenticationForm = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_AUTHENTICATION_FORM());
-};
-
-export const trackClickPersonnalDataLink = (): void => {
-  TrackingService.sendAllTrackers(trackingEvent.CLICK_PERSONNAL_DATA_LINK());
 };
 
 /* Proposal Submit */
@@ -102,10 +89,6 @@ export const trackDisplayProposalField = (source?: string): void => {
 
 export const trackClickProposalSubmit = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.CLICK_PROPOSAL_SUBMIT());
-};
-
-export const trackClickBackProposals = (): void => {
-  TrackingService.sendAllTrackers(trackingEvent.CLICK_BACK_PROPOSALS());
 };
 
 export const trackDisplayProposalSubmitValidation = (): void => {
@@ -421,15 +404,6 @@ export const trackDisplayTopIdeas = (pageType: string): void => {
   );
 };
 
-/** Results */
-export const trackDownloadReport = (extension: string): void => {
-  TrackingService.sendAllTrackers(
-    trackingEvent.CLICK_REPORT_DOWNLOAD({
-      type: extension,
-    })
-  );
-};
-
 /** Home and Browse */
 export const trackDisplayBrowseConsultations = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_BROWSE_CONSULTATIONS());
@@ -650,10 +624,6 @@ export const trackDisplayNoResultsCard = (): void => {
 
 export const trackDisplayChargeIntroCard = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_CHARGE_INTRO_CARD());
-};
-
-export const trackClickNextSignup = (): void => {
-  TrackingService.sendAllTrackers(trackingEvent.CLICK_NEXT_SIGNUP());
 };
 
 // Switch country/language

@@ -21,7 +21,7 @@ import {
   StaticPhoneLinkStyle,
 } from './style';
 
-export const LegalPage: FC = () => {
+const LegalPage: FC = () => {
   const { state } = useAppContext();
   const { country, countriesWithConsultations } = state.appConfig;
   const contactMailByCountry = getContactMailByCountry(

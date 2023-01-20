@@ -28,10 +28,8 @@ type Props = {
   partners: PartnerType[];
 };
 
-export const orderByWeight = (
-  partner1: PartnerType,
-  partner2: PartnerType
-): number => partner2.weight - partner1.weight;
+const orderByWeight = (partner1: PartnerType, partner2: PartnerType): number =>
+  partner2.weight - partner1.weight;
 
 export const PartnersList: FC<Props> = ({ partners }) => (
   <PartnersListStyle>

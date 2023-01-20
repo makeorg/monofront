@@ -1,7 +1,7 @@
 import { TrackingConfigurationParamType } from './Tracking';
 
 // see https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters for more information
-export type FbUserDataType = {
+type FbUserDataType = {
   external_id: string | string[]; // user id as SHA256
   client_user_agent?: string;
 };

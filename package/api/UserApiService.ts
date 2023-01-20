@@ -10,28 +10,26 @@ import { AxiosResponse } from 'axios';
 import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
 import { ApiService } from './ApiService';
 
-export const PATH_USER_ME = '/user/me';
-export const PATH_USER_CURRENT = '/user/current';
-export const PATH_USER_PROFILE = '/user/:userId/profile';
-export const PATH_USER_CHECK_REGISTRATION = '/user/check-registration';
 export const PATH_USER_LOGIN = '/oauth/make_access_token';
-export const PATH_USER_GET_TOKEN = '/oauth/access_token';
-export const PATH_USER_LOGOUT = '/logout';
-export const PATH_USER_LOGIN_SOCIAL = '/user/login/social';
-export const PATH_USER = '/user';
-export const PATH_USER_FORGOT_PASSWORD = '/user/reset-password/request-reset';
-export const PATH_USER_VERIFICATION =
-  '/user/:userId/validate/:verificationToken';
-export const PATH_USER_RESET_TOKEN_CHECK =
+const PATH_USER_CURRENT = '/user/current';
+const PATH_USER_PROFILE = '/user/:userId/profile';
+const PATH_USER_CHECK_REGISTRATION = '/user/check-registration';
+const PATH_USER_GET_TOKEN = '/oauth/access_token';
+const PATH_USER_LOGOUT = '/logout';
+const PATH_USER_LOGIN_SOCIAL = '/user/login/social';
+const PATH_USER = '/user';
+const PATH_USER_FORGOT_PASSWORD = '/user/reset-password/request-reset';
+const PATH_USER_VERIFICATION = '/user/:userId/validate/:verificationToken';
+const PATH_USER_RESET_TOKEN_CHECK =
   '/user/reset-password/check-validity/:userId/:resetToken';
-export const PATH_USER_CHANGE_PASSWORD =
+const PATH_USER_CHANGE_PASSWORD =
   '/user/reset-password/change-password/:userId';
-export const PATH_USER_UPDATE_PASSWORD = '/user/:userId/change-password';
-export const PATH_USER_DELETE_ACCOUNT = '/user/:userId/delete';
-export const PATH_USER_PROPOSALS = '/user/:userId/proposals';
-export const PATH_USER_FAVOURITES = '/user/:userId/votes';
-export const PATH_USER_PRIVACY_POLICY = '/user/privacy-policy';
-export const PATH_USER_SOCIAL_PRIVACY_POLICY = '/user/social/privacy-policy';
+const PATH_USER_UPDATE_PASSWORD = '/user/:userId/change-password';
+const PATH_USER_DELETE_ACCOUNT = '/user/:userId/delete';
+const PATH_USER_PROPOSALS = '/user/:userId/proposals';
+const PATH_USER_FAVOURITES = '/user/:userId/votes';
+const PATH_USER_PRIVACY_POLICY = '/user/privacy-policy';
+const PATH_USER_SOCIAL_PRIVACY_POLICY = '/user/social/privacy-policy';
 
 export const FACEBOOK_PROVIDER_ENUM = 'facebook';
 export const GOOGLE_PROVIDER_ENUM = 'google_people';

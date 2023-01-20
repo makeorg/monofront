@@ -62,7 +62,7 @@ import {
   StaticTitleExtra,
 } from './style';
 
-export const CookiesPage: FC = () => {
+const CookiesPage: FC = () => {
   const { dispatch, state } = useAppContext();
   const { country } = state.appConfig;
   const { cookiesPreferences } = state.user;

@@ -1,8 +1,8 @@
 import { AxiosResponse } from 'axios';
 import { ApiService } from './ApiService';
 
-export const PATH_VOTE = '/proposals/:proposalId/vote';
-export const PATH_UNVOTE = '/proposals/:proposalId/unvote';
+const PATH_VOTE = '/proposals/:proposalId/vote';
+const PATH_UNVOTE = '/proposals/:proposalId/unvote';
 
 export class VoteApiService {
   static vote(

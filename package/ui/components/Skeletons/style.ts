@@ -3,7 +3,6 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { color } from 'athena-design-tokens';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
-import { SeparatorStyle } from '../../elements/SeparatorsElements';
 import { SpaceBetweenRowStyle } from '../../elements/FlexElements';
 
 export const SkeletonCardStyle = styled.div`
@@ -100,9 +99,4 @@ export const SkeletonVoteWrapperStyle = styled(SpaceBetweenRowStyle)`
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     max-width: 190px;
   }
-`;
-
-export const SequenceSeparatorStyle = styled(SeparatorStyle)`
-  max-width: 80px;
-  margin: 10px auto 20px;
 `;

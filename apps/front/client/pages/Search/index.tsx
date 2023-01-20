@@ -11,7 +11,7 @@ import { SearchResultsProposals } from './Proposals';
 import { SearchOrganisations } from './Organisations';
 import { SearchConsultations } from './Consultations';
 
-export const SearchPage: React.FC = () => (
+const SearchPage: React.FC = () => (
   <Switch>
     <Route path={ROUTE_SEARCH} exact component={SearchMainResults} />
     <Route

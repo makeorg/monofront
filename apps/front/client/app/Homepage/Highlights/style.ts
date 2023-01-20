@@ -13,18 +13,6 @@ import {
 import { SvgPeople, SvgLight, SvgHandHeart } from '@make.org/ui/Svg/elements';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
 
-export const ConsultationsListItemStyle = styled.li<{ itemsPerRow: number }>`
-  margin-bottom: 50px;
-  padding-left: 20px;
-  padding-right: 20px;
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    width: ${getFullWidthDividedByItems(2)};
-  }
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    width: ${props => getFullWidthDividedByItems(props.itemsPerRow)};
-  }
-`;
-
 export const HighlightsBannerFiguresContainerStyle = styled(
   SpaceBetweenRowStyle
 )`

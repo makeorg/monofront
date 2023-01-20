@@ -2,15 +2,15 @@ import { color } from 'athena-design-tokens';
 import i18n from 'i18next';
 import { OpinionVoteParamsType } from '@make.org/types';
 
-export const OPINION_AGREE_KEY = 'agree';
-export const OPINION_DISAGREE_KEY = 'disagree';
-export const OPINION_OTHER_KEY = 'other';
-export const OPINION_PRIORITY_KEY = 'priority';
-export const OPINION_DOABLE_KEY = 'doable';
-export const OPINION_NOWAY_KEY = 'noWay';
-export const OPINION_NONPRIORITY_KEY = 'nonPriority';
-export const OPINION_EXISTS_KEY = 'exists';
-export const OPINION_TOBEPRECISED_KEY = 'toBePrecised';
+const OPINION_AGREE_KEY = 'agree';
+const OPINION_DISAGREE_KEY = 'disagree';
+const OPINION_OTHER_KEY = 'other';
+const OPINION_PRIORITY_KEY = 'priority';
+const OPINION_DOABLE_KEY = 'doable';
+const OPINION_NOWAY_KEY = 'noWay';
+const OPINION_NONPRIORITY_KEY = 'nonPriority';
+const OPINION_EXISTS_KEY = 'exists';
+const OPINION_TOBEPRECISED_KEY = 'toBePrecised';
 
 export const opinionsVoteStaticParams: OpinionVoteParamsType = {
   [OPINION_AGREE_KEY]: {

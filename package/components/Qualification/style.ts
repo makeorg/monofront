@@ -5,10 +5,6 @@ import { color, typography } from 'athena-design-tokens';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 
-export const QualificationDataItemStyle = styled(UnstyledListStyle)`
-  margin-top: 10px;
-`;
-
 export const QualificationLabelStyle = styled.span`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   font-family: ${MakeFonts.CircularStandardBold};

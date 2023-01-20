@@ -1,8 +1,8 @@
 import { AxiosResponse } from 'axios';
 import { ApiService } from './ApiService';
 
-export const PATH_QUALIFICATION = '/proposals/:proposalId/qualification';
-export const PATH_UNQUALIFICATION = '/proposals/:proposalId/unqualification';
+const PATH_QUALIFICATION = '/proposals/:proposalId/qualification';
+const PATH_UNQUALIFICATION = '/proposals/:proposalId/unqualification';
 
 export class QualificationApiService {
   static qualify(

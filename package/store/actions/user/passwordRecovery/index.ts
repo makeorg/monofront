@@ -11,7 +11,7 @@ import {
   PASSWORD_RECOVERY_REQUEST,
 } from '../../../actionTypes';
 
-export const passwordRecoveryRequest = (
+const passwordRecoveryRequest = (
   newPassword: string,
   resetToken: string,
   userId: string
@@ -19,13 +19,13 @@ export const passwordRecoveryRequest = (
   type: PASSWORD_RECOVERY_REQUEST,
   payload: { newPassword, resetToken, userId },
 });
-export const passwordRecoveryFailure = (
-  errorMessage: string
-): ReducerAction => ({
+
+const passwordRecoveryFailure = (errorMessage: string): ReducerAction => ({
   type: PASSWORD_RECOVERY_FAILURE,
   payload: { errorMessage },
 });
-export const passwordRecoverySuccess = (): ReducerAction => ({
+
+const passwordRecoverySuccess = (): ReducerAction => ({
   type: PASSWORD_RECOVERY_SUCCESS,
 });
 

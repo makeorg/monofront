@@ -36,13 +36,6 @@ export const SearchSliderListItemStyle = styled.li`
   }
 `;
 
-export const SearchResultsProposalListStyle = styled(UnstyledListStyle)`
-  padding: 0 20px;
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    padding: 0;
-  }
-`;
-
 export const SearchResultsProposalItemStyle = styled.li`
   margin-bottom: 15px;
   &:last-child {

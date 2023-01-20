@@ -7,7 +7,7 @@ import { selectPasswordRecovery } from '@make.org/store/selectors/user.selector'
 import { PasswordRecoveryForm } from './Form';
 import { PasswordRecoveryStyle, PasswordRecoveryTitleStyle } from './style';
 
-export const PasswordRecoverySuccess: React.FC = () => (
+const PasswordRecoverySuccess: React.FC = () => (
   <SecondLevelTitleStyle id="password_recovery_title">
     {i18n.t('reset_password.success.title')}
   </SecondLevelTitleStyle>

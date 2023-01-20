@@ -11,7 +11,7 @@ import {
   SequenceContentStyle,
 } from '@make.org/components/Sequence/style';
 
-export type Props = {
+type Props = {
   /** kind parameter for popular and controversy sequences */
   sequenceKind: string;
 };

@@ -23,11 +23,9 @@ import {
   ROUTE_STATIC_A11Y_FR,
   ROUTE_BROWSE_CONSULTATIONS,
   ROUTE_BROWSE_RESULTS,
-  BASE_PREVIEW_PATH,
   ROUTE_CONSULTATION_STEP,
   ROUTE_COUNTRY,
   ROUTE_PASSWORD_RECOVERY,
-  ROUTE_ACCOUNT_ACTIVATION,
   ROUTE_EXPLORE,
   ROUTE_STATIC_COOKIES,
   ROUTE_STATIC_DATA_DE,
@@ -480,9 +478,6 @@ export const redirectToNotFoundPage = (country: string): void => {
   });
 };
 
-export const isPreviewPath = (path: string): boolean =>
-  path.includes(BASE_PREVIEW_PATH, 0);
-
 /**
  * Get webflow dynamic page link
  *
@@ -490,7 +485,6 @@ export const isPreviewPath = (path: string): boolean =>
  * @param  {string} route
  * @return {string}
  */
-
 export const getWebflowDynamicLink = (
   language: string,
   route: string
@@ -514,26 +508,6 @@ export const getPasswordRecoveryLink = (
     country,
     userId,
     resetToken,
-  });
-
-/**
- * Get the account activation link
- *
- * @param  {string} country
- * @param  {number} userId
- * @param  {number} verificationToken
- *
- * @return {string}
- */
-export const getAccountActivationLink = (
-  country: string,
-  userId: string,
-  verificationToken: string
-): string =>
-  generatePath(ROUTE_ACCOUNT_ACTIVATION, {
-    country,
-    userId,
-    verificationToken,
   });
 
 /**

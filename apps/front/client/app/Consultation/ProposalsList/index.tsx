@@ -45,7 +45,7 @@ const generateSkeletonsList = (count: number) => {
   return skeletonsList;
 };
 
-export const ProposalsCard: FC<CardProps> = ({ proposal, country, index }) => (
+const ProposalsCard: FC<CardProps> = ({ proposal, country, index }) => (
   <ProposalCardStyle>
     <ProposalAuthor proposal={proposal} />
     <ProposalAndVoteWrapperStyle>

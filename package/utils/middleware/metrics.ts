@@ -1,6 +1,6 @@
 import promBundle from 'express-prom-bundle';
 
-export const METRIC_PATH = '/metrics';
+const METRIC_PATH = '/metrics';
 
 // define front middelware
 export const metricsMiddleware = promBundle({
