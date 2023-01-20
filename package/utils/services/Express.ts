@@ -6,6 +6,7 @@ import { ExpressApiService } from '@make.org/api/ExpressApiService';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { FbEventClientType } from '@make.org/types/FbEvents';
 import { LogLevelType } from '@make.org/types/enums/logLevel';
+import { DataLog } from '@make.org/logger/loggerNormalizer';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 import { Logger } from './Logger';
 
@@ -31,11 +32,8 @@ const getResults = async (
   }
 };
 
-const log = (
-  data: ApiServiceError | Error | { [key: string]: string } | string,
-  level: LogLevelType
-): void => {
-  ExpressApiService.log(Logger.normalizeData(data), level).catch(error => {
+const log = (data: DataLog, level: LogLevelType): void => {
+  ExpressApiService.log(data, level).catch(error => {
     // eslint-disable-next-line no-console
     console.error('Fail to log error - ', error);
   });

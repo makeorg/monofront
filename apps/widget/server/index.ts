@@ -13,7 +13,6 @@ import { nonceUuidMiddleware } from '@make.org/utils/middleware/nonceUuid';
 import { secureMiddleware } from '@make.org/utils/middleware/secure';
 import { maintenanceMiddleware } from '@make.org/utils/middleware/maintenance';
 import { getLoggerInstance, initLogger } from '@make.org/logger';
-import { makeorgApiServiceErrorNormalizer } from '@make.org/utils/helpers/loggerNormalizer';
 import {
   errorNormalizer,
   objectNormalizer,
@@ -24,6 +23,7 @@ import {
   getStackTransformer,
   oneLineTransformer,
 } from '@make.org/logger/loggerTransformer';
+import { apiErrorDataLogNormalizer } from '@make.org/api/apiErrorDataLogNormalizer';
 import { initRoutes } from './routes';
 import { serverInitI18n } from './i18n';
 import {
@@ -46,7 +46,7 @@ const getApp = () => {
         'make-widget',
         [
           errorNormalizer,
-          makeorgApiServiceErrorNormalizer,
+          apiErrorDataLogNormalizer,
           stringNormalizer,
           objectNormalizer,
         ],

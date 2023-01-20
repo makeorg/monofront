@@ -2,6 +2,7 @@
   "extends": "../../tsconfig.json",
   "references": [
     { "path": "../../package/assets" },
-    { "path": "../../package/utils" }
+    { "path": "../../package/utils" },
+    { "path": "../../package/logger" },
   ]
 }

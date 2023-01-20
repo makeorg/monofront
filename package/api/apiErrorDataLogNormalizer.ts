@@ -1,20 +1,5 @@
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
-
-type DataLog = {
-  message: string;
-  app_logId: string;
-  name?: string;
-  app_logName?: string;
-  app_fileName?: string;
-  app_lineNumber?: string;
-  app_columnNumber?: string;
-  stack?: string;
-  app_status?: number;
-  app_responseData?: unknown;
-  app_url?: string;
-  app_method?: string;
-  app_requestId?: string;
-};
+import { DataLog } from '@make.org/logger/loggerNormalizer';
 
 const formatApiServiceError = (error: ApiServiceError): DataLog => ({
   message: error.message,
@@ -31,9 +16,7 @@ const formatApiServiceError = (error: ApiServiceError): DataLog => ({
   app_requestId: error.requestId,
 });
 
-export const makeorgApiServiceErrorNormalizer = <T>(
-  data: T
-): DataLog | undefined => {
+export const apiErrorDataLogNormalizer = <T>(data: T): DataLog | undefined => {
   if (data instanceof ApiServiceError) {
     return formatApiServiceError(data);
   }

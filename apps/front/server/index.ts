@@ -17,7 +17,7 @@ import {
   objectNormalizer,
   stringNormalizer,
 } from '@make.org/logger/loggerNormalizer';
-import { makeorgApiServiceErrorNormalizer } from '@make.org/utils/helpers/loggerNormalizer';
+import { apiErrorDataLogNormalizer } from '@make.org/api/apiErrorDataLogNormalizer';
 import {
   getStackTransformer,
   oneLineTransformer,
@@ -44,7 +44,7 @@ const getApp = () => {
         'frontaccessible',
         [
           errorNormalizer,
-          makeorgApiServiceErrorNormalizer,
+          apiErrorDataLogNormalizer,
           stringNormalizer,
           objectNormalizer,
         ],
