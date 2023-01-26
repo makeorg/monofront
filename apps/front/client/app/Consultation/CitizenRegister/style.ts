@@ -1,9 +1,10 @@
 import styled from 'styled-components';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { color, typography } from 'athena-design-tokens';
 import { intToPx, pxToPercent } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
+import { TitleS } from '@make.org/designsystem/components/Titles';
+import { BodyMDefault } from '@make.org/designsystem/components/Body';
 
 export const CitizenRegisterContentStyle = styled(FlexElementStyle)`
   justify-content: flex-start;
@@ -15,11 +16,8 @@ export const CitizenRegisterContentStyle = styled(FlexElementStyle)`
   }
 `;
 
-export const CitizenRegisterTitleStyle = styled.h4`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
+export const CitizenRegisterTitleStyle = styled(TitleS)`
   text-transform: none;
-  font-size: ${intToPx(typography.font.fontsize.L.value)};
   margin: 15px 0 10px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${intToPx(typography.font.fontsize.XL.value)};
@@ -27,9 +25,7 @@ export const CitizenRegisterTitleStyle = styled.h4`
   }
 `;
 
-export const CitizenRegisterSubtitleStyle = styled.p`
-  font-family: ${MakeFonts.CircularStandardBook};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+export const CitizenRegisterSubtitleStyle = styled(BodyMDefault)`
   width: 100%;
   margin: 15px 0 10px;
   color: ${color.greyDark};

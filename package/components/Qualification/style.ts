@@ -1,14 +1,17 @@
 import styled from 'styled-components';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { color, typography } from 'athena-design-tokens';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
+import { BodyXSHighlight } from '@make.org/designsystem/components/Body';
 
-export const QualificationLabelStyle = styled.span`
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
+export const QualificationDataItemStyle = styled(UnstyledListStyle)`
+  margin-top: 10px;
+`;
+
+export const QualificationLabelStyle = styled(BodyXSHighlight).attrs({
+  as: 'span',
+})`
   color: ${props => props.color};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};

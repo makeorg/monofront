@@ -9,6 +9,7 @@ import {
 } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Elements } from '@make.org/assets/vars/Elements';
+import { BodyMCondensed } from '@make.org/designsystem/components/Body';
 import {
   FlexElementStyle,
   MiddleRowStyle,
@@ -143,9 +144,7 @@ export const ProfileNavigationStyle = styled(ColumnElementStyle)`
   margin-top: 10px;
 `;
 
-export const ProfileTitleStyle = styled.p`
-  font-family: ${MakeFonts.TradeGothicBoldCondensed};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+export const ProfileTitleStyle = styled(BodyMCondensed)`
   text-transform: uppercase;
   margin-bottom: 10px;
   text-align: center;

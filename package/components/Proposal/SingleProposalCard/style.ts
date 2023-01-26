@@ -90,7 +90,6 @@ export const SharingTitleStyle = styled.h2`
     margin: 0 20px;
   }
 `;
-
 export const ProposalCardContentStyle = styled.blockquote`
   max-width: 100%;
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};

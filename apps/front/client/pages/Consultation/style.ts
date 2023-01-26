@@ -11,6 +11,8 @@ import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { SvgFiltersMobileIcon } from '@make.org/ui/Svg/elements';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
+import { TitleL, TitleS } from '@make.org/designsystem/components/Titles';
+import { BodyMDefault } from '@make.org/designsystem/components/Body';
 
 export const ConsultationHeaderWrapperStyle = styled.div<{
   backgroundcolor: string;
@@ -104,11 +106,8 @@ export const ParticipateContentStyle = styled.section`
   ${ContainerWithPadding};
 `;
 
-export const ParticipateTitleStyle = styled.h3`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
+export const ParticipateTitleStyle = styled(TitleL).attrs({ as: 'h3' })`
   text-transform: none;
-  font-size: ${intToPx(typography.font.fontsize.X2L.value)};
   margin: 40px 0 15px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.X4L.value)};
@@ -123,11 +122,17 @@ export const ResultsTitleStyle = styled(ParticipateTitleStyle)`
   }
 `;
 
-export const ExploreTitleStyle = styled.h3`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
+export const ExploreTitleWrapperStyle = styled(ColumnElementStyle)`
+  margin-top: 30px;
+  margin-bottom: 20px;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    align-items: baseline;
+    margin-bottom: 30px;
+  }
+`;
+
+export const ExploreTitleStyle = styled(TitleS).attrs({ as: 'h3' })`
   text-transform: none;
-  font-size: ${intToPx(typography.font.fontsize.L.value)};
   letter-spacing: 0.5px;
   margin: 40px 0px 20px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -137,9 +142,9 @@ export const ExploreTitleStyle = styled.h3`
   }
 `;
 
-export const ExploreSubTitleWrapperStyle = styled.div`
-  font-family: ${MakeFonts.CircularStandardBook};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+export const ExploreSubTitleWrapperStyle = styled(BodyMDefault).attrs({
+  as: 'div',
+})`
   letter-spacing: 0.14px;
   margin-top: 15px;
   margin-bottom: 35px;

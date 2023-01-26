@@ -6,8 +6,8 @@ import {
   MiddleColumnStyle,
   ColumnElementStyle,
 } from '@make.org/ui/elements/FlexElements';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
+import { TitleL } from '@make.org/designsystem/components/Titles';
 
 export const HomepageWrapperStyle = styled(MiddleColumnStyle)`
   width: 100%;
@@ -33,10 +33,7 @@ export const HomepageSectionStyle = styled(ColumnElementStyle)`
   }
 `;
 
-export const HomepageSectionTitleStyle = styled.h2`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.X2L.value)};
+export const HomepageSectionTitleStyle = styled(TitleL)`
   color: ${color.black};
   margin-bottom: 30px;
   text-transform: none;

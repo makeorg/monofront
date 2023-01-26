@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { color, typography } from 'athena-design-tokens';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import {
   SpaceBetweenRowStyle,
   ColumnElementStyle,
@@ -12,6 +11,8 @@ import {
 } from '@make.org/utils/helpers/styled';
 import { SvgPeople, SvgLight, SvgHandHeart } from '@make.org/ui/Svg/elements';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
+import { TitleS } from '@make.org/designsystem/components/Titles';
+import { BodyMDefault } from '@make.org/designsystem/components/Body';
 
 export const HighlightsBannerFiguresContainerStyle = styled(
   SpaceBetweenRowStyle
@@ -57,19 +58,14 @@ export const HeartIconStyle = styled(SvgHandHeart)`
   ${IconStyle}
 `;
 
-export const FiguresStyle = styled.span`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.L.value)};
+export const FiguresStyle = styled(TitleS).attrs({ as: 'span' })`
   color: ${color.black};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${intToPx(typography.font.fontsize.XL.value)};
   }
 `;
 
-export const SubtitleFiguresStyle = styled.span`
-  font-family: ${MakeFonts.CircularStandardBook};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+export const SubtitleFiguresStyle = styled(BodyMDefault).attrs({ as: 'span' })`
   color: ${color.greyDark};
   padding-bottom: 30px;
 `;

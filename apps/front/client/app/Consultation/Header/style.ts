@@ -1,11 +1,15 @@
 import styled from 'styled-components';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { color, typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Layouts, Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 import { Link } from 'react-router-dom';
 import { SvgExternalLink } from '@make.org/ui/Svg/elements';
+import {
+  BodyMCondensed,
+  BodyMHighLight,
+} from '@make.org/designsystem/components/Body';
+import { TitleL } from '@make.org/designsystem/components/Titles';
 
 export const HeaderWrapperStyle = styled(FlexElementStyle)`
   background-color: ${props => props.theme.color};
@@ -29,11 +33,9 @@ export const HeaderWrapperLabelStyle = styled(FlexElementStyle)`
   flex-direction: row;
 `;
 
-export const HeaderLabelStyle = styled.span`
+export const HeaderLabelStyle = styled(BodyMCondensed).attrs({ as: 'span' })`
   display: flex;
   align-items: center;
-  font-family: ${MakeFonts.TradeGothicBoldCondensed};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
   text-transform: uppercase;
   padding: 10px 10px 8px;
   height: 25px;
@@ -57,10 +59,7 @@ export const HeaderLabelStyle = styled.span`
   }
 `;
 
-export const HeaderTitleStyle = styled.h2`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.X2L.value)};
+export const HeaderTitleStyle = styled(TitleL)`
   text-transform: none;
   color: ${props =>
     props.theme.fontColor ? props.theme.fontColor : color.black};
@@ -87,9 +86,9 @@ export const HeaderListWrapperStyle = styled.div`
   }
 `;
 
-export const HeaderListLabelStyle = styled.span`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
+export const HeaderListLabelStyle = styled(BodyMHighLight).attrs({
+  as: 'span',
+})`
   color: ${props =>
     props.theme.fontColor ? props.theme.fontColor : color.black};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};

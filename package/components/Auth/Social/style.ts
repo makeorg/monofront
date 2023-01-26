@@ -5,7 +5,7 @@ import { SvgMailPlain } from '@make.org/ui/Svg/elements';
 import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { BodySHighLight } from '@make.org/designsystem/components/Body';
 
 export const AuthenticationButtonWrapperStyle = styled(CenterColumnStyle)`
   width: 100%;
@@ -50,11 +50,9 @@ const SocialButtonStyle = styled.button`
   opacity: ${props => (props.disabled ? 0.5 : 1)};
 `;
 
-export const SocialButtonLabelStyle = styled.span`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  font-size: 14px;
-  font-weight: bold;
+export const SocialButtonLabelStyle = styled(BodySHighLight).attrs({
+  as: 'span',
+})`
   color: ${color.black};
 `;
 

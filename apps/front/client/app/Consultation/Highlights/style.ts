@@ -8,6 +8,7 @@ import {
 } from '@make.org/ui/elements/FlexElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
+import { TitleS } from '@make.org/designsystem/components/Titles';
 
 export const HigthlightsWrapperStyle = styled.section`
   width: 100%;
@@ -67,11 +68,8 @@ export const HigthlightsTitleStyle = styled.span`
   letter-spacing: 0.14px;
 `;
 
-export const FiguresValueStyle = styled.span`
+export const FiguresValueStyle = styled(TitleS).attrs({ as: 'span' })`
   display: block;
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.L.value)};
   letter-spacing: 0.5px;
   margin-bottom: 20px;
   &.mobile-extra-margin-bottom {

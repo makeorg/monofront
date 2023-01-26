@@ -3,9 +3,9 @@ import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
+import { TitleS } from '@make.org/designsystem/components/Titles';
 
 export const ResultCardStyle = styled.section`
   display: flex;
@@ -33,11 +33,8 @@ export const ResultCardIconStyle = styled.span<{ focusable: string }>`
   margin-bottom: 15px;
 `;
 
-export const ResultCardTitleStyle = styled.h4`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
+export const ResultCardTitleStyle = styled(TitleS)`
   text-transform: none;
-  font-size: ${intToPx(typography.font.fontsize.L.value)};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${intToPx(typography.font.fontsize.XL.value)};
   }

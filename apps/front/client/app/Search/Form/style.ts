@@ -3,8 +3,8 @@ import { color, typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
+import { MakeFonts } from '@make.org/assets/vars/Fonts';
 
 export const SearchFormTriggerStyle = styled(UnstyledButtonStyle)`
   margin-right: 25px;

@@ -8,6 +8,7 @@
     { "path": "../../package/ui" },
     { "path": "../../package/api" },
     { "path": "../../package/assets" },
-    { "path": "../../package/utils" }
+    { "path": "../../package/utils" },
+    { "path": "../../package/designsystem"}
   ]  
 }

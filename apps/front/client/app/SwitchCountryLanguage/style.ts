@@ -4,6 +4,8 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { TitleS } from '@make.org/designsystem/components/Titles';
+import { BodyMDefault } from '@make.org/designsystem/components/Body';
 
 export const SwitchCountryLanguageContainerStyle = styled.form`
   position: relative;
@@ -15,20 +17,17 @@ export const SwitchCountryLanguageContainerStyle = styled.form`
   }
 `;
 
-export const SwitchCountryLanguageTitleStyle = styled.h2`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
+export const SwitchCountryLanguageTitleStyle = styled(TitleS).attrs({
+  as: 'h2',
+})`
   text-transform: none;
-  font-size: ${intToPx(typography.font.fontsize.L.value)};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.XL.value)};
   }
 `;
 
-export const SwitchCountrySubtitleStyle = styled.p`
-  font-family: ${MakeFonts.CircularStandardBook};
+export const SwitchCountrySubtitleStyle = styled(BodyMDefault)`
   text-transform: none;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
   color: ${color.greyDark};
   margin-top: 10px;
 `;

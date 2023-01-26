@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import { SecondLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
+import { BodyMHighLight } from '@make.org/designsystem/components/Body';
 
 export const SearchPageWrapperStyle = styled.div`
   width: 100%;
@@ -39,10 +38,14 @@ export const MainResultsSectionStyle = styled.section`
   }
 `;
 
-export const NoResultsStyle = styled.p`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+export const MainResultsContainerStyle = styled.div`
+  padding: 0 20px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    padding: 0;
+  }
+`;
+
+export const NoResultsStyle = styled(BodyMHighLight)`
   @media (max-width: ${intToPx(Breakpoints.Tablet)}) {
     margin: 0 20px;
   }

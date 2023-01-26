@@ -2899,6 +2899,8 @@ __metadata:
   dependencies:
     "@make.org/api": 0.1.0
     "@make.org/assets": 0.1.0
+    "@make.org/components": 0.1.0
+    "@make.org/designsystem": 0.1.0
     "@make.org/store": 0.1.0
     "@make.org/types": 0.1.0
     "@make.org/ui": 0.1.0
@@ -3145,6 +3147,7 @@ __metadata:
   resolution: "@make.org/ui@workspace:package/ui"
   dependencies:
     "@make.org/assets": 0.1.0
+    "@make.org/designsystem": 0.1.0
     "@make.org/types": 0.1.0
     "@make.org/ui": 0.1.0
     "@make.org/utils": 0.1.0

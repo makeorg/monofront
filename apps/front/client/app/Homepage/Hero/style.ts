@@ -10,13 +10,14 @@ import {
 import { SvgBlackArrowDown } from '@make.org/ui/Svg/elements/BlackArrowDown';
 import { SvgWhiteArrowDown } from '@make.org/ui/Svg/elements/WhiteArrowDown';
 import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import {
   LinkAsRedButtonStyle,
   BasicButtonStyle,
 } from '@make.org/ui/elements/ButtonsElements';
 import { Image } from '@make.org/ui/components/Image';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
+import { TitleXL } from '@make.org/designsystem/components/Titles';
+import { BodyMDefault } from '@make.org/designsystem/components/Body';
 
 export const HeroWrapperStyle = styled(FlexElementStyle)`
   background-color: ${color.greyLighter};
@@ -49,10 +50,7 @@ export const ColumnToRowToColumnStyle = styled(ColumnToRowElementStyle)`
   }
 `;
 
-export const HeroTitleStyle = styled.h2`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.X3L.value)};
+export const HeroTitleStyle = styled(TitleXL)`
   color: ${color.black};
   margin-bottom: 30px;
   text-transform: none;
@@ -64,10 +62,8 @@ export const HeroTitleStyle = styled.h2`
   }
 `;
 
-export const HeroDescriptionStyle = styled.p`
+export const HeroDescriptionStyle = styled(BodyMDefault)`
   display: flex;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  font-family: ${MakeFonts.CircularStandardBook};
   color: ${color.greyDark};
   margin-bottom: 40px;
   margin-top: 30px;

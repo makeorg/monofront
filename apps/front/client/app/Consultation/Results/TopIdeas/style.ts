@@ -7,6 +7,7 @@ import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
+import { BodyMHighLight } from '@make.org/designsystem/components/Body';
 
 export const ThemeResultsWrapperStyle = styled(FlexElementStyle)`
   align-items: center;
@@ -55,13 +56,10 @@ export const TopIdeaListItemStyle = styled.li`
   border: solid 1px ${color.grey};
 `;
 
-export const TopIdeaItemTitleStyle = styled.p`
+export const TopIdeaItemTitleStyle = styled(BodyMHighLight)`
   margin-bottom: 25px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     margin-bottom: 15px;
   }
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
   letter-spacing: 0.14px;
 `;

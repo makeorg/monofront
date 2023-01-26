@@ -7,6 +7,10 @@ import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { SvgAngleArrowRight } from '@make.org/ui/Svg/elements';
 import { Link, LinkProps } from 'react-router-dom';
+import {
+  BodyMHighLight,
+  BodyXSCondensed,
+} from '@make.org/designsystem/components/Body';
 
 export const SearchResultsConsultationListStyle = styled(UnstyledListStyle)`
   @media (max-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -14,12 +18,9 @@ export const SearchResultsConsultationListStyle = styled(UnstyledListStyle)`
   }
 `;
 
-export const BusinessConsultationsItemWrapperStyle = styled.div`
+export const BusinessConsultationsItemWrapperStyle = styled(BodyMHighLight)`
   display: flex;
   text-decoration: none;
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
   color: ${color.greyDark};
   width: 100%;
 `;
@@ -29,10 +30,8 @@ export const BusinessConsultationStyle = styled.div`
   flex: 1;
 `;
 
-export const BusinessConsultationsItemStatusStyle = styled.p`
-  font-family: ${MakeFonts.TradeGothicBoldCondensed};
+export const BusinessConsultationsItemStatusStyle = styled(BodyXSCondensed)`
   color: ${color.greyDark};
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   text-transform: uppercase;
   margin-bottom: 4px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {

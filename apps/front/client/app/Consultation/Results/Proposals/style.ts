@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { color } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
@@ -7,6 +7,7 @@ import { Elements } from '@make.org/assets/vars/Elements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { SvgLightning } from '@make.org/ui/Svg/elements';
 import { AvatarStyle } from '@make.org/ui/components/Avatar/style';
+import { BodyMDefault } from '@make.org/designsystem/components/Body';
 
 export const ResultsProposalsListStyle = styled(UnstyledListStyle)`
   width: 100%;
@@ -38,26 +39,22 @@ export const ResultsProposalListItemStyle = styled.li`
   }
 `;
 
-export const ResultsProposalAuthorWrapperStyle = styled.div`
+export const ResultsProposalAuthorWrapperStyle = styled(BodyMDefault).attrs({
+  as: 'div',
+})`
   display: flex;
   flex-flow: column;
   justify-content: space-between;
   text-align: center;
   align-items: center;
-  font-family: ${MakeFonts.CircularStandardBook};
-  font-size: ${typography.font.fontsize.XS.value};
   color: ${color.greyDark};
-  line-height: 1.5;
   letter-spacing: 0.12px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     letter-spacing: 0.14px;
   }
 `;
 
-export const ResultsProposalContentStyle = styled.p`
-  font-family: ${MakeFonts.CircularStandardBook};
-  font-size: ${typography.font.fontsize.XS.value};
-  line-height: 1.44;
+export const ResultsProposalContentStyle = styled(BodyMDefault)`
   letter-spacing: 0.11px;
   text-align: center;
   color: ${color.black};

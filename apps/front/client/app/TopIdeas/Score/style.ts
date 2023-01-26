@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { color, typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Elements } from '@make.org/assets/vars/Elements';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { TitleXXS } from '@make.org/designsystem/components/Titles';
 
 export const ScoringContentStyle = styled.div`
   background-color: ${color.greyLighter};
@@ -37,10 +37,7 @@ export const ScoringTextStyle = styled.span`
   }
 `;
 
-export const ScoringPercentageStyle = styled.span`
-  font-size: ${intToPx(typography.font.fontsize.S.value)};
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
+export const ScoringPercentageStyle = styled(TitleXXS).attrs({ as: 'span' })`
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     margin-bottom: 5px;
   }

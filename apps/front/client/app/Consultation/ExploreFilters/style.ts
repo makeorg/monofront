@@ -14,6 +14,7 @@ import {
   SvgRightGreyArrow,
 } from '@make.org/ui/Svg/elements';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
+import { TitleXXS } from '@make.org/designsystem/components/Titles';
 
 export const FiltersWrapperStyle = styled(ColumnElementStyle)`
   width: 100%;
@@ -32,14 +33,10 @@ export const FilterBlockStyle = styled.div`
   }
 `;
 
-export const FiltersAndSortTitleStyle = styled.h3`
+export const FiltersAndSortTitleStyle = styled(TitleXXS)`
   display: inline-flex;
   align-items: center;
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.S.value)};
   text-transform: none;
-  line-height: 1.69;
   letter-spacing: 0.14px;
   margin-bottom: 20px;
 `;

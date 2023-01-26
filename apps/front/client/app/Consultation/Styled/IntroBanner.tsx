@@ -8,7 +8,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { MiddleColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { SecondLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
 import { typography, color } from 'athena-design-tokens';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { BodyXSCondensed } from '@make.org/designsystem/components/Body';
 
 export const IntroWrapperStyle = styled(MiddleColumnStyle)`
   padding: 30px ${intToPx(DefaultPadding.Mobile)};
@@ -17,12 +17,12 @@ export const IntroWrapperStyle = styled(MiddleColumnStyle)`
   }
 `;
 
-export const GreatCauseIntroLabelStyle = styled.span`
+export const GreatCauseIntroLabelStyle = styled(BodyXSCondensed).attrs({
+  as: 'span',
+})`
   background-color: ${color.black};
   padding: 3px 10px 1px;
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   color: ${color.white};
-  font-family: ${MakeFonts.TradeGothicBoldCondensed};
   text-transform: uppercase;
   margin-bottom: 5px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {

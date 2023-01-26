@@ -3,8 +3,13 @@ import { color, typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
+import { TitleS } from '@make.org/designsystem/components/Titles';
+import {
+  BodyXSCondensed,
+  BodyLHighLight,
+  BodyMDefault,
+} from '@make.org/designsystem/components/Body';
 
 export const TimelineWrapperStyle = styled(FlexElementStyle)`
   background-color: ${color.white};
@@ -29,11 +34,8 @@ export const TimelineListWrapperStyle = styled.ul`
   }
 `;
 
-export const TimelineTitleStyle = styled.h4`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
+export const TimelineTitleStyle = styled(TitleS)`
   text-transform: none;
-  font-size: ${intToPx(typography.font.fontsize.L.value)};
   margin: 40px 0;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${intToPx(typography.font.fontsize.XL.value)};
@@ -48,9 +50,7 @@ export const TimelineItemWrapperStyle = styled.div`
   margin-bottom: 40px;
 `;
 
-export const TimelineItemTitleStyle = styled.h5`
-  font-family: ${MakeFonts.TradeGothicBoldCondensed};
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+export const TimelineItemTitleStyle = styled(BodyXSCondensed)`
   color: ${color.greyDark};
   display: flex;
   justify-content: center;
@@ -65,11 +65,9 @@ export const TimelineItemMarkerIsCurrent = styled.span`
   margin-left: 5px;
 `;
 
-export const TimelineItemDateStyle = styled.span`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.M.value)};
-  font-weight: bold;
+export const TimelineItemDateStyle = styled(BodyLHighLight).attrs({
+  as: 'span',
+})`
   color: ${color.black};
   margin: 8px 0;
   &:first-letter {
@@ -77,9 +75,7 @@ export const TimelineItemDateStyle = styled.span`
   }
 `;
 
-export const TimelineItemTextStyle = styled.p`
-  font-family: ${MakeFonts.CircularStandardBook};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+export const TimelineItemTextStyle = styled(BodyMDefault)`
   color: ${color.greyDark};
 `;
 

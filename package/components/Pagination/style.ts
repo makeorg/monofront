@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { color } from 'athena-design-tokens';
 import {
   SvgChevronArrowLeft,
   SvgChevronArrowRight,
@@ -8,6 +7,7 @@ import {
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { Link } from 'react-router-dom';
+import { BodyMDefault } from '@make.org/designsystem/components/Body';
 
 export const PaginationNavStyle = styled.nav`
   display: flex;
@@ -23,13 +23,11 @@ export const PaginationNavStyle = styled.nav`
   }
 `;
 
-export const PaginationTextStyle = styled.div`
+export const PaginationTextStyle = styled(BodyMDefault).attrs({ as: 'div' })`
   display: flex;
   align-items: center;
   gap: 10px;
   align-self: center;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  font-family: ${MakeFonts.CircularStandardBook};
   color: ${color.black};
 `;
 

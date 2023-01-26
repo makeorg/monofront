@@ -4,6 +4,7 @@ import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints, DefaultPadding } from '@make.org/assets/vars/Breakpoints';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
+import { BodyXSHighlight } from '@make.org/designsystem/components/Body';
 import { ParagraphStyle } from './ParagraphElements';
 
 export const SvgLikeStyle = {
@@ -52,12 +53,7 @@ export const FavouritesCardStyle = styled.aside`
   margin-top: 30px;
 `;
 
-export const FavouritesProposalStyle = styled.p`
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  line-height: normal;
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  font-weight: bold;
+export const FavouritesProposalStyle = styled(BodyXSHighlight)`
   text-align: center;
   margin-top: 10px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {

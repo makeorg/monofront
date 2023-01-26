@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { typography, color } from 'athena-design-tokens';
+import { color } from 'athena-design-tokens';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 import { WhiteButtonStyle } from '@make.org/ui/elements/ButtonsElements';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { TitleXXS } from '@make.org/designsystem/components/Titles';
+import { BodyMDefault } from '@make.org/designsystem/components/Body';
 
 export const DataPolicyContentStyle = styled.form`
   display: flex;
@@ -21,26 +22,21 @@ export const DataPolicyContentStyle = styled.form`
   }
 `;
 
-export const DataPolicyTitleStyle = styled.h2`
+export const DataPolicyTitleStyle = styled(TitleXXS).attrs({ as: 'h2' })`
   display: flex;
   margin-top: 47px;
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.S.value)};
   text-transform: none;
-  line-height: 1.5;
   letter-spacing: 0.12px;
 `;
 
-export const DataPolicyParagraphStyle = styled.p<{ isRefusal?: boolean }>`
+export const DataPolicyParagraphStyle = styled(BodyMDefault)<{
+  isRefusal?: boolean;
+}>`
   display: inline-block;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
   margin: ${props => (props.isRefusal ? '15px 0px 15px' : '15px 0px 30px')};
-  font-family: ${MakeFonts.CircularStandardBook};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  line-height: 1.5;
   letter-spacing: 0.14px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     margin: 8px 0px 15px;

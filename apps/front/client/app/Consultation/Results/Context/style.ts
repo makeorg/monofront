@@ -1,17 +1,11 @@
 import styled from 'styled-components';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
-import { typography } from 'athena-design-tokens';
 import { SvgExternalLink } from '@make.org/ui/Svg/elements';
-import { intToPx } from '@make.org/utils/helpers/styled';
 
 const ResultContextLinkStyle = `
 display: inline-flex;
-font-family: ${MakeFonts.CircularStandardBook};
 text-transform: none;
 text-decoration: underline;
 align-items: center;
-font-size: ${intToPx(typography.font.fontsize.XS.value)};
-line-height: 1.31;
 `;
 export const NewWindowIconStyle = styled(SvgExternalLink)`
   width: 9px;

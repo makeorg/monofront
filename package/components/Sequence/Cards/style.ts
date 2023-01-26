@@ -16,6 +16,7 @@ import {
 } from '@make.org/ui/elements/ButtonsElements';
 import { SeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { SvgPropsType } from '@make.org/types';
+import { BodyMDefault } from '@make.org/designsystem/components/Body';
 
 export const SequenceCardStyle = styled.section`
   position: relative;
@@ -98,11 +99,10 @@ export const PushProposalWrapperStyle = styled.div`
   margin: auto;
 `;
 
-export const SequenceIntroParagraphStyle = styled.div`
+export const SequenceIntroParagraphStyle = styled(BodyMDefault).attrs({
+  as: 'div',
+})`
   width: 100%;
-  font-family: ${MakeFonts.CircularStandardBook};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  line-height: 1.5;
   letter-spacing: 0.14px;
   text-align: center;
   &.with-margin-bottom {

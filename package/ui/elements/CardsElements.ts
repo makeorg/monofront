@@ -10,6 +10,7 @@ import {
 import { Elements } from '@make.org/assets/vars/Elements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Link } from 'react-router-dom';
+import { TitleS, TitleXXS } from '@make.org/designsystem/components/Titles';
 import { FlexElementStyle } from './FlexElements';
 import { ParagraphStyle } from './ParagraphElements';
 import { SvgExternalLink, SvgLock } from '../Svg/elements';
@@ -38,11 +39,8 @@ export const TallCardStyle = styled(CardStyle)`
   }
 `;
 
-export const ParticipateCardTitleStyle = styled.h4`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
+export const ParticipateCardTitleStyle = styled(TitleS).attrs({ as: 'h4' })`
   text-transform: none;
-  font-size: ${intToPx(typography.font.fontsize.L.value)};
   margin: 15px 0 10px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${intToPx(typography.font.fontsize.XL.value)};
@@ -50,11 +48,8 @@ export const ParticipateCardTitleStyle = styled.h4`
   }
 `;
 
-export const ParticipateCardAltTitleStyle = styled.h4`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
+export const ParticipateCardAltTitleStyle = styled(TitleXXS)`
   text-transform: none;
-  font-size: ${intToPx(typography.font.fontsize.S.value)};
   margin-bottom: 10px;
 `;
 

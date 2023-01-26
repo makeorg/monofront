@@ -1,8 +1,9 @@
 export const typography = {
   FontFamily: {
-    Default: 'Circular Standard',
-    Condensed: 'Trade Gothic LT Pro',
-    Display: 'New York Large',
+    Default: 'Circular Standard Book',
+    Condensed: 'Trade Gothic LT Pro Bold Condensed',
+    Display: 'New York Large Bold',
+    Hightlight: 'Circular Standard Bold',
   },
   FontSize: {
     Universe: '56px',
@@ -16,12 +17,6 @@ export const typography = {
     Arrondissement: '16px',
     Bastille: '14px',
     RueDeLappe: '12px',
-  },
-  FontWeight: {
-    Light: '300',
-    Regular: '400',
-    Display: '600',
-    Hightlight: '700',
   },
   LineHeight: {
     l150: '150%',

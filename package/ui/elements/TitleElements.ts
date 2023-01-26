@@ -1,13 +1,10 @@
 import styled from 'styled-components';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { typography } from 'athena-design-tokens';
+import { TitleS } from '@make.org/designsystem/components/Titles';
 
-export const ThirdLevelTitleCircularStyle = styled.h3`
-  font-size: ${intToPx(typography.font.fontsize.L.value)};
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
+export const ThirdLevelTitleCircularStyle = styled(TitleS).attrs({ as: 'h3' })`
   text-transform: none;
 `;
 

@@ -1,11 +1,11 @@
 import { typography, color } from 'athena-design-tokens';
 import { RedButtonAsLinkStyle } from '@make.org/ui/elements/ButtonsElements';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Image } from '@make.org/ui/components/Image';
 import { SvgSmallLogo } from '@make.org/ui/Svg/elements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { BodyXSHighlight } from '@make.org/designsystem/components/Body';
 
 export const PanelContainer = styled.div`
   background-color: #f2f2f2;
@@ -66,11 +66,7 @@ export const KindLabelWrapperStyle = styled.div`
   }
 `;
 
-export const KindLabelTextStyle = styled.span`
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  line-height: ${intToPx(typography.font.fontsize.XS.value)};
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
+export const KindLabelTextStyle = styled(BodyXSHighlight).attrs({ as: 'span' })`
   padding: 8px;
   letter-spacing: 0.12px;
 `;

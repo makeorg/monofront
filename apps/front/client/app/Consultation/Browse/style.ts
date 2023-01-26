@@ -21,6 +21,11 @@ import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { Image } from '@make.org/ui/components/Image';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
+import { TitleXL, TitleXXS } from '@make.org/designsystem/components/Titles';
+import {
+  BodyMDefault,
+  BodyMCondensed,
+} from '@make.org/designsystem/components/Body';
 
 export const BrowseHeaderStyle = styled.header`
   background-color: ${color.greyLighter};
@@ -34,10 +39,7 @@ export const BrowseHeaderInnerStyle = styled.div`
   }
 `;
 
-export const BrowseHeaderTitleStyle = styled.h2`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.X3L.value)};
+export const BrowseHeaderTitleStyle = styled(TitleXL)`
   margin-bottom: 24px;
   text-transform: none;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -53,9 +55,7 @@ export const ConsultationsTitleWrapperStyle = styled(ColumnElementStyle)`
   margin-bottom: 40px;
 `;
 
-export const ConsultationsSubtitleStyle = styled.p`
-  font-family: ${MakeFonts.CircularStandardBook};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+export const ConsultationsSubtitleStyle = styled(BodyMDefault)`
   width: 100%;
   color: ${color.greyDark};
 `;
@@ -104,20 +104,17 @@ export const ConsultationElementPictureStyle = styled(Image)`
   max-height: 248px;
 `;
 
-export const ConsultationElementSubtitleStyle = styled.span`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+export const ConsultationElementSubtitleStyle = styled(BodyMCondensed).attrs({
+  as: 'span',
+})`
   text-transform: uppercase;
   color: ${color.greyDark};
-  font-family: ${MakeFonts.TradeGothicBoldCondensed};
   margin-bottom: 5px;
 `;
 
-export const ConsultationElementTitleStyle = styled.h3`
+export const ConsultationElementTitleStyle = styled(TitleXXS)`
   text-transform: none;
-  font-size: ${intToPx(typography.font.fontsize.S.value)};
   color: ${color.black};
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
   margin-bottom: 20px;
 `;
 
@@ -169,9 +166,7 @@ export const ConsultationVoteIconStyle = styled(SvgThumbsUp)`
   }
 `;
 
-export const ConsultationElementParagraphStyle = styled.p`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  font-family: ${MakeFonts.CircularStandardBook};
+export const ConsultationElementParagraphStyle = styled(BodyMDefault)`
   color: ${color.greyDark};
   margin-bottom: 20px;
 `;

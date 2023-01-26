@@ -16,6 +16,11 @@ import {
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { TitleXXS } from '@make.org/designsystem/components/Titles';
+import {
+  BodyXSDefault,
+  BodySDefault,
+} from '@make.org/designsystem/components/Body';
 
 export const AuthenticationWrapperStyle = styled.section`
   display: flex;
@@ -127,12 +132,8 @@ export const NewWindowIconStyle = styled(SvgExternalLink)`
   }
 `;
 
-export const RegisterEmailTitleStyle = styled.h1`
+export const RegisterEmailTitleStyle = styled(TitleXXS).attrs({ as: 'h1' })`
   text-transform: none;
-  font-size: ${intToPx(typography.font.fontsize.S.value)};
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  line-height: 27px;
   margin-bottom: 5px;
 `;
 
@@ -158,9 +159,7 @@ export const LoginTitleWrapperCenterStyle = styled(LoginTitleWrapperStyle)`
   }
 `;
 
-export const PostCodeWrapperStyle = styled.span`
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  font-family: ${MakeFonts.CircularStandardBook};
+export const PostCodeWrapperStyle = styled(BodyXSDefault).attrs({ as: 'span' })`
   color: ${color.greyDark};
   margin-bottom: 30px;
   margin-top: -10px;
@@ -232,9 +231,7 @@ export const RegisterPanelSuccessParagraphContainerStyle = styled.div`
   gap: 30px;
 `;
 
-export const RegisterPanelSuccessParagraphStyle = styled.p`
-  font-size: 14px;
-  font-family: ${MakeFonts.CircularStandardBook};
+export const RegisterPanelSuccessParagraphStyle = styled(BodySDefault)`
   color: ${color.black};
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};

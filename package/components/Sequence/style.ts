@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { typography, color } from 'athena-design-tokens';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { GreyLinkStyle } from '@make.org/ui/elements/ButtonsElements';
 import { MiddleColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { Image } from '@make.org/ui/components/Image';
-
+import { TitleM, TitleXXXS } from '@make.org/designsystem/components/Titles';
+import { BodyMHighLight } from '@make.org/designsystem/components/Body';
 import { SvgArrowReturn } from '@make.org/ui/Svg/elements';
 
 export const SequenceContainerStyle = styled(MiddleColumnStyle)`
@@ -31,25 +31,21 @@ export const SequenceContentStyle = styled(MiddleColumnStyle)`
   flex: 1;
 `;
 
-export const SequenceAltTitleStyle = styled.h2`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.XL.value)};
+export const SequenceAltTitleStyle = styled(TitleM)`
   letter-spacing: 0.5px;
   align-self: flex-start;
   text-transform: none;
   margin-top: 30px;
 `;
 
-export const SequenceSpecialTitleStyle = styled.div`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
+export const SequenceSpecialTitleStyle = styled(BodyMHighLight).attrs({
+  as: 'div',
+})`
   display: flex;
   border-radius: 8px;
   letter-spacing: 0.12px;
   padding: 5px 10px;
   background-color: ${color.greyLighter};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
   margin-top: 20px;
   align-self: flex-start;
 `;
@@ -61,10 +57,7 @@ export const SequenceSpecialIconStyle = styled(SvgArrowReturn)`
   }
 `;
 
-export const SequenceTitleStyle = styled.h2`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+export const SequenceTitleStyle = styled(TitleXXXS).attrs({ as: 'h2' })`
   letter-spacing: 0.12px;
   align-self: flex-start;
   text-transform: none;

@@ -1,9 +1,10 @@
-import { color, typography } from 'athena-design-tokens';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { color } from 'athena-design-tokens';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
+import { TitleXXS } from '@make.org/designsystem/components/Titles';
+import { BodyMDefault } from '@make.org/designsystem/components/Body';
 
 export const ResultCardSidebarStyle = styled.section<{ isContext: boolean }>`
   display: flex;
@@ -19,19 +20,12 @@ export const ResultCardSidebarStyle = styled.section<{ isContext: boolean }>`
   }
 `;
 
-export const ResultCardSidebarTitleStyle = styled.h4`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.S.value)};
+export const ResultCardSidebarTitleStyle = styled(TitleXXS).attrs({ as: 'h4' })`
   text-transform: none;
-  line-height: 1.5;
   letter-spacing: 0.12px;
 `;
 
-export const ResultCardSidebarParagraphStyle = styled.p`
-  font-family: ${MakeFonts.CircularStandardBook};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  line-height: 1.5;
+export const ResultCardSidebarParagraphStyle = styled(BodyMDefault)`
   letter-spacing: 0.14px;
   color: ${color.greyDark};
   padding-top: 10px;

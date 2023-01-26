@@ -4,8 +4,12 @@ import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
 import styled from 'styled-components';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { LinkAsRedButton } from '@make.org/ui/elements/LinkElements';
+import { TitleL } from '@make.org/designsystem/components/Titles';
+import {
+  BodyMCondensed,
+  BodyMDefault,
+} from '@make.org/designsystem/components/Body';
 
 export const PartnershipSectionStyle = styled(ColumnElementStyle)`
   width: 100%;
@@ -22,19 +26,16 @@ export const PartnershipInnerStyle = styled.div`
   }
 `;
 
-export const PartnershipSubtitleStyle = styled.span`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+export const PartnershipSubtitleStyle = styled(BodyMCondensed).attrs({
+  as: 'span',
+})`
   text-transform: uppercase;
   color: ${color.white};
   opacity: 0.65;
-  font-family: ${MakeFonts.TradeGothicBoldCondensed};
   margin-bottom: 5px;
 `;
 
-export const PartnershipTitleStyle = styled.h2`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.X2L.value)};
+export const PartnershipTitleStyle = styled(TitleL)`
   letter-spacing: 0.5px;
   color: ${color.white};
   margin-bottom: 15px;
@@ -45,10 +46,8 @@ export const PartnershipTitleStyle = styled.h2`
   }
 `;
 
-export const PartnershipParagraphStyle = styled.p`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+export const PartnershipParagraphStyle = styled(BodyMDefault)`
   letter-spacing: 0.12px;
-  font-family: ${MakeFonts.CircularStandardBook};
   color: ${color.white};
   margin-bottom: 30px;
 `;

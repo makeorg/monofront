@@ -4,6 +4,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { FormCenterAlignStyle } from '@make.org/ui/elements/FormElements';
 import { FourthLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
+import { TitleXXS } from '@make.org/designsystem/components/Titles';
 
 export const ForgotPasswordStyle = styled.section`
   display: flex;
@@ -36,4 +37,15 @@ export const ForgotPasswordTitleStyle = styled(FourthLevelTitleStyle)<{
   color: ${props => (props.isPanel ? color.greyDark : color.black)};
   text-transform: ${props => (props.isPanel ? 'none' : 'uppercase')};
   margin: 20px 0px;
+`;
+
+export const PanelForgotPasswordTitleStyle = styled(TitleXXS).attrs({
+  as: 'h3',
+})`
+  text-transform: none;
+  color: ${color.black};
+  text-transform: uppercase;
+  &.panel {
+    text-transform: none;
+  }
 `;

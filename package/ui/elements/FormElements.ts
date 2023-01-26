@@ -5,6 +5,7 @@ import { color, typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { BodyXSDefault } from '@make.org/designsystem/components/Body';
 import { SvgExternalLink, SvgSelectArrow } from '../Svg/elements';
 import { FlexElementStyle } from './FlexElements';
 import { UnstyledButtonStyle } from './ButtonsElements';
@@ -159,16 +160,12 @@ export const FormCenterAlignStyle = styled.form`
   align-items: center;
 `;
 
-export const FormRequirementsStyle = styled.p`
-  font-family: ${MakeFonts.CircularStandardBook};
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+export const FormRequirementsStyle = styled(BodyXSDefault)`
   margin-bottom: 20px;
   color: ${color.greyDark};
 `;
 
-export const FormRequirementsLeftStyle = styled.p`
-  font-family: ${MakeFonts.CircularStandardBook};
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+export const FormRequirementsLeftStyle = styled(BodyXSDefault)`
   margin-bottom: 20px;
   color: ${color.greyDark};
   align-self: flex-start;
@@ -299,6 +296,7 @@ export const CenterInputIconStyle = styled(InputIconStyle)`
 export const TextAreaIconStyle = styled(InputIconStyle)`
   margin-top: 10px;
 `;
+
 export const BasicInputStyle = styled.input`
   border: none;
   background: transparent;
@@ -353,11 +351,8 @@ export const BasicTextAreaStyle = styled(TextareaAutosize)`
   resize: none;
 `;
 
-export const TextAreaCounterStyle = styled.div`
-  font-family: ${MakeFonts.CircularStandardBook};
+export const TextAreaCounterStyle = styled(BodyXSDefault).attrs({ as: 'div' })`
   color: ${color.greyDark};
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  line-height: 1;
   position: absolute;
   right: 5px;
   bottom: 5px;

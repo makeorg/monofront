@@ -21,6 +21,11 @@ import TextareaAutosize from 'react-autosize-textarea/lib';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { AvatarStyle } from '@make.org/ui/components/Avatar/style';
+import { TitleXXS } from '@make.org/designsystem/components/Titles';
+import {
+  BodyXSDefault,
+  BodyMDefault,
+} from '@make.org/designsystem/components/Body';
 
 export const PanelTriggerStyle = styled(RedButtonStyle)`
   position: fixed;
@@ -76,11 +81,7 @@ export const ProposalStepWrapperColumnStyle = styled.div<{
   flex-direction: column;
 `;
 
-export const ProposalStepTitleStyle = styled.h2`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.S.value)};
-  line-height: 1.5;
+export const ProposalStepTitleStyle = styled(TitleXXS).attrs({ as: 'h2' })`
   text-transform: none;
   &.center {
     text-align: center;
@@ -91,6 +92,17 @@ export const ProposalStepTitleStyle = styled.h2`
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${intToPx(typography.font.fontsize.XL.value)};
   }
+`;
+
+export const ProposalStepMandatoryStyle = styled(BodyXSDefault).attrs({
+  as: 'div',
+})`
+  margin-bottom: 15px;
+  color: ${color.greyDark};
+`;
+
+export const ProposalStepLabelStyle = styled(BodyMDefault).attrs({ as: 'div' })`
+  margin-bottom: 5px;
 `;
 
 export const ProposalStepLabelRedStyle = styled.span`
@@ -249,6 +261,12 @@ export const DataPolicyWrapperStyle = styled.span`
   margin-bottom: 0px;
 `;
 
+export const NewWindowIconStyle = styled(SvgExternalLink)`
+  width: 12px;
+  height: 12px;
+  padding-left: 2px;
+`;
+
 export const DataPolicyNewWindowLinkStyle = styled.a`
   display: inline;
   font-family: ${MakeFonts.CircularStandardBook};
@@ -292,11 +310,7 @@ export const ProposalSuccessWrapperStyle = styled(ColumnElementStyle)`
   max-width: 505px;
 `;
 
-const ProposalSuccessTitle = styled.h2`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.S.value)};
-  line-height: 1.5;
+export const ProposalSuccessTitle = styled(TitleXXS).attrs({ as: 'h2' })`
   text-transform: none;
   text-align: left;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {

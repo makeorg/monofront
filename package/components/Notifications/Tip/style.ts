@@ -1,18 +1,15 @@
 import styled from 'styled-components';
 import { color } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { BodySDefault } from '@make.org/designsystem/components/Body';
 
-export const TipWrapperStyle = styled.div`
+export const TipWrapperStyle = styled(BodySDefault).attrs({ as: 'div' })`
   position: relative;
-  font-family: ${MakeFonts.CircularStandardBook};
   background-color: ${color.infos};
   color: ${color.white};
   padding: 6px 10px;
   border-radius: 2px;
-  font-size: 14px;
-  line-height: 1.5;
   letter-spacing: 0.14px;
 `;
 

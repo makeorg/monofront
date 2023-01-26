@@ -2,13 +2,12 @@ import styled from 'styled-components';
 import { color, typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { BodyXSHighlight } from '@make.org/designsystem/components/Body';
 
-export const DisclaimerSubtitleStyle = styled.h4`
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+export const DisclaimerSubtitleStyle = styled(BodyXSHighlight).attrs({
+  as: 'h4',
+})`
   color: ${color.black};
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
   text-transform: none;
   margin-bottom: 5px;
   &.margin-top {

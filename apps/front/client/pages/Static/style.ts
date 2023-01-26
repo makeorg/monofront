@@ -16,6 +16,8 @@ import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { SvgExternalLink, SvgBigCheck } from '@make.org/ui/Svg/elements';
 import { StartColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { TitleM } from '@make.org/designsystem/components/Titles';
+import { BodyXSDefault } from '@make.org/designsystem/components/Body';
 
 export const StaticPageWrapperStyle = styled.div`
   width: 100%;
@@ -40,12 +42,8 @@ export const FocusBlockWrapperStyle = styled(StartColumnStyle)`
   }
 `;
 
-export const FocusBlockTitleStyle = styled.strong`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.XL.value)};
+export const FocusBlockTitleStyle = styled(TitleM).attrs({ as: 'strong' })`
   margin-bottom: 10px;
-  line-height: 1.5;
   letter-spacing: 0.5px;
 `;
 
@@ -91,11 +89,9 @@ export const StaticFourthLevelTitleStyle = styled(FourthLevelTitleStyle)`
   }
 `;
 
-export const StaticListTitleStyle = styled.h5`
-  font-family: ${MakeFonts.CircularStandardBook};
+export const StaticListTitleStyle = styled(BodyXSDefault).attrs({ as: 'h5' })`
   text-transform: none;
   margin: 15px 0 0;
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
   }

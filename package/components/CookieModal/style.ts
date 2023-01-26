@@ -9,6 +9,8 @@ import {
 } from '@make.org/ui/elements/ButtonsElements';
 import { SvgCookie } from '@make.org/ui/Svg/elements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { TitleXXS } from '@make.org/designsystem/components/Titles';
+import { BodyMDefault } from '@make.org/designsystem/components/Body';
 
 export const CookieModalContentStyle = styled.div`
   display: flex;
@@ -49,10 +51,7 @@ export const CookieModalButtonWithLinkStyle = styled(UnstyledButtonStyle)`
   }
 `;
 
-export const CookieModalTitleStyle = styled.h2`
-  font-family: ${MakeFonts.CircularStandardBold};
-  font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.S.value)};
+export const CookieModalTitleStyle = styled(TitleXXS).attrs({ as: 'h2' })`
   text-transform: none;
   letter-spacing: 0.12px;
   margin-bottom: 20px;
@@ -62,9 +61,7 @@ export const CookieModalTitleStyle = styled.h2`
   }
 `;
 
-export const CookieModalParagraphStyle = styled.p`
-  font-family: ${MakeFonts.CircularStandardBook};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+export const CookieModalParagraphStyle = styled(BodyMDefault)`
   padding-bottom: 30px;
 `;
 
@@ -98,11 +95,9 @@ export const CookieModalBannerWrapperStyle = styled.div`
   }
 `;
 
-export const CookieModalElementStyle = styled.li`
+export const CookieModalElementStyle = styled(BodyMDefault).attrs({ as: 'li' })`
   display: flex;
   flex-flow: row;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  font-family: ${MakeFonts.CircularStandardBook};
   margin-bottom: 10px;
   strong {
     font-family: ${MakeFonts.CircularStandardBold};
