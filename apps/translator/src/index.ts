@@ -1,6 +1,7 @@
 import express, { Application } from 'express';
 import compression from 'compression';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 import { env } from './env';
 import { Routes } from './Routes';
 import { headersResponseMiddleware } from './Middlewares/headersResponse';
@@ -26,6 +27,7 @@ app.use((err: any, req: any, res: any, next: any) => {
 
   return next();
 });
+app.use(cors());
 app.use((_, res, next) =>
   headersResponseMiddleware(
     {
