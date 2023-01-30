@@ -1,9 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import sourceMap, {
-  BasicSourceMapConsumer,
-  IndexedSourceMapConsumer,
-} from 'source-map';
+import sourceMap, { SourceMapConsumer } from 'source-map';
 import { DataLog } from './loggerNormalizer';
 
 export type LogTransformer = { (data: DataLog): DataLog };
@@ -14,7 +11,7 @@ export const originalFilename = (filename: string): string =>
 const createSourceMapConsumers = async (
   sourcesPath: string,
   mapPath: string
-): Promise<Map<string, BasicSourceMapConsumer | IndexedSourceMapConsumer>> => {
+): Promise<Map<string, SourceMapConsumer>> => {
   const sourceMapConsumers = new Map();
   const items = fs.readdirSync(sourcesPath);
   const mapFiles = fs.readdirSync(mapPath);
@@ -27,6 +24,8 @@ const createSourceMapConsumers = async (
           path.join(mapPath, mapFile),
           'utf8'
         );
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         const consumer = await new sourceMap.SourceMapConsumer(contents);
         sourceMapConsumers.set(item, consumer);
       }
@@ -40,10 +39,7 @@ const createSourceMapConsumers = async (
 
 export const formatStack = (
   stack: string,
-  sourceMapConsumers: Map<
-    string,
-    BasicSourceMapConsumer | IndexedSourceMapConsumer
-  >
+  sourceMapConsumers: Map<string, SourceMapConsumer>
 ): string => {
   const replacement = (
     coresp: string,

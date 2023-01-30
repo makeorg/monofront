@@ -3065,7 +3065,7 @@ __metadata:
     "@types/babel__core": ^7
     "@types/babel__preset-env": ^7
     "@types/uuid": ^8.3.4
-    source-map: ^0.7.3
+    source-map: ^0.6.1
     typescript: ^4.7.4
     uuid: ^8.3.2
     winston: ~3.3.4
