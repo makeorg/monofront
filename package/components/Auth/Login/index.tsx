@@ -60,7 +60,7 @@ export const Login: React.FC = () => {
               <ProposalSubmitAuthSeparator />
             </SeparatorProposalAuthLogin>
             <SocialRegisterButtonsWrapperStyle>
-              <GoogleAuthentication />
+              <GoogleAuthentication isRegister={false} />
               <FacebookAuthentication />
             </SocialRegisterButtonsWrapperStyle>
           </>

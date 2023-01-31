@@ -386,12 +386,15 @@ const checkSocialPrivacyPolicy = async (
   success?: (isNewAccount: boolean) => void,
   failure?: () => void,
   unexpectedError?: () => void
-): Promise<void | null> => {
+): Promise<void> => {
   try {
     const response = await UserApiService.socialPrivacyPolicy(provider, token);
 
     if (!response) {
-      return null;
+      if (failure) {
+        failure();
+      }
+      return;
     }
 
     const { data } = response;
@@ -401,7 +404,7 @@ const checkSocialPrivacyPolicy = async (
 
     if (data?.privacyPolicyApprovalDate === null && validateAction) {
       validateAction();
-      return null;
+      return;
     }
 
     if (data?.privacyPolicyApprovalDate != null) {
@@ -410,7 +413,7 @@ const checkSocialPrivacyPolicy = async (
 
     if ((!userAcceptance || userAcceptance < lastVersion) && updateAction) {
       updateAction();
-      return null;
+      return;
     }
 
     loginSocial(
@@ -423,14 +426,13 @@ const checkSocialPrivacyPolicy = async (
       unexpectedError
     );
 
-    return null;
+    return;
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
     if (failure) {
       failure();
     }
     defaultUnexpectedError(apiServiceError);
-    return null;
   }
 };
 

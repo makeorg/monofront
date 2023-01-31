@@ -49,6 +49,7 @@
       "@make.org/assets": ["./package/assets/*"],
       "@make.org/ui": ["./package/ui/*"],
       "@make.org/utils": ["./package/utils/*"],
+      "@make.org/components": ["./package/components/*"],
       "@make.org/store": ["./package/store/*"],
       "@make.org/translator": ["./package/translator/src/*"],
       "@make.org/logger": ["./package/logger/*"],

@@ -2899,11 +2899,11 @@ __metadata:
   dependencies:
     "@make.org/api": 0.1.0
     "@make.org/assets": 0.1.0
-    "@make.org/components": 0.1.0
     "@make.org/store": 0.1.0
     "@make.org/types": 0.1.0
     "@make.org/ui": 0.1.0
     "@make.org/utils": 0.1.0
+    "@react-oauth/google": ^0.6.1
     "@types/react": ^17.0.52
     "@types/react-facebook-login": 4.1.5
     "@types/react-router": 5.1.19
@@ -2917,7 +2917,6 @@ __metadata:
     react-cookie: ^4.1.1
     react-dom: ^17.0.2
     react-facebook-login: ^4.1.1
-    react-google-login: ^5.2.2
     react-head: ^3.4.2
     react-modal: ^3.15.1
     react-router: ^5.3.4
@@ -3021,7 +3020,6 @@ __metadata:
     react-cookie: ^4.1.1
     react-dom: ^17.0.2
     react-facebook-login: ~4.1.1
-    react-google-login: ~5.2.2
     react-head: ~3.4.2
     react-is: 17.0.2
     react-modal: ^3.15.1
@@ -3449,6 +3447,16 @@ __metadata:
   dependencies:
     debug: ^4.3.1
   checksum: 663438d9154db3c11bc7d41a4838162542db9cb4cf989fe8936e9bd9e5b99e3a58d73c8888afa1180a8cb93375c1d165bb397939de8a5ab8507d13d2aed2a086
+  languageName: node
+  linkType: hard
+
+"@react-oauth/google@npm:^0.6.1":
+  version: 0.6.1
+  resolution: "@react-oauth/google@npm:0.6.1"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 1c18b0ab39ddda43723f3943c1bfbcc7d5a147202baf81332a92087d0fd5697ba47859d0d3a02a7a00689b9c620beb841fbe4c9b1c74c4c4bf875f7f6b2affd3
   languageName: node
   linkType: hard
 
@@ -17240,7 +17248,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.5.6, prop-types@npm:^15.6.0, prop-types@npm:^15.6.2, prop-types@npm:^15.7.0, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
+"prop-types@npm:^15.5.6, prop-types@npm:^15.6.2, prop-types@npm:^15.7.0, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -17720,19 +17728,6 @@ __metadata:
   peerDependencies:
     react: ^16.0.0
   checksum: e644da474c6bf308e9a862c55397d61fd876a088345f3e9d234ec457eb3c205d1deb1263c5000005adfc1899bf6774cf761ee670c33bd6b0887f0dfd3bdff957
-  languageName: node
-  linkType: hard
-
-"react-google-login@npm:^5.2.2, react-google-login@npm:~5.2.2":
-  version: 5.2.2
-  resolution: "react-google-login@npm:5.2.2"
-  dependencies:
-    "@types/react": "*"
-    prop-types: ^15.6.0
-  peerDependencies:
-    react: ^16 || ^17
-    react-dom: ^16 || ^17
-  checksum: 29199c7035c3c1070a82241dc4063628d693f35a1736d292e3db736e52da825e8a53f9287b0b12b08a50d676973ce1349a4d8243cd849ca25fed6a4284378880
   languageName: node
   linkType: hard
 

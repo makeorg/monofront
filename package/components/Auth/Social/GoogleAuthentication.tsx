@@ -1,8 +1,4 @@
 import React, { useState } from 'react';
-import GoogleLogin, {
-  GoogleLoginResponse,
-  GoogleLoginResponseOffline,
-} from 'react-google-login';
 import { GOOGLE_PROVIDER_ENUM } from '@make.org/api/UserApiService';
 import { GOOGLE_LOGIN_ID } from '@make.org/utils/constants/config';
 import {
@@ -32,6 +28,11 @@ import { useAppContext } from '@make.org/store';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import {
+  GoogleOAuthProvider,
+  TokenResponse,
+  useGoogleLogin,
+} from '@react-oauth/google';
 import { RegisterConfirmation } from '../Register/Steps/RegisterConfirmation';
 import {
   GoogleButtonStyle,
@@ -40,141 +41,125 @@ import {
 } from './style';
 import { OptInGTU } from '../Register/Steps/OptInGTU';
 
-type Props = {
-  isRegister?: boolean;
+const useLoginSuccess = (isRegister: boolean) => {
+  const { dispatch, state } = useAppContext();
+  const { pendingProposal } = state.pendingProposal;
+  const question = selectCurrentQuestion(state);
+
+  return async (isNewAccount: boolean) => {
+    dispatch(loginSocialSuccess());
+    trackAuthenticationSocialSuccess(GOOGLE_PROVIDER_ENUM, isNewAccount);
+    await getUser(dispatch, state.modal.isOpen);
+
+    if (!pendingProposal && !isRegister) {
+      dispatch(closePanel());
+      dispatch(removePanelContent());
+      dispatch(
+        displayNotificationBanner(
+          NOTIF.LOGIN_SUCCESS_MESSAGE,
+          NOTIF.NOTIFICATION_LEVEL_SUCCESS
+        )
+      );
+    }
+
+    if (!pendingProposal && isRegister) {
+      dispatch(setPanelContent(<RegisterConfirmation isSocial />));
+    }
+
+    if (pendingProposal) {
+      await ProposalService.propose(pendingProposal, question.questionId, () =>
+        dispatch(setPanelContent(<ProposalSuccess />))
+      );
+    }
+  };
 };
 
-export const GoogleAuthentication: React.FC<Props> = ({ isRegister }) => {
+const useCheckSocialPrivacyPolicy = (isRegister: boolean) => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy } = state.appConfig || {};
-  const { pendingProposal } = state.pendingProposal;
-  const [disabled, setDisabled] = useState(false);
 
-  const question = selectCurrentQuestion(state);
+  const loginSuccess = useLoginSuccess(isRegister);
 
   const handleClose = () => {
     dispatch(closePanel());
     dispatch(removePanelContent());
   };
 
-  /** Google login method callback */
-  const handleGoogleLoginSuccess = async (
-    response: GoogleLoginResponse | GoogleLoginResponseOffline
-  ) => {
-    const success = async (isNewAccount: boolean) => {
-      dispatch(loginSocialSuccess());
-      trackAuthenticationSocialSuccess(GOOGLE_PROVIDER_ENUM, isNewAccount);
-      await getUser(dispatch, state.modal.isOpen);
+  const failure = () => {
+    trackAuthenticationSocialFailure(
+      GOOGLE_PROVIDER_ENUM,
+      'Login social failure'
+    );
+    dispatch(closePanel());
+  };
+  const unexpectedError = () => handleClose();
+  const validateDataPolicy = (accessToken: string) => {
+    dispatch(
+      setPanelContent(
+        <OptInGTU
+          provider={GOOGLE_PROVIDER_ENUM}
+          token={accessToken}
+          success={loginSuccess}
+          failure={failure}
+          unexpectedError={unexpectedError}
+        />
+      )
+    );
+  };
 
-      if (!pendingProposal && !isRegister) {
-        dispatch(closePanel());
-        dispatch(removePanelContent());
-        dispatch(
-          displayNotificationBanner(
-            NOTIF.LOGIN_SUCCESS_MESSAGE,
-            NOTIF.NOTIFICATION_LEVEL_SUCCESS
-          )
-        );
-      }
-
-      if (!pendingProposal && isRegister) {
-        dispatch(setPanelContent(<RegisterConfirmation isSocial />));
-      }
-
-      if (pendingProposal) {
-        await ProposalService.propose(
-          pendingProposal,
-          question.questionId,
-          () => dispatch(setPanelContent(<ProposalSuccess />))
-        );
-      }
-    };
-
-    let accessToken = '';
-    if ('accessToken' in response) {
-      accessToken = response.accessToken;
-    }
-
-    const updateDataPolicy = () => {
-      dispatch(modalShowDataPolicySocial(GOOGLE_PROVIDER_ENUM, accessToken));
-    };
-
-    const failure = () =>
-      trackAuthenticationSocialFailure(
-        GOOGLE_PROVIDER_ENUM,
-        'Login social failure'
-      );
-
-    const unexpectedError = () => handleClose();
-
-    const validateDataPolicy = () => {
-      dispatch(
-        setPanelContent(
-          <OptInGTU
-            provider={GOOGLE_PROVIDER_ENUM}
-            token={accessToken}
-            success={success}
-            failure={failure}
-            unexpectedError={unexpectedError}
-          />
-        )
-      );
-    };
-
+  return (accessToken: string) =>
     UserService.checkSocialPrivacyPolicy(
       GOOGLE_PROVIDER_ENUM,
       accessToken,
       privacyPolicy,
-      updateDataPolicy,
-      validateDataPolicy,
-      success,
+      () =>
+        dispatch(modalShowDataPolicySocial(GOOGLE_PROVIDER_ENUM, accessToken)),
+      () => validateDataPolicy(accessToken),
+      loginSuccess,
       failure,
       unexpectedError
     );
+};
+
+type ComponentProps = {
+  isDisabled: boolean;
+  isRegister: boolean;
+};
+
+const GoogleAuthenticationComponent: React.FC<ComponentProps> = ({
+  isRegister,
+  isDisabled,
+}) => {
+  const { dispatch } = useAppContext();
+  const checkDataPolicy = useCheckSocialPrivacyPolicy(isRegister);
+
+  // Success
+  const handleGoogleLoginSuccess = async (
+    credentialResponse: Omit<
+      TokenResponse,
+      'error' | 'error_description' | 'error_uri'
+    >
+  ) => {
+    const { access_token: accessToken } = credentialResponse;
+    checkDataPolicy(accessToken);
   };
 
-  const handleGoogleLoadFailure = () => {
-    Logger.logInfo({
-      message: `Google login load failure`,
-      name: 'social-auth',
-    });
-    setDisabled(true);
-  };
-
-  const handleGoogleLoginFailure = (response: {
-    error: string;
-    details: string;
-  }) => {
+  // Failure
+  const handleGoogleLoginFailure = (
+    response: Pick<TokenResponse, 'error' | 'error_description' | 'error_uri'>
+  ) => {
+    const {
+      error,
+      error_description: errorDescription,
+      error_uri: errorUri,
+    } = response;
     dispatch(loginSocialFailure());
-    if (response?.error === 'popup_closed_by_user') {
-      const popupClosedError = 'Google auth popup closed by user';
-      Logger.logInfo({
-        message: popupClosedError,
-        name: 'social-auth',
-      });
-      trackAuthenticationSocialFailure(GOOGLE_PROVIDER_ENUM, popupClosedError);
 
-      return;
-    }
-
-    if (response?.error === 'idpiframe_initialization_failed') {
-      const googleIframeFailure = `Google login failure: idpiframe_initialization_failed - ${response?.details}`;
-      Logger.logInfo({
-        message: googleIframeFailure,
-        name: 'social-auth',
-      });
-      trackAuthenticationSocialFailure(
-        GOOGLE_PROVIDER_ENUM,
-        googleIframeFailure
-      );
-      setDisabled(true);
-
-      return;
-    }
-
-    const googleLoginFailure = `Google login failure: ${response?.error} - ${response?.details}`;
+    const googleLoginFailure = `Google login failure: ${errorDescription}}`;
     Logger.logError({
       message: googleLoginFailure,
+      app_google_error: error,
+      app_google_error_uri: errorUri,
       name: 'social-auth',
     });
     trackAuthenticationSocialFailure(GOOGLE_PROVIDER_ENUM, googleLoginFailure);
@@ -185,35 +170,86 @@ export const GoogleAuthentication: React.FC<Props> = ({ isRegister }) => {
         NOTIF.NOTIFICATION_LEVEL_ALERT
       )
     );
-    handleClose();
+    dispatch(closePanel());
+    dispatch(removePanelContent());
+  };
+
+  // Non OAuth failure
+  const handleNonOAuthError = ({
+    type: nonOAuthErrorType,
+  }: {
+    type: 'popup_failed_to_open' | 'popup_closed' | 'unknown';
+  }) => {
+    if (nonOAuthErrorType === 'popup_closed') {
+      const popupClosedError = 'Google auth popup closed by user';
+      Logger.logInfo({
+        message: popupClosedError,
+        name: 'social-auth',
+      });
+      trackAuthenticationSocialFailure(GOOGLE_PROVIDER_ENUM, popupClosedError);
+
+      return;
+    }
+
+    const message = `Google auth failure. Non Oauth errror : ${nonOAuthErrorType}`;
+    Logger.logError({
+      message,
+      name: 'social-auth',
+    });
+    trackAuthenticationSocialFailure(GOOGLE_PROVIDER_ENUM, message);
+  };
+
+  const googleLogin = useGoogleLogin({
+    onSuccess: handleGoogleLoginSuccess,
+    onError: handleGoogleLoginFailure,
+    onNonOAuthError: handleNonOAuthError,
+    scope: 'https://www.googleapis.com/auth/user.birthday.read',
+  });
+
+  return (
+    <GoogleButtonStyle
+      onClick={() => {
+        trackClickSocialConnect(GOOGLE_PROVIDER_ENUM);
+        googleLogin();
+      }}
+      type="button"
+      disabled={isDisabled}
+    >
+      <SvgLogoWrapperStyle>
+        <SvgGoogleLogoG aria-hidden focusable="false" />
+      </SvgLogoWrapperStyle>
+      <SocialButtonLabelStyle>
+        {i18n.t('common.social_login.google_connect')}
+      </SocialButtonLabelStyle>
+      <ScreenReaderItemStyle>Google</ScreenReaderItemStyle>
+    </GoogleButtonStyle>
+  );
+};
+
+type Props = {
+  isRegister: boolean;
+};
+
+export const GoogleAuthentication: React.FC<Props> = ({ isRegister }) => {
+  const [isDisabled, setDisabled] = useState(false);
+
+  const handleGoogleLoadFailure = () => {
+    Logger.logInfo({
+      message: `Google login load failure`,
+      name: 'social-auth',
+    });
+    setDisabled(true);
   };
 
   return (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore: remove comment after upgrade to react18
-    <GoogleLogin
+    <GoogleOAuthProvider
       clientId={GOOGLE_LOGIN_ID}
-      scope="https://www.googleapis.com/auth/user.birthday.read"
-      buttonText="Google"
-      onRequest={() => trackClickSocialConnect(GOOGLE_PROVIDER_ENUM)}
-      onSuccess={handleGoogleLoginSuccess}
-      onFailure={handleGoogleLoginFailure}
-      onScriptLoadFailure={handleGoogleLoadFailure}
-      render={(renderProps: { onClick: () => void }) => (
-        <GoogleButtonStyle
-          onClick={renderProps.onClick}
-          type="button"
-          disabled={disabled}
-        >
-          <SvgLogoWrapperStyle>
-            <SvgGoogleLogoG aria-hidden focusable="false" />
-          </SvgLogoWrapperStyle>
-          <SocialButtonLabelStyle>
-            {i18n.t('common.social_login.google_connect')}
-          </SocialButtonLabelStyle>
-          <ScreenReaderItemStyle>Google</ScreenReaderItemStyle>
-        </GoogleButtonStyle>
-      )}
-    />
+      onScriptLoadError={handleGoogleLoadFailure}
+    >
+      <GoogleAuthenticationComponent
+        isRegister={isRegister}
+        isDisabled={isDisabled}
+      />
+    </GoogleOAuthProvider>
   );
 };
