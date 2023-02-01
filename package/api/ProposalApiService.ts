@@ -3,7 +3,6 @@ import { AxiosResponse } from 'axios';
 import { ApiService } from './ApiService';
 
 const PATH_PROPOSALS = '/proposals';
-const PATH_TOP_PROPOSALS = '/questions/:questionId/top-proposals';
 const PATH_PROPOSAL_GET = '/proposals/:proposalId';
 
 type TypeAvailableAlgorithms = {
