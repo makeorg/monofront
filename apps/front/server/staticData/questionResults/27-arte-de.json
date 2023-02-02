@@ -1,0 +1,375 @@
+{
+    "context": "Bürgerkonsultation durchgeführt von Make.org vom 2022-06-23 bis 2022-12-30 rund um die Frage: Wie können wir als europäische Bürger:innen angesichts der kommenden Herausforderungen (Klima, Gesundheit, Sicherheit, Ernährung...) handeln?",
+    "key_figures": {
+        "visitors": 27414,
+        "votes": 441333,
+        "proposals": 1267
+    },
+    "top_ideas": [
+        {
+            "name": "Demokratie in Europa",
+            "ideas": [
+                {
+                    "idea": "Sicherstellung der rechtschaffenheit der politiker:innen",
+                    "agreement": 93,
+                    "adhesion": 45,
+                    "realistic": 11
+                },
+                {
+                    "idea": "Stärkere einbeziehung der bürger:innen in die politik",
+                    "agreement": 89,
+                    "adhesion": 32,
+                    "realistic": 11
+                },
+                {
+                    "idea": "Gewährleistung der kompetenz der gewählten volksvertreter:innen",
+                    "agreement": 89,
+                    "adhesion": 40,
+                    "realistic": 10
+                }
+            ]
+        },
+        {
+            "name": "Klimawandel und umwelt",
+            "ideas": [
+                {
+                    "idea": "Entwicklung und unterstützung der lokale wirtschaft",
+                    "agreement": 89,
+                    "adhesion": 31,
+                    "realistic": 15
+                },
+                {
+                    "idea": "Entwicklung eines umweltfreundlicheren verkehrs",
+                    "agreement": 84,
+                    "adhesion": 30,
+                    "realistic": 16
+                }
+            ]
+        },
+        {
+            "name": "Migration",
+            "ideas": [
+                {
+                    "idea": "Verschärfung der einwanderungsbedingungen",
+                    "agreement": 91,
+                    "adhesion": 40,
+                    "realistic": 12
+                }
+            ]
+        },
+        {
+            "name": "Energie",
+            "ideas": [
+                {
+                    "idea": "Aufrechterhaltung des betriebs der bestehenden kernkraftwerke",
+                    "agreement": 83,
+                    "adhesion": 33,
+                    "realistic": 12
+                }
+            ]
+        },
+        {
+            "name": "Wirtschaft und beschäftigung",
+            "ideas": [
+                {
+                    "idea": "Weiterentwicklung des rentensystems",
+                    "agreement": 92,
+                    "adhesion": 39,
+                    "realistic": 12
+                }
+            ]
+        },
+        {
+            "name": "Gesundheit",
+            "ideas": [
+                {
+                    "idea": "Mehr investition in die verbesserung des gesundheitssystems",
+                    "agreement": 85,
+                    "adhesion": 30,
+                    "realistic": 17
+                }
+            ]
+        },
+        {
+            "name": "Bildungssystem",
+            "ideas": [
+                {
+                    "idea": "Modernisierung des bildungssystems und diversifizierung des schulangebots",
+                    "agreement": 86,
+                    "adhesion": 35,
+                    "realistic": 19
+                }
+            ]
+        }
+    ],
+    "controversials": [
+        {
+            "id": "662fe91b-232b-4460-a636-fbf845b4cc18",
+            "content": "Man sollte Mehrwertsteuersenkung auf alle veganen und vegetarischen Lebensmittel einführen.",
+            "author": "GABRIELE",
+            "agree": 44,
+            "like_it": 14,
+            "disagree": 40,
+            "no_way": 21,
+            "votes": 244
+        },
+        {
+            "id": "926195a5-ffe8-4eab-a440-53e52ef18df1",
+            "content": "Man sollte die EU aus der NATO herauslösen und ein eigenes Verteidigungskonzept ins Leben rufen.",
+            "author": "Joachim",
+            "agree": 42,
+            "like_it": 13,
+            "disagree": 41,
+            "no_way": 17,
+            "votes": 474
+        },
+        {
+            "id": "58ff94c3-8915-48fb-8516-f508bf16de76",
+            "content": "Man sollte ein bedingungsloses Grundeinkommen einführen, damit jede*r sich ohne Existenzängste für eine bessere Zukunft engagieren kann.",
+            "author": "Uwe",
+            "agree": 41,
+            "like_it": 15,
+            "disagree": 45,
+            "no_way": 23,
+            "votes": 491
+        },
+        {
+            "id": "3b7661ed-7cf4-4bde-bde5-bc71b3f7a670",
+            "content": "Man sollte ein EU Heer implementieren, um schnell und effektiv auf Sicherheitsbedrohungen reagieren zu können.",
+            "author": "Tobias",
+            "agree": 45,
+            "like_it": 10,
+            "disagree": 35,
+            "no_way": 15,
+            "votes": 589
+        },
+        {
+            "id": "406d2cbb-05b9-4d05-8c5d-904480a9d837",
+            "content": "Man sollte an sollte eine europäische Flugbenzinsteuer einführen, die das Fliegen erheblich verteuert und damit die Eisenbahn fördern.",
+            "author": "Franz",
+            "agree": 40,
+            "like_it": 15,
+            "disagree": 41,
+            "no_way": 24,
+            "votes": 254
+        },
+        {
+            "id": "cce1aded-91bd-4da0-9762-92c80641dd32",
+            "content": "Man sollte sofort ein Tempolimit umsetzten. Das bedeutet weniger Unfälle, mehr Klima- und Umweltschutz usw.",
+            "author": "Eva",
+            "agree": 46,
+            "like_it": 22,
+            "disagree": 41,
+            "no_way": 24,
+            "votes": 170
+        }
+    ],
+    "rejected": [],
+    "cartography": [
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Angesprochene Themen",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Staaten, Institutionen ",
+                    "sublabel": "und Demokratie",
+                    "percent": 27,
+                    "color": "#4B45A5",
+                    "adjustLabel": {
+                        "textAlign": "left"
+                    }
+                },
+                {
+                    "label": "Demographie, Wirtschaft",
+                    "sublabel": "und Beschäftigung",
+                    "percent": 22,
+                    "color": "#8955BD",
+                    "adjustLabel": {
+                        "textAlign": "left"
+                    }
+                },
+                {
+                    "label": "Klimawandel und Umwelt",
+                    "percent": 15,
+                    "color": "#EB7575",
+                    "adjustLabel": {
+                        "textAlign": "left"
+                    }
+                },
+                {
+                    "label": "Energien und Ressourcen ",
+                    "percent": 11,
+                    "color": "#F5976E",
+                    "adjustLabel": {
+                        "textAlign": "right"
+                    }
+                },
+                {
+                    "label": "Justizsystem und Sicherheit",
+                    "percent": 9,
+                    "color": "#EEB298",
+                    "adjustLabel": {
+                        "textAlign": "right"
+                    }
+                },
+                {
+                    "label": "Produktion ",
+                    "sublabel": "und Verbrauch",
+                    "percent": 7,
+                    "color": "#FFD266",
+                    "adjustLabel": {
+                        "textAlign": "right"
+                    }
+                },
+                {
+                    "label": "Austausch und ",
+                    "sublabel": "Zusammenhalt",
+                    "percent": 7,
+                    "color": "#FFF689",
+                    "adjustLabel": {
+                        "textAlign": "right"
+                    }
+                },
+                {
+                    "label": "Bildungssystem",
+                    "percent": 6,
+                    "color": "#E5FFAE",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "yAxis": 1.9
+
+                    }
+                },
+                {
+                    "label": "Transparenz und ",
+                    "sublabel": "Korruption",
+                    "percent": 6,
+                    "color": "#C1EBDD",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "yAxis": 2
+                    }
+                },
+                {
+                    "label": "Mobilität und Verkehrsmittel",
+                    "percent": 6,
+                    "color": "#59BAD4",
+                    "adjustLabel": {
+                        "textAlign": "right"
+                    }
+                },
+                {
+                    "label": "Einwanderung",
+                    "percent": 5,
+                    "color": "#5885AE",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 2,
+                        "yAxis": 2.1
+
+                    }
+                },
+                {
+                    "label": "Andere",
+                    "percent": 8,
+                    "color": "#FFF",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                }
+            ]
+        }
+    ],
+    "participation": [
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Beteiligung nach Alter",
+            "legend": {
+                "title": "Stimmenverteilung",
+                "dimensions": {
+                    "first": "Teilnehmende",
+                    "second": "Gesamtbevölkerung"
+                }
+            },
+            "data": [
+                {
+                    "label": "16-24",
+                    "bars": {
+                        "first": 12,
+                        "second": 11
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "25-34",
+                    "bars": {
+                        "first": 13,
+                        "second": 15
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "35-44",
+                    "bars": {
+                        "first": 22,
+                        "second": 14
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "45-54",
+                    "bars": {
+                        "first": 17,
+                        "second": 16
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "55-64",
+                    "bars": {
+                        "first": 22,
+                        "second": 18
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "65+",
+                    "bars": {
+                        "first": 14,
+                        "second": 26
+                    },
+                    "color": "#8BDAB2"
+                }
+            ],
+            "id": "participation_2"
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Beteiligung nach Geschlecht",
+            "legend": "",
+            "data": [
+                {
+                    "label": "männlich",
+                    "percent": 54,
+                    "color": "#4B45A5"
+                },
+                {
+                    "label": "weiblich",
+                    "percent": 44,
+                    "color": "#EB7575"
+                },
+                {
+                    "label": "nichtbinär",
+                    "percent": 2,
+                    "color": "#8BDAB2"
+                }
+            ],
+            "id": "participation_3"
+        }
+    ]
+}
