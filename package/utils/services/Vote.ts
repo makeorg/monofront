@@ -6,13 +6,15 @@ import { defaultUnexpectedError } from './DefaultErrorHandler';
 const vote = async (
   proposalId: string,
   voteKey: string,
-  proposalKey: string
+  proposalKey: string,
+  proposalLanguage: string
 ): Promise<VoteType | null> => {
   try {
     const response = await VoteApiService.vote(
       proposalId,
       voteKey,
-      proposalKey
+      proposalKey,
+      proposalLanguage
     );
 
     return response && response.data;
@@ -27,13 +29,15 @@ const vote = async (
 const unvote = async (
   proposalId: string,
   voteKey: string,
-  proposalKey: string
+  proposalKey: string,
+  proposalLanguage: string
 ): Promise<VoteType | null> => {
   try {
     const response = await VoteApiService.unvote(
       proposalId,
       voteKey,
-      proposalKey
+      proposalKey,
+      proposalLanguage
     );
 
     return response && response.data;

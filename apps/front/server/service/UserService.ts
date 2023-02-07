@@ -16,7 +16,7 @@ const verifyUser = async (
     await UserApiService.verifyUser(userId, verificationToken, {
       'x-make-question-id': questionId || '',
       'x-make-country': country,
-      'x-make-language': language,
+      'x-make-client-language': language,
     });
 
     success();
@@ -48,7 +48,7 @@ const resetPasswordTokenCheck = async (
     await UserApiService.resetPasswordTokenCheck(userId, resetToken, {
       'x-make-question-id': questionId || '',
       'x-make-country': country,
-      'x-make-language': language,
+      'x-make-client-language': language,
     });
     success();
   } catch (error: unknown) {

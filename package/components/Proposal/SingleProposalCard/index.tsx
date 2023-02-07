@@ -20,6 +20,11 @@ import {
 } from '@make.org/store/topComponentContext';
 import { useAppContext } from '@make.org/store';
 import { getProposalContent } from '@make.org/utils/helpers/proposal';
+import {
+  ProposalLanguageContext,
+  ProposalLanguageContextValue,
+  ProposalLanguageContextValueType,
+} from '@make.org/store/proposalLanguageContext';
 import { ShowTranslation } from '../ShowTranslationElement';
 import { DetailledVoteResults } from '../DetailledVoteResults';
 import { Vote } from '../../Vote';
@@ -54,81 +59,85 @@ export const SingleProposalCard: React.FC<Props> = ({ proposal }) => {
     showOriginal,
     proposal
   );
+  const proposalLanguageContext: ProposalLanguageContextValueType =
+    ProposalLanguageContextValue.getProposalLanguage(proposalLanguage || '');
 
   return (
     <TopComponentContext.Provider value={topComponentContext}>
-      <TallCardStyle id="proposal_card">
-        <InnerProposalStyle>
+      <ProposalLanguageContext.Provider value={proposalLanguageContext}>
+        <TallCardStyle id="proposal_card">
+          <InnerProposalStyle>
+            {!!proposal.translatedContent && (
+              <ReportOptionsButton
+                switchProposalContent={switchProposalContent}
+                showOriginal={showOriginal}
+                proposalId={proposal.id}
+                translationLanguage={proposal.translatedLanguage}
+              />
+            )}
+            <DeprecatedProposalAuthor proposal={proposal} />
+            {!isAnonymous && <ProposalCardSeparatorStyle />}
+            <ScreenReaderItemStyle>
+              {i18n.t('proposal_card.content')}
+            </ScreenReaderItemStyle>
+            <ProposalCardContentStyle lang={proposalLanguage}>
+              {proposalContent}
+            </ProposalCardContentStyle>
+            {isConsultationOpened ? (
+              <Vote
+                proposal={proposal}
+                votes={proposal.votes}
+                proposalKey={proposal.proposalKey}
+              />
+            ) : (
+              <DetailledVoteResults
+                votes={proposal.votes}
+                proposalId={proposal.id}
+              />
+            )}
+          </InnerProposalStyle>
           {!!proposal.translatedContent && (
-            <ReportOptionsButton
-              switchProposalContent={switchProposalContent}
+            <ShowTranslation
               showOriginal={showOriginal}
-              proposalId={proposal.id}
-              translationLanguage={proposal.translatedLanguage}
+              onClickAction={() => setShowOriginal(!showOriginal)}
             />
           )}
-          <DeprecatedProposalAuthor proposal={proposal} />
-          {!isAnonymous && <ProposalCardSeparatorStyle />}
-          <ScreenReaderItemStyle>
-            {i18n.t('proposal_card.content')}
-          </ScreenReaderItemStyle>
-          <ProposalCardContentStyle lang={proposalLanguage}>
-            {proposalContent}
-          </ProposalCardContentStyle>
-          {isConsultationOpened ? (
-            <Vote
-              proposal={proposal}
-              votes={proposal.votes}
-              proposalKey={proposal.proposalKey}
-            />
-          ) : (
-            <DetailledVoteResults
-              votes={proposal.votes}
-              proposalId={proposal.id}
-            />
-          )}
-        </InnerProposalStyle>
-        {!!proposal.translatedContent && (
-          <ShowTranslation
-            showOriginal={showOriginal}
-            onClickAction={() => setShowOriginal(!showOriginal)}
-          />
-        )}
-        <ProposalFooterStyle>
-          <ContentSeparatorStyle />
-          <FooterContentStyle>
-            <DescriptionStyle
-              dangerouslySetInnerHTML={{
-                __html: i18n.t('proposal_page.footer_text', {
-                  operation_name: `<a 
+          <ProposalFooterStyle>
+            <ContentSeparatorStyle />
+            <FooterContentStyle>
+              <DescriptionStyle
+                dangerouslySetInnerHTML={{
+                  __html: i18n.t('proposal_page.footer_text', {
+                    operation_name: `<a 
                   lang=${proposal.question.returnedLanguage}
                   href="${getParticipateLink(
                     country,
                     proposal.question.slug
                   )}">${proposal.question.wording.title}</a>`,
-                }),
-              }}
-            />
-            <FooterContentSeparatorStyle />
-            <ButtonWrapperStyle>
-              {isConsultationOpened && (
+                  }),
+                }}
+              />
+              <FooterContentSeparatorStyle />
+              <ButtonWrapperStyle>
+                {isConsultationOpened && (
+                  <ButtonStyle
+                    as={Link}
+                    to={getSequenceLink(country, proposal.question.slug)}
+                  >
+                    {i18n.t('proposal_page.button_1')}
+                  </ButtonStyle>
+                )}
                 <ButtonStyle
                   as={Link}
-                  to={getSequenceLink(country, proposal.question.slug)}
+                  to={getParticipateLink(country, proposal.question.slug)}
                 >
-                  {i18n.t('proposal_page.button_1')}
+                  {i18n.t('proposal_page.button_2')}
                 </ButtonStyle>
-              )}
-              <ButtonStyle
-                as={Link}
-                to={getParticipateLink(country, proposal.question.slug)}
-              >
-                {i18n.t('proposal_page.button_2')}
-              </ButtonStyle>
-            </ButtonWrapperStyle>
-          </FooterContentStyle>
-        </ProposalFooterStyle>
-      </TallCardStyle>
+              </ButtonWrapperStyle>
+            </FooterContentStyle>
+          </ProposalFooterStyle>
+        </TallCardStyle>
+      </ProposalLanguageContext.Provider>
     </TopComponentContext.Provider>
   );
 };

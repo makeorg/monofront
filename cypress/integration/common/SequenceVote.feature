@@ -11,33 +11,105 @@ Feature: Vote on sequence
     When I vote "agree" on the current card
     Then I see agree qualifications buttons on card "1"
     And I see "next proposal" button on card "1"
+    
   Scenario: Vote disagree
     Given I am on the common sequence page of the question "question-1-slug"
     And card "1" is visible
     When I vote "disagree" on the current card
     Then I see disagree qualifications buttons on card "1"
     And I see "next proposal" button on card "1"
+
   Scenario: Vote neutral
     Given I am on the common sequence page of the question "question-1-slug"
     And card "1" is visible
     When I vote "neutral" on the current card
     Then I see neutral qualifications buttons on card "1"
     And I see "next proposal" button on card "1"
+
   Scenario: Unvote voted and qualified proposal
-     Given I am on the common sequence page of the question "question-1-slug"
-     And card "1" is visible
-     When I vote "agree" on the current card
-     And I qualify "likeIt" on the current card
-     Then "likeIt" qualification button is highlight on the current card
-     When I unvote on the current card
-     Then I see vote buttons on the current card
-     And I don't see qualification buttons on the current card
-     When I vote "agree" on the current card
-     Then "likeIt" qualification button is not highlight on the current card
-     When I qualify "likeIt" on the current card
-     Then "likeIt" qualification button is highlight on the current card
-     When I unqualify "likeIt" on the current card
-     Then "likeIt" qualification button is not highlight on the current card
+    Given I monitor API "postQualify" requests
+    And I monitor API "postTracking" requests
+    And I monitor API "postUnqualify" requests
+    And I am on the common sequence page of the question "question-0-slug"
+    And card "1" is visible
+    Then I vote "agree" on the current card
+    And I qualify "likeIt" on the current card
+    Then some make data header should be sent to "postQualify":  
+    | name          | frontValue                                  | widgetValue                                 |
+    | app-name      | main-front                                  | widget                                      |
+    | source        | core                                        | widget-test                                 |
+    | location      | sequence                                    | widget                                      |
+    | client-language      | fr                                          | fr                                          |
+    | proposal-language    | en                                          | en                                          | 
+    | country       | FR                                          | FR                                          |
+    | question-id   | question-0-id                               | question-0-id                               |
+    | question-language   | fr                              | fr                              |
+    | question-slug   | question-0-slug                               | question-0-slug                               |
+    | referrer      | http://localhost:9009/__/                   | http://localhost:9008/__/                   |
+    | custom-data   | null                                        | null                                        |
+    And event "click-proposal-qualify" should be tracked by Make with parameters values:
+    | name                | frontValue                                                                      | widgetValue                                                         |
+    | eventType           | trackCustom                                                                     | trackCustom                                                         |
+    | card-position       | 0                                                                               | 0                                                                   |
+    | country             | FR                                                                              | FR                                                                  |
+    | language            | fr                                                                              | fr                                                                  |
+    | location            | sequence                                                                        | widget                                                              |
+    | nature              | agree                                                                           | agree                                                               |
+    | proposalId          | proposal-question-0-slug-0-id                                                   | proposal-question-0-slug-first-id                                   |
+    | questionId          | question-0-id                                                                   | question-0-id                                                       |
+    | questionSlug        | question-0-slug                                                                 | question-0-slug                                                     |
+    | referrer            | http://localhost:9009/__/                                                       | http://localhost:9008/__/                                           |
+    | url                 | http://localhost:9009/FR/consultation/question-0-slug/selection?introCard=false | http://localhost:9008/?questionSlug=question-0-slug&source=widget-test&country=FR&language=fr&widgetId=fake-widget-questionid&hash=fake-hash-id     |
+    Then "likeIt" qualification button is highlight on the current card
+    When I unvote on the current card
+    Then event "click-proposal-unvote" should be tracked by Make with parameters values:
+    | name                | frontValue                                                                      | widgetValue                                                         |
+    | eventType           | trackCustom                                                                     | trackCustom                                                         |
+    | card-position       | 0                                                                               | 0                                                                   |
+    | country             | FR                                                                              | FR                                                                  |
+    | language            | fr                                                                              | fr                                                                  |
+    | location            | sequence                                                                        | widget                                                              |
+    | nature              | agree                                                                           | agree                                                               |
+    | proposalId          | proposal-question-0-slug-0-id                                                   | proposal-question-0-slug-first-id                                   |
+    | questionId          | question-0-id                                                                   | question-0-id                                                       |
+    | questionSlug        | question-0-slug                                                                 | question-0-slug                                                     |
+    | referrer            | http://localhost:9009/__/                                                       | http://localhost:9008/__/                                           |
+    | url                 | http://localhost:9009/FR/consultation/question-0-slug/selection?introCard=false | http://localhost:9008/?questionSlug=question-0-slug&source=widget-test&country=FR&language=fr&widgetId=fake-widget-questionid&hash=fake-hash-id     |
+    Then I see vote buttons on the current card
+    And I don't see qualification buttons on the current card
+    When I vote "agree" on the current card
+    Then "likeIt" qualification button is not highlight on the current card
+    When I qualify "likeIt" on the current card
+    Then some make data header should be sent to "postQualify":  
+    | name          | frontValue                                  | widgetValue                                 |
+    | app-name      | main-front                                  | widget                                      |
+    | source        | core                                        | widget-test                                 |
+    | location      | sequence                                    | widget                                      |
+    | client-language      | fr                                          | fr                                          |
+    | proposal-language    | en                                          | en                                          | 
+    | country       | FR                                          | FR                                          |
+    | question-id   | question-0-id                               | question-0-id                               |
+    | question-language   | fr                              | fr                              |
+    | question-slug   | question-0-slug                               | question-0-slug                               |
+    | referrer      | http://localhost:9009/__/                   | http://localhost:9008/__/                   |
+    | custom-data   | null                                        | null                                        |
+    Then "likeIt" qualification button is highlight on the current card
+    When I unqualify "likeIt" on the current card
+    Then some make data header should be sent to "postUnqualify":  
+    | name          | frontValue                                  | widgetValue                                 |
+    | app-name      | main-front                                  | widget                                      |
+    | source        | core                                        | widget-test                                 |
+    | location      | sequence                                    | widget                                      |
+    | client-language      | fr                                          | fr                                          |
+    | proposal-language    | en                                          | en                                          | 
+    | country       | FR                                          | FR                                          |
+    | question-id   | question-0-id                               | question-0-id                               |
+    | question-language   | fr                              | fr                              |
+    | question-slug   | question-0-slug                               | question-0-slug                               |
+    | referrer      | http://localhost:9009/__/                   | http://localhost:9008/__/                   |
+    | custom-data   | null                                        | null                                        |
+    Then "likeIt" qualification button is not highlight on the current card
+
   Scenario: Track vote
     Given I monitor API "postVote" requests
     And I monitor API "postTracking" requests
@@ -48,20 +120,25 @@ Feature: Vote on sequence
     | name          | frontValue                                  | widgetValue                                 |
     | app-name      | main-front                                  | widget                                      |
     | source        | core                                        | widget-test                                 |
-    | location      | sequence question-0-id                      | widget                                      |
-    | language      | fr                                          | fr                                          |
+    | location      | sequence                                    | widget                                      |
+    | client-language      | fr                                          | fr                                          |
+    | proposal-language    | en                                          | en                                          | 
     | country       | FR                                          | FR                                          |
     | question-id   | question-0-id                               | question-0-id                               |
+    | question-language   | fr                              | fr                              |
+    | question-slug   | question-0-slug                               | question-0-slug                               |
     | referrer      | http://localhost:9009/__/                   | http://localhost:9008/__/                   |
     | custom-data   | null                                        | null                                        |
     And some make data header should be sent to "postTracking":
     | name          | frontValue                                  | widgetValue                                 |
     | app-name      | main-front                                  | widget                                      |
     | source        | core                                        | widget-test                                 |
-    | location      | sequence question-0-id                      | widget                                      |
-    | language      | fr                                          | fr                                          |
+    | location      | sequence                                    | widget                                      |
+    | client-language      | fr                                          | fr                                          |
     | country       | FR                                          | FR                                          |
     | question-id   | question-0-id                               | question-0-id                               |
+    | question-language   | fr                              | fr                              |
+    | question-slug   | question-0-slug                               | question-0-slug                               |
     | referrer      | http://localhost:9009/__/                   | http://localhost:9008/__/                   |
     | custom-data   | null                                        | null                                        |
     And event "click-sequence-first-vote" should be tracked by Make with parameters values:
@@ -106,3 +183,128 @@ Feature: Vote on sequence
     | questionSlug        | question-0-slug                                                                 | question-0-slug                                                     |
     | referrer            | http://localhost:9009/__/                                                       | http://localhost:9008/__/                                           |
     | url                 | http://localhost:9009/FR/consultation/question-0-slug/selection?introCard=false | http://localhost:9008/?questionSlug=question-0-slug&source=widget-test&country=FR&language=fr&widgetId=fake-widget-questionid&hash=fake-hash-id     |
+
+  Scenario: Track vote and qualification with translated language
+    Given I monitor API "postVote" requests
+    And I monitor API "postTracking" requests
+    And I monitor API "postQualify" requests
+    And I monitor API "postUnqualify" requests
+    And I am on the common sequence page of the question "question-0-slug"
+    And card "1" is visible
+    Then I click on "proposal-language-switch" button
+    And I vote "agree" on the current card
+    Then some make data header should be sent to "postVote":  
+    | name          | frontValue                                  | widgetValue                                 |
+    | app-name      | main-front                                  | widget                                      |
+    | source        | core                                        | widget-test                                 |
+    | location      | sequence                                    | widget                                      |
+    | client-language      | fr                                          | fr                                          |
+    | proposal-language    | fr                                          | fr                                          | 
+    | country       | FR                                          | FR                                          |
+    | question-id   | question-0-id                               | question-0-id                               |
+    | question-language   | fr                              | fr                              |
+    | question-slug   | question-0-slug                               | question-0-slug                               |
+    | referrer      | http://localhost:9009/__/                   | http://localhost:9008/__/                   |
+    | custom-data   | null                                        | null                                        |
+    And some make data header should be sent to "postTracking":
+    | name          | frontValue                                  | widgetValue                                 |
+    | app-name      | main-front                                  | widget                                      |
+    | source        | core                                        | widget-test                                 |
+    | location      | sequence                                    | widget                                      |
+    | client-language      | fr                                          | fr                                          |
+    | country       | FR                                          | FR                                          |
+    | question-id   | question-0-id                               | question-0-id                               |   
+    | question-language   | fr                              | fr                              |
+    | question-slug   | question-0-slug                               | question-0-slug                               |
+    | referrer      | http://localhost:9009/__/                   | http://localhost:9008/__/                   |
+    | custom-data   | null                                        | null                                        |
+    And event "click-sequence-first-vote" should be tracked by Make with parameters values:
+    | name                | frontValue                                                                      | widgetValue                                                         |
+    | eventType           | trackCustom                                                                     | trackCustom                                                         |
+    | card-position       | 0                                                                               | 0                                                                   |
+    | country             | FR                                                                              | FR                                                                  |
+    | language            | fr                                                                              | fr                                                                  |
+    | location            | sequence                                                                        | widget                                                              |
+    | nature              | agree                                                                           | agree                                                               |
+    | proposalId          | proposal-question-0-slug-0-id                                                   | proposal-question-0-slug-first-id                                   |
+    | questionId          | question-0-id                                                                   | question-0-id                                                       |
+    | questionSlug        | question-0-slug                                                                 | question-0-slug                                                     |
+    | referrer            | http://localhost:9009/__/                                                       | http://localhost:9008/__/                                           |
+    | url                 | http://localhost:9009/FR/consultation/question-0-slug/selection?introCard=false | http://localhost:9008/?questionSlug=question-0-slug&source=widget-test&country=FR&language=fr&widgetId=fake-widget-questionid&hash=fake-hash-id     |
+    And event "click-proposal-vote" should be tracked by Make with parameters values:
+    | name                | frontValue                                                                      | widgetValue                                                         |
+    | eventType           | trackCustom                                                                     | trackCustom                                                         |
+    | card-position       | 0                                                                               | 0                                                                   |
+    | country             | FR                                                                              | FR                                                                  |
+    | language            | fr                                                                              | fr                                                                  |
+    | location            | sequence                                                                        | widget                                                              |
+    | nature              | agree                                                                           | agree                                                               |
+    | proposalId          | proposal-question-0-slug-0-id                                                   | proposal-question-0-slug-first-id                                   |
+    | questionId          | question-0-id                                                                   | question-0-id                                                       |
+    | questionSlug        | question-0-slug                                                                 | question-0-slug                                                     |
+    | referrer            | http://localhost:9009/__/                                                       | http://localhost:9008/__/                                           |
+    | url                 | http://localhost:9009/FR/consultation/question-0-slug/selection?introCard=false | http://localhost:9008/?questionSlug=question-0-slug&source=widget-test&country=FR&language=fr&widgetId=fake-widget-questionid&hash=fake-hash-id     |
+    And I qualify "likeIt" on the current card
+    Then some make data header should be sent to "postQualify":  
+    | name          | frontValue                                  | widgetValue                                 |
+    | app-name      | main-front                                  | widget                                      |
+    | source        | core                                        | widget-test                                 |
+    | location      | sequence                                    | widget                                      |
+    | client-language      | fr                                          | fr                                          |
+    | proposal-language    | fr                                          | fr                                          | 
+    | country       | FR                                          | FR                                          |
+    | question-id   | question-0-id                               | question-0-id                               |
+    | question-language   | fr                              | fr                              |
+    | question-slug   | question-0-slug                               | question-0-slug                               |
+    | referrer      | http://localhost:9009/__/                   | http://localhost:9008/__/                   |
+    | custom-data   | null                                        | null                                        |
+    Then "likeIt" qualification button is highlight on the current card
+    When I unvote on the current card
+    Then I see vote buttons on the current card
+    And I don't see qualification buttons on the current card
+    Then I click on "proposal-language-switch" button
+    When I vote "agree" on the current card
+    Then some make data header should be sent to "postVote":  
+    | name          | frontValue                                  | widgetValue                                 |
+    | app-name      | main-front                                  | widget                                      |
+    | source        | core                                        | widget-test                                 |
+    | location      | sequence                                    | widget                                      |
+    | client-language      | fr                                          | fr                                          |
+    | proposal-language    | en                                          | en                                          | 
+    | country       | FR                                          | FR                                          |
+    | question-id   | question-0-id                               | question-0-id                               |
+    | question-language   | fr                              | fr                              |
+    | question-slug   | question-0-slug                               | question-0-slug                               |
+    | referrer      | http://localhost:9009/__/                   | http://localhost:9008/__/                   |
+    | custom-data   | null                                        | null                                        |
+    Then "likeIt" qualification button is not highlight on the current card
+    When I qualify "likeIt" on the current card
+    Then some make data header should be sent to "postQualify":  
+    | name          | frontValue                                  | widgetValue                                 |
+    | app-name      | main-front                                  | widget                                      |
+    | source        | core                                        | widget-test                                 |
+    | location      | sequence                                    | widget                                      |
+    | client-language      | fr                                          | fr                                          |
+    | proposal-language    | en                                          | en                                          | 
+    | country       | FR                                          | FR                                          |
+    | question-id   | question-0-id                               | question-0-id                               |
+    | question-language   | fr                              | fr                              |
+    | question-slug   | question-0-slug                               | question-0-slug                               |
+    | referrer      | http://localhost:9009/__/                   | http://localhost:9008/__/                   |
+    | custom-data   | null                                        | null                                        |
+    Then "likeIt" qualification button is highlight on the current card
+    When I unqualify "likeIt" on the current card
+    Then some make data header should be sent to "postUnqualify":  
+    | name          | frontValue                                  | widgetValue                                 |
+    | app-name      | main-front                                  | widget                                      |
+    | source        | core                                        | widget-test                                 |
+    | location      | sequence                                    | widget                                      |
+    | client-language      | fr                                          | fr                                          |
+    | proposal-language    | en                                          | en                                          | 
+    | country       | FR                                          | FR                                          |
+    | question-id   | question-0-id                               | question-0-id                               |
+    | question-language   | fr                              | fr                              |
+    | question-slug   | question-0-slug                               | question-0-slug                               |
+    | referrer      | http://localhost:9009/__/                   | http://localhost:9008/__/                   |
+    | custom-data   | null                                        | null                                        |
+    Then "likeIt" qualification button is not highlight on the current card

@@ -205,7 +205,7 @@ class ApiServiceClient implements IApiServiceStrategy {
       ...{
         'x-make-app-name': this.appname,
         'x-make-country': this.country,
-        'x-make-language': this.language,
+        'x-make-client-language': this.language,
         'x-make-source': this.source,
         'x-make-location': this.location,
         'x-make-referrer': this.referrer,

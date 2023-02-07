@@ -75,15 +75,16 @@ export const SwitchCountryLanguage: React.FC = () => {
   );
 
   const updateCountryLanguage = () => {
+    trackClickConfirmLanguageCountry(newCountry, newLanguage);
     setLanguageInPreferenceCookie(newLanguage);
     dispatch(setCountryCode(newCountry));
     dispatch(setLanguageCode(newLanguage));
-    trackClickConfirmLanguageCountry(newCountry, newLanguage);
     dispatch(closePanel());
     dispatch(removePanelContent());
 
     if (newCountry !== country) {
       history.push(getHomeLink(newCountry));
+      return;
     }
     if (newLanguage !== language) {
       const queryParams = new URLSearchParams(search);

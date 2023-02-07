@@ -13,6 +13,11 @@ import { DATE } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
 import { ShowTranslation } from '@make.org/components/Proposal/ShowTranslationElement';
 import { getProposalContent } from '@make.org/utils/helpers/proposal';
+import {
+  ProposalLanguageContext,
+  ProposalLanguageContextValue,
+  ProposalLanguageContextValueType,
+} from '@make.org/store/proposalLanguageContext';
 import { SubmitProposal } from '../Cards/SubmitProposal';
 import { NoProposalWrapperStyle } from '../../../pages/Consultation/style';
 import {
@@ -56,63 +61,67 @@ export const ProposalsCard: FC<CardProps> = ({ proposal, country, index }) => {
     showOriginal,
     proposal
   );
+  const proposalLanguageContext: ProposalLanguageContextValueType =
+    ProposalLanguageContextValue.getProposalLanguage(proposalLanguage || '');
 
   return (
-    <ProposalCardStyle>
-      {!!proposal.translatedContent && (
-        <ReportOptionsButton
-          switchProposalContent={switchProposalContent}
-          showOriginal={showOriginal}
-          proposalId={proposal.id}
-          translationLanguage={proposal.translatedLanguage}
-        />
-      )}
-      <ProposalAuthor proposal={proposal} />
-      <ProposalAndVoteWrapperStyle>
-        <ScreenReaderItemStyle>
-          {i18n.t('proposal_card.content')}
-        </ScreenReaderItemStyle>
-        <ProposalLinkStyle
-          lang={proposalLanguage}
-          to={getProposalLink(
-            country,
-            proposal.question.slug,
-            proposal.id,
-            proposal.slug
-          )}
-        >
-          {proposalContent}
-        </ProposalLinkStyle>
-        <Vote
-          proposal={proposal}
-          votes={proposal.votes}
-          proposalKey={proposal.proposalKey}
-          index={index}
-        />
-      </ProposalAndVoteWrapperStyle>
-      {!!proposal.translatedContent && (
-        <ShowTranslation
-          showOriginal={showOriginal}
-          onClickAction={() => setShowOriginal(!showOriginal)}
-        />
-      )}
-      <ScreenReaderItemStyle>
-        {i18n.t('proposal_card.author.date')}
-      </ScreenReaderItemStyle>
-      <ProposalDateStyle
-        dateTime={
-          DateHelper.localizedAndFormattedDate(
-            proposal.createdAt,
-            DATE.P_FORMAT
-          ) || ''
-        }
-      >
-        {DateHelper.localizedAndFormattedDate(
-          proposal.createdAt,
-          DATE.PP_FORMAT
+    <ProposalLanguageContext.Provider value={proposalLanguageContext}>
+      <ProposalCardStyle>
+        {!!proposal.translatedContent && (
+          <ReportOptionsButton
+            switchProposalContent={switchProposalContent}
+            showOriginal={showOriginal}
+            proposalId={proposal.id}
+            translationLanguage={proposal.translatedLanguage}
+          />
         )}
-      </ProposalDateStyle>
-    </ProposalCardStyle>
+        <ProposalAuthor proposal={proposal} />
+        <ProposalAndVoteWrapperStyle>
+          <ScreenReaderItemStyle>
+            {i18n.t('proposal_card.content')}
+          </ScreenReaderItemStyle>
+          <ProposalLinkStyle
+            lang={proposalLanguage}
+            to={getProposalLink(
+              country,
+              proposal.question.slug,
+              proposal.id,
+              proposal.slug
+            )}
+          >
+            {proposalContent}
+          </ProposalLinkStyle>
+          <Vote
+            proposal={proposal}
+            votes={proposal.votes}
+            proposalKey={proposal.proposalKey}
+            index={index}
+          />
+        </ProposalAndVoteWrapperStyle>
+        {!!proposal.translatedContent && (
+          <ShowTranslation
+            showOriginal={showOriginal}
+            onClickAction={() => setShowOriginal(!showOriginal)}
+          />
+        )}
+        <ScreenReaderItemStyle>
+          {i18n.t('proposal_card.author.date')}
+        </ScreenReaderItemStyle>
+        <ProposalDateStyle
+          dateTime={
+            DateHelper.localizedAndFormattedDate(
+              proposal.createdAt,
+              DATE.P_FORMAT
+            ) || ''
+          }
+        >
+          {DateHelper.localizedAndFormattedDate(
+            proposal.createdAt,
+            DATE.PP_FORMAT
+          )}
+        </ProposalDateStyle>
+      </ProposalCardStyle>
+    </ProposalLanguageContext.Provider>
   );
 };
 

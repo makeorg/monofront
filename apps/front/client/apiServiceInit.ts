@@ -6,12 +6,12 @@ import { trackingParamsService } from '@make.org/utils/services/TrackingParamsSe
 export const initApiService = (
   source: string,
   country: string,
-  language: string,
+  initialLanguage: string,
   customData: Record<string, string>
 ): void => {
   apiClient.source = source;
   apiClient.country = country;
-  apiClient.language = language;
+  apiClient.language = initialLanguage;
   apiClient.referrer =
     typeof window !== 'undefined' && !!window.document.referrer
       ? window.document.referrer
@@ -22,8 +22,14 @@ export const initApiService = (
       window?.location?.pathname,
       trackingParamsService.questionId
     );
+
+    const { questionId, questionSlug, questionLanguage } =
+      trackingParamsService.all();
+
     apiClient.customHeaders = {
-      'x-make-question-id': trackingParamsService.questionId || '',
+      'x-make-question-id': questionId || '',
+      'x-make-question-slug': questionSlug || '',
+      'x-make-question-language': questionLanguage || '',
     };
     apiClient.url =
       typeof window !== 'undefined' && window && window.location

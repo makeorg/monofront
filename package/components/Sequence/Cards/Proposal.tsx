@@ -17,6 +17,11 @@ import {
   trackClickNextCard,
   trackClickNextOnLastProposal,
 } from '@make.org/utils/services/Tracking';
+import {
+  ProposalLanguageContext,
+  ProposalLanguageContextValue,
+  ProposalLanguageContextValueType,
+} from '@make.org/store/proposalLanguageContext';
 import { getProposalContent } from '@make.org/utils/helpers/proposal';
 import { ShowTranslation } from '../../Proposal/ShowTranslationElement';
 import { Vote } from '../../Vote';
@@ -80,6 +85,8 @@ export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
     showOriginal,
     proposal
   );
+  const proposalLanguageContext: ProposalLanguageContextValueType =
+    ProposalLanguageContextValue.getProposalLanguage(proposalLanguage || '');
 
   const goToNextCard = () => {
     dispatch(incrementSequenceIndex());
@@ -103,56 +110,58 @@ export const ProposalCard: React.FC<Props> = ({ proposalCard }) => {
   }, [proposalCard, cards]);
 
   return (
-    <SequenceProposalWrapperStyle>
-      {!!proposal.translatedContent && (
-        <ReportOptionsButton
-          switchProposalContent={switchProposalContent}
-          showOriginal={showOriginal}
-          proposalId={proposal.id}
-          translationLanguage={proposal.translatedLanguage}
-        />
-      )}
-      <ProposalAuthor proposal={proposal} />
-      <SequenceProposalAndVoteWrapperStyle>
-        <ScreenReaderItemStyle>
-          {i18n.t('proposal_card.content')}
-        </ScreenReaderItemStyle>
-        <SequenceProposalStyle
-          lang={proposalLanguage}
-          data-cy-container="proposal-content"
-        >
-          {proposalContent}
-        </SequenceProposalStyle>
-        {displayTooltip && <Tip />}
-        <Vote
-          proposal={proposal}
-          votes={votes}
-          proposalKey={proposal.proposalKey}
-          index={index}
-          setDisplayNextButton={setDisplayNextButton}
-        />
-      </SequenceProposalAndVoteWrapperStyle>
-      <SequenceNextWrapperStyle>
-        {displayNextButton && (
-          <SequenceNextCardButtonStyle
-            onClick={
-              loadFirstProposal ? handleFirstProposalDisabling : goToNextCard
-            }
-            id={`next-button-${proposal.id}`}
-            data-cy-button="next-proposal"
-          >
-            {lastProposalOfSequence
-              ? i18n.t('proposal_card.validate')
-              : i18n.t('proposal_card.next')}
-          </SequenceNextCardButtonStyle>
-        )}
-        {!displayNextButton && !!proposal.translatedContent && (
-          <ShowTranslation
+    <ProposalLanguageContext.Provider value={proposalLanguageContext}>
+      <SequenceProposalWrapperStyle>
+        {!!proposal.translatedContent && (
+          <ReportOptionsButton
+            switchProposalContent={switchProposalContent}
             showOriginal={showOriginal}
-            onClickAction={() => setShowOriginal(!showOriginal)}
+            proposalId={proposal.id}
+            translationLanguage={proposal.translatedLanguage}
           />
         )}
-      </SequenceNextWrapperStyle>
-    </SequenceProposalWrapperStyle>
+        <ProposalAuthor proposal={proposal} />
+        <SequenceProposalAndVoteWrapperStyle>
+          <ScreenReaderItemStyle>
+            {i18n.t('proposal_card.content')}
+          </ScreenReaderItemStyle>
+          <SequenceProposalStyle
+            lang={proposalLanguage}
+            data-cy-container="proposal-content"
+          >
+            {proposalContent}
+          </SequenceProposalStyle>
+          {displayTooltip && <Tip />}
+          <Vote
+            proposal={proposal}
+            votes={votes}
+            proposalKey={proposal.proposalKey}
+            index={index}
+            setDisplayNextButton={setDisplayNextButton}
+          />
+        </SequenceProposalAndVoteWrapperStyle>
+        <SequenceNextWrapperStyle>
+          {displayNextButton && (
+            <SequenceNextCardButtonStyle
+              onClick={
+                loadFirstProposal ? handleFirstProposalDisabling : goToNextCard
+              }
+              id={`next-button-${proposal.id}`}
+              data-cy-button="next-proposal"
+            >
+              {lastProposalOfSequence
+                ? i18n.t('proposal_card.validate')
+                : i18n.t('proposal_card.next')}
+            </SequenceNextCardButtonStyle>
+          )}
+          {!displayNextButton && !!proposal.translatedContent && (
+            <ShowTranslation
+              showOriginal={showOriginal}
+              onClickAction={() => setShowOriginal(!showOriginal)}
+            />
+          )}
+        </SequenceNextWrapperStyle>
+      </SequenceProposalWrapperStyle>
+    </ProposalLanguageContext.Provider>
   );
 };

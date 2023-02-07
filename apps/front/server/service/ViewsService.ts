@@ -23,7 +23,7 @@ const getHome = async (
   try {
     const response = await ViewsApiService.getHome(country, preferredLanguage, {
       'x-make-country': country,
-      'x-make-language': preferredLanguage,
+      'x-make-client-language': preferredLanguage,
     });
 
     cache.put(CACHE_KEY, response && response.data, 300000);
@@ -60,14 +60,14 @@ const getCountries = async (
     const countries: string[] = [];
     const headers: Record<string, string> = {
       'x-make-country': '',
-      'x-make-language': '',
+      'x-make-client-language': '',
     };
 
     if (country) {
       headers['x-make-country'] = country;
     }
     if (language) {
-      headers['x-make-language'] = language;
+      headers['x-make-client-language'] = language;
     }
 
     const response = await ViewsApiService.getCountries(headers);

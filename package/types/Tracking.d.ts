@@ -29,6 +29,7 @@ export type TrackingCommonConfigurationParamsType = {
   country?: string;
   questionId?: string;
   questionSlug?: string;
+  questionLanguage?: string;
   referrer?: string;
   url?: string;
 };
@@ -79,12 +80,13 @@ export type TrackingApiServiceParamsType = {
 export type TrackingParamsUpdateType = {
   source?: string;
   country?: string;
-  language?: string;
+  clientLanguage?: string;
   location?: string;
   url?: string;
   referrer?: string;
   questionId?: string;
   questionSlug?: string;
+  questionLanguage?: string;
 };
 
 export type TrackingParamsOnUpdateListenerType = {

@@ -43,9 +43,11 @@ export const getQuestionFromState = (
 export const updateTrackingQuestionParam = (question: QuestionType): void => {
   trackingParamsService.questionId = question.questionId;
   trackingParamsService.questionSlug = question.slug;
+  trackingParamsService.questionLanguage = question.returnedLanguage;
 };
 
 export const clearQuestionParams = (): void => {
   trackingParamsService.questionId = '';
   trackingParamsService.questionSlug = '';
+  trackingParamsService.questionLanguage = '';
 };

@@ -125,6 +125,8 @@ const initApp = async (state: StateRoot) => {
   // tracking values
   const currentQuestionId =
     store.questions[store.currentQuestion]?.question.questionId || '';
+  const currentQuestionLanguage =
+    store.questions[store.currentQuestion]?.question.returnedLanguage || '';
 
   const referrer = window?.document?.referrer || '';
   const urlFromIframe =
@@ -146,6 +148,7 @@ const initApp = async (state: StateRoot) => {
   trackingParamsService.url = currentUrl;
   trackingParamsService.referrer = referrer;
   trackingParamsService.questionSlug = store.currentQuestion;
+  trackingParamsService.questionLanguage = currentQuestionLanguage;
 
   // Set api headers params
   apiClient.sessionId = store.session.sessionId || '';
@@ -155,7 +158,9 @@ const initApp = async (state: StateRoot) => {
   apiClient.url = currentUrl;
   apiClient.referrer = referrer;
   apiClient.customHeaders = {
-    'x-make-question-id': trackingParamsService.questionId,
+    'x-make-question-id': currentQuestionId,
+    'x-make-question-slug': store.currentQuestion,
+    'x-make-question-language': currentQuestionLanguage,
   };
 
   // add listener to update trackingParamsService

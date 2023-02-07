@@ -12,6 +12,11 @@ import {
   ProposalInnerStyle,
 } from '@make.org/ui/elements/ProposalCardElements';
 import { useSwitchProposalContent } from '@make.org/utils/hooks/useSwitchProposalContent';
+import {
+  ProposalLanguageContext,
+  ProposalLanguageContextValue,
+  ProposalLanguageContextValueType,
+} from '@make.org/store/proposalLanguageContext';
 import { ReportOptionsButton } from '@make.org/components/ReportOptions/Button';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
@@ -60,63 +65,67 @@ export const ProposalCardWithQuestion: React.FC<Props> = ({
     showOriginal,
     proposal
   );
+  const proposalLanguageContext: ProposalLanguageContextValueType =
+    ProposalLanguageContextValue.getProposalLanguage(proposalLanguage || '');
 
   return (
-    <ProposalCardStyle
-      className={withMobileRadius ? 'mobile-radius' : ''}
-      aria-posinset={position}
-      aria-setsize={size}
-    >
-      {!!proposal.translatedContent && (
-        <ReportOptionsButton
-          switchProposalContent={switchProposalContent}
-          showOriginal={showOriginal}
-          proposalId={proposal.id}
-          translationLanguage={proposal.translatedLanguage}
-        />
-      )}
-      <AuthorWrapperStyle>
-        <DeprecatedProposalAuthor proposal={proposal} withAvatar />
-      </AuthorWrapperStyle>
-      <ProposalInnerStyle>
-        <ColumnElementStyle>
-          <ScreenReaderItemStyle>
-            <>{i18n.t('proposal_card.content')}</>
-          </ScreenReaderItemStyle>
-          <ProposalLinkElementStyle to={proposalLink} lang={proposalLanguage}>
-            {proposalContent}
-          </ProposalLinkElementStyle>
-          {!!proposal.translatedContent && (
-            <ShowTranslation
-              showOriginal={showOriginal}
-              onClickAction={() => setShowOriginal(!showOriginal)}
-            />
-          )}
-          {canVote ? (
-            <Vote
-              proposal={proposal}
-              votes={proposal.votes}
-              proposalKey={proposal.proposalKey}
-              index={position}
-            />
-          ) : (
-            <DetailledVoteResults
-              votes={proposal.votes}
-              proposalId={proposal.id}
-            />
-          )}
-        </ColumnElementStyle>
-        {withOrganisations && proposal.organisations && (
-          <OrganisationsVote
-            organisations={proposal.organisations}
-            country={country}
+    <ProposalLanguageContext.Provider value={proposalLanguageContext}>
+      <ProposalCardStyle
+        className={withMobileRadius ? 'mobile-radius' : ''}
+        aria-posinset={position}
+        aria-setsize={size}
+      >
+        {!!proposal.translatedContent && (
+          <ReportOptionsButton
+            switchProposalContent={switchProposalContent}
+            showOriginal={showOriginal}
+            proposalId={proposal.id}
+            translationLanguage={proposal.translatedLanguage}
           />
         )}
-      </ProposalInnerStyle>
-      <ProposalFooterWithQuestionElement
-        question={proposal.question}
-        consultationLink={getParticipateLink(country, proposal.question.slug)}
-      />
-    </ProposalCardStyle>
+        <AuthorWrapperStyle>
+          <DeprecatedProposalAuthor proposal={proposal} withAvatar />
+        </AuthorWrapperStyle>
+        <ProposalInnerStyle>
+          <ColumnElementStyle>
+            <ScreenReaderItemStyle>
+              <>{i18n.t('proposal_card.content')}</>
+            </ScreenReaderItemStyle>
+            <ProposalLinkElementStyle to={proposalLink} lang={proposalLanguage}>
+              {proposalContent}
+            </ProposalLinkElementStyle>
+            {!!proposal.translatedContent && (
+              <ShowTranslation
+                showOriginal={showOriginal}
+                onClickAction={() => setShowOriginal(!showOriginal)}
+              />
+            )}
+            {canVote ? (
+              <Vote
+                proposal={proposal}
+                votes={proposal.votes}
+                proposalKey={proposal.proposalKey}
+                index={position}
+              />
+            ) : (
+              <DetailledVoteResults
+                votes={proposal.votes}
+                proposalId={proposal.id}
+              />
+            )}
+          </ColumnElementStyle>
+          {withOrganisations && proposal.organisations && (
+            <OrganisationsVote
+              organisations={proposal.organisations}
+              country={country}
+            />
+          )}
+        </ProposalInnerStyle>
+        <ProposalFooterWithQuestionElement
+          question={proposal.question}
+          consultationLink={getParticipateLink(country, proposal.question.slug)}
+        />
+      </ProposalCardStyle>
+    </ProposalLanguageContext.Provider>
   );
 };

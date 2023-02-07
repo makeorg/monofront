@@ -19,7 +19,6 @@ import {
 import {
   acceptAllCookiesPreferences,
   rejectAllCookiesPreferences,
-  setCookiesPreferencesInApp,
 } from '@make.org/store/actions/user/cookiesPreferences';
 import {
   ACCEPT_ALL_PREFERENCES,
@@ -101,16 +100,6 @@ export const CookieModal: React.FC = () => {
       ENABLE_MIXPANEL
     );
   };
-
-  useEffect(() => {
-    dispatch(
-      setCookiesPreferencesInApp({
-        ...cookiesPreferences,
-        ...preferencesCookie,
-      })
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   useEffect(() => {
     if (!preferencesCookie) {

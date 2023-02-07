@@ -40,7 +40,7 @@ const getFirstProposal = async (
       {
         'x-make-question-id': questionId,
         'x-make-country': country,
-        'x-make-language': preferredLanguage,
+        'x-make-client-language': preferredLanguage,
         'x-make-location': widgetLocation,
         'Cache-Control': 'no-cache, no-store, must-revalidate',
         Pragma: 'no-cache',

@@ -101,8 +101,10 @@ export const sequenceByKindRoute = async (
   sequenceLocation = `${sequenceLocation} ${questionModified.questionId}`;
   const sequenceMandatoryRequestHeaders: ApiServiceHeadersType = {
     'x-make-question-id': questionModified.questionId,
+    'x-make-question-slug': questionSlug,
+    'x-make-question-language': questionResponse.returnedLanguage,
     'x-make-country': country,
-    'x-make-language': language,
+    'x-make-client-language': language,
     'x-session-id': sessionIdFromCookie || '',
     'x-make-location': sequenceLocation,
   };

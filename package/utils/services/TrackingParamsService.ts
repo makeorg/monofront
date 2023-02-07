@@ -16,6 +16,8 @@ class TrackingParamsServiceClass {
 
   _questionSlug = '';
 
+  _questionLanguage = '';
+
   _referrer = '';
 
   _location = '';
@@ -35,6 +37,7 @@ class TrackingParamsServiceClass {
     country: this._country,
     questionId: this._questionId,
     questionSlug: this._questionSlug,
+    questionLanguage: this._questionLanguage,
     referrer: this._referrer,
     url: this._url,
   };
@@ -86,13 +89,16 @@ class TrackingParamsServiceClass {
     }
   }
 
-  get questionId() {
-    return this._questionId;
+  set questionSlug(questionSlug: string) {
+    if (this._questionSlug !== questionSlug) {
+      this._questionSlug = questionSlug;
+      this._dispatchUpdate();
+    }
   }
 
-  set questionSlug(questionSlug: string) {
-    if (this.questionSlug !== questionSlug) {
-      this._questionSlug = questionSlug;
+  set questionLanguage(questionLanguage: string) {
+    if (this._questionLanguage !== questionLanguage) {
+      this._questionLanguage = questionLanguage;
       this._dispatchUpdate();
     }
   }
@@ -131,6 +137,7 @@ class TrackingParamsServiceClass {
       country: this._country,
       questionId: this._questionId,
       questionSlug: this._questionSlug,
+      questionLanguage: this._questionLanguage,
       referrer: this._referrer,
       url: this._url,
     };

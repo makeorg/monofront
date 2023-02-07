@@ -9,7 +9,8 @@ export class QualificationApiService {
     proposalId: string,
     proposalKey: string,
     voteKey: string,
-    qualificationKey: string
+    qualificationKey: string,
+    proposalLanguage: string
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       PATH_QUALIFICATION.replace(':proposalId', proposalId),
@@ -21,6 +22,9 @@ export class QualificationApiService {
           proposalKey,
         }),
         proposalId,
+        headers: {
+          'x-make-proposal-language': proposalLanguage,
+        },
       }
     );
   }
@@ -29,7 +33,8 @@ export class QualificationApiService {
     proposalId: string,
     proposalKey: string,
     voteKey: string,
-    qualificationKey: string
+    qualificationKey: string,
+    proposalLanguage: string
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
       PATH_UNQUALIFICATION.replace(':proposalId', proposalId),
@@ -41,6 +46,9 @@ export class QualificationApiService {
           proposalKey,
         }),
         proposalId,
+        headers: {
+          'x-make-proposal-language': proposalLanguage,
+        },
       }
     );
   }

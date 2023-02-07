@@ -18,6 +18,9 @@ COMMON_PARAMETERS:
     - key: questionSlug
       description: Question slug of the consultation (if relevant)
       optional: true
+    - key: questionLanguage
+      description: Question language of the consultation
+      optional: true
     - key: referrer
       description: Referer value
       optional: true

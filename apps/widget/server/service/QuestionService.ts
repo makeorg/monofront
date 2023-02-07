@@ -37,7 +37,7 @@ const getQuestion = async (
       {
         'x-make-question-id': questionIdOrSlug,
         'x-make-country': upperCountry,
-        'x-make-language': preferredLanguage,
+        'x-make-client-language': preferredLanguage,
       }
     );
     const formattedResponse = response && {

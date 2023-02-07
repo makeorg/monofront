@@ -59,9 +59,11 @@ Feature: The Home Page
       | app-name            | main-front                                                            |
       | source              | core                                                                  |
       | location            | homepage                                                              |
-      | language            | fr                                                                    |
+      | client-language            | fr                                                                    |
       | country             | FR                                                                    |
       | question-id         | null                                                                  |
+      | question-language   | null                                                                  |
+      | question-slug       | null                                                                  |
       | referrer            | http://localhost:9009/__/                                             |
       | custom-data         | null                                                                  |
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useContext } from 'react';
 import { QualificationService } from '@make.org/utils/services/Qualification';
 import {
   trackQualify,
@@ -8,6 +8,7 @@ import { voteStaticParams } from '@make.org/utils/constants/vote';
 import { QualificationType } from '@make.org/types';
 import { LoadingDots } from '@make.org/ui/components/Loading/Dots';
 import i18n from 'i18next';
+import { ProposalLanguageContext } from '@make.org/store/proposalLanguageContext';
 import { useAppContext } from '@make.org/store';
 import { TopComponentContext } from '@make.org/store/topComponentContext';
 import { QualifyButtonStyle } from '@make.org/ui/elements/ButtonsElements';
@@ -60,6 +61,7 @@ export const QualificationButton: React.FC<Props> = ({
   const { source } = state.appConfig;
   const isWidget = source === 'widget';
   const [userQualification, setUserQualification] = useState(qualification);
+  const proposalLanguage = useContext(ProposalLanguageContext);
   const { hasQualified, qualificationKey } = userQualification;
   const buttonLabel = qualificationTransMap.get(qualificationKey) || '';
   const [isQualified, setIsQualified] = useState<boolean>(hasQualified);
@@ -76,7 +78,8 @@ export const QualificationButton: React.FC<Props> = ({
         proposalId,
         proposalKey,
         votedKey,
-        qualificationKey
+        qualificationKey,
+        proposalLanguage
       );
 
     if (qualificationResult) {
@@ -100,7 +103,8 @@ export const QualificationButton: React.FC<Props> = ({
         proposalId,
         proposalKey,
         votedKey,
-        qualificationKey
+        qualificationKey,
+        proposalLanguage
       );
 
     if (qualificationResult) {

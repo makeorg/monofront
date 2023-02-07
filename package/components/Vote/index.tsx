@@ -25,6 +25,7 @@ import {
   TopComponentContext,
   TopComponentContextValue,
 } from '@make.org/store/topComponentContext';
+import { ProposalLanguageContext } from '@make.org/store/proposalLanguageContext';
 import {
   vote as actionVote,
   unvote as actionUnvote,
@@ -68,6 +69,7 @@ export const Vote: React.FC<Props> = ({
   const { dispatch, state } = useAppContext();
   const { id: proposalId } = proposal;
   const contextType = useContext(TopComponentContext);
+  const proposalLanguage = useContext(ProposalLanguageContext);
   const [currentVotes, setCurrentVotes] = useState(votes);
   const [userVote, setUserVote] = useState(
     currentVotes && currentVotes.find(vote => vote.hasVoted === true)
@@ -106,7 +108,12 @@ export const Vote: React.FC<Props> = ({
     setPendingVoteKey(voteKey);
     setPending(true);
 
-    const unvote = await VoteService.unvote(proposalId, voteKey, proposalKey);
+    const unvote = await VoteService.unvote(
+      proposalId,
+      voteKey,
+      proposalKey,
+      proposalLanguage
+    );
     if (!unvote) {
       stopPending();
       return;
@@ -134,7 +141,12 @@ export const Vote: React.FC<Props> = ({
       setPending(true);
     });
 
-    const vote = await VoteService.vote(proposalId, voteKey, proposalKey);
+    const vote = await VoteService.vote(
+      proposalId,
+      voteKey,
+      proposalKey,
+      proposalLanguage
+    );
     if (!vote) {
       stopPending();
       return;

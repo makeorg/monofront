@@ -31,7 +31,9 @@ export type ApiServiceHeadersType = {
   'x-make-location'?: string;
   'x-make-referrer'?: string;
   'x-make-country'?: string;
-  'x-make-language'?: string;
+  'x-make-client-language'?: string;
+  'x-make-question-slug'?: string;
+  'x-make-question-language'?: string;
   'x-make-question-id'?: string;
   'x-make-custom-data'?: string;
   'x-visitor-id'?: string;

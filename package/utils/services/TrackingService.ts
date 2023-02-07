@@ -32,6 +32,7 @@ const validateParameters = (
   const keys = Object.keys(values);
   const expectedKeys = expectedParameters.map(param => param.key);
   const extraKeys = keys.filter(key => !expectedKeys.find(el => el === key));
+
   if (extraKeys.length) {
     throw new TrackingValidationError(
       `Tracking error : find unexpected tracking values "${extraKeys.toString()}" for "${eventName}"`

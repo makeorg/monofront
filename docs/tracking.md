@@ -2,17 +2,17 @@
 
 ## Headers
 
-| header | required | description |
-|-|-|-|
-|`x-hostname` | true |   Current host name. In production is "make.org" |
-|`x-make-app-name`|true|Application name. Is always `main-front`. (other existing application name: "backoffice")|
-|`x-make-source`|true|Source name. Is always `core`. (other existing source name: "huffpost")|
-|`x-make-location`|true|Current page name for front app or sequence kind for widget. See [getLocationContext](../package/utils/helpers/getLocationContext.js)|
-|`x-make-country`|true|Current ISO country. Refers to the country in the path of url (not an consultation country) for front app and consultation country for widget app|
-|`x-make-language`|true|Current ISO language. Refers to the interface language (not the consultation language) for front app and consultation language for widget app|
-|`x-make-question-id`|false|Question id of the consultation (if relevant)|
-|`x-make-referrer`|false|Referrer value|
-|`x-make-custom-data`|false|Custom tracking data. Exemple : `x-make-custom-data: key1=value1,key2=value2`|
+| header                   | required | description                                                                                                                                       |
+| ------------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `x-hostname`             | true     | Current host name. In production is "make.org"                                                                                                    |
+| `x-make-app-name`        | true     | Application name. Is always `main-front`. (other existing application name: "backoffice")                                                         |
+| `x-make-source`          | true     | Source name. Is always `core`. (other existing source name: "huffpost")                                                                           |
+| `x-make-location`        | true     | Current page name for front app or sequence kind for widget. See [getLocationContext](../package/utils/helpers/getLocationContext.js)             |
+| `x-make-country`         | true     | Current ISO country. Refers to the country in the path of url (not an consultation country) for front app and consultation country for widget app |
+| `x-make-client-language` | true     | Current ISO language. Refers to the interface language (not the consultation language) for front app and consultation language for widget app     |
+| `x-make-question-id`     | false    | Question id of the consultation (if relevant)                                                                                                     |
+| `x-make-referrer`        | false    | Referrer value                                                                                                                                    |
+| `x-make-custom-data`     | false    | Custom tracking data. Exemple : `x-make-custom-data: key1=value1,key2=value2`                                                                     |
 
 ## Events tracking
 
@@ -33,6 +33,7 @@ Following parameters are added to all events.
  |  |
 | `questionId` | false | Question id of the consultation (if relevant) |  |
 | `questionSlug` | false | Question slug of the consultation (if relevant) |  |
+| `questionLanguage` | false | Question language of the consultation |  |
 | `referrer` | false | Referer value |  |
 | `url` | false | Current url |  |
 

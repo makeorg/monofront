@@ -8,6 +8,7 @@ const qualify = async (
   proposalKey: string,
   voteKey: string,
   qualificationKey: string,
+  proposalLanguage: string,
   unexpectedError: () => void = () => undefined
 ): Promise<QualificationType | null> => {
   try {
@@ -15,7 +16,8 @@ const qualify = async (
       proposalId,
       proposalKey,
       voteKey,
-      qualificationKey
+      qualificationKey,
+      proposalLanguage
     );
 
     return response && response.data;
@@ -33,6 +35,7 @@ const unqualify = async (
   proposalKey: string,
   voteKey: string,
   qualificationKey: string,
+  proposalLanguage: string,
   unexpectedError: () => void = () => undefined
 ): Promise<QualificationType | null> => {
   try {
@@ -40,7 +43,8 @@ const unqualify = async (
       proposalId,
       proposalKey,
       voteKey,
-      qualificationKey
+      qualificationKey,
+      proposalLanguage
     );
 
     return response && response.data;

@@ -22,9 +22,11 @@ Feature: Country and Language management
       | app-name            | main-front                                                            |
       | source              | core                                                                  |
       | location            | homepage                                                              |
-      | language            | en                                                                    |
+      | client-language            | en                                                                    |
       | country             | GB                                                                    |
       | question-id         | null                                                                  |
+      | question-language   | null                                                                  |
+      | question-slug       | null                                                                  |
       | referrer            | http://localhost:9009/__/                                             |
       | custom-data         | null                                                                  |
 
@@ -48,9 +50,11 @@ Feature: Country and Language management
       | app-name            | main-front                                                            |
       | source              | core                                                                  |
       | location            | homepage                                                              |
-      | language            | en                                                                    |
+      | client-language            | en                                                                    |
       | country             | FR                                                                    |
       | question-id         | null                                                                  |
+      | question-language   | null                                                                  |
+      | question-slug       | null                                                                  |
       | referrer            | http://localhost:9009/__/                                             |
       | custom-data         | null                                                                  |
 
@@ -75,9 +79,11 @@ Feature: Country and Language management
       | app-name            | main-front                                                            |
       | source              | core                                                                  |
       | location            | homepage                                                              |
-      | language            | en                                                                    |
+      | client-language            | en                                                                    |
       | country             | FR                                                                    |
       | question-id         | null                                                                  |
+      | question-language   | null                                                                  |
+      | question-slug       | null                                                                  |
       | referrer            | http://localhost:9009/__/                                             |
       | custom-data         | null                                                                  |
 
@@ -102,9 +108,11 @@ Feature: Country and Language management
       | app-name            | main-front                                                            |
       | source              | core                                                                  |
       | location            | homepage                                                              |
-      | language            | de                                                                    |
+      | client-language            | de                                                                    |
       | country             | GB                                                                    |
       | question-id         | null                                                                  |
+      | question-language   | null                                                                  |
+      | question-slug       | null                                                                  |
       | referrer            | http://localhost:9009/__/                                             |
       | custom-data         | null                                                                  |
 
@@ -128,9 +136,11 @@ Feature: Country and Language management
       | app-name            | main-front                                                            |
       | source              | core                                                                  |
       | location            | homepage                                                              |
-      | language            | en                                                                    |
+      | client-language            | en                                                                    |
       | country             | FR                                                                    |
       | question-id         | null                                                                  |
+      | question-language   | null                                                                  |
+      | question-slug       | null                                                                  |
       | referrer            | http://localhost:9009/__/                                             |
       | custom-data         | null                                                                  |
 
@@ -154,9 +164,11 @@ Feature: Country and Language management
       | app-name            | main-front                                                            |
       | source              | core                                                                  |
       | location            | homepage                                                              |
-      | language            | en                                                                    |
+      | client-language            | en                                                                    |
       | country             | FR                                                                    |
       | question-id         | null                                                                  |
+      | question-language   | null                                                                  |
+      | question-slug       | null                                                                  |
       | referrer            | http://localhost:9009/__/                                             |
       | custom-data         | null                                                                  |
 
@@ -181,9 +193,11 @@ Feature: Country and Language management
       | app-name            | main-front                                                            |
       | source              | core                                                                  |
       | location            | homepage                                                              |
-      | language            | fr                                                                    |
+      | client-language            | fr                                                                    |
       | country             | FR                                                                    |
       | question-id         | null                                                                  |
+      | question-language   | null                                                                  |
+      | question-slug       | null                                                                  |
       | referrer            | http://localhost:9009/__/                                             |
       | custom-data         | null                                                                  |
     When I click on "country language switch" button
@@ -209,9 +223,11 @@ Feature: Country and Language management
       | app-name            | main-front                                                            |
       | source              | core                                                                  |
       | location            | homepage                                                              |
-      | language            | fr                                                                    |
+      | client-language            | fr                                                                    |
       | country             | GB                                                                    |
       | question-id         | null                                                                  |
+      | question-language   | null                                                                  |
+      | question-slug       | null                                                                  |
       | referrer            | http://localhost:9009/__/                                             |
       | custom-data         | null                                                                  |
 
@@ -235,9 +251,11 @@ Feature: Country and Language management
       | app-name            | main-front                                                            |
       | source              | core                                                                  |
       | location            | homepage                                                              |
-      | language            | fr                                                                    |
+      | client-language            | fr                                                                    |
       | country             | FR                                                                    |
       | question-id         | null                                                                  |
+      | question-language   | null                                                                  |
+      | question-slug       | null                                                                  |
       | referrer            | http://localhost:9009/__/                                             |
       | custom-data         | null                                                                  |
     When I click on "country language switch" button
@@ -249,7 +267,7 @@ Feature: Country and Language management
 
   Scenario: Language and country switching redirect to Homepage
     Given I monitor API "postTracking" requests
-    When I go to "france homepage"
+    When I go to "france homepage" with a browser language "fr"
     Then I see "France" in "footer" container
     And event "display-page-home" should be tracked by Make with parameters values:
       | name                | value                                                                 |
@@ -267,9 +285,11 @@ Feature: Country and Language management
       | app-name            | main-front                                                            |
       | source              | core                                                                  |
       | location            | homepage                                                              |
-      | language            | fr                                                                    |
+      | client-language     | fr                                                                    |
       | country             | FR                                                                    |
       | question-id         | null                                                                  |
+      | question-language   | null                                                                  |
+      | question-slug       | null                                                                  |
       | referrer            | http://localhost:9009/__/                                             |
       | custom-data         | null                                                                  |
     When I click on "country language switch" button
@@ -278,6 +298,19 @@ Feature: Country and Language management
     And I see a "country_switch_GB" radio
     When I click on "language_switch_en" and "country_switch_GB" radios
     And I click on "confirm-country-language-switch" button
+    And event "click-confirm-language-country" should be tracked by Make with parameters values:
+      | name                | value                                                                 |
+      | eventType           | trackCustom                                                           |
+      | country             | FR                                                                    |
+      | language            | fr                                                                    |
+      | newCountry          | GB                                                                    |
+      | newLanguage         | en                                                                    |
+      | source              | core                                                                  |
+      | location            | homepage                                                              |
+      | questionId          |                                                                       |
+      | questionSlug        |                                                                       |
+      | referrer            | http://localhost:9009/__/                                             |
+      | url                 | http://localhost:9009/FR                                              |
     Then I see a button "country language switch" with label "Great Britain • En"
     And event "display-page-home" should be tracked by Make with parameters values:
       | name                | value                                                                 |
@@ -295,9 +328,11 @@ Feature: Country and Language management
       | app-name            | main-front                                                            |
       | source              | core                                                                  |
       | location            | homepage                                                              |
-      | language            | en                                                                    |
+      | client-language     | en                                                                    |
       | country             | GB                                                                    |
       | question-id         | null                                                                  |
+      | question-language   | null                                                                  |
+      | question-slug       | null                                                                  |
       | referrer            | http://localhost:9009/__/                                             |
       | custom-data         | null                                                                  |
 
@@ -322,35 +357,42 @@ Feature: Country and Language management
       | app-name            | main-front                                                            |
       | source              | core                                                                  |
       | location            | homepage                                                              |
-      | language            | de                                                                    |
+      | client-language            | de                                                                    |
       | country             | FR                                                                    |
       | question-id         | null                                                                  |
+      | question-language   | null                                                                  |
+      | question-slug       | null                                                                  |
       | referrer            | http://localhost:9009/__/                                             |
       | custom-data         | null                                                                  |
     When I click on "country language switch" button
     And I click on "language_switch_en" radio
     And I click on "confirm-country-language-switch" button
-    Then I see a button "country language switch" with label "France • En"
-    And I see "Together, we can change society for the better" in "main" container
-    And I don't see "lang=de" in url
     And event "click-confirm-language-country" should be tracked by Make with parameters values:
       | name                | value                                                                 |
       | eventType           | trackCustom                                                           |
       | country             | FR                                                                    |
       | language            | de                                                                    |
+      | newCountry          | FR                                                                    |
+      | newLanguage         | en                                                                    |
       | source              | core                                                                  |
       | location            | homepage                                                              |
       | questionId          |                                                                       |
       | questionSlug        |                                                                       |
       | referrer            | http://localhost:9009/__/                                             |
       | url                 | http://localhost:9009/FR?lang=de                                      |
-     And some make data header should be sent to "postTracking":
+    And some make data header should be sent to "postTracking":
       | name                | value                                                                 |
       | app-name            | main-front                                                            |
       | source              | core                                                                  |
       | location            | homepage                                                              |
-      | language            | en                                                                    |
+      | client-language            | en                                                                    |
       | country             | FR                                                                    |
       | question-id         | null                                                                  |
+      | question-language   | null                                                                  |
+      | question-slug       | null                                                                  |
       | referrer            | http://localhost:9009/__/                                             |
       | custom-data         | null                                                                  |
+    Then I see a button "country language switch" with label "France • En"
+    And I see "Together, we can change society for the better" in "main" container
+    And I don't see "lang=de" in url
+ 
