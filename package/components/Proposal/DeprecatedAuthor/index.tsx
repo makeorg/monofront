@@ -86,6 +86,8 @@ export const DeprecatedProposalAuthor: React.FC<Props> = ({
             <ReportOptionsButton
               switchProposalContent={switchProposalContent}
               showOriginal={showOriginal}
+              proposalId={proposal.id}
+              translationLanguage={proposal.translatedLanguage}
             />
           </AuthorReportButton>
         )}

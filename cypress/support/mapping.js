@@ -46,6 +46,13 @@ const proposalJourneyButtons = {
   'keep proposing': 'keep-proposing',
 };
 
+const proposalButtons = {
+  'translation report': 'translation-report',
+  'show report form': 'show-report-form',
+  'submit report': 'submit-report',
+  'close report confirmation': 'report-confirmation-close',
+};
+
 const buttonIdentifiers = {
   ...sequenceButtons,
   ...headerButtons,
@@ -54,6 +61,7 @@ const buttonIdentifiers = {
   ...participateButtons,
   ...registerButtons,
   ...proposalJourneyButtons,
+  ...proposalButtons,
 };
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types

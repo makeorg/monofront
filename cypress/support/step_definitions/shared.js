@@ -198,8 +198,12 @@ Then('I see {string} container', containerName => {
     .should('be.visible');
 });
 
-Then("The {string} container doesn't exist", containerName => {
+Then("I don't see the {string} container", containerName => {
   cy.get(`[data-cy-container=${containerName}]`).should('not.exist');
+});
+
+Then("I don't see the existing {string} container", containerName => {
+  cy.get(`[data-cy-container=${containerName}]`).should('not.be.visible');
 });
 
 Then('I see {string} in {string} container', (text, containerName) => {

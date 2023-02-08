@@ -21,11 +21,15 @@ import {
 type Props = {
   switchProposalContent: () => void;
   showOriginal: boolean;
+  proposalId: string;
+  translationLanguage: string;
 };
 
 export const FirstStepReportOptions: React.FC<Props> = ({
   switchProposalContent,
   showOriginal,
+  proposalId,
+  translationLanguage,
 }) => {
   const { dispatch } = useAppContext();
   const handleClickDisplayProposal = () => {
@@ -40,6 +44,8 @@ export const FirstStepReportOptions: React.FC<Props> = ({
         <SecondStepForm
           switchProposalContent={switchProposalContent}
           showOriginal={showOriginal}
+          proposalId={proposalId}
+          translationLanguage={translationLanguage}
         />
       )
     );
@@ -47,7 +53,7 @@ export const FirstStepReportOptions: React.FC<Props> = ({
   };
 
   return (
-    <ReportFirstStepWrapperStyle>
+    <ReportFirstStepWrapperStyle data-cy-container="report-first-step">
       <header>
         <ReportTitleStyle>
           {i18n.t('report_translations.first_step.title')}
@@ -66,9 +72,12 @@ export const FirstStepReportOptions: React.FC<Props> = ({
           </ReportOptionsButtonTextStyle>
         </ReportOptionsButtonStyle>
         <ReportOptionsSeparatorStyle />
-        <ReportOptionsButtonStyle>
+        <ReportOptionsButtonStyle
+          data-cy-button="show-report-form"
+          onClick={handleClickDisplayReportPanel}
+        >
           <SvgWarning />
-          <ReportOptionsButtonTextStyle onClick={handleClickDisplayReportPanel}>
+          <ReportOptionsButtonTextStyle>
             {i18n.t('report_translations.form.report')}
           </ReportOptionsButtonTextStyle>
         </ReportOptionsButtonStyle>

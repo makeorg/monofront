@@ -73,6 +73,8 @@ export const IntroProposal: FC<Props> = ({ handleChange }) => {
               <ReportOptionsButton
                 switchProposalContent={switchProposalContent}
                 showOriginal={showOriginal}
+                proposalId={proposal.id}
+                translationLanguage={proposal.translatedLanguage}
               />
             )}
             <ProposalAuthor proposal={proposal} />

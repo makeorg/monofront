@@ -98,6 +98,8 @@ export const ProfileVoteCard: FC<Props> = ({
             <ReportOptionsButton
               switchProposalContent={switchProposalContent}
               showOriginal={showOriginal}
+              proposalId={proposal.id}
+              translationLanguage={proposal.translatedLanguage}
             />
           )}
           <AuthorWrapperStyle>

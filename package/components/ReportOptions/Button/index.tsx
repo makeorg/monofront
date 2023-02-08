@@ -10,11 +10,15 @@ import { ReportOptionsButtonStyle } from './style';
 type Props = {
   switchProposalContent: () => void;
   showOriginal: boolean;
+  proposalId: string;
+  translationLanguage: string;
 };
 
 export const ReportOptionsButton: React.FC<Props> = ({
   switchProposalContent,
   showOriginal,
+  proposalId,
+  translationLanguage,
 }) => {
   const { dispatch } = useAppContext();
   const handleClick = () => {
@@ -23,6 +27,8 @@ export const ReportOptionsButton: React.FC<Props> = ({
         <FirstStepReportOptions
           switchProposalContent={switchProposalContent}
           showOriginal={showOriginal}
+          proposalId={proposalId}
+          translationLanguage={translationLanguage}
         />
       )
     );
@@ -33,6 +39,7 @@ export const ReportOptionsButton: React.FC<Props> = ({
     <ReportOptionsButtonStyle
       aria-label={i18n.t('report_translations.button') || undefined}
       onClick={handleClick}
+      data-cy-button="translation-report"
     >
       <SvgOptions aria-hidden focusable="false" />
     </ReportOptionsButtonStyle>

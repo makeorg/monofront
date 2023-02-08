@@ -55,6 +55,8 @@ export const ProposalCardTagged: FC<Props> = ({ proposal, position, size }) => {
         <ReportOptionsButton
           switchProposalContent={switchProposalContent}
           showOriginal={showOriginal}
+          proposalId={proposal.id}
+          translationLanguage={proposal.translatedLanguage}
         />
       )}
       <AuthorWrapperStyle>

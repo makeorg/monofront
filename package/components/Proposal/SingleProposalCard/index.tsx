@@ -63,6 +63,8 @@ export const SingleProposalCard: React.FC<Props> = ({ proposal }) => {
             <ReportOptionsButton
               switchProposalContent={switchProposalContent}
               showOriginal={showOriginal}
+              proposalId={proposal.id}
+              translationLanguage={proposal.translatedLanguage}
             />
           )}
           <DeprecatedProposalAuthor proposal={proposal} />

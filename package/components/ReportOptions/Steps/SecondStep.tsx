@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import i18n from 'i18next';
 import { setPanelContent } from '@make.org/store/actions/panel';
 import { useAppContext } from '@make.org/store';
@@ -12,6 +12,8 @@ import {
   SvgOffensif,
 } from '@make.org/ui/Svg/elements';
 import { trackReportSolution } from '@make.org/utils/services/Tracking';
+import { ProposalService } from '@make.org/utils/services/Proposal';
+import { ReportReasonType } from '@make.org/types';
 import { FirstStepReportOptions } from './FirstStep';
 import { ReportTranslationConfirmation } from './Confirmation';
 import {
@@ -28,43 +30,49 @@ import {
 } from './style';
 
 export const ReportOptionsLabel: Array<{
-  name: string;
+  name: ReportReasonType;
   icon: JSX.Element;
   label: string;
 }> = [
   {
-    name: 'unclear-translation',
+    name: 'Inintelligible',
     icon: <SvgQuestionMark />,
-    label: i18n.t('report_translations.form.unclear'),
+    label: 'report_translations.form.unclear',
   },
   {
-    name: 'translation-error',
+    name: 'BadTranslation',
     icon: <SvgErrorTranslation />,
-    label: i18n.t('report_translations.form.error'),
+    label: 'report_translations.form.error',
   },
   {
-    name: 'false-information',
+    name: 'IncorrectInformation',
     icon: <SvgCrossFakeInfo />,
-    label: i18n.t('report_translations.form.false_info'),
+    label: 'report_translations.form.false_info',
   },
   {
-    name: 'offensive-solution',
+    name: 'Offensive',
     icon: <SvgOffensif />,
-    label: i18n.t('report_translations.form.offensive'),
+    label: 'report_translations.form.offensive',
   },
 ];
 
 type Props = {
   switchProposalContent: () => void;
   showOriginal: boolean;
+  proposalId: string;
+  translationLanguage: string;
 };
 
 export const SecondStepForm: React.FC<Props> = ({
   switchProposalContent,
   showOriginal,
+  proposalId,
+  translationLanguage,
 }) => {
   const { dispatch } = useAppContext();
-  const [currentReport, setCurrentReport] = useState<string>('unclear');
+  const [currentReport, setCurrentReport] =
+    useState<ReportReasonType>('Inintelligible');
+  const [canSubmit, setCanSubmit] = useState<boolean>(true);
   const checkCurrentReport = (
     itemName: string,
     currentReportSelected: string
@@ -75,14 +83,29 @@ export const SecondStepForm: React.FC<Props> = ({
     return false;
   };
 
-  const handleSubmit = () => {
-    dispatch(setPanelContent(<ReportTranslationConfirmation />));
-    trackReportSolution(currentReport);
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setCanSubmit(false);
+    const success = () => {
+      setCanSubmit(true);
+      dispatch(setPanelContent(<ReportTranslationConfirmation />));
+      trackReportSolution(currentReport);
+    };
+    const failure = (_: Error) => {
+      setCanSubmit(true);
+    };
+    ProposalService.report(
+      proposalId,
+      currentReport,
+      translationLanguage,
+      success,
+      failure
+    );
   };
 
   const handleReportOptionsKeypress = (
     event: React.KeyboardEvent<HTMLLIElement>,
-    name: string
+    name: ReportReasonType
   ): void => {
     if (event.key === 'Enter') {
       setCurrentReport(name);
@@ -98,6 +121,8 @@ export const SecondStepForm: React.FC<Props> = ({
               <FirstStepReportOptions
                 switchProposalContent={switchProposalContent}
                 showOriginal={showOriginal}
+                proposalId={proposalId}
+                translationLanguage={translationLanguage}
               />
             )
           )
@@ -113,13 +138,18 @@ export const SecondStepForm: React.FC<Props> = ({
         id={FORM.REPORT_TRANSLATION}
         onSubmit={handleSubmit}
         aria-labelledby={i18n.t('report_translations.form.title') || undefined}
+        data-cy-container="report-second-step"
       >
         <ReportTitleStyle>
           {i18n.t('report_translations.form.title')}
         </ReportTitleStyle>
         <ReportFormWrapperStyle>
           {ReportOptionsLabel.map(
-            (item: { name: string; icon: JSX.Element; label?: string }) => (
+            (item: {
+              name: ReportReasonType;
+              icon: JSX.Element;
+              label: string;
+            }) => (
               <ReportFormItemWrapperStyle
                 tabIndex={0}
                 key={item.name}
@@ -151,14 +181,18 @@ export const SecondStepForm: React.FC<Props> = ({
                   <ReportFormSvgWrapperStyle>
                     {item.icon}
                   </ReportFormSvgWrapperStyle>
-                  {item.label}
+                  {i18n.t(item.label)}
                 </ReportFormAsTransparentButtonLabelStyle>
               </ReportFormItemWrapperStyle>
             )
           )}
         </ReportFormWrapperStyle>
         <ReportButtonWrapperStyle>
-          <RedButtonStyle type="submit">
+          <RedButtonStyle
+            type="submit"
+            disabled={!canSubmit}
+            data-cy-button="submit-report"
+          >
             {i18n.t('report_translations.form.report')}
           </RedButtonStyle>
         </ReportButtonWrapperStyle>

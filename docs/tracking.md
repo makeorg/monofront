@@ -724,7 +724,7 @@ Following parameters are added to all events.
     
     | param_name | required | description | values |
     |-|-|-|-|
-    | `type` | true | type name | `unclear-translation`, `translation-error`, `false-information`, `offensive-solution` |
+    | `type` | true | type name | `Inintelligible`, `BadTranslation`, `IncorrectInformation`, `Offensive` |
   
   
 

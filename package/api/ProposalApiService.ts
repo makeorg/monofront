@@ -1,9 +1,14 @@
-import { ApiServiceHeadersType, ProposalsType } from '@make.org/types';
+import {
+  ApiServiceHeadersType,
+  ProposalsType,
+  ReportReasonType,
+} from '@make.org/types';
 import { AxiosResponse } from 'axios';
 import { ApiService } from './ApiService';
 
 const PATH_PROPOSALS = '/proposals';
-const PATH_PROPOSAL_GET = '/proposals/:proposalId';
+const PATH_PROPOSAL = '/proposals/:proposalId';
+const PATH_PROPOSAL_REPORT = '/proposals/:proposalId/report';
 
 type TypeAvailableAlgorithms = {
   [name: string]: { key: string; value: string };
@@ -42,13 +47,30 @@ export class ProposalApiService {
     });
   }
 
+  static report(
+    proposalId: string,
+    reason: ReportReasonType,
+    proposalLanguage: string
+  ): Promise<void | AxiosResponse> {
+    return ApiService.callApi(
+      PATH_PROPOSAL_REPORT.replace(':proposalId', proposalId),
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          reason,
+          proposalLanguage,
+        }),
+      }
+    );
+  }
+
   static getProposal(
     proposalId: string,
     preferredLanguage: string,
     headers: ApiServiceHeadersType = {}
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
-      PATH_PROPOSAL_GET.replace(':proposalId', proposalId),
+      PATH_PROPOSAL.replace(':proposalId', proposalId),
       {
         method: 'GET',
         headers,

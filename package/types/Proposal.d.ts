@@ -41,6 +41,12 @@ export type ProposalQuestionType = {
   endDate: string;
 };
 
+export type ReportReasonType =
+  | 'Inintelligible'
+  | 'BadTranslation'
+  | 'IncorrectInformation'
+  | 'Offensive';
+
 export type ProposalKeywordsType = {
   key: string;
   label: string;

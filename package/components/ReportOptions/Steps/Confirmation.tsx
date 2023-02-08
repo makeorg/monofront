@@ -14,7 +14,7 @@ import {
 export const ReportTranslationConfirmation: React.FC = () => {
   const { dispatch } = useAppContext();
   return (
-    <ReportWrapperStyle>
+    <ReportWrapperStyle data-cy-container="report-confirmation">
       <ReportTitleStyle>
         {i18n.t('report_translations.confirmation.title')}
       </ReportTitleStyle>
@@ -23,7 +23,11 @@ export const ReportTranslationConfirmation: React.FC = () => {
         {i18n.t('report_translations.confirmation.description')}
       </ReportTextStyle>
       <ReportButtonWrapperStyle>
-        <RedButtonStyle type="button" onClick={() => dispatch(closePanel())}>
+        <RedButtonStyle
+          type="button"
+          onClick={() => dispatch(closePanel())}
+          data-cy-button="report-confirmation-close"
+        >
           {i18n.t('common.close')}
         </RedButtonStyle>
       </ReportButtonWrapperStyle>

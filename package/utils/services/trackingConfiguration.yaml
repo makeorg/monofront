@@ -286,12 +286,12 @@ AUTHEN_SOCIAL_FAILURE:
     - key: social-network
       description: Social network name
       required: true
-      values: 
+      values:
         - google_people
         - facebook
     - key: error-message
       description: Error message from provider
-      required: true 
+      required: true
 
 SIGN_UP_EMAIL_FAILURE:
   key: signup-email-failure
@@ -667,13 +667,13 @@ DISPLAY_SOLUTION_OPTIONS_PANEL:
   key: display-solution-options-panel
   description: display panel to report a translated solution
 
-DISPLAY_UNTRANSLATED_SOLUTION: 
+DISPLAY_UNTRANSLATED_SOLUTION:
   key: display-untranslated-solution
   description: display untranslated solution
   parameters:
     - key: type
       description: type name
-      values: 
+      values:
         - card
         - option-panel
 
@@ -688,7 +688,7 @@ REPORT_SOLUTION:
     - key: type
       description: type name
       values:
-        - unclear-translation
-        - translation-error
-        - false-information
-        - offensive-solution
+        - Inintelligible
+        - BadTranslation
+        - IncorrectInformation
+        - Offensive

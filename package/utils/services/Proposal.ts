@@ -1,7 +1,13 @@
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
-import { ProposalType, ProposalsType } from '@make.org/types';
+import { ProposalType, ProposalsType, ReportReasonType } from '@make.org/types';
 import { ProposalApiService } from '@make.org/api/ProposalApiService';
-import { defaultUnexpectedError } from './DefaultErrorHandler';
+import { defaultUnexpectedError } from '@make.org/utils/services/DefaultErrorHandler';
+
+export type TypeReason =
+  | 'Inintelligible'
+  | 'BadTranslation'
+  | 'IncorrectInformation'
+  | 'Offensive';
 
 const propose = async (
   content: string,
@@ -11,7 +17,6 @@ const propose = async (
 ): Promise<void> => {
   try {
     await ProposalApiService.propose(content.trim(), questionId);
-
     if (success) {
       success();
     }
@@ -22,6 +27,28 @@ const propose = async (
     }
 
     const apiServiceError = error as ApiServiceError;
+    defaultUnexpectedError(apiServiceError);
+  }
+};
+
+const report = async (
+  proposalId: string,
+  reason: ReportReasonType,
+  proposalLanguage: string,
+  success?: () => void,
+  failure?: (error: Error) => void
+): Promise<void> => {
+  try {
+    await ProposalApiService.report(proposalId, reason, proposalLanguage);
+    if (success) {
+      success();
+    }
+  } catch (error: unknown) {
+    if (failure) {
+      failure(error as Error);
+    }
+    const apiServiceError = error as ApiServiceError;
+
     defaultUnexpectedError(apiServiceError);
   }
 };
@@ -107,4 +134,5 @@ export const ProposalService = {
   propose,
   getProposal,
   searchProposals,
+  report,
 };
