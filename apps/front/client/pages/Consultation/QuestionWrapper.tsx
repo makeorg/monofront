@@ -75,9 +75,7 @@ export const QuestionWrapper: FC<Props> = ({ children, withRedirect }) => {
   };
 
   useEffect(() => {
-    if (!questionIsInState || questionIsInState.returnedLanguage !== language) {
-      updateQuestion();
-    }
+    updateQuestion();
 
     if (currentQuestionSlug !== questionSlug && questionIsInState) {
       dispatch(setCurrentQuestionSlug(questionSlug));
