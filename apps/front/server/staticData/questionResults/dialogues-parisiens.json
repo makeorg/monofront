@@ -158,6 +158,16 @@
             "votes": 769
         },
         {
+            "id": "093f3a66-c9e9-4645-b118-6fccea9b2c8e",
+            "content": "Il faut un quota de logements sociaux dans toutes les constructions et réhabilitations pour favoriser la mixité sociale.",
+            "author": "Serge",
+            "agree": 48,
+            "like_it": 10,
+            "disagree": 34,
+            "no_way": 17,
+            "votes": 445
+        },
+        {
             "id": "afc0692a-f823-4164-9bad-33b9ebb8967c",
             "content": "Il faut rouvrir en urgence les rues fermées à la circulatiton (Rivoli, rues aux écoles...) afin de rétablir un trafic supportable",
             "author": "Loic",
@@ -178,6 +188,16 @@
             "votes": 2408
         },
         {
+            "id": "1fb3f577-28e6-4b98-8a69-f2862895ec27",
+            "content": "Il faut rendre les transports en commun gratuits afin de limiter l'usage de la voiture dans Paris",
+            "author": "Morgane",
+            "agree": 54,
+            "like_it": 20,
+            "disagree": 32,
+            "no_way": 14,
+            "votes": 556
+        },
+        {
             "id": "efb2ebd1-8218-4563-a840-7e8fd09110fd",
             "content": "Il faut une immigration choisie et non subie. D’abord accueillir des gens avec des cultures semblables plutôt que des gens inassimilables",
             "author": "Jean",
@@ -186,6 +206,16 @@
             "disagree": 42,
             "no_way": 22,
             "votes": 536
+        },
+        {
+            "id": "36cd3f23-d7b8-4074-a21b-65b44e1c239c",
+            "content": "Il faut arrêter de construire des pistes cyclables à contre sens.",
+            "author": "Vanessa",
+            "agree": 57,
+            "like_it": 24,
+            "disagree": 29,
+            "no_way": 15,
+            "votes": 465
         },
         {
             "id": "9ef9c239-cfbc-4891-8da9-390cf0c58a5d",
@@ -256,36 +286,6 @@
             "disagree": 35,
             "no_way": 17,
             "votes": 450
-        },
-        {
-            "id": "1fb3f577-28e6-4b98-8a69-f2862895ec27",
-            "content": "Il faut rendre les transports en commun gratuits afin de limiter l'usage de la voiture dans Paris",
-            "author": "Morgane",
-            "agree": 54,
-            "like_it": 20,
-            "disagree": 32,
-            "no_way": 14,
-            "votes": 556
-        },
-        {
-            "id": "093f3a66-c9e9-4645-b118-6fccea9b2c8e",
-            "content": "Il faut un quota de logements sociaux dans toutes les constructions et réhabilitations pour favoriser la mixité sociale.",
-            "author": "Serge",
-            "agree": 48,
-            "like_it": 10,
-            "disagree": 34,
-            "no_way": 17,
-            "votes": 445
-        },
-        {
-            "id": "36cd3f23-d7b8-4074-a21b-65b44e1c239c",
-            "content": "Il faut arrêter de construire des pistes cyclables à contre sens.",
-            "author": "Vanessa",
-            "agree": 57,
-            "like_it": 24,
-            "disagree": 29,
-            "no_way": 15,
-            "votes": 465
         }
     ],
     "rejected": [],
