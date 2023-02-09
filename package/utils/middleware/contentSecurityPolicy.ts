@@ -51,6 +51,7 @@ export const cspMiddleware = (
         'https://staticxx.facebook.com',
         'https://static.ads-twitter.com',
         'https://apis.google.com',
+        'https://accounts.google.com',
         'https://analytics.twitter.com',
         'https://*.hotjar.com',
       ],
