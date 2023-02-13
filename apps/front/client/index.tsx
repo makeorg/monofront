@@ -22,7 +22,7 @@ import i18n from 'i18next';
 import { createInitialState } from '@make.org/store/initialState';
 import { getRouteNoCookies } from '@make.org/utils/routes';
 import ContextState from '@make.org/store';
-import { ApiServiceHeadersType, StateRoot } from '@make.org/types';
+import { StateRoot } from '@make.org/types';
 import { initTrackersFromPreferences } from '@make.org/utils/helpers/clientCookies';
 import { COOKIE } from '@make.org/types/enums';
 import { ENABLE_MIXPANEL } from '@make.org/utils/constants/cookies';
@@ -103,22 +103,12 @@ const initApp = async (state: StateRoot) => {
   const sessionIdCookie = cookies.get(COOKIE.SESSION_ID);
   apiClient.sessionId = sessionIdCookie || sessionId || '';
 
-  // init api service before authenticationState to get visitorId
+  // init api service before authenticationState
   initApiService(source, country, language, getAll());
 
   // Get demographics cookie to render demographics card if cookie is not there
   const demographicsCookie = cookies.get(COOKIE.DEMOGRAPHICS);
 
-  // add listener to update trackingParamsService
-  // should be before first api call (before authenticationState) to get visitorId
-  apiClient.addHeadersListener(
-    'trackingServiceListener',
-    (headers: ApiServiceHeadersType) => {
-      if (headers['x-visitor-id']) {
-        trackingParamsService.visitorId = headers['x-visitor-id'];
-      }
-    }
-  );
   const authenticationStateData = await authenticationState();
 
   const store = {

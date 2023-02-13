@@ -4,7 +4,6 @@ import { showSessionExpirationModal } from '@make.org/store/actions/modal';
 import { apiClient } from '@make.org/api/ApiService/ApiService.client';
 import { updateSessionId } from '@make.org/store/actions/session';
 import { useAppContext } from '@make.org/store';
-import { ApiServiceHeadersType } from '@make.org/types';
 import { ExpirationSessionModal } from './Modal';
 
 type Props = {
@@ -15,7 +14,7 @@ type Props = {
 };
 
 const sessionExpirationDateCookieName = 'make-session-id-expiration';
-const apiHeaderListenerName = 'sessionIdListener';
+const apiListenerName = 'expirationSessionIdListener';
 
 const SessionExpirationWithCookiesHandler: React.FC<Props> = ({
   children,
@@ -41,15 +40,12 @@ const SessionExpirationWithCookiesHandler: React.FC<Props> = ({
 
   // update apiSessionId from api response header
   useEffect(() => {
-    apiClient.addHeadersListener(
-      apiHeaderListenerName,
-      (headers: ApiServiceHeadersType): void => {
-        setApiSessionId(headers['x-session-id'] || '');
-      }
-    );
+    apiClient.addAfterCallListener(apiListenerName, async () => {
+      setApiSessionId(apiClient.sessionId);
+    });
 
     return () => {
-      apiClient.removeHeadersListener(apiHeaderListenerName);
+      apiClient.removeAfterCallListener(apiListenerName);
     };
   }, []);
 
@@ -134,18 +130,18 @@ export const SessionExpiration: React.FC<Properties> = ({ children }) => {
 
   // update apiSessionId from api response header
   useEffect(() => {
-    apiClient.addHeadersListener(
-      apiHeaderListenerName,
-      (headers: ApiServiceHeadersType): void => {
-        setApiSessionId(headers['x-session-id'] || '');
+    apiClient.addAfterCallListener(
+      apiListenerName,
+      async (url, options, responseHeaders) => {
+        setApiSessionId(apiClient.sessionId);
         setSessionExpirationDate(
-          new Date(headers['x-session-id-expiration'] || tomorrow)
+          new Date(responseHeaders['x-session-id-expiration'] || tomorrow)
         );
       }
     );
 
     return () => {
-      apiClient.removeHeadersListener(apiHeaderListenerName);
+      apiClient.removeAfterCallListener(apiListenerName);
     };
   }, []);
 

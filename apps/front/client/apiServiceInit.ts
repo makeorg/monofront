@@ -17,7 +17,7 @@ export const initApiService = (
       ? window.document.referrer
       : '';
 
-  apiClient.addbeforeCallListener('globalCore', async (url, options) => {
+  apiClient.addbeforeCallListener('globalCore', async () => {
     apiClient.location = getAppLocationContext(
       window?.location?.pathname,
       trackingParamsService.questionId
@@ -30,6 +30,15 @@ export const initApiService = (
         ? window.location.href
         : 'undefined';
   });
+
+  apiClient.addAfterCallListener(
+    'trackingServiceListener',
+    async (url, options, headers) => {
+      if (headers['x-visitor-id']) {
+        trackingParamsService.visitorId = headers['x-visitor-id'];
+      }
+    }
+  );
 
   if (customData) {
     updateRequestContextCustomData(customData);

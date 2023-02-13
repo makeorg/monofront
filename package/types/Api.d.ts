@@ -37,6 +37,7 @@ export type ApiServiceHeadersType = {
   'x-visitor-id'?: string;
   'x-session-id'?: string;
   'x-session-id-expiration'?: string;
+  'x-route-name'?: string;
   Authorization?: string;
   'Cache-Control'?: string;
   Pragma?: string;

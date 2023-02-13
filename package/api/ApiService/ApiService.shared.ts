@@ -157,6 +157,19 @@ class ApiServiceSharedClass {
       httpsAgent: options.httpsAgent || undefined,
     };
 
+    // only fetch permit a really anonymous call (no cookies)
+    // but specific axios options are not used
+    if (options.withCredentials === false) {
+      const body = options.body ? (options.body as string) : undefined;
+      const response = fetch(apiUrl, {
+        ...axiosOptions,
+        credentials: 'omit',
+        body,
+      }).catch(error => handleErrors(error, apiUrl, options.method, requestId));
+
+      return response as ApiServiceResponse;
+    }
+
     const response = axios(apiUrl, axiosOptions).catch(error =>
       handleErrors(error, apiUrl, options.method, requestId)
     );

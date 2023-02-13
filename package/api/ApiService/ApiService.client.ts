@@ -39,12 +39,18 @@ class ApiServiceClient implements IApiServiceStrategy {
 
   _refreshTokenCallback: () => Promise<string> = refreshToken;
 
-  _headersListeners: Map<string, (headers: ApiServiceHeadersType) => void> =
-    new Map();
-
   _beforeCallListeners: Map<
     string,
-    (url: string, options: OptionsType) => void
+    (url: string, options: OptionsType) => Promise<void>
+  > = new Map();
+
+  _afterCallListeners: Map<
+    string,
+    (
+      url: string,
+      options: Readonly<OptionsType>,
+      responseHeaders: Readonly<ApiServiceHeadersType>
+    ) => Promise<void>
   > = new Map();
 
   constructor() {
@@ -158,36 +164,38 @@ class ApiServiceClient implements IApiServiceStrategy {
     return this._refreshTokenCallback;
   }
 
-  set headersListener(
-    listeners: Map<string, (headers: ApiServiceHeadersType) => void>
-  ) {
-    this._headersListeners = listeners;
-  }
-
-  addHeadersListener(
-    identifier: string,
-    listener: (headers: ApiServiceHeadersType) => void
-  ): void {
-    this._headersListeners.set(identifier, listener);
-  }
-
-  removeHeadersListener(identifier: string): void {
-    this._headersListeners.delete(identifier);
-  }
-
-  set beforeCallListener(listeners: Map<string, () => void>) {
+  set beforeCallListener(listeners: Map<string, () => Promise<void>>) {
     this._beforeCallListeners = listeners;
+  }
+
+  set afterCallListener(listeners: Map<string, () => Promise<void>>) {
+    this._afterCallListeners = listeners;
   }
 
   addbeforeCallListener(
     identifier: string,
-    listener: (url: string, options: OptionsType) => void
+    listener: (url: string, options: OptionsType) => Promise<void>
   ): void {
     this._beforeCallListeners.set(identifier, listener);
   }
 
+  addAfterCallListener(
+    identifier: string,
+    listener: (
+      url: string,
+      options: Readonly<OptionsType>,
+      responseHeaders: Readonly<ApiServiceHeadersType>
+    ) => Promise<void>
+  ): void {
+    this._afterCallListeners.set(identifier, listener);
+  }
+
   removeBeforeCallListener(identifier: string): void {
-    this._headersListeners.delete(identifier);
+    this._beforeCallListeners.delete(identifier);
+  }
+
+  removeAfterCallListener(identifier: string): void {
+    this._afterCallListeners.delete(identifier);
   }
 
   _generateHeaders(
@@ -247,18 +255,9 @@ class ApiServiceClient implements IApiServiceStrategy {
         headers,
       });
 
-      this._headersListeners.forEach(
-        (listener: (headers: Readonly<Record<string, string>>) => void) =>
-          response?.headers && listener(response?.headers)
-      );
-
       return response;
     } catch (error: unknown) {
       const apiServiceError = error as ApiServiceError;
-      this._headersListeners.forEach(
-        (listener: (headers: Readonly<ApiServiceHeadersType>) => void) =>
-          apiServiceError?.headers && listener(apiServiceError?.headers)
-      );
 
       if (apiServiceError?.status === 401 && retry > 0 && this.token) {
         this._token = null;
@@ -295,24 +294,45 @@ class ApiServiceClient implements IApiServiceStrategy {
         return;
       }
 
-      if (responseHeaders['x-visitor-id']) {
-        this._visitorId = responseHeaders['x-visitor-id'];
-      }
-      if (responseHeaders['x-session-id']) {
-        this._sessionId = responseHeaders['x-session-id'];
+      const apiRouteHeaderName = 'x-route-name';
+      const apiAnonymousRouteNames = ['demographicstrackingv2'];
+      const isAnonymousRoute = (headers: ApiServiceHeadersType) =>
+        headers[apiRouteHeaderName] &&
+        apiAnonymousRouteNames.includes(headers[apiRouteHeaderName]);
+
+      if (!isAnonymousRoute(responseHeaders)) {
+        if (responseHeaders['x-visitor-id']) {
+          this._visitorId = responseHeaders['x-visitor-id'];
+        }
+        if (responseHeaders['x-session-id']) {
+          this._sessionId = responseHeaders['x-session-id'];
+        }
       }
     };
 
-    await this._beforeCallListeners.forEach(listener => listener(url, options));
-
     try {
+      await this._beforeCallListeners.forEach(listener =>
+        listener(url, options)
+      );
       const response = await this._retryApiCall(url, options);
       setAttributesFromResponseHeaders(response?.headers);
+      await this._afterCallListeners.forEach(listener =>
+        listener(url, options, response?.headers || {})
+      );
 
       return response;
     } catch (error: unknown) {
       const apiServiceError = error as ApiServiceError;
       setAttributesFromResponseHeaders(apiServiceError?.headers);
+      await this._afterCallListeners.forEach(
+        async (
+          listener: (
+            url: string,
+            options: OptionsType,
+            headers: Readonly<ApiServiceHeadersType>
+          ) => void
+        ) => listener(url, options, apiServiceError?.headers || {})
+      );
 
       if (apiServiceError.status === 401) {
         this._token = null;

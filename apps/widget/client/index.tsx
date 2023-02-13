@@ -7,7 +7,7 @@ import { env } from '@make.org/assets/env';
 import ContextState from '@make.org/store';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 import i18n from 'i18next';
-import { ApiServiceHeadersType, StateRoot } from '@make.org/types';
+import { StateRoot } from '@make.org/types';
 import { ApiService } from '@make.org/api/ApiService';
 import { apiClient } from '@make.org/api/ApiService/ApiService.client';
 import { createInitialState } from '@make.org/store/initialState';
@@ -154,20 +154,16 @@ const initApp = async (state: StateRoot) => {
   apiClient.language = language;
   apiClient.url = currentUrl;
   apiClient.referrer = referrer;
-  apiClient.addbeforeCallListener('globalWidget', (url, options) => {
-    if (trackingParamsService.questionId) {
-      apiClient.customHeaders = {
-        'x-make-question-id': trackingParamsService.questionId,
-      };
-    }
-  });
+  apiClient.customHeaders = {
+    'x-make-question-id': trackingParamsService.questionId,
+  };
 
   // add listener to update trackingParamsService
-  apiClient.addHeadersListener(
+  apiClient.addAfterCallListener(
     'trackingServiceListener',
-    (headers: ApiServiceHeadersType) => {
-      if (headers['x-visitor-id']) {
-        trackingParamsService.visitorId = headers['x-visitor-id'];
+    async (url, options, responseHeaders) => {
+      if (responseHeaders['x-visitor-id']) {
+        trackingParamsService.visitorId = responseHeaders['x-visitor-id'];
       }
     }
   );
