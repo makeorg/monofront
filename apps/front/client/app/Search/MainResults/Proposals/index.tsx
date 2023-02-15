@@ -30,7 +30,7 @@ export const MainResultsProposals: React.FC<Props> = ({
   count,
 }) => {
   const { state } = useAppContext();
-  const { country, device } = state.appConfig;
+  const { country, device, language } = state.appConfig;
   const isMobile = matchMobileDevice(device);
   const [page, setPage] = useState<number>(1);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -51,6 +51,7 @@ export const MainResultsProposals: React.FC<Props> = ({
     setIsLoading(true);
     const result = await searchProposals(
       country,
+      language,
       undefined,
       searchTerm,
       undefined,

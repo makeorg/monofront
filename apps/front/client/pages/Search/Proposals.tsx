@@ -35,7 +35,7 @@ export const SearchResultsProposals: React.FC<RouteComponentProps> = ({
   history,
 }) => {
   const { state } = useAppContext();
-  const { country, device } = state.appConfig;
+  const { country, device, language } = state.appConfig;
   const params = new URLSearchParams(location.search);
   const term = params.get('query') || '';
   const [isLoading, setIsLoading] = useState(true);
@@ -51,6 +51,7 @@ export const SearchResultsProposals: React.FC<RouteComponentProps> = ({
   const initProposal = async () => {
     const result = await searchProposals(
       country,
+      language,
       undefined,
       term,
       undefined,
@@ -71,6 +72,7 @@ export const SearchResultsProposals: React.FC<RouteComponentProps> = ({
     setIsLoading(true);
     const result = await searchProposals(
       country,
+      language,
       undefined,
       term,
       undefined,

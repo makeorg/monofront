@@ -84,6 +84,7 @@ export class ProposalApiService {
 
   static searchProposals(
     country: string,
+    preferredLanguage: string,
     questionId?: string,
     content?: string,
     tagsIds?: string,
@@ -101,6 +102,7 @@ export class ProposalApiService {
   ): Promise<void | AxiosResponse<ProposalsType>> {
     const params: Record<string, string | boolean | number | undefined> = {
       country,
+      preferredLanguage,
       questionId,
       content,
       tagsIds,

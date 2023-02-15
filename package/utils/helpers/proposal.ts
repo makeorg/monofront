@@ -30,6 +30,7 @@ export const proposalHasValidLength = (length = 0): boolean => {
  */
 export const searchProposals = async (
   country: string,
+  preferredLanguage: string,
   questionId?: string,
   content?: string,
   tagsIds?: string,
@@ -44,6 +45,7 @@ export const searchProposals = async (
   const skip = page * limit;
   const result = await ProposalService.searchProposals(
     country,
+    preferredLanguage,
     questionId,
     content,
     tagsIds,

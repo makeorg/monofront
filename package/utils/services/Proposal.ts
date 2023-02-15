@@ -74,6 +74,7 @@ const getProposal = async (
 
 const searchProposals = async (
   country: string,
+  preferredLanguage: string,
   questionId?: string,
   content?: string,
   tagsIds?: string,
@@ -91,6 +92,7 @@ const searchProposals = async (
   try {
     const response = await ProposalApiService.searchProposals(
       country,
+      preferredLanguage,
       questionId,
       content,
       tagsIds,

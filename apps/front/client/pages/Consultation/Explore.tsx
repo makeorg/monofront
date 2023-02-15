@@ -50,7 +50,7 @@ const ExplorePage: FC = () => {
   const { country, pageId } = params;
   const { search } = useLocation();
   const queryParamsValue = parse(search);
-  const { device } = state.appConfig;
+  const { device, language } = state.appConfig;
   const isMobile = matchMobileDevice(device);
   const question: QuestionType = selectCurrentQuestion(state);
   const [proposals, setProposals] = useState<ProposalType[]>([]);
@@ -72,6 +72,7 @@ const ExplorePage: FC = () => {
     };
     const response = await searchProposals(
       country,
+      language,
       question.questionId,
       undefined,
       undefined,

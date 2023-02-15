@@ -28,7 +28,7 @@ export const TopIdeaDetailsProposals: FC<Props> = ({ topIdea, question }) => {
   const topComponentContext: TopComponentContextValueType =
     TopComponentContextValue.getTopideaProposalList();
   const { state } = useAppContext();
-  const { country } = state.appConfig;
+  const { country, language } = state.appConfig;
   const [proposals, setProposals] = useState<ProposalType[]>([]);
   const [hasMore, setHasMore] = useState<boolean>(false);
   const [seed, setSeed] = useState<number | undefined>(undefined);
@@ -42,6 +42,7 @@ export const TopIdeaDetailsProposals: FC<Props> = ({ topIdea, question }) => {
   const initProposals = async () => {
     const result = await searchProposals(
       country,
+      language,
       question.questionId,
       undefined,
       undefined,
@@ -67,6 +68,7 @@ export const TopIdeaDetailsProposals: FC<Props> = ({ topIdea, question }) => {
     setIsPendingForMore(true);
     const result = await searchProposals(
       country,
+      language,
       question.questionId,
       undefined,
       undefined,
