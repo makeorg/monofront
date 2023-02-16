@@ -83,7 +83,7 @@ export const SortComponent: React.FC = () => {
                   onChange={() => {
                     handleSortChange(item.name, item.value);
                     setCurrentSort(item.name);
-                    trackClickSort(item.name.toLowerCase()); // lowercase is needed for sort values
+                    trackClickSort(item.name);
                   }}
                   checked={checkCurrentSort(item.name, currentSort)}
                 />

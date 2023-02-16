@@ -43,8 +43,12 @@ export const sequenceByKindRoute = async (
     sequenceLocation = 'sequence-controversial';
   }
 
-  const withIntroCardParam = introCard?.toLowerCase() !== 'false';
-  const withPushProposalCardParam = pushProposal?.toLowerCase() !== 'false';
+  const withIntroCardParam = !(
+    introCard && introCard.toLowerCase() === 'false'
+  );
+  const withPushProposalCardParam = !(
+    pushProposal && pushProposal.toLowerCase() === 'false'
+  );
 
   const initialState = createInitialState();
   const logger = getLoggerInstance();

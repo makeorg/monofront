@@ -8,17 +8,22 @@ const formatApiServiceError = (error: ApiServiceError): DataLog => ({
   app_lineNumber: error.lineNumber,
   app_columnNumber: error.columnNumber,
   stack: error.stack,
-  app_status: error.status,
-  app_responseData: error.data,
-  app_url: error.url,
-  app_method: error.method,
+  app_status: error.status || 0,
+  app_responseData: error.data || 'none',
+  app_url: error.url || 'none',
+  app_method: error.method || 'none',
   app_logId: error.logId,
   app_requestId: error.requestId,
 });
 
 export const apiErrorDataLogNormalizer = <T>(data: T): DataLog | undefined => {
   if (data instanceof ApiServiceError) {
-    return formatApiServiceError(data);
+    const formattedData = formatApiServiceError(data);
+
+    return {
+      ...formattedData,
+      app_normalizer: 'apiErrorNormalizer',
+    };
   }
 
   return undefined;

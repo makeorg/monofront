@@ -10,7 +10,12 @@ export const useSequenceQueryParams = (): {
 
   return {
     firstProposalParam: params.get('firstProposal'),
-    introCardParam: params.get('introCard')?.toLowerCase() !== 'false',
-    pushProposalParam: params.get('pushProposal')?.toLowerCase() !== 'false',
+    introCardParam:
+      params.has('introCard') &&
+      params.get('introCard')?.toLowerCase() !== 'false',
+    pushProposalParam: !(
+      params.has('pushProposal') &&
+      params.get('pushProposal')?.toLowerCase() === 'false'
+    ),
   };
 };

@@ -155,7 +155,7 @@ const GoogleAuthenticationComponent: React.FC<ComponentProps> = ({
     } = response;
     dispatch(loginSocialFailure());
 
-    const googleLoginFailure = `Google login failure: ${errorDescription}}`;
+    const googleLoginFailure = `Google login failure: ${errorDescription}`;
     Logger.logError({
       message: googleLoginFailure,
       app_google_error: error,
