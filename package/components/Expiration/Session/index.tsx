@@ -56,13 +56,14 @@ const SessionExpirationWithCookiesHandler: React.FC<Props> = ({
     }
   }, [sessionId]);
 
-  // show modal if sessionId in state not match session id from API response
+  // reload if sessionId in state not match session id from API response
   useEffect(() => {
     const sessionIdHasChanged = !!apiSessionId && apiSessionId !== sessionId;
     const isInitalSetup = !sessionId;
 
-    if (!isInitalSetup && sessionIdHasChanged) {
-      showModal();
+    if (!isInitalSetup && sessionIdHasChanged && window && window.location) {
+      const [baseUrl] = window.location.href.split('#');
+      window.location.href = baseUrl;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [apiSessionId]);
@@ -152,13 +153,14 @@ export const SessionExpiration: React.FC<Properties> = ({ children }) => {
     }
   }, [sessionId]);
 
-  // show modal if sessionId in state not match session id from API response
+  // reload if sessionId in state not match session id from API response
   useEffect(() => {
     const sessionIdHasChanged = !!apiSessionId && apiSessionId !== sessionId;
     const isInitalSetup = !sessionId;
 
-    if (!isInitalSetup && sessionIdHasChanged) {
-      showModal();
+    if (!isInitalSetup && sessionIdHasChanged && window && window.location) {
+      const [baseUrl] = window.location.href.split('#');
+      window.location.href = baseUrl;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [apiSessionId]);

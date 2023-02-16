@@ -33,7 +33,8 @@ export const ExpirationSessionModal: React.FC = () => {
   const handleClose = (event: React.SyntheticEvent<HTMLButtonElement>) => {
     event.preventDefault();
     dispatch(closeSessionExpirationModal());
-    window.location.reload();
+    const [baseUrl] = window.location.href.split('#');
+    window.location.href = baseUrl;
   };
 
   return (
