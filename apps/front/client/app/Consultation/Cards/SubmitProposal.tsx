@@ -10,10 +10,14 @@ import {
   ParticipateCardDescriptionStyle,
   ParticipateCardButtonStyle,
 } from '@make.org/ui/elements/CardsElements';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { QuestionType } from '@make.org/types';
 import { clearProposalPending } from '@make.org/store/actions/pendingProposal';
 
 export const SubmitProposal: FC = () => {
-  const { dispatch } = useAppContext();
+  const { state, dispatch } = useAppContext();
+  const question: QuestionType = selectCurrentQuestion(state);
+
   return (
     <ParticipateCardStyle className="margin-bottom">
       <SvgLightBulb aria-hidden width={31} height={31} focusable="false" />
@@ -29,6 +33,7 @@ export const SubmitProposal: FC = () => {
           dispatch(setPanelContent(<ProposalJourney />));
         }}
         data-cy-button="proposal-button"
+        disabled={!question.canPropose}
       >
         {i18n.t('consultation.cards.submit.button')}
       </ParticipateCardButtonStyle>
