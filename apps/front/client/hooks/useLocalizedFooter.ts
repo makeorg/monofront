@@ -1,8 +1,6 @@
-import { LocaleType } from '@make.org/types/enums';
 import { useEffect, useState } from 'react';
 import {
   FooterLinkType,
-  setCommonExtraLinks,
   setCommonInternalLinks,
 } from '../app/Footer/localized/Common';
 import { setDEExternalLinks } from '../app/Footer/localized/DE';
@@ -19,16 +17,8 @@ export const useInternalLinks = (
     if (!country || !language) {
       setInternaLinks([]);
     }
-    const commonInternalLinks = setCommonInternalLinks(country, language);
 
-    if (language !== [LocaleType.en].toString()) {
-      const extraInternalLinks = setCommonExtraLinks(country, language);
-      const links = commonInternalLinks.concat(extraInternalLinks);
-      setInternaLinks(links);
-      return;
-    }
-
-    setInternaLinks(commonInternalLinks);
+    setInternaLinks(setCommonInternalLinks(country, language));
   }, [country, language]);
 
   return internalLinks;

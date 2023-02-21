@@ -44,18 +44,6 @@ export const setCommonInternalLinks = (
       url: getCookiesPageLink(country),
       onClick: scrollToTop,
     },
-  ];
-};
-
-export const setCommonExtraLinks = (
-  country: string,
-  language: string
-): FooterLinkType[] => {
-  if (!country || !language) {
-    return [];
-  }
-
-  return [
     {
       label: i18n.t('main_footer.a11y'),
       url: getA11YPageLink(country, language),

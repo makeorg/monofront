@@ -54,6 +54,7 @@ import {
   ROUTE_STATIC_DATA_DE,
   ROUTE_STATIC_CONTACT_DE,
   ROUTE_STATIC_A11Y_DE,
+  ROUTE_STATIC_A11Y,
 } from '@make.org/utils/routes';
 import Cookies from 'universal-cookie';
 import { StateUserCookiesPreferences } from '@make.org/types';
@@ -232,6 +233,7 @@ export const Routes: FC = () => {
       <Route path={ROUTE_STATIC_LEGAL} component={LegalPage} />
       <Route path={ROUTE_STATIC_GTU} component={TermsOfUse} />
       <Route path={ROUTE_STATIC_DATA} component={Data} />
+      <Route path={ROUTE_STATIC_A11Y} component={Accessibility} />
 
       {/* Routes used for fr language */}
       <Route path={ROUTE_STATIC_LEGAL_FR} component={LegalPage} />

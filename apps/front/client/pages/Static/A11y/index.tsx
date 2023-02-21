@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { useAppContext } from '@make.org/store';
 import { LocaleType } from '@make.org/types/enums';
 import { A11yFR } from './FR';
+import { A11yEN } from './EN';
 import { A11yDE } from './DE';
 import { A11yUK } from './UK';
 import { A11yCS } from './CS';
@@ -13,6 +14,8 @@ const A11y: FC = () => {
   switch (language) {
     case [LocaleType.fr].toString():
       return <A11yFR />;
+    case [LocaleType.en].toString():
+      return <A11yEN />;
     case [LocaleType.de].toString():
       return <A11yDE />;
     case [LocaleType.uk].toString():
