@@ -1008,7 +1008,7 @@
         "value_with_unit": "hodnota v {{unit}}",
         "percentage": "procenta"
       },
-      "breadcrumb": "Výsledky „{{title}}\"",
+      "breadcrumb": "Výsledky „{{title}}“",
       "title": "Co si z této konzultace vzít?"
     },
     "reset": "Obnovit",

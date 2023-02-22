@@ -239,7 +239,7 @@
       "unexpected_error": "We are encountering an error, please try again later.",
       "network_error": "Impossible to access the full content of our website because it looks like you are offline.",
       "vote_only": {
-        "message": "Citizens have submitted many solutions since the beginning of {{\"title\"}} consultation. We need your votes to make a difference between them. In the meantime we can't accept new solutions.",
+        "message": "Citizens have submitted many solutions since the beginning of \"{{title}}\" consultation. We need your votes to make a difference between them. In the meantime we can't accept new solutions.",
         "button": "ok"
       },
       "vote_on_proposal": "Vote on this solution",
