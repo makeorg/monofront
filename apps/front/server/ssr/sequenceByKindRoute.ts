@@ -145,6 +145,8 @@ export const sequenceByKindRoute = async (
     );
   }
 
+  updateTrackingQuestionParam(questionModified);
+
   initialState.currentQuestion = questionSlug;
   initialState.questions = {
     [questionSlug]: {
@@ -168,7 +170,6 @@ export const sequenceByKindRoute = async (
     level: NOTIF.NOTIFICATION_LEVEL_INFORMATION,
     toDismiss: true,
   };
-  updateTrackingQuestionParam(questionModified);
 
   return reactRender(req, res, initialState);
 };

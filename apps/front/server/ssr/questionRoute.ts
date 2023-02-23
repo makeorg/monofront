@@ -47,13 +47,14 @@ export const questionRoute = async (
     return res.redirect(question.aboutUrl);
   }
 
+  updateTrackingQuestionParam(question);
+
   initialState.currentQuestion = questionSlug;
   initialState.questions = {
     [questionSlug]: {
       question,
     },
   };
-  updateTrackingQuestionParam(question);
 
   return reactRender(req, res, initialState);
 };

@@ -163,6 +163,8 @@ export const mainRoute = async (
     false
   );
 
+  updateTrackingQuestionParam(questionModified);
+
   initialState.currentQuestion = formattedQuestionSlug;
   initialState.questions = {
     [formattedQuestionSlug]: {
@@ -187,8 +189,6 @@ export const mainRoute = async (
     ...initialState.session,
     sessionId: firstProposal.sessionId,
   };
-
-  updateTrackingQuestionParam(questionModified);
 
   return reactRender(req, res, initialState);
 };

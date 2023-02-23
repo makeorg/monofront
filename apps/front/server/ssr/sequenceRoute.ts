@@ -63,13 +63,14 @@ export const sequenceRoute = async (
     ),
   };
 
+  updateTrackingQuestionParam(questionModified);
+
   initialState.currentQuestion = questionSlug;
   initialState.questions = {
     [questionSlug]: {
       question: questionModified,
     },
   };
-  updateTrackingQuestionParam(questionModified);
 
   return reactRender(req, res, initialState);
 };

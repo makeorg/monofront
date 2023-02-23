@@ -69,6 +69,7 @@ export const QuestionWrapper: FC<Props> = ({ children, withRedirect }) => {
     );
 
     if (questionDetails) {
+      updateTrackingQuestionParam(questionDetails);
       dispatch(loadQuestion(questionDetails));
       dispatch(setCurrentQuestionSlug(questionSlug));
     }
@@ -85,14 +86,6 @@ export const QuestionWrapper: FC<Props> = ({ children, withRedirect }) => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [questionSlug, language]);
-
-  useEffect(() => {
-    if (currentQuestion) {
-      updateTrackingQuestionParam(currentQuestion);
-    }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentQuestion]);
 
   useEffect(() => {
     if (
