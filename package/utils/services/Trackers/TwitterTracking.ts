@@ -8,7 +8,7 @@
 /* eslint-disable no-unused-expressions */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { env } from '@make.org/assets/env';
-import { twttr } from '@make.org/utils/services/Trackers/twttr.js';
+import { twitter } from '@make.org/utils/services/Trackers/twttr.js';
 import { Logger } from '../Logger';
 import trackingConfiguration from '../trackingConfiguration.yaml';
 
@@ -28,9 +28,14 @@ const twitterEventMapping = {
   [trackingConfiguration.CLICK_PROPOSAL_UNQUALIFY.key]: 'o2q9p',
   [trackingConfiguration.CLICK_PROPOSAL_VIEW_MORE.key]: 'o2q9q', // = click-proposal-viewmore on twitter
 };
+const timeout = (delay: number) =>
+  new Promise(res => {
+    setTimeout(res, delay);
+  });
 
 export const TwitterTracking = {
-  track(action: string): void {
+  tries: 0,
+  async track(action: string): Promise<void> {
     // @ts-ignore
     if (twitterEventMapping[action] === undefined) {
       return;
@@ -44,15 +49,23 @@ export const TwitterTracking = {
       return;
     }
 
-    if (!twttr.initialized()) {
-      Logger.logWarning({
-        message: `Twitter Tracking not initialized. Action : ${action}`,
-        name: 'tracking-init',
-      });
+    if (!twitter.initialized()) {
+      if (this.tries > 1) {
+        this.tries = 0;
+        Logger.logInfo({
+          message: `Twitter Tracking not initialized. Action : ${action}`,
+          name: 'tracking-init',
+        });
+        return;
+      }
+
+      this.tries += 1;
+      await timeout(500);
+      this.track(action);
       return;
     }
 
-    twttr.track(eventName);
+    twitter.track(eventName);
   },
 };
 

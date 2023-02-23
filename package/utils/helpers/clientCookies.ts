@@ -7,7 +7,7 @@ import { env } from '@make.org/assets/env';
 import { hotjar } from 'react-hotjar';
 import {
   TWITTER_SCRIPT,
-  twttr,
+  twitter,
 } from '@make.org/utils/services/Trackers/twttr.js';
 import { TwitterUniversalTag } from '@make.org/utils/services/Trackers/TwitterTracking';
 
@@ -97,11 +97,12 @@ export const initTrackersFromPreferences = (
 
   if (
     cookiePreferences?.tracking_consent?.twitter_tracking &&
-    !twttr.initialized()
+    !twitter.initialized()
   ) {
     if (body) {
       body.appendChild(twitterScript);
     }
+
     TwitterUniversalTag.init();
   }
 
@@ -118,7 +119,7 @@ export const removeTrackersFromPreferences = (
     FacebookTracking.isInitialized();
   const disableTWTracking =
     !cookiePreferences.tracking_consent?.twitter_tracking &&
-    twttr.initialized();
+    twitter.initialized();
 
   if (disableFBTacking || disableTWTracking) {
     window.location.reload();
