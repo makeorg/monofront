@@ -250,7 +250,6 @@ export class QuestionApiService {
     preferredLanguage: string,
     limit: number,
     seed?: number,
-    preferedLanguage?: string,
     headers: ApiServiceHeadersType = {}
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
