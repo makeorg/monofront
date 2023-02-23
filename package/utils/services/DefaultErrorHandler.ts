@@ -2,16 +2,14 @@ import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { Logger } from './Logger';
 
 let unexpectedError = (error: ApiServiceError | Error) => {
-  const message = 'You should handle unexpected errors (default handler)';
   try {
-    if (error instanceof Error) {
-      Logger.logError({
-        message: `${message}: ${error.message}`,
-        name: 'services',
-      });
-    }
-  } catch (e) {
-    Logger.logError({ message, name: 'services' });
+    Logger.logError(error);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } catch (e: any) {
+    Logger.logError({
+      message: `You should handle unexpected errors (default handler): ${e.message}`,
+      name: 'services',
+    });
   }
 };
 
