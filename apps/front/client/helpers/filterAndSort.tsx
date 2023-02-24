@@ -34,7 +34,7 @@ export const getUpdatedSortValues = (
     case SORT_RECENT:
       return {
         ...currentSortValues,
-        sort: 'RECENT',
+        sort: 'recent',
         sortAlgorithm: undefined,
       };
     case SORT_POPULAR:

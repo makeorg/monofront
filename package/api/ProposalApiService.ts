@@ -119,10 +119,11 @@ export class ProposalApiService {
     };
 
     if (sort) {
-      const sortType = AVAILABLE_ALGORITHMS[sort];
+      // toUpperCase() is needed to recognize "RECENT" in "AVAILABLE_ALGORITHMS"
+      const sortType = AVAILABLE_ALGORITHMS[sort.toUpperCase()];
       params[sortType.key] = sortType.value;
 
-      if (AVAILABLE_ALGORITHMS[sort].key === 'sort') {
+      if (AVAILABLE_ALGORITHMS[sort.toUpperCase()].key === 'sort') {
         params.order = 'DESC';
       }
     }
