@@ -18,8 +18,6 @@ import {
   ProposalLanguageContextValue,
   ProposalLanguageContextValueType,
 } from '@make.org/store/proposalLanguageContext';
-import { SubmitProposal } from '../Cards/SubmitProposal';
-import { NoProposalWrapperStyle } from '../../../pages/Consultation/style';
 import {
   ProposalsListStyle,
   ProposalListItemStyle,
@@ -143,29 +141,21 @@ export const ProposalsList: FC<Props> = ({ isLoading, proposals }) => {
     );
   }
 
-  if (hasProposals) {
-    return (
-      <ProposalsListStyle>
-        {proposals.map((proposal: ProposalType, index: number) => (
-          <ProposalListItemStyle
-            key={proposal.id}
-            role="feed"
-            aria-live="assertive"
-          >
-            <ProposalsCard
-              proposal={proposal}
-              country={country}
-              index={index}
-            />
-          </ProposalListItemStyle>
-        ))}
-      </ProposalsListStyle>
-    );
+  if (!hasProposals) {
+    return null;
   }
 
   return (
-    <NoProposalWrapperStyle>
-      <SubmitProposal />
-    </NoProposalWrapperStyle>
+    <ProposalsListStyle>
+      {proposals.map((proposal: ProposalType, index: number) => (
+        <ProposalListItemStyle
+          key={proposal.id}
+          role="feed"
+          aria-live="assertive"
+        >
+          <ProposalsCard proposal={proposal} country={country} index={index} />
+        </ProposalListItemStyle>
+      ))}
+    </ProposalsListStyle>
   );
 };
