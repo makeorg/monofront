@@ -80,8 +80,8 @@
       "title": "Create a new password - Make.org"
     },
     "a11y": {
-      "title": "Accessibilty statement - Make.org",
-      "description": "Discover Make.org's engagements for digital accessibilty."
+      "title": "Declaration of accessibility - Make.org",
+      "description": "Discover Make.org's engagements for digital accessibility."
     },
     "not_found": {
       "title": "Page not found - Error 404 - Make.org",
@@ -483,7 +483,7 @@
     "moderation_charter": "Moderation charter",
     "press_details": "Press",
     "cookies": "Use of cookies",
-    "a11y": "Accessibilty statement"
+    "a11y": "Declaration of accessibility"
   },
   "pannel": {},
   "cookie_modal": {
