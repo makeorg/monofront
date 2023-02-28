@@ -5,6 +5,7 @@ import {
   getDataPageLink,
   getGTUPageLink,
   getLegalPageLink,
+  getModerationPageLink,
 } from '@make.org/utils/helpers/url';
 import { scrollToTop } from '@make.org/utils/helpers/styled';
 
@@ -47,6 +48,11 @@ export const setCommonInternalLinks = (
     {
       label: i18n.t('main_footer.a11y'),
       url: getA11YPageLink(country, language),
+      onClick: scrollToTop,
+    },
+    {
+      label: i18n.t('main_footer.moderation_charter'),
+      url: getModerationPageLink(country, language),
       onClick: scrollToTop,
     },
   ];

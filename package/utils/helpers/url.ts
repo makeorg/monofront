@@ -38,6 +38,8 @@ import {
   ROUTE_STATIC_GTU,
   ROUTE_STATIC_LEGAL,
   ROUTE_STATIC_A11Y,
+  ROUTE_STATIC_MODERATION,
+  ROUTE_STATIC_MODERATION_FR,
 } from '../routes';
 import { DEFAULT_COUNTRY } from '../constants/config';
 
@@ -449,6 +451,25 @@ export const getCookiesPageLink = (country: string): string =>
   });
 
 /**
+ * Get the Moderation page link
+ *
+ * @param  {string} country
+ * @param  {string} language
+ * @return {string}
+ */
+export const getModerationPageLink = (
+  country: string,
+  language: string
+): string =>
+  getMultiLangStaticLink(
+    country,
+    language,
+    ROUTE_STATIC_MODERATION,
+    ROUTE_STATIC_MODERATION_FR,
+    ROUTE_STATIC_MODERATION
+  );
+
+/**
  * Get the home page link
  *
  * @param  {string} country
@@ -509,28 +530,6 @@ export const getPasswordRecoveryLink = (
     userId,
     resetToken,
   });
-
-/**
- * Get the Moderation link depending from language
- *
- * @param  {string} language
- *
- * @return {string}
- */
-export const getModerationLinkByLanguage = (language: string): string => {
-  switch (language) {
-    case [LocaleType.fr].toString():
-      return URL.MODERATION_CHARTER_FR_LINK;
-    case [LocaleType.de].toString():
-      return URL.MODERATION_CHARTER_DE_LINK;
-    case [LocaleType.uk].toString():
-      return URL.MODERATION_CHARTER_UK_LINK;
-    case [LocaleType.cs].toString():
-      return URL.MODERATION_CHARTER_CS_LINK;
-    default:
-      return URL.MODERATION_CHARTER_EN_LINK;
-  }
-};
 
 /**
  * Get the News link depending from country

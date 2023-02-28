@@ -8,7 +8,7 @@ import {
   getLocalizedBaitText,
   proposalHasValidLength,
 } from '@make.org/utils/helpers/proposal';
-import { getModerationLinkByLanguage } from '@make.org/utils/helpers/url';
+import { getModerationPageLink } from '@make.org/utils/helpers/url';
 import {
   trackDisplayProposalField,
   trackClickProposalSubmit,
@@ -53,7 +53,7 @@ export const ProposalForm: FC = () => {
   const inputRef = useRef() as React.MutableRefObject<HTMLTextAreaElement>;
   const question: QuestionType | null = selectCurrentQuestion(state);
   const { isLoggedIn } = selectAuthentication(state);
-  const { device, language, country } = state.appConfig;
+  const { device, country, language } = state.appConfig;
   const isMobile = matchMobileDevice(device);
   const proposalIsEmpty = pendingProposal.length === 0;
   const baitText = getLocalizedBaitText(
@@ -185,7 +185,7 @@ export const ProposalForm: FC = () => {
               <>
                 {i18n.t('proposal_submit.form.read_our')}{' '}
                 <ProposalExternalLinkStyle
-                  href={getModerationLinkByLanguage(language)}
+                  href={getModerationPageLink(country, language)}
                   target="_blank"
                   rel="noopener"
                   onClick={trackClickModerationLink}

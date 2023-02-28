@@ -1,7 +1,6 @@
 import i18n from 'i18next';
 import { trackClickBlog } from '@make.org/utils/services/Tracking';
 import { URL } from '@make.org/types/enums';
-import { getModerationLinkByLanguage } from '@make.org/utils/helpers/url';
 import { FooterLinkType } from './Common';
 
 export const setFRExternalLinks = (language: string): FooterLinkType[] => [
@@ -21,9 +20,5 @@ export const setFRExternalLinks = (language: string): FooterLinkType[] => [
   {
     label: i18n.t('main_footer.dotation_funds'),
     url: URL.DOTATION_FUNDS_LINK,
-  },
-  {
-    label: i18n.t('main_footer.moderation_charter'),
-    url: getModerationLinkByLanguage(language),
   },
 ];

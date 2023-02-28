@@ -16,7 +16,7 @@ import {
 } from '@make.org/ui/elements/LinkElements';
 import {
   getDataPageLink,
-  getModerationLinkByLanguage,
+  getModerationPageLink,
 } from '@make.org/utils/helpers/url';
 import i18n from 'i18next';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
@@ -117,7 +117,7 @@ export const TermsOfUseEN: FC = () => {
               </abbr>{' '}
               and our{' '}
               <RedHTMLLinkElementStyle
-                href={getModerationLinkByLanguage(language)}
+                href={getModerationPageLink(country, language)}
                 target="_blank"
                 rel="noopener"
               >

@@ -52,12 +52,14 @@ export const ROUTE_STATIC_LEGAL = `${ROUTE_COUNTRY}/legal-mentions`;
 export const ROUTE_STATIC_GTU = `${ROUTE_COUNTRY}/terms-of-use`;
 export const ROUTE_STATIC_DATA = `${ROUTE_COUNTRY}/data-terms`;
 export const ROUTE_STATIC_A11Y = `${ROUTE_COUNTRY}/accessibility`;
+export const ROUTE_STATIC_MODERATION = `${ROUTE_COUNTRY}/moderation-charter`;
 
 // Translated routes for fr language
 export const ROUTE_STATIC_LEGAL_FR = `${ROUTE_COUNTRY}/mentions-legales`;
 export const ROUTE_STATIC_GTU_FR = `${ROUTE_COUNTRY}/conditions-dutilisation`;
 export const ROUTE_STATIC_DATA_FR = `${ROUTE_COUNTRY}/politique-donnees`;
 export const ROUTE_STATIC_A11Y_FR = `${ROUTE_COUNTRY}/declaration-accessibilite`;
+export const ROUTE_STATIC_MODERATION_FR = `${ROUTE_COUNTRY}/charte-moderation`;
 
 // Translated routes for de language
 export const ROUTE_STATIC_LEGAL_DE = `${ROUTE_COUNTRY}/impressum`;

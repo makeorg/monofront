@@ -13,7 +13,11 @@ import {
 } from '@make.org/ui/elements/TitleElements';
 import { SmallSeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
-import { SvgExternalLink, SvgBigCheck } from '@make.org/ui/Svg/elements';
+import {
+  SvgExternalLink,
+  SvgBigCheck,
+  SvgThumbsUp,
+} from '@make.org/ui/Svg/elements';
 import { StartColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { TitleM } from '@make.org/designsystem/components/Titles';
@@ -302,4 +306,116 @@ export const StaticExternalLinkIconStyle = styled(SvgExternalLink)`
   height: 14px;
   margin-left: 5px;
   fill: ${color.brandSecondary};
+`;
+
+export const ModerationParagraphStyle = styled.p`
+  margin: 0 0 15px;
+  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  line-height: 2;
+  color: ${color.greyDark};
+  white-space: pre-line;
+  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
+    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    text-align: center;
+  }
+`;
+
+export const StaticCenteredParagraphStyle = styled.p`
+  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  color: ${color.greyDark};idée n’est pas déjà présente 
+  text-align: center;
+  padding: 0 20px;
+`;
+
+export const StaticSectionTitle = styled(ThirdLevelTitleStyle)`
+  display: inline-flex;
+  margin: 30px 0 5px;
+  color: ${color.greyDark};
+`;
+
+export const ModerationCharterWrapperStyle = styled(StaticPageWrapperStyle)`
+  max-width: 840px;
+`;
+
+export const StaticModerationOrderedExamplesStyle = styled.ol`
+  padding-left: 0;
+  margin: 30px 0;
+`;
+
+export const StaticModerationOrderedItemStyle = styled.li`
+  align-self: flex-start;
+  margin-top: 60px;
+  &::marker {
+    color: ${color.neutral};
+  }
+`;
+
+export const ModerationExampleCardsWrapperStyle = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+`;
+
+export const ModerationExampleCardStyle = styled.div`
+  border-radius: 8px;
+  display: flex;
+  height: 180px;
+  flex: 1 0 300px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: ${color.white};
+  &.refused {
+    border-top: 5px solid ${color.error};
+  }
+  &.accepted {
+    border-top: 5px solid ${color.success};
+  }
+  & p {
+    text-align: center !important;
+  }
+`;
+
+export const ModerationExampleCardTitleStyle = styled(ThirdLevelTitleStyle)`
+  margin-bottom: 20px;
+  &.refused {
+    color: ${color.error};
+  }
+  &.accepted {
+    color: ${color.success};
+  }
+`;
+
+export const ModerationExampleCardTitleIconStyle = styled(SvgThumbsUp)`
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+  &.refused {
+    transform: rotate(180deg) scaleX(-1);
+  }
+  &.refused .tofill {
+    fill: ${color.error};
+  }
+  &.accepted .tofill {
+    fill: ${color.success};
+  }
+`;
+
+export const ModerationFootnotesStyleOrderedListWrapperStyle = styled.ol`
+  padding-left: 0;
+  list-style-position: inside;
+`;
+
+export const ModerationFootnotesStyleOrderedListItemStyle = styled.li`
+  color: ${color.greyDark};
+  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+`;
+
+export const ModerationSectionTitleStyle = styled(StaticSectionTitle)`
+  color: ${color.black};
+  margin: 50px 0;
+`;
+
+export const ModerationDisclaimerParagraphStyle = styled(StaticParagraphStyle)`
+  margin: 50px 0;
 `;

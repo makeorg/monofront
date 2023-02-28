@@ -16,7 +16,7 @@ import {
 import { getContactMailByCountry } from '@make.org/utils/helpers/countries';
 import {
   getDataPageLink,
-  getModerationLinkByLanguage,
+  getModerationPageLink,
 } from '@make.org/utils/helpers/url';
 import i18n from 'i18next';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
@@ -119,7 +119,7 @@ export const TermsOfUseFR: FC = () => {
               </abbr>{' '}
               et de notre{' '}
               <RedHTMLLinkElementStyle
-                href={getModerationLinkByLanguage(language)}
+                href={getModerationPageLink(country, language)}
                 target="_blank"
                 rel="noopener"
               >

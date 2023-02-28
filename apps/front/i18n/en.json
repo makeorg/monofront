@@ -68,6 +68,10 @@
       "title": "Legal mentions - Make.org",
       "description": "Find out all the legal notice of the website."
     },
+    "moderation": {
+      "title": "Moderation Charter",
+      "description": "How to pass the moderation? How to be successful on the platform? Rather than a (too) long speech, we take the side of some examples to explain you our moderation policy."
+    },
     "privacy_policy": {
       "title": "Privacy policy - Make.org",
       "description": "All of the information about the processing of your personal data during a session on the website."
@@ -1122,6 +1126,90 @@
     "host_phone_number": "{{host_number}}",
     "cnil": "CNIL declaration number: ",
     "cnil_number": "{{cnil_number}}"
+  },
+  "moderation_charter": {
+    "unsuitable_label": "UNSUITABLE",
+    "adapted_label": "ADAPTED",
+    "refused_label": "REFUSED",
+    "validated_label": "VALIDATED",
+    "title": "MAKE.ORG MODERATION CHARTER",
+    "description": "Every solution submitted to the platform is moderated manually by Make.org’s teams of moderators, in accordance with the following moderation charter criteria. Moderation takes place within 48 hours of the solution’s submission. You will be informed by e-mail (providing you validated your e-mail address when registering) of the publication or refusal of your solution. Minor spelling mistakes are corrected by the moderators but it is up to you to resubmit your solution if it cannot be accepted.",
+    "refused_examples": "The following are not allowed on the Make.org platform: ",
+    "incomprehensible_solutions": {
+      "title": "Incomprehensible solutions",
+      "description": "The formulation and sense of your solution must be comprehensible to everyone. Major syntax errors and any lack of sense will be refused and you will be asked to reformulate your solution.",
+      "refused_example_card": "We should have citizens reflected in development by all countries.",
+      "validated_example_card": "We should have citizens that give thought to the development of education in each country."
+    },
+    "irrelevant_solutions": {
+      "title": "Irrelevant solutions",
+      "description": "Your solution must answer the question asked in the consultation, for example: “How can we ensure that everyone eats better?”. If this is not the case, your solution is considered irrelevant and will be refused.",
+      "refused_card_example": "We should have a football world cup championship that is held every two years.",
+      "validated_card_example": "We should facilitate access to short supply chains in company canteens."
+    },
+    "discriminatory_solutions": {
+      "title": "Discriminatory solutions",
+      "description": "In accordance with legislation, your solution may not contain polemic inciting violence or hatred. Nor may it contain discriminatory or defamatory statements, for example directed against any ethnic, social or religious group.",
+      "refused_card_example": "We should ensure that the people of Brittany do not maintain their degrading traditions.",
+      "validated_card_example": "We should strive to ensure that French communities can improve their communications with each other.",
+      "refused_card_example_2": "We should forbid the wearing of crosses on necklaces, as they are a symbol of subservience.",
+      "validated_card_example_2": "We should ensure that the freedom of worship is respected in our country."
+    },
+    "partisan_solutions": {
+      "title": "Partisan solutions",
+      "description": "Your solution must not take sides (in other words, bear an approving or disparaging message) with respect to a political party, political personality, ideology or religion (personality, symbol or practices).",
+      "refused_card_example": "We should consider Mr XXX’s programme: his ideas are original for the next elections.",
+      "validated_card_example": "We should familiarise ourselves with each political party’s programme before the elections.",
+      "refused_card_example_2": "We should re-read the Bible regularly in search of our salvation.",
+      "validated_card_example_2": "We should ensure that employers are aware of the dates of certain religious festivals: Ramadan, Hanukkah, etc."
+    },
+    "advertising": {
+      "title": "Advertising",
+      "description": "You may not advertise a specific brand or company. Once again, you may mention a brand or company only as an illustrative example.",
+      "refused_card_example": "We should stop consuming Coca-Cola brand products.",
+      "validated_card_example": "We should stop consuming certain soft drinks that contain too much sugar, such as Coca-Cola."
+    },
+    "multiple_ideas": {
+      "title": "Multiple ideas",
+      "description": "Each solution should be limited to a single idea, to facilitate the voting by other citizens on your contribution. If you have two different ideas, you can make two solutions.",
+      "refused_card_example": "We should have access to the products of local producers and there should be communication about innovations in agriculture.",
+      "validated_card_example": "We should have access to the products of local producers."
+    },
+    "insults": {
+      "title": "Insults",
+      "description": "‍Any disrespectful or insulting solution will be refused during moderation.",
+      "refused_card_example": "We should make sure that these idiotic drivers  pay more respect to the highway code.",
+      "validated_card_example": "We should make sure that drivers pay more respect to the highway code."
+    },
+    "correctly_formulated_solutions": {
+      "title": "HOW TO FORMULATE A SOLUTION CORRECTLY ON MAKE.ORG"
+    },
+    "concrete_elements": {
+      "text": "Take care to illustrate your idea with concrete elements so that the public can fully understand your solution.",
+      "refused_card_example": "We should have more Europe.",
+      "validated_card_example": "We should give the European Union greater powers.",
+      "refused_card_example_2": "We should reduce youth unemployment.",
+      "validated_card_example_2": "We should set up Job Centres for young people."
+    },
+    "understandable_language": {
+      "text": "Make sure you are properly understood by using language that anyone can understand.",
+      "refused_card_example": "We should have only the most sedulous students accepted for this university course.",
+      "validated_card_example": "We should have only the most conscientious students accepted for this university course.",
+      "refused_card_example_2": "We should have a CHA that is able to detect and diagnose cancer.",
+      "validated_card_example_2": "We should have a Cat Health Agency that is able to detect and diagnose cancer."
+    },
+    "acronyms": {
+      "text": "Avoid including #, @ or other acronyms, such as “LOL”, in your solution.",
+      "refused_card_example": "We should have taxes reduced for entrepreneurs #competitivity!",
+      "validated_card_example": "We should have taxes reduced for entrepreneurs to make them competitive!"
+    },
+    "disclaimer": "Make.org is not an online platform operator falling within the scope of Law No. 2018-1202 of 22 December 2018 on the fight against information manipulation. As such, we are therefore not subject to the related obligations. However, the accuracy of the information posted on our site is important to us, and we detail in this Charter the measures we are taking in this regard.",
+    "foot_notes": {
+      "link": "https://assets-global.website-files.com/59833d390a24e50001b873d8/62d80ca82cd8871a7331f896_Gender%20Equality%20Plan%20V1_EN.docx%20-%20Google%C2%A0Docs.pdf",
+      "ethical_charter": "This moderation charter has been drawn up in accordance with the ethical charter that guarantees Make.org’s neutrality, independence and transparency",
+      "code_penal": "The French Code Pénal defines discrimination as “any distinction made between physical persons based on their origin, sex, family situation, obesity, physical appearance, surname, place of residence, state of health, disability, genetic features, customs, sexual orientation or identity, age, political opinions or union activities, or on their belonging or non-belonging, real or assumed, to a given ethnic group, nation, race or religion”. (Article 225-1§1.)"
+    },
+    "search_function": "Use the search function to check that your idea hasn’t already been presented on the website."
   },
   "cookies_management": {
     "title": "Use of cookies",
