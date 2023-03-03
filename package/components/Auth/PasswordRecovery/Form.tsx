@@ -67,6 +67,7 @@ export const PasswordRecoveryForm: React.FC = () => {
         name="password"
         icon={PasswordFieldIcon}
         value={password}
+        autocomplete="new-password"
         label={i18n.t('common.form.label.password')}
         handleChange={handleChange}
         error={passwordError}

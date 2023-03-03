@@ -184,7 +184,7 @@ export const RedLinkButtonStyle = styled(UnstyledButtonStyle)`
 export const LinkButtonStyle = styled(UnstyledButtonStyle)`
   display: inline-block;
   text-decoration: underline;
-  margin: 0 5px;
+  margin-right: 5px;
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
 `;
 

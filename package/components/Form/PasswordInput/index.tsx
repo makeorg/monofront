@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { ErrorObjectType } from '@make.org/types';
 import { useIsFieldValid } from '@make.org/utils/hooks/useFieldValidation';
+import i18n from 'i18next';
 import { throttle } from '@make.org/utils/helpers/throttle';
 import {
   BasicInputStyle,
@@ -8,6 +9,8 @@ import {
   FieldWrapperStyle,
   FloatingLabelStyle,
   MiddleFakeFieldStyle,
+  PasswordRequirements,
+  PasswordContainer,
 } from '@make.org/ui/elements/FormElements';
 import { PasswordButton } from './Button';
 
@@ -16,6 +19,8 @@ type Props = {
   name: string;
   /** Icon of the input */
   icon: JSX.Element;
+  /** Type of autocomplete */
+  autocomplete: string;
   /** Value of the input */
   value: string;
   /** Label of the input */
@@ -26,42 +31,56 @@ type Props = {
   error?: ErrorObjectType;
   /** Is input required or optional */
   required?: boolean;
+  requirements?: boolean;
 };
 
 export const PasswordInput: React.FC<Props> = ({
   name,
   icon,
+  autocomplete,
   value,
   label,
   handleChange,
   error,
   required = true,
+  requirements,
 }) => {
   const [isPasswordDisplayed, displayPassword] = useState<boolean>(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const isFieldValid = useIsFieldValid(inputRef, error);
 
   return (
-    <MiddleFakeFieldStyle hasError={!isFieldValid}>
-      <CenterInputIconStyle>{icon}</CenterInputIconStyle>
-      <FieldWrapperStyle>
-        <BasicInputStyle
-          ref={inputRef}
-          type={isPasswordDisplayed ? 'text' : 'password'}
-          name={name}
-          id={name}
-          value={value}
-          required={required}
-          onChange={throttle(handleChange)}
-          minLength={8}
-          aria-invalid={!isFieldValid}
+    <PasswordContainer>
+      {requirements && (
+        <PasswordRequirements>
+          {i18n.t('common.form.password_requirements')}
+        </PasswordRequirements>
+      )}
+      <MiddleFakeFieldStyle hasError={!isFieldValid}>
+        <CenterInputIconStyle>{icon}</CenterInputIconStyle>
+        <FieldWrapperStyle>
+          <BasicInputStyle
+            ref={inputRef}
+            type={isPasswordDisplayed ? 'text' : 'password'}
+            name={name}
+            id={name}
+            value={value}
+            required={required}
+            onChange={throttle(handleChange)}
+            aria-invalid={!isFieldValid}
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,}$"
+            title={i18n.t('common.form.password_requirements') || ''}
+            autoComplete={autocomplete}
+          />
+          <FloatingLabelStyle htmlFor={name}>{label}</FloatingLabelStyle>
+        </FieldWrapperStyle>
+        <PasswordButton
+          toggleIsPasswordDisplayed={() =>
+            displayPassword(!isPasswordDisplayed)
+          }
+          isPasswordDisplayed={isPasswordDisplayed}
         />
-        <FloatingLabelStyle htmlFor={name}>{label}</FloatingLabelStyle>
-      </FieldWrapperStyle>
-      <PasswordButton
-        toggleIsPasswordDisplayed={() => displayPassword(!isPasswordDisplayed)}
-        isPasswordDisplayed={isPasswordDisplayed}
-      />
-    </MiddleFakeFieldStyle>
+      </MiddleFakeFieldStyle>
+    </PasswordContainer>
   );
 };

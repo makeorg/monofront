@@ -357,3 +357,17 @@ export const TextAreaCounterStyle = styled(BodyXSDefault).attrs({ as: 'div' })`
   right: 5px;
   bottom: 5px;
 `;
+
+export const PasswordRequirements = styled.div`
+  align-self: flex-end;
+  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  margin: 15px 5px 0 0;
+`;
+
+export const PasswordContainer = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  width: 100%;
+  margin-bottom: 15px;
+`;

@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import { useAppContext } from '@make.org/store';
 import i18n from 'i18next';
 import { ErrorObjectType } from '@make.org/types';
@@ -50,6 +50,12 @@ export const UpdatePassword: FC<Props> = ({ userId, hasPassword }) => {
     actualPasswordError && formValues.actualPassword.length <= 1;
   const newPasswordIsEmptyAndWrong =
     newPasswordError && formValues.newPassword.length <= 1;
+
+  useEffect(() => {
+    if (formValues.actualPassword && formValues.newPassword) {
+      setCanSubmit(true);
+    }
+  }, [formValues]);
 
   const disableSubmitAndErrors = () => {
     setCanSubmit(false);
@@ -120,6 +126,7 @@ export const UpdatePassword: FC<Props> = ({ userId, hasPassword }) => {
           <PasswordInput
             label={i18n.t('profile.password_update.actual_password.label')}
             name="actualPassword"
+            autocomplete="current-password"
             icon={PasswordFieldIcon}
             value={formValues.actualPassword}
             error={actualPasswordError}
@@ -129,10 +136,12 @@ export const UpdatePassword: FC<Props> = ({ userId, hasPassword }) => {
         <PasswordInput
           label={i18n.t('profile.password_update.newpassword')}
           name="newPassword"
+          autocomplete="new-password"
           icon={PasswordFieldIcon}
           value={formValues.newPassword}
           error={newPasswordError}
           handleChange={handleChange}
+          requirements
         />
         <SubmitButton
           disabled={!canSubmit}

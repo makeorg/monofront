@@ -34,6 +34,7 @@ export const FirstStepRegister: React.FC<Props> = ({
         emailError={emailError}
         passwordError={passwordError}
         handleChange={handleChange}
+        requirements
       />
       {pendingProposal ? (
         <RedButtonProposalStyle

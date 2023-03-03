@@ -170,6 +170,10 @@ When('I register with an invalid postal code', () => {
   cy.get('[name=postalcode]').type('941');
 });
 
+When('I register with a wrong password {string}', password => {
+  cy.get('#password').type(password);
+});
+
 When('I register with a missing data policy', () => {
   cy.get('[name=age]').type('35');
 });

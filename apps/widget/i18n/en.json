@@ -157,6 +157,7 @@
         "malformed": "Please use the right url format \"https://example.com\""
       },
       "requirements_short": "All fields are mandatory.",
+      "password_requirements": "8 characters minimum with at least 1 number, 1 upper case, and 1 special character.",
       "post_code": "The postcode allows us to analyse the results by geographical area."
     },
     "social_login": {

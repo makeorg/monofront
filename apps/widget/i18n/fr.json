@@ -108,6 +108,7 @@
       "show_password": "Afficher le mot de passe",
       "requirements": "Tous les champs sont obligatoires sauf indication contraire.",
       "requirements_short": "Tous les champs sont obligatoires.",
+      "password_requirements": "8 caractères minimum dont au moins 1 chiffre, 1 majuscule et 1 caractère spécial.",
       "post_code": "Le code postal nous permet d'analyser les résultats par zone géographique.",
       "label": {
         "email": "E-mail",

@@ -27,7 +27,7 @@ Feature: Register
     Given I monitor API "postTracking" requests
     When I go to "france homepage"
     Then I display the register panel
-    When I register with email "emailValue@example.com" and password "TestMake"
+    When I register with email "emailValue@example.com" and password "TestMake1!"
     Then I see "S’inscrire par e-mail (2/2)" in "register-panel-title" container
     When I register with firstname "testfirstname" and age "37" and postal code "94120" and I accept the data policy before submitting
     Then I see "Bienvenue testfirstname !" in "register-confirmation-panel-title" container
@@ -48,13 +48,13 @@ Feature: Register
   Scenario: Check inputs validity on FR page
     Given I go to "france homepage"
     When I display the register panel
-    And I register with an invalid email "aaaa" 
-    Then The field "email" should be invalid
+    Then I register with an invalid email "aaaa" 
+    And The field "email" should be invalid
     When I register with a missing password
     Then The field "password" should be empty
     Then I clear the "email" field
     Then I clear the "password" field
-    When I register with email "emailValue@example.com" and password "TestMake"
+    When I register with email "emailValue@example.com" and password "TestMake1!"
     Then I see "S’inscrire par e-mail (2/2)" in "register-panel-title" container
     When I register with a missing firstname
     Then The field "firstname" should be invalid
@@ -65,10 +65,28 @@ Feature: Register
     When I register with a missing data policy
     Then The register checkbox should be empty 
 
+  Scenario: Check password validity on FR page
+    Given I go to "france homepage"
+    When I display the register panel
+    Then I register with a wrong password "TestMake"
+    And The field "password" should be invalid
+    Then I clear the "password" field
+    Then I register with a wrong password "Test1!"
+    And The field "password" should be invalid
+    Then I clear the "password" field
+    And I register with a wrong password "TestMakee!"
+    Then The field "password" should be invalid
+    And I clear the "password" field
+    When I register with a wrong password "TestMakee1"
+    Then The field "password" should be invalid
+    And I clear the "password" field
+    When I register with email "emailValue@example.com" and password "TestMake1!"
+    Then I see "S’inscrire par e-mail (2/2)" in "register-panel-title" container
+
   Scenario: Check legal consent for age input
     Given I go to "france homepage"
     When I display the register panel
-    And I register with email "emailValue@example.com" and password "TestMake"
+    And I register with email "emailValue@example.com" and password "TestMake1!"
     Then I see "S’inscrire par e-mail (2/2)" in "register-panel-title" container
     When I register as minor 
     Then I see the legal consent form
@@ -84,7 +102,7 @@ Feature: Register
   Scenario: Check register in FR without completed postal code
     Given I go to "france homepage"
     When I display the register panel
-    And I register with email "emailValue@example.com" and password "TestMake"
+    And I register with email "emailValue@example.com" and password "TestMake1!"
     Then I see "S’inscrire par e-mail (2/2)" in "register-panel-title" container
     When I register with firstname "testfirstname" and age "37" and postal code "" and I accept the data policy before submitting
     Then I see "Bienvenue testfirstname !" in "register-confirmation-panel-title" container
@@ -92,7 +110,7 @@ Feature: Register
   Scenario: Register with valid and invalid postal code on DE page
     Given I go to "german homepage" with a browser language "de"
     When I display the register panel
-    And I register with email "emailValue@example.com" and password "TestMake"
+    And I register with email "emailValue@example.com" and password "TestMake1!"
     Then I see "Registrieren bei E-Mail (2/2)" in "register-panel-title" container
     When I register with an invalid postal code
     Then The field "postalcode" should be invalid
@@ -105,7 +123,7 @@ Feature: Register
   Scenario: Check register in DE without completed postal code
     Given I go to "german homepage" with a browser language "de"
     When I display the register panel
-    And I register with email "emailValue@example.com" and password "TestMake"
+    And I register with email "emailValue@example.com" and password "TestMake1!"
     Then I see "Registrieren bei E-Mail (2/2)" in "register-panel-title" container
     When I register with firstname "testfirstname" and age "37" and postal code "" and I accept the data policy before submitting
     Then I see "Herzlich willkommen testfirstname !" in "register-confirmation-panel-title" container
@@ -113,5 +131,5 @@ Feature: Register
   Scenario: Check postal code is not displayed on GB page
     Given I go to "british homepage" with a browser language "en"
     When I display the register panel
-    And I register with email "emailValue@example.com" and password "TestMake"
+    And I register with email "emailValue@example.com" and password "TestMake1!"
     Then I don't see the "postalcode" field

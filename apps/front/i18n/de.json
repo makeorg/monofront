@@ -182,6 +182,7 @@
         "malformed": "Bitte beachte das URL-Format „https://beispiel.de“"
       },
       "requirements_short": "Alle Felder sind erforderlich.",
+      "password_requirements": "Mindestens 8 Zeichen, darunter mindestens 1 Ziffer, 1 Großbuchstabe und 1 Sonderzeichen.",
       "post_code": "Anhand der Postleitzahl können wir die Ergebnisse nach geografischen Gebieten analysieren."
     },
     "notifications": {

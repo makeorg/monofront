@@ -114,6 +114,7 @@ export const DeleteAccount: FC<Props> = ({ user }) => {
           <PasswordInput
             label={i18n.t('profile.delete_account.password')}
             name="password"
+            autocomplete="current-password"
             required
             icon={PasswordFieldIcon}
             value={formValues.password}

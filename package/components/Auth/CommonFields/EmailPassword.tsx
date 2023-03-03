@@ -14,6 +14,7 @@ type Props = {
   emailError: ErrorObjectType;
   passwordError: ErrorObjectType;
   handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  requirements?: boolean;
 };
 
 export const EmailPasswordFields: FC<Props> = ({
@@ -22,6 +23,7 @@ export const EmailPasswordFields: FC<Props> = ({
   emailError,
   passwordError,
   handleChange,
+  requirements,
 }) => (
   <>
     <UntypedInput
@@ -39,9 +41,11 @@ export const EmailPasswordFields: FC<Props> = ({
       name="password"
       icon={PasswordFieldIcon}
       value={passwordValue}
+      autocomplete="new-password"
       error={passwordError}
       label={i18n.t('common.form.label.password')}
       handleChange={handleChange}
+      requirements={requirements}
     />
   </>
 );
