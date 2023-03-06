@@ -102,7 +102,7 @@ export const sequenceByKindRoute = async (
       !withPushProposalCardParam
     ),
   };
-  sequenceLocation = `${sequenceLocation} ${questionModified.questionId}`;
+
   const sequenceMandatoryRequestHeaders: ApiServiceHeadersType = {
     'x-make-question-id': questionModified.questionId,
     'x-make-question-slug': questionSlug,
