@@ -71,8 +71,12 @@ export const DataPolicy: React.FC = () => {
       )
     );
     if (pendingProposal && question) {
-      await ProposalService.propose(pendingProposal, question.questionId, () =>
-        dispatch(setPanelContent(<ProposalSuccess />))
+      await ProposalService.propose(
+        pendingProposal,
+        question.questionId,
+        question.returnedLanguage,
+        country,
+        () => dispatch(setPanelContent(<ProposalSuccess />))
       );
     }
 

@@ -53,7 +53,7 @@ export const ProposalForm: FC = () => {
   const inputRef = useRef() as React.MutableRefObject<HTMLTextAreaElement>;
   const question: QuestionType | null = selectCurrentQuestion(state);
   const { isLoggedIn } = selectAuthentication(state);
-  const { device, language } = state.appConfig;
+  const { device, language, country } = state.appConfig;
   const isMobile = matchMobileDevice(device);
   const proposalIsEmpty = pendingProposal.length === 0;
   const baitText = getLocalizedBaitText(
@@ -98,6 +98,8 @@ export const ProposalForm: FC = () => {
       await ProposalService.propose(
         pendingProposal,
         question.questionId,
+        question.returnedLanguage,
+        country,
         () => {
           dispatch(setPanelContent(<ProposalSuccess />));
         }

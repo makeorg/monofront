@@ -44,6 +44,7 @@ import { OptInGTU } from '../Register/Steps/OptInGTU';
 const useLoginSuccess = (isRegister: boolean) => {
   const { dispatch, state } = useAppContext();
   const { pendingProposal } = state.pendingProposal;
+  const { country } = state.appConfig;
   const question = selectCurrentQuestion(state);
 
   return async (isNewAccount: boolean) => {
@@ -67,8 +68,12 @@ const useLoginSuccess = (isRegister: boolean) => {
     }
 
     if (pendingProposal) {
-      await ProposalService.propose(pendingProposal, question.questionId, () =>
-        dispatch(setPanelContent(<ProposalSuccess />))
+      await ProposalService.propose(
+        pendingProposal,
+        question.questionId,
+        question.returnedLanguage,
+        country,
+        () => dispatch(setPanelContent(<ProposalSuccess />))
       );
     }
   };

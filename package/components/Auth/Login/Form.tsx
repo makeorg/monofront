@@ -43,7 +43,7 @@ type TypeLoginValues = {
 
 export const LoginForm: FC = () => {
   const { dispatch, state } = useAppContext();
-  const { privacyPolicy } = state.appConfig;
+  const { privacyPolicy, country } = state.appConfig;
   const { pendingProposal } = state.pendingProposal;
   const question = selectCurrentQuestion(state);
   const defaultFormValues = {
@@ -94,8 +94,12 @@ export const LoginForm: FC = () => {
         return;
       }
 
-      await ProposalService.propose(pendingProposal, question.questionId, () =>
-        dispatch(setPanelContent(<ProposalSuccess />))
+      await ProposalService.propose(
+        pendingProposal,
+        question.questionId,
+        question.returnedLanguage,
+        country,
+        () => dispatch(setPanelContent(<ProposalSuccess />))
       );
     };
     const handleErrors = (serviceErrors?: ErrorObjectType[]) => {

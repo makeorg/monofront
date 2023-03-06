@@ -12,11 +12,18 @@ export type TypeReason =
 const propose = async (
   content: string,
   questionId: string,
+  language: string,
+  country: string,
   success?: () => void,
   failure?: () => void
 ): Promise<void> => {
   try {
-    await ProposalApiService.propose(content.trim(), questionId);
+    await ProposalApiService.propose(
+      content.trim(),
+      questionId,
+      language,
+      country
+    );
     if (success) {
       success();
     }

@@ -34,15 +34,17 @@ const AVAILABLE_ALGORITHMS: TypeAvailableAlgorithms = {
 export class ProposalApiService {
   static propose(
     content: string,
-    questionId: string
+    questionId: string,
+    language: string,
+    country: string
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_PROPOSALS, {
       method: 'POST',
       body: JSON.stringify({
         content,
         questionId,
-        language: ApiService.language,
-        country: ApiService.country,
+        language,
+        country,
       }),
     });
   }

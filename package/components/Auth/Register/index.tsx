@@ -162,6 +162,8 @@ export const Register: React.FC = () => {
           await ProposalService.propose(
             pendingProposal,
             question.questionId,
+            question.returnedLanguage,
+            country,
             () => dispatch(setPanelContent(<ProposalSuccess isRegister />))
           );
         }

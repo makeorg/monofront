@@ -47,7 +47,7 @@ type Props = {
 
 export const FacebookAuthentication: React.FC<Props> = ({ isRegister }) => {
   const { dispatch, state } = useAppContext();
-  const { privacyPolicy, language } = state.appConfig;
+  const { privacyPolicy, language, country } = state.appConfig;
   const { pendingProposal } = state.pendingProposal;
   const question = selectCurrentQuestion(state);
 
@@ -146,6 +146,8 @@ export const FacebookAuthentication: React.FC<Props> = ({ isRegister }) => {
         await ProposalService.propose(
           pendingProposal,
           question.questionId,
+          question.returnedLanguage,
+          country,
           () => dispatch(setPanelContent(<ProposalSuccess />))
         );
       }
