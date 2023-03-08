@@ -25,6 +25,7 @@ import { Cookie } from 'universal-cookie';
 import { setLanguage } from '@make.org/utils/helpers/countries';
 import deepFreeze from 'deep-freeze';
 import { getLoggerInstance } from '@make.org/logger';
+import serialize from 'serialize-javascript';
 import { WIDGET_CLIENT_DIR } from './paths';
 import App from '../client/App';
 
@@ -63,7 +64,7 @@ const renderHtml = (
       .replace(/<div id="app"><\/div>/, `<div id="app">${body}</div>`)
       .replace('<head>', `<head>${linkTags}`)
       .replace('</head>', `${styles}</head>`)
-      .replace('"__INITIAL_STATE__"', JSON.stringify(appState))
+      .replace('"__INITIAL_STATE__"', serialize(appState, { isJSON: true }))
       .replace(/__LANG__/gi, appState.appConfig.language)
       .replace(/___API_URL_CLIENT_SIDE___/gi, env.apiUrlClientSide() || '')
       .replace(/___NONCE_ID___/gi, nonceId)

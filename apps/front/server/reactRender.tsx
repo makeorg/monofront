@@ -25,6 +25,7 @@ import { StateRoot } from '@make.org/types';
 import { Request, Response } from 'express';
 import { Cookie } from 'universal-cookie';
 import { getLoggerInstance } from '@make.org/logger';
+import serialize from 'serialize-javascript';
 import { AppContainer } from '../client/app';
 import { ViewsService } from './service/ViewsService';
 import { translationRessoucesLanguages } from '../i18n';
@@ -71,7 +72,7 @@ const renderHtml = (
       )}${linkTags}<link rel="manifest" href="${pwaManifest}" />`
     )
     .replace('</head>', `${styles}</head>`)
-    .replace('"__REDUX__"', JSON.stringify(appState))
+    .replace('"__INITIAL_STATE__"', serialize(appState, { isJSON: true }))
     .replace(/__LANG__/gi, appState.appConfig.language)
     .replace(/___API_URL_CLIENT_SIDE___/gi, env.apiUrlClientSide() || '')
     .replace(/___FB_PIXEL_ID___/gi, env.fbPixelId() || '')

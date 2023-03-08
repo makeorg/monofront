@@ -35,3 +35,4 @@ declare module '*.jpeg' {
 }
 declare module '@make.org/utils/services/Trackers/fbq.js';
 declare module '@make.org/utils/services/Trackers/twttr.js';
+declare module 'serialize-javascript';
