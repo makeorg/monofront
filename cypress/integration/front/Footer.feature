@@ -34,7 +34,7 @@ Feature: The footer
     And I see a link "Politique de données" to "/FR/politique-donnees" in "footer" container
     And I see a link "Déclaration d'accessibilité" to "/FR/declaration-accessibilite" in "footer" container
     And I see a link "Gestion des cookies" to "/FR/cookies" in "footer" container
-    And I see a link "Charte de modération" to "/FR/charte-moderation" in "footer" container
+    And I see a link "Charte de modération" to "/FR/moderation" in "footer" container
     And I see "France" in "footer" container
 
   Scenario: Great Britain Mobile Footer is complete
@@ -45,7 +45,7 @@ Feature: The footer
     And I see a link "Terms of use" to "/GB/terms-of-use" in "footer" container
     And I see a link "Data use policy" to "/GB/data-terms" in "footer" container
     And I see a link "Use of cookies" to "/GB/cookies" in "footer" container
-    And I see a link "Moderation charter" to "/GB/moderation-charter" in "footer" container
+    And I see a link "Moderation charter" to "/GB/moderation" in "footer" container
 
     And I see "Great Britain" in "footer" container
 
@@ -59,7 +59,7 @@ Feature: The footer
     And I see a link "Datenschutzerklärung" to "/DE/datenschutzerklärung" in "footer" container
     And I see a link "Barrierefreiheit" to "/DE/barrierefreiheit" in "footer" container
     And I see a link "Cookie-Richtlinie" to "/DE/cookies" in "footer" container
-    And I see a link "Moderationscharta" to "/DE/moderation-charter" in "footer" container
+    And I see a link "Moderationscharta" to "/DE/moderationscharta" in "footer" container
     And I see "Deutschland" in "footer" container
 
   Scenario: France Mobile Footer in english
@@ -73,7 +73,7 @@ Feature: The footer
     And I see a link "Terms of use" to "/FR/terms-of-use" in "footer" container
     And I see a link "Data use policy" to "/FR/data-terms" in "footer" container
     And I see a link "Use of cookies" to "/FR/cookies" in "footer" container
-    And I see a link "Moderation charter" to "/FR/moderation-charter" in "footer" container
+    And I see a link "Moderation charter" to "/FR/moderation" in "footer" container
     And I see "France" in "footer" container
 
   Scenario: France Mobile Footer in german
@@ -87,7 +87,7 @@ Feature: The footer
     And I see a link "Datenschutzerklärung" to "/FR/datenschutzerklärung" in "footer" container
     And I see a link "Barrierefreiheit" to "/FR/barrierefreiheit" in "footer" container
     And I see a link "Cookie-Richtlinie" to "/FR/cookies" in "footer" container
-    And I see a link "Moderationscharta" to "/FR/moderation-charter" in "footer" container
+    And I see a link "Moderationscharta" to "/FR/moderationscharta" in "footer" container
     And I see "Frankreich" in "footer" container
 
   Scenario: Great Britain Mobile Footer in french
@@ -103,7 +103,7 @@ Feature: The footer
     And I see a link "Politique de données" to "/GB/politique-donnees" in "footer" container
     And I see a link "Déclaration d'accessibilité" to "/GB/declaration-accessibilite" in "footer" container
     And I see a link "Gestion des cookies" to "/GB/cookies" in "footer" container
-    And I see a link "Charte de modération" to "/GB/charte-moderation" in "footer" container
+    And I see a link "Charte de modération" to "/GB/moderation" in "footer" container
     And I see "Grande Bretagne" in "footer" container
 
   Scenario: Great Britain Mobile Footer in german
@@ -115,7 +115,7 @@ Feature: The footer
     And I see a link "Datenschutzerklärung" to "/GB/datenschutzerklärung" in "footer" container
     And I see a link "Barrierefreiheit" to "/GB/barrierefreiheit" in "footer" container
     And I see a link "Cookie-Richtlinie" to "/GB/cookies" in "footer" container
-    And I see a link "Moderationscharta" to "/GB/moderation-charter" in "footer" container
+    And I see a link "Moderationscharta" to "/GB/moderationscharta" in "footer" container
     And I see "Großbritannien" in "footer" container
 
   Scenario: Germany Mobile Footer in french
@@ -132,7 +132,7 @@ Feature: The footer
     And I see a link "Politique de données" to "/DE/politique-donnees" in "footer" container
     And I see a link "Déclaration d'accessibilité" to "/DE/declaration-accessibilite" in "footer" container
     And I see a link "Gestion des cookies" to "/DE/cookies" in "footer" container
-    And I see a link "Charte de modération" to "/DE/charte-moderation" in "footer" container
+    And I see a link "Charte de modération" to "/DE/moderation" in "footer" container
     And I see "Allemagne" in "footer" container
 
   Scenario: Germany Mobile Footer in english
@@ -144,5 +144,5 @@ Feature: The footer
     And I see a link "Terms of use" to "/DE/terms-of-use" in "footer" container
     And I see a link "Data use policy" to "/DE/data-terms" in "footer" container
     And I see a link "Use of cookies" to "/DE/cookies" in "footer" container
-    And I see a link "Moderation charter" to "/DE/moderation-charter" in "footer" container
+    And I see a link "Moderation charter" to "/DE/moderation" in "footer" container
     And I see "Germany" in "footer" container

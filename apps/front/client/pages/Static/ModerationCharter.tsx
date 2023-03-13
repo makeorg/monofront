@@ -35,7 +35,7 @@ const ModerationCharterPage: FC = () => (
       <ModerationSectionTitleStyle>
         {i18n.t('moderation_charter.refused_examples')}
       </ModerationSectionTitleStyle>
-      <StaticModerationOrderedExamplesStyle>
+      <StaticModerationOrderedExamplesStyle className="list-style-inside">
         <StaticModerationOrderedItemStyle>
           <strong>
             {' '}

@@ -1134,7 +1134,7 @@
     "refused_label": "REFUSED",
     "validated_label": "VALIDATED",
     "title": "MAKE.ORG MODERATION CHARTER",
-    "description": "Every solution submitted to the platform is moderated manually by Make.org’s teams of moderators, in accordance with the following moderation charter criteria. Moderation takes place within 48 hours of the solution’s submission. You will be informed by e-mail (providing you validated your e-mail address when registering) of the publication or refusal of your solution. Minor spelling mistakes are corrected by the moderators but it is up to you to resubmit your solution if it cannot be accepted.",
+    "description": "Every solution submitted to the platform is moderated manually by Make.org’s teams of moderators, in accordance with the following moderation charter criteria¹. Moderation takes place within 48 hours of the solution’s submission. You will be informed by e-mail (providing you validated your e-mail address when registering) of the publication or refusal of your solution. Minor spelling mistakes are corrected by the moderators but it is up to you to resubmit your solution if it cannot be accepted.",
     "refused_examples": "The following are not allowed on the Make.org platform: ",
     "incomprehensible_solutions": {
       "title": "Incomprehensible solutions",
@@ -1150,7 +1150,7 @@
     },
     "discriminatory_solutions": {
       "title": "Discriminatory solutions",
-      "description": "In accordance with legislation, your solution may not contain polemic inciting violence or hatred. Nor may it contain discriminatory or defamatory statements, for example directed against any ethnic, social or religious group.",
+      "description": "In accordance with legislation², your solution may not contain polemic inciting violence or hatred. Nor may it contain discriminatory or defamatory statements, for example directed against any ethnic, social or religious group.",
       "refused_card_example": "We should ensure that the people of Brittany do not maintain their degrading traditions.",
       "validated_card_example": "We should strive to ensure that French communities can improve their communications with each other.",
       "refused_card_example_2": "We should forbid the wearing of crosses on necklaces, as they are a symbol of subservience.",

@@ -75,7 +75,7 @@
     },
     "moderation": {
       "title": "Moderationscharta - Make.org",
-      "description": "Jeder Vorschlag, der auf der Plattform eingereicht wird, wird persönlich von den Moderationsteams von Make.org moderiert."
+      "description": "Welche Vorschläge werden während der Moderation auf Make.org abgelehnt? Wie formuliert man einen Vorschlag richtig? Jeder Vorschlag, der auf der Plattform eingereicht wird, wird persönlich von den Moderationsteams von Make.org moderiert. Als Grundlage dienen die nachfolgenden Kriterien der Moderationscharta"
     },
     "privacy_policy": {
       "title": "Datenschutzerklärung - Make.org",
@@ -1216,7 +1216,7 @@
     "refused_label": "ABGELEHNT", 
     "validated_label": "FREIGEGEBEN",
     "title": "Moderationscharta", 
-    "description": "Welche Vorschläge werden während der Moderation auf Make.org abgelehnt? Wie formuliert man einen Vorschlag richtig? Jeder Vorschlag, der auf der Plattform eingereicht wird, wird persönlich von den Moderationsteams von Make.org moderiert. Als Grundlage dienen die nachfolgenden Kriterien der Moderationscharta1. Die Moderation erfolgt innerhalb von 48 Stunden nach dem Einreichen des Vorschlags. Du wirst per E-Mail informiert (sofern du deine E-Mail-Adresse während der Registrierung bestätigt hast), ob dein Vorschlag veröffentlicht oder abgelehnt wird. Kleine Rechtschreibfehler werden von den Moderator:innen korrigiert. Es ist jedoch deine Verantwortung, deinen Vorschlag zu überarbeiten, wenn er nicht akzeptiert werden kann.",
+    "description": "Welche Vorschläge werden während der Moderation auf Make.org abgelehnt? Wie formuliert man einen Vorschlag richtig? Jeder Vorschlag, der auf der Plattform eingereicht wird, wird persönlich von den Moderationsteams von Make.org moderiert. Als Grundlage dienen die nachfolgenden Kriterien der Moderationscharta¹. Die Moderation erfolgt innerhalb von 48 Stunden nach dem Einreichen des Vorschlags. Du wirst per E-Mail informiert (sofern du deine E-Mail-Adresse während der Registrierung bestätigt hast), ob dein Vorschlag veröffentlicht oder abgelehnt wird. Kleine Rechtschreibfehler werden von den Moderator:innen korrigiert. Es ist jedoch deine Verantwortung, deinen Vorschlag zu überarbeiten, wenn er nicht akzeptiert werden kann.",
     "refused_examples": "Auf der Plattform Make.org ist Folgendes nicht erlaubt: ",
     "incomprehensible_solutions": {
       "title": "Unverständliche Vorschläge",
@@ -1232,7 +1232,7 @@
     }, 
     "discriminatory_solutions": {
       "title": "Diskriminierende Vorschläge",
-      "description": "In Übereinstimmung mit geltendem Recht2 darf dein Vorschlag keine Reden enthalten, die zu Gewalt oder Hass aufrufen. Er darf zudem weder diskriminierende noch verleumderische Aussagen enthalten, insbesondere gegenüber jedweder ethnischen, gesellschaftlichen oder religiösen Gruppe.",
+      "description": "In Übereinstimmung mit geltendem Recht² darf dein Vorschlag keine Reden enthalten, die zu Gewalt oder Hass aufrufen. Er darf zudem weder diskriminierende noch verleumderische Aussagen enthalten, insbesondere gegenüber jedweder ethnischen, gesellschaftlichen oder religiösen Gruppe.",
       "refused_card_example": "Man sollte aufpassen, dass die Sorben ihre herabwürdigenden Traditionen nicht aufrechterhalten.", 
       "validated_card_example": "Man sollte darauf achten, dass die Deutschen besser miteinander kommunizieren können.",
       "refused_card_example_2": "Man sollte Kreuze um den Hals verbieten, da sie ein Symbol für Unterwerfung sind.", 

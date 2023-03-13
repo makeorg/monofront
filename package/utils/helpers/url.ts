@@ -39,7 +39,7 @@ import {
   ROUTE_STATIC_LEGAL,
   ROUTE_STATIC_A11Y,
   ROUTE_STATIC_MODERATION,
-  ROUTE_STATIC_MODERATION_FR,
+  ROUTE_STATIC_MODERATION_DE,
 } from '../routes';
 import { DEFAULT_COUNTRY } from '../constants/config';
 
@@ -465,8 +465,8 @@ export const getModerationPageLink = (
     country,
     language,
     ROUTE_STATIC_MODERATION,
-    ROUTE_STATIC_MODERATION_FR,
-    ROUTE_STATIC_MODERATION
+    ROUTE_STATIC_MODERATION,
+    ROUTE_STATIC_MODERATION_DE
   );
 
 /**

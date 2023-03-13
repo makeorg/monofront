@@ -341,13 +341,20 @@ export const ModerationCharterWrapperStyle = styled(StaticPageWrapperStyle)`
 export const StaticModerationOrderedExamplesStyle = styled.ol`
   padding-left: 0;
   margin: 30px 0;
+  &.list-style-inside {
+    list-style-position: inside;
+  }
+  &.list-style-inside li::marker {
+    color: ${colors.Content.Interface.Dark};
+  }
 `;
 
 export const StaticModerationOrderedItemStyle = styled.li`
   align-self: flex-start;
-  margin-top: 60px;
+  margin-top: 40px;
   &::marker {
     color: ${colors.Content.Alert.Neutral};
+    font-weight: bold;
   }
 `;
 
@@ -414,7 +421,6 @@ export const ModerationFootnotesStyleOrderedListItemStyle = styled.li`
 
 export const ModerationSectionTitleStyle = styled(StaticSectionTitle)`
   color: ${colors.Content.Interface.Dark};
-  margin: 50px 0;
 `;
 
 export const ModerationDisclaimerParagraphStyle = styled(StaticParagraphStyle)`

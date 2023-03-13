@@ -56,7 +56,7 @@ import {
   ROUTE_STATIC_A11Y_DE,
   ROUTE_STATIC_A11Y,
   ROUTE_STATIC_MODERATION,
-  ROUTE_STATIC_MODERATION_FR,
+  ROUTE_STATIC_MODERATION_DE,
 } from '@make.org/utils/routes';
 import Cookies from 'universal-cookie';
 import { StateUserCookiesPreferences } from '@make.org/types';
@@ -244,7 +244,6 @@ export const Routes: FC = () => {
       <Route path={ROUTE_STATIC_GTU_FR} component={TermsOfUse} />
       <Route path={ROUTE_STATIC_DATA_FR} component={Data} />
       <Route path={ROUTE_STATIC_A11Y_FR} component={Accessibility} />
-      <Route path={ROUTE_STATIC_MODERATION_FR} component={Moderation} />
 
       {/* Routes used for de language */}
       <Route path={ROUTE_STATIC_LEGAL_DE} component={LegalPage} />
@@ -252,7 +251,7 @@ export const Routes: FC = () => {
       <Route path={ROUTE_STATIC_DATA_DE} component={Data} />
       <Route path={ROUTE_STATIC_CONTACT_DE} component={Contact} />
       <Route path={ROUTE_STATIC_A11Y_DE} component={Accessibility} />
-      <Route path={ROUTE_STATIC_MODERATION} component={Moderation} />
+      <Route path={ROUTE_STATIC_MODERATION_DE} component={Moderation} />
 
       <Route path={ROUTE_STATIC_NOTFOUND} component={NotFoundPage} />
       <Redirect exact path="/" to={getHomeLink(country || DEFAULT_COUNTRY)} />
