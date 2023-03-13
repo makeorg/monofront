@@ -1,12 +1,11 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import {
   Layouts,
   DefaultPadding,
   Breakpoints,
 } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const TabNavStyle = styled.nav`
@@ -53,7 +52,7 @@ const TabStyle = styled.li<{ isSelected?: boolean }>`
   flex-flow: column;
   min-width: 150px;
   text-transform: uppercase;
-  font-family: ${MakeFonts.TradeGothicBoldCondensed};
+  font-family: ${typography.FontFamily.Condensed};
   background-color: ${colors.Background.Interface.Lighter};
   border-top: ${props =>
     props.isSelected
@@ -75,9 +74,9 @@ const TabStyle = styled.li<{ isSelected?: boolean }>`
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
-    font-family: ${MakeFonts.TradeGothicBoldCondensed};
+    font-family: ${typography.FontFamily.Condensed};
     width: 100%;
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
     padding: ${props => (props.isSelected ? '7px 5px' : '5px')};
     text-decoration: none;
     text-align: center;
@@ -91,7 +90,7 @@ const TabStyle = styled.li<{ isSelected?: boolean }>`
     }
     @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
       flex-flow: row;
-      font-size: ${intToPx(typography.font.fontsize.S.value)};
+      font-size: ${typography.FontSize.Paris};
       padding: ${props => (props.isSelected ? '15px' : '10px 15px')};
     }
   }

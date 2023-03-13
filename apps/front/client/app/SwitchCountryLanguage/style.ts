@@ -1,10 +1,9 @@
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { TitleS } from '@make.org/designsystem/components/Titles';
 import { BodyMDefault } from '@make.org/designsystem/components/Body';
 
@@ -23,7 +22,7 @@ export const SwitchCountryLanguageTitleStyle = styled(TitleS).attrs({
 })`
   text-transform: none;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.XL.value)};
+    font-size: ${typography.FontSize.IleDeFrance};
   }
 `;
 
@@ -60,7 +59,7 @@ export const MultilingualRadioItemWrapperStyle = styled.li`
   justify-content: center;
   width: 100%;
   border-radius: 8px;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   padding: 15px 20px;
   text-decoration: none;
   :last-child {
@@ -72,7 +71,7 @@ export const MultilingualRadioItemWrapperStyle = styled.li`
     border-radius: 8px;
   }
   &:focus {
-    font-family: ${MakeFonts.CircularStandardBold};
+    font-family: ${typography.FontFamily.Hightlight};
     font-weight: bold;
     color: ${colors.Content.Interface.Dark};
   }
@@ -81,16 +80,16 @@ export const MultilingualRadioItemWrapperStyle = styled.li`
 export const MultilingualRadioAsTransparentButtonLabelStyle = styled.label`
   display: inline-flex;
   align-items: center;
-  font-family: ${MakeFonts.CircularStandardBook};
+  font-family: ${typography.FontFamily.Default};
   font-weight: normal;
   color: ${colors.Content.Interface.DarkSecondary};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   width: 100%;
   text-align: center;
   &.selected,
   &:hover,
   &:focus {
-    font-family: ${MakeFonts.CircularStandardBold};
+    font-family: ${typography.FontFamily.Hightlight};
     font-weight: bold;
     color: ${colors.Content.Interface.Dark};
   }

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { TextColors } from '@make.org/assets/vars/Colors';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
@@ -34,17 +34,17 @@ export const AuthorInfosStyle = styled(ParagraphStyle)`
   display: inline-flex;
   flex-direction: row;
   align-items: center;
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   line-height: normal;
   color: ${colors.Content.Interface.DarkSecondary};
   font-style: normal;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
 `;
 
 export const ProposalStatusStyle = styled.span`
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   color: ${colors.Content.Interface.Light};
   padding: 5px 10px;
   &.status-accepted {
@@ -58,7 +58,7 @@ export const ProposalStatusStyle = styled.span`
     background-color: ${colors.Background.Interface.DarkSecondary};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
 `;
 

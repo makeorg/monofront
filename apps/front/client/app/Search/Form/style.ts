@@ -1,10 +1,9 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const SearchFormTriggerStyle = styled(UnstyledButtonStyle)`
@@ -18,7 +17,7 @@ export const SearchFormTriggerStyle = styled(UnstyledButtonStyle)`
 `;
 
 export const SearchFormCancelTriggerStyle = styled(UnstyledButtonStyle)`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   color: ${colors.Content.Interface.DarkSecondary};
   text-decoration: underline;
   margin-left: 25px;
@@ -76,17 +75,14 @@ export const SearchInputStyle = styled.input`
   background-color: transparent;
   width: 100%;
   color: ${colors.Content.Interface.DarkSecondary};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   line-height: 1;
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  }
 `;
 
 export const SearchLabelStyle = styled.label`
-  font-family: ${MakeFonts.CircularStandardBook};
+  font-family: ${typography.FontFamily.Default};
   color: ${colors.Content.Interface.DarkSecondary};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   line-height: 1;
   font-weight: normal;
   position: absolute;
@@ -101,7 +97,6 @@ export const SearchLabelStyle = styled.label`
     opacity: 0;
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
     line-height: 39px;
   }
 `;

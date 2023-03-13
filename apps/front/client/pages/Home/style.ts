@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { pxToRem, intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import {
@@ -42,6 +42,6 @@ export const HomepageSectionTitleStyle = styled(TitleL)`
     ${ContainerWithPadding};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.X4L.value)};
+    font-size: ${typography.FontSize.Earth};
   }
 `;

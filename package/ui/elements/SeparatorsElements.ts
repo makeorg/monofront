@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { MiddleRowStyle } from './FlexElements';
@@ -43,7 +43,7 @@ export const SeparatorProposalAuthLogin = styled(SeparatorWrapperStyle)`
 export const TextSeparatorStyle = styled(MiddleRowStyle)`
   width: 60px;
   line-height: 24px;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
 `;
 
 export const ContentSeparatorStyle = styled(SeparatorStyle)`

@@ -2,9 +2,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { typography } from 'athena-design-tokens';
 import { colors } from '@make.org/designsystem/tokens/colors';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { typography } from '@make.org/designsystem/tokens/typography';
 
 export const KeywordsListWrapperStyle = styled.ul`
   display: flex;
@@ -30,9 +29,9 @@ export const KeywordItemLinkStyle = styled(Link)`
   align-items: center;
   letter-spacing: 0.14px;
   line-height: 1.5;
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   text-decoration: none;
   max-width: 80%;
   margin: 25px 0px;

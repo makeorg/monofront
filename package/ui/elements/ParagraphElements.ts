@@ -1,26 +1,23 @@
 import styled from 'styled-components';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { typography } from 'athena-design-tokens';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 
 export const ParagraphStyle = styled.p`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   color: ${colors.Content.Interface.DarkSecondary};
 `;
 
 export const PlayfairParagraphStyle = styled.p`
-  font-family: ${MakeFonts.PlayfairDisplayRegularItalic};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  }
+  font-family: ${typography.FontFamily.Italic};
+  font-size: ${typography.FontSize.Arrondissement};
+
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.S.value)};
+    font-size: ${typography.FontSize.Paris};
   }
   @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.M.value)};
+    font-size: ${typography.FontSize.PetiteCouronne};
   }
 `;
 
@@ -38,12 +35,12 @@ export const ExtraBlackParagraphStyle = styled(InlineParagraphStyle)`
 `;
 
 export const ConditionParagraphMarginStylePanel = styled(InlineParagraphStyle)`
-  font-family: ${MakeFonts.CircularStandardBook};
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-family: ${typography.FontFamily.Default};
+  font-size: ${typography.FontSize.RueDeLappe};
   width: 100%;
   margin-bottom: 15px;
   color: ${colors.Content.Interface.DarkSecondary};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
 `;

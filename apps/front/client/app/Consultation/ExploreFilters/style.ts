@@ -1,10 +1,9 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import {
   SvgSmallArrowUp,
   SvgArrowGroupUpDown,
@@ -59,13 +58,13 @@ export const TransparentButtonFilterStyle = styled.button`
   line-height: 1.31;
   border: solid 1px ${colors.Border.Interface.DarkMain};
   background-color: transparent;
-  font-family: ${MakeFonts.CircularStandardBook};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-family: ${typography.FontFamily.Default};
+  font-size: ${typography.FontSize.Arrondissement};
   color: ${colors.Content.Interface.Dark};
   &.selected {
     background-color: ${colors.Content.Make.Primary};
     color: ${colors.Content.Interface.Light};
-    font-family: ${MakeFonts.CircularStandardBold};
+    font-family: ${typography.FontFamily.Hightlight};
     font-weight: bold;
   }
   &:hover,
@@ -90,7 +89,7 @@ export const RadioItemWrapperStyle = styled.li`
   justify-content: center;
   width: 100%;
   border-radius: 8px;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   padding: 15px 20px;
   text-decoration: none;
   :last-child {
@@ -105,16 +104,16 @@ export const RadioItemWrapperStyle = styled.li`
 export const RadioAsTransparentButtonLabelStyle = styled.label`
   display: inline-flex;
   align-items: center;
-  font-family: ${MakeFonts.CircularStandardBook};
+  font-family: ${typography.FontFamily.Default};
   font-weight: normal;
   color: ${colors.Content.Interface.DarkSecondary};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   width: 100%;
   text-align: center;
   &.selected,
   &:hover,
   &:focus {
-    font-family: ${MakeFonts.CircularStandardBold};
+    font-family: ${typography.FontFamily.Hightlight};
     font-weight: bold;
     color: ${colors.Content.Interface.Dark};
   }
@@ -176,7 +175,6 @@ export const SvgControversial = styled(SvgLightning)`
   margin-right: 16px;
   fill: #f7b500;
 `;
-console.log('>>>color:', color);
 export const CloseApplyStyle = styled.button`
   display: flex;
   flex-direction: row-reverse;

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
-import { intToPx } from '@make.org/utils/helpers/styled';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { SpaceBetweenRowStyle } from '@make.org/ui/elements/FlexElements';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { SocialNetworksColors } from '@make.org/assets/vars/Colors';
@@ -14,7 +13,7 @@ export const SharingStyle = styled(SpaceBetweenRowStyle)`
 const SharingButtonStyle = styled(UnstyledButtonStyle)`
   width: 40px;
   height: 40px;
-  font-size: ${intToPx(typography.font.fontsize.S.value)};
+  font-size: ${typography.FontSize.Paris};
   color: ${colors.Content.Interface.Light};
   border-radius: 50%;
   align-items: center;

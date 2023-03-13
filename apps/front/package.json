@@ -21,7 +21,6 @@
     "@make.org/ui": "0.1.0",
     "@make.org/utils": "0.1.0",
     "adblockdetect": "^0.0.2",
-    "athena-design-tokens": "^0.1.7",
     "axios": "~0.26.1",
     "axios-retry": "~3.2.6",
     "babel-register": "^6.26.0",

@@ -1,8 +1,6 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { Link } from 'react-router-dom';
-import { intToPx } from '@make.org/utils/helpers/styled';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { SvgExternalLink } from '../Svg/elements';
 import {
@@ -15,7 +13,7 @@ import {
 
 const linkStyle = (linkColor: string) => `
   color: ${linkColor};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   &:hover,
   &:focus {
     color: ${linkColor};
@@ -82,13 +80,13 @@ export const LinkAsGreyButton = styled(GreyButtonStyle)`
 export const RedUppercaseLinkElementStyle = styled(Link)`
   ${linkStyle(colors.Content.Make.Secondary)};
   text-transform: uppercase;
-  font-family: ${MakeFonts.TradeGothicBoldCondensed};
+  font-family: ${typography.FontFamily.Condensed};
 `;
 
 export const RedUppercaseHTMLLinkElementStyle = styled.a`
   ${linkStyle(colors.Content.Make.Secondary)};
   text-transform: uppercase;
-  font-family: ${MakeFonts.TradeGothicBoldCondensed};
+  font-family: ${typography.FontFamily.Condensed};
   & svg {
     max-width: 16px;
     max-height: 14px;

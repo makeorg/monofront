@@ -1,12 +1,10 @@
 import styled, { keyframes } from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { SpaceBetweenColumnStyle } from '@make.org/ui/elements/FlexElements';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Link } from 'react-router-dom';
 import { SvgExternalLink, SvgWorldMap } from '@make.org/ui/Svg/elements';
 import { SEARCH } from '@make.org/types/enums';
-import { intToPx } from '@make.org/utils/helpers/styled';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { colors } from '@make.org/designsystem/tokens/colors';
 
@@ -84,18 +82,18 @@ export const MenuItemStyle = styled.li`
 `;
 
 export const MenuItemTitleStyle = styled.span`
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
   padding: 0 30px;
 `;
 
 export const MenuInternalLinkStyle = styled(Link)`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   line-height: 67px;
   text-decoration: none;
   padding: 0 30px;
   &.current {
-    font-family: ${MakeFonts.CircularStandardBold};
+    font-family: ${typography.FontFamily.Hightlight};
     font-weight: bold;
   }
 `;
@@ -103,7 +101,7 @@ export const MenuInternalLinkStyle = styled(Link)`
 export const MenuExternalLinkStyle = styled.a`
   display: inline-flex;
   align-items: center;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   line-height: 67px;
   padding: 0 30px;
 `;
@@ -149,11 +147,11 @@ export const DesktopMenuItemStyle = styled.li`
 
 const DesktopLinkStyle = `
   display: inline-flex;
-  font-family: ${MakeFonts.TradeGothicBoldCondensed};
+  font-family: ${typography.FontFamily.Condensed};
   text-transform: uppercase;
   text-decoration: none;
   align-items: center;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   line-height: 40px;
   padding: 0 30px;
 `;
@@ -169,10 +167,10 @@ export const DesktopMenuExternalLinkStyle = styled.a`
 export const MenuItemCountryLanguageLinkStyle = styled(Link)`
   display: inline-flex;
   align-items: center;
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
   text-decoration: none;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   color: ${colors.Content.Interface.Dark};
 `;
 

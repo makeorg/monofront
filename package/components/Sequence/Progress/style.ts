@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { SvgPreviousArrowLeft } from '@make.org/ui/Svg/elements';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
@@ -30,15 +30,15 @@ export const ProgressCounterStyle = styled.span`
   flex: 0;
   color: ${colors.Content.Interface.DarkSecondary};
   padding: 0 10px;
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   line-height: 1;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
     line-height: 1.5;
     padding: 0 25px;
     &.widget {
       padding: 0 10px;
-      font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+      font-size: ${typography.FontSize.RueDeLappe};
       line-height: 1;
     }
   }

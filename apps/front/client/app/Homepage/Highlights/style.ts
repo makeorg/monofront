@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import {
   SpaceBetweenRowStyle,
@@ -62,7 +62,7 @@ export const HeartIconStyle = styled(SvgHandHeart)`
 export const FiguresStyle = styled(TitleS).attrs({ as: 'span' })`
   color: ${colors.Content.Interface.Dark};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.XL.value)};
+    font-size: ${typography.FontSize.IleDeFrance};
   }
 `;
 

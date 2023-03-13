@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import {
   DefaultPadding,
@@ -19,7 +19,6 @@ import {
   SvgThumbsUp,
 } from '@make.org/ui/Svg/elements';
 import { StartColumnStyle } from '@make.org/ui/elements/FlexElements';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { TitleM } from '@make.org/designsystem/components/Titles';
 import { BodyXSDefault } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
@@ -54,7 +53,7 @@ export const FocusBlockTitleStyle = styled(TitleM).attrs({ as: 'strong' })`
 
 export const FocusBlockParagraphStyle = styled.p`
   color: ${colors.Content.Interface.DarkSecondary};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   margin-bottom: 20px;
   line-height: 1.5;
   letter-spacing: 0.14px;
@@ -84,13 +83,13 @@ export const StaticThirdLevelTitleStyle = styled(ThirdLevelTitleStyle)`
 
 export const StaticFourthLevelTitleStyle = styled(FourthLevelTitleStyle)`
   display: inline-flex;
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
   text-transform: none;
   margin: 15px 0 5px;
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
 `;
 
@@ -98,30 +97,30 @@ export const StaticListTitleStyle = styled(BodyXSDefault).attrs({ as: 'h5' })`
   text-transform: none;
   margin: 15px 0 0;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
 `;
 
 export const StaticTitleExtra = styled.span`
   display: block;
-  font-family: ${MakeFonts.PlayfairDisplayRegularItalic};
+  font-family: ${typography.FontFamily.Italic};
   text-transform: none;
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   line-height: 2;
   color: ${colors.Content.Interface.DarkSecondary};
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
 `;
 
 export const StaticParagraphStyle = styled.p`
   margin: 0 0 15px;
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   line-height: 2;
   color: ${colors.Content.Interface.DarkSecondary};
   white-space: pre-line;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
 `;
 
@@ -131,7 +130,7 @@ export const StaticPhoneLinkStyle = styled.a`
 `;
 
 export const StaticStrongStyle = styled.strong`
-  font-display: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
 `;
 
 export const StaticPrimaryUnorderedListStyle = styled.ol`
@@ -154,23 +153,23 @@ export const StaticPrimaryOrderedListItemStyle = styled.li`
   counter-increment: articles;
   &:before {
     content: counter(articles) '.';
-    font-family: ${MakeFonts.TradeGothicBoldCondensed};
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-family: ${typography.FontFamily.Condensed};
+    font-size: ${typography.FontSize.Arrondissement};
     margin-right: 10px;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     &:before {
-      font-size: ${intToPx(typography.font.fontsize.S.value)};
+      font-size: ${typography.FontSize.Paris};
     }
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     &:before {
-      font-size: ${intToPx(typography.font.fontsize.M.value)};
+      font-size: ${typography.FontSize.PetiteCouronne};
     }
   }
   @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
     &:before {
-      font-size: ${intToPx(typography.font.fontsize.L.value)};
+      font-size: ${typography.FontSize.GrandeCouronne};
     }
   }
 `;
@@ -184,9 +183,9 @@ export const StaticSecondaryOrderedListItemStyle = styled.li`
   list-style-type: none;
   counter-increment: reset-articles;
   &:before {
-    font-family: ${MakeFonts.CircularStandardBold};
+    font-family: ${typography.FontFamily.Hightlight};
     font-weight: bold;
-    font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+    font-size: ${typography.FontSize.RueDeLappe};
     line-height: 15px;
     margin-right: 10px;
   }
@@ -210,19 +209,19 @@ export const StaticSecondaryOrderedListItemStyle = styled.li`
   }
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     &:before {
-      font-size: ${intToPx(typography.font.fontsize.XS.value)};
+      font-size: ${typography.FontSize.Arrondissement};
     }
   }
 
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     &:before {
-      font-size: ${intToPx(typography.font.fontsize.XS.value)};
+      font-size: ${typography.FontSize.Arrondissement};
       line-height: 32px;
     }
   }
   @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
     &:before {
-      font-size: ${intToPx(typography.font.fontsize.S.value)};
+      font-size: ${typography.FontSize.Paris};
       line-height: 25px;
     }
   }
@@ -235,11 +234,11 @@ export const StaticSquareListStyle = styled.ul`
 
 export const StaticSquareListItemStyle = styled.li`
   list-style-type: square;
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   line-height: 2;
   color: ${colors.Content.Interface.DarkSecondary};
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
 `;
 
@@ -277,7 +276,7 @@ export const NoCookiesParagraphStyle = styled(ParagraphStyle)`
   &.column {
     display: flex;
     flex-flow: column;
-    font-family: ${MakeFonts.CircularStandardBold};
+    font-family: ${typography.FontFamily.Hightlight};
     font-weight: bold;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -286,7 +285,7 @@ export const NoCookiesParagraphStyle = styled(ParagraphStyle)`
 `;
 
 export const NoCookiesAltParagraphStyle = styled.p`
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   line-height: 1.5;
   color: rgb(0, 0, 0, 0, 065);
   a,
@@ -294,11 +293,8 @@ export const NoCookiesAltParagraphStyle = styled.p`
   a:focus {
     color: ${colors.Content.Make.Secondary};
   }
-  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
 `;
 
@@ -311,18 +307,17 @@ export const StaticExternalLinkIconStyle = styled(SvgExternalLink)`
 
 export const ModerationParagraphStyle = styled.p`
   margin: 0 0 15px;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   line-height: 2;
   color: ${colors.Content.Interface.DarkSecondary};
   white-space: pre-line;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
     text-align: center;
   }
 `;
 
 export const StaticCenteredParagraphStyle = styled.p`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   color: ${colors.Content.Interface.DarkSecondary};idée n’est pas déjà présente 
   text-align: center;
   padding: 0 20px;
@@ -416,7 +411,7 @@ export const ModerationFootnotesStyleOrderedListWrapperStyle = styled.ol`
 
 export const ModerationFootnotesStyleOrderedListItemStyle = styled.li`
   color: ${colors.Content.Interface.DarkSecondary};
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
 `;
 
 export const ModerationSectionTitleStyle = styled(StaticSectionTitle)`

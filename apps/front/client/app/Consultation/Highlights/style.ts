@@ -1,8 +1,7 @@
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { Elements } from '@make.org/assets/vars/Elements';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import {
   ColumnElementStyle,
   FlexElementStyle,
@@ -65,7 +64,7 @@ export const FiguresListItemStyle = styled.li`
 `;
 
 export const HigthlightsTitleStyle = styled.span`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   letter-spacing: 0.14px;
 `;
 
@@ -77,7 +76,7 @@ export const FiguresValueStyle = styled(TitleS).attrs({ as: 'span' })`
     margin-bottom: 30px;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.XL.value)};
+    font-size: ${typography.FontSize.IleDeFrance};
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     margin-bottom: 0px;
@@ -116,18 +115,18 @@ export const ProgressInnerStyle = styled(ColumnElementStyle)`
 `;
 
 export const ProgressTitleStyle = styled(HigthlightsTitleStyle)`
-  font-family: ${MakeFonts.CircularStandardBook};
+  font-family: ${typography.FontFamily.Default};
   text-transform: none;
 `;
 
 export const VotesTargetStyle = styled.span`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   letter-spacing: 0.3px;
   color: ${colors.Content.Interface.DarkSecondary};
   span {
-    font-family: ${MakeFonts.CircularStandardBold};
+    font-family: ${typography.FontFamily.Hightlight};
     font-weight: bold;
-    font-size: ${intToPx(typography.font.fontsize.XL.value)};
+    font-size: ${typography.FontSize.IleDeFrance};
     color: ${colors.Content.Interface.Dark};
     font-weigth: bolder;
   }
@@ -174,7 +173,7 @@ export const ProgressParticipateStyle = styled(FlexElementStyle)`
 `;
 
 export const ProgressDescriptionStyle = styled.p`
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   color: ${colors.Content.Interface.DarkSecondary};
   margin-bottom: 15px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {

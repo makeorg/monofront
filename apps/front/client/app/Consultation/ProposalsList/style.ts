@@ -1,4 +1,4 @@
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { Elements } from '@make.org/assets/vars/Elements';
@@ -51,7 +51,7 @@ export const ProposalAndVoteWrapperStyle = styled(MiddleColumnStyle)`
 `;
 
 export const ProposalLinkStyle = styled(Link)`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   letter-spacing: 0.13px;
   text-align: center;
   margin-bottom: 15px;
@@ -60,7 +60,7 @@ export const ProposalLinkStyle = styled(Link)`
 `;
 
 export const ProposalDateStyle = styled.time`
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   color: ${colors.Content.Interface.DarkSecondary};
   letter-spacing: 0.13px;
   text-align: center;

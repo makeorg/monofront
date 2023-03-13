@@ -1,10 +1,10 @@
 import TextareaAutosize from 'react-autosize-textarea';
 import { Elements } from '@make.org/assets/vars/Elements';
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { BodyXSDefault } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { SvgExternalLink, SvgSelectArrow } from '../Svg/elements';
@@ -13,12 +13,12 @@ import { UnstyledButtonStyle } from './ButtonsElements';
 
 const DataPolicyLinkStyle = `
 display: inline-flex;
-font-family: ${MakeFonts.CircularStandardBook};
+font-family: ${typography.FontFamily.Default};
 color: ${colors.Content.Interface.DarkSecondary};
 text-transform: none;
 text-decoration: underline;
 align-items: center;
-font-size: ${intToPx(typography.font.fontsize.XS.value)};
+font-size: ${typography.FontSize.Arrondissement};
 line-height: 1.31;
 `;
 
@@ -41,24 +41,24 @@ export const CheckboxLabelStyle = styled.label<{
     props.isBlack
       ? colors.Content.Interface.Dark
       : colors.Content.Interface.DarkSecondary};
-  font-family: ${MakeFonts.CircularStandardBook};
+  font-family: ${typography.FontFamily.Default};
   font-weight: normal;
   font-size: ${props =>
     props.noFontSizeChange
-      ? intToPx(typography.font.fontsize.XS.value)
-      : intToPx(typography.font.fontsize.X2S.value)};
+      ? typography.FontSize.Arrondissement
+      : typography.FontSize.RueDeLappe};
   a {
     color: ${colors.Content.Interface.DarkSecondary};
   }
   strong {
-    font-family: ${MakeFonts.CircularStandardBold};
+    font-family: ${typography.FontFamily.Hightlight};
     font-weight: bold;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${props =>
       props.isWidget
-        ? intToPx(typography.font.fontsize.X2S.value)
-        : intToPx(typography.font.fontsize.XS.value)};
+        ? typography.FontSize.RueDeLappe
+        : typography.FontSize.Arrondissement};
   }
 `;
 
@@ -93,7 +93,7 @@ export const FakeCheckboxInputStyle = styled.div`
     bottom: 5%;
     left: 25%;
     z-index: 1;
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
 `;
 
@@ -124,12 +124,12 @@ export const NewWindowIconStyle = styled(SvgExternalLink)`
 export const DataPolicyNewWindowLinkStyle = styled.a<{ isWidget?: boolean }>`
   ${DataPolicyLinkStyle};
   color: ${colors.Content.Interface.DarkSecondary};
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${props =>
       props.isWidget
-        ? intToPx(typography.font.fontsize.X2S.value)
-        : intToPx(typography.font.fontsize.XS.value)};
+        ? typography.FontSize.RueDeLappe
+        : typography.FontSize.Arrondissement};
   }
 `;
 
@@ -213,7 +213,7 @@ export const FieldWrapperStyle = styled.div`
     line-height: 20px;
     padding-bottom: 3px;
     & + label {
-      font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+      font-size: ${typography.FontSize.RueDeLappe};
       line-height: 20px;
     }
   }
@@ -222,16 +222,16 @@ export const FieldWrapperStyle = styled.div`
     padding-bottom: 15px;
   }
   > input:required + label {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
     line-height: 38px;
   }
 `;
 
 export const FloatingLabelStyle = styled.label<{ isWidget?: boolean }>`
-  font-family: ${MakeFonts.CircularStandardBook};
+  font-family: ${typography.FontFamily.Default};
   color: ${colors.Content.Interface.DarkSecondary};
   font-size: ${props =>
-    props.isWidget ? '14px' : intToPx(typography.font.fontsize.XS.value)};
+    props.isWidget ? '14px' : typography.FontSize.Arrondissement};
   line-height: 38px;
   font-weight: normal;
   position: absolute;
@@ -241,8 +241,7 @@ export const FloatingLabelStyle = styled.label<{ isWidget?: boolean }>`
   transition: 0.25s ease all;
   white-space: nowrap;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${props =>
-      props.isWidget && intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${props => props.isWidget && typography.FontSize.Arrondissement};
   }
 `;
 
@@ -253,11 +252,11 @@ export const FormErrorsContainerStyle = styled.div`
   border-radius: ${intToPx(Elements.BorderRadius)};
   background-color: ${colors.Content.Make.Secondary};
   color: ${colors.Content.Interface.Light};
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
 `;
 
 export const FormErrorsIntroStyle = styled.p`
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
   margin: 0 0 10px;
 `;
@@ -266,7 +265,7 @@ export const FormErrorsListItemStyle = styled.li`
   margin: 0 0 5px;
   label {
     color: ${colors.Content.Interface.Light};
-    font-family: ${MakeFonts.CircularStandardBold};
+    font-family: ${typography.FontFamily.Hightlight};
     font-weight: bold;
     text-decoration: underline;
   }
@@ -280,7 +279,7 @@ export const FormErrorsListItemStyle = styled.li`
 
 export const CustomErrorTriggerStyle = styled(UnstyledButtonStyle)`
   display: inline-flex;
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
   text-decoration: underline;
   margin-left: 5px;
@@ -289,7 +288,7 @@ export const CustomErrorTriggerStyle = styled(UnstyledButtonStyle)`
 const InputIconStyle = styled.span`
   display: flex;
   color: ${colors.Content.Make.Secondary};
-  font-size: ${intToPx(typography.font.fontsize.S.value)};
+  font-size: ${typography.FontSize.Paris};
   margin-right: 5px;
   svg {
     fill: ${colors.Content.Make.Secondary};
@@ -309,9 +308,9 @@ export const BasicInputStyle = styled.input`
   background: transparent;
   background-color: transparent;
   width: 100%;
-  font-family: ${MakeFonts.CircularStandardBook};
+  font-family: ${typography.FontFamily.Default};
   color: ${colors.Content.Interface.Dark};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   line-height: 38px;
   padding: 0 5px;
 `;
@@ -322,9 +321,9 @@ export const BasicSelectStyle = styled.select`
   background-color: transparent;
   background: transparent url(${SvgSelectArrow as never}) no-repeat 95% center;
   min-width: 100%;
-  font-family: ${MakeFonts.CircularStandardBook};
+  font-family: ${typography.FontFamily.Default};
   color: ${colors.Content.Interface.Dark};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   line-height: 24px;
   padding: 0 5px;
   -webkit-line-clamp: 1;
@@ -335,7 +334,7 @@ export const FormSuccessMessageStyle = styled.p`
   display: flex;
   align-content: center;
   margin-top: 10px;
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
 `;
 
 export const FormSuccessSvgStyle = {
@@ -350,10 +349,10 @@ export const BasicTextAreaStyle = styled(TextareaAutosize)`
   border: none;
   background: transparent;
   background-color: transparent;
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
   color: ${colors.Content.Interface.DarkSecondary};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   padding: 10px 5px;
   resize: none;
 `;
@@ -367,7 +366,7 @@ export const TextAreaCounterStyle = styled(BodyXSDefault).attrs({ as: 'div' })`
 
 export const PasswordRequirements = styled.div`
   align-self: flex-end;
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   margin: 15px 5px 0 0;
 `;
 

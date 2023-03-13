@@ -1,7 +1,6 @@
 import styled, { keyframes } from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import {
@@ -44,21 +43,18 @@ export const VoteDataListStyle = styled(ColumnElementStyle)`
 `;
 
 const VoteDataItemStyle = styled.span`
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   color: ${colors.Content.Interface.DarkSecondary};
   margin: 3px 0;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
 `;
 
 export const VoteDataBoldItemStyle = styled(VoteDataItemStyle)`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-size: ${typography.FontSize.Arrondissement};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  }
 `;
 
 export const QualificationDataListStyle = styled(UnstyledListStyle)`
@@ -76,7 +72,7 @@ export const VoteProgressContainerStyle = styled(CenterColumnStyle)`
 `;
 
 export const VoteCounterStyle = styled(ParagraphStyle)`
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
 `;
 

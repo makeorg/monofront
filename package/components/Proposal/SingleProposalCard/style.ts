@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import {
   MiddleColumnStyle,
   MiddleColumnToRowStyle,
@@ -36,7 +35,7 @@ export const DescriptionStyle = styled(ParagraphStyle)`
   color: ${colors.Content.Interface.DarkSecondary};
   > span,
   > a {
-    font-family: ${MakeFonts.CircularStandardBold};
+    font-family: ${typography.FontFamily.Hightlight};
     font-weight: bold;
     color: ${colors.Content.Interface.Dark};
     text-decoration: underline;
@@ -83,23 +82,23 @@ export const SharingWrapperStyle = styled(MiddleColumnToRowStyle)`
 `;
 
 export const SharingTitleStyle = styled.h2`
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   color: ${colors.Content.Interface.DarkSecondary};
   margin: 0 0 10px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.S.value)};
+    font-size: ${typography.FontSize.Paris};
     margin: 0 20px;
   }
 `;
 export const ProposalCardContentStyle = styled.blockquote`
   max-width: 100%;
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   line-height: normal;
-  font-family: ${MakeFonts.CircularStandardBook};
+  font-family: ${typography.FontFamily.Default};
   text-align: center;
   margin-bottom: 20px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.L.value)};
+    font-size: ${typography.FontSize.GrandeCouronne};
   }
 `;
 

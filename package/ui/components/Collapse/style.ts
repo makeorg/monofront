@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { UnstyledButtonStyle } from '../../elements/ButtonsElements';
 import { ColumnElementStyle } from '../../elements/FlexElements';
@@ -20,12 +19,12 @@ export const CollapseWrapperStyle = styled(ColumnElementStyle)`
 `;
 
 export const CollapseTriggerStyle = styled(UnstyledButtonStyle)`
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
   display: inline-block;
   justify-content: start;
   width: 100%;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   line-height: 1.5;
   letter-spacing: 0.14px;
   text-align: left;

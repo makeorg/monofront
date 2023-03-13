@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { SvgIdea, SvgLike, SvgThumbsUp } from '@make.org/ui/Svg/elements';
@@ -21,7 +20,7 @@ export const TopIdeaCardHeaderStyle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
   background-color: ${colors.Background.Interface.DarkMain};
 `;
@@ -30,7 +29,7 @@ export const TopIdeaLinkStyle = styled(Link)`
   display: flex;
   align-items: center;
   color: ${colors.Content.Interface.Dark};
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   &:hover,
   &:focus {
     color: ${colors.Content.Interface.Dark};
@@ -39,27 +38,27 @@ export const TopIdeaLinkStyle = styled(Link)`
     fill: ${colors.Content.Interface.Dark};
   }
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
 `;
 
 export const TopIdeaContentStyle = styled(Link)`
   width: 100%;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-size: ${typography.FontSize.Arrondissement};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
   align-self: flex-start;
   flex: 1 1 auto;
   margin-top: 15px;
   text-decoration: none;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.S.value)};
+    font-size: ${typography.FontSize.Paris};
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.M.value)};
+    font-size: ${typography.FontSize.PetiteCouronne};
   }
 `;
 
@@ -112,10 +111,10 @@ export const TopIdeaCollapseTriggerStyle = styled(UnstyledButtonStyle)`
   display: flex;
   align-items: center;
   order: 1;
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   color: ${colors.Content.Interface.DarkSecondary};
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
   .tofill {
     fill: ${colors.Content.Make.Secondary};

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import {
   SvgClock,
   SvgPeople,
@@ -12,7 +12,6 @@ import {
   getFullWidthDividedByItems,
 } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import {
   ColumnElementStyle,
   MiddleColumnStyle,
@@ -44,7 +43,7 @@ export const BrowseHeaderTitleStyle = styled(TitleXL)`
   margin-bottom: 24px;
   text-transform: none;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.X4L.value)};
+    font-size: ${typography.FontSize.Earth};
     margin-bottom: 33px;
   }
 `;
@@ -63,7 +62,7 @@ export const ConsultationsSubtitleStyle = styled(BodyMDefault)`
 
 const linkStyle = (linkColor: string) => `
   color: ${linkColor};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   &:hover,
   &:focus {
     color: ${linkColor};
@@ -206,5 +205,5 @@ export const NoConsultationButtonStyle = styled(UnstyledButtonStyle)`
   align-self: flex-start;
   ${linkStyle(colors.Content.Make.Secondary)};
   text-transform: uppercase;
-  font-family: ${MakeFonts.TradeGothicBoldCondensed};
+  font-family: ${typography.FontFamily.Condensed};
 `;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import {
   Breakpoints,
   Layouts,
@@ -37,7 +37,7 @@ export const NotificationContentStyle = styled.div`
   display: flex;
   align-items: flex-start;
   width: 100%;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   max-width: ${intToPx(Layouts.ContainerWidth)};
   padding-right: ${intToPx(DefaultPadding.Mobile)};
   color: ${colors.Content.Interface.Light};
@@ -77,7 +77,7 @@ export const VoteOnlyButtonStyle = styled(WhiteButtonStyle)`
 `;
 
 export const WhiteLink = styled(Link)`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   color: ${colors.Content.Interface.Light};
   text-decoration: underline;
   margin: 0 5px;

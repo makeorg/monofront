@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { SeparatorStyle } from './SeparatorsElements';
@@ -33,13 +33,13 @@ export const TileWithCollapseWrapperStyle = styled(CollapseWrapperStyle)`
 `;
 
 export const CollapseTriggerStyle = styled(UnstyledButtonStyle)`
-  font-family: ${MakeFonts.TradeGothicBoldCondensed};
+  font-family: ${typography.FontFamily.Condensed};
   text-transform: uppercase;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   line-height: 15px;
   text-align: left;
   &:disabled {
@@ -47,15 +47,15 @@ export const CollapseTriggerStyle = styled(UnstyledButtonStyle)`
     cursor: text;
   }
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
     line-height: 19px;
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
     line-height: 32px;
   }
   @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.S.value)};
+    font-size: ${typography.FontSize.Paris};
     line-height: 25px;
   }
 `;

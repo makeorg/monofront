@@ -1,4 +1,4 @@
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { RedButtonAsLinkStyle } from '@make.org/ui/elements/ButtonsElements';
 import { Image } from '@make.org/ui/components/Image';
@@ -47,8 +47,8 @@ export const LogoStyle = styled(SvgSmallLogo)`
 `;
 
 export const ProposeButtonStyle = styled(RedButtonAsLinkStyle)`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  line-height: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
+  font-size: ${typography.FontSize.Arrondissement};
   align-self: center;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     align-self: auto;

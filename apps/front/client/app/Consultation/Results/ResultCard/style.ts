@@ -1,4 +1,4 @@
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { intToPx } from '@make.org/utils/helpers/styled';
@@ -37,7 +37,7 @@ export const ResultCardIconStyle = styled.span<{ focusable: string }>`
 export const ResultCardTitleStyle = styled(TitleS)`
   text-transform: none;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.XL.value)};
+    font-size: ${typography.FontSize.IleDeFrance};
   }
 `;
 

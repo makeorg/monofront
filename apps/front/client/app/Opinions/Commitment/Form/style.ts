@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { CenterRowStyle } from '@make.org/ui/elements/FlexElements';
@@ -15,7 +15,7 @@ export const OpinionFormStyle = styled.form`
 `;
 
 export const OpinionFormTitleStyle = styled(ParagraphStyle)`
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
   margin-bottom: 20px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {

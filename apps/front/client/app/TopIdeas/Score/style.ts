@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Elements } from '@make.org/assets/vars/Elements';
@@ -45,7 +45,7 @@ export const ScoringPercentageStyle = styled(TitleXXS).attrs({ as: 'span' })`
 `;
 
 export const ScoringPercentageTextStyle = styled.span`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   margin-left: 5px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     margin-left: 0;

@@ -1,7 +1,6 @@
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { Elements } from '@make.org/assets/vars/Elements';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { ProfileHasVotedStyle } from '@make.org/components/Proposal/ProfileVoteCard/style';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
@@ -18,7 +17,7 @@ export const ThemeResultsButtonStyle = styled(ProfileHasVotedStyle)`
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     min-width: 38px;
     height: 38px;
-    font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+    font-size: ${typography.FontSize.RueDeLappe};
     svg {
       width: 18px;
       height: 18px;
@@ -33,14 +32,14 @@ export const ThemeResultsDetailsStyle = styled(ParagraphStyle)`
 `;
 
 export const ThemeAgreeResultsStyle = styled(ParagraphStyle)`
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
   color: ${props => props.color};
 `;
 
 export const ThemeQualifiedStyle = styled.span`
   display: inline-flex;
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
   color: ${colors.Content.Interface.Dark};
   margin: 0 15px 0 5px;

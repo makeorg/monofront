@@ -1,4 +1,4 @@
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
@@ -42,7 +42,7 @@ export const PartnershipTitleStyle = styled(TitleL)`
   margin-bottom: 15px;
   text-transform: none;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.X4L.value)};
+    font-size: ${typography.FontSize.Earth};
     margin-bottom: 10px;
   }
 `;
@@ -54,6 +54,6 @@ export const PartnershipParagraphStyle = styled(BodyMDefault)`
 `;
 
 export const PartnershipRedButton = styled(LinkAsRedButton)`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   fill: ${colors.Content.Interface.Light};
 `;

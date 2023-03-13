@@ -1,10 +1,9 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { colors } from '@make.org/designsystem/tokens/colors';
@@ -15,7 +14,7 @@ export const ResultsSliderArrowsStyle = styled(UnstyledButtonStyle)`
   display: flex;
   align-content: center;
   justify-content: center;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   transform: translateY(-50%);
   z-index: 2;
   svg {
@@ -42,8 +41,8 @@ export const ResultsSliderPagination = styled(ParagraphStyle)<{
 }>`
   text-align: center;
   margin-top: 10px;
-  font-family: ${MakeFonts.CircularStandardBook};
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-family: ${typography.FontFamily.Default};
+  font-size: ${typography.FontSize.RueDeLappe};
   line-height: 1.5;
   letter-spacing: 0.12px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {

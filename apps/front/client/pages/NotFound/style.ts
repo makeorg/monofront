@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import {
@@ -31,19 +31,19 @@ export const NotFoundPageInnerStyle = styled(MiddleColumnStyle)`
 `;
 
 export const NotFoundIntroStyle = styled.p`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   color: ${colors.Content.Make.Secondary};
   font-style: italic;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.XL.value)};
+    font-size: ${typography.FontSize.IleDeFrance};
   }
 `;
 
 export const NotFoundTitleStyle = styled(SecondLevelTitleStyle)`
-  font-size: ${intToPx(typography.font.fontsize.X2L.value)};
+  font-size: ${typography.FontSize.France};
   line-height: 1;
   margin: 15px 0 30px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.X5L.value)};
+    font-size: ${typography.FontSize.Universe};
   }
 `;

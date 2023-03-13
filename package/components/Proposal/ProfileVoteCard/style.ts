@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { DefaultPadding, Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
@@ -37,7 +37,7 @@ export const ProfileHasVotedStyle = styled.div`
   align-items: center;
   padding: 5px;
   margin-right: 5px;
-  font-size: ${intToPx(typography.font.fontsize.S.value)};
+  font-size: ${typography.FontSize.Paris};
   border-width: 2px;
   border-style: solid;
   border-radius: 50%;

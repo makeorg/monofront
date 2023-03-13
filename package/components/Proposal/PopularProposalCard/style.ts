@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const PopularProposalHeader = styled.div`
-  font-family: ${MakeFonts.CircularStandardBook};
+  font-family: ${typography.FontFamily.Default};
   color: ${colors.Content.Interface.Dark};
   background-color: ${colors.Background.Interface.DarkSecondary};
   margin-bottom: 20px;

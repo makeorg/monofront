@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { pxToRem, intToPx } from '@make.org/utils/helpers/styled';
 import {
@@ -59,7 +59,7 @@ export const HeroTitleStyle = styled(TitleXL)`
     max-width: 520px;
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.X4L.value)};
+    font-size: ${typography.FontSize.Earth};
   }
 `;
 

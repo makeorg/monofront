@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { SvgAngleArrowRight } from '@make.org/ui/Svg/elements';
@@ -13,7 +13,7 @@ export const FeaturedListItemStyle = styled.li`
 export const FeaturedLinkStyle = styled.a`
   display: flex;
   align-items: center;
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   color: ${colors.Content.Interface.Dark};
   text-decoration: none;
   background-color: transparent;
@@ -21,7 +21,7 @@ export const FeaturedLinkStyle = styled.a`
   padding: 8px 15px;
   border-radius: 20px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
 `;
 

@@ -1,8 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { NAVIGATION, SEARCH } from '@make.org/types/enums';
 import { colors } from '@make.org/designsystem/tokens/colors';
-import { MakeFonts } from '../vars/Fonts';
 
 export const DefaultStylesheet = createGlobalStyle`
   html,
@@ -17,9 +16,9 @@ export const DefaultStylesheet = createGlobalStyle`
   }
 
   body {
-    font-family: ${MakeFonts.CircularStandardBook};
+    font-family: ${typography.FontFamily.Default};
     color: ${colors.Content.Interface.Dark};
-    line-height: ${typography.font.lineheight.value};
+    line-height: ${typography.LineHeight.l150};
     &.locked {
       overflow-y: hidden;
     }
@@ -44,7 +43,7 @@ export const DefaultStylesheet = createGlobalStyle`
   h4,
   h5,
   h6 {
-    font-family: ${MakeFonts.TradeGothicBoldCondensed};
+    font-family: ${typography.FontFamily.Condensed};
     text-transform: uppercase;
     font-style: normal;
     font-weight: normal;
@@ -55,7 +54,7 @@ export const DefaultStylesheet = createGlobalStyle`
   }
 
   a {
-    font-family: ${MakeFonts.CircularStandardBook};
+    font-family: ${typography.FontFamily.Default};
     color: ${colors.Content.Interface.Dark};
     text-decoration: underline;
   }
@@ -72,7 +71,7 @@ export const DefaultStylesheet = createGlobalStyle`
   }
 
   label {
-    font-family: ${MakeFonts.CircularStandardBold};
+    font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
     color: ${colors.Content.Interface.Dark};
   }

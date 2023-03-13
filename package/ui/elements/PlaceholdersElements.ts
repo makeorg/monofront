@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints, DefaultPadding } from '@make.org/assets/vars/Breakpoints';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
@@ -36,7 +35,7 @@ export const ThumbsUpWrapperStyle = styled.span`
 `;
 
 export const PlaceholderParagraphStyle = styled(ParagraphStyle)`
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
   margin: ${intToPx(DefaultPadding.Mobile)} 0 0;
   padding: 0 10px;
@@ -58,6 +57,6 @@ export const FavouritesProposalStyle = styled(BodyXSHighlight)`
   text-align: center;
   margin-top: 10px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.S.value)};
+    font-size: ${typography.FontSize.Paris};
   }
 `;

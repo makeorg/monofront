@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 
 const PendingAnimation = keyframes`
 0%, 50% {
@@ -28,14 +28,14 @@ export const DotStyle = styled.span<{ delay: number; duration: number }>`
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   padding: 0 2px;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   &.widget {
-    font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+    font-size: ${typography.FontSize.RueDeLappe};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.L.value)};
+    font-size: ${typography.FontSize.GrandeCouronne};
     &.widget {
-      font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+      font-size: ${typography.FontSize.RueDeLappe};
     }
   }
 `;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { TitleS } from '@make.org/designsystem/components/Titles';
 
 export const ThirdLevelTitleCircularStyle = styled(TitleS).attrs({ as: 'h3' })`
@@ -9,37 +9,37 @@ export const ThirdLevelTitleCircularStyle = styled(TitleS).attrs({ as: 'h3' })`
 `;
 
 export const SecondLevelTitleStyle = styled.h2`
-  font-size: ${intToPx(typography.font.fontsize.M.value)};
+  font-size: ${typography.FontSize.PetiteCouronne};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.XL.value)};
+    font-size: ${typography.FontSize.IleDeFrance};
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.X2L.value)};
+    font-size: ${typography.FontSize.France};
   }
 `;
 
 export const ThirdLevelTitleStyle = styled.h3`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.S.value)};
+    font-size: ${typography.FontSize.Paris};
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.M.value)};
+    font-size: ${typography.FontSize.PetiteCouronne};
   }
   @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.L.value)};
+    font-size: ${typography.FontSize.GrandeCouronne};
   }
 `;
 
 export const FourthLevelTitleStyle = styled.h4`
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   &.not-great-cause-proposal {
     margin: 0 0 15px;
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
   @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.S.value)};
+    font-size: ${typography.FontSize.Paris};
   }
 `;

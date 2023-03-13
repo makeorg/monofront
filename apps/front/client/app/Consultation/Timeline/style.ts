@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
@@ -39,7 +39,7 @@ export const TimelineTitleStyle = styled(TitleS)`
   text-transform: none;
   margin: 40px 0;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.XL.value)};
+    font-size: ${typography.FontSize.IleDeFrance};
   }
 `;
 
@@ -81,6 +81,6 @@ export const TimelineItemTextStyle = styled(BodyMDefault)`
 `;
 
 export const TimelineWorkshopLinkStyle = styled.a`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   color: ${colors.Content.Interface.Dark};
 `;

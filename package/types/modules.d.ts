@@ -1,4 +1,3 @@
-declare module 'athena-design-tokens';
 declare module 'uuid';
 declare module 'react-modal';
 declare module '@loadable/component';

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Breakpoints, DefaultPadding } from '@make.org/assets/vars/Breakpoints';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { colors } from '@make.org/designsystem/tokens/colors';
@@ -12,7 +12,7 @@ export const ReportOptionsButtonStyle = styled(UnstyledButtonStyle)`
   fill: ${colors.Content.Interface.DarkSecondary};
   padding: 0 7.5px;
   z-index: 1;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   .tofill {
     fill: ${colors.Content.Interface.DarkSecondary};
   }

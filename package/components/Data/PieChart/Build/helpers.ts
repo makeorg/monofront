@@ -1,6 +1,6 @@
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { PieChartDataType } from '@make.org/types';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { typography } from '@make.org/designsystem/tokens/typography';
 
 const offsetCanvasValue = (canvasValue: number, offset: number) => {
   const value = offset > 0 ? canvasValue / offset : 0;
@@ -97,8 +97,8 @@ export const setPercentAsLabel = (
 
   ctx.beginPath();
   ctx.font = isMobile
-    ? `8px ${MakeFonts.CircularStandardBold}`
-    : `15px ${MakeFonts.CircularStandardBold}`;
+    ? `8px ${typography.FontFamily.Hightlight}`
+    : `15px ${typography.FontFamily.Hightlight}`;
   ctx.textAlign = isTextAlignAdjusted || 'center';
   ctx.fillStyle = colors.Content.Interface.Dark;
   ctx.fillText(
@@ -120,8 +120,10 @@ export const setMainLabel = (
 
   ctx.beginPath();
   ctx.font = isMobile
-    ? `6px ${MakeFonts.CircularStandardBook}`
-    : `11px ${MakeFonts.CircularStandardBook}`;
+    ? `6px ${typography.FontFamily.Default};
+  }`
+    : `11px ${typography.FontFamily.Default};
+  }`;
   ctx.textAlign = isTextAlignAdjusted || 'center';
   ctx.fillStyle = colors.Content.Interface.Dark;
   ctx.fillText(hidePercentLabel ? '' : item.label, itemDeltaX, labelDeltaY);
@@ -138,8 +140,8 @@ export const setSubLabel = (
 
   ctx.beginPath();
   ctx.font = isMobile
-    ? `6px ${MakeFonts.CircularStandardBook}`
-    : `11px ${MakeFonts.CircularStandardBook}`;
+    ? `6px ${typography.FontFamily.Default}`
+    : `11px ${typography.FontFamily.Default}`;
   ctx.textAlign = isTextAlignAdjusted || 'center';
   ctx.fillStyle = colors.Content.Interface.Dark;
   ctx.fillText(item.sublabel || '', itemDeltaX, sublabelDeltaY);

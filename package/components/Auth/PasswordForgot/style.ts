@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
-import { intToPx } from '@make.org/utils/helpers/styled';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { FormCenterAlignStyle } from '@make.org/ui/elements/FormElements';
 import { FourthLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
 import { TitleXXS } from '@make.org/designsystem/components/Titles';
@@ -27,12 +25,12 @@ export const ForgotPasswordTitleStyle = styled(FourthLevelTitleStyle)<{
   text-align: center;
   font-size: ${props =>
     props.isPanel
-      ? intToPx(typography.font.fontsize.XS.value)
-      : intToPx(typography.font.fontsize.S.value)};
+      ? typography.FontSize.Arrondissement
+      : typography.FontSize.Paris};
   font-family: ${props =>
     props.isPanel
-      ? MakeFonts.CircularStandardBook
-      : MakeFonts.CircularStandardBold};
+      ? typography.FontFamily.Default
+      : typography.FontFamily.Hightlight};
   text-transform: none;
   margin-top: 35px;
   color: ${props =>

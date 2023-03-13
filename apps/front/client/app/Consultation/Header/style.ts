@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Layouts, Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
@@ -70,7 +70,7 @@ export const HeaderTitleStyle = styled(TitleL)`
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     line-height: 1.5;
     letter-spacing: 0.5px;
-    font-size: ${intToPx(typography.font.fontsize.X4L.value)};
+    font-size: ${typography.FontSize.Earth};
     margin-bottom: 20px;
   }
 `;
@@ -96,7 +96,7 @@ export const HeaderListLabelStyle = styled(BodyMHighLight).attrs({
     props.theme.fontColor
       ? props.theme.fontColor
       : colors.Content.Interface.Dark};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
 `;
 
 export const HeaderListStyle = styled.ul`
@@ -115,7 +115,7 @@ export const PartnerStyle = styled.span`
       ? props.theme.fontColor
       : colors.Content.Interface.Dark};
   letter-spacing: 0.14px;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
 `;
 
 export const PartnerLinkStyle = styled(Link)`
@@ -124,7 +124,7 @@ export const PartnerLinkStyle = styled(Link)`
       ? props.theme.fontColor
       : colors.Content.Interface.Dark};
   letter-spacing: 0.14px;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   &:hover {
     color: ${props =>
       props.theme.fontColor

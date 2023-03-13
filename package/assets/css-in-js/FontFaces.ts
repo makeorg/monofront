@@ -10,7 +10,7 @@ import PlayfairDisplayRegularItalic2 from '../fonts/PlayfairDisplayRegularItalic
 
 export const FontFacesStylesheet = createGlobalStyle`
   @font-face {
-      font-family: 'Trade Gothic Bold Condensed';
+      font-family: 'Trade Gothic LT Pro Bold Condensed';
       font-display: swap;
       src: url(${TradeGothicBoldCondensed}) format("woff"),
            url(${TradeGothicBoldCondensed2}) format("woff2");

@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 import {
   RedButtonStyle,
   UnstyledButtonStyle,
 } from '@make.org/ui/elements/ButtonsElements';
 import { SvgCookie } from '@make.org/ui/Svg/elements';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { TitleXXS } from '@make.org/designsystem/components/Titles';
 import { BodyMDefault } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
@@ -43,8 +42,8 @@ export const CookieModalTitleWrapperStyle = styled(FlexElementStyle)`
 export const CookieModalButtonWithLinkStyle = styled(UnstyledButtonStyle)`
   display: flex;
   flex-direction: row-reverse;
-  font-family: ${MakeFonts.CircularStandardBook};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-family: ${typography.FontFamily.Default};
+  font-size: ${typography.FontSize.Arrondissement};
   color: ${colors.Content.Interface.DarkSecondary};
   text-decoration: underline;
   &.with-margin-bottom {
@@ -101,7 +100,7 @@ export const CookieModalElementStyle = styled(BodyMDefault).attrs({ as: 'li' })`
   flex-flow: row;
   margin-bottom: 10px;
   strong {
-    font-family: ${MakeFonts.CircularStandardBold};
+    font-family: ${typography.FontFamily.Hightlight};
     font-weight: bold;
   }
   &.with-separator {
@@ -144,13 +143,13 @@ export const CookieModalHeaderWrapperStyle = styled(FlexElementStyle)`
 
 export const CookieModalCookieDetailParagraphStyle = styled(FlexElementStyle)`
   flex-direction: column;
-  font-family: ${MakeFonts.CircularStandardBook};
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-family: ${typography.FontFamily.Default};
+  font-size: ${typography.FontSize.RueDeLappe};
   border-top: 1px solid ${colors.Border.Interface.DarkMain};
   margin-top: 10px;
   padding-top: 10px;
   &.cookie-page {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
     margin-top: 20px;
     padding-top: 20px;
   }
@@ -200,7 +199,7 @@ export const CookieDescriptionStyle = styled.span`
 `;
 
 export const CookieLabelStyle = styled.span`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   margin-top: 10px;
   align-self: flex-end;
   &.cookie-page {

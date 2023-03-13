@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
 import {
@@ -8,7 +9,6 @@ import {
   DefaultPadding,
 } from '@make.org/assets/vars/Breakpoints';
 import { Elements } from '@make.org/assets/vars/Elements';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Link } from 'react-router-dom';
 import { TitleS, TitleXXS } from '@make.org/designsystem/components/Titles';
 import { colors } from '@make.org/designsystem/tokens/colors';
@@ -44,7 +44,7 @@ export const ParticipateCardTitleStyle = styled(TitleS).attrs({ as: 'h4' })`
   text-transform: none;
   margin: 15px 0 10px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.XL.value)};
+    font-size: ${typography.FontSize.IleDeFrance};
     margin: 15px 0;
   }
 `;
@@ -71,8 +71,8 @@ export const ParticipateCardLinkAsButtonStyle = styled(LinkAsRedButtonStyle)`
 `;
 
 export const ParticipateCardLinkStyle = styled(Link)`
-  font-family: ${MakeFonts.TradeGothicBoldCondensed};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-family: ${typography.FontFamily.Condensed};
+  font-size: ${typography.FontSize.Arrondissement};
   text-decoration: none;
   text-transform: uppercase;
   color: ${colors.Content.Interface.Dark};
@@ -89,13 +89,13 @@ export const ParticipateCardLinkStyle = styled(Link)`
 export const ParticipateCardExternalLinkStyle = styled.a`
   display: flex;
   align-items: center;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   color: ${colors.Content.Interface.Dark};
 `;
 
 export const ParticipateCardSoonStyle = styled(FlexElementStyle)`
   align-items: center;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   color: ${colors.Content.Interface.DarkSecondary};
 `;
 

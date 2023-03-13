@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Elements } from '@make.org/assets/vars/Elements';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { CardStyle } from './CardsElements';
 import { ColumnElementStyle } from './FlexElements';
 
@@ -15,8 +14,8 @@ export const ProposalInnerStyle = styled(ColumnElementStyle)`
 
 const ProposalStyle = `
   width: 100%;
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-size: ${typography.FontSize.RueDeLappe};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
   align-self: flex-start;
   flex: 1 1 auto;
@@ -25,10 +24,10 @@ const ProposalStyle = `
   justify-self: flex-start;
   align-content: flex-start;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
   @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.S.value)};
+    font-size: ${typography.FontSize.Paris};
   }
 `;
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { SeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
@@ -11,7 +11,6 @@ import {
   BasicButtonStyle,
 } from '@make.org/ui/elements/ButtonsElements';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 
 export const CommitmentPreviewSeparatorStyle = styled(SeparatorStyle)`
   margin: 10px 0 15px;
@@ -41,7 +40,7 @@ export const CommitmentPreviewOpinionsIconWrapperStyle = styled.div<{
 `;
 
 export const CommitmentPreviewOpinionsParagraphStyle = styled(ParagraphStyle)`
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
   color: ${colors.Content.Interface.Dark};
   span {
@@ -80,12 +79,12 @@ export const CommitmentPreviewButtonsWrapperStyle = styled(FlexElementStyle)`
 `;
 
 export const CommitmentPreviewCancelStyle = styled(UnstyledButtonStyle)`
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   color: rgba(255, 255, 255, 0.65);
   text-decoration: underline;
   margin-right: 30px;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
 `;
 

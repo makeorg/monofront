@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { GreyLinkStyle } from '@make.org/ui/elements/ButtonsElements';
@@ -69,16 +69,13 @@ export const SequenceTitleStyle = styled(TitleXXXS).attrs({ as: 'h2' })`
     font-size: 14px;
   }
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.S.value)};
-    &.widget {
-      font-size: ${intToPx(typography.font.fontsize.S.value)};
-    }
+    font-size: ${typography.FontSize.Paris};
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.L.value)};
+    font-size: ${typography.FontSize.GrandeCouronne};
   }
   @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.XL.value)};
+    font-size: ${typography.FontSize.IleDeFrance};
   }
 `;
 

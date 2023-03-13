@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { Elements } from '@make.org/assets/vars/Elements';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { SvgLightning } from '@make.org/ui/Svg/elements';
 import { AvatarStyle } from '@make.org/ui/components/Avatar/style';
 import { BodyMDefault } from '@make.org/designsystem/components/Body';
@@ -79,7 +79,7 @@ export const ResultsAvatarStyle = styled(AvatarStyle)`
 `;
 
 const ResultsItemStyle = styled.span`
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
 `;
 

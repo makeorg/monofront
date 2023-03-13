@@ -2,10 +2,9 @@ import {
   ActiveButtonStyle,
   BlackBorderButtonStyle,
 } from '@make.org/ui/elements/ButtonsElements';
-import { typography } from 'athena-design-tokens';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { CenterRowStyle } from '@make.org/ui/elements/FlexElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { SvgFastForward } from '@make.org/ui/Svg/elements';
@@ -24,14 +23,14 @@ export const ExtraDataFormStyle = styled.form`
 `;
 
 export const ExtraDataTitleStyle = styled(SequenceIntroParagraphStyle)`
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.S.value)};
+    font-size: ${typography.FontSize.Paris};
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.M.value)};
+    font-size: ${typography.FontSize.PetiteCouronne};
   }
 `;
 
@@ -40,7 +39,7 @@ export const ExtraDataDescriptionStyle = styled(ParagraphStyle)`
   text-align: center;
   margin: 5px auto 20px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
     margin-bottom: 30px;
   }
 `;
@@ -73,14 +72,14 @@ export const SubmitWrapperStyle = styled(CenterRowStyle)`
 export const SkipButtonStyle = styled(BlackBorderButtonStyle)`
   font-size: 14px;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
 `;
 
 export const SubmitButtonStyle = styled(ActiveButtonStyle)`
   font-size: 14px;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
 `;
 
@@ -107,16 +106,16 @@ export const RadioAsButtonWrapperStyle = styled.div`
 `;
 
 export const RadioAsButtonLabelStyle = styled.label`
-  font-family: ${MakeFonts.CircularStandardBook};
+  font-family: ${typography.FontFamily.Default};
   font-weight: normal;
   color: ${colors.Content.Interface.DarkSecondary};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   width: 100%;
   text-align: center;
   &.widget {
     font-size: 14px;
     @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-      font-size: ${intToPx(typography.font.fontsize.XS.value)};
+      font-size: ${typography.FontSize.Arrondissement};
     }
   }
 `;
@@ -127,7 +126,7 @@ export const SelectStyle = styled.select`
   border: 1px solid ${colors.Border.Interface.DarkMain};
   border-radius: 20px;
   padding: 8px 15px;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   color: ${colors.Content.Interface.DarkSecondary};
   appearance: none;
   background: transparent url(${SvgSelectArrow as never}) no-repeat 95% center;

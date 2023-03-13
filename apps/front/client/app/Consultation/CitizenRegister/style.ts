@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx, pxToPercent } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
@@ -21,7 +21,7 @@ export const CitizenRegisterTitleStyle = styled(TitleS)`
   text-transform: none;
   margin: 15px 0 10px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.XL.value)};
+    font-size: ${typography.FontSize.IleDeFrance};
     margin: 15px 0;
   }
 `;

@@ -2884,7 +2884,6 @@ __metadata:
     "@make.org/types": 0.1.0
     "@make.org/ui": 0.1.0
     "@make.org/utils": 0.1.0
-    athena-design-tokens: ^0.1.7
     file-loader: ^6.2.0
     react: ^17.0.2
     react-test-renderer: ^17.0.2
@@ -2910,7 +2909,6 @@ __metadata:
     "@types/react": ^17.0.52
     "@types/react-facebook-login": 4.1.5
     "@types/react-router": 5.1.19
-    athena-design-tokens: ^0.1.7
     core-js: ^3.24.1
     enzyme: ^3.11.0
     i18next: 22.1.4
@@ -2936,7 +2934,6 @@ __metadata:
   resolution: "@make.org/designsystem@workspace:package/designsystem"
   dependencies:
     "@types/styled-components": 5.1.26
-    athena-design-tokens: ^0.1.7
     styled-components: 5.3.5
     typescript: ^4.9.3
   languageName: unknown
@@ -2987,7 +2984,6 @@ __metadata:
     "@types/webpack": ^5.28.0
     "@types/webpack-env": 1.18.0
     adblockdetect: ^0.0.2
-    athena-design-tokens: ^0.1.7
     axios: ~0.26.1
     axios-retry: ~3.2.6
     babel-loader: 8.2.5
@@ -3156,7 +3152,6 @@ __metadata:
     "@types/node": ^18.11.9
     "@types/react": ^17.0.52
     "@types/styled-components": 5.1.26
-    athena-design-tokens: ^0.1.7
     core-js: ^3.24.1
     i18next: 22.1.4
     react: ^17.0.2
@@ -3184,7 +3179,6 @@ __metadata:
     "@make.org/types": 0.1.0
     "@make.org/ui": 0.1.0
     "@make.org/utils": 0.1.0
-    athena-design-tokens: ^0.1.7
     axios: ~0.26.1
     core-js: ^3.24.1
     date-fns: ^2.29.1
@@ -3243,7 +3237,6 @@ __metadata:
     "@types/memory-cache": ^0.2.2
     "@types/react": ^17.0.52
     "@types/react-dom": ^17.0.18
-    athena-design-tokens: ^0.1.7
     babel-loader: 8.2.5
     babel-plugin-convert-to-json: ^0.1.0
     compression: ~1.7.3
@@ -5673,13 +5666,6 @@ __metadata:
   version: 1.0.0
   resolution: "at-least-node@npm:1.0.0"
   checksum: 463e2f8e43384f1afb54bc68485c436d7622acec08b6fad269b421cb1d29cebb5af751426793d0961ed243146fe4dc983402f6d5a51b720b277818dbf6f2e49e
-  languageName: node
-  linkType: hard
-
-"athena-design-tokens@npm:^0.1.7":
-  version: 0.1.7
-  resolution: "athena-design-tokens@npm:0.1.7"
-  checksum: b58cb50ab6801da1c905e71855a3d40eb9dcecae12e30785bb2c771a2047020a610ec82df207f481d4060c9a072e911967472694b6461eb5a1ddb4ac31039c27
   languageName: node
   linkType: hard
 

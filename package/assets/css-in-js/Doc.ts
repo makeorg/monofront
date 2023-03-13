@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import { typography } from 'athena-design-tokens';
 import { colors } from '@make.org/designsystem/tokens/colors';
-import { MakeFonts } from '../vars/Fonts';
+import { typography } from '@make.org/designsystem/tokens/typography';
 
 export const DocStylesheet = createGlobalStyle`
   .red-link {
@@ -37,8 +36,8 @@ export const DocStylesheet = createGlobalStyle`
   }
 
   thead th {
-    font-size: ${typography.font.fontsize.X2S};
-    font-family: ${MakeFonts.TradeGothicBoldCondensed};
+    font-size: ${typography.FontSize.RueDeLappe};
+    font-family: ${typography.FontFamily.Condensed};
     text-transform: uppercase;
     background-color: ${colors.Background.Interface.DarkMain};
     color: ${colors.Content.Interface.Light};

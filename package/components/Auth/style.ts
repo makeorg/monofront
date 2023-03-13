@@ -4,7 +4,7 @@ import { SvgLegalConsent, SvgExternalLink } from '@make.org/ui/Svg/elements';
 import { SmallSeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { FormCenterAlignStyle } from '@make.org/ui/elements/FormElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import {
   RedButtonStyle,
   UnstyledButtonStyle,
@@ -15,7 +15,6 @@ import {
 } from '@make.org/ui/elements/FlexElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { TitleXXS } from '@make.org/designsystem/components/Titles';
 import {
   BodyXSDefault,
@@ -86,7 +85,7 @@ export const LegalButtonGroupStyle = styled(SpaceBetweenRowStyle)`
 `;
 
 export const LegalCancelStyle = styled(UnstyledButtonStyle)`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   color: ${colors.Content.Interface.DarkSecondary};
   text-decoration: underline;
 `;
@@ -100,20 +99,20 @@ export const LegalSubmitStyle = styled(RedButtonStyle)`
 
 const TermsOfUseLinkStyle = styled.a`
   display: inline;
-  font-family: ${MakeFonts.CircularStandardBook};
+  font-family: ${typography.FontFamily.Default};
   color: ${colors.Content.Interface.DarkSecondary};
   text-transform: none;
   text-decoration: underline;
   align-items: center;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   line-height: 1.31;
 `;
 
 export const TermsOfUseLinkGreyStyle = styled(TermsOfUseLinkStyle)`
   color: ${colors.Content.Interface.DarkSecondary};
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
 `;
 
@@ -141,9 +140,9 @@ export const RegisterEmailTitleStyle = styled(TitleXXS).attrs({ as: 'h1' })`
 export const LoginTitleWrapperStyle = styled(ThirdLevelTitleStyle)`
   margin-bottom: 5px;
   text-transform: none;
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.S.value)};
+  font-size: ${typography.FontSize.Paris};
   line-height: 1.5;
   letter-spacing: 0.12px;
   align-self: flex-start;
@@ -152,7 +151,7 @@ export const LoginTitleWrapperStyle = styled(ThirdLevelTitleStyle)`
 export const LoginTitleWrapperCenterStyle = styled(LoginTitleWrapperStyle)`
   margin: 0px;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.XL.value)};
+    font-size: ${typography.FontSize.IleDeFrance};
     align-self: center;
   }
   &.red {
@@ -167,14 +166,14 @@ export const PostCodeWrapperStyle = styled(BodyXSDefault).attrs({ as: 'span' })`
 `;
 
 export const RegisterParagraphStyle = styled.p`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   margin-top: 15px;
   display: inline;
   align-self: center;
 `;
 
 export const GreyParagraphStyle = styled.p`
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   color: ${colors.Content.Interface.DarkSecondary};
   display: flex;
   flex-flow: wrap;
@@ -189,12 +188,12 @@ export const GreyParagraphStyle = styled.p`
 
 export const PersonalDataGreyLinkStyle = styled.a`
   display: inline;
-  font-family: ${MakeFonts.CircularStandardBook};
+  font-family: ${typography.FontFamily.Default};
   color: ${colors.Content.Interface.DarkSecondary};
   text-transform: none;
   text-decoration: underline;
   align-items: center;
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
 `;
 
 export const RegisterPanelSuccessWrapperStyle = styled.section`
@@ -235,6 +234,6 @@ export const RegisterPanelSuccessParagraphContainerStyle = styled.div`
 export const RegisterPanelSuccessParagraphStyle = styled(BodySDefault)`
   color: ${colors.Content.Interface.Dark};
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
 `;

@@ -1,12 +1,10 @@
 import { BorderColors } from '@make.org/assets/vars/Colors';
-import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import {
   SequenceParagraphStyle,
   SequenceMainTitleStyle,
 } from '@make.org/components/Sequence/Cards/style';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 
 export const WidgetContainerStyle = styled(ColumnElementStyle)<{
@@ -22,9 +20,9 @@ export const WidgetContainerStyle = styled(ColumnElementStyle)<{
 `;
 
 export const ClosedConsultationTitleStyle = styled(SequenceMainTitleStyle)`
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   line-height: 1.5;
   letter-spacing: 0.14px;
 `;
@@ -32,8 +30,8 @@ export const ClosedConsultationTitleStyle = styled(SequenceMainTitleStyle)`
 export const ClosedConsultationDescriptionStyle = styled(
   SequenceParagraphStyle
 )`
-  font-family: ${MakeFonts.CircularStandardBook};
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-family: ${typography.FontFamily.Default};
+  font-size: ${typography.FontSize.RueDeLappe};
   line-height: 1.5;
   letter-spacing: 0.12px;
 `;

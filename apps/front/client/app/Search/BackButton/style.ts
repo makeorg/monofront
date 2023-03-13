@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
@@ -11,7 +11,7 @@ export const SearchBackStyle = styled(UnstyledButtonStyle)`
   margin-bottom: 10px;
   margin-left: 0;
   color: ${colors.Content.Make.Secondary};
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   padding: 0;
   text-decoration: underline;
   &:hover,
@@ -19,10 +19,7 @@ export const SearchBackStyle = styled(UnstyledButtonStyle)`
     color: ${colors.Content.Make.Secondary};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  }
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
 `;
 

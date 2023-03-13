@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import {
   Breakpoints,
   Layouts,
   DefaultPadding,
 } from '@make.org/assets/vars/Breakpoints';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { ColumnElementStyle, CenterColumnStyle } from './FlexElements';
 
@@ -71,11 +70,11 @@ export const SkipLink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: ${MakeFonts.TradeGothicBoldCondensed};
+  font-family: ${typography.FontFamily.Condensed};
   text-transform: uppercase;
   border-radius: 20px;
   border: none;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   padding: 10px 20px 7px 20px;
   text-decoration: none;
   position: absolute;

@@ -26,7 +26,6 @@
     "@types/jest": "^26.0.24",
     "@types/react": "^17.0.52",
     "@types/react-dom": "^17.0.18",
-    "athena-design-tokens": "^0.1.7",
     "compression": "~1.7.3",
     "cors": "^2.8.5",
     "deep-freeze": "~0.0.1",

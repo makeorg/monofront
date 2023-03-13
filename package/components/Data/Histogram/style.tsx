@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { FourthLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
@@ -15,7 +14,7 @@ export const HistogramWrapperStyle = styled.div`
 export const HistogramTitleStyle = styled(FourthLevelTitleStyle)`
   width: 100%;
   text-align: center;
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
   color: ${colors.Content.Interface.Dark};
   text-transform: none;
@@ -101,9 +100,9 @@ export const HistogramBarStyle = styled.div<{
 
 const HistogramCommonLabelStyle = styled.p`
   font-size: 6px;
-  font-family: ${MakeFonts.CircularStandardBook};
+  font-family: ${typography.FontFamily.Default};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+    font-size: ${typography.FontSize.RueDeLappe};
   }
 `;
 

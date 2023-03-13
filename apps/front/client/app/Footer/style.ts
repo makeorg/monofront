@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { Link } from 'react-router-dom';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import {
   SvgExternalLink,
@@ -66,9 +65,9 @@ export const FooterItemStyle = styled.li`
 const LinkStyle = `
   display: inline-flex;
   align-items: center;
-  font-family: ${MakeFonts.CircularStandardBook};
+  font-family: ${typography.FontFamily.Default};
   text-decoration: none;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   color: ${colors.Content.Interface.DarkSecondary};
 `;
 
@@ -82,7 +81,7 @@ export const FooterItemHTMLLinkStyle = styled.a`
 
 export const FooterItemAltLinkStyle = styled(FooterItemLinkStyle)`
   color: ${colors.Content.Interface.Dark};
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
   .tofill {
     fill: ${colors.Content.Interface.Dark};

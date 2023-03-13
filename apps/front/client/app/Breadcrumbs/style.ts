@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { Link } from 'react-router-dom';
 import { intToPx } from '@make.org/utils/helpers/styled';
@@ -8,7 +8,6 @@ import {
   SvgHouse,
   SvgBigArrowRight,
 } from '@make.org/ui/Svg/elements';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 
 // BREADCRUMBS STYLES //
@@ -31,13 +30,13 @@ export const BreadcrumbsListStyle = styled.li`
 `;
 
 export const BreadcrumbsLinkStyle = styled(Link)`
-  font-family: ${MakeFonts.CircularStandardBook};
+  font-family: ${typography.FontFamily.Default};
   color: ${props =>
     props.theme.fontColor
       ? props.theme.fontColor
       : colors.Content.Interface.Dark};
   text-decoration: underline;
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-size: ${typography.FontSize.RueDeLappe};
   &:hover,
   &:focus {
     color: ${props =>
@@ -90,18 +89,18 @@ export const BreadcrumbsListItemStyleDeprecated = styled.li`
 `;
 
 export const BreadcrumbsLinkStyleDeprecated = styled(Link)`
-  font-family: ${MakeFonts.TradeGothicBoldCondensed};
+  font-family: ${typography.FontFamily.Condensed};
   color: ${colors.Content.Make.Secondary};
   text-decoration: none;
   text-transform: uppercase;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   border-bottom: 2px solid ${colors.Content.Make.Secondary};
   &:hover,
   &:focus {
     color: ${colors.Content.Make.Secondary};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.S.value)};
+    font-size: ${typography.FontSize.Paris};
   }
 `;
 

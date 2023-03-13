@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
-import { typography } from 'athena-design-tokens';
+
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints, DefaultPadding } from '@make.org/assets/vars/Breakpoints';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
+
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { SvgExternalLink } from '../Svg/elements';
 
@@ -23,11 +24,11 @@ export const BasicButtonStyle = `
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: ${MakeFonts.TradeGothicBoldCondensed};
+  font-family: ${typography.FontFamily.Condensed};
   text-transform: uppercase;
   border-radius: 20px;
   border: none;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   padding: 10px 20px 7px 20px;
   text-decoration: none;
 `;
@@ -185,13 +186,13 @@ export const RedLinkButtonStyle = styled(UnstyledButtonStyle)`
 export const LinkButtonStyle = styled(UnstyledButtonStyle)`
   display: inline-block;
   text-decoration: underline;
-  margin-right: 5px;
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  margin: 0 5px;
+  font-size: ${typography.FontSize.RueDeLappe};
 `;
 
 export const RedButtonAsLinkStyle = styled(UnstyledButtonStyle)`
-  font-family: ${MakeFonts.TradeGothicBoldCondensed};
-  font-size: ${intToPx(typography.font.fontsize.M.value)};
+  font-family: ${typography.FontFamily.Condensed};
+  font-size: ${typography.FontSize.PetiteCouronne};
   color: ${colors.Content.Make.Secondary};
   text-transform: uppercase;
   text-decoration: underline;
@@ -210,7 +211,7 @@ export const CloseButtonStyle = styled(UnstyledButtonStyle)`
   right: ${intToPx(DefaultPadding.Mobile)};
   fill: ${colors.Content.Make.Secondary};
   z-index: 1;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   .tofill {
     fill: ${colors.Content.Interface.DarkSecondary};
   }
@@ -224,7 +225,7 @@ export const QualifyButtonStyle = styled.button.attrs(props => ({
   type: 'button',
   ...props,
 }))`
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -245,7 +246,7 @@ export const QualifyButtonStyle = styled.button.attrs(props => ({
     border-color: transparent;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
 `;
 
@@ -359,11 +360,8 @@ export const ExternalLinkIconStyle = styled(SvgExternalLink)`
 `;
 
 const ButtonNoBackgroundStyle = `
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  text-decoration: underline;
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  }
+font-size: ${typography.FontSize.Arrondissement};
+text-decoration: underline;
 `;
 
 const GreyNoBackgroundStyle = `

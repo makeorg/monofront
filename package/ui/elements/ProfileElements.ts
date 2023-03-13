@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { intToPx, pxToPercent } from '@make.org/utils/helpers/styled';
 import {
@@ -7,7 +7,6 @@ import {
   Layouts,
   DefaultPadding,
 } from '@make.org/assets/vars/Breakpoints';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { BodyMCondensed } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
@@ -153,7 +152,7 @@ export const ProfileTitleStyle = styled(BodyMCondensed)`
     margin-bottom: 0;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.S.value)};
+    font-size: ${typography.FontSize.Paris};
   }
 `;
 
@@ -239,7 +238,7 @@ export const ProfileCollapseButtonStyle = styled(UnstyledButtonStyle)`
   position: relative;
   z-index: 1;
   background-color: ${colors.Background.Interface.Lighter};
-  font-family: ${MakeFonts.TradeGothicBoldCondensed};
+  font-family: ${typography.FontFamily.Condensed};
   color: ${colors.Content.Make.Secondary};
   text-transform: uppercase;
   text-decoration: none;

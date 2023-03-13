@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { Link } from 'react-router-dom';
 import { intToPx, pxToPercent } from '@make.org/utils/helpers/styled';
 import {
@@ -8,7 +8,6 @@ import {
 } from '@make.org/ui/elements/FlexElements';
 // import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { SvgFiltersMobileIcon } from '@make.org/ui/Svg/elements';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
 import { TitleL, TitleS } from '@make.org/designsystem/components/Titles';
@@ -73,14 +72,14 @@ export const ConsultationPageSidebarStyle = styled(ContentElementStyle)<{
 `;
 
 export const TopIdeasPageTitleStyle = styled.h2`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   line-height: 1.5;
   margin: 10px 0 20px;
   padding: 0 20px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     margin: 0 0 20px;
     padding: 0;
-    font-size: ${intToPx(typography.font.fontsize.S.value)};
+    font-size: ${typography.FontSize.Paris};
   }
 `;
 
@@ -111,7 +110,7 @@ export const ParticipateTitleStyle = styled(TitleL).attrs({ as: 'h3' })`
   text-transform: none;
   margin: 40px 0 15px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.X4L.value)};
+    font-size: ${typography.FontSize.Earth};
     margin: 50px 0 5px;
   }
 `;
@@ -137,7 +136,7 @@ export const ExploreTitleStyle = styled(TitleS).attrs({ as: 'h3' })`
   letter-spacing: 0.5px;
   margin: 40px 0px 20px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.XL.value)};
+    font-size: ${typography.FontSize.IleDeFrance};
     margin-bottom: 0;
     margin-right: 15px;
   }
@@ -158,12 +157,12 @@ export const ExploreDescriptionStyle = styled(SpaceBetweenRowStyle)`
 `;
 
 export const ExploreProposalsCountStyle = styled.span`
-  font-family: ${MakeFonts.CircularStandardBook};
-  font-size: ${intToPx(typography.font.fontsize.S.value)};
+  font-family: ${typography.FontFamily.Default};
+  font-size: ${typography.FontSize.Paris};
   color: ${colors.Content.Interface.Dark};
   letter-spacing: 0.12px;
   > strong {
-    font-family: ${MakeFonts.CircularStandardBold};
+    font-family: ${typography.FontFamily.Hightlight};
     font-weight: bold;
   }
 `;
@@ -185,10 +184,10 @@ export const ResetLinkButtonWrapperStyle = styled.div`
   }
 `;
 export const ResetLinkStyle = styled(Link)`
-  font-family: ${MakeFonts.CircularStandardBook};
+  font-family: ${typography.FontFamily.Default};
   border: none;
   text-decoration: underline;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   color: ${colors.Content.Make.Secondary};
   padding: 0;
   background-color: transparent;
@@ -199,7 +198,7 @@ export const ResetLinkStyle = styled(Link)`
 `;
 
 export const ParticipateDescriptionStyle = styled.p`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   max-width: 750px;
   margin-bottom: 40px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -260,7 +259,7 @@ export const FiltersAndSortCTAStyle = styled.button`
   text-align: center;
   text-transform: uppercase;
   border: none;
-  font-family: ${MakeFonts.TradeGothicBoldCondensed};
+  font-family: ${typography.FontFamily.Condensed};
   color: ${colors.Content.Interface.Dark};
   background-color: ${colors.Background.Interface.Lighter};
   color: ${colors.Content.Interface.Dark};
@@ -271,8 +270,8 @@ export const FiltersCounterStyle = styled.span`
   min-width: 20px;
   line-height: 20px;
   color: ${colors.Content.Interface.Light};
-  font-family: ${MakeFonts.TradeGothicBoldCondensed};
-  font-size: ${intToPx(typography.font.fontsize.X2S.value)};
+  font-family: ${typography.FontFamily.Condensed};
+  font-size: ${typography.FontSize.RueDeLappe};
   background-color: ${colors.Content.Make.Secondary};
   text-align: center;
   border-radius: 30px;

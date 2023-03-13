@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import {
@@ -37,20 +36,20 @@ export const ReportFirstStepWrapperStyle = styled.section`
 export const ReportTitleStyle = styled.h1`
   display: flex;
   justify-content: flex-start;
-  font-size: ${intToPx(typography.font.fontsize.S.value)};
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-size: ${typography.FontSize.Paris};
+  font-family: ${typography.FontFamily.Hightlight};
   text-transform: none;
   margin-bottom: 35px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.XL.value)};
+    font-size: ${typography.FontSize.IleDeFrance};
   }
 `;
 
 export const ReportTextStyle = styled.p`
   display: flex;
   justify-content: flex-start;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  font-family: ${MakeFonts.CircularStandardBook};
+  font-size: ${typography.FontSize.Arrondissement};
+  font-family: ${typography.FontFamily.Default};
   margin: 30px 0px 30px;
 `;
 
@@ -89,7 +88,7 @@ export const ReportFormItemWrapperStyle = styled.li`
   justify-content: center;
   width: 100%;
   border-radius: 8px;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   padding: 15px 20px;
   text-decoration: none;
   :last-child {
@@ -104,16 +103,16 @@ export const ReportFormItemWrapperStyle = styled.li`
 export const ReportFormAsTransparentButtonLabelStyle = styled.label`
   display: inline-flex;
   align-items: center;
-  font-family: ${MakeFonts.CircularStandardBook};
+  font-family: ${typography.FontFamily.Default};
   font-weight: normal;
   color: ${colors.Content.Interface.DarkSecondary};
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   width: 100%;
   text-align: center;
   &.selected,
   &:hover,
   &:focus {
-    font-family: ${MakeFonts.CircularStandardBold};
+    font-family: ${typography.FontFamily.Hightlight};
     font-weight: bold;
     color: ${colors.Content.Interface.Dark};
   }

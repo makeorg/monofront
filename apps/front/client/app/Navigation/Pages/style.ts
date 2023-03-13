@@ -1,8 +1,6 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { Link } from 'react-router-dom';
-import { intToPx } from '@make.org/utils/helpers/styled';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const PagesItemStyle = styled.li`
@@ -14,9 +12,9 @@ export const PagesItemStyle = styled.li`
 `;
 
 export const PagesLinkStyle = styled(Link)`
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   text-decoration: none;
   padding-bottom: 14px;
   color: ${colors.Content.Interface.DarkSecondary};

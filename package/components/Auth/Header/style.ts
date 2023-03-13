@@ -1,17 +1,16 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { intToPx } from '@make.org/utils/helpers/styled';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
-import { typography } from 'athena-design-tokens';
 
 export const ProfileLinkStyle = styled(Link)`
-  font-family: ${MakeFonts.TradeGothicBoldCondensed};
+  font-family: ${typography.FontFamily.Condensed};
   display: inline-flex;
   text-decoration: none;
   text-transform: uppercase;
   align-items: center;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   flex-shrink: 0;
   > span {
     margin-right: 0;

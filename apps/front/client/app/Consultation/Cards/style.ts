@@ -1,6 +1,5 @@
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { Link } from 'react-router-dom';
-import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 import { colors } from '@make.org/designsystem/tokens/colors';
 
@@ -29,7 +28,7 @@ export const ProposalContentStyle = styled(Link)`
   margin-top: 20px;
   letter-spacing: 0.14px;
   line-height: 1.5;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   text-decoration: none;
 `;
 

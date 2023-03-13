@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { SpaceBetweenRowStyle } from '@make.org/ui/elements/FlexElements';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { SocialNetworksColors } from '@make.org/assets/vars/Colors';
-import { intToPx } from '@make.org/utils/helpers/styled';
 import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const FollowUsStyle = styled(SpaceBetweenRowStyle)`
@@ -25,7 +24,7 @@ export const FollowUsListItemStyle = styled.li`
 const FollowUsButtonStyle = styled(UnstyledButtonStyle)`
   width: 40px;
   height: 40px;
-  font-size: ${intToPx(typography.font.fontsize.S.value)};
+  font-size: ${typography.FontSize.Paris};
   color: ${colors.Content.Interface.Light};
   border-radius: 50%;
   align-items: center;

@@ -1,7 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { MakeFonts } from '@make.org/assets/vars/Fonts';
-import { typography } from 'athena-design-tokens';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { SvgFastForward } from '@make.org/ui/Svg/elements';
@@ -60,19 +59,19 @@ export const SequenceIntroButtonStyle = styled(RedButtonStyle)`
 `;
 
 const SequenceTitleStyle = styled.div`
-  font-family: ${MakeFonts.CircularStandardBold};
+  font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
   text-align: center;
 `;
 
 export const SequenceMainTitleStyle = styled(SequenceTitleStyle)`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   letter-spacing: 0.12px;
   margin-bottom: 20px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.M.value)};
+    font-size: ${typography.FontSize.PetiteCouronne};
     &.widget {
-      font-size: ${intToPx(typography.font.fontsize.S.value)};
+      font-size: ${typography.FontSize.Paris};
     }
   }
 `;
@@ -82,12 +81,12 @@ export const FinalCardWrapperStyle = styled(CenterColumnStyle)`
 `;
 
 export const SequenceAltTitleStyle = styled(SequenceTitleStyle)`
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   margin-bottom: 10px;
   line-height: 1.5;
   letter-spacing: 0.12px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.S.value)};
+    font-size: ${typography.FontSize.Paris};
   }
 `;
 
@@ -110,10 +109,9 @@ export const SequenceIntroParagraphStyle = styled(BodyMDefault).attrs({
     margin-bottom: 15px;
   }
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.S.value)};
+    font-size: ${typography.FontSize.Paris};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.M.value)};
     &.with-margin-bottom {
       margin-bottom: 30px;
     }
@@ -132,17 +130,17 @@ export const SequenceProposalAndVoteWrapperStyle = styled(MiddleColumnStyle)`
 `;
 
 export const SequenceProposalStyle = styled.blockquote`
-  font-family: ${MakeFonts.CircularStandardBook};
+  font-family: ${typography.FontFamily.Default};
   font-size: 14px;
   text-align: center;
   letter-spacing: 0.13px;
   margin-bottom: 15px;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
     letter-spacing: 0.14px;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.M.value)};
+    font-size: ${typography.FontSize.PetiteCouronne};
     letter-spacing: 0.12px;
     max-width: 760px;
   }
@@ -158,7 +156,7 @@ export const SequenceNextCardButtonStyle = styled(RedButtonStyle)`
   white-space: nowrap;
   font-size: 14px;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
 `;
 
@@ -166,7 +164,7 @@ export const SequencePushProposalButtonStyle = styled(RedButtonStyle)`
   margin: 0 0 10px;
   font-size: 14px;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     width: auto;
@@ -180,13 +178,13 @@ export const SequencePushProposalNextButtonStyle = styled(
   margin-top: 15px;
   font-size: 14px;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
   }
 `;
 
 export const SequenceParagraphStyle = styled(CenterColumnStyle)`
   width: 100%;
-  font-size: ${intToPx(typography.font.fontsize.XS.value)};
+  font-size: ${typography.FontSize.Arrondissement};
   line-height: 1.57;
   letter-spacing: 0.12px;
   text-align: center;
