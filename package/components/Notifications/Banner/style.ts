@@ -5,7 +5,6 @@ import {
   Layouts,
   DefaultPadding,
 } from '@make.org/assets/vars/Breakpoints';
-import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import {
   CloseButtonStyle,
@@ -14,6 +13,7 @@ import {
 import { ColumnToRowElementStyle } from '@make.org/ui/elements/FlexElements';
 import { Link } from 'react-router-dom';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { shadows } from '@make.org/designsystem/tokens/shadows';
 
 export const NotificationWrapperStyle = styled.aside`
   position: sticky;
@@ -24,9 +24,9 @@ export const NotificationWrapperStyle = styled.aside`
   z-index: 3;
   width: 100%;
   padding: ${intToPx(DefaultPadding.Mobile)};
-  box-shadow: 0 2px 4px 0 ${ShadowColors.BlackZeroFiveOpacity};
+  box-shadow: ${shadows.s10};
   background-color: ${colors.Background.Alert.Infos};
-  box-shadow: 0 -2px 4px 0 ${ShadowColors.BlackZeroOneOpacity};
+  box-shadow: ${shadows.s10};
   margin-top: -5px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     padding: 25px ${intToPx(DefaultPadding.Desktop)};

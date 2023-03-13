@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { typography } from '@make.org/designsystem/tokens/typography';
-import { ShadowColors } from '@make.org/assets/vars/Colors';
+import { shadows } from '@make.org/designsystem/tokens/shadows';
 import { intToPx, pxToPercent } from '@make.org/utils/helpers/styled';
 import {
   Breakpoints,
@@ -72,7 +72,7 @@ export const ProfilePageSidebarWrapperStyle = styled.div`
 export const ProfilePageSidebarStyle = styled(ContentElementStyle)`
   align-items: center;
   background-color: ${colors.Background.Interface.Lighter};
-  box-shadow: 0 1px 1px 0 ${ShadowColors.BlackZeroFiveOpacity};
+  box-shadow: ${shadows.s10};
   padding: 0 20px 20px;
   margin-bottom: 20px;
   &:last-child {

@@ -8,6 +8,7 @@ import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { Link } from 'react-router-dom';
 import { BodyMDefault } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { shadows } from '@make.org/designsystem/tokens/shadows';
 
 export const PaginationNavStyle = styled.nav`
   display: flex;
@@ -94,7 +95,7 @@ export const DropDownCurrentStyle = styled.div`
   cursor: pointer;
   font-weight: bold;
   &:hover {
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.16);
+    box-shadow: {shadows.s20};
   }
 `;
 
@@ -106,7 +107,7 @@ export const DropDownListStyle = styled.ul`
   align-items: center;
   width: 100%;
   background: #ffffff;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.16);
+  box-shadow: ${shadows.s20};
   border-radius: 8px;
   box-sizing: border-box;
   padding-left: 0;

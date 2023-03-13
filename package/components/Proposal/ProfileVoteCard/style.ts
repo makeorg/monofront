@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { typography } from '@make.org/designsystem/tokens/typography';
-import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { DefaultPadding, Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { shadows } from '@make.org/designsystem/tokens/shadows';
 
 export const ProfileVoteCardStyle = styled.aside`
   width: 100%;
-  box-shadow: 0 1px 1px 0 ${ShadowColors.BlackZeroFiveOpacity};
+  box-shadow: ${shadows.s10};
   background-color: ${colors.Background.Interface.DarkSecondary};
   padding: ${intToPx(DefaultPadding.Mobile)};
 `;
@@ -25,7 +25,7 @@ export const ProfileVoteTitleStyle = styled.div`
   background-color: ${colors.Background.Interface.Lighter};
   padding: ${intToPx(DefaultPadding.Mobile)};
   width: 100%;
-  box-shadow: 0 1px 1px 0 ${colors.Background.Interface.DarkSecondary};
+  box-shadow: ${shadows.s10};
 `;
 
 export const ProfileHasVotedStyle = styled.div`
@@ -43,7 +43,7 @@ export const ProfileHasVotedStyle = styled.div`
   border-radius: 50%;
   overflow: hidden;
   color: ${colors.Content.Interface.Light};
-  box-shadow: 0 1px 1px 0 ${ShadowColors.BlackZeroFiveOpacity};
+  box-shadow: ${shadows.s10};
   &.agree {
     background-color: ${colors.Background.Alert.Positive};
     border-color: ${colors.Border.Alert.Positive};

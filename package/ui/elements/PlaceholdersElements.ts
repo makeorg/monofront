@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints, DefaultPadding } from '@make.org/assets/vars/Breakpoints';
-import { ShadowColors } from '@make.org/assets/vars/Colors';
+import { shadows } from '@make.org/designsystem/tokens/shadows';
 import { BodyXSHighlight } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { ParagraphStyle } from './ParagraphElements';
@@ -49,7 +49,7 @@ export const FavouritesCardStyle = styled.aside`
   width: 100%;
   padding: 20px;
   background-color: ${colors.Background.Interface.Lighter};
-  box-shadow: 0 1px 1px 0 ${ShadowColors.BlackZeroFiveOpacity};
+  box-shadow: ${shadows.s10};
   margin-top: 30px;
 `;
 

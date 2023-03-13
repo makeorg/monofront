@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { shadows } from '@make.org/designsystem/tokens/shadows';
 import { BodyXSDefault } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { SvgExternalLink, SvgSelectArrow } from '../Svg/elements';
@@ -104,7 +105,7 @@ export const StyledCheckbox = styled(FakeCheckboxInputStyle)<{
     visibility: ${props => (props.isChecked ? 'visible' : 'hidden')};
   }
   ${HiddenCheckbox}:focus + & {
-    box-shadow: 0 0 0 2px ${colors.Background.Interface.DarkMain};
+    box-shadow: ${shadows.s10};
   }
 `;
 

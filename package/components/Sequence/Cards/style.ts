@@ -1,9 +1,9 @@
 import styled, { keyframes } from 'styled-components';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { typography } from '@make.org/designsystem/tokens/typography';
-import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { SvgFastForward } from '@make.org/ui/Svg/elements';
+import { shadows } from '@make.org/designsystem/tokens/shadows';
 import {
   CenterColumnStyle,
   ColumnElementStyle,
@@ -30,7 +30,7 @@ export const SequenceCardStyle = styled.section`
   padding: 25px 20px 20px;
   background-color: ${colors.Background.Interface.Lighter};
   border-radius: 8px;
-  box-shadow: 0 2px 3px 0 ${ShadowColors.BlackZeroTwoOpacity};
+  box-shadow: ${shadows.s10};
   margin: 30px auto;
   min-height: 350px;
   &.widget {

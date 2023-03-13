@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { shadows } from '@make.org/designsystem/tokens/shadows';
 import { SeparatorStyle } from './SeparatorsElements';
 import { UnstyledButtonStyle } from './ButtonsElements';
 import { MiddleColumnStyle } from './FlexElements';
@@ -22,7 +22,7 @@ export const CollapseWrapperStyle = styled(MiddleColumnStyle)<{
 
 export const TileWithCollapseWrapperStyle = styled(CollapseWrapperStyle)`
   background-color: ${colors.Background.Interface.Lighter};
-  box-shadow: 0 1px 1px 0 ${ShadowColors.BlackZeroFiveOpacity};
+  box-shadow: ${shadows.s10};
   padding: 20px;
   &.collapsed {
     padding: 14px 20px 8px;

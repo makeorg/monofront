@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { ShadowColors } from '@make.org/assets/vars/Colors';
 import {
   Breakpoints,
   Layouts,
   DefaultPadding,
 } from '@make.org/assets/vars/Breakpoints';
+import { shadows } from '@make.org/designsystem/tokens/shadows';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { Link } from 'react-router-dom';
 import { TitleS, TitleXXS } from '@make.org/designsystem/components/Titles';
@@ -27,7 +27,7 @@ export const CardStyle = styled.article`
   max-width: ${intToPx(Layouts.ContainerWidth)};
   padding: ${intToPx(DefaultPadding.Mobile)};
   background-color: ${colors.Background.Interface.Lighter};
-  box-shadow: 0 1px 1px 0 ${ShadowColors.BlackZeroFiveOpacity};
+  box-shadow: ${shadows.s10};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     border-radius: ${intToPx(Elements.BorderRadius)};
   }

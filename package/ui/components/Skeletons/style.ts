@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { ShadowColors } from '@make.org/assets/vars/Colors';
+import { shadows } from '@make.org/designsystem/tokens/shadows';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { SpaceBetweenRowStyle } from '../../elements/FlexElements';
 
@@ -15,7 +15,7 @@ export const SkeletonCardStyle = styled.div`
   padding: 0 20px;
   background-color: ${colors.Background.Interface.Lighter};
   border-radius: 8px;
-  box-shadow: 0 2px 3px 0 ${ShadowColors.BlackZeroTwoOpacity};
+  box-shadow: ${shadows.s10};
   max-height: 365px;
   margin: 20px 0 40px;
   &.widget {

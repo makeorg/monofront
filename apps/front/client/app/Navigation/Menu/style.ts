@@ -7,6 +7,7 @@ import { SvgExternalLink, SvgWorldMap } from '@make.org/ui/Svg/elements';
 import { SEARCH } from '@make.org/types/enums';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { shadows } from '@make.org/designsystem/tokens/shadows';
 
 export const MenuOpenTriggerStyle = styled(UnstyledButtonStyle)`
   display: flex;
@@ -30,6 +31,7 @@ export const MenuBarStyle = styled.span`
 `;
 
 export const MenuPanelStyle = styled.div`
+  border: red solid 1px;
   position: fixed;
   top: 0;
   left: -105%;
@@ -37,7 +39,7 @@ export const MenuPanelStyle = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: #f2f2f2; // custom color to avoid rbga value
-  box-shadow: 0px 0px 20px ${ShadowColors.BlackZeroEightOpacity};
+  box-shadow: ${shadows.s30};
   transition: 0.5s ease-in left;
   overflow: auto;
   &.expanded {

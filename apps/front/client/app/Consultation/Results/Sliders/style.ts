@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { typography } from '@make.org/designsystem/tokens/typography';
-import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { shadows } from '@make.org/designsystem/tokens/shadows';
 
 export const ResultsSliderArrowsStyle = styled(UnstyledButtonStyle)`
   position: absolute;
@@ -55,7 +55,7 @@ export const ResultsSliderStyle = styled.div<{
 }>`
   background-color: ${colors.Background.Interface.DarkSecondary};
   border-radius: ${intToPx(Elements.BorderRadius)};
-  box-shadow: 0 1px 1px 0 ${ShadowColors.BlackZeroFiveOpacity};
+  box-shadow: ${shadows.s10};
   &.results-page {
     box-shadow: none;
     margin-top: 10px;

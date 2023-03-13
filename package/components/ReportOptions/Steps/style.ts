@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { shadows } from '@make.org/designsystem/tokens/shadows';
 import {
   SvgPreviousArrowLeft,
   SvgMailSuccess,
@@ -96,7 +97,7 @@ export const ReportFormItemWrapperStyle = styled.li`
   }
   &.selected {
     background-color: ${colors.Background.Interface.Lighter};
-    box-shadow: 0px 8px 12px -4px rgba(37, 49, 134, 0.08);
+    box-shadow: ${shadows.s20};
   }
 `;
 

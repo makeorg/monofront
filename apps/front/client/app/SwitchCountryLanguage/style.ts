@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { TitleS } from '@make.org/designsystem/components/Titles';
 import { BodyMDefault } from '@make.org/designsystem/components/Body';
+import { shadows } from '@make.org/designsystem/tokens/shadows';
 
 export const SwitchCountryLanguageContainerStyle = styled.form`
   position: relative;
@@ -67,7 +68,7 @@ export const MultilingualRadioItemWrapperStyle = styled.li`
   }
   &.selected {
     background-color: ${colors.Background.Interface.Lighter};
-    box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.08);
+    box-shadow: ${shadows.s40};
     border-radius: 8px;
   }
   &:focus {

@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { Elements } from '@make.org/assets/vars/Elements';
+import { shadows } from '@make.org/designsystem/tokens/shadows';
 import { FourthLevelTitleStyle } from '../../elements/TitleElements';
 
 const DEFAULT_RADIUS: string = intToPx(Elements.BorderRadius);
@@ -12,7 +12,7 @@ export const TileWithTitleStyle = styled.div<{
   as: JSX.Element;
 }>`
   background-color: ${colors.Background.Interface.Lighter};
-  box-shadow: 0 1px 1px 0 ${ShadowColors.BlackZeroFiveOpacity};
+  box-shadow: ${shadows.s10};
   margin-bottom: 20px;
   padding: 20px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {

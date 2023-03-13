@@ -4,8 +4,8 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
-import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { shadows } from '@make.org/designsystem/tokens/shadows';
 
 export const SearchPageSidebarStyle = styled(ColumnElementStyle)`
   width: 100%;
@@ -45,6 +45,6 @@ export const SearchSidebarTileStyle = styled.div<{
   background-repeat: no-repeat;
   background-color: ${colors.Background.Interface.Lighter};
   border-radius: ${intToPx(Elements.BorderRadius)};
-  box-shadow: 0 1px 1px 0 ${ShadowColors.BlackZeroFiveOpacity};
+  box-shadow: ${shadows.s10};
   padding: 20px;
 `;
