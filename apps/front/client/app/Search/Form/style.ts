@@ -1,10 +1,11 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const SearchFormTriggerStyle = styled(UnstyledButtonStyle)`
   margin-right: 25px;
@@ -12,13 +13,13 @@ export const SearchFormTriggerStyle = styled(UnstyledButtonStyle)`
     width: 19px;
   }
   .tofill {
-    fill: ${color.black};
+    fill: ${colors.Content.Interface.Dark};
   }
 `;
 
 export const SearchFormCancelTriggerStyle = styled(UnstyledButtonStyle)`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   text-decoration: underline;
   margin-left: 25px;
   flex-shrink: 0;
@@ -29,7 +30,7 @@ export const SearchFormWrapperStyle = styled(FlexElementStyle)`
   top: -500px;
   left: 0;
   opacity: 0;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   width: 100%;
   padding: 10px 20px;
   transition: 0.5s ease opacity;
@@ -51,8 +52,8 @@ export const SearchFormStyle = styled.form`
   width: 100%;
   padding: 6.5px 15px;
   border-radius: 20px;
-  background-color: ${color.greyLighter};
-  border: 1px solid ${color.greyLighter};
+  background-color: ${colors.Background.Interface.DarkSecondary};
+  border: 1px solid ${colors.Border.Interface.DarkSecondary};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     width: 160px;
     margin-left: 30px;
@@ -74,7 +75,7 @@ export const SearchInputStyle = styled.input`
   padding: 0px;
   background-color: transparent;
   width: 100%;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   line-height: 1;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
@@ -84,7 +85,7 @@ export const SearchInputStyle = styled.input`
 
 export const SearchLabelStyle = styled.label`
   font-family: ${MakeFonts.CircularStandardBook};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   line-height: 1;
   font-weight: normal;
@@ -109,12 +110,12 @@ export const SearchButtonStyle = styled(UnstyledButtonStyle)`
   svg {
     width: 14px;
     .tofill {
-      fill: ${color.brandSecondary};
+      fill: ${colors.Content.Make.Secondary};
     }
   }
   &:disabled {
     .tofill {
-      fill: ${color.black};
+      fill: ${colors.Content.Interface.Dark};
     }
   }
 `;

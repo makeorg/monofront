@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints, DefaultPadding } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { SvgExternalLink } from '../Svg/elements';
 
 export const UnstyledButtonStyle = styled.button.attrs(props => ({
@@ -32,27 +33,27 @@ export const BasicButtonStyle = `
 `;
 
 export const RedStyle = `
-  color: ${color.white};
-  background-color: ${color.brandSecondary};
+  color: ${colors.Content.Interface.Light};
+  background-color: ${colors.Background.Make.Secondary};
   .tofill {
-    fill: ${color.white};
+    fill: ${colors.Content.Interface.Light};
   }
   &:hover,
   &:focus {
-    color: ${color.white};
+    color: ${colors.Content.Interface.Light};
     text-decoration: none;
   }
 `;
 
 export const GreyStyle = `
-  color: ${color.greyDark};
-  background-color: ${color.grey};
+  color: ${colors.Content.Interface.DarkSecondary};
+  background-color: ${colors.Background.Interface.DarkMain};
   .tofill {
-    fill: ${color.brandSecondary};
+    fill: ${colors.Content.Make.Secondary};
   }
   &:hover,
   &:focus {
-    color: ${color.greyDark};
+    color: ${colors.Content.Interface.DarkSecondary};
     text-decoration: none;
   }
 `;
@@ -116,10 +117,10 @@ export const WhiteButtonStyle = styled.button.attrs(props => ({
   ...props,
 }))`
   ${BasicButtonStyle};
-  color: ${color.black};
-  background-color: ${color.white};
+  color: ${colors.Content.Interface.Dark};
+  background-color: ${colors.Background.Interface.Lighter};
   svg {
-    fill: ${color.black};
+    fill: ${colors.Content.Interface.Dark};
   }
 `;
 
@@ -128,18 +129,18 @@ export const ActiveButtonStyle = styled.button.attrs(props => ({
   ...props,
 }))`
   ${BasicButtonStyle};
-  color: ${color.white};
-  background-color: ${color.brandSecondary};
+  color: ${colors.Content.Interface.Light};
+  background-color: ${colors.Background.Make.Secondary};
   svg,
   .tofill {
-    fill: ${color.white};
+    fill: ${colors.Content.Interface.Light};
   }
   &:disabled {
-    color: ${color.greyDark};
-    background-color: ${color.grey};
+    color: ${colors.Content.Interface.DarkSecondary};
+    background-color: ${colors.Background.Interface.DarkMain};
     svg,
     .tofill {
-      fill: ${color.greyDark};
+      fill: ${colors.Content.Interface.DarkSecondary};
     }
   }
 `;
@@ -149,20 +150,20 @@ export const ActiveButtonCenterStyle = styled.button.attrs(props => ({
   ...props,
 }))`
   ${BasicButtonStyle};
-  color: ${color.white};
-  background-color: ${color.brandSecondary};
+  color: ${colors.Content.Interface.Light};
+  background-color: ${colors.Background.Make.Secondary};
   align-self: center;
   margin: 30px 0;
   svg,
   .tofill {
-    fill: ${color.white};
+    fill: ${colors.Content.Interface.Light};
   }
   &:disabled {
-    color: ${color.greyDark};
-    background-color: ${color.grey};
+    color: ${colors.Content.Interface.DarkSecondary};
+    background-color: ${colors.Background.Interface.DarkMain};
     svg,
     .tofill {
-      fill: ${color.greyDark};
+      fill: ${colors.Content.Interface.DarkSecondary};
     }
   }
 `;
@@ -176,7 +177,7 @@ export const ActiveButtonCenterBottomStyle = styled(ActiveButtonCenterStyle)`
 
 export const RedLinkButtonStyle = styled(UnstyledButtonStyle)`
   display: inline-block;
-  color: ${color.brandSecondary};
+  color: ${colors.Content.Make.Secondary};
   text-decoration: underline;
   margin: 0 5px;
 `;
@@ -191,15 +192,15 @@ export const LinkButtonStyle = styled(UnstyledButtonStyle)`
 export const RedButtonAsLinkStyle = styled(UnstyledButtonStyle)`
   font-family: ${MakeFonts.TradeGothicBoldCondensed};
   font-size: ${intToPx(typography.font.fontsize.M.value)};
-  color: ${color.brandSecondary};
+  color: ${colors.Content.Make.Secondary};
   text-transform: uppercase;
   text-decoration: underline;
   &:hover,
   &:focus {
-    color: ${color.brandSecondary};
+    color: ${colors.Content.Make.Secondary};
   }
   svg {
-    fill: ${color.brandSecondary};
+    fill: ${colors.Content.Make.Secondary};
   }
 `;
 
@@ -207,11 +208,11 @@ export const CloseButtonStyle = styled(UnstyledButtonStyle)`
   position: absolute;
   top: ${intToPx(DefaultPadding.Mobile)};
   right: ${intToPx(DefaultPadding.Mobile)};
-  fill: ${color.brandSecondary};
+  fill: ${colors.Content.Make.Secondary};
   z-index: 1;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   .tofill {
-    fill: ${color.greyDark};
+    fill: ${colors.Content.Interface.DarkSecondary};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     top: ${intToPx(DefaultPadding.Desktop)};
@@ -236,11 +237,12 @@ export const QualifyButtonStyle = styled.button.attrs(props => ({
   border-radius: 36px;
   border-color: ${props => props.color};
   color: ${props => props.color};
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   min-width: 128px;
   &.qualified {
-    color: ${color.white};
+    color: ${colors.Content.Interface.Light};
     background-color: ${props => props.color};
+    border-color: transparent;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
@@ -279,7 +281,7 @@ export const VoteButtonStyle = styled.button.attrs(props => ({
   border-radius: 50%;
   overflow: hidden;
   padding: 0;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   transform: scale(1);
   transition: transform 0.1s ease-in;
   &:hover,
@@ -287,17 +289,16 @@ export const VoteButtonStyle = styled.button.attrs(props => ({
     transform: scale(1.1);
   }
   &.agree {
-    color: ${color.agree};
-    border-color: ${color.agree};
+    color: ${colors.Content.Alert.Positive};
+    border-color: ${colors.Border.Alert.Positive};
   }
   &.disagree {
-    color: ${color.disagree};
-    border-color: ${color.disagree};
+    color: ${colors.Content.Alert.Disagree};
+    border-color: ${colors.Border.Alert.Disagree};
   }
   &.neutral,
   &.other {
-    color: ${color.neutral};
-    border-color: ${color.neutral};
+    color: ${colors.Content.Alert.Neutral};
   }
   &.animated {
     box-shadow: 0 0 0 0 ${props => props.color};
@@ -308,30 +309,30 @@ export const VoteButtonStyle = styled.button.attrs(props => ({
     animation: ${InverseRotateButton} 0.5s 1;
   }
   &.agree.voted {
-    background-color: ${color.agree};
+    background-color: ${colors.Background.Alert.Positive};
   }
   &.disagree.voted {
-    background-color: ${color.disagree};
+    background-color: ${colors.Background.Alert.Disagree};
   }
   &.neutral.voted,
   &.other.voted {
-    background-color: ${color.neutral};
+    background-color: ${colors.Background.Alert.Neutral};
   }
   &.agree .tofill {
-    fill: ${color.agree};
+    fill: ${colors.Content.Alert.Positive};
   }
   &.disagree .tofill {
-    fill: ${color.disagree};
+    fill: ${colors.Content.Alert.Disagree};
   }
   &.neutral .tofill,
   &.other .tofill {
-    fill: ${color.neutral};
+    fill: ${colors.Content.Alert.Neutral};
   }
   &.voted {
-    color: ${color.white};
+    color: ${colors.Content.Interface.Light};
   }
   &.voted .tofill {
-    fill: ${color.white};
+    fill: ${colors.Content.Interface.Light};
   }
   &.voted:hover,
   &.voted:focus {
@@ -348,7 +349,7 @@ export const VoteButtonStyle = styled.button.attrs(props => ({
 `;
 
 export const HidePasswordIconStyle = styled(UnstyledButtonStyle)`
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
 `;
 
 export const ExternalLinkIconStyle = styled(SvgExternalLink)`
@@ -366,29 +367,29 @@ const ButtonNoBackgroundStyle = `
 `;
 
 const GreyNoBackgroundStyle = `
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   .tofill {
-    fill: ${color.greyDark};
+    fill: ${colors.Content.Interface.DarkSecondary};
   }
 `;
 
 const BlackBordersStyle = `
   background-color: transparent;
-  color: ${color.black};
-  border: 1px solid ${color.black};
+  color: ${colors.Content.Interface.Dark};
+  border: 1px solid ${colors.Border.Interface.Darker};
   padding: 9px 19px 6px 19px;
   .tofill {
-    fill: ${color.black};
+    fill: ${colors.Content.Interface.Dark};
   }
 `;
 
 export const BlackNoBackgroundButtonStyle = styled(UnstyledButtonStyle)`
   ${ButtonNoBackgroundStyle};
   background-color: transparent;
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
   border: none;
   .tofill {
-    fill: ${color.black};
+    fill: ${colors.Content.Interface.Dark};
   }
 `;
 

@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import {
   Breakpoints,
   Layouts,
   DefaultPadding,
 } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { ColumnElementStyle, CenterColumnStyle } from './FlexElements';
 
 export const ContainerWithPadding = `
@@ -21,9 +22,9 @@ export const ContainerWithPadding = `
 export const AppWrapperStyle = styled(ColumnElementStyle)`
   position: relative;
   min-height: 100vh;
-  background-color: ${color.greyLighter};
+  background-color: ${colors.Background.Interface.DarkSecondary};
   &.white {
-    background-color: ${color.white};
+    background-color: ${colors.Background.Interface.Lighter};
   }
 `;
 
@@ -58,8 +59,8 @@ export const PageContainerStyle = styled(CenterColumnStyle)`
   width: 100%;
   flex: 1 1 auto;
   max-width: ${intToPx(Layouts.ContainerWidth)};
-  background-color: ${color.white};
-  border: 1px solid ${color.greyLighter};
+  background-color: ${colors.Background.Interface.Lighter};
+  border: 1px solid ${colors.Border.Interface.DarkSecondary};
   padding: ${intToPx(DefaultPadding.Mobile)};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     padding: ${intToPx(DefaultPadding.Desktop)};
@@ -82,14 +83,14 @@ export const SkipLink = styled.a`
   left: ${intToPx(DefaultPadding.Mobile)};
   max-width: calc(100% - 15px);
   z-index: 4;
-  color: ${color.white};
-  background-color: ${color.brandSecondary};
+  color: ${colors.Content.Interface.Light};
+  background-color: ${colors.Content.Make.Secondary};
   .tofill {
-    fill: ${color.white};
+    fill: ${colors.Content.Interface.Light};
   }
   &:hover,
   &:focus {
-    color: ${color.white};
+    color: ${colors.Content.Interface.Light};
     text-decoration: none;
   }
   &:active,

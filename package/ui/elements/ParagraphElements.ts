@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 
 export const ParagraphStyle = styled.p`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
 `;
 
 export const PlayfairParagraphStyle = styled.p`
@@ -41,7 +42,7 @@ export const ConditionParagraphMarginStylePanel = styled(InlineParagraphStyle)`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   width: 100%;
   margin-bottom: 15px;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
   }

@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { SvgAngleArrowRight } from '@make.org/ui/Svg/elements';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const FeaturedListItemStyle = styled.li`
   display: inline-flex;
@@ -13,10 +14,10 @@ export const FeaturedLinkStyle = styled.a`
   display: flex;
   align-items: center;
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
   text-decoration: none;
   background-color: transparent;
-  border: 1px solid ${color.black};
+  border: 1px solid ${colors.Border.Interface.Darker};
   padding: 8px 15px;
   border-radius: 20px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -29,7 +30,7 @@ export const FeaturedLinkIconStyle = styled(SvgAngleArrowRight)`
   height: 12px;
   margin-left: 10px;
   .tofill {
-    fill: ${color.brandSecondary};
+    fill: ${colors.Content.Make.Secondary};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     width: 14px;

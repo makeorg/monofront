@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { Link } from 'react-router-dom';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { SvgExternalLink } from '../Svg/elements';
 import {
   BasicButtonStyle,
@@ -22,26 +23,26 @@ const linkStyle = (linkColor: string) => `
 `;
 
 export const BlackLinkStyle = styled(Link)`
-  ${linkStyle(color.black)}
+  ${linkStyle(colors.Content.Interface.Dark)}
 `;
 
 export const NewWindowIconStyle = styled(SvgExternalLink)`
   margin-left: 5px;
-  fill: ${color.brandSecondary};
+  fill: ${colors.Content.Make.Secondary};
 `;
 
 export const NewWindowGreyIconStyle = styled(NewWindowIconStyle)`
-  fill: ${color.greyDark};
+  fill: ${colors.Content.Interface.DarkSecondary};
   width: 15px;
   height: 10px;
 `;
 
 export const RedLinkStyle = styled(Link)`
-  ${linkStyle(color.brandSecondary)}
+  ${linkStyle(colors.Content.Make.Secondary)}
 `;
 
 export const RedHTMLLinkElementStyle = styled.a`
-  ${linkStyle(color.brandSecondary)}
+  ${linkStyle(colors.Content.Make.Secondary)}
 `;
 
 export const LinkAsRedButton = styled(RedButtonStyle)`
@@ -49,7 +50,7 @@ export const LinkAsRedButton = styled(RedButtonStyle)`
   text-decoration: none;
   &:hover,
   &:focus {
-    color: ${color.white};
+    color: ${colors.Content.Interface.Light};
     text-decoration: none;
   }
 `;
@@ -64,7 +65,7 @@ export const SimpleLinkAsRedButton = styled.a`
   text-decoration: none;
   &:hover,
   &:focus {
-    color: ${color.white};
+    color: ${colors.Content.Interface.Light};
     text-decoration: none;
   }
 `;
@@ -79,13 +80,13 @@ export const LinkAsGreyButton = styled(GreyButtonStyle)`
 `;
 
 export const RedUppercaseLinkElementStyle = styled(Link)`
-  ${linkStyle(color.brandSecondary)};
+  ${linkStyle(colors.Content.Make.Secondary)};
   text-transform: uppercase;
   font-family: ${MakeFonts.TradeGothicBoldCondensed};
 `;
 
 export const RedUppercaseHTMLLinkElementStyle = styled.a`
-  ${linkStyle(color.brandSecondary)};
+  ${linkStyle(colors.Content.Make.Secondary)};
   text-transform: uppercase;
   font-family: ${MakeFonts.TradeGothicBoldCondensed};
   & svg {

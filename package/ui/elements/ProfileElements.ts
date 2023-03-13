@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { intToPx, pxToPercent } from '@make.org/utils/helpers/styled';
 import {
@@ -10,6 +10,7 @@ import {
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { BodyMCondensed } from '@make.org/designsystem/components/Body';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import {
   FlexElementStyle,
   MiddleRowStyle,
@@ -28,7 +29,7 @@ const DesktopMarginWithOffset = DefaultPadding.Desktop - TabsOffsetDesktop;
 export const ProfileHeaderStyle = styled.div`
   height: 100px;
   width: 100%;
-  background-color: ${color.brandPrimary};
+  background-color: ${colors.Background.Make.Primary};
 `;
 
 export const ProfilePageContentWrapperStyle = styled.div`
@@ -71,7 +72,7 @@ export const ProfilePageSidebarWrapperStyle = styled.div`
 
 export const ProfilePageSidebarStyle = styled(ContentElementStyle)`
   align-items: center;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   box-shadow: 0 1px 1px 0 ${ShadowColors.BlackZeroFiveOpacity};
   padding: 0 20px 20px;
   margin-bottom: 20px;
@@ -94,7 +95,7 @@ export const ProfileContentHeaderStyle = styled.header`
 export const ProfileTitleSeparatorStyle = styled.div`
   width: 100%;
   height: 1px;
-  background-color: ${color.grey};
+  background-color: ${colors.Background.Interface.DarkMain};
   margin: 5px auto ${intToPx(DefaultPadding.Mobile)};
 `;
 
@@ -104,7 +105,7 @@ export const ProfileTabIconStyle = styled(SvgLike)`
   align-self: center;
   margin-left: 5px;
   .tofill {
-    fill: ${color.brandSecondary};
+    fill: ${colors.Content.Make.Secondary};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     width: 18px;
@@ -159,7 +160,7 @@ export const ProfileTitleStyle = styled(BodyMCondensed)`
 export const ProfileContentStyle = styled(ParagraphStyle)`
   margin-bottom: 10px;
   svg {
-    fill: ${color.greyDark};
+    fill: ${colors.Content.Interface.DarkSecondary};
   }
   &:last-child {
     margin-bottom: 0;
@@ -237,9 +238,9 @@ export const ProfileCollapseSeparatorStyle = styled(SeparatorStyle)<{
 export const ProfileCollapseButtonStyle = styled(UnstyledButtonStyle)`
   position: relative;
   z-index: 1;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   font-family: ${MakeFonts.TradeGothicBoldCondensed};
-  color: ${color.brandSecondary};
+  color: ${colors.Content.Make.Secondary};
   text-transform: uppercase;
   text-decoration: none;
   padding: 0 10px;

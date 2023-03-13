@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { Link } from 'react-router-dom';
 import { intToPx, pxToPercent } from '@make.org/utils/helpers/styled';
 import {
@@ -13,6 +13,7 @@ import { SvgFiltersMobileIcon } from '@make.org/ui/Svg/elements';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
 import { TitleL, TitleS } from '@make.org/designsystem/components/Titles';
 import { BodyMDefault } from '@make.org/designsystem/components/Body';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const ConsultationHeaderWrapperStyle = styled.div<{
   backgroundcolor: string;
@@ -159,7 +160,7 @@ export const ExploreDescriptionStyle = styled(SpaceBetweenRowStyle)`
 export const ExploreProposalsCountStyle = styled.span`
   font-family: ${MakeFonts.CircularStandardBook};
   font-size: ${intToPx(typography.font.fontsize.S.value)};
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
   letter-spacing: 0.12px;
   > strong {
     font-family: ${MakeFonts.CircularStandardBold};
@@ -188,12 +189,12 @@ export const ResetLinkStyle = styled(Link)`
   border: none;
   text-decoration: underline;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  color: ${color.brandSecondary};
+  color: ${colors.Content.Make.Secondary};
   padding: 0;
   background-color: transparent;
   &:hover,
   &:focus {
-    color: ${color.brandSecondary};
+    color: ${colors.Content.Make.Secondary};
   }
 `;
 
@@ -248,7 +249,7 @@ export const ParticipateCTAProposalBloc = styled.div<{
 
 export const FiltersAndSortCTAWrapperStyle = styled(SpaceBetweenRowStyle)`
   height: 55px;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   ${ContainerWithPadding};
 `;
 
@@ -260,19 +261,19 @@ export const FiltersAndSortCTAStyle = styled.button`
   text-transform: uppercase;
   border: none;
   font-family: ${MakeFonts.TradeGothicBoldCondensed};
-  color: ${color.black};
-  background-color: ${color.white};
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
+  background-color: ${colors.Background.Interface.Lighter};
+  color: ${colors.Content.Interface.Dark};
 `;
 
 export const FiltersCounterStyle = styled.span`
   margin-left: 5px;
   min-width: 20px;
   line-height: 20px;
-  color: ${color.white};
+  color: ${colors.Content.Interface.Light};
   font-family: ${MakeFonts.TradeGothicBoldCondensed};
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  background-color: ${color.brandSecondary};
+  background-color: ${colors.Content.Make.Secondary};
   text-align: center;
   border-radius: 30px;
 `;

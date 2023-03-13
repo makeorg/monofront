@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import {
   RedButtonStyle,
   BlackNoBackgroundButtonStyle,
@@ -26,6 +26,7 @@ import {
   BodyXSDefault,
   BodyMDefault,
 } from '@make.org/designsystem/components/Body';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const PanelTriggerStyle = styled(RedButtonStyle)`
   position: fixed;
@@ -98,7 +99,7 @@ export const ProposalStepMandatoryStyle = styled(BodyXSDefault).attrs({
   as: 'div',
 })`
   margin-bottom: 15px;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
 `;
 
 export const ProposalStepLabelStyle = styled(BodyMDefault).attrs({ as: 'div' })`
@@ -106,7 +107,7 @@ export const ProposalStepLabelStyle = styled(BodyMDefault).attrs({ as: 'div' })`
 `;
 
 export const ProposalStepLabelRedStyle = styled.span`
-  color: ${color.brandSecondary};
+  color: ${colors.Content.Make.Secondary};
 `;
 export const ProposalAltStepTitleStyle = styled(ProposalStepTitleStyle)<{
   isWidget?: boolean;
@@ -141,10 +142,10 @@ export const ProposalTextareaStyle = styled(TextareaAutosize)`
   line-height: 1.5;
   padding: 20px 17px 30px;
   border-radius: 8px;
-  border: 1px solid ${color.grey};
+  border: 1px solid ${colors.Border.Interface.DarkMain};
   resize: none;
   max-height: 141px;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${intToPx(typography.font.fontsize.M.value)};
   }
@@ -155,7 +156,7 @@ export const ProposalCharCountStyle = styled.span`
   bottom: 10px;
   right: 20px;
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
 `;
 
 export const ProposalExternalLinkStyle = styled.a`
@@ -200,7 +201,7 @@ export const ProposalBackButtonCenterStyle = styled(ProposalBackButtonStyle)<{
 export const ProposalAuthLoginStyle = styled(BlackNoBackgroundButtonStyle)`
   display: inline;
   align-self: center;
-  color: ${color.brandSecondary};
+  color: ${colors.Content.Make.Secondary};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
 `;
 
@@ -251,7 +252,7 @@ export const ProposalSubmitButtonsWidgetStyle = styled(FlexElementStyle)`
 
 export const DataPolicyWrapperStyle = styled.span`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   display: flex;
   flex-flow: wrap;
   max-width: 80%;
@@ -270,7 +271,7 @@ export const NewWindowIconStyle = styled(SvgExternalLink)`
 export const DataPolicyNewWindowLinkStyle = styled.a`
   display: inline;
   font-family: ${MakeFonts.CircularStandardBook};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   text-transform: none;
   text-decoration: underline;
   align-items: center;
@@ -328,11 +329,11 @@ export const ProposalSuccessTitleBlackStyle = styled(
   as: 'span',
 })`
   display: inline;
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
 `;
 
 export const ProposalSuccessTitleStyle = styled(ProposalSuccessTitle)`
-  color: ${color.brandSecondary};
+  color: ${colors.Content.Make.Secondary};
 `;
 
 export const ProposalSuccessRedButtonStyle = styled(RedButtonStyle)`
@@ -382,7 +383,7 @@ export const ProposalSuccessParagraphLinkStyle = styled(
 
 export const ProposalSuccessContactStyle = styled.p`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   margin-top: 20px;
   text-align: center;
 `;
@@ -391,7 +392,7 @@ export const ProposalSuccessContactLinkStyle = styled.a`
   display: inline;
   text-decoration: underline;
   cursor: pointer;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
 `;
 
 export const ProposalSuccessCardStyle = styled.div`
@@ -428,7 +429,7 @@ export const ProposalSuccessAvatarStyle = styled(AvatarStyle)`
 
 export const ProposalSuccessNameStyle = styled.p`
   font-size: 14px;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   margin-bottom: 20px;
   margin-top: 10px;
 `;

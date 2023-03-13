@@ -2,8 +2,9 @@ import styled from 'styled-components';
 import { getBarHeight, intToPx } from '@make.org/utils/helpers/styled';
 import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const VoteResultStyle = styled.form`
   display: flex;
@@ -51,7 +52,7 @@ export const VoteResultBarStyle = styled.button<{ percent: number }>`
 
 export const VoteResultTotalLabelStyle = styled.p`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   text-align: center;
   margin-top: 5px;
   &.widget {

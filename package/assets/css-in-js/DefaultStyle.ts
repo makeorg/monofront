@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { NAVIGATION, SEARCH } from '@make.org/types/enums';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { MakeFonts } from '../vars/Fonts';
 
 export const DefaultStylesheet = createGlobalStyle`
@@ -17,7 +18,7 @@ export const DefaultStylesheet = createGlobalStyle`
 
   body {
     font-family: ${MakeFonts.CircularStandardBook};
-    color: ${color.black};
+    color: ${colors.Content.Interface.Dark};
     line-height: ${typography.font.lineheight.value};
     &.locked {
       overflow-y: hidden;
@@ -55,14 +56,14 @@ export const DefaultStylesheet = createGlobalStyle`
 
   a {
     font-family: ${MakeFonts.CircularStandardBook};
-    color: ${color.black};
+    color: ${colors.Content.Interface.Dark};
     text-decoration: underline;
   }
 
   input,
   a:hover,
   a:focus {
-    color: ${color.black};
+    color: ${colors.Content.Interface.Dark};
   }
 
   img {
@@ -73,7 +74,7 @@ export const DefaultStylesheet = createGlobalStyle`
   label {
     font-family: ${MakeFonts.CircularStandardBold};
   font-weight: bold;
-    color: ${color.black};
+    color: ${colors.Content.Interface.Dark};
   }
 
   a,

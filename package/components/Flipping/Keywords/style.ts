@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 
 export const KeywordsListWrapperStyle = styled.ul`
@@ -21,7 +22,7 @@ export const KeywordListItemStyle = styled.li`
   text-decoration: none;
   justify-content: space-between;
   flex: 1 1 auto;
-  border-top: solid 2px ${color.greyLighter};
+  border-top: solid 2px ${colors.Border.Interface.DarkSecondary};
 `;
 
 export const KeywordItemLinkStyle = styled(Link)`

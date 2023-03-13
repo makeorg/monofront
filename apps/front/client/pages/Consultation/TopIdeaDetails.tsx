@@ -5,7 +5,6 @@ import {
 } from '@make.org/utils/helpers/url';
 import { useParams, useLocation } from 'react-router-dom';
 import { QuestionType, TopIdeaType } from '@make.org/types';
-
 import { trackDisplayTopIdeas } from '@make.org/utils/services/Tracking';
 import { FollowUs } from '@make.org/components/Flipping/FollowUs';
 import { TopIdeaService } from '@make.org/utils/services/TopIdea';

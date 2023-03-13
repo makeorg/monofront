@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { color } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { Layouts, Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import {
@@ -17,7 +17,7 @@ export const HeaderStyle = styled.header`
   justify-content: center;
   flex-shrink: 0;
   padding: 11px 20px;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     padding: 25px 20px;
   }

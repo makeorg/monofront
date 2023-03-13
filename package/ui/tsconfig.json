@@ -3,6 +3,6 @@
   "references": [
     { "path": "../../package/assets" },
     { "path": "../../package/utils" },
-    { "path": "../../package/designsystem" }
+    { "path": "../../package/designsystem"}
   ],
 }

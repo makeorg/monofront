@@ -1,13 +1,14 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { BodyXSHighlight } from '@make.org/designsystem/components/Body';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const DisclaimerSubtitleStyle = styled(BodyXSHighlight).attrs({
   as: 'h4',
 })`
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
   text-transform: none;
   margin-bottom: 5px;
   &.margin-top {

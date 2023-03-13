@@ -1,4 +1,4 @@
-import { color } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { intToPx } from '@make.org/utils/helpers/styled';
@@ -10,7 +10,7 @@ export const ResultCardSidebarStyle = styled.section<{ isContext: boolean }>`
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   border-radius: ${intToPx(Elements.BorderRadius)};
   padding: ${props => (props.isContext ? '25px 25px 0px' : '25px')};
   margin-bottom: ${props => (props.isContext ? '0px' : '30px')};
@@ -27,7 +27,7 @@ export const ResultCardSidebarTitleStyle = styled(TitleXXS).attrs({ as: 'h4' })`
 
 export const ResultCardSidebarParagraphStyle = styled(BodyMDefault)`
   letter-spacing: 0.14px;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   padding-top: 10px;
   padding-bottom: 15px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {

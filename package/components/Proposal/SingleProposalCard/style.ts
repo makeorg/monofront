@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import {
@@ -14,6 +14,7 @@ import {
 } from '@make.org/ui/elements/SeparatorsElements';
 import { LinkAsRedButton } from '@make.org/ui/elements/LinkElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const InnerProposalStyle = styled(MiddleColumnStyle)`
   width: 100%;
@@ -32,12 +33,12 @@ export const FooterContentStyle = styled(MiddleColumnToRowStyle)`
 export const DescriptionStyle = styled(ParagraphStyle)`
   width: 100%;
   max-width: 650px;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   > span,
   > a {
     font-family: ${MakeFonts.CircularStandardBold};
     font-weight: bold;
-    color: ${color.black};
+    color: ${colors.Content.Interface.Dark};
     text-decoration: underline;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -83,7 +84,7 @@ export const SharingWrapperStyle = styled(MiddleColumnToRowStyle)`
 
 export const SharingTitleStyle = styled.h2`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   margin: 0 0 10px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.S.value)};

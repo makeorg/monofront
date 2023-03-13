@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import { VoteType } from '@make.org/types';
-import { voteStaticParams } from '@make.org/utils/constants/vote';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 import i18n from 'i18next';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
@@ -13,6 +12,7 @@ import {
   VoteDataBoldItemStyle,
   QualificationDataListStyle,
 } from '../style';
+import { voteButtonParams } from '../../../Vote/Button/Params';
 
 type Props = {
   /** Object with vote's properties */
@@ -24,7 +24,7 @@ type Props = {
 export const DetailledResultItem: React.FC<Props> = props => {
   const { vote, votePercent } = props;
   const { voteKey } = vote;
-  const voteColor = voteStaticParams[voteKey].color;
+  const voteColor = voteButtonParams[voteKey].color;
 
   const transVoteMap = useMemo(
     () =>

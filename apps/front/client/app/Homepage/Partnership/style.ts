@@ -1,4 +1,5 @@
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
 import styled from 'styled-components';
@@ -13,7 +14,7 @@ import {
 
 export const PartnershipSectionStyle = styled(ColumnElementStyle)`
   width: 100%;
-  background-color: ${color.brandPrimary};
+  background-color: ${colors.Content.Make.Primary};
 `;
 
 export const PartnershipInnerStyle = styled.div`
@@ -30,14 +31,14 @@ export const PartnershipSubtitleStyle = styled(BodyMCondensed).attrs({
   as: 'span',
 })`
   text-transform: uppercase;
-  color: ${color.white};
+  color: ${colors.Content.Interface.Light};
   opacity: 0.65;
   margin-bottom: 5px;
 `;
 
 export const PartnershipTitleStyle = styled(TitleL)`
   letter-spacing: 0.5px;
-  color: ${color.white};
+  color: ${colors.Content.Interface.Light};
   margin-bottom: 15px;
   text-transform: none;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -48,11 +49,11 @@ export const PartnershipTitleStyle = styled(TitleL)`
 
 export const PartnershipParagraphStyle = styled(BodyMDefault)`
   letter-spacing: 0.12px;
-  color: ${color.white};
+  color: ${colors.Content.Interface.Light};
   margin-bottom: 30px;
 `;
 
 export const PartnershipRedButton = styled(LinkAsRedButton)`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  fill: ${color.white};
+  fill: ${colors.Content.Interface.Light};
 `;

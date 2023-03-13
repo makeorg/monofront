@@ -1,5 +1,5 @@
 import React from 'react';
-import { color } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { QuestionType } from '@make.org/types';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { getParticipateLink } from '@make.org/utils/helpers/url';
@@ -26,7 +26,7 @@ type Props = {
 const businessConsultation = (question: QuestionType, country: string) => (
   <BusinessConsultationsItemStyle
     key={question.slug}
-    backgroundColor={color.white}
+    backgroundColor={colors.Background.Interface.Lighter}
   >
     <BusinessConsultationsItemWrapperStyle>
       <BusinessConsultationsItemBorderStyle color={question.theme.color} />

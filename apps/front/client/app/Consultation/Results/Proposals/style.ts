@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
@@ -27,9 +27,9 @@ export const ResultsProposalListItemStyle = styled.li`
   align-content: space-between;
   padding: 0px 15px 20px;
   margin-bottom: 20px;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   border-radius: ${intToPx(Elements.BorderRadius)};
-  border: solid 1px ${color.grey};
+  border: solid 1px ${colors.Border.Interface.DarkMain};
   &:last-child {
     margin-bottom: 0;
   }
@@ -47,7 +47,7 @@ export const ResultsProposalAuthorWrapperStyle = styled(BodyMDefault).attrs({
   justify-content: space-between;
   text-align: center;
   align-items: center;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   letter-spacing: 0.12px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     letter-spacing: 0.14px;
@@ -57,7 +57,7 @@ export const ResultsProposalAuthorWrapperStyle = styled(BodyMDefault).attrs({
 export const ResultsProposalContentStyle = styled(BodyMDefault)`
   letter-spacing: 0.11px;
   text-align: center;
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
   padding: 10px 0px 15px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     letter-spacing: 0.13px;
@@ -84,11 +84,11 @@ const ResultsItemStyle = styled.span`
 `;
 
 export const ResultsLikeItStyle = styled(ResultsItemStyle)`
-  color: ${color.agree};
+  color: ${colors.Content.Alert.Positive};
 `;
 
 export const ResultsNoWayStyle = styled(ResultsItemStyle)`
-  color: ${color.disagree};
+  color: ${colors.Content.Alert.Disagree};
 `;
 
 export const ResultsLightningIconStyle = styled(SvgLightning)`

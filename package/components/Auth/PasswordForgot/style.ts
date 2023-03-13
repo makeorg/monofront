@@ -1,10 +1,11 @@
 import styled from 'styled-components';
-import { typography, color } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { FormCenterAlignStyle } from '@make.org/ui/elements/FormElements';
 import { FourthLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
 import { TitleXXS } from '@make.org/designsystem/components/Titles';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const ForgotPasswordStyle = styled.section`
   display: flex;
@@ -34,7 +35,10 @@ export const ForgotPasswordTitleStyle = styled(FourthLevelTitleStyle)<{
       : MakeFonts.CircularStandardBold};
   text-transform: none;
   margin-top: 35px;
-  color: ${props => (props.isPanel ? color.greyDark : color.black)};
+  color: ${props =>
+    props.isPanel
+      ? colors.Content.Interface.DarkSecondary
+      : colors.Content.Interface.Dark};
   text-transform: ${props => (props.isPanel ? 'none' : 'uppercase')};
   margin: 20px 0px;
 `;
@@ -43,7 +47,7 @@ export const PanelForgotPasswordTitleStyle = styled(TitleXXS).attrs({
   as: 'h3',
 })`
   text-transform: none;
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
   text-transform: uppercase;
   &.panel {
     text-transform: none;

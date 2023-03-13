@@ -1,11 +1,12 @@
 import TextareaAutosize from 'react-autosize-textarea';
 import { Elements } from '@make.org/assets/vars/Elements';
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { BodyXSDefault } from '@make.org/designsystem/components/Body';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { SvgExternalLink, SvgSelectArrow } from '../Svg/elements';
 import { FlexElementStyle } from './FlexElements';
 import { UnstyledButtonStyle } from './ButtonsElements';
@@ -13,7 +14,7 @@ import { UnstyledButtonStyle } from './ButtonsElements';
 const DataPolicyLinkStyle = `
 display: inline-flex;
 font-family: ${MakeFonts.CircularStandardBook};
-color: ${color.greyDark};
+color: ${colors.Content.Interface.DarkSecondary};
 text-transform: none;
 text-decoration: underline;
 align-items: center;
@@ -36,7 +37,10 @@ export const CheckboxLabelStyle = styled.label<{
   justify-content: flex-start;
   align-items: flex-start;
   margin-top: 5px;
-  color: ${props => (props.isBlack ? color.black : color.greyDark)};
+  color: ${props =>
+    props.isBlack
+      ? colors.Content.Interface.Dark
+      : colors.Content.Interface.DarkSecondary};
   font-family: ${MakeFonts.CircularStandardBook};
   font-weight: normal;
   font-size: ${props =>
@@ -44,7 +48,7 @@ export const CheckboxLabelStyle = styled.label<{
       ? intToPx(typography.font.fontsize.XS.value)
       : intToPx(typography.font.fontsize.X2S.value)};
   a {
-    color: ${color.greyDark};
+    color: ${colors.Content.Interface.DarkSecondary};
   }
   strong {
     font-family: ${MakeFonts.CircularStandardBold};
@@ -80,11 +84,11 @@ export const FakeCheckboxInputStyle = styled.div`
   width: 14px;
   height: 14px;
   min-width: 14px;
-  border: 1px solid ${color.grey};
+  border: 1px solid ${colors.Border.Interface.DarkMain};
   margin: 4px 8px 0 0;
   z-index: 0;
   svg {
-    fill: ${color.brandSecondary};
+    fill: ${colors.Content.Make.Secondary};
     position: absolute;
     bottom: 5%;
     left: 25%;
@@ -100,7 +104,7 @@ export const StyledCheckbox = styled(FakeCheckboxInputStyle)<{
     visibility: ${props => (props.isChecked ? 'visible' : 'hidden')};
   }
   ${HiddenCheckbox}:focus + & {
-    box-shadow: 0 0 0 2px ${color.grey};
+    box-shadow: 0 0 0 2px ${colors.Background.Interface.DarkMain};
   }
 `;
 
@@ -113,13 +117,13 @@ export const NewWindowIconStyle = styled(SvgExternalLink)`
   height: 10px;
   padding-left: 2px;
   &.grey {
-    fill: ${color.greyDark};
-    color: ${color.greyDark};
+    fill: ${colors.Content.Interface.DarkSecondary};
+    color: ${colors.Content.Interface.DarkSecondary};
   }
 `;
 export const DataPolicyNewWindowLinkStyle = styled.a<{ isWidget?: boolean }>`
   ${DataPolicyLinkStyle};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${props =>
@@ -162,12 +166,12 @@ export const FormCenterAlignStyle = styled.form`
 
 export const FormRequirementsStyle = styled(BodyXSDefault)`
   margin-bottom: 20px;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
 `;
 
 export const FormRequirementsLeftStyle = styled(BodyXSDefault)`
   margin-bottom: 20px;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   align-self: flex-start;
 `;
 
@@ -177,10 +181,13 @@ export const FakeFieldStyle = styled.div<{ hasError?: boolean }>`
   width: 100%;
   padding: 0 15px;
   border-radius: 30px;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   border-width: 1px;
   border-style: solid;
-  border-color: ${props => (props.hasError ? color.error : color.grey)};
+  border-color: ${props =>
+    props.hasError
+      ? colors.Border.Alert.Error
+      : colors.Border.Interface.DarkMain};
   margin-bottom: 15px;
   &:last-child {
     margin-bottom: 0;
@@ -222,7 +229,7 @@ export const FieldWrapperStyle = styled.div`
 
 export const FloatingLabelStyle = styled.label<{ isWidget?: boolean }>`
   font-family: ${MakeFonts.CircularStandardBook};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   font-size: ${props =>
     props.isWidget ? '14px' : intToPx(typography.font.fontsize.XS.value)};
   line-height: 38px;
@@ -244,8 +251,8 @@ export const FormErrorsContainerStyle = styled.div`
   padding: 15px;
   margin-bottom: 10px;
   border-radius: ${intToPx(Elements.BorderRadius)};
-  background-color: ${color.brandSecondary};
-  color: ${color.white};
+  background-color: ${colors.Content.Make.Secondary};
+  color: ${colors.Content.Interface.Light};
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
 `;
 
@@ -258,7 +265,7 @@ export const FormErrorsIntroStyle = styled.p`
 export const FormErrorsListItemStyle = styled.li`
   margin: 0 0 5px;
   label {
-    color: ${color.white};
+    color: ${colors.Content.Interface.Light};
     font-family: ${MakeFonts.CircularStandardBold};
     font-weight: bold;
     text-decoration: underline;
@@ -281,11 +288,11 @@ export const CustomErrorTriggerStyle = styled(UnstyledButtonStyle)`
 
 const InputIconStyle = styled.span`
   display: flex;
-  color: ${color.brandSecondary};
+  color: ${colors.Content.Make.Secondary};
   font-size: ${intToPx(typography.font.fontsize.S.value)};
   margin-right: 5px;
   svg {
-    fill: ${color.brandSecondary};
+    fill: ${colors.Content.Make.Secondary};
   }
 `;
 
@@ -303,7 +310,7 @@ export const BasicInputStyle = styled.input`
   background-color: transparent;
   width: 100%;
   font-family: ${MakeFonts.CircularStandardBook};
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   line-height: 38px;
   padding: 0 5px;
@@ -316,7 +323,7 @@ export const BasicSelectStyle = styled.select`
   background: transparent url(${SvgSelectArrow as never}) no-repeat 95% center;
   min-width: 100%;
   font-family: ${MakeFonts.CircularStandardBook};
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   line-height: 24px;
   padding: 0 5px;
@@ -335,7 +342,7 @@ export const FormSuccessSvgStyle = {
   display: 'inline-flex',
   fontSize: '16px',
   marginRight: '5px',
-  fill: color.success,
+  fill: colors.Content.Alert.Positive,
 };
 
 export const BasicTextAreaStyle = styled(TextareaAutosize)`
@@ -345,14 +352,14 @@ export const BasicTextAreaStyle = styled(TextareaAutosize)`
   background-color: transparent;
   font-family: ${MakeFonts.CircularStandardBold};
   font-weight: bold;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   padding: 10px 5px;
   resize: none;
 `;
 
 export const TextAreaCounterStyle = styled(BodyXSDefault).attrs({ as: 'div' })`
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   position: absolute;
   right: 5px;
   bottom: 5px;

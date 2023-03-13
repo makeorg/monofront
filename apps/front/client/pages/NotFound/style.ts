@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import {
   Breakpoints,
@@ -23,7 +24,7 @@ export const NotFoundPageInnerStyle = styled(MiddleColumnStyle)`
   padding: ${intToPx(DefaultPadding.Mobile)};
   max-width: ${intToPx(Layouts.ContainerWidth)};
   max-height: 550px;
-  background-color: ${color.greyLighter};
+  background-color: ${colors.Background.Interface.DarkSecondary};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     padding: ${intToPx(DefaultPadding.Desktop)};
   }
@@ -31,7 +32,7 @@ export const NotFoundPageInnerStyle = styled(MiddleColumnStyle)`
 
 export const NotFoundIntroStyle = styled.p`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  color: ${color.brandSecondary};
+  color: ${colors.Content.Make.Secondary};
   font-style: italic;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.XL.value)};

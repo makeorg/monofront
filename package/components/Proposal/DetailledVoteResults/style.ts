@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
@@ -10,6 +10,7 @@ import {
   FlexElementStyle,
 } from '@make.org/ui/elements/FlexElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 const DetailledContainer = `
   width: 100%;
@@ -24,8 +25,8 @@ export const DetailledItemStyle = styled.li`
   padding: 0 15px;
   min-width: 200px;
   &.disagree {
-    border-left: 1px solid ${color.greyLighter};
-    border-right: 1px solid ${color.greyLighter};
+    border-left: 1px solid ${colors.Border.Interface.DarkSecondary};
+    border-right: 1px solid ${colors.Border.Interface.DarkSecondary};
   }
 `;
 
@@ -44,7 +45,7 @@ export const VoteDataListStyle = styled(ColumnElementStyle)`
 
 const VoteDataItemStyle = styled.span`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   margin: 3px 0;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};

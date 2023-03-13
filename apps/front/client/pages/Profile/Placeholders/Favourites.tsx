@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { color } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import i18n from 'i18next';
 import {
   CenterColumnStyle,
@@ -49,7 +49,11 @@ export const ProfileFavouritesPlaceholder: FC = () => (
       </FavouritesProposalStyle>
       <VoteContainerStyle className="placeholder">
         <VoteResultContainerStyle>
-          <VoteButtonStyle className="agree voted" color={color.agree} disabled>
+          <VoteButtonStyle
+            className="agree voted"
+            color={colors.Content.Alert.Positive}
+            disabled
+          >
             <SvgThumbsUp aria-hidden focusable="false" />
           </VoteButtonStyle>
           <VoteResultGraphStyle>
@@ -59,7 +63,7 @@ export const ProfileFavouritesPlaceholder: FC = () => (
                 direction="bottom"
               >
                 <VoteResultBarStyle
-                  color={color.agree}
+                  color={colors.Content.Alert.Positive}
                   percent={100}
                   type="button"
                 />
@@ -71,7 +75,7 @@ export const ProfileFavouritesPlaceholder: FC = () => (
                 direction="bottom"
               >
                 <VoteResultBarStyle
-                  color={color.disagree}
+                  color={colors.Content.Alert.Disagree}
                   percent={0}
                   type="button"
                 />
@@ -83,7 +87,7 @@ export const ProfileFavouritesPlaceholder: FC = () => (
                 direction="bottom"
               >
                 <VoteResultBarStyle
-                  color={color.neutral}
+                  color={colors.Content.Alert.Neutral}
                   percent={0}
                   type="button"
                 />
@@ -97,17 +101,17 @@ export const ProfileFavouritesPlaceholder: FC = () => (
         <SpaceBetweenColumnStyle>
           <QualifyButtonStyle
             className="qualified"
-            color={color.agree}
+            color={colors.Content.Alert.Positive}
             disabled
           >
             <span>{i18n.t('qualification.likeIt')}</span>
             <CounterStyle>+1</CounterStyle>
           </QualifyButtonStyle>
-          <QualifyButtonStyle color={color.agree} disabled>
+          <QualifyButtonStyle color={colors.Content.Alert.Positive} disabled>
             <span>{i18n.t('qualification.doable')}</span>
             <CounterStyle>+1</CounterStyle>
           </QualifyButtonStyle>
-          <QualifyButtonStyle color={color.agree} disabled>
+          <QualifyButtonStyle color={colors.Content.Alert.Positive} disabled>
             <span>{i18n.t('qualification.platitudeAgree')}</span>
             <CounterStyle>+1</CounterStyle>
           </QualifyButtonStyle>

@@ -1,15 +1,16 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { TextColors } from '@make.org/assets/vars/Colors';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { SvgCheckedSymbol } from '@make.org/ui/Svg/elements';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const AuthorWrapperStyle = styled.div`
   width: 100%;
   padding-bottom: 10px;
-  border-bottom: 1px solid ${color.greyLighter};
+  border-bottom: 1px solid ${colors.Border.Interface.DarkSecondary};
 `;
 
 export const AuthorContainerStyle = styled.div`
@@ -35,7 +36,7 @@ export const AuthorInfosStyle = styled(ParagraphStyle)`
   align-items: center;
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   line-height: normal;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   font-style: normal;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
@@ -44,17 +45,17 @@ export const AuthorInfosStyle = styled(ParagraphStyle)`
 
 export const ProposalStatusStyle = styled.span`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  color: ${color.white};
+  color: ${colors.Content.Interface.Light};
   padding: 5px 10px;
   &.status-accepted {
-    background-color: ${color.success};
+    background-color: ${colors.Background.Alert.Positive};
   }
   &.status-refused {
-    background-color: ${color.error};
+    background-color: ${colors.Background.Alert.Error};
   }
   &.status-postponed,
   &.status-pending {
-    background-color: ${color.greyLighter};
+    background-color: ${colors.Background.Interface.DarkSecondary};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};

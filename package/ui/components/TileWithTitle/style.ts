@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
@@ -11,7 +11,7 @@ const DEFAULT_RADIUS: string = intToPx(Elements.BorderRadius);
 export const TileWithTitleStyle = styled.div<{
   as: JSX.Element;
 }>`
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   box-shadow: 0 1px 1px 0 ${ShadowColors.BlackZeroFiveOpacity};
   margin-bottom: 20px;
   padding: 20px;
@@ -33,6 +33,6 @@ export const TileTitleStyle = styled(FourthLevelTitleStyle)`
   display: flex;
   align-items: center;
   .tofill {
-    fill: ${color.black};
+    fill: ${colors.Content.Interface.Dark};
   }
 `;

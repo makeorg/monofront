@@ -1,13 +1,14 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { DefaultPadding, Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const ProfileVoteCardStyle = styled.aside`
   width: 100%;
   box-shadow: 0 1px 1px 0 ${ShadowColors.BlackZeroFiveOpacity};
-  background-color: ${color.greyLighter};
+  background-color: ${colors.Background.Interface.DarkSecondary};
   padding: ${intToPx(DefaultPadding.Mobile)};
 `;
 
@@ -21,10 +22,10 @@ export const ProfileVoteWrapperStyle = styled.article`
 export const ProfileVoteTitleStyle = styled.div`
   display: flex;
   align-items: center;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   padding: ${intToPx(DefaultPadding.Mobile)};
   width: 100%;
-  box-shadow: 0 1px 1px 0 ${color.greyLighter};
+  box-shadow: 0 1px 1px 0 ${colors.Background.Interface.DarkSecondary};
 `;
 
 export const ProfileHasVotedStyle = styled.div`
@@ -41,22 +42,21 @@ export const ProfileHasVotedStyle = styled.div`
   border-style: solid;
   border-radius: 50%;
   overflow: hidden;
-  color: ${color.white};
+  color: ${colors.Content.Interface.Light};
   box-shadow: 0 1px 1px 0 ${ShadowColors.BlackZeroFiveOpacity};
   &.agree {
-    background-color: ${color.agree};
-    border-color: ${color.agree};
+    background-color: ${colors.Background.Alert.Positive};
+    border-color: ${colors.Border.Alert.Positive};
   }
   &.disagree {
-    background-color: ${color.disagree};
-    border-color: ${color.disagree};
+    background-color: ${colors.Background.Alert.Disagree};
+    border-color: ${colors.Border.Alert.Disagree};
   }
   &.neutral {
-    background-color: ${color.neutral};
-    border-color: ${color.neutral};
+    background-color: ${colors.Background.Alert.Neutral};
   }
   .tofill {
-    fill: ${color.white};
+    fill: ${colors.Content.Interface.Light};
   }
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     min-width: 43px;

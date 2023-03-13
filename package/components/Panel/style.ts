@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { StartColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
@@ -58,7 +58,7 @@ export const PanelCloseIconStyle = styled(SvgClose)`
   width: 14px;
   height: 14px;
   .tofill {
-    fill: ${color.white};
+    fill: ${colors.Content.Interface.Light};
   }
 `;
 

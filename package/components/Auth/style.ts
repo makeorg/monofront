@@ -4,7 +4,7 @@ import { SvgLegalConsent, SvgExternalLink } from '@make.org/ui/Svg/elements';
 import { SmallSeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { FormCenterAlignStyle } from '@make.org/ui/elements/FormElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import {
   RedButtonStyle,
   UnstyledButtonStyle,
@@ -21,6 +21,7 @@ import {
   BodyXSDefault,
   BodySDefault,
 } from '@make.org/designsystem/components/Body';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const AuthenticationWrapperStyle = styled.section`
   display: flex;
@@ -86,21 +87,21 @@ export const LegalButtonGroupStyle = styled(SpaceBetweenRowStyle)`
 
 export const LegalCancelStyle = styled(UnstyledButtonStyle)`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   text-decoration: underline;
 `;
 
 export const LegalSubmitStyle = styled(RedButtonStyle)`
   &:disabled {
-    color: ${color.greyDark};
-    background-color: ${color.greyLighter};
+    color: ${colors.Content.Interface.DarkSecondary};
+    background-color: ${colors.Background.Interface.DarkSecondary};
   }
 `;
 
 const TermsOfUseLinkStyle = styled.a`
   display: inline;
   font-family: ${MakeFonts.CircularStandardBook};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   text-transform: none;
   text-decoration: underline;
   align-items: center;
@@ -109,7 +110,7 @@ const TermsOfUseLinkStyle = styled.a`
 `;
 
 export const TermsOfUseLinkGreyStyle = styled(TermsOfUseLinkStyle)`
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
@@ -121,14 +122,14 @@ export const NewWindowIconStyle = styled(SvgExternalLink)`
   height: 10px;
   padding-left: 2px;
   .tofill {
-    fill: ${color.brandSecondary};
+    fill: ${colors.Content.Make.Secondary};
   }
   &.grey .tofill {
-    fill: ${color.greyDark};
+    fill: ${colors.Content.Interface.DarkSecondary};
   }
   &.grey {
-    fill: ${color.greyDark};
-    color: ${color.greyDark};
+    fill: ${colors.Content.Interface.DarkSecondary};
+    color: ${colors.Content.Interface.DarkSecondary};
   }
 `;
 
@@ -155,12 +156,12 @@ export const LoginTitleWrapperCenterStyle = styled(LoginTitleWrapperStyle)`
     align-self: center;
   }
   &.red {
-    color: ${color.brandSecondary};
+    color: ${colors.Content.Make.Secondary};
   }
 `;
 
 export const PostCodeWrapperStyle = styled(BodyXSDefault).attrs({ as: 'span' })`
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   margin-bottom: 30px;
   margin-top: -10px;
 `;
@@ -174,7 +175,7 @@ export const RegisterParagraphStyle = styled.p`
 
 export const GreyParagraphStyle = styled.p`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   display: flex;
   flex-flow: wrap;
   max-width: 80%;
@@ -189,7 +190,7 @@ export const GreyParagraphStyle = styled.p`
 export const PersonalDataGreyLinkStyle = styled.a`
   display: inline;
   font-family: ${MakeFonts.CircularStandardBook};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   text-transform: none;
   text-decoration: underline;
   align-items: center;
@@ -218,9 +219,9 @@ export const RegisterPanelSubTitleWrapperStyle = styled(
   LoginTitleWrapperCenterStyle
 )`
   &.dark {
-    color: ${color.black};
+    color: ${colors.Content.Interface.Dark};
   }
-  color: ${color.brandSecondary};
+  color: ${colors.Content.Make.Secondary};
   margin-bottom: 35px;
 `;
 
@@ -232,7 +233,7 @@ export const RegisterPanelSuccessParagraphContainerStyle = styled.div`
 `;
 
 export const RegisterPanelSuccessParagraphStyle = styled(BodySDefault)`
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
   }

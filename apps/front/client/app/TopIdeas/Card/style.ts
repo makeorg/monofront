@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
@@ -7,8 +7,8 @@ import { SvgIdea, SvgLike, SvgThumbsUp } from '@make.org/ui/Svg/elements';
 import { Link } from 'react-router-dom';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
-import { Elements } from '@make.org/assets/vars/Elements';
 import { CardStyle } from '@make.org/ui/elements/CardsElements';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const TopIdeaCardStyle = styled(CardStyle)`
   overflow: hidden;
@@ -23,24 +23,20 @@ export const TopIdeaCardHeaderStyle = styled.div`
   align-items: center;
   font-family: ${MakeFonts.CircularStandardBold};
   font-weight: bold;
-  background-color: ${color.grey};
-  color: ${color.black};
-  margin-bottom: 20px;
-  padding: 5px 10px;
-  border-radius: ${intToPx(Elements.BorderRadius)};
+  background-color: ${colors.Background.Interface.DarkMain};
 `;
 
 export const TopIdeaLinkStyle = styled(Link)`
   display: flex;
   align-items: center;
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   &:hover,
   &:focus {
-    color: ${color.black};
+    color: ${colors.Content.Interface.Dark};
   }
   svg {
-    fill: ${color.black};
+    fill: ${colors.Content.Interface.Dark};
   }
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
@@ -83,7 +79,7 @@ export const TopIdeaCardContentStyle = styled.div`
 export const PositionStyle = styled.div`
   display: flex;
   .tofill {
-    fill: ${color.brandSecondary};
+    fill: ${colors.Content.Make.Secondary};
   }
 `;
 
@@ -98,7 +94,7 @@ export const TopIdeaCollapseWrapperStyle = styled.div`
   flex-direction: column;
   padding-top: 20px;
   margin-top: 10px;
-  border-top: 1px solid ${color.greyLighter};
+  border-top: 1px solid ${colors.Border.Interface.DarkSecondary};
 `;
 
 export const TopIdeaCollapseContentStyle = styled.div`
@@ -117,12 +113,12 @@ export const TopIdeaCollapseTriggerStyle = styled(UnstyledButtonStyle)`
   align-items: center;
   order: 1;
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
   }
   .tofill {
-    fill: ${color.brandSecondary};
+    fill: ${colors.Content.Make.Secondary};
   }
 `;
 
@@ -150,13 +146,13 @@ export const SvgIdeaStyle = styled(SvgIdea)`
 export const SvgLikeStyle = styled(SvgLike)`
   width: 25px;
   height: 25px;
-  fill: ${color.brandSecondary};
+  fill: ${colors.Content.Make.Secondary};
 `;
 
 export const SvgThumbsUpStyle = styled(SvgThumbsUp)`
   width: 25px;
   height: 25px;
   .tofill {
-    fill: ${color.agree};
+    fill: ${colors.Content.Alert.Positive};
   }
 `;

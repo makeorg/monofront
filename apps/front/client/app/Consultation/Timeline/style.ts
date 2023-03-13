@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
@@ -12,7 +13,7 @@ import {
 } from '@make.org/designsystem/components/Body';
 
 export const TimelineWrapperStyle = styled(FlexElementStyle)`
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
 `;
 
 export const TimelineContentStyle = styled.div`
@@ -51,7 +52,7 @@ export const TimelineItemWrapperStyle = styled.div`
 `;
 
 export const TimelineItemTitleStyle = styled(BodyXSCondensed)`
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,14 +62,14 @@ export const TimelineItemMarkerIsCurrent = styled.span`
   height: 7px;
   width: 7px;
   border-radius: 50%;
-  background-color: ${color.brandSecondary};
+  background-color: ${colors.Content.Make.Secondary};
   margin-left: 5px;
 `;
 
 export const TimelineItemDateStyle = styled(BodyLHighLight).attrs({
   as: 'span',
 })`
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
   margin: 8px 0;
   &:first-letter {
     text-transform: capitalize;
@@ -76,10 +77,10 @@ export const TimelineItemDateStyle = styled(BodyLHighLight).attrs({
 `;
 
 export const TimelineItemTextStyle = styled(BodyMDefault)`
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
 `;
 
 export const TimelineWorkshopLinkStyle = styled.a`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
 `;

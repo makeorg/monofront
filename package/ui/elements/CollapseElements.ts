@@ -1,10 +1,11 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Elements } from '@make.org/assets/vars/Elements';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { SeparatorStyle } from './SeparatorsElements';
 import { UnstyledButtonStyle } from './ButtonsElements';
 import { MiddleColumnStyle } from './FlexElements';
@@ -20,7 +21,7 @@ export const CollapseWrapperStyle = styled(MiddleColumnStyle)<{
 `;
 
 export const TileWithCollapseWrapperStyle = styled(CollapseWrapperStyle)`
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   box-shadow: 0 1px 1px 0 ${ShadowColors.BlackZeroFiveOpacity};
   padding: 20px;
   &.collapsed {
@@ -42,7 +43,7 @@ export const CollapseTriggerStyle = styled(UnstyledButtonStyle)`
   line-height: 15px;
   text-align: left;
   &:disabled {
-    color: ${color.black};
+    color: ${colors.Content.Interface.Dark};
     cursor: text;
   }
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
@@ -65,7 +66,7 @@ export const CollapseIconStyle = styled.span<{ iscollapsed: boolean }>`
   align-items: center;
   transform: ${props => (props.iscollapsed ? `rotate(0)` : `rotate(90deg)`)};
   .tofill {
-    fill: ${color.brandSecondary};
+    fill: ${colors.Content.Make.Secondary};
   }
 `;
 

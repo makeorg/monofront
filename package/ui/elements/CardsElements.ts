@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
 import {
@@ -11,6 +11,7 @@ import { Elements } from '@make.org/assets/vars/Elements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { Link } from 'react-router-dom';
 import { TitleS, TitleXXS } from '@make.org/designsystem/components/Titles';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { FlexElementStyle } from './FlexElements';
 import { ParagraphStyle } from './ParagraphElements';
 import { SvgExternalLink, SvgLock } from '../Svg/elements';
@@ -25,7 +26,7 @@ export const CardStyle = styled.article`
   flex: 1 1 auto;
   max-width: ${intToPx(Layouts.ContainerWidth)};
   padding: ${intToPx(DefaultPadding.Mobile)};
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   box-shadow: 0 1px 1px 0 ${ShadowColors.BlackZeroFiveOpacity};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     border-radius: ${intToPx(Elements.BorderRadius)};
@@ -74,8 +75,8 @@ export const ParticipateCardLinkStyle = styled(Link)`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   text-decoration: none;
   text-transform: uppercase;
-  color: ${color.black};
-  border: solid ${color.black} 1px;
+  color: ${colors.Content.Interface.Dark};
+  border: solid ${colors.Border.Interface.Darker} 1px;
   border-radius: 50px;
   width: max-content;
   height: 35px;
@@ -89,13 +90,13 @@ export const ParticipateCardExternalLinkStyle = styled.a`
   display: flex;
   align-items: center;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
 `;
 
 export const ParticipateCardSoonStyle = styled(FlexElementStyle)`
   align-items: center;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
 `;
 
 export const ParticipateCardSoonIconStyle = styled(SvgLock)`
@@ -118,7 +119,7 @@ export const ParticipateCardStyle = styled.section<{
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   border-radius: ${intToPx(Elements.BorderRadius)};
   padding: 30px;
   &.no-padding-bottom {

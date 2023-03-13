@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography, color } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { GreyLinkStyle } from '@make.org/ui/elements/ButtonsElements';
@@ -7,6 +7,8 @@ import { MiddleColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { Image } from '@make.org/ui/components/Image';
 import { TitleM, TitleXXXS } from '@make.org/designsystem/components/Titles';
 import { BodyMHighLight } from '@make.org/designsystem/components/Body';
+import { colors } from '@make.org/designsystem/tokens/colors';
+
 import { SvgArrowReturn } from '@make.org/ui/Svg/elements';
 
 export const SequenceContainerStyle = styled(MiddleColumnStyle)`
@@ -45,7 +47,7 @@ export const SequenceSpecialTitleStyle = styled(BodyMHighLight).attrs({
   border-radius: 8px;
   letter-spacing: 0.12px;
   padding: 5px 10px;
-  background-color: ${color.greyLighter};
+  background-color: ${colors.Background.Interface.DarkSecondary};
   margin-top: 20px;
   align-self: flex-start;
 `;

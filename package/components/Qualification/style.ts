@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { BodyXSHighlight } from '@make.org/designsystem/components/Body';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const QualificationDataItemStyle = styled(UnstyledListStyle)`
   margin-top: 10px;
@@ -20,7 +21,7 @@ export const QualificationLabelStyle = styled(BodyXSHighlight).attrs({
 
 export const QualificationContentStyle = styled.span`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
   }

@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { SvgFastForward } from '@make.org/ui/Svg/elements';
@@ -17,6 +17,7 @@ import {
 import { SeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { SvgPropsType } from '@make.org/types';
 import { BodyMDefault } from '@make.org/designsystem/components/Body';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const SequenceCardStyle = styled.section`
   position: relative;
@@ -28,7 +29,7 @@ export const SequenceCardStyle = styled.section`
   flex: 1;
   width: 100%;
   padding: 25px 20px 20px;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   border-radius: 8px;
   box-shadow: 0 2px 3px 0 ${ShadowColors.BlackZeroTwoOpacity};
   margin: 30px auto;
@@ -190,13 +191,13 @@ export const SequenceParagraphStyle = styled(CenterColumnStyle)`
   letter-spacing: 0.12px;
   text-align: center;
   margin-bottom: 20px;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
 `;
 
 const SequenceFadeInAnimation = keyframes`
-  0% { background-color: ${color.greyLighter}; }
-  75% { background-color: ${color.grey}; }
-  100% { background-color: ${color.greyLighter}; }
+  0% { background-color: ${colors.Background.Interface.DarkSecondary}; }
+  75% { background-color: ${colors.Background.Interface.DarkMain}; }
+  100% { background-color: ${colors.Background.Interface.DarkSecondary}; }
 `;
 
 export const SequencePlaceholderLineStyle = styled.div<{ className?: string }>`
@@ -242,14 +243,14 @@ export const SequencePlaceholderLineStyle = styled.div<{ className?: string }>`
 export const FinalCardSeparatorStyle = styled(SeparatorStyle)`
   max-width: 80px;
   margin: 20px auto;
-  border: solid 0.5px ${color.grey};
+  border: solid 0.5px ${colors.Border.Interface.DarkMain};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     margin: 30px auto;
   }
 `;
 
 export const FinalCardRegisterStyle = styled.div`
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
 `;
 
 export const IntroProposalRedButtonStyle = styled(RedButtonStyle)`

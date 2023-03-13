@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { Link } from 'react-router-dom';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import {
@@ -32,13 +33,17 @@ export const BreadcrumbsListStyle = styled.li`
 export const BreadcrumbsLinkStyle = styled(Link)`
   font-family: ${MakeFonts.CircularStandardBook};
   color: ${props =>
-    props.theme.fontColor ? props.theme.fontColor : color.black};
+    props.theme.fontColor
+      ? props.theme.fontColor
+      : colors.Content.Interface.Dark};
   text-decoration: underline;
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   &:hover,
   &:focus {
     color: ${props =>
-      props.theme.fontColor ? props.theme.fontColor : color.black};
+      props.theme.fontColor
+        ? props.theme.fontColor
+        : colors.Content.Interface.Dark};
   }
 `;
 
@@ -46,7 +51,9 @@ export const HomeIconStyle = styled(SvgHouse)`
   margin-right: 10px;
   .tofill {
     fill: ${props =>
-      props.theme.fontColor ? props.theme.fontColor : color.black};
+      props.theme.fontColor
+        ? props.theme.fontColor
+        : colors.Content.Interface.Dark};
   }
 `;
 
@@ -54,7 +61,9 @@ export const ArrowIconStyle = styled(SvgBigArrowRight)`
   margin: 0 10px;
   .tofill {
     fill: ${props =>
-      props.theme.fontColor ? props.theme.fontColor : color.black};
+      props.theme.fontColor
+        ? props.theme.fontColor
+        : colors.Content.Interface.Dark};
   }
 `;
 
@@ -74,7 +83,7 @@ export const BreadcrumbsListStyleDeprecated = styled.ol`
 export const BreadcrumbsListItemStyleDeprecated = styled.li`
   display: inline-flex;
   &.selected > a {
-    color: ${color.black};
+    color: ${colors.Content.Interface.Dark};
     border-bottom: none;
     cursor: default;
   }
@@ -82,14 +91,14 @@ export const BreadcrumbsListItemStyleDeprecated = styled.li`
 
 export const BreadcrumbsLinkStyleDeprecated = styled(Link)`
   font-family: ${MakeFonts.TradeGothicBoldCondensed};
-  color: ${color.brandSecondary};
+  color: ${colors.Content.Make.Secondary};
   text-decoration: none;
   text-transform: uppercase;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  border-bottom: 2px solid ${color.brandSecondary};
+  border-bottom: 2px solid ${colors.Content.Make.Secondary};
   &:hover,
   &:focus {
-    color: ${color.brandSecondary};
+    color: ${colors.Content.Make.Secondary};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${intToPx(typography.font.fontsize.S.value)};

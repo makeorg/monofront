@@ -2,7 +2,6 @@ import React, { FC, useState, useMemo } from 'react';
 import i18n from 'i18next';
 import { PersonalityService } from '@make.org/utils/services/Personality';
 import { SvgThumbsUp } from '@make.org/ui/Svg/elements';
-import { opinionsVoteStaticParams } from '@make.org/utils/constants/opinions';
 import { setEmptyStringToNull } from '@make.org/utils/helpers/form';
 import {
   CommitmentPreviewSeparatorStyle,
@@ -16,6 +15,7 @@ import {
   CommitmentPreviewOpinionsParagraphStyle,
   CommitmentPreviewOpinionsWrapperStyle,
 } from './style';
+import { opinionsVoteStaticParams } from '../../params';
 
 type Props = {
   userId: string;

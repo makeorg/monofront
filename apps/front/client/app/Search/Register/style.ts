@@ -5,7 +5,7 @@ import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
-import { color } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const SearchPageSidebarStyle = styled(ColumnElementStyle)`
   width: 100%;
@@ -43,7 +43,7 @@ export const SearchSidebarTileStyle = styled.div<{
   background-position: right;
   background-size: contain;
   background-repeat: no-repeat;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   border-radius: ${intToPx(Elements.BorderRadius)};
   box-shadow: 0 1px 1px 0 ${ShadowColors.BlackZeroFiveOpacity};
   padding: 20px;

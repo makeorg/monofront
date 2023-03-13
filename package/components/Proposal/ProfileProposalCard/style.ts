@@ -1,6 +1,6 @@
 import { CardStyle } from '@make.org/ui/elements/CardsElements';
 import styled from 'styled-components';
-import { color } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const ProfileProposalCardStyle = styled(CardStyle)`
   margin: 15px 0;
@@ -17,14 +17,14 @@ export const ProfileProposalCardStyle = styled(CardStyle)`
   &.proposal-postponed,
   &.proposal-pending {
     * {
-      color: ${color.greyDark};
+      color: ${colors.Content.Interface.DarkSecondary};
     }
     a {
-      color: ${color.brandSecondary};
+      color: ${colors.Content.Make.Secondary};
     }
     header,
     .status-refused {
-      color: ${color.white};
+      color: ${colors.Content.Interface.Light};
     }
   }
 `;

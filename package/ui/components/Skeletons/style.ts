@@ -1,8 +1,8 @@
 import styled, { keyframes } from 'styled-components';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { color } from 'athena-design-tokens';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { SpaceBetweenRowStyle } from '../../elements/FlexElements';
 
 export const SkeletonCardStyle = styled.div`
@@ -13,7 +13,7 @@ export const SkeletonCardStyle = styled.div`
   flex: 1;
   width: 100%;
   padding: 0 20px;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   border-radius: 8px;
   box-shadow: 0 2px 3px 0 ${ShadowColors.BlackZeroTwoOpacity};
   max-height: 365px;
@@ -28,9 +28,9 @@ export const SkeletonCardStyle = styled.div`
 `;
 
 const SkeletonAnimation = keyframes`
-  0% { background-color: ${color.greyLighter}; }
-  75% { background-color: ${color.grey}; }
-  100% { background-color: ${color.greyLighter}; }
+  0% { background-color: ${colors.Background.Interface.DarkSecondary}; }
+  75% { background-color: ${colors.Background.Interface.DarkMain}; }
+  100% { background-color: ${colors.Background.Interface.DarkSecondary}; }
 `;
 
 export const SkeletonLineStyle = styled.div`
@@ -84,7 +84,7 @@ export const SkeletonRoundStyle = styled.div`
     top: -6px;
     left: 50%;
     transform: translateX(-50%);
-    border: 3px solid ${color.white};
+    border: 3px solid ${colors.Border.Interface.Lighter};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     height: 56px;

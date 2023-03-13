@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import {
   Layouts,
   DefaultPadding,
@@ -7,6 +7,7 @@ import {
 } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const TabNavStyle = styled.nav`
   position: relative;
@@ -23,7 +24,7 @@ export const TabNavStyle = styled.nav`
     display: block;
     width: 100%;
     height: 1px;
-    background-color: ${color.black};
+    background-color: ${colors.Background.Interface.DarkMain};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     margin-bottom: ${intToPx(DefaultPadding.Desktop)};
@@ -53,15 +54,17 @@ const TabStyle = styled.li<{ isSelected?: boolean }>`
   min-width: 150px;
   text-transform: uppercase;
   font-family: ${MakeFonts.TradeGothicBoldCondensed};
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   border-top: ${props =>
-    props.isSelected ? `4px solid ${color.black}` : `1px solid ${color.black}`};
+    props.isSelected
+      ? `4px solid ${colors.Border.Interface.Darker}`
+      : `1px solid ${colors.Border.Interface.Darker}`};
   border-bottom: ${props =>
     props.isSelected
-      ? `1px solid ${color.greyLighter}`
-      : `1px solid ${color.black}`};
-  border-left: 1px solid ${color.black};
-  border-right: 1px solid ${color.black};
+      ? `1px solid ${colors.Border.Interface.DarkSecondary}`
+      : `1px solid ${colors.Border.Interface.Darker}`};
+  border-left: 1px solid ${colors.Border.Interface.Darker};
+  border-right: 1px solid ${colors.Border.Interface.Darker};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     flex-flow: row;
   }
@@ -78,7 +81,10 @@ const TabStyle = styled.li<{ isSelected?: boolean }>`
     padding: ${props => (props.isSelected ? '7px 5px' : '5px')};
     text-decoration: none;
     text-align: center;
-    color: ${props => (props.isSelected ? color.black : color.greyDark)};
+    color: ${props =>
+      props.isSelected
+        ? colors.Content.Interface.Dark
+        : colors.Content.Interface.DarkSecondary};
     text-transform: uppercase;
     &.inline {
       display: inline;

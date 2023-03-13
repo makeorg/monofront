@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { color, typography } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
@@ -25,7 +26,7 @@ export const FiltersWrapperStyle = styled(ColumnElementStyle)`
 
 export const FilterBlockStyle = styled.div`
   padding: 20px 20px 30px;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   border-radius: 8px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     padding: 30px;
@@ -56,20 +57,20 @@ export const TransparentButtonFilterStyle = styled.button`
   padding: 10px 20px;
   border-radius: 8px;
   line-height: 1.31;
-  border: solid 1px ${color.grey};
+  border: solid 1px ${colors.Border.Interface.DarkMain};
   background-color: transparent;
   font-family: ${MakeFonts.CircularStandardBook};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
   &.selected {
-    background-color: ${color.brandPrimary};
-    color: ${color.white};
+    background-color: ${colors.Content.Make.Primary};
+    color: ${colors.Content.Interface.Light};
     font-family: ${MakeFonts.CircularStandardBold};
     font-weight: bold;
   }
   &:hover,
   &:focus {
-    border: solid 1px ${color.brandPrimary};
+    border: solid 1px ${colors.Content.Make.Primary};
   }
 `;
 
@@ -80,7 +81,7 @@ export const RadioListWrapperStyle = styled.ul`
   list-style: none;
   text-decoration: none;
   padding: 5px;
-  background-color: ${color.greyLighter};
+  background-color: ${colors.Background.Interface.DarkSecondary};
   border-radius: 8px;
 `;
 
@@ -96,7 +97,7 @@ export const RadioItemWrapperStyle = styled.li`
     margin-bottom: 0px;
   }
   &.selected {
-    background-color: ${color.white};
+    background-color: ${colors.Background.Interface.Lighter};
     box-shadow: 0px 8px 12px -4px rgba(37, 49, 134, 0.08);
   }
 `;
@@ -106,7 +107,7 @@ export const RadioAsTransparentButtonLabelStyle = styled.label`
   align-items: center;
   font-family: ${MakeFonts.CircularStandardBook};
   font-weight: normal;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   width: 100%;
   text-align: center;
@@ -115,7 +116,7 @@ export const RadioAsTransparentButtonLabelStyle = styled.label`
   &:focus {
     font-family: ${MakeFonts.CircularStandardBold};
     font-weight: bold;
-    color: ${color.black};
+    color: ${colors.Content.Interface.Dark};
   }
 `;
 
@@ -175,14 +176,14 @@ export const SvgControversial = styled(SvgLightning)`
   margin-right: 16px;
   fill: #f7b500;
 `;
-
+console.log('>>>color:', color);
 export const CloseApplyStyle = styled.button`
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
   font-size: 14px;
   width: 100%;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   border: none;
   background: transparent;
   padding: 20px 0px 0px 20px;

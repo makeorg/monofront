@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { color } from 'athena-design-tokens';
 import {
   SvgChevronArrowLeft,
   SvgChevronArrowRight,
@@ -8,6 +7,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { Link } from 'react-router-dom';
 import { BodyMDefault } from '@make.org/designsystem/components/Body';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const PaginationNavStyle = styled.nav`
   display: flex;
@@ -28,7 +28,7 @@ export const PaginationTextStyle = styled(BodyMDefault).attrs({ as: 'div' })`
   align-items: center;
   gap: 10px;
   align-self: center;
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
 `;
 
 const sharedArrowPaginationStyle = `
@@ -38,19 +38,19 @@ const sharedArrowPaginationStyle = `
   width: 40px;
   height: 32px;
   border-radius: 8px;
-  border: 1px solid ${color.greyLighter};
+  border: 1px solid ${colors.Border.Interface.DarkSecondary};
   .tofill {
-    fill: ${color.black};
+    fill: ${colors.Content.Interface.Dark};
   }`;
 
 export const PaginationLinkStyle = styled(Link)`
   ${sharedArrowPaginationStyle}
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
 `;
 
 export const PaginationDisabledStyle = styled.span`
   ${sharedArrowPaginationStyle}
-  background-color: ${color.grey};
+  background-color: ${colors.Background.Interface.DarkMain};
 `;
 
 const MobileStyle = `
@@ -81,7 +81,7 @@ export const DropDownContainerStyle = styled.div`
   width: 60px;
   position: relative;
   border-radius: 8px;
-  border: 1px solid ${color.greyLighter};
+  border: 1px solid ${colors.Border.Interface.DarkSecondary};
 `;
 
 export const DropDownCurrentStyle = styled.div`
@@ -130,6 +130,6 @@ export const ListLinkStyle = styled(Link)`
   text-decoration: none;
   &:hover {
     color: white;
-    background-color: ${color.brandSecondary};
+    background-color: ${colors.Background.Make.Secondary};
   }
 `;

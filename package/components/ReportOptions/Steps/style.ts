@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography, color } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
@@ -7,6 +7,7 @@ import {
   SvgPreviousArrowLeft,
   SvgMailSuccess,
 } from '@make.org/ui/Svg/elements';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const ReportWrapperStyle = styled.section`
   display: flex;
@@ -74,7 +75,7 @@ export const ReportFormWrapperStyle = styled.ul`
   list-style: none;
   text-decoration: none;
   padding: 5px;
-  background-color: ${color.greyLighter};
+  background-color: ${colors.Background.Interface.DarkSecondary};
   border-radius: 8px;
   width: 375px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -95,7 +96,7 @@ export const ReportFormItemWrapperStyle = styled.li`
     margin-bottom: 0px;
   }
   &.selected {
-    background-color: ${color.white};
+    background-color: ${colors.Background.Interface.Lighter};
     box-shadow: 0px 8px 12px -4px rgba(37, 49, 134, 0.08);
   }
 `;
@@ -105,7 +106,7 @@ export const ReportFormAsTransparentButtonLabelStyle = styled.label`
   align-items: center;
   font-family: ${MakeFonts.CircularStandardBook};
   font-weight: normal;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   width: 100%;
   text-align: center;
@@ -114,7 +115,7 @@ export const ReportFormAsTransparentButtonLabelStyle = styled.label`
   &:focus {
     font-family: ${MakeFonts.CircularStandardBold};
     font-weight: bold;
-    color: ${color.black};
+    color: ${colors.Content.Interface.Dark};
   }
 `;
 
@@ -130,7 +131,7 @@ export const ReportFormBackIconStyle = styled(SvgPreviousArrowLeft)`
 export const ReportFormIconButtonWrapperStyle = styled.div`
   padding: 2px 12px;
   border-radius: 20px;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   margin-right: 10px;
   border-radius: 20px;
   width: 45px;
@@ -176,5 +177,5 @@ export const ReportOptionsButtonTextStyle = styled.p`
 export const ReportOptionsSeparatorStyle = styled.div`
   height: 1px;
   width: 100%;
-  background-color: ${color.grey};
+  background-color: ${colors.Background.Interface.DarkMain};
 `;

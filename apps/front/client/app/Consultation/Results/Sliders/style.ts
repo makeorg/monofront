@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { intToPx } from '@make.org/utils/helpers/styled';
@@ -7,6 +7,7 @@ import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const ResultsSliderArrowsStyle = styled(UnstyledButtonStyle)`
   position: absolute;
@@ -18,7 +19,7 @@ export const ResultsSliderArrowsStyle = styled(UnstyledButtonStyle)`
   transform: translateY(-50%);
   z-index: 2;
   svg {
-    fill: ${color.black};
+    fill: ${colors.Content.Interface.Dark};
   }
   &.glider-prev {
     left: 5px;
@@ -53,7 +54,7 @@ export const ResultsSliderPagination = styled(ParagraphStyle)<{
 export const ResultsSliderStyle = styled.div<{
   isResultsPage: boolean;
 }>`
-  background-color: ${color.greyLighter};
+  background-color: ${colors.Background.Interface.DarkSecondary};
   border-radius: ${intToPx(Elements.BorderRadius)};
   box-shadow: 0 1px 1px 0 ${ShadowColors.BlackZeroFiveOpacity};
   &.results-page {

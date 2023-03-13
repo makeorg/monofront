@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { Link } from 'react-router-dom';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const PagesItemStyle = styled.li`
   display: inline-flex;
@@ -18,16 +19,16 @@ export const PagesLinkStyle = styled(Link)`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   text-decoration: none;
   padding-bottom: 14px;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   border-bottom: 2px solid transparent;
   &:hover,
   &:focus {
-    color: ${color.black};
+    color: ${colors.Content.Interface.Dark};
   }
   &.selected,
   &.selected:hover,
   &.selected:focus {
-    color: ${color.brandSecondary};
-    border-bottom: 2px solid ${color.brandSecondary};
+    color: ${colors.Content.Make.Secondary};
+    border-bottom: 2px solid ${colors.Content.Make.Secondary};
   }
 `;

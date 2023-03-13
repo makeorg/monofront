@@ -1,10 +1,10 @@
 import React, { useState, FC } from 'react';
 import { PersonalityCommentsType } from '@make.org/types';
-import { opinionsVoteStaticParams } from '@make.org/utils/constants/opinions';
 import { CommitmentVote } from './Vote';
 import { CommitmentQualification } from './Qualification';
 import { CommitmentForm } from './Form';
 import { CommitmentPreview } from './Preview';
+import { opinionsVoteStaticParams } from '../params';
 
 type Props = {
   userId: string;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { Link } from 'react-router-dom';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { intToPx } from '@make.org/utils/helpers/styled';
@@ -12,7 +13,7 @@ import { Layouts, Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 
 export const FooterStyle = styled.footer`
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   padding: 0 20px 20px;
   &.extra-mobile-padding-bottom {
     padding-bottom: 50px;
@@ -33,7 +34,7 @@ export const FooterNavStyle = styled.nav`
 
 export const FooterWrapperFirstListStyle = styled(UnstyledListStyle)`
   padding: 20px 0;
-  fill: ${color.greyDark};
+  fill: ${colors.Content.Interface.DarkSecondary};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     padding: 27px 0 20px;
   }
@@ -59,7 +60,7 @@ export const FooterItemStyle = styled.li`
   &.no-bullet:after {
     display: none;
   }
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
 `;
 
 const LinkStyle = `
@@ -68,7 +69,7 @@ const LinkStyle = `
   font-family: ${MakeFonts.CircularStandardBook};
   text-decoration: none;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
 `;
 
 export const FooterItemLinkStyle = styled(Link)`
@@ -80,11 +81,11 @@ export const FooterItemHTMLLinkStyle = styled.a`
 `;
 
 export const FooterItemAltLinkStyle = styled(FooterItemLinkStyle)`
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
   font-family: ${MakeFonts.CircularStandardBold};
   font-weight: bold;
   .tofill {
-    fill: ${color.black};
+    fill: ${colors.Content.Interface.Dark};
   }
 `;
 
@@ -93,7 +94,7 @@ export const FooterLinkIconStyle = styled(SvgExternalLink)`
   height: 12px;
   margin-left: 5px;
   .tofill {
-    fill: ${color.greyDark};
+    fill: ${colors.Content.Interface.DarkSecondary};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     width: 14px;
@@ -103,8 +104,8 @@ export const FooterLinkIconStyle = styled(SvgExternalLink)`
 
 export const FooterSeparatorStyle = styled.hr`
   margin-top: 20px;
-  border-top: 1px solid ${color.greyLighter};
-  background-color: ${color.greyLighter};
+  border-top: 1px solid ${colors.Border.Interface.DarkSecondary};
+  background-color: ${colors.Background.Interface.DarkSecondary};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     margin-top: 0;
   }

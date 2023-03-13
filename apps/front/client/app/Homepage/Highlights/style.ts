@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import {
   SpaceBetweenRowStyle,
   ColumnElementStyle,
@@ -59,14 +60,14 @@ export const HeartIconStyle = styled(SvgHandHeart)`
 `;
 
 export const FiguresStyle = styled(TitleS).attrs({ as: 'span' })`
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${intToPx(typography.font.fontsize.XL.value)};
   }
 `;
 
 export const SubtitleFiguresStyle = styled(BodyMDefault).attrs({ as: 'span' })`
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   padding-bottom: 30px;
 `;
 
@@ -74,6 +75,6 @@ export const FigureSeparationLineStyle = styled.hr`
   margin: 0px;
   width: 50px;
   height: 4px;
-  border: solid 0.5px ${color.greyDark};
-  background-color: ${color.greyDark};
+  border: solid 0.5px ${colors.Content.Interface.DarkSecondary};
+  background-color: ${colors.Content.Interface.DarkSecondary};
 `;

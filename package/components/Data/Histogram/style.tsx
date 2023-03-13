@@ -1,10 +1,11 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { FourthLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const HistogramWrapperStyle = styled.div`
   width: 100%;
@@ -16,7 +17,7 @@ export const HistogramTitleStyle = styled(FourthLevelTitleStyle)`
   text-align: center;
   font-family: ${MakeFonts.CircularStandardBold};
   font-weight: bold;
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
   text-transform: none;
   margin-bottom: 30px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -38,7 +39,9 @@ export const HistogramLegendColorsStyle = styled.span<{ background?: boolean }>`
   height: 12.5px;
   margin-left: 10px;
   background-color: ${props =>
-    props.background ? color.grey : props.theme.color};
+    props.background
+      ? colors.Background.Interface.DarkMain
+      : props.theme.color};
   ${props =>
     props.background
       ? `background: repeating-linear-gradient(
@@ -54,7 +57,7 @@ export const HistogramListStyle = styled(UnstyledListStyle)<{
   height: 200px;
   display: flex;
   justify-content: space-around;
-  border-bottom: 1px solid ${color.black};
+  border-bottom: 1px solid ${colors.Border.Interface.Darker};
   padding: 20px ${props => props.itemGap}% 0;
 `;
 

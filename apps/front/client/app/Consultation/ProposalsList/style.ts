@@ -1,4 +1,5 @@
-import { typography, color } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
@@ -38,7 +39,7 @@ export const ProposalCardStyle = styled.article`
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   border-radius: ${intToPx(Elements.BorderRadius)};
   padding: 45px 20px 20px;
   min-height: 300px;
@@ -55,12 +56,12 @@ export const ProposalLinkStyle = styled(Link)`
   text-align: center;
   margin-bottom: 15px;
   text-decoration: none;
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
 `;
 
 export const ProposalDateStyle = styled.time`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   letter-spacing: 0.13px;
   text-align: center;
 `;

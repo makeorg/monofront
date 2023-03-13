@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { color } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { MiddleColumnStyle } from '../../../elements/FlexElements';
 
 export const SpinnerContainerStyle = styled(MiddleColumnStyle)`
@@ -31,10 +31,11 @@ export const SpinnerFirstRingStyle = styled.div`
   width: 51px;
   height: 51px;
   margin: 6px;
-  border: 6px solid ${color.grey};
+  border: 6px solid ${colors.Border.Interface.DarkMain};
   border-radius: 50%;
   animation: ${Spinning} 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: ${color.grey} transparent transparent transparent;
+  border-color: ${colors.Border.Interface.DarkMain} transparent transparent
+    transparent;
 `;
 
 export const SpinnerSecondRingStyle = styled(SpinnerFirstRingStyle)`

@@ -1,14 +1,15 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { UnstyledButtonStyle } from '../../elements/ButtonsElements';
 import { ColumnElementStyle } from '../../elements/FlexElements';
 
 export const CollapseWrapperStyle = styled(ColumnElementStyle)`
   padding: 30px 0px;
-  border-bottom: solid 1px ${color.grey};
+  border-bottom: solid 1px ${colors.Border.Interface.DarkMain};
   &:last-child {
     padding-bottom: 5px;
     border-bottom: none;
@@ -29,7 +30,7 @@ export const CollapseTriggerStyle = styled(UnstyledButtonStyle)`
   letter-spacing: 0.14px;
   text-align: left;
   &:disabled {
-    color: ${color.black};
+    color: ${colors.Content.Interface.Dark};
     cursor: text;
   }
 `;
@@ -40,7 +41,7 @@ export const CollapseIconStyle = styled.span<{ isCollapsed: boolean }>`
   padding-right: ${props => (props.isCollapsed ? `0px` : `10px`)};
   transform: ${props => (props.isCollapsed ? `rotate(0)` : `rotate(180deg)`)};
   .tofill {
-    fill: ${color.black};
+    fill: ${colors.Content.Interface.Dark};
   }
 `;
 

@@ -1,10 +1,10 @@
-import { VoteType } from '@make.org/types';
-import { BadArgumentError } from '@make.org/utils/errors';
 import {
   VOTE_AGREE_KEY,
   VOTE_DISAGREE_KEY,
   VOTE_NEUTRAL_KEY,
-} from '@make.org/utils/constants/vote';
+} from '@make.org/components/Vote/Button/Params';
+import { VoteType } from '@make.org/types';
+import { BadArgumentError } from '@make.org/utils/errors';
 
 /**
  * calculate total number of vote

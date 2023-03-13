@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { pxToRem, intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import {
@@ -8,6 +8,7 @@ import {
 } from '@make.org/ui/elements/FlexElements';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
 import { TitleL } from '@make.org/designsystem/components/Titles';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const HomepageWrapperStyle = styled(MiddleColumnStyle)`
   width: 100%;
@@ -34,7 +35,7 @@ export const HomepageSectionStyle = styled(ColumnElementStyle)`
 `;
 
 export const HomepageSectionTitleStyle = styled(TitleL)`
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
   margin-bottom: 30px;
   text-transform: none;
   &.with-container {

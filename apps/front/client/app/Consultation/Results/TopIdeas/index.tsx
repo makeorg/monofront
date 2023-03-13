@@ -1,14 +1,14 @@
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import React, { FC } from 'react';
-import {
-  voteStaticParams,
-  VOTE_AGREE_KEY,
-} from '@make.org/utils/constants/vote';
 import i18n from 'i18next';
 import { QuestionType } from '@make.org/types';
 import { Collapse } from '@make.org/ui/components/Collapse';
 import { ColumnToRowElementStyle } from '@make.org/ui/elements/FlexElements';
 import { VoteIconStyle } from '@make.org/ui/elements/SvgElements';
+import {
+  voteButtonParams,
+  VOTE_AGREE_KEY,
+} from '@make.org/components/Vote/Button/Params';
 import {
   TopIdeaListItemStyle,
   TopIdeaItemTitleStyle,
@@ -25,7 +25,7 @@ type Props = {
 };
 
 export const TopIdeas: FC<Props> = ({ topIdeas, question }) => {
-  const voteAttributes = voteStaticParams[VOTE_AGREE_KEY];
+  const voteAttributes = voteButtonParams[VOTE_AGREE_KEY];
 
   return (
     <>

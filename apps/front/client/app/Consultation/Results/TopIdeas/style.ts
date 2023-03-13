@@ -1,5 +1,5 @@
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { ProfileHasVotedStyle } from '@make.org/components/Proposal/ProfileVoteCard/style';
@@ -8,6 +8,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 import { BodyMHighLight } from '@make.org/designsystem/components/Body';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const ThemeResultsWrapperStyle = styled(FlexElementStyle)`
   align-items: center;
@@ -41,7 +42,7 @@ export const ThemeQualifiedStyle = styled.span`
   display: inline-flex;
   font-family: ${MakeFonts.CircularStandardBold};
   font-weight: bold;
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
   margin: 0 15px 0 5px;
 `;
 
@@ -51,9 +52,9 @@ export const TopIdeaListItemStyle = styled.li`
     margin-top: 50px;
   }
   padding: 25px 20px;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   border-radius: ${intToPx(Elements.BorderRadius)};
-  border: solid 1px ${color.grey};
+  border: solid 1px ${colors.Border.Interface.DarkMain};
 `;
 
 export const TopIdeaItemTitleStyle = styled(BodyMHighLight)`

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { SeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Elements } from '@make.org/assets/vars/Elements';
@@ -42,7 +43,7 @@ export const CommitmentPreviewOpinionsIconWrapperStyle = styled.div<{
 export const CommitmentPreviewOpinionsParagraphStyle = styled(ParagraphStyle)`
   font-family: ${MakeFonts.CircularStandardBold};
   font-weight: bold;
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
   span {
     color: ${props => props.color};
   }
@@ -50,8 +51,8 @@ export const CommitmentPreviewOpinionsParagraphStyle = styled(ParagraphStyle)`
 
 export const CommitmentPreviewBoxStyle = styled(ParagraphStyle)`
   width: 100%;
-  background-color: ${color.greyLighter};
-  color: ${color.black};
+  background-color: ${colors.Background.Interface.DarkSecondary};
+  color: ${colors.Content.Interface.Dark};
   padding: 20px;
   border-radius: ${intToPx(Elements.BorderRadius)};
   margin-bottom: 15px;
@@ -62,15 +63,15 @@ export const CommitmentPreviewBoxStyle = styled(ParagraphStyle)`
 
 export const CommitmentPreviewDislaimerStyle = styled.div`
   width: 100%;
-  background-color: ${color.infos};
-  color: ${color.white};
+  background-color: ${colors.Background.Alert.Infos};
+  color: ${colors.Content.Interface.Light};
   padding: 20px;
   border-radius: ${intToPx(Elements.BorderRadius)};
   margin-top: 15px;
 `;
 
 export const CommitmentPreviewParagraphStyle = styled(ParagraphStyle)`
-  color: ${color.white};
+  color: ${colors.Content.Interface.Light};
 `;
 
 export const CommitmentPreviewButtonsWrapperStyle = styled(FlexElementStyle)`
@@ -93,6 +94,6 @@ export const CommitmentPreviewConfirmStyle = styled.button.attrs(props => ({
   ...props,
 }))`
   ${BasicButtonStyle}
-  background-color: ${color.white};
-  color: ${color.black};
+  background-color: ${colors.Background.Interface.Lighter};
+  color: ${colors.Content.Interface.Dark};
 `;

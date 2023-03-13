@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { pxToRem, intToPx } from '@make.org/utils/helpers/styled';
 import {
   FlexElementStyle,
@@ -20,7 +21,7 @@ import { TitleXL } from '@make.org/designsystem/components/Titles';
 import { BodyMDefault } from '@make.org/designsystem/components/Body';
 
 export const HeroWrapperStyle = styled(FlexElementStyle)`
-  background-color: ${color.greyLighter};
+  background-color: ${colors.Background.Interface.DarkSecondary};
 `;
 
 export const HeroContentStyle = styled(FlexElementStyle)`
@@ -51,7 +52,7 @@ export const ColumnToRowToColumnStyle = styled(ColumnToRowElementStyle)`
 `;
 
 export const HeroTitleStyle = styled(TitleXL)`
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
   margin-bottom: 30px;
   text-transform: none;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -64,7 +65,7 @@ export const HeroTitleStyle = styled(TitleXL)`
 
 export const HeroDescriptionStyle = styled(BodyMDefault)`
   display: flex;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   margin-bottom: 40px;
   margin-top: 30px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
@@ -89,11 +90,11 @@ export const HeroTransparentButtonStyle = styled(Link)`
   display: inline-flex;
   align-self: flex-start;
   ${BasicButtonStyle};
-  border: solid 1px ${color.black};
+  border: solid 1px ${colors.Border.Interface.Darker};
   background-color: transparent;
   &:hover,
   &:focus {
-    color: ${color.black};
+    color: ${colors.Content.Interface.Dark};
     text-decoration: none;
   }
 `;

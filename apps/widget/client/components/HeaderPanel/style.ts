@@ -1,4 +1,5 @@
-import { typography, color } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { RedButtonAsLinkStyle } from '@make.org/ui/elements/ButtonsElements';
 import { Image } from '@make.org/ui/components/Image';
 import { SvgSmallLogo } from '@make.org/ui/Svg/elements';
@@ -59,7 +60,7 @@ export const KindLabelWrapperStyle = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  background-color: ${color.greyLighter};
+  background-color: ${colors.Background.Interface.DarkSecondary};
   margin: 15px 0;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     margin: 0;

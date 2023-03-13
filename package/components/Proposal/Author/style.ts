@@ -1,10 +1,11 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { SvgCheckedSymbol } from '@make.org/ui/Svg/elements';
 import { TextColors } from '@make.org/assets/vars/Colors';
 import { RedLinkStyle } from '@make.org/ui/elements/LinkElements';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const AuthorInfosStyle = styled.div`
   display: flex;
@@ -13,7 +14,7 @@ export const AuthorInfosStyle = styled.div`
   font-size: 14px;
   line-height: 24px;
   letter-spacing: 0.14px;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
   }

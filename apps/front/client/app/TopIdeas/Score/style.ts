@@ -1,12 +1,13 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { TitleXXS } from '@make.org/designsystem/components/Titles';
 
 export const ScoringContentStyle = styled.div`
-  background-color: ${color.greyLighter};
+  background-color: ${colors.Background.Interface.DarkSecondary};
   padding: 20px;
   margin: 0 0 20px 0;
   width: 100%;

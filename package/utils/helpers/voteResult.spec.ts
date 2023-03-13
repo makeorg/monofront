@@ -3,7 +3,7 @@ import {
   VOTE_AGREE_KEY,
   VOTE_DISAGREE_KEY,
   VOTE_NEUTRAL_KEY,
-} from '@make.org/utils/constants/vote';
+} from '@make.org/components/Vote/Button/Params';
 import { BadArgumentError } from '@make.org/utils/errors';
 import {
   getVotesPercentFromScore,

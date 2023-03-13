@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
@@ -9,13 +9,13 @@ export const ProposalFooterStyle = styled.div`
   display: inline-block;
   margin-top: 15px;
   padding-top: 15px;
-  border-top: 1px solid ${color.greyLighter};
+  border-top: 1px solid ${colors.Border.Interface.DarkSecondary};
 `;
 
 export const ProposalFooterTagListStyle = styled(UnstyledListStyle)`
   margin-top: 15px;
   padding-top: 15px;
-  border-top: 1px solid ${color.greyLighter};
+  border-top: 1px solid ${colors.Border.Interface.DarkSecondary};
 `;
 
 export const ProposalFooterTagListItemStyle = styled(ParagraphStyle)`

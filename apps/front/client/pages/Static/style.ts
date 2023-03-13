@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import {
   DefaultPadding,
@@ -22,6 +22,7 @@ import { StartColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { TitleM } from '@make.org/designsystem/components/Titles';
 import { BodyXSDefault } from '@make.org/designsystem/components/Body';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const StaticPageWrapperStyle = styled.div`
   width: 100%;
@@ -38,7 +39,7 @@ export const FocusBlockWrapperStyle = styled(StartColumnStyle)`
   margin: 30px 0 15px;
   flex-direction: column;
   align-items: flex-start;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   padding: 20px;
   border-radius: 8px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -52,7 +53,7 @@ export const FocusBlockTitleStyle = styled(TitleM).attrs({ as: 'strong' })`
 `;
 
 export const FocusBlockParagraphStyle = styled.p`
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   margin-bottom: 20px;
   line-height: 1.5;
@@ -107,7 +108,7 @@ export const StaticTitleExtra = styled.span`
   text-transform: none;
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   line-height: 2;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
   }
@@ -117,7 +118,7 @@ export const StaticParagraphStyle = styled.p`
   margin: 0 0 15px;
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   line-height: 2;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   white-space: pre-line;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
@@ -126,7 +127,7 @@ export const StaticParagraphStyle = styled.p`
 
 export const StaticPhoneLinkStyle = styled.a`
   text-decoration: none;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
 `;
 
 export const StaticStrongStyle = styled.strong`
@@ -236,7 +237,7 @@ export const StaticSquareListItemStyle = styled.li`
   list-style-type: square;
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
   line-height: 2;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
   }
@@ -271,7 +272,7 @@ export const NoCookiesSeparatorStyle = styled(SmallSeparatorStyle)`
 `;
 
 export const NoCookiesParagraphStyle = styled(ParagraphStyle)`
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
   margin-bottom: 15px;
   &.column {
     display: flex;
@@ -291,7 +292,7 @@ export const NoCookiesAltParagraphStyle = styled.p`
   a,
   a:hover,
   a:focus {
-    color: ${color.brandSecondary};
+    color: ${colors.Content.Make.Secondary};
   }
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${intToPx(typography.font.fontsize.X2S.value)};
@@ -305,14 +306,14 @@ export const StaticExternalLinkIconStyle = styled(SvgExternalLink)`
   width: 14px;
   height: 14px;
   margin-left: 5px;
-  fill: ${color.brandSecondary};
+  fill: ${colors.Content.Make.Secondary};
 `;
 
 export const ModerationParagraphStyle = styled.p`
   margin: 0 0 15px;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   line-height: 2;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   white-space: pre-line;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${intToPx(typography.font.fontsize.XS.value)};
@@ -322,7 +323,7 @@ export const ModerationParagraphStyle = styled.p`
 
 export const StaticCenteredParagraphStyle = styled.p`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  color: ${color.greyDark};idée n’est pas déjà présente 
+  color: ${colors.Content.Interface.DarkSecondary};idée n’est pas déjà présente 
   text-align: center;
   padding: 0 20px;
 `;
@@ -330,7 +331,7 @@ export const StaticCenteredParagraphStyle = styled.p`
 export const StaticSectionTitle = styled(ThirdLevelTitleStyle)`
   display: inline-flex;
   margin: 30px 0 5px;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
 `;
 
 export const ModerationCharterWrapperStyle = styled(StaticPageWrapperStyle)`
@@ -346,7 +347,7 @@ export const StaticModerationOrderedItemStyle = styled.li`
   align-self: flex-start;
   margin-top: 60px;
   &::marker {
-    color: ${color.neutral};
+    color: ${colors.Content.Alert.Neutral};
   }
 `;
 
@@ -364,12 +365,12 @@ export const ModerationExampleCardStyle = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   &.refused {
-    border-top: 5px solid ${color.error};
+    border-top: 5px solid ${colors.Border.Alert.Disagree};
   }
   &.accepted {
-    border-top: 5px solid ${color.success};
+    border-top: 5px solid ${colors.Border.Alert.Positive};
   }
   & p {
     text-align: center !important;
@@ -379,10 +380,10 @@ export const ModerationExampleCardStyle = styled.div`
 export const ModerationExampleCardTitleStyle = styled(ThirdLevelTitleStyle)`
   margin-bottom: 20px;
   &.refused {
-    color: ${color.error};
+    color: ${colors.Content.Alert.Disagree};
   }
   &.accepted {
-    color: ${color.success};
+    color: ${colors.Content.Alert.Positive};
   }
 `;
 
@@ -394,10 +395,10 @@ export const ModerationExampleCardTitleIconStyle = styled(SvgThumbsUp)`
     transform: rotate(180deg) scaleX(-1);
   }
   &.refused .tofill {
-    fill: ${color.error};
+    fill: ${colors.Content.Alert.Disagree};
   }
   &.accepted .tofill {
-    fill: ${color.success};
+    color: ${colors.Content.Alert.Positive};
   }
 `;
 
@@ -407,12 +408,12 @@ export const ModerationFootnotesStyleOrderedListWrapperStyle = styled.ol`
 `;
 
 export const ModerationFootnotesStyleOrderedListItemStyle = styled.li`
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
 `;
 
 export const ModerationSectionTitleStyle = styled(StaticSectionTitle)`
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
   margin: 50px 0;
 `;
 

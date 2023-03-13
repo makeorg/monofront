@@ -1,13 +1,14 @@
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { Link } from 'react-router-dom';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const MobileAboutStyle = styled.section`
   display: flex;
   flex-flow: column;
   padding: 40px 20px 10px;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
 `;
 
 export const FeaturedProposalItemStyle = styled.li`
@@ -22,8 +23,8 @@ export const FeaturedProposalItemStyle = styled.li`
 export const ProposalContentStyle = styled(Link)`
   width: 100%;
   border-radius: 8px;
-  border: solid 1px ${color.grey};
-  color: ${color.greyDark};
+  border: solid 1px ${colors.Border.Interface.DarkMain};
+  color: ${colors.Content.Interface.DarkSecondary};
   padding: 15px;
   margin-top: 20px;
   letter-spacing: 0.14px;

@@ -7,7 +7,7 @@ import {
 import i18n from 'i18next';
 import { VoteButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { VoteIconStyle } from '@make.org/ui/elements/SvgElements';
-import { opinionsVoteStaticParams } from '@make.org/utils/constants/opinions';
+import { opinionsVoteStaticParams } from '../../params';
 
 const voteKeys = Object.keys(opinionsVoteStaticParams);
 

@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { SpaceBetweenColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
@@ -8,6 +8,7 @@ import { SvgExternalLink, SvgWorldMap } from '@make.org/ui/Svg/elements';
 import { SEARCH } from '@make.org/types/enums';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { ShadowColors } from '@make.org/assets/vars/Colors';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const MenuOpenTriggerStyle = styled(UnstyledButtonStyle)`
   display: flex;
@@ -20,7 +21,7 @@ export const MenuBarStyle = styled.span`
   width: 16px;
   height: 3px;
   border-radius: 1.5px;
-  background-color: ${color.black};
+  background-color: ${colors.Background.Interface.DarkMain};
   &.first {
     width: 21px;
   }
@@ -56,7 +57,7 @@ export const MenuCloseTriggerStyle = styled(UnstyledButtonStyle)`
   right: 30px;
   z-index: 11;
   &.tofill {
-    fill: ${color.black};
+    fill: ${colors.Content.Interface.Dark};
   }
 `;
 
@@ -74,7 +75,7 @@ export const MenuItemStyle = styled.li`
   line-height: 67px;
   width: 100%;
   &.white {
-    background-color: ${color.white};
+    background-color: ${colors.Background.Interface.Lighter};
     margin-bottom: 2px;
   }
   &.extra-margin-top {
@@ -172,7 +173,7 @@ export const MenuItemCountryLanguageLinkStyle = styled(Link)`
   font-weight: bold;
   text-decoration: none;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
 `;
 
 export const MenuItemCountryLanguageIconStyle = styled(SvgWorldMap)`

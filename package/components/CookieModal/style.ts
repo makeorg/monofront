@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 import {
   RedButtonStyle,
@@ -11,6 +11,7 @@ import { SvgCookie } from '@make.org/ui/Svg/elements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { TitleXXS } from '@make.org/designsystem/components/Titles';
 import { BodyMDefault } from '@make.org/designsystem/components/Body';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const CookieModalContentStyle = styled.div`
   display: flex;
@@ -44,7 +45,7 @@ export const CookieModalButtonWithLinkStyle = styled(UnstyledButtonStyle)`
   flex-direction: row-reverse;
   font-family: ${MakeFonts.CircularStandardBook};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   text-decoration: underline;
   &.with-margin-bottom {
     margin-bottom: 30px;
@@ -104,7 +105,7 @@ export const CookieModalElementStyle = styled(BodyMDefault).attrs({ as: 'li' })`
     font-weight: bold;
   }
   &.with-separator {
-    border-bottom: 1px solid ${color.grey};
+    border-bottom: 1px solid ${colors.Border.Interface.DarkMain};
     padding-bottom: 20px;
     margin-bottom: 20px;
   }
@@ -145,7 +146,7 @@ export const CookieModalCookieDetailParagraphStyle = styled(FlexElementStyle)`
   flex-direction: column;
   font-family: ${MakeFonts.CircularStandardBook};
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  border-top: 1px solid ${color.grey};
+  border-top: 1px solid ${colors.Border.Interface.DarkMain};
   margin-top: 10px;
   padding-top: 10px;
   &.cookie-page {
@@ -177,7 +178,7 @@ export const CookieSwitchWrapperStyle = styled(FlexElementStyle)`
 `;
 
 export const CookieModalBackButtonStyle = styled(UnstyledButtonStyle)`
-  background-color: ${color.grey};
+  background-color: ${colors.Background.Interface.DarkMain};
   border-radius: 20px;
   display: flex;
   justify-content: center;

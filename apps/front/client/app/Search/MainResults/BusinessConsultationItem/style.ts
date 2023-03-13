@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { DefaultPadding, Breakpoints } from '@make.org/assets/vars/Breakpoints';
@@ -21,7 +22,7 @@ export const SearchResultsConsultationListStyle = styled(UnstyledListStyle)`
 export const BusinessConsultationsItemWrapperStyle = styled(BodyMHighLight)`
   display: flex;
   text-decoration: none;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   width: 100%;
 `;
 
@@ -31,7 +32,7 @@ export const BusinessConsultationStyle = styled.div`
 `;
 
 export const BusinessConsultationsItemStatusStyle = styled(BodyXSCondensed)`
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   text-transform: uppercase;
   margin-bottom: 4px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -42,10 +43,10 @@ export const BusinessConsultationsItemStatusStyle = styled(BodyXSCondensed)`
 const BusinessConsultationsLinkStyle = `
   font-family: ${MakeFonts.CircularStandardBold};
   font-weight: bold;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   &:hover,
   &:focus {
-    color: ${color.greyDark};
+    color: ${colors.Content.Interface.DarkSecondary};
   }
 `;
 

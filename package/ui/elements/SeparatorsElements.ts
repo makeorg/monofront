@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { MiddleRowStyle } from './FlexElements';
 
 export const SeparatorStyle = styled.div`
   width: 100%;
   height: 1px;
-  background-color: ${color.grey};
+  background-color: ${colors.Background.Interface.DarkMain};
 `;
 
 export const ProposalSubmitAuthSeparator = styled(SeparatorStyle)`
@@ -61,6 +62,6 @@ export const SidebarSeparatorStyle = styled(SeparatorStyle)`
 `;
 
 export const FilterSeparationLineStyle = styled(SeparatorStyle)`
-  background-color: ${color.grey};
+  background-color: ${colors.Background.Interface.DarkMain};
   margin: 20px 0;
 `;

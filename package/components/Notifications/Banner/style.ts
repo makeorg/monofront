@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import {
   Breakpoints,
   Layouts,
@@ -13,6 +13,7 @@ import {
 } from '@make.org/ui/elements/ButtonsElements';
 import { ColumnToRowElementStyle } from '@make.org/ui/elements/FlexElements';
 import { Link } from 'react-router-dom';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const NotificationWrapperStyle = styled.aside`
   position: sticky;
@@ -24,7 +25,7 @@ export const NotificationWrapperStyle = styled.aside`
   width: 100%;
   padding: ${intToPx(DefaultPadding.Mobile)};
   box-shadow: 0 2px 4px 0 ${ShadowColors.BlackZeroFiveOpacity};
-  background-color: ${color.infos};
+  background-color: ${colors.Background.Alert.Infos};
   box-shadow: 0 -2px 4px 0 ${ShadowColors.BlackZeroOneOpacity};
   margin-top: -5px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -39,7 +40,7 @@ export const NotificationContentStyle = styled.div`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   max-width: ${intToPx(Layouts.ContainerWidth)};
   padding-right: ${intToPx(DefaultPadding.Mobile)};
-  color: ${color.white};
+  color: ${colors.Content.Interface.Light};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     align-items: center;
   }
@@ -47,7 +48,7 @@ export const NotificationContentStyle = styled.div`
 
 export const NotificationCloseButtonStyle = styled(CloseButtonStyle)`
   .tofill {
-    fill: ${color.white};
+    fill: ${colors.Content.Interface.Light};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     top: 15px;
@@ -77,11 +78,11 @@ export const VoteOnlyButtonStyle = styled(WhiteButtonStyle)`
 
 export const WhiteLink = styled(Link)`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  color: ${color.white};
+  color: ${colors.Content.Interface.Light};
   text-decoration: underline;
   margin: 0 5px;
   &:hover,
   &:focus {
-    color: ${color.white};
+    color: ${colors.Content.Interface.Light};
   }
 `;

@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { color } from 'athena-design-tokens';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 import { WhiteButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { TitleXXS } from '@make.org/designsystem/components/Titles';
 import { BodyMDefault } from '@make.org/designsystem/components/Body';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const DataPolicyContentStyle = styled.form`
   display: flex;
@@ -49,6 +49,6 @@ export const ButtonWrapperStyle = styled(FlexElementStyle)`
 `;
 
 export const RefusalWhiteButtonStyle = styled(WhiteButtonStyle)`
-  border: solid 1px ${color.black};
+  border: solid 1px ${colors.Border.Interface.Darker};
   margin-right: 15px;
 `;

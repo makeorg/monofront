@@ -5,7 +5,6 @@ import {
 } from '@make.org/utils/helpers/voteResult';
 import { VoteType } from '@make.org/types';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import { voteStaticParams } from '@make.org/utils/constants/vote';
 import { Tooltip } from '@make.org/ui/components/Tooltip';
 import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
@@ -18,6 +17,7 @@ import {
 } from './style';
 import { UnvoteButton } from '../Button/Unvote';
 import { VoteButtonWrapperStyle } from '../style';
+import { voteButtonParams } from '../Button/Params';
 
 type Props = {
   /** Proposal's Id */
@@ -52,7 +52,7 @@ export const VoteResult: React.FC<Props> = ({
   const { source } = state.appConfig;
   const isWidget = source === 'widget';
   const votesCount = getTotalVotesCount(votes);
-  const voteKeys = Object.keys(voteStaticParams);
+  const voteKeys = Object.keys(voteButtonParams);
   const votesPercent = getVotesPercentFromScore(votes);
   const transVoteMap = useMemo(
     () =>
@@ -118,7 +118,7 @@ export const VoteResult: React.FC<Props> = ({
               <VoteResultBarStyle
                 className={isWidget ? 'widget' : ''}
                 aria-label={i18n.t('common.display_tooltip') || undefined}
-                color={voteStaticParams[voteKey].color}
+                color={voteButtonParams[voteKey].color}
                 percent={votesPercent[voteKey]}
               />
             </Tooltip>

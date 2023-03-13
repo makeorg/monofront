@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Layouts, Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
@@ -10,6 +10,7 @@ import {
   BodyMHighLight,
 } from '@make.org/designsystem/components/Body';
 import { TitleL } from '@make.org/designsystem/components/Titles';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const HeaderWrapperStyle = styled(FlexElementStyle)`
   background-color: ${props => props.theme.color};
@@ -41,15 +42,15 @@ export const HeaderLabelStyle = styled(BodyMCondensed).attrs({ as: 'span' })`
   height: 25px;
   width: max-content;
   margin: 5px 0 15px;
-  color: ${color.white};
-  background-color: ${color.black};
+  color: ${colors.Content.Interface.Light};
+  background-color: ${colors.Background.Interface.DarkMain};
   &.white-text {
-    color: ${color.white};
-    background-color: ${color.black};
+    color: ${colors.Content.Interface.Light};
+    background-color: ${colors.Background.Interface.DarkMain};
   }
   &.black-text {
-    color: ${color.black};
-    background-color: ${color.white};
+    color: ${colors.Content.Interface.Dark};
+    background-color: ${colors.Background.Interface.Lighter};
   }
   &.margin-left {
     margin-left: 10px;
@@ -62,7 +63,9 @@ export const HeaderLabelStyle = styled(BodyMCondensed).attrs({ as: 'span' })`
 export const HeaderTitleStyle = styled(TitleL)`
   text-transform: none;
   color: ${props =>
-    props.theme.fontColor ? props.theme.fontColor : color.black};
+    props.theme.fontColor
+      ? props.theme.fontColor
+      : colors.Content.Interface.Dark};
   margin-bottom: 30px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     line-height: 1.5;
@@ -90,7 +93,9 @@ export const HeaderListLabelStyle = styled(BodyMHighLight).attrs({
   as: 'span',
 })`
   color: ${props =>
-    props.theme.fontColor ? props.theme.fontColor : color.black};
+    props.theme.fontColor
+      ? props.theme.fontColor
+      : colors.Content.Interface.Dark};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
 `;
 
@@ -106,19 +111,25 @@ export const HeaderListItemStyle = styled.li`
 
 export const PartnerStyle = styled.span`
   color: ${props =>
-    props.theme.fontColor ? props.theme.fontColor : color.black};
+    props.theme.fontColor
+      ? props.theme.fontColor
+      : colors.Content.Interface.Dark};
   letter-spacing: 0.14px;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
 `;
 
 export const PartnerLinkStyle = styled(Link)`
   color: ${props =>
-    props.theme.fontColor ? props.theme.fontColor : color.black};
+    props.theme.fontColor
+      ? props.theme.fontColor
+      : colors.Content.Interface.Dark};
   letter-spacing: 0.14px;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   &:hover {
     color: ${props =>
-      props.theme.fontColor ? props.theme.fontColor : color.black};
+      props.theme.fontColor
+        ? props.theme.fontColor
+        : colors.Content.Interface.Dark};
   }
 `;
 
@@ -127,11 +138,15 @@ export const NewWindowLinkStyle = styled.a`
   align-items: center;
   font-weight: bold;
   color: ${props =>
-    props.theme.fontColor ? props.theme.fontColor : color.black};
+    props.theme.fontColor
+      ? props.theme.fontColor
+      : colors.Content.Interface.Dark};
   &:hover,
   &:focus {
     color: ${props =>
-      props.theme.fontColor ? props.theme.fontColor : color.black};
+      props.theme.fontColor
+        ? props.theme.fontColor
+        : colors.Content.Interface.Dark};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-weight: normal;
@@ -143,5 +158,7 @@ export const NewWindowIconStyle = styled(SvgExternalLink)`
   width: 14px;
   height: 14px;
   fill: ${props =>
-    props.theme.fontColor ? props.theme.fontColor : color.brandSecondary};
+    props.theme.fontColor
+      ? props.theme.fontColor
+      : colors.Content.Make.Secondary};
 `;

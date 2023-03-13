@@ -1,4 +1,5 @@
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
@@ -28,7 +29,7 @@ export const SwitchCountryLanguageTitleStyle = styled(TitleS).attrs({
 
 export const SwitchCountrySubtitleStyle = styled(BodyMDefault)`
   text-transform: none;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   margin-top: 10px;
 `;
 
@@ -41,7 +42,7 @@ export const MultilingualRadioListWrapperStyle = styled.ul`
   text-decoration: none;
   margin-top: 20px;
   padding: 5px;
-  background-color: ${color.greyLighter};
+  background-color: ${colors.Background.Interface.DarkSecondary};
   border-radius: 8px;
 
   &.countries-switch {
@@ -66,14 +67,14 @@ export const MultilingualRadioItemWrapperStyle = styled.li`
     margin-bottom: 0px;
   }
   &.selected {
-    background-color: ${color.white};
+    background-color: ${colors.Background.Interface.Lighter};
     box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.08);
     border-radius: 8px;
   }
   &:focus {
     font-family: ${MakeFonts.CircularStandardBold};
     font-weight: bold;
-    color: ${color.black};
+    color: ${colors.Content.Interface.Dark};
   }
 `;
 
@@ -82,7 +83,7 @@ export const MultilingualRadioAsTransparentButtonLabelStyle = styled.label`
   align-items: center;
   font-family: ${MakeFonts.CircularStandardBook};
   font-weight: normal;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   width: 100%;
   text-align: center;
@@ -91,7 +92,7 @@ export const MultilingualRadioAsTransparentButtonLabelStyle = styled.label`
   &:focus {
     font-family: ${MakeFonts.CircularStandardBold};
     font-weight: bold;
-    color: ${color.black};
+    color: ${colors.Content.Interface.Dark};
   }
 `;
 

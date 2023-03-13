@@ -1,15 +1,16 @@
 import { createGlobalStyle } from 'styled-components';
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { MakeFonts } from '../vars/Fonts';
 
 export const DocStylesheet = createGlobalStyle`
   .red-link {
-    color: ${color.brandSecondary};
-    fill: ${color.brandSecondary};
+    color: ${colors.Content.Make.Secondary};
+    fill: ${colors.Content.Make.Secondary};
     &:hover,
     &:focus {
-      color: ${color.brandSecondary};
-      fill: ${color.brandSecondary};
+      color: ${colors.Content.Make.Secondary};
+      fill: ${colors.Content.Make.Secondary};
     }
   }
 
@@ -39,13 +40,13 @@ export const DocStylesheet = createGlobalStyle`
     font-size: ${typography.font.fontsize.X2S};
     font-family: ${MakeFonts.TradeGothicBoldCondensed};
     text-transform: uppercase;
-    background-color: ${color.black};
-    color: ${color.white};
+    background-color: ${colors.Background.Interface.DarkMain};
+    color: ${colors.Content.Interface.Light};
   }
 
   tbody th,
   tbody td {
-    border: 1px solid ${color.greyLighter};
+    border: 1px solid ${colors.Border.Interface.DarkSecondary};
   }
 
 `;

@@ -1,15 +1,15 @@
 import { createGlobalStyle } from 'styled-components';
-import { color } from 'athena-design-tokens';
 import { intToPx } from '@make.org/utils/helpers/styled';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { ShadowColors } from '../vars/Colors';
 import { Layouts, DefaultPadding, Breakpoints } from '../vars/Breakpoints';
 
 export const UIThemeStylesheet = createGlobalStyle`
   .red-link {
-    color: ${color.brandSecondary};
+    color: ${colors.Content.Make.Secondary};
     &:hover,
     &:focus {
-      color: ${color.brandSecondary};
+      color: ${colors.Content.Make.Secondary};
     }
   }
 
@@ -42,7 +42,7 @@ export const UIThemeStylesheet = createGlobalStyle`
     max-width: ${intToPx(Layouts.ContainerWidth)};
     max-height: 100%;
     padding: ${intToPx(DefaultPadding.Mobile)};
-    background-color: ${color.white};
+    background-color: ${colors.Background.Interface.Lighter};
     box-shadow: 0 1px 1px 0 ${ShadowColors.BlackZeroFiveOpacity};
     overflow-y: auto;
     border-radius: 8px;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
 
 export const AvatarRowsStyle = styled.div<{ avatarSize: number }>`
@@ -12,7 +12,7 @@ export const AvatarRowsStyle = styled.div<{ avatarSize: number }>`
 export const AvatarStyle = styled.div`
   margin-left: -20px;
   img {
-    border: 2px solid ${color.white};
+    border: 2px solid ${colors.Border.Interface.Lighter};
   }
   &:nth-child(1) {
     margin-left: 0;

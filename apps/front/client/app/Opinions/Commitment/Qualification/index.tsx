@@ -5,7 +5,6 @@ import {
   VoteWrapperStyle,
 } from '@make.org/components/Vote/style';
 import i18n from 'i18next';
-import { opinionsVoteStaticParams } from '@make.org/utils/constants/opinions';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import {
   VoteButtonStyle,
@@ -16,6 +15,7 @@ import {
   OpinionQualificationListStyle,
   OpinionQualificationListItemStyle,
 } from './style';
+import { opinionsVoteStaticParams } from '../../params';
 
 type Props = {
   voteValue: string;

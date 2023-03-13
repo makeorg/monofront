@@ -2,7 +2,8 @@ import {
   ActiveButtonStyle,
   BlackBorderButtonStyle,
 } from '@make.org/ui/elements/ButtonsElements';
-import { typography, color } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 import { CenterRowStyle } from '@make.org/ui/elements/FlexElements';
@@ -86,7 +87,7 @@ export const SubmitButtonStyle = styled(ActiveButtonStyle)`
 export const RadioAsButtonWrapperStyle = styled.div`
   display: flex;
   border-radius: 20px;
-  border: 1px solid ${color.grey};
+  border: 1px solid ${colors.Border.Interface.DarkMain};
   text-decoration: none;
   min-height: 31px;
   min-width: 72px;
@@ -95,20 +96,20 @@ export const RadioAsButtonWrapperStyle = styled.div`
     min-width: 97px;
   }
   &:hover {
-    border: 1px solid ${color.brandPrimary};
+    border: 1px solid ${colors.Border.Make.Primary};
   }
   &.selected {
-    background-color: ${color.brandPrimary};
+    background-color: ${colors.Background.Make.Primary};
   }
   &.selected label {
-    color: ${color.white};
+    color: ${colors.Content.Interface.Light};
   }
 `;
 
 export const RadioAsButtonLabelStyle = styled.label`
   font-family: ${MakeFonts.CircularStandardBook};
   font-weight: normal;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   width: 100%;
   text-align: center;
@@ -123,11 +124,11 @@ export const RadioAsButtonLabelStyle = styled.label`
 export const SelectStyle = styled.select`
   width: 100%;
   max-width: ${intToPx(MAX_WIDTH)};
-  border: 1px solid ${color.grey};
+  border: 1px solid ${colors.Border.Interface.DarkMain};
   border-radius: 20px;
   padding: 8px 15px;
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   appearance: none;
   background: transparent url(${SvgSelectArrow as never}) no-repeat 95% center;
   -webkit-line-clamp: 1;

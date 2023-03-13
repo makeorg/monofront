@@ -1,4 +1,4 @@
-import { color } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { PieChartDataType } from '@make.org/types';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
 
@@ -100,7 +100,7 @@ export const setPercentAsLabel = (
     ? `8px ${MakeFonts.CircularStandardBold}`
     : `15px ${MakeFonts.CircularStandardBold}`;
   ctx.textAlign = isTextAlignAdjusted || 'center';
-  ctx.fillStyle = color.black;
+  ctx.fillStyle = colors.Content.Interface.Dark;
   ctx.fillText(
     hidePercentLabel ? item.label : `${item.percent}%`,
     itemDeltaX,
@@ -123,7 +123,7 @@ export const setMainLabel = (
     ? `6px ${MakeFonts.CircularStandardBook}`
     : `11px ${MakeFonts.CircularStandardBook}`;
   ctx.textAlign = isTextAlignAdjusted || 'center';
-  ctx.fillStyle = color.black;
+  ctx.fillStyle = colors.Content.Interface.Dark;
   ctx.fillText(hidePercentLabel ? '' : item.label, itemDeltaX, labelDeltaY);
 };
 
@@ -141,6 +141,6 @@ export const setSubLabel = (
     ? `6px ${MakeFonts.CircularStandardBook}`
     : `11px ${MakeFonts.CircularStandardBook}`;
   ctx.textAlign = isTextAlignAdjusted || 'center';
-  ctx.fillStyle = color.black;
+  ctx.fillStyle = colors.Content.Interface.Dark;
   ctx.fillText(item.sublabel || '', itemDeltaX, sublabelDeltaY);
 };

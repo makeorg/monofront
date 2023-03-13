@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { SocialNetworksColors } from '@make.org/assets/vars/Colors';
 import { SvgMailPlain } from '@make.org/ui/Svg/elements';
 import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
@@ -44,8 +44,8 @@ const SocialButtonStyle = styled.button`
   padding: 0;
   border: black;
   border-radius: 17.5px;
-  background-color: ${color.white};
-  border: 1px solid ${color.black};
+  background-color: ${colors.Background.Interface.Lighter};
+  border: 1px solid ${colors.Border.Interface.Darker};
   max-width: 300px;
   opacity: ${props => (props.disabled ? 0.5 : 1)};
 `;
@@ -53,7 +53,7 @@ const SocialButtonStyle = styled.button`
 export const SocialButtonLabelStyle = styled(BodySHighLight).attrs({
   as: 'span',
 })`
-  color: ${color.black};
+  color: ${colors.Content.Interface.Dark};
 `;
 
 export const FacebookButtonStyle = styled(SocialButtonStyle)`

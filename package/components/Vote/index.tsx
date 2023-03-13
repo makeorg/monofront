@@ -20,7 +20,6 @@ import {
 } from '@make.org/utils/helpers/vote';
 import { VoteService } from '@make.org/utils/services/Vote';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import { voteStaticParamsKeys } from '@make.org/utils/constants/vote';
 import {
   TopComponentContext,
   TopComponentContextValue,
@@ -45,6 +44,7 @@ import {
   VoteButtonWrapperStyle,
 } from './style';
 import { VoteButton } from './Button/Vote';
+import { voteButtonParamsKeys } from './Button/Params';
 
 type Props = {
   /** Proposal's Id */
@@ -244,7 +244,7 @@ export const Vote: React.FC<Props> = ({
         {i18n.t('vote.intro_title')}
       </ScreenReaderItemStyle>
       <VoteWrapperStyle>
-        {voteStaticParamsKeys.map((voteKey: string) => (
+        {voteButtonParamsKeys.map((voteKey: string) => (
           <VoteButtonWrapperStyle as="li" key={getVoteKey(voteKey, proposalId)}>
             <VoteButton
               voteKey={voteKey}

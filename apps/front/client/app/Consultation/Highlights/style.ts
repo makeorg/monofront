@@ -1,4 +1,5 @@
-import { color, typography } from 'athena-design-tokens';
+import { typography } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { Elements } from '@make.org/assets/vars/Elements';
 import { MakeFonts } from '@make.org/assets/vars/Fonts';
@@ -14,7 +15,7 @@ export const HigthlightsWrapperStyle = styled.section`
   width: 100%;
   display: flex;
   flex-flow: column;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   padding: 60px 0 45px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     flex-flow: row;
@@ -101,7 +102,7 @@ export const ProgressWrapperStyle = styled(FlexElementStyle)`
   padding: 20px;
   border-radius: 0 ${intToPx(Elements.BorderRadius)}
     ${intToPx(Elements.BorderRadius)} 0;
-  background-color: ${color.greyLighter};
+  background-color: ${colors.Background.Interface.DarkSecondary};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     padding: 30px;
   }
@@ -122,12 +123,12 @@ export const ProgressTitleStyle = styled(HigthlightsTitleStyle)`
 export const VotesTargetStyle = styled.span`
   font-size: ${intToPx(typography.font.fontsize.XS.value)};
   letter-spacing: 0.3px;
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   span {
     font-family: ${MakeFonts.CircularStandardBold};
     font-weight: bold;
     font-size: ${intToPx(typography.font.fontsize.XL.value)};
-    color: ${color.black};
+    color: ${colors.Content.Interface.Dark};
     font-weigth: bolder;
   }
 `;
@@ -136,9 +137,9 @@ export const ProgressBarContainerStyle = styled.div`
   position: relative;
   width: 100%;
   height: 25px;
-  background-color: ${color.white};
+  background-color: ${colors.Background.Interface.Lighter};
   border-radius: 12.5px;
-  border: 1px solid ${color.grey};
+  border: 1px solid ${colors.Border.Interface.DarkMain};
   overflow: hidden;
   margin: 10px 0 20px;
 `;
@@ -159,8 +160,8 @@ export const ProgressBarStyle = styled.div<{ percent: number }>`
     top: 0;
     width: 0px;
     height: 0px;
-    border-top: 11.5px solid ${color.white};
-    border-bottom: 11.5px solid ${color.white};
+    border-top: 11.5px solid ${colors.Border.Interface.Lighter};
+    border-bottom: 11.5px solid ${colors.Border.Interface.Lighter};
     border-left: 11.5px solid ${props => props.theme.color};
   }
 `;
@@ -174,7 +175,7 @@ export const ProgressParticipateStyle = styled(FlexElementStyle)`
 
 export const ProgressDescriptionStyle = styled.p`
   font-size: ${intToPx(typography.font.fontsize.X2S.value)};
-  color: ${color.greyDark};
+  color: ${colors.Content.Interface.DarkSecondary};
   margin-bottom: 15px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     padding-right: 55px;

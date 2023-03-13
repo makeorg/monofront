@@ -11,7 +11,7 @@ import {
   getSequenceControversialLink,
   getSequencePopularLink,
 } from '@make.org/utils/helpers/url';
-
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { ColumnToRowElementStyle } from '@make.org/ui/elements/FlexElements';
 import {
   trackDisplayOperationPage,
@@ -76,7 +76,7 @@ const ParticipatePage: FC = () => {
 
   const ControversyIcon = (
     <SvgLightning
-      fill="#f7b500"
+      fill={colors.Content.Alert.Controversy}
       aria-hidden
       width={20}
       height={32}

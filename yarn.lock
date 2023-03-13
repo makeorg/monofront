@@ -2880,6 +2880,7 @@ __metadata:
   resolution: "@make.org/assets@workspace:package/assets"
   dependencies:
     "@make.org/components": 0.1.0
+    "@make.org/designsystem": 0.1.0
     "@make.org/types": 0.1.0
     "@make.org/ui": 0.1.0
     "@make.org/utils": 0.1.0

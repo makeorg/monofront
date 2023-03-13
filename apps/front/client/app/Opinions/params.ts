@@ -1,6 +1,6 @@
-import { color } from 'athena-design-tokens';
 import i18n from 'i18next';
 import { OpinionVoteParamsType } from '@make.org/types';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 const OPINION_AGREE_KEY = 'agree';
 const OPINION_DISAGREE_KEY = 'disagree';
@@ -15,19 +15,19 @@ const OPINION_TOBEPRECISED_KEY = 'toBePrecised';
 export const opinionsVoteStaticParams: OpinionVoteParamsType = {
   [OPINION_AGREE_KEY]: {
     label: i18n.t('personality.opinions.vote.agree'),
-    color: color.agree,
+    color: colors.Content.Alert.Positive,
     transform: 'none',
     qualifications: [OPINION_PRIORITY_KEY, OPINION_DOABLE_KEY],
   },
   [OPINION_DISAGREE_KEY]: {
     label: i18n.t('personality.opinions.vote.disagree'),
-    color: color.disagree,
+    color: colors.Content.Alert.Disagree,
     transform: 'rotate(180deg) scaleX(-1)',
     qualifications: [OPINION_NOWAY_KEY, OPINION_NONPRIORITY_KEY],
   },
   [OPINION_OTHER_KEY]: {
     label: i18n.t('personality.opinions.vote.other'),
-    color: color.neutral,
+    color: colors.Content.Alert.Neutral,
     transform: 'rotate(-90deg)',
     qualifications: [OPINION_EXISTS_KEY, OPINION_TOBEPRECISED_KEY],
   },

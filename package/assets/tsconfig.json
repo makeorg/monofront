@@ -3,6 +3,7 @@
   "references": [
     { "path": "../../package/ui" },
     { "path": "../../package/components" },
-    { "path": "../../package/utils" }
+    { "path": "../../package/utils" },
+    { "path": "../../package/designsystem"}
   ]
 }

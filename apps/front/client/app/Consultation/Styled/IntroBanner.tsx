@@ -7,8 +7,9 @@ import {
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { MiddleColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { SecondLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
-import { typography, color } from 'athena-design-tokens';
 import { BodyXSCondensed } from '@make.org/designsystem/components/Body';
+import { colors } from '@make.org/designsystem/tokens/colors';
+import { typography } from '@make.org/designsystem/tokens/typography';
 
 export const IntroWrapperStyle = styled(MiddleColumnStyle)`
   padding: 30px ${intToPx(DefaultPadding.Mobile)};
@@ -20,13 +21,13 @@ export const IntroWrapperStyle = styled(MiddleColumnStyle)`
 export const GreatCauseIntroLabelStyle = styled(BodyXSCondensed).attrs({
   as: 'span',
 })`
-  background-color: ${color.black};
+  background-color: ${colors.Background.Interface.DarkMain};
   padding: 3px 10px 1px;
-  color: ${color.white};
+  color: ${colors.Content.Interface.Light};
   text-transform: uppercase;
   margin-bottom: 5px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${intToPx(typography.font.fontsize.XS.value)};
+    font-size: ${typography.FontSize.Arrondissement};
     padding: 6px 12px 4px;
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
@@ -59,5 +60,5 @@ export const DefaultBannerTitleStyle = styled(SecondLevelTitleStyle)`
 export const DefaultBannerTimeStyle = styled.div`
   color: ${props => props.theme.fontColor};
   margin-top: 10px;
-  font-size: ${typography.font.fontsize.XS.value};
+  font-size: ${typography.FontSize.Arrondissement};
 `;

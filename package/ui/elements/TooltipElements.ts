@@ -1,5 +1,5 @@
 import styled, { StyledComponent } from 'styled-components';
-import { color } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { UnstyledButtonStyle } from './ButtonsElements';
 import { SvgClose, SvgInfos } from '../Svg/elements';
 
@@ -9,8 +9,8 @@ export const TooltipStyle = styled.div<{ as: StyledComponent<'div', any> }>`
   position: absolute;
   padding: 5px 10px;
   z-index: 1;
-  background-color: ${color.infos};
-  color: ${color.white};
+  background-color: ${colors.Background.Alert.Infos};
+  color: ${colors.Content.Interface.Light};
   font-size: 12px;
   text-align: center;
   &:after {
@@ -48,7 +48,7 @@ export const TopTooltipStyle = styled(VerticalToolptipStyle)`
   bottom: calc(100% + 10px);
   &:after {
     top: 100%;
-    border-top: 5px solid ${color.greyDark};
+    border-top: 5px solid ${colors.Border.Interface.Darker};
   }
 `;
 
@@ -56,7 +56,7 @@ export const BottomTooltipStyle = styled(VerticalToolptipStyle)`
   top: calc(100% + 10px);
   &:after {
     bottom: 100%;
-    border-bottom: 5px solid ${color.greyDark};
+    border-bottom: 5px solid ${colors.Border.Interface.Darker};
   }
 `;
 
@@ -64,7 +64,7 @@ export const LeftTooltipStyle = styled(HorizontalTooltipStyle)`
   right: calc(100% + 10px);
   &:after {
     left: 100%;
-    border-left: 5px solid ${color.greyDark};
+    border-left: 5px solid ${colors.Border.Interface.Darker};
   }
 `;
 
@@ -72,15 +72,15 @@ export const RightTooltipStyle = styled(HorizontalTooltipStyle)`
   left: calc(100% + 10px);
   &:after {
     right: 100%;
-    border-right: 5px solid ${color.greyDark};
+    border-right: 5px solid ${colors.Border.Interface.Darker};
   }
 `;
 
 const ProposalTooltipCommonStyle = `
-  background-color: ${color.infos};
+  background-color: ${colors.Background.Alert.Infos};
   z-index: 1;
   border-radius: 2px;
-  color: ${color.white};
+  color: ${colors.Content.Interface.Light};
 `;
 
 export const ProposalTooltipWrapperStyle = styled.div`
@@ -136,13 +136,13 @@ export const ProposalTooltipCloseIconStyle = styled(SvgClose)`
   margin: 0px 10px;
   background-color: transparent;
   .tofill {
-    fill: ${color.white};
+    fill: ${colors.Content.Interface.Light};
   }
 `;
 
 export const ProposalTooltipVerticalSeparatorStyle = styled.div`
-  border: 0.5px solid ${color.white};
-  background-color: ${color.white};
+  border: 0.5px solid ${colors.Border.Interface.Lighter};
+  background-color: ${colors.Background.Interface.Lighter};
   opacity: 0.3;
   height: 84px;
   margin-left: 10px;
@@ -159,5 +159,5 @@ export const ProposalTriangleUpStyle = styled.div`
   height: 0;
   border-style: solid;
   border-width: 0px 7px 10px 7px;
-  border-color: transparent transparent ${color.infos} transparent;
+  border-color: transparent transparent ${colors.Border.Alert.Infos} transparent;
 `;

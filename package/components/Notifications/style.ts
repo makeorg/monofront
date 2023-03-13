@@ -1,4 +1,4 @@
-import { color } from 'athena-design-tokens';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import { SvgAlert, SvgCheck, SvgInfos } from '@make.org/ui/Svg/elements';
 import styled from 'styled-components';
 
@@ -19,7 +19,7 @@ export const NotificationSuccessStyle = styled(SvgCheck)<{
   className?: string;
   focusable?: string;
 }>`
-  fill: ${color.agree};
+  fill: ${colors.Content.Alert.Positive};
   min-width: 22px;
   margin-right: 10px;
   &.tip {
