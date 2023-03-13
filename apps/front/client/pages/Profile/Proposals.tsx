@@ -25,34 +25,41 @@ const ProfileProposalsPage: FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [hasMore, setHasMore] = useState<boolean>(false);
   const [page, setPage] = useState<number>(0);
-  const loadProposals = async () => {
+
+  const loadProposals = async (
+    pageId: number,
+    proposalsList: ProposalType[]
+  ) => {
     setIsLoading(true);
     if (!user) {
       setIsLoading(false);
       return;
     }
-    const result = await UserService.myProposals(user.userId, page, language);
+    const result = await UserService.myProposals(user.userId, pageId, language);
     if (result) {
       const { results, total } = result;
-      const newProposalList = [...proposals, ...results];
+      const newProposalList = [...proposalsList, ...results];
       setProposals(newProposalList);
       setHasMore(newProposalList.length < total);
-      setPage(page + 1);
+      setPage(pageId + 1);
     }
     setIsLoading(false);
   };
 
   const clickLoadMore = () => {
-    loadProposals();
+    loadProposals(page, proposals);
     trackLoadMoreProposals(TRACKING.COMPONENT_PARAM_PROPOSALS, page);
   };
 
   useEffect(() => {
-    if (user) {
-      loadProposals();
-    }
+    loadProposals(page, proposals);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
+
+  useEffect(() => {
+    loadProposals(0, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [language]);
 
   return (
     <ProfileProposalsList

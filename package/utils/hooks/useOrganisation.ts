@@ -44,7 +44,10 @@ export const useOrganisation = (
     setOrganisation(response);
   };
 
-  const fetchProposals = async () => {
+  const fetchProposals = async (
+    pageId: number,
+    proposalsList: ProposalType[]
+  ) => {
     if (!organisation) {
       setIsLoading(false);
       return;
@@ -52,21 +55,24 @@ export const useOrganisation = (
     setIsLoading(true);
     const proposalsResponse = await OrganisationService.getProposals(
       organisation.organisationId,
-      page,
+      pageId,
       language
     );
     if (proposalsResponse) {
       const { results, total, seed: apiSeed } = proposalsResponse;
-      const newProposals = [...proposals, ...results];
+      const newProposals = [...proposalsList, ...results];
       setProposals(newProposals);
       setHasMore(newProposals.length < total);
       setSeed(apiSeed);
-      setPage(page + 1);
+      setPage(pageId + 1);
     }
     setIsLoading(false);
   };
 
-  const fetchVotes = async () => {
+  const fetchVotes = async (
+    pageId: number,
+    votesList: OrganisationVoteType[]
+  ) => {
     if (!organisation) {
       return;
     }
@@ -74,25 +80,25 @@ export const useOrganisation = (
     const response = await OrganisationService.getVotes(
       organisation.organisationId,
       seed,
-      page
+      pageId
     );
     if (response) {
       const { results, total, seed: apiSeed } = response;
-      const newVotesList = [...votes, ...results];
+      const newVotesList = [...votesList, ...results];
       setVotes(newVotesList);
       setHasMore(newVotesList.length < total);
       setSeed(apiSeed);
-      setPage(page + 1);
+      setPage(pageId + 1);
     }
     setIsLoading(false);
   };
 
   useEffect(() => {
     if (loadProposals) {
-      fetchProposals();
+      fetchProposals(page, proposals);
     }
     if (loadVotes) {
-      fetchVotes();
+      fetchVotes(page, votes);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [organisation, loadMore]);
@@ -101,6 +107,16 @@ export const useOrganisation = (
     fetchOrganisation();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [organisationSlug]);
+
+  useEffect(() => {
+    if (loadProposals) {
+      fetchProposals(0, []);
+    }
+    if (loadVotes) {
+      fetchVotes(0, []);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [language]);
 
   return {
     organisation,

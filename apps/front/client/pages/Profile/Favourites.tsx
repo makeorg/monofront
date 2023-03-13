@@ -13,6 +13,7 @@ import { ProfileProposalsList } from './ProposalsList';
 const ProfileFavouritesPage: FC = () => {
   const { state } = useAppContext();
   const { user } = selectAuthentication(state);
+  const { language } = state.appConfig;
   const Placeholder = <ProfileFavouritesPlaceholder />;
   const titles = {
     meta: i18n.t('meta.profile.favorites.title'),
@@ -23,48 +24,44 @@ const ProfileFavouritesPage: FC = () => {
   const [hasMore, setHasMore] = useState<boolean>(false);
   const [page, setPage] = useState<number>(0);
 
-  const initProposal = async () => {
+  const loadProposals = async (
+    pageId: number,
+    proposalsList: ProposalType[]
+  ) => {
     setIsLoading(true);
     if (!user) {
       setIsLoading(false);
       return;
     }
-    const result = await UserService.myFavourites(user.userId);
+    const result = await UserService.myFavourites(
+      user.userId,
+      pageId,
+      language
+    );
     if (result) {
       const { results, total } = result;
-      setProposals(results);
-      setHasMore(results.length < total);
-      setPage(1);
-    }
-    setIsLoading(false);
-  };
-
-  const loadProposals = async () => {
-    setIsLoading(true);
-    if (!user) {
-      setIsLoading(false);
-      return;
-    }
-    const result = await UserService.myFavourites(user.userId, page);
-    if (result) {
-      const { results, total } = result;
-      const newProposalList = [...proposals, ...results];
+      const newProposalList = [...proposalsList, ...results];
       setProposals(newProposalList);
       setHasMore(newProposalList.length < total);
-      setPage(page + 1);
+      setPage(pageId + 1);
     }
     setIsLoading(false);
   };
 
   const clickLoadMore = () => {
-    loadProposals();
+    loadProposals(page, proposals);
     trackLoadMoreProposals(TRACKING.COMPONENT_PARAM_FAVOURITES, page);
   };
 
   useEffect(() => {
-    initProposal();
+    loadProposals(page, proposals);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
+
+  useEffect(() => {
+    loadProposals(0, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [language]);
 
   return (
     <ProfileProposalsList
