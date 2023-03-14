@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
-
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints, DefaultPadding } from '@make.org/assets/vars/Breakpoints';
-
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { SvgExternalLink } from '../Svg/elements';
 

@@ -5,7 +5,6 @@ import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import i18n from 'i18next';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { trackClickSort } from '@make.org/utils/services/Tracking';
-import { SORT_RECENT } from '@make.org/utils/constants/explore';
 import { QuestionType, TypeSortValues } from '@make.org/types';
 import { parse, stringify } from 'query-string';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
@@ -19,6 +18,7 @@ import {
   SORT_ITEMS,
   getSortLabel,
   getUpdatedSortValues,
+  SORT_RECENT,
 } from '../../../helpers/filterAndSort';
 import {
   RadioAsTransparentButtonLabelStyle,

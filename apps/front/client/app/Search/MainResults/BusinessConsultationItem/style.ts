@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { Elements } from '@make.org/assets/vars/Elements';
+import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { DefaultPadding, Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { SvgAngleArrowRight } from '@make.org/ui/Svg/elements';
@@ -72,7 +72,7 @@ export const BusinessConsultationsItemStyle = styled.li<{
   backgroundColor: string;
 }>`
   display: flex;
-  border-radius: ${intToPx(Elements.BorderRadius)};
+  border-radius: ${intToPx(BorderRadius)};
   background-color: ${props => props.backgroundColor || 'rgb(242, 242, 242)'};
   overflow: hidden;
   margin: 0 0 ${intToPx(DefaultPadding.Mobile)};

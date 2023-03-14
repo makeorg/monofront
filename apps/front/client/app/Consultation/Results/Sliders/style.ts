@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { typography } from '@make.org/designsystem/tokens/typography';
-import { Elements } from '@make.org/assets/vars/Elements';
+import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
@@ -54,7 +54,7 @@ export const ResultsSliderStyle = styled.div<{
   isResultsPage: boolean;
 }>`
   background-color: ${colors.Background.Interface.DarkSecondary};
-  border-radius: ${intToPx(Elements.BorderRadius)};
+  border-radius: ${intToPx(BorderRadius)};
   box-shadow: ${shadows.s10};
   &.results-page {
     box-shadow: none;

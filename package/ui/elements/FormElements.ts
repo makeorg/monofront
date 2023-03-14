@@ -1,13 +1,12 @@
 import TextareaAutosize from 'react-autosize-textarea';
-import { Elements } from '@make.org/assets/vars/Elements';
 import styled from 'styled-components';
-
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { shadows } from '@make.org/designsystem/tokens/shadows';
 import { BodyXSDefault } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { BorderRadius } from './CardsElements';
 import { SvgExternalLink, SvgSelectArrow } from '../Svg/elements';
 import { FlexElementStyle } from './FlexElements';
 import { UnstyledButtonStyle } from './ButtonsElements';
@@ -250,7 +249,7 @@ export const FormErrorsContainerStyle = styled.div`
   width: 100%;
   padding: 15px;
   margin-bottom: 10px;
-  border-radius: ${intToPx(Elements.BorderRadius)};
+  border-radius: ${intToPx(BorderRadius)};
   background-color: ${colors.Content.Make.Secondary};
   color: ${colors.Content.Interface.Light};
   font-size: ${typography.FontSize.RueDeLappe};

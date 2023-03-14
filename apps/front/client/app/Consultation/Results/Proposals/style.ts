@@ -4,7 +4,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
-import { Elements } from '@make.org/assets/vars/Elements';
+import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { SvgLightning } from '@make.org/ui/Svg/elements';
 import { AvatarStyle } from '@make.org/ui/components/Avatar/style';
 import { BodyMDefault } from '@make.org/designsystem/components/Body';
@@ -28,7 +28,7 @@ export const ResultsProposalListItemStyle = styled.li`
   padding: 0px 15px 20px;
   margin-bottom: 20px;
   background-color: ${colors.Background.Interface.Lighter};
-  border-radius: ${intToPx(Elements.BorderRadius)};
+  border-radius: ${intToPx(BorderRadius)};
   border: solid 1px ${colors.Border.Interface.DarkMain};
   &:last-child {
     margin-bottom: 0;

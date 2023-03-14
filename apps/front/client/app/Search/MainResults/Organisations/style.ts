@@ -6,7 +6,7 @@ import {
   ProfileAvatarStyle,
   ProfilePageSidebarStyle,
 } from '@make.org/ui/elements/ProfileElements';
-import { Elements } from '@make.org/assets/vars/Elements';
+import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 
 export const SearchOrganisationsListStyle = styled(UnstyledListStyle)`
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -31,7 +31,7 @@ export const SearchOrganisationsListItemStyle = styled.li`
 export const SearchOrganisationItemStyle = styled(ProfilePageSidebarStyle)`
   text-decoration: none;
   &.mobile-radius {
-    border-radius: ${intToPx(Elements.BorderRadius)};
+    border-radius: ${intToPx(BorderRadius)};
   }
 `;
 

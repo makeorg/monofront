@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { Elements } from '@make.org/assets/vars/Elements';
+import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const PopularProposalHeader = styled.div`
@@ -10,5 +10,5 @@ export const PopularProposalHeader = styled.div`
   background-color: ${colors.Background.Interface.DarkSecondary};
   margin-bottom: 20px;
   padding: 5px 10px;
-  border-radius: ${intToPx(Elements.BorderRadius)};
+  border-radius: ${intToPx(BorderRadius)};
 `;

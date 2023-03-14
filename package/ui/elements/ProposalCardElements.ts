@@ -2,9 +2,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { Elements } from '@make.org/assets/vars/Elements';
 import { typography } from '@make.org/designsystem/tokens/typography';
-import { CardStyle } from './CardsElements';
+import { BorderRadius, CardStyle } from './CardsElements';
 import { ColumnElementStyle } from './FlexElements';
 
 export const ProposalInnerStyle = styled(ColumnElementStyle)`
@@ -44,7 +43,7 @@ export const ProposalCardStyle = styled(CardStyle)`
   margin: 20px 0 0;
   height: 100%;
   &.mobile-radius {
-    border-radius: ${intToPx(Elements.BorderRadius)};
+    border-radius: ${intToPx(BorderRadius)};
   }
   &:first-child,
   &:only-child {

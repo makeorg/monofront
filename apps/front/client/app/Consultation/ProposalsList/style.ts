@@ -1,12 +1,12 @@
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { Elements } from '@make.org/assets/vars/Elements';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { Link } from 'react-router-dom';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 import { MiddleColumnStyle } from '@make.org/ui/elements/FlexElements';
+import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 
 export const ProposalsListStyle = styled(UnstyledListStyle)`
   width: 100%;
@@ -40,7 +40,7 @@ export const ProposalCardStyle = styled.article`
   flex-flow: column;
   justify-content: space-between;
   background-color: ${colors.Background.Interface.Lighter};
-  border-radius: ${intToPx(Elements.BorderRadius)};
+  border-radius: ${intToPx(BorderRadius)};
   padding: 45px 20px 20px;
   min-height: 300px;
 `;

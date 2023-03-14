@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { Elements } from '@make.org/assets/vars/Elements';
+import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { shadows } from '@make.org/designsystem/tokens/shadows';
 import { FourthLevelTitleStyle } from '../../elements/TitleElements';
 
-const DEFAULT_RADIUS: string = intToPx(Elements.BorderRadius);
+const DEFAULT_RADIUS: string = intToPx(BorderRadius);
 
 export const TileWithTitleStyle = styled.div<{
   as: JSX.Element;

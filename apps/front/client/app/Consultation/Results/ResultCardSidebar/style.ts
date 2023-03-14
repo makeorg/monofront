@@ -1,6 +1,6 @@
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { Elements } from '@make.org/assets/vars/Elements';
+import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 import { TitleXXS } from '@make.org/designsystem/components/Titles';
@@ -11,7 +11,7 @@ export const ResultCardSidebarStyle = styled.section<{ isContext: boolean }>`
   flex-flow: column;
   justify-content: space-between;
   background-color: ${colors.Background.Interface.Lighter};
-  border-radius: ${intToPx(Elements.BorderRadius)};
+  border-radius: ${intToPx(BorderRadius)};
   padding: ${props => (props.isContext ? '25px 25px 0px' : '25px')};
   margin-bottom: ${props => (props.isContext ? '0px' : '30px')};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {

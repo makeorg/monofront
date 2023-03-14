@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { FourthLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { Elements } from '@make.org/assets/vars/Elements';
+import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { shadows } from '@make.org/designsystem/tokens/shadows';
 
@@ -28,7 +28,7 @@ export const PieChartCanvasStyle = styled.canvas`
 export const PieChartLegendStyle = styled.p`
   background-color: ${colors.Background.Interface.Lighter};
   padding: 20px;
-  border-radius: ${intToPx(Elements.BorderRadius)};
+  border-radius: ${intToPx(BorderRadius)};
   box-shadow: ${shadows.s10};
   font-size: ${typography.FontSize.RueDeLappe};
   color: ${colors.Content.Interface.DarkSecondary};

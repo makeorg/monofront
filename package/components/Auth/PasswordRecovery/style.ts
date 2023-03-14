@@ -5,12 +5,11 @@ import {
 } from '@make.org/ui/elements/MainElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import {
-  CALC_RECOVERY_HEIGHT_MOBILE,
-  CALC_RECOVERY_HEIGHT_DESKTOP,
-} from '@make.org/utils/constants/elements';
 import { FormCenterAlignStyle } from '@make.org/ui/elements/FormElements';
 import { FourthLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
+
+export const CALC_RECOVERY_HEIGHT_MOBILE: number = 67 + 96 + 20;
+export const CALC_RECOVERY_HEIGHT_DESKTOP: number = 75 + 48 + 30;
 
 export const PasswordRecoveryWrapperStyle = styled(PageWrapperStyle)`
   padding-bottom: 0;

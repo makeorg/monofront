@@ -7,9 +7,9 @@ import {
   Layouts,
   DefaultPadding,
 } from '@make.org/assets/vars/Breakpoints';
-import { Elements } from '@make.org/assets/vars/Elements';
 import { BodyMCondensed } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { BorderRadius } from './CardsElements';
 import {
   FlexElementStyle,
   MiddleRowStyle,
@@ -79,7 +79,7 @@ export const ProfilePageSidebarStyle = styled(ContentElementStyle)`
     margin-bottom: 0;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    border-radius: ${intToPx(Elements.BorderRadius)};
+    border-radius: ${intToPx(BorderRadius)};
   }
 `;
 

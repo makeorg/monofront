@@ -15,12 +15,12 @@ import {
   ParticipateCardStyle,
   ParticipateCardAltTitleStyle,
 } from '@make.org/ui/elements/CardsElements';
-import { SORT_RECENT } from '@make.org/utils/constants/explore';
 import {
   FeaturedProposalItemStyle,
   ProposalContentStyle,
   ExploreLinkStyle,
 } from './style';
+import { SORT_RECENT } from '../../../helpers/filterAndSort';
 
 type Props = {
   question: QuestionType;

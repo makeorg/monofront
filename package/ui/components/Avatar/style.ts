@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { Elements } from '@make.org/assets/vars/Elements';
+import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { Image } from '../Image';
 
@@ -32,7 +32,7 @@ export const PartnerAvatarStyle = styled.span<any>`
   display: block;
   svg,
   img {
-    border-radius: ${intToPx(Elements.BorderRadius)};
+    border-radius: ${intToPx(BorderRadius)};
     overflow: hidden;
     border: 1px solid ${colors.Border.Interface.DarkMain};
     background-color: ${colors.Background.Interface.Lighter};

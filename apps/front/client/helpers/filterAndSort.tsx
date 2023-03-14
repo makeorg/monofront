@@ -1,17 +1,11 @@
 import React from 'react';
 import { TypeSortValues, TypeFiltersValues } from '@make.org/types';
 import i18n from 'i18next';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import {
   SvgRecent,
   SvgControversial,
   SvgPopular,
 } from '@make.org/front/client/app/Consultation/ExploreFilters/style';
-import {
-  SORT_POPULAR,
-  SORT_RECENT,
-  SORT_CONTROVERSY,
-} from '@make.org/utils/constants/explore';
 
 // handles check on current sort
 export const checkCurrentSort = (
@@ -23,6 +17,10 @@ export const checkCurrentSort = (
   }
   return false;
 };
+
+export const SORT_RECENT = 'recent';
+const SORT_POPULAR = 'popular';
+const SORT_CONTROVERSY = 'controversy';
 
 // handles sort values update
 export const getUpdatedSortValues = (

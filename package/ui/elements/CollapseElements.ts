@@ -1,14 +1,13 @@
 import styled from 'styled-components';
-
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { Elements } from '@make.org/assets/vars/Elements';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { shadows } from '@make.org/designsystem/tokens/shadows';
 import { SeparatorStyle } from './SeparatorsElements';
 import { UnstyledButtonStyle } from './ButtonsElements';
 import { MiddleColumnStyle } from './FlexElements';
+import { BorderRadius } from './CardsElements';
 
 export const CollapseWrapperStyle = styled(MiddleColumnStyle)<{
   noMargin: boolean;
@@ -28,7 +27,7 @@ export const TileWithCollapseWrapperStyle = styled(CollapseWrapperStyle)`
     padding: 14px 20px 8px;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    border-radius: ${intToPx(Elements.BorderRadius)};
+    border-radius: ${intToPx(BorderRadius)};
   }
 `;
 

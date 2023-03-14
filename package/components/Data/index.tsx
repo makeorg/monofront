@@ -1,11 +1,13 @@
 import React, { FC } from 'react';
-import { HISTOGRAM_CHART, PIE_CHART } from '@make.org/utils/constants/elements';
 import { PieChart } from './PieChart';
 import { Histogram } from './Histogram';
 
 type Props = {
   chart: any;
 };
+
+const PIE_CHART = 'pie';
+const HISTOGRAM_CHART = 'histogram';
 
 export const ChartType: FC<Props> = ({ chart }) => {
   switch (chart.type) {

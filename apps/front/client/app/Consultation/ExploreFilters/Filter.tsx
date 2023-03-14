@@ -20,7 +20,6 @@ import {
   CheckboxLabelStyle,
 } from '@make.org/ui/elements/FormElements';
 import { FilterSeparationLineStyle } from '@make.org/ui/elements/SeparatorsElements';
-import { FILTER_ORGANISATION } from '@make.org/utils/constants/explore';
 import { checkIsFeatureActivated } from '@make.org/utils/helpers/featureFlipping';
 import { FEATURE_FLIPPING } from '@make.org/types/enums';
 import {
@@ -44,6 +43,8 @@ import {
   SvgArrowUp,
   FiltersAndSortRedButtonStyle,
 } from './style';
+
+const FILTER_ORGANISATION = 'ORGANISATION';
 
 export const FiltersComponent: React.FC = () => {
   const [keywordsCTA, setKeywordsCTA] = useState<QuestionKeywordType[]>([]);

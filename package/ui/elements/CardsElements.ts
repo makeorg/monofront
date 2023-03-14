@@ -8,7 +8,6 @@ import {
   DefaultPadding,
 } from '@make.org/assets/vars/Breakpoints';
 import { shadows } from '@make.org/designsystem/tokens/shadows';
-import { Elements } from '@make.org/assets/vars/Elements';
 import { Link } from 'react-router-dom';
 import { TitleS, TitleXXS } from '@make.org/designsystem/components/Titles';
 import { colors } from '@make.org/designsystem/tokens/colors';
@@ -16,6 +15,8 @@ import { FlexElementStyle } from './FlexElements';
 import { ParagraphStyle } from './ParagraphElements';
 import { SvgExternalLink, SvgLock } from '../Svg/elements';
 import { LinkAsRedButtonStyle, RedButtonStyle } from './ButtonsElements';
+
+export const BorderRadius = 8;
 
 export const CardStyle = styled.article`
   display: flex;
@@ -29,7 +30,7 @@ export const CardStyle = styled.article`
   background-color: ${colors.Background.Interface.Lighter};
   box-shadow: ${shadows.s10};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    border-radius: ${intToPx(Elements.BorderRadius)};
+    border-radius: ${intToPx(BorderRadius)};
   }
 `;
 
@@ -120,7 +121,7 @@ export const ParticipateCardStyle = styled.section<{
   flex-flow: column;
   justify-content: space-between;
   background-color: ${colors.Background.Interface.Lighter};
-  border-radius: ${intToPx(Elements.BorderRadius)};
+  border-radius: ${intToPx(BorderRadius)};
   padding: 30px;
   &.no-padding-bottom {
     padding-bottom: 0px;

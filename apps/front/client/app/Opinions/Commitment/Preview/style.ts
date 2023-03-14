@@ -3,7 +3,7 @@ import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { SeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { Elements } from '@make.org/assets/vars/Elements';
+import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 import {
@@ -53,7 +53,7 @@ export const CommitmentPreviewBoxStyle = styled(ParagraphStyle)`
   background-color: ${colors.Background.Interface.DarkSecondary};
   color: ${colors.Content.Interface.Dark};
   padding: 20px;
-  border-radius: ${intToPx(Elements.BorderRadius)};
+  border-radius: ${intToPx(BorderRadius)};
   margin-bottom: 15px;
   &:last-child {
     margin-bottom: 0;
@@ -65,7 +65,7 @@ export const CommitmentPreviewDislaimerStyle = styled.div`
   background-color: ${colors.Background.Alert.Infos};
   color: ${colors.Content.Interface.Light};
   padding: 20px;
-  border-radius: ${intToPx(Elements.BorderRadius)};
+  border-radius: ${intToPx(BorderRadius)};
   margin-top: 15px;
 `;
 

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { Elements } from '@make.org/assets/vars/Elements';
+import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { TitleXXS } from '@make.org/designsystem/components/Titles';
 
@@ -11,7 +11,7 @@ export const ScoringContentStyle = styled.div`
   padding: 20px;
   margin: 0 0 20px 0;
   width: 100%;
-  border-radius: ${intToPx(Elements.BorderRadius)};
+  border-radius: ${intToPx(BorderRadius)};
   &:nth-child(1) {
     margin-left: 0;
   }

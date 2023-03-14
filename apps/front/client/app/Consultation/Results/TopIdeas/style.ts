@@ -1,6 +1,6 @@
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { typography } from '@make.org/designsystem/tokens/typography';
-import { Elements } from '@make.org/assets/vars/Elements';
+import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { ProfileHasVotedStyle } from '@make.org/components/Proposal/ProfileVoteCard/style';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
@@ -52,7 +52,7 @@ export const TopIdeaListItemStyle = styled.li`
   }
   padding: 25px 20px;
   background-color: ${colors.Background.Interface.Lighter};
-  border-radius: ${intToPx(Elements.BorderRadius)};
+  border-radius: ${intToPx(BorderRadius)};
   border: solid 1px ${colors.Border.Interface.DarkMain};
 `;
 

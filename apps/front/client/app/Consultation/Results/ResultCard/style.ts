@@ -1,19 +1,19 @@
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { Elements } from '@make.org/assets/vars/Elements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import { TitleS } from '@make.org/designsystem/components/Titles';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 
 export const ResultCardStyle = styled.section`
   display: flex;
   flex-flow: column;
   justify-content: space-between;
   background-color: ${colors.Background.Interface.Lighter};
-  border-radius: ${intToPx(Elements.BorderRadius)};
+  border-radius: ${intToPx(BorderRadius)};
   padding: 25px;
   margin-bottom: 30px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {

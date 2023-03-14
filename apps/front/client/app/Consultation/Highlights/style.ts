@@ -1,7 +1,6 @@
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { Elements } from '@make.org/assets/vars/Elements';
 import {
   ColumnElementStyle,
   FlexElementStyle,
@@ -9,6 +8,7 @@ import {
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 import { TitleS } from '@make.org/designsystem/components/Titles';
+import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 
 export const HigthlightsWrapperStyle = styled.section`
   width: 100%;
@@ -92,15 +92,14 @@ export const FiguresValueStyle = styled(TitleS).attrs({ as: 'span' })`
 export const ImageWrapperStyle = styled.div`
   max-width: 555px;
   overflow: hidden;
-  border-radius: ${intToPx(Elements.BorderRadius)};
+  border-radius: ${intToPx(BorderRadius)};
 `;
 
 export const ProgressWrapperStyle = styled(FlexElementStyle)`
   width: 100%;
   justify-content: flex-end;
   padding: 20px;
-  border-radius: 0 ${intToPx(Elements.BorderRadius)}
-    ${intToPx(Elements.BorderRadius)} 0;
+  border-radius: 0 ${intToPx(BorderRadius)} ${intToPx(BorderRadius)} 0;
   background-color: ${colors.Background.Interface.DarkSecondary};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     padding: 30px;

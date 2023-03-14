@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { Elements } from '@make.org/assets/vars/Elements';
+import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { shadows } from '@make.org/designsystem/tokens/shadows';
@@ -44,7 +44,7 @@ export const SearchSidebarTileStyle = styled.div<{
   background-size: contain;
   background-repeat: no-repeat;
   background-color: ${colors.Background.Interface.Lighter};
-  border-radius: ${intToPx(Elements.BorderRadius)};
+  border-radius: ${intToPx(BorderRadius)};
   box-shadow: ${shadows.s10};
   padding: 20px;
 `;

@@ -17,12 +17,12 @@ import {
   trackClickExploreTab,
   trackClickParticipateTab,
 } from '@make.org/utils/services/Tracking';
-import { SORT_RECENT } from '@make.org/utils/constants/explore';
 import {
   InnerPagesNavigation,
   PageNavigationType,
 } from '../../Navigation/Pages';
 import { NavigationWrapperStyle, NavigationInnerStyle } from './style';
+import { SORT_RECENT } from '../../../helpers/filterAndSort';
 
 export const ParticipateNavigation: FC = () => {
   const { country, pageId } = useParams<{ country: string; pageId: string }>();
