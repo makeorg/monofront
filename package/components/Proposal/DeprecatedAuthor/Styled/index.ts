@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { typography } from '@make.org/designsystem/tokens/typography';
-import { TextColors } from '@make.org/assets/vars/Colors';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
@@ -65,6 +64,6 @@ export const ProposalStatusStyle = styled.span`
 export const CertifiedIconStyle = styled(SvgCheckedSymbol)`
   margin-left: 5px;
   .tofill {
-    fill: ${TextColors.Blue};
+    fill: rgb(74, 144, 226);
   }
 `;

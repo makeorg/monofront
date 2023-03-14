@@ -1,4 +1,3 @@
-import { BorderColors } from '@make.org/assets/vars/Colors';
 import styled from 'styled-components';
 import {
   SequenceParagraphStyle,
@@ -6,11 +5,12 @@ import {
 } from '@make.org/components/Sequence/Cards/style';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
+import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const WidgetContainerStyle = styled(ColumnElementStyle)<{
   isStandardSequenceKind: boolean;
 }>`
-  border: 1px solid ${BorderColors.LightGrey};
+  border: 1px solid ${colors.Border.Interface.LightMain};
   width: 100%;
   height: ${props => (props.isStandardSequenceKind ? '550px' : '572px')};
   position: relative;

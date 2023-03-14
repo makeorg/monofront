@@ -5,7 +5,6 @@ import { SpaceBetweenColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { Link } from 'react-router-dom';
 import { SvgExternalLink, SvgWorldMap } from '@make.org/ui/Svg/elements';
 import { SEARCH } from '@make.org/types/enums';
-import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { shadows } from '@make.org/designsystem/tokens/shadows';
 
@@ -132,7 +131,7 @@ export const DesktopMenuItemStyle = styled.li`
   animation-duration: 1s;
   animation-iteration-count: 1;
   &.with-border {
-    border-left: 1px solid ${ShadowColors.BlackZeroOneOpacity};
+    border-left: 1px solid ${colors.Border.Interface.DarkMain};
   }
   &.${SEARCH.ADD_SEARCH_DESKTOP_ANIMATION} {
     animation-name: ${fadeOut};

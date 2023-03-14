@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { SpaceBetweenRowStyle } from '@make.org/ui/elements/FlexElements';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
-import { SocialNetworksColors } from '@make.org/assets/vars/Colors';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { SocialNetworksColors } from '../../Sharing/Styled';
 
 export const FollowUsStyle = styled(SpaceBetweenRowStyle)`
   width: 100%;

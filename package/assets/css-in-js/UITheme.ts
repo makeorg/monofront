@@ -2,7 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { shadows } from '@make.org/designsystem/tokens/shadows';
-import { ShadowColors } from '../vars/Colors';
 import { Layouts, DefaultPadding, Breakpoints } from '../vars/Breakpoints';
 
 export const UIThemeStylesheet = createGlobalStyle`
@@ -26,7 +25,7 @@ export const UIThemeStylesheet = createGlobalStyle`
     top: 0;
     left: 0;
     z-index: 10;
-    background-color: ${ShadowColors.BlackZeroEightOpacity};
+    background-color: rgba(0,0,0,0.8);
     padding: ${intToPx(DefaultPadding.Mobile)};
     @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
       padding: ${intToPx(DefaultPadding.Desktop)};

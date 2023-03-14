@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { colors } from '@make.org/designsystem/tokens/colors';
-import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { Layouts, Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import {
   FlexElementStyle,
@@ -53,5 +52,5 @@ export const HeaderSeparatorStyle = styled.div`
   width: 1px;
   height: 100%;
   margin: 0 30px;
-  background-color: ${ShadowColors.BlackZeroOneOpacity};
+  background-color: ${colors.Background.Interface.DarkMain};
 `;

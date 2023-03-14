@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { StartColumnStyle } from '@make.org/ui/elements/FlexElements';
-import { ShadowColors } from '@make.org/assets/vars/Colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { SvgClose } from '@make.org/ui/Svg/elements';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
@@ -13,7 +12,7 @@ export const PanelOverlayStyle = styled.button`
   width: 100%;
   height: 100%;
   z-index: 15;
-  background-color: ${ShadowColors.BlackZeroEightOpacity};
+  background-color: rgba(0, 0, 0, 0.8);
   opacity: 0;
   transition: 0.5s ease-in opacity;
   border: none;

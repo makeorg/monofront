@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { colors } from '@make.org/designsystem/tokens/colors';
-import { SocialNetworksColors } from '@make.org/assets/vars/Colors';
 import { SvgMailPlain } from '@make.org/ui/Svg/elements';
 import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { BodySHighLight } from '@make.org/designsystem/components/Body';
+import { SocialNetworksColors } from '../../Sharing/Styled';
 
 export const AuthenticationButtonWrapperStyle = styled(CenterColumnStyle)`
   width: 100%;
