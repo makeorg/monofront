@@ -61,6 +61,7 @@ export const cspMiddleware = (
         'https://*.facebook.com',
         'https://*.facebook.net',
         'https://analytics.twitter.com',
+        'https://*.hotjar.com',
       ],
       connectSrc: [
         ...defaultDirectives.connectSrc,
@@ -78,8 +79,9 @@ export const cspMiddleware = (
         ...defaultDirectives.frameSrc,
         'https://*.facebook.com',
         'https://*.google.com',
-        'https://*.hotjar.com/',
+        'https://*.hotjar.com',
       ],
+      fontSrc: [...defaultDirectives.fontSrc, 'https://*.hotjar.com'],
     },
   })(req, res, next);
 };
