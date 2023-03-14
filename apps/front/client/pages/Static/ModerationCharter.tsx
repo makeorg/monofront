@@ -78,6 +78,9 @@ const ModerationCharterPage: FC = () => (
           <StaticParagraphStyle>
             {i18n.t('moderation_charter.irrelevant_solutions.description')}
           </StaticParagraphStyle>
+          <StaticParagraphStyle>
+            {i18n.t('moderation_charter.irrelevant_solutions.example')}
+          </StaticParagraphStyle>
           <ModerationExampleCardsWrapperStyle>
             <ModerationExampleCardStyle className="refused">
               <ModerationExampleCardTitleStyle className="refused">

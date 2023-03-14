@@ -75,7 +75,7 @@
     },
     "moderation": {
       "title": "Moderationscharta - Make.org",
-      "description": "Welche Vorschläge werden während der Moderation auf Make.org abgelehnt? Wie formuliert man einen Vorschlag richtig? Jeder Vorschlag, der auf der Plattform eingereicht wird, wird persönlich von den Moderationsteams von Make.org moderiert. Als Grundlage dienen die nachfolgenden Kriterien der Moderationscharta"
+      "description": "Wie komme ich an der Moderation vorbei? Welche Vorschläge werden bei der Moderation auf Make.org abgelehnt? Wie formuliere ich einen Vorschlag richtig?"
     },
     "privacy_policy": {
       "title": "Datenschutzerklärung - Make.org",
@@ -1227,6 +1227,7 @@
     "irrelevant_solutions": {
       "title": "Unsachgemäße Vorschläge", 
       "description": "Dein Vorschlag muss eine Antwort auf die Frage sein, die in der Konsultation gestellt wurde. Wenn dies nicht der Fall ist, wird er als unsachgemäß betrachtet und abgelehnt.", 
+      "example": "Zum Beispiel auf die Frage „Wie können wir es jedem Einzelnen ermöglichen, sich besser zu ernähren?“",
       "refused_card_example": "Man sollte die Fußball-Weltmeisterschaft alle zwei Jahre durchführen.", 
       "validated_card_example": "Man sollte in den Betriebskantinen kurze Versorgungswege fördern."
     }, 

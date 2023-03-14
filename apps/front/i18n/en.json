@@ -70,7 +70,7 @@
     },
     "moderation": {
       "title": "Moderation Charter",
-      "description": "How to pass the moderation? How to be successful on the platform? Rather than a (too) long speech, we take the side of some examples to explain you our moderation policy."
+      "description": "How do I get through moderation? What proposals are rejected during moderation on Make.org? How do I formulate a proposal correctly?"
     },
     "privacy_policy": {
       "title": "Privacy policy - Make.org",
@@ -1145,6 +1145,7 @@
     "irrelevant_solutions": {
       "title": "Irrelevant solutions",
       "description": "Your solution must answer the question asked in the consultation, for example: “How can we ensure that everyone eats better?”. If this is not the case, your solution is considered irrelevant and will be refused.",
+      "example": "For example for the question “How to enable everyone to eat better?”",
       "refused_card_example": "We should have a football world cup championship that is held every two years.",
       "validated_card_example": "We should facilitate access to short supply chains in company canteens."
     },

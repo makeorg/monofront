@@ -75,7 +75,7 @@
     },
     "moderation": {
       "title": "Make.org ∙ Charte de modération",
-      "description": "Quelles sont les propositions refusées lors de la modération sur Make.org ? Comment formuler une proposition correctement ? Chaque proposition soumise sur la plateforme est modérée à la main par les équipes de modérateurs de Make.org, au regard des critères suivants de la charte de modération."
+      "description": "Quelles sont les propositions refusées lors de la modération sur Make.org ? Comment formuler une proposition correctement ?"
     },
     "privacy_policy": {
       "title": "Charte de données personnelles - Make.org",
@@ -1236,6 +1236,7 @@
     "irrelevant_solutions": {
       "title": "Les propositions hors sujet", 
       "description": "Votre proposition doit répondre à la question posée dans la consultation. Dans le cas contraire, votre proposition est considérée comme hors sujet et sera refusée.", 
+      "example": "Par exemple pour la question “Comment permettre à chacun de mieux manger ?”",
       "refused_card_example": "Il faut mettre en place la coupe du monde de football tous les 2 ans.", 
       "validated_card_example": "Il faut favoriser l’accès aux circuits courts dans les cantines d'entreprise."
     }, 
