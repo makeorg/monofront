@@ -1,0 +1,305 @@
+fr:
+  introduction: |
+    ## Déclaration d’Accessibilté
+
+    Make.org s’engage à rendre son site internet accessible conformément à l’article 47 de la loi n° 2005-102 du 11 février 2005.
+
+    Cette déclaration d’accessibilité s’applique à {{frontUrl}}.
+
+  firstFocus: |
+    # {{pourcentOk}}% des critères RGAA 4.0 sont respectés
+
+    Make.org s'engage à améliorer l'accessibilité et l'inclusion dans le numérique. Le RGAA (référentiel général d’amélioration de l’accessibilité) est un document d'autorité, énonçant des normes d'accessibilité auxquelles nos équipes de conception et techniques cherchent à se rapprocher au maximum.
+
+    De façon transparente, cette page a pour but d'indiquer l'état actuel de l'accessibilité de Make.org.
+
+  secondFocus: |
+    # Découvrez notre engagement pour l’accessibilité numérique
+
+    Pour que la démocratie reste l’affaire de toutes et tous, la prise en compte des enjeux d'inclusion et d’accessibilité est essentielle. L’exercice de la citoyenneté est un droit fondamental qui ne doit pas se voir inquiété ou limité par une ou des situations de handicap. __C’est pourquoi Démocratie Ouverte et Make.org, deux acteurs de l’innovation démocratique, ont travaillé aux côtés du CNCPH à l’élaboration d’une charte d'accessibilité des outils de de participation citoyenne__. Cette charte, signée le 17 décembre 2021, 2021, officialise les engagements précédents des deux organisations acte la volonté de continuer en ce sens.
+
+    [Télécharger la Charte (version html)](/convention/cncph.html)
+
+  content: |
+    ### 1. État de conformité
+
+    Make.org est en conformité partielle avec le [RGAA 4.0](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/)
+
+    ### 2. Résultats des tests
+
+    L’audit de conformité réalisé en interne révèle que :
+    - {{testOk}} tests sont réalisés avec succès.
+    - {{testKo}} tests échouent.
+    - {{testNa}} tests sont relatifs à des critères non applicables.
+
+    - {{criteriaOk}} critères sont respectés.
+    - {{criteriaKo}} critères ne sont pas respectés.
+    - {{criteriaNa}} critères ne sont pas applicables.
+
+    Soit {{pourcentOk}}% des critères RGAA 4.0 sont respectés.
+
+
+    ### 3. Établissement de cette déclaration d’accessibilité
+
+    Cette déclaration a été établie le 04 novembre 2020. Elle a été mise jour le 04 novembre 2020.
+
+    __Technologies utilisées pour la réalisation du site internet Make.org :__
+    - HTML5
+    - CSS
+    - Javascript
+    - React JS version 16
+    - Retrouver [la liste complète des technologies utilisées](https://gitlab.com/makeorg/platform/front/-/blob/production/package.json)
+
+
+    __Agents utilisateurs, technologies d’assistance et outils utilisés pour vérifier l’accessibilité :__
+    - Chrome 86 / Mac OS 10.15 VoiceOver
+    - Firefox 82.0 / Linux Orca 3.36.2
+
+    __Les outils suivants ont été utilisés lors de l’évaluation :__
+    - Google Lighthouse [DevTools](https://developers.google.com/web/tools/lighthouse#devtools)
+    - Google Lighthouse [CI](https://github.com/GoogleChrome/lighthouse-ci)
+    - Web Developer [extension navigateur](https://chrispederick.com/work/web-developer/)
+    - Axe [extension navigateur](https://www.deque.com/axe/browser-extensions/)
+    - WCAG Color contrast checker [extension navigateur](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf)
+
+
+    Les pages du site ayant fait l’objet de la vérification de conformité :
+    - Page d'accueil France : {{linkHomeFR}}
+    - Page d'accueil Grande Bretagne : {{linkHomeGB}}
+    - Page parcourir les consultations : {{linkBrowseConsultations}}
+    - Page parcourir les résultats : {{linkBrowseResults}}
+    - Page consultation : {{linkParticipate}}
+    - Page de propositions en séquence : {{linkSequence}}
+    - Page de résultat d'une consultation : {{linkResults}}
+    - Page du top des idées d'une consultation : {{linkTopIdea}}
+    - Page de détails d'une top idée d'une consultation : {{linkTopIdeaDetail}}
+    - Page de proposition : {{linkProposal}}
+    - Page de réinitialisation du mot de passe : {{linkPasswordRecovery}}
+    - Page de profil utilisateur : {{linkProfile}}
+    - Page d'édition du profil utilisateur : {{linkEditProfile}}
+    - Page de la liste des propositions de l'utilisateur : {{linkProposalsProfile}}
+    - Page de la liste des propositions favorites de l'utilisateur : {{linkFavouritesProfile}}
+    - Page des opinions d'une personnalité : {{linkOpinionsProfile}}
+    - Page de profil public d'une personnalité : {{linkPersonalityProfile}}
+    - Page de propositions d'un profil public d'organisation : {{linkOrganisationProposals}}
+    - Page de votes d'un profil public d'organisation : {{linkOrganisationVotes}}
+    - Page de résultats de recherche : {{linkSearch}}
+    - Page de résultats de recherche des propositions : {{linkProposalsSearch}}
+    - Page de résultats de recherche des organisations : {{linkOrganisationsSearch}}
+    - Page de résultats de recherche des consultations : {{linkConsultationsSearch}}
+    - Page de mentions légales : {{linkLegal}}
+    - Page de conditions d'utilisation : {{linkGTU}}
+    - Page de politique de données : {{linkData}}
+    - Page de déclaration d'accessibilité : {{linkA11Y}}
+    - Page de contact : {{linkContact}}
+
+    ### 4. Retour d’information et contact
+
+    Si vous n’arrivez pas à accéder à un contenu ou à un service, vous pouvez contacter le responsable du site internet pour être orienté vers une alternative accessible ou obtenir le contenu sous une autre forme.
+
+    Contactez-nous à cette adresse e-mail : {{accessibilityEmail}}
+
+en:
+  introduction: |
+    ## Declaration of accessibility
+
+    Make.org undertakes to render its website accessible in accordance with article 47 of Act no. 2005-102 of 11 February 2005. 
+
+    This declaration of accessibility applies to {{frontUrl}}.
+
+  firstFocus: |
+    # {{pourcentOk}}% of the RGAA 4.0 criteria are satisfied
+
+    Make.org undertakes to improve accessibility and inclusion in the digital world. The RGAA (General Accessibility Framework for Administrations) is an authoritative document setting out accessibility standards that our design and technical teams seek to meet as far as possible.
+
+    In the interests of transparency, the aim of this page is to indicate the current state of Make.org’s accessibility.
+
+  secondFocus: |
+    # Discover our commitment to digital accessibility
+
+    To ensure that democracy remains everyone’s business, it is essential that inclusion and accessibility issues be taken into account. The exercising of one’s citizenship is a fundamental right that must not be disturbed or limited by any question of disability. __That’s why Démocratie Ouverte and Make.org, two democratic innovation players, worked hand in hand with the CNCPH to draw up an accessibility charter for citizens’ participation systems__. This charter, signed on 17 December 2021, makes the preceding commitments by the two organisations official and formalises the intention to continue in this direction.
+
+    [Download the charter (html version)](/convention/cncph.html)
+
+  content: |
+    ### 1. Compliance status
+
+    Make.org complies partly with the [RGAA 4.0](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/)
+
+    ### 2. Test results
+
+    The internal compliance audit reveals that:
+    - {{testOk}} tests are successfully carried out.
+    - {{testKo}} tests fail.
+    - {{testNa}} tests are concerned with inapplicable criteria.
+
+    - {{criteriaOk}} criteria are satisfied.
+    - {{criteriaKo}} criteria are not satisfied.
+    - {{criteriaNa}} criteria are not applicable.
+
+    So {{pourcentOk}}% of the RGAA 4.0 criteria are satisfied.
+
+
+    ### 3. Establishment of this declaration of accessibility
+
+    This declaration was established on 04 November 2020. It was updated on 04 November 2020.
+
+    __Technologies used in the creation of the Make.org website:__
+    - HTML5
+    - CSS
+    - Javascript
+    - React JS version 16
+    - See the [full list of technologies used](https://gitlab.com/makeorg/platform/front/-/blob/production/package.json)
+
+
+    __User agents, assistive technologies and tools used to verify accessibility:__
+    - Chrome 86 / Mac OS 10.15 VoiceOver
+    - Firefox 82.0 / Linux Orca 3.36.2
+
+    __The following tools were used during the evaluation:__
+    - Google Lighthouse [DevTools](https://developers.google.com/web/tools/lighthouse#devtools)
+    - Google Lighthouse [CI](https://github.com/GoogleChrome/lighthouse-ci)
+    - Web Developer [browser plug-in](https://chrispederick.com/work/web-developer/)
+    - Axe [browser plug-in](https://www.deque.com/axe/browser-extensions/)
+    - WCAG Color contrast checker [browser plug-in](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf)
+
+
+    Les pages du site ayant fait l’objet de la vérification de conformité :
+    - Homepage France: {{linkHomeFR}}
+    - Homepage Great Britain: {{linkHomeGB}}
+    - Consultations browsing page: {{linkBrowseConsultations}}
+    - Results browsing page: {{linkBrowseResults}}
+    - Consultation page: {{linkParticipate}}
+    - Sequenced solutions page: {{linkSequence}}
+    - Consultation results page: {{linkResults}}
+    - Consultation top ideas page:  {{linkTopIdea}}
+    - Consultation top idea details page: {{linkTopIdeaDetail}}
+    - Solution page:  {{linkProposal}}
+    - Password reset page:  {{linkPasswordRecovery}}
+    - User profile page: {{linkProfile}}
+    - User profile editing page: {{linkEditProfile}}
+    - User’s solutions list page: {{linkProposalsProfile}}
+    - User’s favourite solutions list page: {{linkFavouritesProfile}}
+    - Personality’s opinions page: {{linkOpinionsProfile}}
+    - Personality’s public profile page:  {{linkPersonalityProfile}}
+    - Organisation’s public profile solutions page: {{linkOrganisationProposals}}
+    - Organisation’s public profile votes page: {{linkOrganisationVotes}}
+    - Search results page: {{linkSearch}}
+    - Solutions search results page: {{linkProposalsSearch}}
+    - Organisations’ search results page: {{linkOrganisationsSearch}}
+    - Consultations search results page: {{linkConsultationsSearch}}
+    - Legal notices page: {{linkLegal}}
+    - Conditions of use page: {{linkGTU}}
+    - Data policy page: {{linkData}}
+    - Accessibility declaration page: {{linkA11Y}}
+    - Contact page: {{linkContact}}
+
+
+    ### 4. Feedback and contact
+
+    If you are unable to access particular content or a service, you can contact the website manager to be redirected to an accessible alternative or obtain the content in another form.
+
+    Contact us at this e-mail address: {{accessibilityEmail}}
+
+de:
+  introduction: |
+    ## ERKLÄRUNG ZUR BARRIEREFREIHEIT
+
+    Make.org verpflichtet sich, seine Website gemäß der  Richtlinie (EU) 2016/2102 des Europäischen Parlaments und des Rates barrierefrei zu gestalten.
+
+    Diese Erklärung zur Barrierefreiheit bezieht sich auf {{frontUrl}}.
+
+    Identität des Registranten: 
+    Make.org 
+    {{address}} 
+    Kontakt: {{accessibilityEmail}}
+
+  content: |
+    ### KONFORMITÄTSSTATUS
+
+    Make.org entspricht teilweise den [WCAG 2.1](https://www.w3.org/TR/WCAG21/)
+
+
+    ### TESTERGEBNISSE
+
+    Ein Audit der Website offenbart, dass diese die Konformitätsstufen A und AA erreicht und somit eine teilweise Konformität mit den WCAG 2.1-Richtlinien aufweist.
+
+
+    ### ERSTELLUNG DER ERKLÄRUNG ZUR BARRIEREFREIHEIT
+
+    Diese Erklärung wurde am 4. November 2020 erstellt und am 28. Juli 2021 aktualisiert.
+
+    __Technologien, die zur Erstellung der Make.org-Website verwendet wurden:__
+    - HTML5
+    - CSS
+    - Javascript
+    - React JS version 16
+    - Hier finden Sie die [vollständige Liste der verwendeten Technologien](https://gitlab.com/makeorg/platform/front/-/blob/production/package.json)
+
+
+    __Zur Überprüfung der Barrierefreiheit verwendete Nutzeragenten, unterstützende Technologien und Tools:__
+    - Chrome 86 / Mac OS 10.15 VoiceOver
+    - Firefox 82.0 / Linux Orca 3.36.2
+
+    __Für die Auswertung wurden folgende Tools verwendet:__
+    - Google Lighthouse [DevTools](https://developers.google.com/web/tools/lighthouse#devtools)
+    - Google Lighthouse [CI](https://github.com/GoogleChrome/lighthouse-ci)
+    - Web Developer [browser-plug-in](https://chrispederick.com/work/web-developer/)
+    - Axe [browser-plug-in](https://www.deque.com/axe/browser-extensions/)
+    - WCAG Color contrast checker [browser-plug-in](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf)
+
+
+    Folgende Seiten der Website wurden auf ihre Barrierefreiheit geprüft:
+    - Startseite Frankreich : {{linkHomeFR}}
+    - Startseite Großbritannien : {{linkHomeGB}}
+    - Seite zum Durchsuchen von Konsultationen :{{linkBrowseConsultations}}
+    - Ergebnisse der Seitensuche : {{linkBrowseResults}}
+    - Konsultationsseite : {{linkParticipate}}
+    - Vorschlagsseite in Reihenfolge :  {{linkSequence}}
+    - Ergebnisseite einer Abfrage : {{linkResults}}
+    - Top-Ideen-Seite einer Beratung : {{linkTopIdea}}
+    - Detailseite einer Top-Idee für eine Beratung : {{linkTopIdeaDetail}}
+    - Vorschlagsseite : {{linkProposal}}
+    - Seite zum Zurücksetzen des Passworts : {{linkPasswordRecovery}}
+    - Benutzerprofilseite : {{linkProfile}}
+    - Seite zum Bearbeiten des Benutzerprofils : {{linkEditProfile}}
+    - Seite der Benutzer-Vorschlagsliste : {{linkProposalsProfile}}
+    - Seite der Liste mit den Lieblingsvorschlägen des Benutzers : {{linkFavouritesProfile}}
+    - Meinungsseite zur Persönlichkeit : {{linkOpinionsProfile}}
+    - Öffentliche Profilseite einer Persönlichkeit : {{linkPersonalityProfile}}
+    - Öffentliches Profil Organisation Vorschlagsseite : {{linkOrganisationProposals}}
+    - Abstimmungsseite eines öffentlichen Profils einer Organisation : {{linkOrganisationVotes}}
+    - Suchergebnisse Seite : {{linkSearch}}
+    - Ergebnisseite der Vorschlagssuche : {{linkProposalsSearch}}
+    - Organisationen Suchergebnisseite : {{linkOrganisationsSearch}}
+    - Suchergebnisseite für Beratungen : {{linkConsultationsSearch}}
+    - Rechtliche Seite : {{linkLegal}}
+    - Seite mit den Nutzungsbedingungen : {{linkGTU}}
+    - Seite zur Datenpolitik : {{linkData}}
+    - Seite zur Erklärung der Barrierefreiheit : {{linkA11Y}}
+    - Kontaktseite : {linkContact}}
+
+    Da der Länderindikator eine Variable in der Seitenstruktur ist, können wir bestätigen, dass alle Seiten, deren URLs einer der geprüften Strukturen folgen, die gleichen Prüfergebnisse aufweisen und dass der Grad der Barrierefreiheit in allen Ländern, in denen Make.org verfügbar ist, der gleiche ist.
+
+
+    ### NICHT BARRIEREFREIHEITE INHALTE
+
+    - Informationstragende Canvas-Elemente („Canvas“-Tags) lassen sich nicht ersetzen oder können nicht durch formatierten Text ersetzt werden;
+    - Rahmen-Elemente („iframe“-Tags) der Vermittlungsdienste von Google und Facebook beinhalten kein Attribut „title“;
+    - Manche Skript-Elemente („Skript“-Tags) sind mit den unterstützenden Technologien nicht kompatibel und bieten keine sinnvolle Alternative;
+    - Es kann unvermittelt zu einem Kontextwechsel kommen (Abmelden, Benachrichtigungen, Weiterleitung usw.);
+    - Manche Abkürzungen werden nicht erklärt;
+    - Bei bestimmten Elementen kann der „Fokus“ unscharf werden;
+    - Manche ausgeblendeten Elemente können von Sprachsynthesizern mitgesprochen werden;
+    - Steuerung von Elementen wie „Tooltip“ oder „Sliders“;
+    - Manche Felder in Formularen müssen gesondert bestätigt werden, ohne dass dies ausdrücklich vorab erklärt wird;
+    - Es fehlt eine Übersicht über die Website (Sitemap);
+    - Auf Seiten ohne Ankerlink kann die Rückkehr nach oben die Reihenfolge der Tastaturbefehle durcheinanderbringen.
+    - Einige länderspezifische Bilder (visueller Inhalt, Alternative)
+
+
+    ### FEEDBACK UND KONTAKT
+
+    Sollten Sie auf einen Inhalt oder eine Funktion nicht zugreifen können, wenden Sie sich bitte an den Betreiber der Website. Er zeigt Ihnen eine barrierefreie Alternative auf oder lässt Ihnen den Inhalt in einer anderen Form zukommen.
+
+    Sie erreichen uns unter dieser E-Mail-Adresse: {{accessibilityEmail}}

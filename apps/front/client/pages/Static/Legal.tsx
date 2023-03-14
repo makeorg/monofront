@@ -6,7 +6,6 @@ import {
   MAKE_CAPITAL,
   MAKE_RCS,
   HOST_PHONE_NUMBER,
-  CNIL_NUMBER,
   MAKE_PHONE_NUMBER,
   MAKE_DIRECTOR_NAME,
 } from '@make.org/utils/constants/config';
@@ -82,10 +81,7 @@ const LegalPage: FC = () => {
           </StaticPhoneLinkStyle>
         </StaticParagraphStyle>
         <StaticParagraphStyle>
-          {i18n.t('legal.cnil')}
-          {i18n.t('legal.cnil_number', {
-            cnil_number: CNIL_NUMBER,
-          })}
+          {i18n.t('legal.eu_mention')}
         </StaticParagraphStyle>
       </StaticPageWrapperStyle>
     </>

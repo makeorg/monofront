@@ -114,10 +114,10 @@ const CookiesPage: FC = () => {
       <StaticPageWrapperStyle>
         <StaticSecondLevelTitleStyle>
           {i18n.t('cookies_management.title')}
-          <StaticTitleExtra>
-            {i18n.t('cookies_management.dated', { date: formattedDate })}
-          </StaticTitleExtra>
         </StaticSecondLevelTitleStyle>
+        <StaticTitleExtra>
+          <p>{i18n.t('cookies_management.dated', { date: formattedDate })}</p>
+        </StaticTitleExtra>
         <StaticPrimaryUnorderedListStyle>
           <StaticPrimaryUnorderedListItemStyle>
             <StaticThirdLevelTitleStyle>

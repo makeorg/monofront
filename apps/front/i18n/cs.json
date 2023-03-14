@@ -642,7 +642,7 @@
   },
   "data_policy_modal": {
     "title": "Aktualizace našich Datových zásad",
-    "description": "Make.org se zavazuje respektovat tvé osobní údaje při každé návštěvě webových stránek. Chceš-li pokračovat v prohlížení, když jste připojen/a k Make.org, musíš přijmout naše aktualizované {{data_policy_link}} ",
+    "description": "Make.org se zavazuje respektovat tvé osobní údaje při každé návštěvě webových stránek. Chceš-li pokračovat v prohlížení, když jste připojen/a k Make.org, musíš přijmout naše aktualizované ",
     "data_policy_link": "Datové zásady.",
     "consent": "<strong>Přijímám nové zásady údajů</strong> a budu moci používat účet občana na Make.org",
     "validate": "Chci potvrdit",
@@ -1238,8 +1238,7 @@
     "host_address": "{{make_host_address}} FRANCIE",
     "host_phone": "Telefonní číslo: ",
     "host_phone_number": "{{host_number}}",
-    "cnil": "Číslo deklarace CNIL (Národní komise pro informatiku a svobody): ",
-    "cnil_number": "{{cnil_number}}"
+    "eu_mention": ""
   },
   "cookies_management": {
     "title": "SPRÁVA SOUBORŮ COOKIE",

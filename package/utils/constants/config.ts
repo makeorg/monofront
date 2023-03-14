@@ -13,17 +13,16 @@ export const MOBILE_DEVICE = 'MOBILE';
 
 export const DEBOUNCE_TIMER = 250;
 
-export const PRIVACY_POLICY_DATE = format(new Date('05/19/2021'), 'P');
-export const GTU_DATE = '2021/10/18';
+export const PRIVACY_POLICY_DATE = format(new Date('2023/03/14'), 'P');
+export const GTU_DATE = '2023/03/14';
 
 /** MAKE Informations */
-export const MAKE_PHONE_NUMBER = '(+33)1 84 25 15 74';
+export const MAKE_PHONE_NUMBER = '(+33)1·84·25·15·74';
 export const MAKE_ADDRESS = '13-15 Rue de la Bûcherie 75005 Paris';
-export const MAKE_CAPITAL = '1.056.017,00 €';
+export const MAKE_CAPITAL = '1.056.017,00·€';
 export const MAKE_RCS = '820 016 095';
 export const HOST_ADDRESS = 'OVH, 2 rue Kellermann, 59100 Roubaix';
 export const HOST_PHONE_NUMBER = '(+33)8 99 70 17 61';
-export const CNIL_NUMBER = '2005312';
 export const ACCESSIBILITY_EMAIL = 'accessibility@make.org';
 export const MAKE_DIRECTOR_NAME = 'Axel Dauchez';
 

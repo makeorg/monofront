@@ -629,7 +629,7 @@
   },
   "data_policy_modal": {
     "title": "Aktualisierung unserer Datenschutzerklärung",
-    "description": "Make.org verpflichtet sich, deine persönlichen Daten zu schützen, wann immer du diese Seite besuchst. Um weiter auf unserer Website zu navigieren, während du bei Make.org eingeloggt bist, musst du unserer aktualisierten {{data_policy_link}} zustimmen",
+    "description": "Make.org verpflichtet sich, deine persönlichen Daten zu schützen, wann immer du diese Seite besuchst. Um weiter auf unserer Website zu navigieren, während du bei Make.org eingeloggt bist, musst du unserer aktualisierten ",
     "data_policy_link": "Datenschutzerklärung",
     "consent": "<strong>Ich akzeptiere die neue Datenschutzerklärung</strong> und werde meinen Make.org Bürgerbereich nutzen können",
     "validate": "Ich bestätige",
@@ -1207,8 +1207,7 @@
     "host_address": "{{make_host_address}}, Frankreich",
     "host_phone": "Telefonnummer: ",
     "host_phone_number": "{{host_number}}",
-    "cnil": "Meldenummer bei der französischen Datenschutzbehörde CNIL: ",
-    "cnil_number": "{{cnil_number}}"
+    "eu_mention": ""
   },
   "moderation_charter": {
     "unsuitable_label": "NICHT EMPFOHLEN",

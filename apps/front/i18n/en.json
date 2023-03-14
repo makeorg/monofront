@@ -566,7 +566,7 @@
   },
   "data_policy_modal": {
     "title": "Updating our data policy",
-    "description": "Make.org is committed to respecting your privacy every time you visit the website. To continue browsing while logged in to Make.org you must agree to our updated {{data_policy_link}}",
+    "description": "Make.org is committed to respecting your privacy every time you visit the website. To continue browsing while logged in to Make.org you must agree to our updated ",
     "data_policy_link": "data policy.",
     "consent": "<strong>I accept the new data policy</strong> and I will be able to use my Make.org citizen space",
     "validate": "I confirm",
@@ -1125,8 +1125,7 @@
     "host_address": "{{make_host_address}} FRANCE",
     "host_phone": "Phone number: ",
     "host_phone_number": "{{host_number}}",
-    "cnil": "CNIL declaration number: ",
-    "cnil_number": "{{cnil_number}}"
+    "eu_mention": "The European Commission provides an online dispute resolution platform for consumers at https://ec.europa.eu/consumers/odr."
   },
   "moderation_charter": {
     "unsuitable_label": "UNSUITABLE",

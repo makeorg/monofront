@@ -19,7 +19,7 @@ When('I login with valid identifiers', () => {
       req.reply({
         statusCode: 200,
         body: {
-          privacyPolicyApprovalDate: userData.privacyPolicyApprovalDate,
+          privacyPolicyApprovalDate: now.toISOString(),
         },
       });
     }

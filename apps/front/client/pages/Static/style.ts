@@ -49,6 +49,7 @@ export const FocusBlockWrapperStyle = styled(StartColumnStyle)`
 export const FocusBlockTitleStyle = styled(TitleM).attrs({ as: 'strong' })`
   margin-bottom: 10px;
   letter-spacing: 0.5px;
+  color: ${colors.Content.Interface.Dark};
 `;
 
 export const FocusBlockParagraphStyle = styled.p`
@@ -82,15 +83,24 @@ export const StaticThirdLevelTitleStyle = styled(ThirdLevelTitleStyle)`
 `;
 
 export const StaticFourthLevelTitleStyle = styled(FourthLevelTitleStyle)`
-  display: inline-flex;
+  display: flex;
   font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
+  text-transform: uppercase;
   text-transform: none;
   margin: 15px 0 5px;
   font-size: ${typography.FontSize.RueDeLappe};
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${typography.FontSize.Arrondissement};
   }
+  padding-left: 40px;
+`;
+
+export const StaticFourthLevelBisTitleStyle = styled(
+  StaticFourthLevelTitleStyle
+)`
+  margin: 15px 0 5px;
+  padding-left: 0px;
 `;
 
 export const StaticListTitleStyle = styled(BodyXSDefault).attrs({ as: 'h5' })`
@@ -101,13 +111,15 @@ export const StaticListTitleStyle = styled(BodyXSDefault).attrs({ as: 'h5' })`
   }
 `;
 
-export const StaticTitleExtra = styled.span`
+export const StaticTitleExtra = styled.div`
   display: block;
   font-family: ${typography.FontFamily.Italic};
   text-transform: none;
   font-size: ${typography.FontSize.RueDeLappe};
   line-height: 2;
   color: ${colors.Content.Interface.DarkSecondary};
+  text-align: center;
+  margin-top: -30px;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${typography.FontSize.Arrondissement};
   }
@@ -121,6 +133,18 @@ export const StaticParagraphStyle = styled.p`
   white-space: pre-line;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${typography.FontSize.Arrondissement};
+  }
+  &.custom {
+    padding-left: 40px;
+    & + h4 {
+      margin-top: 30px;
+    }
+    & + ul {
+      margin-left: 40px;
+      & + h4 {
+        margin-top: 30px;
+      }
+    }
   }
 `;
 
