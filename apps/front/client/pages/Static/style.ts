@@ -424,7 +424,7 @@ export const ModerationExampleCardTitleIconStyle = styled(SvgThumbsUp)`
     fill: ${colors.Content.Alert.Disagree};
   }
   &.accepted .tofill {
-    color: ${colors.Content.Alert.Positive};
+    fill: ${colors.Content.Alert.Positive};
   }
 `;
 

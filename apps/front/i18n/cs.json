@@ -1439,7 +1439,6 @@
     },
     "disclaimer": "@@moderation_charter.disclaimer|fr:Make.org n'est pas un opérateur de plateforme en ligne relevant du champ d'application de la loi n° 2018-1202 du 22 décembre 2018 relative à la lutte contre la manipulation de l'information. A ce titre, nous ne sommes donc pas soumis aux obligations y afférentes. La véracité des informations mises en ligne sur notre site nous tient cependant à cœur, et nous détaillons au sein de la présente Charte les mesures que nous prenons en ce sens.",
     "foot_notes": {
-      "link": "@@moderation_charter.foot_notes.link|fr:https://assets-global.website-files.com/59833d390a24e50001b873d8/62d80ca82cd8871a7331f896_Gender%20Equality%20Plan%20V1_EN.docx%20-%20Google%C2%A0Docs.pdf",
       "ethical_charter": "@@moderation_charter.foot_notes.ethical_charter|fr:This moderation charter has been drawn up in accordance with the ethical charter that guarantees Make.org’s neutrality, independence and transparency",
       "code_penal": "@@moderation_charter.foot_notes.code_penal|fr:The French Code Pénal defines discrimination as “any distinction made between physical persons based on their origin, sex, family situation, obesity, physical appearance, surname, place of residence, state of health, disability, genetic features, customs, sexual orientation or identity, age, political opinions or union activities, or on their belonging or non-belonging, real or assumed, to a given ethnic group, nation, race or religion”. (Article 225-1§1.)"
     }

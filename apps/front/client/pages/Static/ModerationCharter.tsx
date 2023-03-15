@@ -439,9 +439,11 @@ const ModerationCharterPage: FC = () => (
         {i18n.t('moderation_charter.disclaimer')}
       </ModerationDisclaimerParagraphStyle>
       <ModerationFootnotesStyleOrderedListWrapperStyle>
-        <ModerationFootnotesStyleOrderedListItemStyle>
-          {i18n.t('moderation_charter.foot_notes.ethical_charter')}
-        </ModerationFootnotesStyleOrderedListItemStyle>
+        <ModerationFootnotesStyleOrderedListItemStyle
+          dangerouslySetInnerHTML={{
+            __html: i18n.t('moderation_charter.foot_notes.ethical_charter'),
+          }}
+        />
         <ModerationFootnotesStyleOrderedListItemStyle>
           {i18n.t('moderation_charter.foot_notes.code_penal')}
         </ModerationFootnotesStyleOrderedListItemStyle>
