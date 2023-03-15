@@ -4,6 +4,7 @@ import {
   ROUTE_STATIC_GTU_DE,
   ROUTE_STATIC_GTU_FR,
 } from '@make.org/utils/routes';
+import { URL } from '@make.org/types/enums';
 import * as urlHelper from './url';
 
 const pathName = '/fooPath';
@@ -94,6 +95,26 @@ describe('Url Helper', () => {
     expect(link).toEqual(
       `/${country}/consultation/${questionSlug}/proposal/${proposalId}/${proposalSlug}`
     );
+  });
+
+  it('return webflow fr external link', () => {
+    const link = urlHelper.getWebflowDynamicLink('fr', '/foo');
+    expect(link).toEqual(`${URL.ABOUT_MAKE_LINK}fr/foo`);
+  });
+
+  it('return webflow de external link', () => {
+    const link = urlHelper.getWebflowDynamicLink('de', '/foo');
+    expect(link).toEqual(`${URL.ABOUT_MAKE_LINK}de/foo`);
+  });
+
+  it('return webflow en external link', () => {
+    const link = urlHelper.getWebflowDynamicLink('en', '/foo');
+    expect(link).toEqual(`${URL.ABOUT_MAKE_LINK}en/foo`);
+  });
+
+  it('return webflow default external link', () => {
+    const link = urlHelper.getWebflowDynamicLink('uk', '/foo');
+    expect(link).toEqual(`${URL.ABOUT_MAKE_LINK}en/foo`);
   });
 
   it('return cookies page link', () => {

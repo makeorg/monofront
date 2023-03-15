@@ -41,7 +41,7 @@ import {
   ROUTE_STATIC_MODERATION,
   ROUTE_STATIC_MODERATION_DE,
 } from '../routes';
-import { DEFAULT_COUNTRY } from '../constants/config';
+import { DEFAULT_COUNTRY, DEFAULT_LANGUAGE } from '../constants/config';
 
 declare global {
   interface Window {
@@ -509,7 +509,22 @@ export const redirectToNotFoundPage = (country: string): void => {
 export const getWebflowDynamicLink = (
   language: string,
   route: string
-): string => `${URL.ABOUT_MAKE_LINK}${language}${route}`;
+): string => {
+  let link;
+
+  switch (language) {
+    case 'fr':
+    case 'de':
+    case 'en':
+      link = `${URL.ABOUT_MAKE_LINK}${language}${route}`;
+      break;
+    default:
+      link = `${URL.ABOUT_MAKE_LINK}${DEFAULT_LANGUAGE}${route}`;
+      break;
+  }
+
+  return link;
+};
 
 /**
  * Get the password recovery link
