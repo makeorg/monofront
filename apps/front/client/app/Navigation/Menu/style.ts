@@ -31,7 +31,6 @@ export const MenuBarStyle = styled.span`
 `;
 
 export const MenuPanelStyle = styled.div`
-  border: red solid 1px;
   position: fixed;
   top: 0;
   left: -105%;
