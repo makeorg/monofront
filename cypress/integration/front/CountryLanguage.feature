@@ -61,7 +61,7 @@ Feature: Country and Language management
 
   Scenario: Track display france Homepage whith language fallback
     Given I monitor API "postTracking" requests
-    When I go to "france homepage" with a browser language "it"
+    When I go to "france homepage" with a browser language "br"
     Then I see "Together, we can change society for the better" in "main" container
     And event "display-page-home" should be tracked by Make with parameters values:
       | name                | value                                                                 |

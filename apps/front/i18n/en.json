@@ -1384,7 +1384,14 @@
     "en": "English",
     "de": "Deutsch",
     "uk": "Українська",
-    "cs": "Česky"
+    "cs": "Česky",
+    "es": "Español",
+    "pl": "Polski",
+    "it": "Italiano",
+    "nl": "Nederlands",
+    "fi": "Suomi",
+    "ro": "Română",
+    "bg": "Български"
   },
   "sequence_zone": {
     "popular_title": "Popular solutions",

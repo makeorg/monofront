@@ -44,11 +44,8 @@ export const MultilingualRadioListWrapperStyle = styled.ul`
   padding: 5px;
   background-color: ${colors.Background.Interface.DarkSecondary};
   border-radius: 8px;
-
-  &.countries-switch {
-    max-height: 220px;
-    overflow-y: scroll;
-  }
+  max-height: 220px;
+  overflow-y: scroll;
 
   &.languages-switch {
     margin-bottom: 30px;

@@ -1212,9 +1212,9 @@
   "moderation_charter": {
     "unsuitable_label": "NICHT EMPFOHLEN",
     "adapted_label": "ANGEMESSEN",
-    "refused_label": "ABGELEHNT", 
+    "refused_label": "ABGELEHNT",
     "validated_label": "FREIGEGEBEN",
-    "title": "Moderationscharta", 
+    "title": "Moderationscharta",
     "description": "Welche Vorschläge werden während der Moderation auf Make.org abgelehnt? Wie formuliert man einen Vorschlag richtig? Jeder Vorschlag, der auf der Plattform eingereicht wird, wird persönlich von den Moderationsteams von Make.org moderiert. Als Grundlage dienen die nachfolgenden Kriterien der Moderationscharta¹. Die Moderation erfolgt innerhalb von 48 Stunden nach dem Einreichen des Vorschlags. Du wirst per E-Mail informiert (sofern du deine E-Mail-Adresse während der Registrierung bestätigt hast), ob dein Vorschlag veröffentlicht oder abgelehnt wird. Kleine Rechtschreibfehler werden von den Moderator:innen korrigiert. Es ist jedoch deine Verantwortung, deinen Vorschlag zu überarbeiten, wenn er nicht akzeptiert werden kann.",
     "refused_examples": "Auf der Plattform Make.org ist Folgendes nicht erlaubt: ",
     "incomprehensible_solutions": {
@@ -1222,69 +1222,69 @@
       "description": "Die Formulierung und der Sinn deines Vorschlags müssen für alle verständlich sein. Schwerwiegende Satzbaufehler oder unsinnige Aussagen werden abgelehnt. Wir bitten dich dann darum, deinen Vorschlag neu zu formulieren.",
       "refused_example_card": "Man sollte sich durch allen Ländern über das Entwicklung nachdenken.",
       "validated_example_card": "Man sollte in jedem Land über die Weiterentwicklung des Bildungssystems nachdenken."
-    }, 
+    },
     "irrelevant_solutions": {
-      "title": "Unsachgemäße Vorschläge", 
-      "description": "Dein Vorschlag muss eine Antwort auf die Frage sein, die in der Konsultation gestellt wurde. Wenn dies nicht der Fall ist, wird er als unsachgemäß betrachtet und abgelehnt.", 
+      "title": "Unsachgemäße Vorschläge",
+      "description": "Dein Vorschlag muss eine Antwort auf die Frage sein, die in der Konsultation gestellt wurde. Wenn dies nicht der Fall ist, wird er als unsachgemäß betrachtet und abgelehnt.",
       "example": "Zum Beispiel auf die Frage „Wie können wir es jedem Einzelnen ermöglichen, sich besser zu ernähren?“",
-      "refused_card_example": "Man sollte die Fußball-Weltmeisterschaft alle zwei Jahre durchführen.", 
+      "refused_card_example": "Man sollte die Fußball-Weltmeisterschaft alle zwei Jahre durchführen.",
       "validated_card_example": "Man sollte in den Betriebskantinen kurze Versorgungswege fördern."
-    }, 
+    },
     "discriminatory_solutions": {
       "title": "Diskriminierende Vorschläge",
       "description": "In Übereinstimmung mit geltendem Recht² darf dein Vorschlag keine Reden enthalten, die zu Gewalt oder Hass aufrufen. Er darf zudem weder diskriminierende noch verleumderische Aussagen enthalten, insbesondere gegenüber jedweder ethnischen, gesellschaftlichen oder religiösen Gruppe.",
-      "refused_card_example": "Man sollte aufpassen, dass die Sorben ihre herabwürdigenden Traditionen nicht aufrechterhalten.", 
+      "refused_card_example": "Man sollte aufpassen, dass die Sorben ihre herabwürdigenden Traditionen nicht aufrechterhalten.",
       "validated_card_example": "Man sollte darauf achten, dass die Deutschen besser miteinander kommunizieren können.",
-      "refused_card_example_2": "Man sollte Kreuze um den Hals verbieten, da sie ein Symbol für Unterwerfung sind.", 
+      "refused_card_example_2": "Man sollte Kreuze um den Hals verbieten, da sie ein Symbol für Unterwerfung sind.",
       "validated_card_example_2": "Man sollte die Religionsfreiheit in unserem Land schützen."
-    }, 
+    },
     "partisan_solutions": {
       "title": "Partei ergreifende Vorschläge",
       "description": "Dein Vorschlag darf nicht für oder gegen eine bestimmte politische Partei, eine politische Persönlichkeit, eine Ideologie oder eine Religion (Persönlichkeiten, Symbole oder Praktiken) Stellung beziehen (das heißt eine aufwertende oder abwertende Botschaft enthalten).",
-      "refused_card_example": "Man sollte sich mit dem Wahlprogramm von Herrn XXX beschäftigen, seine Ideen für die nächsten Wahlen sind originell.", 
+      "refused_card_example": "Man sollte sich mit dem Wahlprogramm von Herrn XXX beschäftigen, seine Ideen für die nächsten Wahlen sind originell.",
       "validated_card_example": "Man sollte sich vor den Wahlen über die Wahlprogramme aller Parteien informieren.",
-      "refused_card_example_2": "Man sollte regelmäßig die Bibel lesen, um darin sein Seelenheil zu finden.", 
+      "refused_card_example_2": "Man sollte regelmäßig die Bibel lesen, um darin sein Seelenheil zu finden.",
       "validated_card_example_2": "Man sollte sicherstellen, dass Arbeitgeber die Daten bestimmter religiöser Feiertage kennen: Ramadan, Hanukka usw."
-    }, 
+    },
     "advertising": {
       "title": "Werbung",
       "description": "Du darfst weder für eine Marke noch ein bestimmtes Unternehmen Werbung machen. Lediglich zur Veranschaulichung darfst du eine Marke oder ein Unternehmen erwähnen.",
-      "refused_card_example": "Man sollte sicherstellen, dass alle Unternehmen die Lösungen von IBM nutzen.", 
+      "refused_card_example": "Man sollte sicherstellen, dass alle Unternehmen die Lösungen von IBM nutzen.",
       "validated_card_example": "Man sollte aufhören, stark zuckerhaltige Erfrischungsgetränke wie Coca-Cola zu trinken."
     },
     "multiple_ideas": {
       "title": "Mehrere Ideen",
       "description": "Pro Vorschlag darf nur eine Idee formuliert werden, um die Stimmabgabe der anderen Bürger:innen zu deinem Vorschlag zu erleichtern. Wenn du zwei verschiedene Ideen hast, kannst du zwei Vorschläge erstellen.",
-      "refused_card_example": "Man sollte sicherstellen, dass Produkte regionaler Hersteller zugänglich sind und es über Innovationen in der Landwirtschaft kommuniziert wird.", 
+      "refused_card_example": "Man sollte sicherstellen, dass Produkte regionaler Hersteller zugänglich sind und es über Innovationen in der Landwirtschaft kommuniziert wird.",
       "validated_card_example": "Man sollte sicherstellen, dass Produkte regionaler Hersteller zugänglich sind."
     },
     "insults": {
       "title": "Beleidigungen",
       "description": "‍Jeder respektlose oder beleidigende Vorschlag wird während der Moderation abgelehnt.",
-      "refused_card_example": "Man sollte sicherstellen, dass diese idiotischen Autofahrer:innen die Straßenverkehrsordnung besser einhalten.", 
+      "refused_card_example": "Man sollte sicherstellen, dass diese idiotischen Autofahrer:innen die Straßenverkehrsordnung besser einhalten.",
       "validated_card_example": "Man sollte sicherstellen, dass Autofahrer:innen die Straßenverkehrsordnung besser einhalten."
-    }, 
+    },
     "correctly_formulated_solutions": {
       "title": "Wie formuliere ich einen Vorschlag auf Make.org richtig?"
     },
-    "search_function": "Nutze die Suchfunktion, um zu überprüfen, dass deine Idee nicht schon auf der Plattform existiert.", 
+    "search_function": "Nutze die Suchfunktion, um zu überprüfen, dass deine Idee nicht schon auf der Plattform existiert.",
     "concrete_elements": {
       "text": "Erläutere deine Idee anhand konkreter Beispiele, damit die Bürger:innen deine Aussagen klar verstehen.",
-      "refused_card_example": "Man sollte mehr Europa haben.", 
+      "refused_card_example": "Man sollte mehr Europa haben.",
       "validated_card_example": "Man sollte der Europäischen Union mehr Mittel geben.",
-      "refused_card_example_2": "Man sollte die Jugendarbeitslosigkeit verringern.", 
+      "refused_card_example_2": "Man sollte die Jugendarbeitslosigkeit verringern.",
       "validated_card_example_2": "Man sollte eine Arbeitsagentur speziell für junge Menschen einrichten."
     },
     "understandable_language": {
       "text": "Schreibe so verständlich wie möglich, indem du eine Sprache nutzt, die für alle zugänglich ist.",
-      "refused_card_example": "Man sollte an der Universität ein Propädeutikum einführen.", 
+      "refused_card_example": "Man sollte an der Universität ein Propädeutikum einführen.",
       "validated_card_example": "Man sollte an der Universität ein allgemeinbildendes Semester einführen, bevor man sein Studienfach wählt.",
-      "refused_card_example_2": "Man sollte sicherstellen, dass das GesA Krebsvorsorge betreibt.", 
+      "refused_card_example_2": "Man sollte sicherstellen, dass das GesA Krebsvorsorge betreibt.",
       "validated_card_example_2": "Man sollte sicherstellen, dass das Gesundheitsamt Krebsvorsorge betreibt."
-    }, 
+    },
     "acronyms": {
       "text": "Vermeide in deinem Vorschlag Zeichen wie #, @ oder andere Kürzel wie „LOL“.",
-      "refused_card_example": "Man sollte die Steuern für Unternehmer:innen senken #Wettbewerbsfähigkeit!", 
+      "refused_card_example": "Man sollte die Steuern für Unternehmer:innen senken #Wettbewerbsfähigkeit!",
       "validated_card_example": "Man sollte die Steuern für Unternehmer:innen senken, damit sie im Wettbewerb bestehen können!"
     },
     "disclaimer": "Der Kampf gegen die Verbreitung falscher Informationen im Internet ist zu einer wichtigen Herausforderung für die Zivilgesellschaft, Medien, staatliche Institutionen und vor allem für davon betroffene Bürger:innen geworden. Der Wahrheitsgehalt der auf unserer Website bereitgestellten Informationen liegt uns daher besonders am Herzen. In dieser Charta erläutern wir, welche Maßnahmen wir in diesem Sinne ergreifen.",
@@ -1403,7 +1403,14 @@
     "en": "English",
     "de": "Deutsch",
     "uk": "Українська",
-    "cs": "Česky"
+    "cs": "Česky",
+    "es": "Español",
+    "pl": "Polski",
+    "it": "Italiano",
+    "nl": "Nederlands",
+    "fi": "Suomi",
+    "ro": "Română",
+    "bg": "Български"
   },
   "demographics_card": {
     "disclaimer": "Deine Angaben sind anonym und ermöglichen es, die Ergebnisse möglichst repräsentativ zu gestalten.",

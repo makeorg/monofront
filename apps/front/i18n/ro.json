@@ -1,0 +1,1452 @@
+{
+  "meta": {
+    "home": {
+      "title": "Să acționăm împreună cu Make.org - Make.org",
+      "description": "Dumneavoastră propuneți și votați, noi vom acționa: astfel, prin efortul comun, să identificăm soluții ale marilor probleme actuale.",
+      "picture": "https://assets.make.org/assets/metas/default_meta-fr.png"
+    },
+    "organisation": {
+      "proposals": {
+        "title": "{{organisation}} - propuneri proprii - Make.org"
+      },
+      "positions": {
+        "title": "{{organisation}} - poziții proprii exprimate- Make.org"
+      }
+    },
+    "profile": {
+      "proposals": {
+        "title": "Profil - Propunerile mele - Make.org"
+      },
+      "favorites": {
+        "title": "Profil - Preferințele mele- Make.org"
+      },
+      "edit": {
+        "title": "Modificarea profilului - Make.org"
+      }
+    },
+    "proposal": {
+      "title": "Propunere '{{proposal}}' aferentă consultării '{{question}}' - Make.org",
+      "description": "Susțineți propunerea mea printr-un vot și contribuiți la acțiunea noastră comună de identificare a unor soluții ale problemelor majore actuale. Propunerile care întrunesc cele mai multe voturi vor fi puse în practică de Make.org și partenerii săi."
+    },
+    "participate": {
+      "title": "Participați la consultări – {{question}} – Make.org",
+      "description": "Dumneavoastră propuneți și votați, noi vom acționa: astfel, prin efortul comun, să identificăm soluții ale marilor probleme actuale."
+    },
+    "explore": {
+      "title": "Parcurgerea propunerilor aferente consultării '{{question}}' - Make.org"
+    },
+    "results": {
+      "title": "Rezultatele consultării '{{question}}' - Make.org",
+      "description": "Descoperiți rezultatele consultării cetățenești, grupate în funcție de diferitele teme votate, de propunerile cele mai controversate și propunerile cu cel mai mare număr de respingeri."
+    },
+    "sequence": {
+      "title_standard": "Participați la consultarea '{{question}}' - Make.org",
+      "title_controversy": "Departajați propunerile aferente consultării '{{question}}' - Make.org",
+      "title_popular": "Exprimați-vă poziția cu privire la cele mai populare propuneri aferente consultării '{{question}}' - Make.org",
+      "title_keyword": "Exprimați-vă poziția cu privire la tema '{{keywordLabel}}' din cadrul consultării '{{question}}' - Make.org "
+    },
+    "top-ideas": {
+      "title": "Topul ideilor pentru consultarea '{{question}}' - Make.org",
+      "description": "Descoperă topul ideilor extrase din consultarea '{{question}}'"
+    },
+    "top-idea-details": {
+      "title": "Detalierea ideii '{{idea}}' pentru consultarea '{{question}}' - Make.org",
+      "description": "Decoperiți toate propunerile aferente ideii {{idea}} extrase din consultarea '{{question}}'"
+    },
+    "search": {
+      "main_results": "Căutare - Rezultate pentru « {{term}} » - Make.org",
+      "proposals": "Căutare - Rezultate privind propunerile pentru « {{term}} » - Make.org",
+      "consultations": "Căutare - Rezultate privind consultările pentru « {{term}} » - Make.org",
+      "organisations": "Căutare - Rezultate privind organizațiile pentru « {{term}} » - Make.org"
+    },
+    "browse": {
+      "consultations": {
+        "title": "Participați la consultări - Make.org",
+        "description": "Dumneavoastră propuneți și votați, noi vom acționa: astfel, prin efortul comun, să identificăm soluții ale marilor probleme actuale."
+      },
+      "results": {
+        "title": "Rezultatele consultărilor - Make.org",
+        "description": "Descoperiți rezultatele consultărilor noastre și acțiunile implementate de Make.org împreună cu partenerii săi."
+      }
+    },
+    "legal": {
+      "title": "Aviz juridic - Make.org",
+      "description": "Consultați aici avizul juridic privind site-ul."
+    },
+    "privacy_policy": {
+      "title": "Carta privind datele cu caracter personal - Make.org",
+      "description": "Informații detaliate privind procesarea datelor dumneavoastră cu caracter personal când consultați site-ul."
+    },
+    "gtu": {
+      "title": "Condiții de utilizare - Make.org",
+      "description": "Informații detaliate privind condițiile de utilizare aplicabile sistemului de votare și propunerilor pe platforma de implicare cetățenească."
+    },
+    "contact": {
+      "title": "Contactați-ne - Make.org",
+      "description": "Dacă nu găsiți răspuns la întrebarea adresată, contactați-ne pe e-mail."
+    },
+    "no_cookies": {
+      "title": "Ups! Modulele cookie sunt dezactivate - Make.org"
+    },
+    "cookies": {
+      "title": "Gestionarea modulelor cookie - Make.org",
+      "description": "Consultați toate explicațiile privind utilizarea modulelor cookie când consultați platforma."
+    },
+    "password-recovery": {
+      "title": "Creez o parolă nouă - Make.org"
+    },
+    "a11y": {
+      "title": "Declarație privind accesibilitatea - Make.org",
+      "description": "Descoperiți angajamentul Make.org în domeniul e-accesibilității. Prin efortul comun, să identificăm soluții ale marilor probleme actuale."
+    },
+    "not_found": {
+      "title": "Pagina nu a fost găsită - Eroare 404 - Make.org",
+      "description": "Pagina solicitată nu (mai) există."
+    },
+    "moderation": {
+      "title": "@@meta.moderation.title|fr:Make.org ∙ Charte de modération",
+      "description": "@@meta.moderation.description|fr:Quelles sont les propositions refusées lors de la modération sur Make.org ? Comment formuler une proposition correctement ?"
+    }
+  },
+  "common": {
+    "connexion_label": "Conectare",
+    "register_label": "Înregistrare",
+    "continue": "Continuare",
+    "register_panel": {
+      "welcome": "Bun venit, {{name}}!",
+      "greeting": "Ne bucurăm să vă primim în rândul utilizatorilor noștri implicați!",
+      "mail_confirmation_strong": "Confirmați-vă adresa de e-mail printr-un clic ",
+      "mail_confirmation": " pentru a garanta autenticitatea contului. Faceți clic pe linkul de activare trimis la: {{mail}}",
+      "onboarding": "Exprimați-vă părerea cu privire la anumite subiecte legate de societate care vă preocupă în mod deosebit, participând la consultările cetățenești propuse de noi.",
+      "cta": "Participare la consultări",
+      "cta_access": "Accesez consultarea",
+      "optin_cgu_title": "Finalizați-vă înregistrarea",
+      "optin_cgu_subtitle": "în câteva clicuri"
+    },
+    "form": {
+      "hide_password": "Ascunderea parolei",
+      "show_password": "Afișarea parolei",
+      "requirements": "Toate rubricile sunt obligatorii, cu excepția cazului în care se menționează expres contrariul.",
+      "requirements_short": "Toate rubricile sunt obligatorii.",
+      "post_code": "Pe baza codului poștal putem analiza rezultatele în funcție de zona geografică.",
+      "label": {
+        "email": "E-mail",
+        "password": "Parolă",
+        "firstname": "Prenume",
+        "lastname": "Nume",
+        "age": "Vârsta",
+        "postalcode": "Cod poștal",
+        "profession": "Profesie",
+        "biography": "Biografie",
+        "website": "Site internet",
+        "organisation": "Numele organizației",
+        "email_optional": "E-mail (opțional)",
+        "password_optional": "Parolă (opțional)",
+        "firstname_optional": "Prenume (opțional)",
+        "lastname_optional": "Nume (opțional)",
+        "age_optional": "Vârstă (opțional)",
+        "postalcode_optional": "Cod poștal (opțional)",
+        "profession_optional": "Profesie (opțional)",
+        "privacy_policy": "Politica privind datele",
+        "biography_optional": "Biografie (opțional)",
+        "website_optional": "Site internet (opțional)",
+        "organisation_optional": "Numele organizației (opțional)",
+        "personality": {
+          "firstname": "Prenumele candidatului / cap de listă",
+          "lastname": "Numele candidatului / cap de listă",
+          "firstname_M": "Prenumele candidatului / cap de listă",
+          "lastname_M": "Numele candidatului / cap de listă",
+          "firstname_F": "Prenumele candidatei / cap de listă",
+          "lastname_F": "Numele candidatei / cap de listă"
+        }
+      },
+      "messages": {
+        "errors_notification": "Formularul conține următoarele greșeli:",
+        "invalid_email": "Vă rugăm să respectați formatul e-mail.",
+        "invalid_email_dynamic": "Vă rugăm să respectați formatul {{label}}.",
+        "already_registered": "Acest e-mail există deja.",
+        "already_registered_dynamic": "Acest element {{label}} există deja.",
+        "email_doesnot_exist": "Acest e-mail nu este asociat contului dumneavoastră, vă rugăm să vă introduceți din nou adresa de e-mail.",
+        "email_doesnot_exist_dynamic": "Acest element {{label}} nu este asociat contului dumneavoastră, vă rugăm să vă introduceți din nou adresa de e-mail.",
+        "invalid_password": "Parola trebuie să aibă cel puțin 8 caractere.",
+        "invalid_password_dynamic": "Elementul {{label}} trebuie să aibă cel puțin 8 caractere.",
+        "api_error": "Ups! Încărcarea paginii nu este posibilă. Vă rugăm să încercați mai târziu.",
+        "mandatory": "Vă rugăm să completați această rubrică.",
+        "mandatory_dynamic": "Rubrica {{label}} este obligatorie.",
+        "invalid_age": "Utilizatorii trebuie să aibă vârsta cuprinsă între 8 și 120 de ani.",
+        "invalid_age_dynamic": "{{label}}: Utilizatorii trebuie să aibă vârsta cuprinsă între 8 și 120 de ani.",
+        "the_field_[email]_is_missing": "Rubrica {{label}} este obligatorie.",
+        "the_field_[password]_is_missing": "Rubrica {{label}} este obligatorie.",
+        "invalid_postal_code": "Codul poștal trebuie să conțină 5 cifre.",
+        "invalid_privacy_policy": "Trebuie să acceptați politica privind datele.",
+        "invalid_postal_code_dynamic": "Elementul {{label}} trebuie să conțină 5 cifre.",
+        "submit_success": "Modificarea a fost înregistrată cu succes.",
+        "malformed": "Vă rugăm să respectați formatul de adresă url \"https://example.com\""
+      },
+      "password_requirements": "@@common.form.password_requirements|fr:8 caractères minimum dont au moins 1 chiffre, 1 majuscule et 1 caractère spécial."
+    },
+    "social_login": {
+      "card_title": "Pentru a consulta istoricul voturilor dumneavoastră",
+      "facebook_connect": "Continuați cu Facebook",
+      "google_connect": "Continuați cu Google",
+      "email_register": "Înregistrare cu e-mail",
+      "count_register": "({{count}}/2)"
+    },
+    "notifications": {
+      "bad_link": "Acest link nu mai este valabil.",
+      "activate_account_success": "Contul dumneavoastră tocmai a fost activat. Vă puteți deconecta imediat",
+      "delete_account_success": "Contul dumneavoastră a fost șters cu succes. Vă așteptăm din nou în curând pe Make.org!",
+      "login_success": "V-ați conectat cu succes.",
+      "logout_success": "V-ați deconectat cu succes.",
+      "login_social_missing_email_data": "Nu s-a putut obține o adresă de e-mail validă de pe contul dumneavoastră Facebook pentru a vă înregistra. Vă rugăm să utilizați formularul nostru de înregistrare prin adresa de e-mail.",
+      "register_success": "Bine ați venit! V-ați înregistrat cu succes.",
+      "register_validate": "Vă mulțumim că v-ați înregistrat. V-am trimis la adresa {{email}} un e-mail care vă permite activarea contului cu un singur clic.",
+      "secure_expired": {
+        "first_sentence": "Ne pare rău, ați fost deconectat (ă) pentru că probabil ați ieșit de pe site",
+        "second_sentence": "Conectați-vă din nou pentru a putea vota, face propuneri și acționa în continuare pe Make.org.",
+        "emoji": "emoji visage triste avec larme"
+      },
+      "session_expired": {
+        "title": "Timp limită de inactivitate",
+        "description": "Pentru a garanta calitatea serviciilor noastre, vom reîncărca pagina.",
+        "button_text": "Am înțeles"
+      },
+      "icons": {
+        "close": "Închideți bannerul de notificare",
+        "information": "Mesaj de informare: ",
+        "success": "Mesaj de reușită: ",
+        "error": "Mesaj de eroare: ",
+        "alert": "Mesaj de alertă: "
+      },
+      "tags_filter": "Utilizați filtrele pentru a găsi propunerile care vă interesează.",
+      "thank_you": "Am reținut, mulțumesc!",
+      "unexpected_error": "S-a produs o eroare, vă rugăm să încercați mai târziu.",
+      "network_error": "Accesul la întregul conținut al platformei Make.org nu este posibil, deoarece se pare că v-ați deconectat",
+      "vote_only": {
+        "message": "Consultarea \"{{title}}\" nu mai permite primirea unor propuneri noi, dar puteți continua să votați pentru a departaja propunerile deja publicate.",
+        "button": "am înțeles"
+      },
+      "vote_on_proposal": "Votați pentru această propunere",
+      "cookies": {
+        "social_media": "Pentru a accesa această opțiune, trebuie să acceptați modulele cookie aferente paginii ",
+        "cookie_page": "Gestionarea modulelor cookie",
+        "update": "Vă mulțumim, preferințele dumneavoastră pentru gestionarea modulelor cookie au fost înregistrate."
+      }
+    },
+    "from": "din",
+    "email": "E-mail",
+    "propose": "Trimiterea propunerilor",
+    "click_there": "clic aici",
+    "open_new_window": "Deschidere într-o filă nouă",
+    "loading": "Vă rugăm să așteptați până se încarcă.",
+    "participate": "Participați",
+    "vote_on_proposals": "Exprimați-vă votul pentru toate propunerile",
+    "display_pannel": "Afișarea conținutului meniului vertical",
+    "hide_pannel": "Ascunderea conținutului meniului vertical",
+    "display_modal": "Afișarea conținutului casetei de dialog",
+    "hide_modal": "Ascunderea conținutului casetei de dialog",
+    "display_tooltip": "Afișarea conținutului sfatului interactiv la trecerea cu mouse-ul",
+    "hide_tooltip": "Ascunderea conținutului sfatului interactiv la trecerea cu mouse-ul",
+    "expand_collapse": "{{name}} - Afișarea conținutului listei verticale",
+    "shrink_collapse": "{{name}} - Ascunderea conținutului listei verticale",
+    "secondary_nav": "Navigare secundară",
+    "percent": "{{percent}}%",
+    "header_authentication_nav": "Acces la profilul de utilizator",
+    "footer_nav": "Navigare subsol",
+    "sidebar_area": "Bară laterală de conținut",
+    "consultation_nav": "Bară de navigare aferentă consultării",
+    "slider": {
+      "introduction": "Utilizați butoanele de comandă, săgețile \"stânga\" și \"dreapta\" sau tasta tab de pe tastatură pentru a interacționa cu opțiunile multiple de mai jos.",
+      "previous": "Direcționare spre elementul precedent",
+      "next": "Direcționare spre elementul următor",
+      "index_count": "Elementul {{index}} din {{total}}"
+    },
+    "pagination": {
+      "title": "paginare",
+      "next": "Pagina următoare",
+      "previous": "Pagina precedentă",
+      "index_count": "Pagina {{index}} din {{total}}",
+      "page": "Pagina",
+      "page_total": "din {{total}}"
+    },
+    "max_characters": "caractere maximum",
+    "back": "Revenire",
+    "proposal_count_one": "{{count}} propunere",
+    "proposal_count_few": "{{count}} propuneri",
+    "proposal_count_other": "{{count}} propuneri",
+    "breadcrumbs": "marcaje ale traseului de navigare",
+    "million_one": "milion",
+    "million_few": "milioane",
+    "million_other": "milioane",
+    "close_panel": "Închiderea meniului vertical",
+    "close": "@@common.close|fr:Fermer"
+  },
+  "header": {
+    "logo_alt": "Direcționare spre prima pagină a site-ului Make.org",
+    "open_menu": "Acces la meniul de navigare principală",
+    "close_menu": "Închiderea meniului de navigare principală",
+    "main_navigation": "Navigare principală pe site"
+  },
+  "proposal_page": {
+    "button_1": "participare",
+    "button_2": "aflați mai multe",
+    "share_text": "Susțineți această propunere distribuind-o:",
+    "footer_text": "Această propunere a fost făcută în cadrul operațiunii {{operation_name}}"
+  },
+  "idea_card": {
+    "title": "Topul ideilor",
+    "number": "Ideea nr. {{ count }}",
+    "content": "Descrierea ideii: ",
+    "link": "Vizualizarea ideii în detaliu",
+    "associated_proposals_one": "{{count}} propunere asociată",
+    "associated_proposals_few": "{{count}} propuneri asociate",
+    "associated_proposals_other": "{{count}} propuneri asociate",
+    "position_one": "{{ count }} poziție exprimată",
+    "position_few": "{{ count }} poziții exprimate",
+    "position_other": "{{ count }} poziții exprimate",
+    "candidate_one": " de candidat privind această idee.",
+    "candidate_few": "de candidați privind această idee.",
+    "candidate_other": " de candidați privind această idee.",
+    "open": "Afișarea punctajului aferent ideii",
+    "close": "Ascunderea punctajului aferent ideii",
+    "expand": " - Faceți clic pentru afișarea punctajului aferent ideii",
+    "collapse": " - Faceți clic pentru ascunderea punctajului aferent ideii",
+    "vote_proposals": "propuneri",
+    "vote_positives": "voturi pozitive",
+    "vote_heart": "preferințe"
+  },
+  "idea_details": {
+    "current_page": "Detalierea ideii",
+    "proposals": "Propunerile asociate",
+    "comments": "Și-au exprimat poziția"
+  },
+  "proposal_card": {
+    "previous": "Propunerea precedentă",
+    "next": "Propunerea următoare",
+    "validate": "Validare",
+    "content": "Conținutul propunerii: ",
+    "number": "Prezentare numărul {{current}} din {{total}}",
+    "posted_label": "Publicată în ",
+    "author": {
+      "from": "Propunere făcută de: ",
+      "age": "{{age}} ani",
+      "date": "publicată la data: "
+    },
+    "status": {
+      "title": "Statutul propunerii: ",
+      "accepted": "Publicată",
+      "refused": "Refuzată",
+      "postponed": "În așteptarea moderării",
+      "pending": "În așteptarea moderării"
+    },
+    "original": "@@proposal_card.original|fr:Voir l'original",
+    "translation": "@@proposal_card.translation|fr:Voir la traduction"
+  },
+  "intro_card": {
+    "purpose": "Prezentare pe scurt",
+    "title": "Mii de cetățeni propun soluții.",
+    "description": "Exprimați-vă poziția cu privire la aceste soluții și faceți propriile propuneri.\nCele mai bune dintre ele vor pune bazele acțiunilor noastre.",
+    "description_short": "Exprimați-vă poziția cu privire la aceste soluții.",
+    "button": "Start",
+    "partnership": "în parteneriat cu"
+  },
+  "final_card": {
+    "title": "Vă mulțumim că ați reacționat la propunerile noastre!",
+    "description": "Continuați să votați pentru a ne ajuta să stabilim prioritățile.",
+    "link_text": "Accesez consultarea",
+    "continue": "Continui să votez",
+    "register": {
+      "description": "Cum se pot urmări rezultatele?",
+      "button_intro": "Creați-vă propriul",
+      "button_text": "spațiu personal."
+    }
+  },
+  "no_proposal_card": {
+    "title": {
+      "regular": "Vă mulțumim pentru contribuția extraordinară!",
+      "popular": "Vă mulțumim, ați votat pentru toate propunerile din categoria celor mai populare",
+      "controversial": "Vă mulțumim, ați votat pentru toate propunerile din categoria celor mai controversate",
+      "keyword": "Vă mulțumim, ați votat pentru toate propunerile din categoria \"{{keyword}}\""
+    },
+    "description": {
+      "regular": "Deocamdată nu sunt propuneri noi.",
+      "special": "Continuați să votați pentru a ne ajuta să stabilim prioritățile."
+    },
+    "link_text": "Accesez consultarea",
+    "sharing": "Sau contribuiți la creșterea vizibilității acestei consultări, distribuind-o."
+  },
+  "push_proposal_card": {
+    "title": "Ați avea chiar dumneavoastră o soluție de propus pe acest subiect?",
+    "next-cta": "Încă nu, continui să votez"
+  },
+  "sequence_progress": {
+    "previous": "Direcționare spre elementul precedent",
+    "counter": "Elementul {{current}} din {{total}}"
+  },
+  "sequence_zone": {
+    "popular_title": "Propuneri populare",
+    "controversial_title": "Propuneri controversate"
+  },
+  "special_final_card": {
+    "title": "Vă mulțumim că ați votat!",
+    "subtitle": "Puteți continua să participați la consultare",
+    "cta_text": "Accesez consultarea"
+  },
+  "demographics_card": {
+    "disclaimer": "Informațiile dumneavoastră sunt anonime și permit obținerea unor rezultate care să fie reprezentative.",
+    "skip": "Ignorare",
+    "submit": "Înregistrare",
+    "submitted_thanks": "Vă mulțumim pentru răspuns.",
+    "submitted_disclaimer": " Acesta va fi integrat în mod anonim în analiza rezultatelor consultării.",
+    "select": "Selectare"
+  },
+  "proposal_submit": {
+    "form": {
+      "bait": "Trebuie ",
+      "title": "Redactați-vă propunerea respectând limita de 140 de caractere. Scrieți-o în rubrica aferentă propunerii, apoi validați dând clic pe butonul \"Validare\"",
+      "field": "Rubrici aferente propunerii",
+      "counter": "Propunerea dumneavoastră conține {{current}} caractere dintr-un total de {{total}} caractere disponibile",
+      "panel_trigger": "Propun o soluție",
+      "button_cancel": "Anulare",
+      "button_submit": "Validare",
+      "read_our": "Citiți",
+      "moderation_link": "carta noastră de moderare",
+      "button_propose": "PROPUNERI"
+    },
+    "authentication": {
+      "button_back": "Modificarea propunerii mele",
+      "back": "Revenire",
+      "title": "Pentru a-mi valida propunerea",
+      "last_step_red": "V-a mai rămas doar o etapă ",
+      "last_step": "pentru a trimite propunerea!",
+      "subtitle": "Mă înregistrez cu",
+      "button_login_text": "Am deja un cont,",
+      "button_login_link": "mă conectez.",
+      "button_login": "Conectare",
+      "back_authentication": "Revenire la pagina de conexiune"
+    },
+    "success": {
+      "title": "Mulțumim, {{name}}!",
+      "description": "Propunerea dumneavoastră este în curs de moderare de echipele noastre.",
+      "button": "Continuarea votării",
+      "other_idea": "Am altă idee",
+      "tooltip_title": "În curs de moderare",
+      "tooltip_description": "Propunerea dumneavoastră va fi procesată de echipele noastre în cel mult 48 de ore, până atunci puteți deja consulta propunerea la rubrica de profil.",
+      "grats": "Felicitări, {{name}}, ",
+      "proposal_sent": "propunerea dumneavoastră a fost trimisă ",
+      "activate": "Confirmați-vă adresa de e-mail printr-un clic ",
+      "link": "pentru a garanta autenticitatea contului. Faceți clic pe linkul de activare trimis la: {{mail}}",
+      "question": "Aveți întrebări? Ne puteți contacta la: ",
+      "consultation_access": "Accesez consultarea"
+    }
+  },
+  "vote": {
+    "intro_title": "Îmi exprim părerea privind această propunere: ",
+    "agree": "Acord",
+    "disagree": "Dezacord",
+    "neutral": "Neutru",
+    "label_one": "{{count}} vot",
+    "label_few": "{{count}} voturi",
+    "label_other": "{{count}} voturi",
+    "with_percent": "{{votedKey}}: {{votedPercent}}%"
+  },
+  "unvote": {
+    "title": "Îmi retrag evaluarea privind această propunere."
+  },
+  "results": {
+    "static_total": "Această propunere a întrunit: ",
+    "static_repartition": "Cu următoarea distribuire: ",
+    "total_one": "Această propunere a întrunit {{count}} vot, cu următoarea distribuire: ",
+    "total_few": "Această propunere a întrunit {{count}} voturi, cu următoarea distribuire: ",
+    "total_other": "Această propunere a întrunit {{count}} voturi, cu următoarea distribuire: ",
+    "voted": {
+      "agree": "Votul meu pentru această propunere a fost \"Acord\".",
+      "disagree": "Votul meu pentru această propunere a fost \"Dezacord\".",
+      "neutral": "Votul meu pentru această propunere a fost \"Neutru\"."
+    },
+    "tooltipbutton": {
+      "display": {
+        "agree": "Afișarea rezultatelor pentru evaluarea: \"îmi exprim acordul\"",
+        "disagree": "Afișarea rezultatelor pentru evaluarea: \"îmi exprim dezacordul\"",
+        "neutral": "Afișarea rezultatelor pentru evaluarea: \"acord vot neutru\""
+      },
+      "hide": {
+        "agree": "Ascunderea rezultatelor pentru evaluarea: \"îmi exprim acordul\"",
+        "disagree": "Ascunderea rezultatelor pentru evaluarea: \"îmi exprim dezacordul\"",
+        "neutral": "Ascunderea rezultatelor pentru evaluarea: \"acord vot neutru\""
+      }
+    }
+  },
+  "qualification": {
+    "title": "Îmi detaliez evaluarea privind această propunere:",
+    "static_repartition": "Această propunere a primit clasificarea: ",
+    "times": "ori",
+    "likeIt": "Preferință",
+    "doable": "Realistă",
+    "platitudeAgree": "Banalitate",
+    "noWay": "În niciun caz!",
+    "impossible": "Nerealizabilă",
+    "platitudeDisagree": "Banalitate",
+    "doNotUnderstand": "Nu am înțeles",
+    "noOpinion": "Nicio evaluare",
+    "doNotCare": "Indiferent"
+  },
+  "sequence": {
+    "return": "Revenire la propuneri",
+    "title": "Acordați voturi propunerilor aferente consultării: ",
+    "more": "Acces la întreaga consultare"
+  },
+  "authentication": {
+    "title": "Înregistrați-vă pentru a valida propria propunere",
+    "description": "cu",
+    "commitment": "Make.org se angajează să protejeze ",
+    "personal_data": "datele dumneavoastră cu caracter personal "
+  },
+  "login": {
+    "title": "Am deja un cont",
+    "social_connect": "Mă conectez cu",
+    "connect": "Conectare",
+    "or": "sau",
+    "button_connect": "Mă conectez",
+    "email_connect": "Mă conectez cu adresa de e-mail",
+    "forgot_password_title": "Ups, mi-am",
+    "forgot_password_link": "uitat parola",
+    "forgot_password": "Parolă uitată?",
+    "registration_title": "Nu am cont,",
+    "registration_link": "îmi creez un cont.",
+    "email_doesnot_exist": "Elementul introdus {{emailLabel}} sau {{passwordLabel}} este incorect."
+  },
+  "register": {
+    "title": "Crearea contului",
+    "social_connect": "Mă înregistrez cu",
+    "or": "sau",
+    "subtitle": "Mă înregistrez cu acest formular",
+    "step1_title": "Înregistrare cu e-mail",
+    "step2_title": "Finalizarea înregistrării",
+    "login_title": "Am deja un cont,",
+    "login_link": "mă conectez.",
+    "gtu_text_first": "Prin înregistrare, acceptați ",
+    "gtu_text_second": " și acceptați să primiți e-mailuri (un număr redus) de la Make.org.",
+    "gtu_link": "condițiile noastre generale de utilizare."
+  },
+  "legal_consent": {
+    "title": "Autorizare legală",
+    "subtitle": "Avem nevoie de acordul dat de unul dintre părinți",
+    "description": "Pentru a-ți oferi acces la platforma noastră cetățenească, avem nevoie de două acorduri. În curând vei putea să te exprimi cu privire la toate consultările propuse de noi!",
+    "minor_consent": "Sunt de acord cu procesarea datelor mele cu caracter personal de către Make.org.",
+    "parental_consent": "În calitate de persoană care deține autoritatea parentală, sunt de acord cu procesarea datelor cu caracter personal privindu-l pe copilul meu de către Make.org.",
+    "cancel": "Anulare",
+    "submit": "Validare",
+    "privacy_policy_first_part": "Accept ca Make.org să proceseze aceste date pentru a-mi permite să particip și să primesc informații privind rezultatele, conform ",
+    "privacy_policy_link": "cartei",
+    "privacy_policy_last_part": ". (obligatoriu)",
+    "privacy_policy": "politica privind datele",
+    "make_protect": "Make.org se angajează să protejeze",
+    "make_protect_link": " datele dumneavoastră cu caracter personal.",
+    "opt_in": "Accept să primesc e-mailuri de la Make.org pentru a rămâne la curent cu actualitatea privind consultările în curs și cele viitoare. (opțional)"
+  },
+  "forgot_password": {
+    "title": "Îmi resetez parola",
+    "description": "Vă rugăm să completați adresa de e-mail asociată contului dumneavoastră Make.org pentru a primi linkul de resetare.",
+    "success": "Vă mulțumim, v-am trimis un e-mail care vă permite actualizarea parolei.",
+    "return": "Revenire la ",
+    "login_link": "pagina de conexiune",
+    "send_link": "primire e-mail",
+    "email_doesnot_exist": "Nu s-a identificat niciun cont asociat acestui e-mail."
+  },
+  "main_footer": {
+    "jobs": "Oferte de muncă",
+    "whoarewe": "Abordarea noastră",
+    "legal": "Aviz juridic",
+    "terms": "Condiții de utilizare",
+    "data": "Politica privind datele",
+    "country": "Schimbarea țării",
+    "contact": "Contact",
+    "news": "Actualități",
+    "dotation_funds": "Fond de dotare Make.org",
+    "moderation_charter": "Carta de moderare",
+    "press_details": "Punct de presă",
+    "a11y": "Declarație privind accesibilitatea",
+    "cookies": "Gestionarea modulelor cookie"
+  },
+  "cookie_modal": {
+    "title": "Make.org vă permite să vă exprimați, respectându-vă viața personală",
+    "description": "Din dorința de a îmbunătăți și mai mult serviciile pe care vi le oferim și experiența dumneavoastră, vă solicităm acordul privind modulele cookie pe care noi și partenerii noștri intenționăm să le utilizăm când navigați pe site.",
+    "details": {
+      "title": "Despre ce module cookie este vorba?",
+      "technicals": "<strong>Tehnice:</strong> module cookie indispensabile pentru funcționarea site-ului",
+      "preferences": "<strong>Legate de preferințe:</strong> module cookie pentru a vă îmbunătăți experiența când navigați pe site",
+      "statistics": "<strong>În scopuri statistice:</strong> module cookie care contribuie la analiza consultărilor noastre cetățenești în mod agregat",
+      "social_media": "<strong>Privind rețelele sociale:</strong> module cookie care ne ajută să ne optimizăm impactul prin intermediul rețelelor sociale"
+    },
+    "accept": "Acceptare",
+    "personalize": "Personalizare",
+    "refuse": "Continuare fără acceptare",
+    "back": "Revenire la etapa precedentă",
+    "mandatory": "Activ în continuare",
+    "save": "Validarea selecției",
+    "technicals": {
+      "secure": "make secure: după ce v-ați conectat la spațiul dumneavoastră personal pe Make.org, acest modul cookie garantează menținerea conexiunii pe durata navigării dumneavoastră în cadrul serviciului.",
+      "expiration": "make-secure-expiration: acest modul cookie are rolul de a detecta un interval de inactivitate în cadrul serviciului, pentru a iniția expirarea conexiunii.",
+      "demographics": "make-demographics: acest modul cookie ne permite să identificăm dacă informațiile de tip demografic (categorie de vârstă, regiune, apartenența de gen, etc.) v-au fost deja solicitate pe acest dispozitiv, pentru a nu repeta solicitarea respectivă la următoarea vizită."
+    },
+    "preferences": {
+      "authentication": "Modulele cookie de autentificare Google și Facebook: permit înregistrarea și conectarea la spațiul personal prin intermediul acestor rețele sociale.",
+      "session": "make-session-id: acest modul cookie permite regruparea tuturor acțiunilor pe care le efectuați în cadrul unui serviciu pe durata unei sesiuni.",
+      "expiration": "make-session-id-expiration: acest modul cookie permite afișarea notificării cu mesajul că sesiunea dumneavoastră a expirat (după 20 de minute) și va fi reîncărcată.",
+      "user": "make-user-id: acest modul cookie permite identificarea faptului că ați creat deja un spațiu pe Make.org, pentru a vă invita să vă conectați astfel încât să puteți regăsi toate acțiunile dumneavoastră în spațiul personal.",
+      "cookie": "make-cookie-preferences: acest modul cookie permite stocarea în memorie a preferințelor dumneavoastră privind utilizarea modulelor cookie în cadrul serviciului nostru."
+    },
+    "statistics": {
+      "visitor": "make-visitor-id: acest modul cookie are rolul de a monitoriza consultările serviciului nostru, pentru a măsura traficul în mod anonim și agregat. Evenimentele de navigare sunt trimise către instrumentul de analiză MixPanel.",
+      "created-at": "make-visitor-created-at: cu ajutorul acestui modul cookie se obține data primei vizite pe platformă.",
+      "tracking": "Modul cookie de tracking Facebook: servește la culegerea datelor privind comportamentul în cadrul serviciului, în scopul analizelor agregate care permit ameliorarea serviciului. Servește și la culegerea datelor de tip socio-demografic (vârsta, apartenența de gen, regiunea) în mod agregat pentru a consolida analiza consultării."
+    },
+    "social_media": {
+      "facebook_pixel": "Pixel Facebook: servește la optimizarea performanțelor campaniilor prin care se promovează consultările pe Facebook pentru a spori participarea cetățenilor.",
+      "twitter_pixel": "Pixel Twitter: servește la optimizarea performanțelor campaniilor prin care se promovează consultările pe Twitter pentru a spori participarea cetățenilor.",
+      "facebook_sharing": "Distribuire Facebook: permite utilizatorului să distribuie conținutul pe propriul cont de Facebook.",
+      "twitter_sharing": "Distribuire Twitter: permite utilizatorului să distribuie conținutul pe propriul cont de Twitter.",
+      "linkedin_sharing": "Distribuire LinkedIn: permite utilizatorului să distribuie conținutul pe propriul cont de LinkedIn."
+    }
+  },
+  "reset_password": {
+    "title": "Creez o parolă nouă",
+    "info": "Puteți alege o parolă nouă.",
+    "send_cta": "Validare",
+    "success": {
+      "title": "Vă mulțumim, parola dumneavoastră a fost actualizată.",
+      "info": "Vă puteți conecta imediat."
+    },
+    "failure": {
+      "bad_link": "Acest link nu mai este valabil.",
+      "error_message": "Parola dumneavoastră nu a putut fi înlocuită."
+    }
+  },
+  "data_policy_modal": {
+    "title": "Actualizarea politicii noastre privind datele.",
+    "description": "Make.org se angajează să vă respecte datele cu caracter personal la orice consultare a site-ului. Pentru a vă continua navigarea rămânând conectat (ă) pe Make.org, trebuie să acceptați actualizarea noastră pentru {{data_policy_link}} ",
+    "data_policy_link": "politica privind datele.",
+    "consent": "<strong>Accept noua versiune a politicii privind datele</strong> și voi putea utiliza spațiul meu personal Make.org",
+    "validate": "Validez",
+    "stay": "Rămân",
+    "leave": "Plec",
+    "refusal_title": "Sunteți sigur (ă) că doriți să plecați?",
+    "refusal_description_first_part": "Dacă refuzați noua versiune pentru ",
+    "refusal_description_second_part": ", nu veți mai putea avea acces la spațiul dumneavoastră personal Make.org."
+  },
+  "not_found": {
+    "intro": "ups",
+    "title": "Eroare 404",
+    "description": "Pagina solicitată nu (mai) există."
+  },
+  "profile": {
+    "tabs": {
+      "label": "Profilul dumneavoastră",
+      "manage_account": "Gestionarea contului",
+      "proposals": "Propuneri",
+      "favourites": "Preferințele mele",
+      "following": "Profilurile pe care le urmăresc"
+    },
+    "proposals": {
+      "title": "Ultimele mele propuneri",
+      "text": "Nu ați depus încă propuneri pe Make.org."
+    },
+    "favourites": {
+      "title": "Preferințele mele",
+      "description": {
+        "introduction": "Nu aveți încă preferințe pe Make.org.",
+        "explanation": "Puteți marca o propunere ca preferință imediat după ce ați votat \"Acord\" pentru această propunere."
+      },
+      "card_title": "Trebuie să susțineți propuneri valoroase."
+    },
+    "common": {
+      "infos": "Informațiile mele personale",
+      "log_out": "Mă deconectez",
+      "age": "{{age}} ani",
+      "submit_label": "Înregistrarea modificărilor",
+      "submit_success": "Solicitarea dumneavoastră a fost luată în considerare.",
+      "error": "Ups! A apărut o eroare la înregistrarea informațiilor dumneavoastră. Vă rugăm să încercați mai târziu.",
+      "labels": {
+        "organisation": "Numele organizației: ",
+        "firstname": "Prenume: ",
+        "lastname": "Nume: ",
+        "email": "Adresă e-mail: ",
+        "postal_code": "Cod poștal: ",
+        "age": "Vârstă: ",
+        "profession": "Profesie: ",
+        "biography": "Biografie: ",
+        "website": "Site internet: ",
+        "political_party": "Partid politic: ",
+        "select": "Selectare"
+      }
+    },
+    "informations_update": {
+      "title": "Modificarea profilului",
+      "link_to_profile": "revenire la profil",
+      "more": "Vedeți mai mult",
+      "less": "Vedeți mai puțin"
+    },
+    "password_update": {
+      "title": "Modificarea parolei",
+      "newpassword": "Parolă nouă",
+      "submit_label": "Înregistrarea modificărilor",
+      "actual_password": {
+        "label": "Parolă actuală",
+        "invalid_password": "Elementul {{label}} pe care l-ați indicat nu este corect.",
+        "trigger": "V-ați uitat parola?"
+      }
+    },
+    "communication_preferences": {
+      "title": "Gestionarea preferințelor de comunicare",
+      "description": "Selectați țara și limba dumneavoastră, în care doriți să primiți e-mailuri de la Make.org.",
+      "optin_label": "Accept să primesc e-mailuri de la Make.org pentru a rămâne la curent cu actualitatea privind consultările în curs și cele viitoare."
+    },
+    "delete_account": {
+      "title": "Solicitare de ștergere a contului",
+      "description": "Atenție, această acțiune este definitivă. Veți pierde propunerile, statisticile detaliate aferente acestora, precum și propunerile cu privire la care v-ați pronunțat.",
+      "password": "Îmi indic parola",
+      "submit_label": "Solicitare de ștergere a contului",
+      "wrong_email": "Acest e-mail nu este asociat contului dumneavoastră, vă rugăm să vă introduceți din nou adresa de e-mail.",
+      "wrong_password": "Parola introdusă nu este corectă."
+    },
+    "organisation": {
+      "proposal_agree": "și-a exprimat acordul față de această propunere",
+      "proposal_disagree": "și-a exprimat dezacordul față de această propunere",
+      "and": " și ",
+      "hasVoted_one": " a votat cu privire la această propunere.",
+      "hasVoted_few": " au votat cu privire la această propunere.",
+      "hasVoted_other": " au votat cu privire la această propunere.",
+      "sharing_title": "Distribuiți acest profil"
+    }
+  },
+  "organisation": {
+    "title": "Descoperiți profilul {{name}}",
+    "tabs": {
+      "proposals": "Propuneri",
+      "votes": "Poziții exprimate"
+    },
+    "proposals": {
+      "title": "Ultimele propuneri prezentate de {{name}}:",
+      "text": "{{name}} nu a prezentat încă propuneri pe Make.org."
+    },
+    "votes": {
+      "title": "Ultimele poziții exprimate de {{name}}:",
+      "text": "{{name}} nu și-a exprimat încă poziția pe Make.org."
+    }
+  },
+  "personality": {
+    "title": "Descoperiți profilul {{name}}",
+    "tabs": {
+      "top_ideas": "Poziții exprimate cu privire la topul ideilor"
+    },
+    "opinions": {
+      "title": "Poziții exprimate de {{firstname}} {{lastname}}:",
+      "placeholder_text": "{{firstname}} {{lastname}} nu și-a exprimat încă poziția cu privire la topul ideilor.",
+      "vote": {
+        "agree": "acord",
+        "disagree": "dezacord",
+        "other": "altul"
+      },
+      "qualification": {
+        "priority": "Prioritară",
+        "doable": "Realistă",
+        "noWay": "În niciun caz",
+        "nonPriority": "Neprioritară",
+        "exists": "Există deja",
+        "toBePrecised": "Trebuie detaliată"
+      },
+      "form": {
+        "title": "Ce acțiuni concrete ați aplica pentru a răspunde la această idee cetățenească?",
+        "label": "Introducere text...",
+        "validate": "Validarea poziției exprimate",
+        "disclaimer": "Atenție, pentru a vă modifica poziția exprimată după ce a fost publicată, va trebui să contactați Make.org. Sunteți sigur (ă) că doriți să publicați acum? În caz afirmativ, faceți clic pe \"Confirmare și publicare\".",
+        "preview_cancel": "Modificare",
+        "preview_confirm": "Confirmare și publicare"
+      },
+      "preview": {
+        "agree": "Îmi exprim <span>acordul</span>.",
+        "agree_priority": "Îmi exprim <span>acordul</span>, este o idee <span>prioritară</span>.",
+        "agree_doable": "Îmi exprim <span>acordul</span>, este o idee <span>realistă</span>.",
+        "disagree": "Îmi exprim <span>dezacordul</span>.",
+        "disagree_noWay": "Îmi exprim <span>dezacordul</span>, nu vreau <span>în niciun caz</span> să susțin această idee.",
+        "disagree_nonPriority": "Îmi exprim <span>dezacordul</span>, este o idee <span>neprioritară</span>.",
+        "other": "Această propunere <span>există deja</span>  sau <span>trebuie detaliată</span> .",
+        "other_exists": "Această propunere <span>există deja</span> .",
+        "other_toBePrecised": "Această propunere <span>trebuie detaliată</span> ."
+      }
+    },
+    "disclaimer": {
+      "title": "Informații",
+      "subtitle_first": "Cum puteți să vă exprimați poziția cu privire la o idee cetățenească?",
+      "description_first": "Puteți acorda fiecărei idei un vot (\"acord\", \"dezacord\" sau \"altul\") sau un calificativ prin care vă detaliați evaluarea. Această poziție exprimată va deschide 3 rubrici, în care puteți să scrieți 3 măsuri principale pe care le propuneți și/sau să vă detaliați poziția.",
+      "subtitle_second": "Cum îmi pot modifica răspunsurile deja publicate?",
+      "description_second": "Dacă doriți să vă modificați măsurile propuse după ce ați dat clic pe \"Publicare\", contactați echipele noastre la adresa {{mailto}}"
+    }
+  },
+  "consultation": {
+    "header": {
+      "label_great_cause": "Mare Cauză Make.org",
+      "label_consultation": "Consultare cetățenească",
+      "label_results": "Rezultate"
+    },
+    "highlights": {
+      "start_date": "Data lansării",
+      "end_date": "Data încheierii consultării",
+      "remaining_one": "Zi rămasă",
+      "remaining_few": "Zile rămase",
+      "remaining_other": "Zile rămase",
+      "proposals_one": "Propunere",
+      "proposals_few": "Propuneri",
+      "proposals_other": "Propuneri",
+      "participant_one": "Participant",
+      "participant_few": "Participanți",
+      "participant_other": "Participanți",
+      "progress_title": "Obiectivul nostru privind voturile",
+      "progress_total": "Număr total de voturi",
+      "progress_target": " din {{votesTarget}} voturi ({{percent}}%)",
+      "progress_description": "Cu cât propunerile vor primi mai multe voturi, cu atât vor avea mai multe șanse să se transforme în acțiuni concrete.",
+      "progress_btn": "Participare"
+    },
+    "participate": {
+      "title": "Cum se poate participa la consultare?",
+      "description": "Convingerea noastră este că orice persoană poate contribui, la nivelul său, la realizarea binelui colectiv. De aceea solicităm ideile și opiniile a mii de cetățeni în cadrul consultărilor noastre."
+    },
+    "citizen_account": {
+      "title": "Spațiul dumneavoastră personal pe Make.org",
+      "description": "De pe contul dumneavoastră personal, aveți acces la rezultatele propunerilor făcute, la istoricul voturilor exprimate și tot în acest cont veți primi rezultatele consultărilor. Dacă vă înregistrați pe platforma noastră, veți primi informații prin e-mail cu privire la următoarele consultări cetățenești și veți primi invitații la evenimentele noastre colective.",
+      "button_text": "Mă înregistrez"
+    },
+    "cards": {
+      "soon": "Evenimente viitoare",
+      "submit": {
+        "title": "Trimiterea unei propuneri",
+        "description": "Prezentați-vă ideile publicului larg. Fiecare propunere va fi studiată, după care va fi supusă votului cetățenesc.",
+        "button": "Am o idee"
+      },
+      "interact": {
+        "title": "Reacții la propuneri",
+        "description": "Dacă propunerile se încadrează în temele consultării, vă rugăm să vă exprimați opinia, pentru a ne ajuta să identificăm ideile care ar trebui abordate mai întâi.",
+        "button": "Îmi exprim votul"
+      },
+      "controversy": {
+        "title": "Departajarea propunerilor celor mai controversate",
+        "description": "Aceste propuneri cetățenești au primit un număr egal de voturi pro și contra.",
+        "button": "Fac departajarea"
+      },
+      "popular": {
+        "title": "Votarea propunerilor celor mai populare",
+        "description": "Aceste propuneri cetățenești au primit cel mai mare număr de voturi pro.",
+        "button": "Îmi exprim votul"
+      },
+      "keywords": {
+        "title": "Subiectele care vă preocupă",
+        "description": "Alegeți subiectele cu privire la care doriți să vă exprimați părerea în mod prioritar."
+      },
+      "sharing": {
+        "title": "Distribuirea consultării",
+        "description": "Prietenii dumneavoastră pot avea și ei idei sau păreri care merită să fie auzite. Dați mai multă vizibilitate acestei consultări, distribuind-o în cercul dumneavoastră și în modul dorit."
+      },
+      "about": {
+        "title": "De ce a apărut această consultare?",
+        "description": "Ce motive au stat la baza lansării acestei consultări? Care sunt implicațiile? Cine a avut inițiativa în acest sens?",
+        "link": "Informații suplimentare"
+      },
+      "featured_proposals": {
+        "title": "Persoane care au depus o propunere"
+      }
+    },
+    "timeline": {
+      "timeline_title_great_cause": "Care sunt etapele principale ale acestei Mari Cauze?",
+      "timeline_title_consultation": "Care sunt etapele principale ale acestei consultări?",
+      "consultation_title": "Consultare cetățenească",
+      "consultation_description": "Toate consultările noastre încep printr-o solicitare publică de idei și voturi cetățenești.",
+      "consultation_from_to": "De la {{startDate}} la {{endDate}}",
+      "result_title": "Rezultate",
+      "workshop_title": "Ateliere cetățenești",
+      "workshop_link": "Contactați-ne pentru a participa",
+      "action_title": "Inițierea acțiunilor"
+    },
+    "navigation": {
+      "introduction": "Descoperiți celelalte teme abordate în cadrul consultării noastre: {{name}}",
+      "participate_desktop": "Participare la consultare",
+      "participate_mobile": "Participare",
+      "participate_breadcrumb": "Participare la \"{{title}}\"",
+      "explore_desktop": "Parcurgerea propunerilor",
+      "explore_mobile": "Parcurgere",
+      "explore_breadcrumb": "Parcurgeți \"{{title}}\""
+    },
+    "explore": {
+      "title": "Parcurgerea propunerilor",
+      "description": "Folosiți instrumentele de căutare pentru a parcurge ușor toate propunerile aferente consultării și a le identifica pe cele care vi se par prioritare.",
+      "reset_filters": "Resetarea filtrelor",
+      "reset_filters_and_close": "Resetarea filtrelor și închidere",
+      "sort": "Triere",
+      "sort_continue": "Continuare cu triere activată",
+      "filters_continue": "Continuare cu filtrele activate",
+      "sort_by": "Triere în funcție de",
+      "sort_and_close": "Triere și închidere",
+      "filter": "Filtrare",
+      "filter_and_close": "Filtrare și închidere",
+      "filter_by": "Filtrare în funcție de",
+      "recent": "Recente",
+      "popular": "Populare",
+      "controversial": "Controversate",
+      "unvoted": "Cele care așteaptă să le votați",
+      "organisations_proposals": "Propuse de organizații",
+      "no_proposal": "<strong>Nicio propunere</strong>",
+      "validated_proposals_one": "<strong>{{count}} propunere validată</strong> aferentă căutării dumneavoastră",
+      "validated_proposals_few": "<strong>{{count}} propuneri validate</strong> aferente căutării dumneavoastră",
+      "validated_proposals_other": "<strong>{{count}} propuneri validate</strong> aferente căutării dumneavoastră"
+    },
+    "tabs": {
+      "consultation": " Consultare ",
+      "action": " Acțiuni ",
+      "results": " Rezultate ",
+      "from": " de la ",
+      "to": " la ",
+      "datefrom": " începând cu "
+    },
+    "sort": {
+      "TAGGED_FIRST": "Toate propunerile",
+      "ACTORS": "Propunerile actorilor",
+      "RECENT": "Cele mai recente",
+      "REALISTIC": "Cele mai realiste",
+      "CONTROVERSY": "Cele mai controversate",
+      "POPULAR": "Cele mai populare"
+    },
+    "presentation": {
+      "title": "De ce a apărut această consultare?",
+      "link_text": "Aflați mai multe"
+    },
+    "followus": {
+      "title": "Detalii suplimentare",
+      "description": "Descoperiți toată actualitatea Make.org!",
+      "facebook": "Urmăriți-ne pe Facebook",
+      "twitter": "Urmăriți-ne pe Twitter",
+      "instagram": "Urmăriți-ne pe Instagram",
+      "linkedin": "Urmăriți-ne pe LinkedIn",
+      "discover": "Descoperiți blogul nostru"
+    },
+    "partners": {
+      "intro_title": "O mobilizare masivă",
+      "intro_text": "Mii de cetățeni se implică participând la consultare.",
+      "commitment_title": "Partenerii noștri se implică alături de noi",
+      "commitment_text": "Aceștia susțin consultarea și planul cetățenesc de acțiuni care va urma.",
+      "commitment_link": "Vizualizarea tuturor partenerilor",
+      "founder": "Partener fondator",
+      "init": "Consultare ințiată de:",
+      "initWith": "Această consultare a fost inițiată împreună cu:",
+      "with": "În parteneriat cu:",
+      "by": "Inițiată de: ",
+      "profile_link": "Direcționare spre profilul: {{name}}",
+      "profile_link_new_window": "Direcționare spre profilul: {{name}} (fereastră nouă)"
+    },
+    "tags": {
+      "proposal_list": "<span lang=\"en\">Etichete<span> selectate pentru această propunere: ",
+      "popular_title": "Subiectele cele mai discutate"
+    },
+    "banner": {
+      "title": "Participați în 5 minute la consultare",
+      "description": "dintr-o serie de propuneri aleatorii"
+    },
+    "proposal": {
+      "title": "Propuneți direct o soluție",
+      "load_more": "Vizualizarea altor propuneri",
+      "see_proposals": "Vizualizarea propunerilor"
+    },
+    "results": {
+      "methodology": {
+        "title": "Metodologia",
+        "description": "Metodologia are la bază o moderare de detaliu a propunerilor primite. Acestea sunt mai întâi supuse validării, verificându-se dacă respectă Carta Make.org, apoi sunt clasate în funcție de anumite repere tematice. Algoritmii dezvoltați de echipele Make.org garantează în continuare pentru fiecare din propunerile validate un nivel egal de expunere și organizează o competiție între ele. Datorită acestei rotații permanente, Make.org identifică propunerile care au cea mai mare susținere în rândul cetățenilor, după care le analizează și le structurează în idei principale."
+      },
+      "participation": {
+        "title": "Participanți la consultare"
+      },
+      "context": "Contextul",
+      "cartography": {
+        "title": "Cartografia dezbaterii"
+      },
+      "download": {
+        "deprecated_title": "Obținerea raportului complet",
+        "title": "Obțineți raportul complet",
+        "type": "Format: {{extension}} - Dimensiune: {{weight}}",
+        "button": "Descărcare",
+        "contact": "Pentru a obține raportul complet de analiză aferent acestei consultări, vă rugăm să ne contactați la adresa: ",
+        "email_object": "Raport de analiză"
+      },
+      "top_ideas": {
+        "skiplink": "Topul ideilor recent prezentate",
+        "title_one": "Topul ideilor care au întrunit o largă adeziune, grupate în {{count}} categorie",
+        "title_few": "Topul ideilor care au întrunit o largă adeziune, grupate în {{count}} categorii",
+        "title_other": "Topul ideilor care au întrunit o largă adeziune, grupate în {{count}} categorii",
+        "introduction": "După ce ajung pe platformă, cele mai bune propuneri cetățenești sunt grupate în jurul unor idei principale care structurează consultarea. Pentru a clasifica aceste idei, algoritmul Make.org ia în considerare voturile « pro » și  « contra », precum și precizările « preferință » « realistă » « banalitate » și « în niciun caz! ».",
+        "axe_title": "Categorie {{count}}: {{name}}"
+      },
+      "proposals": {
+        "controversials_title": "Propunerile cele mai controversate",
+        "controversials_description": "Propunerile “controversate” reflectă o divizare semnificativă în rândul societății: în general, acestea atrag atât un sprijin puternic, cât și multe respingeri.",
+        "rejected": "Propunerile cu cele mai multe respingeri",
+        "rejected_results": "{{disagree}}% dezacord dintre care {{no_way}}% în niciun caz",
+        "controversials_agree": "{{count}}% pro",
+        "controversials_disagree": "{{count}}% contra"
+      },
+      "table": {
+        "name": "Nume",
+        "value": "Valoare",
+        "value_with_unit": "valoare în {{unit}}",
+        "percentage": "procentaj"
+      },
+      "breadcrumb": "Rezultate pentru \"{{title}}\"",
+      "title": "Ce putem reține din această consultare?"
+    },
+    "reset": "Resetare",
+    "sortby": "Triere în funcție de: ",
+    "local_actors": {
+      "title": "Asociațiile cele mai active",
+      "proposals_one": "{{ count }} propunere",
+      "proposals_few": "{{ count }} propuneri",
+      "proposals_other": "{{ count }} propuneri",
+      "votes_one": "{{ count }} vot",
+      "votes_few": "{{ count }} voturi",
+      "votes_other": "{{ count }} voturi",
+      "participate": "Sunteți o asociație și doriți să participați la consultarea noastră? {{ contact_us }}",
+      "contact_us": "Contactați-ne!",
+      "more": "Detalii"
+    },
+    "municipal": {
+      "header": {
+        "candidates_answers": "Candidații la alegeri vor răspunde la prioritățile stabilite de cetățeni și de asociații.",
+        "candidates_subscribe": "{{ subscribe }} pentru a primi informații pe acest subiect",
+        "subscribe": "Înregistrați-vă",
+        "candidates": "Sunteți candidat (ă)",
+        "contact_us": "Contactați-ne!"
+      },
+      "position": {
+        "title": "Descoperiți răspunsurile candidaților la prioritățile dumneavoastră."
+      }
+    },
+    "popular_proposals": {
+      "title": "TOP {{ count }} al propunerilor celor mai populare în prezent, în funcție de subiect"
+    }
+  },
+  "browse": {
+    "short_page_title": "Parcurgere",
+    "page_title": "Parcurgerea consultării",
+    "title": "Participați la consultările în curs",
+    "initiative": "Mare Cauză Make.org",
+    "nav_consultations_desktop": "Consultările în curs",
+    "nav_consultations_mobile": "Consultări",
+    "nav_results_desktop": "Rezultatele consultărilor",
+    "nav_results_mobile": "Rezultate",
+    "consultations": {
+      "all": "Toate consultările",
+      "label": "În acest moment",
+      "title": "Participați la consultările în curs",
+      "subtitle": "Părerea dumneavoastră contează! Votați și propuneți soluții pentru a influența diverse subiecte de societate și probleme actuale.",
+      "participate": "Participare",
+      "contributors_one": "participant",
+      "contributors_other": "participanți",
+      "proposals_one": "propunere",
+      "proposals_other": "propuneri",
+      "votes_one": "vot",
+      "votes_other": "voturi",
+      "empty": "Ne pare rău, nu este disponibilă nicio consultare în țara dumneavoastră în acest moment."
+    },
+    "results": {
+      "all": "Toate rezultatele",
+      "label": "Consultări terminate",
+      "title": "Descoperiți rezultatele",
+      "subtitle": "La finalul consultărilor, descoperiți prioritățile stabilite de cetățeni și acțiunile realizate de Make.org în cadrul marilor cauze.",
+      "see_results": "Vizualizarea rezultatelor",
+      "see_topideas": "Vizualizarea topului ideilor",
+      "coming_results": "Rezultate viitoare",
+      "empty": "Încă nu am desfășurat nicio consultare în țara dumneavoastră până acum."
+    },
+    "date": "Consultare de la {{startDate}} la {{endDate}}",
+    "browse": "Parcurgerea consultării",
+    "see_closed_consultations": "Vizualizarea consultărilor terminate",
+    "no_consultations": "Nu este nicio consultare în curs, dar să păstrăm legătura!",
+    "one_consultation": "Înregistrați-vă pentru a primi informații privind următoarea consultare.",
+    "no_results": "Rezultatele vor fi disponibile în curând, dar până atunci, să păstrăm legătura!",
+    "one_result": "Înregistrați-vă pentru a primi informații privind următoarele rezultate",
+    "subscribe": "Înregistrare",
+    "past_questions": "Puteți consulta și rezultatele consultărilor precedente"
+  },
+  "sharing": {
+    "facebook": "Distribuire pe Facebook",
+    "twitter": "Distribuire pe Twitter",
+    "linkedin": "Distribuire pe LinkedIn"
+  },
+  "skip_links": {
+    "main_list": "Linkuri principale de ignorare",
+    "secondary_list": "Linkuri de ignorare a conținutului paginii",
+    "main_content": "Direcționare spre conținutul principal",
+    "main_footer": "Direcționare spre subsolul paginii principale",
+    "sidebar_content": "Direcționare spre bara laterală de conținut",
+    "secondary_nav": "Direcționare spre navigare secundară",
+    "tag_list": "Direcționare spre lista filtrelor",
+    "proposal_list": "Direcționare spre lista propunerilor",
+    "proposal_submit": "Direcționare spre formularul propunerii",
+    "proposal_card": "Direcționare spre propunere",
+    "sharing": "Direcționare spre secțiunea distribuire",
+    "dynamic_section": "Direcționare spre secțiunea: \"{{name}}\""
+  },
+  "modal": {
+    "close": "Închiderea ferestrei de dialog"
+  },
+  "homepage": {
+    "featured": {
+      "title": "În acest moment pe Make.org",
+      "status": "Denumirea operațiunii: ",
+      "link": "Direcționare spre pagina consultării: {{name}}"
+    },
+    "title": "Pagina principală",
+    "hero": {
+      "title": "Împreună, putem construi o societate mai bună.",
+      "description": "Exprimați-vă părerea cu privire la anumite subiecte legate de societate care vă preocupă în mod deosebit, participând la consultările cetățenești propuse de noi. Împreună, cetățeni, asociații și întreprinderi, să ne stabilim prioritățile și să realizăm schimbări concrete.",
+      "participate": "Participați la consultări",
+      "discover": "Descoperiți marile cauze propuse de noi"
+    },
+    "highlights": {
+      "title": "Make.org în câteva cifre",
+      "participants": {
+        "subtitle_one": "de participant (ă)",
+        "subtitle_few": "de participanți (te)",
+        "subtitle_other": "de participanți (te)"
+      },
+      "proposals": {
+        "subtitle_one": "propunere depusă",
+        "subtitle_few": "propuneri depuse",
+        "subtitle_other": "propuneri depuse"
+      },
+      "partners": {
+        "subtitle_one": "asociație & întreprindere implicată",
+        "subtitle_few": "asociații & întreprinderi implicate",
+        "subtitle_other": "asociații & întreprinderi implicate"
+      }
+    },
+    "featured_questions": {
+      "label": "Marile cauze Make.org",
+      "title": "Make.org acționează concret cu privire la marile subiecte importante pentru societate"
+    },
+    "posts": {
+      "title": "Actualități",
+      "link_text": "Lectura articolului",
+      "see_all": "Consultarea tuturor actualităților"
+    },
+    "partnership": {
+      "title": "Colaborați cu Make.org",
+      "subtitle": "Modalități de parteneriat",
+      "description": "Colaborăm cu diverse întreprinderi, asociații și instituții pentru a ne promova proiectele. <br/>De asemenea, oferim sprijin acestor organizații pentru ca ele să poată lansa propriile consultări.",
+      "button": "Vizualizarea ofertelor"
+    },
+    "international": {
+      "subtitle": "Consultări naționale",
+      "title": "Make.org este disponibil și în România pentru subiectele naționale",
+      "button": "Explorare"
+    }
+  },
+  "search": {
+    "titles": {
+      "loading": "Căutare în curs...",
+      "no_results": "Niciun rezultat",
+      "main_results_one": "{{count}} rezultat pentru « {{term}} »",
+      "main_results_few": "{{count}} rezultate pentru « {{term}} »",
+      "main_results_other": "{{count}} rezultate pentru « {{term}} »",
+      "proposals_one": "{{count}} propunere pentru « {{term}} »",
+      "proposals_few": "{{count}} propuneri pentru « {{term}} »",
+      "proposals_other": "{{count}} propuneri pentru « {{term}} »",
+      "operations_one": "{{count}} operațiune pentru « {{term}} »",
+      "operations_other": "{{count}} operațiuni pour « {{term}} »",
+      "organisations_one": "{{count}} organizație pentru « {{term}} »",
+      "organisations_few": "{{count}} organizații pentru « {{term}} »",
+      "organisations_other": "{{count}} organizații pentru « {{term}} »",
+      "main_results_empty_term": "0 rezultat"
+    },
+    "main_results": {
+      "proposal": "Propunere",
+      "organisation": "Organizație",
+      "operation": "Operațiune",
+      "results_one": "{{count}} rezultat",
+      "results_few": "{{count}} rezultate",
+      "results_other": "{{count}} rezultate",
+      "view_all": "Vizualizarea tuturor elementelor",
+      "no_results": "Nu am găsit niciun rezultat pentru căutarea dumneavoastră « {{term}} »",
+      "no_query": "Căutați o propunere, o idee, o consultare? Scrieți subiectul căutării!",
+      "status": "Statut: ",
+      "finished_consultation": "Consultare terminată",
+      "open_consultation": "Consultare în curs"
+    },
+    "sidebar": {
+      "register": {
+        "title": "Urmăriți actualitatea make.org înregistrându-vă."
+      }
+    },
+    "form": {
+      "introduction": "Pentru a efectua o căutare, expresia solicitată trebuie să aibă între 3 și 140 de caractere. Scrieți-o în câmpul de căutare, apoi faceți clic pe butonul \"Căutare\"",
+      "introduction_searched": "Pentru a reseta câmpul de căutare, faceți clic pe butonul \"Ștergerea câmpului de căutare\"",
+      "label": "Câmp de căutare",
+      "placeholder": "Căutare",
+      "submit": "Căutare",
+      "flush": "Ștergerea câmpului de căutare",
+      "open_panel": "Afișarea câmpului de căutare",
+      "cancel": "Anulare"
+    }
+  },
+  "no_cookies": {
+    "title": "Ups! Modulele cookie sunt dezactivate",
+    "first_paragraph": "Nu vă putem permite accesul la site, deoarece utilizăm module cookie pentru a garanta calitatea serviciilor noastre.",
+    "second_paragraph": "Pentru a putea naviga fără probleme pe Make.org, vă rugăm să acceptați modulele cookie pe acest browser sau să utilizați altul. Pentru a accepta modulele cookie în browserul dumneavoastră, accesați meniul și apoi setările.",
+    "information": "Pentru mai multe informații despre modul de gestionare a modulelor cookie, faceți clic pe acest link:",
+    "link": "www.accepterlescookies.com",
+    "thanks": "Vă mulțumim pentru înțelegere și pe curând!",
+    "footer": "Make.org este o platformă de implicare, care permite identificarea ideilor care au întrunit o largă adeziune pe diverse subiecte. Dacă doriți să aflați mai multe despre inițiativa noastră, consultați <a href=\"https://about.make.org\">actualități</a>."
+  },
+  "contact": {
+    "contactUs": "Contactați-ne",
+    "paragraph": "Aveți o idee, o sugestie, o problemă? Nu ezitați să ne contactați trimițând un e-mail la adresa noastră:"
+  },
+  "legal": {
+    "title": "Aviz juridic",
+    "make_infos": "Autorul site-ului MAKE.ORG, având forma „société par actions simplifiées“ (societate pe acțiuni simplificată) cu un capital vărsat de {{make_capital}}, cu sediul social la adresa: {{make_address}}, înregistrată la Registrul Comerțului și al Societăților - RCS din PARIS cu numărul {{make_rcs}} (numită în continuare „MAKE.ORG“).",
+    "mail": "Adresa de e-mail: ",
+    "make_phone": "Număr de telefon: ",
+    "make_phone_number": "{{make_phone_number}}",
+    "director": "Director publicație: {{make_director_name}}",
+    "host": "Găzduirea site-ului este asigurată de: ",
+    "host_address": "{{make_host_address}} FRANȚA",
+    "host_phone": "Număr de telefon: ",
+    "host_phone_number": "{{host_number}}",
+    "eu_mention": "@@legal.eu_mention|fr:La Commission européenne met à disposition une plateforme de règlement des litiges en ligne pour les consommateurs, à l'adresse https://ec.europa.eu/consumers/odr."
+  },
+  "cookies_management": {
+    "title": "Gestionarea modulelor cookie",
+    "dated": "- în vigoare la {{date}} -",
+    "button": "Validarea selecției",
+    "intro": {
+      "title": "Ce este un modul cookie?",
+      "first_paragraph": "Un modul cookie este un fișier informatic de dimensiuni reduse, care poate fi stocat și citit când un utilizator de internet accesează un site web sau o aplicație mobilă, indiferent de tipul de terminal utilizat (computer, smartphone, etc.).",
+      "second_paragraph": "Unele module cookie sunt esențiale pentru buna funcționare a site-urilor sau a aplicațiilor, altele contribuie la optimizarea performanțelor site-ului sau la o mai bună experiență a utilizatorilor de internet."
+    },
+    "use": {
+      "title": "În ce mod utilizăm modulele cookie?",
+      "first_paragraph": "Când vă conectați la site-ul nostru, modulele cookie sunt stocate pe terminalul pe care îl utilizați pentru a vă îmbunătăți experiența, pentru a crește performanța site-ului nostru și pentru a îmbunătăți consultările noastre cetățenești.",
+      "second_paragraph": "Informațiile conținute în modulele cookie nu sunt prevăzute pentru a vă identifica personal și nu sunt utilizate niciodată în alte scopuri decât cele menționate mai jos."
+    },
+    "partners": {
+      "title": "Cine sunt partenerii noștri?",
+      "intro": "În afară de modulele cookie create și gestionate de Make, pe site-ul nostru mai sunt plasate module cookie de către următorii parteneri:"
+    },
+    "details": {
+      "title": "Ce module cookie utilizăm?",
+      "intro": "Pe site-ul nostru sunt stocate următoarele module cookie:",
+      "mandatory": "Activ în continuare",
+      "duration": "Durata: {{duration}}",
+      "session": "Sesiune",
+      "month": "{{count}} luni",
+      "year_one": "{{count}} an",
+      "year_few": "{{count}} ani",
+      "year_other": "{{count}} ani",
+      "technicals": {
+        "name": "Module cookie tehnice:",
+        "description": "aceste module cookie sunt necesare pentru funcționarea site-ului și nu pot fi dezactivate. Vă puteți configura browser-ul alegând setări prin care să blocați modulele cookie sau să primiți notificări privind existența lor, însă anumite părți ale site-ului nostru pot fi afectate în acest caz. Aceste module cookie nu au scopul de a vă identifica personal.",
+        "secure": "make - secure: după ce v-ați conectat la spațiul dumneavoastră personal pe Make.org, acest modul cookie garantează menținerea conexiunii pe durata navigării dumneavoastră în cadrul serviciului.",
+        "secure-expiration": "make-secure-expiration: acest modul cookie are rolul de a detecta un interval de inactivitate în cadrul serviciului, pentru a iniția expirarea conexiunii.",
+        "demographics": "make-demographics: acest modul cookie ne permite să identificăm dacă informațiile de tip demografic (categorie de vârstă, regiune, apartenența de gen, etc.) v-au fost deja solicitate pe acest dispozitiv, pentru a nu repeta solicitarea respectivă la următoarea vizită."
+      },
+      "preferences": {
+        "name": "Module cookie legate de preferințe:",
+        "description": "aceste module cookie sunt utilizate pentru a reține preferințele dumneavoastră pe site-ul nostru, ameliorându-vă astfel experiența în timpul navigării. Vă puteți configura browser-ul alegând setări prin care să blocați modulele cookie sau să primiți notificări privind existența lor, însă anumite părți ale site-ului nostru pot fi afectate în acest caz. Aceste module cookie nu au scopul de a vă identifica personal.",
+        "google-connect": "Google connect: aceste module cookie permit înregistrarea și conectarea la spațiul dumneavoastră personal.",
+        "facebook-connect": "Facebook connect: aceste module cookie permit înregistrarea și conectarea la spațiul dumneavoastră personal.",
+        "session-id": "make-session-id: acest modul cookie permite regruparea tuturor acțiunilor pe care le efectuați pe site pe durata unei sesiuni.",
+        "session-id-expiration": "make-session-id-expiration: acest modul cookie permite afișarea notificării cu mesajul că sesiunea dumneavoastră a expirat (după 20 de minute) și va fi reîncărcată.",
+        "user-id": "make-user-id: acest modul cookie vă permite să vă identificați după ce vă conectați la un spațiu personal pe Make.org. Acesta va permite trimiterea invitației de reconectare, pre-completând ID-ul dumneavoastră.",
+        "cookie-preferences": "make-cookie-preferences: acest modul cookie permite stocarea în memorie a preferințelor dumneavoastră privind utilizarea modulelor cookie în cadrul serviciului nostru."
+      },
+      "statistics": {
+        "name": "Module cookie în scopuri statistice:",
+        "description": "aceste module cookie sunt utilizate pentru a analiza accesările site-ului nostru și a îmbunătăți performanțele site-ului. Toate informațiile colectate prin intermediul acestor module cookie sunt procesate prin agregare, așadar sunt anonimizate. Dacă nu acceptați aceste module cookie, nu vom primi informații privind revenirea pe site.",
+        "visitor-id": "make-visitor-id: acest cookie are rolul de a monitoriza consultările serviciului nostru, pentru a măsura traficul în mod anonim și agregat. Evenimentele de navigare sunt trimise către instrumentul de analiză MixPanel.",
+        "visitor-created-at": "make-visitor-created-at: cu ajutorul acestui modul cookie se obține data primei vizite pe platformă.",
+        "facebook-tracking": "modul cookie de tracking Facebook: acest modul cookie permite generarea unor statistici privind accesările, pentru ameliorarea site-ului nostru și o analiză mai detaliată a consultărilor.",
+        "hotjar": "Hotjar: Este vorba de un instrument care permite realizarea analizei comportamentale privind utilizarea site-ului web. Pentru informații mai detaliate: "
+      },
+      "social": {
+        "name": "Modulele cookie « rețele sociale »:",
+        "description": "aceste module cookie, activate de terți, vă permit să distribuiți conținutul de pe site-ul nostru pe rețelele de socializare, ajutându-ne astfel să ne optimizăm impactul. Dacă nu sunteți de acord cu trimiterea acestor module cookie, este posibil să nu puteți beneficia de aceste instrumente de distribuire.",
+        "facebook_tracking": "Pixel Facebook: aceste module cookie servesc la optimizarea performanțelor campaniilor prin care se promovează consultările pe Facebook pentru a spori participarea cetățenilor.",
+        "twitter_tracking": "Pixel Twitter: aceste module cookie servesc la optimizarea performanțelor campaniilor prin care se promovează consultările pe Twitter pentru a spori participarea cetățenilor.",
+        "facebook_sharing": "distribuire Facebook: acest modul cookie permite utilizatorului să distribuie conținut pe Facebook și să îmbunătățească opțiunile de utilizare.",
+        "twitter_sharing": "distribuire Twitter: acest modul cookie permite utilizatorului să distribuie conținut pe Twitter și să îmbunătățească opțiunile de utilizare.",
+        "linkedin_sharing": "distribuire LinkedIn: acest modul cookie permite utilizatorului să distribuie conținut pe LinkedIn și să îmbunătățească opțiunile de utilizare."
+      }
+    }
+  },
+  "countries": {
+    "AT": "Austria",
+    "BE": "Belgia",
+    "BG": "Bulgaria",
+    "BR": "Brazilia",
+    "CA": "Canada",
+    "CH": "Elveția",
+    "CN": "China",
+    "CY": "Cipru",
+    "CZ": "Republica Cehă",
+    "DE": "Germania",
+    "DK": "Danemarca",
+    "EE": "Estonia",
+    "ES": "Spania",
+    "FI": "Finlanda",
+    "FR": "Franța",
+    "GB": "Marea Britanie",
+    "GR": "Grecia",
+    "HR": "Croația",
+    "HU": "Ungaria",
+    "IE": "Irlanda",
+    "IN": "India",
+    "IS": "Islanda",
+    "IT": "Italia",
+    "JP": "Japonia",
+    "LI": "Liechtenstein",
+    "LT": "Lituania",
+    "LU": "Luxemburg",
+    "LV": "Letonia",
+    "MT": "Malta",
+    "NL": "Țările de Jos",
+    "NO": "Norvegia",
+    "PL": "Polonia",
+    "PT": "Portugalia",
+    "RO": "România",
+    "RU": "Rusia",
+    "SE": "Suedia",
+    "SI": "Slovenia",
+    "SK": "Slovacia",
+    "US": "SUA",
+    "UA": "Ucraina"
+  },
+  "languages": {
+    "fr": "Français",
+    "en": "English",
+    "de": "Deutsch",
+    "uk": "Українська",
+    "cs": "Česky",
+    "es": "Español",
+    "pl": "Polski",
+    "it": "Italiano",
+    "nl": "Nederlands",
+    "fi": "Suomi",
+    "ro": "Română",
+    "bg": "Български"
+  },
+  "language_switch": {
+    "country_title": "țara dumneavoastră",
+    "country_subtitle": "Consultările disponibile depind de țara selectată.",
+    "language_title": "Limba dumneavoastră",
+    "confirm": "Confirmare"
+  },
+  "report_translations": {
+    "button": "@@report_translations.button|fr:Options de la proposition",
+    "confirmation": {
+      "title": "@@report_translations.confirmation.title|fr:Merci pour le signalement !",
+      "description": "@@report_translations.confirmation.description|fr:Notre équipe va l'étudier dans les plus brefs délais."
+    },
+    "form": {
+      "title": "@@report_translations.form.title|fr:Signaler la traduction automatique",
+      "unclear": "@@report_translations.form.unclear|fr:Traduction incompréhensible",
+      "error": "@@report_translations.form.error|fr:Erreur dans la traduction",
+      "false_info": "@@report_translations.form.false_info|fr:Contient une information fausse",
+      "offensive": "@@report_translations.form.offensive|fr:Proposition offensante",
+      "report": "@@report_translations.form.report|fr:Signaler"
+    },
+    "first_step": {
+      "title": "@@report_translations.first_step.title|fr:Traduction automatique",
+      "text": "@@report_translations.first_step.text|fr:Les propositions de nos consultations sont automatiques. Si vous remarquez une erreur, n’hésitez pas à la signaler à nos équipes !"
+    }
+  },
+  "moderation_charter": {
+    "unsuitable_label": "@@moderation_charter.unsuitable_label|fr:DÉCONSEILLÉ",
+    "adapted_label": "@@moderation_charter.adapted_label|fr:Adapté",
+    "refused_label": "@@moderation_charter.refused_label|fr:Refusé",
+    "validated_label": "@@moderation_charter.validated_label|fr:Validé",
+    "title": "@@moderation_charter.title|fr:Charte de modération",
+    "description": "@@moderation_charter.description|fr:Quelles sont les propositions refusées lors de la modération sur Make.org ? Comment formuler une proposition correctement ? Chaque proposition soumise sur la plateforme est modérée à la main par les équipes de modérateurs de Make.org, au regard des critères suivants de la charte de modération¹. La modération se fait sous 48 heures après envoi de la proposition. Vous serez informé.e par email (sous réserve d’avoir validé votre adresse email à l’inscription) de la publication ou du refus de votre proposition. Les petites fautes d'orthographe sont corrigées par les modérateurs, mais il vous revient de publier de nouveau votre proposition si celle-ci ne peut être acceptée.",
+    "refused_examples": "@@moderation_charter.refused_examples|fr:Ne sont pas autorisées sur la plateforme Make.org : ",
+    "incomprehensible_solutions": {
+      "title": "@@moderation_charter.incomprehensible_solutions.title|fr:Les propositions incompréhensibles",
+      "description": "@@moderation_charter.incomprehensible_solutions.description|fr:La formulation et le sens de votre proposition doivent être compréhensibles par toutes et tous. Les erreurs importantes de syntaxe ou les non-sens seront refusés, vous serez invité·e·s à reformuler votre proposition.",
+      "refused_example_card": "@@moderation_charter.incomprehensible_solutions.refused_example_card|fr:Il faut que les citoyens se réfléchissent dans le développement par tous les pays.",
+      "validated_example_card": "@@moderation_charter.incomprehensible_solutions.validated_example_card|fr:Il faut que les citoyens réfléchissent au développement de l’éducation dans chaque pays."
+    },
+    "irrelevant_solutions": {
+      "title": "@@moderation_charter.irrelevant_solutions.title|fr:Les propositions hors sujet",
+      "description": "@@moderation_charter.irrelevant_solutions.description|fr:Votre proposition doit répondre à la question posée dans la consultation. Dans le cas contraire, votre proposition est considérée comme hors sujet et sera refusée.",
+      "example": "@@moderation_charter.irrelevant_solutions.example|fr:Par exemple pour la question “Comment permettre à chacun de mieux manger ?”",
+      "refused_card_example": "@@moderation_charter.irrelevant_solutions.refused_card_example|fr:Il faut mettre en place la coupe du monde de football tous les 2 ans.",
+      "validated_card_example": "@@moderation_charter.irrelevant_solutions.validated_card_example|fr:Il faut favoriser l’accès aux circuits courts dans les cantines d'entreprise."
+    },
+    "discriminatory_solutions": {
+      "title": "@@moderation_charter.discriminatory_solutions.title|fr:Les propositions discriminantes",
+      "description": "@@moderation_charter.discriminatory_solutions.description|fr:En conformité avec la loi², votre proposition ne peut pas contenir de discours incitant à la violence ou à la haine. Elle ne peut non plus contenir de propos à caractère discriminant ou diffamatoire, notamment à l'encontre de tout groupe ethnique, social ou religieux.",
+      "refused_card_example": "@@moderation_charter.discriminatory_solutions.refused_card_example|fr:Il faut veiller à ce que les Bretons ne conservent pas leurs traditions dégradantes.",
+      "validated_card_example": "@@moderation_charter.discriminatory_solutions.validated_card_example|fr:Il faut veiller à ce que les Français puissent mieux communiquer ensemble.",
+      "refused_card_example_2": "@@moderation_charter.discriminatory_solutions.refused_card_example_2|fr:Il faut interdire les croix autour du cou qui sont un symbole d'asservissement.",
+      "validated_card_example_2": "@@moderation_charter.discriminatory_solutions.validated_card_example_2|fr:Il faut veiller à ce que la liberté de culte soit respectée dans notre pays."
+    },
+    "partisan_solutions": {
+      "title": "@@moderation_charter.partisan_solutions.title|fr:Les propositions partisanes",
+      "description": "@@moderation_charter.partisan_solutions.description|fr:Votre proposition ne doit pas prendre parti (c'est-à-dire porter un message de valorisation ou de dévalorisation) envers un parti politique, une personnalité politique, une idéologie ou une religion (personnalité, symbole ou pratiques).",
+      "refused_card_example": "@@moderation_charter.partisan_solutions.refused_card_example|fr:Il faut prendre connaissance du programme de M. XXX, ses idées sont originales pour les prochaines élections.",
+      "validated_card_example": "@@moderation_charter.partisan_solutions.validated_card_example|fr:Il faut se renseigner sur les programmes de chaque parti politique avant les élections.",
+      "refused_card_example_2": "@@moderation_charter.partisan_solutions.refused_card_example_2|fr:Il faut relire la Bible régulièrement pour y trouver le salut.",
+      "validated_card_example_2": "@@moderation_charter.partisan_solutions.validated_card_example_2|fr:Il faut que les employeurs puissent connaître les dates de certaines fêtes religieuses : le Ramadan, Hanoucca etc."
+    },
+    "advertising": {
+      "title": "@@moderation_charter.advertising.title|fr:La publicité",
+      "description": "@@moderation_charter.advertising.description|fr:Vous ne pouvez pas faire de la publicité pour une marque ou une entreprise spécifique. Là encore, vous pouvez mentionner une marque ou entreprise uniquement à travers un exemple d’illustration.",
+      "refused_card_example": "@@moderation_charter.advertising.refused_card_example|fr:Il faut que toutes les entreprises utilisent les solutions proposées par IBM.",
+      "validated_card_example": "@@moderation_charter.advertising.validated_card_example|fr:Il faut arrêter de consommer certains sodas trop sucrés, comme le Coca-Cola."
+    },
+    "multiple_ideas": {
+      "title": "@@moderation_charter.multiple_ideas.title|fr:Les idées multiples",
+      "description": "@@moderation_charter.multiple_ideas.description|fr:Il faut formuler une seule idée par proposition pour faciliter le vote des autres citoyens sur votre contribution. Si vous avez deux idées différentes, vous pouvez créer deux propositions.",
+      "refused_card_example": "@@moderation_charter.multiple_ideas.refused_card_example|fr:Il faut que les produits des producteurs locaux soient accessibles, et communiquer sur les innovations en agriculture.",
+      "validated_card_example": "@@moderation_charter.multiple_ideas.validated_card_example|fr:Il faut que les produits des producteurs locaux soient accessibles."
+    },
+    "insults": {
+      "title": "@@moderation_charter.insults.title|fr:Les injures",
+      "description": "@@moderation_charter.insults.description|fr:‍Toute proposition irrespectueuse ou injurieuse sera refusée lors de la modération.",
+      "refused_card_example": "@@moderation_charter.insults.refused_card_example|fr:Il faut que ces idiots d’automobilistes respectent davantage le code de la route.",
+      "validated_card_example": "@@moderation_charter.insults.validated_card_example|fr:Il faut que les automobilistes respectent davantage le code de la route."
+    },
+    "correctly_formulated_solutions": {
+      "title": "@@moderation_charter.correctly_formulated_solutions.title|fr:Comment formuler une proposition correctement sur Make.org ?"
+    },
+    "search_function": "@@moderation_charter.search_function|fr:Utilisez la fonction recherche pour vérifier que votre idée n’est pas déjà présente sur le site.",
+    "concrete_elements": {
+      "text": "@@moderation_charter.concrete_elements.text|fr:Pensez à préciser votre idée avec des éléments concrets pour que les citoyen·ne·s comprennent précisément votre propos.",
+      "refused_card_example": "@@moderation_charter.concrete_elements.refused_card_example|fr:Il faut plus d’Europe.",
+      "validated_card_example": "@@moderation_charter.concrete_elements.validated_card_example|fr:Il faut donner plus de moyens à l’Union européenne.",
+      "refused_card_example_2": "@@moderation_charter.concrete_elements.refused_card_example_2|fr:Il faut réduire le chômage des jeunes.",
+      "validated_card_example_2": "@@moderation_charter.concrete_elements.validated_card_example_2|fr:Il faut créer un Pôle Emploi pour les jeunes."
+    },
+    "understandable_language": {
+      "text": "@@moderation_charter.understandable_language.text|fr:Faites-vous comprendre le mieux possible en adoptant un langage accessible à toutes et tous.",
+      "refused_card_example": "@@moderation_charter.understandable_language.refused_card_example|fr:Il faut une année de propédeutique à la fac.",
+      "validated_card_example": "@@moderation_charter.understandable_language.validated_card_example|fr:Il faut une année généraliste avant de choisir sa filière à la fac.",
+      "refused_card_example_2": "@@moderation_charter.understandable_language.refused_card_example_2|fr:Il faut que l’ASC puisse dépister le cancer.",
+      "validated_card_example_2": "@@moderation_charter.understandable_language.validated_card_example_2|fr:Il faut que l’Agence pour la Santé puisse dépister le cancer."
+    },
+    "acronyms": {
+      "text": "@@moderation_charter.acronyms.text|fr:Evitez d’utiliser dans votre proposition les #, @ ou autres acronymes comme “LOL”.",
+      "refused_card_example": "@@moderation_charter.acronyms.refused_card_example|fr:Il faut baisser les impôts des entrepreneurs #compétitivité",
+      "validated_card_example": "@@moderation_charter.acronyms.validated_card_example|fr:Il faut baisser les impôts des entrepreneurs pour les rendre compétitifs !"
+    },
+    "disclaimer": "@@moderation_charter.disclaimer|fr:Make.org n'est pas un opérateur de plateforme en ligne relevant du champ d'application de la loi n° 2018-1202 du 22 décembre 2018 relative à la lutte contre la manipulation de l'information. A ce titre, nous ne sommes donc pas soumis aux obligations y afférentes. La véracité des informations mises en ligne sur notre site nous tient cependant à cœur, et nous détaillons au sein de la présente Charte les mesures que nous prenons en ce sens.",
+    "foot_notes": {
+      "ethical_charter": "@@moderation_charter.foot_notes.ethical_charter|fr:Cette charte de modération a été élaborée en conformité avec la Charte éthique qui garantit la neutralité, l'indépendance et la transparence de Make.org.",
+      "code_penal": "@@moderation_charter.foot_notes.code_penal|fr:Le Code Pénal français définit la discrimination comme « toute distinction opérée entre les personnes physiques à raison de leur origine, de leur sexe, de leur situation de famille, de leur grossesse, de leur apparence physique, de leur patronyme, de leur lieu de résidence, de leur état de santé, de leur handicap, de leurs caractéristiques génétiques, de leurs mœurs, de leur orientation ou identité sexuelle, de leur âge, de leurs opinions politiques, de leurs activités syndicales, de leur appartenance ou de leur non-appartenance, vraie ou supposée, à une ethnie, une nation, une race ou une religion déterminée ». (Article 225-1§1)."
+    }
+  }
+}
