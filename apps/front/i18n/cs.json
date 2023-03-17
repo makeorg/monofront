@@ -1365,7 +1365,7 @@
     "refused_label": "ODMÍTNUTO",
     "validated_label": "SCHVÁLENO",
     "title": "CHARTA MODEROVÁNÍ MAKE.ORG",
-    "description": "Každý návrh předložený na platformě je zpracován ručně týmy moderátorů Make.org s ohledem na následující kritéria Charty moderování. Moderace vašeho návrhuproběhne do 48 hodin po odeslání . O zveřejnění nebo zamítnutí vašeho návrhu budete informováni e-mailem (pokud jste při registraci potvrdili vaši e-mailovou adresu). Drobné pravopisné chyby jsou opraveny moderátory, ale je na vás, abyste svůj návrh znovu zveřejnili, pokud nebude přijat.",
+    "description": "Každý návrh předložený na platformě je zpracován ručně týmy moderátorů Make.org s ohledem na následující kritéria Charty moderování¹. Moderace vašeho návrhuproběhne do 48 hodin po odeslání . O zveřejnění nebo zamítnutí vašeho návrhu budete informováni e-mailem (pokud jste při registraci potvrdili vaši e-mailovou adresu). Drobné pravopisné chyby jsou opraveny moderátory, ale je na vás, abyste svůj návrh znovu zveřejnili, pokud nebude přijat.",
     "refused_examples": "Platforma Make.org nedovoluje následující:",
     "incomprehensible_solutions": {
       "title": "Nesrozumitelné návrhy ",
@@ -1382,7 +1382,7 @@
     },
     "discriminatory_solutions": {
       "title": "Diskriminační návrhy",
-      "description": "Váš návrh nemůže v souladu se zákonem obsahovat projevy podněcující k násilí nebo nenávisti. Rovněž nesmí obsahovat výroky diskriminačního nebo pomlouvačného charakteru, zejména vůči jakékoliv etnické, sociální nebo náboženské skupině.",
+      "description": "Váš návrh nemůže v souladu se zákonem obsahovat projevy podněcující k násilí nebo nenávisti². Rovněž nesmí obsahovat výroky diskriminačního nebo pomlouvačného charakteru, zejména vůči jakékoliv etnické, sociální nebo náboženské skupině.",
       "refused_card_example": "Je třeba dohlížet na to, aby homosexuálové nedosáhli uzákonění sňatků homosexuálů",
       "validated_card_example": "Je třeba dohlížet na to, aby spolu mohli Češi lépe komunikovat.",
       "refused_card_example_2": "Je třeba zakázat nošení křížů kolem krku, neboť jsou symbolem podrobení.",
