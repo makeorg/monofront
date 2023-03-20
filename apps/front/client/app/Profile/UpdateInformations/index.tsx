@@ -24,7 +24,7 @@ import { FormSuccessMessage } from '@make.org/components/Form/Success';
 import { getAgeFromDateOfBirth } from '@make.org/utils/helpers/date';
 import { OrganisationService } from '@make.org/utils/services/Organisation';
 import { PersonalityService } from '@make.org/utils/services/Personality';
-import { LegalConsent } from '@make.org/components/Auth/Register/Forms/LegalConsent';
+import { LegalConsent } from '@make.org/components/Form/LegalConsent';
 import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { useAppContext } from '@make.org/store';
 import { OrganisationForm } from './Organisation';

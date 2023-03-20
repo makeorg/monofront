@@ -3,14 +3,13 @@ import React, { FC, useEffect } from 'react';
 import i18n from 'i18next';
 import { trackDisplayAuthenticationForm } from '@make.org/utils/services/Tracking';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
-import { ProposalSubmitAuthenticationRegisterButtons } from '@make.org/components/Auth/Register/AuthenticationButtons/ProposalSubmitAuthenticationButtons';
-import { Register } from '@make.org/components/Auth/Register';
-import { Login } from '@make.org/components/Auth/Login/index';
+import { ProposalSubmitAuthenticationRegisterButtons } from '@make.org/components/Proposal/Submit/ProposalSubmitAuthenticationButtons';
 import { getDataPageLink } from '@make.org/utils/helpers/url';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { useAppContext } from '@make.org/store';
 import { setPanelContent } from '@make.org/store/actions/panel';
 import { NewWindowGreyIconStyle } from '@make.org/ui/elements/LinkElements';
+import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 import {
   ProposalStepWrapperColumnStyle,
   ProposalBackButtonCenterStyle,
@@ -22,7 +21,6 @@ import {
   DataPolicyNewWindowLinkStyle,
   ProposalStepWrapperStyle,
 } from './style';
-import { ProposalForm } from './Form';
 
 export const ProposalAuthentication: FC = () => {
   const { state, dispatch } = useAppContext();
@@ -39,7 +37,7 @@ export const ProposalAuthentication: FC = () => {
         <ColumnElementStyle>
           <ProposalBackButtonCenterStyle
             isWidget={isWidget}
-            onClick={() => dispatch(setPanelContent(<ProposalForm />))}
+            onClick={() => dispatch(setPanelContent(PANEL_CONTENT.PROPOSAL_SUBMIT))}
           >
             {i18n.t('proposal_submit.authentication.back')}{' '}
           </ProposalBackButtonCenterStyle>
@@ -50,15 +48,15 @@ export const ProposalAuthentication: FC = () => {
             {i18n.t('proposal_submit.authentication.last_step')}{' '}
           </ProposalAltStepTitleStyle>
           <ProposalSubmitAuthenticationRegisterButtons
-            onEmailRegister={() => dispatch(setPanelContent(<Register />))}
+            onEmailRegister={() => dispatch(setPanelContent(PANEL_CONTENT.REGISTER))}
           />
         </ColumnElementStyle>
         <ProposalAuthLoginWrapperStyle>
           {' '}
-            {i18n.t('proposal_submit.authentication.button_login_text')}&nbsp;
+          {i18n.t('proposal_submit.authentication.button_login_text')}&nbsp;
           {' '}
           <ProposalAuthLoginStyle
-            onClick={() => dispatch(setPanelContent(<Login />))}
+            onClick={() => dispatch(setPanelContent(PANEL_CONTENT.LOGIN))}
           >
             {i18n.t('proposal_submit.authentication.button_login_link')}{' '}
           </ProposalAuthLoginStyle>

@@ -6,7 +6,7 @@ import {
   RedButtonProposalStyle,
 } from '@make.org/ui/elements/ButtonsElements';
 import { ErrorObjectType, RegisterFormDataType } from '@make.org/types';
-import { EmailPasswordFields } from '../../CommonFields/EmailPassword';
+import { EmailPasswordFields } from '../../../Form/EmailPassword';
 
 type Props = {
   user: RegisterFormDataType;

@@ -9,10 +9,7 @@ import { ConditionParagraphMarginStylePanel } from '@make.org/ui/elements/Paragr
 import { OptInCheckBox } from '@make.org/components/Form/CheckBox/OptInCheckbox';
 import { RegisterCheckBox } from '@make.org/components/Form/CheckBox/RegisterCheckbox';
 import { throttle } from '@make.org/utils/helpers/throttle';
-import { UserService } from '@make.org/utils/services/User';
-import { setPanelContent } from '@make.org/store/actions/panel/';
-import { Register } from '@make.org/components/Auth/Register';
-import { ProposalBackButtonStyle } from '../../../Proposal/Submit/style';
+import { ProposalBackButtonStyle } from '@make.org/components/Proposal/Submit/style';
 
 import {
   NewWindowIconStyle,
@@ -20,51 +17,26 @@ import {
   RegisterPanelOptInWrapperStyle,
   LoginTitleWrapperCenterStyle,
   RegisterPanelSubTitleWrapperStyle,
-} from '../../style';
+} from '@make.org/components/Auth/style';
 
 type Props = {
-  provider: string;
-  token: string;
-  success: (isNewAccount: boolean) => void;
-  failure: () => void;
-  unexpectedError: () => void;
+  handleSubmit: (acceptDataPolicy: boolean, optinNewsletter: boolean) => void;
+  handleReturn: () => void;
 };
 
-export const OptInGTU: React.FC<Props> = ({
-  provider,
-  token,
-  success,
-  failure,
-  unexpectedError,
-}) => {
-  const { dispatch, state } = useAppContext();
+export const OptInGTU: React.FC<Props> = ({ handleSubmit, handleReturn }) => {
+  const { state } = useAppContext();
 
   const { country, language, source } = state.appConfig;
   const isWidget = source === 'widget';
   const [acceptDataPolicy, setAcceptDataPolicy] = useState<boolean>(false);
   const [optinNewsletter, setOptinNewsletter] = useState<boolean>(false);
 
-  const handleSubmit = () => {
-    UserService.loginSocial(
-      provider,
-      token,
-      acceptDataPolicy,
-      optinNewsletter,
-      success,
-      failure,
-      unexpectedError
-    );
-  };
-
-  const handleReturn = () => {
-    dispatch(setPanelContent(<Register />));
-  };
-
   return (
     <RegisterPanelOptInWrapperStyle
       as="form"
       id={FORM.DATA_POLICY_CONSENT}
-      onSubmit={throttle(handleSubmit)}
+      onSubmit={throttle(() => handleSubmit(acceptDataPolicy, optinNewsletter))}
     >
       <ProposalBackButtonStyle onClick={handleReturn}>
         {i18n.t('common.back')}

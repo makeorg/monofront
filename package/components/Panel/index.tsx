@@ -15,6 +15,16 @@ import {
   clearProposalPending,
   setProposalSource,
 } from '@make.org/store/actions/pendingProposal';
+import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
+import { Register } from '@make.org/components/Auth/Register';
+import { Login } from '@make.org/components/Auth/Login';
+import { ProposalJourney } from '@make.org/components/Proposal/Submit/Journey';
+import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
+import { PasswordForgot } from '@make.org/components/Auth/PasswordForgot';
+import { ProposalAuthentication } from '@make.org/components/Proposal/Submit/Authentication';
+import { RegisterConfirmation } from '@make.org/components/Auth/RegisterConfirmation';
+import { ProposalForm } from '@make.org/components/Proposal/Submit/Form';
+import { ReportTranslationConfirmation } from '@make.org/components/ReportOptions/Steps/Confirmation';
 import {
   PanelWrapperStyle,
   PanelOverlayStyle,
@@ -28,8 +38,32 @@ export const Panel: React.FC = () => {
   const { dispatch, state } = useAppContext();
   const { source } = state.appConfig;
   const isWidget = source === 'widget';
-  const { isExpanded, panelContent } = state.panel;
+  const { isExpanded, panelContent: panelContentState } = state.panel;
   const [className, setClassName] = useState<string>('');
+
+  const panels = new Map<PANEL_CONTENT, JSX.Element>([
+    [PANEL_CONTENT.LOGIN, <Login />],
+    [PANEL_CONTENT.REGISTER, <Register />],
+    [PANEL_CONTENT.PROPOSAL_JOURNEY, <ProposalJourney />],
+    [PANEL_CONTENT.PROPOSAL_SUCCESS, <ProposalSuccess />],
+    [PANEL_CONTENT.PROPOSAL_SUCCESS_REGISTER, <ProposalSuccess isRegister />],
+    [PANEL_CONTENT.PASSWORD_FORGOT, <PasswordForgot />],
+    [PANEL_CONTENT.PROPOSAL_AUTHENTICATION, <ProposalAuthentication />],
+    [PANEL_CONTENT.REGISTER_CONFIRMATION, <RegisterConfirmation />],
+    [
+      PANEL_CONTENT.REGISTER_CONFIRMATION_SOCIAL,
+      <RegisterConfirmation isSocial />,
+    ],
+    [PANEL_CONTENT.PROPOSAL_SUBMIT, <ProposalForm />],
+    [
+      PANEL_CONTENT.REPORT_TRANSLATION_CONFIRMATION,
+      <ReportTranslationConfirmation />,
+    ],
+  ]);
+
+  const panelContent: JSX.Element = panels.has(panelContentState)
+    ? panels.get(panelContentState)
+    : panelContentState;
 
   const handleCloseAndRemove = () => {
     dispatch(closePanel());

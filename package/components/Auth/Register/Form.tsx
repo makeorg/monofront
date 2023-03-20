@@ -1,15 +1,20 @@
 import React, { ChangeEvent, FormEvent, useEffect } from 'react';
 import { ErrorObjectType, RegisterFormDataType } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
-import { FormLeftAlignHeightStyle } from '@make.org/ui/elements/FormElements';
+import {
+  FormLeftAlignHeightStyle,
+  FormRequirementsStyle,
+} from '@make.org/ui/elements/FormElements';
 import { getFieldError } from '@make.org/utils/helpers/form';
 import { FORM } from '@make.org/types/enums';
 import { throttle } from '@make.org/utils/helpers/throttle';
 import { trackDisplaySignupForm } from '@make.org/utils/services/Tracking';
-import { TitleForm } from './Title';
-import { FirstStepRegister } from '../Steps/FirstStep';
-import { SecondStepRegister } from '../Steps/SecondStep';
-import { SocialAuthenticationButtons } from '../AuthenticationButtons/SocialAuthenticationButtons';
+import i18n from 'i18next';
+import { FirstStepRegister } from '@make.org/components/Auth/Register/Steps/FirstStep';
+import { SecondStepRegister } from '@make.org/components/Auth/Register/Steps/SecondStep';
+import { SocialAuthenticationButtons } from '@make.org/components/Auth/Social/SocialAuthenticationButtons';
+import { RegisterEmailTitleStyle } from '@make.org/components/Auth/style';
+import { FormErrors } from '@make.org/components/Form/Errors';
 
 type Props = {
   user: RegisterFormDataType;
@@ -52,7 +57,18 @@ export const RegisterForm: React.FC<Props> = ({
       onSubmit={throttle(handleSubmit)}
       data-cy-container="register-form"
     >
-      <TitleForm errors={errors} registerStep={registerStep} />
+      <RegisterEmailTitleStyle data-cy-container="register-panel-title">
+        {i18n.t('common.social_login.email_register')}{' '}
+        {i18n.t('common.social_login.count_register', {
+          count: registerStep,
+        })}
+      </RegisterEmailTitleStyle>
+      <FormRequirementsStyle>
+        {registerStep === 1
+          ? i18n.t('common.form.requirements_short')
+          : i18n.t('common.form.requirements')}
+      </FormRequirementsStyle>
+      <FormErrors errors={errors} />
       {registerStep === 1 && (
         <>
           <FirstStepRegister

@@ -9,11 +9,11 @@ import { MiddleColumnToRowStyle } from '@make.org/ui/elements/FlexElements';
 import { incrementSequenceIndex } from '@make.org/store/actions/sequence';
 import { setPanelContent } from '@make.org/store/actions/panel';
 import { useAppContext } from '@make.org/store';
-import { ProposalJourney } from '@make.org/components/Proposal/Submit/Journey';
 import {
   clearProposalPending,
   setProposalSource,
 } from '@make.org/store/actions/pendingProposal';
+import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 import {
   SequenceIntroParagraphStyle,
   SequencePushProposalButtonStyle,
@@ -42,7 +42,7 @@ export const PushProposalCard: React.FC = () => {
           onClick={() => {
             dispatch(clearProposalPending());
             dispatch(setProposalSource('from-proposal-push-card'));
-            dispatch(setPanelContent(<ProposalJourney />));
+            dispatch(setPanelContent(PANEL_CONTENT.PROPOSAL_JOURNEY));
           }}
         >
           <PencilIconStyle aria-hidden focusable="false" />

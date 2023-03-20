@@ -14,7 +14,7 @@ import { setPanelContent } from '@make.org/store/actions/panel';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
 import { useAppContext } from '@make.org/store';
-import { Login } from '../Login';
+import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 import { ProfileLinkStyle } from './style';
 
 export const HeaderAuthentication: React.FC = () => {
@@ -47,7 +47,7 @@ export const HeaderAuthentication: React.FC = () => {
     <ProfileLinkStyle
       className={SEARCH.SEARCH_ELEMENT_ARIA_CLASS}
       as={UnstyledButtonStyle}
-      onClick={() => dispatch(setPanelContent(<Login />))}
+      onClick={() => dispatch(setPanelContent(PANEL_CONTENT.LOGIN))}
       data-cy-button="login"
       type="button"
     >

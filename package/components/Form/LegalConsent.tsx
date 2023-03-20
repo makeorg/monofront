@@ -17,7 +17,7 @@ import {
   LegalButtonGroupStyle,
   LegalCancelStyle,
   LegalSubmitStyle,
-} from '../../style';
+} from '../Auth/style';
 
 type Props = {
   needLegalConsent: boolean;

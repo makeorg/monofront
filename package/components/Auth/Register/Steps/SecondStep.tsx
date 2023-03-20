@@ -10,7 +10,7 @@ import { ConditionParagraphMarginStylePanel } from '@make.org/ui/elements/Paragr
 import { OptInCheckBox } from '@make.org/components/Form/CheckBox/OptInCheckbox';
 import { RegisterCheckBox } from '@make.org/components/Form/CheckBox/RegisterCheckbox';
 import { isSupportedCountry } from '@make.org/utils/validator/postCode';
-import { ExtraInRegisterformationsFields } from '../../CommonFields/ExtraRegisterInformations';
+import { ExtraInRegisterformationsFields } from './ExtraRegisterInformations';
 
 import {
   NewWindowIconStyle,

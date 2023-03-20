@@ -17,8 +17,8 @@ import {
 } from '@make.org/ui/elements/ButtonsElements';
 import { getParticipateLink } from '@make.org/utils/helpers/url';
 import { useAppContext } from '@make.org/store';
-import { Register } from '@make.org/components/Auth/Register';
 import { setPanelContent } from '@make.org/store/actions/panel';
+import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 import {
   SequenceAltTitleStyle,
   SequenceParagraphStyle,
@@ -38,7 +38,7 @@ export const FinalCard: React.FC<Props> = ({ questionSlug }) => {
   const { country } = state.appConfig;
 
   const handleClick = () => {
-    dispatch(setPanelContent(<Register />));
+    dispatch(setPanelContent(PANEL_CONTENT.REGISTER));
     trackClickCitizenRegister();
   };
 

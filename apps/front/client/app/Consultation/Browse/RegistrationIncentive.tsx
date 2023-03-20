@@ -3,8 +3,8 @@ import i18n from 'i18next';
 import { SvgMail } from '@make.org/ui/Svg/elements';
 import { trackClickSubscribe } from '@make.org/utils/services/Tracking';
 import { setPanelContent } from '@make.org/store/actions/panel';
-import { Register } from '@make.org/components/Auth/Register';
 import { useAppContext } from '@make.org/store';
+import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 import {
   NoConsultationWrapperStyle,
   NoConsultationImageStyle,
@@ -45,7 +45,7 @@ export const RegistrationIncentive: FC<Props> = ({
   const { dispatch } = useAppContext();
 
   const handleClick = () => {
-    dispatch(setPanelContent(<Register />));
+    dispatch(setPanelContent(PANEL_CONTENT.REGISTER));
     trackClickSubscribe('subscribe-next-consultation');
   };
 

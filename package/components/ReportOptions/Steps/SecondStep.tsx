@@ -14,8 +14,8 @@ import {
 import { trackReportSolution } from '@make.org/utils/services/Tracking';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { ReportReasonType } from '@make.org/types';
+import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 import { FirstStepReportOptions } from './FirstStep';
-import { ReportTranslationConfirmation } from './Confirmation';
 import {
   ReportTitleStyle,
   ReportWrapperStyle,
@@ -88,7 +88,7 @@ export const SecondStepForm: React.FC<Props> = ({
     setCanSubmit(false);
     const success = () => {
       setCanSubmit(true);
-      dispatch(setPanelContent(<ReportTranslationConfirmation />));
+      dispatch(setPanelContent(PANEL_CONTENT.REPORT_TRANSLATION_CONFIRMATION));
       trackReportSolution(currentReport);
     };
     const failure = (_: Error) => {

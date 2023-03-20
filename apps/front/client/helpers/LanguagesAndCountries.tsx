@@ -1,14 +1,5 @@
+import { CountryType, LanguageType } from '@make.org/types/CountryLanguage';
 import { LocaleType } from '@make.org/types/enums';
-
-type SortType = {
-  isoCode: string;
-  name: string;
-};
-
-type LanguagesType = {
-  isoCode: keyof typeof LocaleType;
-  name: string;
-};
 
 export const getCountriesAndLanguages = (
   countriesWithConsultations: string[],
@@ -17,8 +8,8 @@ export const getCountriesAndLanguages = (
   language: keyof typeof LocaleType,
   availableTranslations?: string[]
 ): {
-  countries: SortType[];
-  languages: LanguagesType[];
+  countries: CountryType[];
+  languages: LanguageType[];
 } => {
   const countries: {
     isoCode: string;
@@ -44,10 +35,10 @@ export const getCountriesAndLanguages = (
     })
   );
 
-  countries.sort((a: SortType, b: SortType) =>
+  countries.sort((a: CountryType, b: CountryType) =>
     new Intl.Collator(language).compare(a.name, b.name)
   );
-  languages.sort((a: SortType, b: SortType) =>
+  languages.sort((a: CountryType, b: CountryType) =>
     new Intl.Collator(language).compare(a.name, b.name)
   );
 

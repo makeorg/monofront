@@ -26,20 +26,19 @@ import { NOTIF } from '@make.org/types/enums';
 import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
 import { ProposalService } from '@make.org/utils/services/Proposal';
-import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import {
   GoogleOAuthProvider,
   TokenResponse,
   useGoogleLogin,
 } from '@react-oauth/google';
-import { RegisterConfirmation } from '../Register/Steps/RegisterConfirmation';
+import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 import {
   GoogleButtonStyle,
   SocialButtonLabelStyle,
   SvgLogoWrapperStyle,
 } from './style';
-import { OptInGTU } from '../Register/Steps/OptInGTU';
+import { OptInGTU } from './OptInGTU';
 
 const useLoginSuccess = (isRegister: boolean) => {
   const { dispatch, state } = useAppContext();
@@ -64,7 +63,7 @@ const useLoginSuccess = (isRegister: boolean) => {
     }
 
     if (!pendingProposal && isRegister) {
-      dispatch(setPanelContent(<RegisterConfirmation isSocial />));
+      dispatch(setPanelContent(PANEL_CONTENT.REGISTER_CONFIRMATION_SOCIAL));
     }
 
     if (pendingProposal) {
@@ -73,7 +72,7 @@ const useLoginSuccess = (isRegister: boolean) => {
         question.questionId,
         question.returnedLanguage,
         country,
-        () => dispatch(setPanelContent(<ProposalSuccess />))
+        () => dispatch(setPanelContent(PANEL_CONTENT.PROPOSAL_SUCCESS))
       );
     }
   };
@@ -99,15 +98,28 @@ const useCheckSocialPrivacyPolicy = (isRegister: boolean) => {
   };
   const unexpectedError = () => handleClose();
   const validateDataPolicy = (accessToken: string) => {
+    const handleSubmit = (
+      acceptDataPolicy: boolean,
+      optinNewsletter: boolean
+    ) => {
+      UserService.loginSocial(
+        GOOGLE_PROVIDER_ENUM,
+        accessToken,
+        acceptDataPolicy,
+        optinNewsletter,
+        loginSuccess,
+        failure,
+        unexpectedError
+      );
+    };
+
+    const handleReturn = () => {
+      dispatch(setPanelContent(PANEL_CONTENT.REGISTER));
+    };
+
     dispatch(
       setPanelContent(
-        <OptInGTU
-          provider={GOOGLE_PROVIDER_ENUM}
-          token={accessToken}
-          success={loginSuccess}
-          failure={failure}
-          unexpectedError={unexpectedError}
-        />
+        <OptInGTU handleSubmit={handleSubmit} handleReturn={handleReturn} />
       )
     );
   };

@@ -4,8 +4,8 @@ import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { trackClickCitizenRegister } from '@make.org/utils/services/Tracking';
 import { useAppContext } from '@make.org/store';
-import { Register } from '@make.org/components/Auth/Register';
 import { setPanelContent } from '@make.org/store/actions/panel';
+import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 import {
   CitizenRegisterContentStyle,
   CitizenRegisterTitleStyle,
@@ -17,7 +17,7 @@ export const CitizenRegister: FC = () => {
   const { dispatch, state } = useAppContext();
 
   const handleClick = () => {
-    dispatch(setPanelContent(<Register />));
+    dispatch(setPanelContent(PANEL_CONTENT.REGISTER));
     trackClickCitizenRegister();
   };
 

@@ -7,14 +7,14 @@ import {
 } from '@make.org/ui/elements/SeparatorsElements';
 import { env } from '@make.org/assets/env';
 import { setSocialConnect } from '@make.org/utils/helpers/social';
-import { FacebookAuthentication } from '../../Social/FacebookAuthentication';
-import { GoogleAuthentication } from '../../Social/GoogleAuthentication';
+import { FacebookAuthentication } from '@make.org/components/Auth/Social/FacebookAuthentication';
+import { GoogleAuthentication } from '@make.org/components/Auth/Social/GoogleAuthentication';
 import {
   AuthenticationButtonWrapperStyle,
   AuthenticationEmailIconStyle,
   EmailButtonStyle,
   SocialButtonLabelStyle,
-} from '../../Social/style';
+} from '@make.org/components/Auth/Social/style';
 
 type Props = {
   onEmailRegister?: () => void;

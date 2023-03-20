@@ -11,8 +11,9 @@ import { isSequencePage as getIsSequencePage } from '@make.org/utils/routes';
 import { useLocation } from 'react-router';
 import { useAppContext } from '@make.org/store';
 import { getCountriesTransMap } from '@make.org/front/client/helpers/translationsMap';
-import { SwitchCountryLanguage } from '../SwitchCountryLanguage';
-import { FooterExternalLink } from './ExternalLink';
+import { SwitchCountryLanguage } from '@make.org/front/client/app/SwitchCountryLanguage';
+import { FooterInternalLink } from '@make.org/front/client/app/Footer/InternalLink';
+import { FooterExternalLink } from '@make.org/front/client/app/Footer/ExternalLink';
 import {
   useExternalLinks,
   useInternalLinks,
@@ -30,7 +31,6 @@ import {
   FooterContactIconStyle,
   FooterBulletPointStyle,
 } from './style';
-import { FooterInternalLink } from './InternalLink';
 
 /**
  * Renders Main Footer

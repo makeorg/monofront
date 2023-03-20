@@ -3,7 +3,7 @@ import i18n from 'i18next';
 import { setPanelContent } from '@make.org/store/actions/panel';
 import { useAppContext } from '@make.org/store';
 import { clearProposalPending } from '@make.org/store/actions/pendingProposal';
-import { ProposalJourney } from './Journey';
+import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 import { PanelTriggerStyle, TriggerIconStyle } from './style';
 
 export const ProposalSubmit: React.FC = () => {
@@ -13,7 +13,7 @@ export const ProposalSubmit: React.FC = () => {
     <PanelTriggerStyle
       onClick={() => {
         dispatch(clearProposalPending());
-        dispatch(setPanelContent(<ProposalJourney />));
+        dispatch(setPanelContent(PANEL_CONTENT.PROPOSAL_JOURNEY));
       }}
       data-cy-button="proposal-panel"
     >

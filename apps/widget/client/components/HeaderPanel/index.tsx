@@ -6,7 +6,6 @@ import { SequenceTitleStyle } from '@make.org/components/Sequence/style';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { QuestionType } from '@make.org/types';
 import { setPanelContent } from '@make.org/store/actions/panel';
-import { ProposalJourney } from '@make.org/components/Proposal/Submit/Journey';
 import { TriggerIconStyle } from '@make.org/components/Proposal/Submit/style';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import {
@@ -19,6 +18,7 @@ import {
 } from '@make.org/utils/helpers/sequence';
 import controversyIcon from '@make.org/assets/images/controversyIcon.png';
 import popularIcon from '@make.org/assets/images/popularIcon.png';
+import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 import {
   MainTitleStyle,
   LogoStyle,
@@ -60,7 +60,7 @@ export const HeaderPanel: FC = () => {
             onClick={() => {
               dispatch(clearProposalPending());
               dispatch(setProposalSource('from-header-panel'));
-              dispatch(setPanelContent(<ProposalJourney />));
+              dispatch(setPanelContent(PANEL_CONTENT.PROPOSAL_JOURNEY));
             }}
             data-cy-button="proposal-panel"
           >

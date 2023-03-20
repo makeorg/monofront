@@ -19,7 +19,6 @@ import {
   removePanelContent,
 } from '@make.org/store/actions/panel';
 import { clearProposalPending } from '@make.org/store/actions/pendingProposal';
-import { ProposalJourney } from '@make.org/components/Proposal/Submit/Journey';
 
 import {
   removeCurrentQuestionSlug,
@@ -27,6 +26,7 @@ import {
 } from '@make.org/store/actions/currentQuestion';
 import { loadQuestion } from '@make.org/store/actions/questions';
 import { useAppContext } from '@make.org/store';
+import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 
 const NotFoundPage = loadable(() => import('../NotFound'));
 
@@ -94,7 +94,7 @@ export const QuestionWrapper: FC<Props> = ({ children, withRedirect }) => {
       currentQuestion.canPropose
     ) {
       dispatch(clearProposalPending());
-      dispatch(setPanelContent(<ProposalJourney />));
+      dispatch(setPanelContent(PANEL_CONTENT.PROPOSAL_JOURNEY));
     }
 
     return () => {

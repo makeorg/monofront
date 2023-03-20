@@ -23,7 +23,6 @@ import {
   FormRightAlignStyle,
   FormRequirementsLeftStyle,
 } from '@make.org/ui/elements/FormElements';
-import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import {
   setPanelContent,
@@ -31,10 +30,10 @@ import {
   removePanelContent,
 } from '@make.org/store/actions/panel';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 import { FormErrors } from '../../Form/Errors';
 import { SubmitButton } from '../../Form/SubmitButton';
-import { EmailPasswordFields } from '../CommonFields/EmailPassword';
-import { PasswordForgot } from '../PasswordForgot';
+import { EmailPasswordFields } from '../../Form/EmailPassword';
 
 type TypeLoginValues = {
   email: string;
@@ -99,7 +98,7 @@ export const LoginForm: FC = () => {
         question.questionId,
         question.returnedLanguage,
         country,
-        () => dispatch(setPanelContent(<ProposalSuccess />))
+        () => dispatch(setPanelContent(PANEL_CONTENT.PROPOSAL_SUCCESS))
       );
     };
     const handleErrors = (serviceErrors?: ErrorObjectType[]) => {
@@ -146,7 +145,7 @@ export const LoginForm: FC = () => {
         handleChange={handleChange}
       />
       <LinkButtonStyle
-        onClick={() => dispatch(setPanelContent(<PasswordForgot />))}
+        onClick={() => dispatch(setPanelContent(PANEL_CONTENT.PASSWORD_FORGOT))}
         type="button"
       >
         {i18n.t('login.forgot_password')}

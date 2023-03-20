@@ -11,24 +11,22 @@ import { UserService } from '@make.org/utils/services/User';
 import { Logger } from '@make.org/utils/services/Logger';
 import { useAppContext } from '@make.org/store';
 import { getUser } from '@make.org/store/actions/authentication';
-import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { NewWindowGreyIconStyle } from '@make.org/ui/elements/LinkElements';
 import { setRegisterStep } from '@make.org/store/actions/pendingProposal';
-import { RegisterForm } from './Forms/Form';
-import { RegisterConfirmation } from './Steps/RegisterConfirmation';
+import { LegalConsent } from '@make.org/components/Form/LegalConsent';
+import { ProposalBackButtonStyle } from '@make.org/components/Proposal/Submit/style';
+import { ProposalAuthentication } from '@make.org/components/Proposal/Submit/Authentication';
 import {
   AuthenticationWrapperStyle,
   GreyParagraphStyle,
   PersonalDataGreyLinkStyle,
   RegisterFormUtilsAlignementWrapperStyle,
-} from '../style';
-import { LegalConsent } from './Forms/LegalConsent';
-import { ProposalBackButtonStyle } from '../../Proposal/Submit/style';
-import { ProposalAuthentication } from '../../Proposal/Submit/Authentication';
-import { Login } from '../Login';
+} from '@make.org/components/Auth/style';
+import { RegisterForm } from '@make.org/components/Auth/Register/Form';
+import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 
 export const Register: React.FC = () => {
   const { dispatch, state } = useAppContext();
@@ -64,7 +62,7 @@ export const Register: React.FC = () => {
       dispatch(setPanelContent(<ProposalAuthentication />));
       return;
     }
-    dispatch(setPanelContent(<Login />));
+    dispatch(setPanelContent(PANEL_CONTENT.LOGIN));
   };
 
   const handleCheckbox = (fieldName: string, value: boolean) => {
@@ -154,7 +152,7 @@ export const Register: React.FC = () => {
         trackSignupEmailSuccess();
         setErrors([]);
         if (!pendingProposal) {
-          dispatch(setPanelContent(<RegisterConfirmation />));
+          dispatch(setPanelContent(PANEL_CONTENT.REGISTER_CONFIRMATION));
         }
 
         // Display the proposal in the proposal submit context
@@ -164,7 +162,8 @@ export const Register: React.FC = () => {
             question.questionId,
             question.returnedLanguage,
             country,
-            () => dispatch(setPanelContent(<ProposalSuccess isRegister />))
+            () =>
+              dispatch(setPanelContent(PANEL_CONTENT.PROPOSAL_SUCCESS_REGISTER))
           );
         }
       });

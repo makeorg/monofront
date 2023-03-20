@@ -7,10 +7,9 @@ import { setPanelContent } from '@make.org/store/actions/panel';
 import { ExtraAltParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { useAppContext } from '@make.org/store';
 import { trackDisplayForgotPasswordForm } from '@make.org/utils/services/Tracking';
-import { Login } from '../Login';
+import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 import { ForgotPasswordForm } from './Form';
 import { ForgotPasswordStyle } from './style';
-import { ProposalAuthentication } from '../../Proposal/Submit/Authentication';
 
 /**
  * Renders Forgot Password component
@@ -21,7 +20,9 @@ export const PasswordForgot: FC = () => {
   const { pendingProposal } = state.pendingProposal;
 
   const content = () =>
-    pendingProposal ? <ProposalAuthentication /> : <Login />;
+    pendingProposal
+      ? PANEL_CONTENT.PROPOSAL_AUTHENTICATION
+      : PANEL_CONTENT.LOGIN;
 
   useEffect(() => {
     trackDisplayForgotPasswordForm();

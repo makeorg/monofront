@@ -24,7 +24,7 @@ import {
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { useAppContext } from '@make.org/store';
 import { setPanelContent } from '@make.org/store/actions/panel';
-import { SwitchCountryLanguage } from '../../SwitchCountryLanguage';
+import { SwitchCountryLanguage } from '@make.org/front/client/app/SwitchCountryLanguage';
 import {
   MenuPanelStyle,
   MenuCloseTriggerStyle,

@@ -12,7 +12,6 @@ import {
   trackDisplayProposalSubmitValidation,
 } from '@make.org/utils/services/Tracking';
 import { getAgeFromDateOfBirth } from '@make.org/utils/helpers/date';
-import { ProposalJourney } from '@make.org/components/Proposal/Submit/Journey';
 import {
   ProposalFormSuccessWrapperStyle,
   ProposalSuccessParagraphWrapperStyle,
@@ -46,6 +45,7 @@ import { AvatarImageStyle } from '@make.org/ui/components/Avatar/style';
 import { SvgEmptyAvatar } from '@make.org/ui/Svg/elements';
 import { ProposalTooltip } from '@make.org/ui/components/Tooltip/ProposalTooltip';
 import { QuestionType } from '@make.org/types';
+import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 
 type Props = {
   // eslint-disable-next-line react/require-default-props
@@ -91,7 +91,7 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
 
   const handleOtherIdeaButton = () => {
     dispatch(clearProposalPending());
-    dispatch(setPanelContent(<ProposalJourney />));
+    dispatch(setPanelContent(PANEL_CONTENT.PROPOSAL_JOURNEY));
     dispatch(setProposalSource('new_idea'));
   };
 

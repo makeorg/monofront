@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import { SvgLightBulb } from '@make.org/ui/Svg/elements';
 import i18n from 'i18next';
 import { setPanelContent } from '@make.org/store/actions/panel';
-import { ProposalJourney } from '@make.org/components/Proposal/Submit/Journey';
 import { useAppContext } from '@make.org/store';
 import {
   ParticipateCardStyle,
@@ -13,6 +12,7 @@ import {
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { QuestionType } from '@make.org/types';
 import { clearProposalPending } from '@make.org/store/actions/pendingProposal';
+import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 
 export const SubmitProposal: FC = () => {
   const { state, dispatch } = useAppContext();
@@ -30,7 +30,7 @@ export const SubmitProposal: FC = () => {
       <ParticipateCardButtonStyle
         onClick={() => {
           dispatch(clearProposalPending());
-          dispatch(setPanelContent(<ProposalJourney />));
+          dispatch(setPanelContent(PANEL_CONTENT.PROPOSAL_JOURNEY));
         }}
         data-cy-button="proposal-button"
         disabled={!question.canPropose}

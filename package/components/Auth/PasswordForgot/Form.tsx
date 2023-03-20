@@ -11,7 +11,7 @@ import {
   SubmitPaperPlaneIcon,
 } from '@make.org/utils/constants/icons';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
-import { Login } from '../Login';
+import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 import { UntypedInput } from '../../Form/UntypedInput';
 import { SubmitButton } from '../../Form/SubmitButton';
 import { FormErrors } from '../../Form/Errors';
@@ -51,7 +51,9 @@ export const ForgotPasswordForm: React.FC = () => {
         <ForgotPasswordTitleStyle>
           {i18n.t('forgot_password.success')}
         </ForgotPasswordTitleStyle>
-        <RedButtonStyle onClick={() => dispatch(setPanelContent(<Login />))}>
+        <RedButtonStyle
+          onClick={() => dispatch(setPanelContent(PANEL_CONTENT.LOGIN))}
+        >
           {i18n.t('proposal_submit.authentication.back_authentication')}
         </RedButtonStyle>
       </>

@@ -13,15 +13,15 @@ import { setSocialConnect } from '@make.org/utils/helpers/social';
 import {
   RegisterParagraphStyle,
   SocialRegisterButtonsWrapperStyle,
-} from '../../style';
-import { Login } from '../../Login';
-import { FacebookAuthentication } from '../../Social/FacebookAuthentication';
-import { GoogleAuthentication } from '../../Social/GoogleAuthentication';
+} from '@make.org/components/Auth/style';
+import { FacebookAuthentication } from '@make.org/components/Auth/Social/FacebookAuthentication';
+import { GoogleAuthentication } from '@make.org/components/Auth/Social/GoogleAuthentication';
+import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 
 export const SocialAuthenticationButtons: React.FC = () => {
   const { dispatch } = useAppContext();
   const handleLoginModal = () => {
-    dispatch(setPanelContent(<Login />));
+    dispatch(setPanelContent(PANEL_CONTENT.LOGIN));
   };
   const FRONT_URL = env.frontUrl() || window.FRONT_URL;
 

@@ -31,15 +31,14 @@ import {
   setPanelContent,
 } from '@make.org/store/actions/panel';
 import { ProposalService } from '@make.org/utils/services/Proposal';
-import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
-import { RegisterConfirmation } from '../Register/Steps/RegisterConfirmation';
+import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 import {
   FacebookButtonStyle,
   SocialButtonLabelStyle,
   SvgLogoFacebookWrapperStyle,
 } from './style';
-import { OptInGTU } from '../Register/Steps/OptInGTU';
+import { OptInGTU } from './OptInGTU';
 
 type Props = {
   isRegister?: boolean;
@@ -138,7 +137,7 @@ export const FacebookAuthentication: React.FC<Props> = ({ isRegister }) => {
       }
 
       if (!pendingProposal && isRegister) {
-        dispatch(setPanelContent(<RegisterConfirmation isSocial />));
+        dispatch(setPanelContent(PANEL_CONTENT.REGISTER_CONFIRMATION_SOCIAL));
       }
       trackAuthenticationSocialSuccess(FACEBOOK_PROVIDER_ENUM, isNewAccount);
 
@@ -148,7 +147,7 @@ export const FacebookAuthentication: React.FC<Props> = ({ isRegister }) => {
           question.questionId,
           question.returnedLanguage,
           country,
-          () => dispatch(setPanelContent(<ProposalSuccess />))
+          () => dispatch(setPanelContent(PANEL_CONTENT.PROPOSAL_SUCCESS))
         );
       }
     };
@@ -166,15 +165,28 @@ export const FacebookAuthentication: React.FC<Props> = ({ isRegister }) => {
     };
 
     const validateDataPolicy = () => {
+      const handleSubmit = (
+        acceptDataPolicy: boolean,
+        optinNewsletter: boolean
+      ) => {
+        UserService.loginSocial(
+          FACEBOOK_PROVIDER_ENUM,
+          accessToken,
+          acceptDataPolicy,
+          optinNewsletter,
+          success,
+          failure,
+          unexpectedError
+        );
+      };
+
+      const handleReturn = () => {
+        dispatch(setPanelContent(PANEL_CONTENT.REGISTER));
+      };
+
       dispatch(
         setPanelContent(
-          <OptInGTU
-            provider={FACEBOOK_PROVIDER_ENUM}
-            token={accessToken}
-            success={success}
-            failure={failure}
-            unexpectedError={unexpectedError}
-          />
+          <OptInGTU handleSubmit={handleSubmit} handleReturn={handleReturn} />
         )
       );
     };

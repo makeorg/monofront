@@ -3,7 +3,6 @@ import i18n from 'i18next';
 import { ExtraBlackParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { RedLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { useAppContext } from '@make.org/store';
-import { Register } from '@make.org/components/Auth/Register';
 import { setPanelContent } from '@make.org/store/actions/panel';
 import {
   ProposalSubmitAuthSeparator,
@@ -14,6 +13,7 @@ import { FacebookAuthentication } from '@make.org/components/Auth/Social/Faceboo
 import { GoogleAuthentication } from '@make.org/components/Auth/Social/GoogleAuthentication';
 import { env } from '@make.org/assets/env';
 import { setSocialConnect } from '@make.org/utils/helpers/social';
+import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 import {
   ProposalAuthSocialLoginWrapperStyle,
   ProposalBackButtonStyle,
@@ -24,7 +24,6 @@ import {
   SocialRegisterButtonsWrapperStyle,
 } from '../style';
 import { LoginForm } from './Form';
-import { ProposalAuthentication } from '../../Proposal/Submit/Authentication';
 
 export const Login: React.FC = () => {
   const { dispatch, state } = useAppContext();
@@ -38,7 +37,9 @@ export const Login: React.FC = () => {
     >
       {pendingProposal && (
         <ProposalBackButtonStyle
-          onClick={() => dispatch(setPanelContent(<ProposalAuthentication />))}
+          onClick={() =>
+            dispatch(setPanelContent(PANEL_CONTENT.PROPOSAL_AUTHENTICATION))
+          }
         >
           {i18n.t('common.back')}
         </ProposalBackButtonStyle>
@@ -70,7 +71,7 @@ export const Login: React.FC = () => {
         <ExtraBlackParagraphStyle>
           {i18n.t('login.registration_title')}
           <RedLinkButtonStyle
-            onClick={() => dispatch(setPanelContent(<Register />))}
+            onClick={() => dispatch(setPanelContent(PANEL_CONTENT.REGISTER))}
             type="button"
             data-cy-button="register"
           >

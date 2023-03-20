@@ -30,7 +30,6 @@ import {
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { UserService } from '@make.org/utils/services/User';
 import { Logger } from '@make.org/utils/services/Logger';
-import { ProposalSuccess } from '@make.org/components/Proposal/Submit/Success';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import {
   closePanel,
@@ -38,6 +37,7 @@ import {
   setPanelContent,
 } from '@make.org/store/actions/panel';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 import {
   DataPolicyContentStyle,
   DataPolicyTitleStyle,
@@ -76,7 +76,7 @@ export const DataPolicy: React.FC = () => {
         question.questionId,
         question.returnedLanguage,
         country,
-        () => dispatch(setPanelContent(<ProposalSuccess />))
+        () => dispatch(setPanelContent(PANEL_CONTENT.PROPOSAL_SUCCESS))
       );
     }
 

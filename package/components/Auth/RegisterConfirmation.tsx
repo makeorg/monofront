@@ -20,7 +20,7 @@ import {
   RegisterPanelSubTitleWrapperStyle,
   RegisterPanelSuccessParagraphStyle,
   RegisterPanelSuccessParagraphContainerStyle,
-} from '../../style';
+} from './style';
 
 type Props = {
   isSocial?: boolean;

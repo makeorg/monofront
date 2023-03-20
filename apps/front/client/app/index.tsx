@@ -17,11 +17,10 @@ import {
   closePanel,
   removePanelContent,
 } from '@make.org/store/actions/panel';
-import { Login } from '@make.org/components/Auth/Login';
-import { Register } from '@make.org/components/Auth/Register';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { useLocation } from 'react-router';
 import { Panel } from '@make.org/components/Panel';
+import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 import { Modal } from '@make.org/components/Modal';
 import { PrivacyPolicyModal } from '@make.org/components/PrivacyPolicyModal';
 import { CookieModal } from '@make.org/components/CookieModal';
@@ -60,11 +59,11 @@ export const AppContainer: FC = () => {
 
   useEffect(() => {
     if (displayPanel === 'signin' && !isLoggedIn) {
-      dispatch(setPanelContent(<Login />));
+      dispatch(setPanelContent(PANEL_CONTENT.LOGIN));
     }
 
     if (displayPanel === 'signup' && !isLoggedIn) {
-      dispatch(setPanelContent(<Register />));
+      dispatch(setPanelContent(PANEL_CONTENT.REGISTER));
     }
 
     return () => {
