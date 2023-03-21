@@ -10,6 +10,7 @@ export const BodyLDefault = styled.p`
 export const BodyLHighLight = styled.p`
   font-size: ${typography.FontSize.PetiteCouronne};
   font-family: ${typography.FontFamily.Hightlight};
+  font-weight: bold;
   line-height: ${typography.LineHeight.l150};
 `;
 
@@ -22,6 +23,7 @@ export const BodyMDefault = styled.p`
 export const BodyMHighLight = styled.p`
   font-size: ${typography.FontSize.Arrondissement};
   font-family: ${typography.FontFamily.Hightlight};
+  font-weight: bold;
   line-height: ${typography.LineHeight.l150};
 `;
 
@@ -40,6 +42,7 @@ export const BodySDefault = styled.p`
 export const BodySHighLight = styled.p`
   font-size: ${typography.FontSize.Bastille};
   font-family: ${typography.FontFamily.Hightlight};
+  font-weight: bold;
   line-height: ${typography.LineHeight.l150};
 `;
 
@@ -58,6 +61,7 @@ export const BodyXSDefault = styled.p`
 export const BodyXSHighlight = styled.p`
   font-size: ${typography.FontSize.RueDeLappe};
   font-family: ${typography.FontFamily.Hightlight};
+  font-weight: bold;
   line-height: ${typography.LineHeight.l150};
 `;
 

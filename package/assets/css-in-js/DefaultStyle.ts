@@ -72,7 +72,7 @@ export const DefaultStylesheet = createGlobalStyle`
 
   label {
     font-family: ${typography.FontFamily.Hightlight};
-  font-weight: bold;
+    font-weight: bold;
     color: ${colors.Content.Interface.Dark};
   }
 

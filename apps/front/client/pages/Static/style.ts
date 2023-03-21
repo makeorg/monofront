@@ -155,6 +155,7 @@ export const StaticPhoneLinkStyle = styled.a`
 
 export const StaticStrongStyle = styled.strong`
   font-family: ${typography.FontFamily.Hightlight};
+  font-weight: bold;
 `;
 
 export const StaticPrimaryUnorderedListStyle = styled.ol`

@@ -39,6 +39,7 @@ export const ReportTitleStyle = styled.h1`
   justify-content: flex-start;
   font-size: ${typography.FontSize.Paris};
   font-family: ${typography.FontFamily.Hightlight};
+  font-weight: bold;
   text-transform: none;
   margin-bottom: 35px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {

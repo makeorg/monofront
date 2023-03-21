@@ -31,6 +31,7 @@ export const ForgotPasswordTitleStyle = styled(FourthLevelTitleStyle)<{
     props.isPanel
       ? typography.FontFamily.Default
       : typography.FontFamily.Hightlight};
+  font-weight: ${props => (props.isPanel ? 'normal' : 'bold')};
   text-transform: none;
   margin-top: 35px;
   color: ${props =>
