@@ -105,26 +105,6 @@ export const Register: React.FC = () => {
     });
   };
 
-  // checks email and password validity on first step of panel registration
-  const checkRegistration = async () => {
-    const success = () => {
-      dispatch(setRegisterStep(2));
-      setErrors([]);
-    };
-    const handleErrors = (serviceErrors: ErrorObjectType[]) => {
-      setErrors(serviceErrors);
-    };
-    const unexpectedError = () => dispatch(closePanel());
-
-    await UserService.checkRegistration(
-      user.email,
-      user.password,
-      success,
-      handleErrors,
-      unexpectedError
-    );
-  };
-
   const logAndLoadUser = async (email: string, password: string) => {
     const unexpectedError = () => {
       dispatch(closePanel());
@@ -145,8 +125,26 @@ export const Register: React.FC = () => {
     );
   };
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const handleStep1Submit = () => {
+    const success = () => {
+      dispatch(setRegisterStep(2));
+      setErrors([]);
+    };
+    const handleErrors = (serviceErrors: ErrorObjectType[]) => {
+      setErrors(serviceErrors);
+    };
+    const unexpectedError = () => dispatch(closePanel());
+
+    UserService.checkRegistration(
+      user.email,
+      user.password,
+      success,
+      handleErrors,
+      unexpectedError
+    );
+  };
+
+  const handleStep2Submit = async () => {
     const success = () => {
       logAndLoadUser(user.email, user.password).then(async () => {
         trackSignupEmailSuccess();
@@ -181,6 +179,16 @@ export const Register: React.FC = () => {
     setWaitingCallback(false);
   };
 
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (registerStep === 1) {
+      handleStep1Submit();
+      return;
+    }
+
+    handleStep2Submit();
+  };
+
   const toggleLegalConsent = (
     event: SyntheticEvent<HTMLButtonElement> | FormEvent<HTMLFormElement>
   ) => {
@@ -213,7 +221,6 @@ export const Register: React.FC = () => {
           handleSubmit={userIsAChild ? toggleLegalConsent : handleSubmit}
           disableSubmit={waitingCallback}
           registerStep={registerStep}
-          checkRegistration={checkRegistration}
         />
         {!pendingProposal && !isSecondStep && (
           <GreyParagraphStyle>

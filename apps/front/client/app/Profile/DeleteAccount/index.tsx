@@ -120,6 +120,7 @@ export const DeleteAccount: FC<Props> = ({ user }) => {
             value={formValues.password}
             error={passwordError}
             handleChange={handleChange}
+            validatePattern={false}
           />
         ) : (
           <UntypedInput

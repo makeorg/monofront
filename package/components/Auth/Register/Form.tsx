@@ -22,7 +22,6 @@ type Props = {
   handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
   handleCheckbox: (fieldName: string, value: boolean) => void;
   handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
-  checkRegistration: () => void;
   disableSubmit: boolean;
   registerStep: number;
 };
@@ -35,7 +34,6 @@ export const RegisterForm: React.FC<Props> = ({
   handleChange,
   handleCheckbox,
   handleSubmit,
-  checkRegistration,
   disableSubmit,
   registerStep,
 }) => {
@@ -76,7 +74,6 @@ export const RegisterForm: React.FC<Props> = ({
             emailError={emailError}
             passwordError={passwordError}
             handleChange={handleChange}
-            checkRegistration={checkRegistration}
           />
           {!pendingProposal && <SocialAuthenticationButtons />}
         </>

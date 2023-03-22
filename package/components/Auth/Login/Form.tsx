@@ -143,6 +143,7 @@ export const LoginForm: FC = () => {
         emailError={emailError}
         passwordError={passwordError}
         handleChange={handleChange}
+        validatePattern={false}
       />
       <LinkButtonStyle
         onClick={() => dispatch(setPanelContent(PANEL_CONTENT.PASSWORD_FORGOT))}

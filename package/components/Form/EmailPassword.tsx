@@ -15,6 +15,7 @@ type Props = {
   passwordError: ErrorObjectType;
   handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
   requirements?: boolean;
+  validatePattern?: boolean;
 };
 
 export const EmailPasswordFields: FC<Props> = ({
@@ -24,6 +25,7 @@ export const EmailPasswordFields: FC<Props> = ({
   passwordError,
   handleChange,
   requirements,
+  validatePattern = true,
 }) => (
   <>
     <UntypedInput
@@ -46,6 +48,7 @@ export const EmailPasswordFields: FC<Props> = ({
       label={i18n.t('common.form.label.password')}
       handleChange={handleChange}
       requirements={requirements}
+      validatePattern={validatePattern}
     />
   </>
 );

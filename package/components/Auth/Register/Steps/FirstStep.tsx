@@ -13,7 +13,6 @@ type Props = {
   emailError: ErrorObjectType;
   passwordError: ErrorObjectType;
   handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  checkRegistration: () => void;
 };
 
 export const FirstStepRegister: React.FC<Props> = ({
@@ -21,7 +20,6 @@ export const FirstStepRegister: React.FC<Props> = ({
   emailError,
   passwordError,
   handleChange,
-  checkRegistration,
 }) => {
   const { state } = useAppContext();
   const { pendingProposal } = state.pendingProposal;
@@ -35,20 +33,21 @@ export const FirstStepRegister: React.FC<Props> = ({
         passwordError={passwordError}
         handleChange={handleChange}
         requirements
+        validatePattern
       />
       {pendingProposal ? (
         <RedButtonProposalStyle
-          onClick={checkRegistration}
           disabled={!user.password || !user.email}
           id="authentication-register-submit"
+          type="submit"
         >
           {i18n.t('common.continue')}
         </RedButtonProposalStyle>
       ) : (
         <RedButtonCenterStyle
-          onClick={checkRegistration}
           disabled={!user.password || !user.email}
           id="authentication-register-submit"
+          type="submit"
         >
           {i18n.t('common.continue')}
         </RedButtonCenterStyle>

@@ -31,8 +31,14 @@ type Props = {
   error?: ErrorObjectType;
   /** Is input required or optional */
   required?: boolean;
+  /** display requirements */
   requirements?: boolean;
+  /** USe pattern validation */
+  validatePattern?: boolean;
 };
+
+export const passwordPattern =
+  '^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9 ])(?!.* ).{8,}$';
 
 export const PasswordInput: React.FC<Props> = ({
   name,
@@ -44,6 +50,7 @@ export const PasswordInput: React.FC<Props> = ({
   error,
   required = true,
   requirements,
+  validatePattern = true,
 }) => {
   const [isPasswordDisplayed, displayPassword] = useState<boolean>(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -68,7 +75,7 @@ export const PasswordInput: React.FC<Props> = ({
             required={required}
             onChange={throttle(handleChange)}
             aria-invalid={!isFieldValid}
-            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,}$"
+            pattern={validatePattern ? passwordPattern : undefined}
             title={i18n.t('common.form.password_requirements') || ''}
             autoComplete={autocomplete}
           />

@@ -131,6 +131,7 @@ export const UpdatePassword: FC<Props> = ({ userId, hasPassword }) => {
             value={formValues.actualPassword}
             error={actualPasswordError}
             handleChange={handleChange}
+            validatePattern={false}
           />
         )}
         <PasswordInput
@@ -142,6 +143,7 @@ export const UpdatePassword: FC<Props> = ({ userId, hasPassword }) => {
           error={newPasswordError}
           handleChange={handleChange}
           requirements
+          validatePattern
         />
         <SubmitButton
           disabled={!canSubmit}
