@@ -79,7 +79,7 @@ export const IntroProposal: FC<Props> = ({ handleChange }) => {
             )}
             <ProposalAuthor proposal={proposal} />
             <ScreenReaderItemStyle>
-              {i18n.t('top_proposal_card.content')}
+              {i18n.t('proposal_card.content')}
             </ScreenReaderItemStyle>
             <SequenceProposalStyle lang={proposalLanguage} className="widget">
               {proposalContent}
