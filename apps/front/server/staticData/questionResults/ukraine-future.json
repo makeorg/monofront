@@ -434,10 +434,10 @@
     {
       "type": "histogram",
       "unit": "percentage",
-      "name": "Участь за регіонами",
+      "name": "Участь за місцем проживання",
       "forcedHigherValue": 93,
       "legend": {
-        "title": "Участь за регіонами",
+        "title": "Участь за місцем проживання",
         "dimensions": {
           "first": "голоси",
           "second": "загальне населення "
@@ -447,22 +447,19 @@
         {
           "label": "Україна",
           "bars": {
-            "first": 92,
-            "second": 1
+            "first": 92
           }
         },
         {
           "label": "Німеччина",
           "bars": {
-            "first": 7,
-            "second": 1
+            "first": 7
           }
         },
         {
           "label": "Інші країни",
           "bars": {
-            "first": 1,
-            "second": 1
+            "first": 1
           }
         }
       ],
@@ -508,7 +505,7 @@
           "label": "30+",
           "bars": {
             "first": 2,
-            "second": 0
+            "second": 0.1
           },
           "color": "#8BDAB2"
         }
@@ -524,17 +521,17 @@
         {
           "label": "Чоловіки",
           "percent": 41,
-          "color": "#8BDAB2"
+          "color": "#37659E"
         },
         {
           "label": "Жінки",
           "percent": 57,
-          "color": "#8BDAB2"
+          "color": "#348FA7"
         },
         {
           "label": "Небінарні особи",
           "percent": 2,
-          "color": "#EEB298"
+          "color": "#413D7B"
         }
       ],
       "id": "participation_3"
