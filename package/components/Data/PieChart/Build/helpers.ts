@@ -97,8 +97,8 @@ export const setPercentAsLabel = (
 
   ctx.beginPath();
   ctx.font = isMobile
-    ? `8px ${typography.FontFamily.Hightlight}`
-    : `15px ${typography.FontFamily.Hightlight}`;
+    ? `bold 8px ${typography.FontFamily.Hightlight}`
+    : `bold 15px ${typography.FontFamily.Hightlight}`;
   ctx.textAlign = isTextAlignAdjusted || 'center';
   ctx.fillStyle = colors.Content.Interface.Dark;
   ctx.fillText(
@@ -120,10 +120,8 @@ export const setMainLabel = (
 
   ctx.beginPath();
   ctx.font = isMobile
-    ? `6px ${typography.FontFamily.Default};
-  }`
-    : `11px ${typography.FontFamily.Default};
-  }`;
+    ? `6px ${typography.FontFamily.Default}`
+    : `11px ${typography.FontFamily.Default}`;
   ctx.textAlign = isTextAlignAdjusted || 'center';
   ctx.fillStyle = colors.Content.Interface.Dark;
   ctx.fillText(hidePercentLabel ? '' : item.label, itemDeltaX, labelDeltaY);
