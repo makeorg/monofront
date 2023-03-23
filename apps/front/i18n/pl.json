@@ -183,7 +183,7 @@
         "submit_success": "Zmiany zostały zapisane.",
         "malformed": "Prosimy przestrzegać formatu url \"https://example.com\""
       },
-      "password_requirements": "@@common.form.password_requirements|fr:8 caractères minimum dont au moins 1 chiffre, 1 majuscule et 1 caractère spécial."
+      "password_requirements": "Minimum 8 znaków, w tym co najmniej 1 cyfra, 1 duża litera i 1 znak specjalny."
     },
     "social_login": {
       "card_title": "Aby odnaleźć historię oddanych przez Ciebie głosów",
@@ -274,12 +274,10 @@
     "proposal_count_one": "{{count}} propozycja",
     "proposal_count_few": "{{count}} propozycje",
     "proposal_count_many": "{{count}} propozycji",
-    "proposal_count_other": "{{count}} propozycji",
     "breadcrumbs": "nawigacja okruszkowa",
     "million_one": "million",
     "million_few": "miliony",
     "million_many": "milionów",
-    "million_other": "miliona",
     "close_panel": "Zamknij listę rozwijaną",
     "close": "Zamknij"
   },
@@ -303,15 +301,12 @@
     "associated_proposals_one": "{{count}} prowiązana propozycja",
     "associated_proposals_few": "{{count}} powiązane propozycje",
     "associated_proposals_many": "{{count}} powiązanych propozycji",
-    "associated_proposals_other": "{{count}} powiązanej propozycji",
     "position_one": "{{ count }} zajęte stanowisko",
     "position_few": "{{ count }} zajęte stanowiska",
     "position_many": "{{ count }} ]zajętych stanowisk",
-    "position_other": "{{ count }} zajętego stanowiska",
     "candidate_one": "przez kandydata odnośnie tego pomysłu.",
     "candidate_few": "przez kandydatów odnośnie tego pomysłu.",
     "candidate_many": "przez kandydatów odnośnie tego pomysłu.",
-    "candidate_other": "przez kandydatów odnośnie tego pomysłu.",
     "open": "Pokaż wynik dla pomysłu",
     "close": "Ukryj wynik dla pomysłu",
     "expand": " - Kliknij, aby zobaczyć wynik dla pomysłu",
@@ -453,7 +448,6 @@
     "label_one": "{{count}} głos",
     "label_few": "{{count}} głosy",
     "label_many": "{{count}} głosów",
-    "label_other": "{{count}} głosu",
     "with_percent": "{{votedKey}} : {{votedPercent}}%"
   },
   "unvote": {
@@ -465,7 +459,6 @@
     "total_one": "Ta propozycja zebrała {{count}} głos, który rozłożył się następująco:",
     "total_few": "Ta propozycja zebrała {{count}} głosy, które rozłożyły się następująco:",
     "total_many": "Ta propozycja zebrała {{count}} głosów, które rozłożyły się następująco:",
-    "total_other": "Ta propozycja zebrała {{count}} głosu, który rozłożył się następująco:",
     "voted": {
       "agree": "Zagłosowałam/-em „Zgadzam się” na tę propozycję.",
       "disagree": "Zagłosowałam/-em „Nie zgadzam się” na tę propozycję.",
@@ -724,7 +717,6 @@
       "hasVoted_one": "zagłosował/a na tę propozycję.",
       "hasVoted_few": "zagłosowały/-o na tę propozycję.",
       "hasVoted_many": "zagłosowało na tę propozycję.",
-      "hasVoted_other": "zagłosowało na tę propozycję.",
       "sharing_title": "Udostępnij ten profil"
     }
   },
@@ -804,15 +796,12 @@
       "remaining_one": "Pozostał dzień",
       "remaining_few": "Pozostały dni",
       "remaining_many": "Pozostało dni",
-      "remaining_other": "Pozostało dnia",
       "proposals_one": "Propozycja",
       "proposals_few": "Propozycje",
       "proposals_many": "Propozycji",
-      "proposals_other": "Propozycji",
       "participant_one": "Uczestnik",
       "participant_few": "Uczestników",
       "participant_many": "Uczestników",
-      "participant_other": "Uczestnika",
       "progress_title": "Docelowa liczba głosów",
       "progress_total": "Całkowita liczba głosów",
       "progress_target": " na {{votesTarget}} głosów ({{percent}}%)",
@@ -908,8 +897,7 @@
       "no_proposal": "<strong>Brak propozycji</strong>",
       "validated_proposals_one": "<strong>{{count}} zatwierdzona propozycja</strong> odpowiadająca Twoim kryteriom wyszukiwania",
       "validated_proposals_few": "<strong>{{count}} zatwierdzone propozycje</strong> odpowiadające Twoim kryteriom wyszukiwania",
-      "validated_proposals_many": "<strong>{{count}} zatwierdzonych propozycji</strong> odpowiadających Twoim kryteriom wyszukiwania",
-      "validated_proposals_other": "<strong>{{count}} zatwierdzonej propozycji</strong> odpowiadającej Twoim kryteriom wyszukiwania"
+      "validated_proposals_many": "<strong>{{count}} zatwierdzonych propozycji</strong> odpowiadających Twoim kryteriom wyszukiwania"
     },
     "tabs": {
       "consultation": " Konsultacja ",
@@ -992,7 +980,6 @@
         "title_one": "Najciekawsze z najpopularniejszych pomysłów, zgrupowane w {{count}} oś tematyczną",
         "title_few": "Najciekawsze z najpopularniejszych pomysłów, zgrupowane w {{count}} osie tematyczne",
         "title_many": "Najciekawsze z najpopularniejszych pomysłów, zgrupowane w {{count}} osi tematycznych",
-        "title_other": "Najciekawsze z najpopularniejszych pomysłów, zgrupowane w {{count}} osi tematycznej",
         "introduction": "Po pojawieniu się na naszej platformie, najlepsze propozycje są grupowane w wiodące idee, które nadają strukturę konsultacjom. Aby te idee sklasyfikować, algorytm Make.org bierze pod uwagę głosy „za” oraz „przeciw”, jak również oznaczenia „uwielbiam”, „realistyczne”, „banalne” oraz „tylko nie to!” .",
         "axe_title": "Oś tematyczna {{count}}: {{name}}"
       },
@@ -1020,11 +1007,9 @@
       "proposals_one": "{{ count }} propozycja",
       "proposals_few": "{{ count }} propozycje",
       "proposals_many": "{{ count }} propozycji",
-      "proposals_other": "{{ count }} propozycji",
       "votes_one": "{{ count }} głos",
       "votes_few": "{{ count }} głosy",
       "votes_many": "{{ count }} głosów",
-      "votes_other": "{{ count }} głosu",
       "participate": "Jesteście stowarzyszeniem i chcecie wziąć udział w naszej konsultacji? {{ contact_us }}",
       "contact_us": "Skontaktujcie się z nami!",
       "more": "Pokaż więcej"
@@ -1061,11 +1046,14 @@
       "subtitle": "Twoja opinia się liczy! Głosuj i proponuj rozwiązania, aby mieć wpływ na aktualne kwestie i problemy społeczne.",
       "participate": "Weź udział",
       "contributors_one": "uczestnik",
-      "contributors_other": "uczestników",
+      "contributors_few": "",
+      "contributors_many": "",
       "proposals_one": "propozycja",
-      "proposals_other": "propozycji",
+      "proposals_few": "",
+      "proposals_many": "",
       "votes_one": "głos",
-      "votes_other": "głosów",
+      "votes_few": "",
+      "votes_many": "",
       "empty": "Przykro nam, ale w Twoim kraju nie ma obecnie żadnej dostępnej konsultacji."
     },
     "results": {
@@ -1128,20 +1116,17 @@
       "participants": {
         "subtitle_one": "uczestniczki/-ka",
         "subtitle_few": "uczestniczek/-ków",
-        "subtitle_many": "uczestniczek/-ków",
-        "subtitle_other": "uczestniczki/-ka"
+        "subtitle_many": "uczestniczek/-ków"
       },
       "proposals": {
         "subtitle_one": "złożona propozycja",
         "subtitle_few": "złożone propozycje",
-        "subtitle_many": "złożonych propozycji",
-        "subtitle_other": "złożonej propozycji"
+        "subtitle_many": "złożonych propozycji"
       },
       "partners": {
         "subtitle_one": "zaangażowane stowarzyszenie i firma",
         "subtitle_few": "zaangażowane stowarzyszenia i firmy",
-        "subtitle_many": "zaangażowanych stowarzyszeń i firm",
-        "subtitle_other": "zaangażowanego stowarzyszenia i firmy"
+        "subtitle_many": "zaangażowanych stowarzyszeń i firm"
       }
     },
     "featured_questions": {
@@ -1172,17 +1157,15 @@
       "main_results_one": "{{count}} wynik dla « {{term}} »",
       "main_results_few": "{{count}} wyniki dla « {{term}} »",
       "main_results_many": "{{count}} wyników dla « {{term}} »",
-      "main_results_other": "{{count}} wyniku dla « {{term}} »",
       "proposals_one": "{{count}} propozycja dla « {{term}} »",
       "proposals_few": "{{count}} propozycje dla « {{term}} »",
       "proposals_many": "{{count}} propozycji dla « {{term}} »",
-      "proposals_other": "{{count}} propozycji dla « {{term}} »",
       "operations_one": "{{count}} inicjatywa dla « {{term}} »",
-      "operations_other": "{{count}} inicjatyw dla « {{term}} »",
+      "operations_few": "",
+      "operations_many": "",
       "organisations_one": "{{count}} organizacja dla « {{term}} »",
       "organisations_few": "{{count}} organizacje dla « {{term}} »",
       "organisations_many": "{{count}} organizacji dla « {{term}} »",
-      "organisations_other": "{{count}} organizacji dla « {{term}} »",
       "main_results_empty_term": "0 wyników"
     },
     "main_results": {
@@ -1192,7 +1175,6 @@
       "results_one": "{{count}} wynik",
       "results_few": "{{count}} wyniki",
       "results_many": "{{count}} wyników",
-      "results_other": "{{count}} wyniku",
       "view_all": "Zobacz wszystko",
       "no_results": "Nie znaleźliśmy żadnych rezultatów dla wyszukiwania « {{term}} »",
       "no_query": "Szukasz propozycji, pomysłu, konsultacji? Wpisz tutaj kryteria Twojego wyszukiwania!",
@@ -1240,7 +1222,7 @@
     "host_address": "{{make_host_address}} FRANCJA",
     "host_phone": "Numer telefonu: ",
     "host_phone_number": "{{host_number}}",
-    "eu_mention": "@@legal.eu_mention|fr:La Commission européenne met à disposition une plateforme de règlement des litiges en ligne pour les consommateurs, à l'adresse https://ec.europa.eu/consumers/odr."
+    "eu_mention": "Komisja Europejska udostępnia konsumentom platformę internetowego rozstrzygania sporów, znajdującą się pod adresem<a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\">https://ec.europa.eu/consumers/odr - (nowe okno)</a>."
   },
   "cookies_management": {
     "title": "Zarządzanie plikami cookie",
@@ -1270,7 +1252,6 @@
       "year_one": "{{count}} rok",
       "year_few": "{{count}} lata",
       "year_many": "{{count}} lat",
-      "year_other": "{{count}} roku",
       "technicals": {
         "name": "Techniczne pliki cookie:",
         "description": "te pliki cookie umożliwiają funkcjonowanie strony i nie mogą zostać wyłączone. Możesz skonfigurować swoją przeglądarkę w taki sposób, aby blokowała te pliki lub informowała Cię o ich istnieniu, ale może to spowodować nieprawidłowe działanie niektórych części naszej strony. Celem tych plików cookie nie jest indetyfikacja indywidualnego użytkownika.",
@@ -1405,7 +1386,7 @@
     "irrelevant_solutions": {
       "title": "Propozycje nie na temat",
       "description": "Twoja propozycja musi odpowiadać na pytanie postawione w ramach konsultacji. W przeciwnym razie zostanie potraktowana jako nie na temat i odrzucona.",
-      "example": "Na przykład na pytanie: „Co zrobić, aby każdy mógł lepiej się odżywiać?”",
+      "example": "Na przykład na pytanie “W jaki sposób zapewnić wszystkim możliwość zdrowego odżywiania się?”",
       "refused_card_example": "Należy organizować mistrzostwa świata w piłce nożnej co dwa lata.",
       "validated_card_example": "Należy zachęcać stołówki pracownicze do stosowania krótkiego łańcucha dostaw."
     },

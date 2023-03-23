@@ -177,13 +177,13 @@
         "invalid_age_dynamic": "{{label}}: Utilizatorii trebuie să aibă vârsta cuprinsă între 8 și 120 de ani.",
         "the_field_[email]_is_missing": "Rubrica {{label}} este obligatorie.",
         "the_field_[password]_is_missing": "Rubrica {{label}} este obligatorie.",
-        "invalid_postal_code": "Codul poștal trebuie să conțină 5 cifre.",
+        "invalid_postal_code": "Codul poștal trebuie să conțină 6 cifre.",
         "invalid_privacy_policy": "Trebuie să acceptați politica privind datele.",
         "invalid_postal_code_dynamic": "Elementul {{label}} trebuie să conțină 5 cifre.",
         "submit_success": "Modificarea a fost înregistrată cu succes.",
         "malformed": "Vă rugăm să respectați formatul de adresă url \"https://example.com\""
       },
-      "password_requirements": "@@common.form.password_requirements|fr:8 caractères minimum dont au moins 1 chiffre, 1 majuscule et 1 caractère spécial."
+      "password_requirements": "Cel puțin 8 caractere, din care cel puțin 1 cifră, 1 literă majusculă și un caracter special."
     },
     "social_login": {
       "card_title": "Pentru a consulta istoricul voturilor dumneavoastră",
@@ -625,7 +625,7 @@
   },
   "data_policy_modal": {
     "title": "Actualizarea politicii noastre privind datele.",
-    "description": "Make.org se angajează să vă respecte datele cu caracter personal la orice consultare a site-ului. Pentru a vă continua navigarea rămânând conectat (ă) pe Make.org, trebuie să acceptați actualizarea noastră pentru {{data_policy_link}} ",
+    "description": "Make.org se angajează să vă respecte datele cu caracter personal la orice consultare a site-ului. Pentru a vă continua navigarea rămânând conectat (ă) pe Make.org, trebuie să acceptați actualizarea noastră pentru ",
     "data_policy_link": "politica privind datele.",
     "consent": "<strong>Accept noua versiune a politicii privind datele</strong> și voi putea utiliza spațiul meu personal Make.org",
     "validate": "Validez",
@@ -1046,10 +1046,13 @@
       "subtitle": "Părerea dumneavoastră contează! Votați și propuneți soluții pentru a influența diverse subiecte de societate și probleme actuale.",
       "participate": "Participare",
       "contributors_one": "participant",
+      "contributors_few": "",
       "contributors_other": "participanți",
       "proposals_one": "propunere",
+      "proposals_few": "",
       "proposals_other": "propuneri",
       "votes_one": "vot",
+      "votes_few": "",
       "votes_other": "voturi",
       "empty": "Ne pare rău, nu este disponibilă nicio consultare în țara dumneavoastră în acest moment."
     },
@@ -1158,6 +1161,7 @@
       "proposals_few": "{{count}} propuneri pentru « {{term}} »",
       "proposals_other": "{{count}} propuneri pentru « {{term}} »",
       "operations_one": "{{count}} operațiune pentru « {{term}} »",
+      "operations_few": "",
       "operations_other": "{{count}} operațiuni pour « {{term}} »",
       "organisations_one": "{{count}} organizație pentru « {{term}} »",
       "organisations_few": "{{count}} organizații pentru « {{term}} »",
@@ -1218,7 +1222,7 @@
     "host_address": "{{make_host_address}} FRANȚA",
     "host_phone": "Număr de telefon: ",
     "host_phone_number": "{{host_number}}",
-    "eu_mention": "@@legal.eu_mention|fr:La Commission européenne met à disposition une plateforme de règlement des litiges en ligne pour les consommateurs, à l'adresse https://ec.europa.eu/consumers/odr."
+    "eu_mention": "Comisia Europeană pune la dispoziție o platformă de soluționare a litigiilor online pentru consumatori, la adresa <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\">https://ec.europa.eu/consumers/odr - (nouvelle fenêtre)</a>."
   },
   "cookies_management": {
     "title": "Gestionarea modulelor cookie",
@@ -1405,8 +1409,8 @@
     "advertising": {
       "title": "Publicitate",
       "description": "Nu puteți face publicitate pentru o anumită marcă sau companie. Totuși, puteți menționa numele unei mărci sau al unei companii doar ca exemplificare.",
-      "refused_card_example": "Trebuie ca toate companiile să aplice soluțiile propuse de IBM.",
-      "validated_card_example": "Trebuie să nu mai consumăm anumite băuturi carbogazoase foarte dulci, cum ar fi Coca-Cola."
+      "refused_card_example": "Trebuie ca produsele producătorilor locali să fie accesibile și să se difuzeze informații privind inovațiile în agricultură.",
+      "validated_card_example": "Trebuie ca produsele producătorilor locali să fie accesibile."
     },
     "multiple_ideas": {
       "title": "Ideile multiple",
@@ -1434,7 +1438,7 @@
     "understandable_language": {
       "text": "Transmiteți un mesaj cât mai clar, folosind un limbaj pe înțelesul tuturor.",
       "refused_card_example": "Trebuie introdus un an de propedeutică la facultate.",
-      "validated_card_example": "Trebuie introdus un an pregătitor înainte de alegerea specializării la facultate.",
+      "validated_card_example": "Trebuie ca Agenția Națională pentru Sănătate Publică să poată face teste de depistare a cancerului.",
       "refused_card_example_2": "Trebuie ca ANSP să poată face teste de depistare a cancerului.",
       "validated_card_example_2": "Trebuie ca Agenția Națională pentru Sănătate Publică să poată face teste de depistare a cancerului."
     },

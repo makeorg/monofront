@@ -272,10 +272,10 @@
     "max_characters": "максимален брой символи",
     "back": "Обратно",
     "proposal_count_one": "{{count}} предложение",
-    "proposal_count_many": "{{count}} предложения",
+    "proposal_count_other": "{{count}} предложения",
     "breadcrumbs": "нишката на Ариадна",
     "million_one": "милион",
-    "million_many": "милиона",
+    "million_other": "милиона",
     "close_panel": "Затваряне на падащия панел",
     "close": "Затваряне"
   },
@@ -297,11 +297,11 @@
     "content": "Съдържание на идеята: ",
     "link": "Вижте подробности за идеята",
     "associated_proposals_one": "{{count}} свързано предложение",
-    "associated_proposals_many": "{{count}} свързани предложения",
+    "associated_proposals_other": "{{count}} свързани предложения",
     "position_one": "{{count}} заемане на позиция",
-    "position_many": "{{count}} заемания на позиция",
+    "position_other": "{{ count }} заемания на позиция",
     "candidate_one": "кандидат по тази идея.",
-    "candidate_many": "кандидати по тази идея.",
+    "candidate_other": "кандидати по тази идея.",
     "open": "Показване на оценката на идеята",
     "close": "Скриване на оценката на идеята",
     "expand": " - Кликнете, за да се покаже оценката на идеята",
@@ -441,7 +441,7 @@
     "disagree": "Не съм съгласен",
     "neutral": "Въздържал се",
     "label_one": "{{count}} глас",
-    "label_many": "{{count}} гласа",
+    "label_other": "{{count}} гласа",
     "with_percent": "{{votedKey}} : {{votedPercent}}%"
   },
   "unvote": {
@@ -451,7 +451,7 @@
     "static_total": "Това предложение получи: ",
     "static_repartition": "Като разпределението е: ",
     "total_one": "Това предложение получи {{count}} глас, като разпределението е:",
-    "total_many": "Това предложение получи{{count}} гласове, като разпределението е:",
+    "total_other": "Това предложение получи{{count}} гласове, като разпределението е:",
     "voted": {
       "agree": "Гласувах със \"Съгласен съм\" по това предложение.",
       "disagree": "Гласувах с \"Не съм съгласен\" по това предложение.",
@@ -708,7 +708,7 @@
       "proposal_disagree": "не е съгласен с това предложение",
       "and": " и ",
       "hasVoted_one": "е гласувал за това предложение.",
-      "hasVoted_many": "са гласували за това предложение.",
+      "hasVoted_other": "са гласували за това предложение.",
       "sharing_title": "Споделяне на този профил"
     }
   },
@@ -786,11 +786,11 @@
       "start_date": "Дата на стартиране",
       "end_date": "Дата на приключване на консултацията",
       "remaining_one": "остава един ден",
-      "remaining_many": "остават {{count}} дни",
+      "remaining_other": "остават {{count}} дни",
       "proposals_one": "Предложение",
-      "proposals_many": "Предложения",
+      "proposals_other": "Предложения",
       "participant_one": "Участник",
-      "participant_many": "Участници",
+      "participant_other": "Участници",
       "progress_title": "Нашата цел за гласуване",
       "progress_total": "Общ брой гласове",
       "progress_target": " от {{votesTarget}} гласа ({{percent}}%)",
@@ -884,8 +884,8 @@
       "unvoted": "Тези, които очакват вашия глас",
       "organisations_proposals": "Предложени от организации",
       "no_proposal": "<strong>Няма предложение</strong>",
-      "validated_proposals_one": "<strong>{{count}} потвърдено предложения, отговарящо на вашето търсене",
-      "validated_proposals_many": "<strong>{{count}} потвърдени предложения, отговарящи на вашето търсене"
+      "validated_proposals_one": "<strong>{{count}} потвърдено предложения</strong>, отговарящо на вашето търсене",
+      "validated_proposals_other": "<strong>{{count}} потвърдени предложения</strong>, отговарящи на вашето търсене"
     },
     "tabs": {
       "consultation": " Консултация ",
@@ -966,7 +966,7 @@
       "top_ideas": {
         "skiplink": "Най-важните нови идеи",
         "title_one": "Най-популярните идеи, групирани в {{count}} направление",
-        "title_many": "Най-популярните идеи, групирани в {{count}} направления",
+        "title_other": "Най-популярните идеи, групирани в {{count}} направления",
         "introduction": "Когато пристигнат на платформата, най-добрите предложения от гражданите се групират в големи идеи, които структурират консултацията. За да класифицира тези идеи, алгоритъмът на Make.org взема предвид гласовете „за“ и „против“, както и споменаванията „любими“, „реалистични“, „баналности“ и „със сигурност не!”. ».",
         "axe_title": "Ос {{count}} : {{name}}"
       },
@@ -992,9 +992,9 @@
     "local_actors": {
       "title": "Най-активни асоциации",
       "proposals_one": "{{count}} предложение",
-      "proposals_many": "{{count}} предложения",
+      "proposals_other": "{{count}} предложения",
       "votes_one": "{{count}} глас",
-      "votes_many": "{{count}} гласа",
+      "votes_other": "{{count}} гласа",
       "participate": "Вие сте сдружение и желаете да участвате в нашата консултация? {{ contact_us }}",
       "contact_us": "Свържете се с нас за повече информация!",
       "more": "Вижте повече"
@@ -1097,15 +1097,15 @@
       "title": "Make.org в цифри",
       "participants": {
         "subtitle_one": "на участник (чка)",
-        "subtitle_many": "на участници"
+        "subtitle_other": "на участници"
       },
       "proposals": {
         "subtitle_one": "подадено предложение",
-        "subtitle_many": "подадени предложения"
+        "subtitle_other": "подадени предложения"
       },
       "partners": {
         "subtitle_one": "участваща асоциация и дружество",
-        "subtitle_many": "участващи асоциации и дружества"
+        "subtitle_other": "участващи асоциации и дружества"
       }
     },
     "featured_questions": {
@@ -1134,13 +1134,13 @@
       "loading": "Търсене в процес на изпълнение...",
       "no_results": "Не са намерени резултати",
       "main_results_one": "{{count}} резултат за « {{term}} »",
-      "main_results_many": "{{count}} резултата за « {{term}} »",
+      "main_results_other": "{{count}} резултата за « {{term}} »",
       "proposals_one": "{{count}} предложение за « {{term}} »",
-      "proposals_many": "{{count}} предложения за « {{term}} »",
+      "proposals_other": "{{count}} предложения за « {{term}} »",
       "operations_one": "{{count}} операция за « {{term}} »",
       "operations_other": "{{count}} операции за « {{term}} »",
       "organisations_one": "{{count}} организация за « {{term}} »",
-      "organisations_many": "{{count}} организации за « {{term}} »",
+      "organisations_other": "{{count}} организации за « {{term}} »",
       "main_results_empty_term": "0 резултат"
     },
     "main_results": {
@@ -1148,7 +1148,7 @@
       "organisation": "Организация",
       "operation": "Операция",
       "results_one": "{{count}} резултат",
-      "results_many": "{{count}} резултата",
+      "results_other": "{{count}} резултата",
       "view_all": "Вижте всички",
       "no_results": "Не открихме никакви резултати за вашето търсене « {{term}} »",
       "no_query": "Търсите предложение, идея или консултация? Въведете своето търсене!",
@@ -1196,7 +1196,7 @@
     "host_address": "{{make_host_address}} FRANCE",
     "host_phone": "Телефонен номер: ",
     "host_phone_number": "{{host_number}}",
-    "eu_mention": "@@legal.eu_mention|fr:La Commission européenne met à disposition une plateforme de règlement des litiges en ligne pour les consommateurs, à l'adresse https://ec.europa.eu/consumers/odr."
+    "eu_mention": "Европейската комисия предоставя на потребителите онлайн платформа за разрешаване на спорове на адрес <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\">https://ec.europa.eu/consumers/odr - (нов прозорец)</a>."
   },
   "cookies_management": {
     "title": "Управление на бисквитките",
@@ -1224,7 +1224,7 @@
       "session": "Сесия",
       "month": "{{count}} месец",
       "year_one": "{{count}} година",
-      "year_many": "{{count}} години",
+      "year_other": "{{count}} години",
       "technicals": {
         "name": "Технически бисквитки:",
         "description": "тези бисквитки са необходими за функционирането на сайта и не могат да бъдат деактивирани. Можете да настроите браузъра си да блокира или да бъде информиран за съществуването на тези бисквитки, но това може да засегне някои части на нашия сайт. Тези бисквитки нямат за цел да ви идентифицират лично.",
@@ -1361,7 +1361,7 @@
       "description": "Вашето предложение трябва да отговаря на въпроса, поставен в консултацията. В противен случай предложението ви ще се счита за извън темата и ще бъде отхвърлено.",
       "refused_card_example": "Трябва Световното първенство по футбол да се провежда на всеки две години.",
       "validated_card_example": "Трябва да насърчаваме достъпа до къси съединения в столовете на предприятията.",
-      "example": "@@moderation_charter.irrelevant_solutions.example|fr:Par exemple pour la question “Comment permettre à chacun de mieux manger ?”"
+      "example": "Например за въпроса \"Как можем да дадем възможност на всички да се хранят по-добре?”"
     },
     "discriminatory_solutions": {
       "title": "Дискриминационни предложения",

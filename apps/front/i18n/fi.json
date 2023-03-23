@@ -70,8 +70,8 @@
       }
     },
     "legal": {
-      "title": "Oikeudelliset huomautukset – Make.org",
-      "description": "Löydät täältä sivuston oikeudelliset huomautukset."
+      "title": "Oikeudelliset tiedot – Make.org",
+      "description": "Löydät täältä sivuston oikeudelliset tiedot."
     },
     "privacy_policy": {
       "title": "Tietosuojakäytäntö – Make.org",
@@ -114,7 +114,7 @@
     "continue": "Jatka",
     "register_panel": {
       "welcome": "Tervetuloa {{name}}",
-      "greeting": "Olemme iloisia siitä, että voimme laskea sinut sitoutuneisiin käyttäjiimme.",
+      "greeting": "Kiva, että liityit käyttäjäksemme!",
       "mail_confirmation_strong": "Vahvista sähköpostiosoitteesi yhdellä napsautuksella ",
       "mail_confirmation": " tilisi aitouden varmistamiseksi. Napsauta aktivointilinkkiä, joka on lähetetty sinulle seuraavaan osoitteeseen: {{mail}}",
       "onboarding": "Kerro mielipiteesi sinulle tärkeistä yhteiskunnallisista aiheista osallistumalla kansalaiskuulemisiimme.",
@@ -162,8 +162,8 @@
       },
       "messages": {
         "errors_notification": "Tässä lomakkeessa havaittiin virheitä:",
-        "invalid_email": "Annathan sähköpostiosoitteen oikeassa muodossa.",
-        "invalid_email_dynamic": "Käytä muotoa {{label}}.",
+        "invalid_email": "Anna sähköpostiosoite oikeassa muodossa.",
+        "invalid_email_dynamic": "Anna {{label}} oikeassa muodossa.",
         "already_registered": "Tämä sähköpostiosoite on jo olemassa.",
         "already_registered_dynamic": "Tämä {{label}} on jo olemassa.",
         "email_doesnot_exist": "Tätä sähköpostiosoitetta ei ole yhdistetty tiliisi. Kirjoita sähköpostiosoitteesi uudelleen.",
@@ -183,13 +183,13 @@
         "submit_success": "Muutos on tallennettu onnistuneesti.",
         "malformed": "Annathan URL-osoitteen muodossa \"https://example.com\""
       },
-      "password_requirements": "@@common.form.password_requirements|fr:8 caractères minimum dont au moins 1 chiffre, 1 majuscule et 1 caractère spécial."
+      "password_requirements": "Salasan on oltava vähintään kahdeksan merkkiä pitkä, ja siinä on oltava vähintään yks numero, yksi iso kirjain ja yksi erikoismerkki."
     },
     "social_login": {
       "card_title": "Tarkastellaksesi äänestyshistoriaasi",
       "facebook_connect": "Jatka Facebookilla",
       "google_connect": "Jatka Googlella",
-      "email_register": "Rekisteröidy sähköpostitse",
+      "email_register": "Rekisteröidy sähköpostiosoitteella",
       "count_register": "({{count}}/2)"
     },
     "notifications": {
@@ -269,7 +269,7 @@
       "page": "Sivu",
       "page_total": "/{{total}}"
     },
-    "max_characters": "merkkien enimmäismäärä",
+    "max_characters": "sallitusta merkkimäärästä",
     "back": "Takaisin",
     "proposal_count_one": "{{count}} ehdotus",
     "proposal_count_other": "{{count}} ehdotusta",
@@ -416,7 +416,7 @@
       "last_step": "jotta voit lähettää ehdotuksesi",
       "subtitle": "Käytän seuraavaa rekisteröitymistapaa: ",
       "button_login_text": "Minulla on jo tili,",
-      "button_login_link": "kirjaudun sisään.",
+      "button_login_link": "kirjaudu sisään.",
       "button_login": "Kirjaudu sisään",
       "back_authentication": "Siirry kirjautumisruutuun"
     },
@@ -451,7 +451,7 @@
     "static_total": "Tämä ehdotus sai ääniä seuraavasti: ",
     "static_repartition": "Äänten jakautuminen: ",
     "total_one": "Tämä ehdotus sai {{count}} äänen. Näin äänet jakaantuivat: ",
-    "total_other": "Ehdotus sai {{count}} ääntä. Näin äänet jakaantuivat: ",
+    "total_other": "Tämä ehdotus sai {{count}} ääntä. Näin äänet jakaantuivat: ",
     "voted": {
       "agree": "Annoin \"samaa mieltä\" -äänen tälle ehdotukselle.",
       "disagree": "Annoin \"eri mieltä” -äänen tälle ehdotukselle.",
@@ -550,7 +550,7 @@
   "main_footer": {
     "jobs": "Työpaikat",
     "whoarewe": "Lähestymistapamme",
-    "legal": "Oikeudelliset huomautukset",
+    "legal": "Oikeudelliset tiedot",
     "terms": "Käyttöehdot",
     "data": "Tietosuojakäytäntö",
     "country": "Vaihda maata",
@@ -568,7 +568,7 @@
     "details": {
       "title": "Mistä evästeistä on kyse?",
       "technicals": "<strong> Tekniset evästeet:</strong> evästeet, jotka ovat välttämättömiä sivuston toiminnan kannalta",
-      "preferences": "<strong> Asetuksiin liittyvät evästeet </strong> evästeet, jotka parantavat käyttökokemustasi selatessasi sivustoa",
+      "preferences": "<strong> Asetuksiin liittyvät evästeet: </strong> evästeet, jotka parantavat käyttökokemustasi selatessasi sivustoa",
       "statistics": "<strong> Statistiikkaan liittyvät evästeet:</strong> evästeet, joiden avulla voidaan analysoida kansalaiskuulemisia paremmin koostetusti",
       "social_media": "<strong> Sosiaaliseen mediaan liittyvät evästeet: </strong> evästeet, joilla pyrimme optimoimaan vaikutuksemme hyödyntämällä sosiaalista mediaa"
     },
@@ -708,7 +708,7 @@
       "proposal_disagree": "on eri mieltä ehdotuksesta",
       "and": " ja ",
       "hasVoted_one": " on äänestänyt tästä ehdotuksesta.",
-      "hasVoted_other": " ovat äänestäneet tästä ehdotuksesta.",
+      "hasVoted_other": " on äänestänyt tästä ehdotuksesta.",
       "sharing_title": "Jaa tämä profiili"
     }
   },
@@ -785,10 +785,10 @@
     "highlights": {
       "start_date": "Julkaisupäivämäärä",
       "end_date": "Kuulemisen päättymispäivämäärä",
-      "remaining_one": "Päivä jäljellä",
-      "remaining_other": "Päivää jäljellä",
-      "proposals_one": "Ehdotus",
-      "proposals_other": "Ehdotusta",
+      "remaining_one": "Päiviä jäljellä",
+      "remaining_other": "Päiviä jäljellä",
+      "proposals_one": "Ehdotuksia",
+      "proposals_other": "Ehdotuksia",
       "participant_one": "Osallistuja",
       "participant_other": "Osallistujaa",
       "progress_title": "Äänestystavoitteemme",
@@ -965,8 +965,8 @@
       },
       "top_ideas": {
         "skiplink": "Parhaat esiin tulevat ideat",
-        "title_one": "Parhaat suuren äänienemmistön saaneet ideat, luokiteltuna {{count}} aiheeseen",
-        "title_other": "Parhaat suuren äänienemmistön saaneet ideat, luokiteltuna {{count}} aiheeseen",
+        "title_one": "Parhaat suuren äänienemmistön saaneet ideat, luokiteltuina {{count}} aiheeseen",
+        "title_other": "Parhaat suuren äänienemmistön saaneet ideat, luokiteltuina {{count}} aiheeseen",
         "introduction": "Alusta ryhmittelee parhaat vastaanotetut ehdotukset suuriksi ideoiksi, jotka jäsentävät kuulemista. Make.org ottaa huomioon puoltavat ja vastustavat äänet sekä maininnat « suosikki », « realistinen », « vähäpätöinen » ja « ei missään nimessä ».",
         "axe_title": "Aihe {{count}}: {{name}}"
       },
@@ -1012,7 +1012,7 @@
       }
     },
     "popular_proposals": {
-      "title": "{{ count }} tällä hetkellä suosituinta ehdotusta luokiteltuna aiheen mukaan"
+      "title": "{{ count }} tällä hetkellä suosituinta ehdotusta luokiteltuina aiheen mukaan"
     }
   },
   "browse": {
@@ -1052,7 +1052,7 @@
     "browse": "Selaa kuulemisia",
     "see_closed_consultations": "Näytä päättyneet kuulemiset",
     "no_consultations": "Käynnissä ei ole yhtään kuulemista. Pysytään kuitenkin yhteydessä!",
-    "one_consultation": "Rekisteröi, jotta sinulle voidaan ilmoittaa seuraavasta kuulemisesta.",
+    "one_consultation": "Rekisteröidy, jotta sinulle voidaan ilmoittaa seuraavasta kuulemisesta.",
     "no_results": "Tulokset ovat pian saatavilla. Pysytään siihen asti yhteydessä.",
     "one_result": "Rekisteröidy, jotta saat tietoja tulevista tuloksista",
     "subscribe": "Rekisteröidy",
@@ -1104,8 +1104,8 @@
         "subtitle_other": "tehtyä ehdotusta"
       },
       "partners": {
-        "subtitle_one": "sitoutunut yhdistys ja yritys",
-        "subtitle_other": "sitoutunutta yhdistystä ja yritystä"
+        "subtitle_one": "osallistuva yhdistys ja yritys",
+        "subtitle_other": "osallistuvaa yhdistystä ja yritystä"
       }
     },
     "featured_questions": {
@@ -1186,7 +1186,7 @@
     "paragraph": "Idea, ehdotus tai vika? Ota meihin yhteyttä lähettämällä sähköpostia osoitteeseen"
   },
   "legal": {
-    "title": "Oikeudelliset huomautukset",
+    "title": "Oikeudelliset tiedot",
     "make_infos": "Sivuston julkaisija: MAKE.ORG on yksinkertaistettu osakeyhtiö, jonka pääoma on {{make_capital}}. Sen kotipaikka on {{make_address}}, ja se on rekisteröity Pariisin kauppareksiteriin numerolla {{make_rcs}} (jäljempänä « MAKE.ORG »).",
     "mail": "Sähköpostiosoite: ",
     "make_phone": "Puhelinnumero: ",
@@ -1196,7 +1196,7 @@
     "host_address": "{{make_host_address}} RANSKA",
     "host_phone": "Puhelinnumero: ",
     "host_phone_number": "{{host_number}}",
-    "eu_mention": "@@legal.eu_mention|fr:La Commission européenne met à disposition une plateforme de règlement des litiges en ligne pour les consommateurs, à l'adresse https://ec.europa.eu/consumers/odr."
+    "eu_mention": "Euroopan komissio on antanut kuluttajien saataville alustan verkkovälitteistä riidanratkaisua varten. Se on osoitteessa <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\">https://ec.europa.eu/consumers/odr - (avautuu uudessa ikkunassa)</a>."
   },
   "cookies_management": {
     "title": "Evästeiden hallinta",
@@ -1359,7 +1359,7 @@
     "irrelevant_solutions": {
       "title": "Aihealuetta vastaamattomat ehdotukset",
       "description": "Ehdotuksesi on vastattava kuulemisessa esitettyä kysymystä. Muussa tapauksessa katsotaan, että ehdotuksesi ei vastaa aihealuetta ja se hylätään.",
-      "example": "Seuraava esimerkki koskee kysymystä ”miten kaikille voitaisiin antaa mahdollisuus parempaan ravintoon?”.",
+      "example": "Esimerkki, joka koskee kysymystä ”Miten kaikille voitaisiin antaa mahdollisuus parempaan ravintoon?”",
       "refused_card_example": "On toimittava näin: jalkapallon maailmanmestaruuskilpailut on järjestettävä joka toinen vuosi.",
       "validated_card_example": "On toimittava näin: työpaikkaruokaloissa on suosittava lähiruokaa."
     },

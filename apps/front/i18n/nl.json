@@ -183,7 +183,7 @@
         "submit_success": "De wijziging is opgeslagen.",
         "malformed": "Respecteer het URL-formaat \"https://example.com\""
       },
-      "password_requirements": "@@common.form.password_requirements|fr:8 caractères minimum dont au moins 1 chiffre, 1 majuscule et 1 caractère spécial."
+      "password_requirements": "minimaal 8 tekens waaronder ten minste 1 cijfer, 1 hoofdletter en 1 speciaal teken."
     },
     "social_login": {
       "card_title": "Bekijk je stemgeschiedenis",
@@ -549,7 +549,7 @@
   },
   "main_footer": {
     "jobs": "Carrière",
-    "whoarewe": "Onze benadering",
+    "whoarewe": "Over Make.org",
     "legal": "Wettelijke vermeldingen",
     "terms": "Gebruiksvoorwaarden",
     "data": "Gegevensbeleid",
@@ -1196,7 +1196,7 @@
     "host_address": "{{make_host_address}} FRANKRIJK",
     "host_phone": "Telefoonnummer: ",
     "host_phone_number": "{{host_number}}",
-    "eu_mention": "@@legal.eu_mention|fr:La Commission européenne met à disposition une plateforme de règlement des litiges en ligne pour les consommateurs, à l'adresse https://ec.europa.eu/consumers/odr."
+    "eu_mention": "De Europese Commissie biedt een platform voor onlinegeschillenbeslechting voor consumenten, op het volgende adres: <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\">https://ec.europa.eu/consumers/odr - (nieuw venster)</a>."
   },
   "cookies_management": {
     "title": "Cookiebeheer",
@@ -1222,7 +1222,7 @@
       "mandatory": "Nog steeds actief",
       "duration": "Duur: {{duration}}",
       "session": "Sessie",
-      "month": "{{count}} maanden",
+      "month": "{{count}} maand",
       "year_one": "{{count}} jaar",
       "year_other": "{{count}} jaar",
       "technicals": {
@@ -1367,8 +1367,8 @@
       "title": "Discriminerende voorstellen",
       "description": "Overeenkomstig de wet² mag uw voorstel geen uitlatingen bevatten die aanzetten tot geweld of haat. Evenmin mag het discriminerende of lasterlijke taal bevatten, met name tegen een etnische, sociale of religieuze groep.",
       "refused_card_example": "Er moet worden voorkomen dat de Friezen hun verouderde tradities behouden.",
-      "validated_card_example": "Er moet ervoor worden gezorgd dat Nederlanders beter met elkaar kunnen communiceren.",
-      "refused_card_example_2": "Er moet een verbod komen op halskettingen met een kruis, die een symbool van onderwerping zijn.",
+      "validated_card_example": "Er moet een betere communicatie tussen Nederlanders onderling komen.",
+      "refused_card_example_2": "Er moet worden gezorgd voor een betere toegankelijkheid van producten van lokale producenten.",
       "validated_card_example_2": "Er moet op worden toegezien dat de godsdienstvrijheid in ons land gerespecteerd wordt."
     },
     "partisan_solutions": {
@@ -1376,13 +1376,13 @@
       "description": "Uw voorstel mag geen partij kiezen (d.w.z. een boodschap van waardering of ontwaarding uitdragen) ten aanzien van een politieke partij, een politieke figuur, een ideologie of een godsdienst (persoonlijkheid, symbool of praktijk).",
       "refused_card_example": "Er moet kennis worden genomen van het verkiezingsprogramma van de heer XXX, hij heeft originele ideeën voor de komende verkiezingen.",
       "validated_card_example": "Er moet vóór de verkiezingen kennis worden genomen van de verkiezingsprogramma’s van elke politieke partij.",
-      "refused_card_example_2": "Er moet regelmatig in de Bijbel worden gelezen om verlossing te vinden.",
+      "refused_card_example_2": "Er moet door werkgevers kennis worden genomen van de data van bepaalde religieuze feestdagen: ramadan, chanoekafeest enz.",
       "validated_card_example_2": "Er moet door werkgevers kennis worden genomen van de data van bepaalde religieuze feestdagen: ramadan, chanoekafeest enz."
     },
     "advertising": {
       "title": "Reclame",
       "description": "U kunt geen reclame maken voor een specifiek merk of bedrijf. Ook hier kunt u een merk of bedrijf alleen noemen aan de hand van een illustratief voorbeeld.",
-      "refused_card_example": "Er moet door alle bedrijven gebruik worden gemaakt van de oplossingen die IBM biedt.",
+      "refused_card_example": "Er moet worden gezorgd voor een betere toegankelijkheid van producten van lokale producenten en er moet worden gecommuniceerd over innovaties in de landbouw.",
       "validated_card_example": "Er moet een verbod komen op de consumptie van bepaalde frisdranken die te veel suiker bevatten, zoals Coca Cola."
     },
     "multiple_ideas": {
@@ -1404,14 +1404,14 @@
     "concrete_elements": {
       "text": "Denk eraan uw idee toe te lichten met concrete elementen zodat andere burgers precies begrijpen wat u bedoelt.",
       "refused_card_example": "Er moet meer Europa komen.",
-      "validated_card_example": "Er moet meer geld beschikbaar worden gesteld voor de Europese Unie.",
+      "validated_card_example": "Er moet een arbeidsbemiddelingsdienst speciaal voor jongeren komen.",
       "refused_card_example_2": "Er moet een verlaging van de jeugdwerkloosheid komen.",
       "validated_card_example_2": "Er moet een arbeidsbemiddelingsdienst speciaal voor jongeren komen."
     },
     "understandable_language": {
       "text": "Wees zo duidelijk mogelijk en gebruik een taal die voor iedereen begrijpelijk is.",
       "refused_card_example": "Er moet een propedeusejaar op de universiteit zijn.",
-      "validated_card_example": "Er moet een algemeen jaar op de universiteit zijn voordat je je studie kiest.",
+      "validated_card_example": "Er moet door het Vlaams Agentschap Zorg en Gezondheid meer worden gescreend op kanker.",
       "refused_card_example_2": "Er moet door het VAZG meer worden gescreend op kanker.",
       "validated_card_example_2": "Er moet door het Vlaams Agentschap Zorg en Gezondheid meer worden gescreend op kanker."
     },

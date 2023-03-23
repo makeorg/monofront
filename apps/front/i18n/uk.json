@@ -61,7 +61,7 @@
     },
     "browse": {
       "consultations": {
-        "title": "Переглянути наявні консультації — Make.org",
+        "title": "Переглянути наявні консультації - Make.org",
         "description": "Пропонувати, голосувати, діяти — знайдемо разом шляхи розв’язання головних питань сьогодення."
       },
       "results": {
@@ -302,9 +302,11 @@
     "associated_proposals_few": "{{count}} пов’язані пропозиції",
     "associated_proposals_many": "{{count}} пов’язаних пропозицій",
     "position_one": "{{ count }} висловлення думки",
-    "position_other": "{{ count }} висловлень думки",
+    "position_few": "",
+    "position_many": "",
     "candidate_one": " кандидата щодо цієї ідеї.",
-    "candidate_other": " кандидатів щодо цієї ідеї.",
+    "candidate_few": "",
+    "candidate_many": "",
     "open": "Показати рейтинг ідеї",
     "close": "Приховати рейтинг ідеї",
     "expand": " - Натисніть, щоб показати рейтинг ідеї",
@@ -1021,9 +1023,9 @@
     "sortby": "Сортувати за: ",
     "local_actors": {
       "title": "Найактивніші асоціації",
-      "proposals_one": "{{count}} пропозиція для «{{term}}»",
-      "proposals_few": "{{count}} пропозиції для «{{term}}»",
-      "proposals_many": "{{count}} пропозицій для «{{term}}»",
+      "proposals_one": "{{ count }} пропозиція",
+      "proposals_few": "{{ count }} пропозиції",
+      "proposals_many": "{{ count }} пропозицій",
       "votes_one": "{{count}} голос",
       "votes_few": "{{count}} голоси",
       "votes_many": "{{count}} голосів",
@@ -1230,11 +1232,11 @@
   },
   "legal": {
     "title": "ЮРИДИЧНА ІНФОРМАЦІЯ",
-    "make_infos": "Видавець сайту: MAKE.ORG, акціонерне товариство спрощеного типу з капіталом 1 056 017,00 євро, що розташоване за адресою 13-15 Rue de la Bûcherie 75005 Paris, зареєстроване в Реєстрі торгівлі та компаній Парижа за номером 820 016 095 (надалі «MAKE.ORG»).",
+    "make_infos": "Видавець сайту: MAKE.ORG, акціонерне товариство спрощеного типу з капіталом {{make_capital}}, що розташоване за адресою {{make_address}}, зареєстроване в Реєстрі торгівлі та компаній Парижа за номером {{make_rcs}} (надORG»).",
     "mail": "Адреса ел. пошти: ",
     "make_phone": "Номер телефону: ",
     "make_phone_number": "{{make_phone_number}}",
-    "director": "Директор публікації: Аксель Дошез (Axel Dauchez)",
+    "director": "Директор публікації: {{make_director_name}}",
     "host": "Хостинг сайту: ",
     "host_address": "{{make_host_address}} ФРАНЦІЯ",
     "host_phone": "Номер телефону: ",

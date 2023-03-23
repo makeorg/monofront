@@ -403,7 +403,7 @@ const ModerationCharterPage: FC = () => (
               </ModerationExampleCardTitleStyle>
               <StaticCenteredParagraphStyle>
                 {i18n.t(
-                  'moderation_charter.understandable_language.validated_card_example'
+                  'moderation_charter.understandable_language.validated_card_example_2'
                 )}
               </StaticCenteredParagraphStyle>
             </ModerationExampleCardStyle>

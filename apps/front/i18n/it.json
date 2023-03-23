@@ -183,7 +183,7 @@
         "submit_success": "La modifica è stata salvata.",
         "malformed": "Si prega di rispettare il formato url \"https://example.com\""
       },
-      "password_requirements": "@@common.form.password_requirements|fr:8 caractères minimum dont au moins 1 chiffre, 1 majuscule et 1 caractère spécial."
+      "password_requirements": "Minimo 8 caratteri di cui almeno 1 cifra, 1 lettera maiuscola e 1 carattere speciale."
     },
     "social_login": {
       "card_title": "Per consultare lo storico dei tuoi voti",
@@ -1046,10 +1046,13 @@
       "subtitle": "La tua opinione è importante! Vota e proponi delle soluzioni per avere un impatto su diversi argomenti sociali e sulle problematiche attuali.",
       "participate": "Partecipa",
       "contributors_one": "partecipante",
+      "contributors_many": "",
       "contributors_other": "partecipanti",
       "proposals_one": "proposta",
+      "proposals_many": "",
       "proposals_other": "proposte",
       "votes_one": "voto",
+      "votes_many": "",
       "votes_other": "voti",
       "empty": "Siamo spiacenti, attualmente non ci sono consultazioni disponibili nel tuo paese."
     },
@@ -1158,6 +1161,7 @@
       "proposals_many": "{{count}} proposte per « {{term}} »",
       "proposals_other": "{{count}} proposte per « {{term}} »",
       "operations_one": "{{count}} operazione per « {{term}} »",
+      "operations_many": "",
       "operations_other": "{{count}} operazioni per « {{term}} »",
       "organisations_one": "{{count}} organizzazione per « {{term}} »",
       "organisations_many": "{{count}} organizzazioni per « {{term}} »",
@@ -1218,7 +1222,7 @@
     "host_address": "{{make_host_address}} FRANCIA",
     "host_phone": "Numero di telefono: ",
     "host_phone_number": "{{host_number}}",
-    "eu_mention": "@@legal.eu_mention|fr:La Commission européenne met à disposition une plateforme de règlement des litiges en ligne pour les consommateurs, à l'adresse https://ec.europa.eu/consumers/odr."
+    "eu_mention": "La Commissione europea mette a disposizione una piattaforma per la risoluzione online delle controversie dedicata ai consumatori, all'indirizzo <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\">https://ec.europa.eu/consumers/odr - (nuova finestra)</a>."
   },
   "cookies_management": {
     "title": "Gestione di Cookie",

@@ -1,95 +1,9 @@
 {
   "meta": {
-    "home": {
-      "title": "Agir avec Make.org - Make.org",
-      "description": "Proposez, votez, agissons : ensemble, trouvons des solutions aux grandes problématiques actuelles. Les plus soutenues seront mises en action par Make.org et ses partenaires.",
-      "picture": "https://assets.make.org/assets/metas/default_meta-fr.png"
-    },
-    "organisation": {
-      "proposals": {
-        "title": "{{organisation}} - ses propositions - Make.org"
-      },
-      "positions": {
-        "title": "{{organisation}} - ses prises de position - Make.org"
-      }
-    },
-    "profile": {
-      "proposals": {
-        "title": "Profil - Mes propositions - Make.org"
-      },
-      "favorites": {
-        "title": "Profil - Mes coups de cœur - Make.org"
-      },
-      "edit": {
-        "title": "Modification de mon profil - Make.org"
-      }
-    },
-    "proposal": {
-      "title": "Proposition '{{proposal}}' de la consultation '{{question}}' - Make.org",
-      "description": "Soutenez ma proposition en votant et trouvons ensemble des solutions aux grandes problématiques actuelles. Les plus soutenues seront mises en action par Make.org et ses partenaires."
-    },
-    "participate": {
-      "title": "Participer à la consultation '{{question}}' - Make.org"
-    },
-    "explore": {
-      "title": "Explorer les propositions de la consultation '{{question}}' - Make.org"
-    },
-    "results": {
-      "title": "Résultats de la consultation '{{question}}' - Make.org",
-      "description": "Découvrez les résultats de la consultation citoyenne classés en différents thèmes plébiscités, propositions les plus controversées et propositions les plus repoussées."
-    },
     "sequence": {
       "title_standard": "Participez à la consultation '{{question}}' - Make.org",
       "title_controversy": "Départagez les propositions de la consultation '{{question}}' - Make.org",
-      "title_popular": "Prenez position sur les propositions les plus populaires de la consultation '{{question}}' - Make.org",
-      "title_keyword": "Prenez position sur le thème '{{keywordLabel}}' de la consultation '{{question}}' - Make.org "
-    },
-    "top-ideas": {
-      "title": "Le top des idées de la consultation '{{question}}' - Make.org",
-      "description": "Découvrez le top des idées issu de la consultation '{{question}}'"
-    },
-    "top-idea-details": {
-      "title": "Le detail de l'idée '{{idea}}' de la consultation '{{question}}' - Make.org",
-      "description": "Découvrez toutes les propositions de l'idée {{idea}} issue de la consultation '{{question}}'"
-    },
-    "search": {
-      "main_results": "Recherche - Résultats pour « {{term}} » - Make.org",
-      "proposals": "Recherche - Résultats des propositions pour « {{term}} » - Make.org",
-      "consultations": "Recherche - Résultats des consultations pour « {{term}} » - Make.org",
-      "organisations": "Recherche - Résultats des organisations pour « {{term}} » - Make.org"
-    },
-    "browse": {
-      "consultations": {
-        "title": "Participez aux consultations avec Make.org - Make.org",
-        "description": "Proposez, votez, agissons : ensemble, trouvons des solutions aux grandes problématiques actuelles. Les plus soutenues seront mises en action par Make.org et ses partenaires."
-      },
-      "results": {
-        "title": "Résultats des consultations avec Make.org - Make.org",
-        "description": "Découvrez les résultats de nos consultations ainsi que les actions mises en place par Make.org et ses partenaires."
-      }
-    },
-    "legal": {
-      "title": "Mentions légales - Make.org"
-    },
-    "contact": {
-      "title": "Contactez-nous - Make.org"
-    },
-    "no_cookies": {
-      "title": "Ooops ! Vos cookies sont désactivés - Make.org"
-    },
-    "cookies": {
-      "title": "Gestion des cookies - Make.org"
-    },
-    "password-recovery": {
-      "title": "Je crée un nouveau mot de passe - Make.org"
-    },
-    "a11y": {
-      "title": "Déclaration d'accessibilté - Make.org",
-      "description": "Découvrez l'engagement de Make.org en matière d'accessibilité numérique. Ensemble, trouvons des solutions aux grandes problématiques actuelles."
-    },
-    "not_found": {
-      "title": "Page non trouvée - Erreur 404 - Make.org",
-      "description": "La page que vous avez demandée n’existe pas ou plus."
+      "title_popular": "Prenez position sur les propositions les plus populaires de la consultation '{{question}}' - Make.org"
     }
   },
   "common": {

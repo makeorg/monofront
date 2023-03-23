@@ -183,7 +183,7 @@
         "submit_success": "La modificación se ha registrado correctamente.",
         "malformed": "Por favor, ten en cuenta que el formato de URL debe ser \"https://example.com\""
       },
-      "password_requirements": "@@common.form.password_requirements|fr:8 caractères minimum dont au moins 1 chiffre, 1 majuscule et 1 caractère spécial."
+      "password_requirements": "8 caracteres como mínimo que incluyan al menos 1 dígito, 1 letra mayúscula y 1 carácter especial."
     },
     "social_login": {
       "card_title": "Para consultar tu historial de votos",
@@ -421,7 +421,7 @@
       "last_step": "para enviar tu propuesta!",
       "subtitle": "Registrarme con",
       "button_login_text": "Ya tengo una cuenta,",
-      "button_login_link": "conectarme.",
+      "button_login_link": "Conectarme.",
       "button_login": "Conexión",
       "back_authentication": "Volver a la página de conexión"
     },
@@ -433,7 +433,7 @@
       "tooltip_title": "En fase de moderación",
       "tooltip_description": "Tu propuesta será procesada por nuestros equipos en un plazo de 48 horas. Mientras tanto, ya puedes consultarla en tu perfil.",
       "grats": "¡Enhorabuena, {{name}}! ",
-      "proposal_sent": "tu propuesta se ha enviado correctamente ",
+      "proposal_sent": "¡Tu propuesta se ha enviado correctamente ",
       "activate": "Confirma tu dirección de correo electrónico con un clic ",
       "link": "para garantizar la autenticidad de tu cuenta. Haz clic en el enlace de activación que te hemos enviado a: {{mail}}",
       "question": "¿Tienes una pregunta? Ponte en contacto con nosotros en: ",
@@ -826,7 +826,7 @@
       },
       "interact": {
         "title": "Pronunciarme sobre las propuestas",
-        "description": "Si las propuestas identifican los objetivos de la consulta, danos tu opinión para ayudarnos a identificar las ideas a las que debemos dar prioridad.",
+        "description": "Si las propuestas definen los objetivos de la consulta, danos tu opinión para ayudarnos a identificar las ideas a las que debemos dar prioridad.",
         "button": "Votar"
       },
       "controversy": {
@@ -1046,10 +1046,13 @@
       "subtitle": "¡Tu opinión cuenta! Vota y propón soluciones para generar un impacto en diversos temas de actualidad.",
       "participate": "Participar",
       "contributors_one": "participante",
+      "contributors_many": "",
       "contributors_other": "participantes",
       "proposals_one": "propuesta",
+      "proposals_many": "",
       "proposals_other": "propuestas",
       "votes_one": "voto",
+      "votes_many": "",
       "votes_other": "votos",
       "empty": "Lo sentimos. No hay ninguna consulta disponible en estos momentos en tu país."
     },
@@ -1158,6 +1161,7 @@
       "proposals_many": "{{count}} de propuestas para « {{term}} »",
       "proposals_other": "{{count}} propuestas para « {{term}} »",
       "operations_one": "{{count}} consulta para « {{term}} »",
+      "operations_many": "",
       "operations_other": "{{count}} consultas para « {{term}} »",
       "organisations_one": "{{count}} organización para « {{term}} »",
       "organisations_many": "{{count}} de organizaciones para « {{term}} »",
@@ -1218,7 +1222,7 @@
     "host_address": "{{make_host_address}} FRANCIA",
     "host_phone": "Número de teléfono: ",
     "host_phone_number": "{{host_number}}",
-    "eu_mention": "@@legal.eu_mention|fr:La Commission européenne met à disposition une plateforme de règlement des litiges en ligne pour les consommateurs, à l'adresse https://ec.europa.eu/consumers/odr."
+    "eu_mention": "La Comisión Europea pone a disposición de los consumidores una plataforma de resolución de litigios en línea a través de la dirección <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\">https://ec.europa.eu/consumers/odr - (nueva pestaña)</a>."
   },
   "cookies_management": {
     "title": "Gestión de cookies",

@@ -529,7 +529,7 @@
     "step2_title": "Meine Registrierung abschließen",
     "login_title": "Ich habe bereits ein Konto.",
     "login_link": "Anmelden",
-    "gtu_text_first": "Mit der Registrierung erklärst du dich mit unseren {{gtu_link}} ",
+    "gtu_text_first": "Mit der Registrierung erklärst du dich mit unseren ",
     "gtu_text_second": " einverstanden und stimmst zu, dass du E-Mails (in geringer Anzahl) von Make.org erhältst.",
     "gtu_link": "Allgemeinen Nutzungsbedingungen."
   },
