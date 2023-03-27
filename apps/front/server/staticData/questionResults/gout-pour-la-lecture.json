@@ -1,0 +1,566 @@
+{
+  "context": "Consultation citoyenne réalisée par Make.org du 2022-12-05 au 2023-02-05, autour de la question: Comment développer le goût pour la lecture de tous les Français ?",
+  "key_figures": {
+    "visitors": 18415,
+    "votes": 370324,
+    "proposals": 2212
+  },
+  "top_ideas": [
+    {
+      "name": "Milieu scolaire",
+      "ideas": [
+        {
+          "idea": "Créer des temps dédiés à la transmission du plaisir de la lecture à l’école",
+          "agreement": 92,
+          "adhesion": 37,
+          "realistic": 18
+        },
+        {
+          "idea": "Diversifier l'offre, les genres littéraires et les supports d’apprentissage de la lecture à l’école",
+          "agreement": 87,
+          "adhesion": 27,
+          "realistic": 25
+        },
+        {
+          "idea": "Transmettre le goût de la lecture grâce à l’écriture",
+          "agreement": 80,
+          "adhesion": 24,
+          "realistic": 21
+        },
+        {
+          "idea": "Renforcer le rôle des professeurs documentalistes et des CDI",
+          "agreement": 82,
+          "adhesion": 19,
+          "realistic": 26
+        }
+      ]
+    },
+    {
+      "name": "Image et communication",
+      "ideas": [
+        {
+          "idea": "Améliorer l'image et la fréquentation des bibliotèques",
+          "agreement": 88,
+          "adhesion": 29,
+          "realistic": 26
+        },
+        {
+          "idea": "Promouvoir davantage d'événements autour de la lecture",
+          "agreement": 86,
+          "adhesion": 27,
+          "realistic": 25
+        },
+        {
+          "idea": "Valoriser tous les genres et formats littéraires, sans les distinguer",
+          "agreement": 87,
+          "adhesion": 25,
+          "realistic": 25
+        },
+        {
+          "idea": "Renforcer la place du livre et de la lecture dans les médias",
+          "agreement": 86,
+          "adhesion": 30,
+          "realistic": 22
+        }
+      ]
+    },
+    {
+      "name": "Publics spécifiques",
+      "ideas": [
+        {
+          "idea": "Rapprocher la lecture des publics éloignés",
+          "agreement": 93,
+          "adhesion": 31,
+          "realistic": 24
+        },
+        {
+          "idea": "Sensibiliser les parents afin de développer les habitudes de lecture auprès des plus jeunes",
+          "agreement": 91,
+          "adhesion": 35,
+          "realistic": 19
+        },
+        {
+          "idea": "Utiliser la lecture pour créer du lien intergénérationnel",
+          "agreement": 82,
+          "adhesion": 23,
+          "realistic": 24
+        }
+      ]
+    },
+    {
+      "name": "Acteurs du livre",
+      "ideas": [
+        {
+          "idea": "Soutenir financièrement bibliothèques et médiathèques et favoriser leur capacité d’accueil",
+          "agreement": 86,
+          "adhesion": 31,
+          "realistic": 22
+        },
+        {
+          "idea": "Mieux valoriser les auteurs et les métiers du livre",
+          "agreement": 77,
+          "adhesion": 19,
+          "realistic": 22
+        },
+        {
+          "idea": "Soutenir et promouvoir les librairies indépendantes",
+          "agreement": 86,
+          "adhesion": 33,
+          "realistic": 18
+        }
+      ]
+    },
+    {
+      "name": "Espace public et professionnel",
+      "ideas": [
+        {
+          "idea": "Renforcer la place du livre et de la lecture dans l'espace public",
+          "agreement": 80,
+          "adhesion": 23,
+          "realistic": 25
+        },
+        {
+          "idea": "Développer les dispositifs permettant la lecture en entreprise",
+          "agreement": 84,
+          "adhesion": 29,
+          "realistic": 20
+        }
+      ]
+    },
+    {
+      "name": "Prix",
+      "ideas": [
+        {
+          "idea": "Pérenniser les aides financières d’accès à la lecture et développer l’offre de seconde main",
+          "agreement": 86,
+          "adhesion": 33,
+          "realistic": 19
+        }
+      ]
+    }
+  ],
+  "controversials": [
+    {
+      "id": "3dc0b2ba-c4d5-4784-b325-54822577a45c",
+      "content": "Il faut cesser de faire des romans des objets d'étude et des sujets de devoirs à rendre. C'est le meilleur moyen d'en dégoûter les enfants.",
+      "author": "Martine",
+      "agree": 43,
+      "like_it": 10,
+      "disagree": 30,
+      "no_way": 14,
+      "votes": 180
+    },
+    {
+      "id": "f8ae4a38-af4a-4007-9836-eddbf19140ba",
+      "content": "Il faut proposer de la littérature classique sous forme de manga.",
+      "author": "Sonia",
+      "agree": 37,
+      "like_it": 7,
+      "disagree": 33,
+      "no_way": 15,
+      "votes": 291
+    },
+    {
+      "id": "1a2988e2-50d7-43db-b875-e62a67c0a060",
+      "content": "Il faut organiser des concours de lecture nationaux tous publics avec finale a la tele",
+      "author": "Rebecca",
+      "agree": 41,
+      "like_it": 9,
+      "disagree": 28,
+      "no_way": 7,
+      "votes": 166
+    },
+    {
+      "id": "0c5511f2-82c8-4f95-8365-a0550e1cd02d",
+      "content": "Il faut créer des concours de lecture dans les écoles/collèges/lycées, la classe qui lit le plus de pages remporte un prix",
+      "author": "Soraya",
+      "agree": 38,
+      "like_it": 7,
+      "disagree": 34,
+      "no_way": 18,
+      "votes": 414
+    },
+    {
+      "id": "c15101fb-594c-461e-9d95-6e9087564730",
+      "content": "Il faut donner des « devoirs » aux parents ( via l école) pour les inciter à lire des livres à leurs enfants dès le plus jeune âge.",
+      "author": "Sarah",
+      "agree": 41,
+      "like_it": 6,
+      "disagree": 41,
+      "no_way": 12,
+      "votes": 174
+    },
+    {
+      "id": "b6b08030-ef86-4c0f-8acb-35b5d91c650a",
+      "content": "Il faut inviter les parents à lire à voix haute dans les écoles encadrés par des professionnels du livre pour faire des temps ludiques. ",
+      "author": "Christel",
+      "agree": 48,
+      "like_it": 12,
+      "disagree": 20,
+      "no_way": 3,
+      "votes": 166
+    },
+    {
+      "id": "78ee8a87-3e2c-4617-8f29-8fdb3b4c75a8",
+      "content": "Il faut baisser le prix des livres.",
+      "author": "Jennifer",
+      "agree": 44,
+      "like_it": 8,
+      "disagree": 32,
+      "no_way": 10,
+      "votes": 172
+    },
+    {
+      "id": "5833bf40-d3e9-4b8e-a752-28e347b899f3",
+      "content": "Il faut baisser les prix des livres car beaucoup de parents n'ont plus les moyens d'offrir un livre.",
+      "author": "Louis",
+      "agree": 58,
+      "like_it": 15,
+      "disagree": 20,
+      "no_way": 4,
+      "votes": 167
+    },
+    {
+      "id": "e34edba3-9498-42dc-b637-465264242391",
+      "content": "Il faut eviter tout écran dans les écoles pour entraîner les enfants à se concentrer sur du texte.",
+      "author": "Yves",
+      "agree": 36,
+      "like_it": 11,
+      "disagree": 37,
+      "no_way": 11,
+      "votes": 176
+    },
+    {
+      "id": "94a05231-7823-4428-b4c7-eb749c57f39c",
+      "content": "Il faut organiser une semaine sans écrans par an dans tous les établissements scolaires.",
+      "author": "Colette",
+      "agree": 42,
+      "like_it": 12,
+      "disagree": 31,
+      "no_way": 3,
+      "votes": 176
+    },
+    {
+      "id": "9144789a-653a-4788-a9d3-11f4bc3ca531",
+      "content": "Il faut utiliser les outils numériques pour favoriser l'accès au livre et à la lecture plaisir, dès le CP",
+      "author": "Alexandra",
+      "agree": 41,
+      "like_it": 4,
+      "disagree": 38,
+      "no_way": 21,
+      "votes": 172
+    },
+    {
+      "id": "87aabda3-293d-4eb0-abd6-8b9ff73993a1",
+      "content": "Il faut créer une appli sur smartphone qui envoie un rappel: « tu as passé assez de temps sur ton tel, va plutôt lire un livre! »",
+      "author": "Marie-Agnès",
+      "agree": 41,
+      "like_it": 13,
+      "disagree": 28,
+      "no_way": 8,
+      "votes": 166
+    }
+  ],
+  "cartography": [
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Thèmes cités",
+      "legend": "",
+      "data": [
+        {
+          "label": "Milieu scolaire",
+          "percent": 25,
+          "color": "#4B45A5",
+          "adjustLabel": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "label": "Bibliothèques et médiathèques",
+          "percent": 14,
+          "color": "#8955BD",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.4
+          }
+        },
+        {
+          "label": "Loisirs et événements",
+          "percent": 13,
+          "color": "#EB7575",
+          "adjustLabel": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "label": "Offre et genres littéraires",
+          "percent": 12,
+          "color": "#F5976E",
+          "adjustLabel": {
+            "textAlign": "right"
+          }
+        },
+        {
+          "label": "Cadre familial",
+          "percent": 9,
+          "color": "#EEB298",
+          "adjustLabel": {
+            "textAlign": "right"
+          }
+        },
+        {
+          "label": "Espace public",
+          "percent": 7,
+          "color": "#FFD266",
+          "adjustLabel": {
+            "textAlign": "right"
+          }
+        },
+        {
+          "label": "Médias",
+          "percent": 7,
+          "color": "#FFF689",
+          "adjustLabel": {
+            "textAlign": "right"
+          }
+        },
+        {
+          "label": "Publics éloignés",
+          "percent": 6,
+          "color": "#E5FFAE",
+          "adjustLabel": {
+            "textAlign": "right"
+          }
+        },
+        {
+          "label": "Autres",
+          "percent": 14,
+          "color": "#FFF",
+          "adjustLabel": {
+            "textAlign": "left"
+          }
+        }
+      ]
+    }
+  ],
+  "participation": [
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par région (1/2)",
+      "forcedHigherValue": 20,
+      "legend": {
+        "title": "Participation par région (1/2)",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "Île-de-France",
+          "bars": {
+            "first": 19,
+            "second": 18
+          }
+        },
+        {
+          "label": "Auvergne-Rhône-Alpes",
+          "bars": {
+            "first": 12,
+            "second": 12
+          }
+        },
+        {
+          "label": "Nouvelle-Aquitaine",
+          "bars": {
+            "first": 10,
+            "second": 9
+          }
+        },
+        {
+          "label": "Occitanie",
+          "bars": {
+            "first": 9,
+            "second": 9
+          }
+        },
+        {
+          "label": "Hauts-de-France",
+          "bars": {
+            "first": 8,
+            "second": 9
+          }
+        },
+        {
+          "label": "Grand Est",
+          "bars": {
+            "first": 8,
+            "second": 8
+          }
+        },
+        {
+          "label": "Provence-Alpes-Côte d'Azur",
+          "bars": {
+            "first": 7,
+            "second": 8
+          }
+        }
+      ],
+      "id": "participation_0"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par région (2/2)",
+      "forcedHigherValue": 20,
+      "legend": {
+        "title": "Participation par région (2/2)",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "Pays de la Loire",
+          "bars": {
+            "first": 6,
+            "second": 6
+          }
+        },
+        {
+          "label": "Bretagne",
+          "bars": {
+            "first": 6,
+            "second": 5
+          }
+        },
+        {
+          "label": "Normandie",
+          "bars": {
+            "first": 5,
+            "second": 5
+          }
+        },
+        {
+          "label": "Centre-Val de Loire",
+          "bars": {
+            "first": 5,
+            "second": 4
+          }
+        },
+        {
+          "label": "Bourgogne-Franche-Comté",
+          "bars": {
+            "first": 4,
+            "second": 4
+          }
+        },
+        {
+          "label": "Outre-mer",
+          "bars": {
+            "first": 1,
+            "second": 3
+          }
+        },
+        {
+          "label": "Corse",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        }
+      ],
+      "id": "participation_1"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par âge",
+      "legend": {
+        "title": "Répartition des votes",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "16-24",
+          "bars": {
+            "first": 8,
+            "second": 13
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "25-34",
+          "bars": {
+            "first": 16,
+            "second": 14
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "35-44",
+          "bars": {
+            "first": 20,
+            "second": 15
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "45-54",
+          "bars": {
+            "first": 21,
+            "second": 16
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "55-64",
+          "bars": {
+            "first": 18,
+            "second": 16
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "65+",
+          "bars": {
+            "first": 16,
+            "second": 26
+          },
+          "color": "#8BDAB2"
+        }
+      ],
+      "id": "participation_2"
+    },
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Votes par genre",
+      "legend": "",
+      "data": [
+        {
+          "label": "hommes",
+          "percent": 47,
+          "color": "#4B45A5"
+        },
+        {
+          "label": "femmes",
+          "percent": 51,
+          "color": "#EB7575"
+        },
+        {
+          "label": "non-binaire",
+          "percent": 2,
+          "color": "#8BDAB2"
+        }
+      ],
+      "id": "participation_3"
+    }
+  ]
+}
