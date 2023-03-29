@@ -104,8 +104,8 @@
       "description": "Pagina solicitată nu (mai) există."
     },
     "moderation": {
-      "title": "@@meta.moderation.title|fr:Make.org ∙ Charte de modération",
-      "description": "@@meta.moderation.description|fr:Quelles sont les propositions refusées lors de la modération sur Make.org ? Comment formuler une proposition correctement ?"
+      "title": "Make.org ∙ Carta de moderare",
+      "description": "Cum se desfășoară procesul de moderare? Ce propuneri sunt refuzate în etapa moderării pe Make.org? Cum se formulează corect o propunere?"
     }
   },
   "common": {
@@ -279,7 +279,7 @@
     "million_few": "milioane",
     "million_other": "milioane",
     "close_panel": "Închiderea meniului vertical",
-    "close": "@@common.close|fr:Fermer"
+    "close": "Închidere"
   },
   "header": {
     "logo_alt": "Direcționare spre prima pagină a site-ului Make.org",
@@ -339,8 +339,8 @@
       "postponed": "În așteptarea moderării",
       "pending": "În așteptarea moderării"
     },
-    "original": "@@proposal_card.original|fr:Voir l'original",
-    "translation": "@@proposal_card.translation|fr:Voir la traduction"
+    "original": "Afișarea textului original",
+    "translation": "Afișarea textului tradus"
   },
   "intro_card": {
     "purpose": "Prezentare pe scurt",
@@ -1347,106 +1347,106 @@
     "confirm": "Confirmare"
   },
   "report_translations": {
-    "button": "@@report_translations.button|fr:Options de la proposition",
+    "button": "Opțiuni asociate propunerii",
     "confirmation": {
-      "title": "@@report_translations.confirmation.title|fr:Merci pour le signalement !",
-      "description": "@@report_translations.confirmation.description|fr:Notre équipe va l'étudier dans les plus brefs délais."
+      "title": "Vă mulțumim pentru sesizare!",
+      "description": "Echipa noastră o va analiza cât mai curând posibil."
     },
     "form": {
-      "title": "@@report_translations.form.title|fr:Signaler la traduction automatique",
-      "unclear": "@@report_translations.form.unclear|fr:Traduction incompréhensible",
-      "error": "@@report_translations.form.error|fr:Erreur dans la traduction",
-      "false_info": "@@report_translations.form.false_info|fr:Contient une information fausse",
-      "offensive": "@@report_translations.form.offensive|fr:Proposition offensante",
-      "report": "@@report_translations.form.report|fr:Signaler"
+      "title": "Trimiteți o sesizare privind traducerea automată",
+      "unclear": "Traducere fără sens",
+      "error": "Eroare de traducere",
+      "false_info": "Conține o informație falsă",
+      "offensive": "Propunere cu caracter insultător",
+      "report": "Faceți o sesizare"
     },
     "first_step": {
-      "title": "@@report_translations.first_step.title|fr:Traduction automatique",
-      "text": "@@report_translations.first_step.text|fr:Les propositions de nos consultations sont automatiques. Si vous remarquez une erreur, n’hésitez pas à la signaler à nos équipes !"
+      "title": "Traducere automată",
+      "text": "Propunerile din cadrul consultărilor noastre sunt traduse automat. Dacă observați o greșeală, nu ezitați să o semnalați trimițând o sesizare echipelor noastre!"
     }
   },
   "moderation_charter": {
-    "unsuitable_label": "@@moderation_charter.unsuitable_label|fr:DÉCONSEILLÉ",
-    "adapted_label": "@@moderation_charter.adapted_label|fr:Adapté",
-    "refused_label": "@@moderation_charter.refused_label|fr:Refusé",
-    "validated_label": "@@moderation_charter.validated_label|fr:Validé",
-    "title": "@@moderation_charter.title|fr:Charte de modération",
-    "description": "@@moderation_charter.description|fr:Quelles sont les propositions refusées lors de la modération sur Make.org ? Comment formuler une proposition correctement ? Chaque proposition soumise sur la plateforme est modérée à la main par les équipes de modérateurs de Make.org, au regard des critères suivants de la charte de modération¹. La modération se fait sous 48 heures après envoi de la proposition. Vous serez informé.e par email (sous réserve d’avoir validé votre adresse email à l’inscription) de la publication ou du refus de votre proposition. Les petites fautes d'orthographe sont corrigées par les modérateurs, mais il vous revient de publier de nouveau votre proposition si celle-ci ne peut être acceptée.",
-    "refused_examples": "@@moderation_charter.refused_examples|fr:Ne sont pas autorisées sur la plateforme Make.org : ",
+    "unsuitable_label": "Nerecomandat",
+    "adapted_label": "Adaptat",
+    "refused_label": "Refuzat",
+    "validated_label": "Validat",
+    "title": "Carta de moderare",
+    "description": "Ce propuneri sunt refuzate în etapa moderării pe Make.org? Cum se formulează corect o propunere? Fiecare propunere trimisă pe platformă este moderată manual de echipele de moderatori de la Make.org, în funcție de următoarele criterii prevăzute în Carta de moderare¹. Moderarea are loc în termen maxim de 48 de ore de la trimiterea propunerii. Veți primi astfel pe e-mail (sub rezerva validării prealabile a adresei dumneavoastră de e-mail în etapa de înregistrare) informații privind publicarea sau refuzarea propunerii pe care ați făcut-o. Greșelile minore de ortografie sunt corectate de moderatori, dar va trebui să trimiteți din nou propunerea reformulată sau corectată dacă aceasta nu poate fi acceptată.",
+    "refused_examples": "Pe platforma Make.org nu sunt permise: ",
     "incomprehensible_solutions": {
-      "title": "@@moderation_charter.incomprehensible_solutions.title|fr:Les propositions incompréhensibles",
-      "description": "@@moderation_charter.incomprehensible_solutions.description|fr:La formulation et le sens de votre proposition doivent être compréhensibles par toutes et tous. Les erreurs importantes de syntaxe ou les non-sens seront refusés, vous serez invité·e·s à reformuler votre proposition.",
-      "refused_example_card": "@@moderation_charter.incomprehensible_solutions.refused_example_card|fr:Il faut que les citoyens se réfléchissent dans le développement par tous les pays.",
-      "validated_example_card": "@@moderation_charter.incomprehensible_solutions.validated_example_card|fr:Il faut que les citoyens réfléchissent au développement de l’éducation dans chaque pays."
+      "title": "Propunerile neinteligibile",
+      "description": "Enunțul și sensul propunerii dumneavoastră trebuie să fie pe înțelesul tuturor. Erorile majore de sintaxă și formulările ilogice vor fi refuzate, cu rugămintea de a vă reformula propunerea.",
+      "refused_example_card": "Trebuie ca cetățenii să se reflecte în dezvoltare de către toate țările.",
+      "validated_example_card": "Trebuie ca cetățenii să reflecteze la procesul de dezvoltare a educației în fiecare țară."
     },
     "irrelevant_solutions": {
-      "title": "@@moderation_charter.irrelevant_solutions.title|fr:Les propositions hors sujet",
-      "description": "@@moderation_charter.irrelevant_solutions.description|fr:Votre proposition doit répondre à la question posée dans la consultation. Dans le cas contraire, votre proposition est considérée comme hors sujet et sera refusée.",
-      "example": "@@moderation_charter.irrelevant_solutions.example|fr:Par exemple pour la question “Comment permettre à chacun de mieux manger ?”",
-      "refused_card_example": "@@moderation_charter.irrelevant_solutions.refused_card_example|fr:Il faut mettre en place la coupe du monde de football tous les 2 ans.",
-      "validated_card_example": "@@moderation_charter.irrelevant_solutions.validated_card_example|fr:Il faut favoriser l’accès aux circuits courts dans les cantines d'entreprise."
+      "title": "Propuneri fără legătură cu subiectul",
+      "description": "Propunerea dumneavoastră trebuie să răspundă la întrebarea adresată în consultare. În caz contrar, propunerea dumneavoastră va fi considerată fără legătură cu subiectul și va fi refuzată.",
+      "example": "De exemplu, pentru întrebarea „Cum să asigurăm tuturor o alimentație mai bună?”",
+      "refused_card_example": "Trebuie organizat un campionat mondial de fotbal o dată la 2 ani.",
+      "validated_card_example": "Trebuie sprijinit accesul la circuitele scurte în cantinele de întreprindere."
     },
     "discriminatory_solutions": {
-      "title": "@@moderation_charter.discriminatory_solutions.title|fr:Les propositions discriminantes",
-      "description": "@@moderation_charter.discriminatory_solutions.description|fr:En conformité avec la loi², votre proposition ne peut pas contenir de discours incitant à la violence ou à la haine. Elle ne peut non plus contenir de propos à caractère discriminant ou diffamatoire, notamment à l'encontre de tout groupe ethnique, social ou religieux.",
-      "refused_card_example": "@@moderation_charter.discriminatory_solutions.refused_card_example|fr:Il faut veiller à ce que les Bretons ne conservent pas leurs traditions dégradantes.",
-      "validated_card_example": "@@moderation_charter.discriminatory_solutions.validated_card_example|fr:Il faut veiller à ce que les Français puissent mieux communiquer ensemble.",
-      "refused_card_example_2": "@@moderation_charter.discriminatory_solutions.refused_card_example_2|fr:Il faut interdire les croix autour du cou qui sont un symbole d'asservissement.",
-      "validated_card_example_2": "@@moderation_charter.discriminatory_solutions.validated_card_example_2|fr:Il faut veiller à ce que la liberté de culte soit respectée dans notre pays."
+      "title": "Propuneri de natură discriminatorie",
+      "description": "Conform legii², propunerea dumneavoastră nu poate conține formulări care instigă la violență sau la ură. De asemenea, nu poate conține afirmații având caracter de discriminare sau difamare, îndosebi cu privire la orice grup etnic, social sau religios.",
+      "refused_card_example": "Trebuie făcute eforturi pentru a combate tradițiile degradante ale rromilor.",
+      "validated_card_example": "Trebuie făcute eforturi pentru ca românii să comunice mai bine ca grup.",
+      "refused_card_example_2": "Trebuie interzisă purtarea unei cruciulițe la gât, pentru că este un simbol al supunerii.",
+      "validated_card_example_2": "Trebuie să se asigure respectarea libertății cultelor în țara noastră."
     },
     "partisan_solutions": {
-      "title": "@@moderation_charter.partisan_solutions.title|fr:Les propositions partisanes",
-      "description": "@@moderation_charter.partisan_solutions.description|fr:Votre proposition ne doit pas prendre parti (c'est-à-dire porter un message de valorisation ou de dévalorisation) envers un parti politique, une personnalité politique, une idéologie ou une religion (personnalité, symbole ou pratiques).",
-      "refused_card_example": "@@moderation_charter.partisan_solutions.refused_card_example|fr:Il faut prendre connaissance du programme de M. XXX, ses idées sont originales pour les prochaines élections.",
-      "validated_card_example": "@@moderation_charter.partisan_solutions.validated_card_example|fr:Il faut se renseigner sur les programmes de chaque parti politique avant les élections.",
-      "refused_card_example_2": "@@moderation_charter.partisan_solutions.refused_card_example_2|fr:Il faut relire la Bible régulièrement pour y trouver le salut.",
-      "validated_card_example_2": "@@moderation_charter.partisan_solutions.validated_card_example_2|fr:Il faut que les employeurs puissent connaître les dates de certaines fêtes religieuses : le Ramadan, Hanoucca etc."
+      "title": "Propuneri părtinitoare",
+      "description": "Propunerea dumneavoastră nu trebuie să exprime o părtinire (adică să conțină un mesaj de apreciere pozitivă sau negativă) față de un partid politic, o personalitate politică, o ideologie sau o religie (personalitate, simbol sau practici aferente).",
+      "refused_card_example": "Trebuie să se difuzeze programul electoral al domnului XXX, care propune idei originale pentru viitoarele alegeri.",
+      "validated_card_example": "Trebuie să consultăm platforma electorală a fiecărui partid politic înainte de alegeri.",
+      "refused_card_example_2": "Trebuie să citim Biblia în mod regulat pentru salvarea sufletului.",
+      "validated_card_example_2": "Trebuie ca angajații să aibă informații despre datele anumitor sărbători religioase: Ramadan, Hanuka etc."
     },
     "advertising": {
-      "title": "@@moderation_charter.advertising.title|fr:La publicité",
-      "description": "@@moderation_charter.advertising.description|fr:Vous ne pouvez pas faire de la publicité pour une marque ou une entreprise spécifique. Là encore, vous pouvez mentionner une marque ou entreprise uniquement à travers un exemple d’illustration.",
-      "refused_card_example": "@@moderation_charter.advertising.refused_card_example|fr:Il faut que toutes les entreprises utilisent les solutions proposées par IBM.",
-      "validated_card_example": "@@moderation_charter.advertising.validated_card_example|fr:Il faut arrêter de consommer certains sodas trop sucrés, comme le Coca-Cola."
+      "title": "Publicitate",
+      "description": "Nu puteți face publicitate pentru o anumită marcă sau companie. Totuși, puteți menționa numele unei mărci sau al unei companii doar ca exemplificare.",
+      "refused_card_example": "Trebuie ca toate companiile să aplice soluțiile propuse de IBM.",
+      "validated_card_example": "Trebuie să nu mai consumăm anumite băuturi carbogazoase foarte dulci, cum ar fi Coca-Cola."
     },
     "multiple_ideas": {
-      "title": "@@moderation_charter.multiple_ideas.title|fr:Les idées multiples",
-      "description": "@@moderation_charter.multiple_ideas.description|fr:Il faut formuler une seule idée par proposition pour faciliter le vote des autres citoyens sur votre contribution. Si vous avez deux idées différentes, vous pouvez créer deux propositions.",
-      "refused_card_example": "@@moderation_charter.multiple_ideas.refused_card_example|fr:Il faut que les produits des producteurs locaux soient accessibles, et communiquer sur les innovations en agriculture.",
-      "validated_card_example": "@@moderation_charter.multiple_ideas.validated_card_example|fr:Il faut que les produits des producteurs locaux soient accessibles."
+      "title": "Ideile multiple",
+      "description": "Trebuie formulată o singură idee pentru fiecare propunere, pentru a simplifica procesul de votare a contribuției de către alți cetățeni. Dacă aveți două idei diferite, puteți redacta două propuneri.",
+      "refused_card_example": "Trebuie ca produsele producătorilor locali să fie accesibile și să se difuzeze informații privind inovațiile în agricultură.",
+      "validated_card_example": "Trebuie ca produsele producătorilor locali să fie accesibile."
     },
     "insults": {
-      "title": "@@moderation_charter.insults.title|fr:Les injures",
-      "description": "@@moderation_charter.insults.description|fr:‍Toute proposition irrespectueuse ou injurieuse sera refusée lors de la modération.",
-      "refused_card_example": "@@moderation_charter.insults.refused_card_example|fr:Il faut que ces idiots d’automobilistes respectent davantage le code de la route.",
-      "validated_card_example": "@@moderation_charter.insults.validated_card_example|fr:Il faut que les automobilistes respectent davantage le code de la route."
+      "title": "Injuriile",
+      "description": "Orice propunere având caracter irespectuos sau injurios va fi refuzată în etapa de moderare.",
+      "refused_card_example": "Trebuie ca tâmpiții ăștia de șoferi să respecte mai mult Codul rutier.",
+      "validated_card_example": "Trebuie ca șoferii să respecte mai mult Codul rutier."
     },
     "correctly_formulated_solutions": {
-      "title": "@@moderation_charter.correctly_formulated_solutions.title|fr:Comment formuler une proposition correctement sur Make.org ?"
+      "title": "Cum se formulează corect o propunere pe Make.org?"
     },
-    "search_function": "@@moderation_charter.search_function|fr:Utilisez la fonction recherche pour vérifier que votre idée n’est pas déjà présente sur le site.",
+    "search_function": "Utilizați funcția căutare pentru a verifica dacă ideea dumneavoastră nu este deja publicată pe site.",
     "concrete_elements": {
-      "text": "@@moderation_charter.concrete_elements.text|fr:Pensez à préciser votre idée avec des éléments concrets pour que les citoyen·ne·s comprennent précisément votre propos.",
-      "refused_card_example": "@@moderation_charter.concrete_elements.refused_card_example|fr:Il faut plus d’Europe.",
-      "validated_card_example": "@@moderation_charter.concrete_elements.validated_card_example|fr:Il faut donner plus de moyens à l’Union européenne.",
-      "refused_card_example_2": "@@moderation_charter.concrete_elements.refused_card_example_2|fr:Il faut réduire le chômage des jeunes.",
-      "validated_card_example_2": "@@moderation_charter.concrete_elements.validated_card_example_2|fr:Il faut créer un Pôle Emploi pour les jeunes."
+      "text": "Nu uitați să vă detaliați ideea, adăugând elemente concrete pentru a permite înțelegerea clară a enunțului dumneavoastră de către cetățeni (ne).",
+      "refused_card_example": "Trebuie mai mult din partea Europei.",
+      "validated_card_example": "Trebuie acordat mai mult sprijin Uniunii Europene.",
+      "refused_card_example_2": "Trebuie să se reducă șomajul în rândul tinerilor.",
+      "validated_card_example_2": "Trebuie creată o Agenție a Ocupării Forței de Muncă doar pentru tineri."
     },
     "understandable_language": {
-      "text": "@@moderation_charter.understandable_language.text|fr:Faites-vous comprendre le mieux possible en adoptant un langage accessible à toutes et tous.",
-      "refused_card_example": "@@moderation_charter.understandable_language.refused_card_example|fr:Il faut une année de propédeutique à la fac.",
-      "validated_card_example": "@@moderation_charter.understandable_language.validated_card_example|fr:Il faut une année généraliste avant de choisir sa filière à la fac.",
-      "refused_card_example_2": "@@moderation_charter.understandable_language.refused_card_example_2|fr:Il faut que l’ASC puisse dépister le cancer.",
-      "validated_card_example_2": "@@moderation_charter.understandable_language.validated_card_example_2|fr:Il faut que l’Agence pour la Santé puisse dépister le cancer."
+      "text": "Transmiteți un mesaj cât mai clar, folosind un limbaj pe înțelesul tuturor.",
+      "refused_card_example": "Trebuie introdus un an de propedeutică la facultate.",
+      "validated_card_example": "Trebuie introdus un an pregătitor înainte de alegerea specializării la facultate.",
+      "refused_card_example_2": "Trebuie ca ANSP să poată face teste de depistare a cancerului.",
+      "validated_card_example_2": "Trebuie ca Agenția Națională pentru Sănătate Publică să poată face teste de depistare a cancerului."
     },
     "acronyms": {
-      "text": "@@moderation_charter.acronyms.text|fr:Evitez d’utiliser dans votre proposition les #, @ ou autres acronymes comme “LOL”.",
-      "refused_card_example": "@@moderation_charter.acronyms.refused_card_example|fr:Il faut baisser les impôts des entrepreneurs #compétitivité",
-      "validated_card_example": "@@moderation_charter.acronyms.validated_card_example|fr:Il faut baisser les impôts des entrepreneurs pour les rendre compétitifs !"
+      "text": "Evitați utilizarea simbolurilor #, @ sau a altor acronime de tip „LOL” la redactarea propunerii.",
+      "refused_card_example": "Trebuie să se reducă impozitele aplicate antreprenorilor #competitivitate",
+      "validated_card_example": "Trebuie să se reducă impozitele aplicate antreprenorilor pentru a le permite să fie competitivi!"
     },
-    "disclaimer": "@@moderation_charter.disclaimer|fr:Make.org n'est pas un opérateur de plateforme en ligne relevant du champ d'application de la loi n° 2018-1202 du 22 décembre 2018 relative à la lutte contre la manipulation de l'information. A ce titre, nous ne sommes donc pas soumis aux obligations y afférentes. La véracité des informations mises en ligne sur notre site nous tient cependant à cœur, et nous détaillons au sein de la présente Charte les mesures que nous prenons en ce sens.",
+    "disclaimer": "Make.org nu are calitatea de operator de platformă online care intră în domeniul de aplicare al Legii franceze nr. 2018-1202 din 22 decembrie 2018 privind combaterea manipulării informațiilor. Prin urmare, nu suntem supuși obligațiilor prevăzute în această lege. Cu toate acestea, acuratețea informațiilor publicate pe site-ul nostru este prioritară pentru noi și prezentăm în detaliu, în cadrul prezentei Carte de moderare, măsurile pe care le aplicăm în acest sens.",
     "foot_notes": {
-      "ethical_charter": "@@moderation_charter.foot_notes.ethical_charter|fr:Cette charte de modération a été élaborée en conformité avec la Charte éthique qui garantit la neutralité, l'indépendance et la transparence de Make.org.",
-      "code_penal": "@@moderation_charter.foot_notes.code_penal|fr:Le Code Pénal français définit la discrimination comme « toute distinction opérée entre les personnes physiques à raison de leur origine, de leur sexe, de leur situation de famille, de leur grossesse, de leur apparence physique, de leur patronyme, de leur lieu de résidence, de leur état de santé, de leur handicap, de leurs caractéristiques génétiques, de leurs mœurs, de leur orientation ou identité sexuelle, de leur âge, de leurs opinions politiques, de leurs activités syndicales, de leur appartenance ou de leur non-appartenance, vraie ou supposée, à une ethnie, une nation, une race ou une religion déterminée ». (Article 225-1§1)."
+      "ethical_charter": "Prezenta Cartă de moderare a fost elaborată conform Codului de <a href=\"https://assets.make.org/consultations/ethical_charter_ro.pdf\" target=\"_blank\">etică care (fila nouă)</a> garantează neutralitatea, independența și transparența platformei Make.org.",
+      "code_penal": "Potrivit Ordonanței nr.137 din 31 august 2000 privind prevenirea și sancționarea tuturor formelor de discriminare, prin discriminare se înțelege „orice deosebire, excludere, restricție sau preferință, pe bază de rasă, naționalitate, etnie, limbă, religie, categorie socială, convingeri, sex, orientare sexuală, vârstă, handicap, boală cronică necontagioasă, infectare HIV, apartenență la o categorie defavorizată, precum și orice alt criteriu care are ca scop sau efect restrângerea, înlăturarea recunoașterii, folosinței sau exercitării, în condiții de egalitate, a drepturilor omului și a libertăților fundamentale sau a drepturilor recunoscute de lege, în domeniul politic, economic, social și cultural sau în orice alte domenii ale vieții publice”. (articolul 2, alineatul 1)"
     }
   }
 }

@@ -104,8 +104,8 @@
       "description": "Страницата, която сте поискали, не съществува или вече не съществува."
     },
     "moderation": {
-      "title": "@@meta.moderation.title|fr:Make.org ∙ Charte de modération",
-      "description": "@@meta.moderation.description|fr:Quelles sont les propositions refusées lors de la modération sur Make.org ? Comment formuler une proposition correctement ?"
+      "title": "Make.org ∙ Политика за модериране",
+      "description": "Как да се справим с модерирането? Какви предложения се отхвърлят по време на модерирането в Make.org? Как да формулирам правилно предложението си?"
     }
   },
   "common": {
@@ -277,7 +277,7 @@
     "million_one": "милион",
     "million_many": "милиона",
     "close_panel": "Затваряне на падащия панел",
-    "close": "@@common.close|fr:Fermer"
+    "close": "Затваряне"
   },
   "header": {
     "logo_alt": "Отидете на началната страница на Make.org",
@@ -334,8 +334,8 @@
       "postponed": "Изчаква се модериране",
       "pending": "Изчаква се модериране"
     },
-    "original": "@@proposal_card.original|fr:Voir l'original",
-    "translation": "@@proposal_card.translation|fr:Voir la traduction"
+    "original": "Вижте оригинала",
+    "translation": "Преглед на превода"
   },
   "intro_card": {
     "purpose": "Въвеждаща карта",
@@ -1324,106 +1324,106 @@
     "confirm": "Потвърдете"
   },
   "report_translations": {
-    "button": "@@report_translations.button|fr:Options de la proposition",
+    "button": "Варианти на предложението",
     "confirmation": {
-      "title": "@@report_translations.confirmation.title|fr:Merci pour le signalement !",
-      "description": "@@report_translations.confirmation.description|fr:Notre équipe va l'étudier dans les plus brefs délais."
+      "title": "Благодарим ви за сигнала!",
+      "description": "Нашият екип ще го разгледа възможно най-скоро."
     },
     "form": {
-      "title": "@@report_translations.form.title|fr:Signaler la traduction automatique",
-      "unclear": "@@report_translations.form.unclear|fr:Traduction incompréhensible",
-      "error": "@@report_translations.form.error|fr:Erreur dans la traduction",
-      "false_info": "@@report_translations.form.false_info|fr:Contient une information fausse",
-      "offensive": "@@report_translations.form.offensive|fr:Proposition offensante",
-      "report": "@@report_translations.form.report|fr:Signaler"
+      "title": "Сигнал за автоматичен превод",
+      "unclear": "Неразбираем превод",
+      "error": "Грешка в превода",
+      "false_info": "Съдържа невярна информация",
+      "offensive": "Оскърбително предложение",
+      "report": "Сигнализиране"
     },
     "first_step": {
-      "title": "@@report_translations.first_step.title|fr:Traduction automatique",
-      "text": "@@report_translations.first_step.text|fr:Les propositions de nos consultations sont automatiques. Si vous remarquez une erreur, n’hésitez pas à la signaler à nos équipes !"
+      "title": "Автоматичен превод",
+      "text": "Предложенията в нашите консултации се превеждат автоматично. Ако забележите грешка, моля, не се колебайте да сигнализирате за нея на нашия екип!"
     }
   },
   "moderation_charter": {
-    "unsuitable_label": "@@moderation_charter.unsuitable_label|fr:DÉCONSEILLÉ",
-    "adapted_label": "@@moderation_charter.adapted_label|fr:Adapté",
-    "refused_label": "@@moderation_charter.refused_label|fr:Refusé",
-    "validated_label": "@@moderation_charter.validated_label|fr:Validé",
-    "title": "@@moderation_charter.title|fr:Charte de modération",
-    "description": "@@moderation_charter.description|fr:Quelles sont les propositions refusées lors de la modération sur Make.org ? Comment formuler une proposition correctement ? Chaque proposition soumise sur la plateforme est modérée à la main par les équipes de modérateurs de Make.org, au regard des critères suivants de la charte de modération¹. La modération se fait sous 48 heures après envoi de la proposition. Vous serez informé.e par email (sous réserve d’avoir validé votre adresse email à l’inscription) de la publication ou du refus de votre proposition. Les petites fautes d'orthographe sont corrigées par les modérateurs, mais il vous revient de publier de nouveau votre proposition si celle-ci ne peut être acceptée.",
-    "refused_examples": "@@moderation_charter.refused_examples|fr:Ne sont pas autorisées sur la plateforme Make.org : ",
+    "unsuitable_label": "Не се препоръчва",
+    "adapted_label": "Подходящо",
+    "refused_label": "Отхвърлено",
+    "validated_label": "Потвърдено",
+    "title": "Политика за модериране",
+    "description": "Какви предложения се отхвърлят по време на модерирането в Make.org? Как да формулирам правилно предложението си? Всяко предложение, подадено в платформата, се модерира ръчно от екипите за модериране на Make.org в съответствие със следните критерии от политиката за модериране¹. Модерацията се извършва в рамките на 48 часа след изпращането на предложението. Ще бъдете информирани по електронна поща (при условие че сте валидирали адреса си на електронна поща при регистрацията) за публикуването или отхвърлянето на вашето предложение. Незначителните правописни грешки се поправят от модераторите, но вие носите отговорност за повторното подаване на вашето коригирано предложение, ако то не може да бъде прието.",
+    "refused_examples": "В платформата Make.org не е разрешено да се използват следните материали: ",
     "incomprehensible_solutions": {
-      "title": "@@moderation_charter.incomprehensible_solutions.title|fr:Les propositions incompréhensibles",
-      "description": "@@moderation_charter.incomprehensible_solutions.description|fr:La formulation et le sens de votre proposition doivent être compréhensibles par toutes et tous. Les erreurs importantes de syntaxe ou les non-sens seront refusés, vous serez invité·e·s à reformuler votre proposition.",
-      "refused_example_card": "@@moderation_charter.incomprehensible_solutions.refused_example_card|fr:Il faut que les citoyens se réfléchissent dans le développement par tous les pays.",
-      "validated_example_card": "@@moderation_charter.incomprehensible_solutions.validated_example_card|fr:Il faut que les citoyens réfléchissent au développement de l’éducation dans chaque pays."
+      "title": "Неразбираеми предложения",
+      "description": "Формулировката и смисълът на вашето предложение трябва да са разбираеми за всички. Съществени синтактични грешки или безсмислици ще бъдат отхвърлени, като ще бъдете помолени да преформулирате предложението си.",
+      "refused_example_card": "Трябва гражданите да се замислят в развитието на всички държави.",
+      "validated_example_card": "Трябва гражданите да се замислят за развитието на образованието във всяка държава."
     },
     "irrelevant_solutions": {
-      "title": "@@moderation_charter.irrelevant_solutions.title|fr:Les propositions hors sujet",
-      "description": "@@moderation_charter.irrelevant_solutions.description|fr:Votre proposition doit répondre à la question posée dans la consultation. Dans le cas contraire, votre proposition est considérée comme hors sujet et sera refusée.",
-      "example": "@@moderation_charter.irrelevant_solutions.example|fr:Par exemple pour la question “Comment permettre à chacun de mieux manger ?”",
-      "refused_card_example": "@@moderation_charter.irrelevant_solutions.refused_card_example|fr:Il faut mettre en place la coupe du monde de football tous les 2 ans.",
-      "validated_card_example": "@@moderation_charter.irrelevant_solutions.validated_card_example|fr:Il faut favoriser l’accès aux circuits courts dans les cantines d'entreprise."
+      "title": "Предложения извън темата",
+      "description": "Вашето предложение трябва да отговаря на въпроса, поставен в консултацията. В противен случай предложението ви ще се счита за извън темата и ще бъде отхвърлено.",
+      "refused_card_example": "Трябва Световното първенство по футбол да се провежда на всеки две години.",
+      "validated_card_example": "Трябва да насърчаваме достъпа до къси съединения в столовете на предприятията.",
+      "example": "@@moderation_charter.irrelevant_solutions.example|fr:Par exemple pour la question “Comment permettre à chacun de mieux manger ?”"
     },
     "discriminatory_solutions": {
-      "title": "@@moderation_charter.discriminatory_solutions.title|fr:Les propositions discriminantes",
-      "description": "@@moderation_charter.discriminatory_solutions.description|fr:En conformité avec la loi², votre proposition ne peut pas contenir de discours incitant à la violence ou à la haine. Elle ne peut non plus contenir de propos à caractère discriminant ou diffamatoire, notamment à l'encontre de tout groupe ethnique, social ou religieux.",
-      "refused_card_example": "@@moderation_charter.discriminatory_solutions.refused_card_example|fr:Il faut veiller à ce que les Bretons ne conservent pas leurs traditions dégradantes.",
-      "validated_card_example": "@@moderation_charter.discriminatory_solutions.validated_card_example|fr:Il faut veiller à ce que les Français puissent mieux communiquer ensemble.",
-      "refused_card_example_2": "@@moderation_charter.discriminatory_solutions.refused_card_example_2|fr:Il faut interdire les croix autour du cou qui sont un symbole d'asservissement.",
-      "validated_card_example_2": "@@moderation_charter.discriminatory_solutions.validated_card_example_2|fr:Il faut veiller à ce que la liberté de culte soit respectée dans notre pays."
+      "title": "Дискриминационни предложения",
+      "description": "В съответствие със закона² вашето предложение не може да съдържа изказвания, подбуждащи към насилие или омраза. То не може да съдържа и дискриминационни или клеветнически изрази, особено по отношение на която и да е етническа, социална или религиозна група.",
+      "refused_card_example": "Трябва да гарантираме, че ромите ще престанат да крадат електрически кабели.",
+      "validated_card_example": "Трябва да гарантираме, че българите могат да общуват по-добре заедно.",
+      "refused_card_example_2": "Трябва да забраним носенето на кръстове на врата, които са символ на подчинение.",
+      "validated_card_example_2": "Трябва да гарантираме, че свободата на вероизповеданията се зачита в нашата държава."
     },
     "partisan_solutions": {
-      "title": "@@moderation_charter.partisan_solutions.title|fr:Les propositions partisanes",
-      "description": "@@moderation_charter.partisan_solutions.description|fr:Votre proposition ne doit pas prendre parti (c'est-à-dire porter un message de valorisation ou de dévalorisation) envers un parti politique, une personnalité politique, une idéologie ou une religion (personnalité, symbole ou pratiques).",
-      "refused_card_example": "@@moderation_charter.partisan_solutions.refused_card_example|fr:Il faut prendre connaissance du programme de M. XXX, ses idées sont originales pour les prochaines élections.",
-      "validated_card_example": "@@moderation_charter.partisan_solutions.validated_card_example|fr:Il faut se renseigner sur les programmes de chaque parti politique avant les élections.",
-      "refused_card_example_2": "@@moderation_charter.partisan_solutions.refused_card_example_2|fr:Il faut relire la Bible régulièrement pour y trouver le salut.",
-      "validated_card_example_2": "@@moderation_charter.partisan_solutions.validated_card_example_2|fr:Il faut que les employeurs puissent connaître les dates de certaines fêtes religieuses : le Ramadan, Hanoucca etc."
+      "title": "Предложения, поддържащи определена страна",
+      "description": "Вашето предложение не трябва да взема страна (т.е. да отправя послание за одобрение или обезценяване) спрямо политическа партия, политическа фигура, идеология или религия (фигура, символ или практика).",
+      "refused_card_example": "Трябва да се вземе под внимание програмата на г-н ХХХ, неговите идеи са оригинални за следващите избори.",
+      "validated_card_example": "Трябва да се запознаете с програмите на всяка политическа партия преди изборите.",
+      "refused_card_example_2": "Трябва да се препрочита редовно Библията, за да се намери спасение.",
+      "validated_card_example_2": "Трябва работодателите да са наясно с датите на някои религиозни празници: Рамадан, Ханука и др."
     },
     "advertising": {
-      "title": "@@moderation_charter.advertising.title|fr:La publicité",
-      "description": "@@moderation_charter.advertising.description|fr:Vous ne pouvez pas faire de la publicité pour une marque ou une entreprise spécifique. Là encore, vous pouvez mentionner une marque ou entreprise uniquement à travers un exemple d’illustration.",
-      "refused_card_example": "@@moderation_charter.advertising.refused_card_example|fr:Il faut que toutes les entreprises utilisent les solutions proposées par IBM.",
-      "validated_card_example": "@@moderation_charter.advertising.validated_card_example|fr:Il faut arrêter de consommer certains sodas trop sucrés, comme le Coca-Cola."
+      "title": "Реклама",
+      "description": "Не можете да рекламирате в полза на определена марка или компания. Отново можете да споменете дадена марка или компания само чрез илюстративен пример.",
+      "refused_card_example": "Трябва всички компании да използват решенията, предложени от IBM.",
+      "validated_card_example": "Трябва да спрете да консумирате някои от прекалено подсладените безалкохолни напитки, като например Coca-Cola."
     },
     "multiple_ideas": {
-      "title": "@@moderation_charter.multiple_ideas.title|fr:Les idées multiples",
-      "description": "@@moderation_charter.multiple_ideas.description|fr:Il faut formuler une seule idée par proposition pour faciliter le vote des autres citoyens sur votre contribution. Si vous avez deux idées différentes, vous pouvez créer deux propositions.",
-      "refused_card_example": "@@moderation_charter.multiple_ideas.refused_card_example|fr:Il faut que les produits des producteurs locaux soient accessibles, et communiquer sur les innovations en agriculture.",
-      "validated_card_example": "@@moderation_charter.multiple_ideas.validated_card_example|fr:Il faut que les produits des producteurs locaux soient accessibles."
+      "title": "Множество идеи",
+      "description": "Трябва да се формулира само една идея за всяко предложение, за да се улесни гласуването на другите граждани по вашия принос. Ако имате две различни идеи, можете да създадете две предложения.",
+      "refused_card_example": "Трябва продуктите на местните производители да бъдат достъпни и да се дава информация за иновациите в селското стопанство.",
+      "validated_card_example": "Трябва продуктите на местните производители да бъдат достъпни."
     },
     "insults": {
-      "title": "@@moderation_charter.insults.title|fr:Les injures",
-      "description": "@@moderation_charter.insults.description|fr:‍Toute proposition irrespectueuse ou injurieuse sera refusée lors de la modération.",
-      "refused_card_example": "@@moderation_charter.insults.refused_card_example|fr:Il faut que ces idiots d’automobilistes respectent davantage le code de la route.",
-      "validated_card_example": "@@moderation_charter.insults.validated_card_example|fr:Il faut que les automobilistes respectent davantage le code de la route."
+      "title": "Обидите",
+      "description": "Всяко неуважително или обидно предложение ще бъде отхвърлено при модериране.",
+      "refused_card_example": "Трябва да има повече уважение към правилата за движение по пътищата от страна на тези шофьори идиоти.",
+      "validated_card_example": "Трябва шофьорите да зачитат повече правилата за движение по пътищата."
     },
     "correctly_formulated_solutions": {
-      "title": "@@moderation_charter.correctly_formulated_solutions.title|fr:Comment formuler une proposition correctement sur Make.org ?"
+      "title": "Как да формулирам правилно предложение в Make.org?"
     },
-    "search_function": "@@moderation_charter.search_function|fr:Utilisez la fonction recherche pour vérifier que votre idée n’est pas déjà présente sur le site.",
+    "search_function": "Използвайте функцията за търсене, за да проверите дали идеята ви вече не е публикувана на сайта.",
     "concrete_elements": {
-      "text": "@@moderation_charter.concrete_elements.text|fr:Pensez à préciser votre idée avec des éléments concrets pour que les citoyen·ne·s comprennent précisément votre propos.",
-      "refused_card_example": "@@moderation_charter.concrete_elements.refused_card_example|fr:Il faut plus d’Europe.",
-      "validated_card_example": "@@moderation_charter.concrete_elements.validated_card_example|fr:Il faut donner plus de moyens à l’Union européenne.",
-      "refused_card_example_2": "@@moderation_charter.concrete_elements.refused_card_example_2|fr:Il faut réduire le chômage des jeunes.",
-      "validated_card_example_2": "@@moderation_charter.concrete_elements.validated_card_example_2|fr:Il faut créer un Pôle Emploi pour les jeunes."
+      "text": "Помислете дали да не конкретизирате идеята си с конкретни елементи, така че гражданите да разберат какво точно казвате.",
+      "refused_card_example": "Трябва да има повече от Европа.",
+      "validated_card_example": "Трябва да се предоставят повече ресурси на Европейския съюз.",
+      "refused_card_example_2": "Трябва да бъде намалена младежката безработица.",
+      "validated_card_example_2": "Трябва да създадем център за заетост за младите хора."
     },
     "understandable_language": {
-      "text": "@@moderation_charter.understandable_language.text|fr:Faites-vous comprendre le mieux possible en adoptant un langage accessible à toutes et tous.",
-      "refused_card_example": "@@moderation_charter.understandable_language.refused_card_example|fr:Il faut une année de propédeutique à la fac.",
-      "validated_card_example": "@@moderation_charter.understandable_language.validated_card_example|fr:Il faut une année généraliste avant de choisir sa filière à la fac.",
-      "refused_card_example_2": "@@moderation_charter.understandable_language.refused_card_example_2|fr:Il faut que l’ASC puisse dépister le cancer.",
-      "validated_card_example_2": "@@moderation_charter.understandable_language.validated_card_example_2|fr:Il faut que l’Agence pour la Santé puisse dépister le cancer."
+      "text": "Направете така, че да бъдете разбрани възможно най-добре, като възприемете достъпен за всички език.",
+      "refused_card_example": "Трябва да има пропедевтичен курс в университета.",
+      "validated_card_example": "Трябва да учите една година общообразователна подготовка, преди да изберете специалността си в колежа.",
+      "refused_card_example_2": "Трябва АПЗ да може да прави скрининг за рак.",
+      "validated_card_example_2": "Трябва Агенцията по здравеопазване да може да прави скрининг за рак."
     },
     "acronyms": {
-      "text": "@@moderation_charter.acronyms.text|fr:Evitez d’utiliser dans votre proposition les #, @ ou autres acronymes comme “LOL”.",
-      "refused_card_example": "@@moderation_charter.acronyms.refused_card_example|fr:Il faut baisser les impôts des entrepreneurs #compétitivité",
-      "validated_card_example": "@@moderation_charter.acronyms.validated_card_example|fr:Il faut baisser les impôts des entrepreneurs pour les rendre compétitifs !"
+      "text": "Избягвайте да използвате #, @ или други съкращения като \"LOL\" в предложението си.",
+      "refused_card_example": "Трябва да намалим данъците за предприемачите #конкурентоспособност",
+      "validated_card_example": "Трябва да намалим данъците за предприемачите, за да ги направим конкурентоспособни!"
     },
-    "disclaimer": "@@moderation_charter.disclaimer|fr:Make.org n'est pas un opérateur de plateforme en ligne relevant du champ d'application de la loi n° 2018-1202 du 22 décembre 2018 relative à la lutte contre la manipulation de l'information. A ce titre, nous ne sommes donc pas soumis aux obligations y afférentes. La véracité des informations mises en ligne sur notre site nous tient cependant à cœur, et nous détaillons au sein de la présente Charte les mesures que nous prenons en ce sens.",
+    "disclaimer": "Make.org не е оператор на онлайн платформа, попадаща в обхвата на Френския закон № 2018-1202 от 22 декември 2018 г. за борба с манипулирането на информация. Като такива, ние не сме подчинени на съответните задължения. Въпреки това точността на информацията, публикувана на нашия сайт, е важна за нас и в тази политика подробно описваме мерките, които предприемаме, за да гарантираме това.",
     "foot_notes": {
-      "ethical_charter": "@@moderation_charter.foot_notes.ethical_charter|fr:Cette charte de modération a été élaborée en conformité avec la Charte éthique qui garantit la neutralité, l'indépendance et la transparence de Make.org.",
-      "code_penal": "@@moderation_charter.foot_notes.code_penal|fr:Le Code Pénal français définit la discrimination comme « toute distinction opérée entre les personnes physiques à raison de leur origine, de leur sexe, de leur situation de famille, de leur grossesse, de leur apparence physique, de leur patronyme, de leur lieu de résidence, de leur état de santé, de leur handicap, de leurs caractéristiques génétiques, de leurs mœurs, de leur orientation ou identité sexuelle, de leur âge, de leurs opinions politiques, de leurs activités syndicales, de leur appartenance ou de leur non-appartenance, vraie ou supposée, à une ethnie, une nation, une race ou une religion déterminée ». (Article 225-1§1)."
+      "ethical_charter": "Настоящата политика за модериране е изготвена в съответствие с <a href=\"https://assets.make.org/consultations/ethical_charter_bg.pdf\" target=\"_blank\">Етичната политика (нов раздел)</a>, която гарантира неутралността, независимостта и прозрачността на Make.org.",
+      "code_penal": "В закона за защита от дискриминация се казва \"Забранена е всяка пряка или непряка дискриминация, основана на пол, раса, народност, етническа принадлежност, човешки геном, гражданство, произход, религия или вяра, образование, убеждения, политическа принадлежност, лично или обществено положение, увреждане, възраст, сексуална ориентация, семейно положение, имуществено състояние или на всякакви други признаци, установени в закон или в международен договор, по който Република България е страна”. (Член 4 (1))."
     }
   }
 }

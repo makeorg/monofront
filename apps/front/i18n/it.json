@@ -104,8 +104,8 @@
       "description": "La pagina che cerchi non esiste più o non è mai esistita."
     },
     "moderation": {
-      "title": "@@meta.moderation.title|fr:Make.org ∙ Charte de modération",
-      "description": "@@meta.moderation.description|fr:Quelles sont les propositions refusées lors de la modération sur Make.org ? Comment formuler une proposition correctement ?"
+      "title": "Make.org ∙ Carta di moderazione",
+      "description": "Come superare la moderazione? Quali proposte vengono respinte nella fase di moderazione di Make.org? Come formulare correttamente una proposta?"
     }
   },
   "common": {
@@ -272,14 +272,14 @@
     "max_characters": "caratteri massimi",
     "back": "Indietro",
     "proposal_count_one": "{{count}} proposta",
-    "proposal_count_one": "{{count}} proposte",
-    "proposal_count_one": "{{count}} proposte",
+    "proposal_count_many": "{{count}} proposte",
+    "proposal_count_other": "{{count}} proposte",
     "breadcrumbs": "breadcrumb",
     "million_one": "milione",
-    "million_one": "milioni",
-    "million_one": "milioni",
+    "million_many": "milioni",
+    "million_other": "milioni",
     "close_panel": "Chiudere il pannello a tendina",
-    "close": "@@common.close|fr:Fermer"
+    "close": "Chiudi"
   },
   "header": {
     "logo_alt": "Vai alla home page di Make.org",
@@ -299,14 +299,14 @@
     "content": "Contenuto dell'idea: ",
     "link": "Vedi l'idea nei dettagli",
     "associated_proposals_one": "{{count}} proposta associata",
-    "associated_proposals_one": "{{count}} proposte associate",
-    "associated_proposals_one": "{{count}} proposte associate",
+    "associated_proposals_many": "{{count}} proposte associate",
+    "associated_proposals_other": "{{count}} proposte associate",
     "position_one": "{{ count }} presa di posizione",
-    "position_one": "{{ count }} prese di posizione",
-    "position_one": "{{ count }} prese di posizione",
+    "position_many": "{{ count }} prese di posizione",
+    "position_other": "{{ count }} prese di posizione",
     "candidate_one": " della persona candidata su questa idea.",
-    "candidate_one": " delle persone candidate su questa idea.",
-    "candidate_one": " delle persone candidate su questa idea.",
+    "candidate_many": " delle persone candidate su questa idea.",
+    "candidate_other": " delle persone candidate su questa idea.",
     "open": "Visualizza il punteggio dell'idea",
     "close": "Nascondi il punteggio dell'idea",
     "expand": " - Clicca per visualizzare il punteggio dell'idea",
@@ -446,8 +446,8 @@
     "disagree": "Non sono d'accordo",
     "neutral": "Voto neutrale",
     "label_one": "{{count}} voto",
-    "label_one": "{{count}} voti",
-    "label_one": "{{count}} voti",
+    "label_many": "{{count}} voti",
+    "label_other": "{{count}} voti",
     "with_percent": "{{votedKey}}: {{votedPercent}}%"
   },
   "unvote": {
@@ -457,8 +457,8 @@
     "static_total": "Questa proposta ha raccolto: ",
     "static_repartition": "Così ripartiti: ",
     "total_one": "Questa proposta ha raccolto {{count}} voto, così ripartito: ",
-    "total_one": "Questa proposta ha raccolto {{count}} voti, così ripartiti: ",
-    "total_one": "Questa proposta ha raccolto {{count}} voti, così ripartiti: ",
+    "total_many": "Questa proposta ha raccolto {{count}} voti, così ripartiti: ",
+    "total_other": "Questa proposta ha raccolto {{count}} voti, così ripartiti: ",
     "voted": {
       "agree": "Per questa proposta, ho votato \"Sono d'accordo\".",
       "disagree": "Per questa proposta, ho votato \"Non sono d'accordo\".",
@@ -1366,87 +1366,87 @@
     }
   },
   "moderation_charter": {
-    "unsuitable_label": "@@moderation_charter.unsuitable_label|fr:DÉCONSEILLÉ",
-    "adapted_label": "@@moderation_charter.adapted_label|fr:Adapté",
-    "refused_label": "@@moderation_charter.refused_label|fr:Refusé",
-    "validated_label": "@@moderation_charter.validated_label|fr:Validé",
-    "title": "@@moderation_charter.title|fr:Charte de modération",
-    "description": "@@moderation_charter.description|fr:Quelles sont les propositions refusées lors de la modération sur Make.org ? Comment formuler une proposition correctement ? Chaque proposition soumise sur la plateforme est modérée à la main par les équipes de modérateurs de Make.org, au regard des critères suivants de la charte de modération¹. La modération se fait sous 48 heures après envoi de la proposition. Vous serez informé.e par email (sous réserve d’avoir validé votre adresse email à l’inscription) de la publication ou du refus de votre proposition. Les petites fautes d'orthographe sont corrigées par les modérateurs, mais il vous revient de publier de nouveau votre proposition si celle-ci ne peut être acceptée.",
-    "refused_examples": "@@moderation_charter.refused_examples|fr:Ne sont pas autorisées sur la plateforme Make.org : ",
+    "unsuitable_label": "Sconsigliata",
+    "adapted_label": "Adatta",
+    "refused_label": "Respinta",
+    "validated_label": "Convalidata",
+    "title": "Carta di moderazione",
+    "description": "Quali proposte vengono respinte nella fase di moderazione di Make.org? Come formulare correttamente una proposta? Ogni proposta inviata alla piattaforma viene manualmente moderata dalle équipe di moderazione di Make.org, nel rispetto dei criteri indicati in questa carta di moderazione.¹ La moderazione della proposta avviene entro 48 ore dal suo invio. Ti informeremo via e-mail della pubblicazione o del respingimento della tua proposta (sempre che l’indirizzo e-mail sia stato confermato durante l’iscrizione). Il personale che si occupa della moderazione correggerà i piccoli errori ortografici; se invece la proposta fosse respinta, starà a te riproporla con un'altra formulazione.",
+    "refused_examples": "Su Make.org non si accettano: ",
     "incomprehensible_solutions": {
-      "title": "@@moderation_charter.incomprehensible_solutions.title|fr:Les propositions incompréhensibles",
-      "description": "@@moderation_charter.incomprehensible_solutions.description|fr:La formulation et le sens de votre proposition doivent être compréhensibles par toutes et tous. Les erreurs importantes de syntaxe ou les non-sens seront refusés, vous serez invité·e·s à reformuler votre proposition.",
-      "refused_example_card": "@@moderation_charter.incomprehensible_solutions.refused_example_card|fr:Il faut que les citoyens se réfléchissent dans le développement par tous les pays.",
-      "validated_example_card": "@@moderation_charter.incomprehensible_solutions.validated_example_card|fr:Il faut que les citoyens réfléchissent au développement de l’éducation dans chaque pays."
+      "title": "Le proposte incomprensibili",
+      "description": "La formulazione e il senso della proposta deve essere comprensibile a chiunque. La presenza di controsensi o di gravi problemi di sintassi comporterà il rigetto della proposta e ti verrà chiesto di riformularla",
+      "refused_example_card": "È necessario che i cittadini si riflettano nello sviluppo per tutti i paesi.",
+      "validated_example_card": "È necessario che i cittadini riflettano allo sviluppo dell’educazione in ogni paese."
     },
     "irrelevant_solutions": {
-      "title": "@@moderation_charter.irrelevant_solutions.title|fr:Les propositions hors sujet",
-      "description": "@@moderation_charter.irrelevant_solutions.description|fr:Votre proposition doit répondre à la question posée dans la consultation. Dans le cas contraire, votre proposition est considérée comme hors sujet et sera refusée.",
-      "example": "@@moderation_charter.irrelevant_solutions.example|fr:Par exemple pour la question “Comment permettre à chacun de mieux manger ?”",
-      "refused_card_example": "@@moderation_charter.irrelevant_solutions.refused_card_example|fr:Il faut mettre en place la coupe du monde de football tous les 2 ans.",
-      "validated_card_example": "@@moderation_charter.irrelevant_solutions.validated_card_example|fr:Il faut favoriser l’accès aux circuits courts dans les cantines d'entreprise."
+      "title": "Le proposte fuori tema",
+      "description": "La tua proposta deve rispondere alla domanda posta nella consultazione. In caso contrario, la proposta sarà considerata fuori tema e quindi respinta.",
+      "example": "Per esempio per la domanda: “Come migliorare l’alimentazione di tutti?”",
+      "refused_card_example": "È necessario organizzare i mondiali di calcio ogni 2 anni.",
+      "validated_card_example": "È necessario favorire l’accesso alle filiere corte nelle mense aziendali."
     },
     "discriminatory_solutions": {
-      "title": "@@moderation_charter.discriminatory_solutions.title|fr:Les propositions discriminantes",
-      "description": "@@moderation_charter.discriminatory_solutions.description|fr:En conformité avec la loi², votre proposition ne peut pas contenir de discours incitant à la violence ou à la haine. Elle ne peut non plus contenir de propos à caractère discriminant ou diffamatoire, notamment à l'encontre de tout groupe ethnique, social ou religieux.",
-      "refused_card_example": "@@moderation_charter.discriminatory_solutions.refused_card_example|fr:Il faut veiller à ce que les Bretons ne conservent pas leurs traditions dégradantes.",
-      "validated_card_example": "@@moderation_charter.discriminatory_solutions.validated_card_example|fr:Il faut veiller à ce que les Français puissent mieux communiquer ensemble.",
-      "refused_card_example_2": "@@moderation_charter.discriminatory_solutions.refused_card_example_2|fr:Il faut interdire les croix autour du cou qui sont un symbole d'asservissement.",
-      "validated_card_example_2": "@@moderation_charter.discriminatory_solutions.validated_card_example_2|fr:Il faut veiller à ce que la liberté de culte soit respectée dans notre pays."
+      "title": "Le proposte discriminatorie",
+      "description": "Ai sensi della normativa in vigore,² la proposta non può contenere discorsi che fomentino violenza o odio. Inoltre, non può includere dichiarazioni di carattere discriminatorio o diffamatorio, in particolare gruppi etnici, sociali o religiosi.",
+      "refused_card_example": "È necessario limitare le tradizioni degli immigrati.",
+      "validated_card_example": "È necessario migliorare la comunicazione collettiva.",
+      "refused_card_example_2": "È necessario vietare di portare la croce al collo perché è un simbolo di asservimento.",
+      "validated_card_example_2": "È necessario che la libertà di culto sia rispettata nel nostro paese."
     },
     "partisan_solutions": {
-      "title": "@@moderation_charter.partisan_solutions.title|fr:Les propositions partisanes",
-      "description": "@@moderation_charter.partisan_solutions.description|fr:Votre proposition ne doit pas prendre parti (c'est-à-dire porter un message de valorisation ou de dévalorisation) envers un parti politique, une personnalité politique, une idéologie ou une religion (personnalité, symbole ou pratiques).",
-      "refused_card_example": "@@moderation_charter.partisan_solutions.refused_card_example|fr:Il faut prendre connaissance du programme de M. XXX, ses idées sont originales pour les prochaines élections.",
-      "validated_card_example": "@@moderation_charter.partisan_solutions.validated_card_example|fr:Il faut se renseigner sur les programmes de chaque parti politique avant les élections.",
-      "refused_card_example_2": "@@moderation_charter.partisan_solutions.refused_card_example_2|fr:Il faut relire la Bible régulièrement pour y trouver le salut.",
-      "validated_card_example_2": "@@moderation_charter.partisan_solutions.validated_card_example_2|fr:Il faut que les employeurs puissent connaître les dates de certaines fêtes religieuses : le Ramadan, Hanoucca etc."
+      "title": "Le proposte faziose",
+      "description": "Le proposte non devono prendere posizione (ossia trasmettere un messaggio di lode o di disprezzo) rispetto a un partito politico, un personaggio politico, un’ideologia o una religione (personalità, simboli o pratiche).",
+      "refused_card_example": "È necessario andarsi a leggere il programma del Sig. XXX: ha delle idee originali per le prossime elezioni.",
+      "validated_card_example": "È necessario informarsi sui programmi dei vari partiti politici prima delle elezioni.",
+      "refused_card_example_2": "È necessario rileggere regolarmente la Bibbia per trovare la salvezza.",
+      "validated_card_example_2": "È necessario che i datori di lavoro conoscano le date di alcune feste religiose (Ramadan, Hanukkah...)."
     },
     "advertising": {
-      "title": "@@moderation_charter.advertising.title|fr:La publicité",
-      "description": "@@moderation_charter.advertising.description|fr:Vous ne pouvez pas faire de la publicité pour une marque ou une entreprise spécifique. Là encore, vous pouvez mentionner une marque ou entreprise uniquement à travers un exemple d’illustration.",
-      "refused_card_example": "@@moderation_charter.advertising.refused_card_example|fr:Il faut que toutes les entreprises utilisent les solutions proposées par IBM.",
-      "validated_card_example": "@@moderation_charter.advertising.validated_card_example|fr:Il faut arrêter de consommer certains sodas trop sucrés, comme le Coca-Cola."
+      "title": "Le pubblicità",
+      "description": "È vietato fare pubblicità per una marca o un’azienda specifica. Anche in questo caso, è possibile indicare o una marca o un’azienda esclusivamente a titolo d’esempio.",
+      "refused_card_example": "È necessario che tutte le imprese adottino le soluzioni proposte da IBM.",
+      "validated_card_example": "È necessario smettere di consumare le bibite troppo zuccherate, come la Coca Cola."
     },
     "multiple_ideas": {
-      "title": "@@moderation_charter.multiple_ideas.title|fr:Les idées multiples",
-      "description": "@@moderation_charter.multiple_ideas.description|fr:Il faut formuler une seule idée par proposition pour faciliter le vote des autres citoyens sur votre contribution. Si vous avez deux idées différentes, vous pouvez créer deux propositions.",
-      "refused_card_example": "@@moderation_charter.multiple_ideas.refused_card_example|fr:Il faut que les produits des producteurs locaux soient accessibles, et communiquer sur les innovations en agriculture.",
-      "validated_card_example": "@@moderation_charter.multiple_ideas.validated_card_example|fr:Il faut que les produits des producteurs locaux soient accessibles."
+      "title": "Più idee in una proposta",
+      "description": "È necessario formulare una sola idea per proposta per rendere più facile il voto. Se hai più di un’idea, puoi creare più proposte.",
+      "refused_card_example": "È necessario che i prodotti dei produttori locali siano accessibili e che si comunichino meglio le innovazioni agricole.",
+      "validated_card_example": "È necessario che i prodotti dei produttori locali siano accessibili."
     },
     "insults": {
-      "title": "@@moderation_charter.insults.title|fr:Les injures",
-      "description": "@@moderation_charter.insults.description|fr:‍Toute proposition irrespectueuse ou injurieuse sera refusée lors de la modération.",
-      "refused_card_example": "@@moderation_charter.insults.refused_card_example|fr:Il faut que ces idiots d’automobilistes respectent davantage le code de la route.",
-      "validated_card_example": "@@moderation_charter.insults.validated_card_example|fr:Il faut que les automobilistes respectent davantage le code de la route."
+      "title": "Le ingiurie",
+      "description": "Qualsiasi proposta irrispettosa o ingiuriosa sarà respinta in fase di moderazione.",
+      "refused_card_example": "È necessario che tutti gli idioti al volante rispettino il codice della strada.",
+      "validated_card_example": "È necessario che tutte le persone al volante rispettino il codice della strada."
     },
     "correctly_formulated_solutions": {
-      "title": "@@moderation_charter.correctly_formulated_solutions.title|fr:Comment formuler une proposition correctement sur Make.org ?"
+      "title": "Come formulare correttamente una proposta su Make.org?"
     },
-    "search_function": "@@moderation_charter.search_function|fr:Utilisez la fonction recherche pour vérifier que votre idée n’est pas déjà présente sur le site.",
+    "search_function": "Usa la funzione di ricerca per verificare che la tua idea non sia già presente sul sito.",
     "concrete_elements": {
-      "text": "@@moderation_charter.concrete_elements.text|fr:Pensez à préciser votre idée avec des éléments concrets pour que les citoyen·ne·s comprennent précisément votre propos.",
-      "refused_card_example": "@@moderation_charter.concrete_elements.refused_card_example|fr:Il faut plus d’Europe.",
-      "validated_card_example": "@@moderation_charter.concrete_elements.validated_card_example|fr:Il faut donner plus de moyens à l’Union européenne.",
-      "refused_card_example_2": "@@moderation_charter.concrete_elements.refused_card_example_2|fr:Il faut réduire le chômage des jeunes.",
-      "validated_card_example_2": "@@moderation_charter.concrete_elements.validated_card_example_2|fr:Il faut créer un Pôle Emploi pour les jeunes."
+      "text": "Ricorda di precisare bene la tua idea con elementi concreti affinché la cittadinanza comprenda bene la tua proposta.",
+      "refused_card_example": "È necessario avere più Europa.",
+      "validated_card_example": "È necessario dare più strumenti all’Unione Europea.",
+      "refused_card_example_2": "È necessario ridurre la disoccupazione giovanile.",
+      "validated_card_example_2": "È necessario creare un servizio di collocamento specifico per i giovani."
     },
     "understandable_language": {
-      "text": "@@moderation_charter.understandable_language.text|fr:Faites-vous comprendre le mieux possible en adoptant un langage accessible à toutes et tous.",
-      "refused_card_example": "@@moderation_charter.understandable_language.refused_card_example|fr:Il faut une année de propédeutique à la fac.",
-      "validated_card_example": "@@moderation_charter.understandable_language.validated_card_example|fr:Il faut une année généraliste avant de choisir sa filière à la fac.",
-      "refused_card_example_2": "@@moderation_charter.understandable_language.refused_card_example_2|fr:Il faut que l’ASC puisse dépister le cancer.",
-      "validated_card_example_2": "@@moderation_charter.understandable_language.validated_card_example_2|fr:Il faut que l’Agence pour la Santé puisse dépister le cancer."
+      "text": "Fatti capire al meglio adottando un linguaggio accessibile.",
+      "refused_card_example": "È necessario un anno propedeutico all’uni.",
+      "validated_card_example": "È necessario un anno di studi generali prima di scegliere la specializzazione universitaria.",
+      "refused_card_example_2": "È necessario che l’ASL prevenga il cancro.",
+      "validated_card_example_2": "È necessario che il servizio sanitario nazionale proponga esami per la prevenzione del cancro."
     },
     "acronyms": {
-      "text": "@@moderation_charter.acronyms.text|fr:Evitez d’utiliser dans votre proposition les #, @ ou autres acronymes comme “LOL”.",
-      "refused_card_example": "@@moderation_charter.acronyms.refused_card_example|fr:Il faut baisser les impôts des entrepreneurs #compétitivité",
-      "validated_card_example": "@@moderation_charter.acronyms.validated_card_example|fr:Il faut baisser les impôts des entrepreneurs pour les rendre compétitifs !"
+      "text": "Nella tua proposta, evita di usare i caratteri speciali # e @ o gli acronimi (come “LOL”, ad esempio).",
+      "refused_card_example": "È necessario diminuire i prelievi fiscali sugli imprenditori #competitività",
+      "validated_card_example": "È necessario diminuire i prelievi fiscali sugli imprenditori per renderli competitivi!"
     },
-    "disclaimer": "@@moderation_charter.disclaimer|fr:Make.org n'est pas un opérateur de plateforme en ligne relevant du champ d'application de la loi n° 2018-1202 du 22 décembre 2018 relative à la lutte contre la manipulation de l'information. A ce titre, nous ne sommes donc pas soumis aux obligations y afférentes. La véracité des informations mises en ligne sur notre site nous tient cependant à cœur, et nous détaillons au sein de la présente Charte les mesures que nous prenons en ce sens.",
+    "disclaimer": "Make.org non è operatore di piattaforma online ai sensi del campo di applicazione della legge francese n. 2018-1202 del 22 dicembre 2018 relativa alla lotta contro la manipolazione dell’informazione. Non è quindi tenuta agli obblighi che vi afferiscono. Ciononostante, la veridicità delle informazioni pubblicate online sul nostro sito è un valore a cui teniamo, per questo menzioneremo nel dettaglio in questa Carta le misure adottate in tal senso.",
     "foot_notes": {
-      "ethical_charter": "@@moderation_charter.foot_notes.ethical_charter|fr:Cette charte de modération a été élaborée en conformité avec la Charte éthique qui garantit la neutralité, l'indépendance et la transparence de Make.org.",
-      "code_penal": "@@moderation_charter.foot_notes.code_penal|fr:Le Code Pénal français définit la discrimination comme « toute distinction opérée entre les personnes physiques à raison de leur origine, de leur sexe, de leur situation de famille, de leur grossesse, de leur apparence physique, de leur patronyme, de leur lieu de résidence, de leur état de santé, de leur handicap, de leurs caractéristiques génétiques, de leurs mœurs, de leur orientation ou identité sexuelle, de leur âge, de leurs opinions politiques, de leurs activités syndicales, de leur appartenance ou de leur non-appartenance, vraie ou supposée, à une ethnie, une nation, une race ou une religion déterminée ». (Article 225-1§1)."
+      "ethical_charter": "Questa carta di moderazione è stata elaborata in conformità con la <a href=\"https://assets.make.org/consultations/ethical_charter_it.pdf\" target=\"_blank\">Carta etica (nuova scheda)</a> che garantisce la neutralità, l’indipendenza e la trasparenza di Make.org.",
+      "code_penal": "Tra i principi fondamentali della Costituzione italiana si trova, all’articolo 3, proprio il principio di uguaglianza e non discriminazione: “Tutti i cittadini hanno pari dignità sociale e sono eguali davanti alla legge, senza distinzione di sesso, di razza, di lingua, di religione, di opinioni politiche, di condizioni personali e sociali. È compito della Repubblica rimuovere gli ostacoli di ordine economico e sociale, che, limitando di fatto la libertà e l’eguaglianza dei cittadini, impediscono il pieno sviluppo della persona umana e l’effettiva partecipazione di tutti i lavoratori all’organizzazione politica, economica e sociale del Paese”."
     }
   }
 }

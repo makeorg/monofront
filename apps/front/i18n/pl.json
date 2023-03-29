@@ -104,8 +104,8 @@
       "description": "Wyszukiwana strona nie istnieje."
     },
     "moderation": {
-      "title": "@@meta.moderation.title|fr:Make.org ∙ Charte de modération",
-      "description": "@@meta.moderation.description|fr:Quelles sont les propositions refusées lors de la modération sur Make.org ? Comment formuler une proposition correctement ?"
+      "title": "Make.org ∙ Karta moderacji",
+      "description": "W jaki sposób pomyślnie przejść etap moderacji? Jakie propozycje są odrzucane w trakcie moderacji na Make.org? Jak poprawnie sformułować propozycję?"
     }
   },
   "common": {
@@ -281,7 +281,7 @@
     "million_many": "milionów",
     "million_other": "miliona",
     "close_panel": "Zamknij listę rozwijaną",
-    "close": "@@common.close|fr:Fermer"
+    "close": "Zamknij"
   },
   "header": {
     "logo_alt": "Idź do strony głównej Make.org",
@@ -344,8 +344,8 @@
       "postponed": "W oczekiwaniu na moderację",
       "pending": "W oczekiwaniu na moderację"
     },
-    "original": "@@proposal_card.original|fr:Voir l'original",
-    "translation": "@@proposal_card.translation|fr:Voir la traduction"
+    "original": "Zobacz oryginał",
+    "translation": "Zobacz tłumaczenie"
   },
   "intro_card": {
     "purpose": "Karta wprowadzająca",
@@ -1370,106 +1370,106 @@
     "confirm": "Potwierdź"
   },
   "report_translations": {
-    "button": "@@report_translations.button|fr:Options de la proposition",
+    "button": "Opcje propozycji",
     "confirmation": {
-      "title": "@@report_translations.confirmation.title|fr:Merci pour le signalement !",
-      "description": "@@report_translations.confirmation.description|fr:Notre équipe va l'étudier dans les plus brefs délais."
+      "title": "Dziękujemy za zgłoszenie problemu!",
+      "description": "Nasz zespół przeanalizuje je w najkrótszym możliwym terminie."
     },
     "form": {
-      "title": "@@report_translations.form.title|fr:Signaler la traduction automatique",
-      "unclear": "@@report_translations.form.unclear|fr:Traduction incompréhensible",
-      "error": "@@report_translations.form.error|fr:Erreur dans la traduction",
-      "false_info": "@@report_translations.form.false_info|fr:Contient une information fausse",
-      "offensive": "@@report_translations.form.offensive|fr:Proposition offensante",
-      "report": "@@report_translations.form.report|fr:Signaler"
+      "title": "Zgłoś problem związany z automatycznym tłumaczeniem",
+      "unclear": "Tłumaczenie niezrozumiałe",
+      "error": "Błąd w tłumaczeniu",
+      "false_info": "Zawiera nieprawdziwą informację",
+      "offensive": "Propozycja obraźliwa",
+      "report": "Zgłoś problem"
     },
     "first_step": {
-      "title": "@@report_translations.first_step.title|fr:Traduction automatique",
-      "text": "@@report_translations.first_step.text|fr:Les propositions de nos consultations sont automatiques. Si vous remarquez une erreur, n’hésitez pas à la signaler à nos équipes !"
+      "title": "Tłumaczenie automatyczne",
+      "text": "Tłumaczenia propozycji w ramach naszych konsultacji są wykonywane automatycznie. Jeśli zauważycie jakiś błąd, prosimy o zgłoszenie tego do naszych zespołów!"
     }
   },
   "moderation_charter": {
-    "unsuitable_label": "@@moderation_charter.unsuitable_label|fr:DÉCONSEILLÉ",
-    "adapted_label": "@@moderation_charter.adapted_label|fr:Adapté",
-    "refused_label": "@@moderation_charter.refused_label|fr:Refusé",
-    "validated_label": "@@moderation_charter.validated_label|fr:Validé",
-    "title": "@@moderation_charter.title|fr:Charte de modération",
-    "description": "@@moderation_charter.description|fr:Quelles sont les propositions refusées lors de la modération sur Make.org ? Comment formuler une proposition correctement ? Chaque proposition soumise sur la plateforme est modérée à la main par les équipes de modérateurs de Make.org, au regard des critères suivants de la charte de modération¹. La modération se fait sous 48 heures après envoi de la proposition. Vous serez informé.e par email (sous réserve d’avoir validé votre adresse email à l’inscription) de la publication ou du refus de votre proposition. Les petites fautes d'orthographe sont corrigées par les modérateurs, mais il vous revient de publier de nouveau votre proposition si celle-ci ne peut être acceptée.",
-    "refused_examples": "@@moderation_charter.refused_examples|fr:Ne sont pas autorisées sur la plateforme Make.org : ",
+    "unsuitable_label": "Odradzane",
+    "adapted_label": "Właściwe",
+    "refused_label": "Odrzucone",
+    "validated_label": "Zatwierdzone",
+    "title": "Karta moderacji",
+    "description": "Jakie propozycje są odrzucane w trakcie moderacji na Make.org? Jak poprawnie sformułować propozycję? Każda propozycja złożona na platformie przechodzi etap ręcznej moderacji przez zespoły moderatorów Make.org pod kątem poniższych kryteriów karty moderacji¹. Moderacja ma miejsce w ciągu 48 godzin od wysłania propozycji. Zostaniesz poinformowana/-y mailowo (pod warunkiem uprzedniego potwierdzenia przez Ciebie Twojego adresu e-mail przy rejestracji) o publikacji lub odrzuceniu Twojej propozycji. Drobne błędy ortograficzne są poprawiane przez moderatorów, ale w sytuacji, gdy Twoja propozycja nie może zostać zaakceptowana, musisz zredagować ją ponownie.",
+    "refused_examples": "Na stronie Make.org nie są dozwolone: ",
     "incomprehensible_solutions": {
-      "title": "@@moderation_charter.incomprehensible_solutions.title|fr:Les propositions incompréhensibles",
-      "description": "@@moderation_charter.incomprehensible_solutions.description|fr:La formulation et le sens de votre proposition doivent être compréhensibles par toutes et tous. Les erreurs importantes de syntaxe ou les non-sens seront refusés, vous serez invité·e·s à reformuler votre proposition.",
-      "refused_example_card": "@@moderation_charter.incomprehensible_solutions.refused_example_card|fr:Il faut que les citoyens se réfléchissent dans le développement par tous les pays.",
-      "validated_example_card": "@@moderation_charter.incomprehensible_solutions.validated_example_card|fr:Il faut que les citoyens réfléchissent au développement de l’éducation dans chaque pays."
+      "title": "Propozycje niezrozumiałe",
+      "description": "Sposób sformułowania oraz sens Twojej propozycji muszą być zrozumiałe dla wszystkich. W przypadku poważnych błędów składniowych lub niedorzeczności, propozycja zostanie odrzucona i zostaniesz poproszona/-y o ponowne jej sformułowanie.",
+      "refused_example_card": "Należy pozwolić obywatelkom i obywatelom myśleć siebie w rozwoju we wszystkich krajach.",
+      "validated_example_card": "Należy zmobilizować obywatelki i obywateli do refleksji nad rozwojem edukacji w każdym kraju."
     },
     "irrelevant_solutions": {
-      "title": "@@moderation_charter.irrelevant_solutions.title|fr:Les propositions hors sujet",
-      "description": "@@moderation_charter.irrelevant_solutions.description|fr:Votre proposition doit répondre à la question posée dans la consultation. Dans le cas contraire, votre proposition est considérée comme hors sujet et sera refusée.",
-      "example": "@@moderation_charter.irrelevant_solutions.example|fr:Par exemple pour la question “Comment permettre à chacun de mieux manger ?”",
-      "refused_card_example": "@@moderation_charter.irrelevant_solutions.refused_card_example|fr:Il faut mettre en place la coupe du monde de football tous les 2 ans.",
-      "validated_card_example": "@@moderation_charter.irrelevant_solutions.validated_card_example|fr:Il faut favoriser l’accès aux circuits courts dans les cantines d'entreprise."
+      "title": "Propozycje nie na temat",
+      "description": "Twoja propozycja musi odpowiadać na pytanie postawione w ramach konsultacji. W przeciwnym razie zostanie potraktowana jako nie na temat i odrzucona.",
+      "example": "Na przykład na pytanie: „Co zrobić, aby każdy mógł lepiej się odżywiać?”",
+      "refused_card_example": "Należy organizować mistrzostwa świata w piłce nożnej co dwa lata.",
+      "validated_card_example": "Należy zachęcać stołówki pracownicze do stosowania krótkiego łańcucha dostaw."
     },
     "discriminatory_solutions": {
-      "title": "@@moderation_charter.discriminatory_solutions.title|fr:Les propositions discriminantes",
-      "description": "@@moderation_charter.discriminatory_solutions.description|fr:En conformité avec la loi², votre proposition ne peut pas contenir de discours incitant à la violence ou à la haine. Elle ne peut non plus contenir de propos à caractère discriminant ou diffamatoire, notamment à l'encontre de tout groupe ethnique, social ou religieux.",
-      "refused_card_example": "@@moderation_charter.discriminatory_solutions.refused_card_example|fr:Il faut veiller à ce que les Bretons ne conservent pas leurs traditions dégradantes.",
-      "validated_card_example": "@@moderation_charter.discriminatory_solutions.validated_card_example|fr:Il faut veiller à ce que les Français puissent mieux communiquer ensemble.",
-      "refused_card_example_2": "@@moderation_charter.discriminatory_solutions.refused_card_example_2|fr:Il faut interdire les croix autour du cou qui sont un symbole d'asservissement.",
-      "validated_card_example_2": "@@moderation_charter.discriminatory_solutions.validated_card_example_2|fr:Il faut veiller à ce que la liberté de culte soit respectée dans notre pays."
+      "title": "Propozycje o charakterze dyskryminacyjnym",
+      "description": "Zgodnie z prawem² Twoja propozycja nie może zawierać treści nawołujących do przemocy lub nienawiści. Nie może również zawierać treści o charakterze dyskryminacyjnym lub zniesławiającym, w szczególności w stosunku do danej grupy etnicznej, socjalnej lub religijnej.",
+      "refused_card_example": "Należy sprawić, aby Kaszubi przestali rozmawiać między sobą w języku, którego nikt poza nimi nie rozumie.",
+      "validated_card_example": "Należy dbać o to, aby Polacy mogli lepiej porozumiewać się ze sobą.",
+      "refused_card_example_2": "Należy zabronić noszenia krzyżyka na szyi, gdyż jest on symbolem zniewolenia.",
+      "validated_card_example_2": "Należy zapewnić poszanowanie wolności religijnej w naszym kraju."
     },
     "partisan_solutions": {
-      "title": "@@moderation_charter.partisan_solutions.title|fr:Les propositions partisanes",
-      "description": "@@moderation_charter.partisan_solutions.description|fr:Votre proposition ne doit pas prendre parti (c'est-à-dire porter un message de valorisation ou de dévalorisation) envers un parti politique, une personnalité politique, une idéologie ou une religion (personnalité, symbole ou pratiques).",
-      "refused_card_example": "@@moderation_charter.partisan_solutions.refused_card_example|fr:Il faut prendre connaissance du programme de M. XXX, ses idées sont originales pour les prochaines élections.",
-      "validated_card_example": "@@moderation_charter.partisan_solutions.validated_card_example|fr:Il faut se renseigner sur les programmes de chaque parti politique avant les élections.",
-      "refused_card_example_2": "@@moderation_charter.partisan_solutions.refused_card_example_2|fr:Il faut relire la Bible régulièrement pour y trouver le salut.",
-      "validated_card_example_2": "@@moderation_charter.partisan_solutions.validated_card_example_2|fr:Il faut que les employeurs puissent connaître les dates de certaines fêtes religieuses : le Ramadan, Hanoucca etc."
+      "title": "Propozycje stronnicze",
+      "description": "Twoja propozycja nie może być stronnicza (tzn. zawierać przesłań waloryzujących lub dewaloryzujących) względem danej partii politycznej, osoby zajmującej stanowisko polityczne, ideologii lub religii (osobowości, symbolu lub praktyk).",
+      "refused_card_example": "Należy zapoznać się z programem Pana XXX, ma oryginalne pomysły w związku z nadchodzącymi wyborami.",
+      "validated_card_example": "Należy zapoznać się z programem wszystkich partii politycznych przed wyborami.",
+      "refused_card_example_2": "Należy systematycznie czytać Biblię, aby znaleźć w niej wybawienie.",
+      "validated_card_example_2": "Należy podać do wiadomości pracowników daty niektórych świąt religijnych: Ramadanu, Chanuki, itd."
     },
     "advertising": {
-      "title": "@@moderation_charter.advertising.title|fr:La publicité",
-      "description": "@@moderation_charter.advertising.description|fr:Vous ne pouvez pas faire de la publicité pour une marque ou une entreprise spécifique. Là encore, vous pouvez mentionner une marque ou entreprise uniquement à travers un exemple d’illustration.",
-      "refused_card_example": "@@moderation_charter.advertising.refused_card_example|fr:Il faut que toutes les entreprises utilisent les solutions proposées par IBM.",
-      "validated_card_example": "@@moderation_charter.advertising.validated_card_example|fr:Il faut arrêter de consommer certains sodas trop sucrés, comme le Coca-Cola."
+      "title": "Reklama",
+      "description": "Nie możesz reklamować danej marki lub przedsiębiorstwa. Możesz natomiast zacytować daną markę lub przedsiębiorstwo wyłącznie jako przykład.",
+      "refused_card_example": "Należy sprawić, aby wszystkie przedsiębiorstwa używały rozwiązań proponowanych przez IBM.",
+      "validated_card_example": "Należy przestać spożywać niektóre mocno słodzone napoje sodowe, jak np. Coca-Cola."
     },
     "multiple_ideas": {
-      "title": "@@moderation_charter.multiple_ideas.title|fr:Les idées multiples",
-      "description": "@@moderation_charter.multiple_ideas.description|fr:Il faut formuler une seule idée par proposition pour faciliter le vote des autres citoyens sur votre contribution. Si vous avez deux idées différentes, vous pouvez créer deux propositions.",
-      "refused_card_example": "@@moderation_charter.multiple_ideas.refused_card_example|fr:Il faut que les produits des producteurs locaux soient accessibles, et communiquer sur les innovations en agriculture.",
-      "validated_card_example": "@@moderation_charter.multiple_ideas.validated_card_example|fr:Il faut que les produits des producteurs locaux soient accessibles."
+      "title": "Pomysły wielowątkowe",
+      "description": "Każda propozycja powinna zawierać tylko jeden pomysł, aby ułatwić pozostałym obywatelkom i obywatelom głosowanie na Twoją ideę. Jeśli masz dwa odrębne pomysły, możesz stworzyć dwie propozycje.",
+      "refused_card_example": "Należy zadbać o to, aby produkty lokalnych producentów były dostępne oraz informować o innowacjach w rolnictwie.",
+      "validated_card_example": "Należy zadbać o to, aby produkty lokalnych producentów były dostępne."
     },
     "insults": {
-      "title": "@@moderation_charter.insults.title|fr:Les injures",
-      "description": "@@moderation_charter.insults.description|fr:‍Toute proposition irrespectueuse ou injurieuse sera refusée lors de la modération.",
-      "refused_card_example": "@@moderation_charter.insults.refused_card_example|fr:Il faut que ces idiots d’automobilistes respectent davantage le code de la route.",
-      "validated_card_example": "@@moderation_charter.insults.validated_card_example|fr:Il faut que les automobilistes respectent davantage le code de la route."
+      "title": "Obelgi",
+      "description": "Wszelkie propozycje lekceważące lub obraźliwe będę odrzucane w procesie moderacji.",
+      "refused_card_example": "Należy zmusić tych idiotów za kierownicą do przestrzegania kodeksu drogowego.",
+      "validated_card_example": "Należy sprawić, aby kierowcy samochodowi przestrzegali kodeksu drogowego."
     },
     "correctly_formulated_solutions": {
-      "title": "@@moderation_charter.correctly_formulated_solutions.title|fr:Comment formuler une proposition correctement sur Make.org ?"
+      "title": "Jak poprawnie sformułować propozycję na Make.org?"
     },
-    "search_function": "@@moderation_charter.search_function|fr:Utilisez la fonction recherche pour vérifier que votre idée n’est pas déjà présente sur le site.",
+    "search_function": "Użyj funkcji wyszukiwania, aby sprawdzić, czy Twój pomysł nie został już zaproponowany na stronie.",
     "concrete_elements": {
-      "text": "@@moderation_charter.concrete_elements.text|fr:Pensez à préciser votre idée avec des éléments concrets pour que les citoyen·ne·s comprennent précisément votre propos.",
-      "refused_card_example": "@@moderation_charter.concrete_elements.refused_card_example|fr:Il faut plus d’Europe.",
-      "validated_card_example": "@@moderation_charter.concrete_elements.validated_card_example|fr:Il faut donner plus de moyens à l’Union européenne.",
-      "refused_card_example_2": "@@moderation_charter.concrete_elements.refused_card_example_2|fr:Il faut réduire le chômage des jeunes.",
-      "validated_card_example_2": "@@moderation_charter.concrete_elements.validated_card_example_2|fr:Il faut créer un Pôle Emploi pour les jeunes."
+      "text": "Pamiętaj o tym, aby doprecyzować swój pomysł za pomocą konkretnych elementów, co pozwoli obywatelkom i obywatelom dokładnie zrozumieć Twoją propozycję.",
+      "refused_card_example": "Należy sprawić, aby było więcej Europy.",
+      "validated_card_example": "Należy dać więcej środków Unii europejskiej.",
+      "refused_card_example_2": "Należy obniżyć bezrobocie wśród młodych.",
+      "validated_card_example_2": "Należy stworzyć urząd pracy dla młodych."
     },
     "understandable_language": {
-      "text": "@@moderation_charter.understandable_language.text|fr:Faites-vous comprendre le mieux possible en adoptant un langage accessible à toutes et tous.",
-      "refused_card_example": "@@moderation_charter.understandable_language.refused_card_example|fr:Il faut une année de propédeutique à la fac.",
-      "validated_card_example": "@@moderation_charter.understandable_language.validated_card_example|fr:Il faut une année généraliste avant de choisir sa filière à la fac.",
-      "refused_card_example_2": "@@moderation_charter.understandable_language.refused_card_example_2|fr:Il faut que l’ASC puisse dépister le cancer.",
-      "validated_card_example_2": "@@moderation_charter.understandable_language.validated_card_example_2|fr:Il faut que l’Agence pour la Santé puisse dépister le cancer."
+      "text": "Pozwól, aby Twój pomysł był dobrze zrozumiany, wyrażając się w języku czytelnym dla wszystkich.",
+      "refused_card_example": "Należy wprowadzić rok propedeutyczny na uniwersytecie.",
+      "validated_card_example": "Należy wprowadzić na uniwersytecie rok ogólnokształcący, poprzedzający wybór kierunku studiów.",
+      "refused_card_example_2": "Należy skłonić NIZP-PZH do zajęcia się wykrywalnością raka.",
+      "validated_card_example_2": "Należy skłonić Narodowy Instytut Zdrowia Publicznego do zajęcia się wykrywalnością raka."
     },
     "acronyms": {
-      "text": "@@moderation_charter.acronyms.text|fr:Evitez d’utiliser dans votre proposition les #, @ ou autres acronymes comme “LOL”.",
-      "refused_card_example": "@@moderation_charter.acronyms.refused_card_example|fr:Il faut baisser les impôts des entrepreneurs #compétitivité",
-      "validated_card_example": "@@moderation_charter.acronyms.validated_card_example|fr:Il faut baisser les impôts des entrepreneurs pour les rendre compétitifs !"
+      "text": "Unikaj stosowania w propozycji znaków #, @ czy innych akronimów, np. „LOL”.",
+      "refused_card_example": "Należy obniżyć podatki dla przedsiębiorców #konkurencyjność",
+      "validated_card_example": "Należy obniżyć podatki dla przedsiębiorców, aby mogli być konkurencyjni!"
     },
-    "disclaimer": "@@moderation_charter.disclaimer|fr:Make.org n'est pas un opérateur de plateforme en ligne relevant du champ d'application de la loi n° 2018-1202 du 22 décembre 2018 relative à la lutte contre la manipulation de l'information. A ce titre, nous ne sommes donc pas soumis aux obligations y afférentes. La véracité des informations mises en ligne sur notre site nous tient cependant à cœur, et nous détaillons au sein de la présente Charte les mesures que nous prenons en ce sens.",
+    "disclaimer": "Make.org nie jest operatorem platformy internetowej podlegającym zapisom francuskiej ustawy nr 2018-1202 z dnia 22 grudnia 2018 dotyczącej walki z manipulacją informacjami. W związku z tym nie podlegamy wynikającym z niej obowiązkom. Niemniej jednak dokładność informacji zamieszczonych na naszej stronie internetowej jest dla nas ważna, dlatego w niniejszej Karcie wymieniamy środki, które w tym celu podejmujemy.",
     "foot_notes": {
-      "ethical_charter": "@@moderation_charter.foot_notes.ethical_charter|fr:Cette charte de modération a été élaborée en conformité avec la Charte éthique qui garantit la neutralité, l'indépendance et la transparence de Make.org.",
-      "code_penal": "@@moderation_charter.foot_notes.code_penal|fr:Le Code Pénal français définit la discrimination comme « toute distinction opérée entre les personnes physiques à raison de leur origine, de leur sexe, de leur situation de famille, de leur grossesse, de leur apparence physique, de leur patronyme, de leur lieu de résidence, de leur état de santé, de leur handicap, de leurs caractéristiques génétiques, de leurs mœurs, de leur orientation ou identité sexuelle, de leur âge, de leurs opinions politiques, de leurs activités syndicales, de leur appartenance ou de leur non-appartenance, vraie ou supposée, à une ethnie, une nation, une race ou une religion déterminée ». (Article 225-1§1)."
+      "ethical_charter": "Niniejsza karta moderacji została opracowana w zgodności z <a href=\"https://assets.make.org/consultations/ethical_charter_pl.pdf\" target=\"_blank\">Kartą Etyki (nowa karta)</a>, która gwarantuje neutralność, niezależność i transparentność Make.org.",
+      "code_penal": "Polski Kodeks Karny definiuje dyskryminację jako „przemoc lub groźbę bezprawną wobec grupy osób lub poszczególnej osoby z powodu jej przynależności narodowej, etnicznej, rasowej, politycznej, wyznaniowej lub z powodu jej bezwyznaniowości.” (Artykuł 119, § 1)."
     }
   }
 }
