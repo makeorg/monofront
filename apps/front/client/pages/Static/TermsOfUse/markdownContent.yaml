@@ -2248,7 +2248,7 @@ pl: |
   ### 22. WEJŚCIE W ŻYCIE
   Niniejsze warunki ogólne weszły w życie dnia {{validityDate}}.
 
-  it: |
+it: |
 
   ## Condizioni di utilizzo di Make.org
 
@@ -2341,7 +2341,7 @@ pl: |
 
     ~> La Proposta non deve contenere elementi considerabili contrari alla legge e ai buoni costumi o i cui termini siano contrari alle disposizioni delle presenti Condizioni Generali di Utilizzo.
 
-    ####  6.4 Moderazione e pubblicazione della Proposta Cittadina
+    #### 6.4 Moderazione e pubblicazione della Proposta Cittadina
 
     ~> La pubblicazione della Proposta Cittadina dell’Utente avviene previa moderazione nelle condizioni definite nelle presenti CGUS. La richiesta di pubblicazione di una Proposta Cittadina sarà trattata il più rapidamente possibile dai team di Make.org, con l’obiettivo di rispondere in meno di 48 ore.
 
@@ -2488,17 +2488,17 @@ pl: |
 
     ~> Make.org non garantisce agli Utenti (i) che i Servizi, pur sottoposti a ricerca costante per migliorarne, in particolare, le performance e l’evoluzione, siano totalmente esenti da errori, vizi o difetti; (ii) che i Servizi, per la loro natura standard e non rivolti a un Utente specifico in funzione delle sue esigenze personali, rispondano precipuamente ai suoi bisogni e aspettative.
 
-    ### 11.2 Contenuti
+    #### 11.2 Contenuti
 
     ~> Nonostante i Servizi siano soggetti a moderazione, Make.org non è responsabile dei Contenuti i cui autori siano soggetti terzi; qualsiasi reclamo eventuale dovrà quindi essere rivolto in primo luogo all’autore dei Contenuti in questione.
 
     ~> I Contenuti pregiudizievoli a un soggetto terzo possono essere oggetto di notifica a Make.org secondo le modalità previste dall’articolo 6 I 5 della legge francese n. 2004-575 del 21 giugno 2004 per la fiducia nel sistema digitale; Make.org si riserva così il diritto di adottare le misure descritte all’articolo 12.
 
-    ### 11.3 Perdita di informazioni
+    #### 11.3 Perdita di informazioni
 
     ~> Essendo il Servizio fornito a titolo gratuito, Make.org declina qualsivoglia responsabilità in caso di eventuale perdita di informazioni accessibili nell’Area Personale dell’Utente, rimanendo in capo a quest’ultimo la responsabilità di salvarne una copia, nella consapevolezza di non poter pretendere alcun risarcimento danni a tale titolo.
 
-    ### 11.4 Danni e responsabilità
+    #### 11.4 Danni e responsabilità
 
     ~> Make.org è responsabile dei danni, a prescindere dal fondamento giuridico, in caso di inadempimento intenzionale e di grave negligenza. Tuttavia, in questo caso, la responsabilità di Make.org è limitata al risarcimento dei danni prevedibili che possano verosimilmente verificarsi.
 
@@ -2593,7 +2593,7 @@ pl: |
 
 nl: |
 
-  ##Gebruiksvoorwaarden van Make.org
+  ## Gebruiksvoorwaarden van Make.org
 
   > \- van{{date}} -
 
@@ -2937,9 +2937,7 @@ nl: |
 
 fi: |
 
-  ## Conditions d’utilisation de Make.org
-
-  Make.orgin käyttöehdot
+  ## Make.orgin käyttöehdot
 
   > \- voimassa {{date}} alkaen -
 
@@ -3673,7 +3671,7 @@ bg: |
 
   ### 5. ИЗПОЛЗВАНЕ НА САЙТА
 
-    ####5.1 Достъп до сайта
+    #### 5.1 Достъп до сайта
 
     ~> Сайтът е отворен за обществеността и всички Потребители могат да го посещават и да гласуват за Предложенията.
 

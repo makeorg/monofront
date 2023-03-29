@@ -339,8 +339,8 @@
       "postponed": "In attesa di moderazione",
       "pending": "In attesa di moderazione"
     },
-    "original": "@@proposal_card.original|fr:Voir l'original",
-    "translation": "@@proposal_card.translation|fr:Voir la traduction"
+    "original": "Vedi l’originale",
+    "translation": "Vedi la traduzione"
   },
   "intro_card": {
     "purpose": "Carta di presentazione",
@@ -1347,22 +1347,22 @@
     "confirm": "Conferma"
   },
   "report_translations": {
-    "button": "@@report_translations.button|fr:Options de la proposition",
+    "button": "Opzioni della proposta",
     "confirmation": {
-      "title": "@@report_translations.confirmation.title|fr:Merci pour le signalement !",
-      "description": "@@report_translations.confirmation.description|fr:Notre équipe va l'étudier dans les plus brefs délais."
+      "title": "Grazie per la segnalazione!",
+      "description": "Sarà analizzata al più presto dalla nostra équipe."
     },
     "form": {
-      "title": "@@report_translations.form.title|fr:Signaler la traduction automatique",
-      "unclear": "@@report_translations.form.unclear|fr:Traduction incompréhensible",
-      "error": "@@report_translations.form.error|fr:Erreur dans la traduction",
-      "false_info": "@@report_translations.form.false_info|fr:Contient une information fausse",
-      "offensive": "@@report_translations.form.offensive|fr:Proposition offensante",
-      "report": "@@report_translations.form.report|fr:Signaler"
+      "title": "Segnala la traduzione automatica",
+      "unclear": "Traduzione incomprensibile",
+      "error": "Errore di traduzione",
+      "false_info": "Contiene un’informazione sbagliata",
+      "offensive": "Proposta offensiva",
+      "report": "Segnala"
     },
     "first_step": {
-      "title": "@@report_translations.first_step.title|fr:Traduction automatique",
-      "text": "@@report_translations.first_step.text|fr:Les propositions de nos consultations sont automatiques. Si vous remarquez une erreur, n’hésitez pas à la signaler à nos équipes !"
+      "title": "Traduzione automatica",
+      "text": "Le proposte delle nostre consultazioni sono tradotte in modo automatico. Se dovessi rilevare un errore, non esitare a segnalarlo alle nostre équipe!"
     }
   },
   "moderation_charter": {
