@@ -367,6 +367,7 @@ export const TextAreaCounterStyle = styled(BodyXSDefault).attrs({ as: 'div' })`
 export const PasswordRequirements = styled.div`
   align-self: flex-end;
   font-size: ${typography.FontSize.RueDeLappe};
+  color: ${colors.Content.Interface.DarkSecondary};
   margin: 15px 5px 0 0;
 `;
 
