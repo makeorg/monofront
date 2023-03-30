@@ -80,9 +80,11 @@ const LegalPage: FC = () => {
             })}
           </StaticPhoneLinkStyle>
         </StaticParagraphStyle>
-        <StaticParagraphStyle>
-          {i18n.t('legal.eu_mention')}
-        </StaticParagraphStyle>
+        <StaticParagraphStyle
+          dangerouslySetInnerHTML={{
+            __html: i18n.t('legal.eu_mention'),
+          }}
+        />
       </StaticPageWrapperStyle>
     </>
   );

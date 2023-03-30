@@ -1216,7 +1216,7 @@
     "host_address": "{{make_host_address}} FRANCE",
     "host_phone": "Numéro de téléphone : ",
     "host_phone_number": "{{host_number}}",
-    "eu_mention": "La Commission européenne met à disposition une plateforme de règlement des litiges en ligne pour les consommateurs, à l'adresse https://ec.europa.eu/consumers/odr."
+    "eu_mention": "La Commission européenne met à disposition une plateforme de règlement des litiges en ligne pour les consommateurs, à l'adresse <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\">https://ec.europa.eu/consumers/odr - (nouvelle fenêtre)</a>."
   },
   "moderation_charter": {
     "unsuitable_label": "DÉCONSEILLÉ",
