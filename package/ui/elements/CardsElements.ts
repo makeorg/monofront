@@ -153,3 +153,9 @@ export const ParticipateCardStyle = styled.section<{
     }
   }
 `;
+
+export const ParticipateCardCantProposalTextStyle = styled.p`
+  font-size: ${typography.FontSize.RueDeLappe};
+  color: ${colors.Content.Interface.DarkSecondary};
+  margin-top: 15px;
+`;

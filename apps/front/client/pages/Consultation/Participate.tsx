@@ -1,10 +1,9 @@
 import React, { useEffect, FC } from 'react';
 import { QuestionType } from '@make.org/types';
 import i18n from 'i18next';
-import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { ThemeProvider } from 'styled-components';
-import { NOTIF, IDS, FEATURE_FLIPPING, TRACKING } from '@make.org/types/enums';
+import { IDS, FEATURE_FLIPPING, TRACKING } from '@make.org/types/enums';
 import { SvgLightning, SvgLike, SvgPeople } from '@make.org/ui/Svg/elements';
 import {
   getSequenceLink,
@@ -17,11 +16,9 @@ import {
   trackDisplayOperationPage,
   trackOpenSequence,
 } from '@make.org/utils/services/Tracking';
-
 import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
 import { Keywords } from '@make.org/components/Flipping/Keywords';
 import { checkIsFeatureActivated } from '@make.org/utils/helpers/featureFlipping';
-
 import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
 import { Timeline } from '../../app/Consultation/Timeline';
@@ -46,25 +43,11 @@ import {
 } from './style';
 
 const ParticipatePage: FC = () => {
-  const { state, dispatch } = useAppContext();
+  const { state } = useAppContext();
   const { country, device } = state.appConfig;
   const question: QuestionType = selectCurrentQuestion(state);
   const isDesktop = matchDesktopDevice(device);
   const PROPOSALS_THRESOLD = 5;
-
-  useEffect(() => {
-    if (!question.canPropose) {
-      dispatch(
-        displayNotificationBanner(
-          NOTIF.VOTE_ONLY_MESSAGE,
-          NOTIF.NOTIFICATION_LEVEL_INFORMATION,
-          { questionId: question.questionId },
-          true
-        )
-      );
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [question]);
 
   useEffect(() => {
     trackDisplayOperationPage();
@@ -122,7 +105,7 @@ const ParticipatePage: FC = () => {
         </ParticipateDescriptionStyle>
         <ParticipateInnerStyle>
           <ParticipateMainContentStyle>
-            {question.canPropose && <SubmitProposal />}
+            <SubmitProposal />
             <CTAMonoBlock
               icon={InteractIcon}
               title={i18n.t('consultation.cards.interact.title')}

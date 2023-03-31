@@ -8,6 +8,7 @@ import {
   ParticipateCardTitleStyle,
   ParticipateCardDescriptionStyle,
   ParticipateCardButtonStyle,
+  ParticipateCardCantProposalTextStyle,
 } from '@make.org/ui/elements/CardsElements';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { QuestionType } from '@make.org/types';
@@ -37,6 +38,13 @@ export const SubmitProposal: FC = () => {
       >
         {i18n.t('consultation.cards.submit.button')}
       </ParticipateCardButtonStyle>
+      {!question.canPropose && (
+        <ParticipateCardCantProposalTextStyle>
+          {i18n.t('common.notifications.vote_only.message', {
+            title: question.question,
+          })}
+        </ParticipateCardCantProposalTextStyle>
+      )}
     </ParticipateCardStyle>
   );
 };
