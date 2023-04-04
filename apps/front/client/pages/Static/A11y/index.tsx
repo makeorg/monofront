@@ -5,7 +5,6 @@ import {
 } from '@make.org/utils/constants/config';
 import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
-import { LocaleType } from '@make.org/types/enums';
 import {
   getA11YPageLink,
   getBrowseConsultationsLink,
@@ -52,16 +51,11 @@ import {
   FocusBlockTitleStyle,
 } from '../style';
 
-import A11yContent from './markdownContent.yaml';
 import { markdownComponents } from '../markdownComponent';
-
-const defaultLanguage = [LocaleType.en].toString();
 
 export const A11y: FC = () => {
   const { state } = useAppContext();
   const { country, language } = state.appConfig;
-
-  const languageToUse = A11yContent[language] ? language : defaultLanguage;
 
   const FRONT_URL = env.frontUrl() || window.FRONT_URL || '.';
   const replacements: Record<string, string> = {
@@ -115,23 +109,6 @@ export const A11y: FC = () => {
     linkContact: FRONT_URL + getContactPageLink(country, language),
   };
 
-  const content = Object.keys(replacements).reduce(
-    (aggregator, key) => ({
-      introduction: aggregator.introduction.replaceAll(
-        `{{${key}}}`,
-        replacements[key]
-      ),
-      firstFocus:
-        aggregator.firstFocus &&
-        aggregator.firstFocus.replaceAll(`{{${key}}}`, replacements[key]),
-      secondFocus:
-        aggregator.secondFocus &&
-        aggregator.secondFocus.replaceAll(`{{${key}}}`, replacements[key]),
-      content: aggregator.content.replaceAll(`{{${key}}}`, replacements[key]),
-    }),
-    A11yContent[languageToUse]
-  );
-
   type elProps = {
     children: ReactNode;
   };
@@ -167,9 +144,9 @@ export const A11y: FC = () => {
             ],
           ]}
         >
-          {content.introduction}
+          {i18n.t('static:a11y.introduction', replacements)}
         </ReactMarkdown>
-        {content.firstFocus && (
+        {i18n.exists('static:a11y.firstFocus') && (
           <FocusBlockWrapperStyle as="section">
             <FocusBlockCheckIconStyle aria-hidden focusable="false" />
             <ReactMarkdown
@@ -179,11 +156,11 @@ export const A11y: FC = () => {
                 p: blockParagraph,
               }}
             >
-              {content.firstFocus}
+              {i18n.t('static:a11y.firstFocus', replacements)}
             </ReactMarkdown>
           </FocusBlockWrapperStyle>
         )}
-        {content.secondFocus && (
+        {i18n.exists('static:a11y.secondFocus') && (
           <FocusBlockWrapperStyle as="section">
             <ReactMarkdown
               components={{
@@ -192,7 +169,7 @@ export const A11y: FC = () => {
                 p: blockParagraph,
               }}
             >
-              {content.secondFocus}
+              {i18n.t('static:a11y.secondFocus', replacements)}
             </ReactMarkdown>
           </FocusBlockWrapperStyle>
         )}
@@ -210,7 +187,7 @@ export const A11y: FC = () => {
             ],
           ]}
         >
-          {content.content}
+          {i18n.t('static:a11y.content', replacements)}
         </ReactMarkdown>
       </StaticPageWrapperStyle>
     </>

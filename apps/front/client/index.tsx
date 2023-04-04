@@ -146,6 +146,7 @@ const initApp = async (state: StateRoot) => {
     debug: env.isDev(),
     lng: language,
     resources: translationRessources,
+    defaultNS: 'common',
   });
 
   // Set date helper language

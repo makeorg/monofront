@@ -7,7 +7,7 @@ import {
 import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
 import { DateHelper } from '@make.org/utils/helpers/date';
-import { DATE, LocaleType } from '@make.org/types/enums';
+import { DATE } from '@make.org/types/enums';
 import {
   getCountryDPA,
   getContactMailByCountry,
@@ -21,16 +21,12 @@ import {
   StaticPageWrapperStyle,
   StaticFourthLevelBisTitleStyle,
 } from '../style';
-import DataContent from './markdownContent.yaml';
 import { markdownComponents } from '../markdownComponent';
-
-const defaultLanguage = [LocaleType.en].toString();
 
 export const Data: FC = () => {
   const { state } = useAppContext();
-  const { country, countriesWithConsultations, language } = state.appConfig;
+  const { country, countriesWithConsultations } = state.appConfig;
 
-  const languageToUse = DataContent[language] ? language : defaultLanguage;
   const contactMailByCountry = getContactMailByCountry(
     country,
     countriesWithConsultations
@@ -48,11 +44,6 @@ export const Data: FC = () => {
     DPAName: getCountryDPA(country).name,
     DPALink: getCountryDPA(country).link,
   };
-
-  const content = Object.keys(replacements).reduce(
-    (aggregator, key) => aggregator.replaceAll(`{{${key}}}`, replacements[key]),
-    DataContent[languageToUse]
-  );
 
   type elProps = {
     children: ReactNode;
@@ -85,7 +76,7 @@ export const Data: FC = () => {
             ],
           ]}
         >
-          {content}
+          {i18n.t('static:data', replacements)}
         </ReactMarkdown>
       </StaticPageWrapperStyle>
     </>

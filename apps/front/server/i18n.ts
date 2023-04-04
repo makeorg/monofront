@@ -10,5 +10,6 @@ export const serverInitI18n = (): void => {
     lng: DEFAULT_LANGUAGE,
     debug: false,
     resources: translationRessources,
+    defaultNS: 'common',
   });
 };

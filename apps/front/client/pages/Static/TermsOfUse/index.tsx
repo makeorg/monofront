@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { useAppContext } from '@make.org/store';
-import { LocaleType, DATE } from '@make.org/types/enums';
+import { DATE } from '@make.org/types/enums';
 import {
   GTU_DATE,
   MAKE_ADDRESS,
@@ -19,10 +19,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import remarkFlexibleParagraphs from 'remark-flexible-paragraphs';
 import { StaticPageWrapperStyle } from '@make.org/front/client/pages/Static/style';
-import TermsOfUseContent from './markdownContent.yaml';
 import { markdownComponents } from '../markdownComponent';
-
-const defaultLanguage = [LocaleType.en].toString();
 
 const TermsOfUse: FC = () => {
   const { state } = useAppContext();
@@ -33,25 +30,16 @@ const TermsOfUse: FC = () => {
     countriesWithConsultations
   );
 
-  const languageToUse = TermsOfUseContent[language]
-    ? language
-    : defaultLanguage;
-
   const replacements: Record<string, string> = {
     date: DateHelper.localizedAndFormattedDate(GTU_DATE, DATE.PPP_FORMAT),
     validityDate: DateHelper.localizedAndFormattedDate(GTU_DATE, DATE.P_FORMAT),
-    moderationLink: getModerationPageLink(country, languageToUse),
-    dataPageLink: getDataPageLink(country, languageToUse),
+    moderationLink: getModerationPageLink(country, language),
+    dataPageLink: getDataPageLink(country, language),
     contactEmail: contactMailByCountry,
     capital: MAKE_CAPITAL,
     rcs: MAKE_RCS,
     address: MAKE_ADDRESS,
   };
-
-  const content = Object.keys(replacements).reduce(
-    (aggregator, key) => aggregator.replaceAll(`{{${key}}}`, replacements[key]),
-    TermsOfUseContent[languageToUse]
-  );
 
   return (
     <>
@@ -73,7 +61,7 @@ const TermsOfUse: FC = () => {
             ],
           ]}
         >
-          {content}
+          {i18n.t('static:termsOfUse', replacements)}
         </ReactMarkdown>
       </StaticPageWrapperStyle>
     </>
