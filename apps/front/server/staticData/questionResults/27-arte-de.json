@@ -83,7 +83,7 @@
         "name": "Gesundheit",
         "ideas": [
           {
-            "idea": "Mehr investition in die Verbesserung des Gesundheitssystems",
+            "idea": "Mehr Investition in die Verbesserung des Gesundheitssystems",
             "agreement": 85,
             "adhesion": 30,
             "realistic": 17
@@ -182,7 +182,7 @@
                     }
                 },
                 {
-                    "label": "Demographie, Wirtschaft",
+                    "label": "Wirtschaft",
                     "sublabel": "und Beschäftigung",
                     "percent": 22,
                     "color": "#8955BD",
