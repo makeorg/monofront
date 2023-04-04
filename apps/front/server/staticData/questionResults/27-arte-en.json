@@ -1,0 +1,430 @@
+{
+    "context": "Citizen consultation carried out by Make.org from 2022-06-23 to 2022-12-22, around the question: As European citizens, how can we act in the face of the future challenges that await us (climate, health, security, food...)?",
+    "key_figures": {
+        "visitors": 37465,
+        "votes": 743131,
+        "proposals": 7433
+    },
+    "top_ideas": [
+        {
+            "name": "Climate change and environment",
+            "ideas": [
+                {
+                    "idea": "Ensure better waste management",
+                    "agreement": 93,
+                    "adhesion": 24,
+                    "realistic": 30
+                },
+                {
+                    "idea": "Encouraging local production in Europe",
+                    "agreement": 92,
+                    "adhesion": 25,
+                    "realistic": 25
+                },
+                {
+                    "idea": "Moving towards a more responsible agriculture",
+                    "agreement": 94,
+                    "adhesion": 26,
+                    "realistic": 26
+                },
+                {
+                    "idea": "Increasing the greening of European cities",
+                    "agreement": 94,
+                    "adhesion": 32,
+                    "realistic": 24
+                },
+                {
+                    "idea": "Ensuring better water management in Europe",
+                    "agreement": 90,
+                    "adhesion": 19,
+                    "realistic": 29
+                },
+                {
+                    "idea": "Preserving the environment and biodiversity",
+                    "agreement": 93,
+                    "adhesion": 25,
+                    "realistic": 25
+                },
+                {
+                    "idea": "Increase awareness of environmental issues",
+                    "agreement": 90,
+                    "adhesion": 20,
+                    "realistic": 28
+                },
+                {
+                    "idea": "Tax the profits of large polluting groups",
+                    "agreement": 88,
+                    "adhesion": 25,
+                    "realistic": 22
+                }
+            ]
+        },
+        {
+            "name": "Mobility",
+            "ideas": [
+                {
+                    "idea": "Invest massively in transport, especially rail transport",
+                    "agreement": 92,
+                    "adhesion": 24,
+                    "realistic": 30
+                }
+            ]
+        },
+        {
+            "name": "European Democracy",
+            "ideas": [
+                {
+                    "idea": "Ensuring the exemplarity of political leaders",
+                    "agreement": 91,
+                    "adhesion": 26,
+                    "realistic": 29
+                }
+            ]
+        },
+        {
+            "name": "Economy and employment",
+            "ideas": [
+                {
+                    "idea": "Fighting tax evasion in the EU",
+                    "agreement": 94,
+                    "adhesion": 29,
+                    "realistic": 22
+                },
+                {
+                    "idea": "Revaluing salaries, especially for manual jobs",
+                    "agreement": 87,
+                    "adhesion": 20,
+                    "realistic": 26
+                }
+            ]
+        },
+        {
+            "name": "Energy",
+            "ideas": [
+                {
+                    "idea": "Optimizing lighting and light sources in the EU",
+                    "agreement": 92,
+                    "adhesion": 19,
+                    "realistic": 36
+                },
+                {
+                    "idea": "Accelerate the renovation and insulation of housing",
+                    "agreement": 89,
+                    "adhesion": 22,
+                    "realistic": 27
+                },
+                {
+                    "idea": "Investing more in renewable energy",
+                    "agreement": 83,
+                    "adhesion": 16,
+                    "realistic": 27
+                }
+            ]
+        },
+        {
+            "name": "Health",
+            "ideas": [
+                {
+                    "idea": "Giving more means to public health in the EU",
+                    "agreement": 92,
+                    "adhesion": 35,
+                    "realistic": 22
+                },
+                {
+                    "idea": "Supervising the agri-food industry",
+                    "agreement": 91,
+                    "adhesion": 24,
+                    "realistic": 28
+                }
+            ]
+        }
+    ],
+    "controversials": [
+        {
+            "id": "259ad3dd-0a25-4477-a033-d752ab186ba3",
+            "content": "We should set up a universal basic income from which every citizen can benefit unconditionally.",
+            "author": "C",
+            "agree": 50,
+            "like_it": 16,
+            "disagree": 35,
+            "no_way": 20,
+            "votes": 192
+        },
+        {
+            "id": "8b0e070e-346f-46e6-90b0-219834bf7a26",
+            "content": "We should close the borders before the population continues to grow and we become a shelter.",
+            "author": "Phyleas",
+            "agree": 44,
+            "like_it": 14,
+            "disagree": 47,
+            "no_way": 25,
+            "votes": 213
+        },
+        {
+            "id": "baf315be-d519-4478-9a15-afdedd261968",
+            "content": "We should, within a reasonable framework, limit the number of children per family to limit the number of human beings in the years to come",
+            "author": "Léa",
+            "agree": 49,
+            "like_it": 14,
+            "disagree": 41,
+            "no_way": 16,
+            "votes": 210
+        },
+        {
+            "id": "97f2d72a-6b3d-42c2-84f3-4cf0ed7d74c9",
+            "content": "We should favor nuclear power production (Thorium) and stop the inefficient madness of windmills, gas or coal power plants.",
+            "author": "Christiane",
+            "agree": 44,
+            "like_it": 13,
+            "disagree": 33,
+            "no_way": 16,
+            "votes": 183
+        },
+        {
+            "id": "ca05c8ff-d5f5-4956-b5eb-809e8bfa8d76",
+            "content": "We should get out of the EU which encourages globalization for billionaires and against the climate issues",
+            "author": "Alexandre",
+            "agree": 37,
+            "like_it": 14,
+            "disagree": 44,
+            "no_way": 25,
+            "votes": 194
+        },
+        {
+            "id": "3ed8dbb1-d925-4aad-ba1e-792f4d9b4aac",
+            "content": "We should ban private vehicles that consume too much energy, whether they are powered by an internal combustion engine or an electric motor.",
+            "author": "Julie",
+            "agree": 38,
+            "like_it": 8,
+            "disagree": 46,
+            "no_way": 11,
+            "votes": 176
+        },
+        {
+            "id": "edbfb483-9b3a-4575-bb51-2bc8588d6919",
+            "content": "First, we should show solidarity and build a European army that is feared and respected. Then build a federal EU.",
+            "author": "Jean-Marc",
+            "agree": 37,
+            "like_it": 8,
+            "disagree": 43,
+            "no_way": 24,
+            "votes": 161
+        },
+        {
+            "id": "1f223bc6-8ece-47f2-a6f3-5cf83ab3b29f",
+            "content": "We should allocate an annual carbon capital to each person. If outdated, taxes must be put in place that will serve for the ecological transition",
+            "author": "Agathe",
+            "agree": 42,
+            "like_it": 11,
+            "disagree": 45,
+            "no_way": 19,
+            "votes": 412
+        },
+        {
+            "id": "6f4861dd-1dc3-454d-870e-43ea1533314e",
+            "content": "We should encourage people to reduce their meat consumption (CO2 impact) through national communication campaigns, vegetarian days in the canteen...",
+            "author": "Lara",
+            "agree": 44,
+            "like_it": 8,
+            "disagree": 40,
+            "no_way": 19,
+            "votes": 212
+        },
+        {
+            "id": "c5b4c310-a5a4-48b3-8ca1-ffed5750f4e9",
+            "content": "We should introduce compulsory voting by multiplying the means (online, proxy, correspondence ...) The voice of the people will have more weight",
+            "author": "Philippe",
+            "agree": 45,
+            "like_it": 9,
+            "disagree": 38,
+            "no_way": 20,
+            "votes": 184
+        }
+    ],
+    "rejected": [],
+    "cartography": [
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Topics",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Climate change",
+                    "sublabel": " and environment",
+                    "percent": 16,
+                    "color": "#4B45A5",
+                    "adjustLabel": {
+                        "textAlign": "left"
+                    }
+                },
+                {
+                    "label": "Demographics,",
+                    "sublabel": " economy and employment",
+                    "percent": 14,
+                    "color": "#8955BD",
+                    "adjustLabel": {
+                        "textAlign": "left"
+
+                    }
+                },
+                {
+                    "label": "Production",
+                    "sublabel": " and consumption",
+                    "percent": 14,
+                    "color": "#EB7575",
+                    "adjustLabel": {
+                        "textAlign": "left"
+                    }
+                },
+                {
+                    "label": "Energy and resources",
+                    "percent": 12,
+                    "color": "#F5976E",
+                    "adjustLabel": {
+                        "textAlign": "left"
+                    }
+                },
+                {
+                    "label": "Mobility",
+                    "sublabel": " and transportation",
+                    "percent": 11,
+                    "color": "#EEB298",
+                    "adjustLabel": {
+                        "textAlign": "left"
+                    }
+                },
+                {
+                    "label": "States, institutions",
+                    "sublabel": " and democracy",
+                    "percent": 8,
+                    "color": "#FFD266",
+                    "adjustLabel": {
+                        "textAlign": "right"
+                    }
+                },
+                {
+                    "label": "Health",
+                    "percent": 7,
+                    "color": "#FFF689",
+                    "adjustLabel": {
+                        "textAlign": "left"
+                    }
+                },
+                {
+                    "label": "Educational system",
+                    "percent": 6,
+                    "color": "#E5FFAE",
+                    "adjustLabel": {
+                        "textAlign": "right"
+                    }
+                },
+                {
+                    "label": "Other",
+                    "percent": 16,
+                    "color": "#FFF",
+                    "adjustLabel": {
+                        "textAlign": "left"
+                    }
+                }
+            ]
+        }
+    ],
+    "participation": [
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation by age",
+            "legend": {
+                "title": "Distribution of votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "general population"
+                }
+            },
+            "data": [
+                {
+                    "label": "08-15",
+                    "bars": {
+                        "first": 0,
+                        "second": 10
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "16-24",
+                    "bars": {
+                        "first": 10,
+                        "second": 12
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "25-34",
+                    "bars": {
+                        "first": 16,
+                        "second": 13
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "35-44",
+                    "bars": {
+                        "first": 21,
+                        "second": 14
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "45-54",
+                    "bars": {
+                        "first": 16,
+                        "second": 14
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "55-64",
+                    "bars": {
+                        "first": 20,
+                        "second": 14
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "65+",
+                    "bars": {
+                        "first": 17,
+                        "second": 23
+                    },
+                    "color": "#8BDAB2"
+                }
+            ],
+            "id": "participation_2"
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Votes by gender",
+            "legend": "",
+            "data": [
+                {
+                    "label": "men",
+                    "percent": 50,
+                    "color": "#4B45A5"
+                },
+                {
+                    "label": "women",
+                    "percent": 48,
+                    "color": "#EB7575"
+                },
+                {
+                    "label": "non-binary",
+                    "percent": 2,
+                    "color": "#8BDAB2"
+                }
+            ],
+            "id": "participation_3"
+        }
+    ]
+}
