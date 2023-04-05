@@ -1,9 +1,10 @@
 import { CardStyle } from '@make.org/ui/elements/CardsElements';
 import styled from 'styled-components';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const ProfileProposalCardStyle = styled(CardStyle)`
-  margin: 15px 0;
+  margin: ${spacings.sm} 0;
   &:first-child {
     margin: 0 0 15px;
   }
@@ -11,7 +12,7 @@ export const ProfileProposalCardStyle = styled(CardStyle)`
     margin: 0;
   }
   &:last-child {
-    margin: 15px 0 0;
+    margin: ${spacings.sm} 0 0;
   }
   &.proposal-refused,
   &.proposal-postponed,

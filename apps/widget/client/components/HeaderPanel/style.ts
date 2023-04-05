@@ -7,10 +7,11 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { BodyXSHighlight } from '@make.org/designsystem/components/Body';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const PanelContainer = styled.div`
   background-color: #f2f2f2;
-  padding: 15px 15px 5px;
+  padding: ${spacings.sm} ${spacings.sm} ${spacings.xs};
   width: 100%;
   min-height: 125px;
   display: flex;
@@ -18,12 +19,12 @@ export const PanelContainer = styled.div`
   align-items: start;
   justify-content: space-between;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    padding: 20px;
+    padding: ${spacings.m};
   }
 `;
 
 export const InnerPanelWrapperStyle = styled.div`
-  margin-top: 20px;
+  margin-top: ${spacings.m};
   width: 100%;
   display: flex;
   justify-content: center;
@@ -38,7 +39,7 @@ export const InnerPanelWrapperStyle = styled.div`
 
 export const MainTitleStyle = styled.h1`
   line-height: 20px;
-  margin-bottom: 15px;
+  margin-bottom: ${spacings.sm};
 `;
 
 export const LogoStyle = styled(SvgSmallLogo)`
@@ -71,7 +72,7 @@ export const KindLabelWrapperStyle = styled.div`
   align-items: center;
   border-radius: 8px;
   background-color: ${colors.Background.Interface.DarkSecondary};
-  margin: 15px 0;
+  margin: ${spacings.sm} 0;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     margin: 0;
   }

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import {
   SpaceBetweenRowStyle,
   ColumnElementStyle,
@@ -24,9 +25,9 @@ export const HighlightsBannerFiguresContainerStyle = styled(
 `;
 
 export const HighlightFigureContainerStyle = styled(ColumnElementStyle)`
-  margin-bottom: 50px;
-  padding-left: 20px;
-  padding-right: 20px;
+  margin-bottom: ${spacings.xl};
+  padding-left: ${spacings.m};
+  padding-right: ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     width: ${getFullWidthDividedByItems(2)};
   }
@@ -40,7 +41,7 @@ export const HighlightFigureContainerStyle = styled(ColumnElementStyle)`
 `;
 
 const IconStyle = `
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
   .tofill {
     fill: #253186
   }
@@ -68,7 +69,7 @@ export const FiguresStyle = styled(TitleS).attrs({ as: 'span' })`
 
 export const SubtitleFiguresStyle = styled(BodyMDefault).attrs({ as: 'span' })`
   color: ${colors.Content.Interface.DarkSecondary};
-  padding-bottom: 30px;
+  padding-bottom: ${spacings.l};
 `;
 
 export const FigureSeparationLineStyle = styled.hr`

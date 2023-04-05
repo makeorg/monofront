@@ -4,6 +4,7 @@ import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints, DefaultPadding } from '@make.org/assets/vars/Breakpoints';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { SvgExternalLink } from '../Svg/elements';
 
 export const UnstyledButtonStyle = styled.button.attrs(props => ({
@@ -27,7 +28,7 @@ export const BasicButtonStyle = `
   border-radius: 20px;
   border: none;
   font-size: ${typography.FontSize.Arrondissement};
-  padding: 10px 20px 7px 20px;
+  padding: ${spacings.s} ${spacings.m} 7px ${spacings.m};
   text-decoration: none;
 `;
 
@@ -75,7 +76,7 @@ export const RedButtonCenterStyle = styled.button.attrs(props => ({
   ${BasicButtonStyle};
   ${RedStyle};
   align-self: center;
-  margin: 15px 0 0 0;
+  margin: ${spacings.sm} 0 0 0;
   &:disabled {
     ${GreyStyle};
   }
@@ -84,7 +85,7 @@ export const RedButtonCenterStyle = styled.button.attrs(props => ({
 export const RedButtonProposalStyle = styled(RedButtonCenterStyle)`
   margin: auto auto 0px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin: 15px 0 0 0;
+    margin: ${spacings.sm} 0 0 0;
   }
 `;
 
@@ -152,7 +153,7 @@ export const ActiveButtonCenterStyle = styled.button.attrs(props => ({
   color: ${colors.Content.Interface.Light};
   background-color: ${colors.Background.Make.Secondary};
   align-self: center;
-  margin: 30px 0;
+  margin: ${spacings.l} 0;
   svg,
   .tofill {
     fill: ${colors.Content.Interface.Light};
@@ -170,7 +171,7 @@ export const ActiveButtonCenterStyle = styled.button.attrs(props => ({
 export const ActiveButtonCenterBottomStyle = styled(ActiveButtonCenterStyle)`
   margin: auto auto 0px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin: 30px 0;
+    margin: ${spacings.l} 0;
   }
 `;
 
@@ -178,13 +179,13 @@ export const RedLinkButtonStyle = styled(UnstyledButtonStyle)`
   display: inline-block;
   color: ${colors.Content.Make.Secondary};
   text-decoration: underline;
-  margin: 0 5px;
+  margin: 0 ${spacings.xs};
 `;
 
 export const LinkButtonStyle = styled(UnstyledButtonStyle)`
   display: inline-block;
   text-decoration: underline;
-  margin: 0 5px;
+  margin: 0 ${spacings.xs};
   font-size: ${typography.FontSize.RueDeLappe};
 `;
 
@@ -217,7 +218,7 @@ export const QualifyButtonStyle = styled.button.attrs(props => ({
   font-size: 14px;
   line-height: 24px;
   border-style: solid;
-  padding: 0 10px;
+  padding: 0 ${spacings.s};
   border-radius: 36px;
   border-color: ${props => props.color};
   color: ${props => props.color};
@@ -359,7 +360,7 @@ const BlackBordersStyle = `
   background-color: transparent;
   color: ${colors.Content.Interface.Dark};
   border: 1px solid ${colors.Border.Interface.Darker};
-  padding: 9px 19px 6px 19px;
+  padding: ${spacings.s} ${spacings.m} ${spacings.xs} ${spacings.m};
   .tofill {
     fill: ${colors.Content.Interface.Dark};
   }
@@ -378,7 +379,7 @@ export const BlackNoBackgroundButtonStyle = styled(UnstyledButtonStyle)`
 export const GreyNoBackgroundButtonStyle = styled(UnstyledButtonStyle)`
   ${ButtonNoBackgroundStyle};
   ${GreyNoBackgroundStyle};
-  margin-bottom: 10px;
+  margin-bottom: ${spacings.s};
 `;
 
 export const GreyLinkStyle = styled(Link)`

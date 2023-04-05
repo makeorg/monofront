@@ -8,6 +8,7 @@ import { Image } from '@make.org/ui/components/Image';
 import { TitleM, TitleXXXS } from '@make.org/designsystem/components/Titles';
 import { BodyMHighLight } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 import { SvgArrowReturn } from '@make.org/ui/Svg/elements';
 
@@ -18,12 +19,12 @@ export const SequenceContainerStyle = styled(MiddleColumnStyle)`
   flex: 1;
   max-width: ${intToPx(Layouts.ContainerWithPadding)};
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 ${spacings.m};
   &.widget {
     background-color: #f2f2f2;
-    padding: 0px 15px 15px;
+    padding: 0px ${spacings.sm} ${spacings.sm};
     @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-      padding: 0px 20px 20px;
+      padding: 0px ${spacings.m} ${spacings.m};
     }
   }
 `;
@@ -37,7 +38,7 @@ export const SequenceAltTitleStyle = styled(TitleM)`
   letter-spacing: 0.5px;
   align-self: flex-start;
   text-transform: none;
-  margin-top: 30px;
+  margin-top: ${spacings.l};
 `;
 
 export const SequenceSpecialTitleStyle = styled(BodyMHighLight).attrs({
@@ -46,16 +47,16 @@ export const SequenceSpecialTitleStyle = styled(BodyMHighLight).attrs({
   display: flex;
   border-radius: 8px;
   letter-spacing: 0.12px;
-  padding: 5px 10px;
+  padding: ${spacings.xs} ${spacings.s};
   background-color: ${colors.Background.Interface.DarkSecondary};
-  margin-top: 20px;
+  margin-top: ${spacings.m};
   align-self: flex-start;
 `;
 
 export const SequenceSpecialIconStyle = styled(SvgArrowReturn)`
-  margin-right: 5px;
+  margin-right: ${spacings.xs};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin-right: 10px;
+    margin-right: ${spacings.s};
   }
 `;
 
@@ -63,7 +64,7 @@ export const SequenceTitleStyle = styled(TitleXXXS).attrs({ as: 'h2' })`
   letter-spacing: 0.12px;
   align-self: flex-start;
   text-transform: none;
-  margin-top: 30px;
+  margin-top: ${spacings.l};
   &.widget {
     margin: 0;
     font-size: 14px;
@@ -83,11 +84,11 @@ export const ConsultationPageLinkStyle = styled(GreyLinkStyle)<{
   className: string;
 }>`
   align-self: flex-start;
-  margin: 20px 0;
+  margin: ${spacings.m} 0;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     position: absolute;
     line-height: 37px;
-    left: 20px;
+    left: ${spacings.m};
     bottom: 40px;
     margin: 0;
     &.static {
@@ -100,11 +101,11 @@ export const ConsultationPageLinkStyle = styled(GreyLinkStyle)<{
 export const KindLabelControversyIconStyle = styled(Image)`
   width: 20px;
   height: 24px;
-  margin-right: 5px;
+  margin-right: ${spacings.xs};
 `;
 
 export const KindLabelPopularIconStyle = styled(Image)`
   width: 24px;
   height: 24px;
-  margin-right: 5px;
+  margin-right: ${spacings.xs};
 `;

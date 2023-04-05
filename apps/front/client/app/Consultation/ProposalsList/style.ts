@@ -7,6 +7,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 import { MiddleColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { BorderRadius } from '@make.org/ui/elements/CardsElements';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const ProposalsListStyle = styled(UnstyledListStyle)`
   width: 100%;
@@ -16,19 +17,19 @@ export const ProposalsListStyle = styled(UnstyledListStyle)`
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 30px;
+    grid-gap: ${spacings.l};
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 30px;
+    grid-gap: ${spacings.l};
   }
 `;
 
 export const ProposalListItemStyle = styled.li`
   margin-bottom: 40px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin-bottom: 10px;
+    margin-bottom: ${spacings.s};
   }
 `;
 
@@ -41,7 +42,7 @@ export const ProposalCardStyle = styled.article`
   justify-content: space-between;
   background-color: ${colors.Background.Interface.Lighter};
   border-radius: ${intToPx(BorderRadius)};
-  padding: 45px 20px 20px;
+  padding: 45px ${spacings.m} ${spacings.m};
   min-height: 300px;
 `;
 
@@ -54,7 +55,7 @@ export const ProposalLinkStyle = styled(Link)`
   font-size: ${typography.FontSize.Arrondissement};
   letter-spacing: 0.13px;
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: ${spacings.sm};
   text-decoration: none;
   color: ${colors.Content.Interface.Dark};
 `;

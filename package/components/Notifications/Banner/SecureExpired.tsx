@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import React from 'react';
 import i18n from 'i18next';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { SvgSadEmoji } from '@make.org/ui/Svg/elements';
 import { SecuredExpirationStyle } from './style';
 
@@ -9,7 +10,7 @@ export const SecureExpiredMessage: React.FC = () => (
     {i18n.t('common.notifications.secure_expired.first_sentence')}
     <> </>
     <SvgSadEmoji
-      style={{ width: '26px', height: '16px', padding: '0 5px' }}
+      style={{ width: '26px', height: '16px', padding: `0 ${spacings.xs}` }}
       aria-label={
         i18n.t('common.notifications.secure_expired.emoji') || undefined
       }

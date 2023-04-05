@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { typography } from '@make.org/designsystem/tokens/typography';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const DocStylesheet = createGlobalStyle`
   .red-link {
@@ -14,7 +15,7 @@ export const DocStylesheet = createGlobalStyle`
   }
 
   caption {
-    padding: 20px;
+    padding: ${spacings.m};
   }
 
   table {
@@ -28,7 +29,7 @@ export const DocStylesheet = createGlobalStyle`
   }
 
   th, td {
-    padding: 5px 10px;
+    padding: ${spacings.xs} ${spacings.s};
   }
 
   .no-padding {

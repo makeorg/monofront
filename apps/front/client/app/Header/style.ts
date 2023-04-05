@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { Layouts, Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import {
   FlexElementStyle,
@@ -15,10 +16,10 @@ export const HeaderStyle = styled.header`
   display: flex;
   justify-content: center;
   flex-shrink: 0;
-  padding: 11px 20px;
+  padding: ${spacings.s} ${spacings.m};
   background-color: ${colors.Background.Interface.Lighter};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    padding: 25px 20px;
+    padding: 25px ${spacings.m};
   }
 `;
 
@@ -51,6 +52,6 @@ export const HeaderLogoStyle = styled(SvgLogo)`
 export const HeaderSeparatorStyle = styled.div`
   width: 1px;
   height: 100%;
-  margin: 0 30px;
+  margin: 0 ${spacings.l};
   background-color: ${colors.Background.Interface.DarkMain};
 `;

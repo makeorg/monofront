@@ -3,6 +3,7 @@ import { typography } from '@make.org/designsystem/tokens/typography';
 import { FormCenterAlignStyle } from '@make.org/ui/elements/FormElements';
 import { FourthLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const ForgotPasswordStyle = styled.section`
   display: flex;
@@ -38,5 +39,5 @@ export const ForgotPasswordTitleStyle = styled(FourthLevelTitleStyle)<{
       ? colors.Content.Interface.DarkSecondary
       : colors.Content.Interface.Dark};
   text-transform: ${props => (props.isPanel ? 'none' : 'uppercase')};
-  margin: 20px 0px;
+  margin: ${spacings.m} 0px;
 `;

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { pxToRem, intToPx } from '@make.org/utils/helpers/styled';
 import {
   FlexElementStyle,
@@ -29,11 +30,11 @@ export const HeroContentStyle = styled(FlexElementStyle)`
   flex-flow: column;
   max-width: ${intToPx(Layouts.ContainerWidth)};
   ${ContainerWithPadding}
-  padding-top: 30px;
-  padding-bottom: 50px;
+  padding-top: ${spacings.l};
+  padding-bottom: ${spacings.xl};
   @media (min-width: ${pxToRem(Breakpoints.Desktop)}) {
     flex-flow: row;
-    padding-top: 50px;
+    padding-top: ${spacings.xl};
     align-items: center;
   }
 `;
@@ -41,7 +42,7 @@ export const HeroContentStyle = styled(FlexElementStyle)`
 export const HeroInnerContentStyle = styled(ColumnElementStyle)`
   flex: 1;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    padding-right: 30px;
+    padding-right: ${spacings.l};
   }
 `;
 
@@ -53,7 +54,7 @@ export const ColumnToRowToColumnStyle = styled(ColumnToRowElementStyle)`
 
 export const HeroTitleStyle = styled(TitleXL)`
   color: ${colors.Content.Interface.Dark};
-  margin-bottom: 30px;
+  margin-bottom: ${spacings.l};
   text-transform: none;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     max-width: 520px;
@@ -67,7 +68,7 @@ export const HeroDescriptionStyle = styled(BodyMDefault)`
   display: flex;
   color: ${colors.Content.Interface.DarkSecondary};
   margin-bottom: 40px;
-  margin-top: 30px;
+  margin-top: ${spacings.l};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     margin-bottom: 57px;
   }
@@ -76,13 +77,13 @@ export const HeroDescriptionStyle = styled(BodyMDefault)`
 export const HeroRedButtonStyle = styled(LinkAsRedButtonStyle)`
   display: inline-flex;
   align-self: flex-start;
-  margin-bottom: 15px;
+  margin-bottom: ${spacings.sm};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     margin-right: 24px;
     margin-bottom: 0;
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin-bottom: 15px;
+    margin-bottom: ${spacings.sm};
   }
 `;
 
@@ -100,11 +101,11 @@ export const HeroTransparentButtonStyle = styled(Link)`
 `;
 
 export const WhiteArrowDownIcon = styled(SvgWhiteArrowDown)`
-  margin-left: 22px;
+  margin-left: ${spacings.m};
 `;
 
 export const BlackArrowDownIcon = styled(SvgBlackArrowDown)`
-  margin-left: 10px;
+  margin-left: ${spacings.s};
 `;
 
 export const HeroPicturesStyle = styled(Image)`
@@ -114,6 +115,6 @@ export const HeroPicturesStyle = styled(Image)`
     max-width: 50%;
   }
   @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
-    padding-left: 30px;
+    padding-left: ${spacings.l};
   }
 `;

@@ -3,14 +3,15 @@ import { typography } from '@make.org/designsystem/tokens/typography';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { UnstyledButtonStyle } from '../../elements/ButtonsElements';
 import { ColumnElementStyle } from '../../elements/FlexElements';
 
 export const CollapseWrapperStyle = styled(ColumnElementStyle)`
-  padding: 30px 0px;
+  padding: ${spacings.l} 0px;
   border-bottom: solid 1px ${colors.Border.Interface.DarkMain};
   &:last-child {
-    padding-bottom: 5px;
+    padding-bottom: ${spacings.xs};
     border-bottom: none;
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
@@ -36,8 +37,8 @@ export const CollapseTriggerStyle = styled(UnstyledButtonStyle)`
 
 export const CollapseIconStyle = styled.span<{ isCollapsed: boolean }>`
   display: inline-flex;
-  padding-left: ${props => (props.isCollapsed ? `10px` : `0px`)};
-  padding-right: ${props => (props.isCollapsed ? `0px` : `10px`)};
+  padding-left: ${props => (props.isCollapsed ? `${spacings.s}` : `0px`)};
+  padding-right: ${props => (props.isCollapsed ? `0px` : `${spacings.s}`)};
   transform: ${props => (props.isCollapsed ? `rotate(0)` : `rotate(180deg)`)};
   .tofill {
     fill: ${colors.Content.Interface.Dark};

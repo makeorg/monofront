@@ -6,12 +6,13 @@ import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 import { TitleS } from '@make.org/designsystem/components/Titles';
 import { BodyMDefault } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const CitizenRegisterContentStyle = styled(FlexElementStyle)`
   justify-content: flex-start;
   justify-items: flex-start;
   flex-flow: column;
-  padding: 30px 0 40px;
+  padding: ${spacings.l} 0 40px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     width: ${pxToPercent(750, 1140)};
   }
@@ -19,21 +20,21 @@ export const CitizenRegisterContentStyle = styled(FlexElementStyle)`
 
 export const CitizenRegisterTitleStyle = styled(TitleS)`
   text-transform: none;
-  margin: 15px 0 10px;
+  margin: ${spacings.sm} 0 ${spacings.s};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${typography.FontSize.IleDeFrance};
-    margin: 15px 0;
+    margin: ${spacings.sm} 0;
   }
 `;
 
 export const CitizenRegisterSubtitleStyle = styled(BodyMDefault)`
   width: 100%;
-  margin: 15px 0 10px;
+  margin: ${spacings.sm} 0 ${spacings.s};
   color: ${colors.Content.Interface.DarkSecondary};
 `;
 
 export const SocialCitizenRegisterWrapperStyle = styled(FlexElementStyle)`
-  margin: 15px 0 10px;
+  margin: ${spacings.sm} 0 ${spacings.s};
   flex-flow: column wrap;
   align-content: flex-start;
 `;

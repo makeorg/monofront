@@ -23,6 +23,10 @@ import { AvatarStyle } from '@make.org/ui/components/Avatar/style';
 import { TitleXXS } from '@make.org/designsystem/components/Titles';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
+import {
+  BodyMDefault,
+  BodyXSDefault,
+} from '@make.org/designsystem/components/Body';
 
 export const PanelTriggerStyle = styled(RedButtonStyle)`
   position: fixed;
@@ -36,7 +40,7 @@ export const PanelTriggerStyle = styled(RedButtonStyle)`
     width: auto;
     align-self: flex-end;
     border-radius: 20px;
-    bottom: 20px;
+    bottom: ${spacings.m};
     margin: 40px 0;
   }
 `;
@@ -91,6 +95,17 @@ export const ProposalStepTitleStyle = styled(TitleXXS).attrs({ as: 'h2' })`
   }
 `;
 
+export const ProposalStepMandatoryStyle = styled(BodyXSDefault).attrs({
+  as: 'div',
+})`
+  margin-bottom: ${spacings.sm};
+  color: ${colors.Content.Interface.DarkSecondary};
+`;
+
+export const ProposalStepLabelStyle = styled(BodyMDefault).attrs({ as: 'div' })`
+  margin-bottom: ${spacings.xs};
+`;
+
 export const ProposalStepLabelRedStyle = styled.span`
   color: ${colors.Content.Make.Secondary};
 `;
@@ -100,7 +115,7 @@ export const ProposalAltStepTitleStyle = styled(ProposalStepTitleStyle)<{
   width: 100%;
   font-size: ${typography.FontSize.Paris};
   letter-spacing: 0.12px;
-  margin-bottom: 30px;
+  margin-bottom: ${spacings.l};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${props =>
       props.isWidget
@@ -114,9 +129,9 @@ export const ProposalAltStepTitleStyle = styled(ProposalStepTitleStyle)<{
 export const ProposalFieldWrapperStyle = styled.div`
   position: relative;
   z-index: 0;
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin-bottom: 30px;
+    margin-bottom: ${spacings.l};
   }
 `;
 
@@ -125,7 +140,7 @@ export const ProposalTextareaStyle = styled(TextareaAutosize)`
   font-family: ${typography.FontFamily.Default};
   font-size: ${typography.FontSize.Arrondissement};
   line-height: 1.5;
-  padding: 20px 17px 30px;
+  padding: ${spacings.m} ${spacings.m} ${spacings.l};
   border-radius: 8px;
   border: 1px solid ${colors.Border.Interface.DarkMain};
   resize: none;
@@ -138,8 +153,8 @@ export const ProposalTextareaStyle = styled(TextareaAutosize)`
 
 export const ProposalCharCountStyle = styled.span`
   position: absolute;
-  bottom: 10px;
-  right: 20px;
+  bottom: ${spacings.s};
+  right: ${spacings.s};
   font-size: ${typography.FontSize.RueDeLappe};
   color: ${colors.Content.Interface.DarkSecondary};
 `;
@@ -154,7 +169,7 @@ export const ProposalExternalLinkStyle = styled.a`
 export const ProposalExternalLinkIconStyle = styled(SvgExternalLink)`
   width: 10px;
   height: 10px;
-  margin-left: 5px;
+  margin-left: ${spacings.xs};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     width: 12px;
     height: 12px;
@@ -167,7 +182,7 @@ export const ProposalBackButtonStyle = styled(BlackNoBackgroundButtonStyle)`
   width: 100%;
   text-align: left;
   display: inline;
-  margin-bottom: 30px;
+  margin-bottom: ${spacings.l};
 `;
 
 export const ProposalBackButtonCenterStyle = styled(ProposalBackButtonStyle)<{
@@ -190,7 +205,7 @@ export const ProposalAuthLoginStyle = styled(BlackNoBackgroundButtonStyle)`
 export const ProposalAuthInlineWrapperStyle = styled.div`
   font-family: ${typography.FontFamily.Default};
   justify-content: inline;
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
   align-self: flex-start;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     margin-top: 0;
@@ -204,7 +219,7 @@ export const ProposalAuthLoginWrapperStyle = styled(
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 15px 0 0 0;
+  margin: ${spacings.sm} 0 0 0;
   align-self: center;
   font-size: ${typography.FontSize.Arrondissement};
 `;
@@ -217,7 +232,7 @@ export const ProposalButtonsWrapperStyle = styled(FlexElementStyle)`
   justify-content: flex-end;
   margin: auto auto 0px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin: 0 0 20px 0;
+    margin: 0 0 ${spacings.m} 0;
   }
 `;
 
@@ -321,9 +336,9 @@ export const ProposalSuccessTitleStyle = styled(ProposalSuccessTitle)`
 export const ProposalSuccessRedButtonStyle = styled(RedButtonStyle)`
   max-width: 167px;
   width: 100%;
-  margin: 30px auto 0px;
+  margin: ${spacings.l} auto 0px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin: 30px auto;
+    margin: ${spacings.l} auto;
   }
 `;
 
@@ -332,14 +347,14 @@ export const ProposalSuccessTransparentButtonstyle = styled(
 )`
   max-width: 167px;
   width: 100%;
-  margin: 30px auto 0px;
+  margin: ${spacings.l} auto 0px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin: 30px auto;
+    margin: ${spacings.l} auto;
   }
 `;
 
 export const ProposalSuccessParagraphWrapperStyle = styled.div`
-  margin-top: 30px;
+  margin-top: ${spacings.l};
 `;
 
 const ProposalSuccessParagraphStyle = styled.p`
@@ -366,7 +381,7 @@ export const ProposalSuccessParagraphLinkStyle = styled(
 export const ProposalSuccessContactStyle = styled.p`
   font-size: ${typography.FontSize.RueDeLappe};
   color: ${colors.Content.Interface.DarkSecondary};
-  margin-top: 20px;
+  margin-top: ${spacings.m};
   text-align: center;
 `;
 
@@ -385,15 +400,15 @@ export const ProposalSuccessCardStyle = styled.div`
   justify-content: center;
   background-color: white;
   border-radius: 8px;
-  padding: 20px;
-  margin-top: 30px;
+  padding: ${spacings.m};
+  margin-top: ${spacings.l};
 `;
 
 export const ProposalSuccessProposalStyle = styled.p`
   text-align: center;
   font-size: 14px;
   line-height: 21px;
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     line-height: 24px;
     font-size: ${typography.FontSize.Arrondissement};
@@ -412,12 +427,12 @@ export const ProposalSuccessAvatarStyle = styled(AvatarStyle)`
 export const ProposalSuccessNameStyle = styled.p`
   font-size: 14px;
   color: ${colors.Content.Interface.DarkSecondary};
-  margin-bottom: 20px;
-  margin-top: 10px;
+  margin-bottom: ${spacings.m};
+  margin-top: ${spacings.s};
 `;
 
 export const ProposalSuccessButtonWrapperStyle = styled.div`
-  margin: 15px 0px;
+  margin: ${spacings.l} 0px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -428,7 +443,7 @@ export const ProposalSuccessButtonWrapperStyle = styled.div`
 `;
 
 export const ProposalSuccessLinkStyle = styled(BlackLinkStyle)`
-  margin: 30px auto;
+  margin: ${spacings.l} auto;
 `;
 
 export const AnonymousButtonContainer = styled.div`

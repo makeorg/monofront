@@ -9,6 +9,7 @@ import {
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
 import { TitleL } from '@make.org/designsystem/components/Titles';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const HomepageWrapperStyle = styled(MiddleColumnStyle)`
   width: 100%;
@@ -22,21 +23,21 @@ export const HomepagePageInnerStyle = styled.div`
 
 export const HomepageSectionStyle = styled(ColumnElementStyle)`
   width: 100%;
-  margin-bottom: 100px;
+  margin-bottom: ${spacings.xxl};
   &:first-child {
-    margin-top: 50px;
+    margin-top: ${spacings.xl};
     @media (min-width: ${pxToRem(Breakpoints.Desktop)}) {
-      margin-top: 100px;
+      margin-top: ${spacings.xxl};
     }
   }
   &:last-child {
-    margin-bottom: 50px;
+    margin-bottom: ${spacings.xl};
   }
 `;
 
 export const HomepageSectionTitleStyle = styled(TitleL)`
   color: ${colors.Content.Interface.Dark};
-  margin-bottom: 30px;
+  margin-bottom: ${spacings.l};
   text-transform: none;
   &.with-container {
     ${ContainerWithPadding};

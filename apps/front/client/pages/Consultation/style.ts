@@ -13,12 +13,13 @@ import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
 import { TitleL, TitleS } from '@make.org/designsystem/components/Titles';
 import { BodyMDefault } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const ConsultationHeaderWrapperStyle = styled.div<{
   backgroundcolor: string;
 }>`
   background-color: ${props => props.backgroundcolor};
-  margin-top: -5px;
+  margin-top: -${spacings.xs};
 `;
 
 export const ConsultationPageWrapperStyle = styled.div<{
@@ -30,14 +31,14 @@ export const ConsultationPageWrapperStyle = styled.div<{
   width: 100%;
   max-width: ${intToPx(Layouts.ContainerWithPadding)};
   margin: ${({ isGreatCause = false }) =>
-    isGreatCause ? '20px auto' : '0 auto 20px'};
+    isGreatCause ? `${spacings.m} auto` : `0 auto ${spacings.m}`};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    padding: 0 20px;
-    margin: 20px auto;
+    padding: 0 ${spacings.m};
+    margin: ${spacings.m} auto;
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     flex-flow: row;
-    margin: 45px auto;
+    margin: ${spacings.xl} auto;
   }
 `;
 
@@ -56,7 +57,7 @@ export const ConsultationPageSidebarStyle = styled(ContentElementStyle)<{
   bottomAffix: boolean;
 }>`
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin-bottom: 20px;
+    margin-bottom: ${spacings.m};
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     margin-bottom: 0;
@@ -74,10 +75,10 @@ export const ConsultationPageSidebarStyle = styled(ContentElementStyle)<{
 export const TopIdeasPageTitleStyle = styled.h2`
   font-size: ${typography.FontSize.Arrondissement};
   line-height: 1.5;
-  margin: 10px 0 20px;
-  padding: 0 20px;
+  margin: ${spacings.s} 0 ${spacings.m};
+  padding: 0 ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin: 0 0 20px;
+    margin: 0 0 ${spacings.m};
     padding: 0;
     font-size: ${typography.FontSize.Paris};
   }
@@ -97,7 +98,7 @@ export const TopIdeasListStyle = styled.ol`
 `;
 
 export const TopIdeasListItemStyle = styled.li`
-  margin: 0 0 20px;
+  margin: 0 0 ${spacings.m};
 `;
 
 export const ParticipateContentStyle = styled.section`
@@ -108,10 +109,10 @@ export const ParticipateContentStyle = styled.section`
 
 export const ParticipateTitleStyle = styled(TitleL).attrs({ as: 'h3' })`
   text-transform: none;
-  margin: 40px 0 15px;
+  margin: 40px 0 ${spacings.sm};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${typography.FontSize.Earth};
-    margin: 50px 0 5px;
+    margin: ${spacings.xl} 0 ${spacings.xs};
   }
 `;
 
@@ -125,11 +126,11 @@ export const ResultsTitleStyle = styled(ParticipateTitleStyle)`
 export const ExploreTitleStyle = styled(TitleS).attrs({ as: 'h3' })`
   text-transform: none;
   letter-spacing: 0.5px;
-  margin: 40px 0px 20px;
+  margin: 40px 0px ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${typography.FontSize.IleDeFrance};
     margin-bottom: 0;
-    margin-right: 15px;
+    margin-right: ${spacings.sm};
   }
 `;
 
@@ -137,7 +138,7 @@ export const ExploreSubTitleWrapperStyle = styled(BodyMDefault).attrs({
   as: 'div',
 })`
   letter-spacing: 0.14px;
-  margin-top: 15px;
+  margin-top: ${spacings.sm};
   margin-bottom: 35px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     width: 60%;
@@ -160,10 +161,10 @@ export const ExploreProposalsCountStyle = styled.span`
 
 export const ResetLinkButtonWrapperStyle = styled.div`
   display: flex;
-  margin-top: 15px;
+  margin-top: ${spacings.sm};
   justify-content: center;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin-top: 30px;
+    margin-top: ${spacings.l};
     justify-content: flex-start;
   }
 `;
@@ -186,7 +187,7 @@ export const ParticipateDescriptionStyle = styled.p`
   max-width: 750px;
   margin-bottom: 40px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin-bottom: 50px;
+    margin-bottom: ${spacings.xl};
   }
 `;
 
@@ -223,10 +224,10 @@ export const ParticipateCTAProposalBloc = styled.div<{
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     flex-flow: ${props => (props.isKeywordActive ? 'column' : 'row')};
     width: ${props => (props.isKeywordActive ? '50%' : '100%')};
-    margin-right: 10px;
+    margin-right: ${spacings.s};
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin-right: 15px;
+    margin-right: ${spacings.sm};
   }
 `;
 
@@ -250,7 +251,7 @@ export const FiltersAndSortCTAStyle = styled.button`
 `;
 
 export const FiltersCounterStyle = styled.span`
-  margin-left: 5px;
+  margin-left: ${spacings.xs};
   min-width: 20px;
   line-height: 20px;
   color: ${colors.Content.Interface.Light};
@@ -262,5 +263,5 @@ export const FiltersCounterStyle = styled.span`
 `;
 
 export const SvgFiltersMobile = styled(SvgFiltersMobileIcon)`
-  margin-right: 10px;
+  margin-right: ${spacings.s};
 `;

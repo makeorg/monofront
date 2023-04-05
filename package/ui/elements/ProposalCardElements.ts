@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { typography } from '@make.org/designsystem/tokens/typography';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { BorderRadius, CardStyle } from './CardsElements';
 import { ColumnElementStyle } from './FlexElements';
 
@@ -18,7 +19,7 @@ const ProposalStyle = `
   font-weight: bold;
   align-self: flex-start;
   flex: 1 1 auto;
-  margin: 15px auto;
+  margin: ${spacings.sm} auto;
   text-decoration: none;
   justify-self: flex-start;
   align-content: flex-start;
@@ -40,7 +41,7 @@ export const ProposalElementStyle = styled.p`
 
 export const ProposalCardStyle = styled(CardStyle)`
   position: relative;
-  margin: 20px 0 0;
+  margin: ${spacings.m} 0 0;
   height: 100%;
   &.mobile-radius {
     border-radius: ${intToPx(BorderRadius)};

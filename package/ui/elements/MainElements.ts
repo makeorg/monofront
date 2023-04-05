@@ -7,13 +7,14 @@ import {
   DefaultPadding,
 } from '@make.org/assets/vars/Breakpoints';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { ColumnElementStyle, CenterColumnStyle } from './FlexElements';
 
 export const ContainerWithPadding = `
   width: 100%;
   max-width: ${intToPx(Layouts.ContainerWithPadding)};
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: ${spacings.m};
+  padding-right: ${spacings.m};
   margin-left: auto;
   margin-right: auto;
 `;
@@ -75,7 +76,7 @@ export const SkipLink = styled.a`
   border-radius: 20px;
   border: none;
   font-size: ${typography.FontSize.Arrondissement};
-  padding: 10px 20px 7px 20px;
+  padding: ${spacings.s} ${spacings.m} 7px ${spacings.m};
   text-decoration: none;
   position: absolute;
   top: -100%;

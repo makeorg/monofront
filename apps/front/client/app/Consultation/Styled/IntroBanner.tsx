@@ -10,11 +10,12 @@ import { SecondLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
 import { BodyXSCondensed } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { typography } from '@make.org/designsystem/tokens/typography';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const IntroWrapperStyle = styled(MiddleColumnStyle)`
-  padding: 30px ${intToPx(DefaultPadding.Mobile)};
+  padding: ${spacings.l} ${intToPx(DefaultPadding.Mobile)};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    padding: 50px ${intToPx(DefaultPadding.Desktop)};
+    padding: ${spacings.xl} ${intToPx(DefaultPadding.Desktop)};
   }
 `;
 
@@ -22,16 +23,16 @@ export const GreatCauseIntroLabelStyle = styled(BodyXSCondensed).attrs({
   as: 'span',
 })`
   background-color: ${colors.Background.Interface.DarkMain};
-  padding: 3px 10px 1px;
+  padding: 3px ${spacings.s} 1px;
   color: ${colors.Content.Interface.Light};
   text-transform: uppercase;
-  margin-bottom: 5px;
+  margin-bottom: ${spacings.xs};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${typography.FontSize.Arrondissement};
     padding: 6px 12px 4px;
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    padding: 8px 18px 5px;
+    padding: ${spacings.s} ${spacings.m} ${spacings.xs};
   }
 `;
 
@@ -59,6 +60,6 @@ export const DefaultBannerTitleStyle = styled(SecondLevelTitleStyle)`
 
 export const DefaultBannerTimeStyle = styled.div`
   color: ${props => props.theme.fontColor};
-  margin-top: 10px;
+  margin-top: ${spacings.s};
   font-size: ${typography.FontSize.Arrondissement};
 `;

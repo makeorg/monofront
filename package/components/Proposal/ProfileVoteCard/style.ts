@@ -4,6 +4,7 @@ import { DefaultPadding, Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { shadows } from '@make.org/designsystem/tokens/shadows';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const ProfileVoteCardStyle = styled.aside`
   width: 100%;
@@ -13,7 +14,7 @@ export const ProfileVoteCardStyle = styled.aside`
 `;
 
 export const ProfileVoteWrapperStyle = styled.article`
-  margin-bottom: 15px;
+  margin-bottom: ${spacings.sm};
   &:last-child {
     margin-bottom: 0;
   }
@@ -35,8 +36,8 @@ export const ProfileHasVotedStyle = styled.div`
   height: 38px;
   justify-content: center;
   align-items: center;
-  padding: 5px;
-  margin-right: 5px;
+  padding: ${spacings.xs};
+  margin-right: ${spacings.xs};
   font-size: ${typography.FontSize.Paris};
   border-width: 2px;
   border-style: solid;

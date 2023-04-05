@@ -3,6 +3,7 @@ import {
   BlackBorderButtonStyle,
 } from '@make.org/ui/elements/ButtonsElements';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { CenterRowStyle } from '@make.org/ui/elements/FlexElements';
@@ -37,10 +38,10 @@ export const ExtraDataTitleStyle = styled(SequenceIntroParagraphStyle)`
 export const ExtraDataDescriptionStyle = styled(ParagraphStyle)`
   font-size: 14px;
   text-align: center;
-  margin: 5px auto 20px;
+  margin: ${spacings.xs} auto ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${typography.FontSize.Arrondissement};
-    margin-bottom: 30px;
+    margin-bottom: ${spacings.l};
   }
 `;
 
@@ -48,7 +49,7 @@ export const ExtraDataRadioGroupStyle = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  grid-gap: 10px 5px;
+  grid-gap: ${spacings.s} ${spacings.xs};
   max-width: ${intToPx(MAX_WIDTH)};
   &.three-columns {
     @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
@@ -62,10 +63,10 @@ export const ExtraDataRadioGroupStyle = styled.div`
 
 export const SubmitWrapperStyle = styled(CenterRowStyle)`
   width: 100%;
-  gap: 10px;
-  margin-top: 20px;
+  gap: ${spacings.s};
+  margin-top: ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin-top: 30px;
+    margin-top: ${spacings.l};
   }
 `;
 
@@ -125,7 +126,7 @@ export const SelectStyle = styled.select`
   max-width: ${intToPx(MAX_WIDTH)};
   border: 1px solid ${colors.Border.Interface.DarkMain};
   border-radius: 20px;
-  padding: 8px 15px;
+  padding: ${spacings.s} ${spacings.sm};
   font-size: ${typography.FontSize.Arrondissement};
   color: ${colors.Content.Interface.DarkSecondary};
   appearance: none;
@@ -135,6 +136,6 @@ export const SelectStyle = styled.select`
 `;
 
 export const SkipIconStyle = styled(SvgFastForward)<SvgPropsType>`
-  margin-right: 5px;
+  margin-right: ${spacings.xs};
   width: 16px;
 `;

@@ -11,6 +11,7 @@ import {
 } from '@make.org/designsystem/components/Body';
 import { TitleL } from '@make.org/designsystem/components/Titles';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const HeaderWrapperStyle = styled(FlexElementStyle)`
   background-color: ${props => props.theme.color};
@@ -23,7 +24,7 @@ export const HeaderContentStyle = styled(FlexElementStyle)`
   margin: auto;
   justify-content: flex-start;
   flex-flow: column;
-  padding: 30px 20px 40px;
+  padding: ${spacings.l} ${spacings.m} 40px;
   @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
     padding-left: 0px;
     padding-right: 0px;
@@ -38,10 +39,10 @@ export const HeaderLabelStyle = styled(BodyMCondensed).attrs({ as: 'span' })`
   display: flex;
   align-items: center;
   text-transform: uppercase;
-  padding: 10px 10px 8px;
+  padding: ${spacings.s} ${spacings.s} 8px;
   height: 25px;
   width: max-content;
-  margin: 5px 0 15px;
+  margin: ${spacings.xs} 0 ${spacings.sm};
   color: ${colors.Content.Interface.Light};
   background-color: ${colors.Background.Interface.DarkMain};
   &.white-text {
@@ -53,10 +54,10 @@ export const HeaderLabelStyle = styled(BodyMCondensed).attrs({ as: 'span' })`
     background-color: ${colors.Background.Interface.Lighter};
   }
   &.margin-left {
-    margin-left: 10px;
+    margin-left: ${spacings.s};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin: 15px 0;
+    margin: ${spacings.sm} 0;
   }
 `;
 
@@ -66,23 +67,23 @@ export const HeaderTitleStyle = styled(TitleL)`
     props.theme.fontColor
       ? props.theme.fontColor
       : colors.Content.Interface.Dark};
-  margin-bottom: 30px;
+  margin-bottom: ${spacings.l};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     line-height: 1.5;
     letter-spacing: 0.5px;
     font-size: ${typography.FontSize.Earth};
-    margin-bottom: 20px;
+    margin-bottom: ${spacings.m};
   }
 `;
 
 export const HeaderListWrapperStyle = styled.div`
   display: inline;
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
   &.no-margin {
     margin-bottom: 0;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin-bottom: 15px;
+    margin-bottom: ${spacings.l};
     &.no-margin {
       margin-bottom: 0;
     }
@@ -154,7 +155,7 @@ export const NewWindowLinkStyle = styled.a`
 `;
 
 export const NewWindowIconStyle = styled(SvgExternalLink)`
-  margin-left: 5px;
+  margin-left: ${spacings.xs};
   width: 14px;
   height: 14px;
   fill: ${props =>

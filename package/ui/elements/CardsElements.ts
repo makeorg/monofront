@@ -11,6 +11,7 @@ import { shadows } from '@make.org/designsystem/tokens/shadows';
 import { Link } from 'react-router-dom';
 import { TitleS, TitleXXS } from '@make.org/designsystem/components/Titles';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { FlexElementStyle } from './FlexElements';
 import { ParagraphStyle } from './ParagraphElements';
 import { SvgExternalLink, SvgLock } from '../Svg/elements';
@@ -43,16 +44,16 @@ export const TallCardStyle = styled(CardStyle)`
 
 export const ParticipateCardTitleStyle = styled(TitleS).attrs({ as: 'h4' })`
   text-transform: none;
-  margin: 15px 0 10px;
+  margin: ${spacings.sm} 0 ${spacings.s};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${typography.FontSize.IleDeFrance};
-    margin: 15px 0;
+    margin: ${spacings.sm} 0;
   }
 `;
 
 export const ParticipateCardAltTitleStyle = styled(TitleXXS)`
   text-transform: none;
-  margin-bottom: 10px;
+  margin-bottom: ${spacings.s};
 `;
 
 export const ParticipateCardDescriptionStyle = styled(ParagraphStyle)`
@@ -60,7 +61,7 @@ export const ParticipateCardDescriptionStyle = styled(ParagraphStyle)`
 `;
 
 export const ParticipateCardAltDescriptionStyle = styled(ParagraphStyle)`
-  margin-bottom: 15px;
+  margin-bottom: ${spacings.sm};
 `;
 
 export const ParticipateCardButtonStyle = styled(RedButtonStyle)`
@@ -81,7 +82,7 @@ export const ParticipateCardLinkStyle = styled(Link)`
   border-radius: 50px;
   width: max-content;
   height: 35px;
-  padding: 15px 25px;
+  padding: ${spacings.sm} 25px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,13 +102,13 @@ export const ParticipateCardSoonStyle = styled(FlexElementStyle)`
 `;
 
 export const ParticipateCardSoonIconStyle = styled(SvgLock)`
-  margin-right: 10px;
+  margin-right: ${spacings.s};
 `;
 
 export const ParticipateCardExternalIconStyle = styled(SvgExternalLink)`
   width: 12px;
   height: 12px;
-  margin-left: 5px;
+  margin-left: ${spacings.xs};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     width: 14px;
     height: 14px;
@@ -122,12 +123,12 @@ export const ParticipateCardStyle = styled.section<{
   justify-content: space-between;
   background-color: ${colors.Background.Interface.Lighter};
   border-radius: ${intToPx(BorderRadius)};
-  padding: 30px;
+  padding: ${spacings.l};
   &.no-padding-bottom {
     padding-bottom: 0px;
   }
   &.margin-bottom {
-    margin-bottom: 20px;
+    margin-bottom: ${spacings.m};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     &.desktop-half {
@@ -135,21 +136,25 @@ export const ParticipateCardStyle = styled.section<{
     }
 
     &.desktop-padding-left {
-      margin-left: ${props => (props.isKeywordActive ? '0px' : '10px')};
+      margin-left: ${props =>
+        props.isKeywordActive ? '0px' : `${spacings.s}`};
     }
     &.desktop-padding-right {
-      margin-right: ${props => (props.isKeywordActive ? '0px' : '10px')};
+      margin-right: ${props =>
+        props.isKeywordActive ? '0px' : `${spacings.s}`};
     }
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     &.margin-bottom {
-      margin-bottom: 30px;
+      margin-bottom: ${spacings.l};
     }
     &.desktop-padding-left {
-      margin-left: ${props => (props.isKeywordActive ? '0px' : '15px')};
+      margin-left: ${props =>
+        props.isKeywordActive ? '0px' : `${spacings.sm}`};
     }
     &.desktop-padding-right {
-      margin-right: ${props => (props.isKeywordActive ? '0px' : '15px')};
+      margin-right: ${props =>
+        props.isKeywordActive ? '0px' : `${spacings.sm}`};
     }
   }
 `;
@@ -157,5 +162,5 @@ export const ParticipateCardStyle = styled.section<{
 export const ParticipateCardCantProposalTextStyle = styled.p`
   font-size: ${typography.FontSize.RueDeLappe};
   color: ${colors.Content.Interface.DarkSecondary};
-  margin-top: 15px;
+  margin-top: ${spacings.sm};
 `;

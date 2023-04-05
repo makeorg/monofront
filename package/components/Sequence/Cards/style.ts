@@ -17,6 +17,7 @@ import { SeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { SvgPropsType } from '@make.org/types';
 import { BodyMDefault } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const SequenceCardStyle = styled.section`
   position: relative;
@@ -27,34 +28,34 @@ export const SequenceCardStyle = styled.section`
   justify-content: center;
   flex: 1;
   width: 100%;
-  padding: 25px 20px 20px;
+  padding: 25px ${spacings.m} ${spacings.m};
   background-color: ${colors.Background.Interface.Lighter};
   border-radius: 8px;
   box-shadow: ${shadows.s10};
-  margin: 30px auto;
+  margin: ${spacings.l} auto;
   min-height: 350px;
   &.widget {
     min-height: 0;
-    margin: 17px auto 15px;
+    margin: 17px auto ${spacings.sm};
   }
   &.center {
     justify-content: center;
   }
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    padding: 40px 20px 20px;
+    padding: 40px ${spacings.m} ${spacings.m};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     min-height: 365px;
     max-height: 365px;
-    margin-top: 30px;
-    padding: 40px 30px 30px;
+    margin-top: ${spacings.l};
+    padding: 40px ${spacings.l} ${spacings.l};
   }
 `;
 
 export const SequenceIntroButtonStyle = styled(RedButtonStyle)`
-  margin-top: 15px;
+  margin-top: ${spacings.sm};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin-top: 30px;
+    margin-top: ${spacings.l};
   }
 `;
 
@@ -67,7 +68,7 @@ const SequenceTitleStyle = styled.div`
 export const SequenceMainTitleStyle = styled(SequenceTitleStyle)`
   font-size: ${typography.FontSize.Arrondissement};
   letter-spacing: 0.12px;
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${typography.FontSize.PetiteCouronne};
     &.widget {
@@ -82,7 +83,7 @@ export const FinalCardWrapperStyle = styled(CenterColumnStyle)`
 
 export const SequenceAltTitleStyle = styled(SequenceTitleStyle)`
   font-size: ${typography.FontSize.Arrondissement};
-  margin-bottom: 10px;
+  margin-bottom: ${spacings.s};
   line-height: 1.5;
   letter-spacing: 0.12px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -106,14 +107,14 @@ export const SequenceIntroParagraphStyle = styled(BodyMDefault).attrs({
   letter-spacing: 0.14px;
   text-align: center;
   &.with-margin-bottom {
-    margin-bottom: 15px;
+    margin-bottom: ${spacings.sm};
   }
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${typography.FontSize.Paris};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     &.with-margin-bottom {
-      margin-bottom: 30px;
+      margin-bottom: ${spacings.l};
     }
   }
 `;
@@ -134,7 +135,7 @@ export const SequenceProposalStyle = styled.blockquote`
   font-size: 14px;
   text-align: center;
   letter-spacing: 0.13px;
-  margin-bottom: 15px;
+  margin-bottom: ${spacings.sm};
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${typography.FontSize.Arrondissement};
     letter-spacing: 0.14px;
@@ -161,21 +162,21 @@ export const SequenceNextCardButtonStyle = styled(RedButtonStyle)`
 `;
 
 export const SequencePushProposalButtonStyle = styled(RedButtonStyle)`
-  margin: 0 0 10px;
+  margin: 0 0 ${spacings.s};
   font-size: 14px;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${typography.FontSize.Arrondissement};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     width: auto;
-    margin: 0 10px;
+    margin: 0 ${spacings.s};
   }
 `;
 
 export const SequencePushProposalNextButtonStyle = styled(
   BlackBorderButtonStyle
 )`
-  margin-top: 15px;
+  margin-top: ${spacings.sm};
   font-size: 14px;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${typography.FontSize.Arrondissement};
@@ -188,7 +189,7 @@ export const SequenceParagraphStyle = styled(CenterColumnStyle)`
   line-height: 1.57;
   letter-spacing: 0.12px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
   color: ${colors.Content.Interface.DarkSecondary};
 `;
 
@@ -213,18 +214,18 @@ export const SequencePlaceholderLineStyle = styled.div<{ className?: string }>`
     max-width: 75px;
   }
   &.name {
-    margin: 60px auto 20px;
+    margin: 60px auto ${spacings.m};
   }
   &.proposal {
     margin-bottom: 7px;
   }
   &.title {
     align-self: flex-start;
-    margin-top: 30px;
+    margin-top: ${spacings.l};
   }
   &.button {
     max-width: 50px;
-    margin-right: 20px;
+    margin-right: ${spacings.m};
     margin-bottom: 40px;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -240,10 +241,10 @@ export const SequencePlaceholderLineStyle = styled.div<{ className?: string }>`
 
 export const FinalCardSeparatorStyle = styled(SeparatorStyle)`
   max-width: 80px;
-  margin: 20px auto;
+  margin: ${spacings.m} auto;
   border: solid 0.5px ${colors.Border.Interface.DarkMain};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin: 30px auto;
+    margin: ${spacings.l} auto;
   }
 `;
 
@@ -252,11 +253,11 @@ export const FinalCardRegisterStyle = styled.div`
 `;
 
 export const IntroProposalRedButtonStyle = styled(RedButtonStyle)`
-  margin-top: 30px;
+  margin-top: ${spacings.l};
 `;
 
 export const SkipIconStyle = styled(SvgFastForward)<SvgPropsType>`
-  margin-right: 5px;
+  margin-right: ${spacings.xs};
   width: 16px;
   fill: white;
 `;
@@ -265,7 +266,7 @@ export const ButtonsContainerStyle = styled.div`
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
-  gap: 20px;
+  gap: ${spacings.m};
   align-items: center;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     flex-direction: row;

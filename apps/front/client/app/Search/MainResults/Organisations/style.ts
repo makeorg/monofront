@@ -7,23 +7,24 @@ import {
   ProfilePageSidebarStyle,
 } from '@make.org/ui/elements/ProfileElements';
 import { BorderRadius } from '@make.org/ui/elements/CardsElements';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const SearchOrganisationsListStyle = styled(UnstyledListStyle)`
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 15px 30px;
+    grid-gap: ${spacings.sm} ${spacings.l};
   }
   @media (max-width: ${intToPx(Breakpoints.Tablet)}) {
-    padding: 0 20px;
+    padding: 0 ${spacings.m};
   }
 `;
 
 export const SearchOrganisationsListItemStyle = styled.li`
   padding-top: 40px;
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    padding-top: 20px;
+    padding-top: ${spacings.m};
     margin-bottom: 0;
   }
 `;
@@ -36,5 +37,5 @@ export const SearchOrganisationItemStyle = styled(ProfilePageSidebarStyle)`
 `;
 
 export const SearchOrganisationAvatarStyle = styled(ProfileAvatarStyle)`
-  margin-bottom: 10px;
+  margin-bottom: ${spacings.s};
 `;

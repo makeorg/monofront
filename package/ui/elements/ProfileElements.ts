@@ -9,6 +9,7 @@ import {
 } from '@make.org/assets/vars/Breakpoints';
 import { BodyMCondensed } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { BorderRadius } from './CardsElements';
 import {
   FlexElementStyle,
@@ -40,7 +41,7 @@ export const ProfilePageContentWrapperStyle = styled.div`
   max-width: ${intToPx(Layouts.ContainerWithPadding)};
   margin: 0 auto;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    padding: 0 20px;
+    padding: 0 ${spacings.m};
     flex-flow: row;
     justify-content: space-between;
     margin: 0 auto ${intToPx(DesktopMarginWithOffset)};
@@ -54,7 +55,7 @@ const ContentElementStyle = styled(ColumnElementStyle)`
 `;
 
 export const ProfilePageContentStyle = styled(ContentElementStyle)`
-  margin: ${intToPx(DefaultPadding.Mobile)} 0 30px;
+  margin: ${intToPx(DefaultPadding.Mobile)} 0 ${spacings.l};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     margin: 0;
     width: ${pxToPercent(760, 1140)};
@@ -73,8 +74,8 @@ export const ProfilePageSidebarStyle = styled(ContentElementStyle)`
   align-items: center;
   background-color: ${colors.Background.Interface.Lighter};
   box-shadow: ${shadows.s10};
-  padding: 0 20px 20px;
-  margin-bottom: 20px;
+  padding: 0 ${spacings.m} ${spacings.m};
+  margin-bottom: ${spacings.m};
   &:last-child {
     margin-bottom: 0;
   }
@@ -85,7 +86,7 @@ export const ProfilePageSidebarStyle = styled(ContentElementStyle)`
 
 export const ProfileContentHeaderStyle = styled.header`
   width: 100%;
-  padding: 0 10px;
+  padding: 0 ${spacings.s};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     padding: 0;
   }
@@ -95,14 +96,14 @@ export const ProfileTitleSeparatorStyle = styled.div`
   width: 100%;
   height: 1px;
   background-color: ${colors.Background.Interface.DarkMain};
-  margin: 5px auto ${intToPx(DefaultPadding.Mobile)};
+  margin: ${spacings.xs} auto ${intToPx(DefaultPadding.Mobile)};
 `;
 
 export const ProfileTabIconStyle = styled(SvgLike)`
   width: 14px;
   height: 14px;
   align-self: center;
-  margin-left: 5px;
+  margin-left: ${spacings.xs};
   .tofill {
     fill: ${colors.Content.Make.Secondary};
   }
@@ -127,26 +128,26 @@ export const ProfileAvatarStyle = styled.div<{ avatarSize: number }>`
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     transform: translateY(-20px);
-    margin-bottom: -20px;
+    margin-bottom: -${spacings.m};
     margin-right: 0;
   }
 `;
 
 export const ProfileContentWrapperStyle = styled(ColumnElementStyle)`
   align-content: flex-start;
-  margin: 20px 0 10px;
+  margin: ${spacings.m} 0 ${spacings.s};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     align-content: center;
   }
 `;
 
 export const ProfileNavigationStyle = styled(ColumnElementStyle)`
-  margin-top: 10px;
+  margin-top: ${spacings.s};
 `;
 
 export const ProfileTitleStyle = styled(BodyMCondensed)`
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: ${spacings.s};
   text-align: center;
   &:last-child {
     margin-bottom: 0;
@@ -157,7 +158,7 @@ export const ProfileTitleStyle = styled(BodyMCondensed)`
 `;
 
 export const ProfileContentStyle = styled(ParagraphStyle)`
-  margin-bottom: 10px;
+  margin-bottom: ${spacings.s};
   svg {
     fill: ${colors.Content.Interface.DarkSecondary};
   }
@@ -187,15 +188,15 @@ export const ProfileDescriptionStyle = styled(ParagraphStyle)<{
 `;
 
 export const ProfileSeparatorStyle = styled(SeparatorStyle)`
-  margin: 10px 0;
+  margin: ${spacings.s} 0;
 `;
 
 export const ProfileInformationButtonStyle = styled(GreyButtonStyle)`
-  margin: 10px 0 0;
+  margin: ${spacings.s} 0 0;
 `;
 
 export const ProfileLinkIconStyle = styled(SvgLink)`
-  margin-right: 5px;
+  margin-right: ${spacings.xs};
 `;
 
 export const ProfileWebsiteLinkStyle = styled(RedHTMLLinkElementStyle)`
@@ -206,7 +207,7 @@ export const ProfileCollapseWrapperStyle = styled(MiddleRowStyle)`
   position: relative;
   z-index: 0;
   width: 100%;
-  margin: 10px 0;
+  margin: ${spacings.s} 0;
 `;
 
 export const ProfileCollapseSeparatorStyle = styled(SeparatorStyle)<{
@@ -242,7 +243,7 @@ export const ProfileCollapseButtonStyle = styled(UnstyledButtonStyle)`
   color: ${colors.Content.Make.Secondary};
   text-transform: uppercase;
   text-decoration: none;
-  padding: 0 10px;
+  padding: 0 ${spacings.s};
 `;
 
 export const ProfileMapIconStyle = styled(SvgMapMarker)`

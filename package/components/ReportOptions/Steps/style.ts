@@ -8,6 +8,7 @@ import {
   SvgMailSuccess,
 } from '@make.org/ui/Svg/elements';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const ReportWrapperStyle = styled.section`
   display: flex;
@@ -52,7 +53,7 @@ export const ReportTextStyle = styled.p`
   justify-content: flex-start;
   font-size: ${typography.FontSize.Arrondissement};
   font-family: ${typography.FontFamily.Default};
-  margin: 30px 0px 30px;
+  margin: ${spacings.l} 0px ${spacings.l};
 `;
 
 export const ReportButtonWrapperStyle = styled.div`
@@ -75,13 +76,13 @@ export const ReportFormWrapperStyle = styled.ul`
   justify-content: space-between;
   list-style: none;
   text-decoration: none;
-  padding: 5px;
+  padding: ${spacings.xs};
   background-color: ${colors.Background.Interface.DarkSecondary};
   border-radius: 8px;
   width: 375px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     width: 420px;
-    margin-bottom: 50px;
+    margin-bottom: ${spacings.xl};
   }
 `;
 
@@ -91,7 +92,7 @@ export const ReportFormItemWrapperStyle = styled.li`
   width: 100%;
   border-radius: 8px;
   font-size: ${typography.FontSize.Arrondissement};
-  padding: 15px 20px;
+  padding: ${spacings.sm} ${spacings.m};
   text-decoration: none;
   :last-child {
     margin-bottom: 0px;
@@ -122,7 +123,7 @@ export const ReportFormAsTransparentButtonLabelStyle = styled.label`
 
 export const ReportFormSvgWrapperStyle = styled.div`
   display: inline-flex;
-  margin-right: 10px;
+  margin-right: ${spacings.s};
 `;
 
 export const ReportFormBackIconStyle = styled(SvgPreviousArrowLeft)`
@@ -133,7 +134,7 @@ export const ReportFormIconButtonWrapperStyle = styled.div`
   padding: 2px 12px;
   border-radius: 20px;
   background-color: ${colors.Background.Interface.Lighter};
-  margin-right: 10px;
+  margin-right: ${spacings.s};
   border-radius: 20px;
   width: 45px;
   height: 23px;
@@ -146,7 +147,7 @@ export const ReportFormBackButtonWrapperStyle = styled.button`
   padding: 0;
   border: none;
   background-color: transparent;
-  margin: 0 auto 30px;
+  margin: 0 auto ${spacings.l};
   width: 375px;
   align-items: center;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -166,12 +167,12 @@ export const ReportOptionsButtonStyle = styled.button`
   align-items: center;
   border: 0;
   border-color: transparent;
-  margin: 10px 0;
+  margin: ${spacings.s} 0;
   height: 40px;
 `;
 
 export const ReportOptionsButtonTextStyle = styled.p`
-  padding-left: 10px;
+  padding-left: ${spacings.s};
   font-weight: bold;
 `;
 

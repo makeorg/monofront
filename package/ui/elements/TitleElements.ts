@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { typography } from '@make.org/designsystem/tokens/typography';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { TitleS } from '@make.org/designsystem/components/Titles';
 
 export const ThirdLevelTitleCircularStyle = styled(TitleS).attrs({ as: 'h3' })`
@@ -34,7 +35,7 @@ export const ThirdLevelTitleStyle = styled.h3`
 export const FourthLevelTitleStyle = styled.h4`
   font-size: ${typography.FontSize.RueDeLappe};
   &.not-great-cause-proposal {
-    margin: 0 0 15px;
+    margin: 0 0 ${spacings.sm};
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${typography.FontSize.Arrondissement};

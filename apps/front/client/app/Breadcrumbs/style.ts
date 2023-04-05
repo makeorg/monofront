@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { Link } from 'react-router-dom';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import {
@@ -47,7 +48,7 @@ export const BreadcrumbsLinkStyle = styled(Link)`
 `;
 
 export const HomeIconStyle = styled(SvgHouse)`
-  margin-right: 10px;
+  margin-right: ${spacings.s};
   .tofill {
     fill: ${props =>
       props.theme.fontColor
@@ -57,7 +58,7 @@ export const HomeIconStyle = styled(SvgHouse)`
 `;
 
 export const ArrowIconStyle = styled(SvgBigArrowRight)`
-  margin: 0 10px;
+  margin: 0 ${spacings.s};
   .tofill {
     fill: ${props =>
       props.theme.fontColor
@@ -71,8 +72,8 @@ export const ArrowIconStyle = styled(SvgBigArrowRight)`
 export const BreadcrumbsListStyleDeprecated = styled.ol`
   padding: 0;
   list-style: none;
-  margin: 30px 0 20px;
-  padding: 0 20px;
+  margin: ${spacings.l} 0 ${spacings.m};
+  padding: 0 ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     padding: 0;
     margin: 0 0 40px;
@@ -107,7 +108,7 @@ export const BreadcrumbsLinkStyleDeprecated = styled(Link)`
 export const SeparatorIconStyleDeprecated = styled(SvgAngleArrowRight)`
   width: 16px;
   height: 16px;
-  margin: 1px 5px 0;
+  margin: 1px ${spacings.xs} 0;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     width: 18px;
     height: 18px;

@@ -6,6 +6,7 @@ import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
 import { TitleS } from '@make.org/designsystem/components/Titles';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import {
   BodyXSCondensed,
   BodyLHighLight,
@@ -31,7 +32,7 @@ export const TimelineListWrapperStyle = styled.ul`
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 15px 30px;
+    grid-gap: ${spacings.sm} ${spacings.l};
   }
 `;
 
@@ -63,7 +64,7 @@ export const TimelineItemMarkerIsCurrent = styled.span`
   width: 7px;
   border-radius: 50%;
   background-color: ${colors.Content.Make.Secondary};
-  margin-left: 5px;
+  margin-left: ${spacings.xs};
 `;
 
 export const TimelineItemDateStyle = styled(BodyLHighLight).attrs({

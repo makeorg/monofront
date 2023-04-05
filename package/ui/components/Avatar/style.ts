@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { Image } from '../Image';
 
 export const AvatarStyle = styled.span<{
@@ -13,7 +14,7 @@ export const AvatarStyle = styled.span<{
   border: ${props =>
     props.isSequence ? `3px solid ${colors.Border.Interface.Lighter}` : ''};
   border-radius: ${props => (props.isSequence ? '50%' : '')};
-  margin-right: ${props => (props.isSequence ? '' : '10px')};
+  margin-right: ${props => (props.isSequence ? '' : `${spacings.s}`)};
   transform: ${props => (props.isSequence ? 'translateX(-50%)' : '')};
   display: inline-flex;
 `;

@@ -3,6 +3,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { MiddleRowStyle } from './FlexElements';
 
 export const SeparatorStyle = styled.div`
@@ -20,24 +21,24 @@ export const SmallSeparatorStyle = styled(SeparatorStyle)`
 `;
 
 export const SmallSeparatorWithMarginStyle = styled(SmallSeparatorStyle)`
-  margin: 5px 0 15px;
+  margin: ${spacings.xs} 0 ${spacings.sm};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin: 20px 0 30px;
+    margin: ${spacings.m} 0 ${spacings.l};
   }
 `;
 
 export const SeparatorWrapperStyle = styled(MiddleRowStyle)`
   width: 100%;
   &.margin-top {
-    margin-top: 30px;
+    margin-top: ${spacings.l};
   }
   &.margin-bottom {
-    margin-bottom: 15px;
+    margin-bottom: ${spacings.sm};
   }
 `;
 
 export const SeparatorProposalAuthLogin = styled(SeparatorWrapperStyle)`
-  margin-bottom: 15px;
+  margin-bottom: ${spacings.sm};
 `;
 
 export const TextSeparatorStyle = styled(MiddleRowStyle)`
@@ -47,9 +48,9 @@ export const TextSeparatorStyle = styled(MiddleRowStyle)`
 `;
 
 export const ContentSeparatorStyle = styled(SeparatorStyle)`
-  margin: 10px 0;
+  margin: ${spacings.s} 0;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin: 15px 0;
+    margin: ${spacings.sm} 0;
   }
 `;
 
@@ -58,10 +59,10 @@ export const TileSeparatorStyle = styled(SeparatorStyle)`
 `;
 
 export const SidebarSeparatorStyle = styled(SeparatorStyle)`
-  margin: 10px 0;
+  margin: ${spacings.s} 0;
 `;
 
 export const FilterSeparationLineStyle = styled(SeparatorStyle)`
   background-color: ${colors.Background.Interface.DarkMain};
-  margin: 20px 0;
+  margin: ${spacings.sm} 0;
 `;

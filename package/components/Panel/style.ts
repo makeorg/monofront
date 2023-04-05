@@ -4,6 +4,7 @@ import { StartColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { SvgClose } from '@make.org/ui/Svg/elements';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const PanelOverlayStyle = styled.button`
   position: absolute;
@@ -43,12 +44,12 @@ export const PanelCloseButtonStyle = styled.button`
     visibility: hidden;
   }
   &.widget {
-    top: 11px;
+    top: ${spacings.s};
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     top: 43px;
     &.widget {
-      top: 11px;
+      top: ${spacings.s};
     }
   }
 `;
@@ -72,7 +73,7 @@ export const PanelInnerStyle = styled(StartColumnStyle)`
   background-color: #f2f4fc;
   transition: 0.5s ease-in bottom;
   overflow-y: auto;
-  padding: 30px 20px;
+  padding: ${spacings.l} ${spacings.m};
   border-radius: 8px 8px 0 0;
   &.widget {
     height: calc(100% - 36px);
@@ -85,7 +86,7 @@ export const PanelInnerStyle = styled(StartColumnStyle)`
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     height: calc(100% - 100px);
-    padding: 50px 30px;
+    padding: ${spacings.xl} ${spacings.l};
   }
 `;
 export const PanelWrapperStyle = styled.div<{

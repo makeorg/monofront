@@ -21,6 +21,7 @@ import {
   BodySDefault,
 } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const AuthenticationWrapperStyle = styled.section`
   display: flex;
@@ -53,31 +54,31 @@ export const LegalFormStyle = styled(FormCenterAlignStyle)`
     display: none;
   }
   &.panel {
-    margin: 30px 0 30px;
+    margin: ${spacings.l} 0 ${spacings.l};
   }
 `;
 
 export const LegalIconStyle = styled(SvgLegalConsent)`
   max-width: 100px;
-  margin: 25px auto 30px;
+  margin: 25px auto ${spacings.l};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     max-width: 150px;
-    margin: 25px auto 30px;
+    margin: 25px auto ${spacings.l};
   }
 `;
 
 export const LegalParagraphStyle = styled(ParagraphStyle)`
-  margin-top: 15px;
+  margin-top: ${spacings.sm};
   text-align: center;
 `;
 
 export const LegalSeparatorStyle = styled(SmallSeparatorStyle)`
-  margin: 30px auto;
+  margin: ${spacings.l} auto;
 `;
 
 export const LegalCheckboxWrapperStyle = styled.div`
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: ${spacings.s};
 `;
 
 export const LegalButtonGroupStyle = styled(SpaceBetweenRowStyle)`
@@ -134,11 +135,11 @@ export const NewWindowIconStyle = styled(SvgExternalLink)`
 
 export const RegisterEmailTitleStyle = styled(TitleXXS).attrs({ as: 'h1' })`
   text-transform: none;
-  margin-bottom: 5px;
+  margin-bottom: ${spacings.xs};
 `;
 
 export const LoginTitleWrapperStyle = styled(ThirdLevelTitleStyle)`
-  margin-bottom: 5px;
+  margin-bottom: ${spacings.xs};
   text-transform: none;
   font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
@@ -161,13 +162,13 @@ export const LoginTitleWrapperCenterStyle = styled(LoginTitleWrapperStyle)`
 
 export const PostCodeWrapperStyle = styled(BodyXSDefault).attrs({ as: 'span' })`
   color: ${colors.Content.Interface.DarkSecondary};
-  margin-bottom: 30px;
-  margin-top: -10px;
+  margin-bottom: ${spacings.l};
+  margin-top: -${spacings.s};
 `;
 
 export const RegisterParagraphStyle = styled.p`
   font-size: ${typography.FontSize.Arrondissement};
-  margin-top: 15px;
+  margin-top: ${spacings.sm};
   display: inline;
   align-self: center;
 `;
@@ -227,8 +228,8 @@ export const RegisterPanelSubTitleWrapperStyle = styled(
 export const RegisterPanelSuccessParagraphContainerStyle = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 30px 0;
-  gap: 30px;
+  margin: ${spacings.l} 0;
+  gap: ${spacings.l};
 `;
 
 export const RegisterPanelSuccessParagraphStyle = styled(BodySDefault)`

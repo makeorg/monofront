@@ -3,16 +3,17 @@ import { typography } from '@make.org/designsystem/tokens/typography';
 import { SpaceBetweenRowStyle } from '@make.org/ui/elements/FlexElements';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { SocialNetworksColors } from '../../Sharing/Styled';
 
 export const FollowUsStyle = styled(SpaceBetweenRowStyle)`
   width: 100%;
   max-width: 200px;
-  margin: 15px 0;
+  margin: ${spacings.sm} 0;
 `;
 
 export const FollowUsListItemStyle = styled.li`
-  margin: 0 5px;
+  margin: 0 ${spacings.xs};
   &:first-child {
     margin-left: 0;
   }

@@ -4,9 +4,10 @@ import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const MainResultsHeaderStyle = styled.div`
-  padding: 0 20px;
+  padding: 0 ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     padding: 0;
   }
@@ -16,9 +17,9 @@ export const MainResultsHeaderContentStyle = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding-bottom: 10px;
+  padding-bottom: ${spacings.s};
   border-bottom: 1px solid ${colors.Border.Interface.DarkSecondary};
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
 `;
 
 export const MainResultsTitleWrapperStyle = styled(ParagraphStyle)`
@@ -27,7 +28,7 @@ export const MainResultsTitleWrapperStyle = styled(ParagraphStyle)`
 
 export const MainResultsTitleStyle = styled.p`
   display: inline-flex;
-  margin-right: 10px;
+  margin-right: ${spacings.s};
   font-family: ${typography.FontFamily.Italic};
   font-size: ${typography.FontSize.Arrondissement};
 

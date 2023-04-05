@@ -8,6 +8,7 @@ import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { CardStyle } from '@make.org/ui/elements/CardsElements';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const TopIdeaCardStyle = styled(CardStyle)`
   overflow: hidden;
@@ -49,7 +50,7 @@ export const TopIdeaContentStyle = styled(Link)`
   font-weight: bold;
   align-self: flex-start;
   flex: 1 1 auto;
-  margin-top: 15px;
+  margin-top: ${spacings.sm};
   text-decoration: none;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${typography.FontSize.Arrondissement};
@@ -68,11 +69,11 @@ export const ProposalsAssociatedStyle = styled(ParagraphStyle)`
 `;
 
 export const ProposalsAssociatedTextStyle = styled(ParagraphStyle)`
-  padding-bottom: 5px;
+  padding-bottom: ${spacings.xs};
 `;
 
 export const TopIdeaCardContentStyle = styled.div`
-  margin: 15px 0;
+  margin: ${spacings.sm} 0;
 `;
 
 export const PositionStyle = styled.div`
@@ -83,7 +84,7 @@ export const PositionStyle = styled.div`
 `;
 
 export const PositionContentStyle = styled(ParagraphStyle)`
-  margin-left: 10px;
+  margin-left: ${spacings.s};
 `;
 
 export const TopIdeaCollapseWrapperStyle = styled.div`
@@ -91,8 +92,8 @@ export const TopIdeaCollapseWrapperStyle = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: 20px;
-  margin-top: 10px;
+  padding-top: ${spacings.m};
+  margin-top: ${spacings.s};
   border-top: 1px solid ${colors.Border.Interface.DarkSecondary};
 `;
 
@@ -130,7 +131,7 @@ export const TopIdeaCollapseIconStyle = {
 export const ScoringContainerStyle = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
+  margin-bottom: ${spacings.l};
   justify-content: space-between;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     flex-direction: row;

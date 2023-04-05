@@ -4,10 +4,11 @@ import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { SvgAngleArrowRight } from '@make.org/ui/Svg/elements';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const FeaturedListItemStyle = styled.li`
   display: inline-flex;
-  margin: 0 15px 15px 0;
+  margin: 0 ${spacings.sm} ${spacings.sm} 0;
 `;
 
 export const FeaturedLinkStyle = styled.a`
@@ -18,7 +19,7 @@ export const FeaturedLinkStyle = styled.a`
   text-decoration: none;
   background-color: transparent;
   border: 1px solid ${colors.Border.Interface.Darker};
-  padding: 8px 15px;
+  padding: ${spacings.s} ${spacings.sm};
   border-radius: 20px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${typography.FontSize.Arrondissement};
@@ -28,7 +29,7 @@ export const FeaturedLinkStyle = styled.a`
 export const FeaturedLinkIconStyle = styled(SvgAngleArrowRight)`
   width: 12px;
   height: 12px;
-  margin-left: 10px;
+  margin-left: ${spacings.s};
   .tofill {
     fill: ${colors.Content.Make.Secondary};
   }

@@ -11,6 +11,7 @@ import {
   BodyMCondensed,
   BodyMDefault,
 } from '@make.org/designsystem/components/Body';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const PartnershipSectionStyle = styled(ColumnElementStyle)`
   width: 100%;
@@ -22,8 +23,8 @@ export const PartnershipInnerStyle = styled.div`
   padding-top: 40px;
   padding-bottom: 40px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: ${spacings.xl};
+    padding-bottom: ${spacings.xl};
   }
 `;
 
@@ -33,24 +34,24 @@ export const PartnershipSubtitleStyle = styled(BodyMCondensed).attrs({
   text-transform: uppercase;
   color: ${colors.Content.Interface.Light};
   opacity: 0.65;
-  margin-bottom: 5px;
+  margin-bottom: ${spacings.xs};
 `;
 
 export const PartnershipTitleStyle = styled(TitleL)`
   letter-spacing: 0.5px;
   color: ${colors.Content.Interface.Light};
-  margin-bottom: 15px;
+  margin-bottom: ${spacings.sm};
   text-transform: none;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${typography.FontSize.Earth};
-    margin-bottom: 10px;
+    margin-bottom: ${spacings.s};
   }
 `;
 
 export const PartnershipParagraphStyle = styled(BodyMDefault)`
   letter-spacing: 0.12px;
   color: ${colors.Content.Interface.Light};
-  margin-bottom: 30px;
+  margin-bottom: ${spacings.l};
 `;
 
 export const PartnershipRedButton = styled(LinkAsRedButton)`

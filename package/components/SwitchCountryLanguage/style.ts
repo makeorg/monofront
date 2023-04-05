@@ -1,5 +1,6 @@
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
@@ -30,7 +31,7 @@ export const SwitchCountryLanguageTitleStyle = styled(TitleS).attrs({
 export const SwitchCountrySubtitleStyle = styled(BodyMDefault)`
   text-transform: none;
   color: ${colors.Content.Interface.DarkSecondary};
-  margin-top: 10px;
+  margin-top: ${spacings.s};
 `;
 
 export const MultilingualRadioListWrapperStyle = styled.ul`
@@ -40,15 +41,15 @@ export const MultilingualRadioListWrapperStyle = styled.ul`
   justify-content: space-between;
   list-style: none;
   text-decoration: none;
-  margin-top: 20px;
-  padding: 5px;
+  margin-top: ${spacings.m};
+  padding: ${spacings.xs};
   background-color: ${colors.Background.Interface.DarkSecondary};
   border-radius: 8px;
   max-height: 220px;
   overflow-y: scroll;
 
   &.languages-switch {
-    margin-bottom: 30px;
+    margin-bottom: ${spacings.l};
   }
 `;
 
@@ -58,7 +59,7 @@ export const MultilingualRadioItemWrapperStyle = styled.li`
   width: 100%;
   border-radius: 8px;
   font-size: ${typography.FontSize.Arrondissement};
-  padding: 15px 20px;
+  padding: ${spacings.sm} ${spacings.m};
   text-decoration: none;
   :last-child {
     margin-bottom: 0px;
@@ -96,5 +97,5 @@ export const MultilingualRadioAsTransparentButtonLabelStyle = styled.label`
 export const CountryLanguageSwitchRedButtonStyle = styled(RedButtonStyle)`
   max-width: 120px;
   width: 100%;
-  margin: 30px auto 0px auto;
+  margin: ${spacings.l} auto 0px auto;
 `;

@@ -6,6 +6,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { QuestionThemeType } from '@make.org/types';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const ProgressPreviousButtonStyle = styled(UnstyledButtonStyle)`
   flex: 0;
@@ -29,7 +30,7 @@ export const ProgressCounterStyle = styled.span`
   align-self: center;
   flex: 0;
   color: ${colors.Content.Interface.DarkSecondary};
-  padding: 0 10px;
+  padding: 0 ${spacings.s};
   font-size: ${typography.FontSize.RueDeLappe};
   line-height: 1;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -37,7 +38,7 @@ export const ProgressCounterStyle = styled.span`
     line-height: 1.5;
     padding: 0 25px;
     &.widget {
-      padding: 0 10px;
+      padding: 0 ${spacings.s};
       font-size: ${typography.FontSize.RueDeLappe};
       line-height: 1;
     }

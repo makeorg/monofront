@@ -5,6 +5,7 @@ import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { BodyXSHighlight } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const QualificationLabelStyle = styled(BodyXSHighlight).attrs({
   as: 'span',
@@ -28,7 +29,7 @@ export const CounterStyle = styled.span<{ isWidget?: boolean }>`
     props.isWidget
       ? typography.FontSize.RueDeLappe
       : typography.FontSize.Arrondissement};
-  margin-left: 10px;
+  margin-left: ${spacings.s};
   @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
     font-size: ${props =>
       props.isWidget
@@ -41,5 +42,5 @@ export const QualifyButtonWrapperStyle = styled(UnstyledListStyle)`
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  grid-gap: 5px;
+  grid-gap: ${spacings.xs};
 `;

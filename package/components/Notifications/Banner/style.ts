@@ -14,6 +14,7 @@ import { ColumnToRowElementStyle } from '@make.org/ui/elements/FlexElements';
 import { Link } from 'react-router-dom';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { shadows } from '@make.org/designsystem/tokens/shadows';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const NotificationWrapperStyle = styled.aside`
   position: sticky;
@@ -27,7 +28,7 @@ export const NotificationWrapperStyle = styled.aside`
   box-shadow: ${shadows.s10};
   background-color: ${colors.Background.Alert.Infos};
   box-shadow: ${shadows.s10};
-  margin-top: -5px;
+  margin-top: -${spacings.xs};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     padding: 25px ${intToPx(DefaultPadding.Desktop)};
   }
@@ -51,8 +52,8 @@ export const NotificationCloseButtonStyle = styled(CloseButtonStyle)`
     fill: ${colors.Content.Interface.Light};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    top: 15px;
-    right: 15px;
+    top: ${spacings.sm};
+    right: ${spacings.sm};
   }
 `;
 
@@ -69,10 +70,10 @@ export const VoteOnlyMessageStyle = styled(ColumnToRowElementStyle)`
 
 export const VoteOnlyButtonStyle = styled(WhiteButtonStyle)`
   white-space: nowrap;
-  margin-top: 15px;
+  margin-top: ${spacings.sm};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     margin-top: 0;
-    margin-left: 15px;
+    margin-left: ${spacings.sm};
   }
 `;
 
@@ -80,7 +81,7 @@ export const WhiteLink = styled(Link)`
   font-size: ${typography.FontSize.Arrondissement};
   color: ${colors.Content.Interface.Light};
   text-decoration: underline;
-  margin: 0 5px;
+  margin: 0 ${spacings.xs};
   &:hover,
   &:focus {
     color: ${colors.Content.Interface.Light};

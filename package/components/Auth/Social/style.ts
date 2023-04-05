@@ -5,6 +5,7 @@ import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { BodySHighLight } from '@make.org/designsystem/components/Body';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { SocialNetworksColors } from '../../Sharing/Styled';
 
 export const AuthenticationButtonWrapperStyle = styled(CenterColumnStyle)`
@@ -24,13 +25,13 @@ export const SvgLogoWrapperStyle = styled.span`
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: ${spacings.s};
 `;
 
 export const SvgLogoFacebookWrapperStyle = styled(SvgLogoWrapperStyle)`
   background-color: ${SocialNetworksColors.Facebook};
   fill: white;
-  padding-top: 5px;
+  padding-top: ${spacings.xs};
 `;
 
 const SocialButtonStyle = styled.button`

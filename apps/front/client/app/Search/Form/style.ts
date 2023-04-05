@@ -5,6 +5,7 @@ import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const SearchFormTriggerStyle = styled(UnstyledButtonStyle)`
   margin-right: 25px;
@@ -31,7 +32,7 @@ export const SearchFormWrapperStyle = styled(FlexElementStyle)`
   opacity: 0;
   background-color: ${colors.Background.Interface.Lighter};
   width: 100%;
-  padding: 10px 20px;
+  padding: ${spacings.s} ${spacings.m};
   transition: 0.5s ease opacity;
   &.expanded {
     top: 0;
@@ -49,13 +50,13 @@ export const SearchFormStyle = styled.form`
   display: flex;
   position: relative;
   width: 100%;
-  padding: 6.5px 15px;
+  padding: ${spacings.xs} ${spacings.sm};
   border-radius: 20px;
   background-color: ${colors.Background.Interface.DarkSecondary};
   border: 1px solid ${colors.Border.Interface.DarkSecondary};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     width: 160px;
-    margin-left: 30px;
+    margin-left: ${spacings.l};
     transition: 1s ease width;
     &.expanded {
       width: 100%;

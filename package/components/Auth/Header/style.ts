@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const ProfileLinkStyle = styled(Link)`
   font-family: ${typography.FontFamily.Condensed};
@@ -17,7 +18,7 @@ export const ProfileLinkStyle = styled(Link)`
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     > span {
-      margin-right: 5px;
+      margin-right: ${spacings.xs};
     }
   }
 `;

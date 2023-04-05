@@ -6,6 +6,7 @@ import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { shadows } from '@make.org/designsystem/tokens/shadows';
 import { BodyXSDefault } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { BorderRadius } from './CardsElements';
 import { SvgExternalLink, SvgSelectArrow } from '../Svg/elements';
 import { FlexElementStyle } from './FlexElements';
@@ -25,7 +26,7 @@ line-height: 1.31;
 export const CheckboxWrapper = styled(FlexElementStyle)`
   align-items: center;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: ${spacings.sm};
 `;
 
 export const CheckboxLabelStyle = styled.label<{
@@ -36,7 +37,7 @@ export const CheckboxLabelStyle = styled.label<{
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-top: 5px;
+  margin-top: ${spacings.xs};
   color: ${props =>
     props.isBlack
       ? colors.Content.Interface.Dark
@@ -165,12 +166,12 @@ export const FormCenterAlignStyle = styled.form`
 `;
 
 export const FormRequirementsStyle = styled(BodyXSDefault)`
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
   color: ${colors.Content.Interface.DarkSecondary};
 `;
 
 export const FormRequirementsLeftStyle = styled(BodyXSDefault)`
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
   color: ${colors.Content.Interface.DarkSecondary};
   align-self: flex-start;
 `;
@@ -179,7 +180,7 @@ export const FakeFieldStyle = styled.div<{ hasError?: boolean }>`
   display: flex;
   position: relative;
   width: 100%;
-  padding: 0 15px;
+  padding: 0 ${spacings.sm};
   border-radius: 30px;
   background-color: ${colors.Background.Interface.Lighter};
   border-width: 1px;
@@ -188,7 +189,7 @@ export const FakeFieldStyle = styled.div<{ hasError?: boolean }>`
     props.hasError
       ? colors.Border.Alert.Error
       : colors.Border.Interface.DarkMain};
-  margin-bottom: 15px;
+  margin-bottom: ${spacings.sm};
   &:last-child {
     margin-bottom: 0;
   }
@@ -209,7 +210,7 @@ export const FieldWrapperStyle = styled.div`
   > input:not([value='']),
   > textarea:not(:empty),
   > textarea:focus {
-    padding-top: 15px;
+    padding-top: ${spacings.sm};
     line-height: 20px;
     padding-bottom: 3px;
     & + label {
@@ -219,7 +220,7 @@ export const FieldWrapperStyle = styled.div`
   }
   > textarea:not(:empty),
   > textarea:focus {
-    padding-bottom: 15px;
+    padding-bottom: ${spacings.sm};
   }
   > input:required + label {
     font-size: ${typography.FontSize.Arrondissement};
@@ -236,7 +237,7 @@ export const FloatingLabelStyle = styled.label<{ isWidget?: boolean }>`
   font-weight: normal;
   position: absolute;
   pointer-events: none;
-  left: 5px;
+  left: ${spacings.xs};
   top: 0;
   transition: 0.25s ease all;
   white-space: nowrap;
@@ -247,8 +248,8 @@ export const FloatingLabelStyle = styled.label<{ isWidget?: boolean }>`
 
 export const FormErrorsContainerStyle = styled.div`
   width: 100%;
-  padding: 15px;
-  margin-bottom: 10px;
+  padding: ${spacings.sm};
+  margin-bottom: ${spacings.s};
   border-radius: ${intToPx(BorderRadius)};
   background-color: ${colors.Content.Make.Secondary};
   color: ${colors.Content.Interface.Light};
@@ -258,11 +259,11 @@ export const FormErrorsContainerStyle = styled.div`
 export const FormErrorsIntroStyle = styled.p`
   font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
-  margin: 0 0 10px;
+  margin: 0 0 ${spacings.s};
 `;
 
 export const FormErrorsListItemStyle = styled.li`
-  margin: 0 0 5px;
+  margin: 0 0 ${spacings.xs};
   label {
     color: ${colors.Content.Interface.Light};
     font-family: ${typography.FontFamily.Hightlight};
@@ -282,14 +283,14 @@ export const CustomErrorTriggerStyle = styled(UnstyledButtonStyle)`
   font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
   text-decoration: underline;
-  margin-left: 5px;
+  margin-left: ${spacings.xs};
 `;
 
 const InputIconStyle = styled.span`
   display: flex;
   color: ${colors.Content.Make.Secondary};
   font-size: ${typography.FontSize.Paris};
-  margin-right: 5px;
+  margin-right: ${spacings.xs};
   svg {
     fill: ${colors.Content.Make.Secondary};
   }
@@ -300,7 +301,7 @@ export const CenterInputIconStyle = styled(InputIconStyle)`
 `;
 
 export const TextAreaIconStyle = styled(InputIconStyle)`
-  margin-top: 10px;
+  margin-top: ${spacings.s};
 `;
 
 export const BasicInputStyle = styled.input`
@@ -312,11 +313,11 @@ export const BasicInputStyle = styled.input`
   color: ${colors.Content.Interface.Dark};
   font-size: ${typography.FontSize.Arrondissement};
   line-height: 38px;
-  padding: 0 5px;
+  padding: 0 ${spacings.xs};
 `;
 
 export const BasicSelectStyle = styled.select`
-  margin: 10px 0px;
+  margin: ${spacings.s} 0px;
   border: none;
   background-color: transparent;
   background: transparent url(${SvgSelectArrow as never}) no-repeat 95% center;
@@ -325,7 +326,7 @@ export const BasicSelectStyle = styled.select`
   color: ${colors.Content.Interface.Dark};
   font-size: ${typography.FontSize.Arrondissement};
   line-height: 24px;
-  padding: 0 5px;
+  padding: 0 ${spacings.xs};
   -webkit-line-clamp: 1;
   text-overflow: ellipsis;
 `;
@@ -333,14 +334,14 @@ export const BasicSelectStyle = styled.select`
 export const FormSuccessMessageStyle = styled.p`
   display: flex;
   align-content: center;
-  margin-top: 10px;
+  margin-top: ${spacings.s};
   font-size: ${typography.FontSize.RueDeLappe};
 `;
 
 export const FormSuccessSvgStyle = {
   display: 'inline-flex',
   fontSize: '16px',
-  marginRight: '5px',
+  marginRight: `${spacings.xs}`,
   fill: colors.Content.Alert.Positive,
 };
 
@@ -353,22 +354,22 @@ export const BasicTextAreaStyle = styled(TextareaAutosize)`
   font-weight: bold;
   color: ${colors.Content.Interface.DarkSecondary};
   font-size: ${typography.FontSize.Arrondissement};
-  padding: 10px 5px;
+  padding: ${spacings.s} ${spacings.xs};
   resize: none;
 `;
 
 export const TextAreaCounterStyle = styled(BodyXSDefault).attrs({ as: 'div' })`
   color: ${colors.Content.Interface.DarkSecondary};
   position: absolute;
-  right: 5px;
-  bottom: 5px;
+  right: ${spacings.xs};
+  bottom: ${spacings.xs};
 `;
 
 export const PasswordRequirements = styled.div`
   align-self: flex-end;
   font-size: ${typography.FontSize.RueDeLappe};
   color: ${colors.Content.Interface.DarkSecondary};
-  margin: 15px 5px 0 0;
+  margin: ${spacings.sm} ${spacings.xs} 0 0;
 `;
 
 export const PasswordContainer = styled.div`
@@ -376,5 +377,5 @@ export const PasswordContainer = styled.div`
   flex-direction: column-reverse;
   position: relative;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: ${spacings.sm};
 `;

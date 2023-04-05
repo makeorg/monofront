@@ -5,6 +5,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { SequenceParagraphStyle } from '@make.org/components/Sequence/Cards/style';
 import { SvgSmallLogo } from '@make.org/ui/Svg/elements/SmallLogo';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const MaintenancePageStyle = styled.div`
   ${ContainerWithPadding}
@@ -24,23 +25,23 @@ export const MaintenanceImageStyle = styled.img`
   width: 300px;
   margin: 130px auto 40px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin: 35px auto 20px;
+    margin: 35px auto ${spacings.m};
   }
 `;
 export const MaintenanceTitleStyle = styled(SequenceTitleStyle)`
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin-bottom: 10px;
+    margin-bottom: ${spacings.s};
   }
 `;
 
 export const MakeSvgSmallLogo = styled(SvgSmallLogo)`
-  margin: 20px;
+  margin: ${spacings.m};
 `;
 
 export const MaintenanceParagraphStyle = styled(SequenceParagraphStyle)`
-  margin-bottom: 30px;
+  margin-bottom: ${spacings.l};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin-bottom: 20px;
+    margin-bottom: ${spacings.m};
   }
 `;

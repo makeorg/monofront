@@ -1,9 +1,10 @@
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
 import styled from 'styled-components';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const NavigationWrapperStyle = styled.div`
-  padding-top: 15px;
+  padding-top: ${spacings.sm};
   position: sticky;
   top: 0;
   z-index: 2;

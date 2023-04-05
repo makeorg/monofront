@@ -14,6 +14,7 @@ import {
 import { LinkAsRedButton } from '@make.org/ui/elements/LinkElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const InnerProposalStyle = styled(MiddleColumnStyle)`
   width: 100%;
@@ -47,7 +48,7 @@ export const DescriptionStyle = styled(ParagraphStyle)`
 
 export const FooterContentSeparatorStyle = styled(SeparatorStyle)`
   max-width: 100px;
-  margin: 5px 0 15px;
+  margin: ${spacings.xs} 0 ${spacings.sm};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     max-width: 2px;
     height: 60px;
@@ -64,30 +65,30 @@ export const ButtonWrapperStyle = styled(FlexElementStyle)`
 `;
 
 export const ButtonStyle = styled(LinkAsRedButton)`
-  margin: 0 5px;
+  margin: 0 ${spacings.xs};
   text-align: center;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) and (max-width: ${intToPx(
       Breakpoints.LargeDesktop
     )}) {
-    margin: 5px 0;
+    margin: ${spacings.xs} 0;
   }
 `;
 
 export const SharingWrapperStyle = styled(MiddleColumnToRowStyle)`
   width: 100%;
-  margin: 15px 0;
+  margin: ${spacings.sm} 0;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin: 15px 0;
+    margin: ${spacings.sm} 0;
   }
 `;
 
 export const SharingTitleStyle = styled.h2`
   font-size: ${typography.FontSize.RueDeLappe};
   color: ${colors.Content.Interface.DarkSecondary};
-  margin: 0 0 10px;
+  margin: 0 0 ${spacings.s};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${typography.FontSize.Paris};
-    margin: 0 20px;
+    margin: 0 ${spacings.m};
   }
 `;
 export const ProposalCardContentStyle = styled.blockquote`
@@ -96,7 +97,7 @@ export const ProposalCardContentStyle = styled.blockquote`
   line-height: normal;
   font-family: ${typography.FontFamily.Default};
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${typography.FontSize.GrandeCouronne};
   }
@@ -105,6 +106,6 @@ export const ProposalCardContentStyle = styled.blockquote`
 export const ProposalCardSeparatorStyle = styled(SmallSeparatorStyle)`
   margin: 10px 0;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin: 15px 0 25px;
+    margin: ${spacings.sm} 0 25px;
   }
 `;

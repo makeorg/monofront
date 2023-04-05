@@ -3,6 +3,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { shadows } from '@make.org/designsystem/tokens/shadows';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { SpaceBetweenRowStyle } from '../../elements/FlexElements';
 
 export const SkeletonCardStyle = styled.div`
@@ -12,18 +13,18 @@ export const SkeletonCardStyle = styled.div`
   align-items: center;
   flex: 1;
   width: 100%;
-  padding: 0 20px;
+  padding: 0 ${spacings.m};
   background-color: ${colors.Background.Interface.Lighter};
   border-radius: 8px;
   box-shadow: ${shadows.s10};
   max-height: 365px;
-  margin: 20px 0 40px;
+  margin: ${spacings.m} 0 40px;
   &.widget {
     max-height: 235px;
-    margin: 10px 0 10px;
+    margin: ${spacings.s} 0 ${spacings.s};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    padding: 0 30px;
+    padding: 0 ${spacings.l};
   }
 `;
 
@@ -48,18 +49,18 @@ export const SkeletonLineStyle = styled.div`
     max-width: 75px;
   }
   &.name {
-    margin: 60px auto 20px;
+    margin: 60px auto ${spacings.m};
   }
   &.proposal {
     margin-bottom: 7px;
   }
   &.title {
     align-self: flex-start;
-    margin-top: 30px;
+    margin-top: ${spacings.l};
   }
   &.button {
     max-width: 50px;
-    margin-right: 20px;
+    margin-right: ${spacings.m};
     margin-bottom: 40px;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -93,7 +94,7 @@ export const SkeletonRoundStyle = styled.div`
 `;
 
 export const SkeletonVoteWrapperStyle = styled(SpaceBetweenRowStyle)`
-  margin: 30px auto 50px;
+  margin: ${spacings.l} auto ${spacings.xl};
   width: 100%;
   max-width: 175px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {

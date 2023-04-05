@@ -5,11 +5,12 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { TitleXXS } from '@make.org/designsystem/components/Titles';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const ScoringContentStyle = styled.div`
   background-color: ${colors.Background.Interface.DarkSecondary};
-  padding: 20px;
-  margin: 0 0 20px 0;
+  padding: ${spacings.m};
+  margin: 0 0 ${spacings.m} 0;
   width: 100%;
   border-radius: ${intToPx(BorderRadius)};
   &:nth-child(1) {
@@ -17,7 +18,7 @@ export const ScoringContentStyle = styled.div`
   }
 
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin: 0 0 0 20px;
+    margin: 0 0 0 ${spacings.m};
   }
 `;
 
@@ -31,7 +32,7 @@ export const ScoringTextStyle = styled.span`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 10px;
+  margin-left: ${spacings.s};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     flex-direction: column;
     align-items: initial;
@@ -40,13 +41,13 @@ export const ScoringTextStyle = styled.span`
 
 export const ScoringPercentageStyle = styled(TitleXXS).attrs({ as: 'span' })`
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin-bottom: 5px;
+    margin-bottom: ${spacings.xs};
   }
 `;
 
 export const ScoringPercentageTextStyle = styled.span`
   font-size: ${typography.FontSize.Arrondissement};
-  margin-left: 5px;
+  margin-left: ${spacings.xs};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     margin-left: 0;
   }

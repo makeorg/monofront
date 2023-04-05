@@ -9,25 +9,26 @@ import { Link } from 'react-router-dom';
 import { BodyMDefault } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { shadows } from '@make.org/designsystem/tokens/shadows';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const PaginationNavStyle = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 50px;
+  gap: ${spacings.sm};
+  margin-bottom: ${spacings.xl};
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    gap: 30px;
+    gap: ${spacings.l};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    gap: 50px;
+    gap: ${spacings.xl};
   }
 `;
 
 export const PaginationTextStyle = styled(BodyMDefault).attrs({ as: 'div' })`
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: ${spacings.s};
   align-self: center;
   color: ${colors.Content.Interface.Dark};
 `;
@@ -118,7 +119,7 @@ export const DropDownListStyle = styled.ul`
 export const ListItemStyle = styled.li`
   width: 100%;
   list-style: none;
-  margin-bottom: 5px;
+  margin-bottom: ${spacings.xs};
   &.selected {
     font-weight: bold;
   }

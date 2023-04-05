@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { DefaultPadding, Breakpoints } from '@make.org/assets/vars/Breakpoints';
@@ -14,7 +15,7 @@ import {
 
 export const SearchResultsConsultationListStyle = styled(UnstyledListStyle)`
   @media (max-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin: 0 20px;
+    margin: 0 ${spacings.m};
   }
 `;
 
@@ -26,14 +27,14 @@ export const BusinessConsultationsItemWrapperStyle = styled(BodyMHighLight)`
 `;
 
 export const BusinessConsultationStyle = styled.div`
-  padding: 15px;
+  padding: ${spacings.sm};
   flex: 1;
 `;
 
 export const BusinessConsultationsItemStatusStyle = styled(BodyXSCondensed)`
   color: ${colors.Content.Interface.DarkSecondary};
   text-transform: uppercase;
-  margin-bottom: 4px;
+  margin-bottom: ${spacings.xs};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${typography.FontSize.Arrondissement};
   }
@@ -65,7 +66,7 @@ export const BusinessConsultationsItemBorderStyle = styled.div`
 export const BusinessConsultationsItemArrowStyle = styled(SvgAngleArrowRight)`
   justify-self: center;
   align-self: center;
-  margin-right: 5px;
+  margin-right: ${spacings.s};
 `;
 
 export const BusinessConsultationsItemStyle = styled.li<{

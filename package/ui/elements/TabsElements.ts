@@ -7,6 +7,7 @@ import {
 } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const TabNavStyle = styled.nav`
   position: relative;
@@ -91,7 +92,8 @@ const TabStyle = styled.li<{ isSelected?: boolean }>`
     @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
       flex-flow: row;
       font-size: ${typography.FontSize.Paris};
-      padding: ${props => (props.isSelected ? '15px' : '10px 15px')};
+      padding: ${props =>
+        props.isSelected ? `${spacings.sm}` : `${spacings.s} ${spacings.sm}`};
     }
   }
 `;

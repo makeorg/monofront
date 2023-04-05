@@ -26,6 +26,7 @@ import {
   BodyMCondensed,
 } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const BrowseHeaderStyle = styled.header`
   background-color: ${colors.Background.Interface.DarkSecondary};
@@ -33,18 +34,18 @@ export const BrowseHeaderStyle = styled.header`
 
 export const BrowseHeaderInnerStyle = styled.div`
   ${ContainerWithPadding};
-  padding-top: 30px;
+  padding-top: ${spacings.l};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     padding-top: 35px;
   }
 `;
 
 export const BrowseHeaderTitleStyle = styled(TitleXL)`
-  margin-bottom: 24px;
+  margin-bottom: ${spacings.m};
   text-transform: none;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${typography.FontSize.Earth};
-    margin-bottom: 33px;
+    margin-bottom: ${spacings.l};
   }
 `;
 
@@ -81,9 +82,9 @@ export const ConsultationsListStyle = styled(UnstyledListStyle)`
 `;
 
 export const ConsultationsListItemStyle = styled.li<{ itemsPerRow: number }>`
-  margin-bottom: 50px;
-  padding-left: 20px;
-  padding-right: 20px;
+  margin-bottom: ${spacings.xl};
+  padding-left: ${spacings.m};
+  padding-right: ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     width: ${getFullWidthDividedByItems(2)};
   }
@@ -99,7 +100,7 @@ export const ConsultationArticleStyle = styled.article`
 `;
 
 export const ConsultationElementPictureStyle = styled(Image)`
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
   object-fit: cover;
   max-height: 248px;
 `;
@@ -109,20 +110,20 @@ export const ConsultationElementSubtitleStyle = styled(BodyMCondensed).attrs({
 })`
   text-transform: uppercase;
   color: ${colors.Content.Interface.DarkSecondary};
-  margin-bottom: 5px;
+  margin-bottom: ${spacings.xs};
 `;
 
 export const ConsultationElementTitleStyle = styled(TitleXXS)`
   text-transform: none;
   color: ${colors.Content.Interface.Dark};
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
 `;
 
 export const ClockIconStyle = styled(SvgClock)`
   min-width: 12px;
   min-height: 12px;
   margin-top: 2px;
-  margin-right: 20px;
+  margin-right: ${spacings.m};
   .tofill {
     fill: rgb(37, 49, 134);
   }
@@ -133,7 +134,7 @@ export const ConsultationPeopleIconStyle = styled(SvgPeople)`
   width: 16px;
   min-height: 14px;
   height: 14px;
-  margin-right: 16px;
+  margin-right: ${spacings.sm};
   .tofill {
     fill: rgb(37, 49, 134);
   }
@@ -142,7 +143,7 @@ export const ConsultationPeopleIconStyle = styled(SvgPeople)`
 export const ConsultationLightIconStyle = styled(SvgLightBulb)`
   min-width: 12px;
   min-height: 12px;
-  margin-right: 20px;
+  margin-right: ${spacings.m};
   .tofill {
     fill: rgb(37, 49, 134);
   }
@@ -151,16 +152,16 @@ export const ConsultationLightIconStyle = styled(SvgLightBulb)`
 export const ConsultationActionIconStyle = styled(SvgFist)`
   min-width: 11px;
   min-height: 13px;
-  margin-right: 21px;
+  margin-right: ${spacings.m};
   .tofill {
     fill: ${colors.Content.Make.Secondary};
   }
 `;
 
 export const ConsultationVoteIconStyle = styled(SvgThumbsUp)`
-  min-width: 15px;
+  min-width: ${spacings.sm};
   min-height: 13px;
-  margin-right: 20px;
+  margin-right: ${spacings.m};
   .tofill {
     fill: rgb(37, 49, 134);
   }
@@ -168,17 +169,17 @@ export const ConsultationVoteIconStyle = styled(SvgThumbsUp)`
 
 export const ConsultationElementParagraphStyle = styled(BodyMDefault)`
   color: ${colors.Content.Interface.DarkSecondary};
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
 `;
 
 export const ConsultationItemStyle = styled.span`
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: ${spacings.xs};
   &.red {
     color: ${colors.Content.Make.Secondary};
   }
   &:last-child {
-    margin: 20px 0 0;
+    margin: ${spacings.m} 0 0;
   }
   &:only-child {
     margin: 0;
@@ -188,16 +189,16 @@ export const ConsultationItemStyle = styled.span`
 export const NoConsultationWrapperStyle = styled(ColumnElementStyle)`
   max-width: 540px;
   flex: 1;
-  margin-bottom: 50px;
+  margin-bottom: ${spacings.xl};
 `;
 
 export const NoConsultationImageStyle = styled(MiddleColumnStyle)`
   background-color: ${colors.Background.Interface.DarkSecondary};
   min-height: 174px;
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     min-height: 248px;
-    margin-bottom: 25px;
+    margin-bottom: ${spacings.l};
   }
 `;
 

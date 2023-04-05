@@ -6,10 +6,11 @@ import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { shadows } from '@make.org/designsystem/tokens/shadows';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const SearchPageSidebarStyle = styled(ColumnElementStyle)`
   width: 100%;
-  padding: 0 20px;
+  padding: 0 ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     position: sticky;
     top: 0;
@@ -17,12 +18,12 @@ export const SearchPageSidebarStyle = styled(ColumnElementStyle)`
     order: 1;
     max-width: 360px;
     padding: 0;
-    margin-left: 20px;
+    margin-left: ${spacings.m};
   }
 `;
 
 export const SeachRegisterButtonStyle = styled(RedButtonStyle)`
-  margin-top: 15px;
+  margin-top: ${spacings.sm};
   svg {
     width: 13px;
     height: 13px;
@@ -46,5 +47,5 @@ export const SearchSidebarTileStyle = styled.div<{
   background-color: ${colors.Background.Interface.Lighter};
   border-radius: ${intToPx(BorderRadius)};
   box-shadow: ${shadows.s10};
-  padding: 20px;
+  padding: ${spacings.m};
 `;

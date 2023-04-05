@@ -7,12 +7,13 @@ import { SvgExternalLink, SvgWorldMap } from '@make.org/ui/Svg/elements';
 import { SEARCH } from '@make.org/types/enums';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { shadows } from '@make.org/designsystem/tokens/shadows';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const MenuOpenTriggerStyle = styled(UnstyledButtonStyle)`
   display: flex;
   flex-flow: column;
   align-items: flex-start;
-  margin-right: 20px;
+  margin-right: ${spacings.m};
 `;
 
 export const MenuBarStyle = styled.span`
@@ -25,7 +26,7 @@ export const MenuBarStyle = styled.span`
   }
   &.second {
     width: 26px;
-    margin: 6px 0;
+    margin: ${spacings.xs} 0;
   }
 `;
 
@@ -51,8 +52,8 @@ export const MenuPanelStyle = styled.div`
 
 export const MenuCloseTriggerStyle = styled(UnstyledButtonStyle)`
   position: absolute;
-  top: 30px;
-  right: 30px;
+  top: ${spacings.l};
+  right: ${spacings.l};
   z-index: 11;
   &.tofill {
     fill: ${colors.Content.Interface.Dark};
@@ -61,7 +62,7 @@ export const MenuCloseTriggerStyle = styled(UnstyledButtonStyle)`
 
 export const MenuInnerStyle = styled(SpaceBetweenColumnStyle)`
   height: 100%;
-  padding: 100px 0 40px;
+  padding: ${spacings.xxl} 0 40px;
   align-items: center;
 `;
 
@@ -77,21 +78,21 @@ export const MenuItemStyle = styled.li`
     margin-bottom: 2px;
   }
   &.extra-margin-top {
-    margin-top: 15px;
+    margin-top: ${spacings.sm};
   }
 `;
 
 export const MenuItemTitleStyle = styled.span`
   font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
-  padding: 0 30px;
+  padding: 0 ${spacings.l};
 `;
 
 export const MenuInternalLinkStyle = styled(Link)`
   font-size: ${typography.FontSize.Arrondissement};
   line-height: 67px;
   text-decoration: none;
-  padding: 0 30px;
+  padding: 0 ${spacings.l};
   &.current {
     font-family: ${typography.FontFamily.Hightlight};
     font-weight: bold;
@@ -103,13 +104,13 @@ export const MenuExternalLinkStyle = styled.a`
   align-items: center;
   font-size: ${typography.FontSize.Arrondissement};
   line-height: 67px;
-  padding: 0 30px;
+  padding: 0 ${spacings.l};
 `;
 
 export const MenuNewWindowIconStyle = styled(SvgExternalLink)`
   width: 14px;
   height: 14px;
-  margin-left: 5px;
+  margin-left: ${spacings.xs};
 `;
 
 export const DesktopMenuNavStyle = styled.nav`
@@ -153,7 +154,7 @@ const DesktopLinkStyle = `
   align-items: center;
   font-size: ${typography.FontSize.Arrondissement};
   line-height: 40px;
-  padding: 0 30px;
+  padding: 0 ${spacings.l};
 `;
 
 export const DesktopMenuInternalLinkStyle = styled(Link)`
@@ -175,7 +176,7 @@ export const MenuItemCountryLanguageLinkStyle = styled(Link)`
 `;
 
 export const MenuItemCountryLanguageIconStyle = styled(SvgWorldMap)`
-  margin-right: 10px;
+  margin-right: ${spacings.s};
 `;
 
 export const MenuBulletPointStyle = styled.span`

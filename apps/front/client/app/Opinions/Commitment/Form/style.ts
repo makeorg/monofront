@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { typography } from '@make.org/designsystem/tokens/typography';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { CenterRowStyle } from '@make.org/ui/elements/FlexElements';
@@ -8,25 +9,25 @@ import { CenterRowStyle } from '@make.org/ui/elements/FlexElements';
 export const OpinionFormStyle = styled.form`
   display: flex;
   flex-flow: column;
-  margin-top: 20px;
+  margin-top: ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin-top: 30px;
+    margin-top: ${spacings.l};
   }
 `;
 
 export const OpinionFormTitleStyle = styled(ParagraphStyle)`
   font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin-bottom: 30px;
+    margin-bottom: ${spacings.l};
   }
 `;
 
 export const OpinionAreaWrapperStyle = styled.div`
-  margin-bottom: 10px;
+  margin-bottom: ${spacings.s};
 `;
 
 export const OpinionSubmitWrapperStyle = styled(CenterRowStyle)`
-  margin-top: 15px;
+  margin-top: ${spacings.sm};
 `;

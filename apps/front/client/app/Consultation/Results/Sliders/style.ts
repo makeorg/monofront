@@ -7,6 +7,7 @@ import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { shadows } from '@make.org/designsystem/tokens/shadows';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const ResultsSliderArrowsStyle = styled(UnstyledButtonStyle)`
   position: absolute;
@@ -21,17 +22,17 @@ export const ResultsSliderArrowsStyle = styled(UnstyledButtonStyle)`
     fill: ${colors.Content.Interface.Dark};
   }
   &.glider-prev {
-    left: 5px;
+    left: ${spacings.xs};
   }
   &.glider-next {
-    right: 5px;
+    right: ${spacings.xs};
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     &.glider-prev {
-      left: 10px;
+      left: ${spacings.s};
     }
     &.glider-next {
-      right: 10px;
+      right: ${spacings.s};
     }
   }
 `;
@@ -40,13 +41,13 @@ export const ResultsSliderPagination = styled(ParagraphStyle)<{
   focusable: string;
 }>`
   text-align: center;
-  margin-top: 10px;
+  margin-top: ${spacings.s};
   font-family: ${typography.FontFamily.Default};
   font-size: ${typography.FontSize.RueDeLappe};
   line-height: 1.5;
   letter-spacing: 0.12px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin-top: 20px;
+    margin-top: ${spacings.m};
   }
 `;
 
@@ -58,9 +59,9 @@ export const ResultsSliderStyle = styled.div<{
   box-shadow: ${shadows.s10};
   &.results-page {
     box-shadow: none;
-    margin-top: 10px;
+    margin-top: ${spacings.s};
     @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-      margin-top: ${props => (props.isResultsPage ? '0px' : '15px')};
+      margin-top: ${props => (props.isResultsPage ? '0px' : `${spacings.sm}`)};
     }
   }
 `;

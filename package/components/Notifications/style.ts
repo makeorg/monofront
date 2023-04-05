@@ -1,4 +1,5 @@
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { SvgAlert, SvgCheck, SvgInfos } from '@make.org/ui/Svg/elements';
 import styled from 'styled-components';
 
@@ -7,7 +8,7 @@ export const NotificationInfosStyle = styled(SvgInfos)<{
   focusable?: string;
 }>`
   min-width: 19px;
-  margin-right: 10px;
+  margin-right: ${spacings.s};
   &.tip {
     width: 12px;
     height: 12px;
@@ -21,7 +22,7 @@ export const NotificationSuccessStyle = styled(SvgCheck)<{
 }>`
   fill: ${colors.Content.Alert.Positive};
   min-width: 22px;
-  margin-right: 10px;
+  margin-right: ${spacings.s};
   &.tip {
     width: 12px;
     height: 12px;
@@ -34,7 +35,7 @@ export const NotificationAlertStyle = styled(SvgAlert)<{
   focusable?: string;
 }>`
   min-width: 19px;
-  margin-right: 10px;
+  margin-right: ${spacings.s};
   &.tip {
     width: 12px;
     height: 12px;

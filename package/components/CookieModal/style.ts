@@ -11,6 +11,7 @@ import { SvgCookie } from '@make.org/ui/Svg/elements';
 import { TitleXXS } from '@make.org/designsystem/components/Titles';
 import { BodyMDefault } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const CookieModalContentStyle = styled.div`
   display: flex;
@@ -19,12 +20,12 @@ export const CookieModalContentStyle = styled.div`
   justify-content: space-between;
   width: 335px;
   max-height: 440px;
-  padding: 20px 20px 76px;
+  padding: ${spacings.m} ${spacings.m} 76px;
   overflow-y: auto;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     width: 800px;
     max-height: 530px;
-    padding: 30px 30px 81px;
+    padding: ${spacings.l} ${spacings.l} 81px;
   }
 `;
 
@@ -47,35 +48,35 @@ export const CookieModalButtonWithLinkStyle = styled(UnstyledButtonStyle)`
   color: ${colors.Content.Interface.DarkSecondary};
   text-decoration: underline;
   &.with-margin-bottom {
-    margin-bottom: 30px;
+    margin-bottom: ${spacings.l};
   }
 `;
 
 export const CookieModalTitleStyle = styled(TitleXXS).attrs({ as: 'h2' })`
   text-transform: none;
   letter-spacing: 0.12px;
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     max-width: 60%;
-    margin-bottom: 30px;
+    margin-bottom: ${spacings.l};
   }
 `;
 
 export const CookieModalParagraphStyle = styled(BodyMDefault)`
-  padding-bottom: 30px;
+  padding-bottom: ${spacings.l};
 `;
 
 export const CookieModalSectionWrapperStyle = styled.ul`
   display: flex;
   flex-flow: column;
   padding: 0px;
-  margin-bottom: 30px;
+  margin-bottom: ${spacings.l};
 `;
 
 export const CookieModalSectionTitleStyle = styled(CookieModalTitleStyle)`
   text-transform: none;
   letter-spacing: normal;
-  margin-bottom: 15px;
+  margin-bottom: ${spacings.sm};
 `;
 
 export const CookieModalBannerWrapperStyle = styled.div`
@@ -89,24 +90,24 @@ export const CookieModalBannerWrapperStyle = styled.div`
   border-radius: 0px;
   left: 0;
   z-index: 5;
-  padding: 20px;
+  padding: ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    padding: 20px 30px;
+    padding: ${spacings.m} ${spacings.l};
   }
 `;
 
 export const CookieModalElementStyle = styled(BodyMDefault).attrs({ as: 'li' })`
   display: flex;
   flex-flow: row;
-  margin-bottom: 10px;
+  margin-bottom: ${spacings.s};
   strong {
     font-family: ${typography.FontFamily.Hightlight};
     font-weight: bold;
   }
   &.with-separator {
     border-bottom: 1px solid ${colors.Border.Interface.DarkMain};
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    padding-bottom: ${spacings.m};
+    margin-bottom: ${spacings.m};
   }
 `;
 
@@ -117,19 +118,19 @@ export const CookieSVGStyle = {
 };
 
 export const CookieModalRedButtonStyle = styled(RedButtonStyle)`
-  margin-left: 15px;
+  margin-left: ${spacings.sm};
 `;
 
 export const SvgCookieStyle = styled(SvgCookie)`
   position: absolute;
   left: -17px;
-  top: 20px;
+  top: ${spacings.m};
   width: 67px;
   height: 65px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     width: 108px;
     height: 104px;
-    top: 14px;
+    top: ${spacings.sm};
     left: -21px;
   }
 `;
@@ -146,12 +147,12 @@ export const CookieModalCookieDetailParagraphStyle = styled(FlexElementStyle)`
   font-family: ${typography.FontFamily.Default};
   font-size: ${typography.FontSize.RueDeLappe};
   border-top: 1px solid ${colors.Border.Interface.DarkMain};
-  margin-top: 10px;
-  padding-top: 10px;
+  margin-top: ${spacings.s};
+  padding-top: ${spacings.s};
   &.cookie-page {
     font-size: ${typography.FontSize.Arrondissement};
-    margin-top: 20px;
-    padding-top: 20px;
+    margin-top: ${spacings.m};
+    padding-top: ${spacings.m};
   }
   &.block {
     display: block;
@@ -170,7 +171,7 @@ export const CookieModalElementSwitchWrapperStyle = styled.div`
 
 export const CookieSwitchWrapperStyle = styled(FlexElementStyle)`
   justify-content: flex-end;
-  margin: 5px 0;
+  margin: ${spacings.xs} 0;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     margin: 0 0 0 20px;
   }
@@ -182,7 +183,7 @@ export const CookieModalBackButtonStyle = styled(UnstyledButtonStyle)`
   display: flex;
   justify-content: center;
   svg {
-    margin: 5px 15px;
+    margin: ${spacings.xs} ${spacings.sm};
   }
 `;
 
@@ -200,15 +201,15 @@ export const CookieDescriptionStyle = styled.span`
 
 export const CookieLabelStyle = styled.span`
   font-size: ${typography.FontSize.Arrondissement};
-  margin-top: 10px;
+  margin-top: ${spacings.s};
   align-self: flex-end;
   &.cookie-page {
-    margin-top: 20px;
+    margin-top: ${spacings.m};
     white-space: nowrap;
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     margin-top: 0;
-    margin-left: 20px;
+    margin-left: ${spacings.m};
     align-self: flex-start;
     &.cookie-page {
       margin-top: 0;

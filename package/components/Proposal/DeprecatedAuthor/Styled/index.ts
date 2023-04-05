@@ -5,10 +5,11 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { SvgCheckedSymbol } from '@make.org/ui/Svg/elements';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const AuthorWrapperStyle = styled.div`
   width: 100%;
-  padding-bottom: 10px;
+  padding-bottom: ${spacings.s};
   border-bottom: 1px solid ${colors.Border.Interface.DarkSecondary};
 `;
 
@@ -45,7 +46,7 @@ export const AuthorInfosStyle = styled(ParagraphStyle)`
 export const ProposalStatusStyle = styled.span`
   font-size: ${typography.FontSize.RueDeLappe};
   color: ${colors.Content.Interface.Light};
-  padding: 5px 10px;
+  padding: ${spacings.xs} ${spacings.s};
   &.status-accepted {
     background-color: ${colors.Background.Alert.Positive};
   }
@@ -62,7 +63,7 @@ export const ProposalStatusStyle = styled.span`
 `;
 
 export const CertifiedIconStyle = styled(SvgCheckedSymbol)`
-  margin-left: 5px;
+  margin-left: ${spacings.xs};
   .tofill {
     fill: rgb(74, 144, 226);
   }

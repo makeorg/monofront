@@ -5,21 +5,22 @@ import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const VoteResultStyle = styled.form`
   display: flex;
   justify-content: center;
   width: 100%;
   min-width: 275px;
-  margin: 10px 0;
-  padding: 0 10px;
+  margin: ${spacings.s} 0;
+  padding: 0 ${spacings.s};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin: 30px 0;
+    margin: ${spacings.l} 0;
   }
 `;
 
 export const VoteResultContainerStyle = styled(CenterColumnStyle)`
-  margin-right: 10px;
+  margin-right: ${spacings.s};
 `;
 
 export const VoteResultGraphStyle = styled(UnstyledListStyle)`
@@ -30,7 +31,7 @@ export const VoteResultGraphStyle = styled(UnstyledListStyle)`
   align-items: flex-start;
   height: 20px;
   max-width: 20px;
-  margin-top: 10px;
+  margin-top: ${spacings.s};
 `;
 
 export const VoteResultItemStyle = styled.li`
@@ -54,7 +55,7 @@ export const VoteResultTotalLabelStyle = styled.p`
   font-size: ${typography.FontSize.RueDeLappe};
   color: ${colors.Content.Interface.DarkSecondary};
   text-align: center;
-  margin-top: 5px;
+  margin-top: ${spacings.xs};
   &.widget {
     font-size: 10px;
   }

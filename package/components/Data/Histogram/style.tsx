@@ -5,10 +5,11 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { FourthLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const HistogramWrapperStyle = styled.div`
   width: 100%;
-  padding: 20px 20px 175px;
+  padding: ${spacings.m} ${spacings.m} 175px;
 `;
 
 export const HistogramTitleStyle = styled(FourthLevelTitleStyle)`
@@ -18,9 +19,9 @@ export const HistogramTitleStyle = styled(FourthLevelTitleStyle)`
   font-weight: bold;
   color: ${colors.Content.Interface.Dark};
   text-transform: none;
-  margin-bottom: 30px;
+  margin-bottom: ${spacings.l};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin-bottom: 50px;
+    margin-bottom: ${spacings.xl};
   }
 `;
 
@@ -29,14 +30,14 @@ export const HistogramLegendStyle = styled.div`
   display: flex;
   flex-flow: column;
   align-items: flex-end;
-  margin-bottom: 10px;
+  margin-bottom: ${spacings.s};
 `;
 
 export const HistogramLegendColorsStyle = styled.span<{ background?: boolean }>`
   display: inline-flex;
   width: 20px;
   height: 12.5px;
-  margin-left: 10px;
+  margin-left: ${spacings.s};
   background-color: ${props =>
     props.background
       ? colors.Background.Interface.DarkMain
@@ -57,7 +58,7 @@ export const HistogramListStyle = styled(UnstyledListStyle)<{
   display: flex;
   justify-content: space-around;
   border-bottom: 1px solid ${colors.Border.Interface.Darker};
-  padding: 20px ${props => props.itemGap}% 0;
+  padding: ${spacings.m} ${props => props.itemGap}% 0;
 `;
 
 export const HistogramListItemStyle = styled.li<{

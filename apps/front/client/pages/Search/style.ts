@@ -5,14 +5,15 @@ import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import { SecondLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
 import { BodyMHighLight } from '@make.org/designsystem/components/Body';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const SearchPageWrapperStyle = styled.div`
   width: 100%;
   max-width: ${intToPx(Layouts.ContainerWithPadding)};
   margin: 0 auto;
-  padding: 20px 0;
+  padding: ${spacings.m} 0;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    padding: 40px 20px;
+    padding: 40px ${spacings.m};
   }
 `;
 
@@ -29,9 +30,9 @@ export const SearchPageContentStyle = styled.div`
 export const MainResultsSectionStyle = styled.section`
   display: flex;
   flex-flow: column;
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin-bottom: 30px;
+    margin-bottom: ${spacings.l};
     &:last-child {
       margin-bottom: 0;
     }
@@ -40,15 +41,15 @@ export const MainResultsSectionStyle = styled.section`
 
 export const NoResultsStyle = styled(BodyMHighLight)`
   @media (max-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin: 0 20px;
+    margin: 0 ${spacings.m};
   }
 `;
 
 export const SearchPageResultsStyle = styled(ColumnElementStyle)`
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    padding: 0 20px;
+    padding: 0 ${spacings.m};
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     padding: 0;
@@ -58,8 +59,8 @@ export const SearchPageResultsStyle = styled(ColumnElementStyle)`
 `;
 
 export const SearchPageTitleStyle = styled(SecondLevelTitleStyle)`
-  padding: 0 20px;
-  margin-bottom: 30px;
+  padding: 0 ${spacings.m};
+  margin-bottom: ${spacings.l};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     padding: 0;
     margin-bottom: 35px;
@@ -67,7 +68,7 @@ export const SearchPageTitleStyle = styled(SecondLevelTitleStyle)`
 `;
 
 export const SearchResultsProposalListStyle = styled(UnstyledListStyle)`
-  padding: 0 20px;
+  padding: 0 ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     padding: 0;
   }

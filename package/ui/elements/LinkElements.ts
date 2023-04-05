@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { Link } from 'react-router-dom';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { SvgExternalLink } from '../Svg/elements';
 import {
   BasicButtonStyle,
@@ -25,7 +26,7 @@ export const BlackLinkStyle = styled(Link)`
 `;
 
 export const NewWindowIconStyle = styled(SvgExternalLink)`
-  margin-left: 5px;
+  margin-left: ${spacings.xs};
   fill: ${colors.Content.Make.Secondary};
 `;
 

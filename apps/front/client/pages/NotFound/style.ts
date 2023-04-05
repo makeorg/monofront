@@ -9,6 +9,7 @@ import {
 } from '@make.org/assets/vars/Breakpoints';
 import { MiddleColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { SecondLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const NotFoundPageContentStyle = styled(MiddleColumnStyle)`
   flex: 1 1 auto;
@@ -42,7 +43,7 @@ export const NotFoundIntroStyle = styled.p`
 export const NotFoundTitleStyle = styled(SecondLevelTitleStyle)`
   font-size: ${typography.FontSize.France};
   line-height: 1;
-  margin: 15px 0 30px;
+  margin: ${spacings.sm} 0 ${spacings.l};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${typography.FontSize.Universe};
   }

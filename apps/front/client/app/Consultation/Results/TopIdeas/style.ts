@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 import { BodyMHighLight } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const ThemeResultsWrapperStyle = styled(FlexElementStyle)`
   align-items: center;
@@ -28,7 +29,7 @@ export const ThemeResultsButtonStyle = styled(ProfileHasVotedStyle)`
 export const ThemeResultsDetailsStyle = styled(ParagraphStyle)`
   display: flex;
   flex-flow: column;
-  margin-left: 5px;
+  margin-left: ${spacings.xs};
 `;
 
 export const ThemeAgreeResultsStyle = styled(ParagraphStyle)`
@@ -42,24 +43,24 @@ export const ThemeQualifiedStyle = styled.span`
   font-family: ${typography.FontFamily.Hightlight};
   font-weight: bold;
   color: ${colors.Content.Interface.Dark};
-  margin: 0 15px 0 5px;
+  margin: 0 ${spacings.sm} 0 ${spacings.xs};
 `;
 
 export const TopIdeaListItemStyle = styled.li`
-  margin-bottom: 10px;
+  margin-bottom: ${spacings.s};
   &:first-child {
-    margin-top: 50px;
+    margin-top: ${spacings.xl};
   }
-  padding: 25px 20px;
+  padding: ${spacings.l} ${spacings.m};
   background-color: ${colors.Background.Interface.Lighter};
   border-radius: ${intToPx(BorderRadius)};
   border: solid 1px ${colors.Border.Interface.DarkMain};
 `;
 
 export const TopIdeaItemTitleStyle = styled(BodyMHighLight)`
-  margin-bottom: 25px;
+  margin-bottom: ${spacings.l};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin-bottom: 15px;
+    margin-bottom: ${spacings.sm};
   }
   letter-spacing: 0.14px;
 `;

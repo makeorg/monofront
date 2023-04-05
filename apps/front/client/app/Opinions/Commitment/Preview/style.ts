@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { SeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { BorderRadius } from '@make.org/ui/elements/CardsElements';
@@ -13,15 +14,15 @@ import {
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 
 export const CommitmentPreviewSeparatorStyle = styled(SeparatorStyle)`
-  margin: 10px 0 15px;
+  margin: ${spacings.s} 0 ${spacings.sm};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin: 20px 0 30px;
+    margin: ${spacings.m} 0 ${spacings.l};
   }
 `;
 
 export const CommitmentPreviewOpinionsWrapperStyle = styled(FlexElementStyle)`
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: ${spacings.sm};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     margin-bottom: 25px;
   }
@@ -52,9 +53,9 @@ export const CommitmentPreviewBoxStyle = styled(ParagraphStyle)`
   width: 100%;
   background-color: ${colors.Background.Interface.DarkSecondary};
   color: ${colors.Content.Interface.Dark};
-  padding: 20px;
+  padding: ${spacings.m};
   border-radius: ${intToPx(BorderRadius)};
-  margin-bottom: 15px;
+  margin-bottom: ${spacings.sm};
   &:last-child {
     margin-bottom: 0;
   }
@@ -64,9 +65,9 @@ export const CommitmentPreviewDislaimerStyle = styled.div`
   width: 100%;
   background-color: ${colors.Background.Alert.Infos};
   color: ${colors.Content.Interface.Light};
-  padding: 20px;
+  padding: ${spacings.m};
   border-radius: ${intToPx(BorderRadius)};
-  margin-top: 15px;
+  margin-top: ${spacings.sm};
 `;
 
 export const CommitmentPreviewParagraphStyle = styled(ParagraphStyle)`
@@ -74,7 +75,7 @@ export const CommitmentPreviewParagraphStyle = styled(ParagraphStyle)`
 `;
 
 export const CommitmentPreviewButtonsWrapperStyle = styled(FlexElementStyle)`
-  margin-top: 20px;
+  margin-top: ${spacings.m};
   justify-content: flex-end;
 `;
 
@@ -82,7 +83,7 @@ export const CommitmentPreviewCancelStyle = styled(UnstyledButtonStyle)`
   font-size: ${typography.FontSize.RueDeLappe};
   color: rgba(255, 255, 255, 0.65);
   text-decoration: underline;
-  margin-right: 30px;
+  margin-right: ${spacings.l};
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${typography.FontSize.Arrondissement};
   }

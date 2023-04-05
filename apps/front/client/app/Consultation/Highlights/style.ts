@@ -1,6 +1,7 @@
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+
 import {
   ColumnElementStyle,
   FlexElementStyle,
@@ -9,6 +10,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 import { TitleS } from '@make.org/designsystem/components/Titles';
 import { BorderRadius } from '@make.org/ui/elements/CardsElements';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const HigthlightsWrapperStyle = styled.section`
   width: 100%;
@@ -25,20 +27,20 @@ export const HigthlightsColumnStyle = styled(ColumnElementStyle)`
   width: 100%;
   justify-content: space-between;
   &.right-spacing {
-    padding-right: 20px;
+    padding-right: ${spacings.m};
   }
   &.left-spacing {
-    padding-left: 20px;
+    padding-left: ${spacings.m};
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     &.half {
       width: 50%;
     }
     &.right-spacing {
-      padding-right: 15px;
+      padding-right: ${spacings.sm};
     }
     &.left-spacing {
-      padding-left: 15px;
+      padding-left: ${spacings.sm};
     }
   }
 `;
@@ -71,9 +73,9 @@ export const HigthlightsTitleStyle = styled.span`
 export const FiguresValueStyle = styled(TitleS).attrs({ as: 'span' })`
   display: block;
   letter-spacing: 0.5px;
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
   &.mobile-extra-margin-bottom {
-    margin-bottom: 30px;
+    margin-bottom: ${spacings.l};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${typography.FontSize.IleDeFrance};
@@ -84,7 +86,7 @@ export const FiguresValueStyle = styled(TitleS).attrs({ as: 'span' })`
       margin-bottom: 0px;
     }
     &.padding-right {
-      padding-right: 50px;
+      padding-right: ${spacings.xl};
     }
   }
 `;
@@ -98,11 +100,11 @@ export const ImageWrapperStyle = styled.div`
 export const ProgressWrapperStyle = styled(FlexElementStyle)`
   width: 100%;
   justify-content: flex-end;
-  padding: 20px;
+  padding: ${spacings.m};
   border-radius: 0 ${intToPx(BorderRadius)} ${intToPx(BorderRadius)} 0;
   background-color: ${colors.Background.Interface.DarkSecondary};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    padding: 30px;
+    padding: ${spacings.l};
   }
 `;
 
@@ -139,7 +141,7 @@ export const ProgressBarContainerStyle = styled.div`
   border-radius: 12.5px;
   border: 1px solid ${colors.Border.Interface.DarkMain};
   overflow: hidden;
-  margin: 10px 0 20px;
+  margin: ${spacings.s} 0 ${spacings.m};
 `;
 
 export const ProgressBarStyle = styled.div<{ percent: number }>`
@@ -174,7 +176,7 @@ export const ProgressParticipateStyle = styled(FlexElementStyle)`
 export const ProgressDescriptionStyle = styled.p`
   font-size: ${typography.FontSize.RueDeLappe};
   color: ${colors.Content.Interface.DarkSecondary};
-  margin-bottom: 15px;
+  margin-bottom: ${spacings.sm};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     padding-right: 55px;
     margin-bottom: 0;

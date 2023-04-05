@@ -10,6 +10,7 @@ import {
 } from '@make.org/ui/elements/FlexElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 const DetailledContainer = `
   width: 100%;
@@ -21,7 +22,7 @@ export const DetailledItemStyle = styled.li`
   display: flex;
   flex-flow: column;
   flex: 1 1 auto;
-  padding: 0 15px;
+  padding: 0 ${spacings.sm};
   min-width: 200px;
   &.disagree {
     border-left: 1px solid ${colors.Border.Interface.DarkSecondary};
@@ -33,12 +34,12 @@ export const DetailledItemListStyle = styled(UnstyledListStyle)`
   display: flex;
   justify-content: space-between;
   overflow-x: auto;
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
   ${DetailledContainer};
 `;
 
 export const VoteDataListStyle = styled(ColumnElementStyle)`
-  margin-left: 10px;
+  margin-left: ${spacings.s};
   justify-content: center;
 `;
 
@@ -58,7 +59,7 @@ export const VoteDataBoldItemStyle = styled(VoteDataItemStyle)`
 `;
 
 export const QualificationDataListStyle = styled(UnstyledListStyle)`
-  margin-top: 10px;
+  margin-top: ${spacings.s};
 `;
 
 const ProgessAnim = keyframes`
@@ -67,7 +68,7 @@ const ProgessAnim = keyframes`
 `;
 
 export const VoteProgressContainerStyle = styled(CenterColumnStyle)`
-  margin: 20px 0;
+  margin: ${spacings.m} 0;
   ${DetailledContainer};
 `;
 
@@ -78,7 +79,7 @@ export const VoteCounterStyle = styled(ParagraphStyle)`
 
 export const VoteProgressWrapperStyle = styled(FlexElementStyle)`
   width: 100%;
-  margin-top: 5px;
+  margin-top: ${spacings.xs};
 `;
 
 export const VoteProgressItemStyle = styled.div<{

@@ -10,15 +10,16 @@ import {
 } from '@make.org/ui/Svg/elements';
 import { Layouts, Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const FooterStyle = styled.footer`
   background-color: ${colors.Background.Interface.Lighter};
-  padding: 0 20px 20px;
+  padding: 0 ${spacings.m} ${spacings.m};
   &.extra-mobile-padding-bottom {
-    padding-bottom: 50px;
+    padding-bottom: ${spacings.xl};
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    padding: 0 20px;
+    padding: 0 ${spacings.m};
     &.extra-mobile-padding-bottom {
       padding-bottom: 0;
     }
@@ -32,28 +33,28 @@ export const FooterNavStyle = styled.nav`
 `;
 
 export const FooterWrapperFirstListStyle = styled(UnstyledListStyle)`
-  padding: 20px 0;
+  padding: ${spacings.m} 0;
   fill: ${colors.Content.Interface.DarkSecondary};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    padding: 27px 0 20px;
+    padding: ${spacings.l} 0 ${spacings.m};
   }
 `;
 
 export const FooterWrapperSecondListStyle = styled(UnstyledListStyle)`
-  padding: 20px 0;
+  padding: ${spacings.m} 0;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    padding: 20px 0 27px;
+    padding: ${spacings.m} 0 ${spacings.l};
   }
 `;
 
 export const FooterItemStyle = styled.li`
   display: inline-flex;
   &.no-bullet {
-    margin-right: 30px;
+    margin-right: ${spacings.l};
   }
   &:after {
     content: '.';
-    margin: 0 5px;
+    margin: 0 ${spacings.xs};
   }
   &:last-child:after,
   &.no-bullet:after {
@@ -92,7 +93,7 @@ export const FooterItemAltLinkStyle = styled(FooterItemLinkStyle)`
 export const FooterLinkIconStyle = styled(SvgExternalLink)`
   width: 12px;
   height: 12px;
-  margin-left: 5px;
+  margin-left: ${spacings.xs};
   .tofill {
     fill: ${colors.Content.Interface.DarkSecondary};
   }
@@ -103,7 +104,7 @@ export const FooterLinkIconStyle = styled(SvgExternalLink)`
 `;
 
 export const FooterSeparatorStyle = styled.hr`
-  margin-top: 20px;
+  margin-top: ${spacings.m};
   border-top: 1px solid ${colors.Border.Interface.DarkSecondary};
   background-color: ${colors.Background.Interface.DarkSecondary};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -122,11 +123,11 @@ export const FooterWrapperThirdListStyle = styled(UnstyledListStyle)`
 `;
 
 export const FooterCountryIconStyle = styled(SvgWorldMap)`
-  margin-right: 10px;
+  margin-right: ${spacings.s};
 `;
 
 export const FooterContactIconStyle = styled(SvgMailPlain)`
-  margin-right: 10px;
+  margin-right: ${spacings.s};
 `;
 
 export const FooterBulletPointStyle = styled.span`

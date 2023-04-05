@@ -4,6 +4,7 @@ import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { shadows } from '@make.org/designsystem/tokens/shadows';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { FourthLevelTitleStyle } from '../../elements/TitleElements';
 
 const DEFAULT_RADIUS: string = intToPx(BorderRadius);
@@ -13,8 +14,8 @@ export const TileWithTitleStyle = styled.div<{
 }>`
   background-color: ${colors.Background.Interface.Lighter};
   box-shadow: ${shadows.s10};
-  margin-bottom: 20px;
-  padding: 20px;
+  margin-bottom: ${spacings.m};
+  padding: ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     border-radius: ${DEFAULT_RADIUS};
     &:last-child {

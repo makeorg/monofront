@@ -21,32 +21,33 @@ import {
 import { StartColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { TitleM } from '@make.org/designsystem/components/Titles';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const StaticPageWrapperStyle = styled.div`
   width: 100%;
   flex: 1 1 auto;
   padding: ${intToPx(DefaultPadding.Mobile)};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    padding: ${intToPx(DefaultPadding.Desktop)} 20px;
+    padding: ${intToPx(DefaultPadding.Desktop)} ${spacings.m};
   }
   max-width: ${intToPx(Layouts.ContainerWithPadding)};
-  margin: 30px auto;
+  margin: ${spacings.l} auto;
 `;
 
 export const FocusBlockWrapperStyle = styled(StartColumnStyle)`
-  margin: 30px 0 15px;
+  margin: ${spacings.l} 0 ${spacings.sm};
   flex-direction: column;
   align-items: flex-start;
   background-color: ${colors.Background.Interface.Lighter};
-  padding: 20px;
+  padding: ${spacings.m};
   border-radius: 8px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    padding: 30px 40px;
+    padding: ${spacings.l} 40px;
   }
 `;
 
 export const FocusBlockTitleStyle = styled(TitleM).attrs({ as: 'strong' })`
-  margin-bottom: 10px;
+  margin-bottom: ${spacings.s};
   letter-spacing: 0.5px;
   color: ${colors.Content.Interface.Dark};
 `;
@@ -54,11 +55,11 @@ export const FocusBlockTitleStyle = styled(TitleM).attrs({ as: 'strong' })`
 export const FocusBlockParagraphStyle = styled.p`
   color: ${colors.Content.Interface.DarkSecondary};
   font-size: ${typography.FontSize.Arrondissement};
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
   line-height: 1.5;
   letter-spacing: 0.14px;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin-bottom: 20px;
+    margin-bottom: ${spacings.m};
   }
   &.no-margin {
     margin-bottom: 0;
@@ -68,17 +69,17 @@ export const FocusBlockParagraphStyle = styled.p`
 export const FocusBlockCheckIconStyle = styled(SvgBigCheck)`
   width: 20px;
   height: 20px;
-  margin-bottom: 15px;
+  margin-bottom: ${spacings.sm};
 `;
 
 export const StaticSecondLevelTitleStyle = styled(SecondLevelTitleStyle)`
   text-align: center;
-  margin: 0 0 30px;
+  margin: 0 0 ${spacings.l};
 `;
 
 export const StaticThirdLevelTitleStyle = styled(ThirdLevelTitleStyle)`
   display: inline-flex;
-  margin: 30px 0 5px;
+  margin: ${spacings.l} 0 ${spacings.xs};
 `;
 
 export const StaticFourthLevelTitleStyle = styled(FourthLevelTitleStyle)`
@@ -87,7 +88,7 @@ export const StaticFourthLevelTitleStyle = styled(FourthLevelTitleStyle)`
   font-weight: bold;
   text-transform: uppercase;
   text-transform: none;
-  margin: 15px 0 5px;
+  margin: ${spacings.sm} 0 ${spacings.xs};
   font-size: ${typography.FontSize.RueDeLappe};
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${typography.FontSize.Arrondissement};
@@ -98,7 +99,7 @@ export const StaticFourthLevelTitleStyle = styled(FourthLevelTitleStyle)`
 export const StaticFourthLevelBisTitleStyle = styled(
   StaticFourthLevelTitleStyle
 )`
-  margin: 15px 0 5px;
+  margin: ${spacings.sm} 0 ${spacings.xs};
   padding-left: 0px;
 `;
 
@@ -110,14 +111,14 @@ export const StaticTitleExtra = styled.div`
   line-height: 2;
   color: ${colors.Content.Interface.DarkSecondary};
   text-align: center;
-  margin-top: -30px;
+  margin-top: -${spacings.l};
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${typography.FontSize.Arrondissement};
   }
 `;
 
 export const StaticParagraphStyle = styled.p`
-  margin: 0 0 15px;
+  margin: 0 0 ${spacings.sm};
   font-size: ${typography.FontSize.RueDeLappe};
   line-height: 2;
   color: ${colors.Content.Interface.DarkSecondary};
@@ -128,12 +129,12 @@ export const StaticParagraphStyle = styled.p`
   &.custom {
     padding-left: 40px;
     & + h4 {
-      margin-top: 30px;
+      margin-top: ${spacings.l};
     }
     & + ul {
       margin-left: 40px;
       & + h4 {
-        margin-top: 30px;
+        margin-top: ${spacings.l};
       }
     }
   }
@@ -145,7 +146,7 @@ export const StaticPhoneLinkStyle = styled.a`
 `;
 
 export const StaticPrimaryUnorderedListStyle = styled.ol`
-  margin: 15px 0 0;
+  margin: ${spacings.sm} 0 0;
   padding: 0;
 `;
 
@@ -154,7 +155,7 @@ export const StaticPrimaryUnorderedListItemStyle = styled.li`
 `;
 
 export const StaticSquareListStyle = styled.ul`
-  margin: 10px 0;
+  margin: ${spacings.s} 0;
   word-break: break-word;
 `;
 
@@ -172,7 +173,7 @@ export const NoCookiesSectionStyle = styled.section`
   width: 100%;
   height: 100%;
   max-width: 630px;
-  padding: 20px;
+  padding: ${spacings.m};
   margin: 0 auto;
   display: flex;
   flex-flow: column;
@@ -190,15 +191,15 @@ export const NoCookiesTitleStyle = styled.h1`
 `;
 
 export const NoCookiesSeparatorStyle = styled(SmallSeparatorStyle)`
-  margin: 10px auto 20px;
+  margin: ${spacings.s} auto ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin: 20px auto 30px;
+    margin: ${spacings.m} auto ${spacings.l};
   }
 `;
 
 export const NoCookiesParagraphStyle = styled(ParagraphStyle)`
   color: ${colors.Content.Interface.Dark};
-  margin-bottom: 15px;
+  margin-bottom: ${spacings.sm};
   &.column {
     display: flex;
     flex-flow: column;
@@ -206,7 +207,7 @@ export const NoCookiesParagraphStyle = styled(ParagraphStyle)`
     font-weight: bold;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    margin-bottom: 30px;
+    margin-bottom: ${spacings.l};
   }
 `;
 
@@ -227,12 +228,12 @@ export const NoCookiesAltParagraphStyle = styled.p`
 export const StaticExternalLinkIconStyle = styled(SvgExternalLink)`
   width: 14px;
   height: 14px;
-  margin-left: 5px;
+  margin-left: ${spacings.xs};
   fill: ${colors.Content.Make.Secondary};
 `;
 
 export const ModerationParagraphStyle = styled.p`
-  margin: 0 0 15px;
+  margin: 0 0 ${spacings.sm};
   font-size: ${typography.FontSize.Arrondissement};
   line-height: 2;
   color: ${colors.Content.Interface.DarkSecondary};
@@ -244,9 +245,9 @@ export const ModerationParagraphStyle = styled.p`
 
 export const StaticCenteredParagraphStyle = styled.p`
   font-size: ${typography.FontSize.Arrondissement};
-  color: ${colors.Content.Interface.DarkSecondary};idée n’est pas déjà présente 
+  color: ${colors.Content.Interface.DarkSecondary};
   text-align: center;
-  padding: 0 20px;
+  padding: 0 ${spacings.m};
 `;
 
 export const ModerationCharterWrapperStyle = styled(StaticPageWrapperStyle)`
@@ -255,7 +256,7 @@ export const ModerationCharterWrapperStyle = styled(StaticPageWrapperStyle)`
 
 export const StaticModerationOrderedExamplesStyle = styled.ol`
   padding-left: 0;
-  margin: 30px 0;
+  margin: ${spacings.l} 0;
   &.list-style-inside {
     list-style-position: inside;
   }
@@ -276,7 +277,7 @@ export const StaticModerationOrderedItemStyle = styled.li`
 export const ModerationExampleCardsWrapperStyle = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: ${spacings.m};
 `;
 
 export const ModerationExampleCardStyle = styled.div`
@@ -289,10 +290,10 @@ export const ModerationExampleCardStyle = styled.div`
   align-items: center;
   background-color: ${colors.Background.Interface.Lighter};
   &.refused {
-    border-top: 5px solid ${colors.Border.Alert.Disagree};
+    border-top: ${spacings.xs} solid ${colors.Border.Alert.Disagree};
   }
   &.accepted {
-    border-top: 5px solid ${colors.Border.Alert.Positive};
+    border-top: ${spacings.xs} solid ${colors.Border.Alert.Positive};
   }
   & p {
     text-align: center !important;
@@ -300,7 +301,7 @@ export const ModerationExampleCardStyle = styled.div`
 `;
 
 export const ModerationExampleCardTitleStyle = styled(ThirdLevelTitleStyle)`
-  margin-bottom: 20px;
+  margin-bottom: ${spacings.m};
   &.refused {
     color: ${colors.Content.Alert.Disagree};
   }
@@ -312,7 +313,7 @@ export const ModerationExampleCardTitleStyle = styled(ThirdLevelTitleStyle)`
 export const ModerationExampleCardTitleIconStyle = styled(SvgThumbsUp)`
   width: 18px;
   height: 18px;
-  margin-right: 5px;
+  margin-right: ${spacings.xs};
   &.refused {
     transform: rotate(180deg) scaleX(-1);
   }
@@ -341,5 +342,5 @@ export const ModerationSectionTitleStyle = styled(ThirdLevelTitleStyle)`
 `;
 
 export const ModerationDisclaimerParagraphStyle = styled(StaticParagraphStyle)`
-  margin: 50px 0;
+  margin: ${spacings.xl} 0;
 `;

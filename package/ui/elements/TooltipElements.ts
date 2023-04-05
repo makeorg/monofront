@@ -1,5 +1,6 @@
 import styled, { StyledComponent } from 'styled-components';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { UnstyledButtonStyle } from './ButtonsElements';
 import { SvgClose, SvgInfos } from '../Svg/elements';
 
@@ -7,7 +8,7 @@ import { SvgClose, SvgInfos } from '../Svg/elements';
 export const TooltipStyle = styled.div<{ as: StyledComponent<'div', any> }>`
   min-width: 70px;
   position: absolute;
-  padding: 5px 10px;
+  padding: ${spacings.xs} ${spacings.s};
   z-index: 1;
   background-color: ${colors.Background.Alert.Infos};
   color: ${colors.Content.Interface.Light};
@@ -45,7 +46,7 @@ const HorizontalTooltipStyle = styled(TooltipStyle)`
 `;
 
 export const TopTooltipStyle = styled(VerticalToolptipStyle)`
-  bottom: calc(100% + 10px);
+  bottom: calc(100% + ${spacings.s});
   &:after {
     top: 100%;
     border-top: 5px solid ${colors.Border.Interface.Darker};
@@ -53,7 +54,7 @@ export const TopTooltipStyle = styled(VerticalToolptipStyle)`
 `;
 
 export const BottomTooltipStyle = styled(VerticalToolptipStyle)`
-  top: calc(100% + 10px);
+  top: calc(100% + ${spacings.s});
   &:after {
     bottom: 100%;
     border-bottom: 5px solid ${colors.Border.Interface.Darker};
@@ -61,7 +62,7 @@ export const BottomTooltipStyle = styled(VerticalToolptipStyle)`
 `;
 
 export const LeftTooltipStyle = styled(HorizontalTooltipStyle)`
-  right: calc(100% + 10px);
+  right: calc(100% + ${spacings.s});
   &:after {
     left: 100%;
     border-left: 5px solid ${colors.Border.Interface.Darker};
@@ -69,7 +70,7 @@ export const LeftTooltipStyle = styled(HorizontalTooltipStyle)`
 `;
 
 export const RightTooltipStyle = styled(HorizontalTooltipStyle)`
-  left: calc(100% + 10px);
+  left: calc(100% + ${spacings.s});
   &:after {
     right: 100%;
     border-right: 5px solid ${colors.Border.Interface.Darker};
@@ -96,7 +97,7 @@ export const ProposalTooltipDescriptionStyle = styled.div`
   font-size: 14px;
   line-height: 21px;
   text-align: left;
-  padding: 5px 0px 5px 10px;
+  padding: ${spacings.xs} 0px ${spacings.xs} ${spacings.s};
   display: flex;
   left: 50%;
   transform: translate(-50%);
@@ -109,7 +110,7 @@ export const ProposalTooltipLabelStyle = styled(UnstyledButtonStyle)`
   align-self: center;
   font-size: 12px;
   text-align: center;
-  padding: 5px 10px;
+  padding: ${spacings.xs} ${spacings.s};
   height: 28px;
   &:after {
     content: '';
@@ -118,7 +119,7 @@ export const ProposalTooltipLabelStyle = styled(UnstyledButtonStyle)`
 `;
 
 export const ProposalTooltipInfoIconStyle = styled(SvgInfos)`
-  margin: 6px 0px 10px 10px;
+  margin: ${spacings.xs} 0px ${spacings.s} ${spacings.s};
   width: 15px;
   height: 15px;
 `;
@@ -133,7 +134,7 @@ export const ProposalTooltipCloseButtonStyle = styled.button`
 export const ProposalTooltipCloseIconStyle = styled(SvgClose)`
   width: 10px;
   height: 10px;
-  margin: 0px 10px;
+  margin: 0px ${spacings.s};
   background-color: transparent;
   .tofill {
     fill: ${colors.Content.Interface.Light};
@@ -145,7 +146,7 @@ export const ProposalTooltipVerticalSeparatorStyle = styled.div`
   background-color: ${colors.Background.Interface.Lighter};
   opacity: 0.3;
   height: 84px;
-  margin-left: 10px;
+  margin-left: ${spacings.s};
 `;
 
 export const ProposalTriangleUpStyle = styled.div`

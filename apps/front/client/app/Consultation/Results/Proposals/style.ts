@@ -8,14 +8,15 @@ import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { SvgLightning } from '@make.org/ui/Svg/elements';
 import { AvatarStyle } from '@make.org/ui/components/Avatar/style';
 import { BodyMDefault } from '@make.org/designsystem/components/Body';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const ResultsProposalsListStyle = styled(UnstyledListStyle)`
   width: 100%;
-  grid-gap: 20px;
+  grid-gap: ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 30px;
+    grid-gap: ${spacings.l};
   }
 `;
 
@@ -25,8 +26,8 @@ export const ResultsProposalListItemStyle = styled.li`
   flex: 1;
   justify-content: space-between;
   align-content: space-between;
-  padding: 0px 15px 20px;
-  margin-bottom: 20px;
+  padding: 0px ${spacings.sm} ${spacings.m};
+  margin-bottom: ${spacings.m};
   background-color: ${colors.Background.Interface.Lighter};
   border-radius: ${intToPx(BorderRadius)};
   border: solid 1px ${colors.Border.Interface.DarkMain};
@@ -34,7 +35,7 @@ export const ResultsProposalListItemStyle = styled.li`
     margin-bottom: 0;
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    padding: 0px 20px 20px;
+    padding: 0px ${spacings.m} ${spacings.m};
     margin-bottom: 0px;
   }
 `;
@@ -58,7 +59,7 @@ export const ResultsProposalContentStyle = styled(BodyMDefault)`
   letter-spacing: 0.11px;
   text-align: center;
   color: ${colors.Content.Interface.Dark};
-  padding: 10px 0px 15px;
+  padding: ${spacings.s} 0px ${spacings.sm};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     letter-spacing: 0.13px;
   }
@@ -74,8 +75,8 @@ export const ResultsStyle = styled(ResultsProposalContentStyle)`
 
 export const ResultsAvatarStyle = styled(AvatarStyle)`
   position: relative;
-  top: -10px;
-  left: 20px;
+  top: -${spacings.s};
+  left: ${spacings.m};
 `;
 
 const ResultsItemStyle = styled.span`
@@ -94,8 +95,8 @@ export const ResultsNoWayStyle = styled(ResultsItemStyle)`
 export const ResultsLightningIconStyle = styled(SvgLightning)`
   width: 8px;
   height: 14px;
-  margin: 0 5px 0;
-  margin: 0px 10px;
+  margin: 0 ${spacings.xs} 0;
+  margin: 0px ${spacings.s};
   fill: #f7b500;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     width: 11px;
