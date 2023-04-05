@@ -9,6 +9,11 @@ cache:
     - ~/.cache
     - node_modules
 
+.exclude-weblate: &exclude_weblate
+  except:
+    variables:
+      - $GITLAB_USER_LOGIN == "weblate"
+
 stages:
   - check
   - build
@@ -89,7 +94,9 @@ stages:
       - preproduction
       - merge_request
   except:
-    - production
+    refs:
+      - production
+  <<: *exclude_weblate
   image: "node:16.9-alpine"
   before_script:
     - node -v
@@ -106,6 +113,7 @@ stages:
       - preproduction
       - production
       - merge_request
+  <<: *exclude_weblate
   tags:
     - docker
   before_script:
