@@ -18,6 +18,7 @@ export const VoteOnlyMessage: React.FC<Props> = ({ close }) => {
     if (!question) {
       dispatch(clearNotificationBanner());
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [question]);
 
   if (!question) {

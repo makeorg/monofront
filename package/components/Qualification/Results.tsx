@@ -28,7 +28,7 @@ export const QualificationResults: React.FC<Props> = ({
         ['doNotUnderstand', i18n.t('qualification.doNotUnderstand')],
         ['doNotCare', i18n.t('qualification.doNotCare')],
       ]),
-    [i18n.language]
+    []
   );
 
   return (

@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 import { colors } from '@make.org/designsystem/tokens/colors';
-import {
-  PlayfairParagraphStyle,
-  ParagraphStyle,
-} from '@make.org/ui/elements/ParagraphElements';
+import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 
 export const MainResultsHeaderStyle = styled.div`
@@ -27,7 +25,16 @@ export const MainResultsTitleWrapperStyle = styled(ParagraphStyle)`
   color: ${colors.Content.Interface.DarkSecondary};
 `;
 
-export const MainResultsTitleStyle = styled(PlayfairParagraphStyle)`
+export const MainResultsTitleStyle = styled.p`
   display: inline-flex;
   margin-right: 10px;
+  font-family: ${typography.FontFamily.Italic};
+  font-size: ${typography.FontSize.Arrondissement};
+
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    font-size: ${typography.FontSize.Paris};
+  }
+  @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
+    font-size: ${typography.FontSize.PetiteCouronne};
+  }
 `;

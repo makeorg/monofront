@@ -38,7 +38,7 @@ const UnvoteButtonItem: React.FC<ButtonProps> = ({
         ['disagree', i18n.t('vote.disagree')],
         ['neutral', i18n.t('vote.neutral')],
       ]),
-    [i18n.language]
+    []
   );
 
   return (

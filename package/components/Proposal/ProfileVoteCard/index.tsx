@@ -60,7 +60,7 @@ export const ProfileVoteCard: FC<Props> = ({
         ['disagree', i18n.t('profile.organisation.proposal_disagree')],
         ['neutral', i18n.t('profile.organisation.proposal_neutral')],
       ]),
-    [i18n.language]
+    []
   );
   const { switchProposalContent, showOriginal, setShowOriginal } =
     useSwitchProposalContent();

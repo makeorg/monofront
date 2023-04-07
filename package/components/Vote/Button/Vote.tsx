@@ -41,7 +41,7 @@ const VoteButtonItem = ({
         ['disagree', i18n.t('vote.disagree')],
         ['neutral', i18n.t('vote.neutral')],
       ]),
-    [i18n.language]
+    []
   );
 
   return (
@@ -101,7 +101,7 @@ export const VoteButton: React.FC<Props> = ({
         ['disagree', i18n.t('vote.disagree')],
         ['neutral', i18n.t('vote.neutral')],
       ]),
-    [i18n.language]
+    []
   );
   if (withTooltip) {
     return (

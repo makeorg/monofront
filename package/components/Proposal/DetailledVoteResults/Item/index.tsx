@@ -33,7 +33,7 @@ export const DetailledResultItem: React.FC<Props> = props => {
         ['disagree', i18n.t('vote.disagree')],
         ['neutral', i18n.t('vote.neutral')],
       ]),
-    [i18n.language]
+    []
   );
 
   return (

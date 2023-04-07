@@ -9,18 +9,6 @@ export const ParagraphStyle = styled.p`
   color: ${colors.Content.Interface.DarkSecondary};
 `;
 
-export const PlayfairParagraphStyle = styled.p`
-  font-family: ${typography.FontFamily.Italic};
-  font-size: ${typography.FontSize.Arrondissement};
-
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: ${typography.FontSize.Paris};
-  }
-  @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
-    font-size: ${typography.FontSize.PetiteCouronne};
-  }
-`;
-
 const InlineParagraphStyle = styled(ParagraphStyle)`
   display: inline;
 `;

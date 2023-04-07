@@ -46,7 +46,7 @@ export const DeprecatedProposalAuthor: React.FC<Props> = ({
         ['postponed', i18n.t('proposal_card.status.postponed')],
         ['pending', i18n.t('proposal_card.status.pending')],
       ]),
-    [i18n.language]
+    []
   );
 
   return (

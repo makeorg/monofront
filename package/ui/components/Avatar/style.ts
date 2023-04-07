@@ -29,7 +29,7 @@ export const AvatarImageStyle = styled(Image)<{ avatarSize: number }>`
   background-color: ${colors.Background.Interface.Lighter};
 `;
 
-export const PartnerAvatarStyle = styled.span<any>`
+export const PartnerAvatarStyle = styled.span`
   margin: 0;
   display: block;
   svg,

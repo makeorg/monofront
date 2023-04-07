@@ -102,6 +102,7 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
       dispatch(clearProposalPending());
       dispatch(setProposalSource(''));
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const renderAvatar = () => {

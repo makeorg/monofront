@@ -29,7 +29,7 @@ import {
   ReportFormBackButtonWrapperStyle,
 } from './style';
 
-export const ReportOptionsLabel: Array<{
+const ReportOptionsLabel: Array<{
   name: ReportReasonType;
   icon: JSX.Element;
   label: string;

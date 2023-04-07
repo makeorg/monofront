@@ -20,7 +20,6 @@ import {
 } from '@make.org/ui/Svg/elements';
 import { StartColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { TitleM } from '@make.org/designsystem/components/Titles';
-import { BodyXSDefault } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
 
 export const StaticPageWrapperStyle = styled.div`
@@ -103,14 +102,6 @@ export const StaticFourthLevelBisTitleStyle = styled(
   padding-left: 0px;
 `;
 
-export const StaticListTitleStyle = styled(BodyXSDefault).attrs({ as: 'h5' })`
-  text-transform: none;
-  margin: 15px 0 0;
-  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${typography.FontSize.Arrondissement};
-  }
-`;
-
 export const StaticTitleExtra = styled.div`
   display: block;
   font-family: ${typography.FontFamily.Italic};
@@ -153,11 +144,6 @@ export const StaticPhoneLinkStyle = styled.a`
   color: ${colors.Content.Interface.DarkSecondary};
 `;
 
-export const StaticStrongStyle = styled.strong`
-  font-family: ${typography.FontFamily.Hightlight};
-  font-weight: bold;
-`;
-
 export const StaticPrimaryUnorderedListStyle = styled.ol`
   margin: 15px 0 0;
   padding: 0;
@@ -165,91 +151,6 @@ export const StaticPrimaryUnorderedListStyle = styled.ol`
 
 export const StaticPrimaryUnorderedListItemStyle = styled.li`
   list-style-type: none;
-`;
-
-export const StaticPrimaryOrderedListStyle = styled.ol`
-  margin: 15px 0 0;
-  padding: 0;
-  counter-reset: articles;
-`;
-
-export const StaticPrimaryOrderedListItemStyle = styled.li`
-  list-style-type: none;
-  counter-increment: articles;
-  &:before {
-    content: counter(articles) '.';
-    font-family: ${typography.FontFamily.Condensed};
-    font-size: ${typography.FontSize.Arrondissement};
-    margin-right: 10px;
-  }
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    &:before {
-      font-size: ${typography.FontSize.Paris};
-    }
-  }
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    &:before {
-      font-size: ${typography.FontSize.PetiteCouronne};
-    }
-  }
-  @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
-    &:before {
-      font-size: ${typography.FontSize.GrandeCouronne};
-    }
-  }
-`;
-
-export const StaticSecondaryOrderedListStyle = styled.ol`
-  margin: 0;
-  counter-reset: reset-articles;
-`;
-
-export const StaticSecondaryOrderedListItemStyle = styled.li`
-  list-style-type: none;
-  counter-increment: reset-articles;
-  &:before {
-    font-family: ${typography.FontFamily.Hightlight};
-    font-weight: bold;
-    font-size: ${typography.FontSize.RueDeLappe};
-    line-height: 15px;
-    margin-right: 10px;
-  }
-  &.section5:before {
-    content: '5.' counter(reset-articles);
-  }
-  &.section6:before {
-    content: '6.' counter(reset-articles);
-  }
-  &.section8:before {
-    content: '8.' counter(reset-articles);
-  }
-  &.section9:before {
-    content: '9.' counter(reset-articles);
-  }
-  &.section11:before {
-    content: '11.' counter(reset-articles);
-  }
-  &.section12:before {
-    content: '12.' counter(reset-articles);
-  }
-  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    &:before {
-      font-size: ${typography.FontSize.Arrondissement};
-    }
-  }
-
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    &:before {
-      font-size: ${typography.FontSize.Arrondissement};
-      line-height: 32px;
-    }
-  }
-  @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
-    &:before {
-      font-size: ${typography.FontSize.Paris};
-      line-height: 25px;
-    }
-  }
 `;
 
 export const StaticSquareListStyle = styled.ul`
@@ -348,12 +249,6 @@ export const StaticCenteredParagraphStyle = styled.p`
   padding: 0 20px;
 `;
 
-export const StaticSectionTitle = styled(ThirdLevelTitleStyle)`
-  display: inline-flex;
-  margin: 30px 0 5px;
-  color: ${colors.Content.Interface.DarkSecondary};
-`;
-
 export const ModerationCharterWrapperStyle = styled(StaticPageWrapperStyle)`
   max-width: 840px;
 `;
@@ -439,7 +334,9 @@ export const ModerationFootnotesStyleOrderedListItemStyle = styled.li`
   font-size: ${typography.FontSize.RueDeLappe};
 `;
 
-export const ModerationSectionTitleStyle = styled(StaticSectionTitle)`
+export const ModerationSectionTitleStyle = styled(ThirdLevelTitleStyle)`
+  display: inline-flex;
+  margin: 30px 0 5px;
   color: ${colors.Content.Interface.Dark};
 `;
 

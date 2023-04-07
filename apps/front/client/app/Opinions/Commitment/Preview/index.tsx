@@ -100,7 +100,7 @@ export const CommitmentPreview: FC<Props> = ({
           i18n.t('personality.opinions.preview.neutral_doNotCare'),
         ],
       ]),
-    [i18n.language]
+    []
   );
 
   return (

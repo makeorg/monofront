@@ -144,6 +144,7 @@ export const SessionExpiration: React.FC<Properties> = ({ children }) => {
     return () => {
       apiClient.removeAfterCallListener(apiListenerName);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // clear apiSessionId when sessionId is cleared after a logout

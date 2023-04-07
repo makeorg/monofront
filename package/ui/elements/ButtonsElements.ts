@@ -188,21 +188,6 @@ export const LinkButtonStyle = styled(UnstyledButtonStyle)`
   font-size: ${typography.FontSize.RueDeLappe};
 `;
 
-export const RedButtonAsLinkStyle = styled(UnstyledButtonStyle)`
-  font-family: ${typography.FontFamily.Condensed};
-  font-size: ${typography.FontSize.PetiteCouronne};
-  color: ${colors.Content.Make.Secondary};
-  text-transform: uppercase;
-  text-decoration: underline;
-  &:hover,
-  &:focus {
-    color: ${colors.Content.Make.Secondary};
-  }
-  svg {
-    fill: ${colors.Content.Make.Secondary};
-  }
-`;
-
 export const CloseButtonStyle = styled(UnstyledButtonStyle)`
   position: absolute;
   top: ${intToPx(DefaultPadding.Mobile)};

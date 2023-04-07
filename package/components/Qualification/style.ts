@@ -6,10 +6,6 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { BodyXSHighlight } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
 
-export const QualificationDataItemStyle = styled(UnstyledListStyle)`
-  margin-top: 10px;
-`;
-
 export const QualificationLabelStyle = styled(BodyXSHighlight).attrs({
   as: 'span',
 })`

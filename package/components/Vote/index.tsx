@@ -204,7 +204,7 @@ export const Vote: React.FC<Props> = ({
   );
 
   // eslint-disable-next-line consistent-return
-  useEffect((): any => {
+  useEffect(() => {
     if (isFirstSequenceVote) {
       dispatch(
         displayNotificationTip(NOTIF.FIRST_VOTE_TIP_MESSAGE, undefined, true)

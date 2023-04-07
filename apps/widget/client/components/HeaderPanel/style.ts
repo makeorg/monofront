@@ -1,6 +1,6 @@
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
-import { RedButtonAsLinkStyle } from '@make.org/ui/elements/ButtonsElements';
+import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { Image } from '@make.org/ui/components/Image';
 import { SvgSmallLogo } from '@make.org/ui/Svg/elements';
 import { intToPx } from '@make.org/utils/helpers/styled';
@@ -46,10 +46,20 @@ export const LogoStyle = styled(SvgSmallLogo)`
   height: 20px;
 `;
 
-export const ProposeButtonStyle = styled(RedButtonAsLinkStyle)`
-  font-size: ${typography.FontSize.Arrondissement};
-  font-size: ${typography.FontSize.Arrondissement};
+export const ProposeButtonStyle = styled(UnstyledButtonStyle)`
   align-self: center;
+  font-family: ${typography.FontFamily.Condensed};
+  font-size: ${typography.FontSize.PetiteCouronne};
+  color: ${colors.Content.Make.Secondary};
+  text-transform: uppercase;
+  text-decoration: underline;
+  &:hover,
+  &:focus {
+    color: ${colors.Content.Make.Secondary};
+  }
+  svg {
+    fill: ${colors.Content.Make.Secondary};
+  }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     align-self: auto;
   }

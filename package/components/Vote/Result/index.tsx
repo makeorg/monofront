@@ -61,7 +61,7 @@ export const VoteResult: React.FC<Props> = ({
         ['disagree', i18n.t('vote.disagree')],
         ['neutral', i18n.t('vote.neutral')],
       ]),
-    [i18n.language]
+    []
   );
   const tooltipContent = (percent: number, voteKey: string) => (
     <>
@@ -77,7 +77,7 @@ export const VoteResult: React.FC<Props> = ({
         ['disagree', i18n.t('results.voted.disagree')],
         ['neutral', i18n.t('results.voted.neutral')],
       ]),
-    [i18n.language]
+    []
   );
 
   return (

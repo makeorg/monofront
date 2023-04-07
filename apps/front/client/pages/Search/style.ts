@@ -38,13 +38,6 @@ export const MainResultsSectionStyle = styled.section`
   }
 `;
 
-export const MainResultsContainerStyle = styled.div`
-  padding: 0 20px;
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    padding: 0;
-  }
-`;
-
 export const NoResultsStyle = styled(BodyMHighLight)`
   @media (max-width: ${intToPx(Breakpoints.Tablet)}) {
     margin: 0 20px;

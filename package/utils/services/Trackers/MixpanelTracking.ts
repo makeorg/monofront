@@ -50,6 +50,7 @@ const mixpnl = {
 
     try {
       // @ts-ignore
+      // eslint-disable-next-line func-names
       (function (f, b) {
         if (!b.__SV) {
           var e;
@@ -60,11 +61,13 @@ const mixpnl = {
           window.mixpanel = b;
           b._i = [];
           // @ts-ignore
+          // eslint-disable-next-line func-names
           b.init = function (e, f, c) {
             // @ts-ignore
             function g(a, d) {
               var b = d.split('.');
               b.length == 2 && ((a = a[b[0]]), (d = b[1]));
+              // eslint-disable-next-line func-names
               a[d] = function () {
                 a.push([d].concat(Array.prototype.slice.call(arguments, 0)));
               };
@@ -73,12 +76,14 @@ const mixpnl = {
             typeof c !== 'undefined' ? (a = b[c] = []) : (c = 'mixpanel');
             a.people = a.people || [];
             // @ts-ignore
+            // eslint-disable-next-line func-names
             a.toString = function (a) {
               var d = 'mixpanel';
               c !== 'mixpanel' && (d += `.${c}`);
               a || (d += ' (stub)');
               return d;
             };
+            // eslint-disable-next-line func-names
             a.people.toString = function () {
               return `${a.toString(1)}.people (stub)`;
             };
@@ -88,10 +93,12 @@ const mixpnl = {
               );
             for (h = 0; h < i.length; h++) g(a, i[h]);
             var j = 'set set_once union unset remove delete'.split(' ');
+            // eslint-disable-next-line func-names
             a.get_group = function () {
               // @ts-ignore
               function b(c) {
                 // @ts-ignore
+                // eslint-disable-next-line func-names
                 d[c] = function () {
                   // @ts-ignore
                   call2_args = arguments;

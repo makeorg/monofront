@@ -16,6 +16,7 @@ export const ProposalJourney: React.FC = () => {
       dispatch(removePanelContent());
       pathname.current = location.pathname;
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);
 
   if (!question) {

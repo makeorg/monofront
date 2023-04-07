@@ -130,6 +130,7 @@ export const ProposalForm: FC = () => {
 
   useEffect(() => {
     trackDisplayProposalField(state.pendingProposal.source);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

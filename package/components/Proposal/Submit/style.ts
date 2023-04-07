@@ -21,10 +21,6 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { AvatarStyle } from '@make.org/ui/components/Avatar/style';
 import { TitleXXS } from '@make.org/designsystem/components/Titles';
-import {
-  BodyXSDefault,
-  BodyMDefault,
-} from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 
@@ -93,17 +89,6 @@ export const ProposalStepTitleStyle = styled(TitleXXS).attrs({ as: 'h2' })`
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${typography.FontSize.IleDeFrance};
   }
-`;
-
-export const ProposalStepMandatoryStyle = styled(BodyXSDefault).attrs({
-  as: 'div',
-})`
-  margin-bottom: 15px;
-  color: ${colors.Content.Interface.DarkSecondary};
-`;
-
-export const ProposalStepLabelStyle = styled(BodyMDefault).attrs({ as: 'div' })`
-  margin-bottom: 5px;
 `;
 
 export const ProposalStepLabelRedStyle = styled.span`

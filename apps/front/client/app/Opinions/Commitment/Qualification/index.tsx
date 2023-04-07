@@ -39,7 +39,7 @@ export const CommitmentQualification: FC<Props> = ({
         ['disagree', i18n.t('personality.opinions.vote.disagree')],
         ['neutral', i18n.t('personality.opinions.vote.neutral')],
       ]),
-    [i18n.language]
+    []
   );
 
   const opinionsQualificationTransMap = useMemo(
@@ -68,7 +68,7 @@ export const CommitmentQualification: FC<Props> = ({
         ],
         ['doNotCare', i18n.t('personality.opinions.qualification.doNotCare')],
       ]),
-    [i18n.language]
+    []
   );
 
   return (

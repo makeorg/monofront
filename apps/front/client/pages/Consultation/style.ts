@@ -122,15 +122,6 @@ export const ResultsTitleStyle = styled(ParticipateTitleStyle)`
   }
 `;
 
-export const ExploreTitleWrapperStyle = styled(ColumnElementStyle)`
-  margin-top: 30px;
-  margin-bottom: 20px;
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    align-items: baseline;
-    margin-bottom: 30px;
-  }
-`;
-
 export const ExploreTitleStyle = styled(TitleS).attrs({ as: 'h3' })`
   text-transform: none;
   letter-spacing: 0.5px;
@@ -165,13 +156,6 @@ export const ExploreProposalsCountStyle = styled.span`
     font-family: ${typography.FontFamily.Hightlight};
     font-weight: bold;
   }
-`;
-
-export const NoProposalWrapperStyle = styled.div`
-  width: 100%;
-  display: flex;
-  flex-flow: column;
-  margin: 45px 0;
 `;
 
 export const ResetLinkButtonWrapperStyle = styled.div`

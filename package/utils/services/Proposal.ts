@@ -3,12 +3,6 @@ import { ProposalType, ProposalsType, ReportReasonType } from '@make.org/types';
 import { ProposalApiService } from '@make.org/api/ProposalApiService';
 import { defaultUnexpectedError } from '@make.org/utils/services/DefaultErrorHandler';
 
-export type TypeReason =
-  | 'Inintelligible'
-  | 'BadTranslation'
-  | 'IncorrectInformation'
-  | 'Offensive';
-
 const propose = async (
   content: string,
   questionId: string,
