@@ -91,7 +91,7 @@ export const FeaturedProposals: FC<Props> = ({ question }) => {
                   featuredProposal.slug
                 )}
               >
-                {featuredProposal.content}
+                {featuredProposal.translatedContent || featuredProposal.content}
               </ProposalContentStyle>
             </FeaturedProposalItemStyle>
           ))}
