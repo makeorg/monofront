@@ -12,7 +12,7 @@ import {
 } from '@make.org/types';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import i18n from 'i18next';
-import { TRANSLATION_NAMESPACE } from '@make.org/utils/i18n/constants';
+import { TRANSLATION_COMMON_NAMESPACE } from '@make.org/utils/i18n/constants';
 import { Logger } from '@make.org/utils/services/Logger';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 
@@ -76,7 +76,7 @@ export const getLocalizedBaitText = (
 ): string => {
   const localizedBaitText = i18n.getResource(
     language,
-    TRANSLATION_NAMESPACE,
+    TRANSLATION_COMMON_NAMESPACE,
     'proposal_submit.form.bait'
   );
 
@@ -87,7 +87,7 @@ export const getLocalizedBaitText = (
     });
     return i18n.getResource(
       DEFAULT_LANGUAGE,
-      TRANSLATION_NAMESPACE,
+      TRANSLATION_COMMON_NAMESPACE,
       'proposal_submit.form.bait'
     );
   }

@@ -18,7 +18,7 @@ import {
 } from '@make.org/utils/constants/config';
 import parser from 'ua-parser-js';
 import ContextState from '@make.org/store';
-import { TRANSLATION_NAMESPACE } from '@make.org/utils/i18n/constants';
+import { TRANSLATION_COMMON_NAMESPACE } from '@make.org/utils/i18n/constants';
 import { StateRoot } from '@make.org/types';
 import { Request, Response } from 'express';
 import { Cookie } from 'universal-cookie';
@@ -114,7 +114,7 @@ export const reactRender = async (
       country: country || DEFAULT_COUNTRY,
       translations: i18n.getResourceBundle(
         availableLanguage,
-        TRANSLATION_NAMESPACE
+        TRANSLATION_COMMON_NAMESPACE
       ),
       queryParams,
       device: isMobileOrTablet ? MOBILE_DEVICE : DESKTOP_DEVICE,

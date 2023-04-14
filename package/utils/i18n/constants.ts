@@ -1,1 +1,1 @@
-export const TRANSLATION_NAMESPACE = 'translation';
+export const TRANSLATION_COMMON_NAMESPACE = 'common';

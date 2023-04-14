@@ -20,7 +20,7 @@ import { simpleHash } from '@make.org/utils/helpers/simpleHash';
 import webpackManifest from 'webpack-manifest';
 import parser from 'ua-parser-js';
 import ContextState from '@make.org/store';
-import { TRANSLATION_NAMESPACE } from '@make.org/utils/i18n/constants';
+import { TRANSLATION_COMMON_NAMESPACE } from '@make.org/utils/i18n/constants';
 import { StateRoot } from '@make.org/types';
 import { Request, Response } from 'express';
 import { Cookie } from 'universal-cookie';
@@ -153,7 +153,10 @@ export const reactRender = async (
       source: 'core',
       language,
       country,
-      translations: i18n.getResourceBundle(language, TRANSLATION_NAMESPACE),
+      translations: i18n.getResourceBundle(
+        language,
+        TRANSLATION_COMMON_NAMESPACE
+      ),
       queryParams,
       availableTranslations: translationRessoucesLanguages,
       countriesWithConsultations,

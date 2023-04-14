@@ -28,6 +28,7 @@ import {
   OauthResponseType,
 } from '@make.org/api/OauthRefresh';
 import { LogLevelType } from '@make.org/types/enums/logLevel';
+import { TRANSLATION_COMMON_NAMESPACE } from '@make.org/utils/i18n/constants';
 import { translationRessources } from '../i18n';
 import { initDevState } from '../initDevState';
 import { transformExtraSlidesConfigFromQuery } from '../server/helpers/query.helper';
@@ -216,6 +217,7 @@ const initApp = async (state: StateRoot) => {
     debug: env.isDev(),
     lng: language || DEFAULT_LANGUAGE,
     resources: translationRessources,
+    defaultNS: TRANSLATION_COMMON_NAMESPACE,
   });
 
   // Set date helper language

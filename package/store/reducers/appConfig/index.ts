@@ -5,7 +5,7 @@ import {
   MOBILE_DEVICE,
 } from '@make.org/utils/constants/config';
 import i18n from 'i18next';
-import { TRANSLATION_NAMESPACE } from '@make.org/utils/i18n/constants';
+import { TRANSLATION_COMMON_NAMESPACE } from '@make.org/utils/i18n/constants';
 import { Reducer, ReducerAction, StateConfig } from '@make.org/types';
 import { setCountry, setLanguage } from '@make.org/utils/helpers/countries';
 import {
@@ -42,7 +42,7 @@ export const appConfig_reducer: Reducer = (
         language: action.payload.language,
         translations: i18n.getResourceBundle(
           action.payload.language,
-          TRANSLATION_NAMESPACE
+          TRANSLATION_COMMON_NAMESPACE
         ),
       };
     case SET_COUNTRY_CONFIGURATION:

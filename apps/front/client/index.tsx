@@ -28,6 +28,7 @@ import { COOKIE } from '@make.org/types/enums';
 import { ENABLE_MIXPANEL } from '@make.org/utils/constants/cookies';
 import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
 import { LogLevelType } from '@make.org/types/enums/logLevel';
+import { TRANSLATION_COMMON_NAMESPACE } from '@make.org/utils/i18n/constants';
 import { CountryListener } from './app/CountryListener';
 import { AppContainer } from './app';
 import { cookieIsEnabled, thirdCookieEnabled } from './helpers/cookieDetect';
@@ -146,7 +147,7 @@ const initApp = async (state: StateRoot) => {
     debug: env.isDev(),
     lng: language,
     resources: translationRessources,
-    defaultNS: 'common',
+    defaultNS: TRANSLATION_COMMON_NAMESPACE,
   });
 
   // Set date helper language
