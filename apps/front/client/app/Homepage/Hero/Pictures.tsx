@@ -11,22 +11,29 @@ export const HeroPictures: FC = () => {
   const isTabletViewport = useTablet();
   const imageCommonPath = 'https://assets.make.org/assets/home';
 
-  let HeroDesktop = `${imageCommonPath}/hero-desktop-170720.png`;
-  let HeroSmallDevices = `${imageCommonPath}/hero-tablettes-170720.png`;
+  let HeroDesktop;
+  let HeroSmallDevices;
 
-  if (country === 'DE') {
-    HeroDesktop = `${imageCommonPath}/homepage_desktop_de.png`;
-    HeroSmallDevices = `${imageCommonPath}/homepage_mobile_de.png`;
-  }
-
-  if (country === 'UA') {
-    HeroDesktop = `${imageCommonPath}/hero-desktop-ua.png`;
-    HeroSmallDevices = `${imageCommonPath}/hero-phone-ua.png`;
-  }
-
-  if (country === 'CZ') {
-    HeroDesktop = `${imageCommonPath}/hero-desktop-cz.png`;
-    HeroSmallDevices = `${imageCommonPath}/hero-phone-cz.png`;
+  switch (country) {
+    case 'FR':
+      HeroDesktop = `${imageCommonPath}/hero-desktop-170720.png`;
+      HeroSmallDevices = `${imageCommonPath}/hero-tablettes-170720.png`;
+      break;
+    case 'DE':
+      HeroDesktop = `${imageCommonPath}/homepage_desktop_de.png`;
+      HeroSmallDevices = `${imageCommonPath}/homepage_mobile_de.png`;
+      break;
+    case 'UA':
+      HeroDesktop = `${imageCommonPath}/hero-desktop-ua.png`;
+      HeroSmallDevices = `${imageCommonPath}/hero-phone-ua.png`;
+      break;
+    case 'CZ':
+      HeroDesktop = `${imageCommonPath}/hero-desktop-cz.png`;
+      HeroSmallDevices = `${imageCommonPath}/hero-phone-cz.png`;
+      break;
+    default:
+      HeroDesktop = `${imageCommonPath}/hero-desktop-default.png`;
+      HeroSmallDevices = `${imageCommonPath}/hero-phone-default.png`;
   }
 
   let HeroPictureWidth = 335;
