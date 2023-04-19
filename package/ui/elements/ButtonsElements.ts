@@ -298,6 +298,7 @@ export const VoteButtonStyle = styled.button.attrs(props => ({
   &.neutral,
   &.other {
     color: ${colors.Content.Alert.Neutral};
+    border-color: ${colors.Border.Alert.Neutral};
   }
   &.animated {
     box-shadow: 0 0 0 0 ${props => props.color};
