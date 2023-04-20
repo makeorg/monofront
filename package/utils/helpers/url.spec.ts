@@ -98,22 +98,52 @@ describe('Url Helper', () => {
   });
 
   it('return webflow fr external link', () => {
-    const link = urlHelper.getWebflowDynamicLink('fr', '/foo');
+    const link = urlHelper.getWhoAreWeDynamicLink('fr', '/foo');
     expect(link).toEqual(`${URL.ABOUT_MAKE_LINK}fr/foo`);
   });
 
   it('return webflow de external link', () => {
-    const link = urlHelper.getWebflowDynamicLink('de', '/foo');
+    const link = urlHelper.getWhoAreWeDynamicLink('de', '/foo');
     expect(link).toEqual(`${URL.ABOUT_MAKE_LINK}de/foo`);
   });
 
   it('return webflow en external link', () => {
-    const link = urlHelper.getWebflowDynamicLink('en', '/foo');
+    const link = urlHelper.getWhoAreWeDynamicLink('en', '/foo');
     expect(link).toEqual(`${URL.ABOUT_MAKE_LINK}en/foo`);
   });
 
+  // @todo temporary links for webglot, wiil need to be normalised
+  it('return webflow en external link', () => {
+    const link = urlHelper.getWhoAreWeDynamicLink('bg', '/foo');
+    expect(link).toEqual(`https://bg.about.make.org/de/about-us`);
+  });
+  it('return webflow en external link', () => {
+    const link = urlHelper.getWhoAreWeDynamicLink('es', '/foo');
+    expect(link).toEqual(`https://es.about.make.org/de/about-us`);
+  });
+  it('return webflow en external link', () => {
+    const link = urlHelper.getWhoAreWeDynamicLink('fi', '/foo');
+    expect(link).toEqual(`https://fi.about.make.org/de/about-us`);
+  });
+  it('return webflow en external link', () => {
+    const link = urlHelper.getWhoAreWeDynamicLink('it', '/foo');
+    expect(link).toEqual(`https://it.about.make.org/de/about-us`);
+  });
+  it('return webflow en external link', () => {
+    const link = urlHelper.getWhoAreWeDynamicLink('nl', '/foo');
+    expect(link).toEqual(`https://nl.about.make.org/de/about-us`);
+  });
+  it('return webflow en external link', () => {
+    const link = urlHelper.getWhoAreWeDynamicLink('pl', '/foo');
+    expect(link).toEqual(`https://pl.about.make.org/de/about-us`);
+  });
+  it('return webflow en external link', () => {
+    const link = urlHelper.getWhoAreWeDynamicLink('ro', '/foo');
+    expect(link).toEqual(`https://ro.about.make.org/de/about-us`);
+  });
+
   it('return webflow default external link', () => {
-    const link = urlHelper.getWebflowDynamicLink('uk', '/foo');
+    const link = urlHelper.getWhoAreWeDynamicLink('uk', '/foo');
     expect(link).toEqual(`${URL.ABOUT_MAKE_LINK}en/foo`);
   });
 

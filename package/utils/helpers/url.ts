@@ -506,7 +506,7 @@ export const redirectToNotFoundPage = (country: string): void => {
  * @param  {string} route
  * @return {string}
  */
-export const getWebflowDynamicLink = (
+export const getWhoAreWeDynamicLink = (
   language: string,
   route: string
 ): string => {
@@ -517,6 +517,18 @@ export const getWebflowDynamicLink = (
     case 'de':
     case 'en':
       link = `${URL.ABOUT_MAKE_LINK}${language}${route}`;
+      break;
+
+    // @todo temporary links for weglot, will be normalised later
+
+    case 'bg':
+    case 'es':
+    case 'fi':
+    case 'it':
+    case 'nl':
+    case 'pl':
+    case 'ro':
+      link = `https://${language}.about.make.org/de/about-us`;
       break;
     default:
       link = `${URL.ABOUT_MAKE_LINK}${DEFAULT_LANGUAGE}${route}`;

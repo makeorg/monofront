@@ -7,7 +7,7 @@ import {
   getBrowseConsultationsLink,
   getBrowseResultsLink,
   getNewsLinkByCountry,
-  getWebflowDynamicLink,
+  getWhoAreWeDynamicLink,
 } from '@make.org/utils/helpers/url';
 import { useLocation } from 'react-router';
 import { scrollToTop } from '@make.org/utils/helpers/styled';
@@ -132,7 +132,7 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
               <MenuExternalLinkStyle
                 target="_blank"
                 rel="noopener"
-                href={getWebflowDynamicLink(language, ROUTE_WHOAREWE)}
+                href={getWhoAreWeDynamicLink(language, ROUTE_WHOAREWE)}
               >
                 {i18n.t('main_footer.whoarewe')}
                 <> </>
@@ -147,7 +147,7 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
                 <MenuExternalLinkStyle
                   target="_blank"
                   rel="noopener"
-                  href={getWebflowDynamicLink(language, ROUTE_PARTNERSHIP)}
+                  href={getWhoAreWeDynamicLink(language, ROUTE_PARTNERSHIP)}
                 >
                   {i18n.t('homepage.partnership.subtitle')}
                   <> </>
