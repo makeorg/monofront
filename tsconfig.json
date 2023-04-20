@@ -42,21 +42,22 @@
     "composite": true,
     "declaration": true,
     "declarationMap": true,
+    "strictPropertyInitialization": false,
     "declarationDir": "./types",
     "paths": {
       "@make.org/widget": ["./apps/widget/*"],
       "@make.org/front": ["./apps/front/*"],
+      "@make.org/translator": ["./apps/translator/src/*"],
+      "@make.org/content": ["./apps/content/*"],
       "@make.org/types": ["./package/types/*"],
       "@make.org/api": ["./package/api/*"],
       "@make.org/assets": ["./package/assets/*"],
       "@make.org/ui": ["./package/ui/*"],
       "@make.org/utils": ["./package/utils/*"],
       "@make.org/components": ["./package/components/*"],
-      "@make.org/store": ["./package/store/*"],
-      "@make.org/translator": ["./package/translator/src/*"],
+      "@make.org/store": ["./package/store/*"],      
       "@make.org/logger": ["./package/logger/*"],
-      "@make.org/designsystem": ["./package/designsystem/*"],
-      "@make.org/content": ["./package/content/src/*"],
+      "@make.org/designsystem": ["./package/designsystem/*"]
     }
   }
 }

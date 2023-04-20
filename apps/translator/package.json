@@ -28,7 +28,7 @@
         "dev": "nodemon",
         "check": "tsc --noEmit",
         "start": "pm2-runtime start ecosystem.config.cjs --only production",
-        "build": "webpack  && yarn version-build",
+        "build": "webpack && yarn version-build",
         "version-build": "../../bin/version-build.js generate -d './dist' -p 'Make.org-translator'"
     },
     "devDependencies": {

@@ -33,7 +33,7 @@ services:
       - /home/app/dist
     profiles:
       - app-dev
-     
+
   app_make_dev_mock:
     <<: *dev_service
     image: app_make_dev_mock
@@ -184,3 +184,12 @@ services:
       - ./apps/translator/.env:/usr/app/.env
     profiles:
       - translator-prod
+
+  crdb:
+    image: cockroachdb/cockroach:v22.1.15
+    ports:
+      - "26257:26257"
+      - "8080:8080"
+    command: start-single-node --insecure
+    volumes:
+      - "${PWD}/cockroach-data/crdb:/cockroach/cockroach-data"

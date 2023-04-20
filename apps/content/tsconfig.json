@@ -1,10 +1,11 @@
 {
   "extends": "../../tsconfig.json",
   "include": [
-    "src",
+    "src/**/*",
+    "prisma/**/*"
   ],
   "compilerOptions": {
-    "rootDir": "./src",
+    "rootDirs": ["./src", "./prisma"],
     "module": "commonjs",
     "declaration": true,
     "removeComments": true,
@@ -23,5 +24,6 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "disableSourceOfProjectReferenceRedirect": true,
-  },
+    "resolveJsonModule": true,
+  }
 }

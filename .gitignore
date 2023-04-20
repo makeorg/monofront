@@ -11,6 +11,7 @@
 /**/.nyc_output
 /**/Svg/svgr
 *.tsbuildinfo
+/cockroach-data
 
 .pnp.*
 .yarn/*
@@ -19,6 +20,7 @@
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
 
 # Logs
 logs

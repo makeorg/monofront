@@ -30,7 +30,8 @@
     "**/apps/front/client/pages/Static/Data/UK.tsx",
     "**/cypress/support/step_definitions/proposal_submit.js",
     "**/types/**",
-    "**/package/logger/**"
+    "**/package/logger/**",
+    "**/cockroach-data/**"
   ],
   "absolute": true,
   "output": "./reports",

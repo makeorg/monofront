@@ -7,7 +7,6 @@
     "outDir": "./dist",
     "incremental": true,
     "composite": true,
-    "disableSourceOfProjectReferenceRedirect": true,
     "paths": {
       "@make.org/logger/*": ["../../package/logger/*"]
     }
