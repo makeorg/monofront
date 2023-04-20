@@ -1,0 +1,357 @@
+{
+  "meta": {
+    "sequence": {
+      "title_standard": "Partecipa alla consultazione '{{question}}' - Make.org",
+      "title_controversy": "Esprimi il tuo voto di spareggio per le proposte della consultazione '{{question}}' - Make.org",
+      "title_popular": "Prendi posizione sulle proposte più popolari della consultazione '{{question}}' - Make.org"
+    }
+  },
+  "common": {
+    "connexion_label": "Connessione",
+    "register_label": "Iscrizione",
+    "continue": "Continua",
+    "form": {
+      "hide_password": "Nascondi la password",
+      "show_password": "Mostra la password",
+      "requirements": "Tutti i campi sono obbligatori salvo diversamente indicato.",
+      "requirements_short": "Tutti i campi sono obbligatori.",
+      "post_code": "Il codice di avviamento postale ci permette di analizzare i risultati per zona geografica.",
+      "label": {
+        "email": "E-mail",
+        "password": "Password",
+        "firstname": "Nome",
+        "age": "Età",
+        "postalcode": "CAP",
+        "profession": "Professione",
+        "biography": "Biografia",
+        "website": "Sito Internet",
+        "organisation": "Nome dell'organizzazione",
+        "postalcode_optional": "CAP (facoltativo)",
+        "personality": {
+          "firstname": "Nome del candidato / capolista",
+          "lastname": "Cognome del candidato / capolista"
+        }
+      },
+      "messages": {
+        "errors_notification": "Abbiamo riscontrato degli errori in questo modulo:",
+        "invalid_email": "Si prega di rispettare il formato dell'e-mail.",
+        "invalid_email_dynamic": "Si prega di rispettare il formato {{label}}.",
+        "already_registered": "Questa e-mail esiste già.",
+        "already_registered_dynamic": "Questa {{label}} esiste già.",
+        "email_doesnot_exist": "Questa e-mail non è associata al tuo account; si prega di inserire nuovamente l'e-mail.",
+        "email_doesnot_exist_dynamic": "Questa {{label}} non è associata al tuo account; si prega di inserire nuovamente l'e-mail.",
+        "invalid_password": "La tua password deve contenere almeno 8 caratteri.",
+        "invalid_password_dynamic": "La tua {{label}} deve contenere almeno 8 caratteri.",
+        "api_error": "Ops! Stiamo riscontrando alcune difficoltà nel caricamento di questa pagina. Si prega di aspettare e riprovare.",
+        "mandatory": "Si prega di compilare questo campo.",
+        "mandatory_dynamic": "Il campo {{label}} è obbligatorio.",
+        "invalid_age": "I nostri utenti devono avere tra gli 8 e i 120 anni.",
+        "invalid_age_dynamic": "{{label}}: I nostri utenti devono avere tra gli 8 e i 120 anni.",
+        "the_field_[email]_is_missing": "Il campo {{label}} è obbligatorio.",
+        "the_field_[password]_is_missing": "Il campo {{label}} è obbligatorio.",
+        "invalid_postal_code": "Il CAP deve essere composto da 5 cifre.",
+        "invalid_privacy_policy": "Devi accettare la politica sull'utilizzo dei dati.",
+        "invalid_postal_code_dynamic": "Il {{label}} deve essere composto da 5 cifre.",
+        "submit_success": "La modifica è stata salvata.",
+        "malformed": "Si prega di rispettare il formato url \"https://example.com\""
+      },
+      "password_requirements": "Minimo 8 caratteri di cui almeno 1 cifra, 1 lettera maiuscola e 1 carattere speciale."
+    },
+    "social_login": {
+      "facebook_connect": "Continua con Facebook",
+      "google_connect": "Continua con Google",
+      "email_register": "Iscriviti usando l'e-mail",
+      "count_register": "({{count}}/2)"
+    },
+    "notifications": {
+      "bad_link": "Questo link non è più valido.",
+      "secure_expired": {
+        "first_sentence": "Ci dispiace, il tuo account è stato disconnesso perché ci sembrava che non lo stessi usando più",
+        "second_sentence": "Riconnettiti per continuare a votare, proporre e agire su Make.org.",
+        "emoji": "emoji faccina triste con lacrima"
+      },
+      "session_expired": {
+        "title": "Tempo limite di inattività",
+        "description": "Per garantire un servizio di qualità, dobbiamo ricaricare la pagina.",
+        "button_text": "Ho capito"
+      },
+      "icons": {
+        "close": "Chiudere il banner di notifica",
+        "information": "Messaggio d'informazione: ",
+        "success": "Messaggio di operazione avvenuta: ",
+        "error": "Messaggio di errore: ",
+        "alert": "Messaggio di allerta: "
+      },
+      "unexpected_error": "Stiamo riscontrando un errore, ti preghiamo di riprovare più tardi.",
+      "network_error": "Non è possibile accedere a tutti i contenuti di Make.org perché sembra che tu non sia online",
+      "vote_only": {
+        "message": "La consultazione \"{{title}}\" non può più ricevere nuove proposte, ma puoi continuare a votare per esprimere il tuo voto di spareggio per le proposte già esistenti.",
+        "button": "ho capito"
+      },
+      "vote_on_proposal": "Esprimi il tuo voto su questa proposta"
+    },
+    "propose": "Proponi",
+    "open_new_window": "Apri in un'altra scheda",
+    "loading": "Ti preghiamo di aspettare durante il caricamento.",
+    "participate": "Partecipa",
+    "display_tooltip": "Mostra il contenuto del tooltip al passaggio del mouse",
+    "expand_collapse": "{{name}} - Mostra il contenuto della sezione a tendina",
+    "shrink_collapse": "{{name}} - Nascondi il contenuto della sezione a tendina",
+    "secondary_nav": "Navigazione secondaria",
+    "percent": "{{percent}}%",
+    "header_authentication_nav": "Accesso al mio profilo utente",
+    "footer_nav": "Navigazione del footer",
+    "sidebar_area": "Barra di contenuto laterale",
+    "max_characters": "caratteri massimi",
+    "back": "Indietro",
+    "proposal_count_one": "{{count}} proposta",
+    "proposal_count_many": "{{count}} proposte",
+    "proposal_count_other": "{{count}} proposte",
+    "breadcrumbs": "breadcrumb",
+    "million_one": "milione",
+    "million_many": "milioni",
+    "million_other": "milioni",
+    "close_panel": "Chiudere il pannello a tendina",
+    "close": "Chiudi"
+  },
+  "header": {
+    "logo_alt": "Vai alla home page di Make.org"
+  },
+  "proposal_card": {
+    "next": "Proposta successiva",
+    "validate": "Convalida",
+    "content": "Contenuto della mia proposta: ",
+    "posted_label": "Pubblicata in ",
+    "author": {
+      "from": "Proposta di: ",
+      "age": "{{age}} anni",
+      "date": "pubblicata il: "
+    },
+    "status": {
+      "title": "Status della proposta: ",
+      "accepted": "Pubblicata",
+      "refused": "Respinta",
+      "postponed": "In attesa di moderazione",
+      "pending": "In attesa di moderazione"
+    },
+    "original": "Vedi l’originale",
+    "translation": "Vedi la traduzione"
+  },
+  "intro_card": {
+    "title": "Migliaia di persone propongono delle soluzioni.",
+    "description": "Prendi posizione su queste soluzioni e proponi le tue.\nLe migliori determineranno le nostre azioni.",
+    "button": "Inizia"
+  },
+  "final_card": {
+    "title": "Grazie per aver reagito alle proposte!",
+    "description": "Continua a votare per aiutarci a identificare le priorità.",
+    "link_text": "Accedo alla consultazione",
+    "register": {
+      "description": "Come fare per seguire i risultati?",
+      "button_intro": "Crea la tua",
+      "button_text": "area riservata."
+    }
+  },
+  "no_proposal_card": {
+    "title": {
+      "regular": "Grazie per il tuo incredibile contributo!",
+      "popular": "Grazie, hai espresso un voto per tutte le proposte più popolari",
+      "controversial": "Grazie, hai espresso un voto per tutte le proposte più controverse",
+      "keyword": "Grazie, hai espresso un voto per tutte le proposte di \"{{keyword}}\""
+    },
+    "description": {
+      "regular": "Per il momento non ci sono nuove proposte.",
+      "special": "Continua a votare per aiutarci a identificare le priorità."
+    },
+    "link_text": "Accedo alla consultazione",
+    "sharing": "Oppure dai visibilità alla consultazione divulgandola tra i conoscenti."
+  },
+  "push_proposal_card": {
+    "title": "Hai una soluzione da proporre per questo argomento?",
+    "next-cta": "Non ancora, continuo a votare"
+  },
+  "sequence_progress": {
+    "previous": "Vai all'elemento precedente",
+    "counter": "Elemento {{current}} su {{total}}"
+  },
+  "sequence_zone": {
+    "popular_title": "Proposte popolari",
+    "controversial_title": "Proposte controverse"
+  },
+  "special_final_card": {
+    "title": "Grazie per i tuoi voti!",
+    "subtitle": "Puoi continuare a partecipare alla consultazione",
+    "cta_text": "Accedo alla consultazione"
+  },
+  "demographics_card": {
+    "disclaimer": "Le tue informazioni sono anonime e ci consentono di ottenere risultati rappresentativi.",
+    "skip": "Salta",
+    "submit": "Salva",
+    "submitted_thanks": "Grazie per la tua risposta.",
+    "submitted_disclaimer": " Sarà usata in modo anonimo per analizzare i risultati della consultazione.",
+    "select": "Seleziona"
+  },
+  "proposal_submit": {
+    "form": {
+      "bait": "È necessario ",
+      "title": "Scrivi la tua proposta usando al massimo 140 caratteri. Inseriscila nel campo della proposta poi convalida cliccando sul pulsante \"Convalida\"",
+      "field": "Campi della proposta",
+      "counter": "La tua proposta conta {{current}} caratteri su un totale di {{total}} caratteri disponibili",
+      "panel_trigger": "Propongono una soluzione",
+      "read_our": "Leggi la nostra",
+      "moderation_link": "carta di moderazione",
+      "button_propose": "PROPONI"
+    },
+    "authentication": {
+      "back": "Indietro",
+      "last_step_red": "Manca un solo passaggio ",
+      "last_step": "prima di inviare la proposta!",
+      "button_login_text": "Ho già un account,",
+      "button_login_link": "mi connetto.",
+      "button_login": "Connessione",
+      "back_authentication": "Torna alla schermata di connessione"
+    },
+    "success": {
+      "button": "Continua a votare",
+      "other_idea": "Ho un'altra idea",
+      "tooltip_title": "In corso di moderazione",
+      "tooltip_description": "Le nostre équipe tratteranno la tua proposta entro 48 ore, nell'attesa puoi consultarla fin da subito nel tuo profilo.",
+      "grats": "Congratulazioni {{name}}, ",
+      "proposal_sent": "la tua proposta è stata inviata ",
+      "activate": "Conferma il tuo indirizzo e-mail, basta un clic ",
+      "link": "per garantire l'autenticità del tuo account. Clicca sul link di attivazione che ti è stato inviato all'indirizzo: {{mail}}",
+      "question": "Un dubbio? Puoi contattarci qui: ",
+      "consultation_access": "Accedo alla consultazione"
+    }
+  },
+  "vote": {
+    "intro_title": "Do la mia opinione su questa proposta: ",
+    "agree": "Sono d'accordo",
+    "disagree": "Non sono d'accordo",
+    "neutral": "Voto neutrale",
+    "label_one": "{{count}} voto",
+    "label_many": "{{count}} voti",
+    "label_other": "{{count}} voti",
+    "with_percent": "{{votedKey}}: {{votedPercent}}%"
+  },
+  "unvote": {
+    "title": "Ritiro la mia opinione su questa proposta."
+  },
+  "qualification": {
+    "title": "Preciso la mia opinione per questa proposta:",
+    "static_repartition": "Questa proposta è stata qualificata come: ",
+    "times": "volte",
+    "likeIt": "La mia preferita",
+    "doable": "Realistica",
+    "platitudeAgree": "Banale",
+    "noWay": "Assolutamente no!",
+    "impossible": "Non è fattibile",
+    "platitudeDisagree": "Banale",
+    "doNotUnderstand": "Non ho capito",
+    "noOpinion": "Non ho un'opinione",
+    "doNotCare": "Mi lascia indifferente"
+  },
+  "sequence": {
+    "return": "Torna alle proposte",
+    "title": "Vota le proposte della consultazione: ",
+    "more": "Accedi alla consultazione intera"
+  },
+  "login": {
+    "title": "Ho già un account",
+    "connect": "Connessione",
+    "or": "o",
+    "forgot_password": "Password dimenticata?",
+    "registration_title": "Non ho un account,",
+    "registration_link": "ne creo uno.",
+    "email_doesnot_exist": "La tua {{emailLabel}} o la tua {{passwordLabel}} è sbagliata."
+  },
+  "register": {
+    "title": "Crea un account",
+    "or": "o",
+    "login_title": "Ho già un account,",
+    "login_link": "mi connetto.",
+    "gtu_text_first": "Con l'iscrizione, accetti le nostre ",
+    "gtu_link": "condizioni generali di utilizzo."
+  },
+  "legal_consent": {
+    "title": "Autorizzazione di legge",
+    "subtitle": "È necessario il consenso di uno dei tuoi genitori",
+    "description": "Dobbiamo ottenere due consensi per darti accesso alla nostra piattaforma cittadina. Presto potrai dire la tua su tutte le nostre consultazioni!",
+    "minor_consent": "Acconsento al trattamento dei miei dati personali da parte di Make.org.",
+    "parental_consent": "In qualità di titolare dell'autorità genitoriale, acconsento al trattamento dei dati personali da parte di Make.org della persona minore sotto la mia responsabilità.",
+    "cancel": "Annulla",
+    "submit": "Convalida",
+    "privacy_policy_first_part": "Accetto che Make.org effettui il trattamento di tali dati affinché io possa partecipare e ricevere aggiornamenti sui risultati ai sensi della ",
+    "privacy_policy_link": "carta",
+    "privacy_policy_last_part": ". (obbligatorio)",
+    "privacy_policy": "politica sull'utilizzo dei dati",
+    "make_protect": "Make.org si impegna a proteggere i tuoi",
+    "make_protect_link": " dati personali.",
+    "opt_in": "Accetto di ricevere delle e-mail di Make.org per ricevere aggiornamenti sulle consultazioni attuali e future. (facoltativo)"
+  },
+  "forgot_password": {
+    "title": "Ripristino della password",
+    "description": "Per ricevere il link di ripristino, si prega di inserire l'indirizzo e-mail legato al tuo account su Make.org.",
+    "success": "Grazie, ti abbiamo appena inviato un'e-mail per permetterti di aggiornare la password.",
+    "return": "Torna alla ",
+    "login_link": "schermata di connessione",
+    "send_link": "ricevere l'e-mail"
+  },
+  "reset_password": {
+    "title": "Creo una nuova password",
+    "info": "Puoi scegliere una nuova password.",
+    "send_cta": "Convalida",
+    "success": {
+      "title": "Grazie, la tua password è stata aggiornata."
+    },
+    "failure": {
+      "bad_link": "Questo link non è più valido."
+    }
+  },
+  "data_policy_modal": {
+    "title": "Aggiornamento della politica sull'utilizzo dei dati",
+    "description": "Make.org si impegna a rispettare i tuoi dati personali in occasione di ogni tua visita sul sito. Per proseguire la navigazione con l'account Make.org connesso, devi accettare l'aggiornamento della {{data_policy_link}} ",
+    "consent": "<strong>Accetto la nuova politica sull'utilizzo dei dati</strong> per usare la mia area riservata Make.org",
+    "validate": "Confermo",
+    "stay": "Rimango",
+    "leave": "Me ne vado",
+    "refusal_title": "Vuoi davvero andartene?",
+    "refusal_description_first_part": "Con il rifiuto della nostra nuova ",
+    "refusal_description_second_part": ", non potrai accedere alla tua area riservata Make.org."
+  },
+  "not_found": {
+    "intro": "ops",
+    "title": "Errore 404",
+    "description": "La pagina che cerchi non esiste più o non è mai esistita."
+  },
+  "report_translations": {
+    "button": "Opzioni della proposta",
+    "confirmation": {
+      "title": "Grazie per la segnalazione!",
+      "description": "Sarà analizzata al più presto dalla nostra équipe."
+    },
+    "form": {
+      "title": "Segnala la traduzione automatica",
+      "unclear": "Traduzione incomprensibile",
+      "error": "Errore di traduzione",
+      "false_info": "Contiene un’informazione sbagliata",
+      "offensive": "Proposta offensiva",
+      "report": "Segnala"
+    },
+    "first_step": {
+      "title": "Traduzione automatica",
+      "text": "Le proposte delle nostre consultazioni sono tradotte in modo automatico. Se dovessi rilevare un errore, non esitare a segnalarlo alle nostre équipe!"
+    }
+  },
+  "top_proposal_card": {
+    "start": "@@top_proposal_card.start|fr:Commencer à voter"
+  },
+  "maintenance": {
+    "subtitle": "@@maintenance.subtitle|fr:Oops, nous sommes désolé! Make.org est actuellement en maintenance"
+  },
+  "unsecure": {
+    "title": "@@unsecure.title|fr:La consultation est maintenant terminée",
+    "description": "@@unsecure.description|fr:Vous souhaitez en savoir plus sur ce sujet ? Découvrez la suite de l'opération et restez informé(e) de toutes nos consultations citoyennes en vous inscrivant sur Make.org",
+    "link": "@@unsecure.link|fr:Découvrir notre opération"
+  }
+}

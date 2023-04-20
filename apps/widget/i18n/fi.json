@@ -1,0 +1,354 @@
+{
+  "meta": {
+    "sequence": {
+      "title_standard": "Osallistu kuulemiseen '{{question}}' – Make.org",
+      "title_controversy": "Jaa kuulemiseen '{{question}}' liittyvät ehdotukset. – Make.org",
+      "title_popular": "Ota kantaa kuulemisen '{{question}}’ suosituimpiin ehdotuksiin – Make.org"
+    }
+  },
+  "common": {
+    "connexion_label": "Kirjaudu sisään",
+    "register_label": "Rekisteröidy",
+    "continue": "Jatka",
+    "form": {
+      "hide_password": "Piilota salasana",
+      "show_password": "Näytä salasana",
+      "requirements": "Kaikki kentät ovat pakollisia, ellei toisin ilmoiteta.",
+      "requirements_short": "Kaikki kentät ovat pakollisia.",
+      "post_code": "Postinumeron avulla voimme analysoida tuloksia maantieteellisen alueen mukaan.",
+      "label": {
+        "email": "Sähköpostiosoite",
+        "password": "Salasana",
+        "firstname": "Etunimi",
+        "age": "Ikä",
+        "postalcode": "Postinumero",
+        "profession": "Ammatti",
+        "biography": "Tietoa",
+        "website": "Verkkosivusto",
+        "organisation": "Organisaation nimi",
+        "postalcode_optional": "Postinumero (valinnainen)",
+        "personality": {
+          "firstname": "Ehdokkaan etunimi / ehdokasluettelon kärki",
+          "lastname": "Ehdokkaan sukunimi / ehdokasluettelon kärki"
+        }
+      },
+      "messages": {
+        "errors_notification": "Tässä lomakkeessa havaittiin virheitä:",
+        "invalid_email": "Anna sähköpostiosoite oikeassa muodossa.",
+        "invalid_email_dynamic": "Anna {{label}} oikeassa muodossa.",
+        "already_registered": "Tämä sähköpostiosoite on jo olemassa.",
+        "already_registered_dynamic": "Tämä {{label}} on jo olemassa.",
+        "email_doesnot_exist": "Tätä sähköpostiosoitetta ei ole yhdistetty tiliisi. Kirjoita sähköpostiosoitteesi uudelleen.",
+        "email_doesnot_exist_dynamic": "{{label}} ei ole liitetty tiliisi. Anna sähköpostiosoitteesi uudelleen.",
+        "invalid_password": "Salasanasi on oltava vähintään 8 merkkiä pitkä.",
+        "invalid_password_dynamic": "Sinun on valittava vähintään 8 merkkiä pitkä {{label}}.",
+        "api_error": "Hups! Meillä on hieman ongelmia tämän sivun lataamisessa. Yritä myöhemmin uudelleen.",
+        "mandatory": "Täytä tämä kenttä.",
+        "mandatory_dynamic": "Kenttä {{label}} on pakollinen.",
+        "invalid_age": "Käyttäjiemme on oltava 8–120-vuotiaita.",
+        "invalid_age_dynamic": "{{label}}: Käyttäjiemme on oltava 8–120-vuotiaita.",
+        "the_field_[email]_is_missing": "Kenttä {{label}} on pakollinen.",
+        "the_field_[password]_is_missing": "Kenttä {{label}} on pakollinen.",
+        "invalid_postal_code": "Postinumeron on koostuttava 5 numerosta.",
+        "invalid_privacy_policy": "Sinun on hyväksyttävä tietosuojakäytäntö.",
+        "invalid_postal_code_dynamic": "Sinun on annettava {{label}}, jossa on 5 numeroa.",
+        "submit_success": "Muutos on tallennettu onnistuneesti.",
+        "malformed": "Annathan URL-osoitteen muodossa \"https://example.com\""
+      },
+      "password_requirements": "Salasan on oltava vähintään kahdeksan merkkiä pitkä, ja siinä on oltava vähintään yks numero, yksi iso kirjain ja yksi erikoismerkki."
+    },
+    "social_login": {
+      "facebook_connect": "Jatka Facebookilla",
+      "google_connect": "Jatka Googlella",
+      "email_register": "Rekisteröidy sähköpostiosoitteella",
+      "count_register": "({{count}}/2)"
+    },
+    "notifications": {
+      "bad_link": "Tämä linkki ei ole enää voimassa.",
+      "secure_expired": {
+        "first_sentence": "Pahoittelut, sinut on kirjattu ulos, koska vaikutat poistuneen",
+        "second_sentence": "Kirjaudu uudelleen sisään ja jatka äänestystä, ehdotusten tekemistä ja muuta toimintaa Make.org-sivustolla.",
+        "emoji": "itkunaama-emoji"
+      },
+      "session_expired": {
+        "title": "Aikakatkaisu epäaktiivisuuden vuoksi",
+        "description": "Palvelun laadun varmistamiseksi lataamme sivun uudelleen.",
+        "button_text": "Ymmärrän"
+      },
+      "icons": {
+        "close": "Sulje ilmoitusbanneri",
+        "information": "Tietoviesti: ",
+        "success": "Onnistumisviesti: ",
+        "error": "Virheviesti: ",
+        "alert": "Varoitusviesti: "
+      },
+      "unexpected_error": "Olemme kohdanneet virheen. Yritä myöhemmin uudelleen.",
+      "network_error": "Make.orgin mihinkään sisältöön ei ole mahdollista päästä, koska vaikutat olevan poissa verkosta",
+      "vote_only": {
+        "message": "Kuulemista \"{{title}}\" varten ei voida enää vastaanottaa uusi ehdotuksia. Jatka kuitenkin olemassa olevista ehdotuksista äänestämistä ja auta ratkaisemaan niitä koskevat äänestykset.",
+        "button": "selvä"
+      },
+      "vote_on_proposal": "Äänestä tästä ehdotuksesta"
+    },
+    "propose": "Ehdota",
+    "open_new_window": "Avaa uudessa välilehdessä",
+    "loading": "Odotathan, kun latausta suoritetaan.",
+    "participate": "Osallistu",
+    "display_tooltip": "Näytä vihjeteksti, kun osoitin viedään kohteen päälle",
+    "expand_collapse": "{{name}} – näytä avattavan osion sisällön",
+    "shrink_collapse": "{{name}} – piilota avattavan osion sisältö",
+    "secondary_nav": "Alanavigaatio",
+    "percent": "{{percent}}%",
+    "header_authentication_nav": "Siirry käyttäjäprofiiliini",
+    "footer_nav": "Alanavigaatio",
+    "sidebar_area": "Sisältöä koskeva sivupalkki",
+    "max_characters": "sallitusta merkkimäärästä",
+    "back": "Takaisin",
+    "proposal_count_one": "{{count}} ehdotus",
+    "proposal_count_other": "{{count}} ehdotusta",
+    "breadcrumbs": "navigointipolku",
+    "million_one": "miljoona",
+    "million_other": "miljoonaa",
+    "close_panel": "Sulje pudotusvalikko",
+    "close": "Sulje"
+  },
+  "header": {
+    "logo_alt": "Siirry Make.orgin kotisivulle"
+  },
+  "proposal_card": {
+    "next": "Seuraava ehdotus",
+    "validate": "Vahvista",
+    "content": "Ehdotuksen sisältö: ",
+    "posted_label": "Julkaistu kuulemisessa ",
+    "author": {
+      "from": "Ehdotus henkilöltä ",
+      "age": "{{age}} vuotta",
+      "date": "julkaisupäivämäärä: "
+    },
+    "status": {
+      "title": "Ehdotuksen sisältö: ",
+      "accepted": "Julkaistu",
+      "refused": "Hylätty",
+      "postponed": "Odottaa moderointia",
+      "pending": "Odottaa moderointia"
+    },
+    "original": "Katso alkuperäinen",
+    "translation": "Katso käännös"
+  },
+  "intro_card": {
+    "title": "Tuhannet kansalaiset ehdottavat ratkaisuja.",
+    "description": "Ota kantaa näihin ratkaisuihin ja ehdota omiasi.Toimimme parhaiden ratkaisujen mukaisesti.",
+    "button": "Aloita"
+  },
+  "final_card": {
+    "title": "Kiitos, että reagoit ehdotuksiin",
+    "description": "Jatka äänestämistä. Näin tiedämme, mitä asioita pidetään tärkeimpinä.",
+    "link_text": "Siirry kuulemiseen",
+    "register": {
+      "description": "Miten voin seurata tuloksia?",
+      "button_intro": "Luo oma",
+      "button_text": "kansalaisalue."
+    }
+  },
+  "no_proposal_card": {
+    "title": {
+      "regular": "Kiitos uskomattomasta panoksestasi!",
+      "popular": "Kiitos, olet äänestänyt kaikista suosituimmista ehdotuksista",
+      "controversial": "Kiitos, olet äänestänyt kaikista kiistanalaisimmista ehdotuksista",
+      "keyword": "Kiitos, olet äänestänyt kaikista aiheeseen \"{{keyword}}\" liittyvistä ehdotuksista"
+    },
+    "description": {
+      "regular": "Tällä hetkellä ei ole uusia ehdotuksia.",
+      "special": "Jatka äänestämistä. Näin tiedämme, mitä asioita pidetään tärkeimpinä."
+    },
+    "link_text": "Siirry kuulemiseen",
+    "sharing": "Voit myös jakaa kuulemista ja siten edistää sen vaikuttavuutta."
+  },
+  "push_proposal_card": {
+    "title": "Onko sinulla ehdottaa ratkaisua tähän asiaan?",
+    "next-cta": "Ei vielä, jatkan äänestämistä"
+  },
+  "sequence_progress": {
+    "previous": "Siirry edelliseen elementtiin",
+    "counter": "Elementti {{index}}/{{total}}"
+  },
+  "sequence_zone": {
+    "popular_title": "Suosittuja ehdotuksia",
+    "controversial_title": "Kiistanalaiset ehdotukset"
+  },
+  "special_final_card": {
+    "title": "Kiitos äänistäsi!",
+    "subtitle": "Voit jatkaa kuulemiseen osallistumista",
+    "cta_text": "Siirry kuulemiseen"
+  },
+  "demographics_card": {
+    "disclaimer": "Tietosi ovat nimettömiä, ja niiden avulla voimme varmistaa, että tulokset ovat kattavia.",
+    "skip": "Ohita",
+    "submit": "Tallenna",
+    "submitted_thanks": "Kiitos vastauksestasi",
+    "submitted_disclaimer": " Sitä käytetään nimettömästi kuulemisen tulosten analysointiin.",
+    "select": "Valitse"
+  },
+  "proposal_submit": {
+    "form": {
+      "bait": "On toimittava näin: ",
+      "title": "Anna ehdotus, jossa on alle140 merkkiä. Syötä se ehdotuskenttään ja vahvista napsauttamalla \"Vahvista\"-painiketta",
+      "field": "Ehdotuskenttä",
+      "counter": "Ehdotuksesi sisältää {{current}} merkkiä yhteensä {{total}} käytettävissä olevasta merkistä",
+      "panel_trigger": "Ehdotan ratkaisua",
+      "read_our": "Lue",
+      "moderation_link": "moderointisääntömme",
+      "button_propose": "EHDOTA"
+    },
+    "authentication": {
+      "back": "Takaisin",
+      "last_step_red": "Sinun tarvitsee vain suorittaa enää yksi vaihe, ",
+      "last_step": "jotta voit lähettää ehdotuksesi",
+      "button_login_text": "Minulla on jo tili,",
+      "button_login_link": "kirjaudu sisään.",
+      "button_login": "Kirjaudu sisään",
+      "back_authentication": "Siirry kirjautumisruutuun"
+    },
+    "success": {
+      "button": "Jatka äänestämistä",
+      "other_idea": "Minulla on toinen idea",
+      "tooltip_title": "Moderoitavana",
+      "tooltip_description": "Tiimimme käsittelevät ehdotuksesi 48 tunnin kuluessa. Sillä välin voit kuitenkin käydä katsomassa sitä profiilistasi, jossa se on heti nähtävissäsi.",
+      "grats": "Onnittelut {{name}}, ",
+      "proposal_sent": "ehdotuksesi on lähetetty ",
+      "activate": "Vahvista sähköpostiosoitteesi yhdellä napsautuksella ",
+      "link": "tilisi aitouden varmistamiseksi. Napsauta aktivointilinkkiä, joka on lähetetty sinulle osoitteeseen: {{mail}}",
+      "question": "Onko sinulla kysyttävää? Voit ottaa meihin yhteyttä : ",
+      "consultation_access": "Siirry kuulemiseen"
+    }
+  },
+  "vote": {
+    "intro_title": "Haluan kertoa mielipiteeni tästä ehdotuksesta: ",
+    "agree": "samaa mieltä",
+    "disagree": "Eri mieltä",
+    "neutral": "Äänestä tyhjää",
+    "label_one": "{{count}} ääni",
+    "label_other": "{{count}} ääntä",
+    "with_percent": "{{votedKey}}: {{votedPercent}}%"
+  },
+  "unvote": {
+    "title": "Peruutan tätä ehdotusta koskevan mielipiteeni."
+  },
+  "qualification": {
+    "title": "Haluan tarkentaa tätä ehdotusta koskevaa mielipidettäni:",
+    "static_repartition": "Tätä ehdotusta on luonnehdittu seuraavasti: ",
+    "times": "kertaa",
+    "likeIt": "Suosikki",
+    "doable": "Realistinen",
+    "platitudeAgree": "Vähäpätöinen",
+    "noWay": "Ei todellakaan!",
+    "impossible": "Ei mahdollinen",
+    "platitudeDisagree": "Vähäpätöinen",
+    "doNotUnderstand": "En ymmärtänyt",
+    "noOpinion": "Ei mielipidettä",
+    "doNotCare": "Ei merkitystä"
+  },
+  "sequence": {
+    "return": "Palaa ehdotuksiin",
+    "title": "Äänestä kuulemiseen liittyvistä ehdotuksista: ",
+    "more": "Siirry koko kuulemiseen"
+  },
+  "login": {
+    "title": "Minulla on jo tili",
+    "connect": "Kirjaudu sisään",
+    "or": "tai",
+    "forgot_password": "Unohditko salasanasi?",
+    "registration_title": "Minulla ei ole tiliä.",
+    "registration_link": "Haluan luoda sellaisen.",
+    "email_doesnot_exist": "{{emailabel}} tai {{passwordLabel}} on virheellinen."
+  },
+  "register": {
+    "title": "Luo tili",
+    "or": "tai",
+    "login_title": "Minulla on jo tili,",
+    "login_link": "kirjaudun sisään.",
+    "gtu_text_first": "Rekisteröitymällä hyväksyt ",
+    "gtu_link": "yleiset käyttöehtomme."
+  },
+  "legal_consent": {
+    "title": "Laillinen lupa",
+    "subtitle": "Tarvitsemme jommankumman huoltajasi suostumuksen",
+    "description": "Meidän on saatava kaksi suostumusta, jotta pääset kansalaisalustallemme. Pian pääset kertomaan mielipiteesi kaikissa kuulemisissamme.",
+    "minor_consent": "Hyväksyn, että Make.org käsittelee henkilötietojani.",
+    "parental_consent": "Hyväksyn huoltajana, että Make.org käsittelee lapseni henkilötietoja.",
+    "cancel": "Peruuta",
+    "submit": "Vahvista",
+    "privacy_policy_first_part": "Hyväksyn, että Make.org käsittelee nämä tiedot, jotta voin osallistua ja saada tietoa tuloksista ",
+    "privacy_policy_link": "tietosuojakäytännön",
+    "privacy_policy_last_part": ". (pakollinen)",
+    "privacy_policy": "mukaisesti",
+    "make_protect": "Make.org on sitoutunut suojaamaan",
+    "make_protect_link": " henkilötietojasi.",
+    "opt_in": "Hyväksyn, että Make.org voi lähettää minulle sähköpostia, jotta voin pysyä ajan tasalla olemassa olevista ja tulevista kuulemisista. (valinnainen)"
+  },
+  "forgot_password": {
+    "title": "Haluan palauttaa salasanani",
+    "description": "Anna Make.org-tiliisi yhdistetty sähköpostiosoite, jotta voit saada palautuslinkin.",
+    "success": "Kiitos, sinulle on juuri lähetetty sähköpostiviesti, jonka avulla voit päivittää salasanasi.",
+    "return": "Palaa ",
+    "login_link": "kirjautumisnäyttöön",
+    "send_link": "vastaanota sähköposti"
+  },
+  "reset_password": {
+    "title": "Haluan luoda uuden salasanan",
+    "info": "Voit valita uuden salasanan.",
+    "send_cta": "Vahvista",
+    "success": {
+      "title": "Kiitos, salasanasi on päivitetty onnistuneesti."
+    },
+    "failure": {
+      "bad_link": "Tämä linkki ei ole enää voimassa."
+    }
+  },
+  "data_policy_modal": {
+    "title": "Tietosuojakäytäntömme päivitys",
+    "description": "Make.org sitoutuu suojaamaan henkilötietojasi aina, kun vierailet sivustolla. Jos haluat jatkossakin selata Make.org-sivustoa kirjautuneena, sinun on hyväksyttävä päivitetty {{data_policy_link}} ",
+    "consent": "<strong> hyväksyn uuden tietokäytännön </strong> ja voin jatkossakin käyttää kansalaisaluettani Make.org-sivustolla.",
+    "validate": "Hyväksy",
+    "stay": "Pysy",
+    "leave": "Poistu",
+    "refusal_title": "Haluatko varmasti poistua?",
+    "refusal_description_first_part": "Sinun tulee hyväksyä päivitetty ",
+    "refusal_description_second_part": ", jotta voit yhä käyttää kansalaisaluettasi Make.org-sivustolla. "
+  },
+  "not_found": {
+    "intro": "hups",
+    "title": "Virhe 404",
+    "description": "Pyytämääsi sivua ei ole tai sitä ei ole enää olemassa."
+  },
+  "report_translations": {
+    "button": "Ehdotusta koskevat vaihtoehdot",
+    "confirmation": {
+      "title": "Kiitos ilmoituksesta!",
+      "description": "Tiimimme tarkastelee sitä mahdollisimman pian"
+    },
+    "form": {
+      "title": "Tee ilmoitus automaattisesta käännöksestä",
+      "unclear": "Käännös ei ole ymmärrettävissä",
+      "error": "Käännösvirhe",
+      "false_info": "Sisältää väärää tietoa",
+      "offensive": "Loukkaava ehdotus",
+      "report": "Ilmoita"
+    },
+    "first_step": {
+      "title": "Automaattinen käännös",
+      "text": "Kuulemistemme ehdotukset käännetään automaattisesti. Jos huomaat virheen, ilmoitathan siitä tiimeillemme."
+    }
+  },
+  "top_proposal_card": {
+    "start": "@@top_proposal_card.start|fr:Commencer à voter"
+  },
+  "maintenance": {
+    "subtitle": "@@maintenance.subtitle|fr:Oops, nous sommes désolé! Make.org est actuellement en maintenance"
+  },
+  "unsecure": {
+    "title": "@@unsecure.title|fr:La consultation est maintenant terminée",
+    "description": "@@unsecure.description|fr:Vous souhaitez en savoir plus sur ce sujet ? Découvrez la suite de l'opération et restez informé(e) de toutes nos consultations citoyennes en vous inscrivant sur Make.org",
+    "link": "@@unsecure.link|fr:Découvrir notre opération"
+  }
+}

@@ -77,8 +77,8 @@ export const HeaderPanel: FC = () => {
             )}
             <KindLabelTextStyle>
               {isConsensusSequenceKind
-                ? i18n.t('sequence.label.popular')
-                : i18n.t('sequence.label.controversial')}
+                ? i18n.t('sequence_zone.popular_title')
+                : i18n.t('sequence_zone.controversial_title')}
             </KindLabelTextStyle>
           </KindLabelWrapperStyle>
         )}
