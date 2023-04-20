@@ -37,7 +37,7 @@ export const IntroCard: React.FC<Props> = ({ configuration }) => {
       <SequenceMainTitleStyle data-cy-container="intro-card-title">
         {title || i18n.t('intro_card.title')}
       </SequenceMainTitleStyle>
-      {descriptionText.split('\n').map((text, index) => (
+      {descriptionText.split('\n').map((text: string, index: number) => (
         <SequenceIntroParagraphStyle
           key={text}
           data-cy-container={`intro-card-text-${index}`}

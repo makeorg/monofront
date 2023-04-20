@@ -16,13 +16,15 @@
     "**/*.md",
     "**/resolveTsconfigPathsToAlias.js",
     "**/ecosystem.config.cjs",
-    "**/webpack.config.cjs"
+    "**/webpack.config.cjs",
+    "**/app.e2e-spec.ts"
   ],
   "include": ["apps", "package"],
   "compilerOptions": {
     "rootDir": ".",
     "baseUrl": "./types/index",
     "lib": ["dom", "dom.iterable", "ES2021"],
+    "experimentalDecorators": true,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -53,7 +55,8 @@
       "@make.org/store": ["./package/store/*"],
       "@make.org/translator": ["./package/translator/src/*"],
       "@make.org/logger": ["./package/logger/*"],
-      "@make.org/designsystem": ["./package/designsystem/*"]
+      "@make.org/designsystem": ["./package/designsystem/*"],
+      "@make.org/content": ["./package/content/src/*"],
     }
   }
 }

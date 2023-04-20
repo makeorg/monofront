@@ -76,7 +76,7 @@ export const Histogram: FC<HistogramType> = ({
           <caption>{name}</caption>
           <thead>
             <tr>
-              <td />
+              <td aria-hidden />
               <th scope="col">
                 {legend.dimensions.first}
                 {` (${i18n.t('consultation.results.table.value_with_unit', {

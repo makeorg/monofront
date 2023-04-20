@@ -7,8 +7,7 @@ export const requestIdMiddleware = (
   next: NextFunction
 ): Response | void => {
   const initialRequestId = req.headers['x-make-external-id'] as string;
-  req.requestId = initialRequestId || uuidv4();
-  res.locals.requestId = req.requestId;
+  res.locals.requestId = initialRequestId || uuidv4();
 
   return next();
 };

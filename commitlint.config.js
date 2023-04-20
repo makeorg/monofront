@@ -17,6 +17,7 @@ module.exports = {
         'widget',
         'translator',
         'designsystem',
+        'content',
       ],
     ],
     'subject-case': () => [

@@ -37,7 +37,7 @@
     "favicons-webpack-plugin": "^5.0.2",
     "html-webpack-plugin": "^5.5.0",
     "http-proxy-middleware": "2.0.6",
-    "i18next": "22.1.4",
+    "i18next": "^23.5.0",
     "node-cache": "^5.1.2",
     "object-hash": "3.0.0",
     "pm2": "~5.2.2",

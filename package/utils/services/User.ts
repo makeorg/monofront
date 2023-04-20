@@ -426,8 +426,6 @@ const checkSocialPrivacyPolicy = async (
       failure,
       unexpectedError
     );
-
-    return;
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
     if (failure) {
@@ -449,8 +447,6 @@ const changePassword = async (
     if (success) {
       success();
     }
-
-    return;
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
     defaultUnexpectedError(apiServiceError);

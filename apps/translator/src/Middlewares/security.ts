@@ -85,7 +85,7 @@ export const securityMiddleware = async (
     return res.status(401).send();
   }
 
-  const user = await current(authHeader, req.requestId, res);
+  const user = await current(authHeader, res.locals.requestId, res);
 
   if (!user) {
     getLoggerInstance().logInfo(

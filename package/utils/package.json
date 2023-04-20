@@ -18,7 +18,7 @@
     "express-prom-bundle": "^6.5.0",
     "glider-js": "^1.7.7",
     "helmet-csp": "^3.4.0",
-    "i18next": "22.1.4",
+    "i18next": "^23.5.0",
     "mockdate": "^3.0.5",
     "node-cache": "^5.1.2",
     "node-mocks-http": "^1.11.0",
