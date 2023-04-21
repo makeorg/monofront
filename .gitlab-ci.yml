@@ -9,12 +9,25 @@ cache:
     - ~/.cache
     - node_modules
 
+.weblate-user: &weblate-user
+  variables:
+    - $GITLAB_USER_LOGIN == "weblate"
+
+enable_merge:
+  stage: weblate
+  only:
+    refs:
+      - merge_requests
+    <<: *weblate-user
+  script:
+    - echo "This is fine"
+
 .exclude-weblate: &exclude_weblate
   except:
-    variables:
-      - $GITLAB_USER_LOGIN == "weblate"
+    <<: *weblate-user
 
 stages:
+  - weblate
   - check
   - build
   - deploy
