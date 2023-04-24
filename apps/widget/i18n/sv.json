@@ -1,0 +1,354 @@
+{
+  "meta": {
+    "sequence": {
+      "title_standard": "Delta i samrådet '{{question}}' - Make.org",
+      "title_controversy": "Avgör omröstningen mellan förslagen i samrådet '{{question}}' - Make.org",
+      "title_popular": "Ta ställning till de mest populära förslagen i samrådet '{{question}}' - Make.org"
+    }
+  },
+  "common": {
+    "connexion_label": "Logga in",
+    "register_label": "Skapa konto",
+    "continue": "Fortsätt",
+    "form": {
+      "hide_password": "Dölj lösenordet",
+      "show_password": "Visa lösenordet",
+      "requirements": "Alla fält är obligatoriska om inte annat anges.",
+      "requirements_short": "Alla fält är obligatoriska.",
+      "password_requirements": "Minst 8 tecken varav minst 1 siffra, 1 stor bokstav och 1 specialtecken.",
+      "post_code": "Postadressen hjälper oss att analysera resultaten utifrån geografiskt område.",
+      "label": {
+        "email": "E-post",
+        "password": "Lösenord",
+        "firstname": "Förnamn",
+        "age": "Ålder",
+        "postalcode": "Postnummer",
+        "profession": "Yrke",
+        "biography": "Bakgrund",
+        "website": "Webbplats",
+        "organisation": "Organisationens namn",
+        "postalcode_optional": "Postnummer (frivilligt)",
+        "personality": {
+          "firstname": "Kandidatens förnamn / först på listan",
+          "lastname": "Kandidatens efternamn / först på listan"
+        }
+      },
+      "messages": {
+        "errors_notification": "Vi har hittat fel i formuläret:",
+        "invalid_email": "Vänligen respektera e-postformatet.",
+        "invalid_email_dynamic": "Vänligen respektera formatet {{label}}.",
+        "already_registered": "Denna e-postadress finns redan.",
+        "already_registered_dynamic": "Denna {{label}} finns redan.",
+        "email_doesnot_exist": "Denna e-postadress är inte kopplad till ditt konto. Skriv gärna din e-postadress igen.",
+        "email_doesnot_exist_dynamic": "Denna {{label}} är inte kopplad till ditt konto. Skriv gärna din e-postadress igen.",
+        "invalid_password": "Ditt lösenord måste innehålla minst 8 tecken.",
+        "invalid_password_dynamic": "Ditt {{label}} måste innehålla minst 8 tecken.",
+        "api_error": "Hoppsan! Vi har problem med att ladda den här sidan. Försök igen senare.",
+        "mandatory": "Fyll i det här fältet.",
+        "mandatory_dynamic": "Fältet {{label}} är obligatoriskt.",
+        "invalid_age": "Våra användare måste vara mellan 8 och 120 år gamla.",
+        "invalid_age_dynamic": "{{label}}: Våra användare måste vara mellan 8 och 120 år gamla.",
+        "the_field_[email]_is_missing": "Fältet {{label}} är obligatoriskt.",
+        "the_field_[password]_is_missing": "Fältet {{label}} är obligatoriskt.",
+        "invalid_postal_code": "Postnumret måste bestå av 5 siffror.",
+        "invalid_privacy_policy": "Du måste godkänna uppgiftspolicyn.",
+        "invalid_postal_code_dynamic": "{{label}} måste bestå av 5 siffror.",
+        "submit_success": "Ändringen har registrerats.",
+        "malformed": "Vänligen respektera url-formatet \"https://example.com\""
+      }
+    },
+    "social_login": {
+      "facebook_connect": "Fortsätt med Facebook",
+      "google_connect": "Fortsätt med Google",
+      "email_register": "Registrera dig via e-post",
+      "count_register": "({{count}}/2)"
+    },
+    "notifications": {
+      "bad_link": "Den här länken är inte giltig längre.",
+      "secure_expired": {
+        "first_sentence": "Du har tyvärr loggats ut, det verkar som att du har gått",
+        "second_sentence": "Logga in igen för att fortsätt rösta, lägga förslag och agera på Make.org.",
+        "emoji": "emoji ledset ansikte med tår"
+      },
+      "session_expired": {
+        "title": "Tidsgräns för inaktivitet",
+        "description": "Vi kommer att ladda sidan igen för att säkerställa god kvalitet på tjänsten.",
+        "button_text": "Jag förstår"
+      },
+      "icons": {
+        "close": "Stäng aviseringen",
+        "information": "Informationsmeddelande: ",
+        "success": "Meddelande om utförd åtgärd: ",
+        "error": "Felmeddelande: ",
+        "alert": "Varningsmeddelande: "
+      },
+      "unexpected_error": "Vi har för närvarande ett fel, var god försök senare.",
+      "network_error": "Det går inte att komma åt hela webbplatsen Make.org. Det verkar som om du är offline",
+      "vote_only": {
+        "message": "Samrådet \"{{title}}\" tar inte emot nya förslag längre, men fortsätt rösta för att avgöra omröstningen av de förslag som finns.",
+        "button": "jag förstår"
+      },
+      "vote_on_proposal": "Rösta på det här förslaget"
+    },
+    "propose": "Lägg ett förslag",
+    "open_new_window": "Öppna i en ny flik",
+    "loading": "Vänligen vänta medan sidan laddas.",
+    "participate": "Delta",
+    "display_tooltip": "Visa innehållet i informationsruta där muspekaren hovrar",
+    "expand_collapse": "{{name}} - Visa innehållet i rullavsnittet",
+    "shrink_collapse": "{{name}} - Dölj innehållet i rullavsnittet",
+    "secondary_nav": "Sekundär navigering",
+    "percent": "{{percent}}%",
+    "header_authentication_nav": "Åtkomst till min användarprofil",
+    "footer_nav": "Navigering längst ner på sidan",
+    "sidebar_area": "Sidopanel för innehåll",
+    "max_characters": "maximalt",
+    "back": "Tillbaka",
+    "proposal_count_one": "{{count}} förslag",
+    "proposal_count_other": "{{count}} förslag",
+    "breadcrumbs": "länkstig",
+    "million_one": "miljon",
+    "million_other": "miljoner",
+    "close_panel": "Stäng rullistan",
+    "close": "Stäng"
+  },
+  "header": {
+    "logo_alt": "Gå till förstasidan för Make.org"
+  },
+  "proposal_card": {
+    "next": "Följande förslag",
+    "validate": "Godkänn",
+    "content": "Innehållet i förslaget: ",
+    "original": "Se originalet",
+    "translation": "Se översättningen",
+    "posted_label": "Upplagt i ",
+    "author": {
+      "from": "Förslag från: ",
+      "age": "{{age}} år",
+      "date": "upplagt den: "
+    },
+    "status": {
+      "title": "Förslagets status: ",
+      "accepted": "Publicerat",
+      "refused": "Förkastat",
+      "postponed": "Väntar på moderering",
+      "pending": "Väntar på moderering"
+    }
+  },
+  "report_translations": {
+    "button": "Förslagets valmöjligheter",
+    "confirmation": {
+      "title": "Tack för att du påpekar det!",
+      "description": "Vårt team ska undersöka det så snart som möjligt."
+    },
+    "form": {
+      "title": "Påpeka automatisk översättning",
+      "unclear": "Obegriplig översättning",
+      "error": "Fel i översättningen",
+      "false_info": "Innehåller felaktig information",
+      "offensive": "Kränkande förslag",
+      "report": "Anmäla"
+    },
+    "first_step": {
+      "title": "Automatisk översättning",
+      "text": "Förslagen från våra samråd kommer automatiskt. Om du ser något fel, anmäl det gärna till vårt team!"
+    }
+  },
+  "intro_card": {
+    "title": "Tusentals medborgare föreslår lösningar.",
+    "description": "Ta ställning till dessa lösningar och föreslå egna.\nDe bästa avgör hur vi ska agera.",
+    "button": "Börja"
+  },
+  "final_card": {
+    "title": "Tack för att du reagerar på förslagen!",
+    "description": "Fortsätt rösta för att hjälpa oss att se vad som ska prioriteras.",
+    "link_text": "Jag deltar i samrådet",
+    "register": {
+      "description": "Hur kan jag följa resultaten?",
+      "button_intro": "Skapa din",
+      "button_text": "medborgarplattform."
+    }
+  },
+  "no_proposal_card": {
+    "title": {
+      "regular": "Tack för ditt viktiga bidrag!",
+      "popular": "Tack, du har röstat på alla förslag som är mest populära",
+      "controversial": "Tack, du har röstat på alla förslag som är mest omstridda",
+      "keyword": "Tack, du har röstat på alla förslag från \"{{keyword}}\""
+    },
+    "description": {
+      "regular": "Det finns inga nya förslag just nu.",
+      "special": "Fortsätt rösta för att hjälpa oss att se vad som ska prioriteras."
+    },
+    "link_text": "Jag deltar i samrådet",
+    "sharing": "Eller ge det här samrådet större räckvidd genom att sprida det."
+  },
+  "push_proposal_card": {
+    "title": "Har du någon lösning att föreslå i det här ämnet?",
+    "next-cta": "Inte än, jag fortsätter att rösta"
+  },
+  "sequence_progress": {
+    "previous": "Gå till föregående objekt",
+    "counter": "Objekt {{current}} av {{total}}"
+  },
+  "sequence_zone": {
+    "popular_title": "Populära förslag",
+    "controversial_title": "Omstridda förslag"
+  },
+  "special_final_card": {
+    "title": "Tack för att du har röstat!",
+    "subtitle": "Du kan fortsätta att delta i samrådet",
+    "cta_text": "Jag deltar i samrådet"
+  },
+  "demographics_card": {
+    "disclaimer": "Dina uppgifter är anonyma och gör våra resultat representativa.",
+    "skip": "Hoppa över",
+    "submit": "Registrera",
+    "submitted_thanks": "Tack för ditt svar.",
+    "submitted_disclaimer": " Det kommer att användas anonymt för att analysera resultatet av samrådet.",
+    "select": "Välj"
+  },
+  "proposal_submit": {
+    "form": {
+      "bait": "Vi måste ",
+      "title": "Lägg ditt förslag med färre än 140 tecken. Skriv det i förslagsfältet och validera genom att klicka på knappen ”Godkänn”",
+      "field": "Förslagsfält",
+      "counter": "Ditt förslag innehåller {{current}} tecken av totalt {{total}} möjliga.",
+      "panel_trigger": "Jag föreslår en lösning",
+      "read_our": "Läs vår",
+      "moderation_link": "modereringspolicy",
+      "button_propose": "LÄGG ETT FÖRSLAG"
+    },
+    "authentication": {
+      "back": "Tillbaka",
+      "last_step_red": "Bara ett steg kvar ",
+      "last_step": "innan du kan skicka in ditt förslag!",
+      "button_login_text": "Jag har redan ett konto,",
+      "button_login_link": "jag loggar in.",
+      "button_login": "Logga in",
+      "back_authentication": "Gå tillbaka till inloggningsskärmen"
+    },
+    "success": {
+      "button": "Fortsätta att rösta",
+      "other_idea": "Jag har en ny idé",
+      "tooltip_title": "Modereras",
+      "tooltip_description": "Ditt förslag kommer att behandlas av vårt team inom 48 timmar. Under tiden kan du från och med nu se det i din profil.",
+      "grats": "Gratulerar {{name}}, ",
+      "proposal_sent": "ditt förslag har skickats in ",
+      "activate": "Bekräfta din e-postadress med ett klick ",
+      "link": "för att garantera att ditt konto är autentiskt. Klicka på aktiveringslänken som har skickats till: {{mail}}",
+      "question": "Har du frågor? Du kan kontakta oss på: ",
+      "consultation_access": "Jag deltar i samrådet"
+    }
+  },
+  "vote": {
+    "intro_title": "Jag uttrycker min åsikt om det här förslaget: ",
+    "agree": "Jag håller med",
+    "disagree": "Jag håller inte med",
+    "neutral": "Jag är neutral",
+    "label_one": "{{count}} röst",
+    "label_other": "{{count}} röster",
+    "with_percent": "{{votedKey}}: {{votedPercent}} %"
+  },
+  "unvote": {
+    "title": "Jag drar tillbaka min åsikt om det här förslaget."
+  },
+  "qualification": {
+    "title": "Jag förtydligar min åsikt om det här förslaget:",
+    "static_repartition": "Det här förslaget har betecknats som: ",
+    "times": "gånger",
+    "likeIt": "Hjärtefråga",
+    "doable": "Realistiskt",
+    "platitudeAgree": "Intetsägande",
+    "noWay": "Absolut inte!",
+    "impossible": "Ogenomförbart",
+    "platitudeDisagree": "Intetsägande",
+    "doNotUnderstand": "Jag förstår inte",
+    "noOpinion": "Ingen åsikt",
+    "doNotCare": "Jag bryr mig inte"
+  },
+  "sequence": {
+    "return": "Återgå till förslagen",
+    "title": "Rösta på förslagen från samrådet: ",
+    "more": "Åtkomst till hela samrådet"
+  },
+  "login": {
+    "title": "Jag har redan ett konto",
+    "connect": "Logga in",
+    "or": "eller",
+    "forgot_password": "Har du glömt lösenordet?",
+    "registration_title": "Jag har inget konto,",
+    "registration_link": "jag ska skapa ett.",
+    "email_doesnot_exist": "Din {{emailLabel}} eller ditt {{passwordLabel}} är felaktigt."
+  },
+  "register": {
+    "title": "Skapa ett konto",
+    "or": "eller",
+    "login_title": "Jag har redan ett konto,",
+    "login_link": "jag loggar in.",
+    "gtu_text_first": "När du registrerar dig innebär det att du godtar våra ",
+    "gtu_link": "allmänna användarvillkor."
+  },
+  "legal_consent": {
+    "title": "Lagstadgat tillstånd",
+    "subtitle": "Vi behöver få tillstånd från en av dina föräldrar",
+    "description": "Vi behöver få in två medgivanden för att ge dig åtkomst till vår medborgarplattform. Snart kan du uttrycka din åsikt i alla våra samråd!",
+    "minor_consent": "Jag samtycker till att Make.org får behandla mina personuppgifter.",
+    "parental_consent": "Som vårdnadshavare samtycker jag till att Make.org får behandla mitt barns personuppgifter.",
+    "cancel": "Avbryt",
+    "submit": "Godkänn",
+    "privacy_policy_first_part": "Jag accepterar att Make.org behandlar dessa uppgifter så att jag kan delta och få information om resultaten i enlighet med ",
+    "privacy_policy_link": "policyn",
+    "privacy_policy_last_part": ". (obligatoriskt)",
+    "privacy_policy": "uppgiftspolicy",
+    "make_protect": "Make.org åtar sig att skydda dina",
+    "make_protect_link": " personuppgifter",
+    "opt_in": "Jag accepterar att ta emot e-postmeddelanden från Make.org för att hålla mig informerad om vad som händer i pågående och kommande samråd. (frivilligt)"
+  },
+  "forgot_password": {
+    "title": "Jag återställer mitt lösenord",
+    "description": "Var god uppge den e-postadress som är kopplad till ditt konto på Make.org för att få återställningslänken.",
+    "success": "Tack, vi har nu skickat ett e-postmeddelande för att du ska kunna uppdatera ditt lösenord.",
+    "return": "Gå tillbaka till ",
+    "login_link": "inloggningsskärmen",
+    "send_link": "få e-postmeddelandet"
+  },
+  "reset_password": {
+    "title": "Jag skapar ett nytt lösenord",
+    "info": "Du kan välja ett nytt lösenord.",
+    "send_cta": "Godkänn",
+    "success": {
+      "title": "Tack, ditt lösenord har uppdaterats."
+    },
+    "failure": {
+      "bad_link": "Den här länken är inte giltig längre."
+    }
+  },
+  "data_policy_modal": {
+    "title": "Uppdatering av vår uppgiftspolicy",
+    "description": "Make.org åtar sig att respektera dina personuppgifter vid alla dina besök på webbplatsen. För att fortsätta navigera som inloggad på Make.org måste du acceptera vår uppdatering av ",
+    "consent": "<strong>Jag accepterar den nya uppgiftspolicyn.</strong> och jag kan använda min medborgarplattform Make.org",
+    "validate": "Jag godkänner",
+    "stay": "Jag stannar kvar",
+    "leave": "Jag lämnar webbplatsen",
+    "refusal_title": "Är du säker på att du vill lämna webbplatsen?",
+    "refusal_description_first_part": "Om du vägrar godta vår nya ",
+    "refusal_description_second_part": ", har du inte längre åtkomst till din medborgarplattform Make.org."
+  },
+  "not_found": {
+    "intro": "hoppsan",
+    "title": "Fel 404",
+    "description": "Sidan du efterfrågar existerar inte eller har upphört att existera."
+  },
+  "top_proposal_card": {
+    "start": "@@top_proposal_card.start|fr:Commencer à voter"
+  },
+  "maintenance": {
+    "subtitle": "@@maintenance.subtitle|fr:Oops, nous sommes désolé! Make.org est actuellement en maintenance"
+  },
+  "unsecure": {
+    "title": "@@unsecure.title|fr:La consultation est maintenant terminée",
+    "description": "@@unsecure.description|fr:Vous souhaitez en savoir plus sur ce sujet ? Découvrez la suite de l'opération et restez informé(e) de toutes nos consultations citoyennes en vous inscrivant sur Make.org",
+    "link": "@@unsecure.link|fr:Découvrir notre opération"
+  }
+}
