@@ -1,0 +1,1429 @@
+{
+  "meta": {
+    "home": {
+      "title": "Veikite kartu su Make.org - Make.org",
+      "description": "Siūlykite, balsuokite, veikite: kartu raskime pagrindinių šiandienos problemų sprendimus.",
+      "picture": "https://assets.make.org/assets/metas/default_meta-fr.png"
+    },
+    "organisation": {
+      "proposals": {
+        "title": "{{organisation}} - jos pasiūlymai - Make.org"
+      },
+      "positions": {
+        "title": "{{organisation}} - jos pozicija - Make.org"
+      }
+    },
+    "profile": {
+      "proposals": {
+        "title": "Profilis - Mano pasiūlymai - Make.org"
+      },
+      "favorites": {
+        "title": "Profilis - Mano mėgstamiausi - Make.org"
+      },
+      "edit": {
+        "title": "Profilio redagavimas - Make.org"
+      }
+    },
+    "proposal": {
+      "title": "Per konsultaciją '{{question}}' pateiktas pasiūlymas '{{proposal}}' - Make.org",
+      "description": "Paremkite mano pasiūlymą balsuodami ir kartu raskime pagrindinių šiandienos problemų sprendimus. Labiausiai remiamus pasiūlymus įgyvendins Make.org ir jos partneriai."
+    },
+    "participate": {
+      "title": "Prisijunkite prie konsultacijų – {{question}} – Make.org",
+      "description": "Siūlykite, balsuokite, veikite: kartu raskime pagrindinių šiandienos problemų sprendimus."
+    },
+    "explore": {
+      "title": "Susipažinkite su pasiūlymais, pateiktais per konsultaciją '{{question}}' - Make.org"
+    },
+    "results": {
+      "title": "Konsultacijos '{{question}}' rezultatai - Make.org",
+      "description": "Susipažinkite su konsultacijos su piliečiais rezultatais, suskirstytais pagal populiariausias temas, prieštaringiausius pasiūlymus ir dažniausiai atmetamus pasiūlymus."
+    },
+    "sequence": {
+      "title_standard": "Dalyvaukite konsultacijoje '{{question}}' - Make.org",
+      "title_controversy": "Nuspręskite dėl per konsultaciją '{{question}}' pateiktų pasiūlymų - Make.org",
+      "title_popular": "Pareikškite savo nuomonę dėl populiariausių per konsultaciją '{{question}}' pateiktų pasiūlymų - Make.org",
+      "title_keyword": "Išsakykite savo nuomonę konsultacijos '{{question}}' tema '{{keywordLabel}}' – Make.org "
+    },
+    "top-ideas": {
+      "title": "Geriausios per konsultaciją '{{question}}' iškeltos idėjos - Make.org",
+      "description": "Susipažinkite su geriausiomis idėjomis, iškeltomis per konsultaciją '{{question}}'"
+    },
+    "top-idea-details": {
+      "title": "Išsami informacija apie per konsultaciją '{{question}}' iškeltą idėją '{{idea}}' - Make.org",
+      "description": "Susipažinkite su visais pasiūlymais dėl idėjos {{idea}}, iškeltos per konsultaciją '{{question}}'"
+    },
+    "search": {
+      "main_results": "Paieška - Rezultatai pagal « {{term}} » - Make.org",
+      "proposals": "Paieška - Rezultatai pagal pasiūlymus « {{term}} » - Make.org",
+      "consultations": "Paieška - Rezultatai pagal konsultacijas « {{term}} » - Make.org",
+      "organisations": "Paieška - Rezultatai pagal organizacijas « {{term}} » – Make.org"
+    },
+    "browse": {
+      "consultations": {
+        "title": "Dalyvaukite konsultacijose - Make.org",
+        "description": "Siūlykite, balsuokite, veikite: kartu raskime pagrindinių šiandienos problemų sprendimus."
+      },
+      "results": {
+        "title": "Konsultacijų rezultatai - Make.org",
+        "description": "Susipažinkite su mūsų konsultacijų rezultatais ir Make.org bei jos partnerių įgyvendintais veiksmais."
+      }
+    },
+    "legal": {
+      "title": "Teisinė informacija - Make.org",
+      "description": "Čia rasite teisinę svetainės informaciją."
+    },
+    "moderation": {
+      "title": "Make.org ∙ Moderavimo taisyklės",
+      "description": "Kokie pasiūlymai buvo atmesti per Make.org moderavimą? Kaip teisingai suformuluoti pasiūlymą?"
+    },
+    "privacy_policy": {
+      "title": "Asmens duomenų apsaugos taisyklės - Make.org",
+      "description": "Sužinokite viską apie tai, kaip tvarkomi jūsų asmens duomenys, kai lankotės svetainėje."
+    },
+    "gtu": {
+      "title": "Naudojimosi sąlygos - Make.org",
+      "description": "Sužinokite viską apie piliečių įsitraukimo platformos naudojimo sąlygas norint balsuoti ir teikti pasiūlymus."
+    },
+    "contact": {
+      "title": "Susisiekite su mumis - Make.org",
+      "description": "Jei nerandate atsakymo į savo klausimą, susisiekite su mumis el. paštu."
+    },
+    "no_cookies": {
+      "title": "Kažkas ne taip! Jūsų slapukai išjungti - Make.org"
+    },
+    "cookies": {
+      "title": "Slapukų valdymas - Make.org",
+      "description": "Sužinokite daugiau apie slapukų naudojimą jums lankantis platformoje."
+    },
+    "password-recovery": {
+      "title": "Sukuriu naują slaptažodį - Make.org"
+    },
+    "a11y": {
+      "title": "Prieinamumo deklaracija - Make.org",
+      "description": "Susipažinkite su Make.org įsipareigojimu užtikrinti skaitmeninio turinio prieinamumą. Kartu ieškokime didžiausių šiandienos problemų sprendimų."
+    },
+    "not_found": {
+      "title": "Puslapis nerastas - Klaida 404 - Make.org",
+      "description": "Puslapio, kurio prašėte, nebėra arba jis neegzistuoja."
+    }
+  },
+  "common": {
+    "connexion_label": "Prisijungti",
+    "register_label": "Registruotis",
+    "continue": "Tęsti",
+    "register_panel": {
+      "welcome": "Sveiki atvykę, {{name}}!",
+      "greeting": "Džiaugiamės, kad tapote aktyviu naudotoju!",
+      "mail_confirmation_strong": "Patvirtinkite savo el. pašto adresą vienu paspaudimu, ",
+      "mail_confirmation": " kad užtikrintumėte savo paskyros autentiškumą. Spustelėkite aktyvinimo nuorodą, atsiųstą jums adresu {{mail}}",
+      "onboarding": "Išsakykite savo nuomonę jums rūpimais visuomeniniais klausimais dalyvaudami mūsų platformoje rengiamose konsultacijose su piliečiais.",
+      "cta": "Dalyvauti konsultacijose",
+      "cta_access": "Dalyvauju konsultacijoje",
+      "optin_cgu_title": "Užbaikite registraciją",
+      "optin_cgu_subtitle": "keliais paspaudimais"
+    },
+    "form": {
+      "hide_password": "Slėpti slaptažodį",
+      "show_password": "Rodyti slaptažodį",
+      "requirements": "Visi laukai yra privalomi, jei nenurodyta kitaip.",
+      "requirements_short": "Visi laukai yra privalomi.",
+      "password_requirements": "Ne mažiau kaip 8 ženklai, įskaitant bent 1 skaičių, 1 didžiąją raidę ir 1 specialųjį ženklą.",
+      "post_code": "Pašto kodas leidžia analizuoti rezultatus pagal geografinę vietovę.",
+      "label": {
+        "email": "El. paštas",
+        "password": "Slaptažodis",
+        "firstname": "Vardas",
+        "lastname": "Pavardė",
+        "age": "Amžius",
+        "postalcode": "Pašto kodas",
+        "profession": "Profesija",
+        "biography": "Biografija",
+        "website": "Interneto svetainė",
+        "organisation": "Organizacijos pavadinimas",
+        "email_optional": "El. paštas (neprivaloma)",
+        "password_optional": "Slaptažodis (neprivaloma)",
+        "firstname_optional": "Vardas (neprivaloma)",
+        "lastname_optional": "Pavardė (neprivaloma)",
+        "age_optional": "Amžius (neprivaloma)",
+        "postalcode_optional": "Pašto kodas (neprivaloma)",
+        "profession_optional": "Profesija (neprivaloma)",
+        "privacy_policy": "Duomenų apsaugos politika",
+        "biography_optional": "Biografija (neprivaloma)",
+        "website_optional": "Interneto svetainė (neprivaloma)",
+        "organisation_optional": "Organizacijos pavadinimas (neprivaloma)",
+        "personality": {
+          "firstname": "Kandidato / sąrašo lyderio vardas",
+          "lastname": "Kandidato / sąrašo lyderio pavardė",
+          "firstname_M": "Kandidato / sąrašo lyderio vardas",
+          "lastname_M": "Kandidato / sąrašo lyderio pavardė",
+          "firstname_F": "Kandidato / sąrašo lyderio vardas",
+          "lastname_F": "Kandidato / sąrašo lyderio pavardė"
+        }
+      },
+      "messages": {
+        "errors_notification": "Šioje formoje radome klaidų:",
+        "invalid_email": "Prašome laikytis el. pašto formato.",
+        "invalid_email_dynamic": "Laikykitės {{label}} formato.",
+        "already_registered": "Šis el. paštas jau yra.",
+        "already_registered_dynamic": "Šis {{label}} pavadinimas jau yra.",
+        "email_doesnot_exist": "Šis el. paštas nėra susietas su jūsų paskyra, tad iš naujo įveskite savo el. pašto adresą.",
+        "email_doesnot_exist_dynamic": "Pavadinimas {{label}} nėra susietas su jūsų paskyra, tad iš naujo įveskite savo el. pašto adresą.",
+        "invalid_password": "Jūsų slaptažodį turi sudaryti ne mažiau kaip 8 ženklai.",
+        "invalid_password_dynamic": "Pavadinimą {{label}} turi sudaryti bent 8 ženklai.",
+        "api_error": "Oi! Įkeldami šį puslapį susiduriame su tam tikrais sunkumais. Prašome vėliau pabandyti dar kartą.",
+        "mandatory": "Užpildykite šį lauką.",
+        "mandatory_dynamic": "Laukas {{label}} yra būtinas.",
+        "invalid_age": "Svetainės naudotojai gali būti nuo 8 iki 120 metų amžiaus.",
+        "invalid_age_dynamic": "Laukas {{label}}: Svetainės naudotojai gali būti nuo 8 iki 120 metų amžiaus.",
+        "the_field_[email]_is_missing": "Laukas {{label}} yra būtinas.",
+        "the_field_[password]_is_missing": "Laukas {{label}} yra būtinas.",
+        "invalid_postal_code": "Pašto kodą turi sudaryti 5 skaitmenys.",
+        "invalid_privacy_policy": "Turite sutikti su duomenų politika.",
+        "invalid_postal_code_dynamic": "{{label}} turi sudaryti 5 skaitmenys.",
+        "submit_success": "Pakeitimas įrašytas.",
+        "malformed": "Prašome laikytis šio URL formato „https://example.com“"
+      }
+    },
+    "social_login": {
+      "card_title": "Jeigu norite rasti savo balsavimo istoriją",
+      "facebook_connect": "Tęskite naudodami „Facebook“",
+      "google_connect": "Tęskite naudodami „Google“",
+      "email_register": "Registruotis el. paštu",
+      "count_register": "({{count}}/2)"
+    },
+    "notifications": {
+      "bad_link": "Ši nuoroda nebegalioja.",
+      "activate_account_success": "Jūsų paskyra ką tik aktyvuota. Dabar galite prisijungti",
+      "delete_account_success": "Jūsų paskyra ištrinta. Tikimės, kad netrukus vėl pasimatysime Make.org!",
+      "login_success": "Sėkmingai prisijungėte.",
+      "logout_success": "Sėkmingai atsijungėte.",
+      "login_social_missing_email_data": "Nepavyksta gauti iš jūsų „Facebook“ paskyros registracijai reikalingo galiojančio el. pašto adreso. Kviečiame naudotis registracijos pagal el. pašto adresą forma.",
+      "register_success": "Sveiki atvykę! Jūs sėkmingai užsiregistravote.",
+      "register_validate": "Dėkojame, kad užsiregistravote. Adresu {{email}} ką tik buvo išsiųstas el. laiškas, kad vienu paspaudimu aktyvuotumėte savo paskyrą.",
+      "secure_expired": {
+        "first_sentence": "Apgailestaujame, jūsų prisijungimas buvo nutrauktas, nes atrodė, kad palikote svetainę",
+        "second_sentence": "Norėdami toliau balsuoti, teikti pasiūlymus ir dalyvauti Make.org veikloje, prisijunkite iš naujo.",
+        "emoji": "Jaustukas – liūdnas veidas su ašara"
+      },
+      "session_expired": {
+        "title": "Neaktyvumo laiko ribojimas",
+        "description": "Norėdami užtikrinti paslaugų kokybę, puslapį įkelsime iš naujo.",
+        "button_text": "Supratau"
+      },
+      "icons": {
+        "close": "Uždaryti pranešimo juostą",
+        "information": "Informacinis pranešimas: ",
+        "success": "Pranešimas apie sėkmingai atliktą veiksmą: ",
+        "error": "Pranešimas apie klaidą: ",
+        "alert": "Įspėjamasis pranešimas: "
+      },
+      "tags_filter": "Norėdami rasti jus dominančių pasiūlymų, naudokitės filtrais.",
+      "thank_you": "Atkreipėme dėmesį, ačiū!",
+      "unexpected_error": "Šiuo metu įvyko klaida, prašome bandyti dar kartą vėliau.",
+      "network_error": "Neįmanoma pasiekti viso Make.org turinio, nes atrodo, kad naršote neprisijungę",
+      "vote_only": {
+        "message": "Konsultacijoje „{{title}}“ nebegalima gauti naujų pasiūlymų, tačiau vis dar galima balsuoti dėl jau pateiktų pasiūlymų.",
+        "button": "Supratau"
+      },
+      "vote_on_proposal": "Balsuokite dėl šio pasiūlymo",
+      "cookies": {
+        "social_media": "Norėdami naudotis šia funkcija, turite leisti atitinkamus slapukus ",
+        "cookie_page": "Slapukų valdymas",
+        "update": "Dėkojame, išsaugojome jūsų slapukų nustatymus."
+      }
+    },
+    "from": "iš",
+    "email": "El. paštas",
+    "propose": "Pasiūlyti",
+    "click_there": "spauskite čia",
+    "open_new_window": "Atverti naujame skirtuke",
+    "loading": "Įkeliama, prašome palaukti.",
+    "participate": "Dalyvaukite",
+    "vote_on_proposals": "Balsuokite dėl visų pasiūlymų",
+    "display_pannel": "Rodyti išskleidžiamojo sąrašo turinį",
+    "hide_pannel": "Slėpti išskleidžiamojo sąrašo turinį",
+    "display_modal": "Rodyti dialogo lango turinį",
+    "hide_modal": "Slėpti dialogo lango turinį",
+    "display_tooltip": "Rodyti patarimą užvedus pelės žymeklį ant elemento",
+    "hide_tooltip": "Slėpti patarimą užvedus pelės žymeklį ant elemento",
+    "expand_collapse": "{{name}} - Rodyti išskleidžiamojo skirsnio turinį",
+    "shrink_collapse": "{{name}} - Slėpti išskleidžiamojo skirsnio turinį",
+    "secondary_nav": "Antrinis naršymas",
+    "percent": "{{percent}} %",
+    "header_authentication_nav": "Prieiga prie naudotojo profilio",
+    "footer_nav": "Naršymas puslapio apačioje",
+    "sidebar_area": "Šoninė turinio juosta",
+    "consultation_nav": "Konsultacijos naršymo juosta",
+    "slider": {
+      "introduction": "Norėdami naudotis toliau esančia karusele, naudokite klaviatūros valdymo mygtukus, rodykles į kairę ir į dešinę arba tabuliavimo klavišą.",
+      "previous": "Pereiti prie ankstesnio elemento",
+      "next": "Pereiti prie paskesnio elemento",
+      "index_count": "{{index}} elementas iš {{total}}"
+    },
+    "pagination": {
+      "title": "numeracija",
+      "next": "Kitas puslapis",
+      "previous": "Ankstesnis puslapis",
+      "index_count": "{{index}} puslapis iš {{total}}",
+      "page": "Puslapis",
+      "page_total": "iš {{total}}"
+    },
+    "max_characters": "maksimalus ženklų skaičius",
+    "back": "Atgal",
+    "proposal_count_one": "{{count}} pasiūlymas",
+    "proposal_count_other": "{{count}} pasiūlymai (-ų)",
+    "breadcrumbs": "naršymo kelias",
+    "million_one": "milijonas",
+    "million_other": "milijonai",
+    "close_panel": "Užverti išskleidžiamąjį meniu",
+    "close": "Užverti"
+  },
+  "header": {
+    "logo_alt": "Eiti į pagrindinį Make.org puslapį",
+    "open_menu": "Eiti į pagrindinį naršymo meniu",
+    "close_menu": "Užverti pagrindinį naršymo meniu",
+    "main_navigation": "Pagrindinis svetainės naršymas"
+  },
+  "proposal_page": {
+    "button_1": "dalyvauti",
+    "button_2": "sužinoti daugiau +",
+    "share_text": "Palaikykite šį pasiūlymą dalydamiesi juo:",
+    "footer_text": "Šis pasiūlymas buvo pateiktas vykdant operaciją {{operation_name}}"
+  },
+  "idea_card": {
+    "title": "Geriausios idėjos",
+    "number": "Idėja Nr. {{ count }}",
+    "content": "Idėjos turinys: ",
+    "link": "Peržiūrėkite išsamią informaciją apie šią idėją",
+    "associated_proposals_one": "{{count}} susijęs pasiūlymas",
+    "associated_proposals_other": "{{count}} susiję (-usių) pasiūlymai (-ų)",
+    "position_one": "{{ count }} pozicija",
+    "position_other": "{{ count }} pozicijos (-ų)",
+    "candidate_one": " kandidatas dėl šios idėjos.",
+    "candidate_other": " kandidatų dėl šios idėjos.",
+    "open": "Rodyti idėjos surinktų balų skaičių",
+    "close": "Slėpti idėjos surinktų balų skaičių",
+    "expand": " - Spustelėkite, jei norite matyti idėjos surinktus balus",
+    "collapse": " - Spustelėkite, jei norite slėpti idėjos surinktus balus",
+    "vote_proposals": "pasiūlymų",
+    "vote_positives": "balsų už",
+    "vote_heart": "mėgstamiausių"
+  },
+  "idea_details": {
+    "current_page": "Išsamiau apie šią idėją",
+    "proposals": "Susiję pasiūlymai",
+    "comments": "Jie išreiškė savo poziciją"
+  },
+  "proposal_card": {
+    "previous": "Ankstesnis pasiūlymas",
+    "next": "Kitas pasiūlymas",
+    "validate": "Patvirtinti",
+    "content": "Pasiūlymo turinys: ",
+    "original": "Žiūrėti originalą",
+    "translation": "Žiūrėti vertimą",
+    "number": "Žemėlapis Nr. {{current}} iš {{total}}",
+    "posted_label": "Įkelta į ",
+    "author": {
+      "from": "Pasiūlymas: ",
+      "age": "{{age}} metai (-ų)",
+      "date": "įkelta: "
+    },
+    "status": {
+      "title": "Pasiūlymo statusas: ",
+      "accepted": "Paskelbta",
+      "refused": "Atmesta",
+      "postponed": "Laukiama moderavimo",
+      "pending": "Laukiama moderavimo"
+    }
+  },
+  "report_translations": {
+    "button": "Pasiūlymo variantai",
+    "confirmation": {
+      "title": "Ačiū už pranešimą!",
+      "description": "Mūsų komanda kuo greičiau tai išnagrinės."
+    },
+    "form": {
+      "title": "Pranešti apie mašininį vertimą",
+      "unclear": "Nesuprantamas vertimas",
+      "error": "Vertimo klaida",
+      "false_info": "Yra melagingos informacijos",
+      "offensive": "Įžeidžiantis pasiūlymas",
+      "report": "Pranešti"
+    },
+    "first_step": {
+      "title": "Mašininis vertimas",
+      "text": "Per konsultacijas pasiūlymai pateikiami iš karto. Pastebėję klaidą, nedvejodami praneškite apie ją mūsų komandai!"
+    }
+  },
+  "intro_card": {
+    "purpose": "Įžanginė informacija",
+    "title": "Sprendimus siūlo tūkstančiai piliečių.",
+    "description": "Išreikškite savo poziciją dėl šių sprendimų ir siūlykite savo variantus.\nGeriausi iš jų nulems mūsų veiksmus.",
+    "description_short": "Išreikškite savo poziciją dėl šių sprendimų.",
+    "button": "Pradėti",
+    "partnership": "bendradarbiaujant su"
+  },
+  "final_card": {
+    "title": "Ačiū, kad reagavote į pasiūlymus!",
+    "description": "Tęskite balsavimą ir taip padėkite mums nustatyti prioritetus.",
+    "link_text": "Dalyvauju konsultacijoje",
+    "continue": "Balsuoju toliau",
+    "register": {
+      "description": "Kaip stebėti rezultatus?",
+      "button_intro": "Sukurkite savo",
+      "button_text": "pilietinę erdvę."
+    }
+  },
+  "no_proposal_card": {
+    "title": {
+      "regular": "Dėkojame už jūsų nuostabų indėlį!",
+      "popular": "Ačiū, balsavote dėl visų populiariausių pasiūlymų",
+      "controversial": "Ačiū, balsavote dėl visų prieštaringiausių pasiūlymų",
+      "keyword": "Ačiū, balsavote dėl visų pasiūlymų dėl „{{keyword}}“"
+    },
+    "description": {
+      "regular": "Šiuo metu naujų pasiūlymų nėra.",
+      "special": "Tęskite balsavimą ir taip padėkite mums nustatyti prioritetus."
+    },
+    "link_text": "Dalyvauju konsultacijoje",
+    "sharing": "Arba plėskite šios konsultacijos mastą skleisdami apie ją informaciją."
+  },
+  "push_proposal_card": {
+    "title": "Ar šiuo klausimu galite pasiūlyti kokį nors sprendimą?",
+    "next-cta": "Kol kas ne, aš dar balsuoju"
+  },
+  "sequence_progress": {
+    "previous": "Pereiti prie ankstesnio elemento",
+    "counter": "{{current}} elementas iš {{total}}"
+  },
+  "sequence_zone": {
+    "popular_title": "Populiarūs pasiūlymai",
+    "controversial_title": "Prieštaringi pasiūlymai"
+  },
+  "special_final_card": {
+    "title": "Ačiū už jūsų balsus!",
+    "subtitle": "Galite toliau dalyvauti konsultacijoje",
+    "cta_text": "Dalyvauju konsultacijoje"
+  },
+  "demographics_card": {
+    "disclaimer": "Jūsų pateikta informacija yra anoniminė, tad mūsų rezultatai yra reprezentatyvūs.",
+    "skip": "Eiti į",
+    "submit": "Išsaugoti",
+    "submitted_thanks": "Ačiū už atsakymą.",
+    "submitted_disclaimer": " Jis bus anonimiškai naudojamas analizuojant konsultacijų rezultatus.",
+    "select": "Pasirinkti"
+  },
+  "proposal_submit": {
+    "form": {
+      "bait": "Būtina ",
+      "title": "Pateikite pasiūlymą, kuriame ne daugiau kaip 140 ženklų. Įveskite jį į pasiūlymo lauką ir patvirtinkite spustelėdami mygtuką „Patvirtinti“",
+      "field": "Pasiūlymo laukai",
+      "counter": "Jūsų pasiūlymą sudaro {{current}} ženklai iš {{total}} galimų",
+      "panel_trigger": "Siūlau sprendimą",
+      "button_cancel": "Atšaukti",
+      "button_submit": "Patvirtinti",
+      "read_our": "Skaitykite mūsų",
+      "moderation_link": "moderavimo taisykles",
+      "button_propose": "PASIŪLYTI"
+    },
+    "authentication": {
+      "button_back": "Redaguoti pasiūlymą",
+      "back": "Atgal",
+      "title": "Patvirtinti pasiūlymą",
+      "last_step_red": "Liko tik vienas žingsnis ",
+      "last_step": "iki pasiūlymo išsiuntimo!",
+      "subtitle": "Registruojuosi",
+      "button_login_text": "Jau turiu paskyrą,",
+      "button_login_link": "prisijungiu.",
+      "button_login": "Prisijungti",
+      "back_authentication": "Grįžti į prisijungimo puslapį"
+    },
+    "success": {
+      "title": "Ačiū, {{name}}!",
+      "description": "Dabar mūsų komandos moderuoja jūsų pasiūlymą.",
+      "button": "Tęsti balsavimą",
+      "other_idea": "Turiu dar vieną idėją",
+      "tooltip_title": "Moderuojama",
+      "tooltip_description": "Jūsų pasiūlymą mūsų komandos apdoros per 48 valandas, o dabar jį galite rasti savo profilyje.",
+      "grats": "Sveikiname, {{name}}, ",
+      "proposal_sent": "jūsų pasiūlymas išsiųstas ",
+      "activate": "Patvirtinkite savo el. pašto adresą vienu paspaudimu, ",
+      "link": "kad užtikrintumėte savo paskyros autentiškumą. Spustelėkite aktyvinimo nuorodą, atsiųstą jums adresu {{mail}}",
+      "question": "Turite klausimų? Su mumis galite susisiekti šiuo adresu: ",
+      "consultation_access": "Dalyvauju konsultacijoje"
+    }
+  },
+  "vote": {
+    "intro_title": "Pateikiu savo nuomonę dėl šio pasiūlymo: ",
+    "agree": "Pritariu",
+    "disagree": "Nepritariu",
+    "neutral": "Susilaikau",
+    "label_one": "{{count}} balsas",
+    "label_other": "{{count}} balsai (-ų)",
+    "with_percent": "{{votedKey}}: {{votedPercent}} %"
+  },
+  "unvote": {
+    "title": "Atsiimu savo nuomonę dėl šio pasiūlymo."
+  },
+  "results": {
+    "static_total": "Dėl šio pasiūlymo gauta: ",
+    "static_repartition": "Balsai pasiskirstė taip: ",
+    "total_one": "Dėl šio pasiūlymo gauti {{count}} balsai, kurie pasiskirstė taip: ",
+    "total_other": "Dėl šio pasiūlymo gauta {{count}} balsų, kurie pasiskirstė taip: ",
+    "voted": {
+      "agree": "Dėl šio pasiūlymo balsavau „Pritariu“.",
+      "disagree": "Dėl šio pasiūlymo balsavau „Nepritariu“.",
+      "neutral": "Dėl šio pasiūlymo balsavau „Susilaikau“."
+    },
+    "tooltipbutton": {
+      "display": {
+        "agree": "Rodyti balsavimo rezultatus: „Pritariu“",
+        "disagree": "Rodyti balsavimo rezultatus: „Nepritariu“",
+        "neutral": "Rodyti balsavimo rezultatus: „Susilaikau“"
+      },
+      "hide": {
+        "agree": "Slėpti balsavimo rezultatus: „Pritariu“",
+        "disagree": "Slėpti balsavimo rezultatus: „Nepritariu“",
+        "neutral": "Slėpti balsavimo rezultatus: „Susilaikau“"
+      }
+    }
+  },
+  "qualification": {
+    "title": "Leiskite man pareikšti savo nuomonę dėl šio pasiūlymo:",
+    "static_repartition": "Šis pasiūlymas įvertintas taip: ",
+    "times": "kartų",
+    "likeIt": "Mėgstamiausias",
+    "doable": "Realus",
+    "platitudeAgree": "Banalus",
+    "noWay": "Visai nepriimtinas!",
+    "impossible": "Neįgyvendinamas",
+    "platitudeDisagree": "Banalus",
+    "doNotUnderstand": "Nesuprantamas",
+    "noOpinion": "Neturiu nuomonės",
+    "doNotCare": "Nedomina"
+  },
+  "sequence": {
+    "return": "Atgal į pasiūlymus",
+    "title": "Balsavimas dėl pasiūlymų, pateiktų per konsultaciją: ",
+    "more": "Žiūrėti visą konsultaciją"
+  },
+  "authentication": {
+    "title": "Registruokitės, jei norite patvirtinti savo pasiūlymą",
+    "description": "naudojant",
+    "commitment": "Make.org įsipareigoja saugoti jūsų ",
+    "personal_data": "asmens duomenis "
+  },
+  "login": {
+    "title": "Jau turiu paskyrą",
+    "social_connect": "Prisijungiu naudodamas (-a)",
+    "connect": "Prisijungti",
+    "or": "arba",
+    "button_connect": "Prisijungiu",
+    "email_connect": "Prisijungiu naudodamas (-a) savo el. pašto adresą",
+    "forgot_password_title": "Oi, aš",
+    "forgot_password_link": "pamiršau slaptažodį?",
+    "forgot_password": "Pamiršote slaptažodį?",
+    "registration_title": "Neturiu paskyros,",
+    "registration_link": "bet ją susikursiu.",
+    "email_doesnot_exist": "Jūsų {{emailLabel}} arba {{passwordLabel}} yra neteisingas."
+  },
+  "register": {
+    "title": "Sukurti paskyrą",
+    "social_connect": "Registruojuosi naudodamas (-a)",
+    "or": "arba",
+    "subtitle": "Registruojuosi naudodamas (-a) šią formą",
+    "step1_title": "Registruotis naudojant el. pašto adresą",
+    "step2_title": "Užbaigti registraciją",
+    "login_title": "Jau turiu paskyrą,",
+    "login_link": "prisijungiu.",
+    "gtu_text_first": "Registruodamiesi jūs sutinkate su mūsų ",
+    "gtu_text_second": " ir sutinkate gauti (retkarčiais) el. laiškus iš Make.org.",
+    "gtu_link": "bendrosiomis naudojimo sąlygomis."
+  },
+  "legal_consent": {
+    "title": "Leidimas",
+    "subtitle": "Mums reikia vieno iš jūsų tėvų sutikimo",
+    "description": "Kad galėtume suteikti prieigą prie mūsų piliečių platformos, turime gauti du sutikimus. Netrukus galėsite pasisakyti per visas mūsų konsultacijas!",
+    "minor_consent": "Sutinku, kad Make.org tvarkytų mano asmens duomenis.",
+    "parental_consent": "Kaip tėvų valdžios turėtojas, sutinku, kad Make.org tvarkytų mano vaiko asmens duomenis.",
+    "cancel": "Atšaukti",
+    "submit": "Patvirtinti",
+    "privacy_policy_first_part": "Sutinku, kad Make.org tvarkytų šiuos duomenis, kad galėčiau dalyvauti ir būčiau informuotas apie rezultatus pagal ",
+    "privacy_policy_link": "taisykles",
+    "privacy_policy_last_part": ". (privaloma)",
+    "privacy_policy": "duomenų apsaugos politika",
+    "make_protect": "Make.org įsipareigoja saugoti jūsų",
+    "make_protect_link": " asmens duomenis.",
+    "opt_in": "Sutinku gauti el. laiškus iš Make.org, kad mane informuotų apie vykstančias ir būsimas konsultacijas. (pasirinktinai)"
+  },
+  "forgot_password": {
+    "title": "Iš naujo nustatau slaptažodį",
+    "description": "Įveskite el. pašto adresą, susietą su jūsų Make.org paskyra, kad gautumėte nustatymo iš naujo nuorodą.",
+    "success": "Ačiū, ką tik jums buvo išsiųstas el. laiškas, kad galėtumėte atnaujinti slaptažodį.",
+    "return": "Atgal ",
+    "login_link": "į prisijungimo puslapį",
+    "send_link": "el. laiško gavimas",
+    "email_doesnot_exist": "Negalime rasti su šiuo el. paštu susietos paskyros."
+  },
+  "main_footer": {
+    "jobs": "Darbo vietos",
+    "whoarewe": "Mūsų požiūris",
+    "legal": "Teisinė informacija",
+    "terms": "Naudojimo sąlygos",
+    "data": "Duomenų apsaugos politika",
+    "country": "Keisti šalį",
+    "contact": "Kontaktai",
+    "news": "Mūsų naujienos",
+    "dotation_funds": "Labdaros fondas Make.org",
+    "moderation_charter": "Moderavimo taisyklės",
+    "press_details": "Pranešimų spaudai skiltis",
+    "a11y": "Pareiškimas dėl prieinamumo",
+    "cookies": "Slapukų valdymas"
+  },
+  "cookie_modal": {
+    "title": "Išreikškite save Make.org platformoje išsaugodami savo privatumą",
+    "description": "Siekdami toliau tobulinti savo paslaugas ir jūsų patirtį, prašome leisti naudoti mūsų ir mūsų partnerių slapukus, kai lankotės svetainėje.",
+    "details": {
+      "title": "Kokie tai slapukai?",
+      "technicals": "<strong>Metodai:</strong> slapukai, būtini, kad svetainė veiktų",
+      "preferences": "<strong>Nuostatos:</strong> slapukai, skirti jūsų patirčiai naršant svetainėje pagerinti",
+      "statistics": "<strong>Statistika:</strong> slapukai, skirti apibendrintai konsultacijų su piliečiais analizei pagerinti",
+      "social_media": "<strong>Socialiniai tinklai:</strong> slapukai, padedantys mums maksimaliai padidinti savo poveikį per socialinius tinklus"
+    },
+    "accept": "Leisti",
+    "personalize": "Tinkinti",
+    "refuse": "Tęsti be sutikimo naudoti slapukus",
+    "back": "Grįžti prie ankstesnio veiksmo",
+    "mandatory": "Visada įjungti",
+    "save": "Patvirtinti mano pasirinkimą",
+    "technicals": {
+      "secure": "make secure: jums prisijungus prie savo paskyros Make.org piliečių įsitraukimo platformoje, šis slapukas padeda užtikrinti, kad prisijungimas būtų išsaugotas, kol naršote svetainėje.",
+      "expiration": "make-secure-expiration: šis slapukas naudojamas jūsų neaktyvumui svetainėje aptikti, kad būtų nutrauktas prisijungimas.",
+      "demographics": "make-demographics: šis slapukas suteikia mums galimybę sužinoti, ar naudojant šį įrenginį jūsų jau buvo prašoma pateikti demografinius duomenis (amžius, vietovė, lytis ir t. t.), kad ateityje jums lankantis svetainėje jų vėl neprašytume."
+    },
+    "preferences": {
+      "authentication": "„Google“ ir „Facebook“ autentifikavimo slapukai: jie suteikia galimybę per šiuos socialinius tinklus užsiregistruoti ir prisijungti prie savo paskyros piliečių įsitraukimo platformoje.",
+      "session": "make-session-id: šis slapukas naudojamas tik vieno seanso metu visiems jūsų svetainėje atliekamiems veiksmams sugrupuoti.",
+      "expiration": "make-session-id-expiration: šis slapukas naudojamas pranešimui, kad jūsų sesija baigiasi (po 20 minučių) ir bus iš naujo įkelta, rodyti.",
+      "user": "make-user-id: šis slapukas nustato, kad jau esate sukūrę savo paskyrą Make.org, ir kviečia jus prisijungti, kad galėtumėte rasti visus atliktus veiksmus savo paskyroje piliečių įsitraukimo platformoje.",
+      "cookie": "make-cookie-preferences: šis slapukas įsimena jūsų nustatymus dėl slapukų naudojimo mūsų svetainėje."
+    },
+    "statistics": {
+      "visitor": "make-visitor-id: šis slapukas naudojamas apsilankymams mūsų svetainėje stebėti, kad būtų galima anonimiškai ir apibendrintai įvertinti srautą. Informacija apie naršant atliekamus veiksmus siunčiama į „MixPanel“ analizės įrankį.",
+      "created-at": "make-visitor-created-at: šis slapukas naudojamas pirmojo apsilankymo platformoje datai gauti.",
+      "tracking": "„Facebook“ sekimo slapukas: jis naudojamas elgsenos platformoje duomenims rinkti, kad būtų galima atlikti apibendrintą analizę siekiant pagerinti paslaugą. Jis taip pat naudojamas apibendrintiems socialiniams ir demografiniams duomenims (amžius, lytis, vietovė) rinkti, kad būtų pagerinta konsultacijų analizė."
+    },
+    "social_media": {
+      "facebook_pixel": "Pixel Facebook: jis naudojamas siekiant optimizuoti konsultacijų viešinimo kampanijas feisbuke, kad būtų padidintas piliečių įsitraukimas.",
+      "twitter_pixel": "Pixel Twitter: jis naudojamas siekiant optimizuoti konsultacijų viešinimo kampanijas tviteryje, kad būtų padidintas piliečių įsitraukimas.",
+      "facebook_sharing": "Partage Facebook: suteikia naudotojui galimybę bendrinti turinį savo feisbuko paskyroje.",
+      "twitter_sharing": "Partage Twitter: suteikia naudotojui galimybę bendrinti turinį savo tviterio paskyroje.",
+      "linkedin_sharing": "Partage LinkedIn: suteikia naudotojui galimybę bendrinti turinį savo linkedino paskyroje."
+    }
+  },
+  "reset_password": {
+    "title": "Kuriu naują slaptažodį",
+    "info": "Galite pasirinkti naują slaptažodį.",
+    "send_cta": "Patvirtinti",
+    "success": {
+      "title": "Dėkojame, jūsų slaptažodis sėkmingai atnaujintas.",
+      "info": "Dabar galite prisijungti."
+    },
+    "failure": {
+      "bad_link": "Ši nuoroda nebegalioja.",
+      "error_message": "Slaptažodžio pakeisti nepavyko."
+    }
+  },
+  "data_policy_modal": {
+    "title": "Duomenų apsaugos politikos atnaujinimas",
+    "description": "Make.org įsipareigoja saugoti jūsų asmens duomenis kiekvieno apsilankymo svetainėje metu. Norėdami tęsti naršymą būdami prisijungę prie Make.org, turite sutikti su mūsų atnaujinta ",
+    "data_policy_link": "duomenų apsaugos politika.",
+    "consent": "<strong>Sutinku su naująja duomenų apsaugos politika</strong> ir galėsiu naudotis savo paskyra Make.org piliečių erdvėje",
+    "validate": "Patvirtinu",
+    "stay": "Lieku",
+    "leave": "Atsijungiu",
+    "refusal_title": "Ar tikrai norite atsijungti?",
+    "refusal_description_first_part": "Atsisakę mūsų naujienų ",
+    "refusal_description_second_part": ", nebegalėsite prisijungti prie savo paskyros Make.org piliečių erdvėje."
+  },
+  "not_found": {
+    "intro": "oi",
+    "title": "Klaida 404",
+    "description": "Puslapio, kurio prašėte, nebėra arba jis neegzistuoja."
+  },
+  "profile": {
+    "tabs": {
+      "label": "Jūsų profilis",
+      "manage_account": "Tvarkyti paskyrą",
+      "proposals": "Pasiūlymai",
+      "favourites": "Mano mėgstamiausi",
+      "following": "Mano sekami profiliai"
+    },
+    "proposals": {
+      "title": "Mano naujausi pasiūlymai",
+      "text": "Jūs dar nepateikėte pasiūlymo Make.org platformoje."
+    },
+    "favourites": {
+      "title": "Mano mėgstamiausi",
+      "description": {
+        "introduction": "Jūs dar neturite mėgstamiausių Make.org platformoje.",
+        "explanation": "Pasiūlymą galite priskirti prie mėgstamiausių tik jei už jį balsavote „Pritariu“."
+      },
+      "card_title": "Būtina pritarti geriems pasiūlymams."
+    },
+    "common": {
+      "infos": "Mano asmeninė informacija",
+      "log_out": "Atsijungiu",
+      "age": "{{age}} metai (-ų)",
+      "submit_label": "Išsaugoti pakeitimus",
+      "submit_success": "Į jūsų prašymą atsižvelgta.",
+      "error": "Oi! Įrašant informaciją įvyko klaida. Bandykite dar kartą vėliau.",
+      "labels": {
+        "organisation": "Organizacijos pavadinimas: ",
+        "firstname": "Vardas: ",
+        "lastname": "Pavardė: ",
+        "email": "El. pašto adresas: ",
+        "postal_code": "Pašto kodas: ",
+        "age": "Amžius: ",
+        "profession": "Profesija: ",
+        "biography": "Biografija: ",
+        "website": "Interneto svetainė: ",
+        "political_party": "Politinė partija: ",
+        "select": "Pasirinkti"
+      }
+    },
+    "informations_update": {
+      "title": "Redaguoti profilį",
+      "link_to_profile": "Grįžti į mano profilį",
+      "more": "Žiūrėti +",
+      "less": "Žiūrėti -"
+    },
+    "password_update": {
+      "title": "Keisti slaptažodį",
+      "newpassword": "Naujas slaptažodis",
+      "submit_label": "Išsaugoti pakeitimus",
+      "actual_password": {
+        "label": "Dabartinis slaptažodis",
+        "invalid_password": "Įvedėte klaidingą {{label}}.",
+        "trigger": "Pamiršote slaptažodį?"
+      }
+    },
+    "communication_preferences": {
+      "title": "Tvarkyti ryšio parinktis",
+      "description": "Pasirinkite šalį ir kalbą, kuria norėtumėte gauti el. laiškus iš Make.org.",
+      "optin_label": "Sutinku gauti el. laiškus iš Make.org, kad žinočiau naujausią informaciją apie vykstančias ir būsimas konsultacijas."
+    },
+    "delete_account": {
+      "title": "Prašau ištrinti mano paskyrą",
+      "description": "Dėmesio, šis veiksmas yra negrįžtamas. Prarasite savo pasiūlymus, išsamią jų statistiką ir pasiūlymus, dėl kurių balsavote.",
+      "password": "Įvedu slaptažodį",
+      "submit_label": "Prašau ištrinti mano paskyrą",
+      "wrong_email": "Šis el. paštas nėra susietas su jūsų paskyra, tad iš naujo įveskite savo el. pašto adresą.",
+      "wrong_password": "Jūsų slaptažodis neteisingas."
+    },
+    "organisation": {
+      "proposal_agree": "pritaria šiam pasiūlymui",
+      "proposal_disagree": "nepritaria šiam pasiūlymui",
+      "and": " ir ",
+      "hasVoted_one": " balsavo dėl šio pasiūlymo.",
+      "hasVoted_other": " balsavo dėl šio pasiūlymo.",
+      "sharing_title": "Bendrinti šį profilį"
+    }
+  },
+  "organisation": {
+    "title": "Patikrinkite {{name}} profilį",
+    "tabs": {
+      "proposals": "Pasiūlymai",
+      "votes": "Pozicija"
+    },
+    "proposals": {
+      "title": "Naujausi {{name}} pasiūlymai:",
+      "text": "{{name}} dar nepateikė pasiūlymo Make.org platformoje."
+    },
+    "votes": {
+      "title": "Naujausios {{name}} išreikštos pozicijos:",
+      "text": "{{name}} dar neišreiškė savo pozicijos Make.org platformoje."
+    }
+  },
+  "personality": {
+    "title": "Patikrinkite {{name}} profilį",
+    "tabs": {
+      "top_ideas": "Pozicijos dėl geriausių idėjų"
+    },
+    "opinions": {
+      "title": "{{firstname}} {{lastname}} pozicijos:",
+      "placeholder_text": "{{firstname}} {{lastname}} dar neišreiškė savo pozicijos dėl geriausių idėjų.",
+      "vote": {
+        "agree": "Pritariu",
+        "disagree": "Nepritariu",
+        "other": "kita"
+      },
+      "qualification": {
+        "priority": "Prioritetinė",
+        "doable": "Reali",
+        "noWay": "Visai nepriimtina",
+        "nonPriority": "Neprioritetinė",
+        "exists": "Egzistuojanti",
+        "toBePrecised": "Reikia patikslinti"
+      },
+      "form": {
+        "title": "Kaip reaguotumėte į šią piliečių idėją?",
+        "label": "Rašykite čia...",
+        "validate": "Patvirtinti mano poziciją",
+        "disclaimer": "Dėmesio, norėdami pakeisti savo poziciją po paskelbimo, turėsite susisiekti su Make.org. Ar tikrai norite paskelbti dabar? Jei taip, spustelėkite „Patvirtinti ir paskelbti“.",
+        "preview_cancel": "Keisti",
+        "preview_confirm": "Patvirtinti ir paskelbti"
+      },
+      "preview": {
+        "agree": "<span>Pritariu</span>.",
+        "agree_priority": "<span>Pritariu</span>, tai <span>prioritetinė idėja</span>.",
+        "agree_doable": "<span>Pritariu</span>, tai <span>reali</span> idėja.",
+        "disagree": "<span>Nepritariu</span>.",
+        "disagree_noWay": "<span>Nepritariu</span>, ši idėja <span>visai nepriimtina</span>.",
+        "disagree_nonPriority": "<span>Nepritariu</span>, tai <span>neprioritetinė</span> idėja.",
+        "other": "Toks pasiūlymas <span>jau yra</span> arba <span>jį reikia patikslinti</span>.",
+        "other_exists": "Toks pasiūlymas <span>jau yra</span>.",
+        "other_toBePrecised": "Šį pasiūlymą <span>reikia patikslinti</span>."
+      }
+    },
+    "disclaimer": {
+      "title": "Informacija",
+      "subtitle_first": "Kaip išreikšti poziciją dėl piliečių iškeltos idėjos?",
+      "description_first": "Už kiekvieną idėją galite balsuoti („Pritariu“, „Nepritariu“ arba „Kita“) ir pateikti komentarą, patikslinantį jūsų nuomonę. Šiame pozicijos dokumente atveriami 3 laukai, į kuriuos galite įrašyti 3 pagrindines priemones ir (arba) išdėstyti savo poziciją.",
+      "subtitle_second": "Kaip galiu keisti savo paskelbtus atsakymus?",
+      "description_second": "Jei paspaudę „Paskelbti“ norite pakeisti nurodytas priemones, kreipkitės į mūsų komandą el. paštu {{mailto}}"
+    }
+  },
+  "consultation": {
+    "header": {
+      "label_great_cause": "„Svarbi iniciatyva“ Make.org platformoje",
+      "label_consultation": "Konsultacijos su piliečiais",
+      "label_results": "Rezultatai"
+    },
+    "highlights": {
+      "start_date": "Pradžios data",
+      "end_date": "Konsultacijos pabaigos data",
+      "remaining_one": "Liko diena",
+      "remaining_other": "Liko dienų",
+      "proposals_one": "Pasiūlymas",
+      "proposals_other": "Pasiūlymai",
+      "participant_one": "Dalyvis",
+      "participant_other": "Dalyviai",
+      "progress_title": "Mūsų balsavimo tikslas",
+      "progress_total": "Bendras balsų skaičius",
+      "progress_target": " iš {{votesTarget}} balsų ({{percent}} %)",
+      "progress_description": "Kuo daugiau už pasiūlymus bus gauta balsų, tuo daugiau galimybių paversti juos konkrečiais veiksmais.",
+      "progress_btn": "Dalyvauti"
+    },
+    "participate": {
+      "title": "Kaip dalyvauti konsultacijoje?",
+      "description": "Esame įsitikinę, kad kiekvienas pagal savo galimybes gali prisidėti prie bendrojo gėrio kūrimo. Štai kodėl raginame tūkstančius piliečių išsakyti savo idėjas ir nuomones per mūsų vykdomas konsultacijas."
+    },
+    "citizen_account": {
+      "title": "Jūsų pilietinės veiklos erdvė Make.org platformoje",
+      "description": "Asmeninėje paskyroje galėsite susipažinti su savo pasiūlymų rezultatais, balsavimo istorija ir gausite konsultacijų rezultatus. Užsiregistravę pas mus, būsite informuoti el. paštu apie būsimas konsultacijas su piliečiais ir būsite pakviesti į mūsų dalyvaujamuosius renginius.",
+      "button_text": "Registruojuosi"
+    },
+    "cards": {
+      "soon": "Netrukus",
+      "submit": {
+        "title": "Pateikti pasiūlymą",
+        "description": "Dalykitės idėjomis su kuo daugiau žmonių. Kiekvienas pasiūlymas bus išnagrinėtas prieš pateikiant jį piliečių balsavimui.",
+        "button": "Turiu idėją"
+      },
+      "interact": {
+        "title": "Reaguoti į pasiūlymus",
+        "description": "Jei pasiūlymai yra susiję su konsultacijų klausimais, pareikškite savo nuomonę, kad mums padėtumėte atrinkti idėjas, į kurias reikėtų atsižvelgti pirmiausia.",
+        "button": "Balsuoju"
+      },
+      "controversy": {
+        "title": "Apsispręsti dėl prieštaringiausių pasiūlymų",
+        "description": "Šie piliečių pasiūlymai sulaukė tiek pat balsų „už“, kiek ir „prieš“.",
+        "button": "Apsisprendžiu"
+      },
+      "popular": {
+        "title": "Balsuoti dėl populiariausių pasiūlymų",
+        "description": "Už šiuos piliečių pasiūlymus balsavo daugiausia žmonių.",
+        "button": "Balsuoju"
+      },
+      "keywords": {
+        "title": "Jums rūpimi klausimai",
+        "description": "Pasirinkite klausimus, dėl kurių norite pasisakyti pirmiausia."
+      },
+      "sharing": {
+        "title": "Dalytis konsultacija",
+        "description": "Jūsų draugai taip pat turi idėjų ir nuomonių, kurias verta išgirsti. Padidinkite šios konsultacijos mastą, skleisdami informaciją apie ją pagal savo galimybes."
+      },
+      "about": {
+        "title": "Kam reikalinga ši konsultacija?",
+        "description": "Kodėl ši konsultacija buvo pradėta? Apie kokią problemą kalbama? Kas ėmėsi iniciatyvos?",
+        "link": "Sužinoti daugiau"
+      },
+      "featured_proposals": {
+        "title": "Jie pateikė pasiūlymą"
+      }
+    },
+    "timeline": {
+      "timeline_title_great_cause": "Kokie svarbiausi projekto „Svarbi iniciatyva“ momentai?",
+      "timeline_title_consultation": "Kokie svarbiausi šios konsultacijos bruožai?",
+      "consultation_title": "Konsultacijos su piliečiais",
+      "consultation_description": "Visas konsultacijas pradedame ragindami piliečius teikti idėjas ir balsuoti.",
+      "consultation_from_to": "Nuo {{startDate}} iki {{endDate}}",
+      "result_title": "Rezultatai",
+      "workshop_title": "Piliečių seminarai",
+      "workshop_link": "Susisiekite su mumis ir dalyvaukite",
+      "action_title": "Imtis veiksmų"
+    },
+    "navigation": {
+      "introduction": "Raskite kitas per konsultaciją nagrinėtas temas: {{name}}",
+      "participate_desktop": "Dalyvaukite konsultacijoje",
+      "participate_mobile": "Dalyvauti",
+      "participate_breadcrumb": "Dalyvauti „{{title}}“",
+      "explore_desktop": "Susipažinti su pasiūlymais",
+      "explore_mobile": "Susipažinti",
+      "explore_breadcrumb": "Susipažinti su „{{title}}“"
+    },
+    "explore": {
+      "title": "Susipažinti su pasiūlymais",
+      "description": "Naudodamiesi paieškos įrankiais tiesiog peržiūrėkite visus per konsultaciją pateiktus pasiūlymus ir pasirinkite tuos, kurie, jūsų manymu, yra prioritetiniai.",
+      "reset_filters": "Filtrų nustatymas iš naujo",
+      "reset_filters_and_close": "Iš naujo nustatyti filtrus ir užverti",
+      "sort": "Rikiuoti",
+      "sort_continue": "Tęsti grupavimą",
+      "filters_continue": "Tęsti filtravimą",
+      "sort_by": "Rikiuoti pagal",
+      "sort_and_close": "Rikiuoti ir užverti",
+      "filter": "Filtruoti",
+      "filter_and_close": "Filtruoti ir užverti",
+      "filter_by": "Filtruoti pagal",
+      "recent": "Naujausi",
+      "popular": "Populiarūs",
+      "controversial": "Prieštaringi",
+      "unvoted": "Laukiantys jūsų balsavimo",
+      "organisations_proposals": "Siūlo organizacijos",
+      "no_proposal": "<strong>Pasiūlymo nėra</strong>",
+      "validated_proposals_one": "<strong>{{count}} patvirtintas pasiūlymas</strong>, atitinkantis jūsų paiešką",
+      "validated_proposals_other": "<strong>{{count}} patvirtinti (-ų) pasiūlymai (-ų)</strong>, atitinkantys (-čių) jūsų paiešką"
+    },
+    "tabs": {
+      "consultation": " Konsultacija ",
+      "action": " Veiksmai ",
+      "results": " Rezultatai ",
+      "from": " nuo ",
+      "to": " iki ",
+      "datefrom": " nuo "
+    },
+    "sort": {
+      "TAGGED_FIRST": "Visi pasiūlymai",
+      "ACTORS": "Suinteresuotųjų organizacijų pasiūlymai",
+      "RECENT": "Naujausi",
+      "REALISTIC": "Realiausi",
+      "CONTROVERSY": "Prieštaringiausi",
+      "POPULAR": "Populiariausi"
+    },
+    "presentation": {
+      "title": "Kam reikalinga ši konsultacija?",
+      "link_text": "Sužinokite daugiau +"
+    },
+    "followus": {
+      "title": "Norėdami eiti toliau",
+      "description": "Atraskite visas naujienas Make.org!",
+      "facebook": "Sekite mus feisbuke",
+      "twitter": "Sekite mus tviteryje",
+      "instagram": "Sekite mus instagrame",
+      "linkedin": "Sekite mus linkedine",
+      "discover": "Atraskite mūsų tinklaraštį"
+    },
+    "partners": {
+      "intro_title": "Didelio masto mobilizacija",
+      "intro_text": "Tūkstančiai piliečių dalyvauja konsultacijoje.",
+      "commitment_title": "Mūsų partneriai mus palaiko",
+      "commitment_text": "Jie remia konsultaciją ir piliečių veiksmų planą, kuris bus parengtas vėliau.",
+      "commitment_link": "Žiūrėti visus partnerius",
+      "founder": "Partneris steigėjas",
+      "init": "Konsultaciją inicijavo:",
+      "initWith": "Ši konsultacija buvo inicijuota kartu su:",
+      "with": "Bendradarbiaujant su:",
+      "by": "Inicijavo: ",
+      "profile_link": "Eiti į profilį: {{name}}",
+      "profile_link_new_window": "Eiti į profilį: {{name}} (naujas langas)"
+    },
+    "tags": {
+      "proposal_list": "Šiam pasiūlymui pasirinktos <span lang=\"en\">žymos<span>: ",
+      "popular_title": "Dažniausiai aptarinėjamos temos"
+    },
+    "banner": {
+      "title": "Dalyvaukite konsultacijose po 5 minučių",
+      "description": "dėl kelių atsitiktinai pasirinktų pasiūlymų"
+    },
+    "proposal": {
+      "title": "Tiesiogiai pasiūlykite sprendimą",
+      "load_more": "Žiūrėti + pasiūlymus",
+      "see_proposals": "Žiūrėti pasiūlymus"
+    },
+    "results": {
+      "methodology": {
+        "title": "Metodika",
+        "description": "Metodika grindžiama tiksliu surinktų pasiūlymų vertinimu. Pirmiausia patikrinama, ar jie atitinka Make.org įstatus, o tada grupuojami pagal atskiras temas. Tai atliekama pagal Make.org komandų sukurtus algoritmus, kurie užtikrina vienodą visų patvirtintų pasiūlymų matomumą, o paskui organizuojamas jų konkursas. Vykdydama šį nuolatinį procesą Make.org identifikuoja pasiūlymus, kuriems piliečiai dažniausiai pritaria, tada juos analizuoja ir priskiria didelėms idėjoms."
+      },
+      "participation": {
+        "title": "Konsultacijos dalyviai"
+      },
+      "context": "Kontekstas",
+      "cartography": {
+        "title": "Diskusijų planas"
+      },
+      "download": {
+        "deprecated_title": "Gauti visą ataskaitą",
+        "title": "Gaukite visą ataskaitą",
+        "type": "Formatas: {{extension}} - Dydis: {{weight}}",
+        "button": "Atsisiųsti",
+        "contact": "Norėdami gauti išsamią šios konsultacijos analizės ataskaitą, susisiekite su mumis šiuo adresu: ",
+        "email_object": "Analizės ataskaita"
+      },
+      "top_ideas": {
+        "skiplink": "Geriausios naujos idėjos",
+        "title_one": "Populiariausių idėjų, sugrupuotų pagal {{count}} kategoriją, sąrašas",
+        "title_other": "Populiariausių idėjų, sugrupuotų pagal {{count}} kategorijas (-ų), sąrašas",
+        "introduction": "Kai piliečiai pateikia pasiūlymus platformoje, geriausieji iš jų sujungiami į dideles idėjas, kurių pagrindu rengiama konsultacija. Siekiant įvertinti šias idėjas, Make.org algoritmas atsižvelgia į balsus „už“ ir „prieš“, taip pat įvertinimus „mėgstamiausia“, „reali“, „banali“ ir „visai nepriimtina“.",
+        "axe_title": "{{count}} kategorija: {{name}}"
+      },
+      "proposals": {
+        "controversials_title": "Prieštaringiausi pasiūlymai",
+        "controversials_description": "„Prieštaringi“ pasiūlymai atspindi didelį visuomenės susiskaldymą: apskritai jie sulaukia ir didelio palaikymo, ir kategoriško atmetimo.",
+        "rejected": "Dažniausiai atmetami pasiūlymai",
+        "rejected_results": "{{disagree}} % prieš, iš kurių {{no_way}} % visai nepriimtina",
+        "controversials_agree": "{{count}} % už",
+        "controversials_disagree": "{{count}} % prieš"
+      },
+      "table": {
+        "name": "Pavardė",
+        "value": "Vertė",
+        "value_with_unit": "vertė pateikta {{unit}}",
+        "percentage": "procentais"
+      },
+      "breadcrumb": "„{{title}}“ rezultatai",
+      "title": "Ką sužinojome iš šios konsultacijos?"
+    },
+    "reset": "Nustatyti iš naujo",
+    "sortby": "Rikiuoti pagal: ",
+    "local_actors": {
+      "title": "Aktyviausios asociacijos",
+      "proposals_one": "{{ count }} pasiūlymas",
+      "proposals_other": "{{ count }} pasiūlymai (-ų)",
+      "votes_one": "{{ count }} balsas",
+      "votes_other": "{{ count }} balsai (-ų)",
+      "participate": "Esate asociacija ir norite dalyvauti mūsų konsultacijoje? {{ contact_us }}",
+      "contact_us": "Susisiekite su mumis!",
+      "more": "Žiūrėti daugiau"
+    },
+    "municipal": {
+      "header": {
+        "candidates_answers": "Rinkimuose dalyvaujantys kandidatai atsižvelgs į piliečių ir asociacijų nustatytus prioritetus.",
+        "candidates_subscribe": "{{ subscribe }}, kad būtumėte informuoti",
+        "subscribe": "Registruokitės",
+        "candidates": "Jūs esate kandidatas (-ė)",
+        "contact_us": "Susisiekite su mumis!"
+      },
+      "position": {
+        "title": "Sužinokite, kaip kandidatai atsižvelgė į jūsų prioritetus."
+      }
+    },
+    "popular_proposals": {
+      "title": "{{ count }} populiariausi (-ių) dabartiniai (-ių) pasiūlymai (-ų) pagal temą"
+    }
+  },
+  "browse": {
+    "short_page_title": "Naršyti",
+    "page_title": "Naršyti konsultacijas",
+    "title": "Dalyvaukite vykstančiose konsultacijose",
+    "initiative": "„Svarbi iniciatyva“ Make.org platformoje",
+    "nav_consultations_desktop": "Vykstančios konsultacijos",
+    "nav_consultations_mobile": "Konsultacijos",
+    "nav_results_desktop": "Konsultacijų rezultatai",
+    "nav_results_mobile": "Rezultatai",
+    "consultations": {
+      "all": "Visos konsultacijos",
+      "label": "Šiuo metu",
+      "title": "Dalyvaukite vykstančiose konsultacijose",
+      "subtitle": "Jūsų nuomonė svarbi! Balsuokite ir teikite pasiūlymus, kaip spręsti aktualius visuomenės gyvenimo klausimus ir problemas.",
+      "participate": "Dalyvauti",
+      "contributors_one": "dalyvis",
+      "contributors_other": "dalyviai",
+      "proposals_one": "pasiūlymas",
+      "proposals_other": "pasiūlymai",
+      "votes_one": "balsas",
+      "votes_other": "balsai",
+      "empty": "Atsiprašome, šiuo metu jūsų šalyje nėra jokių konsultacijų."
+    },
+    "results": {
+      "all": "Visi rezultatai",
+      "label": "Konsultacijos baigtos",
+      "title": "Susipažinkite su rezultatais",
+      "subtitle": "Mūsų konsultacijų pabaigoje susipažinkite su piliečių prioritetais ir veiksmais, kuriuos Make.org vykdo kaip savo projekto „Svarbi iniciatyva“ dalį.",
+      "see_results": "Žiūrėti rezultatus",
+      "see_topideas": "Žiūrėti geriausias idėjas",
+      "coming_results": "Tolesni rezultatai",
+      "empty": "Iki šiol jūsų šalyje dar niekada nerengėme konsultacijų."
+    },
+    "date": "Konsultacija nuo {{startDate}} iki {{endDate}}",
+    "browse": "Naršyti konsultacijas",
+    "see_closed_consultations": "Žiūrėti užbaigtas konsultacijas",
+    "no_consultations": "Šiuo metu konsultacijų nėra, bet palaikykime ryšį!",
+    "one_consultation": "Registruokitės, kad būtumėte informuoti apie kitą konsultaciją.",
+    "no_results": "Rezultatai pasirodys netrukus, o kol kas palaikykime ryšį!",
+    "one_result": "Registruokitės, kad gautumėte informacijos apie tolesnius rezultatus",
+    "subscribe": "Registruotis",
+    "past_questions": "Taip pat galite susipažinti su ankstesnių konsultacijų rezultatais"
+  },
+  "sharing": {
+    "facebook": "Dalytis feisbuke",
+    "twitter": "Dalytis tviteryje",
+    "linkedin": "Dalytis linkedine"
+  },
+  "skip_links": {
+    "main_list": "Pagrindinės nukreipimo nuorodos",
+    "secondary_list": "Puslapio turinio apėjimo nuorodos",
+    "main_content": "Eiti į pagrindinį turinį",
+    "main_footer": "Eiti į pagrindinę poraštę",
+    "sidebar_content": "Eiti į turinio šoninę juostą",
+    "secondary_nav": "Pereiti prie antrinio naršymo",
+    "tag_list": "Eiti į filtrų sąrašą",
+    "proposal_list": "Eiti į pasiūlymų sąrašą",
+    "proposal_submit": "Eiti į pasiūlymo formą",
+    "proposal_card": "Eiti į pasiūlymą",
+    "sharing": "Eiti į bendrinimo skyrių",
+    "dynamic_section": "Eiti į skyrių: „{{name}}“"
+  },
+  "modal": {
+    "close": "Užverti dialogo langą"
+  },
+  "homepage": {
+    "featured": {
+      "title": "Šiuo metu Make.org platformoje",
+      "status": "Veiksmo pavadinimas: ",
+      "link": "Eikite į konsultacijos puslapį: {{name}}"
+    },
+    "title": "Pagrindinis puslapis",
+    "hero": {
+      "title": "Kartu mes galime kurti geresnę visuomenę",
+      "description": "Išsakykite savo nuomonę jums svarbiais visuomenės gyvenimo klausimais dalyvaudami mūsų konsultacijose su piliečiais. Piliečiai, asociacijos ir įmonės, kartu apibrėžkime savo prioritetus ir imkimės konkrečių pokyčių.",
+      "participate": "Dalyvaukite konsultacijose",
+      "discover": "Susipažinkite su mūsų svarbiomis iniciatyvomis"
+    },
+    "highlights": {
+      "title": "Make.org skaičiais",
+      "participants": {
+        "subtitle_one": "dalyvis (-ė)",
+        "subtitle_other": "dalyviai (-ės)"
+      },
+      "proposals": {
+        "subtitle_one": "pateiktas pasiūlymas",
+        "subtitle_other": "pateikti pasiūlymai"
+      },
+      "partners": {
+        "subtitle_one": "asociacija ir socialiai atsakinga įmonė",
+        "subtitle_other": "asociacijos ir socialiai atsakingos įmonės"
+      }
+    },
+    "featured_questions": {
+      "label": "Svarbios iniciatyvos Make.org platformoje",
+      "title": "Make.org imasi veiksmų svarbiems visuomenės gyvenimo klausimams spręsti"
+    },
+    "posts": {
+      "title": "Mūsų naujienos",
+      "link_text": "Skaityti straipsnį",
+      "see_all": "Žiūrėti visas naujienas"
+    },
+    "partnership": {
+      "title": "Bendradarbiaukite su Make.org",
+      "subtitle": "Tapkite partneriu",
+      "description": "Mes dirbame su įmonėmis, asociacijomis, institucijomis, kad galėtume įgyvendinti savo projektus. <br/>Taip pat remiame šias organizacijas, kad jos galėtų pradėti rengti savo konsultacijas.",
+      "button": "Žiūrėkite mūsų pasiūlymus"
+    },
+    "international": {
+      "subtitle": "Nacionalinės konsultacijos",
+      "title": "Make.org taip pat gali dalyvauti sprendžiant nacionalines problemas Prancūzijoje",
+      "button": "Sužinoti"
+    }
+  },
+  "search": {
+    "titles": {
+      "loading": "Ieškome...",
+      "no_results": "Rezultatų nėra",
+      "main_results_one": "{{count}} rezultatas « {{term}} »",
+      "main_results_other": "{{count}} rezultatai (-ų) « {{term}} »",
+      "proposals_one": "{{count}} pasiūlymas dėl « {{term}} »",
+      "proposals_other": "{{count}} pasiūlymai (-ų) dėl « {{term}} »",
+      "operations_one": "{{count}} veiksmas « {{term}} »",
+      "operations_other": "{{count}} veiksmai (-ų) « {{term}} »",
+      "organisations_one": "{{count}} organizacijos (-ų) « {{term}} »",
+      "organisations_other": "{{count}} organizacijos (-ų) « {{term}} »",
+      "main_results_empty_term": "0 rezultatų"
+    },
+    "main_results": {
+      "proposal": "Pasiūlymas",
+      "organisation": "Organizacija",
+      "operation": "Veiksmas",
+      "results_one": "{{count}} rezultatas",
+      "results_other": "{{count}} rezultatai (-ų)",
+      "view_all": "Žiūrėti viską",
+      "no_results": "Nepavyko rasti jokių rezultatų pagal paiešką « {{term}} »",
+      "no_query": "Ieškote pasiūlymo, idėjos, konsultacijos? Įveskite paieškos žodį!",
+      "status": "Būsena: ",
+      "finished_consultation": "Konsultacija baigta",
+      "open_consultation": "Šiuo metu vyksta konsultacija"
+    },
+    "sidebar": {
+      "register": {
+        "title": "Norėdami sekti Make.org naujienas, registruokitės."
+      }
+    },
+    "form": {
+      "introduction": "Paieškos užklausa turi būti nuo 3 iki 140 ženklų ilgio. Įveskite užklausą į paieškos lauką ir spustelėkite mygtuką „Ieškoti“",
+      "introduction_searched": "Norėdami išvalyti paieškos lauką, spustelėkite mygtuką „Išvalyti paieškos lauką“",
+      "label": "Paieškos laukas",
+      "placeholder": "Ieškoti",
+      "submit": "Ieškoti",
+      "flush": "Išvalyti paieškos lauką",
+      "open_panel": "Rodyti paieškos lauką",
+      "cancel": "Atšaukti"
+    }
+  },
+  "no_cookies": {
+    "title": "Kažkas ne taip! Jūsų slapukai yra išjungti",
+    "first_paragraph": "Negalime leisti jums prisijungti prie svetainės, nes slapukus naudojame siekdami užtikrinti mūsų paslaugų kokybę.",
+    "second_paragraph": "Kad galėtumėte nevaržomai naršyti Make.org svetainėje, leiskite naudoti slapukus šioje naršyklėje arba naudokite kitą naršyklę. Norėdami leisti slapukus savo naršyklėje, eikite į meniu, o tada į nustatymus.",
+    "information": "Norėdami gauti daugiau informacijos apie tai, kaip valdyti slapukus, spustelėkite šią nuorodą:",
+    "link": "www.accepterlescookies.com",
+    "thanks": "Ačiū už supratingumą ir iki pasimatymo!",
+    "footer": "Make.org yra piliečių įtraukimo platforma, leidžianti identifikuoti populiariausias idėjas įvairiomis temomis. Norėdami sužinoti + apie mūsų iniciatyvą, sekite <a href=\"https://about.make.org\">mūsų naujienas</a>."
+  },
+  "contact": {
+    "contactUs": "Susisiekite su mumis",
+    "paragraph": "Idėja, pasiūlymas, klaida? Nedvejodami susisiekite su mumis išsiųsdami el. laišką adresu:"
+  },
+  "legal": {
+    "title": "Teisinė informacija",
+    "make_infos": "Svetainės redaktorius: MAKE.ORG, supaprastinta akcinė bendrovė pagal Prancūzijos teisę, akcinis kapitalas {{make_capital}}, buveinės adresas {{make_address}}, registruota Paryžiaus įmonių registre numeriu {{make_rcs}} (toliau – MAKE.ORG).",
+    "mail": "Elektroninio pašto adresas: ",
+    "make_phone": "Telefono numeris: ",
+    "make_phone_number": "{{make_phone_number}}",
+    "director": "Leidybos direktorius: {{make_director_name}}",
+    "host": "Svetainės administratorius: ",
+    "host_address": "{{make_host_address}} PRANCŪZIJA",
+    "host_phone": "Telefono numeris: ",
+    "host_phone_number": "{{host_number}}",
+    "eu_mention": "Europos Komisija naudotojams siūlo internetinę ginčų sprendimo platformą adresu https://ec.europa.eu/consumers/odr."
+  },
+  "moderation_charter": {
+    "unsuitable_label": "NEREKOMENDUOJAMA",
+    "adapted_label": "Pritaikyta",
+    "refused_label": "Atmesta",
+    "validated_label": "Patvirtinta",
+    "title": "Moderavimo taisyklės",
+    "description": "Kokie pasiūlymai buvo atmesti per Make.org moderavimą? Kaip teisingai suformuluoti pasiūlymą? Kiekvieną platformoje pateiktą pasiūlymą rankiniu būdu tvarko Make.org moderatorių komandos, vadovaudamosi šiais moderavimo taisyklėse nurodytais kriterijais¹. Moderavimas atliekamas per 48 valandas nuo pasiūlymo pateikimo. Apie jūsų pasiūlymo paskelbimą arba atmetimą informuosime el. paštu (jei registruodamiesi patvirtinote savo el. pašto adresą). Moderatoriai ištaiso nereikšmingas rašybos klaidas, tačiau jei pasiūlymas negali būti priimtas, jį turite teikti iš naujo.",
+    "refused_examples": "Make.org platformoje neleidžiami: ",
+    "incomprehensible_solutions": {
+      "title": "Nesuprantami pasiūlymai",
+      "description": "Jūsų pasiūlymo formuluotė ir prasmė turi būti kiekvienam suprantama. Didelės sintaksės klaidos ar absurdiški teiginiai bus atmesti, o jums bus pasiūlyta iš naujo suformuluoti savo pasiūlymą.",
+      "refused_example_card": "Būtina, kad piliečiai galvotų apie visų šalių vystymąsi.",
+      "validated_example_card": "Būtina, kad piliečiai galvotų apie švietimo tobulinimą kiekvienoje šalyje."
+    },
+    "irrelevant_solutions": {
+      "title": "Pasiūlymai, nesusiję su tema",
+      "description": "Jūsų pasiūlymas turi atsakyti į per konsultaciją iškeltą klausimą. Priešingu atveju jūsų pasiūlymas bus pripažintas nesusijusiu su tema ir atmestas.",
+      "example": "Pavyzdžiui, atsakydami į klausimą „Kaip galime sudaryti sąlygas kiekvienam geriau maitintis?“",
+      "refused_card_example": "Būtina, kad pasaulio futbolo čempionatas būtų rengiamas kas 2 metus.",
+      "validated_card_example": "Būtina skatinti trumpųjų jungčių naudojimą įmonių valgyklose."
+    },
+    "discriminatory_solutions": {
+      "title": "Diskriminaciniai pasiūlymai",
+      "description": "Pagal įstatymo² nuostatas jūsų pasiūlyme negali būti jokių smurtą ar neapykantą kurstančių pasisakymų. Jame taip pat negali būti diskriminacinių ar šmeižikiškų pasisakymų, ypač apie kurią nors etninę, socialinę ar religinę grupę.",
+      "refused_card_example": "Būtina siekti, kad žemaičiai neišlaikytų savo degradavusių tradicijų.",
+      "validated_card_example": "Būtina siekti, kad lietuviai mokėtų geriau bendrauti vieni su kitais.",
+      "refused_card_example_2": "Būtina uždrausti kryželių nešiojimą ant kaklo kaip vergystė simbolį.",
+      "validated_card_example_2": "Būtina siekti, kad mūsų šalyje būtų gerbiama religijos laisvė."
+    },
+    "partisan_solutions": {
+      "title": "Šališki pasiūlymai",
+      "description": "Jūsų pasiūlyme neturi būti išsakoma nuomonė (t. y. neturi būti reiškiamas palankumas ar priešiškumas) apie politinę partiją, politinį veikėją, ideologiją ar religiją (asmenybę, simbolį ar praktiką).",
+      "refused_card_example": "Būtina perskaityti pono XXX programą, nes per ateinančius rinkimus jo idėjos bus labai įdomios.",
+      "validated_card_example": "Būtina prieš rinkimus susipažinti su kiekvienos politinės partijos programa.",
+      "refused_card_example_2": "Būtina reguliariai skaityti Bibliją, kad rastume išgelbėjimą.",
+      "validated_card_example_2": "Būtina, kad darbdaviai žinotų kai kurių religinių švenčių datas: ramadano, Chanukos ir kt."
+    },
+    "advertising": {
+      "title": "Reklamavimas",
+      "description": "Negalite reklamuoti konkretaus prekių ženklo ar įmonės. Prekių ženklą ar įmonę galite paminėti tik kaip iliustruojantį pavyzdį.",
+      "refused_card_example": "Būtina, kad visos įmonės naudotų IBM siūlomus sprendimus.",
+      "validated_card_example": "Būtina nustoti vartoti kai kuriuos pernelyg saldžius gaiviuosius gėrimus, pavyzdžiui, „Coca-Cola“."
+    },
+    "multiple_ideas": {
+      "title": "Daugybė idėjų",
+      "description": "Būtina pateikti tik vieną idėją dėl konkretaus pasiūlymo, kad kitiems piliečiams būtų lengviau balsuoti dėl jūsų indėlio. Jei turite dvi skirtingas idėjas, galite parengti du pasiūlymus.",
+      "refused_card_example": "Būtina, kad vietos gamintojų produktai būtų prieinami, o apie žemės ūkio naujoves būtų informuojama.",
+      "validated_card_example": "Būtina, kad vietos gamintojų produktai būtų prieinami."
+    },
+    "insults": {
+      "title": "Įžeidinėjimai",
+      "description": "Kiekvienas nepagarbus ar įžeidžiantis pasiūlymas per moderavimą bus atmestas",
+      "refused_card_example": "Būtina, kad tie kvaili vairuotojai labiau paisytų kelių eismo taisyklių.",
+      "validated_card_example": "Būtina, kad vairuotojai labiau paisytų kelių eismo taisyklių."
+    },
+    "correctly_formulated_solutions": {
+      "title": "Kaip teisingai suformuluoti pasiūlymą Make.org platformoje?"
+    },
+    "search_function": "Naudodamiesi paieškos funkcija patikrinkite, ar svetainėje dar nėra pateikta tokia pat idėja kaip jūsų.",
+    "concrete_elements": {
+      "text": "Pagalvokite, kaip konkretizuoti savo idėją, kad piliečiai gerai suprastų, ką norite pasakyti.",
+      "refused_card_example": "Būtina daugiau Europos.",
+      "validated_card_example": "Būtina, kad Europos Sąjungai būtų suteikta daugiau išteklių.",
+      "refused_card_example_2": "Būtina mažinti jaunimo nedarbą.",
+      "validated_card_example_2": "Būtina įsteigti jaunimui skirtą darbo centrą."
+    },
+    "understandable_language": {
+      "text": "Kalbėkite visiems suprantama kalba, kad būtumėte kuo geriau suprasti.",
+      "refused_card_example": "Būtina, kad universitete būtų vienų metų parengiamosios studijos.",
+      "validated_card_example": "Būtina, kad prieš pasirenkant studijų kryptį universitete reikėtų baigti bendrųjų studijų kursą.",
+      "refused_card_example_2": "Būtina, kad NVSC turėtų galimybę atlikti atrankinę patikrą dėl vėžio.",
+      "validated_card_example_2": "Būtina, kad Nacionalinis visuomenės sveikatos centras turėtų galimybę atlikti atrankinę patikrą dėl vėžio."
+    },
+    "acronyms": {
+      "text": "Pasiūlyme venkite naudoti #, @ arba tokius akronimus kaip LOL.",
+      "refused_card_example": "Būtina sumažinti mokesčius verslininkams #konkurencingumas",
+      "validated_card_example": "Būtina sumažinti mokesčius verslininkams, kad jie taptų konkurencingi!"
+    },
+    "disclaimer": "Make.org nėra interneto platformos operatorius, kuriam taikomas 2018 m. gruodžio 22 d. Įstatymas Nr. 2018-1202 dėl kovos su manipuliavimu informacija. Todėl mums netaikomos atitinkamos prievolės. Tačiau mums svarbu, kad mūsų svetainėje skelbiama informacija būtų tiksli, todėl šiose Taisyklėse išsamiai aprašome priemones, kurių imamės, kad tai užtikrintume.",
+    "foot_notes": {
+      "ethical_charter": "Šios moderavimo taisyklės parengtos pagal <a href=\"https://assets.website-files.com/59833d390a24e50001b873d8/5fd245978b3dbedcbcc121a2_VF%20Charte%20Ethique%20Make.org%20et%20Make.org%20Foundation%20valid%C3%A9e.pdf\" target=\"_blank\">Etikos kodeksą (naujas langas)</a>, kuriuo užtikrinamas Make.org neutralumas, nepriklausomumas ir skaidrumas.",
+      "code_penal": "Lietuvos Respublikos baudžiamasis kodeksas diskriminaciją apibrėžia kaip „veiksmus, kuriais siekta žmonių grupei ar jai priklausančiam asmeniui dėl amžiaus, lyties, seksualinės orientacijos, neįgalumo, rasės, odos spalvos, tautybės, kalbos, kilmės, etninės kilmės, socialinės padėties, tikėjimo, įsitikinimų ar pažiūrų sutrukdyti lygiomis teisėmis su kitais dalyvauti politinėje, ekonominėje, socialinėje, kultūrinėje, darbo ar kitoje veikloje arba suvaržyti tokios žmonių grupės ar jai priklausančio asmens teises ir laisves“. (169 straipsnis)."
+    }
+  },
+  "cookies_management": {
+    "title": "Slapukų valdymas",
+    "dated": "- nuo {{date}} -",
+    "button": "Patvirtinti mano pasirinkimą",
+    "intro": {
+      "title": "Kas yra slapukas?",
+      "first_paragraph": "Slapukas – mažas kompiuterinis failas, kuris gali būti įrašytas ir perskaitytas, kai internautas apsilanko interneto svetainėje arba mobiliojoje programėlėje, nepriklausomai nuo naudojamo galinio įrenginio tipo (kompiuterio, išmaniojo telefono ir pan.).",
+      "second_paragraph": "Kai kurie slapukai yra būtini tam, kad svetainės ar programos tinkamai veiktų, kiti padeda optimizuoti svetainės veikimą arba pagerinti internautų patirtį."
+    },
+    "use": {
+      "title": "Kaip naudojame slapukus?",
+      "first_paragraph": "Kai prisijungiate prie mūsų svetainės, slapukai įrašomi į jūsų galinį įrenginį, kad pagerintų jūsų patirtį, padidintų mūsų svetainės našumą ir optimizuotų mūsų konsultacijas su piliečiais.",
+      "second_paragraph": "Slapukuose esanti informacija nėra skirta jūsų tapatybei nustatyti ir niekada nenaudojama kitais tikslais, nei nurodyta toliau."
+    },
+    "partners": {
+      "title": "Kas yra mūsų partneriai?",
+      "intro": "Be „Make“ sukurtų ir valdomų slapukų, mūsų svetainėje slapukus taip pat naudoja šie partneriai:"
+    },
+    "details": {
+      "title": "Kokius slapukus naudojame?",
+      "intro": "Mūsų svetainėje naudojami šie slapukai:",
+      "mandatory": "Visada įjungti",
+      "duration": "Trukmė: {{duration}}",
+      "session": "Seansas",
+      "month": "{{count}} mėnesiai (-ių)",
+      "year_one": "{{count}} metai",
+      "year_other": "{{count}} metai (-ų)",
+      "technicals": {
+        "name": "Techniniai slapukai:",
+        "description": "šie slapukai yra būtini svetainės veikimui užtikrinti, todėl jų negalima išjungti. Galite nustatyti naršyklę taip, kad šie slapukai būtų blokuojami arba apie juos būtų informuojama, tačiau tai gali turėti įtakos kai kurių mūsų svetainės dalių veikimui. Šie slapukai nėra skirti jūsų tapatybei nustatyti.",
+        "secure": "make-secure: jums prisijungus prie savo paskyros Make.org piliečių erdvėje, šis slapukas palaiko prisijungimą, kol naršote svetainėje.",
+        "secure-expiration": "make-secure-expiration: šis slapukas naudojamas jūsų neveiklumui svetainėje aptikti, kad prisijungimas būtų nutrauktas.",
+        "demographics": "make-demographics: šis slapukas suteikia mums galimybę sužinoti, ar naudojant šį įrenginį jūsų jau buvo prašoma pateikti demografinius duomenis (amžius, vietovė, lytis ir t. t.), kad ateityje jums lankantis svetainėje jų vėl neprašytume."
+      },
+      "preferences": {
+        "name": "Parinkčių slapukai:",
+        "description": "šie slapukai naudojami Jūsų pageidavimams mūsų svetainėje įsiminti ir jūsų naršymo patirčiai pagerinti. Galite nustatyti naršyklę taip, kad šie slapukai būtų blokuojami arba apie juos būtų informuojama, tačiau tai gali turėti įtakos kai kurių mūsų svetainės dalių veikimui. Šie slapukai nėra skirti jūsų tapatybei nustatyti.",
+        "google-connect": "„Google“ prisijungimas: šie slapukai leidžia registruotis ir prisijungti prie jūsų paskyros piliečių erdvėje.",
+        "facebook-connect": "„Facebook“ prisijungimas: šie slapukai leidžia registruotis ir prisijungti prie jūsų paskyros piliečių erdvėje.",
+        "session-id": "make-session-id: šis slapukas naudojamas visiems veiksmams, kuriuos atliekate svetainėje seanso metu, sugrupuoti.",
+        "session-id-expiration": "make-session-id-expiration: šis slapukas naudojamas pranešimui, kad jūsų sesija baigiasi (po 20 minučių) ir bus iš naujo įkelta, rodyti.",
+        "user-id": "make-user-id: šis slapukas jus identifikuoja, kai prisijungiate prie asmeninės paskyros Make.org svetainėje. Jis bus naudojamas kviečiant jus dar kartą prisijungti, iš anksto nurodant jūsų prisijungimo duomenis.",
+        "cookie-preferences": "make-cookie-preferences: šis slapukas įsimena jūsų nustatymus dėl slapukų naudojimo mūsų svetainėje."
+      },
+      "statistics": {
+        "name": "Statistiniai slapukai:",
+        "description": "šie slapukai naudojami apsilankymams mūsų svetainėje analizuoti ir jos veikimui gerinti. Visa šių slapukų renkama informacija yra apibendrinama, todėl yra nuasmeninta. Jei neleisite priimti šių slapukų, negausime informacijos apie jūsų pakartotinį apsilankymą.",
+        "visitor-id": "make-visitor-id: šis slapukas naudojamas apsilankymams mūsų svetainėje registruoti, kad būtų galima anonimiškai ir apibendrintai įvertinti srautą. Informacija apie naršant atliekamus veiksmus siunčiama į „MixPanel“ analizės įrankį.",
+        "visitor-created-at": "make-visitor-created-at: šis slapukas naudojamas pirmojo apsilankymo platformoje datai gauti.",
+        "facebook-tracking": "„Facebook“ sekimo slapukas: šis slapukas naudojamas elgsenos svetainėje duomenims rinkti, kad būtų galima atlikti apibendrintą analizę siekiant pagerinti paslaugą.",
+        "hotjar": "„Hotjar“: tai įrankis, skirtas naudotojų elgesiui svetainėje analizuoti. Daugiau informacijos: "
+      },
+      "social": {
+        "name": "Socialinių tinklų slapukai:",
+        "description": "šie slapukai, kuriuos įjungia trečiosios šalys, leidžia jums dalytis mūsų svetainės turiniu socialiniuose tinkluose ir taip padeda mums optimizuoti poveikį. Jei nesutiksite, kad šie slapukai būtų įrašyti, galbūt negalėsite naudotis šiais dalijimosi įrankiais.",
+        "facebook_tracking": "pixel Facebook: šie slapukai naudojami siekiant optimizuoti konsultacijų viešinimo kampanijas feisbuke, kad būtų padidintas piliečių įsitraukimas.",
+        "twitter_tracking": "pixel Twitter: šie slapukai naudojami siekiant optimizuoti konsultacijų viešinimo kampanijas tviteryje, kad būtų padidintas piliečių įsitraukimas.",
+        "facebook_sharing": "partage Facebook: šis slapukas suteikia naudotojui galimybę bendrinti turinį feisbuke ir pagerinti naudojimo patogumą.",
+        "twitter_sharing": "partage Twitter: šis slapukas suteikia naudotojui galimybę bendrinti turinį tviteryje ir pagerinti naudojimo patogumą.",
+        "linkedin_sharing": "partage LinkedIn: šis slapukas suteikia naudotojui galimybę bendrinti turinį linkedine ir pagerinti naudojimo patogumą."
+      }
+    }
+  },
+  "countries": {
+    "AT": "Austrija",
+    "BE": "Belgija",
+    "BG": "Bulgarija",
+    "BR": "Brazilija",
+    "CA": "Kanada",
+    "CH": "Šveicarija",
+    "CN": "Kinija",
+    "CY": "Kipras",
+    "CZ": "Čekijos Respublika",
+    "DE": "Vokietija",
+    "DK": "Danija",
+    "EE": "Estija",
+    "ES": "Ispanija",
+    "FI": "Suomija",
+    "FR": "Prancūzija",
+    "GB": "Didžioji Britanija",
+    "GR": "Graikija",
+    "HR": "Kroatija",
+    "HU": "Vengrija",
+    "IE": "Airija",
+    "IN": "Indija",
+    "IS": "Islandija",
+    "IT": "Italija",
+    "JP": "Japonija",
+    "LI": "Lichtenšteinas",
+    "LT": "Lietuva",
+    "LU": "Liuksemburgas",
+    "LV": "Latvija",
+    "MT": "Malta",
+    "NL": "Nyderlandai",
+    "NO": "Norvegija",
+    "PL": "Lenkija",
+    "PT": "Portugalija",
+    "RO": "Rumunija",
+    "RU": "Rusija",
+    "SE": "Švedija",
+    "SI": "Slovėnija",
+    "SK": "Slovakija",
+    "US": "JAV",
+    "UA": "Ukraina"
+  },
+  "languages": {
+    "fr": "Français",
+    "en": "English",
+    "de": "Deutsch",
+    "uk": "Українська",
+    "cs": "Česky",
+    "es": "Español",
+    "pl": "Polski",
+    "it": "Italiano",
+    "nl": "Nederlands",
+    "fi": "Suomi",
+    "ro": "Română",
+    "bg": "Български"
+  },
+  "language_switch": {
+    "country_title": "Jūsų šalis",
+    "country_subtitle": "Konsultacijų galimybė priklauso nuo to, kokią šalį pasirinkote.",
+    "language_title": "Jūsų kalba",
+    "confirm": "Patvirtinti"
+  }
+}

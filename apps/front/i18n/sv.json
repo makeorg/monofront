@@ -1,0 +1,1429 @@
+{
+  "meta": {
+    "home": {
+      "title": "Gör din röst hörd med Make.org - Make.org",
+      "description": "Lämna förslag, rösta, agera: tillsammans kan vi hitta lösningar på vår tids stora problem.",
+      "picture": "https://assets.make.org/assets/metas/default_meta-fr.png"
+    },
+    "organisation": {
+      "proposals": {
+        "title": "{{organisation}} - dess förslag - Make.org"
+      },
+      "positions": {
+        "title": "{{organisation}} - dess ställningstaganden - Make.org"
+      }
+    },
+    "profile": {
+      "proposals": {
+        "title": "Profil - Mina förslag - Make.org"
+      },
+      "favorites": {
+        "title": "Profil - Mina hjärtefrågor - Make.org"
+      },
+      "edit": {
+        "title": "Ändra min profil - Make.org"
+      }
+    },
+    "proposal": {
+      "title": "Samrådets förslag '{{proposal}}' '{{question}}' - Make.org",
+      "description": "Stöd mitt förslag genom att rösta, och låt oss tillsammans hitta lösningar på vår tids stora problem. De som får mest stöd kommer att omsättas i åtgärder av Make.org och dess samarbetspartners."
+    },
+    "participate": {
+      "title": "Delta i samråden – {{question}} – Make.org",
+      "description": "Lämna förslag, rösta, agera: tillsammans kan vi hitta lösningar på vår tids stora problem."
+    },
+    "explore": {
+      "title": "Utforska förslagen från samråden '{{question}}' - Make.org"
+    },
+    "results": {
+      "title": "Resultat av samrådet '{{question}}' - Make.org",
+      "description": "Utforska resultaten från medborgarsamråden, kategoriserade efter olika populära teman, mest omstridda förslag och mest förkastade förslag."
+    },
+    "sequence": {
+      "title_standard": "Delta i samrådet '{{question}}' - Make.org",
+      "title_controversy": "Avgör omröstningen mellan förslagen i samrådet '{{question}}' - Make.org",
+      "title_popular": "Ta ställning till de mest populära förslagen i samrådet '{{question}}' - Make.org",
+      "title_keyword": "Ta ställning till samrådets '{{keywordLabel}}' tema '{{question}}' - Make.org "
+    },
+    "top-ideas": {
+      "title": "De bästa idéerna i samrådet '{{question}}' - Make.org",
+      "description": "Utforska de bästa idéerna från samrådet '{{question}}'"
+    },
+    "top-idea-details": {
+      "title": "Detaljer i idén '{{idea}}’ från samrådet '{{question}}' - Make.org",
+      "description": "Utforska alla förslag i idén {{idea}} från samrådet '{{question}}'"
+    },
+    "search": {
+      "main_results": "Sök - Resultat för « {{term}} » - Make.org",
+      "proposals": "Sök - Resultat av förslagen gällande « {{term}} » - Make.org",
+      "consultations": "Sök - Resultat av samråden gällande « {{term}} » - Make.org",
+      "organisations": "Sök - Resultat från organisationerna gällande « {{term}} » - Make.org"
+    },
+    "browse": {
+      "consultations": {
+        "title": "Delta i samråden - Make.org",
+        "description": "Lämna förslag, rösta, agera: tillsammans kan vi hitta lösningar på vår tids stora problem."
+      },
+      "results": {
+        "title": "Resultat av samråden - Make.org",
+        "description": "Utforska resultaten från våra samråd och de aktioner som har inletts av Make.org och våra samarbetspartners."
+      }
+    },
+    "legal": {
+      "title": "Lagstadgade uppgifter - Make.org",
+      "description": "Hitta de lagstadgade uppgifterna för webbplatsen här."
+    },
+    "moderation": {
+      "title": "Make.org ∙ Modereringspolicy",
+      "description": "Vilka förslag har förkastats vid moderering på Make.org? Hur formulerar jag ett förslag korrekt?"
+    },
+    "privacy_policy": {
+      "title": "Policy för personuppgifter - Make.org",
+      "description": "Allt om behandlingen av dina personuppgifter när du besöker webbplatsen."
+    },
+    "gtu": {
+      "title": "Användarvillkor - Make.org",
+      "description": "Allt om användarvillkor för att rösta och lägga förslag på plattformen för medborgarinitiativ."
+    },
+    "contact": {
+      "title": "Kontaka oss - Make.org",
+      "description": "Om du inte hittar svaret på din fråga, kontakta oss via e-post."
+    },
+    "no_cookies": {
+      "title": "Hoppsan! Dina cookies har avaktiverats - Make.org"
+    },
+    "cookies": {
+      "title": "Hur vi hanterar cookies - Make.org",
+      "description": "Utforska hur vi använder cookies när du besöker plattformen."
+    },
+    "password-recovery": {
+      "title": "Jag skapar ett nytt lösenord - Make.org"
+    },
+    "a11y": {
+      "title": "Information om tillgänglighet - Make.org",
+      "description": "Make.org arbetar för digital tillgänglighet. Tillsammans kan vi hitta lösningar på vår tids stora problem."
+    },
+    "not_found": {
+      "title": "Sidan hittades inte - Fel 404 - Make.org",
+      "description": "Sidan du efterfrågar existerar inte eller har upphört att existera."
+    }
+  },
+  "common": {
+    "connexion_label": "Logga in",
+    "register_label": "Skapa konto",
+    "continue": "Fortsätt",
+    "register_panel": {
+      "welcome": "Välkommen {{name}}!",
+      "greeting": "Vi är glada att du är en av våra engagerade användare!",
+      "mail_confirmation_strong": "Bekräfta din e-postadress med ett klick ",
+      "mail_confirmation": " för att garantera att ditt konto är autentiskt. Klicka på aktiveringslänken som har skickats till: {{mail}}",
+      "onboarding": "Uttryck dina åsikter om de samhällsfrågor som är viktiga för dig genom att delta i våra medborgarsamråd.",
+      "cta": "Delta i samråd",
+      "cta_access": "Jag deltar i samrådet",
+      "optin_cgu_title": "Slutför registreringen",
+      "optin_cgu_subtitle": "med några klick"
+    },
+    "form": {
+      "hide_password": "Dölj lösenordet",
+      "show_password": "Visa lösenordet",
+      "requirements": "Alla fält är obligatoriska om inte annat anges.",
+      "requirements_short": "Alla fält är obligatoriska.",
+      "password_requirements": "Minst 8 tecken varav minst 1 siffra, 1 stor bokstav och 1 specialtecken.",
+      "post_code": "Postadressen hjälper oss att analysera resultaten utifrån geografiskt område.",
+      "label": {
+        "email": "E-post",
+        "password": "Lösenord",
+        "firstname": "Förnamn",
+        "lastname": "Efternamn",
+        "age": "Ålder",
+        "postalcode": "Postnummer",
+        "profession": "Yrke",
+        "biography": "Bakgrund",
+        "website": "Webbplats",
+        "organisation": "Organisationens namn",
+        "email_optional": "E-post (frivilligt)",
+        "password_optional": "Lösenord (frivilligt)",
+        "firstname_optional": "Förnamn (frivilligt)",
+        "lastname_optional": "Efternamn (frivilligt)",
+        "age_optional": "Ålder (frivilligt)",
+        "postalcode_optional": "Postnummer (frivilligt)",
+        "profession_optional": "Yrke (frivilligt)",
+        "privacy_policy": "Uppgiftspolicy",
+        "biography_optional": "Bakgrund (frivilligt)",
+        "website_optional": "Webbplats (frivilligt)",
+        "organisation_optional": "Organisationens namn (frivilligt)",
+        "personality": {
+          "firstname": "Kandidatens förnamn / först på listan",
+          "lastname": "Kandidatens efternamn / först på listan",
+          "firstname_M": "Kandidatens förnamn / först på listan",
+          "lastname_M": "Kandidatens efternamn / först på listan",
+          "firstname_F": "Kandidatens förnamn / först på listan",
+          "lastname_F": "Kandidatens efternamn / först på listan"
+        }
+      },
+      "messages": {
+        "errors_notification": "Vi har hittat fel i formuläret:",
+        "invalid_email": "Vänligen respektera e-postformatet.",
+        "invalid_email_dynamic": "Vänligen respektera formatet {{label}}.",
+        "already_registered": "Denna e-postadress finns redan.",
+        "already_registered_dynamic": "Denna {{label}} finns redan.",
+        "email_doesnot_exist": "Denna e-postadress är inte kopplad till ditt konto. Skriv gärna din e-postadress igen.",
+        "email_doesnot_exist_dynamic": "Denna {{label}} är inte kopplad till ditt konto. Skriv gärna din e-postadress igen.",
+        "invalid_password": "Ditt lösenord måste innehålla minst 8 tecken.",
+        "invalid_password_dynamic": "Ditt {{label}} måste innehålla minst 8 tecken.",
+        "api_error": "Hoppsan! Vi har problem med att ladda den här sidan. Försök igen senare.",
+        "mandatory": "Fyll i det här fältet.",
+        "mandatory_dynamic": "Fältet {{label}} är obligatoriskt.",
+        "invalid_age": "Våra användare måste vara mellan 8 och 120 år gamla.",
+        "invalid_age_dynamic": "{{label}}: Våra användare måste vara mellan 8 och 120 år gamla.",
+        "the_field_[email]_is_missing": "Fältet {{label}} är obligatoriskt.",
+        "the_field_[password]_is_missing": "Fältet {{label}} är obligatoriskt.",
+        "invalid_postal_code": "Postnumret måste bestå av 5 siffror.",
+        "invalid_privacy_policy": "Du måste godkänna uppgiftspolicyn.",
+        "invalid_postal_code_dynamic": "{{label}} måste bestå av 5 siffror.",
+        "submit_success": "Ändringen har registrerats.",
+        "malformed": "Vänligen respektera url-formatet \"https://example.com\""
+      }
+    },
+    "social_login": {
+      "card_title": "Hitta din röstningshistorik",
+      "facebook_connect": "Fortsätt med Facebook",
+      "google_connect": "Fortsätt med Google",
+      "email_register": "Registrera dig via e-post",
+      "count_register": "({{count}}/2)"
+    },
+    "notifications": {
+      "bad_link": "Den här länken är inte giltig längre.",
+      "activate_account_success": "Ditt konto har aktiverats. Du kan nu logga in",
+      "delete_account_success": "Ditt konto har raderats. Hoppas att vi snart får se dig igen på Make.org!",
+      "login_success": "Du har loggat in.",
+      "logout_success": "Du har loggat ut.",
+      "login_social_missing_email_data": "Vi hittar ingen giltig e-postadress på ditt Facebook-konto för att registrera dig. Använd gärna vårt formulär för registrering via e-post.",
+      "register_success": "Välkommen! Du har blivit registrerad.",
+      "register_validate": "Tack för att du har registrerat dig. Vi har skickat ett e-postmeddelande till adressen {{email}} så att du kan aktivera ditt konto med ett klick.",
+      "secure_expired": {
+        "first_sentence": "Du har tyvärr loggats ut, det verkar som att du har gått",
+        "second_sentence": "Logga in igen för att fortsätt rösta, lägga förslag och agera på Make.org.",
+        "emoji": "emoji ledset ansikte med tår"
+      },
+      "session_expired": {
+        "title": "Tidsgräns för inaktivitet",
+        "description": "Vi kommer att ladda sidan igen för att säkerställa god kvalitet på tjänsten.",
+        "button_text": "Jag förstår"
+      },
+      "icons": {
+        "close": "Stäng aviseringen",
+        "information": "Informationsmeddelande: ",
+        "success": "Meddelande om utförd åtgärd: ",
+        "error": "Felmeddelande: ",
+        "alert": "Varningsmeddelande: "
+      },
+      "tags_filter": "Använd filter för att hitta förslag som intresserar dig.",
+      "thank_you": "Uppfattat, tack!",
+      "unexpected_error": "Vi har för närvarande ett fel, var god försök senare.",
+      "network_error": "Det går inte att komma åt hela webbplatsen Make.org. Det verkar som om du är offline",
+      "vote_only": {
+        "message": "Samrådet \"{{title}}\" tar inte emot nya förslag längre, men fortsätt rösta för att avgöra omröstningen av de förslag som finns.",
+        "button": "jag förstår"
+      },
+      "vote_on_proposal": "Rösta på det här förslaget",
+      "cookies": {
+        "social_media": "För att få åtkomst till den här funktionen måste du tillåta berörda cookies på sidan ",
+        "cookie_page": "Hur vi hanterar cookies",
+        "update": "Tack, vi har registrerat dina val för cookies."
+      }
+    },
+    "from": "om",
+    "email": "E-post",
+    "propose": "Lägg ett förslag",
+    "click_there": "klicka här",
+    "open_new_window": "Öppna i en ny flik",
+    "loading": "Vänligen vänta medan sidan laddas.",
+    "participate": "Delta",
+    "vote_on_proposals": "Rösta på alla förslag",
+    "display_pannel": "Visa innehållet i rullistan",
+    "hide_pannel": "Dölj innehållet i rullistan",
+    "display_modal": "Visa innehållet i dialogfönstret",
+    "hide_modal": "Dölj innehållet i dialogfönstret",
+    "display_tooltip": "Visa innehållet i informationsruta där muspekaren hovrar",
+    "hide_tooltip": "Dölj innehållet i informationsruta där muspekaren hovrar",
+    "expand_collapse": "{{name}} - Visa innehållet i rullavsnittet",
+    "shrink_collapse": "{{name}} - Dölj innehållet i rullavsnittet",
+    "secondary_nav": "Sekundär navigering",
+    "percent": "{{percent}}%",
+    "header_authentication_nav": "Åtkomst till min användarprofil",
+    "footer_nav": "Navigering längst ner på sidan",
+    "sidebar_area": "Sidopanel för innehåll",
+    "consultation_nav": "Navigeringsfält för samrådet",
+    "slider": {
+      "introduction": "Använd kontrollknapparna, pilarna ”vänster” och ”höger” eller tab-knappen på tangentbordet för att interagera med bildspelet nedan.",
+      "previous": "Gå till föregående objekt",
+      "next": "Gå till följande objekt",
+      "index_count": "Objekt {{index}} av {{total}}"
+    },
+    "pagination": {
+      "title": "sidnumrering",
+      "next": "Nästa sida",
+      "previous": "Föregående sida",
+      "index_count": "Sida {{index}} av {{total}}",
+      "page": "Sida",
+      "page_total": "av {{total}}"
+    },
+    "max_characters": "maximalt",
+    "back": "Tillbaka",
+    "proposal_count_one": "{{count}} förslag",
+    "proposal_count_other": "{{count}} förslag",
+    "breadcrumbs": "länkstig",
+    "million_one": "miljon",
+    "million_other": "miljoner",
+    "close_panel": "Stäng rullistan",
+    "close": "Stäng"
+  },
+  "header": {
+    "logo_alt": "Gå till förstasidan för Make.org",
+    "open_menu": "Gå till huvudmenyn",
+    "close_menu": "Stäng huvudmenyn",
+    "main_navigation": "Huvudmeny"
+  },
+  "proposal_page": {
+    "button_1": "delta",
+    "button_2": "Läs mer",
+    "share_text": "Stöd det här förslaget genom att dela det:",
+    "footer_text": "Förslaget har lämnats in inom ramen för projektet {{operation_name}}"
+  },
+  "idea_card": {
+    "title": "De bästa idéerna",
+    "number": "Idé nr {{ count }}",
+    "content": "Innehållet i idén: ",
+    "link": "Se detaljerna i idén",
+    "associated_proposals_one": "{{count}} tillhörande förslag",
+    "associated_proposals_other": "{{count}} tillhörande förslag",
+    "position_one": "{{ count }} ställningstagande",
+    "position_other": "{{ count }} ställningstaganden",
+    "candidate_one": " kandidat till den här idén.",
+    "candidate_other": " kandidater till den här idén.",
+    "open": "Visa resultatet för idén",
+    "close": "Dölj resultaten för idén",
+    "expand": " - Klicka för att visa resultatet för idén",
+    "collapse": " - Klicka för att dölja resultaten för idén",
+    "vote_proposals": "förslag",
+    "vote_positives": "jaröster",
+    "vote_heart": "hjärtefrågor"
+  },
+  "idea_details": {
+    "current_page": "Detaljer i idén",
+    "proposals": "Tillhörande förslag",
+    "comments": "De har tagit ställning"
+  },
+  "proposal_card": {
+    "previous": "Föregående förslag",
+    "next": "Följande förslag",
+    "validate": "Godkänn",
+    "content": "Innehållet i förslaget: ",
+    "original": "Se originalet",
+    "translation": "Se översättningen",
+    "number": "Introduktion nr {{current}} av {{total}}",
+    "posted_label": "Upplagt i ",
+    "author": {
+      "from": "Förslag från: ",
+      "age": "{{age}} år",
+      "date": "upplagt den: "
+    },
+    "status": {
+      "title": "Förslagets status: ",
+      "accepted": "Publicerat",
+      "refused": "Förkastat",
+      "postponed": "Väntar på moderering",
+      "pending": "Väntar på moderering"
+    }
+  },
+  "report_translations": {
+    "button": "Förslagets valmöjligheter",
+    "confirmation": {
+      "title": "Tack för att du påpekar det!",
+      "description": "Vårt team ska undersöka det så snart som möjligt."
+    },
+    "form": {
+      "title": "Påpeka automatisk översättning",
+      "unclear": "Obegriplig översättning",
+      "error": "Fel i översättningen",
+      "false_info": "Innehåller felaktig information",
+      "offensive": "Kränkande förslag",
+      "report": "Anmäla"
+    },
+    "first_step": {
+      "title": "Automatisk översättning",
+      "text": "Förslagen från våra samråd kommer automatiskt. Om du ser något fel, anmäl det gärna till vårt team!"
+    }
+  },
+  "intro_card": {
+    "purpose": "Introduktion",
+    "title": "Tusentals medborgare föreslår lösningar.",
+    "description": "Ta ställning till dessa lösningar och föreslå egna.\nDe bästa avgör hur vi ska agera.",
+    "description_short": "Ta ställning till dessa lösningar.",
+    "button": "Börja",
+    "partnership": "i samarbete med"
+  },
+  "final_card": {
+    "title": "Tack för att du reagerar på förslagen!",
+    "description": "Fortsätt rösta för att hjälpa oss att se vad som ska prioriteras.",
+    "link_text": "Jag deltar i samrådet",
+    "continue": "Jag fortsätter att rösta",
+    "register": {
+      "description": "Hur kan jag följa resultaten?",
+      "button_intro": "Skapa din",
+      "button_text": "medborgarplattform."
+    }
+  },
+  "no_proposal_card": {
+    "title": {
+      "regular": "Tack för ditt viktiga bidrag!",
+      "popular": "Tack, du har röstat på alla förslag som är mest populära",
+      "controversial": "Tack, du har röstat på alla förslag som är mest omstridda",
+      "keyword": "Tack, du har röstat på alla förslag från \"{{keyword}}\""
+    },
+    "description": {
+      "regular": "Det finns inga nya förslag just nu.",
+      "special": "Fortsätt rösta för att hjälpa oss att se vad som ska prioriteras."
+    },
+    "link_text": "Jag deltar i samrådet",
+    "sharing": "Eller ge det här samrådet större räckvidd genom att sprida det."
+  },
+  "push_proposal_card": {
+    "title": "Har du någon lösning att föreslå i det här ämnet?",
+    "next-cta": "Inte än, jag fortsätter att rösta"
+  },
+  "sequence_progress": {
+    "previous": "Gå till föregående objekt",
+    "counter": "Objekt {{current}} av {{total}}"
+  },
+  "sequence_zone": {
+    "popular_title": "Populära förslag",
+    "controversial_title": "Omstridda förslag"
+  },
+  "special_final_card": {
+    "title": "Tack för att du har röstat!",
+    "subtitle": "Du kan fortsätta att delta i samrådet",
+    "cta_text": "Jag deltar i samrådet"
+  },
+  "demographics_card": {
+    "disclaimer": "Dina uppgifter är anonyma och gör våra resultat representativa.",
+    "skip": "Hoppa över",
+    "submit": "Registrera",
+    "submitted_thanks": "Tack för ditt svar.",
+    "submitted_disclaimer": " Det kommer att användas anonymt för att analysera resultatet av samrådet.",
+    "select": "Välj"
+  },
+  "proposal_submit": {
+    "form": {
+      "bait": "Vi måste ",
+      "title": "Lägg ditt förslag med färre än 140 tecken. Skriv det i förslagsfältet och validera genom att klicka på knappen ”Godkänn”",
+      "field": "Förslagsfält",
+      "counter": "Ditt förslag innehåller {{current}} tecken av totalt {{total}} möjliga.",
+      "panel_trigger": "Jag föreslår en lösning",
+      "button_cancel": "Avbryt",
+      "button_submit": "Godkänn",
+      "read_our": "Läs vår",
+      "moderation_link": "modereringspolicy",
+      "button_propose": "LÄGG ETT FÖRSLAG"
+    },
+    "authentication": {
+      "button_back": "Ändra mitt förslag",
+      "back": "Tillbaka",
+      "title": "För att godkänna mitt förslag",
+      "last_step_red": "Bara ett steg kvar ",
+      "last_step": "innan du kan skicka in ditt förslag!",
+      "subtitle": "Jag registrerar mig med",
+      "button_login_text": "Jag har redan ett konto,",
+      "button_login_link": "jag loggar in.",
+      "button_login": "Logga in",
+      "back_authentication": "Gå tillbaka till inloggningsskärmen"
+    },
+    "success": {
+      "title": "Tack {{name}}!",
+      "description": "Ditt förslag modereras nu av vårt team.",
+      "button": "Fortsätta att rösta",
+      "other_idea": "Jag har en ny idé",
+      "tooltip_title": "Modereras",
+      "tooltip_description": "Ditt förslag kommer att behandlas av vårt team inom 48 timmar. Under tiden kan du från och med nu se det i din profil.",
+      "grats": "Gratulerar {{name}}, ",
+      "proposal_sent": "ditt förslag har skickats in ",
+      "activate": "Bekräfta din e-postadress med ett klick ",
+      "link": "för att garantera att ditt konto är autentiskt. Klicka på aktiveringslänken som har skickats till: {{mail}}",
+      "question": "Har du frågor? Du kan kontakta oss på: ",
+      "consultation_access": "Jag deltar i samrådet"
+    }
+  },
+  "vote": {
+    "intro_title": "Jag uttrycker min åsikt om det här förslaget: ",
+    "agree": "Jag håller med",
+    "disagree": "Jag håller inte med",
+    "neutral": "Jag är neutral",
+    "label_one": "{{count}} röst",
+    "label_other": "{{count}} röster",
+    "with_percent": "{{votedKey}}: {{votedPercent}} %"
+  },
+  "unvote": {
+    "title": "Jag drar tillbaka min åsikt om det här förslaget."
+  },
+  "results": {
+    "static_total": "Det här förslaget har fått: ",
+    "static_repartition": "Fördelat på: ",
+    "total_one": "Det här förslaget har fått {{count}} röst, fördelat på: ",
+    "total_other": "Det här förslaget har fått {{count}} röster, fördelat på: ",
+    "voted": {
+      "agree": "Jag röstade på ”Jag håller med” för det här förslaget.",
+      "disagree": "Jag röstade på ”Jag håller inte med” för det här förslaget.",
+      "neutral": "Jag röstade på ”Jag är neutral” för det här förslaget."
+    },
+    "tooltipbutton": {
+      "display": {
+        "agree": "Visa resultaten för alternativet: ”jag håller med”",
+        "disagree": "Visa resultaten för alternativet: ”jag håller inte med”",
+        "neutral": "Visa resultaten för alternativet: ”jag är neutral”"
+      },
+      "hide": {
+        "agree": "Dölj resultaten för alternativet: ”jag håller med”",
+        "disagree": "Dölj resultaten för alternativet: ”jag håller inte med”",
+        "neutral": "Dölj resultaten för alternativet: ”jag är neutral”"
+      }
+    }
+  },
+  "qualification": {
+    "title": "Jag förtydligar min åsikt om det här förslaget:",
+    "static_repartition": "Det här förslaget har betecknats som: ",
+    "times": "gånger",
+    "likeIt": "Hjärtefråga",
+    "doable": "Realistiskt",
+    "platitudeAgree": "Intetsägande",
+    "noWay": "Absolut inte!",
+    "impossible": "Ogenomförbart",
+    "platitudeDisagree": "Intetsägande",
+    "doNotUnderstand": "Jag förstår inte",
+    "noOpinion": "Ingen åsikt",
+    "doNotCare": "Jag bryr mig inte"
+  },
+  "sequence": {
+    "return": "Återgå till förslagen",
+    "title": "Rösta på förslagen från samrådet: ",
+    "more": "Åtkomst till hela samrådet"
+  },
+  "authentication": {
+    "title": "Registrera dig för att validera ditt förslag",
+    "description": "med",
+    "commitment": "Make.org åtar sig att skydda dina ",
+    "personal_data": "personuppgifter "
+  },
+  "login": {
+    "title": "Jag har redan ett konto",
+    "social_connect": "Jag loggar in med",
+    "connect": "Logga in",
+    "or": "eller",
+    "button_connect": "Jag loggar in",
+    "email_connect": "Jag loggar in med min e-postadress",
+    "forgot_password_title": "Hoppsan, jag har visst",
+    "forgot_password_link": "glömt mitt lösenord",
+    "forgot_password": "Har du glömt lösenordet?",
+    "registration_title": "Jag har inget konto,",
+    "registration_link": "jag ska skapa ett.",
+    "email_doesnot_exist": "Din {{emailLabel}} eller ditt {{passwordLabel}} är felaktigt."
+  },
+  "register": {
+    "title": "Skapa ett konto",
+    "social_connect": "Jag registrerar mig med",
+    "or": "eller",
+    "subtitle": "Jag registrerar mig via det här formuläret",
+    "step1_title": "Registrera sig via e-post",
+    "step2_title": "Avsluta min registrering",
+    "login_title": "Jag har redan ett konto,",
+    "login_link": "jag loggar in.",
+    "gtu_text_first": "När du registrerar dig innebär det att du godtar våra ",
+    "gtu_text_second": " och accepterar att ta emot e-postmeddelanden (inte många) från Make.org.",
+    "gtu_link": "allmänna användarvillkor."
+  },
+  "legal_consent": {
+    "title": "Lagstadgat tillstånd",
+    "subtitle": "Vi behöver få tillstånd från en av dina föräldrar",
+    "description": "Vi behöver få in två medgivanden för att ge dig åtkomst till vår medborgarplattform. Snart kan du uttrycka din åsikt i alla våra samråd!",
+    "minor_consent": "Jag samtycker till att Make.org får behandla mina personuppgifter.",
+    "parental_consent": "Som vårdnadshavare samtycker jag till att Make.org får behandla mitt barns personuppgifter.",
+    "cancel": "Avbryt",
+    "submit": "Godkänn",
+    "privacy_policy_first_part": "Jag accepterar att Make.org behandlar dessa uppgifter så att jag kan delta och få information om resultaten i enlighet med ",
+    "privacy_policy_link": "policyn",
+    "privacy_policy_last_part": ". (obligatoriskt)",
+    "privacy_policy": "uppgiftspolicy",
+    "make_protect": "Make.org åtar sig att skydda dina",
+    "make_protect_link": " personuppgifter",
+    "opt_in": "Jag accepterar att ta emot e-postmeddelanden från Make.org för att hålla mig informerad om vad som händer i pågående och kommande samråd. (frivilligt)"
+  },
+  "forgot_password": {
+    "title": "Jag återställer mitt lösenord",
+    "description": "Var god uppge den e-postadress som är kopplad till ditt konto på Make.org för att få återställningslänken.",
+    "success": "Tack, vi har nu skickat ett e-postmeddelande för att du ska kunna uppdatera ditt lösenord.",
+    "return": "Gå tillbaka till ",
+    "login_link": "inloggningsskärmen",
+    "send_link": "få e-postmeddelandet",
+    "email_doesnot_exist": "Vi hittar inget konto som är kopplat till den här e-postadressen."
+  },
+  "main_footer": {
+    "jobs": "Jobb",
+    "whoarewe": "Vårt angreppssätt",
+    "legal": "Lagstadgade uppgifter",
+    "terms": "Användarvillkor",
+    "data": "Uppgiftspolicy",
+    "country": "Byt land",
+    "contact": "Kontakt",
+    "news": "Nyheter",
+    "dotation_funds": "Gåvofond Make.org",
+    "moderation_charter": "Modereringspolicy",
+    "press_details": "Press",
+    "a11y": "Tillgänglighetspolicy",
+    "cookies": "Hur vi hanterar cookies"
+  },
+  "cookie_modal": {
+    "title": "Uttryck din åsikt på Make.org med skydd för privata uppgifter",
+    "description": "Vi vill förbättra vår service och din upplevelse ännu mer. Därför ber vi dig samtycka till att vi och våra samarbetspartners får använda cookies under ditt besök.",
+    "details": {
+      "title": "Vilka cookies handlar det om?",
+      "technicals": "<strong>Tekniska:</strong> cookies som är nödvändiga för att webbsidan ska fungera",
+      "preferences": "<strong>Preferenscookies:</strong> cookies som förbättrar din upplevelse när du använder webbplatsen",
+      "statistics": "<strong>Statistik:</strong> cookies som förbättrar vår analys av medborgarsamråden på ett sammanhållet sätt.",
+      "social_media": "<strong>Sociala medier:</strong> cookies som hjälper oss att förbättra vårt genomslag tack vare sociala medier"
+    },
+    "accept": "Acceptera",
+    "personalize": "Anpassa",
+    "refuse": "Fortsätt utan att acceptera",
+    "back": "Gå tillbaka till föregående steg",
+    "mandatory": "Alltid aktiv",
+    "save": "Spara urvalet",
+    "technicals": {
+      "secure": "make secure: när du har loggat in på din medborgarsida på Make.org garanterar den här cookien att du håller dig inloggad under tiden du använder tjänsten.",
+      "expiration": "make-secure-expiration: den här cookien upptäcker om du är inaktiv på tjänsten så att du loggas ut.",
+      "demographics": "make-demographics: den här cookien ger oss information om huruvida du redan har tillfrågats om demografiska uppgifter (åldersspann, region, kön osv.) på den här enheten, så att du inte behöver få frågan igen vid nästa besök."
+    },
+    "preferences": {
+      "authentication": "Googles och Facebooks autentiseringscookies: de gör att du kan registrera dig och logga in på din medborgarplattform via dessa sociala medier.",
+      "session": "make-session-id: den här cookien samlar ihop allt du gör i tjänsten under en session.",
+      "expiration": "make-session-id-expiration: den här cookien visar aviseringen som anger att din sessionstid har gått ut (efter 20 minuter) och kommer att laddas igen.",
+      "user": "make-user-id: den här cookien gör att det går att se om du redan har skapat din plattform på Make.org och uppmanar dig att logga in så att du kan hitta alla dina aktioner på din medborgarplattform.",
+      "cookie": "make-cookie-preferences: den här cookien gör att systemet minns dina sparade val för cookieanvändning i vår tjänst."
+    },
+    "statistics": {
+      "visitor": "make-visitor-id: den här cookien gör att besöken på vår tjänst kan spåras så att vi kan mäta trafiken på ett sammanhållet och anonymt sätt. Navigeringshändelserna skickas till analysverktyget MixPanel.",
+      "created-at": "make-visitor-created-at: den här cookien gör att man kan se datumet för det första besöket på plattformen.",
+      "tracking": "Facebooks spårningscookie: den gör att uppgifter om beteende på tjänsten kan samlas in för sammanhållna analyser i syfte att förbättra tjänsten. Den gör också att sociodemografiska uppgifter kan samlas in (ålder, kön, region) på ett sammanhållet sätt för att förbättra analysen av samrådet."
+    },
+    "social_media": {
+      "facebook_pixel": "Pixel Facebook: den förbättrar prestandan i samrådskampanjerna på Facebook för att öka medborgardeltagandet.",
+      "twitter_pixel": "Pixel Twitter: den förbättrar prestandan i samrådskampanjerna på Twitter för att öka medborgardeltagandet.",
+      "facebook_sharing": "Delning Facebook: gör att användaren kan dela innehåll på sitt Facebook-konto.",
+      "twitter_sharing": "Delning Twitter: gör att användaren kan dela innehåll på sitt Twitter-konto.",
+      "linkedin_sharing": "Delning LinkedIn: gör att användaren kan dela innehåll på sitt LinkedIn-konto."
+    }
+  },
+  "reset_password": {
+    "title": "Jag skapar ett nytt lösenord",
+    "info": "Du kan välja ett nytt lösenord.",
+    "send_cta": "Godkänn",
+    "success": {
+      "title": "Tack, ditt lösenord har uppdaterats.",
+      "info": "Du kan nu logga in."
+    },
+    "failure": {
+      "bad_link": "Den här länken är inte giltig längre.",
+      "error_message": "Ditt lösenord kunde inte ersättas."
+    }
+  },
+  "data_policy_modal": {
+    "title": "Uppdatering av vår uppgiftspolicy",
+    "description": "Make.org åtar sig att respektera dina personuppgifter vid alla dina besök på webbplatsen. För att fortsätta navigera som inloggad på Make.org måste du acceptera vår uppdatering av ",
+    "data_policy_link": "uppgiftspolicyn.",
+    "consent": "<strong>Jag accepterar den nya uppgiftspolicyn.</strong> och jag kan använda min medborgarplattform Make.org",
+    "validate": "Jag godkänner",
+    "stay": "Jag stannar kvar",
+    "leave": "Jag lämnar webbplatsen",
+    "refusal_title": "Är du säker på att du vill lämna webbplatsen?",
+    "refusal_description_first_part": "Om du vägrar godta vår nya ",
+    "refusal_description_second_part": ", har du inte längre åtkomst till din medborgarplattform Make.org."
+  },
+  "not_found": {
+    "intro": "hoppsan",
+    "title": "Fel 404",
+    "description": "Sidan du efterfrågar existerar inte eller har upphört att existera."
+  },
+  "profile": {
+    "tabs": {
+      "label": "Din profil",
+      "manage_account": "Hantera mitt konto",
+      "proposals": "Förslag",
+      "favourites": "Mina hjärtefrågor",
+      "following": "Profiler jag följer"
+    },
+    "proposals": {
+      "title": "Mina senaste förslag",
+      "text": "Du har inte lämnat något förslag på Make.org än."
+    },
+    "favourites": {
+      "title": "Mina hjärtefrågor",
+      "description": {
+        "introduction": "Du har inte några hjärtefrågor på Make.org än.",
+        "explanation": "Du kan kategorisera ett förslag som hjärtefråga efter att ha röstat ”Jag håller med” till förslaget."
+      },
+      "card_title": "Vi måste stödja förslag med hög kvalitet."
+    },
+    "common": {
+      "infos": "Mina personuppgifter",
+      "log_out": "Jag loggar ut",
+      "age": "{{age}} år",
+      "submit_label": "Spara ändringarna",
+      "submit_success": "Din begäran har registrerats.",
+      "error": "Hoppsan! Det uppstod ett fel när dina uppgifter skulle sparas. Försök igen senare.",
+      "labels": {
+        "organisation": "Organisationens namn: ",
+        "firstname": "Förnamn: ",
+        "lastname": "Efternamn: ",
+        "email": "E-postadress: ",
+        "postal_code": "Postnummer: ",
+        "age": "Ålder: ",
+        "profession": "Yrke: ",
+        "biography": "Bakgrund: ",
+        "website": "Webbplats: ",
+        "political_party": "Politiskt parti: ",
+        "select": "Välj"
+      }
+    },
+    "informations_update": {
+      "title": "Ändra min profil",
+      "link_to_profile": "gå tillbaka till min profil",
+      "more": "Se mer",
+      "less": "Se mindre"
+    },
+    "password_update": {
+      "title": "Ändra mitt lösenord",
+      "newpassword": "Nytt lösenord",
+      "submit_label": "Spara ändringarna",
+      "actual_password": {
+        "label": "Nuvarande lösenord",
+        "invalid_password": "Det {{label}} som du har angett är felaktigt.",
+        "trigger": "Har du glömt ditt lösenord?"
+      }
+    },
+    "communication_preferences": {
+      "title": "Hantera mina kommunikationsinställningar",
+      "description": "Välj land och det språk du vill vill få e-post från Make.org på.",
+      "optin_label": "Jag accepterar att ta emot e-postmeddelanden från Make.org för att hålla mig informerad om vad som händer i pågående och kommande samråd."
+    },
+    "delete_account": {
+      "title": "Begära att mitt konto raderas",
+      "description": "Observera att det inte går att ångra denna åtgärd. Du kommer att förlora dina förslag, tillhörande detaljerad statistik och de förslag du har uttalat dig om.",
+      "password": "Jag anger mitt lösenord",
+      "submit_label": "Begära att mitt konto raderas",
+      "wrong_email": "Denna e-postadress är inte kopplad till ditt konto. Skriv gärna din e-postadress igen.",
+      "wrong_password": "Ditt lösenord är felaktigt."
+    },
+    "organisation": {
+      "proposal_agree": "håller med om det här förslaget",
+      "proposal_disagree": "håller inte med om det här förslaget",
+      "and": " och ",
+      "hasVoted_one": " har röstat på det här förslaget.",
+      "hasVoted_other": " har röstat på det här förslaget.",
+      "sharing_title": "Dela den här profilen"
+    }
+  },
+  "organisation": {
+    "title": "Utforska {{name}}s profil",
+    "tabs": {
+      "proposals": "Förslag",
+      "votes": "Ställningstaganden"
+    },
+    "proposals": {
+      "title": "De senaste förslagen från {{name}}:",
+      "text": "{{name}} har inte lämnat något förslag på Make.org än."
+    },
+    "votes": {
+      "title": "De senaste ställningstagandena från {{name}}:",
+      "text": "{{name}} har inte tagit ställning på Make.org än."
+    }
+  },
+  "personality": {
+    "title": "Utforska {{name}}s profil",
+    "tabs": {
+      "top_ideas": "Ställningstaganden gällande de mest populära idéerna"
+    },
+    "opinions": {
+      "title": "Ställningstaganden från {{firstname}} {{lastname}}:",
+      "placeholder_text": "{{firstname}} {{lastname}} har inte tagit ställning gällande de mest populära idéerna än.",
+      "vote": {
+        "agree": "håller med",
+        "disagree": "håller inte med",
+        "other": "annat"
+      },
+      "qualification": {
+        "priority": "Prioriterat",
+        "doable": "Realistiskt",
+        "noWay": "Absolut inte",
+        "nonPriority": "Ej prioriterad",
+        "exists": "Befintligt",
+        "toBePrecised": "Bör förtydligas"
+      },
+      "form": {
+        "title": "Vad skulle du göra för att svara på den här medborgaridén?",
+        "label": "Skriv här...",
+        "validate": "Godkänn mitt ställningstagande",
+        "disclaimer": "Observera att du måste kontakta Make.org för att ändra ditt ställningstagande efter publicering. Är du säker på att du vill publicera det nu? Om du är det, klicka på ”Bekräfta och publicera”.",
+        "preview_cancel": "Ändra",
+        "preview_confirm": "Bekräfta och publicera"
+      },
+      "preview": {
+        "agree": "Jag håller <span>med</span>.",
+        "agree_priority": "Jag håller <span>med</span>, den här idén är <span>prioriterad</span>.",
+        "agree_doable": "Jag håller <span>med</span>, den här idén är <span>realistisk</span>.",
+        "disagree": "Jag håller <span>inte med</span>.",
+        "disagree_noWay": "Jag håller <span>inte med</span>, jag vill <span>absolut inte</span> gå vidare med den här idén.",
+        "disagree_nonPriority": "Jag håller <span>inte med</span>, den här idén är <span>inte prioriterad</span>.",
+        "other": "Det här förslaget <span>finns redan</span>  eller <span>måste förtydligas</span> .",
+        "other_exists": "Det här förslaget <span>finns redan</span> .",
+        "other_toBePrecised": "Det här förslaget <span>måste förtydligas</span> ."
+      }
+    },
+    "disclaimer": {
+      "title": "Information",
+      "subtitle_first": "Hur kan jag ta ställning till en medborgaridé?",
+      "description_first": "För varje idé har du möjlighet att lägga en röst (”jag håller med”, ”jag håller inte med” eller ”annat”) och en beskrivning för att förtydliga din uppfattning. Efter detta ställningstagande öppnas tre fält, där du kan skriva dina tre främsta åtgärder och/eller förtydliga ditt ställningstagande.",
+      "subtitle_second": "Hur kan jag ändra mina publicerade svar?",
+      "description_second": "Om du vill ändra dina åtgärder efter att ha klickat på ”Publicera”, kontakta vårt team på adressen {{mailto}}"
+    }
+  },
+  "consultation": {
+    "header": {
+      "label_great_cause": "Stor fråga Make.org",
+      "label_consultation": "Medborgarsamråd",
+      "label_results": "Resultat"
+    },
+    "highlights": {
+      "start_date": "Datum för lansering",
+      "end_date": "Slutdatum för samrådet",
+      "remaining_one": "Dag kvar",
+      "remaining_other": "Dagar kvar",
+      "proposals_one": "Förslag",
+      "proposals_other": "Förslag",
+      "participant_one": "Deltagare",
+      "participant_other": "Deltagare",
+      "progress_title": "Vårt röstmål",
+      "progress_total": "Totalt antal röster",
+      "progress_target": " av {{votesTarget}} röster ({{percent}}%)",
+      "progress_description": "Ju fler röster förslagen får, desto större chans är det att de leder till konkreta åtgärder.",
+      "progress_btn": "Delta"
+    },
+    "participate": {
+      "title": "Hur kan jag delta i samrådet?",
+      "description": "Vi är övertygade om att var och en på sitt sätt kan bidra till det allmänna bästa. Därför uppmuntrar vi idéer och åsikter från tusentals medborgare i våra samråd."
+    },
+    "citizen_account": {
+      "title": "Din medborgarplattform på Make.org",
+      "description": "På ditt personliga konto har du åtkomst till resultaten av dina förslag och till din röstningshistorik. Du får också resultaten av samråden. När du registrerar dig hos oss får du information via e-post om kommande medborgarsamråd och bjuds in till våra deltagarevent.",
+      "button_text": "Jag registrerar mig"
+    },
+    "cards": {
+      "soon": "Kommande",
+      "submit": {
+        "title": "Lägga ett förslag",
+        "description": "Låt dina idéer upptäckas av så många som möjligt. Varje förslag studeras innan det blir föremål för medborgaromröstning.",
+        "button": "Jag har en idé"
+      },
+      "interact": {
+        "title": "Reagera på förslagen",
+        "description": "Om förslagen fastställer vad samrådet handlar om, uttryck din åsikt för att hjälpa oss att identifiera de idéer som bör prioriteras.",
+        "button": "Jag röstar"
+      },
+      "controversy": {
+        "title": "Låt din röst bli utslagsgivande för de mest omstridda förslagen",
+        "description": "De här medborgarförslagen har fått lika många ja- som nejröster.",
+        "button": "Jag avgör omröstningen"
+      },
+      "popular": {
+        "title": "Rösta om de mest populära förslagen",
+        "description": "De här medborgarförslagen har fått flest jaröster.",
+        "button": "Jag röstar"
+      },
+      "keywords": {
+        "title": "De ämnen som intresserar dig",
+        "description": "Välj de ämnen som du helst vill uttrycka din åsikt om."
+      },
+      "sharing": {
+        "title": "Dela samrådet",
+        "description": "Dina vänner har idéer och åsikter som också förtjänar att höras. Ge detta samråd större genomslagskraft genom att sprida det där du kan och på ditt sätt."
+      },
+      "about": {
+        "title": "Varför finns detta samråd?",
+        "description": "Varför har det här samrådet inletts? Vad är det som står på spel? Vem ligger bakom den?",
+        "link": "Läs mer"
+      },
+      "featured_proposals": {
+        "title": "De har lagt fram ett förslag"
+      }
+    },
+    "timeline": {
+      "timeline_title_great_cause": "Vilka är de viktigaste punkterna i den här stora frågan?",
+      "timeline_title_consultation": "Vilka är de viktigaste punkterna i det här samrådet?",
+      "consultation_title": "Medborgarsamråd",
+      "consultation_description": "Alla våra samråd börjar med en uppmaning till medborgarna att lägga fram idéer och att rösta.",
+      "consultation_from_to": "Från den {{startDate}} till den {{endDate}}",
+      "result_title": "Resultat",
+      "workshop_title": "Medborgarworkshops",
+      "workshop_link": "Kontakta oss för att delta",
+      "action_title": "Att agera"
+    },
+    "navigation": {
+      "introduction": "Se vilka andra teman som tas upp i samrådet: {{name}}",
+      "participate_desktop": "Delta i samrådet",
+      "participate_mobile": "Delta",
+      "participate_breadcrumb": "Delta i \"{{title}}\"",
+      "explore_desktop": "Utforska förslagen",
+      "explore_mobile": "Utforska",
+      "explore_breadcrumb": "Utforska \"{{title}}\""
+    },
+    "explore": {
+      "title": "Utforska förslagen",
+      "description": "Använd sökverktygen för att lätt gå igenom alla förslag i samrådet och se vilka du tycker är viktigast.",
+      "reset_filters": "Rensa sökfiltren",
+      "reset_filters_and_close": "Rensa sökfiltren och stäng",
+      "sort": "Sortera",
+      "sort_continue": "Tillämpa sorteringen och fortsätt",
+      "filters_continue": "Tillämpa filtren och fortsätt",
+      "sort_by": "Sortera efter",
+      "sort_and_close": "Sortera och stäng",
+      "filter": "Filtrera",
+      "filter_and_close": "Filtrera och stäng",
+      "filter_by": "Filtrera efter",
+      "recent": "Nya",
+      "popular": "Populära",
+      "controversial": "Omstridda",
+      "unvoted": "Väntar på din röst",
+      "organisations_proposals": "Har föreslagits av organisationer",
+      "no_proposal": "<strong>Inget förslag</strong>",
+      "validated_proposals_one": "<strong>{{count}} godkänt förslag</strong> som motsvarar din sökning",
+      "validated_proposals_other": "<strong>{{count}} godkända förslag</strong> som motsvarar din sökning"
+    },
+    "tabs": {
+      "consultation": " Samråd ",
+      "action": " Aktioner ",
+      "results": " Resultat ",
+      "from": " från den ",
+      "to": " till den ",
+      "datefrom": " från och med den "
+    },
+    "sort": {
+      "TAGGED_FIRST": "Alla förslag",
+      "ACTORS": "Aktörernas förslag",
+      "RECENT": "De nyaste",
+      "REALISTIC": "De mest realistiska",
+      "CONTROVERSY": "De mest omstridda",
+      "POPULAR": "De mest populära"
+    },
+    "presentation": {
+      "title": "Varför finns detta samråd?",
+      "link_text": "Läs mer"
+    },
+    "followus": {
+      "title": "För att gå vidare",
+      "description": "Upptäck alla nyheter på Make.org!",
+      "facebook": "Följ oss på Facebook",
+      "twitter": "Följ oss på Twitter",
+      "instagram": "Följ oss på Instagram",
+      "linkedin": "Följ oss på LinkedIn",
+      "discover": "Upptäck vår blogg"
+    },
+    "partners": {
+      "intro_title": "En omfattande mobilisering",
+      "intro_text": "Tusentals medborgare engagerar sig och deltar i samrådet.",
+      "commitment_title": "Våra samarbetspartners sluter upp",
+      "commitment_text": "De stöder samrådet och medborgarnas åtgärdsplan som följer.",
+      "commitment_link": "Se alla samarbetspartners",
+      "founder": "Samarbetspartner och grundare",
+      "init": "Samrådet har inletts av:",
+      "initWith": "Detta samråd har inletts med:",
+      "with": "I samarbete med:",
+      "by": "Har inletts av: ",
+      "profile_link": "Gå till profilen tillhörande: {{name}}",
+      "profile_link_new_window": "Gå till profilen tillhörande: {{name}} (nytt fönster)"
+    },
+    "tags": {
+      "proposal_list": "<span lang=\"en\">Taggar<span> som har valts för det här förslaget: ",
+      "popular_title": "De mest diskuterade ämnena:"
+    },
+    "banner": {
+      "title": "Delta på fem minuter i samrådet",
+      "description": "om en rad slumpvis utvalda förslag"
+    },
+    "proposal": {
+      "title": "Föreslå en lösning direkt",
+      "load_more": "Se fler förslag",
+      "see_proposals": "Se förslagen"
+    },
+    "results": {
+      "methodology": {
+        "title": "Metodik",
+        "description": "Metodiken grundas på noggrann moderering av de förslag som har samlats in. De läggs först fram för godkännande med avseende på överensstämmelse med Make.org:s policy, och kategoriseras sedan enligt tema. De algoritmer som har utvecklats av teamet bakom Make.org garanterar sedan att vart och ett av de godkända förslagen får lika mycket utrymme och organiserar en tävling mellan dem. Genom denna ständiga rotering identifierar Make.org de förslag som flest medborgare är överens om. Därefter analyseras de och grupperas enligt idékategorier."
+      },
+      "participation": {
+        "title": "Deltagare i samrådet"
+      },
+      "context": "Sammanhang",
+      "cartography": {
+        "title": "Kartläggning av debatten"
+      },
+      "download": {
+        "deprecated_title": "Få hela rapporten",
+        "title": "Få hela rapporten",
+        "type": "Format: {{extension}} - Storlek: {{weight}}",
+        "button": "Ladda ned",
+        "contact": "För att få hela analysrapporten från det här samrådet, kontakta oss på den här adressen: ",
+        "email_object": "Analysrapport"
+      },
+      "top_ideas": {
+        "skiplink": "De bästa av de idéer som har framkommit",
+        "title_one": "De bästa av de mest populära idéerna, sammanförda i {{count}} huvudlinje",
+        "title_other": "De bästa av de mest populära idéerna, sammanförda i {{count}} huvudlinjer",
+        "introduction": "När medborgarnas bästa förslag kommer till plattformen sammanförs de i idégrupper som strukturerar samrådet. För att kategorisera dessa idéer håller Make.org:s algoritm reda på röster ”för” och ”emot” samt omdömena ”hjärtefråga”, ”realistiskt”, ”intetsägande” och ”absolut inte! ”.",
+        "axe_title": "Huvudlinje {{count}}: {{name}}"
+      },
+      "proposals": {
+        "controversials_title": "De mest omstridda förslagen",
+        "controversials_description": "De ”omstridda” förslagen visar på en stor spricka i samhället. De får lika mycket starkt stöd som tydliga avståndstaganden.",
+        "rejected": "De mest förkastade förslagen",
+        "rejected_results": "{{disagree}}% mot varav {{no_way}} % absolut inte",
+        "controversials_agree": "{{count}}% för",
+        "controversials_disagree": "{{count}}% emot"
+      },
+      "table": {
+        "name": "Efternamn",
+        "value": "Värde",
+        "value_with_unit": "värde i {{unit}}",
+        "percentage": "procenttal"
+      },
+      "breadcrumb": "Resultat av ”{{title}}”",
+      "title": "Vad tar vi fasta på i det här samrådet?"
+    },
+    "reset": "Rensa",
+    "sortby": "Sortera efter: ",
+    "local_actors": {
+      "title": "De mest aktiva föreningarna",
+      "proposals_one": "{{ count }} förslag",
+      "proposals_other": "{{ count }} förslag",
+      "votes_one": "{{ count }} röst",
+      "votes_other": "{{ count }} röster",
+      "participate": "Är ni en förening som vill delta i vårt samråd? {{ contact_us }}",
+      "contact_us": "Kontakta oss!",
+      "more": "Läs mer"
+    },
+    "municipal": {
+      "header": {
+        "candidates_answers": "Kandidaterna i valet svarar på de prioriteringar som har fastslagits av medborgarna och föreningarna.",
+        "candidates_subscribe": "{{ subscribe }} för att hålla dig informerad",
+        "subscribe": "Registrera dig",
+        "candidates": "Du är kandidat",
+        "contact_us": "Kontakta oss!"
+      },
+      "position": {
+        "title": "Se kandidaternas svar på era prioriterade frågor."
+      }
+    },
+    "popular_proposals": {
+      "title": "DE {{ count }} BÄSTA av de mest populära förslagen just nu ämne för ämne"
+    }
+  },
+  "browse": {
+    "short_page_title": "Gå igenom",
+    "page_title": "Gå igenom samråden",
+    "title": "Delta i de pågående samråden",
+    "initiative": "Stor fråga Make.org",
+    "nav_consultations_desktop": "Pågående samråd",
+    "nav_consultations_mobile": "Samråd",
+    "nav_results_desktop": "Resultat av samråden",
+    "nav_results_mobile": "Resultat",
+    "consultations": {
+      "all": "Alla samråd",
+      "label": "Just nu",
+      "title": "Delta i de pågående samråden",
+      "subtitle": "Din åsikt räknas! Rösta och föreslå lösningar för att påverka i olika samhällsfrågor och aktuella problemställningar.",
+      "participate": "Delta",
+      "contributors_one": "deltagare",
+      "contributors_other": "deltagare",
+      "proposals_one": "förslag",
+      "proposals_other": "förslag",
+      "votes_one": "röst",
+      "votes_other": "röster",
+      "empty": "Det finns tyvärr inget tillgängligt samråd i ditt land just nu."
+    },
+    "results": {
+      "all": "Alla resultat",
+      "label": "Avslutade samråd",
+      "title": "Se resultaten",
+      "subtitle": "När våra samråd är slut kan du se medborgarnas prioriteringar och de aktioner som har genomförts av Make.org inom ramen för dess stora frågor.",
+      "see_results": "Se resultaten",
+      "see_topideas": "Se de bästa idéerna",
+      "coming_results": "Kommande resultat",
+      "empty": "Vi har hittills inte haft något samråd i ditt land."
+    },
+    "date": "Samråd från den {{startDate}} till den {{endDate}}",
+    "browse": "Gå igenom samråden",
+    "see_closed_consultations": "Se avslutade samråd",
+    "no_consultations": "Det finns inget pågående samråd, men låt oss hålla kontakten!",
+    "one_consultation": "Registrera dig för att få information om nästa samråd.",
+    "no_results": "Resultaten kommer snart. Låt oss hålla kontakten under tiden!",
+    "one_result": "Registrera dig för att få information om kommande resultat",
+    "subscribe": "Registrera dig",
+    "past_questions": "Du kan också se resultat av tidigare samråd"
+  },
+  "sharing": {
+    "facebook": "Dela på Facebook",
+    "twitter": "Dela på Twitter",
+    "linkedin": "Dela på LinkedIn"
+  },
+  "skip_links": {
+    "main_list": "De viktigaste länkarna",
+    "secondary_list": "Länkar till sidinnehåll",
+    "main_content": "Gå till det huvudsakliga innehållet",
+    "main_footer": "Gå längst ner på huvudsidan",
+    "sidebar_content": "Gå till sidopanelen för innehåll",
+    "secondary_nav": "Gå till sekundärnavigering",
+    "tag_list": "Gå till listan över filter",
+    "proposal_list": "Gå till listan över förslag",
+    "proposal_submit": "Gå till förslagsformuläret",
+    "proposal_card": "Gå till förslaget",
+    "sharing": "Gå till delningsavsnittet",
+    "dynamic_section": "Gå till avsnitt: \"{{name}}\""
+  },
+  "modal": {
+    "close": "Stäng dialogfönstret"
+  },
+  "homepage": {
+    "featured": {
+      "title": "Just nu på Make.org",
+      "status": "Projekttitel: ",
+      "link": "Gå till samrådets sida: {{name}}"
+    },
+    "title": "Välkomstsida",
+    "hero": {
+      "title": "Tillsammans har vi kraften att förbättra samhället",
+      "description": "Uttryck dina åsikter om de samhällsfrågor som är viktiga för dig genom att delta i våra medborgarsamråd. Låt oss tillsammans, som medborgare, föreningar och företag, fastslå våra prioriteringar och genomföra konkreta förändringar.",
+      "participate": "Delta i samråden",
+      "discover": "Upptäck våra stora frågor"
+    },
+    "highlights": {
+      "title": "Make.org i siffror",
+      "participants": {
+        "subtitle_one": "deltagare",
+        "subtitle_other": "deltagare"
+      },
+      "proposals": {
+        "subtitle_one": "lämnat förslag",
+        "subtitle_other": "lämnade förslag"
+      },
+      "partners": {
+        "subtitle_one": "engagerad förening & företag",
+        "subtitle_other": "engagerade föreningar & företag"
+      }
+    },
+    "featured_questions": {
+      "label": "Stora frågor Make.org",
+      "title": "Make.org gör skillnad i de stora samhällsfrågorna"
+    },
+    "posts": {
+      "title": "Nyheter",
+      "link_text": "Läs artikeln",
+      "see_all": "Se vad som händer"
+    },
+    "partnership": {
+      "title": "Samarbeta med Make.org",
+      "subtitle": "Bli samarbetspartner",
+      "description": "Vi arbetar med företag, föreningar och institutioner för att driva våra projekt framåt. <br/>Vi vägleder dessa organisationer så att de kan inleda egna samråd.",
+      "button": "Se våra erbjudanden"
+    },
+    "international": {
+      "subtitle": "Nationella samråd",
+      "title": "Make.org finns även i Sverige och tar upp svenska ämnen",
+      "button": "Utforska"
+    }
+  },
+  "search": {
+    "titles": {
+      "loading": "Sökning pågår...",
+      "no_results": "Inget resultat",
+      "main_results_one": "{{count}} resultat för « {{term}} »",
+      "main_results_other": "{{count}} resultat för « {{term}} »",
+      "proposals_one": "{{count}} förslag för « {{term}} »",
+      "proposals_other": "{{count}} förslag för « {{term}} »",
+      "operations_one": "{{count}} projekt för « {{term}} »",
+      "operations_other": "{{count}} projekt för « {{term}} »",
+      "organisations_one": "{{count}} organisationer för « {{term}} »",
+      "organisations_other": "{{count}} organisationer för « {{term}} »",
+      "main_results_empty_term": "0 resultat"
+    },
+    "main_results": {
+      "proposal": "Förslag",
+      "organisation": "Organisation",
+      "operation": "Projekt",
+      "results_one": "{{count}} resultat",
+      "results_other": "{{count}} resultat",
+      "view_all": "Se allt",
+      "no_results": "Vi hittade inget resultat för din sökning på « {{term}} »",
+      "no_query": "Söker du ett förslag, en idé, ett samråd? Skriv in din sökterm!",
+      "status": "Status: ",
+      "finished_consultation": "Avslutat samråd",
+      "open_consultation": "Pågående samråd"
+    },
+    "sidebar": {
+      "register": {
+        "title": "Registrera dig och se vad som händer på make.org."
+      }
+    },
+    "form": {
+      "introduction": "Din förfrågan måste innehålla mellan 3 och 140 tecken för att du ska kunna göra en sökning. Skriv den i sökfältet och validera genom att klicka på knappen ”Sök”",
+      "introduction_searched": "För att rensa sökfältet, klicka på knappen ”Rensa sökfältet”",
+      "label": "Sökfält",
+      "placeholder": "Sök",
+      "submit": "Sök",
+      "flush": "Rensa sökfältet",
+      "open_panel": "Visa sökfältet",
+      "cancel": "Avbryt"
+    }
+  },
+  "no_cookies": {
+    "title": "Hoppsan! Dina cookies har avaktiverats",
+    "first_paragraph": "Vi kan inte ge dig åtkomst till webbplatsen eftersom vi använder cookies för att se till att tjänsten håller hög kvalitet.",
+    "second_paragraph": "För att du ska kunna använda Make.org utan problem ber vi dig att tillåta cookies i den här webbläsaren eller att använda en annan. För att tillåta cookies i din webbläsare, gå till menyn och sedan inställningarna.",
+    "information": "Klicka på den här länken för mer information om hantering av cookies:",
+    "link": "www.accepterlescookies.com",
+    "thanks": "Tack för din förståelse. Vi ses snart!",
+    "footer": "Make.org är en plattform för engagemang som ger möjlighet att identifiera de mest populära idéerna inom olika områden. Upptäck <ahref=”https://about.make.org\">nyheter</a> för att få veta mer."
+  },
+  "contact": {
+    "contactUs": "Kontakta oss",
+    "paragraph": "En idé, ett förslag, en bugg? Kontakta oss gärna via e-post:"
+  },
+  "legal": {
+    "title": "Lagstadgade uppgifter",
+    "make_infos": "Redaktör för webbplatsen: MAKE.ORG, förenklat aktiebolag med ett kapital på {{make_capital}} och bolagssäte i {{make_address}}, inskrivet i Handels- och Bolagsregistret i PARIS med nummer {{make_rcs}} (nedan ”MAKE.ORG”).",
+    "mail": "E-postadress: ",
+    "make_phone": "Telefonnummer: ",
+    "make_phone_number": "{{make_phone_number}}",
+    "director": "Ansvarig utgivare: {{make_director_name}}",
+    "host": "Värdtjänsteleverantör: ",
+    "host_address": "{{make_host_address}} FRANCE",
+    "host_phone": "Telefonnummer: ",
+    "host_phone_number": "{{host_number}}",
+    "eu_mention": "EU-kommissionen tillhandahåller en plattform för tvistlösning online för konsumenter på adressen https://ec.europa.eu/consumers/odr."
+  },
+  "moderation_charter": {
+    "unsuitable_label": "OLÄMPLIGT",
+    "adapted_label": "Anpassat",
+    "refused_label": "Förkastat",
+    "validated_label": "Godkänt",
+    "title": "Modereringspolicy",
+    "description": "Vilka förslag har förkastats vid moderering på Make.org? Hur formulerar jag ett förslag korrekt? Varje förslag som läggs upp på plattformen modereras manuellt av vårt modereringsteam i enlighet med följande kriterier i modereringspolicyn¹. Moderering görs inom 48 timmar från det att förslaget har skickats. Du informeras via e-post (under förutsättning att du har vailderat din e-postadress vid registreringen) om ditt förslag publiceras eller förkastas. Mindre stavfel rättas av moderatorerna, men det är du som får publicera ditt förslag igen om det inte kan godtas.",
+    "refused_examples": "Ej tillåtet på plattformen Make.org: ",
+    "incomprehensible_solutions": {
+      "title": "Obegripliga förslag",
+      "description": "Ordalydelsen och meningen i ditt förslag måste kunna förstås av alla. Grava syntaxfel eller orimligheter kommer att förkastas och du kommer att uppmanas att omformulera förslaget.",
+      "refused_example_card": "Vi måste se till att medborgarna reflekterar sig i utvecklingen i alla länder.",
+      "validated_example_card": "Vi måste se till att medborgarna reflekterar över utvecklingen i utbildningen i varje land."
+    },
+    "irrelevant_solutions": {
+      "title": "Förslag som inte håller sig till ämnet",
+      "description": "Ditt förslag måste svara på frågan som ställs i samrådet. I annat fall kommer ditt förslag att anses inte hålla sig till ämnet och förkastas.",
+      "example": "Till exempel gällande frågan ”Hur kan vi se till att alla får bättre mat?”",
+      "refused_card_example": "Vi måste se till att VM i fotboll organiseras vartannat år.",
+      "validated_card_example": "Vi måste främja korta leveranskedjor i företags personalmatsalar."
+    },
+    "discriminatory_solutions": {
+      "title": "Diskriminerande förslag",
+      "description": "Enligt lagen² får ditt förslag inte innehålla skrivningar som uppmanar till våld eller hat. Det får inte heller innehålla diskriminerande eller kränkande uttalanden, som exempelvis går emot någon etnisk, social eller religiös grupp.",
+      "refused_card_example": "Vi måste se till att skåningar slutar med sina förnedrande traditioner.",
+      "validated_card_example": "Vi måste se till att svenskarna kan kommunicera bättre med varandra.",
+      "refused_card_example_2": "Vi måste förbjuda kors runt halsen, för de är en symbol för underkastelse.",
+      "validated_card_example_2": "Vi måste se till att religionsfriheten respekteras i vårt land."
+    },
+    "partisan_solutions": {
+      "title": "Förslag som tar partisk ställning",
+      "description": "Ditt förslag får inte ta ställning (det vill säga framföra meddelande som hyllar eller nedvärderar) för något politiskt parti, politiker, ideologi eller religion (religiös personlighet, symbol eller sed).",
+      "refused_card_example": "Vi måste ta del av politikern X:s program, hans/hennes idéer är en förebild inför nästa val.",
+      "validated_card_example": "Vi måste ta reda på vad varje politiskt parti har för program före valet.",
+      "refused_card_example_2": "Vi måste läsa Bibeln regelbundet för att finna frälsningen.",
+      "validated_card_example_2": "Vi måste se till att arbetsgivarna känner till vilka datum vissa religiösa högtider infaller på, exempelvis Ramadan, Chanukka osv."
+    },
+    "advertising": {
+      "title": "Reklam",
+      "description": "Du får inte göra reklam för något specifikt märke eller företag. Du får bara nämna märken eller företag genom exempel i illustrativt syfte.",
+      "refused_card_example": "Vi måste se till att alla företag använder lösningar från IBM.",
+      "validated_card_example": "Vi måste sluta att konsumera vissa alltför söta läskedrycker, som Coca-Cola."
+    },
+    "multiple_ideas": {
+      "title": "Flera idéer på en gång",
+      "description": "Du ska bara formulera en idé per förslag, så att andra medborgare enkelt ska kunna rösta på ditt bidrag. Om du har två olika idéer kan du skapa två förslag.",
+      "refused_card_example": "Vi måste se till att produkter från lokala producenter blir tillgängliga och kommunicera om innovationer inom jordbruket.",
+      "validated_card_example": "Vi måste se till att lokala produkter blir tillgängliga."
+    },
+    "insults": {
+      "title": "Förolämpningar",
+      "description": "Alla respektlösa eller förolämpande förslag kommer att förkastas vid moderering.",
+      "refused_card_example": "Vi måste se till att bilistidioterna respekterar trafikreglerna bättre.",
+      "validated_card_example": "Vi måste se till att bilisterna respekterar trafikreglerna bättre."
+    },
+    "correctly_formulated_solutions": {
+      "title": "Hur formulerar jag ett förslag korrekt på Make.org?"
+    },
+    "search_function": "Använd sökfunktionen för att säkerställa att din idé inte redan finns på webbplatsen.",
+    "concrete_elements": {
+      "text": "Precisera din idé konkret så att medborgarna kan förstå exakt vad du menar.",
+      "refused_card_example": "Vi måste få mer av Europa.",
+      "validated_card_example": "Vi måste ge mer medel till EU.",
+      "refused_card_example_2": "Vi måste minska ungdomsarbetslösheten.",
+      "validated_card_example_2": "Vi måste upprätta en arbetsförmedling för ungdomar."
+    },
+    "understandable_language": {
+      "text": "Gör dig förstådd på bästa sätt genom att använda ett språk som alla kan ta till sig.",
+      "refused_card_example": "Vi måste ha ett propedeutiskt år på universitetet.",
+      "validated_card_example": "Vi måste ha ett allmänt studieår på universitetet som man kan gå innan man väljer inriktning.",
+      "refused_card_example_2": "Vi måste se till att VC kan upptäcka cancer.",
+      "validated_card_example_2": "Vi måste se till att vårdcentralen kan upptäcka cancer."
+    },
+    "acronyms": {
+      "text": "Undvik att använda #, @ eller andra akronymer som ”LOL” i ditt förslag.",
+      "refused_card_example": "Vi måste sänka företagarskatten #konkurrenskraft",
+      "validated_card_example": "Vi måste sänka företagarskatten så att företagen blir konkurrenskraftiga!"
+    },
+    "disclaimer": "Make.org är inte en sådan operatör av onlineplattform som omfattas av lag nr 2018-1202 av den 22 december 2018 om bekämpning av informationsmanipulation. Vi har därför inte de skyldigheter som följer av denna lag. Det är emellertid viktigt för oss att den information som publiceras online på vår webbplats är sanningsenlig, och i denna policy utvecklar vi de åtgärder vi vidtar för att säkerställa detta.",
+    "foot_notes": {
+      "ethical_charter": "Denna modereringspolicy har utarbetats i enlighet med <ahref=”https://assets.website-files.com/59833d390a24e50001b873d8/5fd245978b3dbedcbcc121a2_VF%20Charte%20Ethique%20Make.org%20et%20Make.org%20Foundation%20valid%C3%A9e.pdf” target=\"_blank\">Etisk policy (nytt fönster)</a> som garanterar att Make.org är neutralt, oberoende och transparent.",
+      "code_penal": "Enligt Diskrimineringslagen (2008:567) definieras diskriminering som ”att någon missgynnas genom att behandlas sämre än någon annan behandlas, har behandlats eller skulle ha behandlats i en jämförbar situation, om missgynnandet har samband med kön, könsöverskridande identitet eller uttryck, etnisk tillhörighet, religion eller annan trosuppfattning, funktionsnedsättning, sexuell läggning eller ålder”. (1 kap 4§ 1p.)."
+    }
+  },
+  "cookies_management": {
+    "title": "Hur vi hanterar cookies",
+    "dated": "- den {{date}} -",
+    "button": "Spara urvalet",
+    "intro": {
+      "title": "Vad är en cookie?",
+      "first_paragraph": "En cookie är en liten datafil som kan placeras ut och läsas när en internetanvändare använder en webbplats eller en mobil applikation, oavsett vilken enhet som används (dator, smartphone osv.).",
+      "second_paragraph": "Vissa cookies är nödvändiga för att webbplatserna eller applikationerna ska fungera. Andra bidrar till att förbättra webbplatsens prestanda eller att förbättra internetanvändarnas upplevelse."
+    },
+    "use": {
+      "title": "Hur använder vi cookies?",
+      "first_paragraph": "När du loggar in på vår webbplats placeras cookies på din enhet för att förbättra din upplevelse, öka webbplatsens prestanda och optimera våra medborgarsamråd.",
+      "second_paragraph": "Informationen i dessa cookies syftar inte till att identifiera dig personligen och används aldrig i andra syften än de som anges nedan."
+    },
+    "partners": {
+      "title": "Vilka är våra samarbetspartners?",
+      "intro": "Förutom de cookies som skapas och hanteras av Make placeras också cookies på vår webbplats av följande samarbetspartners:"
+    },
+    "details": {
+      "title": "Vilka cookies använder vi?",
+      "intro": "De cookies som placeras på vår webbplats är följande:",
+      "mandatory": "Alltid aktiv",
+      "duration": "Varaktighet: {{duration}}",
+      "session": "Session",
+      "month": "{{count}} månader",
+      "year_one": "{{count}} år",
+      "year_other": "{{count}} år",
+      "technicals": {
+        "name": "Tekniska cookies:",
+        "description": "dessa cookies är nödvändiga för att webbplatsen ska fungera och kan inte avaktiveras. Du kan konfigurera din webbläsare för att blockera dessa cookies eller få information om att de finns, men vissa delar av vår webbplats kan påverkas av det. Dessa cookies syftar inte till att identifiera dig personligen.",
+        "secure": "make-secure: när du har loggat in på din medborgarsida på Make.org garanterar den här cookien att du håller dig inloggad under tiden du använder tjänsten.",
+        "secure-expiration": "make-secure-expiration: den här cookien gör att det upptäcks om du är inaktiv på tjänsten, så att du loggas ut.",
+        "demographics": "make-demographics: den här cookien ger oss information om huruvida du redan har tillfrågats om demografiska uppgifter (åldersspann, region, kön osv.) på den här enheten, så att du inte behöver få frågan igen vid nästa besök."
+      },
+      "preferences": {
+        "name": "Preferenscookies:",
+        "description": "dessa cookies används för att spara dina inställningar på vår webbplats och på så sätt förbättra din upplevelse när du använder den. Du kan konfigurera din webbläsare för att blockera dessa cookies eller få information om att de finns, men vissa delar av vår webbplats kan påverkas av det. Dessa cookies syftar inte till att identifiera dig personligen.",
+        "google-connect": "Google connect: dessa cookies gör att du kan registrera dig och logga in på din medborgarplattform.",
+        "facebook-connect": "Facebook connect: dessa cookies gör att du kan registrera dig och logga in på din medborgarplattform.",
+        "session-id": "make-session-id: den här cookien samlar ihop allt du gör på webbplatsen under ett besök.",
+        "session-id-expiration": "make-session-id-expiration: den här cookien visar aviseringen som anger att din sessionstid har gått ut (efter 20 minuter) och kommer att laddas igen.",
+        "user-id": "make-user-id: den här cookien identifierar dig när du har loggat in på en brugerprofil på Make.org. Den hjälper dig att logga in igen genom att fylla i ditt användarnamn automatiskt.",
+        "cookie-preferences": "make-cookie-preferences: den här cookien gör att dina inställningar för cookieanvändning på vår tjänst sparas."
+      },
+      "statistics": {
+        "name": "Statistik-cookies:",
+        "description": "dessa cookies analyserar besöken på vår webbplats och förbättrar dess prestanda. All information som samlas in av dessa cookies slås ihop och anonymiseras. Om du inte accepterar dessa cookies får vi ingen information om ditt andra besök.",
+        "visitor-id": "make-visitor-id: den här cookien gör att besöken på vår tjänst kan följas så att trafiken kan mätas på ett anonymt och sammanhållet sätt. Navigeringshändelserna skickas till analysverktyget MixPanel.",
+        "visitor-created-at": "make-visitor-created-at: den här cookien gör att man kan se datumet för det första besöket på plattformen.",
+        "facebook-tracking": "Facebook-spårningscookie: den här cookien gör att det genereras besöksstatistik som förbättrar vår webbplats och analysen av våra samråd.",
+        "hotjar": "Hotjar: Det är ett verktyg som hjälper till att analysera besökarnas beteende när de använder webbplatsen. Läs mer: "
+      },
+      "social": {
+        "name": "”Sociala medier-cookies”",
+        "description": "dessa cookies, som aktiveras av tredje part, gör att du kan dela innehållet på vår webbplats på sociala medier och hjälper oss på så sätt att optimera vår genomslagskraft. Om du inte samtycker till placering av cookies kan dessa delningsverktyg kanske inte användas.",
+        "facebook_tracking": "Pixel Facebook: den förbättrar prestandan i samrådskampanjerna på Facebook för att öka medborgardeltagandet.",
+        "twitter_tracking": "pixel Twitter: den förbättrar prestandan i samrådskampanjerna på Twitter för att öka medborgardeltagandet.",
+        "facebook_sharing": "delning på Facebook: den här cookien gör att användaren kan dela innehåll på Facebook och förbättrar användarvänligheten.",
+        "twitter_sharing": "delning på Twitter: den här cookien gör att användaren kan dela innehåll på Twitter och förbättrar användarvänligheten.",
+        "linkedin_sharing": "delning på LinkedIn: den här cookien gör att användaren kan dela innehåll på LinkedIn och förbättrar användarvänligheten."
+      }
+    }
+  },
+  "countries": {
+    "AT": "Österrike",
+    "BE": "Belgien",
+    "BG": "Bulgarien",
+    "BR": "Brasilien",
+    "CA": "Kanada",
+    "CH": "Schweiz",
+    "CN": "Kina",
+    "CY": "Cypern",
+    "CZ": "Tjeckiska republiken",
+    "DE": "Tyskland",
+    "DK": "Danmark",
+    "EE": "Estland",
+    "ES": "Spanien",
+    "FI": "Finland",
+    "FR": "Frankrike",
+    "GB": "Storbritannien",
+    "GR": "Grekland",
+    "HR": "Kroatien",
+    "HU": "Ungern",
+    "IE": "Irland",
+    "IN": "Indien",
+    "IS": "Island",
+    "IT": "Italien",
+    "JP": "Japan",
+    "LI": "Liechtenstein",
+    "LT": "Litauen",
+    "LU": "Luxemburg",
+    "LV": "Lettland",
+    "MT": "Malta",
+    "NL": "Nederländerna",
+    "NO": "Norge",
+    "PL": "Polen",
+    "PT": "Portugal",
+    "RO": "Rumänien",
+    "RU": "Ryssland",
+    "SE": "Sverige",
+    "SI": "Slovenien",
+    "SK": "Slovakien",
+    "US": "USA",
+    "UA": "Ukraina"
+  },
+  "languages": {
+    "fr": "Français",
+    "en": "English",
+    "de": "Deutsch",
+    "uk": "Українська",
+    "cs": "Česky",
+    "es": "Español",
+    "pl": "Polski",
+    "it": "Italiano",
+    "nl": "Nederlands",
+    "fi": "Suomi",
+    "ro": "Română",
+    "bg": "Български"
+  },
+  "language_switch": {
+    "country_title": "Ditt land",
+    "country_subtitle": "Valet av land avgör vilka samråd som finns tillgängliga.",
+    "language_title": "Ditt språk",
+    "confirm": "Bekräfta"
+  }
+}

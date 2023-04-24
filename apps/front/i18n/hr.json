@@ -1,0 +1,1429 @@
+{
+  "meta": {
+    "home": {
+      "title": "Djelovanje kroz inicijativu Make.org – Make.org",
+      "description": "Predložite, glasujte, djelujmo: zajedno pronađimo rješenja za trenutačne velike probleme.",
+      "picture": "https://assets.make.org/assets/metas/default_meta-fr.png"
+    },
+    "organisation": {
+      "proposals": {
+        "title": "{{organisation}} – vlastiti prijedlozi – Make.org"
+      },
+      "positions": {
+        "title": "{{organisation}} – vlastita stajališta – Make.org"
+      }
+    },
+    "profile": {
+      "proposals": {
+        "title": "Profil – Moji prijedlozi – Make.org"
+      },
+      "favorites": {
+        "title": "Profil –  Oznaka Slažem se u cijelosti – Make.org"
+      },
+      "edit": {
+        "title": "Mijenjanje profila – Make.org"
+      }
+    },
+    "proposal": {
+      "title": "Prijedlog '{{proposal}}' za raspravu o pitanju '{{question}}' – Make.org",
+      "description": "Podržite moj prijedlog glasovanjem i zajedno pronađimo rješenja za trenutačne velike probleme. Make.org i partneri provode najbolje prijedloge u djelo."
+    },
+    "participate": {
+      "title": "Sudjelujte u raspravama – {{question}} – Make.org",
+      "description": "Predložite, glasujte, djelujmo: zajedno pronađimo rješenja za trenutačne velike probleme."
+    },
+    "explore": {
+      "title": "Pregledajte prijedloge za raspravu o pitanju '{{question}}' – Make.org"
+    },
+    "results": {
+      "title": "Rezultati rasprave '{{question}}' – Make.org",
+      "description": "Pogledajte rezultate građanske rasprave razvrstane u različite popularne teme, najkontroverznije i najviše odbačene prijedloge."
+    },
+    "sequence": {
+      "title_standard": "Sudjelujte u raspravi o pitanju {{question}} – Make.org",
+      "title_controversy": "Podijelite prijedloge za raspravu o pitanju '{{question}}' – Make.org",
+      "title_popular": "Zauzmite stajalište o najpopularnijim prijedlozima za raspravu o pitanju '{{question}}' – Make.org",
+      "title_keyword": "Zauzmite stajalište o temi '{{keywordLabel}}’ za raspravu o pitanju '{{question}}' – Make.org "
+    },
+    "top-ideas": {
+      "title": "Najbolje ideje za raspravu o pitanju '{{question}}' – Make.org",
+      "description": "Otkrijte najbolje ideje proizašle iz rasprave o pitanju '{{question}}'"
+    },
+    "top-idea-details": {
+      "title": "Pojedinosti ideje '{{idea}}’ za raspravu o pitanju '{{question}}' – Make.org",
+      "description": "Otkrijte sve prijedloge ideje {{idea}} proizašle iz rasprave o pitanju '{{question}}'"
+    },
+    "search": {
+      "main_results": "Pretraživanje – Rezultati za pojam « {{term}} » – Make.org",
+      "proposals": "Pretraživanje – Rezultati prijedloga za pojam « {{term}} » – Make.org",
+      "consultations": "Pretraživanje – Rezultati rasprava za pojam « {{term}} » – Make.org",
+      "organisations": "Pretraživanje – Rezultati organizacija za pojam « {{term}} » – Make.org"
+    },
+    "browse": {
+      "consultations": {
+        "title": "Sudjelujte u raspravama – Make.org",
+        "description": "Predložite, glasujte, djelujmo: zajedno pronađimo rješenja za trenutačne velike probleme."
+      },
+      "results": {
+        "title": "Rezultati rasprava – Make.org",
+        "description": "Pregledajte rezultate naših rasprava kao i djelovanja koja su proveli inicijativa Make.org i njezini partneri"
+      }
+    },
+    "legal": {
+      "title": "Pravne odredbe – Make.org",
+      "description": "Ovdje pronađite pravne odredbe koje se primjenjuju na mrežno mjesto."
+    },
+    "moderation": {
+      "title": "Make.org ∙ Pravilnik za moderiranje",
+      "description": "Koji se prijedlozi odbijaju tijekom moderiranja na platformi Make.org? Kako ispravno napisati prijedlog?"
+    },
+    "privacy_policy": {
+      "title": "Pravilnik za osobne podatke – Make.org",
+      "description": "Razumjeti sve glede obrade osobnih podataka tijekom posjeta mrežnom mjestu."
+    },
+    "gtu": {
+      "title": "Odredbe uporabe – Make.org",
+      "description": "U cijelosti poznavati odredbe uporabe za glasovanje i slanje prijedloga na platformi za  građansko sudjelovanje."
+    },
+    "contact": {
+      "title": "Obratite nam se – Make.org",
+      "description": "Ako ne nalazite odgovor na svoje pitanje, obratite nam se elektroničkom poštom."
+    },
+    "no_cookies": {
+      "title": "Ups! Vaši su kolačići isključeni – Make.org"
+    },
+    "cookies": {
+      "title": "Upravljanje kolačićima – Make.org",
+      "description": "Pročitajte sva objašnjenja o korištenju kolačićima tijekom vašeg posjeta platforme."
+    },
+    "password-recovery": {
+      "title": "Nova je lozinka stvorena – Make.org"
+    },
+    "a11y": {
+      "title": "Izjava o pristupačnosti – Make.org",
+      "description": "Pročitajte o zauzimanju inicijative Make.org glede digitalne pristupačnosti. Zajedno pronađimo rješenja za trenutačne velike probleme."
+    },
+    "not_found": {
+      "title": "Stranica nije pronađena – Pogreška 404 – Make.org",
+      "description": "Tražena stranica ne postoji."
+    }
+  },
+  "common": {
+    "connexion_label": "Prijava",
+    "register_label": "Registracija",
+    "continue": "Nastavi",
+    "register_panel": {
+      "welcome": "Dobro došao korisniče {{name}}!",
+      "greeting": "Sretni smo što ste jedan od naših korisnika!",
+      "mail_confirmation_strong": "Potvrdite svoju adresu elektroničke pošte jednim klikom ",
+      "mail_confirmation": " kako biste potvrdili autentičnost svojeg računa.  Kliknite na poveznicu za aktiviranje koja vam je poslana na adresu elektroničke pošte: {{mail}}",
+      "onboarding": "Iznesite svoje mišljenje o društvenim temama koje su vam važne sudjelovanjem u našim građanskim raspravama.",
+      "cta": "Sudjelovanje u raspravama",
+      "cta_access": "Sudjelujem u raspravi",
+      "optin_cgu_title": "Završite svoj postupak registracije",
+      "optin_cgu_subtitle": "u nekoliko klikova"
+    },
+    "form": {
+      "hide_password": "Sakrij lozinku",
+      "show_password": "Prikaži lozinku",
+      "requirements": "Sva su polja obavezna, osim ako se drugačije ne navodi.",
+      "requirements_short": "Sva su polja obavezna.",
+      "password_requirements": "Najmanje osam znakova od kojih je jedan broj, jedno veliko slovo i jedan poseban znak.",
+      "post_code": "Poštanskim brojem omogućava nam se analiziranje rezultata prema geografskom području.",
+      "label": {
+        "email": "Adresa elektroničke pošte",
+        "password": "Lozinka",
+        "firstname": "Ime",
+        "lastname": "Prezime",
+        "age": "Starosna dob",
+        "postalcode": "Poštanski broj",
+        "profession": "Zanimanje",
+        "biography": "Biografija",
+        "website": "Mrežno mjesto",
+        "organisation": "Naziv organizacije",
+        "email_optional": "Adresa elektroničke pošte (neobvezno)",
+        "password_optional": "Lozinka (neobvezno)",
+        "firstname_optional": "Ime (neobvezno)",
+        "lastname_optional": "Prezime (neobvezno)",
+        "age_optional": "Starosna dob (neobvezno)",
+        "postalcode_optional": "Poštanski broj (neobvezno)",
+        "profession_optional": "Zanimanje (neobvezno)",
+        "privacy_policy": "Pravilnik o osobnim podatcima",
+        "biography_optional": "Biografija (neobvezno)",
+        "website_optional": "Mrežno mjesto (neobvezno)",
+        "organisation_optional": "Naziv organizacije (neobvezno)",
+        "personality": {
+          "firstname": "Ime kandidata / nositelja liste",
+          "lastname": "Prezime kandidata / nositelja liste",
+          "firstname_M": "Ime kandidata / nositelja liste",
+          "lastname_M": "Prezime kandidata / nositelja liste",
+          "firstname_F": "Ime kandidatkinje / nositeljice liste",
+          "lastname_F": "Prezime kandidatkinje / nositeljice liste"
+        }
+      },
+      "messages": {
+        "errors_notification": "Pronašli smo pogreške u obrascu:",
+        "invalid_email": "Pridržavajte se formata adrese elektroničke pošte.",
+        "invalid_email_dynamic": "Pridržavajte se formata: {{label}}.",
+        "already_registered": "Ova adresa elektroničke pošte već postoji.",
+        "already_registered_dynamic": "Adresa elektroničke pošte {{label}} već postoji.",
+        "email_doesnot_exist": "Ova adresa elektroničke pošte nije pridružena vašem računu. Ponovno upišite svoju adresu elektroničke pošte.",
+        "email_doesnot_exist_dynamic": "Adresa elektroničke pošte {{label}} nije pridružena vašem računu. Ponovno upišite svoju adresu elektroničke pošte.",
+        "invalid_password": "Vaša lozinka mora imati najmanje osam znakova.",
+        "invalid_password_dynamic": "Vaša {{label}} mora imati najmanje osam znakova.",
+        "api_error": "Ups! Imamo poteškoća s učitavanjem ove stranice. Pokušajte ponovno kasnije.",
+        "mandatory": "Ovo se polje mora ispuniti.",
+        "mandatory_dynamic": "Polje je {{label}} obavezno.",
+        "invalid_age": "Naši korisnici moraju imati između 8 i 120 godina.",
+        "invalid_age_dynamic": "{{label}}: Naši korisnici moraju imati između 8 i 120 godina.",
+        "the_field_[email]_is_missing": "Polje je {{label}} obavezno.",
+        "the_field_[password]_is_missing": "Polje je {{label}} obavezno.",
+        "invalid_postal_code": "Poštanski se broj treba sastojati od pet znamenki.",
+        "invalid_privacy_policy": "Morate prihvatiti pravilnik o osobnim podatcima.",
+        "invalid_postal_code_dynamic": "{{label}} se treba sastojati od pet znamenki.",
+        "submit_success": "Promjena je uspješno primijenjena.",
+        "malformed": "Pridržavajte se formata URL-a „https://example.com”"
+      }
+    },
+    "social_login": {
+      "card_title": "Za pregledavanje povijesti vaših glasova",
+      "facebook_connect": "Nastavi uporabom računa za Facebook",
+      "google_connect": "Nastavi uporabom računa za Google",
+      "email_register": "Registracija uporabom adrese elektroničke pošte",
+      "count_register": "({{count}}/2)"
+    },
+    "notifications": {
+      "bad_link": "Ova poveznica više nije valjana.",
+      "activate_account_success": "Vaš je račun upravo aktiviran. Sada se možete prijaviti",
+      "delete_account_success": "Vaš je račun uspješno izbrisan. Nadamo se da ćemo se uskoro opet susresti na platformi Make.org!",
+      "login_success": "Uspješno ste se prijavili.",
+      "logout_success": "Uspješno ste se odjavili.",
+      "login_social_missing_email_data": "Nismo uspjeli dohvatiti valjanu adresu elektroničke pošte za vaš račun za društvenu mrežu Facebook kako bi obavili vašu registraciju. Upotrijebite obrazac za registraciju elektroničkom poštom.",
+      "register_success": "Dobro došli! Uspješno ste se registrirali.",
+      "register_validate": "Zahvaljujemo vam na registraciji. Elektronička vam je poruka poslana na adresu elektroničke pošte {{email}} kako biste aktivirali svoj račun jednim klikom.",
+      "secure_expired": {
+        "first_sentence": "Ispričavamo se, ali odjavili ste se jer nam se čini da ste otišli",
+        "second_sentence": "Ponovno se prijavite kako biste nastavili glasovati, predlagati i djelovati na platformi Make.org.",
+        "emoji": "Lice emotikona sa suzom"
+      },
+      "session_expired": {
+        "title": "Ograničeno vrijeme neaktivnosti",
+        "description": "Za bolje pružanje kvalitetne usluge ponovno učitavamo stranicu.",
+        "button_text": "Razumijem"
+      },
+      "icons": {
+        "close": "Zatvori okno obavijesti",
+        "information": "Informativna poruka: ",
+        "success": "Poruka o uspjehu: ",
+        "error": "Poruka o pogrešci: ",
+        "alert": "Poruka o upozorenju: "
+      },
+      "tags_filter": "Upotrijebite filtre za pronalaženje prijedloga koji vas zanimaju.",
+      "thank_you": "U redu, hvala!",
+      "unexpected_error": "Trenutačno smo naišli na pogrešku. Pokušajte kasnije.",
+      "network_error": "Nemoguće je pristupiti cjelovitom sadržaju platforme Make.org jer se čini da niste povezani na internet",
+      "vote_only": {
+        "message": "Za raspravu se \"{{title}}\" više ne mogu primati novi prijedlozi, ali glasovanje se nastavlja kako bi se odlučilo između postojećih prijedloga.",
+        "button": "razumijem"
+      },
+      "vote_on_proposal": "Glasujte za ovaj prijedlog",
+      "cookies": {
+        "social_media": "Za pristupanje ovoj funkcionalnosti trebate dopustiti uporabu dotičnih kolačića na stranici ",
+        "cookie_page": "Upravljanje kolačićima",
+        "update": "Hvala vam. Spremili smo vaše osobne postavke za upravljanje kolačićima."
+      }
+    },
+    "from": "o",
+    "email": "Adresa elektroničke pošte",
+    "propose": "Pošalji prijedlog",
+    "click_there": "kliknite ovdje",
+    "open_new_window": "Otvori u novoj kartici",
+    "loading": "Pričekajte prilikom učitavanja.",
+    "participate": "Sudjelujte",
+    "vote_on_proposals": "Glasujte za sve prijedloge",
+    "display_pannel": "Prikaži sadržaj pokretne oglasne ploče",
+    "hide_pannel": "Sakrij sadržaj pokretne oglasne ploče",
+    "display_modal": "Prikaži sadržaj dijaloškog okvira",
+    "hide_modal": "Sakrij sadržaj dijaloškog okvira",
+    "display_tooltip": "Prikaži sadržaj informativne natuknice ",
+    "hide_tooltip": "Sakrij sadržaj informativne natuknice",
+    "expand_collapse": "{{name}} – Prikaži sadržaj pokretnog odjeljka",
+    "shrink_collapse": "{{name}} – Sakrij sadržaj pokretnog odjeljka",
+    "secondary_nav": "Sekundarna navigacija",
+    "percent": "{{percent}} %",
+    "header_authentication_nav": "Pristup korisničkom profilu",
+    "footer_nav": "Navigacija u podnožju",
+    "sidebar_area": "Bočna traka sadržaja",
+    "consultation_nav": "Navigacijska traka rasprave",
+    "slider": {
+      "introduction": "Upotrijebite upravljačke tipke, strelice za lijevo i desno ili tabulator na tipkovnici za prikazivanje slika u nastavku.",
+      "previous": "Idi na prethodni element",
+      "next": "Idi na sljedeći element",
+      "index_count": "Element {{index}} od {{total}}"
+    },
+    "pagination": {
+      "title": "obilježavanje stranica",
+      "next": "Sljedeća stranica",
+      "previous": "Prethodna stranica",
+      "index_count": "Stranica {{index}} od {{total}}",
+      "page": "Stranica",
+      "page_total": "od {{total}}"
+    },
+    "max_characters": "najviše znakova",
+    "back": "Natrag",
+    "proposal_count_one": "{{count}} prijedlog",
+    "proposal_count_other": "{{count}} prijedloga",
+    "breadcrumbs": "Hijerarhijska navigacija",
+    "million_one": "milijun",
+    "million_other": "milijuna",
+    "close_panel": "Zatvori pokretnu oglasnu ploču",
+    "close": "Zatvori"
+  },
+  "header": {
+    "logo_alt": "Idi na početnu stranicu platforme Make.org",
+    "open_menu": "Pristupi izborniku glavne navigacije",
+    "close_menu": "Zatvori izbornik glavne navigacije",
+    "main_navigation": "Glavna navigacija mrežnog mjesta"
+  },
+  "proposal_page": {
+    "button_1": "sudjelovanje",
+    "button_2": "saznati više",
+    "share_text": "Podržite ovaj prijedlog tako da ga podijelite na:",
+    "footer_text": "Ovaj je prijedlog poslan u okviru akcije {{operation_name}}"
+  },
+  "idea_card": {
+    "title": "Najbolje ideje",
+    "number": "Broj ideja: {{ count }}",
+    "content": "Sadržaj ideje: ",
+    "link": "Prikaži pojedinosti ideje",
+    "associated_proposals_one": "{{count}} pridruženi prijedlog",
+    "associated_proposals_other": "{{count}} pridružena prijedloga",
+    "position_one": "{{ count }} stajalište",
+    "position_other": "{{ count }} stajališta",
+    "candidate_one": " kandidata glede te ideje.",
+    "candidate_other": " kandidatā glede te ideje.",
+    "open": "Prikaži rezultat ideje",
+    "close": "Sakrij rezultat ideje",
+    "expand": " – Kliknite za prikazivanje rezultata ideje",
+    "collapse": " – Kliknite za sakrivanje rezultata ideje",
+    "vote_proposals": "prijedloga",
+    "vote_positives": "pozitivnih odgovora",
+    "vote_heart": "oznaka Slažem se u cijelosti"
+  },
+  "idea_details": {
+    "current_page": "Pojedinosti ideje",
+    "proposals": "Pridruženi prijedlozi",
+    "comments": "Zauzeli su stajalište"
+  },
+  "proposal_card": {
+    "previous": "Prethodni prijedlog",
+    "next": "Sljedeći prijedlog",
+    "validate": "Potvrdi",
+    "content": "Sadržaj prijedloga: ",
+    "original": "Prikaži izvornik",
+    "translation": "Prikaži prijevod",
+    "number": "Broj sažetka {{current}} od {{total}}",
+    "posted_label": "Objavljeno u ",
+    "author": {
+      "from": "Prijedlog korisnika: ",
+      "age": "Starosna dob: {{age}}",
+      "date": "objavljeno dana: "
+    },
+    "status": {
+      "title": "Stanje prijedloga: ",
+      "accepted": "Objavljeno",
+      "refused": "Odbačeno",
+      "postponed": "Na čekanju za moderiranje",
+      "pending": "Na čekanju za moderiranje"
+    }
+  },
+  "report_translations": {
+    "button": "Mogućnosti prijedloga",
+    "confirmation": {
+      "title": "Hvala vam na prijavi!",
+      "description": "Naš tim obrađuje vašu prijavu u najkraćem mogućem roku."
+    },
+    "form": {
+      "title": "Napomena o strojnom prijevodu",
+      "unclear": "Prijevod nije razumljiv",
+      "error": "Pogreška u prijevodu",
+      "false_info": "Sadržava netočnu informaciju",
+      "offensive": "Uvredljivi prijedlog",
+      "report": "Prijavi"
+    },
+    "first_step": {
+      "title": "Strojni prijevod",
+      "text": "Prijedlozi se naših rasprava prevode strojno. Ako zamijetite pogrešku, prijavite je našim timovima!"
+    }
+  },
+  "intro_card": {
+    "purpose": "Kratki sažetak",
+    "title": "Tisuće građana predlaže rješenja.",
+    "description": "Zauzmite svoj stav o navedenim rješenjima i predložite vlastita rješenja.\nNajboljim se rješenjima određuje naše djelovanje.",
+    "description_short": "Zauzmite stajalište o navedenim rješenjima.",
+    "button": "Pokreni",
+    "partnership": "u suradnji s"
+  },
+  "final_card": {
+    "title": "Hvala vam što ste se očitovali na prijedloge!",
+    "description": "Nastavite glasovati kako biste nam pomogli utvrditi prioritete.",
+    "link_text": "Sudjelujem u raspravi",
+    "continue": "Nastavljam glasovati",
+    "register": {
+      "description": "Kako pratiti tijek rezultata?",
+      "button_intro": "Stvorite",
+      "button_text": "prostor za građanina."
+    }
+  },
+  "no_proposal_card": {
+    "title": {
+      "regular": "Zahvaljujemo vam na neprocjenjivom doprinosu!",
+      "popular": "Hvala vam. Glasovali ste za sve najpopularnije prijedloge",
+      "controversial": "Hvala vam. Glasovali ste za sve najkontroverznije prijedloge",
+      "keyword": "Hvala vam. Glasovali ste za sve prijedloge s ključnom riječi \"{{keyword}}\""
+    },
+    "description": {
+      "regular": "Trenutačno nema novih prijedloga.",
+      "special": "Nastavite glasovati kako biste nam pomogli utvrditi prioritete."
+    },
+    "link_text": "Sudjelujem u raspravi",
+    "sharing": "Ili distribuirajte ovu raspravu kako bi se doseglo što više korisnika."
+  },
+  "push_proposal_card": {
+    "title": "A vi, imate li svoj prijedlog vezano uz ovu temu?",
+    "next-cta": "Ne još uvijek, ali nastavljam glasovati"
+  },
+  "sequence_progress": {
+    "previous": "Idi na prethodni element",
+    "counter": "Element {{current}} od {{total}}"
+  },
+  "sequence_zone": {
+    "popular_title": "Popularni prijedlozi",
+    "controversial_title": "Kontroverzni prijedlozi"
+  },
+  "special_final_card": {
+    "title": "Hvala vam na glasovanju!",
+    "subtitle": "Možete nastaviti sudjelovati u raspravi",
+    "cta_text": "Sudjelujem u raspravi"
+  },
+  "demographics_card": {
+    "disclaimer": "Vaše su informacije anonimne kako bi naši rezultati bili reprezentativni.",
+    "skip": "Preskoči",
+    "submit": "Spremi",
+    "submitted_thanks": "Hvala vam na odgovoru.",
+    "submitted_disclaimer": " Odgovor se upotrebljava anonimno kako bi se analizirali rezultati rasprave.",
+    "select": "Odaberi"
+  },
+  "proposal_submit": {
+    "form": {
+      "bait": "Potrebno je ",
+      "title": "Pošaljite svoj prijedlog koji ima manje od 140 znakova. Upišite tekst u polje za prijedlog, a zatim ga pošaljite klikom na gumb „Potvrdi”",
+      "field": "Polja za prijedlog",
+      "counter": "Vaš prijedlog trenutačno ima {{current}} znakova od ukupno {{total}} dostupnih znakova",
+      "panel_trigger": "Predlažem rješenje",
+      "button_cancel": "Otkaži",
+      "button_submit": "Potvrdi",
+      "read_our": "Pročitajte naš",
+      "moderation_link": "pravilnik za moderiranje",
+      "button_propose": "POŠALJI PRIJEDLOG"
+    },
+    "authentication": {
+      "button_back": "Izmijeni prijedlog",
+      "back": "Natrag",
+      "title": "Za potvrđivanje mojeg prijedloga",
+      "last_step_red": "Više od jednog koraka ",
+      "last_step": "za slanje vašeg prijedloga!",
+      "subtitle": "Registriram se uporabom",
+      "button_login_text": "Već imam račun,",
+      "button_login_link": "prijavljujem se.",
+      "button_login": "Prijava",
+      "back_authentication": "Povratak na zaslon za prijavu"
+    },
+    "success": {
+      "title": "Hvala korisniče {{name}}!",
+      "description": "Vaš prijedlog trenutačno moderiraju naši timovi.",
+      "button": "Nastavi glasovati",
+      "other_idea": "Imam drugu ideju",
+      "tooltip_title": "Trenutačno se moderira",
+      "tooltip_description": "Vaš prijedlog obrađuju naši timovi u roku od 48 sati, a u međuvremenu ga možete pronaći u svojem profilu.",
+      "grats": "Čestitke korisniče {{name}}, ",
+      "proposal_sent": "vaš je prijedlog poslan ",
+      "activate": "Potvrdite svoju adresu elektroničke pošte jednim klikom ",
+      "link": "kako biste potvrdili autentičnost svojeg računa. Kliknite na poveznicu za aktiviranje koja vam je poslana na adresu elektroničke pošte: {{mail}}",
+      "question": "Imate li pitanje? Možete nam se obratiti na: ",
+      "consultation_access": "Sudjelujem u raspravi"
+    }
+  },
+  "vote": {
+    "intro_title": "Želim izraziti svoje mišljenje o ovom prijedlogu ",
+    "agree": "Slažem",
+    "disagree": "Ne slažem se",
+    "neutral": "Niti se slažem niti neslažem",
+    "label_one": "{{count}} glas",
+    "label_other": "{{count}} glasa",
+    "with_percent": "{{votedKey}}: {{votedPercent}} %"
+  },
+  "unvote": {
+    "title": "Želim povući svoje mišljenje o ovom prijedlogu."
+  },
+  "results": {
+    "static_total": "Ovaj prijedlog ima: ",
+    "static_repartition": "Uz raspodjelu: ",
+    "total_one": "Ovaj prijedlog ima {{count}} glas uz raspodjelu: ",
+    "total_other": "Ovaj prijedlog ima {{count}} glasa uz raspodjelu: ",
+    "voted": {
+      "agree": "Za taj prijedlog moj je glas „Slažem se”.",
+      "disagree": "Za taj prijedlog moj je glas „Ne slažem se”.",
+      "neutral": "Za taj prijedlog moj je glas „Niti se slažem niti neslažem”."
+    },
+    "tooltipbutton": {
+      "display": {
+        "agree": "Prikaži rezultate za mišljenje: „slažem se”",
+        "disagree": "Prikaži rezultate za mišljenje: „ne slažem se”",
+        "neutral": "Prikaži rezultate za mišljenje: „niti se slažem niti neslažem”"
+      },
+      "hide": {
+        "agree": "Sakrij rezultate za mišljenje: „slažem se”",
+        "disagree": "Sakrij rezultate za mišljenje: „ne slažem se”",
+        "neutral": "Sakrij rezultate za mišljenje: „niti se slažem niti neslažem”"
+      }
+    }
+  },
+  "qualification": {
+    "title": "Izražavam svoje mišljenje o ovom prijedlogu:",
+    "static_repartition": "Za navedeni je prijedlog stavljena oznaka: ",
+    "times": "put",
+    "likeIt": "Slažem se u cijelosti",
+    "doable": "Realistično",
+    "platitudeAgree": "Banalno",
+    "noWay": "Ne slažem se nikako!",
+    "impossible": "Neizvedivo",
+    "platitudeDisagree": "Banalno",
+    "doNotUnderstand": "Neshvatljivo",
+    "noOpinion": "Bez mišljenja",
+    "doNotCare": "Nevažno"
+  },
+  "sequence": {
+    "return": "Povratak na prijedloge",
+    "title": "Glasujte o prijedlozima za raspravu: ",
+    "more": "Pristupi cijeloj raspravi"
+  },
+  "authentication": {
+    "title": "Registrirajte se kako biste potvrdili vlastiti prijedlog",
+    "description": "s",
+    "commitment": "Make. org obvezuje se štititi vaše ",
+    "personal_data": "osobne podatke "
+  },
+  "login": {
+    "title": "Već imam račun",
+    "social_connect": "Prijavljujem se uporabom",
+    "connect": "Prijava",
+    "or": "ili",
+    "button_connect": "Prijavljujem se",
+    "email_connect": "Prijavljujem se uporabom vlastite adrese elektroničke pošte",
+    "forgot_password_title": "Ups,",
+    "forgot_password_link": "zaboravljena lozinka?",
+    "forgot_password": "Zaboravljena lozinka?",
+    "registration_title": "Nemam račun,",
+    "registration_link": "račun je stvoren.",
+    "email_doesnot_exist": "Netočna {{emailLabel}} ili {{passwordLabel}}."
+  },
+  "register": {
+    "title": "Stvori račun",
+    "social_connect": "Registriram se uporabom",
+    "or": "ili",
+    "subtitle": "Registriram se uporabom ovog obrasca",
+    "step1_title": "Registracija uporabom adrese elektroničke pošte",
+    "step2_title": "Izbriši moju registraciju",
+    "login_title": "Već imam račun,",
+    "login_link": "prijavljujem se.",
+    "gtu_text_first": "Registracijom prihvaćate ",
+    "gtu_text_second": " i primanje elektroničkih poruka (mali broj) s platforme Make.org.",
+    "gtu_link": "opće uvjeti uporabe"
+  },
+  "legal_consent": {
+    "title": "Pravno odobrenje",
+    "subtitle": "Potrebna je suglasnost jednog od tvojih roditelja",
+    "description": "Moramo prikupiti dva pristanka kako bismo vam omogućili pristup našoj platformi za građane. Uskoro možeš sudjelovati u svim našim raspravama!",
+    "minor_consent": "Ustupam privolu platformi Make.org za obrađivanje mojih osobnih podataka.",
+    "parental_consent": "U svojstvu roditelja skrbnika ustupam privolu platformi Make.org za obrađivanje osobnih podataka mojeg djeteta.",
+    "cancel": "Otkaži",
+    "submit": "Potvrdi",
+    "privacy_policy_first_part": "Prihvaćam da inicijativa Make.org obrađuje ove podatke radi mojeg sudjelovanja i informiranja o rezultatima u skladu s ",
+    "privacy_policy_link": "pravilnikom.",
+    "privacy_policy_last_part": ". (obvezno)",
+    "privacy_policy": "pravilnik o osobnim podatcima",
+    "make_protect": "Make.org obvezuje se štititi vaše",
+    "make_protect_link": " osobne podatke.",
+    "opt_in": "Prihvaćam da primam elektroničke poruke inicijative Make.org kako bi me informirali o trenutačnom stanju trenutačnih i budućih rasprava. (neobvezno)"
+  },
+  "forgot_password": {
+    "title": "Ponovno postavljam vlastitu lozinku",
+    "description": "Upišite adresu elektroničke pošte pridruženu vašem računu za Make.org kako biste primili poveznicu za ponovno postavljanje.",
+    "success": "Zahvaljujemo vam. Poslanom vam se elektroničkom poštom omogućava ažuriranje vaše lozinke.",
+    "return": "Vrati se na ",
+    "login_link": "zaslon za prijavu",
+    "send_link": "primi elektroničku poruku",
+    "email_doesnot_exist": "Ne pronalazimo račun pridružen ovoj adresi elektroničke pošte."
+  },
+  "main_footer": {
+    "jobs": "Poslovi",
+    "whoarewe": "Naš pristup",
+    "legal": "Pravne odredbe",
+    "terms": "Uvjeti uporabe",
+    "data": "Pravilnik o osobnim podatcima",
+    "country": "Promijeni državu",
+    "contact": "Kontakt",
+    "news": "Naše novosti",
+    "dotation_funds": "Sredstva dotacije inicijative Make.org",
+    "moderation_charter": "Pravilnik za moderiranje",
+    "press_details": "Prostor za medije",
+    "a11y": "Izjava o pristupačnosti",
+    "cookies": "Upravljanje kolačićima"
+  },
+  "cookie_modal": {
+    "title": "Izrazite se na platformi Make.org poštujući vlastitu privatnost",
+    "description": "Kako bismo dodatno optimizirali našu platformu i vaše iskustvo, prihvatite kolačiće koje mi i naši partneri želimo upotrebljavati tijekom vašeg posjeta.",
+    "details": {
+      "title": "O kojim je kolačićima riječ?",
+      "technicals": "<strong>Tehnički:</strong> kolačići koji su neophodni za ispravan rad mrežnog mjesta",
+      "preferences": "<strong>Osobne postavke:</strong> kolačići kojima se poboljšava vaše iskustvo prilikom pregledavanja mrežnog mjesta",
+      "statistics": "<strong>Statistički:</strong> kolačići kojima se skupno obogaćuje analiza naših građanskih rasprava",
+      "social_media": "<strong>Društvene mreže:</strong> kolačići kojima lakše optimiziramo naš utjecaj putem društvenih mreža"
+    },
+    "accept": "Prihvati",
+    "personalize": "Prilagodi",
+    "refuse": "Nastavi bez prihvaćanja",
+    "back": "Natrag na prethodni korak",
+    "mandatory": "Uvijek aktivno",
+    "save": "Potvrdi moj odabir",
+    "technicals": {
+      "secure": "make secure: nakon što se prijavite u svoj prostor za građane na platformi Make.org, ovim se kolačićem jamči da se veza održava dok pregledavate platformu.",
+      "expiration": "make-secure-expiration: ovaj se kolačić upotrebljava za otkrivanje vaše neaktivnosti na platformi kako bi se ova veza prekinula.",
+      "demographics": "make-demographics: ovim nam se kolačićem omogućava da saznamo jesmo li već od vas zatražili demografske podatke (dobna skupina, regija, spol itd.) na ovom uređaju kako vas ne bismo ponovno pitali prilikom budućeg posjeta."
+    },
+    "preferences": {
+      "authentication": "Kolačići za provjeru autentičnosti na uslugama Google i Facebook: omogućavaju registriranje i prijavljivanje u osobni prostor za građane putem ovih društvenih mreža.",
+      "session": "make-session-id: ovaj se kolačić upotrebljava za prikupljanje svih radnji koje izvodite na platformi tijekom sesije.",
+      "expiration": "make-session-id-expiration: ovim vam se kolačićem omogućava prikazivanje obavijesti kojom se ukazuje da je vaša sesija istekla (nakon 20 minuta) i stoga se ponovno učitava.",
+      "user": "make-user-id: ovim se kolačićem omogućava utvrđivanje jeste li već stvorili prostor na platformi Make.org i poziva vas da se prijavite kako biste mogli pronaći sve svoje radnje u svojem prostoru za građane.",
+      "cookie": "make-cookie-preferences: ovim se kolačićem pamte vaše postavke u vezi s korištenjem kolačićima na našoj platformi. "
+    },
+    "statistics": {
+      "visitor": "make-visitor-id: ovaj se kolačić upotrebljava za praćenje posjeta našoj platformi kako bi se anonimno i skupno mjerio promet. Događaji navigacije šalju se analitičkom alatu MixPanel.",
+      "created-at": "make-visitor-created-at: ovaj se kolačić upotrebljava za dohvaćanje datuma prvog posjeta platformi.",
+      "tracking": "Kolačić za praćenje na društvenoj mreži Facebook: upotrebljava se za prikupljanje podataka o ponašanju na platformi radi izvođenja skupne analize radi poboljšanja usluge. Također se upotrebljava za skupno prikupljanje socijalno-demografskih podataka (starosna dob, spol, regija) kako bi se obogatila analiza rasprava."
+    },
+    "social_media": {
+      "facebook_pixel": "Pixel Facebook: koristi se za optimiziranje performansi promotivnih kampanja rasprava na društvenoj mreži Facebook kako bi se povećalo sudjelovanje građana.",
+      "twitter_pixel": "Pixel Twitter: koristi se za optimiziranje performansi promotivnih kampanja za rasprave na društvenoj mreži Twitter kako bi se povećalo sudjelovanje građana.",
+      "facebook_sharing": "Dijeljenje na društvenoj mreži Facebook: omogućava se korisniku dijeljenje sadržaja na svojem računu za društvenu mrežu Facebook.",
+      "twitter_sharing": "Dijeljenje na društvenoj mreži Twitter: omogućava se korisniku dijeljenje sadržaja na svojem računu za društvenu mrežu Twitter.",
+      "linkedin_sharing": "Dijeljenje na društvenoj mreži LinkedIn: omogućava se korisniku dijeljenje sadržaja na svojem računu za društvenu mrežu LinkedIn."
+    }
+  },
+  "reset_password": {
+    "title": "Nova je lozinka stvorena",
+    "info": "Možete odabrati novu lozinku.",
+    "send_cta": "Potvrdi",
+    "success": {
+      "title": "Hvala vam. Vaša je lozinka uspješno ažurirana.",
+      "info": "Sada se možete prijaviti."
+    },
+    "failure": {
+      "bad_link": "Ova poveznica više nije valjana.",
+      "error_message": "Vaša se lozinka nije mogla zamijeniti."
+    }
+  },
+  "data_policy_modal": {
+    "title": "Ažuriranje našeg pravilnika o osobnim podatcima",
+    "description": "Inicijativa Make.org obvezuje se poštovati ​​vaše osobne podatke prilikom svakog vašeg posjeta mrežnom mjestu. Za nastavak pregledavanja dok ste prijavljeni na platformi Make.org morate prihvatiti naše ažuriranje ",
+    "data_policy_link": "pravilnika o osobnim podatcima.",
+    "consent": "<strong>Prihvaćam novi pravilnik o osobnim podatcima</strong> i mogu koristiti se mojim prostorom za građana na platformi Make.org",
+    "validate": "Potvrđujem",
+    "stay": "Ostajem",
+    "leave": "Napuštam",
+    "refusal_title": "Sigurno želite napustiti?",
+    "refusal_description_first_part": "Neprihvaćanjem novog ",
+    "refusal_description_second_part": ", ne možete više pristupati svojem prostor za građane na platformi Make.org."
+  },
+  "not_found": {
+    "intro": "ups",
+    "title": "Pogreška 404",
+    "description": "Tražena stranica ne postoji."
+  },
+  "profile": {
+    "tabs": {
+      "label": "Vaš profil",
+      "manage_account": "Upravljanje mojim profilom",
+      "proposals": "Prijedlozi",
+      "favourites": "Moje oznake Slažem se u cijelosti",
+      "following": "Moji profili koje slijedim"
+    },
+    "proposals": {
+      "title": "Moji zadnji prijedlozi",
+      "text": "Niste još poslali prijedlog na platformi Make.org."
+    },
+    "favourites": {
+      "title": "Moje oznake Slažem se u cijelosti",
+      "description": {
+        "introduction": "Još nemate nijednu oznaku Slažem se u cijelosti na platformi Make.org.",
+        "explanation": "Za određeni prijedlog možete postaviti oznaku Slažem se u cijelosti nakon što odaberete „Slažem se”."
+      },
+      "card_title": "Potrebno je podržati kvalitetne prijedloge."
+    },
+    "common": {
+      "infos": "Moji osobni podatci",
+      "log_out": "Odjavljujem se",
+      "age": "Starosna dob: {{age}}",
+      "submit_label": "Spremi promjene",
+      "submit_success": "Uspješno smo zaprimili vaš zahtjev.",
+      "error": "Ups! Nastala je pogreška tijekom spremanja vaših podataka. Pokušajte kasnije.",
+      "labels": {
+        "organisation": "Naziv organizacije: ",
+        "firstname": "Ime: ",
+        "lastname": "Prezime: ",
+        "email": "Adresa elektroničke pošte: ",
+        "postal_code": "Poštanski broj: ",
+        "age": "Starosna dob: ",
+        "profession": "Zanimanje: ",
+        "biography": "Biografija: ",
+        "website": "Mrežno mjesto: ",
+        "political_party": "Politička stranka: ",
+        "select": "Odaberi"
+      }
+    },
+    "informations_update": {
+      "title": "Promijeni moj profil",
+      "link_to_profile": "natrag na moj profil",
+      "more": "Prikaži više",
+      "less": "Prikaži manje"
+    },
+    "password_update": {
+      "title": "Promijeni moju lozinku",
+      "newpassword": "Nova lozinka",
+      "submit_label": "Spremi promjene",
+      "actual_password": {
+        "label": "Trenutačna lozinka",
+        "invalid_password": "Upisana lozinka {{label}} nije točna.",
+        "trigger": "Zaboravili ste svoju lozinku?"
+      }
+    },
+    "communication_preferences": {
+      "title": "Upravljaj mojim osobnim postavkama komunikacije",
+      "description": "Odaberite svoju državu i jezik na kojem želite primati elektroničke poruke inicijative Make.org.",
+      "optin_label": "Prihvaćam da primam elektroničke poruke inicijative Make.org kako bi me informirali o trenutačnom stanju trenutačnih i budućih rasprava."
+    },
+    "delete_account": {
+      "title": "Zatraži brisanje računa",
+      "description": "Napominjemo vam da se navedena radnja ne može poništiti. Brišu se svi vaši prijedlozi, njihove detaljne statistike kao i prijedlozi za koje ste izrazili svoje mišljenje.",
+      "password": "Navodim svoju lozinku",
+      "submit_label": "Zatraži brisanje računa",
+      "wrong_email": "Ova adresa elektroničke pošte nije pridružena vašem računu. Ponovno upišite svoju adresu elektroničke pošte.",
+      "wrong_password": "Vaša je lozinka netočna."
+    },
+    "organisation": {
+      "proposal_agree": "se slaže s ovim prijedlogom",
+      "proposal_disagree": "ne slaže se s ovim prijedlogom",
+      "and": " i ",
+      "hasVoted_one": " je glasovao za ovaj prijedlog.",
+      "hasVoted_other": " su glasovali za ovaj prijedlog.",
+      "sharing_title": "Podijeli ovaj profil"
+    }
+  },
+  "organisation": {
+    "title": "Otkrijte profil korisnika {{name}}",
+    "tabs": {
+      "proposals": "Prijedlozi",
+      "votes": "Stajališta"
+    },
+    "proposals": {
+      "title": "Zadnji prijedlozi korisnika {{name}}:",
+      "text": "Korisnik {{name}} nije još poslao prijedlog na platformi Make.org."
+    },
+    "votes": {
+      "title": "Zadnja stajališta korisnika {{name}}:",
+      "text": "Korisnik {{name}} nije još zauzeo stajalište na platformi Make.org."
+    }
+  },
+  "personality": {
+    "title": "Otkrijte profil korisnika {{name}}",
+    "tabs": {
+      "top_ideas": "Stajališta o najboljoj ideji"
+    },
+    "opinions": {
+      "title": "Stajališta korisnika – {{firstname}} {{lastname}}:",
+      "placeholder_text": "Korisnik {{firstname}} {{lastname}} još nije zauzeo stajalište o najboljoj ideji.",
+      "vote": {
+        "agree": "slažem se",
+        "disagree": "ne slažem se",
+        "other": "drugo"
+      },
+      "qualification": {
+        "priority": "Prioritetno",
+        "doable": "Realistično",
+        "noWay": "Ne slažem se nikako",
+        "nonPriority": "Neprioritetno",
+        "exists": "Postojeće",
+        "toBePrecised": "Treba se pojasniti"
+      },
+      "form": {
+        "title": "Što biste napravili da biste odgovorili na ovu građansku ideju?",
+        "label": "Napišite ovdje...",
+        "validate": "Potvrdi moje stajalište",
+        "disclaimer": "Upozorenje! Kako biste promijenili svoje stajalište nakon objave, trebate se obratiti inicijativi Make.org. Sigurno želite objaviti sada? Ako želite, kliknite na gumb „Potvrdi i objavi”.",
+        "preview_cancel": "Promijeni",
+        "preview_confirm": "Potvrdi i objavi"
+      },
+      "preview": {
+        "agree": "<span>Slažem se</span>.",
+        "agree_priority": "<span>Slažem se</span>, ideja je <span>prioritetna</span>.",
+        "agree_doable": "<span>Slažem se</span>, ideja je <span> realistična</span>.",
+        "disagree": "<span>Ne slažem se</span>.",
+        "disagree_noWay": "<span>Ne slažem se</span>, <span>ne slažem se nikako</span> s tom idejom.",
+        "disagree_nonPriority": "<span>Ne slažem se</span>, ideja je <span>neprioritetna</span>.",
+        "other": "Ovaj prijedlog <span>već postoji</span>  ili <span>treba se pojasniti</span> .",
+        "other_exists": "Ovaj prijedlog <span>već postoji</span>.",
+        "other_toBePrecised": "Ovaj prijedlog <span>treba se pojasniti</span>."
+      }
+    },
+    "disclaimer": {
+      "title": "Informacije",
+      "subtitle_first": "Kako zauzeti stav prema ideji koju predlaže građanin?",
+      "description_first": "Za svaku ideju imate mogućnost glasanja („slažem se”, „ne slažem se” ili „drugo”) i stavljanja oznake kako biste pojasnili svoje mišljenje. Ovim se stajalištem otvaraju tri polja u koja možete upisati svoje tri ključne mjere i/ili pojasniti svoje stajalište.",
+      "subtitle_second": "Kako mogu promijeniti objavljene odgovore?",
+      "description_second": "Ako želite promijeniti svoje mjere nakon što kliknete na gumb „Objavi”, obratite se našim timove na adresu elektroničke pošte: {{mailto}}"
+    }
+  },
+  "consultation": {
+    "header": {
+      "label_great_cause": "Veliki cilj Make.org",
+      "label_consultation": "Građanska rasprava",
+      "label_results": "Rezultati"
+    },
+    "highlights": {
+      "start_date": "Datum početka",
+      "end_date": "Datum završetka rasprave",
+      "remaining_one": "Preostali dan",
+      "remaining_other": "Preostala dana",
+      "proposals_one": "Prijedlog",
+      "proposals_other": "Prijedlozi",
+      "participant_one": "Sudionik",
+      "participant_other": "Sudionici",
+      "progress_title": "Naš ciljani ukupni broj glasova",
+      "progress_total": "Ukupan broj glasova",
+      "progress_target": " od {{votesTarget}} glasova ({{percent}} %)",
+      "progress_description": "Što više glasova prijedlozi prikupe, to je veći potencijal da se njima pokrenu konkretne radnje.",
+      "progress_btn": "Sudjelovanje"
+    },
+    "participate": {
+      "title": "Kako sudjelovati u raspravi?",
+      "description": "Smatramo da svatko može na svoj način pridonijeti općem dobru. Zbog toga se u sklopu naših rasprava pozivamo se na ideje i mišljenja tisuća građana."
+    },
+    "citizen_account": {
+      "title": "Vaš prostor za građanina na platformi Make.org",
+      "description": "Zahvaljujući svojem osobnom računu imate pristup rezultatima svojih prijedloga, povijesti svojih glasova i primate rezultate rasprava. Kada se registrirate na naš portal, primate putem e-pošte obavijest o nadolazećim građanskim raspravama i pozivamo vas na naše participativne događaje.",
+      "button_text": "Registriram se"
+    },
+    "cards": {
+      "soon": "Uskoro",
+      "submit": {
+        "title": "Poslati prijedlog",
+        "description": "Predstavite svoje ideje većem broju osoba. Svaka se ideja proučava prije stavljanja na glasovanje građanima.",
+        "button": "Imam ideju"
+      },
+      "interact": {
+        "title": "Očitovanje na prijedloge",
+        "description": "Ako se prijedlozima određuju izazovi rasprava, izrazite svoje mišljenje kako biste nam pomogli odrediti ideje koje trebaju biti prioritetne.",
+        "button": "Glasujem"
+      },
+      "controversy": {
+        "title": "Odlučivanje o najkontroverznijim prijedlozima",
+        "description": "Ovi su građanski prijedlozi dobili jednaki broj glasova za i protiv.",
+        "button": "Ja odlučujem"
+      },
+      "popular": {
+        "title": "Glasovanje o najpopularnijim prijedlozima",
+        "description": "Ovi su prijedlozi dobili najviše glasova za.",
+        "button": "Glasujem"
+      },
+      "keywords": {
+        "title": "Teme koje vas zanimaju",
+        "description": "Odaberite teme o kojima se prvo želite izraziti."
+      },
+      "sharing": {
+        "title": "Dijeljenje rasprave",
+        "description": "Vaši prijatelji imaju ideje i mišljenja koja također zaslužuju da ih se čuje. Promovirajte ovo savjetovanje njegovim distribuiranjem na vlastitoj razini i na vlastiti način."
+      },
+      "about": {
+        "title": "Koja je svrha ove rasprave?",
+        "description": "Zašto je ova rasprava pokrenuta? Koji su izazovi? O čemu je raspava?",
+        "link": "Saznati više"
+      },
+      "featured_proposals": {
+        "title": "Oni su poslali prijedlog"
+      }
+    },
+    "timeline": {
+      "timeline_title_great_cause": "Koje su prednosti ove velikog cilja?",
+      "timeline_title_consultation": "Koje su prednosti ove velike rasprave?",
+      "consultation_title": "Građanska rasprava",
+      "consultation_description": "Sve naše rasprave započinju pozivom za ideje i glasovima građana.",
+      "consultation_from_to": "Od {{startDate}} do {{endDate}}",
+      "result_title": "Rezultati",
+      "workshop_title": "Radionice za građane",
+      "workshop_link": "Obratite nam se za sudjelovanje",
+      "action_title": "Djelovanje"
+    },
+    "navigation": {
+      "introduction": "Pronađite ostale teme obrađene u raspravi: {{name}}",
+      "participate_desktop": "Sudjelovanje u raspravi",
+      "participate_mobile": "Sudjeluj",
+      "participate_breadcrumb": "Sudjeluju raspravi \"{{title}}\"",
+      "explore_desktop": "Istraži prijedloge",
+      "explore_mobile": "Istraži",
+      "explore_breadcrumb": "Istraži raspravu \"{{title}}\""
+    },
+    "explore": {
+      "title": "Istraži prijedloge",
+      "description": "Upotrijebite alate za pretraživanje kako biste jednostavno pregledali sve prijedloge u raspravama i odredite one koji vam se čine prioritetima.",
+      "reset_filters": "Ponovno primjeni filtre",
+      "reset_filters_and_close": "Ponovno primjeni filtre i zatvori",
+      "sort": "Razvrstaj",
+      "sort_continue": "Nastavi primjenom razvrstavanja",
+      "filters_continue": "Nastavi primjenom filtara",
+      "sort_by": "Razvrstaj prema",
+      "sort_and_close": "Razvrstaj i zatvori",
+      "filter": "Filtriraj",
+      "filter_and_close": "Filtriraj i zatvori",
+      "filter_by": "Filtiraj prema",
+      "recent": "Nedavni",
+      "popular": "Popularni",
+      "controversial": "Kontroverzni",
+      "unvoted": "Oni koji čekaju na vaš glas",
+      "organisations_proposals": "Prijedlozi organizacija",
+      "no_proposal": "<strong>Nijedan prijedlog</strong>",
+      "validated_proposals_one": "<strong>{{count}} prijedlog je pronađen</strong> prema vašem pretraživanju",
+      "validated_proposals_other": "<strong>{{count}} prijedloga su pronađena</strong> prema vašem pretraživanju"
+    },
+    "tabs": {
+      "consultation": " Rasprava ",
+      "action": " Radnje ",
+      "results": " Rezultati ",
+      "from": " od ",
+      "to": " do ",
+      "datefrom": " počevši od "
+    },
+    "sort": {
+      "TAGGED_FIRST": "Svi prijedlozi",
+      "ACTORS": "Prijedlozi sudionika",
+      "RECENT": "Najnovije",
+      "REALISTIC": "Najrelističnije",
+      "CONTROVERSY": "Najkontroverznije",
+      "POPULAR": "Najpopularnije"
+    },
+    "presentation": {
+      "title": "Koja je svrha ove rasprave?",
+      "link_text": "Saznati više"
+    },
+    "followus": {
+      "title": "Za još više",
+      "description": "Otkrijte sve aktualnosti na platformi Make.org!",
+      "facebook": "Pratite nas na društvenoj mreži Facebook",
+      "twitter": "Pratite nas na društvenoj mreži Twitter",
+      "instagram": "Pratite nas na društvenoj mreži Instagram",
+      "linkedin": "Pratite nas na društvenoj mreži LinkedIn",
+      "discover": "Otkrijte naš blog"
+    },
+    "partners": {
+      "intro_title": "Veliko okupljanje",
+      "intro_text": "Tisuće građana uključuje se sudjelovanjem u raspravi.",
+      "commitment_title": "Naši su partneri uz nas",
+      "commitment_text": "Oni podržavaju raspravu i građanski plan djelovanja koji će nastati.",
+      "commitment_link": "Prikaži sve partnere",
+      "founder": "Partner osnivač",
+      "init": "Pokretač rasprave:",
+      "initWith": "Ova je rasprava pokrenuta zajedno s:",
+      "with": "U suradnji s:",
+      "by": "Pokretač: ",
+      "profile_link": "Idi na profil korisnika: {{name}}",
+      "profile_link_new_window": "Idi na profil korisnika: {{name}} (novi prozor)"
+    },
+    "tags": {
+      "proposal_list": "<span lang=\"en\">Oznake<span> odabrane za ovaj prijedlog: ",
+      "popular_title": "Teme o kojima se najviše raspravlja"
+    },
+    "banner": {
+      "title": "Izdvojite pet minuta kako biste sudjelovali u raspravi",
+      "description": "o nizu nasumičnih prijedloga"
+    },
+    "proposal": {
+      "title": "Izravno predložite rješenje",
+      "load_more": "Prikaži više prijedloga",
+      "see_proposals": "Prikaži prijedloge"
+    },
+    "results": {
+      "methodology": {
+        "title": "Metodologija",
+        "description": "Metodologija se zasniva na finom moderiranju prikupljenih prijedloga. Prvo se šalju na provjeru usklađenosti s pravilnikom inicijative Make.org, a zatim se raspoređuju prema tematskom označavanju. Algoritmima se, koje su razvili timovi platforme Make.org, jamči svakom od odobrenih prijedloga jednaka razina izloženosti i organizira se natjecanje između njih. Zahvaljujući ovom stalnom rotiranju na platformi se Make.org utvrđuju prijedlozi koje predstavljaju najzastupljenije opće mišljenje među građanima prije nego što ih analizira i grupira u velike ideje."
+      },
+      "participation": {
+        "title": "Sudionici u raspravi"
+      },
+      "context": "Kontekst",
+      "cartography": {
+        "title": "Mapiranje rasprave"
+      },
+      "download": {
+        "deprecated_title": "Dohvati cjelovito izvješće",
+        "title": "Dohvatite cjelovito izvješće",
+        "type": "Format: {{extension}} – Težina: {{weight}}",
+        "button": "Preuzimanje",
+        "contact": "Za dobivanje cjelovitog izvješća o analizama ove rasprave, obratite nam se na adresu: ",
+        "email_object": "Izvješće o analizi"
+      },
+      "top_ideas": {
+        "skiplink": "Najbolje ideje koje se pojavljuju",
+        "title_one": "Najbolje građanske ideje, raspoređene u {{count}} kategoriju",
+        "title_other": "Najbolje građanske ideje, raspoređene u {{count}} kategorije",
+        "introduction": "Kada posjete platformu, najbolji se prijedlozi građana grupiraju u velike ideje koje čine raspravu. Kako bi se razvrstale ove ideje, algoritmom se platforme Make.org uzimaju u obzir glasove „za” i „protiv” kao i oznake „slažem se u cijelosti”, „realistično”, „banalno” i „ne slažem se nikako! ”.",
+        "axe_title": "Kategorija {{count}}: {{name}}"
+      },
+      "proposals": {
+        "controversials_title": "Najkontroverzniji prijedlozi",
+        "controversials_description": "„Kontroverznim” prijedlozima svjedoči se o velikom rascjepu unutar društva: općenito ih se jednako podržava koliko i jasno odbija.",
+        "rejected": "Najodbačeniji prijedlozi",
+        "rejected_results": "{{disagree}} % protiv od čega se {{no_way}} % ne slaže nikako",
+        "controversials_agree": "{{count}} % za",
+        "controversials_disagree": "{{count}} % protiv"
+      },
+      "table": {
+        "name": "Prezime",
+        "value": "Vrijednost",
+        "value_with_unit": "Vrijednost izražena u jedinici: {{unit}}",
+        "percentage": "postotak"
+      },
+      "breadcrumb": "Rezultati za stavku \"{{title}}\"",
+      "title": "Što zapamtiti iz ovog rasprave?"
+    },
+    "reset": "Ponovno pokreni",
+    "sortby": "Razvrstaj prema: ",
+    "local_actors": {
+      "title": "Najaktivnija udruženja",
+      "proposals_one": "{{ count }} prijedlog",
+      "proposals_other": "{{ count }} prijedlozi",
+      "votes_one": "{{ count }} glas",
+      "votes_other": "{{ count }} glasa",
+      "participate": "Jeste li udruženje i želite sudjelovati u našoj raspravi? {{ contact_us }}",
+      "contact_us": "Obratite nam se!",
+      "more": "Prikaži više"
+    },
+    "municipal": {
+      "header": {
+        "candidates_answers": "Kandidati za izbor odgovaraju na prioritete koje određuju građani i udruženja.",
+        "candidates_subscribe": "{{ subscribe }} za primanje obavijesti",
+        "subscribe": "Registrirajte se",
+        "candidates": "Vi ste kandidat",
+        "contact_us": "Obratite nam se!"
+      },
+      "position": {
+        "title": "Saznajte kako kandidati odgovaraju na vaše prioritete."
+      }
+    },
+    "popular_proposals": {
+      "title": "NAJBOLJIH {{ count }} tematskih prijedloga koji su trenutačno najpopularniji"
+    }
+  },
+  "browse": {
+    "short_page_title": "Pretraživanje",
+    "page_title": "Pretraži rasprave",
+    "title": "Sudjelujte u trenutačnim raspravama",
+    "initiative": "Veliki cilj Make.org",
+    "nav_consultations_desktop": "Trenutačne rasprave",
+    "nav_consultations_mobile": "Rasprave",
+    "nav_results_desktop": "Rezultati rasprava",
+    "nav_results_mobile": "Rezultati",
+    "consultations": {
+      "all": "Sve rasprave",
+      "label": "Trenutačno",
+      "title": "Sudjelujte u trenutačnim raspravama",
+      "subtitle": "Vaše je mišljenje važno! Glasujte i predlažite rješenja kako biste utjecali na različite društvene teme i trenutačne probleme.",
+      "participate": "Sudjeluj",
+      "contributors_one": "sudionik",
+      "contributors_other": "sudionici",
+      "proposals_one": "prijedlog",
+      "proposals_other": "prijedlozi",
+      "votes_one": "glas",
+      "votes_other": "glasovi",
+      "empty": "Žao nam je, trenutačno nema dostupnih rasprava u vašoj državi."
+    },
+    "results": {
+      "all": "Svi rezultati",
+      "label": "Završene rasprave",
+      "title": "Pregledajte rezultate",
+      "subtitle": "Na kraju naših rasprava otkrijte prioritete građana i djelovanja koje provodi Make.org u okviru svojih velikih ciljeva.",
+      "see_results": "Prikaži rezultate",
+      "see_topideas": "Prikaži najbolje ideje",
+      "coming_results": "Nadolazeći rezultati",
+      "empty": "Nikada dosada nismo vodili rasprave u vašoj državi."
+    },
+    "date": "Rasprava od {{startDate}} do {{endDate}}",
+    "browse": "Pretraži rasprave",
+    "see_closed_consultations": "Prikaži završene rasprave",
+    "no_consultations": "Trenutačno nema nijedne rasprave, ali ostanimo u doticaju!",
+    "one_consultation": "Registrirajte se kako biste primali obavijesti o sljedećoj raspravi.",
+    "no_results": "Rezultati će uskoro biti dostupni, ali do tada ostanimo u doticaju!",
+    "one_result": "Registrirajte se kako biste primali obavijesti o narednim rezultatima",
+    "subscribe": "Registracija",
+    "past_questions": "Također možete pregledati rezultate prethodnih rasprava:"
+  },
+  "sharing": {
+    "facebook": "Podijeli na društvenoj mreži Facebook",
+    "twitter": "Podijeli na društvenoj mreži Twitter",
+    "linkedin": "Podijeli na društvenoj mreži LinkedIn"
+  },
+  "skip_links": {
+    "main_list": "Glavne poveznice za preskakanje",
+    "secondary_list": "Glavne poveznice za preskakanje sadržaja stranice",
+    "main_content": "Idi na glavni sadržaj",
+    "main_footer": "Idi na podnožje glavne stranice",
+    "sidebar_content": "Idi na bočnu traku sadržaja",
+    "secondary_nav": "Idi na sekundarnu navigaciju",
+    "tag_list": "Idi na popis filtara",
+    "proposal_list": "Idi na popis prijedloga",
+    "proposal_submit": "Idi na obrazac za prijedlog",
+    "proposal_card": "Idi na prijedlog",
+    "sharing": "Idi na odjeljak za dijeljenje",
+    "dynamic_section": "Idi na odjeljak: \"{{name}}\""
+  },
+  "modal": {
+    "close": "Zatvori dijaloški okvir"
+  },
+  "homepage": {
+    "featured": {
+      "title": "Trenutačno na platformi Make.org",
+      "status": "Naziv radnje: ",
+      "link": "Idi na stranicu rasprave: {{name}}"
+    },
+    "title": "Početna stranica",
+    "hero": {
+      "title": "Zajedno možemo poboljšati društvo",
+      "description": "Iznesite svoje mišljenje o društvenim temama koje su vam važne sudjelovanjem u našim građanskim raspravama. Građani, udruženja i poduzeća zajedno odredimo prioritete i učinimo konkretne promjene.",
+      "participate": "Sudjelujte u raspravama",
+      "discover": "Otkrijte naše velike ciljeve"
+    },
+    "highlights": {
+      "title": "Make.org u brojkama",
+      "participants": {
+        "subtitle_one": "sudionika",
+        "subtitle_other": "sudionikā"
+      },
+      "proposals": {
+        "subtitle_one": "poslana prijedloga",
+        "subtitle_other": "poslanih prijedloga"
+      },
+      "partners": {
+        "subtitle_one": "uključena udruženja i poduzeća",
+        "subtitle_other": "uključenih udruženjā i poduzećā"
+      }
+    },
+    "featured_questions": {
+      "label": "Veliki ciljevi Make.org",
+      "title": "Inicijativa Make.org djeluje u području važnih društvenih pitanja"
+    },
+    "posts": {
+      "title": "Naše novosti",
+      "link_text": "Pročitaj članak",
+      "see_all": "Prikaži sve aktualnosti"
+    },
+    "partnership": {
+      "title": "Surađujte s inicijativom Make.org",
+      "subtitle": "Postani partner",
+      "description": "Radimo s poduzećima, udruženjima, institucijama kako bismo proveli svoje projekte. <br/>Također podržavamo te organizacije kako bismo im omogućili pokretanje vlastitih rasprava.",
+      "button": "Prikaži naše ponude"
+    },
+    "international": {
+      "subtitle": "Nacionalne rasprave",
+      "title": "Platforma je Make.org također dostupna u Hrvatskoj za nacionalne teme",
+      "button": "Pročitaj"
+    }
+  },
+  "search": {
+    "titles": {
+      "loading": "Pretraživanje u tijeku...",
+      "no_results": "Nijedan rezultat",
+      "main_results_one": "{{count}} rezultat za « {{term}} »",
+      "main_results_other": "{{count}} rezultata za « {{term}} »",
+      "proposals_one": "{{count}} prijedlog za « {{term}} »",
+      "proposals_other": "{{count}} prijedloga za « {{term}} »",
+      "operations_one": "{{count}} akcija za « {{term}} »",
+      "operations_other": "{{count}} akcije za « {{term}} »",
+      "organisations_one": "{{count}} organizacije za « {{term}} »",
+      "organisations_other": "{{count}} organizacija za « {{term}} »",
+      "main_results_empty_term": "0 rezultata"
+    },
+    "main_results": {
+      "proposal": "Prijedlog",
+      "organisation": "Organizacija",
+      "operation": "Akcija",
+      "results_one": "{{count}} rezultat",
+      "results_other": "{{count}} rezultata",
+      "view_all": "Prikaži sve",
+      "no_results": "Nismo mogli pronaći nikakve rezultate za vašu pretragu « {{term}} »",
+      "no_query": "Tražite li prijedlog, ideju, raspravu? Dodirnite svoje pretraživanje!",
+      "status": "Stanje: ",
+      "finished_consultation": "Završena rasprava",
+      "open_consultation": "Trenutačna rasprava"
+    },
+    "sidebar": {
+      "register": {
+        "title": "Registrirajte se da pratite novosti glede inicijative make.org."
+      }
+    },
+    "form": {
+      "introduction": "Da biste obavili pretraživanje, vaš upit mora imati između 3 i 140 znakova. Upišite ga u polje za pretraživanje, a zatim kliknite na gumb „Pretraži”",
+      "introduction_searched": "Da biste ispraznili polje za pretraživanje, kliknite na gumb „Izbriši polje za pretraživanje”.",
+      "label": "Polje za pretraživanje",
+      "placeholder": "Pretraži",
+      "submit": "Pretraži",
+      "flush": "Izbriši polje za pretraživanje",
+      "open_panel": "Prikaži polje za pretraživanje",
+      "cancel": "Otkaži"
+    }
+  },
+  "no_cookies": {
+    "title": "Ups! Vaši su kolačići isključeni",
+    "first_paragraph": "Ne možemo vam dopustiti pristup stranici jer se koristimo kolačićima kako bismo vam jamčili kvalitetu naše usluge.",
+    "second_paragraph": "Kako biste se potpuno bezbrižno kretali platformom Make.org, odobrite kolačiće u ovom pregledniku ili se koristite nekim drugim. Da biste omogućili kolačiće u svojem pregledniku, idite u izbornik, a zatim u postavke.",
+    "information": "Za više informacija o načinu upravljanja kolačićima kliknite na ovu poveznicu:",
+    "link": "www.accepterlescookies.com",
+    "thanks": "Hvala vam na razumijevanju i srdačan pozdrav!",
+    "footer": "Make.org je platforma za sudjelovanje na kojoj se navode građanske ideje o raznim temama. Kako biste saznali više o našoj inicijativi, pogledajte odjeljak <a href=\"https://about.make.org\">naše novosti</a>."
+  },
+  "contact": {
+    "contactUs": "Obratite nam se",
+    "paragraph": "Ideja, prijedlog ili greška? Slobodno nam se obratite slanjem elektroničke poruke na našu adresu elektroničke pošte:"
+  },
+  "legal": {
+    "title": "Pravne odredbe",
+    "make_infos": "Uređivač mrežnog mjesta: MAKE.ORG, jednostavno dioničko društvo s kapitalom od {{make_capital}} i sjedištem na adresi {{make_address}}, upisano u Registar trgovačkih društava grada PARIZA pod brojem {{make_rcs}} (u daljnjem tekstu „MAKE.ORG”).",
+    "mail": "Adresa elektroničke pošte: ",
+    "make_phone": "Broj telefona: ",
+    "make_phone_number": "{{make_phone_number}}",
+    "director": "Direktor izdavaštva: {{make_director_name}}",
+    "host": "Pružatelj glavnog računala za mrežno mjesto: ",
+    "host_address": "{{make_host_address}} FRANCUSKA",
+    "host_phone": "Broj telefona: ",
+    "host_phone_number": "{{host_number}}",
+    "eu_mention": "Europska komisija pruža potrošačima platformu za mrežno rješavanje sporova na adresi https://ec.europa.eu/consumers/odr."
+  },
+  "moderation_charter": {
+    "unsuitable_label": "NE PREPORUČUJE SE",
+    "adapted_label": "Prilagođeno",
+    "refused_label": "Odbačeno",
+    "validated_label": "Potvrđeno",
+    "title": "Pravilnik za moderiranje",
+    "description": "Koji se prijedlozi odbijaju tijekom moderiranja na platformi Make.org? Kako ispravno napisati prijedlog? Svaki prijedlog poslan na platformi moderiraju moderatorski timovi inicijative Make.org u skladu sa sljedećim kriterijima pravilnika o moderiranju¹. Moderiranje se obavlja unutar 48 sati nakon slanja prijedloga. Ako ste potvrdili svoju adresu e-pošte prilikom registracije, e-poštom vam se šalje obavijest o objavljivanju ili odbijanju vašeg prijedloga. Male pravopisne greške ispravljaju moderatori, ali vi trebate ponovno objaviti svoj prijedlog ako se ne prihvati.",
+    "refused_examples": "Na platformi Make.org nije dopušteno: ",
+    "incomprehensible_solutions": {
+      "title": "Nerazumljivi prijedlozi",
+      "description": "Svi moraju razumjeti tekst i značenje vašeg prijedloga. Vaš se prijedlog odbija zbog velikih sintaktičkih pogrešaka ili besmislica pa trebate preoblikovati svoj prijedlog.",
+      "refused_example_card": "Potrebno je da građanin razmišljaju o razvoju svi država.",
+      "validated_example_card": "Potrebno je da građani promišljaju o razvoju obrazovanja u svakoj državi."
+    },
+    "irrelevant_solutions": {
+      "title": "Prijedlozi nepovezani s temom",
+      "description": "Vašim se prijedlogom mora odgovoriti na pitanje postavljeno u raspravama. U protivnom se vaš prijedlog smatra nepovezanim s temom i odbija se.",
+      "example": "Primjerice, pitanje „Kako omogućiti svima da bolje jedu?”",
+      "refused_card_example": "Potrebno je organizirati svjetsko nogometno prvenstvo svake dvije godine.",
+      "validated_card_example": "Potrebno je promovirati pristup kratkim spojevima u kantinama poduzeća."
+    },
+    "discriminatory_solutions": {
+      "title": "Diskriminirajući prijedlozi",
+      "description": "U skladu sa zakonom² u vašem se prijedlog ne smije nalaziti govor kojim se potiče nasilje ili mržnja. Također se u njemu ne mogu nalaziti izjave diskriminirajuće ili klevetničke prirode, posebice protiv bilo koje etničke, društvene ili vjerske skupine.",
+      "refused_card_example": "Potrebno je paziti da Romi ne zadrže svoje ponižavajuće tradicije.",
+      "validated_card_example": "Potrebno je paziti da Hrvati mogu bolje zajedno komunicirati.",
+      "refused_card_example_2": "Potrebno je zabraniti križeve oko vrata koji su simboli ropstva.",
+      "validated_card_example_2": "Potrebno je paziti da se sloboda kulta poštuje u našoj državi."
+    },
+    "partisan_solutions": {
+      "title": "Stranački prijedlozi",
+      "description": "Vašim se prijedlogom ne smije zauzimati stajalište (tj. prenositi poruka valorizacije ili devalorizacije) prema političkoj stranci, političkoj ličnosti, ideologiji ili vjeri (osobnosti, simbolu ili praksi).",
+      "refused_card_example": "Potrebno je upoznati program gospodina XXX, njegove su ideje originalne za sljedeće izbore.",
+      "validated_card_example": "Potrebno je prije izbora informirati se o programima svake političke stranke.",
+      "refused_card_example_2": "Potrebno je redovito čitati Bibliju da bi se pronašlo spasenje.",
+      "validated_card_example_2": "Potrebno je da poslodavci znaju datume određenih vjerskih praznika: Ramazana, Hanuke, itd."
+    },
+    "advertising": {
+      "title": "Oglašavanje",
+      "description": "Ne možete oglašavati za određenu trgovačku marku ili poduzeće. Trgovačku marku ili poduzeće možete spomenuti samo kroz ilustrativan primjer.",
+      "refused_card_example": "Potrebno je da sva poduzeća upotrebljavaju rješenja koja predlaže poduzeće IBM.",
+      "validated_card_example": "Potrebno je da se prestanu konzumirati određena previše zaslađeni gazirani napitci poput Coca-Cole."
+    },
+    "multiple_ideas": {
+      "title": "Višestruke ideje",
+      "description": "Potrebno je osmisliti jednu ideju po prijedlogu kako biste olakšali glasovanje drugih građana o vašem doprinosu. Ako imate više različitih ideja, možete stvoriti dva prijedloga.",
+      "refused_card_example": "Potrebno je da su proizvodi domaćih proizvođača dostupni te informirati o inovacijama u poljoprivredi.",
+      "validated_card_example": "Potrebno je da su proizvodi domaćih proizvođača dostupni."
+    },
+    "insults": {
+      "title": "Uvrede",
+      "description": "Svaki omalovažavajući ili uvredljiv prijedlog odbija se tijekom moderiranja.",
+      "refused_card_example": "Potrebno je da se ovi idiotski vozači više pridržavaju prometnih pravila.",
+      "validated_card_example": "Potrebno je da se ovi vozači više pridržavaju prometnih pravila."
+    },
+    "correctly_formulated_solutions": {
+      "title": "Kako ispravno napisati prijedlog na platformi Make.org?"
+    },
+    "search_function": "Upotrijebite funkciju pretraživanja kako biste provjerili je li vaša ideja već prisutna na mrežnom mjestu.",
+    "concrete_elements": {
+      "text": "Ne zaboravite pojasniti svoju ideju konkretnim elementima kako bi građani razumjeli o čemu je riječ.",
+      "refused_card_example": "Potrebno je više Europe.",
+      "validated_card_example": "Potrebno je dati više sredstava Europskoj uniji.",
+      "refused_card_example_2": "Potrebno je smanjiti nezaposlenost mladih.",
+      "validated_card_example_2": "Potrebno je stvoriti centar za zapošljavanje mladih."
+    },
+    "understandable_language": {
+      "text": "Pobrinite se da vas što bolje razumiju upotrebljavanjem jezika razumljivog svima.",
+      "refused_card_example": "Potrebno je imati godinu dana propedeutiku na fakultetu.",
+      "validated_card_example": "Potrebno je pohađati godinu dana opći smjer na fakultetu prije odabira usmjerenja.",
+      "refused_card_example_2": "Potrebno je da HZZ može pronaći rak.",
+      "validated_card_example_2": "Potrebno je da Hrvatski zavod za zdravstvo može pronaći rak."
+    },
+    "acronyms": {
+      "text": "Izbjegavajte znakove #, @ ili druge akronime poput \"LOL\" u svojem prijedlogu.",
+      "refused_card_example": "Potrebno je smanjiti poreze poslodavcima #konkuretnost",
+      "validated_card_example": "Potrebno je smanjiti poreze poslodavcima kako bi bili konkurentniji!"
+    },
+    "disclaimer": "Incijativa Make.org nije rukovatelj mrežne platforme na koji se primjenjuje zakona br. 2018-1202 od 22. prosinca 2018., a koji se odnosi na borbu protiv manipuliranja informacijama. Stoga mi ne podliježemo pripadajućim obvezama. Istinitost nam je informacija objavljenih na našem mrežnom mjestu ipak važna,te u ovom pravilniku podrobno opisujemo mjere koje poduzimamo u tom pogledu.",
+    "foot_notes": {
+      "ethical_charter": "Ovaj pravilnik za moderiranje osmišljen je u skladu s <a href=\"https://assets.website-files.com/59833d390a24e50001b873d8/5fd245978b3dbedcbcc121a2_VF%20Charte%20Ethique%20Make.org%20et%20Make.org%20Foundation%20valid% C3 %A9e.pdf\" target=\"_blank\">etičkim pravilnikom (novi prozor)</a> kojim se jamči neutralnost, neovisnost i transparentnost inicijative Make.org.",
+      "code_penal": "Hrvatskim se zakonom o suzbijanju diskriminacije osigurava zaštita i promicanje jednakosti kao najviše vrednote ustavnog poretka Republike Hrvatske, stvaraju se pretpostavke za ostvarivanje jednakih mogućnosti i uređuje zaštita od diskriminacije na osnovi rase ili etničke pripadnosti ili boje kože, spola, jezika, vjere, političkog ili drugog uvjerenja, nacionalnog ili socijalnog podrijetla, imovnog stanja, članstva u sindikatu, obrazovanja, društvenog položaja, bračnog ili obiteljskog statusa, dobi, zdravstvenog stanja, nvaliditeta, genetskog naslijeđa, rodnog identiteta, izražavanja ili spolne orijentacije. (Članak 1)."
+    }
+  },
+  "cookies_management": {
+    "title": "Upravljanje kolačićima",
+    "dated": "– primjenjuje se od dana: {{date}} –",
+    "button": "Potvrdi moj odabir",
+    "intro": {
+      "title": "Što je kolačić?",
+      "first_paragraph": "Kolačić je mala računalna datoteka koja se može postaviti i očitati kada korisnik interneta pregledava mrežno mjesto ili mobilnu aplikaciju neovisno o uređaju kojim se koristi (računalo, pametni telefon, itd.).",
+      "second_paragraph": "Neki su kolačići neophodni za pravilan rad mrežnih mjesta ili aplikacija, dok se drugima doprinosi optimizaciji njihovoj izvedbi na mrežnom  mjestu ili poboljšava iskustvo korisnika interneta."
+    },
+    "use": {
+      "title": "Kako upotrebljavamo kolačiće?",
+      "first_paragraph": "Kada posjetite naše mrežno mjesto, kolačići se postavljaju na vaš uređaj kako bismo poboljšali vaše iskustvo, povećali odzivnost našeg mrežnog mjesta i optimizirali naše građanske rasprave.",
+      "second_paragraph": "Podatcima se sadržanim u kolačićima ne možete osobno identificirati i nikada se ne upotrebljavaju u svrhe koje nisu navedene u nastavku."
+    },
+    "partners": {
+      "title": "Koji su naši partneri?",
+      "intro": "Osim kolačića koje stvara i kojima upravlja inicijativa Make, kolačiće na naše mrežno mjesto postavljaju i sljedeći partneri:"
+    },
+    "details": {
+      "title": "Koje kolačiće upotrebljavamo?",
+      "intro": "Na naše su mrežno mjesto postavljeni sljedeći kolačići:",
+      "mandatory": "Uvijek aktivno",
+      "duration": "Trajanje: {{duration}}",
+      "session": "Sesija",
+      "month": "{{count}} mjesec",
+      "year_one": "{{count}} godina",
+      "year_other": "{{count}} godine",
+      "technicals": {
+        "name": "Tehnički kolačići:",
+        "description": "ovi su kolačići nužni za rad mrežnog mjesta i ne mogu se isključiti. Možete konfigurati svoj preglednik da se blokiraju ili da vas obavijest o postojanju ovih kolačića, ali time se može utjecati na određene dijelove našeg mrežnog mjesta. Ovim se kolačićima ne možete osobno identificirati.",
+        "secure": "make-secure: nakon što se prijavite u svoj prostor za građane na platformi Make.org, ovim se kolačićem jamči da se veza održava dok pregledavate platformu.",
+        "secure-expiration": "make-secure-expiration: ovaj se kolačić upotrebljava za otkrivanje vaše neaktivnosti na platformi kako bi se ova veza prekinula.",
+        "demographics": "make-demographics: ovim nam se kolačićem omogućava da saznamo jesmo li već od vas zatražili demografske podatke (dobna skupina, regija, spol itd.) na ovom uređaju kako vas ne bismo ponovno pitali prilikom budućeg posjeta."
+      },
+      "preferences": {
+        "name": "Kolačići za osobne postavke:",
+        "description": "ovi se kolačići upotrebljavaju za pamćenje vaših osobnih postavki na našem mrežnom mjestu čime se poboljšava vaše iskustvo tijekom pregledavanja. Možete konfigurati svoj preglednik da se blokiraju ili da vas obavijest o postojanju ovih kolačića, ali time se može utjecati na određene dijelove našeg mrežnog mjesta. Ovim se kolačićima ne možete osobno identificirati.",
+        "google-connect": "Google connect: ovim se kolačićima omogućava registracija i povezivanje s vašim područjem za građane.",
+        "facebook-connect": "Facebook connect: ovim se kolačićima omogućava registracija i povezivanje s vašim područjem za građane.",
+        "session-id": "make-session-id: ovaj se kolačić upotrebljava za prikupljanje svih radnji koje izvodite na mrežnom mjestu tijekom sesije.",
+        "session-id-expiration": "make-session-id-expiration: ovim vam se kolačićem omogućava prikazivanje obavijesti kojom se ukazuje da je vaša sesija istekla (nakon 20 minuta) i stoga se ponovno učitava.",
+        "user-id": "make-user-id: ovim vam se kolačićem omogućava vaša identifikacija nakon prijavljivanja u osobni prostor na platformi Make.org. Upotrebljava se za poziv da se ponovno povežete tako da prethodno upišete svoje korisničko ime.",
+        "cookie-preferences": "Make-cookie-preferences: ovim se kolačićem pamte vaše postavke u vezi s korištenjem kolačićima na našoj platformi."
+      },
+      "statistics": {
+        "name": "Kolačići za statistiku:",
+        "description": "ovi su kolačići namijenjeni analiziranju posjeta našem mrežnom mjestu i poboljšavanju njezine učinkovitosti. Svi se informacije koje se prikupljaju kolačićima skupljaju i zatim anonimiziraju. Ako ne prihvatite ove kolačiće, ne primamo obavijest o vašem ponovnom posjetu.",
+        "visitor-id": "make-visitor-id: ovaj se kolačić upotrebljava za praćenje posjeta našoj platformi kako bi se anonimno i skupno mjerio promet. Događaji navigacije šalju se analitičkom alatu MixPanel.",
+        "visitor-created-at": "make-visitor-created-at: ovaj se kolačić upotrebljava za dohvaćanje datuma prvog posjeta platformi.",
+        "facebook-tracking": "kolačić za praćenje na društvenoj mreži Facebook: ovaj se kolačić upotrebljava za stvaranje statistike prometa namijenjene poboljšanju našeg mrežnog mjesta i obogaćivanju analize naših rasprava.",
+        "hotjar": "Hotjar: Riječ je o alatu za izvođenje analize ponašanja u korištenju mrežnim mjestom. Kako biste saznali više: "
+      },
+      "social": {
+        "name": "Kolačići „društvenih mreža”:",
+        "description": "ovim vam se kolačićima, koje uključuju treće strane, omogućava dijeljenje sadržaja našeg mrežnog mjesta na društvenim mrežama i olakšava nam se optimiziranje našeg utjecaja Ako ne pristanete na pohranu ovih kolačića, možda nećete moći koristiti se ovim alatima za dijeljenje.",
+        "facebook_tracking": "pixel Facebook: ovi se kolačići upotrebljavaju za optimiziranje performansi promotivnih kampanja rasprava na društvenoj mreži Facebook kako bi se povećalo sudjelovanje građana.",
+        "twitter_tracking": "pixel Twitter: ovi se kolačići upotrebljavaju za optimiziranje performansi promotivnih kampanja rasprava na društvenoj mreži Facebook kako bi se povećalo sudjelovanje građana.",
+        "facebook_sharing": "dijeljenje Facebook: ovim se kolačićem omogućava korisniku dijeljenje sadržaja na društvenoj mreži Facebook i poboljšava jednostavnost korištenja.",
+        "twitter_sharing": "dijeljenje Twitter: ovim se kolačićem omogućava korisniku dijeljenje sadržaja na društvenoj mreži Twitter i poboljšava jednostavnost korištenja.",
+        "linkedin_sharing": "dijeljenje LinkedIn: ovim se kolačićem omogućava korisniku dijeljenje sadržaja na društvenoj mreži LinkedIn i poboljšava jednostavnost korištenja."
+      }
+    }
+  },
+  "countries": {
+    "AT": "Austrija",
+    "BE": "Belgija",
+    "BG": "Bugarska",
+    "BR": "Brazil",
+    "CA": "Kanada",
+    "CH": "Švicarska",
+    "CN": "Kina",
+    "CY": "Cipar",
+    "CZ": "Češka",
+    "DE": "Njemačka",
+    "DK": "Danska",
+    "EE": "Estonija",
+    "ES": "Španjolska",
+    "FI": "Finska",
+    "FR": "Francuska",
+    "GB": "Velika Britanija",
+    "GR": "Grčka",
+    "HR": "Hrvatska",
+    "HU": "Madžarska",
+    "IE": "Irska",
+    "IN": "Indija",
+    "IS": "Island",
+    "IT": "Italija",
+    "JP": "Japan",
+    "LI": "Lihtenštajn",
+    "LT": "Litva",
+    "LU": "Luksemburg",
+    "LV": "Latvija",
+    "MT": "Malta",
+    "NL": "Nizozemska",
+    "NO": "Norveška",
+    "PL": "Poljska",
+    "PT": "Portugal",
+    "RO": "Rumunjska",
+    "RU": "Rusija",
+    "SE": "Švedska",
+    "SI": "Slovenija",
+    "SK": "Slovačka",
+    "US": "Sjedinjene Američke Države",
+    "UA": "Ukrajina"
+  },
+  "languages": {
+    "fr": "Français",
+    "en": "English",
+    "de": "Deutsch",
+    "uk": "Українська",
+    "cs": "Česky",
+    "es": "Español",
+    "pl": "Polski",
+    "it": "Italiano",
+    "nl": "Nederlands",
+    "fi": "Suomi",
+    "ro": "Română",
+    "bg": "Български"
+  },
+  "language_switch": {
+    "country_title": "Vaša država",
+    "country_subtitle": "Odabirom se vaše države određuje koje su rasprave dostupne.",
+    "language_title": "Vaš jezik",
+    "confirm": "Potvrdi"
+  }
+}

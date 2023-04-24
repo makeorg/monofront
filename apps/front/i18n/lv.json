@@ -1,0 +1,1429 @@
+{
+  "meta": {
+    "home": {
+      "title": "Darbošanās vietnē Make.org - Make.org",
+      "description": "Iesniedziet priekšlikumus, balsojiet, rīkosimies — kopīgi atradīsim risinājumus svarīgākajām aktuālajām problēmām.",
+      "picture": "https://assets.make.org/assets/metas/default_meta-fr.png"
+    },
+    "organisation": {
+      "proposals": {
+        "title": "{{organisation}} - tās priekšlikumi - Make.org"
+      },
+      "positions": {
+        "title": "{{organisation}} - tās viedokļi - Make.org"
+      }
+    },
+    "profile": {
+      "proposals": {
+        "title": "Profils - Mani priekšlikumi - Make.org"
+      },
+      "favorites": {
+        "title": "Profils - Mani favorīti - Make.org"
+      },
+      "edit": {
+        "title": "Rediģēt manu profilu - Make.org"
+      }
+    },
+    "proposal": {
+      "title": "Priekšlikums '{{proposal}}', kas izvirzīts apspriešanai '{{question}}'- Make.org",
+      "description": "Atbalstiet manu priekšlikumu, balsojot, un kopīgi atradīsim risinājumus svarīgākajām aktuālajām problēmām. Visvairāk atbalstītos priekšlikumus īstenos Make.org un tās partneri."
+    },
+    "participate": {
+      "title": "Piedalieties apspriešanās – {{question}} – Make.org",
+      "description": "Iesniedziet priekšlikumus, balsojiet, rīkosimies — kopīgi atradīsim risinājumus svarīgākajām aktuālajām problēmām."
+    },
+    "explore": {
+      "title": "Izpētīt apspriešanai izvirzītos priekšlikums '{{question}}' - Make.org"
+    },
+    "results": {
+      "title": "Apspriešanas rezultāti '{{question}}' - Make.org",
+      "description": "Iepazīstieties ar apspriešanā ar iedzīvotājiem iegūtajiem rezultātiem, kas sagrupēti pa populārākajiem tematiem, pretrunīgākajiem priekšlikumiem un noraidītākajiem priekšlikumiem."
+    },
+    "sequence": {
+      "title_standard": "Piedalieties apspriešanā '{{question}}' – Make.org",
+      "title_controversy": "Lemiet par apspriešanā izvirzītajiem priekšlikumiem '{{question}}' - Make.org",
+      "title_popular": "Izsakiet viedokli par populārākajiem apspriešanā izvirzītajiem priekšlikumiem '{{question}}' - Make.org",
+      "title_keyword": "Izsakiet viedokli par apspriešanā '{{question}}' izvirzīto tematu '{{keywordLabel}}' - Make.org "
+    },
+    "top-ideas": {
+      "title": "Apspriešanā izvirzītās galvenās idejas '{{question}}' - Make.org",
+      "description": "Iepazīstieties ar apspriešanā iegūtajām galvenajām idejām '{{question}}'"
+    },
+    "top-idea-details": {
+      "title": "Sīkāka informācija par apspriešanā '{{question}}’ izvirzīto ideju '{{idea}}’ - Make.org",
+      "description": "Iepazīstieties ar visiem no apspriešanas '{{question}}’ iegūtās idejas {{idea}} priekšlikumiem"
+    },
+    "search": {
+      "main_results": "Meklēšana - Rezultāti saistībā ar « {{term}} » - Make.org",
+      "proposals": "Meklēšana - Rezultāti par priekšlikumiem saistībā ar « {{term}} » - Make.org",
+      "consultations": "Meklēšana - Rezultāti par apspriešanām saistībā ar « {{term}} » - Make.org",
+      "organisations": "Meklēšana - Rezultāti par organizācijām saistībā ar « {{term}} » - Make.org"
+    },
+    "browse": {
+      "consultations": {
+        "title": "Piedalieties apspriešanā - Make.org",
+        "description": "Iesniedziet priekšlikumus, balsojiet, rīkosimies — kopīgi atradīsim risinājumus svarīgākajām aktuālajām problēmām."
+      },
+      "results": {
+        "title": "Apspriešanas rezultāti - Make.org",
+        "description": "Iepazīstieties ar mūsu apspriešanas rezultātiem un Make.org un tās partneru īstenotajiem pasākumiem."
+      }
+    },
+    "legal": {
+      "title": "Juridiska informācija - Make.org",
+      "description": "Vietnes juridisko informāciju atradīsit šeit."
+    },
+    "moderation": {
+      "title": "Make.org ∙ Moderēšanas harta",
+      "description": "Kādus priekšlikumus Make.org moderatori ir noraidījuši? Kā pareizi formulēt priekšlikumu?"
+    },
+    "privacy_policy": {
+      "title": "Personas datu harta - Make.org",
+      "description": "Viss, kas jums jāizprot par jūsu personas datu apstrādi vietnes apmeklējuma laikā."
+    },
+    "gtu": {
+      "title": "Izmantošanas noteikumi - Make.org",
+      "description": "Viss, kas jums jāzina par balsošanas un priekšlikumu iesniegšanas noteikumiem iedzīvotāju iesaistīšanas platformā."
+    },
+    "contact": {
+      "title": "Sazinieties ar mums - Make.org",
+      "description": "Ja nevarat atrast atbildi uz savu jautājumu, lūdzu, sazinieties ar mums pa e-pastu."
+    },
+    "no_cookies": {
+      "title": "Ak, vai! Jūsu sīkdatnes ir atspējotas - Make.org"
+    },
+    "cookies": {
+      "title": "Sīkdatņu pārvaldība - Make.org",
+      "description": "Uzziniet vairāk par sīkdatņu izmantošanu platformas apmeklējuma laikā."
+    },
+    "password-recovery": {
+      "title": "Es izveidoju jaunu paroli - Make.org"
+    },
+    "a11y": {
+      "title": "Paziņojums par pieejamību - Make.org",
+      "description": "Uzziniet vairāk par Make.org apņemšanos nodrošināt digitālo pieejamību. Kopīgi atradīsim risinājumus svarīgākajām aktuālajām problēmām."
+    },
+    "not_found": {
+      "title": "Lapa nav atrasta - Kļūda 404 - Make.org",
+      "description": "Jūsu pieprasītā lapa neeksistē vai vairs nepastāv."
+    }
+  },
+  "common": {
+    "connexion_label": "Pieteikties",
+    "register_label": "Reģistrēties",
+    "continue": "Turpināt",
+    "register_panel": {
+      "welcome": "Laipni lūdzam, {{name}}!",
+      "greeting": "Mēs priecājamies, ka esat mūsu uzticamais lietotājs!",
+      "mail_confirmation_strong": "Ar vienu klikšķi apstipriniet savu e-pasta adresi, ",
+      "mail_confirmation": " lai garantētu jūsu konta autentiskumu. Noklikšķiniet uz aktivizēšanas saites, kas jums nosūtīta uz: {{mail}}",
+      "onboarding": "Izsakiet savu viedokli par jums svarīgiem sociālajiem jautājumiem, piedaloties mūsu apspriešanās ar iedzīvotājiem.",
+      "cta": "Piedalīties apspriešanās",
+      "cta_access": "Es piekļūstu apspriešanai",
+      "optin_cgu_title": "Pabeidziet reģistrāciju",
+      "optin_cgu_subtitle": "ar dažiem klikšķiem"
+    },
+    "form": {
+      "hide_password": "Paslēpt paroli",
+      "show_password": "Parādīt paroli",
+      "requirements": "Visi lauki ir jāaizpilda obligāti, ja vien nav norādīts citādi.",
+      "requirements_short": "Visi lauki ir jāaizpilda obligāti.",
+      "password_requirements": "Vismaz 8 rakstzīmes, tostarp vismaz 1 cipars, 1 lielais burts un 1 speciālā rakstzīme.",
+      "post_code": "Pasta indekss ļauj analizēt rezultātus pēc ģeogrāfiskā apgabala.",
+      "label": {
+        "email": "E-pasts",
+        "password": "Parole",
+        "firstname": "Vārds",
+        "lastname": "Uzvārds",
+        "age": "Vecums",
+        "postalcode": "Pasta indekss",
+        "profession": "Profesija",
+        "biography": "Biogrāfija",
+        "website": "Interneta vietne",
+        "organisation": "Organizācijas nosaukums",
+        "email_optional": "E-pasts (nav obligāti)",
+        "password_optional": "Parole (nav obligāti)",
+        "firstname_optional": "Vārds (nav obligāti)",
+        "lastname_optional": "Uzvārds (nav obligāti)",
+        "age_optional": "Vecums (nav obligāti)",
+        "postalcode_optional": "Pasta indekss (nav obligāti)",
+        "profession_optional": "Profesija (nav obligāti)",
+        "privacy_policy": "Datu aizsardzības politika",
+        "biography_optional": "Biogrāfija (nav obligāti)",
+        "website_optional": "Interneta vietne (nav obligāti)",
+        "organisation_optional": "Organizācijas nosaukums (nav obligāti)",
+        "personality": {
+          "firstname": "Kandidāta vārds / saraksta augšgalā",
+          "lastname": "Kandidāta uzvārds / saraksta augšgalā",
+          "firstname_M": "Kandidāta vārds / saraksta augšgalā",
+          "lastname_M": "Kandidāta uzvārds / saraksta augšgalā",
+          "firstname_F": "Kandidātes vārds / saraksta augšgalā",
+          "lastname_F": "Kandidātes uzvārds / saraksta augšgalā"
+        }
+      },
+      "messages": {
+        "errors_notification": "Šajā veidlapā tika konstatētas kļūdas:",
+        "invalid_email": "Lūdzu, ievērot e-pasta formātu.",
+        "invalid_email_dynamic": "Lūdzu, ievērot formātu {{label}}.",
+        "already_registered": "Šis e-pasts jau pastāv.",
+        "already_registered_dynamic": "Šis {{label}} jau pastāv.",
+        "email_doesnot_exist": "Šis e-pasts nav piesaistīts jūsu kontam, lūdzu, ievadiet savu e-pastu atkārtoti.",
+        "email_doesnot_exist_dynamic": "Šis {{label}} nav piesaistīts jūsu kontam, lūdzu, ievadiet savu e-pastu atkārtoti.",
+        "invalid_password": "Jūsu parolei jāsatur vismaz 8 rakstzīmes.",
+        "invalid_password_dynamic": "{{Label}} jāsatur vismaz 8 rakstzīmes.",
+        "api_error": "Ak, vai! Ir radušās grūtības ar šīs lapas ielādi. Lūdzu, pamēģiniet vēlāk.",
+        "mandatory": "Lūdzu, aizpildiet šo lauku.",
+        "mandatory_dynamic": "Lauks {{label}} ir jāaizpilda obligāti.",
+        "invalid_age": "Mūsu lietotājiem jābūt vecumā no 8 līdz 120 gadiem.",
+        "invalid_age_dynamic": "{{label}}: Mūsu lietotājiem jābūt vecumā no 8 līdz 120 gadiem.",
+        "the_field_[email]_is_missing": "Lauks {{label}} ir jāaizpilda obligāti.",
+        "the_field_[password]_is_missing": "Lauks {{label}} ir jāaizpilda obligāti.",
+        "invalid_postal_code": "Pasta indeksam jāsastāv no 5 zīmēm.",
+        "invalid_privacy_policy": "Jums ir jāapstiprina datu aizsardzības politika.",
+        "invalid_postal_code_dynamic": "{{label}} jāsastāv no 5 zīmēm.",
+        "submit_success": "Izmaiņas ir reģistrētas.",
+        "malformed": "Lūdzu, ievērojiet url formātu \"https://example.com\""
+      }
+    },
+    "social_login": {
+      "card_title": "Kā atrast savu balsošanas vēsturi",
+      "facebook_connect": "Turpināt ar Facebook",
+      "google_connect": "Turpināt ar Google",
+      "email_register": "Reģistrējieties, izmantojot e-pastu",
+      "count_register": "({{count}}/2)"
+    },
+    "notifications": {
+      "bad_link": "Šī saite vairs nedarbojas.",
+      "activate_account_success": "Jūsu konts ir aktivizēts. Tagad varat pieteikties",
+      "delete_account_success": "Jūsu konts ir dzēsts. Ceram, ka drīz atkal tiksimies Make.org!",
+      "login_success": "Jūsu pieteikšanās ir bijusi veiksmīga.",
+      "logout_success": "Jūsu atteikšanās ir bijusi veiksmīga.",
+      "login_social_missing_email_data": "Mēs nevaram iegūt derīgu e-pasta adresi no jūsu Facebook konta, lai jūs varētu reģistrēties. Aicinām jūs izmantot mūsu e-pasta reģistrācijas veidlapu.",
+      "register_success": "Laipni lūdzam! Jūsu reģistrēšanās ir bijusi veiksmīga.",
+      "register_validate": "Pateicamies par reģistrēšanos. Uz {{email}} adresi ir tikko nosūtīts e-pasts, lai jūsu kontu varētu aktivizēt ar vienu klikšķi.",
+      "secure_expired": {
+        "first_sentence": "Diemžēl, notika atteikšanās, jo šķiet, ka vairs neesat šeit",
+        "second_sentence": "Lai turpinātu balsot, iesniegt priekšlikumus un darboties vietnē Make.org, piesakieties vēlreiz.",
+        "emoji": "emocijzīmīte skumja seja ar asaru"
+      },
+      "session_expired": {
+        "title": "Neaktivitātes laika limits",
+        "description": "Lai nodrošinātu mūsu pakalpojumu kvalitāti, mēs atkārtoti pārlādēsim lapu.",
+        "button_text": "Es sapratu"
+      },
+      "icons": {
+        "close": "Aizvērt paziņojumu reklāmkarogu",
+        "information": "Informatīvais ziņojums: ",
+        "success": "Paziņojums par veiksmīgu darbību: ",
+        "error": "Paziņojums par kļūdu: ",
+        "alert": "Brīdinājuma paziņojums: "
+      },
+      "tags_filter": "Lai atrastu jūs interesējošos priekšlikumus, izmantojiet filtrus.",
+      "thank_you": "Sapratu, paldies!",
+      "unexpected_error": "Pašlaik ir radusies kļūda. Lūdzu, vēlāk mēģiniet vēlreiz.",
+      "network_error": "Nav iespējams piekļūt pilnam Make.org saturam, jo šķiet, ka esat bezsaistē.",
+      "vote_only": {
+        "message": "Apspriešanā \"{{title}}” vairs nevar saņemt jaunus priekšlikumus, bet joprojām var balsot, lai lemtu par esošajiem priekšlikumiem.",
+        "button": "es sapratu"
+      },
+      "vote_on_proposal": "Balsot par šo priekšlikumu",
+      "cookies": {
+        "social_media": "Lai piekļūtu šai funkcijai, ir jāaktivizē attiecīgās sīkdatnes. ",
+        "cookie_page": "Sīkdatņu pārvaldība",
+        "update": "Paldies, esam saglabājuši jūsu sīkdatņu pārvaldības preferences."
+      }
+    },
+    "from": "no",
+    "email": "E-pasts",
+    "propose": "Iesniegt",
+    "click_there": "noklikšķiniet šeit",
+    "open_new_window": "Atvērt jaunā cilnē",
+    "loading": "Lūdzu, uzgaidiet, kamēr notiek ielāde.",
+    "participate": "Iesaistieties",
+    "vote_on_proposals": "Balsojiet par visiem priekšlikumiem",
+    "display_pannel": "Rādīt nolaižamā paneļa saturu",
+    "hide_pannel": "Slēpt nolaižamā paneļa saturu",
+    "display_modal": "Rādīt dialogloga saturu",
+    "hide_modal": "Slēpt dialogloga saturu",
+    "display_tooltip": "Rādīt rīka padomu saturu, virzot kursoru",
+    "hide_tooltip": "Slēpt rīka padomu saturu, virzot kursoru",
+    "expand_collapse": "{{name}} - Rādīt nolaižamās sadaļas saturu",
+    "shrink_collapse": "{{name}} - Slēpt nolaižamās sadaļas saturu",
+    "secondary_nav": "Papildu navigācija",
+    "percent": "{{percent}}%",
+    "header_authentication_nav": "Piekļuve manam lietotāja profilam",
+    "footer_nav": "Kājenes navigācija",
+    "sidebar_area": "Satura sānjosla",
+    "consultation_nav": "Apspriešanas navigācijas josla",
+    "slider": {
+      "introduction": "Izmantojiet vadības pogas, bultiņas \"pa kreisi\" un \"pa labi\" vai tabulēšanas taustiņu tastatūrā, lai ritinātu turpu šurpu.",
+      "previous": "Pāriet uz iepriekšējo elementu",
+      "next": "Pāriet uz nākamo elementu",
+      "index_count": "{{Index}} elements no {{total}}"
+    },
+    "pagination": {
+      "title": "lappušu numerācija",
+      "next": "Nākamā lapa",
+      "previous": "Iepriekšējā lapa",
+      "index_count": "{{index}} lapa no {{total}}",
+      "page": "Lapa",
+      "page_total": "no {{total}}"
+    },
+    "max_characters": "maksimālais zīmju skaits",
+    "back": "Atpakaļ",
+    "proposal_count_one": "{{count}} priekšlikums",
+    "proposal_count_other": "{{count}} priekšlikumi",
+    "breadcrumbs": "atpakaļceļa navigācija",
+    "million_one": "miljons",
+    "million_other": "miljoni",
+    "close_panel": "Aizvērt nolaižamo paneli",
+    "close": "Aizvērt"
+  },
+  "header": {
+    "logo_alt": "Doties uz vietnes Make.org sākumlapu",
+    "open_menu": "Doties uz navigācijas galveno izvēlni",
+    "close_menu": "Aizvērt navigācijas galveno izvēlni",
+    "main_navigation": "Vietnes galvenā navigācija"
+  },
+  "proposal_page": {
+    "button_1": "iesaistīties",
+    "button_2": "uzzināt vairāk",
+    "share_text": "Atbalstiet šo priekšlikumu, to kopīgojot:",
+    "footer_text": "Šis priekšlikums tika iesniegts darbības {{operation_name}} ietvaros"
+  },
+  "idea_card": {
+    "title": "Labākās idejas",
+    "number": "Ideja Nr. {{ count }}",
+    "content": "Idejas saturs: ",
+    "link": "Skatīt sīkāku informāciju par ideju",
+    "associated_proposals_one": "{{count}} saistītais priekšlikums",
+    "associated_proposals_other": "{{count}} saistītie priekšlikumi",
+    "position_one": "{{ count }} viedoklis",
+    "position_other": "{{ count }} viedokļi",
+    "candidate_one": " kas pieder kandidātam, par šo ideju.",
+    "candidate_other": " kas pieder kandidātiem, par šo ideju.",
+    "open": "Parādīt idejas novērtējumu",
+    "close": "Paslēpt idejas novērtējumu",
+    "expand": " - Noklikšķināt, lai parādītu idejas novērtējumu",
+    "collapse": " - Noklikšķināt, lai paslēptu idejas novērtējumu",
+    "vote_proposals": "priekšlikumu",
+    "vote_positives": "pozitīvo balsu",
+    "vote_heart": "favorītu"
+  },
+  "idea_details": {
+    "current_page": "Sīkāka informācija par ideju",
+    "proposals": "Saistītie priekšlikumi",
+    "comments": "Viņi ir pauduši viedokli"
+  },
+  "proposal_card": {
+    "previous": "Iepriekšējais priekšlikums",
+    "next": "Nākamais priekšlikums",
+    "validate": "Apstiprināt",
+    "content": "Priekšlikuma saturs: ",
+    "original": "Skatīt oriģinālu",
+    "translation": "Skatīt tulkojumu",
+    "number": "Karte numur {{current}} no {{total}}",
+    "posted_label": "Iesniegts ",
+    "author": {
+      "from": "Priekšlikumu iesniedza: ",
+      "age": "{{age}} gadi",
+      "date": "ievietots (datums): "
+    },
+    "status": {
+      "title": "Priekšlikuma statuss: ",
+      "accepted": "Publicēts",
+      "refused": "Noraidīts",
+      "postponed": "Gaida moderatora iesaisti",
+      "pending": "Gaida moderatora iesaisti"
+    }
+  },
+  "report_translations": {
+    "button": "Priekšlikuma iespējas",
+    "confirmation": {
+      "title": "Paldies par ziņojumu!",
+      "description": "Mūsu komanda to izskatīs pēc iespējas drīzāk."
+    },
+    "form": {
+      "title": "Ziņot par mašīntulkošanu",
+      "unclear": "Nesaprotams tulkojums",
+      "error": "Kļūda tulkojumā",
+      "false_info": "Satur nepatiesu informāciju",
+      "offensive": "Aizskarošs priekšlikums",
+      "report": "Ziņot"
+    },
+    "first_step": {
+      "title": "Automātisks tulkojums",
+      "text": "Mūsu apspriešanu priekšlikumi ir automātiski sagatavoti. Ja pamanāt kļūdu, nekautrējieties informēt mūsu komandas!"
+    }
+  },
+  "intro_card": {
+    "purpose": "Ievadkarte",
+    "title": "Tūkstošiem iedzīvotāju piedāvā risinājumus.",
+    "description": "Paudiet savu viedokli par šiem risinājumiem un ierosiniet savus.\nMūsu rīcību noteiks labākie risinājumi.",
+    "description_short": "Paudiet savu viedokli par šiem risinājumiem.",
+    "button": "Sākt",
+    "partnership": "sadarbībā ar"
+  },
+  "final_card": {
+    "title": "Paldies par atbildēm uz priekšlikumiem!",
+    "description": "Turpiniet balsot, lai palīdzētu mums noteikt prioritātes.",
+    "link_text": "Es piekļūstu apspriešanai",
+    "continue": "Es turpinu balsot",
+    "register": {
+      "description": "Kā sekot rezultātiem?",
+      "button_intro": "Izveidojiet savu",
+      "button_text": "iedzīvotāja telpu."
+    }
+  },
+  "no_proposal_card": {
+    "title": {
+      "regular": "Paldies par jūsu ļoti vērtīgo ieguldījumu!",
+      "popular": "Paldies, jūs nobalsojāt par visiem populārākajiem priekšlikumiem",
+      "controversial": "Paldies, jūs nobalsojāt par visiem vispretrunīgākajiem priekšlikumiem",
+      "keyword": "Paldies, jūs nobalsojāt par visiem priekšlikumiem par \"{{keyword}}\""
+    },
+    "description": {
+      "regular": "Patlaban nav jaunu priekšlikumu.",
+      "special": "Turpiniet balsot, lai palīdzētu mums noteikt prioritātes."
+    },
+    "link_text": "Es piekļūstu apspriešanai",
+    "sharing": "Vai arī paplašiniet apspriešanas tvērumu, to izplatot."
+  },
+  "push_proposal_card": {
+    "title": "Vai jūs varat ieteikt kādu risinājumu šajā jautājumā?",
+    "next-cta": "Vēl nē, es turpinu balsot"
+  },
+  "sequence_progress": {
+    "previous": "Pāriet uz iepriekšējo elementu",
+    "counter": "{{Current}} elements no {{total}}"
+  },
+  "sequence_zone": {
+    "popular_title": "Populāri priekšlikumi",
+    "controversial_title": "Pretrunīgi priekšlikumi"
+  },
+  "special_final_card": {
+    "title": "Paldies par jūsu balsojumu!",
+    "subtitle": "Jūs joprojām varat piedalīties apspriešanā",
+    "cta_text": "Es piekļūstu apspriešanai"
+  },
+  "demographics_card": {
+    "disclaimer": "Jūsu sniegtā informācija ir anonīma un ļauj mūsu rezultātiem būt reprezentatīviem.",
+    "skip": "Pāriet uz",
+    "submit": "Reģistrēties",
+    "submitted_thanks": "Pateicamies par jūsu atbildi.",
+    "submitted_disclaimer": " To izmantos anonīmi, lai analizētu apspriešanas rezultātus.",
+    "select": "Atlasīt"
+  },
+  "proposal_submit": {
+    "form": {
+      "bait": "Nepieciešams ",
+      "title": "Iesniedziet savu priekšlikumu, izmantojot līdz 140 rakstzīmēm. Ievadiet to priekšlikuma laukā un apstipriniet, noklikšķinot uz pogas \"Apstiprināt\".",
+      "field": "Priekšlikumu lauki",
+      "counter": "Jūsu priekšlikums sastāv no {{current}} rakstzīmēm no kopumā pieejamām {{total}} rakstzīmēm.",
+      "panel_trigger": "Es piedāvāju risinājumu",
+      "button_cancel": "Anulēt",
+      "button_submit": "Apstiprināt",
+      "read_our": "Iepazīstieties ar mūsu",
+      "moderation_link": "moderēšanas hartu",
+      "button_propose": "IEROSINĀT"
+    },
+    "authentication": {
+      "button_back": "Grozīt manu priekšlikumu",
+      "back": "Atpakaļ",
+      "title": "Lai apstiprinātu manu priekšlikumu",
+      "last_step_red": "Vairāk nekā viens solis ",
+      "last_step": "lai nosūtītu savu priekšlikumu!",
+      "subtitle": "Es reģistrējos ar",
+      "button_login_text": "Man jau ir konts,",
+      "button_login_link": "es piesakos.",
+      "button_login": "Pieteikties",
+      "back_authentication": "Atgriezties pieteikšanās ekrānā"
+    },
+    "success": {
+      "title": "Paldies, {{name}}!",
+      "description": "Jūsu priekšlikumu pašlaik izskata mūsu moderatoru komandas.",
+      "button": "Turpināt balsot",
+      "other_idea": "Man ir vēl viena ideja",
+      "tooltip_title": "Notiek izskatīšana",
+      "tooltip_description": "Jūsu priekšlikumu mūsu moderatoru komandas apstrādās 48 stundu laikā, bet pagaidām jūs to varat atrast savā profilā.",
+      "grats": "Apsveicam, {{name}}, ",
+      "proposal_sent": "jūsu priekšlikums tika nosūtīts ",
+      "activate": "Ar vienu klikšķi apstipriniet savu e-pasta adresi, ",
+      "link": "lai garantētu jūsu konta autentiskumu. Noklikšķiniet uz aktivizēšanas saites, kas jums nosūtīta uz: {{mail}}",
+      "question": "Vēlaties uzdot jautājumu? Varat ar mums sazināties: ",
+      "consultation_access": "Es piekļūstu apspriešanai"
+    }
+  },
+  "vote": {
+    "intro_title": "Es paužu savu viedokli par šo priekšlikumu: ",
+    "agree": "Piekrītu",
+    "disagree": "Nepiekrītu",
+    "neutral": "Neitrāls balsojums",
+    "label_one": "{{count}} balss",
+    "label_other": "{{count}} balsis",
+    "with_percent": "{{votedKey}}: {{votedPercent}}%"
+  },
+  "unvote": {
+    "title": "Es atsaucu savu viedokli par šo priekšlikumu."
+  },
+  "results": {
+    "static_total": "Šis priekšlikums saņēma: ",
+    "static_repartition": "Sadalījums ir šāds: ",
+    "total_one": "Šis priekšlikums saņēma {{count}} balsi, sadalījums ir šāds: ",
+    "total_other": "Šis priekšlikums saņēma {{count}} balsis, sadalījums ir šāds: ",
+    "voted": {
+      "agree": "Attiecībā uz šo priekšlikumu es balsoju \"Piekrītu\".",
+      "disagree": "Attiecībā uz šo priekšlikumu es balsoju \"Nepiekrītu\".",
+      "neutral": "Attiecībā uz šo priekšlikumu es balsoju \"Neitrāli\"."
+    },
+    "tooltipbutton": {
+      "display": {
+        "agree": "Rādīt rezultātus viedoklim: \"es piekrītu\"",
+        "disagree": "Rādīt rezultātus viedoklim: \"es nepiekrītu\"",
+        "neutral": "Rādīt rezultātus viedoklim: \"es balsoju neitrāli'"
+      },
+      "hide": {
+        "agree": "Paslēpt rezultātus viedoklim: \"es piekrītu\"",
+        "disagree": "Paslēpt rezultātus viedoklim: \"es nepiekrītu\"",
+        "neutral": "Paslēpt rezultātus viedoklim: \"es balsoju neitrāli'"
+      }
+    }
+  },
+  "qualification": {
+    "title": "Es vēlos precizēt savu viedokli par šo priekšlikumu:",
+    "static_repartition": "Šis priekšlikums tika kvalificēts kā: ",
+    "times": "reize(-s)",
+    "likeIt": "Favorīts",
+    "doable": "Reālistisks",
+    "platitudeAgree": "Mazsvarīgs",
+    "noWay": "Kategoriski pret!",
+    "impossible": "Neizpildāms",
+    "platitudeDisagree": "Mazsvarīgs",
+    "doNotUnderstand": "Nesaprotams",
+    "noOpinion": "Nav viedokļa",
+    "doNotCare": "Man vienalga"
+  },
+  "sequence": {
+    "return": "Atgriezties pie priekšlikumiem",
+    "title": "Balsot par apspriešanas priekšlikumiem: ",
+    "more": "Piekļūt visai apspriešanai"
+  },
+  "authentication": {
+    "title": "Reģistrējieties, lai apstiprinātu savu priekšlikumu",
+    "description": "ar",
+    "commitment": "Make.org apņemas aizsargāt jūsu ",
+    "personal_data": "personas datus "
+  },
+  "login": {
+    "title": "Man jau ir konts",
+    "social_connect": "Es piesakos ar",
+    "connect": "Pieteikties",
+    "or": "vai",
+    "button_connect": "Es piesakos",
+    "email_connect": "Es piesakos ar savu e-pasta adresi",
+    "forgot_password_title": "Ak, vai, es",
+    "forgot_password_link": "aizmirsu savu paroli!",
+    "forgot_password": "Aizmirsta parole?",
+    "registration_title": "Man nav konta,",
+    "registration_link": "es to izveidošu.",
+    "email_doesnot_exist": "Jūsu {{emailLabel}} vai {{passwordLabel}} ir nepareiza."
+  },
+  "register": {
+    "title": "Izveidot kontu",
+    "social_connect": "Es reģistrējos ar",
+    "or": "vai",
+    "subtitle": "Es reģistrējos ar šo veidlapu",
+    "step1_title": "Reģistrēties, izmantojot e-pastu",
+    "step2_title": "Pabeigt reģistrāciju",
+    "login_title": "Man jau ir konts,",
+    "login_link": "es piesakos.",
+    "gtu_text_first": "Reģistrējoties jūs piekrītat mūsu ",
+    "gtu_text_second": " un piekrītat saņemt e-pasta vēstules (to skaits ir neliels) no Make.org.",
+    "gtu_link": "izmantošanas noteikumiem un nosacījumiem."
+  },
+  "legal_consent": {
+    "title": "Juridiska atļauja",
+    "subtitle": "Nepieciešama piekrišana no viena no taviem vecākiem.",
+    "description": "Jāsaņem divas piekrišanas, lai tu varētu piekļūt mūsu iedzīvotāju platformai. Drīz tu varēsi izteikt viedokli par visām mūsu apspriešanām!",
+    "minor_consent": "Es piekrītu, ka Make.org apstrādā manus personas datus.",
+    "parental_consent": "Kā vecāks vai aizbildnis es piekrītu, ka Make.org apstrādā mana bērna personas datus.",
+    "cancel": "Anulēt",
+    "submit": "Apstiprināt",
+    "privacy_policy_first_part": "Es piekrītu, ka Make.org var apstrādāt šos datus, lai man būtu iespēja piedalīties un saņemt informāciju par rezultātiem saskaņā ar ",
+    "privacy_policy_link": "hartu",
+    "privacy_policy_last_part": ". (obligāts)",
+    "privacy_policy": "datu aizsardzības politika",
+    "make_protect": "Make.org apņemas aizsargāt jūsu",
+    "make_protect_link": " personas datus.",
+    "opt_in": "Es piekrītu saņemt e-pastus no Make.org, lai informētu mani par pašreizējām un gaidāmajām apspriešanām. (nav obligāti)"
+  },
+  "forgot_password": {
+    "title": "Es atiestatīju savu paroli",
+    "description": "Lūdzu, ievadiet e-pasta adresi, kas piesaistīta jūsu Make.org kontam, lai saņemtu atiestatīšanas saiti.",
+    "success": "Paldies, jums tikko tika nosūtīts e-pasts, lai jūs varētu atjaunināt savu paroli.",
+    "return": "Atgriezties ",
+    "login_link": "pieteikšanās ekrānā",
+    "send_link": "saņemt e-pastu",
+    "email_doesnot_exist": "Mēs nevaram atrast kontu, kas piesaistīts šim e-pastam."
+  },
+  "main_footer": {
+    "jobs": "Darbavietas",
+    "whoarewe": "Mūsu pieeja",
+    "legal": "Juridiska informācija",
+    "terms": "Izmantošanas noteikumi",
+    "data": "Datu aizsardzības politika",
+    "country": "Mainīt valsti",
+    "contact": "Kontaktinformācija",
+    "news": "Mūsu jaunumi",
+    "dotation_funds": "Make.org Ziedojumu fonds",
+    "moderation_charter": "Moderēšanas harta",
+    "press_details": "Preses centrs",
+    "a11y": "Paziņojums par pieejamību",
+    "cookies": "Sīkdatņu pārvaldība"
+  },
+  "cookie_modal": {
+    "title": "Paudiet viedokli vietnē Make.org, kur tiek saglabāts jūsu privātums",
+    "description": "Lai turpinātu uzlabot mūsu pakalpojumus un jūsu pieredzi, mēs lūdzam jūsu piekrišanu sīkdatņu izmantošanai, kuras mēs un mūsu partneri vēlamies izmantot jūsu apmeklējuma laikā.",
+    "details": {
+      "title": "Par kādām sīkdatnēm ir runa?",
+      "technicals": "<strong>Ar tehnoloģijām saistītās:</strong> sīkdatnes, kas ir būtiski vietnes darbībai",
+      "preferences": "<strong>Ar preferencēm saistītās:</strong> sīkdatnes, lai uzlabotu jūsu pieredzi, pārlūkojot vietni",
+      "statistics": "<strong>Ar statistiku saistītās:</strong> sīkdatnes, lai apkopotā veidā bagātinātu mūsu apspriešanos ar iedzīvotājiem analīzi",
+      "social_media": "<strong>Ar sociālajiem tīkliem saistītās:</strong> sīkdatnes, kas palīdz mums optimizēt mūsu ietekmi, pateicoties sociālajiem tīkliem"
+    },
+    "accept": "Apstiprināt",
+    "personalize": "Personalizēt",
+    "refuse": "Turpināt bez apstiprināšanas",
+    "back": "Atgriezties iepriekšējā solī",
+    "mandatory": "Joprojām ir aktīvs",
+    "save": "Apstiprināt manu atlasi",
+    "technicals": {
+      "secure": "make secure: pēc pieteikšanās savā iedzīvotāja telpā vietnē Make.org, šī sīkdatne nodrošina, ka šis savienojums tiks saglabāts, kamēr jūs pārlūkojat pakalpojumu.",
+      "expiration": "make-secure-expiration: šo sīkdatni izmanto, lai noteiktu jūsu neaktivitāti pakalpojumā un izbeigtu šo savienojumu.",
+      "demographics": "make-demographics: šī sīkdatne ļauj mums uzzināt, vai šajā ierīcē jums jau iepriekš ir lūgta demogrāfiskā informācija (vecuma diapazons, reģions, dzimums u. c.), lai nākamajā apmeklējumā mēs to vairs nelūgtu."
+    },
+    "preferences": {
+      "authentication": "Google un Facebook autentifikācijas sīkdatnes: tās ļauj reģistrēties un pieslēgties jūsu iedzīvotāja telpai, izmantojot šos sociālos tīklus.",
+      "session": "make-session-id: šo sīkdatni izmanto, lai visas pakalpojumā veiktās darbības apvienotu vienā sesijā.",
+      "expiration": "make-session-id-expiration: šī sīkdatne ļauj jums saņemt paziņojumu, ka jūsu sesija ir beigusies (pēc 20 minūtēm) un tiks ielādēta no jauna.",
+      "user": "make-user-id: šī sīkdatne ļauj identificēt, ka jums jau ir izveidota telpa vietnē Make.org, un aicina jūs pieteikties, lai jūs varētu atrast visas savas darbības savā iedzīvotāja telpā.",
+      "cookie": "make-cookie-preferences: šī sīkdatne atcerēsies jūsu preferences attiecībā uz sīkdatņu izmantošanu mūsu pakalpojumā."
+    },
+    "statistics": {
+      "visitor": "make-visitor-id: šo sīkdatni izmanto, lai izsekotu mūsu pakalpojuma apmeklējumus, lai anonīmi un apkopotā veidā mērītu datplūsmu. Pārlūkošanas epizodes tiek nosūtītas uz MixPanel analīzes rīku.",
+      "created-at": "make-visitor-created-at: šo sīkdatni izmanto, lai iegūtu platformas pirmā apmeklējuma datumu.",
+      "tracking": "Facebook izsekošanas sīkdatne: to izmanto, lai apkopotu datus par darbībām pakalpojumā, lai veiktu apkopojošu analīzi un uzlabotu pakalpojumu. To izmanto arī sociāli demogrāfisko datu (vecums, dzimums, reģions) apkopošanai apkopotā veidā, lai bagātinātu apspriešanas analīzi."
+    },
+    "social_media": {
+      "facebook_pixel": "Pixel Facebook: tiek izmantota, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas Facebook, lai palielinātu iedzīvotāju līdzdalību.",
+      "twitter_pixel": "Pixel Twitter: tiek izmantota, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas Twiter, lai palielinātu iedzīvotāju līdzdalību.",
+      "facebook_sharing": "Facebook kopīgošana: ļauj lietotājam kopīgot saturu savā Facebook kontā.",
+      "twitter_sharing": "Twitter kopīgošana: ļauj lietotājam kopīgot saturu savā Twitter kontā.",
+      "linkedin_sharing": "LinkedIn kopīgošana: ļauj lietotājam kopīgot saturu savā LinkedIn kontā."
+    }
+  },
+  "reset_password": {
+    "title": "Es izveidoju jaunu paroli",
+    "info": "Jūs varat izvēlēties jaunu paroli.",
+    "send_cta": "Apstiprināt",
+    "success": {
+      "title": "Paldies, jūsu parole ir atjaunināta.",
+      "info": "Tagad varat pieteikties."
+    },
+    "failure": {
+      "bad_link": "Šī saite vairs nedarbojas.",
+      "error_message": "Jūsu paroli neizdevās nomainīt."
+    }
+  },
+  "data_policy_modal": {
+    "title": "Mūsu datu politikas atjaunināšana",
+    "description": "Make.org apņemas saglabāt jūsu personas datus drošībā katru reizi, kad apmeklējat vietni. Lai turpinātu pārlūkošanu, pieteikšanās laikā vietnē Make.org, jums ir jāapstiprina mūsu atjauninātā ",
+    "data_policy_link": "datu aizsardzības politika.",
+    "consent": "<strong>Es apstiprinu jauno datu aizsardzības politiku</strong> un varēšu izmantot savu iedzīvotāja telpu vietnē Make.org",
+    "validate": "Es apstiprinu",
+    "stay": "Es palieku",
+    "leave": "Es aizeju",
+    "refusal_title": "Vai tiešām vēlaties aiziet?",
+    "refusal_description_first_part": "Neapstiprinot mūsu jauno ",
+    "refusal_description_second_part": ", vairs nevarēsiet piekļūt savai iedzīvotāja telpai vietnē Make.org."
+  },
+  "not_found": {
+    "intro": "ak, vai",
+    "title": "Kļūda 404",
+    "description": "Jūsu pieprasītā lapa neeksistē vai vairs nepastāv."
+  },
+  "profile": {
+    "tabs": {
+      "label": "Jūsu profils",
+      "manage_account": "Pārvaldīt manu kontu",
+      "proposals": "Priekšlikumi",
+      "favourites": "Mani favorīti",
+      "following": "Profili, kuriem es sekoju"
+    },
+    "proposals": {
+      "title": "Mani jaunākie priekšlikumi",
+      "text": "Jums vēl nav iesniegtu priekšlikumu vietnē Make.org."
+    },
+    "favourites": {
+      "title": "Mani favorīti",
+      "description": {
+        "introduction": "Jums vēl nav favorītu vietnē Make.org.",
+        "explanation": "Jūs varat ievietot priekšlikumu pie favorītiem tūlīt pēc tam, kad esat par to nobalsojis ar \"Piekrītu\"."
+      },
+      "card_title": "Nepieciešams atbalstīt kvalitatīvus priekšlikumus."
+    },
+    "common": {
+      "infos": "Informācija par mani",
+      "log_out": "Es atvienojos",
+      "age": "{{age}} gadi",
+      "submit_label": "Saglabāt izmaiņas",
+      "submit_success": "Jūsu lūgums ir ņemts vērā.",
+      "error": "Ak, vai! Saglabājot jūsu informāciju, ir notikusi kļūda. Lūdzu, pamēģiniet vēlreiz vēlāk.",
+      "labels": {
+        "organisation": "Organizācijas nosaukums: ",
+        "firstname": "Vārds: ",
+        "lastname": "Uzvārds: ",
+        "email": "E-pasta adrese: ",
+        "postal_code": "Pasta indekss: ",
+        "age": "Vecums: ",
+        "profession": "Profesija: ",
+        "biography": "Biogrāfija: ",
+        "website": "Interneta vietne: ",
+        "political_party": "Politiskā partija: ",
+        "select": "Atlasīt"
+      }
+    },
+    "informations_update": {
+      "title": "Rediģēt manu profilu",
+      "link_to_profile": "atgriezties manā profilā",
+      "more": "Skatīt vairāk",
+      "less": "Skatīt mazāk"
+    },
+    "password_update": {
+      "title": "Mainīt manu paroli",
+      "newpassword": "Jauna parole",
+      "submit_label": "Saglabāt izmaiņas",
+      "actual_password": {
+        "label": "Pašreizējā parole",
+        "invalid_password": "Jūsu ievadītais {{label}} ir nepareizs.",
+        "trigger": "Vai aizmirsāt savu paroli?"
+      }
+    },
+    "communication_preferences": {
+      "title": "Pārvaldīt manas saziņas preferences",
+      "description": "Atlasiet savu valsti un valodu, kurā vēlaties saņemt e-pastus no Make.org.",
+      "optin_label": "Es piekrītu saņemt e-pastus no Make.org, lai informētu mani par pašreizējām un gaidāmajām apspriešanām."
+    },
+    "delete_account": {
+      "title": "Pieprasīt mana konta dzēšanu",
+      "description": "Lūdzu, ņemiet vērā, ka šī darbība ir neatgriezeniska. Jūs zaudēsit savus priekšlikumus, detalizētu statistiku par tiem, kā arī priekšlikumus, par kuriem balsojāt.",
+      "password": "Es norādu savu paroli",
+      "submit_label": "Pieprasīt mana konta dzēšanu",
+      "wrong_email": "Šis e-pasts nav piesaistīts jūsu kontam, lūdzu, ievadiet savu e-pastu atkārtoti.",
+      "wrong_password": "Jūsu parole ir nepareiza."
+    },
+    "organisation": {
+      "proposal_agree": "atbalsta šo priekšlikumu",
+      "proposal_disagree": "neatbalsta šo priekšlikumu",
+      "and": " un ",
+      "hasVoted_one": " balsoja par šo priekšlikumu.",
+      "hasVoted_other": " balsoja par šo priekšlikumu.",
+      "sharing_title": "Kopīgojiet šo profilu"
+    }
+  },
+  "organisation": {
+    "title": "Apskatiet {{name}} profilu",
+    "tabs": {
+      "proposals": "Priekšlikumi",
+      "votes": "Viedokļi"
+    },
+    "proposals": {
+      "title": "{{Name}} jaunākie priekšlikumi:",
+      "text": "{{Name}} vēl nav iesniedzis(-usi) priekšlikumus vietnē Make.org."
+    },
+    "votes": {
+      "title": "{{Name}} jaunākie viedokļi:",
+      "text": "{{Name}} vēl nav paudis(-usi) viedokli vietnē Make.org."
+    }
+  },
+  "personality": {
+    "title": "Apskatiet {{name}} profilu",
+    "tabs": {
+      "top_ideas": "Viedokļi par galvenajām idejām"
+    },
+    "opinions": {
+      "title": "{{Firstname}} {{lastname}} viedokļi:",
+      "placeholder_text": "{{Firstname}} {{lastname}} vēl nav paudis(-usi) viedokli par galvenajām idejām.",
+      "vote": {
+        "agree": "piekrītu",
+        "disagree": "nepiekrītu",
+        "other": "cits"
+      },
+      "qualification": {
+        "priority": "Prioritārs",
+        "doable": "Reālistisks",
+        "noWay": "Kategoriski pret",
+        "nonPriority": "Nav prioritārs",
+        "exists": "Jau pastāv",
+        "toBePrecised": "Jāprecizē"
+      },
+      "form": {
+        "title": "Ko jūs darītu, lai reaģētu uz šo iedzīvotāja ideju?",
+        "label": "Rakstīt šeit...",
+        "validate": "Apstiprināt manu viedokli",
+        "disclaimer": "Lūdzu, ņemiet vērā, ka, ja pēc publicēšanas vēlēsities mainīt savu nostāju, jums būs jāsazinās ar Make.org. Vai tiešām vēlaties to publicēt tagad? Ja tā, noklikšķiniet uz \"Apstiprināt un publicēt\".",
+        "preview_cancel": "Rediģēt",
+        "preview_confirm": "Apstiprināt un publicēt"
+      },
+      "preview": {
+        "agree": "Es <span>piekrītu</span>.",
+        "agree_priority": "Es <span>piekrītu</span>, šī ideja ir <span>prioritāra</span>.",
+        "agree_doable": "Es <span>piekrītu</span>, šī ideja ir <span> reālistiska</span>.",
+        "disagree": "Es <span>nepiekrītu</span>.",
+        "disagree_noWay": "Es <span>nepiekrītu</span>, es noteikti <span>nevēlos</span> pieņemt šo ideju.",
+        "disagree_nonPriority": "Es <span>nepiekrītu</span>, šī ideja nav <span>prioritāra</span>.",
+        "other": "Šis priekšlikums <span>jau pastāv</span> vai <span>ir jāprecizē</span> .",
+        "other_exists": "Šis priekšlikums <span>jau pastāv</span>.",
+        "other_toBePrecised": "Šis priekšlikums ir <span>jāprecizē</span>."
+      }
+    },
+    "disclaimer": {
+      "title": "Informācija",
+      "subtitle_first": "Kā paust viedokli par iedzīvotāja ideju?",
+      "description_first": "Par katru ideju jums ir iespēja balsot (\"piekrītu\", \"nepiekrītu\" vai \"cits\") un precizēt savu viedokli. Šajā viedokļa dokumentā tiks atvērti 3 lauki, kuros varat ierakstīt savus 3 galvenos pasākumus un/vai norādīt savu viedokli.",
+      "subtitle_second": "Kā rediģēt savas publicētās atbildes?",
+      "description_second": "Ja pēc noklikšķināšanas uz \"Publicēt\" vēlaties mainīt savus pasākumus, lūdzu, sazinieties ar mūsu komandu, rakstot uz adresi {{mailto}}"
+    }
+  },
+  "consultation": {
+    "header": {
+      "label_great_cause": "Make.org lielais mērķis",
+      "label_consultation": "Apspriešanās ar iedzīvotājiem",
+      "label_results": "Rezultāti"
+    },
+    "highlights": {
+      "start_date": "Uzsākšanas datums",
+      "end_date": "Apspriešanās beigu datums",
+      "remaining_one": "Atlikusī diena",
+      "remaining_other": "Atlikušās dienas",
+      "proposals_one": "Priekšlikums",
+      "proposals_other": "Priekšlikumi",
+      "participant_one": "Dalībnieks",
+      "participant_other": "Dalībnieki",
+      "progress_title": "Mūsu balsošanas mērķis",
+      "progress_total": "Kopējais balsu skaits",
+      "progress_target": " no {{votesTarget}} ({{percent}}%) balsis",
+      "progress_description": "Jo vairāk balsu saņem priekšlikumi, jo lielāks ir potenciāls tos pārvērst konkrētās darbībās.",
+      "progress_btn": "Iesaistīties"
+    },
+    "participate": {
+      "title": "Kā piedalīties apspriešanā?",
+      "description": "Mēs esam pārliecināti, ka katrs var dot savu ieguldījumu kopējā labuma veidošanā. Tāpēc mēs aicinām tūkstošiem iedzīvotāju paust savas idejas un viedokļus, piedaloties apspriešanās."
+    },
+    "citizen_account": {
+      "title": "Jūsu iedzīvotāja telpa vietnē Make.org",
+      "description": "Jūsu personīgajā kontā ir pieejami jūsu priekšlikumu rezultāti, jūsu balsojumu vēsture, un jūs saņemsit apspriešanu rezultātus. Reģistrējoties mūsu vietnē, jūs e-pastā saņemsiet informāciju par gaidāmajām apspriešanām ar iedzīvotājiem un uzaicinājumu uz mūsu līdzdalības pasākumiem.",
+      "button_text": "Es reģistrējos"
+    },
+    "cards": {
+      "soon": "Drīzumā",
+      "submit": {
+        "title": "Iesniegt priekšlikumu",
+        "description": "Dalieties savās idejās ar pēc iespējas vairāk cilvēkiem. Katrs priekšlikums tiks izskatīts pirms iesniegšanas iedzīvotāju balsojumam.",
+        "button": "Man ir ideja"
+      },
+      "interact": {
+        "title": "Atbildēt uz priekšlikumiem",
+        "description": "Ja priekšlikumos ir definēti jautājumi, par kuriem notiek apspriešana, lūdzu, paudiet savu viedokli, lai palīdzētu mums noteikt idejas, kurām jāpievēršas vispirms.",
+        "button": "Es balsoju"
+      },
+      "controversy": {
+        "title": "Lemt par vispretrunīgākajiem priekšlikumiem",
+        "description": "Šie iedzīvotāju priekšlikumi saņēma tikpat daudz balsu par kā pret.",
+        "button": "Es izdaru izvēli"
+      },
+      "popular": {
+        "title": "Balsot par populārākajiem priekšlikumiem",
+        "description": "Šie iedzīvotāju priekšlikumi saņēma visvairāk balsu \"par\".",
+        "button": "Es balsoju"
+      },
+      "keywords": {
+        "title": "Jūs interesējošie temati",
+        "description": "Izvēlieties tematus, par kuriem vēlaties izteikties vispirms."
+      },
+      "sharing": {
+        "title": "Kopīgot apspriešanos",
+        "description": "Arī jūsu draugiem ir idejas un viedokļi, kurus ir vērts uzklausīt. Piešķiriet šai apspriešanai lielāku vērienu, kopīgojot to savā lokā un savā veidā."
+      },
+      "about": {
+        "title": "Kāpēc šāda apspriešana?",
+        "description": "Kāpēc tika uzsākta šī apspriešana? Kādi ir tās ierosinātie jautājumi?  Kurš uzņēmās iniciatīvu?",
+        "link": "Vairāk informācijas"
+      },
+      "featured_proposals": {
+        "title": "Viņi iesniedza priekšlikumu"
+      }
+    },
+    "timeline": {
+      "timeline_title_great_cause": "Kādi ir šī Lielā Mērķa svarīgākie brīži?",
+      "timeline_title_consultation": "Kādi ir šīs apspriešanas svarīgākie brīži?",
+      "consultation_title": "Apspriešanās ar iedzīvotājiem",
+      "consultation_description": "Visas mūsu apspriešanas sākas ar aicinājumu iedzīvotājiem izteikt idejas un balsot.",
+      "consultation_from_to": "No {{startDate}} līdz {{endDate}}",
+      "result_title": "Rezultāti",
+      "workshop_title": "Iedzīvotāju darbsemināri",
+      "workshop_link": "Sazinieties ar mums, lai iesaistītos",
+      "action_title": "Rīcības uzsākšana"
+    },
+    "navigation": {
+      "introduction": "Uzziniet vairāk par citiem apspriešanā aplūkotajiem jautājumiem: {{name}}",
+      "participate_desktop": "Piedalīties apspriešanā",
+      "participate_mobile": "Iesaistīties",
+      "participate_breadcrumb": "Iesaistīties \"{{title}}\"",
+      "explore_desktop": "Izpētīt priekšlikumus",
+      "explore_mobile": "Izpētīt",
+      "explore_breadcrumb": "Izpētīt \"{{title}}\""
+    },
+    "explore": {
+      "title": "Izpētīt priekšlikumus",
+      "description": "Izmantojiet meklēšanas rīkus, lai vienkārši pārlūkotu visus apspriešanā iekļautos priekšlikumus un noteiktu tos, kas, jūsuprāt, ir prioritāri.",
+      "reset_filters": "Atiestatīt filtrus",
+      "reset_filters_and_close": "Atiestatīt filtrus un aizvērt",
+      "sort": "Šķirot",
+      "sort_continue": "Turpināt, izmantojot šķirošanu",
+      "filters_continue": "Turpināt, izmantojot filtrus",
+      "sort_by": "Šķirot pēc",
+      "sort_and_close": "Sašķirot un aizvērt",
+      "filter": "Filtrēt",
+      "filter_and_close": "Filtrēt un aizvērt",
+      "filter_by": "Filtrēt pēc",
+      "recent": "Nesenie",
+      "popular": "Populārākie",
+      "controversial": "Pretrunīgākie",
+      "unvoted": "Tie, kas gaida jūsu balsojumu",
+      "organisations_proposals": "Organizāciju iesniegtie priekšlikumi",
+      "no_proposal": "<strong>Nav neviena priekšlikuma</strong>",
+      "validated_proposals_one": "<strong>{{count}} apstiprināts priekšlikums,</strong> kas atbilst jūsu meklētajam",
+      "validated_proposals_other": "<strong>{{count}} apstiprināti priekšlikumi,</strong> kas atbilst jūsu meklētajam"
+    },
+    "tabs": {
+      "consultation": " Apspriešana ",
+      "action": " Darbības ",
+      "results": " Rezultāti ",
+      "from": " no ",
+      "to": " līdz ",
+      "datefrom": " sākot no "
+    },
+    "sort": {
+      "TAGGED_FIRST": "Visi priekšlikumi",
+      "ACTORS": "Ieinteresēto personu priekšlikumi",
+      "RECENT": "Visnesenākie",
+      "REALISTIC": "Visreālākie",
+      "CONTROVERSY": "Vispretrunīgākie",
+      "POPULAR": "Vispopulārākie"
+    },
+    "presentation": {
+      "title": "Kāpēc šāda apspriešana?",
+      "link_text": "Uzzināt vairāk"
+    },
+    "followus": {
+      "title": "Lai uzzinātu vairāk",
+      "description": "Uzziniet visus vietnes Make.org jaunumus!",
+      "facebook": "Sekojiet mums Facebook",
+      "twitter": "Sekojiet mums Twitter",
+      "instagram": "Sekojiet mums Instagram",
+      "linkedin": "Sekojiet mums LinkedIn",
+      "discover": "Iepazīstiet mūsu emuāru"
+    },
+    "partners": {
+      "intro_title": "Plaša iesaiste",
+      "intro_text": "Tūkstošiem iedzīvotāju iesaistās, piedaloties apspriešanā.",
+      "commitment_title": "Mūsu partneri ir apņēmušies mums palīdzēt",
+      "commitment_text": "Viņi atbalsta iedzīvotāju apspriešanu un rīcības plānu, kas sekos.",
+      "commitment_link": "Skatīt visus partnerus",
+      "founder": "Partneris dibinātājs",
+      "init": "Apspriešana, ko ierosināja:",
+      "initWith": "Šī apspriešana tika ierosināta kopā ar:",
+      "with": "Sadarbībā ar:",
+      "by": "Ierosināja (kas): ",
+      "profile_link": "Doties uz profilu, kas pieder: {{name}}",
+      "profile_link_new_window": "Doties uz profilu, kas pieder: {{name}} (jauns logs)"
+    },
+    "tags": {
+      "proposal_list": "<span lang=\"en\">Tagi<span>, kas atlasīti šim priekšlikumam: ",
+      "popular_title": "Visapspriestākie temati"
+    },
+    "banner": {
+      "title": "Piedalieties apspriešanā, veltot tai 5 minūtes,",
+      "description": "par vairākiem nejauši atlasītiem priekšlikumiem"
+    },
+    "proposal": {
+      "title": "Piedāvājiet tiešu risinājumu",
+      "load_more": "Skatīt vairāk priekšlikumu",
+      "see_proposals": "Skatīt priekšlikumus"
+    },
+    "results": {
+      "methodology": {
+        "title": "Metodika",
+        "description": "Metodikas pamatā ir saņemto priekšlikumu precīza moderēšana. Vispirms tos iesniedz apstiprināšanai attiecībā uz to atbilstību Make.org hartai, pēc tam tos klasificē atbilstoši tematiskajam marķējumam. Pēc tam Make.org komandu izstrādātie algoritmi garantē visiem apstiprinātajiem priekšlikumiem vienādu ekspozīcijas līmeni un organizē sacensību starp tiem. Pateicoties šai pastāvīgajai rotācijai, Make.org identificē priekšlikumus, par kuriem ir vislielākā vienprātība iedzīvotāju vidū, pēc tam tos analizē un sagrupē lielās idejās."
+      },
+      "participation": {
+        "title": "Apspriešanas dalībnieki"
+      },
+      "context": "Konteksts",
+      "cartography": {
+        "title": "Debašu atspoguļojums kartē"
+      },
+      "download": {
+        "deprecated_title": "Saņemt pilnīgu pārskatu",
+        "title": "Saņemiet pilnīgu pārskatu",
+        "type": "Formāts: {{extension}} - Svars: {{weight}}",
+        "button": "Lejupielādēt",
+        "contact": "Lai saņemtu pilnīgu šīs apspriešanas analīzes pārskatu, lūdzu, sazinieties ar mums, rakstot uz šādu adresi: ",
+        "email_object": "Analīzes pārskats"
+      },
+      "top_ideas": {
+        "skiplink": "Labākās jaunās idejas",
+        "title_one": "Populārākās atzinību ieguvušās idejas, sagrupētas {{count}} kategorijā",
+        "title_other": "Populārākās atzinību ieguvušās idejas, sagrupētas {{count}} kategorijās",
+        "introduction": "Tiem nonākot platformā, labākie iedzīvotāju priekšlikumi tiek sagrupēti lielās idejās, kas veido apspriešanas struktūru. Lai sarindotu šīs idejas, Make.org algoritms ņem vērā balsis «par» un «pret», kā arī atzīmes «favorīts», «reālistisks», «mazsvarīgs» un «kategoriski pret! ».",
+        "axe_title": "Kategorija {{count}}: {{name}}"
+      },
+      "proposals": {
+        "controversials_title": "Vispretrunīgākie priekšlikumi",
+        "controversials_description": "\"Pretrunīgie\" priekšlikumi atspoguļo būtisku sabiedrības šķelšanos: kopumā tiem ir gan spēcīgs atbalsts, gan nepārprotams noraidījums.",
+        "rejected": "Visvairāk noraidītie priekšlikumi",
+        "rejected_results": "{{disagree}}% “pret”, no kuriem {{no_way}}% “kategoriski pret”",
+        "controversials_agree": "{{count}}% par",
+        "controversials_disagree": "{{count}}% pret"
+      },
+      "table": {
+        "name": "Uzvārds",
+        "value": "Vērtība",
+        "value_with_unit": "vērtība izteikta {{unit}}",
+        "percentage": "procentuālā attiecība"
+      },
+      "breadcrumb": "Apspriešanas \"{{title}}” rezultāti",
+      "title": "Ko mēs varam mācīties no šīs apspriešanas?"
+    },
+    "reset": "Atiestatīt",
+    "sortby": "Šķirot pēc: ",
+    "local_actors": {
+      "title": "Aktīvākās apvienības",
+      "proposals_one": "{{count}} priekšlikums",
+      "proposals_other": "{{count}} priekšlikumi",
+      "votes_one": "{{count}} balss",
+      "votes_other": "{{count}} balsis",
+      "participate": "Jūs esat apvienība un vēlaties piedalīties mūsu apspriešanā? {{ contact_us }}",
+      "contact_us": "Sazinieties ar mums!",
+      "more": "Skatīt vairāk"
+    },
+    "municipal": {
+      "header": {
+        "candidates_answers": "Izvēlētie kandidāti reaģēs uz iedzīvotāju un apvienību noteiktajām prioritātēm.",
+        "candidates_subscribe": "{{ subscribe }}, lai saņemtu informāciju",
+        "subscribe": "Reģistrējieties",
+        "candidates": "Jūs esat kandidāts(-e)",
+        "contact_us": "Sazinieties ar mums!"
+      },
+      "position": {
+        "title": "Noskaidrojiet, kā kandidāti reaģēja uz jūsu prioritātēm."
+      }
+    },
+    "popular_proposals": {
+      "title": "Pašlaik populārāko priekšlikumu TOP {{ count }} pēc temata"
+    }
+  },
+  "browse": {
+    "short_page_title": "Pārlūkot",
+    "page_title": "Pārlūkot apspriešanas",
+    "title": "Piedalieties notiekošajās apspriešanās",
+    "initiative": "Make.org lielais mērķis",
+    "nav_consultations_desktop": "Notiekošās apspriešanas",
+    "nav_consultations_mobile": "Apspriešanas",
+    "nav_results_desktop": "Apspriešanu rezultāti",
+    "nav_results_mobile": "Rezultāti",
+    "consultations": {
+      "all": "Visas apspriešanas",
+      "label": "Pašlaik",
+      "title": "Piedalieties notiekošajās apspriešanās",
+      "subtitle": "Jūsu viedoklis ir svarīgs! Balsojiet un piedāvājiet risinājumus, lai ietekmētu dažādus sabiedrībai aktuālus jautājumus un aktuālās problēmas.",
+      "participate": "Iesaistīties",
+      "contributors_one": "dalībnieks",
+      "contributors_other": "dalībnieki",
+      "proposals_one": "priekšlikums",
+      "proposals_other": "priekšlikumi",
+      "votes_one": "balss",
+      "votes_other": "balsis",
+      "empty": "Atvainojiet, jūsu valstī pašlaik nav pieejama neviena apspriešana"
+    },
+    "results": {
+      "all": "Visi rezultāti",
+      "label": "Apspriešanas ir pabeigtas",
+      "title": "Iepazīstieties ar rezultātiem",
+      "subtitle": "Apspriešanu noslēgumā uzziniet, kādas ir iedzīvotāju prioritātes un kādus pasākumus Make.org veic savu Lielo Mērķu ietvaros.",
+      "see_results": "Skatīt rezultātus",
+      "see_topideas": "Skatīt labākās idejas",
+      "coming_results": "Rezultāti drīzumā",
+      "empty": "Līdz šim mēs nekad neesam rīkojuši apspriešanu jūsu valstī."
+    },
+    "date": "Apspriešana no {{startDate}} līdz {{endDate}}",
+    "browse": "Pārlūkot apspriešanas",
+    "see_closed_consultations": "Skatīt pabeigtās apspriešanas",
+    "no_consultations": "Pašlaik apspriešanos nav, bet turpināsim saziņu!",
+    "one_consultation": "Reģistrējieties, lai saņemtu informāciju par nākamo apspriešanu.",
+    "no_results": "Rezultāti būs drīzumā, tikmēr mēs paliekam saziņā ar jums!",
+    "one_result": "Reģistrējieties, lai saņemtu informāciju par nākamajiem rezultātiem",
+    "subscribe": "Reģistrēties",
+    "past_questions": "Jūs varat arī iepazīties ar iepriekšējo apspriešanu rezultātiem"
+  },
+  "sharing": {
+    "facebook": "Kopīgot Facebook",
+    "twitter": "Kopīgot Twitter",
+    "linkedin": "Kopīgot LinkedIn"
+  },
+  "skip_links": {
+    "main_list": "Galvenās izlaistās saites",
+    "secondary_list": "Saites, kas ļauj izvairīties no lapas satura",
+    "main_content": "Doties uz galveno saturu",
+    "main_footer": "Doties uz galveno kājeni",
+    "sidebar_content": "Doties uz satura sānjoslu",
+    "secondary_nav": "Doties uz sekundāro navigāciju",
+    "tag_list": "Doties uz filtru sarakstu",
+    "proposal_list": "Doties uz priekšlikumu sarakstu",
+    "proposal_submit": "Doties uz priekšlikumu veidlapu",
+    "proposal_card": "Doties uz priekšlikumu",
+    "sharing": "Dodieties uz kopīgošanas sadaļu",
+    "dynamic_section": "Doties uz sadaļu: \"{{name}}\""
+  },
+  "modal": {
+    "close": "Aizvērt dialoga logu"
+  },
+  "homepage": {
+    "featured": {
+      "title": "Šobrīd vietnē Make.org",
+      "status": "Darbības marķējums: ",
+      "link": "Doties uz apspriešanas lapu: {{name}}"
+    },
+    "title": "Sākumlapa",
+    "hero": {
+      "title": "Kopā mēs varam uzlabot sabiedrību",
+      "description": "Izsakiet savu viedokli par jums svarīgiem sociālajiem jautājumiem, piedaloties mūsu apspriešanās ar iedzīvotājiem. Visi kopā — iedzīvotāji, apvienības un uzņēmumi — noteiksim savas prioritātes un veiksim konkrētas pārmaiņas.",
+      "participate": "Piedalieties apspriešanās",
+      "discover": "Iepazīstieties ar mūsu lielajiem mērķiem"
+    },
+    "highlights": {
+      "title": "Make.org dažos skaitļos",
+      "participants": {
+        "subtitle_one": "dalībnieka(-ces)",
+        "subtitle_other": "dalībnieku(-ču)"
+      },
+      "proposals": {
+        "subtitle_one": "iesniegtais priekšlikums",
+        "subtitle_other": "iesniegtie priekšlikumi"
+      },
+      "partners": {
+        "subtitle_one": "iesaistītā apvienība un uzņēmums",
+        "subtitle_other": "iesaistītās apvienības un uzņēmumi"
+      }
+    },
+    "featured_questions": {
+      "label": "Make.org lielie mērķi",
+      "title": "Make.org rīkojas, lai risinātu svarīgus sociālus jautājumus"
+    },
+    "posts": {
+      "title": "Mūsu jaunumi",
+      "link_text": "Lasīt rakstu",
+      "see_all": "Skatīt visus jaunumus"
+    },
+    "partnership": {
+      "title": "Sadarbojieties ar Make.org",
+      "subtitle": "Kļūt par partneri",
+      "description": "Mēs sadarbojamies ar uzņēmumiem, apvienībām un iestādēm, lai īstenotu savus projektus. <br/>Mēs arī atbalstām šīs organizācijas, lai tās pašas varētu uzsākt apspriešanos.",
+      "button": "Skatīt mūsu piedāvājumus"
+    },
+    "international": {
+      "subtitle": "Apspriešanas valstu mērogā",
+      "title": "Make.org ir pieejams arī Latvijā par valstij svarīgiem tematiem.",
+      "button": "Iepazīties"
+    }
+  },
+  "search": {
+    "titles": {
+      "loading": "Notiek meklēšana...",
+      "no_results": "Nav neviena rezultāta",
+      "main_results_one": "{{count}} rezultāts saistībā ar « {{term}} »",
+      "main_results_other": "{{count}} rezultāti saistībā ar « {{term}} »",
+      "proposals_one": "{{count}} priekšlikums saistībā ar « {{term}} »",
+      "proposals_other": "{{count}} priekšlikumi saistībā ar « {{term}} »",
+      "operations_one": "{{count}} darbība saistībā ar « {{term}} »",
+      "operations_other": "{{count}} darbības saistībā ar « {{term}} »",
+      "organisations_one": "{{count}} organizācijas saistībā ar « {{term}} »",
+      "organisations_other": "{{count}} organizācijas saistībā ar « {{term}} »",
+      "main_results_empty_term": "0 rezultātu"
+    },
+    "main_results": {
+      "proposal": "Priekšlikums",
+      "organisation": "Organizācija",
+      "operation": "Darbība",
+      "results_one": "{{count}} rezultāts",
+      "results_other": "{{count}} rezultāti",
+      "view_all": "Skatīt visu",
+      "no_results": "Mēs nevarējām atrast nevienu rezultātu jūsu meklēšanas vaicājumam « {{term}} »",
+      "no_query": "Vai meklējat priekšlikumu, ideju vai apspriešanu? Ievadiet, ko meklējat!",
+      "status": "Statuss: ",
+      "finished_consultation": "Apspriešana ir pabeigta",
+      "open_consultation": "Apspriešana notiek"
+    },
+    "sidebar": {
+      "register": {
+        "title": "Sekojiet make.org jaunumiem, piesakoties."
+      }
+    },
+    "form": {
+      "introduction": "Lai veiktu meklēšanu, vaicājumam jābūt no 3 līdz 140 rakstzīmēm garam. Ievadiet to meklēšanas laukā, tad noklikšķiniet uz pogas \"Meklēt\".",
+      "introduction_searched": "Lai iztukšotu meklēšanas lauku, noklikšķiniet uz pogas \"Notīrīt meklēšanas lauku\".",
+      "label": "Meklēšanas lauks",
+      "placeholder": "Meklēt",
+      "submit": "Meklēt",
+      "flush": "Notīrīt meklēšanas lauku",
+      "open_panel": "Parādīt meklēšanas lauku",
+      "cancel": "Anulēt"
+    }
+  },
+  "no_cookies": {
+    "title": "Ak, vai! Jūsu sīkdatnes ir atspējotas",
+    "first_paragraph": "Mēs nevaram atļaut jums piekļūt vietnei, jo mēs izmantojam sīkdatnes, lai nodrošinātu mūsu pakalpojumu kvalitāti.",
+    "second_paragraph": "Lai varētu mierīgi pārlūkot Make.org, aicinām jūs atļaut izmantot sīkdatnes šajā pārlūkprogrammā vai izmantot citu pārlūkprogrammu. Lai pārlūkprogrammā atļautu izmantot sīkdatnes, dodieties uz izvēlni un pēc tam uz iestatījumiem.",
+    "information": "Lai uzzinātu vairāk par to, kā pārvaldīt jūsu sīkdatnes, noklikšķiniet uz šīs saites:",
+    "link": "www.accepterlescookies.com",
+    "thanks": "Paldies par sapratni un uz drīzu tikšanos!",
+    "footer": "Make.org ir iesaistīšanās platforma, kas identificē populāras idejas par dažādiem tematiem. Lai uzzinātu vairāk par mūsu iniciatīvu, iepazīstieties ar <a href=https://about.make.org>mūsu jaunumiem</a>"
+  },
+  "contact": {
+    "contactUs": "Sazinieties ar mums",
+    "paragraph": "Ideja, ierosinājums vai kļūda? Noteikti sazinieties ar mums, nosūtot e-pastu uz mūsu adresi:"
+  },
+  "legal": {
+    "title": "Juridiska informācija",
+    "make_infos": "Vietnes redaktors: MAKE.ORG, Société par Actions Simplifiées (vienkāršota akciju sabiedrība) ar kapitālu {{make_capital}} apmērā, kuras juridiskā adrese ir {{make_address}}, reģistrēta PARĪZES Tirdzniecības un uzņēmumu reģistrā ar numuru {{make_rcs}} (tālāk tekstā — « MAKE.ORG »).",
+    "mail": "E-pasta adrese: ",
+    "make_phone": "Tālruņa numurs: ",
+    "make_phone_number": "{{make_phone_number}}",
+    "director": "Publikācijas direktors: {{make_director_name}}",
+    "host": "Vietnes uzturētājs: ",
+    "host_address": "{{make_host_address}} FRANCIJA",
+    "host_phone": "Tālruņa numurs: ",
+    "host_phone_number": "{{host_number}}",
+    "eu_mention": "Eiropas Komisija nodrošina tiešsaistes strīdu izšķiršanas platformu patērētājiem vietnē https://ec.europa.eu/consumers/odr."
+  },
+  "moderation_charter": {
+    "unsuitable_label": "NAV IETEICAMS",
+    "adapted_label": "Pielāgots",
+    "refused_label": "Noraidīts",
+    "validated_label": "Apstiprināts",
+    "title": "Moderēšanas harta",
+    "description": "Kādus priekšlikumus Make.org moderatori ir noraidījuši? Kā pareizi formulēt priekšlikumu? Katru platformā iesniegto priekšlikumu manuāli izskata Make.org moderatoru komandas saskaņā ar šādiem moderēšanas hartas kritērijiem¹. Moderēšana tiek veikta 48 stundu laikā pēc priekšlikuma nosūtīšanas. Par jūsu priekšlikuma publicēšanu vai noraidīšanu jūs informēs pa e-pastu (ja reģistrācijas laikā būs apstiprināta jūsu e-pasta adrese). Nelielas pareizrakstības kļūdas moderatori izlabo, taču jūsu ziņā ir tas, vai iesniegt savu priekšlikumu vēlreiz, ja tas nav ticis pieņemts.",
+    "refused_examples": "Make.org platformā nepieņem: ",
+    "incomprehensible_solutions": {
+      "title": "nesaprotamus priekšlikumus",
+      "description": "Jūsu priekšlikuma formulējumam un jēgai jābūt saprotamai visiem. Būtiskas sintakses kļūdas vai muļķības tiks noraidītas, un jums tiks lūgts pārformulēt priekšlikumu.",
+      "refused_example_card": "Nepieciešams, lai iedzīvotāji domātu par visu valstu attīstību.",
+      "validated_example_card": "Nepieciešams, lai iedzīvotāji domātu par izglītības attīstību katrā valstī."
+    },
+    "irrelevant_solutions": {
+      "title": "ar tematu nesaistītus priekšlikumus",
+      "description": "Jūsu priekšlikumam ir jāatbild uz apspriešanā uzdoto jautājumu. Pretējā gadījumā jūsu priekšlikums tiks uzskatīts par neatbilstīgu un tiks noraidīts.",
+      "example": "Piemēram, uz jautājumu \"Kā ļaut ikvienam ēst labāk?\"",
+      "refused_card_example": "Nepieciešams rīkot pasaules kausu futbolā reizi 2 gados.",
+      "validated_card_example": "Nepieciešams veicināt piekļuvi ātrām piegādes ķēdēm uzņēmumu ēdnīcās."
+    },
+    "discriminatory_solutions": {
+      "title": "diskriminējošus priekšlikumus",
+      "description": "Saskaņā ar likumu² jūsu priekšlikumā nedrīkst ietvert runu, kas aicina uz vardarbību vai kurina naidu. Tas nedrīkst saturēt diskriminējošus vai apmelojošus apgalvojumus, jo īpaši pret kādu etnisko, sociālo vai reliģisko grupu.",
+      "refused_card_example": "Jāraugās, lai latgalieši nesaglabātu savas degradējošās tradīcijas.",
+      "validated_card_example": "Nepieciešams veicināt visu Latvijas iedzīvotāju labāku savstarpējo komunikāciju.",
+      "refused_card_example_2": "Krusti ap kaklu, kas ir paverdzināšanas simbols, ir jāaizliedz.",
+      "validated_card_example_2": "Mums ir jānodrošina, lai mūsu valstī tiktu ievērota reliģijas brīvība."
+    },
+    "partisan_solutions": {
+      "title": "partiju priekšlikumus",
+      "description": "Jūsu priekšlikumā nevajadzētu nostāties kādas politiskās partijas, politiskās figūras, ideoloģijas vai reliģijas (personības, simbola vai prakses) pusē (t. i., paust atzinību vai devalvēt).",
+      "refused_card_example": "Nepieciešams iepazīties ar XXX kunga programmu, jo viņa idejas nākamajām vēlēšanām ir oriģinālas.",
+      "validated_card_example": "Nepieciešams pirms vēlēšanām iepazīties ar katras politiskās partijas programmu.",
+      "refused_card_example_2": "Nepieciešams regulāri pārlasīt Bībeli, lai rastu glābšanu.",
+      "validated_card_example_2": "Nepieciešams, lai darba devēji zinātu atsevišķu reliģisko svētku (Ramadāns, Hanuka u.c.) datumus."
+    },
+    "advertising": {
+      "title": "reklāmu",
+      "description": "Jūs nedrīkstat reklamēt konkrētu zīmolu vai uzņēmumu. Arī šajā gadījumā zīmolu vai uzņēmumu var minēt tikai ar ilustratīvu piemēru.",
+      "refused_card_example": "Nepieciešams, lai visi uzņēmumi izmantotu IBM piedāvātos risinājumus.",
+      "validated_card_example": "Nepieciešams pārtraukt lietot dažus pārmērīgi saldinātus bezalkoholiskos dzērienus, piemēram, Coca-Cola."
+    },
+    "multiple_ideas": {
+      "title": "vairākas idejas kopā",
+      "description": "Katrā priekšlikumā jāformulē tikai viena ideja, lai citiem iedzīvotājiem būtu vieglāk balsot par jūsu priekšlikumu. Ja jums ir divas dažādas idejas, varat izveidot divus priekšlikumus.",
+      "refused_card_example": "Nepieciešams, lai vietējo ražotāju produkti būtu pieejami, un informēt par inovācijām lauksaimniecībā.",
+      "validated_card_example": "Nepieciešams, lai vietējo ražotāju produkti būtu pieejami."
+    },
+    "insults": {
+      "title": "aizvainojumi",
+      "description": "Visi necienīgie vai aizvainojošie priekšlikumi moderēšanas laikā tiks noraidīti.",
+      "refused_card_example": "Nepieciešams, lai šie stulbie autovadītāji labāk ievērotu ceļu satiksmes noteikumus.",
+      "validated_card_example": "Nepieciešams, lai autovadītāji labāk ievērotu ceļu satiksmes noteikumus."
+    },
+    "correctly_formulated_solutions": {
+      "title": "Kā pareizi no formulēt priekšlikumu vietnē Make.org?"
+    },
+    "search_function": "Izmantojiet meklēšanas funkciju, lai pārbaudītu, vai jūsu ideja jau nav atrodama vietnē.",
+    "concrete_elements": {
+      "text": "Padomājiet par savas idejas konkretizēšanu ar konkrētiem elementiem, lai iedzīvotāji precīzi saprastu, ko vēlaties pateikt.",
+      "refused_card_example": "Nepieciešams vairāk Eiropas.",
+      "validated_card_example": "Nepieciešams Eiropas Savienībai piešķirt vairāk resursu.",
+      "refused_card_example_2": "Nepieciešams samazināt jauniešu bezdarbu.",
+      "validated_card_example_2": "Nepieciešams izveidot Nodarbinātības aģentūru jauniešiem."
+    },
+    "understandable_language": {
+      "text": "Nodrošiniet pēc iespējas labāku izpratni, lietojot visiem saprotamu valodu.",
+      "refused_card_example": "Nepieciešams sagatavošanās studiju gads universitātē.",
+      "validated_card_example": "Nepieciešams vispārējās izglītības gads pirms studiju kursa izvēles universitātē.",
+      "refused_card_example_2": "Nepieciešams, lai SAV spētu veikt vēža skrīningu.",
+      "validated_card_example_2": "Nepieciešams, lai Sabiedrības veselības aģentūra spētu veikt vēža skrīningu."
+    },
+    "acronyms": {
+      "text": "Izvairieties priekšlikumā lietot #, @ vai citus akronīmus, piemēram, \"LOL\".",
+      "refused_card_example": "Nepieciešams samazināt nodokļus uzņēmējiem #konkurētspēja",
+      "validated_card_example": "Nepieciešams samazināt nodokļus uzņēmējiem, lai tos padarītu konkurētspējīgus!"
+    },
+    "disclaimer": "Make.org nav tiešsaistes platformas operators, uz kuru attiecas 2018. gada 22. decembra Likuma Nr. 2018-1202 par cīņu pret manipulācijām ar informāciju normas. Tādējādi uz mums neattiecas attiecīgie pienākumi. Tomēr mums ir svarīgi, lai mūsu vietnē publicētā informācija būtu precīza, un šajā Hartā ir sīki aprakstīti pasākumi, ko mēs veicam, lai to nodrošinātu.",
+    "foot_notes": {
+      "ethical_charter": "Šī Moderēšanas harta ir izstrādāta saskaņā ar <a href=\"https://assets.website-files.com/59833d390a24e50001b873d8/5fd245978b3dbedcbcc121a2_VF%20Charte%20Ethique%20Make.org%20et%20Make.org%20Foundation%20valid%C3%A9e.pdf\" target=\"_blank\">Ētikas hartu (jauns logs)</a> kas garantē vietnes Make.org neitralitāti, neatkarību un pārredzamību.",
+      "code_penal": "Latvijas Krimināllikumā noteikts: «Par diskrimināciju rasu, nacionālās, etniskās vai reliģiskās piederības dēļ vai par cita veida diskriminācijas aizlieguma pārkāpšanu, ja ar to radīts būtisks kaitējums,\n— soda ar brīvības atņemšanu uz laiku līdz vienam gadam vai ar īslaicīgu brīvības atņemšanu, vai ar probācijas uzraudzību, vai ar sabiedrisko darbu, vai ar naudas sodu.\nPar darbību, kas vērsta uz naida vai nesaticības izraisīšanu atkarībā no personas dzimuma, vecuma, invaliditātes vai jebkuru citu pazīmju dēļ, ja ar to radīts būtisks kaitējums,\n— soda ar brīvības atņemšanu uz laiku līdz vienam gadam vai ar īslaicīgu brīvības atņemšanu vai ar probācijas uzraudzību, vai ar sabiedrisko darbu, vai ar naudas sodu.» (149.1, 150. pants)"
+    }
+  },
+  "cookies_management": {
+    "title": "Sīkdatņu pārvaldība",
+    "dated": "- (datums) {{date}} -",
+    "button": "Apstiprināt manu atlasi",
+    "intro": {
+      "title": "Kas ir sīkdatne?",
+      "first_paragraph": "Sīkdatne ir neliela datne datorā, ko var saglabāt un nolasīt, kad lietotājs apmeklē tīmekļa vietni vai mobilo lietotni neatkarīgi no izmantotā termināļa veida (dators, viedtālrunis utt.).",
+      "second_paragraph": "Dažas sīkdatnes ir būtiskas vietņu vai lietotņu pareizai darbībai, citas palīdz optimizēt vietnes darbību vai uzlabot interneta lietotāju pieredzi."
+    },
+    "use": {
+      "title": "Kā mēs izmantojam sīkdatnes?",
+      "first_paragraph": "Kad pieslēdzaties mūsu vietnei, sīkdatnes tiek deponētas jūsu terminālī, lai uzlabotu jūsu pieredzi, uzlabotu mūsu vietnes veiktspēju un optimizētu mūsu konsultācijas iedzīvotājiem.",
+      "second_paragraph": "Sīkdatnēs ietvertā informācija nav paredzēta jūsu personas identificēšanai, un tā nekad netiek izmantota citiem mērķiem, izņemot turpmāk norādītos."
+    },
+    "partners": {
+      "title": "Kas ir mūsu partneri?",
+      "intro": "Papildus sīkdatnēm, ko izveido un pārvalda Make, mūsu vietnē sīkdatnes ievieto arī šādi partneri:"
+    },
+    "details": {
+      "title": "Kādas sīkdatnes mēs izmantojam?",
+      "intro": "Mūsu vietnē tiek izmantotas šādas sīkdatnes:",
+      "mandatory": "Joprojām ir aktīvs",
+      "duration": "Ilgums: {{duration}}",
+      "session": "Sesija",
+      "month": "{{count}} mēneši",
+      "year_one": "{{count}} gads",
+      "year_other": "{{count}} gadi",
+      "technicals": {
+        "name": "Tehniskās sīkdatnes:",
+        "description": "Šīs sīkdatnes ir nepieciešamas vietnes darbībai, un tās nevar atspējot. Jūs varat iestatīt pārlūkprogrammu tā, lai tā bloķētu šīs sīkdatnes vai informētu par tām, taču tas var ietekmēt dažas mūsu vietnes daļas. Šīs sīkdatnes nav paredzētas, lai identificētu jūs personīgi.",
+        "secure": "make-secure: pēc pieteikšanās savā iedzīvotāja telpā vietnē Make.org, šī sīkdatne nodrošina, ka šis savienojums tiks saglabāts, kamēr jūs pārlūkojat pakalpojumu.",
+        "secure-expiration": "make-secure-expiration: šo sīkdatni izmanto, lai noteiktu jūsu neaktivitāti pakalpojumā un izbeigtu šo savienojumu.",
+        "demographics": "make-demographics: šī sīkdatne ļauj mums uzzināt, vai šajā ierīcē jums jau iepriekš ir lūgta demogrāfiskā informācija (vecuma diapazons, reģions, dzimums u. c.), lai nākamajā apmeklējumā mēs to vairs nelūgtu."
+      },
+      "preferences": {
+        "name": "Preferenču sīkdatnes:",
+        "description": "Šīs sīkdatnes tiek izmantotas, lai atcerētos jūsu preferences mūsu vietnē un tādējādi uzlabotu jūsu pārlūkošanas pieredzi. Jūs varat iestatīt pārlūkprogrammu tā, lai tā bloķētu šīs sīkdatnes vai informētu par tām, taču tas var ietekmēt dažas mūsu vietnes daļas. Šīs sīkdatnes nav paredzētas, lai identificētu jūs personīgi.",
+        "google-connect": "Google connect: šīs sīkdatnes ļauj jums reģistrēties un izveidot savienojumu ar savu iedzīvotāja telpu.",
+        "facebook-connect": "Facebook connect: šīs sīkdatnes ļauj jums reģistrēties un izveidot savienojumu ar savu iedzīvotāja telpu.",
+        "session-id": "make-session-id: šo sīkdatni izmanto, lai visas vietnē veiktās darbības apvienotu vienā sesijā.",
+        "session-id-expiration": "make-session-id-expiration: šī sīkdatne ļauj jums saņemt paziņojumu, ka jūsu sesija ir beigusies (pēc 20 minūtēm) un tiks ielādēta no jauna.",
+        "user-id": "make-user-id: šī sīkdatne identificē jūs pēc tam, kad ir izveidots savienojums ar iedzīvotāja telpu vietnē Make.org. Tā tiks izmantota, lai jūs aicinātu vēlreiz pieteikties, jau iepriekš aizpildot jūsu pieteikšanās informāciju.",
+        "cookie-preferences": "make-cookie-preferences: šī sīkdatne atcerēsies jūsu preferences attiecībā uz sīkdatņu izmantošanu mūsu pakalpojumā."
+      },
+      "statistics": {
+        "name": "Statistikas sīkdatnes:",
+        "description": "šīs sīkdatnes tiek izmantotas, lai analizētu mūsu vietnes apmeklējumus un uzlabotu tās darbību. Visa šo sīkdatņu savāktā informācija ir apkopotā veidā un tādējādi anonimizēta. Ja jūs neapstiprināsit šīs sīkdatnes, mēs netiksim informēti par jūsu apmeklējumu.",
+        "visitor-id": "make-visitor-id: šo sīkdatni izmanto, lai izsekotu mūsu pakalpojuma apmeklējumus, lai anonīmi un apkopotā veidā mērītu datplūsmu. Pārlūkošanas epizodes tiek nosūtītas uz MixPanel analīzes rīku.",
+        "visitor-created-at": "make-visitor-created-at: šo sīkdatni izmanto, lai iegūtu platformas pirmā apmeklējuma datumu.",
+        "facebook-tracking": "Facebook izsekošanas sīkdatne: šī sīkdatne tiek izmantota, lai ģenerētu statistiku par mūsu vietnes apmeklētāju skaitu, lai uzlabotu mūsu vietni un uzlabotu mūsu apmeklējumu analīzi.",
+        "hotjar": "Hotjar: Tas ir rīks vietnes izmantošanas uzvedības analīzes veikšanai. Sīkāka informācija: "
+      },
+      "social": {
+        "name": "Sociālo tīklu sīkdatnes:",
+        "description": "šīs sīkdatnes, ko iespējojušas trešās personas, ļauj jums kopīgot mūsu vietnes saturu sociālajos tīklos un tādējādi palīdz mums optimizēt mūsu ietekmi. Ja nepiekritīsiet šo sīkdatņu ievietošanai, jūs, iespējams, nevarēsiet izmantot šos koplietošanas rīkus.",
+        "facebook_tracking": "pixel Facebook: šīs sīkdatnes kalpo, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas Facebook, lai palielinātu iedzīvotāju līdzdalību.",
+        "twitter_tracking": "pixel Twitter: šīs sīkdatnes kalpo, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas Twiter, lai palielinātu iedzīvotāju līdzdalību.",
+        "facebook_sharing": "Facebook koplietošana: šī sīkdatne ļauj lietotājam kopīgot saturu Facebook un uzlabot lietojamību.",
+        "twitter_sharing": "Twitter koplietošana: šī sīkdatne ļauj lietotājam kopīgot saturu Twitter un uzlabot lietojamību.",
+        "linkedin_sharing": "LinkedIn koplietošana: šī sīkdatne ļauj lietotājam kopīgot saturu LinkedIn un uzlabot lietojamību."
+      }
+    }
+  },
+  "countries": {
+    "AT": "Austrija",
+    "BE": "Beļģija",
+    "BG": "Bulgārija",
+    "BR": "Brazīlija",
+    "CA": "Kanāda",
+    "CH": "Šveice",
+    "CN": "Ķīna",
+    "CY": "Kipra",
+    "CZ": "Čehijas Republika",
+    "DE": "Vācija",
+    "DK": "Dānija",
+    "EE": "Igaunija",
+    "ES": "Spānija",
+    "FI": "Somija",
+    "FR": "Francija",
+    "GB": "Lielbritānija",
+    "GR": "Grieķija",
+    "HR": "Horvātija",
+    "HU": "Ungārija",
+    "IE": "Īrija",
+    "IN": "Indija",
+    "IS": "Islande",
+    "IT": "Itālija",
+    "JP": "Japāna",
+    "LI": "Lihtenšteina",
+    "LT": "Lietuva",
+    "LU": "Luksemburga",
+    "LV": "Latvija",
+    "MT": "Malta",
+    "NL": "Nīderlande",
+    "NO": "Norvēģija",
+    "PL": "Polija",
+    "PT": "Portugāle",
+    "RO": "Rumānija",
+    "RU": "Krievija",
+    "SE": "Zviedrija",
+    "SI": "Slovēnija",
+    "SK": "Slovākija",
+    "US": "ASV",
+    "UA": "Ukraina"
+  },
+  "languages": {
+    "fr": "Français",
+    "en": "English",
+    "de": "Deutsch",
+    "uk": "Українська",
+    "cs": "Česky",
+    "es": "Español",
+    "pl": "Polski",
+    "it": "Italiano",
+    "nl": "Nederlands",
+    "fi": "Suomi",
+    "ro": "Română",
+    "bg": "Български"
+  },
+  "language_switch": {
+    "country_title": "Jūsu valsts",
+    "country_subtitle": "No jūsu izvēlētās valsts ir atkarīgas pieejamās apspriešanas.",
+    "language_title": "Jūsu valoda",
+    "confirm": "Apstiprināt"
+  }
+}
