@@ -44,61 +44,70 @@ export const useOrganisation = (
     setOrganisation(response);
   };
 
-  const fetchProposals = async (
+  const fetchOrganisationProposals = async (
     pageId: number,
     proposalsList: ProposalType[]
   ) => {
     if (!organisation) {
-      setIsLoading(false);
       return;
     }
+
     setIsLoading(true);
     const proposalsResponse = await OrganisationService.getProposals(
       organisation.organisationId,
       pageId,
       language
     );
-    if (proposalsResponse) {
-      const { results, total, seed: apiSeed } = proposalsResponse;
-      const newProposals = [...proposalsList, ...results];
-      setProposals(newProposals);
-      setHasMore(newProposals.length < total);
-      setSeed(apiSeed);
-      setPage(pageId + 1);
+
+    if (!proposalsResponse) {
+      setIsLoading(false);
+      return;
     }
+
+    const { results, total, seed: apiSeed } = proposalsResponse;
+    const newProposals = [...proposalsList, ...results];
+    setProposals(newProposals);
+    setHasMore(newProposals.length < total);
+    setSeed(apiSeed);
+    setPage(pageId + 1);
     setIsLoading(false);
   };
 
-  const fetchVotes = async (
+  const fetchVotedProposals = async (
     pageId: number,
     votesList: OrganisationVoteType[]
   ) => {
     if (!organisation) {
       return;
     }
+
     setIsLoading(true);
     const response = await OrganisationService.getVotes(
       organisation.organisationId,
       seed,
       pageId
     );
-    if (response) {
-      const { results, total, seed: apiSeed } = response;
-      const newVotesList = [...votesList, ...results];
-      setVotes(newVotesList);
-      setHasMore(newVotesList.length < total);
-      setSeed(apiSeed);
-      setPage(pageId + 1);
+
+    if (!response) {
+      setIsLoading(false);
+      return;
     }
+
+    const { results, total, seed: apiSeed } = response;
+    const newVotesList = [...votesList, ...results];
+    setVotes(newVotesList);
+    setHasMore(newVotesList.length < total);
+    setSeed(apiSeed);
+    setPage(pageId + 1);
     setIsLoading(false);
   };
 
   useEffect(() => {
     if (loadProposals) {
-      fetchProposals(page, proposals);
+      fetchOrganisationProposals(page, proposals);
     }
     if (loadVotes) {
-      fetchVotes(page, votes);
+      fetchVotedProposals(page, votes);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [organisation, loadMore]);
@@ -110,10 +119,10 @@ export const useOrganisation = (
 
   useEffect(() => {
     if (loadProposals) {
-      fetchProposals(0, []);
+      fetchOrganisationProposals(0, []);
     }
     if (loadVotes) {
-      fetchVotes(0, []);
+      fetchVotedProposals(0, []);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [language]);
