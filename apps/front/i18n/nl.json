@@ -618,7 +618,7 @@
   },
   "data_policy_modal": {
     "title": "Update van ons gegevensbeleid",
-    "description": "Make.org verbindt zich ertoe om je persoonsgegevens te respecteren tijdens elk bezoek aan onze site. Om je bezoek aan onze website voort te zetten terwijl je bent ingelogd op Make.org, moet je ons bijgewerkte {{data_policy_link}} ",
+    "description": "Make.org verbindt zich ertoe om je persoonsgegevens te respecteren tijdens elk bezoek aan onze site. Om je bezoek aan onze website voort te zetten terwijl je bent ingelogd op Make.org, moet je ons bijgewerkte ",
     "data_policy_link": "gegevensbeleid accepteren.",
     "consent": "<strong>Ik ga akkoord met het nieuwe gegevensbeleid</strong> en zal mijn persoonlijke omgeving op Make.org kunnen gebruiken",
     "validate": "Ik bevestig",

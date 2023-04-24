@@ -272,10 +272,12 @@
     "max_characters": "najviše znakova",
     "back": "Natrag",
     "proposal_count_one": "{{count}} prijedlog",
-    "proposal_count_other": "{{count}} prijedloga",
+    "proposal_count_few": "{{count}} prijedloga",
+    "proposal_count_other": "{{count}} prijedlogā",
     "breadcrumbs": "Hijerarhijska navigacija",
     "million_one": "milijun",
-    "million_other": "milijuna",
+    "million_few": "milijuna",
+    "million_other": "milijunā",
     "close_panel": "Zatvori pokretnu oglasnu ploču",
     "close": "Zatvori"
   },
@@ -297,10 +299,13 @@
     "content": "Sadržaj ideje: ",
     "link": "Prikaži pojedinosti ideje",
     "associated_proposals_one": "{{count}} pridruženi prijedlog",
-    "associated_proposals_other": "{{count}} pridružena prijedloga",
+    "associated_proposals_few": "{{count}} pridružena prijedloga",
+    "associated_proposals_other": "{{count}} pridružena prijedlogā",
     "position_one": "{{ count }} stajalište",
-    "position_other": "{{ count }} stajališta",
-    "candidate_one": " kandidata glede te ideje.",
+    "position_few": "{{ count }} stajališta",
+    "position_other": "{{ count }} stajalištā",
+    "candidate_one": " kandidat glede te ideje.",
+    "candidate_few": " kandidata glede te ideje.",
     "candidate_other": " kandidatā glede te ideje.",
     "open": "Prikaži rezultat ideje",
     "close": "Sakrij rezultat ideje",
@@ -460,7 +465,8 @@
     "disagree": "Ne slažem se",
     "neutral": "Niti se slažem niti neslažem",
     "label_one": "{{count}} glas",
-    "label_other": "{{count}} glasa",
+    "label_few": "{{count}} glasa",
+    "label_other": "{{count}} glasova",
     "with_percent": "{{votedKey}}: {{votedPercent}} %"
   },
   "unvote": {
@@ -470,7 +476,8 @@
     "static_total": "Ovaj prijedlog ima: ",
     "static_repartition": "Uz raspodjelu: ",
     "total_one": "Ovaj prijedlog ima {{count}} glas uz raspodjelu: ",
-    "total_other": "Ovaj prijedlog ima {{count}} glasa uz raspodjelu: ",
+    "total_few": "Ovaj prijedlog ima {{count}} glasa uz raspodjelu: ",
+    "total_other": "Ovaj prijedlog ima {{count}} glasova uz raspodjelu: ",
     "voted": {
       "agree": "Za taj prijedlog moj je glas „Slažem se”.",
       "disagree": "Za taj prijedlog moj je glas „Ne slažem se”.",
@@ -727,7 +734,8 @@
       "proposal_disagree": "ne slaže se s ovim prijedlogom",
       "and": " i ",
       "hasVoted_one": " je glasovao za ovaj prijedlog.",
-      "hasVoted_other": " su glasovali za ovaj prijedlog.",
+      "hasVoted_few": " su glasovali za ovaj prijedlog.",
+      "hasVoted_other": " je glasovalo za ovaj prijedlog.",
       "sharing_title": "Podijeli ovaj profil"
     }
   },
@@ -805,11 +813,14 @@
       "start_date": "Datum početka",
       "end_date": "Datum završetka rasprave",
       "remaining_one": "Preostali dan",
-      "remaining_other": "Preostala dana",
+      "remaining_few": "Preostala dana",
+      "remaining_other": "Preostalih danā",
       "proposals_one": "Prijedlog",
-      "proposals_other": "Prijedlozi",
+      "proposals_few": "Prijedloga",
+      "proposals_other": "Prijedlogā",
       "participant_one": "Sudionik",
-      "participant_other": "Sudionici",
+      "participant_few": "Sudionika",
+      "participant_other": "Sudionikā",
       "progress_title": "Naš ciljani ukupni broj glasova",
       "progress_total": "Ukupan broj glasova",
       "progress_target": " od {{votesTarget}} glasova ({{percent}} %)",
@@ -904,7 +915,8 @@
       "organisations_proposals": "Prijedlozi organizacija",
       "no_proposal": "<strong>Nijedan prijedlog</strong>",
       "validated_proposals_one": "<strong>{{count}} prijedlog je pronađen</strong> prema vašem pretraživanju",
-      "validated_proposals_other": "<strong>{{count}} prijedloga su pronađena</strong> prema vašem pretraživanju"
+      "validated_proposals_few": "<strong>{{count}} prijedloga su pronađena</strong> prema vašem pretraživanju",
+      "validated_proposals_other": "<strong>{{count}} prijedloga je pronađeno</strong> prema vašem pretraživanju"
     },
     "tabs": {
       "consultation": " Rasprava ",
@@ -985,7 +997,8 @@
       "top_ideas": {
         "skiplink": "Najbolje ideje koje se pojavljuju",
         "title_one": "Najbolje građanske ideje, raspoređene u {{count}} kategoriju",
-        "title_other": "Najbolje građanske ideje, raspoređene u {{count}} kategorije",
+        "title_few": "Najbolje građanske ideje, raspoređene u {{count}} kategorije",
+        "title_other": "Najbolje građanske ideje, raspoređene u {{count}} kategorija",
         "introduction": "Kada posjete platformu, najbolji se prijedlozi građana grupiraju u velike ideje koje čine raspravu. Kako bi se razvrstale ove ideje, algoritmom se platforme Make.org uzimaju u obzir glasove „za” i „protiv” kao i oznake „slažem se u cijelosti”, „realistično”, „banalno” i „ne slažem se nikako! ”.",
         "axe_title": "Kategorija {{count}}: {{name}}"
       },
@@ -1011,9 +1024,11 @@
     "local_actors": {
       "title": "Najaktivnija udruženja",
       "proposals_one": "{{ count }} prijedlog",
-      "proposals_other": "{{ count }} prijedlozi",
+      "proposals_few": "{{ count }} prijedloga",
+      "proposals_other": "{{ count }} prijedlogā",
       "votes_one": "{{ count }} glas",
-      "votes_other": "{{ count }} glasa",
+      "votes_few": "{{ count }} glasa",
+      "votes_other": "{{ count }} glasova",
       "participate": "Jeste li udruženje i želite sudjelovati u našoj raspravi? {{ contact_us }}",
       "contact_us": "Obratite nam se!",
       "more": "Prikaži više"
@@ -1050,11 +1065,14 @@
       "subtitle": "Vaše je mišljenje važno! Glasujte i predlažite rješenja kako biste utjecali na različite društvene teme i trenutačne probleme.",
       "participate": "Sudjeluj",
       "contributors_one": "sudionik",
-      "contributors_other": "sudionici",
+      "contributors_few": "sudionika",
+      "contributors_other": "sudionikā",
       "proposals_one": "prijedlog",
-      "proposals_other": "prijedlozi",
+      "proposals_few": "prijedloga",
+      "proposals_other": "prijedlogā",
       "votes_one": "glas",
-      "votes_other": "glasovi",
+      "votes_few": "glasa",
+      "votes_other": "glasova",
       "empty": "Žao nam je, trenutačno nema dostupnih rasprava u vašoj državi."
     },
     "results": {
@@ -1115,15 +1133,18 @@
     "highlights": {
       "title": "Make.org u brojkama",
       "participants": {
-        "subtitle_one": "sudionika",
-        "subtitle_other": "sudionikā"
+        "subtitle_one": "sudionik/ica",
+        "subtitle_few": "sudionika/ic",
+        "subtitle_other": "sudionikā/ica"
       },
       "proposals": {
-        "subtitle_one": "poslana prijedloga",
-        "subtitle_other": "poslanih prijedloga"
+        "subtitle_one": "poslan prijedlog",
+        "subtitle_few": "poslana prijedloga",
+        "subtitle_other": "poslanih prijedlogā"
       },
       "partners": {
-        "subtitle_one": "uključena udruženja i poduzeća",
+        "subtitle_one": "uključeno udruženje i poduzeće",
+        "subtitle_few": "uključena udruženja i poduzeća",
         "subtitle_other": "uključenih udruženjā i poduzećā"
       }
     },
@@ -1153,13 +1174,17 @@
       "loading": "Pretraživanje u tijeku...",
       "no_results": "Nijedan rezultat",
       "main_results_one": "{{count}} rezultat za « {{term}} »",
-      "main_results_other": "{{count}} rezultata za « {{term}} »",
+      "main_results_few": "{{count}} rezultata za « {{term}} »",
+      "main_results_other": "{{count}} rezultatā za « {{term}} »",
       "proposals_one": "{{count}} prijedlog za « {{term}} »",
-      "proposals_other": "{{count}} prijedloga za « {{term}} »",
+      "proposals_few": "{{count}} prijedloga za « {{term}} »",
+      "proposals_other": "{{count}} prijedlogā za « {{term}} »",
       "operations_one": "{{count}} akcija za « {{term}} »",
-      "operations_other": "{{count}} akcije za « {{term}} »",
+      "operations_few": "{{count}} akcije za « {{term}} »",
+      "operations_other": "{{count}} akcijā za « {{term}} »",
       "organisations_one": "{{count}} organizacije za « {{term}} »",
-      "organisations_other": "{{count}} organizacija za « {{term}} »",
+      "organisations_few": "{{count}} organizacija za « {{term}} »",
+      "organisations_other": "{{count}} organizacijā za « {{term}} »",
       "main_results_empty_term": "0 rezultata"
     },
     "main_results": {
@@ -1167,7 +1192,8 @@
       "organisation": "Organizacija",
       "operation": "Akcija",
       "results_one": "{{count}} rezultat",
-      "results_other": "{{count}} rezultata",
+      "results_few": "{{count}} rezultata",
+      "results_other": "{{count}} rezultatā",
       "view_all": "Prikaži sve",
       "no_results": "Nismo mogli pronaći nikakve rezultate za vašu pretragu « {{term}} »",
       "no_query": "Tražite li prijedlog, ideju, raspravu? Dodirnite svoje pretraživanje!",
@@ -1326,8 +1352,9 @@
       "duration": "Trajanje: {{duration}}",
       "session": "Sesija",
       "month": "{{count}} mjesec",
-      "year_one": "{{count}} godina",
-      "year_other": "{{count}} godine",
+      "year_one": "{{count}} godinu",
+      "year_few": "{{count}} godine",
+      "year_other": "{{count}} godina",
       "technicals": {
         "name": "Tehnički kolačići:",
         "description": "ovi su kolačići nužni za rad mrežnog mjesta i ne mogu se isključiti. Možete konfigurati svoj preglednik da se blokiraju ili da vas obavijest o postojanju ovih kolačića, ali time se može utjecati na određene dijelove našeg mrežnog mjesta. Ovim se kolačićima ne možete osobno identificirati.",

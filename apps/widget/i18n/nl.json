@@ -1,354 +1,354 @@
 {
-  "meta": {
-    "sequence": {
-      "title_standard": "Neem deel aan de raadpleging '{{question}}' - Make.org",
-      "title_controversy": "Kies tussen de voorstellen van de raadpleging '{{question}}' - Make.org",
-      "title_popular": "Neem een standpunt in over de populairste voorstellen van de raadpleging '{{question}}' - Make.org"
-    }
-  },
-  "common": {
-    "connexion_label": "Inloggen",
-    "register_label": "Aanmelden",
-    "continue": "Doorgaan",
-    "form": {
-      "hide_password": "Wachtwoord verbergen",
-      "show_password": "Wachtwoord tonen",
-      "requirements": "Alle velden zijn verplicht, tenzij anders vermeld.",
-      "requirements_short": "Alle velden zijn verplicht.",
-      "post_code": "Met de postcode kunnen we de resultaten per geografisch gebied analyseren.",
-      "label": {
-        "email": "E-mail",
-        "password": "Wachtwoord",
-        "firstname": "Voornaam",
-        "age": "Leeftijd",
-        "postalcode": "Postcode",
-        "profession": "Beroep",
-        "biography": "Biografie",
-        "website": "Website",
-        "organisation": "Naam van de organisatie",
-        "postalcode_optional": "Postcode (facultatief)",
-        "personality": {
-          "firstname": "Voornaam van de mannelijke kandidaat / lijsttrekker",
-          "lastname": "Achternaam van de mannelijke kandidaat / lijsttrekker"
+    "meta": {
+        "sequence": {
+            "title_standard": "Neem deel aan de raadpleging '{{question}}' - Make.org",
+            "title_controversy": "Kies tussen de voorstellen van de raadpleging '{{question}}' - Make.org",
+            "title_popular": "Neem een standpunt in over de populairste voorstellen van de raadpleging '{{question}}' - Make.org"
         }
-      },
-      "messages": {
-        "errors_notification": "We hebben fouten gevonden in dit formulier:",
-        "invalid_email": "Respecteer het e-mailformaat.",
-        "invalid_email_dynamic": "Respecteer het {{label}}formaat.",
-        "already_registered": "Dit e-mailadres bestaat al.",
-        "already_registered_dynamic": "Dit {{label}} bestaat al.",
-        "email_doesnot_exist": "Dit e-mailadres is niet gekoppeld aan je account, voer je e-mailadres opnieuw in.",
-        "email_doesnot_exist_dynamic": "Dit {{label}} is niet gekoppeld aan je account, voer je e-mailadres opnieuw in.",
-        "invalid_password": "Het wachtwoord moet minstens 8 tekens bevatten.",
-        "invalid_password_dynamic": "Het {{label}} moet minstens 8 tekens bevatten.",
-        "api_error": "Oeps! Er zijn problemen met het laden van deze pagina. Probeer het later nog eens.",
-        "mandatory": "Vul dit veld in.",
-        "mandatory_dynamic": "Het veld {{label}} is verplicht.",
-        "invalid_age": "Onze gebruikers moeten tussen de 8 en 120 jaar oud zijn.",
-        "invalid_age_dynamic": "{{label}}: Onze gebruikers moeten tussen de 8 en 120 jaar oud zijn.",
-        "the_field_[email]_is_missing": "Het veld {{label}} is verplicht.",
-        "the_field_[password]_is_missing": "Het veld {{label}} is verplicht.",
-        "invalid_postal_code": "De postcode moet 5 cijfers bevatten.",
-        "invalid_privacy_policy": "Je moet het gegevensbeleid aanvaarden.",
-        "invalid_postal_code_dynamic": "De {{label}} moet 5 cijfers bevatten.",
-        "submit_success": "De wijziging is opgeslagen.",
-        "malformed": "Respecteer het URL-formaat \"https://example.com\""
-      },
-      "password_requirements": "minimaal 8 tekens waaronder ten minste 1 cijfer, 1 hoofdletter en 1 speciaal teken."
     },
-    "social_login": {
-      "facebook_connect": "Ga verder met Facebook",
-      "google_connect": "Ga verder met Google",
-      "email_register": "Aanmelden per e-mail",
-      "count_register": "({{count}}/2)"
+    "common": {
+        "connexion_label": "Inloggen",
+        "register_label": "Aanmelden",
+        "continue": "Doorgaan",
+        "form": {
+            "hide_password": "Wachtwoord verbergen",
+            "show_password": "Wachtwoord tonen",
+            "requirements": "Alle velden zijn verplicht, tenzij anders vermeld.",
+            "requirements_short": "Alle velden zijn verplicht.",
+            "post_code": "Met de postcode kunnen we de resultaten per geografisch gebied analyseren.",
+            "label": {
+                "email": "E-mail",
+                "password": "Wachtwoord",
+                "firstname": "Voornaam",
+                "age": "Leeftijd",
+                "postalcode": "Postcode",
+                "profession": "Beroep",
+                "biography": "Biografie",
+                "website": "Website",
+                "organisation": "Naam van de organisatie",
+                "postalcode_optional": "Postcode (facultatief)",
+                "personality": {
+                    "firstname": "Voornaam van de mannelijke kandidaat / lijsttrekker",
+                    "lastname": "Achternaam van de mannelijke kandidaat / lijsttrekker"
+                }
+            },
+            "messages": {
+                "errors_notification": "We hebben fouten gevonden in dit formulier:",
+                "invalid_email": "Respecteer het e-mailformaat.",
+                "invalid_email_dynamic": "Respecteer het {{label}}formaat.",
+                "already_registered": "Dit e-mailadres bestaat al.",
+                "already_registered_dynamic": "Dit {{label}} bestaat al.",
+                "email_doesnot_exist": "Dit e-mailadres is niet gekoppeld aan je account, voer je e-mailadres opnieuw in.",
+                "email_doesnot_exist_dynamic": "Dit {{label}} is niet gekoppeld aan je account, voer je e-mailadres opnieuw in.",
+                "invalid_password": "Het wachtwoord moet minstens 8 tekens bevatten.",
+                "invalid_password_dynamic": "Het {{label}} moet minstens 8 tekens bevatten.",
+                "api_error": "Oeps! Er zijn problemen met het laden van deze pagina. Probeer het later nog eens.",
+                "mandatory": "Vul dit veld in.",
+                "mandatory_dynamic": "Het veld {{label}} is verplicht.",
+                "invalid_age": "Onze gebruikers moeten tussen de 8 en 120 jaar oud zijn.",
+                "invalid_age_dynamic": "{{label}}: Onze gebruikers moeten tussen de 8 en 120 jaar oud zijn.",
+                "the_field_[email]_is_missing": "Het veld {{label}} is verplicht.",
+                "the_field_[password]_is_missing": "Het veld {{label}} is verplicht.",
+                "invalid_postal_code": "De postcode moet 5 cijfers bevatten.",
+                "invalid_privacy_policy": "Je moet het gegevensbeleid aanvaarden.",
+                "invalid_postal_code_dynamic": "De {{label}} moet 5 cijfers bevatten.",
+                "submit_success": "De wijziging is opgeslagen.",
+                "malformed": "Respecteer het URL-formaat \"https://example.com\""
+            },
+            "password_requirements": "minimaal 8 tekens waaronder ten minste 1 cijfer, 1 hoofdletter en 1 speciaal teken."
+        },
+        "social_login": {
+            "facebook_connect": "Ga verder met Facebook",
+            "google_connect": "Ga verder met Google",
+            "email_register": "Aanmelden per e-mail",
+            "count_register": "({{count}}/2)"
+        },
+        "notifications": {
+            "bad_link": "Deze link is niet langer geldig.",
+            "secure_expired": {
+                "first_sentence": "Helaas ben je uitgelogd omdat je een tijd niet actief was",
+                "second_sentence": "Log opnieuw in zodat je kunt doorgaan met stemmen, voorstellen doen en in actie komen op Make.org.",
+                "emoji": "emoji droevig gezicht met traan"
+            },
+            "session_expired": {
+                "title": "Tijdslimiet inactiviteit",
+                "description": "Om de kwaliteit van onze dienst te waarborgen, zullen we de pagina opnieuw laden.",
+                "button_text": "Ik begrijp het"
+            },
+            "icons": {
+                "close": "Meldingsbanner sluiten",
+                "information": "Informatiebericht: ",
+                "success": "Succesbericht: ",
+                "error": "Foutmelding: ",
+                "alert": "Waarschuwingsbericht: "
+            },
+            "unexpected_error": "Er is een fout opgetreden, probeer het later nog eens.",
+            "network_error": "Het is niet mogelijk om toegang te krijgen tot de volledige inhoud van Make.org omdat je offline lijkt te zijn.",
+            "vote_only": {
+                "message": "Je kunt niet langer voorstellen doen voor de raadpleging \"{{title}}\", maar je kunt nog steeds stemmen over bestaande voorstellen.",
+                "button": "ik begrijp het"
+            },
+            "vote_on_proposal": "Stem over dit voorstel"
+        },
+        "propose": "Voorstellen",
+        "open_new_window": "Openen in een nieuw tabblad",
+        "loading": "Bezig met laden, even geduld.",
+        "participate": "Doe mee",
+        "display_tooltip": "Inhoud tooltip tonen",
+        "expand_collapse": "{{name}} - Inhoud keuzemenu tonen",
+        "shrink_collapse": "{{name}} - Inhoud keuzemenu verbergen",
+        "secondary_nav": "Secundaire navigatie",
+        "percent": "{{percent}}%",
+        "header_authentication_nav": "Toegang tot mijn gebruikersprofiel",
+        "footer_nav": "Navigatie in de voettekst",
+        "sidebar_area": "Inhoud van de zijbalk",
+        "max_characters": "maximaal aantal tekens",
+        "back": "Terug",
+        "proposal_count_one": "{{count}} voorstel",
+        "proposal_count_other": "{{count}} voorstellen",
+        "breadcrumbs": "kruimelpad",
+        "million_one": "miljoen",
+        "million_other": "miljoen",
+        "close_panel": "Dropdownmenu sluiten",
+        "close": "Sluiten"
     },
-    "notifications": {
-      "bad_link": "Deze link is niet langer geldig.",
-      "secure_expired": {
-        "first_sentence": "Helaas ben je uitgelogd omdat je een tijd niet actief was",
-        "second_sentence": "Log opnieuw in zodat je kunt doorgaan met stemmen, voorstellen doen en in actie komen op Make.org.",
-        "emoji": "emoji droevig gezicht met traan"
-      },
-      "session_expired": {
-        "title": "Tijdslimiet inactiviteit",
-        "description": "Om de kwaliteit van onze dienst te waarborgen, zullen we de pagina opnieuw laden.",
-        "button_text": "Ik begrijp het"
-      },
-      "icons": {
-        "close": "Meldingsbanner sluiten",
-        "information": "Informatiebericht: ",
-        "success": "Succesbericht: ",
-        "error": "Foutmelding: ",
-        "alert": "Waarschuwingsbericht: "
-      },
-      "unexpected_error": "Er is een fout opgetreden, probeer het later nog eens.",
-      "network_error": "Het is niet mogelijk om toegang te krijgen tot de volledige inhoud van Make.org omdat je offline lijkt te zijn.",
-      "vote_only": {
-        "message": "Je kunt niet langer voorstellen doen voor de raadpleging \"{{title}}\", maar je kunt nog steeds stemmen over bestaande voorstellen.",
-        "button": "ik begrijp het"
-      },
-      "vote_on_proposal": "Stem over dit voorstel"
+    "header": {
+        "logo_alt": "Ga naar de homepage van Make.org"
     },
-    "propose": "Voorstellen",
-    "open_new_window": "Openen in een nieuw tabblad",
-    "loading": "Bezig met laden, even geduld.",
-    "participate": "Doe mee",
-    "display_tooltip": "Inhoud tooltip tonen",
-    "expand_collapse": "{{name}} - Inhoud keuzemenu tonen",
-    "shrink_collapse": "{{name}} - Inhoud keuzemenu verbergen",
-    "secondary_nav": "Secundaire navigatie",
-    "percent": "{{percent}}%",
-    "header_authentication_nav": "Toegang tot mijn gebruikersprofiel",
-    "footer_nav": "Navigatie in de voettekst",
-    "sidebar_area": "Inhoud van de zijbalk",
-    "max_characters": "maximaal aantal tekens",
-    "back": "Terug",
-    "proposal_count_one": "{{count}} voorstel",
-    "proposal_count_other": "{{count}} voorstellen",
-    "breadcrumbs": "kruimelpad",
-    "million_one": "miljoen",
-    "million_other": "miljoen",
-    "close_panel": "Dropdownmenu sluiten",
-    "close": "Sluiten"
-  },
-  "header": {
-    "logo_alt": "Ga naar de homepage van Make.org"
-  },
-  "proposal_card": {
-    "next": "Volgend voorstel",
-    "validate": "Bevestigen",
-    "content": "Inhoud van het voorstel: ",
-    "posted_label": "Geplaatst in ",
-    "author": {
-      "from": "Voorstel van: ",
-      "age": "{{age}} jaar",
-      "date": "geplaatst op: "
+    "proposal_card": {
+        "next": "Volgend voorstel",
+        "validate": "Bevestigen",
+        "content": "Inhoud van het voorstel: ",
+        "posted_label": "Geplaatst in ",
+        "author": {
+            "from": "Voorstel van: ",
+            "age": "{{age}} jaar",
+            "date": "geplaatst op: "
+        },
+        "status": {
+            "title": "Status van het voorstel: ",
+            "accepted": "Gepubliceerd",
+            "refused": "Afgewezen",
+            "postponed": "In afwachting van moderatie",
+            "pending": "In afwachting van moderatie"
+        },
+        "original": "Bekijk de originele versie",
+        "translation": "Bekijk de vertaling"
     },
-    "status": {
-      "title": "Status van het voorstel: ",
-      "accepted": "Gepubliceerd",
-      "refused": "Afgewezen",
-      "postponed": "In afwachting van moderatie",
-      "pending": "In afwachting van moderatie"
+    "intro_card": {
+        "title": "Duizenden burgers stellen oplossingen voor.",
+        "description": "Neem een standpunt in over deze oplossingen en stel je eigen oplossingen voor.\nDe beste oplossingen zullen bepalend zijn voor onze acties.",
+        "button": "Beginnen"
     },
-    "original": "Bekijk de originele versie",
-    "translation": "Bekijk de vertaling"
-  },
-  "intro_card": {
-    "title": "Duizenden burgers stellen oplossingen voor.",
-    "description": "Neem een standpunt in over deze oplossingen en stel je eigen oplossingen voor.\nDe beste oplossingen zullen bepalend zijn voor onze acties.",
-    "button": "Beginnen"
-  },
-  "final_card": {
-    "title": "Bedankt voor je reactie op de voorstellen!",
-    "description": "Blijf stemmen om ons te helpen prioriteiten te stellen.",
-    "link_text": "Ik ga naar de raadpleging",
+    "final_card": {
+        "title": "Bedankt voor je reactie op de voorstellen!",
+        "description": "Blijf stemmen om ons te helpen prioriteiten te stellen.",
+        "link_text": "Ik ga naar de raadpleging",
+        "register": {
+            "description": "Hoe kan ik de resultaten volgen?",
+            "button_intro": "Maak je",
+            "button_text": "persoonlijke omgeving aan."
+        }
+    },
+    "no_proposal_card": {
+        "title": {
+            "regular": "Bedankt voor je geweldige bijdrage!",
+            "popular": "Bedankt, je hebt gestemd over alle meest populaire voorstellen",
+            "controversial": "Bedankt, je hebt gestemd over alle meest controversiële voorstellen",
+            "keyword": "Bedankt, je hebt gestemd over alle voorstellen van \"{{keyword}}\""
+        },
+        "description": {
+            "regular": "Er zijn momenteel geen nieuwe voorstellen.",
+            "special": "Blijf stemmen om ons te helpen prioriteiten te stellen."
+        },
+        "link_text": "Ik ga naar de raadpleging",
+        "sharing": "Of geef deze raadpleging meer bekendheid door deze te verspreiden."
+    },
+    "push_proposal_card": {
+        "title": "En heb jij een oplossing voor dit onderwerp?",
+        "next-cta": "Nog niet, ik ga door met stemmen"
+    },
+    "sequence_progress": {
+        "previous": "Ga naar het vorige item",
+        "counter": "Item {{current}} van {{total}}"
+    },
+    "sequence_zone": {
+        "popular_title": "Populaire voorstellen",
+        "controversial_title": "Controversiële voorstellen"
+    },
+    "special_final_card": {
+        "title": "Bedankt voor je stemmen!",
+        "subtitle": "Je kunt blijven deelnemen aan de raadpleging",
+        "cta_text": "Ik ga naar de raadpleging"
+    },
+    "demographics_card": {
+        "disclaimer": "Je gegevens zijn anoniem en maken onze resultaten representatief.",
+        "skip": "Overslaan",
+        "submit": "Opslaan",
+        "submitted_thanks": "Bedankt voor je antwoord.",
+        "submitted_disclaimer": " Het zal anoniem worden gebruikt om de resultaten van de raadpleging te analyseren.",
+        "select": "Kiezen"
+    },
+    "proposal_submit": {
+        "form": {
+            "bait": "Er moet ",
+            "title": "Dien je voorstel van maximaal 140 tekens in. Voer je voorstel in het daarvoor bestemde veld in en klik op \"Bevestigen\"",
+            "field": "Voorstelvelden",
+            "counter": "Je voorstel bestaat uit {{current}} tekens op een totaal van {{total}} beschikbare tekens",
+            "panel_trigger": "Ik stel een oplossing voor",
+            "read_our": "Raadpleeg ons",
+            "moderation_link": "moderatiebeleid",
+            "button_propose": "VOORSTELLEN"
+        },
+        "authentication": {
+            "back": "Terug",
+            "last_step_red": "Nog één stap ",
+            "last_step": "om je voorstel te versturen!",
+            "button_login_text": "Ik heb al een account,",
+            "button_login_link": "ik log in.",
+            "button_login": "Inloggen",
+            "back_authentication": "Terug naar het inlogscherm"
+        },
+        "success": {
+            "button": "Doorgaan met stemmen",
+            "other_idea": "Ik heb een ander idee",
+            "tooltip_title": "Wordt gemodereerd",
+            "tooltip_description": "Je voorstel wordt binnen 48 uur verwerkt door onze teams, intussen kun je het in je profiel terugvinden.",
+            "grats": "Gefeliciteerd {{name}}, ",
+            "proposal_sent": "je voorstel is verzonden ",
+            "activate": "Bevestig je e-mailadres met één klik ",
+            "link": "om de authenticiteit van je account te garanderen. Klik op de activeringslink die naar dit e-mailadres is gestuurd: {{mail}}",
+            "question": "Heb je een vraag? Neem contact met ons op: ",
+            "consultation_access": "Ik ga naar de raadpleging"
+        }
+    },
+    "vote": {
+        "intro_title": "Ik geef mijn mening over dit voorstel: ",
+        "agree": "Mee eens",
+        "disagree": "Niet mee eens",
+        "neutral": "Neutraal",
+        "label_one": "{{count}} stem",
+        "label_other": "{{count}} stemmen",
+        "with_percent": "{{votedKey}}: {{votedPercent}}%"
+    },
+    "unvote": {
+        "title": "Ik trek mijn mening over dit voorstel in."
+    },
+    "qualification": {
+        "title": "Ik wil mijn mening over dit voorstel verduidelijken:",
+        "static_repartition": "Dit voorstel is gekwalificeerd als: ",
+        "times": "keer",
+        "likeIt": "Favoriet",
+        "doable": "Realistisch",
+        "platitudeAgree": "Cliché",
+        "noWay": "Zeker niet!",
+        "impossible": "Onhaalbaar",
+        "platitudeDisagree": "Cliché",
+        "doNotUnderstand": "Niet begrepen",
+        "noOpinion": "Geen mening",
+        "doNotCare": "Onbelangrijk"
+    },
+    "sequence": {
+        "return": "Terug naar de voorstellen",
+        "title": "Stem over de voorstellen van de raadpleging: ",
+        "more": "Toegang tot de hele raadpleging"
+    },
+    "login": {
+        "title": "Ik heb al een account",
+        "connect": "Inloggen",
+        "or": "of",
+        "forgot_password": "Wachtwoord vergeten?",
+        "registration_title": "Ik heb geen account,",
+        "registration_link": "ik maak er een aan.",
+        "email_doesnot_exist": "Je {{emailLabel}} of {{passwordLabel}} is onjuist."
+    },
     "register": {
-      "description": "Hoe kan ik de resultaten volgen?",
-      "button_intro": "Maak je",
-      "button_text": "persoonlijke omgeving aan."
+        "title": "Een account aanmaken",
+        "or": "of",
+        "login_title": "Ik heb al een account,",
+        "login_link": "ik log in.",
+        "gtu_text_first": "Door je te registreren ga je akkoord met onze ",
+        "gtu_link": "algemene gebruiksvoorwaarden."
+    },
+    "legal_consent": {
+        "title": "Wettelijke toestemming",
+        "subtitle": "We hebben toestemming nodig van een van je ouders",
+        "description": "We hebben twee toestemmingen nodig om je toegang te geven tot ons burgerplatform. Binnenkort kun je je uitspreken over al onze raadplegingen!",
+        "minor_consent": "Ik geef toestemming voor de verwerking van mijn persoonsgegevens door Make.org.",
+        "parental_consent": "Als ouder of voogd geef ik toestemming voor de verwerking van de persoonsgegevens van mijn kind door Make.org.",
+        "cancel": "Annuleren",
+        "submit": "Bevestigen",
+        "privacy_policy_first_part": "Ik ga ermee akkoord dat Make.org deze gegevens verwerkt zodat ik kan deelnemen en geïnformeerd kan worden over de resultaten volgens het ",
+        "privacy_policy_link": "handvest",
+        "privacy_policy_last_part": ". (verplicht)",
+        "privacy_policy": "gegevensbeleid",
+        "make_protect": "Make.org zet zich in voor de bescherming van je",
+        "make_protect_link": " persoonsgegevens.",
+        "opt_in": "Ik ga akkoord met het ontvangen van e-mails van Make.org om mij op de hoogte te houden van lopende en toekomstige raadplegingen. (facultatief)"
+    },
+    "forgot_password": {
+        "title": "Ik stel mijn wachtwoord opnieuw in",
+        "description": "Voer het e-mailadres van je Make.org-account in om de link te ontvangen waarmee je je wachtwoord opnieuw kunt instellen.",
+        "success": "Bedankt, je ontvangt een e-mail om je wachtwoord aan te passen.",
+        "return": "Terug naar ",
+        "login_link": "het inlogscherm",
+        "send_link": "e-mail ontvangen"
+    },
+    "reset_password": {
+        "title": "Ik maak een nieuw wachtwoord aan",
+        "info": "Je kunt een nieuw wachtwoord kiezen.",
+        "send_cta": "Bevestigen",
+        "success": {
+            "title": "Bedankt, je wachtwoord is aangepast."
+        },
+        "failure": {
+            "bad_link": "Deze link is niet langer geldig."
+        }
+    },
+    "data_policy_modal": {
+        "title": "Update van ons gegevensbeleid",
+        "description": "Make.org verbindt zich ertoe om je persoonsgegevens te respecteren tijdens elk bezoek aan onze site. Om je bezoek aan onze website voort te zetten terwijl je bent ingelogd op Make.org, moet je ons bijgewerkte ",
+        "consent": "<strong>Ik ga akkoord met het nieuwe gegevensbeleid</strong> en zal mijn persoonlijke omgeving op Make.org kunnen gebruiken",
+        "validate": "Ik bevestig",
+        "stay": "Ik blijf",
+        "leave": "Ik stop ermee",
+        "refusal_title": "Weet je zeker dat je wilt stoppen?",
+        "refusal_description_first_part": "Als je ons nieuwe ",
+        "refusal_description_second_part": "weigert, heb je geen toegang meer tot je persoonlijke omgeving op Make.org."
+    },
+    "not_found": {
+        "intro": "oeps",
+        "title": "Fout 404",
+        "description": "De door jou opgevraagde pagina bestaat niet of niet meer."
+    },
+    "report_translations": {
+        "button": "Opties van het voorstel",
+        "confirmation": {
+            "title": "Bedankt voor je melding!",
+            "description": "Ons team gaat er zo snel mogelijk naar kijken."
+        },
+        "form": {
+            "title": "Probleem met automatische vertaling melden",
+            "unclear": "Onbegrijpelijke vertaling",
+            "error": "Fout in de vertaling",
+            "false_info": "Bevat onjuiste informatie",
+            "offensive": "Offensief voorstel",
+            "report": "Melden"
+        },
+        "first_step": {
+            "title": "Automatische vertaling",
+            "text": "De voorstellen van onze raadplegingen zijn automatisch vertaald. Als je een fout opmerkt, neem dan gerust contact met ons op!"
+        }
+    },
+    "top_proposal_card": {
+        "start": "@@top_proposal_card.start|fr:Commencer à voter"
+    },
+    "maintenance": {
+        "subtitle": "@@maintenance.subtitle|fr:Oops, nous sommes désolé! Make.org est actuellement en maintenance"
+    },
+    "unsecure": {
+        "title": "@@unsecure.title|fr:La consultation est maintenant terminée",
+        "description": "@@unsecure.description|fr:Vous souhaitez en savoir plus sur ce sujet ? Découvrez la suite de l'opération et restez informé(e) de toutes nos consultations citoyennes en vous inscrivant sur Make.org",
+        "link": "@@unsecure.link|fr:Découvrir notre opération"
     }
-  },
-  "no_proposal_card": {
-    "title": {
-      "regular": "Bedankt voor je geweldige bijdrage!",
-      "popular": "Bedankt, je hebt gestemd over alle meest populaire voorstellen",
-      "controversial": "Bedankt, je hebt gestemd over alle meest controversiële voorstellen",
-      "keyword": "Bedankt, je hebt gestemd over alle voorstellen van \"{{keyword}}\""
-    },
-    "description": {
-      "regular": "Er zijn momenteel geen nieuwe voorstellen.",
-      "special": "Blijf stemmen om ons te helpen prioriteiten te stellen."
-    },
-    "link_text": "Ik ga naar de raadpleging",
-    "sharing": "Of geef deze raadpleging meer bekendheid door deze te verspreiden."
-  },
-  "push_proposal_card": {
-    "title": "En heb jij een oplossing voor dit onderwerp?",
-    "next-cta": "Nog niet, ik ga door met stemmen"
-  },
-  "sequence_progress": {
-    "previous": "Ga naar het vorige item",
-    "counter": "Item {{current}} van {{total}}"
-  },
-  "sequence_zone": {
-    "popular_title": "Populaire voorstellen",
-    "controversial_title": "Controversiële voorstellen"
-  },
-  "special_final_card": {
-    "title": "Bedankt voor je stemmen!",
-    "subtitle": "Je kunt blijven deelnemen aan de raadpleging",
-    "cta_text": "Ik ga naar de raadpleging"
-  },
-  "demographics_card": {
-    "disclaimer": "Je gegevens zijn anoniem en maken onze resultaten representatief.",
-    "skip": "Overslaan",
-    "submit": "Opslaan",
-    "submitted_thanks": "Bedankt voor je antwoord.",
-    "submitted_disclaimer": " Het zal anoniem worden gebruikt om de resultaten van de raadpleging te analyseren.",
-    "select": "Kiezen"
-  },
-  "proposal_submit": {
-    "form": {
-      "bait": "Er moet ",
-      "title": "Dien je voorstel van maximaal 140 tekens in. Voer je voorstel in het daarvoor bestemde veld in en klik op \"Bevestigen\"",
-      "field": "Voorstelvelden",
-      "counter": "Je voorstel bestaat uit {{current}} tekens op een totaal van {{total}} beschikbare tekens",
-      "panel_trigger": "Ik stel een oplossing voor",
-      "read_our": "Raadpleeg ons",
-      "moderation_link": "moderatiebeleid",
-      "button_propose": "VOORSTELLEN"
-    },
-    "authentication": {
-      "back": "Terug",
-      "last_step_red": "Nog één stap ",
-      "last_step": "om je voorstel te versturen!",
-      "button_login_text": "Ik heb al een account,",
-      "button_login_link": "ik log in.",
-      "button_login": "Inloggen",
-      "back_authentication": "Terug naar het inlogscherm"
-    },
-    "success": {
-      "button": "Doorgaan met stemmen",
-      "other_idea": "Ik heb een ander idee",
-      "tooltip_title": "Wordt gemodereerd",
-      "tooltip_description": "Je voorstel wordt binnen 48 uur verwerkt door onze teams, intussen kun je het in je profiel terugvinden.",
-      "grats": "Gefeliciteerd {{name}}, ",
-      "proposal_sent": "je voorstel is verzonden ",
-      "activate": "Bevestig je e-mailadres met één klik ",
-      "link": "om de authenticiteit van je account te garanderen. Klik op de activeringslink die naar dit e-mailadres is gestuurd: {{mail}}",
-      "question": "Heb je een vraag? Neem contact met ons op: ",
-      "consultation_access": "Ik ga naar de raadpleging"
-    }
-  },
-  "vote": {
-    "intro_title": "Ik geef mijn mening over dit voorstel: ",
-    "agree": "Mee eens",
-    "disagree": "Niet mee eens",
-    "neutral": "Neutraal",
-    "label_one": "{{count}} stem",
-    "label_other": "{{count}} stemmen",
-    "with_percent": "{{votedKey}}: {{votedPercent}}%"
-  },
-  "unvote": {
-    "title": "Ik trek mijn mening over dit voorstel in."
-  },
-  "qualification": {
-    "title": "Ik wil mijn mening over dit voorstel verduidelijken:",
-    "static_repartition": "Dit voorstel is gekwalificeerd als: ",
-    "times": "keer",
-    "likeIt": "Favoriet",
-    "doable": "Realistisch",
-    "platitudeAgree": "Cliché",
-    "noWay": "Zeker niet!",
-    "impossible": "Onhaalbaar",
-    "platitudeDisagree": "Cliché",
-    "doNotUnderstand": "Niet begrepen",
-    "noOpinion": "Geen mening",
-    "doNotCare": "Onbelangrijk"
-  },
-  "sequence": {
-    "return": "Terug naar de voorstellen",
-    "title": "Stem over de voorstellen van de raadpleging: ",
-    "more": "Toegang tot de hele raadpleging"
-  },
-  "login": {
-    "title": "Ik heb al een account",
-    "connect": "Inloggen",
-    "or": "of",
-    "forgot_password": "Wachtwoord vergeten?",
-    "registration_title": "Ik heb geen account,",
-    "registration_link": "ik maak er een aan.",
-    "email_doesnot_exist": "Je {{emailLabel}} of {{passwordLabel}} is onjuist."
-  },
-  "register": {
-    "title": "Een account aanmaken",
-    "or": "of",
-    "login_title": "Ik heb al een account,",
-    "login_link": "ik log in.",
-    "gtu_text_first": "Door je te registreren ga je akkoord met onze ",
-    "gtu_link": "algemene gebruiksvoorwaarden."
-  },
-  "legal_consent": {
-    "title": "Wettelijke toestemming",
-    "subtitle": "We hebben toestemming nodig van een van je ouders",
-    "description": "We hebben twee toestemmingen nodig om je toegang te geven tot ons burgerplatform. Binnenkort kun je je uitspreken over al onze raadplegingen!",
-    "minor_consent": "Ik geef toestemming voor de verwerking van mijn persoonsgegevens door Make.org.",
-    "parental_consent": "Als ouder of voogd geef ik toestemming voor de verwerking van de persoonsgegevens van mijn kind door Make.org.",
-    "cancel": "Annuleren",
-    "submit": "Bevestigen",
-    "privacy_policy_first_part": "Ik ga ermee akkoord dat Make.org deze gegevens verwerkt zodat ik kan deelnemen en geïnformeerd kan worden over de resultaten volgens het ",
-    "privacy_policy_link": "handvest",
-    "privacy_policy_last_part": ". (verplicht)",
-    "privacy_policy": "gegevensbeleid",
-    "make_protect": "Make.org zet zich in voor de bescherming van je",
-    "make_protect_link": " persoonsgegevens.",
-    "opt_in": "Ik ga akkoord met het ontvangen van e-mails van Make.org om mij op de hoogte te houden van lopende en toekomstige raadplegingen. (facultatief)"
-  },
-  "forgot_password": {
-    "title": "Ik stel mijn wachtwoord opnieuw in",
-    "description": "Voer het e-mailadres van je Make.org-account in om de link te ontvangen waarmee je je wachtwoord opnieuw kunt instellen.",
-    "success": "Bedankt, je ontvangt een e-mail om je wachtwoord aan te passen.",
-    "return": "Terug naar ",
-    "login_link": "het inlogscherm",
-    "send_link": "e-mail ontvangen"
-  },
-  "reset_password": {
-    "title": "Ik maak een nieuw wachtwoord aan",
-    "info": "Je kunt een nieuw wachtwoord kiezen.",
-    "send_cta": "Bevestigen",
-    "success": {
-      "title": "Bedankt, je wachtwoord is aangepast."
-    },
-    "failure": {
-      "bad_link": "Deze link is niet langer geldig."
-    }
-  },
-  "data_policy_modal": {
-    "title": "Update van ons gegevensbeleid",
-    "description": "Make.org verbindt zich ertoe om je persoonsgegevens te respecteren tijdens elk bezoek aan onze site. Om je bezoek aan onze website voort te zetten terwijl je bent ingelogd op Make.org, moet je ons bijgewerkte {{data_policy_link}} ",
-    "consent": "<strong>Ik ga akkoord met het nieuwe gegevensbeleid</strong> en zal mijn persoonlijke omgeving op Make.org kunnen gebruiken",
-    "validate": "Ik bevestig",
-    "stay": "Ik blijf",
-    "leave": "Ik stop ermee",
-    "refusal_title": "Weet je zeker dat je wilt stoppen?",
-    "refusal_description_first_part": "Als je ons nieuwe ",
-    "refusal_description_second_part": "weigert, heb je geen toegang meer tot je persoonlijke omgeving op Make.org."
-  },
-  "not_found": {
-    "intro": "oeps",
-    "title": "Fout 404",
-    "description": "De door jou opgevraagde pagina bestaat niet of niet meer."
-  },
-  "report_translations": {
-    "button": "Opties van het voorstel",
-    "confirmation": {
-      "title": "Bedankt voor je melding!",
-      "description": "Ons team gaat er zo snel mogelijk naar kijken."
-    },
-    "form": {
-      "title": "Probleem met automatische vertaling melden",
-      "unclear": "Onbegrijpelijke vertaling",
-      "error": "Fout in de vertaling",
-      "false_info": "Bevat onjuiste informatie",
-      "offensive": "Offensief voorstel",
-      "report": "Melden"
-    },
-    "first_step": {
-      "title": "Automatische vertaling",
-      "text": "De voorstellen van onze raadplegingen zijn automatisch vertaald. Als je een fout opmerkt, neem dan gerust contact met ons op!"
-    }
-  },
-  "top_proposal_card": {
-    "start": "@@top_proposal_card.start|fr:Commencer à voter"
-  },
-  "maintenance": {
-    "subtitle": "@@maintenance.subtitle|fr:Oops, nous sommes désolé! Make.org est actuellement en maintenance"
-  },
-  "unsecure": {
-    "title": "@@unsecure.title|fr:La consultation est maintenant terminée",
-    "description": "@@unsecure.description|fr:Vous souhaitez en savoir plus sur ce sujet ? Découvrez la suite de l'opération et restez informé(e) de toutes nos consultations citoyennes en vous inscrivant sur Make.org",
-    "link": "@@unsecure.link|fr:Découvrir notre opération"
-  }
 }

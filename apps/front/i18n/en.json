@@ -40,7 +40,7 @@
     },
     "top-idea-details": {
       "title": "Details of the idea '{{idea}}' arising from the consultation '{{question}}' - Make.org",
-      "description": "Learn more about the proposals related to this idea."
+      "description": "Learn more about the proposals related to the idea {{idea}} from the consultation '{{question}}'"
     },
     "search": {
       "main_results": "Search - Results for '{{term}}' - Make.org",
@@ -294,7 +294,7 @@
   "proposal_card": {
     "previous": "Previous proposal",
     "next": "Next proposal",
-    "number": "Proposal number",
+    "number": "Proposal number {{current}} on {{total}}",
     "posted_label": "Published in ",
     "author": {
       "age": "{{age}}",
@@ -465,7 +465,7 @@
     "forgot_password_link": "I have forgotten my password.",
     "registration_title": "I don’t have an account.",
     "registration_link": "Let's create one.",
-    "email_doesnot_exist": "Invalid login or password.",
+    "email_doesnot_exist": "Invalid {{emailLabel}} or {{passwordLabel}}.",
     "connect": "Log in",
     "forgot_password": "Forgotten your password?"
   },

@@ -625,7 +625,7 @@
   },
   "data_policy_modal": {
     "title": "Aggiornamento della politica sull'utilizzo dei dati",
-    "description": "Make.org si impegna a rispettare i tuoi dati personali in occasione di ogni tua visita sul sito. Per proseguire la navigazione con l'account Make.org connesso, devi accettare l'aggiornamento della {{data_policy_link}} ",
+    "description": "Make.org si impegna a rispettare i tuoi dati personali in occasione di ogni tua visita sul sito. Per proseguire la navigazione con l'account Make.org connesso, devi accettare l'aggiornamento della ",
     "data_policy_link": "politica sull'utilizzo dei dati.",
     "consent": "<strong>Accetto la nuova politica sull'utilizzo dei dati</strong> per usare la mia area riservata Make.org",
     "validate": "Confermo",

@@ -289,7 +289,7 @@
     "button_1": "osallistu",
     "button_2": "lue lisää",
     "share_text": "Tue tätä ehdotusta jakamalla se:",
-    "footer_text": "Tämä ehdotus on lähetetty kuulemisen {{Operation_name}} yhteydessä"
+    "footer_text": "Tämä ehdotus on lähetetty kuulemisen {{operation_name}} yhteydessä"
   },
   "idea_card": {
     "title": "Parhaat ideat",
@@ -376,7 +376,7 @@
   },
   "sequence_progress": {
     "previous": "Siirry edelliseen elementtiin",
-    "counter": "Elementti {{index}}/{{total}}"
+    "counter": "Elementti {{current}}/{{total}}"
   },
   "sequence_zone": {
     "popular_title": "Suosittuja ehdotuksia",
@@ -507,7 +507,7 @@
     "forgot_password": "Unohditko salasanasi?",
     "registration_title": "Minulla ei ole tiliä.",
     "registration_link": "Haluan luoda sellaisen.",
-    "email_doesnot_exist": "{{emailabel}} tai {{passwordLabel}} on virheellinen."
+    "email_doesnot_exist": "{{emailLabel}} tai {{passwordLabel}} on virheellinen."
   },
   "register": {
     "title": "Luo tili",
@@ -618,7 +618,7 @@
   },
   "data_policy_modal": {
     "title": "Tietosuojakäytäntömme päivitys",
-    "description": "Make.org sitoutuu suojaamaan henkilötietojasi aina, kun vierailet sivustolla. Jos haluat jatkossakin selata Make.org-sivustoa kirjautuneena, sinun on hyväksyttävä päivitetty {{data_policy_link}} ",
+    "description": "Make.org sitoutuu suojaamaan henkilötietojasi aina, kun vierailet sivustolla. Jos haluat jatkossakin selata Make.org-sivustoa kirjautuneena, sinun on hyväksyttävä päivitetty ",
     "data_policy_link": "tietosuojakäytäntömme.",
     "consent": "<strong> hyväksyn uuden tietokäytännön </strong> ja voin jatkossakin käyttää kansalaisaluettani Make.org-sivustolla.",
     "validate": "Hyväksy",

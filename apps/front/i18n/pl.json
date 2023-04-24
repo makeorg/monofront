@@ -625,7 +625,7 @@
   },
   "data_policy_modal": {
     "title": "Aktualizacja naszej polityki prywatności",
-    "description": "Make.org zobowiązuje się do poszanowania Twoich danych osobowych podczas każdej wizyty na stronie. Aby móc kontynuować nawigację, będąc zalogowaną/-ym na Make.org, musisz zaakceptować naszą zaktualizowaną {{data_policy_link}} ",
+    "description": "Make.org zobowiązuje się do poszanowania Twoich danych osobowych podczas każdej wizyty na stronie. Aby móc kontynuować nawigację, będąc zalogowaną/-ym na Make.org, musisz zaakceptować naszą zaktualizowaną ",
     "data_policy_link": "politykę prywatności.",
     "consent": "<strong>Akceptuję nową politykę prywatności</strong>, aby móc korzystać z mojej przestrzeni użytkownika Make.org",
     "validate": "Potwierdzam",

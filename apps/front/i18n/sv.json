@@ -1158,7 +1158,7 @@
       "proposals_other": "{{count}} förslag för « {{term}} »",
       "operations_one": "{{count}} projekt för « {{term}} »",
       "operations_other": "{{count}} projekt för « {{term}} »",
-      "organisations_one": "{{count}} organisationer för « {{term}} »",
+      "organisations_one": "{{count}} organisation för « {{term}} »",
       "organisations_other": "{{count}} organisationer för « {{term}} »",
       "main_results_empty_term": "0 resultat"
     },
