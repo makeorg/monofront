@@ -105,10 +105,12 @@
     "max_characters": "najviše znakova",
     "back": "Natrag",
     "proposal_count_one": "{{count}} prijedlog",
-    "proposal_count_other": "{{count}} prijedloga",
+    "proposal_count_few": "{{count}} prijedloga",
+    "proposal_count_other": "{{count}} prijedlogā",
     "breadcrumbs": "Hijerarhijska navigacija",
     "million_one": "milijun",
-    "million_other": "milijuna",
+    "million_few": "milijuna",
+    "million_other": "milijunā",
     "close_panel": "Zatvori pokretnu oglasnu ploču",
     "close": "Zatvori"
   },
@@ -247,7 +249,8 @@
     "disagree": "Ne slažem se",
     "neutral": "Niti se slažem niti neslažem",
     "label_one": "{{count}} glas",
-    "label_other": "{{count}} glasa",
+    "label_few": "{{count}} glasa",
+    "label_other": "{{count}} glasova",
     "with_percent": "{{votedKey}}: {{votedPercent}} %"
   },
   "unvote": {

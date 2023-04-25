@@ -105,9 +105,13 @@
     "max_characters": "največje število znakov",
     "back": "Nazaj",
     "proposal_count_one": "{{count}} predlog",
+    "proposal_count_two": "{{count}} predloga",
+    "proposal_count_few": "{{count}} predlogi",
     "proposal_count_other": "{{count}} predlogov",
     "breadcrumbs": "sledenje poti",
     "million_one": "milijon",
+    "million_two": "milijona",
+    "million_few": "milijoni",
     "million_other": "milijonov",
     "close_panel": "Zapri spustno okno",
     "close": "Zapri"
@@ -247,6 +251,8 @@
     "disagree": "Proti",
     "neutral": "Neopredeljen/-a",
     "label_one": "{{count}} glas",
+    "label_two": "{{count}} glasova",
+    "label_few": "{{count}} glasovi",
     "label_other": "{{count}} glasov",
     "with_percent": "{{votedKey}}: {{votedPercent}} %"
   },
