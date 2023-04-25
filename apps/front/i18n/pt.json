@@ -1,0 +1,1429 @@
+{
+  "meta": {
+    "home": {
+      "title": "Agir com Make.org - Make.org",
+      "description": "Proponha, vote, atue: vamos encontrar juntos soluções para as grandes questões atuais.",
+      "picture": "https://assets.make.org/assets/metas/default_meta-fr.png"
+    },
+    "organisation": {
+      "proposals": {
+        "title": "{{organisation}} - as suas propostas - Make.org"
+      },
+      "positions": {
+        "title": "{{organisation}} - as suas tomadas de posição - Make.org"
+      }
+    },
+    "profile": {
+      "proposals": {
+        "title": "Perfil - As minhas propostas - Make.org"
+      },
+      "favorites": {
+        "title": "Perfil - Os meus favoritos - Make.org"
+      },
+      "edit": {
+        "title": "Editar o meu perfil - Make.org"
+      }
+    },
+    "proposal": {
+      "title": "Proposta '{{proposal}}' da consulta '{{question}}' - Make.org",
+      "description": "Apoiem a minha proposta através da votação e vamos encontrar juntos soluções para as principais questões atuais. As mais apoiadas serão postas em ação por Make.org e pelos seus parceiros."
+    },
+    "participate": {
+      "title": "Participar nas consultas – {{question}} – Make.org",
+      "description": "Proponha, vote, atuemos: vamos encontrar juntos soluções para as grandes questões atuais."
+    },
+    "explore": {
+      "title": "Explorar as propostas da consulta '{{question}}' - Make.org"
+    },
+    "results": {
+      "title": "Resultados da consulta '{{question}}' - Make.org",
+      "description": "Descubra os resultados da consulta aos cidadãos classificados nos temas mais populares, as propostas mais polémicas e as propostas mais rejeitadas."
+    },
+    "sequence": {
+      "title_standard": "Participe na consulta '{{question}}' - Make.org",
+      "title_controversy": "Decida sobre as propostas da consulta '{{question}}' - Make.org",
+      "title_popular": "Tome uma posição sobre as propostas mais populares da consulta '{{question}}' - Make.org",
+      "title_keyword": "Tomar uma posição sobre a temática '{{keywordLabel}}' da consulta '{{question}}' - Make.org "
+    },
+    "top-ideas": {
+      "title": "As melhores ideias da consulta '{{question}}' - Make.org",
+      "description": "Descubra as melhores ideias resultantes da consulta '{{question}}'"
+    },
+    "top-idea-details": {
+      "title": "Pormenores da ideia '{{idea}}' da consulta '{{question}}' - Make.org",
+      "description": "Descubra todas as propostas da ideia {{idea}} resultante da consulta '{{question}}'"
+    },
+    "search": {
+      "main_results": "Pesquisa - Resultados para « {{term}} » - Make.org",
+      "proposals": "Pesquisa - Resultados das propostas para « {{term}} » - Make.org",
+      "consultations": "Pesquisa - Resultados das consultas para « {{term}} » - Make.org",
+      "organisations": "Pesquisa - Resultados das organizações para « {{term}} » - Make.org"
+    },
+    "browse": {
+      "consultations": {
+        "title": "Participe nas consultas - Make.org",
+        "description": "Proponha, vote, atue: vamos encontrar juntos soluções para as grandes questões atuais."
+      },
+      "results": {
+        "title": "Resultados das consultas - Make.org",
+        "description": "Descubra os resultados das nossas consultas e as ações implementadas pela Make.org e os seus parceiros."
+      }
+    },
+    "legal": {
+      "title": "Notificações legais - Make.org",
+      "description": "Encontre aqui as notificações legais do sítio Internet."
+    },
+    "moderation": {
+      "title": "Make.org ∙ Carta da Moderação",
+      "description": "Que propostas foram rejeitadas durante a moderação no Make.org? Como formular uma proposta corretamente?"
+    },
+    "privacy_policy": {
+      "title": "Carta de dados pessoais - Make.org",
+      "description": "Compreender tudo sobre o processamento dos seus dados pessoais quando visita o sítio Internet."
+    },
+    "gtu": {
+      "title": "Condições de utilização - Make.org",
+      "description": "Saber tudo sobre as condições de utilização para votar e propor na plataforma de participação do cidadão."
+    },
+    "contact": {
+      "title": "Contacte-nos - Make.org",
+      "description": "Se não encontrar a resposta à sua pergunta, por favor contacte-nos por e-mail."
+    },
+    "no_cookies": {
+      "title": "Ops! Os seus cookies estão desativados - Make.org"
+    },
+    "cookies": {
+      "title": "Gestão dos cookies - Make.org",
+      "description": "Descubra todas as explicações sobre a utilização de cookies quando visitar a plataforma."
+    },
+    "password-recovery": {
+      "title": "Crio uma nova palavra-passe - Make.org"
+    },
+    "a11y": {
+      "title": "Declaração de acessibilidade - Make.org",
+      "description": "Saiba mais sobre o compromisso do Make.org em relação a acessibilidade digital. Juntos, vamos encontrar soluções para as grandes problemáticas da atualidade."
+    },
+    "not_found": {
+      "title": "Página não encontrada - Erro 404 - Make.org",
+      "description": "A página que solicitou não existe ou já não existe."
+    }
+  },
+  "common": {
+    "connexion_label": "Iniciar sessão",
+    "register_label": "Inscrever-se",
+    "continue": "Continuar",
+    "register_panel": {
+      "welcome": "Bem-vindo(a) {{name}} !",
+      "greeting": "Estamos encantados por tê-lo(a) como um utilizador empenhado!",
+      "mail_confirmation_strong": "Confirme o seu endereço de e-mail com um clique ",
+      "mail_confirmation": " para assegurar a autenticidade da sua conta. Clique no link de ativação enviado para si em: {{mail}}",
+      "onboarding": "Dê a sua opinião sobre questões sociais que são importantes para si, participando nas consultas aos nossos cidadãos.",
+      "cta": "Participar nas consultas",
+      "cta_access": "Acedo à consulta",
+      "optin_cgu_title": "Finalize a sua inscrição",
+      "optin_cgu_subtitle": "em alguns cliques"
+    },
+    "form": {
+      "hide_password": "Ocultar a palavra-passe",
+      "show_password": "Mostrar a palavra-passe",
+      "requirements": "Todos os campos são de preenchimento obrigatório, salvo indicação em contrário.",
+      "requirements_short": "Todos os campos são de preenchimento obrigatório.",
+      "password_requirements": "Mínimo 8 caracteres, incluindo pelo menos 1 dígito, 1 letra maiúscula e 1 carácter especial.",
+      "post_code": "O código postal permite-nos analisar os resultados por zona geográfica.",
+      "label": {
+        "email": "E-mail",
+        "password": "Palavra-passe",
+        "firstname": "Nome",
+        "lastname": "Apelido",
+        "age": "Idade",
+        "postalcode": "Código postal",
+        "profession": "Profissão",
+        "biography": "Biografia",
+        "website": "Sítio Internet",
+        "organisation": "Nome da organização",
+        "email_optional": "E-mail (opcional)",
+        "password_optional": "Palavra-passe (opcional)",
+        "firstname_optional": "Nome (opcional)",
+        "lastname_optional": "Apelido (opcional)",
+        "age_optional": "Idade (opcional)",
+        "postalcode_optional": "Código postal (opcional)",
+        "profession_optional": "Profissão (opcional)",
+        "privacy_policy": "Política de dados",
+        "biography_optional": "Biografia (opcional)",
+        "website_optional": "Sítio Internet (opcional)",
+        "organisation_optional": "Nome da organização (opcional)",
+        "personality": {
+          "firstname": "Nome do candidato / cabeça de lista",
+          "lastname": "Apelido do candidato / cabeça de lista",
+          "firstname_M": "Nome do candidato / cabeça de lista",
+          "lastname_M": "Apelido do candidato / cabeça de lista",
+          "firstname_F": "Nome da candidata / cabeça de lista",
+          "lastname_F": "Apelido da candidata / cabeça de lista"
+        }
+      },
+      "messages": {
+        "errors_notification": "Encontrámos erros neste formulário:",
+        "invalid_email": "Por favor, respeite o formato do e-mail.",
+        "invalid_email_dynamic": "Por favor, respeite o formato {{label}}.",
+        "already_registered": "Este e-mail já existe.",
+        "already_registered_dynamic": "Este {{label}} já existe.",
+        "email_doesnot_exist": "Este e-mail não está associado à sua conta, por favor volte a introduzir o seu e-mail.",
+        "email_doesnot_exist_dynamic": "Este {{label}} não está associado à sua conta, por favor reintroduza o seu endereço de e-mail.",
+        "invalid_password": "A sua palavra-passe deve conter pelo menos 8 caracteres.",
+        "invalid_password_dynamic": "O seu {{label}} deve conter pelo menos 8 caracteres.",
+        "api_error": "Ops! Estamos a passar por algumas dificuldades com o carregamento desta página. Por favor, tente novamente mais tarde.",
+        "mandatory": "Por favor preencha este campo.",
+        "mandatory_dynamic": "O campo {{label}} é obrigatório.",
+        "invalid_age": "Os nossos utilizadores devem ter entre 8 e 120 anos de idade.",
+        "invalid_age_dynamic": "{{label}}: Os nossos utilizadores devem ter entre 8 e 120 anos de idade.",
+        "the_field_[email]_is_missing": "O campo {{label}} é obrigatório.",
+        "the_field_[password]_is_missing": "O campo {{label}} é obrigatório.",
+        "invalid_postal_code": "O código postal deve ter 5 dígitos.",
+        "invalid_privacy_policy": "Deve aceitar a política de dados.",
+        "invalid_postal_code_dynamic": "O {{label}} deve ter 5 dígitos.",
+        "submit_success": "A alteração foi registada.",
+        "malformed": "Por favor, respeite o formato url \"https://example.com\""
+      }
+    },
+    "social_login": {
+      "card_title": "Para encontrar o seu histórico de votação",
+      "facebook_connect": "Continuar com Facebook",
+      "google_connect": "Continuar com Google",
+      "email_register": "Registar-se por e-mail",
+      "count_register": "({{count}}/2)"
+    },
+    "notifications": {
+      "bad_link": "Este link já não é válido.",
+      "activate_account_success": "A sua conta acaba de ser ativada. Pode iniciar sessão agora",
+      "delete_account_success": "A sua conta foi suprimida. Esperamos vê-lo em breve em Make.org!",
+      "login_success": "O seu início de sessão foi concluído com êxito.",
+      "logout_success": "A sua ligação foi desligada com sucesso.",
+      "login_social_missing_email_data": "Não conseguimos obter um endereço de e-mail válido da sua conta do Facebook para nos registarmos. Convidamo-lo a utilizar o nosso formulário de registo de e-mail.",
+      "register_success": "Bem-vindo(a)! O seu registo foi efetuado com sucesso.",
+      "register_validate": "Obrigado pela sua inscrição. Acabou de lhe ser enviado um e-mail para {{email}} para ativar a sua conta com um clique.",
+      "secure_expired": {
+        "first_sentence": "Lamentamos, foi desligado, (a) pois parece-nos que abandonou a sessão",
+        "second_sentence": "Inicie novamente a sessão para continuar a votar, propor e agir em Make.org.",
+        "emoji": "emoji cara triste com lágrimas"
+      },
+      "session_expired": {
+        "title": "Tempo limite de inatividade",
+        "description": "Para garantir a qualidade do nosso serviço, recarregaremos a página.",
+        "button_text": "Compreendo"
+      },
+      "icons": {
+        "close": "Fechar a faixa de notificação",
+        "information": "Mensagem de informação: ",
+        "success": "Mensagem de sucesso: ",
+        "error": "Mensagem de erro: ",
+        "alert": "Mensagem de aviso: "
+      },
+      "tags_filter": "Utilize os filtros para encontrar as propostas que lhe interessam.",
+      "thank_you": "Entendido, obrigado!",
+      "unexpected_error": "Estamos atualmente a encontrar um erro, por favor tente novamente mais tarde.",
+      "network_error": "Não é possível aceder ao conteúdo completo de Make.org como porque parece que está offline",
+      "vote_only": {
+        "message": "A consulta \"{{title}}\" já não pode receber novas propostas, mas continue a votar nas propostas existentes.",
+        "button": "Entendi"
+      },
+      "vote_on_proposal": "Vote nesta proposta",
+      "cookies": {
+        "social_media": "Para aceder a esta funcionalidade, deve ativar os cookies relevantes na página ",
+        "cookie_page": "Gestão de cookies",
+        "update": "Obrigado, registámos as suas preferências de gestão em termos de cookies."
+      }
+    },
+    "from": "em",
+    "email": "E-Mail",
+    "propose": "Propor",
+    "click_there": "clique aqui",
+    "open_new_window": "Abertura num novo separador",
+    "loading": "Por favor, seja paciente durante o carregamento.",
+    "participate": "Participe",
+    "vote_on_proposals": "Vote em todas as propostas",
+    "display_pannel": "Mostrar o conteúdo do painel suspenso",
+    "hide_pannel": "Ocultar o conteúdo do painel de descida",
+    "display_modal": "Mostrar o conteúdo da janela de diálogo",
+    "hide_modal": "Ocultar o conteúdo da janela de diálogo",
+    "display_tooltip": "Mostrar o conteúdo da tooltip ao passar por cima",
+    "hide_tooltip": "Ocultar o conteúdo da tooltip ao passar por cima",
+    "expand_collapse": "{{name}} - Mostrar o conteúdo da secção pendente",
+    "shrink_collapse": "{{name}} - Ocultar o conteúdo da secção pendente",
+    "secondary_nav": "Navegação secundária",
+    "percent": "{{percent}}%",
+    "header_authentication_nav": "Acesso ao meu perfil de utilizador",
+    "footer_nav": "Navegação de rodapé",
+    "sidebar_area": "Barra lateral de conteúdo",
+    "consultation_nav": "Barra de navegação de consulta",
+    "slider": {
+      "introduction": "Utilizar os botões de controlo, as setas \"esquerda\" e \"direita\" ou a tecla de tabulação no teclado para interagir com o carrossel abaixo.",
+      "previous": "Ir para o item anterior",
+      "next": "Ir para o próximo item",
+      "index_count": "Elemento {{index}} de {{total}}"
+    },
+    "pagination": {
+      "title": "paginação",
+      "next": "Página seguinte",
+      "previous": "Página anterior",
+      "index_count": "Página {{index}} de {{total}}",
+      "page": "Página",
+      "page_total": "de {{total}}"
+    },
+    "max_characters": "caracteres no máximo",
+    "back": "Voltar",
+    "proposal_count_one": "{{count}} proposta",
+    "proposal_count_other": "{{count}} propostas",
+    "breadcrumbs": "fio condutor",
+    "million_one": "milhão",
+    "million_other": "milhões",
+    "close_panel": "Fechar o painel suspenso",
+    "close": "Fechar"
+  },
+  "header": {
+    "logo_alt": "Ir para a página inicial do sítio Internet Make.org",
+    "open_menu": "Ir para o menu principal de navegação",
+    "close_menu": "Fechar o menu principal de navegação",
+    "main_navigation": "Navegação principal do sítio Internet"
+  },
+  "proposal_page": {
+    "button_1": "participar",
+    "button_2": "saber +",
+    "share_text": "Apoie esta proposta, partilhando-a:",
+    "footer_text": "Esta proposta foi apresentada como parte da operação {{operation_name}}"
+  },
+  "idea_card": {
+    "title": "As melhores ideias",
+    "number": "Ideia n°{{ count }}",
+    "content": "Conteúdo da ideia: ",
+    "link": "Ver detalhes da ideia",
+    "associated_proposals_one": "{{count}} proposta associada",
+    "associated_proposals_other": "{{count}} propostas associadas",
+    "position_one": "{{ count }} posicionamento",
+    "position_other": "{{ count }} posicionamentos",
+    "candidate_one": " de candidato sobre esta ideia.",
+    "candidate_other": " de candidatos sobre esta ideia.",
+    "open": "Mostrar a pontuação da ideia",
+    "close": "Ocultar a pontuação da ideia",
+    "expand": " - Clique para mostrar a pontuação da ideia",
+    "collapse": " - Clique para ocultar a pontuação da ideia",
+    "vote_proposals": "das propostas",
+    "vote_positives": "de votos favoráveis",
+    "vote_heart": "de favoritos"
+  },
+  "idea_details": {
+    "current_page": "Pormenor da ideia",
+    "proposals": "As propostas associadas",
+    "comments": "Eles tomaram uma posição"
+  },
+  "proposal_card": {
+    "previous": "Proposta anterior",
+    "next": "Proposta seguinte",
+    "validate": "Validar",
+    "content": "Conteúdo da proposta: ",
+    "original": "Ver o original",
+    "translation": "Ver a tradução",
+    "number": "Cartão de introdução número {{current}} de {{total}}",
+    "posted_label": "Publicado em ",
+    "author": {
+      "from": "Proposta por: ",
+      "age": "{{age}} anos",
+      "date": "publicada a: "
+    },
+    "status": {
+      "title": "Estado da proposta: ",
+      "accepted": "Publicada",
+      "refused": "Recusada",
+      "postponed": "À espera de moderação",
+      "pending": "À espera de moderação"
+    }
+  },
+  "report_translations": {
+    "button": "Opções de proposta",
+    "confirmation": {
+      "title": "Obrigado pelo seu relatório!",
+      "description": "A nossa equipa estudá-lo-á o mais rapidamente possível."
+    },
+    "form": {
+      "title": "Relatório de tradução automática",
+      "unclear": "Tradução incompreensível",
+      "error": "Erro na tradução",
+      "false_info": "Contém uma informação falsa",
+      "offensive": "Proposta ofensiva",
+      "report": "Apresentar relatório"
+    },
+    "first_step": {
+      "title": "Tradução automática",
+      "text": "As propostas das nossas consultas são automáticas. Se notar um erro, não hesite em informar as nossas equipas!"
+    }
+  },
+  "intro_card": {
+    "purpose": "Cartão de introdução",
+    "title": "Milhares de cidadãos estão a propor soluções.",
+    "description": "Tome uma posição sobre estas soluções e proponha as suas próprias soluções.\nAs melhores irão determinar as nossas ações.",
+    "description_short": "Tome uma posição sobre estas soluções.",
+    "button": "Iniciar",
+    "partnership": "em parceria com"
+  },
+  "final_card": {
+    "title": "Obrigado por responder às propostas!",
+    "description": "Continue a votar para nos ajudar a identificar prioridades.",
+    "link_text": "Acedo à consulta",
+    "continue": "Continuo a votar",
+    "register": {
+      "description": "Como monitorizar os resultados?",
+      "button_intro": "Crie o seu",
+      "button_text": "espaço do cidadão."
+    }
+  },
+  "no_proposal_card": {
+    "title": {
+      "regular": "Obrigado pela sua incrível contribuição!",
+      "popular": "Obrigado, votou em todas as propostas mais populares",
+      "controversial": "Obrigado, votou em todas as propostas mais controversas",
+      "keyword": "Obrigado, votou em todas as propostas de \"{{keyword}}\""
+    },
+    "description": {
+      "regular": "Neste momento não há novas propostas.",
+      "special": "Continue a votar para nos ajudar a identificar prioridades."
+    },
+    "link_text": "Acedo à consulta",
+    "sharing": "Ou alargue o âmbito da consulta através da sua divulgação."
+  },
+  "push_proposal_card": {
+    "title": "E você, tem uma solução a propor sobre este assunto?",
+    "next-cta": "Ainda não, continuo a votar"
+  },
+  "sequence_progress": {
+    "previous": "Ir para o item anterior",
+    "counter": "Elemento {{current}} de {{total}}"
+  },
+  "sequence_zone": {
+    "popular_title": "Propostas populares",
+    "controversial_title": "Propostas controversas"
+  },
+  "special_final_card": {
+    "title": "Obrigado pelos seus votos!",
+    "subtitle": "Ainda pode continuar a participar na consulta",
+    "cta_text": "Acedo à consulta"
+  },
+  "demographics_card": {
+    "disclaimer": "As suas informações são anónimas e permitem que os nossos resultados sejam representativos.",
+    "skip": "Passar",
+    "submit": "Registar",
+    "submitted_thanks": "Obrigado pela sua resposta.",
+    "submitted_disclaimer": " Será utilizada de forma anónima para analisar os resultados da consulta.",
+    "select": "Selecionar"
+  },
+  "proposal_submit": {
+    "form": {
+      "bait": "É necessário ",
+      "title": "Submeta a sua proposta em menos de 140 caracteres. Insira-a no campo de proposta e valide clicando no botão \"Validar\".",
+      "field": "Campos de propostas",
+      "counter": "A sua proposta inclui {{current}} caracteres de um total de {{total}} caracteres disponíveis",
+      "panel_trigger": "Proponho uma solução",
+      "button_cancel": "Cancelar",
+      "button_submit": "Validar",
+      "read_our": "Ler a nossa",
+      "moderation_link": "carta de moderação",
+      "button_propose": "PROPOR"
+    },
+    "authentication": {
+      "button_back": "Modificar a minha proposta",
+      "back": "Voltar",
+      "title": "Para validar a minha proposta",
+      "last_step_red": "Só falta uma etapa ",
+      "last_step": "para enviar a sua proposta!",
+      "subtitle": "Registo-me com",
+      "button_login_text": "Já tenho uma conta,",
+      "button_login_link": "inicio sessão.",
+      "button_login": "Iniciar sessão",
+      "back_authentication": "Voltar para o ecrã de início de sessão"
+    },
+    "success": {
+      "title": "Obrigado, {{name}}!",
+      "description": "A sua proposta está agora a ser moderada pelas nossas equipas.",
+      "button": "Continuar a votar",
+      "other_idea": "Tenho uma outra ideia",
+      "tooltip_title": "Em moderação",
+      "tooltip_description": "A sua proposta será processada pelas nossas equipas dentro de 48 horas, entretanto pode encontrá-la agora no seu perfil.",
+      "grats": "Parabéns {{name}}, ",
+      "proposal_sent": "a sua proposta foi enviada ",
+      "activate": "Confirme o seu endereço de e-mail com um clique ",
+      "link": "para assegurar a autenticidade da sua conta. Clique no link de ativação que lhe foi enviado para: {{mail}}",
+      "question": "Alguma pergunta? Pode contactar-nos em: ",
+      "consultation_access": "Acedo à consulta"
+    }
+  },
+  "vote": {
+    "intro_title": "Dou a minha opinião sobre esta proposta: ",
+    "agree": "Concordo",
+    "disagree": "Não concordo",
+    "neutral": "Voto neutro",
+    "label_one": "{{count}} voto",
+    "label_other": "{{count}} votos",
+    "with_percent": "{{votedKey}}: {{votedPercent}}%"
+  },
+  "unvote": {
+    "title": "Retiro a minha opinião sobre esta proposta."
+  },
+  "results": {
+    "static_total": "Esta proposta recebeu: ",
+    "static_repartition": "A repartição é a seguinte: ",
+    "total_one": "Esta proposta recebeu {{count}} voto, com a seguinte repartição: ",
+    "total_other": "Esta proposta recebeu {{count}} votos, com a seguinte repartição: ",
+    "voted": {
+      "agree": "Votei \"Concordo\" nesta proposta.",
+      "disagree": "Votei \"Não concordo\" nesta proposta.",
+      "neutral": "Votei \"Neutro\" nesta proposta."
+    },
+    "tooltipbutton": {
+      "display": {
+        "agree": "Mostrar os resultados para a notificação: \"Concordo\".",
+        "disagree": "Mostrar os resultados para a notificação: \"Não concordo\"",
+        "neutral": "Mostrar os resultados para a notificação: \"Voto neutro\"."
+      },
+      "hide": {
+        "agree": "Ocultar os resultados para a notificação: \"Concordo\".",
+        "disagree": "Ocultar os resultados para a notificação: \"Não concordo\"",
+        "neutral": "Ocultar os resultados para a notificação: \"Voto neutro\"."
+      }
+    }
+  },
+  "qualification": {
+    "title": "Gostaria de esclarecer a minha opinião sobre esta proposta:",
+    "static_repartition": "Esta proposta foi qualificada em: ",
+    "times": "vezes",
+    "likeIt": "e",
+    "doable": "Realista",
+    "platitudeAgree": "Banalidade",
+    "noWay": "De modo algum!",
+    "impossible": "Impraticável",
+    "platitudeDisagree": "Banalidade",
+    "doNotUnderstand": "Não compreendi",
+    "noOpinion": "Sem opinião",
+    "doNotCare": "Indiferente"
+  },
+  "sequence": {
+    "return": "Voltar às propostas",
+    "title": "Vote nas propostas da consulta: ",
+    "more": "Aceder a toda a consulta"
+  },
+  "authentication": {
+    "title": "Inscreva-se para validar a sua proposta",
+    "description": "na",
+    "commitment": "Make.org está empenhada em proteger os seus ",
+    "personal_data": "dados pessoais "
+  },
+  "login": {
+    "title": "Já tenho uma conta",
+    "social_connect": "Inicio sessão com",
+    "connect": "Iniciar sessão",
+    "or": "ou",
+    "button_connect": "Inicio sessão",
+    "email_connect": "Inicio sessão com o meu endereço de e-mail",
+    "forgot_password_title": "Ops,",
+    "forgot_password_link": "esqueci-me da minha palavra-passe?",
+    "forgot_password": "Palavra-passe esquecida?",
+    "registration_title": "Não tenho conta,",
+    "registration_link": "crio uma para mim.",
+    "email_doesnot_exist": "O seu {{emailLabel}} ou {{passwordLabel}} está incorreto."
+  },
+  "register": {
+    "title": "Criar uma conta",
+    "social_connect": "Inscrevo-me com",
+    "or": "ou",
+    "subtitle": "Inscrevo-me com este formulário",
+    "step1_title": "Inscrever-se por e-mail",
+    "step2_title": "Completar a minha inscrição",
+    "login_title": "Já tenho uma conta,",
+    "login_link": "inicio sessão.",
+    "gtu_text_first": "Ao inscrever-se, está a concordar com as nossas ",
+    "gtu_text_second": " e aceita receber e-mails ( pouco numerosos) de Make.org.",
+    "gtu_link": "condições gerais de utilização."
+  },
+  "legal_consent": {
+    "title": "Autorização legal",
+    "subtitle": "Precisamos do acordo de um dos teus pais",
+    "description": "Precisamos de recolher dois consentimentos para te dar acesso à nossa plataforma de cidadãos. Em breve poderás pronunciar-te sobre todas as nossas consultas!",
+    "minor_consent": "Autorizo o tratamento dos meus dados pessoais por Make.org.",
+    "parental_consent": "Como titular da autoridade parental, autorizo o tratamento dos dados pessoais do(a) meu(minha) filho(a) por Make.org.",
+    "cancel": "Cancelar",
+    "submit": "Validar",
+    "privacy_policy_first_part": "Aceito que Make.org processa estes dados para que eu possa participar e ser informado dos resultados de acordo com a ",
+    "privacy_policy_link": "carta",
+    "privacy_policy_last_part": ". (obrigatório)",
+    "privacy_policy": "política de dados",
+    "make_protect": "Make.org está empenhada em proteger os seus",
+    "make_protect_link": " dados pessoais.",
+    "opt_in": "Aceito receber e-mails de Make.org para me manter informado sobre as consultas atuais e futuras. (opcional)"
+  },
+  "forgot_password": {
+    "title": "Redefino a minha palavra-passe",
+    "description": "Por favor introduza o endereço de e-mail ligado à sua conta Make.org para receber o link de reinicialização.",
+    "success": "Obrigado, acaba de lhe ser enviado um e-mail para lhe permitir atualizar a sua palavra-passe.",
+    "return": "Voltar ao ",
+    "login_link": "o ecrã de início de sessão",
+    "send_link": "receber o e-mail",
+    "email_doesnot_exist": "Não conseguimos encontrar uma conta associada a este e-mail."
+  },
+  "main_footer": {
+    "jobs": "Jobs",
+    "whoarewe": "A nossa abordagem",
+    "legal": "Notificações legais",
+    "terms": "Condições de utilização",
+    "data": "Política de dados",
+    "country": "Mudar de país",
+    "contact": "Contacto",
+    "news": "A nossa atualidade",
+    "dotation_funds": "Fundo de dotação Make.org",
+    "moderation_charter": "Carta da Moderação",
+    "press_details": "Espaço de imprensa",
+    "a11y": "Declaração de acessibilidade",
+    "cookies": "Gestão de cookies"
+  },
+  "cookie_modal": {
+    "title": "Exprima-se em Make.org com respeito pela sua privacidade",
+    "description": "A fim de melhorar ainda mais o nosso serviço e a sua experiência, solicitamos o seu consentimento para os cookies que nós e os nossos parceiros desejamos utilizar durante a sua visita.",
+    "details": {
+      "title": "De que cookies estamos a falar?",
+      "technicals": "<strong>Técnicos:</strong> cookies que são essenciais para o funcionamento do sitio Internet",
+      "preferences": "<strong>Preferências:</strong> cookies para melhorar a sua experiência quando navega no sítio Internet",
+      "statistics": "<strong>Estatísticos:</strong> cookies para enriquecer a análise das nossas consultas aos cidadãos de uma forma agregada",
+      "social_media": "<strong>Redes sociais:</strong> cookies para nos ajudar a maximizar o nosso impacto através das redes sociais"
+    },
+    "accept": "Aceitar",
+    "personalize": "Personalizar",
+    "refuse": "Continuar sem aceitar",
+    "back": "Voltar à etapa anterior",
+    "mandatory": "Ainda ativo",
+    "save": "Confirmar a minha seleção",
+    "technicals": {
+      "secure": "make secure: uma vez que tenha entrado no seu espaço do cidadão Make.org, este cookie assegura que esta ligação será mantida enquanto estiver a navegar no serviço.",
+      "expiration": "make-secure-expiration: este cookie é utilizado para detetar a sua inatividade no serviço, a fim de caducar essa ligação.",
+      "demographics": "make-demographics: este cookie permite-nos saber se já lhe foi solicitada anteriormente informação demográfica (faixa etária, região, sexo, etc.) sobre este dispositivo, para que não voltemos a pedi-la numa visita futura."
+    },
+    "preferences": {
+      "authentication": "Os cookies de autenticação Google e Facebook: permitem o registo e a ligação ao seu espaço cidadão através destas redes sociais.",
+      "session": "make-session-id: este cookie é utilizado para agrupar todas as ações que executa no serviço numa única sessão.",
+      "expiration": "make-session-id-expiration: este cookie é utilizado para exibir a notificação de que a sua sessão expirou (após 20 minutos) e será recarregada.",
+      "user": "make-user-id: este cookie identifica que já criou um espaço no Make.org e convida-o a iniciar sessão para que possa encontrar todas as suas ações no seu espaço cidadão.",
+      "cookie": "make-cookie-preferences: este cookie lembrar-se-á das suas preferências relativamente à utilização de cookies no nosso serviço."
+    },
+    "statistics": {
+      "visitor": "make-visitor-id: Este cookie é utilizado para acompanhar as visitas ao nosso serviço a fim de medir o tráfego de uma forma anónima e agregada. Os eventos de navegação são enviados para a ferramenta de análise MixPanel.",
+      "created-at": "make-visitor-created-at: Este cookie é utilizado para obter a data da primeira visita à plataforma.",
+      "tracking": "Cookie de tracking Facebook: é utilizado para recolher dados comportamentais sobre o serviço para análise agregada a fim de melhorar o serviço. É também utilizado para recolher dados sociodemográficos (idade, sexo, região) de uma forma agregada para enriquecer a análise da consulta."
+    },
+    "social_media": {
+      "facebook_pixel": "Pixel Facebook: é utilizado para otimizar o desempenho das campanhas de promoção de consultas no Facebook, a fim de aumentar a participação dos cidadãos.",
+      "twitter_pixel": "Pixel Twitter: é utilizado para otimizar o desempenho das campanhas de promoção de consultas no Twitter, a fim de aumentar a participação dos cidadãos.",
+      "facebook_sharing": "Partilha Facebook: permitir que o utilizador partilhe conteúdos na sua conta Facebook.",
+      "twitter_sharing": "Partilha Twitter: permitir que o utilizador partilhe conteúdos na sua conta Twitter.",
+      "linkedin_sharing": "Partilha LinkedIn: permitir que o utilizador partilhe conteúdos na sua conta LinkedIn."
+    }
+  },
+  "reset_password": {
+    "title": "Crio uma nova palavra-passe",
+    "info": "Pode escolher uma nova palavra-passe.",
+    "send_cta": "Validar",
+    "success": {
+      "title": "Obrigado, a sua palavra-passe foi atualizada.",
+      "info": "Pode iniciar sessão agora."
+    },
+    "failure": {
+      "bad_link": "Este link já não é válido.",
+      "error_message": "A sua palavra-passe não pôde ser substituída."
+    }
+  },
+  "data_policy_modal": {
+    "title": "Atualização da nossa política de dados",
+    "description": "Make.org compromete-se a respeitar os seus dados pessoais cada vez que visitar o sítio Internet. Para continuar a navegar enquanto estiver ligado(a) a Make.org tem de aceitar a nossa atualização da ",
+    "data_policy_link": "política de dados.",
+    "consent": "<strong>Aceito a nova política de dados</strong> e poderei utilizar o meu espaço cidadão Make.org",
+    "validate": "Valido",
+    "stay": "Fico",
+    "leave": "Saio",
+    "refusal_title": "Tem a certeza de que quer sair?",
+    "refusal_description_first_part": "Ao recusar a nossa nova ",
+    "refusal_description_second_part": ", deixará de poder aceder ao seu espaço de cidadão Make.org."
+  },
+  "not_found": {
+    "intro": "ops",
+    "title": "Erro 404",
+    "description": "A página que solicitou não existe ou já não existe."
+  },
+  "profile": {
+    "tabs": {
+      "label": "O seu perfil",
+      "manage_account": "Gerir a minha conta",
+      "proposals": "Propostas",
+      "favourites": "Os meus favoritos",
+      "following": "Os meus perfis seguidos"
+    },
+    "proposals": {
+      "title": "As minhas últimas propostas",
+      "text": "Ainda não apresentou uma proposta no Make.org."
+    },
+    "favourites": {
+      "title": "Os meus favoritos",
+      "description": {
+        "introduction": "Ainda não tem uma favorita no Make.org.",
+        "explanation": "Pode colocar uma proposta como favorita logo após ter votado \"Concordo\" para a mesma proposta."
+      },
+      "card_title": "É necessário apoiar as propostas de qualidade."
+    },
+    "common": {
+      "infos": "As minhas informações pessoais",
+      "log_out": "Vou desligar",
+      "age": "{{age}} anos",
+      "submit_label": "Registar as alterações",
+      "submit_success": "O seu pedido foi tomado em consideração.",
+      "error": "Ops! Ocorreu um erro durante o registo das suas informações. Por favor, tente novamente mais tarde.",
+      "labels": {
+        "organisation": "Nome da organização : ",
+        "firstname": "Nome: ",
+        "lastname": "Apelido: ",
+        "email": "Endereço e-mail: ",
+        "postal_code": "Código postal: ",
+        "age": "Idade: ",
+        "profession": "Profissão: ",
+        "biography": "Biografia: ",
+        "website": "Sítio Internet: ",
+        "political_party": "Partido político: ",
+        "select": "Selecionar"
+      }
+    },
+    "informations_update": {
+      "title": "Editar o meu perfil",
+      "link_to_profile": "voltar ao meu perfil",
+      "more": "Ver +",
+      "less": "Ver -"
+    },
+    "password_update": {
+      "title": "Alterar a minha palavra-passe",
+      "newpassword": "Nova palavra-passe",
+      "submit_label": "Registar as alterações",
+      "actual_password": {
+        "label": "Palavra-passe atual",
+        "invalid_password": "A {{label}} que indicou está incorreta.",
+        "trigger": "Esqueceu-se da sua palavra-passe?"
+      }
+    },
+    "communication_preferences": {
+      "title": "Gerir as minhas preferências de comunicação",
+      "description": "Seleccione o seu país e a língua em que deseja receber e-mails Make.org.",
+      "optin_label": "Aceito receber e-mails de Make.org para me manter informado sobre as consultas atuais e futuras."
+    },
+    "delete_account": {
+      "title": "Solicitar a eliminação da minha conta",
+      "description": "Atenção, esta ação é irreversível. Perderá as suas propostas, as suas estatísticas detalhadas, bem como as propostas sobre as quais se pronunciou.",
+      "password": "Introduzo a minha palavra-passe",
+      "submit_label": "Solicitar a eliminação da minha conta",
+      "wrong_email": "Este e-mail não está associado à sua conta, por favor volte a introduzir o seu e-mail.",
+      "wrong_password": "A sua palavra-passe está incorreta."
+    },
+    "organisation": {
+      "proposal_agree": "concorda com esta proposta",
+      "proposal_disagree": "não concorda com esta proposta",
+      "and": " e ",
+      "hasVoted_one": " votou nesta proposta.",
+      "hasVoted_other": " votaram nesta proposta.",
+      "sharing_title": "Partilhe este perfil"
+    }
+  },
+  "organisation": {
+    "title": "Descubra o perfil de {{name}}",
+    "tabs": {
+      "proposals": "Propostas",
+      "votes": "Posicionamentos"
+    },
+    "proposals": {
+      "title": "As últimas propostas de {{name}}:",
+      "text": "{{name}} ainda não apresentou uma proposta no Make.org."
+    },
+    "votes": {
+      "title": "Os últimos posicionamentos de {{name}} ",
+      "text": "{{name}} ainda não se posicionou no Make.org."
+    }
+  },
+  "personality": {
+    "title": "Descubra o perfil de {{name}}",
+    "tabs": {
+      "top_ideas": "Posicionamentos sobre as melhores ideias"
+    },
+    "opinions": {
+      "title": "Os posicionamentos de {{firstname}} {{lastname}} :",
+      "placeholder_text": "{{firstname}} {{lastname}} ainda não se posicionou sobre as melhores ideias.",
+      "vote": {
+        "agree": "concordo",
+        "disagree": "não concordo",
+        "other": "outro"
+      },
+      "qualification": {
+        "priority": "Com prioridade",
+        "doable": "Realista",
+        "noWay": "Absolutamente não",
+        "nonPriority": "Sem prioridade",
+        "exists": "Existente",
+        "toBePrecised": "A especificar"
+      },
+      "form": {
+        "title": "O que faria para responder a esta ideia de cidadania?",
+        "label": "Escrever aqui...",
+        "validate": "Validar o meu posicionamento",
+        "disclaimer": "Atenção: se desejar alterar o seu posicionamento após a publicação, deve contactar Make.org. Tem a certeza de que pretende publicar agora? Se assim for, clique em \"Confirmar e publicar\".",
+        "preview_cancel": "Modificar",
+        "preview_confirm": "Confirmar e publicar"
+      },
+      "preview": {
+        "agree": "<span>Concordo</span>.",
+        "agree_priority": "<span>Concordo</span>, é uma ideia <span>com prioridade</span>.",
+        "agree_doable": "<span>Concordo</span>, é uma ideia <span>realista</span>.",
+        "disagree": "<span>Não concordo</span>.",
+        "disagree_noWay": "<span>Não concordo</span>, não quero <span>absolutamente</span> retomar esta ideia.",
+        "disagree_nonPriority": "<span>Não concordo</span>, é uma ideia <span>sem prioridade</span>.",
+        "other": "Esta proposta <span>já existe</span>  ou <span>tem de ser especificada</span> .",
+        "other_exists": "Esta proposta <span>já existe</span> .",
+        "other_toBePrecised": "Esta proposta tem de <span>ser especificada</span> ."
+      }
+    },
+    "disclaimer": {
+      "title": "Informações",
+      "subtitle_first": "Como tomar uma posição sobre uma ideia de cidadania?",
+      "description_first": "Para cada ideia, tem a possibilidade de dar um voto (\"concordo\", \"não concordo\" ou \"outro\") e uma qualificação para especificar a sua opinião. Este posicionamento abrirá 3 campos, nos quais poderá escrever as suas 3 medidas-chave e/ou especificar o seu posicionamento.",
+      "subtitle_second": "Como editar as minhas respostas publicadas?",
+      "description_second": "Se desejar alterar as suas medidas após clicar em \"Publicar\", contacte por favor as nossas equipas em {{mailto}}"
+    }
+  },
+  "consultation": {
+    "header": {
+      "label_great_cause": "Grande Causa Make.org",
+      "label_consultation": "Consulta aos cidadãos",
+      "label_results": "Os resultados"
+    },
+    "highlights": {
+      "start_date": "Data de lançamento",
+      "end_date": "Data de conclusão da consulta",
+      "remaining_one": "Dia restante",
+      "remaining_other": "Dias restantes",
+      "proposals_one": "Proposta",
+      "proposals_other": "Propostas",
+      "participant_one": "Participante",
+      "participant_other": "Participantes",
+      "progress_title": "O nosso objetivo de votos",
+      "progress_total": "Número total de votos",
+      "progress_target": " em {{votesTarget}} votos ({{percent}}%)",
+      "progress_description": "Quanto mais votos as propostas receberem, mais potencial terão de ser traduzidas em ações concretas.",
+      "progress_btn": "Participar"
+    },
+    "participate": {
+      "title": "Como participar na consulta?",
+      "description": "Estamos convencidos de que cada um pode contribuir para o bem comum à sua escala. É por isso que apelamos às ideias e opiniões de milhares de cidadãos nas nossas consultas."
+    },
+    "citizen_account": {
+      "title": "O seu espaço cidadão em Make.org",
+      "description": "Graças à sua conta pessoal tem acesso aos resultados das suas propostas, ao histórico dos seus votos e receberá os resultados das consultas. Ao inscrever-se no nosso registo, será informado por e-mail sobre as próximas consultas aos cidadãos e será convidado para os nossos eventos participativos.",
+      "button_text": "Inscrevo-me"
+    },
+    "cards": {
+      "soon": "Futuras",
+      "submit": {
+        "title": "Apresentar uma proposta",
+        "description": "Divulgue as suas ideias ao maior número de pessoas possível. Cada proposta será estudada antes de ser submetida ao voto dos cidadãos.",
+        "button": "Tenho uma ideia"
+      },
+      "interact": {
+        "title": "Reagir às propostas",
+        "description": "Se as propostas definem as questões da consulta, por favor dê a sua opinião para nos ajudar a identificar as ideias que devem ser abordadas em primeiro lugar.",
+        "button": "Eu voto"
+      },
+      "controversy": {
+        "title": "Exprima a sua opinião sobre as propostas mais polémicas ",
+        "description": "Estas propostas de cidadania receberam tantos votos a favor como contra.",
+        "button": "Eu decido"
+      },
+      "popular": {
+        "title": "Votar nas propostas mais populares",
+        "description": "Estas propostas de cidadania foram as que receberam mais votos a favor.",
+        "button": "Eu voto"
+      },
+      "keywords": {
+        "title": "Os assuntos que lhe interessam",
+        "description": "Escolha os tópicos sobre os quais deseja pronunciar-se primeiro."
+      },
+      "sharing": {
+        "title": "Partilhar a consulta",
+        "description": "Os seus amigos têm ideias e opiniões que também merecem ser ouvidas. Dê mais amplitude a esta consulta, divulgando-a à sua própria escala e à sua maneira."
+      },
+      "about": {
+        "title": "Porquê esta consulta?",
+        "description": "Porque razão foi lançada esta consulta? O que é que está em jogo? Quem tomou a iniciativa?",
+        "link": "Saber mais"
+      },
+      "featured_proposals": {
+        "title": "Eles apresentaram uma proposta"
+      }
+    },
+    "timeline": {
+      "timeline_title_great_cause": "Quais são os pontos altos desta Grande Causa?",
+      "timeline_title_consultation": "Quais são os pontos altos desta consulta?",
+      "consultation_title": "Consulta aos cidadãos",
+      "consultation_description": "Todas as nossas consultas começam com um apelo a ideias e votos dos cidadãos.",
+      "consultation_from_to": "De {{startDate}} a {{endDate}}",
+      "result_title": "Resultados",
+      "workshop_title": "Workshops de cidadãos",
+      "workshop_link": "Contacte-nos para participar",
+      "action_title": "Tomada de medidas"
+    },
+    "navigation": {
+      "introduction": "Descubra mais sobre as outras questões abordadas na consulta: {{name}}",
+      "participate_desktop": "Participar na consulta",
+      "participate_mobile": "Participar",
+      "participate_breadcrumb": "Participar em \"{{title}}\"",
+      "explore_desktop": "Explorar as propostas",
+      "explore_mobile": "Explorar",
+      "explore_breadcrumb": "Explorar \"{{title}}\""
+    },
+    "explore": {
+      "title": "Explorar as propostas",
+      "description": "Utilize as ferramentas de pesquisa para simplesmente navegar por todas as propostas na consulta e identificar as que considera prioritárias.",
+      "reset_filters": "Reinicializar os filtros",
+      "reset_filters_and_close": "Reiniciar os filtros e fechar",
+      "sort": "Ordenar",
+      "sort_continue": "Continuar aplicando a ordem",
+      "filters_continue": "Continuar com a aplicação dos filtros",
+      "sort_by": "Ordenar por",
+      "sort_and_close": "Ordenar e fechar",
+      "filter": "Filtrar",
+      "filter_and_close": "Filtrar e fechar",
+      "filter_by": "Filtrar por",
+      "recent": "Recentes",
+      "popular": "Populares",
+      "controversial": "Polémicas",
+      "unvoted": "As que aguardam o seu voto",
+      "organisations_proposals": "Proposta por organizações",
+      "no_proposal": "<strong>Nenhuma proposta</strong>",
+      "validated_proposals_one": "<strong>{{count}} proposta validada</strong> que corresponde à sua pesquisa",
+      "validated_proposals_other": "<strong>{{count}} propostas validadas</strong> que correspondem à sua pesquisa"
+    },
+    "tabs": {
+      "consultation": " Consulta ",
+      "action": " Ações ",
+      "results": " Resultados ",
+      "from": " de ",
+      "to": " a ",
+      "datefrom": " a partir de "
+    },
+    "sort": {
+      "TAGGED_FIRST": "Todas as propostas",
+      "ACTORS": "Propostas das partes interessadas",
+      "RECENT": "As mais recentes",
+      "REALISTIC": "As mais realistas",
+      "CONTROVERSY": "As mais polémicas",
+      "POPULAR": "As mais populares"
+    },
+    "presentation": {
+      "title": "Porquê esta consulta?",
+      "link_text": "Saber +"
+    },
+    "followus": {
+      "title": "Para ir mais longe",
+      "description": "Descubra toda a atualidade Make.org !",
+      "facebook": "Siga-nos no Facebook",
+      "twitter": "Siga-nos no Twitter",
+      "instagram": "Siga-nos no Instagram",
+      "linkedin": "Siga-nos no LinkedIn",
+      "discover": "Descobrir o nosso blogue"
+    },
+    "partners": {
+      "intro_title": "Uma mobilização em grande escala",
+      "intro_text": "Milhares de cidadãos envolvem-se participando na consulta.",
+      "commitment_title": "Os nossos parceiros estão empenhados connosco",
+      "commitment_text": "Apoiam a consulta e o plano de ações de cidadania que se seguirá.",
+      "commitment_link": "Ver todos os parceiros",
+      "founder": "Parceiro fundador",
+      "init": "Consulta iniciada por:",
+      "initWith": "Esta consulta foi iniciada com:",
+      "with": "Em parceria com:",
+      "by": "Iniciada por: ",
+      "profile_link": "Ir para o perfil de: {{name}}",
+      "profile_link_new_window": "Ir para o perfil de: {{name}} (nova janela)"
+    },
+    "tags": {
+      "proposal_list": "<span lang=\"en\">Etiquetas<span> selecionadas para esta proposta: ",
+      "popular_title": "Os temas mais discutidos"
+    },
+    "banner": {
+      "title": "Participe na consulta em 5 minutos",
+      "description": "numa série de propostas aleatórias"
+    },
+    "proposal": {
+      "title": "Proponha diretamente uma solução",
+      "load_more": "Ver + propostas",
+      "see_proposals": "Ver as propostas"
+    },
+    "results": {
+      "methodology": {
+        "title": "A metodologia",
+        "description": "A metodologia é baseada numa moderação fina das propostas recolhidas. São primeiro submetidas para validação no que diz respeito à sua conformidade com a Carta Make.org, depois classificados de acordo com uma etiquetagem temática. Os algoritmos desenvolvidos pelas equipas de Make.org garantem então a cada uma das propostas validadas um nível igual de exposição, e organizam um concurso entre elas. Graças a esta rotatividade permanente, Make.org identifica as propostas sobre as quais os cidadãos têm o maior consenso antes de as analisar e as agrupar em grandes ideias."
+      },
+      "participation": {
+        "title": "Os participantes na consulta"
+      },
+      "context": "O contexto",
+      "cartography": {
+        "title": "A cartografia do debate"
+      },
+      "download": {
+        "deprecated_title": "Obter o relatório completo",
+        "title": "Obtenha o relatório completo",
+        "type": "Formato: {{extension}} - Peso: {{weight}}",
+        "button": "Descarregar",
+        "contact": "Para obter o relatório completo da análise desta consulta, por favor contacte-nos no seguinte endereço: ",
+        "email_object": "Relatório de análise"
+      },
+      "top_ideas": {
+        "skiplink": "As melhores ideias recentes",
+        "title_one": "As ideias mais votadas, agrupadas em {{count}} categoria",
+        "title_other": "As ideias mais votadas, agrupadas em {{count}} categorias",
+        "introduction": "Quando chegam à plataforma, as melhores propostas dos cidadãos são agrupadas em grandes ideias que estruturam a consulta. Para classificar estas ideias, o algoritmo Make.org tem em conta os votos \"a favor\" e \"contra\", bem como as menções \"favorita\", \"realista\", \"banalidade\" e \"absolutamente não! “.",
+        "axe_title": "Categoria {{count}}: {{name}}"
+      },
+      "proposals": {
+        "controversials_title": "As propostas mais polémicas",
+        "controversials_description": "As propostas \" polémicas\" refletem uma divisão significativa na sociedade: de um modo geral, há um forte apoio e uma rejeição clara.",
+        "rejected": "As propostas mais rejeitadas",
+        "rejected_results": "{{disagree}}% contra, das quais {{no_way}}% absolutamente nada",
+        "controversials_agree": "{{count}}% a favor",
+        "controversials_disagree": "{{count}}% contra"
+      },
+      "table": {
+        "name": "Apelido",
+        "value": "Valor",
+        "value_with_unit": "valor em {{unit}}",
+        "percentage": "percentagem"
+      },
+      "breadcrumb": "Resultados de \"{{title}}\"",
+      "title": "O que podemos aprender com esta consulta?"
+    },
+    "reset": "Reinicializar",
+    "sortby": "Ordenar por: ",
+    "local_actors": {
+      "title": "As associações mais ativas",
+      "proposals_one": "{{ count }} proposta",
+      "proposals_other": "{{ count }} propostas",
+      "votes_one": "{{ count }} voto",
+      "votes_other": "{{ count }} votos",
+      "participate": "É uma associação e deseja participar na nossa consulta? {{ contact_us }}",
+      "contact_us": "Contacte-nos !",
+      "more": "Ver mais"
+    },
+    "municipal": {
+      "header": {
+        "candidates_answers": "Os candidatos à eleição responderão às prioridades identificadas pelos cidadãos e associações.",
+        "candidates_subscribe": "{{ subscribe }} para ser informado(a)",
+        "subscribe": "Inscreva-se",
+        "candidates": "É candidato(a)",
+        "contact_us": "Contacte-nos !"
+      },
+      "position": {
+        "title": "Descubra a resposta dos candidatos às suas prioridades."
+      }
+    },
+    "popular_proposals": {
+      "title": "TOP {{ count }} das propostas mais populares do momento por assunto"
+    }
+  },
+  "browse": {
+    "short_page_title": "Percorrer",
+    "page_title": "Percorrer as consultas",
+    "title": "Participe nas consultas em curso",
+    "initiative": "Grande Causa Make.org",
+    "nav_consultations_desktop": "As consultas em curso",
+    "nav_consultations_mobile": "Consultas",
+    "nav_results_desktop": "Os resultados das consultas",
+    "nav_results_mobile": "Resultados",
+    "consultations": {
+      "all": "Todas as consultas",
+      "label": "Neste momento",
+      "title": "Participe nas consultas em curso",
+      "subtitle": "A sua opinião conta! Vote e proponha soluções para ter impacto numa variedade de assuntos relacionados com a sociedade e com as questões da atualidade.",
+      "participate": "Participar",
+      "contributors_one": "participante",
+      "contributors_other": "participantes",
+      "proposals_one": "proposta",
+      "proposals_other": "propostas",
+      "votes_one": "voto",
+      "votes_other": "votos",
+      "empty": "Lamentamos, não está disponível atualmente qualquer consulta no seu país."
+    },
+    "results": {
+      "all": "Todos os resultados",
+      "label": "Consultas terminadas",
+      "title": "Descubra os resultados",
+      "subtitle": "No final das nossas consultas, descubra as prioridades dos cidadãos e as ações levadas a cabo por Make.org no âmbito das suas Grandes Causas.",
+      "see_results": "Ver os resultados",
+      "see_topideas": "Ver as melhores ideias",
+      "coming_results": "Resultados futuros",
+      "empty": "Nunca realizámos uma consulta no seu país até agora."
+    },
+    "date": "Consulta de {{startDate}} a {{endDate}}",
+    "browse": "Percorrer as consultas",
+    "see_closed_consultations": "Ver as consultas terminadas",
+    "no_consultations": "Sem consultas em curso, mas mantenha-se em contacto!",
+    "one_consultation": "Inscreva-se para ser informado sobre a próxima consulta.",
+    "no_results": "Os resultados chegam em breve, por isso vamos manter-nos em contacto!",
+    "one_result": "Inscreva-se para ser informado dos resultados futuros",
+    "subscribe": "Inscrever-se",
+    "past_questions": "Pode também consultar os resultados de consultas anteriores"
+  },
+  "sharing": {
+    "facebook": "Partilhar em Facebook",
+    "twitter": "Partilhar em Twitter",
+    "linkedin": "Partilhar em LinkedIn"
+  },
+  "skip_links": {
+    "main_list": "Principais links de prevenção",
+    "secondary_list": "Links para evitar o conteúdo da página",
+    "main_content": "Ir para o conteúdo principal",
+    "main_footer": "Ir para o rodapé principal",
+    "sidebar_content": "Ir para a barra lateral de conteúdo",
+    "secondary_nav": "Ir para a navegação secundária",
+    "tag_list": "Ir para a lista de filtros",
+    "proposal_list": "Ir para a lista de propostas",
+    "proposal_submit": "Ir para o formulário de proposta",
+    "proposal_card": "Ir para a proposta",
+    "sharing": "Ir para a secção de partilha",
+    "dynamic_section": "Ir para a secção: \"{{name}}\""
+  },
+  "modal": {
+    "close": "Fechar a janela de diálogo"
+  },
+  "homepage": {
+    "featured": {
+      "title": "Atualmente em Make.org",
+      "status": "Título da operação: ",
+      "link": "Ir para a página de consulta: {{name}}"
+    },
+    "title": "Página inicial",
+    "hero": {
+      "title": "Juntos temos o poder de melhorar a sociedade",
+      "description": "Dê a sua opinião sobre questões sociais que são importantes para si, participando nas nossas consultas aos cidadãos. Juntos, cidadãos, associações e empresas, vamos definir as nossas prioridades e fazer mudanças concretas.",
+      "participate": "Participe nas consultas",
+      "discover": "Descubra as nossas grandes causas"
+    },
+    "highlights": {
+      "title": "Make.org em alguns números",
+      "participants": {
+        "subtitle_one": "de participante",
+        "subtitle_other": "de participantes"
+      },
+      "proposals": {
+        "subtitle_one": "proposta apresentada",
+        "subtitle_other": "propostas apresentadas"
+      },
+      "partners": {
+        "subtitle_one": "associação e empresa empenhada",
+        "subtitle_other": "associações e empresas empenhadas"
+      }
+    },
+    "featured_questions": {
+      "label": "Grandes causas Make.org",
+      "title": "Make.org toma medidas sobre as principais questões da sociedade"
+    },
+    "posts": {
+      "title": "A nossa atualidade",
+      "link_text": "Ler o artigo",
+      "see_all": "Ver toda a atualidade"
+    },
+    "partnership": {
+      "title": "Colabore com Make.org",
+      "subtitle": "Tornar-se parceiro",
+      "description": "Trabalhamos com empresas, associações e instituições para promover os nossos projetos. <br/>Também apoiamos estas organizações para o lançamento das suas próprias consultas.",
+      "button": "Ver as nossas ofertas"
+    },
+    "international": {
+      "subtitle": "Consultas nacionais",
+      "title": "Make.org está também disponível em Portugal sobre temas nacionais",
+      "button": "Descobrir"
+    }
+  },
+  "search": {
+    "titles": {
+      "loading": "Pesquisa em curso...",
+      "no_results": "Sem resultados",
+      "main_results_one": "{{count}} resultado para « {{term}} »",
+      "main_results_other": "{{count}} resultados para « {{term}} »",
+      "proposals_one": "{{count}} proposta para « {{term}} »",
+      "proposals_other": "{{count}} propostas para « {{term}} »",
+      "operations_one": "{{count}} operação para « {{term}} »",
+      "operations_other": "{{count}} operações para « {{term}} »",
+      "organisations_one": "{{count}} organizações para « {{term}} »",
+      "organisations_other": "{{count}} organizações para « {{term}} »",
+      "main_results_empty_term": "0 resultados"
+    },
+    "main_results": {
+      "proposal": "Proposta",
+      "organisation": "Organização",
+      "operation": "Operação",
+      "results_one": "{{count}} resultado",
+      "results_other": "{{count}} resultados",
+      "view_all": "Ver tudo",
+      "no_results": "Não encontramos nenhum resultado para a sua pesquisa « {{term}} »",
+      "no_query": "Está à procura de uma proposta, de uma ideia, de uma consulta? Escreva a sua pesquisa!",
+      "status": "Estatuto: ",
+      "finished_consultation": "Consulta terminada",
+      "open_consultation": "Consulta em curso"
+    },
+    "sidebar": {
+      "register": {
+        "title": "Siga a atualidade de make.org inscrevendo-se."
+      }
+    },
+    "form": {
+      "introduction": "Para efetuar uma pesquisa, a sua consulta deve ter entre 3 e 140 caracteres. Insira-a no campo de pesquisa e de seguida clique no botão \"Pesquisar”",
+      "introduction_searched": "Para limpar o campo de pesquisa, clique no botão \"Limpar campo de pesquisa\".",
+      "label": "Campo de pesquisa",
+      "placeholder": "Pesquisar",
+      "submit": "Pesquisar",
+      "flush": "Limpar o campo de pesquisa",
+      "open_panel": "Mostrar o campo de pesquisa",
+      "cancel": "Cancelar"
+    }
+  },
+  "no_cookies": {
+    "title": "Ops! Os seus cookies estão desativados",
+    "first_paragraph": "Não podemos permitir o seu acesso ao site, uma vez que utilizamos cookies para garantir a qualidade do nosso serviço.",
+    "second_paragraph": "Para poder navegar com total paz de espírito em Make.org convidamo-lo(a) a permitir cookies neste navegador ou a utilizar um outro. Para permitir cookies no seu navegador, vá ao menu e depois às definições.",
+    "information": "Para mais informações sobre como gerir os seus cookies, clique neste link:",
+    "link": "www.accepterlescookies.com",
+    "thanks": "Obrigado pela sua compreensão e até breve!",
+    "footer": "Make.org é uma plataforma de envolvimento que identifica ideias mais populares sobre vários tópicos. Para saber + sobre a nossa iniciativa, descubra <a href=\"https://about.make.org\">A nossa atualidade</a>."
+  },
+  "contact": {
+    "contactUs": "Contacte-nos",
+    "paragraph": "Uma ideia, uma sugestão, um bug? Não hesite em contactar-nos, enviando um e-mail para o nosso endereço:"
+  },
+  "legal": {
+    "title": "Notificações legais",
+    "make_infos": "Editor do sítio Internet: MAKE.ORG, Société par Actions Simplifiées (Sociedade por Ações Simplificada) com um capital de {{make_capital}}, tendo a sua sede social em {{make_address}}, registada no RCS (Registo Comercial de PARIS sob o número {{make_rcs}} (a seguir “MAKE.ORG”).",
+    "mail": "Endereço de correio eletrónico: ",
+    "make_phone": "Número de telefone: ",
+    "make_phone_number": "{{make_phone_number}}",
+    "director": "Diretor de Publicação: {{make_director_name}}",
+    "host": "Hospedeiro do sítio Internet: ",
+    "host_address": "{{make_host_address}} FRANÇA",
+    "host_phone": "Número de telefone: ",
+    "host_phone_number": "{{host_number}}",
+    "eu_mention": "A Comissão Europeia fornece uma plataforma de resolução de litígios online para os consumidores em https://ec.europa.eu/consumers/odr."
+  },
+  "moderation_charter": {
+    "unsuitable_label": "DESACONSELHADO",
+    "adapted_label": "Adaptado",
+    "refused_label": "Rejeitado",
+    "validated_label": "Validado",
+    "title": "Carta da Moderação",
+    "description": "Que propostas foram rejeitadas durante a moderação no Make.org? Como formular uma proposta corretamente? Cada proposta apresentada à plataforma é moderada à mão pelas equipas de moderação da Make.org, de acordo com os seguintes critérios da carta de moderação¹. A moderação é feita no prazo de 48 horas após o envio da proposta. Será informado por e-mail (desde que tenha validado o seu endereço e-mail aquando do registo) da publicação ou rejeição da sua proposta. Os pequenos erros ortográficos são corrigidos pelos moderadores, mas cabe-lhe a si submeter de novo a sua proposta se esta não puder ser aceite.",
+    "refused_examples": "Não são permitidas na plataforma Make.org: ",
+    "incomprehensible_solutions": {
+      "title": "As propostas incompreensíveis",
+      "description": "A formulação e o sentido da sua proposta devem ser compreensíveis para todos. Os erros sintáticos significativos ou disparates serão rejeitados, e ser-lhe-á pedido que reformule a sua proposta.",
+      "refused_example_card": "É necessário que os cidadãos se reflitam no desenvolvimento por todos os países.",
+      "validated_example_card": "É necessário que os cidadãos reflitam sobre o desenvolvimento da educação em cada país."
+    },
+    "irrelevant_solutions": {
+      "title": "As propostas fora de contexto",
+      "description": "A sua proposta deve responder à questão colocada na consulta. Caso contrário, a sua proposta é considerada irrelevante e será rejeitada.",
+      "example": "Por exemplo, para a pergunta \"Como podemos permitir que todos comam melhor?”",
+      "refused_card_example": "É necessário realizar o campeonato mundial de futebol de dois em dois anos.",
+      "validated_card_example": "É necessário incentivar o acesso a circuitos curtos nas cantinas das empresas."
+    },
+    "discriminatory_solutions": {
+      "title": "As propostas discriminatórias",
+      "description": "De acordo com a lei², a sua proposta não pode conter qualquer discurso incitando à violência ou ao ódio. Também não pode conter declarações discriminatórias ou difamatórias, particularmente contra qualquer grupo étnico, social ou religioso.",
+      "refused_card_example": "É necessário assegurar que os Alentejanos não conservem as suas tradições degradantes.",
+      "validated_card_example": "É necessário assegurar que os portugueses podem comunicar melhor uns com os outros.",
+      "refused_card_example_2": "É necessário proibir as cruzes à volta do pescoço como símbolo de escravidão.",
+      "validated_card_example_2": "É necessário assegurar que a liberdade religiosa é respeitada no nosso país."
+    },
+    "partisan_solutions": {
+      "title": "As propostas partidárias",
+      "description": "A sua proposta não deve tomar partido (ou seja, transmitir uma mensagem de apreço ou desvalorização) em relação a um partido político, uma figura política, uma ideologia ou uma religião (personalidade, símbolo ou prática).",
+      "refused_card_example": "É necessário tomar conhecimento do programa do Sr. XXX, as suas ideias são originais para as próximas eleições.",
+      "validated_card_example": "É necessário informar-se sobre os programas de cada partido político antes das eleições.",
+      "refused_card_example_2": "É necessário reler regularmente a Bíblia para encontrar a salvação.",
+      "validated_card_example_2": "É necessário que os empregadores tenham conhecimento das datas de certos feriados religiosos: Ramadão, Hanukkah, etc."
+    },
+    "advertising": {
+      "title": "A publicidade",
+      "description": "Não pode fazer publicidade a uma marca ou empresa específica. Mais uma vez, só se pode mencionar uma marca ou empresa através de um exemplo ilustrativo.",
+      "refused_card_example": "É necessário que todas as empresas utilizem as soluções oferecidas pela IBM.",
+      "validated_card_example": "É necessário deixar de consumir certos refrigerantes demasiado adocicados, tais como a Coca-Cola."
+    },
+    "multiple_ideas": {
+      "title": "As ideias múltiplas",
+      "description": "É necessário formular apenas uma ideia por proposta para facilitar aos outros cidadãos a votação da sua contribuição. Se tiver duas ideias diferentes, pode criar duas propostas.",
+      "refused_card_example": "É necessário que os produtos dos produtores locais sejam acessíveis, e que as inovações na agricultura sejam comunicadas.",
+      "validated_card_example": "É necessário que os produtos dos produtores locais sejam acessíveis."
+    },
+    "insults": {
+      "title": "Os insultos",
+      "description": "‍Qualquer proposta desrespeitosa ou ofensiva será recusada durante a moderação.",
+      "refused_card_example": "É necessário que estes estúpidos motoristas respeitem mais as regras da estrada.",
+      "validated_card_example": "É necessário que os automobilistas respeitem mais o código da estrada."
+    },
+    "correctly_formulated_solutions": {
+      "title": "Como formular corretamente uma proposta sobre Make.org?"
+    },
+    "search_function": "Utilize a função de pesquisa para verificar se a sua ideia ainda não se encontra no sítio Internet.",
+    "concrete_elements": {
+      "text": "Pense em especificar a sua ideia com elementos concretos, para que os(as) cidadãos(ãs) compreendam exatamente o que está a dizer.",
+      "refused_card_example": "É necessário mais Europa.",
+      "validated_card_example": "É necessário dar mais meios à União Europeia.",
+      "refused_card_example_2": "É necessário reduzir o desemprego dos jovens.",
+      "validated_card_example_2": "É necessário criar um centro de emprego para os jovens."
+    },
+    "understandable_language": {
+      "text": "Faça com que se compreenda o melhor possível, utilizando uma linguagem acessível a todos.",
+      "refused_card_example": "É necessário um ano de estudos preparatórios na universidade.",
+      "validated_card_example": "É necessário um ano generalista antes de escolher um curso de estudo na universidade.",
+      "refused_card_example_2": "É necessário que a AS seja capaz de detetar o cancro.",
+      "validated_card_example_2": "É necessário que a Agência de Saúde seja capaz de fazer o rastreio do cancro."
+    },
+    "acronyms": {
+      "text": "Evite utilizar na sua proposta os #, @ ou outros acrónimos, tais como “LOL”.",
+      "refused_card_example": "É necessário reduzir os impostos para os empresários #competitividade",
+      "validated_card_example": "É necessário reduzir os impostos dos empresários para os tornar competitivos!"
+    },
+    "disclaimer": "Make.org não é um operador de plataforma online no âmbito da Lei n.º 2018-1202 de 22 de dezembro de 2018 sobre a luta contra a manipulação de informação. Como tal, não estamos sujeitos às obrigações relevantes. A exatidão das informações publicadas no nosso sítio Internet é, no entanto, importante para nós, e detalhamos na presente Carta as medidas que estamos a tomar para o assegurar.",
+    "foot_notes": {
+      "ethical_charter": "Esta carta de moderação foi elaborada em conformidade com a <a href=\"https://assets.website-files.com/59833d390a24e50001b873d8/5fd245978b3dbedcbcc121a2_VF%20Charte%20Ethique%20Make.org%20et%20Make.org%20Foundation%20valid%C3%A9e.pdf\" target=\"_blank\">Carta Ética (nova janela)</a> que garante a neutralidade, independência e transparência da Make.org.",
+      "code_penal": "A Carta dos Direitos Fundamentais da EU estipula que é proibida “a discriminação em razão, designadamente, do sexo, raça, cor ou origem étnica ou social, características genéticas, língua, religião ou convicções, opiniões políticas ou outras, pertença a uma minoria nacional, riqueza, nascimento, deficiência, idade ou orientação sexual” e que é igualmente proibida “toda a discriminação em razão da nacionalidade”. Artigo 21º, parágrafos 1 e 2"
+    }
+  },
+  "cookies_management": {
+    "title": "Gestão de Cookies",
+    "dated": "- com data de {{date}} -",
+    "button": "Confirmar a minha seleção",
+    "intro": {
+      "title": "O que é um cookie?",
+      "first_paragraph": "Um cookie é um pequeno ficheiro informático que pode ser depositado e lido quando um utilizador visita um sítio Internet ou uma aplicação móvel, independentemente do tipo de terminal utilizado (computador, smartphone, etc.).",
+      "second_paragraph": "Alguns cookies são essenciais para o bom funcionamento dos sítios Internet ou aplicações, outros contribuem para otimizar o desempenho do sítio ou para melhorar a experiência dos utilizadores da Internet."
+    },
+    "use": {
+      "title": "Como utilizamos os cookies?",
+      "first_paragraph": "Quando se liga ao nosso sítio Internet, são depositados cookies no seu terminal a fim de melhorar a sua experiência, aumentar o desempenho do nosso sítio e otimizar as nossas consultas aos cidadãos.",
+      "second_paragraph": "As informações contidas nos cookies não se destinam a identificá-lo pessoalmente e nunca são utilizadas para qualquer outro fim para além dos indicados abaixo."
+    },
+    "partners": {
+      "title": "Quem são os nossos parceiros?",
+      "intro": "Para além dos cookies criados e geridos por Make, são também colocados cookies no nosso site pelos seguintes parceiros:"
+    },
+    "details": {
+      "title": "Que cookies utilizamos?",
+      "intro": "Os cookies colocados no nosso site são os seguintes:",
+      "mandatory": "Ainda ativo",
+      "duration": "Duração: {{duration}}",
+      "session": "Sessão",
+      "month": "{{count}} mês",
+      "year_one": "{{count}} ano",
+      "year_other": "{{count}} anos",
+      "technicals": {
+        "name": "Os cookies técnicos:",
+        "description": "Estes cookies são necessários para o funcionamento do sítio Internet e não podem ser desativados. Pode configurar o seu navegador para bloquear ou ser informado sobre a existência destes cookies, mas determinadas partes do nosso sítio Internet podem ser afetadas. Estes cookies não se destinam a identificá-lo(a) pessoalmente.",
+        "secure": "make-secure: uma vez que tenha entrado no seu espaço cidadão Make.org, este cookie assegura que esta ligação será mantida enquanto estiver a navegar no serviço.",
+        "secure-expiration": "make-secure-expiration: este cookie é utilizado para detetar a sua inatividade no serviço de forma a caducar essa ligação.",
+        "demographics": "make-demographics: este cookie permite-nos saber se já lhe foi solicitada anteriormente informação demográfica (faixa etária, região, sexo, etc.) sobre este dispositivo, para que não voltemos a pedi-la numa visita futura."
+      },
+      "preferences": {
+        "name": "Os cookies de preferências:",
+        "description": "estes cookies são utilizados para recordar as suas preferências no nosso sítio Internet e assim melhorar a sua experiência de navegação. Pode configurar o seu navegador para bloquear ou ser informado sobre a existência destes cookies, mas determinadas partes do nosso sítio Internet podem ser afetadas. Estes cookies não se destinam a identificá-lo(a) pessoalmente.",
+        "google-connect": "Google connect: estes cookies permitem-lhe inscrever-se e entrar no seu espaço cidadão.",
+        "facebook-connect": "Facebook connect: estes cookies permitem-lhe inscrever-se e entrar no seu espaço cidadão.",
+        "session-id": "make-session-id: este cookie é utilizado para agrupar todas as ações que realiza no sítio Internet numa única sessão.",
+        "session-id-expiration": "make-session-id-expiration: este cookie é utilizado para exibir a notificação de que a sua sessão expirou (após 20 minutos) e será recarregada.",
+        "user-id": "make-user-id: este cookie permitirá que seja identificado(a) após uma ligação a um espaço cidadão em Make.org. Será utilizado para o(a) convidar a entrar novamente, preenchendo previamente os seus dados de início de sessão.",
+        "cookie-preferences": "make-cookie-preferences: este cookie lembrar-se-á das suas preferências relativamente à utilização de cookies no nosso serviço."
+      },
+      "statistics": {
+        "name": "Os cookies de estatísticas:",
+        "description": "estes cookies são utilizados para analisar as visitas ao nosso sítio Internet e para melhorar o seu desempenho. Todas as informações recolhidas por estes cookies são agregadas e, portanto, anónimas. Se não aceitar estes cookies, não seremos informados da sua nova visita.",
+        "visitor-id": "make-visitor-id: este cookie é utilizado para acompanhar as visitas ao nosso serviço a fim de medir o tráfego de uma forma anónima e agregada. Os eventos de navegação são enviados para a ferramenta de análise MixPanel.",
+        "visitor-created-at": "make-visitor-created-at: este cookie é utilizado para obter a data da primeira visita à plataforma.",
+        "facebook-tracking": "cookie de tracking Facebook: este cookie permite gerar estatísticas sobre o número de visitantes do nosso sítio Internet, a fim de o melhorar e de enriquecer a análise das nossas consultas.",
+        "hotjar": "Hotjar: trata-se de um instrumento de análise comportamental da utilização do sítio Internet. Para mais informações: "
+      },
+      "social": {
+        "name": "Os cookies das “redes sociais”:",
+        "description": "estes cookies, ativados por terceiros, permitem-lhe partilhar o conteúdo do nosso sítio Internet nas redes sociais e ajudam-nos assim a otimizar o nosso impacto. Se não consentir a colocação destes cookies, poderá não poder beneficiar destas ferramentas de partilha.",
+        "facebook_tracking": "pixel Facebook: estes cookies servem para optimizar o desempenho das campanhas de promoção de consultas no Facebook, a fim de aumentar a participação dos cidadãos.",
+        "twitter_tracking": "pixel Twitter: estes cookies servem para otimizar o desempenho das campanhas de promoção de consultas no Twitter, a fim de aumentar a participação dos cidadãos.",
+        "facebook_sharing": "partilha Facebook: este cookie permite ao utilizador partilhar conteúdos no Facebook e melhorar a usabilidade.",
+        "twitter_sharing": "partilha Twitter: Este cookie permite ao utilizador partilhar conteúdos no Twitter e melhorar a usabilidade.",
+        "linkedin_sharing": "partilha LinkedIn: Este cookie permite ao utilizador partilhar conteúdos no LinjedIn e melhorar a usabilidade."
+      }
+    }
+  },
+  "countries": {
+    "AT": "Áustria",
+    "BE": "Bélgica",
+    "BG": "Bulgária",
+    "BR": "Brasil",
+    "CA": "Canadá",
+    "CH": "Suíça",
+    "CN": "China",
+    "CY": "Chipre",
+    "CZ": "República Checa",
+    "DE": "Alemanha",
+    "DK": "Dinamarca",
+    "EE": "Estónia",
+    "ES": "Espanha",
+    "FI": "Finlândia",
+    "FR": "França",
+    "GB": "Grã-Bretanha",
+    "GR": "Grécia",
+    "HR": "Croácia",
+    "HU": "Hungria",
+    "IE": "Irlanda",
+    "IN": "Índia",
+    "IS": "Islândia",
+    "IT": "Itália",
+    "JP": "Japão",
+    "LI": "Liechtenstein",
+    "LT": "Lituânia",
+    "LU": "Luxemburgo",
+    "LV": "Letónia",
+    "MT": "Malta",
+    "NL": "Países Baixos",
+    "NO": "Noruega",
+    "PL": "Polónia",
+    "PT": "Portugal",
+    "RO": "Roménia",
+    "RU": "Rússia",
+    "SE": "Suécia",
+    "SI": "Eslovénia",
+    "SK": "Eslováquia",
+    "US": "EUA",
+    "UA": "Ucrânia"
+  },
+  "languages": {
+    "fr": "Français",
+    "en": "English",
+    "de": "Deutsch",
+    "uk": "Українська",
+    "cs": "Česky",
+    "es": "Español",
+    "pl": "Polski",
+    "it": "Italiano",
+    "nl": "Nederlands",
+    "fi": "Suomi",
+    "ro": "Română",
+    "bg": "Български"
+  },
+  "language_switch": {
+    "country_title": "O seu país",
+    "country_subtitle": "A sua escolha de país determina as consultas disponíveis.",
+    "language_title": "A sua língua",
+    "confirm": "Confirmar"
+  }
+}
