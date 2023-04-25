@@ -50,8 +50,8 @@
       "description": "Avastage konsultatsiooni '{{question}}' tulemuseks olevad parimad ideed"
     },
     "top-idea-details": {
-      "title": "Konsultatsiooni '{{question}}' idee '{{ideal}}' teave - Make.org",
-      "description": "Avastage kõik idee {{idea}} ettepanekud"
+      "title": "Konsultatsiooni '{{question}}' idee '{{idea}}' teave - Make.org",
+      "description": "Avastage kõik idee {{idea}} ettepanekud '{{question}}'"
     },
     "search": {
       "main_results": "Otsing - „{{term}}” tulemused - Make.org",
@@ -116,7 +116,7 @@
       "welcome": "Tere tulemast, {{name}}!",
       "greeting": "Meil on rõõm näha teid meie pühendunud kasutajate hulgas!",
       "mail_confirmation_strong": "Kinnitage ühe klõpsuga oma e-posti aadress, ",
-      "mail_confirmation": " et tagada oma konto ehtsust. Klõpsake aktiveerimislingil, mis saadeti teile aadressile: {{e-post}}",
+      "mail_confirmation": " et tagada oma konto ehtsust. Klõpsake aktiveerimislingil, mis saadeti teile aadressile: {{mail}}",
       "onboarding": "Andke oma arvamus ühiskondlike, teile südamelähedaste teemade kohta, osaledes meie kodanikukonsultatsioonide.",
       "cta": "Osale konsultatsioonidel",
       "cta_access": "Sisenen konsultatsiooni",
@@ -449,7 +449,7 @@
       "grats": "Palju õnne, {{name}}, ",
       "proposal_sent": "teie ettepanek saadeti ära ",
       "activate": "Kinnitage ühe klõpsuga oma e-posti aadress, ",
-      "link": "et tagada oma konto ehtsust. Klõpsake aktiveerimislingil, mis saadeti aadressile: {{e-post}}",
+      "link": "et tagada oma konto ehtsust. Klõpsake aktiveerimislingil, mis saadeti aadressile: {{mail}}",
       "question": "Küsimusi? Võtke meiega ühendust: ",
       "consultation_access": "Sisenen konsultatsiooni"
     }
@@ -1158,7 +1158,7 @@
       "proposals_other": "{{count}} ettepanekut „{{term}}” jaoks",
       "operations_one": "{{count}} toiming „{{term}}” jaoks",
       "operations_other": "{{count}} toimingut „{{term}}” jaoks",
-      "organisations_one": "{{count}} organisatsiooni „{{term}}” jaoks",
+      "organisations_one": "{{count}} organisatsioon „{{term}}” jaoks",
       "organisations_other": "{{count}} organisatsiooni „{{term}}” jaoks",
       "main_results_empty_term": "0 tulemust"
     },

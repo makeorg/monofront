@@ -7,10 +7,10 @@
     },
     "organisation": {
       "proposals": {
-        "title": "{{Organisation}} - svoje návrhy - Make.org"
+        "title": "{{organisation}} - svoje návrhy - Make.org"
       },
       "positions": {
-        "title": "{{Organisation}} - svoje stanoviská - Make.org"
+        "title": "{{organisation}} - svoje stanoviská - Make.org"
       }
     },
     "profile": {
@@ -272,10 +272,12 @@
     "max_characters": "maximálny počet znakov",
     "back": "Späť",
     "proposal_count_one": "{{count}} návrh",
-    "proposal_count_other": "{{count}} návrhy",
+    "proposal_count_few": "{{count}} návrhy",
+    "proposal_count_other": "{{count}} návrhov",
     "breadcrumbs": "Omrvinková navigácia",
     "million_one": "milión",
-    "million_other": "milióny",
+    "million_few": "milióny",
+    "million_other": "miliónov",
     "close_panel": "Zatvoriť rozbaľovací panel",
     "close": "Zatvoriť "
   },
@@ -297,11 +299,14 @@
     "content": "Obsah nápadu: ",
     "link": "Zobraziť podrobnosti nápadu",
     "associated_proposals_one": "{{count}} súvisiaci návrh",
-    "associated_proposals_other": "{{count}} súvisiace návrhy",
+    "associated_proposals_few": "{{count}} súvisiace návrhy",
+    "associated_proposals_other": "{{count}} súvisiacich návrhov",
     "position_one": "{{ count }} stanovisko",
-    "position_other": "{{ count }} stanoviská",
-    "candidate_one": " kandidát tohto nápadu.",
-    "candidate_other": " kandidáti tohto nápadu.",
+    "position_few": "{{ count }} stanoviská",
+    "position_other": "{{ count }} stanovísk",
+    "candidate_one": " od kandidáta/kandidátky tohto nápadu.",
+    "candidate_few": " od kandidátov/kandidátiek tohto nápadu.",
+    "candidate_other": " ood kandidátov/kandidátiek tohto nápadu.",
     "open": "Zobraziť skóre nápadu",
     "close": "Skryť skóre nápadu",
     "expand": " - Kliknutím zobrazíte skóre nápadu",
@@ -395,7 +400,7 @@
   },
   "sequence_progress": {
     "previous": "Prejsť na predchádzajúcu položku",
-    "counter": "Prvok {current}} z {{total}}"
+    "counter": "Prvok {{current}} z {{total}}"
   },
   "sequence_zone": {
     "popular_title": "Obľúbené návrhy",
@@ -460,7 +465,8 @@
     "disagree": "Nesúhlasím",
     "neutral": "Neutrálny hlas",
     "label_one": "{{count}} hlas",
-    "label_other": "{{count}} hlasy",
+    "label_few": "{{count}} hlasy",
+    "label_other": "{{count}} hlasov",
     "with_percent": "{{votedKey}}: {{votedPercent}}%"
   },
   "unvote": {
@@ -470,7 +476,8 @@
     "static_total": "Tento návrh bol prijatý: ",
     "static_repartition": "S rozdelením: ",
     "total_one": "Tento návrh získal {{count}} hlas s rozdelením: ",
-    "total_other": "Tento návrh získal {{count}} hlasy s rozdelením: ",
+    "total_few": "Tento návrh získal {{count}} hlasy s rozdelením: ",
+    "total_other": "Tento návrh získal {{count}} hlasov s rozdelením: ",
     "voted": {
       "agree": "Pri tomto návrhu som hlasoval/a „Súhlasím“.",
       "disagree": "Pri tomto návrhu som hlasoval/a „Nesúhlasím“.",
@@ -727,6 +734,7 @@
       "proposal_disagree": "s týmto návrhom nesúhlasí",
       "and": " a ",
       "hasVoted_one": " hlasoval/a o tomto návrhu.",
+      "hasVoted_few": " hlasovali o tomto návrhu.",
       "hasVoted_other": " hlasovali o tomto návrhu.",
       "sharing_title": "Zdieľajte tento profil"
     }
@@ -805,11 +813,14 @@
       "start_date": "Dátum spustenia",
       "end_date": "Dátum ukončenia konzultácie",
       "remaining_one": "Zostávajúci deň",
-      "remaining_other": "Zostávajúce dni",
+      "remaining_few": "Zostávajúce dni",
+      "remaining_other": "Zostávajúcich dní",
       "proposals_one": "Návrh",
-      "proposals_other": "Návrhy",
+      "proposals_few": "Návrhy",
+      "proposals_other": "Návrhov",
       "participant_one": "Účastník",
-      "participant_other": "Účastníci",
+      "participant_few": "Účastníci",
+      "participant_other": "Účastníkov",
       "progress_title": "Náš cieľ hlasovania",
       "progress_total": "Celkový počet hlasov",
       "progress_target": " z {{votesTarget}} hlasov ({{percent}}%)",
@@ -904,7 +915,8 @@
       "organisations_proposals": "Navrhované organizáciami",
       "no_proposal": "<strong>Žiadny návrh</strong>",
       "validated_proposals_one": "<strong>{{count}} potvrdený návrh</strong> zodpovedajúci vášmu vyhľadávaniu",
-      "validated_proposals_other": "<strong>{{count}} potvrdené návrhy</strong> zodpovedajúce vášmu vyhľadávaniu"
+      "validated_proposals_few": "<strong>{{count}} potvrdené návrhy</strong> zodpovedajúce vášmu vyhľadávaniu",
+      "validated_proposals_other": "<strong>{{count}} potvrdených návrhov</strong> zodpovedajúcich vášmu vyhľadávaniu"
     },
     "tabs": {
       "consultation": " Konzultácia ",
@@ -985,6 +997,7 @@
       "top_ideas": {
         "skiplink": "To najlepšie z vyplývajúcich nápadov",
         "title_one": "To najlepšie z presadzovaných nápadov zoskupených v {{count}} téme",
+        "title_few": "To najlepšie z presadzovaných nápadov zoskupených v {{count}} témach",
         "title_other": "To najlepšie z presadzovaných nápadov zoskupených v {{count}} témach",
         "introduction": "Po príchode na platformu, sú najlepšie návrhy občanov zoskupené do skupiny hlavných nápadov, ktoré štrukturujú konzultáciu. Na klasifikáciu týchto nápadov berie algoritmus Make.org do úvahy hlasy „pre“ a „proti“ a tiež vyjadrenia „obľúbený“, „realistický“, „zanedbateľný“ a „nevhodný! “",
         "axe_title": "Téma {{count}}: {{name}}"
@@ -1011,9 +1024,11 @@
     "local_actors": {
       "title": "Najaktívnejšie asociácie",
       "proposals_one": "{{ count }} návrh",
-      "proposals_other": "{{ count }} návrhy",
+      "proposals_few": "{{ count }} návrhy",
+      "proposals_other": "{{ count }} návrhov",
       "votes_one": "{{ count }} hlas",
-      "votes_other": "{{ count }} hlasy",
+      "votes_few": "{{ count }} hlasy",
+      "votes_other": "{{ count }} hlasov",
       "participate": "Zastupujete združenie a chcete sa zúčastniť na našej konzultácii? {{ contact_us }}",
       "contact_us": "Kontaktujte nás!",
       "more": "Zobraziť viac"
@@ -1050,11 +1065,14 @@
       "subtitle": "Na vašom názore záleží! Hlasujte a predstavte riešenia, ktoré ovplyvnia rôzne spoločenské témy a aktuálne problémy.",
       "participate": "Zúčastniť sa",
       "contributors_one": "účastník",
-      "contributors_other": "účastníci",
+      "contributors_few": "účastníci",
+      "contributors_other": "účastníkov",
       "proposals_one": "návrh",
-      "proposals_other": "návrhy",
+      "proposals_few": "návrhy",
+      "proposals_other": "návrhov",
       "votes_one": "hlas",
-      "votes_other": "hlasy",
+      "votes_few": "hlasy",
+      "votes_other": "hlasov",
       "empty": "Je nám ľúto, ale vo vašej krajine momentálne nie je dostupná žiadna konzultácia."
     },
     "results": {
@@ -1116,15 +1134,18 @@
       "title": "Make.org v číslach",
       "participants": {
         "subtitle_one": "od účastníka/účastníčky",
+        "subtitle_few": "od účastníkov/účastníčok",
         "subtitle_other": "od účastníkov/účastníčok"
       },
       "proposals": {
         "subtitle_one": "predložený návrh",
-        "subtitle_other": "predložené návrhy"
+        "subtitle_few": "predložené návrhy",
+        "subtitle_other": "predložených návrhov"
       },
       "partners": {
         "subtitle_one": "združenie a angažovaná spoločnosť",
-        "subtitle_other": "združenia a angažované spoločnosti"
+        "subtitle_few": "združenia a angažované spoločnosti",
+        "subtitle_other": "združení a angažovaných spoločností"
       }
     },
     "featured_questions": {
@@ -1153,13 +1174,17 @@
       "loading": "Prebieha vyhľadávanie...",
       "no_results": "Žiadne výsledky",
       "main_results_one": "{{count}} výsledok pre « {{term}} »",
-      "main_results_other": "{{count}} výsledky pre « {{term}} »",
+      "main_results_few": "{{count}} výsledky pre « {{term}} »",
+      "main_results_other": "{{count}} výsledkov pre « {{term}} »",
       "proposals_one": "{{count}} návrh pre « {{term}} »",
-      "proposals_other": "{{count}} návrhy pre « {{term}} »",
+      "proposals_few": "{{count}} návrhy pre « {{term}} »",
+      "proposals_other": "{{count}} návrhov pre « {{term}} »",
       "operations_one": "{{count}} misia pre « {{term}} »",
-      "operations_other": "{{count}} misie pre « {{term}} »",
+      "operations_few": "{{count}} misie pre « {{term}} »",
+      "operations_other": "{{count}} misií pre « {{term}} »",
       "organisations_one": "{{count}} organizácia pre « {{term}} »",
-      "organisations_other": "{{count}} organizácia pre « {{term}} »",
+      "organisations_few": "{{count}} organizácia pre « {{term}} »",
+      "organisations_other": "{{count}} organizácií pre « {{term}} »",
       "main_results_empty_term": "0 výsledkov"
     },
     "main_results": {
@@ -1167,7 +1192,8 @@
       "organisation": "Organizácia",
       "operation": "Misia",
       "results_one": "{{count}} výsledok",
-      "results_other": "{{count}} výsledky",
+      "results_few": "{{count}} výsledky",
+      "results_other": "{{count}} výsledkov",
       "view_all": "Zobraziť všetko",
       "no_results": "Nenašli sme žiadne výsledky zodpovedajúce vašim kritériám vyhľadávania « {{term}} »",
       "no_query": "Hľadáte návrh, nápad alebo konzultáciu? Zadajte kritériá do vyhľadávania!",
@@ -1327,7 +1353,8 @@
       "session": "Relácia",
       "month": "{{count}} mesiac",
       "year_one": "{{count}} rok",
-      "year_other": "{{count}} roky",
+      "year_few": "{{count}} roky",
+      "year_other": "{{count}} rokov",
       "technicals": {
         "name": "Technické súbory cookie:",
         "description": "tieto súbory cookie sú potrebné na prevádzku stránky a nemožno ich vypnúť. Svoj prehliadač môžete nastaviť tak, aby tieto súbory cookie blokoval alebo o nich informoval, ale môže to ovplyvniť niektoré časti našej webovej stránky. Tieto súbory cookie nie sú určené na vašu osobnú identifikáciu.",

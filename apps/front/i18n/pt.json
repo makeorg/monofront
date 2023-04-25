@@ -272,9 +272,11 @@
     "max_characters": "caracteres no máximo",
     "back": "Voltar",
     "proposal_count_one": "{{count}} proposta",
+    "proposal_count_many": "{{count}} propostas",
     "proposal_count_other": "{{count}} propostas",
     "breadcrumbs": "fio condutor",
     "million_one": "milhão",
+    "million_many": "milhões",
     "million_other": "milhões",
     "close_panel": "Fechar o painel suspenso",
     "close": "Fechar"
@@ -297,11 +299,14 @@
     "content": "Conteúdo da ideia: ",
     "link": "Ver detalhes da ideia",
     "associated_proposals_one": "{{count}} proposta associada",
+    "associated_proposals_many": "{{count}} propostas associadas",
     "associated_proposals_other": "{{count}} propostas associadas",
     "position_one": "{{ count }} posicionamento",
+    "position_many": "{{ count }} posicionamentos",
     "position_other": "{{ count }} posicionamentos",
     "candidate_one": " de candidato sobre esta ideia.",
-    "candidate_other": " de candidatos sobre esta ideia.",
+    "candidate_many": " de candidatos sobre esta ideia.",
+    "candidate_other": "de candidatos sobre esta ideia.",
     "open": "Mostrar a pontuação da ideia",
     "close": "Ocultar a pontuação da ideia",
     "expand": " - Clique para mostrar a pontuação da ideia",
@@ -460,6 +465,7 @@
     "disagree": "Não concordo",
     "neutral": "Voto neutro",
     "label_one": "{{count}} voto",
+    "label_many": "{{count}} votos",
     "label_other": "{{count}} votos",
     "with_percent": "{{votedKey}}: {{votedPercent}}%"
   },
@@ -470,7 +476,8 @@
     "static_total": "Esta proposta recebeu: ",
     "static_repartition": "A repartição é a seguinte: ",
     "total_one": "Esta proposta recebeu {{count}} voto, com a seguinte repartição: ",
-    "total_other": "Esta proposta recebeu {{count}} votos, com a seguinte repartição: ",
+    "total_many": "Esta proposta recebeu {{count}} votos, com a seguinte repartição: ",
+    "total_other": "Esta proposta recebeu {{count}} votos, com a seguinte repartição:",
     "voted": {
       "agree": "Votei \"Concordo\" nesta proposta.",
       "disagree": "Votei \"Não concordo\" nesta proposta.",
@@ -727,7 +734,8 @@
       "proposal_disagree": "não concorda com esta proposta",
       "and": " e ",
       "hasVoted_one": " votou nesta proposta.",
-      "hasVoted_other": " votaram nesta proposta.",
+      "hasVoted_many": " votaram nesta proposta.",
+      "hasVoted_other": "votaram nesta proposta.",
       "sharing_title": "Partilhe este perfil"
     }
   },
@@ -805,10 +813,13 @@
       "start_date": "Data de lançamento",
       "end_date": "Data de conclusão da consulta",
       "remaining_one": "Dia restante",
+      "remaining_many": "Dias restantes",
       "remaining_other": "Dias restantes",
       "proposals_one": "Proposta",
+      "proposals_many": "Propostas",
       "proposals_other": "Propostas",
       "participant_one": "Participante",
+      "participant_many": "Participantes",
       "participant_other": "Participantes",
       "progress_title": "O nosso objetivo de votos",
       "progress_total": "Número total de votos",
@@ -904,6 +915,7 @@
       "organisations_proposals": "Proposta por organizações",
       "no_proposal": "<strong>Nenhuma proposta</strong>",
       "validated_proposals_one": "<strong>{{count}} proposta validada</strong> que corresponde à sua pesquisa",
+      "validated_proposals_many": "<strong>{{count}} propostas validadas</strong> que correspondem à sua pesquisa",
       "validated_proposals_other": "<strong>{{count}} propostas validadas</strong> que correspondem à sua pesquisa"
     },
     "tabs": {
@@ -985,6 +997,7 @@
       "top_ideas": {
         "skiplink": "As melhores ideias recentes",
         "title_one": "As ideias mais votadas, agrupadas em {{count}} categoria",
+        "title_many": "As ideias mais votadas, agrupadas em {{count}} categorias",
         "title_other": "As ideias mais votadas, agrupadas em {{count}} categorias",
         "introduction": "Quando chegam à plataforma, as melhores propostas dos cidadãos são agrupadas em grandes ideias que estruturam a consulta. Para classificar estas ideias, o algoritmo Make.org tem em conta os votos \"a favor\" e \"contra\", bem como as menções \"favorita\", \"realista\", \"banalidade\" e \"absolutamente não! “.",
         "axe_title": "Categoria {{count}}: {{name}}"
@@ -1011,8 +1024,10 @@
     "local_actors": {
       "title": "As associações mais ativas",
       "proposals_one": "{{ count }} proposta",
+      "proposals_many": "{{ count }} propostas",
       "proposals_other": "{{ count }} propostas",
       "votes_one": "{{ count }} voto",
+      "votes_many": "{{ count }} votos",
       "votes_other": "{{ count }} votos",
       "participate": "É uma associação e deseja participar na nossa consulta? {{ contact_us }}",
       "contact_us": "Contacte-nos !",
@@ -1050,10 +1065,13 @@
       "subtitle": "A sua opinião conta! Vote e proponha soluções para ter impacto numa variedade de assuntos relacionados com a sociedade e com as questões da atualidade.",
       "participate": "Participar",
       "contributors_one": "participante",
+      "contributors_many": "participantes",
       "contributors_other": "participantes",
       "proposals_one": "proposta",
+      "proposals_many": "propostas",
       "proposals_other": "propostas",
       "votes_one": "voto",
+      "votes_many": "votos",
       "votes_other": "votos",
       "empty": "Lamentamos, não está disponível atualmente qualquer consulta no seu país."
     },
@@ -1116,14 +1134,17 @@
       "title": "Make.org em alguns números",
       "participants": {
         "subtitle_one": "de participante",
+        "subtitle_many": "de participantes",
         "subtitle_other": "de participantes"
       },
       "proposals": {
         "subtitle_one": "proposta apresentada",
+        "subtitle_many": "propostas apresentadas",
         "subtitle_other": "propostas apresentadas"
       },
       "partners": {
         "subtitle_one": "associação e empresa empenhada",
+        "subtitle_many": "associações e empresas empenhadas",
         "subtitle_other": "associações e empresas empenhadas"
       }
     },
@@ -1153,12 +1174,16 @@
       "loading": "Pesquisa em curso...",
       "no_results": "Sem resultados",
       "main_results_one": "{{count}} resultado para « {{term}} »",
+      "main_results_many": "{{count}} resultados para « {{term}} »",
       "main_results_other": "{{count}} resultados para « {{term}} »",
       "proposals_one": "{{count}} proposta para « {{term}} »",
+      "proposals_many": "{{count}} propostas para « {{term}} »",
       "proposals_other": "{{count}} propostas para « {{term}} »",
       "operations_one": "{{count}} operação para « {{term}} »",
+      "operations_many": "{{count}} operações para « {{term}} »",
       "operations_other": "{{count}} operações para « {{term}} »",
       "organisations_one": "{{count}} organizações para « {{term}} »",
+      "organisations_many": "{{count}} organizações para « {{term}} »",
       "organisations_other": "{{count}} organizações para « {{term}} »",
       "main_results_empty_term": "0 resultados"
     },
@@ -1167,6 +1192,7 @@
       "organisation": "Organização",
       "operation": "Operação",
       "results_one": "{{count}} resultado",
+      "results_many": "{{count}} resultados",
       "results_other": "{{count}} resultados",
       "view_all": "Ver tudo",
       "no_results": "Não encontramos nenhum resultado para a sua pesquisa « {{term}} »",
@@ -1215,7 +1241,7 @@
     "host_address": "{{make_host_address}} FRANÇA",
     "host_phone": "Número de telefone: ",
     "host_phone_number": "{{host_number}}",
-    "eu_mention": "A Comissão Europeia fornece uma plataforma de resolução de litígios online para os consumidores em https://ec.europa.eu/consumers/odr."
+    "eu_mention": "A Comissão Europeia fornece uma plataforma de resolução de litígios online para os consumidores em <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\">https://ec.europa.eu/consumers/odr</a>.."
   },
   "moderation_charter": {
     "unsuitable_label": "DESACONSELHADO",
@@ -1327,6 +1353,7 @@
       "session": "Sessão",
       "month": "{{count}} mês",
       "year_one": "{{count}} ano",
+      "year_many": "{{count}} anos",
       "year_other": "{{count}} anos",
       "technicals": {
         "name": "Os cookies técnicos:",
