@@ -19,7 +19,7 @@ const allKeys = (obj, current = '') => {
 };
 
 const bypassPluralKeys = (key) => {
-  const pluralKeysSuffix = /_plural|_one|_few|_many|_other/gm;
+  const pluralKeysSuffix = /_plural|_one|_two|_few|_many|_other/gm;
 
   if(key.match(pluralKeysSuffix)) {
     return;
