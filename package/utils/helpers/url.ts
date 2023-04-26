@@ -538,6 +538,26 @@ export const getWhoAreWeDynamicLink = (
   return link;
 };
 
+export const getWebflowDynamicLink = (
+  language: string,
+  route: string
+): string => {
+  let link;
+
+  switch (language) {
+    case 'fr':
+    case 'de':
+    case 'en':
+      link = `${URL.ABOUT_MAKE_LINK}${language}${route}`;
+      break;
+    default:
+      link = `${URL.ABOUT_MAKE_LINK}${DEFAULT_LANGUAGE}${route}`;
+      break;
+  }
+
+  return link;
+};
+
 /**
  * Get the password recovery link
  *

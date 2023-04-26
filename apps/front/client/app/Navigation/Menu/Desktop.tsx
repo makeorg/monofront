@@ -5,6 +5,7 @@ import i18n from 'i18next';
 import {
   getBrowseConsultationsLink,
   getWhoAreWeDynamicLink,
+  getWebflowDynamicLink,
 } from '@make.org/utils/helpers/url';
 import { scrollToTop, unlockBody } from '@make.org/utils/helpers/styled';
 import { removeAriaHiddenByClass } from '@make.org/utils/helpers/a11y';
@@ -81,7 +82,7 @@ export const DesktopMenu: FC = () => {
             <DesktopMenuExternalLinkStyle
               target="_blank"
               rel="noopener"
-              href={getWhoAreWeDynamicLink(language, ROUTE_PARTNERSHIP)}
+              href={getWebflowDynamicLink(language, ROUTE_PARTNERSHIP)}
             >
               {i18n.t('homepage.partnership.subtitle')}
               <> </>

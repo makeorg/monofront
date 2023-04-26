@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import React, { FC } from 'react';
 import { ExternalLinkIconStyle } from '@make.org/ui/elements/ButtonsElements';
-import { getWhoAreWeDynamicLink } from '@make.org/utils/helpers/url';
+import { getWebflowDynamicLink } from '@make.org/utils/helpers/url';
 import i18n from 'i18next';
 import { ROUTE_PARTNERSHIP } from '@make.org/utils/routes';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
@@ -44,7 +44,7 @@ export const PartnershipBanner: FC = () => {
         />
         <PartnershipRedButton
           as="a"
-          href={getWhoAreWeDynamicLink(language, ROUTE_PARTNERSHIP)}
+          href={getWebflowDynamicLink(language, ROUTE_PARTNERSHIP)}
           target="_blank"
           rel="noopener"
         >
