@@ -341,14 +341,14 @@
         }
     },
     "top_proposal_card": {
-        "start": "@@top_proposal_card.start|fr:Commencer à voter"
+        "start": "Begin met stemmen"
     },
     "maintenance": {
-        "subtitle": "@@maintenance.subtitle|fr:Oops, nous sommes désolé! Make.org est actuellement en maintenance"
+        "subtitle": "Oeps, het spijt ons! Make.org is momenteel in onderhoud"
     },
     "unsecure": {
-        "title": "@@unsecure.title|fr:La consultation est maintenant terminée",
-        "description": "@@unsecure.description|fr:Vous souhaitez en savoir plus sur ce sujet ? Découvrez la suite de l'opération et restez informé(e) de toutes nos consultations citoyennes en vous inscrivant sur Make.org",
-        "link": "@@unsecure.link|fr:Découvrir notre opération"
+        "title": "De raadpleging is nu gesloten",
+        "description": "Wilt u meer weten over dit onderwerp? Kom meer te weten over de operatie en blijf op de hoogte van al onze burgerraadplegingen door u te registreren op Make.org",
+        "link": "Ontdek onze werking"
     }
 }

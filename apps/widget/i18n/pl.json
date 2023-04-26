@@ -66,7 +66,7 @@
         "notifications": {
             "bad_link": "Ten link przestał być ważny.",
             "secure_expired": {
-                "first_sentence": "Przepraszamy, zostałaś/-eś wylogowana/-y, bo wydawało nam się, że opuściłaś/-eś stronę.",
+                "first_sentence": "Przepraszamy, zostałaś/-eś wylogowana/-y, bo wydawało nam się, że opuściłaś/-eś stronę",
                 "second_sentence": "Zaloguj się ponownie, aby móc głosować, składać propozycje i podejmować działania z Make.org.",
                 "emoji": "emoji smutna twarz ze łzą"
             },
@@ -83,7 +83,7 @@
                 "alert": "Wiadomość z ostrzeżeniem: "
             },
             "unexpected_error": "Na stronie wystąpił błąd, prosimy spróbować później.",
-            "network_error": "Nie udało się załadować wszystkich treści strony Make.org. Prawdopodobnie jesteś offline.",
+            "network_error": "Nie można uzyskać dostępu do pełnej zawartości Make.org, ponieważ wygląda na to, że jesteś offline",
             "vote_only": {
                 "message": "Nie można już składać nowych propozycji do konsultacji \"{{title}}\", ale możesz nadal głosować, aby rozstrzygnąć los propozycji istniejących.",
                 "button": "rozumiem"
@@ -149,7 +149,7 @@
         "register": {
             "description": "Jak śledzić wyniki?",
             "button_intro": "Stwórz swoją",
-            "button_text": "przestrzeń użytkownika."
+            "button_text": "przestrzeń użytkownika"
         }
     },
     "no_proposal_card": {
@@ -194,7 +194,7 @@
     "proposal_submit": {
         "form": {
             "bait": "Należy ",
-            "title": "Złóż swoją propozycję o długości nieprzekraczającej 140 znaków. Wpisz ją w pole propozycji i kliknij przycisk „Zatwierdź”.",
+            "title": "Złóż swoją propozycję o długości nieprzekraczającej 140 znaków. Wpisz ją w pole propozycji i kliknij przycisk „Zatwierdź”",
             "field": "Pola propozycji",
             "counter": "Twoja propozycja składa się z {{current}} znaków na {{total}} znaków dostępnych",
             "panel_trigger": "Proponuję rozwiązanie",
@@ -207,7 +207,7 @@
             "last_step_red": "Został już tylko jeden etap ",
             "last_step": "przed wysłaniem Twojej propozycji!",
             "button_login_text": "Mam już konto,",
-            "button_login_link": "chcę się zalogować.",
+            "button_login_link": "chcę się zalogować",
             "button_login": "Zaloguj się",
             "back_authentication": "Powrót do ekranu logowania"
         },
@@ -268,8 +268,8 @@
     "register": {
         "title": "Załóż konto",
         "or": "lub",
-        "login_title": "Mam już konto,",
-        "login_link": "chcę się zalogować.",
+        "login_title": "Mam już konto.",
+        "login_link": "chcę się zalogować",
         "gtu_text_first": "Rejestrując się, akceptujesz nasze ",
         "gtu_link": "ogólne warunki korzystania."
     },
@@ -286,7 +286,7 @@
         "privacy_policy_last_part": ". (obowiązkowe)",
         "privacy_policy": "polityka prywatności",
         "make_protect": "Make.org zobowiązuje się do ochrony Twoich",
-        "make_protect_link": " danych osobowych.",
+        "make_protect_link": "danych osobowych.",
         "opt_in": "Wyrażam zgodę na otrzymywanie wiadomości e-mail od Make.org w celu informowania mnie o aktualnych i nadchodzących konsultacjach. (opcjonalnie)"
     },
     "forgot_password": {
@@ -344,14 +344,14 @@
         }
     },
     "top_proposal_card": {
-        "start": "@@top_proposal_card.start|fr:Commencer à voter"
+        "start": "Przystąpienie do głosowania"
     },
     "maintenance": {
-        "subtitle": "@@maintenance.subtitle|fr:Oops, nous sommes désolé! Make.org est actuellement en maintenance"
+        "subtitle": "Ups, przepraszamy! Make.org jest obecnie w trakcie konserwacji"
     },
     "unsecure": {
-        "title": "@@unsecure.title|fr:La consultation est maintenant terminée",
-        "description": "@@unsecure.description|fr:Vous souhaitez en savoir plus sur ce sujet ? Découvrez la suite de l'opération et restez informé(e) de toutes nos consultations citoyennes en vous inscrivant sur Make.org",
-        "link": "@@unsecure.link|fr:Découvrir notre opération"
+        "title": "Konsultacje są już zamknięte",
+        "description": "Chcesz dowiedzieć się więcej na ten temat? Dowiedz się więcej o operacji i bądź na bieżąco ze wszystkimi naszymi konsultacjami obywatelskimi, rejestrując się na Make.org",
+        "link": "Odkryj naszą działalność"
     }
 }

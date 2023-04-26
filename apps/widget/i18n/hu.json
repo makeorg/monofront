@@ -1,354 +1,354 @@
 {
-  "meta": {
-    "sequence": {
-      "title_standard": "Vegyen részt a '{{question}}' konzultációban - Make.org",
-      "title_controversy": "A konzultáció '{{question}}' javaslatainak kiválasztása - Make.org",
-      "title_popular": "Foglaljon állást a '{{question}}' konzultáció legnépszerűbb javaslataival kapcsolatban - Make.org"
-    }
-  },
-  "common": {
-    "connexion_label": "Bejelentkezés",
-    "register_label": "Regisztráció",
-    "continue": "Tovább",
-    "form": {
-      "hide_password": "Jelszó elrejtése",
-      "show_password": "Jelszó megjelenítése",
-      "requirements": "Ha másképp nem jelezzük, minden mező kitöltése kötelező.",
-      "requirements_short": "Minden mező kitöltése kötelező.",
-      "password_requirements": "Minimum 8 karakter, beleértve legalább 1 számjegyet, 1 nagybetűt és 1 különleges karaktert.",
-      "post_code": "Az irányítószám lehetővé teszi az eredmények földrajzi terület szerinti elemzését.",
-      "label": {
-        "email": "E-mail",
-        "password": "Jelszó",
-        "firstname": "Utónév",
-        "age": "Életkor",
-        "postalcode": "Irányítószám",
-        "profession": "Foglalkozás",
-        "biography": "Önéletrajz",
-        "website": "Weboldal",
-        "organisation": "Szervezet neve",
-        "postalcode_optional": "Irányítószám (nem kötelező)",
-        "personality": {
-          "firstname": "A jelölt / listavezető utóneve",
-          "lastname": "A jelölt neve / listavezető vezetékneve"
+    "meta": {
+        "sequence": {
+            "title_standard": "Vegyen részt a '{{question}}' konzultációban - Make.org",
+            "title_controversy": "A konzultáció '{{question}}' javaslatainak kiválasztása - Make.org",
+            "title_popular": "Foglaljon állást a '{{question}}' konzultáció legnépszerűbb javaslataival kapcsolatban - Make.org"
         }
-      },
-      "messages": {
-        "errors_notification": "Hibákat találtunk a nyomtatványon:",
-        "invalid_email": "Kérjük, tartsa be az e-mail formátumot.",
-        "invalid_email_dynamic": "Kérjük, tartsa be a formátumot {{label}}.",
-        "already_registered": "Ez az e-mail már létezik.",
-        "already_registered_dynamic": "Ez a {{label}} már létezik.",
-        "email_doesnot_exist": "Ez az e-mail nem tartozik a fiókjához, kérjük, adja meg újra az e-mail címét.",
-        "email_doesnot_exist_dynamic": "Ez a {{label}} nem tartozik a fiókjához, kérjük, adja meg újra az e-mail címét.",
-        "invalid_password": "A jelszónak legalább 8 karaktert kell tartalmaznia.",
-        "invalid_password_dynamic": "A {{label}}nek legalább 8 karaktert kell tartalmaznia.",
-        "api_error": "Hoppá!   Probléma az oldal betöltése közben. Kérjük, próbálja később újra.",
-        "mandatory": "Kérjük, töltse ki ezt a mezőt.",
-        "mandatory_dynamic": "A {{label}} mező kitöltése kötelező.",
-        "invalid_age": "Felhasználóink életkora 8 és 120 év közötti lehet.",
-        "invalid_age_dynamic": "{{label}}: Felhasználóink életkora 8 és 120 év közötti lehet.",
-        "the_field_[email]_is_missing": "A {{label}} mező kitöltése kötelező.",
-        "the_field_[password]_is_missing": "A {{label}} mező kitöltése kötelező.",
-        "invalid_postal_code": "Az irányítószámnak 5 számjegyűnek kell lennie.",
-        "invalid_privacy_policy": "El kell fogadnia az adatkezelési szabályzatot.",
-        "invalid_postal_code_dynamic": "A {{label}}nek 5 számjegyűnek kell lennie.",
-        "submit_success": "A módosítást regisztráltuk.",
-        "malformed": "Kérjük, tartsa be az url formátumot \"https://example.com\""
-      }
     },
-    "social_login": {
-      "facebook_connect": "Folytatás a Facebookkal",
-      "google_connect": "Folytatás a Google-lal",
-      "email_register": "Regisztráció e-mailben",
-      "count_register": "({{count}}/2)"
+    "common": {
+        "connexion_label": "Bejelentkezés",
+        "register_label": "Regisztráció",
+        "continue": "Tovább",
+        "form": {
+            "hide_password": "Jelszó elrejtése",
+            "show_password": "Jelszó megjelenítése",
+            "requirements": "Ha másképp nem jelezzük, minden mező kitöltése kötelező.",
+            "requirements_short": "Minden mező kitöltése kötelező.",
+            "password_requirements": "Minimum 8 karakter, beleértve legalább 1 számjegyet, 1 nagybetűt és 1 különleges karaktert.",
+            "post_code": "Az irányítószám lehetővé teszi az eredmények földrajzi terület szerinti elemzését.",
+            "label": {
+                "email": "E-mail",
+                "password": "Jelszó",
+                "firstname": "Utónév",
+                "age": "Életkor",
+                "postalcode": "Irányítószám",
+                "profession": "Foglalkozás",
+                "biography": "Önéletrajz",
+                "website": "Weboldal",
+                "organisation": "Szervezet neve",
+                "postalcode_optional": "Irányítószám (nem kötelező)",
+                "personality": {
+                    "firstname": "A jelölt / listavezető utóneve",
+                    "lastname": "A jelölt neve / listavezető vezetékneve"
+                }
+            },
+            "messages": {
+                "errors_notification": "Hibákat találtunk a nyomtatványon:",
+                "invalid_email": "Kérjük, tartsa be az e-mail formátumot.",
+                "invalid_email_dynamic": "Kérjük, tartsa be a formátumot {{label}}.",
+                "already_registered": "Ez az e-mail már létezik.",
+                "already_registered_dynamic": "Ez a {{label}} már létezik.",
+                "email_doesnot_exist": "Ez az e-mail nem tartozik a fiókjához, kérjük, adja meg újra az e-mail címét.",
+                "email_doesnot_exist_dynamic": "Ez a {{label}} nem tartozik a fiókjához, kérjük, adja meg újra az e-mail címét.",
+                "invalid_password": "A jelszónak legalább 8 karaktert kell tartalmaznia.",
+                "invalid_password_dynamic": "A {{label}}nek legalább 8 karaktert kell tartalmaznia.",
+                "api_error": "Hoppá!   Probléma az oldal betöltése közben. Kérjük, próbálja később újra.",
+                "mandatory": "Kérjük, töltse ki ezt a mezőt.",
+                "mandatory_dynamic": "A {{label}} mező kitöltése kötelező.",
+                "invalid_age": "Felhasználóink életkora 8 és 120 év közötti lehet.",
+                "invalid_age_dynamic": "{{label}}: Felhasználóink életkora 8 és 120 év közötti lehet.",
+                "the_field_[email]_is_missing": "A {{label}} mező kitöltése kötelező.",
+                "the_field_[password]_is_missing": "A {{label}} mező kitöltése kötelező.",
+                "invalid_postal_code": "Az irányítószámnak 5 számjegyűnek kell lennie.",
+                "invalid_privacy_policy": "El kell fogadnia az adatkezelési szabályzatot.",
+                "invalid_postal_code_dynamic": "A {{label}}nek 5 számjegyűnek kell lennie.",
+                "submit_success": "A módosítást regisztráltuk.",
+                "malformed": "Kérjük, tartsa be az url formátumot \"https://example.com\""
+            }
+        },
+        "social_login": {
+            "facebook_connect": "Folytatás a Facebookkal",
+            "google_connect": "Folytatás a Google-lal",
+            "email_register": "Regisztráció e-mailben",
+            "count_register": "({{count}}/2)"
+        },
+        "notifications": {
+            "bad_link": "A link már nem érvényes.",
+            "secure_expired": {
+                "first_sentence": "A munkamenet inaktivitás miatt megszakadt.",
+                "second_sentence": "Jelentkezzen be újra, hogy folytathassa a szavazást, a javaslattételt és a részvételt a Make.org-on.",
+                "emoji": "könnyes szomorú arc hangulatjel"
+            },
+            "session_expired": {
+                "title": "Inaktivitási időkorlát",
+                "description": "Szolgáltatásunk minőségének biztosításához újra betöltjük az oldalt.",
+                "button_text": "Értem"
+            },
+            "icons": {
+                "close": "Az értesítési banner bezárása",
+                "information": "Tájékoztató üzenet: ",
+                "success": "Sikerüzenet: ",
+                "error": "Hibaüzenet: ",
+                "alert": "Figyelmeztető üzenet: "
+            },
+            "unexpected_error": "Hiba történt, kérjük, próbálja meg később újra.",
+            "network_error": "Nem férhet hozzá a Make.org teljes tartalmához, mivel úgy tűnik, hogy offline üzemmódban van",
+            "vote_only": {
+                "message": "A \"{{title}}\" konzultáció már nem fogadhat új javaslatokat, de a meglévő javaslatokról továbbra is lehet szavazni.",
+                "button": "értem"
+            },
+            "vote_on_proposal": "Szavazás a javaslatról"
+        },
+        "propose": "Javaslattétel",
+        "open_new_window": "Új lap megnyitása",
+        "loading": "Kérjük, a betöltés alatt legyen türelemmel",
+        "participate": "Vegyen részt",
+        "display_tooltip": "Az eszközleírás tartalmának megjelenítése az egérrel való áthúzáskor",
+        "expand_collapse": "{{name}} - A legördülő menü tartalmának megjelenítése",
+        "shrink_collapse": "{{name}} - A legördülő menü tartalmának elrejtése",
+        "secondary_nav": "Másodlagos navigáció",
+        "percent": "{{percent}}%",
+        "header_authentication_nav": "Hozzáférés a felhasználói profilhoz",
+        "footer_nav": "Lábléc navigáció",
+        "sidebar_area": "Oldalsáv tartalom",
+        "max_characters": "maximális karakter",
+        "back": "Vissza",
+        "proposal_count_one": "{{count}} javaslat",
+        "proposal_count_other": "{{count}} javaslat",
+        "breadcrumbs": "kenyérmorzsa nyomvonal",
+        "million_one": "millió",
+        "million_other": "millió",
+        "close_panel": "A legördülő lista bezárása",
+        "close": "Bezárás"
     },
-    "notifications": {
-      "bad_link": "A link már nem érvényes.",
-      "secure_expired": {
-        "first_sentence": "A munkamenet inaktivitás miatt megszakadt.",
-        "second_sentence": "Jelentkezzen be újra, hogy folytathassa a szavazást, a javaslattételt és a részvételt a Make.org-on.",
-        "emoji": "könnyes szomorú arc hangulatjel"
-      },
-      "session_expired": {
-        "title": "Inaktivitási időkorlát",
-        "description": "Szolgáltatásunk minőségének biztosításához újra betöltjük az oldalt.",
-        "button_text": "Értem"
-      },
-      "icons": {
-        "close": "Az értesítési banner bezárása",
-        "information": "Tájékoztató üzenet: ",
-        "success": "Sikerüzenet: ",
-        "error": "Hibaüzenet: ",
-        "alert": "Figyelmeztető üzenet: "
-      },
-      "unexpected_error": "Hiba történt, kérjük, próbálja meg később újra.",
-      "network_error": "Nem férhet hozzá a Make.org teljes tartalmához, mivel úgy tűnik, hogy offline üzemmódban van",
-      "vote_only": {
-        "message": "A \"{{title}}\" konzultáció már nem fogadhat új javaslatokat, de a meglévő javaslatokról továbbra is lehet szavazni.",
-        "button": "értem"
-      },
-      "vote_on_proposal": "Szavazás a javaslatról"
+    "header": {
+        "logo_alt": "Tovább a Make.org főoldalára"
     },
-    "propose": "Javaslattétel",
-    "open_new_window": "Új lap megnyitása",
-    "loading": "Kérjük, a betöltés alatt legyen türelemmel",
-    "participate": "Vegyen részt",
-    "display_tooltip": "Az eszközleírás tartalmának megjelenítése az egérrel való áthúzáskor",
-    "expand_collapse": "{{name}} - A legördülő menü tartalmának megjelenítése",
-    "shrink_collapse": "{{name}} - A legördülő menü tartalmának elrejtése",
-    "secondary_nav": "Másodlagos navigáció",
-    "percent": "{{percent}}%",
-    "header_authentication_nav": "Hozzáférés a felhasználói profilhoz",
-    "footer_nav": "Lábléc navigáció",
-    "sidebar_area": "Oldalsáv tartalom",
-    "max_characters": "maximális karakter",
-    "back": "Vissza",
-    "proposal_count_one": "{{count}} javaslat",
-    "proposal_count_other": "{{count}} javaslat",
-    "breadcrumbs": "kenyérmorzsa nyomvonal",
-    "million_one": "millió",
-    "million_other": "millió",
-    "close_panel": "A legördülő lista bezárása",
-    "close": "Bezárás"
-  },
-  "header": {
-    "logo_alt": "Tovább a Make.org főoldalára"
-  },
-  "proposal_card": {
-    "next": "Következő javaslat",
-    "validate": "Érvényesítés",
-    "content": "A javaslat tartalma: ",
-    "original": "Eredeti megtekintése",
-    "translation": "Fordítás megtekintése",
-    "posted_label": "közzétéve a következő konzultációban: ",
-    "author": {
-      "from": "A javaslat szerzője: ",
-      "age": "{{age}} éves",
-      "date": "közzétéve: "
+    "proposal_card": {
+        "next": "Következő javaslat",
+        "validate": "Érvényesítés",
+        "content": "A javaslat tartalma: ",
+        "original": "Eredeti megtekintése",
+        "translation": "Fordítás megtekintése",
+        "posted_label": "közzétéve a következő konzultációban: ",
+        "author": {
+            "from": "A javaslat szerzője: ",
+            "age": "{{age}} éves",
+            "date": "közzétéve: "
+        },
+        "status": {
+            "title": "A javaslat állapota: ",
+            "accepted": "Közzétéve",
+            "refused": "Elutasítva",
+            "postponed": "Moderálásra vár",
+            "pending": "Moderálásra vár"
+        }
     },
-    "status": {
-      "title": "A javaslat állapota: ",
-      "accepted": "Közzétéve",
-      "refused": "Elutasítva",
-      "postponed": "Moderálásra vár",
-      "pending": "Moderálásra vár"
-    }
-  },
-  "report_translations": {
-    "button": "A javaslat választási lehetőségei",
-    "confirmation": {
-      "title": "Köszönjük a jelentést!",
-      "description": "Csapatunk hamarosan megvizsgálja."
+    "report_translations": {
+        "button": "A javaslat választási lehetőségei",
+        "confirmation": {
+            "title": "Köszönjük a jelentést!",
+            "description": "Csapatunk hamarosan megvizsgálja."
+        },
+        "form": {
+            "title": "Gépi fordítás jelentése",
+            "unclear": "Nem érthető fordítás",
+            "error": "Hiba a fordításban",
+            "false_info": "Hamis információt tartalmaz",
+            "offensive": "Sértő javaslat",
+            "report": "Jelentés"
+        },
+        "first_step": {
+            "title": "Gépi fordítás",
+            "text": "A konzultációkon tett javaslatokat automatikusan fordítjuk. Ha hibát észlel, kérjük, jelezze!"
+        }
     },
-    "form": {
-      "title": "Gépi fordítás jelentése",
-      "unclear": "Nem érthető fordítás",
-      "error": "Hiba a fordításban",
-      "false_info": "Hamis információt tartalmaz",
-      "offensive": "Sértő javaslat",
-      "report": "Jelentés"
+    "intro_card": {
+        "title": "Állampolgárok ezrei javasolnak megoldásokat.",
+        "description": "Állást foglalhat ezekkel a megoldásokkal kapcsolatban, és javasolhatja a saját megoldásait.\nA legjobbak fogják meghatározni tevékenységünket.",
+        "button": "Indítás"
     },
-    "first_step": {
-      "title": "Gépi fordítás",
-      "text": "A konzultációkon tett javaslatokat automatikusan fordítjuk. Ha hibát észlel, kérjük, jelezze!"
-    }
-  },
-  "intro_card": {
-    "title": "Állampolgárok ezrei javasolnak megoldásokat.",
-    "description": "Állást foglalhat ezekkel a megoldásokkal kapcsolatban, és javasolhatja a saját megoldásait.\nA legjobbak fogják meghatározni tevékenységünket.",
-    "button": "Indítás"
-  },
-  "final_card": {
-    "title": "Köszönjük, hogy reagált a javaslatokra!",
-    "description": "Folytassa a szavazást, hogy segítsen a prioritások kiválasztásában.",
-    "link_text": "Hozzáférés a konzultációhoz",
+    "final_card": {
+        "title": "Köszönjük, hogy reagált a javaslatokra!",
+        "description": "Folytassa a szavazást, hogy segítsen a prioritások kiválasztásában.",
+        "link_text": "Hozzáférés a konzultációhoz",
+        "register": {
+            "description": "Hogyan lehet követni az eredményeket?",
+            "button_intro": "Hozza létre",
+            "button_text": "állampolgári felületét."
+        }
+    },
+    "no_proposal_card": {
+        "title": {
+            "regular": "Köszönjük a fontos hozzájárulását!",
+            "popular": "Köszönjük, hogy szavazott az összes legnépszerűbb javaslatról",
+            "controversial": "Köszönjük, hogy szavazott az összes legvitatottabb javaslatról",
+            "keyword": "Köszönjük, hogy szavazott a \"{{keyword}}\" összes javaslatáról"
+        },
+        "description": {
+            "regular": "Jelenleg nincs új javaslat.",
+            "special": "Folytassa a szavazást, hogy segítsen a prioritások kiválasztásában."
+        },
+        "link_text": "Hozzáférés a konzultációhoz",
+        "sharing": "Vagy növelje a konzultáció hatókörét annak terjesztésével."
+    },
+    "push_proposal_card": {
+        "title": "Önnek van-e javaslata ebben a témában?",
+        "next-cta": "Még nincs, folytatom a szavazást"
+    },
+    "sequence_progress": {
+        "previous": "Vissza az előző elemre",
+        "counter": "Elem {{current}}  / {{total}}"
+    },
+    "sequence_zone": {
+        "popular_title": "Népszerű javaslatok",
+        "controversial_title": "Vitatott javaslatok"
+    },
+    "special_final_card": {
+        "title": "Köszönjük a szavazatokat!",
+        "subtitle": "Továbbra is részt vehet a konzultációban",
+        "cta_text": "Hozzáférés a konzultációhoz"
+    },
+    "demographics_card": {
+        "disclaimer": "Adatai névtelenek, és lehetővé teszik, hogy eredményeink reprezentatívak legyenek.",
+        "skip": "Tovább",
+        "submit": "Regisztráció",
+        "submitted_thanks": "Köszönjük a válaszát.",
+        "submitted_disclaimer": " Az adatokat névtelenül fogjuk felhasználni a konzultáció eredményeinek elemzésére.",
+        "select": "Kiválasztás"
+    },
+    "proposal_submit": {
+        "form": {
+            "bait": "Muszáj ",
+            "title": "Javaslatát 140 karakternél rövidebb formában nyújtsa be. Írja be a javaslat mezőbe, és kattintson az „Érvényesítés\" gombra.",
+            "field": "Javaslat mező",
+            "counter": "Javaslata a rendelkezésre álló {{total}} karakterből összesen {{current}} karakterből áll",
+            "panel_trigger": "Megoldást javasolok",
+            "read_our": "Olvassa el",
+            "moderation_link": "moderációs szabályzatunkat",
+            "button_propose": "JAVASLAT"
+        },
+        "authentication": {
+            "back": "Vissza",
+            "last_step_red": "Már csak egy lépés van hátra ",
+            "last_step": "javaslata elküldéséhez!",
+            "button_login_text": "Már van fiókom,",
+            "button_login_link": "bejelentkezem.",
+            "button_login": "Bejelentkezés",
+            "back_authentication": "Vissza a bejelentkezési képernyőre"
+        },
+        "success": {
+            "button": "Szavazás folytatása",
+            "other_idea": "Van egy másik elképzelésem.",
+            "tooltip_title": "Moderálás alatt",
+            "tooltip_description": "Javaslatát 48 órán belül feldolgozzuk, addig is megtalálhatja a profiljában.",
+            "grats": "Gratulálunk, {{name}}, ",
+            "proposal_sent": "javaslatát elküldte ",
+            "activate": "Egy kattintással erősítse meg e-mailcímét, ",
+            "link": "hogy garantálja fiókja hitelességét. Kattintson az alábbi címre küldött aktiválási linkre: {{mail}}",
+            "question": "Kérdése van? Vegye fel velünk a kapcsolatot az alábbi címen: ",
+            "consultation_access": "Hozzáférés a konzultációhoz"
+        }
+    },
+    "vote": {
+        "intro_title": "Véleményt mondok erről a javaslatról: ",
+        "agree": "Egyetértek",
+        "disagree": "Nem értek egyet",
+        "neutral": "Semleges szavazat",
+        "label_one": "{{count}} szavazat",
+        "label_other": "{{count}} szavazat",
+        "with_percent": "{{votedKey}}: {{votedPercent}}%"
+    },
+    "unvote": {
+        "title": "Visszavonom a javaslattal kapcsolatos véleményemet."
+    },
+    "qualification": {
+        "title": "Pontosítani szeretném a javaslatról alkotott véleményemet:",
+        "static_repartition": "Ezt a javaslatot a következő alkalommal minősítették: ",
+        "times": "szer",
+        "likeIt": "Kedvenc",
+        "doable": "Reális",
+        "platitudeAgree": "Mellékes",
+        "noWay": "Nem lényeges",
+        "impossible": "Nem megvalósítható",
+        "platitudeDisagree": "Mellékes",
+        "doNotUnderstand": "Nem értem",
+        "noOpinion": "Nincs véleményem",
+        "doNotCare": "Közömbös"
+    },
+    "sequence": {
+        "return": "Vissza a javaslatokhoz",
+        "title": "Szavazás a konzultáció keretében tett javaslatokról: ",
+        "more": "Hozzáférés a teljes konzultációhoz"
+    },
+    "login": {
+        "title": "Már van felhasználói fiókom",
+        "connect": "Bejelentkezés",
+        "or": "vagy",
+        "forgot_password": "Elfelejtette a jelszavát?",
+        "registration_title": "Nincs felhasználói fiókom,",
+        "registration_link": "létrehozok egyet.",
+        "email_doesnot_exist": "A {{emailLabel}} vagy a {{passwordLabel}} hibás."
+    },
     "register": {
-      "description": "Hogyan lehet követni az eredményeket?",
-      "button_intro": "Hozza létre",
-      "button_text": "állampolgári felületét."
+        "title": "Felhasználói fiók létrehozása",
+        "or": "vagy",
+        "login_title": "Már van felhasználói fiókom,",
+        "login_link": "bejelentkezem.",
+        "gtu_text_first": "A regisztrációval elfogadja ",
+        "gtu_link": "általános használati feltételeinket."
+    },
+    "legal_consent": {
+        "title": "Jogi engedély",
+        "subtitle": "Szükségünk van az egyik szülőd beleegyezésére.",
+        "description": "Két hozzájárulásra van szükségünk ahhoz, hogy hozzáférhess állampolgári platformunkhoz. Hamarosan minden konzultációnkon felszólalhatsz!",
+        "minor_consent": "Hozzájárulok ahhoz, hogy a Make.org személyes adataimat kezelje.",
+        "parental_consent": "A szülői felügyelet gyakorlójaként hozzájárulok ahhoz, hogy a Make.org kezelje gyermekem személyes adatait.",
+        "cancel": "Törlés",
+        "submit": "Érvényesítés",
+        "privacy_policy_first_part": "A konzultációban való részvétel és az eredményekről való tájékoztatás érdekében hozzájárulok ahhoz, hogy a Make.org feldolgozza ezeket az adatokat a ",
+        "privacy_policy_link": "szabályzatnak megfelelően",
+        "privacy_policy_last_part": ". (kötelező)",
+        "privacy_policy": "adatvédelmi politika",
+        "make_protect": "A Make.org elkötelezi magát az Ön",
+        "make_protect_link": " személyes adatai védelme mellett.",
+        "opt_in": "Hozzájárulok, hogy e-maileket kapjak a Make.org-tól, hogy tájékoztassanak az aktuális és a soron következő konzultációkról. (nem kötelező)"
+    },
+    "forgot_password": {
+        "title": "Visszaállítom a jelszavamat",
+        "description": "Kérjük, adja meg a Make.org fiókjához kapcsolódó e-mail címét, hogy megkapja a jelszó-visszaállítási linket.",
+        "success": "Köszönjük, küldtünk egy e-mailt, hogy frissíthesse jelszavát.",
+        "return": "Vissza a ",
+        "login_link": "bejelentkezési képernyőre",
+        "send_link": "e-mail fogadása"
+    },
+    "reset_password": {
+        "title": "Új jelszót hozok létre",
+        "info": "Választhat egy új jelszót.",
+        "send_cta": "Érvényesítés",
+        "success": {
+            "title": "Köszönjük, a jelszavát frissítettük."
+        },
+        "failure": {
+            "bad_link": "A link már nem érvényes."
+        }
+    },
+    "data_policy_modal": {
+        "title": "Adatvédelmi politikánk frissítése",
+        "description": "A Make.org kötelezettséget vállal arra, hogy minden látogatása során tiszteletben tartja az Ön személyes adatait. A Make.org-ra bejelentkezve a böngészés folytatásához el kell fogadnia a frissített ",
+        "consent": "<strong> Elfogadom az új adatkezelési szabályzatot</strong> és használhatom a Make.org állampolgári felületemet.",
+        "validate": "Érvényesítés",
+        "stay": "Maradok",
+        "leave": "Leiratkozás",
+        "refusal_title": "Biztos, hogy le akar iratkozni?",
+        "refusal_description_first_part": "Az új .. elutasításával ",
+        "refusal_description_second_part": ", a továbbiakban nem tud majd hozzáférni a Make. org-on található állampolgári felületéhez."
+    },
+    "not_found": {
+        "intro": "Hoppá!  ",
+        "title": "404-es hiba",
+        "description": "A kért oldal nem található."
+    },
+    "top_proposal_card": {
+        "start": "Szavazás megkezdése"
+    },
+    "maintenance": {
+        "subtitle": "Hoppá, sajnáljuk! A Make.org jelenleg karbantartás alatt áll"
+    },
+    "unsecure": {
+        "title": "A konzultáció lezárult",
+        "description": "Szeretne többet megtudni erről a témáról? Tudjon meg többet a műveletről, és maradjon naprakész az összes polgári konzultációnkról, ha regisztrál a Make.org oldalon",
+        "link": "Fedezze fel működésünket"
     }
-  },
-  "no_proposal_card": {
-    "title": {
-      "regular": "Köszönjük a fontos hozzájárulását!",
-      "popular": "Köszönjük, hogy szavazott az összes legnépszerűbb javaslatról",
-      "controversial": "Köszönjük, hogy szavazott az összes legvitatottabb javaslatról",
-      "keyword": "Köszönjük, hogy szavazott a \"{{keyword}}\" összes javaslatáról"
-    },
-    "description": {
-      "regular": "Jelenleg nincs új javaslat.",
-      "special": "Folytassa a szavazást, hogy segítsen a prioritások kiválasztásában."
-    },
-    "link_text": "Hozzáférés a konzultációhoz",
-    "sharing": "Vagy növelje a konzultáció hatókörét annak terjesztésével."
-  },
-  "push_proposal_card": {
-    "title": "Önnek van-e javaslata ebben a témában?",
-    "next-cta": "Még nincs, folytatom a szavazást"
-  },
-  "sequence_progress": {
-    "previous": "Vissza az előző elemre",
-    "counter": "Elem {{current}}  / {{total}}"
-  },
-  "sequence_zone": {
-    "popular_title": "Népszerű javaslatok",
-    "controversial_title": "Vitatott javaslatok"
-  },
-  "special_final_card": {
-    "title": "Köszönjük a szavazatokat!",
-    "subtitle": "Továbbra is részt vehet a konzultációban",
-    "cta_text": "Hozzáférés a konzultációhoz"
-  },
-  "demographics_card": {
-    "disclaimer": "Adatai névtelenek, és lehetővé teszik, hogy eredményeink reprezentatívak legyenek.",
-    "skip": "Tovább",
-    "submit": "Regisztráció",
-    "submitted_thanks": "Köszönjük a válaszát.",
-    "submitted_disclaimer": " Az adatokat névtelenül fogjuk felhasználni a konzultáció eredményeinek elemzésére.",
-    "select": "Kiválasztás"
-  },
-  "proposal_submit": {
-    "form": {
-      "bait": "Muszáj ",
-      "title": "Javaslatát 140 karakternél rövidebb formában nyújtsa be. Írja be a javaslat mezőbe, és kattintson az „Érvényesítés\" gombra.",
-      "field": "Javaslat mező",
-      "counter": "Javaslata a rendelkezésre álló {{total}} karakterből összesen {{current}} karakterből áll",
-      "panel_trigger": "Megoldást javasolok",
-      "read_our": "Olvassa el",
-      "moderation_link": "moderációs szabályzatunkat",
-      "button_propose": "JAVASLAT"
-    },
-    "authentication": {
-      "back": "Vissza",
-      "last_step_red": "Már csak egy lépés van hátra ",
-      "last_step": "javaslata elküldéséhez!",
-      "button_login_text": "Már van fiókom,",
-      "button_login_link": "bejelentkezem.",
-      "button_login": "Bejelentkezés",
-      "back_authentication": "Vissza a bejelentkezési képernyőre"
-    },
-    "success": {
-      "button": "Szavazás folytatása",
-      "other_idea": "Van egy másik elképzelésem.",
-      "tooltip_title": "Moderálás alatt",
-      "tooltip_description": "Javaslatát 48 órán belül feldolgozzuk, addig is megtalálhatja a profiljában.",
-      "grats": "Gratulálunk, {{name}}, ",
-      "proposal_sent": "javaslatát elküldte ",
-      "activate": "Egy kattintással erősítse meg e-mailcímét, ",
-      "link": "hogy garantálja fiókja hitelességét. Kattintson az alábbi címre küldött aktiválási linkre: {{mail}}",
-      "question": "Kérdése van? Vegye fel velünk a kapcsolatot az alábbi címen: ",
-      "consultation_access": "Hozzáférés a konzultációhoz"
-    }
-  },
-  "vote": {
-    "intro_title": "Véleményt mondok erről a javaslatról: ",
-    "agree": "Egyetértek",
-    "disagree": "Nem értek egyet",
-    "neutral": "Semleges szavazat",
-    "label_one": "{{count}} szavazat",
-    "label_other": "{{count}} szavazat",
-    "with_percent": "{{votedKey}}: {{votedPercent}}%"
-  },
-  "unvote": {
-    "title": "Visszavonom a javaslattal kapcsolatos véleményemet."
-  },
-  "qualification": {
-    "title": "Pontosítani szeretném a javaslatról alkotott véleményemet:",
-    "static_repartition": "Ezt a javaslatot a következő alkalommal minősítették: ",
-    "times": "szer",
-    "likeIt": "Kedvenc",
-    "doable": "Reális",
-    "platitudeAgree": "Mellékes",
-    "noWay": "Nem lényeges",
-    "impossible": "Nem megvalósítható",
-    "platitudeDisagree": "Mellékes",
-    "doNotUnderstand": "Nem értem",
-    "noOpinion": "Nincs véleményem",
-    "doNotCare": "Közömbös"
-  },
-  "sequence": {
-    "return": "Vissza a javaslatokhoz",
-    "title": "Szavazás a konzultáció keretében tett javaslatokról: ",
-    "more": "Hozzáférés a teljes konzultációhoz"
-  },
-  "login": {
-    "title": "Már van felhasználói fiókom",
-    "connect": "Bejelentkezés",
-    "or": "vagy",
-    "forgot_password": "Elfelejtette a jelszavát?",
-    "registration_title": "Nincs felhasználói fiókom,",
-    "registration_link": "létrehozok egyet.",
-    "email_doesnot_exist": "A {{emailLabel}} vagy a {{passwordLabel}} hibás."
-  },
-  "register": {
-    "title": "Felhasználói fiók létrehozása",
-    "or": "vagy",
-    "login_title": "Már van felhasználói fiókom,",
-    "login_link": "bejelentkezem.",
-    "gtu_text_first": "A regisztrációval elfogadja ",
-    "gtu_link": "általános használati feltételeinket."
-  },
-  "legal_consent": {
-    "title": "Jogi engedély",
-    "subtitle": "Szükségünk van az egyik szülőd beleegyezésére.",
-    "description": "Két hozzájárulásra van szükségünk ahhoz, hogy hozzáférhess állampolgári platformunkhoz. Hamarosan minden konzultációnkon felszólalhatsz!",
-    "minor_consent": "Hozzájárulok ahhoz, hogy a Make.org személyes adataimat kezelje.",
-    "parental_consent": "A szülői felügyelet gyakorlójaként hozzájárulok ahhoz, hogy a Make.org kezelje gyermekem személyes adatait.",
-    "cancel": "Törlés",
-    "submit": "Érvényesítés",
-    "privacy_policy_first_part": "A konzultációban való részvétel és az eredményekről való tájékoztatás érdekében hozzájárulok ahhoz, hogy a Make.org feldolgozza ezeket az adatokat a ",
-    "privacy_policy_link": "szabályzatnak megfelelően",
-    "privacy_policy_last_part": ". (kötelező)",
-    "privacy_policy": "adatvédelmi politika",
-    "make_protect": "A Make.org elkötelezi magát az Ön",
-    "make_protect_link": " személyes adatai védelme mellett.",
-    "opt_in": "Hozzájárulok, hogy e-maileket kapjak a Make.org-tól, hogy tájékoztassanak az aktuális és a soron következő konzultációkról. (nem kötelező)"
-  },
-  "forgot_password": {
-    "title": "Visszaállítom a jelszavamat",
-    "description": "Kérjük, adja meg a Make.org fiókjához kapcsolódó e-mail címét, hogy megkapja a jelszó-visszaállítási linket.",
-    "success": "Köszönjük, küldtünk egy e-mailt, hogy frissíthesse jelszavát.",
-    "return": "Vissza a ",
-    "login_link": "bejelentkezési képernyőre",
-    "send_link": "e-mail fogadása"
-  },
-  "reset_password": {
-    "title": "Új jelszót hozok létre",
-    "info": "Választhat egy új jelszót.",
-    "send_cta": "Érvényesítés",
-    "success": {
-      "title": "Köszönjük, a jelszavát frissítettük."
-    },
-    "failure": {
-      "bad_link": "A link már nem érvényes."
-    }
-  },
-  "data_policy_modal": {
-    "title": "Adatvédelmi politikánk frissítése",
-    "description": "A Make.org kötelezettséget vállal arra, hogy minden látogatása során tiszteletben tartja az Ön személyes adatait. A Make.org-ra bejelentkezve a böngészés folytatásához el kell fogadnia a frissített ",
-    "consent": "<strong> Elfogadom az új adatkezelési szabályzatot</strong> és használhatom a Make.org állampolgári felületemet.",
-    "validate": "Érvényesítés",
-    "stay": "Maradok",
-    "leave": "Leiratkozás",
-    "refusal_title": "Biztos, hogy le akar iratkozni?",
-    "refusal_description_first_part": "Az új .. elutasításával ",
-    "refusal_description_second_part": ", a továbbiakban nem tud majd hozzáférni a Make. org-on található állampolgári felületéhez."
-  },
-  "not_found": {
-    "intro": "Hoppá!  ",
-    "title": "404-es hiba",
-    "description": "A kért oldal nem található."
-  },
-  "top_proposal_card": {
-    "start": "@@top_proposal_card.start|fr:Commencer à voter"
-  },
-  "maintenance": {
-    "subtitle": "@@maintenance.subtitle|fr:Oops, nous sommes désolé! Make.org est actuellement en maintenance"
-  },
-  "unsecure": {
-    "title": "@@unsecure.title|fr:La consultation est maintenant terminée",
-    "description": "@@unsecure.description|fr:Vous souhaitez en savoir plus sur ce sujet ? Découvrez la suite de l'opération et restez informé(e) de toutes nos consultations citoyennes en vous inscrivant sur Make.org",
-    "link": "@@unsecure.link|fr:Découvrir notre opération"
-  }
 }

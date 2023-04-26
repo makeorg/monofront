@@ -55,7 +55,7 @@
                 "submit_success": "Промяната е запазена.",
                 "malformed": "Моля, спазвайте формата за url \"https://example.com\""
             },
-            "password_requirements": "@@common.form.password_requirements|fr:8 caractères minimum dont au moins 1 chiffre, 1 majuscule et 1 caractère spécial."
+            "password_requirements": "Минимум 8 символа, включително поне 1 цифра, 1 главна буква и 1 специален символ."
         },
         "social_login": {
             "facebook_connect": "Продължете с Facebook",
@@ -341,14 +341,14 @@
         }
     },
     "top_proposal_card": {
-        "start": "@@top_proposal_card.start|fr:Commencer à voter"
+        "start": "Започнете да гласувате"
     },
     "maintenance": {
-        "subtitle": "@@maintenance.subtitle|fr:Oops, nous sommes désolé! Make.org est actuellement en maintenance"
+        "subtitle": "Упс, съжаляваме! В момента Make.org е в ремонт"
     },
     "unsecure": {
-        "title": "@@unsecure.title|fr:La consultation est maintenant terminée",
-        "description": "@@unsecure.description|fr:Vous souhaitez en savoir plus sur ce sujet ? Découvrez la suite de l'opération et restez informé(e) de toutes nos consultations citoyennes en vous inscrivant sur Make.org",
-        "link": "@@unsecure.link|fr:Découvrir notre opération"
+        "title": "Консултацията вече приключи",
+        "description": "Искате ли да научите повече за тази тема? Научете повече за операцията и се информирайте за всички наши консултации с граждани, като се регистрирате на Make.org",
+        "link": "Открийте нашата дейност"
     }
 }

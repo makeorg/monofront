@@ -183,7 +183,7 @@
         "submit_success": "Промяната е запазена.",
         "malformed": "Моля, спазвайте формата за url \"https://example.com\""
       },
-      "password_requirements": "@@common.form.password_requirements|fr:8 caractères minimum dont au moins 1 chiffre, 1 majuscule et 1 caractère spécial."
+      "password_requirements": "Минимум 8 символа, включително поне 1 цифра, 1 главна буква и 1 специален символ."
     },
     "social_login": {
       "card_title": "За да намерите историята на гласуването си",

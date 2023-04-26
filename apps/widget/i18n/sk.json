@@ -341,14 +341,14 @@
         "description": "Požadovaná stránka neexistuje alebo už neexistuje."
     },
     "top_proposal_card": {
-        "start": "@@top_proposal_card.start|fr:Commencer à voter"
+        "start": "Začnite hlasovať"
     },
     "maintenance": {
-        "subtitle": "@@maintenance.subtitle|fr:Oops, nous sommes désolé! Make.org est actuellement en maintenance"
+        "subtitle": "Ups, ospravedlňujeme sa! Make.org je momentálne v údržbe"
     },
     "unsecure": {
-        "title": "@@unsecure.title|fr:La consultation est maintenant terminée",
-        "description": "@@unsecure.description|fr:Vous souhaitez en savoir plus sur ce sujet ? Découvrez la suite de l'opération et restez informé(e) de toutes nos consultations citoyennes en vous inscrivant sur Make.org",
-        "link": "@@unsecure.link|fr:Découvrir notre opération"
+        "title": "Konzultácie sú už uzavreté",
+        "description": "Chcete sa o tejto téme dozvedieť viac? Získajte viac informácií o tejto operácii a buďte informovaní o všetkých našich konzultáciách s občanmi, ak sa zaregistrujete na stránke Make.org",
+        "link": "Objavte našu prevádzku"
     }
 }

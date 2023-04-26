@@ -341,14 +341,14 @@
         }
     },
     "top_proposal_card": {
-        "start": "@@top_proposal_card.start|fr:Commencer à voter"
+        "start": "Aloita äänestäminen"
     },
     "maintenance": {
-        "subtitle": "@@maintenance.subtitle|fr:Oops, nous sommes désolé! Make.org est actuellement en maintenance"
+        "subtitle": "Hups, olemme pahoillamme! Make.org on parhaillaan ylläpidossa"
     },
     "unsecure": {
-        "title": "@@unsecure.title|fr:La consultation est maintenant terminée",
-        "description": "@@unsecure.description|fr:Vous souhaitez en savoir plus sur ce sujet ? Découvrez la suite de l'opération et restez informé(e) de toutes nos consultations citoyennes en vous inscrivant sur Make.org",
-        "link": "@@unsecure.link|fr:Découvrir notre opération"
+        "title": "Kuuleminen on nyt päättynyt",
+        "description": "Haluatko tietää lisää tästä aiheesta? Lue lisää operaatiosta ja pysy ajan tasalla kaikista kansalaiskuulemisista rekisteröitymällä Make.org-sivustolle",
+        "link": "Tutustu toimintaamme"
     }
 }

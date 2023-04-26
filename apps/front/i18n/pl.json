@@ -202,7 +202,7 @@
       "register_success": "Dzień dobry! Zostałaś/-eś zarejestrowana/-y.",
       "register_validate": "Dziękujemy za zarejestrowanie się. Na adres {{email}} została wysłana wiadomość w celu aktywacji Twojego konta za jednym kliknięciem.",
       "secure_expired": {
-        "first_sentence": "Przepraszamy, zostałaś/-eś wylogowana/-y, bo wydawało nam się, że opuściłaś/-eś stronę.",
+        "first_sentence": "Przepraszamy, zostałaś/-eś wylogowana/-y, bo wydawało nam się, że opuściłaś/-eś stronę",
         "second_sentence": "Zaloguj się ponownie, aby móc głosować, składać propozycje i podejmować działania z Make.org.",
         "emoji": "emoji smutna twarz ze łzą"
       },
@@ -221,7 +221,7 @@
       "tags_filter": "Skorzystaj z filtrów, aby odnaleźć interesujące Cię propozycje.",
       "thank_you": "Rozumiem, dziękuję!",
       "unexpected_error": "Na stronie wystąpił błąd, prosimy spróbować później.",
-      "network_error": "Nie udało się załadować wszystkich treści strony Make.org. Prawdopodobnie jesteś offline.",
+      "network_error": "Nie można uzyskać dostępu do pełnej zawartości Make.org, ponieważ wygląda na to, że jesteś offline",
       "vote_only": {
         "message": "Nie można już składać nowych propozycji do konsultacji \"{{title}}\", ale możesz nadal głosować, aby rozstrzygnąć los propozycji istniejących.",
         "button": "rozumiem"
@@ -403,7 +403,7 @@
   "proposal_submit": {
     "form": {
       "bait": "Należy ",
-      "title": "Złóż swoją propozycję o długości nieprzekraczającej 140 znaków. Wpisz ją w pole propozycji i kliknij przycisk „Zatwierdź”.",
+      "title": "Złóż swoją propozycję o długości nieprzekraczającej 140 znaków. Wpisz ją w pole propozycji i kliknij przycisk „Zatwierdź”",
       "field": "Pola propozycji",
       "counter": "Twoja propozycja składa się z {{current}} znaków na {{total}} znaków dostępnych",
       "panel_trigger": "Proponuję rozwiązanie",

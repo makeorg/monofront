@@ -344,14 +344,14 @@
         }
     },
     "top_proposal_card": {
-        "start": "@@top_proposal_card.start|fr:Commencer à voter"
+        "start": "Empezar a votar"
     },
     "maintenance": {
-        "subtitle": "@@maintenance.subtitle|fr:Oops, nous sommes désolé! Make.org est actuellement en maintenance"
+        "subtitle": "Lo sentimos. Make.org se encuentra actualmente en mantenimiento"
     },
     "unsecure": {
-        "title": "@@unsecure.title|fr:La consultation est maintenant terminée",
-        "description": "@@unsecure.description|fr:Vous souhaitez en savoir plus sur ce sujet ? Découvrez la suite de l'opération et restez informé(e) de toutes nos consultations citoyennes en vous inscrivant sur Make.org",
-        "link": "@@unsecure.link|fr:Découvrir notre opération"
+        "title": "La consulta está cerrada",
+        "description": "¿Quiere saber más sobre este tema? Obtenga más información sobre la operación y manténgase informado sobre todas nuestras consultas ciudadanas registrándose en Make.org",
+        "link": "Descubra nuestro funcionamiento"
     }
 }

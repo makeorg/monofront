@@ -1,360 +1,360 @@
 {
-  "meta": {
-    "sequence": {
-      "title_standard": "Sodelujte pri posvetovanju '{{question}}' – Make.org",
-      "title_controversy": "Delite predloge iz posvetovanja '{{question}}' - Make.org",
-      "title_popular": "Opredelite se do najbolj priljubljenih predlogov iz posvetovanja '{{question}}’ - Make.org"
-    }
-  },
-  "common": {
-    "connexion_label": "Prijava",
-    "register_label": "Registracija",
-    "continue": "Nadaljuj",
-    "form": {
-      "hide_password": "Skrij geslo",
-      "show_password": "Prikaži geslo",
-      "requirements": "Vsa polja so obvezna, če ni drugače navedeno.",
-      "requirements_short": "Vsa polja so obvezna.",
-      "password_requirements": "Vsaj 8 znakov, med njimi vsaj 1 številka, 1 velika začetnica in 1 poseben znak.",
-      "post_code": "Poštna številka nam omogoča analizo rezultatov glede na geografsko območje.",
-      "label": {
-        "email": "E-naslov",
-        "password": "Geslo",
-        "firstname": "Ime",
-        "age": "Starost",
-        "postalcode": "Poštna številka",
-        "profession": "Poklic",
-        "biography": "Življenjepis",
-        "website": "Spletišče",
-        "organisation": "Ime organizacije",
-        "postalcode_optional": "Poštna številka (neobvezno)",
-        "personality": {
-          "firstname": "Ime kandidata/vrh seznama",
-          "lastname": "Priimek kandidata/vrh seznama"
+    "meta": {
+        "sequence": {
+            "title_standard": "Sodelujte pri posvetovanju '{{question}}' – Make.org",
+            "title_controversy": "Delite predloge iz posvetovanja '{{question}}' - Make.org",
+            "title_popular": "Opredelite se do najbolj priljubljenih predlogov iz posvetovanja '{{question}}’ - Make.org"
         }
-      },
-      "messages": {
-        "errors_notification": "V obrazcu smo našli naslednje napake:",
-        "invalid_email": "Upoštevajte obliko e-naslova.",
-        "invalid_email_dynamic": "Upoštevajte obliko {{label}}.",
-        "already_registered": "Ta e-naslov že obstaja.",
-        "already_registered_dynamic": "Ta {{label}} že obstaja.",
-        "email_doesnot_exist": "Ta e-naslov ni povezan z vašim računom, znova vnesite svoj e-naslov.",
-        "email_doesnot_exist_dynamic": "Ta {{label}} ni povezan z vašim računom, znova vnesite svoj e-naslov.",
-        "invalid_password": "Vaše geslo mora vsebovati vsaj 8 znakov.",
-        "invalid_password_dynamic": "Vaše {{label}} mora vsebovati vsaj 8 znakov.",
-        "api_error": "Ojoj! Z nalaganjem te strani imamo težave. Poskusite znova pozneje.",
-        "mandatory": "Prosimo, izpolnite to polje.",
-        "mandatory_dynamic": "Polje {{label}} je obvezno.",
-        "invalid_age": "Naši uporabniki morajo biti stari med 8 in 120 let.",
-        "invalid_age_dynamic": "{{label}}: Naši uporabniki morajo biti stari med 8 in 120 let.",
-        "the_field_[email]_is_missing": "Polje {{label}} je obvezno.",
-        "the_field_[password]_is_missing": "Polje {{label}} je obvezno.",
-        "invalid_postal_code": "Poštna številka mora vsebovati 5 števk.",
-        "invalid_privacy_policy": "Strinjate se s pravilnikom o podatkih.",
-        "invalid_postal_code_dynamic": "{{label}} mora vsebovati 5 števk.",
-        "submit_success": "Sprememba je bila vnesena.",
-        "malformed": "Upoštevajte obliko url \"https://example.com\""
-      }
     },
-    "social_login": {
-      "facebook_connect": "Nadaljuj s Facebookom",
-      "google_connect": "Nadaljuj z Googlom",
-      "email_register": "Registracija z e-naslovom",
-      "count_register": "({{count}}/2)"
+    "common": {
+        "connexion_label": "Prijava",
+        "register_label": "Registracija",
+        "continue": "Nadaljuj",
+        "form": {
+            "hide_password": "Skrij geslo",
+            "show_password": "Prikaži geslo",
+            "requirements": "Vsa polja so obvezna, če ni drugače navedeno.",
+            "requirements_short": "Vsa polja so obvezna.",
+            "password_requirements": "Vsaj 8 znakov, med njimi vsaj 1 številka, 1 velika začetnica in 1 poseben znak.",
+            "post_code": "Poštna številka nam omogoča analizo rezultatov glede na geografsko območje.",
+            "label": {
+                "email": "E-naslov",
+                "password": "Geslo",
+                "firstname": "Ime",
+                "age": "Starost",
+                "postalcode": "Poštna številka",
+                "profession": "Poklic",
+                "biography": "Življenjepis",
+                "website": "Spletišče",
+                "organisation": "Ime organizacije",
+                "postalcode_optional": "Poštna številka (neobvezno)",
+                "personality": {
+                    "firstname": "Ime kandidata/vrh seznama",
+                    "lastname": "Priimek kandidata/vrh seznama"
+                }
+            },
+            "messages": {
+                "errors_notification": "V obrazcu smo našli naslednje napake:",
+                "invalid_email": "Upoštevajte obliko e-naslova.",
+                "invalid_email_dynamic": "Upoštevajte obliko {{label}}.",
+                "already_registered": "Ta e-naslov že obstaja.",
+                "already_registered_dynamic": "Ta {{label}} že obstaja.",
+                "email_doesnot_exist": "Ta e-naslov ni povezan z vašim računom, znova vnesite svoj e-naslov.",
+                "email_doesnot_exist_dynamic": "Ta {{label}} ni povezan z vašim računom, znova vnesite svoj e-naslov.",
+                "invalid_password": "Vaše geslo mora vsebovati vsaj 8 znakov.",
+                "invalid_password_dynamic": "Vaše {{label}} mora vsebovati vsaj 8 znakov.",
+                "api_error": "Ojoj! Z nalaganjem te strani imamo težave. Poskusite znova pozneje.",
+                "mandatory": "Prosimo, izpolnite to polje.",
+                "mandatory_dynamic": "Polje {{label}} je obvezno.",
+                "invalid_age": "Naši uporabniki morajo biti stari med 8 in 120 let.",
+                "invalid_age_dynamic": "{{label}}: Naši uporabniki morajo biti stari med 8 in 120 let.",
+                "the_field_[email]_is_missing": "Polje {{label}} je obvezno.",
+                "the_field_[password]_is_missing": "Polje {{label}} je obvezno.",
+                "invalid_postal_code": "Poštna številka mora vsebovati 5 števk.",
+                "invalid_privacy_policy": "Strinjate se s pravilnikom o podatkih.",
+                "invalid_postal_code_dynamic": "{{label}} mora vsebovati 5 števk.",
+                "submit_success": "Sprememba je bila vnesena.",
+                "malformed": "Upoštevajte obliko url \"https://example.com\""
+            }
+        },
+        "social_login": {
+            "facebook_connect": "Nadaljuj s Facebookom",
+            "google_connect": "Nadaljuj z Googlom",
+            "email_register": "Registracija z e-naslovom",
+            "count_register": "({{count}}/2)"
+        },
+        "notifications": {
+            "bad_link": "Ta povezava ni več veljavna.",
+            "secure_expired": {
+                "first_sentence": "Žal ste bili odjavljeni, ker ste kot kaže odšli.",
+                "second_sentence": "Če želite še naprej glasovati, predlagati in ukrepati na Make.org, se znova prijavite.",
+                "emoji": "žalosten čustveni simbol s solzo"
+            },
+            "session_expired": {
+                "title": "Rok za neaktivnost",
+                "description": "Zaradi zagotavljanja kakovosti naše storitve bomo stran znova naložili.",
+                "button_text": "Razumem"
+            },
+            "icons": {
+                "close": "Zapri obvestilo",
+                "information": "Informativno obvestilo: ",
+                "success": "Obvestilo o uspehu: ",
+                "error": "Obvestilo o napaki: ",
+                "alert": "Opozorilo: "
+            },
+            "unexpected_error": "Trenutno je nekaj narobe, poskusite znova pozneje.",
+            "network_error": "Vsebina spletišča Make.org ni dostopna, ker nimate povezave",
+            "vote_only": {
+                "message": "Pri posvetovanju \"{{title}}\" novi predlogi niso več mogoči, lahko pa še naprej glasujete o obstoječih predlogih.",
+                "button": "razumem"
+            },
+            "vote_on_proposal": "Glasujte za ta predlog"
+        },
+        "propose": "Predlagaj",
+        "open_new_window": "Odpri v novem zavihku",
+        "loading": "Počakajte, medtem ko se nalaga.",
+        "participate": "Sodelujte",
+        "display_tooltip": "Prikaži vsebino opisa orodja ob preletu",
+        "expand_collapse": "{{name}} - Prikaži vsebino spustnega razdelka",
+        "shrink_collapse": "{{name}} - Skrij vsebino spustnega razdelka",
+        "secondary_nav": "Sekundarna navigacija",
+        "percent": "{{percent}} %",
+        "header_authentication_nav": "Dostop do mojega uporabniškega profila",
+        "footer_nav": "Navigacija na dnu strani",
+        "sidebar_area": "Stranska vrstica",
+        "max_characters": "največje število znakov",
+        "back": "Nazaj",
+        "proposal_count_one": "{{count}} predlog",
+        "proposal_count_two": "{{count}} predloga",
+        "proposal_count_few": "{{count}} predlogi",
+        "proposal_count_other": "{{count}} predlogov",
+        "breadcrumbs": "sledenje poti",
+        "million_one": "milijon",
+        "million_two": "milijona",
+        "million_few": "milijoni",
+        "million_other": "milijonov",
+        "close_panel": "Zapri spustno okno",
+        "close": "Zapri"
     },
-    "notifications": {
-      "bad_link": "Ta povezava ni več veljavna.",
-      "secure_expired": {
-        "first_sentence": "Žal ste bili odjavljeni, ker ste kot kaže odšli.",
-        "second_sentence": "Če želite še naprej glasovati, predlagati in ukrepati na Make.org, se znova prijavite.",
-        "emoji": "žalosten čustveni simbol s solzo"
-      },
-      "session_expired": {
-        "title": "Rok za neaktivnost",
-        "description": "Zaradi zagotavljanja kakovosti naše storitve bomo stran znova naložili.",
-        "button_text": "Razumem"
-      },
-      "icons": {
-        "close": "Zapri obvestilo",
-        "information": "Informativno obvestilo: ",
-        "success": "Obvestilo o uspehu: ",
-        "error": "Obvestilo o napaki: ",
-        "alert": "Opozorilo: "
-      },
-      "unexpected_error": "Trenutno je nekaj narobe, poskusite znova pozneje.",
-      "network_error": "Vsebina spletišča Make.org ni dostopna, ker nimate povezave",
-      "vote_only": {
-        "message": "Pri posvetovanju \"{{title}}\" novi predlogi niso več mogoči, lahko pa še naprej glasujete o obstoječih predlogih.",
-        "button": "razumem"
-      },
-      "vote_on_proposal": "Glasujte za ta predlog"
+    "header": {
+        "logo_alt": "Pojdi na domačo stran Make.org"
     },
-    "propose": "Predlagaj",
-    "open_new_window": "Odpri v novem zavihku",
-    "loading": "Počakajte, medtem ko se nalaga.",
-    "participate": "Sodelujte",
-    "display_tooltip": "Prikaži vsebino opisa orodja ob preletu",
-    "expand_collapse": "{{name}} - Prikaži vsebino spustnega razdelka",
-    "shrink_collapse": "{{name}} - Skrij vsebino spustnega razdelka",
-    "secondary_nav": "Sekundarna navigacija",
-    "percent": "{{percent}} %",
-    "header_authentication_nav": "Dostop do mojega uporabniškega profila",
-    "footer_nav": "Navigacija na dnu strani",
-    "sidebar_area": "Stranska vrstica",
-    "max_characters": "največje število znakov",
-    "back": "Nazaj",
-    "proposal_count_one": "{{count}} predlog",
-    "proposal_count_two": "{{count}} predloga",
-    "proposal_count_few": "{{count}} predlogi",
-    "proposal_count_other": "{{count}} predlogov",
-    "breadcrumbs": "sledenje poti",
-    "million_one": "milijon",
-    "million_two": "milijona",
-    "million_few": "milijoni",
-    "million_other": "milijonov",
-    "close_panel": "Zapri spustno okno",
-    "close": "Zapri"
-  },
-  "header": {
-    "logo_alt": "Pojdi na domačo stran Make.org"
-  },
-  "proposal_card": {
-    "next": "Naslednji predlog",
-    "validate": "Potrdi",
-    "content": "Vsebina predloga: ",
-    "original": "Glej izvirnik",
-    "translation": "Glej prevod",
-    "posted_label": "Objavljeno v ",
-    "author": {
-      "from": "Predlog: ",
-      "age": "{{age}} let",
-      "date": "objavljeno dne: "
+    "proposal_card": {
+        "next": "Naslednji predlog",
+        "validate": "Potrdi",
+        "content": "Vsebina predloga: ",
+        "original": "Glej izvirnik",
+        "translation": "Glej prevod",
+        "posted_label": "Objavljeno v ",
+        "author": {
+            "from": "Predlog: ",
+            "age": "{{age}} let",
+            "date": "objavljeno dne: "
+        },
+        "status": {
+            "title": "Status predloga: ",
+            "accepted": "Objavljeno",
+            "refused": "Zavrnjeno",
+            "postponed": "Čaka moderiranje",
+            "pending": "Čaka moderiranje"
+        }
     },
-    "status": {
-      "title": "Status predloga: ",
-      "accepted": "Objavljeno",
-      "refused": "Zavrnjeno",
-      "postponed": "Čaka moderiranje",
-      "pending": "Čaka moderiranje"
-    }
-  },
-  "report_translations": {
-    "button": "Možnosti predloga",
-    "confirmation": {
-      "title": "Hvala za opozorilo!",
-      "description": "Naša ekipa ga bo obravnavala v najkrajšem času."
+    "report_translations": {
+        "button": "Možnosti predloga",
+        "confirmation": {
+            "title": "Hvala za opozorilo!",
+            "description": "Naša ekipa ga bo obravnavala v najkrajšem času."
+        },
+        "form": {
+            "title": "Opozorilo glede samodejnega prevoda",
+            "unclear": "Nerazumljiv prevod",
+            "error": "Napaka pri prevodu",
+            "false_info": "Vsebuje napačno informacijo",
+            "offensive": "Žaljiv predlog",
+            "report": "Opozori"
+        },
+        "first_step": {
+            "title": "Samodejni prevod",
+            "text": "Predlogi naših posvetovanj so samodejni. Če opazite napako, opozorite naše ekipe!"
+        }
     },
-    "form": {
-      "title": "Opozorilo glede samodejnega prevoda",
-      "unclear": "Nerazumljiv prevod",
-      "error": "Napaka pri prevodu",
-      "false_info": "Vsebuje napačno informacijo",
-      "offensive": "Žaljiv predlog",
-      "report": "Opozori"
+    "intro_card": {
+        "title": "Tisoči državljanov predlagajo rešitve.",
+        "description": "Opredelite se do teh rešitev in predlagajte svoje.\nNa podlagi najboljših bomo ukrepali.",
+        "button": "Začni"
     },
-    "first_step": {
-      "title": "Samodejni prevod",
-      "text": "Predlogi naših posvetovanj so samodejni. Če opazite napako, opozorite naše ekipe!"
-    }
-  },
-  "intro_card": {
-    "title": "Tisoči državljanov predlagajo rešitve.",
-    "description": "Opredelite se do teh rešitev in predlagajte svoje.\nNa podlagi najboljših bomo ukrepali.",
-    "button": "Začni"
-  },
-  "final_card": {
-    "title": "Hvala za odziv na naše predloge!",
-    "description": "Nadaljujte z glasovanjem, da nam pomagate prepoznati prednostne naloge.",
-    "link_text": "Želim sodelovati pri posvetovanju",
+    "final_card": {
+        "title": "Hvala za odziv na naše predloge!",
+        "description": "Nadaljujte z glasovanjem, da nam pomagate prepoznati prednostne naloge.",
+        "link_text": "Želim sodelovati pri posvetovanju",
+        "register": {
+            "description": "Kako spremljati rezultate?",
+            "button_intro": "Ustvarite svoj",
+            "button_text": "državljanski kotiček."
+        }
+    },
+    "no_proposal_card": {
+        "title": {
+            "regular": "Hvala za vaš izjemen prispevek!",
+            "popular": "Hvala, glasovali ste za vse najbolj priljubljene predloge",
+            "controversial": "Hvala, glasovali ste za vse najbolj sporne predloge",
+            "keyword": "Hvala, glasovali ste za vse predloge \"{{keyword}}\""
+        },
+        "description": {
+            "regular": "Trenutno ni novih predlogov.",
+            "special": "Nadaljujte z glasovanjem, da nam pomagate prepoznati prednostne naloge."
+        },
+        "link_text": "Želim sodelovati pri posvetovanju",
+        "sharing": "Ali razširite obseg tega posvetovanja tako, da ga delite."
+    },
+    "push_proposal_card": {
+        "title": "Pa vi, bi predlagali kakšno rešitev v zvezi s tem?",
+        "next-cta": "Ne še, želim nadaljevati z glasovanjem"
+    },
+    "sequence_progress": {
+        "previous": "Pojdi na prejšnji element",
+        "counter": "Element {{current}} od {{total}}"
+    },
+    "sequence_zone": {
+        "popular_title": "Priljubljeni predlogi",
+        "controversial_title": "Sporni predlogi"
+    },
+    "special_final_card": {
+        "title": "Hvala za vaše glasove!",
+        "subtitle": "Lahko še naprej sodelujete pri posvetovanju",
+        "cta_text": "Želim sodelovati pri posvetovanju"
+    },
+    "demographics_card": {
+        "disclaimer": "Vaše informacije so anonimne in omogočajo večjo reprezentativnost rezultatov.",
+        "skip": "Preskoči",
+        "submit": "Shrani",
+        "submitted_thanks": "Hvala za odgovor.",
+        "submitted_disclaimer": " Anonimno bo uporabljen za analiziranje rezultatov posvetovanja.",
+        "select": "Izberi"
+    },
+    "proposal_submit": {
+        "form": {
+            "bait": "Treba je ",
+            "title": "Oddajte svoj predlog, ki vsebuje manj kot 140 znakov. Vnesite ga v polje za predlog in potrdite s klikom na gumb »Potrdi«",
+            "field": "Polja za predlog",
+            "counter": "Vaš predlog vsebuje {{current}} znakov od skupaj {{total}} razpoložljivih znakov",
+            "panel_trigger": "Želim predlagati rešitev",
+            "read_our": "Preberi naš",
+            "moderation_link": "pravilnik o moderiranju",
+            "button_propose": "PREDLAGAJ"
+        },
+        "authentication": {
+            "back": "Nazaj",
+            "last_step_red": "Več kot ena faza ",
+            "last_step": "za pošiljanje vašega predloga! ",
+            "button_login_text": "Račun že imam,",
+            "button_login_link": "želim se prijaviti.",
+            "button_login": "Prijava",
+            "back_authentication": "Nazaj na stran za prijavo"
+        },
+        "success": {
+            "button": "Nadaljuj z glasovanjem",
+            "other_idea": "Imam drugo zamisel",
+            "tooltip_title": "Moderiranje poteka",
+            "tooltip_description": "Naše ekipe bodo vaš predlog obdelale v 48 urah, ga pa lahko že zdaj najdete v svojem profilu.",
+            "grats": "Čestitamo, {{name}}, ",
+            "proposal_sent": "vaš predlog je bil poslan ",
+            "activate": "Potrdite svoj e-naslov z enim klikom, ",
+            "link": "da potrdite pristnost svojega računa. Kliknite na aktivacijsko povezavo, ki smo jo poslali na: {{mail}}",
+            "question": "Imate vprašanje? V stik z nami lahko stopite na: ",
+            "consultation_access": "Želim sodelovati pri posvetovanju"
+        }
+    },
+    "vote": {
+        "intro_title": "Želim oddati mnenje o tem predlogu: ",
+        "agree": "Za",
+        "disagree": "Proti",
+        "neutral": "Neopredeljen/-a",
+        "label_one": "{{count}} glas",
+        "label_two": "{{count}} glasova",
+        "label_few": "{{count}} glasovi",
+        "label_other": "{{count}} glasov",
+        "with_percent": "{{votedKey}}: {{votedPercent}} %"
+    },
+    "unvote": {
+        "title": "Želim preklicati mnenje o tem predlogu."
+    },
+    "qualification": {
+        "title": "Želim pojasniti svoje mnenje o tem predlogu:",
+        "static_repartition": "Ta predlog je prejel naslednje obrazložitve: ",
+        "times": "krat",
+        "likeIt": "Navdušujoče",
+        "doable": "Izvedljivo",
+        "platitudeAgree": "Očitno",
+        "noWay": "Nikakor!",
+        "impossible": "Neizvedljivo",
+        "platitudeDisagree": "Nesmiselno",
+        "doNotUnderstand": "Nerazumljivo",
+        "noOpinion": "Nimam mnenja",
+        "doNotCare": "Vseeno mi je"
+    },
+    "sequence": {
+        "return": "Nazaj na predloge",
+        "title": "Glasuje za predloge iz tega posvetovanja: ",
+        "more": "Vstop v celotno posvetovanje"
+    },
+    "login": {
+        "title": "Račun že imam",
+        "connect": "Prijava",
+        "or": "ali",
+        "forgot_password": "Ste pozabili geslo?",
+        "registration_title": "Nimam računa,",
+        "registration_link": "želim ga ustvariti.",
+        "email_doesnot_exist": "Nepravilen {{emailLabel}} ali {{passwordLabel}}."
+    },
     "register": {
-      "description": "Kako spremljati rezultate?",
-      "button_intro": "Ustvarite svoj",
-      "button_text": "državljanski kotiček."
+        "title": "Ustvari račun",
+        "or": "ali",
+        "login_title": "Račun že imam,",
+        "login_link": "želim se prijaviti.",
+        "gtu_text_first": "Z registracijo potrjujete, da se strinjate z našimi ",
+        "gtu_link": "splošnimi pogoji uporabe."
+    },
+    "legal_consent": {
+        "title": "Dovoljenje po zakonu",
+        "subtitle": "Potrebujemo dovoljenje enega tvojih staršev",
+        "description": "Potrebujemo dve soglasji, da ti omogočimo dostop do naše državljanske platforme. Kmalu boš lahko sodeloval/-a pri vseh posvetovanjih!",
+        "minor_consent": "Strinjam se, da Make.org obdeluje moje osebne podatke.",
+        "parental_consent": "Kot nosilec starševske skrbi se strinjam s tem, da Make.org obdeluje osebne podatke mojega otroka.",
+        "cancel": "Prekliči",
+        "submit": "Potrdi",
+        "privacy_policy_first_part": "Strinjam se, da Make.org obdeluje te podatke za to, da lahko sodelujem in sem obveščen/-a o rezultatih v skladu s ",
+        "privacy_policy_link": "pravilnikom",
+        "privacy_policy_last_part": ". (obvezno)",
+        "privacy_policy": "pravilnik o podatkih",
+        "make_protect": "Make.org se zavezuje k varstvu vaših",
+        "make_protect_link": " osebnih podatkov.",
+        "opt_in": "Strinjam se s prejemanjem e-sporočil Make.org, da bom na tekočem z novostmi glede trenutnih ali prihodnjih posvetovanj. (neobvezno)"
+    },
+    "forgot_password": {
+        "title": "Želim ponastaviti geslo",
+        "description": "Da prejmete povezavo za ponastavitev, vnesite e-naslov, povezan z vašim računom Make.org.",
+        "success": "Hvala, poslali smo vam e-sporočilo, s pomočjo katerega boste lahko posodobili svoje geslo.",
+        "return": "Nazaj na ",
+        "login_link": "stran za prijavo",
+        "send_link": "prejmi e-sporočilo"
+    },
+    "reset_password": {
+        "title": "Želim ustvariti novo geslo",
+        "info": "Lahko izberete novo geslo.",
+        "send_cta": "Potrdi",
+        "success": {
+            "title": "Hvala, vaše geslo je bilo posodobljeno."
+        },
+        "failure": {
+            "bad_link": "Ta povezava ni več veljavna."
+        }
+    },
+    "data_policy_modal": {
+        "title": "Posodobitev našega pravilnika o podatkih",
+        "description": "Make.org se zavezuje k spoštovanju vaših osebnih podatkov ob vsakem vašem obisku spletišča. Če želite nadaljevati s brskanjem na Make.org, medtem ko ste prijavljeni, se morate strinjati s posodobljenim  ",
+        "consent": "<strong>Strinjam se z novim pravilnikom o podatkih</strong>, da bom lahko uporabljal/-a svoj kotiček na Make.org",
+        "validate": "Potrdi",
+        "stay": "Ostani",
+        "leave": "Zapusti",
+        "refusal_title": "Ste prepričani, da želite oditi?",
+        "refusal_description_first_part": "Če zavrnete naš novi ",
+        "refusal_description_second_part": ", ne boste več mogli dostopati do svojega državljanskega kotička na Make.org."
+    },
+    "not_found": {
+        "intro": "ojoj",
+        "title": "Napaka 404",
+        "description": "Stran, ki jo iščete, ne obstaja (več)."
+    },
+    "top_proposal_card": {
+        "start": "Začetek glasovanja"
+    },
+    "maintenance": {
+        "subtitle": "Ups, žal nam je! Make.org je trenutno v vzdrževanju"
+    },
+    "unsecure": {
+        "title": "Posvetovanje je zaključeno",
+        "description": "Želite izvedeti več o tej temi? Več informacij o operaciji in obveščanje o vseh naših posvetovanjih z državljani pridobite z registracijo na Make.org",
+        "link": "Odkrijte naše delovanje"
     }
-  },
-  "no_proposal_card": {
-    "title": {
-      "regular": "Hvala za vaš izjemen prispevek!",
-      "popular": "Hvala, glasovali ste za vse najbolj priljubljene predloge",
-      "controversial": "Hvala, glasovali ste za vse najbolj sporne predloge",
-      "keyword": "Hvala, glasovali ste za vse predloge \"{{keyword}}\""
-    },
-    "description": {
-      "regular": "Trenutno ni novih predlogov.",
-      "special": "Nadaljujte z glasovanjem, da nam pomagate prepoznati prednostne naloge."
-    },
-    "link_text": "Želim sodelovati pri posvetovanju",
-    "sharing": "Ali razširite obseg tega posvetovanja tako, da ga delite."
-  },
-  "push_proposal_card": {
-    "title": "Pa vi, bi predlagali kakšno rešitev v zvezi s tem?",
-    "next-cta": "Ne še, želim nadaljevati z glasovanjem"
-  },
-  "sequence_progress": {
-    "previous": "Pojdi na prejšnji element",
-    "counter": "Element {{current}} od {{total}}"
-  },
-  "sequence_zone": {
-    "popular_title": "Priljubljeni predlogi",
-    "controversial_title": "Sporni predlogi"
-  },
-  "special_final_card": {
-    "title": "Hvala za vaše glasove!",
-    "subtitle": "Lahko še naprej sodelujete pri posvetovanju",
-    "cta_text": "Želim sodelovati pri posvetovanju"
-  },
-  "demographics_card": {
-    "disclaimer": "Vaše informacije so anonimne in omogočajo večjo reprezentativnost rezultatov.",
-    "skip": "Preskoči",
-    "submit": "Shrani",
-    "submitted_thanks": "Hvala za odgovor.",
-    "submitted_disclaimer": " Anonimno bo uporabljen za analiziranje rezultatov posvetovanja.",
-    "select": "Izberi"
-  },
-  "proposal_submit": {
-    "form": {
-      "bait": "Treba je ",
-      "title": "Oddajte svoj predlog, ki vsebuje manj kot 140 znakov. Vnesite ga v polje za predlog in potrdite s klikom na gumb »Potrdi«",
-      "field": "Polja za predlog",
-      "counter": "Vaš predlog vsebuje {{current}} znakov od skupaj {{total}} razpoložljivih znakov",
-      "panel_trigger": "Želim predlagati rešitev",
-      "read_our": "Preberi naš",
-      "moderation_link": "pravilnik o moderiranju",
-      "button_propose": "PREDLAGAJ"
-    },
-    "authentication": {
-      "back": "Nazaj",
-      "last_step_red": "Več kot ena faza ",
-      "last_step": "za pošiljanje vašega predloga! ",
-      "button_login_text": "Račun že imam,",
-      "button_login_link": "želim se prijaviti.",
-      "button_login": "Prijava",
-      "back_authentication": "Nazaj na stran za prijavo"
-    },
-    "success": {
-      "button": "Nadaljuj z glasovanjem",
-      "other_idea": "Imam drugo zamisel",
-      "tooltip_title": "Moderiranje poteka",
-      "tooltip_description": "Naše ekipe bodo vaš predlog obdelale v 48 urah, ga pa lahko že zdaj najdete v svojem profilu.",
-      "grats": "Čestitamo, {{name}}, ",
-      "proposal_sent": "vaš predlog je bil poslan ",
-      "activate": "Potrdite svoj e-naslov z enim klikom, ",
-      "link": "da potrdite pristnost svojega računa. Kliknite na aktivacijsko povezavo, ki smo jo poslali na: {{mail}}",
-      "question": "Imate vprašanje? V stik z nami lahko stopite na: ",
-      "consultation_access": "Želim sodelovati pri posvetovanju"
-    }
-  },
-  "vote": {
-    "intro_title": "Želim oddati mnenje o tem predlogu: ",
-    "agree": "Za",
-    "disagree": "Proti",
-    "neutral": "Neopredeljen/-a",
-    "label_one": "{{count}} glas",
-    "label_two": "{{count}} glasova",
-    "label_few": "{{count}} glasovi",
-    "label_other": "{{count}} glasov",
-    "with_percent": "{{votedKey}}: {{votedPercent}} %"
-  },
-  "unvote": {
-    "title": "Želim preklicati mnenje o tem predlogu."
-  },
-  "qualification": {
-    "title": "Želim pojasniti svoje mnenje o tem predlogu:",
-    "static_repartition": "Ta predlog je prejel naslednje obrazložitve: ",
-    "times": "krat",
-    "likeIt": "Navdušujoče",
-    "doable": "Izvedljivo",
-    "platitudeAgree": "Očitno",
-    "noWay": "Nikakor!",
-    "impossible": "Neizvedljivo",
-    "platitudeDisagree": "Nesmiselno",
-    "doNotUnderstand": "Nerazumljivo",
-    "noOpinion": "Nimam mnenja",
-    "doNotCare": "Vseeno mi je"
-  },
-  "sequence": {
-    "return": "Nazaj na predloge",
-    "title": "Glasuje za predloge iz tega posvetovanja: ",
-    "more": "Vstop v celotno posvetovanje"
-  },
-  "login": {
-    "title": "Račun že imam",
-    "connect": "Prijava",
-    "or": "ali",
-    "forgot_password": "Ste pozabili geslo?",
-    "registration_title": "Nimam računa,",
-    "registration_link": "želim ga ustvariti.",
-    "email_doesnot_exist": "Nepravilen {{emailLabel}} ali {{passwordLabel}}."
-  },
-  "register": {
-    "title": "Ustvari račun",
-    "or": "ali",
-    "login_title": "Račun že imam,",
-    "login_link": "želim se prijaviti.",
-    "gtu_text_first": "Z registracijo potrjujete, da se strinjate z našimi ",
-    "gtu_link": "splošnimi pogoji uporabe."
-  },
-  "legal_consent": {
-    "title": "Dovoljenje po zakonu",
-    "subtitle": "Potrebujemo dovoljenje enega tvojih staršev",
-    "description": "Potrebujemo dve soglasji, da ti omogočimo dostop do naše državljanske platforme. Kmalu boš lahko sodeloval/-a pri vseh posvetovanjih!",
-    "minor_consent": "Strinjam se, da Make.org obdeluje moje osebne podatke.",
-    "parental_consent": "Kot nosilec starševske skrbi se strinjam s tem, da Make.org obdeluje osebne podatke mojega otroka.",
-    "cancel": "Prekliči",
-    "submit": "Potrdi",
-    "privacy_policy_first_part": "Strinjam se, da Make.org obdeluje te podatke za to, da lahko sodelujem in sem obveščen/-a o rezultatih v skladu s ",
-    "privacy_policy_link": "pravilnikom",
-    "privacy_policy_last_part": ". (obvezno)",
-    "privacy_policy": "pravilnik o podatkih",
-    "make_protect": "Make.org se zavezuje k varstvu vaših",
-    "make_protect_link": " osebnih podatkov.",
-    "opt_in": "Strinjam se s prejemanjem e-sporočil Make.org, da bom na tekočem z novostmi glede trenutnih ali prihodnjih posvetovanj. (neobvezno)"
-  },
-  "forgot_password": {
-    "title": "Želim ponastaviti geslo",
-    "description": "Da prejmete povezavo za ponastavitev, vnesite e-naslov, povezan z vašim računom Make.org.",
-    "success": "Hvala, poslali smo vam e-sporočilo, s pomočjo katerega boste lahko posodobili svoje geslo.",
-    "return": "Nazaj na ",
-    "login_link": "stran za prijavo",
-    "send_link": "prejmi e-sporočilo"
-  },
-  "reset_password": {
-    "title": "Želim ustvariti novo geslo",
-    "info": "Lahko izberete novo geslo.",
-    "send_cta": "Potrdi",
-    "success": {
-      "title": "Hvala, vaše geslo je bilo posodobljeno."
-    },
-    "failure": {
-      "bad_link": "Ta povezava ni več veljavna."
-    }
-  },
-  "data_policy_modal": {
-    "title": "Posodobitev našega pravilnika o podatkih",
-    "description": "Make.org se zavezuje k spoštovanju vaših osebnih podatkov ob vsakem vašem obisku spletišča. Če želite nadaljevati s brskanjem na Make.org, medtem ko ste prijavljeni, se morate strinjati s posodobljenim  ",
-    "consent": "<strong>Strinjam se z novim pravilnikom o podatkih</strong>, da bom lahko uporabljal/-a svoj kotiček na Make.org",
-    "validate": "Potrdi",
-    "stay": "Ostani",
-    "leave": "Zapusti",
-    "refusal_title": "Ste prepričani, da želite oditi?",
-    "refusal_description_first_part": "Če zavrnete naš novi ",
-    "refusal_description_second_part": ", ne boste več mogli dostopati do svojega državljanskega kotička na Make.org."
-  },
-  "not_found": {
-    "intro": "ojoj",
-    "title": "Napaka 404",
-    "description": "Stran, ki jo iščete, ne obstaja (več)."
-  },
-  "top_proposal_card": {
-    "start": "@@top_proposal_card.start|fr:Commencer à voter"
-  },
-  "maintenance": {
-    "subtitle": "@@maintenance.subtitle|fr:Oops, nous sommes désolé! Make.org est actuellement en maintenance"
-  },
-  "unsecure": {
-    "title": "@@unsecure.title|fr:La consultation est maintenant terminée",
-    "description": "@@unsecure.description|fr:Vous souhaitez en savoir plus sur ce sujet ? Découvrez la suite de l'opération et restez informé(e) de toutes nos consultations citoyennes en vous inscrivant sur Make.org",
-    "link": "@@unsecure.link|fr:Découvrir notre opération"
-  }
 }

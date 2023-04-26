@@ -341,14 +341,14 @@
         "description": "Otsitavat lehekülge ei ole (enam) olemas."
     },
     "top_proposal_card": {
-        "start": "@@top_proposal_card.start|fr:Commencer à voter"
+        "start": "Alusta hääletamist"
     },
     "maintenance": {
-        "subtitle": "@@maintenance.subtitle|fr:Oops, nous sommes désolé! Make.org est actuellement en maintenance"
+        "subtitle": "Ups, vabandame! Make.org on praegu hoolduses"
     },
     "unsecure": {
-        "title": "@@unsecure.title|fr:La consultation est maintenant terminée",
-        "description": "@@unsecure.description|fr:Vous souhaitez en savoir plus sur ce sujet ? Découvrez la suite de l'opération et restez informé(e) de toutes nos consultations citoyennes en vous inscrivant sur Make.org",
-        "link": "@@unsecure.link|fr:Découvrir notre opération"
+        "title": "Konsultatsioon on nüüdseks lõppenud",
+        "description": "Kas soovite selle teema kohta rohkem teada? Saate rohkem teada operatsiooni kohta ja olete kursis kõigi meie kodanikukonsultatsioonide kohta, registreerudes veebilehel Make.org",
+        "link": "Avastage meie tegevust"
     }
 }

@@ -1,354 +1,354 @@
 {
-  "meta": {
-    "sequence": {
-      "title_standard": "Deltag i høringen '{{question}}' - Make.org",
-      "title_controversy": "Stem på de bedste forslag '{{question}}' - Make.org",
-      "title_popular": "Tag stilling til de mest populære forslag til høringen '{{question}}' - Make.org"
-    }
-  },
-  "common": {
-    "connexion_label": "Log på",
-    "register_label": "Tilmeld dig",
-    "continue": "Fortsæt",
-    "form": {
-      "hide_password": "Skjul adgangskoden",
-      "show_password": "Vis adgangskoden",
-      "requirements": "Alle felterne skal udfyldes, medmindre andet er angivet.",
-      "requirements_short": "Alle felterne skal udfyldes.",
-      "password_requirements": "Mindst 8 tegn, heraf mindst 1 tal, 1 stort bogstav og 1 specialtegn.",
-      "post_code": "Postnummeret giver mulighed for at analysere resultaterne efter geografisk område.",
-      "label": {
-        "email": "E-mail",
-        "password": "Adgangskode",
-        "firstname": "Fornavn",
-        "age": "Alder",
-        "postalcode": "Postnummer",
-        "profession": "Profession",
-        "biography": "Biografi",
-        "website": "Websted",
-        "organisation": "Organisationens navn",
-        "postalcode_optional": "Postnummer (valgfrit)",
-        "personality": {
-          "firstname": "Kandidatens / topkandidatens fornavn",
-          "lastname": "Kandidatens / topkandidatens efternavn"
+    "meta": {
+        "sequence": {
+            "title_standard": "Deltag i høringen '{{question}}' - Make.org",
+            "title_controversy": "Stem på de bedste forslag '{{question}}' - Make.org",
+            "title_popular": "Tag stilling til de mest populære forslag til høringen '{{question}}' - Make.org"
         }
-      },
-      "messages": {
-        "errors_notification": "Der blev fundet fejl i denne formular:",
-        "invalid_email": "Overhold e-mail-formatet.",
-        "invalid_email_dynamic": "Overhold formatet {{label}}.",
-        "already_registered": "Denne e-mail findes allerede.",
-        "already_registered_dynamic": "Denne {{label}} findes allerede.",
-        "email_doesnot_exist": "Denne e-mail er ikke tilknyttet din konto. Indtast din e-mail en gang til.",
-        "email_doesnot_exist_dynamic": "Denne {{label}} er ikke tilknyttet din konto. Indtast din e-mail en gang til.",
-        "invalid_password": "Din adgangskode skal indeholde mindst 8 tegn.",
-        "invalid_password_dynamic": "Din {{label}} skal indeholde mindst 8 tegn.",
-        "api_error": "Hovsa! Vi har problemer med at indlæse denne side. Prøv igen på et senere tidspunkt.",
-        "mandatory": "Udfyld feltet.",
-        "mandatory_dynamic": "Feltet {{label}} skal udfyldes.",
-        "invalid_age": "Vores brugere skal være mellem 8 og 120 år.",
-        "invalid_age_dynamic": "{{label}}: Vores brugere skal være mellem 8 og 120 år.",
-        "the_field_[email]_is_missing": "Feltet {{label}} skal udfyldes.",
-        "the_field_[password]_is_missing": "Feltet {{label}} skal udfyldes.",
-        "invalid_postal_code": "Postnummeret skal indeholde 5 tal.",
-        "invalid_privacy_policy": "Du skal acceptere datapolitikken.",
-        "invalid_postal_code_dynamic": "{{label}} skal indeholde 5 tal.",
-        "submit_success": "Ændringen er registreret.",
-        "malformed": "Overhold URL-formatet \"https://example.com\""
-      }
     },
-    "social_login": {
-      "facebook_connect": "Fortsæt med Facebook",
-      "google_connect": "Fortsæt med Google",
-      "email_register": "Tilmeld dig pr. e-mail",
-      "count_register": "({{count}}/2)"
+    "common": {
+        "connexion_label": "Log på",
+        "register_label": "Tilmeld dig",
+        "continue": "Fortsæt",
+        "form": {
+            "hide_password": "Skjul adgangskoden",
+            "show_password": "Vis adgangskoden",
+            "requirements": "Alle felterne skal udfyldes, medmindre andet er angivet.",
+            "requirements_short": "Alle felterne skal udfyldes.",
+            "password_requirements": "Mindst 8 tegn, heraf mindst 1 tal, 1 stort bogstav og 1 specialtegn.",
+            "post_code": "Postnummeret giver mulighed for at analysere resultaterne efter geografisk område.",
+            "label": {
+                "email": "E-mail",
+                "password": "Adgangskode",
+                "firstname": "Fornavn",
+                "age": "Alder",
+                "postalcode": "Postnummer",
+                "profession": "Profession",
+                "biography": "Biografi",
+                "website": "Websted",
+                "organisation": "Organisationens navn",
+                "postalcode_optional": "Postnummer (valgfrit)",
+                "personality": {
+                    "firstname": "Kandidatens / topkandidatens fornavn",
+                    "lastname": "Kandidatens / topkandidatens efternavn"
+                }
+            },
+            "messages": {
+                "errors_notification": "Der blev fundet fejl i denne formular:",
+                "invalid_email": "Overhold e-mail-formatet.",
+                "invalid_email_dynamic": "Overhold formatet {{label}}.",
+                "already_registered": "Denne e-mail findes allerede.",
+                "already_registered_dynamic": "Denne {{label}} findes allerede.",
+                "email_doesnot_exist": "Denne e-mail er ikke tilknyttet din konto. Indtast din e-mail en gang til.",
+                "email_doesnot_exist_dynamic": "Denne {{label}} er ikke tilknyttet din konto. Indtast din e-mail en gang til.",
+                "invalid_password": "Din adgangskode skal indeholde mindst 8 tegn.",
+                "invalid_password_dynamic": "Din {{label}} skal indeholde mindst 8 tegn.",
+                "api_error": "Hovsa! Vi har problemer med at indlæse denne side. Prøv igen på et senere tidspunkt.",
+                "mandatory": "Udfyld feltet.",
+                "mandatory_dynamic": "Feltet {{label}} skal udfyldes.",
+                "invalid_age": "Vores brugere skal være mellem 8 og 120 år.",
+                "invalid_age_dynamic": "{{label}}: Vores brugere skal være mellem 8 og 120 år.",
+                "the_field_[email]_is_missing": "Feltet {{label}} skal udfyldes.",
+                "the_field_[password]_is_missing": "Feltet {{label}} skal udfyldes.",
+                "invalid_postal_code": "Postnummeret skal indeholde 5 tal.",
+                "invalid_privacy_policy": "Du skal acceptere datapolitikken.",
+                "invalid_postal_code_dynamic": "{{label}} skal indeholde 5 tal.",
+                "submit_success": "Ændringen er registreret.",
+                "malformed": "Overhold URL-formatet \"https://example.com\""
+            }
+        },
+        "social_login": {
+            "facebook_connect": "Fortsæt med Facebook",
+            "google_connect": "Fortsæt med Google",
+            "email_register": "Tilmeld dig pr. e-mail",
+            "count_register": "({{count}}/2)"
+        },
+        "notifications": {
+            "bad_link": "Dette link er ikke længere gyldigt.",
+            "secure_expired": {
+                "first_sentence": "Du er desværre blevet logget af, fordi vi troede, at du var færdig",
+                "second_sentence": "Log på igen for at fortsætte med at stemme, komme med forslag eller blive hørt på Make.org.",
+                "emoji": "grædende smiley"
+            },
+            "session_expired": {
+                "title": "Tidsgrænse for inaktivitet",
+                "description": "Vi genindlæser siden for at sikre en god servicekvalitet.",
+                "button_text": "Jeg har forstået."
+            },
+            "icons": {
+                "close": "Luk meddelelsesbanneret",
+                "information": "Oplysningsmeddelelse: ",
+                "success": "Udført-meddelelse: ",
+                "error": "Fejlmeddelelse: ",
+                "alert": "Advarselsmeddelelse: "
+            },
+            "unexpected_error": "Vi har i øjeblikket tekniske problemer, prøv igen senere.",
+            "network_error": "Det er ikke muligt at tilgå alt indholdet på Make.org, fordi du muligvis er offline",
+            "vote_only": {
+                "message": "Høringen \"{{title}}\" kan ikke længere modtage nye forslag, men fortsæt med at stemme for at finde de bedste eksisterende forslag.",
+                "button": "Jeg har forstået"
+            },
+            "vote_on_proposal": "Stem på dette forslag"
+        },
+        "propose": "Foreslå",
+        "open_new_window": "Åbnes i en ny fane",
+        "loading": "Vent, mens den indlæser.",
+        "participate": "Deltag",
+        "display_tooltip": "Vis indholdet af tooltippen",
+        "expand_collapse": "{{name}} - Vis indholdet af rulledelen",
+        "shrink_collapse": "{{name}} - Skjul indholdet af rulledelen",
+        "secondary_nav": "Sekundær browsing",
+        "percent": "{{percent}}%",
+        "header_authentication_nav": "Adgang til min brugerprofil",
+        "footer_nav": "Browsing nederst på siden",
+        "sidebar_area": "Sidepanel for indhold",
+        "max_characters": "maks. tegn",
+        "back": "Tilbage",
+        "proposal_count_one": "{{count}} forslag",
+        "proposal_count_other": "{{count}} forslag",
+        "breadcrumbs": "Ledetråd",
+        "million_one": "million",
+        "million_other": "millioner",
+        "close_panel": "Luk rullepanelet",
+        "close": "Luk"
     },
-    "notifications": {
-      "bad_link": "Dette link er ikke længere gyldigt.",
-      "secure_expired": {
-        "first_sentence": "Du er desværre blevet logget af, fordi vi troede, at du var færdig",
-        "second_sentence": "Log på igen for at fortsætte med at stemme, komme med forslag eller blive hørt på Make.org.",
-        "emoji": "grædende smiley"
-      },
-      "session_expired": {
-        "title": "Tidsgrænse for inaktivitet",
-        "description": "Vi genindlæser siden for at sikre en god servicekvalitet.",
-        "button_text": "Jeg har forstået."
-      },
-      "icons": {
-        "close": "Luk meddelelsesbanneret",
-        "information": "Oplysningsmeddelelse: ",
-        "success": "Udført-meddelelse: ",
-        "error": "Fejlmeddelelse: ",
-        "alert": "Advarselsmeddelelse: "
-      },
-      "unexpected_error": "Vi har i øjeblikket tekniske problemer, prøv igen senere.",
-      "network_error": "Det er ikke muligt at tilgå alt indholdet på Make.org, fordi du muligvis er offline",
-      "vote_only": {
-        "message": "Høringen \"{{title}}\" kan ikke længere modtage nye forslag, men fortsæt med at stemme for at finde de bedste eksisterende forslag.",
-        "button": "Jeg har forstået"
-      },
-      "vote_on_proposal": "Stem på dette forslag"
+    "header": {
+        "logo_alt": "Tilbage til Make.org’s startside"
     },
-    "propose": "Foreslå",
-    "open_new_window": "Åbnes i en ny fane",
-    "loading": "Vent, mens den indlæser.",
-    "participate": "Deltag",
-    "display_tooltip": "Vis indholdet af tooltippen",
-    "expand_collapse": "{{name}} - Vis indholdet af rulledelen",
-    "shrink_collapse": "{{name}} - Skjul indholdet af rulledelen",
-    "secondary_nav": "Sekundær browsing",
-    "percent": "{{percent}}%",
-    "header_authentication_nav": "Adgang til min brugerprofil",
-    "footer_nav": "Browsing nederst på siden",
-    "sidebar_area": "Sidepanel for indhold",
-    "max_characters": "maks. tegn",
-    "back": "Tilbage",
-    "proposal_count_one": "{{count}} forslag",
-    "proposal_count_other": "{{count}} forslag",
-    "breadcrumbs": "Ledetråd",
-    "million_one": "million",
-    "million_other": "millioner",
-    "close_panel": "Luk rullepanelet",
-    "close": "Luk"
-  },
-  "header": {
-    "logo_alt": "Tilbage til Make.org’s startside"
-  },
-  "proposal_card": {
-    "next": "Næste forslag",
-    "validate": "Godkend",
-    "content": "Forslagets indhold: ",
-    "original": "Se originalen",
-    "translation": "Se oversættelsen",
-    "posted_label": "Indsendt i ",
-    "author": {
-      "from": "Forslag fra: ",
-      "age": "{{age}} år",
-      "date": "Indsendt den: "
+    "proposal_card": {
+        "next": "Næste forslag",
+        "validate": "Godkend",
+        "content": "Forslagets indhold: ",
+        "original": "Se originalen",
+        "translation": "Se oversættelsen",
+        "posted_label": "Indsendt i ",
+        "author": {
+            "from": "Forslag fra: ",
+            "age": "{{age}} år",
+            "date": "Indsendt den: "
+        },
+        "status": {
+            "title": "Forslagets status: ",
+            "accepted": "Sendt",
+            "refused": "Afvist",
+            "postponed": "Afventer redigering",
+            "pending": "Afventer redigering"
+        }
     },
-    "status": {
-      "title": "Forslagets status: ",
-      "accepted": "Sendt",
-      "refused": "Afvist",
-      "postponed": "Afventer redigering",
-      "pending": "Afventer redigering"
-    }
-  },
-  "report_translations": {
-    "button": "Valgmuligheder for forslaget",
-    "confirmation": {
-      "title": "Tak for rapporteringen",
-      "description": "Vores team vil undersøge sagen hurtigst muligt."
+    "report_translations": {
+        "button": "Valgmuligheder for forslaget",
+        "confirmation": {
+            "title": "Tak for rapporteringen",
+            "description": "Vores team vil undersøge sagen hurtigst muligt."
+        },
+        "form": {
+            "title": "Rapporter maskinoversættelsen",
+            "unclear": "Oversættelsen er ikke til at forstå",
+            "error": "Fejl i oversættelsen",
+            "false_info": "Indeholder en forkert oplysning",
+            "offensive": "Stødende forslag",
+            "report": "Rapportér"
+        },
+        "first_step": {
+            "title": "Maskinoversættelse",
+            "text": "Forslagene til vores høringer er maskinoversat. Hvis du ser en fejl, må du gerne rapportere den til vores teams!"
+        }
     },
-    "form": {
-      "title": "Rapporter maskinoversættelsen",
-      "unclear": "Oversættelsen er ikke til at forstå",
-      "error": "Fejl i oversættelsen",
-      "false_info": "Indeholder en forkert oplysning",
-      "offensive": "Stødende forslag",
-      "report": "Rapportér"
+    "intro_card": {
+        "title": "Tusindvis af borgere foreslår løsninger.",
+        "description": "Tag stilling til disse løsninger og foreslå dine egne.\nDe bedste løsninger bliver omdannet til handlinger.",
+        "button": "Start"
     },
-    "first_step": {
-      "title": "Maskinoversættelse",
-      "text": "Forslagene til vores høringer er maskinoversat. Hvis du ser en fejl, må du gerne rapportere den til vores teams!"
-    }
-  },
-  "intro_card": {
-    "title": "Tusindvis af borgere foreslår løsninger.",
-    "description": "Tag stilling til disse løsninger og foreslå dine egne.\nDe bedste løsninger bliver omdannet til handlinger.",
-    "button": "Start"
-  },
-  "final_card": {
-    "title": "Tak fordi du reagerede på forslagene!",
-    "description": "Fortsæt med at stemme for at hjælp os med at identificere jeres prioriteter.",
-    "link_text": "Jeg åbner høringen",
+    "final_card": {
+        "title": "Tak fordi du reagerede på forslagene!",
+        "description": "Fortsæt med at stemme for at hjælp os med at identificere jeres prioriteter.",
+        "link_text": "Jeg åbner høringen",
+        "register": {
+            "description": "Hvordan gør jeg for at følge resultaterne?",
+            "button_intro": "Skab din egen",
+            "button_text": "brugerprofil."
+        }
+    },
+    "no_proposal_card": {
+        "title": {
+            "regular": "Tak for dit fantastiske bidrag!",
+            "popular": "Tak, du har stemt på alle de mest populære forslag",
+            "controversial": "Tak, du har stemt på alle de mest kontroversielle forslag",
+            "keyword": "Tak, du har stemt på alle de mest populære forslag til \"{{keyword}}\""
+        },
+        "description": {
+            "regular": "Der er ingen nye forslag lige nu.",
+            "special": "Fortsæt med at stemme for at hjælp os med at identificere jeres prioriteter."
+        },
+        "link_text": "Jeg åbner høringen",
+        "sharing": "Eller vær med til at sprede denne høring til så mange som muligt."
+    },
+    "push_proposal_card": {
+        "title": "Har du måske en løsning på spørgsmålet, som du gerne vil dele med os?",
+        "next-cta": "Ikke endnu, jeg fortsætter med at stemme"
+    },
+    "sequence_progress": {
+        "previous": "Gå til forrige element",
+        "counter": "Element {{current}} af {{total}}"
+    },
+    "sequence_zone": {
+        "popular_title": "Populære forslag",
+        "controversial_title": "Kontroversielle forslag"
+    },
+    "special_final_card": {
+        "title": "Tak for dine stemmer!",
+        "subtitle": "Du kan fortsætte med at deltage i høringen",
+        "cta_text": "Jeg åbner høringen"
+    },
+    "demographics_card": {
+        "disclaimer": "Dine oplysninger er anonyme og gør, at vores resultater er repræsentative.",
+        "skip": "Spring over",
+        "submit": "Gem",
+        "submitted_thanks": "Tak for dit svar.",
+        "submitted_disclaimer": " Det vil blive brugt anonymt til at analysere resultaterne af høringen.",
+        "select": "Vælg"
+    },
+    "proposal_submit": {
+        "form": {
+            "bait": "Vi skal ",
+            "title": "Dit forslag må højst indeholde 140 tegn. Skriv dit forslag i feltet og godkend ved at klikke på knappen ”Godkend”",
+            "field": "Forslagsfelt",
+            "counter": "Dit forslag indeholder {{current}} tegn ud af {{total}} tilgængelige tegn i alt",
+            "panel_trigger": "Jeg foreslår en løsning",
+            "read_our": "Læs vores",
+            "moderation_link": "Moderationspolitik",
+            "button_propose": "FORESLÅ"
+        },
+        "authentication": {
+            "back": "Tilbage",
+            "last_step_red": "Nu er der kun et trin tilbage, ",
+            "last_step": "før end du kan sende dit forslag!",
+            "button_login_text": "Jeg har allerede en konto,",
+            "button_login_link": "jeg logger på.",
+            "button_login": "Log på",
+            "back_authentication": "Tilbage til logonskærmen"
+        },
+        "success": {
+            "button": "Fortsæt med at stemme",
+            "other_idea": "Jeg har en ny ide",
+            "tooltip_title": "I gang med at blive redigeret",
+            "tooltip_description": "Dit forslag vil blive behandlet af vores teams inden for 48 timer, men du kan allerede nu se det i din profil.",
+            "grats": "Tillykke {{name}}, ",
+            "proposal_sent": "dit forslag er nu sendt ",
+            "activate": "Bekræft din e-mail-adresse med et klik ",
+            "link": "for at garantere ægtheden af din konto. Klik på aktiveringslinket, som er blevet sendt til: {{mail}}",
+            "question": "Et spørgsmål? Du kan kontakte os på: ",
+            "consultation_access": "Jeg åbner høringen"
+        }
+    },
+    "vote": {
+        "intro_title": "Jeg giver min mening om dette forslag: ",
+        "agree": "Enig",
+        "disagree": "Ikke enig",
+        "neutral": "Neutral",
+        "label_one": "{{count}} stemme",
+        "label_other": "{{count}} stemmer",
+        "with_percent": "{{votedKey}}: {{votedPercent}}%"
+    },
+    "unvote": {
+        "title": "Jeg trækker min mening om dette forslag tilbage."
+    },
+    "qualification": {
+        "title": "Jeg forklarer min mening om dette forslag:",
+        "static_repartition": "Dette forslag er kvalificeret som: ",
+        "times": "gang",
+        "likeIt": "Favorit",
+        "doable": "Realistisk",
+        "platitudeAgree": "Banal",
+        "noWay": "Slet ikke!",
+        "impossible": "Helt umulig",
+        "platitudeDisagree": "Banal",
+        "doNotUnderstand": "Ikke forstået",
+        "noOpinion": "Ved ikke",
+        "doNotCare": "Ligeglad"
+    },
+    "sequence": {
+        "return": "Tilbage til forslagene",
+        "title": "Stem på høringens forslag: ",
+        "more": "Gå til hele høringen"
+    },
+    "login": {
+        "title": "Jeg har allerede en konto",
+        "connect": "Log på",
+        "or": "eller",
+        "forgot_password": "Glemt din adgangskode?",
+        "registration_title": "Jeg har ingen konto.",
+        "registration_link": "Jeg opretter en.",
+        "email_doesnot_exist": "Din {{emailLabel}} eller dit {{passwordLabel}} er forkert."
+    },
     "register": {
-      "description": "Hvordan gør jeg for at følge resultaterne?",
-      "button_intro": "Skab din egen",
-      "button_text": "brugerprofil."
+        "title": "Opret en konto",
+        "or": "eller",
+        "login_title": "Jeg har allerede en konto,",
+        "login_link": "jeg logger på.",
+        "gtu_text_first": "Når du tilmelder dig, accepterer du vores ",
+        "gtu_link": "Brugsbetingelser."
+    },
+    "legal_consent": {
+        "title": "Retslig tilladelse",
+        "subtitle": "Vi har brug for at én af dine forældre er enig",
+        "description": "Vi har brug for to samtykker for at give dig adgang til vores borgerplatform. Snart vil du kunne give din mening om alle vores høringer!",
+        "minor_consent": "Jeg giver mit samtykke til, at mine personoplysninger bliver behandlet af Make.org.",
+        "parental_consent": "Som indehaver af forældremyndigheden giver jeg mit samtykke til, at mit barns personoplysninger bliver behandlet af Make.org.",
+        "cancel": "Annuller",
+        "submit": "Godkend",
+        "privacy_policy_first_part": "Jeg accepterer, at Make.org behandler disse oplysninger, så jeg kan deltage og blive informeret om resultaterne i overensstemmelse med ",
+        "privacy_policy_link": "reglerne",
+        "privacy_policy_last_part": ". (obligatorisk)",
+        "privacy_policy": "datapolitik",
+        "make_protect": "Make.org forpligter sig til at beskytte dine",
+        "make_protect_link": " personoplysninger.",
+        "opt_in": "Jeg accepterer at modtage e-mails fra Make.org for at holde mig underrettet, når der er nye oplysninger om igangværende eller fremtidige høringer. (valgfrit)"
+    },
+    "forgot_password": {
+        "title": "Jeg nulstiller min adgangskode",
+        "description": "Angiv den e-mail-adresse, der er knyttet til din Make.org-konto for at modtage et et link til at nulstille din adgangskode.",
+        "success": "Vi har sendt en e-mail til dig, som du kan bruge til at opdatere din adgangskode.",
+        "return": "Tilbage til ",
+        "login_link": "logonskærmen",
+        "send_link": "modtag e-mailen"
+    },
+    "reset_password": {
+        "title": "Jeg opretter en ny adgangskode",
+        "info": "Du kan vælge en ny adgangskode.",
+        "send_cta": "Godkend",
+        "success": {
+            "title": "Tak, din adgangskode er blevet opdateret."
+        },
+        "failure": {
+            "bad_link": "Dette link er ikke længere gyldigt."
+        }
+    },
+    "data_policy_modal": {
+        "title": "Opdatering af vores datapolitik",
+        "description": "Make.org forpligter sig til at respektere dine personoplysninger, hver gang du besøger vores websted. Hvis du vil fortsætte med besøge Make.org’s websted, skal du acceptere opdateringen af  ",
+        "consent": "<strong>Jeg accepterer den nye datapolitik</strong> og jeg kan bruge min brugerprofil hos Make.org",
+        "validate": "Jeg godkender",
+        "stay": "Jeg bliver",
+        "leave": "Jeg afslutter",
+        "refusal_title": "Er du sikker på, at du vil afslutte?",
+        "refusal_description_first_part": "Hvis du afviser vores nye ",
+        "refusal_description_second_part": ", kan du ikke længere tilgå din brugerprofil hos Make.org."
+    },
+    "not_found": {
+        "intro": "Hovsa!",
+        "title": "Fejl 404",
+        "description": "Siden, du har forsøgt at tilgå, findes ikke eller ikke længere."
+    },
+    "top_proposal_card": {
+        "start": "Begynd at stemme"
+    },
+    "maintenance": {
+        "subtitle": "Ups, det beklager vi! Make.org er i øjeblikket under vedligeholdelse"
+    },
+    "unsecure": {
+        "title": "Høringen er nu afsluttet",
+        "description": "Vil du gerne vide mere om dette emne? Få mere at vide om operationen og hold dig orienteret om alle vores borgerhøringer ved at registrere dig på Make.org",
+        "link": "Opdag vores virksomhed"
     }
-  },
-  "no_proposal_card": {
-    "title": {
-      "regular": "Tak for dit fantastiske bidrag!",
-      "popular": "Tak, du har stemt på alle de mest populære forslag",
-      "controversial": "Tak, du har stemt på alle de mest kontroversielle forslag",
-      "keyword": "Tak, du har stemt på alle de mest populære forslag til \"{{keyword}}\""
-    },
-    "description": {
-      "regular": "Der er ingen nye forslag lige nu.",
-      "special": "Fortsæt med at stemme for at hjælp os med at identificere jeres prioriteter."
-    },
-    "link_text": "Jeg åbner høringen",
-    "sharing": "Eller vær med til at sprede denne høring til så mange som muligt."
-  },
-  "push_proposal_card": {
-    "title": "Har du måske en løsning på spørgsmålet, som du gerne vil dele med os?",
-    "next-cta": "Ikke endnu, jeg fortsætter med at stemme"
-  },
-  "sequence_progress": {
-    "previous": "Gå til forrige element",
-    "counter": "Element {{current}} af {{total}}"
-  },
-  "sequence_zone": {
-    "popular_title": "Populære forslag",
-    "controversial_title": "Kontroversielle forslag"
-  },
-  "special_final_card": {
-    "title": "Tak for dine stemmer!",
-    "subtitle": "Du kan fortsætte med at deltage i høringen",
-    "cta_text": "Jeg åbner høringen"
-  },
-  "demographics_card": {
-    "disclaimer": "Dine oplysninger er anonyme og gør, at vores resultater er repræsentative.",
-    "skip": "Spring over",
-    "submit": "Gem",
-    "submitted_thanks": "Tak for dit svar.",
-    "submitted_disclaimer": " Det vil blive brugt anonymt til at analysere resultaterne af høringen.",
-    "select": "Vælg"
-  },
-  "proposal_submit": {
-    "form": {
-      "bait": "Vi skal ",
-      "title": "Dit forslag må højst indeholde 140 tegn. Skriv dit forslag i feltet og godkend ved at klikke på knappen ”Godkend”",
-      "field": "Forslagsfelt",
-      "counter": "Dit forslag indeholder {{current}} tegn ud af {{total}} tilgængelige tegn i alt",
-      "panel_trigger": "Jeg foreslår en løsning",
-      "read_our": "Læs vores",
-      "moderation_link": "Moderationspolitik",
-      "button_propose": "FORESLÅ"
-    },
-    "authentication": {
-      "back": "Tilbage",
-      "last_step_red": "Nu er der kun et trin tilbage, ",
-      "last_step": "før end du kan sende dit forslag!",
-      "button_login_text": "Jeg har allerede en konto,",
-      "button_login_link": "jeg logger på.",
-      "button_login": "Log på",
-      "back_authentication": "Tilbage til logonskærmen"
-    },
-    "success": {
-      "button": "Fortsæt med at stemme",
-      "other_idea": "Jeg har en ny ide",
-      "tooltip_title": "I gang med at blive redigeret",
-      "tooltip_description": "Dit forslag vil blive behandlet af vores teams inden for 48 timer, men du kan allerede nu se det i din profil.",
-      "grats": "Tillykke {{name}}, ",
-      "proposal_sent": "dit forslag er nu sendt ",
-      "activate": "Bekræft din e-mail-adresse med et klik ",
-      "link": "for at garantere ægtheden af din konto. Klik på aktiveringslinket, som er blevet sendt til: {{mail}}",
-      "question": "Et spørgsmål? Du kan kontakte os på: ",
-      "consultation_access": "Jeg åbner høringen"
-    }
-  },
-  "vote": {
-    "intro_title": "Jeg giver min mening om dette forslag: ",
-    "agree": "Enig",
-    "disagree": "Ikke enig",
-    "neutral": "Neutral",
-    "label_one": "{{count}} stemme",
-    "label_other": "{{count}} stemmer",
-    "with_percent": "{{votedKey}}: {{votedPercent}}%"
-  },
-  "unvote": {
-    "title": "Jeg trækker min mening om dette forslag tilbage."
-  },
-  "qualification": {
-    "title": "Jeg forklarer min mening om dette forslag:",
-    "static_repartition": "Dette forslag er kvalificeret som: ",
-    "times": "gang",
-    "likeIt": "Favorit",
-    "doable": "Realistisk",
-    "platitudeAgree": "Banal",
-    "noWay": "Slet ikke!",
-    "impossible": "Helt umulig",
-    "platitudeDisagree": "Banal",
-    "doNotUnderstand": "Ikke forstået",
-    "noOpinion": "Ved ikke",
-    "doNotCare": "Ligeglad"
-  },
-  "sequence": {
-    "return": "Tilbage til forslagene",
-    "title": "Stem på høringens forslag: ",
-    "more": "Gå til hele høringen"
-  },
-  "login": {
-    "title": "Jeg har allerede en konto",
-    "connect": "Log på",
-    "or": "eller",
-    "forgot_password": "Glemt din adgangskode?",
-    "registration_title": "Jeg har ingen konto.",
-    "registration_link": "Jeg opretter en.",
-    "email_doesnot_exist": "Din {{emailLabel}} eller dit {{passwordLabel}} er forkert."
-  },
-  "register": {
-    "title": "Opret en konto",
-    "or": "eller",
-    "login_title": "Jeg har allerede en konto,",
-    "login_link": "jeg logger på.",
-    "gtu_text_first": "Når du tilmelder dig, accepterer du vores ",
-    "gtu_link": "Brugsbetingelser."
-  },
-  "legal_consent": {
-    "title": "Retslig tilladelse",
-    "subtitle": "Vi har brug for at én af dine forældre er enig",
-    "description": "Vi har brug for to samtykker for at give dig adgang til vores borgerplatform. Snart vil du kunne give din mening om alle vores høringer!",
-    "minor_consent": "Jeg giver mit samtykke til, at mine personoplysninger bliver behandlet af Make.org.",
-    "parental_consent": "Som indehaver af forældremyndigheden giver jeg mit samtykke til, at mit barns personoplysninger bliver behandlet af Make.org.",
-    "cancel": "Annuller",
-    "submit": "Godkend",
-    "privacy_policy_first_part": "Jeg accepterer, at Make.org behandler disse oplysninger, så jeg kan deltage og blive informeret om resultaterne i overensstemmelse med ",
-    "privacy_policy_link": "reglerne",
-    "privacy_policy_last_part": ". (obligatorisk)",
-    "privacy_policy": "datapolitik",
-    "make_protect": "Make.org forpligter sig til at beskytte dine",
-    "make_protect_link": " personoplysninger.",
-    "opt_in": "Jeg accepterer at modtage e-mails fra Make.org for at holde mig underrettet, når der er nye oplysninger om igangværende eller fremtidige høringer. (valgfrit)"
-  },
-  "forgot_password": {
-    "title": "Jeg nulstiller min adgangskode",
-    "description": "Angiv den e-mail-adresse, der er knyttet til din Make.org-konto for at modtage et et link til at nulstille din adgangskode.",
-    "success": "Vi har sendt en e-mail til dig, som du kan bruge til at opdatere din adgangskode.",
-    "return": "Tilbage til ",
-    "login_link": "logonskærmen",
-    "send_link": "modtag e-mailen"
-  },
-  "reset_password": {
-    "title": "Jeg opretter en ny adgangskode",
-    "info": "Du kan vælge en ny adgangskode.",
-    "send_cta": "Godkend",
-    "success": {
-      "title": "Tak, din adgangskode er blevet opdateret."
-    },
-    "failure": {
-      "bad_link": "Dette link er ikke længere gyldigt."
-    }
-  },
-  "data_policy_modal": {
-    "title": "Opdatering af vores datapolitik",
-    "description": "Make.org forpligter sig til at respektere dine personoplysninger, hver gang du besøger vores websted. Hvis du vil fortsætte med besøge Make.org’s websted, skal du acceptere opdateringen af  ",
-    "consent": "<strong>Jeg accepterer den nye datapolitik</strong> og jeg kan bruge min brugerprofil hos Make.org",
-    "validate": "Jeg godkender",
-    "stay": "Jeg bliver",
-    "leave": "Jeg afslutter",
-    "refusal_title": "Er du sikker på, at du vil afslutte?",
-    "refusal_description_first_part": "Hvis du afviser vores nye ",
-    "refusal_description_second_part": ", kan du ikke længere tilgå din brugerprofil hos Make.org."
-  },
-  "not_found": {
-    "intro": "Hovsa!",
-    "title": "Fejl 404",
-    "description": "Siden, du har forsøgt at tilgå, findes ikke eller ikke længere."
-  },
-  "top_proposal_card": {
-    "start": "@@top_proposal_card.start|fr:Commencer à voter"
-  },
-  "maintenance": {
-    "subtitle": "@@maintenance.subtitle|fr:Oops, nous sommes désolé! Make.org est actuellement en maintenance"
-  },
-  "unsecure": {
-    "title": "@@unsecure.title|fr:La consultation est maintenant terminée",
-    "description": "@@unsecure.description|fr:Vous souhaitez en savoir plus sur ce sujet ? Découvrez la suite de l'opération et restez informé(e) de toutes nos consultations citoyennes en vous inscrivant sur Make.org",
-    "link": "@@unsecure.link|fr:Découvrir notre opération"
-  }
 }
