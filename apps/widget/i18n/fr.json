@@ -245,6 +245,8 @@
     "agree": "D'accord",
     "disagree": "Pas d'accord",
     "neutral": "Vote neutre",
+    "label_one": "{{count}} vote",
+    "label_other": "{{count}} votes",
     "with_percent": "{{votedKey}} : {{votedPercent}}%"
   },
   "unvote": {
