@@ -272,10 +272,12 @@
     "max_characters": "maksimalus ženklų skaičius",
     "back": "Atgal",
     "proposal_count_one": "{{count}} pasiūlymas",
-    "proposal_count_other": "{{count}} pasiūlymai (-ų)",
+    "proposal_count_few": "{{count}} pasiūlymai",
+    "proposal_count_other": "{{count}} pasiūlymų",
     "breadcrumbs": "naršymo kelias",
     "million_one": "milijonas",
-    "million_other": "milijonai",
+    "million_few": "milijonai",
+    "million_other": "milijonų",
     "close_panel": "Užverti išskleidžiamąjį meniu",
     "close": "Užverti"
   },
@@ -297,10 +299,13 @@
     "content": "Idėjos turinys: ",
     "link": "Peržiūrėkite išsamią informaciją apie šią idėją",
     "associated_proposals_one": "{{count}} susijęs pasiūlymas",
-    "associated_proposals_other": "{{count}} susiję (-usių) pasiūlymai (-ų)",
+    "associated_proposals_few": "{{count}} susiję pasiūlymai",
+    "associated_proposals_other": "{{count}} susijusių pasiūlymų",
     "position_one": "{{ count }} pozicija",
-    "position_other": "{{ count }} pozicijos (-ų)",
+    "position_few": "{{ count }} pozicijos",
+    "position_other": "{{ count }} pozicijų",
     "candidate_one": " kandidatas dėl šios idėjos.",
+    "candidate_few": " kandidatai dėl šios idėjos.",
     "candidate_other": " kandidatų dėl šios idėjos.",
     "open": "Rodyti idėjos surinktų balų skaičių",
     "close": "Slėpti idėjos surinktų balų skaičių",
@@ -460,7 +465,8 @@
     "disagree": "Nepritariu",
     "neutral": "Susilaikau",
     "label_one": "{{count}} balsas",
-    "label_other": "{{count}} balsai (-ų)",
+    "label_few": "{{count}} balsai",
+    "label_other": "{{count}} balsų",
     "with_percent": "{{votedKey}}: {{votedPercent}} %"
   },
   "unvote": {
@@ -469,7 +475,8 @@
   "results": {
     "static_total": "Dėl šio pasiūlymo gauta: ",
     "static_repartition": "Balsai pasiskirstė taip: ",
-    "total_one": "Dėl šio pasiūlymo gauti {{count}} balsai, kurie pasiskirstė taip: ",
+    "total_one": "Dėl šio pasiūlymo gautas {{count}} balsas, kuris pasiskirstė taip: ",
+    "total_few": "Dėl šio pasiūlymo gauti {{count}} balsai, kurie pasiskirstė taip: ",
     "total_other": "Dėl šio pasiūlymo gauta {{count}} balsų, kurie pasiskirstė taip: ",
     "voted": {
       "agree": "Dėl šio pasiūlymo balsavau „Pritariu“.",
@@ -727,6 +734,7 @@
       "proposal_disagree": "nepritaria šiam pasiūlymui",
       "and": " ir ",
       "hasVoted_one": " balsavo dėl šio pasiūlymo.",
+      "hasVoted_few": " balsavo dėl šio pasiūlymo.",
       "hasVoted_other": " balsavo dėl šio pasiūlymo.",
       "sharing_title": "Bendrinti šį profilį"
     }
@@ -805,11 +813,14 @@
       "start_date": "Pradžios data",
       "end_date": "Konsultacijos pabaigos data",
       "remaining_one": "Liko diena",
+      "remaining_few": "Liko dienos",
       "remaining_other": "Liko dienų",
       "proposals_one": "Pasiūlymas",
-      "proposals_other": "Pasiūlymai",
+      "proposals_few": "Pasiūlymai",
+      "proposals_other": "Pasiūlymų",
       "participant_one": "Dalyvis",
-      "participant_other": "Dalyviai",
+      "participant_few": "Dalyviai",
+      "participant_other": "Dalyvių",
       "progress_title": "Mūsų balsavimo tikslas",
       "progress_total": "Bendras balsų skaičius",
       "progress_target": " iš {{votesTarget}} balsų ({{percent}} %)",
@@ -904,7 +915,8 @@
       "organisations_proposals": "Siūlo organizacijos",
       "no_proposal": "<strong>Pasiūlymo nėra</strong>",
       "validated_proposals_one": "<strong>{{count}} patvirtintas pasiūlymas</strong>, atitinkantis jūsų paiešką",
-      "validated_proposals_other": "<strong>{{count}} patvirtinti (-ų) pasiūlymai (-ų)</strong>, atitinkantys (-čių) jūsų paiešką"
+      "validated_proposals_few": "<strong>{{count}} patvirtinti pasiūlymai</strong>, atitinkantys jūsų paiešką",
+      "validated_proposals_other": "<strong>{{count}} patvirtintų pasiūlymų</strong>, atitinkančių jūsų paiešką"
     },
     "tabs": {
       "consultation": " Konsultacija ",
@@ -985,7 +997,8 @@
       "top_ideas": {
         "skiplink": "Geriausios naujos idėjos",
         "title_one": "Populiariausių idėjų, sugrupuotų pagal {{count}} kategoriją, sąrašas",
-        "title_other": "Populiariausių idėjų, sugrupuotų pagal {{count}} kategorijas (-ų), sąrašas",
+        "title_few": "Populiariausių idėjų, sugrupuotų pagal {{count}} kategorijas, sąrašas",
+        "title_other": "Populiariausių idėjų, sugrupuotų pagal {{count}} kategorijų, sąrašas",
         "introduction": "Kai piliečiai pateikia pasiūlymus platformoje, geriausieji iš jų sujungiami į dideles idėjas, kurių pagrindu rengiama konsultacija. Siekiant įvertinti šias idėjas, Make.org algoritmas atsižvelgia į balsus „už“ ir „prieš“, taip pat įvertinimus „mėgstamiausia“, „reali“, „banali“ ir „visai nepriimtina“.",
         "axe_title": "{{count}} kategorija: {{name}}"
       },
@@ -1011,9 +1024,11 @@
     "local_actors": {
       "title": "Aktyviausios asociacijos",
       "proposals_one": "{{ count }} pasiūlymas",
-      "proposals_other": "{{ count }} pasiūlymai (-ų)",
+      "proposals_few": "{{ count }} pasiūlymai",
+      "proposals_other": "{{ count }} pasiūlymų",
       "votes_one": "{{ count }} balsas",
-      "votes_other": "{{ count }} balsai (-ų)",
+      "votes_few": "{{ count }} balsai",
+      "votes_other": "{{ count }} balsų",
       "participate": "Esate asociacija ir norite dalyvauti mūsų konsultacijoje? {{ contact_us }}",
       "contact_us": "Susisiekite su mumis!",
       "more": "Žiūrėti daugiau"
@@ -1050,11 +1065,14 @@
       "subtitle": "Jūsų nuomonė svarbi! Balsuokite ir teikite pasiūlymus, kaip spręsti aktualius visuomenės gyvenimo klausimus ir problemas.",
       "participate": "Dalyvauti",
       "contributors_one": "dalyvis",
-      "contributors_other": "dalyviai",
+      "contributors_few": "dalyviai",
+      "contributors_other": "dalyvių",
       "proposals_one": "pasiūlymas",
-      "proposals_other": "pasiūlymai",
+      "proposals_few": "pasiūlymai",
+      "proposals_other": "pasiūlymų",
       "votes_one": "balsas",
-      "votes_other": "balsai",
+      "votes_few": "balsai",
+      "votes_other": "balsų",
       "empty": "Atsiprašome, šiuo metu jūsų šalyje nėra jokių konsultacijų."
     },
     "results": {
@@ -1116,15 +1134,18 @@
       "title": "Make.org skaičiais",
       "participants": {
         "subtitle_one": "dalyvis (-ė)",
-        "subtitle_other": "dalyviai (-ės)"
+        "subtitle_few": "dalyviai (-ės)",
+        "subtitle_other": "dalyvių"
       },
       "proposals": {
         "subtitle_one": "pateiktas pasiūlymas",
-        "subtitle_other": "pateikti pasiūlymai"
+        "subtitle_few": "pateikti pasiūlymai",
+        "subtitle_other": "pateiktų pasiūlymų"
       },
       "partners": {
         "subtitle_one": "asociacija ir socialiai atsakinga įmonė",
-        "subtitle_other": "asociacijos ir socialiai atsakingos įmonės"
+        "subtitle_few": "asociacijos ir socialiai atsakingos įmonės",
+        "subtitle_other": "asociacijų ir socialiai atsakingų įmonių"
       }
     },
     "featured_questions": {
@@ -1153,13 +1174,17 @@
       "loading": "Ieškome...",
       "no_results": "Rezultatų nėra",
       "main_results_one": "{{count}} rezultatas « {{term}} »",
-      "main_results_other": "{{count}} rezultatai (-ų) « {{term}} »",
+      "main_results_few": "{{count}} rezultatai « {{term}} »",
+      "main_results_other": "{{count}} rezultatų « {{term}} »",
       "proposals_one": "{{count}} pasiūlymas dėl « {{term}} »",
-      "proposals_other": "{{count}} pasiūlymai (-ų) dėl « {{term}} »",
+      "proposals_few": "{{count}} pasiūlymai dėl « {{term}} »",
+      "proposals_other": "{{count}} pasiūlymų dėl « {{term}} »",
       "operations_one": "{{count}} veiksmas « {{term}} »",
-      "operations_other": "{{count}} veiksmai (-ų) « {{term}} »",
-      "organisations_one": "{{count}} organizacijos (-ų) « {{term}} »",
-      "organisations_other": "{{count}} organizacijos (-ų) « {{term}} »",
+      "operations_few": "{{count}} veiksmai « {{term}} »",
+      "operations_other": "{{count}} veiksmų « {{term}} »",
+      "organisations_one": "{{count}} organizacija « {{term}} »",
+      "organisations_few": "{{count}} organizacijos « {{term}} »",
+      "organisations_other": "{{count}} organizacijų « {{term}} »",
       "main_results_empty_term": "0 rezultatų"
     },
     "main_results": {
@@ -1167,7 +1192,8 @@
       "organisation": "Organizacija",
       "operation": "Veiksmas",
       "results_one": "{{count}} rezultatas",
-      "results_other": "{{count}} rezultatai (-ų)",
+      "results_few": "{{count}} rezultatai",
+      "results_other": "{{count}} rezultatų",
       "view_all": "Žiūrėti viską",
       "no_results": "Nepavyko rasti jokių rezultatų pagal paiešką « {{term}} »",
       "no_query": "Ieškote pasiūlymo, idėjos, konsultacijos? Įveskite paieškos žodį!",
@@ -1215,7 +1241,7 @@
     "host_address": "{{make_host_address}} PRANCŪZIJA",
     "host_phone": "Telefono numeris: ",
     "host_phone_number": "{{host_number}}",
-    "eu_mention": "Europos Komisija naudotojams siūlo internetinę ginčų sprendimo platformą adresu https://ec.europa.eu/consumers/odr."
+    "eu_mention": "Europos Komisija naudotojams siūlo internetinę ginčų sprendimo platformą adresu <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\">https://ec.europa.eu/consumers/odr</a>."
   },
   "moderation_charter": {
     "unsuitable_label": "NEREKOMENDUOJAMA",
@@ -1327,7 +1353,8 @@
       "session": "Seansas",
       "month": "{{count}} mėnesiai (-ių)",
       "year_one": "{{count}} metai",
-      "year_other": "{{count}} metai (-ų)",
+      "year_few": "{{count}} metai",
+      "year_other": "{{count}} metų",
       "technicals": {
         "name": "Techniniai slapukai:",
         "description": "šie slapukai yra būtini svetainės veikimui užtikrinti, todėl jų negalima išjungti. Galite nustatyti naršyklę taip, kad šie slapukai būtų blokuojami arba apie juos būtų informuojama, tačiau tai gali turėti įtakos kai kurių mūsų svetainės dalių veikimui. Šie slapukai nėra skirti jūsų tapatybei nustatyti.",
