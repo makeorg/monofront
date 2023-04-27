@@ -1342,7 +1342,18 @@
     "nl": "Nederlands",
     "fi": "Suomi",
     "ro": "Română",
-    "bg": "Български"
+    "bg": "Български",
+    "da": "Dansk",
+    "el": "Ελληνικά",
+    "et": "Eesti",
+    "hr": "Hrvatski",
+    "hu": "Magyar",
+    "lt": "Lietuvių",
+    "lv": "Latviešu",
+    "pt": "Portuguese",
+    "sk": "Slovenský",
+    "sl": "Slovenski",
+    "sv": "Svenska"
   },
   "language_switch": {
     "country_title": "țara dumneavoastră",

@@ -40,8 +40,13 @@ export const getUserLanguage = (
     return cookieLanguage;
   }
 
-  const language = (req.acceptsLanguages(translationRessoucesLanguages) ||
-    DEFAULT_LANGUAGE) as keyof typeof LocaleType;
+  // Dirty hack for accepted languages
+  // We need to force the default language if "accept-language" header is undefined
+  // If not forced, acceptsLanguages method return the first item of translationRessoucesLanguages
+  const language = !req.headers['accept-language']
+    ? DEFAULT_LANGUAGE
+    : ((req.acceptsLanguages(translationRessoucesLanguages) ||
+        DEFAULT_LANGUAGE) as keyof typeof LocaleType);
   setCookieLanguage(req, language);
 
   return LocaleType[language];

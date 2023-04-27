@@ -1,34 +1,58 @@
 /* eslint-disable import/no-duplicates */
 import formatDate from 'date-fns/format';
-import fr from 'date-fns/locale/fr';
-import enGB from 'date-fns/locale/en-GB';
-import de from 'date-fns/locale/de';
-import uk from 'date-fns/locale/uk';
-import cs from 'date-fns/locale/cs';
+
 import bg from 'date-fns/locale/bg';
-import fi from 'date-fns/locale/fi';
+import cs from 'date-fns/locale/cs';
+import da from 'date-fns/locale/da';
+import de from 'date-fns/locale/de';
+import el from 'date-fns/locale/el';
+import enGB from 'date-fns/locale/en-GB';
 import es from 'date-fns/locale/es';
+import et from 'date-fns/locale/et';
+import fi from 'date-fns/locale/fi';
+import fr from 'date-fns/locale/fr';
+import hr from 'date-fns/locale/hr';
+import hu from 'date-fns/locale/hu';
 import it from 'date-fns/locale/it';
+import lt from 'date-fns/locale/lt';
+import lv from 'date-fns/locale/lv';
 import nl from 'date-fns/locale/nl';
-import ro from 'date-fns/locale/ro';
 import pl from 'date-fns/locale/pl';
+import pt from 'date-fns/locale/pt';
+import ro from 'date-fns/locale/ro';
+import sk from 'date-fns/locale/sk';
+import sl from 'date-fns/locale/sl';
+import sv from 'date-fns/locale/sv';
+import uk from 'date-fns/locale/uk';
+
 import { HomeQuestionType, QuestionTimelineType } from '@make.org/types';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 import { LocaleType } from '@make.org/types/enums';
 
 const locales: { [key: string]: Locale } = {
-  [LocaleType.fr]: fr,
-  [LocaleType.en]: enGB,
-  [LocaleType.de]: de,
-  [LocaleType.uk]: uk,
-  [LocaleType.cs]: cs,
   [LocaleType.bg]: bg,
-  [LocaleType.fi]: fi,
+  [LocaleType.cs]: cs,
+  [LocaleType.da]: da,
+  [LocaleType.de]: de,
+  [LocaleType.el]: el,
+  [LocaleType.en]: enGB,
   [LocaleType.es]: es,
+  [LocaleType.et]: et,
+  [LocaleType.fi]: fi,
+  [LocaleType.fr]: fr,
+  [LocaleType.hr]: hr,
+  [LocaleType.hu]: hu,
   [LocaleType.it]: it,
+  [LocaleType.lt]: lt,
+  [LocaleType.lv]: lv,
   [LocaleType.nl]: nl,
-  [LocaleType.ro]: ro,
   [LocaleType.pl]: pl,
+  [LocaleType.pt]: pt,
+  [LocaleType.ro]: ro,
+  [LocaleType.sk]: sk,
+  [LocaleType.sl]: sl,
+  [LocaleType.sv]: sv,
+  [LocaleType.uk]: uk,
 };
 
 export const getDateOfBirthFromAge = (age: string | number = ''): string => {
