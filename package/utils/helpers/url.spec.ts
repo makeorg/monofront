@@ -134,6 +134,16 @@ describe('Url Helper', () => {
     expect(link).toEqual(`${URL.ABOUT_MAKE_LINK}en/foo`);
   });
 
+  it('return webflow whoarewe cs external link', () => {
+    const link = urlHelper.getWhoAreWeDynamicLink('cs', '/foo');
+    expect(link).toEqual(`${URL.ABOUT_MAKE_LINK}cs/foo`);
+  });
+
+  it('return webflow whoarewe uk external link', () => {
+    const link = urlHelper.getWhoAreWeDynamicLink('uk', '/foo');
+    expect(link).toEqual(`${URL.ABOUT_MAKE_LINK}uk/foo`);
+  });
+
   // @todo temporary links for webglot, will need to be normalised
   it('return weglot en external link', () => {
     const link = urlHelper.getWhoAreWeDynamicLink('bg', '/foo');
@@ -165,7 +175,7 @@ describe('Url Helper', () => {
   });
 
   it('return weglot default external link', () => {
-    const link = urlHelper.getWhoAreWeDynamicLink('uk', '/foo');
+    const link = urlHelper.getWhoAreWeDynamicLink('cd', '/foo');
     expect(link).toEqual(`${URL.ABOUT_MAKE_LINK}en/foo`);
   });
 

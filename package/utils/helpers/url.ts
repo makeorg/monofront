@@ -513,6 +513,8 @@ export const getWhoAreWeDynamicLink = (
   let link;
 
   switch (language) {
+    case 'cs':
+    case 'uk':
     case 'fr':
     case 'de':
     case 'en':
