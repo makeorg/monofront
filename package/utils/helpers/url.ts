@@ -530,6 +530,8 @@ export const getWhoAreWeDynamicLink = (
     case 'nl':
     case 'pl':
     case 'ro':
+    case 'da':
+    case 'hu':
       link = `https://${language}.about.make.org/de/about-us`;
       break;
     default:

@@ -145,33 +145,41 @@ describe('Url Helper', () => {
   });
 
   // @todo temporary links for webglot, will need to be normalised
-  it('return weglot en external link', () => {
+  it('return weglot bg external link', () => {
     const link = urlHelper.getWhoAreWeDynamicLink('bg', '/foo');
     expect(link).toEqual(`https://bg.about.make.org/de/about-us`);
   });
-  it('return weglot en external link', () => {
+  it('return weglot es external link', () => {
     const link = urlHelper.getWhoAreWeDynamicLink('es', '/foo');
     expect(link).toEqual(`https://es.about.make.org/de/about-us`);
   });
-  it('return weglot en external link', () => {
+  it('return weglot fi external link', () => {
     const link = urlHelper.getWhoAreWeDynamicLink('fi', '/foo');
     expect(link).toEqual(`https://fi.about.make.org/de/about-us`);
   });
-  it('return weglot en external link', () => {
+  it('return weglot it external link', () => {
     const link = urlHelper.getWhoAreWeDynamicLink('it', '/foo');
     expect(link).toEqual(`https://it.about.make.org/de/about-us`);
   });
-  it('return weglot en external link', () => {
+  it('return weglot nl external link', () => {
     const link = urlHelper.getWhoAreWeDynamicLink('nl', '/foo');
     expect(link).toEqual(`https://nl.about.make.org/de/about-us`);
   });
-  it('return weglot en external link', () => {
+  it('return weglot pl external link', () => {
     const link = urlHelper.getWhoAreWeDynamicLink('pl', '/foo');
     expect(link).toEqual(`https://pl.about.make.org/de/about-us`);
   });
-  it('return weglot en external link', () => {
+  it('return weglot ro external link', () => {
     const link = urlHelper.getWhoAreWeDynamicLink('ro', '/foo');
     expect(link).toEqual(`https://ro.about.make.org/de/about-us`);
+  });
+  it('return weglot da external link', () => {
+    const link = urlHelper.getWhoAreWeDynamicLink('da', '/foo');
+    expect(link).toEqual(`https://da.about.make.org/de/about-us`);
+  });
+  it('return weglot hu external link', () => {
+    const link = urlHelper.getWhoAreWeDynamicLink('hu', '/foo');
+    expect(link).toEqual(`https://hu.about.make.org/de/about-us`);
   });
 
   it('return weglot default external link', () => {
