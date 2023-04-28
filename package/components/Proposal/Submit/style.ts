@@ -26,6 +26,7 @@ import {
   BodyMDefault,
 } from '@make.org/designsystem/components/Body';
 import { colors } from '@make.org/designsystem/tokens/colors';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const PanelTriggerStyle = styled(RedButtonStyle)`
   position: fixed;
@@ -87,7 +88,7 @@ export const ProposalStepTitleStyle = styled(TitleXXS).attrs({ as: 'h2' })`
     text-align: center;
   }
   &.with-margin-bottom {
-    margin-bottom: 25px;
+    margin-bottom: ${spacings.m};
   }
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${typography.FontSize.IleDeFrance};
@@ -443,4 +444,12 @@ export const ProposalSuccessButtonWrapperStyle = styled.div`
 
 export const ProposalSuccessLinkStyle = styled(BlackLinkStyle)`
   margin: 30px auto;
+`;
+
+export const AnonymousButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${spacings.s};
+  font-size: ${typography.FontSize.Bastille};
+  margin-bottom: ${spacings.m};
 `;

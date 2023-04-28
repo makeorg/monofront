@@ -50,6 +50,8 @@ export const ProposalForm: FC = () => {
   );
   const [waitingForAPIResponse, setWaitingForAPIResponse] =
     useState<boolean>(false);
+  // @todo to activate with feature flipping
+  // const [isAnonymous, setIsAnonymous] = useState<boolean>(false);
   const inputRef = useRef() as React.MutableRefObject<HTMLTextAreaElement>;
   const question: QuestionType | null = selectCurrentQuestion(state);
   const { isLoggedIn } = selectAuthentication(state);
@@ -135,6 +137,20 @@ export const ProposalForm: FC = () => {
           <ScreenReaderItemStyle>
             {i18n.t('proposal_submit.form.title')}
           </ScreenReaderItemStyle>
+          {/* @todo => to activate with feature flipping
+          <AnonymousButtonContainer>
+            <SwitchButton
+              value={isAnonymous}
+              onEnabling={() => setIsAnonymous(true)}
+              onDisabling={() => setIsAnonymous(false)}
+            />
+            Mode anonyme
+          </AnonymousButtonContainer>
+          <div>
+            Cette option ne vous dispense pas d’être connecté à votre compte Make.org. 
+            Cependant, votre proposition restera anonyme pour les autres utilisateurs.
+          </div>
+  */}
           <ProposalFieldWrapperStyle>
             <ScreenReaderItemStyle as="label" htmlFor="proposal">
               {i18n.t('proposal_submit.form.field')}

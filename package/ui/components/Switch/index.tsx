@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { SvgSwitchLabelChecked, SvgSwitchLabelCross } from '../../Svg/elements';
-
-import { SwitchButtonStyle, SwitchButtonInternalLabelStyle } from './style';
+import { SwitchButtonStyle } from '@make.org/designsystem/components/Buttons';
 
 type Props = {
   value?: boolean;
-  onEnabling: () => void;
-  onDisabling: () => void;
+  onEnabling: any;
+  onDisabling: any;
 };
 
 export const SwitchButton: React.FC<Props> = ({
@@ -16,7 +14,8 @@ export const SwitchButton: React.FC<Props> = ({
 }) => {
   const [isChecked, setIsChecked] = useState(value);
 
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault();
     if (!isChecked) {
       onEnabling();
     } else {
@@ -31,29 +30,11 @@ export const SwitchButton: React.FC<Props> = ({
 
   return (
     <SwitchButtonStyle
-      onClick={handleClick}
+      onClick={e => handleClick(e)}
       role="switch"
       aria-checked={isChecked}
       className="switch"
       isChecked={isChecked}
-    >
-      <SwitchButtonInternalLabelStyle isChecked={isChecked}>
-        {isChecked ? (
-          <SvgSwitchLabelChecked
-            aria-hidden
-            width="8"
-            height="8"
-            focusable="false"
-          />
-        ) : (
-          <SvgSwitchLabelCross
-            aria-hidden
-            width="8"
-            height="8"
-            focusable="false"
-          />
-        )}
-      </SwitchButtonInternalLabelStyle>
-    </SwitchButtonStyle>
+    />
   );
 };
