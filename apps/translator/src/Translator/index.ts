@@ -3,6 +3,7 @@ import {
   TranslatorProvider,
 } from './TranslatorProvider/types';
 import { deeplProvider } from './TranslatorProvider/DeeplProvider';
+import { chatGPTProvider } from './TranslatorProvider/ChatGPTProvider';
 import {
   SupportedLanguages,
   TranslationDemand,
@@ -10,7 +11,7 @@ import {
   SupportedLanguagesByProvider,
 } from '../Types/types';
 
-const providers: TranslatorProvider[] = [deeplProvider];
+const providers: TranslatorProvider[] = [deeplProvider, chatGPTProvider];
 
 export const translate = async (
   demand: TranslationDemand

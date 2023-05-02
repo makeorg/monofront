@@ -117,5 +117,6 @@ export const securityMiddleware = async (
     res
   );
 
+  res.locals.user = user;
   return next();
 };
