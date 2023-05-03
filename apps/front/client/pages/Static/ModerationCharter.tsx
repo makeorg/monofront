@@ -209,7 +209,7 @@ const ModerationCharterPage: FC = () => (
               </ModerationExampleCardTitleStyle>
               <StaticCenteredParagraphStyle>
                 {i18n.t(
-                  'moderation_charter.partisan_solutions.refused_card_example_2'
+                  'moderation_charter.partisan_solutions.validated_card_example_2'
                 )}
               </StaticCenteredParagraphStyle>
             </ModerationExampleCardStyle>
@@ -255,7 +255,9 @@ const ModerationCharterPage: FC = () => (
                 {i18n.t('moderation_charter.refused_label')}
               </ModerationExampleCardTitleStyle>
               <StaticCenteredParagraphStyle>
-                {i18n.t('moderation_charter.advertising.refused_card_example')}
+                {i18n.t(
+                  'moderation_charter.multiple_ideas.refused_card_example'
+                )}
               </StaticCenteredParagraphStyle>
             </ModerationExampleCardStyle>
             <ModerationExampleCardStyle className="accepted">
@@ -265,7 +267,7 @@ const ModerationCharterPage: FC = () => (
               </ModerationExampleCardTitleStyle>
               <StaticCenteredParagraphStyle>
                 {i18n.t(
-                  'moderation_charter.advertising.validated_card_example'
+                  'moderation_charter.multiple_ideas.validated_card_example'
                 )}
               </StaticCenteredParagraphStyle>
             </ModerationExampleCardStyle>
@@ -352,7 +354,7 @@ const ModerationCharterPage: FC = () => (
               </ModerationExampleCardTitleStyle>
               <StaticCenteredParagraphStyle>
                 {i18n.t(
-                  'moderation_charter.concrete_elements.validated_card_example'
+                  'moderation_charter.concrete_elements.validated_card_example_2'
                 )}
               </StaticCenteredParagraphStyle>
             </ModerationExampleCardStyle>
