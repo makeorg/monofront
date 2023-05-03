@@ -43,7 +43,7 @@ type TypeLoginValues = {
 export const LoginForm: FC = () => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy, country } = state.appConfig;
-  const { pendingProposal } = state.pendingProposal;
+  const { pendingProposal, isAnonymous } = state.pendingProposal;
   const question = selectCurrentQuestion(state);
   const defaultFormValues = {
     email: '',
@@ -98,6 +98,7 @@ export const LoginForm: FC = () => {
         question.questionId,
         question.returnedLanguage,
         country,
+        isAnonymous,
         () => dispatch(setPanelContent(PANEL_CONTENT.PROPOSAL_SUCCESS))
       );
     };

@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import React, { FC, useEffect, useRef, useState } from 'react';
 import { QuestionType } from '@make.org/types';
-import { FORM } from '@make.org/types/enums';
+import { FORM, FEATURE_FLIPPING } from '@make.org/types/enums';
 import { MAX_PROPOSAL_LENGTH } from '@make.org/utils/constants/proposal';
 import i18n from 'i18next';
 import {
@@ -20,12 +20,18 @@ import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { throttle } from '@make.org/utils/helpers/throttle';
 import { useAppContext } from '@make.org/store';
 import { setPanelContent } from '@make.org/store/actions/panel';
-import { initProposalPending } from '@make.org/store/actions/pendingProposal';
+import {
+  disableProposalAnonymous,
+  enableProposalAnonymous,
+  initProposalPending,
+} from '@make.org/store/actions/pendingProposal';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { LoadingDots } from '@make.org/ui/components/Loading/Dots';
 import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
+import { checkIsFeatureActivated } from '@make.org/utils/helpers/featureFlipping';
+import { SwitchButton } from '@make.org/ui/components/Switch';
 import { ProposalAuthentication } from './Authentication';
 import {
   ProposalFormWrapperStyle,
@@ -41,6 +47,8 @@ import {
   ProposalStepWrapperStyle,
   BlueManOnBench,
   ProposalFormStyle,
+  AnonymousButtonContainer,
+  AnonymousInfoTextStyle,
 } from './style';
 
 export const ProposalForm: FC = () => {
@@ -50,8 +58,7 @@ export const ProposalForm: FC = () => {
   );
   const [waitingForAPIResponse, setWaitingForAPIResponse] =
     useState<boolean>(false);
-  // @todo to activate with feature flipping
-  // const [isAnonymous, setIsAnonymous] = useState<boolean>(false);
+
   const inputRef = useRef() as React.MutableRefObject<HTMLTextAreaElement>;
   const question: QuestionType | null = selectCurrentQuestion(state);
   const { isLoggedIn } = selectAuthentication(state);
@@ -67,9 +74,13 @@ export const ProposalForm: FC = () => {
     : pendingProposal.length;
 
   const validProposalLength = proposalHasValidLength(pendingProposal.length);
-
   const { source } = state.appConfig;
   const isWidget = source === 'widget';
+
+  const isAnonymousProposal: boolean = checkIsFeatureActivated(
+    FEATURE_FLIPPING.ANONYMOUS_PROPOSALS,
+    question.activeFeatures
+  );
 
   const handleFieldFocus = () => {
     if (pendingProposal.length === 0) {
@@ -102,6 +113,7 @@ export const ProposalForm: FC = () => {
         question.questionId,
         question.returnedLanguage,
         country,
+        state.pendingProposal.isAnonymous,
         () => {
           dispatch(setPanelContent(PANEL_CONTENT.PROPOSAL_SUCCESS));
         }
@@ -137,20 +149,23 @@ export const ProposalForm: FC = () => {
           <ScreenReaderItemStyle>
             {i18n.t('proposal_submit.form.title')}
           </ScreenReaderItemStyle>
-          {/* @todo => to activate with feature flipping
-          <AnonymousButtonContainer>
-            <SwitchButton
-              value={isAnonymous}
-              onEnabling={() => setIsAnonymous(true)}
-              onDisabling={() => setIsAnonymous(false)}
-            />
-            Mode anonyme
-          </AnonymousButtonContainer>
-          <div>
-            Cette option ne vous dispense pas d’être connecté à votre compte Make.org. 
-            Cependant, votre proposition restera anonyme pour les autres utilisateurs.
-          </div>
-  */}
+          {isAnonymousProposal && (
+            <>
+              <AnonymousButtonContainer>
+                <SwitchButton
+                  value={state.pendingProposal.isAnonymous}
+                  onEnabling={() => dispatch(enableProposalAnonymous())}
+                  onDisabling={() => dispatch(disableProposalAnonymous())}
+                />
+                {i18n.t('proposal_card.author.anonymous')}
+              </AnonymousButtonContainer>
+              <AnonymousInfoTextStyle
+                dangerouslySetInnerHTML={{
+                  __html: i18n.t('proposal_card.author.disclaimer'),
+                }}
+              />
+            </>
+          )}
           <ProposalFieldWrapperStyle>
             <ScreenReaderItemStyle as="label" htmlFor="proposal">
               {i18n.t('proposal_submit.form.field')}

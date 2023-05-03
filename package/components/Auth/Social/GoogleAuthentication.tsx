@@ -42,7 +42,7 @@ import { OptInGTU } from './OptInGTU';
 
 const useLoginSuccess = (isRegister: boolean) => {
   const { dispatch, state } = useAppContext();
-  const { pendingProposal } = state.pendingProposal;
+  const { pendingProposal, isAnonymous } = state.pendingProposal;
   const { country } = state.appConfig;
   const question = selectCurrentQuestion(state);
 
@@ -72,6 +72,7 @@ const useLoginSuccess = (isRegister: boolean) => {
         question.questionId,
         question.returnedLanguage,
         country,
+        isAnonymous,
         () => dispatch(setPanelContent(PANEL_CONTENT.PROPOSAL_SUCCESS))
       );
     }

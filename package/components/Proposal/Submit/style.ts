@@ -451,5 +451,10 @@ export const AnonymousButtonContainer = styled.div`
   align-items: center;
   gap: ${spacings.s};
   font-size: ${typography.FontSize.Bastille};
-  margin-bottom: ${spacings.m};
+`;
+
+export const AnonymousInfoTextStyle = styled.p`
+  font-size: ${typography.FontSize.RueDeLappe};
+  color: ${colors.Content.Interface.DarkSecondary};
+  margin: ${spacings.s} 0 ${spacings.m} 0;
 `;

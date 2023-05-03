@@ -36,7 +36,8 @@ export class ProposalApiService {
     content: string,
     questionId: string,
     language: string,
-    country: string
+    country: string,
+    isAnonymous: boolean
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_PROPOSALS, {
       method: 'POST',
@@ -45,6 +46,7 @@ export class ProposalApiService {
         questionId,
         language,
         country,
+        isAnonymous,
       }),
     });
   }

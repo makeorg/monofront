@@ -332,7 +332,9 @@
     "author": {
       "from": "Пропозиція від: ",
       "age": "{{age}} років",
-      "date": "розміщено на сайті: "
+      "date": "розміщено на сайті: ",
+      "anonymous": "@@proposal_card.author.anonymous|fr:Mode anonyme",
+      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs."
     },
     "status": {
       "title": "Статус пропозиції: ",

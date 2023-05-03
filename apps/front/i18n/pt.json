@@ -332,7 +332,9 @@
     "author": {
       "from": "Proposta por: ",
       "age": "{{age}} anos",
-      "date": "publicada a: "
+      "date": "publicada a: ",
+      "anonymous": "@@proposal_card.author.anonymous|fr:Mode anonyme",
+      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs."
     },
     "status": {
       "title": "Estado da proposta: ",

@@ -332,7 +332,9 @@
     "author": {
       "from": "Prijedlog korisnika: ",
       "age": "Starosna dob: {{age}}",
-      "date": "objavljeno dana: "
+      "date": "objavljeno dana: ",
+      "anonymous": "@@proposal_card.author.anonymous|fr:Mode anonyme",
+      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs."
     },
     "status": {
       "title": "Stanje prijedloga: ",

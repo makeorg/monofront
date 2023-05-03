@@ -14,6 +14,7 @@ const propose = async (
   questionId: string,
   language: string,
   country: string,
+  isAnonymous: boolean,
   success?: () => void,
   failure?: () => void
 ): Promise<void> => {
@@ -22,7 +23,8 @@ const propose = async (
       content.trim(),
       questionId,
       language,
-      country
+      country,
+      isAnonymous
     );
     if (success) {
       success();

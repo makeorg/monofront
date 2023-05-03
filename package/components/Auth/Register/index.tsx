@@ -30,7 +30,7 @@ import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 
 export const Register: React.FC = () => {
   const { dispatch, state } = useAppContext();
-  const { pendingProposal, registerStep } = state.pendingProposal;
+  const { pendingProposal, registerStep, isAnonymous } = state.pendingProposal;
   const { country, language } = state.appConfig;
   const [user, setUser] = useState<RegisterFormDataType>({
     email: '',
@@ -160,6 +160,7 @@ export const Register: React.FC = () => {
             question.questionId,
             question.returnedLanguage,
             country,
+            isAnonymous,
             () =>
               dispatch(setPanelContent(PANEL_CONTENT.PROPOSAL_SUCCESS_REGISTER))
           );

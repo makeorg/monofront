@@ -337,7 +337,9 @@
     "author": {
       "from": "Predlog: ",
       "age": "{{age}} let",
-      "date": "objavljeno dne: "
+      "date": "objavljeno dne: ",
+      "anonymous": "@@proposal_card.author.anonymous|fr:Mode anonyme",
+      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs."
     },
     "status": {
       "title": "Status predloga: ",

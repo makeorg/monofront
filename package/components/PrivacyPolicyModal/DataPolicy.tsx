@@ -49,7 +49,7 @@ export const DataPolicy: React.FC = () => {
   const { dispatch, state } = useAppContext();
   const { country, language, source } = state.appConfig;
   const { isLogin, extraProps } = state.modal;
-  const { pendingProposal } = state.pendingProposal;
+  const { pendingProposal, isAnonymous } = state.pendingProposal;
   const question = selectCurrentQuestion(state);
   const { email, password, provider, token } = extraProps;
   // eslint-disable-next-line no-unused-vars
@@ -76,6 +76,7 @@ export const DataPolicy: React.FC = () => {
         question.questionId,
         question.returnedLanguage,
         country,
+        isAnonymous,
         () => dispatch(setPanelContent(PANEL_CONTENT.PROPOSAL_SUCCESS))
       );
     }

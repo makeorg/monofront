@@ -4,12 +4,15 @@ import {
   PROPOSAL_INIT_PENDING,
   PROPOSAL_REGISTER_STEP,
   PROPOSAL_PENDING_SOURCE,
+  PROPOSAL_ENABLE_ANONYMOUS,
+  PROPOSAL_DISABLE_ANONYMOUS,
 } from '../../actionTypes';
 
 export const pendingProposal_state: StatePendingProposal = {
   pendingProposal: undefined,
   registerStep: 1,
   source: '',
+  isAnonymous: false,
 };
 
 export const pendingProposal_reducer: Reducer = (
@@ -37,6 +40,16 @@ export const pendingProposal_reducer: Reducer = (
       return {
         ...state,
         registerStep: action.payload,
+      };
+    case PROPOSAL_DISABLE_ANONYMOUS:
+      return {
+        ...pendingProposal_state,
+        isAnonymous: false,
+      };
+    case PROPOSAL_ENABLE_ANONYMOUS:
+      return {
+        ...pendingProposal_state,
+        isAnonymous: true,
       };
     default:
       return state;
