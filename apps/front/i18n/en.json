@@ -857,29 +857,29 @@
     "citizen_account": {
       "title": "Your citizen’s account on Make.org",
       "description": "Thanks to your personal account, you have access to the results of your proposals and your voting records, and you will receive the results of the consultations. By registering with us, you will be informed by e-mail of the next citizens’ consultations and you will be invited to our participative events.",
-      "button_text": "I register"
+      "button_text": "Register"
     },
     "cards": {
       "soon": "Coming up",
       "submit": {
-        "title": "Write a proposal",
+        "title": "Submit a proposal",
         "description": "Share your ideas with as many people as possible. Each proposal will be moderated before being put to the vote of the citizens.",
-        "button": "I write a proposal"
+        "button": "Submit my proposal"
       },
       "interact": {
         "title": "Respond to the proposals",
         "description": "Proposals define the stakes of a consultation: express yourself to determine what the citizens’ priorities shall be.",
-        "button": "I vote"
+        "button": "Vote"
       },
       "controversy": {
         "title": "Choose between controversial proposals",
         "description": "These citizens’ proposals have received as many positive votes as negative ones.",
-        "button": "I choose"
+        "button": "Choose"
       },
       "popular": {
         "title": "Vote on popular proposals",
         "description": "These citizens’ proposals have received the most favourable votes.",
-        "button": "I vote"
+        "button": "Vote"
       },
       "sharing": {
         "title": "Share the consultation",
