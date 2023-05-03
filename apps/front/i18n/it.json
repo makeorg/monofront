@@ -483,7 +483,7 @@
     "times": "volte",
     "likeIt": "La mia preferita",
     "doable": "Realistica",
-    "platitudeAgree": "Banale",
+    "platitudeAgree": "Evidente",
     "noWay": "Assolutamente no!",
     "impossible": "Non è fattibile",
     "platitudeDisagree": "Banale",
@@ -1114,9 +1114,9 @@
     "highlights": {
       "title": "Make.org in cifre",
       "participants": {
-        "subtitle_one": "di partecipante",
-        "subtitle_many": "di partecipanti",
-        "subtitle_other": "di partecipanti"
+        "subtitle_one": "persona partecipante",
+        "subtitle_many": "persone partecipanti",
+        "subtitle_other": "persone partecipanti"
       },
       "proposals": {
         "subtitle_one": "proposta depositata",
@@ -1390,7 +1390,7 @@
     "refused_examples": "Su Make.org non si accettano: ",
     "incomprehensible_solutions": {
       "title": "Le proposte incomprensibili",
-      "description": "La formulazione e il senso della proposta deve essere comprensibile a chiunque. La presenza di controsensi o di gravi problemi di sintassi comporterà il rigetto della proposta e ti verrà chiesto di riformularla",
+      "description": "La formulazione e il senso della proposta deve essere comprensibile a chiunque. La presenza di controsensi o di gravi problemi di sintassi comporterà il rigetto della proposta e ti verrà chiesto di riformularla.",
       "refused_example_card": "È necessario che i cittadini si riflettano nello sviluppo per tutti i paesi.",
       "validated_example_card": "È necessario che i cittadini riflettano allo sviluppo dell’educazione in ogni paese."
     },
@@ -1403,7 +1403,7 @@
     },
     "discriminatory_solutions": {
       "title": "Le proposte discriminatorie",
-      "description": "Ai sensi della normativa in vigore,² la proposta non può contenere discorsi che fomentino violenza o odio. Inoltre, non può includere dichiarazioni di carattere discriminatorio o diffamatorio, in particolare gruppi etnici, sociali o religiosi.",
+      "description": "Ai sensi della normativa in vigore,² la proposta non può contenere discorsi che fomentino violenza o odio. Inoltre, non può includere dichiarazioni di carattere discriminatorio o diffamatorio, in particolare nei confronti di gruppi etnici, sociali o religiosi.",
       "refused_card_example": "È necessario limitare le tradizioni degli immigrati.",
       "validated_card_example": "È necessario migliorare la comunicazione collettiva.",
       "refused_card_example_2": "È necessario vietare di portare la croce al collo perché è un simbolo di asservimento.",

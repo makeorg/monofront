@@ -524,7 +524,7 @@
     "step1_title": "Registrarme con el correo",
     "step2_title": "Completar mi registro",
     "login_title": "Ya tengo una cuenta.",
-    "login_link": "conectarme.",
+    "login_link": "Conectarme.",
     "gtu_text_first": "Al registrarte, aceptas nuestros ",
     "gtu_text_second": " y aceptas recibir correos electrónicos (muy pocos) de Make.org.",
     "gtu_link": "Términos y condiciones."
@@ -1226,7 +1226,7 @@
   },
   "cookies_management": {
     "title": "Gestión de cookies",
-    "dated": "- con fecha de {{date}} -",
+    "dated": "- Con fecha de {{date}} -",
     "button": "Validar mi selección",
     "intro": {
       "title": "¿Qué es una cookie?",
