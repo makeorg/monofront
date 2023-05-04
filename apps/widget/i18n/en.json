@@ -194,7 +194,7 @@
             "title": "Write a proposal using 140 characters max, then click on the \"Submit\" button",
             "field": "Proposal field",
             "counter": "Your proposal contains {{current}} characters over {{total}}",
-            "panel_trigger": "I write a proposal",
+            "panel_trigger": "Submit my proposal",
             "read_our": "Read our",
             "moderation_link": "moderation charter",
             "button_propose": "Submit"

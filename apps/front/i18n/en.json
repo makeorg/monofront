@@ -375,7 +375,7 @@
       "title": "Write a proposal, using 140 characters or less, then click on the \"Submit\" button",
       "field": "Proposal field",
       "counter": "Your proposal contains {{current}} characters of a possible {{total}}",
-      "panel_trigger": "I write a proposal",
+      "panel_trigger": "Submit my proposal",
       "button_cancel": "Cancel",
       "button_submit": "Validate",
       "read_our": "Read our",
