@@ -1222,7 +1222,7 @@
     "host_address": "{{make_host_address}} FRANCJA",
     "host_phone": "Numer telefonu: ",
     "host_phone_number": "{{host_number}}",
-    "eu_mention": "Komisja Europejska udostępnia konsumentom platformę internetowego rozstrzygania sporów, znajdującą się pod adresem<a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\">https://ec.europa.eu/consumers/odr - (nowe okno)</a>."
+    "eu_mention": "Komisja Europejska udostępnia konsumentom platformę internetowego rozstrzygania sporów, znajdującą się pod adresem <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\">https://ec.europa.eu/consumers/odr - (nowe okno)</a>."
   },
   "cookies_management": {
     "title": "Zarządzanie plikami cookie",
