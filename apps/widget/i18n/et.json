@@ -1,354 +1,356 @@
 {
-    "meta": {
-        "sequence": {
-            "title_standard": "Osale konsultatsioonis '{{question}}' - Make.org",
-            "title_controversy": "Tehke otsus konsultatsiooni '{{question}}' ettepanekute kohta - Make.org",
-            "title_popular": "Võta seisukoht konsultatsiooni kõige populaarsemate ettepanekute suhtes '{{question}}' - Make.org"
-        }
-    },
-    "common": {
-        "connexion_label": "Logi sisse",
-        "register_label": "Registreeru",
-        "continue": "Jätka",
-        "form": {
-            "hide_password": "Peida salasõna",
-            "show_password": "Kuva salasõna",
-            "requirements": "Kõik väljad on kohustuslikud, kui ei ole teisiti näidatud.",
-            "requirements_short": "Kõik väljad on kohustuslikud.",
-            "password_requirements": "Vähemalt 8 tähemärki, neist vähemalt 1 number, 1 suurtäht ja 1 erimärk.",
-            "post_code": "Postiindeks võimaldab meil analüüsida tulemusi geograafiliste piirkondade kaupa.",
-            "label": {
-                "email": "E-post",
-                "password": "Parool",
-                "firstname": "Eesnimi",
-                "age": "Vanus",
-                "postalcode": "Postiindeks",
-                "profession": "Amet",
-                "biography": "Elulugu",
-                "website": "Veebisait",
-                "organisation": "Ettevõtte nimi",
-                "postalcode_optional": "Postiindeks (vabatahtlik)",
-                "personality": {
-                    "firstname": "Kandidaadi eesnimi / nimekirja algus",
-                    "lastname": "Kandidaadi perekonnanimi / nimekirja algus"
-                }
-            },
-            "messages": {
-                "errors_notification": "Leidsime sellel vormilt vigu:",
-                "invalid_email": "Kasutage seda e-kirja formaati.",
-                "invalid_email_dynamic": "Kasutage formaati {{label}}.",
-                "already_registered": "See e-post on juba olemas.",
-                "already_registered_dynamic": "See {{label}} on juba olemas.",
-                "email_doesnot_exist": "See e-posti aadress ei ole teie kontoga seotud, palun sisestage oma e-posti aadress uuesti.",
-                "email_doesnot_exist_dynamic": "See {{label}} ei ole teie kontoga seotud, palun sisestage oma e-posti aadress uuesti.",
-                "invalid_password": "Teie salasõna peab sisaldama vähemalt 8 tähemärki.",
-                "invalid_password_dynamic": "Teie {{label}} peab sisaldama vähemalt 8 tähemärki.",
-                "api_error": "Oi! Selle lehekülje laadimisega on probleeme. Palun proovige hiljem uuesti.",
-                "mandatory": "Täitke see väli.",
-                "mandatory_dynamic": "Väli {{label}} on kohustuslik.",
-                "invalid_age": "Meie kasutajad peavad olema 8 kuni 120 aastased.",
-                "invalid_age_dynamic": "{{label}}: Meie kasutajad peavad olema 8 kuni 120 aastased.",
-                "the_field_[email]_is_missing": "Väli {{label}} on kohustuslik.",
-                "the_field_[password]_is_missing": "Väli {{label}} on kohustuslik.",
-                "invalid_postal_code": "Postiindeks peab koosnema 5 numbrist.",
-                "invalid_privacy_policy": "Te peate andmepoliitikaga nõustuma.",
-                "invalid_postal_code_dynamic": "{{label}} peab koosnema 5 numbrist.",
-                "submit_success": "Muudatus on salvestatud.",
-                "malformed": "URL-i formaat peab olema „https://example.com“"
-            }
-        },
-        "social_login": {
-            "facebook_connect": "Jätka Facebookiga",
-            "google_connect": "Jätka Google‘iga",
-            "email_register": "Registreeru e-postiga",
-            "count_register": "({{count}}/2)"
-        },
-        "notifications": {
-            "bad_link": "See link ei ole enam kehtiv.",
-            "secure_expired": {
-                "first_sentence": "Kahjuks logiti teid välja, sest meile tundub, et te lahkusite",
-                "second_sentence": "Logige uuesti sisse, et jätkata hääletamist, teha ettepanekuid ja tegutseda Make.org‘is.",
-                "emoji": "kurb pisaraga emotikon"
-            },
-            "session_expired": {
-                "title": "Tegevusetuse ajaline piirang",
-                "description": "Oma teenuse kvaliteedi tagamiseks laadime lehekülje uuesti.",
-                "button_text": "Sain aru"
-            },
-            "icons": {
-                "close": "Sulge teavitus",
-                "information": "Teavitav sõnum: ",
-                "success": "Õnnestumise sõnum: ",
-                "error": "Veasõnum: ",
-                "alert": "Hoiatussõnum: "
-            },
-            "unexpected_error": "Hetkel esineb tõrge, proovige hiljem uuesti.",
-            "network_error": "Juurdepääs kogu Make.org‘i sisule pole võimalik, sest te tundute olevat võrgust väljas",
-            "vote_only": {
-                "message": "Konsultatsioon „{{title}}“ ei saa võtta vastu uusi ettepanekuid, aga saate jätkata hääletamist, et teha otsus olemasolevate ettepanekute kohta.",
-                "button": "sain aru"
-            },
-            "vote_on_proposal": "Hääletage seda ettepanekut"
-        },
-        "propose": "Tee ettepanek",
-        "open_new_window": "Avamine uuel vahelehel",
-        "loading": "Oodake laadimise lõpetamist",
-        "participate": "Osale",
-        "display_tooltip": "Kuva jutumulli sisu hiirega üleliikumisel",
-        "expand_collapse": "{{name}} - Kuva ripploendi sisu",
-        "shrink_collapse": "{{name}} - Peida ripploendi sisu",
-        "secondary_nav": "Teisene navigeerimine",
-        "percent": "{{percent}}%",
-        "header_authentication_nav": "Juurdepääs minu kasutajaprofiilile",
-        "footer_nav": "Lehe allosa navigeerimisriba",
-        "sidebar_area": "Külgmine sisuriba",
-        "max_characters": "maksimaalne tähemärkide arv",
-        "back": "Tagasi",
-        "proposal_count_one": "{{count}} ettepanek",
-        "proposal_count_other": "{{count}} ettepanekut",
-        "breadcrumbs": "juhtnöör",
-        "million_one": "miljon",
-        "million_other": "miljonit",
-        "close_panel": "Sulge rippmenüü",
-        "close": "Sulge"
-    },
-    "header": {
-        "logo_alt": "Saidi Make.org avalehele"
-    },
-    "proposal_card": {
-        "next": "Järgmine ettepanek",
-        "validate": "Kinnita",
-        "content": "Ettepaneku sisu: ",
-        "original": "Vaata originaali",
-        "translation": "Vaata tõlget",
-        "posted_label": "Postitamise koht ",
-        "author": {
-            "from": "Ettepaneku esitaja: ",
-            "age": "{{age}}-aastane",
-            "date": "postitamise kuupäev: "
-        },
-        "status": {
-            "title": "Ettepaneku olek: ",
-            "accepted": "Avaldatud",
-            "refused": "Tagasi lükatud",
-            "postponed": "Modereerimise ootel",
-            "pending": "Modereerimise ootel"
-        }
-    },
-    "report_translations": {
-        "button": "Ettepaneku valikud",
-        "confirmation": {
-            "title": "Täname teavitamise eest!",
-            "description": "Meie tiim tegeleb sellega esimesel võimalusel."
-        },
-        "form": {
-            "title": "Teavita automaattõlkest",
-            "unclear": "Arusaamatu tõlge",
-            "error": "Tõlkeviga",
-            "false_info": "Sisaldab valeinfot",
-            "offensive": "Solvava sisuga ettepanek",
-            "report": "Teavita"
-        },
-        "first_step": {
-            "title": "Automaattõlge",
-            "text": "Meie konsultatsioonide ettepanekud on automaatsed. Kui märkate viga, teavitage meid sellest!"
-        }
-    },
-    "intro_card": {
-        "title": "Tuhanded kodanikud pakuvad lahendusi.",
-        "description": "Võtke seisukoht nende lahenduste suhtes ja pakkuge ka enda lahendusi.\r\nParimad ettepanekud võetakse kasutusele.",
-        "button": "Käivitus"
-    },
-    "final_card": {
-        "title": "Täname, et reageerisite ettepanekutele!",
-        "description": "Jätkate hääletamist, et aidata meil prioriteete määrata.",
-        "link_text": "Sisenen konsultatsiooni",
-        "register": {
-            "description": "Kuidas tulemusi jälgida?",
-            "button_intro": "Looge oma",
-            "button_text": "kodanikukeskkond."
-        }
-    },
-    "no_proposal_card": {
-        "title": {
-            "regular": "Täname teid erakordse panuse eest!",
-            "popular": "Täname, hääletasite kõiki kõige populaarsemaid ettepanekuid",
-            "controversial": "Täname, hääletasite kõiki kõige vastuolulisemaid ettepanekuid",
-            "keyword": "Täname, hääletasite kõiki „{{keyword}}“ ettepanekuid"
-        },
-        "description": {
-            "regular": "Hetkel ei ole uusi ettepanekuid.",
-            "special": "Jätkate hääletamist, et aidata meil prioriteete määrata."
-        },
-        "link_text": "Sisenen konsultatsiooni",
-        "sharing": "Või suurendage selle konsultatsiooni mõju, jagades seda."
-    },
-    "push_proposal_card": {
-        "title": "Kas teil on pakkuda sellele teemale mõnda lahendust?",
-        "next-cta": "Veel mitte, jätkan hääletamist"
-    },
-    "sequence_progress": {
-        "previous": "Eelmise elemendi juurde",
-        "counter": "Element {{current}} / {{total}}"
-    },
-    "sequence_zone": {
-        "popular_title": "Populaarsed ettepanekud",
-        "controversial_title": "Vastuolulised ettepanekud"
-    },
-    "special_final_card": {
-        "title": "Täname hääletamise eest!",
-        "subtitle": "Võite jätkata konsultatsioonides osalemist",
-        "cta_text": "Sisenen konsultatsiooni"
-    },
-    "demographics_card": {
-        "disclaimer": "Teie andmed on anonüümsed ja võimaldavad meie tulemustel olla esindavad.",
-        "skip": "Jäta vahele",
-        "submit": "Salvesta",
-        "submitted_thanks": "Täname vastuse eest.",
-        "submitted_disclaimer": " Vastust kasutatakse anonüümselt, et konsultatsiooni tulemusi analüüsida.",
-        "select": "Vali"
-    },
-    "proposal_submit": {
-        "form": {
-            "bait": "On vaja ",
-            "title": "Esitage oma ettepanek alla 140 tähemärgi pikkusena. Sisestage see ettepanekute väljale ja kinnitage, klõpsates nupul „Kinnita“",
-            "field": "Ettepanekute väli",
-            "counter": "Teie ettepanek sisaldab {{current}} tähemärki saadaolevast {{total}} tähemärgist",
-            "panel_trigger": "Pakun lahendust",
-            "read_our": "Loe meie",
-            "moderation_link": "modereerimise eeskirju",
-            "button_propose": "ETTEPANEK"
-        },
-        "authentication": {
-            "back": "Tagasi",
-            "last_step_red": "Veel üks samm ja ",
-            "last_step": "saate oma ettepaneku ära saata!",
-            "button_login_text": "Mul on juba konto,",
-            "button_login_link": "login sisse.",
-            "button_login": "Logi sisse",
-            "back_authentication": "Tagasi sisselogimise aknasse"
-        },
-        "success": {
-            "button": "Jätka hääletamist",
-            "other_idea": "Mul on veel üks idee",
-            "tooltip_title": "Modereerimisel",
-            "tooltip_description": "Teie ettepanekut käsitletakse 48 tunni jooksul; seni võite seda oma profiili alt vaadata.",
-            "grats": "Palju õnne, {{name}}, ",
-            "proposal_sent": "teie ettepanek saadeti ära ",
-            "activate": "Kinnitage ühe klõpsuga oma e-posti aadress, ",
-            "link": "et tagada oma konto ehtsust. Klõpsake aktiveerimislingil, mis saadeti aadressile: {{mail}}",
-            "question": "Küsimusi? Võtke meiega ühendust: ",
-            "consultation_access": "Sisenen konsultatsiooni"
-        }
-    },
-    "vote": {
-        "intro_title": "Esitan oma arvamuse selle ettepaneku kohta: ",
-        "agree": "Olen nõus",
-        "disagree": "Ei ole nõus",
-        "neutral": "Olen erapooletu",
-        "label_one": "{{count}} hääl",
-        "label_other": "{{count}} häält",
-        "with_percent": "{{votedKey}} : {{votedPercent}}%"
-    },
-    "unvote": {
-        "title": "Võtan tagasi oma arvamuse selle ettepaneku kohta."
-    },
-    "qualification": {
-        "title": "Täpsustan oma arvamust selle ettepaneku kohta.",
-        "static_repartition": "See ettepanek kvalifitseeriti järgmiselt: ",
-        "times": "korda",
-        "likeIt": "Lemmik",
-        "doable": "Realistlik",
-        "platitudeAgree": "Tühine",
-        "noWay": "Mitte mingil juhul!",
-        "impossible": "Teostamatu",
-        "platitudeDisagree": "Tühine",
-        "doNotUnderstand": "Ei saanud aru",
-        "noOpinion": "Ei oma arvamust",
-        "doNotCare": "Ükskõik"
-    },
+  "meta": {
     "sequence": {
-        "return": "Tagasi ettepanekute juurde",
-        "title": "Hääletage konsultatsiooni ettepanekute üle: ",
-        "more": "Juurdepääs kõikidele konsultatsioonidele"
-    },
-    "login": {
-        "title": "Mul on juba konto",
-        "connect": "Logi sisse",
-        "or": "või",
-        "forgot_password": "Unustasite salasõna?",
-        "registration_title": "Mul pole kontot,",
-        "registration_link": "loon konto.",
-        "email_doesnot_exist": "Teie {{emailLabel}} või {{passwordLabel}} on vale."
-    },
-    "register": {
-        "title": "Konto loomine",
-        "or": "või",
-        "login_title": "Mul on juba konto,",
-        "login_link": "login sisse.",
-        "gtu_text_first": "Registreerudes nõustute meie dokumendiga ",
-        "gtu_link": "tavapärased kasutustingimused."
-    },
-    "legal_consent": {
-        "title": "Seadusjärgne luba",
-        "subtitle": "Me vajame sinu ühe vanema nõusolekut",
-        "description": "Sulle meie kodanikuplatvormile juurdepääsu andmiseks vajame kahte nõusolekut. Varsti saad võtta sõna kõikidel meie konsultatsioonidel!",
-        "minor_consent": "Annan loa oma isikuandmete töötlemiseks Make.org‘i poolt.",
-        "parental_consent": "Vanemliku vastutuse kandjana annan loa oma lapse isikuandmete töötlemiseks Make.org‘i poolt.",
-        "cancel": "Tühista",
-        "submit": "Kinnita",
-        "privacy_policy_first_part": "Nõustun oma andmete töötlemisega Make.org‘i poolt, et saaksin osaleda ja teavet tulemuste kohta vastavalt ",
-        "privacy_policy_link": "eeskirjadele",
-        "privacy_policy_last_part": ". (kohustuslik)",
-        "privacy_policy": "andmepoliitika",
-        "make_protect": "Make.org kaitseb teie",
-        "make_protect_link": " isikuandmeid.",
-        "opt_in": "Nõustun saama Make.org‘ilt e-kirju, et olla kursis uudistega praeguste ja tulevaste konsultatsioonide kohta. (vabatahtlik)"
-    },
-    "forgot_password": {
-        "title": "Lähtestan oma salasõna",
-        "description": "Lähtestamise lingi saamiseks sisestage oma Make.org‘i kontoga seotud e-posti aadress.",
-        "success": "Täname; teie e-postile saadeti e-kiri, mis võimaldab salasõna lähtestada.",
-        "return": "Tagasi ",
-        "login_link": "sisselogimise aknasse",
-        "send_link": "saada e-kiri"
-    },
-    "reset_password": {
-        "title": "Lõin uue salasõna",
-        "info": "Võite valida uue salasõna.",
-        "send_cta": "Kinnita",
-        "success": {
-            "title": "Täname, teie salasõna on uuendatud."
-        },
-        "failure": {
-            "bad_link": "See link ei ole enam kehtiv."
-        }
-    },
-    "data_policy_modal": {
-        "title": "Meie andmepoliitika uuendused",
-        "description": "Make.org austab teie isikuandmeid iga kord, kui te veebisaiti külastate. Navigeerimise jätkamiseks pärast Make.org‘i sisse logimist peate nõustuma meie ",
-        "consent": "<strong>Nõustun uue andmepoliitikaga</strong> ja saan kasutada oma uut kodanikukeskkonda Make.org",
-        "validate": "Kinnitan",
-        "stay": "Jään",
-        "leave": "Väljun",
-        "refusal_title": "Kindel, et soovite väljuda?",
-        "refusal_description_first_part": "Uudistest keeldudes ",
-        "refusal_description_second_part": "ei ole teil enam juurdepääsu oma Make.org‘i kodanikukeskkonnale."
-    },
-    "not_found": {
-        "intro": "Oi!",
-        "title": "Viga 404",
-        "description": "Otsitavat lehekülge ei ole (enam) olemas."
-    },
-    "top_proposal_card": {
-        "start": "Alusta hääletamist"
-    },
-    "maintenance": {
-        "subtitle": "Ups, vabandame! Make.org on praegu hoolduses"
-    },
-    "unsecure": {
-        "title": "Konsultatsioon on nüüdseks lõppenud",
-        "description": "Kas soovite selle teema kohta rohkem teada? Saate rohkem teada operatsiooni kohta ja olete kursis kõigi meie kodanikukonsultatsioonide kohta, registreerudes veebilehel Make.org",
-        "link": "Avastage meie tegevust"
+      "title_standard": "Osale konsultatsioonis '{{question}}' - Make.org",
+      "title_controversy": "Tehke otsus konsultatsiooni '{{question}}' ettepanekute kohta - Make.org",
+      "title_popular": "Võta seisukoht konsultatsiooni kõige populaarsemate ettepanekute suhtes '{{question}}' - Make.org"
     }
+  },
+  "common": {
+    "connexion_label": "Logi sisse",
+    "register_label": "Registreeru",
+    "continue": "Jätka",
+    "form": {
+      "hide_password": "Peida salasõna",
+      "show_password": "Kuva salasõna",
+      "requirements": "Kõik väljad on kohustuslikud, kui ei ole teisiti näidatud.",
+      "requirements_short": "Kõik väljad on kohustuslikud.",
+      "password_requirements": "Vähemalt 8 tähemärki, neist vähemalt 1 number, 1 suurtäht ja 1 erimärk.",
+      "post_code": "Postiindeks võimaldab meil analüüsida tulemusi geograafiliste piirkondade kaupa.",
+      "label": {
+        "email": "E-post",
+        "password": "Parool",
+        "firstname": "Eesnimi",
+        "age": "Vanus",
+        "postalcode": "Postiindeks",
+        "profession": "Amet",
+        "biography": "Elulugu",
+        "website": "Veebisait",
+        "organisation": "Ettevõtte nimi",
+        "postalcode_optional": "Postiindeks (vabatahtlik)",
+        "personality": {
+          "firstname": "Kandidaadi eesnimi / nimekirja algus",
+          "lastname": "Kandidaadi perekonnanimi / nimekirja algus"
+        }
+      },
+      "messages": {
+        "errors_notification": "Leidsime sellel vormilt vigu:",
+        "invalid_email": "Kasutage seda e-kirja formaati.",
+        "invalid_email_dynamic": "Kasutage formaati {{label}}.",
+        "already_registered": "See e-post on juba olemas.",
+        "already_registered_dynamic": "See {{label}} on juba olemas.",
+        "email_doesnot_exist": "See e-posti aadress ei ole teie kontoga seotud, palun sisestage oma e-posti aadress uuesti.",
+        "email_doesnot_exist_dynamic": "See {{label}} ei ole teie kontoga seotud, palun sisestage oma e-posti aadress uuesti.",
+        "invalid_password": "Teie salasõna peab sisaldama vähemalt 8 tähemärki.",
+        "invalid_password_dynamic": "Teie {{label}} peab sisaldama vähemalt 8 tähemärki.",
+        "api_error": "Oi! Selle lehekülje laadimisega on probleeme. Palun proovige hiljem uuesti.",
+        "mandatory": "Täitke see väli.",
+        "mandatory_dynamic": "Väli {{label}} on kohustuslik.",
+        "invalid_age": "Meie kasutajad peavad olema 8 kuni 120 aastased.",
+        "invalid_age_dynamic": "{{label}}: Meie kasutajad peavad olema 8 kuni 120 aastased.",
+        "the_field_[email]_is_missing": "Väli {{label}} on kohustuslik.",
+        "the_field_[password]_is_missing": "Väli {{label}} on kohustuslik.",
+        "invalid_postal_code": "Postiindeks peab koosnema 5 numbrist.",
+        "invalid_privacy_policy": "Te peate andmepoliitikaga nõustuma.",
+        "invalid_postal_code_dynamic": "{{label}} peab koosnema 5 numbrist.",
+        "submit_success": "Muudatus on salvestatud.",
+        "malformed": "URL-i formaat peab olema „https://example.com“"
+      }
+    },
+    "social_login": {
+      "facebook_connect": "Jätka Facebookiga",
+      "google_connect": "Jätka Google‘iga",
+      "email_register": "Registreeru e-postiga",
+      "count_register": "({{count}}/2)"
+    },
+    "notifications": {
+      "bad_link": "See link ei ole enam kehtiv.",
+      "secure_expired": {
+        "first_sentence": "Kahjuks logiti teid välja, sest meile tundub, et te lahkusite",
+        "second_sentence": "Logige uuesti sisse, et jätkata hääletamist, teha ettepanekuid ja tegutseda Make.org‘is.",
+        "emoji": "kurb pisaraga emotikon"
+      },
+      "session_expired": {
+        "title": "Tegevusetuse ajaline piirang",
+        "description": "Oma teenuse kvaliteedi tagamiseks laadime lehekülje uuesti.",
+        "button_text": "Sain aru"
+      },
+      "icons": {
+        "close": "Sulge teavitus",
+        "information": "Teavitav sõnum: ",
+        "success": "Õnnestumise sõnum: ",
+        "error": "Veasõnum: ",
+        "alert": "Hoiatussõnum: "
+      },
+      "unexpected_error": "Hetkel esineb tõrge, proovige hiljem uuesti.",
+      "network_error": "Juurdepääs kogu Make.org‘i sisule pole võimalik, sest te tundute olevat võrgust väljas",
+      "vote_only": {
+        "message": "Konsultatsioon „{{title}}“ ei saa võtta vastu uusi ettepanekuid, aga saate jätkata hääletamist, et teha otsus olemasolevate ettepanekute kohta.",
+        "button": "sain aru"
+      },
+      "vote_on_proposal": "Hääletage seda ettepanekut"
+    },
+    "propose": "Tee ettepanek",
+    "open_new_window": "Avamine uuel vahelehel",
+    "loading": "Oodake laadimise lõpetamist",
+    "participate": "Osale",
+    "display_tooltip": "Kuva jutumulli sisu hiirega üleliikumisel",
+    "expand_collapse": "{{name}} - Kuva ripploendi sisu",
+    "shrink_collapse": "{{name}} - Peida ripploendi sisu",
+    "secondary_nav": "Teisene navigeerimine",
+    "percent": "{{percent}}%",
+    "header_authentication_nav": "Juurdepääs minu kasutajaprofiilile",
+    "footer_nav": "Lehe allosa navigeerimisriba",
+    "sidebar_area": "Külgmine sisuriba",
+    "max_characters": "maksimaalne tähemärkide arv",
+    "back": "Tagasi",
+    "proposal_count_one": "{{count}} ettepanek",
+    "proposal_count_other": "{{count}} ettepanekut",
+    "breadcrumbs": "juhtnöör",
+    "million_one": "miljon",
+    "million_other": "miljonit",
+    "close_panel": "Sulge rippmenüü",
+    "close": "Sulge"
+  },
+  "header": {
+    "logo_alt": "Saidi Make.org avalehele"
+  },
+  "proposal_card": {
+    "next": "Järgmine ettepanek",
+    "validate": "Kinnita",
+    "content": "Ettepaneku sisu: ",
+    "original": "Vaata originaali",
+    "translation": "Vaata tõlget",
+    "posted_label": "Postitamise koht ",
+    "author": {
+      "from": "Ettepaneku esitaja: ",
+      "age": "{{age}}-aastane",
+      "date": "postitamise kuupäev: ",
+      "anonymous": "@@proposal_card.author.anonymous|fr:Mode anonyme",
+      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs."
+    },
+    "status": {
+      "title": "Ettepaneku olek: ",
+      "accepted": "Avaldatud",
+      "refused": "Tagasi lükatud",
+      "postponed": "Modereerimise ootel",
+      "pending": "Modereerimise ootel"
+    }
+  },
+  "report_translations": {
+    "button": "Ettepaneku valikud",
+    "confirmation": {
+      "title": "Täname teavitamise eest!",
+      "description": "Meie tiim tegeleb sellega esimesel võimalusel."
+    },
+    "form": {
+      "title": "Teavita automaattõlkest",
+      "unclear": "Arusaamatu tõlge",
+      "error": "Tõlkeviga",
+      "false_info": "Sisaldab valeinfot",
+      "offensive": "Solvava sisuga ettepanek",
+      "report": "Teavita"
+    },
+    "first_step": {
+      "title": "Automaattõlge",
+      "text": "Meie konsultatsioonide ettepanekud on automaatsed. Kui märkate viga, teavitage meid sellest!"
+    }
+  },
+  "intro_card": {
+    "title": "Tuhanded kodanikud pakuvad lahendusi.",
+    "description": "Võtke seisukoht nende lahenduste suhtes ja pakkuge ka enda lahendusi.\r\nParimad ettepanekud võetakse kasutusele.",
+    "button": "Käivitus"
+  },
+  "final_card": {
+    "title": "Täname, et reageerisite ettepanekutele!",
+    "description": "Jätkate hääletamist, et aidata meil prioriteete määrata.",
+    "link_text": "Sisenen konsultatsiooni",
+    "register": {
+      "description": "Kuidas tulemusi jälgida?",
+      "button_intro": "Looge oma",
+      "button_text": "kodanikukeskkond."
+    }
+  },
+  "no_proposal_card": {
+    "title": {
+      "regular": "Täname teid erakordse panuse eest!",
+      "popular": "Täname, hääletasite kõiki kõige populaarsemaid ettepanekuid",
+      "controversial": "Täname, hääletasite kõiki kõige vastuolulisemaid ettepanekuid",
+      "keyword": "Täname, hääletasite kõiki „{{keyword}}“ ettepanekuid"
+    },
+    "description": {
+      "regular": "Hetkel ei ole uusi ettepanekuid.",
+      "special": "Jätkate hääletamist, et aidata meil prioriteete määrata."
+    },
+    "link_text": "Sisenen konsultatsiooni",
+    "sharing": "Või suurendage selle konsultatsiooni mõju, jagades seda."
+  },
+  "push_proposal_card": {
+    "title": "Kas teil on pakkuda sellele teemale mõnda lahendust?",
+    "next-cta": "Veel mitte, jätkan hääletamist"
+  },
+  "sequence_progress": {
+    "previous": "Eelmise elemendi juurde",
+    "counter": "Element {{current}} / {{total}}"
+  },
+  "sequence_zone": {
+    "popular_title": "Populaarsed ettepanekud",
+    "controversial_title": "Vastuolulised ettepanekud"
+  },
+  "special_final_card": {
+    "title": "Täname hääletamise eest!",
+    "subtitle": "Võite jätkata konsultatsioonides osalemist",
+    "cta_text": "Sisenen konsultatsiooni"
+  },
+  "demographics_card": {
+    "disclaimer": "Teie andmed on anonüümsed ja võimaldavad meie tulemustel olla esindavad.",
+    "skip": "Jäta vahele",
+    "submit": "Salvesta",
+    "submitted_thanks": "Täname vastuse eest.",
+    "submitted_disclaimer": " Vastust kasutatakse anonüümselt, et konsultatsiooni tulemusi analüüsida.",
+    "select": "Vali"
+  },
+  "proposal_submit": {
+    "form": {
+      "bait": "On vaja ",
+      "title": "Esitage oma ettepanek alla 140 tähemärgi pikkusena. Sisestage see ettepanekute väljale ja kinnitage, klõpsates nupul „Kinnita“",
+      "field": "Ettepanekute väli",
+      "counter": "Teie ettepanek sisaldab {{current}} tähemärki saadaolevast {{total}} tähemärgist",
+      "panel_trigger": "Pakun lahendust",
+      "read_our": "Loe meie",
+      "moderation_link": "modereerimise eeskirju",
+      "button_propose": "ETTEPANEK"
+    },
+    "authentication": {
+      "back": "Tagasi",
+      "last_step_red": "Veel üks samm ja ",
+      "last_step": "saate oma ettepaneku ära saata!",
+      "button_login_text": "Mul on juba konto,",
+      "button_login_link": "login sisse.",
+      "button_login": "Logi sisse",
+      "back_authentication": "Tagasi sisselogimise aknasse"
+    },
+    "success": {
+      "button": "Jätka hääletamist",
+      "other_idea": "Mul on veel üks idee",
+      "tooltip_title": "Modereerimisel",
+      "tooltip_description": "Teie ettepanekut käsitletakse 48 tunni jooksul; seni võite seda oma profiili alt vaadata.",
+      "grats": "Palju õnne, {{name}}, ",
+      "proposal_sent": "teie ettepanek saadeti ära ",
+      "activate": "Kinnitage ühe klõpsuga oma e-posti aadress, ",
+      "link": "et tagada oma konto ehtsust. Klõpsake aktiveerimislingil, mis saadeti aadressile: {{mail}}",
+      "question": "Küsimusi? Võtke meiega ühendust: ",
+      "consultation_access": "Sisenen konsultatsiooni"
+    }
+  },
+  "vote": {
+    "intro_title": "Esitan oma arvamuse selle ettepaneku kohta: ",
+    "agree": "Olen nõus",
+    "disagree": "Ei ole nõus",
+    "neutral": "Olen erapooletu",
+    "label_one": "{{count}} hääl",
+    "label_other": "{{count}} häält",
+    "with_percent": "{{votedKey}} : {{votedPercent}}%"
+  },
+  "unvote": {
+    "title": "Võtan tagasi oma arvamuse selle ettepaneku kohta."
+  },
+  "qualification": {
+    "title": "Täpsustan oma arvamust selle ettepaneku kohta.",
+    "static_repartition": "See ettepanek kvalifitseeriti järgmiselt: ",
+    "times": "korda",
+    "likeIt": "Lemmik",
+    "doable": "Realistlik",
+    "platitudeAgree": "Tühine",
+    "noWay": "Mitte mingil juhul!",
+    "impossible": "Teostamatu",
+    "platitudeDisagree": "Tühine",
+    "doNotUnderstand": "Ei saanud aru",
+    "noOpinion": "Ei oma arvamust",
+    "doNotCare": "Ükskõik"
+  },
+  "sequence": {
+    "return": "Tagasi ettepanekute juurde",
+    "title": "Hääletage konsultatsiooni ettepanekute üle: ",
+    "more": "Juurdepääs kõikidele konsultatsioonidele"
+  },
+  "login": {
+    "title": "Mul on juba konto",
+    "connect": "Logi sisse",
+    "or": "või",
+    "forgot_password": "Unustasite salasõna?",
+    "registration_title": "Mul pole kontot,",
+    "registration_link": "loon konto.",
+    "email_doesnot_exist": "Teie {{emailLabel}} või {{passwordLabel}} on vale."
+  },
+  "register": {
+    "title": "Konto loomine",
+    "or": "või",
+    "login_title": "Mul on juba konto,",
+    "login_link": "login sisse.",
+    "gtu_text_first": "Registreerudes nõustute meie dokumendiga ",
+    "gtu_link": "tavapärased kasutustingimused."
+  },
+  "legal_consent": {
+    "title": "Seadusjärgne luba",
+    "subtitle": "Me vajame sinu ühe vanema nõusolekut",
+    "description": "Sulle meie kodanikuplatvormile juurdepääsu andmiseks vajame kahte nõusolekut. Varsti saad võtta sõna kõikidel meie konsultatsioonidel!",
+    "minor_consent": "Annan loa oma isikuandmete töötlemiseks Make.org‘i poolt.",
+    "parental_consent": "Vanemliku vastutuse kandjana annan loa oma lapse isikuandmete töötlemiseks Make.org‘i poolt.",
+    "cancel": "Tühista",
+    "submit": "Kinnita",
+    "privacy_policy_first_part": "Nõustun oma andmete töötlemisega Make.org‘i poolt, et saaksin osaleda ja teavet tulemuste kohta vastavalt ",
+    "privacy_policy_link": "eeskirjadele",
+    "privacy_policy_last_part": ". (kohustuslik)",
+    "privacy_policy": "andmepoliitika",
+    "make_protect": "Make.org kaitseb teie",
+    "make_protect_link": " isikuandmeid.",
+    "opt_in": "Nõustun saama Make.org‘ilt e-kirju, et olla kursis uudistega praeguste ja tulevaste konsultatsioonide kohta. (vabatahtlik)"
+  },
+  "forgot_password": {
+    "title": "Lähtestan oma salasõna",
+    "description": "Lähtestamise lingi saamiseks sisestage oma Make.org‘i kontoga seotud e-posti aadress.",
+    "success": "Täname; teie e-postile saadeti e-kiri, mis võimaldab salasõna lähtestada.",
+    "return": "Tagasi ",
+    "login_link": "sisselogimise aknasse",
+    "send_link": "saada e-kiri"
+  },
+  "reset_password": {
+    "title": "Lõin uue salasõna",
+    "info": "Võite valida uue salasõna.",
+    "send_cta": "Kinnita",
+    "success": {
+      "title": "Täname, teie salasõna on uuendatud."
+    },
+    "failure": {
+      "bad_link": "See link ei ole enam kehtiv."
+    }
+  },
+  "data_policy_modal": {
+    "title": "Meie andmepoliitika uuendused",
+    "description": "Make.org austab teie isikuandmeid iga kord, kui te veebisaiti külastate. Navigeerimise jätkamiseks pärast Make.org‘i sisse logimist peate nõustuma meie ",
+    "consent": "<strong>Nõustun uue andmepoliitikaga</strong> ja saan kasutada oma uut kodanikukeskkonda Make.org",
+    "validate": "Kinnitan",
+    "stay": "Jään",
+    "leave": "Väljun",
+    "refusal_title": "Kindel, et soovite väljuda?",
+    "refusal_description_first_part": "Uudistest keeldudes ",
+    "refusal_description_second_part": "ei ole teil enam juurdepääsu oma Make.org‘i kodanikukeskkonnale."
+  },
+  "not_found": {
+    "intro": "Oi!",
+    "title": "Viga 404",
+    "description": "Otsitavat lehekülge ei ole (enam) olemas."
+  },
+  "top_proposal_card": {
+    "start": "Alusta hääletamist"
+  },
+  "maintenance": {
+    "subtitle": "Ups, vabandame! Make.org on praegu hoolduses"
+  },
+  "unsecure": {
+    "title": "Konsultatsioon on nüüdseks lõppenud",
+    "description": "Kas soovite selle teema kohta rohkem teada? Saate rohkem teada operatsiooni kohta ja olete kursis kõigi meie kodanikukonsultatsioonide kohta, registreerudes veebilehel Make.org",
+    "link": "Avastage meie tegevust"
+  }
 }

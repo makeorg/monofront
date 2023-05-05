@@ -68,7 +68,7 @@ const initialState = createInitialState();
 
 if (env.isDev()) {
   // Set state for dev env, pass desired slug
-  window.INITIAL_STATE = initDevState(initialState, 'environnement');
+  window.INITIAL_STATE = initDevState(initialState, 'mafrance2022');
 }
 
 const serverState = window.INITIAL_STATE || initialState;

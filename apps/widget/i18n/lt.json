@@ -1,354 +1,356 @@
 {
-    "meta": {
-        "sequence": {
-            "title_standard": "Dalyvaukite konsultacijoje '{{question}}' - Make.org",
-            "title_controversy": "Nuspręskite dėl per konsultaciją '{{question}}' pateiktų pasiūlymų - Make.org",
-            "title_popular": "Pareikškite savo nuomonę dėl populiariausių per konsultaciją '{{question}}' pateiktų pasiūlymų - Make.org"
-        }
-    },
-    "common": {
-        "connexion_label": "Prisijungti",
-        "register_label": "Registruotis",
-        "continue": "Tęsti",
-        "form": {
-            "hide_password": "Slėpti slaptažodį",
-            "show_password": "Rodyti slaptažodį",
-            "requirements": "Visi laukai yra privalomi, jei nenurodyta kitaip.",
-            "requirements_short": "Visi laukai yra privalomi.",
-            "password_requirements": "Ne mažiau kaip 8 ženklai, įskaitant bent 1 skaičių, 1 didžiąją raidę ir 1 specialųjį ženklą.",
-            "post_code": "Pašto kodas leidžia analizuoti rezultatus pagal geografinę vietovę.",
-            "label": {
-                "email": "El. paštas",
-                "password": "Slaptažodis",
-                "firstname": "Vardas",
-                "age": "Amžius",
-                "postalcode": "Pašto kodas",
-                "profession": "Profesija",
-                "biography": "Biografija",
-                "website": "Interneto svetainė",
-                "organisation": "Organizacijos pavadinimas",
-                "postalcode_optional": "Pašto kodas (neprivaloma)",
-                "personality": {
-                    "firstname": "Kandidato / sąrašo lyderio vardas",
-                    "lastname": "Kandidato / sąrašo lyderio pavardė"
-                }
-            },
-            "messages": {
-                "errors_notification": "Šioje formoje radome klaidų:",
-                "invalid_email": "Prašome laikytis el. pašto formato.",
-                "invalid_email_dynamic": "Laikykitės {{label}} formato.",
-                "already_registered": "Šis el. paštas jau yra.",
-                "already_registered_dynamic": "Šis {{label}} pavadinimas jau yra.",
-                "email_doesnot_exist": "Šis el. paštas nėra susietas su jūsų paskyra, tad iš naujo įveskite savo el. pašto adresą.",
-                "email_doesnot_exist_dynamic": "Pavadinimas {{label}} nėra susietas su jūsų paskyra, tad iš naujo įveskite savo el. pašto adresą.",
-                "invalid_password": "Jūsų slaptažodį turi sudaryti ne mažiau kaip 8 ženklai.",
-                "invalid_password_dynamic": "Pavadinimą {{label}} turi sudaryti bent 8 ženklai.",
-                "api_error": "Oi! Įkeldami šį puslapį susiduriame su tam tikrais sunkumais. Prašome vėliau pabandyti dar kartą.",
-                "mandatory": "Užpildykite šį lauką.",
-                "mandatory_dynamic": "Laukas {{label}} yra būtinas.",
-                "invalid_age": "Svetainės naudotojai gali būti nuo 8 iki 120 metų amžiaus.",
-                "invalid_age_dynamic": "Laukas {{label}}: Svetainės naudotojai gali būti nuo 8 iki 120 metų amžiaus.",
-                "the_field_[email]_is_missing": "Laukas {{label}} yra būtinas.",
-                "the_field_[password]_is_missing": "Laukas {{label}} yra būtinas.",
-                "invalid_postal_code": "Pašto kodą turi sudaryti 5 skaitmenys.",
-                "invalid_privacy_policy": "Turite sutikti su duomenų politika.",
-                "invalid_postal_code_dynamic": "{{label}} turi sudaryti 5 skaitmenys.",
-                "submit_success": "Pakeitimas įrašytas.",
-                "malformed": "Prašome laikytis šio URL formato „https://example.com“"
-            }
-        },
-        "social_login": {
-            "facebook_connect": "Tęskite naudodami „Facebook“",
-            "google_connect": "Tęskite naudodami „Google“",
-            "email_register": "Registruotis el. paštu",
-            "count_register": "({{count}}/2)"
-        },
-        "notifications": {
-            "bad_link": "Ši nuoroda nebegalioja.",
-            "secure_expired": {
-                "first_sentence": "Apgailestaujame, jūsų prisijungimas buvo nutrauktas, nes atrodė, kad palikote svetainę",
-                "second_sentence": "Norėdami toliau balsuoti, teikti pasiūlymus ir dalyvauti Make.org veikloje, prisijunkite iš naujo.",
-                "emoji": "Jaustukas – liūdnas veidas su ašara"
-            },
-            "session_expired": {
-                "title": "Neaktyvumo laiko ribojimas",
-                "description": "Norėdami užtikrinti paslaugų kokybę, puslapį įkelsime iš naujo.",
-                "button_text": "Supratau"
-            },
-            "icons": {
-                "close": "Uždaryti pranešimo juostą",
-                "information": "Informacinis pranešimas: ",
-                "success": "Pranešimas apie sėkmingai atliktą veiksmą: ",
-                "error": "Pranešimas apie klaidą: ",
-                "alert": "Įspėjamasis pranešimas: "
-            },
-            "unexpected_error": "Šiuo metu įvyko klaida, prašome bandyti dar kartą vėliau.",
-            "network_error": "Neįmanoma pasiekti viso Make.org turinio, nes atrodo, kad naršote neprisijungę",
-            "vote_only": {
-                "message": "Konsultacijoje „{{title}}“ nebegalima gauti naujų pasiūlymų, tačiau vis dar galima balsuoti dėl jau pateiktų pasiūlymų.",
-                "button": "Supratau"
-            },
-            "vote_on_proposal": "Balsuokite dėl šio pasiūlymo"
-        },
-        "propose": "Pasiūlyti",
-        "open_new_window": "Atverti naujame skirtuke",
-        "loading": "Įkeliama, prašome palaukti.",
-        "participate": "Dalyvaukite",
-        "display_tooltip": "Rodyti patarimą užvedus pelės žymeklį ant elemento",
-        "expand_collapse": "{{name}} - Rodyti išskleidžiamojo skirsnio turinį",
-        "shrink_collapse": "{{name}} - Slėpti išskleidžiamojo skirsnio turinį",
-        "secondary_nav": "Antrinis naršymas",
-        "percent": "{{percent}} %",
-        "header_authentication_nav": "Prieiga prie naudotojo profilio",
-        "footer_nav": "Naršymas puslapio apačioje",
-        "sidebar_area": "Šoninė turinio juosta",
-        "max_characters": "maksimalus ženklų skaičius",
-        "back": "Atgal",
-        "proposal_count_one": "{{count}} pasiūlymas",
-        "proposal_count_other": "{{count}} pasiūlymai (-ų)",
-        "breadcrumbs": "naršymo kelias",
-        "million_one": "milijonas",
-        "million_other": "milijonai",
-        "close_panel": "Užverti išskleidžiamąjį meniu",
-        "close": "Užverti"
-    },
-    "header": {
-        "logo_alt": "Eiti į pagrindinį Make.org puslapį"
-    },
-    "proposal_card": {
-        "next": "Kitas pasiūlymas",
-        "validate": "Patvirtinti",
-        "content": "Pasiūlymo turinys: ",
-        "original": "Žiūrėti originalą",
-        "translation": "Žiūrėti vertimą",
-        "posted_label": "Įkelta į ",
-        "author": {
-            "from": "Pasiūlymas: ",
-            "age": "{{age}} metai (-ų)",
-            "date": "įkelta: "
-        },
-        "status": {
-            "title": "Pasiūlymo statusas: ",
-            "accepted": "Paskelbta",
-            "refused": "Atmesta",
-            "postponed": "Laukiama moderavimo",
-            "pending": "Laukiama moderavimo"
-        }
-    },
-    "report_translations": {
-        "button": "Pasiūlymo variantai",
-        "confirmation": {
-            "title": "Ačiū už pranešimą!",
-            "description": "Mūsų komanda kuo greičiau tai išnagrinės."
-        },
-        "form": {
-            "title": "Pranešti apie mašininį vertimą",
-            "unclear": "Nesuprantamas vertimas",
-            "error": "Vertimo klaida",
-            "false_info": "Yra melagingos informacijos",
-            "offensive": "Įžeidžiantis pasiūlymas",
-            "report": "Pranešti"
-        },
-        "first_step": {
-            "title": "Mašininis vertimas",
-            "text": "Per konsultacijas pasiūlymai pateikiami iš karto. Pastebėję klaidą, nedvejodami praneškite apie ją mūsų komandai!"
-        }
-    },
-    "intro_card": {
-        "title": "Sprendimus siūlo tūkstančiai piliečių.",
-        "description": "Išreikškite savo poziciją dėl šių sprendimų ir siūlykite savo variantus.\nGeriausi iš jų nulems mūsų veiksmus.",
-        "button": "Pradėti"
-    },
-    "final_card": {
-        "title": "Ačiū, kad reagavote į pasiūlymus!",
-        "description": "Tęskite balsavimą ir taip padėkite mums nustatyti prioritetus.",
-        "link_text": "Dalyvauju konsultacijoje",
-        "register": {
-            "description": "Kaip stebėti rezultatus?",
-            "button_intro": "Sukurkite savo",
-            "button_text": "pilietinę erdvę."
-        }
-    },
-    "no_proposal_card": {
-        "title": {
-            "regular": "Dėkojame už jūsų nuostabų indėlį!",
-            "popular": "Ačiū, balsavote dėl visų populiariausių pasiūlymų",
-            "controversial": "Ačiū, balsavote dėl visų prieštaringiausių pasiūlymų",
-            "keyword": "Ačiū, balsavote dėl visų pasiūlymų dėl „{{keyword}}“"
-        },
-        "description": {
-            "regular": "Šiuo metu naujų pasiūlymų nėra.",
-            "special": "Tęskite balsavimą ir taip padėkite mums nustatyti prioritetus."
-        },
-        "link_text": "Dalyvauju konsultacijoje",
-        "sharing": "Arba plėskite šios konsultacijos mastą skleisdami apie ją informaciją."
-    },
-    "push_proposal_card": {
-        "title": "Ar šiuo klausimu galite pasiūlyti kokį nors sprendimą?",
-        "next-cta": "Kol kas ne, aš dar balsuoju"
-    },
-    "sequence_progress": {
-        "previous": "Pereiti prie ankstesnio elemento",
-        "counter": "{{current}} elementas iš {{total}}"
-    },
-    "sequence_zone": {
-        "popular_title": "Populiarūs pasiūlymai",
-        "controversial_title": "Prieštaringi pasiūlymai"
-    },
-    "special_final_card": {
-        "title": "Ačiū už jūsų balsus!",
-        "subtitle": "Galite toliau dalyvauti konsultacijoje",
-        "cta_text": "Dalyvauju konsultacijoje"
-    },
-    "demographics_card": {
-        "disclaimer": "Jūsų pateikta informacija yra anoniminė, tad mūsų rezultatai yra reprezentatyvūs.",
-        "skip": "Eiti į",
-        "submit": "Išsaugoti",
-        "submitted_thanks": "Ačiū už atsakymą.",
-        "submitted_disclaimer": " Jis bus anonimiškai naudojamas analizuojant konsultacijų rezultatus.",
-        "select": "Pasirinkti"
-    },
-    "proposal_submit": {
-        "form": {
-            "bait": "Būtina ",
-            "title": "Pateikite pasiūlymą, kuriame ne daugiau kaip 140 ženklų. Įveskite jį į pasiūlymo lauką ir patvirtinkite spustelėdami mygtuką „Patvirtinti“",
-            "field": "Pasiūlymo laukai",
-            "counter": "Jūsų pasiūlymą sudaro {{current}} ženklai iš {{total}} galimų",
-            "panel_trigger": "Siūlau sprendimą",
-            "read_our": "Skaitykite mūsų",
-            "moderation_link": "moderavimo taisykles",
-            "button_propose": "PASIŪLYTI"
-        },
-        "authentication": {
-            "back": "Atgal",
-            "last_step_red": "Liko tik vienas žingsnis ",
-            "last_step": "iki pasiūlymo išsiuntimo!",
-            "button_login_text": "Jau turiu paskyrą,",
-            "button_login_link": "prisijungiu.",
-            "button_login": "Prisijungti",
-            "back_authentication": "Grįžti į prisijungimo puslapį"
-        },
-        "success": {
-            "button": "Tęsti balsavimą",
-            "other_idea": "Turiu dar vieną idėją",
-            "tooltip_title": "Moderuojama",
-            "tooltip_description": "Jūsų pasiūlymą mūsų komandos apdoros per 48 valandas, o dabar jį galite rasti savo profilyje.",
-            "grats": "Sveikiname, {{name}}, ",
-            "proposal_sent": "jūsų pasiūlymas išsiųstas ",
-            "activate": "Patvirtinkite savo el. pašto adresą vienu paspaudimu, ",
-            "link": "kad užtikrintumėte savo paskyros autentiškumą. Spustelėkite aktyvinimo nuorodą, atsiųstą jums adresu {{mail}}",
-            "question": "Turite klausimų? Su mumis galite susisiekti šiuo adresu: ",
-            "consultation_access": "Dalyvauju konsultacijoje"
-        }
-    },
-    "vote": {
-        "intro_title": "Pateikiu savo nuomonę dėl šio pasiūlymo: ",
-        "agree": "Pritariu",
-        "disagree": "Nepritariu",
-        "neutral": "Susilaikau",
-        "label_one": "{{count}} balsas",
-        "label_other": "{{count}} balsai (-ų)",
-        "with_percent": "{{votedKey}}: {{votedPercent}} %"
-    },
-    "unvote": {
-        "title": "Atsiimu savo nuomonę dėl šio pasiūlymo."
-    },
-    "qualification": {
-        "title": "Leiskite man pareikšti savo nuomonę dėl šio pasiūlymo:",
-        "static_repartition": "Šis pasiūlymas įvertintas taip: ",
-        "times": "kartų",
-        "likeIt": "Mėgstamiausias",
-        "doable": "Realus",
-        "platitudeAgree": "Banalus",
-        "noWay": "Visai nepriimtinas!",
-        "impossible": "Neįgyvendinamas",
-        "platitudeDisagree": "Banalus",
-        "doNotUnderstand": "Nesuprantamas",
-        "noOpinion": "Neturiu nuomonės",
-        "doNotCare": "Nedomina"
-    },
+  "meta": {
     "sequence": {
-        "return": "Atgal į pasiūlymus",
-        "title": "Balsavimas dėl pasiūlymų, pateiktų per konsultaciją: ",
-        "more": "Žiūrėti visą konsultaciją"
-    },
-    "login": {
-        "title": "Jau turiu paskyrą",
-        "connect": "Prisijungti",
-        "or": "arba",
-        "forgot_password": "Pamiršote slaptažodį?",
-        "registration_title": "Neturiu paskyros,",
-        "registration_link": "bet ją susikursiu.",
-        "email_doesnot_exist": "Jūsų {{emailLabel}} arba {{passwordLabel}} yra neteisingas."
-    },
-    "register": {
-        "title": "Sukurti paskyrą",
-        "or": "arba",
-        "login_title": "Jau turiu paskyrą,",
-        "login_link": "prisijungiu.",
-        "gtu_text_first": "Registruodamiesi jūs sutinkate su mūsų ",
-        "gtu_link": "bendrosiomis naudojimo sąlygomis."
-    },
-    "legal_consent": {
-        "title": "Leidimas",
-        "subtitle": "Mums reikia vieno iš jūsų tėvų sutikimo",
-        "description": "Kad galėtume suteikti prieigą prie mūsų piliečių platformos, turime gauti du sutikimus. Netrukus galėsite pasisakyti per visas mūsų konsultacijas!",
-        "minor_consent": "Sutinku, kad Make.org tvarkytų mano asmens duomenis.",
-        "parental_consent": "Kaip tėvų valdžios turėtojas, sutinku, kad Make.org tvarkytų mano vaiko asmens duomenis.",
-        "cancel": "Atšaukti",
-        "submit": "Patvirtinti",
-        "privacy_policy_first_part": "Sutinku, kad Make.org tvarkytų šiuos duomenis, kad galėčiau dalyvauti ir būčiau informuotas apie rezultatus pagal ",
-        "privacy_policy_link": "taisykles",
-        "privacy_policy_last_part": ". (privaloma)",
-        "privacy_policy": "duomenų apsaugos politika",
-        "make_protect": "Make.org įsipareigoja saugoti jūsų",
-        "make_protect_link": " asmens duomenis.",
-        "opt_in": "Sutinku gauti el. laiškus iš Make.org, kad mane informuotų apie vykstančias ir būsimas konsultacijas. (pasirinktinai)"
-    },
-    "forgot_password": {
-        "title": "Iš naujo nustatau slaptažodį",
-        "description": "Įveskite el. pašto adresą, susietą su jūsų Make.org paskyra, kad gautumėte nustatymo iš naujo nuorodą.",
-        "success": "Ačiū, ką tik jums buvo išsiųstas el. laiškas, kad galėtumėte atnaujinti slaptažodį.",
-        "return": "Atgal ",
-        "login_link": "į prisijungimo puslapį",
-        "send_link": "el. laiško gavimas"
-    },
-    "reset_password": {
-        "title": "Kuriu naują slaptažodį",
-        "info": "Galite pasirinkti naują slaptažodį.",
-        "send_cta": "Patvirtinti",
-        "success": {
-            "title": "Dėkojame, jūsų slaptažodis sėkmingai atnaujintas."
-        },
-        "failure": {
-            "bad_link": "Ši nuoroda nebegalioja."
-        }
-    },
-    "data_policy_modal": {
-        "title": "Duomenų apsaugos politikos atnaujinimas",
-        "description": "Make.org įsipareigoja saugoti jūsų asmens duomenis kiekvieno apsilankymo svetainėje metu. Norėdami tęsti naršymą būdami prisijungę prie Make.org, turite sutikti su mūsų atnaujinta ",
-        "consent": "<strong>Sutinku su naująja duomenų apsaugos politika</strong> ir galėsiu naudotis savo paskyra Make.org piliečių erdvėje",
-        "validate": "Patvirtinu",
-        "stay": "Lieku",
-        "leave": "Atsijungiu",
-        "refusal_title": "Ar tikrai norite atsijungti?",
-        "refusal_description_first_part": "Atsisakę mūsų naujienų ",
-        "refusal_description_second_part": ", nebegalėsite prisijungti prie savo paskyros Make.org piliečių erdvėje."
-    },
-    "not_found": {
-        "intro": "oi",
-        "title": "Klaida 404",
-        "description": "Puslapio, kurio prašėte, nebėra arba jis neegzistuoja."
-    },
-    "top_proposal_card": {
-        "start": "Pradėkite balsuoti"
-    },
-    "maintenance": {
-        "subtitle": "Atsiprašome! Make.org šiuo metu atliekama techninė priežiūra"
-    },
-    "unsecure": {
-        "title": "Konsultacijos baigtos",
-        "description": "Ar norėtumėte sužinoti daugiau apie šią temą? Sužinokite daugiau apie šią operaciją ir būkite informuoti apie visas mūsų konsultacijas su piliečiais užsiregistravę Make.org",
-        "link": "Atraskite mūsų veiklą"
+      "title_standard": "Dalyvaukite konsultacijoje '{{question}}' - Make.org",
+      "title_controversy": "Nuspręskite dėl per konsultaciją '{{question}}' pateiktų pasiūlymų - Make.org",
+      "title_popular": "Pareikškite savo nuomonę dėl populiariausių per konsultaciją '{{question}}' pateiktų pasiūlymų - Make.org"
     }
+  },
+  "common": {
+    "connexion_label": "Prisijungti",
+    "register_label": "Registruotis",
+    "continue": "Tęsti",
+    "form": {
+      "hide_password": "Slėpti slaptažodį",
+      "show_password": "Rodyti slaptažodį",
+      "requirements": "Visi laukai yra privalomi, jei nenurodyta kitaip.",
+      "requirements_short": "Visi laukai yra privalomi.",
+      "password_requirements": "Ne mažiau kaip 8 ženklai, įskaitant bent 1 skaičių, 1 didžiąją raidę ir 1 specialųjį ženklą.",
+      "post_code": "Pašto kodas leidžia analizuoti rezultatus pagal geografinę vietovę.",
+      "label": {
+        "email": "El. paštas",
+        "password": "Slaptažodis",
+        "firstname": "Vardas",
+        "age": "Amžius",
+        "postalcode": "Pašto kodas",
+        "profession": "Profesija",
+        "biography": "Biografija",
+        "website": "Interneto svetainė",
+        "organisation": "Organizacijos pavadinimas",
+        "postalcode_optional": "Pašto kodas (neprivaloma)",
+        "personality": {
+          "firstname": "Kandidato / sąrašo lyderio vardas",
+          "lastname": "Kandidato / sąrašo lyderio pavardė"
+        }
+      },
+      "messages": {
+        "errors_notification": "Šioje formoje radome klaidų:",
+        "invalid_email": "Prašome laikytis el. pašto formato.",
+        "invalid_email_dynamic": "Laikykitės {{label}} formato.",
+        "already_registered": "Šis el. paštas jau yra.",
+        "already_registered_dynamic": "Šis {{label}} pavadinimas jau yra.",
+        "email_doesnot_exist": "Šis el. paštas nėra susietas su jūsų paskyra, tad iš naujo įveskite savo el. pašto adresą.",
+        "email_doesnot_exist_dynamic": "Pavadinimas {{label}} nėra susietas su jūsų paskyra, tad iš naujo įveskite savo el. pašto adresą.",
+        "invalid_password": "Jūsų slaptažodį turi sudaryti ne mažiau kaip 8 ženklai.",
+        "invalid_password_dynamic": "Pavadinimą {{label}} turi sudaryti bent 8 ženklai.",
+        "api_error": "Oi! Įkeldami šį puslapį susiduriame su tam tikrais sunkumais. Prašome vėliau pabandyti dar kartą.",
+        "mandatory": "Užpildykite šį lauką.",
+        "mandatory_dynamic": "Laukas {{label}} yra būtinas.",
+        "invalid_age": "Svetainės naudotojai gali būti nuo 8 iki 120 metų amžiaus.",
+        "invalid_age_dynamic": "Laukas {{label}}: Svetainės naudotojai gali būti nuo 8 iki 120 metų amžiaus.",
+        "the_field_[email]_is_missing": "Laukas {{label}} yra būtinas.",
+        "the_field_[password]_is_missing": "Laukas {{label}} yra būtinas.",
+        "invalid_postal_code": "Pašto kodą turi sudaryti 5 skaitmenys.",
+        "invalid_privacy_policy": "Turite sutikti su duomenų politika.",
+        "invalid_postal_code_dynamic": "{{label}} turi sudaryti 5 skaitmenys.",
+        "submit_success": "Pakeitimas įrašytas.",
+        "malformed": "Prašome laikytis šio URL formato „https://example.com“"
+      }
+    },
+    "social_login": {
+      "facebook_connect": "Tęskite naudodami „Facebook“",
+      "google_connect": "Tęskite naudodami „Google“",
+      "email_register": "Registruotis el. paštu",
+      "count_register": "({{count}}/2)"
+    },
+    "notifications": {
+      "bad_link": "Ši nuoroda nebegalioja.",
+      "secure_expired": {
+        "first_sentence": "Apgailestaujame, jūsų prisijungimas buvo nutrauktas, nes atrodė, kad palikote svetainę",
+        "second_sentence": "Norėdami toliau balsuoti, teikti pasiūlymus ir dalyvauti Make.org veikloje, prisijunkite iš naujo.",
+        "emoji": "Jaustukas – liūdnas veidas su ašara"
+      },
+      "session_expired": {
+        "title": "Neaktyvumo laiko ribojimas",
+        "description": "Norėdami užtikrinti paslaugų kokybę, puslapį įkelsime iš naujo.",
+        "button_text": "Supratau"
+      },
+      "icons": {
+        "close": "Uždaryti pranešimo juostą",
+        "information": "Informacinis pranešimas: ",
+        "success": "Pranešimas apie sėkmingai atliktą veiksmą: ",
+        "error": "Pranešimas apie klaidą: ",
+        "alert": "Įspėjamasis pranešimas: "
+      },
+      "unexpected_error": "Šiuo metu įvyko klaida, prašome bandyti dar kartą vėliau.",
+      "network_error": "Neįmanoma pasiekti viso Make.org turinio, nes atrodo, kad naršote neprisijungę",
+      "vote_only": {
+        "message": "Konsultacijoje „{{title}}“ nebegalima gauti naujų pasiūlymų, tačiau vis dar galima balsuoti dėl jau pateiktų pasiūlymų.",
+        "button": "Supratau"
+      },
+      "vote_on_proposal": "Balsuokite dėl šio pasiūlymo"
+    },
+    "propose": "Pasiūlyti",
+    "open_new_window": "Atverti naujame skirtuke",
+    "loading": "Įkeliama, prašome palaukti.",
+    "participate": "Dalyvaukite",
+    "display_tooltip": "Rodyti patarimą užvedus pelės žymeklį ant elemento",
+    "expand_collapse": "{{name}} - Rodyti išskleidžiamojo skirsnio turinį",
+    "shrink_collapse": "{{name}} - Slėpti išskleidžiamojo skirsnio turinį",
+    "secondary_nav": "Antrinis naršymas",
+    "percent": "{{percent}} %",
+    "header_authentication_nav": "Prieiga prie naudotojo profilio",
+    "footer_nav": "Naršymas puslapio apačioje",
+    "sidebar_area": "Šoninė turinio juosta",
+    "max_characters": "maksimalus ženklų skaičius",
+    "back": "Atgal",
+    "proposal_count_one": "{{count}} pasiūlymas",
+    "proposal_count_other": "{{count}} pasiūlymai (-ų)",
+    "breadcrumbs": "naršymo kelias",
+    "million_one": "milijonas",
+    "million_other": "milijonai",
+    "close_panel": "Užverti išskleidžiamąjį meniu",
+    "close": "Užverti"
+  },
+  "header": {
+    "logo_alt": "Eiti į pagrindinį Make.org puslapį"
+  },
+  "proposal_card": {
+    "next": "Kitas pasiūlymas",
+    "validate": "Patvirtinti",
+    "content": "Pasiūlymo turinys: ",
+    "original": "Žiūrėti originalą",
+    "translation": "Žiūrėti vertimą",
+    "posted_label": "Įkelta į ",
+    "author": {
+      "from": "Pasiūlymas: ",
+      "age": "{{age}} metai (-ų)",
+      "date": "įkelta: ",
+      "anonymous": "@@proposal_card.author.anonymous|fr:Mode anonyme",
+      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs."
+    },
+    "status": {
+      "title": "Pasiūlymo statusas: ",
+      "accepted": "Paskelbta",
+      "refused": "Atmesta",
+      "postponed": "Laukiama moderavimo",
+      "pending": "Laukiama moderavimo"
+    }
+  },
+  "report_translations": {
+    "button": "Pasiūlymo variantai",
+    "confirmation": {
+      "title": "Ačiū už pranešimą!",
+      "description": "Mūsų komanda kuo greičiau tai išnagrinės."
+    },
+    "form": {
+      "title": "Pranešti apie mašininį vertimą",
+      "unclear": "Nesuprantamas vertimas",
+      "error": "Vertimo klaida",
+      "false_info": "Yra melagingos informacijos",
+      "offensive": "Įžeidžiantis pasiūlymas",
+      "report": "Pranešti"
+    },
+    "first_step": {
+      "title": "Mašininis vertimas",
+      "text": "Per konsultacijas pasiūlymai pateikiami iš karto. Pastebėję klaidą, nedvejodami praneškite apie ją mūsų komandai!"
+    }
+  },
+  "intro_card": {
+    "title": "Sprendimus siūlo tūkstančiai piliečių.",
+    "description": "Išreikškite savo poziciją dėl šių sprendimų ir siūlykite savo variantus.\nGeriausi iš jų nulems mūsų veiksmus.",
+    "button": "Pradėti"
+  },
+  "final_card": {
+    "title": "Ačiū, kad reagavote į pasiūlymus!",
+    "description": "Tęskite balsavimą ir taip padėkite mums nustatyti prioritetus.",
+    "link_text": "Dalyvauju konsultacijoje",
+    "register": {
+      "description": "Kaip stebėti rezultatus?",
+      "button_intro": "Sukurkite savo",
+      "button_text": "pilietinę erdvę."
+    }
+  },
+  "no_proposal_card": {
+    "title": {
+      "regular": "Dėkojame už jūsų nuostabų indėlį!",
+      "popular": "Ačiū, balsavote dėl visų populiariausių pasiūlymų",
+      "controversial": "Ačiū, balsavote dėl visų prieštaringiausių pasiūlymų",
+      "keyword": "Ačiū, balsavote dėl visų pasiūlymų dėl „{{keyword}}“"
+    },
+    "description": {
+      "regular": "Šiuo metu naujų pasiūlymų nėra.",
+      "special": "Tęskite balsavimą ir taip padėkite mums nustatyti prioritetus."
+    },
+    "link_text": "Dalyvauju konsultacijoje",
+    "sharing": "Arba plėskite šios konsultacijos mastą skleisdami apie ją informaciją."
+  },
+  "push_proposal_card": {
+    "title": "Ar šiuo klausimu galite pasiūlyti kokį nors sprendimą?",
+    "next-cta": "Kol kas ne, aš dar balsuoju"
+  },
+  "sequence_progress": {
+    "previous": "Pereiti prie ankstesnio elemento",
+    "counter": "{{current}} elementas iš {{total}}"
+  },
+  "sequence_zone": {
+    "popular_title": "Populiarūs pasiūlymai",
+    "controversial_title": "Prieštaringi pasiūlymai"
+  },
+  "special_final_card": {
+    "title": "Ačiū už jūsų balsus!",
+    "subtitle": "Galite toliau dalyvauti konsultacijoje",
+    "cta_text": "Dalyvauju konsultacijoje"
+  },
+  "demographics_card": {
+    "disclaimer": "Jūsų pateikta informacija yra anoniminė, tad mūsų rezultatai yra reprezentatyvūs.",
+    "skip": "Eiti į",
+    "submit": "Išsaugoti",
+    "submitted_thanks": "Ačiū už atsakymą.",
+    "submitted_disclaimer": " Jis bus anonimiškai naudojamas analizuojant konsultacijų rezultatus.",
+    "select": "Pasirinkti"
+  },
+  "proposal_submit": {
+    "form": {
+      "bait": "Būtina ",
+      "title": "Pateikite pasiūlymą, kuriame ne daugiau kaip 140 ženklų. Įveskite jį į pasiūlymo lauką ir patvirtinkite spustelėdami mygtuką „Patvirtinti“",
+      "field": "Pasiūlymo laukai",
+      "counter": "Jūsų pasiūlymą sudaro {{current}} ženklai iš {{total}} galimų",
+      "panel_trigger": "Siūlau sprendimą",
+      "read_our": "Skaitykite mūsų",
+      "moderation_link": "moderavimo taisykles",
+      "button_propose": "PASIŪLYTI"
+    },
+    "authentication": {
+      "back": "Atgal",
+      "last_step_red": "Liko tik vienas žingsnis ",
+      "last_step": "iki pasiūlymo išsiuntimo!",
+      "button_login_text": "Jau turiu paskyrą,",
+      "button_login_link": "prisijungiu.",
+      "button_login": "Prisijungti",
+      "back_authentication": "Grįžti į prisijungimo puslapį"
+    },
+    "success": {
+      "button": "Tęsti balsavimą",
+      "other_idea": "Turiu dar vieną idėją",
+      "tooltip_title": "Moderuojama",
+      "tooltip_description": "Jūsų pasiūlymą mūsų komandos apdoros per 48 valandas, o dabar jį galite rasti savo profilyje.",
+      "grats": "Sveikiname, {{name}}, ",
+      "proposal_sent": "jūsų pasiūlymas išsiųstas ",
+      "activate": "Patvirtinkite savo el. pašto adresą vienu paspaudimu, ",
+      "link": "kad užtikrintumėte savo paskyros autentiškumą. Spustelėkite aktyvinimo nuorodą, atsiųstą jums adresu {{mail}}",
+      "question": "Turite klausimų? Su mumis galite susisiekti šiuo adresu: ",
+      "consultation_access": "Dalyvauju konsultacijoje"
+    }
+  },
+  "vote": {
+    "intro_title": "Pateikiu savo nuomonę dėl šio pasiūlymo: ",
+    "agree": "Pritariu",
+    "disagree": "Nepritariu",
+    "neutral": "Susilaikau",
+    "label_one": "{{count}} balsas",
+    "label_other": "{{count}} balsai (-ų)",
+    "with_percent": "{{votedKey}}: {{votedPercent}} %"
+  },
+  "unvote": {
+    "title": "Atsiimu savo nuomonę dėl šio pasiūlymo."
+  },
+  "qualification": {
+    "title": "Leiskite man pareikšti savo nuomonę dėl šio pasiūlymo:",
+    "static_repartition": "Šis pasiūlymas įvertintas taip: ",
+    "times": "kartų",
+    "likeIt": "Mėgstamiausias",
+    "doable": "Realus",
+    "platitudeAgree": "Banalus",
+    "noWay": "Visai nepriimtinas!",
+    "impossible": "Neįgyvendinamas",
+    "platitudeDisagree": "Banalus",
+    "doNotUnderstand": "Nesuprantamas",
+    "noOpinion": "Neturiu nuomonės",
+    "doNotCare": "Nedomina"
+  },
+  "sequence": {
+    "return": "Atgal į pasiūlymus",
+    "title": "Balsavimas dėl pasiūlymų, pateiktų per konsultaciją: ",
+    "more": "Žiūrėti visą konsultaciją"
+  },
+  "login": {
+    "title": "Jau turiu paskyrą",
+    "connect": "Prisijungti",
+    "or": "arba",
+    "forgot_password": "Pamiršote slaptažodį?",
+    "registration_title": "Neturiu paskyros,",
+    "registration_link": "bet ją susikursiu.",
+    "email_doesnot_exist": "Jūsų {{emailLabel}} arba {{passwordLabel}} yra neteisingas."
+  },
+  "register": {
+    "title": "Sukurti paskyrą",
+    "or": "arba",
+    "login_title": "Jau turiu paskyrą,",
+    "login_link": "prisijungiu.",
+    "gtu_text_first": "Registruodamiesi jūs sutinkate su mūsų ",
+    "gtu_link": "bendrosiomis naudojimo sąlygomis."
+  },
+  "legal_consent": {
+    "title": "Leidimas",
+    "subtitle": "Mums reikia vieno iš jūsų tėvų sutikimo",
+    "description": "Kad galėtume suteikti prieigą prie mūsų piliečių platformos, turime gauti du sutikimus. Netrukus galėsite pasisakyti per visas mūsų konsultacijas!",
+    "minor_consent": "Sutinku, kad Make.org tvarkytų mano asmens duomenis.",
+    "parental_consent": "Kaip tėvų valdžios turėtojas, sutinku, kad Make.org tvarkytų mano vaiko asmens duomenis.",
+    "cancel": "Atšaukti",
+    "submit": "Patvirtinti",
+    "privacy_policy_first_part": "Sutinku, kad Make.org tvarkytų šiuos duomenis, kad galėčiau dalyvauti ir būčiau informuotas apie rezultatus pagal ",
+    "privacy_policy_link": "taisykles",
+    "privacy_policy_last_part": ". (privaloma)",
+    "privacy_policy": "duomenų apsaugos politika",
+    "make_protect": "Make.org įsipareigoja saugoti jūsų",
+    "make_protect_link": " asmens duomenis.",
+    "opt_in": "Sutinku gauti el. laiškus iš Make.org, kad mane informuotų apie vykstančias ir būsimas konsultacijas. (pasirinktinai)"
+  },
+  "forgot_password": {
+    "title": "Iš naujo nustatau slaptažodį",
+    "description": "Įveskite el. pašto adresą, susietą su jūsų Make.org paskyra, kad gautumėte nustatymo iš naujo nuorodą.",
+    "success": "Ačiū, ką tik jums buvo išsiųstas el. laiškas, kad galėtumėte atnaujinti slaptažodį.",
+    "return": "Atgal ",
+    "login_link": "į prisijungimo puslapį",
+    "send_link": "el. laiško gavimas"
+  },
+  "reset_password": {
+    "title": "Kuriu naują slaptažodį",
+    "info": "Galite pasirinkti naują slaptažodį.",
+    "send_cta": "Patvirtinti",
+    "success": {
+      "title": "Dėkojame, jūsų slaptažodis sėkmingai atnaujintas."
+    },
+    "failure": {
+      "bad_link": "Ši nuoroda nebegalioja."
+    }
+  },
+  "data_policy_modal": {
+    "title": "Duomenų apsaugos politikos atnaujinimas",
+    "description": "Make.org įsipareigoja saugoti jūsų asmens duomenis kiekvieno apsilankymo svetainėje metu. Norėdami tęsti naršymą būdami prisijungę prie Make.org, turite sutikti su mūsų atnaujinta ",
+    "consent": "<strong>Sutinku su naująja duomenų apsaugos politika</strong> ir galėsiu naudotis savo paskyra Make.org piliečių erdvėje",
+    "validate": "Patvirtinu",
+    "stay": "Lieku",
+    "leave": "Atsijungiu",
+    "refusal_title": "Ar tikrai norite atsijungti?",
+    "refusal_description_first_part": "Atsisakę mūsų naujienų ",
+    "refusal_description_second_part": ", nebegalėsite prisijungti prie savo paskyros Make.org piliečių erdvėje."
+  },
+  "not_found": {
+    "intro": "oi",
+    "title": "Klaida 404",
+    "description": "Puslapio, kurio prašėte, nebėra arba jis neegzistuoja."
+  },
+  "top_proposal_card": {
+    "start": "Pradėkite balsuoti"
+  },
+  "maintenance": {
+    "subtitle": "Atsiprašome! Make.org šiuo metu atliekama techninė priežiūra"
+  },
+  "unsecure": {
+    "title": "Konsultacijos baigtos",
+    "description": "Ar norėtumėte sužinoti daugiau apie šią temą? Sužinokite daugiau apie šią operaciją ir būkite informuoti apie visas mūsų konsultacijas su piliečiais užsiregistravę Make.org",
+    "link": "Atraskite mūsų veiklą"
+  }
 }

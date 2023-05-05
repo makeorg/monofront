@@ -1,354 +1,356 @@
 {
-    "meta": {
-        "sequence": {
-            "title_standard": "Zúčastnite sa konzultácie '{{question}}' - Make.org",
-            "title_controversy": "Zdieľať návrhy konzultácií '{{question}}' - Make.org",
-            "title_popular": "Zaujmite stanovisko k najobľúbenejším návrhom z konzultácie '{{question}}' - Make.org"
-        }
-    },
-    "common": {
-        "connexion_label": "Prihlásiť sa",
-        "register_label": "Registrovať sa",
-        "continue": "Pokračovať ",
-        "form": {
-            "hide_password": "Skryť heslo",
-            "show_password": "Zobraziť heslo",
-            "requirements": "Ak nie je uvedené inak, všetky polia sú povinné.",
-            "requirements_short": "Všetky polia sú povinné.",
-            "password_requirements": "Minimálne 8 znakov vrátane aspoň 1 číslice, 1 veľkého písmena a 1 špeciálneho znaku.",
-            "post_code": "Poštové smerovacie číslo nám umožňuje analyzovať výsledky podľa zemepisnej oblasti.",
-            "label": {
-                "email": "E-mail",
-                "password": "Heslo",
-                "firstname": "Meno",
-                "age": "Vek",
-                "postalcode": "PSČ",
-                "profession": "Povolanie",
-                "biography": "Životopis",
-                "website": "Internetová stránka",
-                "organisation": "Názov organizácie",
-                "postalcode_optional": "PSČ (voliteľné)",
-                "personality": {
-                    "firstname": "Meno kandidáta / na čele volebnej kandidátky",
-                    "lastname": "Priezvisko kandidáta / na čele volebnej kandidátky"
-                }
-            },
-            "messages": {
-                "errors_notification": "V tomto formulári sme zistili chyby:",
-                "invalid_email": "Rešpektujte, prosím, formát e-mailu.",
-                "invalid_email_dynamic": "Prosím, rešpektujte formát {{label}}.",
-                "already_registered": "Tento e-mail už existuje.",
-                "already_registered_dynamic": "Tento {{label}} už existuje.",
-                "email_doesnot_exist": "Tento e-mail nie je spojený s vašim účtom, zadajte váš e-mail znovu.",
-                "email_doesnot_exist_dynamic": "Tento {{label}} nie je spojený s vašim účtom, zadajte váš e-mail znovu.",
-                "invalid_password": "Heslo musí obsahovať aspoň 8 znakov.",
-                "invalid_password_dynamic": "{{label}} musí obsahovať aspoň 8 znakov.",
-                "api_error": "Hups! Máme problémy s načítaním stránky. Skúste to znovu neskôr.",
-                "mandatory": "Vyplňte toto pole.",
-                "mandatory_dynamic": "Pole {{label}} je povinné.",
-                "invalid_age": "Naši používatelia majú od 8 do 120 rokov.",
-                "invalid_age_dynamic": "{{label}}: Naši používatelia majú od 8 do 120 rokov.",
-                "the_field_[email]_is_missing": "Pole {{label}} je povinné.",
-                "the_field_[password]_is_missing": "Pole {{label}} je povinné.",
-                "invalid_postal_code": "PSČ musí obsahovať 5 číslic.",
-                "invalid_privacy_policy": "Musíte akceptovať zásady ochrany osobných údajov.",
-                "invalid_postal_code_dynamic": "{{label}} musí obsahovať 5 číslic.",
-                "submit_success": "Zmena bola uložená.",
-                "malformed": "Rešpektujte formát adresy URL „https://example.com“"
-            }
-        },
-        "social_login": {
-            "facebook_connect": "Pokračovať s Facebookom",
-            "google_connect": "Pokračovať s Googlom",
-            "email_register": "Registrovať sa prostredníctvom e-mailu.",
-            "count_register": "({{count}}/2)"
-        },
-        "notifications": {
-            "bad_link": "Tento odkaz už nie je platný.",
-            "secure_expired": {
-                "first_sentence": "Je nám ľúto, boli ste odhlásený/a, pretože to vyzerá, že ste odišli.",
-                "second_sentence": "Znova sa prihláste a pokračujte v hlasovaní, podávaní návrhov a aktívne sa zapojte do diania na Make.org.",
-                "emoji": "emoji smutná tvár so slzou"
-            },
-            "session_expired": {
-                "title": "Časový limit nečinnosti",
-                "description": "Aby sme zaistili kvalitu našich služieb, stránku znovu načítame.",
-                "button_text": "Rozumiem"
-            },
-            "icons": {
-                "close": "Zatvoriť oznamovací banner",
-                "information": "Informačná správa: ",
-                "success": "Správa o úspechu: ",
-                "error": "Chybové hlásenie: ",
-                "alert": "Výstražná správa: "
-            },
-            "unexpected_error": "Momentálne došlo k chybe, prosím, skúste to znovu neskôr.",
-            "network_error": "Nie je možné získať prístup k úplnému obsahu stránky Make.org, pretože sa zdá, že ste offline.",
-            "vote_only": {
-                "message": "Do konzultácie \"{{title}}\" už nové návrhy posielať nemôžete, ale hlasovať a rozhodovať medzi existujúcimi návrhmi je aj naďalej možné.",
-                "button": "Rozumiem"
-            },
-            "vote_on_proposal": "Hlasujte o tomto návrhu"
-        },
-        "propose": "Navrhnúť",
-        "open_new_window": "Otvorenie na novej karte",
-        "loading": "Ďakujeme za trpezlivosť pri načítaní.",
-        "participate": "Zúčastnite sa",
-        "display_tooltip": "Zobraziť popis obsahu pri umiestnení kurzoru myši",
-        "expand_collapse": "{{name}} – Zobraziť obsah rozbalovacej sekcie",
-        "shrink_collapse": "{{name}} – Skryť obsah rozbalovacej sekcie",
-        "secondary_nav": "Sekundárna navigácia",
-        "percent": "{{percent}}%",
-        "header_authentication_nav": "Prístup k môjmu používateľskému profilu",
-        "footer_nav": "Navigácia v pätke",
-        "sidebar_area": "Bočná lišta obsahu",
-        "max_characters": "maximálny počet znakov",
-        "back": "Späť",
-        "proposal_count_one": "{{count}} návrh",
-        "proposal_count_other": "{{count}} návrhy",
-        "breadcrumbs": "Omrvinková navigácia",
-        "million_one": "milión",
-        "million_other": "milióny",
-        "close_panel": "Zatvoriť rozbaľovací panel",
-        "close": "Zatvoriť "
-    },
-    "header": {
-        "logo_alt": "Prejsť na domovskú stránku Make.org"
-    },
-    "proposal_card": {
-        "next": "Nasledujúci návrh",
-        "validate": "Potvrdiť",
-        "content": "Obsah návrhu: ",
-        "original": "Zobraziť originál",
-        "translation": "Zobraziť preklad",
-        "posted_label": "Uverejnené na ",
-        "author": {
-            "from": "Návrh: ",
-            "age": "{{age}} rokov",
-            "date": "Uverejnené dňa: "
-        },
-        "status": {
-            "title": "Stav návrhu: ",
-            "accepted": "Uverejnené",
-            "refused": "Zamietnuté",
-            "postponed": "Čaká na moderovanie",
-            "pending": "Čaká na moderovanie"
-        }
-    },
-    "report_translations": {
-        "button": "Možnosti návrhu:",
-        "confirmation": {
-            "title": "Ďakujeme za správu!",
-            "description": "Náš tím ju čo najskôr preskúma."
-        },
-        "form": {
-            "title": "Informovať o automatickom preklade",
-            "unclear": "Nezrozumiteľný preklad",
-            "error": "Chyba pri preklade",
-            "false_info": "Obsahuje nepravdivé informácie",
-            "offensive": "Urážlivý návrh",
-            "report": "Informovať"
-        },
-        "first_step": {
-            "title": "Strojový preklad",
-            "text": "Návrhy z našich konzultácií sú automatické. Ak si všimnete chybu, neváhajte a informujte náš tím!"
-        }
-    },
-    "intro_card": {
-        "title": "Tisíce občanov navrhuje riešenia.",
-        "description": "Zaujmite postoj k týmto riešeniam a navrhnite svoje vlastné.\nTie najlepšie určia naše kroky.",
-        "button": "Spustiť"
-    },
-    "final_card": {
-        "title": "Ďakujeme za reakciu na návrhy!",
-        "description": "Pokračujte v hlasovaní a pomôžte nám tak stanoviť priority.",
-        "link_text": "Chcem sa pripojiť ku konzultácií",
-        "register": {
-            "description": "Ako sledovať výsledky?",
-            "button_intro": "Vytvorte si",
-            "button_text": "Občiansky účet"
-        }
-    },
-    "no_proposal_card": {
-        "title": {
-            "regular": "Ďakujeme za úžasný príspevok!",
-            "popular": "Ďakujeme, svoj hlas ste vyjadrili/a pri všetkých najobľúbenejších návrhoch.",
-            "controversial": "Ďakujeme, svoj hlas ste vyjadrili/a pri všetkých najkontroverznejších návrhoch",
-            "keyword": "Ďakujeme, svoj hlas ste vyjadrili/a pri všetkých návrhoch obsahujúcich \"{{keyword}}\""
-        },
-        "description": {
-            "regular": "V súčasnosti nie sú k dispozícii žiadne nové návrhy.",
-            "special": "Pokračujte v hlasovaní a pomôžte nám tak stanoviť priority."
-        },
-        "link_text": "Chcem sa pripojiť ku konzultácií",
-        "sharing": "Alebo môžete konzultáciu podporiť jej ďalším šírením."
-    },
-    "push_proposal_card": {
-        "title": "Navrhujete v tejto súvislosti nejaké riešenia?",
-        "next-cta": "Ešte nie, chcem pokračovať v hlasovaní"
-    },
-    "sequence_progress": {
-        "previous": "Prejsť na predchádzajúcu položku",
-        "counter": "Prvok {{current}} z {{total}}"
-    },
-    "sequence_zone": {
-        "popular_title": "Obľúbené návrhy",
-        "controversial_title": "Kontroverzné návrhy"
-    },
-    "special_final_card": {
-        "title": "Ďakujeme za váš hlas!",
-        "subtitle": "Stále sa môžete zúčastniť na konzultácii",
-        "cta_text": "Chcem sa pripojiť ku konzultácií"
-    },
-    "demographics_card": {
-        "disclaimer": "Vaše informácie sú anonymné a umožňujú, aby naše výsledky boli reprezentatívne.",
-        "skip": "Preskočiť",
-        "submit": "Uložiť",
-        "submitted_thanks": "Ďakujeme za vašu odpoveď.",
-        "submitted_disclaimer": " Použije sa anonymne na analýzu výsledkov konzultácie.",
-        "select": "Vybrať"
-    },
-    "proposal_submit": {
-        "form": {
-            "bait": "Je potrebné ",
-            "title": "Pošlite svoj návrh v rozsahu do 140 znakov. Zadajte ju do poľa návrhu a potvrďte kliknutím na tlačidlo „Potvrdiť“.",
-            "field": "Pole návrhu",
-            "counter": "Váš návrh pozostáva zo {{current}} znakov z celkového počtu {{total}} dostupných znakov",
-            "panel_trigger": "Chcem navrhnúť riešenie",
-            "read_our": "Prečítať si naše",
-            "moderation_link": "Charta moderovania",
-            "button_propose": "NAVRHNÚŤ"
-        },
-        "authentication": {
-            "back": "Späť",
-            "last_step_red": "Už len jeden krok ",
-            "last_step": "odoslať návrh!",
-            "button_login_text": "Už mám účet,",
-            "button_login_link": "chcem sa pripojiť.",
-            "button_login": "Prihlásiť sa",
-            "back_authentication": "Návrat na prihlasovaciu obrazovku"
-        },
-        "success": {
-            "button": "Pokračovať v hlasovaní",
-            "other_idea": "Mám nápad",
-            "tooltip_title": "Spracováva sa",
-            "tooltip_description": "Váš návrh spracujú naše tímy do 48 hodín, zatiaľ ho nájdete vo svojom profile.",
-            "grats": "Gratulujeme {{name}}, ",
-            "proposal_sent": "váš návrh bol odoslaný ",
-            "activate": "Prosím, z dôvodu overenia pravosti vášho účtu potvrďte vašu e-mailovou adresu. ",
-            "link": "na zabezpečenie pravosti vášho účtu. Kliknite na aktivačný odkaz, ktorý vám bol zaslaný na: {{mail}}",
-            "question": "Máte otázku? Môžete nás kontaktovať na ",
-            "consultation_access": "Chcem sa pripojiť ku konzultácií"
-        }
-    },
-    "vote": {
-        "intro_title": "Chcem vyjadriť svoj názor na tento návrh: ",
-        "agree": "Súhlasím",
-        "disagree": "Nesúhlasím",
-        "neutral": "Neutrálny hlas",
-        "label_one": "{{count}} hlas",
-        "label_other": "{{count}} hlasy",
-        "with_percent": "{{votedKey}}: {{votedPercent}}%"
-    },
-    "unvote": {
-        "title": "Chcem stiahnuť svoj názor na tento návrh:"
-    },
-    "qualification": {
-        "title": "Chcem upresniť svoj názor na tento návrh:",
-        "static_repartition": "Tento návrh bol kvalifikovaný: ",
-        "times": "krát",
-        "likeIt": "Obľúbená položka",
-        "doable": "Realistické",
-        "platitudeAgree": "Zanedbateľné",
-        "noWay": "Nevhodné",
-        "impossible": "Nerealizovateľné",
-        "platitudeDisagree": "Zanedbateľné",
-        "doNotUnderstand": "Nezahŕňa",
-        "noOpinion": "Žiadne stanovisko",
-        "doNotCare": "Ľahostajný"
-    },
+  "meta": {
     "sequence": {
-        "return": "Späť k návrhom",
-        "title": "Hlasujte o návrhoch konzultácie: ",
-        "more": "Pristúpiť k celej konzultácii"
-    },
-    "login": {
-        "title": "Už mám účet",
-        "connect": "Prihlásiť sa",
-        "or": "alebo",
-        "forgot_password": "Zabudli ste heslo?",
-        "registration_title": "Nemám účet",
-        "registration_link": "Chcem si ho vytvoriť",
-        "email_doesnot_exist": "Váš {{emailLabel}} alebo {{passwordLabel}} je nesprávne."
-    },
-    "register": {
-        "title": "Vytvoriť účet",
-        "or": "alebo",
-        "login_title": "Už mám účet,",
-        "login_link": "chcem sa pripojiť.",
-        "gtu_text_first": "Registráciou vyjadrujete súhlas s našimi ",
-        "gtu_link": "Všeobecné podmienky používania"
-    },
-    "legal_consent": {
-        "title": "Právne oprávnenie",
-        "subtitle": "Potrebujeme súhlas jedného z vašich rodičov",
-        "description": "Na to, aby sme vám umožnili prístup k našej občianskej platforme, potrebujeme dva súhlasy. Čoskoro sa budete môcť vyjadriť na všetkých našich konzultáciách!",
-        "minor_consent": "Súhlasím so spracovaním svojich osobných údajov spoločnosťou Make.org.",
-        "parental_consent": "Ako rodič alebo opatrovník súhlasím so spracovaním osobných údajov môjho dieťaťa spoločnosťou Make.org.",
-        "cancel": "Zrušiť",
-        "submit": "Potvrdiť",
-        "privacy_policy_first_part": "Súhlasím s tým, aby spoločnosť Make.org spracovala tieto údaje, aby som sa mohol/a zúčastniť a byť informovaný/á o výsledkoch v súlade s ",
-        "privacy_policy_link": "charta",
-        "privacy_policy_last_part": ". (povinné)",
-        "privacy_policy": "zásady ochrany osobných údajov",
-        "make_protect": "Make.org sa zaväzuje chrániť vaše",
-        "make_protect_link": " osobné údaje.",
-        "opt_in": "Súhlasím so zasielaním e-mailov od spoločnosti Make.org, aby ma informovala o aktuálnych a nadchádzajúcich konzultáciách. (voliteľné)"
-    },
-    "forgot_password": {
-        "title": "Chcem obnoviť heslo",
-        "description": "Zadajte e-mailovú adresu prepojenú s vašim účtom Make.org, aby sme vám na ňu mohli poslať odkaz na obnovu hesla.",
-        "success": "Ďakujeme, práve vám bol odoslaný e-mail, ktorý vám umožní aktualizovať heslo.",
-        "return": "Návrat na ",
-        "login_link": "prihlasovaciu obrazovku",
-        "send_link": "prijať e-mail"
-    },
-    "reset_password": {
-        "title": "Chcem si vytvoriť nové heslo",
-        "info": "Môžete si vytvoriť nové heslo",
-        "send_cta": "Potvrdiť",
-        "success": {
-            "title": "Ďakujeme, vaše heslo bolo úspešne aktualizované."
-        },
-        "failure": {
-            "bad_link": "Tento odkaz už nie je platný."
-        }
-    },
-    "data_policy_modal": {
-        "title": "Aktualizácia zásad ochrany osobných údajov",
-        "description": "Make.org sa zaväzuje rešpektovať vaše osobné údaje pri každej návšteve stránky. Ak chcete pokračovať v prehliadaní, keď ste prihlásení do Make.org, musíte prijať naše aktualizované ",
-        "consent": "<strong>Prijímam novú politiku ochrany osobných údajov</strong> a budem môcť používať občiansky účet na Make.org",
-        "validate": "Chcem potvrdiť",
-        "stay": "Chcem zostať",
-        "leave": "Chcem odísť",
-        "refusal_title": "Určite chcete odísť?",
-        "refusal_description_first_part": "Odmietnutím nášho nového ",
-        "refusal_description_second_part": ", už nebudete mať prístup k vášmu občianskemu účtu na Make.org."
-    },
-    "not_found": {
-        "intro": "hups",
-        "title": "Chyba 404",
-        "description": "Požadovaná stránka neexistuje alebo už neexistuje."
-    },
-    "top_proposal_card": {
-        "start": "Začnite hlasovať"
-    },
-    "maintenance": {
-        "subtitle": "Ups, ospravedlňujeme sa! Make.org je momentálne v údržbe"
-    },
-    "unsecure": {
-        "title": "Konzultácie sú už uzavreté",
-        "description": "Chcete sa o tejto téme dozvedieť viac? Získajte viac informácií o tejto operácii a buďte informovaní o všetkých našich konzultáciách s občanmi, ak sa zaregistrujete na stránke Make.org",
-        "link": "Objavte našu prevádzku"
+      "title_standard": "Zúčastnite sa konzultácie '{{question}}' - Make.org",
+      "title_controversy": "Zdieľať návrhy konzultácií '{{question}}' - Make.org",
+      "title_popular": "Zaujmite stanovisko k najobľúbenejším návrhom z konzultácie '{{question}}' - Make.org"
     }
+  },
+  "common": {
+    "connexion_label": "Prihlásiť sa",
+    "register_label": "Registrovať sa",
+    "continue": "Pokračovať ",
+    "form": {
+      "hide_password": "Skryť heslo",
+      "show_password": "Zobraziť heslo",
+      "requirements": "Ak nie je uvedené inak, všetky polia sú povinné.",
+      "requirements_short": "Všetky polia sú povinné.",
+      "password_requirements": "Minimálne 8 znakov vrátane aspoň 1 číslice, 1 veľkého písmena a 1 špeciálneho znaku.",
+      "post_code": "Poštové smerovacie číslo nám umožňuje analyzovať výsledky podľa zemepisnej oblasti.",
+      "label": {
+        "email": "E-mail",
+        "password": "Heslo",
+        "firstname": "Meno",
+        "age": "Vek",
+        "postalcode": "PSČ",
+        "profession": "Povolanie",
+        "biography": "Životopis",
+        "website": "Internetová stránka",
+        "organisation": "Názov organizácie",
+        "postalcode_optional": "PSČ (voliteľné)",
+        "personality": {
+          "firstname": "Meno kandidáta / na čele volebnej kandidátky",
+          "lastname": "Priezvisko kandidáta / na čele volebnej kandidátky"
+        }
+      },
+      "messages": {
+        "errors_notification": "V tomto formulári sme zistili chyby:",
+        "invalid_email": "Rešpektujte, prosím, formát e-mailu.",
+        "invalid_email_dynamic": "Prosím, rešpektujte formát {{label}}.",
+        "already_registered": "Tento e-mail už existuje.",
+        "already_registered_dynamic": "Tento {{label}} už existuje.",
+        "email_doesnot_exist": "Tento e-mail nie je spojený s vašim účtom, zadajte váš e-mail znovu.",
+        "email_doesnot_exist_dynamic": "Tento {{label}} nie je spojený s vašim účtom, zadajte váš e-mail znovu.",
+        "invalid_password": "Heslo musí obsahovať aspoň 8 znakov.",
+        "invalid_password_dynamic": "{{label}} musí obsahovať aspoň 8 znakov.",
+        "api_error": "Hups! Máme problémy s načítaním stránky. Skúste to znovu neskôr.",
+        "mandatory": "Vyplňte toto pole.",
+        "mandatory_dynamic": "Pole {{label}} je povinné.",
+        "invalid_age": "Naši používatelia majú od 8 do 120 rokov.",
+        "invalid_age_dynamic": "{{label}}: Naši používatelia majú od 8 do 120 rokov.",
+        "the_field_[email]_is_missing": "Pole {{label}} je povinné.",
+        "the_field_[password]_is_missing": "Pole {{label}} je povinné.",
+        "invalid_postal_code": "PSČ musí obsahovať 5 číslic.",
+        "invalid_privacy_policy": "Musíte akceptovať zásady ochrany osobných údajov.",
+        "invalid_postal_code_dynamic": "{{label}} musí obsahovať 5 číslic.",
+        "submit_success": "Zmena bola uložená.",
+        "malformed": "Rešpektujte formát adresy URL „https://example.com“"
+      }
+    },
+    "social_login": {
+      "facebook_connect": "Pokračovať s Facebookom",
+      "google_connect": "Pokračovať s Googlom",
+      "email_register": "Registrovať sa prostredníctvom e-mailu.",
+      "count_register": "({{count}}/2)"
+    },
+    "notifications": {
+      "bad_link": "Tento odkaz už nie je platný.",
+      "secure_expired": {
+        "first_sentence": "Je nám ľúto, boli ste odhlásený/a, pretože to vyzerá, že ste odišli.",
+        "second_sentence": "Znova sa prihláste a pokračujte v hlasovaní, podávaní návrhov a aktívne sa zapojte do diania na Make.org.",
+        "emoji": "emoji smutná tvár so slzou"
+      },
+      "session_expired": {
+        "title": "Časový limit nečinnosti",
+        "description": "Aby sme zaistili kvalitu našich služieb, stránku znovu načítame.",
+        "button_text": "Rozumiem"
+      },
+      "icons": {
+        "close": "Zatvoriť oznamovací banner",
+        "information": "Informačná správa: ",
+        "success": "Správa o úspechu: ",
+        "error": "Chybové hlásenie: ",
+        "alert": "Výstražná správa: "
+      },
+      "unexpected_error": "Momentálne došlo k chybe, prosím, skúste to znovu neskôr.",
+      "network_error": "Nie je možné získať prístup k úplnému obsahu stránky Make.org, pretože sa zdá, že ste offline.",
+      "vote_only": {
+        "message": "Do konzultácie \"{{title}}\" už nové návrhy posielať nemôžete, ale hlasovať a rozhodovať medzi existujúcimi návrhmi je aj naďalej možné.",
+        "button": "Rozumiem"
+      },
+      "vote_on_proposal": "Hlasujte o tomto návrhu"
+    },
+    "propose": "Navrhnúť",
+    "open_new_window": "Otvorenie na novej karte",
+    "loading": "Ďakujeme za trpezlivosť pri načítaní.",
+    "participate": "Zúčastnite sa",
+    "display_tooltip": "Zobraziť popis obsahu pri umiestnení kurzoru myši",
+    "expand_collapse": "{{name}} – Zobraziť obsah rozbalovacej sekcie",
+    "shrink_collapse": "{{name}} – Skryť obsah rozbalovacej sekcie",
+    "secondary_nav": "Sekundárna navigácia",
+    "percent": "{{percent}}%",
+    "header_authentication_nav": "Prístup k môjmu používateľskému profilu",
+    "footer_nav": "Navigácia v pätke",
+    "sidebar_area": "Bočná lišta obsahu",
+    "max_characters": "maximálny počet znakov",
+    "back": "Späť",
+    "proposal_count_one": "{{count}} návrh",
+    "proposal_count_other": "{{count}} návrhy",
+    "breadcrumbs": "Omrvinková navigácia",
+    "million_one": "milión",
+    "million_other": "milióny",
+    "close_panel": "Zatvoriť rozbaľovací panel",
+    "close": "Zatvoriť "
+  },
+  "header": {
+    "logo_alt": "Prejsť na domovskú stránku Make.org"
+  },
+  "proposal_card": {
+    "next": "Nasledujúci návrh",
+    "validate": "Potvrdiť",
+    "content": "Obsah návrhu: ",
+    "original": "Zobraziť originál",
+    "translation": "Zobraziť preklad",
+    "posted_label": "Uverejnené na ",
+    "author": {
+      "from": "Návrh: ",
+      "age": "{{age}} rokov",
+      "date": "Uverejnené dňa: ",
+      "anonymous": "@@proposal_card.author.anonymous|fr:Mode anonyme",
+      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs."
+    },
+    "status": {
+      "title": "Stav návrhu: ",
+      "accepted": "Uverejnené",
+      "refused": "Zamietnuté",
+      "postponed": "Čaká na moderovanie",
+      "pending": "Čaká na moderovanie"
+    }
+  },
+  "report_translations": {
+    "button": "Možnosti návrhu:",
+    "confirmation": {
+      "title": "Ďakujeme za správu!",
+      "description": "Náš tím ju čo najskôr preskúma."
+    },
+    "form": {
+      "title": "Informovať o automatickom preklade",
+      "unclear": "Nezrozumiteľný preklad",
+      "error": "Chyba pri preklade",
+      "false_info": "Obsahuje nepravdivé informácie",
+      "offensive": "Urážlivý návrh",
+      "report": "Informovať"
+    },
+    "first_step": {
+      "title": "Strojový preklad",
+      "text": "Návrhy z našich konzultácií sú automatické. Ak si všimnete chybu, neváhajte a informujte náš tím!"
+    }
+  },
+  "intro_card": {
+    "title": "Tisíce občanov navrhuje riešenia.",
+    "description": "Zaujmite postoj k týmto riešeniam a navrhnite svoje vlastné.\nTie najlepšie určia naše kroky.",
+    "button": "Spustiť"
+  },
+  "final_card": {
+    "title": "Ďakujeme za reakciu na návrhy!",
+    "description": "Pokračujte v hlasovaní a pomôžte nám tak stanoviť priority.",
+    "link_text": "Chcem sa pripojiť ku konzultácií",
+    "register": {
+      "description": "Ako sledovať výsledky?",
+      "button_intro": "Vytvorte si",
+      "button_text": "Občiansky účet"
+    }
+  },
+  "no_proposal_card": {
+    "title": {
+      "regular": "Ďakujeme za úžasný príspevok!",
+      "popular": "Ďakujeme, svoj hlas ste vyjadrili/a pri všetkých najobľúbenejších návrhoch.",
+      "controversial": "Ďakujeme, svoj hlas ste vyjadrili/a pri všetkých najkontroverznejších návrhoch",
+      "keyword": "Ďakujeme, svoj hlas ste vyjadrili/a pri všetkých návrhoch obsahujúcich \"{{keyword}}\""
+    },
+    "description": {
+      "regular": "V súčasnosti nie sú k dispozícii žiadne nové návrhy.",
+      "special": "Pokračujte v hlasovaní a pomôžte nám tak stanoviť priority."
+    },
+    "link_text": "Chcem sa pripojiť ku konzultácií",
+    "sharing": "Alebo môžete konzultáciu podporiť jej ďalším šírením."
+  },
+  "push_proposal_card": {
+    "title": "Navrhujete v tejto súvislosti nejaké riešenia?",
+    "next-cta": "Ešte nie, chcem pokračovať v hlasovaní"
+  },
+  "sequence_progress": {
+    "previous": "Prejsť na predchádzajúcu položku",
+    "counter": "Prvok {{current}} z {{total}}"
+  },
+  "sequence_zone": {
+    "popular_title": "Obľúbené návrhy",
+    "controversial_title": "Kontroverzné návrhy"
+  },
+  "special_final_card": {
+    "title": "Ďakujeme za váš hlas!",
+    "subtitle": "Stále sa môžete zúčastniť na konzultácii",
+    "cta_text": "Chcem sa pripojiť ku konzultácií"
+  },
+  "demographics_card": {
+    "disclaimer": "Vaše informácie sú anonymné a umožňujú, aby naše výsledky boli reprezentatívne.",
+    "skip": "Preskočiť",
+    "submit": "Uložiť",
+    "submitted_thanks": "Ďakujeme za vašu odpoveď.",
+    "submitted_disclaimer": " Použije sa anonymne na analýzu výsledkov konzultácie.",
+    "select": "Vybrať"
+  },
+  "proposal_submit": {
+    "form": {
+      "bait": "Je potrebné ",
+      "title": "Pošlite svoj návrh v rozsahu do 140 znakov. Zadajte ju do poľa návrhu a potvrďte kliknutím na tlačidlo „Potvrdiť“.",
+      "field": "Pole návrhu",
+      "counter": "Váš návrh pozostáva zo {{current}} znakov z celkového počtu {{total}} dostupných znakov",
+      "panel_trigger": "Chcem navrhnúť riešenie",
+      "read_our": "Prečítať si naše",
+      "moderation_link": "Charta moderovania",
+      "button_propose": "NAVRHNÚŤ"
+    },
+    "authentication": {
+      "back": "Späť",
+      "last_step_red": "Už len jeden krok ",
+      "last_step": "odoslať návrh!",
+      "button_login_text": "Už mám účet,",
+      "button_login_link": "chcem sa pripojiť.",
+      "button_login": "Prihlásiť sa",
+      "back_authentication": "Návrat na prihlasovaciu obrazovku"
+    },
+    "success": {
+      "button": "Pokračovať v hlasovaní",
+      "other_idea": "Mám nápad",
+      "tooltip_title": "Spracováva sa",
+      "tooltip_description": "Váš návrh spracujú naše tímy do 48 hodín, zatiaľ ho nájdete vo svojom profile.",
+      "grats": "Gratulujeme {{name}}, ",
+      "proposal_sent": "váš návrh bol odoslaný ",
+      "activate": "Prosím, z dôvodu overenia pravosti vášho účtu potvrďte vašu e-mailovou adresu. ",
+      "link": "na zabezpečenie pravosti vášho účtu. Kliknite na aktivačný odkaz, ktorý vám bol zaslaný na: {{mail}}",
+      "question": "Máte otázku? Môžete nás kontaktovať na ",
+      "consultation_access": "Chcem sa pripojiť ku konzultácií"
+    }
+  },
+  "vote": {
+    "intro_title": "Chcem vyjadriť svoj názor na tento návrh: ",
+    "agree": "Súhlasím",
+    "disagree": "Nesúhlasím",
+    "neutral": "Neutrálny hlas",
+    "label_one": "{{count}} hlas",
+    "label_other": "{{count}} hlasy",
+    "with_percent": "{{votedKey}}: {{votedPercent}}%"
+  },
+  "unvote": {
+    "title": "Chcem stiahnuť svoj názor na tento návrh:"
+  },
+  "qualification": {
+    "title": "Chcem upresniť svoj názor na tento návrh:",
+    "static_repartition": "Tento návrh bol kvalifikovaný: ",
+    "times": "krát",
+    "likeIt": "Obľúbená položka",
+    "doable": "Realistické",
+    "platitudeAgree": "Zanedbateľné",
+    "noWay": "Nevhodné",
+    "impossible": "Nerealizovateľné",
+    "platitudeDisagree": "Zanedbateľné",
+    "doNotUnderstand": "Nezahŕňa",
+    "noOpinion": "Žiadne stanovisko",
+    "doNotCare": "Ľahostajný"
+  },
+  "sequence": {
+    "return": "Späť k návrhom",
+    "title": "Hlasujte o návrhoch konzultácie: ",
+    "more": "Pristúpiť k celej konzultácii"
+  },
+  "login": {
+    "title": "Už mám účet",
+    "connect": "Prihlásiť sa",
+    "or": "alebo",
+    "forgot_password": "Zabudli ste heslo?",
+    "registration_title": "Nemám účet",
+    "registration_link": "Chcem si ho vytvoriť",
+    "email_doesnot_exist": "Váš {{emailLabel}} alebo {{passwordLabel}} je nesprávne."
+  },
+  "register": {
+    "title": "Vytvoriť účet",
+    "or": "alebo",
+    "login_title": "Už mám účet,",
+    "login_link": "chcem sa pripojiť.",
+    "gtu_text_first": "Registráciou vyjadrujete súhlas s našimi ",
+    "gtu_link": "Všeobecné podmienky používania"
+  },
+  "legal_consent": {
+    "title": "Právne oprávnenie",
+    "subtitle": "Potrebujeme súhlas jedného z vašich rodičov",
+    "description": "Na to, aby sme vám umožnili prístup k našej občianskej platforme, potrebujeme dva súhlasy. Čoskoro sa budete môcť vyjadriť na všetkých našich konzultáciách!",
+    "minor_consent": "Súhlasím so spracovaním svojich osobných údajov spoločnosťou Make.org.",
+    "parental_consent": "Ako rodič alebo opatrovník súhlasím so spracovaním osobných údajov môjho dieťaťa spoločnosťou Make.org.",
+    "cancel": "Zrušiť",
+    "submit": "Potvrdiť",
+    "privacy_policy_first_part": "Súhlasím s tým, aby spoločnosť Make.org spracovala tieto údaje, aby som sa mohol/a zúčastniť a byť informovaný/á o výsledkoch v súlade s ",
+    "privacy_policy_link": "charta",
+    "privacy_policy_last_part": ". (povinné)",
+    "privacy_policy": "zásady ochrany osobných údajov",
+    "make_protect": "Make.org sa zaväzuje chrániť vaše",
+    "make_protect_link": " osobné údaje.",
+    "opt_in": "Súhlasím so zasielaním e-mailov od spoločnosti Make.org, aby ma informovala o aktuálnych a nadchádzajúcich konzultáciách. (voliteľné)"
+  },
+  "forgot_password": {
+    "title": "Chcem obnoviť heslo",
+    "description": "Zadajte e-mailovú adresu prepojenú s vašim účtom Make.org, aby sme vám na ňu mohli poslať odkaz na obnovu hesla.",
+    "success": "Ďakujeme, práve vám bol odoslaný e-mail, ktorý vám umožní aktualizovať heslo.",
+    "return": "Návrat na ",
+    "login_link": "prihlasovaciu obrazovku",
+    "send_link": "prijať e-mail"
+  },
+  "reset_password": {
+    "title": "Chcem si vytvoriť nové heslo",
+    "info": "Môžete si vytvoriť nové heslo",
+    "send_cta": "Potvrdiť",
+    "success": {
+      "title": "Ďakujeme, vaše heslo bolo úspešne aktualizované."
+    },
+    "failure": {
+      "bad_link": "Tento odkaz už nie je platný."
+    }
+  },
+  "data_policy_modal": {
+    "title": "Aktualizácia zásad ochrany osobných údajov",
+    "description": "Make.org sa zaväzuje rešpektovať vaše osobné údaje pri každej návšteve stránky. Ak chcete pokračovať v prehliadaní, keď ste prihlásení do Make.org, musíte prijať naše aktualizované ",
+    "consent": "<strong>Prijímam novú politiku ochrany osobných údajov</strong> a budem môcť používať občiansky účet na Make.org",
+    "validate": "Chcem potvrdiť",
+    "stay": "Chcem zostať",
+    "leave": "Chcem odísť",
+    "refusal_title": "Určite chcete odísť?",
+    "refusal_description_first_part": "Odmietnutím nášho nového ",
+    "refusal_description_second_part": ", už nebudete mať prístup k vášmu občianskemu účtu na Make.org."
+  },
+  "not_found": {
+    "intro": "hups",
+    "title": "Chyba 404",
+    "description": "Požadovaná stránka neexistuje alebo už neexistuje."
+  },
+  "top_proposal_card": {
+    "start": "Začnite hlasovať"
+  },
+  "maintenance": {
+    "subtitle": "Ups, ospravedlňujeme sa! Make.org je momentálne v údržbe"
+  },
+  "unsecure": {
+    "title": "Konzultácie sú už uzavreté",
+    "description": "Chcete sa o tejto téme dozvedieť viac? Získajte viac informácií o tejto operácii a buďte informovaní o všetkých našich konzultáciách s občanmi, ak sa zaregistrujete na stránke Make.org",
+    "link": "Objavte našu prevádzku"
+  }
 }
