@@ -183,7 +183,7 @@
         "submit_success": "Muutos on tallennettu onnistuneesti.",
         "malformed": "Annathan URL-osoitteen muodossa \"https://example.com\""
       },
-      "password_requirements": "Salasan on oltava vähintään kahdeksan merkkiä pitkä, ja siinä on oltava vähintään yks numero, yksi iso kirjain ja yksi erikoismerkki."
+      "password_requirements": "Salasan on oltava vähintään kahdeksan merkkiä pitkä, ja siinä on oltava vähintään yksi numero, yksi iso kirjain ja yksi erikoismerkki."
     },
     "social_login": {
       "card_title": "Tarkastellaksesi äänestyshistoriaasi",
@@ -360,7 +360,7 @@
   },
   "no_proposal_card": {
     "title": {
-      "regular": "Kiitos uskomattomasta panoksestasi!",
+      "regular": "Kiitos suuresta panoksestasi!",
       "popular": "Kiitos, olet äänestänyt kaikista suosituimmista ehdotuksista",
       "controversial": "Kiitos, olet äänestänyt kaikista kiistanalaisimmista ehdotuksista",
       "keyword": "Kiitos, olet äänestänyt kaikista aiheeseen \"{{keyword}}\" liittyvistä ehdotuksista"
@@ -478,10 +478,10 @@
     "times": "kertaa",
     "likeIt": "Suosikki",
     "doable": "Realistinen",
-    "platitudeAgree": "Vähäpätöinen",
+    "platitudeAgree": "Itsestään selvä",
     "noWay": "Ei todellakaan!",
     "impossible": "Ei mahdollinen",
-    "platitudeDisagree": "Vähäpätöinen",
+    "platitudeDisagree": "Epäolennainen",
     "doNotUnderstand": "En ymmärtänyt",
     "noOpinion": "Ei mielipidettä",
     "doNotCare": "Ei merkitystä"
@@ -519,7 +519,7 @@
     "step1_title": "Rekisteröidy sähköpostiosoitteella",
     "step2_title": "Viimeistele rekisteröinti",
     "login_title": "Minulla on jo tili,",
-    "login_link": "kirjaudun sisään.",
+    "login_link": "kirjaudu sisään.",
     "gtu_text_first": "Rekisteröitymällä hyväksyt ",
     "gtu_text_second": " ja suostut vastaanottamaan sähköpostiviestejä Make.orgilta (viestien määrä on vähäinen).",
     "gtu_link": "yleiset käyttöehtomme."
@@ -533,9 +533,9 @@
     "cancel": "Peruuta",
     "submit": "Vahvista",
     "privacy_policy_first_part": "Hyväksyn, että Make.org käsittelee nämä tiedot, jotta voin osallistua ja saada tietoa tuloksista ",
-    "privacy_policy_link": "tietosuojakäytännön",
+    "privacy_policy_link": "tietosuojakäytännön mukaisesti",
     "privacy_policy_last_part": ". (pakollinen)",
-    "privacy_policy": "mukaisesti",
+    "privacy_policy": "tietosuojakäytäntö",
     "make_protect": "Make.org on sitoutunut suojaamaan",
     "make_protect_link": " henkilötietojasi.",
     "opt_in": "Hyväksyn, että Make.org voi lähettää minulle sähköpostia, jotta voin pysyä ajan tasalla olemassa olevista ja tulevista kuulemisista. (valinnainen)"
@@ -821,12 +821,12 @@
         "button": "Äänestä"
       },
       "controversy": {
-        "title": "Auta ratkaisemaan kiistanalaisimpia ehdotuksia koskevia äänestyksiä",
+        "title": "Auta ratkaisemaan äänestyksiä – anna äänesi kiistanalaisimmille ehdotuksille",
         "description": "Nämä kansalaisehdotukset ovat saaneet yhtä paljon ääniä puolesta ja vastaan.",
-        "button": "Haluan auttaa ratkaisemaan"
+        "button": "Auta ratkaisemaan"
       },
       "popular": {
-        "title": "Äänestää suosituimmista ehdotuksista",
+        "title": "Anna äänesi suosituimmille ehdotuksille",
         "description": "Nämä kansalaisehdotukset ovat saaneet eniten puoltavia ääniä.",
         "button": "Äänestä"
       },
@@ -969,7 +969,7 @@
         "skiplink": "Parhaat esiin tulevat ideat",
         "title_one": "Parhaat suuren äänienemmistön saaneet ideat, luokiteltuina {{count}} aiheeseen",
         "title_other": "Parhaat suuren äänienemmistön saaneet ideat, luokiteltuina {{count}} aiheeseen",
-        "introduction": "Alusta ryhmittelee parhaat vastaanotetut ehdotukset suuriksi ideoiksi, jotka jäsentävät kuulemista. Make.org ottaa huomioon puoltavat ja vastustavat äänet sekä maininnat « suosikki », « realistinen », « vähäpätöinen » ja « ei missään nimessä ».",
+        "introduction": "Alusta ryhmittelee parhaat vastaanotetut ehdotukset suuriksi ideoiksi, jotka jäsentävät kuulemista. Make.org ottaa huomioon puoltavat ja vastustavat äänet sekä maininnat « suosikki », « realistinen », « epäolennainen » ja « ei missään nimessä.",
         "axe_title": "Aihe {{count}}: {{name}}"
       },
       "proposals": {
@@ -1419,14 +1419,14 @@
       "refused_card_example": "On toimittava näin: on lisättävä Eurooppaa.",
       "validated_card_example": "On toimittava näin: Euroopan unionille on annettava enemmän resursseja.",
       "refused_card_example_2": "On toimittava näin: on vähennettävä nuorisotyöttömyyttä.",
-      "validated_card_example_2": "On toimittava näin: nuorille tulee perustaa työvoimapalvelut."
+      "validated_card_example_2": "On toimittava näin: nuorille on perustettava työvoimapalvelut."
     },
     "understandable_language": {
       "text": "Ilmaise itseäsi mahdollisimman ymmärrettävästi. Käytä ilmaisuja, jotka ovat kaikille selkeitä.",
-      "refused_card_example": "On toimittava näin: yliopistossa tulee antaa vuoden verran propedeuttista opetusta.",
-      "validated_card_example": "On toimittava näin: yliopistossa tulee antaa vuoden verran valmistelevaa opetusta ennen oppiaineen valintaa.",
-      "refused_card_example_2": "On toimittava näin: HVA:iden tulee järjestää laajempia syöpäseulontoja.",
-      "validated_card_example_2": "On toimittava näin: hyvinvointialueiden tulee järjestää laajempia syöpäseulontoja."
+      "refused_card_example": "On toimittava näin: yliopistossa on annettava vuoden verran propedeuttista opetusta.",
+      "validated_card_example": "On toimittava näin: yliopistossa on annettava vuoden verran valmistelevaa opetusta ennen oppiaineen valintaa.",
+      "refused_card_example_2": "On toimittava näin: HVA:iden on järjestettävä laajempia syöpäseulontoja.",
+      "validated_card_example_2": "On toimittava näin: hyvinvointialueiden on järjestettävä laajempia syöpäseulontoja."
     },
     "acronyms": {
       "text": "Vältä merkkien #, @ ja lyhennesanojen (esimerkiksi ”LOL”) käyttöä ehdotuksessasi.",
@@ -1436,7 +1436,7 @@
     "disclaimer": "Make.org ei ole tietojen manipuloinnin torjumisesta 22 päivänä joulukuuta 2018 annetun lain nro 2018-1202 soveltamisalaan kuuluva verkkoalustan ylläpitäjä. Näin ollen meihin ei sovelleta niihin liittyviä velvoitteita. Sivustollamme julkaistujen tietojen oikeellisuus on meille kuitenkin tärkeää, ja näissä säännöissä selostamme yksityiskohtaisesti toimenpiteet, joilla edistämme niiden oikeellisuutta.",
     "foot_notes": {
       "ethical_charter": "Nämä moderointisäännöt on laadittu eettisten sääntöjen mukaisesti. <a href=\"https://assets.make.org/consultations/ethical_charter_fi.pdf\" target=\"_blank\">Eettisillä säännöillä (uusi välilehti)</a> varmistetaan Make.orgin puolueettomuus, riippumattomuus ja avoimuus.",
-      "code_penal": "Suomen yhdenvertaisuuslain mukaan ”Ketään ei saa syrjiä iän, alkuperän, kansalaisuuden, kielen, uskonnon, vakaumuksen, mielipiteen, poliittisen toiminnan, ammattiyhdistystoiminnan, perhesuhteiden, terveydentilan, vammaisuuden, seksuaalisen suuntautumisen tai muun henkilöön liittyvän syyn perusteella. Syrjintä on kielletty riippumatta siitä, perustuuko se henkilöä itseään vai jotakuta toista koskevaan tosiseikkaan tai oletukseen.” Syrjintä voi yhdenvertaisuuslain mukaan olla välitöntä, välillistä tai esimerkiksi kohtuullisten mukautusten epäämistä vammaisilta henkilöiltä.  Yhdenvertaisuuslain mukaan syrjintä voi olla välitöntä ja välillistä, minkä lisäksi kyseisen lain mukaan syrjinnäksi katsotaan ”häirintä, kohtuullisten mukautusten epääminen sekä ohje tai käsky syrjiä”. (8 §)"
+      "code_penal": "Suomen yhdenvertaisuuslain mukaan ”Ketään ei saa syrjiä iän, alkuperän, kansalaisuuden, kielen, uskonnon, vakaumuksen, mielipiteen, poliittisen toiminnan, ammattiyhdistystoiminnan, perhesuhteiden, terveydentilan, vammaisuuden, seksuaalisen suuntautumisen tai muun henkilöön liittyvän syyn perusteella. Syrjintä on kielletty riippumatta siitä, perustuuko se henkilöä itseään vai jotakuta toista koskevaan tosiseikkaan tai oletukseen.” Yhdenvertaisuuslain mukaan syrjintä voi olla välitöntä ja välillistä, minkä lisäksi kyseisen lain mukaan syrjinnäksi katsotaan ”häirintä, kohtuullisten mukautusten epääminen sekä ohje tai käsky syrjiä”. (8 §)"
     }
   }
 }
