@@ -16,18 +16,22 @@ export const questionRoute = async (
 
   const notFound = () => {
     logger.logError({
-      message: `Question not found on sequenceRoute questionSlug='${questionSlug}'`,
+      message: `Question not found on questionRoute questionSlug='${questionSlug}'`,
       name: 'server-side',
-      url: req.url,
-      query: req.query,
+      app_detected_country: country,
+      app_language: language,
+      app_url: req.url,
+      app_query: req.query,
     });
   };
   const unexpectedError = () => {
     logger.logError({
-      message: `Unexpected Error on sequenceRoute questionSlug='${questionSlug}'`,
+      message: `Unexpected Error on questionRoute questionSlug='${questionSlug}'`,
       name: 'server-side',
-      url: req.url,
-      query: req.query,
+      app_detected_country: country,
+      app_language: language,
+      app_url: req.url,
+      app_query: req.query,
     });
   };
 

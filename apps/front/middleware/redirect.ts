@@ -19,18 +19,22 @@ export const redirectToCountryMiddleware = async (
 
   const questionNotFound = () => {
     getLoggerInstance().logError({
-      message: `Question not found on redirect middleware questionSlug='${questionSlug}'`,
+      message: `Question not found on redirect middleware questionSlug='${formattedQuestionSlug}'`,
       name: 'server-side',
-      url: req.url,
-      query: req.query,
+      app_detected_country: formattedCountry,
+      app_language: formattedLanguage,
+      app_url: req.url,
+      app_query: req.query,
     });
   };
   const questionUnexpectedError = () => {
     getLoggerInstance().logError({
-      message: `Unexpected Error on redirect middleware questionSlug='${questionSlug}'`,
+      message: `Unexpected Error on redirect middleware questionSlug='${formattedQuestionSlug}'`,
       name: 'server-side',
-      url: req.url,
-      query: req.query,
+      app_detected_country: formattedCountry,
+      app_language: formattedLanguage,
+      app_url: req.url,
+      app_query: req.query,
     });
   };
 
