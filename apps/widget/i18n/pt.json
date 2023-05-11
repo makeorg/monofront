@@ -175,7 +175,7 @@
     "title": {
       "regular": "Obrigado pela sua incrível contribuição!",
       "popular": "Obrigado, votou em todas as propostas mais populares",
-      "controversial": "Obrigado, votou em todas as propostas mais controversas",
+      "controversial": "Obrigado, votou em todas as propostas mais polémicas",
       "keyword": "Obrigado, votou em todas as propostas de \"{{keyword}}\""
     },
     "description": {
@@ -195,7 +195,7 @@
   },
   "sequence_zone": {
     "popular_title": "Propostas populares",
-    "controversial_title": "Propostas controversas"
+    "controversial_title": "Propostas polémicas"
   },
   "special_final_card": {
     "title": "Obrigado pelos seus votos!",
