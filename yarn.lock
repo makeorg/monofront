@@ -3629,11 +3629,13 @@ __metadata:
     "@types/swagger-ui-express": ^4
     "@typescript-eslint/eslint-plugin": ^5.0.0
     "@typescript-eslint/parser": ^5.0.0
+    dotenv: ^16.0.3
     eslint: ^8.0.1
     eslint-config-prettier: ^8.3.0
     eslint-plugin-prettier: ^4.0.0
     jest: 29.5.0
     module-alias: ^2.2.2
+    pm2: ~5.2.2
     prettier: ^2.3.2
     prisma: ^4.13.0
     reflect-metadata: ^0.1.13

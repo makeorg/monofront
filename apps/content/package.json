@@ -27,7 +27,9 @@
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/swagger": "^6.3.0",
     "@prisma/client": "4.13.0",
+    "dotenv": "^16.0.3",
     "module-alias": "^2.2.2",
+    "pm2": "~5.2.2",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0",
     "swagger-ui-express": "^4.6.2"
