@@ -53,7 +53,9 @@ export const DeprecatedProposalAuthor: React.FC<Props> = ({
     <AuthorContainerStyle>
       <AuthorDescriptionStyle>
         <AuthorInfosStyle as="div">
-          {withAvatar && <Avatar avatarUrl={author.avatarUrl} />}
+          {withAvatar && (
+            <Avatar avatarUrl={author?.avatarUrl} isAnonymous={!author} />
+          )}
           <ProposalAuthorInformations proposal={proposal} />
           {withCreationDate && !!proposal.createdAt && (
             <>

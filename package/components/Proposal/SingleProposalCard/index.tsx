@@ -11,7 +11,6 @@ import { ContentSeparatorStyle } from '@make.org/ui/elements/SeparatorsElements'
 import { TallCardStyle } from '@make.org/ui/elements/CardsElements';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import { USER } from '@make.org/types/enums';
 import { useSwitchProposalContent } from '@make.org/utils/hooks/useSwitchProposalContent';
 import {
   TopComponentContext,
@@ -52,7 +51,6 @@ export const SingleProposalCard: React.FC<Props> = ({ proposal }) => {
     TopComponentContextValue.getSingleProposal();
   const { state } = useAppContext();
   const { country } = state.appConfig;
-  const isAnonymous = proposal.author.userType === USER.TYPE_ANONYMOUS;
   const { switchProposalContent, showOriginal, setShowOriginal } =
     useSwitchProposalContent();
   const { proposalContent, proposalLanguage } = getProposalContent(
@@ -76,7 +74,7 @@ export const SingleProposalCard: React.FC<Props> = ({ proposal }) => {
               />
             )}
             <DeprecatedProposalAuthor proposal={proposal} />
-            {!isAnonymous && <ProposalCardSeparatorStyle />}
+            <ProposalCardSeparatorStyle />
             <ScreenReaderItemStyle>
               {i18n.t('proposal_card.content')}
             </ScreenReaderItemStyle>

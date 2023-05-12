@@ -52,7 +52,9 @@ const ProfileProposalsPage: FC = () => {
   };
 
   useEffect(() => {
-    loadProposals(page, proposals);
+    if (!proposals && !isLoading) {
+      loadProposals(page, proposals);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 

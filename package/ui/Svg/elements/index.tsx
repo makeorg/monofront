@@ -85,3 +85,4 @@ export { SvgCrossFakeInfo } from './CrossFakeInfo';
 export { SvgOffensif } from './Offensif';
 export { SvgTranslation } from './Translation';
 export { SvgWarning } from './Warning';
+export { SvgAnonymous } from './Anonymous';

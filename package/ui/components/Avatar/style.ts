@@ -4,7 +4,9 @@ import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { Image } from '../Image';
 
-export const AvatarStyle = styled.span<{ isSequence?: boolean }>`
+export const AvatarStyle = styled.span<{
+  isSequence?: boolean;
+}>`
   position: ${props => (props.isSequence ? 'absolute' : 'static')};
   top: ${props => (props.isSequence ? '-17px' : '')};
   left: ${props => (props.isSequence ? '50%' : '')};

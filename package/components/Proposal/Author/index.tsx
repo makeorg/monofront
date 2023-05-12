@@ -10,7 +10,6 @@ import { Avatar } from '@make.org/ui/components/Avatar';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { trackClickPublicProfile } from '@make.org/utils/services/Tracking';
 import { USER } from '@make.org/types/enums';
-
 import {
   formatAuthorName,
   formatOrganisationName,
@@ -41,8 +40,12 @@ export const ProposalAuthorInformations: FC<Props> = ({ proposal }) => {
   const { state } = useAppContext();
   const { country, source } = state.appConfig;
   const { author } = proposal;
-
   const isWidget = source === 'widget';
+
+  if (!author) {
+    return <>{i18n.t('proposal_card.author.anonymous_proposal')}</>;
+  }
+
   const isOrganisation = author.userType === USER.TYPE_ORGANISATION;
   const isPersonality = author.userType === USER.TYPE_PERSONALITY;
   const isBasicUser = author.userType === USER.TYPE_USER;
@@ -101,6 +104,15 @@ export const ProposalAuthor: FC<Props> = ({ proposal }) => {
   const { author } = proposal;
   const isLargeMobile = useLargeMobile();
   const avatarSize = setAvatarSize(isLargeMobile);
+
+  if (!author) {
+    return (
+      <AuthorInfosStyle>
+        <Avatar isAnonymous isSequence avatarSize={avatarSize} />
+        <ProposalAuthorInformations proposal={proposal} />
+      </AuthorInfosStyle>
+    );
+  }
 
   return (
     <AuthorInfosStyle>

@@ -42,7 +42,7 @@ import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { getContactMailByCountry } from '@make.org/utils/helpers/countries';
 import { isSequencePage as getIsSequencePage } from '@make.org/utils/routes';
 import { AvatarImageStyle } from '@make.org/ui/components/Avatar/style';
-import { SvgEmptyAvatar } from '@make.org/ui/Svg/elements';
+import { SvgEmptyAvatar, SvgAnonymous } from '@make.org/ui/Svg/elements';
 import { ProposalTooltip } from '@make.org/ui/components/Tooltip/ProposalTooltip';
 import { QuestionType } from '@make.org/types';
 import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
@@ -69,7 +69,7 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
   const { user } = selectAuthentication(state);
   const history = useHistory();
   const location = useLocation();
-  const pendingProposal = state.pendingProposal.pendingProposal || '';
+  const { pendingProposal, isAnonymous } = state.pendingProposal;
   const { source, country, countriesWithConsultations } = state.appConfig;
   const isSequencePage = getIsSequencePage(location.pathname);
   const question: QuestionType = selectCurrentQuestion(state);
@@ -104,6 +104,39 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
     };
   }, []);
 
+  const renderAvatar = () => {
+    if (isAnonymous) {
+      return (
+        <SvgAnonymous
+          aria-hidden
+          width={avatarSize}
+          height={avatarSize}
+          focusable="false"
+        />
+      );
+    }
+    if (user?.avatarUrl) {
+      return (
+        <AvatarImageStyle
+          src={user.avatarUrl}
+          alt=""
+          width={avatarSize}
+          height={avatarSize}
+          avatarSize={avatarSize}
+          crop
+        />
+      );
+    }
+    return (
+      <SvgEmptyAvatar
+        aria-hidden
+        width={avatarSize}
+        height={avatarSize}
+        focusable="false"
+      />
+    );
+  };
+
   return (
     <ProposalFormSuccessWrapperStyle isWidget={isWidget}>
       <CenterColumnHeightStyle>
@@ -121,27 +154,17 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
           </ProposalSuccessTitleStyle>
           <ProposalSuccessCardStyle>
             <ProposalSuccessAvatarStyle>
-              {user?.avatarUrl ? (
-                <AvatarImageStyle
-                  src={user.avatarUrl}
-                  alt=""
-                  width={avatarSize}
-                  height={avatarSize}
-                  avatarSize={avatarSize}
-                  crop
-                />
-              ) : (
-                <SvgEmptyAvatar
-                  aria-hidden
-                  width={avatarSize}
-                  height={avatarSize}
-                  focusable="false"
-                />
-              )}
+              {renderAvatar()}
             </ProposalSuccessAvatarStyle>
             <ProposalSuccessNameStyle>
-              {user?.profile.firstName}
-              <ProposalAuthorAge dateOfBirth={user?.profile.dateOfBirth} />
+              {isAnonymous ? (
+                <>{i18n.t('proposal_card.author.anonymous_proposal')}</>
+              ) : (
+                <>
+                  {user?.profile.firstName}
+                  <ProposalAuthorAge dateOfBirth={user?.profile.dateOfBirth} />
+                </>
+              )}
             </ProposalSuccessNameStyle>
             <ProposalSuccessProposalStyle>
               {pendingProposal}

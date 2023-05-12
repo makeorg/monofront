@@ -10,7 +10,7 @@ export type AuthorType = {
   organisationSlug: string | null;
   postalCode: string | null;
   age: number | null;
-  avatarUrl: string | null;
+  avatarUrl: string;
   userType: string;
 };
 

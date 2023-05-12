@@ -331,8 +331,9 @@
       "from": "Propunere făcută de: ",
       "age": "{{age}} ani",
       "date": "publicată la data: ",
-      "anonymous": "@@proposal_card.author.anonymous|fr:Mode anonyme",
-      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs."
+      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs.",
+      "anonymous_proposal": "@@proposal_card.author.anonymous_proposal|fr:Proposition anonyme",
+      "anonymous_mode": "@@proposal_card.author.anonymous_mode|fr:Mode anonyme"
     },
     "status": {
       "title": "Statutul propunerii: ",

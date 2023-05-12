@@ -157,7 +157,7 @@ export const ProposalForm: FC = () => {
                   onEnabling={() => dispatch(enableProposalAnonymous())}
                   onDisabling={() => dispatch(disableProposalAnonymous())}
                 />
-                {i18n.t('proposal_card.author.anonymous')}
+                {i18n.t('proposal_card.author.anonymous_mode')}
               </AnonymousButtonContainer>
               <AnonymousInfoTextStyle
                 dangerouslySetInnerHTML={{
