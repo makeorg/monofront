@@ -263,7 +263,7 @@
     "forgot_password": "Забравена парола?",
     "registration_title": "Нямам акаунт,",
     "registration_link": "създавам такъв.",
-    "email_doesnot_exist": "Вашият {{emailLabel}} или {{passwordLabel}} са неправилни."
+    "email_doesnot_exist": "Вашата {{emailLabel}} или {{passwordLabel}} са неправилни."
   },
   "register": {
     "title": "Създаване на акаунт",

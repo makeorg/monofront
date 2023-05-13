@@ -510,7 +510,7 @@
     "forgot_password": "Забравена парола?",
     "registration_title": "Нямам акаунт,",
     "registration_link": "създавам такъв.",
-    "email_doesnot_exist": "Вашият {{emailLabel}} или {{passwordLabel}} са неправилни."
+    "email_doesnot_exist": "Вашата {{emailLabel}} или {{passwordLabel}} са неправилни."
   },
   "register": {
     "title": "Създаване на акаунт",
@@ -1136,8 +1136,8 @@
     "titles": {
       "loading": "Търсене в процес на изпълнение...",
       "no_results": "Не са намерени резултати",
-      "main_results_one": "{{count}} резултат за « {{term}} »",
-      "main_results_other": "{{count}} резултата за « {{term}} »",
+      "main_results_one": "{{count}} резултат за \"{{term}}\"",
+      "main_results_other": "{{count}} резултата за \"{{term}}\"",
       "proposals_one": "{{count}} предложение за « {{term}} »",
       "proposals_other": "{{count}} предложения за « {{term}} »",
       "operations_one": "{{count}} операция за « {{term}} »",
@@ -1153,7 +1153,7 @@
       "results_one": "{{count}} резултат",
       "results_other": "{{count}} резултата",
       "view_all": "Вижте всички",
-      "no_results": "Не открихме никакви резултати за вашето търсене « {{term}} »",
+      "no_results": "Не открихме никакви резултати за вашето търсене \"{{term}}\"",
       "no_query": "Търсите предложение, идея или консултация? Въведете своето търсене!",
       "status": "Статус: ",
       "finished_consultation": "Консултацията е приключена",
