@@ -1,0 +1,671 @@
+{
+  "context": "Online-Konsultation durchgeführt von Make.org und Germany Finance vom 2023-01-16 bis 2023-04-09 rund um die Frage: Was soll die deutsche Finanzbranche tun, damit mehr junge Menschen Lust haben, in diesem Bereich zu arbeiten?",
+  "key_figures": {
+    "visitors": 4.744,
+    "votes": 48.085,
+    "proposals": 605
+  },
+  "top_ideas": [
+    {
+      "name": "Bildung und Aufklärung",
+      "ideas": [
+        {
+          "idea": "Ökonomische Bildung in (Hoch-)Schulen integrieren",
+          "agreement": 75,
+          "adhesion": 42,
+          "realistic": 22
+        },
+        {
+          "idea": "Über die alltägliche Relevanz von Finanzen aufklären",
+          "agreement": 68,
+          "adhesion": 23,
+          "realistic": 26
+        },
+        {
+          "idea": "Aus- und Weiterbildungsmöglichkeiten fördern",
+          "agreement": 76,
+          "adhesion": 21,
+          "realistic": 25
+        }
+      ]
+    },
+    {
+      "name": "Arbeitsorganisation",
+      "ideas": [
+        {
+          "idea": "Flexibilität in der Arbeitsgestaltung etablieren",
+          "agreement": 72,
+          "adhesion": 26,
+          "realistic": 21
+        },
+        {
+          "idea": "Vereinbarkeit von Familie und Beruf verbessern",
+          "agreement": 76,
+          "adhesion": 26,
+          "realistic": 23
+        },
+        {
+          "idea": "Work-Life-Balance verbessern",
+          "agreement": 74,
+          "adhesion": 31,
+          "realistic": 17
+        },
+        {
+          "idea": "Attraktive Angebote für Mitarbeitende einführen",
+          "agreement": 69,
+          "adhesion": 15,
+          "realistic": 22
+        },
+        {
+          "idea": "Tätigkeiten abwechslungsreich gestalten",
+          "agreement": 63,
+          "adhesion": 7,
+          "realistic": 21
+        },
+        {
+          "idea": "Digitalisierung der Branche vorantreiben",
+          "agreement": 73,
+          "adhesion": 21,
+          "realistic": 19
+        }
+      ]
+    },
+    {
+      "name": "Gesellschaftliche Wahrnehmung",
+      "ideas": [
+        {
+          "idea": "Karrierewege und -optionen transparent kommunizieren",
+          "agreement": 73,
+          "adhesion": 25,
+          "realistic": 30
+        },
+        {
+          "idea": "Image der Finanzbranche verbessern",
+          "agreement": 69,
+          "adhesion": 26,
+          "realistic": 21
+        }
+      ]
+    },
+    {
+      "name": "Vergütung und Aufstiegsmöglichkeiten",
+      "ideas": [
+        {
+          "idea": "Angemessene Vergütung ermöglichen",
+          "agreement": 73,
+          "adhesion": 31,
+          "realistic": 27
+        },
+        {
+          "idea": "Jungen Mitarbeitenden mehr Aufstiegschancen ermöglichen",
+          "agreement": 77,
+          "adhesion": 14,
+          "realistic": 19
+        }
+      ]
+    },
+    {
+      "name": "Einstiegsmöglichkeiten und Recruiting",
+      "ideas": [
+        {
+          "idea": "Zugang zum Berufseinstieg einfach gestalten",
+          "agreement": 70,
+          "adhesion": 20,
+          "realistic": 26
+        },
+        {
+          "idea": "Quereinstieg ermöglichen",
+          "agreement": 71,
+          "adhesion": 19,
+          "realistic": 19
+        },
+        {
+          "idea": "Praktika anbieten",
+          "agreement": 72,
+          "adhesion": 13,
+          "realistic": 23
+        }
+      ]
+    },
+    {
+      "name": "Werte und Arbeitskultur",
+      "ideas": [
+        {
+          "idea": "Mitgestaltung junger Menschen zulassen",
+          "agreement": 72,
+          "adhesion": 18,
+          "realistic": 21
+        },
+        {
+          "idea": "Angenehme Arbeitsatmosphäre schaffen",
+          "agreement": 73,
+          "adhesion": 26,
+          "realistic": 20
+        }
+      ]
+    }
+  ],
+  "controversials": [
+    {
+      "id": "350a5d11-41c7-435b-b779-33d0d9c40f28",
+      "content": "Man sollte mehr in Social Media Werbung investieren, um junge Menschen zu erreichen.",
+      "author": "Alex",
+      "agree": 41,
+      "like_it": 6,
+      "disagree": 41,
+      "no_way": 8,
+      "votes": 46
+    },
+    {
+      "id": "4491bbc9-af0a-4e58-b398-2e5427e3016f",
+      "content": "Man sollte mehr für diese Branche in sozialen Medien und Schulen werben. Dabei sollte man transparent bleiben.",
+      "author": "Anne",
+      "agree": 50,
+      "like_it": 7,
+      "disagree": 23,
+      "no_way": 5,
+      "votes": 51
+    },
+    {
+      "id": "b2600350-bc23-4a0a-b231-7b2645e8d8bb",
+      "content": "Man sollte die positive Wirkung und Nachhaltigkeit des Sektors verstärken und damit werben.",
+      "author": "Lisa",
+      "agree": 55,
+      "like_it": 22,
+      "disagree": 29,
+      "no_way": 5,
+      "votes": 54
+    },{
+      "id": "5f7c419c-2e7e-44e6-84e3-420a701ee01d",
+      "content": "Man sollte auf Jobmessen gehen und die schönen Dinge an der Branche zeigen.",
+      "author": "Tammo",
+      "agree": 57,
+      "like_it": 7,
+      "disagree": 19,
+      "no_way": 5,
+      "votes": 52
+    },
+    {
+      "id": "b7aa9206-1c85-4014-ae13-5dcc69ab9063",
+      "content": "Man sollte die Branche attraktiver gestalten, mit mehr Geld zum Beispiel.",
+      "author": "Sascha",
+      "agree": 38,
+      "like_it": 7,
+      "disagree": 40,
+      "no_way": 9,
+      "votes": 52
+    },
+    {
+      "id": "5b6f63d1-a2d2-405b-8c4a-4492ab9cb861",
+      "content": "Man sollte lukrativere Arbeitsbedingen schaffen und vor allem besser bezahlen, da ein gutes Gehalt meistens der größte Anreiz ist.",
+      "author": "Andy",
+      "agree": 45,
+      "like_it": 9,
+      "disagree": 28,
+      "no_way": 3,
+      "votes": 52
+    },
+    {
+      "id": "f2a79c7d-aee7-445a-8eec-7d8d789f2704",
+      "content": "Man sollte Prämienanteile den jungen Leuten zuweisen.",
+      "author": "Dominik",
+      "agree": 49,
+      "like_it": 7,
+      "disagree": 23,
+      "no_way": 9,
+      "votes": 52
+    },
+    {
+      "id": "3934a085-8401-43d0-adaa-5d5709a407d7",
+      "content": "Man sollte Angebote anbieten wie z.B günstigere Wohnungen wenn man dort arbeitet.",
+      "author": "Tamara",
+      "agree": 58,
+      "like_it": 22,
+      "disagree": 28,
+      "no_way": 1,
+      "votes": 52
+    },
+
+    {
+      "id": "93f1564a-8d66-456c-bc4c-8aa19d5fb6a0",
+      "content": "Man sollte die Bewerber schneller und unkomplizierter einstellen und auch Jobs ohne Ausbildung anbieten.",
+      "author": "Dennis",
+      "agree": 48,
+      "like_it": 12,
+      "disagree": 40,
+      "no_way": 11,
+      "votes": 54
+    },
+    {
+      "id": "90eb5fd6-9ed0-4d90-81db-b339ba57ec9d",
+      "content": "Man sollte nicht zu fixiert auf Lebenslauf, Bewerbungen und Zeugnisse sein.",
+      "author": "Gizem",
+      "agree": 59,
+      "like_it": 20,
+      "disagree": 22,
+      "no_way": 3,
+      "votes": 54
+    },
+    {
+      "id": "f69a147f-53f1-4165-b1ac-b81458e94131",
+      "content": "Man sollte mehr für diese Arbeitsstellen werben, zum Beispiel mit Flyern an Schulen/Berufsschulen.",
+      "author": "Fotini",
+      "agree": 29,
+      "like_it": 3,
+      "disagree": 41,
+      "no_way": 5,
+      "votes": 51
+    },
+    {
+      "id": "b0b96052-2121-4c9d-bc7d-ab571d2644e3",
+      "content": "Man sollte in Schulen gehen und den Job dort mit Spaß und Freude vorstellen.",
+      "author": "Anna",
+      "agree": 59,
+      "like_it": 9,
+      "disagree": 21,
+      "no_way": 7,
+      "votes": 52
+    },
+    {
+      "id": "995feb94-bd7c-4842-97f3-b3c03ba42233",
+      "content": "Man sollte weniger elitär sein und den Anzugszwang abschaffen.",
+      "author": "Mohammed",
+      "agree": 56,
+      "like_it": 20,
+      "disagree": 23,
+      "no_way": 11,
+      "votes": 52
+    },
+    {
+      "id": "3cbafac7-f84e-429a-b91b-ec2afcaff0c6",
+      "content": "Man sollte den Dresscode abschaffen, denn auch Menschen mit Tattoos, gefärbten Haare und einer Jeans können professionell sein.",
+      "author": "Amelie",
+      "agree": 45,
+      "like_it": 4,
+      "disagree": 41,
+      "no_way": 21,
+      "votes": 46
+    },
+    {
+      "id": "0a667e78-967b-4fb8-aede-61657611d617",
+      "content": "Man sollte die Finanzbranche ökologisch und sozial nachhaltiger gestalten (Stichwort ImpactFunding, ESG, etc.).",
+      "author": "Lara",
+      "agree": 54,
+      "like_it": 21,
+      "disagree": 29,
+      "no_way": 5,
+      "votes": 56
+    },
+    {
+      "id": "0fc395c0-d2fb-4afb-9140-34ec0568c33a",
+      "content": "Man sollte die Rolle der Banken bei der Finanzierung einer nachhaltigeren, “grüneren” Industrie aufzeigen.",
+      "author": "Jule",
+      "agree": 57,
+      "like_it": 11,
+      "disagree": 22,
+      "no_way": 6,
+      "votes": 294
+    },
+    {
+      "id": "7767545a-0025-4437-8cfe-1614481e8390",
+      "content": "Man sollte die Branche attraktiv für junge Leute gestalten z.B. mit mehr sozialen Aspekten bereichern, damit alle ein gutes Gefühl haben.",
+      "author": "Mirjam",
+      "agree": 45,
+      "like_it": 11,
+      "disagree": 30,
+      "no_way": 7,
+      "votes": 52
+    },
+    {
+      "id": "916adb2d-6fec-40c9-b03e-824d2ce2c900",
+      "content": "Man sollte sich für mehr Diversity einsetzen und insbesondere Frauen dazu ermutigen, in der Branche Fuß zu fassen.",
+      "author": "I",
+      "agree": 47,
+      "like_it": 10,
+      "disagree": 25,
+      "no_way": 7,
+      "votes": 294
+    },
+    {
+      "id": "65f7786d-7394-4975-a60b-637d81e8422d",
+      "content": "Man sollte die Themen und Lebensentwürfe junger Menschen verstehen und Geschäftsmodelle danach ausrichten.",
+      "author": "Manuel",
+      "agree": 53,
+      "like_it": 15,
+      "disagree": 26,
+      "no_way": 8,
+      "votes": 46
+    },
+    {
+      "id": "73bf835b-99e8-4802-af75-786cac5dd73f",
+      "content": "Man sollte Jobangebote auf Jugendliche spezialisieren.",
+      "author": "Jasmin",
+      "agree": 52,
+      "like_it": 9,
+      "disagree": 23,
+      "no_way": 3,
+      "votes": 52
+    }
+  ],
+  "rejected": [],
+  "cartography": [
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Angesprochene Themen",
+      "legend": "",
+      "data": [
+        {
+          "label": "Information und",
+          "sublabel": " Bildung",
+          "percent": 26,
+          "color": "#4B45A5",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.35,
+            "yAxis": 1.9
+          }
+        },
+        {
+          "label": "Erscheinungsbild und",
+          "sublabel": " Wahrnehmung",
+          "percent": 21,
+          "color": "#8955BD",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.35
+          }
+        },
+        {
+          "label": "Arbeitsorganisation",
+          "percent": 20,
+          "color": "#EB7575",
+          "adjustLabel": {
+            "textAlign": "center",
+            "yAxis": 2.3
+          }
+        },
+        {
+          "label": "Vergütung",
+          "percent": 13,
+          "color": "#F5976E",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.85,
+            "yAxis": 2.25
+          }
+        },
+        {
+          "label": "Recruiting und",
+          "sublabel": " Management",
+          "percent": 8,
+          "color": "#EEB298",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.75
+          }
+        },
+        {
+          "label": "Zugänglichkeit und",
+          "sublabel": " Vereinfachung",
+          "percent": 7,
+          "color": "#FFD266",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.75,
+            "yAxis": 1.85
+          }
+        },
+        {
+          "label": "Gesellschaftliches Engagement",
+          "sublabel": " und Ethik",
+          "percent": 6,
+          "color": "#FFF689",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.85,
+            "yAxis": 1.95
+          }
+        },
+        {
+          "label": "Mitarbeitervorteile ",
+          "sublabel": " und Angebote",
+          "percent": 6,
+          "color": "#E5FFAE",
+          "adjustLabel": {
+            "textAlign": "right",
+            "yAxis": 2.1
+          }
+        },
+        {
+          "label": "Andere",
+          "percent": 5,
+          "color": "#FFF",
+          "adjustLabel": {
+            "textAlign": "left",
+            "yAxis": 1.85
+          }
+        }
+      ]
+    }
+  ],
+  "participation": [
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Teilnahme nach Bundesland (1/2)",
+      "forcedHigherValue": 23,
+      "legend": {
+        "title": "Teilnahme nach Bundesland (1/2)",
+        "dimensions": {
+          "first": "Teilnehmende",
+          "second": "xœ"
+        }
+      },
+      "data": [
+        {
+          "label": "Nordrhein-Westfalen",
+          "bars": {
+            "first": 20,
+            "second": 22
+          }
+        },
+        {
+          "label": "Bayern",
+          "bars": {
+            "first": 15,
+            "second": 16
+          }
+        },
+        {
+          "label": "Baden-Württemberg",
+          "bars": {
+            "first": 12,
+            "second": 13
+          }
+        },
+        {
+          "label": "Niedersachsen",
+          "bars": {
+            "first": 8,
+            "second": 10
+          }
+        },
+        {
+          "label": "Hessen",
+          "bars": {
+            "first": 15,
+            "second": 8
+          }
+        },
+        {
+          "label": "Sachsen",
+          "bars": {
+            "first": 5,
+            "second": 5
+          }
+        },
+        {
+          "label": "Rheinland-Pfalz",
+          "bars": {
+            "first": 4,
+            "second": 5
+          }
+        }
+      ],
+      "id": "participation_0"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Teilnahme nach Bundesland (2/2)",
+      "forcedHigherValue": 23,
+      "legend": {
+        "title": "Teilnahme nach Bundesland (2/2)",
+        "dimensions": {
+          "first": "Teilnehmende",
+          "second": "Gesamtbevölkerung"
+        }
+      },
+      "data": [
+        {
+          "label": "Berlin",
+          "bars": {
+            "first": 7,
+            "second": 4
+          }
+        },
+        {
+          "label": "Schleswig-Holstein",
+          "bars": {
+            "first": 3,
+            "second": 3
+          }
+        },
+        {
+          "label": "Brandenburg",
+          "bars": {
+            "first": 1,
+            "second": 3
+          }
+        },
+        {
+          "label": "Sachsen-Anhalt",
+          "bars": {
+            "first": 1,
+            "second": 3
+          }
+        },
+        {
+          "label": "Hamburg",
+          "bars": {
+            "first": 4,
+            "second": 2
+          }
+        },
+        {
+          "label": "Mecklenburg-Vorpommern",
+          "bars": {
+            "first": 1,
+            "second": 2
+          }
+        },
+        {
+          "label": "Thüringen",
+          "bars": {
+            "first": 1,
+            "second": 2
+          }
+        },
+        {
+          "label": "Bremen",
+          "bars": {
+            "first": 2,
+            "second": 1
+          }
+        },
+        {
+          "label": "Saarland",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        }
+      ],
+      "id": "participation_1"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Teilnahme nach Alter",
+      "legend": {
+        "title": "Stimmenverteilung",
+        "dimensions": {
+          "first": "Teilnehmende"
+        }
+      },
+      "data": [
+        {
+          "label": "08-15",
+          "bars": {
+            "first": 4
+          },
+          "color": "#24332E"
+        },
+        {
+          "label": "16-24",
+          "bars": {
+            "first": 46
+          },
+          "color": "#98C480"
+        },
+        {
+          "label": "25-29",
+          "bars": {
+            "first": 22
+          },
+          "color": "#F1BB47"
+        },
+        {
+          "label": "30-34",
+          "bars": {
+            "first": 17
+          },
+          "color": "#E65F55"
+        },
+        {
+          "label": "35+",
+          "bars": {
+            "first": 11
+          },
+          "color": "#D3D3D3"
+        }
+      ],
+      "id": "participation_2"
+    },
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Teilnahme nach Geschlecht",
+      "legend": "",
+      "data": [
+        {
+          "label": "Männlich",
+          "percent": 22,
+          "color": "#4B45A5"
+        },
+        {
+          "label": "Weiblich",
+          "percent": 75,
+          "color": "#EB7575"
+        },
+        {
+          "label": "Nichtbinär",
+          "percent": 3,
+          "color": "#8BDAB2"
+        }
+      ],
+      "id": "participation_3"
+    }
+  ]
+}
