@@ -43,7 +43,11 @@ export const ProposalAuthorInformations: FC<Props> = ({ proposal }) => {
   const isWidget = source === 'widget';
 
   if (!author) {
-    return <>{i18n.t('proposal_card.author.anonymous_proposal')}</>;
+    return (
+      <div data-cy-container="anonymous-name">
+        {i18n.t('proposal_card.author.anonymous_proposal')}
+      </div>
+    );
   }
 
   const isOrganisation = author.userType === USER.TYPE_ORGANISATION;

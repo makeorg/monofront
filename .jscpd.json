@@ -31,6 +31,7 @@
     "**/apps/front/client/pages/Static/A11y/CS.tsx",
     "**/apps/front/client/pages/Static/A11y/EN.tsx",
     "**/apps/front/client/pages/Static/Data/UK.tsx",
+    "**/cypress/support/step_definitions/proposal_submit.js",
     "**/types/**",
     "**/package/logger/**"
   ],

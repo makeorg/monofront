@@ -112,6 +112,7 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
           width={avatarSize}
           height={avatarSize}
           focusable="false"
+          data-cy-svg="anonymous-svg"
         />
       );
     }
@@ -158,7 +159,9 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
             </ProposalSuccessAvatarStyle>
             <ProposalSuccessNameStyle>
               {isAnonymous ? (
-                <>{i18n.t('proposal_card.author.anonymous_proposal')}</>
+                <div data-cy-container="anonymous-name">
+                  {i18n.t('proposal_card.author.anonymous_proposal')}
+                </div>
               ) : (
                 <>
                   {user?.profile.firstName}

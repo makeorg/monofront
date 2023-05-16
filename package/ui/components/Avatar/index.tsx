@@ -39,6 +39,7 @@ export const Avatar: React.FC<Props> = ({
           width={avatarSize}
           height={avatarSize}
           focusable="false"
+          data-cy-svg="anonymous-svg"
         />
       </AvatarStyle>
     );

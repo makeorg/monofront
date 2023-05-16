@@ -35,6 +35,7 @@ export const SwitchButton: React.FC<Props> = ({
       aria-checked={isChecked}
       className="switch"
       isChecked={isChecked}
+      data-cy-button="switch"
     />
   );
 };

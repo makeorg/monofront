@@ -4,7 +4,7 @@ import { colors } from '@make.org/designsystem/tokens/colors';
 export const SwitchButtonStyle = styled.button<{ isChecked: boolean }>`
   position: relative;
   border-radius: 20px;
-  width: 42px;
+  min-width: 42px;
   height: 20px;
   background-color: ${props =>
     props.isChecked

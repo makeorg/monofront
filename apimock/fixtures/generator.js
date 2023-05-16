@@ -58,6 +58,23 @@ const setFeaturedConsultation = count => {
   return true;
 };
 
+const setActiveFeatures = count => {
+  if (count === 1) {
+    return ['anonymous-proposals'];
+  }
+
+  return [];
+};
+
+const setAnonymousProposals = count => {
+  if (count % 2 === 0) {
+    return {
+      ...defaultProposal.author,
+    };
+  }
+  return null;
+};
+
 const generateResultsLink = count => {
   if (count === 0) {
     return {
@@ -151,6 +168,7 @@ const generateOpenedQuestions = count => {
     },
     operationKind: setOperationKind(number),
     featured: setFeaturedConsultation(number),
+    activeFeatures: setActiveFeatures(number),
     timeline: {
       result: {
         date: '2021-01-14',
@@ -293,10 +311,7 @@ const generateProposals = (question, author, count) => {
       countries: ['FR'],
       language: 'fr',
     },
-    author: {
-      ...defaultProposal.author,
-      ...author,
-    },
+    author: setAnonymousProposals(number),
   }));
 };
 

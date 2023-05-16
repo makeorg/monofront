@@ -198,6 +198,14 @@ Then('I see {string} container', containerName => {
     .should('be.visible');
 });
 
+// I see svg
+Then('I see {string} svg', svgName => {
+  cy.get(`[data-cy-svg=${svgName}]`)
+    .scrollIntoView()
+    .should('exist')
+    .should('be.visible');
+});
+
 Then("I don't see the {string} container", containerName => {
   cy.get(`[data-cy-container=${containerName}]`).should('not.exist');
 });

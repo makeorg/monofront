@@ -37,7 +37,9 @@ export const ProposalAuthentication: FC = () => {
         <ColumnElementStyle>
           <ProposalBackButtonCenterStyle
             isWidget={isWidget}
-            onClick={() => dispatch(setPanelContent(PANEL_CONTENT.PROPOSAL_SUBMIT))}
+            onClick={() =>
+              dispatch(setPanelContent(PANEL_CONTENT.PROPOSAL_SUBMIT))
+            }
           >
             {i18n.t('proposal_submit.authentication.back')}{' '}
           </ProposalBackButtonCenterStyle>
@@ -48,15 +50,19 @@ export const ProposalAuthentication: FC = () => {
             {i18n.t('proposal_submit.authentication.last_step')}{' '}
           </ProposalAltStepTitleStyle>
           <ProposalSubmitAuthenticationRegisterButtons
-            onEmailRegister={() => dispatch(setPanelContent(PANEL_CONTENT.REGISTER))}
+            onEmailRegister={() =>
+              dispatch(setPanelContent(PANEL_CONTENT.REGISTER))
+            }
           />
         </ColumnElementStyle>
         <ProposalAuthLoginWrapperStyle>
           {' '}
-          {i18n.t('proposal_submit.authentication.button_login_text')}&nbsp;
-          {' '}
+          {i18n.t(
+            'proposal_submit.authentication.button_login_text'
+          )}&nbsp;{' '}
           <ProposalAuthLoginStyle
             onClick={() => dispatch(setPanelContent(PANEL_CONTENT.LOGIN))}
+            data-cy-button="show-login-form"
           >
             {i18n.t('proposal_submit.authentication.button_login_link')}{' '}
           </ProposalAuthLoginStyle>
