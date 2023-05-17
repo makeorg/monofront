@@ -36,7 +36,7 @@ export const IntroProposal: FC<Props> = ({ handleChange }) => {
   const proposal: ProposalType | null | undefined =
     question.activeFeatureData?.topProposal;
   const { switchProposalContent, showOriginal, setShowOriginal } =
-    useSwitchProposalContent();
+    useSwitchProposalContent(proposal?.id);
   const { proposalContent, proposalLanguage } = getProposalContent(
     showOriginal,
     proposal
