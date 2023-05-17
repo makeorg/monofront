@@ -24,9 +24,12 @@ RUN ["yarn", "workspaces", "focus", "@make.org/content"]
 ############
 FROM base AS app-dev
 
+ENV PORT 3000
+
 COPY . ./
 
 RUN ["yarn", "workspaces", "focus", "@make.org/content"]
+RUN ["yarn", "workspace", "@make.org/content",  "prisma", "generate"]
 CMD ["yarn", "workspace", "@make.org/content", "start:dev"]
 
 EXPOSE 3000

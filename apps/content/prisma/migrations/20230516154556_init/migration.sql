@@ -10,6 +10,9 @@ CREATE TABLE "ConsultationResult" (
 );
 
 -- CreateIndex
+CREATE UNIQUE INDEX "ConsultationResult_id_key" ON "ConsultationResult"("id");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "ConsultationResult_slug_key" ON "ConsultationResult"("slug");
 
 -- CreateIndex
