@@ -140,7 +140,7 @@
         "biography": "Биография",
         "website": "Уебсайт",
         "organisation": "Име на организацията",
-        "email_optional": "Електронна поща (по избор)",
+        "email_optional": "Имейл (по избор)",
         "password_optional": "Парола (по избор)",
         "firstname_optional": "Собствено име (по избор)",
         "lastname_optional": "Фамилия (по избор)",
@@ -189,7 +189,7 @@
       "card_title": "За да намерите историята на гласуването си",
       "facebook_connect": "Продължете с Facebook",
       "google_connect": "Продължете с Google",
-      "email_register": "Регистрирайте се по електронна поща",
+      "email_register": "Регистрирайте се по имейл",
       "count_register": "({{count}}/2)"
     },
     "notifications": {
@@ -517,7 +517,7 @@
     "social_connect": "Регистрирам се с",
     "or": "или",
     "subtitle": "Регистрирам се с този формуляр",
-    "step1_title": "Регистриране по електронна поща",
+    "step1_title": "Регистриране по имейл",
     "step2_title": "Завършване на регистрацията",
     "login_title": "Вече имам акаунт,",
     "login_link": "влизам.",

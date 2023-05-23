@@ -1,9 +1,9 @@
 {
   "meta": {
     "sequence": {
-      "title_standard": "Osale konsultatsioonis '{{question}}' - Make.org",
-      "title_controversy": "Tehke otsus konsultatsiooni '{{question}}' ettepanekute kohta - Make.org",
-      "title_popular": "Võta seisukoht konsultatsiooni kõige populaarsemate ettepanekute suhtes '{{question}}' - Make.org"
+      "title_standard": "Osalege konsulteerimisel '{{question}}' - Make.org",
+      "title_controversy": "Tehke otsus konsulteerimise '{{question}}' ettepanekute kohta - Make.org",
+      "title_popular": "Võtke seisukoht konsulteerimise kõige menukamate ettepanekute suhtes '{{question}}' - Make.org"
     }
   },
   "common": {
@@ -85,7 +85,7 @@
       "unexpected_error": "Hetkel esineb tõrge, proovige hiljem uuesti.",
       "network_error": "Juurdepääs kogu Make.org‘i sisule pole võimalik, sest te tundute olevat võrgust väljas",
       "vote_only": {
-        "message": "Konsultatsioon „{{title}}“ ei saa võtta vastu uusi ettepanekuid, aga saate jätkata hääletamist, et teha otsus olemasolevate ettepanekute kohta.",
+        "message": "Konsulteerimisel „{{title}}“ ei ole enam võimalik võtta vastu uusi ettepanekuid, aga te saate jätkata hääletamist, et teha otsus olemasolevate ettepanekute kohta.",
         "button": "sain aru"
       },
       "vote_on_proposal": "Hääletage seda ettepanekut"
@@ -154,7 +154,7 @@
     },
     "first_step": {
       "title": "Automaattõlge",
-      "text": "Meie konsultatsioonide ettepanekud on automaatsed. Kui märkate viga, teavitage meid sellest!"
+      "text": "Meie konsulteerimiste ettepanekud on automaatsed. Kui märkate viga, teavitage meid sellest!"
     }
   },
   "intro_card": {
@@ -165,7 +165,7 @@
   "final_card": {
     "title": "Täname, et reageerisite ettepanekutele!",
     "description": "Jätkate hääletamist, et aidata meil prioriteete määrata.",
-    "link_text": "Sisenen konsultatsiooni",
+    "link_text": "Sisenen konsulteerimisse",
     "register": {
       "description": "Kuidas tulemusi jälgida?",
       "button_intro": "Looge oma",
@@ -183,8 +183,8 @@
       "regular": "Hetkel ei ole uusi ettepanekuid.",
       "special": "Jätkate hääletamist, et aidata meil prioriteete määrata."
     },
-    "link_text": "Sisenen konsultatsiooni",
-    "sharing": "Või suurendage selle konsultatsiooni mõju, jagades seda."
+    "link_text": "Sisenen konsulteerimisse",
+    "sharing": "Või suurendage selle konsulteerimise mõju, jagades seda."
   },
   "push_proposal_card": {
     "title": "Kas teil on pakkuda sellele teemale mõnda lahendust?",
@@ -200,7 +200,7 @@
   },
   "special_final_card": {
     "title": "Täname hääletamise eest!",
-    "subtitle": "Võite jätkata konsultatsioonides osalemist",
+    "subtitle": "Kuidas tulemusi jälgida?",
     "cta_text": "Sisenen konsultatsiooni"
   },
   "demographics_card": {
@@ -208,7 +208,7 @@
     "skip": "Jäta vahele",
     "submit": "Salvesta",
     "submitted_thanks": "Täname vastuse eest.",
-    "submitted_disclaimer": " Vastust kasutatakse anonüümselt, et konsultatsiooni tulemusi analüüsida.",
+    "submitted_disclaimer": " Vastust kasutatakse anonüümselt, et konsulteerimise tulemusi analüüsida.",
     "select": "Vali"
   },
   "proposal_submit": {
@@ -241,7 +241,7 @@
       "activate": "Kinnitage ühe klõpsuga oma e-posti aadress, ",
       "link": "et tagada oma konto ehtsust. Klõpsake aktiveerimislingil, mis saadeti aadressile: {{mail}}",
       "question": "Küsimusi? Võtke meiega ühendust: ",
-      "consultation_access": "Sisenen konsultatsiooni"
+      "consultation_access": "Sisenen konsulteerimisse"
     }
   },
   "vote": {
@@ -272,8 +272,8 @@
   },
   "sequence": {
     "return": "Tagasi ettepanekute juurde",
-    "title": "Hääletage konsultatsiooni ettepanekute üle: ",
-    "more": "Juurdepääs kõikidele konsultatsioonidele"
+    "title": "Hääletage konsulteerimise ettepanekute üle: ",
+    "more": "Juurdepääs kõikidele konsultateerimistele"
   },
   "login": {
     "title": "Mul on juba konto",
@@ -295,7 +295,7 @@
   "legal_consent": {
     "title": "Seadusjärgne luba",
     "subtitle": "Me vajame sinu ühe vanema nõusolekut",
-    "description": "Sulle meie kodanikuplatvormile juurdepääsu andmiseks vajame kahte nõusolekut. Varsti saad võtta sõna kõikidel meie konsultatsioonidel!",
+    "description": "Sulle meie kodanikuplatvormile juurdepääsu andmiseks vajame kahte nõusolekut. Varsti saate võtta sõna kõikidel meie konsulteerimistel!",
     "minor_consent": "Annan loa oma isikuandmete töötlemiseks Make.org‘i poolt.",
     "parental_consent": "Vanemliku vastutuse kandjana annan loa oma lapse isikuandmete töötlemiseks Make.org‘i poolt.",
     "cancel": "Tühista",
@@ -306,7 +306,7 @@
     "privacy_policy": "andmepoliitika",
     "make_protect": "Make.org kaitseb teie",
     "make_protect_link": " isikuandmeid.",
-    "opt_in": "Nõustun saama Make.org‘ilt e-kirju, et olla kursis uudistega praeguste ja tulevaste konsultatsioonide kohta. (vabatahtlik)"
+    "opt_in": "Nõustun saama Make.org‘ilt e-kirju, et olla kursis uudistega praeguste ja tulevaste konsulteerimiste kohta."
   },
   "forgot_password": {
     "title": "Lähtestan oma salasõna",

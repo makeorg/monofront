@@ -1345,7 +1345,7 @@
         "facebook-connect": "Facebook connect: dessa cookies gör att du kan registrera dig och logga in på din medborgarplattform.",
         "session-id": "make-session-id: den här cookien samlar ihop allt du gör på webbplatsen under ett besök.",
         "session-id-expiration": "make-session-id-expiration: den här cookien visar aviseringen som anger att din sessionstid har gått ut (efter 20 minuter) och kommer att laddas igen.",
-        "user-id": "make-user-id: den här cookien identifierar dig när du har loggat in på en brugerprofil på Make.org. Den hjälper dig att logga in igen genom att fylla i ditt användarnamn automatiskt.",
+        "user-id": "make-user-id: den här cookien identifierar dig när du har loggat in på en personlig plattform på Make.org. Den hjälper dig att logga in igen genom att fylla i ditt användarnamn automatiskt.",
         "cookie-preferences": "make-cookie-preferences: den här cookien gör att dina inställningar för cookieanvändning på vår tjänst sparas."
       },
       "statistics": {

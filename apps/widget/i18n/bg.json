@@ -60,7 +60,7 @@
     "social_login": {
       "facebook_connect": "Продължете с Facebook",
       "google_connect": "Продължете с Google",
-      "email_register": "Регистрирайте се по електронна поща",
+      "email_register": "Регистрирайте се по имейл",
       "count_register": "({{count}}/2)"
     },
     "notifications": {
