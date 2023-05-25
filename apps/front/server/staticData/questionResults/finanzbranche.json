@@ -651,12 +651,12 @@
       "data": [
         {
           "label": "Männlich",
-          "percent": 22,
+          "percent": 75,
           "color": "#4B45A5"
         },
         {
           "label": "Weiblich",
-          "percent": 75,
+          "percent": 22,
           "color": "#EB7575"
         },
         {
