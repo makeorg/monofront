@@ -1,0 +1,630 @@
+{
+    "context": "Consultation citoyenne réalisée par Make.org du 2023-01-15 au 2023-03-11, autour de la question: Comment pouvons-nous réduire ensemble les impacts environnementaux du numérique (équipements, usages internet, mobile, vidéo...) ?",
+    "key_figures": {
+        "visitors": 169421,
+        "votes": 2635695,
+        "proposals": 6050
+    },
+    "top_ideas": [
+        {
+            "name": "Durabilité",
+            "ideas": [
+                {
+                    "idea": "Mettre fin à l'obsolescence programmée (hardware)",
+                    "agreement": 95,
+                    "adhesion": 28,
+                    "realistic": 30
+                },
+                {
+                    "idea": "Développer massivement la réparation des appareils numériques",
+                    "agreement": 95,
+                    "adhesion": 27,
+                    "realistic": 33
+                },
+                {
+                    "idea": "Développer le recyclage d'un maximum de produits et matériaux",
+                    "agreement": 92,
+                    "adhesion": 23,
+                    "realistic": 35
+                },
+                {
+                    "idea": "Lutter contre l'obsolescence programmée (software)",
+                    "agreement": 95,
+                    "adhesion": 30,
+                    "realistic": 29
+                },
+                {
+                    "idea": "Utiliser plus longtemps les appareils numériques",
+                    "agreement": 90,
+                    "adhesion": 29,
+                    "realistic": 30
+                },
+                {
+                    "idea": "Faciliter le remplacement des batteries et améliorer leur performance",
+                    "agreement": 93,
+                    "adhesion": 26,
+                    "realistic": 33
+                },
+                {
+                    "idea": "Systématiser la récupération des appareils numériques en boutique",
+                    "agreement": 90,
+                    "adhesion": 22,
+                    "realistic": 34
+                },
+                {
+                    "idea": "Rendre les appareils évolutifs afin de ne pas avoir à acheter du neuf",
+                    "agreement": 95,
+                    "adhesion": 26,
+                    "realistic": 32
+                },
+                {
+                    "idea": "Développer la vente des appareils reconditionnés",
+                    "agreement": 90,
+                    "adhesion": 23,
+                    "realistic": 34
+                }
+
+            ]
+        },
+        {
+            "name": "Mails, spams et publicités",
+            "ideas": [
+                {
+                    "idea": "Lutter fermement contre les spams et autres sollicitations publicitaires",
+                    "agreement": 93,
+                    "adhesion": 35,
+                    "realistic": 27
+                },
+                {
+                    "idea": "Réduire la consommation énergétique due à la publicité sur les sites internet",
+                    "agreement": 91,
+                    "adhesion": 29,
+                    "realistic": 28
+                },
+                {
+                    "idea": "Interdire les écrans publicitaires numériques",
+                    "agreement": 89,
+                    "adhesion": 27,
+                    "realistic": 30
+                }
+            ]
+        },
+        {
+            "name": "Offres et services",
+            "ideas": [
+                {
+                    "idea": "Augmenter la durée de garantie des appareils",
+                    "agreement": 93,
+                    "adhesion": 28,
+                    "realistic": 31
+                },
+                {
+                    "idea": "Adapter les offres à la consommation réelle de données mobiles des clients",
+                    "agreement": 86,
+                    "adhesion": 27,
+                    "realistic": 26
+                }
+            ]
+        },
+        {
+            "name": "Surconsommation et surproduction",
+            "ideas": [
+                {
+                    "idea": "Standardiser les accessoires numériques",
+                    "agreement": 94,
+                    "adhesion": 26,
+                    "realistic": 33
+                },
+                {
+                    "idea": "Cesser la production et la promotion trop fréquente de nouveaux modèles",
+                    "agreement": 89,
+                    "adhesion": 26,
+                    "realistic": 30
+                }
+            ]
+        },
+        {
+            "name": "Consommation de données",
+            "ideas": [
+                {
+                    "idea": "Faciliter la suppression des données informatiques",
+                    "agreement": 88,
+                    "adhesion": 26,
+                    "realistic": 29
+                }
+            ]
+        },
+        {
+            "name": "Consommation énergétique des appareils",
+            "ideas": [
+                {
+                    "idea": "Optimiser la consommation énergétique des appareils",
+                    "agreement": 88,
+                    "adhesion": 24,
+                    "realistic": 30
+                },
+                {
+                    "idea": "Favoriser des chargeurs intelligents",
+                    "agreement": 89,
+                    "adhesion": 26,
+                    "realistic": 30
+                }
+            ]
+        },
+        {
+            "name": "Infrastructures réseaux et data centers",
+            "ideas": [
+                {
+                    "idea": "Récupérer la chaleur produite par les data centers",
+                    "agreement": 88,
+                    "adhesion": 24,
+                    "realistic": 31
+                },
+                {
+                    "idea": "Développer la fibre",
+                    "agreement": 84,
+                    "adhesion": 25,
+                    "realistic": 28
+                }
+            ]
+        },
+        {
+            "name": "Orange",
+            "ideas": [
+                {
+                    "idea": "Eteindre les bureaux d'Orange en dehors des horaires d'ouverture",
+                    "agreement": 88,
+                    "adhesion": 21,
+                    "realistic": 35
+                }
+            ]
+        },
+        {
+            "name": "Autres idées",
+            "ideas": [
+                {
+                    "idea": "Sensibiliser le grand public aux usages numériques, en particulier les plus jeunes",
+                    "agreement": 90,
+                    "adhesion": 27,
+                    "realistic": 29
+                },
+                {
+                    "idea": "Favoriser le local",
+                    "agreement": 86,
+                    "adhesion": 26,
+                    "realistic": 26
+                }
+            ]
+        }
+    ],
+    "controversials": [{
+            "id": "9709d639-2585-4109-b5af-3aa307053962",
+            "content": "Il faut bannir les forfaits et tarifer les consommateurs aux données consommées (même si le prix peut être très bas).",
+            "author": "Roger",
+            "agree": 43,
+            "like_it": 9,
+            "disagree": 35,
+            "no_way": 18,
+            "votes": 656
+        },
+        {
+            "id": "d7bd1196-e42d-4309-a8f2-b0c0aa7c1c06",
+            "content": "Il faut facturer le streaming à la durée d'utilisation car cette utilisation d'internet est énergivore et grande émettrice de CO2.",
+            "author": "Olivier",
+            "agree": 40,
+            "like_it": 9,
+            "disagree": 34,
+            "no_way": 16,
+            "votes": 664
+        },
+        {
+            "id": "67d8e80f-e5a3-4e01-aaf3-17fef859bbff",
+            "content": "Il faut arrêter avec les forfaits illimités pour tout afin que les gens retournent à une consommation raisonnée de datas",
+            "author": "Marion",
+            "agree": 40,
+            "like_it": 7,
+            "disagree": 40,
+            "no_way": 20,
+            "votes": 657
+        },
+        {    "id": "4205f713-6883-487e-8fc7-d0979fa0e2f1",
+            "content": "Il faut limiter l'achat d'équipements numériques au sein d'un même foyer et se les partager.",
+            "author": "BENOIT",
+            "agree": 39,
+            "like_it": 4,
+            "disagree": 37,
+            "no_way": 12,
+            "votes": 693
+        },
+        {
+            "id": "f81ed974-caf4-4d8b-b76f-16fcd7fadfd9",
+            "content": "Il faut une TVA plus élevée sur les PCs et smartphones neufs que reconditionnés, car ces équipements neufs sont la source principale de CO2.",
+            "author": "Steve",
+            "agree": 38,
+            "like_it": 5,
+            "disagree": 40,
+            "no_way": 17,
+            "votes": 654
+        },
+        {
+            "id": "93dd85c1-8a74-4a8a-b422-4883e6539a4b",
+            "content": "Il faut aller vers un monde utilisant nettement moins le numérique.",
+            "author": "Daniel",
+            "agree": 41,
+            "like_it": 7,
+            "disagree": 32,
+            "no_way": 12,
+            "votes": 655
+        },
+        {
+            "id": "ed86b3e4-cb7c-47b1-bb8e-66f67dfabcf1",
+            "content": "Il faut diminuer la qualité des vidéos vues sur nos terminaux, pour diminuer le volume de data transmis sur nos réseaux.",
+            "author": "Davy",
+            "agree": 39,
+            "like_it": 5,
+            "disagree": 35,
+            "no_way": 16,
+            "votes": 660
+        },
+        {
+            "id": "2af8a98d-528d-4353-9b0c-849decfe2deb",
+            "content": "Il faut renoncer à la 5g",
+            "author": "Jean-Philippe",
+            "agree": 35,
+            "like_it": 10,
+            "disagree": 38,
+            "no_way": 16,
+            "votes": 662
+        },
+        {
+            "id": "f3684711-c568-474a-9054-bdd21feaedce",
+            "content": "Il faut passer tous les véhicules de service en hybride ou électriques",
+            "author": "Alexandre",
+            "agree": 40,
+            "like_it": 7,
+            "disagree": 34,
+            "no_way": 13,
+            "votes": 693
+        },
+        {
+            "id": "c73876d2-2132-49ef-a630-78e00bbd66d1",
+            "content": "Il faut retourner à un seul opérateur national afin de ne pas multiplier les équipement, les ingénieries, les déplacements.",
+            "author": "Habardelux",
+            "agree": 38,
+            "like_it": 9,
+            "disagree": 38,
+            "no_way": 17,
+            "votes": 680
+        }
+    ],
+    "rejected": [],
+    "cartography": [
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Thèmes cités",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Durabilité des produits",
+                    "percent": 20,
+                    "color": "#4B45A5",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Consommation",
+                    "sublabel": " de données",
+                    "percent": 17,
+                    "color": "#8955BD",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.25
+                    }
+                },
+                {
+                    "label": "Mails, spams",
+                    "sublabel": " et publicité",
+                    "percent": 12,
+                    "color": "#EB7575",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.2,
+                        "yAxis": 2.2
+                    }
+                },
+                {
+                    "label": "Offres et",
+                    "sublabel": " services responsables",
+                    "percent": 12,
+                    "color": "#F5976E",
+                    "adjustLabel": {
+                        "textAlign": "left",
+                        "xAxis": 2.1,
+                        "yAxis": 2.15
+                    }
+                },
+                {
+                    "label": "Surproduction",
+                    "sublabel": " et surconsommation",
+                    "percent": 11,
+                    "color": "#EEB298",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Consommation énergétique",
+                    "sublabel": " des appareils",
+                    "percent": 9,
+                    "color": "#FFD266",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.75
+                    }
+                },
+                {
+                    "label": "Infrastructures réseaux",
+                    "sublabel": " et datacenters",
+                    "percent": 8,
+                    "color": "#FFF689",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.8
+                    }
+                },
+                {
+                    "label": "Sensibilisation",
+                    "sublabel": " et communication",
+                    "percent": 7,
+                    "color": "#E5FFAE",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Sujets connexes",
+                    "percent": 6,
+                    "color": "#C1EBDD",
+                    "adjustLabel": {
+                        "textAlign": "right",
+                        "xAxis": 1.9
+                    }
+                },
+                {
+                    "label": "Autres",
+                    "percent": 17,
+                    "color": "#FFF",
+                    "adjustLabel": {
+                        "hidePercent": true,
+                        "yAxis": 1.8
+                    }
+                }
+            ]
+        }
+    ],
+    "participation": [
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (1/2)",
+            "forcedHigherValue": 19,
+            "legend": {
+                "title": "Participation par région (1/2)",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "Île-de-France",
+                    "bars": {
+                        "first": 17,
+                        "second": 18
+                    }
+                },
+                {
+                    "label": "Auvergne-Rhône-Alpes",
+                    "bars": {
+                        "first": 12,
+                        "second": 12
+                    }
+                },
+                {
+                    "label": "Nouvelle-Aquitaine",
+                    "bars": {
+                        "first": 11,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Occitanie",
+                    "bars": {
+                        "first": 10,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Hauts-de-France",
+                    "bars": {
+                        "first": 8,
+                        "second": 9
+                    }
+                },
+                {
+                    "label": "Grand Est",
+                    "bars": {
+                        "first": 8,
+                        "second": 8
+                    }
+                },
+                {
+                    "label": "Provence-Alpes-Côte d'Azur",
+                    "bars": {
+                        "first": 7,
+                        "second": 8
+                    }
+                }
+            ],
+            "id": "participation_0"
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par région (2/2)",
+            "forcedHigherValue": 19,
+            "legend": {
+                "title": "Participation par région (2/2)",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "Pays de la Loire",
+                    "bars": {
+                        "first": 6,
+                        "second": 6
+                    }
+                },
+                {
+                    "label": "Bretagne",
+                    "bars": {
+                        "first": 6,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Normandie",
+                    "bars": {
+                        "first": 5,
+                        "second": 5
+                    }
+                },
+                {
+                    "label": "Bourgogne-Franche-Comté",
+                    "bars": {
+                        "first": 4,
+                        "second": 4
+                    }
+                },
+                {
+                    "label": "Centre-Val de Loire",
+                    "bars": {
+                        "first": 4,
+                        "second": 4
+                    }
+                },
+                {
+                    "label": "Outre-mer",
+                    "bars": {
+                        "first": 1,
+                        "second": 3
+                    }
+                },
+                {
+                    "label": "Corse",
+                    "bars": {
+                        "first": 1,
+                        "second": 1
+                    }
+                }
+            ],
+            "id": "participation_1"
+        },
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation par âge",
+            "legend": {
+                "title": "Répartition des votes",
+                "dimensions": {
+                    "first": "votes",
+                    "second": "population générale"
+                }
+            },
+            "data": [
+                {
+                    "label": "16-24",
+                    "bars": {
+                        "first": 6,
+                        "second": 13
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "25-34",
+                    "bars": {
+                        "first": 12,
+                        "second": 14
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "35-44",
+                    "bars": {
+                        "first": 15,
+                        "second": 15
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "45-54",
+                    "bars": {
+                        "first": 18,
+                        "second": 16
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "55-64",
+                    "bars": {
+                        "first": 21,
+                        "second": 16
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "65+",
+                    "bars": {
+                        "first": 27,
+                        "second": 26
+                    },
+                    "color": "#8BDAB2"
+                }
+            ],
+            "id": "participation_2"
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Votes par genre",
+            "legend": "",
+            "data": [
+                {
+                    "label": "hommes",
+                    "percent": 60,
+                    "color": "#4B45A5"
+                },
+                {
+                    "label": "femmes",
+                    "percent": 39,
+                    "color": "#eb7575"
+                },
+                {
+                    "label": "non-binaire",
+                    "percent": 1,
+                    "color": "#EEB298"
+                }
+            ],
+            "id": "participation_3"
+        }
+    ]
+}
