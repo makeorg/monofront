@@ -17,6 +17,8 @@ Please refers to <a href="https://docs.docker.com/engine/reference/commandline/d
 
 ## Running dev instance
 
+Add a .env file (copy [.env.dist](./env.dist) to .env)
+
 Start :
 
 ```bash
@@ -48,7 +50,7 @@ $ docker-compose -f docker-compose.dev.yaml exec content_dev yarn workspace @mak
 
 ## Environment variables
 
-see [.env.local](./env.local)
+see [.env.dist](./env.dist)
 
 
 ## Updating packages
