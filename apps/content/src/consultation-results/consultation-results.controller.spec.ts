@@ -9,10 +9,10 @@ describe('ConsultationResultsController', () => {
 
   const createBaseResult = {id: "createId", created_at: new Date(), updated_at: new Date(), author_id: 'AUTHORID'};
   const findAllResult = [
-    {...createBaseResult, data: {test: 'test'}, question_id: '2', slug: 'slug2'},
-    {...createBaseResult, data: {test: 'test'}, question_id: '3', slug: 'slug3'}
+    {...createBaseResult, data: {test: 'test'}, question_id: '2'},
+    {...createBaseResult, data: {test: 'test'}, question_id: '3'}
   ];
-  const findOneResult = {...createBaseResult, data: {test: 'test'}, question_id: '4', slug: 'slug4'};
+  const findOneResult = {...createBaseResult, data: {test: 'test'}, question_id: '4'};
 
   const consultationResultsServiceMock = {
     create: jest.fn(
@@ -57,7 +57,6 @@ describe('ConsultationResultsController', () => {
     const input: CreateConsultationResultDto = {
       data: {},
       question_id: '1',
-      slug: 'slug',
     }
     const expected = {
       ...createBaseResult,

@@ -11,12 +11,6 @@ export class ConsultationResult {
   id: string;
 
   @ApiProperty({
-    example: 'consultation-result-slug',
-    description: 'Consultation result slug',
-  })
-  slug: string;
-
-  @ApiProperty({
     example: 'JJJJ-V33ABB-343R-33434',
     description: 'Question id',
   })

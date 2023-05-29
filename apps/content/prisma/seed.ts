@@ -8,11 +8,10 @@ async function main() {
   // create two dummy articles
 
   const post1 = await prisma.consultationResult.upsert({
-    where: { slug: 'local_test' },
+    where: { question_id: 'XXXXquestionId' },
     update: {},
 
     create: {
-      slug: 'local_test',
       question_id: 'XXXXquestionId',
       author_id: 'XXXXauthorId',
       data: arteJson,

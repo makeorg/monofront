@@ -1,7 +1,6 @@
 -- CreateTable
 CREATE TABLE "ConsultationResult" (
     "id" UUID NOT NULL DEFAULT gen_random_uuid(),
-    "slug" STRING NOT NULL,
     "question_id" STRING NOT NULL,
     "data" JSONB NOT NULL,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -11,9 +10,6 @@ CREATE TABLE "ConsultationResult" (
 
 -- CreateIndex
 CREATE UNIQUE INDEX "ConsultationResult_id_key" ON "ConsultationResult"("id");
-
--- CreateIndex
-CREATE UNIQUE INDEX "ConsultationResult_slug_key" ON "ConsultationResult"("slug");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "ConsultationResult_question_id_key" ON "ConsultationResult"("question_id");

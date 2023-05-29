@@ -9,13 +9,6 @@ export class CreateConsultationResultDto {
   })
   question_id: string;
   @ApiProperty({
-    example: 'grande-consult',
-    description: 'Question slug',
-    required: true,
-    nullable: false,
-  })
-  slug: string;
-  @ApiProperty({
     description: 'Result data as json',
     example: { cartography: [] },
     required: true,

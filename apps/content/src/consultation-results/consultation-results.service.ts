@@ -11,10 +11,9 @@ export class ConsultationResultsService {
   create(
     createConsultationResultDto: CreateConsultationResultDto,
   ): Promise<ConsultationResult> {
-    const { slug, question_id, data } = createConsultationResultDto;
+    const { question_id, data } = createConsultationResultDto;
     return this.prisma.consultationResult.create({
       data: {
-        slug,
         question_id,
         data,
         author_id: 'TEST_AUTHOR_ID',

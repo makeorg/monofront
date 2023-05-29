@@ -14,7 +14,6 @@ datasource db {
 
 model ConsultationResult {
   id          String   @unique @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  slug        String   @unique
   question_id String   @unique
   data        Json
   created_at  DateTime @default(now())
