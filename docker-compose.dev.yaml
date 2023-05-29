@@ -31,6 +31,8 @@ services:
       - /home/app/apimock/node_modules
       - /home/app/apps/front/dist
       - /home/app/apps/widget/dist
+      - /home/app/apps/translator/dist
+      - /home/app/apps/content/dist
       - /home/app/dist
     profiles:
       - app-dev

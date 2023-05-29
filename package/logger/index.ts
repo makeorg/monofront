@@ -33,7 +33,11 @@ const getLogFormat = () => {
 
     const message = JSON.stringify(data) || '-';
 
-    return `infoTime:${infoTime} infoLabel:${infoLabel} infoLevel:${infoLevel} message:${message} stackTrace:${infoStack}`;
+    const yellow = '\x1b[33;20m';
+    const green = '\x1b[32;20m';
+    const reset = '\x1b[0m';
+
+    return `${yellow}infoTime${reset}:${infoTime} ${yellow}infoLabel${reset}:${infoLabel} ${yellow}infoLevel${reset}:${infoLevel} ${yellow}message${reset}:${green}${message}${reset} ${yellow}stackTrace${reset}:${infoStack}`;
   });
 };
 

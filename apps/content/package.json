@@ -8,7 +8,7 @@
     "yarn": "~3.2"
   },
   "scripts": {
-    "build": "nest build -c nest-cli.json -p tsconfig.json",
+    "build": "nest build -c nest-cli.json",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start --entryFile apps/content/src/main",
     "start:dev": "nest start --entryFile apps/content/src/main --watch",
@@ -22,6 +22,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@make.org/logger": "workspace:^",
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
@@ -84,6 +85,7 @@
     "seed": "ts-node prisma/seed.ts"
   },
   "_moduleAliases": {
-    "@make.org/content": "./dist/apps/content"
+    "@make.org/content": "./dist/apps/content",
+    "@make.org/logger": "./dist/package/logger"
   }
 }

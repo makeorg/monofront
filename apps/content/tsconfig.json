@@ -2,7 +2,8 @@
   "extends": "../../tsconfig.json",
   "include": [
     "src/**/*",
-    "prisma/**/*"
+    "prisma/**/*",
+    "../../package/logger"
   ],
   "compilerOptions": {
     "rootDirs": ["./src", "./prisma"],
@@ -15,7 +16,7 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
+    "baseUrl": "./types/index",
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
@@ -25,5 +26,8 @@
     "noFallthroughCasesInSwitch": false,
     "disableSourceOfProjectReferenceRedirect": true,
     "resolveJsonModule": true,
-  }
+  },
+  "references": [
+    { "path": "../../package/logger" }
+  ]
 }

@@ -5,10 +5,13 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from '@make.org/content/src/app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { env } from '@make.org/content/src/env';
-import { Logger } from '@nestjs/common';
+import { Logger as MakeLogger } from '@make.org/content/src/logger';
+import { Logger as NestLogger } from '@nestjs/common';
 
 const bootstrap = async () => {
-  const app = await NestFactory.create(AppModule);
+  const logger = env.isProduction() ? new MakeLogger() : new NestLogger();
+
+  const app = await NestFactory.create(AppModule, { logger });
 
   const config = new DocumentBuilder()
     .setTitle('Make content')
@@ -21,7 +24,7 @@ const bootstrap = async () => {
   SwaggerModule.setup('api', app, document);
   const port = env.port() || 3000;
   if (port) {
-    Logger.log(`Start on PORT ${port}`, 'InstanceLoader');
+    logger.log(`PORT from env:${port}`, 'InstanceLoader');
     await app.listen(port);
   } else {
     throw new Error('PORT env is not defined. Server not start.');

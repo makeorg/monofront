@@ -11,13 +11,13 @@ RUN apk add --no-cache libc6-compat
 RUN apk --no-cache add git
 
 COPY ["package*.json", "yarn.lock", ".yarnrc.yml", "./"]
+COPY ["package/logger/package*.json", "./package/logger/"]
 COPY ["apps/content/package*.json", "./apps/content/"]
 COPY [".yarn", "./.yarn"]
 
 RUN ["corepack", "enable", "yarn"]
 RUN ["corepack", "prepare"]
 
-RUN ["yarn", "workspaces", "focus", "@make.org/content"]
 
 ############
 # Dev
@@ -63,7 +63,6 @@ COPY --from=base-production /usr/app/apps/content/dist ./dist
 COPY --from=base-production /usr/app/apps/content/package.json ./package.json
 COPY --from=base-production /usr/app/apps/content/ecosystem.config.cjs ./ecosystem.config.cjs
 COPY --from=base-production /usr/app/node_modules ./node_modules
-
 
 EXPOSE 8000
 
