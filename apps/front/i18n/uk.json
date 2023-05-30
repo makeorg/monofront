@@ -1008,8 +1008,6 @@
       "proposals": {
         "controversials_title": "Найсуперечливіші пропозиції",
         "controversials_description": "Суперечливі пропозиції демонструють значний розкол у суспільстві: загалом їхня підтримка так само велика, як і однозначне несприйняття.",
-        "rejected": "Пропозиції з найнижчим рівнем підтримки",
-        "rejected_results": "{{disagree}}% проти, з яких {{no_way}}% категорично проти",
         "controversials_agree": "{{count}}% за",
         "controversials_disagree": "{{count}}% проти"
       },

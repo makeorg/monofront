@@ -1,15 +1,10 @@
 import React from 'react';
 import i18n from 'i18next';
-import { QuestionResultsType } from '@make.org/types';
 import { SkipLink } from '@make.org/ui/elements/MainElements';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { IDS } from '@make.org/types/enums';
 
-type Props = {
-  questionResults: QuestionResultsType;
-};
-
-export const ResultsSkipLinks: React.FC<Props> = ({ questionResults }) => (
+export const ResultsSkipLinks: React.FC = () => (
   <UnstyledListStyle>
     <li>
       <SkipLink as="a" href="#consultation_nav">
@@ -57,27 +52,11 @@ export const ResultsSkipLinks: React.FC<Props> = ({ questionResults }) => (
       </SkipLink>
     </li>
     <li>
-      <SkipLink as="a" href={`#${IDS.RESULTS_REJECTED}`}>
-        {i18n.t('skip_links.dynamic_section', {
-          name: i18n.t('consultation.results.proposals.rejected'),
-        })}
-      </SkipLink>
-    </li>
-    <li>
       <SkipLink as="a" href={`#${IDS.RESULTS_PARTICIPATION}`}>
         {i18n.t('skip_links.dynamic_section', {
           name: i18n.t('consultation.results.deprecated.participation.title'),
         })}
       </SkipLink>
     </li>
-    {questionResults && questionResults.reports && (
-      <li>
-        <SkipLink as="a" href={`#${IDS.RESULTS_REPORT}`}>
-          {i18n.t('skip_links.dynamic_section', {
-            name: i18n.t('consultation.results.download.deprecated_title'),
-          })}
-        </SkipLink>
-      </li>
-    )}
   </UnstyledListStyle>
 );

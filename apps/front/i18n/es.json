@@ -989,8 +989,6 @@
       "proposals": {
         "controversials_title": "Las propuestas más polémicas",
         "controversials_description": "Las propuestas \"polémicas\" reflejan una importante división en la sociedad: en general, suelen contar tanto con un fuerte apoyo como con un claro rechazo.",
-        "rejected": "Las propuestas con un mayor rechazo",
-        "rejected_results": "{{disagree}}% en contra, de los cuales {{no_way}}% para nada",
         "controversials_agree": "{{count}}% a favor",
         "controversials_disagree": "{{count}}% en contra"
       },

@@ -1008,8 +1008,6 @@
       "proposals": {
         "controversials_title": "Nejkontroverznější návrhy",
         "controversials_description": "„Kontroverzní“ návrhy svědčí o velkém rozkolu ve společnosti: obecně získávají stejně silnou podporu jako jasné odmítnutí.",
-        "rejected": "Návrhy s nejméně hlasy",
-        "rejected_results": "{{disagree}}% proti z čehož {{no_way}}% hlavně to ne",
         "controversials_agree": "{{count}} % pro",
         "controversials_disagree": "{{count}} % proti"
       },

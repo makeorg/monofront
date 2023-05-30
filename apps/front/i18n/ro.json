@@ -989,8 +989,6 @@
       "proposals": {
         "controversials_title": "Propunerile cele mai controversate",
         "controversials_description": "Propunerile “controversate” reflectă o divizare semnificativă în rândul societății: în general, acestea atrag atât un sprijin puternic, cât și multe respingeri.",
-        "rejected": "Propunerile cu cele mai multe respingeri",
-        "rejected_results": "{{disagree}}% dezacord dintre care {{no_way}}% în niciun caz",
         "controversials_agree": "{{count}}% pro",
         "controversials_disagree": "{{count}}% contra"
       },

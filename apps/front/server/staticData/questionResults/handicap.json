@@ -1,20 +1,5 @@
 {
     "context": "Make.org a lancé en mai 2019 sa Grande Cause dédiée au handicap. Pendant plus de trois mois, des centaines de milliers de citoyens ont été invités à répondre à la question \"Comment la société peut-elle garantir une vraie place aux personnes handicapées ?\" en proposant leurs solutions et en votant sur celles des autres. Grâce aux consensus identifiés dans cette consultation, entreprises, associations, citoyens et institutions partenaires de Make.org ont bâti un grand plan d'actions concrètes issues de la société civile en faveur des personnes handicapées. Pour découvrir ce plan, cliquez sur le lien ci-dessous.",
-    "reports": [{
-        "type": "document pdf",
-        "path": "/reports/operations/handicap/2020_02-Grande_Cause_Handicap-Rapport.pdf",
-        "size": "5,2 Mo"
-    },{
-        "type": "document word",
-        "path": "/reports/operations/handicap/2020_02-Grande_Cause_Handicap-Rapport.xml",
-        "size": "459 Ko"
-    }],
-    "key_figures": {
-        "reach": 5100000,
-        "participants": 274600,
-        "proposals": 7172,
-        "votes": 953000
-    },
     "top_ideas": [
         {
             "name": "Communiquer, informer, sensibiliser",
@@ -155,20 +140,6 @@
             "like_it": 9,
             "disagree": 38,
             "no_way": 16
-        }
-    ],
-    "rejected": [
-        {
-            "author": "Olivier",
-            "content": "Il faut fermer tous les établissements spécialisés et transférer les budgets du médico-social vers l'Education Nationale",
-            "disagree": 51,
-            "no_way": 57
-        },
-        {
-            "author": "Thierry",
-            "content": "Il faut développer les lieux de vie pour personnes handicapées, et que ces lieux de vie soient financés par les pensionnaires eux-mêmes",
-            "disagree": 32,
-            "no_way": 34
         }
     ],
     "cartography": [

@@ -1,10 +1,5 @@
 {
     "context": "Le CESE (Conseil Economique, Social et Environnemental) a lancé une consultation citoyenne consacrée à l'avenir du système hospitalier. Cette consultation a permis d'identifier les principales priorités des citoyens pour l'hôpital de demain, sous la forme de 22 consensus réunis en 7 axes. Les conclusions de la consultation vont alimenter le Ségur de la santé ainsi qu’un avis du CESE qui sera remis au gouvernement.",
-    "key_figures": {
-        "participants": 68824,
-        "proposals": 4119,
-        "votes": 519955
-    },
     "top_ideas": [
         {
             "name": "Moyens et conditions de travail",
@@ -246,62 +241,6 @@
             "like_it": 6,
             "disagree": 22,
             "no_way": 9
-        }
-    ],
-    "rejected": [
-        {
-            "author": "Franck",
-            "content": "Il faut laisser à l’hôpital public les pathologies très lourdes ou très rares et le reste dans le privé ",
-            "disagree": 74,
-            "no_way": 45
-        },
-        {
-            "author": "Ognjen",
-            "content": "Il faut réduire les frais en radiologie en fournissant au patient que le diagnostic sans la radio ",
-            "disagree": 40,
-            "no_way": 21
-        },
-        {
-            "author": "Philippe",
-            "content": "Il faut augmenter le temps de travail des soignants pour augmenter les salaires, 35h c'est beaucoup trop peu pour bien suivre les patients ",
-            "disagree": 52,
-            "no_way": 28
-        },
-        {
-            "author": "Didier",
-            "content": "Il faut que l'État arrête de se mêler de la gestion de la santé des français.",
-            "disagree": 56,
-            "no_way": 33
-        },
-        {
-            "author": "Gisèle",
-            "content": "Il faut annuler les charges sociales des bas salaires du personnel soignant et annexes (ex: personnel entretien) pour revaloriser le salaire",
-            "disagree": 36,
-            "no_way": 16
-        },
-        {
-            "author": "Noémie",
-            "content": "Il faut supprimer la médecine libérale : en pratique, tous les médecins sont déjà salariés de la sécurité sociale.",
-            "disagree": 47,
-            "no_way": 28
-        },
-        {
-            "author": "Christian",
-            "content": "Il faut sur l'hôpital, que les syndicats de tous bords ne viennent pas parasiter le débat ! Ils ne font pas avancer les choses",
-            "disagree": 33,
-            "no_way": 20
-        },
-        {
-            "author": "Gérard",
-            "content": "Il faut que l'Hôpital public adopte les bonnes pratiques d'organisation et de gestion des plus performantes Cliniques privées.",
-            "disagree": 43,
-            "no_way": 25
-        },
-        {
-            "author": "Laurent",
-            "content": "Il faut transformer son statut d’établissement public en ESPIC pour le rendre plus agile sur le territoire ",
-            "disagree": 21,
-            "no_way": 11
         }
     ],
     "cartography": [

@@ -1,10 +1,5 @@
 {
     "context": "Consultation citoyenne réalisée par Make.org du 2022-10-11 au 2022-11-20, autour de la question: Les Dialogues Parisiens : Comment bien vivre à Paris demain ?",
-    "key_figures": {
-        "visitors": 172666,
-        "votes": 2529775,
-        "proposals": 10167
-    },
     "top_ideas": [
         {
             "name": "Mobilités",
@@ -288,7 +283,6 @@
             "votes": 450
         }
     ],
-    "rejected": [],
     "cartography": [
         {
             "type": "pie",

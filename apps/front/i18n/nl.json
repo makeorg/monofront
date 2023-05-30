@@ -976,8 +976,6 @@
       "proposals": {
         "controversials_title": "De meest controversiële voorstellen",
         "controversials_description": "De ‘controversiële’ voorstellen laten een grote maatschappelijke verdeeldheid zien: over het algemeen is er evenveel steun voor als voor een duidelijke verwerping ervan.",
-        "rejected": "De meest verworpen voorstellen",
-        "rejected_results": "{{disagree}}% tegen waarvan {{no_way}}% zeker niet",
         "controversials_agree": "{{count}}% voor",
         "controversials_disagree": "{{count}}% tegen"
       },

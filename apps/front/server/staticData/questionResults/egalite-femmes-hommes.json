@@ -1,10 +1,5 @@
 {
     "context": "Consultation citoyenne réalisée par Make.org pour le ministère de l'Economie et des Finances du 03/12/2019 au 25/01/2020, autour de la question : \"Comment assurer l'égalité femmes-hommes dans l'économie ?\"",
-    "key_figures": {
-        "participants": 79400,
-        "proposals": 3579,
-        "votes": 549000
-    },
     "top_ideas": [
         {
             "name": "Parentalité",
@@ -124,32 +119,6 @@
             "content": "Il faut instaurer un revenu pour les femmes s'occupant de leur foyer/enfants : reconnaître leur travail (éducation, organisation famille)",
             "agree": 38,
             "disagree": 33
-        }
-    ],
-    "rejected": [
-        {
-            "author": "Sophie",
-            "content": "Il faut imposer un quota minimum d'un sexe (40 pct) dans toutes les grandes écoles surtout d'ingénieurs",
-            "disagree": 72,
-            "no_way": 60
-        },
-        {
-            "author": "Leo",
-            "content": "Il faut ne plus faire du genre un point central de l'identité administrative (sur la CNI par exemple ou sur l'acte de naissance).",
-            "disagree": 45,
-            "no_way": 53
-        },
-        {
-            "author": "Laurence",
-            "content": "Il faut développer l'écriture inclusive dans les organisations publiques et privées",
-            "disagree": 44,
-            "no_way": 49
-        },
-        {
-            "author": "Robert",
-            "content": "Il faut durcir les conditions d'attribution de la pension de réversion afin qu'elle ne soit pas désincitative au travail",
-            "disagree": 23,
-            "no_way": 60
         }
     ],
     "cartography": [

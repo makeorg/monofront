@@ -995,8 +995,6 @@
       "proposals": {
         "controversials_title": "A legvitatottabb javaslatok",
         "controversials_description": "A „vitatott\" javaslatok a társadalom jelentős megosztottságát tükrözik: általában ugyanannyian támogatják, mint amennyien elutasítják őket.",
-        "rejected": "A leginkább elutasított javaslatok",
-        "rejected_results": "{{disagree}}% ellene szavazat, ebből {{no_way}}% nem lényeges",
         "controversials_agree": "{{count}}% mellette",
         "controversials_disagree": "{{count}}% ellene"
       },

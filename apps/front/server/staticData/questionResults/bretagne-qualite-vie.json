@@ -1,10 +1,5 @@
 {
     "context": "La Bretagne est la première région de France où il fait bon vivre. Ses habitants se sont exprimés pour faire de ce territoire d'exception un endroit profitable pour chacun et améliorer le cadre de vie breton, que ce soit dans les villes, sur la côte ou en campagne !",
-    "key_figures": {
-        "participants": 29486,
-        "proposals": 602,
-        "votes": 184604
-    },
     "top_ideas": [
         {
             "name": "Qualité de vie",
@@ -116,26 +111,6 @@
             "like_it": 17,
             "disagree": 20,
             "no_way": 9
-        }
-    ],
-    "rejected": [
-        {
-            "author": "Enora",
-            "content": "Il faut agrandir l’aéroport de Brest.",
-            "disagree": 36,
-            "no_way": 18
-        },
-        {
-            "author": "Alexandre",
-            "content": "Il faut réguler le tourisme car cela devient invivable l'été.",
-            "disagree": 36,
-            "no_way": 17
-        },
-        {
-            "author": "Aurelien",
-            "content": "Il faut que la Bretagne retrouve son indépendance.",
-            "disagree": 50,
-            "no_way": 21
         }
     ],
     "cartography": [

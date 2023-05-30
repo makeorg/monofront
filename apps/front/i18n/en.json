@@ -793,8 +793,6 @@
       },
       "proposals": {
         "controversials_title": "Most controversial proposals",
-        "rejected": "Most-rejected proposals",
-        "rejected_results": "{{disagree}}% 'I disagree' including {{no_way}}% 'No way!'",
         "controversials_agree": "{{count}}% 'I agree'",
         "controversials_disagree": "{{count}}% 'I disagree'",
         "controversials_description": "“Controversial” ideas reflect a significant division in society: they are both strongly supported and strongly rejected."

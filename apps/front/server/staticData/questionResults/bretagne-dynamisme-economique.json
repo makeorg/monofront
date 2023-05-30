@@ -1,10 +1,5 @@
 {
     "context": "La Bretagne profite d’un taux d’emploi élevé et d’un taux de chômage inférieur à la moyenne nationale. Les Bretons ont partagé leurs idées pour en faire un bassin d’emploi encore plus dynamique et porteur de perspectives pour les salariés, les indépendants, les jeunes, les personnes sans emploi ou encore les entreprises...",
-    "key_figures": {
-        "participants": 21950,
-        "proposals": 682,
-        "votes": 98494
-    },
     "top_ideas": [
         {
             "name": "Emploi",
@@ -128,32 +123,6 @@
             "like_it": 11,
             "disagree": 43,
             "no_way": 11
-        }
-    ],
-    "rejected": [
-        {
-            "author": "Marie",
-            "content": "Il faut faire un aéroport international.",
-            "disagree": 51,
-            "no_way": 29
-        },
-        {
-            "author": "Dylan",
-            "content": "Il faut instaurer une taxe au kilomètre parcouru afin de favoriser les produits et matériaux locaux, et donc les emplois locaux.",
-            "disagree": 34,
-            "no_way": 14
-        },
-        {
-            "author": "Fabien ",
-            "content": "Il faut une réunification et une indépendance de la Bretagne.",
-            "disagree": 45,
-            "no_way": 25
-        },
-        {
-            "author": "Jules",
-            "content": "Il faut donner moins d’aides.",
-            "disagree": 48,
-            "no_way": 23
         }
     ],
     "cartography": [

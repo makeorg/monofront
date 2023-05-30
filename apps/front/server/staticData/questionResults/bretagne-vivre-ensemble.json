@@ -1,10 +1,5 @@
 {
     "context": "La solidarité est une condition du vivre ensemble qui s’incarne dans la culture bretonne : solidarité entre les générations, lutte contre l'exclusion au travail ou à l’école, accès aux services publics, dynamisme des centres-villes... Les Bretons ont partagé leurs idées pour renforcer la cohésion sociale et la solidarité en Bretagne.",
-    "key_figures": {
-        "participants": 25453,
-        "proposals": 536,
-        "votes": 120995
-    },
     "top_ideas": [
         {
             "name": "Solidarité",
@@ -110,26 +105,6 @@
             "like_it": 10,
             "disagree": 20,
             "no_way": 7
-        }
-    ],
-    "rejected": [
-        {
-            "author": "Gabriel ",
-            "content": "Il faut arrêter de soutenir financièrement l'enseignement du Breton qui est sectaire, clivant, élitiste, rétrograde.",
-            "disagree": 68,
-            "no_way": 44
-        },
-        {
-            "author": "Ron",
-            "content": "Il faut proposer des aides au logement à ceux qui sont nés sur Rennes en priorité.",
-            "disagree": 70,
-            "no_way": 32
-        },
-        {
-            "author": "Jean-pol",
-            "content": "Il faut un contrôle strict des personnes voulant s'installer en Bretagne afin de garder un caractère Breton au pays.",
-            "disagree": 57,
-            "no_way": 34
         }
     ],
     "cartography": [

@@ -1008,8 +1008,6 @@
       "proposals": {
         "controversials_title": "Prieštaringiausi pasiūlymai",
         "controversials_description": "„Prieštaringi“ pasiūlymai atspindi didelį visuomenės susiskaldymą: apskritai jie sulaukia ir didelio palaikymo, ir kategoriško atmetimo.",
-        "rejected": "Dažniausiai atmetami pasiūlymai",
-        "rejected_results": "{{disagree}} % prieš, iš kurių {{no_way}} % visai nepriimtina",
         "controversials_agree": "{{count}} % už",
         "controversials_disagree": "{{count}} % prieš"
       },

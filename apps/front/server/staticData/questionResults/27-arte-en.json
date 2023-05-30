@@ -1,10 +1,5 @@
 {
     "context": "Citizen consultation carried out by Make.org from 2022-06-23 to 2022-12-22, around the question: As European citizens, how can we act in the face of the future challenges that await us (climate, health, security, food...)?",
-    "key_figures": {
-        "visitors": 37465,
-        "votes": 743131,
-        "proposals": 7433
-    },
     "top_ideas": [
         {
             "name": "Climate change and environment",
@@ -241,7 +236,6 @@
             "votes": 184
         }
     ],
-    "rejected": [],
     "cartography": [
         {
             "type": "pie",

@@ -1008,8 +1008,6 @@
       "proposals": {
         "controversials_title": "Najkontroverznejšie návrhy",
         "controversials_description": "„Kontroverzné“ návrhy odrážajú výrazné rozdelenie spoločnosti: celkovo majú silnú podporu aj jednoznačný nesúhlas.",
-        "rejected": "Najviac zamietnutých návrhov",
-        "rejected_results": "{{disagree}}% proti z toho {{no_way}}% nevhodné",
         "controversials_agree": "{{count}}% za",
         "controversials_disagree": "{{count}}% proti"
       },

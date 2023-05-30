@@ -976,8 +976,6 @@
       "proposals": {
         "controversials_title": "Най-спорните предложения",
         "controversials_description": "\"Спорните\" предложения показват значително разделение в обществото: като цяло има толкова подкрепа за тях, колкото и за категоричното им отхвърляне.",
-        "rejected": "Най-отхвърляните предложения",
-        "rejected_results": "{{disagree}}% против, от които {{no_way}}% със сигурност не",
         "controversials_agree": "{{count}}% за",
         "controversials_disagree": "{{count}}% против"
       },

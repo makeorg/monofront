@@ -1,10 +1,5 @@
 {
   "context": "Consultation citoyenne réalisée par Make.org du 2022-09-21 au 2022-11-16, autour de la question: Quelles solutions pour faire des économies d’énergie au quotidien ?",
-  "key_figures": {
-    "visitors": 75201,
-    "votes": 405458,
-    "proposals": 1491
-  },
   "top_ideas": [
     {
       "name": "Éclairages publics et commerciaux",
@@ -212,7 +207,7 @@
       "votes": 296
     }
   ],
-  "rejected": [],
+  
   "cartography": [
     {
       "type": "pie",

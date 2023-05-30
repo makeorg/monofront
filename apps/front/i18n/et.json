@@ -995,8 +995,6 @@
       "proposals": {
         "controversials_title": "Kõige vastuolulisemad ettepanekud",
         "controversials_description": "„Vastuolulised” ettepanekud peegeldavad suurt lõhet ühiskonnas, saades üldiselt võrdsel arvu poolt- ja vastuhääli.",
-        "rejected": "Kõige enam tagasilükatud ettepanekud",
-        "rejected_results": "{{disagree}}% vastu, neist {{no_way}}% mitte mingil juhul",
         "controversials_agree": "{{count}}% poolt",
         "controversials_disagree": "{{count}}% vastu"
       },

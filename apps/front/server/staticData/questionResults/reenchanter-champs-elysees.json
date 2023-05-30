@@ -1,10 +1,5 @@
 {
     "context": "Le Comité Champs-Elysées (association qui réunit les acteurs culturels et économiques de l’avenue : musées, théâtres, cinémas, foncières, enseignes et commerces indépendants) a lancé une consultation citoyenne consacrée à l'avenir des Champs-Elysées. Elle a permis d'identifier 6 grands consensus citoyens qui peuvent se lire aussi comme une synthèse des attentes des Franciliens sur la ville de demain. Les conclusions de la consultation sont remis à l'ensemble des candidats à l'élection municipale 2020.",
-    "key_figures": {
-        "participants": 96762,
-        "proposals": 2067,
-        "votes": 448432
-    },
     "top_ideas": [
         {
             "name": "Aménagements urbains et paysagés",
@@ -125,26 +120,6 @@
             "like_it": 14,
             "disagree": 33,
             "no_way": 14
-        }
-    ],
-    "rejected": [
-        {
-            "author": "Jean-Pierre",
-            "content": "Il faut garder les Champs tels qu'ils sont, ce serait une hérésie de les transformer en bois de Boulogne !",
-            "disagree": 46,
-            "no_way": 19
-        },
-        {
-            "author": "Bernard",
-            "content": "Il faut supprimer les terrasses qui empiètent sur la partie piétonne",
-            "disagree": 57,
-            "no_way": 31
-        },
-        {
-            "author": "Arnaud ",
-            "content": "Il faut un joli tramway high-tech zéro émission CO2 roulant sur du gazon. Il serait relié et roulerait également au milieu du périphérique.",
-            "disagree": 53,
-            "no_way": 23
         }
     ],
     "cartography": [

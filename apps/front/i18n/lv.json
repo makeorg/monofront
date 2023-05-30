@@ -995,8 +995,6 @@
       "proposals": {
         "controversials_title": "Vispretrunīgākie priekšlikumi",
         "controversials_description": "\"Pretrunīgie\" priekšlikumi atspoguļo būtisku sabiedrības šķelšanos: kopumā tiem ir gan spēcīgs atbalsts, gan nepārprotams noraidījums.",
-        "rejected": "Visvairāk noraidītie priekšlikumi",
-        "rejected_results": "{{disagree}}% “pret”, no kuriem {{no_way}}% “kategoriski pret”",
         "controversials_agree": "{{count}}% par",
         "controversials_disagree": "{{count}}% pret"
       },

@@ -1,10 +1,5 @@
 {
     "context": "Consultation citoyenne réalisée par Make.org du 2021-11-29 au 2022-01-16, autour de la question: Comment l'Etat, les entreprises et les associations peuvent-ils mettre fin à l'extrême pauvreté et aux inégalités dans le monde ?",
-    "key_figures": {
-        "participants": 23658,
-        "votes": 166610,
-        "proposals": 877
-    },
     "top_ideas": [
         {
             "name": "Finance et fiscalité",
@@ -224,7 +219,6 @@
             "votes": 183
         }
     ],
-    "rejected": [],
     "cartography": [
         {
             "type": "pie",

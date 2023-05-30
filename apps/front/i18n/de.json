@@ -987,8 +987,6 @@
       "proposals": {
         "controversials_title": "Die umstrittensten Vorschläge",
         "controversials_description": "Die umstrittensten Vorschläge spiegeln eine große Spaltung der Gesellschaft wider: Sie werden insgesamt sowohl stark unterstützt als auch klar abgelehnt.",
-        "rejected": "Die am meisten abgelehnten Vorschläge",
-        "rejected_results": "{{disagree}} % dagegen, davon {{no_way}} % auf keinen Fall",
         "controversials_agree": "{{count}} % dafür",
         "controversials_disagree": "{{count}} % dagegen"
       },

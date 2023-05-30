@@ -1,10 +1,5 @@
 {
     "context": "Consultation citoyenne réalisée par Make.org du 2022-03-29 au 2022-06-19, autour de la question: Ensemble, comment pouvons-nous transformer les rues des grandes villes pour faire face aux enjeux du XXIe siècle ?",
-    "key_figures": {
-        "visitors": 25411,
-        "votes": 204689,
-        "proposals": 783
-    },
     "top_ideas": [
         {
             "name": "Mobilités",
@@ -221,7 +216,6 @@
         }
     ],
 
-    "rejected": [],
     "cartography": [
         {
             "type": "pie",

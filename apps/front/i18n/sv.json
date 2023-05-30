@@ -995,8 +995,6 @@
       "proposals": {
         "controversials_title": "De mest omstridda förslagen",
         "controversials_description": "De ”omstridda” förslagen visar på en stor spricka i samhället. De får lika mycket starkt stöd som tydliga avståndstaganden.",
-        "rejected": "De mest förkastade förslagen",
-        "rejected_results": "{{disagree}}% mot varav {{no_way}} % absolut inte",
         "controversials_agree": "{{count}}% för",
         "controversials_disagree": "{{count}}% emot"
       },

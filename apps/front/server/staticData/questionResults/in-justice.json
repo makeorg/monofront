@@ -1,10 +1,5 @@
 {
     "context": "Consultation citoyenne réalisée par Make.org du 2022-01-04 au 2022-02-21, autour de la question: Comment favoriser l'accès au droit pour lutter contre les injustices ?",
-    "key_figures": {
-      "participants": 25990,
-      "votes": 134389,
-      "proposals": 1056
-    },
     "top_ideas": [
       {
         "name": "Fonctionnement de la justice",
@@ -256,7 +251,6 @@
         "votes": 143
       }
     ],
-    "rejected": [],
     "cartography": [
       {
         "type": "pie",

@@ -1,10 +1,5 @@
 {
   "context": "Cette démarche a réaffirmé certains des consensus issus de la consultation réalisée pour la Grande Cause \"Mieux prendre soin de nos aînés\" en 2019. En même temps, elle a mis en avant des nouvelles priorités citoyennes, notamment autour de sujets comme l'isolement, l'habitat ou la place des aidants. Ses conclusions, concrétisées sous la forme de 10 idées plébiscitées réunies en 4 axes, nourriront par la suite les actions gouvernementales en cours et à venir dans ce domaine.",
-  "key_figures": {
-    "participants": 53877,
-    "proposals": 1788,
-    "votes": 383165
-  },
   "top_ideas": [
     {
       "name": "Lieux de vie",
@@ -168,10 +163,6 @@
       "no_way": 12,
       "votes":866
     }
-
-
-  ],
-  "rejected": [
   ],
   "cartography": [
     {

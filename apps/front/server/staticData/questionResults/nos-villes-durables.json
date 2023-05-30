@@ -1,10 +1,5 @@
 {
     "context": "Consultation citoyenne réalisée par Make.org du 2021-11-09 au 2022-01-07, autour de la question: Comment construire des villes plus durables, pour tous ?",
-    "key_figures": {
-        "participants": 39180,
-        "votes": 212111,
-        "proposals": 1469
-    },
     "top_ideas": [
         {
             "name": "Paysages urbains et cadre de vie",
@@ -226,7 +221,6 @@
             "votes": 132
         }
     ],
-    "rejected": [],
     "cartography": [
         {
             "type": "pie",

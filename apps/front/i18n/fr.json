@@ -1008,8 +1008,6 @@
       "proposals": {
         "controversials_title": "Les propositions les plus controversées",
         "controversials_description": "Les propositions “controversées” témoignent d’un clivage important au sein de la société : elles recueillent globalement autant d’adhésion forte que de net rejet.",
-        "rejected": "Les propositions les plus repoussées",
-        "rejected_results": "{{disagree}}% contre dont {{no_way}}% surtout pas",
         "controversials_agree": "{{count}}% pour",
         "controversials_disagree": "{{count}}% contre"
       },

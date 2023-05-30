@@ -989,8 +989,6 @@
       "proposals": {
         "controversials_title": "Le proposte più controverse",
         "controversials_description": "Le proposte “controverse” testimoniano una forte scissione sociale: raccolgono tante adesioni quanti rifiuti, in modo altrettanto netto.",
-        "rejected": "Le proposte più respinte",
-        "rejected_results": "{{disagree}}% contro di cui {{no_way}}% assolutamente no",
         "controversials_agree": "{{count}}% a favore",
         "controversials_disagree": "{{count}}% contro"
       },

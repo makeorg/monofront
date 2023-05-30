@@ -1,9 +1,5 @@
 import React, { FC } from 'react';
-import {
-  ControversialProposalsType,
-  RejectedProposalsType,
-  QuestionType,
-} from '@make.org/types';
+import { ControversialProposalsType, QuestionType } from '@make.org/types';
 import i18n from 'i18next';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { formatAuthorName } from '@make.org/utils/helpers/stringFormatter';
@@ -24,16 +20,11 @@ import {
 } from './style';
 
 type Props = {
-  proposals: ControversialProposalsType[] | RejectedProposalsType[];
-  isRejected?: boolean;
+  proposals: ControversialProposalsType[];
   question: QuestionType;
 };
 
-export const ProposalsResults: FC<Props> = ({
-  proposals,
-  question,
-  isRejected,
-}) => {
+export const ProposalsResults: FC<Props> = ({ proposals, question }) => {
   const setAvatarSize = (isMobile: boolean) => {
     if (!isMobile) {
       return 38;
@@ -81,33 +72,22 @@ export const ProposalsResults: FC<Props> = ({
           <ResultsProposalContentStyle as="p" lang={question.returnedLanguage}>
             {proposal.content}
           </ResultsProposalContentStyle>
-          {isRejected ? (
-            <ResultsStyle>
-              <ResultsNoWayStyle>
-                {i18n.t('consultation.results.proposals.rejected_results', {
-                  disagree: proposal.disagree,
-                  no_way: proposal.no_way,
-                })}
-              </ResultsNoWayStyle>
-            </ResultsStyle>
-          ) : (
-            <ResultsStyle>
-              <ResultsLikeItStyle>
-                {i18n.t('consultation.results.proposals.controversials_agree', {
-                  count: proposal.agree,
-                })}
-              </ResultsLikeItStyle>
-              <ResultsLightningIconStyle aria-hidden focusable="false" />
-              <ResultsNoWayStyle>
-                {i18n.t(
-                  'consultation.results.proposals.controversials_disagree',
-                  {
-                    count: proposal.disagree,
-                  }
-                )}
-              </ResultsNoWayStyle>
-            </ResultsStyle>
-          )}
+          <ResultsStyle>
+            <ResultsLikeItStyle>
+              {i18n.t('consultation.results.proposals.controversials_agree', {
+                count: proposal.agree,
+              })}
+            </ResultsLikeItStyle>
+            <ResultsLightningIconStyle aria-hidden focusable="false" />
+            <ResultsNoWayStyle>
+              {i18n.t(
+                'consultation.results.proposals.controversials_disagree',
+                {
+                  count: proposal.disagree,
+                }
+              )}
+            </ResultsNoWayStyle>
+          </ResultsStyle>
         </ResultsProposalListItemStyle>
       ))}
     </ResultsProposalsListStyle>

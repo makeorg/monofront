@@ -989,8 +989,6 @@
       "proposals": {
         "controversials_title": "Propozycje, które wzbudziły najwięcej kontrowersji",
         "controversials_description": "Propozycje „kontrowersyjne” odzwierciedlają istotny podział w społeczeństwie: zyskały ostatecznie taką samą ilość głosów zdecydowanego poparcia, co całkowitego odrzucenia.",
-        "rejected": "Propozycje najczęściej odrzucane",
-        "rejected_results": "{{disagree}}% przeciw z czego {{no_way}}% tylko nie to",
         "controversials_agree": "{{count}}% za",
         "controversials_disagree": "{{count}}% przeciw"
       },

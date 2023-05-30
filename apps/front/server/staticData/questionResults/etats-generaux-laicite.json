@@ -1,10 +1,5 @@
 {
   "context": "Consultation citoyenne réalisée par Make.org du 2021-04-20 au 2021-06-19, autour de la question : Comment faire vivre la laïcité au quotidien ?",
-  "key_figures": {
-    "participants": 55636,
-    "proposals": 2371,
-    "votes": 609642
-  },
   "top_ideas": [
     {
       "name": "Sensibilisation et éducation",
@@ -210,7 +205,7 @@
       "votes": 420
     }
   ],
-  "rejected": [],
+  
   "cartography": [
     {
       "type": "pie",

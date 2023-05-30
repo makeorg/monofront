@@ -1,9 +1,4 @@
 {
-    "key_figures": {
-        "participants": 36824,
-        "proposals": 949,
-        "votes": 159999
-    },
     "context": "L’environnement est un enjeu crucial en Bretagne. Les habitants prennent progressivement conscience de la fragilité du territoire et des grandes transformations auxquelles ils doivent faire face : développement durable, agriculture, littoral, activités industrielles, changement d’habitudes... A travers la consultation, ils ont partagé leurs priorités pour agir !",
     "top_ideas": [
         {
@@ -109,32 +104,6 @@
             "agree": 49,
             "like_it": 9,
             "disagree": 27,
-            "no_way": 13
-        }
-    ],
-    "rejected": [
-        {
-            "author": "Claire",
-            "content": "Il faut limiter le tourisme.",
-            "disagree": 51,
-            "no_way": 23
-        },
-        {
-            "author": "Nicolas",
-            "content": "Il faut augmenter fortement (x5 ou x10) les taxes sur les ordures ménagères pour obliger les habitants à passer en mode zéro déchet.",
-            "disagree": 52,
-            "no_way": 17
-        },
-        {
-            "author": "Katy",
-            "content": "Il faut aider les propriétaires de voiture à acheter des électriques en commençant par les îles.",
-            "disagree": 33,
-            "no_way": 12
-        },
-        {
-            "author": "Caroline ",
-            "content": "Il faut interdire les immatriculations de bateaux aux non bretons.",
-            "disagree": 45,
             "no_way": 13
         }
     ],

@@ -28,15 +28,6 @@ export type ControversialProposalsType = {
   no_way: number;
 };
 
-export type RejectedProposalsType = {
-  author: string;
-  avatarUrl: string;
-  content: string;
-  agree: number;
-  disagree: number;
-  no_way: number;
-};
-
 export type PieChartDataType = {
   label: string;
   sublabel?: string;
@@ -86,16 +77,9 @@ export type HistogramType = {
 
 export type QuestionResultsType = {
   context: string;
-  reports?: ReportsType[];
   contact: boolean;
-  key_figures: {
-    participants: number;
-    proposals: number;
-    votes: number;
-  };
   top_ideas: ThemeItemType[];
   controversials: ControversialProposalsType[];
-  rejected: RejectedProposalsType[];
   cartography: PieChartType[];
   participation: Array<HistogramType | PieChartType>;
 };

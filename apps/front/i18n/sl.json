@@ -1021,8 +1021,6 @@
       "proposals": {
         "controversials_title": "Najbolj sporni predlogi",
         "controversials_description": "Takoimenovani »sporni« predlogi so posledica precejšnje razdvojenosti družbe, saj prejmejo približno enako močne podpore in močnega zavračanja.",
-        "rejected": "Najbolj nesprejemljivi predlogi",
-        "rejected_results": "{{disagree}} % proti, od tega {{no_way}} % nikakor ne",
         "controversials_agree": "{{count}} % za",
         "controversials_disagree": "{{count}} % proti"
       },

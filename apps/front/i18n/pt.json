@@ -1008,8 +1008,6 @@
       "proposals": {
         "controversials_title": "As propostas mais polémicas",
         "controversials_description": "As propostas \" polémicas\" refletem uma divisão significativa na sociedade: de um modo geral, há um forte apoio e uma rejeição clara.",
-        "rejected": "As propostas mais rejeitadas",
-        "rejected_results": "{{disagree}}% contra, das quais {{no_way}}% absolutamente nada",
         "controversials_agree": "{{count}}% a favor",
         "controversials_disagree": "{{count}}% contra"
       },

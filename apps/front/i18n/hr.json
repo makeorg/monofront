@@ -1008,8 +1008,6 @@
       "proposals": {
         "controversials_title": "Najkontroverzniji prijedlozi",
         "controversials_description": "„Kontroverznim” prijedlozima svjedoči se o velikom rascjepu unutar društva: općenito ih se jednako podržava koliko i jasno odbija.",
-        "rejected": "Najodbačeniji prijedlozi",
-        "rejected_results": "{{disagree}} % protiv od čega se {{no_way}} % ne slaže nikako",
         "controversials_agree": "{{count}} % za",
         "controversials_disagree": "{{count}} % protiv"
       },

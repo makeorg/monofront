@@ -976,8 +976,6 @@
       "proposals": {
         "controversials_title": "Kiistanalaisimmat ehdotukset",
         "controversials_description": "“Kiistanalaiset ehdotukset” heijastavat huomattavia yhteiskunnallisia mielipide-eroja: ne saavat suunnilleen yhtä paljon merkittävää kannatusta ja vastustusta.",
-        "rejected": "Hylätyimmät ehdotukset",
-        "rejected_results": "{{disagree}} % vastaan. {{no_way}} % näin äänestäneistä käytti luonnehdintaa ”ei missään nimessä”.",
         "controversials_agree": "{{count}}% puolesta",
         "controversials_disagree": "{{count}}% vastaan"
       },

@@ -1,10 +1,5 @@
 {
     "context": "Bürgerkonsultation durchgeführt von Make.org vom 2022-06-23 bis 2022-12-30 rund um die Frage: Wie können wir als europäische Bürger:innen angesichts der kommenden Herausforderungen (Klima, Gesundheit, Sicherheit, Ernährung...) handeln?",
-    "key_figures": {
-      "visitors": 27414,
-      "votes": 441333,
-      "proposals": 1267
-    },
     "top_ideas": [
       {
         "name": "Demokratie in Europa",
@@ -164,7 +159,6 @@
         "votes": 170
       }
     ],
-    "rejected": [],
     "cartography": [
         {
             "type": "pie",

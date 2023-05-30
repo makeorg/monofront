@@ -995,8 +995,6 @@
       "proposals": {
         "controversials_title": "De mest kontroversielle forslag",
         "controversials_description": "De ”kontroversielle” forslag viser, at der findes en betydelig kløft i samfundet: generelt er der lige så stor opbakning som klar afvisning af dem.",
-        "rejected": "De mest afviste forslag",
-        "rejected_results": "{{disagree}}% imod, heraf {{no_way}}% slet ikke",
         "controversials_agree": "{{count}}% for",
         "controversials_disagree": "{{count}}% imod"
       },

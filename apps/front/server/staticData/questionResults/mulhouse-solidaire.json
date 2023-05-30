@@ -1,10 +1,5 @@
 {
     "context": "Cette consultation s'inscrit dans une démarche collective pour définir, avec les citoyens,  la feuille de route de l’action sociale et de la santé pour les 5 prochaines années de la Ville de Mulhouse : Mulhouse solidaire, les états généraux de l’action sociale et de la santé.",
-    "key_figures": {
-        "participants": 8305,
-        "votes": 84840,
-        "proposals": 580
-    },
     "top_ideas": [
         {
             "name": "Aide sociale et prise en charge",
@@ -329,7 +324,6 @@
             "votes": 127
         }
     ],
-    "rejected": [],
     "cartography": [
         {
             "type": "pie",

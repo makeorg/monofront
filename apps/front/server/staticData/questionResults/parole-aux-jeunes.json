@@ -1,10 +1,5 @@
 {
     "context": "Les conclusions de cette consultation ont nourri les travaux de la Conférence pour l’avenir de l’Europe. Elles orientent aussi les priorités de la Présidence française de l’Union européenne entre janvier et juin 2022.",
-    "key_figures": {
-        "participants": 50008,
-        "proposals": 2918,
-        "votes": 338330
-    },
     "top_ideas": [
         {
             "name": "Changement climatique et environnement",
@@ -266,7 +261,6 @@
             "votes": 173
         }
     ],
-    "rejected": [],
     "cartography": [
         {
             "type": "pie",

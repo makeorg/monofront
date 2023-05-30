@@ -995,8 +995,6 @@
       "proposals": {
         "controversials_title": "Οι πιο αμφιλεγόμενες προτάσεις",
         "controversials_description": "Οι «αμφιλεγόμενες» προτάσεις αντικατοπτρίζουν ένα σημαντικό χάσμα στην κοινωνία: συνολικά, λαμβάνουν εξίσου ισχυρή υποστήριξη και απόρριψη.",
-        "rejected": "Οι προτάσεις με τη μικρότερη στήριξη",
-        "rejected_results": "{{disagree}}% κατά, εκ του οποίου {{no_way}}% σε καμία περίπτωση",
         "controversials_agree": "{{count}}% υπέρ",
         "controversials_disagree": "{{count}}% κατά"
       },

@@ -107,7 +107,7 @@ const ResultPage: FC = () => {
       <GliderStylesheet />
       <ThemeProvider theme={question.theme}>
         {metas}
-        <ResultsSkipLinks questionResults={questionResults} />
+        <ResultsSkipLinks />
         <ParticipateHeader />
         {!isDesktop && (
           <ResultsContext

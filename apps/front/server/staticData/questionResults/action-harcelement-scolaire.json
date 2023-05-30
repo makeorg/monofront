@@ -1,10 +1,5 @@
 {
     "context": "La Fondation Ramsay Santé, acteur majeur de la prévention santé en France, a lancé une consultation sur la protection des jeunes face au harcèlement scolaire. Cette consultation a permis d'identifier les priorités citoyennes sur des sujets comme l'éducation scolaire, la formation des enseignants et des professionnels ou la sensibilisation auprès de la population, sous la forme de 10 idées plébiscitées réunies en 5 axes principaux. Ces résultats nourriront les actions de la Fondation Ramsay Santé et de ses partenaires.",
-    "key_figures": {
-        "participants": 13835,
-        "proposals": 395,
-        "votes": 42144
-    },
     "top_ideas": [
         {
             "name": "Milieu scolaire",
@@ -119,7 +114,6 @@
             "disagree": 39
         }
     ],
-    "rejected": [],
     "cartography": [
         {
             "type": "pie",

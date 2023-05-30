@@ -1,10 +1,5 @@
 {
   "context": "Diese Konsultation ist Teil des partizipativen Prozesses der Konferenz zur Zukunft Europas.  Junge Bürgerinnen und Bürger in Deutschland teilten auf der Plattform von Make.org ihre Prioritäten und Wünsche für das Europa von morgen mit. Diese werden in die europäischen und deutschen politischen Entscheidungsprozesse eingebunden.",
-  "key_figures": {
-    "participants": 45015,
-    "votes": 392164,
-    "proposals": 620
-  },
   "top_ideas": [
     {
       "name": "Klimawandel und Umwelt",
@@ -296,7 +291,7 @@
       "votes": 704
     }
   ],
-  "rejected": [],
+  
   "cartography": [
     {
       "type": "pie",

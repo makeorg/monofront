@@ -1,10 +1,5 @@
 {
   "context": "Paris Good Fashion, Groupe Etam, les Galeries Lafayette, Paris Modes Insider et Vestiaire Collective, en partenariat avec le Groupe Eram, Petit Bateau, La Redoute et Who’s Next, ont lancé une consultation citoyenne afin de transformer positivement l'industrie, soutenue par des acteurs publics et privés. Cette consultation, mobilisant massivement la société française, a permis d'identifier les priorités des citoyens pour une mode plus responsable, sous la forme de 14 idées plébiscitées réunies en 5 axes principaux. La coalition des acteurs s'engage à répondre de façon concrète, par des actions fortes, à court, moyen et long terme aux transformations souhaitées sur, par exemple, le recyclage, la relocalisation de la production et les matières et procédés de fabrication. Cette consultation n'est que le début d'un plan d'actions qui va s'étendre jusqu'en 2024, année des Jeux Olympiques, pour faire que la mode en France soit plus responsable.",
-  "key_figures": {
-    "participants": 106638,
-    "proposals": 3319,
-    "votes": 467733
-  },
   "top_ideas": [
     {
       "name": "Recyclage et seconde main",
@@ -184,26 +179,6 @@
       "disagree": 31,
       "no_way": 11,
       "votes": 156
-    }
-  ],
-  "rejected": [
-    {
-      "content": "Il ne faut plus acheter mais louer des vêtements",
-      "author": "Damien",
-      "agree": 10,
-      "like_it": 3,
-      "disagree": 55,
-      "no_way": 4,
-      "votes": 38
-    },
-    {
-      "content": "Il faut interdire les programmes de fidélité",
-      "author": "Cecile",
-      "agree": 12,
-      "like_it": 5,
-      "disagree": 58,
-      "no_way": 27,
-      "votes": 21
     }
   ],
   "cartography": [
