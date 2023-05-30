@@ -1,4 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { IsUUID } from 'class-validator';
+import { IsResultJson } from '../validator';
 
 export class CreateConsultationResultDto {
   @ApiProperty({
@@ -7,6 +9,7 @@ export class CreateConsultationResultDto {
     required: true,
     nullable: false,
   })
+  @IsUUID()
   question_id: string;
   @ApiProperty({
     description: 'Result data as json',
@@ -14,5 +17,6 @@ export class CreateConsultationResultDto {
     required: true,
     nullable: false,
   })
+  @IsResultJson()
   data: object;
 }

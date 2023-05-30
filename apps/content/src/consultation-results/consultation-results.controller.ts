@@ -11,6 +11,7 @@ import {
   HttpCode,
   Query,
   InternalServerErrorException,
+  ParseUUIDPipe,
 } from '@nestjs/common';
 import {
   ApiBearerAuth,
@@ -61,7 +62,7 @@ export class ConsultationResultsController {
   @ApiResponse({ status: HttpStatus.OK, type: ConsultationResult })
   @ApiResponse({ status: HttpStatus.FORBIDDEN, description: 'Forbidden.' })
   @Get(':id')
-  async findOne(@Param('id') id: string) {
+  async findOne(@Param('id', new ParseUUIDPipe()) id: string) {
     const result = await this.consultationResultsService.findOne(id);
     if (!result) {
       throw new NotFoundException(
@@ -79,7 +80,7 @@ export class ConsultationResultsController {
   @ApiResponse({ status: HttpStatus.NOT_FOUND, description: 'Not found.' })
   @Patch(':id')
   update(
-    @Param('id') id: string,
+    @Param('id', new ParseUUIDPipe()) id: string,
     @Body() updateConsultationResultDto: UpdateConsultationResultDto,
   ) {
     return this.consultationResultsService.update(
@@ -101,7 +102,7 @@ export class ConsultationResultsController {
   })
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
-  async remove(@Param('id') id: string) {
+  async remove(@Param('id', new ParseUUIDPipe()) id: string) {
     try {
       await this.consultationResultsService.remove(id);
     } catch (error) {

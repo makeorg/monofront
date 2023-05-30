@@ -6,12 +6,18 @@ import { AppModule } from '@make.org/content/src/app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { env } from '@make.org/content/src/env';
 import { Logger as MakeLogger } from '@make.org/content/src/logger';
-import { Logger as NestLogger } from '@nestjs/common';
+import { Logger as NestLogger, ValidationPipe } from '@nestjs/common';
 
 const bootstrap = async () => {
   const logger = env.isProduction() ? new MakeLogger() : new NestLogger();
 
   const app = await NestFactory.create(AppModule, { logger });
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+      forbidNonWhitelisted: true,
+    }),
+  );
 
   const config = new DocumentBuilder()
     .setTitle('Make content')
