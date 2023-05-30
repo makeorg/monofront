@@ -205,7 +205,7 @@ module.exports = {
           leave out if you want to exclude neither (recommended!)
     */
     exclude : {
-       path: '^(coverage|test|node_modules|dist|package/types)',
+       path: '^(coverage|test|node_modules|dist|package/types|cockroach-data)',
        // dynamic: true
     },
 
