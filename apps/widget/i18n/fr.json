@@ -236,7 +236,7 @@
       "tooltip_title": "En cours de modération",
       "tooltip_description": "Votre proposition sera traitée par nos équipes sous 48h, en attendant vous pouvez la retrouver dès maintenant dans votre profil.",
       "grats": "Félicitations {{name}}, ",
-      "proposal_sent": "votre proposition a été envoyée ",
+      "proposal_sent": "votre proposition a été envoyée ",
       "activate": "Confirmez votre adresse e-mail en un clic ",
       "link": "pour garantir l’authenticité de votre compte. Cliquez sur le lien d’activation qui vous a été envoyé à : {{mail}}",
       "question": "Une question ? Vous pouvez nous contacter à : ",

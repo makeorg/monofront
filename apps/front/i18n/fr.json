@@ -272,9 +272,11 @@
     "max_characters": "caractères maximum",
     "back": "Retour",
     "proposal_count_one": "{{count}} proposition",
+    "proposal_count_many": "",
     "proposal_count_other": "{{count}} propositions",
     "breadcrumbs": "fil d'ariane",
     "million_one": "million",
+    "million_many": "",
     "million_other": "millions",
     "close_panel": "Fermer le panneau déroulant",
     "close": "Fermer"
@@ -297,10 +299,13 @@
     "content": "Contenu de l'idée : ",
     "link": "Voir le détail de l'idée",
     "associated_proposals_one": "{{count}} proposition associée",
+    "associated_proposals_many": "",
     "associated_proposals_other": "{{count}} propositions associées",
     "position_one": "{{ count }} prise de position",
+    "position_many": "",
     "position_other": "{{ count }} prises de position",
     "candidate_one": " de candidat sur cette idée.",
+    "candidate_many": "",
     "candidate_other": " de candidats sur cette idée.",
     "open": "Afficher le score de l'idée",
     "close": "Masquer le score de l’idée",
@@ -450,7 +455,7 @@
       "tooltip_title": "En cours de modération",
       "tooltip_description": "Votre proposition sera traitée par nos équipes sous 48h, en attendant vous pouvez la retrouver dès maintenant dans votre profil.",
       "grats": "Félicitations {{name}}, ",
-      "proposal_sent": "votre proposition a été envoyée ",
+      "proposal_sent": "votre proposition a été envoyée ",
       "activate": "Confirmez votre adresse e-mail en un clic ",
       "link": "pour garantir l’authenticité de votre compte. Cliquez sur le lien d’activation qui vous a été envoyé à : {{mail}}",
       "question": "Une question ? Vous pouvez nous contacter à : ",
@@ -463,6 +468,7 @@
     "disagree": "Pas d'accord",
     "neutral": "Vote neutre",
     "label_one": "{{count}} vote",
+    "label_many": "",
     "label_other": "{{count}} votes",
     "with_percent": "{{votedKey}} : {{votedPercent}}%"
   },
@@ -473,6 +479,7 @@
     "static_total": "Cette proposition a récolté : ",
     "static_repartition": "Avec pour répartition : ",
     "total_one": "Cette proposition a récolté {{count}} vote, avec comme répartition : ",
+    "total_many": "",
     "total_other": "Cette proposition a récolté {{count}} votes, avec comme répartition : ",
     "voted": {
       "agree": "J'ai voté \"D'accord\" sur cette proposition.",
@@ -730,6 +737,7 @@
       "proposal_disagree": "n'est pas d'accord avec cette proposition",
       "and": " et ",
       "hasVoted_one": " a voté sur cette proposition.",
+      "hasVoted_many": "",
       "hasVoted_other": " ont voté sur cette proposition.",
       "sharing_title": "Partagez ce profil"
     }
@@ -808,10 +816,13 @@
       "start_date": "Date de lancement",
       "end_date": "Date de fin de la consultation",
       "remaining_one": "Jour restant",
+      "remaining_many": "",
       "remaining_other": "Jours restants",
       "proposals_one": "Proposition",
+      "proposals_many": "",
       "proposals_other": "Propositions",
       "participant_one": "Participant",
+      "participant_many": "",
       "participant_other": "Participants",
       "progress_title": "Notre objectif de votes",
       "progress_total": "Nombre total de votes",
@@ -907,6 +918,7 @@
       "organisations_proposals": "Proposées par des organisations",
       "no_proposal": "<strong>Aucune proposition</strong>",
       "validated_proposals_one": "<strong>{{count}} proposition validée</strong> correspondant à votre recherche",
+      "validated_proposals_many": "",
       "validated_proposals_other": "<strong>{{count}} propositions validées</strong> correspondant à votre recherche"
     },
     "tabs": {
@@ -970,7 +982,6 @@
         "title": "La méthodologie",
         "description": "La méthodologie repose sur une modération fine des propositions recueillies. Elles sont d’abord soumises à validation au regard de leur conformité à la Charte Make.org, puis classées selon un balisage thématique. Les algorithmes développés par les équipes de Make.org garantissent ensuite à chacune des propositions validées un niveau égal d’exposition, et organisent une compétition entre elles. Grâce à ce roulement permanent, Make.org identifie les propositions faisant le plus consensus auprès des citoyens avant de les analyser et de les regrouper en grandes idées."
       },
-
       "participation": {
         "title": "Les participants à la consultation"
       },
@@ -989,6 +1000,7 @@
       "top_ideas": {
         "skiplink": "Le top des idées émergentes",
         "title_one": "Le top des idées plébiscitées, regroupées en {{count}} axe",
+        "title_many": "",
         "title_other": "Le top des idées plébiscitées, regroupées en {{count}} axes",
         "introduction": "À leur arrivée sur la plateforme, les meilleures propositions des citoyens sont regroupées en grandes idées qui structurent la consultation. Pour classer ces idées, l’algorithme Make.org tient compte des votes « pour » et « contre » ainsi que des mentions « coup de coeur », « réaliste », « banalité » et « surtout pas ! ».",
         "axe_title": "Axe {{count}} : {{name}}"
@@ -1015,8 +1027,10 @@
     "local_actors": {
       "title": "Les associations les plus actives",
       "proposals_one": "{{ count }} proposition",
+      "proposals_many": "",
       "proposals_other": "{{ count }} propositions",
       "votes_one": "{{ count }} vote",
+      "votes_many": "",
       "votes_other": "{{ count }} votes",
       "participate": "Vous êtes une association et souhaitez participer à notre consultation ? {{ contact_us }}",
       "contact_us": "Contactez-nous !",
@@ -1054,10 +1068,13 @@
       "subtitle": "Votre avis compte ! Votez et proposez des solutions pour créer de l'impact sur divers sujets de société et problématiques actuelles.",
       "participate": "Participer",
       "contributors_one": "participant",
+      "contributors_many": "",
       "contributors_other": "participants",
       "proposals_one": "proposition",
+      "proposals_many": "",
       "proposals_other": "propositions",
       "votes_one": "vote",
+      "votes_many": "",
       "votes_other": "votes",
       "empty": "Nous sommes désolés, aucune consultation n'est diponible actuellement dans votre pays."
     },
@@ -1120,14 +1137,17 @@
       "title": "Make.org en quelques chiffres",
       "participants": {
         "subtitle_one": "de participant(e)",
+        "subtitle_many": "",
         "subtitle_other": "de participant(e)s"
       },
       "proposals": {
         "subtitle_one": "proposition déposée",
+        "subtitle_many": "",
         "subtitle_other": "propositions déposées"
       },
       "partners": {
         "subtitle_one": "association & entreprise engagée",
+        "subtitle_many": "",
         "subtitle_other": "associations & entreprises engagées"
       }
     },
@@ -1157,12 +1177,16 @@
       "loading": "Recherche en cours...",
       "no_results": "Aucun résultat",
       "main_results_one": "{{count}} résultat pour « {{term}} »",
+      "main_results_many": "",
       "main_results_other": "{{count}} résultats pour « {{term}} »",
       "proposals_one": "{{count}} proposition pour « {{term}} »",
+      "proposals_many": "",
       "proposals_other": "{{count}} propositions pour « {{term}} »",
       "operations_one": "{{count}} operation pour « {{term}} »",
+      "operations_many": "",
       "operations_other": "{{count}} operations pour « {{term}} »",
       "organisations_one": "{{count}} organisations pour « {{term}} »",
+      "organisations_many": "",
       "organisations_other": "{{count}} organisations pour « {{term}} »",
       "main_results_empty_term": "0 résultat"
     },
@@ -1171,6 +1195,7 @@
       "organisation": "Organisation",
       "operation": "Opération",
       "results_one": "{{count}} résultat",
+      "results_many": "",
       "results_other": "{{count}} résultats",
       "view_all": "Voir tout",
       "no_results": "Nous n'avons trouvé aucun résultat pour votre recherche « {{term}} »",
@@ -1331,6 +1356,7 @@
       "session": "Session",
       "month": "{{count}} mois",
       "year_one": "{{count}} an",
+      "year_many": "",
       "year_other": "{{count}} ans",
       "technicals": {
         "name": "Les cookies techniques :",

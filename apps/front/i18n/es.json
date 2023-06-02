@@ -436,7 +436,7 @@
       "tooltip_title": "En fase de moderación",
       "tooltip_description": "Tu propuesta será procesada por nuestros equipos en un plazo de 48 horas. Mientras tanto, ya puedes consultarla en tu perfil.",
       "grats": "¡Enhorabuena, {{name}}! ",
-      "proposal_sent": "¡Tu propuesta se ha enviado correctamente ",
+      "proposal_sent": "¡Tu propuesta se ha enviado correctamente",
       "activate": "Confirma tu dirección de correo electrónico con un clic ",
       "link": "para garantizar la autenticidad de tu cuenta. Haz clic en el enlace de activación que te hemos enviado a: {{mail}}",
       "question": "¿Tienes una pregunta? Ponte en contacto con nosotros en: ",

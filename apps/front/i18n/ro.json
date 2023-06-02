@@ -1423,8 +1423,8 @@
     "advertising": {
       "title": "Publicitate",
       "description": "Nu puteți face publicitate pentru o anumită marcă sau companie. Totuși, puteți menționa numele unei mărci sau al unei companii doar ca exemplificare.",
-      "refused_card_example": "Trebuie ca produsele producătorilor locali să fie accesibile și să se difuzeze informații privind inovațiile în agricultură.",
-      "validated_card_example": "Trebuie ca produsele producătorilor locali să fie accesibile."
+      "refused_card_example": "Trebuie ca toate companiile să aplice soluțiile propuse de IBM.",
+      "validated_card_example": "Trebuie să nu mai consumăm anumite băuturi carbogazoase foarte dulci, cum ar fi Coca-Cola."
     },
     "multiple_ideas": {
       "title": "Ideile multiple",
@@ -1452,7 +1452,7 @@
     "understandable_language": {
       "text": "Transmiteți un mesaj cât mai clar, folosind un limbaj pe înțelesul tuturor.",
       "refused_card_example": "Trebuie introdus un an de propedeutică la facultate.",
-      "validated_card_example": "Trebuie ca Agenția Națională pentru Sănătate Publică să poată face teste de depistare a cancerului.",
+      "validated_card_example": "Trebuie introdus un an pregătitor înainte de alegerea specializării la facultate.",
       "refused_card_example_2": "Trebuie ca ANSP să poată face teste de depistare a cancerului.",
       "validated_card_example_2": "Trebuie ca Agenția Națională pentru Sănătate Publică să poată face teste de depistare a cancerului."
     },
