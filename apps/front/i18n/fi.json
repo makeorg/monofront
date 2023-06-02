@@ -853,7 +853,7 @@
       "timeline_title_consultation": "Mitkä ovat tämän kuulemisen kohokohdat?",
       "consultation_title": "Kansalaiskuuleminen",
       "consultation_description": "Kaikki kuulemisemme alkavat sillä, että pyydämme kansalaisia kertomaan ideoitaan ja äänestämään.",
-      "consultation_from_to": "Välillä {{startDate}}–{{endDate}}",
+      "consultation_from_to": "Välillä {{startDate}} – {{endDate}}",
       "result_title": "Tulokset",
       "workshop_title": "Kansalaistyöpajat",
       "workshop_link": "Ota meihin yhteyttä osallistuaksesi",
@@ -1051,7 +1051,7 @@
       "coming_results": "Tulokset julkaistaan myöhemmin",
       "empty": "Emme ole tähän mennessä järjestäneet koskaan kuulemista maassasi."
     },
-    "date": "Kuuleminen {{startDate}}–{{endDate}}",
+    "date": "Kuuleminen {{startDate}} – {{endDate}}",
     "browse": "Selaa kuulemisia",
     "see_closed_consultations": "Näytä päättyneet kuulemiset",
     "no_consultations": "Käynnissä ei ole yhtään kuulemista. Pysytään kuitenkin yhteydessä!",

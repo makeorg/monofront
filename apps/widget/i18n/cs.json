@@ -238,7 +238,7 @@
       "other_idea": "Mám jiný nápad",
       "tooltip_title": "Je zpracováván",
       "tooltip_description": "Tvůj návrh bude našimi týmy zpracován do 48 hodin, zatím ho můžeš najít ve svém profilu.",
-      "grats": "Gratulujeme {{name}}, ",
+      "grats": "Gratulujeme, ",
       "proposal_sent": "tvůj návrh byl odeslán ",
       "activate": "Z důvodu ověření pravosti tvého účtu, prosím, potvrď svou e-mailovou adresu. ",
       "link": "Stačí jedno kliknutí. Klikni na aktivační odkaz, který ti byl zaslán na adresu: {{mail}}",
