@@ -1,5 +1,5 @@
 import { AxiosResponse } from 'axios';
-import { ApiService } from './ApiService';
+import { ApiService } from '@make.org/api/ApiService';
 
 const PATH_QUALIFICATION = '/proposals/:proposalId/qualification';
 const PATH_UNQUALIFICATION = '/proposals/:proposalId/unqualification';

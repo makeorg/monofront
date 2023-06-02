@@ -1,4 +1,4 @@
-import SecurityService from '@make.org/api/SecurityService';
+import SecurityService from '@make.org/api/services/SecurityService';
 import { NextFunction, Request, Response } from 'express';
 
 export const secureMiddleware = async (

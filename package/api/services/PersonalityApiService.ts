@@ -1,6 +1,6 @@
 import { ApiServiceHeadersType } from '@make.org/types';
 import { AxiosResponse } from 'axios';
-import { ApiService } from './ApiService';
+import { ApiService } from '@make.org/api/ApiService';
 
 const PERSONALITY_PATH = '/personalities/:personalityId';
 const PERSONALITY_COMMENTS_PATH = '/personalities/:personalityId/comments';

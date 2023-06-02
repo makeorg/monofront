@@ -3,7 +3,7 @@ import {
   CountryWithConsulationsType,
   HomeViewType,
 } from '@make.org/types/View';
-import { ApiService } from './ApiService';
+import { ApiService } from '@make.org/api/ApiService';
 
 // @todo remove it when ready on API side
 const HOMEPAGE_PATH = '/views/home-page/:country';

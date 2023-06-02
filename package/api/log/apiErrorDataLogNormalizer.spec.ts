@@ -1,5 +1,5 @@
-import { apiErrorDataLogNormalizer } from '@make.org/api/apiErrorDataLogNormalizer';
-import { ApiServiceError } from './ApiService/ApiServiceError';
+import { apiErrorDataLogNormalizer } from './apiErrorDataLogNormalizer';
+import { ApiServiceError } from '../ApiService/ApiServiceError';
 
 describe('should normalize api error', () => {
   it('return normalized data from an ApiServiceError', () => {

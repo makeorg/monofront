@@ -28,6 +28,7 @@ import { SecureExpiration } from '@make.org/components/Expiration/Secure';
 import { SessionExpirationWithCoockies } from '@make.org/components/Expiration/Session';
 import { env } from '@make.org/assets/env';
 import { parse } from 'query-string';
+import { ApiServiceClient } from '@make.org/api/ApiService/ApiService.client';
 import { updateDeviceInState } from '../helpers/updateDeviceInState';
 import { Header } from './Header';
 import { Footer } from './Footer';
@@ -38,10 +39,14 @@ import { CanonicalUrl } from './CanonicalUrl';
 import { Hreflang } from './Hreflang';
 import { SortAndFiltersModale } from './Consultation/ExploreFilters/FiltersAndSortModal';
 
+type Props = {
+  apiServiceClient?: ApiServiceClient;
+};
+
 /**
  * Handles App Business Logic
  */
-export const AppContainer: FC = () => {
+export const AppContainer: FC<Props> = ({ apiServiceClient }) => {
   const { dispatch, state } = useAppContext();
   const { device, country, language } = state.appConfig;
   const { showDataPolicy, showSort, showFilters } = state.modal;
@@ -88,47 +93,55 @@ export const AppContainer: FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return (
-    <SecureExpiration>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-ignore: 'assets'remove after upgrade to react18 */}
-      <SessionExpirationWithCoockies>
-        {hasCountry && <CookieModal />}
-        {showDataPolicy && <PrivacyPolicyModal />}
-        {showFiltersOrSortModale && <SortAndFiltersModale />}
-        <ServiceErrorHandler>
-          <ErrorBoundary>
-            {/** page_wrapper id is used to set page background color in usePageBackgroundColor hook */}
+  const withExpiration = (children: JSX.Element) =>
+    apiServiceClient ? (
+      <SecureExpiration>
+        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+        {/* @ts-ignore: 'assets'remove after upgrade to react18 */}
+        <SessionExpirationWithCoockies apiServiceClient={apiServiceClient}>
+          {children}
+        </SessionExpirationWithCoockies>
+      </SecureExpiration>
+    ) : (
+      <SecureExpiration>{children}</SecureExpiration>
+    );
 
-            <div lang={language}>
-              <AppWrapperStyle
-                id="page_wrapper"
-                data-cy-client-loaded={isClientSide}
+  return withExpiration(
+    <>
+      {hasCountry && <CookieModal />}
+      {showDataPolicy && <PrivacyPolicyModal />}
+      {showFiltersOrSortModale && <SortAndFiltersModale />}
+      <ServiceErrorHandler>
+        <ErrorBoundary>
+          {/** page_wrapper id is used to set page background color in usePageBackgroundColor hook */}
+          <div lang={language}>
+            <AppWrapperStyle
+              id="page_wrapper"
+              data-cy-client-loaded={isClientSide}
+            >
+              <CanonicalUrl />
+              <Hreflang />
+              <ModernNormalizeStylesheet />
+              <FontFacesStylesheet />
+              <DefaultStylesheet />
+              <UIThemeStylesheet />
+              <MainSkipLinks />
+              <Header />
+              <AppMainContentStyle
+                id={IDS.MAIN_CONTENT}
+                data-cy-container="main"
+                className={`${NAVIGATION.NAVIGATION_ARIA_CLASS} ${PANEL.PANEL_ARIA_CLASS}`}
               >
-                <CanonicalUrl />
-                <Hreflang />
-                <ModernNormalizeStylesheet />
-                <FontFacesStylesheet />
-                <DefaultStylesheet />
-                <UIThemeStylesheet />
-                <MainSkipLinks />
-                <Header />
-                <AppMainContentStyle
-                  id={IDS.MAIN_CONTENT}
-                  data-cy-container="main"
-                  className={`${NAVIGATION.NAVIGATION_ARIA_CLASS} ${PANEL.PANEL_ARIA_CLASS}`}
-                >
-                  <NotificationBanner />
-                  <Routes />
-                </AppMainContentStyle>
-                <Modal />
-                <Footer />
-              </AppWrapperStyle>
-              <Panel />
-            </div>
-          </ErrorBoundary>
-        </ServiceErrorHandler>
-      </SessionExpirationWithCoockies>
-    </SecureExpiration>
+                <NotificationBanner />
+                <Routes />
+              </AppMainContentStyle>
+              <Modal />
+              <Footer />
+            </AppWrapperStyle>
+            <Panel />
+          </div>
+        </ErrorBoundary>
+      </ServiceErrorHandler>
+    </>
   );
 };

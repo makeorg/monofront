@@ -8,11 +8,13 @@ import {
 import { IApiServiceStrategy } from './index';
 import { ApiServiceShared } from './ApiService.shared';
 import { ApiServiceError } from './ApiServiceError';
-import { refreshToken } from '../OauthRefresh';
+import { refreshToken } from './OauthRefresh';
 
 const RETRIES = 5;
 
-class ApiServiceClient implements IApiServiceStrategy {
+export class ApiServiceClient implements IApiServiceStrategy {
+  _apiServiceShared;
+
   _appname = '';
 
   _language = '';
@@ -53,11 +55,12 @@ class ApiServiceClient implements IApiServiceStrategy {
     ) => Promise<void>
   > = new Map();
 
-  constructor() {
+  constructor(apiUrl: string) {
     this._referrer =
       typeof window !== 'undefined' && !!window.document.referrer
         ? window.document.referrer
         : '';
+    this._apiServiceShared = new ApiServiceShared(apiUrl);
   }
 
   set appname(appname: string) {
@@ -172,32 +175,6 @@ class ApiServiceClient implements IApiServiceStrategy {
     this._afterCallListeners = listeners;
   }
 
-  addbeforeCallListener(
-    identifier: string,
-    listener: (url: string, options: OptionsType) => Promise<void>
-  ): void {
-    this._beforeCallListeners.set(identifier, listener);
-  }
-
-  addAfterCallListener(
-    identifier: string,
-    listener: (
-      url: string,
-      options: Readonly<OptionsType>,
-      responseHeaders: Readonly<ApiServiceHeadersType>
-    ) => Promise<void>
-  ): void {
-    this._afterCallListeners.set(identifier, listener);
-  }
-
-  removeBeforeCallListener(identifier: string): void {
-    this._beforeCallListeners.delete(identifier);
-  }
-
-  removeAfterCallListener(identifier: string): void {
-    this._afterCallListeners.delete(identifier);
-  }
-
   _generateHeaders(
     optionHeaders?: OptionsType['headers']
   ): ApiServiceHeadersType {
@@ -250,7 +227,7 @@ class ApiServiceClient implements IApiServiceStrategy {
     );
 
     try {
-      const response = await ApiServiceShared.callApi(url, {
+      const response = await this._apiServiceShared.callApi(url, {
         ...options,
         headers,
       });
@@ -341,6 +318,38 @@ class ApiServiceClient implements IApiServiceStrategy {
       throw apiServiceError;
     }
   }
-}
 
-export const apiClient = new ApiServiceClient();
+  removeToken(): void {
+    this.token = null;
+  }
+
+  setToken(token: string): void {
+    this.token = token;
+  }
+
+  addbeforeCallListener(
+    identifier: string,
+    listener: (url: string, options: OptionsType) => Promise<void>
+  ): void {
+    this._beforeCallListeners.set(identifier, listener);
+  }
+
+  addAfterCallListener(
+    identifier: string,
+    listener: (
+      url: string,
+      options: Readonly<OptionsType>,
+      responseHeaders: Readonly<ApiServiceHeadersType>
+    ) => Promise<void>
+  ): void {
+    this._afterCallListeners.set(identifier, listener);
+  }
+
+  removeBeforeCallListener(identifier: string): void {
+    this._beforeCallListeners.delete(identifier);
+  }
+
+  removeAfterCallListener(identifier: string): void {
+    this._afterCallListeners.delete(identifier);
+  }
+}

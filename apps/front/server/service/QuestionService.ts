@@ -1,5 +1,5 @@
 import { QuestionType } from '@make.org/types/Question';
-import { QuestionApiService } from '@make.org/api/QuestionApiService';
+import { QuestionApiService } from '@make.org/api/services/QuestionApiService';
 import cache from 'memory-cache';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { getLoggerInstance } from '@make.org/logger';

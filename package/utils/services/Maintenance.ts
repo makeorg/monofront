@@ -1,4 +1,4 @@
-import MaintenanceApiService from '@make.org/api/MaintenanceApiService';
+import MaintenanceApiService from '@make.org/api/services/MaintenanceApiService';
 import { AxiosResponse } from 'axios';
 import { getLoggerInstance } from '@make.org/logger';
 

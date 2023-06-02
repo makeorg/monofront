@@ -9,7 +9,7 @@ import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 import i18n from 'i18next';
 import { StateRoot } from '@make.org/types';
 import { ApiService } from '@make.org/api/ApiService';
-import { apiClient } from '@make.org/api/ApiService/ApiService.client';
+import { ApiServiceClient } from '@make.org/api/ApiService/ApiService.client';
 import { createInitialState } from '@make.org/store/initialState';
 import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
 import { QuestionService } from '@make.org/utils/services/Question';
@@ -21,12 +21,12 @@ import {
 } from '@make.org/utils/helpers/customData';
 import { DateHelper } from '@make.org/utils/helpers/date';
 import { SessionExpiration } from '@make.org/components/Expiration/Session';
-import { PATH_USER_LOGIN } from '@make.org/api/UserApiService';
+import { PATH_USER_LOGIN } from '@make.org/api/services/UserApiService';
 import {
   refreshToken,
   initOauthRefresh,
   OauthResponseType,
-} from '@make.org/api/OauthRefresh';
+} from '@make.org/api/ApiService/OauthRefresh';
 import { LogLevelType } from '@make.org/types/enums/logLevel';
 import { TRANSLATION_COMMON_NAMESPACE } from '@make.org/utils/i18n/constants';
 import { translationRessources } from '../i18n';
@@ -74,6 +74,12 @@ if (env.isDev()) {
 const serverState = window.INITIAL_STATE || initialState;
 
 // Init API service
+const API_URL: string =
+  typeof window !== 'undefined'
+    ? env.apiUrlClientSide() || window?.API_URL_CLIENT_SIDE || ''
+    : env.apiUrlServerSide() || '';
+
+const apiClient = new ApiServiceClient(API_URL);
 ApiService.strategy = apiClient;
 apiClient.appname = 'widget';
 apiClient.refreshTokenCallback = refreshToken;
@@ -233,7 +239,7 @@ const initApp = async (state: StateRoot) => {
       <React.StrictMode>
         <ContextState serverState={store}>
           <BrowserRouter>
-            <SessionExpiration>
+            <SessionExpiration apiServiceClient={apiClient}>
               <App />
             </SessionExpiration>
           </BrowserRouter>

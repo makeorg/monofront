@@ -1,5 +1,5 @@
 import { FirstProposalSequenceType } from '@make.org/types';
-import { QuestionApiService } from '@make.org/api/QuestionApiService';
+import { QuestionApiService } from '@make.org/api/services/QuestionApiService';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { getLoggerInstance } from '@make.org/logger';
 import { getWidgetLocation } from '../../utils/helpers/location';

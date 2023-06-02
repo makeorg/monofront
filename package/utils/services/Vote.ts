@@ -1,5 +1,5 @@
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
-import { VoteApiService } from '@make.org/api/VoteApiService';
+import { VoteApiService } from '@make.org/api/services/VoteApiService';
 import { VoteType } from '@make.org/types';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 

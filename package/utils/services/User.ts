@@ -1,4 +1,4 @@
-import { UserApiService } from '@make.org/api/UserApiService';
+import { UserApiService } from '@make.org/api/services/UserApiService';
 import {
   SearchProposalsType,
   PasswordsType,
@@ -22,9 +22,8 @@ import {
 import { getErrorMessages } from '@make.org/utils/helpers/form';
 import { PROPOSALS_LISTING_LIMIT } from '@make.org/utils/constants/proposal';
 import { USER } from '@make.org/types/enums';
-import { apiClient } from '@make.org/api/ApiService/ApiService.client';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
-import { storeTokens } from '@make.org/api/OauthRefresh';
+import { storeTokens } from '@make.org/api/ApiService/OauthRefresh';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 import { OrganisationService } from './Organisation';
 import { PersonalityService } from './Personality';
@@ -75,7 +74,6 @@ const deleteAccount = async (
 
   try {
     await UserApiService.deleteAccount(userId, password);
-    apiClient.token = null; // @see ApiServiceClient
     success();
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
@@ -202,7 +200,6 @@ const login = async (
     if (response && response.data) {
       const userAuth = response.data;
       storeTokens(userAuth.access_token, userAuth.refresh_token);
-      apiClient.token = userAuth.access_token;
     }
 
     if (success) {
@@ -325,14 +322,12 @@ const myFavourites = async (
 const logout = async (success?: () => void): Promise<void> => {
   try {
     await UserApiService.logout();
-    apiClient.token = null; // @see ApiServiceClient
     if (success) {
       success();
     }
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 401) {
-      apiClient.token = null; // @see ApiServiceClient
       if (success) {
         success();
       }
@@ -362,7 +357,6 @@ const loginSocial = async (
     if (response && response.data) {
       const userAuth = response.data;
       storeTokens(userAuth.access_token, userAuth.refresh_token);
-      apiClient.token = userAuth.access_token;
 
       if (success) {
         success(response.data.account_creation);
@@ -475,7 +469,6 @@ const current = async (unauthorized?: () => void): Promise<UserType | null> => {
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 401) {
-      apiClient.token = null; // @see ApiServiceClient
       if (unauthorized) {
         unauthorized();
       }

@@ -1,7 +1,6 @@
 /* eslint-disable max-classes-per-file */
 import { Logger } from '@make.org/utils/services/Logger';
 import { v4 as uuidv4 } from 'uuid';
-import { env } from '@make.org/assets/env';
 import {
   ApiServiceResponse,
   ErrorResponse,
@@ -20,11 +19,6 @@ const HOSTNAME =
   (typeof window !== 'undefined' && window?.location?.hostname) || null;
 const LOCATION_PARAMS =
   (typeof window !== 'undefined' && window?.location?.search) || '';
-
-const API_URL: string =
-  typeof window !== 'undefined'
-    ? env.apiUrlClientSide() || window?.API_URL_CLIENT_SIDE || ''
-    : env.apiUrlServerSide() || '';
 
 /**
  * handle error for http response
@@ -118,7 +112,14 @@ export const handleErrors = (
   );
 };
 
-class ApiServiceSharedClass {
+export class ApiServiceShared {
+  apiIUrl = '';
+
+  // constructor
+  constructor(apiUrl: string) {
+    this.apiIUrl = apiUrl;
+  }
+
   // eslint-disable-next-line class-methods-use-this
   callApi(url: string, options: OptionsType): Promise<ApiServiceResponse> {
     const paramsQuery = new URLSearchParams(LOCATION_PARAMS).toString();
@@ -142,7 +143,7 @@ class ApiServiceSharedClass {
       });
     }
 
-    const apiUrl = `${API_URL}${url}`;
+    const apiUrl = `${this.apiIUrl}${url}`;
 
     const axiosOptions = {
       method: options.method,
@@ -177,5 +178,3 @@ class ApiServiceSharedClass {
     return response as ApiServiceResponse;
   }
 }
-
-export const ApiServiceShared = new ApiServiceSharedClass();

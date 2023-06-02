@@ -1,8 +1,8 @@
-import { ProposalApiService } from '@make.org/api/ProposalApiService';
+import { ProposalApiService } from '@make.org/api/services/ProposalApiService';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import * as ErrorHandler from '@make.org/utils/services/DefaultErrorHandler';
 
-jest.mock('@make.org/api/ProposalApiService');
+jest.mock('@make.org/api/services/ProposalApiService');
 jest.mock('@make.org/utils/services/DefaultErrorHandler');
 
 describe('getProposal ApiService', () => {

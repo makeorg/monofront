@@ -1,4 +1,4 @@
-import { QuestionApiService } from '@make.org/api/QuestionApiService';
+import { QuestionApiService } from '@make.org/api/services/QuestionApiService';
 import {
   SequenceType,
   DemographicDataType,

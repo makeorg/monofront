@@ -5,22 +5,7 @@ import { ApiServiceShared } from './ApiService.shared';
 import { IApiServiceStrategy } from './index';
 
 export class ApiServiceServer implements IApiServiceStrategy {
-  // eslint-disable-next-line class-methods-use-this
-  callApi(url: string, options: OptionsType): Promise<ApiServiceResponse> {
-    const headers = {
-      ...options.headers,
-    };
-
-    const agent: https.Agent = new https.Agent({
-      rejectUnauthorized: false,
-    });
-    const serverOptions = { httpsAgent: agent, ...options };
-
-    return ApiServiceShared.callApi(url, {
-      ...serverOptions,
-      headers,
-    });
-  }
+  _apiServiceShared;
 
   _country = '';
 
@@ -51,6 +36,36 @@ export class ApiServiceServer implements IApiServiceStrategy {
   get referrer(): string {
     return this._referrer;
   }
-}
 
-export const apiServer = new ApiServiceServer();
+  // constructor
+  constructor(apiUrl: string) {
+    this._apiServiceShared = new ApiServiceShared(apiUrl);
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  callApi(url: string, options: OptionsType): Promise<ApiServiceResponse> {
+    const headers = {
+      ...options.headers,
+    };
+
+    const agent: https.Agent = new https.Agent({
+      rejectUnauthorized: false,
+    });
+    const serverOptions = { httpsAgent: agent, ...options };
+
+    return this._apiServiceShared.callApi(url, {
+      ...serverOptions,
+      headers,
+    });
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  removeToken(): void {
+    throw new Error('Method not implemented.');
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  setToken(token: string): void {
+    throw new Error('Method not implemented.');
+  }
+}

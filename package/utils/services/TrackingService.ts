@@ -9,7 +9,7 @@ import {
   TrackingEventConfigurationType,
 } from '@make.org/types';
 import Cookies from 'universal-cookie';
-import { TrackingApiService } from '@make.org/api/TrackingApiService';
+import { TrackingApiService } from '@make.org/api/services/TrackingApiService';
 import { COOKIE } from '@make.org/types/enums';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { v4 as uuidv4 } from 'uuid';

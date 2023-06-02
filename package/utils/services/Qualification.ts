@@ -1,5 +1,5 @@
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
-import { QualificationApiService } from '@make.org/api/QualificationApiService';
+import { QualificationApiService } from '@make.org/api/services/QualificationApiService';
 import { QualificationType } from '@make.org/types';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 

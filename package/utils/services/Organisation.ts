@@ -1,4 +1,4 @@
-import { OrganisationApiService } from '@make.org/api/OrganisationApiService';
+import { OrganisationApiService } from '@make.org/api/services/OrganisationApiService';
 import { PROPOSALS_LISTING_LIMIT } from '@make.org/utils/constants/proposal';
 import {
   OrganisationsType,

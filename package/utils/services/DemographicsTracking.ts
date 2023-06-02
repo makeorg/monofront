@@ -1,5 +1,5 @@
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
-import { DemographicsTrackingApiService } from '@make.org/api/DemographicsTrackingApiService';
+import { DemographicsTrackingApiService } from '@make.org/api/services/DemographicsTrackingApiService';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
 const PREFIX_QUERY_PARAMS_ACCEPTED = 'utm_';

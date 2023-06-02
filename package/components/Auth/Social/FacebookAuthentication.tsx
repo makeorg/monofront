@@ -4,7 +4,7 @@ import {
   ReactFacebookLoginInfo,
 } from 'react-facebook-login';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
-import { FACEBOOK_PROVIDER_ENUM } from '@make.org/api/UserApiService';
+import { FACEBOOK_PROVIDER_ENUM } from '@make.org/api/services/UserApiService';
 import { SvgFacebookLogoF } from '@make.org/ui/Svg/elements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { UserService } from '@make.org/utils/services/User';

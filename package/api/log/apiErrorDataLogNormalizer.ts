@@ -1,5 +1,5 @@
-import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { DataLog } from '@make.org/logger/loggerNormalizer';
+import { ApiServiceError } from '../ApiService/ApiServiceError';
 
 const formatApiServiceError = (error: ApiServiceError): DataLog => ({
   message: error.message,

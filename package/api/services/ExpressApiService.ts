@@ -2,7 +2,7 @@ import { AxiosResponse } from 'axios';
 import { env } from '@make.org/assets/env';
 import { FbEventClientType } from '@make.org/types/FbEvents';
 import { LogLevelType } from '@make.org/types/enums/logLevel';
-import { ExpressApiServiceShared } from './ApiService/ExpressApiService.shared';
+import { ExpressApiServiceShared } from '@make.org/api/ApiService/ExpressApiService.shared';
 
 const port = env.port() || '';
 const host = env.frontUrl() || '';

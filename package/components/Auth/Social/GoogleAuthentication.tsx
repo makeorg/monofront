@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GOOGLE_PROVIDER_ENUM } from '@make.org/api/UserApiService';
+import { GOOGLE_PROVIDER_ENUM } from '@make.org/api/services/UserApiService';
 import { GOOGLE_LOGIN_ID } from '@make.org/utils/constants/config';
 import {
   closePanel,

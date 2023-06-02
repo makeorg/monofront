@@ -2,7 +2,7 @@ import {
   QuestionResultsType,
   TrackingConfigurationParamType,
 } from '@make.org/types';
-import { ExpressApiService } from '@make.org/api/ExpressApiService';
+import { ExpressApiService } from '@make.org/api/services/ExpressApiService';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { FbEventClientType } from '@make.org/types/FbEvents';
 import { LogLevelType } from '@make.org/types/enums/logLevel';

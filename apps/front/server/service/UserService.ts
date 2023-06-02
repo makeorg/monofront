@@ -1,5 +1,5 @@
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
-import { UserApiService } from '@make.org/api/UserApiService';
+import { UserApiService } from '@make.org/api/services/UserApiService';
 import { getLoggerInstance } from '@make.org/logger';
 import { defaultUnexpectedError } from '@make.org/utils/services/DefaultErrorHandler';
 

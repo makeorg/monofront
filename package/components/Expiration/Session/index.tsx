@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { withCookies, Cookies } from 'react-cookie';
 import { showSessionExpirationModal } from '@make.org/store/actions/modal';
-import { apiClient } from '@make.org/api/ApiService/ApiService.client';
 import { updateSessionId } from '@make.org/store/actions/session';
 import { useAppContext } from '@make.org/store';
+import { ApiServiceClient } from '@make.org/api/ApiService/ApiService.client';
 import { ExpirationSessionModal } from './Modal';
 
 type Props = {
@@ -11,6 +11,8 @@ type Props = {
   children: React.ReactNode;
   /** Cookies object */
   cookies: Cookies;
+  /** api client service */
+  apiServiceClient: ApiServiceClient;
 };
 
 const sessionExpirationDateCookieName = 'make-session-id-expiration';
@@ -19,6 +21,7 @@ const apiListenerName = 'expirationSessionIdListener';
 const SessionExpirationWithCookiesHandler: React.FC<Props> = ({
   children,
   cookies,
+  apiServiceClient,
 }) => {
   const { dispatch, state } = useAppContext();
   const { sessionId } = state.session || {};
@@ -40,12 +43,12 @@ const SessionExpirationWithCookiesHandler: React.FC<Props> = ({
 
   // update apiSessionId from api response header
   useEffect(() => {
-    apiClient.addAfterCallListener(apiListenerName, async () => {
-      setApiSessionId(apiClient.sessionId);
+    apiServiceClient.addAfterCallListener(apiListenerName, async () => {
+      setApiSessionId(apiServiceClient.sessionId);
     });
 
     return () => {
-      apiClient.removeAfterCallListener(apiListenerName);
+      apiServiceClient.removeAfterCallListener(apiListenerName);
     };
   }, []);
 
@@ -111,9 +114,14 @@ export const SessionExpirationWithCoockies = withCookies(
 type Properties = {
   /** Children content */
   children: React.ReactNode;
+  /** api client service */
+  apiServiceClient: ApiServiceClient;
 };
 
-export const SessionExpiration: React.FC<Properties> = ({ children }) => {
+export const SessionExpiration: React.FC<Properties> = ({
+  children,
+  apiServiceClient,
+}) => {
   const { dispatch, state } = useAppContext();
   const { sessionId } = state.session || {};
   const { showExpirationSession } = state.modal;
@@ -131,10 +139,10 @@ export const SessionExpiration: React.FC<Properties> = ({ children }) => {
 
   // update apiSessionId from api response header
   useEffect(() => {
-    apiClient.addAfterCallListener(
+    apiServiceClient.addAfterCallListener(
       apiListenerName,
       async (url, options, responseHeaders) => {
-        setApiSessionId(apiClient.sessionId);
+        setApiSessionId(apiServiceClient.sessionId);
         setSessionExpirationDate(
           new Date(responseHeaders['x-session-id-expiration'] || tomorrow)
         );
@@ -142,7 +150,7 @@ export const SessionExpiration: React.FC<Properties> = ({ children }) => {
     );
 
     return () => {
-      apiClient.removeAfterCallListener(apiListenerName);
+      apiServiceClient.removeAfterCallListener(apiListenerName);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

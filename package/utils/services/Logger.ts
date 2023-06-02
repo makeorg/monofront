@@ -10,7 +10,7 @@ import {
   objectNormalizer,
   stringNormalizer,
 } from '@make.org/logger/loggerNormalizer';
-import { apiErrorDataLogNormalizer } from '@make.org/api/apiErrorDataLogNormalizer';
+import { apiErrorDataLogNormalizer } from '@make.org/api/log/apiErrorDataLogNormalizer';
 
 let instance: LoggerSingleton | null = null;
 

@@ -2,7 +2,7 @@ import { generatePath } from 'react-router';
 import { ApiServiceHeadersType } from '@make.org/types';
 import { AxiosResponse } from 'axios';
 import { SEQUENCE } from '@make.org/types/enums';
-import { ApiService } from './ApiService';
+import { ApiService } from '@make.org/api/ApiService';
 
 const PATH_QUESTIONS_LIST = '/questions';
 const PATH_QUESTIONS_SEARCH = '/questions/search';

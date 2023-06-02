@@ -1,4 +1,4 @@
-import { ViewsApiService } from '@make.org/api/ViewsApiService';
+import { ViewsApiService } from '@make.org/api/services/ViewsApiService';
 import cache from 'memory-cache';
 import { HomeViewType } from '@make.org/types/View';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';

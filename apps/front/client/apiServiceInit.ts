@@ -1,14 +1,27 @@
-import { apiClient } from '@make.org/api/ApiService/ApiService.client';
-import { updateRequestContextCustomData } from '@make.org/utils/helpers/customData';
+import { ApiServiceClient } from '@make.org/api/ApiService/ApiService.client';
+import { getRequestContextCustomData } from '@make.org/utils/helpers/customData';
 import { getAppLocationContext } from '@make.org/utils/helpers/getLocationContext';
 import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
+import { env } from '@make.org/assets/env';
+import { ApiService } from '@make.org/api/ApiService';
 
 export const initApiService = (
+  sessionId: string,
   source: string,
   country: string,
   initialLanguage: string,
   customData: Record<string, string>
-): void => {
+): ApiServiceClient => {
+  const API_URL: string =
+    typeof window !== 'undefined'
+      ? env.apiUrlClientSide() || window?.API_URL_CLIENT_SIDE || ''
+      : env.apiUrlServerSide() || '';
+
+  const apiClient = new ApiServiceClient(API_URL);
+  ApiService.strategy = apiClient;
+
+  apiClient.sessionId = sessionId;
+  apiClient.appname = 'main-front';
   apiClient.source = source;
   apiClient.country = country;
   apiClient.language = initialLanguage;
@@ -23,8 +36,13 @@ export const initApiService = (
       trackingParamsService.questionId
     );
 
-    const { questionId, questionSlug, questionLanguage } =
-      trackingParamsService.all();
+    const {
+      questionId,
+      questionSlug,
+      questionLanguage,
+      country: currentCountry,
+      language: currentLanguage,
+    } = trackingParamsService.all();
 
     apiClient.customHeaders = {
       'x-make-question-id': questionId || '',
@@ -35,6 +53,8 @@ export const initApiService = (
       typeof window !== 'undefined' && window && window.location
         ? window.location.href
         : 'undefined';
+    apiClient.country = currentCountry || '';
+    apiClient.language = currentLanguage || '';
   });
 
   apiClient.addAfterCallListener(
@@ -47,6 +67,8 @@ export const initApiService = (
   );
 
   if (customData) {
-    updateRequestContextCustomData(customData);
+    apiClient.customData = getRequestContextCustomData(customData);
   }
+
+  return apiClient;
 };

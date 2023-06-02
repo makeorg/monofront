@@ -6,7 +6,7 @@ import {
   UserProfileType,
   PersonalityType,
 } from '@make.org/types';
-import { PersonalityApiService } from '@make.org/api/PersonalityApiService';
+import { PersonalityApiService } from '@make.org/api/services/PersonalityApiService';
 import { getErrorMessages } from '@make.org/utils/helpers/form';
 import { updatePersonalityErrors } from '@make.org/utils/errors/Messages/Personality';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';

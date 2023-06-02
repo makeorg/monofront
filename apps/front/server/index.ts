@@ -17,7 +17,7 @@ import {
   objectNormalizer,
   stringNormalizer,
 } from '@make.org/logger/loggerNormalizer';
-import { apiErrorDataLogNormalizer } from '@make.org/api/apiErrorDataLogNormalizer';
+import { apiErrorDataLogNormalizer } from '@make.org/api/log/apiErrorDataLogNormalizer';
 import {
   getStackTransformer,
   oneLineTransformer,
@@ -33,7 +33,7 @@ import {
 } from './paths';
 
 serverInitI18n();
-ApiService.strategy = new ApiServiceServer();
+ApiService.strategy = new ApiServiceServer(env.apiUrlServerSide() as string);
 // App
 const getApp = () => {
   const app = express();

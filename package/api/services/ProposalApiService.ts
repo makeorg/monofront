@@ -4,7 +4,7 @@ import {
   ReportReasonType,
 } from '@make.org/types';
 import { AxiosResponse } from 'axios';
-import { ApiService } from './ApiService';
+import { ApiService } from '@make.org/api/ApiService';
 
 const PATH_PROPOSALS = '/proposals';
 const PATH_PROPOSAL = '/proposals/:proposalId';

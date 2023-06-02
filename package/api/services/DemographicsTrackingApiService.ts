@@ -1,5 +1,5 @@
 import { ApiServiceResponse } from '@make.org/types';
-import { ApiService } from './ApiService';
+import { ApiService } from '@make.org/api/ApiService';
 
 const DEMOGRAPHICS_TRACKING_PATH_UNSECURE = '/tracking/demographics';
 const DEMOGRAPHICS_TRACKING_PATH = '/tracking/demographics-v2';

@@ -4,7 +4,7 @@ import { ViewsService } from '../service/ViewsService';
 import { homepageRoute } from './homepageRoute';
 import { reactRender } from '../reactRender';
 
-jest.mock('@make.org/api/ViewsApiService');
+jest.mock('@make.org/api/services/ViewsApiService');
 jest.mock('../service/ViewsService');
 jest.mock('../reactRender', () => ({ reactRender: jest.fn() }));
 

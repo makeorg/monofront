@@ -3,6 +3,8 @@ import { AxiosResponse } from 'axios';
 
 export interface IApiServiceStrategy {
   callApi(url: string, options: OptionsType): Promise<void | AxiosResponse>;
+  removeToken(): void;
+  setToken(token: string): void;
   get country(): string;
   get language(): string;
   get source(): string;
@@ -11,6 +13,14 @@ export interface IApiServiceStrategy {
 
 class ApiServiceClass {
   strategyValue: IApiServiceStrategy | null = null;
+
+  removeToken() {
+    this.strategy.removeToken();
+  }
+
+  setToken(token: string) {
+    this.strategy.setToken(token);
+  }
 
   set strategy(strategy: IApiServiceStrategy) {
     this.strategyValue = strategy;

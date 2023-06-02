@@ -3,7 +3,7 @@ import {
   TrackingApiServiceParamsType,
 } from '@make.org/types';
 import { AxiosResponse } from 'axios';
-import { ApiService } from './ApiService';
+import { ApiService } from '@make.org/api/ApiService';
 
 const PATH_POST_TRACKING = '/tracking/front';
 const PATH_PERFORMANCE = '/tracking/performance';

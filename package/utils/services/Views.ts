@@ -1,5 +1,5 @@
 import { HomeViewType, SearchViewsType } from '@make.org/types';
-import { ViewsApiService } from '@make.org/api/ViewsApiService';
+import { ViewsApiService } from '@make.org/api/services/ViewsApiService';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 

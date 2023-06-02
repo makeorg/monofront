@@ -9,6 +9,12 @@ export class ApiServiceMock implements IApiServiceStrategy {
     return Promise.resolve(result);
   }
 
+  // eslint-disable-next-line class-methods-use-this, @typescript-eslint/no-empty-function
+  removeToken(): void {}
+
+  // eslint-disable-next-line class-methods-use-this, @typescript-eslint/no-empty-function
+  setToken(token: string): void {}
+
   // eslint-disable-next-line class-methods-use-this
   get country(): string {
     return 'foo';

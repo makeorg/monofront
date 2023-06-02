@@ -1,5 +1,5 @@
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
-import { QuestionApiService } from '@make.org/api/QuestionApiService';
+import { QuestionApiService } from '@make.org/api/services/QuestionApiService';
 import { TopIdeaType, TopIdeaDetailType } from '@make.org/types';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 

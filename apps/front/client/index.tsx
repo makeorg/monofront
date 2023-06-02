@@ -9,8 +9,6 @@ import Cookies from 'universal-cookie';
 import { env } from '@make.org/assets/env';
 import { authenticationState } from '@make.org/utils/helpers/auth';
 import { Logger } from '@make.org/utils/services/Logger';
-import { ApiService } from '@make.org/api/ApiService';
-import { apiClient } from '@make.org/api/ApiService/ApiService.client';
 import { DateHelper } from '@make.org/utils/helpers/date';
 import { detected as adBlockerDetected } from 'adblockdetect';
 import { track } from '@make.org/utils/services/TrackingService';
@@ -29,6 +27,7 @@ import { ENABLE_MIXPANEL } from '@make.org/utils/constants/cookies';
 import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
 import { LogLevelType } from '@make.org/types/enums/logLevel';
 import { TRANSLATION_COMMON_NAMESPACE } from '@make.org/utils/i18n/constants';
+import { ApiServiceClient } from '@make.org/api/ApiService/ApiService.client';
 import { CountryListener } from './app/CountryListener';
 import { AppContainer } from './app';
 import { cookieIsEnabled, thirdCookieEnabled } from './helpers/cookieDetect';
@@ -77,9 +76,6 @@ if (env.isDev()) {
 
 const serverState = window.INITIAL_STATE || initialState;
 
-ApiService.strategy = apiClient;
-apiClient.appname = 'main-front';
-
 const logAndTrackEvent = (eventName: string) => {
   Logger.logInfo({
     message: `Track event : ${eventName}`,
@@ -102,10 +98,15 @@ const initApp = async (state: StateRoot) => {
   setDataFromQueryParams(queryParams);
 
   const sessionIdCookie = cookies.get(COOKIE.SESSION_ID);
-  apiClient.sessionId = sessionIdCookie || sessionId || '';
+  const apiServiceClient: ApiServiceClient = initApiService(
+    sessionIdCookie || sessionId || '',
+    source,
+    country,
+    language,
+    getAll()
+  );
 
   // init api service before authenticationState
-  initApiService(source, country, language, getAll());
 
   // Get demographics cookie to render demographics card if cookie is not there
   const demographicsCookie = cookies.get(COOKIE.DEMOGRAPHICS);
@@ -224,7 +225,7 @@ const initApp = async (state: StateRoot) => {
               <React.StrictMode>
                 <LanguageListener />
                 <CountryListener />
-                <AppContainer />
+                <AppContainer apiServiceClient={apiServiceClient} />
               </React.StrictMode>
             </BrowserRouter>
           </ContextState>

@@ -8,7 +8,8 @@ import { setEmptyStringToNull } from '@make.org/utils/helpers/form';
 import { PROPOSALS_LISTING_LIMIT } from '@make.org/utils/constants/proposal';
 import { AxiosResponse } from 'axios';
 import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
-import { ApiService } from './ApiService';
+import { ApiService } from '@make.org/api/ApiService';
+import { ApiServiceError } from '../ApiService/ApiServiceError';
 
 export const PATH_USER_LOGIN = '/oauth/make_access_token';
 const PATH_USER_CURRENT = '/user/current';
@@ -40,9 +41,18 @@ export class UserApiService {
    * @return {Promise}
    */
   static current(): Promise<void | AxiosResponse> {
-    return ApiService.callApi(PATH_USER_CURRENT, {
-      method: 'GET',
-    });
+    try {
+      return ApiService.callApi(PATH_USER_CURRENT, {
+        method: 'GET',
+      });
+    } catch (error: unknown) {
+      const apiServiceError = error as ApiServiceError;
+      if (apiServiceError.status === 401) {
+        ApiService.removeToken();
+      }
+
+      throw error;
+    }
   }
 
   /**
@@ -105,7 +115,7 @@ export class UserApiService {
       approvePrivacyPolicy: approvePrivacyPolicy || false,
     };
 
-    return ApiService.callApi(PATH_USER_LOGIN, {
+    const result = ApiService.callApi(PATH_USER_LOGIN, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -116,6 +126,14 @@ export class UserApiService {
         )
         .join('&'),
     });
+
+    result.then(response => {
+      if (response && response.data) {
+        ApiService.setToken(response.data.access_token);
+      }
+    });
+
+    return result;
   }
 
   /**
@@ -124,9 +142,13 @@ export class UserApiService {
    * @return {Promise}
    */
   static logout(): Promise<void | AxiosResponse> {
-    return ApiService.callApi(PATH_USER_LOGOUT, {
+    const result = ApiService.callApi(PATH_USER_LOGOUT, {
       method: 'POST',
     });
+
+    result.finally(() => ApiService.removeToken());
+
+    return result;
   }
 
   /**
@@ -142,7 +164,7 @@ export class UserApiService {
     approvePrivacyPolicy?: boolean,
     optIn?: boolean
   ): Promise<void | AxiosResponse<UserAuthType>> {
-    return ApiService.callApi(PATH_USER_LOGIN_SOCIAL, {
+    const result = ApiService.callApi(PATH_USER_LOGIN_SOCIAL, {
       method: 'POST',
       body: JSON.stringify({
         provider,
@@ -155,6 +177,14 @@ export class UserApiService {
         optIn,
       }),
     });
+
+    result.then(response => {
+      if (response && response.data) {
+        ApiService.setToken(response.data.access_token);
+      }
+    });
+
+    return result;
   }
 
   /**
@@ -348,7 +378,7 @@ export class UserApiService {
     password?: string,
     headers?: ApiServiceHeadersType
   ): Promise<void | AxiosResponse> {
-    return ApiService.callApi(
+    const result = ApiService.callApi(
       PATH_USER_DELETE_ACCOUNT.replace(':userId', userId),
       {
         method: 'POST',
@@ -356,6 +386,12 @@ export class UserApiService {
         headers,
       }
     );
+
+    result.finally(() => {
+      ApiService.removeToken();
+    });
+
+    return result;
   }
 
   /**

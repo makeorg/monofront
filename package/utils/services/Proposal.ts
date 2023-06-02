@@ -1,6 +1,6 @@
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { ProposalType, ProposalsType, ReportReasonType } from '@make.org/types';
-import { ProposalApiService } from '@make.org/api/ProposalApiService';
+import { ProposalApiService } from '@make.org/api/services/ProposalApiService';
 import { defaultUnexpectedError } from '@make.org/utils/services/DefaultErrorHandler';
 
 const propose = async (

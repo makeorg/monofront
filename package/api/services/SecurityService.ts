@@ -1,5 +1,5 @@
 import { AxiosResponse } from 'axios';
-import { ApiService } from './ApiService';
+import { ApiService } from '@make.org/api/ApiService';
 
 const PATH_POST_CHECK_HASH = '/security/secure-hash';
 
