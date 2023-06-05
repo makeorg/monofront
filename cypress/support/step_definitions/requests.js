@@ -49,7 +49,11 @@ Then(
         const expectedValue = getExpectedValue(expectedHeader);
         expect(
           headerValue ? headerValue.trim() : null,
-          `header x-make-${expectedHeader.name} on ${endpoint}`
+          `header x-make-${
+            expectedHeader.name
+          } on ${endpoint} with body ${JSON.stringify(
+            xhrRequest.request.body || {}
+          )}`
         ).to.equal(expectedValue);
       });
     };
