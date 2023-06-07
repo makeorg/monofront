@@ -1,0 +1,569 @@
+{
+  "context": "Consultation citoyenne réalisée par Make.org du 2023-03-13 au 2023-04-23, autour de la question: Comment améliorer la santé et l'autonomie de toutes et tous dans les Pays de la Loire ? ",
+  "key_figures": {
+    "visitors": 12393,
+    "votes": 285010,
+    "proposals": 2315
+  },
+  "top_ideas": [
+    {
+      "name": "Offre de santé",
+      "ideas": [
+        {
+          "idea": "Lutter contre les déserts médicaux",
+          "agreement": 92,
+          "adhesion": 27,
+          "realistic": 23
+        },
+        {
+          "idea": "Renforcer l'accompagnement et les soins psychologiques et psychiatriques",
+          "agreement": 88,
+          "adhesion": 25,
+          "realistic": 28
+        },
+        {
+          "idea": "Développer les centres et poles de santé, notamment pluridisciplinaires",
+          "agreement": 83,
+          "adhesion": 23,
+          "realistic": 30
+        },
+        {
+          "idea": "Désengorger les urgences",
+          "agreement": 88,
+          "adhesion": 24,
+          "realistic": 24
+        },
+        {
+          "idea": "Développer les soins palliatifs",
+          "agreement": 86,
+          "adhesion": 27,
+          "realistic": 24
+        }
+      ]
+    },
+    {
+      "name": "Moyens et gouvernance",
+      "ideas": [
+        {
+          "idea": "Augmenter le nombre de professionnels diplômés chaque année",
+          "agreement": 92,
+          "adhesion": 24,
+          "realistic": 28
+        },
+        {
+          "idea": "Donner plus d'influence aux personnes de terrain sur les décisions de santé",
+          "agreement": 84,
+          "adhesion": 28,
+          "realistic": 26
+        },
+        {
+          "idea": "Prioriser l'humain et non la rentabilité dans le système de santé",
+          "agreement": 90,
+          "adhesion": 29,
+          "realistic": 22
+        },
+        {
+          "idea": "Augmenter le nombre de lits",
+          "agreement": 88,
+          "adhesion": 27,
+          "realistic": 22
+        },
+        {
+          "idea": "Donner plus de moyens aux structures du médico social",
+          "agreement": 78,
+          "adhesion": 13,
+          "realistic": 25
+        }
+      ]
+    },
+    {
+      "name": "Professionnels de santé",
+      "ideas": [
+        {
+          "idea": "Revaloriser le salaire des soignants",
+          "agreement": 90,
+          "adhesion": 23,
+          "realistic": 28
+        },
+        {
+          "idea": "Améliorer les conditions de travail des soignants",
+          "agreement": 93,
+          "adhesion": 27,
+          "realistic": 25
+        },
+        {
+          "idea": "Alléger le travail administratif des professionnels de santé",
+          "agreement": 92,
+          "adhesion": 27,
+          "realistic": 22
+        },
+        {
+          "idea": "Renforcer les échanges entre professionnels de santé afin d'optimiser les parcours de soins",
+          "agreement": 84,
+          "adhesion": 20,
+          "realistic": 31
+        }
+      ]
+    },
+    {
+      "name": "Autonomie et prise en charge",
+      "ideas": [
+        {
+          "idea": "Développer le maintien a domicile",
+          "agreement": 94,
+          "adhesion": 23,
+          "realistic": 28
+        },
+        {
+          "idea": "Améliorer la prise en charge des personnes en situation de handicap",
+          "agreement": 88,
+          "adhesion": 23,
+          "realistic": 22
+        },
+        {
+          "idea": "Améliorer la prise en charge des personnes âgées au sein des différentes structures spécialisées",
+          "agreement": 90,
+          "adhesion": 21,
+          "realistic": 33
+        }
+      ]
+    },
+    {
+      "name": "Patients et aidants",
+      "ideas": [
+        {
+          "idea": "Accentuer la sensibilisation et la prévention, notamment auprès des jeunes",
+          "agreement": 88,
+          "adhesion": 27,
+          "realistic": 24
+        },
+        {
+          "idea": "Mieux soutenir les aidants",
+          "agreement": 91,
+          "adhesion": 21,
+          "realistic": 27
+        }
+      ]
+    }
+  ],
+  "controversials": [
+    {
+      "id": "4b3a9b99-e58c-4cc3-a1cb-eaa8dcded0fc",
+      "content": "Il faut augmenter les tarifs des consultations des professionnels de santé libéraux afin de permettre de nouvelles installations.",
+      "author": "Anne",
+      "agree": 44,
+      "like_it": 12,
+      "disagree": 36,
+      "no_way": 19,
+      "votes": 80
+    },
+    {
+      "id": "4a450940-b2cc-4334-8865-610395ac6e12",
+      "content": "Il faut augmenter la consultation médicale à 50 € si on veut avoir du temps pour le patient.",
+      "author": "François",
+      "agree": 31,
+      "like_it": 12,
+      "disagree": 42,
+      "no_way": 17,
+      "votes": 92
+    },
+    {
+      "id": "054f413e-b250-4209-a2be-357d497b52a0",
+      "content": "Il faut intégrer les médecines complémentaires (hypnose, sophrologie, méthode ALPÉ, etc..) a l'hôpital et dans les cabinets médicaux.",
+      "author": "Carole",
+      "agree": 47,
+      "like_it": 10,
+      "disagree": 26,
+      "no_way": 13,
+      "votes": 94
+    },
+    {
+      "id": "d1f87bda-f7fe-45cd-9158-e560b0355e8d",
+      "content": "Il faut mieux prendre en compte l'homéopathie et les médecines douces.",
+      "author": "Eric",
+      "agree": 43,
+      "like_it": 9,
+      "disagree": 36,
+      "no_way": 11,
+      "votes": 96
+    },
+    {
+      "id": "96217038-8a42-4cfc-9542-564972a3aa09",
+      "content": "Il faut absolument pas autoriser l’accès direct aux infirmiers de pratique avancée",
+      "author": "Thierry",
+      "agree": 31,
+      "like_it": 11,
+      "disagree": 39,
+      "no_way": 19,
+      "votes": 102
+    },
+    {
+      "id": "e92a013d-3086-4fa8-8e1e-3eac85e6d282",
+      "content": "Il faut développer de manière massive l'accès aux infirmiers en pratiques avancées pour répondre au défaut d'accès à la médecine de ville",
+      "author": "Sebastien",
+      "agree": 55,
+      "like_it": 17,
+      "disagree": 27,
+      "no_way": 15,
+      "votes": 90
+    },
+    {
+      "id": "0b132ec6-2be3-4b2c-ae7c-1f01b4c18026",
+      "content": "Il faut réduire au stricte minimum la notion de \"libéral\" qui est incompatible avec la santé qui est un service publique.",
+      "author": "Denis",
+      "agree": 37,
+      "like_it": 15,
+      "disagree": 47,
+      "no_way": 20,
+      "votes": 88
+    },
+    {
+      "id": "c13c1033-15ba-408f-b324-3c0fee470f59",
+      "content": "Il faut que les médecins qui ont choisi d'être \"libéraux\" soient quand même astreints à plus d'heures \"pour tous\", des permanences, etc.",
+      "author": "Ludovic",
+      "agree": 45,
+      "like_it": 9,
+      "disagree": 36,
+      "no_way": 15,
+      "votes": 213
+    },
+    {
+      "id": "f0d0d4db-23b7-41ee-8769-772bc31f9703",
+      "content": "Il faut obliger les médecins à s'installer dans les déserts médicaux: nous le faisons bien pour les policiers, les gendarmes, les postiers.",
+      "author": "Charles",
+      "agree": 52,
+      "like_it": 13,
+      "disagree": 39,
+      "no_way": 21,
+      "votes": 94
+    },
+    {
+      "id": "35b29ba2-99fa-45cc-b2a2-fcf157553246",
+      "content": "Il faut qu'à la sortie de leurs études, les médecins soient affectés dans les régions les plus pauvres en médecin, et obligation d'y rester.",
+      "author": "Jennifer",
+      "agree": 47,
+      "like_it": 11,
+      "disagree": 36,
+      "no_way": 14,
+      "votes": 96
+    },
+    {
+      "id": "d8743090-0464-4399-9ec5-3e11245b3101",
+      "content": "Il faut réintégrer les soignants suspendus , ce sont des compétences gâchées dans une période de grande pénurie",
+      "author": "claude",
+      "agree": 47,
+      "like_it": 15,
+      "disagree": 33,
+      "no_way": 19,
+      "votes": 214
+    },
+    {
+      "id": "c2d862d6-5cea-485c-989c-bcddd4425479",
+      "content": "Il faut réintégrer les soignants non vaccinés",
+      "author": "Léo",
+      "agree": 48,
+      "like_it": 16,
+      "disagree": 36,
+      "no_way": 22,
+      "votes": 217
+    },
+    {
+      "id": "d7eee7e2-8f21-4777-9213-75da99b5a576",
+      "content": "Il faut arrêter les visites préalables chez le médecin traitant pour consulter un spécialiste (ORL, cardiologue, podologue, etc..).",
+      "author": "Dominique",
+      "agree": 55,
+      "like_it": 17,
+      "disagree": 31,
+      "no_way": 17,
+      "votes": 94
+    },
+    {
+      "id": "38b7f3f3-6377-4b38-94aa-2a808eb51004",
+      "content": "Il faut stopper le système du médecin traitant obligatoire et revenir à des consultations libres, tant qu'il n'y aura pas assez de médecins.",
+      "author": "Annabelle",
+      "agree": 35,
+      "like_it": 11,
+      "disagree": 47,
+      "no_way": 27,
+      "votes": 102
+    },
+    {
+      "id": "89395ebe-1b17-4d07-871d-c7e9a86eed1e",
+      "content": "Il faut développer la formation des pharmaciens et leur donner la possibilité de prescrire des médicaments pour les petites maladies",
+      "author": "Sandrine",
+      "agree": 44,
+      "like_it": 9,
+      "disagree": 36,
+      "no_way": 23,
+      "votes": 210
+    },
+    {
+      "id": "056bd66e-0834-4930-86b2-2de222e29253",
+      "content": "Il faut permettre l’accès direct aux infirmiers libéraux et leur donner le droit de renouveler des ordonnances de soins et de médicaments.",
+      "author": "Lucas",
+      "agree": 54,
+      "like_it": 10,
+      "disagree": 31,
+      "no_way": 18,
+      "votes": 94
+    },
+    {
+      "id": "75cf3668-4f88-4ecb-9638-22e44fde25c4",
+      "content": "Il faut interdire aux professionnels de santé le refus de nouveaux patients.",
+      "author": "V",
+      "agree": 40,
+      "like_it": 9,
+      "disagree": 44,
+      "no_way": 10,
+      "votes": 84
+    },
+    {
+      "id": "3a0ee54d-fb17-4af7-a683-2f3c71fb3523",
+      "content": "Il faut interdire aux professionnels de la santé de refuser des patients, surtout pour des spécialistes afin d'avoir accès aux soins.",
+      "author": "Julien",
+      "agree": 45,
+      "like_it": 8,
+      "disagree": 39,
+      "no_way": 12,
+      "votes": 84
+    },
+    {
+      "id": "8705a283-8339-46d2-b885-dc1823f41c84",
+      "content": "Il faut généraliser les téléconsultations pour éviter des déplacements et pallier à la désertification des services en milieu rural.",
+      "author": "Samuel",
+      "agree": 40,
+      "like_it": 7,
+      "disagree": 42,
+      "no_way": 28,
+      "votes": 92
+    },
+    {
+      "id": "77a26707-a952-42fc-9051-3d89fd884635",
+      "content": "Il faut systématiser les rendez-vous en visio pour les renouvellements de médicaments.",
+      "author": "Karine",
+      "agree": 36,
+      "like_it": 4,
+      "disagree": 47,
+      "no_way": 29,
+      "votes": 95
+    }
+  ],
+  "rejected": [],
+  "cartography": [
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Thèmes cités",
+      "legend": "",
+      "data": [
+        {
+          "label": "Pilotage de l'offre de soins",
+          "percent": 23,
+          "color": "#4B45A5",
+          "adjustLabel": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "label": "Offre de soins",
+          "percent": 18,
+          "color": "#8955BD",
+          "adjustLabel": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "label": "Accessibilité de l'offre de soins",
+          "percent": 15,
+          "color": "#EB7575",
+          "adjustLabel": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "label": "Carrières, rémunération,",
+          "sublabel": "conditions de travail",
+          "percent": 13,
+          "color": "#F5976E",
+          "adjustLabel": {
+            "textAlign": "right"
+          }
+        },
+        {
+          "label": "Sensibilisation",
+          "sublabel": "et prévention",
+          "percent": 8,
+          "color": "#EEB298",
+          "adjustLabel": {
+            "textAlign": "right"
+          }
+        },
+        {
+          "label": "Cursus et formation",
+          "percent": 7,
+          "color": "#FFD266",
+          "adjustLabel": {
+            "textAlign": "right"
+          }
+        },
+        {
+          "label": "Soins à domicile",
+          "sublabel": "& à distance",
+          "percent": 6,
+          "color": "#FFF689",
+          "adjustLabel": {
+            "textAlign": "right"
+          }
+        },
+        {
+          "label": "Effectifs et moyens",
+          "percent": 5,
+          "color": "#E5FFAE",
+          "adjustLabel": {
+            "textAlign": "right"
+          }
+        },
+        {
+          "label": "Autres",
+          "percent": 8,
+          "color": "#FFF",
+          "adjustLabel": {
+            "textAlign": "right"
+          }
+        }
+      ]
+    }
+  ],
+  "participation": [
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par région",
+      "forcedHigherValue": 40,
+      "legend": {
+        "title": "Participation par région",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "Loire Atlantique (44)",
+          "bars": {
+            "first": 39,
+            "second": 38
+          }
+        },
+        {
+          "label": "Maine-et-Loire (49)",
+          "bars": {
+            "first": 20,
+            "second": 21
+          }
+        },
+        {
+          "label": "Vendée (85)",
+          "bars": {
+            "first": 16,
+            "second": 18
+          }
+        },
+        {
+          "label": "Sarthe (72)",
+          "bars": {
+            "first": 15,
+            "second": 15
+          }
+        },
+        {
+          "label": "Mayenne (53)",
+          "bars": {
+            "first": 10,
+            "second": 8
+          }
+        }
+      ],
+      "id": "participation_0"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par âge",
+      "legend": {
+        "title": "Répartition des votes",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "25-34",
+          "bars": {
+            "first": 18,
+            "second": 18
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "35-44",
+          "bars": {
+            "first": 28,
+            "second": 19
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "45-54",
+          "bars": {
+            "first": 22,
+            "second": 21
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "55-64",
+          "bars": {
+            "first": 16,
+            "second": 18
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "65+",
+          "bars": {
+            "first": 16,
+            "second": 24
+          },
+          "color": "#8BDAB2"
+        }
+      ],
+      "id": "participation_2"
+    },
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Votes par genre",
+      "legend": "",
+      "data": [
+        {
+          "label": "hommes",
+          "percent": 39,
+          "color": "#4B45A5"
+        },
+        {
+          "label": "femmes",
+          "percent": 60,
+          "color": "#EB7575"
+        },
+        {
+          "label": "non-binaire",
+          "percent": 1,
+          "color": "#8BDAB2"
+        }
+      ],
+      "id": "participation_3"
+    }
+  ]
+}
