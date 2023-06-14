@@ -8,7 +8,9 @@ import {
   FlexElementStyle,
   SpaceBetweenRowStyle,
 } from '@make.org/ui/elements/FlexElements';
+import { SEARCH } from '@make.org/types/enums';
 import { SvgLogo } from '@make.org/ui/Svg/elements';
+import { Image } from '@make.org/ui/components/Image';
 
 export const HeaderStyle = styled.header`
   position: relative;
@@ -54,4 +56,37 @@ export const HeaderSeparatorStyle = styled.div`
   height: 100%;
   margin: 0 ${spacings.l};
   background-color: ${colors.Background.Interface.DarkMain};
+`;
+
+export const HeaderCobrandingIcon = styled.div`
+  position: relative;
+  padding-left: 30px;
+  margin-left: 30px;
+  height: 32px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    border-left: 1px solid ${colors.Border.Interface.DarkMain};
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: inherit;
+    -webkit-transform: skewX(-15deg);
+    -moz-transform: skewX(-15deg);
+    -ms-transform: skewX(-15deg);
+    transform: skewX(-15deg);
+  }
+`;
+
+export const HeaderCobrandingSearchAnimation = styled.div`
+  &.${SEARCH.SEARCH_DESKTOP_EXPANDED}[aria-hidden='true'] {
+    display: none;
+    visibility: hidden;
+  }
+`;
+
+export const HeaderCobrandingImage = styled(Image)`
+  flex: 1;
+  max-width: 150px;
 `;

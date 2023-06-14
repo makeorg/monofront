@@ -162,6 +162,8 @@ export type QuestionType = {
   aboutUrl: string;
   partners: PartnerType[];
   theme: QuestionThemeType;
+  cobrandingLogo?: string;
+  cobrandingLogoAlt?: string;
   consultationImage?: string;
   consultationImageAlt?: string;
   descriptionImage?: string;

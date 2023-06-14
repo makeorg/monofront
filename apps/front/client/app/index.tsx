@@ -7,6 +7,7 @@ import {
   AppWrapperStyle,
   AppMainContentStyle,
 } from '@make.org/ui/elements/MainElements';
+import { ROUTE_COUNTRY, ROUTE_BASE_CONSULTATION } from '@make.org/utils/routes';
 import { NAVIGATION, PANEL, IDS } from '@make.org/types/enums';
 import { NotificationBanner } from '@make.org/components/Notifications/Banner';
 import { debounce } from '@make.org/utils/helpers/timers';
@@ -18,7 +19,7 @@ import {
   removePanelContent,
 } from '@make.org/store/actions/panel';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
-import { useLocation } from 'react-router';
+import { useLocation, Route } from 'react-router';
 import { Panel } from '@make.org/components/Panel';
 import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 import { Modal } from '@make.org/components/Modal';
@@ -126,7 +127,11 @@ export const AppContainer: FC<Props> = ({ apiServiceClient }) => {
               <DefaultStylesheet />
               <UIThemeStylesheet />
               <MainSkipLinks />
-              <Header />
+              <Route
+                path={[`${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}*`, '*']}
+              >
+                <Header />
+              </Route>
               <AppMainContentStyle
                 id={IDS.MAIN_CONTENT}
                 data-cy-container="main"

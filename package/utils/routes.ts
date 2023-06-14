@@ -1,38 +1,42 @@
 import { ParsedQuery, stringify } from 'query-string';
 import { matchPath, generatePath } from 'react-router';
 
-export const ROUTE_REDIRECT_CONSULTATIONS = `/consultation/:questionSlug/consultation`;
-export const ROUTE_REDIRECT_PARTICIPATE = `/consultation/:questionSlug/participate`;
-export const ROUTE_REDIRECT_EXPLORE = `/consultation/:questionSlug/explore/page/:pageId`;
-export const ROUTE_REDIRECT_SEQUENCE = `/consultation/:questionSlug/selection`;
-export const ROUTE_REDIRECT_SEQUENCE_POPULAR = `/consultation/:questionSlug/selection-popular`;
-export const ROUTE_REDIRECT_SEQUENCE_CONTROVERSY = `/consultation/:questionSlug/selection-controversial`;
-export const ROUTE_REDIRECT_RESULTS = `/consultation/:questionSlug/results`;
-
 export const ROUTE_COUNTRY = '/:country(\\w{2})';
 export const ROUTE_COUNTRY_LANG = '/:country(\\w{2})-:language(\\w{2})';
 export const ROUTE_COUNTRY_FR = '/FR';
+export const ROUTE_BASE_CONSULTATION = `/consultation/:questionSlug`;
+
+export const ROUTE_REDIRECT_CONSULTATIONS = `${ROUTE_BASE_CONSULTATION}/consultation`;
+export const ROUTE_REDIRECT_PARTICIPATE = `${ROUTE_BASE_CONSULTATION}/participate`;
+export const ROUTE_REDIRECT_EXPLORE = `${ROUTE_BASE_CONSULTATION}/explore/page/:pageId`;
+export const ROUTE_REDIRECT_SEQUENCE = `${ROUTE_BASE_CONSULTATION}/selection`;
+export const ROUTE_REDIRECT_SEQUENCE_POPULAR = `${ROUTE_BASE_CONSULTATION}/selection-popular`;
+export const ROUTE_REDIRECT_SEQUENCE_CONTROVERSY = `${ROUTE_BASE_CONSULTATION}/selection-controversial`;
+export const ROUTE_REDIRECT_RESULTS = `${ROUTE_BASE_CONSULTATION}/results`;
 
 export const ROUTE_BROWSE_CONSULTATIONS = `${ROUTE_COUNTRY}/browse/consultations/page/:pageId`;
 export const ROUTE_BROWSE_RESULTS = `${ROUTE_COUNTRY}/browse/results/page/:pageId`;
-export const ROUTE_CONSULTATION_STEP = `${ROUTE_COUNTRY}/consultation/:questionSlug/:consultationStep`;
-export const ROUTE_CONSULTATION = `${ROUTE_COUNTRY}/consultation/:questionSlug/consultation`;
-export const ROUTE_PARTICIPATE = `${ROUTE_COUNTRY}/consultation/:questionSlug/participate`;
-export const ROUTE_EXPLORE = `${ROUTE_COUNTRY}/consultation/:questionSlug/explore/page/:pageId`;
-export const ROUTE_EXPLORE_ROOT = `${ROUTE_COUNTRY}/consultation/:questionSlug/explore`;
-export const ROUTE_EXPLORE_FIRST_PAGE = `${ROUTE_COUNTRY}/consultation/:questionSlug/explore/page/1`;
+
+export const ROUTE_CONSULTATION_STEP = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/:consultationStep`;
+export const ROUTE_CONSULTATION = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/consultation`;
+export const ROUTE_PARTICIPATE = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/participate`;
+export const ROUTE_EXPLORE = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/explore/page/:pageId`;
+export const ROUTE_EXPLORE_ROOT = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/explore`;
+export const ROUTE_EXPLORE_FIRST_PAGE = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/explore/page/1`;
+export const ROUTE_RESULTS = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/results`;
+export const ROUTE_TOP_IDEAS = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/top-ideas`;
+export const ROUTE_TOP_IDEA_DETAILS = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/top-ideas/:topIdeaId`;
+export const ROUTE_SEQUENCE = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/selection`;
+export const ROUTE_SEQUENCE_POPULAR = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/selection-popular`;
+export const ROUTE_SEQUENCE_CONTROVERSIAL = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/selection-controversial`;
+export const ROUTE_SEQUENCE_KEYWORD = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/selection/keyword/:encodedKeyword`;
+export const ROUTE_PROPOSAL = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/proposal/:proposalId/:proposalSlug`;
+
 export const ROUTE_SEARCH = `${ROUTE_COUNTRY}/search`;
 export const ROUTE_SEARCH_PROPOSALS = `${ROUTE_COUNTRY}/search/proposals`;
 export const ROUTE_SEARCH_ORGANISATIONS = `${ROUTE_COUNTRY}/search/organisations`;
 export const ROUTE_SEARCH_CONSULTATIONS = `${ROUTE_COUNTRY}/search/consultations`;
-export const ROUTE_RESULTS = `${ROUTE_COUNTRY}/consultation/:questionSlug/results`;
-export const ROUTE_TOP_IDEAS = `${ROUTE_COUNTRY}/consultation/:questionSlug/top-ideas`;
-export const ROUTE_TOP_IDEA_DETAILS = `${ROUTE_COUNTRY}/consultation/:questionSlug/top-ideas/:topIdeaId`;
-export const ROUTE_SEQUENCE = `${ROUTE_COUNTRY}/consultation/:questionSlug/selection`;
-export const ROUTE_SEQUENCE_POPULAR = `${ROUTE_COUNTRY}/consultation/:questionSlug/selection-popular`;
-export const ROUTE_SEQUENCE_CONTROVERSIAL = `${ROUTE_COUNTRY}/consultation/:questionSlug/selection-controversial`;
-export const ROUTE_SEQUENCE_KEYWORD = `${ROUTE_COUNTRY}/consultation/:questionSlug/selection/keyword/:encodedKeyword`;
-export const ROUTE_PROPOSAL = `${ROUTE_COUNTRY}/consultation/:questionSlug/proposal/:proposalId/:proposalSlug`;
+
 export const ROUTE_ACCOUNT_ACTIVATION = `${ROUTE_COUNTRY}/account-activation/:userId/:verificationToken`;
 export const ROUTE_PASSWORD_RECOVERY = `${ROUTE_COUNTRY}/password-recovery/:userId/:resetToken`;
 export const ROUTE_PROFILE = `${ROUTE_COUNTRY}/profile`;
