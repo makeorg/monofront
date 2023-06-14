@@ -218,7 +218,6 @@ const login = async (
     if (unexpectedError) {
       unexpectedError();
     }
-
     return null;
   }
 };

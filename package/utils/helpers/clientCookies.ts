@@ -5,11 +5,8 @@ import { MixpanelTracking } from '@make.org/utils/services/Trackers/MixpanelTrac
 import { COOKIE, LocaleType } from '@make.org/types/enums';
 import { env } from '@make.org/assets/env';
 import { hotjar } from 'react-hotjar';
-import {
-  TWITTER_SCRIPT,
-  twitter,
-} from '@make.org/utils/services/Trackers/twttr.js';
-import { TwitterUniversalTag } from '@make.org/utils/services/Trackers/TwitterTracking';
+import { twitter } from '@make.org/utils/services/Trackers/twttr.js';
+import { TwitterPixel } from '@make.org/utils/services/Trackers/TwitterTracking';
 
 declare global {
   interface Window {
@@ -69,11 +66,6 @@ export const initTrackersFromPreferences = (
   visitorId?: string,
   enableMixPanel?: boolean
 ): void => {
-  const body = document.querySelector('body');
-  const twitterScript = document.createElement('script');
-  twitterScript.setAttribute('type', 'text/javascript');
-  twitterScript.setAttribute('async', 'true');
-  twitterScript.src = TWITTER_SCRIPT;
   const hotjarToken = env.isClientSide()
     ? window?.HOTJAR_TOKEN
     : env.hotjarToken();
@@ -99,11 +91,7 @@ export const initTrackersFromPreferences = (
     cookiePreferences?.tracking_consent?.twitter_tracking &&
     !twitter.initialized()
   ) {
-    if (body) {
-      body.appendChild(twitterScript);
-    }
-
-    TwitterUniversalTag.init();
+    TwitterPixel.init();
   }
 
   if (enableMixPanel) {

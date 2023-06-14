@@ -1,11 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable prefer-destructuring */
-/* eslint-disable prefer-rest-params */
-/* eslint-disable prefer-spread */
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-multi-assign */
-/* eslint-disable func-names */
-/* eslint-disable no-unused-expressions */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { env } from '@make.org/assets/env';
 import { twitter } from '@make.org/utils/services/Trackers/twttr.js';
@@ -28,95 +20,55 @@ const twitterEventMapping = {
   [trackingConfiguration.CLICK_PROPOSAL_UNQUALIFY.key]: 'o2q9p',
   [trackingConfiguration.CLICK_PROPOSAL_VIEW_MORE.key]: 'o2q9q', // = click-proposal-viewmore on twitter
 };
-const timeout = (delay: number) =>
-  new Promise(res => {
-    setTimeout(res, delay);
-  });
 
 export const TwitterTracking = {
-  tries: 0,
-  async track(action: string): Promise<void> {
+  async track(action: string, eventId: string): Promise<void> {
     // @ts-ignore
     if (twitterEventMapping[action] === undefined) {
       return;
     }
 
     // @ts-ignore
-    const eventName = twitterEventMapping[action];
+    const eventName = `tw-${TWITTER_UNIVERSAL_MAKE_TAG}-${twitterEventMapping[action]}`;
 
     if (env.isDev()) {
       console.log(`Tracking Twitter: event ${eventName}`);
       return;
     }
-
     if (!twitter.initialized()) {
-      if (this.tries > 1) {
-        this.tries = 0;
-        Logger.logInfo({
-          message: `Twitter Tracking not initialized. Action : ${action}`,
-          name: 'tracking-init',
-        });
-        return;
-      }
-
-      this.tries += 1;
-      await timeout(500);
-      this.track(action);
+      Logger.logInfo({
+        message: `Twitter Tracking not initialized. Action : ${action}`,
+        name: 'tracking-init',
+      });
       return;
     }
 
-    twitter.track(eventName);
+    twitter.track(eventName, action, eventId);
   },
 };
 
-export const TwitterUniversalTag = {
+declare global {
+  interface Window {
+    twq?: unknown;
+  }
+}
+
+export const TwitterPixel = {
   init(): void {
     if (env.isTest() || env.isDev()) {
       return;
     }
-
-    try {
-      // @ts-ignore
-      !(function (e, t, n, s, u, a) {
-        // @ts-ignore
-        e.twq ||
-          // @ts-ignore
-          ((s = e.twq =
-            function (): void {
-              // @ts-ignore
-              s.exe ? s.exe.apply(s, arguments) : s.queue.push(arguments);
-            }),
-          // @ts-ignore
-          (s.version = '1.1'),
-          // @ts-ignore
-          (s.queue = []),
-          // @ts-ignore
-          (u = t.createElement(n)),
-          // @ts-ignore
-          (u.async = !0),
-          // @ts-ignore
-          (u.src = 'https://static.ads-twitter.com/uwt.js'),
-          // @ts-ignore
-          (a = t.getElementsByTagName(n)[0]),
-          // @ts-ignore
-          a.parentNode.insertBefore(u, a));
-      })(window, document, 'script');
-      // @ts-ignore
-      twq('init', TWITTER_UNIVERSAL_MAKE_TAG);
-    } catch (e) {
-      // @ts-ignore
-      Logger.logError(e);
-    }
-  },
-  pageView(): void {
-    if (env.isTest() || env.isDev()) {
-      console.log(`Tracking Twitter: event PageView`);
+    if (window.twq) {
       return;
     }
 
     try {
       // @ts-ignore
-      twq('track', 'PageView');
+      // eslint-disable-next-line no-unused-expressions, prettier/prettier, func-names, no-multi-assign, no-param-reassign, prefer-spread, prefer-rest-params, prefer-destructuring
+      !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script'); // eslint-disable-line no-use-before-define
+
+      // @ts-ignore
+      twq('config', TWITTER_UNIVERSAL_MAKE_TAG);
     } catch (e) {
       // @ts-ignore
       Logger.logError(e);

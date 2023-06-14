@@ -5,7 +5,7 @@ import loadable from '@loadable/component';
 import { getHomeLink, getNotFoundPath } from '@make.org/utils/helpers/url';
 import { DEFAULT_COUNTRY } from '@make.org/utils/constants/config';
 import { useAppContext } from '@make.org/store';
-import { COOKIE, SEQUENCE } from '@make.org/types/enums';
+import { SEQUENCE } from '@make.org/types/enums';
 import {
   ROUTE_SEARCH,
   ROUTE_SEARCH_PROPOSALS,
@@ -58,9 +58,6 @@ import {
   ROUTE_STATIC_MODERATION,
   ROUTE_STATIC_MODERATION_DE,
 } from '@make.org/utils/routes';
-import Cookies from 'universal-cookie';
-import { StateUserCookiesPreferences } from '@make.org/types';
-import { TwitterUniversalTag } from '@make.org/utils/services/Trackers/TwitterTracking';
 import { usePageBackgoundColor } from '../hooks/usePageBackgroundColor';
 import { QuestionWrapper } from '../pages/Consultation/QuestionWrapper';
 
@@ -118,23 +115,12 @@ const CookiesPage = loadable(() => import('../pages/Static/Cookies'));
 const Moderation = loadable(() => import('../pages/Static/ModerationCharter'));
 
 export const Routes: FC = () => {
-  const cookies = new Cookies();
-  const preferencesCookies: StateUserCookiesPreferences = cookies.get(
-    COOKIE.USER_PREFERENCES
-  );
   const { state } = useAppContext();
   const location = useLocation();
   const { country } = state.appConfig;
   const { pathname } = location;
 
   usePageBackgoundColor(pathname);
-
-  React.useEffect(() => {
-    if (preferencesCookies?.tracking_consent?.twitter_tracking) {
-      TwitterUniversalTag.pageView();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location.pathname]);
 
   return (
     <Switch>

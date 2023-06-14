@@ -181,7 +181,7 @@ export const TrackingService = {
 
     // Twitter
     if (preferencesCookie?.tracking_consent?.twitter_tracking) {
-      TwitterTracking.track(eventName);
+      TwitterTracking.track(eventName, eventId);
     }
 
     // Mixpanel
