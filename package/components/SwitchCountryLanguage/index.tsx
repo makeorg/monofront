@@ -90,6 +90,7 @@ export const SwitchCountryLanguage: React.FC<Props> = ({
         <MultilingualRadioListWrapperStyle className="languages-switch">
           {languages.map(item => (
             <MultilingualRadioItemWrapperStyle
+              ref={item.isoCode === language ? selectedRef : null}
               tabIndex={0}
               key={item.isoCode}
               lang={item.isoCode}
@@ -150,8 +151,8 @@ export const SwitchCountryLanguage: React.FC<Props> = ({
                   name="country"
                   value={item.isoCode}
                   onChange={onChange}
-                  data-cy-radio={`country_switch_${item.isoCode}`}
                   defaultChecked={item.isoCode === country}
+                  data-cy-radio={`country_switch_${item.isoCode}`}
                 />
               </ScreenReaderItemStyle>
               <MultilingualRadioAsTransparentButtonLabelStyle

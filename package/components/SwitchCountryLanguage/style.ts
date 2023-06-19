@@ -45,7 +45,7 @@ export const MultilingualRadioListWrapperStyle = styled.ul`
   padding: ${spacings.xs};
   background-color: ${colors.Background.Interface.DarkSecondary};
   border-radius: 8px;
-  max-height: 220px;
+  max-height: 180px;
   overflow-y: scroll;
 
   &.languages-switch {
@@ -59,7 +59,7 @@ export const MultilingualRadioItemWrapperStyle = styled.li`
   width: 100%;
   border-radius: 8px;
   font-size: ${typography.FontSize.Arrondissement};
-  padding: ${spacings.sm} ${spacings.m};
+  padding: ${spacings.s} ${spacings.m};
   text-decoration: none;
   :last-child {
     margin-bottom: 0px;
