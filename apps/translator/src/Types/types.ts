@@ -10,6 +10,12 @@ export type TranslationDemand = {
   targetLanguage: string;
 };
 
+export type MultiTranslationDemand = {
+  sourceLanguage: string;
+  text: string;
+  targetLanguages: string[];
+};
+
 export type TranslationResult = {
   text: string;
   language: string;

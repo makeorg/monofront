@@ -2,15 +2,20 @@ import { checkSchema, validationResult } from 'express-validator';
 import { Request, Response } from 'express';
 import { RoutesInput } from '../Types/types';
 import { getVersion } from '../Controllers/Version.controller';
-import { translationDemandSchemaValidator } from '../Validator/translationDemandValidator';
+import {
+  multiTranslationDemandSchemaValidator,
+  translationDemandSchemaValidator,
+} from '../Validator/translationDemandValidator';
 import {
   postTranslate,
   getSupportedLanguages,
+  postMultiTranslate,
 } from '../Controllers/Main.controller';
 
 const SUPPORTED_LANGUAGE_PATH = '/supported-languages';
 const VERSION_PATH = '/version';
 const TRANSLATE_PATH = '/translate';
+const TRANSLATE_PATH_V2 = '/v2/translate';
 const ROOT_PATH = '/';
 
 export const UNSECURED_ROUTES = [
@@ -36,6 +41,19 @@ export const Routes = ({ app }: RoutesInput): void => {
       }
 
       return postTranslate(req, res);
+    }
+  );
+
+  app.post(
+    TRANSLATE_PATH_V2,
+    checkSchema(multiTranslationDemandSchemaValidator),
+    async (req: Request, res: Response) => {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+      }
+
+      return postMultiTranslate(req, res);
     }
   );
 

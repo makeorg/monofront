@@ -10,6 +10,8 @@ const requiredRole = 'ROLE_MODERATOR';
 type UserType = {
   email: string;
   roles: string[];
+  userId: string;
+  displayName: string;
 };
 
 const current = async (
@@ -99,7 +101,8 @@ export const securityMiddleware = async (
       {
         message: 'User not authorized to access API',
         name: 'Security',
-        app_user_email: user.email,
+        app_user_id: user.userId,
+        app_user_name: user.displayName,
         app_user_roles: user.roles,
       },
       res
@@ -112,7 +115,8 @@ export const securityMiddleware = async (
     {
       message: 'User auth success',
       name: 'Security',
-      app_user_email: user.email,
+      app_user_id: user.userId,
+      app_user_name: user.displayName,
     },
     res
   );
