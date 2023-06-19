@@ -52,24 +52,20 @@ Remarques :
 | Audits        | Tech                | Make.org            | Contrôle d'une partie des critères RGAA                                                 | 2me trimestre 2022  | Réalisé |
 | Formation     | Tech                | -                   | Documentation sur l'accessibilité des images à destination des équipes opérationnelles  | 2me trimestre 2022  | Réalisé |
 | Schéma        | Tech                | Make.org            | Schéma plu. accessibilité accessible à l'externe                                        | 4me trimestre 2022  | Réalisé |
-| Corrections   | Tech/Produit        | Make.org            | Planification des améliorations relevées lors du dernier audit                          | 4me trimestre 2022  | - |
-| Corrections   | Tech                | Make.org            | Développement et mise en production des améliorations planifiées                        | au plus tard fin 1er trimestre 2023  | - |
-| Schéma        | Produit             | Make.org            | Proposer un lien vers le schéma depuis la page accessiblité de Make.org + traduction    | 1er trimestre 2023  | - |
-| Audits        | Tech                | Dialogue.make.org   | Evaluation des critères RGAA                                                            | 1er trimestre 2023  | - |
-| Audits        | Produit             | Dialogue.make.org   | Plannification de la mise en conformité                                                 | 1er trimestre 2023  | - |
-| Audits        | Produit             | Make.org            | Tests utilisateurs                                                                      | 2me trimestre 2023  | - |
-| Schéma        | Data étude          | -                   | Ateliers sur l'amélioration de l'accessibilité numérique des rapports détaillés         | 2me trimestre 2023  | - |
-| Schéma        | Design/Tech         | *.make.org          | Ateliers sur l'amélioration de l'accessibilité numérique des pages éditoriales          | 2me trimestre 2023  | - |
-| Schéma        | Tech/Produit        | -                   | Suivi et mise à jour du schéma pluriannuel (ajout plan 2024)                            | 2me trimestre 2023  | - |
-| Schéma        | Direction           | -                   | Validation du schéma pluriannuel et des ressources attribuées                           | 2me trimestre 2023  | - |
-| Formation     | Tech/Produit/Design | -                   | Ateliers accessibilité                                                                  | 2me trimestre 2023  | - |
-| Audits        | Tech                | Make.org            | Ré-évaluation de l'ensemble des critères RGAA                                           | 2me trimestre 2023  | - |
-| Formation     | Toutes les équipes de Make.org  | -       | Sensibilitation à l'accessibilité numérique et présentation des avancements             | 2me trimestre 2023  | - |
-| Schéma        | A définir           | -       | Ateliers sur l'amélioration de l'accessibilité numérique des supports de communication externe      | 3me trimestre 2023  | - |
-| Formation     | Equipes opérationnelles | -               | Rappels sur la gestion de contenu accessible                                            | 2me trimestre 2023  | - |
-| Schéma        | Tech/Produit        | Make.org            | Suivi et mise à jour du schéma pluriannuel                                              | 4me trimestre 2023  | - |
-| Schéma        | Direction           | -                   | Validation du schéma pluriannuel et des ressources attribuées                           | 2me trimestre 2023  | - |
-| Audits        | Tech                | Make.org            | Contrôle des critères RGAA                                                              | 4me trimestre 2023  | - |
+| Corrections   | Tech/Produit        | Make.org            | Planification des améliorations relevées lors du dernier audit                          | 4me trimestre 2022  | Reporté |
+| Corrections   | Tech                | Make.org            | Développement et mise en production des améliorations planifiées                        | au plus tard fin 1er trimestre 2023  | Reporté |
+| Schéma        | Produit             | Make.org            | Proposer un lien vers le schéma depuis la page accessiblité de Make.org + traduction    | 1er trimestre 2023  | Reporté |
+| Audits        | Tech                | Dialogue.make.org   | Evaluation des critères RGAA                                                            | 1er trimestre 2023  | Reporté |
+| Audits        | Produit             | Dialogue.make.org   | Plannification de la mise en conformité                                                 | 1er trimestre 2023  | Reporté |
+| Audits        | Produit             | Make.org            | Tests utilisateurs                                                                      | 2me trimestre 2023  | Reporté |
+| Schéma        | Data étude          | -                   | Ateliers sur l'amélioration de l'accessibilité numérique des rapports détaillés         | 2me trimestre 2023  | Reporté |
+| Schéma        | Design/Tech         | *.make.org          | Ateliers sur l'amélioration de l'accessibilité numérique des pages éditoriales          | 2me trimestre 2023  | Reporté |
+| Schéma        | Tech/Produit        | -                   | Suivi et mise à jour du schéma pluriannuel (ajout plan 2024)                            | 2me trimestre 2023  | Reporté |
+| Schéma        | Direction           | -                   | Validation du schéma pluriannuel et des ressources attribuées                           | 2me trimestre 2023  | Reporté |
+| Formation     | Tech/Produit/Design | -                   | Ateliers accessibilité                                                                  | 2me trimestre 2023  | Reporté |
+| Audits        | Tech                | Make.org            | Ré-évaluation de l'ensemble des critères RGAA                                           | 2me trimestre 2023  | Reporté |
+| Formation     | Toutes les équipes de Make.org  | -       | Sensibilitation à l'accessibilité numérique et présentation des avancements             | 2me trimestre 2023  | Reporté |
+
 
 
 
