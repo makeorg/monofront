@@ -31,6 +31,7 @@ export const postTranslate = async (
       app_content_words: translationDemand.text.split(' ').length,
       app_content_char: translationDemand.text.length,
       app_user_email: res.locals.user.email,
+      app_request_from: res.locals.fromAppName,
     });
 
     return res.json(translation).status(200).send();
@@ -64,6 +65,7 @@ export const postMultiTranslate = async (
         app_user_email: res.locals.user.email,
         app_language_source: translationDemand.sourceLanguage,
         app_language_target: v.language,
+        app_request_from: res.locals.fromAppName,
       })
     );
 

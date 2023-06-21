@@ -5,7 +5,7 @@ import { env } from '../env';
 import { UNSECURED_ROUTES } from '../Routes';
 
 const appName = 'Make.org-translator';
-const requiredRole = 'ROLE_MODERATOR';
+const requiredRoleList = ['ROLE_MODERATOR', 'ROLE_ADMIN', 'ROLE_SUPER_ADMIN'];
 
 type UserType = {
   email: string;
@@ -67,6 +67,7 @@ export const securityMiddleware = async (
         message: 'Missing authorization header',
         name: 'Security',
         app_path: req.path,
+        app_request_from: res.locals.fromAppName,
       },
       res
     );
@@ -77,6 +78,7 @@ export const securityMiddleware = async (
       {
         message: 'Authorization header not found',
         name: 'Security',
+        app_request_from: res.locals.fromAppName,
       },
       res
     );
@@ -90,13 +92,18 @@ export const securityMiddleware = async (
       {
         message: 'Could not retrieve user',
         name: 'Security',
+        app_request_from: res.locals.fromAppName,
       },
       res
     );
 
     return res.status(401).send();
   }
-  if (!user.roles.includes(requiredRole)) {
+  const allowed = !!user.roles.find(userRole =>
+    requiredRoleList.includes(userRole)
+  );
+
+  if (!allowed) {
     getLoggerInstance().logWarning(
       {
         message: 'User not authorized to access API',
@@ -104,6 +111,7 @@ export const securityMiddleware = async (
         app_user_id: user.userId,
         app_user_name: user.displayName,
         app_user_roles: user.roles,
+        app_request_from: res.locals.fromAppName,
       },
       res
     );
@@ -117,6 +125,7 @@ export const securityMiddleware = async (
       name: 'Security',
       app_user_id: user.userId,
       app_user_name: user.displayName,
+      app_request_from: res.locals.fromAppName,
     },
     res
   );

@@ -1,3 +1,3 @@
 export const configuration = {
-  allowedFromApplication: ['backoffice'],
+  allowedFromApplication: ['backoffice', 'dial'],
 };

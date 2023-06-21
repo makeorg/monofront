@@ -49,8 +49,8 @@ app.use((_, res, next) =>
   )
 );
 app.use((req, res, next) => requestIdMiddleware(req, res, next));
-app.use((req, res, next) => securityMiddleware(req, res, next));
 app.use((req, res, next) => appNameHeaderMiddleware(req, res, next));
+app.use((req, res, next) => securityMiddleware(req, res, next));
 Routes({ app });
 const logger = getBaseLoggerInstance();
 
