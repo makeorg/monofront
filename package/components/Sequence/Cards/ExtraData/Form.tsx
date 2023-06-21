@@ -36,6 +36,7 @@ type Props = {
   layout: string;
   data: DemographicParameterType[];
   token: string;
+  sessionBindingMode?: boolean;
   submitSuccess: () => void;
 };
 
@@ -79,11 +80,13 @@ export const ExtraDataForm: React.FC<Props> = ({
   layout,
   data,
   token,
+  sessionBindingMode,
   submitSuccess,
 }) => {
   const { dispatch, state } = useAppContext();
   const location = useLocation();
   const { device } = state.appConfig;
+  const { sessionId } = state.session;
   const { currentQuestion } = state;
   const { question } = state.questions[currentQuestion];
   const [currentValue, setCurrentValue] = useState<string>('');
@@ -143,7 +146,8 @@ export const ExtraDataForm: React.FC<Props> = ({
         utmParams,
         token,
         success,
-        error
+        error,
+        sessionBindingMode ? sessionId : undefined
       );
     };
 

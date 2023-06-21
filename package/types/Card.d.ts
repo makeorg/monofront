@@ -14,15 +14,7 @@ export type DemographicDataType = {
   title: string;
   parameters: DemographicParameterType[];
   token: string;
-};
-
-export type DemographicTrackType = {
-  demographic: string;
-  value: string;
-  questionId: string;
-  source: string;
-  country: string;
-  parameters: { [n: string]: string };
+  sessionBindingMode?: boolean;
 };
 
 export type PartnerItemType = {

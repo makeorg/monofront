@@ -15,33 +15,6 @@ const sanitizeQueryParams = (queryParams: { [n: string]: string }) => {
   return queryParamSanitized;
 };
 
-const trackUnsecure = async (
-  name: string,
-  value: string,
-  questionId: string,
-  source: string,
-  country: string,
-  parameters: { [n: string]: string },
-  success: () => void,
-  error: () => void
-): Promise<void> => {
-  try {
-    await DemographicsTrackingApiService.trackUnsecure(
-      name,
-      value,
-      questionId,
-      source,
-      country,
-      sanitizeQueryParams(parameters)
-    );
-    success();
-  } catch (e) {
-    const apiServiceError = e as ApiServiceError;
-    defaultUnexpectedError(apiServiceError);
-    error();
-  }
-};
-
 const track = async (
   demographicsCardId: string,
   value: string | null,
@@ -51,7 +24,8 @@ const track = async (
   parameters: { [n: string]: string },
   token: string,
   success: () => void,
-  error: (message: string, data: unknown) => void
+  error: (message: string, data: unknown) => void,
+  sessionId?: string
 ): Promise<void> => {
   try {
     await DemographicsTrackingApiService.track(
@@ -61,7 +35,8 @@ const track = async (
       source,
       country,
       sanitizeQueryParams(parameters),
-      token
+      token,
+      sessionId
     );
     success();
   } catch (e) {
@@ -78,5 +53,4 @@ const track = async (
 
 export const DemographicsTrackingService = {
   track,
-  trackUnsecure,
 };

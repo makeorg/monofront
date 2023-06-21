@@ -28,7 +28,8 @@ export const ExtraDataCard: FC<Props> = ({ configuration }) => {
     return null;
   }
 
-  const { id, name, layout, title, parameters, token } = configuration;
+  const { id, name, layout, title, parameters, token, sessionBindingMode } =
+    configuration;
 
   const submitSuccess = () => {
     dispatch(setDemographicsAsSubmitted());
@@ -48,6 +49,7 @@ export const ExtraDataCard: FC<Props> = ({ configuration }) => {
         layout={layout}
         data={parameters}
         token={token}
+        sessionBindingMode={sessionBindingMode}
         submitSuccess={submitSuccess}
       />
     </MiddleColumnStyle>
