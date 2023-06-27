@@ -7,6 +7,8 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { env } from '@make.org/content/src/env';
 import { Logger as MakeLogger } from '@make.org/content/src/logger';
 import { Logger as NestLogger, ValidationPipe } from '@nestjs/common';
+import { ApiService } from '@make.org/api/ApiService';
+import { ApiServiceServer } from '@make.org/api/ApiService/ApiService.server';
 
 const bootstrap = async () => {
   const logger = env.isProduction() ? new MakeLogger() : new NestLogger();
@@ -22,12 +24,14 @@ const bootstrap = async () => {
   const config = new DocumentBuilder()
     .setTitle('Make content')
     .setDescription('The Make content API description')
+    .addBearerAuth(undefined, 'AccessToken')
     .setVersion('0.1')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
-
   SwaggerModule.setup('api', app, document);
+  ApiService.strategy = new ApiServiceServer(env.makeApiUrl() as string);
+
   const port = env.port() || 3000;
   if (port) {
     logger.log(`PORT from env:${port}`, 'InstanceLoader');

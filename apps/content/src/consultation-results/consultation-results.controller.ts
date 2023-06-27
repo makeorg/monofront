@@ -12,6 +12,7 @@ import {
   Query,
   InternalServerErrorException,
   ParseUUIDPipe,
+  UseGuards,
 } from '@nestjs/common';
 import {
   ApiBearerAuth,
@@ -23,6 +24,7 @@ import { ConsultationResultsService } from '@make.org/content/src/consultation-r
 import { CreateConsultationResultDto } from '@make.org/content/src/consultation-results/dto/create-consultation-result.dto';
 import { UpdateConsultationResultDto } from '@make.org/content/src/consultation-results/dto/update-consultation-result.dto';
 import { ConsultationResult } from '@make.org/content/src/consultation-results/entities/consultation-result.entity';
+import { AuthGuard } from '../auth/auth.guard';
 
 @ApiBearerAuth()
 @Controller('consultation-results')
@@ -40,6 +42,8 @@ export class ConsultationResultsController {
     description: 'Created',
     type: ConsultationResult,
   })
+  @ApiBearerAuth('AccessToken')
+  @UseGuards(AuthGuard)
   @Post()
   async create(
     @Body() createConsultationResultDto: CreateConsultationResultDto,
@@ -78,6 +82,8 @@ export class ConsultationResultsController {
   @ApiResponse({ status: HttpStatus.FORBIDDEN, description: 'Forbidden.' })
   @ApiResponse({ status: HttpStatus.BAD_REQUEST, description: 'Bad request.' })
   @ApiResponse({ status: HttpStatus.NOT_FOUND, description: 'Not found.' })
+  @ApiBearerAuth('AccessToken')
+  @UseGuards(AuthGuard)
   @Patch(':id')
   update(
     @Param('id', new ParseUUIDPipe()) id: string,
@@ -100,6 +106,8 @@ export class ConsultationResultsController {
     status: HttpStatus.INTERNAL_SERVER_ERROR,
     description: 'Internal server error.',
   })
+  @ApiBearerAuth('AccessToken')
+  @UseGuards(AuthGuard)
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
   async remove(@Param('id', new ParseUUIDPipe()) id: string) {

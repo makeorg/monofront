@@ -4,7 +4,7 @@
 # If the content app has changed, run the tests and the linter
 if git diff --name-only origin/preproduction | grep -q "^apps/content/"; then
   yarn workspace @make.org/content test
-  yarn workspace @make.org/content eslint "{src,prisma,apps,libs,test}/**/*.ts"
+  yarn workspace @make.org/content lint
 fi
 
 # Run the translation and documentation checks

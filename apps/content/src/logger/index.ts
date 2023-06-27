@@ -30,12 +30,13 @@ export class Logger implements LoggerService {
   private transformParams(params: any[]) {
     const length = Object.keys(params).length;
     if (length === 1) {
-      return { app_context: params[0] };
+      return { app_context: params[0], name: params[0] };
     }
     if (length === 2) {
       return {
         app_stack: params[0],
         app_context: params[1],
+        name: params[1],
       };
     }
 

@@ -3,7 +3,8 @@
   "include": [
     "src/**/*",
     "prisma/**/*",
-    "../../package/logger"
+    "../../package/logger/**/*",
+    "../../package/api/**/*",
   ],
   "compilerOptions": {
     "rootDirs": ["./src", "./prisma"],
@@ -28,6 +29,7 @@
     "resolveJsonModule": true,
   },
   "references": [
-    { "path": "../../package/logger" }
+    { "path": "../../package/logger" },
+    { "path": "../../package/api" },
   ]
 }
