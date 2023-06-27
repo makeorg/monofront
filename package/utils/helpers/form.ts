@@ -8,18 +8,20 @@ import { defaultApiError } from '../errors/Messages';
 import { mapErrors } from '../services/ApiErrors';
 import { Logger } from '../services/Logger';
 
-export const setEmptyStringToNull = (
-  initialValue: string | number | null
-): string | number | null => {
+type StringOrNumberOrNull<T> = T extends number ? number : string | null;
+
+export const setEmptyStringToNull = <T extends string | number | null>(
+  initialValue: T
+): StringOrNumberOrNull<T> => {
   if (typeof initialValue === 'number') {
-    return initialValue;
+    return initialValue as StringOrNumberOrNull<T>;
   }
 
   if (!initialValue || !initialValue.trim()) {
-    return null;
+    return null as StringOrNumberOrNull<T>;
   }
 
-  return initialValue.trim();
+  return initialValue.trim() as StringOrNumberOrNull<T>;
 };
 
 export const setNullToEmptyString = (

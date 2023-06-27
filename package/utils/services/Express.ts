@@ -7,15 +7,17 @@ import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { FbEventClientType } from '@make.org/types/FbEvents';
 import { LogLevelType } from '@make.org/types/enums/logLevel';
 import { DataLog } from '@make.org/logger/loggerNormalizer';
+import { Logger } from '@make.org/utils/services/Logger';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
-import { Logger } from './Logger';
+
+const apiService = new ExpressApiService(Logger);
 
 const getResults = async (
   questionSlug: string,
   notFound: () => void = () => null
 ): Promise<QuestionResultsType | null> => {
   try {
-    const response = await ExpressApiService.getResults(questionSlug);
+    const response = await apiService.getResults(questionSlug);
 
     return response ? response.data : null;
   } catch (error: unknown) {
@@ -33,7 +35,7 @@ const getResults = async (
 };
 
 const log = (data: DataLog, level: LogLevelType): void => {
-  ExpressApiService.log(data, level).catch(error => {
+  apiService.log(data, level).catch(error => {
     // eslint-disable-next-line no-console
     console.error('Fail to log error - ', error);
   });
@@ -72,7 +74,8 @@ const sendFbEventConversion = async (
     });
   }
   await sleep(3000);
-  ExpressApiService.sendFbEventConversion(data)
+  apiService
+    .sendFbEventConversion(data)
     .then(() => {
       pendindFbEvents -= 1;
     })

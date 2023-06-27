@@ -17,6 +17,8 @@ export class ApiServiceServer implements IApiServiceStrategy {
 
   _referrer = '';
 
+  _token: string | null = null;
+
   get country(): string {
     return this._country;
   }
@@ -37,6 +39,14 @@ export class ApiServiceServer implements IApiServiceStrategy {
     return this._referrer;
   }
 
+  set token(token: string | null) {
+    this._token = token;
+  }
+
+  get token(): string | null {
+    return this._token;
+  }
+
   // constructor
   constructor(apiUrl: string) {
     this._apiServiceShared = new ApiServiceShared(apiUrl);
@@ -44,9 +54,15 @@ export class ApiServiceServer implements IApiServiceStrategy {
 
   // eslint-disable-next-line class-methods-use-this
   callApi(url: string, options: OptionsType): Promise<ApiServiceResponse> {
-    const headers = {
+    let headers = {
       ...options.headers,
     };
+    if (this.token) {
+      headers = {
+        ...headers,
+        Authorization: `Bearer ${this.token}`,
+      };
+    }
 
     const agent: https.Agent = new https.Agent({
       rejectUnauthorized: false,
@@ -61,11 +77,11 @@ export class ApiServiceServer implements IApiServiceStrategy {
 
   // eslint-disable-next-line class-methods-use-this
   removeToken(): void {
-    throw new Error('Method not implemented.');
+    this.token = null;
   }
 
   // eslint-disable-next-line class-methods-use-this
   setToken(token: string): void {
-    throw new Error('Method not implemented.');
+    this.token = token;
   }
 }

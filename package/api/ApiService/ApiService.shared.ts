@@ -1,5 +1,5 @@
 /* eslint-disable max-classes-per-file */
-import { Logger } from '@make.org/utils/services/Logger';
+// import { Logger } from '@make.org/utils/services/Logger';
 import { v4 as uuidv4 } from 'uuid';
 import {
   ApiServiceResponse,
@@ -38,6 +38,15 @@ const ALLOWED_GET_PARAMETERS_KEYS: string[] = [
   'hash',
 ];
 
+export interface Logger {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  logError: (val: any) => void;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  logInfo: (val: any) => void;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  logWarning: (val: any) => void;
+}
+
 /**
  * handle error for http response
  * @param  {ErrorResponse} error
@@ -47,6 +56,7 @@ const ALLOWED_GET_PARAMETERS_KEYS: string[] = [
  */
 export const handleErrors = (
   error: ErrorResponse,
+  logger: Logger,
   requestUrl?: string,
   requestMethod?: string,
   requestId?: string
@@ -64,7 +74,7 @@ export const handleErrors = (
 
   switch (true) {
     case isServerError:
-      Logger.logError(
+      logger.logError(
         new ApiServiceError(
           `API call error - server error - ${error.message}`,
           status,
@@ -80,7 +90,7 @@ export const handleErrors = (
       logged = true;
       break;
     case isClientOffline:
-      Logger.logInfo(
+      logger.logInfo(
         new ApiServiceError(
           `API call error - client off line - ${error.message}`,
           status,
@@ -96,7 +106,7 @@ export const handleErrors = (
       logged = true;
       break;
     case !error.request:
-      Logger.logWarning(
+      logger.logWarning(
         new ApiServiceError(
           `API call error - no request - ${error.message} - ${JSON.stringify(
             error
@@ -133,9 +143,19 @@ export const handleErrors = (
 export class ApiServiceShared {
   apiIUrl = '';
 
+  logger: Logger;
+
   // constructor
-  constructor(apiUrl: string) {
+  constructor(apiUrl: string, logger?: Logger) {
     this.apiIUrl = apiUrl;
+    this.logger = logger ?? {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      logError: (val: any) => console.error(val),
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      logInfo: (val: any) => console.info(val),
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      logWarning: (val: any) => console.warn(val),
+    };
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -191,13 +211,15 @@ export class ApiServiceShared {
         ...axiosOptions,
         credentials: 'omit',
         body,
-      }).catch(error => handleErrors(error, apiUrl, options.method, requestId));
+      }).catch(error =>
+        handleErrors(error, this.logger, apiUrl, options.method, requestId)
+      );
 
       return response as ApiServiceResponse;
     }
 
     const response = axios(apiUrl, axiosOptions).catch(error =>
-      handleErrors(error, apiUrl, options.method, requestId)
+      handleErrors(error, this.logger, apiUrl, options.method, requestId)
     );
 
     return response as ApiServiceResponse;

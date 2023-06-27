@@ -1,13 +1,9 @@
-import { getDateOfBirthFromAge } from '@make.org/utils/helpers/date';
 import {
   ApiServiceHeadersType,
-  RegisterFormDataType,
+  CreateUserType,
   UserAuthType,
 } from '@make.org/types';
-import { setEmptyStringToNull } from '@make.org/utils/helpers/form';
-import { PROPOSALS_LISTING_LIMIT } from '@make.org/utils/constants/proposal';
 import { AxiosResponse } from 'axios';
-import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
 import { ApiService } from '@make.org/api/ApiService';
 import { ApiServiceError } from '../ApiService/ApiServiceError';
 
@@ -192,37 +188,10 @@ export class UserApiService {
    * @param  {Object}  user
    * @return {Promise}
    */
-  static register(user: RegisterFormDataType): Promise<void | AxiosResponse> {
-    const {
-      age,
-      firstname,
-      postalcode,
-      legalMinorConsent,
-      legalAdvisorApproval,
-      approvePrivacyPolicy,
-      optInNewsletter,
-    } = user.profile;
-    const { email, password } = user;
-
-    const dateOfBirth = getDateOfBirthFromAge(age);
+  static register(createUser: CreateUserType): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_USER, {
       method: 'POST',
-      body: JSON.stringify({
-        email,
-        password,
-        firstName: setEmptyStringToNull(firstname),
-        dateOfBirth: setEmptyStringToNull(dateOfBirth),
-        postalCode: setEmptyStringToNull(postalcode || ''),
-        country: ApiService.country,
-        language: ApiService.language,
-        crmCountry: ApiService.country,
-        crmLanguage: ApiService.language,
-        questionId: trackingParamsService.questionId,
-        optIn: optInNewsletter,
-        legalMinorConsent,
-        legalAdvisorApproval,
-        approvePrivacyPolicy,
-      }),
+      body: JSON.stringify(createUser),
     });
   }
 
@@ -401,7 +370,7 @@ export class UserApiService {
   static myProposals(
     userId: string,
     preferredLanguage: string,
-    limit: number = PROPOSALS_LISTING_LIMIT,
+    limit: number,
     skip = 0
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_USER_PROPOSALS.replace(':userId', userId), {
@@ -423,8 +392,8 @@ export class UserApiService {
   static myFavourites(
     userId: string,
     preferredLanguage?: string,
-    limit: number = PROPOSALS_LISTING_LIMIT,
-    skip = 0
+    limit?: number,
+    skip?: number
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(PATH_USER_FAVOURITES.replace(':userId', userId), {
       method: 'GET',

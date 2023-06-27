@@ -221,7 +221,7 @@ export class ApiServiceClient implements IApiServiceStrategy {
     url: string,
     options: OptionsType,
     retry = RETRIES
-  ): Promise<void | AxiosResponse> {
+  ): Promise<AxiosResponse> {
     const headers: ApiServiceHeadersType = this._generateHeaders(
       options.headers
     );
@@ -239,7 +239,8 @@ export class ApiServiceClient implements IApiServiceStrategy {
       if (apiServiceError?.status === 401 && retry > 0 && this.token) {
         this._token = null;
         this._token = await this._refreshTokenCallback();
-        await this._retryApiCall(url, options, 0);
+
+        return this._retryApiCall(url, options, 0);
       }
 
       if (

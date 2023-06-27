@@ -19,14 +19,20 @@ import {
   forgotPasswordErrors,
   emailNotExistError,
 } from '@make.org/utils/errors/Messages/User';
-import { getErrorMessages } from '@make.org/utils/helpers/form';
+import {
+  getErrorMessages,
+  setEmptyStringToNull,
+} from '@make.org/utils/helpers/form';
 import { PROPOSALS_LISTING_LIMIT } from '@make.org/utils/constants/proposal';
 import { USER } from '@make.org/types/enums';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { storeTokens } from '@make.org/api/ApiService/OauthRefresh';
+import { ApiService } from '@make.org/api/ApiService';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 import { OrganisationService } from './Organisation';
 import { PersonalityService } from './Personality';
+import { getDateOfBirthFromAge } from '../helpers/date';
+import { trackingParamsService } from './TrackingParamsService';
 
 const updatePassword = async (
   userId: string,
@@ -134,7 +140,34 @@ const register = async (
   unexpectedError: () => void
 ): Promise<void> => {
   try {
-    await UserApiService.register(user);
+    const {
+      age,
+      firstname,
+      postalcode,
+      legalMinorConsent,
+      legalAdvisorApproval,
+      approvePrivacyPolicy,
+      optInNewsletter,
+    } = user.profile;
+    const { email, password } = user;
+
+    const dateOfBirth = getDateOfBirthFromAge(age);
+    await UserApiService.register({
+      email,
+      password,
+      firstName: setEmptyStringToNull(firstname),
+      dateOfBirth: setEmptyStringToNull(dateOfBirth),
+      postalCode: setEmptyStringToNull(postalcode),
+      country: ApiService.country,
+      language: ApiService.language,
+      crmCountry: ApiService.country,
+      crmLanguage: ApiService.language,
+      questionId: trackingParamsService.questionId,
+      optIn: optInNewsletter,
+      legalMinorConsent,
+      legalAdvisorApproval,
+      approvePrivacyPolicy,
+    });
     success();
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
@@ -205,7 +238,7 @@ const login = async (
     if (success) {
       success();
     }
-    return response?.data || null;
+    return (response as any)?.data || null;
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
     if ([400, 401, 403, 404].includes(apiServiceError.status)) {

@@ -19,6 +19,23 @@ export type PersonalityType = {
   emailVerified: boolean;
 };
 
+export type CreateUserType = {
+  email: string;
+  password: string;
+  firstName: string | null;
+  dateOfBirth: string | null;
+  postalCode: string | null;
+  country: string;
+  language: string;
+  crmCountry: string;
+  crmLanguage: string;
+  questionId: string;
+  optIn: boolean;
+  legalMinorConsent: boolean;
+  legalAdvisorApproval: boolean;
+  approvePrivacyPolicy: boolean;
+};
+
 export type UserType = {
   userId: string;
   email: string;
