@@ -99,6 +99,20 @@ stages:
       - package.json
       - yarn.lock
 
+.content:
+  variables:
+    IMAGE_NAME: content
+    IMAGE_APP_TARGET: app-production
+    IMAGE_APP_PATH: apps/content/Dockerfile
+    RUNDECK_JOB_ID: $RUNDECK_CONTENT_JOB_ID
+  only:
+    changes:
+      - .gitlab-ci.yml
+      - package/**/*
+      - apps/content/**/*
+      - package.json
+      - yarn.lock
+
 # Stages
 .check:
   stage: check
@@ -253,6 +267,11 @@ build-make-translator:
     - .build
     - .translator
 
+build-make-content:
+  extends:
+    - .build
+    - .content
+
 # Deploy
 deploy-front-preproduction:
   extends:
@@ -272,6 +291,12 @@ deploy-translator-preproduction:
     - .translator
     - .preprod
 
+deploy-content-preproduction:
+  extends:
+    - .deploy
+    - .content
+    - .preprod
+
 deploy-front-production:
   extends:
     - .deploy
@@ -288,6 +313,12 @@ deploy-translator-production:
   extends:
     - .deploy
     - .translator
+    - .prod
+
+deploy-content-production:
+  extends:
+    - .deploy
+    - .content
     - .prod
 
 merge-to-prod:
