@@ -50,7 +50,7 @@ $ docker-compose -f docker-compose.dev.yaml exec content_dev yarn workspace @mak
 
 ## Environment variables
 
-see [.env.dist](./env.dist)
+see [.env.dist](./.env.dist)
 
 
 ## Updating packages
