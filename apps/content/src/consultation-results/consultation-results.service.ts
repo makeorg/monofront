@@ -1,29 +1,43 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  Injectable,
+  Scope,
+  NotFoundException,
+  Inject,
+  InternalServerErrorException,
+} from '@nestjs/common';
 import { PrismaService } from '@make.org/content/src/prisma/prisma.service';
 import { CreateConsultationResultDto } from '@make.org/content/src/consultation-results/dto/create-consultation-result.dto';
 import { UpdateConsultationResultDto } from '@make.org/content/src/consultation-results/dto/update-consultation-result.dto';
 import { ConsultationResult } from '@prisma/client';
+import { REQUEST } from '@nestjs/core';
+import { Request } from 'express';
 
-@Injectable()
+@Injectable({ scope: Scope.REQUEST })
 export class ConsultationResultsService {
-  constructor(private prisma: PrismaService) {}
+  constructor(
+    private prisma: PrismaService,
+    @Inject(REQUEST) private request: Request & { user?: { userId: string } },
+  ) {}
 
   create(
     createConsultationResultDto: CreateConsultationResultDto,
   ): Promise<ConsultationResult> {
     const { question_id, data } = createConsultationResultDto;
+    const authorId = this.request['user']?.userId;
+    if (!authorId) {
+      throw new InternalServerErrorException('User required but not found');
+    }
     return this.prisma.consultationResult.create({
       data: {
         question_id,
         data,
-        author_id: 'TEST_AUTHOR_ID',
+        author_id: authorId,
       },
     });
   }
 
   findAll(params: { skip?: number; take?: number }) {
     const { skip, take } = params;
-
     return this.prisma.consultationResult.findMany({
       skip: skip ? skip : 0,
       take,
@@ -43,10 +57,21 @@ export class ConsultationResultsService {
     return result;
   }
 
-  update(id: string, updateConsultationResultDto: UpdateConsultationResultDto) {
+  update(
+    id: string,
+    updateConsultationResultDto: UpdateConsultationResultDto,
+  ): Promise<ConsultationResult> {
+    const authorId = this.request['user']?.userId;
+    if (!authorId) {
+      throw new InternalServerErrorException('User required but not found');
+    }
+
     return this.prisma.consultationResult.update({
       where: { id },
-      data: updateConsultationResultDto,
+      data: {
+        ...updateConsultationResultDto,
+        author_id: authorId,
+      },
     });
   }
 

@@ -8,7 +8,9 @@ describe('ConsultationResultsService', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [ConsultationResultsService],
+      providers: [
+        ConsultationResultsService
+      ],
     })
     .useMocker((token) => {
       if (token === PrismaService) {
@@ -17,7 +19,7 @@ describe('ConsultationResultsService', () => {
     })
     .compile();
 
-    service = module.get<ConsultationResultsService>(ConsultationResultsService);
+    service = await module.resolve<ConsultationResultsService>(ConsultationResultsService);
   });
 
   it('should be defined', () => {
