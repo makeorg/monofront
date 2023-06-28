@@ -25,7 +25,7 @@ export const ROUTE_EXPLORE_ROOT = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/ex
 export const ROUTE_EXPLORE_FIRST_PAGE = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/explore/page/1`;
 export const ROUTE_RESULTS = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/results`;
 export const ROUTE_TOP_IDEAS = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/top-ideas`;
-export const ROUTE_TOP_IDEA_DETAILS = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/top-ideas/:topIdeaId`;
+export const ROUTE_TOP_IDEA_DETAILS = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/top-ideas/:topIdeaId/page/:pageId`;
 export const ROUTE_SEQUENCE = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/selection`;
 export const ROUTE_SEQUENCE_POPULAR = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/selection-popular`;
 export const ROUTE_SEQUENCE_CONTROVERSIAL = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/selection-controversial`;
@@ -33,7 +33,7 @@ export const ROUTE_SEQUENCE_KEYWORD = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION
 export const ROUTE_PROPOSAL = `${ROUTE_COUNTRY}${ROUTE_BASE_CONSULTATION}/proposal/:proposalId/:proposalSlug`;
 
 export const ROUTE_SEARCH = `${ROUTE_COUNTRY}/search`;
-export const ROUTE_SEARCH_PROPOSALS = `${ROUTE_COUNTRY}/search/proposals`;
+export const ROUTE_SEARCH_PROPOSALS = `${ROUTE_COUNTRY}/search/proposals/page/:pageId`;
 export const ROUTE_SEARCH_ORGANISATIONS = `${ROUTE_COUNTRY}/search/organisations`;
 export const ROUTE_SEARCH_CONSULTATIONS = `${ROUTE_COUNTRY}/search/consultations`;
 
@@ -41,13 +41,16 @@ export const ROUTE_ACCOUNT_ACTIVATION = `${ROUTE_COUNTRY}/account-activation/:us
 export const ROUTE_PASSWORD_RECOVERY = `${ROUTE_COUNTRY}/password-recovery/:userId/:resetToken`;
 export const ROUTE_PROFILE = `${ROUTE_COUNTRY}/profile`;
 export const ROUTE_PROFILE_EDIT = `${ROUTE_PROFILE}/edit`;
-export const ROUTE_PROFILE_PROPOSALS = `${ROUTE_PROFILE}/proposals`;
-export const ROUTE_PROFILE_FAVOURITES = `${ROUTE_PROFILE}/favourites`;
+export const ROUTE_PROFILE_PROPOSALS = `${ROUTE_PROFILE}/proposals/page/:pageId`;
+export const ROUTE_PROFILE_PROPOSALS_FIRST_PAGE = `${ROUTE_PROFILE}/proposals/page/1`;
+
+export const ROUTE_PROFILE_FAVOURITES = `${ROUTE_PROFILE}/favourites/page/:pageId`;
 export const ROUTE_PROFILE_OPINIONS = `${ROUTE_PROFILE}/opinions`;
 export const ROUTE_PERSONALITY_PROFILE = `${ROUTE_PROFILE}/personality/:userId`;
 export const ROUTE_ORGANISATION_PROFILE = `${ROUTE_PROFILE}/organisation/:organisationSlug`;
-export const ROUTE_ORGANISATION_PROPOSALS = `${ROUTE_ORGANISATION_PROFILE}/proposals`;
-export const ROUTE_ORGANISATION_VOTES = `${ROUTE_ORGANISATION_PROFILE}/votes`;
+export const ROUTE_ORGANISATION_PROPOSALS = `${ROUTE_ORGANISATION_PROFILE}/proposals/page/:pageId`;
+export const ROUTE_ORGANISATION_PROPOSALS_FIRST_PAGE = `${ROUTE_ORGANISATION_PROFILE}/proposals/page/1`;
+export const ROUTE_ORGANISATION_VOTES = `${ROUTE_ORGANISATION_PROFILE}/votes/page/:pageId`;
 export const ROUTE_STATIC_NOTFOUND = `${ROUTE_COUNTRY}/not-found`;
 export const ROUTE_STATIC_NOCOOKIES = `${ROUTE_COUNTRY_FR}/no-cookies`;
 export const ROUTE_STATIC_COOKIES = `${ROUTE_COUNTRY}/cookies`;
@@ -102,20 +105,24 @@ export const matchRoute = (
 
 export const getRouteOrganisationProposals = (
   country: string,
-  organisationSlug: string
+  organisationSlug: string,
+  pageId = 1
 ): string =>
   generatePath(ROUTE_ORGANISATION_PROPOSALS, {
     country,
     organisationSlug,
+    pageId,
   });
 
 export const getRouteOrganisationVotes = (
   country: string,
-  organisationSlug: string
+  organisationSlug: string,
+  pageId = 1
 ): string =>
   generatePath(ROUTE_ORGANISATION_VOTES, {
     country,
     organisationSlug,
+    pageId,
   });
 
 export const getRouteProfile = (country: string): string =>
@@ -124,11 +131,13 @@ export const getRouteProfile = (country: string): string =>
 export const getRouteProfileEdit = (country: string): string =>
   generatePath(ROUTE_PROFILE_EDIT, { country });
 
-export const getRouteProfileProposals = (country: string): string =>
-  generatePath(ROUTE_PROFILE_PROPOSALS, { country });
+export const getRouteProfileProposals = (country: string, pageId = 1): string =>
+  generatePath(ROUTE_PROFILE_PROPOSALS, { country, pageId });
 
-export const getRouteProfileFavourites = (country: string): string =>
-  generatePath(ROUTE_PROFILE_FAVOURITES, { country });
+export const getRouteProfileFavourites = (
+  country: string,
+  pageId = 1
+): string => generatePath(ROUTE_PROFILE_FAVOURITES, { country, pageId });
 
 export const getRouteProfileOpinions = (country: string): string =>
   generatePath(ROUTE_PROFILE_OPINIONS, { country });
@@ -151,14 +160,17 @@ export const getRouteSearch = (country: string, query: string): string =>
  *
  * @param  {string} country
  * @param  {string} query
+ * @param  {string} page
  * @return {string}
  */
 export const getRouteSearchProposals = (
   country: string,
-  query: string
+  query: string,
+  pageId = 1
 ): string =>
   `${generatePath(ROUTE_SEARCH_PROPOSALS, {
     country,
+    pageId,
   })}?query=${query}`;
 
 /**
@@ -206,9 +218,17 @@ export const getPaginatedRoute = (
   country: string,
   pageId: number,
   questionSlug?: string,
-  queryParams?: ParsedQuery<string>
+  queryParams?: ParsedQuery<string>,
+  organisationSlug?: string,
+  topIdeaId?: string
 ): string =>
-  generatePath(path, { country, pageId, questionSlug }).concat(
+  generatePath(path, {
+    country,
+    pageId,
+    questionSlug,
+    organisationSlug,
+    topIdeaId,
+  }).concat(
     queryParams && Object.keys(queryParams).length > 0
       ? `?${stringify(queryParams)}`
       : ''

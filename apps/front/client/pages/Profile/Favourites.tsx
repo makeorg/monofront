@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useState, useEffect, FC } from 'react';
 import i18n from 'i18next';
+import { useParams } from 'react-router';
 import { ProposalType } from '@make.org/types';
 import { UserService } from '@make.org/utils/services/User';
 import { TRACKING } from '@make.org/types/enums';
@@ -14,6 +15,9 @@ const ProfileFavouritesPage: FC = () => {
   const { state } = useAppContext();
   const { user } = selectAuthentication(state);
   const { language } = state.appConfig;
+  const params: { country: string; pageId: string } = useParams();
+  const { pageId } = params;
+
   const Placeholder = <ProfileFavouritesPlaceholder />;
   const titles = {
     meta: i18n.t('meta.profile.favorites.title'),
@@ -21,13 +25,9 @@ const ProfileFavouritesPage: FC = () => {
   };
   const [proposals, setProposals] = useState<ProposalType[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [hasMore, setHasMore] = useState<boolean>(false);
-  const [page, setPage] = useState<number>(0);
+  const [proposalsTotal, setProposalsTotal] = useState<number>(0);
 
-  const loadProposals = async (
-    pageId: number,
-    proposalsList: ProposalType[]
-  ) => {
+  const loadProposals = async () => {
     setIsLoading(true);
     if (!user) {
       setIsLoading(false);
@@ -35,33 +35,32 @@ const ProfileFavouritesPage: FC = () => {
     }
     const result = await UserService.myFavourites(
       user.userId,
-      pageId,
+      JSON.parse(pageId) - 1,
       language
     );
     if (result) {
       const { results, total } = result;
-      const newProposalList = [...proposalsList, ...results];
-      setProposals(newProposalList);
-      setHasMore(newProposalList.length < total);
-      setPage(pageId + 1);
+      setProposals(results);
+      setProposalsTotal(total);
     }
     setIsLoading(false);
   };
 
-  const clickLoadMore = () => {
-    loadProposals(page, proposals);
-    trackLoadMoreProposals(TRACKING.COMPONENT_PARAM_FAVOURITES, page);
-  };
+  useEffect(() => {
+    loadProposals();
+    trackLoadMoreProposals(TRACKING.COMPONENT_PARAM_FAVOURITES, Number(pageId));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pageId]);
 
   useEffect(() => {
     if (!proposals && !isLoading) {
-      loadProposals(page, proposals);
+      loadProposals();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   useEffect(() => {
-    loadProposals(0, []);
+    loadProposals();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [language]);
 
@@ -69,10 +68,9 @@ const ProfileFavouritesPage: FC = () => {
     <ProfileProposalsList
       titles={titles}
       proposals={proposals}
-      hasMore={hasMore}
       isLoading={isLoading}
-      handleLoadMore={clickLoadMore}
       placeholder={Placeholder}
+      proposalsTotal={proposalsTotal}
     />
   );
 };

@@ -13,7 +13,7 @@ export const ProposalsListStyle = styled(UnstyledListStyle)`
   width: 100%;
   display: flex;
   flex-flow: column;
-  margin: 45px 0;
+  margin: 45px 0 25px 0;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

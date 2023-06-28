@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import i18n from 'i18next';
 import {
   CommonUsersProfileType,
   OrganisationType,
@@ -9,7 +8,6 @@ import {
 } from '@make.org/types';
 import { ProfileProposalCard } from '@make.org/components/Proposal/ProfileProposalCard';
 import { Spinner } from '@make.org/ui/components/Loading/Spinner';
-import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { MetaTags } from '@make.org/components/MetaTags';
 import {
   ProfileContentHeaderStyle,
@@ -25,7 +23,8 @@ import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { getRouteProfileOpinions } from '@make.org/utils/routes';
 import { getHomeLink } from '@make.org/utils/helpers/url';
 import { USER } from '@make.org/types/enums';
-import { LoadMoreWrapperStyle } from '../../app/Consultation/Styled/Proposal';
+import { Pagination } from '@make.org/components/Pagination';
+import { PROPOSALS_LISTING_LIMIT } from '@make.org/utils/constants/proposal';
 import { UserProfileSkipLinks } from '../../app/SkipLinks/Profile';
 import { UserInformations } from '../../app/Profile/UserInformations';
 import { ProfileTabs } from './Tabs';
@@ -36,18 +35,16 @@ type Props = {
     section: string;
   };
   proposals: ProposalType[];
-  hasMore: boolean;
   isLoading: boolean;
-  handleLoadMore: () => void;
+  proposalsTotal: number;
   placeholder: JSX.Element;
 };
 
 export const ProfileProposalsList: FC<Props> = ({
   titles,
   proposals,
-  hasMore,
   isLoading,
-  handleLoadMore,
+  proposalsTotal,
   placeholder,
 }) => {
   const { state } = useAppContext();
@@ -57,7 +54,6 @@ export const ProfileProposalsList: FC<Props> = ({
   const proposalsLength = proposals.length;
   const renderPlaceholder = !proposalsLength && !isLoading;
   const renderProposals = !!proposalsLength;
-  const displayLoadMoreButton = hasMore && !isLoading;
   const profileOpinions = getRouteProfileOpinions(country);
 
   if (!user) {
@@ -92,7 +88,7 @@ export const ProfileProposalsList: FC<Props> = ({
             <ProfileTitleSeparatorStyle />
           </ProfileContentHeaderStyle>
           {renderProposals && (
-            <section role="feed" aria-live="polite">
+            <section>
               {proposals.map((proposal, index) => (
                 <ProfileProposalCard
                   key={proposal.id}
@@ -104,12 +100,11 @@ export const ProfileProposalsList: FC<Props> = ({
             </section>
           )}
           {isLoading && <Spinner />}
-          {displayLoadMoreButton && (
-            <LoadMoreWrapperStyle>
-              <RedButtonStyle onClick={handleLoadMore}>
-                {i18n.t('consultation.proposal.load_more')}
-              </RedButtonStyle>
-            </LoadMoreWrapperStyle>
+          {proposalsTotal > PROPOSALS_LISTING_LIMIT && (
+            <Pagination
+              itemsPerPage={PROPOSALS_LISTING_LIMIT}
+              itemsTotal={proposalsTotal}
+            />
           )}
           {renderPlaceholder && placeholder}
         </ProfilePageContentStyle>

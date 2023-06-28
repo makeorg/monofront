@@ -9,7 +9,6 @@ import { useAppContext } from '@make.org/store';
 import { OrganisationService } from '../services/Organisation';
 
 export const useOrganisation = (
-  loadMore?: number,
   loadProposals?: boolean,
   loadVotes?: boolean
 ): {
@@ -17,24 +16,24 @@ export const useOrganisation = (
   proposals: ProposalType[];
   votes: OrganisationVoteType[];
   isLoading: boolean;
-  hasMore: boolean;
+  votesTotal: number;
+  proposalsTotal: number;
+  pageId: number;
   seed: number | undefined;
-  page: number;
 } => {
-  const params: { organisationSlug: string } = useParams();
-  const { organisationSlug } = params;
+  const { state } = useAppContext();
+  const { language } = state.appConfig;
+  const params: { organisationSlug: string; pageId: string } = useParams();
+  const { organisationSlug, pageId } = params;
   const [organisation, setOrganisation] = useState<OrganisationType | null>(
     null
   );
   const [proposals, setProposals] = useState<ProposalType[]>([]);
+  const [proposalsTotal, setProposalsTotal] = useState<number>(0);
   const [votes, setVotes] = useState<OrganisationVoteType[]>([]);
+  const [votesTotal, setVotesTotal] = useState<number>(0);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [hasMore, setHasMore] = useState<boolean>(false);
   const [seed, setSeed] = useState<number | undefined>(undefined);
-  const [page, setPage] = useState<number>(0);
-  const { state } = useAppContext();
-
-  const { language } = state.appConfig;
 
   const fetchOrganisation = async () => {
     const response = await OrganisationService.getOrganisationBySlug(
@@ -44,10 +43,7 @@ export const useOrganisation = (
     setOrganisation(response);
   };
 
-  const fetchOrganisationProposals = async (
-    pageId: number,
-    proposalsList: ProposalType[]
-  ) => {
+  const fetchOrganisationProposals = async () => {
     if (!organisation) {
       return;
     }
@@ -55,7 +51,7 @@ export const useOrganisation = (
     setIsLoading(true);
     const proposalsResponse = await OrganisationService.getProposals(
       organisation.organisationId,
-      pageId,
+      JSON.parse(pageId) - 1,
       language
     );
 
@@ -65,18 +61,13 @@ export const useOrganisation = (
     }
 
     const { results, total, seed: apiSeed } = proposalsResponse;
-    const newProposals = [...proposalsList, ...results];
-    setProposals(newProposals);
-    setHasMore(newProposals.length < total);
+    setProposals(results);
+    setProposalsTotal(total);
     setSeed(apiSeed);
-    setPage(pageId + 1);
     setIsLoading(false);
   };
 
-  const fetchVotedProposals = async (
-    pageId: number,
-    votesList: OrganisationVoteType[]
-  ) => {
+  const fetchVotedProposals = async () => {
     if (!organisation) {
       return;
     }
@@ -85,7 +76,7 @@ export const useOrganisation = (
     const response = await OrganisationService.getVotes(
       organisation.organisationId,
       seed,
-      pageId
+      JSON.parse(pageId) - 1
     );
 
     if (!response) {
@@ -94,23 +85,21 @@ export const useOrganisation = (
     }
 
     const { results, total, seed: apiSeed } = response;
-    const newVotesList = [...votesList, ...results];
-    setVotes(newVotesList);
-    setHasMore(newVotesList.length < total);
+    setVotes(results);
+    setVotesTotal(total);
     setSeed(apiSeed);
-    setPage(pageId + 1);
     setIsLoading(false);
   };
 
   useEffect(() => {
     if (loadProposals) {
-      fetchOrganisationProposals(page, proposals);
+      fetchOrganisationProposals();
     }
     if (loadVotes) {
-      fetchVotedProposals(page, votes);
+      fetchVotedProposals();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [organisation, loadMore]);
+  }, [organisation, pageId]);
 
   useEffect(() => {
     fetchOrganisation();
@@ -119,10 +108,10 @@ export const useOrganisation = (
 
   useEffect(() => {
     if (loadProposals) {
-      fetchOrganisationProposals(0, []);
+      fetchOrganisationProposals();
     }
     if (loadVotes) {
-      fetchVotedProposals(0, []);
+      fetchVotedProposals();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [language]);
@@ -132,8 +121,9 @@ export const useOrganisation = (
     proposals,
     votes,
     isLoading,
-    hasMore,
+    proposalsTotal,
+    votesTotal,
     seed,
-    page,
+    pageId: Number(pageId),
   };
 };

@@ -40,13 +40,13 @@ describe('match Routes', () => {
 describe('build Routes', () => {
   it('getRouteOrganisationProposals', () => {
     expect(getRouteOrganisationProposals('FR', 'fooOrg')).toBe(
-      '/FR/profile/organisation/fooOrg/proposals'
+      '/FR/profile/organisation/fooOrg/proposals/page/1'
     );
   });
 
   it('getRouteOrganisationVotes', () => {
     expect(getRouteOrganisationVotes('FR', 'fooOrg')).toBe(
-      '/FR/profile/organisation/fooOrg/votes'
+      '/FR/profile/organisation/fooOrg/votes/page/1'
     );
   });
 
@@ -59,11 +59,15 @@ describe('build Routes', () => {
   });
 
   it('getRouteProfileProposals', () => {
-    expect(getRouteProfileProposals('FR')).toBe('/FR/profile/proposals');
+    expect(getRouteProfileProposals('FR', 1)).toBe(
+      '/FR/profile/proposals/page/1'
+    );
   });
 
   it('getRouteProfileFavourites', () => {
-    expect(getRouteProfileFavourites('FR')).toBe('/FR/profile/favourites');
+    expect(getRouteProfileFavourites('FR', 1)).toBe(
+      '/FR/profile/favourites/page/1'
+    );
   });
 
   it('getRouteProfileOpinions', () => {
@@ -80,7 +84,7 @@ describe('build Routes', () => {
 
   it('getRouteSearchProposals', () => {
     expect(getRouteSearchProposals('FR', 'fooQuery')).toBe(
-      '/FR/search/proposals?query=fooQuery'
+      '/FR/search/proposals/page/1?query=fooQuery'
     );
   });
 

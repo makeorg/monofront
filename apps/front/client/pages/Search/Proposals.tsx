@@ -11,9 +11,11 @@ import {
   TopComponentContextValue,
 } from '@make.org/store/topComponentContext';
 import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
-import { RouteComponentProps } from 'react-router';
+import { RouteComponentProps, useParams } from 'react-router';
 import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
+import { PROPOSALS_LISTING_LIMIT } from '@make.org/utils/constants/proposal';
+import { Pagination } from '@make.org/components/Pagination';
 import { SearchBackButton } from '../../app/Search/BackButton';
 import {
   SearchPageTitleStyle,
@@ -22,13 +24,8 @@ import {
   SearchResultsProposalListStyle,
   SearchPageWrapperStyle,
 } from './style';
-import {
-  SearchResultsProposalItemStyle,
-  SearchMoreProposalsButtonStyle,
-} from '../../app/Search/MainResults/Proposals/style';
+import { SearchResultsProposalItemStyle } from '../../app/Search/MainResults/Proposals/style';
 import { SearchRegister } from '../../app/Search/Register';
-
-const PROPOSALS_LIMIT = 10;
 
 export const SearchResultsProposals: React.FC<RouteComponentProps> = ({
   location,
@@ -36,19 +33,19 @@ export const SearchResultsProposals: React.FC<RouteComponentProps> = ({
 }) => {
   const { state } = useAppContext();
   const { country, device, language } = state.appConfig;
-  const params = new URLSearchParams(location.search);
-  const term = params.get('query') || '';
-  const [isLoading, setIsLoading] = useState(true);
-  const [page, setPage] = useState<number>(0);
-  const [proposalsCount, setProposalsCount] = useState<number>(0);
-  const [proposalsResult, setProposalsResult] = useState<ProposalType[]>([]);
-  const getMoreButton =
-    proposalsCount > PROPOSALS_LIMIT &&
-    proposalsCount > proposalsResult.length &&
-    !isLoading;
+  const searchParams = new URLSearchParams(location.search);
+  const params: { country: string; pageId: string } = useParams();
+  const { pageId } = params;
+  const term = searchParams.get('query') || '';
   const isDesktop = matchDesktopDevice(device);
 
-  const initProposal = async () => {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [proposals, setProposals] = useState<ProposalType[]>([]);
+  const [proposalsTotal, setProposalsTotal] = useState<number>(0);
+
+  const loadProposals = async () => {
+    setIsLoading(true);
+
     const result = await searchProposals(
       country,
       language,
@@ -56,43 +53,21 @@ export const SearchResultsProposals: React.FC<RouteComponentProps> = ({
       term,
       undefined,
       undefined,
-      PROPOSALS_LIMIT,
-      page
+      PROPOSALS_LISTING_LIMIT,
+      JSON.parse(pageId) - 1
     );
     if (result) {
       const { results, total } = result;
-      setProposalsResult(results);
-      setProposalsCount(total);
-      setPage(1);
-    }
-    setIsLoading(false);
-  };
-
-  const loadMoreProposals = async () => {
-    setIsLoading(true);
-    const result = await searchProposals(
-      country,
-      language,
-      undefined,
-      term,
-      undefined,
-      undefined,
-      PROPOSALS_LIMIT,
-      page
-    );
-    if (result) {
-      const { results } = result;
-      const newProposalList = [...proposalsResult, ...results];
-      setProposalsResult(newProposalList);
-      setPage(page + 1);
+      setProposals(results);
+      setProposalsTotal(total);
     }
     setIsLoading(false);
   };
 
   useEffect(() => {
-    initProposal();
+    loadProposals();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [term]);
+  }, [term, pageId, language]);
 
   useEffect(() => {
     trackDisplaySearchProposalsResult();
@@ -114,7 +89,7 @@ export const SearchResultsProposals: React.FC<RouteComponentProps> = ({
           ? i18n.t('search.titles.loading')
           : i18n.t('search.titles.proposals', {
               term,
-              count: proposalsCount,
+              count: proposalsTotal,
             })}
       </SearchPageTitleStyle>
       <SearchPageContentStyle>
@@ -125,22 +100,23 @@ export const SearchResultsProposals: React.FC<RouteComponentProps> = ({
         >
           <TopComponentContext.Provider value={topComponentContext}>
             <SearchResultsProposalListStyle>
-              {proposalsResult.map((proposal, index) => (
+              {proposals.map((proposal, index) => (
                 <SearchResultsProposalItemStyle key={proposal.id}>
                   <ProposalCardWithQuestion
                     proposal={proposal}
                     position={index + 1}
-                    size={proposalsResult.length}
+                    size={proposals.length}
                   />
                 </SearchResultsProposalItemStyle>
               ))}
             </SearchResultsProposalListStyle>
           </TopComponentContext.Provider>
           {isLoading && <Spinner />}
-          {getMoreButton && (
-            <SearchMoreProposalsButtonStyle onClick={loadMoreProposals}>
-              {i18n.t('consultation.proposal.load_more')}
-            </SearchMoreProposalsButtonStyle>
+          {proposalsTotal > PROPOSALS_LISTING_LIMIT && (
+            <Pagination
+              itemsPerPage={PROPOSALS_LISTING_LIMIT}
+              itemsTotal={proposalsTotal}
+            />
           )}
         </SearchPageResultsStyle>
         {isDesktop && <SearchRegister />}

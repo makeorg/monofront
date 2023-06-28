@@ -1,6 +1,5 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import i18n from 'i18next';
-import { TRACKING } from '@make.org/types/enums';
 import { MetaTags } from '@make.org/components/MetaTags';
 import { formatOrganisationName } from '@make.org/utils/helpers/stringFormatter';
 import {
@@ -12,15 +11,14 @@ import {
 } from '@make.org/ui/elements/ProfileElements';
 import { SecondLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
 import { Spinner } from '@make.org/ui/components/Loading/Spinner';
-import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
+import { Pagination } from '@make.org/components/Pagination';
+import { PROPOSALS_LISTING_LIMIT } from '@make.org/utils/constants/proposal';
 import { ProfileVoteCard } from '@make.org/components/Proposal/ProfileVoteCard';
-import { trackLoadMoreProposals } from '@make.org/utils/services/Tracking';
 import { Redirect } from 'react-router';
 import { useAppContext } from '@make.org/store';
 import { MiddlePageWrapperStyle } from '@make.org/ui/elements/MainElements';
 import { getHomeLink } from '@make.org/utils/helpers/url';
 import { useOrganisation } from '@make.org/utils/hooks/useOrganisation';
-import { LoadMoreWrapperStyle } from '../../app/Consultation/Styled/Proposal';
 import { OrganisationVotesPlaceholder } from './Placeholders/Votes';
 import { OrganisationProfileSkipLinks } from '../../app/SkipLinks/Organisation';
 import { OrganisationProfileSidebar } from './Sidebar';
@@ -29,9 +27,7 @@ import { OrganisationProfileTabs } from './Tabs';
 const OrganisationVotesPage: FC = () => {
   const { state } = useAppContext();
   const { country } = state.appConfig;
-  const [loadMoreVotes, setLoadMoreVotes] = useState(0);
-  const { organisation, votes, isLoading, hasMore, page } = useOrganisation(
-    loadMoreVotes,
+  const { organisation, votes, isLoading, votesTotal } = useOrganisation(
     false,
     true
   );
@@ -39,12 +35,6 @@ const OrganisationVotesPage: FC = () => {
   const votesLength = votes.length;
   const renderVotes = !!votesLength;
   const renderPlaceholder = !votesLength && !isLoading;
-  const displayLoadMoreButton = hasMore && !isLoading;
-
-  const clickLoadMore = () => {
-    setLoadMoreVotes(page);
-    trackLoadMoreProposals(TRACKING.COMPONENT_PARAM_PROPOSALS, page);
-  };
 
   if (!organisation && isLoading) {
     return (
@@ -80,7 +70,7 @@ const OrganisationVotesPage: FC = () => {
             <ProfileTitleSeparatorStyle />
           </ProfileContentHeaderStyle>
           {renderVotes && (
-            <section role="feed" aria-live="polite">
+            <section>
               {votes.map((vote, index) => (
                 <ProfileVoteCard
                   key={`organisation_votes_${vote.proposal.id}`}
@@ -94,12 +84,11 @@ const OrganisationVotesPage: FC = () => {
             </section>
           )}
           {isLoading && <Spinner />}
-          {displayLoadMoreButton && (
-            <LoadMoreWrapperStyle>
-              <RedButtonStyle onClick={clickLoadMore}>
-                {i18n.t('consultation.proposal.load_more')}
-              </RedButtonStyle>
-            </LoadMoreWrapperStyle>
+          {votesTotal > PROPOSALS_LISTING_LIMIT && (
+            <Pagination
+              itemsPerPage={PROPOSALS_LISTING_LIMIT}
+              itemsTotal={votesTotal}
+            />
           )}
           {renderPlaceholder && (
             <OrganisationVotesPlaceholder

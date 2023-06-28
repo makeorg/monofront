@@ -37,8 +37,13 @@ export const Pagination: FC<Props> = ({
   const ref = useRef<HTMLUListElement>(null);
   const { state } = useAppContext();
   const question: QuestionType = selectCurrentQuestion(state);
-  const params: { country: string; pageId: string } = useParams();
-  const { country, pageId } = params;
+  const params: {
+    country: string;
+    organisationSlug: string;
+    pageId: string;
+    topIdeaId: string;
+  } = useParams();
+  const { country, organisationSlug, pageId, topIdeaId } = params;
   const { path } = useRouteMatch();
   const { search } = useLocation();
   const urlQueryParams = parse(search);
@@ -46,19 +51,24 @@ export const Pagination: FC<Props> = ({
   const pagesTotal = Math.ceil(itemsTotal / itemsPerPage);
   const [isOpen, setIsOpen] = useState(false);
   const toggleDropDown = () => pagesTotal > 2 && setIsOpen(true);
+
   const previousPageUrl = getPaginatedRoute(
     path,
     country,
     intPageId - 1,
     question && question.slug,
-    urlQueryParams
+    urlQueryParams,
+    organisationSlug,
+    topIdeaId
   );
   const nextPageUrl = getPaginatedRoute(
     path,
     country,
     intPageId + 1,
     question && question.slug,
-    urlQueryParams
+    urlQueryParams,
+    organisationSlug,
+    topIdeaId
   );
 
   const paginateClick = () => {

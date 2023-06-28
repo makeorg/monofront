@@ -17,6 +17,7 @@ export const PaginationNavStyle = styled.nav`
   align-items: center;
   gap: ${spacings.sm};
   margin-bottom: ${spacings.xl};
+  margin-top: ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     gap: ${spacings.l};
   }

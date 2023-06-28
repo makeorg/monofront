@@ -82,7 +82,7 @@ export const ConsultationsListStyle = styled(UnstyledListStyle)`
 `;
 
 export const ConsultationsListItemStyle = styled.li<{ itemsPerRow: number }>`
-  margin-bottom: ${spacings.xl};
+  margin-bottom: ${spacings.l};
   padding-left: ${spacings.m};
   padding-right: ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {

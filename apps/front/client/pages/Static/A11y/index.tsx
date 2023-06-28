@@ -34,13 +34,13 @@ import {
   getRouteOrganisationVotes,
   getRouteProfile,
   getRouteProfileEdit,
-  getRouteProfileFavourites,
   getRouteProfileOpinions,
-  getRouteProfileProposals,
   getRouteSearch,
   getRouteSearchConsultations,
   getRouteSearchOrganisations,
   getRouteSearchProposals,
+  getRouteProfileProposals,
+  getRouteProfileFavourites,
 } from '@make.org/utils/routes';
 import {
   StaticPageWrapperStyle,

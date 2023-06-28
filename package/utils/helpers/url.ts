@@ -269,18 +269,21 @@ export const getTopIdeasLink = (
  *
  * @param  {string} country
  * @param  {string} questionSlug
- *
+ * @param  {number} pageId
+
  * @return {string}
  */
 export const getTopIdeaDetailsLink = (
   country: string,
   questionSlug: string,
-  topIdeaId: string
+  topIdeaId: string,
+  pageId = 1
 ): string =>
   generatePath(ROUTE_TOP_IDEA_DETAILS, {
     country,
     questionSlug,
     topIdeaId,
+    pageId,
   });
 
 /**

@@ -103,11 +103,11 @@ describe('getAppTrackingLocation function', () => {
   });
 
   it('Search Proposals location', () => {
-    expect(getAppTrackingLocation('/FR/search/proposals')).toBe(
+    expect(getAppTrackingLocation('/FR/search/proposals/page/1')).toBe(
       'search-proposals-page'
     );
     expect(
-      getAppTrackingLocation(addTrailingSlash('/FR/search/proposals'))
+      getAppTrackingLocation(addTrailingSlash('/FR/search/proposals/page/1'))
     ).toBe('search-proposals-page');
   });
 
@@ -138,8 +138,8 @@ describe('getAppTrackingLocation function', () => {
 
   it('Private Profile locations', () => {
     const editPath = getRouteProfileEdit('FR');
-    const favoritesPath = getRouteProfileFavourites('FR');
-    const proposalsPath = getRouteProfileProposals('FR');
+    const favoritesPath = getRouteProfileFavourites('FR', 1);
+    const proposalsPath = getRouteProfileProposals('FR', 1);
     const opinionsPath = getRouteProfileOpinions('FR');
 
     expect(getAppTrackingLocation(editPath)).toBe('private-profile-page');

@@ -2,7 +2,10 @@ import styled from 'styled-components';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
-import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
+import {
+  LinkAsRedButtonStyle,
+  RedButtonStyle,
+} from '@make.org/ui/elements/ButtonsElements';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const MainResultsProposalsItemStyle = styled.li`
@@ -42,6 +45,11 @@ export const SearchResultsProposalItemStyle = styled.li`
   &:last-child {
     margin-bottom: 0;
   }
+`;
+
+export const PaginationProposalsButtonStyle = styled(LinkAsRedButtonStyle)`
+  display: inline-flex;
+  margin: ${spacings.m} auto 0;
 `;
 
 export const SearchMoreProposalsButtonStyle = styled(RedButtonStyle)`

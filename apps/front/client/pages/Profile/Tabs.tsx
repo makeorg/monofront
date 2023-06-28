@@ -10,10 +10,10 @@ import {
 import { Link, useLocation } from 'react-router-dom';
 import { useAppContext } from '@make.org/store';
 import {
-  getRouteProfileFavourites,
-  getRouteProfileProposals,
   isProfileFavourites,
   isProfileProposals,
+  getRouteProfileFavourites,
+  getRouteProfileProposals,
 } from '@make.org/utils/routes';
 
 export const ProfileTabs: FC = () => {

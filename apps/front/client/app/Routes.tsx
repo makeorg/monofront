@@ -26,6 +26,7 @@ import {
   ROUTE_PROFILE_FAVOURITES,
   ROUTE_ORGANISATION_PROFILE,
   ROUTE_ORGANISATION_PROPOSALS,
+  ROUTE_ORGANISATION_PROPOSALS_FIRST_PAGE,
   ROUTE_ORGANISATION_VOTES,
   ROUTE_COUNTRY,
   ROUTE_STATIC_CONTACT,
@@ -57,6 +58,7 @@ import {
   ROUTE_STATIC_A11Y,
   ROUTE_STATIC_MODERATION,
   ROUTE_STATIC_MODERATION_DE,
+  ROUTE_PROFILE_PROPOSALS_FIRST_PAGE,
 } from '@make.org/utils/routes';
 import { usePageBackgoundColor } from '../hooks/usePageBackgroundColor';
 import { QuestionWrapper } from '../pages/Consultation/QuestionWrapper';
@@ -189,7 +191,14 @@ export const Routes: FC = () => {
       />
       <Route path={ROUTE_PASSWORD_RECOVERY} component={PasswordRecoveryPage} />
       <Route path={ROUTE_PROFILE_EDIT} component={ProfileEditPage} />
+
       <Route path={ROUTE_PROFILE_PROPOSALS} component={ProfileProposalsPage} />
+      <Redirect
+        exact
+        path={ROUTE_PROFILE}
+        to={ROUTE_PROFILE_PROPOSALS_FIRST_PAGE}
+      />
+
       <Route
         path={ROUTE_PROFILE_FAVOURITES}
         component={ProfileFavouritesPage}
@@ -209,10 +218,10 @@ export const Routes: FC = () => {
       <Route path={ROUTE_SEARCH_CONSULTATIONS} component={SearchPage} />
       <Route path={ROUTE_PERSONALITY_PROFILE} component={PersonalityPage} />
       <Redirect
+        exact
         path={ROUTE_ORGANISATION_PROFILE}
-        to={ROUTE_ORGANISATION_PROPOSALS}
+        to={ROUTE_ORGANISATION_PROPOSALS_FIRST_PAGE}
       />
-      <Redirect path={ROUTE_PROFILE} to={ROUTE_PROFILE_PROPOSALS} />
       <Route exact path={ROUTE_COUNTRY} component={HomePage} />
 
       {/* Defaults routes for static pages (url in en language) */}

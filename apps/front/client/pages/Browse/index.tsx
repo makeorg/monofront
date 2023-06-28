@@ -31,7 +31,7 @@ type consultationDataType = {
   results: HomeQuestionType[];
 } | null;
 
-const CONSULTATION_LIST_LIMIT = 8;
+const CONSULTATION_LIST_LIMIT = 2;
 
 const BrowseConsultationsPage: FC = () => {
   const location = useLocation();

@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ProposalType } from '@make.org/types';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { ProposalCardWithQuestion } from '@make.org/components/Proposal/ProposalCardWithQuestion';
 import i18n from 'i18next';
-import { searchProposals } from '@make.org/utils/helpers/proposal';
-import { Spinner } from '@make.org/ui/components/Loading/Spinner';
 import {
   TopComponentContext,
   TopComponentContextValueType,
@@ -12,62 +10,29 @@ import {
 } from '@make.org/store/topComponentContext';
 import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { useAppContext } from '@make.org/store';
+import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import { MainResultsProposalsMobile } from './Mobile';
 import {
   MainResultsProposalsItemStyle,
-  SearchMoreProposalsButtonStyle,
+  PaginationProposalsButtonStyle,
 } from './style';
 
 type Props = {
-  searchTerm: string;
   proposals: ProposalType[];
   count: number;
+  link: string;
 };
 
 export const MainResultsProposals: React.FC<Props> = ({
-  searchTerm,
   proposals,
   count,
+  link,
 }) => {
   const { state } = useAppContext();
-  const { country, device, language } = state.appConfig;
+  const { device } = state.appConfig;
   const isMobile = matchMobileDevice(device);
-  const [page, setPage] = useState<number>(1);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [proposalsResult, setProposalsResult] =
-    useState<ProposalType[]>(proposals);
   const PROPOSALS_LIMIT = 4;
-  const getMoreButton =
-    count > PROPOSALS_LIMIT && count !== proposalsResult.length && !isLoading;
-
-  // Page increment need to be reset if the serach term is changing
-  useEffect(() => setPage(1), [searchTerm]);
-
-  useEffect(() => {
-    setProposalsResult(proposals);
-  }, [proposals]);
-
-  const loadMoreProposals = async () => {
-    setIsLoading(true);
-    const result = await searchProposals(
-      country,
-      language,
-      undefined,
-      searchTerm,
-      undefined,
-      undefined,
-      PROPOSALS_LIMIT,
-      page
-    );
-
-    if (result) {
-      const { results } = result;
-      const newProposalList = [...proposalsResult, ...results];
-      setProposalsResult(newProposalList);
-      setPage(page + 1);
-    }
-    setIsLoading(false);
-  };
+  const seeMoreButton = count > PROPOSALS_LIMIT && count !== proposals.length;
 
   if (isMobile) {
     return <MainResultsProposalsMobile proposals={proposals} />;
@@ -76,26 +41,25 @@ export const MainResultsProposals: React.FC<Props> = ({
     TopComponentContextValue.getSearchResultProposalList();
 
   return (
-    <div id="proposal_list" role="feed" aria-live="polite">
+    <ColumnElementStyle id="proposal_list">
       <TopComponentContext.Provider value={topComponentContext}>
         <UnstyledListStyle>
-          {proposalsResult.map((proposal, index) => (
+          {proposals.map((proposal, index) => (
             <MainResultsProposalsItemStyle key={proposal.id}>
               <ProposalCardWithQuestion
                 proposal={proposal}
                 position={index + 1}
-                size={proposalsResult.length}
+                size={proposals.length}
               />
             </MainResultsProposalsItemStyle>
           ))}
         </UnstyledListStyle>
-        {isLoading && <Spinner />}
-        {getMoreButton && (
-          <SearchMoreProposalsButtonStyle onClick={loadMoreProposals}>
+        {seeMoreButton && (
+          <PaginationProposalsButtonStyle to={link}>
             {i18n.t('consultation.proposal.load_more')}
-          </SearchMoreProposalsButtonStyle>
+          </PaginationProposalsButtonStyle>
         )}
       </TopComponentContext.Provider>
-    </div>
+    </ColumnElementStyle>
   );
 };

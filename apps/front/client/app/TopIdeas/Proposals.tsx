@@ -5,8 +5,8 @@ import { Spinner } from '@make.org/ui/components/Loading/Spinner';
 import i18n from 'i18next';
 import { searchProposals } from '@make.org/utils/helpers/proposal';
 import { ProposalCardTagged } from '@make.org/components/Proposal/ProposalCardTagged';
-import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
-
+import { PROPOSALS_LISTING_LIMIT } from '@make.org/utils/constants/proposal';
+import { useParams } from 'react-router';
 import { TRACKING } from '@make.org/types/enums';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import {
@@ -14,8 +14,8 @@ import {
   TopComponentContextValueType,
   TopComponentContextValue,
 } from '@make.org/store/topComponentContext';
+import { Pagination } from '@make.org/components/Pagination';
 import { useAppContext } from '@make.org/store';
-import { LoadMoreWrapperStyle } from '../Consultation/Styled/Proposal';
 import { TopIdeaDetailsPageTitleStyle } from '../../pages/Consultation/style';
 import { InfiniteProposalsContainerStyle } from './style';
 
@@ -29,26 +29,25 @@ export const TopIdeaDetailsProposals: FC<Props> = ({ topIdea, question }) => {
     TopComponentContextValue.getTopideaProposalList();
   const { state } = useAppContext();
   const { country, language } = state.appConfig;
-  const [proposals, setProposals] = useState<ProposalType[]>([]);
-  const [hasMore, setHasMore] = useState<boolean>(false);
-  const [seed, setSeed] = useState<number | undefined>(undefined);
-  const [page, setPage] = useState<number>(0);
+  const params: { country: string; pageId: string } = useParams();
+  const { pageId } = params;
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [isPendingForMore, setIsPendingForMore] = useState<boolean>(false);
+  const [proposals, setProposals] = useState<ProposalType[]>([]);
+  const [proposalsTotal, setProposalsTotal] = useState<number>(0);
+  const [seed, setSeed] = useState<number | undefined>(undefined);
   const hasProposals = proposals && proposals.length > 0;
-  const displayLoadMoreButton =
-    hasProposals && hasMore && !isLoading && !isPendingForMore;
 
-  const initProposals = async () => {
+  const loadProposals = async () => {
+    setIsLoading(true);
     const result = await searchProposals(
       country,
       language,
       question.questionId,
       undefined,
       undefined,
-      page,
-      undefined,
-      undefined,
+      seed,
+      PROPOSALS_LISTING_LIMIT,
+      JSON.parse(pageId) - 1,
       'TOP_SCORE',
       undefined,
       topIdea.ideaId
@@ -57,44 +56,25 @@ export const TopIdeaDetailsProposals: FC<Props> = ({ topIdea, question }) => {
     if (result) {
       const { results, total, seed: apiSeed } = result;
       setProposals(results);
-      setHasMore(results.length < total);
+      setProposalsTotal(total);
       setSeed(apiSeed);
-      setPage(1);
     }
     setIsLoading(false);
   };
 
-  const loadProposals = async () => {
-    setIsPendingForMore(true);
-    const result = await searchProposals(
-      country,
-      language,
-      question.questionId,
-      undefined,
-      undefined,
-      seed,
-      undefined,
-      page,
-      'TOP_SCORE',
-      undefined,
-      topIdea.ideaId
+  useEffect(() => {
+    loadProposals();
+    trackLoadMoreProposals(
+      TRACKING.COMPONENT_PARAM_DETAIL_IDEAS,
+      Number(pageId)
     );
-    if (result) {
-      const { results, total, seed: apiSeed } = result;
-      const newProposalList: ProposalType[] = [...proposals, ...results];
-      setProposals(newProposalList);
-      setHasMore(newProposalList.length < total);
-      setSeed(apiSeed);
-      setPage(page + 1);
-    }
-    trackLoadMoreProposals(TRACKING.COMPONENT_PARAM_DETAIL_IDEAS, page);
-    setIsPendingForMore(false);
-  };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pageId]);
 
   useEffect(() => {
-    initProposals();
+    loadProposals();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [question]);
+  }, [question, language]);
 
   return (
     <>
@@ -125,13 +105,11 @@ export const TopIdeaDetailsProposals: FC<Props> = ({ topIdea, question }) => {
           </ColumnElementStyle>
         )
       )}
-      {isPendingForMore && <Spinner />}
-      {displayLoadMoreButton && (
-        <LoadMoreWrapperStyle>
-          <RedButtonStyle onClick={loadProposals}>
-            {i18n.t('consultation.proposal.load_more')}
-          </RedButtonStyle>
-        </LoadMoreWrapperStyle>
+      {proposalsTotal > PROPOSALS_LISTING_LIMIT && (
+        <Pagination
+          itemsPerPage={PROPOSALS_LISTING_LIMIT}
+          itemsTotal={proposalsTotal}
+        />
       )}
     </>
   );

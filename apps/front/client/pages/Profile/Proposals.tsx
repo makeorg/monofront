@@ -7,7 +7,7 @@ import { trackLoadMoreProposals } from '@make.org/utils/services/Tracking';
 import { TRACKING } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
-
+import { useParams } from 'react-router';
 import { ProfileProposalsList } from './ProposalsList';
 import { ProfileProposalsPlaceholder } from './Placeholders/Proposals';
 
@@ -20,46 +20,47 @@ const ProfileProposalsPage: FC = () => {
     section: i18n.t('profile.proposals.title'),
   };
   const { language } = state.appConfig;
+  const params: { country: string; pageId: string } = useParams();
+  const { pageId } = params;
 
-  const [proposals, setProposals] = useState<ProposalType[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [hasMore, setHasMore] = useState<boolean>(false);
-  const [page, setPage] = useState<number>(0);
+  const [proposals, setProposals] = useState<ProposalType[]>([]);
+  const [proposalsTotal, setProposalsTotal] = useState<number>(0);
 
-  const loadProposals = async (
-    pageId: number,
-    proposalsList: ProposalType[]
-  ) => {
+  const loadProposals = async () => {
     setIsLoading(true);
     if (!user) {
       setIsLoading(false);
       return;
     }
-    const result = await UserService.myProposals(user.userId, pageId, language);
+    const result = await UserService.myProposals(
+      user.userId,
+      JSON.parse(pageId) - 1,
+      language
+    );
     if (result) {
       const { results, total } = result;
-      const newProposalList = [...proposalsList, ...results];
-      setProposals(newProposalList);
-      setHasMore(newProposalList.length < total);
-      setPage(pageId + 1);
+      setProposals(results);
+      setProposalsTotal(total);
     }
     setIsLoading(false);
   };
 
-  const clickLoadMore = () => {
-    loadProposals(page, proposals);
-    trackLoadMoreProposals(TRACKING.COMPONENT_PARAM_PROPOSALS, page);
-  };
+  useEffect(() => {
+    loadProposals();
+    trackLoadMoreProposals(TRACKING.COMPONENT_PARAM_PROPOSALS, Number(pageId));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pageId]);
 
   useEffect(() => {
     if (!proposals && !isLoading) {
-      loadProposals(page, proposals);
+      loadProposals();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   useEffect(() => {
-    loadProposals(0, []);
+    loadProposals();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [language]);
 
@@ -67,10 +68,9 @@ const ProfileProposalsPage: FC = () => {
     <ProfileProposalsList
       titles={titles}
       proposals={proposals}
-      hasMore={hasMore}
       isLoading={isLoading}
-      handleLoadMore={clickLoadMore}
       placeholder={Placeholder}
+      proposalsTotal={proposalsTotal}
     />
   );
 };
