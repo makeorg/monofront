@@ -19,6 +19,24 @@ const HOSTNAME =
   (typeof window !== 'undefined' && window?.location?.hostname) || null;
 const LOCATION_PARAMS =
   (typeof window !== 'undefined' && window?.location?.search) || '';
+const ALLOWED_GET_PARAMETERS_KEYS: string[] = [
+  'source',
+  'utm_campaign',
+  'utm_content',
+  'utm_medium',
+  'utm_source',
+  'utm_term',
+  'country',
+  'introCard',
+  'pushProposal',
+  'question',
+  'signUpCard',
+  'firstProposal',
+  'widgetId',
+  'language',
+  'questionSlug',
+  'hash',
+];
 
 /**
  * handle error for http response
@@ -122,7 +140,14 @@ export class ApiServiceShared {
 
   // eslint-disable-next-line class-methods-use-this
   callApi(url: string, options: OptionsType): Promise<ApiServiceResponse> {
-    const paramsQuery = new URLSearchParams(LOCATION_PARAMS).toString();
+    const searchParams = new URLSearchParams(LOCATION_PARAMS);
+    const filteredSearchParams = new URLSearchParams();
+    searchParams.forEach((value, key) => {
+      if (ALLOWED_GET_PARAMETERS_KEYS.includes(key)) {
+        filteredSearchParams.append(key, value);
+      }
+    });
+    const paramsQuery = filteredSearchParams.toString();
     const requestId = uuidv4();
     const defaultHeaders: Readonly<Record<string, string | null>> = {
       'x-hostname': HOSTNAME,
