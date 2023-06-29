@@ -2974,6 +2974,7 @@ __metadata:
     "@types/loadable__server": ^5.12.6
     "@types/memory-cache": ^0.2.2
     "@types/node": ^18.11.9
+    "@types/object-hash": ^3
     "@types/react": ^17.0.52
     "@types/react-dom": ^17.0.18
     "@types/react-router-dom": 5.3.3
@@ -3011,6 +3012,7 @@ __metadata:
     js-yaml: ^4.1.0
     memory-cache: ~0.2.0
     node-mocks-http: ^1.11.0
+    object-hash: 3.0.0
     pm2: ~5.2.2
     prom-client: ^13.1.0
     query-string: ^7.1.1
@@ -3238,6 +3240,7 @@ __metadata:
     "@types/babel__preset-env": ^7.9.2
     "@types/jest": ^26.0.24
     "@types/memory-cache": ^0.2.2
+    "@types/object-hash": ^3
     "@types/react": ^17.0.52
     "@types/react-dom": ^17.0.18
     babel-loader: 8.2.5
@@ -3257,6 +3260,7 @@ __metadata:
     http-proxy-middleware: 2.0.6
     i18next: 22.1.4
     memory-cache: ~0.2.0
+    object-hash: 3.0.0
     pm2: ~5.2.2
     prom-client: ^13.1.0
     react: ^17.0.2
@@ -4317,6 +4321,13 @@ __metadata:
   version: 2.4.1
   resolution: "@types/normalize-package-data@npm:2.4.1"
   checksum: e87bccbf11f95035c89a132b52b79ce69a1e3652fe55962363063c9c0dae0fe2477ebc585e03a9652adc6f381d24ba5589cc5e51849df4ced3d3e004a7d40ed5
+  languageName: node
+  linkType: hard
+
+"@types/object-hash@npm:^3":
+  version: 3.0.2
+  resolution: "@types/object-hash@npm:3.0.2"
+  checksum: 0332e59074e7df2e74c093a7419c05c1e1c5ae1e12d3779f3240b3031835ff045b4ac591362be0b411ace24d3b5e760386b434761c33af25904f7a3645cb3785
   languageName: node
   linkType: hard
 
@@ -16774,6 +16785,13 @@ __metadata:
     define-property: ^0.2.5
     kind-of: ^3.0.3
   checksum: a9e35f07e3a2c882a7e979090360d1a20ab51d1fa19dfdac3aa8873b328a7c4c7683946ee97c824ae40079d848d6740a3788fa14f2185155dab7ed970a72c783
+  languageName: node
+  linkType: hard
+
+"object-hash@npm:3.0.0":
+  version: 3.0.0
+  resolution: "object-hash@npm:3.0.0"
+  checksum: 80b4904bb3857c52cc1bfd0b52c0352532ca12ed3b8a6ff06a90cd209dfda1b95cee059a7625eb9da29537027f68ac4619363491eedb2f5d3dddbba97494fd6c
   languageName: node
   linkType: hard
 

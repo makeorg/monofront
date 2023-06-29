@@ -20,6 +20,7 @@ import { SpaceBetweenColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { IDS } from '@make.org/types/enums';
 import { MetaTags } from '@make.org/components/MetaTags';
 import { useAppContext } from '@make.org/store';
+import hash from 'object-hash';
 import { BrowseConsultationsTitles } from '../../app/Consultation/Browse/Titles';
 import { BrowseConsultationsHeader } from '../../app/Consultation/Browse/Header';
 import { BrowseConsultationsList } from '../../app/Consultation/Browse/List';
@@ -31,13 +32,6 @@ type consultationDataType = {
 } | null;
 
 const CONSULTATION_LIST_LIMIT = 8;
-
-const getCacheKey = (
-  consultationType: consultationListType,
-  language: string,
-  country: string,
-  page: number
-) => `${consultationType}${country}${language}${page}`;
 
 const BrowseConsultationsPage: FC = () => {
   const location = useLocation();
@@ -65,22 +59,21 @@ const BrowseConsultationsPage: FC = () => {
     argConsultationType: consultationListType,
     page: number
   ): Promise<consultationDataType> => {
-    const cacheKey = getCacheKey(
-      argConsultationType,
-      argLanguage,
-      argCountry,
-      page
-    );
-    if (cache.current[cacheKey]) {
-      return Promise.resolve(cache.current[cacheKey]);
-    }
-
     const args: [string, string, number, number] = [
       argCountry,
       argLanguage,
       CONSULTATION_LIST_LIMIT,
       CONSULTATION_LIST_LIMIT * (page - 1),
     ];
+
+    const cacheKey = hash({
+      ...args,
+      argConsultationType,
+    });
+
+    if (cache.current[cacheKey]) {
+      return Promise.resolve(cache.current[cacheKey]);
+    }
 
     let data: consultationDataType = { results: [], total: 0 };
     if (argConsultationType === 'opened') {
@@ -99,11 +92,6 @@ const BrowseConsultationsPage: FC = () => {
    * First, pretech and cache some data :
    * - data from the next and preview pages of the current consultation list
    * - data from the page 1 of the other consultation list
-   *
-   * Second, preserve only some data in cache :
-   * - cache related to the current page of the current list
-   * - cache related to the next page and the preview page of the current list
-   * - cache related to the page 1 and the page 2 of the two lists (to avoid API call when switching list)
    *
    * Possible improvement : preserve cache when unmount
    */
@@ -146,59 +134,6 @@ const BrowseConsultationsPage: FC = () => {
     }
 
     await Promise.all(calls);
-
-    const cleanCache = () => {
-      const cacheKeyToKeep: string[] = [];
-      cacheKeyToKeep.push(getCacheKey('opened', preferredLanguage, country, 1));
-      cacheKeyToKeep.push(
-        getCacheKey('finished', country, preferredLanguage, 1)
-      );
-      cacheKeyToKeep.push(getCacheKey('opened', preferredLanguage, country, 2));
-      cacheKeyToKeep.push(
-        getCacheKey('finished', preferredLanguage, country, 2)
-      );
-      cacheKeyToKeep.push(
-        getCacheKey(
-          currentConsultationListType,
-          preferredLanguage,
-          country,
-          currentPage
-        )
-      );
-      if (previewPage) {
-        cacheKeyToKeep.push(
-          getCacheKey(
-            currentConsultationType,
-            preferredLanguage,
-            country,
-            previewPage
-          )
-        );
-      }
-      if (nextPage) {
-        cacheKeyToKeep.push(
-          getCacheKey(
-            currentConsultationType,
-            preferredLanguage,
-            country,
-            nextPage
-          )
-        );
-      }
-
-      const newCache: {
-        [cachekey: string]: consultationDataType;
-      } = {};
-      cacheKeyToKeep.forEach(key => {
-        if (cache.current[key]) {
-          newCache[key] = cache.current[key];
-        }
-      });
-
-      cache.current = newCache;
-    };
-
-    cleanCache();
   };
 
   const loadConsultations = async () => {

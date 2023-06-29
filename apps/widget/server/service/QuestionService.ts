@@ -23,23 +23,24 @@ const getQuestion = async (
 
     return data;
   };
+  const args = [
+    questionIdOrSlug,
+    preferredLanguage,
+    {
+      'x-make-question-id': questionIdOrSlug,
+      'x-make-country': upperCountry,
+      'x-make-client-language': preferredLanguage,
+    },
+  ] as const;
 
-  const CACHE_KEY = `QUESTION_${questionIdOrSlug}`;
+  const CACHE_KEY = ['GET_DETAILS', ...args];
   const content = cache.get(CACHE_KEY);
   if (content) {
     return handleData(content);
   }
 
   try {
-    const response = await QuestionApiService.getDetail(
-      questionIdOrSlug,
-      preferredLanguage,
-      {
-        'x-make-question-id': questionIdOrSlug,
-        'x-make-country': upperCountry,
-        'x-make-client-language': preferredLanguage,
-      }
-    );
+    const response = await QuestionApiService.getDetail(...args);
     const formattedResponse = response && {
       ...response.data,
       returnedLanguage:

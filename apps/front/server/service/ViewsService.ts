@@ -3,6 +3,7 @@ import cache from 'memory-cache';
 import { HomeViewType } from '@make.org/types/View';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { getLoggerInstance } from '@make.org/logger';
+import hash from 'object-hash';
 
 const clearCache = (): void => {
   cache.clear();
@@ -14,17 +15,23 @@ const getHome = async (
   unexpectedError: () => void,
   preferredLanguage: string
 ): Promise<void | HomeViewType> => {
-  const CACHE_KEY = `HOMEPAGE_${country}`;
+  const args = [
+    country,
+    preferredLanguage,
+    {
+      'x-make-country': country,
+      'x-make-client-language': preferredLanguage,
+    },
+  ] as const;
+
+  const CACHE_KEY = hash(['GET_HOME', ...args]);
   const contentFromCache: HomeViewType = cache.get(CACHE_KEY);
   if (contentFromCache) {
     return contentFromCache;
   }
 
   try {
-    const response = await ViewsApiService.getHome(country, preferredLanguage, {
-      'x-make-country': country,
-      'x-make-client-language': preferredLanguage,
-    });
+    const response = await ViewsApiService.getHome(...args);
 
     cache.put(CACHE_KEY, response && response.data, 300000);
 
@@ -50,7 +57,7 @@ const getCountries = async (
   notFound: () => void,
   unexpectedError: () => void
 ): Promise<string[]> => {
-  const CACHE_KEY = `COUNTRIES`;
+  const CACHE_KEY = `GET_COUNTRIES`;
   const content = cache.get(CACHE_KEY);
   if (content) {
     return content;
