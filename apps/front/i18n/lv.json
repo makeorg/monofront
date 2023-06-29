@@ -271,9 +271,11 @@
     },
     "max_characters": "maksimālais zīmju skaits",
     "back": "Atpakaļ",
+    "proposal_count_zero": "",
     "proposal_count_one": "{{count}} priekšlikums",
     "proposal_count_other": "{{count}} priekšlikumi",
     "breadcrumbs": "atpakaļceļa navigācija",
+    "million_zero": "",
     "million_one": "miljons",
     "million_other": "miljoni",
     "close_panel": "Aizvērt nolaižamo paneli",
@@ -296,10 +298,13 @@
     "number": "Ideja Nr. {{ count }}",
     "content": "Idejas saturs: ",
     "link": "Skatīt sīkāku informāciju par ideju",
+    "associated_proposals_zero": "",
     "associated_proposals_one": "{{count}} saistītais priekšlikums",
     "associated_proposals_other": "{{count}} saistītie priekšlikumi",
+    "position_zero": "",
     "position_one": "{{ count }} viedoklis",
     "position_other": "{{ count }} viedokļi",
+    "candidate_zero": "",
     "candidate_one": " kas pieder kandidātam, par šo ideju.",
     "candidate_other": " kas pieder kandidātiem, par šo ideju.",
     "open": "Parādīt idejas novērtējumu",
@@ -462,6 +467,7 @@
     "agree": "Piekrītu",
     "disagree": "Nepiekrītu",
     "neutral": "Neitrāls balsojums",
+    "label_zero": "",
     "label_one": "{{count}} balss",
     "label_other": "{{count}} balsis",
     "with_percent": "{{votedKey}}: {{votedPercent}}%"
@@ -472,6 +478,7 @@
   "results": {
     "static_total": "Šis priekšlikums saņēma: ",
     "static_repartition": "Sadalījums ir šāds: ",
+    "total_zero": "",
     "total_one": "Šis priekšlikums saņēma {{count}} balsi, sadalījums ir šāds: ",
     "total_other": "Šis priekšlikums saņēma {{count}} balsis, sadalījums ir šāds: ",
     "voted": {
@@ -729,6 +736,7 @@
       "proposal_agree": "atbalsta šo priekšlikumu",
       "proposal_disagree": "neatbalsta šo priekšlikumu",
       "and": " un ",
+      "hasVoted_zero": "",
       "hasVoted_one": " balsoja par šo priekšlikumu.",
       "hasVoted_other": " balsoja par šo priekšlikumu.",
       "sharing_title": "Kopīgojiet šo profilu"
@@ -807,10 +815,13 @@
     "highlights": {
       "start_date": "Uzsākšanas datums",
       "end_date": "Apspriešanās beigu datums",
+      "remaining_zero": "",
       "remaining_one": "Atlikusī diena",
       "remaining_other": "Atlikušās dienas",
+      "proposals_zero": "",
       "proposals_one": "Priekšlikums",
       "proposals_other": "Priekšlikumi",
+      "participant_zero": "",
       "participant_one": "Dalībnieks",
       "participant_other": "Dalībnieki",
       "progress_title": "Mūsu balsošanas mērķis",
@@ -906,6 +917,7 @@
       "unvoted": "Tie, kas gaida jūsu balsojumu",
       "organisations_proposals": "Organizāciju iesniegtie priekšlikumi",
       "no_proposal": "<strong>Nav neviena priekšlikuma</strong>",
+      "validated_proposals_zero": "",
       "validated_proposals_one": "<strong>{{count}} apstiprināts priekšlikums,</strong> kas atbilst jūsu meklētajam",
       "validated_proposals_other": "<strong>{{count}} apstiprināti priekšlikumi,</strong> kas atbilst jūsu meklētajam"
     },
@@ -987,6 +999,7 @@
       },
       "top_ideas": {
         "skiplink": "Labākās jaunās idejas",
+        "title_zero": "",
         "title_one": "Populārākās atzinību ieguvušās idejas, sagrupētas {{count}} kategorijā",
         "title_other": "Populārākās atzinību ieguvušās idejas, sagrupētas {{count}} kategorijās",
         "introduction": "Tiem nonākot platformā, labākie iedzīvotāju priekšlikumi tiek sagrupēti lielās idejās, kas veido apspriešanas struktūru. Lai sarindotu šīs idejas, Make.org algoritms ņem vērā balsis «par» un «pret», kā arī atzīmes «favorīts», «reālistisks», «mazsvarīgs» un «kategoriski pret! ».",
@@ -1011,8 +1024,10 @@
     "sortby": "Šķirot pēc: ",
     "local_actors": {
       "title": "Aktīvākās apvienības",
+      "proposals_zero": "",
       "proposals_one": "{{count}} priekšlikums",
       "proposals_other": "{{count}} priekšlikumi",
+      "votes_zero": "",
       "votes_one": "{{count}} balss",
       "votes_other": "{{count}} balsis",
       "participate": "Jūs esat apvienība un vēlaties piedalīties mūsu apspriešanā? {{ contact_us }}",
@@ -1050,10 +1065,13 @@
       "title": "Piedalieties notiekošajās apspriešanās",
       "subtitle": "Jūsu viedoklis ir svarīgs! Balsojiet un piedāvājiet risinājumus, lai ietekmētu dažādus sabiedrībai aktuālus jautājumus un aktuālās problēmas.",
       "participate": "Iesaistīties",
+      "contributors_zero": "",
       "contributors_one": "dalībnieks",
       "contributors_other": "dalībnieki",
+      "proposals_zero": "",
       "proposals_one": "priekšlikums",
       "proposals_other": "priekšlikumi",
+      "votes_zero": "",
       "votes_one": "balss",
       "votes_other": "balsis",
       "empty": "Atvainojiet, jūsu valstī pašlaik nav pieejama neviena apspriešana"
@@ -1116,14 +1134,17 @@
     "highlights": {
       "title": "Make.org dažos skaitļos",
       "participants": {
+        "subtitle_zero": "",
         "subtitle_one": "dalībnieka(-ces)",
         "subtitle_other": "dalībnieku(-ču)"
       },
       "proposals": {
+        "subtitle_zero": "",
         "subtitle_one": "iesniegtais priekšlikums",
         "subtitle_other": "iesniegtie priekšlikumi"
       },
       "partners": {
+        "subtitle_zero": "",
         "subtitle_one": "iesaistītā apvienība un uzņēmums",
         "subtitle_other": "iesaistītās apvienības un uzņēmumi"
       }
@@ -1153,12 +1174,16 @@
     "titles": {
       "loading": "Notiek meklēšana...",
       "no_results": "Nav neviena rezultāta",
+      "main_results_zero": "",
       "main_results_one": "{{count}} rezultāts saistībā ar « {{term}} »",
       "main_results_other": "{{count}} rezultāti saistībā ar « {{term}} »",
+      "proposals_zero": "",
       "proposals_one": "{{count}} priekšlikums saistībā ar « {{term}} »",
       "proposals_other": "{{count}} priekšlikumi saistībā ar « {{term}} »",
+      "operations_zero": "",
       "operations_one": "{{count}} darbība saistībā ar « {{term}} »",
       "operations_other": "{{count}} darbības saistībā ar « {{term}} »",
+      "organisations_zero": "",
       "organisations_one": "{{count}} organizācijas saistībā ar « {{term}} »",
       "organisations_other": "{{count}} organizācijas saistībā ar « {{term}} »",
       "main_results_empty_term": "0 rezultātu"
@@ -1167,6 +1192,7 @@
       "proposal": "Priekšlikums",
       "organisation": "Organizācija",
       "operation": "Darbība",
+      "results_zero": "",
       "results_one": "{{count}} rezultāts",
       "results_other": "{{count}} rezultāti",
       "view_all": "Skatīt visu",
@@ -1207,7 +1233,7 @@
   },
   "legal": {
     "title": "Juridiska informācija",
-    "make_infos": "Vietnes redaktors: MAKE.ORG, Société par Actions Simplifiées (vienkāršota akciju sabiedrība) ar kapitālu {{make_capital}} apmērā, kuras juridiskā adrese ir {{make_address}}, reģistrēta PARĪZES Tirdzniecības un uzņēmumu reģistrā ar numuru {{make_rcs}} (tālāk tekstā — « MAKE.ORG »).",
+    "make_infos": "Vietnes redaktors: MAKE.ORG, Société par Actions Simplifiées (vienkāršota akciju sabiedrība) ar kapitālu {{make_capital}} apmērā, kuras juridiskā adrese ir {{make_address}}, reģistrēta PARĪZES Tirdzniecības un uzņēmumu reģistrā ar numuru {{make_rcs}} (tālāk tekstā — “MAKE.ORG”).",
     "mail": "E-pasta adrese: ",
     "make_phone": "Tālruņa numurs: ",
     "make_phone_number": "{{make_phone_number}}",
@@ -1327,18 +1353,19 @@
       "duration": "Ilgums: {{duration}}",
       "session": "Sesija",
       "month": "{{count}} mēneši",
+      "year_zero": "",
       "year_one": "{{count}} gads",
       "year_other": "{{count}} gadi",
       "technicals": {
         "name": "Tehniskās sīkdatnes:",
-        "description": "Šīs sīkdatnes ir nepieciešamas vietnes darbībai, un tās nevar atspējot. Jūs varat iestatīt pārlūkprogrammu tā, lai tā bloķētu šīs sīkdatnes vai informētu par tām, taču tas var ietekmēt dažas mūsu vietnes daļas. Šīs sīkdatnes nav paredzētas, lai identificētu jūs personīgi.",
+        "description": "šīs sīkdatnes ir nepieciešamas vietnes darbībai, un tās nevar atspējot. Jūs varat iestatīt pārlūkprogrammu tā, lai tā bloķētu šīs sīkdatnes vai informētu par tām, taču tas var ietekmēt dažas mūsu vietnes daļas. Šīs sīkdatnes nav paredzētas, lai identificētu jūs personīgi.",
         "secure": "make-secure: pēc pieteikšanās savā iedzīvotāja telpā vietnē Make.org, šī sīkdatne nodrošina, ka šis savienojums tiks saglabāts, kamēr jūs pārlūkojat pakalpojumu.",
         "secure-expiration": "make-secure-expiration: šo sīkdatni izmanto, lai noteiktu jūsu neaktivitāti pakalpojumā un izbeigtu šo savienojumu.",
         "demographics": "make-demographics: šī sīkdatne ļauj mums uzzināt, vai šajā ierīcē jums jau iepriekš ir lūgta demogrāfiskā informācija (vecuma diapazons, reģions, dzimums u. c.), lai nākamajā apmeklējumā mēs to vairs nelūgtu."
       },
       "preferences": {
         "name": "Preferenču sīkdatnes:",
-        "description": "Šīs sīkdatnes tiek izmantotas, lai atcerētos jūsu preferences mūsu vietnē un tādējādi uzlabotu jūsu pārlūkošanas pieredzi. Jūs varat iestatīt pārlūkprogrammu tā, lai tā bloķētu šīs sīkdatnes vai informētu par tām, taču tas var ietekmēt dažas mūsu vietnes daļas. Šīs sīkdatnes nav paredzētas, lai identificētu jūs personīgi.",
+        "description": "šīs sīkdatnes tiek izmantotas, lai atcerētos jūsu preferences mūsu vietnē un tādējādi uzlabotu jūsu pārlūkošanas pieredzi. Jūs varat iestatīt pārlūkprogrammu tā, lai tā bloķētu šīs sīkdatnes vai informētu par tām, taču tas var ietekmēt dažas mūsu vietnes daļas. Šīs sīkdatnes nav paredzētas, lai identificētu jūs personīgi.",
         "google-connect": "Google connect: šīs sīkdatnes ļauj jums reģistrēties un izveidot savienojumu ar savu iedzīvotāja telpu.",
         "facebook-connect": "Facebook connect: šīs sīkdatnes ļauj jums reģistrēties un izveidot savienojumu ar savu iedzīvotāja telpu.",
         "session-id": "make-session-id: šo sīkdatni izmanto, lai visas vietnē veiktās darbības apvienotu vienā sesijā.",
@@ -1352,16 +1379,16 @@
         "visitor-id": "make-visitor-id: šo sīkdatni izmanto, lai izsekotu mūsu pakalpojuma apmeklējumus, lai anonīmi un apkopotā veidā mērītu datplūsmu. Pārlūkošanas epizodes tiek nosūtītas uz MixPanel analīzes rīku.",
         "visitor-created-at": "make-visitor-created-at: šo sīkdatni izmanto, lai iegūtu platformas pirmā apmeklējuma datumu.",
         "facebook-tracking": "Facebook izsekošanas sīkdatne: šī sīkdatne tiek izmantota, lai ģenerētu statistiku par mūsu vietnes apmeklētāju skaitu, lai uzlabotu mūsu vietni un uzlabotu mūsu apmeklējumu analīzi.",
-        "hotjar": "Hotjar: Tas ir rīks vietnes izmantošanas uzvedības analīzes veikšanai. Sīkāka informācija: "
+        "hotjar": "Hotjar: tas ir rīks vietnes izmantošanas uzvedības analīzes veikšanai. Sīkāka informācija: "
       },
       "social": {
         "name": "Sociālo tīklu sīkdatnes:",
-        "description": "šīs sīkdatnes, ko iespējojušas trešās personas, ļauj jums kopīgot mūsu vietnes saturu sociālajos tīklos un tādējādi palīdz mums optimizēt mūsu ietekmi. Ja nepiekritīsiet šo sīkdatņu ievietošanai, jūs, iespējams, nevarēsiet izmantot šos koplietošanas rīkus.",
+        "description": "šīs sīkdatnes, ko iespējojušas trešās personas, ļauj jums kopīgot mūsu vietnes saturu sociālajos tīklos un tādējādi palīdz mums optimizēt mūsu ietekmi. Ja nepiekritīsiet šo sīkdatņu ievietošanai, jūs, iespējams, nevarēsiet izmantot šos kopīgošanas rīkus.",
         "facebook_tracking": "pixel Facebook: šīs sīkdatnes kalpo, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas Facebook, lai palielinātu iedzīvotāju līdzdalību.",
         "twitter_tracking": "pixel Twitter: šīs sīkdatnes kalpo, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas Twiter, lai palielinātu iedzīvotāju līdzdalību.",
-        "facebook_sharing": "Facebook koplietošana: šī sīkdatne ļauj lietotājam kopīgot saturu Facebook un uzlabot lietojamību.",
-        "twitter_sharing": "Twitter koplietošana: šī sīkdatne ļauj lietotājam kopīgot saturu Twitter un uzlabot lietojamību.",
-        "linkedin_sharing": "LinkedIn koplietošana: šī sīkdatne ļauj lietotājam kopīgot saturu LinkedIn un uzlabot lietojamību."
+        "facebook_sharing": "Kopīgošana platformā Facebook: šī sīkdatne ļauj lietotājam kopīgot saturu Facebook un uzlabot lietojamību.",
+        "twitter_sharing": "Kopīgošana platformā Twitter: šī sīkdatne ļauj lietotājam kopīgot saturu Twitter un uzlabot lietojamību.",
+        "linkedin_sharing": "Kopīgošana platformā LinkedIn: šī sīkdatne ļauj lietotājam kopīgot saturu LinkedIn un uzlabot lietojamību."
       }
     }
   },
