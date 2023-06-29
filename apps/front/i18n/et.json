@@ -116,7 +116,7 @@
       "welcome": "Tere tulemast, {{name}}!",
       "greeting": "Meil on rõõm näha teid meie pühendunud kasutajate hulgas!",
       "mail_confirmation_strong": "Kinnitage ühe klõpsuga oma e-posti aadress, ",
-      "mail_confirmation": " et tagada oma konto ehtsust. Klõpsake aktiveerimislingil, mis saadeti teile aadressile: {{mail}}",
+      "mail_confirmation": " et tagada oma konto ehtsus. Klõpsake aktiveerimislingil, mis saadeti teile aadressile: {{mail}}",
       "onboarding": "Esitage oma arvamus ühiskondlike, teile südamelähedaste teemade kohta, osaledes meie konsulteerimistel kodanikega.",
       "cta": "Osalege konsulteerimistel",
       "cta_access": "Sisenen konsulteerimisse",
@@ -801,7 +801,7 @@
   "consultation": {
     "header": {
       "label_great_cause": "Make.org‘i suur eesmärk",
-      "label_consultation": "Konsulteerimine kodanikega",
+      "label_consultation": "Kodanikega konsulteerimine",
       "label_results": "Tulemused"
     },
     "highlights": {
@@ -816,7 +816,7 @@
       "progress_title": "Oodatav häälte arv",
       "progress_total": "Häälte arv kokku",
       "progress_target": " {{votesTarget}} hääle kohta ({{percent}}%)",
-      "progress_description": "Mida rohkem hääli ettepanekud saavad, seda rohkem on neil võimalus tuua kaasa konkreetseid tegevusi.",
+      "progress_description": "Mida rohkem hääli ettepanek saab, seda tõenäolisemalt toob see kaasa tegelikke muutusi ühiskonnas.",
       "progress_btn": "Osale"
     },
     "participate": {
@@ -860,7 +860,7 @@
       },
       "about": {
         "title": "Milleks see konsulteerimine?",
-        "description": "Millisel eesmärgil see konsulteerimine algatati? Mis on põhiküsimused? Kes selle algatas?",
+        "description": "Miks see konsulteerimine algatati? Mis on põhiküsimused? Kes selle algatas?",
         "link": "Lähemalt"
       },
       "featured_proposals": {
