@@ -131,6 +131,7 @@ stages:
     - corepack enable yarn
     - corepack prepare
     - yarn install
+    - yarn workspace @make.org/content prisma generate
   cache: []
 
 .build:
