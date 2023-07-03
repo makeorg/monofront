@@ -144,7 +144,7 @@ export const initRoutes = (app: Application): void => {
   app.use('/doc', express.static(APP_DOC_DIR));
 
   // API Routes
-  app.get('/api/results/:questionSlug', questionResults);
+  app.get('/api/question/:questionId/results', questionResults);
   app.post('/api/logger', loggerApi);
   app.post('/api/conversion', fBConversionApi);
 

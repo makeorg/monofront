@@ -37,7 +37,7 @@ Generate fixtures :
 $ docker-compose -f docker-compose.dev.yaml exec content_dev yarn workspace @make.org/content prisma db seed 
 ```
 
-And go to http://localhost:3000/api
+And go to http://localhost:3001/api
 
 
 ## Running unit tests

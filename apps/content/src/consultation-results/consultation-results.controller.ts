@@ -77,7 +77,7 @@ export class ConsultationResultsController {
   findAll(
     @Query('skip') skip: string,
     @Query('take') take: string,
-    @Query('questionId') questionId: string,
+    @Query('questionId') questionId?: string,
   ) {
     return this.consultationResultsService.findAll({
       skip: Number(skip),

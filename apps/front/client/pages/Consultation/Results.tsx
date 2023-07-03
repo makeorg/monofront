@@ -64,12 +64,12 @@ const ResultPage: FC = () => {
   const [questionResults, setResults] = useState<QuestionResultsType>();
 
   const initResults = async () => {
-    const response = await ExpressService.getResults(question.slug, () =>
+    const results = await ExpressService.getResults(question.questionId, () =>
       setAlternativeContent(<NotFoundPage />)
     );
 
-    if (response) {
-      setResults(response);
+    if (results) {
+      setResults(results);
     }
   };
 

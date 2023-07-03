@@ -15,6 +15,8 @@ const fbPixelId = (): string => process.env.FB_PIXEL_ID || '';
 const fbConversionToken = (): string =>
   process.env.FB_CONVERSION_TOKEN || 'undefined';
 const hotjarToken = (): string => process.env.HOTJAR_TOKEN || '';
+const contentApiUrlServerSide = (): string | undefined =>
+  process.env.CONTENT_API_URL_SERVER_SIDE;
 
 // Export in env object
 export const env = {
@@ -30,4 +32,5 @@ export const env = {
   fbPixelId,
   fbConversionToken,
   hotjarToken,
+  contentApiUrlServerSide,
 };

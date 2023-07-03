@@ -1,4 +1,4 @@
-import { QuestionType } from '@make.org/types/Question';
+import { QuestionResultsType, QuestionType } from '@make.org/types/Question';
 import { QuestionApiService } from '@make.org/api/services/QuestionApiService';
 import NodeCache from 'node-cache';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
@@ -16,10 +16,88 @@ import {
 import { logSequenceCornerCases } from '@make.org/utils/helpers/sequence';
 import { defaultUnexpectedError } from '@make.org/utils/services/DefaultErrorHandler';
 import hash from 'object-hash';
+import axios from 'axios';
+import { env } from '@make.org/assets/env';
+
+const CONTENT_API_RESULT_PATH = '/consultation-results';
 
 const cache = new NodeCache({ stdTTL: 300 });
 const clearCache = (): void => {
   cache.flushAll();
+};
+
+const getQuestionResult = async (
+  questionId: string,
+  notFound: () => void,
+  unexpectedError: () => void
+): Promise<QuestionResultsType | void> => {
+  try {
+    const response = await axios(
+      `${env.contentApiUrlServerSide()}${CONTENT_API_RESULT_PATH}`,
+      {
+        method: 'GET',
+        params: { questionId },
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        withCredentials: false,
+      }
+    );
+
+    const data =
+      response &&
+      ({
+        ...response.data,
+      } as object[]);
+    if (!data || data.length === 0) {
+      return notFound();
+    }
+    const questionResult = data[0] as { data: QuestionResultsType };
+
+    return questionResult?.data;
+  } catch (error: any) {
+    if (error.response?.status === 404) {
+      return notFound();
+    }
+    getLoggerInstance().logError(error);
+
+    return unexpectedError();
+  }
+};
+
+const getQuestionSlug = async (
+  questionId: string,
+  notFound: () => void,
+  unexpectedError: () => void
+): Promise<string | void> => {
+  const CACHE_KEY = `QUESTION_SLUG_${questionId}`;
+  const content: string | undefined = cache.get(CACHE_KEY);
+  if (content) {
+    return content;
+  }
+
+  try {
+    const response = await QuestionApiService.getDetail(questionId, '', {
+      'x-make-question-id': questionId,
+    });
+
+    const formattedResponse = response && {
+      ...response.data,
+    };
+    const { slug } = formattedResponse;
+
+    cache.set(CACHE_KEY, slug);
+
+    return slug;
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
+    if (apiServiceError.status === 404) {
+      return notFound();
+    }
+    getLoggerInstance().logError(apiServiceError);
+
+    return unexpectedError();
+  }
 };
 
 const getQuestion = async (
@@ -70,11 +148,7 @@ const getQuestion = async (
     if (apiServiceError.status === 404) {
       return notFound();
     }
-    getLoggerInstance().logError(
-      apiServiceError.clone(
-        `error in server/service/QuestionService/getQuestion: ${apiServiceError.message}`
-      )
-    );
+    getLoggerInstance().logError(apiServiceError);
 
     return unexpectedError();
   }
@@ -166,6 +240,8 @@ const startSequenceByKind = async (
 
 export const QuestionService = {
   getQuestion,
+  getQuestionSlug,
+  getQuestionResult,
   clearCache,
   startSequenceByKind,
 };

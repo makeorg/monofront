@@ -13,11 +13,11 @@ import { defaultUnexpectedError } from './DefaultErrorHandler';
 const apiService = new ExpressApiService(Logger);
 
 const getResults = async (
-  questionSlug: string,
+  questionId: string,
   notFound: () => void = () => null
 ): Promise<QuestionResultsType | null> => {
   try {
-    const response = await apiService.getResults(questionSlug);
+    const response = await apiService.getResults(questionId);
 
     return response ? response.data : null;
   } catch (error: unknown) {

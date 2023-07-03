@@ -73,6 +73,9 @@ FRONT_URL=https://make.org
 # Tracking
 FB_PIXEL_ID=
 FB_CONVERSION_TOKEN=
+
+# Content api url
+CONTENT_API_URL_SERVER_SIDE=
 ```
 
 ## Updating packages

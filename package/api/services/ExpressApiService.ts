@@ -8,7 +8,7 @@ import { handleErrors } from '../ApiService/ApiService.shared';
 
 const port = env.port() || '';
 const host = env.frontUrl() || '';
-const PATH_RESULTS_CONFIGURATION = '/api/results/:questionSlug';
+const PATH_RESULTS_CONFIGURATION = '/api/question/:questionId/results';
 const PATH_LOGGER = '/api/logger';
 const PATH_FB_EVENT_CONVERSION = '/api/conversion';
 
@@ -59,9 +59,18 @@ export class ExpressApiService {
     return response as ApiServiceResponse;
   }
 
-  getResults(questionSlug: string): Promise<void | AxiosResponse> {
+  getResultsFromContentApi(questionId: string): Promise<void | AxiosResponse> {
     return this.callApi(
-      PATH_RESULTS_CONFIGURATION.replace(':questionSlug', questionSlug),
+      PATH_RESULTS_CONFIGURATION.replace(':questionId', questionId),
+      {
+        method: 'GET',
+      }
+    );
+  }
+
+  getResults(questionId: string): Promise<void | AxiosResponse> {
+    return this.callApi(
+      PATH_RESULTS_CONFIGURATION.replace(':questionId', questionId),
       {
         method: 'GET',
       }

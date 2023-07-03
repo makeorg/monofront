@@ -64,6 +64,7 @@ services:
     volumes: *default_volumes
     profiles:
       - app-ssr
+      - content-dev-front-ssr
 
   api_mock:
     image: api_mock
@@ -195,11 +196,11 @@ services:
       dockerfile: apps/content/Dockerfile
       target: app-dev
     ports:
-      - 3000:3000
-      - 8888:8888
+      - 3001:3000
     volumes: *default_volumes
     profiles:
       - content-dev
+      - content-dev-front-ssr
 
   content_prod:
     image: content_prod
@@ -227,3 +228,4 @@ services:
     profiles:
       - content-prod
       - content-dev
+      - content-dev-front-ssr
