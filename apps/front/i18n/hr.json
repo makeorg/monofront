@@ -113,8 +113,8 @@
     "register_label": "Registracija",
     "continue": "Nastavi",
     "register_panel": {
-      "welcome": "Dobro došao korisniče {{name}}!",
-      "greeting": "Sretni smo što ste jedan od naših korisnika!",
+      "welcome": "Dobro došli, korisniče {{name}}!",
+      "greeting": "Drago nam je što ste jedan od naših predanih korisnika!",
       "mail_confirmation_strong": "Potvrdite svoju adresu elektroničke pošte jednim klikom ",
       "mail_confirmation": " kako biste potvrdili autentičnost svojeg računa.  Kliknite na poveznicu za aktiviranje koja vam je poslana na adresu elektroničke pošte: {{mail}}",
       "onboarding": "Iznesite svoje mišljenje o društvenim temama koje su vam važne sudjelovanjem u našim građanskim raspravama.",
@@ -331,7 +331,7 @@
     "posted_label": "Objavljeno u ",
     "author": {
       "from": "Prijedlog korisnika: ",
-      "age": "Starosna dob: {{age}}",
+      "age": "{{age}} godina",
       "date": "objavljeno dana: ",
       "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs.",
       "anonymous_proposal": "@@proposal_card.author.anonymous_proposal|fr:Proposition anonyme",
@@ -439,7 +439,7 @@
       "button_back": "Izmijeni prijedlog",
       "back": "Natrag",
       "title": "Za potvrđivanje mojeg prijedloga",
-      "last_step_red": "Više od jednog koraka ",
+      "last_step_red": "Još samo jedan korak ",
       "last_step": "za slanje vašeg prijedloga!",
       "subtitle": "Registriram se uporabom",
       "button_login_text": "Već imam račun,",
@@ -454,7 +454,7 @@
       "other_idea": "Imam drugu ideju",
       "tooltip_title": "Trenutačno se moderira",
       "tooltip_description": "Vaš prijedlog obrađuju naši timovi u roku od 48 sati, a u međuvremenu ga možete pronaći u svojem profilu.",
-      "grats": "Čestitke korisniče {{name}}, ",
+      "grats": "Čestitke, {{name}}, ",
       "proposal_sent": "vaš je prijedlog poslan ",
       "activate": "Potvrdite svoju adresu elektroničke pošte jednim klikom ",
       "link": "kako biste potvrdili autentičnost svojeg računa. Kliknite na poveznicu za aktiviranje koja vam je poslana na adresu elektroničke pošte: {{mail}}",
@@ -510,7 +510,7 @@
     "impossible": "Neizvedivo",
     "platitudeDisagree": "Banalno",
     "doNotUnderstand": "Neshvatljivo",
-    "noOpinion": "Bez mišljenja",
+    "noOpinion": "Nemam mišljenje",
     "doNotCare": "Nevažno"
   },
   "sequence": {
@@ -578,7 +578,7 @@
   },
   "main_footer": {
     "jobs": "Poslovi",
-    "whoarewe": "Naš pristup",
+    "whoarewe": "O MAKE.ORG",
     "legal": "Pravne odredbe",
     "terms": "Uvjeti uporabe",
     "data": "Pravilnik o osobnim podatcima",
@@ -824,7 +824,7 @@
       "participant_one": "Sudionik",
       "participant_few": "Sudionika",
       "participant_other": "Sudionikā",
-      "progress_title": "Naš ciljani ukupni broj glasova",
+      "progress_title": "Naš ciljni broj glasova",
       "progress_total": "Ukupan broj glasova",
       "progress_target": " od {{votesTarget}} glasova ({{percent}} %)",
       "progress_description": "Što više glasova prijedlozi prikupe, to je veći potencijal da se njima pokrenu konkretne radnje.",
@@ -837,13 +837,13 @@
     "citizen_account": {
       "title": "Vaš prostor za građanina na platformi Make.org",
       "description": "Zahvaljujući svojem osobnom računu imate pristup rezultatima svojih prijedloga, povijesti svojih glasova i primate rezultate rasprava. Kada se registrirate na naš portal, primate putem e-pošte obavijest o nadolazećim građanskim raspravama i pozivamo vas na naše participativne događaje.",
-      "button_text": "Registriram se"
+      "button_text": "REGISTRACIJA"
     },
     "cards": {
       "soon": "Uskoro",
       "submit": {
-        "title": "Poslati prijedlog",
-        "description": "Predstavite svoje ideje većem broju osoba. Svaka se ideja proučava prije stavljanja na glasovanje građanima.",
+        "title": "Slanje prijedloga",
+        "description": "Podijelite svoje ideje sa što više ljudi. Svaki se prijedlog moderira prije nego što se stavi na građansko glasanje.",
         "button": "Imam ideju"
       },
       "interact": {
@@ -893,7 +893,7 @@
       "introduction": "Pronađite ostale teme obrađene u raspravi: {{name}}",
       "participate_desktop": "Sudjelovanje u raspravi",
       "participate_mobile": "Sudjeluj",
-      "participate_breadcrumb": "Sudjeluju raspravi \"{{title}}\"",
+      "participate_breadcrumb": "Sudjelujte u raspravi \"{{title}}\"",
       "explore_desktop": "Istraži prijedloge",
       "explore_mobile": "Istraži",
       "explore_breadcrumb": "Istraži raspravu \"{{title}}\""
@@ -1127,7 +1127,7 @@
     "title": "Početna stranica",
     "hero": {
       "title": "Zajedno možemo poboljšati društvo",
-      "description": "Iznesite svoje mišljenje o društvenim temama koje su vam važne sudjelovanjem u našim građanskim raspravama. Građani, udruženja i poduzeća zajedno odredimo prioritete i učinimo konkretne promjene.",
+      "description": "Izrazite svoje mišljenje o društvenim pitanjima koja su vam važna glasanjem u našim raspravama. Zajedno – građani, organizacije, poduzeća – odredimo prioritete kako bismo napravili promjenu konkretnim djelovanjima.",
       "participate": "Sudjelujte u raspravama",
       "discover": "Otkrijte naše velike ciljeve"
     },

@@ -126,7 +126,7 @@
     "posted_label": "Objavljeno u ",
     "author": {
       "from": "Prijedlog korisnika: ",
-      "age": "Starosna dob: {{age}}",
+      "age": "{{age}} godina",
       "date": "objavljeno dana: ",
       "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs.",
       "anonymous_proposal": "@@proposal_card.author.anonymous_proposal|fr:Proposition anonyme",
@@ -226,7 +226,7 @@
     },
     "authentication": {
       "back": "Natrag",
-      "last_step_red": "Više od jednog koraka ",
+      "last_step_red": "Još samo jedan korak ",
       "last_step": "za slanje vašeg prijedloga!",
       "button_login_text": "Već imam račun,",
       "button_login_link": "prijavljujem se.",
@@ -238,7 +238,7 @@
       "other_idea": "Imam drugu ideju",
       "tooltip_title": "Trenutačno se moderira",
       "tooltip_description": "Vaš prijedlog obrađuju naši timovi u roku od 48 sati, a u međuvremenu ga možete pronaći u svojem profilu.",
-      "grats": "Čestitke korisniče {{name}}, ",
+      "grats": "Čestitke, {{name}}, ",
       "proposal_sent": "vaš je prijedlog poslan ",
       "activate": "Potvrdite svoju adresu elektroničke pošte jednim klikom ",
       "link": "kako biste potvrdili autentičnost svojeg računa. Kliknite na poveznicu za aktiviranje koja vam je poslana na adresu elektroničke pošte: {{mail}}",
@@ -270,7 +270,7 @@
     "impossible": "Neizvedivo",
     "platitudeDisagree": "Banalno",
     "doNotUnderstand": "Neshvatljivo",
-    "noOpinion": "Bez mišljenja",
+    "noOpinion": "Nemam mišljenje",
     "doNotCare": "Nevažno"
   },
   "sequence": {

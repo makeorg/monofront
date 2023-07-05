@@ -165,7 +165,7 @@
   "final_card": {
     "title": "Ačiū, kad reagavote į pasiūlymus!",
     "description": "Tęskite balsavimą ir taip padėkite mums nustatyti prioritetus.",
-    "link_text": "Dalyvauju konsultacijoje",
+    "link_text": "DALYVAUTI konsultacijoje",
     "register": {
       "description": "Kaip stebėti rezultatus?",
       "button_intro": "Sukurkite savo",
@@ -217,7 +217,7 @@
       "title": "Pateikite pasiūlymą, kuriame ne daugiau kaip 140 ženklų. Įveskite jį į pasiūlymo lauką ir patvirtinkite spustelėdami mygtuką „Patvirtinti“",
       "field": "Pasiūlymo laukai",
       "counter": "Jūsų pasiūlymą sudaro {{current}} ženklai iš {{total}} galimų",
-      "panel_trigger": "Siūlau sprendimą",
+      "panel_trigger": "SIŪLYTI sprendimą",
       "read_our": "Skaitykite mūsų",
       "moderation_link": "moderavimo taisykles",
       "button_propose": "PASIŪLYTI"

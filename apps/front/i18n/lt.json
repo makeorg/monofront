@@ -119,7 +119,7 @@
       "mail_confirmation": " kad užtikrintumėte savo paskyros autentiškumą. Spustelėkite aktyvinimo nuorodą, atsiųstą jums adresu {{mail}}",
       "onboarding": "Išsakykite savo nuomonę jums rūpimais visuomeniniais klausimais dalyvaudami mūsų platformoje rengiamose konsultacijose su piliečiais.",
       "cta": "Dalyvauti konsultacijose",
-      "cta_access": "Dalyvauju konsultacijoje",
+      "cta_access": "Dalyvauti konsultacijoje",
       "optin_cgu_title": "Užbaikite registraciją",
       "optin_cgu_subtitle": "keliais paspaudimais"
     },
@@ -375,7 +375,7 @@
   "final_card": {
     "title": "Ačiū, kad reagavote į pasiūlymus!",
     "description": "Tęskite balsavimą ir taip padėkite mums nustatyti prioritetus.",
-    "link_text": "Dalyvauju konsultacijoje",
+    "link_text": "DALYVAUTI konsultacijoje",
     "continue": "Balsuoju toliau",
     "register": {
       "description": "Kaip stebėti rezultatus?",
@@ -428,7 +428,7 @@
       "title": "Pateikite pasiūlymą, kuriame ne daugiau kaip 140 ženklų. Įveskite jį į pasiūlymo lauką ir patvirtinkite spustelėdami mygtuką „Patvirtinti“",
       "field": "Pasiūlymo laukai",
       "counter": "Jūsų pasiūlymą sudaro {{current}} ženklai iš {{total}} galimų",
-      "panel_trigger": "Siūlau sprendimą",
+      "panel_trigger": "SIŪLYTI sprendimą",
       "button_cancel": "Atšaukti",
       "button_submit": "Patvirtinti",
       "read_our": "Skaitykite mūsų",
@@ -443,7 +443,7 @@
       "last_step": "iki pasiūlymo išsiuntimo!",
       "subtitle": "Registruojuosi",
       "button_login_text": "Jau turiu paskyrą,",
-      "button_login_link": "prisijungiu.",
+      "button_login_link": "prisijungti.",
       "button_login": "Prisijungti",
       "back_authentication": "Grįžti į prisijungimo puslapį"
     },
@@ -565,7 +565,7 @@
     "privacy_policy": "duomenų apsaugos politika",
     "make_protect": "Make.org įsipareigoja saugoti jūsų",
     "make_protect_link": " asmens duomenis.",
-    "opt_in": "Sutinku gauti el. laiškus iš Make.org, kad mane informuotų apie vykstančias ir būsimas konsultacijas. (pasirinktinai)"
+    "opt_in": "Sutinku gauti el. laiškus iš Make.org, kad mane informuotų apie vykstančias ir būsimas konsultacijas. (Pasirinktinai)"
   },
   "forgot_password": {
     "title": "Iš naujo nustatau slaptažodį",
@@ -727,7 +727,7 @@
     "delete_account": {
       "title": "Prašau ištrinti mano paskyrą",
       "description": "Dėmesio, šis veiksmas yra negrįžtamas. Prarasite savo pasiūlymus, išsamią jų statistiką ir pasiūlymus, dėl kurių balsavote.",
-      "password": "Įvedu slaptažodį",
+      "password": "Įvesti slaptažodį",
       "submit_label": "Prašau ištrinti mano paskyrą",
       "wrong_email": "Šis el. paštas nėra susietas su jūsų paskyra, tad iš naujo įveskite savo el. pašto adresą.",
       "wrong_password": "Jūsų slaptažodis neteisingas."
@@ -837,7 +837,7 @@
     "citizen_account": {
       "title": "Jūsų pilietinės veiklos erdvė Make.org platformoje",
       "description": "Asmeninėje paskyroje galėsite susipažinti su savo pasiūlymų rezultatais, balsavimo istorija ir gausite konsultacijų rezultatus. Užsiregistravę pas mus, būsite informuoti el. paštu apie būsimas konsultacijas su piliečiais ir būsite pakviesti į mūsų dalyvaujamuosius renginius.",
-      "button_text": "Registruojuosi"
+      "button_text": "REGISTRUOTIS"
     },
     "cards": {
       "soon": "Netrukus",
@@ -849,15 +849,15 @@
       "interact": {
         "title": "Reaguoti į pasiūlymus",
         "description": "Jei pasiūlymai yra susiję su konsultacijų klausimais, pareikškite savo nuomonę, kad mums padėtumėte atrinkti idėjas, į kurias reikėtų atsižvelgti pirmiausia.",
-        "button": "Balsuoju"
+        "button": "BALSUOTI"
       },
       "controversy": {
-        "title": "Apsispręsti dėl prieštaringiausių pasiūlymų",
+        "title": "Apsispręskite dėl prieštaringiausių pasiūlymų",
         "description": "Šie piliečių pasiūlymai sulaukė tiek pat balsų „už“, kiek ir „prieš“.",
         "button": "Apsisprendžiu"
       },
       "popular": {
-        "title": "Balsuoti dėl populiariausių pasiūlymų",
+        "title": "Balsuokite dėl populiariausių pasiūlymų",
         "description": "Už šiuos piliečių pasiūlymus balsavo daugiausia žmonių.",
         "button": "Balsuoju"
       },

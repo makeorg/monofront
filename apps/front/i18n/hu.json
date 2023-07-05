@@ -558,7 +558,7 @@
     "privacy_policy": "adatvédelmi politika",
     "make_protect": "A Make.org elkötelezi magát az Ön",
     "make_protect_link": " személyes adatai védelme mellett.",
-    "opt_in": "Hozzájárulok, hogy e-maileket kapjak a Make.org-tól, hogy tájékoztassanak az aktuális és a soron következő konzultációkról. (nem kötelező)"
+    "opt_in": "Hozzájárulok, hogy e-maileket kapjak a Make.org weboldalról, hogy tájékoztassanak az aktuális és a soron következő konzultációkról.(nem kötelező)"
   },
   "forgot_password": {
     "title": "Visszaállítom a jelszavamat",
@@ -665,7 +665,7 @@
     },
     "proposals": {
       "title": "Legújabb javaslataim",
-      "text": "Még nem nyújtott be javaslatot a Make. org-on."
+      "text": "Még nem nyújtott be javaslatot a Make.org felületén."
     },
     "favourites": {
       "title": "Kedvenceim",
@@ -714,7 +714,7 @@
     },
     "communication_preferences": {
       "title": "Kapcsolattartási beállítások kezelése",
-      "description": "Válassza ki az országot és a nyelvet, amelyen a Make.org-tól e-maileket szeretne kapni.",
+      "description": "Válassza ki az országot és a nyelvet, amelyen a Make.org weboldalról e-maileket szeretne kapni.",
       "optin_label": "Hozzájárulok, hogy e-maileket kapjak a Make.org-tól, hogy tájékoztassanak az aktuális és a soron következő konzultációkról."
     },
     "delete_account": {
