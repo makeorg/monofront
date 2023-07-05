@@ -17,6 +17,7 @@ import {
 import {
   ApiBearerAuth,
   ApiOperation,
+  ApiQuery,
   ApiResponse,
   ApiTags,
 } from '@nestjs/swagger';
@@ -54,11 +55,34 @@ export class ConsultationResultsController {
   @ApiOperation({ summary: 'Get a all data results' })
   @ApiResponse({ status: HttpStatus.OK, type: [ConsultationResult] })
   @ApiResponse({ status: HttpStatus.FORBIDDEN, description: 'Forbidden.' })
+  @ApiQuery({
+    name: 'questionId',
+    required: false,
+    type: String,
+    description: 'A question ID',
+  })
+  @ApiQuery({
+    name: 'skip',
+    required: false,
+    type: Number,
+    description: 'Default value : 0',
+  })
+  @ApiQuery({
+    name: 'take',
+    required: false,
+    type: Number,
+    description: 'Default value : 10',
+  })
   @Get()
-  findAll(@Query('skip') skip: string, @Query('take') take: string) {
+  findAll(
+    @Query('skip') skip: string,
+    @Query('take') take: string,
+    @Query('questionId') questionId: string,
+  ) {
     return this.consultationResultsService.findAll({
       skip: Number(skip),
       take: Number(take),
+      questionId: String(questionId),
     });
   }
 

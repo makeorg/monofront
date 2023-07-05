@@ -27,6 +27,7 @@ export class ConsultationResultsService {
     if (!authorId) {
       throw new InternalServerErrorException('User required but not found');
     }
+
     return this.prisma.consultationResult.create({
       data: {
         question_id,
@@ -36,12 +37,20 @@ export class ConsultationResultsService {
     });
   }
 
-  findAll(params: { skip?: number; take?: number }) {
-    const { skip, take } = params;
-    return this.prisma.consultationResult.findMany({
-      skip: skip ? skip : 0,
-      take,
-    });
+  findAll(params: { skip?: number; take?: number; questionId?: string }) {
+    const { skip, take, questionId } = params;
+    const query = {
+      skip: skip && !isNaN(skip) ? skip : 0,
+      take: take && !isNaN(take) ? take : 10,
+      where: {},
+    };
+    if (questionId && questionId !== 'undefined') {
+      query['where'] = {
+        question_id: questionId,
+      };
+    }
+
+    return this.prisma.consultationResult.findMany(query);
   }
 
   async findOne(id: string) {
