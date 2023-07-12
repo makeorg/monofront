@@ -1,0 +1,678 @@
+{
+  "context": "Consultation citoyenne réalisée par Make.org du 2022-11-21 au 2023-01-15, autour de la question: Quelles sont vos préoccupations actuelles qui devraient davantage être prises en compte ?",
+  "key_figures": {
+    "visitors": 14162,
+    "votes": 362338,
+    "proposals": 2205
+  },
+  "top_ideas": [
+    {
+      "name": "Démocratie et institutions",
+      "ideas": [
+        {
+          "idea": "Simplifier l'organisation et les démarches administratives",
+          "agreement": 83,
+          "adhesion": 19,
+          "realistic": 20
+        },
+        {
+          "idea": "Améliorer le fonctionnement politique à l'échelle locale",
+          "agreement": 81,
+          "adhesion": 18,
+          "realistic": 24
+        },
+        {
+          "idea": "Simplifier et clarifier nos lois",
+          "agreement": 76,
+          "adhesion": 16,
+          "realistic": 28
+        },
+        {
+          "idea": "Renforcer le contrôle et les sanctions des responsables politiques",
+          "agreement": 86,
+          "adhesion": 29,
+          "realistic": 22
+        },
+        {
+          "idea": "Exiger un casier judiciaire vierge pour les responsables politiques",
+          "agreement": 86,
+          "adhesion": 25,
+          "realistic": 25
+        },
+        {
+          "idea": "Lutter contre la désinformation",
+          "agreement": 74,
+          "adhesion": 18,
+          "realistic": 20
+        },
+        {
+          "idea": "Limiter les avantages des responsables politiques",
+          "agreement": 80,
+          "adhesion": 24,
+          "realistic": 24
+        },
+        {
+          "idea": "Garantir une meilleure utilisation de l'argent public",
+          "agreement": 81,
+          "adhesion": 19,
+          "realistic": 26
+        },
+        {
+          "idea": "Rapprocher les citoyens des processus de décisions",
+          "agreement": 67,
+          "adhesion": 12,
+          "realistic": 22
+        },
+        {
+          "idea": "Renforcer les services publics",
+          "agreement": 80,
+          "adhesion": 23,
+          "realistic": 19
+        }
+      ]
+    },
+    {
+      "name": "Production et consommation",
+      "ideas": [
+        {
+          "idea": "Favoriser la production locale et de saison",
+          "agreement": 88,
+          "adhesion": 23,
+          "realistic": 28
+        },
+        {
+          "idea": "Augmenter la durée de vie des produits et materiaux",
+          "agreement": 86,
+          "adhesion": 19,
+          "realistic": 30
+        },
+        {
+          "idea": "Accélérer la transition agricole (divers)",
+          "agreement": 79,
+          "adhesion": 20,
+          "realistic": 21
+        },
+        {
+          "idea": "Aider et soutenir les agriculteurs responsables",
+          "agreement": 80,
+          "adhesion": 21,
+          "realistic": 21
+        }
+      ]
+    },
+    {
+      "name": "Judiciaire",
+      "ideas": [
+        {
+          "idea": "Lutter contre les violences faites aux femmes et enfants",
+          "agreement": 83,
+          "adhesion": 24,
+          "realistic": 23
+        },
+        {
+          "idea": "Renforcer la sécurité sur le territoire",
+          "agreement": 78,
+          "adhesion": 15,
+          "realistic": 23
+        },
+        {
+          "idea": "Accélérer les procédures judiciaires",
+          "agreement": 86,
+          "adhesion": 19,
+          "realistic": 26
+        },
+        {
+          "idea": "Généraliser les travaux d'intéret général",
+          "agreement": 78,
+          "adhesion": 15,
+          "realistic": 27
+        },
+        {
+          "idea": "Durcir les sanctions judiciaires",
+          "agreement": 73,
+          "adhesion": 16,
+          "realistic": 20
+        }
+      ]
+    },
+    {
+      "name": "Monde du travail",
+      "ideas": [
+        {
+          "idea": "Revaloriser le travail et améliorer les systèmes de rémunération",
+          "agreement": 83,
+          "adhesion": 20,
+          "realistic": 23
+        },
+        {
+          "idea": "Ecourager l'alternance, l'apprentissage et les stages",
+          "agreement": 84,
+          "adhesion": 17,
+          "realistic": 29
+        },
+        {
+          "idea": "Permettre aux salariés de continuer à se former pendant leur carrière",
+          "agreement": 74,
+          "adhesion": 19,
+          "realistic": 25
+        },
+        {
+          "idea": "Rapprocher les formations des besoins du monde professionnel",
+          "agreement": 78,
+          "adhesion": 11,
+          "realistic": 26
+        }
+      ]
+    },
+    {
+      "name": "Santé",
+      "ideas": [
+        {
+          "idea": "Donner plus de moyens au système de santé (divers)",
+          "agreement": 86,
+          "adhesion": 21,
+          "realistic": 23
+        },
+        {
+          "idea": "Mettre fin aux déserts médicaux (divers)",
+          "agreement": 87,
+          "adhesion": 20,
+          "realistic": 26
+        },
+        {
+          "idea": "Améliorer les conditions de travail dans la santé",
+          "agreement": 81,
+          "adhesion": 20,
+          "realistic": 23
+        }
+      ]
+    },
+    {
+      "name": "Personnes âgées",
+      "ideas": [
+        {
+          "idea": "Améliorer les ehpads et maisons de retraite",
+          "agreement": 86,
+          "adhesion": 22,
+          "realistic": 27
+        },
+        {
+          "idea": "Revaloriser les retraites en particulier les plus petites",
+          "agreement": 76,
+          "adhesion": 19,
+          "realistic": 22
+        },
+        {
+          "idea": "Renforcer l'accompagnement et l'intégration des personnes âgées",
+          "agreement": 81,
+          "adhesion": 12,
+          "realistic": 24
+        }
+      ]
+    },
+    {
+      "name": "Energie",
+      "ideas": [
+        {
+          "idea": "Généraliser les travaux de rénovation énergétique",
+          "agreement": 78,
+          "adhesion": 14,
+          "realistic": 23
+        },
+        {
+          "idea": "Faire évoluer les systèmes dont dépend le prix de l'énergie",
+          "agreement": 83,
+          "adhesion": 24,
+          "realistic": 28
+        }
+      ]
+    },
+    {
+      "name": "Education et sensibilisation",
+      "ideas": [
+        {
+          "idea": "Améliorer le système éducatif (divers)",
+          "agreement": 77,
+          "adhesion": 17,
+          "realistic": 23
+        },
+        {
+          "idea": "Sensibiliser les citoyens à la politique",
+          "agreement": 75,
+          "adhesion": 14,
+          "realistic": 22
+        }
+      ]
+    },
+    {
+      "name": "Inclusion et valeurs",
+      "ideas": [
+        {
+          "idea": "Mieux accompagner les personnes en situation de handicap (divers)",
+          "agreement": 75,
+          "adhesion": 17,
+          "realistic": 22
+        },
+        {
+          "idea": "Mobilité des personnes en situation de handicap",
+          "agreement": 81,
+          "adhesion": 16,
+          "realistic": 21
+        }
+      ]
+    },
+    {
+      "name": "Mobilités",
+      "ideas": [
+        {
+          "idea": "Développer le ferroutage",
+          "agreement": 81,
+          "adhesion": 21,
+          "realistic": 24
+        },
+        {
+          "idea": "Développer les transports en commun autres que train",
+          "agreement": 81,
+          "adhesion": 17,
+          "realistic": 24
+        }
+      ]
+    },
+    {
+      "name": "Nature et biodiversité",
+      "ideas": [
+        {
+          "idea": "Végétaliser l'espace urbain et protéger la biodiversité",
+          "agreement": 86,
+          "adhesion": 27,
+          "realistic": 22
+        }
+      ]
+    },
+    {
+      "name": "Autres idées",
+      "ideas": [
+        {
+          "idea": "Développer la recherche scientifique et technologique",
+          "agreement": 83,
+          "adhesion": 24,
+          "realistic": 28
+        },
+        {
+          "idea": "Améliorer le cadre réglementaire des nouvelles constructions",
+          "agreement": 78,
+          "adhesion": 15,
+          "realistic": 27
+        }
+      ]
+    }
+  ],
+  "controversials": [
+    {
+      "id": "385617a5-6c36-4507-977e-cde098d4eda4",
+      "content": "Il faut des mandats présidentiels de 7 ans, non renouvelables",
+      "author": "Mag",
+      "agree": 39,
+      "like_it": 9,
+      "disagree": 44,
+      "no_way": 18,
+      "votes": 176
+    },
+    {
+      "id": "545da845-f444-46fe-8cf0-9ffeb83a3a23",
+      "content": "Il faut développer le sentiment Français. La France a absolument tous les atouts pour ne pas avoir besoin de l'UE.",
+      "author": "Herve",
+      "agree": 43,
+      "like_it": 11,
+      "disagree": 39,
+      "no_way": 22,
+      "votes": 178
+    },
+    {
+      "id": "00e24dbc-70b6-4748-b4c8-741fa65bc751",
+      "content": "Il faut instaurer un revenu universel d'un niveau supérieur au seuil de pauvreté en France",
+      "author": "Edwin",
+      "agree": 42,
+      "like_it": 11,
+      "disagree": 33,
+      "no_way": 13,
+      "votes": 173
+    },
+    {
+      "id": "42980553-3d85-4d88-a85e-0898ccf9a9ea",
+      "content": "Il faut faciliter l'intégration d'un maximum de migrants pour qu'ils contribuent pleinement à la création de valeur en France.",
+      "author": "Gilles",
+      "agree": 40,
+      "like_it": 11,
+      "disagree": 39,
+      "no_way": 22,
+      "votes": 184
+    },
+    {
+      "id": "c7c39863-1e38-4055-958a-ebb23d041d03",
+      "content": "Il faut rétablir un service militaire de longue durée",
+      "author": "Laurent",
+      "agree": 35,
+      "like_it": 5,
+      "disagree": 45,
+      "no_way": 17,
+      "votes": 171
+    },
+    {
+      "id": "4496c719-6d37-4368-9d5d-fab80f16b456",
+      "content": "Il faut interdire les véhicules en ville lors des pics de chaleurs et pollution sans compromis avec la gratuité des transports lors des pics",
+      "author": "jeanne",
+      "agree": 37,
+      "like_it": 8,
+      "disagree": 40,
+      "no_way": 14,
+      "votes": 174
+    }
+  ],
+  "rejected": [],
+  "cartography": [
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Thèmes cités",
+      "legend": "",
+      "data": [
+        {
+          "label": "Vie démocratique et institutions",
+          "percent": 14,
+          "color": "#4B45A5",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.2,
+            "yAxis": 1.9
+          }
+        },
+        {
+          "label": "Emploi et entreprises",
+          "percent": 9,
+          "color": "#8955BD",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.3
+          }
+        },
+        {
+          "label": "Système de santé",
+          "percent": 9,
+          "color": "#EB7575",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.2,
+            "yAxis": 2.2
+          }
+        },
+        {
+          "label": "Ecologie",
+          "percent": 9,
+          "color": "#F5976E",
+          "adjustLabel": {
+            "textAlign": "left",
+            "yAxis": 2.3
+          }
+        },
+        {
+          "label": "Système éducatif",
+          "percent": 6,
+          "color": "#EEB298",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2,
+            "yAxis": 2.2
+          }
+        },
+        {
+          "label": "Système social",
+          "percent": 6,
+          "color": "#FFD266",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.8,
+            "yAxis": 2.1
+          }
+        },
+        {
+          "label": "Taxes et fiscalité",
+          "percent": 5,
+          "color": "#FFF689",
+          "adjustLabel": {
+            "textAlign": "right",
+            "xAxis": 1.9,
+            "yAxis": 2.2
+          }
+        },
+        {
+          "label": "Autres",
+          "percent": 30,
+          "color": "#FFF",
+          "adjustLabel": {
+            "textAlign": "left"
+          }
+        }
+      ]
+    }
+  ],
+  "participation": [
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par région (1/2)",
+      "forcedHigherValue": 21,
+      "legend": {
+        "title": "Répartition des votes",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "Île-de-France",
+          "bars": {
+            "first": 20,
+            "second": 18
+          }
+        },
+        {
+          "label": "Auvergne-Rhône-Alpes",
+          "bars": {
+            "first": 12,
+            "second": 12
+          }
+        },
+        {
+          "label": "Occitanie",
+          "bars": {
+            "first": 9,
+            "second": 9
+          }
+        },
+        {
+          "label": "Hauts-de-France",
+          "bars": {
+            "first": 7,
+            "second": 9
+          }
+        },
+        {
+          "label": "Nouvelle-Aquitaine",
+          "bars": {
+            "first": 7,
+            "second": 9
+          }
+        },
+        {
+          "label": "Grand Est",
+          "bars": {
+            "first": 10,
+            "second": 8
+          }
+        },
+        {
+          "label": "Provence-Alpes-Côte d'Azur",
+          "bars": {
+            "first": 7,
+            "second": 8
+          }
+        }
+      ],
+      "id": "participation_0"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par région (2/2)",
+      "forcedHigherValue": 21,
+      "legend": {
+        "title": "Répartition des votes",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "Pays de la Loire",
+          "bars": {
+            "first": 6,
+            "second": 6
+          }
+        },
+        {
+          "label": "Bretagne",
+          "bars": {
+            "first": 5,
+            "second": 5
+          }
+        },
+        {
+          "label": "Normandie",
+          "bars": {
+            "first": 4,
+            "second": 5
+          }
+        },
+        {
+          "label": "Bourgogne-Franche-Comté",
+          "bars": {
+            "first": 5,
+            "second": 4
+          }
+        },
+        {
+          "label": "Centre-Val de Loire",
+          "bars": {
+            "first": 4,
+            "second": 4
+          }
+        },
+        {
+          "label": "Outre-mer",
+          "bars": {
+            "first": 3,
+            "second": 3
+          }
+        },
+        {
+          "label": "Corse",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        }
+      ],
+      "id": "participation_1"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par âge",
+      "legend": {
+        "title": "Répartition des votes",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "16-24",
+          "bars": {
+            "first": 4,
+            "second": 13
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "25-34",
+          "bars": {
+            "first": 10,
+            "second": 14
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "35-44",
+          "bars": {
+            "first": 13,
+            "second": 15
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "45-54",
+          "bars": {
+            "first": 13,
+            "second": 16
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "55-64",
+          "bars": {
+            "first": 25,
+            "second": 16
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "65+",
+          "bars": {
+            "first": 35,
+            "second": 26
+          },
+          "color": "#8BDAB2"
+        }
+      ],
+      "id": "participation_2"
+    },
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Votes par genre",
+      "legend": "",
+      "data": [
+        {
+          "label": "hommes",
+          "percent": 56,
+          "color": "#4B45A5"
+        },
+        {
+          "label": "femmes",
+          "percent": 43,
+          "color": "#EB7575"
+        },
+        {
+          "label": "non-binaire",
+          "percent": 1,
+          "color": "#8BDAB2"
+        }
+      ],
+      "id": "participation_3"
+    }
+  ]
+}
