@@ -1,0 +1,487 @@
+{
+  "context": "Consultation citoyenne réalisée par Make.org du 2023-04-26 au 2023-06-07, autour de la question: Partagez VOS solutions : comment s'adapter à l'augmentation du coût de la vie (bons plans, troc, seconde main, anti-gaspi...) ?",
+  "key_figures": {
+    "visitors": 65146,
+    "votes": 219052,
+    "proposals": 730
+  },
+  "top_ideas": [
+    {
+      "name": "Toutes les idées consensuelles",
+      "ideas": [
+        {
+          "idea": "Améliorer la gestion de l'eau au sein des foyers",
+          "agreement": 80,
+          "adhesion": 19,
+          "realistic": 27
+        },
+        {
+          "idea": "Privilégier les achats locaux et de saison",
+          "agreement": 81,
+          "adhesion": 18,
+          "realistic": 30
+        },
+        {
+          "idea": "Mieux s’organiser pour éviter le gaspillage alimentaire",
+          "agreement": 72,
+          "adhesion": 13,
+          "realistic": 27
+        },
+        {
+          "idea": "Effectuer des achats plus réfléchis",
+          "agreement": 72,
+          "adhesion": 11,
+          "realistic": 26
+        },
+        {
+          "idea": "Favoriser le don et la seconde main",
+          "agreement": 76,
+          "adhesion": 16,
+          "realistic": 26
+        },
+        {
+          "idea": "Cuisiner soi-même plutôt qu'acheter des produits industriels",
+          "agreement": 76,
+          "adhesion": 15,
+          "realistic": 24
+        },
+        {
+          "idea": "Etre plus attentif au prix réél des produits",
+          "agreement": 72,
+          "adhesion": 18,
+          "realistic": 22
+        },
+        {
+          "idea": "Optimiser sa consommation énergétique",
+          "agreement": 68,
+          "adhesion": 12,
+          "realistic": 22
+        },
+        {
+          "idea": "Favoriser la réparation afin de diminuer ses achats",
+          "agreement": 69,
+          "adhesion": 13,
+          "realistic": 21
+        },
+        {
+          "idea": "Mieux négocier ses contrats et souscriptions",
+          "agreement": 61,
+          "adhesion": 9,
+          "realistic": 18
+        },
+        {
+          "idea": "Mettre en place le partage et l'échange entre voisins",
+          "agreement": 67,
+          "adhesion": 13,
+          "realistic": 22
+        }
+      ]
+    }
+  ],
+  "controversials": [
+    {
+      "id": "fc72dbf5-6a10-47b2-8915-3397de95ddab",
+      "content": "Il faut favoriser les achats en mode « drive » plutôt qu’être sur place en magasin pour limiter au maximum les achats compulsifs.",
+      "author": "Jluc",
+      "agree": 29,
+      "like_it": 3,
+      "disagree": 36,
+      "no_way": 13,
+      "votes": 749
+    },
+    {
+      "id": "cdaaa2df-1ade-4dcf-86f5-657d0fdd994f",
+      "content": "Il faut privilégier le vélo à la voiture et arrêter de trouver de bonnes excuses en prenant sa voiture pour moins de 5km de trajet",
+      "author": "Clotilde",
+      "agree": 36,
+      "like_it": 6,
+      "disagree": 28,
+      "no_way": 4,
+      "votes": 343
+    },
+    {
+      "id": "da8ee2bb-baba-40ac-bdba-f8e15b91f7c1",
+      "content": "Il faut vivre sans voiture, quand c'est possible.",
+      "author": "Valérie",
+      "agree": 47,
+      "like_it": 4,
+      "disagree": 27,
+      "no_way": 4,
+      "votes": 341
+    },
+    {
+      "id": "c2881c33-8088-460a-b8e8-0b7b0a7fd8eb",
+      "content": "Il faut comparer avec des produits vendus à l'étranger. Des fois même avec la livraison, cela revient moins cher.",
+      "author": "Louis",
+      "agree": 36,
+      "like_it": 2,
+      "disagree": 29,
+      "no_way": 16,
+      "votes": 348
+    },
+    {
+      "id": "0a51bc8d-f801-495f-9d58-fb84771c5b46",
+      "content": "Il faut manger moins de viande et privilégier la consommation de légumineuses et céréales qui nourrissent tout aussi bien pour moins cher",
+      "author": "Katia",
+      "agree": 44,
+      "like_it": 8,
+      "disagree": 22,
+      "no_way": 8,
+      "votes": 342
+    },
+    {
+      "id": "193a5d9d-4586-4edd-b1bf-f7f82d80c505",
+      "content": "Il faut végétaliser son alimentation, remplacer la viande par des protéines végé texturées, ramasser fruits et légumes chez un maraîcher",
+      "author": "Elisabeth",
+      "agree": 32,
+      "like_it": 5,
+      "disagree": 33,
+      "no_way": 11,
+      "votes": 344
+    }
+  ],
+  "cartography": [
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Thèmes cités",
+      "legend": "",
+      "data": [
+        {
+          "label": "Modification des achats",
+          "percent": 35,
+          "color": "#4B45A5",
+          "adjustLabel": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "label": "Economie circulaire",
+          "percent": 14,
+          "color": "#8955BD",
+          "adjustLabel": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "label": "Economies d'eau",
+          "percent": 12,
+          "color": "#EB7575",
+          "adjustLabel": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "label": "Engagement et lien social",
+          "percent": 12,
+          "color": "#F5976E",
+          "adjustLabel": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "label": "Alimentaire",
+          "percent": 10,
+          "color": "#EEB298",
+          "adjustLabel": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "label": "Cuisine",
+          "percent": 10,
+          "color": "#FFD266",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.2,
+            "yAxis": 1.9
+          }
+        },
+        {
+          "label": "Gestion du budget",
+          "percent": 10,
+          "color": "#FFF689",
+          "adjustLabel": {
+            "textAlign": "right"
+          }
+        },
+        {
+          "label": "Mobilités",
+          "percent": 9,
+          "color": "#E5FFAE",
+          "adjustLabel": {
+            "textAlign": "right"
+          }
+        },
+        {
+          "label": "Energie",
+          "percent": 8,
+          "color": "#C1EBDD",
+          "adjustLabel": {
+            "textAlign": "right"
+          }
+        },
+        {
+          "label": "Sobriété",
+          "percent": 6,
+          "color": "#59BAD4",
+          "adjustLabel": {
+            "textAlign": "right"
+          }
+        },
+        {
+          "label": "Local",
+          "percent": 6,
+          "color": "#5885AE",
+          "adjustLabel": {
+            "textAlign": "right"
+          }
+        },
+        {
+          "label": "Ménager",
+          "percent": 5,
+          "color": "#4B45A5",
+          "adjustLabel": {
+            "textAlign": "left",
+            "xAxis": 2.2
+          }
+        },
+        {
+          "label": "Autres",
+          "percent": 8,
+          "color": "#FFF",
+          "adjustLabel": {
+            "textAlign": "left"
+          }
+        }
+      ]
+    }
+  ],
+  "participation": [
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par région (1/2)",
+      "forcedHigherValue": 19,
+      "legend": {
+        "title": "Répartition des votes",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "Île-de-France",
+          "bars": {
+            "first": 7,
+            "second": 18
+          }
+        },
+        {
+          "label": "Auvergne-Rhône-Alpes",
+          "bars": {
+            "first": 14,
+            "second": 12
+          }
+        },
+        {
+          "label": "Nouvelle-Aquitaine",
+          "bars": {
+            "first": 15,
+            "second": 9
+          }
+        },
+        {
+          "label": "Occitanie",
+          "bars": {
+            "first": 11,
+            "second": 9
+          }
+        },
+        {
+          "label": "Hauts-de-France",
+          "bars": {
+            "first": 5,
+            "second": 9
+          }
+        },
+        {
+          "label": "Grand Est",
+          "bars": {
+            "first": 10,
+            "second": 8
+          }
+        },
+        {
+          "label": "Provence-Alpes-Côte d'Azur",
+          "bars": {
+            "first": 9,
+            "second": 8
+          }
+        }
+      ],
+      "id": "participation_0"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par région (2/2)",
+      "forcedHigherValue": 19,
+      "legend": {
+        "title": "Répartition des votes",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "Pays de la Loire",
+          "bars": {
+            "first": 6,
+            "second": 6
+          }
+        },
+        {
+          "label": "Bretagne",
+          "bars": {
+            "first": 4,
+            "second": 5
+          }
+        },
+        {
+          "label": "Normandie",
+          "bars": {
+            "first": 4,
+            "second": 5
+          }
+        },
+        {
+          "label": "Centre-Val de Loire",
+          "bars": {
+            "first": 8,
+            "second": 4
+          }
+        },
+        {
+          "label": "Bourgogne-Franche-Comté",
+          "bars": {
+            "first": 5,
+            "second": 4
+          }
+        },
+        {
+          "label": "Outre-mer",
+          "bars": {
+            "first": 1,
+            "second": 3
+          }
+        },
+        {
+          "label": "Corse",
+          "bars": {
+            "first": 1,
+            "second": 1
+          }
+        }
+      ],
+      "id": "participation_1"
+    },
+    {
+      "type": "histogram",
+      "unit": "percentage",
+      "name": "Participation par âge",
+      "legend": {
+        "title": "Répartition des votes",
+        "dimensions": {
+          "first": "votes",
+          "second": "population générale"
+        }
+      },
+      "data": [
+        {
+          "label": "16-24",
+          "bars": {
+            "first": 3,
+            "second": 13
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "25-34",
+          "bars": {
+            "first": 8,
+            "second": 14
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "35-44",
+          "bars": {
+            "first": 11,
+            "second": 15
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "45-54",
+          "bars": {
+            "first": 15,
+            "second": 16
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "55-64",
+          "bars": {
+            "first": 26,
+            "second": 16
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "65+",
+          "bars": {
+            "first": 36,
+            "second": 26
+          },
+          "color": "#8BDAB2"
+        },
+        {
+          "label": "8-15",
+          "bars": {
+            "first": 1,
+            "second": 0
+          },
+          "color": "#8BDAB2"
+        }
+      ],
+      "id": "participation_2"
+    },
+    {
+      "type": "pie",
+      "unit": "percentage",
+      "name": "Votes par genre",
+      "legend": "",
+      "data": [
+        {
+          "label": "hommes",
+          "percent": 48,
+          "color": "#4B45A5"
+        },
+        {
+          "label": "femmes",
+          "percent": 50,
+          "color": "#EB7575"
+        },
+        {
+          "label": "non-binaire",
+          "percent": 2,
+          "color": "#8BDAB2"
+        }
+      ],
+      "id": "participation_3"
+    }
+  ]
+}
