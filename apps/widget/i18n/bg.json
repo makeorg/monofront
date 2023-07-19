@@ -190,7 +190,8 @@
     "submit": "Регистрация",
     "submitted_thanks": "Благодарим Ви за отговора.",
     "submitted_disclaimer": " Той ще бъде използван анонимно за анализ на резултатите от консултацията.",
-    "select": "Изберете"
+    "select": "Изберете",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -353,5 +354,10 @@
     "title": "Консултацията вече приключи",
     "description": "Искате ли да научите повече за тази тема? Научете повече за операцията и се информирайте за всички наши консултации с граждани, като се регистрирате на Make.org",
     "link": "Открийте нашата дейност"
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

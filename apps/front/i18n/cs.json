@@ -420,7 +420,8 @@
     "submit": "Uložit",
     "submitted_thanks": "Za tvou odpověď ti děkujeme.",
     "submitted_disclaimer": " Bude anonymně použita k analýze výsledků konzultace.",
-    "select": "Vybrat"
+    "select": "Vybrat",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -1464,5 +1465,10 @@
       "ethical_charter": "Tato charta moderování byla vypracována v souladu s <a href=\"https://assets.make.org/consultations/ethical_charter_cs.pdf\" target=\"_blank\">etickou chartou (nová karta)</a>, která zaručuje neutralitu, nezávislost a transparentnost Make.org.",
       "code_penal": "Francouzský Code Pénal definuje diskriminaci jako \"jakékoli rozlišování mezi fyzickými osobami na základě jejich původu, pohlaví, rodinné situace, obezity, vzhledu, příjmení, bydliště, zdravotního stavu, zdravotního postižení, genetických znaků, zvyků, sexuální orientace nebo identity, věku, politických názorů nebo odborových aktivit nebo na základě jejich skutečné či domnělé příslušnosti či nepříslušnosti k určité etnické skupině, národu, rase nebo náboženství\". (Čl. 225-1 odst. 1.)"
     }
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

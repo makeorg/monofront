@@ -401,7 +401,8 @@
     "submit": "Înregistrare",
     "submitted_thanks": "Vă mulțumim pentru răspuns.",
     "submitted_disclaimer": " Acesta va fi integrat în mod anonim în analiza rezultatelor consultării.",
-    "select": "Selectare"
+    "select": "Selectare",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -1464,5 +1465,10 @@
       "ethical_charter": "Prezenta Cartă de moderare a fost elaborată conform Codului de <a href=\"https://assets.make.org/consultations/ethical_charter_ro.pdf\" target=\"_blank\">etică care (fila nouă)</a> garantează neutralitatea, independența și transparența platformei Make.org.",
       "code_penal": "Potrivit Ordonanței nr.137 din 31 august 2000 privind prevenirea și sancționarea tuturor formelor de discriminare, prin discriminare se înțelege „orice deosebire, excludere, restricție sau preferință, pe bază de rasă, naționalitate, etnie, limbă, religie, categorie socială, convingeri, sex, orientare sexuală, vârstă, handicap, boală cronică necontagioasă, infectare HIV, apartenență la o categorie defavorizată, precum și orice alt criteriu care are ca scop sau efect restrângerea, înlăturarea recunoașterii, folosinței sau exercitării, în condiții de egalitate, a drepturilor omului și a libertăților fundamentale sau a drepturilor recunoscute de lege, în domeniul politic, economic, social și cultural sau în orice alte domenii ale vieții publice”. (articolul 2, alineatul 1)"
     }
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

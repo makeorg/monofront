@@ -209,7 +209,8 @@
     "submit": "Registar",
     "submitted_thanks": "Obrigado pela sua resposta.",
     "submitted_disclaimer": " Será utilizada de forma anónima para analisar os resultados da consulta.",
-    "select": "Selecionar"
+    "select": "Selecionar",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -353,5 +354,10 @@
     "title": "A consulta está encerrada",
     "description": "Gostaria de saber mais sobre este tema? Descubra o resto da operação e mantenha-se informado de todas as nossas consultas aos cidadãos, registando-se no Make.org",
     "link": "Descubra a nossa operação"
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

@@ -161,6 +161,11 @@
     "description": "Prenez position sur ces solutions & proposez les vôtres.\nLes meilleures détermineront nos actions.",
     "button": "Démarrer"
   },
+  "demographics_intro": {
+    "title": "Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "Suivant"
+  },
   "final_card": {
     "title": "Merci d’avoir réagi aux propositions !",
     "description": "Continuez à voter pour nous aider à identifier les priorités.",
@@ -206,9 +211,10 @@
     "disclaimer": "Vos informations sont anonymes et permettent à nos résultats d'être représentatifs.",
     "skip": "Passer",
     "submit": "Enregistrer",
-    "submitted_thanks": "Merci pour votre réponse.",
-    "submitted_disclaimer": " Elle sera utilisée de façon anonyme pour analyser les résultats de la consultation.",
-    "select": "Sélectionner"
+    "submitted_thanks": "Votre réponse a déjà été prise en compte.",
+    "submitted_disclaimer": "Pas d’inquiétude vos données sont protégées 🔒",
+    "select": "Sélectionner",
+    "continue": "Suivant"
   },
   "proposal_submit": {
     "form": {

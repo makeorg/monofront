@@ -209,7 +209,8 @@
     "submit": "Reģistrēties",
     "submitted_thanks": "Pateicamies par jūsu atbildi.",
     "submitted_disclaimer": " To izmantos anonīmi, lai analizētu apspriešanas rezultātus.",
-    "select": "Atlasīt"
+    "select": "Atlasīt",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -353,5 +354,10 @@
     "title": "Apspriešana ir noslēgusies",
     "description": "Vai vēlaties uzzināt vairāk par šo tēmu? Uzziniet vairāk par operāciju un saņemiet informāciju par visām mūsu konsultācijām ar iedzīvotājiem, reģistrējoties vietnē Make.org",
     "link": "Atklājiet mūsu darbību"
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

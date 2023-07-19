@@ -401,7 +401,8 @@
     "submit": "Guardar",
     "submitted_thanks": "Gracias por tu respuesta.",
     "submitted_disclaimer": " Se utilizará de forma anónima para analizar los resultados de la consulta.",
-    "select": "Seleccionar"
+    "select": "Seleccionar",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -1464,5 +1465,10 @@
       "ethical_charter": "Esta Política de moderación ha sido elaborada de conformidad con el <a href=\"https://assets.make.org/consultations/ethical_charter_es.pdf\" target=\"_blank\">Código Deontológico (nueva pestaña)</a> que garantiza la neutralidad, independencia y transparencia de Make.org.",
       "code_penal": "La ley española 15/2022 para la igualdad de trato y la no discriminación establece que \"nadie podrá ser discriminado por razón de nacimiento, origen racial o étnico, sexo, religión, convicción u opinión, edad, discapacidad, orientación o identidad sexual, expresión de género, enfermedad o condición de salud, estado serológico y/o predisposición genética a sufrir patologías y trastornos, lengua, situación socioeconómica, o cualquier otra condición o circunstancia personal o social\". (Art. 2, apartado 1)"
     }
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

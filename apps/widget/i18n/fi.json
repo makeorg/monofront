@@ -190,7 +190,8 @@
     "submit": "Tallenna",
     "submitted_thanks": "Kiitos vastauksestasi",
     "submitted_disclaimer": " Sitä käytetään nimettömästi kuulemisen tulosten analysointiin.",
-    "select": "Valitse"
+    "select": "Valitse",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -353,5 +354,10 @@
     "title": "Kuuleminen on nyt päättynyt",
     "description": "Haluatko tietää lisää tästä aiheesta? Lue lisää operaatiosta ja pysy ajan tasalla kaikista kansalaiskuulemisista rekisteröitymällä Make.org-sivustolle",
     "link": "Tutustu toimintaamme"
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

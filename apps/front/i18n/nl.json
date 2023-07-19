@@ -396,7 +396,8 @@
     "submit": "Opslaan",
     "submitted_thanks": "Bedankt voor je antwoord.",
     "submitted_disclaimer": " Het zal anoniem worden gebruikt om de resultaten van de raadpleging te analyseren.",
-    "select": "Kiezen"
+    "select": "Kiezen",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -1437,5 +1438,10 @@
       "ethical_charter": "Dit moderatiebeleid is opgesteld in overeenstemming met het <a href=\"https://assets.make.org/consultations/ethical_charter_nl.pdf\" target=\"_blank\">Ethisch Handvest</a> dat de neutraliteit, onafhankelijkheid en transparantie van Make.org garandeert.",
       "code_penal": "De definitie van discriminatie volgens het Wetboek van Strafrecht: ‘Onder discriminatie of discrimineren wordt verstaan elke vorm van onderscheid, elke uitsluiting, beperking of voorkeur, die ten doel heeft of ten gevolge kan hebben dat de erkenning, het genot of de uitoefening op voet van gelijkheid van de rechten van de mens en de fundamentele vrijheden op politiek, economisch, sociaal of cultureel terrein of op andere terreinen van het maatschappelijk leven, wordt teniet gedaan of aangetast.’ (Bron: het Nederlandse Wetboek van Strafrecht - Artikel 90quater)."
     }
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

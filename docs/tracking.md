@@ -610,7 +610,13 @@ Following parameters are added to all events.
     |-|-|-|-|
     | `name` | true | demographic name |  |
     | `demographicId` | true | demographic id |  |
+    | `binding-mode` | true | demographic binding mode true/false |  |
   
+  
+
+  - `display-intro-demographics` Display demographics intro card
+
+    
   
 
   - `display-demographics-confirmation` Display demographics confirmation in sequence

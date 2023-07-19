@@ -415,7 +415,8 @@
     "submit": "Registrera",
     "submitted_thanks": "Tack för ditt svar.",
     "submitted_disclaimer": " Det kommer att användas anonymt för att analysera resultatet av samrådet.",
-    "select": "Välj"
+    "select": "Välj",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -1437,5 +1438,10 @@
     "country_subtitle": "Valet av land avgör vilka samråd som finns tillgängliga.",
     "language_title": "Ditt språk",
     "confirm": "Bekräfta"
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

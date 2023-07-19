@@ -189,6 +189,10 @@ export const LinkButtonStyle = styled(UnstyledButtonStyle)`
   font-size: ${typography.FontSize.RueDeLappe};
 `;
 
+export const SkipLinkButtonStyle = styled(LinkButtonStyle)`
+  font-size: ${typography.FontSize.Bastille};
+`;
+
 export const CloseButtonStyle = styled(UnstyledButtonStyle)`
   position: absolute;
   top: ${intToPx(DefaultPadding.Mobile)};

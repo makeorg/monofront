@@ -211,7 +211,8 @@
     "submit": "Uložit",
     "submitted_thanks": "Za tvou odpověď ti děkujeme.",
     "submitted_disclaimer": " Bude anonymně použita k analýze výsledků konzultace.",
-    "select": "Vybrat"
+    "select": "Vybrat",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -356,5 +357,10 @@
     "title": "Konzultace je nyní uzavřena",
     "description": "Chcete se o tomto tématu dozvědět více? Zjistěte více o této operaci a buďte informováni o všech našich konzultacích s občany, když se zaregistrujete na Make.org",
     "link": "Objevte náš provoz"
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

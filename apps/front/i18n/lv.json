@@ -420,7 +420,8 @@
     "submit": "Reģistrēties",
     "submitted_thanks": "Pateicamies par jūsu atbildi.",
     "submitted_disclaimer": " To izmantos anonīmi, lai analizētu apspriešanas rezultātus.",
-    "select": "Atlasīt"
+    "select": "Atlasīt",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -1464,5 +1465,10 @@
     "country_subtitle": "No jūsu izvēlētās valsts ir atkarīgas pieejamās apspriešanas.",
     "language_title": "Jūsu valoda",
     "confirm": "Apstiprināt"
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

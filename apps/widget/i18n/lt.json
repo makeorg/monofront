@@ -209,7 +209,8 @@
     "submit": "Išsaugoti",
     "submitted_thanks": "Ačiū už atsakymą.",
     "submitted_disclaimer": " Jis bus anonimiškai naudojamas analizuojant konsultacijų rezultatus.",
-    "select": "Pasirinkti"
+    "select": "Pasirinkti",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -353,5 +354,10 @@
     "title": "Konsultacijos baigtos",
     "description": "Ar norėtumėte sužinoti daugiau apie šią temą? Sužinokite daugiau apie šią operaciją ir būkite informuoti apie visas mūsų konsultacijas su piliečiais užsiregistravę Make.org",
     "link": "Atraskite mūsų veiklą"
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

@@ -425,7 +425,8 @@
     "submit": "Shrani",
     "submitted_thanks": "Hvala za odgovor.",
     "submitted_disclaimer": " Anonimno bo uporabljen za analiziranje rezultatov posvetovanja.",
-    "select": "Izberi"
+    "select": "Izberi",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -1491,5 +1492,10 @@
     "country_subtitle": "Razpoložljivost posvetovanj je odvisna od izbire države.",
     "language_title": "Vaš jezik",
     "confirm": "Potrdi"
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

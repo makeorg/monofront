@@ -211,7 +211,8 @@
     "submit": "Зберегти",
     "submitted_thanks": "Дякуємо за вашу відповідь.",
     "submitted_disclaimer": " Її буде використано анонімно для аналізу результатів публічної консультації.",
-    "select": "Обрати"
+    "select": "Обрати",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -356,5 +357,10 @@
     "title": "Наразі консультація закрита",
     "description": "Хочете дізнатися більше про цю тему? Дізнайтеся більше про операцію та будьте в курсі всіх наших консультацій з громадянами, зареєструвавшись на Make.org",
     "link": "Дізнайтеся про нашу діяльність"
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

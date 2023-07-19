@@ -551,11 +551,20 @@ export const trackClickModalCookieBack = (): void => {
 
 export const trackDisplayDemographics = (
   name: string,
-  demographicId: string
+  demographicId: string,
+  bindingMode: boolean
 ): void => {
   TrackingService.sendAllTrackers(
-    trackingEvent.DISPLAY_DEMOGRAPHICS({ name, demographicId })
+    trackingEvent.DISPLAY_DEMOGRAPHICS({
+      name,
+      demographicId,
+      'binding-mode': bindingMode ? 'true' : 'false',
+    })
   );
+};
+
+export const trackDisplayIntroDemographics = (): void => {
+  TrackingService.sendAllTrackers(trackingEvent.DISPLAY_INTRO_DEMOGRAPHICS());
 };
 
 export const trackDisplayDemographicsConfirmation = (

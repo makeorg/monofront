@@ -415,7 +415,8 @@
     "submit": "Καταχώριση",
     "submitted_thanks": "Ευχαριστούμε για την απάντησή σας.",
     "submitted_disclaimer": " Θα χρησιμοποιηθεί ανώνυμα για την ανάλυση των αποτελεσμάτων της διαβούλευσης.",
-    "select": "Επιλογή"
+    "select": "Επιλογή",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -1437,5 +1438,10 @@
     "country_subtitle": "Η επιλογή της χώρας σας καθορίζει τις διαθέσιμες διαβουλεύσεις.",
     "language_title": "Η γλώσσα σας",
     "confirm": "Επιβεβαίωση"
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

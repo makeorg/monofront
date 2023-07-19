@@ -4,12 +4,12 @@ import i18n from 'i18next';
 import { DemographicsTrackingService } from '@make.org/utils/services/DemographicsTracking';
 import { incrementSequenceIndex } from '@make.org/store/actions/sequence';
 import { useLocation } from 'react-router';
-import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import {
   trackClickSaveDemographics,
   trackClickSkipDemographics,
   trackDisplayDemographics,
 } from '@make.org/utils/services/Tracking';
+import { SkipLinkButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { useAppContext } from '@make.org/store';
 import {
   DEMOGRAPHIC_LAYOUT_ONE_COLUMN_RADIO,
@@ -21,8 +21,6 @@ import { trackingParamsService } from '@make.org/utils/services/TrackingParamsSe
 import { RadioDemographics } from './Radio';
 import {
   ExtraDataFormStyle,
-  SkipButtonStyle,
-  SkipIconStyle,
   SubmitButtonStyle,
   SubmitWrapperStyle,
 } from './style';
@@ -36,7 +34,7 @@ type Props = {
   layout: string;
   data: DemographicParameterType[];
   token: string;
-  sessionBindingMode?: boolean;
+  sessionBindingMode: boolean;
   submitSuccess: () => void;
 };
 
@@ -85,7 +83,6 @@ export const ExtraDataForm: React.FC<Props> = ({
 }) => {
   const { dispatch, state } = useAppContext();
   const location = useLocation();
-  const { device } = state.appConfig;
   const { sessionId } = state.session;
   const { currentQuestion } = state;
   const { question } = state.questions[currentQuestion];
@@ -93,7 +90,6 @@ export const ExtraDataForm: React.FC<Props> = ({
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(false);
   const [isSkipDisabled, setIsSkipDisabled] = useState(false);
   const FORM_NAME = `demographics`;
-  const isMobile = matchMobileDevice(device);
   const utmParams = useMemo(() => {
     const params = new URLSearchParams(location.search);
     const accumulator: { [key: string]: string } = {};
@@ -160,7 +156,7 @@ export const ExtraDataForm: React.FC<Props> = ({
   }, [currentValue]);
 
   useEffect(() => {
-    trackDisplayDemographics(name, demographicId);
+    trackDisplayDemographics(name, demographicId, sessionBindingMode);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -173,14 +169,13 @@ export const ExtraDataForm: React.FC<Props> = ({
     >
       {renderFormUI(layout, data, currentValue, setCurrentValue)}
       <SubmitWrapperStyle>
-        <SkipButtonStyle
+        <SkipLinkButtonStyle
           disabled={isSkipDisabled}
           onClick={onClickSkip}
           data-cy-button="skip-demographics"
         >
-          {!isMobile && <SkipIconStyle aria-hidden focusable="false" />}
           {i18n.t('demographics_card.skip')}
-        </SkipButtonStyle>
+        </SkipLinkButtonStyle>
         <SubmitButtonStyle
           data-cy-button="submit-demographics"
           type="submit"

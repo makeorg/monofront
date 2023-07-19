@@ -406,6 +406,7 @@ describe('Sequence Helper', () => {
         },
       ],
       token: 'fooToken',
+      sessionBindingMode: false,
     };
 
     it('with demographics', () => {

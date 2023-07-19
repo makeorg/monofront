@@ -209,7 +209,8 @@
     "submit": "Salvesta",
     "submitted_thanks": "Täname vastuse eest.",
     "submitted_disclaimer": " Vastust kasutatakse anonüümselt, et konsulteerimise tulemusi analüüsida.",
-    "select": "Vali"
+    "select": "Vali",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -353,5 +354,10 @@
     "title": "Konsultatsioon on nüüdseks lõppenud",
     "description": "Kas soovite selle teema kohta rohkem teada? Saate rohkem teada operatsiooni kohta ja olete kursis kõigi meie kodanikukonsultatsioonide kohta, registreerudes veebilehel Make.org",
     "link": "Avastage meie tegevust"
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

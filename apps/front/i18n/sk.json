@@ -420,7 +420,8 @@
     "submit": "Uložiť",
     "submitted_thanks": "Ďakujeme za vašu odpoveď.",
     "submitted_disclaimer": " Použije sa anonymne na analýzu výsledkov konzultácie.",
-    "select": "Vybrať"
+    "select": "Vybrať",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -1464,5 +1465,10 @@
     "country_subtitle": "Výber krajiny určuje dostupné konzultácie.",
     "language_title": "Váš jazyk",
     "confirm": "Potvrdiť"
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

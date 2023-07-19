@@ -582,6 +582,12 @@ DISPLAY_DEMOGRAPHICS:
       description: demographic name
     - key: demographicId
       description: demographic id
+    - key: binding-mode
+      description: demographic binding mode true/false
+
+DISPLAY_INTRO_DEMOGRAPHICS:
+  key: display-intro-demographics
+  description: Display demographics intro card
 
 DISPLAY_DEMOGRAPHICS_CONFIRMATION:
   key: display-demographics-confirmation

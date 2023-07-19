@@ -209,7 +209,8 @@
     "submit": "Καταχώριση",
     "submitted_thanks": "Ευχαριστούμε για την απάντησή σας.",
     "submitted_disclaimer": " Θα χρησιμοποιηθεί ανώνυμα για την ανάλυση των αποτελεσμάτων της διαβούλευσης.",
-    "select": "Επιλογή"
+    "select": "Επιλογή",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -353,5 +354,10 @@
     "title": "Η διαβούλευση έχει πλέον ολοκληρωθεί",
     "description": "Θα θέλατε να μάθετε περισσότερα για αυτό το θέμα; Μάθετε περισσότερα για την επιχείρηση και μείνετε ενήμεροι για όλες τις διαβουλεύσεις μας με τους πολίτες, κάνοντας εγγραφή στο Make.org",
     "link": "Ανακαλύψτε τη λειτουργία μας"
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

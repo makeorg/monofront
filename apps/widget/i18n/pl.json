@@ -192,7 +192,8 @@
     "submit": "Zapisz",
     "submitted_thanks": "Dziękujemy za odpowiedź.",
     "submitted_disclaimer": " Zostanie wykorzystana w sposób anonimowy w celu analizy wyników konsultacji.",
-    "select": "Wybierz"
+    "select": "Wybierz",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -356,5 +357,10 @@
     "title": "Konsultacje są już zamknięte",
     "description": "Chcesz dowiedzieć się więcej na ten temat? Dowiedz się więcej o operacji i bądź na bieżąco ze wszystkimi naszymi konsultacjami obywatelskimi, rejestrując się na Make.org",
     "link": "Odkryj naszą działalność"
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

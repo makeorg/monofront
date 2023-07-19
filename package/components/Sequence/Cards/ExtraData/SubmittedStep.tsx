@@ -46,7 +46,7 @@ export const SubmittedDemographics: React.FC<Props> = ({
           trackClickVoteDemographics(name, demographicId);
         }}
       >
-        {i18n.t('proposal_submit.success.button')}
+        {i18n.t('demographics_card.continue')}
       </RedButtonStyle>
     </>
   );

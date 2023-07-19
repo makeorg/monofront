@@ -192,7 +192,8 @@
     "submit": "Înregistrare",
     "submitted_thanks": "Vă mulțumim pentru răspuns.",
     "submitted_disclaimer": " Acesta va fi integrat în mod anonim în analiza rezultatelor consultării.",
-    "select": "Selectare"
+    "select": "Selectare",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -356,5 +357,10 @@
     "title": "Consultarea este acum încheiată",
     "description": "Doriți să aflați mai multe despre acest subiect? Aflați mai multe despre operațiune și rămâneți la curent cu toate consultările noastre cu cetățenii, înregistrându-vă pe Make.org",
     "link": "Descoperiți operațiunea noastră"
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

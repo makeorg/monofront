@@ -401,7 +401,8 @@
     "submit": "Zapisz",
     "submitted_thanks": "Dziękujemy za odpowiedź.",
     "submitted_disclaimer": " Zostanie wykorzystana w sposób anonimowy w celu analizy wyników konsultacji.",
-    "select": "Wybierz"
+    "select": "Wybierz",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -1464,5 +1465,10 @@
       "ethical_charter": "Niniejsza karta moderacji została opracowana w zgodności z <a href=\"https://assets.make.org/consultations/ethical_charter_pl.pdf\" target=\"_blank\">Kartą Etyki (nowa karta)</a>, która gwarantuje neutralność, niezależność i transparentność Make.org.",
       "code_penal": "Polski Kodeks Karny definiuje dyskryminację jako „przemoc lub groźbę bezprawną wobec grupy osób lub poszczególnej osoby z powodu jej przynależności narodowej, etnicznej, rasowej, politycznej, wyznaniowej lub z powodu jej bezwyznaniowości.” (Artykuł 119, § 1)."
     }
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

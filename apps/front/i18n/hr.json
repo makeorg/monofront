@@ -420,7 +420,8 @@
     "submit": "Spremi",
     "submitted_thanks": "Hvala vam na odgovoru.",
     "submitted_disclaimer": " Odgovor se upotrebljava anonimno kako bi se analizirali rezultati rasprave.",
-    "select": "Odaberi"
+    "select": "Odaberi",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -1464,5 +1465,10 @@
     "country_subtitle": "Odabirom se vaše države određuje koje su rasprave dostupne.",
     "language_title": "Vaš jezik",
     "confirm": "Potvrdi"
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

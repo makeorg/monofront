@@ -415,7 +415,8 @@
     "submit": "Gem",
     "submitted_thanks": "Tak for dit svar.",
     "submitted_disclaimer": " Det vil blive brugt anonymt til at analysere resultaterne af høringen.",
-    "select": "Vælg"
+    "select": "Vælg",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -1437,5 +1438,10 @@
     "country_subtitle": "Valget af land afhænger af de tilgængelige høringer.",
     "language_title": "Dit sprog",
     "confirm": "Bekræft"
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

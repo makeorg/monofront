@@ -35,7 +35,7 @@ Feature: Demographic sequence card
     When I click on "previous card" of the current card
     Then progress bar is "3" on "15"
     And current card is a demographic card
-    And I see "Merci pour votre réponse" in the current card
+    And I see "Votre réponse a déjà été prise en compte." in the current card
     And event "display-demographics-confirmation" should be tracked by Make with parameters values:
       | name                | frontValue                                                                      | widgetValue                                                                     |
       | eventType           | trackCustom                                                                     | trackCustom                                                                     |
@@ -85,7 +85,7 @@ Feature: Demographic sequence card
       | url                 | http://localhost:9009/FR/consultation/question-0-slug/selection?introCard=false | http://localhost:9008/?questionSlug=question-0-slug&source=widget-test&country=FR&language=fr&widgetId=fake-widget-questionid&hash=fake-hash-id         |
     When I click on "previous card" of the current card
     Then progress bar is "3" on "15"
-    And I see "Merci pour votre réponse" in the current card
+    And I see "Votre réponse a déjà été prise en compte." in the current card
     And event "display-demographics-confirmation" should be tracked by Make with parameters values:
       | name                | frontValue                                                                      | widgetValue                                                             |
       | eventType           | trackCustom                                                                     | trackCustom                                                             |

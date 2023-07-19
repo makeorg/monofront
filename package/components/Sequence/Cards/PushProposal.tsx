@@ -19,9 +19,8 @@ import {
   SequencePushProposalButtonStyle,
   PushProposalWrapperStyle,
   SequencePushProposalNextButtonStyle,
+  SkipIconStyle,
 } from './style';
-import { SkipIconStyle } from './ExtraData/style';
-
 /**
  * Handles Push Proposal Card Business Logic
  */

@@ -396,7 +396,8 @@
     "submit": "Tallenna",
     "submitted_thanks": "Kiitos vastauksestasi",
     "submitted_disclaimer": " Sitä käytetään nimettömästi kuulemisen tulosten analysointiin.",
-    "select": "Valitse"
+    "select": "Valitse",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -1437,5 +1438,10 @@
       "ethical_charter": "Nämä moderointisäännöt on laadittu eettisten sääntöjen mukaisesti. <a href=\"https://assets.make.org/consultations/ethical_charter_fi.pdf\" target=\"_blank\">Eettisillä säännöillä (uusi välilehti)</a> varmistetaan Make.orgin puolueettomuus, riippumattomuus ja avoimuus.",
       "code_penal": "Suomen yhdenvertaisuuslain mukaan ”Ketään ei saa syrjiä iän, alkuperän, kansalaisuuden, kielen, uskonnon, vakaumuksen, mielipiteen, poliittisen toiminnan, ammattiyhdistystoiminnan, perhesuhteiden, terveydentilan, vammaisuuden, seksuaalisen suuntautumisen tai muun henkilöön liittyvän syyn perusteella. Syrjintä on kielletty riippumatta siitä, perustuuko se henkilöä itseään vai jotakuta toista koskevaan tosiseikkaan tai oletukseen.” Yhdenvertaisuuslain mukaan syrjintä voi olla välitöntä ja välillistä, minkä lisäksi kyseisen lain mukaan syrjinnäksi katsotaan ”häirintä, kohtuullisten mukautusten epääminen sekä ohje tai käsky syrjiä”. (8 §)"
     }
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

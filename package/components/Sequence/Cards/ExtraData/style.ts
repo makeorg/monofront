@@ -1,18 +1,13 @@
-import {
-  ActiveButtonStyle,
-  BlackBorderButtonStyle,
-} from '@make.org/ui/elements/ButtonsElements';
+import { ActiveButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { CenterRowStyle } from '@make.org/ui/elements/FlexElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
-import { SvgFastForward } from '@make.org/ui/Svg/elements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import SvgSelectArrow from '@make.org/ui/Svg/source/selectArrow.svg';
 import styled from 'styled-components';
-import { SvgPropsType } from '@make.org/types';
 import { SequenceIntroParagraphStyle } from '../style';
 
 const MAX_WIDTH = 275;
@@ -67,13 +62,6 @@ export const SubmitWrapperStyle = styled(CenterRowStyle)`
   margin-top: ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     margin-top: ${spacings.l};
-  }
-`;
-
-export const SkipButtonStyle = styled(BlackBorderButtonStyle)`
-  font-size: 14px;
-  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${typography.FontSize.Arrondissement};
   }
 `;
 
@@ -133,9 +121,4 @@ export const SelectStyle = styled.select`
   background: transparent url(${SvgSelectArrow as never}) no-repeat 95% center;
   -webkit-line-clamp: 1;
   text-overflow: ellipsis;
-`;
-
-export const SkipIconStyle = styled(SvgFastForward)<SvgPropsType>`
-  margin-right: ${spacings.xs};
-  width: 16px;
 `;

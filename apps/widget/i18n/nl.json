@@ -190,7 +190,8 @@
     "submit": "Opslaan",
     "submitted_thanks": "Bedankt voor je antwoord.",
     "submitted_disclaimer": " Het zal anoniem worden gebruikt om de resultaten van de raadpleging te analyseren.",
-    "select": "Kiezen"
+    "select": "Kiezen",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "proposal_submit": {
     "form": {
@@ -353,5 +354,10 @@
     "title": "De raadpleging is nu gesloten",
     "description": "Wilt u meer weten over dit onderwerp? Kom meer te weten over de operatie en blijf op de hoogte van al onze burgerraadplegingen door u te registreren op Make.org",
     "link": "Ontdek onze werking"
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }

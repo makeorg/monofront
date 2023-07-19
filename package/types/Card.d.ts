@@ -14,7 +14,7 @@ export type DemographicDataType = {
   title: string;
   parameters: DemographicParameterType[];
   token: string;
-  sessionBindingMode?: boolean;
+  sessionBindingMode: boolean;
 };
 
 export type PartnerItemType = {

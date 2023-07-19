@@ -1430,12 +1430,18 @@
     "submit": "Speichern",
     "submitted_thanks": "Danke für deine Antwort.",
     "submitted_disclaimer": "Sie wird anonym verwendet, um die Ergebnisse der Konsultation zu analysieren.",
-    "select": "Auswählen"
+    "select": "Auswählen",
+    "continue": "@@demographics_card.continue|fr:Suivant"
   },
   "language_switch": {
     "country_title": "Deine Land",
     "country_subtitle": "Die Auswahl deines Landes bestimmt die für dich verfügbaren Konsultationen.",
     "language_title": "Deine Sprache",
     "confirm": "Bestätigen"
+  },
+  "demographics_intro": {
+    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soit bien pris en compte et pour garantir une meilleure représentativité.",
+    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
+    "next": "@@demographics_intro.next|fr:Suivant"
   }
 }
