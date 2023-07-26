@@ -13,6 +13,7 @@ describe('query helper', () => {
         pushProposalCard: {
           enabled: true,
         },
+        demographics: [],
       };
       const extraSlides = transformExtraSlidesConfigFromQuery(
         extraSlidesConfig,
@@ -32,6 +33,7 @@ describe('query helper', () => {
         pushProposalCard: {
           enabled: true,
         },
+        demographics: [],
       };
 
       const extraSlides = transformExtraSlidesConfigFromQuery(
@@ -54,6 +56,7 @@ describe('query helper', () => {
         pushProposalCard: {
           enabled: true,
         },
+        demographics: [],
       };
       const extraSlides = transformExtraSlidesConfigFromQuery(
         extraSlidesConfig,

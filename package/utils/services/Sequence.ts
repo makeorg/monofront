@@ -1,9 +1,5 @@
 import { QuestionApiService } from '@make.org/api/services/QuestionApiService';
-import {
-  SequenceType,
-  DemographicDataType,
-  FirstProposalSequenceType,
-} from '@make.org/types';
+import { SequenceType, FirstProposalSequenceType } from '@make.org/types';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 import {
@@ -17,8 +13,8 @@ const startSequenceByKind = async (
   includedProposalIds: string[],
   sequenceKind: string,
   preferredLanguage: string,
-  demographicsCardId?: string,
-  token?: string
+  demographicsCardId: string | null,
+  token: string | null
 ): Promise<SequenceType | null> => {
   try {
     const response = await QuestionApiService.startSequenceByKind(
@@ -61,8 +57,9 @@ const startSequenceByKind = async (
 
     const formattedResponse = {
       proposals: uniqueOrderedProposals,
-      demographics: data.demographics as DemographicDataType,
+      demographics: data.demographics,
       length: uniqueOrderedProposals.length,
+      sessionBindingMode: data.sessionBindingMode,
     };
 
     return formattedResponse;
@@ -132,7 +129,9 @@ const startSequenceByKeyword = async (
       proposals: unique,
       label: data.label,
       key: data.key,
+      demographics: data.demographics,
       length: unique.length,
+      sessionBindingMode: data.sessionBindingMode,
     };
 
     return formattedResponse;

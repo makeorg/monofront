@@ -30,7 +30,10 @@ export const SpecialFinalCard: React.FC<Props> = ({ questionSlug }) => {
 
   return (
     <>
-      <SequenceMainTitleStyle className={isWidget ? 'widget' : ''}>
+      <SequenceMainTitleStyle
+        className={isWidget ? 'widget' : ''}
+        data-cy-container="final-card-title"
+      >
         {i18n.t('special_final_card.title')}
       </SequenceMainTitleStyle>
       <SequenceParagraphStyle>

@@ -237,45 +237,37 @@ When(
       cy.get(`[data-cy-card-number=${currentCard}]`)
         .should('exist')
         .should('be.visible');
-
-      cy.get(`[data-cy-card-number=${currentCard}]`).then(card => {
-        const voteButtons = card.find('[data-cy-button=vote]');
-
-        // for proposals only
-        if (voteButtons.length) {
-          // wait for vote button to exist in DOM
-          cy.waitUntil(() =>
-            cy
-              .get('[data-cy-vote-key=agree]')
+      cy.wait(500); // wait for card update
+      cy.get(`[data-cy-card-number=${currentCard}]`)
+        .then(card => card.attr('data-cy-card-type'))
+        .then(cardType => {
+          if (cardType === 'PROPOSAL_CARD') {
+            cy.get('[data-cy-vote-key=agree]')
               .should('exist')
               .should('be.visible')
-          );
-          // click on vote agree button
-          cy.get(`[data-cy-button=vote][data-cy-vote-key=agree]`)
-            .first()
-            .click();
+              .click();
 
-          // check next-proposal button exists in DOM
-          cy.get('[data-cy-button=next-proposal]')
-            .should('exist')
-            .should('be.visible');
-          // click on next-proposal button
-          cy.get('[data-cy-button=next-proposal]').click();
-        } else {
-          // check for various next button exist in DOM
-          cy.get(
-            '[data-cy-button=push-proposal-next], [data-cy-button=skip-sign-up], [data-cy-button=start-sequence], [data-cy-button=skip-demographics]'
-          )
-            .should('exist')
-            .should('be.visible');
-          // click on next button
-          cy.get(
-            '[data-cy-button=push-proposal-next], [data-cy-button=skip-sign-up], [data-cy-button=start-sequence], [data-cy-button=skip-demographics]'
-          )
-            .first()
-            .click();
-        }
-      });
+            // check next-proposal button exists in DOM
+            cy.get('[data-cy-button=next-proposal]')
+              .should('exist')
+              .should('be.visible');
+            // click on next-proposal button
+            cy.get('[data-cy-button=next-proposal]').click();
+          } else {
+            // check for various next button exist in DOM
+            cy.get(
+              '[data-cy-button=push-proposal-next], [data-cy-button=skip-sign-up], [data-cy-button=start-sequence], [data-cy-button=skip-demographics]'
+            )
+              .should('exist')
+              .should('be.visible');
+            // click on next button
+            cy.get(
+              '[data-cy-button=push-proposal-next], [data-cy-button=skip-sign-up], [data-cy-button=start-sequence], [data-cy-button=skip-demographics]'
+            )
+              .first()
+              .click();
+          }
+        });
     }
   }
 );
@@ -304,6 +296,16 @@ Then('card {string} is a demographic card', cardNumber => {
     'data-cy-card-type',
     'EXTRASLIDE_DEMOGRAPHICS_CARD'
   );
+});
+
+Then('current card is a demographic binding mode intro card', () => {
+  cy.get(`[data-cy-card-type]`)
+    .first()
+    .should(
+      'have.attr',
+      'data-cy-card-type',
+      'EXTRASLIDE_INTRO_DEMOGRAPHICS_CARD'
+    );
 });
 
 Then('current card is a demographic card', () => {

@@ -24,6 +24,7 @@ export const buildCards = (
   extraSlidesConfig: QuestionExtraSlidesConfigType,
   canPropose: boolean,
   isStandardSequence: boolean,
+  sessionBindingMode: boolean,
   introCardParam?: boolean,
   pushProposalParam?: boolean
 ): SequenceCardType[] => {
@@ -36,7 +37,7 @@ export const buildCards = (
     !!extraSlidesConfig.introCard &&
     !!extraSlidesConfig.introCard.enabled &&
     !!introCardParam;
-  const withDemographicsCard = extraSlidesConfig.demographics;
+  const withDemographicsCard = !!extraSlidesConfig.demographics;
 
   const cards: SequenceCardType[] = proposals.map(proposal => ({
     type: CARD.CARD_TYPE_PROPOSAL,
@@ -62,13 +63,33 @@ export const buildCards = (
       index: 0,
     });
   }
-
   if (withDemographicsCard) {
-    cards.splice(withIntroCard ? 3 : 2, 0, {
-      type: CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
-      configuration: extraSlidesConfig.demographics,
-      state: { votes: [] },
-      index: 0,
+    if (sessionBindingMode) {
+      cards.splice(cards.length, 0, {
+        type: CARD.CARD_TYPE_EXTRASLIDE_INTRO_DEMOGRAPHICS_CARD,
+        configuration: extraSlidesConfig.introCard,
+        state: { votes: [] },
+        index: 0,
+      });
+    }
+
+    const pushCards = () => {
+      if (withIntroCard && !sessionBindingMode) {
+        return 3;
+      }
+      if (sessionBindingMode) {
+        return cards.length;
+      }
+      return 2;
+    };
+
+    extraSlidesConfig.demographics.forEach(demographicCard => {
+      cards.splice(pushCards(), 0, {
+        type: CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
+        configuration: demographicCard,
+        state: { votes: [] },
+        index: 0,
+      });
     });
   }
 
@@ -221,7 +242,7 @@ export const getSequenceSize = (
 export const addDemographicsToSequenceConfig = (
   extraSlidesConfig: QuestionExtraSlidesConfigType,
   hasDemographics: boolean,
-  demographicsData?: DemographicDataType
+  demographicsData: DemographicDataType[]
 ): QuestionExtraSlidesConfigType => {
   if (!hasDemographics || !demographicsData) {
     return extraSlidesConfig;

@@ -399,6 +399,31 @@ const partners = generatePartners(5);
 const popularTags = generatePopularTags(4);
 const tags = generateTags(4);
 
+const generateBindingDemographics = () => {
+  return range(0, 3).map(number => ({
+    ...defaultDemographics,
+    id: `question-${number}-id`,
+    name: `test tech-${number}`,
+    layout: 'OneColumnRadio',
+    title: `wonderful test-${number}`,
+    parameters: [
+      {
+        label: `label1-${number}`,
+        value: `foo-${number}`,
+      },
+      {
+        label: `label2-${number}`,
+        value: `bar-${number}`,
+      },
+    ],
+    token:
+      '52gY7b8ICzBO8bgCu1Fa97MWMWCqE9sIzI7dCUPoE/4E8+zCnhd1+EdMZ9JBb1Ka4owMZKkpFRG5yB5QEUygU/rKHdLuY0kQ/4csOQ3b3kAk5xHKuF4NnPMJ/ylgD1U69rCZ+vnzTodRBrStVpTCeFAVRv8cdTNDi8nVK8Gzf9RubQ==',
+  }));
+};
+
+const standarDemographics = defaultDemographics;
+const bindingDemographics = generateBindingDemographics();
+
 const generateHomeView = () => {
   const startDate = `${today.getFullYear() - 2}-${month}-${day}T01:00:00.000Z`;
   const futureEndDate = `${
@@ -539,8 +564,6 @@ const countriesWithConsultations = [
   { countryCode: 'SK', activeConsultations: true },
 ];
 
-const demographics = defaultDemographics;
-
 const voteAgree = {
   ...defaultVote,
   voteKey: 'agree',
@@ -602,7 +625,8 @@ const fixtures = {
   topIdeas,
   countriesWithConsultations,
   keywords,
-  demographics,
+  standarDemographics,
+  bindingDemographics,
 };
 
 module.exports = { fixtures };

@@ -34,8 +34,8 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
   const executeStartSequence = async (
     questionId: string,
     votedIds: string[],
-    demographicCardId?: string,
-    token?: string
+    demographicCardId: string | null,
+    token: string | null
   ): Promise<SequenceType | null> => {
     const response = await SequenceService.startSequenceByKind(
       questionId,
@@ -50,10 +50,11 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
       return null;
     }
 
-    const { proposals, demographics } = response;
+    const { proposals, demographics, sessionBindingMode } = response;
     return {
       proposals: proposals || [],
       demographics,
+      sessionBindingMode,
       length: proposals.length,
     };
   };

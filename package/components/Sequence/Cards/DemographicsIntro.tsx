@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { IntroCardConfigType } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
 import { trackDisplayIntroDemographics } from '@make.org/utils/services/Tracking';
 import i18n from 'i18next';
@@ -10,12 +9,7 @@ import {
   SequenceIntroParagraphStyle,
 } from './style';
 
-type Props = {
-  /** Object with Static properties used to configure the Intro Card */
-  configuration: IntroCardConfigType;
-};
-
-export const DemographicsIntroCard: React.FC<Props> = () => {
+export const DemographicsIntroCard: React.FC = () => {
   const { dispatch } = useAppContext();
 
   useEffect(() => {
@@ -32,6 +26,7 @@ export const DemographicsIntroCard: React.FC<Props> = () => {
       </SequenceIntroParagraphStyle>
       <SequenceIntroButtonStyle
         onClick={() => dispatch(incrementSequenceIndex())}
+        data-cy-button="demographics-intro-next"
       >
         {i18n.t('demographics_intro.next')}
       </SequenceIntroButtonStyle>

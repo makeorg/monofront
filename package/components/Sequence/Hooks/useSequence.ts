@@ -81,25 +81,22 @@ export const useSequence = (
   const loadSequenceData = async (introCard: boolean, votedIds: string[]) => {
     dispatch(setSequenceLoading(true));
     dispatch(setSequenceLength(0));
-
     if (question) {
       let buildedCards: SequenceCardType[] = [];
-      let sequenceDemographics: DemographicDataType | undefined;
       const response = await executeStartSequence(
         question.questionId,
         votedIds,
         language,
-        sequenceDemographics?.id,
-        sequenceDemographics?.token
+        null,
+        null
       );
 
       if (!response || !response.proposals) {
         return;
       }
 
-      if (response.demographics) {
-        sequenceDemographics = response.demographics;
-      }
+      const sequenceDemographics: DemographicDataType[] =
+        response.demographics ?? [];
 
       if (response.proposals) {
         if (response.proposals.length === 0) {
@@ -108,9 +105,7 @@ export const useSequence = (
           dispatch(setSequenceLoading(false));
           return;
         }
-
         dispatch(loadSequenceProposals(response.proposals));
-
         const extraSlidesConfig = addDemographicsToSequenceConfig(
           question.sequenceConfig,
           demographics.renderCard && question.hasDemographics,
@@ -122,6 +117,7 @@ export const useSequence = (
           extraSlidesConfig,
           question.canPropose,
           isStandardSequence,
+          response.sessionBindingMode,
           introCard,
           pushProposalParam
         );

@@ -106,8 +106,8 @@ const startSequenceByKind = async (
       includedProposalIds,
       sequenceKind,
       preferredLanguage,
-      undefined,
-      undefined,
+      null,
+      null,
       mandatoryRequestHeaders
     );
 
@@ -142,17 +142,20 @@ const startSequenceByKind = async (
 
     const formatResponse = (
       proposals: ProposalType[],
-      demographics: DemographicDataType,
+      demographics: DemographicDataType[],
+      sessionBindingMode: boolean,
       length: number
     ) => ({
       proposals,
       demographics,
+      sessionBindingMode,
       length,
     });
 
     const sequence = formatResponse(
       uniqueOrderedProposals,
-      data.demographics as DemographicDataType,
+      data.demographics as DemographicDataType[],
+      data.sessionBindingMode,
       uniqueOrderedProposals.length
     );
 

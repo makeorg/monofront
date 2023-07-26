@@ -101,7 +101,7 @@ export type QuestionWordingType = {
 export type QuestionExtraSlidesConfigType = {
   introCard?: IntroCardConfigType;
   pushProposalCard?: PushProposalCardConfigType;
-  demographics?: DemographicDataType;
+  demographics: DemographicDataType[];
 };
 
 export type SimpleOperationDataType = {

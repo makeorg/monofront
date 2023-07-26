@@ -144,6 +144,7 @@ export const sequenceByKindRoute = async (
       extraSlidesConfig,
       questionModified.canPropose,
       true,
+      sequenceResponse.sequence.sessionBindingMode,
       withIntroCardParam,
       withPushProposalCardParam
     );

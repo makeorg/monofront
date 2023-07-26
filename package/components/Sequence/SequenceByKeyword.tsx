@@ -58,8 +58,12 @@ export const SequenceByKeyword: FC = () => {
     if (response.label) {
       setSequenceLabel(response.label);
     }
+
+    const { proposals, demographics, sessionBindingMode } = response;
     return {
-      proposals: response.proposals || [],
+      proposals: proposals || [],
+      demographics,
+      sessionBindingMode,
       length: response.length,
     };
   };

@@ -28,11 +28,9 @@ sequenceRouter.get('/standard/:questionId', (req, res) => {
     const includes = [req.query.include].flat();
     let index = 0;
     includes.forEach(proposalId => {
-      const currentProposal = fixtures.proposals.find(
-        proposal => proposal.id === proposalId
-      ) || fixtures.firstProposals.find(
-        proposal => proposal.id === proposalId
-      );
+      const currentProposal =
+        fixtures.proposals.find(proposal => proposal.id === proposalId) ||
+        fixtures.firstProposals.find(proposal => proposal.id === proposalId);
       proposals[index] = {
         ...currentProposal,
         votes: newVotesWithNeutralVoted,
@@ -41,9 +39,17 @@ sequenceRouter.get('/standard/:questionId', (req, res) => {
     });
   }
 
+  if (req.params.questionId === 'question-2-id') {
+    return res.send({
+      proposals,
+      demographics: fixtures.bindingDemographics,
+      sessionBindingMode: true,
+    });
+  }
   return res.send({
     proposals,
-    demographics: fixtures.demographics,
+    demographics: fixtures.standarDemographics,
+    sessionBindingMode: false,
   });
 });
 
@@ -67,20 +73,26 @@ const getProposals = (proposals, req, res) => {
     const includes = [req.query.include].flat();
     let index = 0;
     includes.forEach(proposalId => {
-      proposals[index] = fixtures.proposals.find(
-        proposal => proposal.id === proposalId
-      ) || fixtures.firstProposals.find(
-        proposal => proposal.id === proposalId
-      );
+      proposals[index] =
+        fixtures.proposals.find(proposal => proposal.id === proposalId) ||
+        fixtures.firstProposals.find(proposal => proposal.id === proposalId);
       index += 1;
     });
   }
 
+  if (req.params.questionId === 'question-2-id') {
+    return res.send({
+      proposals,
+      demographics: fixtures.demographicsSessionBinding,
+      sessionBindingMode: true,
+    });
+  }
   return res.send({
     proposals,
-    demographics: fixtures.demographics,
+    demographics: fixtures.standarDemographics,
+    sessionBindingMode: false,
   });
-}
+};
 
 sequenceRouter.get('/consensus/:questionId', (req, res) => {
   const proposalsOfQuestion = fixtures.proposals.filter(
@@ -89,7 +101,6 @@ sequenceRouter.get('/consensus/:questionId', (req, res) => {
 
   const proposals = proposalsOfQuestion.slice(12, 24);
   getProposals(proposals, req, res);
-
 });
 
 sequenceRouter.get('/controversy/:questionId', (req, res) => {
@@ -99,9 +110,7 @@ sequenceRouter.get('/controversy/:questionId', (req, res) => {
 
   const proposals = proposalsOfQuestion.slice(12, 24);
   getProposals(proposals, req, res);
-
 });
-
 
 sequenceRouter.get('/keyword/:questionId/:keyword', (req, res) => {
   const proposalsOfQuestion = fixtures.proposals.filter(
@@ -110,7 +119,6 @@ sequenceRouter.get('/keyword/:questionId/:keyword', (req, res) => {
 
   const proposals = proposalsOfQuestion.slice(12, 24);
   getProposals(proposals, req, res);
-
 });
 
 module.exports = sequenceRouter;

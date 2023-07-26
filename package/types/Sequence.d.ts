@@ -10,8 +10,9 @@ export type SequenceType = {
   proposals: ProposalType[];
   label?: string;
   key?: string;
-  demographics?: DemographicDataType;
+  demographics: DemographicDataType[];
   length: number;
+  sessionBindingMode: boolean;
 };
 
 export type FirstProposalSequenceType = {
@@ -23,8 +24,8 @@ export type ExecuteStartSequence = (
   questionId: string,
   votedIds: string[],
   preferredLanguage: string,
-  demographicsCardId?: string,
-  token?: string
+  demographicsCardId: string | null,
+  token: string | null
 ) => Promise<SequenceType | null>;
 
 export type FetchFirstProposalType = (

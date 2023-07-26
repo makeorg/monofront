@@ -15,7 +15,10 @@ type Props = {
 
 export const ExtraDataCard: FC<Props> = ({ configuration }) => {
   const { state, dispatch } = useAppContext();
-  const isSubmitted = state.sequence.demographics.submitted;
+  const { sequence } = state;
+  const isSubmitted = state.sequence.demographics.submitted?.find(
+    demographic => demographic.id === configuration.id
+  );
 
   // set demographics
   if (!configuration) {
@@ -27,12 +30,10 @@ export const ExtraDataCard: FC<Props> = ({ configuration }) => {
 
     return null;
   }
-
-  const { id, name, layout, title, parameters, token, sessionBindingMode } =
-    configuration;
+  const { id, name, layout, title, parameters, token } = configuration;
 
   const submitSuccess = () => {
-    dispatch(setDemographicsAsSubmitted());
+    dispatch(setDemographicsAsSubmitted(configuration));
   };
 
   return isSubmitted ? (
@@ -49,7 +50,7 @@ export const ExtraDataCard: FC<Props> = ({ configuration }) => {
         layout={layout}
         data={parameters}
         token={token}
-        sessionBindingMode={sessionBindingMode}
+        sessionBindingMode={sequence.sessionBindingMode}
         submitSuccess={submitSuccess}
       />
     </MiddleColumnStyle>

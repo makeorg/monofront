@@ -20,6 +20,7 @@ import { IntroCard } from './Intro';
 import { PushProposalCard } from './PushProposal';
 import { FinalCard } from './Final';
 import { SpecialFinalCard } from './SpecialFinal';
+import { DemographicsIntroCard } from './DemographicsIntro';
 import { ProposalCard } from './Proposal';
 import { NoProposal } from './NoProposal';
 import { ExtraDataCard } from './ExtraData';
@@ -53,6 +54,9 @@ const Card: React.FC<CardProps> = ({ card, question }) => {
     }
     case CARD.CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD: {
       return <SpecialFinalCard questionSlug={question.slug} />;
+    }
+    case CARD.CARD_TYPE_EXTRASLIDE_INTRO_DEMOGRAPHICS_CARD: {
+      return <DemographicsIntroCard />;
     }
     case CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD:
       return (

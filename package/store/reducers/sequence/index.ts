@@ -31,9 +31,10 @@ export const sequence_state: StateSequence = {
   sequenceLabel: '',
   sequenceRelaunch: false,
   demographics: {
-    submitted: false,
+    submitted: [],
     renderCard: true,
   },
+  sessionBindingMode: false,
 };
 
 export const sequence_reducer: Reducer = (
@@ -135,7 +136,7 @@ export const sequence_reducer: Reducer = (
         ...state,
         demographics: {
           ...state.demographics,
-          submitted: action.payload.submitted,
+          submitted: [...state.demographics.submitted, ...[action.payload]],
         },
       };
     case SEQUENCE_DEMOGRAPHICS_RENDER:

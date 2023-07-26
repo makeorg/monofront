@@ -132,8 +132,8 @@ export class QuestionApiService {
     includedProposalIds: string[] = [],
     sequenceKind: string,
     preferredLanguage: string,
-    demographicsCardId?: string,
-    token?: string,
+    demographicsCardId: string | null,
+    token: string | null,
     headers: ApiServiceHeadersType = {}
   ): Promise<void | AxiosResponse> {
     let startSequenceUrl = PATH_QUESTION_START_SEQUENCE.replace(

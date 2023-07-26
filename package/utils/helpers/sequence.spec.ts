@@ -9,6 +9,7 @@ describe('Sequence Helper', () => {
     it("doesn't contain intro card in API conf and in params", () => {
       const extraSlidesConfig = {
         introCard: { enabled: false },
+        demographics: [],
       };
       const introCardParam = false;
       const cards = helpers.buildCards(
@@ -34,7 +35,8 @@ describe('Sequence Helper', () => {
 
     it('contain intro card in API conf but false in params', () => {
       const extraSlidesConfig = {
-        introCard: { enabled: true },
+        introCard: { enabled: false },
+        demographics: [],
       };
       const introCardParam = false;
       const cards = helpers.buildCards(
@@ -61,6 +63,7 @@ describe('Sequence Helper', () => {
     it("doesn't contain intro card in API conf but true in params", () => {
       const extraSlidesConfig = {
         introCard: { enabled: false },
+        demographics: [],
       };
       const introCardParam = true;
       const cards = helpers.buildCards(
@@ -68,6 +71,7 @@ describe('Sequence Helper', () => {
         extraSlidesConfig,
         false,
         true,
+        false,
         introCardParam,
         false
       );
@@ -87,6 +91,7 @@ describe('Sequence Helper', () => {
     it('contain intro card in API conf and in params', () => {
       const extraSlidesConfig = {
         introCard: { enabled: true },
+        demographics: [],
       };
       const introCardParam = true;
       const cards = helpers.buildCards(
@@ -94,6 +99,7 @@ describe('Sequence Helper', () => {
         extraSlidesConfig,
         false,
         true,
+        false,
         introCardParam,
         false
       );
@@ -121,7 +127,8 @@ describe('Sequence Helper', () => {
 
     it("doesn't contain push proposal card in API conf and in params", () => {
       const extraSlidesConfig = {
-        pushProposalCard: { enabled: false },
+        introCard: { enabled: false },
+        demographics: [],
       };
       const pushProposalParam = false;
       const canPropose = true;
@@ -130,6 +137,7 @@ describe('Sequence Helper', () => {
         extraSlidesConfig,
         canPropose,
         true,
+        false,
         false,
         pushProposalParam
       );
@@ -148,7 +156,8 @@ describe('Sequence Helper', () => {
 
     it('contain push proposal in API conf but false in params', () => {
       const extraSlidesConfig = {
-        pushProposalCard: { enabled: true },
+        introCard: { enabled: false },
+        demographics: [],
       };
       const pushProposalParam = false;
       const canPropose = true;
@@ -157,6 +166,7 @@ describe('Sequence Helper', () => {
         extraSlidesConfig,
         canPropose,
         true,
+        false,
         false,
         pushProposalParam
       );
@@ -175,7 +185,8 @@ describe('Sequence Helper', () => {
 
     it("doesn't contain push proposal in API conf but true in params", () => {
       const extraSlidesConfig = {
-        pushProposalCard: { enabled: false },
+        introCard: { enabled: false },
+        demographics: [],
       };
       const pushProposalParam = true;
       const canPropose = true;
@@ -184,6 +195,7 @@ describe('Sequence Helper', () => {
         extraSlidesConfig,
         canPropose,
         true,
+        false,
         false,
         pushProposalParam
       );
@@ -203,6 +215,7 @@ describe('Sequence Helper', () => {
     it('contain push proposal in API conf and in params', () => {
       const extraSlidesConfig = {
         pushProposalCard: { enabled: true },
+        demographics: [],
       };
       const pushProposalParam = true;
       const canPropose = true;
@@ -211,6 +224,7 @@ describe('Sequence Helper', () => {
         extraSlidesConfig,
         canPropose,
         true,
+        false,
         false,
         pushProposalParam
       );
@@ -238,7 +252,8 @@ describe('Sequence Helper', () => {
 
     it('contain push proposal but canPropose is disabled', () => {
       const extraSlidesConfig = {
-        pushProposalCard: { enabled: true },
+        introCard: { enabled: false },
+        demographics: [],
       };
       const pushProposalParam = true;
       const canPropose = false;
@@ -247,6 +262,7 @@ describe('Sequence Helper', () => {
         extraSlidesConfig,
         canPropose,
         true,
+        false,
         false,
         pushProposalParam
       );
@@ -348,7 +364,8 @@ describe('Sequence Helper', () => {
   describe('get Sequence Size', () => {
     it('with intro card', () => {
       const extraSlidesConfig = {
-        introCard: { enabled: true },
+        introCard: { enabled: false },
+        demographics: [],
       };
       const sequenceSize = helpers.getSequenceSize(
         10,
@@ -362,7 +379,8 @@ describe('Sequence Helper', () => {
 
     it('with push proposal card', () => {
       const extraSlidesConfig = {
-        pushProposalCard: { enabled: true },
+        introCard: { enabled: false },
+        demographics: [],
       };
       const sequenceSize = helpers.getSequenceSize(
         10,
@@ -378,6 +396,7 @@ describe('Sequence Helper', () => {
       const extraSlidesConfig = {
         introCard: { enabled: false },
         pushProposalCard: { enabled: false },
+        demographics: [],
       };
       const sequenceSize = helpers.getSequenceSize(
         10,
@@ -390,29 +409,31 @@ describe('Sequence Helper', () => {
   });
 
   describe('Add demographics data to extra slides config', () => {
-    const defaultDemographcis: DemographicDataType = {
-      id: 'fooId',
-      name: 'fooName',
-      layout: 'OneColumnRadio',
-      title: 'fooTitle',
-      parameters: [
-        {
-          label: 'foo',
-          value: 'foo',
-        },
-        {
-          label: 'bar',
-          value: 'bar',
-        },
-      ],
-      token: 'fooToken',
-      sessionBindingMode: false,
-    };
+    const defaultDemographcis: DemographicDataType[] = [
+      {
+        id: 'fooId',
+        name: 'fooName',
+        layout: 'OneColumnRadio',
+        title: 'fooTitle',
+        parameters: [
+          {
+            label: 'foo',
+            value: 'foo',
+          },
+          {
+            label: 'bar',
+            value: 'bar',
+          },
+        ],
+        token: 'fooToken',
+      },
+    ];
 
     it('with demographics', () => {
       const extraSlidesConfig = {
         introCard: { enabled: false },
         pushProposalCard: { enabled: false },
+        demographics: defaultDemographcis,
       };
       const extraSlidesWithDemographics =
         helpers.addDemographicsToSequenceConfig(
@@ -430,13 +451,10 @@ describe('Sequence Helper', () => {
       const extraSlidesConfig = {
         introCard: { enabled: false },
         pushProposalCard: { enabled: false },
+        demographics: [],
       };
       const extraSlidesWithDemographics =
-        helpers.addDemographicsToSequenceConfig(
-          extraSlidesConfig,
-          false,
-          undefined
-        );
+        helpers.addDemographicsToSequenceConfig(extraSlidesConfig, false, []);
       expect(extraSlidesWithDemographics).toEqual(extraSlidesConfig);
     });
   });
