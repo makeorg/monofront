@@ -60,6 +60,7 @@ import {
   ROUTE_STATIC_GTU,
 } from '@make.org/utils/routes';
 import { fBConversionApi } from '@make.org/utils/services/FBApiConversion';
+import { tWConversionApi } from '@make.org/utils/services/TWApiConversion';
 import { countryLanguageMiddleware } from '../middleware/countryLanguage';
 import { redirectToCountryMiddleware } from '../middleware/redirect';
 import { sequenceByKindRoute } from './ssr/sequenceByKindRoute';
@@ -146,7 +147,8 @@ export const initRoutes = (app: Application): void => {
   // API Routes
   app.get('/api/question/:questionId/results', questionResults);
   app.post('/api/logger', loggerApi);
-  app.post('/api/conversion', fBConversionApi);
+  app.post('/api/conversion/fb', fBConversionApi);
+  app.post('/api/conversion/tw', tWConversionApi);
 
   const frontMiddlewares = [countryLanguageMiddleware, metricsMiddleware];
   const redirectMiddlewares = [

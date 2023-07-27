@@ -4,13 +4,15 @@ import { env } from '@make.org/assets/env';
 import { FbEventClientType } from '@make.org/types/FbEvents';
 import { LogLevelType } from '@make.org/types/enums/logLevel';
 import { ApiServiceResponse, OptionsType } from '@make.org/types';
+import { TwEventType } from '@make.org/types/TwEvents';
 import { handleErrors } from '../ApiService/ApiService.shared';
 
 const port = env.port() || '';
 const host = env.frontUrl() || '';
 const PATH_RESULTS_CONFIGURATION = '/api/question/:questionId/results';
 const PATH_LOGGER = '/api/logger';
-const PATH_FB_EVENT_CONVERSION = '/api/conversion';
+const PATH_FB_EVENT_CONVERSION = '/api/conversion/fb';
+const PATH_TW_EVENT_CONVERSION = '/api/conversion/tw';
 
 axiosRetry(axios, {
   retries: 5,
@@ -95,6 +97,13 @@ export class ExpressApiService {
     data: FbEventClientType
   ): Promise<void | AxiosResponse> {
     return this.callApi(PATH_FB_EVENT_CONVERSION, {
+      method: 'POST',
+      body: data,
+    });
+  }
+
+  sendTwEventConversion(data: TwEventType): Promise<void | AxiosResponse> {
+    return this.callApi(PATH_TW_EVENT_CONVERSION, {
       method: 'POST',
       body: data,
     });

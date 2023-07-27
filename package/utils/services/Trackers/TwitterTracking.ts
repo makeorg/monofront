@@ -3,8 +3,9 @@ import { env } from '@make.org/assets/env';
 import { twitter } from '@make.org/utils/services/Trackers/twttr.js';
 import { Logger } from '../Logger';
 import trackingConfiguration from '../trackingConfiguration.yaml';
+import { ExpressService } from '../Express';
 
-const TWITTER_UNIVERSAL_MAKE_TAG = 'o2q8v';
+const twPixelId: string = env.twPixelId();
 const twitterEventMapping = {
   [trackingConfiguration.CLICK_PROPOSAL_SUBMIT.key]: 'o2q9h',
   [trackingConfiguration.CLICK_PROPOSAL_UNVOTE.key]: 'o2q9n',
@@ -29,7 +30,7 @@ export const TwitterTracking = {
     }
 
     // @ts-ignore
-    const eventName = `tw-${TWITTER_UNIVERSAL_MAKE_TAG}-${twitterEventMapping[action]}`;
+    const eventName = `tw-${twPixelId}-${twitterEventMapping[action]}`;
 
     if (env.isDev()) {
       console.log(`Tracking Twitter: event ${eventName}`);
@@ -43,7 +44,22 @@ export const TwitterTracking = {
       return;
     }
 
-    twitter.track(eventName, action, eventId);
+    // pixel TW
+    try {
+      twitter.track(eventName, action, eventId);
+    } catch (e) {
+      const error = e as string;
+      Logger.logError(error);
+    }
+
+    const searchParams = new URLSearchParams(window.location.search);
+    const twclid = searchParams.get('twclid');
+
+    // Conversion API requires Twitter Click ID (twclid) as the identifier for a conversion event
+    // More informations : https://developer.twitter.com/en/docs/twitter-ads-api/measurement/web-conversions/conversion-api
+    if (twclid) {
+      ExpressService.sendTwEventConversion(eventName, twclid, eventId);
+    }
   },
 };
 

@@ -76,6 +76,13 @@ FB_CONVERSION_TOKEN=
 
 # Content api url
 CONTENT_API_URL_SERVER_SIDE=
+
+# Twitter
+TW_PIXEL_ID=
+TW_API_KEY=
+TW_API_SECRET=
+TW_ACCESS_TOKEN=
+TW_TOKEN_SECRET=
 ```
 
 ## Updating packages

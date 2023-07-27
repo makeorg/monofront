@@ -5,7 +5,7 @@ import { FbEventType, FbEventClientType } from '@make.org/types/FbEvents';
 import crypto from 'crypto';
 import { env } from '@make.org/assets/env';
 
-const makePixelId: string = env.fbPixelId();
+const fbPixelId: string = env.fbPixelId();
 const token: string = env.fbConversionToken();
 
 const getDataWithHashedExternalId = (data: FbEventType): FbEventType => {
@@ -67,7 +67,7 @@ export const fBConversionApi = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
-  callFbApiConversion('v13.0', makePixelId, req.body);
+  callFbApiConversion('v13.0', fbPixelId, req.body);
 
   return res.sendStatus(202);
 };
