@@ -137,16 +137,18 @@ const ResultPage: FC = () => {
                   question={question}
                 />
               </ResultCard>
-              <ResultCard
-                title={i18n.t('consultation.results.cartography.title')}
-                id={IDS.RESULTS_CARTOGRAPHY}
-              >
-                <ResultsSlider
-                  data={questionResults.cartography}
-                  sliderName={CARTOGRAPHY_SLIDER}
-                  styleClass="results-page"
-                />
-              </ResultCard>
+              {questionResults.cartography && (
+                <ResultCard
+                  title={i18n.t('consultation.results.cartography.title')}
+                  id={IDS.RESULTS_CARTOGRAPHY}
+                >
+                  <ResultsSlider
+                    data={questionResults.cartography}
+                    sliderName={CARTOGRAPHY_SLIDER}
+                    styleClass="results-page"
+                  />
+                </ResultCard>
+              )}
               <ResultCard
                 title={i18n.t(
                   'consultation.results.proposals.controversials_title'

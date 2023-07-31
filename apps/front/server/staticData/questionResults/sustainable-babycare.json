@@ -1,0 +1,260 @@
+{
+    "context": "Consultation citoyenne réalisée par Make.org du 2022-11-04 au 2023-05-28, autour de la question: How can we make baby care more environmentally friendly (i.e. diaper, wipes, etc.) ?",
+    "key_figures": {
+        "visitors": 6946,
+        "votes": 72972,
+        "proposals": 484
+    },
+    "top_ideas": [
+        {
+            "name": "Production",
+            "ideas": [
+                {
+                    "idea": "Using biodegradable materials (bamboo, hemp) and recycled materials for diapers & wipes",
+                    "agreement": 89,
+                    "adhesion": 35,
+                    "realistic": 13
+                },
+                {
+                    "idea": "Making their packaging more sustainable (less plastic, minimizing the packaging…)",
+                    "agreement": 90,
+                    "adhesion": 19,
+                    "realistic": 23
+                }
+            ]
+        },
+                {
+            "name": "Waste management",
+            "ideas": [
+                {
+                    "idea": "A more responsible waste management",
+                    "agreement": 81,
+                    "adhesion": 14,
+                    "realistic": 18
+                },
+                {
+                    "idea": "Promoting a circular economy in the baby product industry",
+                    "agreement": 83,
+                    "adhesion": 23,
+                    "realistic": 24
+                }
+            ]
+        },
+        {
+            "name": "Behavior",
+            "ideas": [
+                {
+                    "idea": "Encouraging people to adopt more responsible behaviours",
+                    "agreement": 80,
+                    "adhesion": 12,
+                    "realistic": 21
+                }
+            ]
+        },
+
+        {
+            "name": "Affordability",
+            "ideas": [
+                {
+                    "idea": "Making sustainable alternatives more affordable",
+                    "agreement": 83,
+                    "adhesion": 17,
+                    "realistic": 14
+                }
+            ]
+        }
+    ],
+    "controversials": [
+        {
+            "id": "aa9824eb-c5e5-4944-9e11-53bfc5b9355d",
+            "content": "We should make diapers and wipes flushable",
+            "author": "Dave",
+            "agree": 48,
+            "like_it": 11,
+            "disagree": 36,
+            "no_way": 3,
+            "votes": 516
+        },
+        {
+            "id": "ffef0666-1a9d-48f2-ac5d-d26a4c3c8030",
+            "content": "We should reduce the use of baby wipes and return to using a soft flannel that can be reused",
+            "author": "Patrick",
+            "agree": 36,
+            "like_it": 4,
+            "disagree": 36,
+            "no_way": 12,
+            "votes": 144
+        },
+        {
+            "id": "ec317097-c95c-4601-bd83-ab0178b27202",
+            "content": "We should make or own wipes out of old organic cotton clothes",
+            "author": "Sylvia",
+            "agree": 41,
+            "like_it": 5,
+            "disagree": 34,
+            "no_way": 10,
+            "votes": 146
+        },
+        {
+            "id": "06a64a00-b179-4270-9615-c2be41a0f210",
+            "content": "We should revert to washable nappies/diapers and abandon 'use once; throw away' items.",
+            "author": "Marlene",
+            "agree": 49,
+            "like_it": 9,
+            "disagree": 28,
+            "no_way": 9,
+            "votes": 138
+        },
+        {
+            "id": "0df24406-867f-4f25-be30-b1a4086d6f58",
+            "content": "We should potty train earlier. Try sitting baby on your lap after all feeds. One less nappy and can be flushed down the toilet",
+            "author": "Bonnie",
+            "agree": 51,
+            "like_it": 10,
+            "disagree": 29,
+            "no_way": 4,
+            "votes": 144
+        },
+        {
+            "id": "b5692b17-37ad-45da-9337-141a2106f71b",
+            "content": "We should try a mix of wipes and damp/dry toilet paper. Paper can be flushed down the toilet",
+            "author": "Alexander",
+            "agree": 46,
+            "like_it": 4,
+            "disagree": 28,
+            "no_way": 6,
+            "votes": 145
+        },
+        {
+            "id": "a72a1362-6eaf-45d0-9714-d25ae1dd3525",
+            "content": "We should have babies trained at earlier ages.",
+            "author": "Lulu",
+            "agree": 42,
+            "like_it": 4,
+            "disagree": 29,
+            "no_way": 2,
+            "votes": 144
+        },
+        {
+            "id": "5590700c-415a-40fc-a584-a41f3d92df17",
+            "content": "We should soft toilet tissue instead of 'wipes' when feasible.",
+            "author": "Etta",
+            "agree": 42,
+            "like_it": 4,
+            "disagree": 25,
+            "no_way": 5,
+            "votes": 145
+        },
+        {
+            "id": "77326aea-ad23-45a6-a572-8a6fdd3d057f",
+            "content": "We should use cloth diapers and make them more accessible to people. Increase awareness of Elimination Communication and infant pottying.",
+            "author": "Maria",
+            "agree": 45,
+            "like_it": 9,
+            "disagree": 26,
+            "no_way": 0,
+            "votes": 268
+        },
+        {
+            "id": "e6e3e9a6-ef57-45e5-88af-f6767838ddfb",
+            "content": "We should separate diaper core from cloth and make it flushable and cloth washable/reusable.",
+            "author": "C",
+            "agree": 45,
+            "like_it": 11,
+            "disagree": 27,
+            "no_way": 2,
+            "votes": 145
+        },
+        {
+            "id": "9e5d4388-f226-40f9-9823-b1843064cbbb",
+            "content": "We should start potty training as early as possible (possibly already after the 1st birthday)",
+            "author": "Peter",
+            "agree": 57,
+            "like_it": 7,
+            "disagree": 20,
+            "no_way": 1,
+            "votes": 518
+        },
+        {
+            "id": "3e0fd676-de79-41e1-821a-e156240ea760",
+            "content": "We should offer an affordable cloth diaper service that provides cloth diapers and picks them up weekly for cleaning and return.",
+            "author": "Brittany",
+            "agree": 57,
+            "like_it": 13,
+            "disagree": 24,
+            "no_way": 2,
+            "votes": 183
+        },
+        {
+            "id": "986fb157-d83c-4f6f-a1e7-add38ef58724",
+            "content": "We should tax disposable diapers heavily to encourage reuse ones",
+            "author": "Stephanie",
+            "agree": 22,
+            "like_it": 2,
+            "disagree": 59,
+            "no_way": 18,
+            "votes": 145
+        }
+    ],
+    "participation": [
+        {
+            "type": "histogram",
+            "unit": "percentage",
+            "name": "Participation by age",
+            "legend": {
+                "title": "Vote distribution",
+                "dimensions": {
+                    "first": "Votes"
+                }
+            },
+            "data": [
+                {
+                    "label": "08-25",
+                    "bars": {
+                        "first": 62
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "25-44",
+                    "bars": {
+                        "first": 32
+                    },
+                    "color": "#8BDAB2"
+                },
+                {
+                    "label": "45+",
+                    "bars": {
+                        "first": 6
+                    },
+                    "color": "#8BDAB2"
+                }
+            ],
+            "id": "participation_2"
+        },
+        {
+            "type": "pie",
+            "unit": "percentage",
+            "name": "Votes by gender",
+            "legend": "",
+            "data": [
+                {
+                    "label": "Men",
+                    "percent": 26,
+                    "color": "#4B45A5"
+                },
+                {
+                    "label": "Women",
+                    "percent": 65,
+                    "color": "#EB7575"
+                },
+                {
+                    "label": "Non-binary",
+                    "percent": 9,
+                    "color": "#8BDAB2"
+                }
+            ],
+            "id": "participation_3"
+        }
+    ]
+}
