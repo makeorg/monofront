@@ -9,7 +9,7 @@
     "@make.org/types": "0.1.0",
     "@make.org/ui": "0.1.0",
     "@make.org/utils": "0.1.0",
-    "@types/node": "^18.11.9",
+    "@types/node": "18.17.0",
     "@types/react": "^17.0.52",
     "@types/styled-components": "5.1.26",
     "i18next": "22.1.4",

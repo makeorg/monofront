@@ -1,7 +1,7 @@
 ############
 # Base
 ############
-FROM node:16.9-alpine AS base
+FROM node:18.17-alpine AS base
 WORKDIR /home/app
 
 ENV CHOKIDAR_USEPOLLING true
@@ -73,7 +73,7 @@ RUN ["rm", "-rf", "node_modules"]
 RUN ["yarn", "workspaces", "focus", "@make.org/widget", "--production"]
 
 
-FROM node:16.9-alpine as widget-production
+FROM node:18.17-alpine as widget-production
 
 ENV PORT 8000
 

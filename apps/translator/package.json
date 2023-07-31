@@ -5,7 +5,7 @@
     "sideEffects": false,
     "type": "module",
     "engines": {
-        "node": ">=14.17 <=16.9",
+        "node": "18.17",
         "yarn": "~3.2"
     },
     "exports": {

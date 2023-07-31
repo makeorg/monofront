@@ -4,7 +4,7 @@
   "private": true,
   "sideEffects": false,
   "engines": {
-    "node": ">=14.17 <=16.9",
+    "node": "18.17",
     "yarn": "~3.2"
   },
   "dependencies": {
@@ -96,7 +96,7 @@
     "@types/express": "^4.17.14",
     "@types/loadable__server": "^5.12.6",
     "@types/memory-cache": "^0.2.2",
-    "@types/node": "^18.11.9",
+    "@types/node": "18.17.0",
     "@types/object-hash": "^3",
     "@types/react": "^17.0.52",
     "@types/react-dom": "^17.0.18",

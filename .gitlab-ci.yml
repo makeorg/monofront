@@ -110,7 +110,7 @@ stages:
     refs:
       - production
   <<: *exclude_weblate
-  image: "node:16.9-alpine"
+  image: "node:18.17-alpine"
   before_script:
     - node -v
     - export YARN_VERSION="$YARN_VERSION"
@@ -177,7 +177,7 @@ stages:
       echo "Job ${job_id} has ${status}.";
 
 .e2e:
-  image: cypress/browsers:node16.14.0-chrome99-ff97
+  image: cypress/browsers:node-18.16.0-chrome-114.0.5735.133-1-ff-114.0.2-edge-114.0.1823.51-1
   variables:
     CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache_cypress"
   artifacts:
