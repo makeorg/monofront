@@ -3657,7 +3657,7 @@ __metadata:
     "@nestjs/schematics": ^9.0.0
     "@nestjs/swagger": ^6.3.0
     "@nestjs/testing": ^9.0.0
-    "@prisma/client": 4.13.0
+    "@prisma/client": ^5.1.0
     "@types/compression": ^1.7.2
     "@types/express": ^4.17.13
     "@types/jest": 29.5.0
@@ -3679,7 +3679,7 @@ __metadata:
     module-alias: ^2.2.2
     pm2: ~5.2.2
     prettier: ^2.3.2
-    prisma: ^4.13.0
+    prisma: ^5.1.0
     reflect-metadata: ^0.1.13
     rxjs: ^7.2.0
     source-map-support: ^0.5.20
@@ -3689,7 +3689,7 @@ __metadata:
     ts-loader: ^9.2.3
     ts-node: ^10.0.0
     tsconfig-paths: 4.2.0
-    typescript: ^4.7.4
+    typescript: ^4.9.5
   languageName: unknown
   linkType: soft
 
@@ -3724,7 +3724,7 @@ __metadata:
     react-dom: ^17.0.2
     storybook: ^7.2.3
     styled-components: 5.3.5
-    typescript: ^4.9.3
+    typescript: ^4.9.5
   languageName: unknown
   linkType: soft
 
@@ -3857,7 +3857,7 @@ __metadata:
     "@types/babel__preset-env": ^7
     "@types/uuid": ^8.3.4
     source-map: ^0.6.1
-    typescript: ^4.7.4
+    typescript: ^4.9.5
     uuid: ^8.3.2
     winston: ~3.3.4
   languageName: unknown
@@ -3913,7 +3913,7 @@ __metadata:
     pm2: ^5.2.2
     ts-loader: ^9.4.1
     ts-node: 10.9.1
-    typescript: ^4.9.3
+    typescript: ^4.9.5
     uuid: ^8.3.2
     webpack: ^5.74.0
     webpack-cli: ^4.10.0
@@ -3954,7 +3954,7 @@ __metadata:
     react-test-renderer: ^17.0.2
     snapshot-diff: ^0.9.0
     styled-components: 5.3.5
-    typescript: ~4.8.0
+    typescript: ^4.9.5
     webpack: ^5.74.0
     webpack-cli: ^4.10.0
   languageName: unknown
@@ -3988,7 +3988,7 @@ __metadata:
     react-hotjar: ^5.2.0
     react-router: ^5.3.4
     source-map: ^0.6.1
-    typescript: ~4.8.0
+    typescript: ^4.9.5
     universal-cookie: ^4.0.4
     url-search-params-polyfill: ^8.1.1
     uuid: ^8.3.2
@@ -4478,31 +4478,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prisma/client@npm:4.13.0":
-  version: 4.13.0
-  resolution: "@prisma/client@npm:4.13.0"
+"@prisma/client@npm:^5.1.0":
+  version: 5.2.0
+  resolution: "@prisma/client@npm:5.2.0"
   dependencies:
-    "@prisma/engines-version": 4.13.0-50.1e7af066ee9cb95cf3a403c78d9aab3e6b04f37a
+    "@prisma/engines-version": 5.2.0-25.2804dc98259d2ea960602aca6b8e7fdc03c1758f
   peerDependencies:
     prisma: "*"
   peerDependenciesMeta:
     prisma:
       optional: true
-  checksum: 74e2ede6308d6f70dc6244c34d13cf5f6c8da4f1a1ffe42a26192675ecac02733cb5482518d2a37fa057f160873fe8d42f5e3a08fc45d52b1eb386522bdbec0b
+  checksum: ad523b7a54e31d365ecac7bdb89f5a89f62e616f5f567f5dd5060e86b122253a4652ea778c0ccbab31906e2170110e808839fbae7ee91a4fd16a8282ee86f5f1
   languageName: node
   linkType: hard
 
-"@prisma/engines-version@npm:4.13.0-50.1e7af066ee9cb95cf3a403c78d9aab3e6b04f37a":
-  version: 4.13.0-50.1e7af066ee9cb95cf3a403c78d9aab3e6b04f37a
-  resolution: "@prisma/engines-version@npm:4.13.0-50.1e7af066ee9cb95cf3a403c78d9aab3e6b04f37a"
-  checksum: cc583fe956b65fd4548082917f14ccf1c3c54d6b26623583f5e63298a8b4b5a492ba90597123af1fc272115621cb7340e2d708d5b5e252f59139b35f0df00abe
+"@prisma/engines-version@npm:5.2.0-25.2804dc98259d2ea960602aca6b8e7fdc03c1758f":
+  version: 5.2.0-25.2804dc98259d2ea960602aca6b8e7fdc03c1758f
+  resolution: "@prisma/engines-version@npm:5.2.0-25.2804dc98259d2ea960602aca6b8e7fdc03c1758f"
+  checksum: 7a0fde44dad7902aef0035a30073c8e3178bccbaf65f688583cf3db94e36d160fd0a52cae8b6422b670facdbd4201861e1d6e2c7371d57ef27b58a2e1c524213
   languageName: node
   linkType: hard
 
-"@prisma/engines@npm:4.16.2":
-  version: 4.16.2
-  resolution: "@prisma/engines@npm:4.16.2"
-  checksum: f423e6092c3e558cd089a68ae87459fba7fd390c433df087342b3269c3b04163965b50845150dfe47d01f811781bfff89d5ae81c95ca603c59359ab69ebd810f
+"@prisma/engines@npm:5.2.0":
+  version: 5.2.0
+  resolution: "@prisma/engines@npm:5.2.0"
+  checksum: c4d0a424b211ab5f02c977bd87e03a151a7d297d8448b08ef9de931a0dcebbbea76cdefc15a17fd06dacac692b164fd88b32c23eb84f7822dbaf3d0885b700a7
   languageName: node
   linkType: hard
 
@@ -23210,15 +23210,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prisma@npm:^4.13.0":
-  version: 4.16.2
-  resolution: "prisma@npm:4.16.2"
+"prisma@npm:^5.1.0":
+  version: 5.2.0
+  resolution: "prisma@npm:5.2.0"
   dependencies:
-    "@prisma/engines": 4.16.2
+    "@prisma/engines": 5.2.0
   bin:
     prisma: build/index.js
-    prisma2: build/index.js
-  checksum: 1d0ed616abd7f8de22441e333b976705f1cb05abcb206965df3fc6a7ea03911ef467dd484a4bc51fdc6cff72dd9857b9852be5f232967a444af0a98c49bfdb76
+  checksum: 8b99ab5a5f801c72b2eb1809db980bd104dfd699cb14c5d5db5b675566c89e46501267399bb2f02bc3ea8fb86fc2f029cccd7178768109dc4d198bc93552b1da
   languageName: node
   linkType: hard
 
@@ -27791,7 +27790,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.9.5, typescript@npm:^4.7.4, typescript@npm:^4.9.3":
+"typescript@npm:4.9.5, typescript@npm:^4.9.5":
   version: 4.9.5
   resolution: "typescript@npm:4.9.5"
   bin:
@@ -27821,7 +27820,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.9.5#~builtin<compat/typescript>, typescript@patch:typescript@^4.7.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.9.3#~builtin<compat/typescript>":
+"typescript@patch:typescript@4.9.5#~builtin<compat/typescript>, typescript@patch:typescript@^4.9.5#~builtin<compat/typescript>":
   version: 4.9.5
   resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"
   bin:

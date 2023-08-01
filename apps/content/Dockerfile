@@ -1,7 +1,7 @@
 ############
 # Base
 ############
-FROM node:16.9-alpine AS base
+FROM node:18.17-alpine AS base
 WORKDIR /home/app
 
 ENV CHOKIDAR_USEPOLLING true
@@ -52,7 +52,7 @@ RUN ["rm", "-rf", "node_modules"]
 RUN ["yarn", "workspaces", "focus", "@make.org/content", "--production"]
 RUN ["cp", "-r", "./client", "node_modules/.prisma/"]
 
-FROM node:16.9-alpine as app-production
+FROM node:18.17-alpine as app-production
 
 ENV PORT 8000
 
