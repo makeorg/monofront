@@ -50,18 +50,20 @@ const getQuestionResult = async (
         ...response.data,
       } as object[]);
     if (!data || data.length === 0) {
-      return notFound();
+      notFound();
     }
     const questionResult = data[0] as { data: QuestionResultsType };
 
     return questionResult?.data;
   } catch (error: any) {
     if (error.response?.status === 404) {
-      return notFound();
+      notFound();
+      return Promise.resolve();
     }
     getLoggerInstance().logError(error);
 
-    return unexpectedError();
+    unexpectedError();
+    return Promise.resolve();
   }
 };
 
