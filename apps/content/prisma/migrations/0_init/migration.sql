@@ -13,3 +13,4 @@ CREATE UNIQUE INDEX "ConsultationResult_id_key" ON "ConsultationResult"("id");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "ConsultationResult_question_id_key" ON "ConsultationResult"("question_id");
+

@@ -24,7 +24,7 @@ export class ConsultationResult {
   @ApiProperty({
     description: 'Updated at',
   })
-  updated_at: Date;
+  updated_at: Date | string;
 
   @ApiProperty({
     description: 'Author id',

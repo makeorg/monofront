@@ -62,6 +62,7 @@ WORKDIR /usr/app/
 COPY --from=base-production /usr/app/apps/content/dist ./dist
 COPY --from=base-production /usr/app/apps/content/package.json ./package.json
 COPY --from=base-production /usr/app/apps/content/ecosystem.config.cjs ./ecosystem.config.cjs
+COPY --from=base-production /usr/app/apps/content/prisma ./apps/content/prisma
 COPY --from=base-production /usr/app/node_modules ./node_modules
 
 EXPOSE 8000

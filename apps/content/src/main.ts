@@ -43,6 +43,7 @@ const bootstrap = async () => {
     next();
   });
   app.use(compression());
+  app.enableShutdownHooks();
 
   const config = new DocumentBuilder()
     .setTitle('Make content')
