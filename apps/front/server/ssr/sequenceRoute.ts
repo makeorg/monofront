@@ -3,7 +3,6 @@ import { Request, Response } from 'express';
 import { createInitialState } from '@make.org/store/initialState';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { getLoggerInstance } from '@make.org/logger';
-import { transformExtraSlidesConfigFromQuery } from './helpers/query.helper';
 import { reactRender } from '../reactRender';
 import { QuestionService } from '../service/QuestionService';
 
@@ -12,10 +11,6 @@ export const sequenceRoute = async (
   res: Response
 ): Promise<void> => {
   const { questionSlug, country, language } = req.params;
-  const { introCard } = req.query;
-  const { pushProposal } = req.query;
-  const noIntroCard = introCard === (false || 'false');
-  const noPushProposal = pushProposal === (false || 'false');
 
   const initialState = createInitialState();
   const logger = getLoggerInstance();
@@ -57,22 +52,12 @@ export const sequenceRoute = async (
     return res.redirect(question.aboutUrl);
   }
 
-  const { sequenceConfig } = question;
-  const questionModified = {
-    ...question,
-    sequenceConfig: transformExtraSlidesConfigFromQuery(
-      sequenceConfig,
-      noIntroCard,
-      noPushProposal
-    ),
-  };
-
-  updateTrackingQuestionParam(questionModified);
+  updateTrackingQuestionParam(question);
 
   initialState.currentQuestion = questionSlug;
   initialState.questions = {
     [questionSlug]: {
-      question: questionModified,
+      question,
     },
   };
 

@@ -14,6 +14,7 @@ describe('query helper', () => {
           enabled: true,
         },
         demographics: [],
+        isDemographicsSessionBindingMode: false,
       };
       const extraSlides = transformExtraSlidesConfigFromQuery(
         extraSlidesConfig,
@@ -34,6 +35,7 @@ describe('query helper', () => {
           enabled: true,
         },
         demographics: [],
+        isDemographicsSessionBindingMode: false,
       };
 
       const extraSlides = transformExtraSlidesConfigFromQuery(
@@ -57,6 +59,7 @@ describe('query helper', () => {
           enabled: true,
         },
         demographics: [],
+        isDemographicsSessionBindingMode: false,
       };
       const extraSlides = transformExtraSlidesConfigFromQuery(
         extraSlidesConfig,

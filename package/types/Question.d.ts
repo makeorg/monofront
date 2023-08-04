@@ -102,6 +102,7 @@ export type QuestionExtraSlidesConfigType = {
   introCard?: IntroCardConfigType;
   pushProposalCard?: PushProposalCardConfigType;
   demographics: DemographicDataType[];
+  isDemographicsSessionBindingMode: boolean;
 };
 
 export type SimpleOperationDataType = {

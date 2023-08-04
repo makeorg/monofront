@@ -1,6 +1,6 @@
 import { QuestionType } from '@make.org/types/Question';
 import { QuestionApiService } from '@make.org/api/services/QuestionApiService';
-import cache from 'memory-cache';
+import NodeCache from 'node-cache';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { getLoggerInstance } from '@make.org/logger';
 import {
@@ -17,8 +17,9 @@ import { logSequenceCornerCases } from '@make.org/utils/helpers/sequence';
 import { defaultUnexpectedError } from '@make.org/utils/services/DefaultErrorHandler';
 import hash from 'object-hash';
 
+const cache = new NodeCache({ stdTTL: 300 });
 const clearCache = (): void => {
-  cache.clear();
+  cache.flushAll();
 };
 
 const getQuestion = async (
@@ -47,7 +48,7 @@ const getQuestion = async (
     },
   ] as const;
   const CACHE_KEY = hash(['GET_QUESTION', ...args]);
-  const content = cache.get(CACHE_KEY);
+  const content: QuestionType | undefined = cache.get(CACHE_KEY);
   if (content) {
     return handleData(content);
   }
@@ -61,7 +62,7 @@ const getQuestion = async (
         response.data.returnedLanguage || response.data.language,
     };
 
-    cache.put(CACHE_KEY, formattedResponse, 300000);
+    cache.set(CACHE_KEY, formattedResponse);
 
     return handleData(formattedResponse);
   } catch (error: unknown) {
@@ -140,24 +141,17 @@ const startSequenceByKind = async (
       uniqueOrderedProposals
     );
 
-    const formatResponse = (
-      proposals: ProposalType[],
-      demographics: DemographicDataType[],
-      sessionBindingMode: boolean,
-      length: number
-    ) => ({
-      proposals,
-      demographics,
-      sessionBindingMode,
-      length,
-    });
-
-    const sequence = formatResponse(
-      uniqueOrderedProposals,
-      data.demographics as DemographicDataType[],
-      data.sessionBindingMode,
-      uniqueOrderedProposals.length
-    );
+    const sequence: {
+      proposals: ProposalType[];
+      demographics: DemographicDataType[];
+      sessionBindingMode: boolean;
+      length: number;
+    } = {
+      proposals: uniqueOrderedProposals,
+      demographics: data.demographics as DemographicDataType[],
+      sessionBindingMode: data.sessionBindingMode,
+      length: uniqueOrderedProposals.length,
+    };
 
     // eslint-disable-next-line consistent-return
     return {

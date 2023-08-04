@@ -61,7 +61,7 @@ export type SequenceCardConfigType =
 export type SequenceCardType = {
   type: string;
   configuration?: SequenceCardConfigType;
-  state: ProposalCardStateType;
+  state?: ProposalCardStateType;
   index: number;
 };
 

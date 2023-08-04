@@ -10,11 +10,7 @@ import { LocaleType } from './enums';
 import { ProposalType } from './Proposal';
 import { TagType } from './Tag';
 import { PersonalityType, UserType } from './User';
-import {
-  DemographicDataType,
-  ProposalCardType,
-  SequenceCardType,
-} from './Card';
+import { ProposalCardType, SequenceCardType } from './Card';
 import { MODAL_TYPES } from './enums/modal_types';
 import { OrganisationType } from './Organisation';
 
@@ -58,8 +54,8 @@ export type StateSequence = {
   readonly proposals: ProposalType[];
   readonly cards: SequenceCardType[] | ProposalCardType[];
   readonly demographics: {
-    submitted: DemographicDataType[];
-    renderCard: boolean;
+    submitted: string[];
+    demographicsCookie: boolean;
   };
   readonly sessionBindingMode: boolean;
   readonly sequenceRelaunch?: boolean;

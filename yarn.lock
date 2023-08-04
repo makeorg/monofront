@@ -2972,7 +2972,6 @@ __metadata:
     "@types/deep-freeze": ^0.1.2
     "@types/express": ^4.17.14
     "@types/loadable__server": ^5.12.6
-    "@types/memory-cache": ^0.2.2
     "@types/node": 18.17.0
     "@types/object-hash": ^3
     "@types/react": ^17.0.52
@@ -3010,7 +3009,7 @@ __metadata:
     http-proxy-middleware: 2.0.6
     i18next: 22.1.4
     js-yaml: ^4.1.0
-    memory-cache: ~0.2.0
+    node-cache: ^5.1.2
     node-mocks-http: ^1.11.0
     object-hash: 3.0.0
     pm2: ~5.2.2
@@ -3192,8 +3191,8 @@ __metadata:
     glider-js: ^1.7.7
     helmet-csp: ^3.4.0
     i18next: 22.1.4
-    memory-cache: ^0.2.0
     mockdate: ^3.0.5
+    node-cache: ^5.1.2
     node-mocks-http: ^1.11.0
     query-string: ^7.1.1
     react: ^17.0.2
@@ -3239,7 +3238,6 @@ __metadata:
     "@testing-library/user-event": ^12.1.10
     "@types/babel__preset-env": ^7.9.2
     "@types/jest": ^26.0.24
-    "@types/memory-cache": ^0.2.2
     "@types/object-hash": ^3
     "@types/react": ^17.0.52
     "@types/react-dom": ^17.0.18
@@ -3259,7 +3257,7 @@ __metadata:
     html-webpack-plugin: ^5.5.0
     http-proxy-middleware: 2.0.6
     i18next: 22.1.4
-    memory-cache: ~0.2.0
+    node-cache: ^5.1.2
     object-hash: 3.0.0
     pm2: ~5.2.2
     prom-client: ^13.1.0
@@ -4258,13 +4256,6 @@ __metadata:
   dependencies:
     "@types/unist": "*"
   checksum: 3f587bfc0a9a2403ecadc220e61031b01734fedaf82e27eb4d5ba039c0eb54db8c85681ccc070ab4df3f7ec711b736a82b990e69caa14c74bf7ac0ccf2ac7313
-  languageName: node
-  linkType: hard
-
-"@types/memory-cache@npm:^0.2.2":
-  version: 0.2.2
-  resolution: "@types/memory-cache@npm:0.2.2"
-  checksum: f2c9182432057f0034f6acb69d0c6f1df58adaeb970749444b86834325018a24cb7dedfbdc4086d859497167fc82a06538f80354cfccdc6a3f011af80bc75697
   languageName: node
   linkType: hard
 
@@ -7501,17 +7492,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"clone@npm:2.x, clone@npm:^2.1.1, clone@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "clone@npm:2.1.2"
+  checksum: aaf106e9bc025b21333e2f4c12da539b568db4925c0501a1bf4070836c9e848c892fa22c35548ce0d1132b08bbbfa17a00144fe58fccdab6fa900fec4250f67d
+  languageName: node
+  linkType: hard
+
 "clone@npm:^1.0.2":
   version: 1.0.4
   resolution: "clone@npm:1.0.4"
   checksum: d06418b7335897209e77bdd430d04f882189582e67bd1f75a04565f3f07f5b3f119a9d670c943b6697d0afb100f03b866b3b8a1f91d4d02d72c4ecf2bb64b5dd
-  languageName: node
-  linkType: hard
-
-"clone@npm:^2.1.1, clone@npm:^2.1.2":
-  version: 2.1.2
-  resolution: "clone@npm:2.1.2"
-  checksum: aaf106e9bc025b21333e2f4c12da539b568db4925c0501a1bf4070836c9e848c892fa22c35548ce0d1132b08bbbfa17a00144fe58fccdab6fa900fec4250f67d
   languageName: node
   linkType: hard
 
@@ -15484,13 +15475,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"memory-cache@npm:^0.2.0, memory-cache@npm:~0.2.0":
-  version: 0.2.0
-  resolution: "memory-cache@npm:0.2.0"
-  checksum: 255c87fec360ce06818ca7aeb5850d798e14950a9fcea879d88e1f8d1f4a6cffb8ed16da54aa677f5ec8e47773fbe15775a1cdf837ac190e17e9fb4b71e87bee
-  languageName: node
-  linkType: hard
-
 "memory-fs@npm:^0.4.1":
   version: 0.4.1
   resolution: "memory-fs@npm:0.4.1"
@@ -16488,6 +16472,15 @@ __metadata:
   dependencies:
     node-gyp: latest
   checksum: 2369986bb0881ccd9ef6bacdf39550e07e089a9c8ede1cbc5fc7712d8e2faa4d50da0e487e333d4125f8c7a616c730131d1091676c9d499af1d74560756b4a18
+  languageName: node
+  linkType: hard
+
+"node-cache@npm:^5.1.2":
+  version: 5.1.2
+  resolution: "node-cache@npm:5.1.2"
+  dependencies:
+    clone: 2.x
+  checksum: b0bdd81a6fee4754fb984a05246b510bb35dc54721116d465899bf4229ee3287fdafb47da526900ee9924fb402ed5c7d8050049d37d8bf2d26dbafc23a2c3205
   languageName: node
   linkType: hard
 

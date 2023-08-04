@@ -1,9 +1,11 @@
 import { MaintenanceService } from '@make.org/utils/services/Maintenance';
 import { NextFunction, Request, Response } from 'express';
-import cache from 'memory-cache';
+import NodeCache from 'node-cache';
 
 const MAINTENANCE_SERVICE_RESPONSE_CACHE_KEY =
   'MAINTENANCE_SERVICE_RESPONSE_CACHE_KEY';
+
+const cache = new NodeCache({ stdTTL: 300 });
 
 const getMaintenanceConfigResponse = async () => {
   const content = cache.get(MAINTENANCE_SERVICE_RESPONSE_CACHE_KEY);
@@ -12,9 +14,9 @@ const getMaintenanceConfigResponse = async () => {
     return content;
   }
   const response = await MaintenanceService.getConfig();
-  cache.put(MAINTENANCE_SERVICE_RESPONSE_CACHE_KEY, response, 300000);
+  cache.set(MAINTENANCE_SERVICE_RESPONSE_CACHE_KEY, response?.data);
 
-  return response;
+  return response?.data;
 };
 
 export const maintenanceMiddleware = async (

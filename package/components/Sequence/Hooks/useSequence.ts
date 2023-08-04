@@ -4,13 +4,11 @@ import {
   QuestionType,
   ExecuteStartSequence,
   NoProposalCardType,
+  QuestionExtraSlidesConfigType,
 } from '@make.org/types';
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
-import {
-  addDemographicsToSequenceConfig,
-  buildCards,
-} from '@make.org/utils/helpers/sequence';
+import { buildCards } from '@make.org/utils/helpers/sequence';
 import { scrollToTop } from '@make.org/utils/helpers/styled';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import {
@@ -45,17 +43,18 @@ export const useSequence = (
   const { state, dispatch } = useAppContext();
 
   // StateRoot
-  const { sequence } = state;
+  const { sequence: sequenceFromState } = state;
   const { isLoggedIn } = selectAuthentication(state) || {};
   const {
     currentIndex,
     votedProposalIds,
-    cards,
-    sequenceSize,
+    cards: cardsFromState,
+    sequenceSize: sequenceSizeFromState,
     isLoading,
-    demographics,
+    demographics: demographicsFromState,
     sequenceRelaunch,
-  } = sequence || {};
+  } = sequenceFromState || {};
+
   const { source, language } = state.appConfig;
   const isWidget = source === 'widget';
   const votedProposalIdsOfQuestion = votedProposalIds[question?.slug] || [];
@@ -63,7 +62,7 @@ export const useSequence = (
   // State
   const [currentCard, setCurrentCard] = useState<
     SequenceCardType | NoProposalCardType
-  >(cards[currentIndex] || noProposalCard);
+  >(cardsFromState[currentIndex] || noProposalCard);
   // Sequence hooks
   useSequenceTracking();
   useSequenceVoteOnlyNotification(question);
@@ -78,12 +77,15 @@ export const useSequence = (
     : votedProposalIdsOfQuestion;
 
   // Load sequence data
-  const loadSequenceData = async (introCard: boolean, votedIds: string[]) => {
+  const loadSequenceData = async (
+    introCardEnabled: boolean | null,
+    votedIds: string[]
+  ) => {
     dispatch(setSequenceLoading(true));
     dispatch(setSequenceLength(0));
     if (question) {
       let buildedCards: SequenceCardType[] = [];
-      const response = await executeStartSequence(
+      const result = await executeStartSequence(
         question.questionId,
         votedIds,
         language,
@@ -91,37 +93,54 @@ export const useSequence = (
         null
       );
 
-      if (!response || !response.proposals) {
+      if (!result) {
+        return;
+      }
+      const {
+        demographics: demographicsResult,
+        proposals: sequenceProposals,
+        sessionBindingMode,
+      } = result;
+
+      if (!sequenceProposals || sequenceProposals.length === 0) {
+        setCurrentCard(noProposalCard);
+        dispatch(setSequenceLength(0));
+        dispatch(setSequenceLoading(false));
+
         return;
       }
 
-      const sequenceDemographics: DemographicDataType[] =
-        response.demographics ?? [];
+      dispatch(loadSequenceProposals(sequenceProposals));
 
-      if (response.proposals) {
-        if (response.proposals.length === 0) {
-          setCurrentCard(noProposalCard);
-          dispatch(setSequenceLength(0));
-          dispatch(setSequenceLoading(false));
-          return;
-        }
-        dispatch(loadSequenceProposals(response.proposals));
-        const extraSlidesConfig = addDemographicsToSequenceConfig(
-          question.sequenceConfig,
-          demographics.renderCard && question.hasDemographics,
-          sequenceDemographics
-        );
+      const displayDemographics =
+        sessionBindingMode || !demographicsFromState.demographicsCookie;
+      const sequenceDemographics: DemographicDataType[] = displayDemographics
+        ? demographicsResult ?? []
+        : [];
 
-        buildedCards = buildCards(
-          response.proposals,
-          extraSlidesConfig,
-          question.canPropose,
-          isStandardSequence,
-          response.sessionBindingMode,
-          introCard,
-          pushProposalParam
-        );
+      const extraSlidesConfig: QuestionExtraSlidesConfigType = {
+        ...question.sequenceConfig,
+        demographics: sequenceDemographics,
+        isDemographicsSessionBindingMode: !!sessionBindingMode,
+      };
+
+      if (extraSlidesConfig.introCard) {
+        extraSlidesConfig.introCard.enabled =
+          introCardEnabled ?? extraSlidesConfig.introCard.enabled;
       }
+
+      if (extraSlidesConfig.pushProposalCard) {
+        extraSlidesConfig.pushProposalCard.enabled =
+          question.canPropose &&
+          (pushProposalParam ?? extraSlidesConfig.pushProposalCard.enabled);
+      }
+
+      buildedCards = buildCards(
+        sequenceProposals,
+        extraSlidesConfig,
+        isStandardSequence
+      );
+
       dispatch(loadSequenceCards(buildedCards));
       dispatch(setSequenceLength(buildedCards.length));
     }
@@ -130,9 +149,9 @@ export const useSequence = (
 
   // On mount
   useEffect(() => {
-    // Exit if sequence if already loaded (SSR)
+    // Exit if sequence is already loaded (SSR)
     // Sequence properties in Context will be reset when unmounting
-    if (sequenceSize > 0 && !isLoading) {
+    if (sequenceSizeFromState > 0 && !isLoading) {
       return;
     }
     scrollToTop();
@@ -166,8 +185,8 @@ export const useSequence = (
 
   // Set current card when index or cards are updated
   useEffect(() => {
-    setCurrentCard(cards[currentIndex]);
-  }, [cards, currentIndex]);
+    setCurrentCard(cardsFromState[currentIndex]);
+  }, [cardsFromState, currentIndex]);
 
   // Reset sequence when unmount
   useEffect(

@@ -1,11 +1,12 @@
 import { Request, Response } from 'express';
 import fs from 'fs';
 import path from 'path';
-import cache from 'memory-cache';
+import NodeCache from 'node-cache';
 import { env } from '@make.org/assets/env';
 import { APP_SERVER_DIR } from '../paths';
 
 const ALLOWED_URL = env.frontUrl();
+const cache = new NodeCache({ stdTTL: 300 });
 
 export const questionResults = (
   req: Request,
@@ -33,7 +34,7 @@ export const questionResults = (
 
   try {
     const result = fs.readFileSync(path.join(questionPath), 'utf8');
-    cache.put(questionPath, result);
+    cache.set(questionPath, result);
 
     return res.send(result);
   } catch (error) {

@@ -1,11 +1,13 @@
 import { QuestionType } from '@make.org/types/Question';
 import { QuestionApiService } from '@make.org/api/services/QuestionApiService';
-import cache from 'memory-cache';
+import NodeCache from 'node-cache';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { getLoggerInstance } from '@make.org/logger';
+import hash from 'object-hash';
 
+const cache = new NodeCache({ stdTTL: 900 });
 const clearCache = (): void => {
-  cache.clear();
+  cache.flushAll();
 };
 
 const getQuestion = async (
@@ -33,8 +35,8 @@ const getQuestion = async (
     },
   ] as const;
 
-  const CACHE_KEY = ['GET_DETAILS', ...args];
-  const content = cache.get(CACHE_KEY);
+  const CACHE_KEY = hash(['GET_DETAILS', ...args]);
+  const content: QuestionType | undefined = cache.get(CACHE_KEY);
   if (content) {
     return handleData(content);
   }
@@ -47,7 +49,7 @@ const getQuestion = async (
         response.data.returnedLanguage || response.data.language,
     };
     // 900,000 milliseconds = 5 minutes
-    cache.put(CACHE_KEY, formattedResponse, 900000);
+    cache.set(CACHE_KEY, formattedResponse);
 
     return handleData(formattedResponse);
   } catch (error: unknown) {

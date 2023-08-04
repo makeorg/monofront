@@ -3,7 +3,6 @@ import {
   QuestionExtraSlidesConfigType,
   SequenceCardType,
   ProposalType,
-  DemographicDataType,
   NoProposalCardType,
 } from '@make.org/types';
 import i18n from 'i18next';
@@ -22,22 +21,17 @@ import { CARD, SEQUENCE } from '@make.org/types/enums';
 export const buildCards = (
   proposals: ProposalType[],
   extraSlidesConfig: QuestionExtraSlidesConfigType,
-  canPropose: boolean,
-  isStandardSequence: boolean,
-  sessionBindingMode: boolean,
-  introCardParam?: boolean,
-  pushProposalParam?: boolean
+  isStandardSequence: boolean
 ): SequenceCardType[] => {
   const withPushProposalCard =
     !!extraSlidesConfig.pushProposalCard &&
-    !!extraSlidesConfig.pushProposalCard.enabled &&
-    !!canPropose &&
-    !!pushProposalParam;
+    !!extraSlidesConfig.pushProposalCard.enabled;
+
   const withIntroCard =
-    !!extraSlidesConfig.introCard &&
-    !!extraSlidesConfig.introCard.enabled &&
-    !!introCardParam;
-  const withDemographicsCard = !!extraSlidesConfig.demographics;
+    !!extraSlidesConfig.introCard && !!extraSlidesConfig.introCard.enabled;
+  const withIntroDemographicCard =
+    !!extraSlidesConfig.demographics?.length &&
+    extraSlidesConfig.isDemographicsSessionBindingMode;
 
   const cards: SequenceCardType[] = proposals.map(proposal => ({
     type: CARD.CARD_TYPE_PROPOSAL,
@@ -50,7 +44,6 @@ export const buildCards = (
     cards.splice(cards.length / 2, 0, {
       type: CARD.CARD_TYPE_EXTRASLIDE_PUSH_PROPOSAL,
       configuration: extraSlidesConfig.pushProposalCard,
-      state: { votes: [] },
       index: 0,
     });
   }
@@ -59,37 +52,30 @@ export const buildCards = (
     cards.splice(0, 0, {
       type: CARD.CARD_TYPE_EXTRASLIDE_INTRO,
       configuration: extraSlidesConfig.introCard,
-      state: { votes: [] },
       index: 0,
     });
   }
-  if (withDemographicsCard) {
-    if (sessionBindingMode) {
-      cards.splice(cards.length, 0, {
-        type: CARD.CARD_TYPE_EXTRASLIDE_INTRO_DEMOGRAPHICS_CARD,
-        configuration: extraSlidesConfig.introCard,
-        state: { votes: [] },
-        index: 0,
-      });
+
+  const demographicsStartPosition: number = (() => {
+    if (extraSlidesConfig.isDemographicsSessionBindingMode) {
+      return cards.length;
     }
 
-    const pushCards = () => {
-      if (withIntroCard && !sessionBindingMode) {
-        return 3;
-      }
-      if (sessionBindingMode) {
-        return cards.length;
-      }
-      return 2;
-    };
+    return withIntroCard ? 3 : 2;
+  })();
 
-    extraSlidesConfig.demographics.forEach(demographicCard => {
-      cards.splice(pushCards(), 0, {
-        type: CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
-        configuration: demographicCard,
-        state: { votes: [] },
-        index: 0,
-      });
+  extraSlidesConfig.demographics.forEach(demographicCard => {
+    cards.splice(demographicsStartPosition, 0, {
+      type: CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
+      configuration: demographicCard,
+      index: 0,
+    });
+  });
+
+  if (withIntroDemographicCard) {
+    cards.splice(demographicsStartPosition, 0, {
+      type: CARD.CARD_TYPE_EXTRASLIDE_INTRO_DEMOGRAPHICS_CARD,
+      index: 0,
     });
   }
 
@@ -98,7 +84,6 @@ export const buildCards = (
       ? CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD
       : CARD.CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD,
     configuration: undefined,
-    state: { votes: [] },
     index: 0,
   });
 
@@ -230,28 +215,6 @@ export const getSequenceSize = (
   }
 
   return sequenceSize;
-};
-
-/** Handle destructured data for demographics, and add those in extra slides config
- * @param  {QuestionExtraSlidesConfigType} extraSlidesConfig
- * @param  {boolean} hasDemographics
- * @param  {DemographicDataType | undefined} demographicsData
- * @return {QuestionExtraSlidesConfigType}
- *
- */
-export const addDemographicsToSequenceConfig = (
-  extraSlidesConfig: QuestionExtraSlidesConfigType,
-  hasDemographics: boolean,
-  demographicsData: DemographicDataType[]
-): QuestionExtraSlidesConfigType => {
-  if (!hasDemographics || !demographicsData) {
-    return extraSlidesConfig;
-  }
-
-  return {
-    ...extraSlidesConfig,
-    demographics: demographicsData,
-  };
 };
 
 /** Handle no proposals card depending on context

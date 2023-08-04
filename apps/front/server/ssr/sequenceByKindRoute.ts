@@ -3,23 +3,21 @@ import { Request, Response } from 'express';
 import { createInitialState } from '@make.org/store/initialState';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { getLoggerInstance } from '@make.org/logger';
-import {
-  addDemographicsToSequenceConfig,
-  buildCards,
-} from '@make.org/utils/helpers/sequence';
+import { buildCards } from '@make.org/utils/helpers/sequence';
 import { COOKIE, NOTIF, SEQUENCE } from '@make.org/types/enums';
 import { Cookie } from 'universal-cookie';
 import { sequence_state } from '@make.org/store/reducers/sequence';
 import {
   ApiServiceHeadersType,
+  DemographicDataType,
   ProposalCardType,
+  QuestionExtraSlidesConfigType,
   SequenceCardType,
 } from '@make.org/types';
 import {
   getSequenceControversialLink,
   getSequencePopularLink,
 } from '@make.org/utils/helpers/url';
-import { transformExtraSlidesConfigFromQuery } from './helpers/query.helper';
 import { reactRender } from '../reactRender';
 import { QuestionService } from '../service/QuestionService';
 
@@ -43,12 +41,19 @@ export const sequenceByKindRoute = async (
     sequenceLocation = 'sequence-controversial';
   }
 
-  const withIntroCardParam = !(
-    introCard && introCard.toLowerCase() === 'false'
-  );
-  const withPushProposalCardParam = !(
-    pushProposal && pushProposal.toLowerCase() === 'false'
-  );
+  const toBoolean = (paramValue: string | null) => {
+    if (paramValue?.toLowerCase() === 'true') {
+      return true;
+    }
+    if (paramValue?.toLowerCase() === 'false') {
+      return false;
+    }
+
+    return null;
+  };
+
+  const introCardParam = toBoolean(introCard);
+  const pushProposalParam = toBoolean(pushProposal);
 
   const initialState = createInitialState();
   const logger = getLoggerInstance();
@@ -80,7 +85,7 @@ export const sequenceByKindRoute = async (
 
   const votedIds = firstProposal ? [firstProposal] : [];
 
-  const questionResponse = await QuestionService.getQuestion(
+  const question = await QuestionService.getQuestion(
     questionSlug,
     country,
     notFound,
@@ -88,87 +93,90 @@ export const sequenceByKindRoute = async (
     language
   );
 
-  if (!questionResponse) {
+  if (!question) {
     return reactRender(req, res.status(404), initialState);
   }
 
-  if (!isInProgress(questionResponse) && !questionResponse.displayResults) {
-    return res.redirect(questionResponse.aboutUrl);
+  if (!isInProgress(question) && !question.displayResults) {
+    return res.redirect(question.aboutUrl);
   }
 
-  const { sequenceConfig } = questionResponse;
-  // Handle query parameters for extra slides config (introCard, pushProposalCard, finalCard)
-  const questionModified = {
-    ...questionResponse,
-    sequenceConfig: transformExtraSlidesConfigFromQuery(
-      sequenceConfig,
-      !withIntroCardParam,
-      !withPushProposalCardParam
-    ),
-  };
-
   const sequenceMandatoryRequestHeaders: ApiServiceHeadersType = {
-    'x-make-question-id': questionModified.questionId,
+    'x-make-question-id': question.questionId,
     'x-make-question-slug': questionSlug,
-    'x-make-question-language': questionResponse.returnedLanguage,
+    'x-make-question-language': question.returnedLanguage,
     'x-make-country': country,
     'x-make-client-language': language,
     'x-session-id': sessionIdFromCookie || '',
     'x-make-location': sequenceLocation,
   };
 
-  const sequenceResponse = await QuestionService.startSequenceByKind(
-    questionResponse.questionId,
+  const sequenceResult = await QuestionService.startSequenceByKind(
+    question.questionId,
     votedIds,
     sequenceKind,
     language,
     sequenceMandatoryRequestHeaders
   );
 
-  if (!sequenceResponse) {
+  if (!sequenceResult) {
     return reactRender(req, res.status(404), initialState);
   }
 
-  // Handle demographics Card
-  const extraSlidesConfig = addDemographicsToSequenceConfig(
-    questionModified.sequenceConfig,
-    !demographicsCookie && questionModified.hasDemographics,
-    sequenceResponse.sequence.demographics
-  );
+  const { demographics: demographicsResult, sessionBindingMode } =
+    sequenceResult.sequence;
+
+  const displayDemographics = sessionBindingMode || !demographicsCookie;
+  const sequenceDemographics: DemographicDataType[] = displayDemographics
+    ? demographicsResult ?? []
+    : [];
+
+  const extraSlidesConfig: QuestionExtraSlidesConfigType = {
+    ...question.sequenceConfig,
+    demographics: sequenceDemographics,
+    isDemographicsSessionBindingMode: !!sessionBindingMode,
+  };
+
+  if (extraSlidesConfig.introCard) {
+    extraSlidesConfig.introCard.enabled =
+      introCardParam ?? extraSlidesConfig.introCard.enabled;
+  }
+
+  if (extraSlidesConfig.pushProposalCard) {
+    extraSlidesConfig.pushProposalCard.enabled =
+      question.canPropose &&
+      (pushProposalParam ?? extraSlidesConfig.pushProposalCard.enabled);
+  }
 
   // Define Sequence cards, array must stay empty if there is no proposals
   let cards: SequenceCardType[] | ProposalCardType[] = [];
-  if (sequenceResponse.sequence.proposals.length > 0) {
+  if (sequenceResult.sequence.proposals.length > 0) {
     cards = buildCards(
-      sequenceResponse.sequence.proposals,
+      sequenceResult.sequence.proposals,
       extraSlidesConfig,
-      questionModified.canPropose,
-      true,
-      sequenceResponse.sequence.sessionBindingMode,
-      withIntroCardParam,
-      withPushProposalCardParam
+      true // is standard sequence
     );
   }
 
-  updateTrackingQuestionParam(questionModified);
+  updateTrackingQuestionParam(question);
 
   initialState.currentQuestion = questionSlug;
   initialState.questions = {
     [questionSlug]: {
-      question: questionModified,
+      question,
     },
   };
   initialState.sequence = {
     ...sequence_state,
     isLoading: false,
     questionSlug,
-    proposals: sequenceResponse.sequence.proposals,
+    proposals: sequenceResult.sequence.proposals,
     cards,
     sequenceSize: cards.length,
     sequenceKind,
   };
   initialState.session = {
-    sessionId: sessionIdFromCookie || sequenceResponse.sessionId,
+    sessionId: sessionIdFromCookie || sequenceResult.sessionId,
   };
   initialState.notifications.tip = {
     contentId: NOTIF.FIRST_VOTE_TIP_MESSAGE,

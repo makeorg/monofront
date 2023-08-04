@@ -1,12 +1,14 @@
 import { ViewsApiService } from '@make.org/api/services/ViewsApiService';
-import cache from 'memory-cache';
+import NodeCache from 'node-cache';
 import { HomeViewType } from '@make.org/types/View';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { getLoggerInstance } from '@make.org/logger';
 import hash from 'object-hash';
 
+const cache = new NodeCache({ stdTTL: 300 });
+
 const clearCache = (): void => {
-  cache.clear();
+  cache.flushAll();
 };
 
 const getHome = async (
@@ -25,7 +27,7 @@ const getHome = async (
   ] as const;
 
   const CACHE_KEY = hash(['GET_HOME', ...args]);
-  const contentFromCache: HomeViewType = cache.get(CACHE_KEY);
+  const contentFromCache: HomeViewType | undefined = cache.get(CACHE_KEY);
   if (contentFromCache) {
     return contentFromCache;
   }
@@ -33,7 +35,7 @@ const getHome = async (
   try {
     const response = await ViewsApiService.getHome(...args);
 
-    cache.put(CACHE_KEY, response && response.data, 300000);
+    cache.set(CACHE_KEY, response && response.data);
 
     return response && response.data;
   } catch (error: unknown) {
@@ -58,7 +60,7 @@ const getCountries = async (
   unexpectedError: () => void
 ): Promise<string[]> => {
   const CACHE_KEY = `GET_COUNTRIES`;
-  const content = cache.get(CACHE_KEY);
+  const content: string[] | undefined = cache.get(CACHE_KEY);
   if (content) {
     return content;
   }
@@ -87,7 +89,7 @@ const getCountries = async (
       countries.push(countryWithConsultations.countryCode)
     );
 
-    cache.put(CACHE_KEY, countries.sort(), 300000);
+    cache.set(CACHE_KEY, countries.sort(), 600);
 
     return countries.sort();
   } catch (error: unknown) {

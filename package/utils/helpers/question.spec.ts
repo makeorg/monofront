@@ -60,7 +60,10 @@ describe('getQuestionFromState', () => {
     landingSequenceId: 'foo',
     canPropose: true,
     operationKind: 'GREAT_CAUSE',
-    sequenceConfig: { demographics: [] },
+    sequenceConfig: {
+      demographics: [],
+      isDemographicsSessionBindingMode: false,
+    },
     aboutUrl: 'foo',
     partners: [{ name: 'foo', partnerKind: 'ACTOR', weight: 0 }],
     theme: {},

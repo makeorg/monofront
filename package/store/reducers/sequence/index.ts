@@ -32,7 +32,7 @@ export const sequence_state: StateSequence = {
   sequenceRelaunch: false,
   demographics: {
     submitted: [],
-    renderCard: true,
+    demographicsCookie: false,
   },
   sessionBindingMode: false,
 };
@@ -144,7 +144,7 @@ export const sequence_reducer: Reducer = (
         ...state,
         demographics: {
           ...state.demographics,
-          renderCard: action.payload.renderCard,
+          demographicsCookie: action.payload.demographicsCookie,
         },
       };
     case SEQUENCE_DISABLE_FIRST_PROPOSAL:

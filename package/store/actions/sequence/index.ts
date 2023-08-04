@@ -7,7 +7,6 @@ import {
   Dispatch,
   ProposalCardStateType,
   StateSequence,
-  DemographicDataType,
 } from '@make.org/types';
 import {
   SEQUENCE_DISABLE_FIRST_PROPOSAL,
@@ -203,16 +202,14 @@ export const qualify = (
   );
 };
 
-export const setDemographicsAsSubmitted = (
-  configuration: DemographicDataType
-): ReducerAction => ({
+export const setDemographicsAsSubmitted = (id: string): ReducerAction => ({
   type: SEQUENCE_DEMOGRAPHICS_SUBMITTED,
-  payload: configuration,
+  payload: id,
 });
 
 export const disableDemographicsCard = (): ReducerAction => ({
   type: SEQUENCE_DEMOGRAPHICS_RENDER,
-  payload: { renderCard: false },
+  payload: { demographicsCookie: true },
 });
 
 export const disableFirstProposal = (): ReducerAction => ({

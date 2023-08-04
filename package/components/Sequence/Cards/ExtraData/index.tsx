@@ -5,6 +5,7 @@ import { Logger } from '@make.org/utils/services/Logger';
 import i18n from 'i18next';
 import { setDemographicsAsSubmitted } from '@make.org/store/actions/sequence';
 import { MiddleColumnStyle } from '@make.org/ui/elements/FlexElements';
+import { setDemographicsCookie } from '@make.org/utils/helpers/clientCookies';
 import { ExtraDataForm } from './Form';
 import { ExtraDataTitleStyle, ExtraDataDescriptionStyle } from './style';
 import { SubmittedDemographics } from './SubmittedStep';
@@ -17,7 +18,7 @@ export const ExtraDataCard: FC<Props> = ({ configuration }) => {
   const { state, dispatch } = useAppContext();
   const { sequence } = state;
   const isSubmitted = state.sequence.demographics.submitted?.find(
-    demographic => demographic.id === configuration.id
+    id => id === configuration.id
   );
 
   // set demographics
@@ -33,7 +34,8 @@ export const ExtraDataCard: FC<Props> = ({ configuration }) => {
   const { id, name, layout, title, parameters, token } = configuration;
 
   const submitSuccess = () => {
-    dispatch(setDemographicsAsSubmitted(configuration));
+    dispatch(setDemographicsAsSubmitted(configuration.id));
+    setDemographicsCookie();
   };
 
   return isSubmitted ? (

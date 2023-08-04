@@ -1,23 +1,29 @@
 import httpMocks from 'node-mocks-http';
 import fs from 'fs';
-import cache from 'memory-cache';
+import NodeCache from 'node-cache';
 import { APP_SERVER_DIR } from '../paths';
 import { questionResults } from './question';
 
-jest.mock('memory-cache');
 jest.mock('fs');
 jest.mock('@make.org/assets/env', () => ({
   env: {
     frontUrl: jest.fn(),
   },
 }));
+jest.mock('node-cache');
 
-const mockedCache = cache as jest.Mocked<any>;
 const mockedFs = fs as jest.Mocked<any>;
+const mockNodeCache = NodeCache as jest.Mocked<any>;
+const mockCache = mockNodeCache.mock.instances[0];
 
 describe('QuestionResults Api', () => {
   afterEach(() => {
     jest.clearAllMocks();
+  });
+
+  beforeEach(() => {
+    // Clear all instances and calls to constructor and all methods:
+    mockNodeCache.mockClear();
   });
 
   describe('response Header in question results api', () => {
@@ -27,7 +33,7 @@ describe('QuestionResults Api', () => {
       });
       const response = httpMocks.createResponse();
       jest.spyOn(response, 'setHeader');
-      mockedCache.get.mockReturnValue('fooCache');
+      mockCache.get.mockReturnValue('fooCache');
 
       questionResults(request, response);
       expect(response.getHeader('Access-Control-Allow-Origin')).toEqual('');
@@ -64,12 +70,12 @@ describe('QuestionResults Api', () => {
       });
       const response = httpMocks.createResponse();
       jest.spyOn(response, 'send');
-      jest.spyOn(cache, 'get');
+      jest.spyOn(mockCache, 'get');
 
-      mockedCache.get.mockReturnValue('fooCache');
+      mockCache.get.mockReturnValue('fooCache');
       questionResults(request, response);
       expect(response.send).toHaveBeenCalledWith('fooCache');
-      expect(cache.get).toHaveBeenCalledWith(
+      expect(mockCache.get).toHaveBeenCalledWith(
         `${APP_SERVER_DIR}/staticData/questionResults/foo-bar.json`
       );
     });
@@ -81,18 +87,18 @@ describe('QuestionResults Api', () => {
       const response = httpMocks.createResponse();
       const fileContent = 'baz';
       jest.spyOn(response, 'send');
-      jest.spyOn(cache, 'get');
-      jest.spyOn(cache, 'put');
+      jest.spyOn(mockCache, 'get');
+      jest.spyOn(mockCache, 'set');
 
-      mockedCache.get.mockReturnValue(undefined);
+      mockCache.get.mockReturnValue(undefined);
       mockedFs.readFileSync.mockReturnValue(fileContent);
 
       questionResults(request, response);
       expect(response.send).toHaveBeenCalledWith(fileContent);
-      expect(cache.get).toHaveBeenCalledWith(
+      expect(mockCache.get).toHaveBeenCalledWith(
         `${APP_SERVER_DIR}/staticData/questionResults/foo-bar.json`
       );
-      expect(cache.put).toHaveBeenCalledWith(
+      expect(mockCache.set).toHaveBeenCalledWith(
         `${APP_SERVER_DIR}/staticData/questionResults/foo-bar.json`,
         fileContent
       );
@@ -105,20 +111,20 @@ describe('QuestionResults Api', () => {
       const response = httpMocks.createResponse();
       jest.spyOn(response, 'status');
       jest.spyOn(response, 'send');
-      jest.spyOn(cache, 'get');
-      jest.spyOn(cache, 'put');
+      jest.spyOn(mockCache, 'get');
+      jest.spyOn(mockCache, 'set');
 
-      mockedCache.get.mockReturnValue(undefined);
+      mockCache.get.mockReturnValue(undefined);
       mockedFs.readFileSync.mockImplementation(() => {
         throw new Error('bad');
       });
 
       questionResults(request, response);
 
-      expect(cache.get).toHaveBeenCalledWith(
+      expect(mockCache.get).toHaveBeenCalledWith(
         `${APP_SERVER_DIR}/staticData/questionResults/foo-bar.json`
       );
-      expect(cache.put).not.toHaveBeenCalled();
+      expect(mockCache.set).not.toHaveBeenCalled();
       expect(response.send).not.toHaveBeenCalled();
       expect(response.status).toHaveBeenCalledWith(404);
     });

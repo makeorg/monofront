@@ -110,7 +110,6 @@ const initApp = async (state: StateRoot) => {
 
   // Get demographics cookie to render demographics card if cookie is not there
   const demographicsCookie = cookies.get(COOKIE.DEMOGRAPHICS);
-
   const authenticationStateData = await authenticationState();
 
   const store = {
@@ -130,7 +129,7 @@ const initApp = async (state: StateRoot) => {
       ...state.sequence,
       demographics: {
         ...state.sequence.demographics,
-        renderCard: !demographicsCookie,
+        demographicsCookie: !!demographicsCookie,
       },
     },
     appConfig: {

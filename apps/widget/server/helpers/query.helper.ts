@@ -1,10 +1,10 @@
 import { QuestionExtraSlidesConfigType } from '@make.org/types';
 
-export function transformExtraSlidesConfigFromQuery(
+export const transformExtraSlidesConfigFromQuery = (
   sequenceExtraSlides: QuestionExtraSlidesConfigType,
   disableIntroCard: boolean,
   disablePushProposalCard: boolean
-): QuestionExtraSlidesConfigType {
+): QuestionExtraSlidesConfigType => {
   const extraSlidesConfig: QuestionExtraSlidesConfigType = {
     ...sequenceExtraSlides,
   };
@@ -17,4 +17,4 @@ export function transformExtraSlidesConfigFromQuery(
   }
 
   return extraSlidesConfig;
-}
+};
