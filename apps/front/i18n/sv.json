@@ -838,7 +838,7 @@
       },
       "interact": {
         "title": "Reagera på förslagen",
-        "description": "Om förslagen fastställer vad samrådet handlar om, uttryck din åsikt för att hjälpa oss att identifiera de idéer som bör prioriteras.",
+        "description": "Förslagen fastställer vad samrådet handlar om. Uttryck din åsikt för att hjälpa oss att identifiera de idéer som bör prioriteras.",
         "button": "Jag röstar"
       },
       "controversy": {
@@ -861,7 +861,7 @@
       },
       "about": {
         "title": "Varför finns detta samråd?",
-        "description": "Varför har det här samrådet inletts? Vad är det som står på spel? Vem ligger bakom den?",
+        "description": "Varför har det här samrådet inletts? Vad är det som står på spel? Vem ligger bakom det?",
         "link": "Läs mer"
       },
       "featured_proposals": {
@@ -1038,7 +1038,7 @@
   },
   "browse": {
     "short_page_title": "Gå igenom",
-    "page_title": "Gå igenom samråden",
+    "page_title": "Gå till samråden",
     "title": "Delta i de pågående samråden",
     "initiative": "Stor fråga Make.org",
     "nav_consultations_desktop": "Pågående samråd",
@@ -1070,7 +1070,7 @@
       "empty": "Vi har hittills inte haft något samråd i ditt land."
     },
     "date": "Samråd från den {{startDate}} till den {{endDate}}",
-    "browse": "Gå igenom samråden",
+    "browse": "Gå till samråden",
     "see_closed_consultations": "Se avslutade samråd",
     "no_consultations": "Det finns inget pågående samråd, men låt oss hålla kontakten!",
     "one_consultation": "Registrera dig för att få information om nästa samråd.",
@@ -1225,7 +1225,7 @@
     "refused_label": "Förkastat",
     "validated_label": "Godkänt",
     "title": "Modereringspolicy",
-    "description": "Vilka förslag har förkastats vid moderering på Make.org? Hur formulerar jag ett förslag korrekt? Varje förslag som läggs upp på plattformen modereras manuellt av vårt modereringsteam i enlighet med följande kriterier i modereringspolicyn¹. Moderering görs inom 48 timmar från det att förslaget har skickats. Du informeras via e-post (under förutsättning att du har vailderat din e-postadress vid registreringen) om ditt förslag publiceras eller förkastas. Mindre stavfel rättas av moderatorerna, men det är du som får publicera ditt förslag igen om det inte kan godtas.",
+    "description": "Vilka förslag har förkastats vid moderering på Make.org? Hur formulerar jag ett förslag korrekt? Varje förslag som läggs upp på plattformen modereras manuellt av vårt modereringsteam i enlighet med följande kriterier i modereringspolicyn¹. Moderering görs inom 48 timmar från det att förslaget har skickats. Du informeras via e-post (under förutsättning att du har validerat din e-postadress vid registreringen) om ditt förslag publiceras eller förkastas. Mindre stavfel rättas av moderatorerna, men det är du som får publicera ditt förslag igen om det inte kan godtas.",
     "refused_examples": "Ej tillåtet på plattformen Make.org: ",
     "incomprehensible_solutions": {
       "title": "Obegripliga förslag",
@@ -1299,7 +1299,7 @@
     },
     "disclaimer": "Make.org är inte en sådan operatör av onlineplattform som omfattas av lag nr 2018-1202 av den 22 december 2018 om bekämpning av informationsmanipulation. Vi har därför inte de skyldigheter som följer av denna lag. Det är emellertid viktigt för oss att den information som publiceras online på vår webbplats är sanningsenlig, och i denna policy utvecklar vi de åtgärder vi vidtar för att säkerställa detta.",
     "foot_notes": {
-      "ethical_charter": "Denna modereringspolicy har utarbetats i enlighet med <ahref=”https://assets.website-files.com/59833d390a24e50001b873d8/5fd245978b3dbedcbcc121a2_VF%20Charte%20Ethique%20Make.org%20et%20Make.org%20Foundation%20valid%C3%A9e.pdf” target=\"_blank\">Etisk policy (nytt fönster)</a> som garanterar att Make.org är neutralt, oberoende och transparent.",
+      "ethical_charter": "Denna modereringspolicy har utarbetats i enlighet med <a href=\"https://assets.website-files.com/59833d390a24e50001b873d8/5fd245978b3dbedcbcc121a2_VF%20Charte%20Ethique%20Make.org%20et%20Make.org%20Foundation%20valid%C3%A9e.pdf\" target=\"_blank\">Etisk policy (nytt fönster)</a> som garanterar att Make.org är neutralt, oberoende och transparent.",
       "code_penal": "Enligt Diskrimineringslagen (2008:567) definieras diskriminering som ”att någon missgynnas genom att behandlas sämre än någon annan behandlas, har behandlats eller skulle ha behandlats i en jämförbar situation, om missgynnandet har samband med kön, könsöverskridande identitet eller uttryck, etnisk tillhörighet, religion eller annan trosuppfattning, funktionsnedsättning, sexuell läggning eller ålder”. (1 kap 4§ 1p.)."
     }
   },
@@ -1356,7 +1356,7 @@
         "hotjar": "Hotjar: Det är ett verktyg som hjälper till att analysera besökarnas beteende när de använder webbplatsen. Läs mer: "
       },
       "social": {
-        "name": "”Sociala medier-cookies”",
+        "name": "”Sociala medier-cookies”:",
         "description": "dessa cookies, som aktiveras av tredje part, gör att du kan dela innehållet på vår webbplats på sociala medier och hjälper oss på så sätt att optimera vår genomslagskraft. Om du inte samtycker till placering av cookies kan dessa delningsverktyg kanske inte användas.",
         "facebook_tracking": "Pixel Facebook: den förbättrar prestandan i samrådskampanjerna på Facebook för att öka medborgardeltagandet.",
         "twitter_tracking": "pixel Twitter: den förbättrar prestandan i samrådskampanjerna på Twitter för att öka medborgardeltagandet.",

@@ -263,10 +263,10 @@
     "times": "reize(-s)",
     "likeIt": "Favorīts",
     "doable": "Reālistisks",
-    "platitudeAgree": "Mazsvarīgs",
+    "platitudeAgree": "Nepieciešams",
     "noWay": "Kategoriski pret!",
     "impossible": "Neizpildāms",
-    "platitudeDisagree": "Mazsvarīgs",
+    "platitudeDisagree": "Masvarīgs",
     "doNotUnderstand": "Nesaprotams",
     "noOpinion": "Nav viedokļa",
     "doNotCare": "Man vienalga"
@@ -274,7 +274,7 @@
   "sequence": {
     "return": "Atgriezties pie priekšlikumiem",
     "title": "Balsot par apspriešanas priekšlikumiem: ",
-    "more": "Piekļūt visai apspriešanai"
+    "more": "Piekļūt visiem apspriežamajiem jautājumiem"
   },
   "login": {
     "title": "Man jau ir konts",

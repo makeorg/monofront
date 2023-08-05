@@ -114,9 +114,9 @@
     "continue": "Pokračovať ",
     "register_panel": {
       "welcome": "Vitajte {{name}}!",
-      "greeting": "Teší nás že, patríte k angažovaným používateľom! ",
+      "greeting": "Teší nás, že patríte k angažovaným používateľom!",
       "mail_confirmation_strong": "Z dôvodu overenia pravosti vášho účtu, prosím, potvrďte vašu e-mailovou adresu. ",
-      "mail_confirmation": " na zabezpečenie pravosti vášho účtu. Kliknite na aktivačný odkaz, ktorý vám bol zaslaný na: {{mail}}",
+      "mail_confirmation": " Na zabezpečenie pravosti vášho účtu kliknite na aktivačný odkaz, ktorý vám bol zaslaný na: {{mail}}",
       "onboarding": "Účasťou na našich občianskych konzultáciách vyjadrite svoj názor na sociálne otázky, ktoré sú pre vás dôležité.",
       "cta": "Zúčastniť sa na konzultáciách",
       "cta_access": "Chcem sa pripojiť ku konzultácií",
@@ -456,9 +456,9 @@
       "tooltip_title": "Spracováva sa",
       "tooltip_description": "Váš návrh spracujú naše tímy do 48 hodín, zatiaľ ho nájdete vo svojom profile.",
       "grats": "Gratulujeme {{name}}, ",
-      "proposal_sent": "váš návrh bol odoslaný ",
+      "proposal_sent": "Váš návrh bol odoslaný ",
       "activate": "Prosím, z dôvodu overenia pravosti vášho účtu potvrďte vašu e-mailovou adresu. ",
-      "link": "na zabezpečenie pravosti vášho účtu. Kliknite na aktivačný odkaz, ktorý vám bol zaslaný na: {{mail}}",
+      "link": "Na zabezpečenie pravosti vášho účtu kliknite na aktivačný odkaz, ktorý vám bol zaslaný na: {{mail}}",
       "question": "Máte otázku? Môžete nás kontaktovať na ",
       "consultation_access": "Chcem sa pripojiť ku konzultácií"
     }
@@ -594,7 +594,7 @@
   },
   "cookie_modal": {
     "title": "Vyjadrujte sa na Make.org s ohľadom na vaše súkromie",
-    "description": "S cieľom ďalej zlepšovať naše služby a vaše skúsenosti vás žiadame o súhlas so súbormi cookie, ktoré chceme my a naši partneri používať počas vašej návštevy.",
+    "description": "S cieľom ďalej zlepšovať naše služby a vaše skúsenosti vás žiadame o súhlas so súbormi cookie, ktoré chceme my a naši partneri počas vašej návštevy používať.",
     "details": {
       "title": "O aké súbory cookie ide?",
       "technicals": "<strong>Technické:</strong> súbory cookie nevyhnutné na fungovanie webovej stránky",
@@ -844,12 +844,12 @@
       "soon": "Plánované",
       "submit": {
         "title": "Predložiť návrh",
-        "description": "Podeľte sa so svojimi nápadmi s čo najväčším počtom ľudí. Každý návrh sa pred predložením na hlasovanie občanov preskúma.",
+        "description": "Podeľte sa so svojimi nápadmi s čo najväčším počtom ľudí. Každý návrh bude pred predložením na hlasovanie občanov preskúmaný.",
         "button": "Mám nápad"
       },
       "interact": {
         "title": "Reagovať na návrhy",
-        "description": "Ak návrhy definujú problematiky konzultácie, vyjadrite svoj názor a pomôžte nám tak identifikovať nápady, ktoré by mali byť spracované prednostne.",
+        "description": "Ak návrhy pojednávajú o problematikách konzultácie, vyjadrite svoj názor a pomôžte identifikovať nápady, ktoré by mali byť spracované prednostne.",
         "button": "Chcem hlasovať"
       },
       "controversy": {
@@ -1234,7 +1234,7 @@
   },
   "legal": {
     "title": "Právne upozornenia",
-    "make_infos": "Editor webovej stránky: MAKE.ORG, zjednodušená akciová spoločnosť s kapitálom {{make_capital}},so sídlom na adrese {{make_address}}, zapísaná v RCS v PARÍŽI pod číslom {{make_rcs}} (ďalej len „MAKE.ORG“).",
+    "make_infos": "Editor webovej stránky: MAKE.ORG, zjednodušená akciová spoločnosť s kapitálom {{make_capital}}, so sídlom na adrese {{make_address}}, zapísaná v RCS v PARÍŽI pod číslom {{make_rcs}} (ďalej len „MAKE.ORG“).",
     "mail": "E-mailová adresa: ",
     "make_phone": "Telefónne číslo: ",
     "make_phone_number": "{{make_phone_number}}",
@@ -1278,7 +1278,7 @@
       "title": "Stranícke návrhy",
       "description": "Váš návrh by sa nemal stavať na stranu (t. j. vyjadrovať uznanie alebo znevažovanie) politickej strany, politickej osobnosti, ideológie alebo náboženstva (osobnosti, symbolu alebo praxe).",
       "refused_card_example": "Je potrebné si prečítať program pána XXX, jeho myšlienky sú pre nasledujúce voľby originálne.",
-      "validated_card_example": "Je potrebné pred voľbami zistiť si informácie o programoch jednotlivých politických strán.",
+      "validated_card_example": "Je potrebné si pred voľbami zistiť informácie o programoch jednotlivých politických strán.",
       "refused_card_example_2": "Je potrebné pravidelne čítať Bibliu a nájsť tak spasenie.",
       "validated_card_example_2": "Je potrebné, aby zamestnávatelia poznali dátumy niektorých náboženských sviatkov: Ramadán, Chanuka atď."
     },
@@ -1312,7 +1312,7 @@
       "validated_card_example_2": "Je potrebné vytvoriť úrad práce pre mladých ľudí."
     },
     "understandable_language": {
-      "text": "Snažte sa, aby vám bolo čo najlepšie rozumieť, a používajte jazyk, ktorý je prístupný pre všetkých.",
+      "text": "Snažte sa, aby vám bolo čo najlepšie rozumieť a používajte jazyk, ktorý je prístupný pre všetkých.",
       "refused_card_example": "Je potrebné poskytnúť rok propedeutického štúdia na univerzite.",
       "validated_card_example": "Je potrebné absolvovať pred výberom štúdia na univerzite všeobecný rok.",
       "refused_card_example_2": "Je potrebné, aby bolo MZ schopné vyšetriť rakovinu",
@@ -1331,7 +1331,7 @@
   },
   "cookies_management": {
     "title": "Správa súborov cookie",
-    "dated": "- dňa {{date}} -",
+    "dated": "- k dátumu {{date}} -",
     "button": "Potvrdiť môj výber",
     "intro": {
       "title": "Čo je to súbor cookie?",

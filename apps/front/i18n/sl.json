@@ -613,7 +613,7 @@
     "personalize": "Prilagodi",
     "refuse": "Nadaljuj brez privolitve",
     "back": "Nazaj na prejšnji korak",
-    "mandatory": "Še vedno aktiven/-a",
+    "mandatory": "Vedno aktivni",
     "save": "Potrdi moj izbor",
     "technicals": {
       "secure": "make secure: ta piškotek vam, ko ste prijavljeni v svojem prostoru za državljane na Make.org, zagotavlja nadaljnjo prijavljenost med uporabo storitve.",
@@ -1012,16 +1012,16 @@
       },
       "top_ideas": {
         "skiplink": "Najboljše nastajajoče zamisli",
-        "title_one": "Zamisli z največjo podporo, razvrščene v {{count}} kategorijo",
-        "title_two": "Zamisli z največjo podporo, razvrščeni v {{count}} kategorijo",
-        "title_few": "Zamisli z največjo podporo, razvrščene v {{count}} kategorijo",
-        "title_other": "amisli z največjo podporo, razvrščenih v {{count}} kategorijo",
+        "title_one": "Zamisli z največjo podporo, razvrščene v {{count}} kategorij",
+        "title_two": "Zamisli z največjo podporo, razvrščeni v {{count}} kategorij",
+        "title_few": "Zamisli z največjo podporo, razvrščene v {{count}} kategorij",
+        "title_other": "Zamisli z največjo podporo, razvrščenih v {{count}} kategorij",
         "introduction": "Ob vnosu na platformo so najboljši predlogi državljanov razvrščeni v velike ideje, ki oblikujejo posvetovanje.  Algoritem Make.org pri razvrščanju teh idej upošteva glasove »za« in »proti« ter dodatne obrazložitve »navdušujoče«, »izvedljivo«, »nesmiselno« in »nikakor! «.",
         "axe_title": "Kategorija {{count}}: {{name}}"
       },
       "proposals": {
         "controversials_title": "Najbolj sporni predlogi",
-        "controversials_description": "Takoimenovani »sporni« predlogi so posledica precejšnje razdvojenosti družbe, saj prejmejo približno enako močne podpore in močnega zavračanja.",
+        "controversials_description": "Takoimenovani »sporni« predlogi so posledica precejšnje razdvojenosti družbe, saj so deležni približno enako močne podpore in zavračanja.",
         "controversials_agree": "{{count}} % za",
         "controversials_disagree": "{{count}} % proti"
       },
@@ -1376,7 +1376,7 @@
     "details": {
       "title": "Katere piškotke uporabljamo:",
       "intro": "Piškotki, ki so naloženi na našem spletišču, so naslednji:",
-      "mandatory": "Še vedno aktiven/-a",
+      "mandatory": "Vedno aktivni",
       "duration": "Trajanje: {{duration}}",
       "session": "Seja",
       "month": "{{count}} mesec",

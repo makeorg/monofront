@@ -506,10 +506,10 @@
     "times": "reize(-s)",
     "likeIt": "Favorīts",
     "doable": "Reālistisks",
-    "platitudeAgree": "Mazsvarīgs",
+    "platitudeAgree": "Nepieciešams",
     "noWay": "Kategoriski pret!",
     "impossible": "Neizpildāms",
-    "platitudeDisagree": "Mazsvarīgs",
+    "platitudeDisagree": "Masvarīgs",
     "doNotUnderstand": "Nesaprotams",
     "noOpinion": "Nav viedokļa",
     "doNotCare": "Man vienalga"
@@ -517,7 +517,7 @@
   "sequence": {
     "return": "Atgriezties pie priekšlikumiem",
     "title": "Balsot par apspriešanas priekšlikumiem: ",
-    "more": "Piekļūt visai apspriešanai"
+    "more": "Piekļūt visiem apspriežamajiem jautājumiem"
   },
   "authentication": {
     "title": "Reģistrējieties, lai apstiprinātu savu priekšlikumu",
@@ -854,7 +854,7 @@
       },
       "controversy": {
         "title": "Lemt par vispretrunīgākajiem priekšlikumiem",
-        "description": "Šie iedzīvotāju priekšlikumi saņēma tikpat daudz balsu par kā pret.",
+        "description": "Šie iedzīvotāju priekšlikumi ir saņēmuši vienlīdzīgu balsu “par” un “pret” skaitu.",
         "button": "Es izdaru izvēli"
       },
       "popular": {

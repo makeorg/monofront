@@ -238,9 +238,9 @@
       "tooltip_title": "Spracováva sa",
       "tooltip_description": "Váš návrh spracujú naše tímy do 48 hodín, zatiaľ ho nájdete vo svojom profile.",
       "grats": "Gratulujeme {{name}}, ",
-      "proposal_sent": "váš návrh bol odoslaný ",
+      "proposal_sent": "Váš návrh bol odoslaný ",
       "activate": "Prosím, z dôvodu overenia pravosti vášho účtu potvrďte vašu e-mailovou adresu. ",
-      "link": "na zabezpečenie pravosti vášho účtu. Kliknite na aktivačný odkaz, ktorý vám bol zaslaný na: {{mail}}",
+      "link": "Na zabezpečenie pravosti vášho účtu kliknite na aktivačný odkaz, ktorý vám bol zaslaný na: {{mail}}",
       "question": "Máte otázku? Môžete nás kontaktovať na ",
       "consultation_access": "Chcem sa pripojiť ku konzultácií"
     }

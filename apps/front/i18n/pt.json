@@ -113,7 +113,7 @@
     "register_label": "Inscrever-se",
     "continue": "Continuar",
     "register_panel": {
-      "welcome": "Bem-vindo(a) {{name}} !",
+      "welcome": "Bem-vindo(a) {{name}}!",
       "greeting": "Estamos encantados por tê-lo(a) como um utilizador empenhado!",
       "mail_confirmation_strong": "Confirme o seu endereço de e-mail com um clique ",
       "mail_confirmation": " para assegurar a autenticidade da sua conta. Clique no link de ativação enviado para si em: {{mail}}",
@@ -456,7 +456,7 @@
       "tooltip_title": "Em moderação",
       "tooltip_description": "A sua proposta será processada pelas nossas equipas dentro de 48 horas, entretanto pode encontrá-la agora no seu perfil.",
       "grats": "Parabéns {{name}}, ",
-      "proposal_sent": "a sua proposta foi enviada ",
+      "proposal_sent": "a sua proposta foi enviada! ",
       "activate": "Confirme o seu endereço de e-mail com um clique ",
       "link": "para assegurar a autenticidade da sua conta. Clique no link de ativação que lhe foi enviado para: {{mail}}",
       "question": "Alguma pergunta? Pode contactar-nos em: ",
@@ -828,7 +828,7 @@
       "progress_title": "O nosso objetivo de votos",
       "progress_total": "Número total de votos",
       "progress_target": " em {{votesTarget}} votos ({{percent}}%)",
-      "progress_description": "Quanto mais votos as propostas receberem, mais potencial terão de ser traduzidas em ações concretas.",
+      "progress_description": "Quanto mais votos as propostas receberem, mais potencial terão para serem traduzidas em ações concretas.",
       "progress_btn": "Participar"
     },
     "participate": {
@@ -841,7 +841,7 @@
       "button_text": "Inscrevo-me"
     },
     "cards": {
-      "soon": "Futuras",
+      "soon": "Em breve",
       "submit": {
         "title": "Apresentar uma proposta",
         "description": "Divulgue as suas ideias ao maior número de pessoas possível. Cada proposta será estudada antes de ser submetida ao voto dos cidadãos.",
@@ -872,7 +872,7 @@
       },
       "about": {
         "title": "Porquê esta consulta?",
-        "description": "Porque razão foi lançada esta consulta? O que é que está em jogo? Quem tomou a iniciativa?",
+        "description": "Por que razão foi lançada esta consulta? O que é que está em jogo? Quem tomou a iniciativa?",
         "link": "Saber mais"
       },
       "featured_proposals": {
@@ -901,7 +901,7 @@
     },
     "explore": {
       "title": "Explorar as propostas",
-      "description": "Utilize as ferramentas de pesquisa para simplesmente navegar por todas as propostas na consulta e identificar as que considera prioritárias.",
+      "description": "Utilize as ferramentas de pesquisa para navegar em todas as propostas na consulta e identificar as que considera prioritárias.",
       "reset_filters": "Reinicializar os filtros",
       "reset_filters_and_close": "Reiniciar os filtros e fechar",
       "sort": "Ordenar",
@@ -1234,7 +1234,7 @@
   },
   "legal": {
     "title": "Notificações legais",
-    "make_infos": "Editor do sítio Internet: MAKE.ORG, Société par Actions Simplifiées (Sociedade por Ações Simplificada) com um capital de {{make_capital}}, tendo a sua sede social em {{make_address}}, registada no RCS (Registo Comercial de PARIS sob o número {{make_rcs}} (a seguir “MAKE.ORG”).",
+    "make_infos": "Editor do sítio Internet: MAKE.ORG, Société par Actions Simplifiées (Sociedade por Ações Simplificada) com um capital de {{make_capital}}, tendo a sua sede social em {{make_address}}, registada no RCS (Registo Comercial) de PARIS sob o número {{make_rcs}} (a seguir “MAKE.ORG”).",
     "mail": "Endereço de correio eletrónico: ",
     "make_phone": "Número de telefone: ",
     "make_phone_number": "{{make_phone_number}}",
@@ -1243,7 +1243,7 @@
     "host_address": "{{make_host_address}} FRANÇA",
     "host_phone": "Número de telefone: ",
     "host_phone_number": "{{host_number}}",
-    "eu_mention": "A Comissão Europeia fornece uma plataforma de resolução de litígios online para os consumidores em <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\">https://ec.europa.eu/consumers/odr</a>.."
+    "eu_mention": "A Comissão Europeia fornece uma plataforma de resolução de litígios online para os consumidores em <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\">https://ec.europa.eu/consumers/odr</a>."
   },
   "moderation_charter": {
     "unsuitable_label": "DESACONSELHADO",

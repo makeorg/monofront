@@ -177,7 +177,7 @@
         "invalid_age_dynamic": "{{label}}: Utilizatorii trebuie să aibă vârsta cuprinsă între 8 și 120 de ani.",
         "the_field_[email]_is_missing": "Rubrica {{label}} este obligatorie.",
         "the_field_[password]_is_missing": "Rubrica {{label}} este obligatorie.",
-        "invalid_postal_code": "Codul poștal trebuie să conțină 6 cifre.",
+        "invalid_postal_code": "Codul poștal trebuie să conțină 5 cifre.",
         "invalid_privacy_policy": "Trebuie să acceptați politica privind datele.",
         "invalid_postal_code_dynamic": "Elementul {{label}} trebuie să conțină 5 cifre.",
         "submit_success": "Modificarea a fost înregistrată cu succes.",

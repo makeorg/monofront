@@ -238,7 +238,7 @@
       "tooltip_title": "Em moderação",
       "tooltip_description": "A sua proposta será processada pelas nossas equipas dentro de 48 horas, entretanto pode encontrá-la agora no seu perfil.",
       "grats": "Parabéns {{name}}, ",
-      "proposal_sent": "a sua proposta foi enviada ",
+      "proposal_sent": "a sua proposta foi enviada! ",
       "activate": "Confirme o seu endereço de e-mail com um clique ",
       "link": "para assegurar a autenticidade da sua conta. Clique no link de ativação que lhe foi enviado para: {{mail}}",
       "question": "Alguma pergunta? Pode contactar-nos em: ",
