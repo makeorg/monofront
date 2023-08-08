@@ -64,7 +64,21 @@ export const buildCards = (
     return withIntroCard ? 3 : 2;
   })();
 
-  extraSlidesConfig.demographics.forEach(demographicCard => {
+  const shuffle = <T>(array: T[]): T[] => {
+    if (array.length <= 1) {
+      return array;
+    }
+    // eslint-disable-next-line no-plusplus
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      // eslint-disable-next-line no-param-reassign
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+
+    return array;
+  };
+
+  shuffle(extraSlidesConfig.demographics).forEach(demographicCard => {
     cards.splice(demographicsStartPosition, 0, {
       type: CARD.CARD_TYPE_EXTRASLIDE_DEMOGRAPHICS_CARD,
       configuration: demographicCard,
