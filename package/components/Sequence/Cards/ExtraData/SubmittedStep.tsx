@@ -13,17 +13,23 @@ type Props = {
   title: string;
   name: string;
   demographicId: string;
+  sessionBindingMode: boolean;
 };
 
 export const SubmittedDemographics: React.FC<Props> = ({
   title,
   name,
   demographicId,
+  sessionBindingMode,
 }) => {
   const { dispatch } = useAppContext();
 
   useEffect(() => {
-    trackDisplayDemographicsConfirmation(name, demographicId);
+    trackDisplayDemographicsConfirmation(
+      name,
+      demographicId,
+      sessionBindingMode
+    );
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -43,7 +49,7 @@ export const SubmittedDemographics: React.FC<Props> = ({
         data-cy-button="demographic-continue-vote"
         onClick={() => {
           dispatch(incrementSequenceIndex());
-          trackClickVoteDemographics(name, demographicId);
+          trackClickVoteDemographics(name, demographicId, sessionBindingMode);
         }}
       >
         {i18n.t('demographics_card.continue')}

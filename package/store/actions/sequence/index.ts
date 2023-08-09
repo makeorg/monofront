@@ -25,6 +25,7 @@ import {
   SEQUENCE_SET_LENGTH,
   SEQUENCE_SET_LABEL,
   SEQUENCE_DEMOGRAPHICS_RENDER,
+  SEQUENCE_SET_SESSION_BINDING_MODE,
 } from '../../actionTypes';
 import { TopComponentContextValue } from '../../topComponentContext';
 
@@ -83,6 +84,13 @@ export const setSequenceLength = (length: number): ReducerAction => ({
 export const setSequenceLabel = (label: string): ReducerAction => ({
   type: SEQUENCE_SET_LABEL,
   payload: { label },
+});
+
+export const setSequenceSessionBindingMode = (
+  sessionBinding: boolean
+): ReducerAction => ({
+  type: SEQUENCE_SET_SESSION_BINDING_MODE,
+  payload: { sessionBinding },
 });
 
 export const unvote = (

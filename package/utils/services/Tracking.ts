@@ -564,53 +564,65 @@ export const trackDisplayDemographics = (
 };
 
 export const trackDisplayIntroDemographics = (): void => {
-  TrackingService.sendAllTrackers(trackingEvent.DISPLAY_INTRO_DEMOGRAPHICS());
+  TrackingService.sendAllTrackers(
+    trackingEvent.DISPLAY_INTRO_DEMOGRAPHICS({
+      'binding-mode': 'true',
+    })
+  );
 };
 
 export const trackDisplayDemographicsConfirmation = (
   name: string,
-  demographicId: string
+  demographicId: string,
+  bindingMode: boolean
 ): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.DISPLAY_DEMOGRAPHICS_CONFIRMATION({
       name,
       demographicId,
+      'binding-mode': bindingMode ? 'true' : 'false',
     })
   );
 };
 
 export const trackClickSaveDemographics = (
   name: string,
-  demographicId: string
+  demographicId: string,
+  bindingMode: boolean
 ): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_SAVE_DEMOGRAPHICS({
       name,
       demographicId,
+      'binding-mode': bindingMode ? 'true' : 'false',
     })
   );
 };
 
 export const trackClickSkipDemographics = (
   name: string,
-  demographicId: string
+  demographicId: string,
+  bindingMode: boolean
 ): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_SKIP_DEMOGRAPHICS({
       name,
       demographicId,
+      'binding-mode': bindingMode ? 'true' : 'false',
     })
   );
 };
 
 export const trackClickVoteDemographics = (
   name: string,
-  demographicId: string
+  demographicId: string,
+  bindingMode: boolean
 ): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_VOTE_DEMOGRAPHICS({
       name,
       demographicId,
+      'binding-mode': bindingMode ? 'true' : 'false',
     })
   );
 };

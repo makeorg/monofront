@@ -39,7 +39,12 @@ export const ExtraDataCard: FC<Props> = ({ configuration }) => {
   };
 
   return isSubmitted ? (
-    <SubmittedDemographics title={title} name={name} demographicId={id} />
+    <SubmittedDemographics
+      title={title}
+      name={name}
+      demographicId={id}
+      sessionBindingMode={sequence.sessionBindingMode}
+    />
   ) : (
     <MiddleColumnStyle data-cy-demographic-layout={configuration.layout}>
       <ExtraDataTitleStyle>{title}</ExtraDataTitleStyle>

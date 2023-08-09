@@ -20,6 +20,7 @@ import {
   loadSequenceProposals,
   disableDemographicsCard,
   relaunchSequence,
+  setSequenceSessionBindingMode,
 } from '@make.org/store/actions/sequence';
 import { useAppContext } from '@make.org/store';
 import { useSequenceTracking } from './useSequenceTracking';
@@ -141,6 +142,7 @@ export const useSequence = (
         isStandardSequence
       );
 
+      dispatch(setSequenceSessionBindingMode(sessionBindingMode));
       dispatch(loadSequenceCards(buildedCards));
       dispatch(setSequenceLength(buildedCards.length));
     }
@@ -164,6 +166,7 @@ export const useSequence = (
     dispatch(resetSequenceVotedProposals(question?.slug));
     dispatch(setSequenceLength(0));
     dispatch(setSequenceIndex(0));
+    dispatch(setSequenceSessionBindingMode(false));
     dispatch(disableDemographicsCard());
   };
 

@@ -16,6 +16,7 @@ import {
   SEQUENCE_SET_LABEL,
   SEQUENCE_DEMOGRAPHICS_RENDER,
   SEQUENCE_RELAUNCH,
+  SEQUENCE_SET_SESSION_BINDING_MODE,
 } from '../../actionTypes';
 
 export const sequence_state: StateSequence = {
@@ -157,6 +158,11 @@ export const sequence_reducer: Reducer = (
       return {
         ...state,
         isLoading: action.payload.isLoading,
+      };
+    case SEQUENCE_SET_SESSION_BINDING_MODE:
+      return {
+        ...state,
+        sessionBindingMode: action.payload.label,
       };
     default:
       return state;

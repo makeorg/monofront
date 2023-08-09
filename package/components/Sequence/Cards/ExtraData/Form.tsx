@@ -115,9 +115,9 @@ export const ExtraDataForm: React.FC<Props> = ({
         setIsSkipDisabled(false);
         dispatch(incrementSequenceIndex());
         if (value === SKIP_TRACKING_VALUE) {
-          trackClickSkipDemographics(name, demographicId);
+          trackClickSkipDemographics(name, demographicId, sessionBindingMode);
         } else {
-          trackClickSaveDemographics(name, demographicId);
+          trackClickSaveDemographics(name, demographicId, sessionBindingMode);
         }
         submitSuccess();
       };

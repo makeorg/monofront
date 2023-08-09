@@ -174,6 +174,7 @@ export const sequenceByKindRoute = async (
     cards,
     sequenceSize: cards.length,
     sequenceKind,
+    sessionBindingMode,
   };
   initialState.session = {
     sessionId: sessionIdFromCookie || sequenceResult.sessionId,

@@ -584,10 +584,18 @@ DISPLAY_DEMOGRAPHICS:
       description: demographic id
     - key: binding-mode
       description: demographic binding mode true/false
+      values:
+        - "true"
+        - "false"
 
 DISPLAY_INTRO_DEMOGRAPHICS:
   key: display-intro-demographics
   description: Display demographics intro card
+  parameters:
+    - key: binding-mode
+      description: demographic binding mode true/false
+      values:
+        - "true"
 
 DISPLAY_DEMOGRAPHICS_CONFIRMATION:
   key: display-demographics-confirmation
@@ -597,6 +605,11 @@ DISPLAY_DEMOGRAPHICS_CONFIRMATION:
       description: demographic name
     - key: demographicId
       description: demographic id
+    - key: binding-mode
+      description: demographic binding mode true/false
+      values:
+        - "true"
+        - "false"
 
 CLICK_SKIP_DEMOGRAPHICS:
   key: click-skip-demographics
@@ -606,6 +619,11 @@ CLICK_SKIP_DEMOGRAPHICS:
       description: demographic name
     - key: demographicId
       description: demographic id
+    - key: binding-mode
+      description: demographic binding mode true/false
+      values:
+        - "true"
+        - "false"
 
 CLICK_SAVE_DEMOGRAPHICS:
   key: click-save-demographics
@@ -615,6 +633,11 @@ CLICK_SAVE_DEMOGRAPHICS:
       description: demographic name
     - key: demographicId
       description: demographic id
+    - key: binding-mode
+      description: demographic binding mode true/false
+      values:
+        - "true"
+        - "false"
 
 CLICK_VOTE_DEMOGRAPHICS:
   key: click-vote-demographics
@@ -624,6 +647,11 @@ CLICK_VOTE_DEMOGRAPHICS:
       description: demographic name
     - key: demographicId
       description: demographic id
+    - key: binding-mode
+      description: demographic binding mode true/false
+      values:
+        - "true"
+        - "false"
 
 CLICK_FILTER:
   key: click-filter

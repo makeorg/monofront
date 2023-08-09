@@ -610,13 +610,17 @@ Following parameters are added to all events.
     |-|-|-|-|
     | `name` | true | demographic name |  |
     | `demographicId` | true | demographic id |  |
-    | `binding-mode` | true | demographic binding mode true/false |  |
+    | `binding-mode` | true | demographic binding mode true/false | `true`, `false` |
   
   
 
   - `display-intro-demographics` Display demographics intro card
 
     
+    | param_name | required | description | values |
+    |-|-|-|-|
+    | `binding-mode` | true | demographic binding mode true/false | `true` |
+  
   
 
   - `display-demographics-confirmation` Display demographics confirmation in sequence
@@ -626,6 +630,7 @@ Following parameters are added to all events.
     |-|-|-|-|
     | `name` | true | demographic name |  |
     | `demographicId` | true | demographic id |  |
+    | `binding-mode` | true | demographic binding mode true/false | `true`, `false` |
   
   
 
@@ -636,6 +641,7 @@ Following parameters are added to all events.
     |-|-|-|-|
     | `name` | true | demographic name |  |
     | `demographicId` | true | demographic id |  |
+    | `binding-mode` | true | demographic binding mode true/false | `true`, `false` |
   
   
 
@@ -646,6 +652,7 @@ Following parameters are added to all events.
     |-|-|-|-|
     | `name` | true | demographic name |  |
     | `demographicId` | true | demographic id |  |
+    | `binding-mode` | true | demographic binding mode true/false | `true`, `false` |
   
   
 
@@ -656,6 +663,7 @@ Following parameters are added to all events.
     |-|-|-|-|
     | `name` | true | demographic name |  |
     | `demographicId` | true | demographic id |  |
+    | `binding-mode` | true | demographic binding mode true/false | `true`, `false` |
   
   
 

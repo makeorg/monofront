@@ -24,9 +24,10 @@ Feature: Demographic sequence card
     Then progress bar is "15" on "18"
     And current card is a demographic card
     And I see "skip demographics" button on card "15"
-    And event "display-demographics" should be tracked by Make with parameters values:
+    And event "display-demographics" should be tracked by Make with parameters values: 
       | name                | frontValue                                                                      | widgetValue                                                                     |
       | eventType           | trackCustom                                                                     | trackCustom                                                                     |
+      | binding-mode        | true                                                                            | true                                                                            |
       | country             | FR                                                                              | FR                                                                              |
       | language            | fr                                                                              | fr                                                                              |
       | source              | core                                                                            | widget-test                                                                     |
@@ -40,6 +41,7 @@ Feature: Demographic sequence card
     And event "click-skip-demographics" should be tracked by Make with parameters values:
       | name                | frontValue                                                                      | widgetValue                                                                     |
       | eventType           | trackCustom                                                                     | trackCustom                                                                     |
+      | binding-mode        | true                                                                            | true                                                                            |
       | country             | FR                                                                              | FR                                                                              |
       | language            | fr                                                                              | fr                                                                              |
       | source              | core                                                                            | widget-test                                                                     |
@@ -55,6 +57,7 @@ Feature: Demographic sequence card
     And event "display-demographics-confirmation" should be tracked by Make with parameters values:
       | name                | frontValue                                                                      | widgetValue                                                                     |
       | eventType           | trackCustom                                                                     | trackCustom                                                                     |
+      | binding-mode        | true                                                                            | true                                                                            |
       | country             | FR                                                                              | FR                                                                              |
       | language            | fr                                                                              | fr                                                                              |
       | source              | core                                                                            | widget-test                                                                     |
@@ -68,6 +71,7 @@ Feature: Demographic sequence card
     And event "click-vote-demographics" should be tracked by Make with parameters values:
       | name                | frontValue                                                                      | widgetValue                                                                     |
       | eventType           | trackCustom                                                                     | trackCustom                                                                     |
+      | binding-mode        | true                                                                            | true                                                                            |
       | country             | FR                                                                              | FR                                                                              |
       | language            | fr                                                                              | fr                                                                              |
       | source              | core                                                                            | widget-test                                                                     |
@@ -85,6 +89,7 @@ Feature: Demographic sequence card
     And event "click-save-demographics" should be tracked by Make with parameters values:
       | name                | frontValue                                                                      | widgetValue                                                             |
       | eventType           | trackCustom                                                                     | trackCustom                                                             |
+      | binding-mode        | true                                                                            | true                                                                            |
       | country             | FR                                                                              | FR                                                                      |
       | language            | fr                                                                              | fr                                                                      |
       | source              | core                                                                            | widget-test                                                             |
@@ -100,6 +105,7 @@ Feature: Demographic sequence card
     And event "click-save-demographics" should be tracked by Make with parameters values:
       | name                | frontValue                                                                      | widgetValue                                                             |
       | eventType           | trackCustom                                                                     | trackCustom                                                             |
+      | binding-mode        | true                                                                            | true                                                                            |
       | country             | FR                                                                              | FR                                                                      |
       | language            | fr                                                                              | fr                                                                      |
       | source              | core                                                                            | widget-test                                                             |
@@ -120,6 +126,7 @@ Feature: Demographic sequence card
     And event "display-demographics" should be tracked by Make with parameters values:
       | name                | frontValue                                                                      | widgetValue                                                                     |
       | eventType           | trackCustom                                                                     | trackCustom                                                                     |
+      | binding-mode        | false                                                                           | false                                                                            |
       | country             | FR                                                                              | FR                                                                              |
       | language            | fr                                                                              | fr                                                                              |
       | source              | core                                                                            | widget-test                                                                     |
@@ -133,6 +140,7 @@ Feature: Demographic sequence card
     And event "click-skip-demographics" should be tracked by Make with parameters values:
       | name                | frontValue                                                                      | widgetValue                                                                     |
       | eventType           | trackCustom                                                                     | trackCustom                                                                     |
+      | binding-mode        | false                                                                           | false                                                                            |
       | country             | FR                                                                              | FR                                                                              |
       | language            | fr                                                                              | fr                                                                              |
       | source              | core                                                                            | widget-test                                                                     |
@@ -148,6 +156,7 @@ Feature: Demographic sequence card
     And event "display-demographics-confirmation" should be tracked by Make with parameters values:
       | name                | frontValue                                                                      | widgetValue                                                                     |
       | eventType           | trackCustom                                                                     | trackCustom                                                                     |
+      | binding-mode        | false                                                                           | false                                                                            |
       | country             | FR                                                                              | FR                                                                              |
       | language            | fr                                                                              | fr                                                                              |
       | source              | core                                                                            | widget-test                                                                     |
@@ -161,6 +170,7 @@ Feature: Demographic sequence card
     And event "click-vote-demographics" should be tracked by Make with parameters values:
       | name                | frontValue                                                                      | widgetValue                                                                     |
       | eventType           | trackCustom                                                                     | trackCustom                                                                     |
+      | binding-mode        | false                                                                           | false                                                                            |
       | country             | FR                                                                              | FR                                                                              |
       | language            | fr                                                                              | fr                                                                              |
       | source              | core                                                                            | widget-test                                                                     |
@@ -184,6 +194,7 @@ Feature: Demographic sequence card
     And event "click-save-demographics" should be tracked by Make with parameters values:
       | name                | frontValue                                                                      | widgetValue                                                             |
       | eventType           | trackCustom                                                                     | trackCustom                                                             |
+      | binding-mode        | false                                                                           | false                                                                            |
       | country             | FR                                                                              | FR                                                                      |
       | language            | fr                                                                              | fr                                                                      |
       | source              | core                                                                            | widget-test                                                             |
@@ -198,6 +209,7 @@ Feature: Demographic sequence card
     And event "display-demographics-confirmation" should be tracked by Make with parameters values:
       | name                | frontValue                                                                      | widgetValue                                                             |
       | eventType           | trackCustom                                                                     | trackCustom                                                             |
+      | binding-mode        | false                                                                           | false                                                                            |
       | country             | FR                                                                              | FR                                                                      |
       | language            | fr                                                                              | fr                                                                      |
       | source              | core                                                                            | widget-test                                                             |
@@ -211,6 +223,7 @@ Feature: Demographic sequence card
     And event "click-vote-demographics" should be tracked by Make with parameters values:
       | name                | frontValue                                                                      | widgetValue                                                             |
       | eventType           | trackCustom                                                                     | trackCustom                                                             |
+      | binding-mode        | false                                                                           | false                                                                            |
       | country             | FR                                                                              | FR                                                                      |
       | language            | fr                                                                              | fr                                                                      |
       | source              | core                                                                            | widget-test                                                             |
