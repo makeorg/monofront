@@ -162,7 +162,7 @@ export const sequence_reducer: Reducer = (
     case SEQUENCE_SET_SESSION_BINDING_MODE:
       return {
         ...state,
-        sessionBindingMode: action.payload.label,
+        sessionBindingMode: action.payload.sessionBindingMode,
       };
     default:
       return state;

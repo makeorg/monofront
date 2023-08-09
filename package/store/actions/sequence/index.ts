@@ -87,10 +87,10 @@ export const setSequenceLabel = (label: string): ReducerAction => ({
 });
 
 export const setSequenceSessionBindingMode = (
-  sessionBinding: boolean
+  sessionBindingMode: boolean
 ): ReducerAction => ({
   type: SEQUENCE_SET_SESSION_BINDING_MODE,
-  payload: { sessionBinding },
+  payload: { sessionBindingMode },
 });
 
 export const unvote = (
