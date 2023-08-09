@@ -386,7 +386,8 @@
       "description": "Kako spremljati rezultate?",
       "button_intro": "Ustvarite svoj",
       "button_text": "državljanski kotiček."
-    }
+    },
+    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "no_proposal_card": {
     "title": {
@@ -417,7 +418,8 @@
   "special_final_card": {
     "title": "Hvala za vaše glasove!",
     "subtitle": "Lahko še naprej sodelujete pri posvetovanju",
-    "cta_text": "Želim sodelovati pri posvetovanju"
+    "cta_text": "Želim sodelovati pri posvetovanju",
+    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "demographics_card": {
     "disclaimer": "Vaše informacije so anonimne in omogočajo večjo reprezentativnost rezultatov.",

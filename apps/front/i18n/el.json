@@ -376,7 +376,8 @@
       "description": "Πώς να παρακολουθείτε τα αποτελέσματα;",
       "button_intro": "Δημιουργήστε τον δικό σας",
       "button_text": "προσωπικό χώρο πολίτη."
-    }
+    },
+    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "no_proposal_card": {
     "title": {
@@ -407,7 +408,8 @@
   "special_final_card": {
     "title": "Σας ευχαριστούμε για τις ψήφους σας!",
     "subtitle": "Μπορείτε να συνεχίσετε να συμμετέχετε στη διαβούλευση",
-    "cta_text": "Πρόσβαση στη διαβούλευση"
+    "cta_text": "Πρόσβαση στη διαβούλευση",
+    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "demographics_card": {
     "disclaimer": "Οι πληροφορίες σας είναι ανώνυμες και επιτρέπουν στα αποτελέσματά μας να είναι αντιπροσωπευτικά.",

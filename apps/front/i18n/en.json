@@ -352,7 +352,8 @@
       "description": "How can I see the results?",
       "button_intro": "Create your",
       "button_text": "citizen’s account."
-    }
+    },
+    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "push_proposal_card": {
     "title": "Do you have a proposal that you want to submit on this topic?",
@@ -1408,7 +1409,8 @@
   "special_final_card": {
     "title": "Thank you for voting!",
     "subtitle": "You can continue to participate in the consultation.",
-    "cta_text": "Gain access to the consultation"
+    "cta_text": "Gain access to the consultation",
+    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "no_proposal_card": {
     "title": {

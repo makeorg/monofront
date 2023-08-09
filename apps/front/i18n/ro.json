@@ -362,7 +362,8 @@
       "description": "Cum se pot urmări rezultatele?",
       "button_intro": "Creați-vă propriul",
       "button_text": "spațiu personal."
-    }
+    },
+    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "no_proposal_card": {
     "title": {
@@ -393,7 +394,8 @@
   "special_final_card": {
     "title": "Vă mulțumim că ați votat!",
     "subtitle": "Puteți continua să participați la consultare",
-    "cta_text": "Accesez consultarea"
+    "cta_text": "Accesez consultarea",
+    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "demographics_card": {
     "disclaimer": "Informațiile dumneavoastră sunt anonime și permit obținerea unor rezultate care să fie reprezentative.",

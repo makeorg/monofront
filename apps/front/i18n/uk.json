@@ -381,7 +381,8 @@
       "description": "Як слідкувати за результатами?",
       "button_intro": "Створіть свій",
       "button_text": "особистий кабінет."
-    }
+    },
+    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "no_proposal_card": {
     "title": {
@@ -412,7 +413,8 @@
   "special_final_card": {
     "title": "Дякуємо за ваші голоси!",
     "subtitle": "Ви можете продовжити участь в публічній консультації",
-    "cta_text": "Перейти до публічної консультації"
+    "cta_text": "Перейти до публічної консультації",
+    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "demographics_card": {
     "disclaimer": "Ваша інформація є анонімною та дозволяє отримати репрезентативні результати.",

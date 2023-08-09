@@ -168,6 +168,7 @@
   },
   "final_card": {
     "title": "Merci d’avoir réagi aux propositions !",
+    "title_binding_mode": "Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !",
     "description": "Continuez à voter pour nous aider à identifier les priorités.",
     "link_text": "J'accède à la consultation",
     "register": {
@@ -204,6 +205,7 @@
   },
   "special_final_card": {
     "title": "Merci d’avoir réagi aux propositions !",
+    "title_binding_mode": "Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !",
     "subtitle": "Comment suivre les résultats ?",
     "cta_text": "Inscrivez-vous sur Make.org"
   },

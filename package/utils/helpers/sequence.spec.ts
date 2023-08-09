@@ -18,7 +18,9 @@ describe('Sequence Helper', () => {
         {
           index: 0,
           type: CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD,
-          configuration: undefined,
+          configuration: {
+            isSessionBindingMode: false,
+          },
         },
       ]);
     });
@@ -40,7 +42,9 @@ describe('Sequence Helper', () => {
         {
           index: 1,
           type: CARD.CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD,
-          configuration: undefined,
+          configuration: {
+            isSessionBindingMode: false,
+          },
         },
       ]);
     });
@@ -63,7 +67,9 @@ describe('Sequence Helper', () => {
         {
           index: 0,
           type: CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD,
-          configuration: undefined,
+          configuration: {
+            isSessionBindingMode: false,
+          },
         },
       ]);
     });
@@ -91,7 +97,9 @@ describe('Sequence Helper', () => {
         {
           index: 1,
           type: CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD,
-          configuration: undefined,
+          configuration: {
+            isSessionBindingMode: false,
+          },
         },
       ]);
     });
@@ -111,7 +119,9 @@ describe('Sequence Helper', () => {
       const pushProposal = helpers.isPushProposalCard({
         index: 0,
         type: CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD,
-        configuration: undefined,
+        configuration: {
+          isSessionBindingMode: false,
+        },
       });
       expect(pushProposal).toEqual(false);
     });

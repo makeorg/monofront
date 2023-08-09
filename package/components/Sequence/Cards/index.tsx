@@ -7,6 +7,7 @@ import {
   ProposalCardType,
   NoProposalCardType,
   DemographicDataType,
+  FinalCardConfigType,
 } from '@make.org/types';
 import {
   TopComponentContext,
@@ -48,12 +49,27 @@ const Card: React.FC<CardProps> = ({ card, question }) => {
       return <PushProposalCard />;
     case CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD: {
       if (isWidget) {
-        return <SpecialFinalCard questionSlug={question.slug} />;
+        return (
+          <SpecialFinalCard
+            questionSlug={question.slug}
+            configuration={card.configuration as FinalCardConfigType}
+          />
+        );
       }
-      return <FinalCard questionSlug={question.slug} />;
+      return (
+        <FinalCard
+          questionSlug={question.slug}
+          configuration={card.configuration as FinalCardConfigType}
+        />
+      );
     }
     case CARD.CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD: {
-      return <SpecialFinalCard questionSlug={question.slug} />;
+      return (
+        <SpecialFinalCard
+          questionSlug={question.slug}
+          configuration={card.configuration as FinalCardConfigType}
+        />
+      );
     }
     case CARD.CARD_TYPE_EXTRASLIDE_INTRO_DEMOGRAPHICS_CARD: {
       return <DemographicsIntroCard />;

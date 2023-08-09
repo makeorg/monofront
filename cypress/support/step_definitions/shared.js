@@ -336,15 +336,11 @@ Then('the {string} button is enabled', buttonName => {
 
 // I see text
 Then("I don't see {string}", text => {
-  cy.get('body')
-    .contains(text)
-    .scrollIntoView()
-    .should('exist')
-    .and('not.be.visible');
+  cy.get('#app').contains(text).should('not.exist');
 });
 
 Then('I see {string}', text => {
-  cy.get('body')
+  cy.get('#app')
     .contains(text)
     .scrollIntoView()
     .should('exist')

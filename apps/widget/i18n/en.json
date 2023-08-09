@@ -173,7 +173,8 @@
       "description": "How to follow the results ?",
       "button_intro": "Create your",
       "button_text": "citizen account."
-    }
+    },
+    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "push_proposal_card": {
     "title": "Do you have a proposal you want to submit on this topic?",
@@ -322,7 +323,8 @@
   "special_final_card": {
     "title": "Thank you for reacting to the proposals !",
     "subtitle": "How to follow the results ?",
-    "cta_text": "Register on Make.org"
+    "cta_text": "Register on Make.org",
+    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "no_proposal_card": {
     "title": {

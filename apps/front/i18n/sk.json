@@ -381,7 +381,8 @@
       "description": "Ako sledovať výsledky?",
       "button_intro": "Vytvorte si",
       "button_text": "Občiansky účet"
-    }
+    },
+    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "no_proposal_card": {
     "title": {
@@ -412,7 +413,8 @@
   "special_final_card": {
     "title": "Ďakujeme za váš hlas!",
     "subtitle": "Stále sa môžete zúčastniť na konzultácii",
-    "cta_text": "Chcem sa pripojiť ku konzultácií"
+    "cta_text": "Chcem sa pripojiť ku konzultácií",
+    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "demographics_card": {
     "disclaimer": "Vaše informácie sú anonymné a umožňujú, aby naše výsledky boli reprezentatívne.",

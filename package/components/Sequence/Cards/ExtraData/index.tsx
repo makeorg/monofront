@@ -49,7 +49,9 @@ export const ExtraDataCard: FC<Props> = ({ configuration }) => {
     <MiddleColumnStyle data-cy-demographic-layout={configuration.layout}>
       <ExtraDataTitleStyle>{title}</ExtraDataTitleStyle>
       <ExtraDataDescriptionStyle>
-        {i18n.t('demographics_card.disclaimer')}
+        {sequence.sessionBindingMode
+          ? ''
+          : i18n.t('demographics_card.disclaimer')}
       </ExtraDataDescriptionStyle>
       <ExtraDataForm
         demographicId={id}

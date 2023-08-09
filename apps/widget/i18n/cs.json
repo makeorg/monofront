@@ -172,7 +172,8 @@
       "description": "Jak sledovat výsledky?",
       "button_intro": "Vytvoř si svůj",
       "button_text": "účet občana."
-    }
+    },
+    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "no_proposal_card": {
     "title": {
@@ -203,7 +204,8 @@
   "special_final_card": {
     "title": "Děkujeme ti za tvůj hlas!",
     "subtitle": "Můžeš pokračovat v zapojení se do konzultace",
-    "cta_text": "Chci se připojit ke konzultaci"
+    "cta_text": "Chci se připojit ke konzultaci",
+    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "demographics_card": {
     "disclaimer": "Tvoje údaje jsou anonymní a umožňují, aby naše výsledky byly reprezentativní.",

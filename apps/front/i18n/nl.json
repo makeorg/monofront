@@ -357,7 +357,8 @@
       "description": "Hoe kan ik de resultaten volgen?",
       "button_intro": "Maak je",
       "button_text": "persoonlijke omgeving aan."
-    }
+    },
+    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "no_proposal_card": {
     "title": {
@@ -388,7 +389,8 @@
   "special_final_card": {
     "title": "Bedankt voor je stemmen!",
     "subtitle": "Je kunt blijven deelnemen aan de raadpleging",
-    "cta_text": "Ik ga naar de raadpleging"
+    "cta_text": "Ik ga naar de raadpleging",
+    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "demographics_card": {
     "disclaimer": "Je gegevens zijn anoniem en maken onze resultaten representatief.",

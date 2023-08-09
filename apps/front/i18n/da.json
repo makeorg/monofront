@@ -376,7 +376,8 @@
       "description": "Hvordan gør jeg for at følge resultaterne?",
       "button_intro": "Skab din egen",
       "button_text": "brugerprofil."
-    }
+    },
+    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "no_proposal_card": {
     "title": {
@@ -407,7 +408,8 @@
   "special_final_card": {
     "title": "Tak for dine stemmer!",
     "subtitle": "Du kan fortsætte med at deltage i høringen",
-    "cta_text": "Jeg åbner høringen"
+    "cta_text": "Jeg åbner høringen",
+    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "demographics_card": {
     "disclaimer": "Dine oplysninger er anonyme og gør, at vores resultater er repræsentative.",

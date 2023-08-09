@@ -170,7 +170,8 @@
       "description": "Como monitorizar os resultados?",
       "button_intro": "Crie o seu",
       "button_text": "espaço do cidadão."
-    }
+    },
+    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "no_proposal_card": {
     "title": {
@@ -201,7 +202,8 @@
   "special_final_card": {
     "title": "Obrigado pelos seus votos!",
     "subtitle": "Ainda pode continuar a participar na consulta",
-    "cta_text": "Acedo à consulta"
+    "cta_text": "Acedo à consulta",
+    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "demographics_card": {
     "disclaimer": "As suas informações são anónimas e permitem que os nossos resultados sejam representativos.",

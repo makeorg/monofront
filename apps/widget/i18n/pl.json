@@ -153,7 +153,8 @@
       "description": "Jak śledzić wyniki?",
       "button_intro": "Stwórz swoją",
       "button_text": "przestrzeń użytkownika"
-    }
+    },
+    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "no_proposal_card": {
     "title": {
@@ -184,7 +185,8 @@
   "special_final_card": {
     "title": "Dziękujemy za oddanie głosów!",
     "subtitle": "Możesz dalej uczestniczyć w konsultacji",
-    "cta_text": "Przechodzę do konsultacji"
+    "cta_text": "Przechodzę do konsultacji",
+    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "demographics_card": {
     "disclaimer": "Twoje informacje pozostają anonimowe, co zapewnia reprezentatywność naszych wyników.",

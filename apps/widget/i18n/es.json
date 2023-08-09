@@ -153,7 +153,8 @@
       "description": "¿Cómo llevar un seguimiento de los resultados?",
       "button_intro": "Crea tu",
       "button_text": "Área personal."
-    }
+    },
+    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "no_proposal_card": {
     "title": {
@@ -184,7 +185,8 @@
   "special_final_card": {
     "title": "¡Gracias por tus votos!",
     "subtitle": "Puedes seguir participando en la consulta",
-    "cta_text": "Acceder a la consulta"
+    "cta_text": "Acceder a la consulta",
+    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "demographics_card": {
     "disclaimer": "Tu información es anónima para que nuestros resultados puedan ser representativos.",

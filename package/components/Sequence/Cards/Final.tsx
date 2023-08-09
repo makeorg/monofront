@@ -19,6 +19,7 @@ import { getParticipateLink } from '@make.org/utils/helpers/url';
 import { useAppContext } from '@make.org/store';
 import { setPanelContent } from '@make.org/store/actions/panel';
 import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
+import { FinalCardConfigType } from '@make.org/types';
 import {
   SequenceAltTitleStyle,
   SequenceParagraphStyle,
@@ -31,9 +32,10 @@ import {
 
 type Props = {
   questionSlug: string;
+  configuration: FinalCardConfigType;
 };
 
-export const FinalCard: React.FC<Props> = ({ questionSlug }) => {
+export const FinalCard: React.FC<Props> = ({ configuration, questionSlug }) => {
   const { dispatch, state } = useAppContext();
   const { country } = state.appConfig;
 
@@ -51,7 +53,9 @@ export const FinalCard: React.FC<Props> = ({ questionSlug }) => {
   return (
     <FinalCardWrapperStyle data-cy-container="final-card">
       <SequenceAltTitleStyle data-cy-container="final-card-title">
-        {i18n.t('final_card.title')}
+        {configuration.isSessionBindingMode
+          ? i18n.t('final_card.title_binding_mode')
+          : i18n.t('final_card.title')}
       </SequenceAltTitleStyle>
       <SequenceParagraphStyle as="p" data-cy-container="final-card-description">
         {i18n.t('final_card.description')}

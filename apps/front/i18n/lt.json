@@ -381,7 +381,8 @@
       "description": "Kaip stebėti rezultatus?",
       "button_intro": "Sukurkite savo",
       "button_text": "pilietinę erdvę."
-    }
+    },
+    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "no_proposal_card": {
     "title": {
@@ -412,7 +413,8 @@
   "special_final_card": {
     "title": "Ačiū už jūsų balsus!",
     "subtitle": "Galite toliau dalyvauti konsultacijoje",
-    "cta_text": "Dalyvauju konsultacijoje"
+    "cta_text": "Dalyvauju konsultacijoje",
+    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "demographics_card": {
     "disclaimer": "Jūsų pateikta informacija yra anoniminė, tad mūsų rezultatai yra reprezentatyvūs.",

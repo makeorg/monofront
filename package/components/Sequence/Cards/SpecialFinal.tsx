@@ -11,13 +11,18 @@ import {
   RedUppercaseLinkElementStyle,
   RedUppercaseHTMLLinkElementStyle,
 } from '@make.org/ui/elements/LinkElements';
+import { FinalCardConfigType } from '@make.org/types';
 import { SequenceMainTitleStyle, SequenceParagraphStyle } from './style';
 
 type Props = {
   questionSlug: string;
+  configuration: FinalCardConfigType;
 };
 
-export const SpecialFinalCard: React.FC<Props> = ({ questionSlug }) => {
+export const SpecialFinalCard: React.FC<Props> = ({
+  configuration,
+  questionSlug,
+}) => {
   const { dispatch, state } = useAppContext();
   const { country, source } = state.appConfig;
   const isWidget = source === 'widget';
@@ -34,7 +39,9 @@ export const SpecialFinalCard: React.FC<Props> = ({ questionSlug }) => {
         className={isWidget ? 'widget' : ''}
         data-cy-container="final-card-title"
       >
-        {i18n.t('special_final_card.title')}
+        {configuration.isSessionBindingMode
+          ? i18n.t('special_final_card.title_binding_mode')
+          : i18n.t('special_final_card.title')}
       </SequenceMainTitleStyle>
       <SequenceParagraphStyle>
         {i18n.t('special_final_card.subtitle')}

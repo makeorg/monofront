@@ -153,7 +153,8 @@
       "description": "Come fare per seguire i risultati?",
       "button_intro": "Crea la tua",
       "button_text": "area riservata."
-    }
+    },
+    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "no_proposal_card": {
     "title": {
@@ -184,7 +185,8 @@
   "special_final_card": {
     "title": "Grazie per i tuoi voti!",
     "subtitle": "Puoi continuare a partecipare alla consultazione",
-    "cta_text": "Accedo alla consultazione"
+    "cta_text": "Accedo alla consultazione",
+    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "demographics_card": {
     "disclaimer": "Le tue informazioni sono anonime e ci consentono di ottenere risultati rappresentativi.",

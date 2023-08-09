@@ -151,7 +151,8 @@
       "description": "Как да проследим резултатите?",
       "button_intro": "Създайте свое",
       "button_text": "Пространство за граждани."
-    }
+    },
+    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "no_proposal_card": {
     "title": {
@@ -182,7 +183,8 @@
   "special_final_card": {
     "title": "Благодарим ви за гласуването!",
     "subtitle": "Можете да продължите да участвате в консултацията",
-    "cta_text": "Присъединявам се към консултацията"
+    "cta_text": "Присъединявам се към консултацията",
+    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "demographics_card": {
     "disclaimer": "Вашата информация е анонимна и позволява резултатите ни да бъдат представителни.",

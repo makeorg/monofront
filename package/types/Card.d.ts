@@ -27,6 +27,10 @@ export type IntroCardConfigType = {
   description?: string;
 };
 
+export type FinalCardConfigType = {
+  isSessionBindingMode: boolean;
+};
+
 export type PushProposalCardConfigType = {
   enabled: boolean;
 };
@@ -56,7 +60,8 @@ export type SequenceCardConfigType =
   | PushProposalCardConfigType
   | ProposalCardConfigType
   | NoProposalCardConfigType
-  | DemographicDataType;
+  | DemographicDataType
+  | FinalCardConfigType;
 
 export type SequenceCardType = {
   type: string;

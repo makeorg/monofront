@@ -308,10 +308,12 @@ const generateProposals = (question, author, count) => {
       },
       startDate: question.startDate,
       endDate: question.endDate,
-      countries: ['FR'],
-      language: 'fr',
+      countries: question.countries,
+      languages: question.languages,
     },
     author: setAnonymousProposals(number),
+    translatedContent: `proposal-${question.slug}-${number}-content-en`,
+    translatedLanguage: 'en',
   }));
 };
 
@@ -337,9 +339,11 @@ const generateFirstProposal = (question, author) => {
       },
       startDate: question.startDate,
       endDate: question.endDate,
-      countries: ['FR'],
-      language: 'fr',
+      countries: question.countries,
+      languages: question.languages,
     },
+    translatedContent: `proposal-${question.slug}-first-content-en`,
+    translatedLanguage: 'en',
     author: {
       ...defaultProposal.author,
       ...author,

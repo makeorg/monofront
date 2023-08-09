@@ -97,7 +97,9 @@ export const buildCards = (
     type: isStandardSequence
       ? CARD.CARD_TYPE_EXTRASLIDE_FINAL_CARD
       : CARD.CARD_TYPE_EXTRASLIDE_SPECIAL_FINAL_CARD,
-    configuration: undefined,
+    configuration: {
+      isSessionBindingMode: extraSlidesConfig.isDemographicsSessionBindingMode,
+    },
     index: 0,
   });
 

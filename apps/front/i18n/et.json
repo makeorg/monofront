@@ -376,7 +376,8 @@
       "description": "Kuidas tulemusi jälgida?",
       "button_intro": "Looge oma",
       "button_text": "kodanikukeskkond."
-    }
+    },
+    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "no_proposal_card": {
     "title": {
@@ -407,7 +408,8 @@
   "special_final_card": {
     "title": "Täname hääletamise eest!",
     "subtitle": "Võite jätkata konsulteerimistel osalemist",
-    "cta_text": "Sisenen konsulteerimisse"
+    "cta_text": "Sisenen konsulteerimisse",
+    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "demographics_card": {
     "disclaimer": "Teie andmed on anonüümsed ja võimaldavad meie tulemustel olla esindavad.",
