@@ -3,7 +3,10 @@ import { colors } from '@make.org/designsystem/tokens/colors';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { CenterRowStyle } from '@make.org/ui/elements/FlexElements';
+import {
+  CenterColumnStyle,
+  ColumnElementStyle,
+} from '@make.org/ui/elements/FlexElements';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import SvgSelectArrow from '@make.org/ui/Svg/source/selectArrow.svg';
@@ -12,10 +15,8 @@ import { SequenceIntroParagraphStyle } from '../style';
 
 const MAX_WIDTH = 275;
 
-export const ExtraDataFormStyle = styled.form`
-  display: flex;
-  flex-flow: column;
-  align-items: center;
+export const ExtraDataFormStyle = styled(CenterColumnStyle)`
+  width: 100%;
 `;
 
 export const ExtraDataTitleStyle = styled(SequenceIntroParagraphStyle)`
@@ -56,8 +57,7 @@ export const ExtraDataRadioGroupStyle = styled.div`
   }
 `;
 
-export const SubmitWrapperStyle = styled(CenterRowStyle)`
-  width: 100%;
+export const SubmitWrapperStyle = styled(ColumnElementStyle)`
   gap: ${spacings.s};
   margin-top: ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {

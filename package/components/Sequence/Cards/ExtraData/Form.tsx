@@ -162,6 +162,7 @@ export const ExtraDataForm: React.FC<Props> = ({
 
   return (
     <ExtraDataFormStyle
+      as="form"
       id={FORM_NAME}
       name={FORM_NAME}
       onSubmit={handleSubmit(currentValue)}
@@ -169,13 +170,6 @@ export const ExtraDataForm: React.FC<Props> = ({
     >
       {renderFormUI(layout, data, currentValue, setCurrentValue)}
       <SubmitWrapperStyle>
-        <SkipLinkButtonStyle
-          disabled={isSkipDisabled}
-          onClick={onClickSkip}
-          data-cy-button="skip-demographics"
-        >
-          {i18n.t('demographics_card.skip')}
-        </SkipLinkButtonStyle>
         <SubmitButtonStyle
           data-cy-button="submit-demographics"
           type="submit"
@@ -184,6 +178,13 @@ export const ExtraDataForm: React.FC<Props> = ({
         >
           {i18n.t('demographics_card.submit')}
         </SubmitButtonStyle>
+        <SkipLinkButtonStyle
+          disabled={isSkipDisabled}
+          onClick={onClickSkip}
+          data-cy-button="skip-demographics"
+        >
+          {i18n.t('demographics_card.skip')}
+        </SkipLinkButtonStyle>
       </SubmitWrapperStyle>
     </ExtraDataFormStyle>
   );
