@@ -263,7 +263,7 @@
     "title": "Gostaria de esclarecer a minha opinião sobre esta proposta:",
     "static_repartition": "Esta proposta foi qualificada em: ",
     "times": "vezes",
-    "likeIt": "e",
+    "likeIt": "Favorita",
     "doable": "Realista",
     "platitudeAgree": "Banalidade",
     "noWay": "De modo algum!",
@@ -315,7 +315,7 @@
     "title": "Redefino a minha palavra-passe",
     "description": "Por favor introduza o endereço de e-mail ligado à sua conta Make.org para receber o link de reinicialização.",
     "success": "Obrigado, acaba de lhe ser enviado um e-mail para lhe permitir atualizar a sua palavra-passe.",
-    "return": "Voltar ao ",
+    "return": "Voltar para ",
     "login_link": "o ecrã de início de sessão",
     "send_link": "receber o e-mail"
   },

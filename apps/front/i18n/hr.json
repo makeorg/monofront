@@ -1245,7 +1245,7 @@
     "host_address": "{{make_host_address}} FRANCUSKA",
     "host_phone": "Broj telefona: ",
     "host_phone_number": "{{host_number}}",
-    "eu_mention": "Europska komisija pruža potrošačima platformu za mrežno rješavanje sporova na adresi https://ec.europa.eu/consumers/odr."
+    "eu_mention": "Europska komisija pruža potrošačima platformu za mrežno rješavanje sporova na adresi <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\">https://ec.europa.eu/consumers/odr - (novi prozor)</a>."
   },
   "moderation_charter": {
     "unsuitable_label": "NE PREPORUČUJE SE",
@@ -1254,7 +1254,7 @@
     "validated_label": "Potvrđeno",
     "title": "Pravilnik za moderiranje",
     "description": "Koji se prijedlozi odbijaju tijekom moderiranja na platformi Make.org? Kako ispravno napisati prijedlog? Svaki prijedlog poslan na platformi moderiraju moderatorski timovi inicijative Make.org u skladu sa sljedećim kriterijima pravilnika o moderiranju¹. Moderiranje se obavlja unutar 48 sati nakon slanja prijedloga. Ako ste potvrdili svoju adresu e-pošte prilikom registracije, e-poštom vam se šalje obavijest o objavljivanju ili odbijanju vašeg prijedloga. Male pravopisne greške ispravljaju moderatori, ali vi trebate ponovno objaviti svoj prijedlog ako se ne prihvati.",
-    "refused_examples": "Na platformi Make.org nije dopušteno: ",
+    "refused_examples": "Na platformi make.org nisu dopušteni: ",
     "incomprehensible_solutions": {
       "title": "Nerazumljivi prijedlozi",
       "description": "Svi moraju razumjeti tekst i značenje vašeg prijedloga. Vaš se prijedlog odbija zbog velikih sintaktičkih pogrešaka ili besmislica pa trebate preoblikovati svoj prijedlog.",
@@ -1374,7 +1374,7 @@
         "session-id": "make-session-id: ovaj se kolačić upotrebljava za prikupljanje svih radnji koje izvodite na mrežnom mjestu tijekom sesije.",
         "session-id-expiration": "make-session-id-expiration: ovim vam se kolačićem omogućava prikazivanje obavijesti kojom se ukazuje da je vaša sesija istekla (nakon 20 minuta) i stoga se ponovno učitava.",
         "user-id": "make-user-id: ovim vam se kolačićem omogućava vaša identifikacija nakon prijavljivanja u osobni prostor na platformi Make.org. Upotrebljava se za poziv da se ponovno povežete tako da prethodno upišete svoje korisničko ime.",
-        "cookie-preferences": "Make-cookie-preferences: ovim se kolačićem pamte vaše postavke u vezi s korištenjem kolačićima na našoj platformi."
+        "cookie-preferences": "make-cookie-preferences: ovim se kolačićem pamte vaše postavke u vezi s korištenjem kolačićima na našoj platformi."
       },
       "statistics": {
         "name": "Kolačići za statistiku:",

@@ -435,7 +435,7 @@
       "button_cancel": "Zrušiť",
       "button_submit": "Potvrdiť",
       "read_our": "Prečítať si naše",
-      "moderation_link": "Charta moderovania",
+      "moderation_link": "Chartu moderovania",
       "button_propose": "NAVRHNÚŤ"
     },
     "authentication": {
@@ -552,7 +552,7 @@
     "login_link": "chcem sa pripojiť.",
     "gtu_text_first": "Registráciou vyjadrujete súhlas s našimi ",
     "gtu_text_second": " a súhlasíte s prijímaním (pár) e-mailov od Make.org.",
-    "gtu_link": "Všeobecné podmienky používania"
+    "gtu_link": "Všeobecnými podmienkami používania."
   },
   "legal_consent": {
     "title": "Právne oprávnenie",
@@ -563,7 +563,7 @@
     "cancel": "Zrušiť",
     "submit": "Potvrdiť",
     "privacy_policy_first_part": "Súhlasím s tým, aby spoločnosť Make.org spracovala tieto údaje, aby som sa mohol/a zúčastniť a byť informovaný/á o výsledkoch v súlade s ",
-    "privacy_policy_link": "charta",
+    "privacy_policy_link": "chartou",
     "privacy_policy_last_part": ". (povinné)",
     "privacy_policy": "zásady ochrany osobných údajov",
     "make_protect": "Make.org sa zaväzuje chrániť vaše",

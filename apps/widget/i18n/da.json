@@ -266,9 +266,9 @@
     "likeIt": "Favorit",
     "doable": "Realistisk",
     "platitudeAgree": "Banal",
-    "noWay": "Slet ikke!",
-    "impossible": "Helt umulig",
-    "platitudeDisagree": "Banal",
+    "noWay": "Ikke enig!",
+    "impossible": "Helt umuligt",
+    "platitudeDisagree": "Banalt",
     "doNotUnderstand": "Ikke forstået",
     "noOpinion": "Ved ikke",
     "doNotCare": "Ligeglad"

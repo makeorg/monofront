@@ -269,7 +269,7 @@
       "page": "Oldal",
       "page_total": "/ {{total}}"
     },
-    "max_characters": "maximális karakter",
+    "max_characters": "karakter (max.)",
     "back": "Vissza",
     "proposal_count_one": "{{count}} javaslat",
     "proposal_count_other": "{{count}} javaslat",
@@ -577,7 +577,7 @@
     "whoarewe": "Szemléletünk",
     "legal": "Jogi információk",
     "terms": "Használati feltételek",
-    "data": "Adatvédelmi politika",
+    "data": "Adatvédelmi szabályzat",
     "country": "Ország módosítása",
     "contact": "Kapcsolat",
     "news": "Híreink",
@@ -601,7 +601,7 @@
     "personalize": "Testreszabás",
     "refuse": "Folytatás elfogadás nélkül",
     "back": "Vissza az előző lépésre",
-    "mandatory": "Továbbra is aktív",
+    "mandatory": "Mindig aktív",
     "save": "Választás megerősítése",
     "technicals": {
       "secure": "make secure: miután bejelentkezett a Make.org-on lévő állampolgári felhasználói felületére, ez a süti biztosítja a csatlakozás fennmaradását, amíg Ön a weboldalon böngészik.",
@@ -689,7 +689,7 @@
         "organisation": "A szervezet neve: ",
         "firstname": "Utónév: ",
         "lastname": "Vezetéknév: ",
-        "email": "E-mailcím: ",
+        "email": "E-mail-cím: ",
         "postal_code": "Irányítószám: ",
         "age": "Életkor: ",
         "profession": "Foglalkozás: ",
@@ -1210,8 +1210,8 @@
   },
   "legal": {
     "title": "Jogi információk",
-    "make_infos": "Honlapszerkesztő: A MAKE.ORG, {{make_capital}} alaptőkéjű egyszerűsített részvénytársaság, székhelye: {{make_address}}, cégjegyzékszám: {{make_rcs}} (a továbbiakban: \"MAKE.ORG\").",
-    "mail": "E-mailcím: ",
+    "make_infos": "Honlapszerkesztő: A MAKE.ORG, {{make_capital}} alaptőkéjű egyszerűsített részvénytársaság, székhelye: {{make_address}}, cégjegyzékszám: {{make_rcs}} (a továbbiakban: „MAKE.ORG”).",
+    "mail": "E-mail-cím: ",
     "make_phone": "Telefonszám: ",
     "make_phone_number": "{{make_phone_number}}",
     "director": "Felelős szerkesztő: {{make_director_name}}",
@@ -1223,7 +1223,7 @@
   },
   "moderation_charter": {
     "unsuitable_label": "NEM AJÁNLOTT",
-    "adapted_label": "Alkalmazott",
+    "adapted_label": "ÁTDOLGOZOTT",
     "refused_label": "Elutasítva",
     "validated_label": "Érvényesítve",
     "title": "Moderációs szabályzat",
@@ -1301,8 +1301,8 @@
     },
     "disclaimer": "A Make.org nem tekinthető az információmanipuláció elleni küzdelemről szóló, 2018. december 22-i 2018-1202. számú törvény hatálya alá tartozó online platform üzemeltetőjének. Így a kapcsolódó kötelezettségek nem vonatkoznak ránk. Az oldalunkon közzétett információk valóságtartalma azonban fontos számunkra, ezért ebben a szabályzatban részletezzük a biztosítására tett intézkedéseinket.",
     "foot_notes": {
-      "ethical_charter": "Ez a moderációs szabályzat az <a href=\"https://assets.website-files.com/59833d390a24e50001b873d8/5fd245978b3dbedcbcc121a2_VF%20Charte%20Ethique%20Make.org%20et%20Make.org%20Foundation%20valid%C3%A9e.pdf\" target=\"_blank\">Etikai szabályzat (nouvelle fenêtre)</a> szerint készült, amely garantálja a Make.org semlegességét, függetlenségét és átláthatóságát.",
-      "code_penal": "Az Ebktv. szerint „közvetlen hátrányos megkülönböztetésnek minősül az olyan rendelkezés, amelynek eredményeként egy személy vagy csoport valós vagy vélt neme, faji hovatartozása, bőrszíne, nemzetisége, nemzeti vagy etnikai kisebbséghez való tartozása, anyanyelve, fogyatékossága, egészségi állapota, vallási vagy világnézeti meggyőződése, politikai vagy más véleménye, családi állapota, anyasága (terhessége) vagy apasága, szexuális irányultsága, nemi identitása, életkora, társadalmi származása, vagyoni helyzete, foglalkoztatási jogviszonyának vagy munkavégzésre irányuló egyéb jogviszonyának részmunkaidős jellege, illetve határozott időtartama, érdekképviselethez való tartozása, egyéb helyzete, tulajdonsága vagy jellemzője (a továbbiakban együtt: tulajdonsága) miatt részesül más, összehasonlítható helyzetben levő személyhez vagy csoporthoz képest kedvezőtlenebb bánásmódban.\" (2003. évi CXXV. törvény I. Fejezet 8. §)"
+      "ethical_charter": "Ez a moderációs szabályzat az <a href=\"https://assets.website-files.com/59833d390a24e50001b873d8/5fd245978b3dbedcbcc121a2_VF%20Charte%20Ethique%20Make.org%20et%20Make.org%20Foundation%20valid%C3%A9e.pdf\" target=\"_blank\">Etikai szabályzat (új ablakd)</a> szerint készült, amely garantálja a Make.org semlegességét, függetlenségét és átláthatóságát.",
+      "code_penal": "Az Ebktv. szerint „közvetlen hátrányos megkülönböztetésnek minősül az olyan rendelkezés, amelynek eredményeként egy személy vagy csoport valós vagy vélt neme, faji hovatartozása, bőrszíne, nemzetisége, nemzeti vagy etnikai kisebbséghez való tartozása, anyanyelve, fogyatékossága, egészségi állapota, vallási vagy világnézeti meggyőződése, politikai vagy más véleménye, családi állapota, anyasága (terhessége) vagy apasága, szexuális irányultsága, nemi identitása, életkora, társadalmi származása, vagyoni helyzete, foglalkoztatási jogviszonyának vagy munkavégzésre irányuló egyéb jogviszonyának részmunkaidős jellege, illetve határozott időtartama, érdekképviselethez való tartozása, egyéb helyzete, tulajdonsága vagy jellemzője (a továbbiakban együtt: tulajdonsága) miatt részesül más, összehasonlítható helyzetben levő személyhez vagy csoporthoz képest kedvezőtlenebb bánásmódban.\" (2003. évi CXXV. törvény I. fejezet 8. §)"
     }
   },
   "cookies_management": {
@@ -1326,7 +1326,7 @@
     "details": {
       "title": "Milyen sütiket használunk?",
       "intro": "A weboldalunkon elhelyezett sütik a következők:",
-      "mandatory": "Továbbra is aktív",
+      "mandatory": "Mindig aktív",
       "duration": "Időtartam: {{duration}}",
       "session": "Munkamenet",
       "month": "{{count}} hónap",
@@ -1340,7 +1340,7 @@
         "demographics": "make-demographics: ez a süti lehetővé teszi, hogy megtudjuk, ha korábban már kértünk Öntől demográfiai adatokat (korosztály, régió, nem stb.) ezen az eszközön, így egy későbbi látogatáskor nem kérjük ezeket újra."
       },
       "preferences": {
-        "name": "Preferencia-sütik:",
+        "name": "Preferenciális sütik:",
         "description": "ezeket a sütiket arra használjuk, hogy megjegyezzük az Ön beállításait az oldalunkon, és így javítsuk a böngészési élményét. Böngészőjét beállíthatja úgy, hogy blokkolja ezeket a sütiket, vagy tudjon róluk, de ez hatással lehet weboldalunk egyes részeire. Ezek a sütik nem szolgálnak az Ön személyes azonosítására.",
         "google-connect": "Google connect: ezek a sütik lehetővé teszik a regisztrációt és a bejelentkezést az állampolgári felhasználói felületre.",
         "facebook-connect": "Facebook connect: ezeknek a sütiknek a segítségével regisztrálhat és bejelentkezhet az állampolgári felhasználói felületére.",

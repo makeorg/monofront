@@ -502,9 +502,9 @@
     "likeIt": "Favorit",
     "doable": "Realistisk",
     "platitudeAgree": "Banal",
-    "noWay": "Slet ikke!",
-    "impossible": "Helt umulig",
-    "platitudeDisagree": "Banal",
+    "noWay": "Ikke enig!",
+    "impossible": "Helt umuligt",
+    "platitudeDisagree": "Banalt",
     "doNotUnderstand": "Ikke forstået",
     "noOpinion": "Ved ikke",
     "doNotCare": "Ligeglad"
@@ -601,7 +601,7 @@
     "personalize": "Tilpas",
     "refuse": "Fortsæt uden at acceptere",
     "back": "Tilbage til forrige trin",
-    "mandatory": "Stadigvæk aktiv",
+    "mandatory": "Altid aktiv",
     "save": "Godkend mit valg",
     "technicals": {
       "secure": "make secure: Så snart du har logget ind på din brugerprofil på Make.org, sørger denne cookie for, at forbindelsen opretholdes, mens du browser på tjenesten.",
@@ -903,7 +903,7 @@
       "filter": "Filtrer",
       "filter_and_close": "Filtrer og luk",
       "filter_by": "Filtrer efter",
-      "recent": "Nylige",
+      "recent": "Nye",
       "popular": "Populære",
       "controversial": "Kontroversielle",
       "unvoted": "Dem, der venter på din stemme",
@@ -1219,7 +1219,7 @@
     "host_address": "{{make_host_address}} FRANKRIG",
     "host_phone": "Telefonnummer: ",
     "host_phone_number": "{{host_number}}",
-    "eu_mention": "Europa-Kommissionen stiller en platform til onlinetvistbilæggelse til rådighed for forbrugere på adressen https://ec.europa.eu/consumers/odr."
+    "eu_mention": "Europa-Kommissionen stiller en platform til onlinetvistbilæggelse til rådighed for forbrugere på adressen <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\">https://ec.europa.eu/consumers/odr</a>."
   },
   "moderation_charter": {
     "unsuitable_label": "FRARÅDET",
@@ -1227,7 +1227,7 @@
     "refused_label": "Afvist",
     "validated_label": "Godkendt",
     "title": "Moderationspolitik",
-    "description": "Hvilke forslag vil blive afvist af redaktørerne hos Make.org? Hvordan skriver man et forslag korrekt? Hvert forslag, der sendes til platformen, modereres manuelt af Make.org’s moderatorer i henhold til følgende moderationspolitik¹. Dette arbejde udføres inden for 48 timer efter indsendelsen af forslaget. Du vil blive informeret pr. e-mail (under forudsætning af at du godkendte din e-mail-adresse under tilmeldingen) om publiceringen eller afvisningen af dit forslag. Mindre stavefejl bliver rettet af vores redaktører, men hvis dit forslag ikke kan accepteres, skal du sende den igen.",
+    "description": "Hvilke forslag vil blive afvist af redaktørerne hos Make.org? Hvordan skriver man et forslag korrekt? Hvert forslag, der sendes til platformen, modereres manuelt af Make.org’s moderatorer i henhold til følgende moderationspolitik¹. Dette arbejde udføres inden for 48 timer efter indsendelsen af forslaget. Du vil blive informeret pr. e-mail (under forudsætning af at du godkendte din e-mail-adresse under tilmeldingen) om offentliggørelsen eller afvisningen af dit forslag. Mindre stavefejl bliver rettet af vores redaktører, men hvis dit forslag ikke kan accepteres, skal du sende den igen.",
     "refused_examples": "Følgende er ikke tilladt på Make.org-platformen: ",
     "incomprehensible_solutions": {
       "title": "Forslag, der ikke er til at forstå",
@@ -1245,7 +1245,7 @@
     "discriminatory_solutions": {
       "title": "Diskriminerende forslag",
       "description": "I overensstemmelse med loven² må dit forslag ikke indeholde indhold, der opfordrer til vold eller had. Det må heller ikke indeholde diskriminerende eller ærekrænkende udtalelser, særligt mod etniske, sociale eller religiøse grupper.",
-      "refused_card_example": "Vi skal sikre, at sønderjyderne holder op med at tale tysk.",
+      "refused_card_example": "Vi skal sikre os, at sønderjyderne holder op med at tale sønderjysk.",
       "validated_card_example": "Vi skal sikre, at danskerne bliver bedre til at kommunikere med hinanden.",
       "refused_card_example_2": "Vi skal forbyde kors omkring halsen, som er et symbol på underkastelse.",
       "validated_card_example_2": "Vi skal sikre, at friheden til kultdyrkelse respekteres i vores land."
@@ -1299,10 +1299,10 @@
       "refused_card_example": "Vi skal sænke skatten på iværksættere #konkurrenceevne",
       "validated_card_example": "Vi skal sænke skatten på iværksættere for at gøre dem mere konkurrencedygtige!"
     },
-    "disclaimer": "Make.org er ikke en online platformsoperatør, der er omfattet af lov nr. 2018-1202 af 22. december om bekæmpelse af misinformation. Vi er derfor ikke underlagt de tilknyttede forpligtelser. Pålideligheden af de oplysninger, der gøres tilgængelige på vores websted, ligger os dog på sinde, og vi har beskrevet de foranstaltninger, som vi vil træffe i den forbindelse, i disse redaktionelle regler.",
+    "disclaimer": "Make.org er ikke en online platformsoperatør, der er omfattet af lov nr. 2018-1202 af 22. december om bekæmpelse af misinformation. Vi er derfor ikke underlagt de tilknyttede forpligtelser. Pålideligheden af de oplysninger, der gøres tilgængelige på vores websted, ligger os dog på sinde, og vi har beskrevet de foranstaltninger, som vi vil træffe i den forbindelse, i denne moderationspolitik.",
     "foot_notes": {
-      "ethical_charter": "Denne moderationspolitik er udarbejdet i overensstemmelse med <a href=\"https://assets.website-files.com/59833d390a24e50001b873d8/5fd245978b3dbedcbcc121a2_VF%20Charte%20Ethique%20Make.org%20et%20Make.org%20Foundation%20valid%C3%A9e.pdf\" target=\"_blank\">Etiske regler (nyt vindue)</a>, der er en garanti for Make.org’s neutralitet, uafhængighed og gennemsigtighed.",
-      "code_penal": "§ 1. Ved forskelsbehandling forstås i denne lov enhver direkte eller indirekte forskelsbehandling på grund af race, hudfarve, religion eller tro, politisk anskuelse, seksuel orientering, alder, handicap eller national, social eller etnisk oprindelse.\r\nStk. 2. Der foreligger direkte forskelsbehandling, når en person på grund af race, hudfarve, religion eller tro, politisk anskuelse, seksuel orientering, alder, handicap eller national, social eller etnisk oprindelse behandles ringere end en anden bliver, er blevet eller ville blive behandlet i en tilsvarende situation. Lovbekendtgørelse nr. 1349 af 16. december 2008, med de ændringer, der følger af lov nr. 1489 af 23. december 2014."
+      "ethical_charter": "Denne moderationspolitik er udarbejdet i overensstemmelse med de <a href=\"https://assets.website-files.com/59833d390a24e50001b873d8/5fd245978b3dbedcbcc121a2_VF%20Charte%20Ethique%20Make.org%20et%20Make.org%20Foundation%20valid%C3%A9e.pdf\" target=\"_blank\">Etiske regler (nyt vindue)</a>, der er en garanti for Make.org’s neutralitet, uafhængighed og gennemsigtighed.",
+      "code_penal": "Dansk lov definerer forskelsbehandling på følgende måde: “§ 1. Ved forskelsbehandling forstås i denne lov enhver direkte eller indirekte forskelsbehandling på grund af race, hudfarve, religion eller tro, politisk anskuelse, seksuel orientering, alder, handicap eller national, social eller etnisk oprindelse.\nStk. 2. Der foreligger direkte forskelsbehandling, når en person på grund af race, hudfarve, religion eller tro, politisk anskuelse, seksuel orientering, alder, handicap eller national, social eller etnisk oprindelse behandles ringere end en anden bliver, er blevet eller ville blive behandlet i en tilsvarende situation. Lovbekendtgørelse nr. 1349 af 16. december 2008, med de ændringer, der følger af lov nr. 1489 af 23. december 2014.”"
     }
   },
   "cookies_management": {
@@ -1326,7 +1326,7 @@
     "details": {
       "title": "Hvilke cookies bruger vi?",
       "intro": "Følgende cookies placeres på vores websted:",
-      "mandatory": "Stadigvæk aktiv",
+      "mandatory": "Altid aktiv",
       "duration": "Varighed: {{duration}}",
       "session": "Session",
       "month": "{{count}} måneder",

@@ -54,8 +54,8 @@
       "description": "Descubra todas as propostas da ideia {{idea}} resultante da consulta '{{question}}'"
     },
     "search": {
-      "main_results": "Pesquisa - Resultados para « {{term}} » - Make.org",
-      "proposals": "Pesquisa - Resultados das propostas para « {{term}} » - Make.org",
+      "main_results": "Pesquisa - Resultados para \"{{term}}\" - Make.org",
+      "proposals": "Pesquisa - Resultados das propostas para \"{{term}}\" - Make.org",
       "consultations": "Pesquisa - Resultados das consultas para « {{term}} » - Make.org",
       "organisations": "Pesquisa - Resultados das organizações para « {{term}} » - Make.org"
     },
@@ -74,7 +74,7 @@
       "description": "Encontre aqui as notificações legais do sítio Internet."
     },
     "moderation": {
-      "title": "Make.org ∙ Carta da Moderação",
+      "title": "Make.org ∙ Carta de Moderação",
       "description": "Que propostas foram rejeitadas durante a moderação no Make.org? Como formular uma proposta corretamente?"
     },
     "privacy_policy": {
@@ -506,7 +506,7 @@
     "title": "Gostaria de esclarecer a minha opinião sobre esta proposta:",
     "static_repartition": "Esta proposta foi qualificada em: ",
     "times": "vezes",
-    "likeIt": "e",
+    "likeIt": "Favorita",
     "doable": "Realista",
     "platitudeAgree": "Banalidade",
     "noWay": "De modo algum!",
@@ -574,7 +574,7 @@
     "title": "Redefino a minha palavra-passe",
     "description": "Por favor introduza o endereço de e-mail ligado à sua conta Make.org para receber o link de reinicialização.",
     "success": "Obrigado, acaba de lhe ser enviado um e-mail para lhe permitir atualizar a sua palavra-passe.",
-    "return": "Voltar ao ",
+    "return": "Voltar para ",
     "login_link": "o ecrã de início de sessão",
     "send_link": "receber o e-mail",
     "email_doesnot_exist": "Não conseguimos encontrar uma conta associada a este e-mail."
@@ -589,7 +589,7 @@
     "contact": "Contacto",
     "news": "A nossa atualidade",
     "dotation_funds": "Fundo de dotação Make.org",
-    "moderation_charter": "Carta da Moderação",
+    "moderation_charter": "Carta de Moderação",
     "press_details": "Espaço de imprensa",
     "a11y": "Declaração de acessibilidade",
     "cookies": "Gestão de cookies"
@@ -608,7 +608,7 @@
     "personalize": "Personalizar",
     "refuse": "Continuar sem aceitar",
     "back": "Voltar à etapa anterior",
-    "mandatory": "Ainda ativo",
+    "mandatory": "Sempre ativo",
     "save": "Confirmar a minha seleção",
     "technicals": {
       "secure": "make secure: uma vez que tenha entrado no seu espaço do cidadão Make.org, este cookie assegura que esta ligação será mantida enquanto estiver a navegar no serviço.",
@@ -776,7 +776,7 @@
       "qualification": {
         "priority": "Com prioridade",
         "doable": "Realista",
-        "noWay": "Absolutamente não",
+        "noWay": "De modo algum!",
         "nonPriority": "Sem prioridade",
         "exists": "Existente",
         "toBePrecised": "A especificar"
@@ -794,7 +794,7 @@
         "agree_priority": "<span>Concordo</span>, é uma ideia <span>com prioridade</span>.",
         "agree_doable": "<span>Concordo</span>, é uma ideia <span>realista</span>.",
         "disagree": "<span>Não concordo</span>.",
-        "disagree_noWay": "<span>Não concordo</span>, não quero <span>absolutamente</span> retomar esta ideia.",
+        "disagree_noWay": "<span>Não concordo</span>, não quero <span>de modo algum</span> retomar esta ideia.",
         "disagree_nonPriority": "<span>Não concordo</span>, é uma ideia <span>sem prioridade</span>.",
         "other": "Esta proposta <span>já existe</span>  ou <span>tem de ser especificada</span> .",
         "other_exists": "Esta proposta <span>já existe</span> .",
@@ -1180,9 +1180,9 @@
       "main_results_one": "{{count}} resultado para « {{term}} »",
       "main_results_many": "{{count}} resultados para « {{term}} »",
       "main_results_other": "{{count}} resultados para « {{term}} »",
-      "proposals_one": "{{count}} proposta para « {{term}} »",
-      "proposals_many": "{{count}} propostas para « {{term}} »",
-      "proposals_other": "{{count}} propostas para « {{term}} »",
+      "proposals_one": "{{count}} proposta para \"{{term}}\"",
+      "proposals_many": "{{count}} propostas para \"{{term}}\"",
+      "proposals_other": "{{count}} propostas para \"{{term}}\"",
       "operations_one": "{{count}} operação para « {{term}} »",
       "operations_many": "{{count}} operações para « {{term}} »",
       "operations_other": "{{count}} operações para « {{term}} »",
@@ -1252,7 +1252,7 @@
     "adapted_label": "Adaptado",
     "refused_label": "Rejeitado",
     "validated_label": "Validado",
-    "title": "Carta da Moderação",
+    "title": "Carta de Moderação",
     "description": "Que propostas foram rejeitadas durante a moderação no Make.org? Como formular uma proposta corretamente? Cada proposta apresentada à plataforma é moderada à mão pelas equipas de moderação da Make.org, de acordo com os seguintes critérios da carta de moderação¹. A moderação é feita no prazo de 48 horas após o envio da proposta. Será informado por e-mail (desde que tenha validado o seu endereço e-mail aquando do registo) da publicação ou rejeição da sua proposta. Os pequenos erros ortográficos são corrigidos pelos moderadores, mas cabe-lhe a si submeter de novo a sua proposta se esta não puder ser aceite.",
     "refused_examples": "Não são permitidas na plataforma Make.org: ",
     "incomprehensible_solutions": {
@@ -1303,7 +1303,7 @@
       "validated_card_example": "É necessário que os automobilistas respeitem mais o código da estrada."
     },
     "correctly_formulated_solutions": {
-      "title": "Como formular corretamente uma proposta sobre Make.org?"
+      "title": "Como formular corretamente uma proposta em Make.org?"
     },
     "search_function": "Utilize a função de pesquisa para verificar se a sua ideia ainda não se encontra no sítio Internet.",
     "concrete_elements": {
@@ -1328,7 +1328,7 @@
     "disclaimer": "Make.org não é um operador de plataforma online no âmbito da Lei n.º 2018-1202 de 22 de dezembro de 2018 sobre a luta contra a manipulação de informação. Como tal, não estamos sujeitos às obrigações relevantes. A exatidão das informações publicadas no nosso sítio Internet é, no entanto, importante para nós, e detalhamos na presente Carta as medidas que estamos a tomar para o assegurar.",
     "foot_notes": {
       "ethical_charter": "Esta carta de moderação foi elaborada em conformidade com a <a href=\"https://assets.website-files.com/59833d390a24e50001b873d8/5fd245978b3dbedcbcc121a2_VF%20Charte%20Ethique%20Make.org%20et%20Make.org%20Foundation%20valid%C3%A9e.pdf\" target=\"_blank\">Carta Ética (nova janela)</a> que garante a neutralidade, independência e transparência da Make.org.",
-      "code_penal": "A Carta dos Direitos Fundamentais da EU estipula que é proibida “a discriminação em razão, designadamente, do sexo, raça, cor ou origem étnica ou social, características genéticas, língua, religião ou convicções, opiniões políticas ou outras, pertença a uma minoria nacional, riqueza, nascimento, deficiência, idade ou orientação sexual” e que é igualmente proibida “toda a discriminação em razão da nacionalidade”. Artigo 21º, parágrafos 1 e 2"
+      "code_penal": "A Carta dos Direitos Fundamentais da EU estipula que é proibida “a discriminação em razão, designadamente, do sexo, raça, cor ou origem étnica ou social, características genéticas, língua, religião ou convicções, opiniões políticas ou outras, pertença a uma minoria nacional, riqueza, nascimento, deficiência, idade ou orientação sexual” e que é igualmente proibida “toda a discriminação em razão da nacionalidade”. Artigo 21º, parágrafos 1 e 2."
     }
   },
   "cookies_management": {
@@ -1352,7 +1352,7 @@
     "details": {
       "title": "Que cookies utilizamos?",
       "intro": "Os cookies colocados no nosso site são os seguintes:",
-      "mandatory": "Ainda ativo",
+      "mandatory": "Sempre ativo",
       "duration": "Duração: {{duration}}",
       "session": "Sessão",
       "month": "{{count}} mês",
@@ -1361,7 +1361,7 @@
       "year_other": "{{count}} anos",
       "technicals": {
         "name": "Os cookies técnicos:",
-        "description": "Estes cookies são necessários para o funcionamento do sítio Internet e não podem ser desativados. Pode configurar o seu navegador para bloquear ou ser informado sobre a existência destes cookies, mas determinadas partes do nosso sítio Internet podem ser afetadas. Estes cookies não se destinam a identificá-lo(a) pessoalmente.",
+        "description": "estes cookies são necessários para o funcionamento do sítio Internet e não podem ser desativados. Pode configurar o seu navegador para bloquear ou ser informado sobre a existência destes cookies, mas determinadas partes do nosso sítio Internet podem ser afetadas. Estes cookies não se destinam a identificá-lo(a) pessoalmente.",
         "secure": "make-secure: uma vez que tenha entrado no seu espaço cidadão Make.org, este cookie assegura que esta ligação será mantida enquanto estiver a navegar no serviço.",
         "secure-expiration": "make-secure-expiration: este cookie é utilizado para detetar a sua inatividade no serviço de forma a caducar essa ligação.",
         "demographics": "make-demographics: este cookie permite-nos saber se já lhe foi solicitada anteriormente informação demográfica (faixa etária, região, sexo, etc.) sobre este dispositivo, para que não voltemos a pedi-la numa visita futura."
@@ -1390,8 +1390,8 @@
         "facebook_tracking": "pixel Facebook: estes cookies servem para optimizar o desempenho das campanhas de promoção de consultas no Facebook, a fim de aumentar a participação dos cidadãos.",
         "twitter_tracking": "pixel Twitter: estes cookies servem para otimizar o desempenho das campanhas de promoção de consultas no Twitter, a fim de aumentar a participação dos cidadãos.",
         "facebook_sharing": "partilha Facebook: este cookie permite ao utilizador partilhar conteúdos no Facebook e melhorar a usabilidade.",
-        "twitter_sharing": "partilha Twitter: Este cookie permite ao utilizador partilhar conteúdos no Twitter e melhorar a usabilidade.",
-        "linkedin_sharing": "partilha LinkedIn: Este cookie permite ao utilizador partilhar conteúdos no LinjedIn e melhorar a usabilidade."
+        "twitter_sharing": "partilha Twitter: este cookie permite ao utilizador partilhar conteúdos no Twitter e melhorar a usabilidade.",
+        "linkedin_sharing": "partilha LinkedIn: Este cookie permite ao utilizador partilhar conteúdos no LinkedIn e melhorar a usabilidade."
       }
     }
   },

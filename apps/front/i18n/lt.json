@@ -564,7 +564,7 @@
     "submit": "Patvirtinti",
     "privacy_policy_first_part": "Sutinku, kad Make.org tvarkytų šiuos duomenis, kad galėčiau dalyvauti ir būčiau informuotas apie rezultatus pagal ",
     "privacy_policy_link": "taisykles",
-    "privacy_policy_last_part": ". (privaloma)",
+    "privacy_policy_last_part": ". (Privaloma)",
     "privacy_policy": "duomenų apsaugos politika",
     "make_protect": "Make.org įsipareigoja saugoti jūsų",
     "make_protect_link": " asmens duomenis.",
@@ -897,12 +897,12 @@
       "participate_desktop": "Dalyvaukite konsultacijoje",
       "participate_mobile": "Dalyvauti",
       "participate_breadcrumb": "Dalyvauti „{{title}}“",
-      "explore_desktop": "Susipažinti su pasiūlymais",
+      "explore_desktop": "Susipažinkite su pasiūlymais",
       "explore_mobile": "Susipažinti",
       "explore_breadcrumb": "Susipažinti su „{{title}}“"
     },
     "explore": {
-      "title": "Susipažinti su pasiūlymais",
+      "title": "Susipažinkite su pasiūlymais",
       "description": "Naudodamiesi paieškos įrankiais tiesiog peržiūrėkite visus per konsultaciją pateiktus pasiūlymus ir pasirinkite tuos, kurie, jūsų manymu, yra prioritetiniai.",
       "reset_filters": "Filtrų nustatymas iš naujo",
       "reset_filters_and_close": "Iš naujo nustatyti filtrus ir užverti",
@@ -1298,7 +1298,7 @@
     },
     "insults": {
       "title": "Įžeidinėjimai",
-      "description": "Kiekvienas nepagarbus ar įžeidžiantis pasiūlymas per moderavimą bus atmestas",
+      "description": "Kiekvienas nepagarbus ar įžeidžiantis pasiūlymas per moderavimą bus atmestas.",
       "refused_card_example": "Būtina, kad tie kvaili vairuotojai labiau paisytų kelių eismo taisyklių.",
       "validated_card_example": "Būtina, kad vairuotojai labiau paisytų kelių eismo taisyklių."
     },

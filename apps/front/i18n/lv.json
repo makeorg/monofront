@@ -1256,7 +1256,7 @@
     "description": "Kādus priekšlikumus Make.org moderatori ir noraidījuši? Kā pareizi formulēt priekšlikumu? Katru platformā iesniegto priekšlikumu manuāli izskata Make.org moderatoru komandas saskaņā ar šādiem moderēšanas hartas kritērijiem¹. Moderēšana tiek veikta 48 stundu laikā pēc priekšlikuma nosūtīšanas. Par jūsu priekšlikuma publicēšanu vai noraidīšanu jūs informēs pa e-pastu (ja reģistrācijas laikā būs apstiprināta jūsu e-pasta adrese). Nelielas pareizrakstības kļūdas moderatori izlabo, taču jūsu ziņā ir tas, vai iesniegt savu priekšlikumu vēlreiz, ja tas nav ticis pieņemts.",
     "refused_examples": "Make.org platformā nepieņem: ",
     "incomprehensible_solutions": {
-      "title": "nesaprotamus priekšlikumus",
+      "title": "Nesaprotamus priekšlikumus",
       "description": "Jūsu priekšlikuma formulējumam un jēgai jābūt saprotamai visiem. Būtiskas sintakses kļūdas vai muļķības tiks noraidītas, un jums tiks lūgts pārformulēt priekšlikumu.",
       "refused_example_card": "Nepieciešams, lai iedzīvotāji domātu par visu valstu attīstību.",
       "validated_example_card": "Nepieciešams, lai iedzīvotāji domātu par izglītības attīstību katrā valstī."
@@ -1347,7 +1347,7 @@
     },
     "partners": {
       "title": "Kas ir mūsu partneri?",
-      "intro": "Papildus sīkdatnēm, ko izveido un pārvalda Make, mūsu vietnē sīkdatnes ievieto arī šādi partneri:"
+      "intro": "Papildus sīkdatnēm, ko izveido un pārvalda Make.org, mūsu vietnē sīkdatnes ievieto arī šādi partneri:"
     },
     "details": {
       "title": "Kādas sīkdatnes mēs izmantojam?",

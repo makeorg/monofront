@@ -102,7 +102,7 @@
     "header_authentication_nav": "Hozzáférés a felhasználói profilhoz",
     "footer_nav": "Lábléc navigáció",
     "sidebar_area": "Oldalsáv tartalom",
-    "max_characters": "maximális karakter",
+    "max_characters": "karakter (max.)",
     "back": "Vissza",
     "proposal_count_one": "{{count}} javaslat",
     "proposal_count_other": "{{count}} javaslat",
