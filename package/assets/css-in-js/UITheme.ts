@@ -25,12 +25,12 @@ export const UIThemeStylesheet = createGlobalStyle`
     top: 0;
     left: 0;
     z-index: 10;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     padding: ${intToPx(DefaultPadding.Mobile)};
     @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
       padding: ${intToPx(DefaultPadding.Desktop)};
     }
-    &.widget{
+    &.widget {
       position: absolute;
     }
   }

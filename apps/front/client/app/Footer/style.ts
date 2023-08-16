@@ -83,7 +83,7 @@ export const FooterItemHTMLLinkStyle = styled.a`
 export const FooterItemAltLinkStyle = styled(FooterItemLinkStyle)`
   width: max-content;
   color: ${colors.Content.Interface.Dark};
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   .tofill {
     fill: ${colors.Content.Interface.Dark};

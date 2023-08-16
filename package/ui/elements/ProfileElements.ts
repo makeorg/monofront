@@ -7,7 +7,7 @@ import {
   Layouts,
   DefaultPadding,
 } from '@make.org/assets/vars/Breakpoints';
-import { BodyMCondensed } from '@make.org/designsystem/components/Body';
+import { TextMStyle } from '@make.org/designsystem/components/Typography/Text/style';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { BorderRadius } from './CardsElements';
@@ -145,7 +145,7 @@ export const ProfileNavigationStyle = styled(ColumnElementStyle)`
   margin-top: ${spacings.s};
 `;
 
-export const ProfileTitleStyle = styled(BodyMCondensed)`
+export const ProfileTitleStyle = styled(TextMStyle)`
   text-transform: uppercase;
   margin-bottom: ${spacings.s};
   text-align: center;

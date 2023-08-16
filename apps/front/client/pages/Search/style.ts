@@ -4,7 +4,7 @@ import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import { SecondLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
-import { BodyMHighLight } from '@make.org/designsystem/components/Body';
+import { TextMStyle } from '@make.org/designsystem/components/Typography/Text/style';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const SearchPageWrapperStyle = styled.div`
@@ -39,7 +39,7 @@ export const MainResultsSectionStyle = styled.section`
   }
 `;
 
-export const NoResultsStyle = styled(BodyMHighLight)`
+export const NoResultsStyle = styled(TextMStyle)`
   @media (max-width: ${intToPx(Breakpoints.Tablet)}) {
     margin: 0 ${spacings.m};
   }

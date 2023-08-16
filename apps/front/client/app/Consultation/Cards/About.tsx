@@ -4,7 +4,6 @@ import i18n from 'i18next';
 import { useAppContext } from '@make.org/store';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import {
   ParticipateCardStyle,
   ParticipateCardAltTitleStyle,
@@ -17,11 +16,9 @@ import { MobileAboutStyle } from './style';
 const About: FC = () => {
   const { state } = useAppContext();
   const question: QuestionType = selectCurrentQuestion(state);
-  const { device } = state.appConfig;
-  const isMobile = matchMobileDevice(device);
   return (
     <>
-      <ParticipateCardAltTitleStyle as={isMobile ? 'h3' : 'h4'}>
+      <ParticipateCardAltTitleStyle>
         {i18n.t('consultation.cards.about.title')}
       </ParticipateCardAltTitleStyle>
       <ParticipateCardAltDescriptionStyle>

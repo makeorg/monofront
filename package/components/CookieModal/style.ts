@@ -8,8 +8,8 @@ import {
   UnstyledButtonStyle,
 } from '@make.org/ui/elements/ButtonsElements';
 import { SvgCookie } from '@make.org/ui/Svg/elements';
-import { TitleXXS } from '@make.org/designsystem/components/Titles';
-import { BodyMDefault } from '@make.org/designsystem/components/Body';
+import { TitleXXSStyle } from '@make.org/designsystem/components/Typography/Titles/style';
+import { TextMStyle } from '@make.org/designsystem/components/Typography/Text/style';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 
@@ -52,7 +52,9 @@ export const CookieModalButtonWithLinkStyle = styled(UnstyledButtonStyle)`
   }
 `;
 
-export const CookieModalTitleStyle = styled(TitleXXS).attrs({ as: 'h2' })`
+export const CookieModalTitleStyle = styled(TitleXXSStyle).attrs({
+  as: 'h2',
+})`
   text-transform: none;
   letter-spacing: 0.12px;
   margin-bottom: ${spacings.m};
@@ -62,7 +64,7 @@ export const CookieModalTitleStyle = styled(TitleXXS).attrs({ as: 'h2' })`
   }
 `;
 
-export const CookieModalParagraphStyle = styled(BodyMDefault)`
+export const CookieModalParagraphStyle = styled(TextMStyle)`
   padding-bottom: ${spacings.l};
 `;
 
@@ -96,12 +98,14 @@ export const CookieModalBannerWrapperStyle = styled.div`
   }
 `;
 
-export const CookieModalElementStyle = styled(BodyMDefault).attrs({ as: 'li' })`
+export const CookieModalElementStyle = styled(TextMStyle).attrs({
+  as: 'li',
+})`
   display: flex;
   flex-flow: row;
   margin-bottom: ${spacings.s};
   strong {
-    font-family: ${typography.FontFamily.Hightlight};
+    font-family: ${typography.FontFamily.Highlight};
     font-weight: bold;
   }
   &.with-separator {

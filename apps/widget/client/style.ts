@@ -20,7 +20,7 @@ export const WidgetContainerStyle = styled(ColumnElementStyle)<{
 `;
 
 export const ClosedConsultationTitleStyle = styled(SequenceMainTitleStyle)`
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   font-size: ${typography.FontSize.Arrondissement};
   line-height: 1.5;

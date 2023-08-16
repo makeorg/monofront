@@ -3,7 +3,7 @@ import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints, DefaultPadding } from '@make.org/assets/vars/Breakpoints';
 import { shadows } from '@make.org/designsystem/tokens/shadows';
-import { BodyXSHighlight } from '@make.org/designsystem/components/Body';
+import { TextXSStyle } from '@make.org/designsystem/components/Typography/Text/style';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { ParagraphStyle } from './ParagraphElements';
@@ -36,7 +36,7 @@ export const ThumbsUpWrapperStyle = styled.span`
 `;
 
 export const PlaceholderParagraphStyle = styled(ParagraphStyle)`
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   margin: ${intToPx(DefaultPadding.Mobile)} 0 0;
   padding: 0 ${spacings.s};
@@ -54,7 +54,7 @@ export const FavouritesCardStyle = styled.aside`
   margin-top: ${spacings.l};
 `;
 
-export const FavouritesProposalStyle = styled(BodyXSHighlight)`
+export const FavouritesProposalStyle = styled(TextXSStyle)`
   text-align: center;
   margin-top: ${spacings.s};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {

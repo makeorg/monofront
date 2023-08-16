@@ -4,10 +4,11 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
-import { TitleS } from '@make.org/designsystem/components/Titles';
+import { TitleSStyle } from '@make.org/designsystem/components/Typography/Titles/style';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
+import { TitleStyleType } from '@make.org/designsystem/components/Typography/Titles';
 
 export const ResultCardStyle = styled.section`
   display: flex;
@@ -35,7 +36,10 @@ export const ResultCardIconStyle = styled.span<{ focusable: string }>`
   margin-bottom: ${spacings.sm};
 `;
 
-export const ResultCardTitleStyle = styled(TitleS)`
+export const ResultCardTitleStyle = styled(TitleSStyle).attrs({
+  as: 'h4',
+  type: TitleStyleType.highlight,
+})`
   text-transform: none;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${typography.FontSize.IleDeFrance};

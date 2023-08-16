@@ -83,7 +83,7 @@ export const MenuItemStyle = styled.li`
 `;
 
 export const MenuItemTitleStyle = styled.span`
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   padding: 0 ${spacings.l};
 `;
@@ -94,7 +94,7 @@ export const MenuInternalLinkStyle = styled(Link)`
   text-decoration: none;
   padding: 0 ${spacings.l};
   &.current {
-    font-family: ${typography.FontFamily.Hightlight};
+    font-family: ${typography.FontFamily.Highlight};
     font-weight: bold;
   }
 `;
@@ -168,7 +168,7 @@ export const DesktopMenuExternalLinkStyle = styled.a`
 export const MenuItemCountryLanguageLinkStyle = styled(Link)`
   display: inline-flex;
   align-items: center;
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   text-decoration: none;
   font-size: ${typography.FontSize.Arrondissement};

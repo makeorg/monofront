@@ -9,9 +9,9 @@ import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { SvgAngleArrowRight } from '@make.org/ui/Svg/elements';
 import { Link, LinkProps } from 'react-router-dom';
 import {
-  BodyMHighLight,
-  BodyXSCondensed,
-} from '@make.org/designsystem/components/Body';
+  TextMStyle,
+  TextXSStyle,
+} from '@make.org/designsystem/components/Typography/Text/style';
 
 export const SearchResultsConsultationListStyle = styled(UnstyledListStyle)`
   @media (max-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -19,7 +19,7 @@ export const SearchResultsConsultationListStyle = styled(UnstyledListStyle)`
   }
 `;
 
-export const BusinessConsultationsItemWrapperStyle = styled(BodyMHighLight)`
+export const BusinessConsultationsItemWrapperStyle = styled(TextMStyle)`
   display: flex;
   text-decoration: none;
   color: ${colors.Content.Interface.DarkSecondary};
@@ -31,7 +31,7 @@ export const BusinessConsultationStyle = styled.div`
   flex: 1;
 `;
 
-export const BusinessConsultationsItemStatusStyle = styled(BodyXSCondensed)`
+export const BusinessConsultationsItemStatusStyle = styled(TextXSStyle)`
   color: ${colors.Content.Interface.DarkSecondary};
   text-transform: uppercase;
   margin-bottom: ${spacings.xs};
@@ -41,7 +41,7 @@ export const BusinessConsultationsItemStatusStyle = styled(BodyXSCondensed)`
 `;
 
 const BusinessConsultationsLinkStyle = `
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   color: ${colors.Content.Interface.DarkSecondary};
   &:hover,

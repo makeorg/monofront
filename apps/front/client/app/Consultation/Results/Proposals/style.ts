@@ -7,7 +7,7 @@ import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { SvgLightning } from '@make.org/ui/Svg/elements';
 import { AvatarStyle } from '@make.org/ui/components/Avatar/style';
-import { BodyMDefault } from '@make.org/designsystem/components/Body';
+import { TextMStyle } from '@make.org/designsystem/components/Typography/Text/style';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const ResultsProposalsListStyle = styled(UnstyledListStyle)`
@@ -40,7 +40,7 @@ export const ResultsProposalListItemStyle = styled.li`
   }
 `;
 
-export const ResultsProposalAuthorWrapperStyle = styled(BodyMDefault).attrs({
+export const ResultsProposalAuthorWrapperStyle = styled(TextMStyle).attrs({
   as: 'div',
 })`
   display: flex;
@@ -55,7 +55,7 @@ export const ResultsProposalAuthorWrapperStyle = styled(BodyMDefault).attrs({
   }
 `;
 
-export const ResultsProposalContentStyle = styled(BodyMDefault)`
+export const ResultsProposalContentStyle = styled(TextMStyle)`
   letter-spacing: 0.11px;
   text-align: center;
   color: ${colors.Content.Interface.Dark};
@@ -80,7 +80,7 @@ export const ResultsAvatarStyle = styled(AvatarStyle)`
 `;
 
 const ResultsItemStyle = styled.span`
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
 `;
 

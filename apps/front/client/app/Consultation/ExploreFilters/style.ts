@@ -15,7 +15,7 @@ import {
   SvgRightGreyArrow,
 } from '@make.org/ui/Svg/elements';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
-import { TitleXXS } from '@make.org/designsystem/components/Titles';
+import { TitleXXSStyle } from '@make.org/designsystem/components/Typography/Titles/style';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const FiltersWrapperStyle = styled(ColumnElementStyle)`
@@ -35,7 +35,9 @@ export const FilterBlockStyle = styled.div`
   }
 `;
 
-export const FiltersAndSortTitleStyle = styled(TitleXXS)`
+export const FiltersAndSortTitleStyle = styled(TitleXXSStyle).attrs({
+  as: 'h3',
+})`
   display: inline-flex;
   align-items: center;
   text-transform: none;
@@ -66,7 +68,7 @@ export const TransparentButtonFilterStyle = styled.button`
   &.selected {
     background-color: ${colors.Content.Make.Primary};
     color: ${colors.Content.Interface.Light};
-    font-family: ${typography.FontFamily.Hightlight};
+    font-family: ${typography.FontFamily.Highlight};
     font-weight: bold;
   }
   &:hover,
@@ -115,7 +117,7 @@ export const RadioAsTransparentButtonLabelStyle = styled.label`
   &.selected,
   &:hover,
   &:focus {
-    font-family: ${typography.FontFamily.Hightlight};
+    font-family: ${typography.FontFamily.Highlight};
     font-weight: bold;
     color: ${colors.Content.Interface.Dark};
   }

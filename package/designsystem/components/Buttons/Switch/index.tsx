@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { SwitchButtonStyle } from '@make.org/designsystem/components/Buttons';
+import { SwitchButtonStyle } from './style';
 
 type Props = {
   value?: boolean;
-  onEnabling: any;
-  onDisabling: any;
+  onEnabling: () => unknown;
+  onDisabling: () => unknown;
 };
 
 export const SwitchButton: React.FC<Props> = ({

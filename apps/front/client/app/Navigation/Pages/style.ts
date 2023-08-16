@@ -12,7 +12,7 @@ export const PagesItemStyle = styled.li`
 `;
 
 export const PagesLinkStyle = styled(Link)`
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   font-size: ${typography.FontSize.Arrondissement};
   text-decoration: none;

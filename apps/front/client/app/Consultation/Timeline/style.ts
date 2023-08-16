@@ -5,13 +5,14 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
-import { TitleS } from '@make.org/designsystem/components/Titles';
+import { TitleSStyle } from '@make.org/designsystem/components/Typography/Titles/style';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 import {
-  BodyXSCondensed,
-  BodyLHighLight,
-  BodyMDefault,
-} from '@make.org/designsystem/components/Body';
+  TextXSStyle,
+  TextLStyle,
+  TextMStyle,
+} from '@make.org/designsystem/components/Typography/Text/style';
+import { TitleStyleType } from '@make.org/designsystem/components/Typography/Titles';
 
 export const TimelineWrapperStyle = styled(FlexElementStyle)`
   background-color: ${colors.Background.Interface.Lighter};
@@ -36,7 +37,10 @@ export const TimelineListWrapperStyle = styled.ul`
   }
 `;
 
-export const TimelineTitleStyle = styled(TitleS)`
+export const TimelineTitleStyle = styled(TitleSStyle).attrs({
+  as: 'h4',
+  type: TitleStyleType.highlight,
+})`
   text-transform: none;
   margin: 40px 0;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
@@ -52,7 +56,7 @@ export const TimelineItemWrapperStyle = styled.div`
   margin-bottom: 40px;
 `;
 
-export const TimelineItemTitleStyle = styled(BodyXSCondensed)`
+export const TimelineItemTitleStyle = styled(TextXSStyle)`
   color: ${colors.Content.Interface.DarkSecondary};
   display: flex;
   justify-content: center;
@@ -67,7 +71,7 @@ export const TimelineItemMarkerIsCurrent = styled.span`
   margin-left: ${spacings.xs};
 `;
 
-export const TimelineItemDateStyle = styled(BodyLHighLight).attrs({
+export const TimelineItemDateStyle = styled(TextLStyle).attrs({
   as: 'span',
 })`
   color: ${colors.Content.Interface.Dark};
@@ -77,7 +81,7 @@ export const TimelineItemDateStyle = styled(BodyLHighLight).attrs({
   }
 `;
 
-export const TimelineItemTextStyle = styled(BodyMDefault)`
+export const TimelineItemTextStyle = styled(TextMStyle)`
   color: ${colors.Content.Interface.DarkSecondary};
 `;
 

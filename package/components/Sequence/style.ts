@@ -5,8 +5,11 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { GreyLinkStyle } from '@make.org/ui/elements/ButtonsElements';
 import { MiddleColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { Image } from '@make.org/ui/components/Image';
-import { TitleM, TitleXXXS } from '@make.org/designsystem/components/Titles';
-import { BodyMHighLight } from '@make.org/designsystem/components/Body';
+import {
+  TitleMStyle,
+  TitleXXXSStyle,
+} from '@make.org/designsystem/components/Typography/Titles/style';
+import { TextMStyle } from '@make.org/designsystem/components/Typography/Text/style';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 
@@ -34,14 +37,14 @@ export const SequenceContentStyle = styled(MiddleColumnStyle)`
   flex: 1;
 `;
 
-export const SequenceAltTitleStyle = styled(TitleM)`
+export const SequenceAltTitleStyle = styled(TitleMStyle)`
   letter-spacing: 0.5px;
   align-self: flex-start;
   text-transform: none;
   margin-top: ${spacings.l};
 `;
 
-export const SequenceSpecialTitleStyle = styled(BodyMHighLight).attrs({
+export const SequenceSpecialTitleStyle = styled(TextMStyle).attrs({
   as: 'div',
 })`
   display: flex;
@@ -60,7 +63,9 @@ export const SequenceSpecialIconStyle = styled(SvgArrowReturn)`
   }
 `;
 
-export const SequenceTitleStyle = styled(TitleXXXS).attrs({ as: 'h2' })`
+export const SequenceTitleStyle = styled(TitleXXXSStyle).attrs({
+  as: 'h2',
+})`
   letter-spacing: 0.12px;
   align-self: flex-start;
   text-transform: none;

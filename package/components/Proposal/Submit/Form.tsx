@@ -31,7 +31,7 @@ import { matchMobileDevice } from '@make.org/utils/helpers/styled';
 import { LoadingDots } from '@make.org/ui/components/Loading/Dots';
 import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 import { checkIsFeatureActivated } from '@make.org/utils/helpers/featureFlipping';
-import { SwitchButton } from '@make.org/ui/components/Switch';
+import { SwitchButton } from '@make.org/designsystem/components/Buttons/Switch';
 import { ProposalAuthentication } from './Authentication';
 import {
   ProposalFormWrapperStyle,

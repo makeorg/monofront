@@ -20,13 +20,13 @@ import TextareaAutosize from 'react-autosize-textarea/lib';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { AvatarStyle } from '@make.org/ui/components/Avatar/style';
-import { TitleXXS } from '@make.org/designsystem/components/Titles';
+import { TitleXXSStyle } from '@make.org/designsystem/components/Typography/Titles/style';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 import {
-  BodyMDefault,
-  BodyXSDefault,
-} from '@make.org/designsystem/components/Body';
+  TextMStyle,
+  TextXSStyle,
+} from '@make.org/designsystem/components/Typography/Text/style';
 
 export const PanelTriggerStyle = styled(RedButtonStyle)`
   position: fixed;
@@ -82,7 +82,9 @@ export const ProposalStepWrapperColumnStyle = styled.div<{
   flex-direction: column;
 `;
 
-export const ProposalStepTitleStyle = styled(TitleXXS).attrs({ as: 'h2' })`
+export const ProposalStepTitleStyle = styled(TitleXXSStyle).attrs({
+  as: 'h2',
+})`
   text-transform: none;
   &.center {
     text-align: center;
@@ -95,14 +97,16 @@ export const ProposalStepTitleStyle = styled(TitleXXS).attrs({ as: 'h2' })`
   }
 `;
 
-export const ProposalStepMandatoryStyle = styled(BodyXSDefault).attrs({
+export const ProposalStepMandatoryStyle = styled(TextXSStyle).attrs({
   as: 'div',
 })`
   margin-bottom: ${spacings.sm};
   color: ${colors.Content.Interface.DarkSecondary};
 `;
 
-export const ProposalStepLabelStyle = styled(BodyMDefault).attrs({ as: 'div' })`
+export const ProposalStepLabelStyle = styled(TextMStyle).attrs({
+  as: 'div',
+})`
   margin-bottom: ${spacings.xs};
 `;
 
@@ -308,7 +312,9 @@ export const ProposalSuccessWrapperStyle = styled(ColumnElementStyle)`
   max-width: 505px;
 `;
 
-export const ProposalSuccessTitle = styled(TitleXXS).attrs({ as: 'h2' })`
+export const ProposalSuccessTitle = styled(TitleXXSStyle).attrs({
+  as: 'h2',
+})`
   text-transform: none;
   text-align: left;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
@@ -368,7 +374,7 @@ const ProposalSuccessParagraphStyle = styled.p`
   }
 `;
 export const ProposalSuccessSpanStyle = styled.span`
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
 `;
 

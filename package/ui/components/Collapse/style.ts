@@ -20,7 +20,7 @@ export const CollapseWrapperStyle = styled(ColumnElementStyle)`
 `;
 
 export const CollapseTriggerStyle = styled(UnstyledButtonStyle)`
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   display: inline-block;
   justify-content: start;

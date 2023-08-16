@@ -7,7 +7,7 @@ import {
   ColumnElementStyle,
 } from '@make.org/ui/elements/FlexElements';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
-import { TitleL } from '@make.org/designsystem/components/Titles';
+import { TitleLStyle } from '@make.org/designsystem/components/Typography/Titles/style';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 
@@ -35,7 +35,7 @@ export const HomepageSectionStyle = styled(ColumnElementStyle)`
   }
 `;
 
-export const HomepageSectionTitleStyle = styled(TitleL)`
+export const HomepageSectionTitleStyle = styled(TitleLStyle)`
   color: ${colors.Content.Interface.Dark};
   margin-bottom: ${spacings.l};
   text-transform: none;

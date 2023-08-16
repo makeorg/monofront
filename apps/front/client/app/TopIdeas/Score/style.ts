@@ -4,7 +4,7 @@ import { colors } from '@make.org/designsystem/tokens/colors';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { TitleXXS } from '@make.org/designsystem/components/Titles';
+import { TitleXXSStyle } from '@make.org/designsystem/components/Typography/Titles/style';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const ScoringContentStyle = styled.div`
@@ -39,7 +39,9 @@ export const ScoringTextStyle = styled.span`
   }
 `;
 
-export const ScoringPercentageStyle = styled(TitleXXS).attrs({ as: 'span' })`
+export const ScoringPercentageStyle = styled(TitleXXSStyle).attrs({
+  as: 'span',
+})`
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     margin-bottom: ${spacings.xs};
   }

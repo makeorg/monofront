@@ -3,8 +3,8 @@ import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 import { WhiteButtonStyle } from '@make.org/ui/elements/ButtonsElements';
-import { TitleXXS } from '@make.org/designsystem/components/Titles';
-import { BodyMDefault } from '@make.org/designsystem/components/Body';
+import { TitleXXSStyle } from '@make.org/designsystem/components/Typography/Titles/style';
+import { TextMStyle } from '@make.org/designsystem/components/Typography/Text/style';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 
@@ -23,14 +23,16 @@ export const DataPolicyContentStyle = styled.form`
   }
 `;
 
-export const DataPolicyTitleStyle = styled(TitleXXS).attrs({ as: 'h2' })`
+export const DataPolicyTitleStyle = styled(TitleXXSStyle).attrs({
+  as: 'h2',
+})`
   display: flex;
   margin-top: 47px;
   text-transform: none;
   letter-spacing: 0.12px;
 `;
 
-export const DataPolicyParagraphStyle = styled(BodyMDefault)<{
+export const DataPolicyParagraphStyle = styled(TextMStyle)<{
   isRefusal?: boolean;
 }>`
   display: inline-block;

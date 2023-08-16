@@ -1,5 +1,15 @@
 {
   "extends": "../../tsconfig.json",
   "references": [
-  ]  
+    { "path": "../../package/assets" },
+    { "path": "../../package/ui" },
+    { "path": "../../package/utils" },
+  ],
+  "include": [
+    ".",
+    "../../package/assets",
+    "../../package/types",
+    "../../package/ui",
+    "../../package/utils",
+  ]
 }

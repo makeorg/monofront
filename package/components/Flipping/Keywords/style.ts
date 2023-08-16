@@ -29,7 +29,7 @@ export const KeywordItemLinkStyle = styled(Link)`
   align-items: center;
   letter-spacing: 0.14px;
   line-height: 1.5;
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   font-size: ${typography.FontSize.Arrondissement};
   text-decoration: none;

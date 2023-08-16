@@ -97,8 +97,8 @@ export const setPercentAsLabel = (
 
   ctx.beginPath();
   ctx.font = isMobile
-    ? `bold 8px ${typography.FontFamily.Hightlight}`
-    : `bold 15px ${typography.FontFamily.Hightlight}`;
+    ? `bold 8px ${typography.FontFamily.Highlight}`
+    : `bold 15px ${typography.FontFamily.Highlight}`;
   ctx.textAlign = isTextAlignAdjusted || 'center';
   ctx.fillStyle = colors.Content.Interface.Dark;
   ctx.fillText(

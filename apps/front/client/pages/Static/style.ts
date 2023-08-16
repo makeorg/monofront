@@ -19,7 +19,7 @@ import {
   SvgThumbsUp,
 } from '@make.org/ui/Svg/elements';
 import { StartColumnStyle } from '@make.org/ui/elements/FlexElements';
-import { TitleM } from '@make.org/designsystem/components/Titles';
+import { TitleMStyle } from '@make.org/designsystem/components/Typography/Titles/style';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 
@@ -46,7 +46,9 @@ export const FocusBlockWrapperStyle = styled(StartColumnStyle)`
   }
 `;
 
-export const FocusBlockTitleStyle = styled(TitleM).attrs({ as: 'strong' })`
+export const FocusBlockTitleStyle = styled(TitleMStyle).attrs({
+  as: 'strong',
+})`
   margin-bottom: ${spacings.s};
   letter-spacing: 0.5px;
   color: ${colors.Content.Interface.Dark};
@@ -84,7 +86,7 @@ export const StaticThirdLevelTitleStyle = styled(ThirdLevelTitleStyle)`
 
 export const StaticFourthLevelTitleStyle = styled(FourthLevelTitleStyle)`
   display: flex;
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   text-transform: uppercase;
   text-transform: none;
@@ -203,7 +205,7 @@ export const NoCookiesParagraphStyle = styled(ParagraphStyle)`
   &.column {
     display: flex;
     flex-flow: column;
-    font-family: ${typography.FontFamily.Hightlight};
+    font-family: ${typography.FontFamily.Highlight};
     font-weight: bold;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {

@@ -15,7 +15,7 @@ export const ProposalInnerStyle = styled(ColumnElementStyle)`
 const ProposalStyle = `
   width: 100%;
   font-size: ${typography.FontSize.RueDeLappe};
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   align-self: flex-start;
   flex: 1 1 auto;

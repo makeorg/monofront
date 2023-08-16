@@ -6,7 +6,7 @@ import { SvgSmallLogo } from '@make.org/ui/Svg/elements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { BodyXSHighlight } from '@make.org/designsystem/components/Body';
+import { TextXSStyle } from '@make.org/designsystem/components/Typography/Text/style';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const PanelContainer = styled.div`
@@ -78,7 +78,9 @@ export const KindLabelWrapperStyle = styled.div`
   }
 `;
 
-export const KindLabelTextStyle = styled(BodyXSHighlight).attrs({ as: 'span' })`
+export const KindLabelTextStyle = styled(TextXSStyle).attrs({
+  as: 'span',
+})`
   padding: 8px;
   letter-spacing: 0.12px;
 `;

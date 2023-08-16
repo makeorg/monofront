@@ -20,11 +20,11 @@ import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { Image } from '@make.org/ui/components/Image';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
-import { TitleXL, TitleXXS } from '@make.org/designsystem/components/Titles';
 import {
-  BodyMDefault,
-  BodyMCondensed,
-} from '@make.org/designsystem/components/Body';
+  TitleXLStyle,
+  TitleXXSStyle,
+} from '@make.org/designsystem/components/Typography/Titles/style';
+import { TextMStyle } from '@make.org/designsystem/components/Typography/Text/style';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 
@@ -40,7 +40,7 @@ export const BrowseHeaderInnerStyle = styled.div`
   }
 `;
 
-export const BrowseHeaderTitleStyle = styled(TitleXL)`
+export const BrowseHeaderTitleStyle = styled(TitleXLStyle)`
   margin-bottom: ${spacings.m};
   text-transform: none;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -56,7 +56,7 @@ export const ConsultationsTitleWrapperStyle = styled(ColumnElementStyle)`
   margin-bottom: 40px;
 `;
 
-export const ConsultationsSubtitleStyle = styled(BodyMDefault)`
+export const ConsultationsSubtitleStyle = styled(TextMStyle)`
   width: 100%;
   color: ${colors.Content.Interface.DarkSecondary};
 `;
@@ -113,7 +113,7 @@ export const ConsultationElementPictureStyle = styled(Image)`
   max-height: 248px;
 `;
 
-export const ConsultationElementSubtitleStyle = styled(BodyMCondensed).attrs({
+export const ConsultationElementSubtitleStyle = styled(TextMStyle).attrs({
   as: 'span',
 })`
   text-transform: uppercase;
@@ -121,7 +121,9 @@ export const ConsultationElementSubtitleStyle = styled(BodyMCondensed).attrs({
   margin-bottom: ${spacings.xs};
 `;
 
-export const ConsultationElementTitleStyle = styled(TitleXXS)`
+export const ConsultationElementTitleStyle = styled(TitleXXSStyle).attrs({
+  as: 'h3',
+})`
   text-transform: none;
   color: ${colors.Content.Interface.Dark};
   margin-bottom: ${spacings.m};
@@ -175,7 +177,7 @@ export const ConsultationVoteIconStyle = styled(SvgThumbsUp)`
   }
 `;
 
-export const ConsultationElementParagraphStyle = styled(BodyMDefault)`
+export const ConsultationElementParagraphStyle = styled(TextMStyle)`
   color: ${colors.Content.Interface.DarkSecondary};
   margin-bottom: ${spacings.m};
 `;

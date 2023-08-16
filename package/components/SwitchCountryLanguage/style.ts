@@ -5,9 +5,10 @@ import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { TitleS } from '@make.org/designsystem/components/Titles';
-import { BodyMDefault } from '@make.org/designsystem/components/Body';
+import { TitleSStyle } from '@make.org/designsystem/components/Typography/Titles/style';
+import { TextMStyle } from '@make.org/designsystem/components/Typography/Text/style';
 import { shadows } from '@make.org/designsystem/tokens/shadows';
+import { TitleStyleType } from '@make.org/designsystem/components/Typography/Titles';
 
 export const SwitchCountryLanguageContainerStyle = styled.form`
   position: relative;
@@ -19,8 +20,9 @@ export const SwitchCountryLanguageContainerStyle = styled.form`
   }
 `;
 
-export const SwitchCountryLanguageTitleStyle = styled(TitleS).attrs({
+export const SwitchCountryLanguageTitleStyle = styled(TitleSStyle).attrs({
   as: 'h2',
+  type: TitleStyleType.highlight,
 })`
   text-transform: none;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -28,7 +30,7 @@ export const SwitchCountryLanguageTitleStyle = styled(TitleS).attrs({
   }
 `;
 
-export const SwitchCountrySubtitleStyle = styled(BodyMDefault)`
+export const SwitchCountrySubtitleStyle = styled(TextMStyle)`
   text-transform: none;
   color: ${colors.Content.Interface.DarkSecondary};
   margin-top: ${spacings.s};
@@ -70,7 +72,7 @@ export const MultilingualRadioItemWrapperStyle = styled.li`
     border-radius: 8px;
   }
   &:focus {
-    font-family: ${typography.FontFamily.Hightlight};
+    font-family: ${typography.FontFamily.Highlight};
     font-weight: bold;
     color: ${colors.Content.Interface.Dark};
   }
@@ -88,7 +90,7 @@ export const MultilingualRadioAsTransparentButtonLabelStyle = styled.label`
   &.selected,
   &:hover,
   &:focus {
-    font-family: ${typography.FontFamily.Hightlight};
+    font-family: ${typography.FontFamily.Highlight};
     font-weight: bold;
     color: ${colors.Content.Interface.Dark};
   }

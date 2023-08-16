@@ -3,6 +3,7 @@ import { HomeQuestionType } from '@make.org/types';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { orderByEndDate, isInProgress } from '@make.org/utils/helpers/date';
 import i18n from 'i18next';
+import { TextStyleType } from '@make.org/designsystem/components/Typography/Text';
 import { FeaturedListItemStyle } from './style';
 import { FeaturedLink } from './Link';
 import {
@@ -27,7 +28,10 @@ export const FeaturedQuestions: FC<Props> = ({ questions }) => {
       id="featured_questions"
     >
       <HomepagePageInnerStyle>
-        <ConsultationElementSubtitleStyle data-cy-container="featured_questions_subtitle">
+        <ConsultationElementSubtitleStyle
+          className={TextStyleType.condensed}
+          data-cy-container="featured_questions_subtitle"
+        >
           {i18n.t('homepage.featured_questions.label')}
         </ConsultationElementSubtitleStyle>
         <HomepageSectionTitleStyle

@@ -36,7 +36,7 @@ export const DescriptionStyle = styled(ParagraphStyle)`
   color: ${colors.Content.Interface.DarkSecondary};
   > span,
   > a {
-    font-family: ${typography.FontFamily.Hightlight};
+    font-family: ${typography.FontFamily.Highlight};
     font-weight: bold;
     color: ${colors.Content.Interface.Dark};
     text-decoration: underline;

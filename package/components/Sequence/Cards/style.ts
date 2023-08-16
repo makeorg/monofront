@@ -15,7 +15,7 @@ import {
 } from '@make.org/ui/elements/ButtonsElements';
 import { SeparatorStyle } from '@make.org/ui/elements/SeparatorsElements';
 import { SvgPropsType } from '@make.org/types';
-import { BodyMDefault } from '@make.org/designsystem/components/Body';
+import { TextMStyle } from '@make.org/designsystem/components/Typography/Text/style';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 
@@ -60,7 +60,7 @@ export const SequenceIntroButtonStyle = styled(RedButtonStyle)`
 `;
 
 const SequenceTitleStyle = styled.div`
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   text-align: center;
 `;
@@ -100,7 +100,7 @@ export const PushProposalWrapperStyle = styled.div`
   margin: auto;
 `;
 
-export const SequenceIntroParagraphStyle = styled(BodyMDefault).attrs({
+export const SequenceIntroParagraphStyle = styled(TextMStyle).attrs({
   as: 'div',
 })`
   width: 100%;

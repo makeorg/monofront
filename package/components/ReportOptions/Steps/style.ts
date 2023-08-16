@@ -39,7 +39,7 @@ export const ReportTitleStyle = styled.h1`
   display: flex;
   justify-content: flex-start;
   font-size: ${typography.FontSize.Paris};
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   text-transform: none;
   margin-bottom: 35px;
@@ -115,7 +115,7 @@ export const ReportFormAsTransparentButtonLabelStyle = styled.label`
   &.selected,
   &:hover,
   &:focus {
-    font-family: ${typography.FontFamily.Hightlight};
+    font-family: ${typography.FontFamily.Highlight};
     font-weight: bold;
     color: ${colors.Content.Interface.Dark};
   }

@@ -3,11 +3,11 @@ import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
-import { BodyXSHighlight } from '@make.org/designsystem/components/Body';
+import { TextXSStyle } from '@make.org/designsystem/components/Typography/Text/style';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 
-export const QualificationLabelStyle = styled(BodyXSHighlight).attrs({
+export const QualificationLabelStyle = styled(TextXSStyle).attrs({
   as: 'span',
 })`
   color: ${props => props.color};

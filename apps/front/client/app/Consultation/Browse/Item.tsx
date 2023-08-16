@@ -5,6 +5,7 @@ import { DateHelper, isInProgress } from '@make.org/utils/helpers/date';
 import i18n from 'i18next';
 import { formatMillionToText } from '@make.org/utils/helpers/numberFormatter';
 import { DATE } from '@make.org/types/enums';
+import { TextStyleType } from '@make.org/designsystem/components/Typography/Text';
 import { ConsultationParticipateString } from './ParticipateString';
 import {
   ConsultationElementPictureStyle,
@@ -72,7 +73,7 @@ export const ConsultationItem: FC<Props> = ({ question, resultsContext }) => {
         width={555}
       />
       {featured && (
-        <ConsultationElementSubtitleStyle>
+        <ConsultationElementSubtitleStyle className={TextStyleType.condensed}>
           {i18n.t('browse.initiative')}
         </ConsultationElementSubtitleStyle>
       )}

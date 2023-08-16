@@ -15,7 +15,7 @@ export const HistogramWrapperStyle = styled.div`
 export const HistogramTitleStyle = styled(FourthLevelTitleStyle)`
   width: 100%;
   text-align: center;
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   color: ${colors.Content.Interface.Dark};
   text-transform: none;

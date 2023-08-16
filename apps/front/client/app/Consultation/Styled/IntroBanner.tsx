@@ -7,7 +7,7 @@ import {
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { MiddleColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { SecondLevelTitleStyle } from '@make.org/ui/elements/TitleElements';
-import { BodyXSCondensed } from '@make.org/designsystem/components/Body';
+import { TextXSStyle } from '@make.org/designsystem/components/Typography/Text/style';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
@@ -19,7 +19,7 @@ export const IntroWrapperStyle = styled(MiddleColumnStyle)`
   }
 `;
 
-export const GreatCauseIntroLabelStyle = styled(BodyXSCondensed).attrs({
+export const GreatCauseIntroLabelStyle = styled(TextXSStyle).attrs({
   as: 'span',
 })`
   background-color: ${colors.Background.Interface.DarkMain};

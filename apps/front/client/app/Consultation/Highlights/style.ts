@@ -8,9 +8,10 @@ import {
 } from '@make.org/ui/elements/FlexElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
-import { TitleS } from '@make.org/designsystem/components/Titles';
+import { TitleSStyle } from '@make.org/designsystem/components/Typography/Titles/style';
 import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
+import { TitleStyleType } from '@make.org/designsystem/components/Typography/Titles';
 
 export const HigthlightsWrapperStyle = styled.section`
   width: 100%;
@@ -70,7 +71,10 @@ export const HigthlightsTitleStyle = styled.span`
   letter-spacing: 0.14px;
 `;
 
-export const FiguresValueStyle = styled(TitleS).attrs({ as: 'span' })`
+export const FiguresValueStyle = styled(TitleSStyle).attrs({
+  as: 'span',
+  type: TitleStyleType.highlight,
+})`
   display: block;
   letter-spacing: 0.5px;
   margin-bottom: ${spacings.m};
@@ -125,7 +129,7 @@ export const VotesTargetStyle = styled.span`
   letter-spacing: 0.3px;
   color: ${colors.Content.Interface.DarkSecondary};
   span {
-    font-family: ${typography.FontFamily.Hightlight};
+    font-family: ${typography.FontFamily.Highlight};
     font-weight: bold;
     font-size: ${typography.FontSize.IleDeFrance};
     color: ${colors.Content.Interface.Dark};

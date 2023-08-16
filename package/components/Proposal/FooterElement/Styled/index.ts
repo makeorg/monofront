@@ -22,7 +22,7 @@ export const ProposalFooterTagListStyle = styled(UnstyledListStyle)`
 export const ProposalFooterTagListItemStyle = styled(ParagraphStyle)`
   display: inline-flex;
   margin-right: ${spacings.m};
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   span::first-letter {
     text-transform: uppercase;

@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import i18n from 'i18next';
 import { isBrowseConsultationsPage } from '@make.org/utils/routes';
 import { useLocation } from 'react-router';
+import { TextStyleType } from '@make.org/designsystem/components/Typography/Text';
 import { HomepageSectionTitleStyle } from '../../../pages/Home/style';
 import {
   ConsultationsTitleWrapperStyle,
@@ -40,7 +41,7 @@ export const BrowseConsultationsTitles: FC<Props> = ({
 
   return (
     <ConsultationsTitleWrapperStyle>
-      <ConsultationElementSubtitleStyle>
+      <ConsultationElementSubtitleStyle className={TextStyleType.condensed}>
         {consultationsPage
           ? i18n.t('browse.consultations.label')
           : i18n.t('browse.results.label')}

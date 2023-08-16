@@ -41,7 +41,7 @@ export const CommitmentPreviewOpinionsIconWrapperStyle = styled.div<{
 `;
 
 export const CommitmentPreviewOpinionsParagraphStyle = styled(ParagraphStyle)`
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   color: ${colors.Content.Interface.Dark};
   span {

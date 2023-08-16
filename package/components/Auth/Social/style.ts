@@ -4,7 +4,7 @@ import { SvgMailPlain } from '@make.org/ui/Svg/elements';
 import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { BodySHighLight } from '@make.org/designsystem/components/Body';
+import { TextSStyle } from '@make.org/designsystem/components/Typography/Text/style';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { SocialNetworksColors } from '../../Sharing/Styled';
 
@@ -51,7 +51,7 @@ const SocialButtonStyle = styled.button`
   opacity: ${props => (props.disabled ? 0.5 : 1)};
 `;
 
-export const SocialButtonLabelStyle = styled(BodySHighLight).attrs({
+export const SocialButtonLabelStyle = styled(TextSStyle).attrs({
   as: 'span',
 })`
   color: ${colors.Content.Interface.Dark};

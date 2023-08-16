@@ -5,13 +5,11 @@ import { Layouts, Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 import { Link } from 'react-router-dom';
 import { SvgExternalLink } from '@make.org/ui/Svg/elements';
-import {
-  BodyMCondensed,
-  BodyMHighLight,
-} from '@make.org/designsystem/components/Body';
-import { TitleL } from '@make.org/designsystem/components/Titles';
+import { TextMStyle } from '@make.org/designsystem/components/Typography/Text/style';
+import { TitleLStyle } from '@make.org/designsystem/components/Typography/Titles/style';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
+import { TextStyleType } from '@make.org/designsystem/components/Typography/Text';
 
 export const HeaderWrapperStyle = styled(FlexElementStyle)`
   background-color: ${props => props.theme.color};
@@ -35,7 +33,10 @@ export const HeaderWrapperLabelStyle = styled(FlexElementStyle)`
   flex-direction: row;
 `;
 
-export const HeaderLabelStyle = styled(BodyMCondensed).attrs({ as: 'span' })`
+export const HeaderLabelStyle = styled(TextMStyle).attrs({
+  as: 'span',
+  type: TextStyleType.condensed,
+})`
   display: flex;
   align-items: center;
   text-transform: uppercase;
@@ -61,7 +62,7 @@ export const HeaderLabelStyle = styled(BodyMCondensed).attrs({ as: 'span' })`
   }
 `;
 
-export const HeaderTitleStyle = styled(TitleL)`
+export const HeaderTitleStyle = styled(TitleLStyle)`
   text-transform: none;
   color: ${props =>
     props.theme.fontColor
@@ -90,8 +91,9 @@ export const HeaderListWrapperStyle = styled.div`
   }
 `;
 
-export const HeaderListLabelStyle = styled(BodyMHighLight).attrs({
+export const HeaderListLabelStyle = styled(TextMStyle).attrs({
   as: 'span',
+  type: TextStyleType.highlight,
 })`
   color: ${props =>
     props.theme.fontColor

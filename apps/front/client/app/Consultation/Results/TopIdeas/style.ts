@@ -6,7 +6,7 @@ import { ParagraphStyle } from '@make.org/ui/elements/ParagraphElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
-import { BodyMHighLight } from '@make.org/designsystem/components/Body';
+import { TextMStyle } from '@make.org/designsystem/components/Typography/Text/style';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 
@@ -33,14 +33,14 @@ export const ThemeResultsDetailsStyle = styled(ParagraphStyle)`
 `;
 
 export const ThemeAgreeResultsStyle = styled(ParagraphStyle)`
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   color: ${props => props.color};
 `;
 
 export const ThemeQualifiedStyle = styled.span`
   display: inline-flex;
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   color: ${colors.Content.Interface.Dark};
   margin: 0 ${spacings.sm} 0 ${spacings.xs};
@@ -57,7 +57,7 @@ export const TopIdeaListItemStyle = styled.li`
   border: solid 1px ${colors.Border.Interface.DarkMain};
 `;
 
-export const TopIdeaItemTitleStyle = styled(BodyMHighLight)`
+export const TopIdeaItemTitleStyle = styled(TextMStyle)`
   margin-bottom: ${spacings.l};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     margin-bottom: ${spacings.sm};

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { SwitchButton } from '@make.org/ui/components/Switch';
 import Cookies from 'universal-cookie';
 import { COOKIE } from '@make.org/types/enums';
 import {
@@ -10,6 +9,7 @@ import { setCookiesPreferencesInApp } from '@make.org/store/actions/user/cookies
 import { StateUserCookiesPreferences } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
 import { env } from '@make.org/assets/env';
+import { SwitchButton } from '@make.org/designsystem/components/Buttons/Switch';
 import {
   CookieModalCookieDetailParagraphStyle,
   CookieModalElementSwitchWrapperStyle,

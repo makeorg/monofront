@@ -9,9 +9,13 @@ import {
 } from '@make.org/assets/vars/Breakpoints';
 import { shadows } from '@make.org/designsystem/tokens/shadows';
 import { Link } from 'react-router-dom';
-import { TitleS, TitleXXS } from '@make.org/designsystem/components/Titles';
+import {
+  TitleSStyle,
+  TitleXXSStyle,
+} from '@make.org/designsystem/components/Typography/Titles/style';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
+import { TitleStyleType } from '@make.org/designsystem/components/Typography/Titles';
 import { FlexElementStyle } from './FlexElements';
 import { ParagraphStyle } from './ParagraphElements';
 import { SvgExternalLink, SvgLock } from '../Svg/elements';
@@ -42,7 +46,10 @@ export const TallCardStyle = styled(CardStyle)`
   }
 `;
 
-export const ParticipateCardTitleStyle = styled(TitleS).attrs({ as: 'h4' })`
+export const ParticipateCardTitleStyle = styled(TitleSStyle).attrs({
+  as: 'h4',
+  type: TitleStyleType.highlight,
+})`
   text-transform: none;
   margin: ${spacings.sm} 0 ${spacings.s};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
@@ -51,7 +58,9 @@ export const ParticipateCardTitleStyle = styled(TitleS).attrs({ as: 'h4' })`
   }
 `;
 
-export const ParticipateCardAltTitleStyle = styled(TitleXXS)`
+export const ParticipateCardAltTitleStyle = styled(TitleXXSStyle).attrs({
+  as: 'h3',
+})`
   text-transform: none;
   margin-bottom: ${spacings.s};
 `;

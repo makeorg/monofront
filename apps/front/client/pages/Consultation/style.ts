@@ -10,10 +10,14 @@ import {
 import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
 import { SvgFiltersMobileIcon } from '@make.org/ui/Svg/elements';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
-import { TitleL, TitleS } from '@make.org/designsystem/components/Titles';
-import { BodyMDefault } from '@make.org/designsystem/components/Body';
+import {
+  TitleLStyle,
+  TitleSStyle,
+} from '@make.org/designsystem/components/Typography/Titles/style';
+import { TextMStyle } from '@make.org/designsystem/components/Typography/Text/style';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
+import { TitleStyleType } from '@make.org/designsystem/components/Typography/Titles';
 
 export const ConsultationHeaderWrapperStyle = styled.div<{
   backgroundcolor: string;
@@ -107,7 +111,9 @@ export const ParticipateContentStyle = styled.section`
   ${ContainerWithPadding};
 `;
 
-export const ParticipateTitleStyle = styled(TitleL).attrs({ as: 'h3' })`
+export const ParticipateTitleStyle = styled(TitleLStyle).attrs({
+  as: 'h3',
+})`
   text-transform: none;
   margin: 40px 0 ${spacings.sm};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -123,7 +129,10 @@ export const ResultsTitleStyle = styled(ParticipateTitleStyle)`
   }
 `;
 
-export const ExploreTitleStyle = styled(TitleS).attrs({ as: 'h3' })`
+export const ExploreTitleStyle = styled(TitleSStyle).attrs({
+  as: 'h3',
+  type: TitleStyleType.highlight,
+})`
   text-transform: none;
   letter-spacing: 0.5px;
   margin: 40px 0px ${spacings.m};
@@ -134,7 +143,7 @@ export const ExploreTitleStyle = styled(TitleS).attrs({ as: 'h3' })`
   }
 `;
 
-export const ExploreSubTitleWrapperStyle = styled(BodyMDefault).attrs({
+export const ExploreSubTitleWrapperStyle = styled(TextMStyle).attrs({
   as: 'div',
 })`
   letter-spacing: 0.14px;
@@ -154,7 +163,7 @@ export const ExploreProposalsCountStyle = styled.span`
   color: ${colors.Content.Interface.Dark};
   letter-spacing: 0.12px;
   > strong {
-    font-family: ${typography.FontFamily.Hightlight};
+    font-family: ${typography.FontFamily.Highlight};
     font-weight: bold;
   }
 `;

@@ -21,7 +21,7 @@ export const TopIdeaCardHeaderStyle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   background-color: ${colors.Background.Interface.DarkMain};
 `;
@@ -46,7 +46,7 @@ export const TopIdeaLinkStyle = styled(Link)`
 export const TopIdeaContentStyle = styled(Link)`
   width: 100%;
   font-size: ${typography.FontSize.Arrondissement};
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   align-self: flex-start;
   flex: 1 1 auto;

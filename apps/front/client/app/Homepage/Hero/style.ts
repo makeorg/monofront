@@ -18,8 +18,8 @@ import {
 } from '@make.org/ui/elements/ButtonsElements';
 import { Image } from '@make.org/ui/components/Image';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
-import { TitleXL } from '@make.org/designsystem/components/Titles';
-import { BodyMDefault } from '@make.org/designsystem/components/Body';
+import { TitleXLStyle } from '@make.org/designsystem/components/Typography/Titles/style';
+import { TextMStyle } from '@make.org/designsystem/components/Typography/Text/style';
 
 export const HeroWrapperStyle = styled(FlexElementStyle)`
   background-color: ${colors.Background.Interface.DarkSecondary};
@@ -52,7 +52,7 @@ export const ColumnToRowToColumnStyle = styled(ColumnToRowElementStyle)`
   }
 `;
 
-export const HeroTitleStyle = styled(TitleXL)`
+export const HeroTitleStyle = styled(TitleXLStyle)`
   color: ${colors.Content.Interface.Dark};
   margin-bottom: ${spacings.l};
   text-transform: none;
@@ -64,7 +64,7 @@ export const HeroTitleStyle = styled(TitleXL)`
   }
 `;
 
-export const HeroDescriptionStyle = styled(BodyMDefault)`
+export const HeroDescriptionStyle = styled(TextMStyle)`
   display: flex;
   color: ${colors.Content.Interface.DarkSecondary};
   margin-bottom: 40px;

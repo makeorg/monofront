@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { getHomeLink } from '@make.org/utils/helpers/url';
 import i18n from 'i18next';
+import { TextStyleType } from '@make.org/designsystem/components/Typography/Text';
 import {
   HomepagePageInnerStyle,
   HomepageSectionStyle,
@@ -16,7 +17,10 @@ export const InternationalPlaceholder: FC = () => (
     id="international_placeholder"
   >
     <HomepagePageInnerStyle>
-      <ConsultationElementSubtitleStyle data-cy-container="international_placeholder_subtitle">
+      <ConsultationElementSubtitleStyle
+        className={TextStyleType.condensed}
+        data-cy-container="international_placeholder_subtitle"
+      >
         {i18n.t('homepage.international.subtitle')}
       </ConsultationElementSubtitleStyle>
       <HomepageSectionTitleStyle

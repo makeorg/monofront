@@ -71,7 +71,7 @@ export const DefaultStylesheet = createGlobalStyle`
   }
 
   label {
-    font-family: ${typography.FontFamily.Hightlight};
+    font-family: ${typography.FontFamily.Highlight};
     font-weight: bold;
     color: ${colors.Content.Interface.Dark};
   }
@@ -79,7 +79,7 @@ export const DefaultStylesheet = createGlobalStyle`
   a,
   label,
   button {
-    cursor: pointer
+    cursor: pointer;
   }
 
   button:disabled {
@@ -108,7 +108,7 @@ export const DefaultStylesheet = createGlobalStyle`
     }
 
     100% {
-      opacity: 0
+      opacity: 0;
     }
   }
 
@@ -118,10 +118,9 @@ export const DefaultStylesheet = createGlobalStyle`
     }
 
     100% {
-      opacity: 1
+      opacity: 1;
     }
   }
-
 
   .${NAVIGATION.NAVIGATION_ELEMENT_ARIA_CLASS}[aria-hidden="true"],
   .${NAVIGATION.NAVIGATION_ARIA_CLASS}[aria-hidden="true"] a,
@@ -138,6 +137,6 @@ export const DefaultStylesheet = createGlobalStyle`
     display: flex;
     flex-flow: column;
     width: 100%;
-    height: 100%; 
+    height: 100%;
   }
 `;

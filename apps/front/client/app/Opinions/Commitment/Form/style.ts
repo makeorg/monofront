@@ -16,7 +16,7 @@ export const OpinionFormStyle = styled.form`
 `;
 
 export const OpinionFormTitleStyle = styled(ParagraphStyle)`
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   margin-bottom: ${spacings.m};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {

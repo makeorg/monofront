@@ -213,7 +213,7 @@ export const QualifyButtonStyle = styled.button.attrs(props => ({
   type: 'button',
   ...props,
 }))`
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   display: flex;
   justify-content: center;

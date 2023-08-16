@@ -54,7 +54,7 @@ const VoteDataItemStyle = styled.span`
 
 export const VoteDataBoldItemStyle = styled(VoteDataItemStyle)`
   font-size: ${typography.FontSize.Arrondissement};
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
 `;
 
@@ -73,7 +73,7 @@ export const VoteProgressContainerStyle = styled(CenterColumnStyle)`
 `;
 
 export const VoteCounterStyle = styled(ParagraphStyle)`
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
 `;
 

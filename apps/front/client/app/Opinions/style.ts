@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { BodyXSHighlight } from '@make.org/designsystem/components/Body';
+import { TextXSStyle } from '@make.org/designsystem/components/Typography/Text/style';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 
-export const DisclaimerSubtitleStyle = styled(BodyXSHighlight).attrs({
+export const DisclaimerSubtitleStyle = styled(TextXSStyle).attrs({
   as: 'h4',
 })`
   color: ${colors.Content.Interface.Dark};

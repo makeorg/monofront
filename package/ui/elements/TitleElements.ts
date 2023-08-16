@@ -3,9 +3,13 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
-import { TitleS } from '@make.org/designsystem/components/Titles';
+import { TitleSStyle } from '@make.org/designsystem/components/Typography/Titles/style';
+import { TitleStyleType } from '@make.org/designsystem/components/Typography/Titles';
 
-export const ThirdLevelTitleCircularStyle = styled(TitleS).attrs({ as: 'h3' })`
+export const ThirdLevelTitleCircularStyle = styled(TitleSStyle).attrs({
+  as: 'h3',
+  type: TitleStyleType.highlight,
+})`
   text-transform: none;
 `;
 

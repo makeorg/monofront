@@ -4,7 +4,7 @@ import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { shadows } from '@make.org/designsystem/tokens/shadows';
-import { BodyXSDefault } from '@make.org/designsystem/components/Body';
+import { TextXSStyle } from '@make.org/designsystem/components/Typography/Text/style';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { BorderRadius } from './CardsElements';
@@ -52,7 +52,7 @@ export const CheckboxLabelStyle = styled.label<{
     color: ${colors.Content.Interface.DarkSecondary};
   }
   strong {
-    font-family: ${typography.FontFamily.Hightlight};
+    font-family: ${typography.FontFamily.Highlight};
     font-weight: bold;
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
@@ -165,12 +165,12 @@ export const FormCenterAlignStyle = styled.form`
   align-items: center;
 `;
 
-export const FormRequirementsStyle = styled(BodyXSDefault)`
+export const FormRequirementsStyle = styled(TextXSStyle)`
   margin-bottom: ${spacings.m};
   color: ${colors.Content.Interface.DarkSecondary};
 `;
 
-export const FormRequirementsLeftStyle = styled(BodyXSDefault)`
+export const FormRequirementsLeftStyle = styled(TextXSStyle)`
   margin-bottom: ${spacings.m};
   color: ${colors.Content.Interface.DarkSecondary};
   align-self: flex-start;
@@ -257,7 +257,7 @@ export const FormErrorsContainerStyle = styled.div`
 `;
 
 export const FormErrorsIntroStyle = styled.p`
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   margin: 0 0 ${spacings.s};
 `;
@@ -266,7 +266,7 @@ export const FormErrorsListItemStyle = styled.li`
   margin: 0 0 ${spacings.xs};
   label {
     color: ${colors.Content.Interface.Light};
-    font-family: ${typography.FontFamily.Hightlight};
+    font-family: ${typography.FontFamily.Highlight};
     font-weight: bold;
     text-decoration: underline;
   }
@@ -280,7 +280,7 @@ export const FormErrorsListItemStyle = styled.li`
 
 export const CustomErrorTriggerStyle = styled(UnstyledButtonStyle)`
   display: inline-flex;
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   text-decoration: underline;
   margin-left: ${spacings.xs};
@@ -350,7 +350,7 @@ export const BasicTextAreaStyle = styled(TextareaAutosize)`
   border: none;
   background: transparent;
   background-color: transparent;
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   color: ${colors.Content.Interface.DarkSecondary};
   font-size: ${typography.FontSize.Arrondissement};
@@ -358,7 +358,9 @@ export const BasicTextAreaStyle = styled(TextareaAutosize)`
   resize: none;
 `;
 
-export const TextAreaCounterStyle = styled(BodyXSDefault).attrs({ as: 'div' })`
+export const TextAreaCounterStyle = styled(TextXSStyle).attrs({
+  as: 'div',
+})`
   color: ${colors.Content.Interface.DarkSecondary};
   position: absolute;
   right: ${spacings.xs};

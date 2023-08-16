@@ -3,7 +3,7 @@ export const typography = {
     Default: "'Circular Standard Book', Arial, sans-serif",
     Condensed: "'Trade Gothic LT Pro Bold Condensed', Arial, sans-serif",
     Display: "'New York Large Bold', Arial, sans-serif", // Not used atm, will need to add woff files if it becomes
-    Hightlight: "'Circular Standard Bold', Arial, sans-serif",
+    Highlight: "'Circular Standard Bold', Arial, sans-serif",
     Italic: "'Playfair Display Regular Italic', Arial, sans-serif",
   },
   FontSize: {

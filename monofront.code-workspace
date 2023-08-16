@@ -59,7 +59,8 @@
 		"search.exclude": {
 			"**/dist": true,
 			"**/node_modules": true,
-			"**/cypress/coverage": true
+			"**/cypress/coverage": true,
+			"**/.yarn": true
 		},
 	}
   }

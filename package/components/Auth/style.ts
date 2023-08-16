@@ -15,11 +15,11 @@ import {
 } from '@make.org/ui/elements/FlexElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
-import { TitleXXS } from '@make.org/designsystem/components/Titles';
+import { TitleXXSStyle } from '@make.org/designsystem/components/Typography/Titles/style';
 import {
-  BodyXSDefault,
-  BodySDefault,
-} from '@make.org/designsystem/components/Body';
+  TextXSStyle,
+  TextSStyle,
+} from '@make.org/designsystem/components/Typography/Text/style';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 
@@ -133,7 +133,9 @@ export const NewWindowIconStyle = styled(SvgExternalLink)`
   }
 `;
 
-export const RegisterEmailTitleStyle = styled(TitleXXS).attrs({ as: 'h1' })`
+export const RegisterEmailTitleStyle = styled(TitleXXSStyle).attrs({
+  as: 'h2',
+})`
   text-transform: none;
   margin-bottom: ${spacings.xs};
 `;
@@ -141,7 +143,7 @@ export const RegisterEmailTitleStyle = styled(TitleXXS).attrs({ as: 'h1' })`
 export const LoginTitleWrapperStyle = styled(ThirdLevelTitleStyle)`
   margin-bottom: ${spacings.xs};
   text-transform: none;
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   font-size: ${typography.FontSize.Paris};
   line-height: 1.5;
@@ -160,7 +162,9 @@ export const LoginTitleWrapperCenterStyle = styled(LoginTitleWrapperStyle)`
   }
 `;
 
-export const PostCodeWrapperStyle = styled(BodyXSDefault).attrs({ as: 'span' })`
+export const PostCodeWrapperStyle = styled(TextXSStyle).attrs({
+  as: 'span',
+})`
   color: ${colors.Content.Interface.DarkSecondary};
   margin-bottom: ${spacings.l};
   margin-top: -${spacings.s};
@@ -232,7 +236,7 @@ export const RegisterPanelSuccessParagraphContainerStyle = styled.div`
   gap: ${spacings.l};
 `;
 
-export const RegisterPanelSuccessParagraphStyle = styled(BodySDefault)`
+export const RegisterPanelSuccessParagraphStyle = styled(TextSStyle)`
   color: ${colors.Content.Interface.Dark};
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${typography.FontSize.Arrondissement};

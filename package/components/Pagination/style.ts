@@ -6,7 +6,7 @@ import {
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { Link } from 'react-router-dom';
-import { BodyMDefault } from '@make.org/designsystem/components/Body';
+import { TextMStyle } from '@make.org/designsystem/components/Typography/Text/style';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { shadows } from '@make.org/designsystem/tokens/shadows';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
@@ -26,7 +26,9 @@ export const PaginationNavStyle = styled.nav`
   }
 `;
 
-export const PaginationTextStyle = styled(BodyMDefault).attrs({ as: 'div' })`
+export const PaginationTextStyle = styled(TextMStyle).attrs({
+  as: 'div',
+})`
   display: flex;
   align-items: center;
   gap: ${spacings.s};

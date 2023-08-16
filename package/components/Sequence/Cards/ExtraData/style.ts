@@ -20,7 +20,7 @@ export const ExtraDataFormStyle = styled(CenterColumnStyle)`
 `;
 
 export const ExtraDataTitleStyle = styled(SequenceIntroParagraphStyle)`
-  font-family: ${typography.FontFamily.Hightlight};
+  font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
   font-size: ${typography.FontSize.Arrondissement};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {

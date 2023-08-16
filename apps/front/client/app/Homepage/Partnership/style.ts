@@ -6,11 +6,8 @@ import styled from 'styled-components';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { LinkAsRedButton } from '@make.org/ui/elements/LinkElements';
-import { TitleL } from '@make.org/designsystem/components/Titles';
-import {
-  BodyMCondensed,
-  BodyMDefault,
-} from '@make.org/designsystem/components/Body';
+import { TitleLStyle } from '@make.org/designsystem/components/Typography/Titles/style';
+import { TextMStyle } from '@make.org/designsystem/components/Typography/Text/style';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 
 export const PartnershipSectionStyle = styled(ColumnElementStyle)`
@@ -28,7 +25,7 @@ export const PartnershipInnerStyle = styled.div`
   }
 `;
 
-export const PartnershipSubtitleStyle = styled(BodyMCondensed).attrs({
+export const PartnershipSubtitleStyle = styled(TextMStyle).attrs({
   as: 'span',
 })`
   text-transform: uppercase;
@@ -37,7 +34,7 @@ export const PartnershipSubtitleStyle = styled(BodyMCondensed).attrs({
   margin-bottom: ${spacings.xs};
 `;
 
-export const PartnershipTitleStyle = styled(TitleL)`
+export const PartnershipTitleStyle = styled(TitleLStyle)`
   letter-spacing: 0.5px;
   color: ${colors.Content.Interface.Light};
   margin-bottom: ${spacings.sm};
@@ -48,7 +45,7 @@ export const PartnershipTitleStyle = styled(TitleL)`
   }
 `;
 
-export const PartnershipParagraphStyle = styled(BodyMDefault)`
+export const PartnershipParagraphStyle = styled(TextMStyle)`
   letter-spacing: 0.12px;
   color: ${colors.Content.Interface.Light};
   margin-bottom: ${spacings.l};

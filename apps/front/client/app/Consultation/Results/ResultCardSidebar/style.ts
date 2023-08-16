@@ -4,8 +4,8 @@ import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
-import { TitleXXS } from '@make.org/designsystem/components/Titles';
-import { BodyMDefault } from '@make.org/designsystem/components/Body';
+import { TitleXXSStyle } from '@make.org/designsystem/components/Typography/Titles/style';
+import { TextMStyle } from '@make.org/designsystem/components/Typography/Text/style';
 
 export const ResultCardSidebarStyle = styled.section<{ isContext: boolean }>`
   display: flex;
@@ -21,12 +21,14 @@ export const ResultCardSidebarStyle = styled.section<{ isContext: boolean }>`
   }
 `;
 
-export const ResultCardSidebarTitleStyle = styled(TitleXXS).attrs({ as: 'h4' })`
+export const ResultCardSidebarTitleStyle = styled(TitleXXSStyle).attrs({
+  as: 'h4',
+})`
   text-transform: none;
   letter-spacing: 0.12px;
 `;
 
-export const ResultCardSidebarParagraphStyle = styled(BodyMDefault)`
+export const ResultCardSidebarParagraphStyle = styled(TextMStyle)`
   letter-spacing: 0.14px;
   color: ${colors.Content.Interface.DarkSecondary};
   padding-top: ${spacings.s};

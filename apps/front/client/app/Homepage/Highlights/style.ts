@@ -13,8 +13,9 @@ import {
 } from '@make.org/utils/helpers/styled';
 import { SvgPeople, SvgLight, SvgHandHeart } from '@make.org/ui/Svg/elements';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
-import { TitleS } from '@make.org/designsystem/components/Titles';
-import { BodyMDefault } from '@make.org/designsystem/components/Body';
+import { TitleSStyle } from '@make.org/designsystem/components/Typography/Titles/style';
+import { TextMStyle } from '@make.org/designsystem/components/Typography/Text/style';
+import { TitleStyleType } from '@make.org/designsystem/components/Typography/Titles';
 
 export const HighlightsBannerFiguresContainerStyle = styled(
   SpaceBetweenRowStyle
@@ -60,14 +61,19 @@ export const HeartIconStyle = styled(SvgHandHeart)`
   ${IconStyle}
 `;
 
-export const FiguresStyle = styled(TitleS).attrs({ as: 'span' })`
+export const FiguresStyle = styled(TitleSStyle).attrs({
+  as: 'span',
+  type: TitleStyleType.highlight,
+})`
   color: ${colors.Content.Interface.Dark};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${typography.FontSize.IleDeFrance};
   }
 `;
 
-export const SubtitleFiguresStyle = styled(BodyMDefault).attrs({ as: 'span' })`
+export const SubtitleFiguresStyle = styled(TextMStyle).attrs({
+  as: 'span',
+})`
   color: ${colors.Content.Interface.DarkSecondary};
   padding-bottom: ${spacings.l};
 `;
