@@ -82,7 +82,7 @@ describe('getQuestionFromState', () => {
     topProposalCount: 0,
     startDate: '',
     endDate: '',
-    hasDemographics: false,
+    demographicsCardCount: 0,
   };
 
   const state = {

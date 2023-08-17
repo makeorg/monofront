@@ -403,8 +403,8 @@ const partners = generatePartners(5);
 const popularTags = generatePopularTags(4);
 const tags = generateTags(4);
 
-const generateBindingDemographics = () => {
-  return range(0, 3).map(number => ({
+const generateBindingDemographics = () =>
+  range(0, 3).map(number => ({
     ...defaultDemographics,
     id: `question-${number}-id`,
     name: `test tech-${number}`,
@@ -423,7 +423,6 @@ const generateBindingDemographics = () => {
     token:
       '52gY7b8ICzBO8bgCu1Fa97MWMWCqE9sIzI7dCUPoE/4E8+zCnhd1+EdMZ9JBb1Ka4owMZKkpFRG5yB5QEUygU/rKHdLuY0kQ/4csOQ3b3kAk5xHKuF4NnPMJ/ylgD1U69rCZ+vnzTodRBrStVpTCeFAVRv8cdTNDi8nVK8Gzf9RubQ==',
   }));
-};
 
 const standarDemographics = defaultDemographics;
 const bindingDemographics = generateBindingDemographics();

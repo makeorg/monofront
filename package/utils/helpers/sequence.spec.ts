@@ -184,7 +184,8 @@ describe('Sequence Helper', () => {
   describe('get Sequence Size', () => {
     it('with intro card', () => {
       const extraSlidesConfig = {
-        introCard: { enabled: false },
+        introCard: { enabled: true },
+        pushProposalCard: { enabled: false },
         demographics: [],
         isDemographicsSessionBindingMode: false,
       };
@@ -192,8 +193,7 @@ describe('Sequence Helper', () => {
         10,
         extraSlidesConfig,
         true,
-        false,
-        true
+        0
       );
       expect(sequenceSize).toEqual(12);
     });
@@ -201,6 +201,7 @@ describe('Sequence Helper', () => {
     it('with push proposal card', () => {
       const extraSlidesConfig = {
         introCard: { enabled: false },
+        pushProposalCard: { enabled: true },
         demographics: [],
         isDemographicsSessionBindingMode: false,
       };
@@ -208,8 +209,7 @@ describe('Sequence Helper', () => {
         10,
         extraSlidesConfig,
         true,
-        false,
-        undefined
+        0
       );
       expect(sequenceSize).toEqual(12);
     });
@@ -225,9 +225,41 @@ describe('Sequence Helper', () => {
         10,
         extraSlidesConfig,
         true,
-        true
+        1
       );
       expect(sequenceSize).toEqual(12);
+    });
+
+    it('without extra cards', () => {
+      const extraSlidesConfig = {
+        introCard: { enabled: false },
+        pushProposalCard: { enabled: false },
+        demographics: [],
+        isDemographicsSessionBindingMode: false,
+      };
+      const sequenceSize = helpers.getSequenceSize(
+        10,
+        extraSlidesConfig,
+        true,
+        0
+      );
+      expect(sequenceSize).toEqual(11);
+    });
+
+    it('with intro, pushPropsal and 3 demographic cards', () => {
+      const extraSlidesConfig = {
+        introCard: { enabled: true },
+        pushProposalCard: { enabled: true },
+        demographics: [],
+        isDemographicsSessionBindingMode: false,
+      };
+      const sequenceSize = helpers.getSequenceSize(
+        10,
+        extraSlidesConfig,
+        true,
+        3
+      );
+      expect(sequenceSize).toEqual(16);
     });
   });
 

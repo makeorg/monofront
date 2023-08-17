@@ -186,7 +186,7 @@ export type QuestionType = {
   activeFeatureData: {
     topProposal?: ProposalType | null;
   };
-  hasDemographics: boolean;
+  demographicsCardCount: number;
   languages: string[];
 };
 

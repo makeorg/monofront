@@ -192,9 +192,7 @@ export const getNoProposalCardTitleBySequenceKind = (
  * @param  {number} proposalLength
  * @param  {QuestionExtraSlidesConfigType} extraSlidesConfig
  * @param  {boolean} canPropose
- * @param  {boolean} hasDemographics
- * @param  {boolean | undefined} introCardParam
- * @param  {boolean | undefined} pushProposalParam
+ * @param  {number} demographicsCardCount
  * @return {number}
  *
  */
@@ -202,8 +200,7 @@ export const getSequenceSize = (
   proposalLength: number,
   extraSlidesConfig: QuestionExtraSlidesConfigType,
   canPropose: boolean,
-  hasDemographics: boolean,
-  introCardParam?: boolean
+  demographicsCardCount: number
 ): number => {
   let sequenceSize = proposalLength + 1; // add one for final card always in sequence
 
@@ -212,11 +209,7 @@ export const getSequenceSize = (
     !!extraSlidesConfig.pushProposalCard.enabled &&
     !!canPropose;
   const withIntroCard =
-    !!extraSlidesConfig.introCard &&
-    !!extraSlidesConfig.introCard.enabled &&
-    !!introCardParam;
-  const withDemographicsCard =
-    extraSlidesConfig.demographics || hasDemographics;
+    !!extraSlidesConfig.introCard && !!extraSlidesConfig.introCard.enabled;
 
   if (withPushProposalCard) {
     sequenceSize += 1;
@@ -226,8 +219,8 @@ export const getSequenceSize = (
     sequenceSize += 1;
   }
 
-  if (withDemographicsCard) {
-    sequenceSize += 1;
+  if (demographicsCardCount > 0) {
+    sequenceSize += demographicsCardCount;
   }
 
   return sequenceSize;

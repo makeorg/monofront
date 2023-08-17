@@ -159,8 +159,7 @@ export const mainRoute = async (
     firstProposal.data.sequenceSize,
     questionModified.sequenceConfig,
     questionModified.canPropose,
-    questionModified.hasDemographics,
-    false
+    questionModified.demographicsCardCount
   );
 
   updateTrackingQuestionParam(questionModified);
