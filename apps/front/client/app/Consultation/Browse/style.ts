@@ -97,8 +97,16 @@ export const ConsultationArticleStyle = styled.article`
   display: flex;
   flex-flow: column;
   flex: 1;
+  position: relative;
 `;
 
+export const ConsultationAbsoluteLinkStyle = styled.a`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+`;
 export const ConsultationElementPictureStyle = styled(Image)`
   margin-bottom: ${spacings.m};
   object-fit: cover;
@@ -207,4 +215,16 @@ export const NoConsultationButtonStyle = styled(UnstyledButtonStyle)`
   ${linkStyle(colors.Content.Make.Secondary)};
   text-transform: uppercase;
   font-family: ${typography.FontFamily.Condensed};
+`;
+
+export const ConsultationParticipateStringStyle = styled.p`
+  font-size: ${typography.FontSize.Arrondissement};
+  text-transform: uppercase;
+  font-family: ${typography.FontFamily.Condensed};
+  color: ${colors.Content.Make.Secondary};
+  text-decoration: underline;
+  & svg {
+    max-width: 16px;
+    max-height: 14px;
+  }
 `;

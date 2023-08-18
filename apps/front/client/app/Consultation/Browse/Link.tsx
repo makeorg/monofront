@@ -1,11 +1,6 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import React, { FC } from 'react';
 import { HomeQuestionType } from '@make.org/types';
-import {
-  NewWindowIconStyle,
-  RedUppercaseHTMLLinkElementStyle,
-  RedUppercaseLinkElementStyle,
-} from '@make.org/ui/elements/LinkElements';
 import { Link } from 'react-router-dom';
 import i18n from 'i18next';
 import {
@@ -20,6 +15,7 @@ import {
 } from '@make.org/utils/services/Tracking';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { useAppContext } from '@make.org/store';
+import { ConsultationAbsoluteLinkStyle } from './style';
 
 type Props = {
   question: HomeQuestionType;
@@ -49,20 +45,19 @@ export const ConsultationLink: FC<Props> = ({ question, label }) => {
 
   if (openedConsultation) {
     return (
-      <RedUppercaseLinkElementStyle
+      <ConsultationAbsoluteLinkStyle
         as={Link}
         to={consultationPath}
         onClick={handleClick}
         data-cy-link={`item-link-${question.questionId}`}
-      >
-        {label}
-      </RedUppercaseLinkElementStyle>
+        aria-label={label}
+      />
     );
   }
 
   if (closedConsultationWithoutResults || externalResultLink) {
     return (
-      <RedUppercaseHTMLLinkElementStyle
+      <ConsultationAbsoluteLinkStyle
         href={
           externalResultLink
             ? resultsLink && resultsLink.value
@@ -72,19 +67,18 @@ export const ConsultationLink: FC<Props> = ({ question, label }) => {
         rel="noopener"
         onClick={handleClick}
         data-cy-link={`item-link-${question.questionId}`}
+        aria-label={label}
       >
-        {label}
-        <> </>
-        <NewWindowIconStyle aria-hidden focusable="false" />
         <ScreenReaderItemStyle>
           {i18n.t('common.open_new_window')}
         </ScreenReaderItemStyle>
-      </RedUppercaseHTMLLinkElementStyle>
+      </ConsultationAbsoluteLinkStyle>
     );
   }
 
   return (
-    <RedUppercaseLinkElementStyle
+    <ConsultationAbsoluteLinkStyle
+      as={Link}
       to={
         internalResultLink
           ? getDynamicConsultationLink(
@@ -96,8 +90,7 @@ export const ConsultationLink: FC<Props> = ({ question, label }) => {
       }
       onClick={handleClick}
       data-cy-link={`item-link-${question.questionId}`}
-    >
-      {label}
-    </RedUppercaseLinkElementStyle>
+      aria-label={label}
+    />
   );
 };

@@ -5,6 +5,7 @@ import { DateHelper, isInProgress } from '@make.org/utils/helpers/date';
 import i18n from 'i18next';
 import { formatMillionToText } from '@make.org/utils/helpers/numberFormatter';
 import { DATE } from '@make.org/types/enums';
+import { ConsultationParticipateString } from './ParticipateString';
 import {
   ConsultationElementPictureStyle,
   ConsultationElementSubtitleStyle,
@@ -140,6 +141,7 @@ export const ConsultationItem: FC<Props> = ({ question, resultsContext }) => {
           })}
         </ConsultationItemStyle>
       </ConsultationElementParagraphStyle>
+      <ConsultationParticipateString question={question} label={linkText} />
       <ConsultationLink question={question} label={linkText} />
     </ConsultationArticleStyle>
   );
