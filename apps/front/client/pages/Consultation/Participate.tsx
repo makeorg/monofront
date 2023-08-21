@@ -82,6 +82,11 @@ const ParticipatePage: FC = () => {
     question.activeFeatures
   );
 
+  const isSharingDisabled: boolean = checkIsFeatureActivated(
+    FEATURE_FLIPPING.CONSULTATION_SHARE_DISABLE,
+    question.activeFeatures
+  );
+
   return (
     <ThemeProvider theme={question.theme}>
       <MetaTags
@@ -166,13 +171,13 @@ const ParticipatePage: FC = () => {
               </ParticipateCTAProposalBloc>
               <Keywords question={question} isKeywordActive={isKeywordActive} />
             </ColumnToRowElementStyle>
-            {isDesktop && <SocialSharing />}
+            {isDesktop && !isSharingDisabled && <SocialSharing />}
           </ParticipateMainContentStyle>
           <ParticipateSidebarContentStyle>
             {isDesktop && <DesktopAbout />}
             <FeaturedProposals question={question} />
           </ParticipateSidebarContentStyle>
-          {!isDesktop && <SocialSharing />}
+          {!isDesktop && !isSharingDisabled && <SocialSharing />}
         </ParticipateInnerStyle>
       </ParticipateContentStyle>
       <Timeline />

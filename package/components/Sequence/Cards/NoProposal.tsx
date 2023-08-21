@@ -4,6 +4,8 @@ import { LinkAsRedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
 import { getParticipateLink } from '@make.org/utils/helpers/url';
 import { QuestionType } from '@make.org/types';
+import { checkIsFeatureActivated } from '@make.org/utils/helpers/featureFlipping';
+import { FEATURE_FLIPPING } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
 import { SimpleLinkAsRedButton } from '@make.org/ui/elements/LinkElements';
 import { trackDisplayNoProposalSequence } from '@make.org/utils/services/Tracking';
@@ -36,6 +38,11 @@ export const NoProposal: React.FC<Props> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const isSharingDisabled: boolean = checkIsFeatureActivated(
+    FEATURE_FLIPPING.CONSULTATION_SHARE_DISABLE,
+    question.activeFeatures
+  );
+
   return (
     <>
       <SequenceMainTitleStyle className={isWidget ? 'widget' : ''}>
@@ -57,7 +64,7 @@ export const NoProposal: React.FC<Props> = ({
           {i18n.t('no_proposal_card.link_text')}
         </LinkAsRedButtonStyle>
       )}
-      {isDesktop && !isWidget && (
+      {isDesktop && !isWidget && !isSharingDisabled && (
         <>
           <FinalCardSeparatorStyle />
           <SequenceParagraphStyle>
