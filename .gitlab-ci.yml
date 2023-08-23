@@ -31,6 +31,7 @@ stages:
   - check
   - build
   - deploy
+  - migrate
   - merge
 
 # Environments
@@ -126,6 +127,11 @@ stages:
     IMAGE_APP_PATH: apps/content/Dockerfile
   <<: *content-migration-condition
 
+.content-database:
+  variables:
+    RUNDECK_JOB_ID: $RUNDECK_CONTENT_MIGRATE_JOB_ID
+  <<: *content-migration-condition
+
 # Stages
 .check:
   stage: check
@@ -203,6 +209,10 @@ stages:
 
       [ "${status}" != 'succeeded' ] && { echo -e "Job ${job_id} has ${status}."; exit 2; };
       echo "Job ${job_id} has ${status}.";
+
+.migrate:
+  extends: .deploy
+  stage: migrate
 
 .e2e:
   image: cypress/browsers:node-18.16.0-chrome-114.0.5735.133-1-ff-114.0.2-edge-114.0.1823.51-1
@@ -338,6 +348,18 @@ deploy-content-production:
   extends:
     - .deploy
     - .content
+    - .prod
+
+migrate-content-preproduction:
+  extends:
+    - .migrate
+    - .content-database
+    - .preprod
+
+migrate-content-production:
+  extends:
+    - .migrate
+    - .content-database
     - .prod
 
 merge-to-prod:
