@@ -113,6 +113,19 @@ stages:
       - package.json
       - yarn.lock
 
+# Migrations
+.content-migration-condition: &content-migration-condition
+  only:
+    changes:
+      - apps/content/prisma/migrations/**/*
+
+.content-migration-tool:
+  variables:
+    IMAGE_NAME: content-migration-tool
+    IMAGE_APP_TARGET: app-dev
+    IMAGE_APP_PATH: apps/content/Dockerfile
+  <<: *content-migration-condition
+
 # Stages
 .check:
   stage: check
@@ -272,6 +285,11 @@ build-make-content:
   extends:
     - .build
     - .content
+
+build-content-migration-tool:
+  extends:
+    - .build
+    - .content-migration-tool
 
 # Deploy
 deploy-front-preproduction:
