@@ -17,6 +17,8 @@ Please refers to <a href="https://docs.docker.com/engine/reference/commandline/d
 
 ## Running dev instance
 
+Be sure that `yarn install` have been executed then run `yarn workspace @make.org/content prisma generate`
+
 Add a .env file (copy [.env.dist](./env.dist) to .env)
 
 Start :
