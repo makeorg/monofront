@@ -3600,8 +3600,8 @@ __metadata:
     "@make.org/ui": 0.1.0
     "@make.org/utils": 0.1.0
     file-loader: ^6.2.0
-    react: ^17.0.2
-    react-test-renderer: ^17.0.2
+    react: ^18.2.0
+    react-test-renderer: ^18.2.0
     styled-components: 5.3.5
     webpack: ^5.74.0
     webpack-cli: ^4.10.0
@@ -3621,17 +3621,17 @@ __metadata:
     "@make.org/ui": 0.1.0
     "@make.org/utils": 0.1.0
     "@react-oauth/google": ^0.6.1
-    "@types/react": ^17.0.52
+    "@types/react": ^18.2.21
     "@types/react-facebook-login": 4.1.5
     "@types/react-router": 5.1.19
     core-js: ^3.24.1
     enzyme: ^3.11.0
     i18next: ^23.5.0
     query-string: ^7.1.1
-    react: ^17.0.2
+    react: ^18.2.0
     react-autosize-textarea: ^7.1.0
     react-cookie: ^4.1.1
-    react-dom: ^17.0.2
+    react-dom: ^18.2.0
     react-facebook-login: ^4.1.1
     react-head: ^3.4.2
     react-modal: ^3.15.1
@@ -3715,13 +3715,13 @@ __metadata:
     "@storybook/react-webpack5": ^7.2.3
     "@storybook/testing-library": ^0.2.0
     "@types/babel__preset-env": ^7
-    "@types/react": ^17.0.52
-    "@types/react-dom": ^17.0.18
+    "@types/react": ^18.2.21
+    "@types/react-dom": ^18.2.7
     "@types/styled-components": 5.1.26
     babel-loader: ^9.1.3
     file-loader: ^6.2.0
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ^18.2.0
+    react-dom: ^18.2.0
     storybook: ^7.2.3
     styled-components: 5.3.5
     typescript: ^4.9.5
@@ -3763,8 +3763,8 @@ __metadata:
     "@types/loadable__server": ^5.12.6
     "@types/node": 18.17.1
     "@types/object-hash": ^3
-    "@types/react": ^17.0.52
-    "@types/react-dom": ^17.0.18
+    "@types/react": ^18.2.21
+    "@types/react-dom": ^18.2.7
     "@types/react-router-dom": 5.3.3
     "@types/serve-favicon": ^2.5.3
     "@types/ua-parser-js": ^0.7.36
@@ -3804,10 +3804,10 @@ __metadata:
     pm2: ~5.2.2
     prom-client: ^13.1.0
     query-string: ^7.1.1
-    react: ^17.0.2
+    react: ^18.2.0
     react-autosize-textarea: ~7.1.0
     react-cookie: ^4.1.1
-    react-dom: ^17.0.2
+    react-dom: ^18.2.0
     react-facebook-login: ~4.1.1
     react-head: ~3.4.2
     react-is: 17.0.2
@@ -3870,12 +3870,12 @@ __metadata:
     "@make.org/api": 0.1.0
     "@make.org/types": 0.1.0
     "@make.org/utils": 0.1.0
-    "@types/react": ^17.0.52
-    "@types/react-dom": ^17.0.18
+    "@types/react": ^18.2.21
+    "@types/react-dom": ^18.2.7
     axios: ~0.26.1
     i18next: ^23.5.0
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ^18.2.0
+    react-dom: ^18.2.0
     webpack: ^5.74.0
     webpack-cli: ^4.10.0
   languageName: unknown
@@ -3926,7 +3926,7 @@ __metadata:
   resolution: "@make.org/types@workspace:package/types"
   dependencies:
     axios: ~0.26.1
-    react: ^17.0.2
+    react: ^18.2.0
     webpack: ^5.74.0
     webpack-cli: ^4.10.0
   languageName: unknown
@@ -3943,15 +3943,15 @@ __metadata:
     "@make.org/utils": 0.1.0
     "@svgr/cli": ^6.3.1
     "@types/node": 18.17.1
-    "@types/react": ^17.0.52
+    "@types/react": ^18.2.21
     "@types/styled-components": 5.1.26
     core-js: ^3.24.1
     i18next: ^23.5.0
-    react: ^17.0.2
+    react: ^18.2.0
     react-autosize-textarea: ^7.1.0
-    react-dom: ^17.0.2
+    react-dom: ^18.2.0
     react-router-dom: ^5.3.4
-    react-test-renderer: ^17.0.2
+    react-test-renderer: ^18.2.0
     snapshot-diff: ^0.9.0
     styled-components: 5.3.5
     typescript: ^4.9.5
@@ -3984,7 +3984,7 @@ __metadata:
     node-cache: ^5.1.2
     node-mocks-http: ^1.11.0
     query-string: ^7.1.1
-    react: ^17.0.2
+    react: ^18.2.0
     react-hotjar: ^5.2.0
     react-router: ^5.3.4
     source-map: ^0.6.1
@@ -4028,8 +4028,8 @@ __metadata:
     "@types/babel__preset-env": ^7.9.2
     "@types/jest": ^26.0.24
     "@types/object-hash": ^3
-    "@types/react": ^17.0.52
-    "@types/react-dom": ^17.0.18
+    "@types/react": ^18.2.21
+    "@types/react-dom": ^18.2.7
     babel-loader: 8.2.5
     babel-plugin-convert-to-json: ^0.1.0
     compression: ~1.7.3
@@ -4050,9 +4050,9 @@ __metadata:
     object-hash: 3.0.0
     pm2: ~5.2.2
     prom-client: ^13.1.0
-    react: ^17.0.2
+    react: ^18.2.0
     react-cookie: ~4.0.3
-    react-dom: ^17.0.2
+    react-dom: ^18.2.0
     react-head: ^3.4.2
     react-router-dom: ^5.3.4
     serialize-javascript: ^6.0.1
@@ -7403,12 +7403,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^17.0.18":
-  version: 17.0.20
-  resolution: "@types/react-dom@npm:17.0.20"
+"@types/react-dom@npm:^18.2.7":
+  version: 18.2.7
+  resolution: "@types/react-dom@npm:18.2.7"
   dependencies:
-    "@types/react": ^17
-  checksum: 525439fb14a033fc5dbe74711ecc50ec82273a528df9656594066a6219401e975101dafffd15d9a1a57a9442d52ea0c92eaacae09554dde27cd792e773f67467
+    "@types/react": "*"
+  checksum: e02ea908289a7ad26053308248d2b87f6aeafd73d0e2de2a3d435947bcea0422599016ffd1c3e38ff36c42f5e1c87c7417f05b0a157e48649e4a02f21727d54f
   languageName: node
   linkType: hard
 
@@ -7452,7 +7452,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:>=16":
+"@types/react@npm:*, @types/react@npm:>=16, @types/react@npm:^18.2.21":
   version: 18.2.21
   resolution: "@types/react@npm:18.2.21"
   dependencies:
@@ -7471,17 +7471,6 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: ce07dfddcd2bc291c169a53677a754b5ecb754e6552b312f232143c56e7b95f7a851727a98a4469014190f29ace7d7f81c37a44b352d584f605c04f2899dec95
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:^17, @types/react@npm:^17.0.52":
-  version: 17.0.65
-  resolution: "@types/react@npm:17.0.65"
-  dependencies:
-    "@types/prop-types": "*"
-    "@types/scheduler": "*"
-    csstype: ^3.0.2
-  checksum: bb862f0f97a49e690cd5c62743307d17398ee62b87bbb2c85c1b01cb992244c0aef4ecdedaab0e8d33c6315d5a8f067cf90e7f1c366b8819678c59204e202932
   languageName: node
   linkType: hard
 
@@ -23892,16 +23881,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^17.0.2":
-  version: 17.0.2
-  resolution: "react-dom@npm:17.0.2"
+"react-dom@npm:^18.2.0":
+  version: 18.2.0
+  resolution: "react-dom@npm:18.2.0"
   dependencies:
     loose-envify: ^1.1.0
-    object-assign: ^4.1.1
-    scheduler: ^0.20.2
+    scheduler: ^0.23.0
   peerDependencies:
-    react: 17.0.2
-  checksum: 1c1eaa3bca7c7228d24b70932e3d7c99e70d1d04e13bb0843bbf321582bc25d7961d6b8a6978a58a598af2af496d1cedcfb1bf65f6b0960a0a8161cb8dab743c
+    react: ^18.2.0
+  checksum: 7d323310bea3a91be2965f9468d552f201b1c27891e45ddc2d6b8f717680c95a75ae0bc1e3f5cf41472446a2589a75aed4483aee8169287909fcd59ad149e8cc
   languageName: node
   linkType: hard
 
@@ -23970,7 +23958,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:^16.12.0 || ^17.0.0 || ^18.0.0, react-is@npm:^18.0.0":
+"react-is@npm:^16.12.0 || ^17.0.0 || ^18.0.0, react-is@npm:^18.0.0, react-is@npm:^18.2.0":
   version: 18.2.0
   resolution: "react-is@npm:18.2.0"
   checksum: e72d0ba81b5922759e4aff17e0252bd29988f9642ed817f56b25a3e217e13eea8a7f2322af99a06edb779da12d5d636e9fda473d620df9a3da0df2a74141d53e
@@ -24110,7 +24098,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-shallow-renderer@npm:^16.13.1":
+"react-shallow-renderer@npm:^16.13.1, react-shallow-renderer@npm:^16.15.0":
   version: 16.15.0
   resolution: "react-shallow-renderer@npm:16.15.0"
   dependencies:
@@ -24139,7 +24127,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-test-renderer@npm:^17.0.0, react-test-renderer@npm:^17.0.2":
+"react-test-renderer@npm:^17.0.0":
   version: 17.0.2
   resolution: "react-test-renderer@npm:17.0.2"
   dependencies:
@@ -24153,13 +24141,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^17.0.2":
-  version: 17.0.2
-  resolution: "react@npm:17.0.2"
+"react-test-renderer@npm:^18.2.0":
+  version: 18.2.0
+  resolution: "react-test-renderer@npm:18.2.0"
+  dependencies:
+    react-is: ^18.2.0
+    react-shallow-renderer: ^16.15.0
+    scheduler: ^0.23.0
+  peerDependencies:
+    react: ^18.2.0
+  checksum: 6b6980ced93fa2b72662d5e4ab3b4896833586940047ce52ca9aca801e5432adf05fcbe28289b0af3ce6a2a7c590974e25dcc8aa43d0de658bfe8bbcd686f958
+  languageName: node
+  linkType: hard
+
+"react@npm:^18.2.0":
+  version: 18.2.0
+  resolution: "react@npm:18.2.0"
   dependencies:
     loose-envify: ^1.1.0
-    object-assign: ^4.1.1
-  checksum: b254cc17ce3011788330f7bbf383ab653c6848902d7936a87b09d835d091e3f295f7e9dd1597c6daac5dc80f90e778c8230218ba8ad599f74adcc11e33b9d61b
+  checksum: 88e38092da8839b830cda6feef2e8505dec8ace60579e46aa5490fc3dc9bba0bd50336507dc166f43e3afc1c42939c09fe33b25fae889d6f402721dcd78fca1b
   languageName: node
   linkType: hard
 
@@ -25201,6 +25201,15 @@ __metadata:
     loose-envify: ^1.1.0
     object-assign: ^4.1.1
   checksum: c4b35cf967c8f0d3e65753252d0f260271f81a81e427241295c5a7b783abf4ea9e905f22f815ab66676f5313be0a25f47be582254db8f9241b259213e999b8fc
+  languageName: node
+  linkType: hard
+
+"scheduler@npm:^0.23.0":
+  version: 0.23.0
+  resolution: "scheduler@npm:0.23.0"
+  dependencies:
+    loose-envify: ^1.1.0
+  checksum: d79192eeaa12abef860c195ea45d37cbf2bbf5f66e3c4dcd16f54a7da53b17788a70d109ee3d3dde1a0fd50e6a8fc171f4300356c5aee4fc0171de526bf35f8a
   languageName: node
   linkType: hard
 

@@ -32,7 +32,7 @@ export const SwitchCountryLanguage: React.FC<Props> = ({
   const [country, setNewCountry] = useState(currentCountry);
   const [language, setNewLanguage] = useState(currentLanguage);
 
-  const selectedRef = useCallback(node => {
+  const selectedRef = useCallback((node: HTMLLIElement) => {
     if (node !== null && node.offsetParent !== null) {
       const parent = node.offsetParent;
       const offset = node.offsetTop;

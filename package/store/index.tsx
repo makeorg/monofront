@@ -2,6 +2,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import React, {
+  FC,
+  ReactNode,
   useContext,
   useEffect,
   useState,
@@ -65,7 +67,7 @@ const useAllReducers = (
   return { state, dispatch };
 };
 
-const ContextState: React.FC<{ serverState?: StateRoot }> = ({
+const ContextState: FC<{ serverState?: StateRoot; children: ReactNode }> = ({
   serverState,
   children,
 }) => {

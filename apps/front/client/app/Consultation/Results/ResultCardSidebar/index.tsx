@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import {
   ResultCardSidebarStyle,
   ResultCardSidebarTitleStyle,
@@ -11,7 +11,7 @@ type Props = {
   /** Optional description to render */
   description: string;
   /** Children to render */
-  children: Node | JSX.Element;
+  children: ReactNode;
   /** Optional parameter to render for context display */
   isContext?: boolean;
 };

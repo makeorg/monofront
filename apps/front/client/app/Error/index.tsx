@@ -4,9 +4,10 @@ import { displayNotificationBanner } from '@make.org/store/actions/notifications
 import { setUnexpectedError } from '@make.org/utils/services/DefaultErrorHandler';
 import { NOTIF } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
+import { FC, ReactNode } from 'react';
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 type State = {
@@ -29,7 +30,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
     Logger.logError(error);
   }
 
-  render(): any {
+  render(): ReactNode {
     // init service error notification
 
     const { hasError } = this.state;
@@ -47,7 +48,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
 /**
  * Handles Services Error
  */
-export const ServiceErrorHandler: React.FC = ({ children }) => {
+export const ServiceErrorHandler: FC<Props> = ({ children }) => {
   const { dispatch } = useAppContext();
   setUnexpectedError(error => {
     Logger.logError(error);

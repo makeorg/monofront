@@ -9,8 +9,8 @@
     "@make.org/utils": "0.1.0",
     "@storybook/react": "^7.2.3",
     "@types/styled-components": "5.1.26",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "styled-components": "5.3.5"
   },
   "scripts": {
@@ -34,8 +34,8 @@
     "@storybook/react-webpack5": "^7.2.3",
     "@storybook/testing-library": "^0.2.0",
     "@types/babel__preset-env": "^7",
-    "@types/react": "^17.0.52",
-    "@types/react-dom": "^17.0.18",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
     "babel-loader": "^9.1.3",
     "file-loader": "^6.2.0",
     "storybook": "^7.2.3",

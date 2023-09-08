@@ -9,13 +9,13 @@
     "@make.org/types": "0.1.0",
     "@make.org/ui": "0.1.0",
     "@make.org/utils": "0.1.0",
-    "react": "^17.0.2",
-    "react-test-renderer": "^17.0.2",
+    "react": "^18.2.0",
+    "react-test-renderer": "^18.2.0",
     "styled-components": "5.3.5"
   },
   "devDependencies": {
     "file-loader": "^6.2.0",
-    "react-test-renderer": "^17.0.2",
+    "react-test-renderer": "^18.2.0",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"
   }

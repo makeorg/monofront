@@ -1,6 +1,6 @@
 /* eslint-disable import/no-import-module-exports */
-import { hydrate, render } from 'react-dom';
-import React from 'react';
+import React, { ReactNode } from 'react';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import { CookiesProvider } from 'react-cookie';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { HeadProvider } from 'react-head';
@@ -184,12 +184,23 @@ const initApp = async (state: StateRoot) => {
 
   loadableReady(() => {
     const appDom = document.getElementById('app');
-    const renderMethod = module.hot ? render : hydrate;
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const root = createRoot(appDom!);
+
+    const renderMethod = (children: ReactNode, container: HTMLElement) => {
+      if (module.hot) {
+        return root.render(children);
+      }
+
+      return hydrateRoot(container, children);
+    };
+
+    if (!appDom) {
+      return null;
+    }
 
     if (!cookieIsEnabled()) {
-      return hydrate(
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore: remove after upgrade to react18
+      return renderMethod(
         <HeadProvider>
           <ContextState serverState={store}>
             <BrowserRouter>
@@ -216,8 +227,6 @@ const initApp = async (state: StateRoot) => {
 
     return renderMethod(
       <CookiesProvider>
-        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-        {/* @ts-ignore: remove after upgrade to react18 */}
         <HeadProvider>
           <ContextState serverState={store}>
             <BrowserRouter>

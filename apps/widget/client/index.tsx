@@ -1,6 +1,6 @@
 /* eslint-disable import/no-import-module-exports */
-import React from 'react';
-import { render, hydrate } from 'react-dom';
+import React, { ReactNode } from 'react';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import { HeadProvider } from 'react-head';
 import { BrowserRouter } from 'react-router-dom';
 import { env } from '@make.org/assets/env';
@@ -68,7 +68,7 @@ const initialState = createInitialState();
 
 if (env.isDev()) {
   // Set state for dev env, pass desired slug
-  window.INITIAL_STATE = initDevState(initialState, 'mafrance2022');
+  window.INITIAL_STATE = initDevState(initialState, 'test-morgane');
 }
 
 const serverState = window.INITIAL_STATE || initialState;
@@ -230,7 +230,20 @@ const initApp = async (state: StateRoot) => {
   DateHelper.language = language;
 
   const appDom = document.getElementById('app');
-  const renderMethod = module.hot ? render : hydrate;
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  const root = createRoot(appDom!);
+
+  const renderMethod = (children: ReactNode, container: HTMLElement) => {
+    if (module.hot) {
+      return root.render(children);
+    }
+
+    return hydrateRoot(container, children);
+  };
+
+  if (!appDom) {
+    return null;
+  }
 
   return renderMethod(
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
