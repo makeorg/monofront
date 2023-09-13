@@ -8,22 +8,7 @@ import * as user from '../../fixtures/user.json';
 
 const now = new Date();
 const userData = user;
-
-When('I login with valid identifiers', () => {
-  cy.intercept(
-    {
-      url: '/user/privacy-policy',
-      method: 'POST',
-    },
-    req => {
-      req.reply({
-        statusCode: 200,
-        body: {
-          privacyPolicyApprovalDate: now.toISOString(),
-        },
-      });
-    }
-  ).as('postUserPrivacyPolicy');
+const loginFunction = () => {
   cy.intercept({ method: 'POST', url: '/oauth/make_access_token' }, req => {
     expect(req.body).to.include('TestMake'),
       req.reply({
@@ -45,7 +30,24 @@ When('I login with valid identifiers', () => {
       req.reply(userData);
     }
   ).as('getProfile');
+};
 
+When('I login with valid identifiers', () => {
+  cy.intercept(
+    {
+      url: '/user/privacy-policy',
+      method: 'POST',
+    },
+    req => {
+      req.reply({
+        statusCode: 200,
+        body: {
+          privacyPolicyApprovalDate: now.toISOString(),
+        },
+      });
+    }
+  ).as('postUserPrivacyPolicy');
+  loginFunction();
   cy.get(`button[data-cy-button=login]`).scrollIntoView();
   cy.get(`button[data-cy-button=login]`).click({ force: true });
   cy.get('[name=email]').type(userData.email);
@@ -112,27 +114,7 @@ When(
           },
         });
     }).as('postUser');
-    cy.intercept({ method: 'POST', url: '/oauth/make_access_token' }, req => {
-      expect(req.body).to.include('TestMake'),
-        req.reply({
-          statusCode: 200,
-          token_type: 'Bearer',
-          access_token: '1000000d-100f-11b2-9bff-00000000000a',
-          expires_in: 300,
-          refresh_token: '2000000d-100f-11b2-9bff-00000000000b',
-          refresh_expires_in: 1500,
-          created_at: now.toISOString(),
-        });
-    }).as('postLogin');
-    cy.intercept({ method: 'GET', url: '/user/current' }, req => {
-      req.reply(userData);
-    }).as('getUser');
-    cy.intercept(
-      { method: 'GET', url: `/user/${userData.userId}/profile` },
-      req => {
-        req.reply(userData);
-      }
-    ).as('getProfile');
+    loginFunction();
     cy.get('#authentication-register-submit').click();
     cy.wait('@postUser');
     cy.wait('@postLogin');
