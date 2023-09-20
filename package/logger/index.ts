@@ -12,7 +12,7 @@ export interface ServerLogger {
   logWarning: (x: unknown) => void;
 }
 
-const getLogFormat = () => {
+const getLogFormat = (colorize: boolean) => {
   const { printf } = winston.format;
 
   return printf(info => {
@@ -37,7 +37,11 @@ const getLogFormat = () => {
     const green = '\x1b[32;20m';
     const reset = '\x1b[0m';
 
-    return `${yellow}infoTime${reset}:${infoTime} ${yellow}infoLabel${reset}:${infoLabel} ${yellow}infoLevel${reset}:${infoLevel} ${yellow}message${reset}:${green}${message}${reset} ${yellow}stackTrace${reset}:${infoStack}`;
+    if (colorize) {
+      return `${yellow}infoTime${reset}:${infoTime} ${yellow}infoLabel${reset}:${infoLabel} ${yellow}infoLevel${reset}:${infoLevel} ${yellow}message${reset}:${green}${message}${reset} ${yellow}stackTrace${reset}:${infoStack}`;
+    }
+
+    return `infoTime:${infoTime} infoLabel:${infoLabel} infoLevel:${infoLevel} message:${message} stackTrace:${infoStack}`;
   });
 };
 
@@ -54,10 +58,11 @@ export const initLogger = async (
   instanceLabel: string,
   dataNormalizers: DataNormalizer[] = [],
   logTransformers: LogTransformer[] = [],
-  isTestEnv = false
+  isTestEnv = false,
+  colorize = false
 ): Promise<void> => {
   const { combine, timestamp, label, simple } = winston.format;
-  const logFormat = getLogFormat();
+  const logFormat = getLogFormat(colorize);
   const winstonLoggerInstance = winston.createLogger({
     silent: isTestEnv,
     format: combine(

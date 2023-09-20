@@ -48,7 +48,8 @@ const getApp = () => {
           stringNormalizer,
           objectNormalizer,
         ],
-        [stackTransformer, oneLineTransformer]
+        [stackTransformer, oneLineTransformer],
+        env.isDev()
       )
   );
 
