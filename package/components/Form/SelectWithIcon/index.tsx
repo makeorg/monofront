@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import i18n from 'i18next';
+import { CountryType, LanguageType } from '@make.org/types/CountryLanguage';
 import {
   BasicSelectStyle,
   CenterInputIconStyle,
@@ -15,7 +16,7 @@ type Props = {
   /** Value of the select */
   defaultValue: string;
   /** Data used in the select */
-  data: any[];
+  data: CountryType[] | LanguageType[];
   /** Mehtod called on change event */
   handleChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 };

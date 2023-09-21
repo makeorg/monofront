@@ -9,7 +9,7 @@ import { QuestionService } from '../service/QuestionService';
 export const accountActivationRoute = async (
   req: Request,
   res: Response
-): Promise<any> => {
+): Promise<void> => {
   const routeState = createInitialState();
   const { userId, verificationToken, country, language } = req.params;
   // empty question when register on home page

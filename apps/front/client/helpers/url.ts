@@ -1,4 +1,7 @@
-export const handleSearchParams = (search: any, language?: string): string => {
+export const handleSearchParams = (
+  search: string,
+  language?: string
+): string => {
   const urlParams = new URLSearchParams(search);
   const returnedParams = new URLSearchParams();
   const searchTerm = urlParams.get('query');

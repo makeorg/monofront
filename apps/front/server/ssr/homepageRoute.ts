@@ -7,7 +7,7 @@ import { reactRender } from '../reactRender';
 export const homepageRoute = async (
   req: Request,
   res: Response
-): Promise<any> => {
+): Promise<void> => {
   const { country, language } = req.params;
   const initialState = createInitialState();
   const logger = getLoggerInstance();

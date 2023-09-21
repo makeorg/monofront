@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import { IDS } from '@make.org/types/enums';
 import { getCurrentContainer } from '../../../../helpers/consultation';
 import {
@@ -19,7 +19,7 @@ type Props = {
   /** O;tional id to render */
   id: string;
   /** C;ildren to render */
-  children: React.ReactChild;
+  children: ReactNode;
 };
 
 export const ResultCard: FC<Props> = ({

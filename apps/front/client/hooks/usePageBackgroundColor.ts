@@ -7,7 +7,7 @@ import {
   isHomepageWithLocale,
 } from '@make.org/utils/routes';
 
-export const usePageBackgoundColor = (locationPath: string): any => {
+export const usePageBackgoundColor = (locationPath: string): void => {
   useEffect(() => {
     const pageWrapper = document.getElementById('page_wrapper');
     const whiteBackgroundPage =

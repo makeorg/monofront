@@ -1,6 +1,6 @@
 import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import React from 'react';
+import React, { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
 import i18n from 'i18next';
 import { env } from '@make.org/assets/env';
 import {
@@ -14,6 +14,14 @@ import {
   StaticExternalLinkIconStyle,
 } from '@make.org/front/client/pages/Static/style';
 import { Components } from 'react-markdown';
+
+const checkLinkValue = (href?: string, value?: string) => {
+  if (!href || !value) {
+    return false;
+  }
+
+  return href.startsWith(value);
+};
 
 export const markdownComponents = (): Components => ({
   h2: ({ children }) => (
@@ -31,10 +39,15 @@ export const markdownComponents = (): Components => ({
       {children}
     </StaticParagraphStyle>
   ),
-  a: (props: any) =>
+  a: (
+    props: DetailedHTMLProps<
+      AnchorHTMLAttributes<HTMLAnchorElement>,
+      HTMLAnchorElement
+    >
+  ) =>
     [env.frontUrl(), '/', 'mailto'].reduce(
       (accumulator, currentValue) =>
-        accumulator || props.href.startsWith(currentValue),
+        accumulator || checkLinkValue(props.href, currentValue),
       false
     ) ? (
       <RedHTMLLinkElementStyle href={props.href} rel="noopener">

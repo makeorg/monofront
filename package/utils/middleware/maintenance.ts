@@ -23,7 +23,7 @@ export const maintenanceMiddleware = async (
   req: Request,
   res: Response & { maintenance?: boolean },
   next: NextFunction,
-  logError: (error: any) => void
+  logError: (error: unknown) => void
 ): Promise<void> => {
   try {
     const { source } = req.query;

@@ -81,7 +81,7 @@ export type QuestionResultsType = {
   top_ideas: ThemeItemType[];
   controversials: ControversialProposalsType[];
   cartography: PieChartType[];
-  participation: Array<HistogramType | PieChartType>;
+  participation: HistogramType[] | PieChartType[];
 };
 
 export type MetasType = {

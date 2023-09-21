@@ -1,4 +1,4 @@
-import express, { Application } from 'express';
+import express, { Application, NextFunction, Request, Response } from 'express';
 import compression from 'compression';
 import bodyParser from 'body-parser';
 import cors from 'cors';
@@ -16,17 +16,24 @@ initLogger();
 app.use(compression());
 app.use(express.json());
 app.use(bodyParser.json());
-app.use((err: any, req: any, res: any, next: any) => {
-  if (err?.status === 400 && err.type === 'entity.parse.failed') {
-    return res
-      .json({ errors: [{ msg: 'Invalid json format', location: 'body' }] })
-      .status(400)
-      .send();
-  }
-  getBaseLoggerInstance().logError(err);
+app.use(
+  (
+    err: { status?: number; type: string },
+    _: Request,
+    res: Response,
+    next: NextFunction
+  ) => {
+    if (err?.status === 400 && err.type === 'entity.parse.failed') {
+      return res
+        .json({ errors: [{ msg: 'Invalid json format', location: 'body' }] })
+        .status(400)
+        .send();
+    }
+    getBaseLoggerInstance().logError(err);
 
-  return next();
-});
+    return next();
+  }
+);
 app.use(cors());
 app.use((_, res, next) =>
   headersResponseMiddleware(

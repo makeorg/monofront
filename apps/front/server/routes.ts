@@ -164,7 +164,7 @@ export const initRoutes = (app: Application): void => {
       res: Response,
       next: NextFunction
     ) => void)[],
-    route: (req: Request, res: Response) => Promise<any>
+    route: (req: Request, res: Response) => Promise<void>
   ) => {
     app.get(path, customMiddleware, route);
     app.get(`${BASE_PREVIEW_PATH}${path}`, customMiddleware, route);

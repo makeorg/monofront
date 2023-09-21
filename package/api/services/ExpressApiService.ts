@@ -5,6 +5,7 @@ import { FbEventClientType } from '@make.org/types/FbEvents';
 import { LogLevelType } from '@make.org/types/enums/logLevel';
 import { ApiServiceResponse, OptionsType } from '@make.org/types';
 import { TwEventType } from '@make.org/types/TwEvents';
+import { ApiServiceError } from '../ApiService/ApiServiceError';
 import { handleErrors } from '../ApiService/ApiService.shared';
 
 const port = env.port() || '';
@@ -20,9 +21,9 @@ axiosRetry(axios, {
 });
 
 interface Logger {
-  logInfo: (v: any) => void;
-  logError: (v: any) => void;
-  logWarning: (v: any) => void;
+  logInfo: (v: string | ApiServiceError | Record<string, string>) => void;
+  logError: (v: string | ApiServiceError | Record<string, string>) => void;
+  logWarning: (v: string | ApiServiceError | Record<string, string>) => void;
 }
 
 /* @todo this service is only used by 'front' app
@@ -34,9 +35,13 @@ export class ExpressApiService {
 
   constructor(logger?: Logger) {
     this.logger = logger ?? {
-      logInfo: (v: any): void => console.log(v),
-      logError: (v: any): void => console.error(v),
-      logWarning: (v: any): void => console.warn(v),
+      logInfo: (v: string | ApiServiceError | Record<string, string>): void =>
+        console.log(v),
+      logError: (v: string | ApiServiceError | Record<string, string>): void =>
+        console.error(v),
+      logWarning: (
+        v: string | ApiServiceError | Record<string, string>
+      ): void => console.warn(v),
     };
   }
 

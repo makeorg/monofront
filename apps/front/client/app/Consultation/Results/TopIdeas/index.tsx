@@ -1,7 +1,7 @@
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import React, { FC } from 'react';
 import i18n from 'i18next';
-import { QuestionType } from '@make.org/types';
+import { QuestionType, ThemeItemType } from '@make.org/types';
 import { Collapse } from '@make.org/ui/components/Collapse';
 import { ColumnToRowElementStyle } from '@make.org/ui/elements/FlexElements';
 import { VoteIconStyle } from '@make.org/ui/elements/SvgElements';
@@ -20,7 +20,7 @@ import {
 } from './style';
 
 type Props = {
-  topIdeas: any[];
+  topIdeas: ThemeItemType[];
   question: QuestionType;
 };
 

@@ -124,12 +124,10 @@ export const reactRender = async (
 
   const context = {};
   const headTags:
-    | ReactElement<unknown, string | JSXElementConstructor<any>>[]
+    | ReactElement<unknown, string | JSXElementConstructor<unknown>>[]
     | undefined = [];
 
   const ReactApp = (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore: remove comment after upgrade to react18
     <HeadProvider headTags={headTags}>
       <ContextState serverState={state}>
         <StaticRouter location={req.url} context={context}>

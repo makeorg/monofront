@@ -184,7 +184,7 @@ const initApp = async (state: StateRoot) => {
   const retrieveAccessToken = async (
     token: string
   ): Promise<OauthResponseType | null> => {
-    const response: any = await ApiService.callApi(PATH_USER_LOGIN, {
+    const response = await ApiService.callApi(PATH_USER_LOGIN, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',

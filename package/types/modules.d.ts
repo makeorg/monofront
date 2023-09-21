@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 declare module 'uuid';
 declare module 'react-modal';
 declare module '@loadable/component';

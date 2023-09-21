@@ -3,6 +3,7 @@ import { ChangeEvent, FormEvent } from 'react';
 const THROTTLE_DEFAULT_TIME = 500;
 // light version of lodash.throttle https://www.npmjs.com/package/lodash.throttle
 export const throttle = (
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   func: any = () => undefined,
   preventDefault = true,
   time: number = THROTTLE_DEFAULT_TIME,

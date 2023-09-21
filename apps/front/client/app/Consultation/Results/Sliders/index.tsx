@@ -1,6 +1,6 @@
 import React, { FC, useRef } from 'react';
 import { useLocation } from 'react-router';
-import { SliderParamsType } from '@make.org/types';
+import { SliderParamsType, PieChartType, HistogramType } from '@make.org/types';
 import i18n from 'i18next';
 import {
   SvgChevronArrowLeft,
@@ -20,7 +20,7 @@ import {
 } from './style';
 
 type Props = {
-  data: any[];
+  data: PieChartType[] | HistogramType[];
   sliderName: string;
   styleClass?: string;
 };

@@ -33,7 +33,7 @@ import { session_reducer } from './reducers/session';
 
 const AppContext = createContext({
   state: initialState,
-  dispatch: (arg: ReducerAction) => { }, // eslint-disable-line
+  dispatch: (arg: ReducerAction) => {}, // eslint-disable-line
 });
 
 export const useAppContext = (): { state: StateRoot; dispatch: Dispatch } =>

@@ -55,15 +55,14 @@ const getQuestionResult = async (
     const questionResult = data[0] as { data: QuestionResultsType };
 
     return questionResult?.data;
-  } catch (error: any) {
-    if (error.response?.status === 404) {
-      notFound();
-      return Promise.resolve();
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
+    if (apiServiceError.status === 404) {
+      return notFound();
     }
-    getLoggerInstance().logError(error);
+    getLoggerInstance().logError(apiServiceError);
 
-    unexpectedError();
-    return Promise.resolve();
+    return unexpectedError();
   }
 };
 

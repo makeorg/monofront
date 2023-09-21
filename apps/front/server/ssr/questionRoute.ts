@@ -9,7 +9,7 @@ import { QuestionService } from '../service/QuestionService';
 export const questionRoute = async (
   req: Request,
   res: Response
-): Promise<any> => {
+): Promise<void> => {
   const { questionSlug, country, language } = req.params;
   const initialState = createInitialState();
   const logger = getLoggerInstance();

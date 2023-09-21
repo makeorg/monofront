@@ -12,8 +12,7 @@ type Props = {
   /** Content of the button */
   content?: string | JSX.Element;
   /** Content of the Tooltip */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  children: any;
+  children: JSX.Element;
   /** Styled Component Element */
   direction?: string;
 };

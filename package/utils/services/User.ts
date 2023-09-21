@@ -238,7 +238,7 @@ const login = async (
     if (success) {
       success();
     }
-    return (response as any)?.data || null;
+    return response?.data || null;
   } catch (error: unknown) {
     const apiServiceError = error as ApiServiceError;
     if ([400, 401, 403, 404].includes(apiServiceError.status)) {
