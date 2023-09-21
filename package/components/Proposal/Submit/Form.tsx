@@ -217,7 +217,14 @@ export const ProposalForm: FC = () => {
               <>
                 {i18n.t('proposal_submit.form.read_our')}{' '}
                 <ProposalExternalLinkStyle
-                  href={getModerationPageLink(country, language)}
+                  href={
+                    isWidget
+                      ? `https://make.org${getModerationPageLink(
+                          country,
+                          language
+                        )}`
+                      : getModerationPageLink(country, language)
+                  }
                   target="_blank"
                   rel="noopener"
                   onClick={trackClickModerationLink}
