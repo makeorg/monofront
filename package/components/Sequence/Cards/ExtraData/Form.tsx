@@ -114,6 +114,13 @@ export const ExtraDataForm: React.FC<Props> = ({
         setIsSubmitDisabled(false);
         setIsSkipDisabled(false);
         dispatch(incrementSequenceIndex());
+        if (sessionBindingMode) {
+          Logger.logInfo({
+            message: `submit of demographic ${demographicId}`,
+            value: `demographic value : ${value}`,
+            data: `demographic data : ${data}`,
+          });
+        }
         if (value === SKIP_TRACKING_VALUE) {
           trackClickSkipDemographics(name, demographicId, sessionBindingMode);
         } else {
