@@ -18,7 +18,7 @@ export const redirectToCountryMiddleware = async (
   const formattedLanguage = language && language.toString();
 
   const questionNotFound = () => {
-    getLoggerInstance().logError({
+    getLoggerInstance().logWarning({
       message: `Question not found on redirect middleware questionSlug='${formattedQuestionSlug}'`,
       name: 'server-side',
       app_detected_country: formattedCountry,
