@@ -2,12 +2,6 @@ import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 import { SwitchButton } from '.';
-import {
-  TextTagType,
-  TextSizeType,
-  TextBody,
-  TextStyleType,
-} from '../../Typography/Text';
 
 const meta: Meta<typeof SwitchButton> = {
   component: SwitchButton,
@@ -40,13 +34,6 @@ export const Switch: Story = {
 
     return (
       <FlexElementStyle>
-        <TextBody
-          style={{ marginRight: '10px' }}
-          tag={TextTagType.span}
-          size={TextSizeType.m}
-          type={TextStyleType.default}
-          label="Switch button"
-        />
         <SwitchButton
           value={value}
           onEnabling={enableSwitch}

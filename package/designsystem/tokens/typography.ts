@@ -7,6 +7,24 @@ export const typography = {
     Italic: "'Playfair Display Regular Italic', Arial, sans-serif",
   },
   FontSize: {
+    Title: {
+      Universe: '56px',
+      Earth: '42px',
+      Europe: '36px',
+      France: '32px',
+      IleDeFrance: '26px',
+      GrandeCouronne: '22px',
+      PetiteCouronne: '20px',
+      Paris: '18px',
+      Arrondissement: '16px',
+    },
+    Text: {
+      PetiteCouronne: '20px',
+      Paris: '18px',
+      Arrondissement: '16px',
+      Bastille: '14px',
+      RueDeLappe: '12px',
+    },
     Universe: '56px',
     Earth: '42px',
     Europe: '36px',
@@ -24,7 +42,7 @@ export const typography = {
     l140: '140%',
     l100: '100%',
   },
-  TextCase: {
+  TextTransform: {
     None: 'none',
     Uppercase: 'uppercase',
   },

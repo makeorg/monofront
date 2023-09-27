@@ -1,26 +1,43 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { TextSizeType, TextStyleType, TextTagType, TextBody } from '.';
+import { TextBody, TextTagType } from '.';
+import { typography } from '../../../tokens/typography';
 
 const meta: Meta<typeof TextBody> = {
   component: TextBody,
   argTypes: {
+    font: {
+      control: 'radio',
+      options: typography.FontFamily,
+      description: 'font family of the text',
+    },
     size: {
       control: 'select',
-      options: Object.values(TextSizeType),
+      options: typography.FontSize.Text,
       description: 'size of the text',
+    },
+    lineHeight: {
+      control: 'select',
+      options: typography.LineHeight,
+      description: 'line-height of the text',
+    },
+    transform: {
+      control: 'select',
+      options: typography.TextTransform,
+      description: 'case of the text (text-transform)',
+    },
+    decoration: {
+      control: 'select',
+      options: typography.TextDecoration,
+      description: 'decoration of the text(text-decoration)',
     },
     tag: {
       control: 'select',
-      options: Object.values(TextTagType),
+      options: TextTagType,
       description: 'html tag type',
     },
-    type: {
-      control: 'select',
-      options: Object.values(TextStyleType),
-      description: 'style of the text',
-    },
-    label: {
+
+    children: {
       control: 'text',
       description: 'string that will be rendered as child',
     },
@@ -32,14 +49,33 @@ type Story = StoryObj<typeof TextBody>;
 
 export const TextComponent: Story = {
   args: {
-    size: TextSizeType.m,
-    tag: TextTagType.p,
-    type: TextStyleType.default,
-    label: 'I am a body text !',
+    font: typography.FontFamily.Default as keyof typeof typography.FontFamily,
+    size: typography.FontSize.Text
+      .Bastille as keyof typeof typography.FontSize.Text,
+    lineHeight: typography.LineHeight
+      .l150 as keyof typeof typography.LineHeight,
+    transform: typography.TextTransform
+      .None as keyof typeof typography.TextTransform,
+    decoration: typography.TextDecoration
+      .None as keyof typeof typography.TextDecoration,
+    tag: TextTagType.p as keyof typeof TextTagType,
+    children: 'I am a body text !',
   },
   render: args => {
-    const { size, tag, type, label } = args;
+    const { font, size, lineHeight, transform, decoration, tag, children } =
+      args;
 
-    return <TextBody size={size} tag={tag} type={type} label={label} />;
+    return (
+      <TextBody
+        font={font}
+        size={size}
+        lineHeight={lineHeight}
+        transform={transform}
+        decoration={decoration}
+        tag={tag}
+      >
+        {children}
+      </TextBody>
+    );
   },
 };

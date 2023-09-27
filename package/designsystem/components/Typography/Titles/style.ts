@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { typography } from '@make.org/designsystem/tokens/typography';
 
+// @todo to remove styles (except Basic) after decision on how to proceed
+
 export const TitleStyle = styled.h2`
   font-family: ${typography.FontFamily.Highlight};
   font-weight: bold;
@@ -47,4 +49,18 @@ export const TitleXXSStyle = styled(TitleStyle)`
 
 export const TitleXXXSStyle = styled(TitleStyle)`
   font-size: ${typography.FontSize.Arrondissement};
+`;
+
+export const TitleBaseStyle = styled.h2<{
+  font: string;
+  size: string;
+  lineHeight: string;
+  transform: string;
+  decoration: string;
+}>`
+  font-family: ${props => props.font};
+  font-size: ${props => props.size};
+  line-height: ${props => props.lineHeight};
+  text-transform: ${props => props.transform};
+  text-decoration: ${props => props.decoration};
 `;

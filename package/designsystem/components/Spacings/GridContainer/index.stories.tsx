@@ -1,13 +1,7 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import {
-  Grid,
-  GridColValues,
-  RowGapValues,
-  ColGapValues,
-  JustifyValues,
-  AlignValues,
-} from '.';
+import { Grid } from '.';
+import { gridContainerCol } from '../../../tokens/spacings';
 import { GridElement } from '../GridElement';
 
 const meta: Meta<typeof Grid> = {
@@ -15,27 +9,27 @@ const meta: Meta<typeof Grid> = {
   argTypes: {
     col: {
       control: 'select',
-      options: GridColValues,
+      options: gridContainerCol.Columns,
       description: 'grid type',
     },
     rowGap: {
       control: 'select',
-      options: RowGapValues,
+      options: gridContainerCol.RowGap,
       description: 'grid row gap type',
     },
     colGap: {
       control: 'select',
-      options: ColGapValues,
+      options: gridContainerCol.ColumnGap,
       description: 'grid col gap type',
     },
     justify: {
       control: 'select',
-      options: JustifyValues,
+      options: gridContainerCol.Justify,
       description: 'grid justify type',
     },
     align: {
       control: 'select',
-      options: AlignValues,
+      options: gridContainerCol.Align,
       description: 'grid align type',
     },
     children: {
@@ -51,11 +45,13 @@ type Story = StoryObj<typeof Grid>;
 
 export const GridContainer: Story = {
   args: {
-    col: GridColValues.col1 as keyof typeof GridColValues,
-    rowGap: RowGapValues.s as keyof typeof RowGapValues,
-    colGap: ColGapValues.s as keyof typeof ColGapValues,
-    justify: JustifyValues.center as keyof typeof JustifyValues,
-    align: AlignValues.center as keyof typeof AlignValues,
+    col: gridContainerCol.Columns.col1 as keyof typeof gridContainerCol.Columns,
+    rowGap: gridContainerCol.RowGap.s as keyof typeof gridContainerCol.RowGap,
+    colGap: gridContainerCol.ColumnGap
+      .s as keyof typeof gridContainerCol.ColumnGap,
+    justify: gridContainerCol.Justify
+      .center as keyof typeof gridContainerCol.Justify,
+    align: gridContainerCol.Align.center as keyof typeof gridContainerCol.Align,
   },
   render: args => {
     const { col, rowGap, colGap, justify, align } = args;

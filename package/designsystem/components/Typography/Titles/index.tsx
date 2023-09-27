@@ -1,105 +1,50 @@
 import React, { FC } from 'react';
-import {
-  TitleXXXLStyle,
-  TitleXXLStyle,
-  TitleXLStyle,
-  TitleLStyle,
-  TitleMStyle,
-  TitleSStyle,
-  TitleXSStyle,
-  TitleXXSStyle,
-  TitleXXXSStyle,
-} from './style';
+import { TitleBaseStyle } from './style';
+import { typography } from '../../../tokens/typography';
 
-export enum TitleSizeType {
-  xxxl = 'xxxl',
-  xxl = 'xxl',
-  xl = 'xl',
-  l = 'l',
-  m = 'm',
-  s = 's',
-  xs = 'xs',
-  xxs = 'xxs',
-  xxxs = 'xxxs',
-}
-
-export enum TitleLevelType {
-  h1 = 'h1',
-  h2 = 'h2',
-  h3 = 'h3',
-  h4 = 'h4',
-  h5 = 'h5',
-  h6 = 'h6',
-}
-
+// @todo to remove enum after decision on how to proceed
 export enum TitleStyleType {
   default = 'default',
   condensed = 'condensed',
   highlight = 'highlight',
 }
 
-type Props = {
-  size: TitleSizeType;
-  level: TitleLevelType;
-  type: TitleStyleType;
-  label: string;
+export const TitleTagType = {
+  h1: 'h1',
+  h2: 'h2',
+  h3: 'h3',
+  h4: 'h4',
+  h5: 'h5',
+  h6: 'h6',
 };
 
-export const Title: FC<Props> = ({ size, level, type, label }) => {
-  switch (size) {
-    case TitleSizeType.xxxl:
-      return (
-        <TitleXXXLStyle className={type} as={level}>
-          {label}
-        </TitleXXXLStyle>
-      );
-    case TitleSizeType.xxl:
-      return (
-        <TitleXXLStyle className={type} as={level}>
-          {label}
-        </TitleXXLStyle>
-      );
-    case TitleSizeType.xl:
-      return (
-        <TitleXLStyle className={type} as={level}>
-          {label}
-        </TitleXLStyle>
-      );
-    case TitleSizeType.l:
-      return (
-        <TitleLStyle className={type} as={level}>
-          {label}
-        </TitleLStyle>
-      );
-    case TitleSizeType.s:
-      return (
-        <TitleSStyle className={type} as={level}>
-          {label}
-        </TitleSStyle>
-      );
-    case TitleSizeType.xs:
-      return (
-        <TitleXSStyle className={type} as={level}>
-          {label}
-        </TitleXSStyle>
-      );
-    case TitleSizeType.xxs:
-      return (
-        <TitleXXSStyle className={type} as={level}>
-          {label}
-        </TitleXXSStyle>
-      );
-    case TitleSizeType.xxxs:
-      return (
-        <TitleXXXSStyle className={type} as={level}>
-          {label}
-        </TitleXXXSStyle>
-      );
-    default:
-      return (
-        <TitleMStyle className={type} as={level}>
-          {label}
-        </TitleMStyle>
-      );
-  }
+type Props = {
+  font: keyof typeof typography.FontFamily;
+  size: keyof typeof typography.FontSize.Title;
+  lineHeight: keyof typeof typography.LineHeight;
+  transform: keyof typeof typography.TextTransform;
+  decoration: keyof typeof typography.TextDecoration;
+  tag: keyof typeof TitleTagType;
+  children: string;
 };
+
+export const Title: FC<Props> = ({
+  font,
+  size,
+  lineHeight,
+  transform,
+  decoration,
+  tag,
+  children,
+}) => (
+  <TitleBaseStyle
+    font={font}
+    size={size}
+    lineHeight={lineHeight}
+    transform={transform}
+    decoration={decoration}
+    as={tag}
+  >
+    {children}
+  </TitleBaseStyle>
+);

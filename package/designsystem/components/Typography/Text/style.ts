@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-import { typography } from '@make.org/designsystem/tokens/typography';
+import { typography } from '../../../tokens/typography';
+
+// @todo to remove styles (except Basic) after decision on how to proceed
 
 export const TextStyle = styled.p`
   font-family: ${typography.FontFamily.Default};
@@ -27,4 +29,18 @@ export const TextSStyle = styled(TextStyle)`
 `;
 export const TextXSStyle = styled(TextStyle)`
   font-size: ${typography.FontSize.RueDeLappe};
+`;
+
+export const TextBaseStyle = styled.p<{
+  font: string;
+  size: string;
+  lineHeight: string;
+  transform: string;
+  decoration: string;
+}>`
+  font-family: ${props => props.font};
+  font-size: ${props => props.size};
+  line-height: ${props => props.lineHeight};
+  text-transform: ${props => props.transform};
+  text-decoration: ${props => props.decoration};
 `;
