@@ -173,7 +173,7 @@
       "button_intro": "Stvorite",
       "button_text": "prostor za građanina."
     },
-    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Hvala što ste reagirali na prijedloge i podijelili neke informacije s nama!"
   },
   "no_proposal_card": {
     "title": {
@@ -205,16 +205,16 @@
     "title": "Hvala vam na glasovanju!",
     "subtitle": "Možete nastaviti sudjelovati u raspravi",
     "cta_text": "Sudjelujem u raspravi",
-    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Hvala što ste reagirali na prijedloge i podijelili neke informacije s nama!"
   },
   "demographics_card": {
     "disclaimer": "Vaše su informacije anonimne kako bi naši rezultati bili reprezentativni.",
     "skip": "Preskoči",
     "submit": "Spremi",
-    "submitted_thanks": "Hvala vam na odgovoru.",
-    "submitted_disclaimer": " Odgovor se upotrebljava anonimno kako bi se analizirali rezultati rasprave.",
+    "submitted_thanks": "Vaš odgovor je već uzet u obzir.",
+    "submitted_disclaimer": "Ne brinite, vaši podaci su zaštićeni 🔒",
     "select": "Odaberi",
-    "continue": "@@demographics_card.continue|fr:Suivant"
+    "continue": "Sljedeći"
   },
   "proposal_submit": {
     "form": {
@@ -361,8 +361,8 @@
     "link": "Otkrijte naše djelovanje"
   },
   "demographics_intro": {
-    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soient bien pris en compte et pour garantir une meilleure représentativité.",
-    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
-    "next": "@@demographics_intro.next|fr:Suivant"
+    "title": "Još malo pa ste stigli! Podijelite svoje socio-demografske podatke kako bi se vaši glasovi uzeli u obzir i kako bi se zajamčila bolja reprezentativnost.",
+    "protect": "Ne brinite, vaši podaci su zaštićeni 🔒",
+    "next": "Sljedeći"
   }
 }

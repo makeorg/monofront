@@ -171,7 +171,7 @@
       "button_intro": "Izveidojiet savu",
       "button_text": "iedzīvotāja telpu."
     },
-    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Paldies, ka reaģējāt uz priekšlikumiem un dalījāties ar mums informācijā!"
   },
   "no_proposal_card": {
     "title": {
@@ -203,16 +203,16 @@
     "title": "Paldies par jūsu balsojumu!",
     "subtitle": "Jūs joprojām varat piedalīties apspriešanā",
     "cta_text": "Es piekļūstu apspriešanai",
-    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Paldies, ka reaģējāt uz priekšlikumiem un dalījāties ar mums informācijā!"
   },
   "demographics_card": {
     "disclaimer": "Jūsu sniegtā informācija ir anonīma un ļauj mūsu rezultātiem būt reprezentatīviem.",
     "skip": "Pāriet uz",
     "submit": "Reģistrēties",
-    "submitted_thanks": "Pateicamies par jūsu atbildi.",
-    "submitted_disclaimer": " To izmantos anonīmi, lai analizētu apspriešanas rezultātus.",
+    "submitted_thanks": "Jūsu atbilde jau ir ņemta vērā.",
+    "submitted_disclaimer": "Neuztraucieties, jūsu dati ir aizsargāti 🔒",
     "select": "Atlasīt",
-    "continue": "@@demographics_card.continue|fr:Suivant"
+    "continue": "Nākamais"
   },
   "proposal_submit": {
     "form": {
@@ -358,8 +358,8 @@
     "link": "Atklājiet mūsu darbību"
   },
   "demographics_intro": {
-    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soient bien pris en compte et pour garantir une meilleure représentativité.",
-    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
-    "next": "@@demographics_intro.next|fr:Suivant"
+    "title": "Jūs jau gandrīz tur esat! Dalieties ar savu sociāli demogrāfisko informāciju, lai jūsu balsis tiktu ņemtas vērā un lai jūs būtu reprezentatīvāki.",
+    "protect": "Neuztraucieties, jūsu dati ir aizsargāti 🔒",
+    "next": "Nākamais"
   }
 }

@@ -382,7 +382,7 @@
       "button_intro": "Sukurkite savo",
       "button_text": "pilietinę erdvę."
     },
-    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Dėkojame, kad reaguojate į pasiūlymus ir dalijatės su mumis informacija!"
   },
   "no_proposal_card": {
     "title": {
@@ -414,16 +414,16 @@
     "title": "Ačiū už jūsų balsus!",
     "subtitle": "Galite toliau dalyvauti konsultacijoje",
     "cta_text": "Dalyvauju konsultacijoje",
-    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Dėkojame, kad reaguojate į pasiūlymus ir dalijatės su mumis informacija!"
   },
   "demographics_card": {
     "disclaimer": "Jūsų pateikta informacija yra anoniminė, tad mūsų rezultatai yra reprezentatyvūs.",
     "skip": "Eiti į",
     "submit": "Išsaugoti",
-    "submitted_thanks": "Ačiū už atsakymą.",
-    "submitted_disclaimer": " Jis bus anonimiškai naudojamas analizuojant konsultacijų rezultatus.",
+    "submitted_thanks": "Į jūsų atsakymą jau atsižvelgta.",
+    "submitted_disclaimer": "Nesijaudinkite, jūsų duomenys yra apsaugoti 🔒",
     "select": "Pasirinkti",
-    "continue": "@@demographics_card.continue|fr:Suivant"
+    "continue": "Kitas"
   },
   "proposal_submit": {
     "form": {
@@ -1469,8 +1469,8 @@
     "confirm": "Patvirtinti"
   },
   "demographics_intro": {
-    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soient bien pris en compte et pour garantir une meilleure représentativité.",
-    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
-    "next": "@@demographics_intro.next|fr:Suivant"
+    "title": "Jūs jau beveik ten! Pasidalykite savo socialine ir demografine informacija, kad į jūsų balsus būtų atsižvelgta ir kad būtumėte reprezentatyvesni.",
+    "protect": "Nesijaudinkite, jūsų duomenys yra apsaugoti 🔒",
+    "next": "Kitas"
   }
 }

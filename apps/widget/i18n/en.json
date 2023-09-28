@@ -174,7 +174,7 @@
       "button_intro": "Create your",
       "button_text": "citizen account."
     },
-    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Thank you for reacting to the proposals and sharing some information with us!"
   },
   "push_proposal_card": {
     "title": "Do you have a proposal you want to submit on this topic?",
@@ -324,7 +324,7 @@
     "title": "Thank you for reacting to the proposals !",
     "subtitle": "How to follow the results ?",
     "cta_text": "Register on Make.org",
-    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Thank you for reacting to the proposals and sharing some information with us!"
   },
   "no_proposal_card": {
     "title": {
@@ -344,10 +344,10 @@
     "disclaimer": "This information is anonymous, it will allow the results to be representative.",
     "skip": "Skip",
     "submit": "Save",
-    "submitted_thanks": "Thank you for your answer.",
-    "submitted_disclaimer": "It will be anonymously used to analyse the results of the consultation.",
+    "submitted_thanks": "Your answer has already been taken into account.",
+    "submitted_disclaimer": "Don't worry, your data is protected 🔒",
     "select": "Choose",
-    "continue": "@@demographics_card.continue|fr:Suivant"
+    "continue": "Next"
   },
   "maintenance": {
     "subtitle": "Oops, we're sorry! Make.org is currently down for maintenance"
@@ -358,8 +358,8 @@
     "link": "Discover our project"
   },
   "demographics_intro": {
-    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soient bien pris en compte et pour garantir une meilleure représentativité.",
-    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
-    "next": "@@demographics_intro.next|fr:Suivant"
+    "title": "You're almost there! Share your socio-demographic information so that your votes are taken into account to ensure a better representativity.",
+    "protect": "Don't worry, your data is protected 🔒",
+    "next": "Next"
   }
 }

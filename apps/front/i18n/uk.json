@@ -382,7 +382,7 @@
       "button_intro": "Створіть свій",
       "button_text": "особистий кабінет."
     },
-    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Дякуємо, що відгукнулися на пропозиції та поділилися з нами інформацією!"
   },
   "no_proposal_card": {
     "title": {
@@ -414,16 +414,16 @@
     "title": "Дякуємо за ваші голоси!",
     "subtitle": "Ви можете продовжити участь в публічній консультації",
     "cta_text": "Перейти до публічної консультації",
-    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Дякуємо, що відгукнулися на пропозиції та поділилися з нами інформацією!"
   },
   "demographics_card": {
     "disclaimer": "Ваша інформація є анонімною та дозволяє отримати репрезентативні результати.",
     "skip": "Пропустити",
     "submit": "Зберегти",
-    "submitted_thanks": "Дякуємо за вашу відповідь.",
-    "submitted_disclaimer": " Її буде використано анонімно для аналізу результатів публічної консультації.",
+    "submitted_thanks": "Ваша відповідь вже врахована.",
+    "submitted_disclaimer": "Не хвилюйтеся, ваші дані захищені 🔒",
     "select": "Обрати",
-    "continue": "@@demographics_card.continue|fr:Suivant"
+    "continue": "Далі"
   },
   "proposal_submit": {
     "form": {
@@ -1469,8 +1469,8 @@
     }
   },
   "demographics_intro": {
-    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soient bien pris en compte et pour garantir une meilleure représentativité.",
-    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
-    "next": "@@demographics_intro.next|fr:Suivant"
+    "title": "Ви майже на фініші! Поділіться своєю соціально-демографічною інформацією, щоб ваші голоси були враховані і щоб ви були більш репрезентативними.",
+    "protect": "Не хвилюйтеся, ваші дані захищені 🔒",
+    "next": "Далі"
   }
 }

@@ -152,7 +152,7 @@
       "button_intro": "Maak je",
       "button_text": "persoonlijke omgeving aan."
     },
-    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Bedankt voor het reageren op de voorstellen en het delen van informatie met ons!"
   },
   "no_proposal_card": {
     "title": {
@@ -184,16 +184,16 @@
     "title": "Bedankt voor je stemmen!",
     "subtitle": "Je kunt blijven deelnemen aan de raadpleging",
     "cta_text": "Ik ga naar de raadpleging",
-    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Bedankt voor het reageren op de voorstellen en het delen van informatie met ons!"
   },
   "demographics_card": {
     "disclaimer": "Je gegevens zijn anoniem en maken onze resultaten representatief.",
     "skip": "Overslaan",
     "submit": "Opslaan",
-    "submitted_thanks": "Bedankt voor je antwoord.",
-    "submitted_disclaimer": " Het zal anoniem worden gebruikt om de resultaten van de raadpleging te analyseren.",
+    "submitted_thanks": "Er is al rekening gehouden met je antwoord.",
+    "submitted_disclaimer": "Maak je geen zorgen, je gegevens zijn beschermd 🔒",
     "select": "Kiezen",
-    "continue": "@@demographics_card.continue|fr:Suivant"
+    "continue": "Volgende"
   },
   "proposal_submit": {
     "form": {
@@ -358,8 +358,8 @@
     "link": "Ontdek onze werking"
   },
   "demographics_intro": {
-    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soient bien pris en compte et pour garantir une meilleure représentativité.",
-    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
-    "next": "@@demographics_intro.next|fr:Suivant"
+    "title": "Je bent er bijna! Deel je socio-demografische informatie zodat er rekening wordt gehouden met je stemmen en zodat je representatiever bent.",
+    "protect": "Maak je geen zorgen, je gegevens zijn beschermd 🔒",
+    "next": "Volgende"
   }
 }

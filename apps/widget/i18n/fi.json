@@ -152,7 +152,7 @@
       "button_intro": "Luo oma",
       "button_text": "kansalaisalue."
     },
-    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Kiitos, että reagoitte ehdotuksiin ja jaoitte tietoja kanssamme!"
   },
   "no_proposal_card": {
     "title": {
@@ -184,16 +184,16 @@
     "title": "Kiitos äänistäsi!",
     "subtitle": "Voit jatkaa kuulemiseen osallistumista",
     "cta_text": "Siirry kuulemiseen",
-    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Kiitos, että reagoitte ehdotuksiin ja jaoitte tietoja kanssamme!"
   },
   "demographics_card": {
     "disclaimer": "Tietosi ovat nimettömiä, ja niiden avulla voimme varmistaa, että tulokset ovat kattavia.",
     "skip": "Ohita",
     "submit": "Tallenna",
-    "submitted_thanks": "Kiitos vastauksestasi",
-    "submitted_disclaimer": " Sitä käytetään nimettömästi kuulemisen tulosten analysointiin.",
+    "submitted_thanks": "Vastauksesi on jo otettu huomioon.",
+    "submitted_disclaimer": "Älä huoli, tietosi ovat suojattuja 🔒",
     "select": "Valitse",
-    "continue": "@@demographics_card.continue|fr:Suivant"
+    "continue": "Seuraava"
   },
   "proposal_submit": {
     "form": {
@@ -358,8 +358,8 @@
     "link": "Tutustu toimintaamme"
   },
   "demographics_intro": {
-    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soient bien pris en compte et pour garantir une meilleure représentativité.",
-    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
-    "next": "@@demographics_intro.next|fr:Suivant"
+    "title": "Olet melkein perillä! Jaa sosiodemografiset tietosi, jotta äänesi otetaan huomioon ja jotta olet edustavampi.",
+    "protect": "Älä huoli, tietosi ovat suojattuja 🔒",
+    "next": "Seuraava"
   }
 }

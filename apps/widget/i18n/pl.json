@@ -154,7 +154,7 @@
       "button_intro": "Stwórz swoją",
       "button_text": "przestrzeń użytkownika"
     },
-    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Dziękujemy za reakcję na propozycje i podzielenie się z nami informacjami!"
   },
   "no_proposal_card": {
     "title": {
@@ -186,16 +186,16 @@
     "title": "Dziękujemy za oddanie głosów!",
     "subtitle": "Możesz dalej uczestniczyć w konsultacji",
     "cta_text": "Przechodzę do konsultacji",
-    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Dziękujemy za reakcję na propozycje i podzielenie się z nami informacjami!"
   },
   "demographics_card": {
     "disclaimer": "Twoje informacje pozostają anonimowe, co zapewnia reprezentatywność naszych wyników.",
     "skip": "Pomiń",
     "submit": "Zapisz",
-    "submitted_thanks": "Dziękujemy za odpowiedź.",
-    "submitted_disclaimer": " Zostanie wykorzystana w sposób anonimowy w celu analizy wyników konsultacji.",
+    "submitted_thanks": "Twoja odpowiedź została już uwzględniona.",
+    "submitted_disclaimer": "Nie martw się, Twoje dane są chronione 🔒",
     "select": "Wybierz",
-    "continue": "@@demographics_card.continue|fr:Suivant"
+    "continue": "Następny"
   },
   "proposal_submit": {
     "form": {
@@ -361,8 +361,8 @@
     "link": "Odkryj naszą działalność"
   },
   "demographics_intro": {
-    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soient bien pris en compte et pour garantir une meilleure représentativité.",
-    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
-    "next": "@@demographics_intro.next|fr:Suivant"
+    "title": "Już prawie jesteś! Udostępnij swoje informacje społeczno-demograficzne, aby Twoje głosy zostały wzięte pod uwagę i abyś był bardziej reprezentatywny.",
+    "protect": "Nie martw się, Twoje dane są chronione 🔒",
+    "next": "Następny"
   }
 }

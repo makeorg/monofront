@@ -363,7 +363,7 @@
       "button_intro": "Creați-vă propriul",
       "button_text": "spațiu personal."
     },
-    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Vă mulțumim pentru că ați reacționat la propuneri și ne-ați împărtășit câteva informații!"
   },
   "no_proposal_card": {
     "title": {
@@ -395,16 +395,16 @@
     "title": "Vă mulțumim că ați votat!",
     "subtitle": "Puteți continua să participați la consultare",
     "cta_text": "Accesez consultarea",
-    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Vă mulțumim pentru că ați reacționat la propuneri și ne-ați împărtășit câteva informații!"
   },
   "demographics_card": {
     "disclaimer": "Informațiile dumneavoastră sunt anonime și permit obținerea unor rezultate care să fie reprezentative.",
     "skip": "Ignorare",
     "submit": "Înregistrare",
-    "submitted_thanks": "Vă mulțumim pentru răspuns.",
-    "submitted_disclaimer": " Acesta va fi integrat în mod anonim în analiza rezultatelor consultării.",
+    "submitted_thanks": "Răspunsul dumneavoastră a fost deja luat în considerare.",
+    "submitted_disclaimer": "Nu vă faceți griji, datele dvs. sunt protejate 🔒",
     "select": "Selectare",
-    "continue": "@@demographics_card.continue|fr:Suivant"
+    "continue": "Următorul"
   },
   "proposal_submit": {
     "form": {
@@ -1469,8 +1469,8 @@
     }
   },
   "demographics_intro": {
-    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soient bien pris en compte et pour garantir une meilleure représentativité.",
-    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
-    "next": "@@demographics_intro.next|fr:Suivant"
+    "title": "Aproape ai ajuns! Împărtășiți informațiile socio-demografice pentru ca voturile dumneavoastră să fie luate în considerare și pentru a fi mai reprezentativi.",
+    "protect": "Nu vă faceți griji, datele dvs. sunt protejate 🔒",
+    "next": "Următorul"
   }
 }

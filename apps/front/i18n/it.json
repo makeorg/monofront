@@ -363,7 +363,7 @@
       "button_intro": "Crea la tua",
       "button_text": "area riservata."
     },
-    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Grazie per aver reagito alle proposte e per aver condiviso con noi alcune informazioni!"
   },
   "no_proposal_card": {
     "title": {
@@ -395,16 +395,16 @@
     "title": "Grazie per i tuoi voti!",
     "subtitle": "Puoi continuare a partecipare alla consultazione",
     "cta_text": "Accedo alla consultazione",
-    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Grazie per aver reagito alle proposte e per aver condiviso con noi alcune informazioni!"
   },
   "demographics_card": {
     "disclaimer": "Le tue informazioni sono anonime e ci consentono di ottenere risultati rappresentativi.",
     "skip": "Salta",
     "submit": "Salva",
-    "submitted_thanks": "Grazie per la tua risposta.",
-    "submitted_disclaimer": " Sarà usata in modo anonimo per analizzare i risultati della consultazione.",
+    "submitted_thanks": "La vostra risposta è già stata presa in considerazione.",
+    "submitted_disclaimer": "Non preoccupatevi, i vostri dati sono protetti 🔒",
     "select": "Seleziona",
-    "continue": "@@demographics_card.continue|fr:Suivant"
+    "continue": "Avanti"
   },
   "proposal_submit": {
     "form": {
@@ -1469,8 +1469,8 @@
     }
   },
   "demographics_intro": {
-    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soient bien pris en compte et pour garantir une meilleure représentativité.",
-    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
-    "next": "@@demographics_intro.next|fr:Suivant"
+    "title": "Ci sei quasi! Condividete le vostre informazioni socio-demografiche in modo che i vostri voti siano presi in considerazione e che siate più rappresentativi.",
+    "protect": "Non preoccupatevi, i vostri dati sono protetti 🔒",
+    "next": "Avanti"
   }
 }

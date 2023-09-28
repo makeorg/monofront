@@ -175,7 +175,7 @@
       "button_intro": "Ustvarite svoj",
       "button_text": "državljanski kotiček."
     },
-    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Ďakujeme, že ste reagovali na návrhy a podelili sa s nami o informácie!"
   },
   "no_proposal_card": {
     "title": {
@@ -207,16 +207,16 @@
     "title": "Hvala za vaše glasove!",
     "subtitle": "Lahko še naprej sodelujete pri posvetovanju",
     "cta_text": "Želim sodelovati pri posvetovanju",
-    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Hvala, ker ste se odzvali na predloge in z nami delili nekaj informacij!"
   },
   "demographics_card": {
     "disclaimer": "Vaše informacije so anonimne in omogočajo večjo reprezentativnost rezultatov.",
     "skip": "Preskoči",
     "submit": "Shrani",
-    "submitted_thanks": "Hvala za odgovor.",
-    "submitted_disclaimer": " Anonimno bo uporabljen za analiziranje rezultatov posvetovanja.",
+    "submitted_thanks": "Vaš odgovor je bil že upoštevan.",
+    "submitted_disclaimer": "Brez skrbi, vaši podatki so zaščiteni 🔒",
     "select": "Izberi",
-    "continue": "@@demographics_card.continue|fr:Suivant"
+    "continue": "Naslednji"
   },
   "proposal_submit": {
     "form": {
@@ -364,8 +364,8 @@
     "link": "Odkrijte naše delovanje"
   },
   "demographics_intro": {
-    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soient bien pris en compte et pour garantir une meilleure représentativité.",
-    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
-    "next": "@@demographics_intro.next|fr:Suivant"
+    "title": "Skoraj ste prišli! Delite svoje socialno-demografske podatke, da bodo vaši glasovi upoštevani in da boste bolj reprezentativni.",
+    "protect": "Brez skrbi, vaši podatki so zaščiteni 🔒",
+    "next": "Naslednji"
   }
 }

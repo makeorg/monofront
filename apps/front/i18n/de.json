@@ -377,7 +377,7 @@
       "button_intro": "Erstelle deinen",
       "button_text": "Bürgerbereich."
     },
-    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Vielen Dank für Ihre Reaktion auf die Vorschläge und dafür, dass Sie einige Informationen mit uns geteilt haben!"
   },
   "no_proposal_card": {
     "title": {
@@ -409,7 +409,7 @@
     "title": "Vielen Dank für deine Stimmabgaben!",
     "subtitle": "Du kannst weiterhin an der Konsultation teilnehmen",
     "cta_text": "Ich rufe die Konsultation auf",
-    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Vielen Dank, dass Sie auf die Vorschläge reagiert und einige Informationen mit uns geteilt haben!"
   },
   "proposal_submit": {
     "form": {
@@ -1430,10 +1430,10 @@
     "disclaimer": "Deine Angaben sind anonym und ermöglichen es, die Ergebnisse möglichst repräsentativ zu gestalten.",
     "skip": "Überspringen",
     "submit": "Speichern",
-    "submitted_thanks": "Danke für deine Antwort.",
-    "submitted_disclaimer": "Sie wird anonym verwendet, um die Ergebnisse der Konsultation zu analysieren.",
+    "submitted_thanks": "Ihre Antwort wurde bereits berücksichtigt.",
+    "submitted_disclaimer": "Keine Sorge, Ihre Daten sind geschützt 🔒",
     "select": "Auswählen",
-    "continue": "@@demographics_card.continue|fr:Suivant"
+    "continue": "Weiter"
   },
   "language_switch": {
     "country_title": "Deine Land",
@@ -1442,8 +1442,8 @@
     "confirm": "Bestätigen"
   },
   "demographics_intro": {
-    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soient bien pris en compte et pour garantir une meilleure représentativité.",
-    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
-    "next": "@@demographics_intro.next|fr:Suivant"
+    "title": "Sie haben es fast geschafft! Teilen Sie Ihre soziodemografischen Informationen mit, damit Ihre Stimmen richtig gezählt werden und eine bessere Repräsentativität gewährleistet ist.",
+    "protect": "Keine Sorge, Ihre Daten sind geschützt 🔒",
+    "next": "Weiter"
   }
 }

@@ -377,7 +377,7 @@
       "button_intro": "Skapa din",
       "button_text": "medborgarplattform."
     },
-    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Tack för att du reagerade på förslagen och delade med dig av lite information till oss!"
   },
   "no_proposal_card": {
     "title": {
@@ -409,16 +409,16 @@
     "title": "Tack för att du har röstat!",
     "subtitle": "Du kan fortsätta att delta i samrådet",
     "cta_text": "Jag deltar i samrådet",
-    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Tack för att du reagerade på förslagen och delade med dig av lite information till oss!"
   },
   "demographics_card": {
     "disclaimer": "Dina uppgifter är anonyma och gör våra resultat representativa.",
     "skip": "Hoppa över",
     "submit": "Registrera",
-    "submitted_thanks": "Tack för ditt svar.",
-    "submitted_disclaimer": " Det kommer att användas anonymt för att analysera resultatet av samrådet.",
+    "submitted_thanks": "Ditt svar har redan beaktats.",
+    "submitted_disclaimer": "Oroa dig inte, dina uppgifter är skyddade 🔒",
     "select": "Välj",
-    "continue": "@@demographics_card.continue|fr:Suivant"
+    "continue": "Nästa"
   },
   "proposal_submit": {
     "form": {
@@ -1442,8 +1442,8 @@
     "confirm": "Bekräfta"
   },
   "demographics_intro": {
-    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soient bien pris en compte et pour garantir une meilleure représentativité.",
-    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
-    "next": "@@demographics_intro.next|fr:Suivant"
+    "title": "Du är nästan framme! Dela med dig av din sociodemografiska information så att dina röster tas med i beräkningen och så att du blir mer representativ.",
+    "protect": "Oroa dig inte, dina uppgifter är skyddade 🔒",
+    "next": "Nästa"
   }
 }

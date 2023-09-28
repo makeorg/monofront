@@ -363,7 +363,7 @@
       "button_intro": "Crea tu",
       "button_text": "Área personal."
     },
-    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Gracias por reaccionar a las propuestas y compartir información con nosotros!"
   },
   "no_proposal_card": {
     "title": {
@@ -395,16 +395,16 @@
     "title": "¡Gracias por tus votos!",
     "subtitle": "Puedes seguir participando en la consulta",
     "cta_text": "Acceder a la consulta",
-    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Gracias por reaccionar a las propuestas y compartir información con nosotros!"
   },
   "demographics_card": {
     "disclaimer": "Tu información es anónima para que nuestros resultados puedan ser representativos.",
     "skip": "Saltar",
     "submit": "Guardar",
-    "submitted_thanks": "Gracias por tu respuesta.",
-    "submitted_disclaimer": " Se utilizará de forma anónima para analizar los resultados de la consulta.",
+    "submitted_thanks": "Su respuesta ya se ha tenido en cuenta.",
+    "submitted_disclaimer": "No te preocupes, tus datos están protegidos 🔒",
     "select": "Seleccionar",
-    "continue": "@@demographics_card.continue|fr:Suivant"
+    "continue": "Siguiente"
   },
   "proposal_submit": {
     "form": {
@@ -1469,8 +1469,8 @@
     }
   },
   "demographics_intro": {
-    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soient bien pris en compte et pour garantir une meilleure représentativité.",
-    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
-    "next": "@@demographics_intro.next|fr:Suivant"
+    "title": "¡Ya te queda poco! Comparte tus datos sociodemográficos para que se tengan en cuenta tus votos y para que seas más representativo.",
+    "protect": "No te preocupes, tus datos están protegidos 🔒",
+    "next": "Siguiente"
   }
 }

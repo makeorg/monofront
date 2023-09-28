@@ -377,7 +377,7 @@
       "button_intro": "Hozza létre",
       "button_text": "állampolgári felületét."
     },
-    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Köszönjük, hogy reagált a javaslatokra és megosztott velünk néhány információt!"
   },
   "no_proposal_card": {
     "title": {
@@ -409,16 +409,16 @@
     "title": "Köszönjük a szavazatokat!",
     "subtitle": "Továbbra is részt vehet a konzultációban",
     "cta_text": "Hozzáférés a konzultációhoz",
-    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Köszönjük, hogy reagált a javaslatokra és megosztott velünk néhány információt!"
   },
   "demographics_card": {
     "disclaimer": "Adatai névtelenek, és lehetővé teszik, hogy eredményeink reprezentatívak legyenek.",
     "skip": "Tovább",
     "submit": "Regisztráció",
-    "submitted_thanks": "Köszönjük a válaszát.",
-    "submitted_disclaimer": " Az adatokat névtelenül fogjuk felhasználni a konzultáció eredményeinek elemzésére.",
+    "submitted_thanks": "Az Ön válaszát már figyelembe vettük.",
+    "submitted_disclaimer": "Ne aggódjon, adatai védve vannak 🔒",
     "select": "Kiválasztás",
-    "continue": "@@demographics_card.continue|fr:Suivant"
+    "continue": "Következő"
   },
   "proposal_submit": {
     "form": {
@@ -1442,8 +1442,8 @@
     "confirm": "Megerősítés"
   },
   "demographics_intro": {
-    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soient bien pris en compte et pour garantir une meilleure représentativité.",
-    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
-    "next": "@@demographics_intro.next|fr:Suivant"
+    "title": "Már majdnem ott vagy! Ossza meg társadalmi-demográfiai adatait, hogy szavazatait figyelembe vegyék, és hogy reprezentatívabbá váljon.",
+    "protect": "Ne aggódjon, adatai védve vannak 🔒",
+    "next": "Következő"
   }
 }

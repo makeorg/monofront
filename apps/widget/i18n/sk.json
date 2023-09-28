@@ -171,7 +171,7 @@
       "button_intro": "Vytvorte si",
       "button_text": "Občiansky účet"
     },
-    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Ďakujeme, že ste reagovali na návrhy a podelili sa s nami o informácie!"
   },
   "no_proposal_card": {
     "title": {
@@ -203,16 +203,16 @@
     "title": "Ďakujeme za váš hlas!",
     "subtitle": "Stále sa môžete zúčastniť na konzultácii",
     "cta_text": "Chcem sa pripojiť ku konzultácií",
-    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Ďakujeme, že ste reagovali na návrhy a podelili sa s nami o informácie!"
   },
   "demographics_card": {
     "disclaimer": "Vaše informácie sú anonymné a umožňujú, aby naše výsledky boli reprezentatívne.",
     "skip": "Preskočiť",
     "submit": "Uložiť",
-    "submitted_thanks": "Ďakujeme za vašu odpoveď.",
-    "submitted_disclaimer": " Použije sa anonymne na analýzu výsledkov konzultácie.",
+    "submitted_thanks": "Vaša odpoveď už bola zohľadnená.",
+    "submitted_disclaimer": "Nemajte obavy, vaše údaje sú chránené 🔒",
     "select": "Vybrať",
-    "continue": "@@demographics_card.continue|fr:Suivant"
+    "continue": "Ďalšie"
   },
   "proposal_submit": {
     "form": {
@@ -358,8 +358,8 @@
     "link": "Objavte našu prevádzku"
   },
   "demographics_intro": {
-    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soient bien pris en compte et pour garantir une meilleure représentativité.",
-    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
-    "next": "@@demographics_intro.next|fr:Suivant"
+    "title": "Už ste takmer tam! Zdieľajte svoje sociálno-demografické údaje, aby sa vaše hlasy zohľadnili a aby ste boli reprezentatívnejší.",
+    "protect": "Nemajte obavy, vaše údaje sú chránené 🔒",
+    "next": "Ďalšie"
   }
 }

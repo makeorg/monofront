@@ -377,7 +377,7 @@
       "button_intro": "Δημιουργήστε τον δικό σας",
       "button_text": "προσωπικό χώρο πολίτη."
     },
-    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Σας ευχαριστούμε που ανταποκριθήκατε στις προτάσεις και μοιραστήκατε κάποιες πληροφορίες μαζί μας!"
   },
   "no_proposal_card": {
     "title": {
@@ -409,16 +409,16 @@
     "title": "Σας ευχαριστούμε για τις ψήφους σας!",
     "subtitle": "Μπορείτε να συνεχίσετε να συμμετέχετε στη διαβούλευση",
     "cta_text": "Πρόσβαση στη διαβούλευση",
-    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Σας ευχαριστούμε που ανταποκριθήκατε στις προτάσεις και μοιραστήκατε κάποιες πληροφορίες μαζί μας!"
   },
   "demographics_card": {
     "disclaimer": "Οι πληροφορίες σας είναι ανώνυμες και επιτρέπουν στα αποτελέσματά μας να είναι αντιπροσωπευτικά.",
     "skip": "Παράλειψη",
     "submit": "Καταχώριση",
-    "submitted_thanks": "Ευχαριστούμε για την απάντησή σας.",
-    "submitted_disclaimer": " Θα χρησιμοποιηθεί ανώνυμα για την ανάλυση των αποτελεσμάτων της διαβούλευσης.",
+    "submitted_thanks": "Η απάντησή σας έχει ήδη ληφθεί υπόψη.",
+    "submitted_disclaimer": "Μην ανησυχείτε, τα δεδομένα σας προστατεύονται 🔒",
     "select": "Επιλογή",
-    "continue": "@@demographics_card.continue|fr:Suivant"
+    "continue": "Επόμενο"
   },
   "proposal_submit": {
     "form": {
@@ -1442,8 +1442,8 @@
     "confirm": "Επιβεβαίωση"
   },
   "demographics_intro": {
-    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soient bien pris en compte et pour garantir une meilleure représentativité.",
-    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
-    "next": "@@demographics_intro.next|fr:Suivant"
+    "title": "Σχεδόν φτάσατε! Μοιραστείτε τα κοινωνικο-δημογραφικά σας στοιχεία, ώστε να ληφθούν υπόψη οι ψήφοι σας και να είστε πιο αντιπροσωπευτικοί.",
+    "protect": "Μην ανησυχείτε, τα δεδομένα σας προστατεύονται 🔒",
+    "next": "Επόμενο"
   }
 }

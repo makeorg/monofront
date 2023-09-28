@@ -171,7 +171,7 @@
       "button_intro": "Looge oma",
       "button_text": "kodanikukeskkond."
     },
-    "title_binding_mode": "@@final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Aitäh, et reageerisite ettepanekutele ja jagasite meiega teavet!"
   },
   "no_proposal_card": {
     "title": {
@@ -203,16 +203,16 @@
     "title": "Täname hääletamise eest!",
     "subtitle": "Kuidas tulemusi jälgida?",
     "cta_text": "Sisenen konsultatsiooni",
-    "title_binding_mode": "@@special_final_card.title_binding_mode|fr:Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
+    "title_binding_mode": "Aitäh, et reageerisite ettepanekutele ja jagasite meiega teavet!"
   },
   "demographics_card": {
     "disclaimer": "Teie andmed on anonüümsed ja võimaldavad meie tulemustel olla esindavad.",
     "skip": "Jäta vahele",
     "submit": "Salvesta",
-    "submitted_thanks": "Täname vastuse eest.",
-    "submitted_disclaimer": " Vastust kasutatakse anonüümselt, et konsulteerimise tulemusi analüüsida.",
+    "submitted_thanks": "Teie vastust on juba arvesse võetud.",
+    "submitted_disclaimer": "Ärge muretsege, teie andmed on kaitstud 🔒",
     "select": "Vali",
-    "continue": "@@demographics_card.continue|fr:Suivant"
+    "continue": "Järgmine"
   },
   "proposal_submit": {
     "form": {
@@ -358,8 +358,8 @@
     "link": "Avastage meie tegevust"
   },
   "demographics_intro": {
-    "title": "@@demographics_intro.title|fr:Vous y êtes presque ! Partagez vos informations socio-démographiques pour que vos votes soient bien pris en compte et pour garantir une meilleure représentativité.",
-    "protect": "@@demographics_intro.protect|fr:Pas d’inquiétude vos données sont protégées 🔒",
-    "next": "@@demographics_intro.next|fr:Suivant"
+    "title": "Sa oled peaaegu kohal! Jagage oma sotsiaaldemograafilisi andmeid, et teie hääli võetaks arvesse ja et te oleksite esinduslikumad.",
+    "protect": "Ärge muretsege, teie andmed on kaitstud 🔒",
+    "next": "Järgmine"
   }
 }
