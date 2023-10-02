@@ -76,6 +76,7 @@ const renderHtml = (
     .replace(/__LANG__/gi, appState.appConfig.language)
     .replace(/___API_URL_CLIENT_SIDE___/gi, env.apiUrlClientSide() || '')
     .replace(/___FB_PIXEL_ID___/gi, env.fbPixelId() || '')
+    .replace(/___TW_PIXEL_ID___/gi, env.twPixelId() || '')
     .replace(/__FRONT_URL__/gi, env.frontUrl() || '')
     .replace(/___NONCE_ID___/gi, nonceId)
     .replace(/___NODE_ENV___/gi, env.nodeEnv() || 'production')

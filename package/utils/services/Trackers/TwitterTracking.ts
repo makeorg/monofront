@@ -5,7 +5,14 @@ import { Logger } from '../Logger';
 import trackingConfiguration from '../trackingConfiguration.yaml';
 import { ExpressService } from '../Express';
 
-const twPixelId: string = env.twPixelId();
+declare global {
+  interface Window {
+    TW_PIXEL_ID?: string;
+  }
+}
+
+const twPixelId = env.isClientSide() ? window?.TW_PIXEL_ID : env.twPixelId();
+
 const twitterEventMapping = {
   [trackingConfiguration.CLICK_PROPOSAL_SUBMIT.key]: 'o2q9h',
   [trackingConfiguration.CLICK_PROPOSAL_UNVOTE.key]: 'o2q9n',
