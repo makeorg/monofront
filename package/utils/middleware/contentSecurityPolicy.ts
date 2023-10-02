@@ -67,7 +67,7 @@ export const cspMiddleware = (
         ...defaultDirectives.connectSrc,
         'https://*.facebook.com',
         'https://*.facebook.net',
-        'https://analytics.twitter.com',
+        'https://*.twitter.com',
         'https://*.hotjar.com',
         'https://*.hotjar.io',
         'wss://*.hotjar.com',
