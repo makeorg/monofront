@@ -68,9 +68,7 @@ const callTwApiConversion = (
 
   const OAuthSignatureBase = `${httpMethod}&${encodeURIComponent(
     url
-  )}&${encodeURIComponent(OAuthParamsString)}&${encodeURIComponent(
-    JSON.stringify(data)
-  )}`;
+  )}&${encodeURIComponent(OAuthParamsString)}`;
 
   const signingKey = `${encodeURIComponent(
     TW_CONSUMER_API_SECRET

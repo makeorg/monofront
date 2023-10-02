@@ -10,7 +10,7 @@ export type TwConversionType = {
   conversionTime: Date;
   event_id: string;
   identifiers: Array<twClId | hashedEmail>;
-  conversionId?: string;
+  conversion_id?: string;
 };
 
 export type TwEventType = { conversions: TwConversionType[] };

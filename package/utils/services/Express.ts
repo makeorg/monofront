@@ -96,7 +96,7 @@ const sendTwEventConversion = async (
     conversionTime: new Date(),
     event_id: eventName,
     identifiers: [{ twclid }],
-    conversionId,
+    conversion_id: conversionId,
   };
 
   pendindTwEvents += 1;
