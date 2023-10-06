@@ -1,0 +1,25 @@
+{
+    "extends": "../../tsconfig.json",
+    "references": [
+      { "path": "../../package/store" },
+      { "path": "../../package/ui" },
+      { "path": "../../package/api" },
+      { "path": "../../package/assets" },
+      { "path": "../../package/components" },
+      { "path": "../../package/utils" },
+      { "path": "../../package/designsystem" },
+      { "path": "../../package/logger" }
+    ],
+    "include": [
+      ".",
+      "../../package/store",
+      "../../package/ui",
+      "../../package/api",
+      "../../package/assets",
+      "../../package/components",
+      "../../package/utils",
+      "../../package/designsystem",
+      "../../package/logger"
+    ]
+  }
+  

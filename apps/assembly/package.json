@@ -1,0 +1,59 @@
+{
+  "name": "@make.org/assembly",
+  "version": "0.1.0",
+  "private": true,
+  "sideEffects": false,
+  "engines": {
+    "node": "18.17",
+    "yarn": "~3.2"
+  },
+  "dependencies": {
+    "@loadable/component": "5.15.2",
+    "@loadable/server": "5.15.2",
+    "@loadable/webpack-plugin": "5.15.2",
+    "@make.org/assets": "0.1.0",
+    "@make.org/designsystem": "0.1.0",
+    "@make.org/logger": "workspace:^",
+    "@make.org/types": "0.1.0",
+    "@make.org/ui": "0.1.0",
+    "@make.org/utils": "0.1.0",
+    "dotenv": "^16.3.1",
+    "dotenv-webpack": "^8.0.1",
+    "express": "^4.17.3",
+    "i18next": "^23.5.0",
+    "pm2": "~5.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "5.3.5",
+    "webpack": "^5.74.0",
+    "webpack-merge": "^5.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.18.10",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-optional-chaining": "7.18.9",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/preset-typescript": "7.18.6",
+    "@babel/register": "7.18.9",
+    "@loadable/babel-plugin": "~5.13.2",
+    "@simbathesailor/babel-plugin-use-what-changed": "^2.1.0",
+    "@simbathesailor/use-what-changed": "^2.0.0",
+    "@types/express": "^4.17.14",
+    "@types/loadable__component": "^5",
+    "@types/loadable__server": "^5.12.6",
+    "@types/loadable__webpack-plugin": "^5",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "@types/styled-components": "^5",
+    "babel-loader": "8.2.5",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^3.11.3"
+  },
+  "scripts": {
+    "dev": "webpack serve --mode development --progress --color --config ./webpack/dev.config.js",
+    "build": "webpack --mode production --progress --color --config ./webpack/build.config.js && yarn version-build"
+  }
+}

@@ -229,3 +229,16 @@ services:
       - content-prod
       - content-dev
       - content-dev-front-ssr
+
+  assembly_dev:
+    image: assembly_dev
+    build:
+      context: .
+      dockerfile: apps/assembly/Dockerfile
+      target: app-dev
+    ports:
+      - 3000:3000
+      - 8888:8888
+    volumes: *default_volumes
+    profiles:
+      - assembly-dev
