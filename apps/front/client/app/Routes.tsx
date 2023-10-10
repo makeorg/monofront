@@ -59,6 +59,7 @@ import {
   ROUTE_STATIC_MODERATION,
   ROUTE_STATIC_MODERATION_DE,
   ROUTE_PROFILE_PROPOSALS_FIRST_PAGE,
+  DEPRECATED_ROUTE_ORGANISATION_PROPOSALS,
 } from '@make.org/utils/routes';
 import { usePageBackgoundColor } from '../hooks/usePageBackgroundColor';
 import { QuestionWrapper } from '../pages/Consultation/QuestionWrapper';
@@ -220,6 +221,11 @@ export const Routes: FC = () => {
       <Redirect
         exact
         path={ROUTE_ORGANISATION_PROFILE}
+        to={ROUTE_ORGANISATION_PROPOSALS_FIRST_PAGE}
+      />
+      <Redirect
+        exact
+        path={DEPRECATED_ROUTE_ORGANISATION_PROPOSALS}
         to={ROUTE_ORGANISATION_PROPOSALS_FIRST_PAGE}
       />
       <Route exact path={ROUTE_COUNTRY} component={HomePage} />

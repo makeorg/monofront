@@ -48,6 +48,7 @@ export const ROUTE_PROFILE_FAVOURITES = `${ROUTE_PROFILE}/favourites/page/:pageI
 export const ROUTE_PROFILE_OPINIONS = `${ROUTE_PROFILE}/opinions`;
 export const ROUTE_PERSONALITY_PROFILE = `${ROUTE_PROFILE}/personality/:userId`;
 export const ROUTE_ORGANISATION_PROFILE = `${ROUTE_PROFILE}/organisation/:organisationSlug`;
+export const DEPRECATED_ROUTE_ORGANISATION_PROPOSALS = `${ROUTE_ORGANISATION_PROFILE}/proposals`;
 export const ROUTE_ORGANISATION_PROPOSALS = `${ROUTE_ORGANISATION_PROFILE}/proposals/page/:pageId`;
 export const ROUTE_ORGANISATION_PROPOSALS_FIRST_PAGE = `${ROUTE_ORGANISATION_PROFILE}/proposals/page/1`;
 export const ROUTE_ORGANISATION_VOTES = `${ROUTE_ORGANISATION_PROFILE}/votes/page/:pageId`;
