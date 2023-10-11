@@ -178,6 +178,9 @@ export const SequencePushProposalNextButtonStyle = styled(
 )`
   margin-top: ${spacings.sm};
   font-size: 14px;
+  svg {
+    fill: ${colors.Content.Interface.Dark};
+  }
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     font-size: ${typography.FontSize.Arrondissement};
   }
