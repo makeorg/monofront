@@ -40,3 +40,53 @@ RUN ["yarn", "workspaces", "focus", "@make.org/assembly"]
 CMD ["yarn", "workspace", "@make.org/assembly", "dev"]
 
 EXPOSE 3000
+
+############
+# SSR
+############
+FROM base AS app-ssr
+
+WORKDIR /home/app
+
+COPY . ./
+
+RUN ["yarn", "workspaces", "focus", "@make.org/assembly"]
+RUN ["yarn", "workspace", "@make.org/assembly",  "build"]
+CMD ["yarn", "workspace", "@make.org/assembly", "server:dev"]
+
+EXPOSE 3000
+
+
+############
+# BUILD
+############
+FROM base AS base-production
+
+WORKDIR /usr/app
+
+COPY . ./
+
+RUN ["yarn", "workspaces", "focus", "@make.org/assembly"]
+RUN ["yarn", "workspace", "@make.org/assembly",  "build"]
+
+RUN ["rm", "-rf", "node_modules"]
+RUN ["yarn", "workspaces", "focus", "@make.org/assembly", "--production"]
+
+
+FROM node:18.17-alpine as app-production
+
+ENV PORT 8000
+
+RUN apk --no-cache add curl
+
+WORKDIR /usr/app/
+COPY --from=base-production /usr/app/apps/assembly/dist ./dist
+COPY --from=base-production /usr/app/apps/assembly/ecosystem.config.js ./ecosystem.config.js
+COPY --from=base-production /usr/app/apps/assembly/bin ./bin
+COPY --from=base-production /usr/app/node_modules ./node_modules
+
+EXPOSE 8000
+
+CMD [ "node_modules/.bin/pm2-runtime", "start", "ecosystem.config.js", "--only", "app-production" ]
+
+HEALTHCHECK --interval=20s CMD curl --fail http://localhost:8000 || exit 1

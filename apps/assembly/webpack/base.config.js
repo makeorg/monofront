@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const LoadablePlugin = require('@loadable/webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
@@ -144,18 +146,78 @@ const clientConfig = envConfigPath => ({
           },
         ],
       },
-      {
-        test: /\.mdx?$/,
-        use: ['babel-loader', '@mdx-js/loader'],
-      },
-      {
-        test: /\.ya?ml$/,
-        type: 'json',
-        use: 'yaml-loader',
-      },
     ],
   },
   devtool: 'hidden-source-map',
 });
 
-module.exports = { clientConfig };
+const serverConfig = envConfigPath => ({
+  // server side rendering
+  target: 'node',
+  context: path.resolve('.'),
+  entry: [
+    'core-js/stable',
+    'regenerator-runtime',
+    path.resolve(__dirname, '..', 'server', 'index.tsx'),
+  ],
+  output: {
+    pathinfo: false,
+    path: path.resolve(__dirname, '..', 'dist'),
+    filename: 'server.js',
+    libraryTarget: 'commonjs2',
+    sourceMapFilename: 'map/[file].map',
+  },
+  node: {
+    __dirname: true,
+  },
+  externals: [
+    nodeExternals({ allowlist: ['history'] }),
+    {
+      'webpack-manifest': './webpack-manifest.json',
+      sharp: 'commonjs sharp',
+    },
+  ],
+  resolve: {
+    extensions: ['*', '.ts', '.tsx', '.js', '.yaml', '.json'],
+    alias: resolveTsconfigPathsToAlias(),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(ts)x?$/,
+        exclude: [
+          '/node_modules/',
+          path.resolve(__dirname, '..', '..', '..', '..', 'node_modules'),
+        ],
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets,
+            plugins,
+          },
+        },
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg|ttf|eot|woff|woff2|manifest|ico|yaml)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[contenthash].[ext]',
+              outputPath: 'client/assets',
+              publicPath: '/assets/',
+            },
+          },
+        ],
+      },
+    ],
+  },
+  plugins: [
+    new webpack.optimize.LimitChunkCountPlugin({
+      maxChunks: 1,
+    }),
+  ],
+  devtool: 'source-map',
+});
+
+module.exports = { clientConfig, serverConfig };
