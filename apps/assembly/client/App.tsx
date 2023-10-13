@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import i18n from 'i18next';
 import { AppContainer } from './style';
 
 declare global {
@@ -11,7 +12,7 @@ declare global {
 
 const App: FC = () => (
   <AppContainer>
-    <p> Test 1</p>Test !!
+    <p>{i18n.t('ressources.doc')}</p>
   </AppContainer>
 );
 

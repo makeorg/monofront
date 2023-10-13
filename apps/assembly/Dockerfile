@@ -83,6 +83,7 @@ WORKDIR /usr/app/
 COPY --from=base-production /usr/app/apps/assembly/dist ./dist
 COPY --from=base-production /usr/app/apps/assembly/ecosystem.config.js ./ecosystem.config.js
 COPY --from=base-production /usr/app/apps/assembly/bin ./bin
+COPY --from=base-production /usr/app/apps/assembly/i18n ./i18n
 COPY --from=base-production /usr/app/node_modules ./node_modules
 
 EXPOSE 8000

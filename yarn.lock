@@ -3629,6 +3629,7 @@ __metadata:
     favicons-webpack-plugin: ^5.0.2
     file-loader: ^6.2.0
     html-webpack-plugin: ^5.5.0
+    i18next: ^23.5.0
     pm2: ~5.2.2
     react: ^18.2.0
     react-dom: ^18.2.0

@@ -1,0 +1,56 @@
+{
+  "global": {
+    "response": "Response in progress...",
+    "page": "page",
+    "question": "What was said on the subject '{{content}}'",
+    "welcome": "Welcome to the heart of the Citizens’ Convention on the end of life",
+    "version": "Alpha",
+    "imagine": "Imagined by Make.org",
+    "sug": "Suggestions:",
+    "loading": "Loading...",
+    "load": "Load",
+    "opinions": "Stakeholder opinions"
+  },
+  "ressources": {
+    "vidsButton": "Video resources",
+    "docsButton": "Documentary resources",
+    "doc": "Documentary resources:"
+  },
+  "description": {
+    "name": "cese",
+    "fullName": "Citizen's Convention cese"
+  },
+  "theme": "The Citizens’ Convention by theme:",
+  "themes": [
+    "Palliative care",
+    "Active Assistance in Dying",
+    "Law Claeys-Leonetti",
+    "Role of caregivers",
+    "Information for the general public",
+    "Psychic suffering",
+    "Choice and will of the patient"
+  ],
+  "prompts": [
+    "What do we say about deep sedation?",
+    "What are the ideas for improving end-of-life support?",
+    "What is the point of designating a trusted person?"
+  ],
+  "prompt": {
+    "request": "Enter a query",
+    "submit": "Send",
+    "caution": "MarIA.ne may post inaccurate or offensive information that does not represent the views of the CESE. AI Make.org Ethics Charter"
+  },
+  "transcript": {
+    "video_presentation": "The Citizens' Convention through its video extracts:",
+    "video_select": "Select your excerpt",
+    "resume": "Summary",
+    "agree": "Citizens agree on: ",
+    "disagree": "Citizens disagree on: "
+  },
+  "session": {
+    "resume": "Summary of session 5"
+  },
+  "convention": {
+    "resume": "Summary of the Agreement"
+  }
+}
