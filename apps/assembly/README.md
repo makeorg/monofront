@@ -18,14 +18,14 @@ Please refers to <a href="https://docs.docker.com/engine/reference/commandline/d
 Dev mode :
 
 ```bash
-$ docker-compose -f docker-compose.dev.yaml --profile=app-dev up -d
+$ docker-compose -f docker-compose.dev.yaml --profile=assembly-dev up -d
 # and go to https://localhost:3000
 ```
 
 Dev mode with SSR :
 
 ```bash
-$ docker-compose -f docker-compose.dev.yaml --profile=app-ssr up -d
+$ docker-compose -f docker-compose.dev.yaml --profile=assembly-ssr up -d
 # and go to https://localhost:3000
 ```
 
@@ -35,36 +35,14 @@ $ docker-compose -f docker-compose.dev.yaml --profile=app-ssr up -d
 # get the id of the running container
 $ docker ps
 # launch the build script in the container
-$ docker exec -it CONTAINER_ID yarn workspace @make.org/front build
+$ docker exec -it CONTAINER_ID yarn workspace @make.org/assembly build
 # Restart the container
-$ docker-compose -f docker-compose.dev.yaml up -d --profile=app-ssr restart
+$ docker-compose -f docker-compose.dev.yaml up -d --profile=assembly-ssr restart
 ```
-
-## Running functional tests
-
-Start test environment
-
-```bash
-$ docker-compose -f docker-compose.dev.yaml --profile=front-test up -d
-```
-
-Run all tests
-
-```bash
-$ yarn cypress:front:run
-```
-
-or open Cypress
-
-```bash
-$ yarn cypress:front:open
-```
-
-Configure Cypress : [cypress.json](./cypress.json)
 
 ## Environment variables for production
 
-```bash
+````bash
 # .env file
 
 # PORT
@@ -77,20 +55,6 @@ API_URL_CLIENT_SIDE=https://api.make.org
 # Front url
 FRONT_URL=https://make.org
 
-# Tracking
-FB_PIXEL_ID=
-FB_CONVERSION_TOKEN=
-
-# Content api url
-CONTENT_API_URL_SERVER_SIDE=
-
-# Twitter
-TW_PIXEL_ID=
-TW_API_KEY=
-TW_API_SECRET=
-TW_ACCESS_TOKEN=
-TW_TOKEN_SECRET=
-```
 
 ## Updating packages
 
@@ -98,26 +62,4 @@ TW_TOKEN_SECRET=
 
 ```bash
 $ yarn lernaupdate
-```
-
-## Specificities
-
-### Results page
-
-Check [RESULTS.MD](./server/staticData/RESULTS.MD).
-
-## Accessibility page
-
-See page: [ACCESSIBILITY.MD](../../docs/accessibility.md).
-
-Run accessibility test:
-
-```bash
-yarn workspace @make.org/front accessibility
-```
-
-Fix accessibility:
-
-```bash
-yarn workspace @make.org/front accessibility:fix
-```
+````

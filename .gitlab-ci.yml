@@ -1,7 +1,7 @@
 image: makeorg/docker-arch-docker:latest
 
 variables: &global_variables
-  YARN_VERSION: "3.2.3"
+  YARN_VERSION: '3.2.3'
 
 cache:
   key: ${CI_COMMIT_REF_SLUG}
@@ -114,6 +114,20 @@ stages:
       - package.json
       - yarn.lock
 
+.assembly:
+  variables:
+    IMAGE_NAME: assembly
+    IMAGE_APP_TARGET: app-production
+    IMAGE_APP_PATH: apps/assembly/Dockerfile
+    RUNDECK_JOB_ID: $RUNDECK_ASSEMBLY_JOB_ID
+  only:
+    changes:
+      - .gitlab-ci.yml
+      - package/**/*
+      - apps/assembly/**/*
+      - package.json
+      - yarn.lock
+
 # Migrations
 .content-migration-condition: &content-migration-condition
   only:
@@ -143,7 +157,7 @@ stages:
     refs:
       - production
   <<: *exclude_weblate
-  image: "node:18.17-alpine"
+  image: 'node:18.17-alpine'
   before_script:
     - node -v
     - export YARN_VERSION="$YARN_VERSION"
@@ -217,7 +231,7 @@ stages:
 .e2e:
   image: cypress/browsers:node-18.16.0-chrome-114.0.5735.133-1-ff-114.0.2-edge-114.0.1823.51-1
   variables:
-    CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache_cypress"
+    CYPRESS_CACHE_FOLDER: '$CI_PROJECT_DIR/cache_cypress'
   artifacts:
     expire_in: 1 week
     when: always
@@ -301,6 +315,11 @@ build-content-migration-tool:
     - .build
     - .content-migration-tool
 
+build-make-assembly:
+  extends:
+    - .build
+    - .assembly
+
 # Deploy
 deploy-front-preproduction:
   extends:
@@ -324,6 +343,12 @@ deploy-content-preproduction:
   extends:
     - .deploy
     - .content
+    - .preprod
+
+deploy-assembly-preproduction:
+  extends:
+    - .deploy
+    - .assembly
     - .preprod
 
 deploy-front-production:
@@ -360,6 +385,12 @@ migrate-content-production:
   extends:
     - .migrate
     - .content-database
+    - .prod
+
+deploy-assembly-production:
+  extends:
+    - .deploy
+    - .assembly
     - .prod
 
 merge-to-prod:
