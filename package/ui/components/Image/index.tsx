@@ -39,11 +39,6 @@ const isInternalSourceUrl = (url: string): boolean => {
   );
 };
 
-const isImageSupportedByImageFlow = (url: string): boolean => {
-  const regex = /\.(jpg|jpeg|gif|png)($|\?)/;
-  return regex.test(url.toLowerCase());
-};
-
 const getImageFlowSrcs = (
   url: string,
   width: number | undefined,
@@ -56,9 +51,7 @@ const getImageFlowSrcs = (
   if (!width && !height) {
     return { src1x: url };
   }
-  if (!isImageSupportedByImageFlow(url)) {
-    return { src1x: url };
-  }
+
   const src = url.replace(/\?.*/g, "$'");
   const paramsSrc1x = imageflowQueryParams(width, height, crop);
   const paramsSrc2x = imageflowQueryParams(

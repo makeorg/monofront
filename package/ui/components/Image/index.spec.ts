@@ -65,9 +65,11 @@ describe('Get src values', () => {
   });
   it('use image flow with format not supported', () => {
     const data = getSrcValues(true, 'http://image1.svg', 3, 13, false);
-    expect(data.src1x).toEqual('http://image1.svg');
-    expect(data.src2x).toEqual(undefined);
-    expect(data.src3x).toEqual(undefined);
-    expect(data.placeHolder).toEqual('http://image1.svg?zoom=0.1');
+    expect(data.src1x).toEqual('http://image1.svg?w=3&h=13&mode=pad');
+    expect(data.src2x).toEqual('http://image1.svg?w=6&h=26&mode=pad');
+    expect(data.src3x).toEqual('http://image1.svg?w=9&h=39&mode=pad');
+    expect(data.placeHolder).toEqual(
+      'http://image1.svg?w=3&h=13&mode=pad&zoom=0.1'
+    );
   });
 });
