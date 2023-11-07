@@ -21,6 +21,7 @@ import { Keywords } from '@make.org/components/Flipping/Keywords';
 import { checkIsFeatureActivated } from '@make.org/utils/helpers/featureFlipping';
 import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
+import { usePanel } from '../../helpers/panel';
 import { Timeline } from '../../app/Consultation/Timeline';
 import { FeaturedProposals } from '../../app/Consultation/Cards/FeaturedProposals';
 import { ParticipateNavigation } from '../../app/Consultation/Navigation/Participate';
@@ -48,10 +49,7 @@ const ParticipatePage: FC = () => {
   const question: QuestionType = selectCurrentQuestion(state);
   const isDesktop = matchDesktopDevice(device);
   const PROPOSALS_THRESOLD = 5;
-
-  useEffect(() => {
-    trackDisplayOperationPage();
-  }, []);
+  const { showPanel } = usePanel();
 
   const InteractIcon = (
     <SvgPeople aria-hidden width={36} height={36} focusable="false" />
@@ -86,6 +84,12 @@ const ParticipatePage: FC = () => {
     FEATURE_FLIPPING.CONSULTATION_SHARE_DISABLE,
     question.activeFeatures
   );
+
+  useEffect(() => {
+    trackDisplayOperationPage();
+    showPanel();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <ThemeProvider theme={question.theme}>

@@ -20,6 +20,6 @@
     "../../package/components",
     "../../package/utils",
     "../../package/designsystem",
-    "../../package/logger"
+    "../../package/logger" 
   ]
 }

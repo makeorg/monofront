@@ -1,6 +1,6 @@
 import React, { useState, useEffect, FC } from 'react';
 import loadable from '@loadable/component';
-import { useParams, useLocation } from 'react-router';
+import { useParams } from 'react-router';
 import { QuestionService } from '@make.org/utils/services/Question';
 import { MiddlePageWrapperStyle } from '@make.org/ui/elements/MainElements';
 import { Spinner } from '@make.org/ui/components/Loading/Spinner';
@@ -11,22 +11,12 @@ import {
   updateTrackingQuestionParam,
   getQuestionFromState,
 } from '@make.org/utils/helpers/question';
-
-import { parse } from 'query-string';
-import {
-  setPanelContent,
-  closePanel,
-  removePanelContent,
-} from '@make.org/store/actions/panel';
-import { clearProposalPending } from '@make.org/store/actions/pendingProposal';
-
 import {
   removeCurrentQuestionSlug,
   setCurrentQuestionSlug,
 } from '@make.org/store/actions/currentQuestion';
 import { loadQuestion } from '@make.org/store/actions/questions';
 import { useAppContext } from '@make.org/store';
-import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 
 const NotFoundPage = loadable(() => import('../NotFound'));
 
@@ -45,9 +35,6 @@ export const QuestionWrapper: FC<Props> = ({ children, withRedirect }) => {
   const questionsInState = state.questions;
   const currentQuestion: QuestionType = selectCurrentQuestion(state);
   const currentQuestionSlug = state.currentQuestion;
-  const { search } = useLocation();
-  const urlQueryParams = parse(search);
-  const { displayPanel } = urlQueryParams;
 
   const [alternativeContent, setAlternativeContent] = useState(
     <MiddlePageWrapperStyle>
@@ -86,23 +73,6 @@ export const QuestionWrapper: FC<Props> = ({ children, withRedirect }) => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [questionSlug, language]);
-
-  useEffect(() => {
-    if (
-      displayPanel === 'propose' &&
-      currentQuestion &&
-      currentQuestion.canPropose
-    ) {
-      dispatch(clearProposalPending());
-      dispatch(setPanelContent(PANEL_CONTENT.PROPOSAL_JOURNEY));
-    }
-
-    return () => {
-      dispatch(closePanel());
-      dispatch(removePanelContent());
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [displayPanel, currentQuestion]);
 
   if (!currentQuestion) {
     return alternativeContent;

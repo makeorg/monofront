@@ -13,22 +13,14 @@ import { NotificationBanner } from '@make.org/components/Notifications/Banner';
 import { debounce } from '@make.org/utils/helpers/timers';
 import { DEBOUNCE_TIMER } from '@make.org/utils/constants/config';
 import { useAppContext } from '@make.org/store';
-import {
-  setPanelContent,
-  closePanel,
-  removePanelContent,
-} from '@make.org/store/actions/panel';
-import { selectAuthentication } from '@make.org/store/selectors/user.selector';
-import { useLocation, Route } from 'react-router';
+import { Route } from 'react-router';
 import { Panel } from '@make.org/components/Panel';
-import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 import { Modal } from '@make.org/components/Modal';
 import { PrivacyPolicyModal } from '@make.org/components/PrivacyPolicyModal';
 import { CookieModal } from '@make.org/components/CookieModal';
 import { SecureExpiration } from '@make.org/components/Expiration/Secure';
 import { SessionExpirationWithCoockies } from '@make.org/components/Expiration/Session';
 import { env } from '@make.org/assets/env';
-import { parse } from 'query-string';
 import { ApiServiceClient } from '@make.org/api/ApiService/ApiService.client';
 import { updateDeviceInState } from '../helpers/updateDeviceInState';
 import { Header } from './Header';
@@ -58,26 +50,6 @@ export const AppContainer: FC<Props> = ({ apiServiceClient }) => {
   );
   const [isClientSide, setIsClientSide] = useState(false);
   const hasCountry = country && country !== null;
-  const { search } = useLocation();
-  const urlQueryParams = parse(search);
-  const { displayPanel } = urlQueryParams;
-  const { isLoggedIn } = selectAuthentication(state);
-
-  useEffect(() => {
-    if (displayPanel === 'signin' && !isLoggedIn) {
-      dispatch(setPanelContent(PANEL_CONTENT.LOGIN));
-    }
-
-    if (displayPanel === 'signup' && !isLoggedIn) {
-      dispatch(setPanelContent(PANEL_CONTENT.REGISTER));
-    }
-
-    return () => {
-      dispatch(closePanel());
-      dispatch(removePanelContent());
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [displayPanel]);
 
   useEffect(() => {
     // Handle device state after resize

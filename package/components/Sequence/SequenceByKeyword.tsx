@@ -38,7 +38,6 @@ export const SequenceByKeyword: FC = () => {
   const { encodedKeyword } = params;
   const keyword = encodedKeyword && decodeURI(encodedKeyword);
   const [sequenceLabel, setSequenceLabel] = useState<string>('');
-
   const question: QuestionType = selectCurrentQuestion(state);
 
   const executeStartSequence = async (

@@ -7,6 +7,7 @@ import { Spinner } from '@make.org/ui/components/Loading/Spinner';
 import { MiddlePageWrapperStyle } from '@make.org/ui/elements/MainElements';
 import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
+import { usePanel } from '../../helpers/panel';
 import { HighlightsBanner } from '../../app/Homepage/Highlights';
 import { HomepageQuestions } from '../../app/Homepage/Questions';
 import { FeaturedQuestions } from '../../app/Homepage/Featured/Questions';
@@ -30,6 +31,7 @@ const HomePage: FC = () => {
   const hasConsultations =
     (homepage && homepage.currentQuestions.length > 0) ||
     (homepage && homepage.pastQuestions.length > 0);
+  const { showPanel } = usePanel();
 
   const initHomepage = async () => {
     setIsLoading(true);
@@ -62,6 +64,11 @@ const HomePage: FC = () => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [country, language]);
+
+  useEffect(() => {
+    showPanel();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
