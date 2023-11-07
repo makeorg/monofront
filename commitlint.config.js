@@ -18,6 +18,7 @@ module.exports = {
         'translator',
         'designsystem',
         'content',
+        'assembly',
       ],
     ],
     'subject-case': () => [

@@ -116,10 +116,10 @@ stages:
 
 .assembly:
   variables:
-    IMAGE_NAME: assembly
+    IMAGE_NAME: assembly-ui
     IMAGE_APP_TARGET: app-production
     IMAGE_APP_PATH: apps/assembly/Dockerfile
-    RUNDECK_JOB_ID: $RUNDECK_ASSEMBLY_JOB_ID
+    RUNDECK_JOB_ID: $RUNDECK_ASSEMBLY_UI_JOB_ID
   only:
     changes:
       - .gitlab-ci.yml
