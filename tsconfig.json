@@ -49,7 +49,6 @@
       "@make.org/front": ["./apps/front/*"],
       "@make.org/assembly": ["./apps/assembly/*"],
       "@make.org/translator": ["./apps/translator/src/*"],
-      "@make.org/content": ["./apps/content/*"],
       "@make.org/types": ["./package/types/*"],
       "@make.org/api": ["./package/api/*"],
       "@make.org/assets": ["./package/assets/*"],

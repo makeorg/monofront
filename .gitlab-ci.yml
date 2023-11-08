@@ -100,20 +100,6 @@ stages:
       - package.json
       - yarn.lock
 
-.content:
-  variables:
-    IMAGE_NAME: content
-    IMAGE_APP_TARGET: app-production
-    IMAGE_APP_PATH: apps/content/Dockerfile
-    RUNDECK_JOB_ID: $RUNDECK_CONTENT_JOB_ID
-  only:
-    changes:
-      - .gitlab-ci.yml
-      - package/**/*
-      - apps/content/**/*
-      - package.json
-      - yarn.lock
-
 .assembly:
   variables:
     IMAGE_NAME: assembly-ui
@@ -127,24 +113,6 @@ stages:
       - apps/assembly/**/*
       - package.json
       - yarn.lock
-
-# Migrations
-.content-migration-condition: &content-migration-condition
-  only:
-    changes:
-      - apps/content/prisma/migrations/**/*
-
-.content-migration-tool:
-  variables:
-    IMAGE_NAME: content-migration-tool
-    IMAGE_APP_TARGET: app-dev
-    IMAGE_APP_PATH: apps/content/Dockerfile
-  <<: *content-migration-condition
-
-.content-database:
-  variables:
-    RUNDECK_JOB_ID: $RUNDECK_CONTENT_MIGRATE_JOB_ID
-  <<: *content-migration-condition
 
 # Stages
 .check:
@@ -164,7 +132,6 @@ stages:
     - corepack enable yarn
     - corepack prepare
     - yarn install
-    - yarn workspace @make.org/content prisma generate
   cache: []
 
 .build:
@@ -305,16 +272,6 @@ build-make-translator:
     - .build
     - .translator
 
-build-make-content:
-  extends:
-    - .build
-    - .content
-
-build-content-migration-tool:
-  extends:
-    - .build
-    - .content-migration-tool
-
 build-make-assembly:
   extends:
     - .build
@@ -339,12 +296,6 @@ deploy-translator-preproduction:
     - .translator
     - .preprod
 
-deploy-content-preproduction:
-  extends:
-    - .deploy
-    - .content
-    - .preprod
-
 # deploy-assembly-preproduction:
 #   extends:
 #     - .deploy
@@ -367,24 +318,6 @@ deploy-translator-production:
   extends:
     - .deploy
     - .translator
-    - .prod
-
-deploy-content-production:
-  extends:
-    - .deploy
-    - .content
-    - .prod
-
-migrate-content-preproduction:
-  extends:
-    - .migrate
-    - .content-database
-    - .preprod
-
-migrate-content-production:
-  extends:
-    - .migrate
-    - .content-database
     - .prod
 
 # deploy-assembly-production:

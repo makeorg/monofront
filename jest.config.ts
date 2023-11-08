@@ -15,10 +15,6 @@ const config: Config.InitialOptions = {
   snapshotSerializers: [require.resolve('snapshot-diff/serializer.js')],
   setupFilesAfterEnv: ['<rootDir>/test/setup.tsx'],
   testPathIgnorePatterns: ['\\.snap$', '\\.svg$', '<rootDir>/node_modules/'],
-  modulePathIgnorePatterns: [
-    '<rootDir>/apps/content',
-    '<rootDir>/cockroach-data',
-  ],
 };
 
 export default config;

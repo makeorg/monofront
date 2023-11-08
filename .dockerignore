@@ -8,7 +8,6 @@
 **/Dockerfile
 docker-compose.dev.yaml
 **/coverage
-cockroach-data
 **/.DS_Store
 yarn-error.log
 lerna-debug.log

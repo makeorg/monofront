@@ -18,7 +18,6 @@ services:
       - /home/app/apps/front/node_modules
       - /home/app/apps/widget/node_modules
       - /home/app/apps/translator/node_modules
-      - /home/app/apps/content/node_modules
       - /home/app/package/api/node_modules
       - /home/app/package/components/node_modules
       - /home/app/package/types/node_modules
@@ -32,7 +31,6 @@ services:
       - /home/app/apps/front/dist
       - /home/app/apps/widget/dist
       - /home/app/apps/translator/dist
-      - /home/app/apps/content/dist
       - /home/app/dist
     profiles:
       - app-dev
@@ -64,7 +62,6 @@ services:
     volumes: *default_volumes
     profiles:
       - app-ssr
-      - content-dev-front-ssr
 
   api_mock:
     image: api_mock
@@ -188,47 +185,6 @@ services:
       - ./apps/translator/.env:/usr/app/.env
     profiles:
       - translator-prod
-
-  content_dev:
-    image: content_dev
-    build:
-      context: .
-      dockerfile: apps/content/Dockerfile
-      target: app-dev
-    ports:
-      - 3001:3000
-    volumes: *default_volumes
-    profiles:
-      - content-dev
-      - content-dev-front-ssr
-
-  content_prod:
-    image: content_prod
-    build:
-      context: .
-      dockerfile: apps/content/Dockerfile
-      target: app-production
-    ports:
-      - 3000:8000
-    volumes:
-      - /usr/app/dist
-      - /usr/app/node_modules
-      - ./apps/content/.env:/usr/app/.env
-    profiles:
-      - content-prod
-
-  content_crdb:
-    image: cockroachdb/cockroach:v22.1.15
-    ports:
-      - "26257:26257"
-      - "8080:8080"
-    command: start-single-node --insecure
-    volumes:
-      - "${PWD}/cockroach-data/crdb:/cockroach/cockroach-data"
-    profiles:
-      - content-prod
-      - content-dev
-      - content-dev-front-ssr
 
   assembly_dev:
     image: assembly_dev

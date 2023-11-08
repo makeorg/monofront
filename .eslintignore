@@ -16,4 +16,3 @@ dist
 /*/*/cypress
 /bin
 webpack.config.cjs
-cockroach-data
