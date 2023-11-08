@@ -15,7 +15,6 @@ module.exports = {
         'ui',
         'utils',
         'widget',
-        'translator',
         'designsystem',
         'assembly',
       ],

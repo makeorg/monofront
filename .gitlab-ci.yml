@@ -86,20 +86,6 @@ stages:
       - package.json
       - yarn.lock
 
-.translator:
-  variables:
-    IMAGE_NAME: translator
-    IMAGE_APP_TARGET: app-production
-    IMAGE_APP_PATH: apps/translator/Dockerfile
-    RUNDECK_JOB_ID: $RUNDECK_TRANSLATOR_JOB_ID
-  only:
-    changes:
-      - .gitlab-ci.yml
-      - package/**/*
-      - apps/translator/**/*
-      - package.json
-      - yarn.lock
-
 .assembly:
   variables:
     IMAGE_NAME: assembly-ui
@@ -267,11 +253,6 @@ build-make-widget:
     - .build
     - .widget
 
-build-make-translator:
-  extends:
-    - .build
-    - .translator
-
 build-make-assembly:
   extends:
     - .build
@@ -290,12 +271,6 @@ deploy-widget-preproduction:
     - .widget
     - .preprod
 
-deploy-translator-preproduction:
-  extends:
-    - .deploy
-    - .translator
-    - .preprod
-
 # deploy-assembly-preproduction:
 #   extends:
 #     - .deploy
@@ -312,12 +287,6 @@ deploy-widget-production:
   extends:
     - .deploy
     - .widget
-    - .prod
-
-deploy-translator-production:
-  extends:
-    - .deploy
-    - .translator
     - .prod
 
 # deploy-assembly-production:

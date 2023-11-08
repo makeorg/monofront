@@ -17,7 +17,6 @@ services:
       - /home/app/node_modules
       - /home/app/apps/front/node_modules
       - /home/app/apps/widget/node_modules
-      - /home/app/apps/translator/node_modules
       - /home/app/package/api/node_modules
       - /home/app/package/components/node_modules
       - /home/app/package/types/node_modules
@@ -30,7 +29,6 @@ services:
       - /home/app/apimock/node_modules
       - /home/app/apps/front/dist
       - /home/app/apps/widget/dist
-      - /home/app/apps/translator/dist
       - /home/app/dist
     profiles:
       - app-dev
@@ -158,33 +156,6 @@ services:
       - ./apps/widget/.env.cypress:/home/app/apps/widget/.env.local
     profiles:
       - widget-test
-
-  translator_dev:
-    image: translator_dev
-    build:
-      context: .
-      dockerfile: apps/translator/Dockerfile
-      target: app-dev
-    ports:
-      - 3000:3000
-      - 8888:8888
-    volumes: *default_volumes
-    profiles:
-      - translator-dev
-
-  translator_prod:
-    image: translator_prod
-    build:
-      context: apps/translator
-      target: app-production
-    ports:
-      - 3000:8000
-    volumes:
-      - /usr/app/dist
-      - /usr/app/node_modules
-      - ./apps/translator/.env:/usr/app/.env
-    profiles:
-      - translator-prod
 
   assembly_dev:
     image: assembly_dev
