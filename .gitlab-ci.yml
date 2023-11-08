@@ -345,11 +345,11 @@ deploy-content-preproduction:
     - .content
     - .preprod
 
-deploy-assembly-preproduction:
-  extends:
-    - .deploy
-    - .assembly
-    - .preprod
+# deploy-assembly-preproduction:
+#   extends:
+#     - .deploy
+#     - .assembly
+#     - .preprod
 
 deploy-front-production:
   extends:
@@ -387,11 +387,11 @@ migrate-content-production:
     - .content-database
     - .prod
 
-deploy-assembly-production:
-  extends:
-    - .deploy
-    - .assembly
-    - .prod
+# deploy-assembly-production:
+#   extends:
+#     - .deploy
+#     - .assembly
+#     - .prod
 
 merge-to-prod:
   stage: merge
