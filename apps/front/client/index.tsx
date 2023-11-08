@@ -112,6 +112,14 @@ const initApp = async (state: StateRoot) => {
   const demographicsCookie = cookies.get(COOKIE.DEMOGRAPHICS);
   const authenticationStateData = await authenticationState();
 
+  // Cookie preference
+  const preferencesCookie = cookies.get(COOKIE.USER_PREFERENCES);
+  initTrackersFromPreferences(
+    preferencesCookie,
+    trackingParamsService.visitorId,
+    ENABLE_MIXPANEL
+  );
+
   const store = {
     ...state,
     user: {
@@ -120,6 +128,7 @@ const initApp = async (state: StateRoot) => {
         ...state.user.authentication,
         ...authenticationStateData,
       },
+      cookiesPreferences: preferencesCookie,
     },
     session: {
       ...state.session,
@@ -173,14 +182,6 @@ const initApp = async (state: StateRoot) => {
   if (!thirdCookieEnabled(thirdCookieNameToCheck)) {
     logAndTrackEvent('third-cookie-is-disabled');
   }
-
-  // Cookie preference
-  const preferencesCookie = cookies.get(COOKIE.USER_PREFERENCES);
-  initTrackersFromPreferences(
-    preferencesCookie,
-    trackingParamsService.visitorId,
-    ENABLE_MIXPANEL
-  );
 
   loadableReady(() => {
     const appDom = document.getElementById('app');
