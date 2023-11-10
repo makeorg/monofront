@@ -13,3 +13,11 @@ export enum TRACKING {
   COMPONENT_PARAM_SEQUENCE_CONTROVERSIAL = 'sequence-controversial',
   COMPONENT_PARAM_SEQUENCE_KEYWORD = 'sequence-keyword',
 }
+
+export enum TRACKING_CONSENT {
+  FACEBOOK_TRACKING = 'facebook_tracking',
+  TWITTER_TRACKING = 'twitter_tracking',
+  FACEBOOK_SHARING = 'facebook_sharing',
+  TWITTER_SHARING = 'twitter_sharing',
+  LINKEDIN_SHARING = 'linkedin_sharing',
+}

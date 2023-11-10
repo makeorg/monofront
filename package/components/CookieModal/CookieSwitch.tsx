@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import Cookies from 'universal-cookie';
-import { COOKIE } from '@make.org/types/enums';
+import React, { FC } from 'react';
 import {
   trackClickCookieSwitchAccept,
   trackClickCookieSwitchRefuse,
 } from '@make.org/utils/services/Tracking';
-import { setCookiesPreferencesInApp } from '@make.org/store/actions/user/cookiesPreferences';
-import { StateUserCookiesPreferences } from '@make.org/types';
+import { updateTrackingConsent } from '@make.org/store/actions/user/trackingConsent';
 import { useAppContext } from '@make.org/store';
-import { env } from '@make.org/assets/env';
 import { SwitchButton } from '@make.org/designsystem/components/Buttons/Switch';
+import { StateTrackingConsent } from '@make.org/types';
 import {
   CookieModalCookieDetailParagraphStyle,
   CookieModalElementSwitchWrapperStyle,
@@ -17,34 +14,19 @@ import {
 } from './style';
 
 type Props = {
-  value: keyof StateUserCookiesPreferences['tracking_consent'];
+  tracker: keyof StateTrackingConsent;
+  value: boolean;
   description: string;
-  // eslint-disable-next-line react/require-default-props
   onCookiePage?: boolean;
 };
 
-export const CookieSwitch: React.FC<Props> = ({
+export const CookieSwitch: FC<Props> = ({
+  tracker,
   value,
   description,
   onCookiePage,
 }) => {
-  const { dispatch, state } = useAppContext();
-  const { cookiesPreferences } = state.user;
-  const [preferenceValue, setPreferenceValue] = useState(false);
-  const cookies = env.isClientSide() && new Cookies();
-
-  useEffect(() => {
-    if (cookies) {
-      const preferencesFromCookie = cookies.get(
-        COOKIE.USER_PREFERENCES
-      )?.tracking_consent;
-
-      if (preferencesFromCookie) {
-        setPreferenceValue(preferencesFromCookie[value]);
-      }
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cookies]);
+  const { dispatch } = useAppContext();
 
   return (
     <CookieModalElementSwitchWrapperStyle>
@@ -54,28 +36,14 @@ export const CookieSwitch: React.FC<Props> = ({
         {description}
         <CookieSwitchWrapperStyle>
           <SwitchButton
-            value={preferenceValue}
+            value={value}
             onEnabling={() => {
-              dispatch(
-                setCookiesPreferencesInApp({
-                  tracking_consent: {
-                    ...cookiesPreferences.tracking_consent,
-                    [value]: true,
-                  },
-                })
-              );
-              trackClickCookieSwitchAccept(value);
+              dispatch(updateTrackingConsent(tracker, true));
+              trackClickCookieSwitchAccept(tracker);
             }}
             onDisabling={() => {
-              dispatch(
-                setCookiesPreferencesInApp({
-                  tracking_consent: {
-                    ...cookiesPreferences.tracking_consent,
-                    [value]: false,
-                  },
-                })
-              );
-              trackClickCookieSwitchRefuse(value);
+              dispatch(updateTrackingConsent(tracker, false));
+              trackClickCookieSwitchRefuse(tracker);
             }}
           />
         </CookieSwitchWrapperStyle>

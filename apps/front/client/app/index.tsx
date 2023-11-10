@@ -41,15 +41,14 @@ type Props = {
  */
 export const AppContainer: FC<Props> = ({ apiServiceClient }) => {
   const { dispatch, state } = useAppContext();
-  const { device, country, language } = state.appConfig;
-  const { showDataPolicy, showSort, showFilters } = state.modal;
+  const { device, language } = state.appConfig;
+  const { showDataPolicy, showSort, showFilters, showCookies } = state.modal;
   const showFiltersOrSortModale = (showSort || showFilters) === true;
   const updateDeviceConfig = debounce(
     () => dispatch(updateDeviceInState(device)),
     DEBOUNCE_TIMER
   );
   const [isClientSide, setIsClientSide] = useState(false);
-  const hasCountry = country && country !== null;
 
   useEffect(() => {
     // Handle device state after resize
@@ -81,7 +80,7 @@ export const AppContainer: FC<Props> = ({ apiServiceClient }) => {
 
   return withExpiration(
     <>
-      {hasCountry && <CookieModal />}
+      {showCookies && <CookieModal />}
       {showDataPolicy && <PrivacyPolicyModal />}
       {showFiltersOrSortModale && <SortAndFiltersModale />}
       <ServiceErrorHandler>

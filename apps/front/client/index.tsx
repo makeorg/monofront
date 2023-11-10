@@ -112,10 +112,11 @@ const initApp = async (state: StateRoot) => {
   const demographicsCookie = cookies.get(COOKIE.DEMOGRAPHICS);
   const authenticationStateData = await authenticationState();
 
-  // Cookie preference
-  const preferencesCookie = cookies.get(COOKIE.USER_PREFERENCES);
+  // Init trackers
+  // tracking consent is stored in COOKIE.USER_PREFERENCES
+  // this cookie is read on server side (apps/front/server/reactRender.tsx line 150) then added to the state
   initTrackersFromPreferences(
-    preferencesCookie,
+    state.user.trackingConsent,
     trackingParamsService.visitorId,
     ENABLE_MIXPANEL
   );
@@ -128,7 +129,6 @@ const initApp = async (state: StateRoot) => {
         ...state.user.authentication,
         ...authenticationStateData,
       },
-      cookiesPreferences: preferencesCookie,
     },
     session: {
       ...state.session,

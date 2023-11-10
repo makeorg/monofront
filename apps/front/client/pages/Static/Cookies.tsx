@@ -20,13 +20,13 @@ import { trackClickModalCookieSave } from '@make.org/utils/services/Tracking';
 import {
   initTrackersFromPreferences,
   removeTrackersFromPreferences,
-  setTrackingConsentFromPreferencesCookie,
+  setCookieWithTrackingConsent,
 } from '@make.org/utils/helpers/clientCookies';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { MetaTags } from '@make.org/components/MetaTags';
 import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import { NOTIF } from '@make.org/types/enums';
+import { NOTIF, TRACKING_CONSENT } from '@make.org/types/enums';
 import {
   SvgLoudSpeaker,
   SvgSettings,
@@ -65,7 +65,7 @@ import {
 const CookiesPage: FC = () => {
   const { dispatch, state } = useAppContext();
   const { country } = state.appConfig;
-  const { cookiesPreferences } = state.user;
+  const { trackingConsent } = state.user;
   const formattedDate = DateHelper.localizedAndFormattedDate(
     '2021/3/28',
     'dd MMMM yyyy'
@@ -91,10 +91,10 @@ const CookiesPage: FC = () => {
 
   const handlePreferences = () => {
     trackClickModalCookieSave('cookies-accept-preferences');
-    setTrackingConsentFromPreferencesCookie(cookiesPreferences);
-    removeTrackersFromPreferences(cookiesPreferences);
+    setCookieWithTrackingConsent(trackingConsent);
+    removeTrackersFromPreferences(trackingConsent);
     initTrackersFromPreferences(
-      cookiesPreferences,
+      trackingConsent,
       trackingParamsService.visitorId
     );
     dispatch(
@@ -417,35 +417,40 @@ const CookiesPage: FC = () => {
                   </CookieDescriptionStyle>
                   <CookieSwitch
                     onCookiePage
-                    value="facebook_tracking"
+                    tracker={TRACKING_CONSENT.FACEBOOK_TRACKING}
+                    value={trackingConsent.facebook_tracking}
                     description={i18n.t(
                       'cookies_management.details.social.facebook_tracking'
                     )}
                   />
                   <CookieSwitch
                     onCookiePage
-                    value="twitter_tracking"
+                    value={trackingConsent.twitter_tracking}
+                    tracker={TRACKING_CONSENT.TWITTER_TRACKING}
                     description={i18n.t(
                       'cookies_management.details.social.twitter_tracking'
                     )}
                   />
                   <CookieSwitch
                     onCookiePage
-                    value="facebook_sharing"
+                    tracker={TRACKING_CONSENT.FACEBOOK_SHARING}
+                    value={trackingConsent.facebook_sharing}
                     description={i18n.t(
                       'cookies_management.details.social.facebook_sharing'
                     )}
                   />
                   <CookieSwitch
                     onCookiePage
-                    value="twitter_sharing"
+                    tracker={TRACKING_CONSENT.TWITTER_SHARING}
+                    value={trackingConsent.twitter_sharing}
                     description={i18n.t(
                       'cookies_management.details.social.twitter_sharing'
                     )}
                   />
                   <CookieSwitch
                     onCookiePage
-                    value="linkedin_sharing"
+                    tracker={TRACKING_CONSENT.LINKEDIN_SHARING}
+                    value={trackingConsent.linkedin_sharing}
                     description={i18n.t(
                       'cookies_management.details.social.linkedin_sharing'
                     )}

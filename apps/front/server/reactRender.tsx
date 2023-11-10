@@ -21,11 +21,13 @@ import webpackManifest from 'webpack-manifest';
 import parser from 'ua-parser-js';
 import ContextState from '@make.org/store';
 import { TRANSLATION_COMMON_NAMESPACE } from '@make.org/utils/i18n/constants';
-import { StateRoot } from '@make.org/types';
+import { StateRoot, StateTrackingConsent } from '@make.org/types';
 import { Request, Response } from 'express';
 import { Cookie } from 'universal-cookie';
 import { getLoggerInstance } from '@make.org/logger';
 import serialize from 'serialize-javascript';
+import { COOKIE } from '@make.org/types/enums';
+import { trackingConsent_state } from '@make.org/store/reducers/user/trackingConsent';
 import { AppContainer } from '../client/app';
 import { ViewsService } from './service/ViewsService';
 import { translationRessoucesLanguages } from '../i18n';
@@ -145,6 +147,12 @@ export const reactRender = async (
       })
   );
 
+  // get tracking consent from cookie
+  const preferencesFromCookie: {
+    language: string;
+    tracking_consent: StateTrackingConsent;
+  } = req.universalCookies.get(COOKIE.USER_PREFERENCES);
+
   const state: StateRoot = {
     ...initialState,
     ...routeState,
@@ -163,6 +171,15 @@ export const reactRender = async (
       countriesWithConsultations,
       device: isMobileOrTablet ? MOBILE_DEVICE : DESKTOP_DEVICE,
       privacyPolicy: PRIVACY_POLICY_DATE,
+    },
+    modal: {
+      ...initialState.modal,
+      showCookies: !preferencesFromCookie.tracking_consent,
+    },
+    user: {
+      ...initialState.user,
+      trackingConsent:
+        preferencesFromCookie?.tracking_consent || trackingConsent_state,
     },
   };
 

@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import ReactModal from 'react-modal';
 import i18n from 'i18next';
-import {
-  modalCloseCookies,
-  modalShowCookies,
-} from '@make.org/store/actions/modal';
+import { modalCloseCookies } from '@make.org/store/actions/modal';
 import {
   trackClickModalCookieSave,
   trackClickModalCookiePersonalize,
@@ -13,13 +11,12 @@ import {
 import {
   initTrackersFromPreferences,
   removeTrackersFromPreferences,
-  setTrackingConsentFromPreferencesCookie,
-  getTrackingConsentFromPreferencesCookie,
+  setCookieWithTrackingConsent,
 } from '@make.org/utils/helpers/clientCookies';
 import {
-  acceptAllCookiesPreferences,
-  rejectAllCookiesPreferences,
-} from '@make.org/store/actions/user/cookiesPreferences';
+  acceptAllTrackingConsent,
+  rejectAllTrackingConsent,
+} from '@make.org/store/actions/user/trackingConsent';
 import {
   ACCEPT_ALL_PREFERENCES,
   ENABLE_MIXPANEL,
@@ -56,15 +53,14 @@ const customStyles = {
 export const CookieModal: React.FC = () => {
   const { dispatch, state } = useAppContext();
   const { showCookies } = state.modal;
-  const { cookiesPreferences } = state.user;
+  const { trackingConsent } = state.user;
   const [customization, enableCustomization] = useState(false);
-  const preferencesCookie = getTrackingConsentFromPreferencesCookie();
 
   const handleAcceptAll = async () => {
-    dispatch(acceptAllCookiesPreferences());
+    dispatch(acceptAllTrackingConsent());
     trackClickModalCookieSave('cookies-accept-all');
     dispatch(modalCloseCookies());
-    setTrackingConsentFromPreferencesCookie(ACCEPT_ALL_PREFERENCES);
+    setCookieWithTrackingConsent(ACCEPT_ALL_PREFERENCES);
     initTrackersFromPreferences(
       ACCEPT_ALL_PREFERENCES,
       trackingParamsService.visitorId,
@@ -73,10 +69,10 @@ export const CookieModal: React.FC = () => {
   };
 
   const handleRejectAll = () => {
-    dispatch(rejectAllCookiesPreferences());
+    dispatch(rejectAllTrackingConsent());
     trackClickModalCookieRefuse();
     dispatch(modalCloseCookies());
-    setTrackingConsentFromPreferencesCookie(REJECT_ALL_PREFRENCES);
+    setCookieWithTrackingConsent(REJECT_ALL_PREFRENCES);
     removeTrackersFromPreferences(REJECT_ALL_PREFRENCES);
   };
 
@@ -92,25 +88,14 @@ export const CookieModal: React.FC = () => {
   const handlePreferences = () => {
     trackClickModalCookieSave('cookies-accept-preferences');
     dispatch(modalCloseCookies());
-    setTrackingConsentFromPreferencesCookie(cookiesPreferences);
-    removeTrackersFromPreferences(cookiesPreferences);
+    setCookieWithTrackingConsent(trackingConsent);
+    removeTrackersFromPreferences(trackingConsent);
     initTrackersFromPreferences(
-      cookiesPreferences,
+      trackingConsent,
       trackingParamsService.visitorId,
       ENABLE_MIXPANEL
     );
   };
-
-  useEffect(() => {
-    if (!preferencesCookie) {
-      dispatch(modalShowCookies());
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [preferencesCookie]);
-
-  if (!showCookies) {
-    return null;
-  }
 
   return (
     <ReactModal

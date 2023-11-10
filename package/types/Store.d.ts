@@ -115,21 +115,19 @@ export type StateUserPasswordRecovery = {
   readonly updated?: boolean;
 };
 
-export type StateUserCookiesPreferences = {
-  tracking_consent: {
-    facebook_tracking: boolean;
-    twitter_tracking: boolean;
-    facebook_sharing: boolean;
-    twitter_sharing: boolean;
-    linkedin_sharing: boolean;
-  };
+export type StateTrackingConsent = {
+  facebook_tracking: boolean;
+  twitter_tracking: boolean;
+  facebook_sharing: boolean;
+  twitter_sharing: boolean;
+  linkedin_sharing: boolean;
 };
 
 // User State
 export type StateUser = {
   authentication: StateAuthentication;
   readonly passwordRecovery: StateUserPasswordRecovery;
-  readonly cookiesPreferences: StateUserCookiesPreferences;
+  readonly trackingConsent: StateTrackingConsent;
 };
 
 export type SingleStateQuestionType = {

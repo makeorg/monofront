@@ -5,7 +5,7 @@ import { modal_state } from './reducers/modal';
 import { session_state } from './reducers/session';
 import { notifications_state } from './reducers/notifications';
 import { authentication_state } from './reducers/user/authentication';
-import { cookiesPreferences_state } from './reducers/user/cookiesPreferences';
+import { trackingConsent_state } from './reducers/user/trackingConsent';
 import { passwordRecovery_state } from './reducers/user/passwordRecovery';
 import { pendingProposal_state } from './reducers/pendingProposal';
 import { appConfig_state } from './reducers/appConfig';
@@ -25,7 +25,7 @@ export const initialState: StateRoot = {
   user: {
     authentication: authentication_state,
     passwordRecovery: passwordRecovery_state,
-    cookiesPreferences: cookiesPreferences_state,
+    trackingConsent: trackingConsent_state,
   },
   modal: modal_state,
   partners: {},

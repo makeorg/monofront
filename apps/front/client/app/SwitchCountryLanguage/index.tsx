@@ -26,6 +26,8 @@ export const SwitchCountryLanguage: React.FC = () => {
     availableTranslations,
   } = state.appConfig;
 
+  const { trackingConsent } = state.user;
+
   const [countriesTransMap, setCountriesTransMap] = useState(
     getCountriesTransMap()
   );
@@ -55,7 +57,10 @@ export const SwitchCountryLanguage: React.FC = () => {
     dispatch(closePanel());
     dispatch(removePanelContent());
 
-    setLanguageInPreferenceCookie(newLanguage as keyof typeof LocaleType);
+    setLanguageInPreferenceCookie(
+      newLanguage as keyof typeof LocaleType,
+      trackingConsent
+    );
 
     dispatch(setCountryCode(newCountry));
     dispatch(setLanguageCode(newLanguage));

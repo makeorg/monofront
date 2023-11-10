@@ -51,4 +51,15 @@ export const initDevState = (initialState: StateRoot): StateRoot => ({
       'UA',
     ],
   },
+  user: {
+    ...initialState.user,
+    // Overide make-cookie-preferences for local dev
+    trackingConsent: {
+      facebook_tracking: false,
+      twitter_tracking: false,
+      facebook_sharing: false,
+      twitter_sharing: false,
+      linkedin_sharing: false,
+    },
+  },
 });

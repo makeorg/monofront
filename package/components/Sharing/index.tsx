@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { FC } from 'react';
 import { useLocation } from 'react-router';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import i18n from 'i18next';
@@ -13,8 +13,7 @@ import {
   facebookShareUrl,
   linkedinShareUrl,
 } from '@make.org/utils/helpers/social';
-import Cookies from 'universal-cookie';
-import { COOKIE, NOTIF } from '@make.org/types/enums';
+import { NOTIF } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import {
@@ -27,11 +26,11 @@ import {
 /**
  * Renders Sharing
  */
-export const Sharing: React.FC = () => {
+export const Sharing: FC = () => {
   const location = useLocation();
-  const { dispatch } = useAppContext();
-  const cookies = new Cookies();
-  const preferencesCookie = cookies.get(COOKIE.USER_PREFERENCES);
+  const { state, dispatch } = useAppContext();
+  const { facebook_sharing, twitter_sharing, linkedin_sharing } =
+    state.user.trackingConsent;
 
   const displayCookieNotification = () =>
     dispatch(
@@ -44,7 +43,7 @@ export const Sharing: React.FC = () => {
   return (
     <SharingStyle as={UnstyledListStyle}>
       <li>
-        {preferencesCookie?.tracking_consent?.facebook_sharing ? (
+        {facebook_sharing ? (
           <FacebookButtonStyle
             rel="noopener"
             aria-label={i18n.t('sharing.facebook') || undefined}
@@ -65,7 +64,7 @@ export const Sharing: React.FC = () => {
         )}
       </li>
       <li>
-        {preferencesCookie?.tracking_consent?.twitter_sharing ? (
+        {twitter_sharing ? (
           <TwitterButtonStyle
             rel="noopener"
             aria-label={i18n.t('sharing.twitter') || undefined}
@@ -86,7 +85,7 @@ export const Sharing: React.FC = () => {
         )}
       </li>
       <li>
-        {preferencesCookie?.tracking_consent?.linkedin_sharing ? (
+        {linkedin_sharing ? (
           <LinkedInButtonStyle
             rel="noopener"
             aria-label={i18n.t('sharing.linkedin') || undefined}

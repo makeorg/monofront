@@ -12,6 +12,8 @@ import {
   trackDisplayModalCookieSecondStep,
   trackClickModalCookieBack,
 } from '@make.org/utils/services/Tracking';
+import { TRACKING_CONSENT } from '@make.org/types/enums';
+import { useAppContext } from '@make.org/store';
 import {
   CookieModalContentStyle,
   CookieModalHeaderWrapperStyle,
@@ -37,6 +39,8 @@ export const SecondStepCookie: React.FC<Props> = ({
   toggleCustomization,
   handleRejectAll,
 }) => {
+  const { state } = useAppContext();
+  const { trackingConsent } = state.user;
   const handleBack = () => {
     trackClickModalCookieBack();
     toggleCustomization();
@@ -156,23 +160,28 @@ export const SecondStepCookie: React.FC<Props> = ({
               }}
             />
             <CookieSwitch
-              value="facebook_tracking"
+              tracker={TRACKING_CONSENT.FACEBOOK_TRACKING}
+              value={trackingConsent.facebook_tracking}
               description={i18n.t('cookie_modal.social_media.facebook_pixel')}
             />
             <CookieSwitch
-              value="twitter_tracking"
+              tracker={TRACKING_CONSENT.TWITTER_TRACKING}
+              value={trackingConsent.twitter_tracking}
               description={i18n.t('cookie_modal.social_media.twitter_pixel')}
             />
             <CookieSwitch
-              value="facebook_sharing"
+              tracker={TRACKING_CONSENT.FACEBOOK_SHARING}
+              value={trackingConsent.facebook_sharing}
               description={i18n.t('cookie_modal.social_media.facebook_sharing')}
             />
             <CookieSwitch
-              value="twitter_sharing"
+              tracker={TRACKING_CONSENT.TWITTER_SHARING}
+              value={trackingConsent.twitter_sharing}
               description={i18n.t('cookie_modal.social_media.twitter_sharing')}
             />
             <CookieSwitch
-              value="linkedin_sharing"
+              tracker={TRACKING_CONSENT.LINKEDIN_SHARING}
+              value={trackingConsent.linkedin_sharing}
               description={i18n.t('cookie_modal.social_media.linkedin_sharing')}
             />
           </ColumnElementStyle>
