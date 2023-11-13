@@ -11,7 +11,7 @@
     "@make.org/utils": "0.1.0",
     "@types/node": "18.17.1",
     "@types/react": "^18.2.21",
-    "@types/styled-components": "5.1.26",
+    "@types/styled-components": "^5.1.26",
     "i18next": "^23.5.0",
     "react": "^18.2.0",
     "react-autosize-textarea": "^7.1.0",
