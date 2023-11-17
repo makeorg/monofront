@@ -152,13 +152,15 @@ export const reactRender = async (
     language: string;
     tracking_consent: StateTrackingConsent;
   } = req.universalCookies.get(COOKIE.USER_PREFERENCES);
-
-  const state: StateRoot = {
+  const baseState = {
     ...initialState,
     ...routeState,
+  };
+
+  const state: StateRoot = {
+    ...baseState,
     appConfig: {
-      ...initialState.appConfig,
-      ...routeState?.appConfig,
+      ...baseState.appConfig,
       source: 'core',
       language,
       country,
@@ -173,11 +175,11 @@ export const reactRender = async (
       privacyPolicy: PRIVACY_POLICY_DATE,
     },
     modal: {
-      ...initialState.modal,
+      ...baseState.modal,
       showCookies: !preferencesFromCookie.tracking_consent,
     },
     user: {
-      ...initialState.user,
+      ...baseState.user,
       trackingConsent:
         preferencesFromCookie?.tracking_consent || trackingConsent_state,
     },
