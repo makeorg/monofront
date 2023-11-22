@@ -6,9 +6,7 @@ const Dotenv = require('dotenv');
 const { presets, plugins } = require('./babel.config.js');
 const resolveTsconfigPathsToAlias = require('./resolveTsconfigPathsToAlias.js');
 
-Dotenv.config({ path: './.env.local' });
-
-module.exports = {
+const devConfig = envConfigPath => ({
   entry: './client/index.tsx',
   devtool: 'inline-source-map',
   module: {
@@ -45,7 +43,7 @@ module.exports = {
       template: './public/index.html',
     }),
     new DotenvWebpack({
-      path: path.resolve(__dirname, '..', '.env.local'), // load this now instead of the ones in '.env'
+      path: envConfigPath,
     }),
   ],
   output: {
@@ -66,5 +64,31 @@ module.exports = {
       aggregateTimeout: 500, // delay before reloading
       poll: true, // enable polling since fsevents are not supported in docker
     },
+    proxy: {
+      '/backend': {
+        target: process.env.API_URL_SERVER_SIDE,
+        secure: false,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/backend': '',
+        },
+        cookieDomainRewrite: {
+          '*': new URL(process.env.FRONT_URL).hostname,
+        },
+      },
+    },
   },
-};
+});
+
+// Define env file path depending from NODE_ENV
+let envConfigPath = path.resolve(__dirname, '..', '.env');
+
+if (process.env.NODE_ENV === 'mock') {
+  envConfigPath = path.resolve(__dirname, '..', '.env.mock');
+  Dotenv.config({ path: './.env.mock' });
+} else {
+  envConfigPath = path.resolve(__dirname, '..', '.env.local');
+  Dotenv.config({ path: './.env.local' });
+}
+
+module.exports = devConfig(envConfigPath);

@@ -2,13 +2,18 @@
 import React, { ReactNode } from 'react';
 import { createRoot, hydrateRoot } from 'react-dom/client';
 import { FontFacesStylesheet } from '@make.org/assets/css-in-js/FontFaces';
+import { BrowserRouter } from 'react-router-dom';
 import { ModernNormalizeStylesheet } from '@make.org/assets/css-in-js/ModernNormalize';
 import i18n from 'i18next';
+import { loadableReady } from '@loadable/component';
+import ContextState from '@make.org/store';
 import { DefaultStylesheet } from '@make.org/assets/css-in-js/DefaultStyle';
-import { env } from '@make.org/assets/env';
 import { TRANSLATION_COMMON_NAMESPACE } from '@make.org/utils/i18n/constants';
+import { createInitialState } from '@make.org/store/initialState';
+import { env } from '../utils/env';
 import { translationRessources } from '../i18n';
-import App from './App';
+import { AppContainer } from './app';
+import { initDevState } from './helpers/initDevState';
 
 declare global {
   interface Window {
@@ -18,21 +23,17 @@ declare global {
   }
 }
 
-const initApp = () => {
-  const appDom = document.getElementById('app');
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const root = createRoot(appDom!);
+const initialState = createInitialState();
 
-  const AVAILABLE_LANGUAGES = ['fr', 'en'];
+if (env.isDev()) {
+  window.ASSEMBLY_STATE = initDevState(initialState);
+}
 
-  const getLanguage = () => {
-    if (env.isDev() && window?.location) {
-      const language = window?.location.pathname.replace(/^\/|\/$/g, '');
-      return AVAILABLE_LANGUAGES.includes(language) ? language : 'fr';
-    }
-    return window?.LANGUAGE && AVAILABLE_LANGUAGES.includes(window?.LANGUAGE)
-      ? window?.LANGUAGE
-      : 'fr';
+const serverState = window.ASSEMBLY_STATE || initialState;
+
+const initApp = async (state: any) => {
+  const store = {
+    ...state,
   };
 
   i18n.init({
@@ -40,35 +41,45 @@ const initApp = () => {
       escapeValue: false,
     },
     debug: env.isDev(),
-    lng: getLanguage(),
+    lng: 'fr',
     resources: translationRessources,
     defaultNS: TRANSLATION_COMMON_NAMESPACE,
   });
 
-  const renderMethod = (children: ReactNode, container: HTMLElement) => {
-    if (module.hot) {
-      return root.render(children);
+  loadableReady(() => {
+    const appDom = document.getElementById('app');
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const root = createRoot(appDom!);
+
+    const renderMethod = (children: ReactNode, container: HTMLElement) => {
+      if (module.hot) {
+        return root.render(children);
+      }
+
+      return hydrateRoot(container, children);
+    };
+
+    if (!appDom) {
+      return null;
     }
 
-    return hydrateRoot(container, children);
-  };
-
-  if (!appDom) {
-    return null;
-  }
-
-  return renderMethod(
-    <React.StrictMode>
-      <ModernNormalizeStylesheet />
-      <FontFacesStylesheet />
-      <DefaultStylesheet />
-      <App />
-    </React.StrictMode>,
-    appDom
-  );
+    return renderMethod(
+      <ContextState serverState={store}>
+        <BrowserRouter>
+          <React.StrictMode>
+            <ModernNormalizeStylesheet />
+            <FontFacesStylesheet />
+            <DefaultStylesheet />
+            <AppContainer />
+          </React.StrictMode>
+        </BrowserRouter>
+      </ContextState>,
+      appDom
+    );
+  });
 };
 
-initApp();
+initApp(serverState);
 
 if (module.hot) {
   module.hot.accept();

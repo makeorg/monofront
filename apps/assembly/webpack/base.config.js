@@ -146,6 +146,11 @@ const clientConfig = envConfigPath => ({
           },
         ],
       },
+      {
+        test: /\.ya?ml$/,
+        type: 'json',
+        use: 'yaml-loader',
+      },
     ],
   },
   devtool: 'hidden-source-map',
@@ -177,6 +182,11 @@ const serverConfig = envConfigPath => ({
       sharp: 'commonjs sharp',
     },
   ],
+  optimization: {
+    removeAvailableModules: false,
+    removeEmptyChunks: false,
+    splitChunks: false,
+  },
   resolve: {
     extensions: ['*', '.ts', '.tsx', '.js', '.yaml', '.json'],
     alias: resolveTsconfigPathsToAlias(),

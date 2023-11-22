@@ -15,6 +15,7 @@ const presets = [
 
 const plugins = [
   '@loadable/babel-plugin',
+  'convert-to-json',
   '@babel/plugin-proposal-optional-chaining',
   '@babel/plugin-proposal-class-properties',
   [

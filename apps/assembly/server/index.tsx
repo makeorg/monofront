@@ -1,77 +1,69 @@
-/* eslint-disable import/no-extraneous-dependencies */
-import { env } from '@make.org/assembly/env';
-import App from '@make.org/assembly/client/App';
-import express, { Request, Response } from 'express';
-import fs from 'fs';
-import path from 'path';
-import React from 'react';
-import ReactDOMServer from 'react-dom/server';
-import { ServerStyleSheet } from 'styled-components';
+import express, { Response } from 'express';
 import i18n from 'i18next';
+import compression from 'compression';
+import cookiesMiddleware from 'universal-cookie-express';
+import favicon from 'serve-favicon';
+import cors from 'cors';
+import webpackManifest from 'webpack-manifest';
+import { cspMiddleware } from '@make.org/utils/middleware/contentSecurityPolicy';
+import { headersResponseMiddleware } from '@make.org/utils/middleware/headers';
+import { nonceUuidMiddleware } from '@make.org/utils/middleware/nonceUuid';
 import { TRANSLATION_COMMON_NAMESPACE } from '@make.org/utils/i18n/constants';
+import { env } from '../utils/env';
 import { translationRessources } from '../i18n';
+import { initRoutes } from './routes';
+import { ASSEMBLY_CLIENT_DIR, ASSEMBLY_FAVICON_FILE } from './paths';
 
-const AVAILABLE_LANGUAGES = ['fr', 'en'];
+i18n.init({
+  interpolation: {
+    escapeValue: false,
+  },
+  lng: 'fr',
+  debug: false,
+  resources: translationRessources,
+  defaultNS: TRANSLATION_COMMON_NAMESPACE,
+});
 
+// App
 const getApp = () => {
   const app = express();
-  i18n.init({
-    interpolation: {
-      escapeValue: false,
-    },
-    debug: true,
-    lng: 'fr',
-    resources: translationRessources,
-    defaultNS: TRANSLATION_COMMON_NAMESPACE,
-  });
 
-  const htmlContent = fs.readFileSync(
-    path.join('dist', 'client', 'index.html'),
-    'utf8'
+  if (env.isDev()) {
+    app.use(cors());
+  }
+
+  app.use((req, res, next) => nonceUuidMiddleware(res, next));
+  app.use(compression());
+  app.use(express.json());
+  app.use(
+    favicon(`${ASSEMBLY_CLIENT_DIR}/${webpackManifest[ASSEMBLY_FAVICON_FILE]}`)
   );
-  const sheet = new ServerStyleSheet();
-  const styles = sheet.getStyleTags();
-
-  const getContent = (body: string, language: string) =>
-    htmlContent
-      .replace(/<div id="app"><\/div>/, `<div id="app">${body}</div>`)
-      .replace('</head>', `${styles}</head>`)
-      .replace(/___API_URL___/gi, env.apiUrl() || '')
-      .replace(/___PORT___/gi, env.port() || '')
-      .replace(/___LANGUAGE___/gi, language);
-
-  app.use(express.static('dist', { index: false }));
-
-  app.get('/:language', async (req: Request, res: Response) => {
-    const { language } = req.params;
-
-    if (!AVAILABLE_LANGUAGES.includes(language)) {
-      return res.status(404).send('NOT FOUND');
-    }
-
-    await i18n.changeLanguage(language);
-    const body = ReactDOMServer.renderToString(sheet.collectStyles(<App />));
-    const content = getContent(body, language);
-
-    return res.send(content);
+  app.use(cookiesMiddleware());
+  app.use((req, res, next) =>
+    headersResponseMiddleware(
+      {
+        Server: 'AssemblySSR',
+        'X-Powered-By': 'AssemblySSR',
+        'Strict-Transport-Security':
+          'max-age=31536000; includeSubDomains; preload',
+        'X-Content-Type-Options': 'nosniff',
+        'X-XSS-Protection': '0',
+        'Referrer-Policy': 'strict-origin-when-cross-origin',
+        'X-Frame-Options': 'deny',
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        Expires: '0',
+        Pragma: 'no-cache',
+      },
+      res,
+      next
+    )
+  );
+  app.use((req, res, next) => {
+    const localsResponse = res as Response & { locals: { nonce: string } };
+    cspMiddleware(req, localsResponse, next);
   });
 
-  app.get('/robots.txt', (_: Request, res: Response) => {
-    res.type('text/plain');
-    return res.send('User-agent: *\nDisallow: /');
-  });
-
-  app.get('/', async (_: Request, res: Response) => {
-    if (!htmlContent) {
-      return res.status(404).send('NOT FOUND');
-    }
-
-    await i18n.changeLanguage('fr');
-    const body = ReactDOMServer.renderToString(sheet.collectStyles(<App />));
-    const content = getContent(body, 'fr');
-
-    return res.send(content);
-  });
+  initRoutes(app);
 
   return app;
 };
