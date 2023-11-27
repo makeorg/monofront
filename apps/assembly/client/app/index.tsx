@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { UIOnboardingModalStyle } from '../../components/style';
 import { Routes } from './Routes';
 
 declare global {
@@ -12,5 +13,6 @@ declare global {
 export const AppContainer: FC = () => (
   <div>
     <Routes />
+    <UIOnboardingModalStyle />
   </div>
 );

@@ -3301,6 +3301,7 @@ __metadata:
     "@types/loadable__webpack-plugin": ^5
     "@types/react": ^18.2.21
     "@types/react-dom": ^18.2.7
+    "@types/react-modal": ^3
     "@types/serve-favicon": ^2.5.3
     "@types/serve-static": ^1
     "@types/styled-components": ^5.1.26
@@ -3325,6 +3326,7 @@ __metadata:
     react-cookie: ^4.1.1
     react-dom: ^18.2.0
     react-head: ~3.4.2
+    react-modal: ^3.15.1
     react-router: ^5.3.4
     react-router-dom: ^5.3.4
     serialize-javascript: ^6.0.1
@@ -6840,6 +6842,15 @@ __metadata:
   dependencies:
     "@types/react": "*"
   checksum: eff7dc793f246031422ca2679298b73158c63f807b39f8e8320475ee5765bd38f0dc6362b366d9f4637165827722d86fdf2398d83d7321079b981cda86d6c46f
+  languageName: node
+  linkType: hard
+
+"@types/react-modal@npm:^3":
+  version: 3.16.3
+  resolution: "@types/react-modal@npm:3.16.3"
+  dependencies:
+    "@types/react": "*"
+  checksum: 53c92dfbe46aae6f4ca4d96a166fd69a4b8dc539c5e8f755086dd1471656924ca6dd0a179be746c634686a0073aef67bb9615ee8600d9536cc1521b738e48453
   languageName: node
   linkType: hard
 

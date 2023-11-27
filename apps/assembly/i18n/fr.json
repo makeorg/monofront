@@ -20,6 +20,10 @@
     "name": "cese",
     "fullName": "Convention citoyenne cese"
   },
+  "modal": {
+    "closeLabel": "Fermer la fenêtre de dialogue",
+    "discover": "Découvrir"
+  },
   "theme": "La Convention citoyenne par thématique :",
   "themes": [
     "Soins palliatifs",
