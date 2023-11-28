@@ -2,6 +2,7 @@ import React, { FC, useState, useEffect } from 'react';
 import i18n from 'i18next';
 import ReactModal from 'react-modal';
 import { lockBody, unlockBody } from '@make.org/utils/helpers/styled';
+import { OnboardingContent } from './OnboardingContent';
 import {
   OnboardingClose,
   OnboardingCross,
@@ -36,8 +37,8 @@ export const OnboardingModal: FC = () => {
       >
         <OnboardingCross />
       </OnboardingClose>
+      <OnboardingContent />
       <OnboardingCloseButton
-        aria-label={i18n.t('modal.closeLabel')}
         aria-expanded="false"
         onClick={handleClose}
         type="button"

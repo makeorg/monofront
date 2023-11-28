@@ -15,9 +15,9 @@ export const DefaultStylesheet = createGlobalStyle`
   }
 
   body {
-    font-family: ${typography.FontFamily.Default};
+    font-family: 'Inter', Arial, sans-serif;
     color: ${colors.Content.Interface.Dark};
-    line-height: ${typography.LineHeight.l150};
+    line-height: ${typography.LineHeight.l100};
     &.locked {
       overflow-y: hidden;
     }
@@ -29,10 +29,9 @@ export const DefaultStylesheet = createGlobalStyle`
   h4,
   h5,
   h6 {
-    font-family: ${typography.FontFamily.Condensed};
-    text-transform: uppercase;
+    font-family: 'Inter', Arial, sans-serif;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 600;
     font-stretch: normal;
     line-height: normal;
     letter-spacing: normal;
@@ -51,14 +50,9 @@ export const DefaultStylesheet = createGlobalStyle`
     color: ${colors.Content.Interface.Dark};
   }
 
-  img {
-    display: flex;
-    max-width: 100%;
-  }
-
   label {
-    font-family: ${typography.FontFamily.Highlight};
-    font-weight: bold;
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 400;
     color: ${colors.Content.Interface.Dark};
   }
 
@@ -78,6 +72,8 @@ export const DefaultStylesheet = createGlobalStyle`
   blockquote,
   dl,
   dd {
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 400;
     margin: 0;
   }
 

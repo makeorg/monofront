@@ -22,7 +22,13 @@
   },
   "modal": {
     "closeLabel": "Fermer la fenêtre de dialogue",
-    "discover": "Découvrir"
+    "discover": "Découvrir",
+    "suggestion": "Laissez-vous guider par nos requête suggérée",
+    "suggestionText": "Nous avons sélectionné les requêtes qui pourraient le plus vous intéressé pour prendre en main l’outil, n’hésitez pas à les utiliser !",
+    "explore": "Explorer les débats par thématiques",
+    "exploreText": "Echo vous permet de trouver rapidement les sujets qui vous intéresse et sur lesquels vous souhaitez réagir.",
+    "sources": "Accéder à des sources vérifiées",
+    "sourcesText": "Pour vous assurer de la pertinence des réponses, vous pouvez retrouver les sources"
   },
   "theme": "La Convention citoyenne par thématique :",
   "themes": [

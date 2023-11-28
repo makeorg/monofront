@@ -7,9 +7,9 @@ import { ModernNormalizeStylesheet } from '@make.org/assets/css-in-js/ModernNorm
 import i18n from 'i18next';
 import { loadableReady } from '@loadable/component';
 import ContextState from '@make.org/store';
-import { DefaultStylesheet } from '@make.org/assets/css-in-js/DefaultStyle';
 import { TRANSLATION_COMMON_NAMESPACE } from '@make.org/utils/i18n/constants';
 import { createInitialState } from '@make.org/store/initialState';
+import { DefaultStylesheet } from '../utils/DefaultStyle';
 import { env } from '../utils/env';
 import { translationRessources } from '../i18n';
 import { AppContainer } from './app';
