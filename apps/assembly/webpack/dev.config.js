@@ -64,19 +64,6 @@ const devConfig = envConfigPath => ({
       aggregateTimeout: 500, // delay before reloading
       poll: true, // enable polling since fsevents are not supported in docker
     },
-    proxy: {
-      '/backend': {
-        target: process.env.API_URL_SERVER_SIDE,
-        secure: false,
-        changeOrigin: true,
-        pathRewrite: {
-          '^/backend': '',
-        },
-        cookieDomainRewrite: {
-          '*': new URL(process.env.FRONT_URL).hostname,
-        },
-      },
-    },
   },
 });
 

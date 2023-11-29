@@ -128,7 +128,7 @@
     "build": "webpack --mode production --progress --color --config ./webpack/build.config.js && yarn version-build",
     "server": "pm2-runtime start ecosystem.config.js --only app-production",
     "server:dev": "pm2-runtime start ecosystem.config.js --only app-dev",
-    "server:test": "pm2-runtime start ecosystem.config.js --only 'api-mock,app-test'",
+    "server:test": "pm2-runtime start ecosystem.config.js --only 'api-consultation-mock,app-test'",
     "documentation": "bin/check-documentation.js check",
     "documentation:fix": "bin/check-documentation.js check --fix",
     "translation": "npx babel --out-dir ../../dist/lib --config-file ./webpack/babel.config.js ../../bin/utils && ../../bin/check-translation.js check -d ./i18n -l 'fr'",

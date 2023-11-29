@@ -18,12 +18,22 @@ RUN ["yarn", "workspaces", "focus", "@make.org/apimock"]
 COPY . ./
 
 ############
-# API MOCK
+# API CONSULTATION MOCK
 ############
-FROM base AS api-mock
+FROM base AS api-consultation-mock
 WORKDIR /home/app
 
-CMD ["yarn", "workspace", "@make.org/apimock", "start"]
+CMD ["yarn", "workspace", "@make.org/apimock", "start:consultation"]
 
 EXPOSE 9000
 
+
+############
+# API CONTENT MOCK
+############
+FROM base AS api-content-mock
+WORKDIR /home/app
+
+CMD ["yarn", "workspace", "@make.org/apimock", "start:content"]
+
+EXPOSE 9001

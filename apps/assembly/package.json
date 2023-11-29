@@ -27,6 +27,7 @@
     "express": "^4.18.2",
     "favicons": "6.2.2",
     "favicons-webpack-plugin": "^5.0.2",
+    "html-webpack-plugin": "^5.5.0",
     "http-proxy-middleware": "2.0.6",
     "i18next": "^23.5.0",
     "node-cache": "^5.1.2",
@@ -82,15 +83,16 @@
     "babel-loader": "8.2.5",
     "babel-plugin-convert-to-json": "^0.1.0",
     "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.5.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^3.11.3"
   },
   "scripts": {
     "dev": "webpack serve --mode development --progress --color --config ./webpack/dev.config.js",
+    "dev:mock": "webpack serve --mode development --node-env mock --progress --color --config ./webpack/dev.config.js",
     "build": "webpack --mode production --progress --color --config ./webpack/build.config.js && yarn version-build",
     "server": "pm2-runtime start ecosystem.config.js --only app-production",
     "server:dev": "pm2-runtime start ecosystem.config.js --only app-dev",
+    "server:test": "pm2-runtime start ecosystem.config.js --only 'api-content-mock,app-test'",
     "version-build": "../../bin/version-build.js generate -d './dist/client' -p 'Make.org-assembly'"
   }
 }

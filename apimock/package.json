@@ -7,6 +7,7 @@
     "json-server": "^0.16.1"
   },
   "scripts": {
-    "start": "node server.js"
+    "start:consultation": "node consultation/server.js",
+    "start:content": "node content/server.js"
   }
 }

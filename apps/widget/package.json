@@ -91,7 +91,7 @@
     "build": "webpack --mode production --progress --color --config ./webpack/build.config.js && yarn version-build",
     "server": "pm2-runtime start ecosystem.config.js --only widget-production",
     "server:dev": "pm2-runtime start ecosystem.config.js --only widget-dev",
-    "server:test": "pm2-runtime start ecosystem.config.js --only 'api-mock,widget-test'",
+    "server:test": "pm2-runtime start ecosystem.config.js --only 'api-consultation-mock,widget-test'",
     "translation": "npx babel --out-dir ../../dist/lib --config-file ./webpack/babel.config.js ../../bin/utils && ../../bin/check-translation.js check -d ./i18n -l 'fr'",
     "translation:fix": "yarn run translation --fix",
     "translation:unused-keys": "npx babel --out-dir ../../dist/lib --config-file ./webpack/babel.config.js ../../bin/utils && ../../bin/check-translation.js list-unused",

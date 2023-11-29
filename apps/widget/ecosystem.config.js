@@ -31,8 +31,8 @@ module.exports = {
       },
     },
     {
-      name: 'api-mock',
-      script: '../../apimock/server.js',
+      name: 'api-consultation-mock',
+      script: '../../apimock/consultation/server.js',
     },
   ],
 };

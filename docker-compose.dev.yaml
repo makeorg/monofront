@@ -61,12 +61,12 @@ services:
     profiles:
       - app-ssr
 
-  api_mock:
-    image: api_mock
+  api_consultation_mock:
+    image: api_consultation_mock
     build:
       context: .
       dockerfile: apimock/Dockerfile
-      target: api-mock
+      target: api-consultation-mock
     ports:
       - 9000:9000
     volumes: *default_volumes
@@ -182,3 +182,17 @@ services:
     volumes: *default_volumes
     profiles:
       - assembly-ssr
+
+  assembly_dev_mock:
+    <<: *dev_service
+    image: app_make_dev_mock
+    build:
+      context: .
+      dockerfile: apps/assembly/Dockerfile
+      target: app-dev-mock
+    ports:
+      - 3000:3000
+      - 8888:8888
+    volumes: *default_volumes
+    profiles:
+      - app-dev-mock
