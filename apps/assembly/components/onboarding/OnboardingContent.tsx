@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import i18n from 'i18next';
 import ReactModal from 'react-modal';
-import resume from '../assets/PromptSuggerex2.png';
-import theme from '../assets/PP_Thematiquex2.png';
-import video from '../assets/Sourcesx2.png';
+import resume from '../../assets/PromptSuggerex2.png';
+import theme from '../../assets/PP_Thematiquex2.png';
+import video from '../../assets/Sourcesx2.png';
 import {
   OnboardingTitle,
   OnboardingSubTitle,

@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
-import { UIOnboardingModalStyle } from '../../components/style';
+import { AppContent } from '../../components/style';
+import { UIOnboardingModalStyle } from '../../components/onboarding/style';
 import { Routes } from './Routes';
+import { Header } from '../../components/header/Header';
 
 declare global {
   interface Window {
@@ -11,8 +13,11 @@ declare global {
 }
 
 export const AppContainer: FC = () => (
-  <div>
-    <Routes />
+  <>
+    <AppContent>
+      <Header />
+      <Routes />
+    </AppContent>
     <UIOnboardingModalStyle />
-  </div>
+  </>
 );

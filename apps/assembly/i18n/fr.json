@@ -11,6 +11,10 @@
     "load": "Charger",
     "opinions": "Les avis des intervenants"
   },
+  "header": {
+    "beta": "beta",
+    "make": "Propulsé par Make.org"
+  },
   "ressources": {
     "vidsButton": "Ressources vidéos",
     "docsButton": "Ressources documentaires",
