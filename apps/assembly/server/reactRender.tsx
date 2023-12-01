@@ -7,18 +7,15 @@ import { StaticRouter } from 'react-router-dom';
 import { CookiesProvider } from 'react-cookie';
 import { ServerStyleSheet } from 'styled-components';
 import { HeadProvider } from 'react-head';
-import deepFreeze from 'deep-freeze';
-import { initialState } from '@make.org/store/initialState';
 import webpackManifest from 'webpack-manifest';
-import ContextState from '@make.org/store';
 import { Request, Response } from 'express';
 import { Cookie } from 'universal-cookie';
 import serialize from 'serialize-javascript';
 import { env } from '../utils/env';
 import { AppContainer } from '../client/app';
 import { ASSEMBLY_CLIENT_DIR } from './paths';
-
-deepFreeze(initialState);
+import { AssemblyStateType } from '../types';
+import AssemblyContextState from '../store/context';
 
 const statsFile = path.resolve(ASSEMBLY_CLIENT_DIR, 'loadable-stats.json');
 
@@ -29,7 +26,7 @@ const htmlContent = fs.readFileSync(
 
 const renderHtml = (
   reactApp: JSX.Element,
-  appState: any,
+  appState: AssemblyStateType,
   metaTags: any,
   pwaManifest: unknown,
   res: Response
@@ -59,7 +56,7 @@ const renderHtml = (
       )}${linkTags}<link rel="manifest" href="${pwaManifest}" />`
     )
     .replace('</head>', `${styles}</head>`)
-    .replace('"__ASSEMBLY_STATE__"', serialize(appState, { isJSON: true }))
+    .replace('"___ASSEMBLY_STATE___"', serialize(appState, { isJSON: true }))
     .replace(
       /___CONTENT_URL_SERVER_SIDE___/gi,
       env.contentUrlServerSide() || ''
@@ -69,7 +66,7 @@ const renderHtml = (
       env.assemblyUrlServerSide() || ''
     )
     .replace(/___NODE_ENV___/gi, env.nodeEnv() || 'production')
-    .replace(/__FRONT_URL__/gi, env.frontUrl() || '')
+    .replace(/___FRONT_URL___/gi, env.frontUrl() || '')
     .replace(/___NONCE_ID___/gi, nonceId)
     .replace(/___PORT___/gi, env.port() || '')
     .replace(/___MIXPANEL_TOKEN___/gi, env.mixPanelToken() || '')
@@ -78,20 +75,13 @@ const renderHtml = (
   return content;
 };
 
-declare global {
-  interface Window {
-    ASSEMBLY_STATE?: any;
-  }
-}
-
 // @todo test this function!!
 export const reactRender = async (
   req: Request & Cookie,
-  res: Response
+  res: Response,
+  routeState?: AssemblyStateType
 ): Promise<any> => {
-  const state: any = {
-    ...initialState,
-  };
+  const state: AssemblyStateType = routeState || {};
 
   const context = {};
   const headTags:
@@ -101,11 +91,11 @@ export const reactRender = async (
   const ReactApp = (
     <CookiesProvider cookies={req.universalCookies}>
       <HeadProvider headTags={headTags}>
-        <ContextState serverState={state}>
+        <AssemblyContextState serverState={state}>
           <StaticRouter location={req.url} context={context}>
             <AppContainer />
           </StaticRouter>
-        </ContextState>
+        </AssemblyContextState>
       </HeadProvider>
     </CookiesProvider>
   );

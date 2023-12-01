@@ -7,6 +7,7 @@ import {
   ROUTE_ASSEMBLY_NOT_FOUND,
 } from '../utils/routes';
 import { defaultRoute } from './ssr/defaultRoute';
+import { eventRoute } from './ssr/eventRoute';
 import {
   ASSEMBLY_IMAGES_DIR,
   ASSEMBLY_ASSETS_DIR,
@@ -66,7 +67,7 @@ export const initRoutes = (app: Application): void => {
   // Assembly redirect
   // app.get(ROUTE_ASSEMBLY_CUSTOMER, defaultRoute);
   // app.get(ROUTE_ASSEMBLY_ROOT, defaultRoute);
-  app.get(ROUTE_ASSEMBLY_EVENT, defaultRoute);
+  app.get(ROUTE_ASSEMBLY_EVENT, eventRoute);
   app.get(ROUTE_ASSEMBLY_NOT_FOUND, defaultRoute);
 
   // not found

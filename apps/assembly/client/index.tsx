@@ -6,30 +6,25 @@ import { BrowserRouter } from 'react-router-dom';
 import { ModernNormalizeStylesheet } from '@make.org/assets/css-in-js/ModernNormalize';
 import i18n from 'i18next';
 import { loadableReady } from '@loadable/component';
-import ContextState from '@make.org/store';
 import { TRANSLATION_COMMON_NAMESPACE } from '@make.org/utils/i18n/constants';
-import { createInitialState } from '@make.org/store/initialState';
 import { DefaultStylesheet } from '../utils/DefaultStyle';
 import { env } from '../utils/env';
 import { translationRessources } from '../i18n';
 import { AppContainer } from './app';
-import { initDevState } from './helpers/initDevState';
+import { AssemblyStateType } from '../types';
+import AssemblyContextState from '../store/context';
 
 declare global {
   interface Window {
-    API_URL?: string;
-    PORT?: string;
-    LANGUAGE?: string;
+    ASSEMBLY_STATE?: AssemblyStateType;
   }
 }
 
-const initialState = createInitialState();
-
 if (env.isDev()) {
-  window.ASSEMBLY_STATE = initDevState(initialState);
+  window.ASSEMBLY_STATE = {};
 }
 
-const serverState = window.ASSEMBLY_STATE || initialState;
+const serverState = window.ASSEMBLY_STATE || {};
 
 const initApp = async (state: any) => {
   const store = {
@@ -64,7 +59,7 @@ const initApp = async (state: any) => {
     }
 
     return renderMethod(
-      <ContextState serverState={store}>
+      <AssemblyContextState serverState={store}>
         <BrowserRouter>
           <React.StrictMode>
             <ModernNormalizeStylesheet />
@@ -73,7 +68,7 @@ const initApp = async (state: any) => {
             <AppContainer />
           </React.StrictMode>
         </BrowserRouter>
-      </ContextState>,
+      </AssemblyContextState>,
       appDom
     );
   });

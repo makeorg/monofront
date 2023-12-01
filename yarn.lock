@@ -3294,11 +3294,11 @@ __metadata:
     "@simbathesailor/use-what-changed": ^2.0.0
     "@types/compression": ^1.7.2
     "@types/cors": ^2.8.12
-    "@types/deep-freeze": ^0.1.2
     "@types/express": ^4.17.14
     "@types/loadable__component": ^5
     "@types/loadable__server": ^5.12.6
     "@types/loadable__webpack-plugin": ^5
+    "@types/object-hash": ^3
     "@types/react": ^18.2.21
     "@types/react-dom": ^18.2.7
     "@types/react-modal": ^3
@@ -3307,11 +3307,11 @@ __metadata:
     "@types/styled-components": ^5.1.26
     "@types/ua-parser-js": ^0.7.36
     "@types/webpack-node-externals": ^3
+    axios: ~0.26.1
     babel-loader: 8.2.5
     babel-plugin-convert-to-json: ^0.1.0
     compression: ~1.7.3
     cors: ^2.8.5
-    deep-freeze: ~0.0.1
     dotenv: ^16.3.1
     dotenv-webpack: ^8.0.1
     express: ^4.18.2
@@ -3321,6 +3321,8 @@ __metadata:
     html-webpack-plugin: ^5.5.0
     http-proxy-middleware: 2.0.6
     i18next: ^23.5.0
+    node-cache: ^5.1.2
+    object-hash: ^3.0.0
     pm2: ~5.2.2
     react: ^18.2.0
     react-cookie: ^4.1.1
@@ -20382,7 +20384,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"object-hash@npm:3.0.0":
+"object-hash@npm:3.0.0, object-hash@npm:^3.0.0":
   version: 3.0.0
   resolution: "object-hash@npm:3.0.0"
   checksum: 80b4904bb3857c52cc1bfd0b52c0352532ca12ed3b8a6ff06a90cd209dfda1b95cee059a7625eb9da29537027f68ac4619363491eedb2f5d3dddbba97494fd6c

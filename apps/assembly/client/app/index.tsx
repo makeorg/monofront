@@ -4,14 +4,6 @@ import { UIOnboardingModalStyle } from '../../components/onboarding/style';
 import { Routes } from './Routes';
 import { Header } from '../../components/header/Header';
 
-declare global {
-  interface Window {
-    API_URL?: string;
-    PORT?: string;
-    LANGUAGE?: string;
-  }
-}
-
 export const AppContainer: FC = () => (
   <>
     <AppContent>

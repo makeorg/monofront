@@ -9,10 +9,27 @@ import { cspMiddleware } from '@make.org/utils/middleware/contentSecurityPolicy'
 import { headersResponseMiddleware } from '@make.org/utils/middleware/headers';
 import { nonceUuidMiddleware } from '@make.org/utils/middleware/nonceUuid';
 import { TRANSLATION_COMMON_NAMESPACE } from '@make.org/utils/i18n/constants';
+import {
+  errorNormalizer,
+  objectNormalizer,
+  stringNormalizer,
+} from '@make.org/logger/loggerNormalizer';
+import { apiErrorDataLogNormalizer } from '@make.org/api/log/apiErrorDataLogNormalizer';
+import {
+  getStackTransformer,
+  oneLineTransformer,
+} from '@make.org/logger/loggerTransformer';
+import { initLogger } from '@make.org/logger';
 import { env } from '../utils/env';
 import { translationRessources } from '../i18n';
 import { initRoutes } from './routes';
-import { ASSEMBLY_CLIENT_DIR, ASSEMBLY_FAVICON_FILE } from './paths';
+import {
+  ASSEMBLY_BUILD_DIR,
+  ASSEMBLY_CLIENT_DIR,
+  ASSEMBLY_FAVICON_FILE,
+  ASSEMBLY_JS_DIR,
+  ASSEMBLY_MAP_DIR,
+} from './paths';
 
 i18n.init({
   interpolation: {
@@ -27,6 +44,24 @@ i18n.init({
 // App
 const getApp = () => {
   const app = express();
+
+  getStackTransformer(
+    ASSEMBLY_JS_DIR,
+    ASSEMBLY_BUILD_DIR,
+    ASSEMBLY_MAP_DIR
+  ).then(stackTransformer =>
+    initLogger(
+      'assemblyfront',
+      [
+        errorNormalizer,
+        apiErrorDataLogNormalizer,
+        stringNormalizer,
+        objectNormalizer,
+      ],
+      [stackTransformer, oneLineTransformer],
+      env.isDev()
+    )
+  );
 
   if (env.isDev()) {
     app.use(cors());
