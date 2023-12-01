@@ -12,7 +12,7 @@ export const UIOnboardingModalStyle = createGlobalStyle`
     transform: translate(-50%, -50%);
     height: 100%;
     width: 100%;
-    z-index: 10;
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;

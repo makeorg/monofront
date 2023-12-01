@@ -1,14 +1,9 @@
 import styled from 'styled-components';
 
 export const AppContent = styled.div`
+  position: relative;
+  min-height: 100vh;
+  // needed for bottom sticky when main content is smaller than  viewport
   display: flex;
   flex-direction: column;
-  align-items: center;
-  height: 100vh;
-`;
-
-export const PageContainer = styled.section`
-  width: 100%;
-  height: 100%;
-  overflow: auto;
 `;

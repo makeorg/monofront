@@ -5,10 +5,13 @@ import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { typography } from '@make.org/designsystem/tokens/typography';
 
 export const HeaderContainer = styled.header`
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 100;
   width: 100%;
   display: flex;
   align-items: center;
+  background-color: white;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 `;
 
@@ -53,7 +56,6 @@ export const HeaderLogoMake = styled.div`
   height: 35px;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     height: 45px;
-    padding-right: 8px; // to kinda composenta for scrollbar on desktop
   }
 `;
 
@@ -71,10 +73,11 @@ export const HeaderBeta = styled.p`
 `;
 
 export const HeaderMake = styled.p`
-  width: 90px;
+  width: 75px;
   text-transform: uppercase;
   font-size: 10px;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
+    width: 90px;
     font-size: ${typography.FontSize.Text.RueDeLappe};
   }
 `;
