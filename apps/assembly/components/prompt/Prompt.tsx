@@ -121,7 +121,7 @@ export const Prompt: FC = () => {
             <GeneratedButtonText>{content.title}</GeneratedButtonText>
           </GeneratedButtons>
         ))}
-        <GeneratedButtons>
+        <GeneratedButtons className="theme">
           <GeneratedButtonsTitle style={{ backgroundColor: getRandomColor() }}>
             thématiques
           </GeneratedButtonsTitle>

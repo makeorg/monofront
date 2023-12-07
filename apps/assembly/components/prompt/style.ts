@@ -12,6 +12,11 @@ export const PromptContainer = styled.div`
   margin: auto auto 0 auto;
   padding: ${spacings.m};
   max-width: ${intToPx(Breakpoints.LargeDesktop)};
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1) 15%
+  );
 `;
 
 export const GeneratedButtonsContainer = styled.div`
@@ -36,6 +41,16 @@ export const GeneratedButtons = styled.button`
   width: 100%;
   background-color: white;
   box-shadow: 0px 4px 18px 0px #0000002b;
+
+  &.theme {
+    background: linear-gradient(
+        91.5deg,
+        rgba(76, 65, 171, 0.144) 15.68%,
+        rgba(255, 218, 185, 0.2) 63.78%,
+        rgba(248, 178, 188, 0.2) 96.13%
+      ),
+      linear-gradient(0deg, #ffffff, #ffffff);
+  }
 `;
 
 export const GeneratedButtonsTitle = styled.span`

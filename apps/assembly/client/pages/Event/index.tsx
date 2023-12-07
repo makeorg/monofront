@@ -2,11 +2,13 @@ import React, { FC } from 'react';
 import { OnboardingModal } from '../../../components/onboarding/OnboardingModal';
 import { Prompt } from '../../../components/prompt/Prompt';
 import { Welcome } from '../../../components/welcome/Welcome';
+import { PromptResponseContainer } from '../../../components/promptResponse/PromptResponseContainer';
 
 const EventPage: FC = () => (
   <>
     <OnboardingModal />
     <Welcome />
+    <PromptResponseContainer />
     <Prompt />
   </>
 );
