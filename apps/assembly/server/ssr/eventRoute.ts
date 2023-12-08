@@ -9,50 +9,88 @@ export const eventRoute = async (
   req: Request,
   res: Response
 ): Promise<void> => {
-  const { eventSlugOrId } = req.params;
+  const { customerSlug, eventSlug } = req.params;
   const logger = getLoggerInstance();
 
-  const notFoundError = (endpoint: string) => {
+  const notFoundError = (endpoint: string, eventSlugOrId: string) => {
     logger.logError({
-      message: `Not found error on ${endpoint} with event slug or id : '${eventSlugOrId}'`,
+      message: `Not found error on ${endpoint} with slug or id : '${eventSlugOrId}'`,
       name: 'server-side',
       url: req.url,
       query: req.query,
     });
   };
 
-  const unexpectedError = (endpoint: string) => {
+  const unexpectedError = (endpoint: string, eventSlugOrId: string) => {
     logger.logError({
-      message: `Unexpected error on ${endpoint} with event slug or id : '${eventSlugOrId}'`,
+      message: `Unexpected error on ${endpoint} with slug or id : '${eventSlugOrId}'`,
       name: 'server-side',
       url: req.url,
       query: req.query,
     });
   };
 
-  const event = await ContentService.getEvent(
-    eventSlugOrId,
-    () => notFoundError('getEvent'),
-    () => unexpectedError('getEvent')
+  const customer = await ContentService.getCustomerBySlug(
+    customerSlug,
+    () => notFoundError('getCustomerBySlug', customerSlug),
+    () => unexpectedError('getCustomerBySlug', customerSlug)
   );
 
+  const event = await ContentService.getEventBySlug(
+    eventSlug,
+    () => notFoundError('getEventBySlug', eventSlug),
+    () => unexpectedError('getEventBySlug', eventSlug)
+  );
+
+  if (!customer || !event) {
+    logger.logError({
+      message: `No customer with slug : '${customerSlug}' or event with slug : '${eventSlug}'`,
+      name: 'server-side',
+      url: req.url,
+      query: req.query,
+    });
+    return res.redirect(ROUTE_ASSEMBLY_NOT_FOUND);
+  }
+
+  const eventLinkedToCustomer = () => event.customerId === customer.id;
+
+  if (!eventLinkedToCustomer) {
+    logger.logError({
+      message: `Event is not related to Customer - "id" received from customer is ${customer.id} while "customerId" received from event is ${event.customerId}`,
+      name: 'server-side',
+      url: req.url,
+      query: req.query,
+    });
+    return res.redirect(ROUTE_ASSEMBLY_NOT_FOUND);
+  }
+
   const termQueries = await ContentService.getTermQueries(
-    eventSlugOrId,
-    () => notFoundError('getTermQueries'),
-    () => unexpectedError('getTermQueries')
+    event.id,
+    () => notFoundError('getTermQueries', event.id),
+    () => unexpectedError('getTermQueries', event.id)
   );
 
   const generatedContents = await ContentService.getGeneratedContents(
-    eventSlugOrId,
-    () => notFoundError('getGeneratedContents'),
-    () => unexpectedError('getGeneratedContents')
+    event.id,
+    () => notFoundError('getGeneratedContents', event.id),
+    () => unexpectedError('getGeneratedContents', event.id)
   );
 
-  if (!event || !termQueries || !generatedContents) {
+  const noTermQueries = !termQueries || !termQueries?.length;
+  const noGeneratedContents = !generatedContents || !generatedContents?.length;
+
+  if (noTermQueries || noGeneratedContents) {
+    logger.logError({
+      message: `No Term Queries (length: ${termQueries?.length}) or Generated Contents (length: ${generatedContents?.length}) for event : ${event.slug} `,
+      name: 'server-side',
+      url: req.url,
+      query: req.query,
+    });
     return res.redirect(ROUTE_ASSEMBLY_NOT_FOUND);
   }
 
   const routeState: AssemblyStateType = {
+    customer,
     event,
     termQueries,
     generatedContents,

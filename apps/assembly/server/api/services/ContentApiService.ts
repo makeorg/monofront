@@ -4,44 +4,50 @@ import { env } from '../../../utils/env';
 
 const ContentApi = new ApiServiceShared(env.contentUrlServerSide() as string);
 
-const EVENT_PATH = '/assembly/events/:eventSlugOrId';
-const TERM_QUERIES_PATH = '/assembly/events/:eventSlugOrId/termQueries';
-const GENERATED_CONTENTS_PATH =
-  '/assembly/events/:eventSlugOrId/generatedContent';
+const CUSTOMERS_PATH = '/assembly/customers';
+const EVENTS_PATH = '/assembly/events';
+const TERM_QUERIES_PATH = '/assembly/events/:eventId/termQueries';
+const GENERATED_CONTENTS_PATH = '/assembly/events/:eventId/generatedContent';
 
 export class ContentApiService {
-  static getEvent(
-    eventSlugOrId: string,
+  static getCustomers(
+    slug?: string,
     headers?: Record<string, string>
   ): Promise<void | AxiosResponse> {
-    return ContentApi.callApi(
-      EVENT_PATH.replace(':eventSlugOrId', eventSlugOrId),
-      {
-        method: 'GET',
-        headers,
-      }
-    );
+    return ContentApi.callApi(CUSTOMERS_PATH, {
+      params: { slug },
+      method: 'GET',
+      headers,
+    });
+  }
+
+  static getEvents(
+    slug?: string,
+    headers?: Record<string, string>
+  ): Promise<void | AxiosResponse> {
+    return ContentApi.callApi(EVENTS_PATH, {
+      params: { slug },
+      method: 'GET',
+      headers,
+    });
   }
 
   static getTermQueries(
-    eventSlugOrId: string,
+    eventId: string,
     headers?: Record<string, string>
   ): Promise<void | AxiosResponse> {
-    return ContentApi.callApi(
-      TERM_QUERIES_PATH.replace(':eventSlugOrId', eventSlugOrId),
-      {
-        method: 'GET',
-        headers,
-      }
-    );
+    return ContentApi.callApi(TERM_QUERIES_PATH.replace(':eventId', eventId), {
+      method: 'GET',
+      headers,
+    });
   }
 
   static getGeneratedContents(
-    eventSlugOrId: string,
+    eventId: string,
     headers?: Record<string, string>
   ): Promise<void | AxiosResponse> {
     return ContentApi.callApi(
-      GENERATED_CONTENTS_PATH.replace(':eventSlugOrId', eventSlugOrId),
+      GENERATED_CONTENTS_PATH.replace(':eventId', eventId),
       {
         method: 'GET',
         headers,

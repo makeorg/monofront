@@ -1,5 +1,13 @@
+export type CustomerType = {
+  id: string;
+  slug: string;
+  name: string;
+};
+
 export type EventType = {
   id: string;
+  slug: string;
+  customerId: string;
   language: string;
   name: string;
   introMediaUrl: string;
@@ -19,6 +27,7 @@ export type GeneratedContentType = {
 };
 
 export type AssemblyStateType = {
+  customer?: CustomerType;
   event?: EventType;
   termQueries?: TermQueryType[];
   generatedContents?: GeneratedContentType[];

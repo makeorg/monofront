@@ -6,6 +6,7 @@ import {
   TermQueryType,
   EventType,
   GeneratedContentType,
+  CustomerType,
 } from '../../types/index.d';
 import { ContentApiService } from './services/ContentApiService';
 
@@ -16,19 +17,68 @@ const clearCache = (): void => {
 };
 
 /**
- * Get event by his slug or his id
- * @param  {String} eventSlugOrId
+ * Get a customer by his slug
+ * @param  {String} customerSlug
  * @param  {Function} notFound
  * @param  {Function} unexpectedError
  *
  * @return {Promise}
  */
-const getEvent = async (
-  eventSlugOrId: string,
+const getCustomerBySlug = async (
+  customerSlug: string,
+  notFound: () => void,
+  unexpectedError: () => void
+): Promise<void | CustomerType> => {
+  const CUSTOMER_CACHE_KEY = hash(['GET_CUSTOMER', [...customerSlug]]);
+  const eventFromCache: CustomerType | undefined =
+    cache.get(CUSTOMER_CACHE_KEY);
+
+  if (eventFromCache) {
+    return eventFromCache;
+  }
+
+  try {
+    const response = await ContentApiService.getCustomers(customerSlug);
+
+    const { id, slug, name } = response && response.data[0];
+    const customer: CustomerType = {
+      id,
+      slug,
+      name,
+    };
+
+    cache.set(CUSTOMER_CACHE_KEY, customer);
+
+    return customer;
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
+    if (apiServiceError.status === 404) {
+      return notFound();
+    }
+    getLoggerInstance().logError(
+      apiServiceError.clone(
+        `error in server/api/Content/getCustomerBySlug: ${apiServiceError.message}`
+      )
+    );
+
+    return unexpectedError();
+  }
+};
+
+/**
+ * Get an event by his slug
+ * @param  {String} eventSlug
+ * @param  {Function} notFound
+ * @param  {Function} unexpectedError
+ *
+ * @return {Promise}
+ */
+const getEventBySlug = async (
+  eventSlug: string,
   notFound: () => void,
   unexpectedError: () => void
 ): Promise<void | EventType> => {
-  const EVENT_CACHE_KEY = hash(['GET_EVENT', [...eventSlugOrId]]);
+  const EVENT_CACHE_KEY = hash(['GET_EVENT', [...eventSlug]]);
   const eventFromCache: EventType | undefined = cache.get(EVENT_CACHE_KEY);
 
   if (eventFromCache) {
@@ -36,12 +86,15 @@ const getEvent = async (
   }
 
   try {
-    const response = await ContentApiService.getEvent(eventSlugOrId);
+    const response = await ContentApiService.getEvents(eventSlug);
 
-    const { id, eventLanguage, name, introMediaUrl } =
-      response && response.data;
+    const { id, customerId, slug, eventLanguage, name, introMediaUrl } =
+      response && response.data[0];
+
     const event: EventType = {
       id,
+      customerId,
+      slug,
       language: eventLanguage,
       name,
       introMediaUrl,
@@ -67,18 +120,18 @@ const getEvent = async (
 
 /**
  * Get all term queries of an event by his slug or his id
- * @param  {String} eventSlugOrId
+ * @param  {String} eventSlug
  * @param  {Function} notFound
  * @param  {Function} unexpectedError
  *
  * @return {Promise}
  */
 const getTermQueries = async (
-  eventSlugOrId: string,
+  eventId: string,
   notFound: () => void,
   unexpectedError: () => void
 ): Promise<void | TermQueryType[]> => {
-  const TERM_QUERIES_CACHE_KEY = hash(['GET_TERM_QUERIES', [...eventSlugOrId]]);
+  const TERM_QUERIES_CACHE_KEY = hash(['GET_TERM_QUERIES', [...eventId]]);
   const termQueriesFromCache: TermQueryType[] | undefined = cache.get(
     TERM_QUERIES_CACHE_KEY
   );
@@ -88,7 +141,7 @@ const getTermQueries = async (
   }
 
   try {
-    const response = await ContentApiService.getTermQueries(eventSlugOrId);
+    const response = await ContentApiService.getTermQueries(eventId);
     const termQueries: TermQueryType[] = [];
 
     if (!response || !response.data) {
@@ -121,20 +174,20 @@ const getTermQueries = async (
 
 /**
  * Get all generated contents of an event by his slug or his id
- * @param  {String} eventSlugOrId
+ * @param  {String} eventId
  * @param  {Function} notFound
  * @param  {Function} unexpectedError
  *
  * @return {Promise}
  */
 const getGeneratedContents = async (
-  eventSlugOrId: string,
+  eventId: string,
   notFound: () => void,
   unexpectedError: () => void
 ): Promise<void | GeneratedContentType[]> => {
   const GENERATED_CONTENTS_CACHE_KEY = hash([
     'GET_GENERATED_CONTENT',
-    [...eventSlugOrId],
+    [...eventId],
   ]);
   const generatedContentsFromCache: GeneratedContentType[] | undefined =
     cache.get(GENERATED_CONTENTS_CACHE_KEY);
@@ -144,9 +197,7 @@ const getGeneratedContents = async (
   }
 
   try {
-    const response = await ContentApiService.getGeneratedContents(
-      eventSlugOrId
-    );
+    const response = await ContentApiService.getGeneratedContents(eventId);
     const generatedContents: GeneratedContentType[] = [];
 
     if (!response || !response.data) {
@@ -184,7 +235,8 @@ const getGeneratedContents = async (
 };
 
 export const ContentService = {
-  getEvent,
+  getCustomerBySlug,
+  getEventBySlug,
   getTermQueries,
   getGeneratedContents,
   clearCache,
