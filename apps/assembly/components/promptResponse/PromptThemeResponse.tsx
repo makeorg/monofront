@@ -6,31 +6,27 @@ import {
   PromptThemeTitleStyle,
   PromptResponseThemeContainerStyle,
   PromptReponseThemeListStyle,
-  PromptReponseThemeItemListStyle,
-  PromptResponseThemeButtonListStyle,
 } from './style';
 import pano from '../../assets/IconPano.png';
+import { useAssemblyContext } from '../../store/context';
 
-type Props = {
-  response: Array<string>;
+export const PromptThemeResponse: FC = () => {
+  const { state } = useAssemblyContext();
+  const { termQueries } = state;
+
+  return (
+    <PromptResponseContentStyle>
+      <PromptResponseContentIconStyle src={pano} alt="Logo" />
+      <PromptResponseThemeContainerStyle>
+        <PromptThemeTitleStyle>
+          {i18n.t('prompt.themeAnswer')}
+        </PromptThemeTitleStyle>
+        <PromptReponseThemeListStyle>
+          {termQueries.map(termQuery => (
+            <li key={termQuery.value}>{termQuery.title}</li>
+          ))}
+        </PromptReponseThemeListStyle>
+      </PromptResponseThemeContainerStyle>
+    </PromptResponseContentStyle>
+  );
 };
-
-export const PromptThemeResponse: FC<Props> = ({ response }) => (
-  <PromptResponseContentStyle>
-    <PromptResponseContentIconStyle src={pano} alt="Logo" />
-    <PromptResponseThemeContainerStyle>
-      <PromptThemeTitleStyle>
-        {i18n.t('prompt.themeAnswer')}
-      </PromptThemeTitleStyle>
-      <PromptReponseThemeListStyle>
-        {response.map((theme: string) => (
-          <PromptReponseThemeItemListStyle key={theme}>
-            <PromptResponseThemeButtonListStyle type="button">
-              {theme}
-            </PromptResponseThemeButtonListStyle>
-          </PromptReponseThemeItemListStyle>
-        ))}
-      </PromptReponseThemeListStyle>
-    </PromptResponseThemeContainerStyle>
-  </PromptResponseContentStyle>
-);

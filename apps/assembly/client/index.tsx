@@ -13,18 +13,19 @@ import { translationRessources } from '../i18n';
 import { AppContainer } from './app';
 import { AssemblyStateType } from '../types';
 import AssemblyContextState from '../store/context';
+import { initAssemblyDevState } from '../store/devState';
 
 declare global {
   interface Window {
-    ASSEMBLY_STATE?: AssemblyStateType;
+    ASSEMBLY_STATE: AssemblyStateType;
   }
 }
 
 if (env.isDev()) {
-  window.ASSEMBLY_STATE = {};
+  window.ASSEMBLY_STATE = initAssemblyDevState();
 }
 
-const serverState = window.ASSEMBLY_STATE || {};
+const serverState = window.ASSEMBLY_STATE;
 
 const initApp = async (state: any) => {
   const store = {

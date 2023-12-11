@@ -15,7 +15,7 @@ import { env } from '../utils/env';
 import { AppContainer } from '../client/app';
 import { ASSEMBLY_CLIENT_DIR } from './paths';
 import { AssemblyStateType } from '../types';
-import AssemblyContextState from '../store/context';
+import AssemblyContextState, { initAssemblyEmptyState } from '../store/context';
 
 const statsFile = path.resolve(ASSEMBLY_CLIENT_DIR, 'loadable-stats.json');
 
@@ -81,7 +81,7 @@ export const reactRender = async (
   res: Response,
   routeState?: AssemblyStateType
 ): Promise<any> => {
-  const state: AssemblyStateType = routeState || {};
+  const state: AssemblyStateType = routeState || initAssemblyEmptyState();
 
   const context = {};
   const headTags:

@@ -16,11 +16,28 @@ import {
 } from '@make.org/store/utils';
 import { AssemblyStateType } from '../types';
 
+const emptyAssemblyState: AssemblyStateType = {
+  customer: { id: '', name: '', slug: '' },
+  event: {
+    id: '',
+    customerId: '',
+    language: '',
+    name: '',
+    slug: '',
+    introMediaUrl: '',
+  },
+  termQueries: [],
+  generatedContents: [],
+};
+
+export const initAssemblyEmptyState = (): AssemblyStateType =>
+  JSON.parse(JSON.stringify(emptyAssemblyState));
+
 const deepEqual = (x: AssemblyStateType, y: AssemblyStateType): boolean =>
   JSON.stringify(x) === JSON.stringify(y);
 
 const AssemblyAppContext = createContext({
-  state: {},
+  state: initAssemblyEmptyState(),
   dispatch: (arg: ReducerAction) => {}, // eslint-disable-line
 });
 

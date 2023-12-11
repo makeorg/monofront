@@ -81,10 +81,6 @@ export const PromptReponseThemeListStyle = styled.ul`
   padding-left: ${spacings.m};
 `;
 
-export const PromptReponseThemeItemListStyle = styled.li`
-  color: #5d6fcd;
-`;
-
 export const PromptResponseThemeButtonListStyle = styled.button`
   border: none;
   background: none;

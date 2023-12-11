@@ -27,8 +27,8 @@ export type GeneratedContentType = {
 };
 
 export type AssemblyStateType = {
-  customer?: CustomerType;
-  event?: EventType;
-  termQueries?: TermQueryType[];
-  generatedContents?: GeneratedContentType[];
+  customer: CustomerType;
+  event: EventType;
+  termQueries: TermQueryType[];
+  generatedContents: GeneratedContentType[];
 };
