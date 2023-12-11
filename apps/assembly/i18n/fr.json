@@ -54,7 +54,12 @@
     "submit": "Envoyer",
     "caution": "MarIA.ne peut afficher des informations inexactes ou offensantes qui ne représentent pas les opinions du CESE. Charte Éthique IA Make.org",
     "themeAnswer": "Voici les thématiques de la convention :",
-    "me": "Moi"
+    "me": "Moi",
+    "themes": "Thématiques",
+    "themesDiscover": "Découvrir l’ensemble des thématiques",
+    "cancel": "Annuler",
+    "disabled": "Bouton désactivé",
+    "request_send": "Envoyer une requête"
   },
   "transcript": {
     "video_presentation": "La Convention citoyenne par ses extraits vidéo :",

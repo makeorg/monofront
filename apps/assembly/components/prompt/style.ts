@@ -3,8 +3,11 @@ import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 
-export const PromptContainer = styled.div`
+export const PromptContainerStyle = styled.div`
   position: sticky;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   bottom: 0;
   background-color: white;
   z-index: 100;
@@ -19,23 +22,23 @@ export const PromptContainer = styled.div`
   );
 `;
 
-export const GeneratedButtonsContainer = styled.div`
+export const GeneratedButtonsStyleContainerStyle = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 5px;
+  gap: ${spacings.xs};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: ${spacings.m};
   }
 `;
 
-export const GeneratedButtons = styled.button`
+export const GeneratedButtonsStyle = styled.button`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 5px;
-  padding: 10px;
+  gap: ${spacings.xs};
+  padding: ${spacings.s};
   border-style: none;
   border-radius: 10px;
   width: 100%;
@@ -53,7 +56,7 @@ export const GeneratedButtons = styled.button`
   }
 `;
 
-export const GeneratedButtonsTitle = styled.span`
+export const GeneratedButtonsStyleTitle = styled.span`
   text-transform: capitalize;
   align-items: center;
   justify-content: center;
@@ -62,13 +65,54 @@ export const GeneratedButtonsTitle = styled.span`
   font-size: 10px;
   color: white;
   min-width: 60px;
-  padding: 0 10px;
+  padding: 0 ${spacings.s};
   border-radius: 20px;
   height: 15px;
 `;
 
-export const GeneratedButtonText = styled.p`
+export const GeneratedButtonTextStyle = styled.p`
   font-size: 14px;
   color: #575757;
   text-align: left;
+`;
+
+export const PromptFormContainerStyle = styled.form`
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`;
+
+export const PromptFormInputStyle = styled.input`
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  border-radius: 30px;
+  border: 1px solid rgba(191, 191, 191, 1);
+  padding: 0 100px 0 ${spacings.sm};
+`;
+
+export const PromptFormButtonsContainerStyle = styled.div`
+  position: absolute;
+  display: flex;
+  gap: ${spacings.xs};
+  margin-right: ${spacings.xs};
+`;
+
+export const PromptFormSubmitStyle = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+`;
+
+export const PromptFormButtonArrowStyle = styled.img`
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
 `;

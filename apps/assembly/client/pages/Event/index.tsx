@@ -1,15 +1,20 @@
 import React, { FC } from 'react';
 import { OnboardingModal } from '../../../components/onboarding/OnboardingModal';
-import { Prompt } from '../../../components/prompt/Prompt';
 import { Welcome } from '../../../components/welcome/Welcome';
 import { PromptResponseContainer } from '../../../components/promptResponse/PromptResponseContainer';
+import { PromptContainerStyle } from '../../../components/prompt/style';
+import { PromptQueries } from '../../../components/prompt/Queries';
+import { PromptForm } from '../../../components/prompt/Form';
 
 const EventPage: FC = () => (
   <>
     <OnboardingModal />
     <Welcome />
     <PromptResponseContainer />
-    <Prompt />
+    <PromptContainerStyle>
+      <PromptQueries />
+      <PromptForm />
+    </PromptContainerStyle>
   </>
 );
 
