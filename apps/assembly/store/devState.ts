@@ -138,6 +138,7 @@ const AssemblyDevState: AssemblyStateType = {
       position: 10,
     },
   ],
+  feed: [],
 };
 
 export const initAssemblyDevState = (): AssemblyStateType =>

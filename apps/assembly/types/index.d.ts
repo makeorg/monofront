@@ -26,9 +26,18 @@ export type GeneratedContentType = {
   position: number;
 };
 
+export type FeedItemType = {
+  id: string;
+  type: string;
+  question: string;
+  content: string;
+  links?: [];
+};
+
 export type AssemblyStateType = {
   customer: CustomerType;
   event: EventType;
   termQueries: TermQueryType[];
   generatedContents: GeneratedContentType[];
+  feed: FeedItemType[];
 };

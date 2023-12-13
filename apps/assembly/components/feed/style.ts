@@ -3,7 +3,7 @@ import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 
-export const PromptResponseContainerStyle = styled.section`
+export const FeedContainerStyle = styled.section`
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -13,16 +13,14 @@ export const PromptResponseContainerStyle = styled.section`
   max-width: ${intToPx(Breakpoints.LargeDesktop)};
 `;
 
-export const PromptResponseStyle = styled.div``;
-
-export const PromptResponseQuestionContainerStyle = styled.div`
+export const QuestionContainerStyle = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   gap: ${spacings.s};
   padding: ${spacings.m};
 `;
-export const PromptResponseQuestionUserStyle = styled.div`
+export const QuestionUserStyle = styled.div`
   display: flex;
   align-items: center;
   gap: ${spacings.s};
@@ -30,7 +28,7 @@ export const PromptResponseQuestionUserStyle = styled.div`
   font-size: 12px;
 `;
 
-export const PromptResponseQuestionImgStyle = styled.div`
+export const QuestionImgStyle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,11 +42,11 @@ export const PromptResponseQuestionImgStyle = styled.div`
   }
 `;
 
-export const PromptResponseQuestionStyle = styled.p`
+export const QuestionStyle = styled.p`
   font-size: 14px;
 `;
 
-export const PromptResponseContentStyle = styled.div`
+export const ContentStyle = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${spacings.m};
@@ -61,27 +59,27 @@ export const PromptResponseContentStyle = styled.div`
   }
 `;
 
-export const PromptResponseContentIconStyle = styled.img`
+export const ContentIconStyle = styled.img`
   height: 20px;
   width: 20px;
 `;
 
-export const PromptResponseThemeContainerStyle = styled.div`
+export const ThemeContainerStyle = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${spacings.s};
 `;
 
-export const PromptThemeTitleStyle = styled.div`
+export const ThemeTitleStyle = styled.div`
   font-size: 12px;
   font-weight: 600;
 `;
 
-export const PromptReponseThemeListStyle = styled.ul`
+export const ThemeListStyle = styled.ul`
   padding-left: ${spacings.m};
 `;
 
-export const PromptResponseThemeButtonListStyle = styled.button`
+export const ThemeButtonListStyle = styled.button`
   border: none;
   background: none;
   text-decoration: underline;

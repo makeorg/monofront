@@ -82,15 +82,7 @@ export const cspMiddleware = (
         'https://*.google.com',
         'https://*.hotjar.com',
       ],
-      fontSrc: [
-        ...defaultDirectives.fontSrc,
-        'https://*.hotjar.com',
-        'https://fonts.gstatic.com/',
-      ],
-      styleSrc: [
-        ...defaultDirectives.styleSrc,
-        'https://fonts.googleapis.com/',
-      ],
+      fontSrc: [...defaultDirectives.fontSrc, 'https://*.hotjar.com'],
     },
   })(req, res, next);
 };

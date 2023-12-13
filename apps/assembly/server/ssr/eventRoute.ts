@@ -4,6 +4,7 @@ import { reactRender } from '../reactRender';
 import { ContentService } from '../api/Content';
 import { AssemblyStateType } from '../../types';
 import { ROUTE_ASSEMBLY_NOT_FOUND } from '../../utils/routes';
+import { initAssemblyEmptyState } from '../../store/context';
 
 export const eventRoute = async (
   req: Request,
@@ -89,7 +90,10 @@ export const eventRoute = async (
     return res.redirect(ROUTE_ASSEMBLY_NOT_FOUND);
   }
 
+  const initialState = initAssemblyEmptyState();
+
   const routeState: AssemblyStateType = {
+    ...initialState,
     customer,
     event,
     termQueries,

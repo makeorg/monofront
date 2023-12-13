@@ -13,9 +13,11 @@ import { useAssemblyContext } from '../../store/context';
 
 export const Welcome: FC = () => {
   const { state } = useAssemblyContext();
+  const { introMediaUrl } = state.event;
+
   return (
     <WelcomeContainerStyle>
-      <YoutubePlayer url={state.event.introMediaUrl} />
+      <YoutubePlayer url={introMediaUrl} />
       <WelcomeTitleStyle>
         Bienvenue au coeur de la Convention Citoyenne sur la fin de vie
       </WelcomeTitleStyle>

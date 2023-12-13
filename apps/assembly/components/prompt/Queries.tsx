@@ -1,5 +1,6 @@
 import React, { FC, useState, useEffect } from 'react';
 import i18n from 'i18next';
+import { v4 as uuidv4 } from 'uuid';
 import {
   GeneratedButtonsStyle,
   GeneratedButtonTextStyle,
@@ -7,8 +8,10 @@ import {
   GeneratedButtonsStyleContainerStyle,
 } from './style';
 import { useAssemblyContext } from '../../store/context';
+import { addFeedItem } from '../../store/feed/actions';
+import { GENERATED_CONTENT, THEMES } from '../feed';
 
-const colors = ['#5F5F5F', '#72C083', '#4C41AB', '#7990F1'];
+const colors = ['#5F5F5F', '#242825', '#4C41AB', '#7990F1'];
 
 const getRandomColor = () => {
   const randomIndex = Math.floor(Math.random() * colors.length);
@@ -18,7 +21,7 @@ const getRandomColor = () => {
 };
 
 export const PromptQueries: FC = () => {
-  const { state } = useAssemblyContext();
+  const { state, dispatch } = useAssemblyContext();
   const { generatedContents } = state;
 
   const [generatedContent, setGeneratedContent] = useState(generatedContents);
@@ -41,22 +44,47 @@ export const PromptQueries: FC = () => {
     ? generatedContent.slice(0, 2)
     : generatedContent.slice(0, 5);
 
+  const dispatchThemes = () => {
+    dispatch(
+      addFeedItem({
+        id: uuidv4(),
+        type: THEMES,
+        question: 'Quelles sont les thématiques de la convention ?',
+        content: '',
+      })
+    );
+  };
+
+  const dispatchGeneratedContent = (subject: string, content: string) => {
+    dispatch(
+      addFeedItem({
+        id: uuidv4(),
+        type: GENERATED_CONTENT,
+        question: `que s'est-il dit sur : "${subject}"`,
+        content,
+      })
+    );
+  };
+
   return (
     <GeneratedButtonsStyleContainerStyle id="main">
-      {contents.map(content => (
+      {contents.map(item => (
         <GeneratedButtonsStyle
-          onClick={() => handleClick(content.title)}
-          key={content.title}
+          onClick={() => {
+            dispatchGeneratedContent(item.title, item.content);
+            handleClick(item.title);
+          }}
+          key={item.title}
         >
           <GeneratedButtonsStyleTitle
             style={{ backgroundColor: getRandomColor() }}
           >
-            {content.subtitle}
+            {item.subtitle}
           </GeneratedButtonsStyleTitle>
-          <GeneratedButtonTextStyle>{content.title}</GeneratedButtonTextStyle>
+          <GeneratedButtonTextStyle>{item.title}</GeneratedButtonTextStyle>
         </GeneratedButtonsStyle>
       ))}
-      <GeneratedButtonsStyle className="theme">
+      <GeneratedButtonsStyle className="theme" onClick={dispatchThemes}>
         <GeneratedButtonsStyleTitle style={{ backgroundColor: '#4C41AB' }}>
           {i18n.t('prompt.themes')}
         </GeneratedButtonsStyleTitle>

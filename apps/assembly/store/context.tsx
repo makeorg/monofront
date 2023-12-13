@@ -15,6 +15,7 @@ import {
   getCurrentTimeFormatted,
 } from '@make.org/store/utils';
 import { AssemblyStateType } from '../types';
+import { feed_reducer } from './feed/reducer';
 
 const emptyAssemblyState: AssemblyStateType = {
   customer: { id: '', name: '', slug: '' },
@@ -28,6 +29,7 @@ const emptyAssemblyState: AssemblyStateType = {
   },
   termQueries: [],
   generatedContents: [],
+  feed: [],
 };
 
 export const initAssemblyEmptyState = (): AssemblyStateType =>
@@ -46,7 +48,9 @@ export const useAssemblyContext = (): {
   dispatch: Dispatch;
 } => useContext(AssemblyAppContext);
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+  feed: feed_reducer,
+});
 
 const useAllReducers = (
   serverState?: AssemblyStateType

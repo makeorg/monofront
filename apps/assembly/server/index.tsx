@@ -5,7 +5,6 @@ import cookiesMiddleware from 'universal-cookie-express';
 import favicon from 'serve-favicon';
 import cors from 'cors';
 import webpackManifest from 'webpack-manifest';
-import { cspMiddleware } from '@make.org/utils/middleware/contentSecurityPolicy';
 import { headersResponseMiddleware } from '@make.org/utils/middleware/headers';
 import { nonceUuidMiddleware } from '@make.org/utils/middleware/nonceUuid';
 import { TRANSLATION_COMMON_NAMESPACE } from '@make.org/utils/i18n/constants';
@@ -30,6 +29,7 @@ import {
   ASSEMBLY_JS_DIR,
   ASSEMBLY_MAP_DIR,
 } from './paths';
+import { assemblyCspMiddleware } from './middleware/contentSecurityPolicy';
 
 i18n.init({
   interpolation: {
@@ -95,7 +95,7 @@ const getApp = () => {
   );
   app.use((req, res, next) => {
     const localsResponse = res as Response & { locals: { nonce: string } };
-    cspMiddleware(req, localsResponse, next);
+    assemblyCspMiddleware(req, localsResponse, next);
   });
 
   initRoutes(app);
