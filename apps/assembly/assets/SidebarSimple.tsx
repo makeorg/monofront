@@ -2,7 +2,7 @@
 import React from 'react';
 import { SvgPropsType } from '@make.org/types';
 
-export const Sidebar: React.FC<SvgPropsType> = (props: SvgPropsType) => (
+export const SidebarLogo: React.FC<SvgPropsType> = (props: SvgPropsType) => (
   <svg
     width="26"
     height="26"

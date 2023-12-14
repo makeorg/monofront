@@ -2,11 +2,11 @@ import React, { FC, useState, useEffect } from 'react';
 import i18n from 'i18next';
 import ReactModal from 'react-modal';
 import { lockBody, unlockBody } from '@make.org/utils/helpers/styled';
-import { OnboardingContent } from './OnboardingContent';
+import { OnboardingContent } from './Content';
 import {
-  OnboardingClose,
-  OnboardingCross,
-  OnboardingCloseButton,
+  OnboardingCloseStyle,
+  OnboardingCrossStyle,
+  OnboardingCloseButtonStyle,
 } from './style';
 
 ReactModal.setAppElement('#app');
@@ -30,22 +30,22 @@ export const OnboardingModal: FC = () => {
       overlayClassName="modal-overlay"
       className="modal-dialog"
     >
-      <OnboardingClose
+      <OnboardingCloseStyle
         aria-label={i18n.t('modal.closeLabel')}
         aria-expanded="false"
         onClick={handleClose}
         type="button"
       >
-        <OnboardingCross />
-      </OnboardingClose>
+        <OnboardingCrossStyle />
+      </OnboardingCloseStyle>
       <OnboardingContent />
-      <OnboardingCloseButton
+      <OnboardingCloseButtonStyle
         aria-expanded="false"
         onClick={handleClose}
         type="button"
       >
         {i18n.t('modal.discover')}
-      </OnboardingCloseButton>
+      </OnboardingCloseButtonStyle>
     </ReactModal>
   );
 };

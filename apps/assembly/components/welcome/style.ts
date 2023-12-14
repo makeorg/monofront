@@ -4,7 +4,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { typography } from '@make.org/designsystem/tokens/typography';
 
-export const WelcomeContainer = styled.section`
+export const WelcomeContainerStyle = styled.section`
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -14,12 +14,12 @@ export const WelcomeContainer = styled.section`
   padding: ${spacings.m};
 `;
 
-export const WelcomeTitle = styled.h1`
+export const WelcomeTitleStyle = styled.h1`
   font-size: ${typography.FontSize.Title.Europe};
   max-width: 800px;
 `;
 
-export const WelcomeContent = styled.div`
+export const WelcomeContentStyle = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -31,17 +31,17 @@ export const WelcomeContent = styled.div`
   }
 `;
 
-export const WelcomeContentTextContainer = styled.div`
+export const WelcomeContentTextContainerStyle = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
 `;
 
-export const WelcomeContentText = styled.p`
+export const WelcomeContentTextStyle = styled.p`
   font-size: ${typography.FontSize.Text.RueDeLappe};
 `;
 
-export const WelcomeContentIcon = styled.img`
+export const WelcomeContentIconStyle = styled.img`
   height: 20px;
   width: 20px;
 `;

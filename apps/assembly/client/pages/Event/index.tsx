@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import { OnboardingModal } from '../../../components/onboarding/OnboardingModal';
+import { OnboardingModal } from '../../../components/onboarding/Modal';
 import { Welcome } from '../../../components/welcome/Welcome';
-import { PromptResponseContainer } from '../../../components/promptResponse/PromptResponseContainer';
+import { PromptResponseContainer } from '../../../components/promptResponse/Container';
 import { PromptContainerStyle } from '../../../components/prompt/style';
 import { PromptQueries } from '../../../components/prompt/Queries';
 import { PromptForm } from '../../../components/prompt/Form';

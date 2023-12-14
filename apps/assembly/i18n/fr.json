@@ -61,6 +61,12 @@
     "disabled": "Bouton désactivé",
     "request_send": "Envoyer une requête"
   },
+  "sidebar": {
+    "explore": "Explorer",
+    "exp": "Une expérience imaginée par",
+    "know_more": "En savoir plus sur la consultation",
+    "panoramic": "En savoir plus sur Panoramic"
+  },
   "transcript": {
     "video_presentation": "La Convention citoyenne par ses extraits vidéo :",
     "video_select": "Sélectionner votre extrait",

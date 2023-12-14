@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
-import { AppContent } from '../../components/style';
-import { UIOnboardingModalStyle } from '../../components/onboarding/style';
+import { AppContent, UIModalStyle } from '../../components/style';
 import { Routes } from './Routes';
-import { Header } from '../../components/header/Header';
+import { Header } from '../../components/header';
 
 export const AppContainer: FC = () => (
   <>
@@ -10,6 +9,6 @@ export const AppContainer: FC = () => (
       <Header />
       <Routes />
     </AppContent>
-    <UIOnboardingModalStyle />
+    <UIModalStyle />
   </>
 );

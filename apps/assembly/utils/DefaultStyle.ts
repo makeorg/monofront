@@ -69,6 +69,7 @@ export const DefaultStylesheet = createGlobalStyle`
   ul,
   p,
   form,
+  span,
   blockquote,
   dl,
   dd {
