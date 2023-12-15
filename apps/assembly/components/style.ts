@@ -5,6 +5,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 
 export const AppContent = styled.div`
   position: relative;
+  height: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

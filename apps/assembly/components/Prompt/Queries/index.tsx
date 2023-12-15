@@ -1,5 +1,6 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { env } from '@make.org/assets/env';
 import {
   QueriesButtonsStyle,
   QueriesTextStyle,
@@ -42,6 +43,13 @@ export const Buttons: FC<ButtonsProps> = ({ title, subtitle, handleClick }) => (
 
 export const PromptQueries: FC = () => {
   const { dispatch } = useAssemblyContext();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (env.isClientSide() && Math.min(window.innerWidth) < 768) {
+      setIsMobile(true);
+    }
+  }, []);
 
   const dispatchThemes = () => {
     dispatch(
@@ -64,8 +72,6 @@ export const PromptQueries: FC = () => {
       })
     );
   };
-
-  const isMobile = Math.min(window.innerWidth, window.innerHeight) < 768;
 
   if (isMobile) {
     return (

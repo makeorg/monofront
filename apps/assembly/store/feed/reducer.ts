@@ -9,10 +9,10 @@ export const feed_reducer = (
 ): FeedItemType[] => {
   switch (action.type) {
     case ADD_FEED_ITEM:
-      return [{ ...action.payload.item }, ...state];
+      return [...state, { ...action.payload.item }];
     case REMOVE_FEED_LAST_ITEM: {
       const feed = [...state];
-      feed.pop();
+      feed.shift();
       return feed;
     }
     default:

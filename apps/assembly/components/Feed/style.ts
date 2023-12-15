@@ -6,6 +6,8 @@ import styled from 'styled-components';
 export const FeedContainerStyle = styled.section`
   display: flex;
   flex-direction: column;
+  height: 100%;
+  justify-content: end;
   gap: 40px;
   width: 100%;
   margin: 0 auto;
