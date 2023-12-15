@@ -72,6 +72,7 @@ export type SliderParamsType = {
   responsive?: SliderParamsType[];
   interactiveChildren?: InteractiveChildrenType;
   counterName?: string;
+  draggable?: boolean;
 };
 
 export type CountryWithConsulationsType = {

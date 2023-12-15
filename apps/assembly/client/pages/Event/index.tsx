@@ -1,10 +1,11 @@
 import React, { FC } from 'react';
-import { OnboardingModal } from '../../../components/onboarding/Modal';
-import { Welcome } from '../../../components/welcome';
-import { Feed } from '../../../components/feed';
-import { PromptContainerStyle } from '../../../components/prompt/style';
-import { PromptQueries } from '../../../components/prompt/Queries';
-import { PromptForm } from '../../../components/prompt/Form';
+import { GliderStylesheet } from '@make.org/assets/css-in-js/GliderStyle';
+import { OnboardingModal } from '../../../components/Onboarding/Modal';
+import { Welcome } from '../../../components/Welcome';
+import { Feed } from '../../../components/Feed';
+import { PromptContainerStyle } from '../../../components/Prompt/style';
+import { PromptQueries } from '../../../components/Prompt/Queries';
+import { PromptForm } from '../../../components/Prompt/Form';
 import { useAssemblyContext } from '../../../store/context';
 
 const EventPage: FC = () => {
@@ -13,6 +14,7 @@ const EventPage: FC = () => {
 
   return (
     <>
+      <GliderStylesheet />
       <OnboardingModal />
       {!feed.length ? <Welcome /> : <Feed />}
       <PromptContainerStyle>

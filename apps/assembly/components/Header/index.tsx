@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import i18n from 'i18next';
 import client from '../../assets/Client_logos.png';
 import { SidebarLogo } from '../../assets/SidebarSimple';
-import { SidebarModal } from '../sideBar/Modal';
+import { SidebarModal } from '../SideBar/Modal';
 import {
   HeaderContainerStyle,
   HeaderImgStyle,

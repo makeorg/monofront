@@ -30,15 +30,12 @@ export const useSlider = (
     // Init slider with custom params
     // eslint-disable-next-line react-hooks/exhaustive-deps
     gliderElement = new Glider(sliderRef.current, {
-      slidesToShow: sliderParams.slidesToShow
-        ? sliderParams.slidesToShow
-        : 'auto',
-      slidesToScroll: sliderParams.slidesToScroll
-        ? sliderParams.slidesToScroll
-        : 1,
+      slidesToShow: sliderParams.slidesToShow || 'auto',
+      slidesToScroll: sliderParams.slidesToScroll || 1,
       skipTrack: true,
-      arrows: sliderParams.arrows ? sliderParams.arrows : {},
-      responsive: sliderParams.responsive ? sliderParams.responsive : [],
+      arrows: sliderParams.arrows || {},
+      responsive: sliderParams.responsive || [],
+      draggable: sliderParams.draggable || false,
     });
 
     /* Handling a11y rules for slider

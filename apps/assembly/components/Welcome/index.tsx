@@ -8,7 +8,7 @@ import {
   WelcomeContentTextStyle,
   WelcomeContentTextContainerStyle,
 } from './style';
-import { YoutubePlayer } from '../reactPlayer/YoutubePlayer';
+import { YoutubePlayer } from '../ReactPlayer/YoutubePlayer';
 import { useAssemblyContext } from '../../store/context';
 
 export const Welcome: FC = () => {

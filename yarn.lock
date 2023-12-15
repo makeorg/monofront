@@ -3295,6 +3295,7 @@ __metadata:
     "@types/compression": ^1.7.2
     "@types/cors": ^2.8.12
     "@types/express": ^4.17.14
+    "@types/glider-js": ^1
     "@types/loadable__component": ^5
     "@types/loadable__server": ^5.12.6
     "@types/loadable__webpack-plugin": ^5
@@ -3319,6 +3320,7 @@ __metadata:
     favicons: 6.2.2
     favicons-webpack-plugin: ^5.0.2
     file-loader: ^6.2.0
+    glider-js: 1.7.8
     helmet-csp: ^3.4.0
     html-webpack-plugin: ^5.5.0
     http-proxy-middleware: 2.0.6
@@ -6472,6 +6474,13 @@ __metadata:
   version: 3.2.1
   resolution: "@types/find-cache-dir@npm:3.2.1"
   checksum: bf5c4e96da40247cd9e6327f54dfccda961a0fb2d70e3c71bd05def94de4c2e6fb310fe8ecb0f04ecf5dbc52214e184b55a2337b0f87250d4ae1e2e7d58321e4
+  languageName: node
+  linkType: hard
+
+"@types/glider-js@npm:^1":
+  version: 1.7.11
+  resolution: "@types/glider-js@npm:1.7.11"
+  checksum: 12368b5ebc9d8ae87588fafbb908e33fc86278ec2e2a4359f87dc3bc685abcc8ce90b327ccd2a0f87cbc79e0521a209132870f357158c3d371521195a66a7e0e
   languageName: node
   linkType: hard
 
@@ -14776,7 +14785,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glider-js@npm:^1.7.7":
+"glider-js@npm:1.7.8, glider-js@npm:^1.7.7":
   version: 1.7.8
   resolution: "glider-js@npm:1.7.8"
   checksum: d651e10be8b27a7038541e85fdf0cb47bc5cc43363e617612eb6ebe573d2e6c2ce43b077323ba558fb7446cc8124f16cb9d2fc5499b6c356ed7427082822f6d7
