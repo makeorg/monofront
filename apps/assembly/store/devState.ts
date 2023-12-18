@@ -12,7 +12,7 @@ const AssemblyDevState: AssemblyStateType = {
     language: 'fr',
     name: "Nom d'événement",
     slug: 'slug-evenement',
-    introMediaUrl: 'https://youtu.be/jNQXAC9IVRw',
+    introMediaUrl: 'https://youtube.com/watch?v=1BTxxJr8awQ',
   },
   termQueries: [
     {

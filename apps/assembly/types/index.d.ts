@@ -26,12 +26,18 @@ export type GeneratedContentType = {
   position: number;
 };
 
+export type LinkContentType = {
+  url: string;
+  title: string;
+  data: string;
+};
+
 export type FeedItemType = {
   id: string;
   type: string;
   question: string;
   content: string;
-  links?: [];
+  links?: LinkContentType[];
 };
 
 export type AssemblyStateType = {

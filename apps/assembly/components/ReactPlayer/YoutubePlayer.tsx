@@ -1,10 +1,10 @@
 import React, { useRef, useCallback, useEffect } from 'react';
 import _ReactPlayer, { ReactPlayerProps } from 'react-player';
 import i18n from 'i18next';
-import { ReactPlayerContainer } from './style';
+import { ReactPlayerContainer, ReactPlayerPlayButtonStyle } from './style';
 
 export const YoutubePlayer: React.FC<ReactPlayerProps> = props => {
-  const { url, seek, background } = props;
+  const { url, seek, small } = props;
   const playerRef = useRef<_ReactPlayer>(null);
   const ReactPlayer = _ReactPlayer as unknown as React.FC<ReactPlayerProps>;
 
@@ -22,16 +22,19 @@ export const YoutubePlayer: React.FC<ReactPlayerProps> = props => {
 
   // console warning (Unrecognized feature: 'web-share'.), can be ignored, due web-share feature in chrome not being recognized
   return (
-    <ReactPlayerContainer className={background && 'background'}>
+    <ReactPlayerContainer className={small && 'small'}>
       <ReactPlayer
         ref={playerRef}
-        url={`https://www.youtube.com/embed/${url}`}
+        className="react-player"
+        url={url}
         controls
+        light
         onReady={onReady}
         playing={seek && true}
         onError={(error: any, data?: any, hlsInstance?: any, hlsGlobal?: any) =>
           console.log(error, data, hlsInstance, hlsGlobal)
         }
+        playIcon={<ReactPlayerPlayButtonStyle />}
         config={{
           youtube: {
             playerVars: {

@@ -1,12 +1,12 @@
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 
 export const FeedContainerStyle = styled.section`
   display: flex;
   flex-direction: column;
-  height: 100%;
   justify-content: end;
   gap: 40px;
   width: 100%;
@@ -61,6 +61,12 @@ export const ContentStyle = styled.div`
   }
 `;
 
+export const AnswerContainerStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+
 export const ContentIconStyle = styled.img`
   height: 20px;
   width: 20px;
@@ -86,4 +92,47 @@ export const ThemeButtonListStyle = styled.button`
   background: none;
   text-decoration: underline;
   color: #5d6fcd;
+`;
+
+export const TranscriptContainerStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+export const TranscriptContentStyle = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+
+export const TranscriptTitleStyle = styled.span`
+  font-size: ${typography.FontSize.Text.Arrondissement};
+  font-weight: 600;
+  color: rgba(95, 95, 95, 1);
+`;
+
+export const TranscriptVideoContentStyle = styled.div`
+  background-color: white;
+  border-radius: 0px 0px 10px 10px;
+  width: 200px;
+`;
+
+export const TranscriptVideoTextContainerStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-size: ${typography.FontSize.Text.Bastille};
+  gap: 5px;
+  padding: 10px;
+`;
+
+export const TranscriptVideoTitleStyle = styled.span`
+  display: flex;
+  align-items: center;
+  gap: ${spacings.xs};
+  font-weight: 600;
+  color: rgba(52, 51, 48, 1);
+`;
+
+export const TranscriptVideoTextStyle = styled.p`
+  color: rgba(87, 87, 87, 1);
 `;

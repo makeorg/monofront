@@ -4,14 +4,14 @@
   "eventLanguage": "fr",
   "name": "Nom d'événement",
   "slug": "slug-evenement",
-  "introMediaUrl": "https://youtu.be/jNQXAC9IVRw",
+  "introMediaUrl": "https://youtube.com/watch?v=1BTxxJr8awQ",
   "createdAt": "2023-11-20T16:24:24.850Z",
   "updatedAt": "2023-11-20T16:24:24.850Z",
   "i18n": [
     {
       "title": "Event title",
       "language": "en",
-      "introMediaUrl": "https://youtu.be/jNQXAC9IVRw"
+      "introMediaUrl": "https://youtube.com/watch?v=1BTxxJr8awQ"
     }
   ]
 }

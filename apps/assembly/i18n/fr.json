@@ -61,6 +61,9 @@
     "disabled": "Bouton désactivé",
     "request_send": "Envoyer une requête"
   },
+  "feed": {
+    "sources": "Voici mes sources :"
+  },
   "sidebar": {
     "explore": "Explorer",
     "exp": "Une expérience imaginée par",

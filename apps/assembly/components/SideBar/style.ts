@@ -4,6 +4,17 @@ import { typography } from '@make.org/designsystem/tokens/typography';
 import { SvgLogo } from '@make.org/ui/Svg/elements';
 import { SidebarExternalLink } from '../../assets/ArrowSquareOut';
 
+export const SidebarContentStyle = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  outline: none;
+  padding: ${spacings.m};
+`;
+
 export const SidebarTitleCloseStyle = styled.div`
   display: flex;
   justify-content: space-between;

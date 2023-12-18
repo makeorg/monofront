@@ -16,7 +16,7 @@ const EventPage: FC = () => {
     <>
       <GliderStylesheet />
       <OnboardingModal />
-      {!feed.length ? <Welcome /> : <Feed />}
+      {feed.length === 0 ? <Welcome /> : <Feed />}
       <PromptContainerStyle>
         <PromptQueries />
         <PromptForm />

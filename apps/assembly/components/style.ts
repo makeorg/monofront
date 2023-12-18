@@ -70,22 +70,14 @@ export const UIModalStyle = createGlobalStyle`
   
   }
   .sidebar-dialog {
-    position: relative;
-    display: flex;
-    gap: 30px;
-    flex-direction: column;
-    outline: none;
-    padding: ${spacings.m};
-    width: 100%;
-    height: 100%;
     background-color: white;
     overflow-y: auto;
     animation-duration: 1s;
     animation-name: slidein;
-
+    width: 100%;
+    height: 100%;
     @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
       max-width: 300px;
-  
     }
   }
 `;

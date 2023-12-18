@@ -69,6 +69,28 @@ export const PromptQueries: FC = () => {
         type: GENERATED_CONTENT,
         question: `que s'est-il dit sur : "${subject}"`,
         content,
+        links: [
+          {
+            url: 'https://youtube.com/watch?v=1BTxxJr8awQ',
+            title: 'string1',
+            data: 'test date 1 un peu long juste pour voir',
+          },
+          {
+            url: 'https://www.youtube.com/watch?v=f2EqECiTBL8',
+            title: 'string2',
+            data: 'test date assez court',
+          },
+          {
+            url: 'https://www.youtube.com/watch?v=U2Qp5pL3ovA',
+            title: 'string3',
+            data: 'test date',
+          },
+          {
+            url: 'https://www.youtube.com/watch?v=U2Qp5pL3ovA',
+            title: 'string4',
+            data: 'test date',
+          },
+        ],
       })
     );
   };

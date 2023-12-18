@@ -24,7 +24,7 @@ const scrollToLastElement = (id: string) => {
 export const Feed: FC = () => {
   const { state, dispatch } = useAssemblyContext();
   const { feed } = state;
-  const FEED_MAX_LENGTH = 4;
+  const FEED_MAX_LENGTH = 5;
 
   useEffect(() => {
     if (feed.length > FEED_MAX_LENGTH) {
@@ -44,11 +44,7 @@ export const Feed: FC = () => {
       {feed.map(item => (
         <div role="article" key={item.id} id={item.id}>
           <Question question={item.question} />
-          {item.type === THEMES ? (
-            <Themes />
-          ) : (
-            <Answer content={item.content} />
-          )}
+          {item.type === THEMES ? <Themes /> : <Answer content={item} />}
         </div>
       ))}
     </FeedContainerStyle>

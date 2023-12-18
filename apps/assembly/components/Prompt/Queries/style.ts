@@ -1,5 +1,7 @@
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 import styled from 'styled-components';
+import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
+import { intToPx } from '@make.org/utils/helpers/styled';
 
 export const QueriesContainerStyle = styled.div`
   display: grid;
@@ -8,8 +10,14 @@ export const QueriesContainerStyle = styled.div`
 `;
 
 export const QueriesButtonsListStyle = styled.li`
-  box-shadow: 0px 4px 18px 0px #0000002b;
   border-radius: 10px;
+  margin: 0 5px;
+  border: 1px solid #0000002b;
+
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    box-shadow: 0px 4px 18px 0px #0000002b;
+    border: none;
+  }
 `;
 
 export const QueriesButtonsStyle = styled.button`
@@ -23,6 +31,7 @@ export const QueriesButtonsStyle = styled.button`
   width: 100%;
   min-width: 220px;
   background-color: white;
+  border-radius: ${spacings.s};
   &.theme {
     background: linear-gradient(
         91.5deg,
