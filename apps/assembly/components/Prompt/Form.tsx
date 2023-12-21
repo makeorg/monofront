@@ -1,5 +1,13 @@
-import React, { FC, useState } from 'react';
+import React, {
+  ChangeEvent,
+  FC,
+  FormEventHandler,
+  SyntheticEvent,
+  useEffect,
+  useState,
+} from 'react';
 import i18n from 'i18next';
+import { throttle } from '@make.org/utils/helpers/throttle';
 import submitButton from '../../assets/sendButton.png';
 import disabledButton from '../../assets/sendButtonInactive.png';
 import stopButton from '../../assets/sendButtonStop.png';
@@ -11,38 +19,66 @@ import {
   PromptFormButtonArrowStyle,
   PromptFormWarningText,
 } from './style';
+import { StreamTranscript } from './Stream';
 
 export const PromptForm: FC = () => {
-  const [canSubmit, setCanSubmit] = useState(true);
+  const [question, setQuestion] = useState<string>('');
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+  const [stopStreaming, setStopStreaming] = useState<boolean>(false);
 
-  const handleSubmit: React.FormEventHandler<
-    HTMLButtonElement | HTMLFormElement
-  > = async event => {
-    event.preventDefault();
-
-    setCanSubmit(!canSubmit);
+  const handleSubmit: FormEventHandler<HTMLButtonElement | HTMLFormElement> = (
+    e: SyntheticEvent<HTMLButtonElement>
+  ) => {
+    e.preventDefault();
+    setStopStreaming(false);
+    setIsSubmitted(true);
   };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+
+    setQuestion(e.target.value);
+  };
+
+  const { isWaiting } = StreamTranscript(question, isSubmitted, stopStreaming);
+
+  useEffect(() => {
+    if (!isWaiting) {
+      setIsSubmitted(false);
+    }
+  }, [isWaiting]);
 
   return (
     <>
       <PromptFormContainerStyle onSubmit={handleSubmit}>
-        <PromptFormInputStyle placeholder={i18n.t('prompt.request_send')} />
+        <PromptFormInputStyle
+          type="text"
+          required
+          minLength={10}
+          maxLength={300}
+          placeholder={i18n.t('prompt.request_send')}
+          onChange={throttle(handleChange)}
+        />
         <PromptFormButtonsContainerStyle>
-          {!canSubmit && (
+          {isSubmitted && (
             <PromptFormSubmitStyle type="button">
               <PromptFormButtonArrowStyle
                 src={stopButton}
                 alt={i18n.t('prompt.cancel')}
-                onClick={() => setCanSubmit(true)}
+                onClick={() => {
+                  setStopStreaming(true);
+                  setIsSubmitted(true);
+                }}
               />
             </PromptFormSubmitStyle>
           )}
-
-          <PromptFormSubmitStyle type="submit" disabled={!canSubmit}>
+          <PromptFormSubmitStyle type="submit" disabled={isSubmitted}>
             <PromptFormButtonArrowStyle
-              src={canSubmit ? submitButton : disabledButton}
+              src={isSubmitted ? disabledButton : submitButton}
               alt={
-                canSubmit ? i18n.t('prompt.submit') : i18n.t('prompt.disabled')
+                isSubmitted
+                  ? i18n.t('prompt.disabled')
+                  : i18n.t('prompt.submit')
               }
             />
           </PromptFormSubmitStyle>

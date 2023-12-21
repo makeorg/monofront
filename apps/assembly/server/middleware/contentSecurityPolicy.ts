@@ -37,6 +37,7 @@ export const assemblyCspMiddleware = (
         'https://*.facebook.net',
         'https://analytics.twitter.com',
         'https://*.hotjar.com',
+        'https://i.ytimg.com/vi/',
       ],
       connectSrc: [
         env.frontUrl() || '',
@@ -50,6 +51,7 @@ export const assemblyCspMiddleware = (
         'https://*.hotjar.com',
         'https://*.hotjar.io',
         'wss://*.hotjar.com',
+        'https://noembed.com/embed',
       ],
       formAction: ["'self'", 'https://www.facebook.com/tr/'],
       frameSrc: ["'self'", 'https://*.hotjar.com', 'https://www.youtube.com'],

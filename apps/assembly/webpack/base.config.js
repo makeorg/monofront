@@ -43,7 +43,7 @@ const clientConfig = envConfigPath => ({
     moduleIds: 'deterministic',
     minimizer: [new TerserPlugin()],
     concatenateModules: true,
-    runtimeChunk: false, // runtimeChunk + inlineSource is not compatible with loadable-component for now
+    runtimeChunk: true,
     splitChunks: {
       cacheGroups: {
         default: false,
@@ -163,7 +163,7 @@ const serverConfig = envConfigPath => ({
   entry: [
     'core-js/stable',
     'regenerator-runtime',
-    path.resolve(__dirname, '..', 'server', 'index.tsx'),
+    path.resolve(__dirname, '..', 'server', 'index.ts'),
   ],
   output: {
     pathinfo: false,

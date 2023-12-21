@@ -27,7 +27,7 @@ export type GeneratedContentType = {
   mode: string;
 };
 
-export type ChunkTranscriptType = {
+export type TranscriptMetadataType = {
   description: string;
   session: string;
   sourceType: string;
@@ -39,7 +39,7 @@ export type ChunkTranscriptType = {
   youtubeId: string;
 };
 
-export type ChunkDocumentType = {
+export type DocumentMetadataType = {
   documentId: string;
   documentTitle: string;
   documentURL: string;
@@ -47,13 +47,23 @@ export type ChunkDocumentType = {
   sourceType: string;
 };
 
+export type ChunkType = {
+  pageContent: string;
+  metadata: TranscriptMetadataType | DocumentMetadataType;
+};
+
 export type FeedItemType = {
   id: string;
   question: string;
   text: string;
-  mode: string;
-  chunks?: ChunkTranscriptType[]; // | ChunkDocumentType[];
+  mode?: string;
+  chunks?: ChunkType[];
 };
+
+export enum SourceType {
+  transcript = 'transcript',
+  document = 'document',
+}
 
 export type AssemblyStateType = {
   customer: CustomerType;

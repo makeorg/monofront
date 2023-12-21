@@ -39,7 +39,7 @@ export const DesktopQueries: FC<DispatchProps> = ({
             title={item.title}
             subtitle={item.subtitle}
             handleClick={() => {
-              dispatchGeneratedContent(item.title, item.content, item.mode);
+              dispatchGeneratedContent(item.title, item.content);
               handleClick(item.title);
             }}
           />

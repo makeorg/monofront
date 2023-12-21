@@ -14,7 +14,9 @@ export const Answer: FC<{ content: FeedItemType }> = ({ content }) => (
     <ContentIconStyle src={pano} alt="Logo" />
     <AnswerContainerStyle>
       <ThemeContainerStyle as="p">{content.text}</ThemeContainerStyle>
-      {content.chunks && <Sources chunks={content.chunks} />}
+      {content.chunks && content.chunks.length > 0 && (
+        <Sources chunks={content.chunks} />
+      )}
     </AnswerContainerStyle>
   </ContentStyle>
 );

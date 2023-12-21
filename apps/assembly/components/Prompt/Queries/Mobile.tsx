@@ -44,7 +44,7 @@ export const MobileQueries: FC<DispatchProps> = ({
                 title={item.title}
                 subtitle={item.subtitle}
                 handleClick={() => {
-                  dispatchGeneratedContent(item.title, item.content, item.mode);
+                  dispatchGeneratedContent(item.title, item.content);
                 }}
               />
             </QueriesButtonsListStyle>

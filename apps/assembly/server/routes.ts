@@ -1,6 +1,7 @@
 import express, { Application, Response, Request } from 'express';
 import serveStatic from 'serve-static';
 import {
+  LLM_PATH,
   // ROUTE_ASSEMBLY_ROOT,
   // ROUTE_ASSEMBLY_CUSTOMER,
   ROUTE_ASSEMBLY_EVENT,
@@ -15,6 +16,7 @@ import {
   ASSEMBLY_FAVICON_DIR,
 } from './paths';
 import * as technicalPages from './technicalPages';
+import { getLLMAnswer } from './api/LLM';
 
 function setCustomCacheControl(res: Response, path: string) {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -56,7 +58,7 @@ export const initRoutes = (app: Application): void => {
     })
   );
 
-  // app.use('/api');  Reactivate when need, it needs a middleware or crashes the app
+  app.use(LLM_PATH, getLLMAnswer);
 
   // Assembly Routes
   app.get('/robots.txt', technicalPages.renderRobot);
