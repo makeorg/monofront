@@ -61,35 +61,35 @@ export const ProposalAuthorInformations: FC<Props> = ({ proposal }) => {
       </ScreenReaderItemStyle>
       <InfosWrapperStyle>
         {isOrganisation &&
+          author.organisationName &&
+          author.organisationSlug &&
           (isWidget ? (
-            formatOrganisationName(author.organisationName || '')
+            formatOrganisationName(author.organisationName)
           ) : (
             <AuthorLinkStyle
               onClick={() => trackClickPublicProfile(USER.TYPE_ORGANISATION)}
-              to={getOrganisationProfileLink(
-                country,
-                author.organisationSlug || ''
-              )}
+              to={getOrganisationProfileLink(country, author.organisationSlug)}
             >
-              {formatOrganisationName(author.organisationName || '')}
+              {formatOrganisationName(author.organisationName)}
               <CertifiedIconStyle aria-hidden focusable="false" />
             </AuthorLinkStyle>
           ))}
         {isPersonality &&
+          author.firstName &&
           (isWidget ? (
-            formatAuthorName(author.firstName || '')
+            formatAuthorName(author.firstName)
           ) : (
             <>
               <AuthorLinkStyle
                 onClick={() => trackClickPublicProfile(USER.TYPE_PERSONALITY)}
                 to={getPersonalityProfileLink(country, proposal.userId)}
               >
-                {formatAuthorName(author.firstName || '')}
+                {formatAuthorName(author.firstName)}
               </AuthorLinkStyle>
               <CertifiedIconStyle aria-hidden focusable="false" />
             </>
           ))}
-        {isBasicUser && formatAuthorName(author.firstName || '')}
+        {isBasicUser && author.firstName && formatAuthorName(author.firstName)}
         {isBasicUser && <ProposalAuthorAge age={author.age} />}
       </InfosWrapperStyle>
     </>
