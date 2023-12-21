@@ -44,7 +44,7 @@ export const MobileQueries: FC<DispatchProps> = ({
                 title={item.title}
                 subtitle={item.subtitle}
                 handleClick={() => {
-                  dispatchGeneratedContent(item.title, item.content);
+                  dispatchGeneratedContent(item.title, item.content, item.mode);
                 }}
               />
             </QueriesButtonsListStyle>
@@ -54,6 +54,7 @@ export const MobileQueries: FC<DispatchProps> = ({
               title={i18n.t('prompt.themesDiscover')}
               subtitle={i18n.t('prompt.themes')}
               handleClick={dispatchThemes}
+              theme
             />
           </QueriesButtonsListStyle>
         </UnstyledListStyle>

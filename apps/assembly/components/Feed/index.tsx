@@ -6,8 +6,9 @@ import { useAssemblyContext } from '../../store/context';
 import { Answer } from './Answer';
 import { removeFeedLastItem } from '../../store/feed/actions';
 
-export const THEMES = 'THEMES';
-export const GENERATED_CONTENT = 'GENERATED_CONTENT';
+export const THEMES = 'themes';
+export const TRANSCRIPT = 'transcript';
+export const DOCUMENT = 'document';
 
 const scrollToLastElement = (id: string) => {
   const element = document.getElementById(id);
@@ -44,7 +45,7 @@ export const Feed: FC = () => {
       {feed.map(item => (
         <div role="article" key={item.id} id={item.id}>
           <Question question={item.question} />
-          {item.type === THEMES ? <Themes /> : <Answer content={item} />}
+          {item.mode === THEMES ? <Themes /> : <Answer content={item} />}
         </div>
       ))}
     </FeedContainerStyle>

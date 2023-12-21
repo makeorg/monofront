@@ -204,13 +204,14 @@ const getGeneratedContents = async (
       return generatedContents;
     }
 
-    response.data.map((genratedContent: GeneratedContentType) => {
+    response.data.map((generatedContent: GeneratedContentType) => {
       const content = {
-        title: genratedContent.title,
-        subtitle: genratedContent.subtitle,
-        name: genratedContent.name,
-        content: genratedContent.content,
-        position: genratedContent.position,
+        title: generatedContent.title,
+        subtitle: generatedContent.subtitle,
+        name: generatedContent.name,
+        content: generatedContent.content,
+        position: generatedContent.position,
+        mode: generatedContent.mode,
       };
 
       return generatedContents.push(content);

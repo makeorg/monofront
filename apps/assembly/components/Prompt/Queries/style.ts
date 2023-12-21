@@ -29,7 +29,6 @@ export const QueriesButtonsStyle = styled.button`
   padding: ${spacings.s};
   border-style: none;
   width: 100%;
-  min-width: 220px;
   background-color: white;
   border-radius: ${spacings.s};
   &.theme {

@@ -9,6 +9,7 @@ import {
   PromptFormButtonsContainerStyle,
   PromptFormSubmitStyle,
   PromptFormButtonArrowStyle,
+  PromptFormWarningText,
 } from './style';
 
 export const PromptForm: FC = () => {
@@ -23,28 +24,31 @@ export const PromptForm: FC = () => {
   };
 
   return (
-    <PromptFormContainerStyle onSubmit={handleSubmit}>
-      <PromptFormInputStyle placeholder={i18n.t('prompt.request_send')} />
-      <PromptFormButtonsContainerStyle>
-        {!canSubmit && (
-          <PromptFormSubmitStyle type="button">
+    <>
+      <PromptFormContainerStyle onSubmit={handleSubmit}>
+        <PromptFormInputStyle placeholder={i18n.t('prompt.request_send')} />
+        <PromptFormButtonsContainerStyle>
+          {!canSubmit && (
+            <PromptFormSubmitStyle type="button">
+              <PromptFormButtonArrowStyle
+                src={stopButton}
+                alt={i18n.t('prompt.cancel')}
+                onClick={() => setCanSubmit(true)}
+              />
+            </PromptFormSubmitStyle>
+          )}
+
+          <PromptFormSubmitStyle type="submit" disabled={!canSubmit}>
             <PromptFormButtonArrowStyle
-              src={stopButton}
-              alt={i18n.t('prompt.cancel')}
-              onClick={() => setCanSubmit(true)}
+              src={canSubmit ? submitButton : disabledButton}
+              alt={
+                canSubmit ? i18n.t('prompt.submit') : i18n.t('prompt.disabled')
+              }
             />
           </PromptFormSubmitStyle>
-        )}
-
-        <PromptFormSubmitStyle type="submit" disabled={!canSubmit}>
-          <PromptFormButtonArrowStyle
-            src={canSubmit ? submitButton : disabledButton}
-            alt={
-              canSubmit ? i18n.t('prompt.submit') : i18n.t('prompt.disabled')
-            }
-          />
-        </PromptFormSubmitStyle>
-      </PromptFormButtonsContainerStyle>
-    </PromptFormContainerStyle>
+        </PromptFormButtonsContainerStyle>
+      </PromptFormContainerStyle>
+      <PromptFormWarningText>{i18n.t('prompt.warning')}</PromptFormWarningText>
+    </>
   );
 };

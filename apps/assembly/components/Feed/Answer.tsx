@@ -5,7 +5,7 @@ import {
   ThemeContainerStyle,
   AnswerContainerStyle,
 } from './style';
-import { TranscriptSources } from './Transcript';
+import { Sources } from './Sources';
 import { FeedItemType } from '../../types';
 import pano from '../../assets/IconPano.png';
 
@@ -13,8 +13,8 @@ export const Answer: FC<{ content: FeedItemType }> = ({ content }) => (
   <ContentStyle>
     <ContentIconStyle src={pano} alt="Logo" />
     <AnswerContainerStyle>
-      <ThemeContainerStyle as="p">{content.content}</ThemeContainerStyle>
-      {content.links && <TranscriptSources links={content.links} />}
+      <ThemeContainerStyle as="p">{content.text}</ThemeContainerStyle>
+      {content.chunks && <Sources chunks={content.chunks} />}
     </AnswerContainerStyle>
   </ContentStyle>
 );

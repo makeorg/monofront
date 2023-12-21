@@ -62,3 +62,11 @@ export const PromptFormButtonArrowStyle = styled.img`
   height: 40px;
   cursor: pointer;
 `;
+
+export const PromptFormWarningText = styled.p`
+  font-size: 7px;
+  margin-left: 5px;
+  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
+    font-size: 10px;
+  }
+`;

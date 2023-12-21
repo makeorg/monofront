@@ -24,20 +24,35 @@ export type GeneratedContentType = {
   name: string;
   content: string;
   position: number;
+  mode: string;
 };
 
-export type LinkContentType = {
-  url: string;
-  title: string;
-  data: string;
+export type ChunkTranscriptType = {
+  description: string;
+  session: string;
+  sourceType: string;
+  speaker: string;
+  speakerGroup: string;
+  time: string;
+  transcriptId: string;
+  transcriptTitle: string;
+  youtubeId: string;
+};
+
+export type ChunkDocumentType = {
+  documentId: string;
+  documentTitle: string;
+  documentURL: string;
+  page: number;
+  sourceType: string;
 };
 
 export type FeedItemType = {
   id: string;
-  type: string;
   question: string;
-  content: string;
-  links?: LinkContentType[];
+  text: string;
+  mode: string;
+  chunks?: ChunkTranscriptType[]; // | ChunkDocumentType[];
 };
 
 export type AssemblyStateType = {

@@ -3,6 +3,8 @@ import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
+import { VideoLogoSvg } from '../../assets/Video';
+import { DocumentLogoSvg } from '../../assets/BookOpenText';
 
 export const FeedContainerStyle = styled.section`
   display: flex;
@@ -94,30 +96,36 @@ export const ThemeButtonListStyle = styled.button`
   color: #5d6fcd;
 `;
 
-export const TranscriptContainerStyle = styled.div`
+export const SourcesContainerStyle = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
 `;
 
-export const TranscriptContentStyle = styled.div`
+export const SourcesContentStyle = styled.div`
   display: flex;
   gap: 10px;
 `;
 
-export const TranscriptTitleStyle = styled.span`
+export const VideoLogo = styled(VideoLogoSvg)`
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+`;
+
+export const SourcesTitleStyle = styled.span`
   font-size: ${typography.FontSize.Text.Arrondissement};
   font-weight: 600;
   color: rgba(95, 95, 95, 1);
 `;
 
-export const TranscriptVideoContentStyle = styled.div`
+export const SourcesMediaContentStyle = styled.div`
   background-color: white;
-  border-radius: 0px 0px 10px 10px;
+  border-radius: 10px;
   width: 200px;
 `;
 
-export const TranscriptVideoTextContainerStyle = styled.div`
+export const SourcesMediaTextContainerStyle = styled.div`
   display: flex;
   flex-direction: column;
   font-size: ${typography.FontSize.Text.Bastille};
@@ -125,14 +133,26 @@ export const TranscriptVideoTextContainerStyle = styled.div`
   padding: 10px;
 `;
 
-export const TranscriptVideoTitleStyle = styled.span`
+export const SourcesMediaTitleStyle = styled.span`
   display: flex;
   align-items: center;
   gap: ${spacings.xs};
-  font-weight: 600;
-  color: rgba(52, 51, 48, 1);
 `;
 
-export const TranscriptVideoTextStyle = styled.p`
+export const SourcesMediaTextStyle = styled.p`
   color: rgba(87, 87, 87, 1);
+`;
+
+export const DocumentLogo = styled(DocumentLogoSvg)`
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+`;
+
+export const SourcesTruncatedTextStyle = styled.p`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+  color: rgba(52, 51, 48, 1);
 `;
