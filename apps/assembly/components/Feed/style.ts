@@ -51,8 +51,6 @@ export const QuestionStyle = styled.p`
 `;
 
 export const ContentStyle = styled.div`
-  display: flex;
-  flex-direction: column;
   gap: ${spacings.m};
   background-color: #f9f8ffcf;
   border-radius: 10px;
@@ -96,7 +94,7 @@ export const ThemeButtonListStyle = styled.button`
   color: #5d6fcd;
 `;
 
-export const SourcesContainerStyle = styled.div`
+export const SourcesContainerStyle = styled.aside`
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -119,10 +117,16 @@ export const SourcesTitleStyle = styled.span`
   color: rgba(95, 95, 95, 1);
 `;
 
-export const SourcesMediaContentStyle = styled.div`
+export const SourcesMediaContentStyle = styled.li`
   background-color: white;
   border-radius: 10px;
   width: 200px;
+  max-width: 200px;
+  list-style: none;
+  margin: 0 5px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    margin: 0;
+  }
 `;
 
 export const SourcesMediaTextContainerStyle = styled.div`
