@@ -51,7 +51,7 @@ const getApp = () => {
     ASSEMBLY_MAP_DIR
   ).then(stackTransformer =>
     initLogger(
-      'assemblyfront',
+      'assembly-ui',
       [
         errorNormalizer,
         apiErrorDataLogNormalizer,
@@ -77,8 +77,8 @@ const getApp = () => {
   app.use((req, res, next) =>
     headersResponseMiddleware(
       {
-        Server: 'AssemblySSR',
-        'X-Powered-By': 'AssemblySSR',
+        Server: 'AssemblyUiSSR',
+        'X-Powered-By': 'AssemblyUiSSR',
         'Strict-Transport-Security':
           'max-age=31536000; includeSubDomains; preload',
         'X-Content-Type-Options': 'nosniff',

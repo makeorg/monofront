@@ -157,42 +157,42 @@ services:
     profiles:
       - widget-test
 
-  assembly_dev:
-    image: assembly_dev
+  assembly_ui_dev:
+    image: assembly_ui_dev
     build:
       context: .
-      dockerfile: apps/assembly/Dockerfile
+      dockerfile: apps/assembly-ui/Dockerfile
       target: app-dev
     ports:
       - 3000:3000
       - 8888:8888
     volumes: *default_volumes
     profiles:
-      - assembly-dev
+      - assembly-ui-dev
 
-  assembly_ssr:
-    image: assembly_ssr
+  assembly_ui_ssr:
+    image: assembly_ui_ssr
     build:
       context: .
-      dockerfile: apps/assembly/Dockerfile
+      dockerfile: apps/assembly-ui/Dockerfile
       target: app-ssr
     ports:
       - 3000:3000
       - 8888:8888
     volumes: *default_volumes
     profiles:
-      - assembly-ssr
+      - assembly-ui-ssr
 
   assembly_dev_mock:
     <<: *dev_service
-    image: app_make_dev_mock
+    image: app_assembly_ui_dev_mock
     build:
       context: .
-      dockerfile: apps/assembly/Dockerfile
-      target: app-dev-mock
+      dockerfile: apps/assembly-ui/Dockerfile
+      target: assembly-ui-dev-mock
     ports:
       - 3000:3000
       - 8888:8888
     volumes: *default_volumes
     profiles:
-      - app-dev-mock
+      - assembly-ui-dev-mock

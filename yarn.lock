@@ -3256,9 +3256,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@make.org/assembly@workspace:apps/assembly":
+"@make.org/assembly-ui@workspace:apps/assembly-ui":
   version: 0.0.0-use.local
-  resolution: "@make.org/assembly@workspace:apps/assembly"
+  resolution: "@make.org/assembly-ui@workspace:apps/assembly-ui"
   dependencies:
     "@babel/core": ^7.18.10
     "@babel/plugin-proposal-class-properties": ^7.18.6

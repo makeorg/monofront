@@ -1,5 +1,5 @@
 {
-  "name": "@make.org/assembly",
+  "name": "@make.org/assembly-ui",
   "version": "0.1.0",
   "private": true,
   "sideEffects": false,
@@ -102,6 +102,6 @@
     "server": "pm2-runtime start ecosystem.config.js --only app-production",
     "server:dev": "pm2-runtime start ecosystem.config.js --only app-dev",
     "server:test": "pm2-runtime start ecosystem.config.js --only 'api-content-mock,app-test'",
-    "version-build": "../../bin/version-build.js generate -d './dist/client' -p 'Make.org-assembly'"
+    "version-build": "../../bin/version-build.js generate -d './dist/client' -p 'assembly-ui'"
   }
 }

@@ -11,7 +11,7 @@ RUN apk add --no-cache libc6-compat
 RUN apk --no-cache add git
 
 COPY ["package*.json", "yarn.lock", ".yarnrc.yml", "./"]
-COPY ["apps/assembly/package*.json", "./apps/assembly/"]
+COPY ["apps/assembly-ui/package*.json", "./apps/assembly-ui/"]
 COPY ["package/api/package*.json", "./package/api/"]
 COPY ["package/components/package*.json", "./package/components/"]
 COPY ["package/types/package*.json", "./package/types/"]
@@ -27,7 +27,7 @@ COPY [".yarn", "./.yarn"]
 RUN ["corepack", "enable", "yarn"]
 RUN ["corepack", "prepare"]
 
-RUN ["yarn", "workspaces", "focus", "@make.org/assembly"]
+RUN ["yarn", "workspaces", "focus", "@make.org/assembly-ui"]
 
 ############
 # Dev
@@ -36,8 +36,8 @@ FROM base AS app-dev
 
 COPY . ./
 
-RUN ["yarn", "workspaces", "focus", "@make.org/assembly"]
-CMD ["yarn", "workspace", "@make.org/assembly", "dev"]
+RUN ["yarn", "workspaces", "focus", "@make.org/assembly-ui"]
+CMD ["yarn", "workspace", "@make.org/assembly-ui", "dev"]
 
 EXPOSE 3000
 
@@ -48,8 +48,8 @@ FROM base AS app-dev-mock
 
 COPY . ./
 
-RUN ["yarn", "workspaces", "focus", "@make.org/assembly"]
-CMD ["yarn", "workspace", "@make.org/assembly", "dev:mock"]
+RUN ["yarn", "workspaces", "focus", "@make.org/assembly-ui"]
+CMD ["yarn", "workspace", "@make.org/assembly-ui", "dev:mock"]
 
 EXPOSE 3000
 
@@ -62,9 +62,9 @@ WORKDIR /home/app
 
 COPY . ./
 
-RUN ["yarn", "workspaces", "focus", "@make.org/assembly"]
-RUN ["yarn", "workspace", "@make.org/assembly",  "build"]
-CMD ["yarn", "workspace", "@make.org/assembly", "server:dev"]
+RUN ["yarn", "workspaces", "focus", "@make.org/assembly-ui"]
+RUN ["yarn", "workspace", "@make.org/assembly-ui",  "build"]
+CMD ["yarn", "workspace", "@make.org/assembly-ui", "server:dev"]
 
 EXPOSE 3000
 
@@ -78,11 +78,11 @@ WORKDIR /usr/app
 
 COPY . ./
 
-RUN ["yarn", "workspaces", "focus", "@make.org/assembly"]
-RUN ["yarn", "workspace", "@make.org/assembly",  "build"]
+RUN ["yarn", "workspaces", "focus", "@make.org/assembly-ui"]
+RUN ["yarn", "workspace", "@make.org/assembly-ui",  "build"]
 
 RUN ["rm", "-rf", "node_modules"]
-RUN ["yarn", "workspaces", "focus", "@make.org/assembly", "--production"]
+RUN ["yarn", "workspaces", "focus", "@make.org/assembly-ui", "--production"]
 
 
 FROM node:18.17-alpine as app-production
@@ -92,10 +92,10 @@ ENV PORT 8000
 RUN apk --no-cache add curl
 
 WORKDIR /usr/app/
-COPY --from=base-production /usr/app/apps/assembly/dist ./dist
-COPY --from=base-production /usr/app/apps/assembly/ecosystem.config.js ./ecosystem.config.js
-COPY --from=base-production /usr/app/apps/assembly/bin ./bin
-COPY --from=base-production /usr/app/apps/assembly/i18n ./i18n
+COPY --from=base-production /usr/app/apps/assembly-ui/dist ./dist
+COPY --from=base-production /usr/app/apps/assembly-ui/ecosystem.config.js ./ecosystem.config.js
+COPY --from=base-production /usr/app/apps/assembly-ui/bin ./bin
+COPY --from=base-production /usr/app/apps/assembly-ui/i18n ./i18n
 COPY --from=base-production /usr/app/node_modules ./node_modules
 
 EXPOSE 8000

@@ -47,14 +47,14 @@
     "paths": {
       "@make.org/widget": ["./apps/widget/*"],
       "@make.org/front": ["./apps/front/*"],
-      "@make.org/assembly": ["./apps/assembly/*"],
+      "@make.org/assembly-ui": ["./apps/assembly-ui/*"],
       "@make.org/types": ["./package/types/*"],
       "@make.org/api": ["./package/api/*"],
       "@make.org/assets": ["./package/assets/*"],
       "@make.org/ui": ["./package/ui/*"],
       "@make.org/utils": ["./package/utils/*"],
       "@make.org/components": ["./package/components/*"],
-      "@make.org/store": ["./package/store/*"],      
+      "@make.org/store": ["./package/store/*"],
       "@make.org/logger": ["./package/logger/*"],
       "@make.org/designsystem": ["./package/designsystem/*"]
     }

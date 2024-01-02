@@ -86,17 +86,17 @@ stages:
       - package.json
       - yarn.lock
 
-.assembly:
+.assembly-ui:
   variables:
     IMAGE_NAME: assembly-ui
     IMAGE_APP_TARGET: app-production
-    IMAGE_APP_PATH: apps/assembly/Dockerfile
+    IMAGE_APP_PATH: apps/assembly-ui/Dockerfile
     RUNDECK_JOB_ID: $RUNDECK_ASSEMBLY_UI_JOB_ID
   only:
     changes:
       - .gitlab-ci.yml
       - package/**/*
-      - apps/assembly/**/*
+      - apps/assembly-ui/**/*
       - package.json
       - yarn.lock
 
@@ -253,10 +253,10 @@ build-make-widget:
     - .build
     - .widget
 
-build-make-assembly:
+build-make-assembly-ui:
   extends:
     - .build
-    - .assembly
+    - .assembly-ui
 
 # Deploy
 deploy-front-preproduction:
@@ -271,10 +271,10 @@ deploy-widget-preproduction:
     - .widget
     - .preprod
 
-# deploy-assembly-preproduction:
+# deploy-assembly-ui-preproduction:
 #   extends:
 #     - .deploy
-#     - .assembly
+#     - .assembly-ui
 #     - .preprod
 
 deploy-front-production:
@@ -289,10 +289,10 @@ deploy-widget-production:
     - .widget
     - .prod
 
-# deploy-assembly-production:
+# deploy-assembly-ui-production:
 #   extends:
 #     - .deploy
-#     - .assembly
+#     - .assembly-ui
 #     - .prod
 
 merge-to-prod:

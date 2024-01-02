@@ -16,7 +16,7 @@ module.exports = {
         'utils',
         'widget',
         'designsystem',
-        'assembly',
+        'assembly-ui',
       ],
     ],
     'subject-case': () => [

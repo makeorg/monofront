@@ -26,7 +26,7 @@ export const getLLMAnswer = async (
           language,
         },
         headers: {
-          'x-make-app-name': 'assembly-front',
+          'x-make-app-name': 'assembly-ui',
         },
         withCredentials: false,
         responseType: 'stream',

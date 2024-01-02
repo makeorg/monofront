@@ -31,8 +31,8 @@
     "**/cypress/support/step_definitions/proposal_submit.js",
     "**/types/**",
     "**/package/logger/**",
-    "**/package/store/index.tsx", 
-    "**/apps/assembly/store/context.tsx"
+    "**/package/store/index.tsx",
+    "**/apps/assembly-ui/store/context.tsx"
   ],
   "absolute": true,
   "output": "./reports",

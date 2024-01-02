@@ -18,14 +18,14 @@ Please refers to <a href="https://docs.docker.com/engine/reference/commandline/d
 Dev mode :
 
 ```bash
-$ docker-compose -f docker-compose.dev.yaml --profile=assembly-dev up -d
+$ docker-compose -f docker-compose.dev.yaml --profile=assembly-ui-dev up -d
 # and go to https://localhost:3000
 ```
 
 Dev mode with SSR :
 
 ```bash
-$ docker-compose -f docker-compose.dev.yaml --profile=assembly-ssr up -d
+$ docker-compose -f docker-compose.dev.yaml --profile=assembly-ui-ssr up -d
 # and go to https://localhost:3000
 ```
 
@@ -35,9 +35,9 @@ $ docker-compose -f docker-compose.dev.yaml --profile=assembly-ssr up -d
 # get the id of the running container
 $ docker ps
 # launch the build script in the container
-$ docker exec -it CONTAINER_ID yarn workspace @make.org/assembly build
+$ docker exec -it CONTAINER_ID yarn workspace @make.org/assembly-ui build
 # Restart the container
-$ docker-compose -f docker-compose.dev.yaml up -d --profile=assembly-ssr restart
+$ docker-compose -f docker-compose.dev.yaml up -d --profile=assembly-ui-ssr restart
 ```
 
 ## Environment variables for production
