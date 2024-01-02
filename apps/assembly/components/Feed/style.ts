@@ -1,6 +1,7 @@
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { typography } from '@make.org/designsystem/tokens/typography';
+import { GreyStyle } from '@make.org/ui/elements/ButtonsElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 import { VideoLogoSvg } from '../../assets/Video';
@@ -51,6 +52,8 @@ export const QuestionStyle = styled.p`
 `;
 
 export const ContentStyle = styled.div`
+  display: flex;
+  flex-direction: column;
   gap: ${spacings.m};
   background-color: #f9f8ffcf;
   border-radius: 10px;
@@ -100,9 +103,10 @@ export const SourcesContainerStyle = styled.aside`
   gap: 10px;
 `;
 
-export const SourcesContentStyle = styled.div`
+export const SourcesContentStyle = styled.ul`
   display: flex;
   gap: 10px;
+  padding: 0;
 `;
 
 export const VideoLogo = styled(VideoLogoSvg)`
@@ -137,6 +141,15 @@ export const SourcesMediaTextContainerStyle = styled.div`
   padding: 10px;
 `;
 
+export const SourcesMediaDocumentLinkStyle = styled.a`
+  display: flex;
+  flex-direction: column;
+  font-size: ${typography.FontSize.Text.Bastille};
+  gap: 5px;
+  padding: 10px;
+  text-decoration: none;
+`;
+
 export const SourcesMediaTitleStyle = styled.span`
   display: flex;
   align-items: center;
@@ -159,4 +172,39 @@ export const SourcesTruncatedTextStyle = styled.p`
   text-overflow: ellipsis;
   font-weight: 600;
   color: rgba(52, 51, 48, 1);
+`;
+
+export const HyperlinksContainerStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${spacings.m};
+`;
+
+export const HyperlinksTitleStyle = styled.span`
+  font-size: ${typography.FontSize.Text.RueDeLappe};
+  font-weight: 600;
+`;
+
+export const HyperlinksButtonsContainerStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+export const HyperlinksButtonStyle = styled.button`
+  font-size: ${typography.FontSize.Text.RueDeLappe};
+  background-color: rgba(148, 141, 205, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: ${spacings.xs} ${spacings.s};
+  border-radius: 20px;
+  height: fit-content;
+  width: fit-content;
+  border: none;
+
+  &:disabled {
+    ${GreyStyle};
+  }
 `;

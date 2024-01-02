@@ -3,6 +3,11 @@ import _ReactPlayer, { ReactPlayerProps } from 'react-player';
 import i18n from 'i18next';
 import { ReactPlayerContainer, ReactPlayerPlayButtonStyle } from './style';
 
+const toSeconds = (time: any) => {
+  const [hours, minutes, seconds] = time.split(':').map(Number);
+  return hours * 3600 + minutes * 60 + seconds;
+};
+
 export const YoutubePlayer: React.FC<ReactPlayerProps> = props => {
   const { url, seek, small } = props;
   const playerRef = useRef<_ReactPlayer>(null);
@@ -10,13 +15,13 @@ export const YoutubePlayer: React.FC<ReactPlayerProps> = props => {
 
   const onReady = useCallback(() => {
     if (seek) {
-      playerRef.current?.seekTo(seek, 'seconds');
+      playerRef.current?.seekTo(toSeconds(seek), 'seconds');
     }
-  }, [seek]);
+  }, [seek, playerRef.current]);
 
   useEffect(() => {
     if (seek) {
-      playerRef.current?.seekTo(seek, 'seconds');
+      playerRef.current?.seekTo(toSeconds(seek), 'seconds');
     }
   }, [seek]);
 
@@ -30,7 +35,7 @@ export const YoutubePlayer: React.FC<ReactPlayerProps> = props => {
         controls
         light
         onReady={onReady}
-        playing={seek && true}
+        // playing={seek && true}
         onError={(error: any, data?: any, hlsInstance?: any, hlsGlobal?: any) =>
           console.log(error, data, hlsInstance, hlsGlobal)
         }

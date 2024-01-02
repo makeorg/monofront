@@ -3,14 +3,16 @@ import React, {
   FC,
   FormEventHandler,
   SyntheticEvent,
-  useEffect,
   useState,
 } from 'react';
 import i18n from 'i18next';
 import { throttle } from '@make.org/utils/helpers/throttle';
+import { useAssemblyContext } from '../../store/context';
 import submitButton from '../../assets/sendButton.png';
 import disabledButton from '../../assets/sendButtonInactive.png';
 import stopButton from '../../assets/sendButtonStop.png';
+import { setStopStreaming } from '../../store/stream/actions';
+import { TRANSCRIPT } from '../Feed';
 import {
   PromptFormContainerStyle,
   PromptFormInputStyle,
@@ -22,16 +24,17 @@ import {
 import { StreamTranscript } from './Stream';
 
 export const PromptForm: FC = () => {
+  const { state, dispatch } = useAssemblyContext();
+  const { isSubmitted } = state.stream;
   const [question, setQuestion] = useState<string>('');
-  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
-  const [stopStreaming, setStopStreaming] = useState<boolean>(false);
+
+  const { setStartStream } = StreamTranscript(question, TRANSCRIPT);
 
   const handleSubmit: FormEventHandler<HTMLButtonElement | HTMLFormElement> = (
     e: SyntheticEvent<HTMLButtonElement>
   ) => {
     e.preventDefault();
-    setStopStreaming(false);
-    setIsSubmitted(true);
+    setStartStream(true);
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -39,14 +42,6 @@ export const PromptForm: FC = () => {
 
     setQuestion(e.target.value);
   };
-
-  const { isWaiting } = StreamTranscript(question, isSubmitted, stopStreaming);
-
-  useEffect(() => {
-    if (!isWaiting) {
-      setIsSubmitted(false);
-    }
-  }, [isWaiting]);
 
   return (
     <>
@@ -66,8 +61,7 @@ export const PromptForm: FC = () => {
                 src={stopButton}
                 alt={i18n.t('prompt.cancel')}
                 onClick={() => {
-                  setStopStreaming(true);
-                  setIsSubmitted(true);
+                  dispatch(setStopStreaming(true));
                 }}
               />
             </PromptFormSubmitStyle>

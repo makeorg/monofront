@@ -1,15 +1,12 @@
 import React, { FC } from 'react';
 import i18n from 'i18next';
-import {
-  ChunkType,
-  DocumentMetadataType,
-  TranscriptMetadataType,
-} from '../../types';
+import { ChunkType } from '../../types';
 import { YoutubePlayer } from '../ReactPlayer/YoutubePlayer';
 import {
   SourcesContainerStyle,
   SourcesMediaContentStyle,
   SourcesMediaTextContainerStyle,
+  SourcesMediaDocumentLinkStyle,
   SourcesMediaTitleStyle,
   SourcesMediaTextStyle,
   SourcesContentStyle,
@@ -18,39 +15,48 @@ import {
   DocumentLogo,
   VideoLogo,
 } from './style';
-import { TRANSCRIPT } from '.';
+import { SOURCE_TYPE_VIDEO } from '.';
 
-const DocumentMeta: FC<{ metadata: DocumentMetadataType }> = ({ metadata }) => {
-  const { documentTitle, page } = metadata;
+const DocumentMeta: FC<{ chunk: ChunkType }> = ({ chunk }) => {
+  const { document_source_title, page_number } = chunk;
 
   return (
-    <SourcesMediaContentStyle key={documentTitle}>
-      <SourcesMediaTextContainerStyle>
+    <SourcesMediaContentStyle key={document_source_title}>
+      <SourcesMediaDocumentLinkStyle
+        href={`${chunk.document_source_url}#page=${chunk.page_number}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <SourcesMediaTitleStyle>
           <DocumentLogo aria-hidden focusable="false" />
-          <SourcesTruncatedTextStyle>{documentTitle}</SourcesTruncatedTextStyle>
+          <SourcesTruncatedTextStyle>
+            {document_source_title}
+          </SourcesTruncatedTextStyle>
         </SourcesMediaTitleStyle>
-        <SourcesMediaTextStyle>{page}</SourcesMediaTextStyle>
-      </SourcesMediaTextContainerStyle>
+        <SourcesMediaTextStyle>{page_number}</SourcesMediaTextStyle>
+      </SourcesMediaDocumentLinkStyle>
     </SourcesMediaContentStyle>
   );
 };
 
-const TranscriptMeta: FC<{ metadata: TranscriptMetadataType }> = ({
-  metadata,
-}) => {
-  const { transcriptTitle, youtubeId, speaker } = metadata;
+const TranscriptMeta: FC<{ chunk: ChunkType }> = ({ chunk }) => {
+  const {
+    document_source_title,
+    document_source_url,
+    speaker_name,
+    speech_time,
+  } = chunk;
   return (
-    <SourcesMediaContentStyle key={transcriptTitle}>
-      <YoutubePlayer url={`https://www.youtube.com/embed/${youtubeId}`} small />
+    <SourcesMediaContentStyle key={document_source_title}>
+      <YoutubePlayer url={document_source_url} seek={speech_time} small />
       <SourcesMediaTextContainerStyle>
         <SourcesMediaTitleStyle>
           <VideoLogo aria-hidden focusable="false" />
           <SourcesTruncatedTextStyle>
-            {transcriptTitle}
+            {document_source_title}
           </SourcesTruncatedTextStyle>
         </SourcesMediaTitleStyle>
-        <SourcesMediaTextStyle>{speaker}</SourcesMediaTextStyle>
+        <SourcesMediaTextStyle>{speaker_name}</SourcesMediaTextStyle>
       </SourcesMediaTextContainerStyle>
     </SourcesMediaContentStyle>
   );
@@ -65,16 +71,10 @@ export const Sources: FC<{
     <SourcesTitleStyle>{i18n.t('feed.sources')}</SourcesTitleStyle>
     <SourcesContentStyle>
       {chunks.map((chunk, index) =>
-        chunk.metadata.sourceType === TRANSCRIPT ? (
-          <TranscriptMeta
-            key={setChunkKey(index)}
-            metadata={chunk.metadata as TranscriptMetadataType}
-          />
+        chunk.document_source_type === SOURCE_TYPE_VIDEO ? (
+          <TranscriptMeta key={setChunkKey(index)} chunk={chunk} />
         ) : (
-          <DocumentMeta
-            key={setChunkKey(index)}
-            metadata={chunk.metadata as DocumentMetadataType}
-          />
+          <DocumentMeta key={setChunkKey(index)} chunk={chunk} />
         )
       )}
     </SourcesContentStyle>

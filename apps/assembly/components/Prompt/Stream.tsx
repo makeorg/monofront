@@ -1,8 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Dispatch, SetStateAction } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useAssemblyContext } from '../../store/context';
 import { env } from '../../utils/env';
-import { TRANSCRIPT } from '../Feed';
+import {
+  setStopStreaming,
+  setStreamSubmitted,
+} from '../../store/stream/actions';
 import {
   addFeedItem,
   updateItemChunks,
@@ -42,14 +45,12 @@ const getResults = (objs: string[]): { chunks: []; text: string } => {
 
 export const StreamTranscript = (
   question: string,
-  isSubmitted: boolean,
-  stopStreaming: boolean
-): {
-  isWaiting: boolean;
-} => {
+  mode: string
+): { setStartStream: Dispatch<SetStateAction<boolean>> } => {
   const { state, dispatch } = useAssemblyContext();
   const { event } = state;
-  const [isWaiting, setIsWaiting] = useState<boolean>(false);
+  const { isSubmitted, stopStreaming } = state.stream;
+  const [startSteam, setStartStream] = useState<boolean>(false);
   const [abortController, setNewAbortController] = useState(
     new AbortController()
   );
@@ -61,22 +62,23 @@ export const StreamTranscript = (
     dispatch(
       addFeedItem({
         id: uuid,
-        mode: TRANSCRIPT,
+        mode,
         question,
         text: '',
+        language: event.language,
       })
     );
   };
 
   const fetchTranscript = async () => {
+    dispatch(setStreamSubmitted(true));
+
     const params = new URLSearchParams({
       eventId: event.id,
       question,
-      source: TRANSCRIPT,
+      mode,
       language: event.language,
     });
-
-    setIsWaiting(true);
 
     try {
       const transcriptResponse: Response = await fetch(
@@ -120,25 +122,28 @@ export const StreamTranscript = (
           dispatch(updateItemText(uuid, newText));
         }
       }
-      setIsWaiting(false);
+      dispatch(setStreamSubmitted(false));
+      setStartStream(false);
     } catch (error: unknown) {
       // handle error message that will be displayed to the user
-      setIsWaiting(false);
+      dispatch(setStreamSubmitted(false));
+      setStartStream(false);
     }
   };
 
   useEffect(() => {
-    if (isSubmitted) {
+    if (!isSubmitted && startSteam) {
       fetchTranscript();
     }
-  }, [isSubmitted]);
+  }, [isSubmitted, startSteam]);
 
   useEffect(() => {
     if (stopStreaming) {
       abortController.abort();
       setNewAbortController(new AbortController());
+      dispatch(setStopStreaming(false));
     }
   }, [stopStreaming]);
 
-  return { isWaiting };
+  return { setStartStream };
 };

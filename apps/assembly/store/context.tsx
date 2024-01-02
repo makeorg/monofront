@@ -16,6 +16,7 @@ import {
 } from '@make.org/store/utils';
 import { AssemblyStateType } from '../types';
 import { feed_reducer } from './feed/reducer';
+import { stream_reducer } from './stream/reducer';
 
 const emptyAssemblyState: AssemblyStateType = {
   customer: { id: '', name: '', slug: '' },
@@ -30,6 +31,10 @@ const emptyAssemblyState: AssemblyStateType = {
   termQueries: [],
   generatedContents: [],
   feed: [],
+  stream: {
+    isSubmitted: false,
+    stopStreaming: false,
+  },
 };
 
 export const initAssemblyEmptyState = (): AssemblyStateType =>
@@ -50,6 +55,7 @@ export const useAssemblyContext = (): {
 
 const rootReducer = combineReducers({
   feed: feed_reducer,
+  stream: stream_reducer,
 });
 
 const useAllReducers = (

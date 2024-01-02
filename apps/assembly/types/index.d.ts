@@ -27,43 +27,31 @@ export type GeneratedContentType = {
   mode: string;
 };
 
-export type TranscriptMetadataType = {
-  description: string;
-  session: string;
-  sourceType: string;
-  speaker: string;
-  speakerGroup: string;
-  time: string;
-  transcriptId: string;
-  transcriptTitle: string;
-  youtubeId: string;
-};
-
-export type DocumentMetadataType = {
-  documentId: string;
-  documentTitle: string;
-  documentURL: string;
-  page: number;
-  sourceType: string;
-};
-
 export type ChunkType = {
-  pageContent: string;
-  metadata: TranscriptMetadataType | DocumentMetadataType;
+  document_source_title: string;
+  document_source_url: string;
+  document_source_metadata: Record<string, string>;
+  document_source_type: 'AUDIO' | 'VIDEO' | 'PDF';
+  page_number?: string;
+  speech_time?: string;
+  speaker_name?: string;
+  speaker_role?: string;
+  speaker_gender?: string;
+};
+
+export type StreamType = {
+  isSubmitted: boolean;
+  stopStreaming: boolean;
 };
 
 export type FeedItemType = {
   id: string;
   question: string;
   text: string;
-  mode?: string;
   chunks?: ChunkType[];
+  mode: string;
+  language: string;
 };
-
-export enum SourceType {
-  transcript = 'transcript',
-  document = 'document',
-}
 
 export type AssemblyStateType = {
   customer: CustomerType;
@@ -71,4 +59,5 @@ export type AssemblyStateType = {
   termQueries: TermQueryType[];
   generatedContents: GeneratedContentType[];
   feed: FeedItemType[];
+  stream: StreamType;
 };

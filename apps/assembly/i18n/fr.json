@@ -63,7 +63,10 @@
     "request_send": "Envoyer une requête"
   },
   "feed": {
-    "sources": "Voici mes sources :"
+    "sources": "Voici mes sources :",
+    "hyperlinks_title": "Pour compléter ses connaissances :",
+    "detailed_response": "Accéder à la réponse détaillée",
+    "document_sources": "Accéder à la réponse provenant des documents certifiés"
   },
   "sidebar": {
     "explore": "Explorer",

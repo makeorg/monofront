@@ -43,7 +43,6 @@ export const QueriesButtonsStyle = styled.button`
 `;
 
 export const QueriesTitleStyle = styled.span`
-  text-transform: capitalize;
   align-items: center;
   justify-content: center;
   display: flex;

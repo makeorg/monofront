@@ -12,7 +12,7 @@ export const getLLMAnswer = async (
 ): Promise<Response | null> => {
   const logger = getLoggerInstance();
 
-  const { eventId, question, source, language } = req.query;
+  const { eventId, question, mode, language } = req.query;
 
   try {
     const responseStream = await axios(
@@ -22,7 +22,7 @@ export const getLLMAnswer = async (
         params: {
           eventId,
           question,
-          source,
+          mode,
           language,
         },
         headers: {

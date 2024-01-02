@@ -78,9 +78,10 @@ export const eventRoute = async (
   );
 
   const noTermQueries = !termQueries || !termQueries?.length;
-  const noGeneratedContents = !generatedContents || !generatedContents?.length;
+  // const noGeneratedContents = !generatedContents || !generatedContents?.length;
+  // if (noTermQueries || noGeneratedContents) {
 
-  if (noTermQueries || noGeneratedContents) {
+  if (noTermQueries) {
     logger.logError({
       message: `No Term Queries (length: ${termQueries?.length}) or Generated Contents (length: ${generatedContents?.length}) for event : ${event.slug} `,
       name: 'server-side',
@@ -97,7 +98,7 @@ export const eventRoute = async (
     customer,
     event,
     termQueries,
-    generatedContents,
+    // generatedContents,
   };
 
   return reactRender(req, res, routeState);
