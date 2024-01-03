@@ -102,4 +102,4 @@ EXPOSE 8000
 
 CMD [ "node_modules/.bin/pm2-runtime", "start", "ecosystem.config.js", "--only", "app-production" ]
 
-HEALTHCHECK --interval=20s CMD curl --fail http://localhost:8000 || exit 1
+HEALTHCHECK --interval=20s CMD curl --fail http://localhost:8000/version || exit 1
