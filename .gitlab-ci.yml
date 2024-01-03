@@ -271,11 +271,11 @@ deploy-widget-preproduction:
     - .widget
     - .preprod
 
-# deploy-assembly-ui-preproduction:
-#   extends:
-#     - .deploy
-#     - .assembly-ui
-#     - .preprod
+deploy-assembly-ui-preproduction:
+  extends:
+    - .deploy
+    - .assembly-ui
+    - .preprod
 
 deploy-front-production:
   extends:
@@ -289,11 +289,11 @@ deploy-widget-production:
     - .widget
     - .prod
 
-# deploy-assembly-ui-production:
-#   extends:
-#     - .deploy
-#     - .assembly-ui
-#     - .prod
+deploy-assembly-ui-production:
+  extends:
+    - .deploy
+    - .assembly-ui
+    - .prod
 
 merge-to-prod:
   stage: merge
