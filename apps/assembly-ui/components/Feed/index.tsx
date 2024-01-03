@@ -3,14 +3,13 @@ import { Question } from './Question';
 import { Themes } from './Themes';
 import { FeedContainerStyle } from './style';
 import { useAssemblyContext } from '../../store/context';
-import { Welcome } from '../Welcome';
 import { Answer } from './Answer';
 import { removeFeedLastItem } from '../../store/feed/actions';
 
 export const THEMES = 'themes';
-export const TRANSCRIPT = 'transcript-std';
-export const TRANSCRIPT_EXPERT = 'transcript-expert';
-export const DOCUMENT = 'document-std';
+export const TRANSCRIPT = 'transcriptStd';
+export const TRANSCRIPT_EXPERT = 'transcriptExpert';
+export const DOCUMENT = 'documentStd';
 export const SOURCE_TYPE_VIDEO = 'VIDEO';
 export const SOURCE_TYPE_DOCUMENT = 'PDF';
 
@@ -43,10 +42,6 @@ export const Feed: FC = () => {
       scrollToLastElement(lastElement.id);
     }
   }, [feed]);
-
-  if (feed.length === 0) {
-    return <Welcome />;
-  }
 
   return (
     <FeedContainerStyle role="feed" aria-live="polite">

@@ -5,11 +5,13 @@ import { Feed } from '../../../components/Feed';
 import { PromptContainerStyle } from '../../../components/Prompt/style';
 import { PromptQueries } from '../../../components/Prompt/Queries';
 import { PromptForm } from '../../../components/Prompt/Form';
+import { Welcome } from '../../../components/Welcome';
 
 const EventPage: FC = () => (
   <>
     <GliderStylesheet />
     <OnboardingModal />
+    <Welcome />
     <Feed />
     <PromptContainerStyle>
       <PromptQueries />

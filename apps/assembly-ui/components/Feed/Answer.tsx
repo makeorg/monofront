@@ -1,10 +1,10 @@
 import React, { FC, useState, useEffect } from 'react';
 import { env } from '@make.org/assets/env';
 import i18n from 'i18next';
+import ReactMarkdown from 'react-markdown';
 import {
   ContentStyle,
   ContentIconStyle,
-  ThemeContainerStyle,
   AnswerContainerStyle,
   HyperlinksContainerStyle,
   HyperlinksTitleStyle,
@@ -57,7 +57,7 @@ export const Answer: FC<{ content: FeedItemType }> = ({ content }) => {
     <ContentStyle>
       <ContentIconStyle src={pano} alt="Logo" />
       <AnswerContainerStyle>
-        <ThemeContainerStyle as="p">{content.text}</ThemeContainerStyle>
+        <ReactMarkdown>{content.text}</ReactMarkdown>
         <HyperlinksContainerStyle>
           <HyperlinksTitleStyle>
             {i18n.t('feed.hyperlinks_title')}
