@@ -9,7 +9,10 @@
     "sug": "Suggestions :",
     "loading": "Chargement...",
     "load": "Charger",
-    "opinions": "Les avis des intervenants"
+    "opinions": "Les avis des intervenants",
+    "resume": "Résumé de l’évènement :",
+    "ia": "Cet outil utilise une intelligence artificielle (IA) qui trouve ses réponses exclusivement dans des informations issues d’une base de ",
+    "iaBold": "données choisie et modérée."
   },
   "header": {
     "beta": "beta",
@@ -53,7 +56,7 @@
     "request": "Saisissez une requête",
     "submit": "Envoyer",
     "caution": "MarIA.ne peut afficher des informations inexactes ou offensantes qui ne représentent pas les opinions du CESE. Charte Éthique IA Make.org",
-    "themeAnswer": "Voici les thématiques de la convention :",
+    "themeAnswer": "Résumés des thématiques générés par IA :",
     "warning": "Cette intelligence artificielle peut faire des erreurs. N’hésitez pas à vérifier les informations importantes.",
     "me": "Moi",
     "themes": "Thématiques",
@@ -66,7 +69,8 @@
     "sources": "Voici mes sources :",
     "hyperlinks_title": "Pour compléter ses connaissances :",
     "detailed_response": "Accéder à la réponse détaillée",
-    "document_sources": "Accéder à la réponse provenant des documents certifiés"
+    "document_sources": "Accéder à la réponse provenant des documents certifiés",
+    "page": "page "
   },
   "sidebar": {
     "explore": "Explorer",

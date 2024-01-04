@@ -8,7 +8,7 @@ import {
 } from './style';
 import { useAssemblyContext } from '../../../store/context';
 import { addFeedItem } from '../../../store/feed/actions';
-import { THEMES, TRANSCRIPT } from '../../Feed';
+import { TRANSCRIPT } from '../../Feed';
 import { MobileQueries } from './Mobile';
 import { DesktopQueries } from './Desktop';
 
@@ -16,11 +16,9 @@ type ButtonsProps = {
   title: string;
   subtitle: string;
   handleClick: () => void;
-  theme?: boolean;
 };
 
 export type DispatchProps = {
-  dispatchThemes: () => void;
   dispatchGeneratedContent: (subject: string, content: string) => void;
 };
 
@@ -33,16 +31,11 @@ const getRandomColor = () => {
   return item;
 };
 
-export const Buttons: FC<ButtonsProps> = ({
-  title,
-  subtitle,
-  handleClick,
-  theme,
-}) => {
+export const Buttons: FC<ButtonsProps> = ({ title, subtitle, handleClick }) => {
   const getMemoizedColor = useMemo(() => getRandomColor(), []);
 
   return (
-    <QueriesButtonsStyle onClick={handleClick} className={theme ? 'theme' : ''}>
+    <QueriesButtonsStyle onClick={handleClick}>
       <QueriesTitleStyle style={{ backgroundColor: getMemoizedColor }}>
         {subtitle}
       </QueriesTitleStyle>
@@ -62,18 +55,6 @@ export const PromptQueries: FC = () => {
     }
   }, []);
 
-  const dispatchThemes = () => {
-    dispatch(
-      addFeedItem({
-        id: uuidv4(),
-        mode: THEMES,
-        question: 'Quelles sont les thématiques de la convention ?',
-        text: '',
-        language: 'fr',
-      })
-    );
-  };
-
   const dispatchGeneratedContent = (subject: string, text: string) => {
     dispatch(
       addFeedItem({
@@ -88,17 +69,9 @@ export const PromptQueries: FC = () => {
 
   if (isMobile) {
     return (
-      <MobileQueries
-        dispatchThemes={dispatchThemes}
-        dispatchGeneratedContent={dispatchGeneratedContent}
-      />
+      <MobileQueries dispatchGeneratedContent={dispatchGeneratedContent} />
     );
   }
 
-  return (
-    <DesktopQueries
-      dispatchThemes={dispatchThemes}
-      dispatchGeneratedContent={dispatchGeneratedContent}
-    />
-  );
+  return <DesktopQueries dispatchGeneratedContent={dispatchGeneratedContent} />;
 };

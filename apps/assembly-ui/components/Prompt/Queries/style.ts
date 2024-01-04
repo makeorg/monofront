@@ -31,15 +31,6 @@ export const QueriesButtonsStyle = styled.button`
   width: 100%;
   background-color: white;
   border-radius: ${spacings.s};
-  &.theme {
-    background: linear-gradient(
-        91.5deg,
-        rgba(76, 65, 171, 0.144) 15.68%,
-        rgba(255, 218, 185, 0.2) 63.78%,
-        rgba(248, 178, 188, 0.2) 96.13%
-      ),
-      linear-gradient(0deg, #ffffff, #ffffff);
-  }
 `;
 
 export const QueriesTitleStyle = styled.span`

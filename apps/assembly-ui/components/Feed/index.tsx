@@ -1,12 +1,10 @@
 import React, { FC, useEffect, useLayoutEffect } from 'react';
 import { Question } from './Question';
-import { Themes } from './Themes';
 import { FeedContainerStyle } from './style';
 import { useAssemblyContext } from '../../store/context';
 import { Answer } from './Answer';
 import { removeFeedLastItem } from '../../store/feed/actions';
 
-export const THEMES = 'themes';
 export const TRANSCRIPT = 'transcriptStd';
 export const TRANSCRIPT_EXPERT = 'transcriptExpert';
 export const DOCUMENT = 'documentStd';
@@ -48,7 +46,7 @@ export const Feed: FC = () => {
       {feed.map(item => (
         <div role="article" key={item.id} id={item.id}>
           <Question question={item.question} />
-          {item.mode === THEMES ? <Themes /> : <Answer content={item} />}
+          <Answer content={item} />
         </div>
       ))}
     </FeedContainerStyle>

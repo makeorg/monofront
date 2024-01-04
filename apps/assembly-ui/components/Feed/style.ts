@@ -187,22 +187,22 @@ export const HyperlinksTitleStyle = styled.span`
 
 export const HyperlinksButtonsContainerStyle = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 10px;
 `;
 
 export const HyperlinksButtonStyle = styled.button`
   font-size: ${typography.FontSize.Text.RueDeLappe};
-  background-color: rgba(148, 141, 205, 1);
+  color: rgba(76, 65, 171, 1);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   padding: ${spacings.xs} ${spacings.s};
-  border-radius: 20px;
   height: fit-content;
   width: fit-content;
-  border: none;
+  border: 1px solid rgba(76, 65, 171, 1);
+  border-radius: 4px;
+  background-color: white;
 
   &:disabled {
     ${GreyStyle};

@@ -1,12 +1,14 @@
 import React, { FC } from 'react';
-import pano from '../../assets/IconPano.png';
+import i18n from 'i18next';
+import { Themes } from './Themes';
 import {
   WelcomeContainerStyle,
   WelcomeTitleStyle,
-  WelcomeContentStyle,
-  WelcomeContentIconStyle,
+  WelcomeIAStyle,
+  WelcomeBlockContainerStyle,
+  WelcomeContentBlockContainerStyle,
+  WelcomeContentBlockTitleStyle,
   WelcomeContentTextStyle,
-  WelcomeContentTextContainerStyle,
 } from './style';
 import { YoutubePlayer } from '../ReactPlayer/YoutubePlayer';
 import { useAssemblyContext } from '../../store/context';
@@ -24,18 +26,18 @@ export const Welcome: FC = () => (
     <WelcomeTitleStyle>
       Bienvenue au coeur de la Convention Citoyenne sur la fin de vie
     </WelcomeTitleStyle>
-    <WelcomeContentStyle>
-      <WelcomeContentIconStyle src={pano} alt="Logo" />
-      <WelcomeContentTextContainerStyle>
-        <WelcomeContentTextStyle>
-          Quam quidem partem accusationis admiratus sum et moleste tuli
-          potissimum esse Atratino datam. Neque enim decebat neque aetas illa
-          postulabat neque, id quod animadvertere poteratis, pudor patiebatur
-          optimi adulescentis in tali illum oratione versari. Vellem aliquis ex
-          vobis robustioribus hunc male dicendi locum suscepisset; aliquanto
-          liberius et fortius et magis more nostro refutaremus istam male
-          dicendi licentiam.
-        </WelcomeContentTextStyle>
+    <WelcomeIAStyle>
+      {i18n.t('global.ia')}
+      <WelcomeIAStyle className="bold" as="span">
+        {i18n.t('global.iaBold')}
+      </WelcomeIAStyle>
+    </WelcomeIAStyle>
+
+    <WelcomeBlockContainerStyle>
+      <WelcomeContentBlockContainerStyle>
+        <WelcomeContentBlockTitleStyle>
+          {i18n.t('global.resume')}
+        </WelcomeContentBlockTitleStyle>
         <WelcomeContentTextStyle>
           Tecum, Atratine, agam lenius, quod et pudor tuus moderatur orationi
           meae et meum erga te parentemque tuum beneficium tueri debeo.quam
@@ -46,7 +48,14 @@ export const Welcome: FC = () => (
           robustioribus hunc male dicendi locum suscepisset; aliquanto liberius
           et fortius.
         </WelcomeContentTextStyle>
-      </WelcomeContentTextContainerStyle>
-    </WelcomeContentStyle>
+      </WelcomeContentBlockContainerStyle>
+
+      <WelcomeContentBlockContainerStyle>
+        <WelcomeContentBlockTitleStyle>
+          {i18n.t('prompt.themeAnswer')}
+        </WelcomeContentBlockTitleStyle>
+        <Themes />
+      </WelcomeContentBlockContainerStyle>
+    </WelcomeBlockContainerStyle>
   </WelcomeContainerStyle>
 );

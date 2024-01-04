@@ -1,12 +1,10 @@
 import React, { FC, useState, useEffect } from 'react';
-import i18n from 'i18next';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { QueriesButtonsListStyle, QueriesContainerStyle } from './style';
 import { useAssemblyContext } from '../../../store/context';
 import { Buttons, DispatchProps } from '.';
 
 export const DesktopQueries: FC<DispatchProps> = ({
-  dispatchThemes,
   dispatchGeneratedContent,
 }) => {
   const { state } = useAssemblyContext();
@@ -45,14 +43,6 @@ export const DesktopQueries: FC<DispatchProps> = ({
           />
         </QueriesButtonsListStyle>
       ))}
-      <QueriesButtonsListStyle>
-        <Buttons
-          title={i18n.t('prompt.themesDiscover')}
-          subtitle={i18n.t('prompt.themes')}
-          handleClick={dispatchThemes}
-          theme
-        />
-      </QueriesButtonsListStyle>
     </QueriesContainerStyle>
   );
 };

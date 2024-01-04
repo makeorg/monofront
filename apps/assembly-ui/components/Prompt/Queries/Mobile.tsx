@@ -1,5 +1,4 @@
 import React, { FC, useRef, useEffect, useState } from 'react';
-import i18n from 'i18next';
 import { useSlider } from '@make.org/utils/hooks/useSlider';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { useAssemblyContext } from '../../../store/context';
@@ -8,7 +7,6 @@ import { Buttons, DispatchProps } from '.';
 import { QueriesButtonsListStyle } from './style';
 
 export const MobileQueries: FC<DispatchProps> = ({
-  dispatchThemes,
   dispatchGeneratedContent,
 }) => {
   const { state } = useAssemblyContext();
@@ -49,14 +47,6 @@ export const MobileQueries: FC<DispatchProps> = ({
               />
             </QueriesButtonsListStyle>
           ))}
-          <QueriesButtonsListStyle>
-            <Buttons
-              title={i18n.t('prompt.themesDiscover')}
-              subtitle={i18n.t('prompt.themes')}
-              handleClick={dispatchThemes}
-              theme
-            />
-          </QueriesButtonsListStyle>
         </UnstyledListStyle>
       </div>
     </div>

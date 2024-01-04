@@ -16,32 +16,57 @@ export const WelcomeContainerStyle = styled.section`
 
 export const WelcomeTitleStyle = styled.h1`
   font-size: ${typography.FontSize.Title.Europe};
-  max-width: 800px;
 `;
 
-export const WelcomeContentStyle = styled.div`
+export const WelcomeIAStyle = styled.p`
+  font-size: ${typography.FontSize.Text.Bastille};
+  &.bold {
+    font-weight: 600;
+  }
+`;
+
+export const WelcomeBlockContainerStyle = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  background-color: #f9f8ffcf;
-  border-radius: 10px;
-  padding: ${spacings.m};
-  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     flex-direction: row;
   }
 `;
 
-export const WelcomeContentTextContainerStyle = styled.div`
+export const WelcomeContentBlockContainerStyle = styled.div`
   display: flex;
   flex-direction: column;
+  background-color: rgba(248, 248, 248, 1);
   gap: 20px;
+  padding: 20px;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    width: 50%;
+  }
+  border-radius: 10px;
+`;
+
+export const WelcomeContentBlockTitleStyle = styled.span`
+  font-size: ${typography.FontSize.Text.Bastille};
+  font-weight: 600;
 `;
 
 export const WelcomeContentTextStyle = styled.p`
   font-size: ${typography.FontSize.Text.RueDeLappe};
 `;
 
-export const WelcomeContentIconStyle = styled.img`
-  height: 20px;
-  width: 20px;
+export const WelcomeThemesBlockStyle = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+`;
+
+export const WelcomeThemesButtonStyle = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: ${typography.FontSize.Text.RueDeLappe};
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: none;
 `;

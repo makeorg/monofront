@@ -33,7 +33,10 @@ const DocumentMeta: FC<{ chunk: ChunkType }> = ({ chunk }) => {
             {document_source_title}
           </SourcesTruncatedTextStyle>
         </SourcesMediaTitleStyle>
-        <SourcesMediaTextStyle>{page_number}</SourcesMediaTextStyle>
+        <SourcesMediaTextStyle>
+          {i18n.t('feed.page')}
+          {page_number}
+        </SourcesMediaTextStyle>
       </SourcesMediaDocumentLinkStyle>
     </SourcesMediaContentStyle>
   );
