@@ -1,8 +1,8 @@
 import React, { FC, useState, useMemo } from 'react';
 import { WelcomeThemesBlockStyle, WelcomeThemesButtonStyle } from './style';
 import { TRANSCRIPT } from '../Feed';
-import { setStopStreaming } from '../../store/stream/actions';
-import { StreamTranscript } from '../Prompt/Stream';
+import { disableFeedStreaming } from '../../store/feed/actions';
+import { StreamLLM } from '../Prompt/Stream';
 
 import { useAssemblyContext } from '../../store/context';
 
@@ -52,14 +52,14 @@ export const Buttons: FC<ButtonsProps> = ({
 export const Themes: FC = () => {
   const { state, dispatch } = useAssemblyContext();
   const { termQueries } = state;
-  const { isSubmitted } = state.stream;
+  const { isSubmitted } = state.feed;
   const [question, setQuestion] = useState<string>('');
 
-  const { setStartStream } = StreamTranscript(question, TRANSCRIPT);
+  const { setStartStream } = StreamLLM(question, TRANSCRIPT);
 
   const handleThemeQuestion = (value: string) => {
     setQuestion(value);
-    dispatch(setStopStreaming(false));
+    dispatch(disableFeedStreaming());
     setStartStream(true);
   };
 

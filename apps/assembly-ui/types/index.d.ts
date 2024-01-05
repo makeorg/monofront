@@ -48,9 +48,9 @@ export type ChunkType = {
   speaker_gender?: string;
 };
 
-export type StreamType = {
-  isSubmitted: boolean;
-  stopStreaming: boolean;
+export type FeedType = {
+  isStreaming: boolean;
+  items: FeedItemType[];
 };
 
 export type FeedItemType = {
@@ -60,6 +60,7 @@ export type FeedItemType = {
   chunks?: ChunkType[];
   mode: string;
   language: string;
+  displayActions?: boolean;
 };
 
 export type AssemblyStateType = {
@@ -67,6 +68,5 @@ export type AssemblyStateType = {
   event: EventType;
   termQueries: TermQueryType[];
   generatedContents: GeneratedContentType[];
-  feed: FeedItemType[];
-  stream: StreamType;
+  feed: FeedType;
 };

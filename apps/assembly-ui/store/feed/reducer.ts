@@ -1,34 +1,37 @@
 import { ReducerAction } from '@make.org/types';
-import { FeedItemType } from '../../types';
+import { FeedType } from '../../types';
 import {
   ADD_FEED_ITEM,
   REMOVE_FEED_LAST_ITEM,
+  START_STREAM,
+  STOP_STREAM,
   UPDATE_ITEM_CHUNKS,
   UPDATE_ITEM_TEXT,
 } from './types';
 
 export const feed_reducer = (
   // eslint-disable-next-line default-param-last
-  state: FeedItemType[] = [],
+  state: FeedType = { isStreaming: false, items: [] },
   action: ReducerAction
-): FeedItemType[] => {
+): FeedType => {
   switch (action.type) {
     case ADD_FEED_ITEM:
-      return [...state, { ...action.payload.item }];
+      return { ...state, items: [...state.items, { ...action.payload.item }] };
     case UPDATE_ITEM_CHUNKS: {
-      const updatedState = state.map(item => {
+      const updatedState = state.items.map(item => {
         if (item.id === action.payload.id) {
           return {
             ...item,
             chunks: action.payload.chunks,
+            displayActions: true,
           };
         }
         return item;
       });
-      return updatedState;
+      return { ...state, items: updatedState };
     }
     case UPDATE_ITEM_TEXT: {
-      const updatedState = state.map(item => {
+      const updatedState = state.items.map(item => {
         if (item.id === action.payload.id) {
           return {
             ...item,
@@ -37,12 +40,24 @@ export const feed_reducer = (
         }
         return item;
       });
-      return updatedState;
+      return { ...state, items: updatedState };
     }
     case REMOVE_FEED_LAST_ITEM: {
-      const feed = [...state];
-      feed.shift();
-      return feed;
+      const updatedFeed = [...state.items];
+      updatedFeed.shift();
+      return { ...state, items: updatedFeed };
+    }
+    case START_STREAM: {
+      return {
+        ...state,
+        isStreaming: true,
+      };
+    }
+    case STOP_STREAM: {
+      return {
+        ...state,
+        isStreaming: false,
+      };
     }
     default:
       return state;

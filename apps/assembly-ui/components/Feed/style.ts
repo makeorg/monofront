@@ -174,24 +174,24 @@ export const SourcesTruncatedTextStyle = styled.p`
   color: rgba(52, 51, 48, 1);
 `;
 
-export const HyperlinksContainerStyle = styled.div`
+export const ActionsContainerStyle = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${spacings.m};
 `;
 
-export const HyperlinksTitleStyle = styled.span`
+export const ActionsTitleStyle = styled.span`
   font-size: ${typography.FontSize.Text.RueDeLappe};
   font-weight: 600;
 `;
 
-export const HyperlinksButtonsContainerStyle = styled.div`
+export const ActionsButtonsContainerStyle = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 `;
 
-export const HyperlinksButtonStyle = styled.button`
+export const ActionsButtonStyle = styled.button`
   font-size: ${typography.FontSize.Text.RueDeLappe};
   color: rgba(76, 65, 171, 1);
   display: flex;

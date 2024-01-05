@@ -11,7 +11,7 @@ import { useAssemblyContext } from '../../store/context';
 import submitButton from '../../assets/sendButton.png';
 import disabledButton from '../../assets/sendButtonInactive.png';
 import stopButton from '../../assets/sendButtonStop.png';
-import { setStopStreaming } from '../../store/stream/actions';
+import { disableFeedStreaming } from '../../store/feed/actions';
 import { TRANSCRIPT } from '../Feed';
 import {
   PromptFormContainerStyle,
@@ -21,14 +21,14 @@ import {
   PromptFormButtonArrowStyle,
   PromptFormWarningText,
 } from './style';
-import { StreamTranscript } from './Stream';
+import { StreamLLM } from './Stream';
 
 export const PromptForm: FC = () => {
   const { state, dispatch } = useAssemblyContext();
-  const { isSubmitted } = state.stream;
+  const { isStreaming } = state.feed;
   const [question, setQuestion] = useState<string>('');
 
-  const { setStartStream } = StreamTranscript(question, TRANSCRIPT);
+  const { setStartStream } = StreamLLM(question, TRANSCRIPT);
 
   const handleSubmit: FormEventHandler<HTMLButtonElement | HTMLFormElement> = (
     e: SyntheticEvent<HTMLButtonElement>
@@ -55,22 +55,22 @@ export const PromptForm: FC = () => {
           onChange={throttle(handleChange)}
         />
         <PromptFormButtonsContainerStyle>
-          {isSubmitted && (
+          {isStreaming && (
             <PromptFormSubmitStyle type="button">
               <PromptFormButtonArrowStyle
                 src={stopButton}
                 alt={i18n.t('prompt.cancel')}
                 onClick={() => {
-                  dispatch(setStopStreaming(true));
+                  dispatch(disableFeedStreaming());
                 }}
               />
             </PromptFormSubmitStyle>
           )}
-          <PromptFormSubmitStyle type="submit" disabled={isSubmitted}>
+          <PromptFormSubmitStyle type="submit" disabled={isStreaming}>
             <PromptFormButtonArrowStyle
-              src={isSubmitted ? disabledButton : submitButton}
+              src={isStreaming ? disabledButton : submitButton}
               alt={
-                isSubmitted
+                isStreaming
                   ? i18n.t('prompt.disabled')
                   : i18n.t('prompt.submit')
               }

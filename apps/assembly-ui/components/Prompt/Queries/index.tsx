@@ -8,7 +8,6 @@ import {
 } from './style';
 import { useAssemblyContext } from '../../../store/context';
 import { addFeedItem } from '../../../store/feed/actions';
-import { TRANSCRIPT } from '../../Feed';
 import { MobileQueries } from './Mobile';
 import { DesktopQueries } from './Desktop';
 
@@ -59,7 +58,7 @@ export const PromptQueries: FC = () => {
     dispatch(
       addFeedItem({
         id: uuidv4(),
-        mode: TRANSCRIPT,
+        mode: 'generatedContent',
         question: `que s'est-il dit sur : "${subject}"`,
         text,
         language: 'fr',

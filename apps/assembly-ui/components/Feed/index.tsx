@@ -25,28 +25,28 @@ const scrollToLastElement = (id: string) => {
 
 export const Feed: FC = () => {
   const { state, dispatch } = useAssemblyContext();
-  const { feed } = state;
+  const { items } = state.feed;
   const FEED_MAX_LENGTH = 5;
 
   useEffect(() => {
-    if (feed.length > FEED_MAX_LENGTH) {
+    if (items.length > FEED_MAX_LENGTH) {
       dispatch(removeFeedLastItem());
     }
-  }, [feed.length]);
+  }, [items.length]);
 
   useLayoutEffect(() => {
-    const lastElement = [...feed].pop(); // Need to be spread to avoid initial feed modification
+    const lastElement = [...items].pop(); // Need to be spread to avoid initial items modification
     if (lastElement) {
       scrollToLastElement(lastElement.id);
     }
-  }, [feed]);
+  }, [items]);
 
   return (
     <FeedContainerStyle role="feed" aria-live="polite">
-      {feed.map(item => (
+      {items.map(item => (
         <div role="article" key={item.id} id={item.id}>
           <Question question={item.question} />
-          <Answer content={item} />
+          <Answer item={item} />
         </div>
       ))}
     </FeedContainerStyle>

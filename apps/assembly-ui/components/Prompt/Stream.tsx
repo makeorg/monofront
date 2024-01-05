@@ -3,16 +3,13 @@ import { v4 as uuidv4 } from 'uuid';
 import { useAssemblyContext } from '../../store/context';
 import { env } from '../../utils/env';
 import {
-  setStopStreaming,
-  setStreamSubmitted,
-} from '../../store/stream/actions';
-import {
+  enableFeedStreaming,
+  disableFeedStreaming,
   addFeedItem,
   updateItemChunks,
   updateItemText,
 } from '../../store/feed/actions';
 import { ChunkType } from '../../types';
-import { LLM_PATH } from '../../utils/routes';
 
 const parseValue = (content: string) => {
   try {
@@ -43,14 +40,14 @@ const getResults = (objs: string[]): { chunks: []; text: string } => {
   );
 };
 
-export const StreamTranscript = (
+export const StreamLLM = (
   question: string,
   mode: string
 ): { setStartStream: Dispatch<SetStateAction<boolean>> } => {
   const { state, dispatch } = useAssemblyContext();
   const { event } = state;
-  const { isSubmitted, stopStreaming } = state.stream;
-  const [startSteam, setStartStream] = useState<boolean>(false);
+  const { isStreaming } = state.feed;
+  const [startStream, setStartStream] = useState<boolean>(false);
   const [abortController, setNewAbortController] = useState(
     new AbortController()
   );
@@ -70,8 +67,8 @@ export const StreamTranscript = (
     );
   };
 
-  const fetchTranscript = async () => {
-    dispatch(setStreamSubmitted(true));
+  const fetchLLM = async () => {
+    dispatch(enableFeedStreaming());
 
     const params = new URLSearchParams({
       eventId: event.id,
@@ -82,10 +79,13 @@ export const StreamTranscript = (
 
     try {
       const transcriptResponse: Response = await fetch(
-        `${FRONT_URL}${LLM_PATH}?${params}`,
+        `https://assembly.preprod.makeorg.tech/answer?${params}`,
         {
           method: 'GET',
           signal: abortController.signal,
+          headers: {
+            'x-make-app-name': 'assembly-ui',
+          },
         }
       );
       const reader = transcriptResponse.body?.getReader();
@@ -104,6 +104,8 @@ export const StreamTranscript = (
         const { value, done } = await reader.read();
         if (done) {
           dispatch(updateItemChunks(uuid, chunks as ChunkType[]));
+          dispatch(disableFeedStreaming());
+          setStartStream(false);
           break;
         }
 
@@ -122,28 +124,26 @@ export const StreamTranscript = (
           dispatch(updateItemText(uuid, newText));
         }
       }
-      dispatch(setStreamSubmitted(false));
-      setStartStream(false);
     } catch (error: unknown) {
       // handle error message that will be displayed to the user
-      dispatch(setStreamSubmitted(false));
+      dispatch(disableFeedStreaming());
       setStartStream(false);
     }
   };
 
   useEffect(() => {
-    if (!isSubmitted && startSteam) {
-      fetchTranscript();
+    if (startStream) {
+      fetchLLM();
     }
-  }, [isSubmitted, startSteam]);
+  }, [startStream]);
 
   useEffect(() => {
-    if (stopStreaming) {
+    if (!isStreaming) {
       abortController.abort();
       setNewAbortController(new AbortController());
-      dispatch(setStopStreaming(false));
+      dispatch(disableFeedStreaming());
     }
-  }, [stopStreaming]);
+  }, [isStreaming]);
 
   return { setStartStream };
 };
