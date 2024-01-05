@@ -87,13 +87,13 @@ export const SidebarContentListItemStyle = styled.li`
 `;
 
 export const SidebarContentLinkStyle = styled.a`
-  display: flex;
-  gap: 5px;
   font-size: ${typography.FontSize.Text.Arrondissement};
   text-decoration: none;
 `;
 
 export const SidebarSvgExternalStyle = styled(SidebarExternalLink)`
+  display: inline-flex;
+  margin-left: 5px;
   width: 15px;
   height: 15px;
 `;

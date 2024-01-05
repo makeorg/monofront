@@ -2,150 +2,115 @@ import { AssemblyStateType } from '../types';
 
 const AssemblyDevState: AssemblyStateType = {
   customer: {
-    id: '71f104e0-0b79-49a6-ae28-9693a8c67e8f',
-    name: 'Customer name',
-    slug: 'slug-client',
+    id: '18565a9f-170a-485b-80e9-857e3a860b15',
+    name: 'CESE',
+    slug: 'cese',
   },
   event: {
-    id: '9d25cd3c-dc3b-4c4c-ae75-2781d49c94bf',
-    customerId: '71f104e0-0b79-49a6-ae28-9693a8c67e8f',
+    customerId: '18565a9f-170a-485b-80e9-857e3a860b15',
+    id: '5c47b1f2-2e04-459c-8a6b-3616e754481f',
+    slug: 'convention-citoyenne-fin-de-vie',
     language: 'fr',
-    name: "Nom d'événement",
-    slug: 'slug-evenement',
-    introMediaUrl: 'https://youtube.com/watch?v=1BTxxJr8awQ',
+    name: 'Convention citoyenne de la fin de vie',
+    introduction: 'La Convention citoyenne vous ouvre ses portes !',
+    introMediaUrl: 'https://youtu.be/EGXSzXgigdY?t=1260',
+    links: [
+      {
+        label: 'Pourquoi cette Convention citoyenne ?',
+        url: 'https://conventioncitoyennesurlafindevie.lecese.fr/la-convention-citoyenne-sur-la-fin-de-vie-c-est-quoi',
+      },
+      {
+        label: 'Quelles sont les dates clés ?',
+        url: 'https://conventioncitoyennesurlafindevie.lecese.fr/travaux',
+      },
+      {
+        label: 'Qui est le CESE ?',
+        url: 'https://www.lecese.fr/decouvrir-cese/cese-en-bref',
+      },
+    ],
+    logoUrl: 'https://assets.make.org/assets/images/convention-fin-de-vie.png',
   },
   termQueries: [
     {
-      title: 'Thème 1',
-      value: 'value-theme-1',
+      title: 'Choix et la volonté du Patient',
+      value:
+        'Que s’est-il dit autour de la thématique Choix et la volonté du Patient" ?',
+      type: 'THEME',
     },
     {
-      title: 'Thème 2',
-      value: 'value-theme-2',
+      title: 'Accompagnement à domicile',
+      value:
+        'Que s’est-il dit autour de la thématique Accompagnement à domicile" ?',
+      type: 'THEME',
     },
     {
-      title: 'Thème 3',
-      value: 'value-theme-3',
+      title: 'Budget et financement',
+      value:
+        'Que s’est-il dit autour de la thématique Budget et financement" ?',
+      type: 'THEME',
     },
     {
-      title: 'Thème 4',
-      value: 'value-theme-4',
+      title: 'Ouvrir les soins palliatifs à tous',
+      value:
+        'Que s’est-il dit autour de la thématique “Ouvrir les soins palliatifs à tous" ?',
+      type: 'THEME',
     },
     {
-      title: 'Thème 5',
-      value: 'value-theme-5',
+      title: 'Egalité d’accès',
+      value: 'Que s’est-il dit autour de la thématique Egalité d’accès" ?',
+      type: 'THEME',
     },
     {
-      title: 'Thème 6',
-      value: 'value-theme-6',
+      title: 'Informer le grand public',
+      value:
+        'Que s’est-il dit autour de la thématique Informer le grand public" ?',
+      type: 'THEME',
     },
     {
-      title: 'Thème 7',
-      value: 'value-theme-7',
+      title: 'Formation des Professionnels de Santé',
+      value:
+        'Que s’est-il dit autour de la thématique Formation des Professionnels de Santé" ?',
+      type: 'THEME',
     },
     {
-      title: 'Thème 8',
-      value: 'value-theme-8',
+      title: 'Améliorer le parcours de Soins',
+      value:
+        'Que s’est-il dit autour de la thématique Améliorer le parcours de Soins" ?',
+      type: 'THEME',
     },
     {
-      title: 'Thème 9',
-      value: 'value-theme-9',
+      title: 'La recherche et développement',
+      value:
+        'Que s’est-il dit autour de la thématique La recherche et développement" ?',
+      type: 'THEME',
     },
     {
-      title: 'Thème 10',
-      value: 'value-theme-10',
+      title: 'Cadre légal',
+      value:
+        "Quels garde-fous et mécanismes de contrôle sont suggérés pour les propositions visant à améliorer l'accompagnement en fin de vie ?",
+      type: 'SUGGESTION',
+    },
+    {
+      title: 'Recommandations',
+      value:
+        "Quels sont les modèles de fin de vie qui ont suscité le plus d'adhésion au sein de la convention, et comment sont-ils présentés et discutés dans le cadre des propositions formulées ?",
+      type: 'SUGGESTION',
+    },
+    {
+      title: 'Soignants',
+      value:
+        'Comment les professionnels de santé ont-ils été pris en compte dans les travaux de la Convention et quel cadre légal entoure leur responsabilité envers leurs patients en fin de vie ?',
+      type: 'SUGGESTION',
     },
   ],
   generatedContents: [
     {
-      title: 'Titre 1',
-      subtitle: 'sous titre 1',
-      mode: 'transcriptStd',
-      name: 'Nom 1',
+      title: 'Résumé',
+      subtitle: 'Synthèse de la Convention',
+      name: 'Synthèse de la Convention',
       content:
-        'Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead.',
+        "La Convention citoyenne sur la fin de vie, organisée par le CESE suite à l'annonce du Président de la République, a réuni 184 citoyens français durant 9 sessions de 3 jours afin de répondre à la question \"Le cadre d’accompagnement de la fin de vie est-il adapté aux différentes situations rencontrées ou d’éventuels changements devraient-ils être introduits ?\"\". Leurs travaux se sont penchés sur deux axes majeurs : l'amélioration de l’accompagnement de la fin de vie, et en particulier des soins palliatifs, ainsi que l’ouverture de l’aide active à mourir sous condition et la définition de son cadre d’accompagnement. Les délibérations, enrichies par des échanges avec des experts, ont abouti à des propositions visant à transformer le cadre actuel d'accompagnement de la fin de vie. Recommandations et débats : la Convention a recommandé de renforcer les soins palliatifs, en mettant l'accent notamment sur le respect du choix des patients et sur l'amélioration de l'accompagnement à domicile. Par ailleurs, une majorité de ma Convention s'est exprimée pour une ouverture de l'aide active à mourir sous conditions. Sur ce dernier sujet, les discussions ont aussi été marqués par des débats, notamment sur les risques de potentielles dérives, l'impact sur les personnes vulnérables, et les réserves de certains professionnels de santé.",
       position: 0,
-    },
-    {
-      title: 'Titre 2',
-      subtitle: 'sous titre 2',
-      mode: 'document',
-      name: 'Nom 2',
-      content:
-        'Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead.',
-      position: 1,
-    },
-    {
-      title: 'Titre 3',
-      subtitle: 'sous titre 3',
-      name: 'Nom 3',
-      mode: 'document',
-      content:
-        'Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead.',
-      position: 2,
-    },
-    {
-      title: 'Titre 4',
-      subtitle: 'sous titre 4',
-      mode: 'transcriptStd',
-      name: 'Nom 4',
-      content:
-        'Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead.',
-      position: 3,
-    },
-    {
-      title: 'Titre 5',
-      subtitle: 'sous titre 5',
-      mode: 'document',
-      name: 'Nom 5',
-      content:
-        'Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead.',
-      position: 4,
-    },
-    {
-      title: 'Titre 6',
-      subtitle: 'sous titre 6',
-      mode: 'transcriptStd',
-      name: 'Nom 6',
-      content:
-        'Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead.',
-      position: 5,
-    },
-    {
-      title: 'Titre 7',
-      subtitle: 'sous titre 7',
-      mode: 'document',
-      name: 'Nom 7',
-      content:
-        'Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead.',
-      position: 6,
-    },
-    {
-      title: 'Titre 8',
-      subtitle: 'sous titre 8',
-      mode: 'transcriptStd',
-      name: 'Nom 8',
-      content:
-        'Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead.',
-      position: 7,
-    },
-    {
-      title: 'Titre 9',
-      subtitle: 'sous titre 9',
-      mode: 'document',
-      name: 'Nom 9',
-      content:
-        'Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead.',
-      position: 9,
-    },
-    {
-      title: 'Titre 10',
-      subtitle: 'sous titre 10',
-      mode: 'transcriptStd',
-      name: 'Nom 10',
-      content:
-        'Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead.',
-      position: 10,
     },
   ],
   feed: [],

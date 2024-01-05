@@ -4,6 +4,11 @@ export type CustomerType = {
   name: string;
 };
 
+export type LinksType = {
+  label: string;
+  url: string;
+};
+
 export type EventType = {
   id: string;
   slug: string;
@@ -11,11 +16,15 @@ export type EventType = {
   language: string;
   name: string;
   introMediaUrl: string;
+  introduction: string;
+  links: LinksType[];
+  logoUrl: string;
 };
 
 export type TermQueryType = {
   title: string;
   value: string;
+  type: 'THEME' | 'SUGGESTION';
 };
 
 export type GeneratedContentType = {

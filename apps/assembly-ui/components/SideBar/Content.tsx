@@ -9,77 +9,63 @@ import {
   SidebarContentListStyle,
   SidebarContentListItemStyle,
 } from './style';
-
-const linkConsultationArray = [
-  {
-    title: 'Pourquoi cette consultation ?',
-    url: 'zef',
-  },
-  {
-    title: 'Chronologie',
-    url: '',
-  },
-  {
-    title: 'Découvrir le CESE',
-    url: 'sdf',
-  },
-];
+import { useAssemblyContext } from '../../store/context';
 
 const linkPanoramicArray = [
   {
     title: 'Possibilités et limites d’Echo',
-    url: '',
+    url: '#',
   },
   {
     title: 'Intégrité et éthique de l’I.A.',
-    url: 'sdf',
+    url: '#',
   },
   {
     title: 'En savoir plus sur Make.org',
-    url: '',
+    url: '#',
   },
 ];
 
-export const SidebarContent: FC = () => (
-  <SidebarContentContainerStyle>
-    <SidebarContentBlockStyle>
-      <SidebarContentSubtitleStyle>
-        {i18n.t('sidebar.know_more')}
-      </SidebarContentSubtitleStyle>
-      <SidebarContentListStyle>
-        {linkConsultationArray.map(link => (
-          <SidebarContentListItemStyle key={link.title}>
-            <SidebarContentLinkStyle
-              href={link.url}
-              target="_blank"
-              rel="noopener"
-            >
-              {link.title}
-              {link.url.length > 0 && <SidebarSvgExternalStyle />}
-            </SidebarContentLinkStyle>
-          </SidebarContentListItemStyle>
-        ))}
-      </SidebarContentListStyle>
-    </SidebarContentBlockStyle>
+export const SidebarContent: FC = () => {
+  const { state } = useAssemblyContext();
+  const { links } = state.event;
 
-    <SidebarContentBlockStyle>
-      <SidebarContentSubtitleStyle>
-        {i18n.t('sidebar.panoramic')}
-      </SidebarContentSubtitleStyle>
-      <SidebarContentListStyle>
-        {linkPanoramicArray.map(link => (
-          <SidebarContentListItemStyle key={link.title}>
-            <SidebarContentLinkStyle
-              href={link.url}
-              target="_blank"
-              rel="noopener"
-            >
-              {link.title}
-              {link.url.length > 0 && <SidebarSvgExternalStyle />}
-            </SidebarContentLinkStyle>
-          </SidebarContentListItemStyle>
-        ))}
-      </SidebarContentListStyle>
-    </SidebarContentBlockStyle>
-  </SidebarContentContainerStyle>
-);
+  return (
+    <SidebarContentContainerStyle>
+      <SidebarContentBlockStyle>
+        <SidebarContentSubtitleStyle>
+          {i18n.t('sidebar.know_more')}
+        </SidebarContentSubtitleStyle>
+        <SidebarContentListStyle>
+          {links.map(link => (
+            <SidebarContentListItemStyle key={link.label}>
+              <SidebarContentLinkStyle
+                href={link.url}
+                target="_blank"
+                rel="noopener"
+              >
+                {link.label}
+                <SidebarSvgExternalStyle />
+              </SidebarContentLinkStyle>
+            </SidebarContentListItemStyle>
+          ))}
+        </SidebarContentListStyle>
+      </SidebarContentBlockStyle>
+
+      <SidebarContentBlockStyle>
+        <SidebarContentSubtitleStyle>
+          {i18n.t('sidebar.panoramic')}
+        </SidebarContentSubtitleStyle>
+        <SidebarContentListStyle>
+          {linkPanoramicArray.map(link => (
+            <SidebarContentListItemStyle key={link.title}>
+              <SidebarContentLinkStyle href={link.url}>
+                {link.title}
+              </SidebarContentLinkStyle>
+            </SidebarContentListItemStyle>
+          ))}
+        </SidebarContentListStyle>
+      </SidebarContentBlockStyle>
+    </SidebarContentContainerStyle>
+  );
+};

@@ -1,6 +1,5 @@
 import React, { FC, useState } from 'react';
 import i18n from 'i18next';
-import client from '../../assets/Client_logos.png';
 import { SidebarLogo } from '../../assets/SidebarSimple';
 import { SidebarModal } from '../SideBar/Modal';
 import {
@@ -12,8 +11,12 @@ import {
   HeaderBetaStyle,
   HeaderMakeStyle,
 } from './style';
+import { useAssemblyContext } from '../../store/context';
 
 export const Header: FC = () => {
+  const { state } = useAssemblyContext();
+  const { logoUrl } = state.event;
+
   const [openSidebar, setOpenSidebar] = useState(false);
 
   return (
@@ -27,7 +30,7 @@ export const Header: FC = () => {
       )}
 
       <HeaderLogosContainerStyle>
-        <HeaderImgStyle src={client} alt="" />
+        <HeaderImgStyle src={logoUrl} alt="" />
         <HeaderLogoMakeStyle>
           <HeaderBetaStyle>{i18n.t('header.beta')}</HeaderBetaStyle>
           <HeaderMakeStyle> {i18n.t('header.make')}</HeaderMakeStyle>

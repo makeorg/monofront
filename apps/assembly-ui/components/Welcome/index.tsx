@@ -20,42 +20,45 @@ const WelcomeVideo: FC = () => {
   return <YoutubePlayer url={introMediaUrl} />;
 };
 
-export const Welcome: FC = () => (
-  <WelcomeContainerStyle>
-    <WelcomeVideo />
-    <WelcomeTitleStyle>
-      Bienvenue au coeur de la Convention Citoyenne sur la fin de vie
-    </WelcomeTitleStyle>
-    <WelcomeIAStyle>
-      {i18n.t('global.ia')}
-      <WelcomeIAStyle className="bold" as="span">
-        {i18n.t('global.iaBold')}
+export const Welcome: FC = () => {
+  const { state } = useAssemblyContext();
+  const { introduction } = state.event;
+
+  return (
+    <WelcomeContainerStyle>
+      <WelcomeVideo />
+      <WelcomeTitleStyle>{introduction}</WelcomeTitleStyle>
+      <WelcomeIAStyle>
+        {i18n.t('global.ia')}
+        <WelcomeIAStyle className="bold" as="span">
+          {i18n.t('global.iaBold')}
+        </WelcomeIAStyle>
       </WelcomeIAStyle>
-    </WelcomeIAStyle>
 
-    <WelcomeBlockContainerStyle>
-      <WelcomeContentBlockContainerStyle>
-        <WelcomeContentBlockTitleStyle>
-          {i18n.t('global.resume')}
-        </WelcomeContentBlockTitleStyle>
-        <WelcomeContentTextStyle>
-          Tecum, Atratine, agam lenius, quod et pudor tuus moderatur orationi
-          meae et meum erga te parentemque tuum beneficium tueri debeo.quam
-          quidem partem accusationis admiratus sum et moleste tuli potissimum
-          esse Atratino datam. Neque enim decebat neque aetas illa postulabat
-          neque, id quod animadvertere poteratis, pudor patiebatur optimi
-          adulescentis in tali illum oratione versari. Vellem aliquis ex vobis
-          robustioribus hunc male dicendi locum suscepisset; aliquanto liberius
-          et fortius.
-        </WelcomeContentTextStyle>
-      </WelcomeContentBlockContainerStyle>
+      <WelcomeBlockContainerStyle>
+        <WelcomeContentBlockContainerStyle>
+          <WelcomeContentBlockTitleStyle>
+            {i18n.t('global.resume')}
+          </WelcomeContentBlockTitleStyle>
+          <WelcomeContentTextStyle>
+            Tecum, Atratine, agam lenius, quod et pudor tuus moderatur orationi
+            meae et meum erga te parentemque tuum beneficium tueri debeo.quam
+            quidem partem accusationis admiratus sum et moleste tuli potissimum
+            esse Atratino datam. Neque enim decebat neque aetas illa postulabat
+            neque, id quod animadvertere poteratis, pudor patiebatur optimi
+            adulescentis in tali illum oratione versari. Vellem aliquis ex vobis
+            robustioribus hunc male dicendi locum suscepisset; aliquanto
+            liberius et fortius.
+          </WelcomeContentTextStyle>
+        </WelcomeContentBlockContainerStyle>
 
-      <WelcomeContentBlockContainerStyle>
-        <WelcomeContentBlockTitleStyle>
-          {i18n.t('prompt.themeAnswer')}
-        </WelcomeContentBlockTitleStyle>
-        <Themes />
-      </WelcomeContentBlockContainerStyle>
-    </WelcomeBlockContainerStyle>
-  </WelcomeContainerStyle>
-);
+        <WelcomeContentBlockContainerStyle>
+          <WelcomeContentBlockTitleStyle>
+            {i18n.t('prompt.themeAnswer')}
+          </WelcomeContentBlockTitleStyle>
+          <Themes />
+        </WelcomeContentBlockContainerStyle>
+      </WelcomeBlockContainerStyle>
+    </WelcomeContainerStyle>
+  );
+};

@@ -88,8 +88,17 @@ const getEventBySlug = async (
   try {
     const response = await ContentApiService.getEvents(eventSlug);
 
-    const { id, customerId, slug, eventLanguage, name, introMediaUrl } =
-      response && response.data[0];
+    const {
+      id,
+      customerId,
+      slug,
+      eventLanguage,
+      name,
+      introMediaUrl,
+      introduction,
+      links,
+      logoUrl,
+    } = response && response.data[0];
 
     const event: EventType = {
       id,
@@ -98,6 +107,9 @@ const getEventBySlug = async (
       language: eventLanguage,
       name,
       introMediaUrl,
+      introduction,
+      links,
+      logoUrl,
     };
 
     cache.set(EVENT_CACHE_KEY, event);
@@ -149,7 +161,11 @@ const getTermQueries = async (
     }
 
     response.data.map((termQuery: TermQueryType) => {
-      const term = { title: termQuery.title, value: termQuery.value };
+      const term = {
+        title: termQuery.title,
+        value: termQuery.value,
+        type: termQuery.type,
+      };
 
       return termQueries.push(term);
     });
