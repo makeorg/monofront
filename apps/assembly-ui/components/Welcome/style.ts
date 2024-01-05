@@ -3,6 +3,7 @@ import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { typography } from '@make.org/designsystem/tokens/typography';
+import ReactMarkdown from 'react-markdown';
 
 export const WelcomeContainerStyle = styled.section`
   display: flex;
@@ -51,7 +52,7 @@ export const WelcomeContentBlockTitleStyle = styled.span`
   font-weight: 600;
 `;
 
-export const WelcomeContentTextStyle = styled.p`
+export const WelcomeContentTextStyle = styled(ReactMarkdown)`
   font-size: ${typography.FontSize.Text.RueDeLappe};
 `;
 

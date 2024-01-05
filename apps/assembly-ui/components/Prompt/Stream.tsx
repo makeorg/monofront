@@ -10,6 +10,7 @@ import {
   updateItemText,
 } from '../../store/feed/actions';
 import { ChunkType } from '../../types';
+import { LLM_PATH } from '../../utils/routes';
 
 const parseValue = (content: string) => {
   try {
@@ -79,13 +80,10 @@ export const StreamLLM = (
 
     try {
       const transcriptResponse: Response = await fetch(
-        `https://assembly.preprod.makeorg.tech/answer?${params}`,
+        `${FRONT_URL}${LLM_PATH}?${params}`,
         {
           method: 'GET',
           signal: abortController.signal,
-          headers: {
-            'x-make-app-name': 'assembly-ui',
-          },
         }
       );
       const reader = transcriptResponse.body?.getReader();

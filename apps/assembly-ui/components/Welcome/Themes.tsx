@@ -25,16 +25,12 @@ type ButtonsProps = {
   title: string;
   value: string;
   handleClick: () => void;
-  isSubmitted: boolean;
 };
 
-export const Buttons: FC<ButtonsProps> = ({
-  title,
-  value,
-  handleClick,
-  isSubmitted,
-}) => {
+export const Buttons: FC<ButtonsProps> = ({ title, value, handleClick }) => {
   const getMemoizedColor = useMemo(() => getRandomColor(), []);
+  const { state } = useAssemblyContext();
+  const { isStreaming } = state.feed;
 
   return (
     <WelcomeThemesButtonStyle
@@ -42,7 +38,7 @@ export const Buttons: FC<ButtonsProps> = ({
       type="button"
       style={{ backgroundColor: getMemoizedColor }}
       onClick={handleClick}
-      disabled={isSubmitted}
+      disabled={isStreaming}
     >
       {title}
     </WelcomeThemesButtonStyle>
@@ -52,8 +48,8 @@ export const Buttons: FC<ButtonsProps> = ({
 export const Themes: FC = () => {
   const { state, dispatch } = useAssemblyContext();
   const { termQueries } = state;
-  const { isSubmitted } = state.feed;
   const [question, setQuestion] = useState<string>('');
+  const themes = termQueries.filter(termQuery => termQuery.type === 'THEME');
 
   const { setStartStream } = StreamLLM(question, TRANSCRIPT);
 
@@ -65,12 +61,12 @@ export const Themes: FC = () => {
 
   return (
     <WelcomeThemesBlockStyle>
-      {termQueries.map(termQuery => (
+      {themes.map(theme => (
         <Buttons
-          handleClick={() => handleThemeQuestion(termQuery.value)}
-          value={termQuery.value}
-          title={termQuery.title}
-          isSubmitted={isSubmitted}
+          key={theme.value}
+          handleClick={() => handleThemeQuestion(theme.value)}
+          value={theme.value}
+          title={theme.title}
         />
       ))}
     </WelcomeThemesBlockStyle>
