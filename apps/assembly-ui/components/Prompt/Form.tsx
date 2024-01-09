@@ -35,6 +35,8 @@ export const PromptForm: FC = () => {
   ) => {
     e.preventDefault();
     setStartStream(true);
+    const form = e.target as HTMLFormElement;
+    form.reset();
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {

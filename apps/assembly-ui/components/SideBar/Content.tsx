@@ -33,9 +33,6 @@ export const SidebarContent: FC = () => {
   return (
     <SidebarContentContainerStyle>
       <SidebarContentBlockStyle>
-        <SidebarContentSubtitleStyle>
-          {i18n.t('sidebar.know_more')}
-        </SidebarContentSubtitleStyle>
         <SidebarContentListStyle>
           {links.map(link => (
             <SidebarContentListItemStyle key={link.label}>

@@ -39,7 +39,7 @@ export const Actions: FC<Props> = ({ item }) => {
     <ActionsContainerStyle>
       <ActionsTitleStyle>{i18n.t('feed.hyperlinks_title')}</ActionsTitleStyle>
       <ActionsButtonsContainerStyle>
-        {item.mode === TRANSCRIPT && (
+        {item.mode !== TRANSCRIPT_EXPERT && (
           <ActionsButtonStyle
             type="button"
             disabled={isStreaming}

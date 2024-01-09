@@ -3,6 +3,7 @@ import { GliderStylesheet } from '@make.org/assets/css-in-js/GliderStyle';
 import { OnboardingModal } from '../../../components/Onboarding/Modal';
 import { Feed } from '../../../components/Feed';
 import { PromptContainerStyle } from '../../../components/Prompt/style';
+import { Suggestions } from '../../../components/Prompt/Suggestions';
 import { PromptForm } from '../../../components/Prompt/Form';
 import { Welcome } from '../../../components/Welcome';
 
@@ -13,6 +14,7 @@ const EventPage: FC = () => (
     <Welcome />
     <Feed />
     <PromptContainerStyle>
+      <Suggestions />
       <PromptForm />
     </PromptContainerStyle>
   </>
