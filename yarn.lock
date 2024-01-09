@@ -3320,6 +3320,7 @@ __metadata:
     query-string: ^7.1.1
     react: ^18.2.0
     react-cookie: ^4.1.1
+    react-cookiefirst: ^0.1.2
     react-dom: ^18.2.0
     react-head: ~3.4.2
     react-markdown: ^8.0.5
@@ -22159,6 +22160,16 @@ __metadata:
   peerDependencies:
     react: ">= 16.3.0"
   checksum: b734dcad35d790ced8c8fc3b19e3eb1f546e0923c637bad888c7c0096dbe2c996668416a49b48827ec7ad2d81522f1b57567694c791e1a5fb89ca41b39158a74
+  languageName: node
+  linkType: hard
+
+"react-cookiefirst@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "react-cookiefirst@npm:0.1.2"
+  peerDependencies:
+    react: ^16.8.0
+    react-dom: ^16.8.0
+  checksum: ebf0fa1db10923f9d9061d2ae9d3c7ca0f07d4f958d23ad1db74d1651a939a9cd5285014473af25b10740bece1ae6a0ce37b0e981cf1a5c74cfcb6bc75124ff7
   languageName: node
   linkType: hard
 

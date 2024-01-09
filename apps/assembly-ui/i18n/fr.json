@@ -99,5 +99,9 @@
     "not_found": "404",
     "no_page": "Nous ne parvenons pas à trouver la page que vous cherchez.",
     "back": "Revenir en arrière"
+  },
+  "cookies": {
+    "youtube": "Youtube est désactivé",
+    "update_action": "Modifier mes choix"
   }
 }

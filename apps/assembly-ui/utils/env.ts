@@ -10,6 +10,8 @@ const assemblyUrlServerSide = (): string | undefined =>
 const frontUrl = (): string | undefined => process.env.FRONT_URL;
 const port = (): string | undefined => process.env.PORT;
 const mixPanelToken = (): string | undefined => process.env.MIXPANEL_TOKEN;
+const cookieFirstToken = (): string | undefined =>
+  process.env.COOKIE_FIRST_TOKEN;
 
 // Export in env object
 export const env = {
@@ -21,4 +23,5 @@ export const env = {
   port,
   isClientSide,
   mixPanelToken,
+  cookieFirstToken,
 };

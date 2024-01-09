@@ -1,7 +1,13 @@
 import React, { useRef, useCallback, useEffect } from 'react';
 import _ReactPlayer, { ReactPlayerProps } from 'react-player';
 import i18n from 'i18next';
-import { ReactPlayerContainer, ReactPlayerPlayButtonStyle } from './style';
+import { useCookieFirst } from 'react-cookiefirst';
+import {
+  CookieButtonStyle,
+  ReactPlayerContainer,
+  ReactPlayerPlayButtonStyle,
+} from './style';
+import { env } from '../../utils/env';
 
 const toSeconds = (time: any) => {
   const [hours, minutes, seconds] = time.split(':').map(Number);
@@ -12,6 +18,7 @@ export const YoutubePlayer: React.FC<ReactPlayerProps> = props => {
   const { url, seek, small } = props;
   const playerRef = useRef<_ReactPlayer>(null);
   const ReactPlayer = _ReactPlayer as unknown as React.FC<ReactPlayerProps>;
+  const { consent, openPanel } = useCookieFirst();
 
   const onReady = useCallback(() => {
     if (seek) {
@@ -24,6 +31,21 @@ export const YoutubePlayer: React.FC<ReactPlayerProps> = props => {
       playerRef.current?.seekTo(toSeconds(seek), 'seconds');
     }
   }, [seek]);
+
+  if (!consent?.functional && !env.isDev()) {
+    return (
+      <ReactPlayerContainer className={small ? 'small cookies' : 'cookies'}>
+        {i18n.t('cookies.youtube')}
+        <CookieButtonStyle
+          className={small && 'small'}
+          type="button"
+          onClick={() => openPanel()}
+        >
+          {i18n.t('cookies.update_action')}
+        </CookieButtonStyle>
+      </ReactPlayerContainer>
+    );
+  }
 
   return (
     <ReactPlayerContainer className={small && 'small'}>

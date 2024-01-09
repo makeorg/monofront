@@ -38,6 +38,7 @@
     "query-string": "^7.1.1",
     "react": "^18.2.0",
     "react-cookie": "^4.1.1",
+    "react-cookiefirst": "^0.1.2",
     "react-dom": "^18.2.0",
     "react-head": "~3.4.2",
     "react-markdown": "^8.0.5",

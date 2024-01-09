@@ -70,6 +70,7 @@ const renderHtml = (
     .replace(/___NONCE_ID___/gi, nonceId)
     .replace(/___PORT___/gi, env.port() || '')
     .replace(/___MIXPANEL_TOKEN___/gi, env.mixPanelToken() || '')
+    .replace(/___COOKIE_FIRST_TOKEN___/gi, env.cookieFirstToken() || '')
     .replace('</body>', `${scriptTags}</body>`);
 
   return content;
