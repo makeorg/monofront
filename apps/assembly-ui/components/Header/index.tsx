@@ -1,5 +1,6 @@
 import React, { FC, useState } from 'react';
 import i18n from 'i18next';
+import { scrollToTop } from '@make.org/utils/helpers/styled';
 import { SidebarLogo } from '../../assets/SidebarSimple';
 import { SidebarModal } from '../SideBar/Modal';
 import {
@@ -10,6 +11,7 @@ import {
   HeaderLogoMakeStyle,
   HeaderBetaStyle,
   HeaderMakeStyle,
+  HeaderButton,
 } from './style';
 import { useAssemblyContext } from '../../store/context';
 
@@ -30,7 +32,13 @@ export const Header: FC = () => {
       )}
 
       <HeaderLogosContainerStyle>
-        <HeaderImgStyle src={logoUrl} alt="" />
+        <HeaderButton
+          type="button"
+          title={i18n.t('header.top')}
+          onClick={scrollToTop}
+        >
+          <HeaderImgStyle src={logoUrl} alt="" />
+        </HeaderButton>
         <HeaderLogoMakeStyle>
           <HeaderBetaStyle>{i18n.t('header.beta')}</HeaderBetaStyle>
           <HeaderMakeStyle> {i18n.t('header.make')}</HeaderMakeStyle>

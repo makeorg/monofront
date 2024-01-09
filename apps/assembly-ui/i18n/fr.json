@@ -16,7 +16,8 @@
   },
   "header": {
     "beta": "beta",
-    "make": "Propulsé par Make.org"
+    "make": "Propulsé par Make.org",
+    "top": "Aller en haut de la page"
   },
   "ressources": {
     "vidsButton": "Ressources vidéos",

@@ -22,6 +22,11 @@ export const HeaderImgStyle = styled.img`
   }
 `;
 
+export const HeaderButton = styled.button`
+  border: none;
+  background: none;
+`;
+
 export const HeaderSvgStyle = styled.div`
   align-items: center;
   justify-content: center;
