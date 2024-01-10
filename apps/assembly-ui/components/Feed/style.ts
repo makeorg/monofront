@@ -208,3 +208,18 @@ export const ActionsButtonStyle = styled.button`
     ${GreyStyle};
   }
 `;
+
+export const HistoryMaxContainerStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+export const HistoryMaxTitleStyle = styled.span`
+  font-size: ${typography.FontSize.Text.Bastille};
+  font-weight: 600;
+`;
+
+export const HistoryMaxTextStyle = styled.p`
+  font-size: ${typography.FontSize.Text.RueDeLappe};
+`;

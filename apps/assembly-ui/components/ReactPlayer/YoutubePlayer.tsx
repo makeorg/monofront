@@ -25,7 +25,6 @@ export const YoutubePlayer: React.FC<ReactPlayerProps> = props => {
     }
   }, [seek]);
 
-  // console warning (Unrecognized feature: 'web-share'.), can be ignored, due web-share feature in chrome not being recognized
   return (
     <ReactPlayerContainer className={small && 'small'}>
       <ReactPlayer

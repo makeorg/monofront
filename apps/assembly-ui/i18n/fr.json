@@ -71,7 +71,10 @@
     "hyperlinks_title": "Pour compléter ses connaissances :",
     "detailed_response": "Accéder à la réponse détaillée",
     "document_sources": "Accéder à la réponse provenant des documents certifiés",
-    "page": "page "
+    "page": "page ",
+    "previous_answer": "Vous cherchez vos questions précédentes ?",
+    "archive": "Nous n'archivons que les 5 dernières questions que vous posez.",
+    "retrieve": "Si vous voulez retrouver vos précédentes questions, vous pouvez simplement la reposer !"
   },
   "sidebar": {
     "explore": "Explorer",

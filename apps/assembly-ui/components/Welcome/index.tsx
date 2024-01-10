@@ -13,22 +13,15 @@ import {
 import { YoutubePlayer } from '../ReactPlayer/YoutubePlayer';
 import { useAssemblyContext } from '../../store/context';
 
-const WelcomeVideo: FC = () => {
-  const { state } = useAssemblyContext();
-  const { introMediaUrl } = state.event;
-
-  return <YoutubePlayer url={introMediaUrl} />;
-};
-
 export const Welcome: FC = () => {
   const { state } = useAssemblyContext();
-  const { introduction } = state.event;
+  const { introduction, introMediaUrl } = state.event;
   const { generatedContents } = state;
   const summary = generatedContents[0];
 
   return (
     <WelcomeContainerStyle>
-      <WelcomeVideo />
+      <YoutubePlayer url={introMediaUrl} />
       <WelcomeTitleStyle>{introduction}</WelcomeTitleStyle>
       <WelcomeIAStyle>
         {i18n.t('global.ia')}

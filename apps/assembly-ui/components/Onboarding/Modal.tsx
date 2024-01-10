@@ -23,7 +23,6 @@ export const OnboardingModal: FC = () => {
     setIsOpen(false);
   };
 
-  // console warning : (React-Modal: Cannot register modal instance that's already open) only in dev, cause by StrictMode, no impact
   return (
     <ReactModal
       isOpen={isOpen}
