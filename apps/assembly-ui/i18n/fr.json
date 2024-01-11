@@ -94,5 +94,10 @@
   },
   "convention": {
     "resume": "Résumé de la Convention"
+  },
+  "error": {
+    "not_found": "404",
+    "no_page": "Nous ne parvenons pas à trouver la page que vous cherchez.",
+    "back": "Revenir en arrière"
   }
 }

@@ -24,7 +24,7 @@ const Buttons: FC<ButtonsProps> = ({ title, value, handleClick }) => {
   const { isStreaming } = state.feed;
 
   return (
-    <SuggestionsButtonsListStyle key={value}>
+    <SuggestionsButtonsListStyle>
       <SuggestionsButtonsStyle
         type="button"
         onClick={handleClick}
@@ -80,6 +80,7 @@ export const Suggestions: FC = () => {
           <UnstyledListStyle className="glider-track">
             {suggestions.map((suggestion: TermQueryType) => (
               <Buttons
+                key={suggestion.value}
                 title={suggestion.title}
                 value={suggestion.value}
                 handleClick={() => handleSuggestionQuestion(suggestion.value)}
