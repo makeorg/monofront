@@ -19,9 +19,9 @@ The widget cannot be embedded in an email.
   <title>Example page</title>
   <body>
     <div>
-        <!-- Start Widget integratioon -->
+        <!-- Start Widget integration -->
         <iframe frameborder="0" scrolling="no" referrerpolicy="no-referrer-when-downgrade" width="100%" height="550" style="display: block; max-width: 635px; margin: 0 auto; min-height: 550px" src="https://widget.make.org/?questionSlug=demo-make&amp;source=demo-make&amp;country=FR&amp;language=fr&ampwidgetId=5489a6fb-fa5c-4bfa-b973-b42cba07720e&amp;hash=MjAyMy0xMi0xOVQxNDo1MzowOC42NTRa-ea7d61c029b7c2267da6b19745697bfc9cb122c834130822e493b11086199a8857751f691da03597a1e6aac5a19cfa3d3a4012dd58c82cbe05cf954f814492d6"></iframe>
-        <!-- End Widget integratioon -->
+        <!-- End Widget integration -->
     </div>
   </body>
 </head>
@@ -56,9 +56,9 @@ The widget is *cookie less*.
 
 Widget Authentication is based on the Oauth2 protocol with a token transmitted in the Authorization header.
 
-## troubleshooting
+## Troubleshooting
 
-### CORS consideration
+### CORS
 
 Ensure that your security definitions allows the usage of the make.org iframe.
 
