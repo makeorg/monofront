@@ -3,7 +3,7 @@ import i18n from 'i18next';
 import ReactModal from 'react-modal';
 import { lockBody, unlockBody } from '@make.org/utils/helpers/styled';
 import useOnClickOutside from '@make.org/utils/hooks/useOnClickOutside';
-import { SidebarLogo } from '../../assets/SidebarSimple';
+import { SidebarCloseLogo } from '../../assets/sidebarclose';
 import { SidebarContent } from './Content';
 import {
   SidebarContentStyle,
@@ -56,7 +56,7 @@ export const SidebarModal: FC<Props> = ({ open, close }) => {
             onClick={handleClose}
             type="button"
           >
-            <SidebarLogo />
+            <SidebarCloseLogo />
           </SidebarCloseStyle>
         </SidebarTitleCloseStyle>
         <SidebarContent />

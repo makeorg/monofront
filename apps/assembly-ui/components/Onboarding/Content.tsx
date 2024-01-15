@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import i18n from 'i18next';
-import resume from '../../assets/PromptSuggerex2.png';
-import theme from '../../assets/PP_Thematiquex2.png';
+import resume from '../../assets/Group 6.png';
+import theme from '../../assets/Group 74.png';
 import video from '../../assets/Sourcesx2.png';
 import {
   OnboardingTitleStyle,
@@ -32,21 +32,21 @@ export const OnboardingContent: FC = () => {
           </OnboardingTextStyle>
         </OnboardingBlockStyle>
         <OnboardingBlockStyle>
-          <OnboardingImgStyle src={theme} alt="Logo" />
-          <OnboardingSubTitleStyle>
-            {i18n.t('modal.explore')}
-          </OnboardingSubTitleStyle>
-          <OnboardingTextStyle>
-            {i18n.t('modal.exploreText')}
-          </OnboardingTextStyle>
-        </OnboardingBlockStyle>
-        <OnboardingBlockStyle>
           <OnboardingImgStyle src={video} alt="Logo" />
           <OnboardingSubTitleStyle>
             {i18n.t('modal.sources')}
           </OnboardingSubTitleStyle>
           <OnboardingTextStyle>
             {i18n.t('modal.sourcesText')}
+          </OnboardingTextStyle>
+        </OnboardingBlockStyle>
+        <OnboardingBlockStyle>
+          <OnboardingImgStyle src={theme} alt="Logo" />
+          <OnboardingSubTitleStyle>
+            {i18n.t('modal.explore')}
+          </OnboardingSubTitleStyle>
+          <OnboardingTextStyle>
+            {i18n.t('modal.exploreText')}
           </OnboardingTextStyle>
         </OnboardingBlockStyle>
       </OnboardingBlocksContainerStyle>

@@ -9,7 +9,7 @@ export const SidebarContentStyle = styled.div`
   height: 100%;
   position: relative;
   display: flex;
-  gap: 30px;
+  gap: 50px;
   flex-direction: column;
   outline: none;
   padding: ${spacings.m};

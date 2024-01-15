@@ -13,16 +13,19 @@ import { useAssemblyContext } from '../../store/context';
 
 const linkPanoramicArray = [
   {
-    title: 'Possibilités et limites d’Echo',
+    title: 'Politique de données',
     url: '#',
+    redirect: false,
   },
   {
-    title: 'Intégrité et éthique de l’I.A.',
+    title: 'Gestion des cookies',
     url: '#',
+    redirect: false,
   },
   {
-    title: 'En savoir plus sur Make.org',
-    url: '#',
+    title: 'À propos de Make.org',
+    url: 'https://make.org/FR',
+    redirect: true,
   },
 ];
 
@@ -56,9 +59,19 @@ export const SidebarContent: FC = () => {
         <SidebarContentListStyle>
           {linkPanoramicArray.map(link => (
             <SidebarContentListItemStyle key={link.title}>
-              <SidebarContentLinkStyle href={link.url}>
-                {link.title}
-              </SidebarContentLinkStyle>
+              {link.redirect ? (
+                <SidebarContentLinkStyle
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener"
+                >
+                  {link.title}
+                </SidebarContentLinkStyle>
+              ) : (
+                <SidebarContentLinkStyle href={link.url}>
+                  {link.title}
+                </SidebarContentLinkStyle>
+              )}
             </SidebarContentListItemStyle>
           ))}
         </SidebarContentListStyle>

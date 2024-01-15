@@ -52,7 +52,7 @@ export const Feed: FC = () => {
       {maxHistory && <HistoryLimit />}
       {items.map(item => (
         <div role="article" key={item.id} id={item.id}>
-          <Question question={item.question} />
+          <Question question={item.question} mode={item.mode} />
           <Answer item={item} />
         </div>
       ))}

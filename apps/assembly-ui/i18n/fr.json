@@ -31,12 +31,12 @@
   "modal": {
     "closeLabel": "Fermer la fenêtre de dialogue",
     "discover": "Découvrir",
-    "suggestion": "Laissez-vous guider par nos requête suggérée",
-    "suggestionText": "Nous avons sélectionné les requêtes qui pourraient le plus vous intéressé pour prendre en main l’outil, n’hésitez pas à les utiliser !",
-    "explore": "Explorer les débats par thématiques",
-    "exploreText": "Echo vous permet de trouver rapidement les sujets qui vous intéresse et sur lesquels vous souhaitez réagir.",
+    "suggestion": "Posez vos questions, l’intelligence artificielle (IA) vous répond",
+    "suggestionText": "Une réponse instantanée à toutes vos interrogations.",
+    "explore": "Explorez les contenus par thématiques",
+    "exploreText": "Une recherche approfondie sur les sujets qui vous intéressent.",
     "sources": "Accéder à des sources vérifiées",
-    "sourcesText": "Pour vous assurer de la pertinence des réponses, vous pouvez retrouver les sources"
+    "sourcesText": "Un affichage des sources qui ont alimentées chaque réponse de l’intelligence artificielle (IA)."
   },
   "theme": "La Convention citoyenne par thématique :",
   "themes": [
@@ -54,32 +54,32 @@
     "A quoi ça sert de désigner une personne de confiance ?"
   ],
   "prompt": {
-    "request": "Saisissez une requête",
     "submit": "Envoyer",
     "caution": "MarIA.ne peut afficher des informations inexactes ou offensantes qui ne représentent pas les opinions du CESE. Charte Éthique IA Make.org",
     "themeAnswer": "Résumés des thématiques générés par IA :",
-    "warning": "Cette intelligence artificielle peut faire des erreurs. N’hésitez pas à vérifier les informations importantes.",
+    "warning": "La réponse, générée par une IA à partir de sources vérifiées, peut présenter des approximations.",
     "me": "Moi",
     "themes": "Thématiques",
     "themesDiscover": "Découvrir l’ensemble des thématiques",
     "cancel": "Annuler",
     "disabled": "Bouton désactivé",
-    "request_send": "Envoyer une requête"
+    "request_send": "Poser une question à l’IA"
   },
   "feed": {
-    "sources": "Voici mes sources :",
+    "sources": "Cette réponse est sourcée à partir des éléments suivants :",
     "hyperlinks_title": "Pour compléter ses connaissances :",
     "detailed_response": "Accéder à la réponse détaillée",
     "document_sources": "Accéder à la réponse provenant des documents certifiés",
     "page": "page ",
     "previous_answer": "Vous cherchez vos questions précédentes ?",
     "archive": "Nous n'archivons que les 5 dernières questions que vous posez.",
-    "retrieve": "Si vous voulez retrouver vos précédentes questions, vous pouvez simplement la reposer !"
+    "retrieve": "Si vous voulez retrouver vos précédentes questions, vous pouvez simplement la reposer !",
+    "answer_expert": "Puis-je accéder à la réponse détaillée sur : ",
+    "answer_document": "Puis-je accéder à la réponse provenant des documents certifiés sur : "
   },
   "sidebar": {
     "explore": "Explorer",
     "exp": "Une expérience imaginée par",
-    "know_more": "En savoir plus sur la consultation",
     "panoramic": "En savoir plus sur Panoramic"
   },
   "transcript": {
