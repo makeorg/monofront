@@ -33,7 +33,7 @@ export const Welcome: FC = () => {
         {summary && (
           <WelcomeContentBlockContainerStyle>
             <WelcomeContentBlockTitleStyle>
-              {summary.name}
+              {summary.title}
             </WelcomeContentBlockTitleStyle>
             <WelcomeContentTextStyle>{summary.content}</WelcomeContentTextStyle>
           </WelcomeContentBlockContainerStyle>

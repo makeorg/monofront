@@ -56,7 +56,7 @@
   "prompt": {
     "submit": "Envoyer",
     "caution": "MarIA.ne peut afficher des informations inexactes ou offensantes qui ne représentent pas les opinions du CESE. Charte Éthique IA Make.org",
-    "themeAnswer": "Résumés des thématiques générés par IA :",
+    "themeAnswer": "Résumés des thématiques générés par l'IA :",
     "warning": "La réponse, générée par une IA à partir de sources vérifiées, peut présenter des approximations.",
     "me": "Moi",
     "themes": "Thématiques",

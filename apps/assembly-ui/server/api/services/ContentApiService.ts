@@ -34,11 +34,17 @@ export class ContentApiService {
 
   static getTermQueries(
     eventId: string,
+    _start?: number,
+    _end?: number,
     headers?: Record<string, string>
   ): Promise<void | AxiosResponse> {
     return ContentApi.callApi(TERM_QUERIES_PATH.replace(':eventId', eventId), {
       method: 'GET',
       headers,
+      params: {
+        _start,
+        _end,
+      },
     });
   }
 

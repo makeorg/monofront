@@ -153,7 +153,7 @@ const getTermQueries = async (
   }
 
   try {
-    const response = await ContentApiService.getTermQueries(eventId);
+    const response = await ContentApiService.getTermQueries(eventId, 0, 30);
     const termQueries: TermQueryType[] = [];
 
     if (!response || !response.data) {
