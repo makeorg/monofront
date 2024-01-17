@@ -1,7 +1,13 @@
 import React, { FC, useState, useEffect } from 'react';
 import { env } from '@make.org/assets/env';
+import i18n from 'i18next';
 import ReactMarkdown from 'react-markdown';
-import { ContentStyle, ContentIconStyle, AnswerContainerStyle } from './style';
+import {
+  ContentStyle,
+  ContentIconStyle,
+  AnswerContainerStyle,
+  SourcesTitleStyle,
+} from './style';
 import { SourcesMobile } from './SourcesMobile';
 import { Sources } from './Sources';
 import { FeedItemType, ChunkType } from '../../types';
@@ -32,7 +38,14 @@ export const Answer: FC<Props> = ({ item }) => {
       <AnswerContainerStyle>
         <ReactMarkdown>{item.text}</ReactMarkdown>
         {item.displayActions && <Actions item={item} />}
-        {item.chunks && item.chunks.length > 0 && sources(item.chunks)}
+        {item.chunks && item.chunks.length > 0 && (
+          <>
+            <SourcesTitleStyle>
+              {i18n.t('feed.sources')}&nbsp;:
+            </SourcesTitleStyle>
+            {sources(item.chunks)}
+          </>
+        )}
       </AnswerContainerStyle>
     </ContentStyle>
   );

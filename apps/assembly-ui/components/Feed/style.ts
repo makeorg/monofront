@@ -59,7 +59,7 @@ export const ContentStyle = styled.div`
   border-radius: 10px;
   padding: ${spacings.m};
   font-size: 12px;
-  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     flex-direction: row;
   }
 `;

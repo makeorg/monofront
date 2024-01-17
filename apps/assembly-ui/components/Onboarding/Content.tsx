@@ -10,6 +10,7 @@ import {
   OnboardingContentContainerStyle,
   OnboardingBlocksContainerStyle,
   OnboardingBlockStyle,
+  OnboardingImgContainerStyle,
   OnboardingImgStyle,
 } from './style';
 import { useAssemblyContext } from '../../store/context';
@@ -23,7 +24,9 @@ export const OnboardingContent: FC = () => {
       <OnboardingTitleStyle>{introduction}</OnboardingTitleStyle>
       <OnboardingBlocksContainerStyle>
         <OnboardingBlockStyle>
-          <OnboardingImgStyle src={resume} alt="Logo" />
+          <OnboardingImgContainerStyle>
+            <OnboardingImgStyle src={resume} alt="" />
+          </OnboardingImgContainerStyle>
           <OnboardingSubTitleStyle>
             {i18n.t('modal.suggestion')}
           </OnboardingSubTitleStyle>
@@ -32,7 +35,9 @@ export const OnboardingContent: FC = () => {
           </OnboardingTextStyle>
         </OnboardingBlockStyle>
         <OnboardingBlockStyle>
-          <OnboardingImgStyle src={video} alt="Logo" />
+          <OnboardingImgContainerStyle>
+            <OnboardingImgStyle src={video} alt="" />
+          </OnboardingImgContainerStyle>
           <OnboardingSubTitleStyle>
             {i18n.t('modal.sources')}
           </OnboardingSubTitleStyle>
@@ -41,7 +46,9 @@ export const OnboardingContent: FC = () => {
           </OnboardingTextStyle>
         </OnboardingBlockStyle>
         <OnboardingBlockStyle>
-          <OnboardingImgStyle src={theme} alt="Logo" />
+          <OnboardingImgContainerStyle>
+            <OnboardingImgStyle src={theme} alt="" />
+          </OnboardingImgContainerStyle>
           <OnboardingSubTitleStyle>
             {i18n.t('modal.explore')}
           </OnboardingSubTitleStyle>

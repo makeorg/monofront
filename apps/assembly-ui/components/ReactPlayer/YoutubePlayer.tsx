@@ -34,7 +34,7 @@ export const YoutubePlayer: React.FC<ReactPlayerProps> = props => {
         controls
         light
         onReady={onReady}
-        // playing={seek && true}
+        playing={seek && true}
         onError={(error: any, data?: any, hlsInstance?: any, hlsGlobal?: any) =>
           console.log(error, data, hlsInstance, hlsGlobal)
         }

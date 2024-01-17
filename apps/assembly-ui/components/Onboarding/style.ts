@@ -92,10 +92,17 @@ export const OnboardingBlockStyle = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  flex-basis: 250px;
+`;
+
+export const OnboardingImgContainerStyle = styled.div`
+  display: flex;
+  align-items: flex-end;
+  height: 100px;
+  width: 100%;
+  max-width: 270px;
 `;
 
 export const OnboardingImgStyle = styled.img`
-  width: 100%;
-  max-width: 360px;
+  max-width: 100%;
+  height: auto;
 `;

@@ -56,7 +56,7 @@
   "prompt": {
     "submit": "Envoyer",
     "caution": "MarIA.ne peut afficher des informations inexactes ou offensantes qui ne représentent pas les opinions du CESE. Charte Éthique IA Make.org",
-    "themeAnswer": "Résumés des thématiques générés par l'IA :",
+    "themeAnswer": "Résumés des thématiques générés par l'IA",
     "warning": "La réponse, générée par une IA à partir de sources vérifiées, peut présenter des approximations.",
     "me": "Moi",
     "themes": "Thématiques",
@@ -66,7 +66,7 @@
     "request_send": "Poser une question à l’IA"
   },
   "feed": {
-    "sources": "Cette réponse est sourcée à partir des éléments suivants :",
+    "sources": "Cette réponse est sourcée à partir des éléments suivants",
     "hyperlinks_title": "Pour compléter ses connaissances :",
     "detailed_response": "Accéder à la réponse détaillée",
     "document_sources": "Accéder à la réponse provenant des documents certifiés",

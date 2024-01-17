@@ -10,7 +10,6 @@ import {
   SourcesMediaTitleStyle,
   SourcesMediaTextStyle,
   SourcesContentStyle,
-  SourcesTitleStyle,
   SourcesTruncatedTextStyle,
   DocumentLogo,
   VideoLogo,
@@ -21,7 +20,7 @@ const DocumentMeta: FC<{ chunk: ChunkType }> = ({ chunk }) => {
   const { document_source_title, page_number } = chunk;
 
   return (
-    <SourcesMediaContentStyle key={document_source_title}>
+    <SourcesMediaContentStyle>
       <SourcesMediaDocumentLinkStyle
         href={`${chunk.document_source_url}#page=${chunk.page_number}`}
         target="_blank"
@@ -50,7 +49,7 @@ const TranscriptMeta: FC<{ chunk: ChunkType }> = ({ chunk }) => {
     speech_time,
   } = chunk;
   return (
-    <SourcesMediaContentStyle key={document_source_title}>
+    <SourcesMediaContentStyle>
       <YoutubePlayer url={document_source_url} seek={speech_time} small />
       <SourcesMediaTextContainerStyle>
         <SourcesMediaTitleStyle>
@@ -71,7 +70,6 @@ export const Sources: FC<{
   chunks: ChunkType[];
 }> = ({ chunks }) => (
   <SourcesContainerStyle>
-    <SourcesTitleStyle>{i18n.t('feed.sources')}</SourcesTitleStyle>
     <SourcesContentStyle>
       {chunks.map((chunk, index) =>
         chunk.document_source_type === SOURCE_TYPE_VIDEO ? (

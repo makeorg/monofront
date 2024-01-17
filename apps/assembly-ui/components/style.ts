@@ -38,7 +38,7 @@ export const UIModalStyle = createGlobalStyle`
 
     @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
       min-height: 540px;
-      max-width: 940px;
+      max-width: 1040px;
       max-height: 80%;
       height: auto;
       border-radius: 10px;

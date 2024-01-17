@@ -1,5 +1,6 @@
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
+import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 
@@ -78,6 +79,9 @@ export const SuggestionsContainerStyle = styled.div`
 `;
 
 export const SuggestionsButtonsListStyle = styled.li`
+  min-width: 240px;
+  display: flex;
+  align-items: center;
   border-radius: 10px;
   margin: 0 5px;
   border: 1px solid #0000002b;
@@ -99,4 +103,7 @@ export const SuggestionsButtonsStyle = styled.button`
   width: 100%;
   background-color: white;
   border-radius: ${spacings.s};
+  font-size: ${typography.FontSize.Text.Bastille};
+  text-align: left;
+  color: rgba(87, 87, 87, 1);
 `;
