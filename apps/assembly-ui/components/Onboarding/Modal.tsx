@@ -1,7 +1,9 @@
 import React, { FC, useState, useEffect } from 'react';
 import i18n from 'i18next';
 import ReactModal from 'react-modal';
+import { parse } from 'query-string';
 import { lockBody, unlockBody } from '@make.org/utils/helpers/styled';
+import { useLocation } from 'react-router';
 import { OnboardingContent } from './Content';
 import {
   OnboardingCloseStyle,
@@ -12,7 +14,11 @@ import {
 ReactModal.setAppElement('#app');
 
 export const OnboardingModal: FC = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(true);
+  const { search } = useLocation();
+  const urlQueryParams = parse(search);
+  const { displayonboarding } = urlQueryParams;
+  const showOnboarding = displayonboarding !== 'false';
+  const [isOpen, setIsOpen] = useState<boolean>(showOnboarding);
 
   useEffect(() => {
     lockBody();

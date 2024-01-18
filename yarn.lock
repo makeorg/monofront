@@ -3317,6 +3317,7 @@ __metadata:
     node-cache: ^5.1.2
     object-hash: ^3.0.0
     pm2: ~5.2.2
+    query-string: ^7.1.1
     react: ^18.2.0
     react-cookie: ^4.1.1
     react-dom: ^18.2.0
