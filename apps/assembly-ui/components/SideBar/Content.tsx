@@ -1,6 +1,11 @@
 import React, { FC } from 'react';
 import i18n from 'i18next';
 import {
+  ROUTE_ASSEMBLY_PRIVACY_POLICY,
+  ROUTE_ASSEMBLY_COOKIES,
+  ROUTE_ASSEMBLY_LEGAL,
+} from '../../utils/routes';
+import {
   SidebarContentContainerStyle,
   SidebarContentSubtitleStyle,
   SidebarContentBlockStyle,
@@ -14,12 +19,17 @@ import { useAssemblyContext } from '../../store/context';
 const linkPanoramicArray = [
   {
     title: 'Politique de données',
-    url: '#',
+    url: ROUTE_ASSEMBLY_PRIVACY_POLICY,
     redirect: false,
   },
   {
     title: 'Gestion des cookies',
-    url: '#',
+    url: ROUTE_ASSEMBLY_COOKIES,
+    redirect: false,
+  },
+  {
+    title: 'Mentions légales',
+    url: ROUTE_ASSEMBLY_LEGAL,
     redirect: false,
   },
   {

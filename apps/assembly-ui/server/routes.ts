@@ -6,6 +6,9 @@ import {
   // ROUTE_ASSEMBLY_CUSTOMER,
   ROUTE_ASSEMBLY_EVENT,
   ROUTE_ASSEMBLY_NOT_FOUND,
+  ROUTE_ASSEMBLY_PRIVACY_POLICY,
+  ROUTE_ASSEMBLY_COOKIES,
+  ROUTE_ASSEMBLY_LEGAL,
 } from '../utils/routes';
 import { defaultRoute } from './ssr/defaultRoute';
 import { eventRoute } from './ssr/eventRoute';
@@ -71,6 +74,9 @@ export const initRoutes = (app: Application): void => {
   // app.get(ROUTE_ASSEMBLY_ROOT, defaultRoute);
   app.get(ROUTE_ASSEMBLY_EVENT, eventRoute);
   app.get(ROUTE_ASSEMBLY_NOT_FOUND, defaultRoute);
+  app.get(ROUTE_ASSEMBLY_PRIVACY_POLICY, defaultRoute);
+  app.get(ROUTE_ASSEMBLY_LEGAL, defaultRoute);
+  app.get(ROUTE_ASSEMBLY_COOKIES, defaultRoute);
 
   // not found
   app.get('*', (req: Request, res: Response) => {
