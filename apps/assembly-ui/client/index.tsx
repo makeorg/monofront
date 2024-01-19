@@ -18,6 +18,7 @@ import { initAssemblyDevState } from '../store/devState';
 declare global {
   interface Window {
     ASSEMBLY_STATE: AssemblyStateType;
+    COOKIE_FIRST_TOKEN: string;
   }
 }
 

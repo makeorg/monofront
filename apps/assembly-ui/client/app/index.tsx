@@ -4,6 +4,7 @@ import { AppContent, UIModalStyle } from '../../components/style';
 import { Routes } from './Routes';
 import { Header } from '../../components/Header';
 import { env } from '../../utils/env';
+import { useAssemblyContext } from '../../store/context';
 
 const CookieFirst = ReactCookieFirst as FC<{
   apiKey: string;
@@ -21,10 +22,17 @@ const App: FC = () => (
   </>
 );
 
+const cookieFirstToken = env.isClientSide()
+  ? window.COOKIE_FIRST_TOKEN
+  : env.cookieFirstToken();
+
 export const AppContainer: FC = () => {
-  if (!env.isDev()) {
+  const { state } = useAssemblyContext();
+  const { language } = state.event;
+
+  if (!env.isDev() && cookieFirstToken) {
     return (
-      <CookieFirst apiKey={env.cookieFirstToken() || ''} lang="fr">
+      <CookieFirst apiKey={cookieFirstToken} lang={language}>
         <App />
       </CookieFirst>
     );
