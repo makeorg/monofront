@@ -1,7 +1,15 @@
-import React, { useRef, useCallback, useEffect } from 'react';
+import React, {
+  useRef,
+  useCallback,
+  useEffect,
+  useState,
+  Dispatch,
+  SetStateAction,
+} from 'react';
 import _ReactPlayer, { ReactPlayerProps } from 'react-player';
 import i18n from 'i18next';
 import { useCookieFirst } from 'react-cookiefirst';
+import Cookies from 'universal-cookie';
 import {
   CookieButtonStyle,
   ReactPlayerContainer,
@@ -14,11 +22,21 @@ const toSeconds = (time: any) => {
   return hours * 3600 + minutes * 60 + seconds;
 };
 
+const checkConsent = (
+  setFunctionalCookies: Dispatch<SetStateAction<boolean>>
+) => {
+  const cookies = new Cookies();
+  const consentCookie = cookies.get('cookiefirst-consent');
+
+  return setFunctionalCookies(consentCookie?.functional);
+};
+
 export const YoutubePlayer: React.FC<ReactPlayerProps> = props => {
   const { url, seek, small } = props;
   const playerRef = useRef<_ReactPlayer>(null);
   const ReactPlayer = _ReactPlayer as unknown as React.FC<ReactPlayerProps>;
-  const { consent, openPanel } = useCookieFirst();
+  const { acceptCategory } = useCookieFirst();
+  const [functionalCookies, setFunctionalCookies] = useState(true);
 
   const onReady = useCallback(() => {
     if (seek) {
@@ -32,16 +50,19 @@ export const YoutubePlayer: React.FC<ReactPlayerProps> = props => {
     }
   }, [seek]);
 
-  if (!consent?.functional && !env.isDev()) {
+  if (!functionalCookies && !env.isDev()) {
     return (
       <ReactPlayerContainer className={small ? 'small cookies' : 'cookies'}>
-        {i18n.t('cookies.youtube')}
+        {i18n.t('cookies.functional')}
         <CookieButtonStyle
           className={small && 'small'}
           type="button"
-          onClick={() => openPanel()}
+          onClick={() => {
+            acceptCategory('functional');
+            setFunctionalCookies(true);
+          }}
         >
-          {i18n.t('cookies.update_action')}
+          {i18n.t('cookies.accept_functional')}
         </CookieButtonStyle>
       </ReactPlayerContainer>
     );
@@ -70,6 +91,7 @@ export const YoutubePlayer: React.FC<ReactPlayerProps> = props => {
             },
           },
         }}
+        onClickPreview={() => checkConsent(setFunctionalCookies)}
       />
     </ReactPlayerContainer>
   );

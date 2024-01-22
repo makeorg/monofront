@@ -40,17 +40,18 @@ export const ReactPlayerPlayButtonStyle = styled.button`
 
 export const CookieButtonStyle = styled.button`
   font-size: ${typography.FontSize.Text.RueDeLappe};
-  color: rgba(76, 65, 171, 1);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: ${spacings.xs} ${spacings.s};
+  padding: ${spacings.s} ${spacings.m};
   margin-top: ${spacings.s};
   height: fit-content;
   width: fit-content;
-  border: 1px solid rgba(76, 65, 171, 1);
   border-radius: 4px;
-  background-color: white;
+  color: white;
+  border-style: none;
+  background-color: #4c41ab;
+  margin: ${spacings.s} auto;
   &.small {
     font-size: 10px;
   }

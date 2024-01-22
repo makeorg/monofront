@@ -101,7 +101,7 @@
     "back": "Revenir en arrière"
   },
   "cookies": {
-    "youtube": "Youtube est désactivé",
-    "update_action": "Modifier mes choix"
+    "functional": "Afin de visionner la vidéo, veuillez accepter les cookies fonctionnels.",
+    "accept_functional": "Accepter les cookies fonctionnels"
   }
 }
