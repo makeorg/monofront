@@ -20,17 +20,17 @@ const linkPanoramicArray = [
   {
     title: 'Politique de données',
     url: ROUTE_ASSEMBLY_PRIVACY_POLICY,
-    redirect: false,
+    redirect: true,
   },
   {
     title: 'Gestion des cookies',
     url: ROUTE_ASSEMBLY_COOKIES,
-    redirect: false,
+    redirect: true,
   },
   {
     title: 'Mentions légales',
     url: ROUTE_ASSEMBLY_LEGAL,
-    redirect: false,
+    redirect: true,
   },
   {
     title: 'À propos de Make.org',
