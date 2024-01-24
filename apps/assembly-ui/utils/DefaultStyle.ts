@@ -85,4 +85,8 @@ export const DefaultStylesheet = createGlobalStyle`
     -webkit-appearance: none;
   }
 
+  table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
 `;

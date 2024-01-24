@@ -107,23 +107,42 @@ export const LegalPagesMaintTitleStyle = styled.h1`
 export const LegalPagesSubtitleStyle = styled.h2`
   font-size: ${typography.FontSize.Title.IleDeFrance};
   font-weight: 600;
+  margin: 30px 0;
+`;
+
+export const LegalPagesNumberTextContainerStyle = styled.div`
+  display: flex;
+  gap: 30px;
+  flex-wrap: no-wrap;
+`;
+
+export const LegalPagesDateStyle = styled.p`
+  font-size: ${typography.FontSize.Text.PetiteCouronne};
 `;
 
 export const LegalPagesTextStyle = styled.p`
-  font-size: ${typography.FontSize.Text.Bastille};
+  font-size: ${typography.FontSize.Text.Arrondissement};
   margin-bottom: 15px;
 `;
 
 export const LegalPagesTableHeaderStyle = styled.th`
-  font-size: ${typography.FontSize.Text.Bastille};
+  font-size: ${typography.FontSize.Text.Arrondissement};
   font-weight: 600;
+  text-align: left;
+  padding: 10px;
 `;
 
 export const LegalPagesTableTextStyle = styled.td`
-  font-size: ${typography.FontSize.Text.Bastille};
+  font-size: ${typography.FontSize.Text.Arrondissement};
+  padding: 10px;
 `;
 
-export const LegalPagesNumberedArticleStyle = styled.div`
-  display: flex;
-  gap: 30px;
+export const LegalPagesNumberedArticleStyle = styled.li`
+  font-size: ${typography.FontSize.Text.Arrondissement};
+  margin-bottom: 15px;
+  padding-left: 30px;
+`;
+
+export const LegalPagesListStyle = styled.li`
+  font-size: ${typography.FontSize.Text.Arrondissement};
 `;

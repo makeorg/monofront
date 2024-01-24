@@ -53,6 +53,9 @@ export const HeaderLogosContainerStyle = styled.div`
   @media (min-width: 1260px) {
     margin: auto;
   }
+  &.end {
+    justify-content: flex-end;
+  }
 `;
 
 export const HeaderLogoMakeStyle = styled.div`

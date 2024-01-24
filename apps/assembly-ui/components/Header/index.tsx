@@ -31,14 +31,16 @@ export const Header: FC = () => {
         <SidebarModal open={openSidebar} close={() => setOpenSidebar(false)} />
       )}
 
-      <HeaderLogosContainerStyle>
-        <HeaderButton
-          type="button"
-          title={i18n.t('header.top')}
-          onClick={scrollToTop}
-        >
-          <HeaderImgStyle src={logoUrl} alt="" />
-        </HeaderButton>
+      <HeaderLogosContainerStyle className={!logoUrl ? 'end' : ''}>
+        {logoUrl && (
+          <HeaderButton
+            type="button"
+            title={i18n.t('header.top')}
+            onClick={scrollToTop}
+          >
+            <HeaderImgStyle src={logoUrl} alt="" />
+          </HeaderButton>
+        )}
         <HeaderLogoMakeStyle>
           <HeaderBetaStyle>{i18n.t('header.beta')}</HeaderBetaStyle>
           <HeaderMakeStyle> {i18n.t('header.make')}</HeaderMakeStyle>
