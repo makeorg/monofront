@@ -35,6 +35,7 @@ export const SidebarModal: FC<Props> = ({ open, close }) => {
 
   const handleClickOutside = () => {
     if (open) {
+      unlockBody();
       close();
     }
   };

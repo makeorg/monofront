@@ -135,6 +135,7 @@ export const LegalPagesTableHeaderStyle = styled.th`
 export const LegalPagesTableTextStyle = styled.td`
   font-size: ${typography.FontSize.Text.Arrondissement};
   padding: 10px;
+  vertical-align: top;
 `;
 
 export const LegalPagesNumberedArticleStyle = styled.li`
