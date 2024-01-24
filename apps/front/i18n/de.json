@@ -119,7 +119,7 @@
       "mail_confirmation": "um die Gültigkeit deines Kontos zu gewährleisten. Klicke auf den Aktivierungslink, der dir an diese Adresse geschickt wurde : {{mail}}",
       "onboarding": "Gib deine Meinung zu gesellschaftlichen Themen ab, die dir am Herzen liegen, indem du an unseren Bürgerkonsultationen teilnimmst.",
       "cta": "Take part in consultations",
-      "cta_access": "Ich rufe die Konsultation auf",
+      "cta_access": "ich rufe die Konsultation auf",
       "optin_cgu_title": "Schließe deine Anmeldung",
       "optin_cgu_subtitle": "mit wenigen Klicks ab"
     },
@@ -370,7 +370,7 @@
   "final_card": {
     "title": "Danke, dass du dir die Zeit genommen hast, dich zu den Vorschlägen zu äußern.",
     "description": "Stimme für weitere Vorschläge ab und hilf uns dabei, die wichtigsten Themen zu identifizieren.",
-    "link_text": "Ich rufe die Konsultation auf",
+    "link_text": "Alle Vorschläge entdecken",
     "continue": "Weiter abstimmen",
     "register": {
       "description": "Wie kann ich die Ergebnisse verfolgen?",
