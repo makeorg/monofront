@@ -111,7 +111,7 @@ Feature: Register
     Given I go to "german homepage" with a browser language "de"
     When I display the register panel
     And I register with email "emailValue@example.com" and password "TestMake1!"
-    Then I see "Registrieren bei E-Mail (2/2)" in "register-panel-title" container
+    Then I see "Registrieren mit E-Mail (2/2)" in "register-panel-title" container
     When I register with an invalid postal code
     Then The field "postalcode" should be invalid
     When I clear the "firstname" field
@@ -124,7 +124,7 @@ Feature: Register
     Given I go to "german homepage" with a browser language "de"
     When I display the register panel
     And I register with email "emailValue@example.com" and password "TestMake1!"
-    Then I see "Registrieren bei E-Mail (2/2)" in "register-panel-title" container
+    Then I see "Registrieren mit E-Mail (2/2)" in "register-panel-title" container
     When I register with firstname "testfirstname" and age "37" and postal code "" and I accept the data policy before submitting
     Then I see "Herzlich willkommen testfirstname !" in "register-confirmation-panel-title" container
 
