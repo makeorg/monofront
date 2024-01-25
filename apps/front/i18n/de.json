@@ -390,7 +390,7 @@
       "regular": "Zurzeit gibt es keine neuen Vorschläge.",
       "special": "Stimme für weitere Vorschläge ab und hilf uns dabei, die wichtigsten Themen zu identifizieren."
     },
-    "link_text": "Ich rufe die Konsultation auf",
+    "link_text": "Alle Vorschläge entdecken",
     "sharing": "Oder gib dieser Konsultation mehr Reichweite, indem du sie verbreitest."
   },
   "push_proposal_card": {
@@ -408,7 +408,7 @@
   "special_final_card": {
     "title": "Vielen Dank für deine Stimmabgaben!",
     "subtitle": "Du kannst weiterhin an der Konsultation teilnehmen",
-    "cta_text": "Ich rufe die Konsultation auf",
+    "cta_text": "Alle Vorschläge entdecken",
     "title_binding_mode": "Vielen Dank, dass Sie auf die Vorschläge reagiert und einige Informationen mit uns geteilt haben!"
   },
   "proposal_submit": {
@@ -448,7 +448,7 @@
       "activate": "Bestätige deine E-Mail-Adresse mit einem Klick",
       "link": ", um die Gültigkeit deines Kontos zu gewährleisten. Klicke auf den Aktivierungslink, der dir an diese Adresse geschickt wurde : {{mail}}. ",
       "question": "Du hast noch Fragen? Kontaktiere uns unter : ",
-      "consultation_access": "Ich rufe die Konsultation auf"
+      "consultation_access": "Alle Vorschläge entdecken"
     }
   },
   "vote": {
