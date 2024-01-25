@@ -275,7 +275,7 @@
       "card_title": "So finden Sie Ihr Abstimmungsverhalten",
       "facebook_connect": "Mit Facebook fortfahren",
       "google_connect": "Mit Google fortfahren",
-      "email_register": "Registrieren bei E-Mail",
+      "email_register": "Registrieren mit E-Mail",
       "count_register": "({{count}}/2)"
     }
   },
@@ -815,7 +815,7 @@
     },
     "participate": {
       "title": "Wie kann ich an der Konsultation teilnehmen?",
-      "description": "Wir sind überzeugt, dass jeder/jede auf seiner/ihrer Ebene zum Gemeinwohl beitragen kann. Deshalb rufen wir im Rahmen unserer Konsultationen Tausende von Bürger:innen auf, ihre Ideen und Meinungen einzubringen."
+      "description": "Wir sind überzeugt, dass jeder/jede auf seiner/ihrer Ebene zum Gemeinwohl beitragen kann. Deshalb rufen wir im Rahmen unserer Konsultationen Tausende von Bürgerinnen und Bürgern auf, ihre Ideen und Meinungen einzubringen."
     },
     "citizen_account": {
       "title": "Dein Bürgerbereich auf Make.org",
@@ -826,7 +826,7 @@
       "soon": "Demnächst",
       "submit": {
         "title": "Einen Vorschlag einreichen",
-        "description": "Teile deine Ideen mit so vielen Menschen wie möglich. Jeder Vorschlag wird geprüft, bevor er den Bürger:innen zur Abstimmung vorgelegt wird.",
+        "description": "Teile deine Ideen mit so vielen Menschen wie möglich. Jeder Vorschlag wird geprüft, bevor er den Bürgerinnen und Bürgern zur Abstimmung vorgelegt wird.",
         "button": "Ich habe eine Idee"
       },
       "interact": {
@@ -850,7 +850,7 @@
       },
       "sharing": {
         "title": "Die Konsultation teilen",
-        "description": "Deine Freund:innen haben auch Ideen und Meinungen, die wertvoll sind und gehört werden sollten. Hilf uns, dieser Konsultation mehr Reichweite zu geben, indem du sie auf deinen persönlichen Kanälen verbreitest."
+        "description": "Deine Freundinnen und Freunde haben auch Ideen und Meinungen, die wertvoll sind und gehört werden sollten. Hilf uns, dieser Konsultation mehr Reichweite zu geben, indem du sie auf deinen persönlichen Kanälen verbreitest."
       },
       "about": {
         "title": "Warum diese Konsultation?",

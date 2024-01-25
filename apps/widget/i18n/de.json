@@ -13,7 +13,7 @@
     "social_login": {
       "facebook_connect": "Mit Facebook fortfahren",
       "google_connect": "Mit Google fortfahren",
-      "email_register": "Registrieren bei E-Mail",
+      "email_register": "Registrieren mit E-Mail",
       "count_register": "({{count}}/2)"
     },
     "form": {
