@@ -63,7 +63,8 @@
     "themesDiscover": "Découvrir l’ensemble des thématiques",
     "cancel": "Annuler",
     "disabled": "Bouton désactivé",
-    "request_send": "Poser une question à l’IA"
+    "request_send": "Poser une question à l’IA",
+    "error": "Je ne suis pas en mesure de répondre à cette question. Recherchons autre chose !"
   },
   "feed": {
     "sources": "Cette réponse est sourcée à partir des éléments suivants",

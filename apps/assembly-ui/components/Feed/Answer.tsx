@@ -37,13 +37,17 @@ export const Answer: FC<Props> = ({ item }) => {
       <ContentIconStyle src={pano} alt="Logo" />
       <AnswerContainerStyle>
         <ReactMarkdown>{item.text}</ReactMarkdown>
-        {item.displayActions && <Actions item={item} />}
-        {item.chunks && item.chunks.length > 0 && (
+        {item.text.trim().length !== 0 && (
           <>
-            <SourcesTitleStyle>
-              {i18n.t('feed.sources')}&nbsp;:
-            </SourcesTitleStyle>
-            {sources(item.chunks)}
+            {item.displayActions && <Actions item={item} />}
+            {item.chunks && item.chunks.length > 0 && (
+              <>
+                <SourcesTitleStyle>
+                  {i18n.t('feed.sources')}&nbsp;:
+                </SourcesTitleStyle>
+                {sources(item.chunks)}
+              </>
+            )}
           </>
         )}
       </AnswerContainerStyle>

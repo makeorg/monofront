@@ -1,5 +1,7 @@
 import { useEffect, useState, Dispatch, SetStateAction } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import i18n from 'i18next';
+import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { useAssemblyContext } from '../../store/context';
 import { env } from '../../utils/env';
 import {
@@ -100,17 +102,22 @@ export const StreamLLM = (
       while (true) {
         // eslint-disable-next-line no-await-in-loop
         const { value, done } = await reader.read();
+        const decodedChunk = decoder.decode(value, { stream: true });
+        const objs = decodedChunk.trim().split('\r\n');
+        const result = getResults(objs);
+
         if (done) {
+          if (newAnswer.trim().length === 0) {
+            dispatch(updateItemText(uuid, i18n.t('prompt.error')));
+            dispatch(disableFeedStreaming());
+            setStartStream(false);
+            break;
+          }
           dispatch(updateItemChunks(uuid, chunks as ChunkType[]));
           dispatch(disableFeedStreaming());
           setStartStream(false);
           break;
         }
-
-        const decodedChunk = decoder.decode(value, { stream: true });
-        const objs = decodedChunk.trim().split('\r\n');
-
-        const result = getResults(objs);
 
         if (result.chunks && result.chunks.length) {
           chunks = result.chunks;
@@ -123,6 +130,10 @@ export const StreamLLM = (
         }
       }
     } catch (error: unknown) {
+      const apiServiceError = error as ApiServiceError;
+      if (apiServiceError.status === 404) {
+        dispatch(updateItemText(uuid, i18n.t('prompt.error')));
+      }
       // handle error message that will be displayed to the user
       dispatch(disableFeedStreaming());
       setStartStream(false);
