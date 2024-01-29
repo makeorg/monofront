@@ -7,6 +7,12 @@ export const DefaultStylesheet = createGlobalStyle`
   body,
   #app {
     width: 100%;
+    height: 100%;
+  }
+
+  // padding-top needed to be at the height of the header since it is fixed position
+  #app {
+    padding-top: 80px;
   }
 
   html {

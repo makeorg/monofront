@@ -7,7 +7,6 @@ import { typography } from '@make.org/designsystem/tokens/typography';
 export const AppContent = styled.div`
   position: relative;
   height: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
 `;

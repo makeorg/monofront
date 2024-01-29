@@ -5,10 +5,11 @@ import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { typography } from '@make.org/designsystem/tokens/typography';
 
 export const HeaderContainerStyle = styled.header`
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 100;
   width: 100%;
+  height: 80px;
   display: flex;
   align-items: center;
   background-color: white;
@@ -45,7 +46,6 @@ export const HeaderSvgStyle = styled.div`
 export const HeaderLogosContainerStyle = styled.div`
   display: flex;
   width: 100%;
-  margin: 0;
   padding: ${spacings.m};
   max-width: ${intToPx(Breakpoints.LargeDesktop)};
   justify-content: space-between;
