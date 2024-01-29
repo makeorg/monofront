@@ -24,7 +24,7 @@ const AssemblyDevState: AssemblyStateType = {
         url: 'https://conventioncitoyennesurlafindevie.lecese.fr/travaux',
       },
       {
-        label: 'Qui est le CESE ?',
+        label: 'Qu’est ce que le CESE ?',
         url: 'https://www.lecese.fr/decouvrir-cese/cese-en-bref',
       },
     ],

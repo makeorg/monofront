@@ -18,7 +18,7 @@ import { useAssemblyContext } from '../../store/context';
 
 const linkPanoramicArray = [
   {
-    title: 'Politique de données',
+    title: 'Politique de confidentialité',
     url: ROUTE_ASSEMBLY_PRIVACY_POLICY,
     redirect: true,
   },
@@ -76,6 +76,7 @@ export const SidebarContent: FC = () => {
                   rel="noopener"
                 >
                   {link.title}
+                  <SidebarSvgExternalStyle />
                 </SidebarContentLinkStyle>
               ) : (
                 <SidebarContentLinkStyle href={link.url}>

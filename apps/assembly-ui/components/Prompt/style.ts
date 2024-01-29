@@ -14,13 +14,8 @@ export const PromptContainerStyle = styled.div`
   z-index: 100;
   width: 100%;
   margin: auto auto 0 auto;
-  padding: ${spacings.m};
+  padding: 0 ${spacings.m} ${spacings.m} ${spacings.m};
   max-width: ${intToPx(Breakpoints.LargeDesktop)};
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 1) 15%
-  );
 `;
 
 export const PromptFormContainerStyle = styled.form`

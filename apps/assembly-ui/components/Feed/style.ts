@@ -203,6 +203,7 @@ export const ActionsButtonStyle = styled.button`
   border: 1px solid rgba(76, 65, 171, 1);
   border-radius: 4px;
   background-color: white;
+  text-align: left;
 
   &:disabled {
     ${GreyStyle};

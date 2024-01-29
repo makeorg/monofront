@@ -1,4 +1,4 @@
-import React, { FC, useState, useMemo } from 'react';
+import React, { FC, useState } from 'react';
 import { WelcomeThemesBlockStyle, WelcomeThemesButtonStyle } from './style';
 import { TRANSCRIPT } from '../Feed';
 import { disableFeedStreaming } from '../../store/feed/actions';
@@ -7,28 +7,31 @@ import { StreamLLM } from '../Prompt/Stream';
 import { useAssemblyContext } from '../../store/context';
 
 const colors = [
-  'rgba(248, 178, 188, 1)',
-  'rgba(166, 199, 234, 1)',
-  'rgba(208, 248, 248, 1)',
-  'rgba(208, 248, 248, 1)',
-  'rgba(208, 248, 248, 1)',
+  '#F8B2BC',
+  '#A6C7EA',
+  '#DFCDE5',
+  '#D0F8F8',
+  '#FFF8DC',
+  '#B5E9CD',
+  '#F8C3B2',
+  '#FADDEC',
+  '#CEEEFF',
+  '#E6E6C6',
 ];
-
-const getRandomColor = () => {
-  const randomIndex = Math.floor(Math.random() * colors.length);
-  const item = colors[randomIndex];
-
-  return item;
-};
 
 type ButtonsProps = {
   title: string;
   value: string;
   handleClick: () => void;
+  color: number;
 };
 
-export const Buttons: FC<ButtonsProps> = ({ title, value, handleClick }) => {
-  const getMemoizedColor = useMemo(() => getRandomColor(), []);
+export const Buttons: FC<ButtonsProps> = ({
+  title,
+  value,
+  handleClick,
+  color,
+}) => {
   const { state } = useAssemblyContext();
   const { isStreaming } = state.feed;
 
@@ -36,7 +39,7 @@ export const Buttons: FC<ButtonsProps> = ({ title, value, handleClick }) => {
     <WelcomeThemesButtonStyle
       key={value}
       type="button"
-      style={{ backgroundColor: getMemoizedColor }}
+      style={{ backgroundColor: `${colors[color]}` }}
       onClick={handleClick}
       disabled={isStreaming}
     >
@@ -61,12 +64,13 @@ export const Themes: FC = () => {
 
   return (
     <WelcomeThemesBlockStyle>
-      {themes.map(theme => (
+      {themes.map((theme, index) => (
         <Buttons
           key={theme.value}
           handleClick={() => handleThemeQuestion(theme.value)}
           value={theme.value}
           title={theme.title}
+          color={index}
         />
       ))}
     </WelcomeThemesBlockStyle>

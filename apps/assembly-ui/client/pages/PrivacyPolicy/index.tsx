@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { ROUTE_ASSEMBLY_COOKIES } from '../../../utils/routes';
 import {
   LegalPagesContainerStyle,
   LegalPagesContentStyle,
@@ -77,8 +78,11 @@ const PrivacyPolicyPage: FC = () => (
         <LegalPagesTextStyle>1.5</LegalPagesTextStyle>
         <LegalPagesTextStyle>
           Veuillez prendre le temps de lire attentivement cette Politique. Si
-          vous avez des questions ou commentaires, veuillez contacter
-          contact-fr@make.org.
+          vous avez des questions ou commentaires, veuillez contacter{' '}
+          <a href="mailto:contact-fr@make.org" style={{ whiteSpace: 'nowrap' }}>
+            contact-fr@make.org
+          </a>
+          .
         </LegalPagesTextStyle>
       </LegalPagesNumberTextContainerStyle>
 
@@ -129,8 +133,11 @@ const PrivacyPolicyPage: FC = () => (
             <b>Améliorer et optimiser notre site Web</b>
           </LegalPagesTableTextStyle>
           <LegalPagesTableTextStyle>
-            Veuillez consulter les informations que nous fournissons ici sur les
-            cookies et notre plateforme de gestion des consentements.
+            Veuillez consulter les informations que nous fournissons{' '}
+            <a href={ROUTE_ASSEMBLY_COOKIES} target="_blank" rel="noreferrer">
+              ici
+            </a>{' '}
+            sur les cookies et notre plateforme de gestion des consentements.
           </LegalPagesTableTextStyle>
           <LegalPagesTableTextStyle>
             Intérêt légitime de MAKE.ORG Le cas échéant, votre consentement pour
@@ -297,10 +304,11 @@ const PrivacyPolicyPage: FC = () => (
       <LegalPagesNumberTextContainerStyle>
         <LegalPagesTextStyle>6.2</LegalPagesTextStyle>
         <LegalPagesTextStyle>
-          Plus précisément, nos serveurs sont situés au sein de France, et les
+          Plus précisément, nos serveurs sont situés en France, et les
           fournisseurs de service et partenaires tiers opèrent hors Union
           Européenne. Cela signifie que lorsque nous collectons vos Données
-          personnelles, nous pouvons les traiter dans tous ces pays.
+          personnelles, nous pouvons les traiter en dehors de l’Union
+          Européenne.
         </LegalPagesTextStyle>
       </LegalPagesNumberTextContainerStyle>
 
@@ -331,15 +339,22 @@ const PrivacyPolicyPage: FC = () => (
           Si vous souhaitez{' '}
           <b>accéder, corriger, mettre à jour ou demander la suppression</b> de
           vos Données personnelles, vous pouvez le faire à tout moment en nous
-          contactant via : contact-fr@make.org.
+          contactant via :{' '}
+          <a href="mailto:contact-fr@make.org" style={{ whiteSpace: 'nowrap' }}>
+            contact-fr@make.org
+          </a>
+          .
         </LegalPagesNumberedArticleStyle>
         <LegalPagesNumberedArticleStyle>
           En outre, dans certaines circonstances, vous pouvez
           <b> vous opposer au traitement</b> de vos Données personnelles, nous
           demander de <b>limiter le traitement</b> de vos Données personnelles,
           ou <b>demander la portabilité</b> de vos Données personnelles. A
-          nouveau, vous pouvez exercer ces droits en nous contactant via :
-          contact-fr@make.org.
+          nouveau, vous pouvez exercer ces droits en nous contactant via :{' '}
+          <a href="mailto:contact-fr@make.org" style={{ whiteSpace: 'nowrap' }}>
+            contact-fr@make.org
+          </a>
+          .
         </LegalPagesNumberedArticleStyle>
         <LegalPagesNumberedArticleStyle>
           Si nous avons collecté et traité vos Données personnelles avec votre
@@ -358,9 +373,9 @@ const PrivacyPolicyPage: FC = () => (
           <b>
             droit de vous plaindre auprès d&apos;une autorité de protection des
             données
-          </b>
-          à propos la collecte et de l&apos;utilisation que nous faisons de vos
-          Données personnelles.
+          </b>{' '}
+          à propos de la collecte et de l&apos;utilisation que nous faisons de
+          vos Données personnelles.
         </LegalPagesNumberedArticleStyle>
         <LegalPagesNumberedArticleStyle>
           {`Vous avez le droit de définir des directives générales ou
@@ -433,8 +448,11 @@ const PrivacyPolicyPage: FC = () => (
       <LegalPagesTextStyle>
         Le délégué à la protection des données désigné conformément à l’article
         37 du Règlement européen sur la protection des données est Fieldfisher
-        Belgium, contact-be@make.org, l’Arsenal, Bd Louis Schmidt 29 boîte 15,
-        1040 Bruxelles, Belgique.
+        Belgium,{' '}
+        <a href="mailto:contact-be@make.org" style={{ whiteSpace: 'nowrap' }}>
+          contact-be@make.org
+        </a>
+        , l’Arsenal, Bd Louis Schmidt 29 boîte 15, 1040 Bruxelles, Belgique.
       </LegalPagesTextStyle>
     </LegalPagesContentStyle>
   </LegalPagesContainerStyle>

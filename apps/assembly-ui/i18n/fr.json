@@ -30,13 +30,13 @@
   },
   "modal": {
     "closeLabel": "Fermer la fenêtre de dialogue",
-    "discover": "Découvrir",
+    "discover": "Découvrir l'outil",
     "suggestion": "Posez vos questions, l’intelligence artificielle (IA) vous répond",
     "suggestionText": "Une réponse instantanée à toutes vos interrogations.",
-    "explore": "Explorez les contenus par thématiques",
+    "explore": "Explorez les contenus par thématique",
     "exploreText": "Une recherche approfondie sur les sujets qui vous intéressent.",
-    "sources": "Accéder à des sources vérifiées",
-    "sourcesText": "Un affichage des sources qui ont alimentées chaque réponse de l’intelligence artificielle (IA)."
+    "sources": "Accédez à des sources vérifiées",
+    "sourcesText": "Un affichage des sources qui ont alimenté chaque réponse de l’intelligence artificielle (IA)."
   },
   "theme": "La Convention citoyenne par thématique :",
   "themes": [
@@ -56,7 +56,7 @@
   "prompt": {
     "submit": "Envoyer",
     "caution": "MarIA.ne peut afficher des informations inexactes ou offensantes qui ne représentent pas les opinions du CESE. Charte Éthique IA Make.org",
-    "themeAnswer": "Résumés des thématiques générés par l'IA",
+    "themeAnswer": "Résumé des principales thématiques :",
     "warning": "La réponse, générée par une IA à partir de sources vérifiées, peut présenter des approximations.",
     "me": "Moi",
     "themes": "Thématiques",
@@ -67,21 +67,21 @@
     "error": "Je ne suis pas en mesure de répondre à cette question. Recherchons autre chose !"
   },
   "feed": {
-    "sources": "Cette réponse est sourcée à partir des éléments suivants",
-    "hyperlinks_title": "Pour compléter ses connaissances :",
+    "sources": "Cette réponse est issue des éléments suivants :",
+    "hyperlinks_title": "Pour compléter vos connaissances :",
     "detailed_response": "Accéder à la réponse détaillée",
     "document_sources": "Accéder à la réponse provenant des documents certifiés",
     "page": "page ",
     "previous_answer": "Vous cherchez vos questions précédentes ?",
     "archive": "Nous n'archivons que les 5 dernières questions que vous posez.",
-    "retrieve": "Si vous voulez retrouver vos précédentes questions, vous pouvez simplement la reposer !",
+    "retrieve": "Si vous voulez retrouver une précédente question, vous pouvez simplement la reposer !",
     "answer_expert": "Puis-je accéder à la réponse détaillée sur : ",
     "answer_document": "Puis-je accéder à la réponse provenant des documents certifiés sur : "
   },
   "sidebar": {
     "explore": "Explorer",
     "exp": "Une expérience imaginée par",
-    "panoramic": "En savoir plus sur Panoramic"
+    "panoramic": "En savoir plus sur l'outil"
   },
   "transcript": {
     "video_presentation": "La Convention citoyenne par ses extraits vidéo :",

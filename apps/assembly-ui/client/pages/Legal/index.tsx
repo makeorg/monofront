@@ -17,7 +17,11 @@ const LegalPage: FC = () => (
         (ci-après« MAKE.ORG »).
       </LegalPagesTextStyle>
       <LegalPagesTextStyle>
-        Adresse de courrier électronique : contact-fr@make.org
+        Adresse de courrier électronique :{' '}
+        <a href="mailto:contact-fr@make.org" style={{ whiteSpace: 'nowrap' }}>
+          contact-fr@make.org
+        </a>
+        .
       </LegalPagesTextStyle>
       <LegalPagesTextStyle>
         Numéro de téléphone : (+33)1·84·25·15·74
@@ -33,8 +37,15 @@ const LegalPage: FC = () => (
       </LegalPagesTextStyle>
       <LegalPagesTextStyle>
         La Commission européenne met à disposition une plateforme de règlement
-        des litiges en ligne pour les consommateurs, à l&apos;adresse
-        https://ec.europa.eu/consumers/odr
+        des litiges en ligne pour les consommateurs, à l&apos;adresse{' '}
+        <a
+          href="https://ec.europa.eu/consumers/odr"
+          target="_blank"
+          rel="noreferrer"
+          style={{ whiteSpace: 'nowrap' }}
+        >
+          https://ec.europa.eu/consumers/odr
+        </a>
       </LegalPagesTextStyle>
     </LegalPagesContentStyle>
   </LegalPagesContainerStyle>

@@ -23,6 +23,7 @@ export const UIModalStyle = createGlobalStyle`
     align-items: center;
     justify-content: center;
     background-color: #00000063;
+    backdrop-filter: blur(5px);
     overflow: auto;
   }
 
@@ -57,6 +58,7 @@ export const UIModalStyle = createGlobalStyle`
     align-items: center;
     justify-content: flex-start;
     background-color: #00000063;
+    backdrop-filter: blur(5px);
     overflow: auto;
   }
 

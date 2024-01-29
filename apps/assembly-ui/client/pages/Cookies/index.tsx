@@ -34,7 +34,10 @@ const CookiesPage: FC = () => (
         Veuillez prendre le temps de lire attentivement cette Politique. Si vous
         avez des questions ou commentaires, veuillez contacter
         <br />
-        <a href="mailto:contact-fr@make.org">contact-fr@make.org</a>.
+        <a href="mailto:contact-fr@make.org" style={{ whiteSpace: 'nowrap' }}>
+          contact-fr@make.org
+        </a>
+        .
       </LegalPagesTextStyle>
 
       <LegalPagesSubtitleStyle>
@@ -65,7 +68,7 @@ const CookiesPage: FC = () => (
         Lorsque vous vous connectez sur notre site, des cookies sont déposés sur
         votre terminal afin d’améliorer votre expérience, accroître la
         performance de notre site et optimiser le fonctionnement de notre site
-        Web Panoramic.
+        Web.
       </LegalPagesTextStyle>
       <LegalPagesTextStyle>
         Les informations contenues dans les cookies ne visent pas à vous
@@ -156,12 +159,12 @@ const CookiesPage: FC = () => (
             >
               https://www.youtube.com/howyoutubeworks/our-commitments/protecting-user-data/
             </a>
-            ) : ces cookies servent à le optimiser le fonctionnement et
+            ) : ces cookies servent à optimiser le fonctionnement et
             l’utilisabilité de notre site Web.
           </LegalPagesTableTextStyle>
           <LegalPagesTableTextStyle>1 an</LegalPagesTableTextStyle>
           <LegalPagesTableTextStyle>
-            Pour refuser ces cookies, veuillez suivre les instructionshttp
+            Pour refuser ces cookies, veuillez suivre les instructions
             ci-dessous sous la rubrique &quot;Comment puis-je contrôler les
             cookies ?&quot;. Vous pouvez également cliquer sur le lien de
             désinscription pertinent.
@@ -172,10 +175,10 @@ const CookiesPage: FC = () => (
             <b>Les cookies d&apos;analyse et de personnalisation</b> : Ces
             cookies recueillent des informations qui sont utilisées soit sous
             forme globale afin de nous aider à comprendre comment notre Site Web
-            est utilisé ou pour mesure l&apos;efficacité de nos campagnes
+            est utilisé ou pour mesurer l&apos;efficacité de nos campagnes
             publicitaires, ou pour nous aider à personnaliser notre Site Web
             pour vous en retenant vos préférences sur notre site pour améliorer
-            votre expérience lors de votre navigation Vous pouvez configurer
+            votre expérience lors de votre navigation. Vous pouvez configurer
             votre navigateur afin de bloquer ou être informé de l&apos;existence
             de ces cookies, mais certaines parties de notre site peuvent être
             affectées. Ces cookies ne visent pas à vous identifier
@@ -245,6 +248,7 @@ const CookiesPage: FC = () => (
           href="http://www.aboutads.info/choices/"
           rel="noreferrer"
           target="_blank"
+          style={{ whiteSpace: 'nowrap' }}
         >
           http://www.aboutads.info/choices/
         </a>{' '}
@@ -253,6 +257,7 @@ const CookiesPage: FC = () => (
           href="http://www.youronlinechoices.com/fr/"
           rel="noreferrer"
           target="_blank"
+          style={{ whiteSpace: 'nowrap' }}
         >
           http://www.youronlinechoices.com/fr/
         </a>{' '}
@@ -278,6 +283,7 @@ const CookiesPage: FC = () => (
           href="http://www.allaboutcookies.org/fr/"
           rel="noreferrer"
           target="_blank"
+          style={{ whiteSpace: 'nowrap' }}
         >
           http://www.allaboutcookies.org/fr/
         </a>

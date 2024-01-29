@@ -70,7 +70,11 @@ export const PromptForm: FC = () => {
           )}
           <PromptFormSubmitStyle type="submit" disabled={isStreaming}>
             <PromptFormButtonArrowStyle
-              src={isStreaming ? disabledButton : submitButton}
+              src={
+                isStreaming || question.length === 0
+                  ? disabledButton
+                  : submitButton
+              }
               alt={
                 isStreaming
                   ? i18n.t('prompt.disabled')
