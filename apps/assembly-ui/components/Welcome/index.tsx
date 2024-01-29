@@ -41,7 +41,7 @@ export const Welcome: FC = () => {
 
         <WelcomeContentBlockContainerStyle>
           <WelcomeContentBlockTitleStyle>
-            {i18n.t('prompt.themeAnswer')}&nbsp;:
+            {i18n.t('prompt.themeAnswer')}&nbsp;
           </WelcomeContentBlockTitleStyle>
           <Themes />
         </WelcomeContentBlockContainerStyle>

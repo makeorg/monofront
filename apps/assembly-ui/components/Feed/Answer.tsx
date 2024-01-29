@@ -43,7 +43,7 @@ export const Answer: FC<Props> = ({ item }) => {
             {item.chunks && item.chunks.length > 0 && (
               <>
                 <SourcesTitleStyle>
-                  {i18n.t('feed.sources')}&nbsp;:
+                  {i18n.t('feed.sources')}&nbsp;
                 </SourcesTitleStyle>
                 {sources(item.chunks)}
               </>
