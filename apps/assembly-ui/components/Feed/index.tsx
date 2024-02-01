@@ -37,8 +37,9 @@ export const Feed: FC = () => {
   const { search } = useLocation();
   const urlSearchParams = new URLSearchParams(search);
   const searchQuery = urlSearchParams.get(RESPONSE_TRIGGER_PARAM);
+  const decodedQuery = decodeURIComponent(searchQuery || '');
   const responseTriggerTermQuery = termQueries.find(
-    termQuery => termQuery.title === searchQuery
+    termQuery => termQuery.title.toLowerCase() === decodedQuery.toLowerCase()
   );
 
   const { setStartStream } = StreamLLM(
