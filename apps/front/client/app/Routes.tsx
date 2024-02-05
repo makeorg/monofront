@@ -112,7 +112,7 @@ const SearchPage = loadable(() => import('../pages/Search'));
 const LegalPage = loadable(() => import('../pages/Static/Legal'));
 const TermsOfUse = loadable(() => import('../pages/Static/TermsOfUse'));
 const Data = loadable(() => import('../pages/Static/Data'));
-const Contact = loadable(() => import('../pages/Static/Contact'));
+const Contact = loadable(() => import('../pages/Contact'));
 const Accessibility = loadable(() => import('../pages/Static/A11y'));
 const CookiesPage = loadable(() => import('../pages/Static/Cookies'));
 const Moderation = loadable(() => import('../pages/Static/ModerationCharter'));

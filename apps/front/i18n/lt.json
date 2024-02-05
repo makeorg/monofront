@@ -1232,7 +1232,25 @@
   },
   "contact": {
     "contactUs": "Susisiekite su mumis",
-    "paragraph": "Idėja, pasiūlymas, klaida? Nedvejodami susisiekite su mumis išsiųsdami el. laišką adresu:"
+    "paragraph": "Idėja, pasiūlymas, klaida? Nedvejodami susisiekite su mumis išsiųsdami el. laišką adresu:",
+    "delete": "@@contact.delete|fr:Si vous souhaitez vous désabonner de nos communications ou supprimer vos données personnelles, rendez-vous dans votre profil ! Vous pourrez faire cette manipulation en toute autonomie.",
+    "help": "@@contact.help|fr:Comment pouvons-nous vous aider ?",
+    "mandatory": "@@contact.mandatory|fr:Tous les champs de ce formulaire sont obligatoires.",
+    "mail": "@@contact.mail|fr:Votre email",
+    "mail_placeholder": "@@contact.mail_placeholder|fr:Entrez votre adresse mail ici",
+    "name": "@@contact.name|fr:Votre nom",
+    "name_placeholder": "@@contact.name_placeholder|fr:Entrez votre nom ici",
+    "request_type": "@@contact.request_type|fr:Quelle est la nature de votre demande ?",
+    "request_placeholder": "@@contact.request_placeholder|fr:Ma demande...",
+    "request_explain": "@@contact.request_explain|fr:Expliquez nous votre demande en quelques mots",
+    "request_explain_placeholder": "@@contact.request_explain_placeholder|fr:Expliquez votre demande ici...",
+    "authorize": "@@contact.authorize|fr:J’autorise Make.org à collecter les données personnelles que j’ai transmises via ce formulaire afin de répondre à la demande que j’ai exprimé. Aucune exploitation commerciale n’en sera faite. Pour en savoir plus, je peux consulter la politique de gestion des données de Make.org (lien de redirection).",
+    "send": "@@contact.send|fr:Envoyer",
+    "heard": "@@contact.heard|fr:Nous vous avons entendu !",
+    "handle": "@@contact.handle|fr:Nous avons bien reçu votre message et nous essayerons de le traiter dans les plus brefs délais.",
+    "if": "@@contact.if|fr:Si votre message concernait nos communications ou la suppression de vos données personnelles, vous pouvez modifier ces préférences dans votre profil.",
+    "back": "@@contact.back|fr:Retour à l’accueil",
+    "error": "@@contact.error|fr:Une erreur est survenue, merci de réessayer."
   },
   "legal": {
     "title": "Teisinė informacija",
@@ -1472,5 +1490,14 @@
     "title": "Jūs jau beveik ten! Pasidalykite savo socialine ir demografine informacija, kad į jūsų balsus būtų atsižvelgta ir kad būtumėte reprezentatyvesni.",
     "protect": "Nesijaudinkite, jūsų duomenys yra apsaugoti 🔒",
     "next": "Kitas"
+  },
+  "subjects": {
+    "help_proposal": "@@subjects.help_proposal|fr:J’ai une demande sur ma proposition / mon vote",
+    "help_technical": "@@subjects.help_technical|fr:J’ai un problème technique",
+    "profile_update": "@@subjects.profile_update|fr:Je souhaite modifier mon profil",
+    "product_improvement": "@@subjects.product_improvement|fr:Je souhaite partager une idée pour améliorer make.org",
+    "commercial_inquiry": "@@subjects.commercial_inquiry|fr:Je souhaite collaborer avec make.org",
+    "event_invitation": "@@subjects.event_invitation|fr:Je souhaite partager une invitation à un événement",
+    "other": "@@subjects.other|fr:Autre"
   }
 }

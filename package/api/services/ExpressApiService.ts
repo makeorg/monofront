@@ -14,6 +14,7 @@ const PATH_RESULTS_CONFIGURATION = '/api/question/:questionId/results';
 const PATH_LOGGER = '/api/logger';
 const PATH_FB_EVENT_CONVERSION = '/api/conversion/fb';
 const PATH_TW_EVENT_CONVERSION = '/api/conversion/tw';
+const PATH_UVDESK_CONTACT = '/api/contact';
 
 axiosRetry(axios, {
   retries: 5,
@@ -111,6 +112,23 @@ export class ExpressApiService {
     return this.callApi(PATH_TW_EVENT_CONVERSION, {
       method: 'POST',
       body: data,
+    });
+  }
+
+  sendContactUvdeskData(
+    message: string,
+    name: string,
+    subject: string,
+    from: string
+  ): Promise<void | AxiosResponse> {
+    return this.callApi(PATH_UVDESK_CONTACT, {
+      method: 'POST',
+      body: {
+        message,
+        name,
+        subject,
+        from,
+      },
     });
   }
 }

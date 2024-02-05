@@ -70,3 +70,14 @@ export const getLanguagesTransMap = (): Map<string, string> =>
     ['sv', i18n.t('languages.sv')],
     ['uk', i18n.t('languages.uk')],
   ]);
+
+export const getContactPageSubjectTransMap = (): Map<string, string> =>
+  new Map([
+    ['Help proposal or vote', i18n.t('subjects.help_proposal')],
+    ['Help technical issue', i18n.t('subjects.help_technical')],
+    ['Profile update', i18n.t('subjects.profile_update')],
+    ['Product improvement', i18n.t('subjects.product_improvement')],
+    ['Commercial inquiry', i18n.t('subjects.commercial_inquiry')],
+    ['Event invitation', i18n.t('subjects.event_invitation')],
+    ['Other', i18n.t('subjects.other')],
+  ]);

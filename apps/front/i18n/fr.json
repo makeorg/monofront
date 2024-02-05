@@ -1237,7 +1237,25 @@
   },
   "contact": {
     "contactUs": "Contactez-nous",
-    "paragraph": "Une idée, une suggestion, un bug ? N’hésitez pas à nous contacter en envoyant un e-mail à notre adresse :"
+    "paragraph": "Vous avez un besoin, une question ou un retour sur nos produits ? Contactez-nous avec le formulaire ci-dessous",
+    "delete": "Si vous souhaitez vous désabonner de nos communications ou supprimer vos données personnelles, rendez-vous dans votre profil ! Vous pourrez faire cette manipulation en toute autonomie.",
+    "help": "Comment pouvons-nous vous aider ?",
+    "mandatory": "Tous les champs de ce formulaire sont obligatoires.",
+    "mail": "Votre email",
+    "mail_placeholder": "Entrez votre adresse mail ici",
+    "name": "Votre nom",
+    "name_placeholder": "Entrez votre nom ici",
+    "request_type": "Quelle est la nature de votre demande ?",
+    "request_placeholder": "Ma demande...",
+    "request_explain": "Expliquez nous votre demande en quelques mots",
+    "request_explain_placeholder": "Expliquez votre demande ici...",
+    "authorize": "J’autorise Make.org à collecter les données personnelles que j’ai transmises via ce formulaire afin de répondre à la demande que j’ai exprimé. Aucune exploitation commerciale n’en sera faite. Pour en savoir plus, je peux consulter la politique de gestion des données de Make.org (lien de redirection).",
+    "send": "Envoyer",
+    "heard": "Nous vous avons entendu !",
+    "handle": "Nous avons bien reçu votre message et nous essayerons de le traiter dans les plus brefs délais.",
+    "if": "Si votre message concernait nos communications ou la suppression de vos données personnelles, vous pouvez modifier ces préférences dans votre profil.",
+    "back": "Retour à l’accueil",
+    "error": "Une erreur est survenue, merci de réessayer."
   },
   "legal": {
     "title": "Mentions légales",
@@ -1466,6 +1484,15 @@
     "sk": "Slovenský",
     "sl": "Slovenski",
     "sv": "Svenska"
+  },
+  "subjects": {
+    "help_proposal": "J’ai une demande sur ma proposition / mon vote",
+    "help_technical": "J’ai un problème technique",
+    "profile_update": "Je souhaite modifier mon profil",
+    "product_improvement": "Je souhaite partager une idée pour améliorer make.org",
+    "commercial_inquiry": "Je souhaite collaborer avec make.org",
+    "event_invitation": "Je souhaite partager une invitation à un événement",
+    "other": "Autre"
   },
   "language_switch": {
     "country_title": "Votre pays",

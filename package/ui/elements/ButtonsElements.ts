@@ -168,6 +168,10 @@ export const ActiveButtonCenterStyle = styled.button.attrs(props => ({
   }
 `;
 
+export const ActiveButtonLeftStyle = styled(ActiveButtonCenterStyle)`
+  align-self: left;
+`;
+
 export const ActiveButtonCenterBottomStyle = styled(ActiveButtonCenterStyle)`
   margin: auto auto 0px;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
