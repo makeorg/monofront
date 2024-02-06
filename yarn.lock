@@ -3591,6 +3591,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@make.org/tracking@workspace:package/tracking":
+  version: 0.0.0-use.local
+  resolution: "@make.org/tracking@workspace:package/tracking"
+  dependencies:
+    "@babel/cli": ^7.19.3
+    "@babel/core": ^7.18.10
+    "@babel/preset-env": ^7.22.10
+    "@babel/preset-typescript": ^7.22.5
+    "@make.org/api": 0.1.0
+    "@make.org/utils": 0.1.0
+    "@types/babel__core": ^7
+    "@types/babel__preset-env": ^7.9.2
+    "@types/uuid": ^8.3.4
+    uuid: ^8.3.2
+  languageName: unknown
+  linkType: soft
+
 "@make.org/types@0.1.0, @make.org/types@^0.1.0, @make.org/types@workspace:package/types":
   version: 0.0.0-use.local
   resolution: "@make.org/types@workspace:package/types"

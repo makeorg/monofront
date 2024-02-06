@@ -8,7 +8,8 @@
       { "path": "../../package/components" },
       { "path": "../../package/utils" },
       { "path": "../../package/designsystem" },
-      { "path": "../../package/logger" }
+      { "path": "../../package/logger" },
+      { "path": "../../package/tracking" }
     ],
     "include": [
       ".",
@@ -19,7 +20,8 @@
       "../../package/components",
       "../../package/utils",
       "../../package/designsystem",
-      "../../package/logger"
+      "../../package/logger",
+      "../../package/tracking"
     ]
   }
   

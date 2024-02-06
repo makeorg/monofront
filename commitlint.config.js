@@ -17,6 +17,7 @@ module.exports = {
         'widget',
         'designsystem',
         'assembly-ui',
+        'tracking',
       ],
     ],
     'subject-case': () => [

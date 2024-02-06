@@ -56,7 +56,8 @@
       "@make.org/components": ["./package/components/*"],
       "@make.org/store": ["./package/store/*"],
       "@make.org/logger": ["./package/logger/*"],
-      "@make.org/designsystem": ["./package/designsystem/*"]
+      "@make.org/designsystem": ["./package/designsystem/*"],
+      "@make.org/tracking": ["./package/tracking/*"]
     }
   }
 }
