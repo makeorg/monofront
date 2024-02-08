@@ -25,7 +25,7 @@
       }
     },
     "proposal": {
-      "title": "Vorschlag „{{proposal}}“ zur Konsultation „{{question}}“ – Make.org",
+      "title": "Vorschlag „{{proposal}}“ zur Konsulta „{{question}}“ – Make.org",
       "description": "Unterstütze meinen Vorschlag durch deine Stimmabgabe und lass uns gemeinsam Lösungen für die großen Herausforderungen unserer Zeit entwickeln. Die am meisten unterstützten Ideen werden von Make.org und seinen Kooperationspartnern in die Tat umgesetzt."
     },
     "participate": {
@@ -90,7 +90,7 @@
       "description": "Wenn du keine Antwort auf deine Frage findest, kontaktiere uns per E-Mail."
     },
     "no_cookies": {
-      "title": "Hoppla! Deine Cookies sind deaktiviert – Make.org"
+      "title": "Hopplai! Deine Cookies sind deaktiviert – Make.org"
     },
     "cookies": {
       "title": "Cookie-Richtlinie – Make.org",
