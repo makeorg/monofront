@@ -2,6 +2,7 @@ import React, { FC, useState, useEffect } from 'react';
 import { env } from '@make.org/assets/env';
 import i18n from 'i18next';
 import ReactMarkdown from 'react-markdown';
+import { LLMErrorLimit } from '../Prompt/Stream';
 import {
   ContentStyle,
   ContentIconStyle,
@@ -37,7 +38,7 @@ export const Answer: FC<Props> = ({ item }) => {
       <ContentIconStyle src={pano} alt="Logo" />
       <AnswerContainerStyle>
         <ReactMarkdown>{item.text}</ReactMarkdown>
-        {item.text.trim().length !== 0 && (
+        {item.text.trim().length > LLMErrorLimit && (
           <>
             {item.displayActions && <Actions item={item} />}
             {item.chunks && item.chunks.length > 0 && (

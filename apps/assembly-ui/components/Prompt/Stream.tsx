@@ -14,6 +14,8 @@ import {
 import { ChunkType } from '../../types';
 import { LLM_PATH } from '../../utils/routes';
 
+export const LLMErrorLimit = 100;
+
 const parseValue = (content: string) => {
   try {
     return JSON.parse(content);
@@ -107,7 +109,7 @@ export const StreamLLM = (
         const result = getResults(objs);
 
         if (done) {
-          if (newAnswer.trim().length === 0) {
+          if (newAnswer.trim().length <= LLMErrorLimit) {
             dispatch(updateItemText(uuid, i18n.t('prompt.error')));
             dispatch(disableFeedStreaming());
             setStartStream(false);
