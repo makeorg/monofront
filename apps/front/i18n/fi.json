@@ -1205,7 +1205,8 @@
     "handle": "@@contact.handle|fr:Nous avons bien reçu votre message et nous essayerons de le traiter dans les plus brefs délais.",
     "if": "@@contact.if|fr:Si votre message concernait nos communications ou la suppression de vos données personnelles, vous pouvez modifier ces préférences dans votre profil.",
     "back": "@@contact.back|fr:Retour à l’accueil",
-    "error": "@@contact.error|fr:Une erreur est survenue, merci de réessayer."
+    "error": "@@contact.error|fr:Une erreur est survenue, merci de réessayer.",
+    "know_more": "@@contact.know_more|fr:Pour en savoir plus, je peux consulter la"
   },
   "legal": {
     "title": "Oikeudelliset tiedot",

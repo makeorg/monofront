@@ -8,7 +8,8 @@ import {
   ActiveButtonStyle,
   LinkAsRedButtonStyle,
 } from '@make.org/ui/elements/ButtonsElements';
-import { getHomeLink } from '@make.org/utils/helpers/url';
+import { getHomeLink, getDataPageLink } from '@make.org/utils/helpers/url';
+import { RedHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
 import { FormLeftAlignStyle } from '@make.org/ui/elements/FormElements';
 import { getContactPageSubjectTransMap } from '../../helpers/translationsMap';
 import {
@@ -33,7 +34,7 @@ type TypeContactFormValues = {
 
 const Contact: FC = () => {
   const { state } = useAppContext();
-  const { country } = state.appConfig;
+  const { country, language } = state.appConfig;
   const defaultFormValues = {
     from: '',
     name: '',
@@ -173,6 +174,14 @@ const Contact: FC = () => {
                   {i18n.t('contact.authorize')}
                   <input type="checkbox" name="consent" id="consent" required />
                 </ContactPageCheckboxLabelStyle>
+                <ContactPageTextStyle>
+                  {i18n.t('contact.know_more')}{' '}
+                  <RedHTMLLinkElementStyle
+                    href={getDataPageLink(country, language)}
+                  >
+                    {i18n.t('main_footer.data')}.
+                  </RedHTMLLinkElementStyle>
+                </ContactPageTextStyle>
                 {submitError && (
                   <ContactPageErrorStyle>
                     {i18n.t('contact.error')}
