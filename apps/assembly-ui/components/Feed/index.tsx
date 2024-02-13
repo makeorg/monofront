@@ -9,7 +9,6 @@ import { removeFeedLastItem } from '../../store/feed/actions';
 import { StreamLLM } from '../Prompt/Stream';
 
 export const TRANSCRIPT = 'transcriptStd';
-export const TRANSCRIPT_EXPERT = 'transcriptExpert';
 export const DOCUMENT = 'documentStd';
 export const SOURCE_TYPE_VIDEO = 'VIDEO';
 export const SOURCE_TYPE_DOCUMENT = 'PDF';

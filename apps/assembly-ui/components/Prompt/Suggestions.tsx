@@ -96,6 +96,7 @@ export const Suggestions: FC = () => {
     <SuggestionsContainerStyle id="main" as={UnstyledListStyle}>
       {suggestions.map((suggestion: TermQueryType) => (
         <Buttons
+          key={suggestion.value}
           title={suggestion.title}
           value={suggestion.value}
           handleClick={() => handleSuggestionQuestion(suggestion.value)}

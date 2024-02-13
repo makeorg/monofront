@@ -1,7 +1,6 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC, useState } from 'react';
 import i18n from 'i18next';
 import ReactModal from 'react-modal';
-import { parse } from 'query-string';
 import { lockBody, unlockBody } from '@make.org/utils/helpers/styled';
 import { useLocation } from 'react-router';
 import { OnboardingContent } from './Content';
@@ -13,16 +12,18 @@ import {
 
 ReactModal.setAppElement('#app');
 
+const DISPLAY_ONBOARDING_PARAM = 'displayonboarding';
+
 export const OnboardingModal: FC = () => {
   const { search } = useLocation();
-  const urlQueryParams = parse(search);
-  const { displayonboarding } = urlQueryParams;
-  const showOnboarding = displayonboarding !== 'false';
+  const urlSearchParams = new URLSearchParams(search);
+  const searchQuery = urlSearchParams.get(DISPLAY_ONBOARDING_PARAM);
+  const showOnboarding = searchQuery !== 'false';
   const [isOpen, setIsOpen] = useState<boolean>(showOnboarding);
 
-  useEffect(() => {
+  if (isOpen) {
     lockBody();
-  }, []);
+  }
 
   const handleClose = () => {
     unlockBody();

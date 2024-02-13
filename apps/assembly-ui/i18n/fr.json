@@ -69,13 +69,11 @@
   "feed": {
     "sources": "Cette réponse est issue des éléments suivants :",
     "hyperlinks_title": "Pour compléter vos connaissances :",
-    "detailed_response": "Accéder à la réponse détaillée",
     "document_sources": "Accéder à la réponse provenant des documents certifiés",
     "page": "page ",
     "previous_answer": "Vous cherchez vos questions précédentes ?",
     "archive": "Nous n'archivons que les 5 dernières questions que vous posez.",
     "retrieve": "Si vous voulez retrouver une précédente question, vous pouvez simplement la reposer !",
-    "answer_expert": "Puis-je accéder à la réponse détaillée sur : ",
     "answer_document": "Puis-je accéder à la réponse provenant des documents certifiés sur : "
   },
   "sidebar": {

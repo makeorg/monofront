@@ -6,7 +6,7 @@ import {
   ActionsContainerStyle,
   ActionsTitleStyle,
 } from './style';
-import { DOCUMENT, TRANSCRIPT, TRANSCRIPT_EXPERT } from '.';
+import { DOCUMENT, TRANSCRIPT } from '.';
 import { FeedItemType } from '../../types';
 import { useAssemblyContext } from '../../store/context';
 import { StreamLLM } from '../Prompt/Stream';
@@ -23,12 +23,6 @@ export const Actions: FC<Props> = ({ item }) => {
 
   const { setStartStream } = StreamLLM(item.question, mode);
 
-  const handleAdvancedQuestion = () => {
-    setMode(TRANSCRIPT_EXPERT);
-    dispatch(disableFeedStreaming());
-    setStartStream(true);
-  };
-
   const handleDocumentQuestion = () => {
     setMode(DOCUMENT);
     dispatch(disableFeedStreaming());
@@ -39,15 +33,6 @@ export const Actions: FC<Props> = ({ item }) => {
     <ActionsContainerStyle>
       <ActionsTitleStyle>{i18n.t('feed.hyperlinks_title')}</ActionsTitleStyle>
       <ActionsButtonsContainerStyle>
-        {item.mode !== TRANSCRIPT_EXPERT && (
-          <ActionsButtonStyle
-            type="button"
-            disabled={isStreaming}
-            onClick={() => handleAdvancedQuestion()}
-          >
-            {i18n.t('feed.detailed_response')}
-          </ActionsButtonStyle>
-        )}
         {item.mode !== DOCUMENT && (
           <ActionsButtonStyle
             type="button"
