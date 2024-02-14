@@ -6,5 +6,6 @@ export enum URL {
   NEWS_LINK_FR = 'https://about.make.org',
   NEWS_LINK_DE = 'https://about.make.org/de/blog',
   NEWS_LINK_EN = 'https://about.make.org/en/blog',
+  NEWS_LINK_BE = 'https://about.make.org/be/blog',
   PRESS_DETAILS_LINK = 'https://about.make.org/les-medias-en-parlent',
 }

@@ -36,6 +36,9 @@ const setLangAndLinksByCountry = (
   if (country === 'GB') {
     return { link: URL.NEWS_LINK_EN, lang: 'en' };
   }
+  if (country === 'BE') {
+    return { link: URL.NEWS_LINK_BE, lang: 'en' };
+  }
   return { link: URL.NEWS_LINK_FR, lang: 'fr' };
 };
 

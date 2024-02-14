@@ -598,6 +598,8 @@ export const getNewsLinkByCountry = (country: string): string => {
       return URL.NEWS_LINK_FR;
     case 'DE':
       return URL.NEWS_LINK_DE;
+    case 'BE':
+      return URL.NEWS_LINK_BE;
     default:
       return URL.NEWS_LINK_EN;
   }

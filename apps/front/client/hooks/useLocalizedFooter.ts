@@ -4,6 +4,7 @@ import {
   setCommonInternalLinks,
 } from '../app/Footer/localized/Common';
 import { setDEExternalLinks } from '../app/Footer/localized/DE';
+import { setBEExternalLinks } from '../app/Footer/localized/BE';
 import { setFRExternalLinks } from '../app/Footer/localized/FR';
 import { setINTExternalLinks } from '../app/Footer/localized/INT';
 
@@ -42,6 +43,11 @@ export const useExternalLinks = (
 
     if (country === 'DE') {
       setExternalLinks(setDEExternalLinks(language));
+      return;
+    }
+
+    if (country === 'BE') {
+      setExternalLinks(setBEExternalLinks(language));
       return;
     }
 
