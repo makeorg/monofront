@@ -28,9 +28,11 @@ export const HeaderButton = styled.button`
   background: none;
 `;
 
-export const HeaderSvgStyle = styled.div`
+export const HeaderSvgStyle = styled.button`
   align-items: center;
   justify-content: center;
+  outline: none;
+  border-style: none;
   display: flex;
   min-width: 37px;
   height: 37px;

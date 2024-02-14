@@ -22,7 +22,7 @@ export const DefaultStylesheet = createGlobalStyle`
   body {
     font-family: 'Inter', Arial, sans-serif;
     color: ${colors.Content.Interface.Dark};
-    line-height: ${typography.LineHeight.l100};
+    line-height: ${typography.LineHeight.l150};
     &.locked {
       overflow-y: hidden;
     }
@@ -81,6 +81,7 @@ export const DefaultStylesheet = createGlobalStyle`
     font-family: 'Inter', Arial, sans-serif;
     font-weight: 400;
     margin: 0;
+    line-height: ${typography.LineHeight.l150};
   }
 
   button,

@@ -4,6 +4,7 @@ import {
   ROUTE_ASSEMBLY_PRIVACY_POLICY,
   ROUTE_ASSEMBLY_COOKIES,
   ROUTE_ASSEMBLY_LEGAL,
+  ROUTE_ASSEMBLY_ABOUT,
 } from '../../utils/routes';
 import {
   SidebarContentContainerStyle,
@@ -16,32 +17,37 @@ import {
 } from './style';
 import { useAssemblyContext } from '../../store/context';
 
-const linkPanoramicArray = [
-  {
-    title: 'Politique de confidentialité',
-    url: ROUTE_ASSEMBLY_PRIVACY_POLICY,
-    redirect: true,
-  },
-  {
-    title: 'Gestion des cookies',
-    url: ROUTE_ASSEMBLY_COOKIES,
-    redirect: true,
-  },
-  {
-    title: 'Mentions légales',
-    url: ROUTE_ASSEMBLY_LEGAL,
-    redirect: true,
-  },
-  {
-    title: 'À propos de Make.org',
-    url: 'https://make.org/FR',
-    redirect: true,
-  },
-];
-
 export const SidebarContent: FC = () => {
   const { state } = useAssemblyContext();
   const { links } = state.event;
+
+  const linkPanoramicArray = [
+    {
+      title: i18n.t('sidebar.discover'),
+      url: ROUTE_ASSEMBLY_ABOUT,
+      redirect: true,
+    },
+    {
+      title: i18n.t('sidebar.policy'),
+      url: ROUTE_ASSEMBLY_PRIVACY_POLICY,
+      redirect: true,
+    },
+    {
+      title: i18n.t('sidebar.cookie'),
+      url: ROUTE_ASSEMBLY_COOKIES,
+      redirect: true,
+    },
+    {
+      title: i18n.t('sidebar.legal'),
+      url: ROUTE_ASSEMBLY_LEGAL,
+      redirect: true,
+    },
+    {
+      title: i18n.t('sidebar.about'),
+      url: 'https://make.org/FR',
+      redirect: true,
+    },
+  ];
 
   return (
     <SidebarContentContainerStyle>
@@ -55,7 +61,9 @@ export const SidebarContent: FC = () => {
                 rel="noopener"
               >
                 {link.label}
-                <SidebarSvgExternalStyle />
+                <SidebarSvgExternalStyle
+                  aria-label={i18n.t('global.open_new_window')}
+                />
               </SidebarContentLinkStyle>
             </SidebarContentListItemStyle>
           ))}

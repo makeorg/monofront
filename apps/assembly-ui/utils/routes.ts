@@ -6,6 +6,7 @@ export const ROUTE_ASSEMBLY_NOT_FOUND = '/not-found';
 export const ROUTE_ASSEMBLY_PRIVACY_POLICY = '/privacy-policy';
 export const ROUTE_ASSEMBLY_LEGAL = '/legal';
 export const ROUTE_ASSEMBLY_COOKIES = '/cookies';
+export const ROUTE_ASSEMBLY_ABOUT = '/about';
 
 // Path
 export const LLM_PATH = '/api/llm';

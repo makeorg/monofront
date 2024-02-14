@@ -62,7 +62,9 @@ export const WelcomeThemesBlockStyle = styled.div`
   gap: 15px;
 `;
 
-export const WelcomeThemesButtonStyle = styled.button`
+export const WelcomeThemesButtonStyle = styled.button<{
+  standardStyle?: boolean;
+}>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,4 +72,5 @@ export const WelcomeThemesButtonStyle = styled.button`
   padding: 5px 10px;
   border-radius: 20px;
   border: none;
+  color: ${props => props.standardStyle && '#121212'};
 `;

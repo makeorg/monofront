@@ -9,6 +9,7 @@ import {
   ROUTE_ASSEMBLY_PRIVACY_POLICY,
   ROUTE_ASSEMBLY_COOKIES,
   ROUTE_ASSEMBLY_LEGAL,
+  ROUTE_ASSEMBLY_ABOUT,
 } from '../utils/routes';
 import { defaultRoute } from './ssr/defaultRoute';
 import { eventRoute } from './ssr/eventRoute';
@@ -77,6 +78,7 @@ export const initRoutes = (app: Application): void => {
   app.get(ROUTE_ASSEMBLY_PRIVACY_POLICY, defaultRoute);
   app.get(ROUTE_ASSEMBLY_LEGAL, defaultRoute);
   app.get(ROUTE_ASSEMBLY_COOKIES, defaultRoute);
+  app.get(ROUTE_ASSEMBLY_ABOUT, defaultRoute);
 
   // not found
   app.get('*', (req: Request, res: Response) => {

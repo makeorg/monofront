@@ -25,6 +25,7 @@ export const QuestionContainerStyle = styled.div`
   gap: ${spacings.s};
   padding: ${spacings.m};
 `;
+
 export const QuestionUserStyle = styled.div`
   display: flex;
   align-items: center;
@@ -191,7 +192,9 @@ export const ActionsButtonsContainerStyle = styled.div`
   gap: 10px;
 `;
 
-export const ActionsButtonStyle = styled.button`
+export const ActionsButtonStyle = styled.button<{
+  standardStyle?: boolean;
+}>`
   font-size: ${typography.FontSize.Text.RueDeLappe};
   color: rgba(76, 65, 171, 1);
   display: flex;
@@ -206,7 +209,7 @@ export const ActionsButtonStyle = styled.button`
   text-align: left;
 
   &:disabled {
-    ${GreyStyle};
+    ${props => (props.standardStyle ? '' : GreyStyle)};
   }
 `;
 

@@ -33,15 +33,13 @@ export const Actions: FC<Props> = ({ item }) => {
     <ActionsContainerStyle>
       <ActionsTitleStyle>{i18n.t('feed.hyperlinks_title')}</ActionsTitleStyle>
       <ActionsButtonsContainerStyle>
-        {item.mode !== DOCUMENT && (
-          <ActionsButtonStyle
-            type="button"
-            disabled={isStreaming}
-            onClick={() => handleDocumentQuestion()}
-          >
-            {i18n.t('feed.document_sources')}
-          </ActionsButtonStyle>
-        )}
+        <ActionsButtonStyle
+          type="button"
+          disabled={isStreaming}
+          onClick={() => handleDocumentQuestion()}
+        >
+          {i18n.t('feed.document_sources')}
+        </ActionsButtonStyle>
       </ActionsButtonsContainerStyle>
     </ActionsContainerStyle>
   );

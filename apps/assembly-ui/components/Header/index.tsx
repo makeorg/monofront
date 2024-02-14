@@ -23,7 +23,12 @@ export const Header: FC = () => {
 
   return (
     <HeaderContainerStyle>
-      <HeaderSvgStyle onClick={() => setOpenSidebar(true)}>
+      <HeaderSvgStyle
+        type="button"
+        aria-label={i18n.t('modal.openLabel')}
+        aria-expanded="false"
+        onClick={() => setOpenSidebar(true)}
+      >
         <SidebarLogo />
       </HeaderSvgStyle>
 

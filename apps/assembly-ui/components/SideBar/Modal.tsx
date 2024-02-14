@@ -53,7 +53,7 @@ export const SidebarModal: FC<Props> = ({ open, close }) => {
           <SidebarTitleStyle>{i18n.t('sidebar.explore')}</SidebarTitleStyle>
           <SidebarCloseStyle
             aria-label={i18n.t('modal.closeLabel')}
-            aria-expanded="false"
+            aria-expanded="true"
             onClick={handleClose}
             type="button"
           >

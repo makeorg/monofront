@@ -9,6 +9,7 @@ import {
   AnswerContainerStyle,
   SourcesTitleStyle,
 } from './style';
+import { TRANSCRIPT } from '.';
 import { SourcesMobile } from './SourcesMobile';
 import { Sources } from './Sources';
 import { FeedItemType, ChunkType } from '../../types';
@@ -40,7 +41,9 @@ export const Answer: FC<Props> = ({ item }) => {
         <ReactMarkdown>{item.text}</ReactMarkdown>
         {item.text.trim().length > LLMErrorLimit && (
           <>
-            {item.displayActions && <Actions item={item} />}
+            {item.displayActions && item.mode === TRANSCRIPT && (
+              <Actions item={item} />
+            )}
             {item.chunks && item.chunks.length > 0 && (
               <>
                 <SourcesTitleStyle>
