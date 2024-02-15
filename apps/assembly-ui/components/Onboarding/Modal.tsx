@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import i18n from 'i18next';
 import ReactModal from 'react-modal';
 import { lockBody, unlockBody } from '@make.org/utils/helpers/styled';
@@ -21,9 +21,11 @@ export const OnboardingModal: FC = () => {
   const showOnboarding = searchQuery !== 'false';
   const [isOpen, setIsOpen] = useState<boolean>(showOnboarding);
 
-  if (isOpen) {
-    lockBody();
-  }
+  useEffect(() => {
+    if (isOpen) {
+      lockBody();
+    }
+  }, []);
 
   const handleClose = () => {
     unlockBody();
