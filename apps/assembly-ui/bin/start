@@ -39,7 +39,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 const server =
-  process.env.LOCAL_USE_CERTS === 'true'
+  process.env.USE_LOCAL_CERTS === 'true'
     ? https.createServer(
         {
           key: fs.readFileSync('certs/server.key'),

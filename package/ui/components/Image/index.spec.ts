@@ -1,4 +1,4 @@
-  import { getSrcValues } from '.';
+import { getSrcValues } from '.';
 
 describe('Get src values', () => {
   it('not use image flow', () => {

@@ -70,6 +70,9 @@ export type EventRouteType = {
   event: EventType;
   termQueries: TermQueryType[];
   generatedContents: GeneratedContentType[];
+  feed: FeedType;
+  sessionId: string;
+  visitorId: string;
 };
 
 export type AssemblyStateType = {

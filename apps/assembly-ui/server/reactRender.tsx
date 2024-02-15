@@ -9,8 +9,8 @@ import { ServerStyleSheet } from 'styled-components';
 import { HeadProvider } from 'react-head';
 import webpackManifest from 'webpack-manifest';
 import { Request, Response } from 'express';
-import { Cookie } from 'universal-cookie';
 import serialize from 'serialize-javascript';
+import Cookies from 'universal-cookie';
 import { DEFAULT_LANGUAGE } from '../utils/constants';
 import { env } from '../utils/env';
 import { AppContainer } from '../client/app';
@@ -18,6 +18,10 @@ import { ASSEMBLY_CLIENT_DIR } from './paths';
 import { AssemblyGlobalStateType, EventRouteType } from '../types';
 import { LanguageType } from '../types/enums';
 import AssemblyContextState, { initAssemblyEmptyState } from '../store/context';
+import {
+  SESSION_COOKIE_NAME,
+  VISITOR_COOKIE_NAME,
+} from './middleware/assemblyCookies';
 
 const statsFile = path.resolve(ASSEMBLY_CLIENT_DIR, 'loadable-stats.json');
 
@@ -73,6 +77,11 @@ const renderHtml = (
     .replace(/___PORT___/gi, env.port() || '')
     .replace(/___MIXPANEL_TOKEN___/gi, env.mixPanelToken() || '')
     .replace(/___COOKIE_FIRST_TOKEN___/gi, env.cookieFirstToken() || '')
+    .replace(/___API_URL_CLIENT_SIDE___/gi, env.apiUrlClientSide() || '')
+    .replace(/___FB_PIXEL_ID___/gi, env.fbPixelId() || '')
+    .replace(/___TW_PIXEL_ID___/gi, env.twPixelId() || '')
+    .replace(/___MIXPANEL_TOKEN___/gi, env.mixPanelToken() || '')
+
     .replace('</body>', `${scriptTags}</body>`);
 
   return content;
@@ -80,7 +89,7 @@ const renderHtml = (
 
 // @todo test this function!!
 export const reactRender = async (
-  req: Request & Cookie,
+  req: Request & { universalCookies: Cookies },
   res: Response,
   routeState?: EventRouteType
 ): Promise<any> => {
@@ -106,6 +115,8 @@ export const reactRender = async (
     ...initialState,
     ...routeState,
     language: navigatorLanguageCheck(),
+    sessionId: req.universalCookies.get(SESSION_COOKIE_NAME),
+    visitorId: req.universalCookies.get(VISITOR_COOKIE_NAME),
   };
   const context = {};
   const headTags:

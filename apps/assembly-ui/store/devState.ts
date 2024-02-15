@@ -119,6 +119,8 @@ const AssemblyDevState: AssemblyGlobalStateType = {
     items: [],
   },
   language: 'en',
+  sessionId: '',
+  visitorId: '',
 };
 
 export const initAssemblyDevState = (): AssemblyGlobalStateType =>

@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { getLoggerInstance } from '@make.org/logger';
+import Cookies from 'universal-cookie';
 import { reactRender } from '../reactRender';
 import { ContentService } from '../api/Content';
 import { EventRouteType } from '../../types';
@@ -96,5 +97,9 @@ export const eventRoute = async (
     generatedContents,
   };
 
-  return reactRender(req, res, routeState);
+  return reactRender(
+    req as Request & { universalCookies: Cookies },
+    res,
+    routeState
+  );
 };

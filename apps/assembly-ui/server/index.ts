@@ -19,6 +19,10 @@ import {
   oneLineTransformer,
 } from '@make.org/logger/loggerTransformer';
 import { initLogger } from '@make.org/logger';
+import { FacebookConversion } from '@make.org/tracking/apiConversion/facebookConversion';
+import { ClientService } from '@make.org/tracking/apiConversion/clientService';
+import { createProxyMiddleware } from 'http-proxy-middleware';
+import { TwitterConversion } from '@make.org/tracking/apiConversion/twitterConversion';
 import { env } from '../utils/env';
 import { translationRessources } from '../i18n';
 import { initRoutes } from './routes';
@@ -31,6 +35,7 @@ import {
   ASSEMBLY_MAP_DIR,
 } from './paths';
 import { assemblyCspMiddleware } from './middleware/contentSecurityPolicy';
+import { assemblyCookiesMiddleware } from './middleware/assemblyCookies';
 
 i18n.init({
   interpolation: {
@@ -68,13 +73,33 @@ const getApp = () => {
     app.use(cors());
   }
 
-  app.use((req, res, next) => nonceUuidMiddleware(res, next));
+  if (env.useLocalProxy()) {
+    const { hostname } = new URL(env.frontUrl() || '');
+    const apiProxy = createProxyMiddleware({
+      target: env.apiUrlServerSide() || '',
+      pathRewrite: { '^/backend': '' },
+      changeOrigin: true,
+      cookieDomainRewrite: {
+        '*': hostname,
+      },
+      logLevel: 'error',
+      secure: false,
+      // @toDo: add a logProvider parameter
+    });
+    app.use('/backend', apiProxy);
+  }
+
   app.use(compression());
   app.use(express.json());
+  app.use((req, res, next) => nonceUuidMiddleware(res, next));
+
+  const cookieRouteRegex = /^\/.*(?<!(txt|js|png|jpg|jpeg|gif|ico|json))$/;
+  app.use(cookieRouteRegex, cookiesMiddleware());
+  app.use(cookieRouteRegex, assemblyCookiesMiddleware());
+
   app.use(
     favicon(`${ASSEMBLY_CLIENT_DIR}/${webpackManifest[ASSEMBLY_FAVICON_FILE]}`)
   );
-  app.use(cookiesMiddleware());
   app.use((req, res, next) =>
     headersResponseMiddleware(
       {
@@ -99,7 +124,19 @@ const getApp = () => {
     assemblyCspMiddleware(req, localsResponse, next);
   });
 
-  initRoutes(app);
+  const fbConversionService = new FacebookConversion(
+    env.fbPixelId() ?? ''
+  ).getServerConversion(new ClientService(), env.fbConversionToken() ?? '');
+  const twConversionService = new TwitterConversion(
+    env.twPixelId() ?? ''
+  ).getServerConversion(new ClientService(), {
+    consumerApiKey: env.twAPIKey(),
+    consumerApiSecret: env.twAPISecret(),
+    accessToken: env.twAccessToken(),
+    tokenSecret: env.twTokenSecret(),
+  });
+
+  initRoutes(app, { fbConversionService, twConversionService });
 
   return app;
 };

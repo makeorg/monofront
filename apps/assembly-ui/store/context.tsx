@@ -35,6 +35,8 @@ const emptyAssemblyState: AssemblyGlobalStateType = {
   generatedContents: [],
   feed: { isStreaming: false, items: [] },
   language: 'en',
+  sessionId: '',
+  visitorId: '',
 };
 
 export const initAssemblyEmptyState = (): AssemblyGlobalStateType =>

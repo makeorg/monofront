@@ -16,4 +16,10 @@
   track(...args) {
     return window.fbq(...args);
   },
+  grant() {
+    window.fbq('consent', 'grant');
+  },
+  revoke() {
+    window.fbq('consent', 'revoke');
+  }
 };

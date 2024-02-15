@@ -1,35 +1,50 @@
 import { v4 as uuidv4 } from 'uuid';
-import { TrackerProviderType, TrackingValidationError } from './interface';
-import { TrackConfigurationType } from './types.js';
+import {
+  ILogger,
+  ITrackerProvider,
+  TrackingValidationError,
+} from './interface';
+import { TrackConfigurationType, TrackingConsentType } from './types.js';
 
 export class TrackingService {
   #trackConfiguration: TrackConfigurationType;
 
-  #trackers: TrackerProviderType[];
+  #trackers: ITrackerProvider[];
+
+  #consentIsdisabled = false;
+
+  #logger: ILogger = {
+    logError: data => console.error(data),
+    logWarning: data => console.warn(data),
+    logInfo: data => console.info(data),
+  };
 
   constructor(
     trackConfiguration: TrackConfigurationType,
-    trackers: TrackerProviderType[]
+    trackers: ITrackerProvider[],
+    logger?: ILogger
   ) {
     this.#trackConfiguration = trackConfiguration;
     this.#trackers = trackers;
+    this.#logger = logger ?? this.#logger;
   }
 
   #validate(eventName: string, parameters: Record<string, string>) {
     const eventConfiguration = this.#trackConfiguration[eventName];
+    const eventParameters = eventConfiguration?.parameters ?? [];
 
     if (!eventConfiguration) {
       throw new TrackingValidationError(
-        `Tracking error : event not found "${eventName}"`
+        `Tracking error: event not found "${eventName}"`
       );
     }
 
-    eventConfiguration.parameters
+    eventParameters
       .filter(k => k.optional !== true)
       .forEach(param => {
         if (!parameters[param.key]) {
           throw new TrackingValidationError(
-            `Tracking error : required param not found "${param.key}"`
+            `Tracking error: required param not found "${param.key}"`
           );
         }
       });
@@ -42,7 +57,7 @@ export class TrackingService {
         !param.values.find(el => el === parameters[param.key])
       ) {
         throw new TrackingValidationError(
-          `Tracking error : invalid "${
+          `Tracking error: invalid "${
             parameters[param.key]
           }" value. "${param.values.toString()}" expected.  (${param.key})`
         );
@@ -55,20 +70,42 @@ export class TrackingService {
       );
       if (!found) {
         throw new TrackingValidationError(
-          `Tracking error : extra param found "${paramName}"`
+          `Tracking error: extra param found "${paramName}"`
         );
       }
     });
   }
 
   sendAllTrackers(eventName: string, parameters: Record<string, string>): void {
-    this.#validate(eventName, parameters);
+    try {
+      this.#validate(eventName, parameters);
+    } catch (e) {
+      this.#logger.logError(e);
+
+      return;
+    }
+    const eventId = uuidv4();
     this.#trackers.forEach(tracker => {
-      const allowedParams = this.#trackConfiguration[eventName]?.parameters
-        .filter(k =>
-          k.recipients.some(item => tracker.recipients.includes(item))
-        )
-        .map(k => k.key);
+      const trackerRecipients = tracker.recipients ?? [];
+      const eventConfigRecipients =
+        this.#trackConfiguration[eventName]?.recipients ?? [];
+      const eventConfigParameters =
+        this.#trackConfiguration[eventName]?.parameters ?? [];
+
+      if (
+        !trackerRecipients.some(item => eventConfigRecipients.includes(item))
+      ) {
+        return;
+      }
+
+      const allowedParams = eventConfigParameters
+        .filter(param => {
+          const paramRecipients = param.recipients ?? [];
+          return trackerRecipients.some(trackerRecipient =>
+            paramRecipients.includes(trackerRecipient)
+          );
+        })
+        .map(param => param.key);
 
       const filteredParams = Object.keys(parameters)
         .filter(key => allowedParams.includes(key))
@@ -78,7 +115,19 @@ export class TrackingService {
           return obj;
         }, {} as Record<string, string>);
 
-      tracker.send(uuidv4(), eventName, filteredParams);
+      tracker.send(eventId, eventName, filteredParams);
+    });
+  }
+
+  updateConsent(consent: TrackingConsentType | null): void {
+    if (this.#consentIsdisabled) {
+      this.#trackers.forEach(tracker => {
+        tracker.setEnabled(true);
+      });
+      return;
+    }
+    this.#trackers.forEach(tracker => {
+      tracker.setEnabled(!!(consent && consent[tracker.consent]));
     });
   }
 }

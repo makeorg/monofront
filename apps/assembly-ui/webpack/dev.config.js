@@ -59,7 +59,7 @@ const devConfig = envConfigPath => ({
     host: '0.0.0.0',
     historyApiFallback: true,
     disableHostCheck: true,
-    https: JSON.parse(process.env.LOCAL_USE_CERTS),
+    https: JSON.parse(process.env.USE_LOCAL_CERTS),
     watchOptions: {
       aggregateTimeout: 500, // delay before reloading
       poll: true, // enable polling since fsevents are not supported in docker

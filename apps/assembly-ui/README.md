@@ -19,14 +19,14 @@ Dev mode :
 
 ```bash
 $ docker-compose -f docker-compose.dev.yaml --profile=assembly-ui-dev up -d
-# and go to https://localhost:3000
+# and go to https://local.makeorg.tech:3000
 ```
 
 Dev mode with SSR :
 
 ```bash
 $ docker-compose -f docker-compose.dev.yaml --profile=assembly-ui-ssr up -d
-# and go to https://localhost:3000
+# and go to https://local.makeorg.tech:3000
 ```
 
 > After changes, you must rebuild your app in docker container :
@@ -40,21 +40,9 @@ $ docker exec -it CONTAINER_ID yarn workspace @make.org/assembly-ui build
 $ docker-compose -f docker-compose.dev.yaml up -d --profile=assembly-ui-ssr restart
 ```
 
-## Environment variables for production
+## Environment variables
 
-````bash
-# .env file
-
-# PORT
-PORT=8000
-
-# API url
-API_URL_SERVER_SIDE=https://api.make.org
-API_URL_CLIENT_SIDE=https://api.make.org
-
-# Front url
-FRONT_URL=https://make.org
-
+See: [.env.dist](.env.dist)
 
 ## Updating packages
 

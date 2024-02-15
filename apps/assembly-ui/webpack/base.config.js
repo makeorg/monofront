@@ -29,6 +29,7 @@ const clientConfig = envConfigPath => ({
   resolve: {
     extensions: ['*', '.ts', '.tsx', '.js', '.yaml', '.json'],
     alias: resolveTsconfigPathsToAlias(),
+    fallback: { "crypto": false }
   },
   stats: {
     hash: true,

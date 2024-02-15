@@ -1,5 +1,10 @@
 import express, { Application, Response, Request } from 'express';
 import serveStatic from 'serve-static';
+import { IConversionServerService } from '@make.org/tracking/interface';
+import {
+  FbConversionEventClientType,
+  TwConversionEventClientType,
+} from '@make.org/tracking/types';
 import {
   LLM_PATH,
   // ROUTE_ASSEMBLY_ROOT,
@@ -10,6 +15,8 @@ import {
   ROUTE_ASSEMBLY_COOKIES,
   ROUTE_ASSEMBLY_LEGAL,
   ROUTE_ASSEMBLY_ABOUT,
+  ROUTE_ASSEMBLY_FB_CONVERSION,
+  ROUTE_ASSEMBLY_TW_CONVERSION,
 } from '../utils/routes';
 import { defaultRoute } from './ssr/defaultRoute';
 import { eventRoute } from './ssr/eventRoute';
@@ -20,6 +27,7 @@ import {
   ASSEMBLY_FAVICON_DIR,
 } from './paths';
 import * as technicalPages from './technicalPages';
+import * as conversionApi from './conversionApi';
 import { getLLMAnswer } from './api/LLM';
 
 function setCustomCacheControl(res: Response, path: string) {
@@ -32,7 +40,16 @@ function setCustomCacheControl(res: Response, path: string) {
   }
 }
 
-export const initRoutes = (app: Application): void => {
+export const initRoutes = (
+  app: Application,
+  {
+    fbConversionService,
+    twConversionService,
+  }: {
+    fbConversionService: IConversionServerService<FbConversionEventClientType>;
+    twConversionService: IConversionServerService<TwConversionEventClientType>;
+  }
+): void => {
   // Static files
   app.use(
     '/favicon',
@@ -69,7 +86,14 @@ export const initRoutes = (app: Application): void => {
   app.get('/.well-known/security.txt', technicalPages.renderSecurityTxt);
   app.get('/security.txt', technicalPages.renderSecurityTxt);
   app.get('/version', technicalPages.renderVersion);
-
+  app.post(
+    ROUTE_ASSEMBLY_FB_CONVERSION,
+    conversionApi.renderConversionFacebook(fbConversionService)
+  );
+  app.post(
+    ROUTE_ASSEMBLY_TW_CONVERSION,
+    conversionApi.renderConversionTwitter(twConversionService)
+  );
   // Assembly redirect
   // app.get(ROUTE_ASSEMBLY_CUSTOMER, defaultRoute);
   // app.get(ROUTE_ASSEMBLY_ROOT, defaultRoute);

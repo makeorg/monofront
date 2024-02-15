@@ -7,6 +7,8 @@ export const ROUTE_ASSEMBLY_PRIVACY_POLICY = '/privacy-policy';
 export const ROUTE_ASSEMBLY_LEGAL = '/legal';
 export const ROUTE_ASSEMBLY_COOKIES = '/cookies';
 export const ROUTE_ASSEMBLY_ABOUT = '/about';
+export const ROUTE_ASSEMBLY_FB_CONVERSION = '/api/conversion-fb';
+export const ROUTE_ASSEMBLY_TW_CONVERSION = '/api/conversion-tw';
 
 // Path
 export const LLM_PATH = '/api/llm';
