@@ -5,6 +5,8 @@ import { disableFeedStreaming } from '../../store/feed/actions';
 import { StreamLLM } from '../Prompt/Stream';
 
 import { useAssemblyContext } from '../../store/context';
+import { useTracking } from '../Tracking/useTracking';
+import { useUtms } from '../Tracking/useUtms';
 
 const colors = [
   '#F8B2BC',
@@ -50,16 +52,29 @@ export const Buttons: FC<ButtonsProps> = ({
 
 export const Themes: FC = () => {
   const { state, dispatch } = useAssemblyContext();
-  const { termQueries } = state;
+  const { termQueries, event, sessionId, visitorId } = state;
+  const { slug: eventSlug, language: eventLanguage, id: eventId } = event;
   const [question, setQuestion] = useState<string>('');
   const themes = termQueries.filter(termQuery => termQuery.type === 'THEME');
+  const tracker = useTracking();
+  const utms = useUtms();
 
-  const { setStartStream } = StreamLLM(question, TRANSCRIPT);
+  const { startStream } = StreamLLM(question, TRANSCRIPT);
 
-  const handleThemeQuestion = (value: string) => {
+  const handleThemeQuestion = (value: string, title: string) => {
+    const feedItemId = startStream();
+    tracker.track('ACTION-THEME', {
+      visitor_id: visitorId,
+      theme_label: title,
+      language: eventLanguage,
+      event_slug: eventSlug,
+      session_id: sessionId,
+      assembly_event_id: eventId,
+      submit_id: feedItemId,
+      ...utms,
+    });
     setQuestion(value);
     dispatch(disableFeedStreaming());
-    setStartStream(true);
   };
 
   return (
@@ -67,7 +82,7 @@ export const Themes: FC = () => {
       {themes.map((theme, index) => (
         <Buttons
           key={theme.value}
-          handleClick={() => handleThemeQuestion(theme.value)}
+          handleClick={() => handleThemeQuestion(theme.value, theme.title)}
           value={theme.value}
           title={theme.title}
           color={index}

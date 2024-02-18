@@ -9,6 +9,8 @@ import {
   OnboardingCrossStyle,
   OnboardingCloseButtonStyle,
 } from './style';
+import { useTracking } from '../Tracking/useTracking';
+import { useAssemblyContext } from '../../store/context';
 
 ReactModal.setAppElement('#app');
 
@@ -16,6 +18,10 @@ const DISPLAY_ONBOARDING_PARAM = 'displayonboarding';
 
 export const OnboardingModal: FC = () => {
   const { search } = useLocation();
+  const tracker = useTracking();
+  const { state } = useAssemblyContext();
+  const { event, visitorId } = state;
+  const { slug: eventSlug } = event;
   const urlSearchParams = new URLSearchParams(search);
   const searchQuery = urlSearchParams.get(DISPLAY_ONBOARDING_PARAM);
   const showOnboarding = searchQuery !== 'false';
@@ -27,7 +33,12 @@ export const OnboardingModal: FC = () => {
     }
   }, []);
 
-  const handleClose = () => {
+  const handleClose = (triggerName: 'close' | 'discover') => () => {
+    tracker.track('ACTION-QUIT-ONBOARDING', {
+      visitor_id: visitorId,
+      modal_action_type: triggerName,
+      event_slug: eventSlug,
+    });
     unlockBody();
     setIsOpen(false);
   };
@@ -41,7 +52,7 @@ export const OnboardingModal: FC = () => {
       <OnboardingCloseStyle
         aria-label={i18n.t('modal.closeLabel')}
         aria-expanded="false"
-        onClick={handleClose}
+        onClick={handleClose('close')}
         type="button"
       >
         <OnboardingCrossStyle />
@@ -49,7 +60,7 @@ export const OnboardingModal: FC = () => {
       <OnboardingContent />
       <OnboardingCloseButtonStyle
         aria-expanded="false"
-        onClick={handleClose}
+        onClick={handleClose('discover')}
         type="button"
       >
         {i18n.t('modal.discover')}

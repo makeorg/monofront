@@ -15,17 +15,36 @@ import { Sources } from './Sources';
 import { FeedItemType, ChunkType } from '../../types';
 import pano from '../../assets/IconPano.png';
 import { Actions } from './Actions';
+import { useAssemblyContext } from '../../store/context';
+import { useTracking } from '../Tracking/useTracking';
+import { TRANSCRIPT } from '.';
 
 type Props = { item: FeedItemType };
 
 export const Answer: FC<Props> = ({ item }) => {
   const [isTablet, setIsTablet] = useState(false);
+  const [isTracked, setIsTracked] = useState(false);
+  const { state } = useAssemblyContext();
+  const { isStreaming } = state.feed;
+  const tracker = useTracking();
 
   useEffect(() => {
     if (env.isClientSide() && Math.min(window.innerWidth) < 969) {
       setIsTablet(true);
     }
   }, []);
+
+  useEffect(() => {
+    if (!isTracked && item.text.length && !isStreaming) {
+      tracker.track('DISPLAY-PROMPT-ANSWER', {
+        submit_id: item.id,
+        prompt_result_success: 'success',
+        prompt_fired_by: item.mode === TRANSCRIPT ? 'main' : 'document',
+      });
+      setIsTracked(true);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [item.text, isStreaming]);
 
   const sources = (chunks: ChunkType[]) => {
     if (isTablet) {

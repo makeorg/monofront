@@ -22,19 +22,37 @@ import {
   PromptFormWarningText,
 } from './style';
 import { StreamLLM } from './Stream';
+import { useTracking } from '../Tracking/useTracking';
+import { useUtms } from '../Tracking/useUtms';
 
 export const PromptForm: FC = () => {
   const { state, dispatch } = useAssemblyContext();
-  const { isStreaming } = state.feed;
+
+  const { feed, visitorId, sessionId, event } = state;
+  const { slug: eventSlug, language: eventLanguage, id: eventId } = event;
+  const { isStreaming } = feed;
   const [question, setQuestion] = useState<string>('');
 
-  const { setStartStream } = StreamLLM(question, TRANSCRIPT);
+  const { startStream } = StreamLLM(question, TRANSCRIPT);
+  const tracker = useTracking();
+  const utms = useUtms();
 
   const handleSubmit: FormEventHandler<HTMLButtonElement | HTMLFormElement> = (
     e: SyntheticEvent<HTMLButtonElement>
   ) => {
     e.preventDefault();
-    setStartStream(true);
+
+    const feedItemId = startStream();
+    tracker.track('ACTION-OPEN-PROMPT', {
+      visitor_id: visitorId,
+      language: eventLanguage,
+      event_slug: eventSlug,
+      session_id: sessionId,
+      assembly_event_id: eventId,
+      submit_id: feedItemId,
+      ...utms,
+    });
+
     const form = e.target as HTMLFormElement;
     form.reset();
   };

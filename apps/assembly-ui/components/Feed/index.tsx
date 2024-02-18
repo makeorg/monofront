@@ -7,6 +7,7 @@ import { Answer } from './Answer';
 import { HistoryLimit } from './HistoryLimit';
 import { removeFeedLastItem } from '../../store/feed/actions';
 import { StreamLLM } from '../Prompt/Stream';
+import { useTracking } from '../Tracking/useTracking';
 
 export const TRANSCRIPT = 'transcriptStd';
 export const DOCUMENT = 'documentStd';
@@ -28,8 +29,9 @@ const scrollToLastElement = (id: string) => {
 
 export const Feed: FC = () => {
   const { state, dispatch } = useAssemblyContext();
-  const { items } = state.feed;
-  const { termQueries } = state;
+  const { feed, visitorId, event, termQueries } = state;
+  const { slug: eventSlug } = event;
+  const { items } = feed;
   const [maxHistory, setMaxHistory] = useState(false);
   const FEED_MAX_LENGTH = 5;
 
@@ -40,15 +42,22 @@ export const Feed: FC = () => {
   const responseTriggerTermQuery = termQueries.find(
     termQuery => termQuery.title.toLowerCase() === decodedQuery.toLowerCase()
   );
+  const tracker = useTracking();
 
-  const { setStartStream } = StreamLLM(
+  const { startStream } = StreamLLM(
     responseTriggerTermQuery?.value || '',
     TRANSCRIPT
   );
 
   useEffect(() => {
     if (responseTriggerTermQuery) {
-      setStartStream(true);
+      const feedItemId = startStream();
+      tracker.track('ACTION-AUTO-PROMPT', {
+        visitor_id: visitorId,
+        event_slug: eventSlug,
+        submit_id: feedItemId,
+        suggestion_label: responseTriggerTermQuery.title,
+      });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [responseTriggerTermQuery]);

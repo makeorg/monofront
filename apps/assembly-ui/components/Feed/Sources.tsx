@@ -15,9 +15,29 @@ import {
   VideoLogo,
 } from './style';
 import { SOURCE_TYPE_VIDEO } from '.';
+import { useTracking } from '../Tracking/useTracking';
+import { useAssemblyContext } from '../../store/context';
+import { useUtms } from '../Tracking/useUtms';
 
 const DocumentMeta: FC<{ chunk: ChunkType }> = ({ chunk }) => {
   const { document_source_title, page_number } = chunk;
+  const { state } = useAssemblyContext();
+  const { event, sessionId, visitorId } = state;
+  const { slug: eventSlug, language: eventLanguage, id: eventId } = event;
+  const utms = useUtms();
+  const tracker = useTracking();
+
+  const onClick = () =>
+    tracker.track('ACTION-SOURCE-LINK', {
+      visitor_id: visitorId,
+      source_document_link: chunk.document_source_url,
+      language: eventLanguage,
+      event_slug: eventSlug,
+      document_type: chunk.document_source_type,
+      session_id: sessionId,
+      assembly_event_id: eventId,
+      ...utms,
+    });
 
   return (
     <SourcesMediaContentStyle>
@@ -25,6 +45,7 @@ const DocumentMeta: FC<{ chunk: ChunkType }> = ({ chunk }) => {
         href={`${chunk.document_source_url}#page=${chunk.page_number}`}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={onClick}
       >
         <SourcesMediaTitleStyle>
           <DocumentLogo aria-hidden focusable="false" />
@@ -45,12 +66,36 @@ const TranscriptMeta: FC<{ chunk: ChunkType }> = ({ chunk }) => {
   const {
     document_source_title,
     document_source_url,
+    document_source_type,
     speaker_name,
     speech_time,
   } = chunk;
+  const { state } = useAssemblyContext();
+  const { event, sessionId, visitorId } = state;
+  const { slug: eventSlug, language: eventLanguage, id: eventId } = event;
+  const utms = useUtms();
+  const tracker = useTracking();
+
+  const onClickPreview = () =>
+    tracker.track('ACTION-SOURCE-LINK', {
+      visitor_id: visitorId,
+      source_document_link: document_source_url,
+      language: eventLanguage,
+      event_slug: eventSlug,
+      document_type: document_source_type,
+      session_id: sessionId,
+      assembly_event_id: eventId,
+      ...utms,
+    });
+
   return (
     <SourcesMediaContentStyle>
-      <YoutubePlayer url={document_source_url} seek={speech_time} small />
+      <YoutubePlayer
+        url={document_source_url}
+        seek={speech_time}
+        small
+        onClickPreview={onClickPreview}
+      />
       <SourcesMediaTextContainerStyle>
         <SourcesMediaTitleStyle>
           <VideoLogo aria-hidden focusable="false" />

@@ -12,6 +12,8 @@ import {
   SuggestionsButtonsListStyle,
   SuggestionsContainerStyle,
 } from './style';
+import { useTracking } from '../Tracking/useTracking';
+import { useUtms } from '../Tracking/useUtms';
 
 type ButtonsProps = {
   title: string;
@@ -38,7 +40,8 @@ const Buttons: FC<ButtonsProps> = ({ title, value, handleClick }) => {
 
 export const Suggestions: FC = () => {
   const { state, dispatch } = useAssemblyContext();
-  const { termQueries } = state;
+  const { termQueries, event, sessionId, visitorId } = state;
+  const { slug: eventSlug, language: eventLanguage, id: eventId } = event;
   const [question, setQuestion] = useState<string>('');
   const sliderRef = useRef<HTMLDivElement>(null);
   const [initSlider, setInitSlider] = useState(false);
@@ -47,12 +50,25 @@ export const Suggestions: FC = () => {
     termQuery => termQuery.type === 'SUGGESTION'
   );
 
-  const { setStartStream } = StreamLLM(question, TRANSCRIPT);
+  const tracker = useTracking();
+  const utms = useUtms();
 
-  const handleSuggestionQuestion = (value: string) => {
+  const { startStream } = StreamLLM(question, TRANSCRIPT);
+
+  const handleSuggestionQuestion = (value: string, title: string) => {
+    const feedItemId = startStream();
+    tracker.track('ACTION-SUGGESTION', {
+      visitor_id: visitorId,
+      suggestion_label: title,
+      language: eventLanguage,
+      event_slug: eventSlug,
+      session_id: sessionId,
+      assembly_event_id: eventId,
+      submit_id: feedItemId,
+      ...utms,
+    });
     setQuestion(value);
     dispatch(disableFeedStreaming());
-    setStartStream(true);
   };
 
   useEffect(() => {
@@ -83,7 +99,9 @@ export const Suggestions: FC = () => {
                 key={suggestion.value}
                 title={suggestion.title}
                 value={suggestion.value}
-                handleClick={() => handleSuggestionQuestion(suggestion.value)}
+                handleClick={() =>
+                  handleSuggestionQuestion(suggestion.value, suggestion.title)
+                }
               />
             ))}
           </UnstyledListStyle>
@@ -99,7 +117,9 @@ export const Suggestions: FC = () => {
           key={suggestion.value}
           title={suggestion.title}
           value={suggestion.value}
-          handleClick={() => handleSuggestionQuestion(suggestion.value)}
+          handleClick={() =>
+            handleSuggestionQuestion(suggestion.value, suggestion.title)
+          }
         />
       ))}
     </SuggestionsContainerStyle>

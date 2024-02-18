@@ -11,6 +11,7 @@ import { FeedItemType } from '../../types';
 import { useAssemblyContext } from '../../store/context';
 import { StreamLLM } from '../Prompt/Stream';
 import { disableFeedStreaming } from '../../store/feed/actions';
+import { useTracking } from '../Tracking/useTracking';
 
 type Props = {
   item: FeedItemType;
@@ -19,14 +20,23 @@ type Props = {
 export const Actions: FC<Props> = ({ item }) => {
   const [mode, setMode] = useState(TRANSCRIPT);
   const { state, dispatch } = useAssemblyContext();
-  const { isStreaming } = state.feed;
+  const { feed, visitorId, event } = state;
+  const { slug: eventSlug } = event;
+  const { isStreaming } = feed;
 
-  const { setStartStream } = StreamLLM(item.question, mode);
+  const tracker = useTracking();
+  const { startStream } = StreamLLM(item.question, mode);
 
   const handleDocumentQuestion = () => {
     setMode(DOCUMENT);
     dispatch(disableFeedStreaming());
-    setStartStream(true);
+
+    const feedItemId = startStream();
+    tracker.track('ACTION-DOCUMENT', {
+      visitor_id: visitorId,
+      event_slug: eventSlug,
+      submit_id: feedItemId,
+    });
   };
 
   return (

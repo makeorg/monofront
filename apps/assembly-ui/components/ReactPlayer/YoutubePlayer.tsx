@@ -32,7 +32,7 @@ const checkConsent = (
 };
 
 export const YoutubePlayer: React.FC<ReactPlayerProps> = props => {
-  const { url, seek, small } = props;
+  const { url, seek, small, onClickPreview } = props;
   const playerRef = useRef<_ReactPlayer>(null);
   const ReactPlayer = _ReactPlayer as unknown as React.FC<ReactPlayerProps>;
   const { acceptCategory } = useCookieFirst();
@@ -91,7 +91,12 @@ export const YoutubePlayer: React.FC<ReactPlayerProps> = props => {
             },
           },
         }}
-        onClickPreview={() => checkConsent(setFunctionalCookies)}
+        onClickPreview={(event: any) => {
+          if (onClickPreview) {
+            onClickPreview(event);
+          }
+          checkConsent(setFunctionalCookies);
+        }}
       />
     </ReactPlayerContainer>
   );
