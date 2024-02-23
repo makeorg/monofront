@@ -1237,7 +1237,7 @@
   },
   "contact": {
     "contactUs": "Contactez-nous",
-    "paragraph": "Vous avez un besoin, une question ou un retour sur nos produits ? Contactez-nous avec le formulaire ci-dessous.",
+    "paragraph": "Vous avez un besoin, une question ou un retour sur nos produits ? Contactez-nous avec le formulaire ci-dessous",
     "delete": "Si vous souhaitez vous désabonner de nos communications ou supprimer vos données personnelles, rendez-vous dans votre profil ! Vous pourrez faire cette manipulation en toute autonomie.",
     "help": "Comment pouvons-nous vous aider ?",
     "mandatory": "Tous les champs de ce formulaire sont obligatoires.",
@@ -1249,8 +1249,7 @@
     "request_placeholder": "Ma demande...",
     "request_explain": "Expliquez nous votre demande en quelques mots",
     "request_explain_placeholder": "Expliquez votre demande ici...",
-    "authorize": "J’autorise Make.org à collecter les données personnelles que j’ai transmises via ce formulaire afin de répondre à la demande que j’ai exprimé. Aucune exploitation commerciale n’en sera faite.",
-    "know_more": "Pour en savoir plus, je peux consulter la",
+    "authorize": "J’autorise Make.org à collecter les données personnelles que j’ai transmises via ce formulaire afin de répondre à la demande que j’ai exprimé. Aucune exploitation commerciale n’en sera faite. Pour en savoir plus, je peux consulter la politique de gestion des données de Make.org (lien de redirection).",
     "send": "Envoyer",
     "heard": "Nous vous avons entendu !",
     "handle": "Nous avons bien reçu votre message et nous essayerons de le traiter dans les plus brefs délais.",
