@@ -16,5 +16,4 @@ export enum FORM {
   FILTER_AND_SORT = 'filter_and_sort',
   COUNTRY_LANGUAGE_SWITCH_FORMNAME = 'country_language_switch',
   REPORT_TRANSLATION = 'report_translation',
-  CONTACT_FORMNAME = 'contact_form',
 }

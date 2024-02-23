@@ -17,10 +17,6 @@ const fbPixelId = (): string => process.env.FB_PIXEL_ID || '';
 const fbConversionToken = (): string =>
   process.env.FB_CONVERSION_TOKEN || 'undefined';
 
-// Uvdesk vars
-const uvDeskUrl = (): string => process.env.UVDESK_URL || '';
-const uvDeskApiToken = (): string => process.env.UVDESK_API_TOKEN || '';
-
 // Hotjar vars
 const hotjarToken = (): string => process.env.HOTJAR_TOKEN || '';
 const contentApiUrlServerSide = (): string | undefined =>
@@ -53,6 +49,4 @@ export const env = {
   twAPISecret,
   twAccessToken,
   twTokenSecret,
-  uvDeskUrl,
-  uvDeskApiToken,
 };

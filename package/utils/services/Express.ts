@@ -1,4 +1,3 @@
-import { ContactType } from '@make.org/types/Contact';
 import {
   QuestionResultsType,
   TrackingConfigurationParamType,
@@ -13,30 +12,6 @@ import { TwConversionType } from '@make.org/types/TwEvents';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
 const apiService = new ExpressApiService(Logger);
-
-const sendContactMail = async (
-  message: string,
-  name: string,
-  subject: string,
-  from: string
-): Promise<ContactType | null> => {
-  try {
-    const response = await apiService.sendContactUvdeskData(
-      message,
-      name,
-      subject,
-      from
-    );
-
-    return response ? response.data : null;
-  } catch (error: unknown) {
-    const apiServiceError = error as ApiServiceError;
-
-    defaultUnexpectedError(apiServiceError);
-
-    return null;
-  }
-};
 
 const getResults = async (
   questionId: string,
@@ -147,7 +122,6 @@ const sendTwEventConversion = async (
  * Refactor it to define the service and his layers in the 'front' app
  */
 export const ExpressService = {
-  sendContactMail,
   getResults,
   log,
   sendFbEventConversion,
