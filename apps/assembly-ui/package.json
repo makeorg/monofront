@@ -105,6 +105,10 @@
     "server": "pm2-runtime start ecosystem.config.js --only app-production",
     "server:dev": "pm2-runtime start ecosystem.config.js --only app-dev",
     "server:test": "pm2-runtime start ecosystem.config.js --only 'api-content-mock,app-test'",
-    "version-build": "../../bin/version-build.js generate -d './dist/client' -p 'assembly-ui'"
+    "version-build": "../../bin/version-build.js generate -d './dist/client' -p 'assembly-ui'",
+    "translation": "npx babel --out-dir ../../dist/lib --config-file ./webpack/babel.config.js ../../bin/utils && ../../bin/check-translation.js check -d ./i18n -l 'fr'",
+    "translation:fix": "yarn run translation --fix",
+    "translation:unused-keys": "npx babel --out-dir ../../dist/lib --config-file ./webpack/babel.config.js ../../bin/utils && ../../bin/check-translation.js list-unused",
+    "translation:orphan-keys": "npx babel --out-dir ../../dist/lib --config-file ./webpack/babel.config.js ../../bin/utils && ../../bin/check-translation.js list-orphan"
   }
 }
