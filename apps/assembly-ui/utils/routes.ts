@@ -9,6 +9,7 @@ export const ROUTE_ASSEMBLY_COOKIES = '/cookies';
 export const ROUTE_ASSEMBLY_ABOUT = '/about';
 export const ROUTE_ASSEMBLY_FB_CONVERSION = '/api/conversion-fb';
 export const ROUTE_ASSEMBLY_TW_CONVERSION = '/api/conversion-tw';
+export const ROUTE_ASSEMBLY_CONSENT = '/api/consent';
 
 // Path
 export const LLM_PATH = '/api/llm';

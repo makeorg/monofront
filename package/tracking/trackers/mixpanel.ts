@@ -6,7 +6,7 @@ import { mixpnl } from '../pixel/mixpanel';
 export class MixpanelTracker implements ITrackerProvider {
   name = 'mixpanel';
 
-  consent: keyof TrackingConsentType = 'advertising';
+  consent: keyof TrackingConsentType = 'performance';
 
   recipients: (keyof typeof Recipient)[] = [];
 

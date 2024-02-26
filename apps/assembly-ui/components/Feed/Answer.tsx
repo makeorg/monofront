@@ -9,7 +9,6 @@ import {
   AnswerContainerStyle,
   SourcesTitleStyle,
 } from './style';
-import { TRANSCRIPT } from '.';
 import { SourcesMobile } from './SourcesMobile';
 import { Sources } from './Sources';
 import { FeedItemType, ChunkType } from '../../types';

@@ -18,10 +18,7 @@ import { ASSEMBLY_CLIENT_DIR } from './paths';
 import { AssemblyGlobalStateType, EventRouteType } from '../types';
 import { LanguageType } from '../types/enums';
 import AssemblyContextState, { initAssemblyEmptyState } from '../store/context';
-import {
-  SESSION_COOKIE_NAME,
-  VISITOR_COOKIE_NAME,
-} from './middleware/assemblyCookies';
+import { SESSION_COOKIE_NAME, VISITOR_COOKIE_NAME } from './cookiesManager';
 
 const statsFile = path.resolve(ASSEMBLY_CLIENT_DIR, 'loadable-stats.json');
 

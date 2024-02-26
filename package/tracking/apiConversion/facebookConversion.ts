@@ -126,7 +126,7 @@ export class FacebookConversion
         method: 'POST',
         body: {
           data: [preparedData],
-          // test_event_code: 'TEST76949',
+          // test_event_code: 'TEST71326',
         },
       })
       .catch(error => {

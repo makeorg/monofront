@@ -29,6 +29,7 @@ import {
 } from '../components/Tracking/TrackingContext';
 import trackingConfiguration from '../trackingConfiguration.yaml';
 import {
+  ROUTE_ASSEMBLY_CONSENT,
   ROUTE_ASSEMBLY_FB_CONVERSION,
   ROUTE_ASSEMBLY_TW_CONVERSION,
 } from '../utils/routes';
@@ -141,11 +142,25 @@ const initApp = async (state: AssemblyGlobalStateType) => {
     }
 
     const trackingService = getTrackingService(store.visitorId);
+    trackingService.updateConsent({
+      necessary: true,
+      performance: false,
+      functional: false,
+      advertising: false,
+    });
     const trackContext: ITrackingContext = {
       track: (eventName: string, params: Record<string, string>) =>
         trackingService.sendAllTrackers(eventName, params),
       updateFromConsent: consent => {
         trackingService.updateConsent(consent);
+        try {
+          fetch(`${window?.FRONT_URL}${ROUTE_ASSEMBLY_CONSENT}`, {
+            method: 'POST',
+            body: JSON.stringify(consent),
+          });
+        } catch (e) {
+          // toDo: log errors;
+        }
       },
     };
 

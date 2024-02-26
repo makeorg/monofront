@@ -3,7 +3,11 @@
 #  parameters: []
 
 TWITTER_MAPPING:
-  DISPLAY-PAGE: "o2q9h"
+  DISPLAY-PAGE: "ojv3t"
+  ACTION-THEME: "ojv3w"
+  ACTION-SUGGESTION: "ojv3y"
+  ACTION-OPEN-PROMPT: "ojv42"
+  ACTION-SOURCE-LINK: "ojv44"
 
 RECIPIENTS:
   facebook: ["acquisition"]
@@ -44,11 +48,13 @@ EVENTS:
         description: Unique visitor identifier
         purpose: Segmentation by unique visitor
         example: 00000000-0000-0000-0000-000000000000
+        optional: true
         recipients: ["business"]
       - key: session_id
         description: Session identifier
         purpose: Segmentation by session
         example: 00000000-0000-0000-0000-000000000000
+        optional: true
         recipients: ["business"]
         # purpose: Visitors, visits by utms
       - key: utm_campaign
@@ -85,6 +91,7 @@ EVENTS:
         description: Unique visitor identifier
         purpose: Segmentation by unique visitor
         example: 00000000-0000-0000-0000-000000000000
+        optional: true
         recipients: ["product", "business"]
       - key: theme_label
         description: Label of thematic CTA
@@ -109,6 +116,7 @@ EVENTS:
         description: Session identifier
         purpose: Segmentation by session
         example: 00000000-0000-0000-0000-000000000000
+        optional: true
         recipients: ["business"]
       - key: assembly_event_id
         description: The event identifier
@@ -149,6 +157,7 @@ EVENTS:
         description: Unique visitor identifier
         purpose: Segmentation by unique visitor
         example: 00000000-0000-0000-0000-000000000000
+        optional: true
         recipients: ["product", "business"]
       - key: suggestion_label
         description: Label of suggestion CTA
@@ -173,6 +182,7 @@ EVENTS:
         description: Session identifier
         purpose: Segmentation by session
         example: 00000000-0000-0000-0000-000000000000
+        optional: true
         recipients: ["business"]
       - key: assembly_event_id
         description: The event identifier
@@ -213,6 +223,7 @@ EVENTS:
         description: Unique visitor identifier
         purpose: Segmentation by unique visitor
         example: 00000000-0000-0000-0000-000000000000
+        optional: true
         recipients: ["product", "business"]
       - key: language
         description: Interface language
@@ -232,6 +243,7 @@ EVENTS:
         description: Session identifier
         purpose: Segmentation by session
         example: 00000000-0000-0000-0000-000000000000
+        optional: true
         recipients: ["business"]
       - key: assembly_event_id
         description: The event identifier
@@ -272,6 +284,7 @@ EVENTS:
         description: Unique visitor identifier
         purpose: Segmentation by unique visitor
         example: 00000000-0000-0000-0000-000000000000
+        optional: true
         recipients: ["product", "business"]
       - key: source_document_link
         description: Url of the document
@@ -300,6 +313,7 @@ EVENTS:
         description: Session identifier
         purpose: Segmentation by session
         example: 00000000-0000-0000-0000-000000000000
+        optional: true
         recipients: ["business"]
       - key: assembly_event_id
         description: The event identifier
@@ -376,6 +390,7 @@ EVENTS:
         description: Unique visitor identifier
         purpose: Segmentation by unique visitor
         example: 00000000-0000-0000-0000-000000000000
+        optional: true
         recipients: ["product"]
       - key: modal_action_type
         description: Which button is used to close the popin
@@ -400,6 +415,7 @@ EVENTS:
         description: Unique visitor identifier
         purpose: Segmentation by unique visitor
         example: 00000000-0000-0000-0000-000000000000
+        optional: true
         recipients: ["product"]
       - key: event_slug
         description: The event slug
@@ -421,6 +437,7 @@ EVENTS:
         description: Unique visitor identifier
         purpose: Segmentation by unique visitor
         example: 00000000-0000-0000-0000-000000000000
+        optional: true
         recipients: ["product"]
       - key: event_slug
         description: The event slug
