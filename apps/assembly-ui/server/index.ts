@@ -18,11 +18,12 @@ import {
   getStackTransformer,
   oneLineTransformer,
 } from '@make.org/logger/loggerTransformer';
-import { initLogger } from '@make.org/logger';
+import { getLoggerInstance, initLogger } from '@make.org/logger';
 import { FacebookConversion } from '@make.org/tracking/apiConversion/facebookConversion';
 import { ClientService } from '@make.org/tracking/apiConversion/clientService';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import { TwitterConversion } from '@make.org/tracking/apiConversion/twitterConversion';
+import path from 'path';
 import { env } from '../utils/env';
 import { translationRessources } from '../i18n';
 import { initRoutes } from './routes';
@@ -52,9 +53,9 @@ const getApp = () => {
   const app = express();
 
   getStackTransformer(
-    ASSEMBLY_JS_DIR,
-    ASSEMBLY_BUILD_DIR,
-    ASSEMBLY_MAP_DIR
+    path.join(ASSEMBLY_JS_DIR),
+    path.join(ASSEMBLY_BUILD_DIR),
+    path.join(ASSEMBLY_MAP_DIR)
   ).then(stackTransformer =>
     initLogger(
       'assembly-ui',
@@ -68,11 +69,11 @@ const getApp = () => {
       env.isDev()
     )
   );
-
   if (env.isDev()) {
     app.use(cors());
   }
 
+  const logger = getLoggerInstance();
   if (env.useLocalProxy()) {
     const { hostname } = new URL(env.frontUrl() || '');
     const apiProxy = createProxyMiddleware({
@@ -84,7 +85,13 @@ const getApp = () => {
       },
       logLevel: 'error',
       secure: false,
-      // @toDo: add a logProvider parameter
+      logProvider: () => ({
+        log: logger.logInfo,
+        debug: logger.logInfo,
+        info: logger.logInfo,
+        warn: logger.logWarning,
+        error: logger.logError,
+      }),
     });
     app.use('/backend', apiProxy);
   }
@@ -125,10 +132,12 @@ const getApp = () => {
   });
 
   const fbConversionService = new FacebookConversion(
-    env.fbPixelId() ?? ''
+    env.fbPixelId() ?? '',
+    logger
   ).getServerConversion(new ClientService(), env.fbConversionToken() ?? '');
   const twConversionService = new TwitterConversion(
-    env.twPixelId() ?? ''
+    env.twPixelId() ?? '',
+    logger
   ).getServerConversion(new ClientService(), {
     consumerApiKey: env.twAPIKey(),
     consumerApiSecret: env.twAPISecret(),

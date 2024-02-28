@@ -16,6 +16,8 @@ import { ClientService } from '@make.org/tracking/apiConversion/clientService';
 import { MixpanelTracker } from '@make.org/tracking/trackers/mixpanel';
 import { TwitterConversion } from '@make.org/tracking/apiConversion/twitterConversion';
 import { TwitterTracker } from '@make.org/tracking/trackers/twitter';
+import { Logger } from '@make.org/utils/services/Logger';
+import { ILogger } from '@make.org/tracking/interface';
 import { DefaultStylesheet } from '../utils/DefaultStyle';
 import { env } from '../utils/env';
 import { translationRessources } from '../i18n';
@@ -55,15 +57,32 @@ const serverState = window.ASSEMBLY_STATE;
 const getTrackingService = (visitorId?: string) => {
   if (window?.NODE_ENV === 'development') {
     return new TrackingService(trackingConfiguration.EVENTS, [
-      new FakeTracker('facebook', trackingConfiguration.RECIPIENTS.facebook),
-      new FakeTracker('makeorg', trackingConfiguration.RECIPIENTS.makeorg),
-      new FakeTracker('mixpanel', trackingConfiguration.RECIPIENTS.mixpanel),
-      new FakeTracker('twitter', trackingConfiguration.RECIPIENTS.twitter),
+      new FakeTracker(
+        'facebook',
+        trackingConfiguration.RECIPIENTS.facebook,
+        Logger as ILogger
+      ),
+      new FakeTracker(
+        'makeorg',
+        trackingConfiguration.RECIPIENTS.makeorg,
+        Logger as ILogger
+      ),
+      new FakeTracker(
+        'mixpanel',
+        trackingConfiguration.RECIPIENTS.mixpanel,
+        Logger as ILogger
+      ),
+      new FakeTracker(
+        'twitter',
+        trackingConfiguration.RECIPIENTS.twitter,
+        Logger as ILogger
+      ),
     ]);
   }
 
   const fbConversionService = new FacebookConversion(
-    window?.FB_PIXEL_ID ?? ''
+    window?.FB_PIXEL_ID ?? '',
+    Logger as ILogger
   ).getClientConversion(
     new ClientService(),
     `${env.frontUrl()}${ROUTE_ASSEMBLY_FB_CONVERSION}`
@@ -72,11 +91,13 @@ const getTrackingService = (visitorId?: string) => {
     window?.FB_PIXEL_ID ?? '',
     fbConversionService,
     trackingConfiguration.RECIPIENTS.facebook,
-    visitorId
+    visitorId,
+    Logger as ILogger
   );
 
   const twConversionService = new TwitterConversion(
-    window?.TW_PIXEL_ID ?? ''
+    window?.TW_PIXEL_ID ?? '',
+    Logger as ILogger
   ).getClientConversion(
     new ClientService(),
     `${env.frontUrl()}${ROUTE_ASSEMBLY_TW_CONVERSION}`
@@ -86,26 +107,28 @@ const getTrackingService = (visitorId?: string) => {
     window?.TW_PIXEL_ID ?? '',
     twConversionService,
     trackingConfiguration.RECIPIENTS.twitter,
-    trackingConfiguration.TWITTER_MAPPING
+    trackingConfiguration.TWITTER_MAPPING,
+    Logger as ILogger
   );
 
   const makeorgTracker = new MakeorgTracker(
     new ClientService(),
     `${window?.API_URL_CLIENT_SIDE}/tracking/panoramic`,
-    trackingConfiguration.RECIPIENTS.makeorg
+    trackingConfiguration.RECIPIENTS.makeorg,
+    Logger as ILogger
   );
 
   const mixpanelTracker = new MixpanelTracker(
     window?.MIXPANEL_TOKEN ?? '',
-    trackingConfiguration.RECIPIENTS.mixpanel
+    trackingConfiguration.RECIPIENTS.mixpanel,
+    Logger as ILogger
   );
 
-  return new TrackingService(trackingConfiguration.EVENTS, [
-    facebookTracker,
-    makeorgTracker,
-    mixpanelTracker,
-    twitterTracker,
-  ]);
+  return new TrackingService(
+    trackingConfiguration.EVENTS,
+    [facebookTracker, makeorgTracker, mixpanelTracker, twitterTracker],
+    Logger as ILogger
+  );
 };
 
 const initApp = async (state: AssemblyGlobalStateType) => {
@@ -159,7 +182,8 @@ const initApp = async (state: AssemblyGlobalStateType) => {
             body: JSON.stringify(consent),
           });
         } catch (e) {
-          // toDo: log errors;
+          const error = e as Error;
+          Logger.logError(error);
         }
       },
     };

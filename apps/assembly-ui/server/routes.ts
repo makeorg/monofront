@@ -18,6 +18,7 @@ import {
   ROUTE_ASSEMBLY_FB_CONVERSION,
   ROUTE_ASSEMBLY_TW_CONVERSION,
   ROUTE_ASSEMBLY_CONSENT,
+  ROUTE_ASSEMBLY_LOGGER,
 } from '../utils/routes';
 import { defaultRoute } from './ssr/defaultRoute';
 import { eventRoute } from './ssr/eventRoute';
@@ -31,6 +32,7 @@ import * as technicalPages from './technicalPages';
 import * as conversionApi from './conversionApi';
 import { getLLMAnswer } from './api/LLM';
 import { consentRoute } from './ssr/consentRoute';
+import { loggerRoute } from './ssr/loggerRoute';
 
 function setCustomCacheControl(res: Response, path: string) {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -97,6 +99,7 @@ export const initRoutes = (
     conversionApi.renderConversionTwitter(twConversionService)
   );
   app.post(ROUTE_ASSEMBLY_CONSENT, consentRoute);
+  app.post(ROUTE_ASSEMBLY_LOGGER, loggerRoute);
 
   // Assembly redirect
   // app.get(ROUTE_ASSEMBLY_CUSTOMER, defaultRoute);

@@ -70,14 +70,13 @@ export type EventRouteType = {
   event: EventType;
   termQueries: TermQueryType[];
   generatedContents: GeneratedContentType[];
-  feed: FeedType;
-  sessionId: string;
-  visitorId: string;
 };
 
 export type AssemblyStateType = {
   feed: FeedType;
   language: keyof typeof LanguageType;
+  visitorId: string;
+  sessionId: string;
 };
 
 export type AssemblyGlobalStateType = AssemblyStateType & EventRouteType;
