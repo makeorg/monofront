@@ -14,15 +14,16 @@ import {
   combineReducers,
   getCurrentTimeFormatted,
 } from '@make.org/store/utils';
-import { AssemblyStateType } from '../types';
+import { DEFAULT_LANGUAGE } from '../utils/constants';
+import { AssemblyGlobalStateType } from '../types';
 import { feed_reducer } from './feed/reducer';
 
-const emptyAssemblyState: AssemblyStateType = {
+const emptyAssemblyState: AssemblyGlobalStateType = {
   customer: { id: '', name: '', slug: '' },
   event: {
     id: '',
     customerId: '',
-    language: '',
+    language: DEFAULT_LANGUAGE,
     name: '',
     slug: '',
     introMediaUrl: '',
@@ -33,13 +34,16 @@ const emptyAssemblyState: AssemblyStateType = {
   termQueries: [],
   generatedContents: [],
   feed: { isStreaming: false, items: [] },
+  language: 'en',
 };
 
-export const initAssemblyEmptyState = (): AssemblyStateType =>
+export const initAssemblyEmptyState = (): AssemblyGlobalStateType =>
   JSON.parse(JSON.stringify(emptyAssemblyState));
 
-const deepEqual = (x: AssemblyStateType, y: AssemblyStateType): boolean =>
-  JSON.stringify(x) === JSON.stringify(y);
+const deepEqual = (
+  x: AssemblyGlobalStateType,
+  y: AssemblyGlobalStateType
+): boolean => JSON.stringify(x) === JSON.stringify(y);
 
 const AssemblyAppContext = createContext({
   state: initAssemblyEmptyState(),
@@ -47,7 +51,7 @@ const AssemblyAppContext = createContext({
 });
 
 export const useAssemblyContext = (): {
-  state: AssemblyStateType;
+  state: AssemblyGlobalStateType;
   dispatch: Dispatch;
 } => useContext(AssemblyAppContext);
 
@@ -56,9 +60,9 @@ const rootReducer = combineReducers({
 });
 
 const useAllReducers = (
-  serverState?: AssemblyStateType
+  serverState?: AssemblyGlobalStateType
 ): {
-  state: AssemblyStateType;
+  state: AssemblyGlobalStateType;
   dispatch: Dispatch;
 } => {
   const [state, dispatch] = useReducer(rootReducer, serverState || {});
@@ -66,7 +70,7 @@ const useAllReducers = (
 };
 
 const AssemblyContextState: FC<{
-  serverState?: AssemblyStateType;
+  serverState?: AssemblyGlobalStateType;
   children: ReactNode;
 }> = ({ serverState, children }) => {
   const { state, dispatch } = useAllReducers(serverState);

@@ -11,13 +11,13 @@ import { DefaultStylesheet } from '../utils/DefaultStyle';
 import { env } from '../utils/env';
 import { translationRessources } from '../i18n';
 import { AppContainer } from './app';
-import { AssemblyStateType } from '../types';
+import { AssemblyGlobalStateType } from '../types';
 import AssemblyContextState from '../store/context';
 import { initAssemblyDevState } from '../store/devState';
 
 declare global {
   interface Window {
-    ASSEMBLY_STATE: AssemblyStateType;
+    ASSEMBLY_STATE: AssemblyGlobalStateType;
     COOKIE_FIRST_TOKEN: string;
   }
 }
@@ -27,8 +27,7 @@ if (env.isDev()) {
 }
 
 const serverState = window.ASSEMBLY_STATE;
-
-const initApp = async (state: any) => {
+const initApp = async (state: AssemblyGlobalStateType) => {
   const store = {
     ...state,
   };
@@ -38,7 +37,7 @@ const initApp = async (state: any) => {
       escapeValue: false,
     },
     debug: env.isDev(),
-    lng: 'fr',
+    lng: state.language,
     resources: translationRessources,
     defaultNS: TRANSLATION_COMMON_NAMESPACE,
   });

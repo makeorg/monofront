@@ -1,3 +1,5 @@
+import { LanguageType } from './enums';
+
 export type CustomerType = {
   id: string;
   slug: string;
@@ -13,7 +15,7 @@ export type EventType = {
   id: string;
   slug: string;
   customerId: string;
-  language: string;
+  language: keyof typeof LanguageType;
   name: string;
   introMediaUrl: string;
   introduction: string;
@@ -63,10 +65,16 @@ export type FeedItemType = {
   displayActions?: boolean;
 };
 
-export type AssemblyStateType = {
+export type EventRouteType = {
   customer: CustomerType;
   event: EventType;
   termQueries: TermQueryType[];
   generatedContents: GeneratedContentType[];
-  feed: FeedType;
 };
+
+export type AssemblyStateType = {
+  feed: FeedType;
+  language: keyof typeof LanguageType;
+};
+
+export type AssemblyGlobalStateType = AssemblyStateType & EventRouteType;

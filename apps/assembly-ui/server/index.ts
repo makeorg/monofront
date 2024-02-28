@@ -22,6 +22,7 @@ import { initLogger } from '@make.org/logger';
 import { env } from '../utils/env';
 import { translationRessources } from '../i18n';
 import { initRoutes } from './routes';
+import { DEFAULT_LANGUAGE } from '../utils/constants';
 import {
   ASSEMBLY_BUILD_DIR,
   ASSEMBLY_CLIENT_DIR,
@@ -35,7 +36,7 @@ i18n.init({
   interpolation: {
     escapeValue: false,
   },
-  lng: 'fr',
+  lng: DEFAULT_LANGUAGE,
   debug: false,
   resources: translationRessources,
   defaultNS: TRANSLATION_COMMON_NAMESPACE,

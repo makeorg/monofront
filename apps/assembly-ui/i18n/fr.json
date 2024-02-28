@@ -1,16 +1,5 @@
 {
   "global": {
-    "response": "Réponse en cours...",
-    "page": "page",
-    "question": "Que s'est-il dit sur le thème '{{content}}'",
-    "welcome": "Bienvenue au coeur de la Convention citoyenne sur la fin de vie",
-    "version": "Alpha",
-    "imagine": "Imaginé par Make.org",
-    "sug": "Suggestions :",
-    "loading": "Chargement...",
-    "load": "Charger",
-    "opinions": "Les avis des intervenants",
-    "resume": "Résumé de l’évènement :",
     "ia": "Cet outil utilise une intelligence artificielle (IA) qui trouve ses réponses exclusivement dans des informations issues d’une base de ",
     "iaBold": "données choisie et modérée.",
     "open_new_window": "Ouverture dans un nouvel onglet"
@@ -19,15 +8,6 @@
     "beta": "beta",
     "make": "Propulsé par Make.org",
     "top": "Aller en haut de la page"
-  },
-  "ressources": {
-    "vidsButton": "Ressources vidéos",
-    "docsButton": "Ressources documentaires",
-    "doc": "Ressources documentaires :"
-  },
-  "description": {
-    "name": "cese",
-    "fullName": "Convention citoyenne cese"
   },
   "modal": {
     "closeLabel": "Fermer la fenêtre de dialogue",
@@ -40,29 +20,11 @@
     "sources": "Accédez à des sources vérifiées",
     "sourcesText": "Un affichage des sources qui ont alimenté chaque réponse de l’intelligence artificielle (IA)."
   },
-  "theme": "La Convention citoyenne par thématique :",
-  "themes": [
-    "Soins palliatifs",
-    "Aide active à Mourrir",
-    "Loi Claeys-Leonetti",
-    "Rôle des soignants",
-    "Information du grand public",
-    "Souffrance psychique",
-    "Choix et la volonté du patient"
-  ],
-  "prompts": [
-    "Que dit-on sur la sédation profonde ?",
-    "Quelles sont les idées pour améliorer l'accompagnement de la fin de vie ?",
-    "A quoi ça sert de désigner une personne de confiance ?"
-  ],
   "prompt": {
     "submit": "Envoyer",
-    "caution": "MarIA.ne peut afficher des informations inexactes ou offensantes qui ne représentent pas les opinions du CESE. Charte Éthique IA Make.org",
     "themeAnswer": "Résumé des principales thématiques :",
     "warning": "La réponse, générée par une IA à partir de sources vérifiées, peut présenter des approximations.",
     "me": "Question posée",
-    "themes": "Thématiques",
-    "themesDiscover": "Découvrir l’ensemble des thématiques",
     "cancel": "Annuler",
     "disabled": "Bouton désactivé",
     "request_send": "Poser une question à l’IA",
@@ -87,19 +49,6 @@
     "cookie": "Gestion des cookies",
     "legal": "Mentions légales",
     "about": "À propos de Make.org"
-  },
-  "transcript": {
-    "video_presentation": "La Convention citoyenne par ses extraits vidéo :",
-    "video_select": "Sélectionner votre extrait",
-    "resume": "Résumé",
-    "agree": "Les citoyens sont d'accord sur : ",
-    "disagree": "Les citoyens ne sont pas d'accord sur : "
-  },
-  "session": {
-    "resume": "Résumé de la session 5"
-  },
-  "convention": {
-    "resume": "Résumé de la Convention"
   },
   "error": {
     "not_found": "404",

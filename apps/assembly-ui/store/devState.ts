@@ -1,6 +1,6 @@
-import { AssemblyStateType } from '../types';
+import { AssemblyGlobalStateType } from '../types';
 
-const AssemblyDevState: AssemblyStateType = {
+const AssemblyDevState: AssemblyGlobalStateType = {
   customer: {
     id: '18565a9f-170a-485b-80e9-857e3a860b15',
     name: 'CESE',
@@ -118,7 +118,8 @@ const AssemblyDevState: AssemblyStateType = {
     isStreaming: false,
     items: [],
   },
+  language: 'en',
 };
 
-export const initAssemblyDevState = (): AssemblyStateType =>
+export const initAssemblyDevState = (): AssemblyGlobalStateType =>
   JSON.parse(JSON.stringify(AssemblyDevState));

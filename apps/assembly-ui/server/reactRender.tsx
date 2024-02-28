@@ -11,10 +11,12 @@ import webpackManifest from 'webpack-manifest';
 import { Request, Response } from 'express';
 import { Cookie } from 'universal-cookie';
 import serialize from 'serialize-javascript';
+import { DEFAULT_LANGUAGE } from '../utils/constants';
 import { env } from '../utils/env';
 import { AppContainer } from '../client/app';
 import { ASSEMBLY_CLIENT_DIR } from './paths';
-import { AssemblyStateType } from '../types';
+import { AssemblyGlobalStateType, EventRouteType } from '../types';
+import { LanguageType } from '../types/enums';
 import AssemblyContextState, { initAssemblyEmptyState } from '../store/context';
 
 const statsFile = path.resolve(ASSEMBLY_CLIENT_DIR, 'loadable-stats.json');
@@ -26,7 +28,7 @@ const htmlContent = fs.readFileSync(
 
 const renderHtml = (
   reactApp: JSX.Element,
-  appState: AssemblyStateType,
+  appState: AssemblyGlobalStateType,
   metaTags: any,
   pwaManifest: unknown,
   res: Response
@@ -80,10 +82,31 @@ const renderHtml = (
 export const reactRender = async (
   req: Request & Cookie,
   res: Response,
-  routeState?: AssemblyStateType
+  routeState?: EventRouteType
 ): Promise<any> => {
-  const state: AssemblyStateType = routeState || initAssemblyEmptyState();
+  const initialState = initAssemblyEmptyState();
 
+  const navigatorLanguageCheck = () => {
+    if (routeState) {
+      return routeState?.event.language;
+    }
+
+    const languageCheck = Object.values<string>(LanguageType).includes(
+      navigator.language
+    );
+
+    if (languageCheck) {
+      return navigator.language as keyof typeof LanguageType;
+    }
+
+    return DEFAULT_LANGUAGE;
+  };
+
+  const state: AssemblyGlobalStateType = {
+    ...initialState,
+    ...routeState,
+    language: navigatorLanguageCheck(),
+  };
   const context = {};
   const headTags:
     | ReactElement<unknown, string | JSXElementConstructor<unknown>>[]

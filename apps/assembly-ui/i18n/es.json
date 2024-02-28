@@ -1,16 +1,5 @@
 {
   "global": {
-    "response": "@@global.response|fr:Réponse en cours...",
-    "page": "@@global.page|fr:page",
-    "question": "@@global.question|fr:Que s'est-il dit sur le thème '{{content}}'",
-    "welcome": "@@global.welcome|fr:Bienvenue au coeur de la Convention citoyenne sur la fin de vie",
-    "version": "@@global.version|fr:Alpha",
-    "imagine": "@@global.imagine|fr:Imaginé par Make.org",
-    "sug": "@@global.sug|fr:Suggestions :",
-    "loading": "@@global.loading|fr:Chargement...",
-    "load": "@@global.load|fr:Charger",
-    "opinions": "@@global.opinions|fr:Les avis des intervenants",
-    "resume": "@@global.resume|fr:Résumé de l’évènement :",
     "ia": "@@global.ia|fr:Cet outil utilise une intelligence artificielle (IA) qui trouve ses réponses exclusivement dans des informations issues d’une base de ",
     "iaBold": "@@global.iaBold|fr:données choisie et modérée.",
     "open_new_window": "@@global.open_new_window|fr:Ouverture dans un nouvel onglet"
@@ -19,15 +8,6 @@
     "beta": "@@header.beta|fr:beta",
     "make": "@@header.make|fr:Propulsé par Make.org",
     "top": "@@header.top|fr:Aller en haut de la page"
-  },
-  "ressources": {
-    "vidsButton": "@@ressources.vidsButton|fr:Ressources vidéos",
-    "docsButton": "@@ressources.docsButton|fr:Ressources documentaires",
-    "doc": "@@ressources.doc|fr:Ressources documentaires :"
-  },
-  "description": {
-    "name": "@@description.name|fr:cese",
-    "fullName": "@@description.fullName|fr:Convention citoyenne cese"
   },
   "modal": {
     "closeLabel": "@@modal.closeLabel|fr:Fermer la fenêtre de dialogue",
@@ -40,29 +20,11 @@
     "sourcesText": "@@modal.sourcesText|fr:Un affichage des sources qui ont alimenté chaque réponse de l’intelligence artificielle (IA).",
     "openLabel": "@@modal.openLabel|fr:Ouvrir la fenêtre de dialogue"
   },
-  "theme": "@@theme|fr:La Convention citoyenne par thématique :",
-  "themes": {
-    "0": "@@themes.0|fr:Soins palliatifs",
-    "1": "@@themes.1|fr:Aide active à Mourrir",
-    "2": "@@themes.2|fr:Loi Claeys-Leonetti",
-    "3": "@@themes.3|fr:Rôle des soignants",
-    "4": "@@themes.4|fr:Information du grand public",
-    "5": "@@themes.5|fr:Souffrance psychique",
-    "6": "@@themes.6|fr:Choix et la volonté du patient"
-  },
-  "prompts": {
-    "0": "@@prompts.0|fr:Que dit-on sur la sédation profonde ?",
-    "1": "@@prompts.1|fr:Quelles sont les idées pour améliorer l'accompagnement de la fin de vie ?",
-    "2": "@@prompts.2|fr:A quoi ça sert de désigner une personne de confiance ?"
-  },
   "prompt": {
     "submit": "@@prompt.submit|fr:Envoyer",
-    "caution": "@@prompt.caution|fr:MarIA.ne peut afficher des informations inexactes ou offensantes qui ne représentent pas les opinions du CESE. Charte Éthique IA Make.org",
     "themeAnswer": "@@prompt.themeAnswer|fr:Résumé des principales thématiques :",
     "warning": "@@prompt.warning|fr:La réponse, générée par une IA à partir de sources vérifiées, peut présenter des approximations.",
     "me": "@@prompt.me|fr:Question posée",
-    "themes": "@@prompt.themes|fr:Thématiques",
-    "themesDiscover": "@@prompt.themesDiscover|fr:Découvrir l’ensemble des thématiques",
     "cancel": "@@prompt.cancel|fr:Annuler",
     "disabled": "@@prompt.disabled|fr:Bouton désactivé",
     "request_send": "@@prompt.request_send|fr:Poser une question à l’IA",
@@ -87,19 +49,6 @@
     "cookie": "@@sidebar.cookie|fr:Gestion des cookies",
     "legal": "@@sidebar.legal|fr:Mentions légales",
     "about": "@@sidebar.about|fr:À propos de Make.org"
-  },
-  "transcript": {
-    "video_presentation": "@@transcript.video_presentation|fr:La Convention citoyenne par ses extraits vidéo :",
-    "video_select": "@@transcript.video_select|fr:Sélectionner votre extrait",
-    "resume": "@@transcript.resume|fr:Résumé",
-    "agree": "@@transcript.agree|fr:Les citoyens sont d'accord sur : ",
-    "disagree": "@@transcript.disagree|fr:Les citoyens ne sont pas d'accord sur : "
-  },
-  "session": {
-    "resume": "@@session.resume|fr:Résumé de la session 5"
-  },
-  "convention": {
-    "resume": "@@convention.resume|fr:Résumé de la Convention"
   },
   "error": {
     "not_found": "@@error.not_found|fr:404",
