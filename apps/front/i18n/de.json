@@ -831,7 +831,7 @@
       },
       "interact": {
         "title": "Auf Vorschläge reagieren",
-        "description": "Da die Vorschläge die Themen der Konsultation definieren, äußere dich dazu. So finden wir heraus, welche Ideen vorrangig behandelt werden sollten.",
+        "description": "Die Vorschläge definieren die Themen der Konsultation. Mit deiner Abstimmung kannst du mitbestimmen, was priorisiert wird.",
         "button": "Ich stimme ab"
       },
       "controversy": {
@@ -1201,14 +1201,14 @@
   },
   "legal": {
     "title": "Impressum",
-    "make_infos": "Herausgeber der Website: MAKE.ORG GmbH mit Sitz Karl-Marx-Str. 12, 12043 Berlin, Deutschland, eingetragen beim Amtsgericht Berlin (Charlottenburg) unter der Registernummer HRB 242008 B (im Folgenden „Make.org“)\nUmsatzsteueridentifikationsnummer: DE353962906\nVerantwortlich für den Inhalt: Sarah Delahaye, Karl-Marx-Str. 12, 12043 Berlin\nDie EU Kommission hält unter der URL https://ec.europa.eu/consumers/odr eine Plattform zur Online-Streitschlichtung bereit. Wir sind zu einer Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder bereit noch verpflichtet.",
+    "make_infos": "Herausgeber der Website: MAKE.ORG GmbH mit Sitz Karl-Marx-Str. 12, 12043 Berlin, Deutschland, beim Amtsgericht Berlin (Charlottenburg) unter der Registernummer HRB 242008 B (im Folgenden „Make.org“) eingetragen.\nUmsatzsteueridentifikationsnummer: DE353962906\nVerantwortlich für den Inhalt: Sarah Delahaye, Karl-Marx-Str. 12, 12043 Berlin\nDie EU Kommission hält unter der URL https://ec.europa.eu/consumers/odr eine Plattform zur Online-Streitschlichtung bereit. Wir sind zu einer Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder bereit noch verpflichtet.",
     "mail": "E-Mail-Adresse: ",
-    "make_phone": "Telefonnummer: ",
-    "make_phone_number": "+49 163 145 80 95",
-    "director": "Vertretungsberechtigte Geschäftsführer: Sarah Delahaye, Axel Dauchez",
+    "make_phone": "",
+    "make_phone_number": "",
+    "director": "Vertretungsberechtigte Geschäftsführerin und Geschäftsführer: Sarah Delahaye, Axel Dauchez",
     "host": "Webhost: ",
     "host_address": "{{make_host_address}}, Frankreich",
-    "host_phone": "Telefonnummer: ",
+    "host_phone": "",
     "host_phone_number": "{{host_number}}",
     "eu_mention": ""
   },
