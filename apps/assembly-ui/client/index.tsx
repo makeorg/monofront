@@ -53,7 +53,6 @@ declare global {
 if (process.env.NODE_ENV === 'development') {
   window.ASSEMBLY_STATE = initAssemblyDevState();
 }
-
 const serverState = window.ASSEMBLY_STATE;
 
 const getTrackingService = (visitorId?: string) => {

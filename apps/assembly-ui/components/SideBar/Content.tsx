@@ -84,7 +84,7 @@ export const SidebarContent: FC = () => {
                   rel="noopener"
                 >
                   {link.title}
-                  <SidebarSvgExternalStyle />
+                  <SidebarSvgExternalStyle aria-hidden focusable="false" />
                 </SidebarContentLinkStyle>
               ) : (
                 <SidebarContentLinkStyle href={link.url}>

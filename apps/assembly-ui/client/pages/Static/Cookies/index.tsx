@@ -8,7 +8,7 @@ import {
   LegalPagesTableHeaderStyle,
   LegalPagesTableTextStyle,
   LegalPagesTextStyle,
-} from '../../../components/style';
+} from '../style';
 
 const CookiesPage: FC = () => (
   <LegalPagesContainerStyle>

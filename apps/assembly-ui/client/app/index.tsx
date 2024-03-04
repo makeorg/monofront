@@ -37,7 +37,7 @@ export const AppContainer: FC = () => {
       <>
         <ReactCookieFirst apiKey={cookieFirstToken} lang={language} />
         <ConsentConsumer />
-        <App />{' '}
+        <App />
       </>
     );
   }

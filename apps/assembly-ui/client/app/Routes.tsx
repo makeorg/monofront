@@ -15,9 +15,11 @@ import {
 
 const NotFoundPage = loadable(() => import('../pages/NotFound'));
 const EventPage = loadable(() => import('../pages/Event'));
-const PrivacyPolicyPage = loadable(() => import('../pages/PrivacyPolicy'));
-const CookiesPage = loadable(() => import('../pages/Cookies'));
-const LegalPage = loadable(() => import('../pages/Legal'));
+const PrivacyPolicyPage = loadable(
+  () => import('../pages/Static/PrivacyPolicy')
+);
+const CookiesPage = loadable(() => import('../pages/Static/Cookies'));
+const LegalPage = loadable(() => import('../pages/Static/Legal'));
 const AboutPage = loadable(() => import('../pages/About'));
 // const HomePage = loadable(() => import('../pages/Home'));
 // const CustomerPage = loadable(() => import('../pages/Customer'));

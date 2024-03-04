@@ -97,12 +97,15 @@ export const reactRender = async (
       return routeState?.event.language;
     }
 
-    const languageCheck = Object.values<string>(LanguageType).includes(
-      navigator.language
-    );
+    const browserLanguage = req.headers[
+      'accept-language'
+    ] as keyof typeof LanguageType;
+
+    const languageCheck =
+      Object.values<string>(LanguageType).includes(browserLanguage);
 
     if (languageCheck) {
-      return navigator.language as keyof typeof LanguageType;
+      return browserLanguage;
     }
 
     return DEFAULT_LANGUAGE;

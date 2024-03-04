@@ -34,7 +34,7 @@ const emptyAssemblyState: AssemblyGlobalStateType = {
   termQueries: [],
   generatedContents: [],
   feed: { isStreaming: false, items: [] },
-  language: 'en',
+  language: DEFAULT_LANGUAGE,
   sessionId: '',
   visitorId: '',
 };
