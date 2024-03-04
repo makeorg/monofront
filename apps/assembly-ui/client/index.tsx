@@ -48,7 +48,8 @@ declare global {
   }
 }
 
-if (window?.NODE_ENV === 'development') {
+// @todo CAUTION !! Should not have process.env client side
+if (process.env.NODE_ENV === 'development') {
   window.ASSEMBLY_STATE = initAssemblyDevState();
 }
 
