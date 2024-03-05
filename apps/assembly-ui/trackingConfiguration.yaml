@@ -4,10 +4,7 @@
 
 TWITTER_MAPPING:
   DISPLAY-PAGE: "ojv3t"
-  ACTION-THEME: "ojv3w"
-  ACTION-SUGGESTION: "ojv3y"
-  ACTION-OPEN-PROMPT: "ojv42"
-  ACTION-SOURCE-LINK: "ojv44"
+  ACTION-MAIN: "ok9jh"
 
 RECIPIENTS:
   facebook: ["acquisition"]
@@ -82,9 +79,9 @@ EVENTS:
         optional: true
         recipients: ["business"]
 
-  ACTION-THEME:
-    key: action-theme
-    description: Thematic CTA
+  ACTION-MAIN:
+    key: action-main
+    description: Event triggered when the user interract with the main features (themes, suggestions or open prompt)
     recipients: ["product", "business", "acquisition"]
     parameters:
       - key: visitor_id
@@ -93,151 +90,32 @@ EVENTS:
         example: 00000000-0000-0000-0000-000000000000
         optional: true
         recipients: ["product", "business"]
+      - key: language
+        description: Interface language
+        purpose: Language segmentation - improving service
+        recipients: ["product"]
+      - key: event_slug
+        description: The event slug
+        purpose: Subject segmentation - improving service
+        example: convention-fin-de-vie
+        recipients: ["product"]
       - key: theme_label
         description: Label of thematic CTA
         purpose: Relevance of themes - service improvement
         example: my thematic label
+        optional: true
         recipients: ["product"]
-      - key: language
-        description: Interface language
-        purpose: Language segmentation - improving service
-        recipients: ["product"]
-      - key: event_slug
-        description: The event slug
-        purpose: Subject segmentation - improving service
-        example: convention-fin-de-vie
-        recipients: ["product"]
-      - key: submit_id
-        description: LLM submission identifier
-        purpose: Identifying the route - Improving service
-        example: 00000000-0000-0000-0000-000000000000
-        recipients: ["product"]
-      - key: session_id
-        description: Session identifier
-        purpose: Segmentation by session
-        example: 00000000-0000-0000-0000-000000000000
-        optional: true
-        recipients: ["business"]
-      - key: assembly_event_id
-        description: The event identifier
-        purpose: Data for control purpose
-        example: 00000000-0000-0000-0000-000000000000
-        recipients: ["business"]
-      - key: utm_campaign
-        description: Identifies a specific product promotion or strategic campaign
-        purpose: Acquisition campaign follow-up
-        example: convention_france
-        optional: true
-        recipients: ["business"]
-      - key: utm_source
-        description: Identifies which site sent the traffic, and is a required parameter.
-        purpose: Acquisition campaign follow-up
-        example: google
-        optional: true
-        recipients: ["business"]
-      - key: utm_term
-        description: Identifies search terms
-        purpose: Acquisition campaign follow-up
-        example: running+shoes
-        optional: true
-        recipients: ["business"]
-      - key: utm_content
-        description: Identifies what specifically was clicked to bring the user to the site, such as a banner ad or a text link. It is often used for A/B testing and content-targeted ads.
-        purpose: Acquisition campaign follow-up
-        example: logolink
-        optional: true
-        recipients: ["business"]
-
-  ACTION-SUGGESTION:
-    key: action-suggestion
-    description: Suggestion CTA
-    recipients: ["product", "business", "acquisition"]
-    parameters:
-      - key: visitor_id
-        description: Unique visitor identifier
-        purpose: Segmentation by unique visitor
-        example: 00000000-0000-0000-0000-000000000000
-        optional: true
-        recipients: ["product", "business"]
       - key: suggestion_label
         description: Label of suggestion CTA
         purpose: Relevance of suggestions - service improvement
         example: my suggestion label
-        recipients: ["product"]
-      - key: language
-        description: Interface language
-        purpose: Language segmentation - improving service
-        recipients: ["product"]
-      - key: event_slug
-        description: The event slug
-        purpose: Subject segmentation - improving service
-        example: convention-fin-de-vie
+        optional: true
         recipients: ["product"]
       - key: submit_id
         description: LLM submission identifier
         purpose: Identifying the route - Improving service
         example: 00000000-0000-0000-0000-000000000000
-        recipients: ["product"]
-      - key: session_id
-        description: Session identifier
-        purpose: Segmentation by session
-        example: 00000000-0000-0000-0000-000000000000
         optional: true
-        recipients: ["business"]
-      - key: assembly_event_id
-        description: The event identifier
-        purpose: Data for control purpose
-        example: 00000000-0000-0000-0000-000000000000
-        recipients: ["business"]
-      - key: utm_campaign
-        description: Identifies a specific product promotion or strategic campaign
-        purpose: Acquisition campaign follow-up
-        example: convention_france
-        optional: true
-        recipients: ["business"]
-      - key: utm_source
-        description: Identifies which site sent the traffic, and is a required parameter.
-        purpose: Acquisition campaign follow-up
-        example: google
-        optional: true
-        recipients: ["business"]
-      - key: utm_term
-        description: Identifies search terms
-        purpose: Acquisition campaign follow-up
-        example: running+shoes
-        optional: true
-        recipients: ["business"]
-      - key: utm_content
-        description: Identifies what specifically was clicked to bring the user to the site, such as a banner ad or a text link. It is often used for A/B testing and content-targeted ads.
-        purpose: Acquisition campaign follow-up
-        example: logolink
-        optional: true
-        recipients: ["business"]
-
-  ACTION-OPEN-PROMPT:
-    key: action-open-prompt
-    description: The user submits a question in open prompt
-    recipients: ["product", "business", "acquisition"]
-    parameters:
-      - key: visitor_id
-        description: Unique visitor identifier
-        purpose: Segmentation by unique visitor
-        example: 00000000-0000-0000-0000-000000000000
-        optional: true
-        recipients: ["product", "business"]
-      - key: language
-        description: Interface language
-        purpose: Language segmentation - improving service
-        recipients: ["product"]
-      - key: event_slug
-        description: The event slug
-        purpose: Subject segmentation - improving service
-        example: convention-fin-de-vie
-        recipients: ["product"]
-      - key: submit_id
-        description: Prompt submission identifier
-        purpose: Identifying the route - Improving service
-        example: 00000000-0000-0000-0000-000000000000
         recipients: ["product"]
       - key: session_id
         description: Session identifier
@@ -278,7 +156,7 @@ EVENTS:
   ACTION-SOURCE-LINK:
     key: action-source-link
     description: Click on a media source link
-    recipients: ["product", "business", "acquisition"]
+    recipients: ["product", "business"]
     parameters:
       - key: visitor_id
         description: Unique visitor identifier

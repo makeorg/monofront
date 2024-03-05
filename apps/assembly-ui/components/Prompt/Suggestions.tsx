@@ -57,7 +57,7 @@ export const Suggestions: FC = () => {
 
   const handleSuggestionQuestion = (value: string, title: string) => {
     const feedItemId = startStream();
-    tracker.track('ACTION-SUGGESTION', {
+    tracker.track('ACTION-MAIN', {
       visitor_id: visitorId,
       suggestion_label: title,
       language: eventLanguage,

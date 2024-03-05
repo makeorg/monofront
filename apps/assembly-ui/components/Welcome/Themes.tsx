@@ -63,7 +63,7 @@ export const Themes: FC = () => {
 
   const handleThemeQuestion = (value: string, title: string) => {
     const feedItemId = startStream();
-    tracker.track('ACTION-THEME', {
+    tracker.track('ACTION-MAIN', {
       visitor_id: visitorId,
       theme_label: title,
       language: eventLanguage,

@@ -43,7 +43,7 @@ export const PromptForm: FC = () => {
     e.preventDefault();
 
     const feedItemId = startStream();
-    tracker.track('ACTION-OPEN-PROMPT', {
+    tracker.track('ACTION-MAIN', {
       visitor_id: visitorId,
       language: eventLanguage,
       event_slug: eventSlug,
