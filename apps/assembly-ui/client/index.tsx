@@ -45,6 +45,7 @@ declare global {
     API_URL_CLIENT_SIDE?: string;
     NODE_ENV?: string;
     MIXPANEL_TOKEN?: string;
+    FRONT_URL?: string;
   }
 }
 
@@ -86,7 +87,7 @@ const getTrackingService = (visitorId?: string) => {
     Logger as ILogger
   ).getClientConversion(
     new ClientService(),
-    `${env.frontUrl()}${ROUTE_ASSEMBLY_FB_CONVERSION}`
+    `${window?.FRONT_URL ?? '.'}${ROUTE_ASSEMBLY_FB_CONVERSION}`
   );
   const facebookTracker = new FacebookTracker(
     window?.FB_PIXEL_ID ?? '',
@@ -101,7 +102,7 @@ const getTrackingService = (visitorId?: string) => {
     Logger as ILogger
   ).getClientConversion(
     new ClientService(),
-    `${env.frontUrl()}${ROUTE_ASSEMBLY_TW_CONVERSION}`
+    `${window?.FRONT_URL ?? '.'}${ROUTE_ASSEMBLY_TW_CONVERSION}`
   );
 
   const twitterTracker = new TwitterTracker(
