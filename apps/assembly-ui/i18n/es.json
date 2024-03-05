@@ -34,7 +34,7 @@
         "sources": "Esta respuesta se basa en los elementos siguientes:",
         "hyperlinks_title": "Para más información:",
         "document_sources": "Acceder a la respuesta en base a los documentos verificados",
-        "page": "página ",
+        "page": "página",
         "previous_answer": "¿Está buscando preguntas anteriores?",
         "archive": "Sólo archivamos las 5 últimas preguntas que nos ha hecho.",
         "retrieve": "Si quiere repetir una pregunta anterior, basta con volver a escribirla.",
@@ -60,7 +60,7 @@
         "accept_functional": "Aceptar cookies funcionales"
     },
     "reassurance": {
-        "main_title": "@@reassurance.main_title|fr:Découvrez notre outil qui accompage votre compréhension",
+        "main_title": "Comprenda temas complejos con facilidad",
         "main_text": "@@reassurance.main_text|fr:Explorez l'intelligence artificielle qui vous accompagne dans la découverte des thématiques complexes.",
         "what_title": "@@reassurance.what_title|fr:Notre outil, c’est quoi exactement ?",
         "what_text": "@@reassurance.what_text|fr:Notre plateforme, alimentée par uniquement à partir de documents publics et certifiés, simplifie les sujets complexes grâce à différents niveaux de réponses adaptées à tous.",
@@ -97,7 +97,7 @@
         "themes": "@@reassurance.themes|fr:Des thématiques",
         "themes_text": "@@reassurance.themes_text|fr:Une recherche par thématique pour mieux comprendre les grands sujets et se les approprier.",
         "auto": "@@reassurance.auto|fr:En autonomie",
-        "auto_text": "@@reassurance.auto_text|fr:La possibilité de librement s’exprimer et de recevoir une réponse à toutes ses interrogations",
+        "auto_text": "Exprésese libremente y reciba respuesta a todas sus preguntas.",
         "how_work_title": "@@reassurance.how_work_title|fr:Comment fonctionne cette Intelligence Artificielle ?",
         "rag_title": "@@reassurance.rag_title|fr:Notre IA utilise le modèle",
         "rag": "@@reassurance.rag|fr:RAG",
