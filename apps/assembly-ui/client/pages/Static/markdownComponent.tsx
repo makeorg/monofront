@@ -9,7 +9,6 @@ import {
   LegalPagesTableHeaderStyle,
   LegalPagesTableTextStyle,
   LegalPagesTextStyle,
-  // LegalPagesNumberedArticleStyle,
   LegalPagesListStyle,
 } from './style';
 
