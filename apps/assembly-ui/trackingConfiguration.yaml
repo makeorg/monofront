@@ -22,7 +22,7 @@ EVENTS:
     parameters:
       - key: event_slug
         description: The event slug
-        purpose: Subject segmentation - improving service
+        purpose: Subject segmentation - service improvement
         example: convention-fin-de-vie
         recipients: ["product"]
       - key: page
@@ -32,7 +32,7 @@ EVENTS:
         recipients: ["product"]
       - key: language
         description: Interface language
-        purpose: Language segmentation - improving service
+        purpose: Language segmentation - service improvement
         recipients:
           ["product"]
           # purpose: Engagement mesurement (by visitors, session)
@@ -92,12 +92,16 @@ EVENTS:
         recipients: ["product", "business"]
       - key: language
         description: Interface language
-        purpose: Language segmentation - improving service
+        purpose: Language segmentation - service improvement
         recipients: ["product"]
       - key: event_slug
         description: The event slug
-        purpose: Subject segmentation - improving service
+        purpose: Subject segmentation - service improvement
         example: convention-fin-de-vie
+        recipients: ["product"]
+      - key: trigger
+        description: Trigger fired by the user (themes, suggestions or open prompt)
+        purpose: Usage of the feature - service improvement
         recipients: ["product"]
       - key: theme_label
         description: Label of thematic CTA
@@ -113,7 +117,7 @@ EVENTS:
         recipients: ["product"]
       - key: submit_id
         description: LLM submission identifier
-        purpose: Identifying the route - Improving service
+        purpose: Identifying the route - service improvement
         example: 00000000-0000-0000-0000-000000000000
         optional: true
         recipients: ["product"]
@@ -171,11 +175,11 @@ EVENTS:
         recipients: ["product"]
       - key: language
         description: Interface language
-        purpose: Language segmentation - improving service
+        purpose: Language segmentation - service improvement
         recipients: ["product"]
       - key: event_slug
         description: The event slug
-        purpose: Subject segmentation - improving service
+        purpose: Subject segmentation - service improvement
         example: convention-fin-de-vie
         recipients: ["product"]
       - key: document_type
@@ -230,12 +234,12 @@ EVENTS:
     parameters:
       - key: submit_id
         description: Prompt submission identifier
-        purpose: Identifying the route - Improving service
+        purpose: Identifying the route - service improvement
         example: 00000000-0000-0000-0000-000000000000
         recipients: ["product"]
       - key: prompt_response_type
         description: Response is from cache
-        purpose: Cache usage - improving service
+        purpose: Cache usage - service improvement
         values:
           - cache
           - llm
@@ -244,7 +248,7 @@ EVENTS:
         optional: true
       - key: prompt_result_success
         description: Successful response
-        purpose: Successful response - improving service
+        purpose: Successful response - service improvement
         example: success
         values:
           - success
@@ -280,7 +284,7 @@ EVENTS:
         recipients: ["product"]
       - key: event_slug
         description: The event slug
-        purpose: Subject segmentation - improving service
+        purpose: Subject segmentation - service improvement
         example: convention-fin-de-vie
         recipients: ["product"]
 
@@ -297,12 +301,12 @@ EVENTS:
         recipients: ["product"]
       - key: event_slug
         description: The event slug
-        purpose: Subject segmentation - improving service
+        purpose: Subject segmentation - service improvement
         example: convention-fin-de-vie
         recipients: ["product"]
       - key: submit_id
         description: LLM submission identifier
-        purpose: Identifying the route - Improving service
+        purpose: Identifying the route - service improvement
         example: 00000000-0000-0000-0000-000000000000
         recipients: ["product"]
 
@@ -319,12 +323,12 @@ EVENTS:
         recipients: ["product"]
       - key: event_slug
         description: The event slug
-        purpose: Subject segmentation - improving service
+        purpose: Subject segmentation - service improvement
         example: convention-fin-de-vie
         recipients: ["product"]
       - key: submit_id
         description: LLM submission identifier
-        purpose: Identifying the route - Improving service
+        purpose: Identifying the route - service improvement
         example: 00000000-0000-0000-0000-000000000000
         recipients: ["product"]
       - key: suggestion_label

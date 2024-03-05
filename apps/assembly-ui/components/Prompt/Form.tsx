@@ -47,6 +47,7 @@ export const PromptForm: FC = () => {
       visitor_id: visitorId,
       language: eventLanguage,
       event_slug: eventSlug,
+      trigger: 'open-prompt',
       session_id: sessionId,
       assembly_event_id: eventId,
       submit_id: feedItemId,

@@ -62,6 +62,7 @@ export const Suggestions: FC = () => {
       suggestion_label: title,
       language: eventLanguage,
       event_slug: eventSlug,
+      trigger: 'suggestion',
       session_id: sessionId,
       assembly_event_id: eventId,
       submit_id: feedItemId,
