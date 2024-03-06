@@ -11,6 +11,7 @@ import webpackManifest from 'webpack-manifest';
 import { Request, Response } from 'express';
 import serialize from 'serialize-javascript';
 import Cookies from 'universal-cookie';
+import { translationRessoucesLanguages } from '../i18n';
 import { DEFAULT_LANGUAGE } from '../utils/constants';
 import { env } from '../utils/env';
 import { AppContainer } from '../client/app';
@@ -93,22 +94,15 @@ export const reactRender = async (
   const initialState = initAssemblyEmptyState();
 
   const navigatorLanguageCheck = () => {
-    if (routeState) {
+    if (routeState?.event) {
       return routeState?.event.language;
     }
+    const language = !req.headers['accept-language']
+      ? DEFAULT_LANGUAGE
+      : ((req.acceptsLanguages(translationRessoucesLanguages) ||
+          DEFAULT_LANGUAGE) as keyof typeof LanguageType);
 
-    const browserLanguage = req.headers[
-      'accept-language'
-    ] as keyof typeof LanguageType;
-
-    const languageCheck =
-      Object.values<string>(LanguageType).includes(browserLanguage);
-
-    if (languageCheck) {
-      return browserLanguage;
-    }
-
-    return DEFAULT_LANGUAGE;
+    return LanguageType[language];
   };
 
   const state: AssemblyGlobalStateType = {

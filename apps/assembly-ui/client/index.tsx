@@ -133,6 +133,7 @@ const getTrackingService = (visitorId?: string) => {
 };
 
 const initApp = async (state: AssemblyGlobalStateType) => {
+  const { language } = state;
   const store = {
     ...state,
   };
@@ -143,7 +144,7 @@ const initApp = async (state: AssemblyGlobalStateType) => {
       escapeValue: false,
     },
     debug: env.isDev(),
-    lng: state.language,
+    lng: language,
     resources: translationRessources,
     defaultNS: TRANSLATION_COMMON_NAMESPACE,
   });

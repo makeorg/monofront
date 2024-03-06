@@ -14,3 +14,7 @@ export const translationRessources = {
   [LocaleType.es]: { common: spanish, static: staticSpanish },
   [LocaleType.de]: { common: german, static: staticGerman },
 };
+
+export const translationRessoucesLanguages: string[] = Object.keys(
+  translationRessources
+);
