@@ -9,35 +9,33 @@ import { getLoggerInstance } from '@make.org/logger';
 /**
  * facebook api conversion
  */
-export function renderConversionFacebook(
-  fbConversionService: IConversionServerService<FbConversionEventClientType>
-) {
-  return (req: Request, res: Response): void => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    try {
-      fbConversionService.callApiConversion(req.body);
-    } catch (e) {
-      getLoggerInstance().logError(e);
-      res.status(500).send();
-    }
-    res.status(202).send();
+export const renderConversionFacebook =
+  (
+    fbConversionService: IConversionServerService<FbConversionEventClientType>
+  ) =>
+  (req: Request, res: Response): void => {
+    fbConversionService
+      .callApiConversion(req.body)
+      .catch(e => {
+        getLoggerInstance().logError(e);
+        res.status(500).send();
+      })
+      .then(() => res.status(202).send());
   };
-}
 
 /**
  * twitter api conversion
  */
-export function renderConversionTwitter(
-  twConversionService: IConversionServerService<TwConversionEventClientType>
-) {
-  return (req: Request, res: Response): void => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    try {
-      twConversionService.callApiConversion(req.body);
-    } catch (e) {
-      getLoggerInstance().logError(e);
-      res.status(500).send();
-    }
-    res.status(202).send();
+export const renderConversionTwitter =
+  (
+    twConversionService: IConversionServerService<TwConversionEventClientType>
+  ) =>
+  (req: Request, res: Response): void => {
+    twConversionService
+      .callApiConversion(req.body)
+      .catch(e => {
+        getLoggerInstance().logError(e);
+        res.status(500).send();
+      })
+      .then(() => res.status(202).send());
   };
-}

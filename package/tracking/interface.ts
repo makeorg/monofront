@@ -49,5 +49,5 @@ export interface IConversionClientService {
 }
 
 export interface IConversionServerService<M> {
-  callApiConversion: (data: M) => void;
+  callApiConversion: (data: M) => Promise<void>;
 }

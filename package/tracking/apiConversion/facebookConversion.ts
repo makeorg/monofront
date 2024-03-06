@@ -98,14 +98,14 @@ export class FacebookConversion
     return hashedData;
   }
 
-  #callApiConversion(
+  async #callApiConversion(
     clientService: IClientService,
     token: string,
     data: FbConversionEventClientType
-  ): void {
+  ): Promise<void> {
     if (!token) {
       this.#logger.logError('Facebook conversion token is undefined');
-      return;
+      return Promise.resolve();
     }
 
     const url = `https://graph.facebook.com/${this.#fbApiConversionVersion}/${
@@ -121,7 +121,7 @@ export class FacebookConversion
       event_time: Math.floor(new Date().getTime() / 1000),
     });
 
-    clientService
+    await clientService
       .callApi(url, {
         method: 'POST',
         body: {
@@ -139,6 +139,8 @@ export class FacebookConversion
           app_response_data: error?.response?.data,
         });
       });
+
+    return Promise.resolve();
   }
 
   getClientConversion(

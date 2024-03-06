@@ -27,6 +27,9 @@ export class TrackingService {
     this.#trackConfiguration = trackConfiguration;
     this.#trackers = trackers;
     this.#logger = logger ?? this.#logger;
+    if (this.#consentIsdisabled) {
+      this.updateConsent(null);
+    }
   }
 
   #validate(eventName: string, parameters: Record<string, string>) {

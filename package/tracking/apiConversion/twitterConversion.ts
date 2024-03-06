@@ -88,29 +88,33 @@ export class TwitterConversion
       });
   }
 
-  #callApiConversion(
+  async #callApiConversion(
     clientService: IClientService,
     consumerApiKey: string,
     consumerApiSecret: string,
     accessToken: string,
     tokenSecret: string,
     data: TwConversionEventClientType
-  ): void {
+  ): Promise<void> {
     if (!consumerApiKey) {
       this.#logger.logError('TW consumer api key is undefined');
-      return;
+
+      return Promise.resolve();
     }
     if (!consumerApiSecret) {
       this.#logger.logError('TW consumer api secret is undefined');
-      return;
+
+      return Promise.resolve();
     }
     if (!accessToken) {
       this.#logger.logError('TW access token is undefined');
-      return;
+
+      return Promise.resolve();
     }
     if (!tokenSecret) {
       this.#logger.logError('TW token secret is undefined');
-      return;
+
+      return Promise.resolve();
     }
     const url = `https://ads-api.twitter.com/${
       this.#apiConversionVersion
@@ -152,7 +156,7 @@ export class TwitterConversion
       .update(OAuthSignatureBase)
       .digest('base64');
 
-    clientService
+    await clientService
       .callApi(url, {
         method: 'POST',
         headers: {
@@ -172,6 +176,8 @@ export class TwitterConversion
           app_response_data: error.response.data,
         });
       });
+
+    return Promise.resolve();
   }
 
   getClientConversion(
