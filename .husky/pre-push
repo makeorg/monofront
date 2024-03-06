@@ -4,6 +4,7 @@
 yarn workspace @make.org/front translation && \
 yarn workspace @make.org/front documentation && \
 yarn workspace @make.org/widget translation && \
+yarn workspace @make.org/assembly-ui documentation && \
 
 # Run the linter and the tests
 yarn eslint ./ && \

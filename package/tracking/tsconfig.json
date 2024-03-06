@@ -1,16 +1,16 @@
 {
-    "extends": "../../tsconfig.json",
-    "include": [
-      "**/*.js",
-      "**/*.ts"
-    ],
-    "compilerOptions": {
-      "rootDir": ".",
-      "outDir": "./dist",
-    },
-    "references": [
-        { "path": "../../package/api" },
-        { "path": "../../package/utils" },
-      ]
-  }
+  "extends": "../../tsconfig.json",
+  "include": [
+    "**/*.js",
+    "**/*.ts"
+  ],
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "./dist",
+  },
+  "references": [
+    { "path": "../../package/api" },
+    { "path": "../../package/utils" },
+  ]
+}
   

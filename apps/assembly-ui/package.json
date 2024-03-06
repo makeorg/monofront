@@ -99,6 +99,7 @@
     "html-webpack-inline-source-plugin": "1.0.0-beta.2",
     "html-webpack-plugin": "^5.5.0",
     "regenerator-runtime": "^0.13.7",
+    "ts-node": "^10.9.2",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^3.11.3"
   },
@@ -113,6 +114,8 @@
     "translation": "npx babel --out-dir ../../dist/lib --config-file ./webpack/babel.config.js ../../bin/utils && ../../bin/check-translation.js check -d ./i18n -l 'fr'",
     "translation:fix": "yarn run translation --fix",
     "translation:unused-keys": "npx babel --out-dir ../../dist/lib --config-file ./webpack/babel.config.js ../../bin/utils && ../../bin/check-translation.js list-unused",
-    "translation:orphan-keys": "npx babel --out-dir ../../dist/lib --config-file ./webpack/babel.config.js ../../bin/utils && ../../bin/check-translation.js list-orphan"
+    "translation:orphan-keys": "npx babel --out-dir ../../dist/lib --config-file ./webpack/babel.config.js ../../bin/utils && ../../bin/check-translation.js list-orphan",
+    "documentation": "ts-node-esm ../../package/tracking/bin/documentation.ts check -t ./docs/tracking.md -c ./trackingConfiguration.yaml",
+    "documentation:fix": "ts-node-esm ../../package/tracking/bin/documentation.ts check -t ./docs/tracking.md -c ./trackingConfiguration.yaml --fix"
   }
 }

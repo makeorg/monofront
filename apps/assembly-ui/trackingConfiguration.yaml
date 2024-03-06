@@ -28,7 +28,7 @@ EVENTS:
       - key: page
         description: Page name
         example: event-page
-        purpose: Measuring the number of visitors to a page
+        purpose: Measuring the number of visitors to a page - service improvement
         recipients: ["product"]
       - key: language
         description: Interface language
