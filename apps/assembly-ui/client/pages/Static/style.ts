@@ -28,13 +28,17 @@ export const LegalPagesSubtitleStyle = styled.h2`
   margin: 30px 0;
 `;
 
-export const LegalPagesDateStyle = styled.p`
-  font-size: ${typography.FontSize.Text.PetiteCouronne};
-`;
-
 export const LegalPagesTextStyle = styled.p`
   font-size: ${typography.FontSize.Text.Arrondissement};
   margin-bottom: 15px;
+`;
+
+export const LegalTableStyle = styled.div`
+  p {
+    font-size: ${typography.FontSize.Text.Arrondissement};
+    margin-bottom: 15px;
+    margin-bottom: 15px;
+  }
 `;
 
 export const LegalPagesTableHeaderStyle = styled.th`

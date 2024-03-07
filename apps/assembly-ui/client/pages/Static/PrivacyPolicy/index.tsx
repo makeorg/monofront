@@ -10,14 +10,17 @@ import {
   markdownComponents,
   getContactMailByLanguage,
 } from '../markdownComponent';
+import { env } from '../../../../utils/env';
 
 const PrivacyPolicyPage: FC = () => {
   const { state } = useAssemblyContext();
   const { language } = state;
 
   const contactMailByLanguage = getContactMailByLanguage(language);
+  const FRONT_URL = env.frontUrl() || window.FRONT_URL || '';
 
   const replacements: Record<string, string> = {
+    frontUrl: FRONT_URL,
     contact: contactMailByLanguage,
     contactBe: 'contact-be@make.org',
     assembly: ROUTE_ASSEMBLY_COOKIES,
