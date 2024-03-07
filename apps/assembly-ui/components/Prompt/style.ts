@@ -63,7 +63,7 @@ export const PromptFormWarningText = styled.p`
   font-size: 7px;
   margin-left: 5px;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: 10px;
+    font-size: ${typography.FontSize.Text.RueDeLappe};
   }
 `;
 
@@ -80,11 +80,6 @@ export const SuggestionsButtonsListStyle = styled.li`
   border-radius: 10px;
   margin: 0 5px;
   border: 1px solid #0000002b;
-
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    box-shadow: 0px 4px 18px 0px #0000002b;
-    border: none;
-  }
 `;
 
 export const SuggestionsButtonsStyle = styled.button`

@@ -69,6 +69,7 @@ export const AnswerContainerStyle = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  font-size: ${typography.FontSize.Text.Bastille};
 `;
 
 export const ContentIconStyle = styled.img`

@@ -47,13 +47,13 @@ export const WelcomeContentBlockContainerStyle = styled.div`
   border-radius: 10px;
 `;
 
-export const WelcomeContentBlockTitleStyle = styled.span`
-  font-size: ${typography.FontSize.Text.Bastille};
+export const WelcomeContentBlockTitleStyle = styled.h2`
+  font-size: ${typography.FontSize.Title.Arrondissement};
   font-weight: 600;
 `;
 
 export const WelcomeContentTextStyle = styled(ReactMarkdown)`
-  font-size: ${typography.FontSize.Text.RueDeLappe};
+  font-size: ${typography.FontSize.Text.Bastille};
 `;
 
 export const WelcomeThemesBlockStyle = styled.div`
@@ -68,7 +68,7 @@ export const WelcomeThemesButtonStyle = styled.button<{
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: ${typography.FontSize.Text.RueDeLappe};
+  font-size: ${typography.FontSize.Text.Bastille};
   padding: 5px 10px;
   border-radius: 20px;
   border: none;
