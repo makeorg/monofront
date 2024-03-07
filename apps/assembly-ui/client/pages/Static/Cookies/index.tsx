@@ -5,8 +5,8 @@ import {
   LegalPagesMaintTitleStyle,
   LegalPagesDateStyle,
   LegalPagesSubtitleStyle,
-  LegalPagesTableHeaderStyle,
-  LegalPagesTableTextStyle,
+  // LegalPagesTableHeaderStyle,
+  // LegalPagesTableTextStyle,
   LegalPagesTextStyle,
 } from '../style';
 
@@ -99,126 +99,15 @@ const CookiesPage: FC = () => (
         Lorsque vous visitez notre Site Web, nous pouvons placer les cookies
         suivants :
       </LegalPagesTextStyle>
-      <table>
-        <tr>
-          <LegalPagesTableHeaderStyle>
-            Types de cookies
-          </LegalPagesTableHeaderStyle>
-          <LegalPagesTableHeaderStyle>
-            Qui sert ces cookies
-          </LegalPagesTableHeaderStyle>
-          <LegalPagesTableHeaderStyle>Durée</LegalPagesTableHeaderStyle>
-          <LegalPagesTableHeaderStyle>
-            Comment refuser
-          </LegalPagesTableHeaderStyle>
-        </tr>
-        <tr>
-          <LegalPagesTableTextStyle>
-            <b>Cookies essentiels de sites Web</b> : Ces cookies sont
-            strictement nécessaires pour vous fournir des services disponibles
-            sur notre Site Web et pour utiliser certaines de ses
-            fonctionnalités, telles que l&apos;accès à des zones sécurisées.
-          </LegalPagesTableTextStyle>
-          <LegalPagesTableTextStyle>
-            <p>
-              cookiefirst-consent (cookie et localstorage) : ce cookie
-              enregistre vos préférences en matière de cookies pour ce site Web.
-              Vous pouvez les modifier ou retirer votre consentement facilement.
-            </p>
-            <br />
-            <p>
-              cookiefirst-id : Ce cookie contient votre identifiant unique afin
-              que CookieFirst puisse identifier les visiteurs uniques de ce site
-              Web.
-            </p>
-          </LegalPagesTableTextStyle>
-          <LegalPagesTableTextStyle>Toujours actif</LegalPagesTableTextStyle>
-          <LegalPagesTableTextStyle>
-            Parce que ces cookies sont strictement nécessaires pour vous fournir
-            le Site, vous ne pouvez pas les refuser. Vous pouvez les bloquer ou
-            les supprimer en modifiant les paramètres de votre navigateur, comme
-            décrit ci-dessous dans la section &quot;Comment puis-je contrôler
-            les cookies&quot;.
-          </LegalPagesTableTextStyle>
-        </tr>
-        <tr>
-          <LegalPagesTableTextStyle>
-            <b>Les cookies de performance et fonctionnalité</b> : ces cookies
-            sont destinés à analyser les visites sur notre site et à améliorer
-            les performances de ce dernier. Toutes les informations collectées
-            par ces cookies sont agrégées et donc anonymisées. Si vous
-            n&apos;acceptez pas ces cookies, nous ne serons pas informés de
-            votre revisite.
-          </LegalPagesTableTextStyle>
-          <LegalPagesTableTextStyle>
-            YouTube <br />(
-            <a
-              href="https://www.youtube.com/howyoutubeworks/our-commitments/protecting-user-data/"
-              rel="noreferrer"
-              target="_blank"
-            >
-              https://www.youtube.com/howyoutubeworks/our-commitments/protecting-user-data/
-            </a>
-            ) : ces cookies servent à optimiser le fonctionnement et
-            l’utilisabilité de notre site Web.
-          </LegalPagesTableTextStyle>
-          <LegalPagesTableTextStyle>1 an</LegalPagesTableTextStyle>
-          <LegalPagesTableTextStyle>
-            Pour refuser ces cookies, veuillez suivre les instructions
-            ci-dessous sous la rubrique &quot;Comment puis-je contrôler les
-            cookies ?&quot;. Vous pouvez également cliquer sur le lien de
-            désinscription pertinent.
-          </LegalPagesTableTextStyle>
-        </tr>
-        <tr>
-          <LegalPagesTableTextStyle>
-            <b>Les cookies d&apos;analyse et de personnalisation</b> : Ces
-            cookies recueillent des informations qui sont utilisées soit sous
-            forme globale afin de nous aider à comprendre comment notre Site Web
-            est utilisé ou pour mesurer l&apos;efficacité de nos campagnes
-            publicitaires, ou pour nous aider à personnaliser notre Site Web
-            pour vous en retenant vos préférences sur notre site pour améliorer
-            votre expérience lors de votre navigation. Vous pouvez configurer
-            votre navigateur afin de bloquer ou être informé de l&apos;existence
-            de ces cookies, mais certaines parties de notre site peuvent être
-            affectées. Ces cookies ne visent pas à vous identifier
-            personnellement.
-          </LegalPagesTableTextStyle>
-          <LegalPagesTableTextStyle>
-            visitor_id: ce cookie sert à suivre les visites sur notre service de
-            façon à mesurer le trafic. Les événements de navigation sont envoyés
-            à l&apos;outil d&apos;analyse MixPanel.
-          </LegalPagesTableTextStyle>
-          <LegalPagesTableTextStyle>1 an</LegalPagesTableTextStyle>
-          <LegalPagesTableTextStyle>
-            Pour refuser ces cookies, veuillez suivre les instructions
-            ci-dessous sous la rubrique &quot;Comment puis-je contrôler les
-            cookies ?&quot;. Vous pouvez également cliquer sur le lien de
-            désinscription pertinent.
-          </LegalPagesTableTextStyle>
-        </tr>
-        <tr>
-          <LegalPagesTableTextStyle>
-            <b>Les cookies « réseaux sociaux »</b> : ces cookies, activés par
-            des tiers, vous permettent de partager le contenu de notre site sur
-            les réseaux sociaux et nous aident ainsi à optimiser notre impact.
-            Si vous ne consentez pas au dépôt de ces cookies, il se peut que
-            vous ne puissiez pas bénéficier de ces outils de partage.
-          </LegalPagesTableTextStyle>
-          <LegalPagesTableTextStyle>
-            <p>Pixel Facebook</p>
-            <br />
-            <p>Pixel Twitter</p>
-          </LegalPagesTableTextStyle>
-          <LegalPagesTableTextStyle />
-          <LegalPagesTableTextStyle>
-            Pour refuser ces cookies, veuillez suivre les instructions
-            ci-dessous sous la rubrique &quot;Comment puis-je contrôler les
-            cookies ?&quot;. Vous pouvez également cliquer sur le lien de
-            désinscription pertinent.
-          </LegalPagesTableTextStyle>
-        </tr>
-      </table>
+
+      <div id="cookiefirst-cookies-table" />
+      <LegalPagesTextStyle>
+        Cette table de cookies a été créée et mise à jour par le{' '}
+        <a href="https://cookiefirst.com/fr/consent-management-platform/">
+          Consent Management Platform
+        </a>
+        .
+      </LegalPagesTextStyle>
 
       <LegalPagesSubtitleStyle>
         Comment puis-je contrôler les cookies ?
