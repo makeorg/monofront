@@ -181,7 +181,10 @@ const initApp = async (state: AssemblyGlobalStateType) => {
         try {
           fetch(`${window?.FRONT_URL}${ROUTE_ASSEMBLY_CONSENT}`, {
             method: 'POST',
-            body: JSON.stringify(consent),
+            body: JSON.stringify(consent || {}),
+            headers: {
+              'Content-Type': 'application/json',
+            },
           });
         } catch (e) {
           const error = e as Error;
