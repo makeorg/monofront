@@ -17,6 +17,7 @@ import {
 import { DEFAULT_LANGUAGE } from '../utils/constants';
 import { AssemblyGlobalStateType } from '../types';
 import { feed_reducer } from './feed/reducer';
+import { session_reducer, visitor_reducer } from './sessionVisitor/reducer';
 
 const emptyAssemblyState: AssemblyGlobalStateType = {
   customer: { id: '', name: '', slug: '' },
@@ -59,6 +60,8 @@ export const useAssemblyContext = (): {
 
 const rootReducer = combineReducers({
   feed: feed_reducer,
+  sessionId: session_reducer,
+  visitorId: visitor_reducer,
 });
 
 const useAllReducers = (

@@ -7,7 +7,7 @@ type TrackFunctionType = (
 ) => void;
 type UpdateFromConsentFunctionType = (
   consent: TrackingConsentType | null
-) => void;
+) => Promise<{ sessionId: string; visitorId: string } | null>;
 
 export type ITrackingContext = {
   track: TrackFunctionType;
@@ -18,7 +18,7 @@ const initialValue = {
   // eslint-disable-next-line @typescript-eslint/no-empty-function, prettier/prettier
   track: () => { },
   // eslint-disable-next-line @typescript-eslint/no-empty-function, prettier/prettier
-  updateFromConsent: () => { },
+  updateFromConsent: () => Promise.resolve(null),
 };
 
 export const TrackingContext = createContext<ITrackingContext>(initialValue);

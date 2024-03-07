@@ -94,6 +94,7 @@ export class TrackingService {
         this.#trackConfiguration[eventName]?.recipients ?? [];
       const eventConfigParameters =
         this.#trackConfiguration[eventName]?.parameters ?? [];
+      const eventKey = this.#trackConfiguration[eventName]?.key;
 
       if (
         !trackerRecipients.some(item => eventConfigRecipients.includes(item))
@@ -118,7 +119,7 @@ export class TrackingService {
           return obj;
         }, {} as Record<string, string>);
 
-      tracker.send(eventId, eventName, filteredParams);
+      tracker.send(eventId, eventKey, filteredParams);
     });
   }
 
@@ -132,5 +133,9 @@ export class TrackingService {
     this.#trackers.forEach(tracker => {
       tracker.setEnabled(!!(consent && consent[tracker.consent]));
     });
+  }
+
+  findTracker(name: string): ITrackerProvider | undefined {
+    return this.#trackers.find(tracker => tracker.name === name);
   }
 }

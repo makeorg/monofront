@@ -120,6 +120,10 @@ export class TwitterTracker implements ITrackerProvider {
     }
 
     if (this.#eventMapping[eventName] === undefined) {
+      this.#logger.logInfo({
+        message: `${this.name} no mapping found - event: ${eventName} fail.`,
+        name: `${this.name}-tracker`,
+      });
       return;
     }
 

@@ -136,12 +136,12 @@ describe('TrackingService', () => {
     trackingService.sendAllTrackers('DISPLAY-PAGE', expectedParams);
     expect(fakeProvider.send).toHaveBeenCalledWith(
       '123456789',
-      'DISPLAY-PAGE',
+      'display-page',
       { page: expectedParams.page, optionalparam: expectedParams.optionalparam }
     );
     expect(fakeProvider2.send).toHaveBeenCalledWith(
       '123456789',
-      'DISPLAY-PAGE',
+      'display-page',
       {
         page: expectedParams.page,
         event_slug: expectedParams.event_slug,
@@ -150,7 +150,7 @@ describe('TrackingService', () => {
     );
     expect(fakeProvider3.send).toHaveBeenCalledWith(
       '123456789',
-      'DISPLAY-PAGE',
+      'display-page',
       {
         language: expectedParams.language,
         optionalparam: expectedParams.optionalparam,
@@ -158,7 +158,7 @@ describe('TrackingService', () => {
     );
     expect(fakeProvider4.send).toHaveBeenCalledWith(
       '123456789',
-      'DISPLAY-PAGE',
+      'display-page',
       {
         page: expectedParams.page,
         language: expectedParams.language,

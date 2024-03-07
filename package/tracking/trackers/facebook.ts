@@ -116,6 +116,10 @@ export class FacebookTracker implements ITrackerProvider {
     );
   }
 
+  updateExternalId(externalId: string): void {
+    this.#externalId = externalId;
+  }
+
   pageView(): void {
     if (!this.#isEnabled) {
       return;

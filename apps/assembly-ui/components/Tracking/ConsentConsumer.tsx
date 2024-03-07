@@ -1,8 +1,11 @@
 import { FC, useCallback, useEffect } from 'react';
 import { useTracking } from './useTracking';
+import { useAssemblyContext } from '../../store/context';
+import { updateSessionVisitor } from '../../store/sessionVisitor/actions';
 
 export const ConsentConsumer: FC = (): null => {
   const { updateFromConsent } = useTracking();
+  const { dispatch } = useAssemblyContext();
 
   const delay = (ms: number) =>
     new Promise(resolve => {
@@ -18,7 +21,11 @@ export const ConsentConsumer: FC = (): null => {
     await delay(100);
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    updateFromConsent(window?.CookieFirst?.consent);
+    const data = await updateFromConsent(window?.CookieFirst?.consent);
+    if (!data) {
+      return;
+    }
+    dispatch(updateSessionVisitor(data));
   }, [updateFromConsent]);
 
   useEffect(() => {

@@ -55,7 +55,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 const serverState = window.ASSEMBLY_STATE;
 
-const getTrackingService = (visitorId?: string) => {
+const getTrackingService = () => {
   if (window?.NODE_ENV === 'development') {
     return new TrackingService(trackingConfiguration.EVENTS, [
       new FakeTracker(
@@ -92,7 +92,7 @@ const getTrackingService = (visitorId?: string) => {
     window?.FB_PIXEL_ID ?? '',
     fbConversionService,
     trackingConfiguration.RECIPIENTS.facebook,
-    visitorId,
+    undefined,
     Logger as ILogger
   );
 
@@ -166,7 +166,7 @@ const initApp = async (state: AssemblyGlobalStateType) => {
       return null;
     }
 
-    const trackingService = getTrackingService(store.visitorId);
+    const trackingService = getTrackingService();
     trackingService.updateConsent({
       necessary: true,
       performance: false,
@@ -176,19 +176,39 @@ const initApp = async (state: AssemblyGlobalStateType) => {
     const trackContext: ITrackingContext = {
       track: (eventName: string, params: Record<string, string>) =>
         trackingService.sendAllTrackers(eventName, params),
-      updateFromConsent: consent => {
-        trackingService.updateConsent(consent);
+      updateFromConsent: async (
+        consent
+      ): Promise<{ sessionId: string; visitorId: string } | null> => {
         try {
-          fetch(`${window?.FRONT_URL}${ROUTE_ASSEMBLY_CONSENT}`, {
-            method: 'POST',
-            body: JSON.stringify(consent || {}),
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          });
+          const response = await fetch(
+            `${window?.FRONT_URL}${ROUTE_ASSEMBLY_CONSENT}`,
+            {
+              method: 'POST',
+              body: JSON.stringify(consent || {}),
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            }
+          );
+          if (!response) {
+            return null;
+          }
+
+          const result = await response.json();
+          const facebookTracker = trackingService.findTracker('facebook') as
+            | FacebookTracker
+            | undefined;
+          if (result.visitorId && facebookTracker) {
+            facebookTracker.updateExternalId(result.visitorId);
+          }
+          // keep updateConsent after updating facebook externalId
+          trackingService.updateConsent(consent);
+
+          return result;
         } catch (e) {
           const error = e as Error;
           Logger.logError(error);
+          return null;
         }
       },
     };

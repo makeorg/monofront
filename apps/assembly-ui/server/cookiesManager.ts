@@ -66,4 +66,14 @@ export const CookiesManager = {
 
     request.universalCookies.remove(SESSION_COOKIE_NAME);
   },
+  getSession: (req: Request): string | null => {
+    const request = req as Request & { universalCookies: Cookies };
+
+    return request.universalCookies.get(SESSION_COOKIE_NAME);
+  },
+  getVisitor: (req: Request): string | null => {
+    const request = req as Request & { universalCookies: Cookies };
+
+    return request.universalCookies.get(VISITOR_COOKIE_NAME);
+  },
 };

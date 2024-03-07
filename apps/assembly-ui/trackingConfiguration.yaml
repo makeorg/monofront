@@ -3,8 +3,8 @@
 #  parameters: []
 
 TWITTER_MAPPING:
-  DISPLAY-PAGE: "ojv3t"
-  ACTION-MAIN: "ok9jh"
+  display-page: "ojv3t"
+  action-main: "ok9jh"
 
 RECIPIENTS:
   facebook: ["acquisition"]
