@@ -52,7 +52,9 @@ export const YoutubePlayer: React.FC<ReactPlayerProps> = props => {
 
   if (!functionalCookies && !env.isDev()) {
     return (
-      <ReactPlayerContainer className={small ? 'small cookies' : 'cookies'}>
+      <ReactPlayerContainer
+        className={small ? 'small cookies' : 'cookies welcome'}
+      >
         {i18n.t('cookies.functional')}
         <CookieButtonStyle
           className={small && 'small'}
@@ -69,7 +71,7 @@ export const YoutubePlayer: React.FC<ReactPlayerProps> = props => {
   }
 
   return (
-    <ReactPlayerContainer className={small && 'small'}>
+    <ReactPlayerContainer className={small ? 'small' : 'welcome'}>
       <ReactPlayer
         ref={playerRef}
         className="react-player"

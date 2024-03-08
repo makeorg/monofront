@@ -16,6 +16,9 @@ export const ReactPlayerContainer = styled.div`
     width: 100% !important;
     height: 100% !important;
   }
+  &.welcome {
+    width: 100%;
+  }
   &.cookies {
     border-radius: 10px;
     background: rgba(248, 248, 248, 1);

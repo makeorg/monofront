@@ -8,6 +8,8 @@ import {
   WelcomeBlockContainerStyle,
   WelcomeContentBlockContainerStyle,
   WelcomeContentBlockTitleStyle,
+  WelcomeBlockThemesContainerStyle,
+  WelcomeBlockVideoContainerStyle,
   WelcomeContentTextStyle,
 } from './style';
 import { YoutubePlayer } from '../ReactPlayer/YoutubePlayer';
@@ -21,14 +23,8 @@ export const Welcome: FC = () => {
 
   return (
     <WelcomeContainerStyle>
-      <YoutubePlayer url={introMediaUrl} />
       <WelcomeTitleStyle>{introduction}</WelcomeTitleStyle>
-      <WelcomeIAStyle>
-        {i18n.t('global.ia')}
-        <WelcomeIAStyle className="bold" as="span">
-          {i18n.t('global.iaBold')}
-        </WelcomeIAStyle>
-      </WelcomeIAStyle>
+
       <WelcomeBlockContainerStyle>
         {summary && (
           <WelcomeContentBlockContainerStyle>
@@ -38,14 +34,23 @@ export const Welcome: FC = () => {
             <WelcomeContentTextStyle>{summary.content}</WelcomeContentTextStyle>
           </WelcomeContentBlockContainerStyle>
         )}
-
-        <WelcomeContentBlockContainerStyle>
-          <WelcomeContentBlockTitleStyle>
-            {i18n.t('prompt.themeAnswer')}&nbsp;
-          </WelcomeContentBlockTitleStyle>
-          <Themes />
-        </WelcomeContentBlockContainerStyle>
+        <WelcomeBlockVideoContainerStyle>
+          <YoutubePlayer url={introMediaUrl} />
+        </WelcomeBlockVideoContainerStyle>
       </WelcomeBlockContainerStyle>
+
+      <WelcomeBlockThemesContainerStyle>
+        <WelcomeContentBlockTitleStyle>
+          {i18n.t('prompt.themeAnswer')}&nbsp;
+        </WelcomeContentBlockTitleStyle>
+        <WelcomeIAStyle>
+          {i18n.t('global.ia')}
+          <WelcomeIAStyle className="bold" as="span">
+            {i18n.t('global.iaBold')}
+          </WelcomeIAStyle>
+        </WelcomeIAStyle>
+        <Themes />
+      </WelcomeBlockThemesContainerStyle>
     </WelcomeContainerStyle>
   );
 };

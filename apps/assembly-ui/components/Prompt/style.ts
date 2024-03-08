@@ -79,7 +79,11 @@ export const SuggestionsButtonsListStyle = styled.li`
   align-items: center;
   border-radius: 10px;
   margin: 0 5px;
+
   border: 1px solid #0000002b;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    margin: 0;
+  }
 `;
 
 export const SuggestionsButtonsStyle = styled.button`
