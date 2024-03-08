@@ -101,6 +101,10 @@ EVENTS:
         recipients: ["product"]
       - key: trigger
         description: Trigger fired by the user (themes, suggestions or open prompt)
+        values:
+          - 'open-prompt'
+          - 'suggestion'
+          - 'theme'
         purpose: Usage of the feature - service improvement
         recipients: ["product"]
       - key: theme_label

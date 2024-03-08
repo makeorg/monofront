@@ -19,7 +19,7 @@ import { ASSEMBLY_CLIENT_DIR } from './paths';
 import { AssemblyGlobalStateType, EventRouteType } from '../types';
 import { LanguageType } from '../types/enums';
 import AssemblyContextState, { initAssemblyEmptyState } from '../store/context';
-import { SESSION_COOKIE_NAME, VISITOR_COOKIE_NAME } from './cookiesManager';
+import { CookiesManager } from './cookiesManager';
 
 const statsFile = path.resolve(ASSEMBLY_CLIENT_DIR, 'loadable-stats.json');
 
@@ -105,13 +105,18 @@ export const reactRender = async (
     return LanguageType[language];
   };
 
+  // new session, considering that the fact of having a visitor means that the user has given his consent
+  if (CookiesManager.getVisitor(req) && !CookiesManager.getSession(req)) {
+    CookiesManager.addSession(req);
+  }
   const state: AssemblyGlobalStateType = {
     ...initialState,
     ...routeState,
     language: navigatorLanguageCheck(),
-    sessionId: req.universalCookies?.get(SESSION_COOKIE_NAME) ?? '',
-    visitorId: req.universalCookies?.get(VISITOR_COOKIE_NAME) ?? '',
+    sessionId: CookiesManager.getSession(req) ?? '',
+    visitorId: CookiesManager.getVisitor(req) ?? '',
   };
+
   const context = {};
   const headTags:
     | ReactElement<unknown, string | JSXElementConstructor<unknown>>[]
