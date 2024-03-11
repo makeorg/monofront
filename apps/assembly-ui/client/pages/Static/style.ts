@@ -1,4 +1,5 @@
 import { typography } from '@make.org/designsystem/tokens/typography';
+import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import styled from 'styled-components';
 
 export const LegalPagesContainerStyle = styled.div`
@@ -31,6 +32,12 @@ export const LegalPagesSubtitleStyle = styled.h2`
 export const LegalPagesTextStyle = styled.p`
   font-size: ${typography.FontSize.Text.Arrondissement};
   margin-bottom: 15px;
+`;
+
+export const CookieButtonStyle = styled(UnstyledButtonStyle)`
+  display: inline-flex;
+  font-size: ${typography.FontSize.Text.Arrondissement};
+  text-decoration: underline;
 `;
 
 export const LegalTableStyle = styled.div`

@@ -4,8 +4,10 @@ import remarkGfm from 'remark-gfm';
 import remarkFlexibleParagraphs from 'remark-flexible-paragraphs';
 import i18n from 'i18next';
 import {
+  CookieButtonStyle,
   LegalPagesContainerStyle,
   LegalPagesContentStyle,
+  LegalPagesTextStyle,
   LegalTableStyle,
 } from '../style';
 import {
@@ -45,8 +47,20 @@ const CookiesPage: FC = () => {
         >
           {i18n.t('static:cookies.before_table', replacements)}
         </ReactMarkdown>
-
         <LegalTableStyle id="cookiefirst-cookies-table" />
+        <LegalPagesTextStyle>
+          {i18n.t('static:cookies.modify')}
+          <CookieButtonStyle
+            onClick={() => {
+              // useCookieFirst hooks from react-cookiefirt package doesn't work so we have to use another method
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              cookiefirst_show_settings();
+            }}
+          >
+            {i18n.t('static:cookies.button')}
+          </CookieButtonStyle>
+        </LegalPagesTextStyle>
         <ReactMarkdown
           components={markdownComponents()}
           remarkPlugins={[
