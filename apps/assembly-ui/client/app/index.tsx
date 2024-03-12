@@ -24,7 +24,7 @@ const cookieFirstToken = env.isClientSide()
 
 export const AppContainer: FC = () => {
   const { state } = useAssemblyContext();
-  const { language } = state.event;
+  const { language } = state;
 
   const [isDev, setIsDev] = useState<boolean>(false);
 
