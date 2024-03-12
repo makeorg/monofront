@@ -69,6 +69,7 @@ const renderHtml = (
       /___ASSEMBLY_URL_SERVER_SIDE___/gi,
       env.assemblyUrlServerSide() || ''
     )
+    .replace(/__LANG__/gi, appState.language)
     .replace(/___NODE_ENV___/gi, env.nodeEnv() || 'production')
     .replace(/___FRONT_URL___/gi, env.frontUrl() || '')
     .replace(/___NONCE_ID___/gi, nonceId)

@@ -7,7 +7,7 @@ export const visitor_reducer = (
 ): string => {
   switch (action.type) {
     case UPDATE_SESSION_VISITOR:
-      return action.payload.visitorId ?? state;
+      return action.payload.visitorId ?? '';
     default:
       return state;
   }
@@ -19,7 +19,7 @@ export const session_reducer = (
 ): string => {
   switch (action.type) {
     case UPDATE_SESSION_VISITOR:
-      return action.payload.sessionId ?? state;
+      return action.payload.sessionId ?? '';
     default:
       return state;
   }

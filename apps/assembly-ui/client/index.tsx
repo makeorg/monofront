@@ -180,6 +180,7 @@ const initApp = async (state: AssemblyGlobalStateType) => {
       updateFromConsent: async (
         consent
       ): Promise<{ sessionId: string; visitorId: string } | null> => {
+        trackingService.updateConsent(consent);
         try {
           const response = await fetch(
             `${window?.FRONT_URL}${ROUTE_ASSEMBLY_CONSENT}`,
@@ -202,8 +203,6 @@ const initApp = async (state: AssemblyGlobalStateType) => {
           if (result.visitorId && facebookTracker) {
             facebookTracker.updateExternalId(result.visitorId);
           }
-          // keep updateConsent after updating facebook externalId
-          trackingService.updateConsent(consent);
 
           return result;
         } catch (e) {

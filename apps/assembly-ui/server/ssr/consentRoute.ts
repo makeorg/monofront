@@ -24,8 +24,8 @@ export const consentRoute = async (
     }
 
     return res.status(200).send({
-      sessionId: CookiesManager.getSession(req),
-      visitorId: CookiesManager.getVisitor(req),
+      sessionId: CookiesManager.getSession(req) ?? '',
+      visitorId: CookiesManager.getVisitor(req) ?? '',
     });
   } catch (e) {
     getLoggerInstance().logError(e);

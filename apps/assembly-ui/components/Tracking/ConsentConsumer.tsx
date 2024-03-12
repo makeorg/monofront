@@ -7,34 +7,23 @@ export const ConsentConsumer: FC = (): null => {
   const { updateFromConsent } = useTracking();
   const { dispatch } = useAssemblyContext();
 
-  const delay = (ms: number) =>
-    new Promise(resolve => {
-      setTimeout(resolve, ms);
-    });
-
-  const handleConsent = useCallback(async () => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    if (!window?.CookieFirst) {
-      return;
-    }
-    await delay(100);
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    const data = await updateFromConsent(window?.CookieFirst?.consent);
-    if (!data) {
-      return;
-    }
-    dispatch(updateSessionVisitor(data));
-  }, [updateFromConsent]);
+  const handleConsent = useCallback(
+    async (e: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      const data = await updateFromConsent(e.detail ?? {});
+      dispatch(updateSessionVisitor(data || { sessionId: '', visitorId: '' }));
+    },
+    [updateFromConsent, dispatch]
+  );
 
   useEffect(() => {
-    window?.addEventListener('cf_init', handleConsent);
+    window?.addEventListener('cf_consent_loaded', handleConsent);
     window?.addEventListener('cf_consent', handleConsent);
 
     return () => {
-      window?.removeEventListener('cf_init', handleConsent);
       window?.removeEventListener('cf_consent', handleConsent);
+      window?.removeEventListener('cf_consent_loaded', handleConsent);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
