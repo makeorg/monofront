@@ -113,7 +113,8 @@
     "close": "Sulge"
   },
   "header": {
-    "logo_alt": "Saidi Make.org avalehele"
+    "logo_alt": "Saidi Make.org avalehele",
+    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
   },
   "proposal_card": {
     "next": "Järgmine ettepanek",

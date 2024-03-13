@@ -113,7 +113,8 @@
     "close": "Затваряне"
   },
   "header": {
-    "logo_alt": "Отидете на началната страница на Make.org"
+    "logo_alt": "Отидете на началната страница на Make.org",
+    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
   },
   "proposal_card": {
     "next": "Следващо предложение",

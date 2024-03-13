@@ -113,7 +113,8 @@
     "close": "Užverti"
   },
   "header": {
-    "logo_alt": "Eiti į pagrindinį Make.org puslapį"
+    "logo_alt": "Eiti į pagrindinį Make.org puslapį",
+    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
   },
   "proposal_card": {
     "next": "Kitas pasiūlymas",

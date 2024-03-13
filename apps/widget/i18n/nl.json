@@ -113,7 +113,8 @@
     "close": "Sluiten"
   },
   "header": {
-    "logo_alt": "Ga naar de homepage van Make.org"
+    "logo_alt": "Ga naar de homepage van Make.org",
+    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
   },
   "proposal_card": {
     "next": "Volgend voorstel",

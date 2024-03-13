@@ -113,7 +113,8 @@
     "close": "Fechar"
   },
   "header": {
-    "logo_alt": "Ir para a página inicial do sítio Internet Make.org"
+    "logo_alt": "Ir para a página inicial do sítio Internet Make.org",
+    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
   },
   "proposal_card": {
     "next": "Proposta seguinte",

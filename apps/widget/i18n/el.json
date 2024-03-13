@@ -113,7 +113,8 @@
     "close": "Κλείσιμο"
   },
   "header": {
-    "logo_alt": "Μετάβαση στην αρχική σελίδα του Make.org"
+    "logo_alt": "Μετάβαση στην αρχική σελίδα του Make.org",
+    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
   },
   "proposal_card": {
     "next": "Επόμενη πρόταση",

@@ -2,6 +2,7 @@ import { typography } from '@make.org/designsystem/tokens/typography';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { Image } from '@make.org/ui/components/Image';
+import { ProposalExternalLinkStyle } from '@make.org/components/Proposal/Submit/style';
 import { SvgSmallLogo } from '@make.org/ui/Svg/elements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
@@ -95,4 +96,14 @@ export const KindLabelPopularIconStyle = styled(Image)`
   width: 24px;
   height: 24px;
   margin-left: 8px;
+`;
+
+export const HeaderLogoPrivacyContainerStyle = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const PolicyLinkStyle = styled(ProposalExternalLinkStyle)`
+  font-size: ${typography.FontSize.Text.RueDeLappe};
 `;

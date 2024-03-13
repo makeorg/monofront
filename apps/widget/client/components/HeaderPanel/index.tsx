@@ -3,10 +3,14 @@ import { useAppContext } from '@make.org/store';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import i18n from 'i18next';
 import { SequenceTitleStyle } from '@make.org/components/Sequence/style';
+import { getDataPageLink } from '@make.org/utils/helpers/url';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { QuestionType } from '@make.org/types';
 import { setPanelContent } from '@make.org/store/actions/panel';
-import { TriggerIconStyle } from '@make.org/components/Proposal/Submit/style';
+import {
+  TriggerIconStyle,
+  ProposalExternalLinkIconStyle,
+} from '@make.org/components/Proposal/Submit/style';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import {
   clearProposalPending,
@@ -29,6 +33,8 @@ import {
   KindLabelPopularIconStyle,
   KindLabelControversyIconStyle,
   InnerPanelWrapperStyle,
+  HeaderLogoPrivacyContainerStyle,
+  PolicyLinkStyle,
 } from './style';
 
 export const HeaderPanel: FC = () => {
@@ -40,16 +46,30 @@ export const HeaderPanel: FC = () => {
     ? isStandardSequence(sequenceKind)
     : true;
   const question: QuestionType = selectCurrentQuestion(state);
-  const { unsecure } = state.appConfig;
+  const { unsecure, country, language } = state.appConfig;
   const canPropose = question.canPropose && !unsecure && isInProgress(question);
   return (
     <PanelContainer>
-      <MainTitleStyle>
-        <LogoStyle focusable="false" aria-hidden />
-        <ScreenReaderItemStyle>
-          {i18n.t('header.logo_alt')}
-        </ScreenReaderItemStyle>
-      </MainTitleStyle>
+      <HeaderLogoPrivacyContainerStyle>
+        <MainTitleStyle>
+          <LogoStyle focusable="false" aria-hidden />
+          <ScreenReaderItemStyle>
+            {i18n.t('header.logo_alt')}
+          </ScreenReaderItemStyle>
+        </MainTitleStyle>
+        <PolicyLinkStyle
+          href={`https://make.org${getDataPageLink(country, language)}`}
+          target="_blank"
+          rel="noopener"
+        >
+          {i18n.t('header.privacy_policy')}
+          <ProposalExternalLinkIconStyle aria-hidden focusable="false" />
+          <ScreenReaderItemStyle>
+            {i18n.t('common.open_new_window')}
+          </ScreenReaderItemStyle>
+        </PolicyLinkStyle>
+      </HeaderLogoPrivacyContainerStyle>
+
       <SequenceTitleStyle className="widget">
         {question.question}
       </SequenceTitleStyle>

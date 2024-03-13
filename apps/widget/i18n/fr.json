@@ -109,7 +109,8 @@
     "close": "Fermer"
   },
   "header": {
-    "logo_alt": "Aller à l'accueil du site Make.org"
+    "logo_alt": "Aller à l'accueil du site Make.org",
+    "privacy_policy": "Confidentialité"
   },
   "top_proposal_card": {
     "start": "Commencer à voter"

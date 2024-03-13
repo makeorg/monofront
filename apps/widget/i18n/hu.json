@@ -113,7 +113,8 @@
     "close": "Bezárás"
   },
   "header": {
-    "logo_alt": "Tovább a Make.org főoldalára"
+    "logo_alt": "Tovább a Make.org főoldalára",
+    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
   },
   "proposal_card": {
     "next": "Következő javaslat",

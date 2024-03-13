@@ -113,7 +113,8 @@
     "close": "Stäng"
   },
   "header": {
-    "logo_alt": "Gå till förstasidan för Make.org"
+    "logo_alt": "Gå till förstasidan för Make.org",
+    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
   },
   "proposal_card": {
     "next": "Följande förslag",

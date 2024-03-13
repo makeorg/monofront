@@ -115,7 +115,8 @@
     "close": "Chiudi"
   },
   "header": {
-    "logo_alt": "Vai alla home page di Make.org"
+    "logo_alt": "Vai alla home page di Make.org",
+    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
   },
   "proposal_card": {
     "next": "Proposta successiva",

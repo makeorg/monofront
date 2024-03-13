@@ -113,7 +113,8 @@
     "close": "Schließen"
   },
   "header": {
-    "logo_alt": "Zur Make.org Startseite gehen"
+    "logo_alt": "Zur Make.org Startseite gehen",
+    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
   },
   "top_proposal_card": {
     "start": "Beginnen Sie mit der Abstimmung"

@@ -115,7 +115,8 @@
     "close": "Închidere"
   },
   "header": {
-    "logo_alt": "Direcționare spre prima pagină a site-ului Make.org"
+    "logo_alt": "Direcționare spre prima pagină a site-ului Make.org",
+    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
   },
   "proposal_card": {
     "next": "Propunerea următoare",

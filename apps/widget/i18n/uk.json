@@ -115,7 +115,8 @@
     "close": "Закрити"
   },
   "header": {
-    "logo_alt": "Перейти на головну сторінку Make.org"
+    "logo_alt": "Перейти на головну сторінку Make.org",
+    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
   },
   "proposal_card": {
     "next": "Наступна пропозиція",

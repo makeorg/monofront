@@ -113,7 +113,8 @@
     "close": "Luk"
   },
   "header": {
-    "logo_alt": "Tilbage til Make.org’s startside"
+    "logo_alt": "Tilbage til Make.org’s startside",
+    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
   },
   "proposal_card": {
     "next": "Næste forslag",

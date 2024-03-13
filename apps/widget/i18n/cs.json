@@ -115,7 +115,8 @@
     "close": "Zavřít"
   },
   "header": {
-    "logo_alt": "Přejít na domovskou stránku Make.org"
+    "logo_alt": "Přejít na domovskou stránku Make.org",
+    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
   },
   "proposal_card": {
     "next": "Následující návrh",

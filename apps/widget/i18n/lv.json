@@ -113,7 +113,8 @@
     "close": "Aizvērt"
   },
   "header": {
-    "logo_alt": "Doties uz vietnes Make.org sākumlapu"
+    "logo_alt": "Doties uz vietnes Make.org sākumlapu",
+    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
   },
   "proposal_card": {
     "next": "Nākamais priekšlikums",

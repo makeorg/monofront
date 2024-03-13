@@ -117,7 +117,8 @@
     "close": "Zapri"
   },
   "header": {
-    "logo_alt": "Pojdi na domačo stran Make.org"
+    "logo_alt": "Pojdi na domačo stran Make.org",
+    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
   },
   "proposal_card": {
     "next": "Naslednji predlog",
