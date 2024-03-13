@@ -87,7 +87,7 @@ const renderHtml = (
 
 // @todo test this function!!
 export const reactRender = async (
-  req: Request & { universalCookies: Cookies },
+  req: Request & { universalCookies?: Cookies },
   res: Response,
   routeState?: EventRouteType
 ): Promise<any> => {
@@ -109,8 +109,8 @@ export const reactRender = async (
     ...initialState,
     ...routeState,
     language: navigatorLanguageCheck(),
-    sessionId: req.universalCookies.get(SESSION_COOKIE_NAME),
-    visitorId: req.universalCookies.get(VISITOR_COOKIE_NAME),
+    sessionId: req.universalCookies?.get(SESSION_COOKIE_NAME) ?? '',
+    visitorId: req.universalCookies?.get(VISITOR_COOKIE_NAME) ?? '',
   };
   const context = {};
   const headTags:

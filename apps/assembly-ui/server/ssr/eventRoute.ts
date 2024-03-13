@@ -98,7 +98,7 @@ export const eventRoute = async (
   };
 
   return reactRender(
-    req as Request & { universalCookies: Cookies },
+    req as Request & { universalCookies?: Cookies },
     res,
     routeState
   );
