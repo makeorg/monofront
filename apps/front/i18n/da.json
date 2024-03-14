@@ -328,9 +328,9 @@
       "from": "Forslag fra: ",
       "age": "{{age}} år",
       "date": "Indsendt den: ",
-      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs.",
-      "anonymous_proposal": "@@proposal_card.author.anonymous_proposal|fr:Proposition anonyme",
-      "anonymous_mode": "@@proposal_card.author.anonymous_mode|fr:Mode anonyme"
+      "disclaimer": "Denne mulighed fritager ikke dig for at blive forbundet til din Make.org konto.<br/> Dit forslag vil dog forblive anonym for andre brugere.",
+      "anonymous_proposal": "Anonymt forslag",
+      "anonymous_mode": "Anonymt forslag"
     },
     "status": {
       "title": "Forslagets status: ",
@@ -453,7 +453,7 @@
       "tooltip_title": "I gang med at blive redigeret",
       "tooltip_description": "Dit forslag vil blive behandlet af vores teams inden for 48 timer, men du kan allerede nu se det i din profil.",
       "grats": "Tillykke {{name}}, ",
-      "proposal_sent": "dit forslag er nu sendt ",
+      "proposal_sent": "dit forslag er nu sendt ",
       "activate": "Bekræft din e-mail-adresse med et klik ",
       "link": "for at garantere ægtheden af din konto. Klik på aktiveringslinket, som er blevet sendt til: {{mail}}",
       "question": "Et spørgsmål? Du kan kontakte os på: ",

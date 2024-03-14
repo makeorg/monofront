@@ -328,9 +328,9 @@
       "from": "Πρόταση του/της: ",
       "age": "{{age}} ετών",
       "date": "δημοσιεύτηκε στις: ",
-      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs.",
-      "anonymous_proposal": "@@proposal_card.author.anonymous_proposal|fr:Proposition anonyme",
-      "anonymous_mode": "@@proposal_card.author.anonymous_mode|fr:Mode anonyme"
+      "disclaimer": "Αυτή η επιλογή δεν σας απαλλάσσει από το να συνδεθεί με το λογαριασμό Make.org σας.<br/> Ωστόσο, η πρότασή σας θα παραμείνει ανώνυμη σε άλλους χρήστες.",
+      "anonymous_proposal": "Ανώνυμη πρόταση",
+      "anonymous_mode": "Ανώνυμη λειτουργία"
     },
     "status": {
       "title": "Κατάσταση της πρότασης: ",
@@ -453,7 +453,7 @@
       "tooltip_title": "Σε διαδικασία έγκρισης",
       "tooltip_description": "Οι ομάδες μας θα εξετάσουν την πρότασή σας εντός 48 ωρών, αλλά εν τω μεταξύ μπορείτε να τη βρείτε από τώρα στο προφίλ σας.",
       "grats": "Συγχαρητήρια {{name}}, ",
-      "proposal_sent": "η πρότασή σας έχει υποβληθεί ",
+      "proposal_sent": "η πρότασή σας έχει αποσταλεί ",
       "activate": "Επιβεβαιώστε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας με ένα κλικ ",
       "link": "για να διασφαλίσετε τη γνησιότητα του λογαριασμού σας. Κάντε κλικ στον σύνδεσμο ενεργοποίησης που σας έχει σταλεί στη διεύθυνση: {{mail}}",
       "question": "Έχετε απορίες; Μπορείτε να επικοινωνήσετε μαζί μας στη διεύθυνση: ",

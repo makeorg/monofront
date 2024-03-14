@@ -114,7 +114,7 @@
   },
   "header": {
     "logo_alt": "Eiti į pagrindinį Make.org puslapį",
-    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
+    "privacy_policy": "Privatumo politika"
   },
   "proposal_card": {
     "next": "Kitas pasiūlymas",
@@ -127,9 +127,9 @@
       "from": "Pasiūlymas: ",
       "age": "{{age}} metai (-ų)",
       "date": "įkelta: ",
-      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs.",
-      "anonymous_proposal": "@@proposal_card.author.anonymous_proposal|fr:Proposition anonyme",
-      "anonymous_mode": "@@proposal_card.author.anonymous_mode|fr:Mode anonyme"
+      "disclaimer": "Ši parinktis nereikalauja, kad būtumėte prisijungę prie savo Make.org.<br/>Vis dėlto jūsų pasiūlymas išliks anonimiškas kitiems naudotojams.",
+      "anonymous_proposal": "Anoniminis pasiūlymas",
+      "anonymous_mode": "Anoniminis režimas"
     },
     "status": {
       "title": "Pasiūlymo statusas: ",
@@ -241,7 +241,7 @@
       "tooltip_title": "Moderuojama",
       "tooltip_description": "Jūsų pasiūlymą mūsų komandos apdoros per 48 valandas, o dabar jį galite rasti savo profilyje.",
       "grats": "Sveikiname, {{name}}, ",
-      "proposal_sent": "jūsų pasiūlymas išsiųstas ",
+      "proposal_sent": "jūsų pasiūlymas išsiųstas ",
       "activate": "Patvirtinkite savo el. pašto adresą vienu paspaudimu, ",
       "link": "kad užtikrintumėte savo paskyros autentiškumą. Spustelėkite aktyvinimo nuorodą, atsiųstą jums adresu {{mail}}",
       "question": "Turite klausimų? Su mumis galite susisiekti šiuo adresu: ",

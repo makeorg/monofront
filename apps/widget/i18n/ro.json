@@ -116,7 +116,7 @@
   },
   "header": {
     "logo_alt": "Direcționare spre prima pagină a site-ului Make.org",
-    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
+    "privacy_policy": "Politica de confidențialitate"
   },
   "proposal_card": {
     "next": "Propunerea următoare",
@@ -127,9 +127,9 @@
       "from": "Propunere făcută de: ",
       "age": "{{age}} ani",
       "date": "publicată la data: ",
-      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs.",
-      "anonymous_proposal": "@@proposal_card.author.anonymous_proposal|fr:Proposition anonyme",
-      "anonymous_mode": "@@proposal_card.author.anonymous_mode|fr:Mode anonyme"
+      "disclaimer": "Această opțiune nu vă obligă să vă conectați la contul dumneavoastră Make.org.1<br/>Cu toate acestea, propunerea dumneavoastră va rămâne anonimă pentru ceilalți utilizatori.",
+      "anonymous_proposal": "Propunere anonimă",
+      "anonymous_mode": "Modul anonim"
     },
     "status": {
       "title": "Statutul propunerii: ",
@@ -224,7 +224,7 @@
       "tooltip_title": "În curs de moderare",
       "tooltip_description": "Propunerea dumneavoastră va fi procesată de echipele noastre în cel mult 48 de ore, până atunci puteți deja consulta propunerea la rubrica de profil.",
       "grats": "Felicitări, {{name}}, ",
-      "proposal_sent": "propunerea dumneavoastră a fost trimisă ",
+      "proposal_sent": "propunerea dumneavoastră a fost trimisă ",
       "activate": "Confirmați-vă adresa de e-mail printr-un clic ",
       "link": "pentru a garanta autenticitatea contului. Faceți clic pe linkul de activare trimis la: {{mail}}",
       "question": "Aveți întrebări? Ne puteți contacta la: ",

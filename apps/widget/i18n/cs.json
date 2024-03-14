@@ -116,7 +116,7 @@
   },
   "header": {
     "logo_alt": "Přejít na domovskou stránku Make.org",
-    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
+    "privacy_policy": "Zásady ochrany osobních údajů"
   },
   "proposal_card": {
     "next": "Následující návrh",
@@ -129,9 +129,9 @@
       "from": "Návrh: ",
       "age": "{{age}} let",
       "date": "zveřejněno dne: ",
-      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs.",
-      "anonymous_proposal": "@@proposal_card.author.anonymous_proposal|fr:Proposition anonyme",
-      "anonymous_mode": "@@proposal_card.author.anonymous_mode|fr:Mode anonyme"
+      "disclaimer": "Tato možnost vás nezdá od připojení k účtu Make.org.<br/> Váš návrh však zůstane anonymní pro ostatní uživatele.",
+      "anonymous_proposal": "Anonymní návrh",
+      "anonymous_mode": "Anonymní režim"
     },
     "status": {
       "title": "Stav návrhu: ",
@@ -243,7 +243,7 @@
       "tooltip_title": "Je zpracováván",
       "tooltip_description": "Tvůj návrh bude našimi týmy zpracován do 48 hodin, zatím ho můžeš najít ve svém profilu.",
       "grats": "Gratulujeme, ",
-      "proposal_sent": "tvůj návrh byl odeslán ",
+      "proposal_sent": "tvůj návrh byl odeslán ",
       "activate": "Z důvodu ověření pravosti tvého účtu, prosím, potvrď svou e-mailovou adresu. ",
       "link": "Stačí jedno kliknutí. Klikni na aktivační odkaz, který ti byl zaslán na adresu: {{mail}}",
       "question": "Máš otázku? Můžeš se na nás obrátit na: ",

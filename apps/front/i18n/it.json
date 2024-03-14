@@ -331,9 +331,9 @@
       "from": "Proposta di: ",
       "age": "{{age}} anni",
       "date": "pubblicata il: ",
-      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs.",
-      "anonymous_proposal": "@@proposal_card.author.anonymous_proposal|fr:Proposition anonyme",
-      "anonymous_mode": "@@proposal_card.author.anonymous_mode|fr:Mode anonyme"
+      "disclaimer": "Questa opzione non ti esenta dall'essere connesso al tuo account Make.org.<br/> Tuttavia, la tua proposta rimarrà anonima ad altri utenti.",
+      "anonymous_proposal": "Anonimo proposta",
+      "anonymous_mode": "Modalità anonima"
     },
     "status": {
       "title": "Status della proposta: ",
@@ -439,7 +439,7 @@
       "tooltip_title": "In corso di moderazione",
       "tooltip_description": "Le nostre équipe tratteranno la tua proposta entro 48 ore, nell'attesa puoi consultarla fin da subito nel tuo profilo.",
       "grats": "Congratulazioni {{name}}, ",
-      "proposal_sent": "la tua proposta è stata inviata ",
+      "proposal_sent": "la tua proposta è stata inviata ",
       "activate": "Conferma il tuo indirizzo e-mail, basta un clic ",
       "link": "per garantire l'autenticità del tuo account. Clicca sul link di attivazione che ti è stato inviato all'indirizzo: {{mail}}",
       "question": "Un dubbio? Puoi contattarci qui: ",

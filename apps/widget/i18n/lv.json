@@ -114,7 +114,7 @@
   },
   "header": {
     "logo_alt": "Doties uz vietnes Make.org sākumlapu",
-    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
+    "privacy_policy": "Konfidencialitātes politika"
   },
   "proposal_card": {
     "next": "Nākamais priekšlikums",
@@ -127,9 +127,9 @@
       "from": "Priekšlikumu iesniedza: ",
       "age": "{{age}} gadi",
       "date": "ievietots (datums): ",
-      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs.",
-      "anonymous_proposal": "@@proposal_card.author.anonymous_proposal|fr:Proposition anonyme",
-      "anonymous_mode": "@@proposal_card.author.anonymous_mode|fr:Mode anonyme"
+      "disclaimer": "Šī iespēja neprasa, lai jūs būtu pieslēdzies savam Make.org.1 kontam<br/>Vaizmēr jūsu priekšlikums citiem lietotājiem paliks anonīms.",
+      "anonymous_proposal": "Anonīms priekšlikums",
+      "anonymous_mode": "Anonīmais režīms"
     },
     "status": {
       "title": "Priekšlikuma statuss: ",
@@ -241,7 +241,7 @@
       "tooltip_title": "Notiek izskatīšana",
       "tooltip_description": "Jūsu priekšlikumu mūsu moderatoru komandas apstrādās 48 stundu laikā, bet pagaidām jūs to varat atrast savā profilā.",
       "grats": "Apsveicam, {{name}}, ",
-      "proposal_sent": "jūsu priekšlikums tika nosūtīts ",
+      "proposal_sent": "jūsu priekšlikums tika nosūtīts ",
       "activate": "Ar vienu klikšķi apstipriniet savu e-pasta adresi, ",
       "link": "lai garantētu jūsu konta autentiskumu. Noklikšķiniet uz aktivizēšanas saites, kas jums nosūtīta uz: {{mail}}",
       "question": "Vēlaties uzdot jautājumu? Varat ar mums sazināties: ",

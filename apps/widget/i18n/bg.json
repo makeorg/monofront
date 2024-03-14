@@ -114,7 +114,7 @@
   },
   "header": {
     "logo_alt": "Отидете на началната страница на Make.org",
-    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
+    "privacy_policy": "Политика за поверителност"
   },
   "proposal_card": {
     "next": "Следващо предложение",
@@ -125,9 +125,9 @@
       "from": "Предложение от: ",
       "age": "{{age}} години",
       "date": "публикувано на: ",
-      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs.",
-      "anonymous_proposal": "@@proposal_card.author.anonymous_proposal|fr:Proposition anonyme",
-      "anonymous_mode": "@@proposal_card.author.anonymous_mode|fr:Mode anonyme"
+      "disclaimer": "Тази опция не изисква да сте влезли в профила си в Make.org.1<br/>Въпреки това предложението ви ще остане анонимно за другите потребители.",
+      "anonymous_proposal": "Анонимно предложение",
+      "anonymous_mode": "Анонимен режим"
     },
     "status": {
       "title": "Статус на предложението: ",
@@ -222,7 +222,7 @@
       "tooltip_title": "В процес на модериране",
       "tooltip_description": "Вашето предложение ще бъде обработено от нашите екипи в рамките на 48 часа, а междувременно можете да го намерите сега в профила си.",
       "grats": "Поздравления {{name}}, ",
-      "proposal_sent": "вашето предложение е изпратено ",
+      "proposal_sent": "вашето предложение е изпратено ",
       "activate": "Потвърдете имейл адреса си с едно кликване ",
       "link": "за да гарантирате автентичността на профила си. Кликнете върху връзката за активиране, изпратена ви на адрес: {{mail}}",
       "question": "Имате въпрос? Можете да се свържете с нас на адрес: ",

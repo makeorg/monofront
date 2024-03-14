@@ -118,7 +118,7 @@
   },
   "header": {
     "logo_alt": "Pojdi na domačo stran Make.org",
-    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
+    "privacy_policy": "Politika zasebnosti"
   },
   "proposal_card": {
     "next": "Naslednji predlog",
@@ -131,9 +131,9 @@
       "from": "Predlog: ",
       "age": "{{age}} let",
       "date": "objavljeno dne: ",
-      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs.",
-      "anonymous_proposal": "@@proposal_card.author.anonymous_proposal|fr:Proposition anonyme",
-      "anonymous_mode": "@@proposal_card.author.anonymous_mode|fr:Mode anonyme"
+      "disclaimer": "Ta možnost ne zahteva prijave v račun Make.org, vendar bo vaš predlog ostal anonimen za druge uporabnike.",
+      "anonymous_proposal": "Anonimni predlog",
+      "anonymous_mode": "Anonimni način"
     },
     "status": {
       "title": "Status predloga: ",

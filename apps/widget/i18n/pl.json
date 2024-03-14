@@ -116,7 +116,7 @@
   },
   "header": {
     "logo_alt": "Idź do strony głównej Make.org",
-    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
+    "privacy_policy": "Polityka prywatna"
   },
   "proposal_card": {
     "next": "Następna propozycja",
@@ -127,9 +127,9 @@
       "from": "Propozycja: ",
       "age": "{{age}} lat",
       "date": "złożona: ",
-      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs.",
-      "anonymous_proposal": "@@proposal_card.author.anonymous_proposal|fr:Proposition anonyme",
-      "anonymous_mode": "@@proposal_card.author.anonymous_mode|fr:Mode anonyme"
+      "disclaimer": "Ta opcja nie zwolnić was od bycia podłączonym do ksiąg Make.org, propozycja pozostaje anonimowa dla innych użytkowników.",
+      "anonymous_proposal": "Anonimowy wniosek",
+      "anonymous_mode": "Tryb życia"
     },
     "status": {
       "title": "Status propozycji: ",
@@ -224,7 +224,7 @@
       "tooltip_title": "W trakcie moderacji",
       "tooltip_description": "Twoja propozycja zostanie przeanalizowana przez nasze zespoły w ciągu 48 godzin, w międzyczasie już teraz możesz ją znaleźć na swoim profilu.",
       "grats": "Gratulujemy, {{name}}, ",
-      "proposal_sent": "Twoja propozycja została wysłana ",
+      "proposal_sent": "Twoja propozycja została wysłana ",
       "activate": "Potwierdź Twój adres e-mail za jednym kliknięciem, ",
       "link": "aby uwierzytelnić swoje konto. Kliknij link aktywacyjny wysłany na adres: {{mail}}",
       "question": "Masz pytanie? Możesz napisać do nas na adres: ",
@@ -239,7 +239,8 @@
     "label_one": "{{count}} głos",
     "label_few": "{{count}} głosy",
     "label_many": "{{count}} głosów",
-    "with_percent": "{{votedKey}} : {{votedPercent}}%"
+    "with_percent": "{{votedKey}} : {{votedPercent}}%",
+    "label_other": "{{count}} głosów"
   },
   "unvote": {
     "title": "Wycofuję moją opinię na temat tej propozycji."

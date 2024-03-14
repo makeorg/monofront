@@ -333,9 +333,9 @@
       "from": "Návrh: ",
       "age": "{{age}} rokov",
       "date": "Uverejnené dňa: ",
-      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs.",
-      "anonymous_proposal": "@@proposal_card.author.anonymous_proposal|fr:Proposition anonyme",
-      "anonymous_mode": "@@proposal_card.author.anonymous_mode|fr:Mode anonyme"
+      "disclaimer": "Táto možnosť nie je oslobodený od toho, aby ste boli pripojené k účtu Make.org.<br/> Avšak, váš návrh zostane anonymný pre ostatných užívateľov.",
+      "anonymous_proposal": "Anonymný návrh",
+      "anonymous_mode": "Anonymný režim"
     },
     "status": {
       "title": "Stav návrhu: ",

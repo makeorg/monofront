@@ -114,7 +114,7 @@
   },
   "header": {
     "logo_alt": "Ga naar de homepage van Make.org",
-    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
+    "privacy_policy": "Privacybeleid"
   },
   "proposal_card": {
     "next": "Volgend voorstel",
@@ -125,9 +125,9 @@
       "from": "Voorstel van: ",
       "age": "{{age}} jaar",
       "date": "geplaatst op: ",
-      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs.",
-      "anonymous_proposal": "@@proposal_card.author.anonymous_proposal|fr:Proposition anonyme",
-      "anonymous_mode": "@@proposal_card.author.anonymous_mode|fr:Mode anonyme"
+      "disclaimer": "Deze optie vertoont je niet van een band met je make.org account, maar je voorstel zal anoniem blijven voor andere gebruikers.",
+      "anonymous_proposal": "Anonieme voorstel",
+      "anonymous_mode": "Anonieme modus"
     },
     "status": {
       "title": "Status van het voorstel: ",
@@ -222,7 +222,7 @@
       "tooltip_title": "Wordt gemodereerd",
       "tooltip_description": "Je voorstel wordt binnen 48 uur verwerkt door onze teams, intussen kun je het in je profiel terugvinden.",
       "grats": "Gefeliciteerd {{name}}, ",
-      "proposal_sent": "je voorstel is verzonden ",
+      "proposal_sent": "je voorstel is verzonden ",
       "activate": "Bevestig je e-mailadres met één klik ",
       "link": "om de authenticiteit van je account te garanderen. Klik op de activeringslink die naar dit e-mailadres is gestuurd: {{mail}}",
       "question": "Heb je een vraag? Neem contact met ons op: ",

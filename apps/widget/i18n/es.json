@@ -116,7 +116,7 @@
   },
   "header": {
     "logo_alt": "Ir a la página de inicio de Make.org",
-    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
+    "privacy_policy": "Política de privacidad"
   },
   "proposal_card": {
     "next": "Propuesta siguiente",
@@ -127,9 +127,9 @@
       "from": "Propuesta de: ",
       "age": "{{age}} años",
       "date": "publicada el: ",
-      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs.",
-      "anonymous_proposal": "@@proposal_card.author.anonymous_proposal|fr:Proposition anonyme",
-      "anonymous_mode": "@@proposal_card.author.anonymous_mode|fr:Mode anonyme"
+      "disclaimer": "Esta opción no le exime de estar conectado a su cuenta Make.org.<br/> Sin embargo, su propuesta permanecerá anónima a otros usuarios.",
+      "anonymous_proposal": "Propuesta anónima",
+      "anonymous_mode": "Modo anónimo"
     },
     "status": {
       "title": "Estado de la propuesta: ",
@@ -224,7 +224,7 @@
       "tooltip_title": "En fase de moderación",
       "tooltip_description": "Tu propuesta será procesada por nuestros equipos en un plazo de 48 horas. Mientras tanto, ya puedes consultarla en tu perfil.",
       "grats": "¡Enhorabuena, {{name}}! ",
-      "proposal_sent": "¡Tu propuesta se ha enviado correctamente",
+      "proposal_sent": "¡Tu propuesta se ha enviado correctamente ",
       "activate": "Confirma tu dirección de correo electrónico con un clic ",
       "link": "para garantizar la autenticidad de tu cuenta. Haz clic en el enlace de activación que te hemos enviado a: {{mail}}",
       "question": "¿Tienes una pregunta? Ponte en contacto con nosotros en: ",

@@ -333,9 +333,9 @@
       "from": "Prijedlog korisnika: ",
       "age": "{{age}} godina",
       "date": "objavljeno dana: ",
-      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs.",
-      "anonymous_proposal": "@@proposal_card.author.anonymous_proposal|fr:Proposition anonyme",
-      "anonymous_mode": "@@proposal_card.author.anonymous_mode|fr:Mode anonyme"
+      "disclaimer": "Ova vas opcija ne izuzima od povezivanja s vašim Make.org računom.<br/>Međutim, vaš će prijedlog ostati anoniman drugim korisnicima.",
+      "anonymous_proposal": "Anonimni prijedlog",
+      "anonymous_mode": "Anonimni način rada"
     },
     "status": {
       "title": "Stanje prijedloga: ",
@@ -458,7 +458,7 @@
       "tooltip_title": "Trenutačno se moderira",
       "tooltip_description": "Vaš prijedlog obrađuju naši timovi u roku od 48 sati, a u međuvremenu ga možete pronaći u svojem profilu.",
       "grats": "Čestitke, {{name}}, ",
-      "proposal_sent": "vaš je prijedlog poslan ",
+      "proposal_sent": "vaš je prijedlog poslan ",
       "activate": "Potvrdite svoju adresu elektroničke pošte jednim klikom ",
       "link": "kako biste potvrdili autentičnost svojeg računa. Kliknite na poveznicu za aktiviranje koja vam je poslana na adresu elektroničke pošte: {{mail}}",
       "question": "Imate li pitanje? Možete nam se obratiti na: ",

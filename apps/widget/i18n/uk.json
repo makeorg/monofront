@@ -116,7 +116,7 @@
   },
   "header": {
     "logo_alt": "Перейти на головну сторінку Make.org",
-    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
+    "privacy_policy": "Політика конфіденційності"
   },
   "proposal_card": {
     "next": "Наступна пропозиція",
@@ -129,9 +129,9 @@
       "from": "Пропозиція від: ",
       "age": "{{age}} років",
       "date": "розміщено на сайті: ",
-      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs.",
-      "anonymous_proposal": "@@proposal_card.author.anonymous_proposal|fr:Proposition anonyme",
-      "anonymous_mode": "@@proposal_card.author.anonymous_mode|fr:Mode anonyme"
+      "disclaimer": "Ця опція не звільняє Вас від підключення до облікового запису Make.org <br/> Однак ваша пропозиція буде залишатися анонімною для інших користувачів.",
+      "anonymous_proposal": "Анонімна пропозиція",
+      "anonymous_mode": "Анонімний режим"
     },
     "status": {
       "title": "Статус пропозиції: ",
@@ -243,7 +243,7 @@
       "tooltip_title": "Виконується модерація",
       "tooltip_description": "Ваша пропозиція буде опрацьована нашими командами протягом 48 годин, а поки ви можете бачити її у своєму профілі.",
       "grats": "Вітаємо, {{name}}! ",
-      "proposal_sent": "Вашу пропозицію надіслано",
+      "proposal_sent": "Вашу пропозицію надіслано ",
       "activate": "Підтвердьте адресу електронної пошти в один клік, ",
       "link": "щоб гарантувати справжність вашого облікового запису. Перейдіть за посиланням для активації, надісланим на вказану вами електронну адресу: {{mail}}",
       "question": "Є запитання? Зв’яжіться з нами за адресою: ",
@@ -258,7 +258,8 @@
     "label_one": "{{count}} голос",
     "label_few": "{{count}} голоси",
     "label_many": "{{count}} голосів",
-    "with_percent": "{{votedKey}}: {{votedPercent}}%"
+    "with_percent": "{{votedKey}}: {{votedPercent}}%",
+    "label_other": "{{count}} голосів"
   },
   "unvote": {
     "title": "Відкликати свій голос щодо цієї пропозиції."

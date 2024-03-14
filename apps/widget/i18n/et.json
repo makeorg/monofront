@@ -114,7 +114,7 @@
   },
   "header": {
     "logo_alt": "Saidi Make.org avalehele",
-    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
+    "privacy_policy": "Privaatsuspoliitika"
   },
   "proposal_card": {
     "next": "Järgmine ettepanek",
@@ -127,9 +127,9 @@
       "from": "Ettepaneku esitaja: ",
       "age": "{{age}}-aastane",
       "date": "postitamise kuupäev: ",
-      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs.",
-      "anonymous_proposal": "@@proposal_card.author.anonymous_proposal|fr:Proposition anonyme",
-      "anonymous_mode": "@@proposal_card.author.anonymous_mode|fr:Mode anonyme"
+      "disclaimer": "See valik ei nõua, et te oleksite sisse logitud oma Make.org.1 kontole<br/>Kui ka teie ettepanek jääb teiste kasutajate jaoks anonüümseks.",
+      "anonymous_proposal": "Anonüümne ettepanek",
+      "anonymous_mode": "Anonüümne režiim"
     },
     "status": {
       "title": "Ettepaneku olek: ",
@@ -241,7 +241,7 @@
       "tooltip_title": "Modereerimisel",
       "tooltip_description": "Teie ettepanekut käsitletakse 48 tunni jooksul; seni võite seda oma profiili alt vaadata.",
       "grats": "Palju õnne, {{name}}, ",
-      "proposal_sent": "teie ettepanek saadeti ära ",
+      "proposal_sent": "teie ettepanek saadeti ära ",
       "activate": "Kinnitage ühe klõpsuga oma e-posti aadress, ",
       "link": "et tagada oma konto ehtsust. Klõpsake aktiveerimislingil, mis saadeti aadressile: {{mail}}",
       "question": "Küsimusi? Võtke meiega ühendust: ",

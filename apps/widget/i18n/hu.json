@@ -114,7 +114,7 @@
   },
   "header": {
     "logo_alt": "Tovább a Make.org főoldalára",
-    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
+    "privacy_policy": "Adatvédelmi politika"
   },
   "proposal_card": {
     "next": "Következő javaslat",
@@ -127,9 +127,9 @@
       "from": "A javaslat szerzője: ",
       "age": "{{age}} éves",
       "date": "közzétéve: ",
-      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs.",
-      "anonymous_proposal": "@@proposal_card.author.anonymous_proposal|fr:Proposition anonyme",
-      "anonymous_mode": "@@proposal_card.author.anonymous_mode|fr:Mode anonyme"
+      "disclaimer": "Ez az opció nem mentesíti Önt attól, hogy csatlakozzon a Make.org fiókjához.<br/> Azonban a javaslat anonim marad más felhasználók számára.",
+      "anonymous_proposal": "Anonim javaslat",
+      "anonymous_mode": "Anonymous mód"
     },
     "status": {
       "title": "A javaslat állapota: ",
@@ -241,7 +241,7 @@
       "tooltip_title": "Moderálás alatt",
       "tooltip_description": "Javaslatát 48 órán belül feldolgozzuk, addig is megtalálhatja a profiljában.",
       "grats": "Gratulálunk, {{name}}, ",
-      "proposal_sent": "javaslatát elküldte ",
+      "proposal_sent": "javaslatát elküldte ",
       "activate": "Egy kattintással erősítse meg e-mailcímét, ",
       "link": "hogy garantálja fiókja hitelességét. Kattintson az alábbi címre küldött aktiválási linkre: {{mail}}",
       "question": "Kérdése van? Vegye fel velünk a kapcsolatot az alábbi címen: ",

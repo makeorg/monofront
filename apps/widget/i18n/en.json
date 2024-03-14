@@ -114,7 +114,7 @@
   },
   "header": {
     "logo_alt": "Go to the Make.org website",
-    "privacy_policy": "@@header.privacy_policy|fr:Confidentialité"
+    "privacy_policy": "Privacy policy"
   },
   "top_proposal_card": {
     "start": "Start to vote"
@@ -126,9 +126,9 @@
       "age": "{{age}}",
       "from": "Proposition de : ",
       "date": "published on: ",
-      "disclaimer": "@@proposal_card.author.disclaimer|fr:Cette option ne vous dispense pas d’être connecté à votre compte Make.org.<br/>Cependant, votre proposition restera anonyme pour les autres utilisateurs.",
-      "anonymous_proposal": "@@proposal_card.author.anonymous_proposal|fr:Proposition anonyme",
-      "anonymous_mode": "@@proposal_card.author.anonymous_mode|fr:Mode anonyme"
+      "disclaimer": "This option does not require you to be logged in to your Make.org account.<br/> However, your proposal will remain anonymous to other users.",
+      "anonymous_proposal": "Anonymous proposal",
+      "anonymous_mode": "Anonymous mode"
     },
     "status": {
       "accepted": "Published",
