@@ -35,6 +35,7 @@ import {
   ROUTE_ASSEMBLY_FB_CONVERSION,
   ROUTE_ASSEMBLY_TW_CONVERSION,
 } from '../utils/routes';
+import { ErrorBoundary, IErrorLogger } from '../components/Error';
 
 declare global {
   interface Window {
@@ -215,16 +216,18 @@ const initApp = async (state: AssemblyGlobalStateType) => {
 
     return renderMethod(
       <AssemblyContextState serverState={store}>
-        <TrackingContext.Provider value={trackContext}>
-          <BrowserRouter>
-            <React.StrictMode>
-              <ModernNormalizeStylesheet />
-              <FontFacesStylesheet />
-              <DefaultStylesheet />
-              <AppContainer />
-            </React.StrictMode>
-          </BrowserRouter>
-        </TrackingContext.Provider>
+        <ErrorBoundary logger={Logger as IErrorLogger}>
+          <TrackingContext.Provider value={trackContext}>
+            <BrowserRouter>
+              <React.StrictMode>
+                <ModernNormalizeStylesheet />
+                <FontFacesStylesheet />
+                <DefaultStylesheet />
+                <AppContainer />
+              </React.StrictMode>
+            </BrowserRouter>
+          </TrackingContext.Provider>
+        </ErrorBoundary>
       </AssemblyContextState>,
       appDom
     );
