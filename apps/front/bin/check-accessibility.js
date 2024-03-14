@@ -25,7 +25,7 @@ const { getNotifierInstance } = require('../../../bin/utils/notification.js');
 
 const dataRelativePath =
   '../../package/utils/services/accessibilityScoring.yaml';
-const docRelativePath = '../../docs/accessibility.md';
+const docRelativePath = './docs/ACCESSIBILITY.md';
 const constantRelativePath =
   '../../package/utils/constants/accessibilitySummary.ts';
 const configuration = {

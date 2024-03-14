@@ -109,7 +109,7 @@ const listUnused = argv => {
 
     notifier
       .setPrefix(level1)
-      .add('', ' KO - check and remove keys if not used')
+      .add('', `KO - ${results.size} unused keys found. Check and remove keys if not used`)
       .notifyError();
 
 
@@ -124,7 +124,9 @@ const listUnused = argv => {
 }
 
 const listOrphan = argv => {
-  const translationDir = path.resolve(process.cwd(), argv.d);
+
+  const directories = typeof argv.d === 'string' ? [argv.d] : argv.d;
+  const translationDir = directories.map(d => path.resolve(process.cwd(), d));
   notifier.newLine();
   notifier.add('List orphan translation keys in code', '').notifyInfo2();
   notifier.add('Translation dir', translationDir).notifyInfo();
@@ -150,7 +152,7 @@ const listOrphan = argv => {
 
     notifier
       .setPrefix(level1)
-      .add('', ' KO - check orphan keys in code')
+      .add('', `KO - ${results.size} orphan keys found. Check orphan keys in code`)
       .notifyError();
 
 

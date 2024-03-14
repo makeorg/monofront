@@ -75,6 +75,7 @@ For further informations, please refers to each README.md :
 
 - [Front](./apps/front/README.md)
 - [Widget](./apps/widget/README.md)
+- [Assembly-ui](./apps/assembly-ui/README.md)
 
 ## <a name="contributing"></a>Contributing
 
@@ -119,31 +120,8 @@ $ yarn jscpd
 Before push the following command will be executed `yarn prepush`
 Following commands are runned on prepush :
 
-```bash
-$ yarn workspace @make.org/front translation
-$ yarn workspace @make.org/front documentation
-$ yarn workspace @make.org/widget translation
-$ yarn eslint ./
-$ yarn tsc --noEmit
-$ yarn jest
-$ yarn jscpd
-```
 
-### i18n
-
-List unused keys in translation files
-
-```bash
-$ yarn workspace @make.org/front  translation:unused-keys -d ./i18n -l fr
-```
-
-List keys without translation in code
-
-```bash
-$ yarn workspace @make.org/front  translation:orphan-keys -d ./i18n -l fr
-```
-
-This scripts uses `grep` command. A linux system is require.
+See: [.husky/pre-prush](.husky/pre-push)
 
 ### Convert SVG to React Component
 

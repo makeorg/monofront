@@ -1,4 +1,10 @@
 # @make.org/front 
+
+- Result pages: [./docs/RESULTS.md](./docs/RESULTS.md)
+- Accessibility report: [./docs/ACCESSIBILITY.md](./docs/ACCESSIBILITY.md)
+- Tracking reference: [./docs/TRACKING.md](./docs/TRACKING.md)
+
+
 ## Before starting
 :guardsman: Access to make.org tech env are restricted through VPN. Check this with make.org tech team before launching these commands.
 
@@ -55,50 +61,39 @@ $ yarn cypress:front:open
 
 Configure Cypress : [cypress.json](./cypress.json)
 
-## Environment variables for production
+
+### i18n
+
+Check translations
 
 ```bash
-# .env file
-
-# PORT
-PORT=8000
-
-# API url
-API_URL_SERVER_SIDE=https://api.make.org
-API_URL_CLIENT_SIDE=https://api.make.org
-
-# Front url
-FRONT_URL=https://make.org
-
-# Tracking
-FB_PIXEL_ID=
-FB_CONVERSION_TOKEN=
-
-# Content api url
-CONTENT_API_URL_SERVER_SIDE=
-
-# Twitter
-TW_PIXEL_ID=
-TW_API_KEY=
-TW_API_SECRET=
-TW_ACCESS_TOKEN=
-TW_TOKEN_SECRET=
+$ yarn workspace @make.org/front translation
 ```
 
-## Updating packages
-[Lerna Update Wizard](https://github.com/Anifacted/lerna-update-wizard) is installed to manage packages across workspaces.
+List unused keys in translation files
 
 ```bash
-$ yarn lernaupdate
+$ yarn workspace @make.org/front translation:unused-keys -d ./i18n -l fr
+$ yarn workspace @make.org/front translation:unused-keys -d ./client/pages/Static/i18n -l fr
 ```
 
+List keys without translation in code
 
-## Specificities
-### Results page
-Check [RESULTS.MD](./server/staticData/RESULTS.MD).
+```bash
+$ yarn workspace @make.org/front translation:orphan-keys -d ./client/pages/Static/i18n -d ./i18n -l fr
+```
 
-## Accessibility page
-See page: [ACCESSIBILITY.MD](../../docs/accessibility.md).
+This scripts uses `grep` command. A linux system is require.
+
+### Tracking documentation
+
+Check tracking documentation
+
+```bash
+$ yarn workspace @make.org/front documentation
+```
+
+## Accessibility
 
 Run accessibility test: 
 ```bash
@@ -110,4 +105,17 @@ Fix accessibility:
 yarn workspace @make.org/front accessibility:fix
 ```
 
+
+## Environment variables for production
+
+Create a new ```.env``` file.
+
+See [.env.local](./.env.local) for usage.
+
+## Updating packages
+[Lerna Update Wizard](https://github.com/Anifacted/lerna-update-wizard) is installed to manage packages across workspaces.
+
+```bash
+$ yarn lernaupdate
+```
 

@@ -19,8 +19,8 @@ const { argv } = require('yargs')
 const { getNotifierInstance } = require('../../../bin/utils/notification.js');
 
 const notifier = getNotifierInstance();
-const documentationDir = path.resolve(process.cwd(), '../../docs');
-const trackingDocumentationFile = path.resolve(documentationDir, 'tracking.md');
+const documentationDir = path.resolve(process.cwd(), './docs');
+const trackingDocumentationFile = path.resolve(documentationDir, 'TRACKING.md');
 const trackingConfigurationFile = path.resolve(
   process.cwd(),
   '../../package/utils/services/trackingConfiguration.yaml'

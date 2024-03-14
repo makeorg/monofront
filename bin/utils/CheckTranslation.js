@@ -1,5 +1,8 @@
 import fs from 'fs';
 
+const pluralKeysSuffix = /_plural|_one|_two|_few|_many|_other|_zero|_interval$/gm;
+
+
 const allKeys = (obj, current = '') => {
   const keys = Object.keys(obj);
   const all = keys.map(value => {
@@ -19,7 +22,6 @@ const allKeys = (obj, current = '') => {
 };
 
 const bypassPluralKeys = key => {
-  const pluralKeysSuffix = /_plural|_one|_two|_few|_many|_other|_zero/gm;
 
   if (key.match(pluralKeysSuffix)) {
     return;
@@ -143,6 +145,8 @@ const getUnusedKeys = (allKeys, appDirectory) => {
     process.stdout.write(`-- ${key}`);
     process.stdout.write('\r\x1b[K');
     const { spawnSync } = require('child_process');
+    const escapedKey = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
     const child = spawnSync(
       'grep',
       [
@@ -152,7 +156,7 @@ const getUnusedKeys = (allKeys, appDirectory) => {
         '--include=*.tsx',
         '--exclude-dir=dist',
         '--exclude-dir=node_modules',
-        key,
+        escapedKey,
         appDirectory,
       ],
       {
@@ -256,11 +260,8 @@ export const listUnusedKeys = async (
   const baseKeys = new Set();
   deduplicatedKeys.forEach(key => {
     const withoutPrefixCount = /([0-9]+\.)?(.+)/.exec(key)[2];
-    const withoutPrefixCountAndPluralSuffix = withoutPrefixCount.endsWith(
-      '_plural'
-    )
-      ? withoutPrefixCount.slice(0, -7)
-      : withoutPrefixCount;
+    const withoutPrefixCountAndPluralSuffix = withoutPrefixCount.replace(pluralKeysSuffix, '');
+
     baseKeys.add(withoutPrefixCountAndPluralSuffix);
   });
 
@@ -278,7 +279,7 @@ const getOrphanKeys = (actualKeys, appDirectory) => {
       '--include=*.tsx',
       '--exclude-dir=dist',
       '--exclude-dir=node_modules',
-      "(?<=i18n\\.t\\(')[^']*",
+      "(?<=i18n\\.t\\(')[^']+",
       appDirectory,
     ],
     {
@@ -290,14 +291,12 @@ const getOrphanKeys = (actualKeys, appDirectory) => {
     .trim()
     .split('\n')
     .map(str => {
-      const strParts = str.split(':');
-      if (!strParts[0] || !strParts[1]) {
-        throw 'Failed to split grep line result';
-      }
+      const search = /^([^:]+?):(.*)$/
+      const result = search.exec(str);
 
       return {
-        file: strParts[0],
-        key: strParts[1],
+        file: result[1],
+        key: result[2].replace(/^([^:]+:)/, ''),
       };
     }, {});
 
@@ -312,7 +311,7 @@ const getOrphanKeys = (actualKeys, appDirectory) => {
 };
 
 export const listOrphanKeys = async (
-  translationFilesDir,
+  translationFilesDirs,
   language = 'fr',
   appDirectory = '.'
 ) => {
@@ -320,14 +319,18 @@ export const listOrphanKeys = async (
     '-------------- analyse code in ',
     process.cwd() + '/' + appDirectory
   );
-  const translations = await loadTranslationObjFromFilenames(
-    await getTranslationFilenames(translationFilesDir),
-    translationFilesDir
+  const allTranslations = await Promise.all(
+    translationFilesDirs.map (async (translationFilesDir) => 
+      loadTranslationObjFromFilenames(
+        await getTranslationFilenames(translationFilesDir),
+        translationFilesDir
+      )
+    )
   );
-  const mainTransObj = translations.find(
+  const mainTransObjs = allTranslations.map(translations => translations.find(
     transObj => transObj.language === language
-  );
-  if (mainTransObj === undefined) {
+  )).filter(v => v !== undefined);
+  if (!mainTransObjs.length) {
     throw new Error(
       `Translation for language "${language}" not found. Available languages: "${translations
         .map(item => item.language)
@@ -335,11 +338,13 @@ export const listOrphanKeys = async (
     );
   }
 
-  const referenceKeys = allKeys(mainTransObj.trans);
+  const referenceKeys = mainTransObjs.reduce((prev, current) => new Set([...prev, ...allKeys(current.trans)]), new Set());
   const deduplicatedKeys = getDeduplicatedKeys(referenceKeys);
   const baseKeys = new Set();
   deduplicatedKeys.forEach(key => {
-    baseKeys.add(/([0-9]+\.)?(.+)/.exec(key)[2]);
+    const withoutPrefixCount = /([0-9]+\.)?(.+)/.exec(key)[2];
+    const baseKey = withoutPrefixCount.replace(pluralKeysSuffix, '');
+    baseKeys.add(baseKey);
   });
 
   return getOrphanKeys(baseKeys, appDirectory);

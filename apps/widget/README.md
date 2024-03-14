@@ -1,5 +1,7 @@
 # @make.org/widget
 
+- Widget integration: [./docs/integration.md](./docs/integration.md).
+
 ## Before starting
 
 :guardsman: Access to make.org tech env are restricted through VPN. Check this with make.org tech team before launching these commands.
@@ -66,20 +68,7 @@ Configure Cypress : [cypress.json](./cypress.json)
 
 ## Environment variables for production
 
-```bash
-# Widget config URL (will be removed in a future release)
-CONFIG_URL=https://widget-configuration-url.com
-
-# PORT
-PORT=8000
-
-# API url
-API_URL_SERVER_SIDE=https://api.make.org
-API_URL_CLIENT_SIDE=https://api.make.org
-
-# Front url
-FRONT_URL=https://widget.make.org
-```
+See: [./.env.local](./.env.local)
 
 ## Running controversial and popular sequences in Dev mode
 
@@ -97,14 +86,22 @@ standard / consensus / controversy
 
 ## i18n
 
+Check translations
+
+```bash
+$ yarn workspace @make.org/widget translation
+```
+
 List unused keys in translation files
 
 ```bash
-$ yarn workspace @make.org/widget  translation:unused-keys
+$ yarn workspace @make.org/widget  translation:unused-keys -d ./i18n -l fr
 ```
 
 List keys without translation in code
 
 ```bash
-$ yarn workspace @make.org/widget  translation:orphan-keys
+$ yarn workspace @make.org/widget  translation:orphan-keys -d ./i18n -l fr
 ```
+
+

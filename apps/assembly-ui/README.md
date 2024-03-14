@@ -1,4 +1,6 @@
-# @make.org/front
+# @make.org/assembly-ui
+
+- Tracking reference: [./docs/tracking.md](./docs/tracking.md)
 
 ## Before starting
 
@@ -39,6 +41,39 @@ $ docker exec -it CONTAINER_ID yarn workspace @make.org/assembly-ui build
 # Restart the container
 $ docker-compose -f docker-compose.dev.yaml up -d --profile=assembly-ui-ssr restart
 ```
+
+### i18n
+
+Check translations
+
+```bash
+$ yarn workspace @make.org/assembly-ui translation
+```
+
+List unused keys in translation files
+
+```bash
+$ yarn workspace @make.org/assembly-ui translation:unused-keys -d ./i18n -l fr
+$ yarn workspace @make.org/assembly-ui translation:unused-keys -d ./client/pages/Static/i18n -l fr
+```
+
+List keys without translation in code
+
+```bash
+$ yarn workspace @make.org/assembly-ui translation:orphan-keys -d ./client/pages/Static/i18n -d ./i18n -l fr
+```
+
+This scripts uses `grep` command. A linux system is require.
+
+
+### Tracking documentation
+
+Check tracking documentation
+
+```bash
+$ yarn workspace @make.org/assembly-ui documentation
+```
+
 
 ## Environment variables
 

@@ -27,6 +27,20 @@ A "Performance" consent is required to activate the following cookies (regardles
 - panoramic-session-id : session tracking         
 - panoramic-visitor-id : unique visitor tracking
 
+## CookieFirst
+
+Some data are collected by CookieFirst regardless of the category consent:
+- "Visitor ID" (specific CookieFirst id)
+- "Visitor IP" (anonymised IP)
+- "Device Type"
+- "Device Browser"
+- "Device OS"
+- "Device Brand"
+- "Device Model"
+- "Visitor Country"
+- "Visitor Region"
+- "Created (UTC)"
+
 ## Other
 
 Our question answering service records user questions and AI response for analysis to improve the service. No user data other than the question is recorded by this service.
