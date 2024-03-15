@@ -105,6 +105,7 @@ export const MenuExternalLinkStyle = styled.a`
   font-size: ${typography.FontSize.Arrondissement};
   line-height: 67px;
   padding: 0 ${spacings.l};
+  text-decoration: none;
 `;
 
 export const MenuNewWindowIconStyle = styled(SvgExternalLink)`
@@ -144,12 +145,14 @@ export const DesktopMenuItemStyle = styled.li`
     display: none;
     visibility: hidden;
   }
+  &.dropdown {
+    display: inline-block;
+  }
 `;
 
 const DesktopLinkStyle = `
   display: inline-flex;
-  font-family: ${typography.FontFamily.Condensed};
-  text-transform: uppercase;
+  font-family: ${typography.FontFamily.Highlight};
   text-decoration: none;
   align-items: center;
   font-size: ${typography.FontSize.Arrondissement};
@@ -163,6 +166,12 @@ export const DesktopMenuInternalLinkStyle = styled(Link)`
 
 export const DesktopMenuExternalLinkStyle = styled.a`
   ${DesktopLinkStyle};
+`;
+
+export const DesktopMenuDropdownButtonStyle = styled.button`
+  ${DesktopLinkStyle};
+  border: none;
+  background-color: inherit;
 `;
 
 export const MenuItemCountryLanguageLinkStyle = styled(Link)`
@@ -181,4 +190,22 @@ export const MenuItemCountryLanguageIconStyle = styled(SvgWorldMap)`
 
 export const MenuBulletPointStyle = styled.span`
   font-size: 12px;
+`;
+
+export const MenuDropdownListStyle = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: ${spacings.sm};
+  position: absolute;
+  list-style: none;
+  background-color: ${colors.Background.Make.LightPrimary};
+  padding: 20px;
+  border-radius: 8px;
+`;
+
+export const MenuDropdownItemListLinkStyle = styled.a`
+  font-family: ${typography.FontFamily.Highlight};
+  font-size: ${typography.FontSize.Bastille};
+  color: ${colors.Content.Interface.Dark};
+  text-decoration: none;
 `;

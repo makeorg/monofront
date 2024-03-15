@@ -1186,7 +1186,10 @@
       "title": "Sodelujte z Make.org",
       "subtitle": "Postanite partner",
       "description": "Pri naših projektih sodelujemo s podjetji, združenji in ustanovami. <br/>Tem organizacijam pomagamo tudi pri izvedbi njihovih lastnih posvetovanj.",
-      "button": "Ogled naše ponudbe"
+      "button": "Ogled naše ponudbe",
+      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
+      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
+      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
     },
     "international": {
       "subtitle": "Nacionalna posvetovanja",

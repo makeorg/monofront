@@ -586,7 +586,7 @@
   },
   "main_footer": {
     "jobs": "Jobs",
-    "whoarewe": "Notre approche",
+    "whoarewe": "À propos de Make.org",
     "legal": "Mentions légales",
     "terms": "Conditions d'utilisation",
     "data": "Politique de données",
@@ -1170,7 +1170,10 @@
       "title": "Collaborez avec Make.org",
       "subtitle": "Devenir partenaire",
       "description": "Nous travaillons avec des entreprises, associations, institutions pour faire avancer nos projets. <br/>Nous accompagnons également ces organisations pour leur permettre de lancer leurs propres consultations.",
-      "button": "Voir nos offres"
+      "button": "Voir nos offres",
+      "collaborate": "Collaborer avec nous",
+      "start_project": "Lancer un projet",
+      "join": "Rejoindre une grande cause"
     },
     "international": {
       "subtitle": "Consultations nationales",

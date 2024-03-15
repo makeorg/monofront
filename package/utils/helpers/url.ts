@@ -565,6 +565,11 @@ export const getWebflowDynamicLink = (
   return link;
 };
 
+export const getWebflowGreatCauseLink = (
+  language: string,
+  route: string
+): string => `${URL.ABOUT_MAKE_LINK}${language}${route}`;
+
 /**
  * Get the password recovery link
  *

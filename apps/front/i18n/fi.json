@@ -1125,7 +1125,10 @@
       "title": "Tee yhteistyötä Make.orgin kanssa",
       "subtitle": "Ryhdy kumppaniksi",
       "description": "Teemme yhteistyötä yritysten, järjestöjen ja instituutioiden kanssa hankkeidemme edistämiseksi. <br/>Tuemme myös organisaatioita, jotta ne voivat toteuttaa omia kuulemisia.",
-      "button": "Katso tarjouksemme"
+      "button": "Katso tarjouksemme",
+      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
+      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
+      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
     },
     "international": {
       "subtitle": "Kansalliset kuulemiset",

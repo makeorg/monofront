@@ -1165,7 +1165,10 @@
       "title": "Spolupracuj s Make.org",
       "subtitle": "Stát se partnerem",
       "description": "S cílem rozvíjet naše projekty spolupracujeme s podniky, sdruženími a také institucemi. <br/>Také podporujeme tyto organizace, abychom jim umožnili odstartovat vlastní konzultace.",
-      "button": "Zobrazit naše nabídky"
+      "button": "Zobrazit naše nabídky",
+      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
+      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
+      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
     },
     "international": {
       "subtitle": "Národní konzultace",

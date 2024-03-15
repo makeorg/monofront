@@ -1146,7 +1146,10 @@
       "title": "Colabora con Make.org",
       "subtitle": "Convertirte en socio",
       "description": "Trabajamos con empresas, asociaciones e instituciones para impulsar nuestros proyectos. <br/>También apoyamos a estas organizaciones para que lancen sus propias consultas.",
-      "button": "Ver nuestras ofertas"
+      "button": "Ver nuestras ofertas",
+      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
+      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
+      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
     },
     "international": {
       "subtitle": "Consultas nacionales",

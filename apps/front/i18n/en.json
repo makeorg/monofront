@@ -1048,7 +1048,10 @@
       "title": "Work together with Make.org",
       "subtitle": "Become a partner",
       "description": "In all our projects, we involve companies, associations and institutions to ensure our projects make rapid progress. <br/>We also permit these organisations to create their own consultations.",
-      "button": "See the offer"
+      "button": "See the offer",
+      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
+      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
+      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
     },
     "international": {
       "subtitle": "National consultations",

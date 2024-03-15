@@ -1144,7 +1144,10 @@
       "title": "Samarbeta med Make.org",
       "subtitle": "Bli samarbetspartner",
       "description": "Vi arbetar med företag, föreningar och institutioner för att driva våra projekt framåt. <br/>Vi vägleder dessa organisationer så att de kan inleda egna samråd.",
-      "button": "Se våra erbjudanden"
+      "button": "Se våra erbjudanden",
+      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
+      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
+      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
     },
     "international": {
       "subtitle": "Nationella samråd",

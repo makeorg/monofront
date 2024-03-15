@@ -1144,7 +1144,10 @@
       "title": "Συνεργαστείτε με τη Make.org",
       "subtitle": "Γίνετε συνεργάτης",
       "description": "Συνεργαζόμαστε με εταιρείες, ενώσεις και ιδρύματα για την προώθηση των έργων μας. <br/>Υποστηρίζουμε επίσης αυτές τις οργανώσεις στη διεξαγωγή των δικών τους διαβουλεύσεων.",
-      "button": "Δείτε τις προσφορές μας"
+      "button": "Δείτε τις προσφορές μας",
+      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
+      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
+      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
     },
     "international": {
       "subtitle": "Εθνικές διαβουλεύσεις",

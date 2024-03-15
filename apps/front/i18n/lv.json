@@ -1165,7 +1165,10 @@
       "title": "Sadarbojieties ar Make.org",
       "subtitle": "Kļūt par partneri",
       "description": "Mēs sadarbojamies ar uzņēmumiem, apvienībām un iestādēm, lai īstenotu savus projektus. <br/>Mēs arī atbalstām šīs organizācijas, lai tās pašas varētu uzsākt apspriešanos.",
-      "button": "Skatīt mūsu piedāvājumus"
+      "button": "Skatīt mūsu piedāvājumus",
+      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
+      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
+      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
     },
     "international": {
       "subtitle": "Apspriešanas valstu mērogā",

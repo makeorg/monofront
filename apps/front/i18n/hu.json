@@ -1144,7 +1144,10 @@
       "title": "Működjön együtt a Make.orggal",
       "subtitle": "Legyen partnerünk",
       "description": "Vállalatokkal, egyesületekkel és intézményekkel dolgozunk együtt projektjeink előmozdítása érdekében. <br/>Ezen kívül támogatjuk ezeket a szervezeteket saját konzultációik elindításában.",
-      "button": "Tekintse meg ajánlatainkat"
+      "button": "Tekintse meg ajánlatainkat",
+      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
+      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
+      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
     },
     "international": {
       "subtitle": "Országos konzultációk",

@@ -79,6 +79,7 @@ export const ROUTE_STATIC_MODERATION_DE = `${ROUTE_COUNTRY}/moderationscharta`;
 // webflow routes
 export const ROUTE_WHOAREWE = '/about-us';
 export const ROUTE_PARTNERSHIP = '/collaborate';
+export const ROUTE_JOIN_GREAT_CAUSE = '/rejoindre-une-grande-cause';
 
 // preview
 export const BASE_PREVIEW_PATH = '/preview';

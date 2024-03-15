@@ -1165,7 +1165,10 @@
       "title": "Bendradarbiaukite su Make.org",
       "subtitle": "Tapkite partneriu",
       "description": "Mes dirbame su įmonėmis, asociacijomis, institucijomis, kad galėtume įgyvendinti savo projektus. <br/>Taip pat remiame šias organizacijas, kad jos galėtų pradėti rengti savo konsultacijas.",
-      "button": "Žiūrėkite mūsų pasiūlymus"
+      "button": "Žiūrėkite mūsų pasiūlymus",
+      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
+      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
+      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
     },
     "international": {
       "subtitle": "Nacionalinės konsultacijos",

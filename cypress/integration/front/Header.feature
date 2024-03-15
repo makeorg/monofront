@@ -39,8 +39,9 @@ Feature: The header
     And  I see "Parcourir les consultations"
     And I see a link "Les consultations en cours" to "/FR/browse/consultations/page/1" in "mobile-header-menu" container
     And I see a link "Les résultats des consultations" to "/FR/browse/results/page/1" in "mobile-header-menu" container
-    And I see an external link "Notre approche" to "https://about.make.org/fr/about-us" in "mobile-header-menu" container
-    And I see an external link "Devenir partenaire" to "https://about.make.org/fr/collaborate" in "mobile-header-menu" container
+    And I see an external link "À propos de Make.org" to "https://about.make.org/fr/about-us" in "mobile-header-menu" container
+    And I see an external link "Lancer un projet" to "https://about.make.org/fr/collaborate" in "mobile-header-menu" container
+    And I see an external link "Rejoindre une grande cause" to "https://about.make.org/fr/rejoindre-une-grande-cause" in "mobile-header-menu" container
     And I see an external link "Notre actualité" to "https://about.make.org" in "mobile-header-menu" container
     And I see an external link "Jobs" to "https://about.make.org/jobs" in "mobile-header-menu" container
     When I click on "close mobile menu" button

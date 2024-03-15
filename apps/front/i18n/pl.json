@@ -1146,7 +1146,10 @@
       "title": "Współpraca z Make.org",
       "subtitle": "Zostań partnerem",
       "description": "Aby móc realizować nasze projekty, współpracujemy z firmami, stowarzyszeniami i instytucjami. <br/>Wspieramy również te organizacje, umożliwiając im uruchamianie ich własnych konsultacji.",
-      "button": "Zobacz nasze oferty"
+      "button": "Zobacz nasze oferty",
+      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
+      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
+      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
     },
     "international": {
       "subtitle": "Konsultacje krajowe",

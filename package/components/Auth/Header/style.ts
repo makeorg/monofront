@@ -9,7 +9,6 @@ export const ProfileLinkStyle = styled(Link)`
   font-family: ${typography.FontFamily.Condensed};
   display: inline-flex;
   text-decoration: none;
-  text-transform: uppercase;
   align-items: center;
   font-size: ${typography.FontSize.Arrondissement};
   flex-shrink: 0;

@@ -1146,7 +1146,10 @@
       "title": "Colaborați cu Make.org",
       "subtitle": "Modalități de parteneriat",
       "description": "Colaborăm cu diverse întreprinderi, asociații și instituții pentru a ne promova proiectele. <br/>De asemenea, oferim sprijin acestor organizații pentru ca ele să poată lansa propriile consultări.",
-      "button": "Vizualizarea ofertelor"
+      "button": "Vizualizarea ofertelor",
+      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
+      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
+      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
     },
     "international": {
       "subtitle": "Consultări naționale",

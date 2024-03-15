@@ -1135,7 +1135,10 @@
       "title": "Mit Make.org zusammenarbeiten",
       "subtitle": "Ihr Projekt starten",
       "description": "Wir arbeiten mit dem öffentlichen Sektor, Unternehmen, Stiftungen und gemeinnützigen Organisationen zusammen, um unsere Projekte voranzutreiben. <br/>Wir begleiten diese Organisationen auch dabei, eigene Beteiligungsprojekte zu initiieren.",
-      "button": "Unsere Angebote entdecken"
+      "button": "Unsere Angebote entdecken",
+      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
+      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
+      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
     },
     "international": {
       "subtitle": "Landesweite Konsultationen",

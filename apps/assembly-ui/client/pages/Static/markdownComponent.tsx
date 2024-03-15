@@ -63,7 +63,7 @@ export const markdownComponents = (): Components => ({
       >
         {props.children}
         <ScreenReaderItemStyle>
-          {i18n.t('common.open_new_window')}
+          {i18n.t('global.open_new_window')}
         </ScreenReaderItemStyle>
       </a>
     ),

@@ -1144,7 +1144,10 @@
       "title": "Samarbejd med Make.org",
       "subtitle": "Bliv samarbejdspartner",
       "description": "Vi samarbejder med virksomheder, foreninger, institutioner for at fremme vores projekter. <br/>Vi ledsager endvidere disse organisationer for at give dem mulighed for at starte deres egne høringer.",
-      "button": "Se vores tilbud"
+      "button": "Se vores tilbud",
+      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
+      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
+      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
     },
     "international": {
       "subtitle": "Nationale høringer",

@@ -9,6 +9,7 @@ import {
   getNewsLinkByCountry,
   getWhoAreWeDynamicLink,
   getWebflowDynamicLink,
+  getWebflowGreatCauseLink,
 } from '@make.org/utils/helpers/url';
 import { useLocation } from 'react-router';
 import { scrollToTop } from '@make.org/utils/helpers/styled';
@@ -21,6 +22,7 @@ import {
   isBrowseResultsPage,
   ROUTE_WHOAREWE,
   ROUTE_PARTNERSHIP,
+  ROUTE_JOIN_GREAT_CAUSE,
 } from '@make.org/utils/routes';
 import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { useAppContext } from '@make.org/store';
@@ -61,7 +63,6 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
     location.pathname
   );
   const onBrowseResultsPage = isBrowseResultsPage(location.pathname);
-  const displayExtraNavLinks = country === 'DE' || country === 'FR';
   const isFR = country === 'FR';
   const isDE = country === 'DE';
   const countryHasConsultations = getCountryWithConsultations(
@@ -104,32 +105,30 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
               <MenuItemTitleStyle>
                 {i18n.t('browse.page_title')}
               </MenuItemTitleStyle>
-              <UnstyledListStyle>
-                {!!browseConsultationsLink && countryHasConsultations && (
-                  <MenuItemStyle className="white">
-                    <MenuInternalLinkStyle
-                      className={onBrowseConsultationsPage ? 'current' : ''}
-                      to={browseConsultationsLink}
-                      onClick={handleInternalNavigation}
-                    >
-                      {i18n.t('browse.nav_consultations_desktop')}
-                    </MenuInternalLinkStyle>
-                  </MenuItemStyle>
-                )}
-                {!!browseResultsLink && (
-                  <MenuItemStyle className="white">
-                    <MenuInternalLinkStyle
-                      className={onBrowseResultsPage ? 'current' : ''}
-                      to={browseResultsLink}
-                      onClick={handleInternalNavigation}
-                    >
-                      {i18n.t('browse.nav_results_desktop')}
-                    </MenuInternalLinkStyle>
-                  </MenuItemStyle>
-                )}
-              </UnstyledListStyle>
             </MenuItemStyle>
-            <MenuItemStyle className="extra-margin-top">
+            {!!browseConsultationsLink && countryHasConsultations && (
+              <MenuItemStyle className="white">
+                <MenuInternalLinkStyle
+                  className={onBrowseConsultationsPage ? 'current' : ''}
+                  to={browseConsultationsLink}
+                  onClick={handleInternalNavigation}
+                >
+                  {i18n.t('browse.nav_consultations_desktop')}
+                </MenuInternalLinkStyle>
+              </MenuItemStyle>
+            )}
+            {!!browseResultsLink && (
+              <MenuItemStyle className="white">
+                <MenuInternalLinkStyle
+                  className={onBrowseResultsPage ? 'current' : ''}
+                  to={browseResultsLink}
+                  onClick={handleInternalNavigation}
+                >
+                  {i18n.t('browse.nav_results_desktop')}
+                </MenuInternalLinkStyle>
+              </MenuItemStyle>
+            )}
+            <MenuItemStyle className="white">
               <MenuExternalLinkStyle
                 target="_blank"
                 rel="noopener"
@@ -143,14 +142,28 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
                 </ScreenReaderItemStyle>
               </MenuExternalLinkStyle>
             </MenuItemStyle>
-            {displayExtraNavLinks && (
-              <MenuItemStyle>
+            <MenuItemStyle className="white">
+              <MenuExternalLinkStyle
+                target="_blank"
+                rel="noopener"
+                href={getWebflowDynamicLink(language, ROUTE_PARTNERSHIP)}
+              >
+                {i18n.t('homepage.partnership.start_project')}
+                <> </>
+                <MenuNewWindowIconStyle aria-hidden focusable="false" />
+                <ScreenReaderItemStyle>
+                  {i18n.t('common.open_new_window')}
+                </ScreenReaderItemStyle>
+              </MenuExternalLinkStyle>
+            </MenuItemStyle>
+            {isFR && (
+              <MenuItemStyle className="white">
                 <MenuExternalLinkStyle
                   target="_blank"
                   rel="noopener"
-                  href={getWebflowDynamicLink(language, ROUTE_PARTNERSHIP)}
+                  href={getWebflowGreatCauseLink('fr', ROUTE_JOIN_GREAT_CAUSE)}
                 >
-                  {i18n.t('homepage.partnership.subtitle')}
+                  {i18n.t('homepage.partnership.join')}
                   <> </>
                   <MenuNewWindowIconStyle aria-hidden focusable="false" />
                   <ScreenReaderItemStyle>
@@ -159,7 +172,7 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
                 </MenuExternalLinkStyle>
               </MenuItemStyle>
             )}
-            <MenuItemStyle>
+            <MenuItemStyle className="white">
               <MenuExternalLinkStyle
                 target="_blank"
                 rel="noopener"
@@ -174,7 +187,7 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
               </MenuExternalLinkStyle>
             </MenuItemStyle>
             {(isFR || isDE) && (
-              <MenuItemStyle>
+              <MenuItemStyle className="white">
                 <MenuExternalLinkStyle
                   target="_blank"
                   rel="noopener"
