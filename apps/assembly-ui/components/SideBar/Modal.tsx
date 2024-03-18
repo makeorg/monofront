@@ -5,12 +5,12 @@ import { lockBody, unlockBody } from '@make.org/utils/helpers/styled';
 import useOnClickOutside from '@make.org/utils/hooks/useOnClickOutside';
 import { SidebarCloseLogo } from '../../assets/sidebarclose';
 import { SidebarContent } from './Content';
+import { LogoMakeStyle } from '../style';
 import {
   SidebarContentStyle,
   SidebarTitleCloseStyle,
   SidebarCloseStyle,
   SidebarMakeStyle,
-  SidebarLogoMakeStyle,
   SidebarTitleStyle,
 } from './style';
 
@@ -63,7 +63,7 @@ export const SidebarModal: FC<Props> = ({ open, close }) => {
         <SidebarContent />
         <SidebarMakeStyle>
           {i18n.t('sidebar.exp')}
-          <SidebarLogoMakeStyle focusable="false" aria-hidden />
+          <LogoMakeStyle focusable="false" aria-hidden />
         </SidebarMakeStyle>
       </SidebarContentStyle>
     </ReactModal>

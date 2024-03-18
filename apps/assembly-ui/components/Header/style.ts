@@ -48,7 +48,7 @@ export const HeaderSvgStyle = styled.button`
 export const HeaderLogosContainerStyle = styled.div`
   display: flex;
   width: 100%;
-  padding: ${spacings.m};
+  padding: ${spacings.s} ${spacings.m};
   max-width: ${intToPx(Breakpoints.LargeDesktop)};
   justify-content: space-between;
 
@@ -64,31 +64,11 @@ export const HeaderLogoMakeStyle = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 35px;
-  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    height: 45px;
-  }
+  gap: 5px;
 `;
 
 export const HeaderBetaStyle = styled.p`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 17px;
-  font-size: 10px;
-  border: 1px solid black;
-  border-radius: 3px;
-  text-transform: uppercase;
+  font-size: ${typography.FontSize.Text.RueDeLappe};
+  color: #5f5f5f;
   font-weight: 600;
-`;
-
-export const HeaderMakeStyle = styled.p`
-  width: 75px;
-  text-transform: uppercase;
-  font-size: 10px;
-  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    width: 90px;
-    font-size: ${typography.FontSize.Text.RueDeLappe};
-  }
 `;

@@ -1,7 +1,9 @@
 import React, { FC, useState } from 'react';
 import i18n from 'i18next';
 import { scrollToTop } from '@make.org/utils/helpers/styled';
+import { env } from '@make.org/assets/env';
 import { SidebarLogo } from '../../assets/SidebarSimple';
+import { LogoMakeStyle } from '../style';
 import { SidebarModal } from '../SideBar/Modal';
 import {
   HeaderContainerStyle,
@@ -10,7 +12,6 @@ import {
   HeaderSvgStyle,
   HeaderLogoMakeStyle,
   HeaderBetaStyle,
-  HeaderMakeStyle,
   HeaderButton,
 } from './style';
 import { useAssemblyContext } from '../../store/context';
@@ -18,8 +19,8 @@ import { useAssemblyContext } from '../../store/context';
 export const Header: FC = () => {
   const { state } = useAssemblyContext();
   const { logoUrl } = state.event;
-
   const [openSidebar, setOpenSidebar] = useState(false);
+  const isMobile = !!(env.isClientSide() && Math.min(window.innerWidth) < 768);
 
   return (
     <HeaderContainerStyle>
@@ -46,10 +47,12 @@ export const Header: FC = () => {
             <HeaderImgStyle src={logoUrl} alt="" />
           </HeaderButton>
         )}
-        <HeaderLogoMakeStyle>
-          <HeaderBetaStyle>{i18n.t('header.beta')}</HeaderBetaStyle>
-          <HeaderMakeStyle> {i18n.t('header.make')}</HeaderMakeStyle>
-        </HeaderLogoMakeStyle>
+        {(!logoUrl || !isMobile) && (
+          <HeaderLogoMakeStyle>
+            <HeaderBetaStyle>{i18n.t('sidebar.exp')}</HeaderBetaStyle>
+            <LogoMakeStyle focusable="false" aria-hidden />
+          </HeaderLogoMakeStyle>
+        )}
       </HeaderLogosContainerStyle>
     </HeaderContainerStyle>
   );

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { typography } from '@make.org/designsystem/tokens/typography';
-import { SvgLogo } from '@make.org/ui/Svg/elements';
 import { SidebarExternalLink } from '../../assets/ArrowSquareOut';
 
 export const SidebarContentStyle = styled.div`
@@ -50,11 +49,6 @@ export const SidebarMakeStyle = styled.div`
   color: rgba(95, 95, 95, 1);
   margin: auto auto 0;
   font-size: ${typography.FontSize.Text.RueDeLappe};
-`;
-
-export const SidebarLogoMakeStyle = styled(SvgLogo)`
-  width: 66px;
-  height: 33px;
 `;
 
 export const SidebarContentContainerStyle = styled.nav`

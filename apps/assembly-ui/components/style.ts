@@ -1,6 +1,7 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
+import { SvgLogo } from '@make.org/ui/Svg/elements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 
 export const AppContent = styled.div`
@@ -81,4 +82,9 @@ export const UIModalStyle = createGlobalStyle`
       max-width: 300px;
     }
   }
+`;
+
+export const LogoMakeStyle = styled(SvgLogo)`
+  width: 66px;
+  height: 33px;
 `;
