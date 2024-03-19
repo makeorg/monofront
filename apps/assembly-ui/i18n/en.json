@@ -18,7 +18,8 @@
     "exploreText": "Delve into specific subjects that pique your interest.",
     "sources": "Explore verified sources",
     "sourcesText": "Discover the verified sources our AI uses to generate each answer.",
-    "openLabel": "Open the dialogue window"
+    "openLabel": "Open the dialogue window",
+    "proposal": "@@modal.proposal|fr:Quelles sont les propositions des participants ?"
   },
   "prompt": {
     "submit": "Send",

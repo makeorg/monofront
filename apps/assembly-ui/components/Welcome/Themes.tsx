@@ -28,7 +28,7 @@ type ButtonsProps = {
   color: number;
 };
 
-export const Buttons: FC<ButtonsProps> = ({
+export const ButtonsThemes: FC<ButtonsProps> = ({
   title,
   value,
   handleClick,
@@ -81,7 +81,7 @@ export const Themes: FC = () => {
   return (
     <WelcomeThemesBlockStyle>
       {themes.map((theme, index) => (
-        <Buttons
+        <ButtonsThemes
           key={theme.value}
           handleClick={() => handleThemeQuestion(theme.value, theme.title)}
           value={theme.value}

@@ -18,10 +18,14 @@ import { useUtms } from '../Tracking/useUtms';
 type ButtonsProps = {
   title: string;
   value: string;
-  handleClick: () => void;
+  handleClick?: () => void;
 };
 
-const Buttons: FC<ButtonsProps> = ({ title, value, handleClick }) => {
+export const ButtonsSuggestion: FC<ButtonsProps> = ({
+  title,
+  value,
+  handleClick,
+}) => {
   const { state } = useAssemblyContext();
   const { isStreaming } = state.feed;
 
@@ -30,7 +34,7 @@ const Buttons: FC<ButtonsProps> = ({ title, value, handleClick }) => {
       <SuggestionsButtonsStyle
         type="button"
         onClick={handleClick}
-        disabled={isStreaming}
+        disabled={isStreaming || !handleClick}
       >
         {title}
       </SuggestionsButtonsStyle>
@@ -96,7 +100,7 @@ export const Suggestions: FC = () => {
         <div ref={sliderRef} className="glider">
           <UnstyledListStyle className="glider-track">
             {suggestions.map((suggestion: TermQueryType) => (
-              <Buttons
+              <ButtonsSuggestion
                 key={suggestion.value}
                 title={suggestion.title}
                 value={suggestion.value}
@@ -114,7 +118,7 @@ export const Suggestions: FC = () => {
   return (
     <SuggestionsContainerStyle id="main" as={UnstyledListStyle}>
       {suggestions.map((suggestion: TermQueryType) => (
-        <Buttons
+        <ButtonsSuggestion
           key={suggestion.value}
           title={suggestion.title}
           value={suggestion.value}

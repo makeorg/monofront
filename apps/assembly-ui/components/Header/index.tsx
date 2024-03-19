@@ -12,6 +12,7 @@ import {
   HeaderSvgStyle,
   HeaderLogoMakeStyle,
   HeaderBetaStyle,
+  HeaderSidebarLogoContainerStyle,
   HeaderButton,
 } from './style';
 import { useAssemblyContext } from '../../store/context';
@@ -24,29 +25,31 @@ export const Header: FC = () => {
 
   return (
     <HeaderContainerStyle>
-      <HeaderSvgStyle
-        type="button"
-        aria-label={i18n.t('modal.openLabel')}
-        aria-expanded="false"
-        onClick={() => setOpenSidebar(true)}
-      >
-        <SidebarLogo />
-      </HeaderSvgStyle>
-
       {openSidebar && (
         <SidebarModal open={openSidebar} close={() => setOpenSidebar(false)} />
       )}
 
-      <HeaderLogosContainerStyle className={!logoUrl ? 'end' : ''}>
-        {logoUrl && (
-          <HeaderButton
+      <HeaderLogosContainerStyle>
+        <HeaderSidebarLogoContainerStyle>
+          <HeaderSvgStyle
             type="button"
-            title={i18n.t('header.top')}
-            onClick={scrollToTop}
+            aria-label={i18n.t('modal.openLabel')}
+            aria-expanded="false"
+            onClick={() => setOpenSidebar(true)}
           >
-            <HeaderImgStyle src={logoUrl} alt="" />
-          </HeaderButton>
-        )}
+            <SidebarLogo />
+          </HeaderSvgStyle>
+          {logoUrl && (
+            <HeaderButton
+              type="button"
+              title={i18n.t('header.top')}
+              onClick={scrollToTop}
+            >
+              <HeaderImgStyle src={logoUrl} alt="" />
+            </HeaderButton>
+          )}
+        </HeaderSidebarLogoContainerStyle>
+
         {(!logoUrl || !isMobile) && (
           <HeaderLogoMakeStyle>
             <HeaderBetaStyle>{i18n.t('sidebar.exp')}</HeaderBetaStyle>

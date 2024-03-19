@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
 import i18n from 'i18next';
-import resume from '../../assets/Group 6.png';
-import theme from '../../assets/Group 74.png';
-import video from '../../assets/Sourcesx2.png';
+import video from '../../assets/Frame 293.png';
+import { ButtonsSuggestion } from '../Prompt/Suggestions';
 import {
   OnboardingTitleStyle,
   OnboardingSubTitleStyle,
@@ -12,6 +11,7 @@ import {
   OnboardingBlockStyle,
   OnboardingImgContainerStyle,
   OnboardingImgStyle,
+  ThemeSvgStyle,
 } from './style';
 import { useAssemblyContext } from '../../store/context';
 
@@ -25,7 +25,10 @@ export const OnboardingContent: FC = () => {
       <OnboardingBlocksContainerStyle>
         <OnboardingBlockStyle>
           <OnboardingImgContainerStyle>
-            <OnboardingImgStyle src={resume} alt="" />
+            <ButtonsSuggestion
+              title={i18n.t('modal.proposal')}
+              value={i18n.t('modal.proposal')}
+            />
           </OnboardingImgContainerStyle>
           <OnboardingSubTitleStyle>
             {i18n.t('modal.suggestion')}
@@ -47,7 +50,7 @@ export const OnboardingContent: FC = () => {
         </OnboardingBlockStyle>
         <OnboardingBlockStyle>
           <OnboardingImgContainerStyle>
-            <OnboardingImgStyle src={theme} alt="" />
+            <ThemeSvgStyle aria-hidden focusable="false" />
           </OnboardingImgContainerStyle>
           <OnboardingSubTitleStyle>
             {i18n.t('modal.explore')}

@@ -3,11 +3,12 @@ import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { intToPx } from '@make.org/utils/helpers/styled';
+import { ThemesLogo } from '../../assets/Topic_Stack';
 
 export const OnboardingCloseStyle = styled.button`
   min-width: 35px;
   min-height: 35px;
-  background-color: #f4f4f4;
+  background-color: transparent;
   border-radius: 5px;
   outline: none;
   border-style: none;
@@ -105,4 +106,8 @@ export const OnboardingImgContainerStyle = styled.div`
 export const OnboardingImgStyle = styled.img`
   max-width: 100%;
   height: auto;
+`;
+
+export const ThemeSvgStyle = styled(ThemesLogo)`
+  max-width: 268px;
 `;

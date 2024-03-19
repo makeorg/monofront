@@ -38,11 +38,7 @@ export const HeaderSvgStyle = styled.button`
   height: 37px;
   background-color: #f4f4f4;
   border-radius: 5px;
-  margin-left: 20px;
   cursor: pointer;
-  @media (min-width: 1260px) {
-    position: absolute;
-  }
 `;
 
 export const HeaderLogosContainerStyle = styled.div`
@@ -54,9 +50,6 @@ export const HeaderLogosContainerStyle = styled.div`
 
   @media (min-width: 1260px) {
     margin: auto;
-  }
-  &.end {
-    justify-content: flex-end;
   }
 `;
 
@@ -71,4 +64,11 @@ export const HeaderBetaStyle = styled.p`
   font-size: ${typography.FontSize.Text.RueDeLappe};
   color: #5f5f5f;
   font-weight: 600;
+`;
+
+export const HeaderSidebarLogoContainerStyle = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
 `;

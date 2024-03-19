@@ -18,7 +18,8 @@
     "exploreText": "Profundice en los temas que más le interesan.",
     "sources": "Acceso a fuentes verificadas",
     "sourcesText": "Visualice las fuentes en las que se basa cada respuesta de la inteligencia artificial (IA).",
-    "openLabel": "Abrir la ventana de diálogo"
+    "openLabel": "Abrir la ventana de diálogo",
+    "proposal": "@@modal.proposal|fr:Quelles sont les propositions des participants ?"
   },
   "prompt": {
     "submit": "Enviar",
