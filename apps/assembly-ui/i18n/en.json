@@ -19,7 +19,7 @@
     "sources": "Explore verified sources",
     "sourcesText": "Discover the verified sources our AI uses to generate each answer.",
     "openLabel": "Open the dialogue window",
-    "proposal": "@@modal.proposal|fr:Quelles sont les propositions des participants ?"
+    "proposal": "What were participants’ proposals?"
   },
   "prompt": {
     "submit": "Send",

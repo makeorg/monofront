@@ -19,7 +19,7 @@
     "sources": "Zugriff auf verifizierte Quellen",
     "sourcesText": "Eine Anzeige der Quellen, auf denen jede Antwort der Künstlichen Intelligenz (KI) basiert.",
     "openLabel": "Öffnen Sie das Dialogfenster",
-    "proposal": "@@modal.proposal|fr:Quelles sont les propositions des participants ?"
+    "proposal": "Was waren die Vorschläge der Teilnehmenden?"
   },
   "prompt": {
     "submit": "Senden",
