@@ -1147,9 +1147,9 @@
       "subtitle": "Modalități de parteneriat",
       "description": "Colaborăm cu diverse întreprinderi, asociații și instituții pentru a ne promova proiectele. <br/>De asemenea, oferim sprijin acestor organizații pentru ca ele să poată lansa propriile consultări.",
       "button": "Vizualizarea ofertelor",
-      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
-      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
-      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
+      "collaborate": "Colaborați cu noi",
+      "start_project": "Lansați un proiect",
+      "join": "Alăturați-vă unei cauze grozave"
     },
     "international": {
       "subtitle": "Consultări naționale",

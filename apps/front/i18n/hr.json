@@ -1166,9 +1166,9 @@
       "subtitle": "Postani partner",
       "description": "Radimo s poduzećima, udruženjima, institucijama kako bismo proveli svoje projekte. <br/>Također podržavamo te organizacije kako bismo im omogućili pokretanje vlastitih rasprava.",
       "button": "Prikaži naše ponude",
-      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
-      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
-      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
+      "collaborate": "Surađujte s nama",
+      "start_project": "Pokrenite projekt",
+      "join": "Pridružite se velikom cilju"
     },
     "international": {
       "subtitle": "Nacionalne rasprave",

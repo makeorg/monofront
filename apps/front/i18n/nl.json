@@ -1126,9 +1126,9 @@
       "subtitle": "Partner worden",
       "description": "We werken samen met bedrijven, verenigingen en instellingen om onze projecten te bevorderen. <br/>We ondersteunen deze organisaties ook bij het opstarten van hun eigen raadplegingen.",
       "button": "Ons aanbod bekijken",
-      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
-      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
-      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
+      "collaborate": "Werk met ons samen",
+      "start_project": "Launch een project",
+      "join": "Vereniging van een grote zaak"
     },
     "international": {
       "subtitle": "Nationale raadplegingen",

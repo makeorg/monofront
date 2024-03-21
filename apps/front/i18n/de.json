@@ -1136,9 +1136,9 @@
       "subtitle": "Ihr Projekt starten",
       "description": "Wir arbeiten mit dem öffentlichen Sektor, Unternehmen, Stiftungen und gemeinnützigen Organisationen zusammen, um unsere Projekte voranzutreiben. <br/>Wir begleiten diese Organisationen auch dabei, eigene Beteiligungsprojekte zu initiieren.",
       "button": "Unsere Angebote entdecken",
-      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
-      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
-      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
+      "collaborate": "Arbeiten Sie mit uns",
+      "start_project": "Projekt starten",
+      "join": "Einen tollen Grund beitreten"
     },
     "international": {
       "subtitle": "Landesweite Konsultationen",
@@ -1206,14 +1206,14 @@
     "title": "Impressum",
     "make_infos": "Herausgeber der Website: MAKE.ORG GmbH mit Sitz Karl-Marx-Str. 12, 12043 Berlin, Deutschland, beim Amtsgericht Berlin (Charlottenburg) unter der Registernummer HRB 242008 B (im Folgenden „Make.org“) eingetragen.\nUmsatzsteueridentifikationsnummer: DE353962906\nVerantwortlich für den Inhalt: Sarah Delahaye, Karl-Marx-Str. 12, 12043 Berlin\nDie EU Kommission hält unter der URL https://ec.europa.eu/consumers/odr eine Plattform zur Online-Streitschlichtung bereit. Wir sind zu einer Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder bereit noch verpflichtet.",
     "mail": "E-Mail-Adresse: ",
-    "make_phone": "",
-    "make_phone_number": "",
+    "make_phone": "Telefonnummer: ",
+    "make_phone_number": "{{make_phone_number}}",
     "director": "Vertretungsberechtigte Geschäftsführerin und Geschäftsführer: Sarah Delahaye, Axel Dauchez",
     "host": "Webhost: ",
     "host_address": "{{make_host_address}}, Frankreich",
-    "host_phone": "",
+    "host_phone": "Telefonnummer: ",
     "host_phone_number": "{{host_number}}",
-    "eu_mention": ""
+    "eu_mention": "Die Europäische Kommission stellt eine Online-Streitbeilegungsplattform für Verbraucher unter <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\">https://ec.europa.eu/consumers/odr - (neues Fenster)</a> zur Verfügung."
   },
   "moderation_charter": {
     "unsuitable_label": "NICHT EMPFOHLEN",

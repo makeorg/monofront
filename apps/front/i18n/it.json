@@ -1147,9 +1147,9 @@
       "subtitle": "Diventa partner",
       "description": "Lavoriamo con imprese, associazioni e istituzioni per portare avanti i nostri progetti. <br/>Accompagniamo anche queste organizzazioni per permettere loro di lanciare le proprie consultazioni.",
       "button": "Scopri la nostra offerta",
-      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
-      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
-      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
+      "collaborate": "Lavora con noi",
+      "start_project": "Avviare un progetto",
+      "join": "Unisciti a una grande causa"
     },
     "international": {
       "subtitle": "Consultazioni nazionali",

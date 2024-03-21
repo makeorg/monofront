@@ -271,11 +271,11 @@
     },
     "max_characters": "maksimālais zīmju skaits",
     "back": "Atpakaļ",
-    "proposal_count_zero": "",
+    "proposal_count_zero": "{{count}} 0",
     "proposal_count_one": "{{count}} priekšlikums",
     "proposal_count_other": "{{count}} priekšlikumi",
     "breadcrumbs": "atpakaļceļa navigācija",
-    "million_zero": "",
+    "million_zero": "0",
     "million_one": "miljons",
     "million_other": "miljoni",
     "close_panel": "Aizvērt nolaižamo paneli",
@@ -298,10 +298,10 @@
     "number": "Ideja Nr. {{ count }}",
     "content": "Idejas saturs: ",
     "link": "Skatīt sīkāku informāciju par ideju",
-    "associated_proposals_zero": "",
+    "associated_proposals_zero": "0",
     "associated_proposals_one": "{{count}} saistītais priekšlikums",
     "associated_proposals_other": "{{count}} saistītie priekšlikumi",
-    "position_zero": "",
+    "position_zero": "0",
     "position_one": "{{ count }} viedoklis",
     "position_other": "{{ count }} viedokļi",
     "candidate_zero": "",
@@ -481,7 +481,7 @@
   "results": {
     "static_total": "Šis priekšlikums saņēma: ",
     "static_repartition": "Sadalījums ir šāds: ",
-    "total_zero": "",
+    "total_zero": "0 ",
     "total_one": "Šis priekšlikums saņēma {{count}} balsi, sadalījums ir šāds: ",
     "total_other": "Šis priekšlikums saņēma {{count}} balsis, sadalījums ir šāds: ",
     "voted": {
@@ -739,7 +739,7 @@
       "proposal_agree": "atbalsta šo priekšlikumu",
       "proposal_disagree": "neatbalsta šo priekšlikumu",
       "and": " un ",
-      "hasVoted_zero": "",
+      "hasVoted_zero": " 0",
       "hasVoted_one": " balsoja par šo priekšlikumu.",
       "hasVoted_other": " balsoja par šo priekšlikumu.",
       "sharing_title": "Kopīgojiet šo profilu"
@@ -818,13 +818,13 @@
     "highlights": {
       "start_date": "Uzsākšanas datums",
       "end_date": "Apspriešanās beigu datums",
-      "remaining_zero": "",
+      "remaining_zero": "0",
       "remaining_one": "Atlikusī diena",
       "remaining_other": "Atlikušās dienas",
-      "proposals_zero": "",
+      "proposals_zero": "0",
       "proposals_one": "Priekšlikums",
       "proposals_other": "Priekšlikumi",
-      "participant_zero": "",
+      "participant_zero": "0",
       "participant_one": "Dalībnieks",
       "participant_other": "Dalībnieki",
       "progress_title": "Mūsu balsošanas mērķis",
@@ -920,7 +920,7 @@
       "unvoted": "Tie, kas gaida jūsu balsojumu",
       "organisations_proposals": "Organizāciju iesniegtie priekšlikumi",
       "no_proposal": "<strong>Nav neviena priekšlikuma</strong>",
-      "validated_proposals_zero": "",
+      "validated_proposals_zero": "0",
       "validated_proposals_one": "<strong>{{count}} apstiprināts priekšlikums,</strong> kas atbilst jūsu meklētajam",
       "validated_proposals_other": "<strong>{{count}} apstiprināti priekšlikumi,</strong> kas atbilst jūsu meklētajam"
     },
@@ -1002,7 +1002,7 @@
       },
       "top_ideas": {
         "skiplink": "Labākās jaunās idejas",
-        "title_zero": "",
+        "title_zero": "0",
         "title_one": "Populārākās atzinību ieguvušās idejas, sagrupētas {{count}} kategorijā",
         "title_other": "Populārākās atzinību ieguvušās idejas, sagrupētas {{count}} kategorijās",
         "introduction": "Tiem nonākot platformā, labākie iedzīvotāju priekšlikumi tiek sagrupēti lielās idejās, kas veido apspriešanas struktūru. Lai sarindotu šīs idejas, Make.org algoritms ņem vērā balsis «par» un «pret», kā arī atzīmes «favorīts», «reālistisks», «mazsvarīgs» un «kategoriski pret! ».",
@@ -1027,10 +1027,10 @@
     "sortby": "Šķirot pēc: ",
     "local_actors": {
       "title": "Aktīvākās apvienības",
-      "proposals_zero": "",
+      "proposals_zero": "0",
       "proposals_one": "{{count}} priekšlikums",
       "proposals_other": "{{count}} priekšlikumi",
-      "votes_zero": "",
+      "votes_zero": "0",
       "votes_one": "{{count}} balss",
       "votes_other": "{{count}} balsis",
       "participate": "Jūs esat apvienība un vēlaties piedalīties mūsu apspriešanā? {{ contact_us }}",
@@ -1068,13 +1068,13 @@
       "title": "Piedalieties notiekošajās apspriešanās",
       "subtitle": "Jūsu viedoklis ir svarīgs! Balsojiet un piedāvājiet risinājumus, lai ietekmētu dažādus sabiedrībai aktuālus jautājumus un aktuālās problēmas.",
       "participate": "Iesaistīties",
-      "contributors_zero": "",
+      "contributors_zero": "0",
       "contributors_one": "dalībnieks",
       "contributors_other": "dalībnieki",
-      "proposals_zero": "",
+      "proposals_zero": "0",
       "proposals_one": "priekšlikums",
       "proposals_other": "priekšlikumi",
-      "votes_zero": "",
+      "votes_zero": "0",
       "votes_one": "balss",
       "votes_other": "balsis",
       "empty": "Atvainojiet, jūsu valstī pašlaik nav pieejama neviena apspriešana"
@@ -1137,17 +1137,17 @@
     "highlights": {
       "title": "Make.org dažos skaitļos",
       "participants": {
-        "subtitle_zero": "",
+        "subtitle_zero": "0",
         "subtitle_one": "dalībnieka(-ces)",
         "subtitle_other": "dalībnieku(-ču)"
       },
       "proposals": {
-        "subtitle_zero": "",
+        "subtitle_zero": "0",
         "subtitle_one": "iesniegtais priekšlikums",
         "subtitle_other": "iesniegtie priekšlikumi"
       },
       "partners": {
-        "subtitle_zero": "",
+        "subtitle_zero": "0",
         "subtitle_one": "iesaistītā apvienība un uzņēmums",
         "subtitle_other": "iesaistītās apvienības un uzņēmumi"
       }
@@ -1166,9 +1166,9 @@
       "subtitle": "Kļūt par partneri",
       "description": "Mēs sadarbojamies ar uzņēmumiem, apvienībām un iestādēm, lai īstenotu savus projektus. <br/>Mēs arī atbalstām šīs organizācijas, lai tās pašas varētu uzsākt apspriešanos.",
       "button": "Skatīt mūsu piedāvājumus",
-      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
-      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
-      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
+      "collaborate": "Sadarbojieties ar mums",
+      "start_project": "Uzsākt projektu",
+      "join": "Pievienojieties lieliskam mērķim"
     },
     "international": {
       "subtitle": "Apspriešanas valstu mērogā",
@@ -1180,16 +1180,16 @@
     "titles": {
       "loading": "Notiek meklēšana...",
       "no_results": "Nav neviena rezultāta",
-      "main_results_zero": "",
+      "main_results_zero": "0",
       "main_results_one": "{{count}} rezultāts saistībā ar « {{term}} »",
       "main_results_other": "{{count}} rezultāti saistībā ar « {{term}} »",
-      "proposals_zero": "",
+      "proposals_zero": "0",
       "proposals_one": "{{count}} priekšlikums saistībā ar « {{term}} »",
       "proposals_other": "{{count}} priekšlikumi saistībā ar « {{term}} »",
-      "operations_zero": "",
+      "operations_zero": "0",
       "operations_one": "{{count}} darbība saistībā ar « {{term}} »",
       "operations_other": "{{count}} darbības saistībā ar « {{term}} »",
-      "organisations_zero": "",
+      "organisations_zero": "0",
       "organisations_one": "{{count}} organizācijas saistībā ar « {{term}} »",
       "organisations_other": "{{count}} organizācijas saistībā ar « {{term}} »",
       "main_results_empty_term": "0 rezultātu"
@@ -1198,7 +1198,7 @@
       "proposal": "Priekšlikums",
       "organisation": "Organizācija",
       "operation": "Darbība",
-      "results_zero": "",
+      "results_zero": "0",
       "results_one": "{{count}} rezultāts",
       "results_other": "{{count}} rezultāti",
       "view_all": "Skatīt visu",
@@ -1359,7 +1359,7 @@
       "duration": "Ilgums: {{duration}}",
       "session": "Sesija",
       "month": "{{count}} mēneši",
-      "year_zero": "",
+      "year_zero": "0",
       "year_one": "{{count}} gads",
       "year_other": "{{count}} gadi",
       "technicals": {

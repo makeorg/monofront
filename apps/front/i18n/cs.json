@@ -1166,9 +1166,9 @@
       "subtitle": "Stát se partnerem",
       "description": "S cílem rozvíjet naše projekty spolupracujeme s podniky, sdruženími a také institucemi. <br/>Také podporujeme tyto organizace, abychom jim umožnili odstartovat vlastní konzultace.",
       "button": "Zobrazit naše nabídky",
-      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
-      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
-      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
+      "collaborate": "Práce s námi",
+      "start_project": "Spustit projekt",
+      "join": "Připojte se k velké příčině"
     },
     "international": {
       "subtitle": "Národní konzultace",
@@ -1248,7 +1248,7 @@
     "host_address": "{{make_host_address}} FRANCIE",
     "host_phone": "Telefonní číslo: ",
     "host_phone_number": "{{host_number}}",
-    "eu_mention": ""
+    "eu_mention": "Evropská komise je k dispozici online platformu pro řešení sporů pro spotřebitele v <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\">https://ec.europa.eu/consumers/odr - (nové okno)</a>."
   },
   "cookies_management": {
     "title": "SPRÁVA SOUBORŮ COOKIE",

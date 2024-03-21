@@ -271,7 +271,7 @@
       "next": "Next page",
       "previous": "Previous page",
       "index_count": "{{index}} of {{total}} pages",
-      "page": "",
+      "page": "Page",
       "page_total": "of {{total}} pages"
     },
     "million_one": "million",
@@ -1049,9 +1049,9 @@
       "subtitle": "Become a partner",
       "description": "In all our projects, we involve companies, associations and institutions to ensure our projects make rapid progress. <br/>We also permit these organisations to create their own consultations.",
       "button": "See the offer",
-      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
-      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
-      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
+      "collaborate": "Collaborate with us",
+      "start_project": "Start a project",
+      "join": "Join a great cause"
     },
     "international": {
       "subtitle": "National consultations",

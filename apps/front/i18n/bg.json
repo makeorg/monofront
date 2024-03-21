@@ -1126,9 +1126,9 @@
       "subtitle": "Станете партньор",
       "description": "Ние работим с компании, сдружения и институции, за да развиваме нашите проекти. <br/>Подкрепяме тези организации и при започването на техни собствени консултации.",
       "button": "Вижте нашите оферти",
-      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
-      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
-      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
+      "collaborate": "Работа с нас",
+      "start_project": "Стартиране на проект",
+      "join": "Присъединяване към голяма кауза"
     },
     "international": {
       "subtitle": "Национални консултации",

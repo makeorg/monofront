@@ -1166,9 +1166,9 @@
       "subtitle": "Стати партнером",
       "description": "Ми співпрацюємо з компаніями, асоціаціями й установами для просування наших проєктів. <br/>Ми також підтримуємо ці організації, щоб вони могли розпочати власні публічні консультації.",
       "button": "Ознайомитися з нашими пропозиціями",
-      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
-      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
-      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
+      "collaborate": "Робота з нами",
+      "start_project": "Запуск проекту",
+      "join": "Приєднатися до великої причини"
     },
     "international": {
       "subtitle": "Національні публічні консультації",
@@ -1248,7 +1248,7 @@
     "host_address": "{{make_host_address}} ФРАНЦІЯ",
     "host_phone": "Номер телефону: ",
     "host_phone_number": "{{host_number}}",
-    "eu_mention": ""
+    "eu_mention": "Європейська комісія надає доступ до Інтернет-платформи вирішення спорів для споживачів на <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\">https://ec.europa.eu/consumers/odr - (нове вікно)</a>."
   },
   "cookies_management": {
     "title": "УПРАВЛІННЯ ФАЙЛАМИ COOKIE",

@@ -1145,9 +1145,9 @@
       "subtitle": "Hakka partneriks",
       "description": "Me teeme oma projektide edendamiseks koostööd ettevõtete, ühingute ja institutsioonidega. <br/>Samuti aitame nendel organisatsioonidel oma isiklikke konsulteerimisi algatada.",
       "button": "Meie pakkumised",
-      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
-      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
-      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
+      "collaborate": "Tehke meiega koostööd",
+      "start_project": "Käivitage projekt",
+      "join": "Liituge suurepärase eesmärgiga"
     },
     "international": {
       "subtitle": "Riiklikud konsulteerimised",

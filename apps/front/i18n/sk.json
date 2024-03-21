@@ -1166,9 +1166,9 @@
       "subtitle": "Stať sa partnerom",
       "description": "Pri realizácii našich projektov spolupracujeme so spoločnosťami, združeniami a inštitúciami. <br/>Tieto organizácie podporujeme aj pri začatí ich vlastných konzultácií.",
       "button": "Zobraziť naše ponuky",
-      "collaborate": "@@homepage.partnership.collaborate|fr:Collaborer avec nous",
-      "start_project": "@@homepage.partnership.start_project|fr:Lancer un projet",
-      "join": "@@homepage.partnership.join|fr:Rejoindre une grande cause"
+      "collaborate": "Práca s nami",
+      "start_project": "Spustenie projektu",
+      "join": "Pripojiť veľkú príčinu"
     },
     "international": {
       "subtitle": "Národné konzultácie",
