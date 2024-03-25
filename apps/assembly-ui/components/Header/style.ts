@@ -34,7 +34,7 @@ export const HeaderSvgStyle = styled.button`
   outline: none;
   border-style: none;
   display: flex;
-  min-width: 37px;
+  width: 37px;
   height: 37px;
   background-color: #f4f4f4;
   border-radius: 5px;
