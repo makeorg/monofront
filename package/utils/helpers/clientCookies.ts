@@ -1,5 +1,5 @@
 import { FacebookTracking } from '@make.org/utils/services/Trackers/FacebookTracking';
-import { StateTrackingConsent } from '@make.org/types';
+import { ILogger, StateTrackingConsent } from '@make.org/types';
 import Cookies from 'universal-cookie';
 import { MixpanelTracking } from '@make.org/utils/services/Trackers/MixpanelTracking';
 import { COOKIE, LocaleType } from '@make.org/types/enums';
@@ -60,6 +60,7 @@ export const setLanguageInPreferenceCookie = (
 
 export const initTrackersFromPreferences = (
   trackingConsent: StateTrackingConsent,
+  logger: ILogger,
   visitorId?: string,
   enableMixPanel?: boolean
 ): void => {
@@ -74,21 +75,21 @@ export const initTrackersFromPreferences = (
     trackingConsent.facebook_tracking && !FacebookTracking.isInitialized();
 
   if (shouldInitFbPixel && visitorId) {
-    FacebookTracking.init(visitorId);
+    FacebookTracking.init(logger, visitorId);
     FacebookTracking.pageView();
   }
 
   if (shouldInitFbPixel && !visitorId) {
-    FacebookTracking.init();
+    FacebookTracking.init(logger);
     FacebookTracking.pageView();
   }
 
   if (trackingConsent.twitter_tracking && !twitter.initialized()) {
-    TwitterPixel.init();
+    TwitterPixel.init(logger);
   }
 
   if (enableMixPanel) {
-    MixpanelTracking.init();
+    MixpanelTracking.init(logger);
   }
 };
 

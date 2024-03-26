@@ -11,12 +11,6 @@ afterEach(() => {
   jest.restoreAllMocks();
 });
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
-const logger = { logError: () => {} };
-jest.mock('@make.org/logger', () => ({
-  getLoggerInstance: () => logger,
-}));
-
 const spy = jest.spyOn(QuestionService, 'getQuestion');
 spy.mockResolvedValue(defaultQuestion as QuestionType);
 

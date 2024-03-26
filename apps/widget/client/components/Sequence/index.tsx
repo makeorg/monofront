@@ -16,6 +16,7 @@ import {
   SequenceContainerStyle,
   SequenceContentStyle,
 } from '@make.org/components/Sequence/style';
+import { ClientLogger } from '@make.org/logger/clientLogger';
 
 export type Props = {
   /** kind parameter for popular and controversy sequences */
@@ -43,7 +44,8 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
       sequenceKind,
       language,
       demographicCardId,
-      token
+      token,
+      ClientLogger.getInstance()
     );
 
     if (!response) {
@@ -63,7 +65,8 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
     question,
     isStandardSequence(sequenceKind),
     executeStartSequence,
-    getNoProposalCard(sequenceKind)
+    getNoProposalCard(sequenceKind),
+    ClientLogger.getInstance()
   );
 
   if (isLoading) {
@@ -73,7 +76,11 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
   return (
     <SequenceContainerStyle data-cy-container="sequence" className="widget">
       <SequenceContentStyle>
-        <SequenceCard card={currentCard} question={question} />
+        <SequenceCard
+          card={currentCard}
+          question={question}
+          logger={ClientLogger.getInstance()}
+        />
         {!isEmptySequence && <SequenceProgress length={sequenceSize} />}
       </SequenceContentStyle>
     </SequenceContainerStyle>

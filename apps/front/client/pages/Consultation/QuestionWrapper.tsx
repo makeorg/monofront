@@ -17,6 +17,7 @@ import {
 } from '@make.org/store/actions/currentQuestion';
 import { loadQuestion } from '@make.org/store/actions/questions';
 import { useAppContext } from '@make.org/store';
+import { ClientLogger } from '@make.org/logger/clientLogger';
 
 const NotFoundPage = loadable(() => import('../NotFound'));
 
@@ -51,7 +52,13 @@ export const QuestionWrapper: FC<Props> = ({ children, withRedirect }) => {
     const questionDetails = await QuestionService.getDetail(
       questionSlug,
       language,
-      () => setAlternativeContent(<NotFoundPage />),
+      () => {
+        ClientLogger.getInstance().logWarning({
+          message: `Country : ${country.toUpperCase()} is not defined or available for question : ${questionSlug}.`,
+          name: 'question-wrapper',
+        });
+        setAlternativeContent(<NotFoundPage />);
+      },
       country
     );
 

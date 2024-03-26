@@ -10,7 +10,6 @@ import {
   ProposalType,
 } from '@make.org/types';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
-import { Logger } from './Logger';
 
 const QUESTION_STATUS_OPEN = 'open';
 const QUESTION_STATUS_FINISHED = 'finished';
@@ -101,12 +100,6 @@ const getDetail = async (
       !data?.countries?.includes(country.toUpperCase())
     ) {
       notFound();
-      Logger.logError({
-        message: `Country : ${country.toUpperCase()} is not defined or available for question : ${questionSlugOrId}. Available countries in question are : ${
-          data.countries
-        }`,
-        name: 'services',
-      });
 
       return null;
     }

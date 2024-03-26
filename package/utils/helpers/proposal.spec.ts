@@ -2,7 +2,6 @@ import { ProposalType } from '@make.org/types';
 import { proposalHasValidLength, getProposalContent } from './proposal';
 
 jest.mock('@make.org/api/services/ProposalApiService');
-jest.mock('@make.org/utils/services/Logger');
 
 describe('Proposal Helper', () => {
   afterEach(() => {

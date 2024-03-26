@@ -8,7 +8,7 @@ import {
   isStandardSequence,
   isConsensusSequence,
 } from '@make.org/utils/helpers/sequence';
-import { QuestionType, SequenceType } from '@make.org/types';
+import { ILogger, QuestionType, SequenceType } from '@make.org/types';
 import i18n from 'i18next';
 import { trackClickOperationPage } from '@make.org/utils/services/Tracking';
 import { SequenceService } from '@make.org/utils/services/Sequence';
@@ -37,12 +37,13 @@ import {
 type Props = {
   /** kind parameter for popular and controversy sequences */
   sequenceKind: string;
+  logger: ILogger;
 };
 
 /**
  * Renders Sequence component with Intro / Push Proposal / Sign Up & Proposal Cards
  */
-export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
+export const Sequence: React.FC<Props> = ({ sequenceKind, logger }) => {
   const { state } = useAppContext();
   const { country, source } = state.appConfig;
   const { isLoading, sequenceSize } = state.sequence;
@@ -65,7 +66,8 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
       sequenceKind,
       preferredLanguage,
       demographicCardId,
-      token
+      token,
+      logger
     );
 
     if (!response) {
@@ -85,7 +87,8 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
     question,
     isStandardSequence(sequenceKind),
     executeStartSequence,
-    getNoProposalCard(sequenceKind)
+    getNoProposalCard(sequenceKind),
+    logger
   );
 
   if (isLoading) {
@@ -130,7 +133,11 @@ export const Sequence: React.FC<Props> = ({ sequenceKind }) => {
                 </SequenceSpecialTitleStyle>
               </>
             ))}
-          <SequenceCard card={currentCard} question={question} />
+          <SequenceCard
+            card={currentCard}
+            question={question}
+            logger={logger}
+          />
           {!isEmptySequence && <SequenceProgress length={sequenceSize} />}
         </SequenceContentStyle>
         {!isWidget && (

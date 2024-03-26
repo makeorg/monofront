@@ -1,13 +1,12 @@
 import { ErrorObjectType } from '@make.org/types';
 import { defaultApiError, emptyError } from '@make.org/utils/errors/Messages';
+import { ServerLogger } from '@make.org/logger/serverLogger';
 import {
   getFieldError,
   getErrorMessages,
   setNullToEmptyString,
   setEmptyStringToNull,
 } from './form';
-
-jest.mock('../services/Logger');
 
 describe('getFieldError', () => {
   const errors: ErrorObjectType[] = [
@@ -86,11 +85,21 @@ describe('getErrorMessages', () => {
   };
 
   it('getMessage with an array of Errors returned from Api', () => {
-    const errors = getErrorMessages(internalErrors, serviceErrors, 'fooId');
+    const errors = getErrorMessages(
+      internalErrors,
+      serviceErrors,
+      'fooId',
+      ServerLogger.getInstance()
+    );
     expect(errors).toEqual(internalErrors);
   });
   it('getMessage with an single object error returned from Api', () => {
-    const errors = getErrorMessages(internalErrors, apiObjectError, 'fooId');
+    const errors = getErrorMessages(
+      internalErrors,
+      apiObjectError,
+      'fooId',
+      ServerLogger.getInstance()
+    );
     expect(errors).toEqual([defaultApiError]);
   });
 });

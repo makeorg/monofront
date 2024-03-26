@@ -13,7 +13,6 @@ import { ApiServiceClient } from '@make.org/api/ApiService/ApiService.client';
 import { createInitialState } from '@make.org/store/initialState';
 import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
 import { QuestionService } from '@make.org/utils/services/Question';
-import { Logger } from '@make.org/utils/services/Logger';
 import { authenticationState } from '@make.org/utils/helpers/auth';
 import {
   getAll,
@@ -27,8 +26,9 @@ import {
   initOauthRefresh,
   OauthResponseType,
 } from '@make.org/api/ApiService/OauthRefresh';
-import { LogLevelType } from '@make.org/types/enums/logLevel';
 import { TRANSLATION_COMMON_NAMESPACE } from '@make.org/utils/i18n/constants';
+import { ClientLogger } from '@make.org/logger/clientLogger';
+import { TrackingService } from '@make.org/utils/services/TrackingService';
 import { translationRessources } from '../i18n';
 import { initDevState } from '../initDevState';
 import { transformExtraSlidesConfigFromQuery } from '../server/helpers/query.helper';
@@ -48,17 +48,14 @@ window.onerror = (message, source, lineNumber, columnNumber, error) => {
     const formattedSource = JSON.stringify(source);
     const formattedLineNumber = JSON.stringify(lineNumber);
     const formattedColumnNumber = JSON.stringify(columnNumber);
-    Logger.log(
-      {
-        name: 'global-client',
-        message: formattedMessage,
-        app_sourceError: formattedSource,
-        app_lineError: formattedLineNumber,
-        app_columnError: formattedColumnNumber,
-        stack,
-      },
-      LogLevelType.error
-    );
+    ClientLogger.getInstance().logError({
+      name: 'global-client',
+      message: formattedMessage,
+      app_sourceError: formattedSource,
+      app_lineError: formattedLineNumber,
+      app_columnError: formattedColumnNumber,
+      stack,
+    });
   }
 
   return false;
@@ -146,6 +143,9 @@ const initApp = async (state: StateRoot) => {
   // Init Api service location
   apiClient.location = widgetLocation;
 
+  // Init trackingService
+  TrackingService.setLogger(ClientLogger.getInstance());
+
   // Set tracking params
   trackingParamsService.source = queryParams.source || source;
   trackingParamsService.country = country;
@@ -193,7 +193,10 @@ const initApp = async (state: StateRoot) => {
         token
       )}&client_id=0cdd82cb-5cc0-4875-bb54-5c3709449429`,
     }).catch(error =>
-      Logger.logWarning({ name: 'refreshtokencall', message: error.message })
+      ClientLogger.getInstance().logWarning({
+        name: 'refreshtokencall',
+        message: error.message,
+      })
     );
 
     return response?.data;

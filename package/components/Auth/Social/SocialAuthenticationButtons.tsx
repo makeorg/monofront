@@ -17,8 +17,13 @@ import {
 import { FacebookAuthentication } from '@make.org/components/Auth/Social/FacebookAuthentication';
 import { GoogleAuthentication } from '@make.org/components/Auth/Social/GoogleAuthentication';
 import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
+import { ILogger } from '@make.org/types';
 
-export const SocialAuthenticationButtons: React.FC = () => {
+type Props = {
+  logger: ILogger;
+};
+
+export const SocialAuthenticationButtons: React.FC<Props> = ({ logger }) => {
   const { dispatch } = useAppContext();
   const handleLoginModal = () => {
     dispatch(setPanelContent(PANEL_CONTENT.LOGIN));
@@ -35,8 +40,8 @@ export const SocialAuthenticationButtons: React.FC = () => {
             <SeparatorStyle />
           </SeparatorWrapperStyle>
           <SocialRegisterButtonsWrapperStyle>
-            <GoogleAuthentication isRegister />
-            <FacebookAuthentication isRegister />
+            <GoogleAuthentication isRegister logger={logger} />
+            <FacebookAuthentication isRegister logger={logger} />
           </SocialRegisterButtonsWrapperStyle>
         </>
       )}

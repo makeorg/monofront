@@ -12,7 +12,6 @@ import { headersResponseMiddleware } from '@make.org/utils/middleware/headers';
 import { nonceUuidMiddleware } from '@make.org/utils/middleware/nonceUuid';
 import { secureMiddleware } from '@make.org/utils/middleware/secure';
 import { maintenanceMiddleware } from '@make.org/utils/middleware/maintenance';
-import { getLoggerInstance, initLogger } from '@make.org/logger';
 import {
   errorNormalizer,
   objectNormalizer,
@@ -24,6 +23,7 @@ import {
   oneLineTransformer,
 } from '@make.org/logger/loggerTransformer';
 import { apiErrorDataLogNormalizer } from '@make.org/api/log/apiErrorDataLogNormalizer';
+import { ServerLogger } from '@make.org/logger/serverLogger';
 import { initRoutes } from './routes';
 import { serverInitI18n } from './i18n';
 import {
@@ -42,7 +42,7 @@ const getApp = () => {
 
   getStackTransformer(WIDGET_JS_DIR, WIDGET_BUILD_DIR, WIDGET_MAP_DIR).then(
     stackTransformer =>
-      initLogger(
+      ServerLogger.init(
         'make-widget',
         [
           errorNormalizer,
@@ -54,7 +54,6 @@ const getApp = () => {
         env.isDev()
       )
   );
-  const logger = getLoggerInstance();
 
   if (env.isDev()) {
     app.use(cors());
@@ -73,11 +72,11 @@ const getApp = () => {
       logLevel: 'error',
       secure: false,
       logProvider: () => ({
-        log: logger.logInfo,
-        debug: logger.logInfo,
-        info: logger.logInfo,
-        warn: logger.logWarning,
-        error: logger.logError,
+        log: m => ServerLogger.getInstance().logInfo(m),
+        debug: m => ServerLogger.getInstance().logInfo(m),
+        info: m => ServerLogger.getInstance().logInfo(m),
+        warn: m => ServerLogger.getInstance().logWarning(m),
+        error: m => ServerLogger.getInstance().logError(m),
       }),
     });
     app.use('/backend', apiProxy);
@@ -91,7 +90,7 @@ const getApp = () => {
   );
   app.use(secureMiddleware);
   app.use((req, res, next) =>
-    maintenanceMiddleware(req, res, next, logger.logError)
+    maintenanceMiddleware()(req, res, next, ServerLogger.getInstance())
   );
   app.use((req, res, next) =>
     headersResponseMiddleware(

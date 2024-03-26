@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { getLoggerInstance } from '@make.org/logger';
 import Cookies from 'universal-cookie';
+import { ServerLogger } from '@make.org/logger/serverLogger';
 import { reactRender } from '../reactRender';
 import { ContentService } from '../api/Content';
 import { EventRouteType } from '../../types';
@@ -11,10 +11,9 @@ export const eventRoute = async (
   res: Response
 ): Promise<void> => {
   const { customerSlug, eventSlug } = req.params;
-  const logger = getLoggerInstance();
 
   const notFoundError = (endpoint: string, eventSlugOrId: string) => {
-    logger.logError({
+    ServerLogger.getInstance().logError({
       message: `Not found error on ${endpoint} with slug or id : '${eventSlugOrId}'`,
       name: 'server-side',
       url: req.url,
@@ -23,7 +22,7 @@ export const eventRoute = async (
   };
 
   const unexpectedError = (endpoint: string, eventSlugOrId: string) => {
-    logger.logError({
+    ServerLogger.getInstance().logError({
       message: `Unexpected error on ${endpoint} with slug or id : '${eventSlugOrId}'`,
       name: 'server-side',
       url: req.url,
@@ -44,7 +43,7 @@ export const eventRoute = async (
   );
 
   if (!customer || !event) {
-    logger.logError({
+    ServerLogger.getInstance().logError({
       message: `No customer with slug : '${customerSlug}' or event with slug : '${eventSlug}'`,
       name: 'server-side',
       url: req.url,
@@ -56,7 +55,7 @@ export const eventRoute = async (
   const eventLinkedToCustomer = () => event.customerId === customer.id;
 
   if (!eventLinkedToCustomer) {
-    logger.logError({
+    ServerLogger.getInstance().logError({
       message: `Event is not related to Customer - "id" received from customer is ${customer.id} while "customerId" received from event is ${event.customerId}`,
       name: 'server-side',
       url: req.url,
@@ -81,7 +80,7 @@ export const eventRoute = async (
   const noGeneratedContents = !generatedContents || !generatedContents?.length;
 
   if (noTermQueries || noGeneratedContents) {
-    logger.logError({
+    ServerLogger.getInstance().logError({
       message: `No Term Queries (length: ${termQueries?.length}) or Generated Contents (length: ${generatedContents?.length}) for event : ${event.slug} `,
       name: 'server-side',
       url: req.url,

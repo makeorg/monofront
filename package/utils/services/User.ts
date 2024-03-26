@@ -9,6 +9,7 @@ import {
   ErrorObjectType,
   RegisterFormDataType,
   PersonalityProfileType,
+  ILogger,
 } from '@make.org/types';
 import { mapErrors } from '@make.org/utils/services/ApiErrors';
 import {
@@ -39,7 +40,8 @@ const updatePassword = async (
   passwords: PasswordsType,
   hasPassword: boolean,
   success: () => void,
-  handleErrors: (errors: ErrorObjectType[]) => void
+  handleErrors: (errors: ErrorObjectType[]) => void,
+  logger: ILogger
 ): Promise<void> => {
   const actualPassword =
     hasPassword && passwords.actualPassword ? passwords.actualPassword : '';
@@ -59,7 +61,8 @@ const updatePassword = async (
         getErrorMessages(
           updatePasswordErrors,
           apiServiceError.data as ErrorObjectType | ErrorObjectType[],
-          apiServiceError.logId
+          apiServiceError.logId,
+          logger
         )
       );
       return;
@@ -137,7 +140,8 @@ const register = async (
   user: RegisterFormDataType,
   success: () => void,
   errors: (errors: ErrorObjectType[]) => void,
-  unexpectedError: () => void
+  unexpectedError: () => void,
+  logger: ILogger
 ): Promise<void> => {
   try {
     const {
@@ -176,7 +180,8 @@ const register = async (
         getErrorMessages(
           registerErrors,
           apiServiceError.data as ErrorObjectType[] | ErrorObjectType,
-          apiServiceError.logId
+          apiServiceError.logId,
+          logger
         )
       );
       return;
@@ -193,7 +198,8 @@ const checkRegistration = async (
   password: string,
   success: () => void,
   errors: (errors: ErrorObjectType[]) => void,
-  unexpectedError: () => void
+  unexpectedError: () => void,
+  logger: ILogger
 ): Promise<void> => {
   try {
     await UserApiService.checkRegistration(email, password);
@@ -205,7 +211,8 @@ const checkRegistration = async (
         getErrorMessages(
           registerErrors,
           apiServiceError.data as ErrorObjectType[] | ErrorObjectType,
-          apiServiceError.logId
+          apiServiceError.logId,
+          logger
         )
       );
       return;
@@ -544,6 +551,7 @@ const getProfileByUserType = async (
 const update = async (
   userId: string,
   profile: UserProfileType,
+  logger: ILogger,
   success: () => void,
   handleErrors?: (errors: ErrorObjectType[]) => void
 ): Promise<void> => {
@@ -589,7 +597,8 @@ const update = async (
         getErrorMessages(
           updateUserErrors,
           apiServiceError.data as ErrorObjectType[] | ErrorObjectType,
-          apiServiceError.logId
+          apiServiceError.logId,
+          logger
         )
       );
       return;

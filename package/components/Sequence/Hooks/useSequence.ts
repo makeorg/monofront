@@ -5,6 +5,7 @@ import {
   ExecuteStartSequence,
   NoProposalCardType,
   QuestionExtraSlidesConfigType,
+  ILogger,
 } from '@make.org/types';
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
@@ -38,7 +39,8 @@ export const useSequence = (
   question: QuestionType,
   isStandardSequence: boolean,
   executeStartSequence: ExecuteStartSequence,
-  noProposalCard: NoProposalCardType
+  noProposalCard: NoProposalCardType,
+  logger: ILogger
 ): ReturnFunctionType => {
   // Dispatch
   const { state, dispatch } = useAppContext();

@@ -1,4 +1,3 @@
-import { Logger } from '@make.org/utils/services/Logger';
 import {
   intToPx,
   matchDesktopDevice,
@@ -10,12 +9,13 @@ import {
   setMobileDevice,
 } from '@make.org/store/actions/appConfig';
 import { ReducerAction } from '@make.org/types';
+import { ClientLogger } from '@make.org/logger/clientLogger';
 
 export const updateDeviceInState = (
   deviceInState: string
 ): undefined | ReducerAction => {
   if (!window.matchMedia) {
-    Logger.logWarning({
+    ClientLogger.getInstance().logWarning({
       message: 'window.matchMedia is not supported',
       name: 'client-helper',
     });

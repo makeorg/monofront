@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
-import { DemographicDataType } from '@make.org/types';
+import { DemographicDataType, ILogger } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
-import { Logger } from '@make.org/utils/services/Logger';
 import i18n from 'i18next';
 import { setDemographicsAsSubmitted } from '@make.org/store/actions/sequence';
 import { MiddleColumnStyle } from '@make.org/ui/elements/FlexElements';
@@ -12,9 +11,10 @@ import { SubmittedDemographics } from './SubmittedStep';
 
 type Props = {
   configuration: DemographicDataType;
+  logger: ILogger;
 };
 
-export const ExtraDataCard: FC<Props> = ({ configuration }) => {
+export const ExtraDataCard: FC<Props> = ({ configuration, logger }) => {
   const { state, dispatch } = useAppContext();
   const { sequence } = state;
   const isSubmitted = state.sequence.demographics.submitted?.find(
@@ -23,7 +23,7 @@ export const ExtraDataCard: FC<Props> = ({ configuration }) => {
 
   // set demographics
   if (!configuration) {
-    Logger.logError({
+    logger.logError({
       message: 'No demographic data found',
       name: 'sequence',
       configuration,
@@ -61,6 +61,7 @@ export const ExtraDataCard: FC<Props> = ({ configuration }) => {
         token={token}
         sessionBindingMode={sequence.sessionBindingMode}
         submitSuccess={submitSuccess}
+        logger={logger}
       />
     </MiddleColumnStyle>
   );

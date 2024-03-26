@@ -10,7 +10,7 @@ import { useParams } from 'react-router';
 import { QuestionType } from '@make.org/types/Question';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { useAppContext } from '@make.org/store';
-import { Logger } from '@make.org/utils/services/Logger';
+import { ClientLogger } from '@make.org/logger/clientLogger';
 import { DesktopMenu } from '../Navigation/Menu/Desktop';
 import { MobileMenu } from '../Navigation/Menu/Mobile';
 import { DesktopSearchInput } from '../Search/Form/Desktop';
@@ -75,7 +75,7 @@ export const Header: React.FC = () => {
                 country
                   ? trackClickMakeLogo
                   : () =>
-                      Logger.logError({
+                      ClientLogger.getInstance().logError({
                         name: 'header-component',
                         message: 'No country on Make.org logo',
                       })

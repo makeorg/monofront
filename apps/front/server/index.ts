@@ -11,7 +11,6 @@ import { env } from '@make.org/assets/env';
 import { cspMiddleware } from '@make.org/utils/middleware/contentSecurityPolicy';
 import { headersResponseMiddleware } from '@make.org/utils/middleware/headers';
 import { nonceUuidMiddleware } from '@make.org/utils/middleware/nonceUuid';
-import { getLoggerInstance, initLogger } from '@make.org/logger';
 import {
   errorNormalizer,
   objectNormalizer,
@@ -22,6 +21,7 @@ import {
   getStackTransformer,
   oneLineTransformer,
 } from '@make.org/logger/loggerTransformer';
+import { ServerLogger } from '@make.org/logger/serverLogger';
 import { serverInitI18n } from './i18n';
 import { initRoutes } from './routes';
 import {
@@ -39,8 +39,8 @@ const getApp = () => {
   const app = express();
 
   getStackTransformer(APP_JS_DIR, APP_BUILD_DIR, APP_MAP_DIR).then(
-    stackTransformer =>
-      initLogger(
+    stackTransformer => {
+      ServerLogger.init(
         'frontaccessible',
         [
           errorNormalizer,
@@ -50,10 +50,10 @@ const getApp = () => {
         ],
         [stackTransformer, oneLineTransformer],
         env.isDev()
-      )
+      );
+      ServerLogger.getInstance().logInfo('Logger is ready');
+    }
   );
-
-  const logger = getLoggerInstance();
 
   if (env.isDev()) {
     app.use(cors());
@@ -72,11 +72,11 @@ const getApp = () => {
       logLevel: 'error',
       secure: false,
       logProvider: () => ({
-        log: logger.logInfo,
-        debug: logger.logInfo,
-        info: logger.logInfo,
-        warn: logger.logWarning,
-        error: logger.logError,
+        log: m => ServerLogger.getInstance().logInfo(m),
+        debug: m => ServerLogger.getInstance().logInfo(m),
+        info: m => ServerLogger.getInstance().logInfo(m),
+        warn: m => ServerLogger.getInstance().logWarning(m),
+        error: m => ServerLogger.getInstance().logError(m),
       }),
     });
     app.use('/backend', apiProxy);

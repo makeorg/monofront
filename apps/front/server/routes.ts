@@ -61,6 +61,7 @@ import {
 } from '@make.org/utils/routes';
 import { fBConversionApi } from '@make.org/utils/services/FBApiConversion';
 import { tWConversionApi } from '@make.org/utils/services/TWApiConversion';
+import { ServerLogger } from '@make.org/logger/serverLogger';
 import { countryLanguageMiddleware } from '../middleware/countryLanguage';
 import { redirectToCountryMiddleware } from '../middleware/redirect';
 import { sequenceByKindRoute } from './ssr/sequenceByKindRoute';
@@ -147,8 +148,12 @@ export const initRoutes = (app: Application): void => {
   // API Routes
   app.get('/api/question/:questionId/results', questionResults);
   app.post('/api/logger', loggerApi);
-  app.post('/api/conversion/fb', fBConversionApi);
-  app.post('/api/conversion/tw', tWConversionApi);
+  app.post('/api/conversion/fb', (req, res) =>
+    fBConversionApi(req, res, ServerLogger.getInstance())
+  );
+  app.post('/api/conversion/tw', (req, res) =>
+    tWConversionApi(req, res, ServerLogger.getInstance())
+  );
 
   const frontMiddlewares = [countryLanguageMiddleware, metricsMiddleware];
   const redirectMiddlewares = [

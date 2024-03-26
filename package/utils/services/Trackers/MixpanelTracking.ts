@@ -14,7 +14,7 @@
 /* eslint-disable @typescript-eslint/no-shadow */
 /* eslint-disable no-underscore-dangle */
 import { env } from '@make.org/assets/env';
-import { Logger } from '../Logger';
+import { ILogger } from '@make.org/types';
 
 const PRODUCTION_DOMAIN = 'make.org';
 const FRONT_URL = env.frontUrl() || window.FRONT_URL;
@@ -43,7 +43,7 @@ type MixpanelEventParams = {
 };
 
 const mixpnl = {
-  load() {
+  load(logger: ILogger) {
     if (this.isLoaded()) {
       return;
     }
@@ -148,7 +148,7 @@ const mixpnl = {
       });
     } catch (e) {
       const error = e as string;
-      Logger.logError(error);
+      logger.logError(error);
     }
   },
   isLoaded() {
@@ -161,9 +161,21 @@ const isMixpanelInitialized = (): boolean => !!mixpnl.isLoaded();
 let isEnabled = false;
 
 export const MixpanelTracking = {
-  init(): void {
-    mixpnl.load();
+  logger: {
+    // eslint-disable-next-line no-console
+    logError: (error: unknown): void =>
+      console.error('Logger not initialized', error),
+    // eslint-disable-next-line no-console
+    logInfo: (info: unknown): void =>
+      console.log('Logger not initialized', info),
+    // eslint-disable-next-line no-console
+    logWarning: (warning: unknown): void =>
+      console.warn('Logger not initialized', warning),
+  },
+  init(logger: ILogger): void {
+    mixpnl.load(logger);
     isEnabled = true;
+    this.logger = logger;
   },
   isInitialized(): void {
     isMixpanelInitialized();
@@ -175,7 +187,7 @@ export const MixpanelTracking = {
 
     if (!isMixpanelInitialized()) {
       // Todo handle cleanly with and without init
-      Logger.logWarning({
+      this.logger.logWarning({
         message: `Failed to track event ${eventName}: MixpanelTracking should be initialized`,
         name: 'tracking-init',
       });
@@ -183,7 +195,7 @@ export const MixpanelTracking = {
     }
 
     if (!eventParameters.distinctId) {
-      Logger.logWarning({
+      this.logger.logWarning({
         message: `Failed to track event ${eventName}: empty distinctId`,
         name: 'tracking-init',
       });

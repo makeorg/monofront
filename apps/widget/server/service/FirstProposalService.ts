@@ -1,7 +1,7 @@
 import { FirstProposalSequenceType } from '@make.org/types';
 import { QuestionApiService } from '@make.org/api/services/QuestionApiService';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
-import { getLoggerInstance } from '@make.org/logger';
+import { ServerLogger } from '@make.org/logger/serverLogger';
 import { getWidgetLocation } from '../../utils/helpers/location';
 
 /**
@@ -53,7 +53,7 @@ const getFirstProposal = async (
     if (apiServiceError.status === 404) {
       return notFound();
     }
-    getLoggerInstance().logError(
+    ServerLogger.getInstance().logError(
       apiServiceError.clone(
         `error in server/service/FirstProposalService/getFirstProposal: ${apiServiceError.message}`
       )

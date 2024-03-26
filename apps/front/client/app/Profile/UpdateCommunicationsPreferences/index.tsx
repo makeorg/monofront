@@ -30,6 +30,7 @@ import {
   getLanguagesTransMap,
 } from '@make.org/front/client/helpers/translationsMap';
 import { getCountriesAndLanguages } from '@make.org/front/client/helpers/LanguagesAndCountries';
+import { ClientLogger } from '@make.org/logger/clientLogger';
 import { FormParagraphStyle } from '../Styled/Forms';
 
 type Props = {
@@ -129,6 +130,7 @@ export const UpdateCommunicationPreferences: FC<Props> = ({
         await OrganisationService.update(
           userId,
           newProfile,
+          ClientLogger.getInstance(),
           () => success(),
           serviceErrors => handleErrors(serviceErrors)
         );
@@ -137,6 +139,7 @@ export const UpdateCommunicationPreferences: FC<Props> = ({
         await PersonalityService.update(
           userId,
           newProfile,
+          ClientLogger.getInstance(),
           () => success(),
           serviceErrors => handleErrors(serviceErrors)
         );
@@ -152,6 +155,7 @@ export const UpdateCommunicationPreferences: FC<Props> = ({
             legalAdvisorApproval: true,
             legalMinorConsent: true,
           },
+          ClientLogger.getInstance(),
           () => success(),
           serviceErrors => handleErrors(serviceErrors)
         );

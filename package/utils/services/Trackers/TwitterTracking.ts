@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { env } from '@make.org/assets/env';
 import { twitter } from '@make.org/utils/services/Trackers/twttr.js';
-import { Logger } from '../Logger';
+import { ILogger } from '@make.org/types';
 import trackingConfiguration from '../trackingConfiguration.yaml';
 import { ExpressService } from '../Express';
 
@@ -30,7 +30,7 @@ const twitterEventMapping = {
 };
 
 export const TwitterTracking = {
-  async track(action: string, eventId: string): Promise<void> {
+  async track(action: string, eventId: string, logger: ILogger): Promise<void> {
     // @ts-ignore
     if (twitterEventMapping[action] === undefined) {
       return;
@@ -44,7 +44,7 @@ export const TwitterTracking = {
       return;
     }
     if (!twitter.initialized()) {
-      Logger.logInfo({
+      logger.logInfo({
         message: `Twitter Tracking not initialized. Action : ${action}`,
         name: 'tracking-init',
       });
@@ -56,7 +56,7 @@ export const TwitterTracking = {
       twitter.track(eventName, action, eventId);
     } catch (e) {
       const error = e as string;
-      Logger.logError(error);
+      logger.logError(error);
     }
 
     const searchParams = new URLSearchParams(window.location.search);
@@ -65,7 +65,8 @@ export const TwitterTracking = {
     // Conversion API requires Twitter Click ID (twclid) as the identifier for a conversion event
     // More informations : https://developer.twitter.com/en/docs/twitter-ads-api/measurement/web-conversions/conversion-api
     if (twclid) {
-      ExpressService.sendTwEventConversion(eventName, twclid, eventId);
+      const expressService = new ExpressService(logger);
+      expressService.sendTwEventConversion(eventName, twclid, eventId);
     }
   },
 };
@@ -77,7 +78,7 @@ declare global {
 }
 
 export const TwitterPixel = {
-  init(): void {
+  init(logger: ILogger): void {
     if (env.isTest() || env.isDev()) {
       return;
     }
@@ -94,7 +95,7 @@ export const TwitterPixel = {
       twq('config', twPixelId);
     } catch (e) {
       // @ts-ignore
-      Logger.logError(e);
+      logger.logError(e);
     }
   },
 };

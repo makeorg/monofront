@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-import { Logger } from '@make.org/utils/services/Logger';
 import {
   isHomepage,
   isBrowseConsultationsPage,
   isBrowseResultsPage,
   isHomepageWithLocale,
 } from '@make.org/utils/routes';
+import { ClientLogger } from '@make.org/logger/clientLogger';
 
 export const usePageBackgoundColor = (locationPath: string): void => {
   useEffect(() => {
@@ -17,7 +17,7 @@ export const usePageBackgoundColor = (locationPath: string): void => {
       isBrowseResultsPage(locationPath);
 
     if (!pageWrapper) {
-      return Logger.logError({
+      return ClientLogger.getInstance().logError({
         message:
           'Error in usePageBackgroundColor hook, page_wrapper is was not found',
         name: 'hooks',

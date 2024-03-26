@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { Logger } from '@make.org/utils/services/Logger';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { setUnexpectedError } from '@make.org/utils/services/DefaultErrorHandler';
 import { NOTIF } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
 import { FC, ReactNode } from 'react';
+import { ClientLogger } from '@make.org/logger/clientLogger';
 
 type Props = {
   children: ReactNode;
@@ -27,7 +27,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
 
   componentDidCatch(error: Error): void {
     this.setState({ hasError: true });
-    Logger.logError(error);
+    ClientLogger.getInstance().logError(error);
   }
 
   render(): ReactNode {
@@ -51,7 +51,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
 export const ServiceErrorHandler: FC<Props> = ({ children }) => {
   const { dispatch } = useAppContext();
   setUnexpectedError(error => {
-    Logger.logError(error);
+    ClientLogger.getInstance().logError(error);
     if (
       typeof window !== 'undefined' &&
       window &&

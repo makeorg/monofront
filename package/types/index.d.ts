@@ -19,3 +19,4 @@ export * from './Commons';
 export * from './Opinions';
 export * from './modules';
 export * from './FilterAndSort';
+export * from './Logger';

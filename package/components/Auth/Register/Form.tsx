@@ -1,5 +1,9 @@
 import React, { ChangeEvent, FormEvent, useEffect } from 'react';
-import { ErrorObjectType, RegisterFormDataType } from '@make.org/types';
+import {
+  ErrorObjectType,
+  ILogger,
+  RegisterFormDataType,
+} from '@make.org/types';
 import { useAppContext } from '@make.org/store';
 import {
   FormLeftAlignHeightStyle,
@@ -24,6 +28,7 @@ type Props = {
   handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
   disableSubmit: boolean;
   registerStep: number;
+  logger: ILogger;
 };
 /**
  * Renders Register Form
@@ -36,6 +41,7 @@ export const RegisterForm: React.FC<Props> = ({
   handleSubmit,
   disableSubmit,
   registerStep,
+  logger,
 }) => {
   const emailError = getFieldError('email', errors);
   const passwordError = getFieldError('password', errors);
@@ -75,7 +81,7 @@ export const RegisterForm: React.FC<Props> = ({
             passwordError={passwordError}
             handleChange={handleChange}
           />
-          {!pendingProposal && <SocialAuthenticationButtons />}
+          {!pendingProposal && <SocialAuthenticationButtons logger={logger} />}
         </>
       )}
       {registerStep === 2 && (

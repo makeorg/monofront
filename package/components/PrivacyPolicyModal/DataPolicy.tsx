@@ -29,7 +29,6 @@ import {
 } from '@make.org/utils/services/Tracking';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { UserService } from '@make.org/utils/services/User';
-import { Logger } from '@make.org/utils/services/Logger';
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import {
   closePanel,
@@ -38,6 +37,7 @@ import {
 } from '@make.org/store/actions/panel';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
+import { ILogger } from '@make.org/types';
 import {
   DataPolicyContentStyle,
   DataPolicyTitleStyle,
@@ -45,7 +45,11 @@ import {
   ButtonWrapperStyle,
 } from './style';
 
-export const DataPolicy: React.FC = () => {
+type Props = {
+  logger: ILogger;
+};
+
+export const DataPolicy: React.FC<Props> = ({ logger }) => {
   const { dispatch, state } = useAppContext();
   const { country, language, source } = state.appConfig;
   const { isLogin, extraProps } = state.modal;
@@ -144,7 +148,7 @@ export const DataPolicy: React.FC = () => {
         dispatch(loginSocialFailure());
         const tokenError = `No token from ${provider} callBack auth`;
         trackAuthenticationSocialFailure(provider, tokenError);
-        Logger.logInfo({
+        logger.logInfo({
           message: tokenError,
           name: 'social-auth',
         });

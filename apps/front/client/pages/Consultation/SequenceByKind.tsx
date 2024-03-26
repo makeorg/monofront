@@ -1,5 +1,6 @@
 import React, { FC, useEffect } from 'react';
 import { Sequence } from '@make.org/components/Sequence/Sequence';
+import { ClientLogger } from '@make.org/logger/clientLogger';
 import { usePanel } from '../../helpers/panel';
 
 type Props = {
@@ -14,7 +15,7 @@ const SequenceStandardPage: FC<Props> = ({ kind }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <Sequence sequenceKind={kind} />;
+  return <Sequence sequenceKind={kind} logger={ClientLogger.getInstance()} />;
 };
 
 // eslint-disable-next-line import/no-default-export

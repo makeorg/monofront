@@ -1,7 +1,7 @@
 import React, { useState, useEffect, FC } from 'react';
 import loadable from '@loadable/component';
 import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
-import { QuestionType, QuestionResultsType } from '@make.org/types';
+import { QuestionType, QuestionResultsType, ILogger } from '@make.org/types';
 import i18n from 'i18next';
 import { MiddlePageWrapperStyle } from '@make.org/ui/elements/MainElements';
 import { trackDisplayResultsPage } from '@make.org/utils/services/Tracking';
@@ -35,7 +35,11 @@ import { ResultsSkipLinks } from '../../app/SkipLinks/Results';
 
 const NotFoundPage = loadable(() => import('../NotFound'));
 
-const ResultPage: FC = () => {
+type Props = {
+  logger: ILogger;
+};
+
+const ResultPage: FC<Props> = ({ logger }) => {
   const { state } = useAppContext();
   const question: QuestionType = selectCurrentQuestion(state);
 
@@ -43,6 +47,7 @@ const ResultPage: FC = () => {
   const isDesktop = matchDesktopDevice(device);
   const CARTOGRAPHY_SLIDER = 'cartography';
   const PARTICIPATION_SLIDER = 'participation';
+  const expressService = new ExpressService(logger);
 
   const metas = (
     <MetaTags
@@ -64,7 +69,7 @@ const ResultPage: FC = () => {
   const [questionResults, setResults] = useState<QuestionResultsType>();
 
   const initResults = async () => {
-    const results = await ExpressService.getResults(question.questionId, () =>
+    const results = await expressService.getResults(question.questionId, () =>
       setAlternativeContent(<NotFoundPage />)
     );
 

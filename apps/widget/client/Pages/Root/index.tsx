@@ -16,6 +16,7 @@ import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selec
 import { MetaTags } from '@make.org/components/MetaTags';
 import i18n from 'i18next';
 import { env } from '@make.org/assets/env';
+import { ClientLogger } from '@make.org/logger/clientLogger';
 import { HeaderPanel } from '../../components/HeaderPanel';
 import { ClosedConsultation } from '../../components/ClosedConsultation';
 import { IntroProposal } from '../../components/IntroProposal';
@@ -58,7 +59,10 @@ export const RootPage: FC = () => {
     }
 
     setWidgetCards(
-      <Sequence sequenceKind={sequenceKind || SEQUENCE.KIND_STANDARD} />
+      <Sequence
+        sequenceKind={sequenceKind || SEQUENCE.KIND_STANDARD}
+        logger={ClientLogger.getInstance()}
+      />
     );
   }, [topProposal, loadFirstProposal, sequenceKind]);
 
@@ -84,9 +88,11 @@ export const RootPage: FC = () => {
       />
       <HeaderPanel />
       {widgetcards}
-      <Panel />
+      <Panel logger={ClientLogger.getInstance()} />
       <Modal />
-      {showDataPolicy && <PrivacyPolicyModal />}
+      {showDataPolicy && (
+        <PrivacyPolicyModal logger={ClientLogger.getInstance()} />
+      )}
     </WidgetContainerStyle>
   );
 };

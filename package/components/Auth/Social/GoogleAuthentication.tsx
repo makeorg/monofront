@@ -20,7 +20,6 @@ import {
   loginSocialFailure,
   getUser,
 } from '@make.org/store/actions/authentication';
-import { Logger } from '@make.org/utils/services/Logger';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { NOTIF } from '@make.org/types/enums';
 import i18n from 'i18next';
@@ -33,6 +32,7 @@ import {
   useGoogleLogin,
 } from '@react-oauth/google';
 import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
+import { ILogger } from '@make.org/types';
 import {
   GoogleButtonStyle,
   SocialButtonLabelStyle,
@@ -142,11 +142,13 @@ const useCheckSocialPrivacyPolicy = (isRegister: boolean) => {
 type ComponentProps = {
   isDisabled: boolean;
   isRegister: boolean;
+  logger: ILogger;
 };
 
 const GoogleAuthenticationComponent: React.FC<ComponentProps> = ({
   isRegister,
   isDisabled,
+  logger,
 }) => {
   const { dispatch } = useAppContext();
   const checkDataPolicy = useCheckSocialPrivacyPolicy(isRegister);
@@ -174,7 +176,7 @@ const GoogleAuthenticationComponent: React.FC<ComponentProps> = ({
     dispatch(loginSocialFailure());
 
     const googleLoginFailure = `Google login failure: ${errorDescription}`;
-    Logger.logError({
+    logger.logError({
       message: googleLoginFailure,
       app_google_error: error,
       app_google_error_uri: errorUri,
@@ -200,7 +202,7 @@ const GoogleAuthenticationComponent: React.FC<ComponentProps> = ({
   }) => {
     if (nonOAuthErrorType === 'popup_closed') {
       const popupClosedError = 'Google auth popup closed by user';
-      Logger.logInfo({
+      logger.logInfo({
         message: popupClosedError,
         name: 'social-auth',
       });
@@ -210,7 +212,7 @@ const GoogleAuthenticationComponent: React.FC<ComponentProps> = ({
     }
 
     const message = `Google auth failure. Non Oauth errror : ${nonOAuthErrorType}`;
-    Logger.logError({
+    logger.logError({
       message,
       name: 'social-auth',
     });
@@ -246,13 +248,17 @@ const GoogleAuthenticationComponent: React.FC<ComponentProps> = ({
 
 type Props = {
   isRegister: boolean;
+  logger: ILogger;
 };
 
-export const GoogleAuthentication: React.FC<Props> = ({ isRegister }) => {
+export const GoogleAuthentication: React.FC<Props> = ({
+  isRegister,
+  logger,
+}) => {
   const [isDisabled, setDisabled] = useState(false);
 
   const handleGoogleLoadFailure = () => {
-    Logger.logInfo({
+    logger.logInfo({
       message: `Google login load failure`,
       name: 'social-auth',
     });
@@ -267,6 +273,7 @@ export const GoogleAuthentication: React.FC<Props> = ({ isRegister }) => {
       <GoogleAuthenticationComponent
         isRegister={isRegister}
         isDisabled={isDisabled}
+        logger={logger}
       />
     </GoogleOAuthProvider>
   );

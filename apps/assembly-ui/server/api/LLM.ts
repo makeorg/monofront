@@ -1,7 +1,7 @@
-import { getLoggerInstance } from '@make.org/logger';
 import axios from 'axios';
 import { Request, Response } from 'express';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
+import { ServerLogger } from '@make.org/logger/serverLogger';
 import { env } from '../../utils/env';
 
 const ANSWER_PATH = '/answer';
@@ -10,7 +10,7 @@ export const getLLMAnswer = async (
   req: Request,
   res: Response
 ): Promise<Response | null> => {
-  const logger = getLoggerInstance();
+  const logger = ServerLogger.getInstance();
 
   const { eventId, question, mode, language } = req.query;
 

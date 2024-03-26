@@ -1,7 +1,7 @@
 import { createInitialState } from '@make.org/store/initialState';
 import { Request, Response } from 'express';
 import { NOTIF } from '@make.org/types/enums';
-import { getLoggerInstance } from '@make.org/logger';
+import { ServerLogger } from '@make.org/logger/serverLogger';
 import { UserService } from '../service/UserService';
 import { reactRender } from '../reactRender';
 import { QuestionService } from '../service/QuestionService';
@@ -23,7 +23,7 @@ export const accountActivationRoute = async (
     level: NOTIF.NOTIFICATION_LEVEL_SUCCESS,
   };
 
-  const logger = getLoggerInstance();
+  const logger = ServerLogger.getInstance();
 
   if (questionId !== '') {
     const notFound = () => {

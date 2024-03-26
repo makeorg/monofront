@@ -14,6 +14,7 @@ import { GoogleAuthentication } from '@make.org/components/Auth/Social/GoogleAut
 import { env } from '@make.org/assets/env';
 import { setSocialConnect } from '@make.org/utils/helpers/social';
 import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
+import { ILogger } from '@make.org/types';
 import {
   ProposalAuthSocialLoginWrapperStyle,
   ProposalBackButtonStyle,
@@ -25,7 +26,11 @@ import {
 } from '../style';
 import { LoginForm } from './Form';
 
-export const Login: React.FC = () => {
+type Props = {
+  logger: ILogger;
+};
+
+export const Login: React.FC<Props> = ({ logger }) => {
   const { dispatch, state } = useAppContext();
   const { pendingProposal } = state.pendingProposal;
   const FRONT_URL = env.frontUrl() || window.FRONT_URL;
@@ -61,8 +66,8 @@ export const Login: React.FC = () => {
               <ProposalSubmitAuthSeparator />
             </SeparatorProposalAuthLogin>
             <SocialRegisterButtonsWrapperStyle>
-              <GoogleAuthentication isRegister={false} />
-              <FacebookAuthentication />
+              <GoogleAuthentication isRegister={false} logger={logger} />
+              <FacebookAuthentication logger={logger} />
             </SocialRegisterButtonsWrapperStyle>
           </>
         )}

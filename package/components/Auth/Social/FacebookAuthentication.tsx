@@ -20,7 +20,6 @@ import {
   loginSocialFailure,
   getUser,
 } from '@make.org/store/actions/authentication';
-import { Logger } from '@make.org/utils/services/Logger';
 import { displayNotificationBanner } from '@make.org/store/actions/notifications';
 import { NOTIF } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
@@ -33,6 +32,7 @@ import {
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
+import { ILogger } from '@make.org/types';
 import {
   FacebookButtonStyle,
   SocialButtonLabelStyle,
@@ -42,9 +42,13 @@ import { OptInGTU } from './OptInGTU';
 
 type Props = {
   isRegister?: boolean;
+  logger: ILogger;
 };
 
-export const FacebookAuthentication: React.FC<Props> = ({ isRegister }) => {
+export const FacebookAuthentication: React.FC<Props> = ({
+  isRegister,
+  logger,
+}) => {
   const { dispatch, state } = useAppContext();
   const { privacyPolicy, language, country } = state.appConfig;
   const { pendingProposal, isAnonymous } = state.pendingProposal;
@@ -66,7 +70,7 @@ export const FacebookAuthentication: React.FC<Props> = ({ isRegister }) => {
       if (status === 'unknown') {
         const unknownErrorMessage =
           'Facebook auth failed with status unknown. Probably user close popup.';
-        Logger.logInfo({
+        logger.logInfo({
           message: unknownErrorMessage,
           name: 'social-auth',
         });
@@ -77,7 +81,7 @@ export const FacebookAuthentication: React.FC<Props> = ({ isRegister }) => {
         return;
       }
       const failureErrorMessage = `Facebook login failure: ${response?.status}`;
-      Logger.logError({
+      logger.logError({
         message: failureErrorMessage,
         name: 'social-auth',
       });
@@ -100,7 +104,7 @@ export const FacebookAuthentication: React.FC<Props> = ({ isRegister }) => {
     if (!('email' in response)) {
       dispatch(loginSocialFailure());
       const emailErrorMessage = `Facebook login failure no e-mail in profile (login is a phone number or e-mail is not yet confirmed)`;
-      Logger.logError({
+      logger.logError({
         message: emailErrorMessage,
         name: 'social-auth',
       });

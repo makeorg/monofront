@@ -24,6 +24,7 @@ import {
 } from '@make.org/utils/constants/cookies';
 import { useAppContext } from '@make.org/store';
 import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
+import { ILogger } from '@make.org/types';
 import {
   CookieModalButtonWithLinkStyle,
   CookieModalBannerWrapperStyle,
@@ -50,7 +51,11 @@ const customStyles = {
   },
 };
 
-export const CookieModal: React.FC = () => {
+type Props = {
+  logger: ILogger;
+};
+
+export const CookieModal: React.FC<Props> = ({ logger }) => {
   const { dispatch, state } = useAppContext();
   const { showCookies } = state.modal;
   const { trackingConsent } = state.user;
@@ -63,6 +68,7 @@ export const CookieModal: React.FC = () => {
     setCookieWithTrackingConsent(ACCEPT_ALL_PREFERENCES);
     initTrackersFromPreferences(
       ACCEPT_ALL_PREFERENCES,
+      logger,
       trackingParamsService.visitorId,
       ENABLE_MIXPANEL
     );
@@ -92,6 +98,7 @@ export const CookieModal: React.FC = () => {
     removeTrackersFromPreferences(trackingConsent);
     initTrackersFromPreferences(
       trackingConsent,
+      logger,
       trackingParamsService.visitorId,
       ENABLE_MIXPANEL
     );

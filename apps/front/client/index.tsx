@@ -8,10 +8,12 @@ import { loadableReady } from '@loadable/component';
 import Cookies from 'universal-cookie';
 import { env } from '@make.org/assets/env';
 import { authenticationState } from '@make.org/utils/helpers/auth';
-import { Logger } from '@make.org/utils/services/Logger';
 import { DateHelper } from '@make.org/utils/helpers/date';
 import { detected as adBlockerDetected } from 'adblockdetect';
-import { track } from '@make.org/utils/services/TrackingService';
+import {
+  TrackingService,
+  track,
+} from '@make.org/utils/services/TrackingService';
 import {
   getAll,
   setDataFromQueryParams,
@@ -25,9 +27,9 @@ import { initTrackersFromPreferences } from '@make.org/utils/helpers/clientCooki
 import { COOKIE } from '@make.org/types/enums';
 import { ENABLE_MIXPANEL } from '@make.org/utils/constants/cookies';
 import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
-import { LogLevelType } from '@make.org/types/enums/logLevel';
 import { TRANSLATION_COMMON_NAMESPACE } from '@make.org/utils/i18n/constants';
 import { ApiServiceClient } from '@make.org/api/ApiService/ApiService.client';
+import { ClientLogger } from '@make.org/logger/clientLogger';
 import { CountryListener } from './app/CountryListener';
 import { AppContainer } from './app';
 import { cookieIsEnabled, thirdCookieEnabled } from './helpers/cookieDetect';
@@ -52,17 +54,14 @@ window.onerror = (message, source, lineNumber, columnNumber, error) => {
     const formattedSource = JSON.stringify(source);
     const formattedLineNumber = JSON.stringify(lineNumber);
     const formattedColumnNumber = JSON.stringify(columnNumber);
-    Logger.log(
-      {
-        name: 'global-client',
-        message: formattedMessage,
-        app_sourceError: formattedSource,
-        app_lineError: formattedLineNumber,
-        app_columnError: formattedColumnNumber,
-        stack,
-      },
-      LogLevelType.error
-    );
+    ClientLogger.getInstance().logError({
+      name: 'global-client',
+      message: formattedMessage,
+      app_sourceError: formattedSource,
+      app_lineError: formattedLineNumber,
+      app_columnError: formattedColumnNumber,
+      stack,
+    });
   }
 
   return false;
@@ -77,7 +76,7 @@ if (env.isDev()) {
 const serverState = window.INITIAL_STATE || initialState;
 
 const logAndTrackEvent = (eventName: string) => {
-  Logger.logInfo({
+  ClientLogger.getInstance().logInfo({
     message: `Track event : ${eventName}`,
     name: 'log-and-track',
     app_trackingEvent: eventName,
@@ -112,11 +111,13 @@ const initApp = async (state: StateRoot) => {
   const demographicsCookie = cookies.get(COOKIE.DEMOGRAPHICS);
   const authenticationStateData = await authenticationState();
 
+  TrackingService.setLogger(ClientLogger.getInstance());
   // Init trackers
   // tracking consent is stored in COOKIE.USER_PREFERENCES
   // this cookie is read on server side (apps/front/server/reactRender.tsx line 150) then added to the state
   initTrackersFromPreferences(
     state.user.trackingConsent,
+    ClientLogger.getInstance(),
     trackingParamsService.visitorId,
     ENABLE_MIXPANEL
   );

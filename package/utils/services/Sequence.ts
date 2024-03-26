@@ -1,5 +1,9 @@
 import { QuestionApiService } from '@make.org/api/services/QuestionApiService';
-import { SequenceType, FirstProposalSequenceType } from '@make.org/types';
+import {
+  SequenceType,
+  FirstProposalSequenceType,
+  ILogger,
+} from '@make.org/types';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 import {
@@ -14,7 +18,8 @@ const startSequenceByKind = async (
   sequenceKind: string,
   preferredLanguage: string,
   demographicsCardId: string | null,
-  token: string | null
+  token: string | null,
+  logger: ILogger
 ): Promise<SequenceType | null> => {
   try {
     const response = await QuestionApiService.startSequenceByKind(
@@ -52,7 +57,8 @@ const startSequenceByKind = async (
       questionId,
       duplicates,
       voted,
-      uniqueOrderedProposals
+      uniqueOrderedProposals,
+      logger
     );
 
     const formattedResponse = {
@@ -95,7 +101,8 @@ const startSequenceByKeyword = async (
   questionId: string,
   includedProposalIds: string[],
   keyword: string,
-  preferredLanguage: string
+  preferredLanguage: string,
+  logger: ILogger
 ): Promise<null | SequenceType> => {
   try {
     const response = await QuestionApiService.startSequenceByKeyword(
@@ -123,7 +130,7 @@ const startSequenceByKeyword = async (
       }
     );
 
-    logSequenceCornerCases(questionId, duplicates, voted, unique);
+    logSequenceCornerCases(questionId, duplicates, voted, unique, logger);
 
     const formattedResponse = {
       proposals: unique,

@@ -1,9 +1,9 @@
-import { Logger } from '@make.org/utils/services/Logger';
 import {
   QuestionExtraSlidesConfigType,
   SequenceCardType,
   ProposalType,
   NoProposalCardType,
+  ILogger,
 } from '@make.org/types';
 import i18n from 'i18next';
 import { CARD, SEQUENCE } from '@make.org/types/enums';
@@ -255,10 +255,11 @@ export const logSequenceCornerCases = (
   questionId: string,
   duplicates: ProposalType[],
   voted: ProposalType[],
-  uniqueProposals: ProposalType[]
+  uniqueProposals: ProposalType[],
+  logger: ILogger
 ): void => {
   if (duplicates.length > 0) {
-    Logger.logWarning({
+    logger.logWarning({
       message: `start sequence return duplicate proposals for questionId=${questionId} : ${JSON.stringify(
         duplicates
       )}`,
@@ -266,7 +267,7 @@ export const logSequenceCornerCases = (
     });
   }
   if (voted.length > 0) {
-    Logger.logWarning({
+    logger.logWarning({
       message: `start sequence return voted proposals for questionId=${questionId} : ${JSON.stringify(
         voted
       )}`,
@@ -274,7 +275,7 @@ export const logSequenceCornerCases = (
     });
   }
   if (uniqueProposals.length === 0) {
-    Logger.logWarning({
+    logger.logWarning({
       message: `Empty sequence - questionId: ${questionId}`,
       name: 'services',
     });

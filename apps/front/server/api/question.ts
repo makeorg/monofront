@@ -4,7 +4,7 @@ import path from 'path';
 import NodeCache from 'node-cache';
 import { env } from '@make.org/assets/env';
 import { QuestionService } from '@make.org/front/server/service/QuestionService';
-import { getLoggerInstance } from '@make.org/logger';
+import { ServerLogger } from '@make.org/logger/serverLogger';
 import { APP_SERVER_DIR } from '../paths';
 
 const ALLOWED_URL = env.frontUrl();
@@ -12,7 +12,7 @@ const cache = new NodeCache({ stdTTL: 300 });
 const CACHE_NAME = 'RESULT';
 
 const getFromJsonFile = async (questionId: string) => {
-  const logger = getLoggerInstance();
+  const logger = ServerLogger.getInstance();
   const questionSlug = await QuestionService.getQuestionSlug(
     questionId,
     () => {
@@ -59,7 +59,7 @@ export const questionResults = async (
   req: Request,
   res: Response
 ): Promise<Response | void> => {
-  const logger = getLoggerInstance();
+  const logger = ServerLogger.getInstance();
   res.setHeader('Access-Control-Allow-Origin', ALLOWED_URL || '');
   res.setHeader('Content-Type', 'application/json');
 

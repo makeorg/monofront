@@ -10,6 +10,7 @@ import { useAppContext } from '@make.org/store';
 import { setPanelContent } from '@make.org/store/actions/panel';
 import { NewWindowGreyIconStyle } from '@make.org/ui/elements/LinkElements';
 import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
+import { ILogger } from '@make.org/types';
 import {
   ProposalStepWrapperColumnStyle,
   ProposalBackButtonCenterStyle,
@@ -22,7 +23,11 @@ import {
   ProposalStepWrapperStyle,
 } from './style';
 
-export const ProposalAuthentication: FC = () => {
+type Props = {
+  logger: ILogger;
+}
+
+export const ProposalAuthentication: FC<Props> = ({logger}) => {
   const { state, dispatch } = useAppContext();
   const { country, language, source } = state.appConfig;
   const isWidget = source === 'widget';
@@ -53,6 +58,7 @@ export const ProposalAuthentication: FC = () => {
             onEmailRegister={() =>
               dispatch(setPanelContent(PANEL_CONTENT.REGISTER))
             }
+            logger={logger}
           />
         </ColumnElementStyle>
         <ProposalAuthLoginWrapperStyle>

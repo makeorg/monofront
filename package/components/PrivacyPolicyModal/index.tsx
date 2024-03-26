@@ -3,12 +3,17 @@ import ReactModal from 'react-modal';
 import { CloseButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { SvgClose } from '@make.org/ui/Svg/elements';
 import i18n from 'i18next';
+import { ILogger } from '@make.org/types';
 import { DataPolicy } from './DataPolicy';
 import { RefusalConfirmation } from './RefusalConfirmation';
 
 ReactModal.setAppElement('#app');
 
-export const PrivacyPolicyModal: React.FC = () => {
+type Props = {
+  logger: ILogger;
+};
+
+export const PrivacyPolicyModal: React.FC<Props> = ({ logger }) => {
   const [confirmation, setConfirmation] = useState(false);
   const toggleConfirmation = () => {
     setConfirmation(!confirmation);
@@ -51,7 +56,7 @@ export const PrivacyPolicyModal: React.FC = () => {
       {confirmation ? (
         <RefusalConfirmation toggleConfirmation={toggleConfirmation} />
       ) : (
-        <DataPolicy />
+        <DataPolicy logger={logger} />
       )}
     </ReactModal>
   );

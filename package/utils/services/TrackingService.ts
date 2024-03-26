@@ -7,6 +7,7 @@ import {
   TrackingConfigurationParamType,
   TrackingAllEventsType,
   TrackingEventConfigurationType,
+  ILogger,
 } from '@make.org/types';
 import Cookies from 'universal-cookie';
 import { TrackingApiService } from '@make.org/api/services/TrackingApiService';
@@ -19,9 +20,20 @@ import { TwitterTracking } from './Trackers/TwitterTracking';
 import { trackingParamsService } from './TrackingParamsService';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 import { MixpanelTracking } from './Trackers/MixpanelTracking';
-import { Logger } from './Logger';
 
 class TrackingValidationError extends Error {}
+
+let logger: ILogger = {
+  // eslint-disable-next-line no-console
+  logError: error => console.error('Logger not initialized', error),
+  // eslint-disable-next-line no-console
+  logInfo: info => console.log('Logger not initialized', info),
+  // eslint-disable-next-line no-console
+  logWarning: warning => console.warn('Logger not initialized', warning),
+};
+const setLogger = (customLogger: ILogger): void => {
+  logger = customLogger;
+};
 
 const validateParameters = (
   values: TrackingConfigurationParamType,
@@ -61,7 +73,6 @@ const validateParameters = (
     }
   });
 };
-
 const trackingEvent: TrackingAllEventsType = {};
 Object.keys(trackingConfiguration).forEach(key => {
   const eventConfiguration: TrackingEventConfigurationType =
@@ -76,7 +87,7 @@ Object.keys(trackingConfiguration).forEach(key => {
       validateParameters(params || {}, parameters || [], eventName);
     } catch (e: unknown) {
       const error = e as TrackingValidationError;
-      Logger.logError({
+      logger.logError({
         name: 'tracking',
         message: error.message,
         app_trackingEvent: eventName || '-',
@@ -139,6 +150,7 @@ export const track = (
 };
 
 export const TrackingService = {
+  setLogger,
   trackPerformance,
   trackingEvent,
   sendAllTrackers: ({
@@ -181,12 +193,12 @@ export const TrackingService = {
 
     // Twitter
     if (preferencesCookie?.tracking_consent?.twitter_tracking) {
-      TwitterTracking.track(eventName, eventId);
+      TwitterTracking.track(eventName, eventId, logger);
     }
 
     // Mixpanel
     if (!trackingParamsService.visitorId) {
-      Logger.logError({
+      logger.logError({
         name: 'tracking',
         message: `Tracking event "${eventName}" failed due to lack of unique id`,
       });

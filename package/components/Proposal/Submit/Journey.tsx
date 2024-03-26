@@ -2,9 +2,14 @@ import React, { useEffect, useRef } from 'react';
 import { closePanel, removePanelContent } from '@make.org/store/actions/panel';
 import { useAppContext } from '@make.org/store';
 import { useLocation } from 'react-router';
+import { ILogger } from '@make.org/types';
 import { ProposalForm } from './Form';
 
-export const ProposalJourney: React.FC = () => {
+type Props = {
+  logger: ILogger;
+};
+
+export const ProposalJourney: React.FC<Props> = ({ logger }) => {
   const { dispatch, state } = useAppContext();
   const location = useLocation();
   const pathname = useRef(location.pathname);
@@ -25,5 +30,5 @@ export const ProposalJourney: React.FC = () => {
     return null;
   }
 
-  return <ProposalForm />;
+  return <ProposalForm logger={logger} />;
 };

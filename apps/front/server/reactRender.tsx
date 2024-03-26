@@ -24,10 +24,10 @@ import { TRANSLATION_COMMON_NAMESPACE } from '@make.org/utils/i18n/constants';
 import { StateRoot, StateTrackingConsent } from '@make.org/types';
 import { Request, Response } from 'express';
 import { Cookie } from 'universal-cookie';
-import { getLoggerInstance } from '@make.org/logger';
 import serialize from 'serialize-javascript';
 import { COOKIE } from '@make.org/types/enums';
 import { trackingConsent_state } from '@make.org/store/reducers/user/trackingConsent';
+import { ServerLogger } from '@make.org/logger/serverLogger';
 import { AppContainer } from '../client/app';
 import { ViewsService } from './service/ViewsService';
 import { translationRessoucesLanguages } from '../i18n';
@@ -117,7 +117,7 @@ export const reactRender = async (
     app_browser_hash: simpleHash(ua),
   };
 
-  const logger = getLoggerInstance();
+  const logger = ServerLogger.getInstance();
   if (res.statusCode !== 404 && !(country && language)) {
     logger.logInfo({
       message: 'Country or language not found from request params',

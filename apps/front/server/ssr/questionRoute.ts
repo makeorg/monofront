@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { createInitialState } from '@make.org/store/initialState';
 import { updateTrackingQuestionParam } from '@make.org/utils/helpers/question';
 import { isInProgress } from '@make.org/utils/helpers/date';
-import { getLoggerInstance } from '@make.org/logger';
+import { ServerLogger } from '@make.org/logger/serverLogger';
 import { reactRender } from '../reactRender';
 import { QuestionService } from '../service/QuestionService';
 
@@ -12,7 +12,7 @@ export const questionRoute = async (
 ): Promise<void> => {
   const { questionSlug, country, language } = req.params;
   const initialState = createInitialState();
-  const logger = getLoggerInstance();
+  const logger = ServerLogger.getInstance();
 
   const notFound = () => {
     logger.logError({

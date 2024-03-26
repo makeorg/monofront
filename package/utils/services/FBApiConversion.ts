@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
 import axios from 'axios';
-import { getLoggerInstance } from '@make.org/logger';
 import { FbEventType, FbEventClientType } from '@make.org/types/FbEvents';
 import crypto from 'crypto';
 import { env } from '@make.org/assets/env';
+import { ILogger } from '@make.org/types';
 
 const fbPixelId: string = env.fbPixelId();
 const token: string = env.fbConversionToken();
@@ -24,10 +24,9 @@ const getDataWithHashedExternalId = (data: FbEventType): FbEventType => {
 const callFbApiConversion = (
   apiVersion: string,
   pixelId: string,
-  data: FbEventClientType
+  data: FbEventClientType,
+  logger: ILogger
 ): void => {
-  const logger = getLoggerInstance();
-
   if (!token) {
     logger.logWarning('FB conversion token is not defined');
     return;
@@ -65,9 +64,10 @@ const callFbApiConversion = (
 
 export const fBConversionApi = async (
   req: Request,
-  res: Response
+  res: Response,
+  logger: ILogger
 ): Promise<Response> => {
-  callFbApiConversion('v13.0', fbPixelId, req.body);
+  callFbApiConversion('v13.0', fbPixelId, req.body, logger);
 
   return res.sendStatus(202);
 };

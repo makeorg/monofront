@@ -1,12 +1,12 @@
 import {
   ErrorObjectType,
+  ILogger,
   OrganisationProfileType,
   PersonalityProfileType,
   UserProfileType,
 } from '@make.org/types';
 import { defaultApiError } from '../errors/Messages';
 import { mapErrors } from '../services/ApiErrors';
-import { Logger } from '../services/Logger';
 
 type StringOrNumberOrNull<T> = T extends number ? number : string | null;
 
@@ -52,13 +52,14 @@ export const getFieldError = (
 export const getErrorMessages = (
   internalErrors: ErrorObjectType[],
   serviceErrors: ErrorObjectType[] | ErrorObjectType,
-  logId: string
+  logId: string,
+  logger: ILogger
 ): ErrorObjectType[] => {
   if (Array.isArray(serviceErrors)) {
     return mapErrors(internalErrors, serviceErrors, logId);
   }
 
-  Logger.logError({
+  logger.logError({
     message: `Unexpected error (array expected): ${serviceErrors}`,
     name: 'shared-helpers',
     logId,

@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '../helpers/styled';
-import { Logger } from '../services/Logger';
 
 const useMedia = (query: string): boolean => {
   const [value, setValue] = useState(false);
@@ -9,10 +8,6 @@ const useMedia = (query: string): boolean => {
   useEffect(() => {
     let isMounted = true;
     if (!window.matchMedia) {
-      Logger.logWarning({
-        message: 'window.matchMedia is not supported',
-        name: 'client-helper',
-      });
       return () => {
         isMounted = false;
       };

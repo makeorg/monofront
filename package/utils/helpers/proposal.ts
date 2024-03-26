@@ -5,6 +5,7 @@ import {
   PROPOSALS_LISTING_LIMIT,
 } from '@make.org/utils/constants/proposal';
 import {
+  ILogger,
   ProposalAccumulator,
   ProposalsType,
   ProposalType,
@@ -13,7 +14,6 @@ import {
 import { ProposalService } from '@make.org/utils/services/Proposal';
 import i18n from 'i18next';
 import { TRANSLATION_COMMON_NAMESPACE } from '@make.org/utils/i18n/constants';
-import { Logger } from '@make.org/utils/services/Logger';
 import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 
 export const proposalHasValidLength = (length = 0): boolean => {
@@ -72,7 +72,8 @@ export const searchProposals = async (
  */
 export const getLocalizedBaitText = (
   language: string,
-  questionId: string
+  questionId: string,
+  logger: ILogger
 ): string => {
   const localizedBaitText = i18n.getResource(
     language,
@@ -81,7 +82,7 @@ export const getLocalizedBaitText = (
   );
 
   if (!localizedBaitText) {
-    Logger.logError({
+    logger.logError({
       message: `No proposal bait for questionId:${questionId} with language:${language}`,
       name: 'shared-helpers',
     });

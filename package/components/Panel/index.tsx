@@ -25,6 +25,7 @@ import { ProposalAuthentication } from '@make.org/components/Proposal/Submit/Aut
 import { RegisterConfirmation } from '@make.org/components/Auth/RegisterConfirmation';
 import { ProposalForm } from '@make.org/components/Proposal/Submit/Form';
 import { ReportTranslationConfirmation } from '@make.org/components/ReportOptions/Steps/Confirmation';
+import { ILogger } from '@make.org/types';
 import {
   PanelWrapperStyle,
   PanelOverlayStyle,
@@ -33,7 +34,11 @@ import {
   PanelCloseIconStyle,
 } from './style';
 
-export const Panel: React.FC = () => {
+type Props = {
+  logger: ILogger;
+};
+
+export const Panel: React.FC<Props> = ({ logger }) => {
   const panelRef = useRef<HTMLDivElement>();
   const { dispatch, state } = useAppContext();
   const { source } = state.appConfig;
@@ -42,19 +47,22 @@ export const Panel: React.FC = () => {
   const [className, setClassName] = useState<string>('');
 
   const panels = new Map<PANEL_CONTENT, JSX.Element>([
-    [PANEL_CONTENT.LOGIN, <Login />],
-    [PANEL_CONTENT.REGISTER, <Register />],
-    [PANEL_CONTENT.PROPOSAL_JOURNEY, <ProposalJourney />],
+    [PANEL_CONTENT.LOGIN, <Login logger={logger} />],
+    [PANEL_CONTENT.REGISTER, <Register logger={logger} />],
+    [PANEL_CONTENT.PROPOSAL_JOURNEY, <ProposalJourney logger={logger} />],
     [PANEL_CONTENT.PROPOSAL_SUCCESS, <ProposalSuccess />],
     [PANEL_CONTENT.PROPOSAL_SUCCESS_REGISTER, <ProposalSuccess isRegister />],
     [PANEL_CONTENT.PASSWORD_FORGOT, <PasswordForgot />],
-    [PANEL_CONTENT.PROPOSAL_AUTHENTICATION, <ProposalAuthentication />],
+    [
+      PANEL_CONTENT.PROPOSAL_AUTHENTICATION,
+      <ProposalAuthentication logger={logger} />,
+    ],
     [PANEL_CONTENT.REGISTER_CONFIRMATION, <RegisterConfirmation />],
     [
       PANEL_CONTENT.REGISTER_CONFIRMATION_SOCIAL,
       <RegisterConfirmation isSocial />,
     ],
-    [PANEL_CONTENT.PROPOSAL_SUBMIT, <ProposalForm />],
+    [PANEL_CONTENT.PROPOSAL_SUBMIT, <ProposalForm logger={logger} />],
     [
       PANEL_CONTENT.REPORT_TRANSLATION_CONFIRMATION,
       <ReportTranslationConfirmation />,

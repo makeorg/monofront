@@ -8,6 +8,7 @@ import {
   NoProposalCardType,
   DemographicDataType,
   FinalCardConfigType,
+  ILogger,
 } from '@make.org/types';
 import {
   TopComponentContext,
@@ -31,9 +32,10 @@ type CardProps = {
   card: SequenceCardType | NoProposalCardType;
   /** Object with Dynamic properties used to configure the Sequence (questionId, country, ...) */
   question: QuestionType;
+  logger: ILogger;
 };
 
-const Card: React.FC<CardProps> = ({ card, question }) => {
+const Card: React.FC<CardProps> = ({ card, question, logger }) => {
   const { state } = useAppContext();
   const { source } = state.appConfig;
   const isWidget = source === 'widget';
@@ -78,6 +80,7 @@ const Card: React.FC<CardProps> = ({ card, question }) => {
       return (
         <ExtraDataCard
           configuration={card.configuration as DemographicDataType}
+          logger={logger}
         />
       );
     case CARD.CARD_TYPE_NO_PROPOSAL_CARD: {
@@ -101,9 +104,10 @@ type Props = {
   card: SequenceCardType | NoProposalCardType | null;
   /** Object with Dynamic properties used to configure the Sequence (questionId, country, ...) */
   question: QuestionType;
+  logger: ILogger;
 };
 
-export const SequenceCard: React.FC<Props> = ({ card, question }) => {
+export const SequenceCard: React.FC<Props> = ({ card, question, logger }) => {
   const { state } = useAppContext();
   const { source } = state.appConfig;
   const isWidget = source === 'widget';
@@ -135,7 +139,7 @@ export const SequenceCard: React.FC<Props> = ({ card, question }) => {
         data-cy-card-number={!isNoProposalCard && card.index + 1}
         aria-live="polite"
       >
-        <Card card={card} question={question} />
+        <Card card={card} question={question} logger={logger} />
       </SequenceCardStyle>
     </TopComponentContext.Provider>
   );

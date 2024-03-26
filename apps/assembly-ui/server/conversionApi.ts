@@ -4,7 +4,7 @@ import {
   FbConversionEventClientType,
   TwConversionEventClientType,
 } from '@make.org/tracking/types';
-import { getLoggerInstance } from '@make.org/logger';
+import { ServerLogger } from '@make.org/logger/serverLogger';
 
 /**
  * facebook api conversion
@@ -17,7 +17,7 @@ export const renderConversionFacebook =
     fbConversionService
       .callApiConversion(req.body)
       .catch(e => {
-        getLoggerInstance().logError(e);
+        ServerLogger.getInstance().logError(e);
         res.status(500).send();
       })
       .then(() => res.status(202).send());
@@ -34,7 +34,7 @@ export const renderConversionTwitter =
     twConversionService
       .callApiConversion(req.body)
       .catch(e => {
-        getLoggerInstance().logError(e);
+        ServerLogger.getInstance().logError(e);
         res.status(500).send();
       })
       .then(() => res.status(202).send());

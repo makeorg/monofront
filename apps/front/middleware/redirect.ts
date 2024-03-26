@@ -3,7 +3,7 @@ import {
   DEFAULT_LANGUAGE,
   DEFAULT_COUNTRY,
 } from '@make.org/utils/constants/config';
-import { getLoggerInstance } from '@make.org/logger';
+import { ServerLogger } from '@make.org/logger/serverLogger';
 import { QuestionService } from '../server/service/QuestionService';
 
 export const redirectToCountryMiddleware = async (
@@ -18,7 +18,7 @@ export const redirectToCountryMiddleware = async (
   const formattedLanguage = language && language.toString();
 
   const questionNotFound = () => {
-    getLoggerInstance().logWarning({
+    ServerLogger.getInstance().logWarning({
       message: `Question not found on redirect middleware questionSlug='${formattedQuestionSlug}'`,
       name: 'server-side',
       app_detected_country: formattedCountry,
@@ -28,7 +28,7 @@ export const redirectToCountryMiddleware = async (
     });
   };
   const questionUnexpectedError = () => {
-    getLoggerInstance().logError({
+    ServerLogger.getInstance().logError({
       message: `Unexpected Error on redirect middleware questionSlug='${formattedQuestionSlug}'`,
       name: 'server-side',
       app_detected_country: formattedCountry,

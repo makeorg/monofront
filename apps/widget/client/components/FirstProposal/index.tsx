@@ -10,6 +10,7 @@ import {
   SequenceContainerStyle,
   SequenceContentStyle,
 } from '@make.org/components/Sequence/style';
+import { ClientLogger } from '@make.org/logger/clientLogger';
 
 type Props = {
   /** kind parameter for popular and controversy sequences */
@@ -29,7 +30,11 @@ export const FirstProposal: React.FC<Props> = ({ sequenceKind }) => {
   return (
     <SequenceContainerStyle data-cy-container="sequence" className="widget">
       <SequenceContentStyle>
-        <SequenceCard card={cards[0] || noProposalCard} question={question} />
+        <SequenceCard
+          card={cards[0] || noProposalCard}
+          question={question}
+          logger={ClientLogger.getInstance()}
+        />
         {!isEmptySequence && <SequenceProgress length={sequenceSize} />}
       </SequenceContentStyle>
     </SequenceContainerStyle>

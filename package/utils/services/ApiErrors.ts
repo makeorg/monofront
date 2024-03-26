@@ -1,6 +1,6 @@
+import { ClientLogger } from '@make.org/logger/clientLogger';
 import { ErrorObjectType } from '@make.org/types';
 import i18n from 'i18next';
-import { Logger } from './Logger';
 
 /**
  * Map errors from API to internal error message
@@ -81,7 +81,7 @@ export const mapErrors = (
           message: errorMatch.message,
         };
       }
-      Logger.logError({
+      ClientLogger.getInstance().logError({
         message: `Unexpected error: "field": "${apiErrorField}", "key": "${apiError.key}", "message": "${apiError.message}"`,
         name: 'services',
         logId,

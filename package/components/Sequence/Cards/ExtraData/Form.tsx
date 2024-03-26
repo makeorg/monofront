@@ -1,5 +1,5 @@
 import React, { SyntheticEvent, useEffect, useMemo, useState } from 'react';
-import { DemographicParameterType } from '@make.org/types';
+import { DemographicParameterType, ILogger } from '@make.org/types';
 import i18n from 'i18next';
 import { DemographicsTrackingService } from '@make.org/utils/services/DemographicsTracking';
 import { incrementSequenceIndex } from '@make.org/store/actions/sequence';
@@ -16,7 +16,6 @@ import {
   DEMOGRAPHIC_LAYOUT_SELECT,
   DEMOGRAPHIC_LAYOUT_THREE_COLUMNS_RADIO,
 } from '@make.org/utils/constants/demographics';
-import { Logger } from '@make.org/utils/services/Logger';
 import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
 import { RadioDemographics } from './Radio';
 import {
@@ -36,6 +35,7 @@ type Props = {
   token: string;
   sessionBindingMode: boolean;
   submitSuccess: () => void;
+  logger: ILogger;
 };
 
 const renderFormUI = (
@@ -80,6 +80,7 @@ export const ExtraDataForm: React.FC<Props> = ({
   token,
   sessionBindingMode,
   submitSuccess,
+  logger,
 }) => {
   const { dispatch, state } = useAppContext();
   const location = useLocation();
@@ -115,7 +116,7 @@ export const ExtraDataForm: React.FC<Props> = ({
         setIsSkipDisabled(false);
         dispatch(incrementSequenceIndex());
         if (sessionBindingMode) {
-          Logger.logInfo({
+          logger.logInfo({
             message: `submit of demographic ${demographicId}`,
             value: `demographic value : ${value}`,
             data: `demographic data : ${data}`,
@@ -129,7 +130,7 @@ export const ExtraDataForm: React.FC<Props> = ({
         submitSuccess();
       };
       const error = (message: string, content: unknown) => {
-        Logger.logError({
+        logger.logError({
           message,
           body: content as string,
           name: 'demographics',

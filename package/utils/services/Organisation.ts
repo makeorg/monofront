@@ -9,6 +9,7 @@ import {
   ErrorObjectType,
   OrganisationVoteType,
   ProposalType,
+  ILogger,
 } from '@make.org/types';
 import { updateOrganisationErrors } from '@make.org/utils/errors/Messages/Organisation';
 import { getErrorMessages } from '@make.org/utils/helpers/form';
@@ -164,6 +165,7 @@ const getProfile = async (
 const update = async (
   organisationId: string,
   profile: OrganisationProfileType,
+  logger: ILogger,
   success: () => void,
   handleErrors: (errors: ErrorObjectType[]) => void
 ): Promise<null | void> => {
@@ -196,7 +198,8 @@ const update = async (
         getErrorMessages(
           updateOrganisationErrors,
           apiServiceError.data as ErrorObjectType[] | ErrorObjectType,
-          apiServiceError.logId
+          apiServiceError.logId,
+          logger
         )
       );
       return;

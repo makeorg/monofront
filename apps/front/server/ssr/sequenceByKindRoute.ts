@@ -2,7 +2,6 @@ import { updateTrackingQuestionParam } from '@make.org/utils/helpers/question';
 import { Request, Response } from 'express';
 import { createInitialState } from '@make.org/store/initialState';
 import { isInProgress } from '@make.org/utils/helpers/date';
-import { getLoggerInstance } from '@make.org/logger';
 import { buildCards } from '@make.org/utils/helpers/sequence';
 import { COOKIE, NOTIF, SEQUENCE } from '@make.org/types/enums';
 import { Cookie } from 'universal-cookie';
@@ -18,6 +17,7 @@ import {
   getSequenceControversialLink,
   getSequencePopularLink,
 } from '@make.org/utils/helpers/url';
+import { ServerLogger } from '@make.org/logger/serverLogger';
 import { reactRender } from '../reactRender';
 import { QuestionService } from '../service/QuestionService';
 
@@ -56,7 +56,7 @@ export const sequenceByKindRoute = async (
   const pushProposalParam = toBoolean(pushProposal);
 
   const initialState = createInitialState();
-  const logger = getLoggerInstance();
+  const logger = ServerLogger.getInstance();
 
   // get cookies for session and demographics
   const sessionIdFromCookie = req.universalCookies.get(COOKIE.SESSION_ID);

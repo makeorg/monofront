@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import React, { FC, useEffect, useRef, useState } from 'react';
-import { QuestionType } from '@make.org/types';
+import { ILogger, QuestionType } from '@make.org/types';
 import { FORM, FEATURE_FLIPPING } from '@make.org/types/enums';
 import { MAX_PROPOSAL_LENGTH } from '@make.org/utils/constants/proposal';
 import i18n from 'i18next';
@@ -51,7 +51,11 @@ import {
   AnonymousInfoTextStyle,
 } from './style';
 
-export const ProposalForm: FC = () => {
+type Props = {
+  logger: ILogger;
+};
+
+export const ProposalForm: FC<Props> = ({ logger }) => {
   const { state, dispatch } = useAppContext();
   const [pendingProposal, setProposalContent] = useState<string>(
     state.pendingProposal.pendingProposal || ''
@@ -67,7 +71,8 @@ export const ProposalForm: FC = () => {
   const proposalIsEmpty = pendingProposal.length === 0;
   const baitText = getLocalizedBaitText(
     question.returnedLanguage,
-    question.questionId
+    question.questionId,
+    logger
   );
   const charCounting = proposalIsEmpty
     ? baitText?.length
@@ -121,7 +126,7 @@ export const ProposalForm: FC = () => {
     }
 
     if (!isLoggedIn) {
-      dispatch(setPanelContent(<ProposalAuthentication />));
+      dispatch(setPanelContent(<ProposalAuthentication logger={logger} />));
     }
 
     dispatch(initProposalPending(pendingProposal));

@@ -24,8 +24,8 @@ import { Request, Response } from 'express';
 import { Cookie } from 'universal-cookie';
 import { setLanguage } from '@make.org/utils/helpers/countries';
 import deepFreeze from 'deep-freeze';
-import { getLoggerInstance } from '@make.org/logger';
 import serialize from 'serialize-javascript';
+import { ServerLogger } from '@make.org/logger/serverLogger';
 import { WIDGET_CLIENT_DIR } from './paths';
 import App from '../client/App';
 
@@ -74,7 +74,7 @@ const renderHtml = (
 
     return content;
   } catch (error) {
-    getLoggerInstance().logError(error);
+    ServerLogger.getInstance().logError(error);
 
     return 'Unexpected error';
   }

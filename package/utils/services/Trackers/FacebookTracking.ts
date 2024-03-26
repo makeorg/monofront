@@ -1,8 +1,7 @@
 import { env } from '@make.org/assets/env';
-import { TrackingConfigurationParamType } from '@make.org/types';
+import { TrackingConfigurationParamType, ILogger } from '@make.org/types';
 import { ExpressService } from '@make.org/utils/services/Express';
 import { fbq } from '@make.org/utils/services/Trackers/fbq.js';
-import { Logger } from '@make.org/utils/services/Logger';
 
 let initialized = false;
 declare global {
@@ -30,7 +29,20 @@ type FacebookEventParams = {
 const isFBInitialized = (): boolean => initialized;
 
 export const FacebookTracking = {
-  init(externalId?: string): void {
+  logger: {
+    // eslint-disable-next-line no-console
+    logError: (error: unknown): void =>
+      console.error('Logger not initialized', error),
+    // eslint-disable-next-line no-console
+    logInfo: (info: unknown): void =>
+      console.log('Logger not initialized', info),
+    // eslint-disable-next-line no-console
+    logWarning: (warning: unknown): void =>
+      console.warn('Logger not initialized', warning),
+  },
+
+  init(logger: ILogger, externalId?: string): void {
+    this.logger = logger;
     try {
       fbq.load();
       if (externalId) {
@@ -38,7 +50,7 @@ export const FacebookTracking = {
           external_id: externalId,
         });
       } else {
-        Logger.logWarning({
+        this.logger.logWarning({
           name: 'tracking-facebook',
           messager: 'Tracking is init without external id',
         });
@@ -48,7 +60,7 @@ export const FacebookTracking = {
       initialized = true;
     } catch (e) {
       const error = e as string;
-      Logger.logError(error);
+      this.logger.logError(error);
     }
   },
 
@@ -63,7 +75,7 @@ export const FacebookTracking = {
   pageView(): void {
     if (!isFBInitialized()) {
       // eslint-disable-next-line no-console
-      Logger.logWarning({
+      this.logger.logWarning({
         message:
           'Facebook Tracking not initialized before using call FacebookTracking.init with required params - event: PageView',
         name: 'tracking-init',
@@ -85,7 +97,7 @@ export const FacebookTracking = {
       fbq.track('track', 'PageView');
     } catch (e) {
       const error = e as string;
-      Logger.logError(error);
+      this.logger.logError(error);
     }
   },
 
@@ -98,7 +110,7 @@ export const FacebookTracking = {
   ): void {
     if (!isFBInitialized()) {
       // eslint-disable-next-line no-console
-      Logger.logWarning({
+      this.logger.logWarning({
         message: `Facebook Tracking not initialized before using call FacebookTracking.init with required params - event: ${eventName}`,
         name: 'tracking-init',
       });
@@ -124,11 +136,12 @@ export const FacebookTracking = {
       });
     } catch (e) {
       const error = e as string;
-      Logger.logError(error);
+      this.logger.logError(error);
     }
 
     // Facebook API conversion
-    ExpressService.sendFbEventConversion(
+    const expressService = new ExpressService(this.logger);
+    expressService.sendFbEventConversion(
       eventName,
       eventId,
       eventParameters,

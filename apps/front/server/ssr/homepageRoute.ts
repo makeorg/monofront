@@ -1,6 +1,6 @@
 import { createInitialState } from '@make.org/store/initialState';
 import { Request, Response } from 'express';
-import { getLoggerInstance } from '@make.org/logger';
+import { ServerLogger } from '@make.org/logger/serverLogger';
 import { ViewsService } from '../service/ViewsService';
 import { reactRender } from '../reactRender';
 
@@ -10,7 +10,7 @@ export const homepageRoute = async (
 ): Promise<void> => {
   const { country, language } = req.params;
   const initialState = createInitialState();
-  const logger = getLoggerInstance();
+  const logger = ServerLogger.getInstance();
 
   const notFound = () => {
     logger.logError({

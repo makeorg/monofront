@@ -20,6 +20,7 @@ import {
 import { FormErrors } from '@make.org/components/Form/Errors';
 import { getFieldError } from '@make.org/utils/helpers/form';
 import { FormSuccessMessage } from '@make.org/components/Form/Success';
+import { ClientLogger } from '@make.org/logger/clientLogger';
 
 type Props = {
   /** Id of the User */
@@ -108,7 +109,8 @@ export const UpdatePassword: FC<Props> = ({ userId, hasPassword }) => {
       formValues,
       hasPassword,
       () => success(),
-      serviceErrors => handleErrors(serviceErrors)
+      serviceErrors => handleErrors(serviceErrors),
+      ClientLogger.getInstance()
     );
   };
 

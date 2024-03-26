@@ -18,12 +18,12 @@ import {
   getStackTransformer,
   oneLineTransformer,
 } from '@make.org/logger/loggerTransformer';
-import { getLoggerInstance, initLogger } from '@make.org/logger';
 import { FacebookConversion } from '@make.org/tracking/apiConversion/facebookConversion';
 import { ClientService } from '@make.org/tracking/apiConversion/clientService';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import { TwitterConversion } from '@make.org/tracking/apiConversion/twitterConversion';
 import path from 'path';
+import { ServerLogger } from '@make.org/logger/serverLogger';
 import { env } from '../utils/env';
 import { translationRessources } from '../i18n';
 import { initRoutes } from './routes';
@@ -57,7 +57,7 @@ const getApp = () => {
     path.join(ASSEMBLY_BUILD_DIR),
     path.join(ASSEMBLY_MAP_DIR)
   ).then(stackTransformer =>
-    initLogger(
+    ServerLogger.init(
       'assembly-ui',
       [
         errorNormalizer,
@@ -73,7 +73,6 @@ const getApp = () => {
     app.use(cors());
   }
 
-  const logger = getLoggerInstance();
   if (env.useLocalProxy()) {
     const { hostname } = new URL(env.frontUrl() || '');
     const apiProxy = createProxyMiddleware({
@@ -86,11 +85,11 @@ const getApp = () => {
       logLevel: 'error',
       secure: false,
       logProvider: () => ({
-        log: logger.logInfo,
-        debug: logger.logInfo,
-        info: logger.logInfo,
-        warn: logger.logWarning,
-        error: logger.logError,
+        log: m => ServerLogger.getInstance().logInfo(m),
+        debug: m => ServerLogger.getInstance().logInfo(m),
+        info: m => ServerLogger.getInstance().logInfo(m),
+        warn: m => ServerLogger.getInstance().logWarning(m),
+        error: m => ServerLogger.getInstance().logError(m),
       }),
     });
     app.use('/backend', apiProxy);
@@ -133,11 +132,11 @@ const getApp = () => {
 
   const fbConversionService = new FacebookConversion(
     env.fbPixelId() ?? '',
-    logger
+    ServerLogger.getInstance()
   ).getServerConversion(new ClientService(), env.fbConversionToken() ?? '');
   const twConversionService = new TwitterConversion(
     env.twPixelId() ?? '',
-    logger
+    ServerLogger.getInstance()
   ).getServerConversion(new ClientService(), {
     consumerApiKey: env.twAPIKey(),
     consumerApiSecret: env.twAPISecret(),

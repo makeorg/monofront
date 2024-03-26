@@ -15,13 +15,16 @@ import {
   EmailButtonStyle,
   SocialButtonLabelStyle,
 } from '@make.org/components/Auth/Social/style';
+import { ILogger } from '@make.org/types';
 
 type Props = {
   onEmailRegister?: () => void;
+  logger: ILogger;
 };
 
 export const ProposalSubmitAuthenticationRegisterButtons: FC<Props> = ({
   onEmailRegister,
+  logger,
 }) => {
   const FRONT_URL = env.frontUrl() || window.FRONT_URL;
 
@@ -29,8 +32,8 @@ export const ProposalSubmitAuthenticationRegisterButtons: FC<Props> = ({
     <AuthenticationButtonWrapperStyle data-cy-container="signup-auth-buttons">
       {setSocialConnect(FRONT_URL) && (
         <>
-          <GoogleAuthentication isRegister />
-          <FacebookAuthentication isRegister />
+          <GoogleAuthentication isRegister logger={logger} />
+          <FacebookAuthentication isRegister logger={logger} />
           <SeparatorWrapperStyle>
             <ProposalSubmitAuthSeparator className="no-margin-top" />
             <TextSeparatorStyle>{i18n.t('login.or')}</TextSeparatorStyle>

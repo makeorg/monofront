@@ -22,6 +22,7 @@ import { SecureExpiration } from '@make.org/components/Expiration/Secure';
 import { SessionExpirationWithCoockies } from '@make.org/components/Expiration/Session';
 import { env } from '@make.org/assets/env';
 import { ApiServiceClient } from '@make.org/api/ApiService/ApiService.client';
+import { ClientLogger } from '@make.org/logger/clientLogger';
 import { updateDeviceInState } from '../helpers/updateDeviceInState';
 import { Header } from './Header';
 import { Footer } from './Footer';
@@ -80,8 +81,10 @@ export const AppContainer: FC<Props> = ({ apiServiceClient }) => {
 
   return withExpiration(
     <>
-      {showCookies && <CookieModal />}
-      {showDataPolicy && <PrivacyPolicyModal />}
+      {showCookies && <CookieModal logger={ClientLogger.getInstance()} />}
+      {showDataPolicy && (
+        <PrivacyPolicyModal logger={ClientLogger.getInstance()} />
+      )}
       {showFiltersOrSortModale && <SortAndFiltersModale />}
       <ServiceErrorHandler>
         <ErrorBoundary>
@@ -114,7 +117,7 @@ export const AppContainer: FC<Props> = ({ apiServiceClient }) => {
               <Modal />
               <Footer />
             </AppWrapperStyle>
-            <Panel />
+            <Panel logger={ClientLogger.getInstance()} />
           </div>
         </ErrorBoundary>
       </ServiceErrorHandler>

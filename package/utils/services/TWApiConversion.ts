@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
 import axios from 'axios';
 import { createHmac, randomBytes } from 'crypto';
-import { getLoggerInstance } from '@make.org/logger';
 import { env } from '@make.org/assets/env';
 import { TwEventType } from '@make.org/types/TwEvents';
+import { ILogger } from '@make.org/types';
 
 type OAuthParamsType = {
   oauth_consumer_key: string;
@@ -31,10 +31,9 @@ const TW_TOKEN_SECRET = env.twTokenSecret();
 const callTwApiConversion = (
   apiVersion: number,
   pixelId: string,
+  logger: ILogger,
   data?: TwEventType
 ): void => {
-  const logger = getLoggerInstance();
-
   if (!TW_ACCESS_TOKEN) {
     logger.logWarning('TW conversion token is not defined');
     return;
@@ -101,9 +100,10 @@ const callTwApiConversion = (
 
 export const tWConversionApi = async (
   req: Request,
-  res: Response
+  res: Response,
+  logger: ILogger
 ): Promise<Response> => {
-  callTwApiConversion(twApiVersion, twPixelId, req.body);
+  callTwApiConversion(twApiVersion, twPixelId, logger, req.body);
 
   return res.sendStatus(202);
 };

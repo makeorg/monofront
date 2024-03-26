@@ -5,10 +5,10 @@ import {
   DEFAULT_COUNTRY,
   DEFAULT_LANGUAGE,
 } from '@make.org/utils/constants/config';
-import { getLoggerInstance } from '@make.org/logger';
 import { getSequenceSize } from '@make.org/utils/helpers/sequence';
 import { CARD, NOTIF } from '@make.org/types/enums';
 import { SequenceCardType } from '@make.org/types';
+import { ServerLogger } from '@make.org/logger/serverLogger';
 import { transformExtraSlidesConfigFromQuery } from '../helpers/query.helper';
 import { reactRender } from '../reactRender';
 import { QuestionService } from '../service/QuestionService';
@@ -22,7 +22,7 @@ export const mainRoute = async (
   const noIntroCard = true;
   const noPushProposal = false;
   const queryArray = Object.keys(req.query);
-  const logger = getLoggerInstance();
+  const logger = ServerLogger.getInstance();
 
   if (!queryArray || queryArray.length === 0) {
     // When widget is called without any param, it redirects to /mainteance without any log

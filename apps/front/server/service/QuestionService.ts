@@ -2,7 +2,6 @@ import { QuestionResultsType, QuestionType } from '@make.org/types/Question';
 import { QuestionApiService } from '@make.org/api/services/QuestionApiService';
 import NodeCache from 'node-cache';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
-import { getLoggerInstance } from '@make.org/logger';
 import {
   ApiServiceHeadersType,
   DemographicDataType,
@@ -18,6 +17,7 @@ import { defaultUnexpectedError } from '@make.org/utils/services/DefaultErrorHan
 import hash from 'object-hash';
 import axios from 'axios';
 import { env } from '@make.org/assets/env';
+import { ClientLogger } from '@make.org/logger/clientLogger';
 
 const CONTENT_API_RESULT_PATH = '/consultation-results';
 
@@ -60,7 +60,7 @@ const getQuestionResult = async (
     if (apiServiceError.status === 404) {
       return notFound();
     }
-    getLoggerInstance().logError(apiServiceError);
+    ClientLogger.getInstance().logError(apiServiceError);
 
     return unexpectedError();
   }
@@ -95,7 +95,7 @@ const getQuestionSlug = async (
     if (apiServiceError.status === 404) {
       return notFound();
     }
-    getLoggerInstance().logError(apiServiceError);
+    ClientLogger.getInstance().logError(apiServiceError);
 
     return unexpectedError();
   }
@@ -149,7 +149,7 @@ const getQuestion = async (
     if (apiServiceError.status === 404) {
       return notFound();
     }
-    getLoggerInstance().logError(apiServiceError);
+    ClientLogger.getInstance().logError(apiServiceError);
 
     return unexpectedError();
   }
@@ -213,7 +213,8 @@ const startSequenceByKind = async (
       questionId,
       duplicates,
       voted,
-      uniqueOrderedProposals
+      uniqueOrderedProposals,
+      ClientLogger.getInstance()
     );
 
     const sequence: {

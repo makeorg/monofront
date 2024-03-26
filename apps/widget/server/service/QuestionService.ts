@@ -2,8 +2,8 @@ import { QuestionType } from '@make.org/types/Question';
 import { QuestionApiService } from '@make.org/api/services/QuestionApiService';
 import NodeCache from 'node-cache';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
-import { getLoggerInstance } from '@make.org/logger';
 import hash from 'object-hash';
+import { ServerLogger } from '@make.org/logger/serverLogger';
 
 const cache = new NodeCache({ stdTTL: 900 });
 const clearCache = (): void => {
@@ -57,7 +57,7 @@ const getQuestion = async (
     if (apiServiceError.status === 404) {
       return notFound();
     }
-    getLoggerInstance().logError(apiServiceError);
+    ServerLogger.getInstance().logError(apiServiceError);
 
     return unexpectedError();
   }

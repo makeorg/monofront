@@ -5,6 +5,7 @@ import {
   ErrorObjectType,
   UserProfileType,
   PersonalityType,
+  ILogger,
 } from '@make.org/types';
 import { PersonalityApiService } from '@make.org/api/services/PersonalityApiService';
 import { getErrorMessages } from '@make.org/utils/helpers/form';
@@ -95,6 +96,7 @@ const getProfile = async (
 const update = async (
   personalityId: string,
   profile: PersonalityProfileType,
+  logger: ILogger,
   success: () => void,
   handleErrors: (errors: ErrorObjectType[]) => void
 ): Promise<void> => {
@@ -131,7 +133,8 @@ const update = async (
         getErrorMessages(
           updatePersonalityErrors,
           apiServiceError.data as ErrorObjectType[] | ErrorObjectType,
-          apiServiceError.logId
+          apiServiceError.logId,
+          logger
         )
       );
       return;

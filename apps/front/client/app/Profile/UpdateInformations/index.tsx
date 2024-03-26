@@ -11,6 +11,7 @@ import {
   PersonalityType,
   OrganisationType,
   CommonUsersProfileType,
+  ILogger,
 } from '@make.org/types';
 
 import { getUser } from '@make.org/store/actions/authentication';
@@ -27,6 +28,7 @@ import { PersonalityService } from '@make.org/utils/services/Personality';
 import { LegalConsent } from '@make.org/components/Form/LegalConsent';
 import { CenterColumnStyle } from '@make.org/ui/elements/FlexElements';
 import { useAppContext } from '@make.org/store';
+import { ClientLogger } from '@make.org/logger/clientLogger';
 import { OrganisationForm } from './Organisation';
 import { PersonalityForm } from './Personality';
 import { UserForm } from './User';
@@ -44,6 +46,7 @@ export const UpdateInformations: FC<Props> = ({ user }) => {
   let updateProfile: (
     organisationId: string,
     profile: CommonUsersProfileType,
+    logger: ILogger,
     success: () => void,
     handleErrors: (errors: ErrorObjectType[]) => void
   ) => Promise<null | void>;
@@ -107,6 +110,7 @@ export const UpdateInformations: FC<Props> = ({ user }) => {
     await updateProfile(
       userId,
       profile,
+      ClientLogger.getInstance(),
       () => success(),
       serviceErrors => handleErrors(serviceErrors)
     );

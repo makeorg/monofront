@@ -1,6 +1,10 @@
 import React, { FormEvent, SyntheticEvent, useState } from 'react';
 import i18n from 'i18next';
-import { RegisterFormDataType, ErrorObjectType } from '@make.org/types';
+import {
+  RegisterFormDataType,
+  ErrorObjectType,
+  ILogger,
+} from '@make.org/types';
 import { closePanel, setPanelContent } from '@make.org/store/actions/panel/';
 import {
   trackSignupEmailSuccess,
@@ -8,7 +12,6 @@ import {
 } from '@make.org/utils/services/Tracking';
 import { getDataPageLink } from '@make.org/utils/helpers/url';
 import { UserService } from '@make.org/utils/services/User';
-import { Logger } from '@make.org/utils/services/Logger';
 import { useAppContext } from '@make.org/store';
 import { getUser } from '@make.org/store/actions/authentication';
 import { ProposalService } from '@make.org/utils/services/Proposal';
@@ -28,7 +31,11 @@ import {
 import { RegisterForm } from '@make.org/components/Auth/Register/Form';
 import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 
-export const Register: React.FC = () => {
+type Props = {
+  logger: ILogger;
+};
+
+export const Register: React.FC<Props> = ({ logger }) => {
   const { dispatch, state } = useAppContext();
   const { pendingProposal, registerStep, isAnonymous } = state.pendingProposal;
   const { country, language } = state.appConfig;
@@ -49,8 +56,11 @@ export const Register: React.FC = () => {
   const [waitingCallback, setWaitingCallback] = useState<boolean>(false);
   const [needLegalConsent, displayLegalConsent] = useState<boolean>(false);
   const question = selectCurrentQuestion(state);
-  const userIsAChild =
-    user && user.profile && user.profile.age && user.profile.age < 16;
+  const age: undefined | number =
+    typeof user?.profile?.age === 'number'
+      ? user?.profile?.age
+      : parseInt(user?.profile?.age, 10) || undefined;
+  const userIsAChild = age && age < 16;
   const isSecondStep = registerStep === 2;
 
   const handleReturn = () => {
@@ -59,7 +69,7 @@ export const Register: React.FC = () => {
       return;
     }
     if (pendingProposal) {
-      dispatch(setPanelContent(<ProposalAuthentication />));
+      dispatch(setPanelContent(<ProposalAuthentication logger={logger} />));
       return;
     }
     dispatch(setPanelContent(PANEL_CONTENT.LOGIN));
@@ -67,7 +77,7 @@ export const Register: React.FC = () => {
 
   const handleCheckbox = (fieldName: string, value: boolean) => {
     if (!fieldName || value === undefined) {
-      Logger.logError({
+      logger.logError({
         message:
           'handleCheckbox in register form : fieldname or value is missing',
         name: 'register',
@@ -109,7 +119,7 @@ export const Register: React.FC = () => {
     const unexpectedError = () => {
       dispatch(closePanel());
       // @toDo: notify user
-      Logger.logError({
+      logger.logError({
         message: `Login fail for ${email}`,
         name: 'register',
       });
@@ -140,7 +150,8 @@ export const Register: React.FC = () => {
       user.password,
       success,
       handleErrors,
-      unexpectedError
+      unexpectedError,
+      logger
     );
   };
 
@@ -175,7 +186,13 @@ export const Register: React.FC = () => {
     displayLegalConsent(false);
     setWaitingCallback(true);
 
-    await UserService.register(user, success, handleErrors, unexpectedError);
+    await UserService.register(
+      user,
+      success,
+      handleErrors,
+      unexpectedError,
+      logger
+    );
 
     setWaitingCallback(false);
   };
@@ -222,6 +239,7 @@ export const Register: React.FC = () => {
           handleSubmit={userIsAChild ? toggleLegalConsent : handleSubmit}
           disableSubmit={waitingCallback}
           registerStep={registerStep}
+          logger={logger}
         />
         {!pendingProposal && !isSecondStep && (
           <GreyParagraphStyle>

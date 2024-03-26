@@ -16,8 +16,7 @@ import { ClientService } from '@make.org/tracking/apiConversion/clientService';
 import { MixpanelTracker } from '@make.org/tracking/trackers/mixpanel';
 import { TwitterConversion } from '@make.org/tracking/apiConversion/twitterConversion';
 import { TwitterTracker } from '@make.org/tracking/trackers/twitter';
-import { Logger } from '@make.org/utils/services/Logger';
-import { ILogger } from '@make.org/tracking/interface';
+import { ClientLogger } from '@make.org/logger/clientLogger';
 import { DefaultStylesheet } from '../utils/DefaultStyle';
 import { env } from '../utils/env';
 import { translationRessources } from '../i18n';
@@ -35,7 +34,7 @@ import {
   ROUTE_ASSEMBLY_FB_CONVERSION,
   ROUTE_ASSEMBLY_TW_CONVERSION,
 } from '../utils/routes';
-import { ErrorBoundary, IErrorLogger } from '../components/Error';
+import { ErrorBoundary } from '../components/Error';
 
 declare global {
   interface Window {
@@ -62,29 +61,29 @@ const getTrackingService = () => {
       new FakeTracker(
         'facebook',
         trackingConfiguration.RECIPIENTS.facebook,
-        Logger as ILogger
+        ClientLogger.getInstance()
       ),
       new FakeTracker(
         'makeorg',
         trackingConfiguration.RECIPIENTS.makeorg,
-        Logger as ILogger
+        ClientLogger.getInstance()
       ),
       new FakeTracker(
         'mixpanel',
         trackingConfiguration.RECIPIENTS.mixpanel,
-        Logger as ILogger
+        ClientLogger.getInstance()
       ),
       new FakeTracker(
         'twitter',
         trackingConfiguration.RECIPIENTS.twitter,
-        Logger as ILogger
+        ClientLogger.getInstance()
       ),
     ]);
   }
 
   const fbConversionService = new FacebookConversion(
     window?.FB_PIXEL_ID ?? '',
-    Logger as ILogger
+    ClientLogger.getInstance()
   ).getClientConversion(
     new ClientService(),
     `${window?.FRONT_URL ?? '.'}${ROUTE_ASSEMBLY_FB_CONVERSION}`
@@ -94,12 +93,12 @@ const getTrackingService = () => {
     fbConversionService,
     trackingConfiguration.RECIPIENTS.facebook,
     undefined,
-    Logger as ILogger
+    ClientLogger.getInstance()
   );
 
   const twConversionService = new TwitterConversion(
     window?.TW_PIXEL_ID ?? '',
-    Logger as ILogger
+    ClientLogger.getInstance()
   ).getClientConversion(
     new ClientService(),
     `${window?.FRONT_URL ?? '.'}${ROUTE_ASSEMBLY_TW_CONVERSION}`
@@ -110,26 +109,26 @@ const getTrackingService = () => {
     twConversionService,
     trackingConfiguration.RECIPIENTS.twitter,
     trackingConfiguration.TWITTER_MAPPING,
-    Logger as ILogger
+    ClientLogger.getInstance()
   );
 
   const makeorgTracker = new MakeorgTracker(
     new ClientService(),
     `${window?.API_URL_CLIENT_SIDE}/tracking/panoramic`,
     trackingConfiguration.RECIPIENTS.makeorg,
-    Logger as ILogger
+    ClientLogger.getInstance()
   );
 
   const mixpanelTracker = new MixpanelTracker(
     window?.MIXPANEL_TOKEN ?? '',
     trackingConfiguration.RECIPIENTS.mixpanel,
-    Logger as ILogger
+    ClientLogger.getInstance()
   );
 
   return new TrackingService(
     trackingConfiguration.EVENTS,
     [facebookTracker, makeorgTracker, mixpanelTracker, twitterTracker],
-    Logger as ILogger
+    ClientLogger.getInstance()
   );
 };
 
@@ -207,7 +206,7 @@ const initApp = async (state: AssemblyGlobalStateType) => {
           return result;
         } catch (e) {
           const error = e as Error;
-          Logger.logError(error);
+          ClientLogger.getInstance().logError(error);
           return null;
         }
       },
@@ -215,7 +214,7 @@ const initApp = async (state: AssemblyGlobalStateType) => {
 
     return renderMethod(
       <AssemblyContextState serverState={store}>
-        <ErrorBoundary logger={Logger as IErrorLogger}>
+        <ErrorBoundary logger={ClientLogger.getInstance()}>
           <TrackingContext.Provider value={trackContext}>
             <BrowserRouter>
               <React.StrictMode>

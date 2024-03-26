@@ -49,6 +49,7 @@ import {
 } from '@make.org/components/CookieModal/style';
 import { CookieSwitch } from '@make.org/components/CookieModal/CookieSwitch';
 import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
+import { ClientLogger } from '@make.org/logger/clientLogger';
 import {
   StaticExternalLinkIconStyle,
   StaticPageWrapperStyle,
@@ -95,6 +96,7 @@ const CookiesPage: FC = () => {
     removeTrackersFromPreferences(trackingConsent);
     initTrackersFromPreferences(
       trackingConsent,
+      ClientLogger.getInstance(),
       trackingParamsService.visitorId
     );
     dispatch(

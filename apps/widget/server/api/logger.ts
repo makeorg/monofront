@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 import { simpleHash } from '@make.org/utils/helpers/simpleHash';
 import parser from 'ua-parser-js';
-import { getLoggerInstance } from '@make.org/logger';
 import { LogLevelType } from '@make.org/types/enums/logLevel';
+import { ServerLogger } from '@make.org/logger/serverLogger';
 
 export const loggerApi = async (
   req: Request,
@@ -11,7 +11,7 @@ export const loggerApi = async (
   const ua = parser(req.headers['user-agent']);
   const { level, data } = req.body;
   const normalizedData = typeof data === 'string' ? { message: data } : data;
-  const logger = getLoggerInstance();
+  const logger = ServerLogger.getInstance();
 
   const dataLog = {
     ...normalizedData,

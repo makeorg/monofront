@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { getLoggerInstance } from '@make.org/logger';
+import { ServerLogger } from '@make.org/logger/serverLogger';
 import { CookiesManager } from '../cookiesManager';
 
 export const consentRoute = async (
@@ -28,7 +28,7 @@ export const consentRoute = async (
       visitorId: CookiesManager.getVisitor(req) ?? '',
     });
   } catch (e) {
-    getLoggerInstance().logError(e);
+    ServerLogger.getInstance().logError(e);
     return res.status(500).send();
   }
 };

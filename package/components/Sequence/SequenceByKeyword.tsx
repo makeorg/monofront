@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { QuestionType, SequenceType } from '@make.org/types';
+import { ILogger, QuestionType, SequenceType } from '@make.org/types';
 import { trackClickOperationPage } from '@make.org/utils/services/Tracking';
 import { getParticipateLink } from '@make.org/utils/helpers/url';
 import i18n from 'i18next';
@@ -26,10 +26,13 @@ import {
 import { SequenceCard } from './Cards';
 import { MetaTags } from '../MetaTags';
 
+type Props = {
+  logger: ILogger;
+};
 /**
  * Renders Sequence component with Intro / Push Proposal / Sign Up & Proposal Cards
  */
-export const SequenceByKeyword: FC = () => {
+export const SequenceByKeyword: FC<Props> = ({ logger }) => {
   const { state } = useAppContext();
   const { country } = state.appConfig;
   const { isLoading, sequenceSize } = state.sequence;
@@ -49,7 +52,8 @@ export const SequenceByKeyword: FC = () => {
       questionId,
       votedIds,
       keyword,
-      preferredLanguage
+      preferredLanguage,
+      logger
     );
     if (!response) {
       return null;
@@ -73,7 +77,8 @@ export const SequenceByKeyword: FC = () => {
     question,
     false,
     executeStartSequence,
-    noProposalCard
+    noProposalCard,
+    logger
   );
 
   if (isLoading) {
@@ -103,6 +108,7 @@ export const SequenceByKeyword: FC = () => {
           <SequenceCard
             card={isEmptySequence ? noProposalCard : currentCard}
             question={question}
+            logger={logger}
           />
           {!isEmptySequence && <SequenceProgress length={sequenceSize} />}
         </SequenceContentStyle>

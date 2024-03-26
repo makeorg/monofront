@@ -1,7 +1,7 @@
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
-import { getLoggerInstance } from '@make.org/logger';
 import NodeCache from 'node-cache';
 import hash from 'object-hash';
+import { ServerLogger } from '@make.org/logger/serverLogger';
 import {
   TermQueryType,
   EventType,
@@ -55,7 +55,7 @@ const getCustomerBySlug = async (
     if (apiServiceError.status === 404) {
       return notFound();
     }
-    getLoggerInstance().logError(
+    ServerLogger.getInstance().logError(
       apiServiceError.clone(
         `error in server/api/Content/getCustomerBySlug: ${apiServiceError.message}`
       )
@@ -120,7 +120,7 @@ const getEventBySlug = async (
     if (apiServiceError.status === 404) {
       return notFound();
     }
-    getLoggerInstance().logError(
+    ServerLogger.getInstance().logError(
       apiServiceError.clone(
         `error in server/api/Content/getEvent: ${apiServiceError.message}`
       )
@@ -178,7 +178,7 @@ const getTermQueries = async (
     if (apiServiceError.status === 404) {
       return notFound();
     }
-    getLoggerInstance().logError(
+    ServerLogger.getInstance().logError(
       apiServiceError.clone(
         `error in server/api/Content/getTermQueries: ${apiServiceError.message}`
       )
@@ -241,7 +241,7 @@ const getGeneratedContents = async (
     if (apiServiceError.status === 404) {
       return notFound();
     }
-    getLoggerInstance().logError(
+    ServerLogger.getInstance().logError(
       apiServiceError.clone(
         `error in server/api/Content/getGeneratedContents: ${apiServiceError.message}`
       )
