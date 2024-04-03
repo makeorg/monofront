@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import i18n from 'i18next';
 import { scrollToTop } from '@make.org/utils/helpers/styled';
-import { env } from '@make.org/assets/env';
+import { useIsSmallDevice } from '@make.org/utils/hooks/useIsSmallDevice';
 import { SidebarLogo } from '../../assets/SidebarSimple';
 import { LogoMakeStyle } from '../style';
 import { SidebarModal } from '../SideBar/Modal';
@@ -21,7 +21,7 @@ export const Header: FC = () => {
   const { state } = useAssemblyContext();
   const { logoUrl } = state.event;
   const [openSidebar, setOpenSidebar] = useState(false);
-  const isMobile = !!(env.isClientSide() && Math.min(window.innerWidth) < 768);
+  const { isSmallDevice } = useIsSmallDevice();
 
   return (
     <HeaderContainerStyle>
@@ -50,7 +50,7 @@ export const Header: FC = () => {
           )}
         </HeaderSidebarLogoContainerStyle>
 
-        {(!logoUrl || !isMobile) && (
+        {(!logoUrl || !isSmallDevice) && (
           <HeaderLogoMakeStyle>
             <HeaderBetaStyle>{i18n.t('sidebar.exp')}</HeaderBetaStyle>
             <LogoMakeStyle focusable="false" aria-hidden />

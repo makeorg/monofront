@@ -1,7 +1,7 @@
 import React, { FC, useState, useEffect } from 'react';
-import { env } from '@make.org/assets/env';
 import i18n from 'i18next';
 import ReactMarkdown from 'react-markdown';
+import { useIsSmallDevice } from '@make.org/utils/hooks/useIsSmallDevice';
 import { LLMErrorLimit } from '../Prompt/Stream';
 import {
   ContentStyle,
@@ -21,17 +21,11 @@ import { TRANSCRIPT } from '.';
 type Props = { item: FeedItemType };
 
 export const Answer: FC<Props> = ({ item }) => {
-  const [isTablet, setIsTablet] = useState(false);
+  const { isSmallDevice } = useIsSmallDevice();
   const [isTracked, setIsTracked] = useState(false);
   const { state } = useAssemblyContext();
   const { isStreaming } = state.feed;
   const tracker = useTracking();
-
-  useEffect(() => {
-    if (env.isClientSide() && Math.min(window.innerWidth) < 969) {
-      setIsTablet(true);
-    }
-  }, []);
 
   useEffect(() => {
     if (!isTracked && item.text.length && !isStreaming) {
@@ -46,7 +40,7 @@ export const Answer: FC<Props> = ({ item }) => {
   }, [item.text, isStreaming]);
 
   const sources = (chunks: ChunkType[]) => {
-    if (isTablet) {
+    if (isSmallDevice) {
       return <SourcesMobile chunks={chunks} />;
     }
     return <Sources chunks={chunks} />;

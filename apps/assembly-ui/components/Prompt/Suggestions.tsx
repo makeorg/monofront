@@ -1,7 +1,7 @@
 import React, { FC, useRef, useEffect, useState } from 'react';
 import { useSlider } from '@make.org/utils/hooks/useSlider';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
-import { env } from '@make.org/assets/env';
+import { useIsSmallDevice } from '@make.org/utils/hooks/useIsSmallDevice';
 import { useAssemblyContext } from '../../store/context';
 import { TermQueryType } from '../../types';
 import { TRANSCRIPT } from '../Feed';
@@ -49,7 +49,7 @@ export const Suggestions: FC = () => {
   const [question, setQuestion] = useState<string>('');
   const sliderRef = useRef<HTMLDivElement>(null);
   const [initSlider, setInitSlider] = useState(false);
-  const isMobile = !!(env.isClientSide() && Math.min(window.innerWidth) < 768);
+  const { isSmallDevice } = useIsSmallDevice();
   const suggestions = termQueries.filter(
     termQuery => termQuery.type === 'SUGGESTION'
   );
@@ -94,7 +94,7 @@ export const Suggestions: FC = () => {
     initSlider
   );
 
-  if (isMobile) {
+  if (isSmallDevice) {
     return (
       <div className="glider-contain">
         <div ref={sliderRef} className="glider">
