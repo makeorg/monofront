@@ -2,7 +2,6 @@ import React, { FC, useState } from 'react';
 import i18n from 'i18next';
 import { scrollToTop } from '@make.org/utils/helpers/styled';
 import { useIsSmallDevice } from '@make.org/utils/hooks/useIsSmallDevice';
-import { SidebarLogo } from '../../assets/SidebarSimple';
 import { LogoMakeStyle } from '../style';
 import { SidebarModal } from '../SideBar/Modal';
 import {
@@ -14,6 +13,7 @@ import {
   HeaderBetaStyle,
   HeaderSidebarLogoContainerStyle,
   HeaderButton,
+  HeaderSvgLogoSidebarStyle,
 } from './style';
 import { useAssemblyContext } from '../../store/context';
 
@@ -37,7 +37,7 @@ export const Header: FC = () => {
             aria-expanded="false"
             onClick={() => setOpenSidebar(true)}
           >
-            <SidebarLogo />
+            <HeaderSvgLogoSidebarStyle />
           </HeaderSvgStyle>
           {logoUrl && (
             <HeaderButton

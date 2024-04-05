@@ -3,6 +3,7 @@ import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { typography } from '@make.org/designsystem/tokens/typography';
+import { SidebarLogo } from '../../assets/SidebarSimple';
 
 export const HeaderContainerStyle = styled.header`
   position: fixed;
@@ -31,6 +32,7 @@ export const HeaderButton = styled.button`
 export const HeaderSvgStyle = styled.button`
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
   outline: none;
   border-style: none;
   display: flex;
@@ -38,7 +40,12 @@ export const HeaderSvgStyle = styled.button`
   height: 37px;
   background-color: #f4f4f4;
   border-radius: 5px;
+  padding: 5px;
   cursor: pointer;
+`;
+export const HeaderSvgLogoSidebarStyle = styled(SidebarLogo)`
+  width: 100%;
+  height: auto;
 `;
 
 export const HeaderLogosContainerStyle = styled.div`

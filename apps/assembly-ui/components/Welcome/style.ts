@@ -92,5 +92,5 @@ export const WelcomeThemesButtonStyle = styled.button<{
   padding: ${spacings.s} ${spacings.m};
   border-radius: 20px;
   border: none;
-  color: ${props => props.standardStyle && '#121212'};
+  color: ${props => (props.standardStyle ? '#121212' : 'black')};
 `;
