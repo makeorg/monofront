@@ -29,7 +29,7 @@
     "cancel": "Cancelar",
     "disabled": "Botón desactivado",
     "request_send": "Preguntar a la IA",
-    "error": "No estoy en condiciones de responder a esa pregunta. Busquemos otra cosa!"
+    "error": "Gracias por su pregunta. No estoy seguro de poder darle la respuesta correcta. Para estar seguro, le sugiero que la formule de otra manera."
   },
   "feed": {
     "sources": "Esta respuesta se basa en los elementos siguientes:",
