@@ -31,7 +31,7 @@ export const QuestionUserStyle = styled.div`
   align-items: center;
   gap: ${spacings.s};
   color: #5f5f5f;
-  font-size: 12px;
+  font-size: ${typography.FontSize.Text.Arrondissement};
 `;
 
 export const QuestionImgStyle = styled.div`
@@ -49,7 +49,7 @@ export const QuestionImgStyle = styled.div`
 `;
 
 export const QuestionStyle = styled.p`
-  font-size: 14px;
+  font-size: ${typography.FontSize.Text.Arrondissement};
 `;
 
 export const ContentStyle = styled.div`
@@ -59,17 +59,14 @@ export const ContentStyle = styled.div`
   background-color: #f9f8ffcf;
   border-radius: 10px;
   padding: ${spacings.m};
-  font-size: 12px;
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    flex-direction: row;
-  }
+  font-size: ${typography.FontSize.Text.Arrondissement};
 `;
 
 export const AnswerContainerStyle = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  font-size: ${typography.FontSize.Text.Bastille};
+  font-size: ${typography.FontSize.Text.Arrondissement};
 `;
 
 export const ContentIconStyle = styled.img`
@@ -81,11 +78,6 @@ export const ThemeContainerStyle = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${spacings.s};
-`;
-
-export const ThemeTitleStyle = styled.div`
-  font-size: 12px;
-  font-weight: 600;
 `;
 
 export const ThemeListStyle = styled.ul`

@@ -82,7 +82,7 @@ export const Suggestions: FC = () => {
     }
 
     setInitSlider(true);
-  }, [sliderRef.current]);
+  }, []);
 
   useSlider(
     sliderRef,
