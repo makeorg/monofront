@@ -1,7 +1,7 @@
 {
   "global": {
-    "ia": "Cet outil utilise une intelligence artificielle (IA) qui trouve ses réponses exclusivement dans des informations issues d’une base de ",
-    "iaBold": "données choisie et modérée.",
+    "ia": "Cette solution utilise une intelligence artificielle (IA) qui trouve ses réponses exclusivement dans des informations",
+    "iaBold": "sûres, vérifiées et modérées.",
     "open_new_window": "Ouverture dans un nouvel onglet"
   },
   "header": {
