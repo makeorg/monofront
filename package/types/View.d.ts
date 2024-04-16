@@ -61,6 +61,14 @@ export type InteractiveChildrenType = {
   links?: boolean;
 };
 
+export type SliderResponsiveParamsType = {
+  breakpoint?: number;
+  settings?: {
+    slidesToShow: number | string;
+    slidesToScroll: number | string;
+  };
+};
+
 export type SliderParamsType = {
   slidesToShow?: number | string;
   slidesToScroll?: number | string;
@@ -69,7 +77,7 @@ export type SliderParamsType = {
     prev: string;
     next: string;
   };
-  responsive?: SliderParamsType[];
+  responsive?: SliderResponsiveParamsType[];
   interactiveChildren?: InteractiveChildrenType;
   counterName?: string;
   draggable?: boolean;

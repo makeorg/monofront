@@ -125,6 +125,24 @@ Our question answering service records user questions and AI response for analys
     | `suggestion_label` | Label of suggestion CTA | Relevance of suggestions - service improvement | true |  | my suggestion label
 
 
+  - `action-check-interaction` CTA open testimony block
+    
+    | param_name | description | purpose | required | values | example |
+    | -          |-            |-        |-         | -      | -       |
+    | `visitor_id` | Unique visitor identifier | Segmentation by unique visitor | false |  | 00000000-0000-0000-0000-000000000000
+    | `language` | Interface language | Language segmentation - service improvement | true |  | undefined
+    | `event_slug` | The event slug | Subject segmentation - service improvement | true |  | convention-fin-de-vie
+
+
+  - `action-share-interaction` CTA share testimony in external form
+    
+    | param_name | description | purpose | required | values | example |
+    | -          |-            |-        |-         | -      | -       |
+    | `visitor_id` | Unique visitor identifier | Segmentation by unique visitor | false |  | 00000000-0000-0000-0000-000000000000
+    | `language` | Interface language | Language segmentation - service improvement | true |  | undefined
+    | `event_slug` | The event slug | Subject segmentation - service improvement | true |  | convention-fin-de-vie
+
+
 
 
 

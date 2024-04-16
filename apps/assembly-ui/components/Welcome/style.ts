@@ -4,6 +4,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import ReactMarkdown from 'react-markdown';
+import { BonhommeLogoSvg } from '../../assets/bonhomme';
 
 export const WelcomeContainerStyle = styled.section`
   display: flex;
@@ -93,4 +94,8 @@ export const WelcomeThemesButtonStyle = styled.button<{
   border-radius: 20px;
   border: none;
   color: ${props => (props.standardStyle ? '#121212' : 'black')};
+`;
+
+export const BonhommeLogoSvgStyle = styled(BonhommeLogoSvg)`
+  margin-left: 10px;
 `;

@@ -8,7 +8,11 @@ import {
   ContentIconStyle,
   AnswerContainerStyle,
   SourcesTitleStyle,
+  TempTemoignageDiscoverStyle,
+  QuestionStyle,
+  ActionsButtonStyle,
 } from './style';
+import { Temoignage } from './Temoignage';
 import { SourcesMobile } from './SourcesMobile';
 import { Sources } from './Sources';
 import { FeedItemType, ChunkType } from '../../types';
@@ -23,9 +27,22 @@ type Props = { item: FeedItemType };
 export const Answer: FC<Props> = ({ item }) => {
   const { isSmallDevice } = useIsSmallDevice();
   const [isTracked, setIsTracked] = useState(false);
+  const [showParole, setShowParole] = useState(false);
   const { state } = useAssemblyContext();
+  const { event, language, visitorId } = state;
   const { isStreaming } = state.feed;
   const tracker = useTracking();
+
+  useEffect(() => {
+    if (showParole) {
+      tracker.track('ACTION-CHECK-INTERACTION', {
+        visitor_id: visitorId,
+        language,
+        event_slug: event.slug,
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [showParole]);
 
   useEffect(() => {
     if (!isTracked && item.text.length && !isStreaming) {
@@ -47,26 +64,44 @@ export const Answer: FC<Props> = ({ item }) => {
   };
 
   return (
-    <ContentStyle>
-      <ContentIconStyle src={pano} alt="Logo" />
-      <AnswerContainerStyle>
-        <ReactMarkdown>{item.text}</ReactMarkdown>
-        {item.text.trim().length > LLMErrorLimit && (
+    <>
+      <ContentStyle>
+        <ContentIconStyle src={pano} alt="Logo" />
+        <AnswerContainerStyle>
+          <ReactMarkdown>{item.text}</ReactMarkdown>
+          {item.text.trim().length > LLMErrorLimit && (
+            <>
+              {item.displayActions && item.mode === TRANSCRIPT && (
+                <Actions item={item} />
+              )}
+              {item.chunks && item.chunks.length > 0 && (
+                <>
+                  <SourcesTitleStyle>
+                    {i18n.t('feed.sources')}&nbsp;
+                  </SourcesTitleStyle>
+                  {sources(item.chunks)}
+                </>
+              )}
+            </>
+          )}
+        </AnswerContainerStyle>
+      </ContentStyle>
+      {item.chunks &&
+        item.chunks.length > 0 &&
+        item.question === `Aide active` && (
           <>
-            {item.displayActions && item.mode === TRANSCRIPT && (
-              <Actions item={item} />
-            )}
-            {item.chunks && item.chunks.length > 0 && (
-              <>
-                <SourcesTitleStyle>
-                  {i18n.t('feed.sources')}&nbsp;
-                </SourcesTitleStyle>
-                {sources(item.chunks)}
-              </>
-            )}
+            <TempTemoignageDiscoverStyle>
+              <QuestionStyle>
+                Grâce aux témoignages et partages, cette thématique bénéficie
+                d’un éclairage citoyen
+              </QuestionStyle>
+              <ActionsButtonStyle onClick={() => setShowParole(!showParole)}>
+                Découvrir l’éclairage citoyen
+              </ActionsButtonStyle>
+            </TempTemoignageDiscoverStyle>
+            {showParole && <Temoignage />}
           </>
         )}
-      </AnswerContainerStyle>
-    </ContentStyle>
+    </>
   );
 };

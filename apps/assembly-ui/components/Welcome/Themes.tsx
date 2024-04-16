@@ -1,9 +1,12 @@
 import React, { FC, useState } from 'react';
-import { WelcomeThemesBlockStyle, WelcomeThemesButtonStyle } from './style';
+import {
+  WelcomeThemesBlockStyle,
+  WelcomeThemesButtonStyle,
+  BonhommeLogoSvgStyle,
+} from './style';
 import { TRANSCRIPT } from '../Feed';
 import { disableFeedStreaming } from '../../store/feed/actions';
 import { StreamLLM } from '../Prompt/Stream';
-
 import { useAssemblyContext } from '../../store/context';
 import { useTracking } from '../Tracking/useTracking';
 import { useUtms } from '../Tracking/useUtms';
@@ -46,6 +49,7 @@ export const ButtonsThemes: FC<ButtonsProps> = ({
       disabled={isStreaming}
     >
       {title}
+      {value === 'Aide active' && <BonhommeLogoSvgStyle />}
     </WelcomeThemesButtonStyle>
   );
 };

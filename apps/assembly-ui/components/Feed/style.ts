@@ -5,6 +5,7 @@ import { GreyStyle } from '@make.org/ui/elements/ButtonsElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 import { VideoLogoSvg } from '../../assets/Video';
+import { SvgScrollButton } from '../../assets/scroll_button';
 import { DocumentLogoSvg } from '../../assets/BookOpenText';
 
 export const FeedContainerStyle = styled.section`
@@ -219,4 +220,74 @@ export const HistoryMaxTitleStyle = styled.span`
 
 export const HistoryMaxTextStyle = styled.p`
   font-size: ${typography.FontSize.Text.RueDeLappe};
+`;
+
+export const TempTemoignageDiscoverStyle = styled(ContentStyle)`
+  margin-top: 20px;
+
+  &.yellow {
+    background-color: #fffdf4;
+  }
+`;
+
+export const TemoignageButtonStyle = styled.a`
+  width: fit-content;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: #4c41ab;
+  color: white !important;
+  text-decoration: none;
+`;
+
+export const TemoignageTextStyle = styled.p`
+  font-size: ${typography.FontSize.Text.Arrondissement};
+`;
+
+export const TemoignageBoldTextStyle = styled(TemoignageTextStyle)`
+  width: 50%;
+  font-weight: 600;
+  &.big {
+    font-size: ${typography.FontSize.Text.Arrondissement};
+  }
+`;
+
+export const TemoignageContainerStyle = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+export const TemoignageArrowsStyle = styled.div`
+  width: 100%;
+  order: 3;
+  text-align: end;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    order: initial;
+    width: 50%;
+  }
+`;
+
+export const TemoignageBlockStyle = styled.li`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: ${typography.FontSize.Text.Bastille};
+`;
+
+export const TemoignageRightScrollButtonStyle = styled(SvgScrollButton)`
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+`;
+
+export const TemoignageLeftScrollButtonStyle = styled(
+  TemoignageRightScrollButtonStyle
+)`
+  transform: rotate(180deg);
 `;
