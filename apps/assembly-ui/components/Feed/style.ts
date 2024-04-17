@@ -15,8 +15,10 @@ export const FeedContainerStyle = styled.section`
   gap: 40px;
   width: 100%;
   margin: 0 auto;
-  padding: ${spacings.m};
   max-width: ${intToPx(Breakpoints.LargeDesktop)};
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    padding: ${spacings.m};
+  }
 `;
 
 export const QuestionContainerStyle = styled.div`

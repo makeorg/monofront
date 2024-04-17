@@ -1,31 +1,26 @@
 import React, { FC, useState, useEffect } from 'react';
-import i18n from 'i18next';
 import ReactMarkdown from 'react-markdown';
-import { useIsSmallDevice } from '@make.org/utils/hooks/useIsSmallDevice';
 import { LLMErrorLimit } from '../Prompt/Stream';
 import {
   ContentStyle,
   ContentIconStyle,
   AnswerContainerStyle,
-  SourcesTitleStyle,
   TempTemoignageDiscoverStyle,
   QuestionStyle,
   ActionsButtonStyle,
 } from './style';
 import { Temoignage } from './Temoignage';
-import { SourcesMobile } from './SourcesMobile';
-import { Sources } from './Sources';
-import { FeedItemType, ChunkType } from '../../types';
+import { FeedItemType } from '../../types';
 import pano from '../../assets/IconPano.png';
 import { Actions } from './Actions';
 import { useAssemblyContext } from '../../store/context';
 import { useTracking } from '../Tracking/useTracking';
 import { TRANSCRIPT } from '.';
+import { ShowSources } from './Sources/ShowSources';
 
 type Props = { item: FeedItemType };
 
 export const Answer: FC<Props> = ({ item }) => {
-  const { isSmallDevice } = useIsSmallDevice();
   const [isTracked, setIsTracked] = useState(false);
   const [showParole, setShowParole] = useState(false);
   const { state } = useAssemblyContext();
@@ -56,13 +51,6 @@ export const Answer: FC<Props> = ({ item }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [item.text, isStreaming]);
 
-  const sources = (chunks: ChunkType[]) => {
-    if (isSmallDevice) {
-      return <SourcesMobile chunks={chunks} />;
-    }
-    return <Sources chunks={chunks} />;
-  };
-
   return (
     <>
       <ContentStyle>
@@ -75,12 +63,7 @@ export const Answer: FC<Props> = ({ item }) => {
                 <Actions item={item} />
               )}
               {item.chunks && item.chunks.length > 0 && (
-                <>
-                  <SourcesTitleStyle>
-                    {i18n.t('feed.sources')}&nbsp;
-                  </SourcesTitleStyle>
-                  {sources(item.chunks)}
-                </>
+                <ShowSources chunks={item.chunks} />
               )}
             </>
           )}

@@ -32,7 +32,8 @@
     "error": "Merci pour votre question. Je ne suis  pas certain d'être capable de vous donner la réponse adéquate. Par prudence, je vous propose de la reformuler différemment."
   },
   "feed": {
-    "sources": "Cette réponse est issue des éléments suivants :",
+    "sources": "Voir les sources",
+    "sources_answer": "Voici les sources de cette réponse :",
     "hyperlinks_title": "Pour compléter vos connaissances :",
     "document_sources": "Accéder à la réponse provenant des documents certifiés",
     "page": "page",
