@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import i18n from 'i18next';
 import user from '../../assets/User.png';
-import { DOCUMENT } from '.';
+import { DOCUMENT, TRANSCRIPT } from '.';
 import {
   QuestionContainerStyle,
   QuestionImgStyle,
@@ -18,6 +18,15 @@ export const Question: FC<Props> = ({ question, mode }) => {
   const compositeQuestion = () => {
     if (mode === DOCUMENT) {
       return `${i18n.t('feed.answer_document')}  ${question}`;
+    }
+
+    if (question === '') {
+      if (mode === DOCUMENT) {
+        return i18n.t('feed.sources_document');
+      }
+      if (mode === TRANSCRIPT) {
+        return i18n.t('feed.sources_video');
+      }
     }
 
     return question;

@@ -55,6 +55,13 @@ export type FeedType = {
   items: FeedItemType[];
 };
 
+export type SourceAnswerType = {
+  source_title: string;
+  source_url: string;
+  source_page: string;
+  source_speech_time: string;
+};
+
 export type FeedItemType = {
   id: string;
   question: string;
@@ -63,6 +70,7 @@ export type FeedItemType = {
   mode: string;
   language: string;
   displayActions?: boolean;
+  sources?: SourceAnswerType;
 };
 
 export type EventRouteType = {

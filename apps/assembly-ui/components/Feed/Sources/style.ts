@@ -68,28 +68,24 @@ export const SourcesContentContainerStyle = styled.div`
   }
 `;
 
-export const SourcesContentDocumentStyle = styled.a`
+export const SourcesContentDocumentStyle = styled.button`
   display: flex;
   align-items: center;
   padding: ${spacings.s};
   border: 1px solid #6cd29b;
   background-color: #f4fff9;
-
   border-radius: 10px;
   gap: ${spacings.xs};
   text-decoration: none;
   user-select: none;
   cursor: pointer;
+  text-align: left;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     gap: ${spacings.s};
   }
 `;
 
-export const SourcesContentVideoStyle = styled(
-  SourcesContentDocumentStyle
-).attrs({
-  as: 'div',
-})`
+export const SourcesContentVideoStyle = styled(SourcesContentDocumentStyle)`
   border: 1px solid #89c5e7;
   background-color: #f9feff;
 `;
@@ -125,10 +121,72 @@ export const SourcesSubStyle = styled(SourcesTitleStyle)`
   }
 `;
 
+export const SourcesAnswerContentDocumentStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${spacings.m};
+  background-color: #f4fff9;
+  border-radius: 10px;
+  padding: ${spacings.m};
+  font-size: ${typography.FontSize.Text.Bastille};
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    font-size: ${typography.FontSize.Text.Arrondissement};
+  }
+`;
+
+export const SourcesAnswerContentVideoStyle = styled(
+  SourcesAnswerContentDocumentStyle
+)`
+  background-color: #f9feff;
+`;
+
+export const SourcesAnswerTextIntroStyle = styled.div`
+  font-size: ${typography.FontSize.Text.Bastille};
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    font-size: ${typography.FontSize.Text.Arrondissement};
+  }
+`;
+
+export const SourcesAnswerTextBoldStyle = styled.span`
+  font-family: ${typography.FontFamily.Highlight};
+`;
+
+export const SourcesAnswerDocumentLink = styled.a`
+  width: fit-content;
+  line-height: 100%;
+  text-decoration: none;
+  user-select: none;
+  border: 1px solid #72c083;
+  background-color: #ffffff;
+  color: #72c083;
+  padding: 10px;
+  border-radius: 4px;
+
+  &:hover {
+    color: #72c083;
+  }
+`;
+
 export const ArrowLeftStyle = styled(ArrowLeft)``;
 
 export const ArrowBottomStyle = styled(ArrowBottom)``;
 
-export const SourcesDocumentStyle = styled(SourcesDocumentSvg)``;
+export const SourcesDocumentStyle = styled(SourcesDocumentSvg)`
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    width: 32px;
+    height: 32px;
+  }
+`;
 
-export const SourcesVideoStyle = styled(SourcesVideoSvg)``;
+export const SourcesVideoStyle = styled(SourcesVideoSvg)`
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    width: 32px;
+    height: 32px;
+  }
+`;

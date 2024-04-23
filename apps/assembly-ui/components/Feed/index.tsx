@@ -7,6 +7,7 @@ import { Answer } from './Answer';
 import { HistoryLimit } from './HistoryLimit';
 import { removeFeedLastItem } from '../../store/feed/actions';
 import { StreamLLM } from '../Prompt/Stream';
+import { SourcesAnswer } from './Sources/SourcesAnswer';
 import { useTracking } from '../Tracking/useTracking';
 
 export const TRANSCRIPT = 'transcriptStd';
@@ -85,7 +86,11 @@ export const Feed: FC = () => {
       {items.map(item => (
         <div role="article" key={item.id} id={item.id}>
           <Question question={item.question} mode={item.mode} />
-          <Answer item={item} />
+          {item.sources ? (
+            <SourcesAnswer item={item} />
+          ) : (
+            <Answer item={item} />
+          )}
         </div>
       ))}
     </FeedContainerStyle>

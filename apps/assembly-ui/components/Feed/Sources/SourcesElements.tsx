@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import i18n from 'i18next';
+import { v4 as uuidv4 } from 'uuid';
 import { ChunkType } from '../../../types';
 import {
   SourcesDocumentStyle,
@@ -11,9 +12,10 @@ import {
   SourcesContentDocumentStyle,
 } from './style';
 import { useTracking } from '../../Tracking/useTracking';
+import { addFeedItem } from '../../../store/feed/actions';
 import { useAssemblyContext } from '../../../store/context';
 import { useUtms } from '../../Tracking/useUtms';
-import { SOURCE_TYPE_DOCUMENT } from '..';
+import { SOURCE_TYPE_DOCUMENT, TRANSCRIPT, DOCUMENT } from '..';
 
 export const SourcesElements: FC<{ chunk: ChunkType }> = ({ chunk }) => {
   const {
@@ -22,14 +24,32 @@ export const SourcesElements: FC<{ chunk: ChunkType }> = ({ chunk }) => {
     document_source_type,
     speaker_name,
     page_number,
+    speech_time,
   } = chunk;
-  const { state } = useAssemblyContext();
+  const { state, dispatch } = useAssemblyContext();
   const { event, sessionId, visitorId } = state;
   const { slug: eventSlug, language: eventLanguage, id: eventId } = event;
   const utms = useUtms();
   const tracker = useTracking();
 
-  const onClick = () =>
+  const onClick = (mode: string) => {
+    const feedId = uuidv4() as string;
+    dispatch(
+      addFeedItem({
+        id: feedId,
+        mode,
+        question: '',
+        text: '',
+        language: eventLanguage,
+        sources: {
+          source_title: document_source_title,
+          source_url: document_source_url,
+          source_page: page_number || '',
+          source_speech_time: speech_time || '',
+        },
+      })
+    );
+    // Tracking to update
     tracker.track('ACTION-SOURCE-LINK', {
       visitor_id: visitorId,
       source_document_link: document_source_url,
@@ -40,14 +60,13 @@ export const SourcesElements: FC<{ chunk: ChunkType }> = ({ chunk }) => {
       assembly_event_id: eventId,
       ...utms,
     });
+  };
 
   if (chunk.document_source_type === SOURCE_TYPE_DOCUMENT) {
     return (
       <SourcesContentDocumentStyle
-        href={`${document_source_url}#page=${page_number}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={onClick}
+        type="button"
+        onClick={() => onClick(DOCUMENT)}
       >
         <SourcesDocumentStyle aria-hidden focusable="false" />
         <SourcesTitleContainerStyle>
@@ -61,7 +80,7 @@ export const SourcesElements: FC<{ chunk: ChunkType }> = ({ chunk }) => {
   }
 
   return (
-    <SourcesContentVideoStyle>
+    <SourcesContentVideoStyle type="button" onClick={() => onClick(TRANSCRIPT)}>
       <SourcesVideoStyle aria-hidden focusable="false" />
       <SourcesTitleContainerStyle>
         <SourcesTitleStyle>{document_source_title}</SourcesTitleStyle>

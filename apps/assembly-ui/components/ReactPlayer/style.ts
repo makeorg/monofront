@@ -12,20 +12,16 @@ export const ReactPlayerContainer = styled.div`
   background-color: white;
   max-width: 500px;
   aspect-ratio: 16/9;
+  width: 100%;
+
   .react-player {
     width: 100% !important;
     height: 100% !important;
   }
-  &.welcome {
-    width: 100%;
-  }
+
   &.cookies {
     border-radius: 10px;
     background: rgba(248, 248, 248, 1);
-  }
-  &.small {
-    font-size: ${typography.FontSize.Text.RueDeLappe};
-    width: 200px;
   }
 `;
 

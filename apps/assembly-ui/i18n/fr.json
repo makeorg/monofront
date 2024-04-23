@@ -40,7 +40,15 @@
     "previous_answer": "Vous cherchez vos questions précédentes ?",
     "archive": "Nous n'archivons que les 5 dernières questions que vous posez.",
     "retrieve": "Si vous voulez retrouver une précédente question, vous pouvez simplement la reposer !",
-    "answer_document": "Puis-je accéder à la réponse provenant des documents certifiés sur : "
+    "answer_document": "Puis-je accéder à la réponse provenant des documents certifiés sur : ",
+    "sources_document": "Est-ce que je peux consulter cette source documentaire ?",
+    "sources_video": "Est-ce que je peux consulter cette source vidéo ?",
+    "answer_sources_document": "Le document qui a permis d’alimenter la réponse de l’IA est le suivant : ",
+    "answer_sources_consult_doc": "Consulter le document",
+    "answer_sources_video": "Voici l’extrait vidéo de ",
+    "answer_sources_video_2": " qui a permis d’alimenter la réponse.",
+    "answer_sources_video_time": "Le passage utilisé pour répondre à votre question se situe à ce moment de la vidéo : ",
+    "answer_sources_video_extract": "Appuyez sur le bouton Lecture pour aller directement au bon moment de l’extrait."
   },
   "sidebar": {
     "explore": "Explorer",
