@@ -39,7 +39,16 @@
     "previous_answer": "Suchst du deine vorherigen Fragen?",
     "archive": "Wir speichern nur die letzten fünf Fragen, die du gestellt hast.",
     "retrieve": "Wenn du eine frühere Frage wiederfinden möchtest, kannst du sie einfach erneut stellen!",
-    "answer_document": "Kann ich auf die Antwort von zertifizierten Dokumenten zugreifen: "
+    "answer_document": "Kann ich auf die Antwort von zertifizierten Dokumenten zugreifen: ",
+    "sources_answer": "@@feed.sources_answer|fr:Voici les sources de cette réponse :",
+    "sources_document": "@@feed.sources_document|fr:Est-ce que je peux consulter cette source documentaire ?",
+    "sources_video": "@@feed.sources_video|fr:Est-ce que je peux consulter cette source vidéo ?",
+    "answer_sources_document": "@@feed.answer_sources_document|fr:Le document qui a permis d’alimenter la réponse de l’IA est le suivant : ",
+    "answer_sources_consult_doc": "@@feed.answer_sources_consult_doc|fr:Consulter le document",
+    "answer_sources_video": "@@feed.answer_sources_video|fr:Voici l’extrait vidéo de ",
+    "answer_sources_video_2": "@@feed.answer_sources_video_2|fr: qui a permis d’alimenter la réponse.",
+    "answer_sources_video_time": "@@feed.answer_sources_video_time|fr:Le passage utilisé pour répondre à votre question se situe à ce moment de la vidéo : ",
+    "answer_sources_video_extract": "@@feed.answer_sources_video_extract|fr:Appuyez sur le bouton Lecture pour aller directement au bon moment de l’extrait."
   },
   "sidebar": {
     "explore": "Mehr entdecken",

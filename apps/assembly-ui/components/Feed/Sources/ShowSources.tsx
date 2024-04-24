@@ -1,6 +1,8 @@
 import React, { FC, useState } from 'react';
 import i18n from 'i18next';
 import { ChunkType } from '../../../types';
+import { useTracking } from '../../Tracking/useTracking';
+import { useAssemblyContext } from '../../../store/context';
 import {
   SourcesDocumentStyle,
   SourcesVideoStyle,
@@ -19,12 +21,28 @@ import { SOURCE_TYPE_DOCUMENT } from '..';
 export const ShowSources: FC<{
   chunks: ChunkType[];
 }> = ({ chunks }) => {
-  const [showSources, setShowSources] = useState(false);
+  const { state } = useAssemblyContext();
+  const { event, visitorId } = state;
+  const { slug: eventSlug } = event;
+  const [showSources, setShowSources] = useState<boolean>(false);
+  const tracker = useTracking();
+
+  const handleClick = (displaySources: boolean) => {
+    setShowSources(displaySources);
+    tracker.track('ACTION-TOGGLE-SOURCE', {
+      visitor_id: visitorId,
+      event_slug: eventSlug,
+      expand: displaySources ? 'true' : 'false',
+    });
+  };
+
+  const generateChunckId = (chunk: ChunkType, index: number) =>
+    `${chunk.document_source_title} ${index}`;
 
   if (!showSources) {
     return (
       <SourcesContainerButtonStyle
-        onClick={() => setShowSources(!showSources)}
+        onClick={() => handleClick(true)}
         aria-expanded={showSources}
       >
         <SourcesTextIconBlockStyle>
@@ -32,9 +50,17 @@ export const ShowSources: FC<{
           <SourcesIconsContainerStyle>
             {chunks.map((chunk, index) =>
               chunk.document_source_type === SOURCE_TYPE_DOCUMENT ? (
-                <SourcesDocumentStyle aria-hidden focusable="false" />
+                <SourcesDocumentStyle
+                  aria-hidden
+                  focusable="false"
+                  key={generateChunckId(chunk, index)}
+                />
               ) : (
-                <SourcesVideoStyle aria-hidden focusable="false" />
+                <SourcesVideoStyle
+                  aria-hidden
+                  focusable="false"
+                  key={generateChunckId(chunk, index)}
+                />
               )
             )}
           </SourcesIconsContainerStyle>
@@ -47,7 +73,7 @@ export const ShowSources: FC<{
   return (
     <SourcesContainerStyle>
       <SourcesTextButtonStyle
-        onClick={() => setShowSources(!showSources)}
+        onClick={() => handleClick(false)}
         aria-expanded={showSources}
       >
         <p>{i18n.t('feed.sources_answer')}</p>
@@ -55,7 +81,7 @@ export const ShowSources: FC<{
       </SourcesTextButtonStyle>
       <SourcesContentContainerStyle>
         {chunks.map((chunk, index) => (
-          <SourcesElements chunk={chunk} />
+          <SourcesElements chunk={chunk} key={generateChunckId(chunk, index)} />
         ))}
       </SourcesContentContainerStyle>
     </SourcesContainerStyle>

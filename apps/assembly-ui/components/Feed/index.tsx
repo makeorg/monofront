@@ -35,7 +35,6 @@ export const Feed: FC = () => {
   const { items } = feed;
   const [maxHistory, setMaxHistory] = useState(false);
   const FEED_MAX_LENGTH = 5;
-
   const { search } = useLocation();
   const urlSearchParams = new URLSearchParams(search);
   const searchQuery = urlSearchParams.get(RESPONSE_TRIGGER_PARAM);

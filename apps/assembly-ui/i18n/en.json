@@ -39,7 +39,16 @@
     "previous_answer": "Looking for your previous questions?",
     "archive": "We only archive your last 5 questions.",
     "retrieve": "If you want to find a previous answer, you can simply ask it again!",
-    "answer_document": "May I access the reply sourced from certified documents: "
+    "answer_document": "May I access the reply sourced from certified documents: ",
+    "sources_answer": "@@feed.sources_answer|fr:Voici les sources de cette réponse :",
+    "sources_document": "@@feed.sources_document|fr:Est-ce que je peux consulter cette source documentaire ?",
+    "sources_video": "@@feed.sources_video|fr:Est-ce que je peux consulter cette source vidéo ?",
+    "answer_sources_document": "@@feed.answer_sources_document|fr:Le document qui a permis d’alimenter la réponse de l’IA est le suivant : ",
+    "answer_sources_consult_doc": "@@feed.answer_sources_consult_doc|fr:Consulter le document",
+    "answer_sources_video": "@@feed.answer_sources_video|fr:Voici l’extrait vidéo de ",
+    "answer_sources_video_2": "@@feed.answer_sources_video_2|fr: qui a permis d’alimenter la réponse.",
+    "answer_sources_video_time": "@@feed.answer_sources_video_time|fr:Le passage utilisé pour répondre à votre question se situe à ce moment de la vidéo : ",
+    "answer_sources_video_extract": "@@feed.answer_sources_video_extract|fr:Appuyez sur le bouton Lecture pour aller directement au bon moment de l’extrait."
   },
   "sidebar": {
     "explore": "Explore",

@@ -231,6 +231,31 @@ EVENTS:
         optional: true
         recipients: ['business']
 
+  ACTION-TOGGLE-SOURCE:
+    key: action-toggle-source
+    description: Open or close sources panel
+    recipients: ['product']
+    parameters:
+      - key: visitor_id
+        description: Unique visitor identifier
+        purpose: Segmentation by unique visitor
+        example: 00000000-0000-0000-0000-000000000000
+        optional: true
+        recipients: ['product', 'business']
+      - key: event_slug
+        description: The event slug
+        purpose: Subject segmentation - service improvement
+        example: convention-fin-de-vie
+        recipients: ['product']
+      - key: expand
+        description: Open or close sources panel
+        purpose: Subject segmentation - service improvement
+        example: 'true'
+        values:
+          - 'true'
+          - 'false'
+        recipients: ['product']
+
   DISPLAY-PROMPT-ANSWER:
     key: display-prompt-answer
     description: Display of generated response (at end of stream)

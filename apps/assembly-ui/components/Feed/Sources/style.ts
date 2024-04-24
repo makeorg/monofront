@@ -5,8 +5,8 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import styled from 'styled-components';
 import { SourcesVideoSvg } from '../../../assets/SourcesVideo';
 import { SourcesDocumentSvg } from '../../../assets/SourcesDocument';
-import { ArrowLeft } from '../../../assets/arrow_left';
-import { ArrowBottom } from '../../../assets/arrow_bottom';
+import { ArrowLeft } from '../../../assets/ArrowLeft';
+import { ArrowBottom } from '../../../assets/ArrowBottom';
 
 export const SourcesContainerStyle = styled.div`
   justify-content: space-between;

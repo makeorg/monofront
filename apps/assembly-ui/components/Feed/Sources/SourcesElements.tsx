@@ -49,7 +49,6 @@ export const SourcesElements: FC<{ chunk: ChunkType }> = ({ chunk }) => {
         },
       })
     );
-    // Tracking to update
     tracker.track('ACTION-SOURCE-LINK', {
       visitor_id: visitorId,
       source_document_link: document_source_url,
