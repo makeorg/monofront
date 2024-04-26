@@ -11,6 +11,13 @@ export type LinksType = {
   url: string;
 };
 
+export type DocumentSourceType = {
+  name: string;
+  type: 'AUDIO' | 'VIDEO' | 'PDF';
+  title: string;
+  url: string;
+};
+
 export type EventType = {
   id: string;
   slug: string;
@@ -76,8 +83,9 @@ export type FeedItemType = {
 export type EventRouteType = {
   customer: CustomerType;
   event: EventType;
-  termQueries: TermQueryType[];
-  generatedContents: GeneratedContentType[];
+  termQueries: TermQueryType[] | [];
+  generatedContents: GeneratedContentType[] | [];
+  documentSources: DocumentSourceType[] | [];
 };
 
 export type AssemblyStateType = {

@@ -7,6 +7,7 @@ import {
 } from '@make.org/tracking/types';
 import {
   LLM_PATH,
+  DOCUMENTS_PATH,
   // ROUTE_ASSEMBLY_ROOT,
   // ROUTE_ASSEMBLY_CUSTOMER,
   ROUTE_ASSEMBLY_EVENT,
@@ -19,9 +20,11 @@ import {
   ROUTE_ASSEMBLY_TW_CONVERSION,
   ROUTE_ASSEMBLY_CONSENT,
   ROUTE_ASSEMBLY_LOGGER,
+  ROUTE_ASSEMBLY_EVENT_DOCUMENT_SOURCES,
 } from '../utils/routes';
 import { defaultRoute } from './ssr/defaultRoute';
 import { eventRoute } from './ssr/eventRoute';
+import { documentSourcesRoute } from './ssr/documentSourcesRoute';
 import {
   ASSEMBLY_IMAGES_DIR,
   ASSEMBLY_ASSETS_DIR,
@@ -31,6 +34,7 @@ import {
 import * as technicalPages from './technicalPages';
 import * as conversionApi from './conversionApi';
 import { getLLMAnswer } from './api/LLM';
+import { getDocumentSources } from './api/Sources';
 import { consentRoute } from './ssr/consentRoute';
 import { loggerRoute } from './ssr/loggerRoute';
 
@@ -85,6 +89,7 @@ export const initRoutes = (
 
   app.use(LLM_PATH, getLLMAnswer);
 
+  app.use(DOCUMENTS_PATH, getDocumentSources);
   // Assembly Routes
   app.get('/robots.txt', technicalPages.renderRobot);
   app.get('/.well-known/security.txt', technicalPages.renderSecurityTxt);
@@ -105,6 +110,7 @@ export const initRoutes = (
   // app.get(ROUTE_ASSEMBLY_CUSTOMER, defaultRoute);
   // app.get(ROUTE_ASSEMBLY_ROOT, defaultRoute);
   app.get(ROUTE_ASSEMBLY_EVENT, eventRoute);
+  app.get(ROUTE_ASSEMBLY_EVENT_DOCUMENT_SOURCES, documentSourcesRoute);
   app.get(ROUTE_ASSEMBLY_NOT_FOUND, defaultRoute);
   app.get(ROUTE_ASSEMBLY_PRIVACY_POLICY, defaultRoute);
   app.get(ROUTE_ASSEMBLY_LEGAL, defaultRoute);

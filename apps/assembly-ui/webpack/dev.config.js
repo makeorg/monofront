@@ -35,7 +35,7 @@ const devConfig = envConfigPath => ({
   resolve: {
     extensions: ['.ts', '.js', '.tsx', 'yaml'],
     alias: resolveTsconfigPathsToAlias(),
-    fallback: { "crypto": false, "path": false, "fs": false },
+    fallback: { crypto: false, path: false, fs: false },
   },
 
   plugins: [

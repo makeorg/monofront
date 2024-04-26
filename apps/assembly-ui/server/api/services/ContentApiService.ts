@@ -8,8 +8,28 @@ const CUSTOMERS_PATH = '/assembly/customers';
 const EVENTS_PATH = '/assembly/events';
 const TERM_QUERIES_PATH = '/assembly/events/:eventId/termQueries';
 const GENERATED_CONTENTS_PATH = '/assembly/events/:eventId/generatedContent';
+const DOCUMENT_SOURCES_PATH = '/assembly/events/:eventId/documentSources';
 
 export class ContentApiService {
+  static getDocumentSources(
+    eventId: string,
+    _start?: number,
+    _end?: number,
+    headers?: Record<string, string>
+  ): Promise<void | AxiosResponse> {
+    return ContentApi.callApi(
+      DOCUMENT_SOURCES_PATH.replace(':eventId', eventId),
+      {
+        method: 'GET',
+        headers,
+        params: {
+          _start,
+          _end,
+        },
+      }
+    );
+  }
+
   static getCustomers(
     slug?: string,
     headers?: Record<string, string>

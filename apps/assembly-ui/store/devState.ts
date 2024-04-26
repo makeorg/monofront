@@ -8,7 +8,7 @@ const AssemblyDevState: AssemblyGlobalStateType = {
   },
   event: {
     customerId: '18565a9f-170a-485b-80e9-857e3a860b15',
-    id: '5c47b1f2-2e04-459c-8a6b-3616e754481f',
+    id: 'a6da006f-a0bd-4b6c-baed-787f5aee80aa',
     slug: 'convention-citoyenne-fin-de-vie',
     language: 'fr',
     name: 'Convention citoyenne de la fin de vie',
@@ -121,6 +121,7 @@ const AssemblyDevState: AssemblyGlobalStateType = {
   language: 'en',
   sessionId: '',
   visitorId: '',
+  documentSources: [],
 };
 
 export const initAssemblyDevState = (): AssemblyGlobalStateType =>

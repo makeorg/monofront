@@ -1,10 +1,12 @@
 import React, { FC } from 'react';
 import i18n from 'i18next';
+import { Link } from 'react-router-dom';
 import {
   ROUTE_ASSEMBLY_PRIVACY_POLICY,
   ROUTE_ASSEMBLY_COOKIES,
   ROUTE_ASSEMBLY_LEGAL,
   ROUTE_ASSEMBLY_ABOUT,
+  getRouteAssemblyEventDocumentSources,
 } from '../../utils/routes';
 import {
   SidebarContentContainerStyle,
@@ -17,9 +19,14 @@ import {
 } from './style';
 import { useAssemblyContext } from '../../store/context';
 
-export const SidebarContent: FC = () => {
+type Props = {
+  closeModal: () => void;
+};
+
+export const SidebarContent: FC<Props> = ({ closeModal }) => {
   const { state } = useAssemblyContext();
-  const { links } = state.event;
+  const { event, customer } = state;
+  const { links } = event;
 
   const linkPanoramicArray = [
     {
@@ -41,6 +48,11 @@ export const SidebarContent: FC = () => {
       title: i18n.t('sidebar.legal'),
       url: ROUTE_ASSEMBLY_LEGAL,
       redirect: true,
+    },
+    {
+      title: i18n.t('sidebar.sources'),
+      url: getRouteAssemblyEventDocumentSources(customer.slug, event.slug),
+      redirect: false,
     },
     {
       title: i18n.t('sidebar.about'),
@@ -87,7 +99,11 @@ export const SidebarContent: FC = () => {
                   <SidebarSvgExternalStyle aria-hidden focusable="false" />
                 </SidebarContentLinkStyle>
               ) : (
-                <SidebarContentLinkStyle href={link.url}>
+                <SidebarContentLinkStyle
+                  as={Link}
+                  to={link.url}
+                  onClick={closeModal}
+                >
                   {link.title}
                 </SidebarContentLinkStyle>
               )}

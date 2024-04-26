@@ -2,11 +2,13 @@ import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import NodeCache from 'node-cache';
 import hash from 'object-hash';
 import { ServerLogger } from '@make.org/logger/serverLogger';
+import { DOCUMENT_PAGE_LIMIT } from '../../utils/constants';
 import {
   TermQueryType,
   EventType,
   GeneratedContentType,
   CustomerType,
+  DocumentSourceType,
 } from '../../types/index.d';
 import { ContentApiService } from './services/ContentApiService';
 
@@ -14,6 +16,59 @@ const cache = new NodeCache({ stdTTL: 300 });
 
 const clearCache = (): void => {
   cache.flushAll();
+};
+
+/**
+ * Get all documment sources of an event by his id
+ * @param  {String} eventId
+ * @param  {Function} notFound
+ * @param  {Function} unexpectedError
+ *
+ * @return {Promise}
+ */
+const getDocumentSources = async (
+  eventId: string,
+  notFound: () => void,
+  unexpectedError: () => void
+): Promise<void | DocumentSourceType[]> => {
+  try {
+    const response = await ContentApiService.getDocumentSources(
+      eventId,
+      0,
+      DOCUMENT_PAGE_LIMIT
+    );
+
+    const documentSources: DocumentSourceType[] = [];
+
+    if (!response || !response.data) {
+      return documentSources;
+    }
+
+    response.data.map((documentSource: DocumentSourceType) => {
+      const source = {
+        name: documentSource.name,
+        title: documentSource.title,
+        type: documentSource.type,
+        url: documentSource.url,
+      };
+
+      return documentSources.push(source);
+    });
+
+    return documentSources;
+  } catch (error: unknown) {
+    const apiServiceError = error as ApiServiceError;
+    if (apiServiceError.status === 404) {
+      return notFound();
+    }
+    ServerLogger.getInstance().logError(
+      apiServiceError.clone(
+        `error in server/api/Content/getDocumentSources: ${apiServiceError.message}`
+      )
+    );
+
+    return unexpectedError();
+  }
 };
 
 /**
@@ -252,6 +307,7 @@ const getGeneratedContents = async (
 };
 
 export const ContentService = {
+  getDocumentSources,
   getCustomerBySlug,
   getEventBySlug,
   getTermQueries,

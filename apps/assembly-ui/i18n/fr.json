@@ -58,7 +58,8 @@
     "policy": "Politique de confidentialité",
     "cookie": "Gestion des cookies",
     "legal": "Mentions légales",
-    "about": "À propos de Make.org"
+    "about": "À propos de Make.org",
+    "sources": "Consulter les sources"
   },
   "error": {
     "not_found": "404",
@@ -126,5 +127,11 @@
     "theme_third": "Thématique 3",
     "theme_fourth": "Thématique 4",
     "warning": "Détail important"
+  },
+  "sources_page": {
+    "consult": "Consulter les sources :",
+    "docs": "Les sources documentaires :",
+    "videos": "Les sources vidéos :",
+    "see": "Consulter l'évènement"
   }
 }

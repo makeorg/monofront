@@ -58,7 +58,8 @@
     "policy": "Datenschutzerklärung",
     "cookie": "Cookie-Richtlinie",
     "legal": "Impressum",
-    "about": "Über Make.org"
+    "about": "Über Make.org",
+    "sources": "@@sidebar.sources|fr:Consulter les sources"
   },
   "error": {
     "not_found": "404",
@@ -126,5 +127,11 @@
     "theme_third": "Thema 3",
     "theme_fourth": "Thema 4",
     "warning": "Wichtiger Detail"
+  },
+  "sources_page": {
+    "consult": "@@sources_page.consult|fr:Consulter les sources :",
+    "docs": "@@sources_page.docs|fr:Les sources documentaires :",
+    "see": "@@sources_page.see|fr:Voir l'évènement",
+    "videos": "@@sources_page.videos|fr:Les sources vidéos :"
   }
 }

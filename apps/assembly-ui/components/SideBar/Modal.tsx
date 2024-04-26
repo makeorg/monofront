@@ -60,7 +60,7 @@ export const SidebarModal: FC<Props> = ({ open, close }) => {
             <SidebarCloseLogo />
           </SidebarCloseStyle>
         </SidebarTitleCloseStyle>
-        <SidebarContent />
+        <SidebarContent closeModal={handleClose} />
         <SidebarMakeStyle>
           {i18n.t('sidebar.exp')}
           <LogoMakeStyle focusable="false" aria-hidden />

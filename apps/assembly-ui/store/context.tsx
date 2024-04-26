@@ -17,6 +17,7 @@ import {
 import { DEFAULT_LANGUAGE } from '../utils/constants';
 import { AssemblyGlobalStateType } from '../types';
 import { feed_reducer } from './feed/reducer';
+import { event_sources_reducer } from './eventSources/reducer';
 import { session_reducer, visitor_reducer } from './sessionVisitor/reducer';
 
 const emptyAssemblyState: AssemblyGlobalStateType = {
@@ -38,6 +39,7 @@ const emptyAssemblyState: AssemblyGlobalStateType = {
   language: DEFAULT_LANGUAGE,
   sessionId: '',
   visitorId: '',
+  documentSources: [],
 };
 
 export const initAssemblyEmptyState = (): AssemblyGlobalStateType =>
@@ -62,6 +64,7 @@ const rootReducer = combineReducers({
   feed: feed_reducer,
   sessionId: session_reducer,
   visitorId: visitor_reducer,
+  documentSources: event_sources_reducer,
 });
 
 const useAllReducers = (

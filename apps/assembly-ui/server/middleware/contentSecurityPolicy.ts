@@ -42,6 +42,7 @@ export const assemblyCspMiddleware = (
       connectSrc: [
         env.frontUrl() || '',
         env.apiUrlClientSide() || '',
+        env.contentUrlServerSide() || '',
         'https://*.makeorg.tech',
         'https://*.make.org',
         'https://api-eu.mixpanel.com',

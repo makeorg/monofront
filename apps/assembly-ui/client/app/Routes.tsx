@@ -11,6 +11,7 @@ import {
   ROUTE_ASSEMBLY_COOKIES,
   ROUTE_ASSEMBLY_LEGAL,
   ROUTE_ASSEMBLY_ABOUT,
+  ROUTE_ASSEMBLY_EVENT_DOCUMENT_SOURCES,
 } from '../../utils/routes';
 
 const NotFoundPage = loadable(() => import('../pages/NotFound'));
@@ -21,6 +22,10 @@ const PrivacyPolicyPage = loadable(
 const CookiesPage = loadable(() => import('../pages/Static/Cookies'));
 const LegalPage = loadable(() => import('../pages/Static/Legal'));
 const AboutPage = loadable(() => import('../pages/About'));
+const EventDocumentSourcesPage = loadable(
+  () => import('../pages/EventSources/documentSources')
+);
+
 // const HomePage = loadable(() => import('../pages/Home'));
 // const CustomerPage = loadable(() => import('../pages/Customer'));
 
@@ -38,6 +43,11 @@ export const Routes: FC = () => (
     <Route exact path={ROUTE_ASSEMBLY_COOKIES} component={CookiesPage} />
     <Route exact path={ROUTE_ASSEMBLY_EVENT} component={EventPage} />
     <Route exact path={ROUTE_ASSEMBLY_ABOUT} component={AboutPage} />
+    <Route
+      exact
+      path={ROUTE_ASSEMBLY_EVENT_DOCUMENT_SOURCES}
+      component={EventDocumentSourcesPage}
+    />
 
     <Redirect path="*" to={ROUTE_ASSEMBLY_NOT_FOUND} />
   </Switch>
