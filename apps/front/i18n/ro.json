@@ -986,7 +986,7 @@
         "title_one": "Topul ideilor care au întrunit o largă adeziune, grupate în {{count}} categorie",
         "title_few": "Topul ideilor care au întrunit o largă adeziune, grupate în {{count}} categorii",
         "title_other": "Topul ideilor care au întrunit o largă adeziune, grupate în {{count}} categorii",
-        "introduction": "După ce ajung pe platformă, cele mai bune propuneri cetățenești sunt grupate în jurul unor idei principale care structurează consultarea. Pentru a clasifica aceste idei, algoritmul Make.org ia în considerare voturile « pro » și  « contra », precum și precizările « preferință » « realistă » « banalitate » și « în niciun caz! ».",
+        "introduction": "După ce ajung pe platformă, cele mai bune propuneri cetățenești sunt grupate în jurul unor idei principale care structurează consultarea. Pentru a clasifica aceste idei, algoritmul Make.org ia în considerare voturile « pro » și « contra », precum și precizările « preferință » « realistă » « banalitate » și « în niciun caz! ».",
         "axe_title": "Categorie {{count}}: {{name}}"
       },
       "proposals": {
