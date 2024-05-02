@@ -112,6 +112,7 @@ export const mixpnl = {
         api_host: MIXPANEL_API_HOST,
         opt_out_tracking_by_default: false,
         disable_persistence: true,
+        track_pageview: 'url-with-path-and-query-string',
         // debug: true
       });
     } catch (e) {
