@@ -39,7 +39,7 @@ $ docker ps
 # launch the build script in the container
 $ docker exec -it CONTAINER_ID yarn workspace @make.org/assembly-ui build
 # Restart the container
-$ docker-compose -f docker-compose.dev.yaml up -d --profile=assembly-ui-ssr restart
+$ docker-compose -f docker-compose.dev.yaml --profile=assembly-ui-ssr restart
 ```
 
 ### i18n
