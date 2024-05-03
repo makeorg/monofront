@@ -163,14 +163,14 @@ stages:
       || { echo "Rundeck Job is not correctly launched"; exit 1; };
 
       status='running';
-      while [ "${status}" == 'running' ]; do
+      while [[ "${status}" =~ ^(running|scheduled)$ ]]; do
         status=$(curl -s -X "GET" \
           -H "Accept: application/json" \
           -H "Content-Type: application/x-www-form-urlencoded" \
           -H "X-Rundeck-Auth-Token: ${RUNDECK_TOKEN}" \
           ${RUNDECK_URL}/api/16/execution/${job_id} \
           | jq -r '.status');
-        [ "${status}" == 'running' ] \
+        [[ "${status}" =~ ^(running|scheduled)$ ]] \
         && { echo -e "Job ${job_id} is still running ... \nWaiting 5s ..."; sleep 5; };
       done;
 
