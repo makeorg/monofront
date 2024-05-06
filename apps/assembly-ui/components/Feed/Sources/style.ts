@@ -37,6 +37,7 @@ export const SourcesTextIconBlockStyle = styled.div`
   gap: ${spacings.sm};
   user-select: none;
   align-items: flex-start;
+  color: black;
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     gap: ${spacings.m};
   }
