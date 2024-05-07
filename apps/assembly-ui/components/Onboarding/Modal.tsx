@@ -23,8 +23,8 @@ export const OnboardingModal: FC = () => {
   const { event, visitorId } = state;
   const { slug: eventSlug } = event;
   const urlSearchParams = new URLSearchParams(search);
-  const searchQuery = urlSearchParams.get(DISPLAY_ONBOARDING_PARAM);
-  const showOnboarding = searchQuery !== 'false';
+  const showOnboarding =
+    urlSearchParams.get(DISPLAY_ONBOARDING_PARAM) !== 'false';
   const [isOpen, setIsOpen] = useState<boolean>(showOnboarding);
 
   useEffect(() => {

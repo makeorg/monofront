@@ -7,8 +7,8 @@ import { Answer } from './Answer';
 import { HistoryLimit } from './HistoryLimit';
 import { removeFeedLastItem } from '../../store/feed/actions';
 import { StreamLLM } from '../Prompt/Stream';
-import { SourcesAnswer } from './Sources/SourcesAnswer';
 import { useTracking } from '../Tracking/useTracking';
+import { SourcesAnswer } from './Sources/SourcesAnswer';
 
 export const TRANSCRIPT = 'transcriptStd';
 export const DOCUMENT = 'documentStd';
@@ -35,19 +35,22 @@ export const Feed: FC = () => {
   const { items } = feed;
   const [maxHistory, setMaxHistory] = useState(false);
   const FEED_MAX_LENGTH = 5;
+
   const { search } = useLocation();
   const urlSearchParams = new URLSearchParams(search);
-  const searchQuery = urlSearchParams.get(RESPONSE_TRIGGER_PARAM);
-  const decodedQuery = decodeURIComponent(searchQuery || '');
-  const responseTriggerTermQuery = termQueries.find(
-    termQuery => termQuery.title.toLowerCase() === decodedQuery.toLowerCase()
-  );
-  const tracker = useTracking();
-
+  const searchTitle = urlSearchParams
+    .get(RESPONSE_TRIGGER_PARAM)
+    ?.toLowerCase();
+  const responseTriggerTermQuery = searchTitle
+    ? termQueries.find(
+        termQuery => termQuery.title.toLowerCase() === searchTitle
+      )
+    : undefined;
   const { startStream } = StreamLLM(
     responseTriggerTermQuery?.value || '',
     TRANSCRIPT
   );
+  const tracker = useTracking();
 
   useEffect(() => {
     if (responseTriggerTermQuery) {
