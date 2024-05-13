@@ -30,6 +30,7 @@ export const getCountriesTransMap = (): Map<string, string> =>
     ['LT', i18n.t('countries.LT')],
     ['LU', i18n.t('countries.LU')],
     ['LV', i18n.t('countries.LV')],
+    ['MD', i18n.t('countries.MD')],
     ['MT', i18n.t('countries.MT')],
     ['NL', i18n.t('countries.NL')],
     ['NO', i18n.t('countries.NO')],

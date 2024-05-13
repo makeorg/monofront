@@ -1411,7 +1411,8 @@
     "SI": "Σλοβενία",
     "SK": "Σλοβακία",
     "US": "ΗΠΑ",
-    "UA": "Ουκρανία"
+    "UA": "Ουκρανία",
+    "MD": "@@countries.MD|fr:Moldavie"
   },
   "languages": {
     "fr": "Français",

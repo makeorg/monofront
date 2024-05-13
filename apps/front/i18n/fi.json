@@ -1308,7 +1308,8 @@
     "SI": "Slovenia",
     "SK": "Slovakia",
     "US": "Yhdysvallat",
-    "UA": "Ukraina"
+    "UA": "Ukraina",
+    "MD": "@@countries.MD|fr:Moldavie"
   },
   "languages": {
     "fr": "Français",

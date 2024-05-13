@@ -1354,7 +1354,8 @@
     "SI": "Slovinsko",
     "SK": "Slovensko",
     "UA": "Ukrajina",
-    "US": "USA"
+    "US": "USA",
+    "MD": "@@countries.MD|fr:Moldavie"
   },
   "languages": {
     "fr": "Français",

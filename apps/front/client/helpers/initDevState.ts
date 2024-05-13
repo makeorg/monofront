@@ -37,6 +37,7 @@ export const initDevState = (initialState: StateRoot): StateRoot => ({
       'LT',
       'LU',
       'LV',
+      'MD',
       'MT',
       'NL',
       'NO',
