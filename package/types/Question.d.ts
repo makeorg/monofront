@@ -188,6 +188,7 @@ export type QuestionType = {
   };
   demographicsCardCount: number;
   languages: string[];
+  reportUrl?: string;
 };
 
 export type CountsByQuestionType = {

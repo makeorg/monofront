@@ -30,7 +30,7 @@ import { ResultsContext } from '../../app/Consultation/Results/Context';
 import { Timeline } from '../../app/Consultation/Timeline';
 import { CitizenRegister } from '../../app/Consultation/CitizenRegister';
 import { ResultCard } from '../../app/Consultation/Results/ResultCard';
-import { ResultsContact } from '../../app/Consultation/Results/Contact';
+import { ResultsReport } from '../../app/Consultation/Results/Report';
 import { ResultsSkipLinks } from '../../app/SkipLinks/Results';
 
 const NotFoundPage = loadable(() => import('../NotFound'));
@@ -186,7 +186,7 @@ const ResultPage: FC<Props> = ({ logger }) => {
                   aboutUrl={question.aboutUrl}
                 />
               )}
-              <ResultsContact question={question} />
+              {question.reportUrl && <ResultsReport question={question} />}
             </ParticipateSidebarContentStyle>
           </ParticipateInnerStyle>
         </ParticipateContentStyle>

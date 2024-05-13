@@ -27,4 +27,3 @@ Feature: results Page
     And I see "La cartographie du débat" in "cartography" container 
     And I see "Les propositions les plus controversées" in "proposals-controversials" container 
     And I see "Les participants à la consultation" in "participants-chart" container 
-    And I see "Obtenez le rapport complet" in "contact" container 

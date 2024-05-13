@@ -3,9 +3,14 @@ import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { BorderRadius } from '@make.org/ui/elements/CardsElements';
 import { intToPx } from '@make.org/utils/helpers/styled';
+import { LinkAsRedButton } from '@make.org/ui/elements/LinkElements';
 import styled from 'styled-components';
 import { TitleXXSStyle } from '@make.org/designsystem/components/Typography/Titles/style';
 import { TextMStyle } from '@make.org/designsystem/components/Typography/Text/style';
+
+export const ResultCardReportButtonStyle = styled(LinkAsRedButton)`
+  width: fit-content;
+`;
 
 export const ResultCardSidebarStyle = styled.section<{ isContext: boolean }>`
   display: flex;

@@ -41,6 +41,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js', '.tsx', 'yaml'],
     alias: resolveTsconfigPathsToAlias(),
+    fallback: { path: false, fs: false },
   },
 
   plugins: [
