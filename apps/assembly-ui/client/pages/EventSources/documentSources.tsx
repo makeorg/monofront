@@ -12,6 +12,7 @@ import {
   DocumentSourcesPageButtonStyle,
   SvgArrowLeftStyle,
 } from './style';
+import { DocumentSourceType } from '../../../types';
 
 const EventDocumentSourcesPage: FC = () => {
   const { state, dispatch } = useAssemblyContext();
@@ -31,12 +32,13 @@ const EventDocumentSourcesPage: FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const videoDocument = documentSources?.filter(
-    document => document.type === 'VIDEO'
-  );
-  const pdfDocument = documentSources?.filter(
-    document => document.type === 'PDF'
-  );
+  const sortDocumentsByType = (documents: DocumentSourceType[], type: string) =>
+    documents
+      ?.filter(document => document.type === type)
+      .sort((a, b) => a.name.localeCompare(b.name));
+
+  const videoDocument = sortDocumentsByType(documentSources, 'VIDEO');
+  const pdfDocument = sortDocumentsByType(documentSources, 'PDF');
 
   return (
     <DocumentSourcesPageContainerStyle>
@@ -56,7 +58,7 @@ const EventDocumentSourcesPage: FC = () => {
           {i18n.t('sources_page.videos')}
         </DocumentSourcesPageSubTitleStyle>
         <DocumentSourcesPageUlStyle>
-          {videoDocument?.map(document => (
+          {videoDocument?.map((document: DocumentSourceType) => (
             <li key={document.name}>
               <a href={document.url} target="_blank" rel="noreferrer">
                 {document.name}
@@ -70,7 +72,7 @@ const EventDocumentSourcesPage: FC = () => {
           {i18n.t('sources_page.docs')}
         </DocumentSourcesPageSubTitleStyle>
         <DocumentSourcesPageUlStyle>
-          {pdfDocument?.map(document => (
+          {pdfDocument?.map((document: DocumentSourceType) => (
             <li key={document.name}>
               <a href={document.url} target="_blank" rel="noreferrer">
                 {document.name}

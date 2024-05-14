@@ -32,39 +32,41 @@ export const SidebarContent: FC<Props> = ({ closeModal }) => {
     {
       title: i18n.t('sidebar.discover'),
       url: ROUTE_ASSEMBLY_ABOUT,
-      redirect: true,
     },
     {
       title: i18n.t('sidebar.policy'),
       url: ROUTE_ASSEMBLY_PRIVACY_POLICY,
-      redirect: true,
     },
     {
       title: i18n.t('sidebar.cookie'),
       url: ROUTE_ASSEMBLY_COOKIES,
-      redirect: true,
     },
     {
       title: i18n.t('sidebar.legal'),
       url: ROUTE_ASSEMBLY_LEGAL,
-      redirect: true,
-    },
-    {
-      title: i18n.t('sidebar.sources'),
-      url: getRouteAssemblyEventDocumentSources(customer.slug, event.slug),
-      redirect: false,
     },
     {
       title: i18n.t('sidebar.about'),
       url: 'https://make.org/FR',
-      redirect: true,
     },
   ];
+
+  const linkEventSources = {
+    title: i18n.t('sidebar.sources'),
+    url: getRouteAssemblyEventDocumentSources(customer.slug, event.slug),
+  };
 
   return (
     <SidebarContentContainerStyle>
       <SidebarContentBlockStyle>
         <SidebarContentListStyle>
+          <SidebarContentLinkStyle
+            as={Link}
+            to={linkEventSources.url}
+            onClick={closeModal}
+          >
+            {linkEventSources.title}
+          </SidebarContentLinkStyle>
           {links.map(link => (
             <SidebarContentListItemStyle key={link.label}>
               <SidebarContentLinkStyle
@@ -89,24 +91,14 @@ export const SidebarContent: FC<Props> = ({ closeModal }) => {
         <SidebarContentListStyle>
           {linkPanoramicArray.map(link => (
             <SidebarContentListItemStyle key={link.title}>
-              {link.redirect ? (
-                <SidebarContentLinkStyle
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener"
-                >
-                  {link.title}
-                  <SidebarSvgExternalStyle aria-hidden focusable="false" />
-                </SidebarContentLinkStyle>
-              ) : (
-                <SidebarContentLinkStyle
-                  as={Link}
-                  to={link.url}
-                  onClick={closeModal}
-                >
-                  {link.title}
-                </SidebarContentLinkStyle>
-              )}
+              <SidebarContentLinkStyle
+                href={link.url}
+                target="_blank"
+                rel="noopener"
+              >
+                {link.title}
+                <SidebarSvgExternalStyle aria-hidden focusable="false" />
+              </SidebarContentLinkStyle>
             </SidebarContentListItemStyle>
           ))}
         </SidebarContentListStyle>
