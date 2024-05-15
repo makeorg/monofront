@@ -10,6 +10,8 @@ import { useAssemblyContext } from '../../../store/context';
 import { useTracking } from '../../../components/Tracking/useTracking';
 import { useUtms } from '../../../components/Tracking/useUtms';
 
+const ID_TYPEFORM = '01HTY794SDCAQ212HGV01DN8ER';
+
 const EventPage: FC = () => {
   const tracker = useTracking();
   const { state } = useAssemblyContext();
@@ -34,6 +36,10 @@ const EventPage: FC = () => {
     <>
       <GliderStylesheet />
       <OnboardingModal />
+      <>
+        <div data-tf-live={ID_TYPEFORM} />
+        <script src="//embed.typeform.com/next/embed.js" />
+      </>
       <Welcome />
       <Feed />
       <PromptContainerStyle>

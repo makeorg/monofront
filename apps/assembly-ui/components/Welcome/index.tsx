@@ -24,7 +24,6 @@ export const Welcome: FC = () => {
   return (
     <WelcomeContainerStyle>
       <WelcomeTitleStyle>{introduction}</WelcomeTitleStyle>
-
       <WelcomeBlockContainerStyle>
         {summary && (
           <WelcomeContentBlockContainerStyle>
