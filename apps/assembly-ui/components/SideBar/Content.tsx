@@ -51,22 +51,30 @@ export const SidebarContent: FC<Props> = ({ closeModal }) => {
     },
   ];
 
-  const linkEventSources = {
-    title: i18n.t('sidebar.sources'),
-    url: getRouteAssemblyEventDocumentSources(customer.slug, event.slug),
+  const renderSourcesLink = (customerSlug: string, eventSlug: string) => {
+    const linkEventSources = {
+      title: i18n.t('sidebar.sources'),
+      url: getRouteAssemblyEventDocumentSources(customerSlug, eventSlug),
+    };
+
+    return (
+      <SidebarContentLinkStyle
+        as={Link}
+        to={linkEventSources.url}
+        onClick={closeModal}
+      >
+        {linkEventSources.title}
+      </SidebarContentLinkStyle>
+    );
   };
 
   return (
     <SidebarContentContainerStyle>
       <SidebarContentBlockStyle>
         <SidebarContentListStyle>
-          <SidebarContentLinkStyle
-            as={Link}
-            to={linkEventSources.url}
-            onClick={closeModal}
-          >
-            {linkEventSources.title}
-          </SidebarContentLinkStyle>
+          {customer.slug &&
+            event.slug &&
+            renderSourcesLink(customer.slug, event.slug)}
           {links.map(link => (
             <SidebarContentListItemStyle key={link.label}>
               <SidebarContentLinkStyle
