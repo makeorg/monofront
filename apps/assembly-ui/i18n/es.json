@@ -1,7 +1,7 @@
 {
   "global": {
-    "ia": "Esta herramienta utiliza la inteligencia artificial (IA) para formular respuestas exclusivamente a partir de la información de una base de ",
-    "iaBold": "datos confeccionada y revisada por humanos, manualmente.",
+    "ia": "Para más información sobre los temas principales, haga clic a continuación.",
+    "iaBold": "",
     "open_new_window": "Abrir en una nueva pestaña"
   },
   "header": {
@@ -13,7 +13,7 @@
     "closeLabel": "Cerrar la ventana de diálogo",
     "discover": "Descubra esta herramienta",
     "suggestion": "Haga sus preguntas y la inteligencia artificial (IA) le responderá",
-    "suggestionText": "Una respuesta instantánea a todas sus preguntas.",
+    "suggestionText": "Respuestas instantáneas a sus preguntas.",
     "explore": "Explorar contenidos por temas",
     "exploreText": "Profundice en los temas que más le interesan.",
     "sources": "Acceso a fuentes verificadas",
@@ -23,7 +23,7 @@
   },
   "prompt": {
     "submit": "Enviar",
-    "themeAnswer": "Resumen de los temas principales:",
+    "themeAnswer": "¿No sabe por dónde empezar?",
     "warning": "La respuesta, generada por una IA a partir de fuentes verificadas, puede contener aproximaciones.",
     "me": "Pregunta formulada",
     "cancel": "Cancelar",
@@ -32,7 +32,7 @@
     "error": "Gracias por su pregunta. No estoy seguro de poder darle la respuesta correcta. Para estar seguro, le sugiero que la formule de otra manera."
   },
   "feed": {
-    "sources": "Esta respuesta se basa en los elementos siguientes:",
+    "sources": "Ver las fuentes",
     "hyperlinks_title": "Para más información:",
     "document_sources": "Acceder a la respuesta en base a los documentos verificados",
     "page": "página",
@@ -40,15 +40,15 @@
     "archive": "Sólo archivamos las 5 últimas preguntas que nos ha hecho.",
     "retrieve": "Si quiere repetir una pregunta anterior, basta con volver a escribirla.",
     "answer_document": "¿Puedo acceder a la respuesta de los documentos certificados en : ",
-    "sources_answer": "@@feed.sources_answer|fr:Voici les sources de cette réponse :",
-    "sources_document": "@@feed.sources_document|fr:Est-ce que je peux consulter cette source documentaire ?",
-    "sources_video": "@@feed.sources_video|fr:Est-ce que je peux consulter cette source vidéo ?",
-    "answer_sources_document": "@@feed.answer_sources_document|fr:Le document qui a permis d’alimenter la réponse de l’IA est le suivant : ",
-    "answer_sources_consult_doc": "@@feed.answer_sources_consult_doc|fr:Consulter le document",
-    "answer_sources_video": "@@feed.answer_sources_video|fr:Voici l’extrait vidéo de ",
-    "answer_sources_video_2": "@@feed.answer_sources_video_2|fr: qui a permis d’alimenter la réponse.",
-    "answer_sources_video_time": "@@feed.answer_sources_video_time|fr:Le passage utilisé pour répondre à votre question se situe à ce moment de la vidéo : ",
-    "answer_sources_video_extract": "@@feed.answer_sources_video_extract|fr:Appuyez sur le bouton Lecture pour aller directement au bon moment de l’extrait."
+    "sources_answer": "He aquí las fuentes de esta respuesta:",
+    "sources_document": "¿Puedo consultar esta fuente documental?",
+    "sources_video": "¿Puedo consultar esta fuente de vídeo?",
+    "answer_sources_document": "El documento en el que se basó la respuesta de AI es el siguiente: ",
+    "answer_sources_consult_doc": "Consultar el documento",
+    "answer_sources_video": "Este es el extracto del vídeo ",
+    "answer_sources_video_2": " lo que contribuyó a alimentar la respuesta.",
+    "answer_sources_video_time": "El pasaje utilizado para responder a su pregunta aparece en este punto del vídeo: ",
+    "answer_sources_video_extract": "Pulse el botón Reproducir para ir directamente al momento adecuado del extracto."
   },
   "sidebar": {
     "explore": "Explorar",
@@ -59,7 +59,7 @@
     "cookie": "Gestión de cookies",
     "legal": "Menciones legales",
     "about": "Acerca de Make.org",
-    "sources": "@@sidebar.sources|fr:Consulter les sources"
+    "sources": "Consultar fuentes"
   },
   "error": {
     "not_found": "404",
@@ -129,9 +129,9 @@
     "warning": "Importante detalle"
   },
   "sources_page": {
-    "consult": "@@sources_page.consult|fr:Consulter les sources :",
-    "docs": "@@sources_page.docs|fr:Les sources documentaires :",
-    "see": "@@sources_page.see|fr:Voir l'évènement",
-    "videos": "@@sources_page.videos|fr:Les sources vidéos :"
+    "consult": "Consulte las fuentes :",
+    "docs": "Fuentes documentales :",
+    "see": "Ver el evento",
+    "videos": "Fuentes de vídeo :"
   }
 }

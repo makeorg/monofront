@@ -1,7 +1,7 @@
 {
   "global": {
-    "ia": "Dieses Tool verwendet eine künstliche Intelligenz (KI), die ihre Antworten ausschließlich auf der Basis ",
-    "iaBold": "einer ausgewählten und moderierten Datenbank generiert.",
+    "ia": "Erfahren Sie mehr über die wichtigsten Themen, indem Sie unten klicken.",
+    "iaBold": "",
     "open_new_window": "In einem neuen Reiter öffnen"
   },
   "header": {
@@ -13,7 +13,7 @@
     "closeLabel": "Das Dialogfenster schließen",
     "discover": "Entdecke das Tool",
     "suggestion": "Stelle deine Fragen und das Tool antwortet",
-    "suggestionText": "Eine direkte Erklärung zu deinen Anfragen.",
+    "suggestionText": "Eine sofortige Antwort auf Ihre Fragen.",
     "explore": "Erkunde die Inhalte nach Themen",
     "exploreText": "Eine gründliche Recherche zu den Themen, die dich interessieren.",
     "sources": "Zugriff auf verifizierte Quellen",
@@ -23,7 +23,7 @@
   },
   "prompt": {
     "submit": "Senden",
-    "themeAnswer": "Zusammenfassung der wichtigsten Themen:",
+    "themeAnswer": "Sie wissen nicht, wo Sie anfangen sollen?",
     "warning": "Die KI-generierte Antwort basiert auf verifizierten Quellen, kann jedoch trotzdem Inhalte enthalten, die sich dem Original lediglich annähern.",
     "me": "Gestellte Frage",
     "cancel": "Abbrechen",
@@ -32,7 +32,7 @@
     "error": "Ich kann diese Frage nicht beantworten. Finden wir etwas anderes!"
   },
   "feed": {
-    "sources": "Diese Antwort wurde aus folgenden Quellen generiert:",
+    "sources": "Quellen ansehen",
     "hyperlinks_title": "Für mehr Kontext:",
     "document_sources": "Zur Antwort in den verifizierten original Dokumenten",
     "page": "seite",
@@ -40,15 +40,15 @@
     "archive": "Wir speichern nur die letzten fünf Fragen, die du gestellt hast.",
     "retrieve": "Wenn du eine frühere Frage wiederfinden möchtest, kannst du sie einfach erneut stellen!",
     "answer_document": "Kann ich auf die Antwort von zertifizierten Dokumenten zugreifen: ",
-    "sources_answer": "@@feed.sources_answer|fr:Voici les sources de cette réponse :",
-    "sources_document": "@@feed.sources_document|fr:Est-ce que je peux consulter cette source documentaire ?",
-    "sources_video": "@@feed.sources_video|fr:Est-ce que je peux consulter cette source vidéo ?",
-    "answer_sources_document": "@@feed.answer_sources_document|fr:Le document qui a permis d’alimenter la réponse de l’IA est le suivant : ",
-    "answer_sources_consult_doc": "@@feed.answer_sources_consult_doc|fr:Consulter le document",
-    "answer_sources_video": "@@feed.answer_sources_video|fr:Voici l’extrait vidéo de ",
-    "answer_sources_video_2": "@@feed.answer_sources_video_2|fr: qui a permis d’alimenter la réponse.",
-    "answer_sources_video_time": "@@feed.answer_sources_video_time|fr:Le passage utilisé pour répondre à votre question se situe à ce moment de la vidéo : ",
-    "answer_sources_video_extract": "@@feed.answer_sources_video_extract|fr:Appuyez sur le bouton Lecture pour aller directement au bon moment de l’extrait."
+    "sources_answer": "Hier sind die Quellen für diese Antwort:",
+    "sources_document": "Kann ich diese Dokumentationsquelle einsehen?",
+    "sources_video": "Kann ich diese Videoquelle einsehen?",
+    "answer_sources_document": "Das Dokument, das der Antwort der IA zugrunde liegt, lautet wie folgt: ",
+    "answer_sources_consult_doc": "Das Dokument ansehen",
+    "answer_sources_video": "Hier ist der Videoausschnitt von ",
+    "answer_sources_video_2": " die der Antwort zugrunde lag.",
+    "answer_sources_video_time": "Die Passage, die zur Beantwortung Ihrer Frage verwendet wurde, befindet sich an dieser Stelle des Videos: ",
+    "answer_sources_video_extract": "Drücken Sie die Wiedergabetaste, um direkt zur richtigen Stelle im Ausschnitt zu springen."
   },
   "sidebar": {
     "explore": "Mehr entdecken",
@@ -59,7 +59,7 @@
     "cookie": "Cookie-Richtlinie",
     "legal": "Impressum",
     "about": "Über Make.org",
-    "sources": "@@sidebar.sources|fr:Consulter les sources"
+    "sources": "Quellen konsultieren"
   },
   "error": {
     "not_found": "404",
@@ -129,9 +129,9 @@
     "warning": "Wichtiger Detail"
   },
   "sources_page": {
-    "consult": "@@sources_page.consult|fr:Consulter les sources :",
-    "docs": "@@sources_page.docs|fr:Les sources documentaires :",
-    "see": "@@sources_page.see|fr:Voir l'évènement",
-    "videos": "@@sources_page.videos|fr:Les sources vidéos :"
+    "consult": "Quellen konsultieren :",
+    "docs": "Dokumentarische Quellen :",
+    "see": "Veranstaltung ansehen",
+    "videos": "Videoquellen :"
   }
 }

@@ -1,7 +1,7 @@
 {
   "global": {
-    "ia": "Cette solution utilise une intelligence artificielle (IA) qui trouve ses réponses exclusivement dans des informations ",
-    "iaBold": "sûres, vérifiées et modérées.",
+    "ia": "Découvrez les principales thématiques en cliquant ci-dessous.",
+    "iaBold": "",
     "open_new_window": "Ouverture dans un nouvel onglet"
   },
   "header": {
@@ -23,7 +23,7 @@
   },
   "prompt": {
     "submit": "Envoyer",
-    "themeAnswer": "Résumé des principales thématiques :",
+    "themeAnswer": "Vous ne savez pas par où commencer ?",
     "warning": "La réponse, générée par une IA à partir de sources vérifiées, peut présenter des approximations.",
     "me": "Question posée",
     "cancel": "Annuler",
