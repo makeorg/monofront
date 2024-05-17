@@ -31,6 +31,10 @@ const checkConsent = (
   return setFunctionalCookies(consentCookie?.functional);
 };
 
+const cookieFirstToken = env.isClientSide()
+  ? window.COOKIE_FIRST_TOKEN
+  : env.cookieFirstToken();
+
 export const YoutubePlayer: React.FC<ReactPlayerProps> = props => {
   const { url, seek, small, onClickPreview } = props;
   const playerRef = useRef<_ReactPlayer>(null);
@@ -95,7 +99,9 @@ export const YoutubePlayer: React.FC<ReactPlayerProps> = props => {
           if (onClickPreview) {
             onClickPreview(event);
           }
-          checkConsent(setFunctionalCookies);
+          if (cookieFirstToken) {
+            checkConsent(setFunctionalCookies);
+          }
         }}
       />
     </ReactPlayerContainer>
