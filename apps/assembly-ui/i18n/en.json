@@ -32,7 +32,7 @@
     "error": "I am not able to answer this question. Let's find something else!"
   },
   "feed": {
-    "sources": "See sources",
+    "sources": "Watch the sessions that shaped your answer",
     "hyperlinks_title": "For additional information:",
     "document_sources": "Access the reply sourced from certified documents",
     "page": "page",
