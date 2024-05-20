@@ -1503,5 +1503,19 @@
     "title": "Skoraj ste prišli! Delite svoje socialno-demografske podatke, da bodo vaši glasovi upoštevani in da boste bolj reprezentativni.",
     "protect": "Brez skrbi, vaši podatki so zaščiteni 🔒",
     "next": "Naslednji"
+  },
+  "temp_viva": {
+    "break": "BREAKING NEWS @ VIVATECHNOLOGY 2024",
+    "title": "Make.org unveils",
+    "title_italic": " two global initiatives ",
+    "title_2": "to put A.I. in service of society",
+    "sub_1_italic": "Democratic Commons: ",
+    "sub_1": "Pioneering AI for Democracy",
+    "text_1": "Make.org is launching the first-ever global research program to integrate democratic principles into AI. With a team of 50 researchers and engineers, we're developing unbiased AI and platforms to enhance citizen participation. We are achieving it in collaboration with top international academics from institutions such as SciencesPo, CNRS, Sorbonne, Hugging Face, Aspen Institute, Mozzilla.ai, Genci and Project Liberty Institute.",
+    "button_1": "discover & join",
+    "sub_2_italic": "VivaTech AI Report: ",
+    "sub_2": "AI-Driven Conference Insights",
+    "text_2": "Make.org is launching the world’s premier platform VivaTech AI Report which leverages Artificial Intelligence to revolutionize access to VivaTech’s conferences content. Developed by Make.org with Les Echos, Viva Technology and Magic-Lemp, the platform offers VivaTech visitors entirely new paths to access the best of the conferences content. Thanks to Make.org AI technology, visitors are able to ask questions about what was discussed at the Vivatech’s conferences, get detailed answers and directly access video excerpts that explain the arguments.",
+    "button_2": "discover & test"
   }
 }

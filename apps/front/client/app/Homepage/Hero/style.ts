@@ -20,6 +20,7 @@ import { Image } from '@make.org/ui/components/Image';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
 import { TitleXLStyle } from '@make.org/designsystem/components/Typography/Titles/style';
 import { TextMStyle } from '@make.org/designsystem/components/Typography/Text/style';
+import TempVivaBackground from './name.png';
 
 export const HeroWrapperStyle = styled(FlexElementStyle)`
   background-color: ${colors.Background.Interface.DarkSecondary};
@@ -116,5 +117,93 @@ export const HeroPicturesStyle = styled(Image)`
   }
   @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
     padding-left: ${spacings.l};
+  }
+`;
+
+// @todo REMOVE ! Temporary vivatech styles
+
+export const TempVivHeroWrapperStyle = styled(HeroWrapperStyle)`
+  background: url(${TempVivaBackground});
+  background-size: 100% 100%;
+`;
+
+export const TempVivHeroStyle = styled(HeroContentStyle)`
+  flex-flow: column;
+  align-items: flex-start;
+  color: white;
+`;
+
+export const TempVivNewsStyle = styled.span`
+  font-size: ${typography.FontSize.Paris};
+  font-family: ${typography.FontFamily.Condensed};
+  opacity: 70%;
+  text-transform: uppercase;
+`;
+
+export const TempVivTitleContainerStyle = styled.h2`
+  max-width: 650px;
+  margin-bottom: 50px;
+`;
+
+export const TempVivTitleStyle = styled.span`
+  font-size: ${typography.FontSize.Europe};
+  font-family: ${typography.FontFamily.Default};
+  text-transform: none;
+  font-weight: 700;
+`;
+
+export const TempVivTitleItalicStyle = styled(TempVivTitleStyle)`
+  font-style: italic;
+`;
+
+export const TempVivFlexContainerStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    flex-direction: row;
+    gap: 100px;
+  }
+`;
+
+export const TempVivBlockStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: space-between;
+`;
+
+export const TempVivSmallTitleStyle = styled.span`
+  font-size: ${typography.FontSize.Paris};
+  font-family: ${typography.FontFamily.Default};
+  text-transform: none;
+  font-weight: 700;
+`;
+
+export const TempVivSmallTitleItalicStyle = styled(TempVivSmallTitleStyle)`
+  font-style: italic;
+`;
+
+export const TempVivTextStyle = styled.p`
+  font-size: ${typography.FontSize.Arrondissement};
+  font-family: ${typography.FontFamily.Default};
+`;
+
+export const TempVivButtonStyle = styled.a`
+  font-size: ${typography.FontSize.Arrondissement};
+  font-family: ${typography.FontFamily.Default};
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  width: fit-content;
+  background-color: black;
+  text-decoration: none;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 58px;
+
+  &:hover,
+  &:visited {
+    color: white;
   }
 `;

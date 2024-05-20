@@ -24,7 +24,7 @@ export const ShowSources: FC<{
   const { state } = useAssemblyContext();
   const { event, visitorId } = state;
   const { slug: eventSlug } = event;
-  const [showSources, setShowSources] = useState<boolean>(false);
+  const [showSources, setShowSources] = useState<boolean>(true);
   const tracker = useTracking();
 
   const handleClick = (displaySources: boolean) => {
@@ -42,7 +42,7 @@ export const ShowSources: FC<{
   if (!showSources) {
     return (
       <SourcesContainerButtonStyle
-        onClick={() => handleClick(true)}
+        onClick={() => handleClick(!showSources)}
         aria-expanded={showSources}
       >
         <SourcesTextIconBlockStyle>
@@ -73,7 +73,7 @@ export const ShowSources: FC<{
   return (
     <SourcesContainerStyle>
       <SourcesTextButtonStyle
-        onClick={() => handleClick(false)}
+        onClick={() => handleClick(!showSources)}
         aria-expanded={showSources}
       >
         <p>{i18n.t('feed.sources_answer')}</p>
