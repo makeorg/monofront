@@ -59,9 +59,9 @@ const EventDocumentSourcesPage: FC = () => {
         </DocumentSourcesPageSubTitleStyle>
         <DocumentSourcesPageUlStyle>
           {videoDocument?.map((document: DocumentSourceType) => (
-            <li key={document.name}>
+            <li key={document.title}>
               <a href={document.url} target="_blank" rel="noreferrer">
-                {document.name}
+                {document.title}
               </a>
             </li>
           ))}
@@ -73,9 +73,9 @@ const EventDocumentSourcesPage: FC = () => {
         </DocumentSourcesPageSubTitleStyle>
         <DocumentSourcesPageUlStyle>
           {pdfDocument?.map((document: DocumentSourceType) => (
-            <li key={document.name}>
+            <li key={document.title}>
               <a href={document.url} target="_blank" rel="noreferrer">
-                {document.name}
+                {document.title}
               </a>
             </li>
           ))}
