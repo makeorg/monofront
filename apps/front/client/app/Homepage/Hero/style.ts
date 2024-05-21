@@ -141,7 +141,6 @@ export const TempVivNewsStyle = styled.span`
 `;
 
 export const TempVivTitleContainerStyle = styled.h2`
-  max-width: 650px;
   margin-bottom: 50px;
 `;
 
