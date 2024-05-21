@@ -1,6 +1,5 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import { Request, Response } from 'express';
-import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import { ServerLogger } from '@make.org/logger/serverLogger';
 import { env } from '../../utils/env';
 
@@ -9,7 +8,7 @@ const ANSWER_PATH = '/answer';
 export const getLLMAnswer = async (
   req: Request,
   res: Response
-): Promise<Response | null> => {
+): Promise<void> => {
   const logger = ServerLogger.getInstance();
 
   const { eventId, question, mode, language } = req.query;
@@ -41,11 +40,9 @@ export const getLLMAnswer = async (
     });
 
     responseStream.data.on('end', () => res.end());
-
-    return null;
-  } catch (error: unknown) {
-    const apiServiceError = error as ApiServiceError;
-    if (apiServiceError.status === 404) {
+  } catch (e: unknown) {
+    const error = e as AxiosError;
+    if (error.response?.status === 404) {
       logger.logWarning({
         name: 'llm-service',
         message: `Call to llm service not found with eventId: "${eventId}" and language: "${language}".`,
@@ -53,7 +50,7 @@ export const getLLMAnswer = async (
         app_language: language,
       });
 
-      return null;
+      res.status(404).end();
     }
 
     logger.logError({
@@ -61,8 +58,13 @@ export const getLLMAnswer = async (
       message: `Call to llm service fail with eventId: "${eventId}" and language: "${language}".`,
       app_event_id: eventId,
       app_language: language,
+      app_res_status: error.response?.status,
+      app_error_message: error.message,
+      app_req_url: error.config?.url,
+      app_req_method: error.config?.method,
+      app_req_params: error.config?.params,
     });
 
-    return null;
+    res.status(500).end();
   }
 };
