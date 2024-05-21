@@ -18,9 +18,9 @@ export const HeaderContainerStyle = styled.header`
 `;
 
 export const HeaderImgStyle = styled.img`
-  height: 35px;
+  max-height: 35px;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    height: 45px;
+    max-height: 45px;
   }
 `;
 
