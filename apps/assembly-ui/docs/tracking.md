@@ -102,6 +102,9 @@ Our question answering service records user questions and AI response for analys
     | `prompt_response_type` | Response is from cache | Cache usage - service improvement | false | `cache`, `llm` | cache
     | `prompt_result_success` | Successful response | Successful response - service improvement | true | `success`, `fail` | success
     | `prompt_fired_by` | Response trigger | Understanding what our users do after generation | true | `main`, `document` | main
+    | `event_slug` | The event slug | Subject segmentation - service improvement | true |  | convention-fin-de-vie
+    | `user_query` | Question from a user | Understand the use of open prompt - service improvement | true |  | Comment obtenir des frites à la cantine ?
+    | `llm_response` | Response from llm | Understand the use of open prompt - service improvement | true |  | Selon le rapport de la commission d'enquête...
 
 
   - `action-quit-onboarding` CTA close onboarding popin

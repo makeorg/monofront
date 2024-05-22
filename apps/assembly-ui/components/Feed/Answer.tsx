@@ -40,11 +40,14 @@ export const Answer: FC<Props> = ({ item }) => {
   }, [showParole]);
 
   useEffect(() => {
-    if (!isTracked && item.text.length && !isStreaming) {
+    if (!isTracked && item.text && !isStreaming) {
       tracker.track('DISPLAY-PROMPT-ANSWER', {
         submit_id: item.id,
         prompt_result_success: 'success',
         prompt_fired_by: item.mode === TRANSCRIPT ? 'main' : 'document',
+        event_slug: event.slug,
+        user_query: item.question,
+        llm_response: item.text,
       });
       setIsTracked(true);
     }

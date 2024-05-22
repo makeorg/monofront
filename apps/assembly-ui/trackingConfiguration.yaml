@@ -293,6 +293,21 @@ EVENTS:
           - main
           - document
         recipients: ['product']
+      - key: event_slug
+        description: The event slug
+        purpose: Subject segmentation - service improvement
+        example: convention-fin-de-vie
+        recipients: ['product']
+      - key: user_query
+        description: Question from a user
+        purpose: Understand the use of open prompt - service improvement
+        example: Comment obtenir des frites à la cantine ?
+        recipients: ['product']
+      - key: llm_response
+        description: Response from llm
+        purpose: Understand the use of open prompt - service improvement
+        example: Selon le rapport de la commission d'enquête...
+        recipients: ['product']
 
   ACTION-QUIT-ONBOARDING:
     key: action-quit-onboarding
