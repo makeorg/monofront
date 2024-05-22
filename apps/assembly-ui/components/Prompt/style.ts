@@ -60,10 +60,10 @@ export const PromptFormButtonArrowStyle = styled.img`
 `;
 
 export const PromptFormWarningText = styled.p`
-  font-size: 7px;
+  font-size: 9px;
   margin-left: 5px;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    font-size: ${typography.FontSize.Text.RueDeLappe};
+    font-size: ${typography.FontSize.Text.Bastille};
   }
 `;
 
