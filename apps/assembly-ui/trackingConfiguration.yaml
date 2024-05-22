@@ -25,6 +25,7 @@ EVENTS:
         purpose: Subject segmentation - service improvement
         example: convention-fin-de-vie
         recipients: ['product']
+        optional: true
       - key: page
         description: Page name
         example: event-page
@@ -41,6 +42,7 @@ EVENTS:
         purpose: Engagement by event
         example: 00000000-0000-0000-0000-000000000000
         recipients: ['business']
+        optional: true
       - key: visitor_id
         description: Unique visitor identifier
         purpose: Segmentation by unique visitor

@@ -56,7 +56,7 @@ Our question answering service records user questions and AI response for analys
     
     | param_name | description | purpose | required | values | example |
     | -          |-            |-        |-         | -      | -       |
-    | `event_slug` | The event slug | Subject segmentation - service improvement | true |  | convention-fin-de-vie
+    | `event_slug` | The event slug | Subject segmentation - service improvement | false |  | convention-fin-de-vie
     | `page` | Page name | Measuring the number of visitors to a page - service improvement | true |  | event-page
     | `language` | Interface language | Language segmentation - service improvement | true |  | undefined
 
@@ -160,7 +160,7 @@ Our question answering service records user questions and AI response for analys
     
     | param_name | description | purpose | required | values | example |
     | -          |-            |-        |-         | -      | -       |
-    | `assembly_event_id` | The event identifier | Engagement by event | true |  | 00000000-0000-0000-0000-000000000000
+    | `assembly_event_id` | The event identifier | Engagement by event | false |  | 00000000-0000-0000-0000-000000000000
     | `visitor_id` | Unique visitor identifier | Segmentation by unique visitor | false |  | 00000000-0000-0000-0000-000000000000
     | `session_id` | Session identifier | Segmentation by session | false |  | 00000000-0000-0000-0000-000000000000
     | `utm_campaign` | Identifies a specific product promotion or strategic campaign | Acquisition campaign follow-up | false |  | convention_france
