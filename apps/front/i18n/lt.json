@@ -993,12 +993,9 @@
         "title": "Diskusijų planas"
       },
       "download": {
-        "deprecated_title": "Gauti visą ataskaitą",
         "title": "Gaukite visą ataskaitą",
-        "type": "Formatas: {{extension}} - Dydis: {{weight}}",
-        "button": "Atsisiųsti",
-        "contact": "Norėdami gauti išsamią šios konsultacijos analizės ataskaitą, susisiekite su mumis šiuo adresu: ",
-        "email_object": "Analizės ataskaita"
+        "button": "Atsisiųsti visą ataskaitą",
+        "contact": "Norėdami gauti visą šios konsultacijos analizės ataskaitą, spustelėkite toliau esantį mygtuką"
       },
       "top_ideas": {
         "skiplink": "Geriausios naujos idėjos",

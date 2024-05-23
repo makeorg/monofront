@@ -974,12 +974,9 @@
         "title": "Kartografia debaty"
       },
       "download": {
-        "deprecated_title": "Otrzymać kompletny raport",
-        "title": "Chcę otrzymać kompletny raport",
-        "type": "Format: {{extension}} - Ciężar: {{weight}}",
-        "button": "Pobierz",
-        "contact": "Aby otrzymać kompletny raport analiz tej konsultacji, skontaktuj się z nami, pisząc na adres: ",
-        "email_object": "Raport analizy"
+        "title": "Pobierz pełny raport",
+        "button": "Pobierz pełny raport",
+        "contact": "Aby uzyskać pełny raport z analizy tej konsultacji, kliknij poniższy przycisk"
       },
       "top_ideas": {
         "skiplink": "Najciekawsze z pojawiających się pomysłów",

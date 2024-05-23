@@ -981,12 +981,9 @@
         "title": "Arutelu kaardistamine"
       },
       "download": {
-        "deprecated_title": "Täielik aruanne",
-        "title": "Saage täielik aruanne",
-        "type": "Formaat: {{extension}} - Kaal: {{weight}}",
-        "button": "Lae alla",
-        "contact": "Täieliku analüüsiaruande saamiseks selle konsulteerimise kohta võtke meiega ühendust aadressil: ",
-        "email_object": "Analüüsiaruanne"
+        "title": "Täielik aruanne",
+        "button": "Täieliku aruande allalaadimine",
+        "contact": "Käesoleva konsultatsiooni täieliku analüüsiaruande saamiseks klõpsake alloleval nupul"
       },
       "top_ideas": {
         "skiplink": "Parimad uued ideed",

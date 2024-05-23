@@ -993,12 +993,9 @@
         "title": "Mapovanie diskusie"
       },
       "download": {
-        "deprecated_title": "Získať úplnú správu",
-        "title": "Získajte úplnú správu",
-        "type": "Formát: {{extension}} - Váha: {{weight}}",
-        "button": "Stiahnuť",
-        "contact": "Ak chcete získať úplnú správu o analýze tejto konzultácie, kontaktujte nás na adrese: ",
-        "email_object": "Analytická správa"
+        "title": "Obțineți raportul complet",
+        "button": "Descărcați raportul complet",
+        "contact": "Pentru a obține raportul complet de analiză pentru această consultare, faceți clic pe butonul de mai jos"
       },
       "top_ideas": {
         "skiplink": "To najlepšie z vyplývajúcich nápadov",

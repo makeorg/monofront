@@ -1005,12 +1005,9 @@
         "title": "Zemljevid razprave"
       },
       "download": {
-        "deprecated_title": "Pridobitev celotnega poročila",
-        "title": "Pridobite celotno poročilo",
-        "type": "Oblika: {{extension}} - teža: {{weight}}",
-        "button": "Prenos",
-        "contact": "Če želite pridobiti celotno analitično poročilo tega posvetovanja, stopite v stik z nami na naslovu: ",
-        "email_object": "Analitično poročilo"
+        "title": "Preberite celotno poročilo",
+        "button": "Prenesite celotno poročilo",
+        "contact": "Če želite pridobiti celotno poročilo o analizi tega posvetovanja, kliknite spodnji gumb"
       },
       "top_ideas": {
         "skiplink": "Najboljše nastajajoče zamisli",

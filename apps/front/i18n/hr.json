@@ -993,12 +993,9 @@
         "title": "Mapiranje rasprave"
       },
       "download": {
-        "deprecated_title": "Dohvati cjelovito izvješće",
-        "title": "Dohvatite cjelovito izvješće",
-        "type": "Format: {{extension}} – Težina: {{weight}}",
-        "button": "Preuzimanje",
-        "contact": "Za dobivanje cjelovitog izvješća o analizama ove rasprave, obratite nam se na adresu: ",
-        "email_object": "Izvješće o analizi"
+        "title": "Pogledajte kompletan izvještaj",
+        "button": "Preuzmite kompletno izvješće",
+        "contact": "Za dobivanje cjelovitog izvješća o analizi s ovog savjetovanja kliknite na gumb"
       },
       "top_ideas": {
         "skiplink": "Najbolje ideje koje se pojavljuju",

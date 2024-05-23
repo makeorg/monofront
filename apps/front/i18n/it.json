@@ -974,12 +974,9 @@
         "title": "La cartografia del dibattito"
       },
       "download": {
-        "deprecated_title": "Ottenere la relazione completa",
-        "title": "Otteni la relazione completa",
-        "type": "Formato: {{extension}} - Peso: {{weight}}",
-        "button": "Scarica",
-        "contact": "Per ottenere la relazione analitica completa di questa consultazione, ti preghiamo di contattarci all'indirizzo: ",
-        "email_object": "Relazione analitica"
+        "title": "Ottenere il rapporto completo",
+        "button": "Scarica il rapporto completo",
+        "contact": "Per ottenere il rapporto completo di analisi di questa consultazione, cliccare sul pulsante sottostante"
       },
       "top_ideas": {
         "skiplink": "Le migliori idee emergenti",

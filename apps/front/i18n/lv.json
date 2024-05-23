@@ -993,12 +993,9 @@
         "title": "Debašu atspoguļojums kartē"
       },
       "download": {
-        "deprecated_title": "Saņemt pilnīgu pārskatu",
-        "title": "Saņemiet pilnīgu pārskatu",
-        "type": "Formāts: {{extension}} - Svars: {{weight}}",
-        "button": "Lejupielādēt",
-        "contact": "Lai saņemtu pilnīgu šīs apspriešanas analīzes pārskatu, lūdzu, sazinieties ar mums, rakstot uz šādu adresi: ",
-        "email_object": "Analīzes pārskats"
+        "title": "Ievērojiet visu ziņojumu",
+        "button": "Ielādējiet pilnu ziņojumu",
+        "contact": "Lai iegūtu pilnīgu šīs konsultācijas analīzes ziņojumu, noklikšķiniet uz pogas"
       },
       "top_ideas": {
         "skiplink": "Labākās jaunās idejas",

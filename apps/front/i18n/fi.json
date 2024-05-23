@@ -962,12 +962,9 @@
         "title": "Keskustelu kaavioina"
       },
       "download": {
-        "deprecated_title": "Hanki koko raportti",
-        "title": "Hanki koko raportti",
-        "type": "Muoto: {{extension}} – paino: {{weight}}",
-        "button": "Lataa",
-        "contact": "Jos haluat saada tätä kuulemista koskevan täydellisen analyysiraportin, ota meihin yhteyttä lähettämällä sähköpostia seuraavaan osoitteeseen: ",
-        "email_object": "Analyysiraportti"
+        "title": "Tutustu koko raporttiin",
+        "button": "Lataa koko raportti",
+        "contact": "Saat tämän kuulemisen täydellisen analyysiraportin klikkaamalla alla olevaa painiketta"
       },
       "top_ideas": {
         "skiplink": "Parhaat esiin tulevat ideat",

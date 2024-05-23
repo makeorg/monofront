@@ -974,12 +974,9 @@
         "title": "Cartografia dezbaterii"
       },
       "download": {
-        "deprecated_title": "Obținerea raportului complet",
         "title": "Obțineți raportul complet",
-        "type": "Format: {{extension}} - Dimensiune: {{weight}}",
-        "button": "Descărcare",
-        "contact": "Pentru a obține raportul complet de analiză aferent acestei consultări, vă rugăm să ne contactați la adresa: ",
-        "email_object": "Raport de analiză"
+        "button": "Descărcați raportul complet",
+        "contact": "Pentru a obține raportul complet de analiză pentru această consultare, faceți clic pe butonul de mai jos"
       },
       "top_ideas": {
         "skiplink": "Topul ideilor recent prezentate",

@@ -998,12 +998,9 @@
         "title": "La cartographie du débat"
       },
       "download": {
-        "deprecated_title": "Obtenir le rapport complet",
         "title": "Obtenez le rapport complet",
-        "type": "Format : {{extension}} - Poids : {{weight}}",
         "button": "Télécharger le rapport complet",
-        "contact": "Pour obtenir le rapport d’analyses complet de cette consultation, cliquez sur le bouton ci-dessous.",
-        "email_object": "Rapport analyse"
+        "contact": "Pour obtenir le rapport d’analyses complet de cette consultation, cliquez sur le bouton ci-dessous."
       },
       "top_ideas": {
         "skiplink": "Le top des idées émergentes",

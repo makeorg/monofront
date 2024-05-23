@@ -993,12 +993,9 @@
         "title": "Mapování debaty"
       },
       "download": {
-        "deprecated_title": "Získat úplnou zprávu",
-        "title": "Získej úplnou zprávu",
-        "type": "Velikost: {{extension}} – Hmotnost: {{weight}}",
-        "button": "Stáhnout",
-        "contact": "Chceš-li získat úplnou zprávu o analýze této konzultace, kontaktuj nás na adrese: ",
-        "email_object": "Zpráva o analýze"
+        "title": "Přečtěte si celou zprávu",
+        "button": "Chcete-li získat úplnou zprávu o analýze této konzultace, klikněte na tlačítko níže",
+        "contact": "Stáhněte si celou zprávu"
       },
       "top_ideas": {
         "skiplink": "To nejlepší z vyplývajících nápadů",

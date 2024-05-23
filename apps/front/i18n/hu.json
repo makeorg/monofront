@@ -981,12 +981,9 @@
         "title": "A vita feltérképezése"
       },
       "download": {
-        "deprecated_title": "A teljes jelentés megtekintése",
-        "title": "A teljes jelentés megtekintése",
-        "type": "Formátum: {{extension}} - Méret: {{weight}}",
-        "button": "Letöltés",
-        "contact": "Ha szeretné megkapni a konzultáció teljes elemző jelentését, a következő címen vegye fel velünk a kapcsolatot: ",
-        "email_object": "Elemző jelentés"
+        "title": "A teljes jelentés",
+        "button": "A teljes jelentés letöltése",
+        "contact": "A konzultációról szóló teljes elemző jelentéshez az alábbi gombra kattintva juthat hozzá"
       },
       "top_ideas": {
         "skiplink": "Legfontosabb új elképzelések",

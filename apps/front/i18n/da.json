@@ -981,12 +981,9 @@
         "title": "Kortlægning af debatten"
       },
       "download": {
-        "deprecated_title": "Få hele rapporten",
-        "title": "Hent hele rapporten",
-        "type": "Format: {{extension}} - Vægt: {{weight}}",
-        "button": "Download",
-        "contact": "Kontakt os på følgende adresse for at få hele analyserapporten af denne høring: ",
-        "email_object": "Analyserapport"
+        "title": "Få den fulde rapport",
+        "button": "Download den fulde rapport",
+        "contact": "Klik på knappen nedenfor for at få den fulde analyserapport for denne høring"
       },
       "top_ideas": {
         "skiplink": "De bedste nye ideer",

@@ -981,12 +981,9 @@
         "title": "Kartläggning av debatten"
       },
       "download": {
-        "deprecated_title": "Få hela rapporten",
-        "title": "Få hela rapporten",
-        "type": "Format: {{extension}} - Storlek: {{weight}}",
-        "button": "Ladda ned",
-        "contact": "För att få hela analysrapporten från det här samrådet, kontakta oss på den här adressen: ",
-        "email_object": "Analysrapport"
+        "title": "Hämta den fullständiga rapporten",
+        "button": "Ladda ner hela rapporten",
+        "contact": "För att få den fullständiga analysrapporten för detta samråd, klicka på knappen nedan"
       },
       "top_ideas": {
         "skiplink": "De bästa av de idéer som har framkommit",

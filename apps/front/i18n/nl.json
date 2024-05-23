@@ -962,12 +962,9 @@
         "title": "Het debat in kaart brengen"
       },
       "download": {
-        "deprecated_title": "Het volledige rapport ontvangen",
-        "title": "Ontvang het volledige rapport",
-        "type": "Formaat: {{extension}} - Grootte: {{weight}}",
-        "button": "Downloaden",
-        "contact": "Voor het volledige analyserapport van deze raadpleging kun je contact met ons opnemen via: ",
-        "email_object": "Analyserapport"
+        "title": "Bekijk het volledige rapport",
+        "button": "Downloaden het volledige rapport",
+        "contact": "Om een ​​volledig analyserapport van dit consult te verkrijgen, klikt u op de ci-dessous-knop"
       },
       "top_ideas": {
         "skiplink": "De beste nieuwe ideeën",

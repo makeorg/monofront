@@ -974,12 +974,9 @@
         "title": "La cartografía del debate"
       },
       "download": {
-        "deprecated_title": "Conseguir el informe completo",
-        "title": "Consigue el informe completo",
-        "type": "Formato: {{extension}} - Peso: {{weight}}",
-        "button": "Descargar",
-        "contact": "Para obtener el informe de análisis completo de esta consulta, ponte en contacto con nosotros en la siguiente dirección: ",
-        "email_object": "Informe de análisis"
+        "title": "Obtenga el informe completo",
+        "button": "Descargar el informe completo",
+        "contact": "Para obtener el informe de análisis completo de esta consulta, haga clic en el siguiente botón"
       },
       "top_ideas": {
         "skiplink": "Las mejores ideas recientes",
