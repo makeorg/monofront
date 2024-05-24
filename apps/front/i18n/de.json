@@ -972,9 +972,9 @@
         "title": "Die kartographische Abbildung der Debatte"
       },
       "download": {
-        "title": "Die fertige Analyse anschauen ",
-        "button": "Lade die fertige Analyse runter",
-        "contact": "Um den vollständigen Analysebericht dieser Konsultation zu erhalten, klicke auf die untenstehende Schaltfläche."
+        "title": "Zum vollständigen Ergebnisbericht",
+        "button": "Bericht herunterladen",
+        "contact": "Um den vollständigen Ergebnisbericht dieser Konsultation zu erhalten, klicke auf den untenstehenden Button."
       },
       "top_ideas": {
         "skiplink": "Die besten neuen Ideen",
