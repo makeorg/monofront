@@ -29,7 +29,7 @@
     "cancel": "Cancel",
     "disabled": "Disactivated button",
     "request_send": "Type your question here",
-    "error": "I am not able to answer this question. Let's find something else!"
+    "error": "I don't have enough reliable sources to provide an appropriate answer. Could you please rephrase your question or ask a new one?"
   },
   "feed": {
     "sources": "Watch the sessions that shaped your answer",
