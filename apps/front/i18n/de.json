@@ -369,7 +369,7 @@
   },
   "final_card": {
     "title": "Danke, dass du dir die Zeit genommen hast, dich zu den Vorschlägen zu äußern.",
-    "description": "Stimme für weitere Vorschläge ab und hilf uns dabei, die wichtigsten Themen zu identifizieren.",
+    "description": "Stimme über weitere Vorschläge ab und hilf uns dabei, die wichtigsten Themen zu identifizieren.",
     "link_text": "Alle Vorschläge entdecken",
     "continue": "Weiter abstimmen",
     "register": {
@@ -377,7 +377,7 @@
       "button_intro": "Erstelle deinen",
       "button_text": "Bürgerbereich."
     },
-    "title_binding_mode": "Vielen Dank für Ihre Reaktion auf die Vorschläge und dafür, dass Sie einige Informationen mit uns geteilt haben!"
+    "title_binding_mode": "Vielen Dank für deine Abstimmung und dafür, dass du einige Informationen mit uns geteilt hast."
   },
   "no_proposal_card": {
     "title": {
@@ -388,7 +388,7 @@
     },
     "description": {
       "regular": "Zurzeit gibt es keine neuen Vorschläge.",
-      "special": "Stimme für weitere Vorschläge ab und hilf uns dabei, die wichtigsten Themen zu identifizieren."
+      "special": "Stimme über weitere Vorschläge ab und hilf uns dabei, die wichtigsten Themen zu identifizieren."
     },
     "link_text": "Alle Vorschläge entdecken",
     "sharing": "Oder gib dieser Konsultation mehr Reichweite, indem du sie verbreitest."
@@ -1432,7 +1432,7 @@
     "skip": "Überspringen",
     "submit": "Speichern",
     "submitted_thanks": "Ihre Antwort wurde bereits berücksichtigt.",
-    "submitted_disclaimer": "Keine Sorge, Ihre Daten sind geschützt 🔒",
+    "submitted_disclaimer": "Keine Sorge, deine Daten sind geschützt, gemäß der EU-DSGVO. 🔒",
     "select": "Auswählen",
     "continue": "Weiter"
   },
@@ -1443,8 +1443,8 @@
     "confirm": "Bestätigen"
   },
   "demographics_intro": {
-    "title": "Sie haben es fast geschafft! Teilen Sie Ihre soziodemografischen Informationen mit, damit Ihre Stimmen richtig gezählt werden und eine bessere Repräsentativität gewährleistet ist.",
-    "protect": "Keine Sorge, Ihre Daten sind geschützt 🔒",
+    "title": "Du hast es fast geschafft! Teile noch einige Informationen mit uns. So können wir sicherstellen, dass alle Bevölkerungsgruppen an der Abstimmung teilnehmen.",
+    "protect": "Keine Sorge, deine Daten sind geschützt, gemäß der EU-DSGVO. 🔒",
     "next": "Weiter"
   },
   "temp_viva": {
