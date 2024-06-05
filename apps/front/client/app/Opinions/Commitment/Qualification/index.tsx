@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react';
+import React, { FC } from 'react';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import {
   VoteContainerStyle,
@@ -32,44 +32,36 @@ export const CommitmentQualification: FC<Props> = ({
   qualificationValue,
   handleQualification,
 }) => {
-  const opinionsVoteTransMap = useMemo(
-    () =>
-      new Map([
-        ['agree', i18n.t('personality.opinions.vote.agree')],
-        ['disagree', i18n.t('personality.opinions.vote.disagree')],
-        ['neutral', i18n.t('personality.opinions.vote.neutral')],
-      ]),
-    []
-  );
+  const opinionsVoteTransMap = new Map([
+    ['agree', i18n.t('personality.opinions.vote.agree')],
+    ['disagree', i18n.t('personality.opinions.vote.disagree')],
+    ['neutral', i18n.t('personality.opinions.vote.neutral')],
+  ]);
 
-  const opinionsQualificationTransMap = useMemo(
-    () =>
-      new Map([
-        ['likeIt', i18n.t('personality.opinions.qualification.likeIt')],
-        ['doable', i18n.t('personality.opinions.qualification.doable')],
-        [
-          'platitudeAgree',
-          i18n.t('personality.opinions.qualification.platitudeAgree'),
-        ],
-        ['noWay', i18n.t('personality.opinions.qualification.noWay')],
-        ['impossible', i18n.t('personality.opinions.qualification.impossible')],
-        [
-          'platitudeDisagree',
-          i18n.t('personality.opinions.qualification.platitudeDisagree'),
-        ],
-        [
-          'platitudeDisagree',
-          i18n.t('personality.opinions.qualification.platitudeDisagree'),
-        ],
-        ['noOpinion', i18n.t('personality.opinions.qualification.noOpinion')],
-        [
-          'doNotUnderstand',
-          i18n.t('personality.opinions.qualification.doNotUnderstand'),
-        ],
-        ['doNotCare', i18n.t('personality.opinions.qualification.doNotCare')],
-      ]),
-    []
-  );
+  const opinionsQualificationTransMap = new Map([
+    ['likeIt', i18n.t('personality.opinions.qualification.likeIt')],
+    ['doable', i18n.t('personality.opinions.qualification.doable')],
+    [
+      'platitudeAgree',
+      i18n.t('personality.opinions.qualification.platitudeAgree'),
+    ],
+    ['noWay', i18n.t('personality.opinions.qualification.noWay')],
+    ['impossible', i18n.t('personality.opinions.qualification.impossible')],
+    [
+      'platitudeDisagree',
+      i18n.t('personality.opinions.qualification.platitudeDisagree'),
+    ],
+    [
+      'platitudeDisagree',
+      i18n.t('personality.opinions.qualification.platitudeDisagree'),
+    ],
+    ['noOpinion', i18n.t('personality.opinions.qualification.noOpinion')],
+    [
+      'doNotUnderstand',
+      i18n.t('personality.opinions.qualification.doNotUnderstand'),
+    ],
+    ['doNotCare', i18n.t('personality.opinions.qualification.doNotCare')],
+  ]);
 
   return (
     <VoteContainerStyle className="opinions">

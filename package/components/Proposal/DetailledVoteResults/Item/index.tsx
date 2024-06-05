@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { VoteType } from '@make.org/types';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 import i18n from 'i18next';
@@ -26,15 +26,11 @@ export const DetailledResultItem: React.FC<Props> = props => {
   const { voteKey } = vote;
   const voteColor = voteButtonParams[voteKey].color;
 
-  const transVoteMap = useMemo(
-    () =>
-      new Map([
-        ['agree', i18n.t('vote.agree')],
-        ['disagree', i18n.t('vote.disagree')],
-        ['neutral', i18n.t('vote.neutral')],
-      ]),
-    []
-  );
+  const transVoteMap = new Map([
+    ['agree', i18n.t('vote.agree')],
+    ['disagree', i18n.t('vote.disagree')],
+    ['neutral', i18n.t('vote.neutral')],
+  ]);
 
   return (
     <DetailledItemStyle className={voteKey}>

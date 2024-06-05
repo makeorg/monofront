@@ -2,7 +2,6 @@ export const colors = {
   Background: {
     Alert: {
       DarkError: '#be182c',
-      Error: '#fff8f9',
       Inactive: 'rgba(0, 0, 0, 0.15)',
       Neutral: 'rgba(0, 0, 0, 0.5)',
       Positive: '#507a1f',

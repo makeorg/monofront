@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { Tooltip } from '@make.org/ui/components/Tooltip';
 import { LoadingDots } from '@make.org/ui/components/Loading/Dots';
 import i18n from 'i18next';
@@ -31,15 +31,11 @@ const UnvoteButtonItem: React.FC<ButtonProps> = ({
     }
   };
 
-  const transVoteMap = useMemo(
-    () =>
-      new Map([
-        ['agree', i18n.t('vote.agree')],
-        ['disagree', i18n.t('vote.disagree')],
-        ['neutral', i18n.t('vote.neutral')],
-      ]),
-    []
-  );
+  const transVoteMap = new Map([
+    ['agree', i18n.t('vote.agree')],
+    ['disagree', i18n.t('vote.disagree')],
+    ['neutral', i18n.t('vote.neutral')],
+  ]);
 
   return (
     <VoteButtonStyle

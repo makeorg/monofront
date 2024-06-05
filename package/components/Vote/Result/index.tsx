@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import {
   getTotalVotesCount,
   getVotesPercentFromScore,
@@ -54,15 +54,12 @@ export const VoteResult: React.FC<Props> = ({
   const votesCount = getTotalVotesCount(votes);
   const voteKeys = Object.keys(voteButtonParams);
   const votesPercent = getVotesPercentFromScore(votes);
-  const transVoteMap = useMemo(
-    () =>
-      new Map([
-        ['agree', i18n.t('vote.agree')],
-        ['disagree', i18n.t('vote.disagree')],
-        ['neutral', i18n.t('vote.neutral')],
-      ]),
-    []
-  );
+  const transVoteMap = new Map([
+    ['agree', i18n.t('vote.agree')],
+    ['disagree', i18n.t('vote.disagree')],
+    ['neutral', i18n.t('vote.neutral')],
+  ]);
+
   const tooltipContent = (percent: number, voteKey: string) => (
     <>
       <p>{transVoteMap.get(voteKey) || voteKey}</p>
@@ -70,15 +67,11 @@ export const VoteResult: React.FC<Props> = ({
     </>
   );
 
-  const transResultVoteMap = useMemo(
-    () =>
-      new Map([
-        ['agree', i18n.t('results.voted.agree')],
-        ['disagree', i18n.t('results.voted.disagree')],
-        ['neutral', i18n.t('results.voted.neutral')],
-      ]),
-    []
-  );
+  const transResultVoteMap = new Map([
+    ['agree', i18n.t('results.voted.agree')],
+    ['disagree', i18n.t('results.voted.disagree')],
+    ['neutral', i18n.t('results.voted.neutral')],
+  ]);
 
   return (
     <VoteResultContainerStyle>

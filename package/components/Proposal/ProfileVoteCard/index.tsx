@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react';
+import React, { FC } from 'react';
 import i18n from 'i18next';
 import { OrganisationType, ProposalType } from '@make.org/types';
 import { useAppContext } from '@make.org/store';
@@ -53,15 +53,12 @@ export const ProfileVoteCard: FC<Props> = ({
 }) => {
   const { state } = useAppContext();
   const { country } = state.appConfig;
-  const transVoteMap = useMemo(
-    () =>
-      new Map([
-        ['agree', i18n.t('profile.organisation.proposal_agree')],
-        ['disagree', i18n.t('profile.organisation.proposal_disagree')],
-        ['neutral', i18n.t('profile.organisation.proposal_neutral')],
-      ]),
-    []
-  );
+  const transVoteMap = new Map([
+    ['agree', i18n.t('profile.organisation.proposal_agree')],
+    ['disagree', i18n.t('profile.organisation.proposal_disagree')],
+    ['neutral', i18n.t('profile.organisation.proposal_neutral')],
+  ]);
+
   const { switchProposalContent, showOriginal, setShowOriginal } =
     useSwitchProposalContent();
   const { proposalContent, proposalLanguage } = getProposalContent(

@@ -51,7 +51,7 @@ export const ProposalStatusStyle = styled.span`
     background-color: ${colors.Background.Alert.Positive};
   }
   &.status-refused {
-    background-color: ${colors.Background.Alert.Error};
+    background-color: ${colors.Background.Alert.DarkError};
   }
   &.status-postponed,
   &.status-pending {
