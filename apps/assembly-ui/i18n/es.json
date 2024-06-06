@@ -83,10 +83,6 @@
     "sources_title": "Basado en fuentes fiables",
     "sources_subtitle": "Nuestra IA sólo utiliza documentos públicos y fiables para formular sus respuestas.",
     "sources_text": "Todas las fuentes utilizadas por nuestra Inteligencia Artificial son cuidadosamente seleccionadas, verificadas y moderadas por Make.org. Centrándonos en el contenido de vídeo, nuestro IA también ofrece la posibilidad de buscar específicamente entre los documentos transcribidos después de los intercambios. Las respuestas que obtienes durante tu experiencia en nuestra plataforma provienen de documentos públicos. Estas respuestas se generan a través de la tecnología AI (basada en una RAG - Generación aumentada de recuperación) cuya explicación está en la parte inferior de la página.",
-    "videos_title": "Vídeos",
-    "videos_text": "Nuestras respuestas iniciales proceden de una base de datos de vídeos.",
-    "docs_title": "Documentos escritos",
-    "docs_text": "Profundice en el tema con una respuesta ampliada que incorpore fuentes escritas adicionales.",
     "warning_docs": "Actualmente, nuestra IA utiliza fuentes de vídeo y de texto de forma independiente. La respuesta inicial procede de fuentes de vídeo. Dentro de la respuesta de nuestra IA, verá este botón : ",
     "warning_docs_2": "Al hacer clic, accederá a la respuesta procedente exclusivamente de documentos escritos.",
     "exchange_title": "Adoptando la forma de una conversación",
@@ -126,7 +122,11 @@
     "theme_second": "Tema 2",
     "theme_third": "Tema 3",
     "theme_fourth": "Tema 4",
-    "warning": "Importante detalle"
+    "warning": "Importante detalle",
+    "sources_origin_title": "@@reassurance.sources_origin_title|fr:Nos sources",
+    "sources_origin_text_header": "@@reassurance.sources_origin_text_header|fr:Notre IA se source dans une base multi-documentaire afin de produire ses réponses.",
+    "sources_origin_text_bullet_1": "@@reassurance.sources_origin_text_bullet_1|fr:Une base de vidéos officiels sont retranscrits et vérifiés afin de vous économiser du temps de visionnage sans perdre d’informations. ",
+    "sources_origin_text_bullet_2": "@@reassurance.sources_origin_text_bullet_2|fr:Des documents certifiés sont égalements utilisés comme source par notre IA, qui les simplifie pour faciliter la compréhension de tous."
   },
   "sources_page": {
     "consult": "Consulte las fuentes :",

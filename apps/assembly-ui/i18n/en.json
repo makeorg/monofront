@@ -83,10 +83,6 @@
     "sources_title": "By drawing from reliable sources",
     "sources_subtitle": "Our AI only uses public and reliable documents to formulate its answers.",
     "sources_text": "Our Artificial Intelligence uses sources that are carefully selected, verified, and moderated by Make.org. Prioritising video content, our AI also allows you to specifically search among transcribed documents. The answers you receive during your experience on our platform come from public documents and are generated using AI technology (based on RAG - Retrieval-Augmented Generation), explained at the bottom of the page.",
-    "videos_title": "Videos",
-    "videos_text": "Our initial answers are sourced from a database of videos.",
-    "docs_title": "Written documents",
-    "docs_text": "Dive deeper into the topic with an extended response that incorporates additional written sources.",
     "warning_docs": "Currently, our AI uses video and text sources independently. The initial response is derived from video sources. Inside our AI’s answer, you’ll see this button: ",
     "warning_docs_2": "By clicking, you will access the response that is exclusively sourced from written documents.",
     "exchange_title": "By taking the form of a conversation",
@@ -126,7 +122,11 @@
     "theme_second": "Topic 2",
     "theme_third": "Topic 3",
     "theme_fourth": "Topic 4",
-    "warning": "Important detail"
+    "warning": "Important detail",
+    "sources_origin_title": "@@reassurance.sources_origin_title|fr:Nos sources",
+    "sources_origin_text_header": "@@reassurance.sources_origin_text_header|fr:Notre IA se source dans une base multi-documentaire afin de produire ses réponses.",
+    "sources_origin_text_bullet_1": "@@reassurance.sources_origin_text_bullet_1|fr:Une base de vidéos officiels sont retranscrits et vérifiés afin de vous économiser du temps de visionnage sans perdre d’informations. ",
+    "sources_origin_text_bullet_2": "@@reassurance.sources_origin_text_bullet_2|fr:Des documents certifiés sont égalements utilisés comme source par notre IA, qui les simplifie pour faciliter la compréhension de tous."
   },
   "sources_page": {
     "consult": "Consult sources:",

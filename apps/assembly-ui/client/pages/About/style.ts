@@ -5,7 +5,6 @@ import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { SvgSit } from '../../../assets/rea_sit';
 import { SvgWoman } from '../../../assets/rea_woman';
-import { SvgVideoVector } from '../../../assets/VectorVideo';
 import { SvgDocVector } from '../../../assets/VectorDoc';
 import { SvgWarningVector } from '../../../assets/Vector';
 import { SvgSit2 } from '../../../assets/rea_write';
@@ -54,15 +53,6 @@ export const SvgStandingStyle = styled(SvgStanding)`
   align-self: center;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     max-width: 235px;
-  }
-`;
-
-export const SvgVideoStyle = styled(SvgVideoVector)`
-  max-width: 26px;
-  height: auto;
-  align-self: center;
-  @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
-    max-width: 38px;
   }
 `;
 
@@ -137,6 +127,34 @@ export const ReassuranceTextStyle = styled.p`
   }
 `;
 
+export const ReassuranceContainerBlockStyle = styled.ul<{
+  grey?: boolean;
+}>`
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  max-width: 1140px;
+  padding: 0 ${spacings.m};
+  margin: ${props => (props.grey ? 'auto' : `${spacings.xl} auto 0`)};
+  gap: ${spacings.sm};
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    gap: ${spacings.l};
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+`;
+
+export const ReassuranceList = styled.ul`
+  list-style: disc;
+  li {
+    display: list-item;
+  }
+`;
+
 export const ReassuranceTextBoldStyle = styled(ReassuranceTextStyle)`
   font-weight: 600;
 `;
@@ -189,13 +207,6 @@ export const ReassuranceWhyWhoContentStyle = styled.div`
   flex-direction: column;
   gap: ${spacings.sm};
   flex: 1;
-`;
-
-export const ReassuranceNumberStyle = styled.span`
-  font-size: ${typography.FontSize.Title.Europe};
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    font-size: 64px;
-  }
 `;
 
 export const ReassuranceTitleNumberIconContainer = styled.div`
@@ -313,27 +324,6 @@ export const ReassuranceSmalGreyBackground = styled.div<{
   display: flex;
   flex-direction: column;
   gap: ${spacings.m};
-`;
-
-export const ReassuranceContainerBlockStyle = styled.ol<{
-  grey?: boolean;
-}>`
-  list-style: none;
-  max-width: 1140px;
-  padding: 0 ${spacings.m};
-  margin: ${props => (props.grey ? 'auto' : `${spacings.xl} auto 0`)};
-  display: flex;
-  flex-direction: column;
-  gap: ${spacings.sm};
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    gap: ${spacings.l};
-  }
-
-  li {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
 `;
 
 export const ReassuranceGreyBackgroundStyle = styled.div<{

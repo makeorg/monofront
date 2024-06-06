@@ -17,9 +17,7 @@ import {
   ReassuranceSmalGreyBackground,
   ReassuranceBlueTextBigStyle,
   ReassuranceBlueTextStyle,
-  ReassuranceNumberStyle,
   ReassuranceTitleNumberIconContainer,
-  SvgVideoStyle,
   SvgDocStyle,
   SvgWarningStyle,
   ReassuranceFakePromptContainerStyle,
@@ -37,10 +35,10 @@ import {
   ReassuranceButtonConfidentialityStyle,
   ReassuranceTextBoldStyle,
   SvgExternalPurpleStyle,
+  ReassuranceList,
 } from './style';
 import { ROUTE_ASSEMBLY_PRIVACY_POLICY } from '../../../utils/routes';
 import disabledButton from '../../../assets/sendButtonInactive.png';
-import { ActionsButtonStyle } from '../../../components/Feed/style';
 import {
   PromptFormInputStyle,
   PromptFormSubmitStyle,
@@ -130,7 +128,6 @@ const AboutPage: FC = () => {
           </ReassuranceTitleStyle>
           <ReassuranceSmalGreyBackground>
             <ReassuranceTitleNumberIconContainer>
-              <ReassuranceNumberStyle>1</ReassuranceNumberStyle>
               <ReassuranceSubitleStyle>
                 {i18n.t('reassurance.sources_title')}
               </ReassuranceSubitleStyle>
@@ -142,48 +139,30 @@ const AboutPage: FC = () => {
               {i18n.t('reassurance.sources_text')}
             </ReassuranceTextStyle>
           </ReassuranceSmalGreyBackground>
+
           <ReassuranceDoubleBlockStyle>
-            <ReassuranceSmalGreyBackground>
-              <ReassuranceTitleNumberIconContainer>
-                <SvgVideoStyle aria-hidden />
-                <ReassuranceSubitleStyle>
-                  {i18n.t('reassurance.videos_title')}
-                </ReassuranceSubitleStyle>
-              </ReassuranceTitleNumberIconContainer>
-              <ReassuranceTextStyle>
-                {i18n.t('reassurance.videos_text')}
-              </ReassuranceTextStyle>
-            </ReassuranceSmalGreyBackground>
             <ReassuranceSmalGreyBackground>
               <ReassuranceTitleNumberIconContainer>
                 <SvgDocStyle aria-hidden />
                 <ReassuranceSubitleStyle>
-                  {i18n.t('reassurance.docs_title')}
+                  {i18n.t('reassurance.sources_origin_title')}
                 </ReassuranceSubitleStyle>
               </ReassuranceTitleNumberIconContainer>
+
               <ReassuranceTextStyle>
-                {i18n.t('reassurance.docs_text')}
+                {i18n.t('reassurance.sources_origin_text')}
+                <ReassuranceList>
+                  <li>{i18n.t('reassurance.sources_origin_text_bullet_1')}</li>
+                  <li>{i18n.t('reassurance.sources_origin_text_bullet_2')}</li>
+                </ReassuranceList>
               </ReassuranceTextStyle>
             </ReassuranceSmalGreyBackground>
           </ReassuranceDoubleBlockStyle>
-          <ReassuranceSmalGreyBackground>
-            <SvgWarningStyle aria-label={i18n.t('reassurance.warning')} />
-            <ReassuranceTextStyle>
-              {i18n.t('reassurance.warning_docs')}
-            </ReassuranceTextStyle>
-            <ActionsButtonStyle type="button" disabled standardStyle>
-              {i18n.t('reassurance.doc_access')}
-            </ActionsButtonStyle>
-            <ReassuranceTextStyle>
-              {i18n.t('reassurance.warning_docs_2')}
-            </ReassuranceTextStyle>
-          </ReassuranceSmalGreyBackground>
         </li>
         <li>
           <ReassuranceBlockImageStyle>
             <ReassuranceSmalGreyBackground>
               <ReassuranceTitleNumberIconContainer>
-                <ReassuranceNumberStyle>2</ReassuranceNumberStyle>
                 <ReassuranceSubitleStyle>
                   {i18n.t('reassurance.exchange_title')}
                 </ReassuranceSubitleStyle>
@@ -220,7 +199,6 @@ const AboutPage: FC = () => {
         <li>
           <ReassuranceSmalGreyBackground last>
             <ReassuranceTitleNumberIconContainer>
-              <ReassuranceNumberStyle>3</ReassuranceNumberStyle>
               <ReassuranceSubitleStyle>
                 {i18n.t('reassurance.seek_title')}
               </ReassuranceSubitleStyle>
