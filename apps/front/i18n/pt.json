@@ -436,7 +436,9 @@
       "button_submit": "Validar",
       "read_our": "Ler a nossa",
       "moderation_link": "carta de moderação",
-      "button_propose": "PROPOR"
+      "button_propose": "PROPOR",
+      "and": "@@proposal_submit.form.and|fr:et nos",
+      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
     },
     "authentication": {
       "button_back": "Modificar a minha proposta",

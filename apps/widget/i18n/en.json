@@ -202,7 +202,9 @@
       "panel_trigger": "Submit my proposal",
       "read_our": "Read our",
       "moderation_link": "moderation charter",
-      "button_propose": "Submit"
+      "button_propose": "Submit",
+      "and": "@@proposal_submit.form.and|fr:et nos",
+      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
     },
     "authentication": {
       "button_login_text": "I already have an account,",

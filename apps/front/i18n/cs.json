@@ -436,7 +436,9 @@
       "button_submit": "Potvrdit",
       "read_our": "Přečíst si naši",
       "moderation_link": "Chartu moderování",
-      "button_propose": "PODAT NÁVRH"
+      "button_propose": "PODAT NÁVRH",
+      "and": "@@proposal_submit.form.and|fr:et nos",
+      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
     },
     "authentication": {
       "button_back": "Pozměnit můj návrh",

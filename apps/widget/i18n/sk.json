@@ -224,7 +224,9 @@
       "panel_trigger": "Chcem navrhnúť riešenie",
       "read_our": "Prečítať si naše",
       "moderation_link": "Chartu moderovania",
-      "button_propose": "NAVRHNÚŤ"
+      "button_propose": "NAVRHNÚŤ",
+      "and": "@@proposal_submit.form.and|fr:et nos",
+      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
     },
     "authentication": {
       "back": "Späť",

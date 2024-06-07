@@ -440,8 +440,10 @@
       "button_cancel": "Annuler",
       "button_submit": "Valider",
       "read_our": "Lire notre",
+      "and": "et nos",
       "moderation_link": "charte de modération",
-      "button_propose": "PROPOSER"
+      "button_propose": "PROPOSER",
+      "gtc": "conditions d'utilisation"
     },
     "authentication": {
       "button_back": "Modifier ma proposition",

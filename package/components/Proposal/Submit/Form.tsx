@@ -8,7 +8,10 @@ import {
   getLocalizedBaitText,
   proposalHasValidLength,
 } from '@make.org/utils/helpers/proposal';
-import { getModerationPageLink } from '@make.org/utils/helpers/url';
+import {
+  getModerationPageLink,
+  getGTUPageLink,
+} from '@make.org/utils/helpers/url';
 import {
   trackDisplayProposalField,
   trackClickProposalSubmit,
@@ -235,6 +238,27 @@ export const ProposalForm: FC<Props> = ({ logger }) => {
                   onClick={trackClickModerationLink}
                 >
                   {i18n.t('proposal_submit.form.moderation_link')}
+                  <> </>
+                  <ProposalExternalLinkIconStyle
+                    aria-hidden
+                    focusable="false"
+                  />
+                  <ScreenReaderItemStyle>
+                    {i18n.t('common.open_new_window')}
+                  </ScreenReaderItemStyle>
+                </ProposalExternalLinkStyle>{' '}
+                {i18n.t('proposal_submit.form.and')}
+                <ProposalExternalLinkStyle
+                  href={
+                    isWidget
+                      ? `https://make.org${getGTUPageLink(country, language)}`
+                      : getGTUPageLink(country, language)
+                  }
+                  target="_blank"
+                  rel="noopener"
+                  onClick={trackClickModerationLink}
+                >
+                  {i18n.t('proposal_submit.form.gtc')}
                   <> </>
                   <ProposalExternalLinkIconStyle
                     aria-hidden

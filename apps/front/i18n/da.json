@@ -431,7 +431,9 @@
       "button_submit": "Godkend",
       "read_our": "Læs vores",
       "moderation_link": "Moderationspolitik",
-      "button_propose": "FORESLÅ"
+      "button_propose": "FORESLÅ",
+      "and": "@@proposal_submit.form.and|fr:et nos",
+      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
     },
     "authentication": {
       "button_back": "Rediger mit forslag",

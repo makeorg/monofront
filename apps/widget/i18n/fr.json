@@ -227,8 +227,10 @@
       "counter": "Votre proposition comprend {{current}} caractères sur un total de {{total}} caractères disponibles",
       "panel_trigger": "Je propose une solution",
       "read_our": "Lire notre",
+      "and": "et nos",
       "moderation_link": "charte de modération",
-      "button_propose": "PROPOSER"
+      "button_propose": "PROPOSER",
+      "gtc": "conditions d'utilisation"
     },
     "authentication": {
       "last_step_red": "Plus qu'une étape ",

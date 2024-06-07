@@ -224,7 +224,9 @@
       "panel_trigger": "Megoldást javasolok",
       "read_our": "Olvassa el",
       "moderation_link": "moderációs szabályzatunkat",
-      "button_propose": "JAVASLAT"
+      "button_propose": "JAVASLAT",
+      "and": "@@proposal_submit.form.and|fr:et nos",
+      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
     },
     "authentication": {
       "back": "Vissza",

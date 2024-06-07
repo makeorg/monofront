@@ -205,7 +205,9 @@
       "panel_trigger": "Ik stel een oplossing voor",
       "read_our": "Raadpleeg ons",
       "moderation_link": "moderatiebeleid",
-      "button_propose": "VOORSTELLEN"
+      "button_propose": "VOORSTELLEN",
+      "and": "@@proposal_submit.form.and|fr:et nos",
+      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
     },
     "authentication": {
       "back": "Terug",

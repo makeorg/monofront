@@ -412,7 +412,9 @@
       "button_submit": "Потвърждаване",
       "read_our": "Прочетете нашата",
       "moderation_link": "Политика за модериране",
-      "button_propose": "ПРЕДЛОЖЕТЕ"
+      "button_propose": "ПРЕДЛОЖЕТЕ",
+      "and": "@@proposal_submit.form.and|fr:et nos",
+      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
     },
     "authentication": {
       "button_back": "Промяна на моето предложение",

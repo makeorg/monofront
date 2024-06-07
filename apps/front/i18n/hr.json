@@ -436,7 +436,9 @@
       "button_submit": "Potvrdi",
       "read_our": "Pročitajte naš",
       "moderation_link": "pravilnik za moderiranje",
-      "button_propose": "POŠALJI PRIJEDLOG"
+      "button_propose": "POŠALJI PRIJEDLOG",
+      "and": "@@proposal_submit.form.and|fr:et nos",
+      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
     },
     "authentication": {
       "button_back": "Izmijeni prijedlog",

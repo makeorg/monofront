@@ -207,7 +207,9 @@
       "panel_trigger": "Propun o soluție",
       "read_our": "Citiți",
       "moderation_link": "carta noastră de moderare",
-      "button_propose": "PROPUNERI"
+      "button_propose": "PROPUNERI",
+      "and": "@@proposal_submit.form.and|fr:et nos",
+      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
     },
     "authentication": {
       "back": "Revenire",

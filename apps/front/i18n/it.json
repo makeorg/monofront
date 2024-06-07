@@ -417,7 +417,9 @@
       "button_submit": "Convalida",
       "read_our": "Leggi la nostra",
       "moderation_link": "carta di moderazione",
-      "button_propose": "PROPONI"
+      "button_propose": "PROPONI",
+      "and": "@@proposal_submit.form.and|fr:et nos",
+      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
     },
     "authentication": {
       "button_back": "Modifico la mia proposta",

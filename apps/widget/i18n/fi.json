@@ -205,7 +205,9 @@
       "panel_trigger": "Ehdotan ratkaisua",
       "read_our": "Lue",
       "moderation_link": "moderointisääntömme",
-      "button_propose": "EHDOTA"
+      "button_propose": "EHDOTA",
+      "and": "@@proposal_submit.form.and|fr:et nos",
+      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
     },
     "authentication": {
       "back": "Takaisin",

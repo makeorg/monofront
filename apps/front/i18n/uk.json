@@ -436,7 +436,9 @@
       "button_submit": "Підтвердити",
       "read_our": "Ознайомитися",
       "moderation_link": "з кодексом модерації",
-      "button_propose": "ПРОПОНУВАТИ"
+      "button_propose": "ПРОПОНУВАТИ",
+      "and": "@@proposal_submit.form.and|fr:et nos",
+      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
     },
     "authentication": {
       "button_back": "Змінити пропозицію",

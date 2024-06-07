@@ -224,7 +224,9 @@
       "panel_trigger": "Jag föreslår en lösning",
       "read_our": "Läs vår",
       "moderation_link": "modereringspolicy",
-      "button_propose": "LÄGG ETT FÖRSLAG"
+      "button_propose": "LÄGG ETT FÖRSLAG",
+      "and": "@@proposal_submit.form.and|fr:et nos",
+      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
     },
     "authentication": {
       "back": "Tillbaka",

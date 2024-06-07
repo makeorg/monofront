@@ -218,7 +218,9 @@
       "panel_trigger": "Ich mache einen Vorschlag",
       "read_our": "Lesen Sie unsere",
       "moderation_link": "Moderationscharta",
-      "button_propose": "Bestätigen"
+      "button_propose": "Bestätigen",
+      "and": "@@proposal_submit.form.and|fr:et nos",
+      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
     },
     "authentication": {
       "button_login_text": "Ich habe bereits ein Konto",

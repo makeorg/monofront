@@ -441,7 +441,9 @@
       "button_submit": "Potrdi",
       "read_our": "Preberi naš",
       "moderation_link": "pravilnik o moderiranju",
-      "button_propose": "PREDLAGAJ"
+      "button_propose": "PREDLAGAJ",
+      "and": "@@proposal_submit.form.and|fr:et nos",
+      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
     },
     "authentication": {
       "button_back": "Spremeni moj predlog",
