@@ -1475,19 +1475,5 @@
     "country_subtitle": "Le choix de votre pays détermine les consultations disponibles.",
     "language_title": "Votre langue",
     "confirm": "Confirmer"
-  },
-  "temp_viva": {
-    "break": "BREAKING NEWS @ VIVATECHNOLOGY 2024",
-    "title": "Make.org annonce ",
-    "title_italic": " deux initiatives mondiales ",
-    "title_2": "pour mettre l'IA au service de la société",
-    "sub_1_italic": "Les \"Communs Démocratiques\" : ",
-    "sub_1": "l'IA au service de la démocratie",
-    "text_1": "Make.org lance le premier programme mondial de recherche pour une IA éthique au service de la démocratie et qui intègre ses principes. Avec une équipe de 50 chercheurs et ingénieurs, nous développons des solutions et des plateformes utilisant des modèles d’IA débiaisés pour améliorer la participation citoyenne. Ce programme de recherche est mené en collaboration avec des universitaires et des institutions internationales de premier plan telles que Sciences Po, le CNRS, Sorbonne Université, Hugging Face, Aspen Institute, Mozilla.ai, le GENCI et le Project Liberty's Institute.",
-    "button_1": "EN SAVOIR PLUS",
-    "sub_2_italic": "VivaTech AI Report : ",
-    "sub_2": "une révolution dans l’accès aux conférences VivaTech",
-    "text_2": "Make.org lance une plateforme inédite qui utilise l’intelligence artificielle pour révolutionner l’accès au contenu des conférences de Viva Technology 2024. Développée par Make.org avec Les Echos, en partenariat avec Viva Technology et avec le soutien de Magic Lemp, la plateforme offre aux visiteurs de VivaTech de toutes nouvelles manières d'accéder au meilleur contenu des conférences. Grâce à la technologie IA de Make.org, les visiteurs peuvent poser des questions sur tout ce qui s’est dit lors des conférences de Vivatech, obtenir des réponses détaillées de l’IA, et même accéder directement aux extraits vidéos correspondants.",
-    "button_2": "DECOUVRIR"
   }
 }

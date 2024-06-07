@@ -13,7 +13,6 @@ import { HomepageQuestions } from '../../app/Homepage/Questions';
 import { FeaturedQuestions } from '../../app/Homepage/Featured/Questions';
 import { FeaturedPosts } from '../../app/Homepage/Featured/Posts';
 import { Hero } from '../../app/Homepage/Hero';
-import { TemporaryVivatech } from '../../app/Homepage/Hero/TemporaryVivatech';
 import { PartnershipBanner } from '../../app/Homepage/Partnership';
 import { InternationalPlaceholder } from '../../app/Homepage/International';
 import { HomepageSkipLinks } from '../../app/SkipLinks/Homepage';
@@ -82,7 +81,6 @@ const HomePage: FC = () => {
       )}
       {!isLoading && homepage && (
         <>
-          <TemporaryVivatech />
           <Hero />
           <HomepageWrapperStyle>
             <HighlightsBanner highlights={homepage.highlights} />

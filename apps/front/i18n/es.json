@@ -1475,19 +1475,5 @@
     "title": "¡Ya te queda poco! Comparte tus datos sociodemográficos para que se tengan en cuenta tus votos y para que seas más representativo.",
     "protect": "No te preocupes, tus datos están protegidos 🔒",
     "next": "Siguiente"
-  },
-  "temp_viva": {
-    "break": "ÚLTIMA HORA DE @ VIVATECHNOLOGY 2024",
-    "title": "Make.org presenta ",
-    "title_italic": "dos iniciativas a nivel mundial ",
-    "title_2": "para poner la Inteligencia Artificial al servicio de la sociedad",
-    "sub_1_italic": "\"Democratic Commons\": ",
-    "sub_1": "IA pionera para la democracia",
-    "text_1": "Make.org lanza el primer programa mundial de investigación para integrar los principios democráticos en la IA. Con un equipo de 50 investigadores e ingenieros, estamos desarrollando IA y plataformas imparciales para mejorar la participación ciudadana. Lo estamos logrando en colaboración con académicos internacionales de primer nivel de instituciones como SciencesPo, CNRS, Sorbonne, Hugging Face, Aspen Institute, Mozzilla.ai, Genci y Project Liberty Institute.",
-    "button_1": "DESCUBRE y únase a",
-    "sub_2_italic": "Informe VivaTech AI: ",
-    "sub_2": "Perspectivas de las conferencias impulsadas por la IA",
-    "text_2": "Make.org lanza la primera plataforma mundial VivaTech AI Report, que aprovecha la Inteligencia Artificial para revolucionar el acceso al contenido de las conferencias de VivaTech. Desarrollada por Make.org con Les Echos, Viva Technology y Magic-Lemp, la plataforma ofrece a los visitantes de VivaTech vías completamente nuevas para acceder a lo mejor del contenido de las conferencias. Gracias a la tecnología de IA de Make.org, los visitantes pueden hacer preguntas sobre lo que se debatió en las conferencias de VivaTech, obtener respuestas detalladas y acceder directamente a extractos de vídeo que explican los argumentos.",
-    "button_2": "DESCUBRE y prueba"
   }
 }
