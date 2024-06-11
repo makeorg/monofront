@@ -437,8 +437,8 @@
       "read_our": "Iepazīstieties ar mūsu",
       "moderation_link": "moderēšanas hartu",
       "button_propose": "IEROSINĀT",
-      "and": "@@proposal_submit.form.and|fr:et nos",
-      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
+      "and": "un mūsu",
+      "gtc": " lietošanas noteikumi"
     },
     "authentication": {
       "button_back": "Grozīt manu priekšlikumu",

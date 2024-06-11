@@ -432,8 +432,8 @@
       "read_our": "Olvassa el",
       "moderation_link": "moderációs szabályzatunkat",
       "button_propose": "JAVASLAT",
-      "and": "@@proposal_submit.form.and|fr:et nos",
-      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
+      "and": "és a mi",
+      "gtc": " használati feltételek"
     },
     "authentication": {
       "button_back": "Javaslatom módosítása",

@@ -225,8 +225,8 @@
       "read_our": "Loe meie",
       "moderation_link": "modereerimise eeskirju",
       "button_propose": "ETTEPANEK",
-      "and": "@@proposal_submit.form.and|fr:et nos",
-      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
+      "and": "ja meie",
+      "gtc": " kasutustingimused"
     },
     "authentication": {
       "back": "Tagasi",

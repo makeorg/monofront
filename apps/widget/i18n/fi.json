@@ -206,8 +206,8 @@
       "read_our": "Lue",
       "moderation_link": "moderointisääntömme",
       "button_propose": "EHDOTA",
-      "and": "@@proposal_submit.form.and|fr:et nos",
-      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
+      "and": "ja meidän",
+      "gtc": " käyttöehdot"
     },
     "authentication": {
       "back": "Takaisin",

@@ -437,8 +437,8 @@
       "read_our": "Skaitykite mūsų",
       "moderation_link": "moderavimo taisykles",
       "button_propose": "PASIŪLYTI",
-      "and": "@@proposal_submit.form.and|fr:et nos",
-      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
+      "and": "ir mūsų",
+      "gtc": " naudojimo sąlygos"
     },
     "authentication": {
       "button_back": "Redaguoti pasiūlymą",

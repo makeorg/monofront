@@ -432,8 +432,8 @@
       "read_our": "Læs vores",
       "moderation_link": "Moderationspolitik",
       "button_propose": "FORESLÅ",
-      "and": "@@proposal_submit.form.and|fr:et nos",
-      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
+      "and": "og vores",
+      "gtc": " betingelser for brug"
     },
     "authentication": {
       "button_back": "Rediger mit forslag",

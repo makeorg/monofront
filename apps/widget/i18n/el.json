@@ -225,8 +225,8 @@
       "read_our": "Διαβάστε την",
       "moderation_link": "πολιτική ελέγχου περιεχομένου",
       "button_propose": "ΥΠΟΒΟΛΗ ΠΡΟΤΑΣΗΣ",
-      "and": "@@proposal_submit.form.and|fr:et nos",
-      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
+      "and": "και μας",
+      "gtc": " όροι χρήσης"
     },
     "authentication": {
       "back": "Επιστροφή",

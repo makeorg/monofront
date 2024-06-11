@@ -418,8 +418,8 @@
       "read_our": "Leer nuestra",
       "moderation_link": "Política de moderación",
       "button_propose": "HACER UNA PROPUESTA",
-      "and": "@@proposal_submit.form.and|fr:et nos",
-      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
+      "and": "y nuestras",
+      "gtc": " términos de uso"
     },
     "authentication": {
       "button_back": "Modificar mi propuesta",

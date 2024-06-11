@@ -208,8 +208,8 @@
       "read_our": "Przeczytaj naszą",
       "moderation_link": "kartę moderacji",
       "button_propose": "ZAPROPONUJ",
-      "and": "@@proposal_submit.form.and|fr:et nos",
-      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
+      "and": "i nas",
+      "gtc": " warunki korzystania"
     },
     "authentication": {
       "back": "Powrót",

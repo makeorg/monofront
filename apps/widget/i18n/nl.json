@@ -206,8 +206,8 @@
       "read_our": "Raadpleeg ons",
       "moderation_link": "moderatiebeleid",
       "button_propose": "VOORSTELLEN",
-      "and": "@@proposal_submit.form.and|fr:et nos",
-      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
+      "and": "en onze",
+      "gtc": " gebruiksvoorwaarden"
     },
     "authentication": {
       "back": "Terug",

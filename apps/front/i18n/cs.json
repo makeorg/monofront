@@ -437,8 +437,8 @@
       "read_our": "Přečíst si naši",
       "moderation_link": "Chartu moderování",
       "button_propose": "PODAT NÁVRH",
-      "and": "@@proposal_submit.form.and|fr:et nos",
-      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
+      "and": "a naše",
+      "gtc": " podmínky používání"
     },
     "authentication": {
       "button_back": "Pozměnit můj návrh",

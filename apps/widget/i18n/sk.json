@@ -225,8 +225,8 @@
       "read_our": "Prečítať si naše",
       "moderation_link": "Chartu moderovania",
       "button_propose": "NAVRHNÚŤ",
-      "and": "@@proposal_submit.form.and|fr:et nos",
-      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
+      "and": "a náš",
+      "gtc": " podmienky používania"
     },
     "authentication": {
       "back": "Späť",

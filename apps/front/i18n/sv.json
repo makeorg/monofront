@@ -432,8 +432,8 @@
       "read_our": "Läs vår",
       "moderation_link": "modereringspolicy",
       "button_propose": "LÄGG ETT FÖRSLAG",
-      "and": "@@proposal_submit.form.and|fr:et nos",
-      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
+      "and": "och vår",
+      "gtc": " användarvillkor"
     },
     "authentication": {
       "button_back": "Ändra mitt förslag",

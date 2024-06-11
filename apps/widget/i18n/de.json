@@ -219,8 +219,8 @@
       "read_our": "Lesen Sie unsere",
       "moderation_link": "Moderationscharta",
       "button_propose": "Bestätigen",
-      "and": "@@proposal_submit.form.and|fr:et nos",
-      "gtc": "@@proposal_submit.form.gtc|fr:conditions d'utilisation"
+      "and": "und unsere",
+      "gtc": " nutzungsbedingungen"
     },
     "authentication": {
       "button_login_text": "Ich habe bereits ein Konto",
