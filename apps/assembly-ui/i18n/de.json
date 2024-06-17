@@ -82,7 +82,7 @@
     "how_help": "Unsere künstliche Intelligenz unterstützt dich in deinem Lernprozess",
     "sources_title": "Indem sie ihre Informationen aus verifizierten Quellen nimmt",
     "sources_subtitle": "Unsere KI verwendet nur öffentliche und zuverlässige Dokumente, um Antworten zu formulieren.",
-    "sources_text": "Unsere künstliche Intelligenz verwendet Quellen, die von Make.org sorgfältig ausgewählt, überprüft und moderiert werden. Unsere künstliche Intelligenz priorisiert Videoinhalte und ermöglicht es dir auch, gezielt in transkribierten Dokumenten zu suchen. Die Antworten, die du auf unserer Plattform erhältst, kommen aus öffentlichen Dokumenten und werden mithilfe von KI-Technologie (basierend auf RAG - Retrieval-Augmented Generation) generiert, die am Ende der Seite ausführlicher erläutert wird.",
+    "sources_text": "Unsere künstliche Intelligenz verwendet Quellen, die von Make.org sorgfältig ausgewählt, überprüft und moderiert werden. Die Antworten, die du auf unserer Plattform erhältst, kommen aus öffentlichen Dokumenten und werden mithilfe von KI-Technologie (basierend auf RAG - Retrieval-Augmented Generation) generiert, die am Ende der Seite ausführlicher erläutert wird.",
     "warning_docs": "Derzeit verwendet unsere KI Video- und Textquellen unabhängig voneinander. Die erste Antwort wird aus Videoquellen abgeleitet. In der Antwort unserer KI findest du diese Schaltfläche: ",
     "warning_docs_2": "Durch klicken, gelangst du zu der Antwort, die ausschließlich aus schriftlichen Dokumenten stammt.",
     "exchange_title": "Indem sie die Form eines Gesprächs annimmt",
@@ -123,10 +123,10 @@
     "theme_third": "Thema 3",
     "theme_fourth": "Thema 4",
     "warning": "Wichtiger Detail",
-    "sources_origin_title": "@@reassurance.sources_origin_title|fr:Nos sources",
-    "sources_origin_text_header": "@@reassurance.sources_origin_text_header|fr:Notre IA se source dans une base multi-documentaire afin de produire ses réponses.",
-    "sources_origin_text_bullet_1": "@@reassurance.sources_origin_text_bullet_1|fr:Une base de vidéos officiels sont retranscrits et vérifiés afin de vous économiser du temps de visionnage sans perdre d’informations. ",
-    "sources_origin_text_bullet_2": "@@reassurance.sources_origin_text_bullet_2|fr:Des documents certifiés sont égalements utilisés comme source par notre IA, qui les simplifie pour faciliter la compréhension de tous."
+    "sources_origin_title": "Unsere Quellen",
+    "sources_origin_text_header": "Unsere KI bezieht sich in ihren Antworten auf eine multi-dokumentarischen Datenbank.",
+    "sources_origin_text_bullet_1": "Diese umfasst unter anderem offizielle Videos, die transkribiert wurden. ",
+    "sources_origin_text_bullet_2": "So sparst du dir die Zeit des Ansehens und verlierst keine wichtigen Informationen. Darüber hinaus verwendet unsere KI zertifizierte Dokumente und gibt diese in ihren Antworten leicht verständlich wieder. Dadurch machen wir alle Videos und Dokumente für dich einfach zugänglich."
   },
   "sources_page": {
     "consult": "Quellen konsultieren :",

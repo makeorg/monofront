@@ -82,7 +82,7 @@
     "how_help": "Our Artificial Intelligence guides you in your learning journey",
     "sources_title": "By drawing from reliable sources",
     "sources_subtitle": "Our AI only uses public and reliable documents to formulate its answers.",
-    "sources_text": "Our Artificial Intelligence uses sources that are carefully selected, verified, and moderated by Make.org. Prioritising video content, our AI also allows you to specifically search among transcribed documents. The answers you receive during your experience on our platform come from public documents and are generated using AI technology (based on RAG - Retrieval-Augmented Generation), explained at the bottom of the page.",
+    "sources_text": "Our Artificial Intelligence uses sources that are carefully selected, verified, and moderated by Make.org. The answers you receive during your experience on our platform come from public documents and are generated using AI technology (based on RAG - Retrieval-Augmented Generation), explained at the bottom of the page.",
     "warning_docs": "Currently, our AI uses video and text sources independently. The initial response is derived from video sources. Inside our AI’s answer, you’ll see this button: ",
     "warning_docs_2": "By clicking, you will access the response that is exclusively sourced from written documents.",
     "exchange_title": "By taking the form of a conversation",
@@ -123,10 +123,10 @@
     "theme_third": "Topic 3",
     "theme_fourth": "Topic 4",
     "warning": "Important detail",
-    "sources_origin_title": "@@reassurance.sources_origin_title|fr:Nos sources",
-    "sources_origin_text_header": "@@reassurance.sources_origin_text_header|fr:Notre IA se source dans une base multi-documentaire afin de produire ses réponses.",
-    "sources_origin_text_bullet_1": "@@reassurance.sources_origin_text_bullet_1|fr:Une base de vidéos officiels sont retranscrits et vérifiés afin de vous économiser du temps de visionnage sans perdre d’informations. ",
-    "sources_origin_text_bullet_2": "@@reassurance.sources_origin_text_bullet_2|fr:Des documents certifiés sont égalements utilisés comme source par notre IA, qui les simplifie pour faciliter la compréhension de tous."
+    "sources_origin_title": "Our sources",
+    "sources_origin_text_header": "Our IA is sourced in a multi-documentary basis to produce its responses.",
+    "sources_origin_text_bullet_1": "An official video base is transcribed and verified to save you time of viewing without losing information. ",
+    "sources_origin_text_bullet_2": "Certified documents are also used as a source by our IA, which simplifies them to facilitate understanding of all."
   },
   "sources_page": {
     "consult": "Consult sources:",
