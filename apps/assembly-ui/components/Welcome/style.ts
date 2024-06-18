@@ -85,6 +85,10 @@ export const WelcomeContentTextStyle = styled(ReactMarkdown)`
   font-size: ${typography.FontSize.Text.Bastille};
 `;
 
+export const WelcomeExergueTextStyle = styled(ReactMarkdown)`
+  font-size: ${typography.FontSize.Text.Arrondissement};
+`;
+
 export const WelcomeThemesBlockStyle = styled.div`
   display: flex;
   flex-wrap: wrap;

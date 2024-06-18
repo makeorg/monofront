@@ -11,6 +11,7 @@ import {
   WelcomeBlockThemesContainerStyle,
   WelcomeBlockVideoContainerStyle,
   WelcomeContentTextStyle,
+  WelcomeExergueTextStyle,
 } from './style';
 import { YoutubePlayer } from '../ReactPlayer/YoutubePlayer';
 import { useAssemblyContext } from '../../store/context';
@@ -28,6 +29,9 @@ export const Welcome: FC = () => {
         <WelcomeTitleStyle className="purple">{introduction}</WelcomeTitleStyle>
       </span>
 
+      <WelcomeExergueTextStyle>
+        {i18n.t('welcome.exergue')}
+      </WelcomeExergueTextStyle>
       <WelcomeBlockContainerStyle>
         {summary && (
           <WelcomeContentBlockContainerStyle>

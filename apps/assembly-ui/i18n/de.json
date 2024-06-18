@@ -135,6 +135,7 @@
     "videos": "Videoquellen :"
   },
   "welcome": {
-    "title": "@@welcome.title|fr:Demander, Comprendre"
+    "title": "@@welcome.title|fr:Demander, Comprendre",
+    "exergue": "@@welcome.exergue|fr:Cet outil est une plateforme qui utilise l’Intelligence Artificielle pour rendre accessible la compréhension des sujets complexes pour les citoyens."
   }
 }
