@@ -61,5 +61,8 @@ export const colors = {
       Primary: '#253186',
       Secondary: '#d5153c',
     },
+    Panoramic: {
+      Brand: '#4C41AB',
+    },
   },
 };

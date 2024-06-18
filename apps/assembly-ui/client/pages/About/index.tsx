@@ -150,7 +150,7 @@ const AboutPage: FC = () => {
               </ReassuranceTitleNumberIconContainer>
 
               <ReassuranceTextStyle>
-                {i18n.t('reassurance.sources_origin_text')}
+                {i18n.t('reassurance.sources_origin_text_header')}
                 <ReassuranceList>
                   <li>{i18n.t('reassurance.sources_origin_text_bullet_1')}</li>
                   <li>{i18n.t('reassurance.sources_origin_text_bullet_2')}</li>

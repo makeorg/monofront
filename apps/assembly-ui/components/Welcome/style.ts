@@ -3,6 +3,7 @@ import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { typography } from '@make.org/designsystem/tokens/typography';
+import { colors } from '@make.org/designsystem/tokens/colors';
 import ReactMarkdown from 'react-markdown';
 import { BonhommeLogoSvg } from '../../assets/bonhomme';
 
@@ -17,7 +18,14 @@ export const WelcomeContainerStyle = styled.section`
 `;
 
 export const WelcomeTitleStyle = styled.h1`
-  font-size: ${typography.FontSize.Title.Europe};
+  font-size: ${typography.FontSize.Title.France};
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    font-size: ${typography.FontSize.Title.Europe};
+  }
+
+  &.purple {
+    color: ${colors.Content.Panoramic.Brand};
+  }
 `;
 
 export const WelcomeIAStyle = styled.p`

@@ -247,7 +247,7 @@ export const ProposalForm: FC<Props> = ({ logger }) => {
                     {i18n.t('common.open_new_window')}
                   </ScreenReaderItemStyle>
                 </ProposalExternalLinkStyle>{' '}
-                {i18n.t('proposal_submit.form.and')}
+                {i18n.t('proposal_submit.form.and')}{' '}
                 <ProposalExternalLinkStyle
                   href={
                     isWidget

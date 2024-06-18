@@ -23,7 +23,11 @@ export const Welcome: FC = () => {
 
   return (
     <WelcomeContainerStyle>
-      <WelcomeTitleStyle>{introduction}</WelcomeTitleStyle>
+      <span>
+        <WelcomeTitleStyle>{i18n.t('welcome.title')}</WelcomeTitleStyle>
+        <WelcomeTitleStyle className="purple">{introduction}</WelcomeTitleStyle>
+      </span>
+
       <WelcomeBlockContainerStyle>
         {summary && (
           <WelcomeContentBlockContainerStyle>
@@ -37,7 +41,6 @@ export const Welcome: FC = () => {
           <YoutubePlayer url={introMediaUrl} />
         </WelcomeBlockVideoContainerStyle>
       </WelcomeBlockContainerStyle>
-
       <WelcomeBlockThemesContainerStyle>
         <WelcomeContentBlockTitleStyle>
           {i18n.t('prompt.themeAnswer')}&nbsp;

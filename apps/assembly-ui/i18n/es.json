@@ -133,5 +133,8 @@
     "docs": "Fuentes documentales :",
     "see": "Ver el evento",
     "videos": "Fuentes de vídeo :"
+  },
+  "welcome": {
+    "title": "@@welcome.title|fr:Demander, Comprendre"
   }
 }

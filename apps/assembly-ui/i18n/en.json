@@ -133,5 +133,8 @@
     "docs": "Documentary sources:",
     "see": "Back to the event",
     "videos": "Video sources:"
+  },
+  "welcome": {
+    "title": "@@welcome.title|fr:Demander, Comprendre"
   }
 }

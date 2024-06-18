@@ -9,6 +9,9 @@
     "make": "Propulsé par Make.org",
     "top": "Aller en haut de la page"
   },
+  "welcome": {
+    "title": "Demander, Comprendre"
+  },
   "modal": {
     "closeLabel": "Fermer la fenêtre de dialogue",
     "openLabel": "Ouvrir la fenêtre de dialogue",
