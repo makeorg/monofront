@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import i18n from 'i18next';
 import { QuestionType } from '@make.org/types';
+import { trackDownloadReport } from '@make.org/utils/services/Tracking';
 import { ResultCardReportButtonStyle } from '../ResultCardSidebar/style';
 import { ResultCardSidebar } from '../ResultCardSidebar';
 
@@ -17,6 +18,7 @@ export const ResultsReport: FC<Props> = ({ question }) => (
       href={question.reportUrl}
       target="_blank"
       rel="noopener"
+      onClick={trackDownloadReport}
     >
       {i18n.t('consultation.results.download.button')}
     </ResultCardReportButtonStyle>

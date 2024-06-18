@@ -729,3 +729,7 @@ REPORT_SOLUTION:
         - BadTranslation
         - IncorrectInformation
         - Offensive
+
+CLICK_DOWNLOAD_RESULT_REPORT:
+  key: click-download-result-report
+  description: download the result report

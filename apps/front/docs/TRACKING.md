@@ -743,4 +743,9 @@ Following parameters are added to all events.
   
   
 
+  - `click-download-result-report` download the result report
+
+    
+  
+
 </auto-generated-tracking-doc>

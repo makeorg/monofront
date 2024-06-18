@@ -678,5 +678,9 @@ export const trackReportSolution = (type: string): void => {
   TrackingService.sendAllTrackers(trackingEvent.REPORT_SOLUTION({ type }));
 };
 
+export const trackDownloadReport = (): void => {
+  TrackingService.sendAllTrackers(trackingEvent.CLICK_DOWNLOAD_RESULT_REPORT());
+};
+
 /* eslint-disable import/no-default-export */
 export default TrackingService;
