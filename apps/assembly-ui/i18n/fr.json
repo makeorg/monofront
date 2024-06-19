@@ -11,7 +11,9 @@
   },
   "welcome": {
     "title": "Demander, Comprendre",
-    "exergue": "Cet outil est une plateforme qui utilise l’Intelligence Artificielle pour rendre accessible la compréhension des sujets complexes pour les citoyens."
+    "exergue": "Cet outil est une plateforme qui utilise l’Intelligence Artificielle pour rendre accessible la compréhension des sujets complexes pour les citoyens.",
+    "more": "Voir plus...",
+    "less": "Réduire..."
   },
   "modal": {
     "closeLabel": "Fermer la fenêtre de dialogue",

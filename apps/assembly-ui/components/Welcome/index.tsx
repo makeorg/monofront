@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import i18n from 'i18next';
 import { Themes } from './Themes';
 import {
@@ -12,15 +12,21 @@ import {
   WelcomeBlockVideoContainerStyle,
   WelcomeContentTextStyle,
   WelcomeExergueTextStyle,
+  WelcomeToggleButtonStyle,
 } from './style';
 import { YoutubePlayer } from '../ReactPlayer/YoutubePlayer';
 import { useAssemblyContext } from '../../store/context';
 
+const MAX_LENGTH_SUMMARY = 200;
+
 export const Welcome: FC = () => {
   const { state } = useAssemblyContext();
+  const [showSummary, setShowSummary] = useState<boolean>(false);
   const { introduction, introMediaUrl } = state.event;
   const { generatedContents } = state;
   const summary = generatedContents[0];
+  const showToggleSummary = summary.content.length >= MAX_LENGTH_SUMMARY;
+  const summarySliced = summary.content.slice(0, MAX_LENGTH_SUMMARY);
 
   return (
     <WelcomeContainerStyle>
@@ -38,7 +44,20 @@ export const Welcome: FC = () => {
             <WelcomeContentBlockTitleStyle>
               {summary.title}
             </WelcomeContentBlockTitleStyle>
-            <WelcomeContentTextStyle>{summary.content}</WelcomeContentTextStyle>
+            <WelcomeContentTextStyle aria-expanded={showSummary}>
+              {!showToggleSummary || showSummary
+                ? summary.content
+                : `${summarySliced}...`}
+            </WelcomeContentTextStyle>
+            {showToggleSummary && (
+              <WelcomeToggleButtonStyle
+                type="button"
+                onClick={() => setShowSummary(!showSummary)}
+                aria-pressed={showSummary}
+              >
+                {showSummary ? i18n.t('welcome.less') : i18n.t('welcome.more')}
+              </WelcomeToggleButtonStyle>
+            )}
           </WelcomeContentBlockContainerStyle>
         )}
         <WelcomeBlockVideoContainerStyle>

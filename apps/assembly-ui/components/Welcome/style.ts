@@ -95,6 +95,16 @@ export const WelcomeThemesBlockStyle = styled.div`
   gap: ${spacings.m};
 `;
 
+export const WelcomeToggleButtonStyle = styled.button`
+  color: ${colors.Content.Panoramic.Brand};
+  font-size: ${typography.FontSize.Text.Bastille};
+  border: none;
+  background: none;
+  width: fit-content;
+  padding: 0;
+  text-decoration: underline;
+`;
+
 export const WelcomeThemesButtonStyle = styled.button<{
   standardStyle?: boolean;
 }>`
