@@ -29,41 +29,46 @@ export const Welcome: FC = () => {
   const summarySliced = summary.content.slice(0, MAX_LENGTH_SUMMARY);
 
   return (
-    <WelcomeContainerStyle>
-      <span>
-        <WelcomeTitleStyle>{i18n.t('welcome.title')}</WelcomeTitleStyle>
-        <WelcomeTitleStyle className="purple">{introduction}</WelcomeTitleStyle>
-      </span>
-
-      <WelcomeExergueTextStyle>
-        {i18n.t('welcome.exergue')}
-      </WelcomeExergueTextStyle>
-      <WelcomeBlockContainerStyle>
-        {summary && (
-          <WelcomeContentBlockContainerStyle>
-            <WelcomeContentBlockTitleStyle>
-              {summary.title}
-            </WelcomeContentBlockTitleStyle>
-            <WelcomeContentTextStyle aria-expanded={showSummary}>
-              {!showToggleSummary || showSummary
-                ? summary.content
-                : `${summarySliced}...`}
-            </WelcomeContentTextStyle>
-            {showToggleSummary && (
-              <WelcomeToggleButtonStyle
-                type="button"
-                onClick={() => setShowSummary(!showSummary)}
-                aria-pressed={showSummary}
-              >
-                {showSummary ? i18n.t('welcome.less') : i18n.t('welcome.more')}
-              </WelcomeToggleButtonStyle>
-            )}
-          </WelcomeContentBlockContainerStyle>
-        )}
-        <WelcomeBlockVideoContainerStyle>
-          <YoutubePlayer url={introMediaUrl} />
-        </WelcomeBlockVideoContainerStyle>
-      </WelcomeBlockContainerStyle>
+    <>
+      <WelcomeContainerStyle>
+        <span>
+          <WelcomeTitleStyle>{i18n.t('welcome.title')}</WelcomeTitleStyle>
+          <WelcomeTitleStyle className="purple">
+            {introduction}
+          </WelcomeTitleStyle>
+        </span>
+        <WelcomeExergueTextStyle>
+          {i18n.t('welcome.exergue')}
+        </WelcomeExergueTextStyle>
+        <WelcomeBlockContainerStyle>
+          {summary && (
+            <WelcomeContentBlockContainerStyle>
+              <WelcomeContentBlockTitleStyle>
+                {summary.title}
+              </WelcomeContentBlockTitleStyle>
+              <WelcomeContentTextStyle aria-expanded={showSummary}>
+                {!showToggleSummary || showSummary
+                  ? summary.content
+                  : `${summarySliced}...`}
+              </WelcomeContentTextStyle>
+              {showToggleSummary && (
+                <WelcomeToggleButtonStyle
+                  type="button"
+                  onClick={() => setShowSummary(!showSummary)}
+                  aria-pressed={showSummary}
+                >
+                  {showSummary
+                    ? i18n.t('welcome.less')
+                    : i18n.t('welcome.more')}
+                </WelcomeToggleButtonStyle>
+              )}
+            </WelcomeContentBlockContainerStyle>
+          )}
+          <WelcomeBlockVideoContainerStyle>
+            <YoutubePlayer url={introMediaUrl} />
+          </WelcomeBlockVideoContainerStyle>
+        </WelcomeBlockContainerStyle>
+      </WelcomeContainerStyle>
       <WelcomeBlockThemesContainerStyle>
         <WelcomeContentBlockTitleStyle>
           {i18n.t('prompt.themeAnswer')}&nbsp;
@@ -76,6 +81,6 @@ export const Welcome: FC = () => {
         </WelcomeIAStyle>
         <Themes />
       </WelcomeBlockThemesContainerStyle>
-    </WelcomeContainerStyle>
+    </>
   );
 };

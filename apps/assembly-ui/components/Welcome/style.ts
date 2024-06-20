@@ -73,6 +73,10 @@ export const WelcomeBlockThemesContainerStyle = styled.div`
   background-color: rgba(248, 248, 248, 1);
   gap: ${spacings.m};
   padding: ${spacings.m};
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    max-width: calc(${intToPx(Breakpoints.LargeDesktop)} - ${spacings.m} * 2);
+    margin: 0 auto;
+  }
   border-radius: 10px;
 `;
 
