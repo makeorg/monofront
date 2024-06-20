@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react';
 import i18n from 'i18next';
 import { Themes } from './Themes';
+import { useTracking } from '../Tracking/useTracking';
 import {
   WelcomeContainerStyle,
   WelcomeTitleStyle,
@@ -22,11 +23,22 @@ const MAX_LENGTH_SUMMARY = 200;
 export const Welcome: FC = () => {
   const { state } = useAssemblyContext();
   const [showSummary, setShowSummary] = useState<boolean>(false);
-  const { introduction, introMediaUrl } = state.event;
+  const { visitorId } = state;
+  const { introduction, introMediaUrl, slug: eventSlug } = state.event;
   const { generatedContents } = state;
   const summary = generatedContents[0];
   const showToggleSummary = summary.content.length >= MAX_LENGTH_SUMMARY;
   const summarySliced = summary.content.slice(0, MAX_LENGTH_SUMMARY);
+  const tracker = useTracking();
+
+  const handleClick = (displaySummary: boolean) => {
+    setShowSummary(displaySummary);
+    tracker.track('ACTION-SEE-MORE', {
+      visitor_id: visitorId,
+      event_slug: eventSlug,
+      expand: displaySummary ? 'true' : 'false',
+    });
+  };
 
   return (
     <>
@@ -54,7 +66,7 @@ export const Welcome: FC = () => {
               {showToggleSummary && (
                 <WelcomeToggleButtonStyle
                   type="button"
-                  onClick={() => setShowSummary(!showSummary)}
+                  onClick={() => handleClick(!showSummary)}
                   aria-pressed={showSummary}
                 >
                   {showSummary

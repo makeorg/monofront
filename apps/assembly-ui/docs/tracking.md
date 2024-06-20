@@ -153,6 +153,15 @@ Our question answering service records user questions and AI response for analys
     | `event_slug` | The event slug | Subject segmentation - service improvement | true |  | convention-fin-de-vie
 
 
+  - `action-see-more` CTA see more introduction
+    
+    | param_name | description | purpose | required | values | example |
+    | -          |-            |-        |-         | -      | -       |
+    | `visitor_id` | Unique visitor identifier | Segmentation by unique visitor | false |  | 00000000-0000-0000-0000-000000000000
+    | `event_slug` | The event slug | Subject segmentation - service improvement | true |  | convention-fin-de-vie
+    | `expand` | The content is expended | True or False | true |  | true
+
+
 
 
 
