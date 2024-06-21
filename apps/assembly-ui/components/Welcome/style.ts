@@ -10,11 +10,36 @@ import { BonhommeLogoSvg } from '../../assets/bonhomme';
 export const WelcomeContainerStyle = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 30px;
   width: 100%;
   max-width: ${intToPx(Breakpoints.LargeDesktop)};
   margin: 0 auto;
-  padding: ${spacings.m};
+  padding: ${spacings.xl} ${spacings.m} ${spacings.m} ${spacings.m};
+`;
+
+export const WelcomeTitleImageContainerStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${spacings.m};
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    flex-direction: row;
+    gap: 70px;
+  }
+`;
+
+export const WelcomeTitleExergueContainerStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: ${spacings.s};
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    gap: 25px;
+  }
+`;
+
+export const WelcomeIconPngStyle = styled.img`
+  margin: auto;
+  width: 200px;
+  height: 300px;
 `;
 
 export const WelcomeTitleStyle = styled.h1`
@@ -35,35 +60,10 @@ export const WelcomeIAStyle = styled.p`
   }
 `;
 
-export const WelcomeBlockContainerStyle = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: ${spacings.l};
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    flex-direction: row;
-  }
-`;
-export const WelcomeBlockVideoContainerStyle = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex: 2;
-  order: 1;
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    order: 2;
-  }
-`;
-
 export const WelcomeContentBlockContainerStyle = styled.div`
   display: flex;
-  flex: 3;
   flex-direction: column;
   gap: ${spacings.sm};
-  order: 2;
-  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
-    order: 1;
-  }
 `;
 
 export const WelcomeBlockThemesContainerStyle = styled.div`
@@ -109,6 +109,10 @@ export const WelcomeToggleButtonStyle = styled.button`
   text-decoration: underline;
 `;
 
+export const BonhommeLogoSvgStyle = styled(BonhommeLogoSvg)`
+  margin-left: ${spacings.s};
+`;
+
 export const WelcomeThemesButtonStyle = styled.button<{
   standardStyle?: boolean;
 }>`
@@ -120,8 +124,4 @@ export const WelcomeThemesButtonStyle = styled.button<{
   border-radius: 20px;
   border: none;
   color: ${props => (props.standardStyle ? '#121212' : 'black')};
-`;
-
-export const BonhommeLogoSvgStyle = styled(BonhommeLogoSvg)`
-  margin-left: 10px;
 `;

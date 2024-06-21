@@ -6,16 +6,17 @@ import {
   WelcomeContainerStyle,
   WelcomeTitleStyle,
   WelcomeIAStyle,
-  WelcomeBlockContainerStyle,
   WelcomeContentBlockContainerStyle,
   WelcomeContentBlockTitleStyle,
   WelcomeBlockThemesContainerStyle,
-  WelcomeBlockVideoContainerStyle,
   WelcomeContentTextStyle,
   WelcomeExergueTextStyle,
   WelcomeToggleButtonStyle,
+  WelcomeIconPngStyle,
+  WelcomeTitleImageContainerStyle,
+  WelcomeTitleExergueContainerStyle,
 } from './style';
-import { YoutubePlayer } from '../ReactPlayer/YoutubePlayer';
+import welcomeImage from "../../assets/panoecrand'accueil.png";
 import { useAssemblyContext } from '../../store/context';
 
 const MAX_LENGTH_SUMMARY = 200;
@@ -24,7 +25,7 @@ export const Welcome: FC = () => {
   const { state } = useAssemblyContext();
   const [showSummary, setShowSummary] = useState<boolean>(false);
   const { visitorId } = state;
-  const { introduction, introMediaUrl, slug: eventSlug } = state.event;
+  const { introduction, slug: eventSlug } = state.event;
   const { generatedContents } = state;
   const summary = generatedContents[0];
   const showToggleSummary = summary.content.length >= MAX_LENGTH_SUMMARY;
@@ -43,44 +44,45 @@ export const Welcome: FC = () => {
   return (
     <>
       <WelcomeContainerStyle>
-        <span>
-          <WelcomeTitleStyle>{i18n.t('welcome.title')}</WelcomeTitleStyle>
-          <WelcomeTitleStyle className="purple">
-            {introduction}
-          </WelcomeTitleStyle>
-        </span>
-        <WelcomeExergueTextStyle>
-          {i18n.t('welcome.exergue')}
-        </WelcomeExergueTextStyle>
-        <WelcomeBlockContainerStyle>
-          {summary && (
-            <WelcomeContentBlockContainerStyle>
-              <WelcomeContentBlockTitleStyle>
-                {summary.title}
-              </WelcomeContentBlockTitleStyle>
-              <WelcomeContentTextStyle aria-expanded={showSummary}>
-                {!showToggleSummary || showSummary
-                  ? summary.content
-                  : `${summarySliced}...`}
-              </WelcomeContentTextStyle>
-              {showToggleSummary && (
-                <WelcomeToggleButtonStyle
-                  type="button"
-                  onClick={() => handleClick(!showSummary)}
-                  aria-pressed={showSummary}
-                >
-                  {showSummary
-                    ? i18n.t('welcome.less')
-                    : i18n.t('welcome.more')}
-                </WelcomeToggleButtonStyle>
-              )}
-            </WelcomeContentBlockContainerStyle>
-          )}
-          <WelcomeBlockVideoContainerStyle>
-            <YoutubePlayer url={introMediaUrl} />
-          </WelcomeBlockVideoContainerStyle>
-        </WelcomeBlockContainerStyle>
+        <WelcomeTitleImageContainerStyle>
+          <WelcomeTitleExergueContainerStyle>
+            <span>
+              <WelcomeTitleStyle>{i18n.t('welcome.title')}</WelcomeTitleStyle>
+              <WelcomeTitleStyle className="purple">
+                {introduction}
+              </WelcomeTitleStyle>
+            </span>
+            <WelcomeExergueTextStyle>
+              {i18n.t('welcome.exergue')}
+            </WelcomeExergueTextStyle>
+          </WelcomeTitleExergueContainerStyle>
+
+          <WelcomeIconPngStyle src={welcomeImage} alt="" />
+        </WelcomeTitleImageContainerStyle>
+
+        {summary && (
+          <WelcomeContentBlockContainerStyle>
+            <WelcomeContentBlockTitleStyle>
+              {summary.title}
+            </WelcomeContentBlockTitleStyle>
+            <WelcomeContentTextStyle aria-expanded={showSummary}>
+              {!showToggleSummary || showSummary
+                ? summary.content
+                : `${summarySliced}...`}
+            </WelcomeContentTextStyle>
+            {showToggleSummary && (
+              <WelcomeToggleButtonStyle
+                type="button"
+                onClick={() => handleClick(!showSummary)}
+                aria-pressed={showSummary}
+              >
+                {showSummary ? i18n.t('welcome.less') : i18n.t('welcome.more')}
+              </WelcomeToggleButtonStyle>
+            )}
+          </WelcomeContentBlockContainerStyle>
+        )}
       </WelcomeContainerStyle>
+
       <WelcomeBlockThemesContainerStyle>
         <WelcomeContentBlockTitleStyle>
           {i18n.t('prompt.themeAnswer')}&nbsp;
