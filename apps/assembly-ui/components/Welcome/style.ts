@@ -38,8 +38,10 @@ export const WelcomeTitleExergueContainerStyle = styled.div`
 
 export const WelcomeIconPngStyle = styled.img`
   margin: auto;
-  width: 200px;
-  height: 300px;
+  height: 170px;
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    height: 300px;
+  }
 `;
 
 export const WelcomeTitleStyle = styled.h1`

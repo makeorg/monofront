@@ -74,12 +74,12 @@ const renderHtml = (
     .replace(/___FRONT_URL___/gi, env.frontUrl() || '')
     .replace(/___NONCE_ID___/gi, nonceId)
     .replace(/___PORT___/gi, env.port() || '')
-    .replace(/___MIXPANEL_TOKEN___/gi, env.mixPanelToken() || '')
     .replace(/___COOKIE_FIRST_TOKEN___/gi, env.cookieFirstToken() || '')
     .replace(/___API_URL_CLIENT_SIDE___/gi, env.apiUrlClientSide() || '')
     .replace(/___FB_PIXEL_ID___/gi, env.fbPixelId() || '')
     .replace(/___TW_PIXEL_ID___/gi, env.twPixelId() || '')
     .replace(/___MIXPANEL_TOKEN___/gi, env.mixPanelToken() || '')
+    .replace(/___TOLD_TOKEN___/gi, env.toldToken() || '')
 
     .replace('</body>', `${scriptTags}</body>`);
 

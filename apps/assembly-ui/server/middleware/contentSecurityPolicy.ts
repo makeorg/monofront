@@ -26,7 +26,7 @@ export const assemblyCspMiddleware = (
         'https://analytics.twitter.com',
         'https://www.youtube.com',
         'https://*.cookiefirst.com',
-        'https://embed.typeform.com/next/embed.js',
+        'https://scripts.told.club/sdk/sdk.js',
       ],
       imgSrc: [
         "'self'",
@@ -39,7 +39,6 @@ export const assemblyCspMiddleware = (
         'https://analytics.twitter.com',
         'https://i.ytimg.com/vi/',
         'https://*.cookiefirst.com',
-        'https://images.typeform.com/images/',
       ],
       connectSrc: [
         env.frontUrl() || '',
@@ -53,14 +52,14 @@ export const assemblyCspMiddleware = (
         'https://*.twitter.com',
         'https://noembed.com/embed',
         'https://*.cookiefirst.com',
-        'https://api.typeform.com/single-embed/',
+        'https://api.told.club/graphql',
       ],
       formAction: ["'self'", 'https://www.facebook.com/tr/'],
       frameSrc: [
         "'self'",
         'https://*.hotjar.com',
         'https://www.youtube.com',
-        'https://form.typeform.com/',
+        'https://widget.told.club',
       ],
       fontSrc: ["'self'", 'https://*.hotjar.com', 'https://fonts.gstatic.com/'],
       styleSrc: [
@@ -68,7 +67,6 @@ export const assemblyCspMiddleware = (
         "'unsafe-inline'",
         'https://fonts.googleapis.com/',
         'https://*.cookiefirst.com',
-        'https://embed.typeform.com/next/css/sidetab.css',
       ],
     },
   })(req, res, next);

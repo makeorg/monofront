@@ -20,6 +20,7 @@ import { ClientLogger } from '@make.org/logger/clientLogger';
 import { DefaultStylesheet } from '../utils/DefaultStyle';
 import { env } from '../utils/env';
 import { translationRessources } from '../i18n';
+import { told } from './Told/told';
 import { AppContainer } from './app';
 import { AssemblyGlobalStateType } from '../types';
 import AssemblyContextState from '../store/context';
@@ -46,6 +47,7 @@ declare global {
     NODE_ENV?: string;
     MIXPANEL_TOKEN?: string;
     FRONT_URL?: string;
+    TOLD_TOKEN?: string;
   }
 }
 
@@ -148,6 +150,9 @@ const initApp = async (state: AssemblyGlobalStateType) => {
     resources: translationRessources,
     defaultNS: TRANSLATION_COMMON_NAMESPACE,
   });
+
+  // Load Told
+  told.load(window?.TOLD_TOKEN ?? '');
 
   loadableReady(() => {
     const appDom = document.getElementById('app');

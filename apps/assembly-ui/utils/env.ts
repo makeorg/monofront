@@ -25,6 +25,7 @@ const twAPIKey = (): string => process.env.TW_API_KEY || '';
 const twAPISecret = (): string => process.env.TW_API_SECRET || '';
 const twAccessToken = (): string => process.env.TW_ACCESS_TOKEN || '';
 const twTokenSecret = (): string => process.env.TW_TOKEN_SECRET || '';
+const toldToken = (): string => process.env.TOLD_TOKEN || '';
 
 // Export in env object
 export const env = {
@@ -47,4 +48,5 @@ export const env = {
   twAPISecret,
   twAccessToken,
   twTokenSecret,
+  toldToken,
 };
