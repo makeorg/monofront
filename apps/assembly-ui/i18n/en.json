@@ -76,7 +76,7 @@
     "what_title": "Let us introduce ourselves",
     "what_text": "Our platform, fueled solely by public and certified documents, simplifies complex subjects with different levels of answers tailored to everyone.",
     "why": "What is it for?",
-    "why_text": "This tool is a platform that uses Artificial Intelligence that complex subjects accessible to citizens and facilitate their active participation in democratic discussions.",
+    "why_text": "This tool is a platform that uses **Artificial Intelligence** that **complex subjects** accessible to citizens.",
     "who": "Who is it for?",
     "who_text": "Whether you're a curious citizen, a journalist seeking a summary, a concerned party looking for clear answers, each user can find information without getting lost in pages of specialised documents.",
     "how_help": "Our Artificial Intelligence guides you in your learning journey",
@@ -135,9 +135,9 @@
     "videos": "Video sources:"
   },
   "welcome": {
-    "title": "@@welcome.title|fr:Demander, Comprendre",
-    "exergue": "@@welcome.exergue|fr:Cet outil est une plateforme qui utilise l’Intelligence Artificielle pour rendre accessible la compréhension des sujets complexes pour les citoyens.",
-    "more": "@@welcome.more|fr:Voir plus...",
-    "less": "@@welcome.less|fr:Réduire..."
+    "title": "Ask, Understand",
+    "exergue": "This tool is a platform that uses **Artificial Intelligence** that **complex subjects** accessible to citizens.",
+    "more": "Show more...",
+    "less": "Show less..."
   }
 }

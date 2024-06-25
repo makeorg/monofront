@@ -76,7 +76,7 @@
     "what_title": "Wir möchten uns vorstellen",
     "what_text": "Unsere Plattform, die ausschließlich auf öffentliche und verifizierte Dokumente zurückgreift, vereinfacht komplexe Themen mit verschiedenen Ebenen von Antworten, die auf jede und jeden zugeschnitten sind.",
     "why": "Wozu dient es?",
-    "why_text": "Bei diesem Tool handelt es sich um eine Plattform, die künstliche Intelligenz nutzt, um den Bürgerinnen und Bürgern komplexe Themen zugänglich zu machen und ihre aktive Teilnahme an demokratischen Diskussionen zu erleichtern.",
+    "why_text": "Bei diesem Tool handelt es sich um eine Plattform, die **künstliche Intelligenz** nutzt, um den Bürgerinnen und Bürgern **komplexe Themen** zugänglich zu machen.",
     "who": "Für wen ist es?",
     "who_text": "Ob du nun ein/e neugierige/r Bürgerin oder Bürger bist, ein/ Journalist oder Journalistin, der/die eine Zusammenfassung sucht, oder ein/e Betroffene oder Betroffener, der/die nach klaren Antworten sucht, jede/r Nutzerin und Nutzer kann Informationen finden, ohne sich in seitenlangen Fachdokumenten zu verlieren.",
     "how_help": "Unsere künstliche Intelligenz unterstützt dich in deinem Lernprozess",
@@ -135,9 +135,9 @@
     "videos": "Videoquellen :"
   },
   "welcome": {
-    "title": "@@welcome.title|fr:Demander, Comprendre",
-    "exergue": "@@welcome.exergue|fr:Cet outil est une plateforme qui utilise l’Intelligence Artificielle pour rendre accessible la compréhension des sujets complexes pour les citoyens.",
-    "more": "@@welcome.more|fr:Voir plus...",
-    "less": "@@welcome.less|fr:Réduire..."
+    "title": "Fragen, Verstehen",
+    "exergue": "Bei diesem Tool handelt es sich um eine Plattform, die **künstliche Intelligenz** nutzt, um den Bürgerinnen und Bürgern **komplexe Themen** zugänglich zu machen.",
+    "more": "Mehr anzeigen...",
+    "less": "Weniger anzeigen..."
   }
 }

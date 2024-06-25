@@ -76,7 +76,7 @@
     "what_title": "Permítanos presentarnos",
     "what_text": "Nuestra plataforma, alimentada únicamente por documentos públicos y certificados, simplifica temas complejos con diferentes niveles de respuestas adaptadas a cada uno.",
     "why": "¿Para qué sirve?",
-    "why_text": "Esta herramienta es una plataforma que utiliza Inteligencia Artificial para poner temas complejos al alcance de los ciudadanos y facilitar su participación activa en los debates democráticos.",
+    "why_text": "Esta herramienta es una plataforma que utiliza **Inteligencia Artificial** para poner **temas complejos** al alcance de los ciudadanos.",
     "who": "¿A quién va dirigida?",
     "who_text": "Ya sea un ciudadano curioso, un periodista en busca de un resumen o un interesado en busca de respuestas claras, cada usuario puede encontrar información sin perderse en páginas de documentos especializados.",
     "how_help": "Nuestra Inteligencia Artificial le guía en su viaje de aprendizaje",
@@ -135,9 +135,9 @@
     "videos": "Fuentes de vídeo :"
   },
   "welcome": {
-    "title": "@@welcome.title|fr:Demander, Comprendre",
-    "exergue": "@@welcome.exergue|fr:Cet outil est une plateforme qui utilise l’Intelligence Artificielle pour rendre accessible la compréhension des sujets complexes pour les citoyens.",
-    "more": "@@welcome.more|fr:Voir plus...",
-    "less": "@@welcome.less|fr:Réduire..."
+    "title": "Preguntar, comprender",
+    "exergue": "Esta herramienta es una plataforma que utiliza **Inteligencia Artificial** para poner **temas complejos** al alcance de los ciudadanos.",
+    "more": "Ver más...",
+    "less": "Mostrar menos..."
   }
 }

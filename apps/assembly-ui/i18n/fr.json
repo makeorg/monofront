@@ -11,7 +11,7 @@
   },
   "welcome": {
     "title": "Demander, Comprendre",
-    "exergue": "Cet outil est une plateforme qui utilise l’Intelligence Artificielle pour rendre accessible la compréhension des sujets complexes pour les citoyens.",
+    "exergue": "Cet outil est une plateforme qui utilise **l’Intelligence Artificielle** pour rendre accessible la compréhension des **sujets complexes** pour les citoyens.",
     "more": "Voir plus...",
     "less": "Réduire..."
   },
@@ -35,7 +35,7 @@
     "cancel": "Annuler",
     "disabled": "Bouton désactivé",
     "request_send": "Poser une question à l’IA",
-    "error": "Merci pour votre question. Je ne suis  pas certain d'être capable de vous donner la réponse adéquate. Par prudence, je vous propose de la reformuler différemment."
+    "error": "Merci pour votre question. Je ne suis pas certain d'être capable de vous donner la réponse adéquate. Par prudence, je vous propose de la reformuler différemment."
   },
   "feed": {
     "sources": "Voir les sources",
@@ -82,7 +82,7 @@
     "what_title": "Notre outil, c’est quoi exactement ?",
     "what_text": "Notre plateforme, alimentée uniquement à partir de documents publics et certifiés, simplifie les sujets complexes grâce à différents niveaux de réponses adaptées à tous.",
     "why": "Pourquoi ?",
-    "why_text": "Cet outil est une plateforme qui utilise l’Intelligence Artificielle pour rendre accessible la compréhension des sujets complexes pour les citoyens et faciliter leur participation active aux discussions démocratiques.",
+    "why_text": "Cet outil est une plateforme qui utilise **l’Intelligence Artificielle** pour rendre accessible la compréhension des **sujets complexes** pour les citoyens.",
     "who": "Pour qui ?",
     "who_text": "Si vous êtes un citoyen curieux, un journaliste cherchant une synthèse efficace, une personne concernée voulant des réponses claires, ou même un membre d'une institution, notre plateforme peut vous aider. Chacun peut ainsi trouver des informations adaptées à son niveau d'expertise sans se perdre dans des pages de documents spécialisés.",
     "how_help": "Comment cet outil m’accompagne dans ma compréhension ?",
