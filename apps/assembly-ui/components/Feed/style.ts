@@ -171,23 +171,6 @@ export const SourcesTruncatedTextStyle = styled.p`
   color: rgba(52, 51, 48, 1);
 `;
 
-export const ActionsContainerStyle = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${spacings.m};
-`;
-
-export const ActionsTitleStyle = styled.span`
-  font-size: ${typography.FontSize.Text.RueDeLappe};
-  font-weight: 600;
-`;
-
-export const ActionsButtonsContainerStyle = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-`;
-
 export const ActionsButtonStyle = styled.button<{
   standardStyle?: boolean;
 }>`

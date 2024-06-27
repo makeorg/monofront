@@ -285,14 +285,6 @@ EVENTS:
           - success
           - fail
         recipients: ['product']
-      - key: prompt_fired_by
-        description: Response trigger
-        purpose: Understanding what our users do after generation
-        example: main
-        values:
-          - main
-          - document
-        recipients: ['product']
       - key: event_slug
         description: The event slug
         purpose: Subject segmentation - service improvement

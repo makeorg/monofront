@@ -12,7 +12,6 @@ import submitButton from '../../assets/sendButton.png';
 import disabledButton from '../../assets/sendButtonInactive.png';
 import stopButton from '../../assets/sendButtonStop.png';
 import { disableFeedStreaming } from '../../store/feed/actions';
-import { TRANSCRIPT } from '../Feed';
 import {
   PromptFormContainerStyle,
   PromptFormInputStyle,
@@ -33,7 +32,7 @@ export const PromptForm: FC = () => {
   const { isStreaming } = feed;
   const [question, setQuestion] = useState<string>('');
 
-  const { startStream } = StreamLLM(question, TRANSCRIPT);
+  const { startStream } = StreamLLM(question);
   const tracker = useTracking();
   const utms = useUtms();
 

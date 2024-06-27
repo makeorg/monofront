@@ -42,7 +42,7 @@ export type GeneratedContentType = {
   name: string;
   content: string;
   position: number;
-  mode: string;
+  source_type: string;
 };
 
 export type ChunkType = {
@@ -74,9 +74,8 @@ export type FeedItemType = {
   question: string;
   text: string;
   chunks?: ChunkType[];
-  mode: string;
+  source_type?: string;
   language: string;
-  displayActions?: boolean;
   sources?: SourceAnswerType;
 };
 

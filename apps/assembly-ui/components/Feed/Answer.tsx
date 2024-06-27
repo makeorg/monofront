@@ -12,10 +12,8 @@ import {
 import { Temoignage } from './Temoignage';
 import { FeedItemType } from '../../types';
 import pano from '../../assets/IconPano.png';
-import { Actions } from './Actions';
 import { useAssemblyContext } from '../../store/context';
 import { useTracking } from '../Tracking/useTracking';
-import { TRANSCRIPT } from '.';
 import { ShowSources } from './Sources/ShowSources';
 
 type Props = { item: FeedItemType };
@@ -44,7 +42,6 @@ export const Answer: FC<Props> = ({ item }) => {
       tracker.track('DISPLAY-PROMPT-ANSWER', {
         submit_id: item.id,
         prompt_result_success: 'success',
-        prompt_fired_by: item.mode === TRANSCRIPT ? 'main' : 'document',
         event_slug: event.slug,
         user_query: item.question,
         llm_response: item.text,
@@ -60,16 +57,9 @@ export const Answer: FC<Props> = ({ item }) => {
         <ContentIconStyle src={pano} alt="Logo" />
         <AnswerContainerStyle>
           <ReactMarkdown>{item.text}</ReactMarkdown>
-          {item.text.trim().length > LLMErrorLimit && (
-            <>
-              {item.displayActions && item.mode === TRANSCRIPT && (
-                <Actions item={item} />
-              )}
-              {item.chunks && item.chunks.length > 0 && (
-                <ShowSources chunks={item.chunks} />
-              )}
-            </>
-          )}
+          {item.text.trim().length > LLMErrorLimit &&
+            item.chunks &&
+            item.chunks.length > 0 && <ShowSources chunks={item.chunks} />}
         </AnswerContainerStyle>
       </ContentStyle>
       {item.chunks &&

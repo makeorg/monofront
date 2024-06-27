@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import i18n from 'i18next';
 import { FeedItemType, SourceAnswerType } from '../../../types';
-import { DOCUMENT } from '..';
+import { SOURCE_TYPE_DOCUMENT } from '..';
 import { YoutubePlayer } from '../../ReactPlayer/YoutubePlayer';
 import {
   SourcesDocumentStyle,
@@ -20,7 +20,7 @@ export const SourcesAnswer: FC<Props> = ({ item }) => {
   const { source_title, source_url, source_page, source_speech_time } =
     sources as SourceAnswerType;
 
-  if (item.mode === DOCUMENT) {
+  if (item.source_type === SOURCE_TYPE_DOCUMENT) {
     return (
       <SourcesAnswerContentDocumentStyle>
         <SourcesDocumentStyle aria-hidden focusable="false" />

@@ -111,7 +111,7 @@ const AssemblyDevState: AssemblyGlobalStateType = {
       content:
         "La Convention citoyenne sur la fin de vie, organisée par le CESE suite à l'annonce du Président de la République, a réuni 184 citoyens français durant 9 sessions de 3 jours afin de répondre à la question \"Le cadre d’accompagnement de la fin de vie est-il adapté aux différentes situations rencontrées ou d’éventuels changements devraient-ils être introduits ?\"\". Leurs travaux se sont penchés sur deux axes majeurs : l'amélioration de l’accompagnement de la fin de vie, et en particulier des soins palliatifs, ainsi que l’ouverture de l’aide active à mourir sous condition et la définition de son cadre d’accompagnement. Les délibérations, enrichies par des échanges avec des experts, ont abouti à des propositions visant à transformer le cadre actuel d'accompagnement de la fin de vie. Recommandations et débats : la Convention a recommandé de renforcer les soins palliatifs, en mettant l'accent notamment sur le respect du choix des patients et sur l'amélioration de l'accompagnement à domicile. Par ailleurs, une majorité de ma Convention s'est exprimée pour une ouverture de l'aide active à mourir sous conditions. Sur ce dernier sujet, les discussions ont aussi été marqués par des débats, notamment sur les risques de potentielles dérives, l'impact sur les personnes vulnérables, et les réserves de certains professionnels de santé.",
       position: 0,
-      mode: '',
+      source_type: '',
     },
   ],
   feed: {

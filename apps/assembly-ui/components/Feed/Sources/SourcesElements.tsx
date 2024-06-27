@@ -15,7 +15,7 @@ import { useTracking } from '../../Tracking/useTracking';
 import { addFeedItem } from '../../../store/feed/actions';
 import { useAssemblyContext } from '../../../store/context';
 import { useUtms } from '../../Tracking/useUtms';
-import { SOURCE_TYPE_DOCUMENT, TRANSCRIPT, DOCUMENT } from '..';
+import { SOURCE_TYPE_DOCUMENT, SOURCE_TYPE_VIDEO } from '..';
 
 export const SourcesElements: FC<{ chunk: ChunkType }> = ({ chunk }) => {
   const {
@@ -37,7 +37,7 @@ export const SourcesElements: FC<{ chunk: ChunkType }> = ({ chunk }) => {
     dispatch(
       addFeedItem({
         id: feedId,
-        mode,
+        source_type: document_source_type,
         question: '',
         text: '',
         language: eventLanguage,
@@ -65,7 +65,7 @@ export const SourcesElements: FC<{ chunk: ChunkType }> = ({ chunk }) => {
     return (
       <SourcesContentDocumentStyle
         type="button"
-        onClick={() => onClick(DOCUMENT)}
+        onClick={() => onClick(SOURCE_TYPE_DOCUMENT)}
       >
         <SourcesDocumentStyle aria-hidden focusable="false" />
         <SourcesTitleContainerStyle>
@@ -79,7 +79,10 @@ export const SourcesElements: FC<{ chunk: ChunkType }> = ({ chunk }) => {
   }
 
   return (
-    <SourcesContentVideoStyle type="button" onClick={() => onClick(TRANSCRIPT)}>
+    <SourcesContentVideoStyle
+      type="button"
+      onClick={() => onClick(SOURCE_TYPE_VIDEO)}
+    >
       <SourcesVideoStyle aria-hidden focusable="false" />
       <SourcesTitleContainerStyle>
         <SourcesTitleStyle>{document_source_title}</SourcesTitleStyle>

@@ -10,8 +10,6 @@ import { StreamLLM } from '../Prompt/Stream';
 import { useTracking } from '../Tracking/useTracking';
 import { SourcesAnswer } from './Sources/SourcesAnswer';
 
-export const TRANSCRIPT = 'transcriptStd';
-export const DOCUMENT = 'documentStd';
 export const SOURCE_TYPE_VIDEO = 'VIDEO';
 export const SOURCE_TYPE_DOCUMENT = 'PDF';
 const RESPONSE_TRIGGER_PARAM = 'response-trigger';
@@ -46,10 +44,7 @@ export const Feed: FC = () => {
         termQuery => termQuery.title.toLowerCase() === searchTitle
       )
     : undefined;
-  const { startStream } = StreamLLM(
-    responseTriggerTermQuery?.value || '',
-    TRANSCRIPT
-  );
+  const { startStream } = StreamLLM(responseTriggerTermQuery?.value || '');
   const tracker = useTracking();
 
   useEffect(() => {
@@ -87,7 +82,7 @@ export const Feed: FC = () => {
       {maxHistory && <HistoryLimit />}
       {items.map(item => (
         <div role="article" key={item.id} id={item.id}>
-          <Question question={item.question} mode={item.mode} />
+          <Question question={item.question} source_type={item.source_type} />
           {item.sources ? (
             <SourcesAnswer item={item} />
           ) : (

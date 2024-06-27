@@ -4,7 +4,6 @@ import {
   WelcomeThemesButtonStyle,
   BonhommeLogoSvgStyle,
 } from './style';
-import { TRANSCRIPT } from '../Feed';
 import { disableFeedStreaming } from '../../store/feed/actions';
 import { StreamLLM } from '../Prompt/Stream';
 import { useAssemblyContext } from '../../store/context';
@@ -63,7 +62,7 @@ export const Themes: FC = () => {
   const tracker = useTracking();
   const utms = useUtms();
 
-  const { startStream } = StreamLLM(question, TRANSCRIPT);
+  const { startStream } = StreamLLM(question);
 
   const handleThemeQuestion = (value: string, title: string) => {
     const feedItemId = startStream();

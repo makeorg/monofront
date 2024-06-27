@@ -33,13 +33,10 @@
   },
   "feed": {
     "sources": "Ver las fuentes",
-    "hyperlinks_title": "Para más información:",
-    "document_sources": "Acceder a la respuesta en base a los documentos verificados",
     "page": "página",
     "previous_answer": "¿Está buscando preguntas anteriores?",
     "archive": "Sólo archivamos las 5 últimas preguntas que nos ha hecho.",
     "retrieve": "Si quiere repetir una pregunta anterior, basta con volver a escribirla.",
-    "answer_document": "¿Puedo acceder a la respuesta de los documentos certificados en : ",
     "sources_answer": "He aquí las fuentes de esta respuesta:",
     "sources_document": "¿Puedo consultar esta fuente documental?",
     "sources_video": "¿Puedo consultar esta fuente de vídeo?",

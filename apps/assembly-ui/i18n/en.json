@@ -33,13 +33,10 @@
   },
   "feed": {
     "sources": "Watch the sessions that shaped your answer",
-    "hyperlinks_title": "For additional information:",
-    "document_sources": "Access the reply sourced from certified documents",
     "page": "page",
     "previous_answer": "Looking for your previous questions?",
     "archive": "We only archive your last 5 questions.",
     "retrieve": "If you want to find a previous answer, you can simply ask it again!",
-    "answer_document": "May I access the reply sourced from certified documents: ",
     "sources_answer": "Here are the sources of this response:",
     "sources_document": "Can I consult this documentary source?",
     "sources_video": "Can I consult this video source?",

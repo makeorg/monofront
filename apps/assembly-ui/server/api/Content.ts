@@ -282,7 +282,7 @@ const getGeneratedContents = async (
         name: generatedContent.name,
         content: generatedContent.content,
         position: generatedContent.position,
-        mode: generatedContent.mode,
+        source_type: generatedContent.source_type,
       };
 
       return generatedContents.push(content);

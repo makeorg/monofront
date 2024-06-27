@@ -4,7 +4,6 @@ import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import { useIsSmallDevice } from '@make.org/utils/hooks/useIsSmallDevice';
 import { useAssemblyContext } from '../../store/context';
 import { TermQueryType } from '../../types';
-import { TRANSCRIPT } from '../Feed';
 import { disableFeedStreaming } from '../../store/feed/actions';
 import { StreamLLM } from './Stream';
 import {
@@ -57,7 +56,7 @@ export const Suggestions: FC = () => {
   const tracker = useTracking();
   const utms = useUtms();
 
-  const { startStream } = StreamLLM(question, TRANSCRIPT);
+  const { startStream } = StreamLLM(question);
 
   const handleSuggestionQuestion = (value: string, title: string) => {
     const feedItemId = startStream();

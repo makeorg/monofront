@@ -48,8 +48,7 @@ const getResults = (objs: string[]): { chunks: []; text: string } => {
 };
 
 export const StreamLLM = (
-  question: string,
-  mode: string
+  question: string
 ): {
   startStream: () => FeedIdType;
 } => {
@@ -68,7 +67,6 @@ export const StreamLLM = (
     dispatch(
       addFeedItem({
         id: feedItemId,
-        mode,
         question,
         text: '',
         language: event.language,
@@ -82,7 +80,6 @@ export const StreamLLM = (
     const params = new URLSearchParams({
       eventId: event.id,
       question,
-      mode,
       language: event.language,
     });
 

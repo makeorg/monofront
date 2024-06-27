@@ -23,7 +23,6 @@ export const feed_reducer = (
           return {
             ...item,
             chunks: action.payload.chunks,
-            displayActions: true,
           };
         }
         return item;
