@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 declare module 'uuid';
+declare module 'can-ndjson-stream';
 declare module 'react-modal';
 declare module '@loadable/component';
 declare module 'adblockdetect';

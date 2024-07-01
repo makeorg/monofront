@@ -3301,6 +3301,7 @@ __metadata:
     axios: ~0.26.1
     babel-loader: 8.2.5
     babel-plugin-convert-to-json: ^0.1.0
+    can-ndjson-stream: ^1.0.2
     compression: ~1.7.3
     core-js: ^3.24.1
     cors: ^2.8.5
@@ -9732,6 +9733,22 @@ __metadata:
   version: 1.0.1
   resolution: "camelize@npm:1.0.1"
   checksum: 91d8611d09af725e422a23993890d22b2b72b4cabf7239651856950c76b4bf53fe0d0da7c5e4db05180e898e4e647220e78c9fbc976113bd96d603d1fcbfcb99
+  languageName: node
+  linkType: hard
+
+"can-namespace@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "can-namespace@npm:1.0.0"
+  checksum: 93a27be2c89bde52941bc18b606399c0cbbed596ac525f611a6fc66b7f684e678f4675ac9a53d0e25457159762e656505d23b55fdb1d116c30a7d78d18723577
+  languageName: node
+  linkType: hard
+
+"can-ndjson-stream@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "can-ndjson-stream@npm:1.0.2"
+  dependencies:
+    can-namespace: ^1.0.0
+  checksum: 5aa9871c5e21c3ad007d3045aa13f80a804d5cd919c457d4402bd4a3b29276b608c071783a85c20f5ef03d562a224f7beccff499debaa5f16d05f70bfe58e0b9
   languageName: node
   linkType: hard
 

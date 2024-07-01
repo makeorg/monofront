@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import i18n from 'i18next';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
+import ndjsonStream from 'can-ndjson-stream';
 import { useAssemblyContext } from '../../store/context';
 import { env } from '../../utils/env';
 import {
@@ -17,35 +18,6 @@ import { LLM_PATH } from '../../utils/routes';
 type FeedIdType = string;
 
 export const LLMErrorLimit = 100;
-
-const parseValue = (content: string) => {
-  try {
-    return JSON.parse(content);
-  } catch (e) {
-    return undefined;
-  }
-};
-
-const getResults = (objs: string[]): { chunks: []; text: string } => {
-  let partial = '';
-  return objs.reduce(
-    // eslint-disable-next-line no-loop-func
-    (prev, current) => {
-      partial = `${partial}${current}`;
-      const obj = parseValue(partial);
-      if (obj === undefined) {
-        return prev;
-      }
-      partial = '';
-
-      return {
-        chunks: obj.chunks || prev.chunks,
-        text: `${prev.text}${obj.text || ''}`,
-      };
-    },
-    { chunks: [], text: '' }
-  );
-};
 
 export const StreamLLM = (
   question: string
@@ -91,8 +63,8 @@ export const StreamLLM = (
           signal: abortController.signal,
         }
       );
-      const reader = transcriptResponse.body?.getReader();
-      const decoder = new TextDecoder();
+      const ndjson = ndjsonStream(transcriptResponse.body);
+      const reader = ndjson?.getReader();
 
       if (!reader) {
         return;
@@ -121,21 +93,18 @@ export const StreamLLM = (
           break;
         }
 
-        const decodedChunk = decoder.decode(value, { stream: true });
-        const objs = decodedChunk.trim().split('\r\n');
-        const result = getResults(objs);
-
-        if (result.chunks && result.chunks.length) {
-          chunks = result.chunks;
+        if (value.chunks) {
+          chunks = value.chunks;
         }
 
-        if (result.text) {
-          const newText = `${newAnswer}${result.text}`;
+        if (value.text) {
+          const newText = `${newAnswer}${value.text}`;
           newAnswer = newText;
 
           dispatch(updateItemText(feedItemId, newText));
         }
       }
+      reader.releaseLock();
     } catch (error: unknown) {
       const apiServiceError = error as ApiServiceError;
       if (apiServiceError.status === 404) {
