@@ -106,15 +106,6 @@ Our question answering service records user questions and AI response for analys
     | `llm_response` | Response from llm | Understand the use of open prompt - service improvement | true |  | Selon le rapport de la commission d'enquête...
 
 
-  - `action-quit-onboarding` CTA close onboarding popin
-    
-    | param_name | description | purpose | required | values | example |
-    | -          |-            |-        |-         | -      | -       |
-    | `visitor_id` | Unique visitor identifier | Segmentation by unique visitor | false |  | 00000000-0000-0000-0000-000000000000
-    | `modal_action_type` | Which button is used to close the popin | Modal button usage | true | `discover`, `close` | discover
-    | `event_slug` | The event slug | Subject segmentation - service improvement | true |  | convention-fin-de-vie
-
-
   - `action-document` CTA to get an answer from document database
     
     | param_name | description | purpose | required | values | example |

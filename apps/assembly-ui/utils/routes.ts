@@ -1,5 +1,4 @@
 import { generatePath } from 'react-router';
-import queryString from 'query-string';
 import { UnknownObjectType } from '@make.org/types';
 
 // routes Assembly
@@ -18,19 +17,15 @@ export const ROUTE_ASSEMBLY_TW_CONVERSION = '/api/conversion-tw';
 export const ROUTE_ASSEMBLY_CONSENT = '/api/consent';
 export const ROUTE_ASSEMBLY_LOGGER = '/api/logger';
 
-export const getRouteAssemblyEventNoOnboarding = (
+export const getRouteAssemblyEvent = (
   customerSlug: string,
   eventSlug: string,
   params?: UnknownObjectType
 ): string =>
-  `${generatePath(ROUTE_ASSEMBLY_EVENT, {
+  generatePath(ROUTE_ASSEMBLY_EVENT, {
     customerSlug,
     eventSlug,
-  }).concat(
-    params && Object.keys(params).length > 0
-      ? `?${queryString.stringify(params)}`
-      : ''
-  )}`;
+  });
 
 export const getRouteAssemblyEventDocumentSources = (
   customerSlug: string,

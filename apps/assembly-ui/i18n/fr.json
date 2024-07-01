@@ -17,15 +17,7 @@
   },
   "modal": {
     "closeLabel": "Fermer la fenêtre de dialogue",
-    "openLabel": "Ouvrir la fenêtre de dialogue",
-    "discover": "Découvrir l'outil",
-    "suggestion": "Posez vos questions, l’intelligence artificielle (IA) vous répond",
-    "suggestionText": "Une réponse instantanée à vos questions.",
-    "explore": "Explorez les contenus par thématique",
-    "exploreText": "Une recherche approfondie sur les sujets qui vous intéressent.",
-    "sources": "Accédez à des sources vérifiées",
-    "sourcesText": "Un affichage des sources qui ont alimenté chaque réponse de l’intelligence artificielle (IA).",
-    "proposal": "Quelles sont les propositions des participants ?"
+    "openLabel": "Ouvrir la fenêtre de dialogue"
   },
   "prompt": {
     "submit": "Envoyer",

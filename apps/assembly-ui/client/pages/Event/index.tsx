@@ -1,6 +1,5 @@
 import React, { FC, useEffect } from 'react';
 import { GliderStylesheet } from '@make.org/assets/css-in-js/GliderStyle';
-import { OnboardingModal } from '../../../components/Onboarding/Modal';
 import { Feed } from '../../../components/Feed';
 import { PromptContainerStyle } from '../../../components/Prompt/style';
 import { Suggestions } from '../../../components/Prompt/Suggestions';
@@ -35,7 +34,6 @@ const EventPage: FC = () => {
   return (
     <>
       <GliderStylesheet />
-      <OnboardingModal />
       <>
         <div data-tf-live={ID_TYPEFORM} />
         <script src="//embed.typeform.com/next/embed.js" />

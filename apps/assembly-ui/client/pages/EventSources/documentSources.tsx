@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from 'react';
 import i18n from 'i18next';
 import { useAssemblyContext } from '../../../store/context';
-import { getRouteAssemblyEventNoOnboarding } from '../../../utils/routes';
+import { getRouteAssemblyEvent } from '../../../utils/routes';
 import { getEventSources } from '../../../utils/services/DocumentSources';
 import { setEventSources } from '../../../store/eventSources/action';
 import {
@@ -43,9 +43,7 @@ const EventDocumentSourcesPage: FC = () => {
   return (
     <DocumentSourcesPageContainerStyle>
       <DocumentSourcesPageButtonStyle
-        href={getRouteAssemblyEventNoOnboarding(customer.slug, event.slug, {
-          displayonboarding: false,
-        })}
+        href={getRouteAssemblyEvent(customer.slug, event.slug)}
       >
         <SvgArrowLeftStyle />
         {i18n.t('sources_page.see')}

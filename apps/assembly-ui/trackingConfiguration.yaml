@@ -301,31 +301,6 @@ EVENTS:
         example: Selon le rapport de la commission d'enquête...
         recipients: ['product']
 
-  ACTION-QUIT-ONBOARDING:
-    key: action-quit-onboarding
-    description: CTA close onboarding popin
-    recipients: ['product']
-    parameters:
-      - key: visitor_id
-        description: Unique visitor identifier
-        purpose: Segmentation by unique visitor
-        example: 00000000-0000-0000-0000-000000000000
-        optional: true
-        recipients: ['product']
-      - key: modal_action_type
-        description: Which button is used to close the popin
-        purpose: Modal button usage
-        example: discover
-        values:
-          - discover
-          - close
-        recipients: ['product']
-      - key: event_slug
-        description: The event slug
-        purpose: Subject segmentation - service improvement
-        example: convention-fin-de-vie
-        recipients: ['product']
-
   ACTION-DOCUMENT:
     key: action-document
     description: CTA to get an answer from document database

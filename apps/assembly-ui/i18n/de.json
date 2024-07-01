@@ -11,15 +11,7 @@
   },
   "modal": {
     "closeLabel": "Das Dialogfenster schließen",
-    "discover": "Entdecke das Tool",
-    "suggestion": "Stelle deine Fragen und das Tool antwortet",
-    "suggestionText": "Eine sofortige Antwort auf Ihre Fragen.",
-    "explore": "Erkunde die Inhalte nach Themen",
-    "exploreText": "Eine gründliche Recherche zu den Themen, die dich interessieren.",
-    "sources": "Zugriff auf verifizierte Quellen",
-    "sourcesText": "Eine Anzeige der Quellen, auf denen jede Antwort der Künstlichen Intelligenz (KI) basiert.",
-    "openLabel": "Öffnen Sie das Dialogfenster",
-    "proposal": "Was waren die Vorschläge der Teilnehmenden?"
+    "openLabel": "Öffnen Sie das Dialogfenster"
   },
   "prompt": {
     "submit": "Senden",
