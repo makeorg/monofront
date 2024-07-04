@@ -422,7 +422,6 @@
   },
   "proposal_submit": {
     "form": {
-      "bait": "Muszáj ",
       "title": "Javaslatát 140 karakternél rövidebb formában nyújtsa be. Írja be a javaslat mezőbe, és kattintson az „Érvényesítés\" gombra.",
       "field": "Javaslat mező",
       "counter": "Javaslata a rendelkezésre álló {{total}} karakterből összesen {{current}} karakterből áll",

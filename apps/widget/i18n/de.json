@@ -211,7 +211,6 @@
   },
   "proposal_submit": {
     "form": {
-      "bait": "Man sollte ",
       "title": "Formuliere deinen Vorschlag in weniger als 140 Zeichen. Gib ihn in das Vorschlagfeld ein und bestätige ihn durch Klicken auf die Schaltfläche „Bestätigen“",
       "field": "Vorschlagfeld",
       "counter": "Dein Vorschlag enthält {{current}} Zeichen von insgesamt {{total}} verfügbaren Zeichen",

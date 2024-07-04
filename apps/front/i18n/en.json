@@ -375,7 +375,6 @@
       "consultation_access": "Gain access to the consultation"
     },
     "form": {
-      "bait": "We should ",
       "title": "Write a proposal, using 140 characters or less, then click on the \"Submit\" button",
       "field": "Proposal field",
       "counter": "Your proposal contains {{current}} characters of a possible {{total}}",

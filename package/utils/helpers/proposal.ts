@@ -5,16 +5,12 @@ import {
   PROPOSALS_LISTING_LIMIT,
 } from '@make.org/utils/constants/proposal';
 import {
-  ILogger,
   ProposalAccumulator,
   ProposalsType,
   ProposalType,
   TypeFilterAndSortValues,
 } from '@make.org/types';
 import { ProposalService } from '@make.org/utils/services/Proposal';
-import i18n from 'i18next';
-import { TRANSLATION_COMMON_NAMESPACE } from '@make.org/utils/i18n/constants';
-import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 
 export const proposalHasValidLength = (length = 0): boolean => {
   if (length === 0) {
@@ -62,38 +58,6 @@ export const searchProposals = async (
   );
 
   return result;
-};
-
-/**
- * Rendering proposal bait text depending on language
- * @type {string}
- * @param {QuestionType} question
- * @return {string}
- */
-export const getLocalizedBaitText = (
-  language: string,
-  questionId: string,
-  logger: ILogger
-): string => {
-  const localizedBaitText = i18n.getResource(
-    language,
-    TRANSLATION_COMMON_NAMESPACE,
-    'proposal_submit.form.bait'
-  );
-
-  if (!localizedBaitText) {
-    logger.logError({
-      message: `No proposal bait for questionId:${questionId} with language:${language}`,
-      name: 'shared-helpers',
-    });
-    return i18n.getResource(
-      DEFAULT_LANGUAGE,
-      TRANSLATION_COMMON_NAMESPACE,
-      'proposal_submit.form.bait'
-    );
-  }
-
-  return localizedBaitText;
 };
 
 /**

@@ -78,5 +78,6 @@
   "activeFeatureData": {
     "topProposal": null
   },
-  "demographicsCardCount": 1
+  "demographicsCardCount": 1,
+  "proposalPrefix": "Il faut "
 }

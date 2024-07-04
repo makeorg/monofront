@@ -422,7 +422,6 @@
   },
   "proposal_submit": {
     "form": {
-      "bait": "Vi måste ",
       "title": "Lägg ditt förslag med färre än 140 tecken. Skriv det i förslagsfältet och validera genom att klicka på knappen ”Godkänn”",
       "field": "Förslagsfält",
       "counter": "Ditt förslag innehåller {{current}} tecken av totalt {{total}} möjliga.",

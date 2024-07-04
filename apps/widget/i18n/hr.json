@@ -219,7 +219,6 @@
   },
   "proposal_submit": {
     "form": {
-      "bait": "Potrebno je ",
       "title": "Pošaljite svoj prijedlog koji ima manje od 140 znakova. Upišite tekst u polje za prijedlog, a zatim ga pošaljite klikom na gumb „Potvrdi”",
       "field": "Polja za prijedlog",
       "counter": "Vaš prijedlog trenutačno ima {{current}} znakova od ukupno {{total}} dostupnih znakova",

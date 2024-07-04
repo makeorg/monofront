@@ -427,7 +427,6 @@
   },
   "proposal_submit": {
     "form": {
-      "bait": "Nepieciešams ",
       "title": "Iesniedziet savu priekšlikumu, izmantojot līdz 140 rakstzīmēm. Ievadiet to priekšlikuma laukā un apstipriniet, noklikšķinot uz pogas \"Apstiprināt\".",
       "field": "Priekšlikumu lauki",
       "counter": "Jūsu priekšlikums sastāv no {{current}} rakstzīmēm no kopumā pieejamām {{total}} rakstzīmēm.",

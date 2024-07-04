@@ -408,7 +408,6 @@
   },
   "proposal_submit": {
     "form": {
-      "bait": "Es necesario ",
       "title": "Envía tu propuesta en menos de 140 caracteres. Redáctala en el campo de la propuesta y valídala haciendo clic en el botón \"Validar\"",
       "field": "Campo de la propuesta",
       "counter": "Tu propuesta contiene {{current}} caracteres sobre un total de {{total}} caracteres disponibles",

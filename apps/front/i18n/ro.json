@@ -408,7 +408,6 @@
   },
   "proposal_submit": {
     "form": {
-      "bait": "Trebuie ",
       "title": "Redactați-vă propunerea respectând limita de 140 de caractere. Scrieți-o în rubrica aferentă propunerii, apoi validați dând clic pe butonul \"Validare\"",
       "field": "Rubrici aferente propunerii",
       "counter": "Propunerea dumneavoastră conține {{current}} caractere dintr-un total de {{total}} caractere disponibile",

@@ -422,7 +422,6 @@
   },
   "proposal_submit": {
     "form": {
-      "bait": "Vi skal ",
       "title": "Dit forslag må højst indeholde 140 tegn. Skriv dit forslag i feltet og godkend ved at klikke på knappen ”Godkend”",
       "field": "Forslagsfelt",
       "counter": "Dit forslag indeholder {{current}} tegn ud af {{total}} tilgængelige tegn i alt",

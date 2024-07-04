@@ -219,7 +219,6 @@
   },
   "proposal_submit": {
     "form": {
-      "bait": "Je třeba ",
       "title": "Podej svůj návrh, který nesmí překročit 140 znaků. Zadej jej do pole návrhu a potvrď kliknutím na tlačítko „Potvrdit“.",
       "field": "Pole návrhu",
       "counter": "Tvůj návrh se skládá z {{current}} znaků z celkového počtu {{total}} znaků, které jsou k dispozici",

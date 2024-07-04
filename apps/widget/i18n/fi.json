@@ -198,7 +198,6 @@
   },
   "proposal_submit": {
     "form": {
-      "bait": "On toimittava näin: ",
       "title": "Anna ehdotus, jossa on alle140 merkkiä. Syötä se ehdotuskenttään ja vahvista napsauttamalla \"Vahvista\"-painiketta",
       "field": "Ehdotuskenttä",
       "counter": "Ehdotuksesi sisältää {{current}} merkkiä yhteensä {{total}} käytettävissä olevasta merkistä",

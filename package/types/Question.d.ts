@@ -189,6 +189,7 @@ export type QuestionType = {
   demographicsCardCount: number;
   languages: string[];
   reportUrl?: string;
+  proposalPrefix: string;
 };
 
 export type CountsByQuestionType = {

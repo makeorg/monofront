@@ -432,7 +432,6 @@
   },
   "proposal_submit": {
     "form": {
-      "bait": "Treba je ",
       "title": "Oddajte svoj predlog, ki vsebuje manj kot 140 znakov. Vnesite ga v polje za predlog in potrdite s klikom na gumb »Potrdi«",
       "field": "Polja za predlog",
       "counter": "Vaš predlog vsebuje {{current}} znakov od skupaj {{total}} razpoložljivih znakov",

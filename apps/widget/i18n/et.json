@@ -217,7 +217,6 @@
   },
   "proposal_submit": {
     "form": {
-      "bait": "On vaja ",
       "title": "Esitage oma ettepanek alla 140 tähemärgi pikkusena. Sisestage see ettepanekute väljale ja kinnitage, klõpsates nupul „Kinnita“",
       "field": "Ettepanekute väli",
       "counter": "Teie ettepanek sisaldab {{current}} tähemärki saadaolevast {{total}} tähemärgist",

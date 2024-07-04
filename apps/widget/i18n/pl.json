@@ -200,7 +200,6 @@
   },
   "proposal_submit": {
     "form": {
-      "bait": "Należy ",
       "title": "Złóż swoją propozycję o długości nieprzekraczającej 140 znaków. Wpisz ją w pole propozycji i kliknij przycisk „Zatwierdź”",
       "field": "Pola propozycji",
       "counter": "Twoja propozycja składa się z {{current}} znaków na {{total}} znaków dostępnych",

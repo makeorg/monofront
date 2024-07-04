@@ -221,7 +221,6 @@
   },
   "proposal_submit": {
     "form": {
-      "bait": "Il faut ",
       "title": "Soumettez votre proposition en moins de 140 caractères. Saisissez la dans le champ de proposition puis validez en cliquant sur le bouton \"Valider\"",
       "field": "Champs de proposition",
       "counter": "Votre proposition comprend {{current}} caractères sur un total de {{total}} caractères disponibles",

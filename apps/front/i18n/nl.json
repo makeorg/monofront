@@ -403,7 +403,6 @@
   },
   "proposal_submit": {
     "form": {
-      "bait": "Er moet ",
       "title": "Dien je voorstel van maximaal 140 tekens in. Voer je voorstel in het daarvoor bestemde veld in en klik op \"Bevestigen\"",
       "field": "Voorstelvelden",
       "counter": "Je voorstel bestaat uit {{current}} tekens op een totaal van {{total}} beschikbare tekens",

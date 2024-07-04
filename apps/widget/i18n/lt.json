@@ -217,7 +217,6 @@
   },
   "proposal_submit": {
     "form": {
-      "bait": "Būtina ",
       "title": "Pateikite pasiūlymą, kuriame ne daugiau kaip 140 ženklų. Įveskite jį į pasiūlymo lauką ir patvirtinkite spustelėdami mygtuką „Patvirtinti“",
       "field": "Pasiūlymo laukai",
       "counter": "Jūsų pasiūlymą sudaro {{current}} ženklai iš {{total}} galimų",

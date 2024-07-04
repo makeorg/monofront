@@ -408,7 +408,6 @@
   },
   "proposal_submit": {
     "form": {
-      "bait": "È necessario ",
       "title": "Scrivi la tua proposta usando al massimo 140 caratteri. Inseriscila nel campo della proposta poi convalida cliccando sul pulsante \"Convalida\"",
       "field": "Campi della proposta",
       "counter": "La tua proposta conta {{current}} caratteri su un totale di {{total}} caratteri disponibili",

@@ -217,7 +217,6 @@
   },
   "proposal_submit": {
     "form": {
-      "bait": "Je potrebné ",
       "title": "Pošlite svoj návrh v rozsahu do 140 znakov. Zadajte ju do poľa návrhu a potvrďte kliknutím na tlačidlo „Potvrdiť“.",
       "field": "Pole návrhu",
       "counter": "Váš návrh pozostáva zo {{current}} znakov z celkového počtu {{total}} dostupných znakov",

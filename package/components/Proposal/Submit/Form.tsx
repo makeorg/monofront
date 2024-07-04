@@ -4,10 +4,7 @@ import { ILogger, QuestionType } from '@make.org/types';
 import { FORM, FEATURE_FLIPPING } from '@make.org/types/enums';
 import { MAX_PROPOSAL_LENGTH } from '@make.org/utils/constants/proposal';
 import i18n from 'i18next';
-import {
-  getLocalizedBaitText,
-  proposalHasValidLength,
-} from '@make.org/utils/helpers/proposal';
+import { proposalHasValidLength } from '@make.org/utils/helpers/proposal';
 import {
   getModerationPageLink,
   getGTUPageLink,
@@ -72,11 +69,7 @@ export const ProposalForm: FC<Props> = ({ logger }) => {
   const { device, country, language } = state.appConfig;
   const isMobile = matchMobileDevice(device);
   const proposalIsEmpty = pendingProposal.length === 0;
-  const baitText = getLocalizedBaitText(
-    question.returnedLanguage,
-    question.questionId,
-    logger
-  );
+  const baitText = question.proposalPrefix;
   const charCounting = proposalIsEmpty
     ? baitText?.length
     : pendingProposal.length;
