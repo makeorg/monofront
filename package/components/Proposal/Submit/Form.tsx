@@ -69,9 +69,9 @@ export const ProposalForm: FC<Props> = ({ logger }) => {
   const { device, country, language } = state.appConfig;
   const isMobile = matchMobileDevice(device);
   const proposalIsEmpty = pendingProposal.length === 0;
-  const baitText = question.proposalPrefix;
+  const baitText = question.proposalPrefix.trim();
   const charCounting = proposalIsEmpty
-    ? baitText?.length
+    ? baitText.length + 1
     : pendingProposal.length;
 
   const validProposalLength = proposalHasValidLength(pendingProposal.length);
@@ -85,14 +85,15 @@ export const ProposalForm: FC<Props> = ({ logger }) => {
 
   const handleFieldFocus = () => {
     if (pendingProposal.length === 0) {
-      setProposalContent(baitText);
+      setProposalContent(`${baitText} `);
     }
   };
 
   const handleValueChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    if (pendingProposal.length < baitText.length) {
-      return setProposalContent(baitText);
+    if (pendingProposal.length < baitText.length + 1) {
+      return setProposalContent(`${baitText} `);
     }
+
     return setProposalContent(event.currentTarget.value);
   };
 
@@ -100,8 +101,8 @@ export const ProposalForm: FC<Props> = ({ logger }) => {
     handleValueChange(event);
     if (inputRef && typeof inputRef.current !== 'undefined') {
       const { selectionStart = 0 } = inputRef.current;
-      if (!!selectionStart && selectionStart < baitText.length) {
-        setProposalContent(baitText);
+      if (!!selectionStart && selectionStart < baitText.length + 1) {
+        setProposalContent(`${baitText} `);
       }
     }
   };
