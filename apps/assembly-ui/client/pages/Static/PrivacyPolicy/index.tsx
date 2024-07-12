@@ -5,6 +5,7 @@ import remarkFlexibleParagraphs from 'remark-flexible-paragraphs';
 import i18n from 'i18next';
 import { useAssemblyContext } from '../../../../store/context';
 import { ROUTE_ASSEMBLY_COOKIES } from '../../../../utils/routes';
+import { MetaTags } from '../../../../components/Meta';
 import { LegalPagesContainerStyle, LegalPagesContentStyle } from '../style';
 import {
   markdownComponents,
@@ -27,25 +28,31 @@ const PrivacyPolicyPage: FC = () => {
   };
 
   return (
-    <LegalPagesContainerStyle>
-      <LegalPagesContentStyle>
-        <ReactMarkdown
-          components={markdownComponents()}
-          remarkPlugins={[
-            remarkGfm,
-            [
-              remarkFlexibleParagraphs,
-              {
-                paragraphClassName: 'custom',
-                paragraphClassificationPrefix: 'custom',
-              },
-            ],
-          ]}
-        >
-          {i18n.t('static:privacy.content', replacements)}
-        </ReactMarkdown>
-      </LegalPagesContentStyle>
-    </LegalPagesContainerStyle>
+    <>
+      <MetaTags
+        title={i18n.t('meta.confidentiality.title')}
+        description={i18n.t('meta.confidentiality.description')}
+      />
+      <LegalPagesContainerStyle>
+        <LegalPagesContentStyle>
+          <ReactMarkdown
+            components={markdownComponents()}
+            remarkPlugins={[
+              remarkGfm,
+              [
+                remarkFlexibleParagraphs,
+                {
+                  paragraphClassName: 'custom',
+                  paragraphClassificationPrefix: 'custom',
+                },
+              ],
+            ]}
+          >
+            {i18n.t('static:privacy.content', replacements)}
+          </ReactMarkdown>
+        </LegalPagesContentStyle>
+      </LegalPagesContainerStyle>
+    </>
   );
 };
 

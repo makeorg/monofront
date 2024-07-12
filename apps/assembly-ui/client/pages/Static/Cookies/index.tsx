@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import remarkFlexibleParagraphs from 'remark-flexible-paragraphs';
 import i18n from 'i18next';
+import { MetaTags } from '../../../../components/Meta';
 import {
   CookieButtonStyle,
   LegalPagesContainerStyle,
@@ -30,54 +31,60 @@ const CookiesPage: FC = () => {
   };
 
   return (
-    <LegalPagesContainerStyle>
-      <LegalPagesContentStyle>
-        <ReactMarkdown
-          components={markdownComponents()}
-          remarkPlugins={[
-            remarkGfm,
-            [
-              remarkFlexibleParagraphs,
-              {
-                paragraphClassName: 'custom',
-                paragraphClassificationPrefix: 'custom',
-              },
-            ],
-          ]}
-        >
-          {i18n.t('static:cookies.before_table', replacements)}
-        </ReactMarkdown>
-        <LegalTableStyle id="cookiefirst-cookies-table" />
-        <LegalPagesTextStyle>
-          {i18n.t('static:cookies.modify')}
-          <CookieButtonStyle
-            onClick={() => {
-              // useCookieFirst hooks from react-cookiefirt package doesn't work so we have to use another method
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-              // @ts-ignore
-              cookiefirst_show_settings();
-            }}
+    <>
+      <MetaTags
+        title={i18n.t('meta.cookies.title')}
+        description={i18n.t('meta.cookies.description')}
+      />
+      <LegalPagesContainerStyle>
+        <LegalPagesContentStyle>
+          <ReactMarkdown
+            components={markdownComponents()}
+            remarkPlugins={[
+              remarkGfm,
+              [
+                remarkFlexibleParagraphs,
+                {
+                  paragraphClassName: 'custom',
+                  paragraphClassificationPrefix: 'custom',
+                },
+              ],
+            ]}
           >
-            {i18n.t('static:cookies.button')}
-          </CookieButtonStyle>
-        </LegalPagesTextStyle>
-        <ReactMarkdown
-          components={markdownComponents()}
-          remarkPlugins={[
-            remarkGfm,
-            [
-              remarkFlexibleParagraphs,
-              {
-                paragraphClassName: 'custom',
-                paragraphClassificationPrefix: 'custom',
-              },
-            ],
-          ]}
-        >
-          {i18n.t('static:cookies.after_table')}
-        </ReactMarkdown>
-      </LegalPagesContentStyle>
-    </LegalPagesContainerStyle>
+            {i18n.t('static:cookies.before_table', replacements)}
+          </ReactMarkdown>
+          <LegalTableStyle id="cookiefirst-cookies-table" />
+          <LegalPagesTextStyle>
+            {i18n.t('static:cookies.modify')}
+            <CookieButtonStyle
+              onClick={() => {
+                // useCookieFirst hooks from react-cookiefirt package doesn't work so we have to use another method
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
+                cookiefirst_show_settings();
+              }}
+            >
+              {i18n.t('static:cookies.button')}
+            </CookieButtonStyle>
+          </LegalPagesTextStyle>
+          <ReactMarkdown
+            components={markdownComponents()}
+            remarkPlugins={[
+              remarkGfm,
+              [
+                remarkFlexibleParagraphs,
+                {
+                  paragraphClassName: 'custom',
+                  paragraphClassificationPrefix: 'custom',
+                },
+              ],
+            ]}
+          >
+            {i18n.t('static:cookies.after_table')}
+          </ReactMarkdown>
+        </LegalPagesContentStyle>
+      </LegalPagesContainerStyle>
+    </>
   );
 };
 

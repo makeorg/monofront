@@ -4,6 +4,7 @@ import remarkGfm from 'remark-gfm';
 import remarkFlexibleParagraphs from 'remark-flexible-paragraphs';
 import i18n from 'i18next';
 import { useAssemblyContext } from '../../../../store/context';
+import { MetaTags } from '../../../../components/Meta';
 import { LegalPagesContainerStyle, LegalPagesContentStyle } from '../style';
 import {
   markdownComponents,
@@ -22,25 +23,31 @@ const LegalPage: FC = () => {
   };
 
   return (
-    <LegalPagesContainerStyle>
-      <LegalPagesContentStyle>
-        <ReactMarkdown
-          components={markdownComponents()}
-          remarkPlugins={[
-            remarkGfm,
-            [
-              remarkFlexibleParagraphs,
-              {
-                paragraphClassName: 'custom',
-                paragraphClassificationPrefix: 'custom',
-              },
-            ],
-          ]}
-        >
-          {i18n.t('static:legal.content', replacements)}
-        </ReactMarkdown>
-      </LegalPagesContentStyle>
-    </LegalPagesContainerStyle>
+    <>
+      <MetaTags
+        title={i18n.t('meta.legal.title')}
+        description={i18n.t('meta.legal.description')}
+      />
+      <LegalPagesContainerStyle>
+        <LegalPagesContentStyle>
+          <ReactMarkdown
+            components={markdownComponents()}
+            remarkPlugins={[
+              remarkGfm,
+              [
+                remarkFlexibleParagraphs,
+                {
+                  paragraphClassName: 'custom',
+                  paragraphClassificationPrefix: 'custom',
+                },
+              ],
+            ]}
+          >
+            {i18n.t('static:legal.content', replacements)}
+          </ReactMarkdown>
+        </LegalPagesContentStyle>
+      </LegalPagesContainerStyle>
+    </>
   );
 };
 

@@ -128,5 +128,31 @@
     "docs": "Les sources documentaires :",
     "videos": "Les sources vidéos :",
     "see": "Consulter l'évènement"
+  },
+  "meta": {
+    "event": {
+      "title": "Demander, comprendre, s’approprier un sujet",
+      "description": "Obtenez des réponses fiables en quelques cliques."
+    },
+    "eventSources": {
+      "title": "Nos sources - Panoramic by Make.org",
+      "description": "Consultez les sources fiables qui alimentent notre IA."
+    },
+    "about": {
+      "title": "À propos - Panoramic Panoramic by Make.org",
+      "description": "Comprendre comment Panoramic peut vous aider."
+    },
+    "confidentiality": {
+      "title": "Politique de confidentialité - Panoramic by Make.org",
+      "description": "Découvrez nos engagements vis à vis de vos données."
+    },
+    "cookies": {
+      "title": "Gestion des cookies - Panoramic by Make.org",
+      "description": "Découvrez comment nous utilisons vos cookies lors de votre navigation sur la plateforme."
+    },
+    "legal": {
+      "title": "Mentions Légales - Panoramic by Make.org",
+      "description": "Trouvez ici les mentions légales de Panoramic."
+    }
   }
 }

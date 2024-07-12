@@ -1,5 +1,6 @@
 import React, { FC, useEffect } from 'react';
 import i18n from 'i18next';
+import { MetaTags } from '../../../components/Meta';
 import {
   ReassuranceTitleStyle,
   ReassuranceSubitleStyle,
@@ -77,6 +78,10 @@ const AboutPage: FC = () => {
 
   return (
     <>
+      <MetaTags
+        title={i18n.t('meta.about.title')}
+        description={i18n.t('meta.about.description')}
+      />
       <ReassuranceContainerBlockStyle>
         <ReassuranceContainerMainTitleStyle>
           <ReassuranceInnerBlockTextGapStyle>

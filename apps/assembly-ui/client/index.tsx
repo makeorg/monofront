@@ -4,6 +4,7 @@ import { createRoot, hydrateRoot } from 'react-dom/client';
 import { FontFacesStylesheet } from '@make.org/assets/css-in-js/FontFaces';
 import { BrowserRouter } from 'react-router-dom';
 import { ModernNormalizeStylesheet } from '@make.org/assets/css-in-js/ModernNormalize';
+import { HeadProvider } from 'react-head';
 import i18n from 'i18next';
 import { loadableReady } from '@loadable/component';
 import { TRANSLATION_COMMON_NAMESPACE } from '@make.org/utils/i18n/constants';
@@ -218,20 +219,22 @@ const initApp = async (state: AssemblyGlobalStateType) => {
     };
 
     return renderMethod(
-      <AssemblyContextState serverState={store}>
-        <ErrorBoundary logger={ClientLogger.getInstance()}>
-          <TrackingContext.Provider value={trackContext}>
-            <BrowserRouter>
-              <React.StrictMode>
-                <ModernNormalizeStylesheet />
-                <FontFacesStylesheet />
-                <DefaultStylesheet />
-                <AppContainer />
-              </React.StrictMode>
-            </BrowserRouter>
-          </TrackingContext.Provider>
-        </ErrorBoundary>
-      </AssemblyContextState>,
+      <HeadProvider>
+        <AssemblyContextState serverState={store}>
+          <ErrorBoundary logger={ClientLogger.getInstance()}>
+            <TrackingContext.Provider value={trackContext}>
+              <BrowserRouter>
+                <React.StrictMode>
+                  <ModernNormalizeStylesheet />
+                  <FontFacesStylesheet />
+                  <DefaultStylesheet />
+                  <AppContainer />
+                </React.StrictMode>
+              </BrowserRouter>
+            </TrackingContext.Provider>
+          </ErrorBoundary>
+        </AssemblyContextState>
+      </HeadProvider>,
       appDom
     );
   });

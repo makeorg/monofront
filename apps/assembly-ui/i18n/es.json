@@ -128,5 +128,31 @@
     "exergue": "Esta herramienta es una plataforma que utiliza **Inteligencia Artificial** para poner **temas complejos** al alcance de los ciudadanos.",
     "more": "Ver más...",
     "less": "Mostrar menos..."
+  },
+  "meta": {
+    "event": {
+      "title": "@@meta.event.title|fr:Demander, comprendre, s’approprier un sujet",
+      "description": "@@meta.event.description|fr:Obtenez des réponses fiables en quelques cliques."
+    },
+    "eventSources": {
+      "title": "@@meta.eventSources.title|fr:Nos sources - Panoramic by Make.org",
+      "description": "@@meta.eventSources.description|fr:Consultez les sources fiables qui alimentent notre IA."
+    },
+    "about": {
+      "title": "@@meta.about.title|fr:À propos - Panoramic Panoramic by Make.org",
+      "description": "@@meta.about.description|fr:Comprendre comment Panoramic peut vous aider."
+    },
+    "confidentiality": {
+      "title": "@@meta.confidentiality.title|fr:Politique de confidentialité - Panoramic by Make.org",
+      "description": "@@meta.confidentiality.description|fr:Découvrez nos engagements vis à vis de vos données."
+    },
+    "cookies": {
+      "title": "@@meta.cookies.title|fr:Gestion des cookies - Panoramic by Make.org",
+      "description": "@@meta.cookies.description|fr:Découvrez comment nous utilisons vos cookies lors de votre navigation sur la plateforme."
+    },
+    "legal": {
+      "title": "@@meta.legal.title|fr:Mentions Légales - Panoramic by Make.org",
+      "description": "@@meta.legal.description|fr:Trouvez ici les mentions légales de Panoramic."
+    }
   }
 }

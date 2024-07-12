@@ -1,5 +1,7 @@
 import React, { FC, useEffect } from 'react';
 import { GliderStylesheet } from '@make.org/assets/css-in-js/GliderStyle';
+import i18n from 'i18next';
+import { MetaTags } from '../../../components/Meta';
 import { Feed } from '../../../components/Feed';
 import { PromptContainerStyle } from '../../../components/Prompt/style';
 import { Suggestions } from '../../../components/Prompt/Suggestions';
@@ -31,6 +33,10 @@ const EventPage: FC = () => {
 
   return (
     <>
+      <MetaTags
+        title={i18n.t('meta.event.title')}
+        description={i18n.t('meta.event.description')}
+      />
       <GliderStylesheet />
       <Welcome />
       <Feed />
