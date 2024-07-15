@@ -70,18 +70,11 @@ export const eventRoute = async (
     () => unexpectedError('getTermQueries', event.id)
   );
 
-  const generatedContents = await ContentService.getGeneratedContents(
-    event.id,
-    () => notFoundError('getGeneratedContents', event.id),
-    () => unexpectedError('getGeneratedContents', event.id)
-  );
-
   const noTermQueries = !termQueries || !termQueries?.length;
-  const noGeneratedContents = !generatedContents || !generatedContents?.length;
 
-  if (noTermQueries || noGeneratedContents) {
+  if (noTermQueries) {
     ServerLogger.getInstance().logError({
-      message: `No Term Queries (length: ${termQueries?.length}) or Generated Contents (length: ${generatedContents?.length}) for event : ${event.slug} `,
+      message: `No Term Queries (length: ${termQueries?.length}) for event : ${event.slug} `,
       name: 'server-side',
       url: req.url,
       query: req.query,
@@ -93,7 +86,6 @@ export const eventRoute = async (
     customer,
     event,
     termQueries,
-    generatedContents,
     documentSources: [],
   };
 

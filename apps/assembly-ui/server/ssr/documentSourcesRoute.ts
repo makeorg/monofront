@@ -85,7 +85,6 @@ export const documentSourcesRoute = async (
     customer,
     event,
     termQueries: [],
-    generatedContents: [],
     documentSources,
   };
 

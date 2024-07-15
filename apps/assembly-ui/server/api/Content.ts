@@ -6,7 +6,6 @@ import { DOCUMENT_PAGE_LIMIT } from '../../utils/constants';
 import {
   TermQueryType,
   EventType,
-  GeneratedContentType,
   CustomerType,
   DocumentSourceType,
 } from '../../types/index.d';
@@ -153,6 +152,8 @@ const getEventBySlug = async (
       introduction,
       links,
       logoUrl,
+      summaryTitle,
+      summaryContent,
     } = response && response.data[0];
 
     const event: EventType = {
@@ -165,6 +166,8 @@ const getEventBySlug = async (
       introduction,
       links,
       logoUrl,
+      summaryTitle,
+      summaryContent,
     };
 
     cache.set(EVENT_CACHE_KEY, event);
@@ -243,74 +246,10 @@ const getTermQueries = async (
   }
 };
 
-/**
- * Get all generated contents of an event by his slug or his id
- * @param  {String} eventId
- * @param  {Function} notFound
- * @param  {Function} unexpectedError
- *
- * @return {Promise}
- */
-const getGeneratedContents = async (
-  eventId: string,
-  notFound: () => void,
-  unexpectedError: () => void
-): Promise<void | GeneratedContentType[]> => {
-  const GENERATED_CONTENTS_CACHE_KEY = hash([
-    'GET_GENERATED_CONTENT',
-    [...eventId],
-  ]);
-  const generatedContentsFromCache: GeneratedContentType[] | undefined =
-    cache.get(GENERATED_CONTENTS_CACHE_KEY);
-
-  if (generatedContentsFromCache) {
-    return generatedContentsFromCache;
-  }
-
-  try {
-    const response = await ContentApiService.getGeneratedContents(eventId);
-    const generatedContents: GeneratedContentType[] = [];
-
-    if (!response || !response.data) {
-      return generatedContents;
-    }
-
-    response.data.map((generatedContent: GeneratedContentType) => {
-      const content = {
-        title: generatedContent.title,
-        subtitle: generatedContent.subtitle,
-        name: generatedContent.name,
-        content: generatedContent.content,
-        position: generatedContent.position,
-        source_type: generatedContent.source_type,
-      };
-
-      return generatedContents.push(content);
-    });
-
-    cache.set(GENERATED_CONTENTS_CACHE_KEY, generatedContents);
-
-    return generatedContents;
-  } catch (error: unknown) {
-    const apiServiceError = error as ApiServiceError;
-    if (apiServiceError.status === 404) {
-      return notFound();
-    }
-    ServerLogger.getInstance().logError(
-      apiServiceError.clone(
-        `error in server/api/Content/getGeneratedContents: ${apiServiceError.message}`
-      )
-    );
-
-    return unexpectedError();
-  }
-};
-
 export const ContentService = {
   getDocumentSources,
   getCustomerBySlug,
   getEventBySlug,
   getTermQueries,
-  getGeneratedContents,
   clearCache,
 };

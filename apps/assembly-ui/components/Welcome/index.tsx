@@ -25,11 +25,14 @@ export const Welcome: FC = () => {
   const { state } = useAssemblyContext();
   const [showSummary, setShowSummary] = useState<boolean>(false);
   const { visitorId } = state;
-  const { introduction, slug: eventSlug } = state.event;
-  const { generatedContents } = state;
-  const summary = generatedContents[0];
-  const showToggleSummary = summary.content.length >= MAX_LENGTH_SUMMARY;
-  const summarySliced = summary.content.slice(0, MAX_LENGTH_SUMMARY);
+  const {
+    introduction,
+    slug: eventSlug,
+    summaryContent,
+    summaryTitle,
+  } = state.event;
+  const showToggleSummary = summaryContent.length >= MAX_LENGTH_SUMMARY;
+  const summarySliced = summaryContent.slice(0, MAX_LENGTH_SUMMARY);
   const tracker = useTracking();
 
   const handleClick = (displaySummary: boolean) => {
@@ -60,27 +63,25 @@ export const Welcome: FC = () => {
           <WelcomeIconPngStyle src={welcomeImage} alt="" />
         </WelcomeTitleImageContainerStyle>
 
-        {summary && (
-          <WelcomeContentBlockContainerStyle>
-            <WelcomeContentBlockTitleStyle>
-              {summary.title}
-            </WelcomeContentBlockTitleStyle>
-            <WelcomeContentTextStyle aria-expanded={showSummary}>
-              {!showToggleSummary || showSummary
-                ? summary.content
-                : `${summarySliced}...`}
-            </WelcomeContentTextStyle>
-            {showToggleSummary && (
-              <WelcomeToggleButtonStyle
-                type="button"
-                onClick={() => handleClick(!showSummary)}
-                aria-pressed={showSummary}
-              >
-                {showSummary ? i18n.t('welcome.less') : i18n.t('welcome.more')}
-              </WelcomeToggleButtonStyle>
-            )}
-          </WelcomeContentBlockContainerStyle>
-        )}
+        <WelcomeContentBlockContainerStyle>
+          <WelcomeContentBlockTitleStyle>
+            {summaryTitle}
+          </WelcomeContentBlockTitleStyle>
+          <WelcomeContentTextStyle aria-expanded={showSummary}>
+            {!showToggleSummary || showSummary
+              ? summaryContent
+              : `${summarySliced}...`}
+          </WelcomeContentTextStyle>
+          {showToggleSummary && (
+            <WelcomeToggleButtonStyle
+              type="button"
+              onClick={() => handleClick(!showSummary)}
+              aria-pressed={showSummary}
+            >
+              {showSummary ? i18n.t('welcome.less') : i18n.t('welcome.more')}
+            </WelcomeToggleButtonStyle>
+          )}
+        </WelcomeContentBlockContainerStyle>
       </WelcomeContainerStyle>
 
       <WelcomeBlockThemesContainerStyle>

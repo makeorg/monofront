@@ -28,21 +28,14 @@ export type EventType = {
   introduction: string;
   links: LinksType[];
   logoUrl: string;
+  summaryTitle: string;
+  summaryContent: string;
 };
 
 export type TermQueryType = {
   title: string;
   value: string;
   type: 'THEME' | 'SUGGESTION';
-};
-
-export type GeneratedContentType = {
-  title: string;
-  subtitle: string;
-  name: string;
-  content: string;
-  position: number;
-  source_type: string;
 };
 
 export type ChunkType = {
@@ -83,7 +76,6 @@ export type EventRouteType = {
   customer: CustomerType;
   event: EventType;
   termQueries: TermQueryType[] | [];
-  generatedContents: GeneratedContentType[] | [];
   documentSources: DocumentSourceType[] | [];
 };
 
