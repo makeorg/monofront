@@ -45,7 +45,11 @@ export const Header: FC = () => {
               title={i18n.t('header.top')}
               onClick={scrollToTop}
             >
-              <HeaderImgStyle src={logoUrl} alt="" />
+              <HeaderImgStyle
+                height={isSmallDevice ? 35 : 45}
+                src={logoUrl}
+                alt=""
+              />
             </HeaderButton>
           )}
         </HeaderSidebarLogoContainerStyle>

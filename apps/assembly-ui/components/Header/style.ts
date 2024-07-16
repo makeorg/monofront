@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
+import { Image } from '@make.org/ui/components/Image';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { SidebarLogo } from '../../assets/SidebarSimple';
 
@@ -17,7 +18,7 @@ export const HeaderContainerStyle = styled.header`
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 `;
 
-export const HeaderImgStyle = styled.img`
+export const HeaderImgStyle = styled(Image)`
   max-height: 35px;
   @media (min-width: ${intToPx(Breakpoints.LargeMobile)}) {
     max-height: 45px;
