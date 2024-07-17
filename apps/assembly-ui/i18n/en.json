@@ -131,28 +131,28 @@
   },
   "meta": {
     "event": {
-      "title": "@@meta.event.title|fr:Demander, comprendre, s’approprier un sujet",
-      "description": "@@meta.event.description|fr:Obtenez des réponses fiables en quelques cliques."
+      "title": "Ask, understand, own a subject",
+      "description": "Get reliable answers in a few clicks."
     },
     "eventSources": {
-      "title": "@@meta.eventSources.title|fr:Nos sources - Panoramic by Make.org",
-      "description": "@@meta.eventSources.description|fr:Consultez les sources fiables qui alimentent notre IA."
+      "title": "Our sources - Panoramic by Make.org",
+      "description": "See the reliable sources that feed our IA."
     },
     "about": {
-      "title": "@@meta.about.title|fr:À propos - Panoramic Panoramic by Make.org",
-      "description": "@@meta.about.description|fr:Comprendre comment Panoramic peut vous aider."
+      "title": "About - Panoramic by Make.org",
+      "description": "Understand how Panoramic can help you."
     },
     "confidentiality": {
-      "title": "@@meta.confidentiality.title|fr:Politique de confidentialité - Panoramic by Make.org",
-      "description": "@@meta.confidentiality.description|fr:Découvrez nos engagements vis à vis de vos données."
+      "title": "Privacy Policy - Panoramic by Make.org",
+      "description": "Discover our commitments to your data."
     },
     "cookies": {
-      "title": "@@meta.cookies.title|fr:Gestion des cookies - Panoramic by Make.org",
-      "description": "@@meta.cookies.description|fr:Découvrez comment nous utilisons vos cookies lors de votre navigation sur la plateforme."
+      "title": "Cookies Management - Panoramic by Make.org",
+      "description": "Find out how we use your cookies when browsing on the platform."
     },
     "legal": {
-      "title": "@@meta.legal.title|fr:Mentions Légales - Panoramic by Make.org",
-      "description": "@@meta.legal.description|fr:Trouvez ici les mentions légales de Panoramic."
+      "title": "Legal Notices - Panoramic by Make.org",
+      "description": "Find here the legal mentions of Panoramic."
     }
   }
 }

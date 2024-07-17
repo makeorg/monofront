@@ -131,28 +131,28 @@
   },
   "meta": {
     "event": {
-      "title": "@@meta.event.title|fr:Demander, comprendre, s’approprier un sujet",
-      "description": "@@meta.event.description|fr:Obtenez des réponses fiables en quelques cliques."
+      "title": "Fragen, verstehen, besitzen ein Thema",
+      "description": "Erhalten Sie zuverlässige Antworten in wenigen Klicks."
     },
     "eventSources": {
-      "title": "@@meta.eventSources.title|fr:Nos sources - Panoramic by Make.org",
-      "description": "@@meta.eventSources.description|fr:Consultez les sources fiables qui alimentent notre IA."
+      "title": "Unsere Quellen - Panoramic by Make.org",
+      "description": "Sehen Sie die zuverlässigen Quellen, die unsere IA ernähren."
     },
     "about": {
-      "title": "@@meta.about.title|fr:À propos - Panoramic Panoramic by Make.org",
-      "description": "@@meta.about.description|fr:Comprendre comment Panoramic peut vous aider."
+      "title": "Über Make.org - Panoramic von Make.org",
+      "description": "Verstehen Sie, wie Panoramic Ihnen helfen kann."
     },
     "confidentiality": {
-      "title": "@@meta.confidentiality.title|fr:Politique de confidentialité - Panoramic by Make.org",
-      "description": "@@meta.confidentiality.description|fr:Découvrez nos engagements vis à vis de vos données."
+      "title": "Datenschutzerklärung - Panoramic by Make.org",
+      "description": "Entdecken Sie unsere Verpflichtungen zu Ihren Daten."
     },
     "cookies": {
-      "title": "@@meta.cookies.title|fr:Gestion des cookies - Panoramic by Make.org",
-      "description": "@@meta.cookies.description|fr:Découvrez comment nous utilisons vos cookies lors de votre navigation sur la plateforme."
+      "title": "Cookies Management - Panoramic by Make.org",
+      "description": "Erfahren Sie, wie wir Ihre Cookies verwenden, wenn Sie auf der Plattform surfen."
     },
     "legal": {
-      "title": "@@meta.legal.title|fr:Mentions Légales - Panoramic by Make.org",
-      "description": "@@meta.legal.description|fr:Trouvez ici les mentions légales de Panoramic."
+      "title": "Impressum - Panoramic by Make.org",
+      "description": "Hier finden Sie die rechtlichen Erwähnungen von Panoramic."
     }
   }
 }
