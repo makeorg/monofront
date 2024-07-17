@@ -84,6 +84,7 @@ describe('getQuestionFromState', () => {
     endDate: '',
     demographicsCardCount: 0,
     proposalPrefix: 'Il faut',
+    actionsUrl: '',
   };
 
   const state = {

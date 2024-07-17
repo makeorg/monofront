@@ -9,7 +9,9 @@ import {
 // import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { Breakpoints, Layouts } from '@make.org/assets/vars/Breakpoints';
 import { SvgFiltersMobileIcon } from '@make.org/ui/Svg/elements';
+import { SvgActionsFDD } from '@make.org/ui/Svg/elements/ActionsFDD';
 import { ContainerWithPadding } from '@make.org/ui/elements/MainElements';
+import { LinkAsRedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import {
   TitleLStyle,
   TitleSStyle,
@@ -109,6 +111,63 @@ export const ParticipateContentStyle = styled.section`
   display: flex;
   flex-flow: column;
   ${ContainerWithPadding};
+`;
+
+export const PageResultActionsContainerStyle = styled.section`
+  width: 100%;
+  background-color: ${colors.FDD.primary};
+`;
+
+export const PageResultActionContentStyle = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  max-width: ${intToPx(Layouts.ContainerWithPadding)};
+  flex-direction: column;
+  padding: 40px ${spacings.m};
+  margin-left: auto;
+  margin-right: auto;
+  gap: ${spacings.xl};
+  align-items: center;
+  justify-content: center;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    flex-direction: row;
+  }
+`;
+
+export const PageResultActionSvgContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    width: auto;
+  }
+`;
+
+export const PageResultActionTextContainerStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 2;
+`;
+
+export const PageResultActionTitleStyle = styled.h3`
+  font-family: ${typography.FontFamily.Highlight};
+  font-size: ${typography.FontSize.Title.France};
+  text-transform: none;
+  color: white;
+`;
+
+export const PageResultActionTextStyle = styled.p`
+  font-family: ${typography.FontFamily.Default};
+  font-size: ${typography.FontSize.Text.Arrondissement};
+  color: ${colors.Content.Interface.LightSecondary};
+`;
+
+export const PageResultActionButtonStyle = styled(LinkAsRedButtonStyle)`
+  width: fit-content;
+  color: white;
+  fill: white;
+  background-color: ${colors.FDD.secondary};
 `;
 
 export const ParticipateTitleStyle = styled(TitleLStyle).attrs({
@@ -274,3 +333,5 @@ export const FiltersCounterStyle = styled.span`
 export const SvgFiltersMobile = styled(SvgFiltersMobileIcon)`
   margin-right: ${spacings.s};
 `;
+
+export const SvgActionsFDDStyle = styled(SvgActionsFDD)``;

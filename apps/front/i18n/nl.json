@@ -987,7 +987,12 @@
         "percentage": "percentage"
       },
       "breadcrumb": "Resultaten van \"{{title}}\"",
-      "title": "Wat moet ik onthouden van deze raadpleging?"
+      "title": "Wat moet ik onthouden van deze raadpleging?",
+      "actionFDD": {
+        "title": "@@consultation.results.actionFDD.title|fr:Les actions",
+        "text": "@@consultation.results.actionFDD.text|fr:Suite à la consultation et aux ateliers citoyens, des actions concrètes ont émergées pour que votre participation est un vrai impact sur la vie des citoyens. Découvrez les sur le site de Make.org Foundation.",
+        "discover": "@@consultation.results.actionFDD.discover|fr:Découvrir"
+      }
     },
     "reset": "Resetten",
     "sortby": "Sorteren op: ",

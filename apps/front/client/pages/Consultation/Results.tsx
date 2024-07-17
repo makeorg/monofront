@@ -11,6 +11,7 @@ import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selec
 import { ThemeProvider } from 'styled-components';
 import { ExpressService } from '@make.org/utils/services/Express';
 import { SvgLightBulb, SvgLightning } from '@make.org/ui/Svg/elements';
+import { ExternalLinkIconStyle } from '@make.org/ui/elements/ButtonsElements';
 import { IDS } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
@@ -20,6 +21,14 @@ import {
   ParticipateInnerStyle,
   ParticipateSidebarContentStyle,
   ResultsTitleStyle,
+  PageResultActionsContainerStyle,
+  SvgActionsFDDStyle,
+  PageResultActionTextStyle,
+  PageResultActionTitleStyle,
+  PageResultActionTextContainerStyle,
+  PageResultActionContentStyle,
+  PageResultActionButtonStyle,
+  PageResultActionSvgContainer,
 } from './style';
 import { TopIdeas } from '../../app/Consultation/Results/TopIdeas';
 import { ResultsSlider } from '../../app/Consultation/Results/Sliders';
@@ -121,6 +130,34 @@ const ResultPage: FC<Props> = ({ logger }) => {
           />
         )}
         <ParticipateHighlights />
+
+        {question.actionsUrl && (
+          <PageResultActionsContainerStyle>
+            <PageResultActionContentStyle>
+              <PageResultActionTextContainerStyle>
+                <PageResultActionTitleStyle>
+                  {i18n.t('consultation.results.actionFDD.title')}
+                </PageResultActionTitleStyle>
+                <PageResultActionTextStyle>
+                  {i18n.t('consultation.results.actionFDD.text')}
+                </PageResultActionTextStyle>
+                <PageResultActionButtonStyle
+                  as="a"
+                  href={question.actionsUrl}
+                  target="_blank"
+                  rel="noopener"
+                >
+                  {i18n.t('consultation.results.actionFDD.discover')}
+                  <ExternalLinkIconStyle aria-hidden focusable="false" />
+                </PageResultActionButtonStyle>
+              </PageResultActionTextContainerStyle>
+              <PageResultActionSvgContainer>
+                <SvgActionsFDDStyle />
+              </PageResultActionSvgContainer>
+            </PageResultActionContentStyle>
+          </PageResultActionsContainerStyle>
+        )}
+
         <ParticipateContentStyle>
           <ResultsTitleStyle>
             {i18n.t('consultation.results.title')}

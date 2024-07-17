@@ -190,6 +190,7 @@ export type QuestionType = {
   languages: string[];
   reportUrl?: string;
   proposalPrefix: string;
+  actionsUrl: string;
 };
 
 export type CountsByQuestionType = {

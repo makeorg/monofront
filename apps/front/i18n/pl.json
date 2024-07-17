@@ -1000,7 +1000,12 @@
         "percentage": "procent"
       },
       "breadcrumb": "Wyniki \"{{title}}\"",
-      "title": "Co należy zapamiętać z tej konsultacji?"
+      "title": "Co należy zapamiętać z tej konsultacji?",
+      "actionFDD": {
+        "title": "@@consultation.results.actionFDD.title|fr:Les actions",
+        "text": "@@consultation.results.actionFDD.text|fr:Suite à la consultation et aux ateliers citoyens, des actions concrètes ont émergées pour que votre participation est un vrai impact sur la vie des citoyens. Découvrez les sur le site de Make.org Foundation.",
+        "discover": "@@consultation.results.actionFDD.discover|fr:Découvrir"
+      }
     },
     "reset": "Wyczyść",
     "sortby": "Sortuj według: ",

@@ -1006,7 +1006,12 @@
         "percentage": "procenttal"
       },
       "breadcrumb": "Resultat av ”{{title}}”",
-      "title": "Vad tar vi fasta på i det här samrådet?"
+      "title": "Vad tar vi fasta på i det här samrådet?",
+      "actionFDD": {
+        "title": "@@consultation.results.actionFDD.title|fr:Les actions",
+        "text": "@@consultation.results.actionFDD.text|fr:Suite à la consultation et aux ateliers citoyens, des actions concrètes ont émergées pour que votre participation est un vrai impact sur la vie des citoyens. Découvrez les sur le site de Make.org Foundation.",
+        "discover": "@@consultation.results.actionFDD.discover|fr:Découvrir"
+      }
     },
     "reset": "Rensa",
     "sortby": "Sortera efter: ",

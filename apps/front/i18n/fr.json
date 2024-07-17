@@ -1024,7 +1024,12 @@
         "percentage": "pourcentage"
       },
       "breadcrumb": "Résultats de \"{{title}}\"",
-      "title": "Que retenir de cette consultation ?"
+      "title": "Que retenir de cette consultation ?",
+      "actionFDD": {
+        "title": "Les actions",
+        "text": "Suite à la consultation et aux ateliers citoyens, des actions concrètes ont émergées pour que votre participation est un vrai impact sur la vie des citoyens. Découvrez les sur le site de Make.org Foundation.",
+        "discover": "Découvrir"
+      }
     },
     "reset": "Réinitialiser",
     "sortby": "Trier par: ",

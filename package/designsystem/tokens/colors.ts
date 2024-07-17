@@ -65,4 +65,8 @@ export const colors = {
       Brand: '#4C41AB',
     },
   },
+  FDD: {
+    primary: '#253186',
+    secondary: '#00A88F',
+  },
 };
