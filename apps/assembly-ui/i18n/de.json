@@ -131,28 +131,28 @@
   },
   "meta": {
     "event": {
-      "title": "Fragen, verstehen, besitzen ein Thema",
-      "description": "Erhalten Sie zuverlässige Antworten in wenigen Klicks."
+      "title": "Fragen, verstehen, ein Thema vertiefen",
+      "description": "Erhalte zuverlässige Antworten in wenigen Klicks."
     },
     "eventSources": {
-      "title": "Unsere Quellen - Panoramic by Make.org",
-      "description": "Sehen Sie die zuverlässigen Quellen, die unsere IA ernähren."
+      "title": "Unsere Quellen - Panoramic von Make.org",
+      "description": "Erfahre, auf welchen zuverlässigen Quellen die Antworten unserer KI basieren."
     },
     "about": {
       "title": "Über Make.org - Panoramic von Make.org",
-      "description": "Verstehen Sie, wie Panoramic Ihnen helfen kann."
+      "description": "Verstehe, wie Panoramic dir helfen kann."
     },
     "confidentiality": {
-      "title": "Datenschutzerklärung - Panoramic by Make.org",
-      "description": "Entdecken Sie unsere Verpflichtungen zu Ihren Daten."
+      "title": "Datenschutzerklärung - Panoramic von Make.org",
+      "description": "Erfahre, wie wir uns dazu verpflichten deine Daten zu schützen."
     },
     "cookies": {
-      "title": "Cookies Management - Panoramic by Make.org",
-      "description": "Erfahren Sie, wie wir Ihre Cookies verwenden, wenn Sie auf der Plattform surfen."
+      "title": "Cookie-Verwaltung - Panoramic von Make.org",
+      "description": "Erfahre, wie wir Cookies verwenden, wenn du unsere Plattform nutzt."
     },
     "legal": {
-      "title": "Impressum - Panoramic by Make.org",
-      "description": "Hier finden Sie die rechtlichen Erwähnungen von Panoramic."
+      "title": "Impressum - Panoramic von Make.org",
+      "description": "Hier findest du die rechtlichen Hinweise zu Panoramic."
     }
   }
 }
