@@ -54,6 +54,7 @@ export const cspMiddleware = (
         'https://accounts.google.com',
         'https://analytics.twitter.com',
         'https://*.hotjar.com',
+        'https://scripts.told.club/sdk/sdk.js',
       ],
       imgSrc: [
         ...defaultDirectives.imgSrc,
@@ -71,6 +72,7 @@ export const cspMiddleware = (
         'https://*.hotjar.com',
         'https://*.hotjar.io',
         'wss://*.hotjar.com',
+        'https://api.told.club/graphql',
       ],
       formAction: [
         ...defaultDirectives.formAction,
@@ -81,6 +83,7 @@ export const cspMiddleware = (
         'https://*.facebook.com',
         'https://*.google.com',
         'https://*.hotjar.com',
+        'https://widget.told.club',
       ],
       fontSrc: [...defaultDirectives.fontSrc, 'https://*.hotjar.com'],
     },

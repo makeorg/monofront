@@ -40,10 +40,12 @@ import { initDevState } from './helpers/initDevState';
 import { translationRessources, translationRessoucesLanguages } from '../i18n';
 import { initApiService } from './apiServiceInit';
 import { initTrackingParamsService } from './trackingParamsServiceInit';
+import { told } from './app/Told/told';
 
 declare global {
   interface Window {
     INITIAL_STATE?: StateRoot;
+    TOLD_TOKEN?: string;
   }
 }
 
@@ -159,6 +161,9 @@ const initApp = async (state: StateRoot) => {
     resources: translationRessources,
     defaultNS: TRANSLATION_COMMON_NAMESPACE,
   });
+
+  // Load Told
+  told.load(window?.TOLD_TOKEN ?? '');
 
   // Set date helper language
   DateHelper.language = language;

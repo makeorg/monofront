@@ -1260,7 +1260,8 @@
         "visitor-id": "make-visitor-id: this cookie is used to track visits to our service in order to measure traffic in an anonymous and aggregated fashion. Navigation events are sent to the MixPanel analysis tool.",
         "visitor-created-at": "make-visitor-created-at: this cookie is used to obtain the date of the first visit to the platform.",
         "facebook-tracking": "Facebook tracking cookie: this cookie allows us to generate statistics on the number of visitors to our website in order to improve our website and develop the analysis of our consultations.",
-        "hotjar": "Hotjar: this is a tool for making a behavioural analysis of website usage. For more information: "
+        "hotjar": "Hotjar: this is a tool for making a behavioural analysis of website usage. For more information: ",
+        "told": "@@cookies_management.details.statistics.told|fr:Told : Il s’agit d’un outil permettant de mieux comprendre les besoins et les attentes des utilisateurs via le traitement des retours des utilisateurs. Pour en savoir plus : "
       },
       "social": {
         "name": "\"Social network\" cookies:",

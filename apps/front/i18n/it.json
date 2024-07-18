@@ -1280,7 +1280,8 @@
         "visitor-id": "make-visitor-id: questo cookie serve a seguire le visite sul nostro servizio così da misurare il traffico in modo anonimo e aggregato. Gli eventi di navigazione sono inviati allo strumento di analisi MixPanel.",
         "visitor-created-at": "make-visitor-created-at: questo cookie serve a ottenere la data della prima visita sulla piattaforma.",
         "facebook-tracking": "cookie di tracciamento Facebook: questo cookie permette di generare delle statistiche che riguardano la frequentazione destinate a migliorare il nostro sito e arricchire l'analisi delle nostre consultazioni.",
-        "hotjar": "Hotjar: si tratta di uno strumento che permette di realizzare analisi comportamentali dell'utilizzo del sito web. Per saperne di più: "
+        "hotjar": "Hotjar: si tratta di uno strumento che permette di realizzare analisi comportamentali dell'utilizzo del sito web. Per saperne di più: ",
+        "told": "@@cookies_management.details.statistics.told|fr:Told : Il s’agit d’un outil permettant de mieux comprendre les besoins et les attentes des utilisateurs via le traitement des retours des utilisateurs. Pour en savoir plus : "
       },
       "social": {
         "name": "I cookie “social network”:",

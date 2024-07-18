@@ -1280,7 +1280,8 @@
         "visitor-id": "make-visitor-id: acest cookie are rolul de a monitoriza consultările serviciului nostru, pentru a măsura traficul în mod anonim și agregat. Evenimentele de navigare sunt trimise către instrumentul de analiză MixPanel.",
         "visitor-created-at": "make-visitor-created-at: cu ajutorul acestui modul cookie se obține data primei vizite pe platformă.",
         "facebook-tracking": "modul cookie de tracking Facebook: acest modul cookie permite generarea unor statistici privind accesările, pentru ameliorarea site-ului nostru și o analiză mai detaliată a consultărilor.",
-        "hotjar": "Hotjar: Este vorba de un instrument care permite realizarea analizei comportamentale privind utilizarea site-ului web. Pentru informații mai detaliate: "
+        "hotjar": "Hotjar: Este vorba de un instrument care permite realizarea analizei comportamentale privind utilizarea site-ului web. Pentru informații mai detaliate: ",
+        "told": "@@cookies_management.details.statistics.told|fr:Told : Il s’agit d’un outil permettant de mieux comprendre les besoins et les attentes des utilisateurs via le traitement des retours des utilisateurs. Pour en savoir plus : "
       },
       "social": {
         "name": "Modulele cookie « rețele sociale »:",

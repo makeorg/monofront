@@ -1347,7 +1347,8 @@
         "visitor-id": "make-visitor-id: Dieses Cookie wird verwendet, um Besuche auf unserer Website zu verfolgen und den Datenverkehr auf anonyme und gebündelte Weise zu messen. Navigationsereignisse werden an das Analysetool MixPanel gesendet.",
         "visitor-created-at": "make-visitor-created-at: Dieses Cookie wird verwendet, um das Datum des ersten Besuchs auf der Plattform zu erhalten.",
         "facebook-tracking": "Facebook-Tracking-Cookie: Dieses Cookie ermöglicht es uns, Statistiken über die Anzahl der Besucher auf unserer Website zu erstellen. Diese Statistiken helfen uns dabei, unsere Website zu verbessern und die Analyse unserer Konsultationen zu bereichern.",
-        "hotjar": "Hotjar: Dies ist ein Tool, mit dem eine Verhaltensanalyse der Nutzung der Website durchgeführt werden kann. Weitere Informationen: "
+        "hotjar": "Hotjar: Dies ist ein Tool, mit dem eine Verhaltensanalyse der Nutzung der Website durchgeführt werden kann. Weitere Informationen: ",
+        "told": "@@cookies_management.details.statistics.told|fr:Told : Il s’agit d’un outil permettant de mieux comprendre les besoins et les attentes des utilisateurs via le traitement des retours des utilisateurs. Pour en savoir plus : "
       },
       "social": {
         "name": "Social-Media-Cookies:",

@@ -84,6 +84,7 @@ const renderHtml = (
     .replace(/___NODE_ENV___/gi, env.nodeEnv() || 'production')
     .replace(/___PORT___/gi, env.port() || '')
     .replace(/___HOTJAR_TOKEN___/gi, env.hotjarToken() || '')
+    .replace(/___TOLD_TOKEN___/gi, env.toldToken() || '')
     .replace('</body>', `${scriptTags}</body>`);
 
   return content;

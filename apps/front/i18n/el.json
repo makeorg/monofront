@@ -1356,7 +1356,8 @@
         "visitor-id": "make-visitor-id: αυτό το cookie χρησιμοποιείται για την παρακολούθηση των επισκέψεων στην υπηρεσία μας προκειμένου να μετρηθεί η επισκεψιμότητα με ανώνυμο και συγκεντρωτικό τρόπο. Τα συμβάντα κατά τη διάρκεια της περιήγησης αποστέλλονται στο εργαλείο ανάλυσης MixPanel.",
         "visitor-created-at": "make-visitor-created-at: αυτό το cookie χρησιμοποιείται για να λαμβάνει την ημερομηνία της πρώτης επίσκεψης στην πλατφόρμα.",
         "facebook-tracking": "Facebook tracking cookie: αυτό το cookie χρησιμοποιείται για να παράγει στατιστικά στοιχεία σχετικά με τη συχνότητα των επισκέψεων στον ιστότοπό μας, προκειμένου να βελτιωθεί ο ιστότοπός μας και να εμπλουτιστεί η ανάλυση των διαβουλεύσεών μας.",
-        "hotjar": "Hotjar: Πρόκειται για ένα εργαλείο ανάλυσης συμπεριφοράς όσον αφορά τη χρήση του ιστότοπου. Για περισσότερες πληροφορίες: "
+        "hotjar": "Hotjar: Πρόκειται για ένα εργαλείο ανάλυσης συμπεριφοράς όσον αφορά τη χρήση του ιστότοπου. Για περισσότερες πληροφορίες: ",
+        "told": "@@cookies_management.details.statistics.told|fr:Told : Il s’agit d’un outil permettant de mieux comprendre les besoins et les attentes des utilisateurs via le traitement des retours des utilisateurs. Pour en savoir plus : "
       },
       "social": {
         "name": "Cookies μέσων κοινωνικής δικτύωσης:",

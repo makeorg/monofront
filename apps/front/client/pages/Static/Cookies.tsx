@@ -15,6 +15,7 @@ import {
   TWITTER_LINK_FR,
   TWITTER_LINK_DE,
   HOTJAR_LINK,
+  TOLD_LINK,
 } from '@make.org/utils/constants/config';
 import { trackClickModalCookieSave } from '@make.org/utils/services/Tracking';
 import {
@@ -393,6 +394,23 @@ const CookiesPage: FC = () => {
                       rel="noopener"
                     >
                       {HOTJAR_LINK}
+                      <StaticExternalLinkIconStyle
+                        aria-hidden
+                        focusable="false"
+                      />
+                      <ScreenReaderItemStyle>
+                        {i18n.t('common.open_new_window')}
+                      </ScreenReaderItemStyle>
+                    </RedHTMLLinkElementStyle>
+                  </CookieModalCookieDetailParagraphStyle>
+                  <CookieModalCookieDetailParagraphStyle className="cookie-page block">
+                    {i18n.t('cookies_management.details.statistics.told')}
+                    <RedHTMLLinkElementStyle
+                      href={TOLD_LINK}
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      {TOLD_LINK}
                       <StaticExternalLinkIconStyle
                         aria-hidden
                         focusable="false"

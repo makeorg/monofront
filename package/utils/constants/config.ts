@@ -39,6 +39,7 @@ export const LINKEDIN_LINK_FR = 'https://fr.linkedin.com/legal/privacy-policy';
 export const LINKEDIN_LINK_DE = 'https://de.linkedin.com/legal/privacy-policy';
 export const LINKEDIN_LINK_EN = 'https://linkedin.com/legal/privacy-policy';
 export const HOTJAR_LINK = 'https://www.hotjar.com/legal/policies/privacy/';
+export const TOLD_LINK = 'https://www.told.club/legal';
 
 /** consultation page */
 export const KEYWORD_THRESHOLD = 5;
