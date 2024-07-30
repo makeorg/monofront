@@ -989,9 +989,9 @@
       "breadcrumb": "Kuulemisen \"{{title}}\" tulokset",
       "title": "Kuulemisen tärkeimmät tulokset",
       "actionFDD": {
-        "title": "@@consultation.results.actionFDD.title|fr:Les actions",
-        "text": "@@consultation.results.actionFDD.text|fr:Suite à la consultation et aux ateliers citoyens, des actions concrètes ont émergées pour que votre participation est un vrai impact sur la vie des citoyens. Découvrez les sur le site de Make.org Foundation.",
-        "discover": "@@consultation.results.actionFDD.discover|fr:Découvrir"
+        "title": "Toimet",
+        "text": "Kuulemisen ja kansalaisille järjestettyjen työpajojen jälkeen on laadittu konkreettisia toimia, joilla varmistetaan, että osallistumisellasi on todellista vaikutusta ihmisten elämään. Lue lisää Make.org-säätiön verkkosivuilta.",
+        "discover": "Tutustu"
       }
     },
     "reset": "Nollaa",
@@ -1259,7 +1259,7 @@
         "visitor-created-at": "make-visitor-created-at: tällä evästeellä selvitetään päivämäärä, jolloin vierailija on vieraillut ensimmäisen kerran alustalla.",
         "facebook-tracking": "Facebook-seurantaeväste: tämän evästeen avulla luodaan sivustomme kävijämääriä koskevia tilastoja sivustomme parantamiseksi. Lisäksi sillä edistetään kuulemistemme analysointia.",
         "hotjar": "Hotjar: Kyseessä on työkalu, jolla voidaan suorittaa verkkosivuston käyttöä koskevaa käyttäytymisanalyysia. Lisätietoja: ",
-        "told": "@@cookies_management.details.statistics.told|fr:Told : Il s’agit d’un outil permettant de mieux comprendre les besoins et les attentes des utilisateurs via le traitement des retours des utilisateurs. Pour en savoir plus : "
+        "told": "Told: Tämä on työkalu, jonka avulla saadaan parempi käsitys käyttäjien tarpeista ja odotuksista käsittelemällä käyttäjien palautetta. Lue lisää Toldista: "
       },
       "social": {
         "name": "« Sosiaalisen median » evästeet:",

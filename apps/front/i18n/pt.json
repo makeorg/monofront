@@ -1021,9 +1021,9 @@
       "breadcrumb": "Resultados de \"{{title}}\"",
       "title": "O que podemos aprender com esta consulta?",
       "actionFDD": {
-        "title": "@@consultation.results.actionFDD.title|fr:Les actions",
-        "text": "@@consultation.results.actionFDD.text|fr:Suite à la consultation et aux ateliers citoyens, des actions concrètes ont émergées pour que votre participation est un vrai impact sur la vie des citoyens. Découvrez les sur le site de Make.org Foundation.",
-        "discover": "@@consultation.results.actionFDD.discover|fr:Découvrir"
+        "title": "As acções",
+        "text": "Na sequência da consulta e dos workshops para cidadãos, surgiram acções concretas para garantir que a sua participação tem um impacto real na vida das pessoas. Para mais informações, consulte o sítio Web da Make.org Foundation.",
+        "discover": "Descobrir"
       }
     },
     "reset": "Reinicializar",
@@ -1389,7 +1389,7 @@
         "visitor-created-at": "make-visitor-created-at: este cookie é utilizado para obter a data da primeira visita à plataforma.",
         "facebook-tracking": "cookie de tracking Facebook: este cookie permite gerar estatísticas sobre o número de visitantes do nosso sítio Internet, a fim de o melhorar e de enriquecer a análise das nossas consultas.",
         "hotjar": "Hotjar: trata-se de um instrumento de análise comportamental da utilização do sítio Internet. Para mais informações: ",
-        "told": "@@cookies_management.details.statistics.told|fr:Told : Il s’agit d’un outil permettant de mieux comprendre les besoins et les attentes des utilisateurs via le traitement des retours des utilisateurs. Pour en savoir plus : "
+        "told": "Told: é uma ferramenta que permite compreender melhor as necessidades e expectativas dos utilizadores através do processamento do seu feedback. Saiba mais sobre o Told: "
       },
       "social": {
         "name": "Os cookies das “redes sociais”:",

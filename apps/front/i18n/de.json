@@ -999,9 +999,9 @@
       "breadcrumb": "Ergebnisse für „{{title}}“",
       "title": "Was können wir aus dieser Konsultation lernen?",
       "actionFDD": {
-        "title": "@@consultation.results.actionFDD.title|fr:Les actions",
-        "text": "@@consultation.results.actionFDD.text|fr:Suite à la consultation et aux ateliers citoyens, des actions concrètes ont émergées pour que votre participation est un vrai impact sur la vie des citoyens. Découvrez les sur le site de Make.org Foundation.",
-        "discover": "@@consultation.results.actionFDD.discover|fr:Découvrir"
+        "title": "Die Maßnahmen",
+        "text": "Durch die Online-Beteiligung und die Bürgerwerkstätten sind konkrete Maßnahmen entstanden. Dadurch wird sichergestellt, dass deine Teilnahme einen realen Einfluss auf das Leben der Menschen hat. Erfahre mehr auf der Webseite der Make.org Foundation.",
+        "discover": "Mehr erfahren"
       }
     },
     "reset": "Zurücksetzen",
@@ -1353,7 +1353,7 @@
         "visitor-created-at": "make-visitor-created-at: Dieses Cookie wird verwendet, um das Datum des ersten Besuchs auf der Plattform zu erhalten.",
         "facebook-tracking": "Facebook-Tracking-Cookie: Dieses Cookie ermöglicht es uns, Statistiken über die Anzahl der Besucher auf unserer Website zu erstellen. Diese Statistiken helfen uns dabei, unsere Website zu verbessern und die Analyse unserer Konsultationen zu bereichern.",
         "hotjar": "Hotjar: Dies ist ein Tool, mit dem eine Verhaltensanalyse der Nutzung der Website durchgeführt werden kann. Weitere Informationen: ",
-        "told": "@@cookies_management.details.statistics.told|fr:Told : Il s’agit d’un outil permettant de mieux comprendre les besoins et les attentes des utilisateurs via le traitement des retours des utilisateurs. Pour en savoir plus : "
+        "told": "Told: Dies ist ein Tool, um die Bedürfnisse und Erwartungen der Nutzerinnen und Nutzer besser zu verstehen. Erfahre hier mehr: "
       },
       "social": {
         "name": "Social-Media-Cookies:",

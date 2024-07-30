@@ -1002,9 +1002,9 @@
       "breadcrumb": "Rezultate pentru \"{{title}}\"",
       "title": "Ce putem reține din această consultare?",
       "actionFDD": {
-        "title": "@@consultation.results.actionFDD.title|fr:Les actions",
-        "text": "@@consultation.results.actionFDD.text|fr:Suite à la consultation et aux ateliers citoyens, des actions concrètes ont émergées pour que votre participation est un vrai impact sur la vie des citoyens. Découvrez les sur le site de Make.org Foundation.",
-        "discover": "@@consultation.results.actionFDD.discover|fr:Découvrir"
+        "title": "Acțiunile",
+        "text": "În urma consultării și a atelierelor cetățenești, au apărut acțiuni concrete pentru a ne asigura că participarea dvs. are un impact real asupra vieții oamenilor. Aflați mai multe pe site-ul Fundației Make.org.",
+        "discover": "Descoperiți"
       }
     },
     "reset": "Resetare",
@@ -1286,7 +1286,7 @@
         "visitor-created-at": "make-visitor-created-at: cu ajutorul acestui modul cookie se obține data primei vizite pe platformă.",
         "facebook-tracking": "modul cookie de tracking Facebook: acest modul cookie permite generarea unor statistici privind accesările, pentru ameliorarea site-ului nostru și o analiză mai detaliată a consultărilor.",
         "hotjar": "Hotjar: Este vorba de un instrument care permite realizarea analizei comportamentale privind utilizarea site-ului web. Pentru informații mai detaliate: ",
-        "told": "@@cookies_management.details.statistics.told|fr:Told : Il s’agit d’un outil permettant de mieux comprendre les besoins et les attentes des utilisateurs via le traitement des retours des utilisateurs. Pour en savoir plus : "
+        "told": "Told: acesta este un instrument care permite o mai bună înțelegere a nevoilor și așteptărilor utilizatorilor prin procesarea feedback-ului acestora. Aflați mai multe despre Told: "
       },
       "social": {
         "name": "Modulele cookie « rețele sociale »:",

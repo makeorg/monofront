@@ -989,9 +989,9 @@
       "breadcrumb": "Resultaten van \"{{title}}\"",
       "title": "Wat moet ik onthouden van deze raadpleging?",
       "actionFDD": {
-        "title": "@@consultation.results.actionFDD.title|fr:Les actions",
-        "text": "@@consultation.results.actionFDD.text|fr:Suite à la consultation et aux ateliers citoyens, des actions concrètes ont émergées pour que votre participation est un vrai impact sur la vie des citoyens. Découvrez les sur le site de Make.org Foundation.",
-        "discover": "@@consultation.results.actionFDD.discover|fr:Découvrir"
+        "title": "De acties",
+        "text": "Na de raadpleging en de burgerworkshops zijn er concrete acties naar voren gekomen, zodat uw deelname een reële impact heeft op de levens van burgers. Ontdek ze op de website van de Make.org Foundation.",
+        "discover": "Ontdekken"
       }
     },
     "reset": "Resetten",
@@ -1259,7 +1259,7 @@
         "visitor-created-at": "make-visitor-created-at: deze cookie wordt gebruikt om de datum van het eerste bezoek aan het platform te verkrijgen.",
         "facebook-tracking": "Trackingcookie Facebook: deze cookie wordt gebruikt om statistieken te genereren over het aantal bezoekers van de site om onze site te verbeteren en de analyse van onze bezoeken te verbeteren.",
         "hotjar": "Hotjar: dit is een hulpmiddel voor het uitvoeren van gedragsanalyses van websitegebruik. Voor meer informatie: ",
-        "told": "@@cookies_management.details.statistics.told|fr:Told : Il s’agit d’un outil permettant de mieux comprendre les besoins et les attentes des utilisateurs via le traitement des retours des utilisateurs. Pour en savoir plus : "
+        "told": "Verteld: dit is een hulpmiddel om de behoeften en verwachtingen van gebruikers beter te begrijpen door de verwerking van gebruikersfeedback. Om meer te weten : "
       },
       "social": {
         "name": "Cookies voor sociale netwerken:",

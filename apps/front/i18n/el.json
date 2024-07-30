@@ -1008,9 +1008,9 @@
       "breadcrumb": "Αποτελέσματα για τη διαβούλευση «{{title}}»",
       "title": "Τι προκύπτει από αυτή τη διαβούλευση;",
       "actionFDD": {
-        "title": "@@consultation.results.actionFDD.title|fr:Les actions",
-        "text": "@@consultation.results.actionFDD.text|fr:Suite à la consultation et aux ateliers citoyens, des actions concrètes ont émergées pour que votre participation est un vrai impact sur la vie des citoyens. Découvrez les sur le site de Make.org Foundation.",
-        "discover": "@@consultation.results.actionFDD.discover|fr:Découvrir"
+        "title": "Οι δράσεις",
+        "text": "Μετά τη διαβούλευση και τα εργαστήρια για τους πολίτες, προέκυψαν συγκεκριμένες δράσεις για να διασφαλιστεί ότι η συμμετοχή σας θα έχει πραγματικό αντίκτυπο στη ζωή των ανθρώπων. Μάθετε περισσότερα στον ιστότοπο του Make.org Foundation.",
+        "discover": "Ανακαλύψτε το"
       }
     },
     "reset": "Επαναφορά",
@@ -1362,7 +1362,7 @@
         "visitor-created-at": "make-visitor-created-at: αυτό το cookie χρησιμοποιείται για να λαμβάνει την ημερομηνία της πρώτης επίσκεψης στην πλατφόρμα.",
         "facebook-tracking": "Facebook tracking cookie: αυτό το cookie χρησιμοποιείται για να παράγει στατιστικά στοιχεία σχετικά με τη συχνότητα των επισκέψεων στον ιστότοπό μας, προκειμένου να βελτιωθεί ο ιστότοπός μας και να εμπλουτιστεί η ανάλυση των διαβουλεύσεών μας.",
         "hotjar": "Hotjar: Πρόκειται για ένα εργαλείο ανάλυσης συμπεριφοράς όσον αφορά τη χρήση του ιστότοπου. Για περισσότερες πληροφορίες: ",
-        "told": "@@cookies_management.details.statistics.told|fr:Told : Il s’agit d’un outil permettant de mieux comprendre les besoins et les attentes des utilisateurs via le traitement des retours des utilisateurs. Pour en savoir plus : "
+        "told": "Told: πρόκειται για ένα εργαλείο για την καλύτερη κατανόηση των αναγκών και των προσδοκιών των χρηστών μέσω της επεξεργασίας των ανατροφοδοτήσεων των χρηστών. Μάθετε περισσότερα για το Told: "
       },
       "social": {
         "name": "Cookies μέσων κοινωνικής δικτύωσης:",

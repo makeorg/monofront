@@ -1021,9 +1021,9 @@
       "breadcrumb": "Výsledky z \"{{title}}“",
       "title": "Čo sa môžeme z tejto konzultácie dozvedieť?",
       "actionFDD": {
-        "title": "@@consultation.results.actionFDD.title|fr:Les actions",
-        "text": "@@consultation.results.actionFDD.text|fr:Suite à la consultation et aux ateliers citoyens, des actions concrètes ont émergées pour que votre participation est un vrai impact sur la vie des citoyens. Découvrez les sur le site de Make.org Foundation.",
-        "discover": "@@consultation.results.actionFDD.discover|fr:Découvrir"
+        "title": "Akcie",
+        "text": "Po konzultáciách a seminároch pre občanov boli vypracované konkrétne opatrenia, ktoré majú zabezpečiť, aby vaša účasť mala skutočný vplyv na životy ľudí. Viac informácií nájdete na webovej stránke nadácie Make.org.",
+        "discover": "Objavte"
       }
     },
     "reset": "Resetovať",
@@ -1389,7 +1389,7 @@
         "visitor-created-at": "make-visitor-created-at: tento súbor cookie sa používa na získanie dátumu prvej návštevy platformy.",
         "facebook-tracking": "Sledovací súbor cookie spoločnosti Facebook: tento súbor cookie sa používa na vytváranie štatistík o počte návštevníkov našej stránky s cieľom zlepšiť našu stránku a zlepšiť analýzu návštevnosti.",
         "hotjar": "Hotjar: Ide o nástroj na behaviorálnu analýzu používania webových stránok. Zistiť viac: ",
-        "told": "@@cookies_management.details.statistics.told|fr:Told : Il s’agit d’un outil permettant de mieux comprendre les besoins et les attentes des utilisateurs via le traitement des retours des utilisateurs. Pour en savoir plus : "
+        "told": "Povedané: ide o nástroj na lepšie pochopenie potrieb a očakávaní používateľov prostredníctvom spracovania spätnej väzby od používateľov. Zistite viac o nástroji Told: "
       },
       "social": {
         "name": "Súbory cookie sociálnych sietí:",

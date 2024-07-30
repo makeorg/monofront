@@ -1021,9 +1021,9 @@
       "breadcrumb": "Apspriešanas \"{{title}}” rezultāti",
       "title": "Ko mēs varam mācīties no šīs apspriešanas?",
       "actionFDD": {
-        "title": "@@consultation.results.actionFDD.title|fr:Les actions",
-        "text": "@@consultation.results.actionFDD.text|fr:Suite à la consultation et aux ateliers citoyens, des actions concrètes ont émergées pour que votre participation est un vrai impact sur la vie des citoyens. Découvrez les sur le site de Make.org Foundation.",
-        "discover": "@@consultation.results.actionFDD.discover|fr:Découvrir"
+        "title": "Darbības",
+        "text": "Pēc konsultācijām un iedzīvotāju semināriem tika atklātas konkrētas darbības, lai jūsu līdzdalība reāli ietekmētu iedzīvotāju dzīvi. Atklājiet tos Make.org fonda vietnē.",
+        "discover": "Atklājiet"
       }
     },
     "reset": "Atiestatīt",
@@ -1389,7 +1389,7 @@
         "visitor-created-at": "make-visitor-created-at: šo sīkdatni izmanto, lai iegūtu platformas pirmā apmeklējuma datumu.",
         "facebook-tracking": "Facebook izsekošanas sīkdatne: šī sīkdatne tiek izmantota, lai ģenerētu statistiku par mūsu vietnes apmeklētāju skaitu, lai uzlabotu mūsu vietni un uzlabotu mūsu apmeklējumu analīzi.",
         "hotjar": "Hotjar: tas ir rīks vietnes izmantošanas uzvedības analīzes veikšanai. Sīkāka informācija: ",
-        "told": "@@cookies_management.details.statistics.told|fr:Told : Il s’agit d’un outil permettant de mieux comprendre les besoins et les attentes des utilisateurs via le traitement des retours des utilisateurs. Pour en savoir plus : "
+        "told": "Tas ir rīks, lai labāk izprastu lietotāju vajadzības un cerības, apstrādājot lietotāju atsauksmes. Lai uzzinātu vairāk: "
       },
       "social": {
         "name": "Sociālo tīklu sīkdatnes:",
