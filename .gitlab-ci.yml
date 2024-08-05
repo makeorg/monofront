@@ -2,12 +2,20 @@ include:
   - project: 'makeorg/infrastructure/pipeline/templates'
     file: 'pipelines/monorepo.yml'
 
+# Variable
+variables:
+  APP_NAME: assembly-ui
+  APP_WORKSPACE: '@make.org/assembly-ui'
+  IMAGE_NAME: $NEXUS_URL/assembly-ui-beta
+  IMAGE_APP_TARGET: app-production
+  IMAGE_APP_PATH: apps/assembly-ui/Dockerfile
+  RUNDECK_JOB_ID: $RUNDECK_ASSEMBLY_UI_BETA_JOB_ID
+
 # Stage
 stages:
   - check
   - build
   - deploy
-  - migrate
   - merge
 
 # Workflow
@@ -17,83 +25,31 @@ workflow:
     - !reference [.rules, on-protected-branch]
 
 # Rule
-.rules-apps:
-  on-assembly-ui-changes:
-    changes:
-      - .gitlab-ci.yml
-      - package/**/*
-      - package.json
-      - yarn.lock
-      - apps/assembly-ui/**/*
-    variables:
-      APP_NAME: assembly-ui
-      APP_WORKSPACE: '@make.org/assembly-ui'
-      APP_CYPRESS_TASK: ci:cypress:assembly-ui
-      IMAGE_NAME: $NEXUS_URL/assembly-ui
-      IMAGE_APP_TARGET: app-production
-      IMAGE_APP_PATH: apps/assembly-ui/Dockerfile
-      RUNDECK_JOB_ID: $RUNDECK_ASSEMBLY_UI_JOB_ID
-  on-front-changes:
-    changes:
-      - .gitlab-ci.yml
-      - package/**/*
-      - package.json
-      - yarn.lock
-      - apps/front/**/*
-      - cypress/integration/front/*.feature
-      - cypress/integration/common/*.feature
-      - cypress/integration/*.feature
-      - cypress/support/**
-    variables:
-      APP_NAME: make-front
-      APP_WORKSPACE: '@make.org/front'
-      APP_CYPRESS_TASK: ci:cypress:front
-      IMAGE_NAME: $NEXUS_URL/make-front
-      IMAGE_APP_TARGET: app-production
-      IMAGE_APP_PATH: apps/front/Dockerfile
-      RUNDECK_JOB_ID: $RUNDECK_FRONT_JOB_ID
-  on-widget-changes:
-    changes:
-      - .gitlab-ci.yml
-      - package/**/*
-      - package.json
-      - yarn.lock
-      - apps/widget/**/*
-      - cypress/integration/widget/*.feature
-      - cypress/integration/common/*.feature
-      - cypress/integration/*.feature
-      - cypress/support/**
-    variables:
-      APP_NAME: make-widget
-      APP_WORKSPACE: '@make.org/widget'
-      APP_CYPRESS_TASK: ci:cypress:widget
-      IMAGE_NAME: $NEXUS_URL/make-widget
-      IMAGE_APP_TARGET: widget-production
-      IMAGE_APP_PATH: apps/widget/Dockerfile
-      RUNDECK_JOB_ID: $RUNDECK_WIDGET_JOB_ID
+.rules-env:
+  on-assembly-ui-beta-preproduction:
+    if: $CI_COMMIT_BRANCH == "assembly-ui-beta-preproduction"
+  on-assembly-ui-beta-production:
+    if: $CI_COMMIT_BRANCH == "assembly-ui-beta-production"
 
 # Template
-.on-front-merge-request:
+.on-assembly-ui-beta-preproduction:
   rules:
-    - !reference [.rules, never-on-protected-branch]
-    - !reference [.rules-apps, on-front-changes]
-.on-widget-merge-request:
+    - !reference [.rules-env, on-assembly-ui-beta-preproduction]
+.on-assembly-ui-beta-production:
   rules:
-    - !reference [.rules, never-on-protected-branch]
-    - !reference [.rules-apps, on-widget-changes]
-.assembly-ui:
-  rules:
-    - !reference [.rules, never-if-environment-mismatch-branch]
-    - !reference [.rules-apps, on-assembly-ui-changes]
-.front:
-  rules:
-    - !reference [.rules, never-if-environment-mismatch-branch]
-    - !reference [.rules-apps, on-front-changes]
-.widget:
-  rules:
-    - !reference [.rules, never-if-environment-mismatch-branch]
-    - !reference [.rules-apps, on-widget-changes]
+    - !reference [.rules-env, on-assembly-ui-beta-production]
 
+# Environment
+.preprod:
+  extends: .on-assembly-ui-beta-preproduction
+  environment: preproduction
+
+.prod:
+  extends: .on-assembly-ui-beta-production
+  environment: production
+  when: manual
+
+# Check
 .check:
   stage: check
   extends: .on-merge-request
@@ -107,22 +63,6 @@ workflow:
     - corepack enable yarn
     - corepack prepare
     - yarn install
-
-.integration:
-  extends: .check
-  image: cypress/browsers:node-18.16.0-chrome-114.0.5735.133-1-ff-114.0.2-edge-114.0.1823.51-1
-  variables:
-    CYPRESS_CACHE_FOLDER: '$CI_PROJECT_DIR/cache_cypress'
-  script:
-    - yarn workspace "$APP_WORKSPACE" build
-    - yarn "$APP_CYPRESS_TASK"
-  artifacts:
-    expire_in: 1 week
-    when: always
-    paths:
-      - cypress/screenshots
-      - cypress/videos
-      - cypress/coverage
 
 # Check
 lint:
@@ -155,69 +95,38 @@ jscpd:
     paths:
       - reports
 
-integration-front:
-  extends:
-    - .integration
-    - .on-front-merge-request
-
-integration-widget:
-  extends:
-    - .integration
-    - .on-widget-merge-request
-
 # Build
-build-make-assembly-ui:
+build-assembly-ui-beta:
   extends:
     - .build
-    - .assembly-ui
-
-build-make-front:
-  extends:
-    - .build
-    - .front
-
-build-make-widget:
-  extends:
-    - .build
-    - .widget
 
 # Deploy
-deploy-preproduction-assembly-ui:
+deploy-assembly-ui-beta-preproduction:
   extends:
     - .deploy
     - .preprod
-    - .assembly-ui
 
-deploy-preproduction-front:
-  extends:
-    - .deploy
-    - .preprod
-    - .front
-
-deploy-preproduction-widget:
-  extends:
-    - .deploy
-    - .preprod
-    - .widget
-
-deploy-production-assembly-ui:
+deploy-assembly-ui-beta-production:
   extends:
     - .deploy
     - .prod
-    - .assembly-ui
-
-deploy-production-front:
-  extends:
-    - .deploy
-    - .prod
-    - .front
-
-deploy-production-widget:
-  extends:
-    - .deploy
-    - .prod
-    - .widget
 
 # Merge
-merge-to-prod:
-  extends: .merge
+merge-to-assembly-ui-beta-prod:
+  extends:
+    - .merge
+    - .on-assembly-ui-beta-preproduction
+  script:
+    - mkdir -p ~/.ssh/
+    - chmod 700 ~/.ssh
+    - ssh-keyscan -t rsa gitlab.com > ~/.ssh/known_hosts
+    - echo "${DEPLOY_PRIVATE_KEY}" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - export CI_PUSH_REPO=`echo $CI_REPOSITORY_URL | perl -pe 's#.*@(.+?(\:\d+)?)/#git@\1:#'`
+    - echo "Target repo is ${CI_PUSH_REPO}"
+    - git config --global user.email "${GITLAB_USER_EMAIL}"
+    - git config --global user.name "${GITLAB_USER_NAME}"
+    - git remote set-url origin "${CI_PUSH_REPO}"
+    - git checkout assembly-ui-beta-production
+    - git merge --ff-only origin/assembly-ui-beta-preproduction
+    - git push origin assembly-ui-beta-production:assembly-ui-beta-production
