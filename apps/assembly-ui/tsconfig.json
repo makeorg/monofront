@@ -21,7 +21,7 @@
       "../../package/utils",
       "../../package/designsystem",
       "../../package/logger",
-      "../../package/tracking"
+      "../../package/tracking",
     ]
   }
   

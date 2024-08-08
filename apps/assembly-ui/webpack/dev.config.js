@@ -5,6 +5,9 @@ const DotenvWebpack = require('dotenv-webpack');
 const Dotenv = require('dotenv');
 const { presets, plugins } = require('./babel.config.js');
 const resolveTsconfigPathsToAlias = require('./resolveTsconfigPathsToAlias.js');
+const configuration = require('../config.json');
+
+const publicPath = `/${configuration.prefixPath ?? ''}`;
 
 const devConfig = envConfigPath => ({
   entry: './client/index.tsx',
@@ -48,17 +51,15 @@ const devConfig = envConfigPath => ({
     }),
   ],
   output: {
-    path: path.resolve(__dirname, '..', 'dist'),
-    publicPath: '/',
+    publicPath: publicPath,
     filename: 'bundle.js',
   },
   devServer: {
-    contentBase: './dist',
+    historyApiFallback: { index: publicPath },
     compress: true,
     port: process.env.PORT,
     hot: true,
     host: '0.0.0.0',
-    historyApiFallback: true,
     disableHostCheck: true,
     https: JSON.parse(process.env.USE_LOCAL_CERTS),
     watchOptions: {
