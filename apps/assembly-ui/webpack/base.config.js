@@ -10,6 +10,9 @@ const path = require('path');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const { presets, plugins } = require('./babel.config.js');
 const resolveTsconfigPathsToAlias = require('./resolveTsconfigPathsToAlias.js');
+const configuration = require('../configuration.json');
+
+const publicPath = `/${configuration.prefixPath ?? ''}`;
 
 const clientConfig = envConfigPath => ({
   entry: [
@@ -22,9 +25,9 @@ const clientConfig = envConfigPath => ({
     filename: 'js/[name].[contenthash].js',
     chunkFilename: 'js/[name].[contenthash].js',
     path: path.resolve(__dirname, '..', 'dist', 'client'),
-    publicPath: '/',
+    publicPath: `${publicPath}/`,
     pathinfo: false,
-    sourceMapFilename: '../map/[name].js.map',
+    sourceMapFilename: 'map/[name].js.map',
   },
   resolve: {
     extensions: ['*', '.ts', '.tsx', '.js', '.yaml', '.json'],
@@ -100,7 +103,7 @@ const clientConfig = envConfigPath => ({
         'favicon.png'
       ),
       mode: 'webapp',
-      prefix: 'favicon/',
+      outputPath: 'favicon/',
       inject: false,
       favicons: {
         appName: 'Assembly',
@@ -142,7 +145,8 @@ const clientConfig = envConfigPath => ({
           {
             loader: 'file-loader',
             options: {
-              name: 'assets/[name].[hash].[ext]',
+              outputPath: 'assets/',
+              name: '[name].[hash].[ext]',
             },
           },
         ],
@@ -216,7 +220,7 @@ const serverConfig = envConfigPath => ({
             options: {
               name: '[name].[contenthash].[ext]',
               outputPath: 'client/assets',
-              publicPath: '/assets/',
+              publicPath: `${publicPath}/assets/`,
             },
           },
         ],

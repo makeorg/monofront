@@ -5,7 +5,7 @@ const DotenvWebpack = require('dotenv-webpack');
 const Dotenv = require('dotenv');
 const { presets, plugins } = require('./babel.config.js');
 const resolveTsconfigPathsToAlias = require('./resolveTsconfigPathsToAlias.js');
-const configuration = require('../config.json');
+const configuration = require('../configuration.json');
 
 const publicPath = `/${configuration.prefixPath ?? ''}`;
 
@@ -51,7 +51,7 @@ const devConfig = envConfigPath => ({
     }),
   ],
   output: {
-    publicPath: publicPath,
+    publicPath,
     filename: 'bundle.js',
   },
   devServer: {

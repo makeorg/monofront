@@ -4,7 +4,6 @@ import compression from 'compression';
 import cookiesMiddleware from 'universal-cookie-express';
 import favicon from 'serve-favicon';
 import cors from 'cors';
-import webpackManifest from 'webpack-manifest';
 import { headersResponseMiddleware } from '@make.org/utils/middleware/headers';
 import { nonceUuidMiddleware } from '@make.org/utils/middleware/nonceUuid';
 import { TRANSLATION_COMMON_NAMESPACE } from '@make.org/utils/i18n/constants';
@@ -30,7 +29,7 @@ import { initRoutes } from './routes';
 import { DEFAULT_LANGUAGE } from '../utils/constants';
 import {
   ASSEMBLY_BUILD_DIR,
-  ASSEMBLY_CLIENT_DIR,
+  ASSEMBLY_FAVICON_DIR,
   ASSEMBLY_FAVICON_FILE,
   ASSEMBLY_JS_DIR,
   ASSEMBLY_MAP_DIR,
@@ -103,9 +102,7 @@ const getApp = () => {
   app.use(cookieRouteRegex, cookiesMiddleware());
   app.use(cookieRouteRegex, assemblyCookiesMiddleware());
 
-  app.use(
-    favicon(`${ASSEMBLY_CLIENT_DIR}/${webpackManifest[ASSEMBLY_FAVICON_FILE]}`)
-  );
+  app.use(favicon(`${ASSEMBLY_FAVICON_DIR}/${ASSEMBLY_FAVICON_FILE}`));
   app.use((req, res, next) =>
     headersResponseMiddleware(
       {

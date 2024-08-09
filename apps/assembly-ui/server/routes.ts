@@ -60,28 +60,28 @@ export const initRoutes = (
 ): void => {
   // Static files
   app.use(
-    '/favicon',
+    '/beta/favicon',
     express.static(ASSEMBLY_FAVICON_DIR, {
       setHeaders: setCustomCacheControl,
     })
   );
 
   app.use(
-    '/assets',
+    '/beta/assets',
     express.static(ASSEMBLY_ASSETS_DIR, {
       setHeaders: setCustomCacheControl,
     })
   );
 
   app.use(
-    '/js',
+    '/beta/js',
     express.static(ASSEMBLY_JS_DIR, {
       setHeaders: setCustomCacheControl,
     })
   );
 
   app.use(
-    '/images',
+    '/beta/images',
     express.static(ASSEMBLY_IMAGES_DIR, {
       setHeaders: setCustomCacheControl,
     })

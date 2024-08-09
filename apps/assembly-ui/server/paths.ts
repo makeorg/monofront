@@ -9,4 +9,4 @@ export const ASSEMBLY_ASSETS_DIR = path.join(ASSEMBLY_CLIENT_DIR, 'assets');
 export const ASSEMBLY_FAVICON_DIR = path.join(ASSEMBLY_CLIENT_DIR, 'favicon');
 export const ASSEMBLY_JS_DIR = path.join(ASSEMBLY_CLIENT_DIR, 'js');
 export const ASSEMBLY_VERSION_PATH = path.join(ASSEMBLY_CLIENT_DIR, 'version');
-export const ASSEMBLY_FAVICON_FILE = 'favicon/favicon-48x48.png';
+export const ASSEMBLY_FAVICON_FILE = 'favicon-48x48.png';

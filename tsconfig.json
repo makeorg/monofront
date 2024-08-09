@@ -17,7 +17,7 @@
     "**/resolveTsconfigPathsToAlias.js",
     "**/ecosystem.config.cjs",
     "**/webpack.config.cjs",
-    "**/app.e2e-spec.ts",
+    "**/app.e2e-spec.ts"
   ],
   "include": ["apps", "package", "apps/assembly-ui/configuration.json"],
   "compilerOptions": {
