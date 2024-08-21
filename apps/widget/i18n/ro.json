@@ -208,7 +208,8 @@
       "moderation_link": "carta noastră de moderare",
       "button_propose": "PROPUNERI",
       "and": "și",
-      "gtc": " condițiile noastre de utilizare"
+      "gtc": " condițiile noastre de utilizare",
+      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
     },
     "authentication": {
       "back": "Revenire",
@@ -217,7 +218,8 @@
       "button_login_text": "Am deja un cont,",
       "button_login_link": "mă conectez.",
       "button_login": "Conectare",
-      "back_authentication": "Revenire la pagina de conexiune"
+      "back_authentication": "Revenire la pagina de conexiune",
+      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
     },
     "success": {
       "button": "Continuarea votării",

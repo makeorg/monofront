@@ -227,7 +227,8 @@
       "moderation_link": "з кодексом модерації",
       "button_propose": "ПРОПОНУВАТИ",
       "and": "наші партнери",
-      "gtc": " умови використання"
+      "gtc": " умови використання",
+      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
     },
     "authentication": {
       "back": "Назад",
@@ -236,7 +237,8 @@
       "button_login_text": "У мене вже є обліковий запис,",
       "button_login_link": "виконати вхід.",
       "button_login": "Вхід",
-      "back_authentication": "Повернутися до екрана входу в систему"
+      "back_authentication": "Повернутися до екрана входу в систему",
+      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
     },
     "success": {
       "button": "Продовжити голосування",

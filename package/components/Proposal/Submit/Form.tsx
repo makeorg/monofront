@@ -16,7 +16,6 @@ import {
 } from '@make.org/utils/services/Tracking';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { throttle } from '@make.org/utils/helpers/throttle';
 import { useAppContext } from '@make.org/store';
 import { setPanelContent } from '@make.org/store/actions/panel';
@@ -43,12 +42,14 @@ import {
   ProposalExternalLinkIconStyle,
   ProposalButtonsWrapperStyle,
   ProposalAuthInlineWrapperStyle,
-  ProposalSubmitButtonsWidgetStyle,
+  ProposalSubmitButtonsStyle,
   ProposalStepWrapperStyle,
   BlueManOnBench,
   ProposalFormStyle,
   AnonymousButtonContainer,
   AnonymousInfoTextStyle,
+  SubmitProposalButtonStyle,
+  ProposalSubmitAccountWarning,
 } from './style';
 
 type Props = {
@@ -199,9 +200,58 @@ export const ProposalForm: FC<Props> = ({ logger }) => {
               })}
             </ScreenReaderItemStyle>
           </ProposalFieldWrapperStyle>
-          <ProposalSubmitButtonsWidgetStyle>
-            <ProposalButtonsWrapperStyle>
-              <RedButtonStyle
+
+          <ProposalAuthInlineWrapperStyle>
+            <>
+              {i18n.t('proposal_submit.form.read_our')}{' '}
+              <ProposalExternalLinkStyle
+                href={
+                  isWidget
+                    ? `https://make.org${getModerationPageLink(
+                        country,
+                        language
+                      )}`
+                    : getModerationPageLink(country, language)
+                }
+                target="_blank"
+                rel="noopener"
+                onClick={trackClickModerationLink}
+              >
+                {i18n.t('proposal_submit.form.moderation_link')}
+                <> </>
+                <ProposalExternalLinkIconStyle aria-hidden focusable="false" />
+                <ScreenReaderItemStyle>
+                  {i18n.t('common.open_new_window')}
+                </ScreenReaderItemStyle>
+              </ProposalExternalLinkStyle>{' '}
+              {i18n.t('proposal_submit.form.and')}{' '}
+              <ProposalExternalLinkStyle
+                href={
+                  isWidget
+                    ? `https://make.org${getGTUPageLink(country, language)}`
+                    : getGTUPageLink(country, language)
+                }
+                target="_blank"
+                rel="noopener"
+                onClick={trackClickModerationLink}
+              >
+                {i18n.t('proposal_submit.form.gtc')}
+                <> </>
+                <ProposalExternalLinkIconStyle aria-hidden focusable="false" />
+                <ScreenReaderItemStyle>
+                  {i18n.t('common.open_new_window')}
+                </ScreenReaderItemStyle>
+              </ProposalExternalLinkStyle>
+            </>
+          </ProposalAuthInlineWrapperStyle>
+
+          <ProposalButtonsWrapperStyle>
+            <ProposalSubmitButtonsStyle>
+              <ProposalSubmitAccountWarning>
+                {i18n.t('proposal_submit.form.account_warning')}
+              </ProposalSubmitAccountWarning>
+
+              <SubmitProposalButtonStyle
                 type="submit"
                 form={FORM.PROPOSAL_SUBMIT_FORMNAME}
                 onClick={trackClickProposalSubmit}
@@ -213,58 +263,9 @@ export const ProposalForm: FC<Props> = ({ logger }) => {
                 ) : (
                   i18n.t('proposal_submit.form.button_propose')
                 )}
-              </RedButtonStyle>
-            </ProposalButtonsWrapperStyle>
-            <ProposalAuthInlineWrapperStyle>
-              <>
-                {i18n.t('proposal_submit.form.read_our')}{' '}
-                <ProposalExternalLinkStyle
-                  href={
-                    isWidget
-                      ? `https://make.org${getModerationPageLink(
-                          country,
-                          language
-                        )}`
-                      : getModerationPageLink(country, language)
-                  }
-                  target="_blank"
-                  rel="noopener"
-                  onClick={trackClickModerationLink}
-                >
-                  {i18n.t('proposal_submit.form.moderation_link')}
-                  <> </>
-                  <ProposalExternalLinkIconStyle
-                    aria-hidden
-                    focusable="false"
-                  />
-                  <ScreenReaderItemStyle>
-                    {i18n.t('common.open_new_window')}
-                  </ScreenReaderItemStyle>
-                </ProposalExternalLinkStyle>{' '}
-                {i18n.t('proposal_submit.form.and')}{' '}
-                <ProposalExternalLinkStyle
-                  href={
-                    isWidget
-                      ? `https://make.org${getGTUPageLink(country, language)}`
-                      : getGTUPageLink(country, language)
-                  }
-                  target="_blank"
-                  rel="noopener"
-                  onClick={trackClickModerationLink}
-                >
-                  {i18n.t('proposal_submit.form.gtc')}
-                  <> </>
-                  <ProposalExternalLinkIconStyle
-                    aria-hidden
-                    focusable="false"
-                  />
-                  <ScreenReaderItemStyle>
-                    {i18n.t('common.open_new_window')}
-                  </ScreenReaderItemStyle>
-                </ProposalExternalLinkStyle>
-              </>
-            </ProposalAuthInlineWrapperStyle>
-          </ProposalSubmitButtonsWidgetStyle>
+              </SubmitProposalButtonStyle>
+            </ProposalSubmitButtonsStyle>
+          </ProposalButtonsWrapperStyle>
         </ProposalFormStyle>
       </ProposalFormWrapperStyle>
       {!isWidget && !isMobile && (

@@ -437,7 +437,8 @@
       "moderation_link": "moderēšanas hartu",
       "button_propose": "IEROSINĀT",
       "and": "un mūsu",
-      "gtc": " lietošanas noteikumi"
+      "gtc": " lietošanas noteikumi",
+      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
     },
     "authentication": {
       "button_back": "Grozīt manu priekšlikumu",
@@ -449,7 +450,8 @@
       "button_login_text": "Man jau ir konts,",
       "button_login_link": "es piesakos.",
       "button_login": "Pieteikties",
-      "back_authentication": "Atgriezties pieteikšanās ekrānā"
+      "back_authentication": "Atgriezties pieteikšanās ekrānā",
+      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
     },
     "success": {
       "title": "Paldies, {{name}}!",

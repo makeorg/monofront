@@ -21,13 +21,14 @@ import {
   DataPolicyWrapperStyle,
   DataPolicyNewWindowLinkStyle,
   ProposalStepWrapperStyle,
+  AccountUseStyle,
 } from './style';
 
 type Props = {
   logger: ILogger;
-}
+};
 
-export const ProposalAuthentication: FC<Props> = ({logger}) => {
+export const ProposalAuthentication: FC<Props> = ({ logger }) => {
   const { state, dispatch } = useAppContext();
   const { country, language, source } = state.appConfig;
   const isWidget = source === 'widget';
@@ -54,6 +55,11 @@ export const ProposalAuthentication: FC<Props> = ({logger}) => {
             </ProposalStepLabelRedStyle>
             {i18n.t('proposal_submit.authentication.last_step')}{' '}
           </ProposalAltStepTitleStyle>
+
+          <AccountUseStyle>
+            {i18n.t('proposal_submit.authentication.account_use')}
+          </AccountUseStyle>
+
           <ProposalSubmitAuthenticationRegisterButtons
             onEmailRegister={() =>
               dispatch(setPanelContent(PANEL_CONTENT.REGISTER))

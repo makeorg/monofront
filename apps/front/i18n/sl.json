@@ -442,7 +442,8 @@
       "moderation_link": "pravilnik o moderiranju",
       "button_propose": "PREDLAGAJ",
       "and": "in naši",
-      "gtc": " pogoji uporabe"
+      "gtc": " pogoji uporabe",
+      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
     },
     "authentication": {
       "button_back": "Spremeni moj predlog",
@@ -454,7 +455,8 @@
       "button_login_text": "Račun že imam,",
       "button_login_link": "želim se prijaviti.",
       "button_login": "Prijava",
-      "back_authentication": "Nazaj na stran za prijavo"
+      "back_authentication": "Nazaj na stran za prijavo",
+      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
     },
     "success": {
       "title": "Hvala, {{name}}!",

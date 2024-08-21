@@ -385,7 +385,8 @@
       "moderation_link": "moderation charter",
       "button_propose": "Submit",
       "and": "and our",
-      "gtc": " terms of use"
+      "gtc": " terms of use",
+      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
     },
     "authentication": {
       "button_back": "To modify my proposal",
@@ -397,7 +398,8 @@
       "back": "Back",
       "last_step_red": "Only one step left ",
       "last_step": "to submit your proposal!",
-      "button_login": "Register by"
+      "button_login": "Register by",
+      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
     }
   },
   "vote": {

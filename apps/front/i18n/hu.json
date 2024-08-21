@@ -432,7 +432,8 @@
       "moderation_link": "moderációs szabályzatunkat",
       "button_propose": "JAVASLAT",
       "and": "és a mi",
-      "gtc": " használati feltételek"
+      "gtc": " használati feltételek",
+      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
     },
     "authentication": {
       "button_back": "Javaslatom módosítása",
@@ -444,7 +445,8 @@
       "button_login_text": "Már van fiókom,",
       "button_login_link": "bejelentkezem.",
       "button_login": "Bejelentkezés",
-      "back_authentication": "Vissza a bejelentkezési képernyőre"
+      "back_authentication": "Vissza a bejelentkezési képernyőre",
+      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
     },
     "success": {
       "title": "Köszönjük, {{name}}!",

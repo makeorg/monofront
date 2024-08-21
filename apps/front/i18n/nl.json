@@ -413,7 +413,8 @@
       "moderation_link": "moderatiebeleid",
       "button_propose": "VOORSTELLEN",
       "and": "en onze",
-      "gtc": " gebruiksvoorwaarden"
+      "gtc": " gebruiksvoorwaarden",
+      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
     },
     "authentication": {
       "button_back": "Mijn voorstel wijzigen",
@@ -425,7 +426,8 @@
       "button_login_text": "Ik heb al een account,",
       "button_login_link": "ik log in.",
       "button_login": "Inloggen",
-      "back_authentication": "Terug naar het inlogscherm"
+      "back_authentication": "Terug naar het inlogscherm",
+      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
     },
     "success": {
       "title": "Bedankt {{name}}!",

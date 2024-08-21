@@ -206,7 +206,8 @@
       "moderation_link": "Политика за модериране",
       "button_propose": "ПРЕДЛОЖЕТЕ",
       "and": "и нашите",
-      "gtc": " Условия за ползване"
+      "gtc": " Условия за ползване",
+      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
     },
     "authentication": {
       "back": "Обратно",
@@ -215,7 +216,8 @@
       "button_login_text": "Вече имам акаунт,",
       "button_login_link": "влизам.",
       "button_login": "Вход",
-      "back_authentication": "Връщане към екрана за вход"
+      "back_authentication": "Връщане към екрана за вход",
+      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
     },
     "success": {
       "button": "Продължете да гласувате",

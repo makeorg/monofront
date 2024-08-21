@@ -6,6 +6,7 @@ import {
   BlackBorderButtonStyle,
 } from '@make.org/ui/elements/ButtonsElements';
 import { BlackLinkStyle } from '@make.org/ui/elements/LinkElements';
+import ReactMarkdown from 'react-markdown';
 import {
   SvgPencil,
   SvgExternalLink,
@@ -119,7 +120,7 @@ export const ProposalAltStepTitleStyle = styled(ProposalStepTitleStyle)<{
   width: 100%;
   font-size: ${typography.FontSize.Paris};
   letter-spacing: 0.12px;
-  margin-bottom: ${spacings.l};
+  margin-bottom: ${spacings.sm};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     font-size: ${props =>
       props.isWidget
@@ -133,9 +134,9 @@ export const ProposalAltStepTitleStyle = styled(ProposalStepTitleStyle)<{
 export const ProposalFieldWrapperStyle = styled.div`
   position: relative;
   z-index: 0;
-  margin-bottom: ${spacings.m};
+  margin-bottom: ${spacings.s};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    margin-bottom: ${spacings.l};
+    margin-bottom: ${spacings.m};
   }
 `;
 
@@ -192,7 +193,6 @@ export const ProposalBackButtonStyle = styled(BlackNoBackgroundButtonStyle)`
 export const ProposalBackButtonCenterStyle = styled(ProposalBackButtonStyle)<{
   isWidget?: boolean;
 }>`
-  text-align: center;
   align-self: center;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     text-align: ${props => (props.isWidget ? 'left' : 'center')};
@@ -209,7 +209,7 @@ export const ProposalAuthLoginStyle = styled(BlackNoBackgroundButtonStyle)`
 export const ProposalAuthInlineWrapperStyle = styled.div`
   font-family: ${typography.FontFamily.Default};
   justify-content: inline;
-  margin-bottom: ${spacings.m};
+  margin-bottom: ${spacings.sm};
   align-self: flex-start;
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     margin-top: 0;
@@ -240,14 +240,15 @@ export const ProposalButtonsWrapperStyle = styled(FlexElementStyle)`
   }
 `;
 
-export const ProposalSubmitButtonsWidgetStyle = styled(FlexElementStyle)`
-  flex-direction: column-reverse;
-  justify-content: space-between;
+export const ProposalSubmitButtonsStyle = styled(FlexElementStyle)`
+  width: 100%;
+  display: flex;
   align-items: center;
-  height: 100%;
+  flex-direction: column;
+  gap: 15px;
+
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     flex-direction: row-reverse;
-    height: fit-content;
   }
 `;
 
@@ -463,4 +464,26 @@ export const AnonymousInfoTextStyle = styled.p`
   font-size: ${typography.FontSize.RueDeLappe};
   color: ${colors.Content.Interface.DarkSecondary};
   margin: ${spacings.s} 0 ${spacings.m} 0;
+`;
+
+export const AccountUseStyle = styled(ReactMarkdown)`
+  font-size: ${typography.FontSize.Text.Bastille};
+  margin-bottom: ${spacings.l};
+  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
+    font-size: ${typography.FontSize.Text.Arrondissement};
+    text-align: center;
+  }
+`;
+
+export const ProposalSubmitAccountWarning = styled(ReactMarkdown)`
+  width: 100%;
+  color: white;
+  background-color: #131843;
+  border-radius: 8px;
+  padding: 10px;
+`;
+
+export const SubmitProposalButtonStyle = styled(RedButtonStyle)`
+  width: fit-content;
+  align-self: center;
 `;

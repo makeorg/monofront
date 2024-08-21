@@ -418,7 +418,8 @@
       "moderation_link": "kartę moderacji",
       "button_propose": "ZAPROPONUJ",
       "and": "i nas",
-      "gtc": " warunki korzystania"
+      "gtc": " warunki korzystania",
+      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
     },
     "authentication": {
       "button_back": "Zmień moją propozycję",
@@ -430,7 +431,8 @@
       "button_login_text": "Mam już konto,",
       "button_login_link": "chcę się zalogować.",
       "button_login": "Zaloguj się",
-      "back_authentication": "Powrót do ekranu logowania"
+      "back_authentication": "Powrót do ekranu logowania",
+      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
     },
     "success": {
       "title": "Dziękujemy, {{name}}!",

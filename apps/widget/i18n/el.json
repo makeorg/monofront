@@ -225,7 +225,8 @@
       "moderation_link": "πολιτική ελέγχου περιεχομένου",
       "button_propose": "ΥΠΟΒΟΛΗ ΠΡΟΤΑΣΗΣ",
       "and": "και μας",
-      "gtc": " όροι χρήσης"
+      "gtc": " όροι χρήσης",
+      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
     },
     "authentication": {
       "back": "Επιστροφή",
@@ -234,7 +235,8 @@
       "button_login_text": "Έχω ήδη λογαριασμό,",
       "button_login_link": "μπορώ να συνδεθώ.",
       "button_login": "Συνδεθείτε",
-      "back_authentication": "Επιστροφή στην οθόνη σύνδεσης"
+      "back_authentication": "Επιστροφή στην οθόνη σύνδεσης",
+      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
     },
     "success": {
       "button": "Συνεχίστε να ψηφίζετε",

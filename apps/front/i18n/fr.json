@@ -442,7 +442,8 @@
       "and": "et nos",
       "moderation_link": "charte de modération",
       "button_propose": "PROPOSER",
-      "gtc": " conditions d'utilisation"
+      "gtc": " conditions d'utilisation",
+      "account_warning": "🔔 Vous devez être connecté pour soumettre une proposition."
     },
     "authentication": {
       "button_back": "Modifier ma proposition",
@@ -454,7 +455,8 @@
       "button_login_text": "J’ai déjà un compte,",
       "button_login_link": "je me connecte.",
       "button_login": "Se connecter",
-      "back_authentication": "Revenir à l'écran de connexion"
+      "back_authentication": "Revenir à l'écran de connexion",
+      "account_use": "Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat."
     },
     "success": {
       "title": "Merci {{name}} !",

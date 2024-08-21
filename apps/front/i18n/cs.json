@@ -437,7 +437,8 @@
       "moderation_link": "Chartu moderování",
       "button_propose": "PODAT NÁVRH",
       "and": "a naše",
-      "gtc": " podmínky používání"
+      "gtc": " podmínky používání",
+      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
     },
     "authentication": {
       "button_back": "Pozměnit můj návrh",
@@ -449,7 +450,8 @@
       "button_login_text": "Účet už mám,",
       "button_login_link": "jen se přihlásím.",
       "button_login": "Přihlásit se",
-      "back_authentication": "Vrátit se na přihlašovací obrazovku"
+      "back_authentication": "Vrátit se na přihlašovací obrazovku",
+      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
     },
     "success": {
       "title": "Děkujeme {{name}}!",

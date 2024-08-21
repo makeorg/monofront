@@ -413,7 +413,8 @@
       "moderation_link": "moderointisääntömme",
       "button_propose": "EHDOTA",
       "and": "ja meidän",
-      "gtc": " käyttöehdot"
+      "gtc": " käyttöehdot",
+      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
     },
     "authentication": {
       "button_back": "Muokkaa ehdotustani",
@@ -425,7 +426,8 @@
       "button_login_text": "Minulla on jo tili,",
       "button_login_link": "kirjaudu sisään.",
       "button_login": "Kirjaudu sisään",
-      "back_authentication": "Siirry kirjautumisruutuun"
+      "back_authentication": "Siirry kirjautumisruutuun",
+      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
     },
     "success": {
       "title": "Kiitos {{name}}!",

@@ -432,7 +432,8 @@
       "moderation_link": "Moderationspolitik",
       "button_propose": "FORESLÅ",
       "and": "og vores",
-      "gtc": " betingelser for brug"
+      "gtc": " betingelser for brug",
+      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
     },
     "authentication": {
       "button_back": "Rediger mit forslag",
@@ -444,7 +445,8 @@
       "button_login_text": "Jeg har allerede en konto,",
       "button_login_link": "jeg logger på.",
       "button_login": "Log på",
-      "back_authentication": "Tilbage til logonskærmen"
+      "back_authentication": "Tilbage til logonskærmen",
+      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
     },
     "success": {
       "title": "Tak {{name}}!",
