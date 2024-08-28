@@ -414,7 +414,7 @@
       "button_propose": "EHDOTA",
       "and": "ja meidän",
       "gtc": " käyttöehdot",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Sinun täytyy olla kirjautuneena sisään, jotta voit lähettää ehdotuksen."
     },
     "authentication": {
       "button_back": "Muokkaa ehdotustani",
@@ -427,7 +427,7 @@
       "button_login_link": "kirjaudu sisään.",
       "button_login": "Kirjaudu sisään",
       "back_authentication": "Siirry kirjautumisruutuun",
-      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
+      "account_use": "Kansalaistilisi avulla voit seurata ehdotuksesi käsittelyä, jakaa sitä ja nähdä, milloin se on verkossa, sekä varmistaa keskustelun laadun."
     },
     "success": {
       "title": "Kiitos {{name}}!",

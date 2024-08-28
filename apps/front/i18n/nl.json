@@ -414,7 +414,7 @@
       "button_propose": "VOORSTELLEN",
       "and": "en onze",
       "gtc": " gebruiksvoorwaarden",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Om een voorstel in te dienen, moet u ingelogd zijn."
     },
     "authentication": {
       "button_back": "Mijn voorstel wijzigen",
@@ -427,7 +427,7 @@
       "button_login_link": "ik log in.",
       "button_login": "Inloggen",
       "back_authentication": "Terug naar het inlogscherm",
-      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
+      "account_use": "Met uw burgeraccount kunt u de looptijd van uw voorstel volgen, delen en zien wanneer het online staat en de kwaliteit van het debat garanderen."
     },
     "success": {
       "title": "Bedankt {{name}}!",

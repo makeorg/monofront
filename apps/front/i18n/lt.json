@@ -438,7 +438,7 @@
       "button_propose": "PASIŪLYTI",
       "and": "ir mūsų",
       "gtc": " naudojimo sąlygos",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Norėdami pateikti pasiūlymą, turite būti prisijungę."
     },
     "authentication": {
       "button_back": "Redaguoti pasiūlymą",
@@ -451,7 +451,7 @@
       "button_login_link": "prisijungti.",
       "button_login": "Prisijungti",
       "back_authentication": "Grįžti į prisijungimo puslapį",
-      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
+      "account_use": "Piliečio paskyra leis jums stebėti savo pasiūlymo gyvenimą, dalytis juo ir pamatyti, kada jis yra internete, taip pat užtikrinti diskusijų kokybę."
     },
     "success": {
       "title": "Ačiū, {{name}}!",

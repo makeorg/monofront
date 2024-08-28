@@ -438,7 +438,7 @@
       "button_propose": "PODAT NÁVRH",
       "and": "a naše",
       "gtc": " podmínky používání",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Pro odeslání návrhu musíte být přihlášeni."
     },
     "authentication": {
       "button_back": "Pozměnit můj návrh",
@@ -451,7 +451,7 @@
       "button_login_link": "jen se přihlásím.",
       "button_login": "Přihlásit se",
       "back_authentication": "Vrátit se na přihlašovací obrazovku",
-      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
+      "account_use": "Váš občanský účet vám umožní sledovat život vašeho návrhu, sdílet ho a zjistit, kdy je online, a také zajistit kvalitu diskuse."
     },
     "success": {
       "title": "Děkujeme {{name}}!",

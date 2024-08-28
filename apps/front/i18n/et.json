@@ -433,7 +433,7 @@
       "button_propose": "ETTEPANEK",
       "and": "ja meie",
       "gtc": " kasutustingimused",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Ettepaneku esitamiseks peate olema sisse logitud."
     },
     "authentication": {
       "button_back": "Muuda minu ettepanekut",
@@ -446,7 +446,7 @@
       "button_login_link": "login sisse.",
       "button_login": "Logi sisse",
       "back_authentication": "Tagasi sisselogimise aknasse",
-      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
+      "account_use": "Teie kodanikukonto võimaldab teil jälgida oma ettepaneku elu, jagada seda ja näha, millal see on võrgus, ning tagada arutelu kvaliteet."
     },
     "success": {
       "title": "Aitäh, {{name}}!",

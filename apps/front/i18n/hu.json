@@ -433,7 +433,7 @@
       "button_propose": "JAVASLAT",
       "and": "és a mi",
       "gtc": " használati feltételek",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Be kell jelentkeznie ahhoz, hogy javaslatot nyújtson be."
     },
     "authentication": {
       "button_back": "Javaslatom módosítása",
@@ -446,7 +446,7 @@
       "button_login_link": "bejelentkezem.",
       "button_login": "Bejelentkezés",
       "back_authentication": "Vissza a bejelentkezési képernyőre",
-      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
+      "account_use": "Polgári fiókja lehetővé teszi, hogy nyomon kövesse javaslata életét, megossza azt és lássa, mikor van online, valamint biztosítja a vita minőségét."
     },
     "success": {
       "title": "Köszönjük, {{name}}!",

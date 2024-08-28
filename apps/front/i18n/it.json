@@ -419,7 +419,7 @@
       "button_propose": "PROPONI",
       "and": "e la nostra",
       "gtc": " condizioni d'uso",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Per presentare una proposta è necessario aver effettuato il login."
     },
     "authentication": {
       "button_back": "Modifico la mia proposta",
@@ -432,7 +432,7 @@
       "button_login_link": "mi connetto.",
       "button_login": "Connessione",
       "back_authentication": "Torna alla schermata di connessione",
-      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
+      "account_use": "Il vostro account cittadino vi consentirà di seguire la vita della vostra proposta, condividerla e vedere quando è online, oltre a garantire la qualità del dibattito."
     },
     "success": {
       "title": "Grazie {{name}}!",

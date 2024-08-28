@@ -433,7 +433,7 @@
       "button_propose": "ΥΠΟΒΟΛΗ ΠΡΟΤΑΣΗΣ",
       "and": "και μας",
       "gtc": " όροι χρήσης",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Πρέπει να συνδεθείτε για να υποβάλετε μια πρόταση."
     },
     "authentication": {
       "button_back": "Τροποποίηση της πρότασής μου",
@@ -446,7 +446,7 @@
       "button_login_link": "μπορώ να συνδεθώ.",
       "button_login": "Συνδεθείτε",
       "back_authentication": "Επιστροφή στην οθόνη σύνδεσης",
-      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
+      "account_use": "Ο λογαριασμός σας ως πολίτης θα σας επιτρέψει να παρακολουθείτε τη ζωή της πρότασής σας, να τη μοιράζεστε και να βλέπετε πότε είναι σε απευθείας σύνδεση, καθώς και να διασφαλίζετε την ποιότητα της συζήτησης."
     },
     "success": {
       "title": "Ευχαριστούμε πολύ {{name}}!",

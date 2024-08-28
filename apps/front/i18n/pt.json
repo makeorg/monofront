@@ -438,7 +438,7 @@
       "button_propose": "PROPOR",
       "and": "e a nossa",
       "gtc": " condições de utilização",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Tem de iniciar sessão para apresentar uma proposta."
     },
     "authentication": {
       "button_back": "Modificar a minha proposta",
@@ -451,7 +451,7 @@
       "button_login_link": "inicio sessão.",
       "button_login": "Iniciar sessão",
       "back_authentication": "Voltar para o ecrã de início de sessão",
-      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
+      "account_use": "A sua conta de cidadão permitir-lhe-á acompanhar a vida da sua proposta, partilhá-la e ver quando está em linha, bem como garantir a qualidade do debate."
     },
     "success": {
       "title": "Obrigado, {{name}}!",

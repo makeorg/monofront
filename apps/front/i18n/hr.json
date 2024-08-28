@@ -438,7 +438,7 @@
       "button_propose": "POŠALJI PRIJEDLOG",
       "and": "i našim",
       "gtc": " uvjeti uporabe",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Morate biti prijavljeni da biste poslali ponudu."
     },
     "authentication": {
       "button_back": "Izmijeni prijedlog",
@@ -451,7 +451,7 @@
       "button_login_link": "prijavljujem se.",
       "button_login": "Prijava",
       "back_authentication": "Povratak na zaslon za prijavu",
-      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
+      "account_use": "Vaš građanski račun omogućit će vam da pratite život svog prijedloga, dijelite ga i vidite kada je na mreži, kao i da osigurate kvalitetu rasprave."
     },
     "success": {
       "title": "Hvala korisniče {{name}}!",

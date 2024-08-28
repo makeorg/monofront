@@ -386,7 +386,7 @@
       "button_propose": "Submit",
       "and": "and our",
       "gtc": " terms of use",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 You must be logged in to submit a proposal."
     },
     "authentication": {
       "button_back": "To modify my proposal",
@@ -399,7 +399,7 @@
       "last_step_red": "Only one step left ",
       "last_step": "to submit your proposal!",
       "button_login": "Register by",
-      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
+      "account_use": "Your citizen account will enable you to follow the life of your proposal, share it and see when it is online, as well as ensuring the quality of the debate."
     }
   },
   "vote": {
