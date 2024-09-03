@@ -1,5 +1,6 @@
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
+import ReactMarkdown from 'react-markdown';
 import styled from 'styled-components';
 import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
@@ -121,6 +122,13 @@ export const ReassuranceBlueTextBigStyle = styled(
 `;
 
 export const ReassuranceTextStyle = styled.p`
+  font-size: ${typography.FontSize.Text.Bastille};
+  @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
+    font-size: ${typography.FontSize.Text.Arrondissement};
+  }
+`;
+
+export const ReassuranceTextMarkdownStyle = styled(ReactMarkdown)`
   font-size: ${typography.FontSize.Text.Bastille};
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     font-size: ${typography.FontSize.Text.Arrondissement};

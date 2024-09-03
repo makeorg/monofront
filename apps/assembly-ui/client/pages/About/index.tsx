@@ -37,6 +37,7 @@ import {
   ReassuranceTextBoldStyle,
   SvgExternalPurpleStyle,
   ReassuranceList,
+  ReassuranceTextMarkdownStyle,
 } from './style';
 import { ROUTE_ASSEMBLY_PRIVACY_POLICY } from '../../../utils/routes';
 import disabledButton from '../../../assets/sendButtonInactive.png';
@@ -110,9 +111,9 @@ const AboutPage: FC = () => {
               <ReassuranceSubitleStyle>
                 {i18n.t('reassurance.why')}
               </ReassuranceSubitleStyle>
-              <ReassuranceTextStyle>
+              <ReassuranceTextMarkdownStyle>
                 {i18n.t('reassurance.why_text')}
-              </ReassuranceTextStyle>
+              </ReassuranceTextMarkdownStyle>
             </ReassuranceWhyWhoContentStyle>
             <ReassuranceWhyWhoContentStyle>
               <ReassuranceSubitleStyle>
