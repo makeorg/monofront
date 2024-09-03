@@ -13,7 +13,6 @@ const AssemblyDevState: AssemblyGlobalStateType = {
     language: 'fr',
     name: 'Convention citoyenne de la fin de vie',
     introduction: 'La Convention citoyenne vous ouvre ses portes !',
-    introMediaUrl: 'https://youtu.be/EGXSzXgigdY?t=1260',
     links: [
       {
         label: 'Pourquoi cette Convention citoyenne ?',

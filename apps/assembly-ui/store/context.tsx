@@ -28,7 +28,6 @@ const emptyAssemblyState: AssemblyGlobalStateType = {
     language: DEFAULT_LANGUAGE,
     name: '',
     slug: '',
-    introMediaUrl: '',
     introduction: '',
     links: [],
     logoUrl: '',

@@ -24,7 +24,6 @@ export type EventType = {
   customerId: string;
   language: keyof typeof LanguageType;
   name: string;
-  introMediaUrl: string;
   introduction: string;
   links: LinksType[];
   logoUrl: string;
