@@ -244,6 +244,7 @@ export const ProposalSubmitButtonsStyle = styled(FlexElementStyle)`
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   flex-direction: column;
   gap: 15px;
 

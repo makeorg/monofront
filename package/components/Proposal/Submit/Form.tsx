@@ -247,9 +247,11 @@ export const ProposalForm: FC<Props> = ({ logger }) => {
 
           <ProposalButtonsWrapperStyle>
             <ProposalSubmitButtonsStyle>
-              <ProposalSubmitAccountWarning>
-                {i18n.t('proposal_submit.form.account_warning')}
-              </ProposalSubmitAccountWarning>
+              {!isLoggedIn && (
+                <ProposalSubmitAccountWarning>
+                  {i18n.t('proposal_submit.form.account_warning')}
+                </ProposalSubmitAccountWarning>
+              )}
 
               <SubmitProposalButtonStyle
                 type="submit"
