@@ -46,6 +46,7 @@ export const ButtonsThemes: FC<ButtonsProps> = ({
       style={{ backgroundColor: `${colors[color]}` }}
       onClick={handleClick}
       disabled={isStreaming}
+      className="themes"
     >
       {title}
       {value === 'Aide active' && <BonhommeLogoSvgStyle />}

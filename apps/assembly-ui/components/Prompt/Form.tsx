@@ -86,7 +86,11 @@ export const PromptForm: FC = () => {
               />
             </PromptFormSubmitStyle>
           )}
-          <PromptFormSubmitStyle type="submit" disabled={isStreaming}>
+          <PromptFormSubmitStyle
+            type="submit"
+            disabled={isStreaming}
+            id="submit_prompt"
+          >
             <PromptFormButtonArrowStyle
               src={
                 isStreaming || question.length === 0

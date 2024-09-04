@@ -66,6 +66,7 @@ export const SourcesElements: FC<{ chunk: ChunkType }> = ({ chunk }) => {
       <SourcesContentDocumentStyle
         type="button"
         onClick={() => onClick(SOURCE_TYPE_DOCUMENT)}
+        className="sources"
       >
         <SourcesDocumentStyle aria-hidden focusable="false" />
         <SourcesTitleContainerStyle>
@@ -82,6 +83,7 @@ export const SourcesElements: FC<{ chunk: ChunkType }> = ({ chunk }) => {
     <SourcesContentVideoStyle
       type="button"
       onClick={() => onClick(SOURCE_TYPE_VIDEO)}
+      className="sources"
     >
       <SourcesVideoStyle aria-hidden focusable="false" />
       <SourcesTitleContainerStyle>

@@ -34,6 +34,7 @@ export const ButtonsSuggestion: FC<ButtonsProps> = ({
         type="button"
         onClick={handleClick}
         disabled={isStreaming || !handleClick}
+        className="suggestions"
       >
         {title}
       </SuggestionsButtonsStyle>
