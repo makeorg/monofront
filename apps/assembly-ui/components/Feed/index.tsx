@@ -14,7 +14,7 @@ export const SOURCE_TYPE_VIDEO = 'VIDEO';
 export const SOURCE_TYPE_DOCUMENT = 'PDF';
 const RESPONSE_TRIGGER_PARAM = 'response-trigger';
 
-const scrollToLastElement = (id: string) => {
+const scrollToElement = (id: string) => {
   const element = document.getElementById(id);
 
   if (!element) {
@@ -73,9 +73,9 @@ export const Feed: FC = () => {
   useLayoutEffect(() => {
     const lastElement = [...items].pop(); // Need to be spread to avoid initial items modification
     if (lastElement) {
-      scrollToLastElement(lastElement.id);
+      scrollToElement(lastElement.id);
     }
-  }, [items]);
+  }, [items.length]);
 
   return (
     <FeedContainerStyle role="feed" aria-live="polite">
