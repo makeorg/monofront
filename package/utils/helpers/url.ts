@@ -509,42 +509,6 @@ export const redirectToNotFoundPage = (country: string): void => {
  * @param  {string} route
  * @return {string}
  */
-export const getWhoAreWeDynamicLink = (
-  language: string,
-  route: string
-): string => {
-  let link;
-
-  switch (language) {
-    case 'cs':
-    case 'uk':
-    case 'fr':
-    case 'de':
-    case 'en':
-      link = `${URL.ABOUT_MAKE_LINK}${language}${route}`;
-      break;
-
-    // @todo temporary links for weglot, will be normalised later
-
-    case 'bg':
-    case 'es':
-    case 'fi':
-    case 'it':
-    case 'nl':
-    case 'pl':
-    case 'ro':
-    case 'da':
-    case 'hu':
-      link = `https://${language}.about.make.org/de/about-us`;
-      break;
-    default:
-      link = `${URL.ABOUT_MAKE_LINK}${DEFAULT_LANGUAGE}${route}`;
-      break;
-  }
-
-  return link;
-};
-
 export const getWebflowDynamicLink = (
   language: string,
   route: string
@@ -564,11 +528,6 @@ export const getWebflowDynamicLink = (
 
   return link;
 };
-
-export const getWebflowGreatCauseLink = (
-  language: string,
-  route: string
-): string => `${URL.ABOUT_MAKE_LINK}${language}${route}`;
 
 /**
  * Get the password recovery link

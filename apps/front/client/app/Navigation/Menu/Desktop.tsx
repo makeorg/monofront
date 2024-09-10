@@ -4,9 +4,7 @@ import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import i18n from 'i18next';
 import {
   getBrowseConsultationsLink,
-  getWhoAreWeDynamicLink,
   getWebflowDynamicLink,
-  getWebflowGreatCauseLink,
 } from '@make.org/utils/helpers/url';
 import useOnClickOutside from '@make.org/utils/hooks/useOnClickOutside';
 import { scrollToTop, unlockBody } from '@make.org/utils/helpers/styled';
@@ -87,7 +85,7 @@ export const DesktopMenu: FC = () => {
           <DesktopMenuExternalLinkStyle
             target="_blank"
             rel="noopener"
-            href={getWhoAreWeDynamicLink(language, ROUTE_WHOAREWE)}
+            href={getWebflowDynamicLink(language, ROUTE_WHOAREWE)}
           >
             {i18n.t('main_footer.whoarewe')}
             <> </>
@@ -121,10 +119,7 @@ export const DesktopMenu: FC = () => {
                 </li>
                 <li>
                   <MenuDropdownItemListLinkStyle
-                    href={getWebflowGreatCauseLink(
-                      'fr',
-                      ROUTE_JOIN_GREAT_CAUSE
-                    )}
+                    href={getWebflowDynamicLink('fr', ROUTE_JOIN_GREAT_CAUSE)}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

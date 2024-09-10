@@ -7,9 +7,7 @@ import {
   getBrowseConsultationsLink,
   getBrowseResultsLink,
   getNewsLinkByCountry,
-  getWhoAreWeDynamicLink,
   getWebflowDynamicLink,
-  getWebflowGreatCauseLink,
 } from '@make.org/utils/helpers/url';
 import { useLocation } from 'react-router';
 import { scrollToTop } from '@make.org/utils/helpers/styled';
@@ -132,7 +130,7 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
               <MenuExternalLinkStyle
                 target="_blank"
                 rel="noopener"
-                href={getWhoAreWeDynamicLink(language, ROUTE_WHOAREWE)}
+                href={getWebflowDynamicLink(language, ROUTE_WHOAREWE)}
               >
                 {i18n.t('main_footer.whoarewe')}
                 <> </>
@@ -161,7 +159,7 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
                 <MenuExternalLinkStyle
                   target="_blank"
                   rel="noopener"
-                  href={getWebflowGreatCauseLink('fr', ROUTE_JOIN_GREAT_CAUSE)}
+                  href={getWebflowDynamicLink('fr', ROUTE_JOIN_GREAT_CAUSE)}
                 >
                   {i18n.t('homepage.partnership.join')}
                   <> </>
