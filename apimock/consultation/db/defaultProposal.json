@@ -1,6 +1,5 @@
 {
   "id": "bfd7a085-bd4a-460a-a022-76542899fb93",
-  "userId": "ef5fafb4-226b-4a65-9319-c92289d4c10a",
   "content": "Il faut gagner la place numéro 1 dans le top des assos !",
   "contentLanguage": "fr",
   "translatedContent": "You have to win the number 1 place in the top associations!",
@@ -98,6 +97,7 @@
     "postalCode": null,
     "age": null,
     "avatarUrl": "https://picsum.photos/200/300",
+    "userId": "ef5fafb4-226b-4a65-9319-c92289d4c10a",
     "userType": "ORGANISATION"
   },
   "organisations": [],

@@ -82,7 +82,7 @@ export const ProposalAuthorInformations: FC<Props> = ({ proposal }) => {
             <>
               <AuthorLinkStyle
                 onClick={() => trackClickPublicProfile(USER.TYPE_PERSONALITY)}
-                to={getPersonalityProfileLink(country, proposal.userId)}
+                to={getPersonalityProfileLink(country, author.userId)}
               >
                 {formatAuthorName(author.firstName)}
               </AuthorLinkStyle>

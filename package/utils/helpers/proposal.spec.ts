@@ -33,7 +33,6 @@ describe('Proposal Helper', () => {
   describe('getProposalContent', () => {
     const mockedProposal: ProposalType = {
       id: '1234',
-      userId: '1234',
       content: 'fooContent',
       contentLanguage: 'fooLanguage',
       translatedContent: 'translatedFooContent',
@@ -62,6 +61,7 @@ describe('Proposal Helper', () => {
         postalCode: 'string',
         age: 123,
         avatarUrl: 'string',
+        userId: '1234',
         userType: 'foo',
       },
       organisations: [],

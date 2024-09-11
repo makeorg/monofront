@@ -11,6 +11,7 @@ export type AuthorType = {
   postalCode: string | null;
   age: number | null;
   avatarUrl: string;
+  userId: string;
   userType: string;
 };
 
@@ -54,7 +55,6 @@ export type ProposalKeywordsType = {
 
 export type ProposalType = {
   id: string;
-  userId: string;
   content: string;
   contentLanguage: string;
   translatedContent: string;
