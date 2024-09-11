@@ -15,7 +15,7 @@ import { useTracking } from '../../Tracking/useTracking';
 import { addFeedItem } from '../../../store/feed/actions';
 import { useAssemblyContext } from '../../../store/context';
 import { useUtms } from '../../Tracking/useUtms';
-import { SOURCE_TYPE_DOCUMENT, SOURCE_TYPE_VIDEO } from '..';
+import { SOURCE_TYPE_DOCUMENT } from '..';
 
 export const SourcesElements: FC<{ chunk: ChunkType }> = ({ chunk }) => {
   const {
@@ -32,7 +32,7 @@ export const SourcesElements: FC<{ chunk: ChunkType }> = ({ chunk }) => {
   const utms = useUtms();
   const tracker = useTracking();
 
-  const onClick = (mode: string) => {
+  const onClick = () => {
     const feedId = uuidv4() as string;
     dispatch(
       addFeedItem({
@@ -65,7 +65,7 @@ export const SourcesElements: FC<{ chunk: ChunkType }> = ({ chunk }) => {
     return (
       <SourcesContentDocumentStyle
         type="button"
-        onClick={() => onClick(SOURCE_TYPE_DOCUMENT)}
+        onClick={() => onClick()}
         className="sources"
       >
         <SourcesDocumentStyle aria-hidden focusable="false" />
@@ -82,7 +82,7 @@ export const SourcesElements: FC<{ chunk: ChunkType }> = ({ chunk }) => {
   return (
     <SourcesContentVideoStyle
       type="button"
-      onClick={() => onClick(SOURCE_TYPE_VIDEO)}
+      onClick={() => onClick()}
       className="sources"
     >
       <SourcesVideoStyle aria-hidden focusable="false" />

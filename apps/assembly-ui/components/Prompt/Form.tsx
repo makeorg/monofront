@@ -86,11 +86,7 @@ export const PromptForm: FC = () => {
               />
             </PromptFormSubmitStyle>
           )}
-          <PromptFormSubmitStyle
-            type="submit"
-            disabled={isStreaming}
-            id="submit_prompt"
-          >
+          <PromptFormSubmitStyle type="submit" disabled={isStreaming}>
             <PromptFormButtonArrowStyle
               src={
                 isStreaming || question.length === 0
@@ -102,6 +98,7 @@ export const PromptForm: FC = () => {
                   ? i18n.t('prompt.disabled')
                   : i18n.t('prompt.submit')
               }
+              id="submit_prompt"
             />
           </PromptFormSubmitStyle>
         </PromptFormButtonsContainerStyle>
