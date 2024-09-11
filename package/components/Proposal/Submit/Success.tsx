@@ -2,7 +2,11 @@ import React, { useEffect } from 'react';
 import i18n from 'i18next';
 import { useHistory, useLocation } from 'react-router';
 import { useAppContext } from '@make.org/store';
-import { closePanel, setPanelContent } from '@make.org/store/actions/panel';
+import {
+  closePanel,
+  removePanelContent,
+  setPanelContent,
+} from '@make.org/store/actions/panel';
 import {
   getParticipateLink,
   getSequenceLink,
@@ -35,7 +39,6 @@ import { CenterColumnHeightStyle } from '@make.org/ui/elements/FlexElements';
 import {
   clearProposalPending,
   setProposalSource,
-  setRegisterStep,
 } from '@make.org/store/actions/pendingProposal';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { selectAuthentication } from '@make.org/store/selectors/user.selector';
@@ -81,9 +84,8 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
   const avatarSize = 36;
   const handleCloseButton = () => {
     dispatch(closePanel());
-    dispatch(setRegisterStep(1));
     trackClickKeepVoting();
-    dispatch(clearProposalPending());
+    dispatch(removePanelContent());
     if (!isSequencePage && !isWidget) {
       history.push(getSequenceLink(country, question.slug));
     }
@@ -214,7 +216,10 @@ export const ProposalSuccess: React.FC<Props> = ({ isRegister }) => {
           {!isWidget && (
             <ProposalSuccessLinkStyle
               to={getParticipateLink(country, question.slug)}
-              onClick={() => dispatch(closePanel())}
+              onClick={() => {
+                dispatch(closePanel());
+                dispatch(removePanelContent());
+              }}
             >
               {i18n.t('proposal_submit.success.consultation_access')}
             </ProposalSuccessLinkStyle>
