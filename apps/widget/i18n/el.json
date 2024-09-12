@@ -226,7 +226,7 @@
       "button_propose": "ΥΠΟΒΟΛΗ ΠΡΟΤΑΣΗΣ",
       "and": "και μας",
       "gtc": " όροι χρήσης",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Πρέπει να συνδεθείτε για να υποβάλετε μια πρόταση."
     },
     "authentication": {
       "back": "Επιστροφή",

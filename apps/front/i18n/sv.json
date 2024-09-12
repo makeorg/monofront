@@ -433,7 +433,7 @@
       "button_propose": "LÄGG ETT FÖRSLAG",
       "and": "och vår",
       "gtc": " användarvillkor",
-      "account_warning": "🔔 Za oddajo predloga morate biti prijavljeni."
+      "account_warning": "🔔 Du måste vara inloggad för att lägga fram ett förslag."
     },
     "authentication": {
       "button_back": "Ändra mitt förslag",

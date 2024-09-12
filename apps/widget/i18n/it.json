@@ -209,7 +209,7 @@
       "button_propose": "PROPONI",
       "and": "e la nostra",
       "gtc": " condizioni d'uso",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Per presentare una proposta è necessario aver effettuato il login."
     },
     "authentication": {
       "back": "Indietro",

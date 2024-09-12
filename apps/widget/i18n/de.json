@@ -220,7 +220,7 @@
       "button_propose": "Bestätigen",
       "and": "und unsere",
       "gtc": " nutzungsbedingungen",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Du musst angemeldet sein, um einen Vorschlag einzureichen."
     },
     "authentication": {
       "button_login_text": "Ich habe bereits ein Konto",

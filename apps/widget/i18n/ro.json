@@ -209,7 +209,7 @@
       "button_propose": "PROPUNERI",
       "and": "și",
       "gtc": " condițiile noastre de utilizare",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Trebuie să fiți conectat pentru a trimite o propunere."
     },
     "authentication": {
       "back": "Revenire",

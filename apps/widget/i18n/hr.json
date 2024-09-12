@@ -228,7 +228,7 @@
       "button_propose": "POŠALJI PRIJEDLOG",
       "and": "i našim",
       "gtc": " uvjeti uporabe",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Morate biti prijavljeni da biste poslali ponudu."
     },
     "authentication": {
       "back": "Natrag",

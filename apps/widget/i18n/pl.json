@@ -209,7 +209,7 @@
       "button_propose": "ZAPROPONUJ",
       "and": "i nas",
       "gtc": " warunki korzystania",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Aby przesłać propozycję, musisz być zalogowany."
     },
     "authentication": {
       "back": "Powrót",

@@ -207,7 +207,7 @@
       "button_propose": "EHDOTA",
       "and": "ja meidän",
       "gtc": " käyttöehdot",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Sinun täytyy olla kirjautuneena sisään, jotta voit lähettää ehdotuksen."
     },
     "authentication": {
       "back": "Takaisin",

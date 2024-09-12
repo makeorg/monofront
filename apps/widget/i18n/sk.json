@@ -226,7 +226,7 @@
       "button_propose": "NAVRHNÚŤ",
       "and": "a náš",
       "gtc": " podmienky používania",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Ak chcete predložiť návrh, musíte byť prihlásený."
     },
     "authentication": {
       "back": "Späť",

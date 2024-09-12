@@ -226,7 +226,7 @@
       "button_propose": "JAVASLAT",
       "and": "és a mi",
       "gtc": " használati feltételek",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Be kell jelentkeznie ahhoz, hogy javaslatot nyújtson be."
     },
     "authentication": {
       "back": "Vissza",

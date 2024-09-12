@@ -228,7 +228,7 @@
       "button_propose": "PODAT NÁVRH",
       "and": "a naše",
       "gtc": " podmínky používání",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Pro odeslání návrhu musíte být přihlášeni."
     },
     "authentication": {
       "back": "Návrat",

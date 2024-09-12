@@ -226,7 +226,7 @@
       "button_propose": "PROPOR",
       "and": "e a nossa",
       "gtc": " condições de utilização",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Tem de iniciar sessão para apresentar uma proposta."
     },
     "authentication": {
       "back": "Voltar",

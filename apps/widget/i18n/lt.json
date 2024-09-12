@@ -226,7 +226,7 @@
       "button_propose": "PASIŪLYTI",
       "and": "ir mūsų",
       "gtc": " naudojimo sąlygos",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Norėdami pateikti pasiūlymą, turite būti prisijungę."
     },
     "authentication": {
       "back": "Atgal",

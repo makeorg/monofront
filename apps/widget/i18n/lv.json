@@ -226,7 +226,7 @@
       "button_propose": "IEROSINĀT",
       "and": "un mūsu",
       "gtc": " lietošanas noteikumi",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Lai iesniegtu piedāvājumu, jums ir jāpiesakās."
     },
     "authentication": {
       "back": "Atpakaļ",

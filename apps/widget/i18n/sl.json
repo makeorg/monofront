@@ -230,7 +230,7 @@
       "button_propose": "PREDLAGAJ",
       "and": "in naši",
       "gtc": " pogoji uporabe",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Za oddajo predloga morate biti prijavljeni."
     },
     "authentication": {
       "back": "Nazaj",

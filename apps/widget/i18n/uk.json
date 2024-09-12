@@ -228,7 +228,7 @@
       "button_propose": "ПРОПОНУВАТИ",
       "and": "наші партнери",
       "gtc": " умови використання",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Ви повинні увійти, щоб подати пропозицію."
     },
     "authentication": {
       "back": "Назад",

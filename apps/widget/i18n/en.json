@@ -204,7 +204,7 @@
       "button_propose": "Submit",
       "and": "and our",
       "gtc": " terms of use",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 You must be logged in to submit a proposal."
     },
     "authentication": {
       "button_login_text": "I already have an account,",

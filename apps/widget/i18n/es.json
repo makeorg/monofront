@@ -209,7 +209,7 @@
       "button_propose": "HACER UNA PROPUESTA",
       "and": "y nuestras",
       "gtc": " términos de uso",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Debes iniciar sesión para enviar una propuesta."
     },
     "authentication": {
       "back": "Volver",

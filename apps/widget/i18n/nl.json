@@ -207,7 +207,7 @@
       "button_propose": "VOORSTELLEN",
       "and": "en onze",
       "gtc": " gebruiksvoorwaarden",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Om een voorstel in te dienen, moet u ingelogd zijn."
     },
     "authentication": {
       "back": "Terug",

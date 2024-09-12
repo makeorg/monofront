@@ -226,7 +226,7 @@
       "button_propose": "ETTEPANEK",
       "and": "ja meie",
       "gtc": " kasutustingimused",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Ettepaneku esitamiseks peate olema sisse logitud."
     },
     "authentication": {
       "back": "Tagasi",

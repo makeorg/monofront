@@ -226,7 +226,7 @@
       "button_propose": "FORESLÅ",
       "and": "og vores",
       "gtc": " betingelser for brug",
-      "account_warning": "@@proposal_submit.form.account_warning|fr:🔔 Vous devez être connecté pour soumettre une proposition."
+      "account_warning": "🔔 Du skal være logget ind for at indsende et forslag."
     },
     "authentication": {
       "back": "Tilbage",
