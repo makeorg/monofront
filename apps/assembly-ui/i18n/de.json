@@ -1,6 +1,6 @@
 {
   "global": {
-    "ia": "Erfahren Sie mehr über die wichtigsten Themen, indem Sie unten klicken.",
+    "ia": "Um mehr über die wichtigsten Themen zu erfahren, klicke unten.",
     "iaBold": "",
     "open_new_window": "In einem neuen Reiter öffnen"
   },
@@ -14,7 +14,7 @@
   },
   "prompt": {
     "submit": "Senden",
-    "themeAnswer": "Sie wissen nicht, wo Sie anfangen sollen?",
+    "themeAnswer": "Du weißt nicht, wo du anfangen sollst?",
     "warning": "Die KI-generierte Antwort basiert auf verifizierten Quellen, kann jedoch trotzdem Inhalte enthalten, die sich dem Original lediglich annähern.",
     "me": "Gestellte Frage",
     "cancel": "Abbrechen",
