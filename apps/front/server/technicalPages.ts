@@ -21,6 +21,7 @@ try {
 
 export function renderVersion(req: Request, res: Response): Response {
   try {
+    res.setHeader('Access-Control-Allow-Origin', '*');
     return res.json(JSON.parse(versionData));
   } catch (error) {
     return res.status(404).send('Version file not found');
