@@ -36,7 +36,7 @@
     "answer_sources_video": "Hier ist der Videoausschnitt von ",
     "answer_sources_video_2": " die der Antwort zugrunde lag.",
     "answer_sources_video_time": "Die Passage, die zur Beantwortung Ihrer Frage verwendet wurde, befindet sich an dieser Stelle des Videos: ",
-    "answer_sources_video_extract": "Drücken Sie die Wiedergabetaste, um direkt zur richtigen Stelle im Ausschnitt zu springen."
+    "answer_sources_video_extract": "Klicke auf die Wiedergabetaste, um direkt zum richtigen Videoabschnitt zu springen."
   },
   "sidebar": {
     "explore": "Mehr entdecken",
@@ -66,7 +66,7 @@
     "why": "Wozu dient es?",
     "why_text": "Bei diesem Tool handelt es sich um eine Plattform, die **künstliche Intelligenz** nutzt, um den Bürgerinnen und Bürgern **komplexe Themen** zugänglich zu machen.",
     "who": "Für wen ist es?",
-    "who_text": "Ob du nun ein/e neugierige/r Bürgerin oder Bürger bist, ein/ Journalist oder Journalistin, der/die eine Zusammenfassung sucht, oder ein/e Betroffene oder Betroffener, der/die nach klaren Antworten sucht, jede/r Nutzerin und Nutzer kann Informationen finden, ohne sich in seitenlangen Fachdokumenten zu verlieren.",
+    "who_text": "Ob du nun ein/e neugierige/r Bürgerin oder Bürger bist, ein/ Journalist oder Journalistin, der/die eine Zusammenfassung sucht, oder ein/e Betroffene oder Betroffener, der/die nach klaren Antworten sucht, jede/r Nutzerin und Nutzer kann Informationen finden, ohne sich in seitenlangen Fachdokumenten zu verlieren. Neu: Ob du einfach neugierig bist, eine Journalistin oder ein Journalist auf der Suche nach einer Zusammenfassung, oder eine betroffene Person, die nach klaren Antworten sucht: Jede Nutzerin und jeder Nutzer kann Informationen finden, ohne sich in seitenlangen Fachdokumenten zu verlieren.",
     "how_help": "Unsere künstliche Intelligenz unterstützt dich in deinem Lernprozess",
     "sources_title": "Indem sie ihre Informationen aus verifizierten Quellen nimmt",
     "sources_subtitle": "Unsere KI verwendet nur öffentliche und zuverlässige Dokumente, um Antworten zu formulieren.",
@@ -82,7 +82,7 @@
     "or": "Oder: ",
     "or_text": "Was waren die umstrittensten Vorschläge während der Sitzung?",
     "warning_exchange": "Aktuell hat unsere KI noch keine Konversationsfähigkeiten. Zuvor gestellte Fragen werden nicht gespeichert. Du kannst also nicht auf deine früheren Fragen zurückgreifen.",
-    "seek_title": "Indem wir dir dabei helfen das zu finden, was du suchst",
+    "seek_title": "Indem wir dir dabei helfen das zu finden, was du suchst.",
     "seek_subtitle": "Drei Wege, um die Plattform zu erkunden, drei Wege, um die richtige Antwort zu finden.",
     "seek_text": "Um dir den Einstieg in das Tool und den Zugang zu Informationen zu erleichtern, bietet unsere KI drei verschiedene Wege an: ",
     "sug": "Vorschläge",
@@ -117,9 +117,9 @@
     "sources_origin_text_bullet_2": "So sparst du dir die Zeit des Ansehens und verlierst keine wichtigen Informationen. Darüber hinaus verwendet unsere KI zertifizierte Dokumente und gibt diese in ihren Antworten leicht verständlich wieder. Dadurch machen wir alle Videos und Dokumente für dich einfach zugänglich."
   },
   "sources_page": {
-    "consult": "Quellen konsultieren :",
+    "consult": "Einblick in die Quellen:",
     "docs": "Dokumentarische Quellen :",
-    "see": "Veranstaltung ansehen",
+    "see": "Zurück",
     "videos": "Videoquellen :"
   },
   "welcome": {
