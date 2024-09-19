@@ -63,6 +63,7 @@ export const cspMiddleware = (
         'https://*.facebook.net',
         'https://analytics.twitter.com',
         'https://*.hotjar.com',
+        'https://cdn.prod.website-files.com',
       ],
       connectSrc: [
         ...defaultDirectives.connectSrc,
@@ -73,6 +74,7 @@ export const cspMiddleware = (
         'https://*.hotjar.io',
         'wss://*.hotjar.com',
         'https://api.told.club/graphql',
+        'wss://api.told.club/graphql',
       ],
       formAction: [
         ...defaultDirectives.formAction,
