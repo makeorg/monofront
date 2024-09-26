@@ -1,6 +1,7 @@
 ############
 # Base
 ############
+
 FROM node:18.17-alpine AS base
 WORKDIR /home/app
 
@@ -84,8 +85,9 @@ RUN ["rm", "-rf", "node_modules"]
 RUN ["yarn", "workspaces", "focus", "@make.org/front", "--production"]
 
 
-FROM node:18.17-alpine as app-production
+FROM node:18.17-alpine AS app-production
 
+ARG PROJECT_VERSION="{}"
 ENV PORT 8000
 
 RUN apk --no-cache add curl
@@ -101,6 +103,8 @@ COPY --from=base-production /usr/app/node_modules ./node_modules
 
 EXPOSE 8000
 
+RUN echo ${PROJECT_VERSION} > "/usr/app/version"
+RUN ["ln", "-sf", "/usr/app/version", "/usr/app/dist/client/version"]
 CMD [ "node_modules/.bin/pm2-runtime", "start", "ecosystem.config.js", "--only", "app-production" ]
 
 HEALTHCHECK --interval=20s CMD curl --fail http://localhost:8000 || exit 1

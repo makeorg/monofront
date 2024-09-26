@@ -125,7 +125,7 @@
   "scripts": {
     "dev": "webpack serve --mode development --progress --color --config ./webpack/dev.config.js",
     "dev:mock": "webpack serve --mode development --node-env mock --progress --color --config ./webpack/dev.config.js",
-    "build": "webpack --mode production --progress --color --config ./webpack/build.config.js && yarn version-build",
+    "build": "webpack --mode production --progress --color --config ./webpack/build.config.js",
     "server": "pm2-runtime start ecosystem.config.js --only app-production",
     "server:dev": "pm2-runtime start ecosystem.config.js --only app-dev",
     "server:test": "pm2-runtime start ecosystem.config.js --only 'api-consultation-mock,app-test'",
@@ -136,7 +136,6 @@
     "translation:unused-keys": "npx babel --out-dir ../../dist/lib --config-file ./webpack/babel.config.js ../../bin/utils && ../../bin/check-translation.js list-unused",
     "translation:orphan-keys": "npx babel --out-dir ../../dist/lib --config-file ./webpack/babel.config.js ../../bin/utils && ../../bin/check-translation.js list-orphan",
     "accessibility": "bin/check-accessibility.js check",
-    "accessibility:fix": "bin/check-accessibility.js check --fix",
-    "version-build": "../../bin/version-build.js generate -d './dist/client' -p 'Make.org-frontend'"
+    "accessibility:fix": "bin/check-accessibility.js check --fix"
   }
 }
