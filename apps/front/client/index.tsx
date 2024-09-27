@@ -176,6 +176,10 @@ const initApp = async (state: StateRoot) => {
     question = questions[currentQuestion].question;
   }
   initTrackingParamsService(source, country, language, question);
+  ClientLogger.init({
+    url: `${window.FRONT_URL}/api/logger`,
+    method: 'POST',
+  });
 
   // Track cookies availability and adBlockers
   if (adBlockerDetected()) {
