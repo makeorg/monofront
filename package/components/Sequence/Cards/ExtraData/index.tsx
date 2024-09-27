@@ -17,9 +17,11 @@ type Props = {
 export const ExtraDataCard: FC<Props> = ({ configuration, logger }) => {
   const { state, dispatch } = useAppContext();
   const { sequence } = state;
+  const { source } = state.appConfig;
   const isSubmitted = state.sequence.demographics.submitted?.find(
     id => id === configuration.id
   );
+  const isWidget = source === 'widget';
 
   // set demographics
   if (!configuration) {
@@ -35,7 +37,9 @@ export const ExtraDataCard: FC<Props> = ({ configuration, logger }) => {
 
   const submitSuccess = () => {
     dispatch(setDemographicsAsSubmitted(configuration.id));
-    setDemographicsCookie();
+    if (!isWidget) {
+      setDemographicsCookie();
+    }
   };
 
   return isSubmitted ? (
