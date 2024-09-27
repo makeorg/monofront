@@ -9,7 +9,7 @@ export const loggerApi = async (
   res: Response
 ): Promise<Response> => {
   const ua = parser(req.headers['user-agent']);
-  const { level, data } = req.body;
+  const data = req.body;
   const normalizedData = typeof data === 'string' ? { message: data } : data;
   const logger = ServerLogger.getInstance();
 
@@ -27,7 +27,7 @@ export const loggerApi = async (
     app_client_side: true,
   };
 
-  switch (level) {
+  switch (data?.level) {
     case LogLevelType.info:
       logger.logInfo(dataLog);
       break;

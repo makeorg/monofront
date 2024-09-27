@@ -41,6 +41,11 @@ declare global {
   }
 }
 
+ClientLogger.init({
+  url: `/api/logger`,
+  method: 'POST',
+});
+
 window.onerror = (message, source, lineNumber, columnNumber, error) => {
   if (error && error.stack) {
     const { stack } = error;
