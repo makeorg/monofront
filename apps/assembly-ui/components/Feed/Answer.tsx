@@ -1,41 +1,22 @@
 import React, { FC, useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { LLMErrorLimit } from '../Prompt/Stream';
-import {
-  ContentStyle,
-  ContentIconStyle,
-  AnswerContainerStyle,
-  TempTemoignageDiscoverStyle,
-  QuestionStyle,
-  ActionsButtonStyle,
-} from './style';
-import { Temoignage } from './Temoignage';
+import { ContentStyle, ContentIconStyle, AnswerContainerStyle } from './style';
 import { FeedItemType } from '../../types';
 import pano from '../../assets/IconPano.png';
 import { useAssemblyContext } from '../../store/context';
 import { useTracking } from '../Tracking/useTracking';
 import { ShowSources } from './Sources/ShowSources';
+import { CitizenVoice } from './CitizenVoice';
 
-type Props = { item: FeedItemType };
+type Props = { item: FeedItemType; index: number };
 
-export const Answer: FC<Props> = ({ item }) => {
+export const Answer: FC<Props> = ({ item, index }) => {
   const [isTracked, setIsTracked] = useState(false);
-  const [showParole, setShowParole] = useState(false);
   const { state } = useAssemblyContext();
-  const { event, language, visitorId } = state;
+  const { event } = state;
   const { isStreaming } = state.feed;
   const tracker = useTracking();
-
-  useEffect(() => {
-    if (showParole) {
-      tracker.track('ACTION-CHECK-INTERACTION', {
-        visitor_id: visitorId,
-        language,
-        event_slug: event.slug,
-      });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [showParole]);
 
   useEffect(() => {
     if (!isTracked && item.text && !isStreaming) {
@@ -62,22 +43,7 @@ export const Answer: FC<Props> = ({ item }) => {
             item.chunks.length > 0 && <ShowSources chunks={item.chunks} />}
         </AnswerContainerStyle>
       </ContentStyle>
-      {item.chunks &&
-        item.chunks.length > 0 &&
-        item.question === `Aide active` && (
-          <>
-            <TempTemoignageDiscoverStyle>
-              <QuestionStyle>
-                Grâce aux témoignages et partages, cette thématique bénéficie
-                d’un éclairage citoyen
-              </QuestionStyle>
-              <ActionsButtonStyle onClick={() => setShowParole(!showParole)}>
-                Découvrir l’éclairage citoyen
-              </ActionsButtonStyle>
-            </TempTemoignageDiscoverStyle>
-            {showParole && <Temoignage />}
-          </>
-        )}
+      {index % 2 !== 0 && item.chunks && <CitizenVoice />}
     </>
   );
 };
