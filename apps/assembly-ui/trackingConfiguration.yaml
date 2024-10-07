@@ -413,3 +413,51 @@ EVENTS:
         purpose: True or False
         example: 'true'
         recipients: ['product']
+
+  DISPLAY-MODULE:
+    key: display-module
+    description: Display of citizen voice module
+    recipients:
+      ['product', 'acquisition']
+      #purpose: Adoption - DAU measurement (daily active users)
+    parameters:
+      - key: event_slug
+        description: The event slug
+        purpose: Subject segmentation - service improvement
+        example: convention-fin-de-vie
+        recipients: ['product']
+        optional: true
+      - key: visitor_id
+        description: Unique visitor identifier
+        purpose: Segmentation by unique visitor
+        example: 00000000-0000-0000-0000-000000000000
+        optional: true
+        recipients: ['product']
+      - key: language
+        description: Interface language
+        purpose: Language segmentation - service improvement
+        recipients: ['product']
+
+  ACTION-OPEN-MODULE:
+    key: action-open-module
+    description: Click on button to display citizen voice module
+    recipients:
+      ['product', 'acquisition']
+      #purpose: Adoption - DAU measurement (daily active users)
+    parameters:
+      - key: event_slug
+        description: The event slug
+        purpose: Subject segmentation - service improvement
+        example: convention-fin-de-vie
+        recipients: ['product']
+        optional: true
+      - key: visitor_id
+        description: Unique visitor identifier
+        purpose: Segmentation by unique visitor
+        example: 00000000-0000-0000-0000-000000000000
+        optional: true
+        recipients: ['product']
+      - key: language
+        description: Interface language
+        purpose: Language segmentation - service improvement
+        recipients: ['product']
