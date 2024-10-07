@@ -152,6 +152,22 @@ Our question answering service records user questions and AI response for analys
     | `expand` | The content is expended | True or False | true |  | true
 
 
+  - `display-module` Display of citizen voice module
+    
+    | param_name | description | purpose | required | values | example |
+    | -          |-            |-        |-         | -      | -       |
+    | `event_slug` | The event slug | Subject segmentation - service improvement | false |  | convention-fin-de-vie
+    | `visitor_id` | Unique visitor identifier | Segmentation by unique visitor | false |  | 00000000-0000-0000-0000-000000000000
+
+
+  - `action-open-module` Click on button to display citizen voice module
+    
+    | param_name | description | purpose | required | values | example |
+    | -          |-            |-        |-         | -      | -       |
+    | `event_slug` | The event slug | Subject segmentation - service improvement | false |  | convention-fin-de-vie
+    | `visitor_id` | Unique visitor identifier | Segmentation by unique visitor | false |  | 00000000-0000-0000-0000-000000000000
+
+
 
 
 
@@ -207,6 +223,12 @@ Our question answering service records user questions and AI response for analys
       
 
   - `action-main` Event triggered when the user interract with the main features (themes, suggestions or open prompt)
+      
+
+  - `display-module` Display of citizen voice module
+      
+
+  - `action-open-module` Click on button to display citizen voice module
       
 
 

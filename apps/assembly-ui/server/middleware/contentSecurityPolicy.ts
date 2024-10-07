@@ -53,6 +53,7 @@ export const assemblyCspMiddleware = (
         'https://noembed.com/embed',
         'https://*.cookiefirst.com',
         'https://api.told.club/graphql',
+        'wss://api.told.club/graphql',
       ],
       formAction: ["'self'", 'https://www.facebook.com/tr/'],
       frameSrc: [

@@ -80,13 +80,13 @@ export const Feed: FC = () => {
   return (
     <FeedContainerStyle role="feed" aria-live="polite">
       {maxHistory && <HistoryLimit />}
-      {items.map(item => (
+      {items.map((item, index) => (
         <div role="article" key={item.id} id={item.id}>
           <Question question={item.question} source_type={item.source_type} />
           {item.sources ? (
             <SourcesAnswer item={item} />
           ) : (
-            <Answer item={item} />
+            <Answer item={item} index={index} />
           )}
         </div>
       ))}
