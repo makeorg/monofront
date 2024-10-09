@@ -43,6 +43,8 @@ export const getCountriesTransMap = (): Map<string, string> =>
     ['SK', i18n.t('countries.SK')],
     ['UA', i18n.t('countries.UA')],
     ['US', i18n.t('countries.US')],
+    ['ZA', i18n.t('countries.ZA')],
+    ['MA', i18n.t('countries.MA')],
   ]);
 
 export const getLanguagesTransMap = (): Map<string, string> =>
