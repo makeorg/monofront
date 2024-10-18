@@ -3,6 +3,7 @@ import {
   LOAD_QUESTION,
   QUESTION_POPULAR_TAGS_LOAD,
   QUESTION_PERSONALITIES_LOAD,
+  LOAD_QUESTION_RESULTS,
 } from '../../actionTypes';
 
 export const questions_state: StateQuestions = {};
@@ -19,6 +20,14 @@ export const questions_reducer = (
         [action.payload.question.slug]: {
           ...state[action.payload.question.slug],
           question: action.payload.question,
+        },
+      };
+    case LOAD_QUESTION_RESULTS:
+      return {
+        ...state,
+        [action.payload.questionSlug]: {
+          ...state[action.payload.questionSlug],
+          questionResults: action.payload.results,
         },
       };
     case QUESTION_POPULAR_TAGS_LOAD:

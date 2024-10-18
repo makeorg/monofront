@@ -1,13 +1,16 @@
 import React, { useState, useEffect, FC } from 'react';
 import loadable from '@loadable/component';
 import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
-import { QuestionType, QuestionResultsType, ILogger } from '@make.org/types';
+import { QuestionType, ILogger } from '@make.org/types';
 import i18n from 'i18next';
 import { MiddlePageWrapperStyle } from '@make.org/ui/elements/MainElements';
 import { trackDisplayResultsPage } from '@make.org/utils/services/Tracking';
 import { Spinner } from '@make.org/ui/components/Loading/Spinner';
 import { GliderStylesheet } from '@make.org/assets/css-in-js/GliderStyle';
-import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import {
+  selectCurrentQuestion,
+  selectQuestionResults,
+} from '@make.org/store/selectors/questions.selector';
 import { ThemeProvider } from 'styled-components';
 import { ExpressService } from '@make.org/utils/services/Express';
 import { SvgLightBulb, SvgLightning } from '@make.org/ui/Svg/elements';
@@ -15,6 +18,7 @@ import { ExternalLinkIconStyle } from '@make.org/ui/elements/ButtonsElements';
 import { IDS } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
 import { MetaTags } from '@make.org/components/MetaTags';
+import { loadQuestionResults } from '@make.org/store/actions/questions';
 import {
   ParticipateContentStyle,
   ParticipateMainContentStyle,
@@ -49,8 +53,9 @@ type Props = {
 };
 
 const ResultPage: FC<Props> = ({ logger }) => {
-  const { state } = useAppContext();
+  const { dispatch, state } = useAppContext();
   const question: QuestionType = selectCurrentQuestion(state);
+  const questionResults = selectQuestionResults(state, question.slug);
 
   const { device } = state.appConfig;
   const isDesktop = matchDesktopDevice(device);
@@ -75,15 +80,15 @@ const ResultPage: FC<Props> = ({ logger }) => {
       </MiddlePageWrapperStyle>
     </>
   );
-  const [questionResults, setResults] = useState<QuestionResultsType>();
 
   const initResults = async () => {
-    const results = await expressService.getResults(question.questionId, () =>
-      setAlternativeContent(<NotFoundPage />)
+    const fetchedResults = await expressService.getResults(
+      question.questionId,
+      () => setAlternativeContent(<NotFoundPage />)
     );
 
-    if (results) {
-      setResults(results);
+    if (fetchedResults) {
+      dispatch(loadQuestionResults(question.slug, fetchedResults));
     }
   };
 
@@ -107,7 +112,10 @@ const ResultPage: FC<Props> = ({ logger }) => {
   );
 
   useEffect(() => {
-    initResults();
+    if (!questionResults) {
+      initResults();
+    }
+
     trackDisplayResultsPage();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

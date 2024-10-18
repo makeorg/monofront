@@ -3,6 +3,7 @@ import { Request, Response } from 'express';
 import { createInitialState } from '@make.org/store/initialState';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { ServerLogger } from '@make.org/logger/serverLogger';
+import { getRouteResults } from '@make.org/utils/routes';
 import { reactRender } from '../reactRender';
 import { QuestionService } from '../service/QuestionService';
 
@@ -50,6 +51,10 @@ export const sequenceRoute = async (
 
   if (!isInProgress(question) && !question.displayResults) {
     return res.redirect(question.aboutUrl);
+  }
+
+  if (!isInProgress(question) && question.displayResults) {
+    return res.redirect(getRouteResults(country, question.slug));
   }
 
   updateTrackingQuestionParam(question);

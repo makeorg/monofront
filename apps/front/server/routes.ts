@@ -84,6 +84,7 @@ import { questionRoute } from './ssr/questionRoute';
 import { sequenceRoute } from './ssr/sequenceRoute';
 import { passwordRecoveryRoute } from './ssr/passwordRecoveryRoute';
 import { homepageRoute } from './ssr/homepageRoute';
+import { resultsRoute } from './ssr/resultsRoute';
 
 function setCustomCacheControl(res: Response, path: string) {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -200,7 +201,7 @@ export const initRoutes = (app: Application): void => {
   app.get(ROUTE_CONSULTATION, frontMiddlewares, questionRoute);
   app.get(ROUTE_PARTICIPATE, frontMiddlewares, questionRoute);
   app.get(ROUTE_EXPLORE, frontMiddlewares, questionRoute);
-  addGetWithPreview(ROUTE_RESULTS, frontMiddlewares, questionRoute);
+  addGetWithPreview(ROUTE_RESULTS, frontMiddlewares, resultsRoute);
   app.get(ROUTE_TOP_IDEAS, frontMiddlewares, questionRoute);
   app.get(ROUTE_TOP_IDEA_DETAILS, frontMiddlewares, questionRoute);
   app.get(ROUTE_SEQUENCE, frontMiddlewares, sequenceByKindRoute);

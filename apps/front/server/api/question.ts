@@ -11,7 +11,9 @@ const ALLOWED_URL = env.frontUrl();
 const cache = new NodeCache({ stdTTL: 300 });
 const CACHE_NAME = 'RESULT';
 
-const getFromJsonFile = async (questionId: string) => {
+export const getFromJsonFile = async (
+  questionId: string
+): Promise<string | undefined> => {
   const logger = ServerLogger.getInstance();
   const questionSlug = await QuestionService.getQuestionSlug(
     questionId,

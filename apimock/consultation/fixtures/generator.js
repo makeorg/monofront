@@ -13,6 +13,7 @@ const defaultNeutralQualifications = require('../db/defaultNeutralQualifications
 const defaultTopIdea = require('../db/defaultTopIdea.json');
 const defaultSequenceKeyword = require('../db/defaultSequenceKeyword.json');
 const defaultDemographics = require('../db/defaultDemographics.json');
+const defaultResults = require('../db/defaultResults.json');
 
 const range = (start, end) => {
   const values = [];
@@ -630,6 +631,7 @@ const fixtures = {
   keywords,
   standarDemographics,
   bindingDemographics,
+  results: defaultResults,
 };
 
 module.exports = { fixtures };

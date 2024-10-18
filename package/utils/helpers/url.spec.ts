@@ -97,6 +97,12 @@ describe('Url Helper', () => {
     );
   });
 
+  it('return results link', () => {
+    const link = urlHelper.getResultsLink(country, questionSlug);
+
+    expect(link).toEqual(`/${country}/consultation/${questionSlug}/results`);
+  });
+
   // webflow partnership links
   it('return webflow partnership fr external link', () => {
     const link = urlHelper.getWebflowDynamicLink('fr', '/foo');

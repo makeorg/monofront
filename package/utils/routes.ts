@@ -236,6 +236,24 @@ export const getPaginatedRoute = (
       : ''
   );
 
+/**
+ * Get the search organisations results route
+ *
+ * @param  {string} country
+ * @param  {string} questionSlug
+ * @param  {string} query
+ * @return {string}
+ */
+
+export const getRouteResults = (
+  country: string,
+  questionSlug: string
+): string =>
+  generatePath(ROUTE_RESULTS, {
+    country,
+    questionSlug,
+  });
+
 export const isParticipatePage = (
   pathname: string,
   includingPreview = true

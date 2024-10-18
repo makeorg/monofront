@@ -8,6 +8,7 @@ const viewsRouter = require('./routes/views.js');
 const oauthRouter = require('./routes/oauth.js');
 const sequenceRouter = require('./routes/sequence.js');
 const securityRouter = require('./routes/security.js');
+const resultsRouter = require('./routes/results.js');
 
 const server = jsonServer.create();
 const middlewares = jsonServer.defaults({ logger: false });
@@ -37,6 +38,7 @@ server.use((req, res, next) => {
   next();
 });
 server.use('/questions', questionsRouter);
+server.use('/consultation-results', resultsRouter);
 server.use('/user', userRouter);
 server.use('/proposals', proposalsRouter);
 server.use('/tags', tagsRouter);

@@ -3,6 +3,7 @@ import { createInitialState } from '@make.org/store/initialState';
 import { updateTrackingQuestionParam } from '@make.org/utils/helpers/question';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { ServerLogger } from '@make.org/logger/serverLogger';
+import { getRouteResults } from '@make.org/utils/routes';
 import { reactRender } from '../reactRender';
 import { QuestionService } from '../service/QuestionService';
 
@@ -49,6 +50,10 @@ export const questionRoute = async (
 
   if (!isInProgress(question) && !question.displayResults) {
     return res.redirect(question.aboutUrl);
+  }
+
+  if (!isInProgress(question) && question.displayResults) {
+    return res.redirect(getRouteResults(country, question.slug));
   }
 
   updateTrackingQuestionParam(question);

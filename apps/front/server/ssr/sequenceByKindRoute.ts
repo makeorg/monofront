@@ -18,6 +18,7 @@ import {
   getSequencePopularLink,
 } from '@make.org/utils/helpers/url';
 import { ServerLogger } from '@make.org/logger/serverLogger';
+import { getRouteResults } from '@make.org/utils/routes';
 import { reactRender } from '../reactRender';
 import { QuestionService } from '../service/QuestionService';
 
@@ -99,6 +100,10 @@ export const sequenceByKindRoute = async (
 
   if (!isInProgress(question) && !question.displayResults) {
     return res.redirect(question.aboutUrl);
+  }
+
+  if (!isInProgress(question) && question.displayResults) {
+    return res.redirect(getRouteResults(country, question.slug));
   }
 
   const sequenceMandatoryRequestHeaders: ApiServiceHeadersType = {

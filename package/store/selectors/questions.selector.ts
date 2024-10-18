@@ -1,4 +1,5 @@
 import {
+  QuestionResultsType,
   QuestionType,
   SingleStateQuestionType,
   StateRoot,
@@ -33,4 +34,18 @@ const selectQuestion = (
 export const selectCurrentQuestion = (state: StateRoot): QuestionType => {
   const questionSlug = state.currentQuestion;
   return selectQuestion(state, questionSlug || '');
+};
+
+/**
+ * question results selector
+ * @param {*} state
+ * @param {string} questionSlug
+ */
+export const selectQuestionResults = (
+  state: StateRoot,
+  questionSlug: string
+): QuestionResultsType | undefined => {
+  const data = selectQuestionData(state, questionSlug);
+
+  return data?.questionResults;
 };
