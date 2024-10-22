@@ -64,6 +64,7 @@ export const FinalCard: React.FC<Props> = ({ configuration, questionSlug }) => {
         <BlackBorderLinkStyle
           to={getParticipateLink(country, questionSlug)}
           onClick={() => trackClickOperationPage()}
+          id="consult"
         >
           {i18n.t('final_card.link_text')}
         </BlackBorderLinkStyle>
@@ -73,6 +74,7 @@ export const FinalCard: React.FC<Props> = ({ configuration, questionSlug }) => {
             trackClickRelaunchSequence();
             dispatch(relaunchSequence(true));
           }}
+          id="vote"
         >
           <SkipIconStyle aria-hidden focusable="false" />
           {i18n.t('final_card.continue')}
