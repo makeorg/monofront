@@ -86,6 +86,7 @@ export const cspMiddleware = (
         'https://*.google.com',
         'https://*.hotjar.com',
         'https://widget.told.club',
+        'https://calendly.com/',
       ],
       fontSrc: [...defaultDirectives.fontSrc, 'https://*.hotjar.com'],
     },
