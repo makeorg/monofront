@@ -13,10 +13,7 @@ variables:
 
 # Stage
 stages:
-  - check
-  - build
   - deploy
-  - merge
 
 # Workflow
 workflow:
@@ -49,84 +46,15 @@ workflow:
   environment: production
   when: manual
 
-# Check
-.check:
-  stage: check
-  extends: .on-merge-request
-  tags:
-    - large
-  variables:
-    YARN_VERSION: '3.2.3'
-  image: node:18.17-alpine
-  before_script:
-    - node -v
-    - corepack enable yarn
-    - corepack prepare
-    - yarn install
-
-# Check
-lint:
-  extends: .check
-  script:
-    - yarn eslint ./
-
-check-types:
-  extends: .check
-  script:
-    - yarn tsc --noEmit
-
-test:
-  extends: .check
-  script:
-    - yarn jest --coverage
-  artifacts:
-    expire_in: 1 week
-    when: always
-    paths:
-      - coverage
-
-jscpd:
-  extends: .check
-  script:
-    - yarn jscpd
-  artifacts:
-    expire_in: 1 week
-    when: always
-    paths:
-      - reports
-
-# Build
-build-assembly-ui-beta:
-  extends:
-    - .build
-
 # Deploy
 deploy-assembly-ui-beta-preproduction:
   extends:
     - .deploy
     - .preprod
+  script:
+    - echo $RUNDECK_JOB_ID
 
 deploy-assembly-ui-beta-production:
   extends:
     - .deploy
     - .prod
-
-# Merge
-merge-to-assembly-ui-beta-prod:
-  extends:
-    - .merge
-    - .on-assembly-ui-beta-preproduction
-  script:
-    - mkdir -p ~/.ssh/
-    - chmod 700 ~/.ssh
-    - ssh-keyscan -t rsa gitlab.com > ~/.ssh/known_hosts
-    - echo "${DEPLOY_PRIVATE_KEY}" > ~/.ssh/id_rsa
-    - chmod 600 ~/.ssh/id_rsa
-    - export CI_PUSH_REPO=`echo $CI_REPOSITORY_URL | perl -pe 's#.*@(.+?(\:\d+)?)/#git@\1:#'`
-    - echo "Target repo is ${CI_PUSH_REPO}"
-    - git config --global user.email "${GITLAB_USER_EMAIL}"
-    - git config --global user.name "${GITLAB_USER_NAME}"
-    - git remote set-url origin "${CI_PUSH_REPO}"
-    - git checkout assembly-ui-beta-production
-    - git merge --ff-only origin/assembly-ui-beta-preproduction
-    - git push origin assembly-ui-beta-production:assembly-ui-beta-production
