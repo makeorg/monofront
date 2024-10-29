@@ -32,7 +32,6 @@
     "**/types/**",
     "**/package/logger/**",
     "**/package/store/index.tsx",
-    "**/apps/assembly-ui/store/context.tsx",
     "**/package/utils/services/Trackers/*",
     "**/package/api/services/ExpressApiService.ts",
     "**/trackingConfiguration.yaml",

@@ -18,21 +18,6 @@ workflow:
 
 # Rule
 .rules-apps:
-  on-assembly-ui-changes:
-    changes:
-      - .gitlab-ci.yml
-      - package/**/*
-      - package.json
-      - yarn.lock
-      - apps/assembly-ui/**/*
-    variables:
-      APP_NAME: assembly-ui
-      APP_WORKSPACE: '@make.org/assembly-ui'
-      APP_CYPRESS_TASK: ci:cypress:assembly-ui
-      IMAGE_NAME: $NEXUS_URL/assembly-ui
-      IMAGE_APP_TARGET: app-production
-      IMAGE_APP_PATH: apps/assembly-ui/Dockerfile
-      RUNDECK_JOB_ID: $RUNDECK_ASSEMBLY_UI_JOB_ID
   on-front-changes:
     changes:
       - .gitlab-ci.yml
@@ -81,10 +66,6 @@ workflow:
   rules:
     - !reference [.rules, never-on-protected-branch]
     - !reference [.rules-apps, on-widget-changes]
-.assembly-ui:
-  rules:
-    - !reference [.rules, never-if-environment-mismatch-branch]
-    - !reference [.rules-apps, on-assembly-ui-changes]
 .front:
   rules:
     - !reference [.rules, never-if-environment-mismatch-branch]
@@ -166,11 +147,6 @@ integration-widget:
     - .on-widget-merge-request
 
 # Build
-build-make-assembly-ui:
-  extends:
-    - .build
-    - .assembly-ui
-
 build-make-front:
   extends:
     - .build
@@ -182,12 +158,6 @@ build-make-widget:
     - .widget
 
 # Deploy
-deploy-preproduction-assembly-ui:
-  extends:
-    - .deploy
-    - .preprod
-    - .assembly-ui
-
 deploy-preproduction-front:
   extends:
     - .deploy
@@ -199,12 +169,6 @@ deploy-preproduction-widget:
     - .deploy
     - .preprod
     - .widget
-
-deploy-production-assembly-ui:
-  extends:
-    - .deploy
-    - .prod
-    - .assembly-ui
 
 deploy-production-front:
   extends:

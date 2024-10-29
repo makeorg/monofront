@@ -75,7 +75,6 @@ For further informations, please refers to each README.md :
 
 - [Front](./apps/front/README.md)
 - [Widget](./apps/widget/README.md)
-- [Assembly-ui](./apps/assembly-ui/README.md)
 
 ## <a name="contributing"></a>Contributing
 

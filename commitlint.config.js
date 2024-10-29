@@ -16,7 +16,6 @@ module.exports = {
         'utils',
         'widget',
         'designsystem',
-        'assembly-ui',
         'tracking',
       ],
     ],

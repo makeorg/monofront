@@ -1,1 +1,0 @@
-export const SET_EVENT_SOURCES = 'SET_EVENT_SOURCES';

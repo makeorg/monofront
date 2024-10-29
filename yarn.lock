@@ -3256,105 +3256,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@make.org/assembly-ui@workspace:apps/assembly-ui":
-  version: 0.0.0-use.local
-  resolution: "@make.org/assembly-ui@workspace:apps/assembly-ui"
-  dependencies:
-    "@babel/core": ^7.18.10
-    "@babel/plugin-proposal-class-properties": ^7.18.6
-    "@babel/plugin-proposal-optional-chaining": ^7.18.9
-    "@babel/preset-env": ^7.22.10
-    "@babel/preset-react": ^7.22.5
-    "@babel/preset-typescript": ^7.22.5
-    "@babel/register": 7.18.9
-    "@loadable/babel-plugin": ^5.13.2
-    "@loadable/component": 5.15.2
-    "@loadable/server": 5.15.2
-    "@loadable/webpack-plugin": 5.15.2
-    "@make.org/api": ^0.1.0
-    "@make.org/assets": 0.1.0
-    "@make.org/designsystem": 0.1.0
-    "@make.org/logger": "workspace:^"
-    "@make.org/store": 0.1.0
-    "@make.org/tracking": ^0.1.0
-    "@make.org/types": 0.1.0
-    "@make.org/ui": 0.1.0
-    "@make.org/utils": 0.1.0
-    "@types/compression": ^1.7.2
-    "@types/cors": ^2.8.12
-    "@types/express": ^4.17.14
-    "@types/glider-js": ^1
-    "@types/loadable__component": ^5
-    "@types/loadable__server": ^5.12.6
-    "@types/loadable__webpack-plugin": ^5
-    "@types/object-hash": ^3
-    "@types/react": ^18.2.21
-    "@types/react-dom": ^18.2.7
-    "@types/react-modal": ^3
-    "@types/serve-favicon": ^2.5.3
-    "@types/serve-static": ^1
-    "@types/styled-components": ^5.1.26
-    "@types/ua-parser-js": ^0.7.36
-    "@types/universal-cookie": ^3.0.0
-    "@types/uuid": ^8.3.4
-    "@types/webpack-node-externals": ^3
-    axios: ~0.26.1
-    babel-loader: 8.2.5
-    babel-plugin-convert-to-json: ^0.1.0
-    can-ndjson-stream: ^1.0.2
-    compression: ~1.7.3
-    core-js: ^3.24.1
-    cors: ^2.8.5
-    dotenv: ^16.3.1
-    dotenv-webpack: ^8.0.1
-    express: ^4.18.2
-    favicons: 6.2.2
-    favicons-webpack-plugin: ^5.0.2
-    file-loader: ^6.2.0
-    glider-js: 1.7.8
-    helmet-csp: ^3.4.0
-    html-webpack-inline-source-plugin: 1.0.0-beta.2
-    html-webpack-plugin: ^5.5.0
-    http-proxy-middleware: 2.0.6
-    i18next: ^23.5.0
-    node-cache: ^5.1.2
-    object-hash: ^3.0.0
-    pm2: ~5.2.2
-    query-string: ^7.1.1
-    react: ^18.2.0
-    react-cookie: ^4.1.1
-    react-cookiefirst: ^0.1.2
-    react-dom: ^18.2.0
-    react-head: ^3.4.2
-    react-markdown: ^8.0.5
-    react-modal: ^3.15.1
-    react-player: ^2.13.0
-    react-router: ^5.3.4
-    react-router-dom: ^5.3.4
-    regenerator-runtime: ^0.13.7
-    remark-flexible-paragraphs: ^1.0.1
-    remark-gfm: ^3.0.1
-    serialize-javascript: ^6.0.1
-    serve-favicon: ^2.5.0
-    serve-static: ~1.14.2
-    styled-components: 5.3.5
-    terser-webpack-plugin: ^5.3.3
-    ts-node: ^10.9.2
-    ua-parser-js: ~0.7.31
-    universal-cookie: ~4.0.4
-    universal-cookie-express: ~4.0.0
-    uuid: ^8.3.2
-    webpack: ^5.74.0
-    webpack-cli: ^4.10.0
-    webpack-dev-server: ^3.11.3
-    webpack-manifest: ^1.0.8
-    webpack-manifest-plugin: ^3.1.1
-    webpack-merge: ^5.8.0
-    webpack-node-externals: ^3.0.0
-    winston: ~3.3.4
-  languageName: unknown
-  linkType: soft
-
 "@make.org/assets@0.1.0, @make.org/assets@^0.1.0, @make.org/assets@workspace:package/assets":
   version: 0.0.0-use.local
   resolution: "@make.org/assets@workspace:package/assets"
@@ -3598,7 +3499,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@make.org/tracking@^0.1.0, @make.org/tracking@workspace:package/tracking":
+"@make.org/tracking@workspace:package/tracking":
   version: 0.0.0-use.local
   resolution: "@make.org/tracking@workspace:package/tracking"
   dependencies:
@@ -6369,13 +6270,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/glider-js@npm:^1":
-  version: 1.7.11
-  resolution: "@types/glider-js@npm:1.7.11"
-  checksum: 12368b5ebc9d8ae87588fafbb908e33fc86278ec2e2a4359f87dc3bc685abcc8ce90b327ccd2a0f87cbc79e0521a209132870f357158c3d371521195a66a7e0e
-  languageName: node
-  linkType: hard
-
 "@types/glob@npm:^7.1.1":
   version: 7.2.0
   resolution: "@types/glob@npm:7.2.0"
@@ -6530,30 +6424,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/loadable__component@npm:^5":
-  version: 5.13.8
-  resolution: "@types/loadable__component@npm:5.13.8"
-  dependencies:
-    "@types/react": "*"
-  checksum: a521e104a10acf00210d63b802a2a21a66a8e584aed90762e506f469c7d8c2e4c7e3a852dc7438015326ed3e54245884c32f816f519581f4b240795165bb6bdc
-  languageName: node
-  linkType: hard
-
 "@types/loadable__server@npm:^5.12.6":
   version: 5.12.10
   resolution: "@types/loadable__server@npm:5.12.10"
   dependencies:
     "@types/react": "*"
   checksum: ad64113936a73b62ab43684800d3451c9bad11c19111562e6c5cd18d166d4aecaa50e82d059c20a71a0517bd8d966c212ff792723864da3106484f8df0be2e96
-  languageName: node
-  linkType: hard
-
-"@types/loadable__webpack-plugin@npm:^5":
-  version: 5.7.6
-  resolution: "@types/loadable__webpack-plugin@npm:5.7.6"
-  dependencies:
-    "@types/webpack": ^4
-  checksum: 8d6a447d56694a8c66f39b78bb1d0cf9b6676f743e5f5121e3c4c2bb13a83c209bd01b9b2052d6752cec94421a68a25e1c58e4487214286622d35b6cce176368
   languageName: node
   linkType: hard
 
@@ -6759,15 +6635,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-modal@npm:^3":
-  version: 3.16.3
-  resolution: "@types/react-modal@npm:3.16.3"
-  dependencies:
-    "@types/react": "*"
-  checksum: 53c92dfbe46aae6f4ca4d96a166fd69a4b8dc539c5e8f755086dd1471656924ca6dd0a179be746c634686a0073aef67bb9615ee8600d9536cc1521b738e48453
-  languageName: node
-  linkType: hard
-
 "@types/react-router-dom@npm:5.3.3":
   version: 5.3.3
   resolution: "@types/react-router-dom@npm:5.3.3"
@@ -6870,7 +6737,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/serve-static@npm:*, @types/serve-static@npm:^1":
+"@types/serve-static@npm:*":
   version: 1.15.5
   resolution: "@types/serve-static@npm:1.15.5"
   dependencies:
@@ -6895,13 +6762,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/source-list-map@npm:*":
-  version: 0.1.6
-  resolution: "@types/source-list-map@npm:0.1.6"
-  checksum: 9cd294c121f1562062de5d241fe4d10780b1131b01c57434845fe50968e9dcf67ede444591c2b1ad6d3f9b6bc646ac02cc8f51a3577c795f9c64cf4573dcc6b1
-  languageName: node
-  linkType: hard
-
 "@types/stack-utils@npm:^2.0.0":
   version: 2.0.3
   resolution: "@types/stack-utils@npm:2.0.3"
@@ -6917,13 +6777,6 @@ __metadata:
     "@types/react": "*"
     csstype: ^3.0.2
   checksum: 7868066a15afe42d8b353953fc196a7f11a9918b1c980f51d21bb9b49e309c7fe2d730be2d3dc48e92ab4de20f44a3c9dfe6cc98b6ea4dd02655e6f8128171b6
-  languageName: node
-  linkType: hard
-
-"@types/tapable@npm:^1":
-  version: 1.0.12
-  resolution: "@types/tapable@npm:1.0.12"
-  checksum: 5312fbc01e0135bd11b44cfea2bf29943807cd9675c10bbed13873ad0e73f656993fb88bb6ceaf05b12a55c570e6acc0267faf59e9c4d2f032fc833bafcf0597
   languageName: node
   linkType: hard
 
@@ -6954,15 +6807,6 @@ __metadata:
   version: 0.7.39
   resolution: "@types/ua-parser-js@npm:0.7.39"
   checksum: 81046605eb2815b098228743b7dfde887cc8990369f2ad56e71f1400b4cef5078481c7ca91ca3dddf2e8d4e183fe93224bfdeee13bfe034a1e62d55cfbac9e26
-  languageName: node
-  linkType: hard
-
-"@types/uglify-js@npm:*":
-  version: 3.17.4
-  resolution: "@types/uglify-js@npm:3.17.4"
-  dependencies:
-    source-map: ^0.6.1
-  checksum: fe28aea9a24f4960ff46960fb3ca9d96a2e3c2f5abb15843d35fbda5425edc7bd541a1185415ae1f48fe37ca202603ebb96cd96040b03cc82721d80fdb863af4
   languageName: node
   linkType: hard
 
@@ -7007,41 +6851,6 @@ __metadata:
   version: 1.18.4
   resolution: "@types/webpack-env@npm:1.18.4"
   checksum: f195b3ae974ac3b631477b57737dad7b6c44ecca86770cf3c29f284e02961c9f2dfc619e3e253d8c23966864cb052b1e8437e9834ede32ac97972e6e2235bb51
-  languageName: node
-  linkType: hard
-
-"@types/webpack-node-externals@npm:^3":
-  version: 3.0.4
-  resolution: "@types/webpack-node-externals@npm:3.0.4"
-  dependencies:
-    "@types/node": "*"
-    webpack: ^5
-  checksum: 5f8490c33a647c671ec986ac34fc02b80cd5d4574db529a5c12ecec6d99fd8bf38aa2cdcd0ffcff9ee1bc4ee689b5761d00ad2a7cae4d544a341e326084169c2
-  languageName: node
-  linkType: hard
-
-"@types/webpack-sources@npm:*":
-  version: 3.2.3
-  resolution: "@types/webpack-sources@npm:3.2.3"
-  dependencies:
-    "@types/node": "*"
-    "@types/source-list-map": "*"
-    source-map: ^0.7.3
-  checksum: 7b557f242efaa10e4e3e18cc4171a0c98e22898570caefdd4f7b076fe8534b5abfac92c953c6604658dcb7218507f970230352511840fe9fdea31a9af3b9a906
-  languageName: node
-  linkType: hard
-
-"@types/webpack@npm:^4":
-  version: 4.41.38
-  resolution: "@types/webpack@npm:4.41.38"
-  dependencies:
-    "@types/node": "*"
-    "@types/tapable": ^1
-    "@types/uglify-js": "*"
-    "@types/webpack-sources": "*"
-    anymatch: ^3.0.0
-    source-map: ^0.6.0
-  checksum: d3de65993ef3a7621f75548c2f6f509e8f87f586032238e999743d6067030655c67e38ec5f8b32e04fa5276c83bdfb7a761773bce0e6f28605da87e3fc388e3e
   languageName: node
   linkType: hard
 
@@ -7913,7 +7722,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"anymatch@npm:^3.0.0, anymatch@npm:^3.0.3, anymatch@npm:^3.1.0, anymatch@npm:~3.1.2":
+"anymatch@npm:^3.0.3, anymatch@npm:^3.1.0, anymatch@npm:~3.1.2":
   version: 3.1.3
   resolution: "anymatch@npm:3.1.3"
   dependencies:
@@ -9737,22 +9546,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"can-namespace@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "can-namespace@npm:1.0.0"
-  checksum: 93a27be2c89bde52941bc18b606399c0cbbed596ac525f611a6fc66b7f684e678f4675ac9a53d0e25457159762e656505d23b55fdb1d116c30a7d78d18723577
-  languageName: node
-  linkType: hard
-
-"can-ndjson-stream@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "can-ndjson-stream@npm:1.0.2"
-  dependencies:
-    can-namespace: ^1.0.0
-  checksum: 5aa9871c5e21c3ad007d3045aa13f80a804d5cd919c457d4402bd4a3b29276b608c071783a85c20f5ef03d562a224f7beccff499debaa5f16d05f70bfe58e0b9
-  languageName: node
-  linkType: hard
-
 "caniuse-lite@npm:^1.0.30001565":
   version: 1.0.30001571
   resolution: "caniuse-lite@npm:1.0.30001571"
@@ -10525,7 +10318,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"compression@npm:^1.7.4, compression@npm:~1.7.3":
+"compression@npm:^1.7.4":
   version: 1.7.4
   resolution: "compression@npm:1.7.4"
   dependencies:
@@ -11537,7 +11330,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"deepmerge@npm:^4.0.0, deepmerge@npm:^4.2.0, deepmerge@npm:^4.2.2":
+"deepmerge@npm:^4.2.0, deepmerge@npm:^4.2.2":
   version: 4.3.1
   resolution: "deepmerge@npm:4.3.1"
   checksum: 2024c6a980a1b7128084170c4cf56b0fd58a63f2da1660dcfe977415f27b17dbe5888668b59d0b063753f3220719d5e400b7f113609489c90160bb9a5518d052
@@ -12180,17 +11973,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv-webpack@npm:^8.0.1":
-  version: 8.0.1
-  resolution: "dotenv-webpack@npm:8.0.1"
-  dependencies:
-    dotenv-defaults: ^2.0.2
-  peerDependencies:
-    webpack: ^4 || ^5
-  checksum: ee73eda78df90bcf7446763dfe5e518a2054ed6222783856912d2c6a255fdfc041854e125e036ff2603b06fb44f5234713fad5feecb1e66a54fe78a35a98fb87
-  languageName: node
-  linkType: hard
-
 "dotenv@npm:^10.0.0":
   version: 10.0.0
   resolution: "dotenv@npm:10.0.0"
@@ -12198,7 +11980,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^16.0.0, dotenv@npm:^16.3.1":
+"dotenv@npm:^16.0.0":
   version: 16.3.1
   resolution: "dotenv@npm:16.3.1"
   checksum: 15d75e7279018f4bafd0ee9706593dd14455ddb71b3bcba9c52574460b7ccaf67d5cf8b2c08a5af1a9da6db36c956a04a1192b101ee102a3e0cf8817bbcf3dfd
@@ -14663,7 +14445,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glider-js@npm:1.7.8, glider-js@npm:^1.7.7":
+"glider-js@npm:^1.7.7":
   version: 1.7.8
   resolution: "glider-js@npm:1.7.8"
   checksum: d651e10be8b27a7038541e85fdf0cb47bc5cc43363e617612eb6ebe573d2e6c2ce43b077323ba558fb7446cc8124f16cb9d2fc5499b6c356ed7427082822f6d7
@@ -18224,13 +18006,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"load-script@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "load-script@npm:1.0.0"
-  checksum: 8458e3f07b4a86f8d9d66e47a987811491a5d013af23ba7b371c6d3c9dc899885b072ccf65abf7874c10cb197d4975eacd8a7a125bfb38dbbcb267539f5dc1e9
-  languageName: node
-  linkType: hard
-
 "loader-runner@npm:^4.2.0":
   version: 4.3.0
   resolution: "loader-runner@npm:4.3.0"
@@ -18964,13 +18739,6 @@ __metadata:
   dependencies:
     fs-monkey: ^1.0.4
   checksum: 18dfdeacad7c8047b976a6ccd58bc98ba76e122ad3ca0e50a21837fe2075fc0d9aafc58ab9cf2576c2b6889da1dd2503083f2364191b695273f40969db2ecc44
-  languageName: node
-  linkType: hard
-
-"memoize-one@npm:^5.1.1":
-  version: 5.2.1
-  resolution: "memoize-one@npm:5.2.1"
-  checksum: a3cba7b824ebcf24cdfcd234aa7f86f3ad6394b8d9be4c96ff756dafb8b51c7f71320785fbc2304f1af48a0467cbbd2a409efc9333025700ed523f254cb52e3d
   languageName: node
   linkType: hard
 
@@ -20308,7 +20076,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"object-hash@npm:3.0.0, object-hash@npm:^3.0.0":
+"object-hash@npm:3.0.0":
   version: 3.0.0
   resolution: "object-hash@npm:3.0.0"
   checksum: 80b4904bb3857c52cc1bfd0b52c0352532ca12ed3b8a6ff06a90cd209dfda1b95cee059a7625eb9da29537027f68ac4619363491eedb2f5d3dddbba97494fd6c
@@ -22233,16 +22001,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-cookiefirst@npm:^0.1.2":
-  version: 0.1.2
-  resolution: "react-cookiefirst@npm:0.1.2"
-  peerDependencies:
-    react: ^16.8.0
-    react-dom: ^16.8.0
-  checksum: ebf0fa1db10923f9d9061d2ae9d3c7ca0f07d4f958d23ad1db74d1651a939a9cd5285014473af25b10740bece1ae6a0ce37b0e981cf1a5c74cfcb6bc75124ff7
-  languageName: node
-  linkType: hard
-
 "react-docgen-typescript@npm:^2.2.2":
   version: 2.2.2
   resolution: "react-docgen-typescript@npm:2.2.2"
@@ -22302,13 +22060,6 @@ __metadata:
   peerDependencies:
     react: ^16.0.0
   checksum: e644da474c6bf308e9a862c55397d61fd876a088345f3e9d234ec457eb3c205d1deb1263c5000005adfc1899bf6774cf761ee670c33bd6b0887f0dfd3bdff957
-  languageName: node
-  linkType: hard
-
-"react-fast-compare@npm:^3.0.1":
-  version: 3.2.2
-  resolution: "react-fast-compare@npm:3.2.2"
-  checksum: 2071415b4f76a3e6b55c84611c4d24dcb12ffc85811a2840b5a3f1ff2d1a99be1020d9437ee7c6e024c9f4cbb84ceb35e48cf84f28fcb00265ad2dfdd3947704
   languageName: node
   linkType: hard
 
@@ -22404,21 +22155,6 @@ __metadata:
     react: ^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18
     react-dom: ^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18
   checksum: 978936e9320fad839c039b9ee4de55d40888156cb40e093615d6fbc2ff07139d5db06f14782cb7767f780bd5fb57956778669426c535ebc0068a7a03882c7e75
-  languageName: node
-  linkType: hard
-
-"react-player@npm:^2.13.0":
-  version: 2.14.1
-  resolution: "react-player@npm:2.14.1"
-  dependencies:
-    deepmerge: ^4.0.0
-    load-script: ^1.0.0
-    memoize-one: ^5.1.1
-    prop-types: ^15.7.2
-    react-fast-compare: ^3.0.1
-  peerDependencies:
-    react: ">=16.6.0"
-  checksum: 19b496d26d571a8dd7cb60930ba32e31d83a17cf11846e59d70954c206d025665106528a1fafc429ce08fd2cdfaadbd8301746a5f92a6c13b8c27963d0c80a05
   languageName: node
   linkType: hard
 
@@ -25681,7 +25417,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-node@npm:^10.8.1, ts-node@npm:^10.9.2":
+"ts-node@npm:^10.8.1":
   version: 10.9.2
   resolution: "ts-node@npm:10.9.2"
   dependencies:
@@ -26311,7 +26047,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"universal-cookie@npm:^4.0.0, universal-cookie@npm:^4.0.4, universal-cookie@npm:~4.0.4":
+"universal-cookie@npm:^4.0.0, universal-cookie@npm:^4.0.4":
   version: 4.0.4
   resolution: "universal-cookie@npm:4.0.4"
   dependencies:

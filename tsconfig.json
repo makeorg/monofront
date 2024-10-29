@@ -47,7 +47,6 @@
     "paths": {
       "@make.org/widget": ["./apps/widget/*"],
       "@make.org/front": ["./apps/front/*"],
-      "@make.org/assembly-ui": ["./apps/assembly-ui/*"],
       "@make.org/types": ["./package/types/*"],
       "@make.org/api": ["./package/api/*"],
       "@make.org/assets": ["./package/assets/*"],
