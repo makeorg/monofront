@@ -91,7 +91,9 @@ export const ProposalForm: FC<Props> = ({ logger }) => {
   };
 
   const handleValueChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    if (pendingProposal.length < baitText.length + 1) {
+    const validBaitText = event.currentTarget.value.startsWith(baitText);
+
+    if (pendingProposal.length < baitText.length + 1 || !validBaitText) {
       return setProposalContent(`${baitText} `);
     }
 
