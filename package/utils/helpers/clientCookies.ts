@@ -7,6 +7,7 @@ import { env } from '@make.org/assets/env';
 import { hotjar } from 'react-hotjar';
 import { twitter } from '@make.org/utils/services/Trackers/twttr.js';
 import { TwitterPixel } from '@make.org/utils/services/Trackers/TwitterTracking';
+import { SnapchatTracking } from '../services/Trackers/SnapchatTracking';
 
 declare global {
   interface Window {
@@ -74,6 +75,9 @@ export const initTrackersFromPreferences = (
   const shouldInitFbPixel =
     trackingConsent.facebook_tracking && !FacebookTracking.isInitialized();
 
+  const shouldInitSnapPixel =
+    trackingConsent.snapchat_tracking && !SnapchatTracking.isInitialized();
+
   if (shouldInitFbPixel && visitorId) {
     FacebookTracking.init(logger, visitorId);
     FacebookTracking.pageView();
@@ -91,6 +95,16 @@ export const initTrackersFromPreferences = (
   if (enableMixPanel) {
     MixpanelTracking.init(logger);
   }
+
+  if (shouldInitSnapPixel && visitorId) {
+    SnapchatTracking.init(logger, visitorId);
+    SnapchatTracking.pageView(visitorId);
+  }
+
+  if (shouldInitSnapPixel && !visitorId) {
+    SnapchatTracking.init(logger);
+    SnapchatTracking.pageView();
+  }
 };
 
 export const removeTrackersFromPreferences = (
@@ -100,8 +114,10 @@ export const removeTrackersFromPreferences = (
     !trackingConsent.facebook_tracking && FacebookTracking.isInitialized();
   const disableTWTracking =
     !trackingConsent.twitter_tracking && twitter.initialized();
+  const disableSnapTracking =
+    !trackingConsent.snapchat_tracking && SnapchatTracking.isInitialized();
 
-  if (disableFBTacking || disableTWTracking) {
+  if (disableFBTacking || disableTWTracking || disableSnapTracking) {
     window.location.reload();
   }
 };

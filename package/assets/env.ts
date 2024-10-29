@@ -30,6 +30,9 @@ const twAccessToken = (): string => process.env.TW_ACCESS_TOKEN || '';
 const twTokenSecret = (): string => process.env.TW_TOKEN_SECRET || '';
 const toldToken = (): string => process.env.TOLD_TOKEN || '';
 
+// Snapchat vars
+const snapPixelId = (): string => process.env.SNAP_PIXEL_ID || '';
+
 // Export in env object
 export const env = {
   nodeEnv,
@@ -51,4 +54,5 @@ export const env = {
   twAccessToken,
   twTokenSecret,
   toldToken,
+  snapPixelId,
 };

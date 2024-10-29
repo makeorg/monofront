@@ -20,6 +20,7 @@ import { TwitterTracking } from './Trackers/TwitterTracking';
 import { trackingParamsService } from './TrackingParamsService';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 import { MixpanelTracking } from './Trackers/MixpanelTracking';
+import { SnapchatTracking } from './Trackers/SnapchatTracking';
 
 class TrackingValidationError extends Error {}
 
@@ -194,6 +195,11 @@ export const TrackingService = {
     // Twitter
     if (preferencesCookie?.tracking_consent?.twitter_tracking) {
       TwitterTracking.track(eventName, eventId, logger);
+    }
+
+    //Snapchat
+    if (preferencesCookie?.tracking_consent?.snapchat_tracking) {
+      SnapchatTracking.trackCustom(eventName, trackingParamsService.visitorId);
     }
 
     // Mixpanel

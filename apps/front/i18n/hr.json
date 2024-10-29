@@ -631,11 +631,12 @@
       "tracking": "Kolačić za praćenje na društvenoj mreži Facebook: upotrebljava se za prikupljanje podataka o ponašanju na platformi radi izvođenja skupne analize radi poboljšanja usluge. Također se upotrebljava za skupno prikupljanje socijalno-demografskih podataka (starosna dob, spol, regija) kako bi se obogatila analiza rasprava."
     },
     "social_media": {
-      "facebook_pixel": "Pixel Facebook: koristi se za optimiziranje performansi promotivnih kampanja rasprava na društvenoj mreži Facebook kako bi se povećalo sudjelovanje građana.",
-      "twitter_pixel": "Pixel Twitter: koristi se za optimiziranje performansi promotivnih kampanja za rasprave na društvenoj mreži Twitter kako bi se povećalo sudjelovanje građana.",
+      "facebook_pixel": "pixel Facebook: koristi se za optimiziranje performansi promotivnih kampanja rasprava na društvenoj mreži Facebook kako bi se povećalo sudjelovanje građana.",
+      "twitter_pixel": "pixel Twitter: koristi se za optimiziranje performansi promotivnih kampanja za rasprave na društvenoj mreži Twitter kako bi se povećalo sudjelovanje građana.",
       "facebook_sharing": "Dijeljenje na društvenoj mreži Facebook: omogućava se korisniku dijeljenje sadržaja na svojem računu za društvenu mrežu Facebook.",
       "twitter_sharing": "Dijeljenje na društvenoj mreži Twitter: omogućava se korisniku dijeljenje sadržaja na svojem računu za društvenu mrežu Twitter.",
-      "linkedin_sharing": "Dijeljenje na društvenoj mreži LinkedIn: omogućava se korisniku dijeljenje sadržaja na svojem računu za društvenu mrežu LinkedIn."
+      "linkedin_sharing": "Dijeljenje na društvenoj mreži LinkedIn: omogućava se korisniku dijeljenje sadržaja na svojem računu za društvenu mrežu LinkedIn.",
+      "snapchat_pixel": "pixel Snapchat: koristi se za optimiziranje performansi promotivnih kampanja za rasprave na društvenoj mreži Snapchat kako bi se povećalo sudjelovanje građana."
     }
   },
   "reset_password": {
@@ -1397,10 +1398,11 @@
         "name": "Kolačići „društvenih mreža”:",
         "description": "ovim vam se kolačićima, koje uključuju treće strane, omogućava dijeljenje sadržaja našeg mrežnog mjesta na društvenim mrežama i olakšava nam se optimiziranje našeg utjecaja Ako ne pristanete na pohranu ovih kolačića, možda nećete moći koristiti se ovim alatima za dijeljenje.",
         "facebook_tracking": "pixel Facebook: ovi se kolačići upotrebljavaju za optimiziranje performansi promotivnih kampanja rasprava na društvenoj mreži Facebook kako bi se povećalo sudjelovanje građana.",
-        "twitter_tracking": "pixel Twitter: ovi se kolačići upotrebljavaju za optimiziranje performansi promotivnih kampanja rasprava na društvenoj mreži Facebook kako bi se povećalo sudjelovanje građana.",
+        "twitter_tracking": "pixel Twitter: ovi se kolačići upotrebljavaju za optimiziranje performansi promotivnih kampanja rasprava na društvenoj mreži Twitter kako bi se povećalo sudjelovanje građana.",
         "facebook_sharing": "dijeljenje Facebook: ovim se kolačićem omogućava korisniku dijeljenje sadržaja na društvenoj mreži Facebook i poboljšava jednostavnost korištenja.",
         "twitter_sharing": "dijeljenje Twitter: ovim se kolačićem omogućava korisniku dijeljenje sadržaja na društvenoj mreži Twitter i poboljšava jednostavnost korištenja.",
-        "linkedin_sharing": "dijeljenje LinkedIn: ovim se kolačićem omogućava korisniku dijeljenje sadržaja na društvenoj mreži LinkedIn i poboljšava jednostavnost korištenja."
+        "linkedin_sharing": "dijeljenje LinkedIn: ovim se kolačićem omogućava korisniku dijeljenje sadržaja na društvenoj mreži LinkedIn i poboljšava jednostavnost korištenja.",
+        "snapchat_tracking": "pixel Snapchat: ovi se kolačići upotrebljavaju za optimiziranje performansi promotivnih kampanja rasprava na društvenoj mreži Snapchat kako bi se povećalo sudjelovanje građana."
       }
     }
   },

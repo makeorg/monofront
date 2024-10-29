@@ -628,7 +628,8 @@
       "twitter_pixel": "Pixel Twitter: optimeerib konsulteerimiste edendamiskampaaniate toimivust Twitteris, et suurendada kodanike osalemisaktiivsust.",
       "facebook_sharing": "Facebookis jagamine: võimaldab kasutajal sisu oma Facebooki kontol jagada.",
       "twitter_sharing": "Twitteris jagamine: võimaldab kasutajal sisu oma Twitteri kontol jagada.",
-      "linkedin_sharing": "LinkedIni jagamine: võimaldab kasutajal sisu oma LinkedIni kontol jagada."
+      "linkedin_sharing": "LinkedIni jagamine: võimaldab kasutajal sisu oma LinkedIni kontol jagada.",
+      "snapchat_pixel": "Pixel Snapchat: optimeerib konsulteerimiste edendamiskampaaniate toimivust Snapchatis, et suurendada kodanike osalemisaktiivsust."
     }
   },
   "reset_password": {
@@ -1373,7 +1374,8 @@
         "twitter_tracking": "pixel Twitter: need küpsised optimeerivad konsulteerimiste edendamise kampaaniate toimivust Twitteris, suurendamaks kodanike osalemisaktiivsust.",
         "facebook_sharing": "Facebookis jagamine: võimaldab kasutajal sisu oma Facebooki kontol jagada ja kasutajasõbralikkust suurendada.",
         "twitter_sharing": "Twitteris jagamine: võimaldab kasutajal sisu oma Twitteri kontol jagada ja kasutajasõbralikkust suurendada.",
-        "linkedin_sharing": "LinkedInis jagamine: võimaldab kasutajal sisu oma LinkedIni kontol jagada ja kasutajasõbralikkust suurendada."
+        "linkedin_sharing": "LinkedInis jagamine: võimaldab kasutajal sisu oma LinkedIni kontol jagada ja kasutajasõbralikkust suurendada.",
+        "snapchat_tracking": "pixel Snapchat: need küpsised optimeerivad konsulteerimiste edendamise kampaaniate toimivust Snapchatis, suurendamaks kodanike osalemisaktiivsust."
       }
     }
   },

@@ -17,6 +17,7 @@ export enum TRACKING {
 export enum TRACKING_CONSENT {
   FACEBOOK_TRACKING = 'facebook_tracking',
   TWITTER_TRACKING = 'twitter_tracking',
+  SNAPCHAT_TRACKING = 'snapchat_tracking',
   FACEBOOK_SHARING = 'facebook_sharing',
   TWITTER_SHARING = 'twitter_sharing',
   LINKEDIN_SHARING = 'linkedin_sharing',

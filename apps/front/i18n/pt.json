@@ -635,7 +635,8 @@
       "twitter_pixel": "Pixel Twitter: é utilizado para otimizar o desempenho das campanhas de promoção de consultas no Twitter, a fim de aumentar a participação dos cidadãos.",
       "facebook_sharing": "Partilha Facebook: permitir que o utilizador partilhe conteúdos na sua conta Facebook.",
       "twitter_sharing": "Partilha Twitter: permitir que o utilizador partilhe conteúdos na sua conta Twitter.",
-      "linkedin_sharing": "Partilha LinkedIn: permitir que o utilizador partilhe conteúdos na sua conta LinkedIn."
+      "linkedin_sharing": "Partilha LinkedIn: permitir que o utilizador partilhe conteúdos na sua conta LinkedIn.",
+      "snapchat_pixel": "Pixel Snapchat: é utilizado para otimizar o desempenho das campanhas de promoção de consultas no Snapchat, a fim de aumentar a participação dos cidadãos."
     }
   },
   "reset_password": {
@@ -1400,7 +1401,8 @@
         "twitter_tracking": "pixel Twitter: estes cookies servem para otimizar o desempenho das campanhas de promoção de consultas no Twitter, a fim de aumentar a participação dos cidadãos.",
         "facebook_sharing": "partilha Facebook: este cookie permite ao utilizador partilhar conteúdos no Facebook e melhorar a usabilidade.",
         "twitter_sharing": "partilha Twitter: este cookie permite ao utilizador partilhar conteúdos no Twitter e melhorar a usabilidade.",
-        "linkedin_sharing": "partilha LinkedIn: Este cookie permite ao utilizador partilhar conteúdos no LinkedIn e melhorar a usabilidade."
+        "linkedin_sharing": "partilha LinkedIn: Este cookie permite ao utilizador partilhar conteúdos no LinkedIn e melhorar a usabilidade.",
+        "snapchat_tracking": "pixel Snapchat: estes cookies servem para otimizar o desempenho das campanhas de promoção de consultas no Snapchat, a fim de aumentar a participação dos cidadãos."
       }
     }
   },

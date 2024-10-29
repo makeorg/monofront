@@ -118,6 +118,7 @@ export type StateUserPasswordRecovery = {
 export type StateTrackingConsent = {
   facebook_tracking: boolean;
   twitter_tracking: boolean;
+  snapchat_tracking: boolean;
   facebook_sharing: boolean;
   twitter_sharing: boolean;
   linkedin_sharing: boolean;

@@ -52,7 +52,7 @@ export const FacebookTracking = {
       } else {
         this.logger.logWarning({
           name: 'tracking-facebook',
-          messager: 'Tracking is init without external id',
+          message: 'Tracking is init without external id',
         });
         fbq.track('init', makePixelId);
       }

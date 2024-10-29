@@ -453,6 +453,14 @@ const CookiesPage: FC = () => {
                   />
                   <CookieSwitch
                     onCookiePage
+                    value={trackingConsent.snapchat_tracking}
+                    tracker={TRACKING_CONSENT.SNAPCHAT_TRACKING}
+                    description={i18n.t(
+                      'cookies_management.details.social.snapchat_tracking'
+                    )}
+                  />
+                  <CookieSwitch
+                    onCookiePage
                     tracker={TRACKING_CONSENT.FACEBOOK_SHARING}
                     value={trackingConsent.facebook_sharing}
                     description={i18n.t(

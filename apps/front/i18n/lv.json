@@ -632,10 +632,11 @@
     },
     "social_media": {
       "facebook_pixel": "Pixel Facebook: tiek izmantota, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas Facebook, lai palielinātu iedzīvotāju līdzdalību.",
-      "twitter_pixel": "Pixel Twitter: tiek izmantota, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas Twiter, lai palielinātu iedzīvotāju līdzdalību.",
+      "twitter_pixel": "Pixel Twitter: tiek izmantota, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas Twitter, lai palielinātu iedzīvotāju līdzdalību.",
       "facebook_sharing": "Facebook kopīgošana: ļauj lietotājam kopīgot saturu savā Facebook kontā.",
       "twitter_sharing": "Twitter kopīgošana: ļauj lietotājam kopīgot saturu savā Twitter kontā.",
-      "linkedin_sharing": "LinkedIn kopīgošana: ļauj lietotājam kopīgot saturu savā LinkedIn kontā."
+      "linkedin_sharing": "LinkedIn kopīgošana: ļauj lietotājam kopīgot saturu savā LinkedIn kontā.",
+      "snapchat_pixel": "Pixel Snapchat: tiek izmantota, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas Snapchat, lai palielinātu iedzīvotāju līdzdalību."
     }
   },
   "reset_password": {
@@ -1397,10 +1398,11 @@
         "name": "Sociālo tīklu sīkdatnes:",
         "description": "šīs sīkdatnes, ko iespējojušas trešās personas, ļauj jums kopīgot mūsu vietnes saturu sociālajos tīklos un tādējādi palīdz mums optimizēt mūsu ietekmi. Ja nepiekritīsiet šo sīkdatņu ievietošanai, jūs, iespējams, nevarēsiet izmantot šos kopīgošanas rīkus.",
         "facebook_tracking": "pixel Facebook: šīs sīkdatnes kalpo, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas Facebook, lai palielinātu iedzīvotāju līdzdalību.",
-        "twitter_tracking": "pixel Twitter: šīs sīkdatnes kalpo, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas Twiter, lai palielinātu iedzīvotāju līdzdalību.",
+        "twitter_tracking": "pixel Twitter: šīs sīkdatnes kalpo, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas Twitter, lai palielinātu iedzīvotāju līdzdalību.",
         "facebook_sharing": "Kopīgošana platformā Facebook: šī sīkdatne ļauj lietotājam kopīgot saturu Facebook un uzlabot lietojamību.",
         "twitter_sharing": "Kopīgošana platformā Twitter: šī sīkdatne ļauj lietotājam kopīgot saturu Twitter un uzlabot lietojamību.",
-        "linkedin_sharing": "Kopīgošana platformā LinkedIn: šī sīkdatne ļauj lietotājam kopīgot saturu LinkedIn un uzlabot lietojamību."
+        "linkedin_sharing": "Kopīgošana platformā LinkedIn: šī sīkdatne ļauj lietotājam kopīgot saturu LinkedIn un uzlabot lietojamību.",
+        "snapchat_tracking": "pixel Snapchat: šīs sīkdatnes kalpo, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas Snapchat, lai palielinātu iedzīvotāju līdzdalību."
       }
     }
   },

@@ -628,7 +628,8 @@
       "twitter_pixel": "Pixel Twitter: a konzultációkat a Twitteren népszerűsítő kampányok teljesítményének optimalizálására szolgál az állampolgárok részvételének növelése érdekében.",
       "facebook_sharing": "Partage Facebook: lehetővé teszi a felhasználó számára, hogy tartalmakat osszon meg a Facebook-fiókján.",
       "twitter_sharing": "Partage Twitter: lehetővé teszi a felhasználó számára, hogy tartalmakat osszon meg a Twitter-fiókján.",
-      "linkedin_sharing": "Partage LinkedIn: lehetővé teszi a felhasználó számára, hogy tartalmakat osszon meg a LinkedIn-fiókján."
+      "linkedin_sharing": "Partage LinkedIn: lehetővé teszi a felhasználó számára, hogy tartalmakat osszon meg a LinkedIn-fiókján.",
+      "snapchat_pixel": "Pixel Snapchat: a konzultációkat a Snapchaten népszerűsítő kampányok teljesítményének optimalizálására szolgál az állampolgárok részvételének növelése érdekében."
     }
   },
   "reset_password": {
@@ -1373,7 +1374,8 @@
         "twitter_tracking": "pixel Twitter: ezeket a sütiket a Twitter-konzultációkat népszerűsítő kampányok teljesítményének optimalizálására használják az állampolgárok részvételének növelése érdekében.",
         "facebook_sharing": "partage Facebook: ez a süti lehetővé teszi a felhasználó számára a Facebook-on történő tartalommegosztást és javítja a felhasználóbarátságot.",
         "twitter_sharing": "partage Twitter: ez a süti lehetővé teszi a felhasználó számára a tartalmak megosztását a Twitteren és javítja a felhasználóbarátságot.",
-        "linkedin_sharing": "partage LinkedIn: ez a süti lehetővé teszi a felhasználó számára a tartalmak megosztását a LinkedIn-en és javítja a felhasználóbarátságot."
+        "linkedin_sharing": "partage LinkedIn: ez a süti lehetővé teszi a felhasználó számára a tartalmak megosztását a LinkedIn-en és javítja a felhasználóbarátságot.",
+        "snapchat_tracking": "pixel Snapchat: ezeket a sütiket a Snapchat-konzultációkat népszerűsítő kampányok teljesítményének optimalizálására használják az állampolgárok részvételének növelése érdekében."
       }
     }
   },

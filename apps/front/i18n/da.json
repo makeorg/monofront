@@ -628,7 +628,8 @@
       "twitter_pixel": "Twitter Pixel: Den bruges til at optimere resultaterne af høringskampagner på Twitter med henblik på at øge borgernes deltagelse.",
       "facebook_sharing": "Facebook-deling: Den giver brugeren mulighed for at dele indhold på sin Facebook-konto.",
       "twitter_sharing": "Twitter-deling: Den giver brugeren mulighed for at dele indhold på sin Twitter-konto.",
-      "linkedin_sharing": "LinkedIn-deling: Den giver brugeren mulighed for at dele indhold på sin LinkedIn-konto."
+      "linkedin_sharing": "LinkedIn-deling: Den giver brugeren mulighed for at dele indhold på sin LinkedIn-konto.",
+      "snapchat_pixel": "Snapchat Pixel: Den bruges til at optimere resultaterne af høringskampagner på Snapchat med henblik på at øge borgernes deltagelse."
     }
   },
   "reset_password": {
@@ -1373,7 +1374,8 @@
         "twitter_tracking": "Twitter Pixel: Disse cookies bruges til at optimere resultaterne af høringskampagner på Twitter med henblik på at øge borgernes deltagelse.",
         "facebook_sharing": "Facebook-deling: Denne cookie giver mulighed for at dele indhold på Facebook og forbedre brugervenligheden.",
         "twitter_sharing": "Twitter-deling: Denne cookie giver mulighed for at dele indhold på Twitter og forbedre brugervenligheden.",
-        "linkedin_sharing": "LinkedIn-deling: Denne cookie giver mulighed for at dele indhold på LinkedIn og forbedre brugervenligheden."
+        "linkedin_sharing": "LinkedIn-deling: Denne cookie giver mulighed for at dele indhold på LinkedIn og forbedre brugervenligheden.",
+        "snapchat_tracking": "Snapchat Pixel: Disse cookies bruges til at optimere resultaterne af høringskampagner på Snapchat med henblik på at øge borgernes deltagelse."
       }
     }
   },

@@ -55,6 +55,8 @@ export const cspMiddleware = (
         'https://analytics.twitter.com',
         'https://*.hotjar.com',
         'https://scripts.told.club/sdk/sdk.js',
+        'https://sc-static.net/scevent.min.js',
+        'https://tr.snapchat.com',
       ],
       imgSrc: [
         ...defaultDirectives.imgSrc,
@@ -76,6 +78,8 @@ export const cspMiddleware = (
         'wss://*.hotjar.com',
         'https://api.told.club/graphql',
         'wss://api.told.club/graphql',
+        'https://tr.snapchat.com',
+        'https://tr6.snapchat.com/p',
       ],
       formAction: [
         ...defaultDirectives.formAction,
@@ -88,6 +92,7 @@ export const cspMiddleware = (
         'https://*.hotjar.com',
         'https://widget.told.club',
         'https://calendly.com/',
+        'https://tr.snapchat.com',
       ],
       fontSrc: [...defaultDirectives.fontSrc, 'https://*.hotjar.com'],
     },

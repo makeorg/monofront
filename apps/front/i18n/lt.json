@@ -635,7 +635,8 @@
       "twitter_pixel": "Pixel Twitter: jis naudojamas siekiant optimizuoti konsultacijų viešinimo kampanijas tviteryje, kad būtų padidintas piliečių įsitraukimas.",
       "facebook_sharing": "Partage Facebook: suteikia naudotojui galimybę bendrinti turinį savo feisbuko paskyroje.",
       "twitter_sharing": "Partage Twitter: suteikia naudotojui galimybę bendrinti turinį savo tviterio paskyroje.",
-      "linkedin_sharing": "Partage LinkedIn: suteikia naudotojui galimybę bendrinti turinį savo linkedino paskyroje."
+      "linkedin_sharing": "Partage LinkedIn: suteikia naudotojui galimybę bendrinti turinį savo linkedino paskyroje.",
+      "snapchat_pixel": "Pixel Snapchat: jis naudojamas siekiant optimizuoti konsultacijų viešinimo kampanijas, kad būtų padidintas piliečių įsitraukimas."
     }
   },
   "reset_password": {
@@ -1400,7 +1401,8 @@
         "twitter_tracking": "pixel Twitter: šie slapukai naudojami siekiant optimizuoti konsultacijų viešinimo kampanijas tviteryje, kad būtų padidintas piliečių įsitraukimas.",
         "facebook_sharing": "partage Facebook: šis slapukas suteikia naudotojui galimybę bendrinti turinį feisbuke ir pagerinti naudojimo patogumą.",
         "twitter_sharing": "partage Twitter: šis slapukas suteikia naudotojui galimybę bendrinti turinį tviteryje ir pagerinti naudojimo patogumą.",
-        "linkedin_sharing": "partage LinkedIn: šis slapukas suteikia naudotojui galimybę bendrinti turinį linkedine ir pagerinti naudojimo patogumą."
+        "linkedin_sharing": "partage LinkedIn: šis slapukas suteikia naudotojui galimybę bendrinti turinį linkedine ir pagerinti naudojimo patogumą.",
+        "snapchat_tracking": "pixel Snapchat: šie slapukai naudojami siekiant optimizuoti konsultacijų viešinimo kampanijas, kad būtų padidintas piliečių įsitraukimas."
       }
     }
   },

@@ -58,6 +58,7 @@ export const initDevState = (initialState: StateRoot): StateRoot => ({
     trackingConsent: {
       facebook_tracking: false,
       twitter_tracking: false,
+      snapchat_tracking: false,
       facebook_sharing: false,
       twitter_sharing: false,
       linkedin_sharing: false,

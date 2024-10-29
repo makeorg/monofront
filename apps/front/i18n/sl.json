@@ -642,7 +642,8 @@
       "twitter_pixel": "Pixel Twitter: uporablja se za optimizacijo uspešnosti kampanj za promocijo posvetovanj na Twitterju zaradi povečanja sodelovanja državljanov.",
       "facebook_sharing": "Deljenje Facebook: omogoča uporabniku delitev vsebine na njegovem računu Facebook.",
       "twitter_sharing": "Deljenje Twitter: omogoča uporabniku delitev vsebine na njegovem računu Twitter.",
-      "linkedin_sharing": "Deljenje LinkedIn: omogoča uporabniku delitev vsebine na njegovem računu LinkedIn."
+      "linkedin_sharing": "Deljenje LinkedIn: omogoča uporabniku delitev vsebine na njegovem računu LinkedIn.",
+      "snapchat_pixel": "Pixel Snapchat: uporablja se za optimizacijo uspešnosti kampanj za promocijo posvetovanj na Snapchat zaradi povečanja sodelovanja državljanov."
     }
   },
   "reset_password": {
@@ -1427,7 +1428,8 @@
         "twitter_tracking": "pixel Twitter: ti piškotki se uporabljajo za optimizacijo uspešnosti kampanj za promocijo posvetovanj na Twitterju zaradi povečanja sodelovanja državljanov.",
         "facebook_sharing": "deljenje Facebook: ta piškotek omogoča uporabniku deljenje vsebine na Facebooku in izboljšanje družabnosti.",
         "twitter_sharing": "deljenje Twitter: ta piškotek omogoča uporabniku deljenje vsebine na Twitterju in izboljšanje družabnosti.",
-        "linkedin_sharing": "deljenje LinkedIn: ta piškotek omogoča uporabniku deljenje vsebine na LinkedInu in izboljšanje družabnosti."
+        "linkedin_sharing": "deljenje LinkedIn: ta piškotek omogoča uporabniku deljenje vsebine na LinkedInu in izboljšanje družabnosti.",
+        "snapchat_tracking": "pixel Snapchat: ti piškotki se uporabljajo za optimizacijo uspešnosti kampanj za promocijo posvetovanj na Snapchat zaradi povečanja sodelovanja državljanov."
       }
     }
   },

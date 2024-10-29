@@ -170,6 +170,11 @@ export const SecondStepCookie: React.FC<Props> = ({
               description={i18n.t('cookie_modal.social_media.twitter_pixel')}
             />
             <CookieSwitch
+              tracker={TRACKING_CONSENT.SNAPCHAT_TRACKING}
+              value={trackingConsent.snapchat_tracking}
+              description={i18n.t('cookie_modal.social_media.snapchat_pixel')}
+            />
+            <CookieSwitch
               tracker={TRACKING_CONSENT.FACEBOOK_SHARING}
               value={trackingConsent.facebook_sharing}
               description={i18n.t('cookie_modal.social_media.facebook_sharing')}

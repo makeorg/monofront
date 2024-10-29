@@ -616,7 +616,8 @@
       "twitter_pixel": "Pixel Twitter: servește la optimizarea performanțelor campaniilor prin care se promovează consultările pe Twitter pentru a spori participarea cetățenilor.",
       "facebook_sharing": "Distribuire Facebook: permite utilizatorului să distribuie conținutul pe propriul cont de Facebook.",
       "twitter_sharing": "Distribuire Twitter: permite utilizatorului să distribuie conținutul pe propriul cont de Twitter.",
-      "linkedin_sharing": "Distribuire LinkedIn: permite utilizatorului să distribuie conținutul pe propriul cont de LinkedIn."
+      "linkedin_sharing": "Distribuire LinkedIn: permite utilizatorului să distribuie conținutul pe propriul cont de LinkedIn.",
+      "snapchat_pixel": "Pixel Snapchat: servește la optimizarea performanțelor campaniilor prin care se promovează consultările pe Snapchat pentru a spori participarea cetățenilor."
     }
   },
   "reset_password": {
@@ -1297,7 +1298,8 @@
         "twitter_tracking": "Pixel Twitter: aceste module cookie servesc la optimizarea performanțelor campaniilor prin care se promovează consultările pe Twitter pentru a spori participarea cetățenilor.",
         "facebook_sharing": "distribuire Facebook: acest modul cookie permite utilizatorului să distribuie conținut pe Facebook și să îmbunătățească opțiunile de utilizare.",
         "twitter_sharing": "distribuire Twitter: acest modul cookie permite utilizatorului să distribuie conținut pe Twitter și să îmbunătățească opțiunile de utilizare.",
-        "linkedin_sharing": "distribuire LinkedIn: acest modul cookie permite utilizatorului să distribuie conținut pe LinkedIn și să îmbunătățească opțiunile de utilizare."
+        "linkedin_sharing": "distribuire LinkedIn: acest modul cookie permite utilizatorului să distribuie conținut pe LinkedIn și să îmbunătățească opțiunile de utilizare.",
+        "snapchat_tracking": "Pixel Snapchat: aceste module cookie servesc la optimizarea performanțelor campaniilor prin care se promovează consultările pe Snapchat pentru a spori participarea cetățenilor."
       }
     }
   },

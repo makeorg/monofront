@@ -635,7 +635,8 @@
       "twitter_pixel": "Twitter Pixel: používa sa na optimalizáciu výkonu kampaní propagujúcich konzultácie na Twitteri s cieľom zvýšiť účasť občanov.",
       "facebook_sharing": "Zdieľanie na Facebooku: umožňuje používateľovi zdieľať obsah na svojom účte na Facebooku.",
       "twitter_sharing": "Zdieľanie na Twitteri: umožňuje používateľovi zdieľať obsah na svojom účte na Twitteri.",
-      "linkedin_sharing": "Zdieľanie na LinkedIne: umožňuje používateľovi zdieľať obsah na svojom účte na LinkedIne."
+      "linkedin_sharing": "Zdieľanie na LinkedIne: umožňuje používateľovi zdieľať obsah na svojom účte na LinkedIne.",
+      "snapchat_pixel": "Snapchat Pixel: používa sa na optimalizáciu výkonu kampaní propagujúcich konzultácie na Snapchat s cieľom zvýšiť účasť občanov."
     }
   },
   "reset_password": {
@@ -1400,7 +1401,8 @@
         "twitter_tracking": "Twitter Pixel: tieto súbory cookie sa používajú na optimalizáciu výkonu kampaní na podporu konzultácií na Twitteri s cieľom zvýšiť účasť občanov.",
         "facebook_sharing": "Zdieľanie na Facebooku: tento súbor cookie umožňuje používateľovi zdieľať obsah na Facebooku a zlepšiť použiteľnosť.",
         "twitter_sharing": "Zdieľanie na Twitteri: tento súbor cookie umožňuje používateľovi zdieľať obsah na Twitteri a zlepšiť použiteľnosť.",
-        "linkedin_sharing": "Zdieľanie na LinkedIne: tento súbor cookie umožňuje používateľovi zdieľať obsah na LinkedIne a zlepšiť použiteľnosť."
+        "linkedin_sharing": "Zdieľanie na LinkedIne: tento súbor cookie umožňuje používateľovi zdieľať obsah na LinkedIne a zlepšiť použiteľnosť.",
+        "snapchat_tracking": "Snapchat Pixel: tieto súbory cookie sa používajú na optimalizáciu výkonu kampaní na podporu konzultácií na Snapchat s cieľom zvýšiť účasť občanov."
       }
     }
   },

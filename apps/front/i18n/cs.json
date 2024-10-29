@@ -632,10 +632,11 @@
     },
     "social_media": {
       "facebook_pixel": "Pixel Facebook: používá se k optimalizaci výkonu kampaní propagujících konzultace na Facebooku za účelem zvýšení účasti občanů.",
-      "twitter_pixel": "Pixel Twitter: používá se k optimalizaci výkonu kampaní propagujících konzultace na Facebooku za účelem zvýšení účasti občanů.",
+      "twitter_pixel": "Pixel Twitter: používá se k optimalizaci výkonu kampaní propagujících konzultace na Twitteru za účelem zvýšení účasti občanů.",
       "facebook_sharing": "Sdílení na Facebooku: umožňuje uživateli sdílet obsah na svém účtu Facebook.",
       "twitter_sharing": "Sdílení na Twitteru: umožňuje uživateli sdílet obsah na jeho účtu Twitter.",
-      "linkedin_sharing": "Sdílení LinkedIn: umožňuje uživateli sdílet obsah na jeho účtu LinkedIn."
+      "linkedin_sharing": "Sdílení LinkedIn: umožňuje uživateli sdílet obsah na jeho účtu LinkedIn.",
+      "snapchat_pixel": "Pixel Snapchat: používá se k optimalizaci výkonu kampaní propagujících konzultace na Snapchat za účelem zvýšení účasti občanů."
     }
   },
   "reset_password": {
@@ -1313,10 +1314,11 @@
         "name": "Soubory cookies „sociální sítě“:",
         "description": "tyto soubory cookies, aktivované třetími stranami, ti umožňují sdílet obsah našich stránek na sociálních sítích a pomáhají nám tak optimalizovat náš dopad. Pokud nesouhlasíš s ukládáním těchto souborů cookies, je možné, že nebudeš moci tyto nástroje pro sdílení využívat.",
         "facebook_tracking": "pixel Facebook: tyto soubory cookies se používají k optimalizaci výkonu kampaní propagujících konzultace na Facebooku za účelem zvýšení účasti občanů.",
-        "twitter_tracking": "pixel Twitter: tyto soubory cookies se používají k optimalizaci výkonu kampaní propagujících konzultace na Facebooku za účelem zvýšení účasti občanů.",
+        "twitter_tracking": "pixel Twitter: tyto soubory cookies se používají k optimalizaci výkonu kampaní propagujících konzultace na Twitteru za účelem zvýšení účasti občanů.",
         "facebook_sharing": "sdílení na Facebooku: tento soubor cookie umožňuje uživateli sdílet obsah na Facebooku a zlepšit uživatelskou přívětivost.",
         "twitter_sharing": "sdílení na Twitteru: tento soubor cookie umožňuje uživateli sdílet obsah na Twitteru a zlepšit uživatelskou přívětivost.",
-        "linkedin_sharing": "sdílení na LinkedInu: tento soubor cookie umožňuje uživateli sdílet obsah na Linkedinu a zlepšit uživatelskou přívětivost."
+        "linkedin_sharing": "sdílení na LinkedInu: tento soubor cookie umožňuje uživateli sdílet obsah na Linkedinu a zlepšit uživatelskou přívětivost.",
+        "snapchat_tracking": "pixel Snapchat: tyto soubory cookies se používají k optimalizaci výkonu kampaní propagujících konzultace na Snapchat za účelem zvýšení účasti občanů."
       }
     }
   },

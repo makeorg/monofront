@@ -553,6 +553,7 @@ CLICK_COOKIE_SWITCH_ACCEPT:
       values:
         - facebook_tracking
         - twitter_tracking
+        - snapchat_tracking
         - facebook_sharing
         - twitter_sharing
         - linkedin_sharing
@@ -566,6 +567,7 @@ CLICK_COOKIE_SWITCH_REFUSE:
       values:
         - facebook_tracking
         - twitter_tracking
+        - snapchat_tracking
         - facebook_sharing
         - twitter_sharing
         - linkedin_sharing

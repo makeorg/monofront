@@ -551,7 +551,8 @@
       "twitter_pixel": "Twitter pixel: this cookie is used to optimize the performance of campaigns promoting consultations on Twitter in order to increase citizens’ participation.",
       "facebook_sharing": "Facebook sharing: this allows the user to share content on their Facebook and Instagram accounts.",
       "twitter_sharing": "Twitter sharing: this allows the user to share content on their Twitter account.",
-      "linkedin_sharing": "LinkedIn sharing: this allows the user to share content on their LinkedIn account."
+      "linkedin_sharing": "LinkedIn sharing: this allows the user to share content on their LinkedIn account.",
+      "snapchat_pixel": "Snapchat pixel: this cookie is used to optimize the performance of campaigns promoting consultations on Snapchat in order to increase citizens’ participation."
     }
   },
   "reset_password": {
@@ -1277,7 +1278,8 @@
         "twitter_tracking": "Twitter pixel: this cookie is used to optimize the performance of campaigns promoting Twitter consultations in order to increase citizens’ participation.",
         "facebook_sharing": "Facebook sharing: this cookie allows the user to share content on their Facebook and Instagram accounts and improve the usability of our consultations.",
         "twitter_sharing": "Twitter sharing: this cookie allows the user to share content on their Twitter account and improve the usability of our consultations.",
-        "linkedin_sharing": "LinkedIn sharing: this cookie allows the user to share content on their LinkedIn account and improve the usability of our consultations."
+        "linkedin_sharing": "LinkedIn sharing: this cookie allows the user to share content on their LinkedIn account and improve the usability of our consultations.",
+        "snapchat_tracking": "Snapchat pixel: this cookie is used to optimize the performance of campaigns promoting Snapchat consultations in order to increase citizens’ participation."
       }
     }
   },

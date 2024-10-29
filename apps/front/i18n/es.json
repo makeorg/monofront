@@ -616,7 +616,8 @@
       "twitter_pixel": "Píxel de Twitter: se utiliza para optimizar el rendimiento de las campañas de promoción de consultas en Twitter con el fin de aumentar la participación ciudadana.",
       "facebook_sharing": "Compartir en Facebook: permiten al usuario compartir contenidos en su cuenta de Facebook.",
       "twitter_sharing": "Compartir en Twitter: permiten al usuario compartir contenidos en su cuenta de Twitter.",
-      "linkedin_sharing": "Compartir en LinkedIn: permiten al usuario compartir contenidos en su cuenta de LinkedIn."
+      "linkedin_sharing": "Compartir en LinkedIn: permiten al usuario compartir contenidos en su cuenta de LinkedIn.",
+      "snapchat_pixel": "Píxel de Snapchat: se utiliza para optimizar el rendimiento de las campañas de promoción de consultas en Snapchat con el fin de aumentar la participación ciudadana."
     }
   },
   "reset_password": {
@@ -1297,7 +1298,8 @@
         "twitter_tracking": "Píxel de Twitter: estas cookies se utilizan para optimizar el rendimiento de las campañas de promoción de consultas en Twitter con el fin de aumentar la participación ciudadana.",
         "facebook_sharing": "Compartir en Facebook: permiten al usuario compartir contenidos en su cuenta de Facebook y potenciar el manejo de la plataforma.",
         "twitter_sharing": "Compartir en Twitter: permiten al usuario compartir contenidos en su cuenta de Twitter y potenciar el manejo de la plataforma.",
-        "linkedin_sharing": "Compartir en LinkedIn: permiten al usuario compartir contenidos en su cuenta de LinkedIn y potenciar el manejo de la plataforma."
+        "linkedin_sharing": "Compartir en LinkedIn: permiten al usuario compartir contenidos en su cuenta de LinkedIn y potenciar el manejo de la plataforma.",
+        "snapchat_tracking": "Píxel de Snapchat: estas cookies se utilizan para optimizar el rendimiento de las campañas de promoción de consultas en Snapchat con el fin de aumentar la participación ciudadana."
       }
     }
   },
