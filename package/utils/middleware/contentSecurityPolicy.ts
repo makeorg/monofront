@@ -64,6 +64,7 @@ export const cspMiddleware = (
         'https://analytics.twitter.com',
         'https://*.hotjar.com',
         'https://cdn.prod.website-files.com',
+        'https://evolt.imgix.net/widget/Close-grey:800.svg',
       ],
       connectSrc: [
         ...defaultDirectives.connectSrc,
