@@ -17,6 +17,15 @@ const snapPixelId = env.isClientSide()
 const snapchatEventMapping = {
   [trackingConfiguration.CLICK_SEQUENCE_FIRST_VOTE.key]: 'CUSTOM_EVENT_1',
   [trackingConfiguration.CLICK_PROPOSAL_SUBMIT.key]: 'CUSTOM_EVENT_2',
+  [trackingConfiguration.CLICK_PROPOSAL_VOTE.key]: 'CUSTOM_EVENT_3',
+  [trackingConfiguration.DISPLAY_FINAL_CARD.key]: 'CUSTOM_EVENT_4',
+  [trackingConfiguration.DISPLAY_PROPOSAL_FIELD.key]: 'CUSTOM_EVENT_5',
+  [trackingConfiguration.CLICK_KEEP_VOTING.key]: 'ACHIEVEMENT_UNLOCKED',
+  [trackingConfiguration.SIGN_IN_EMAIL_SUCCESS.key]: 'LOGIN',
+  [trackingConfiguration.CLICK_NAVBAR_SEARCH.key]: 'SEARCH',
+  [trackingConfiguration.CLICK_SHARE.key]: 'SHARE',
+  [trackingConfiguration.SIGN_UP_EMAIL_SUCCESS.key]: 'SIGN_UP',
+  [trackingConfiguration.CLICK_OPERATION_PAGE.key]: 'VIEW_CONTENT',
 };
 
 const isSnapInitialized = (): boolean => initialized;
