@@ -52,7 +52,10 @@ export const ProposalAuthorInformations: FC<Props> = ({ proposal }) => {
 
   const isOrganisation = author.userType === USER.TYPE_ORGANISATION;
   const isPersonality = author.userType === USER.TYPE_PERSONALITY;
-  const isBasicUser = author.userType === USER.TYPE_USER;
+  const isDefaultUser = author.userType === USER.TYPE_USER;
+  const isVirtualUser = author.userType === USER.TYPE_VIRTUAL;
+  const isExternalUser = author.userType === USER.TYPE_EXTERNAL;
+  const isBasicUser = isDefaultUser || isVirtualUser || isExternalUser;
 
   return (
     <>
