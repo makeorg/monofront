@@ -5,9 +5,12 @@ import { HomePostType } from '@make.org/types';
 import { trackClickBlog } from '@make.org/utils/services/Tracking';
 import i18n from 'i18next';
 import { URL } from '@make.org/types/enums';
-import { ExternalLinkIconStyle } from '@make.org/ui/elements/ButtonsElements';
+import {
+  ButtonAnchorStyle,
+  ExternalLinkIconStyle,
+  LinkAnchorStyle,
+} from '@make.org/ui/elements/ButtonsElements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import { RedUppercaseHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
 import {
   ConsultationsListStyle,
   ConsultationsListItemStyle,
@@ -21,7 +24,6 @@ import {
   HomepageSectionStyle,
   HomepagePageInnerStyle,
 } from '../../../../pages/Home/style';
-import { HomepageQuestionsButtonStyle } from '../../Questions/style';
 
 type Props = {
   posts: HomePostType[];
@@ -85,20 +87,25 @@ export const FeaturedPosts: FC<Props> = ({ posts }) => {
               <ConsultationElementParagraphStyle>
                 {post.description}
               </ConsultationElementParagraphStyle>
-              <RedUppercaseHTMLLinkElementStyle
+              <LinkAnchorStyle
+                as="a"
                 href={post.link || '#'}
                 target="_blank"
                 rel="noopener"
                 onClick={() => trackClickBlog('blog item')}
               >
                 {i18n.t('homepage.posts.link_text')}
-              </RedUppercaseHTMLLinkElementStyle>
+                <ExternalLinkIconStyle aria-hidden focusable="false" />
+                <ScreenReaderItemStyle>
+                  {i18n.t('common.open_new_window')}
+                </ScreenReaderItemStyle>
+              </LinkAnchorStyle>
             </ConsultationArticleStyle>
           </ConsultationsListItemStyle>
         ))}
       </ConsultationsListStyle>
       <HomepagePageInnerStyle>
-        <HomepageQuestionsButtonStyle
+        <ButtonAnchorStyle
           as="a"
           href={setLangAndLinksByCountry(country).link}
           target="_blank"
@@ -112,7 +119,7 @@ export const FeaturedPosts: FC<Props> = ({ posts }) => {
           <ScreenReaderItemStyle>
             {i18n.t('common.open_new_window')}
           </ScreenReaderItemStyle>
-        </HomepageQuestionsButtonStyle>
+        </ButtonAnchorStyle>
       </HomepagePageInnerStyle>
     </HomepageSectionStyle>
   );

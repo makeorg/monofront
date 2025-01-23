@@ -22,7 +22,7 @@ export const ConsultationParticipateString: FC<Props> = ({
 
   return (
     <ConsultationParticipateStringStyle aria-hidden>
-      {label}
+      <span className="link-style">{label}</span>
       {closedConsultationWithoutResults || externalResultLink ? (
         <NewWindowIconStyle focusable="false" />
       ) : null}

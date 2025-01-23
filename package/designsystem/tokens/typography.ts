@@ -5,6 +5,7 @@ export const typography = {
     Display: "'New York Large Bold', Arial, sans-serif", // Not used atm, will need to add woff files if it becomes
     Highlight: "'Circular Standard Bold', Arial, sans-serif",
     Italic: "'Playfair Display Regular Italic', Arial, sans-serif",
+    Marketing: "'Neue Machina Ultra Bold', Arial, sans-serif",
   },
   FontSize: {
     Title: {

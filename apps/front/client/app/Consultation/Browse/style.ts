@@ -220,13 +220,20 @@ export const NoConsultationButtonStyle = styled(UnstyledButtonStyle)`
 `;
 
 export const ConsultationParticipateStringStyle = styled.p`
-  font-size: ${typography.FontSize.Arrondissement};
-  text-transform: uppercase;
-  font-family: ${typography.FontFamily.Condensed};
-  color: ${colors.Content.Make.Secondary};
-  text-decoration: underline;
+  font-size: ${typography.FontSize.PetiteCouronne};
+  color: ${colors.Content.Interface.Dark};
   & svg {
     max-width: 16px;
     max-height: 14px;
+  }
+  .tofill {
+    fill: ${colors.Content.Interface.Dark};
+  }
+  .link-style {
+    display: inline-flex;
+    font-size: ${typography.FontSize.PetiteCouronne};
+    text-decoration: underline;
+    color: ${colors.Content.Interface.Dark};
+    margin-right: ${spacings.xs};
   }
 `;

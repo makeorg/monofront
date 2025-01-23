@@ -28,7 +28,7 @@ import { ILogger } from '@make.org/types';
 import {
   CookieModalButtonWithLinkStyle,
   CookieModalBannerWrapperStyle,
-  CookieModalRedButtonStyle,
+  CookieModalButtonStyle,
   SvgCookieStyle,
 } from './style';
 import { FirstStepCookie } from './FirstStep';
@@ -122,18 +122,18 @@ export const CookieModal: React.FC<Props> = ({ logger }) => {
       <CookieModalBannerWrapperStyle>
         <SvgCookieStyle aria-hidden focusable="false" />
         {customization ? (
-          <CookieModalRedButtonStyle type="button" onClick={handlePreferences}>
+          <CookieModalButtonStyle type="button" onClick={handlePreferences}>
             {i18n.t('cookie_modal.save')}
-          </CookieModalRedButtonStyle>
+          </CookieModalButtonStyle>
         ) : (
           <>
-            <CookieModalRedButtonStyle
+            <CookieModalButtonStyle
               type="button"
               onClick={handleAcceptAll}
               data-cy-button="accept-cookies"
             >
               {i18n.t('cookie_modal.accept')}
-            </CookieModalRedButtonStyle>
+            </CookieModalButtonStyle>
             <CookieModalButtonWithLinkStyle
               type="button"
               onClick={handlePersonalize}

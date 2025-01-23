@@ -446,14 +446,6 @@ DISPLAY_BROWSE_RESULTS:
   key: display-browse-results
   description: Display browse consultations results page
 
-CLICK_HOMEPAGE_PARTICIPATE:
-  key: click-button-consultations
-  description: Click participate link on home page
-
-CLICK_HOMEPAGE_GREAT_CAUSES:
-  key: click-button-great-causes
-  description: Click great causes link on home page
-
 CLICK_HOMEPAGE_BROWSE_CONSULTATIONS:
   key: click-button-browse-consultations
   description: Click browse consultations link on home page

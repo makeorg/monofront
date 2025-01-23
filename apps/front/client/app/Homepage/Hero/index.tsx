@@ -1,80 +1,86 @@
 import React, { FC } from 'react';
 import i18n from 'i18next';
+import { Image } from '@make.org/ui/components/Image';
+import { SvgOffice } from '@make.org/ui/Svg/elements/Office';
+import { SvgBank } from '@make.org/ui/Svg/elements/Bank';
+import { SvgBrain } from '@make.org/ui/Svg/elements/Brain';
+import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
+import { IDS } from '@make.org/types/enums';
 import {
-  trackClickHomepageParticipate,
-  trackClickHomepageDiscover,
-} from '@make.org/utils/services/Tracking';
-import { useAppContext } from '@make.org/store';
-import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
-import { HeroPictures } from './Pictures';
+  scrollToElementClass,
+  scrollToElementId,
+} from '@make.org/utils/helpers/styled';
 import {
-  ColumnToRowToColumnStyle,
+  ButtonAnchorStyle,
+  LinkAnchorStyle,
+} from '@make.org/ui/elements/ButtonsElements';
+import {
   HeroTitleStyle,
   HeroDescriptionStyle,
-  HeroRedButtonStyle,
-  HeroTransparentButtonStyle,
-  WhiteArrowDownIcon,
-  BlackArrowDownIcon,
   HeroContentStyle,
   HeroInnerContentStyle,
-  HeroWrapperStyle,
+  HeroIncentiveStyle,
+  HeroListStyle,
 } from './style';
 
-export const Hero: FC = () => {
-  const { state } = useAppContext();
-  const { country, device } = state.appConfig;
-  const { homepage } = state.views;
-  const isDesktop = matchDesktopDevice(device);
-  const isFr = country === 'FR';
-  const hasActiveConsultations =
-    homepage && homepage.currentQuestions.length > 0;
-
-  const { featuredQuestions, posts } = homepage || {
-    featuredQuestions: [],
-    posts: [],
-  };
-
-  const hasFeaturedQuestions = featuredQuestions?.length > 0;
-  const hasPosts = posts?.length > 0;
-
-  return (
-    <HeroWrapperStyle as="section" aria-labelledby="hero-title">
-      <HeroContentStyle>
-        <HeroInnerContentStyle>
-          <HeroTitleStyle id="hero-title" data-cy-container="hero-title">
-            {i18n.t('homepage.hero.title')}
-          </HeroTitleStyle>
-          {!isDesktop && <HeroPictures />}
-          <HeroDescriptionStyle>
-            {i18n.t('homepage.hero.description')}
-          </HeroDescriptionStyle>
-          <ColumnToRowToColumnStyle>
-            {hasActiveConsultations && (
-              <HeroRedButtonStyle
-                as="a"
-                href="#current_questions"
-                onClick={() => trackClickHomepageParticipate()}
-                data-cy-link="participate-consultations"
+export const Hero: FC = () => (
+  <FlexElementStyle as="section" aria-labelledby="hero-title">
+    <HeroContentStyle>
+      <HeroInnerContentStyle>
+        <HeroTitleStyle id="hero-title" data-cy-container="hero-title">
+          {i18n.t('homepage.hero.title')}
+        </HeroTitleStyle>
+        <HeroDescriptionStyle>
+          {i18n.t('homepage.hero.description')}
+        </HeroDescriptionStyle>
+        <HeroIncentiveStyle as="div">
+          {i18n.t('homepage.hero.incentive')}
+          <HeroListStyle>
+            <li>
+              <ButtonAnchorStyle
+                type="button"
+                onClick={() => scrollToElementId(IDS.PUBLIC)}
               >
-                {i18n.t('homepage.hero.participate')}
-                <WhiteArrowDownIcon aria-hidden focusable="false" />
-              </HeroRedButtonStyle>
-            )}
-            {isFr && hasFeaturedQuestions && hasPosts && (
-              <HeroTransparentButtonStyle
-                as="a"
-                href="#featured_questions"
-                onClick={() => trackClickHomepageDiscover()}
-                data-cy-link="discover-great-causes"
+                <SvgBank aria-hidden focusable="false" />
+                {i18n.t('homepage.hero.btog')}
+              </ButtonAnchorStyle>
+            </li>
+            <li>
+              <ButtonAnchorStyle
+                type="button"
+                onClick={() => scrollToElementId(IDS.BUSINESS)}
               >
-                {i18n.t('homepage.hero.discover')}
-                <BlackArrowDownIcon aria-hidden focusable="false" />
-              </HeroTransparentButtonStyle>
-            )}
-          </ColumnToRowToColumnStyle>
-        </HeroInnerContentStyle>
-        {isDesktop && <HeroPictures />}
-      </HeroContentStyle>
-    </HeroWrapperStyle>
-  );
-};
+                <SvgOffice aria-hidden focusable="false" />
+                {i18n.t('homepage.hero.btob')}
+              </ButtonAnchorStyle>
+            </li>
+            <li>
+              <ButtonAnchorStyle
+                type="button"
+                onClick={() => scrollToElementId(IDS.RESEARCH)}
+              >
+                <SvgBrain aria-hidden focusable="false" />
+                {i18n.t('homepage.hero.research')}
+              </ButtonAnchorStyle>
+            </li>
+            <li>
+              <LinkAnchorStyle
+                type="button"
+                onClick={() => scrollToElementClass(IDS.CITIZEN)}
+              >
+                {i18n.t('homepage.hero.btoc')}
+              </LinkAnchorStyle>
+              →
+            </li>
+          </HeroListStyle>
+        </HeroIncentiveStyle>
+      </HeroInnerContentStyle>
+      <Image
+        width={520}
+        height={440}
+        src="https://assets.make.org/assets/home/hero_20012025.png"
+        alt=""
+      />
+    </HeroContentStyle>
+  </FlexElementStyle>
+);

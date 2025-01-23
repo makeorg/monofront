@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { getHomeLink } from '@make.org/utils/helpers/url';
 import i18n from 'i18next';
 import { TextStyleType } from '@make.org/designsystem/components/Typography/Text';
+import { IDS } from '@make.org/types/enums';
 import {
   HomepagePageInnerStyle,
   HomepageSectionStyle,
@@ -15,6 +16,7 @@ export const InternationalPlaceholder: FC = () => (
     as="section"
     aria-labelledby="international_placeholder_title"
     id="international_placeholder"
+    className={IDS.CITIZEN}
   >
     <HomepagePageInnerStyle>
       <ConsultationElementSubtitleStyle

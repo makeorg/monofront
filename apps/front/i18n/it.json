@@ -1118,8 +1118,11 @@
     "hero": {
       "title": "Insieme, possiamo migliorare la società",
       "description": "Dai la tua opinione su argomenti sociali che ti stanno a cuore partecipando alle nostre consultazioni cittadine. Insieme, cittadinanza, associazioni e imprese, definiamo le nostre priorità e portiamo avanti dei cambiamenti concreti.",
-      "participate": "Partecipa alle consultazioni",
-      "discover": "Scopri le nostre grandi cause"
+      "incentive": "Find out how we can help you :",
+      "btob": "Businesses",
+      "btog": "Public Institutions",
+      "research": "A.I. Research",
+      "btoc": "I am a citizen"
     },
     "highlights": {
       "title": "Make.org in cifre",
@@ -1161,6 +1164,39 @@
       "subtitle": "Consultazioni nazionali",
       "title": "In Italia, Make.org è disponibile anche per gli argomenti di portata nazionale",
       "button": "Scopri"
+    },
+    "positioning_1": {
+      "subtitle": "Make.org for",
+      "title": "Public Institutions <br/>& Non-profit",
+      "description": "Make.org uses AI to support public institutions in massively engaging citizens at key stages, from elections to policy and legislative development, ensuring alignment and collective action.Make.org uses AI to support public institutions in massively engaging citizens at key stages, from elections to policy and legislative development, ensuring alignment and collective action.",
+      "label_name": "Key processes",
+      "label_1": "Electoral processes",
+      "label_2": "Executive processes",
+      "label_3": "Assembly processes",
+      "label_4": "Multilateralism initiatives",
+      "link_label": "Start a project with us"
+    },
+    "positioning_2": {
+      "subtitle": "Make.org for",
+      "title": "Businesses",
+      "description": "Make.org uses AI to support public institutions in massively engaging citizens at key stages, from elections to policy and legislative development, ensuring alignment and collective action.Make.org uses AI to support public institutions in massively engaging citizens at key stages, from elections to policy and legislative development, ensuring alignment and collective action.Make.org uses AI to massively involve employees and customers in strategic, operational, and CSR processes, fostering alignment and shared ownership to help businesses adapt quickly and effectively. Make.org uses AI to massively involve employees and customers in strategic, operational, and CSR processes, fostering alignment and shared ownership to help businesses adapt quickly and effectively.",
+      "label_name": "Key processes",
+      "label_1": "Electoral processes",
+      "label_2": "Executive processes",
+      "label_3": "Assembly processes",
+      "label_4": "Multilateralism initiatives",
+      "link_label": "Start a project with us"
+    },
+    "positioning_3": {
+      "subtitle": "Make.org for",
+      "title": "A.I. Research",
+      "description": "Companies face rising complexity and disengagement among employees and customers. Adapting to today’s rapid geopolitical, environmental, and technological changes requires new approaches.",
+      "label_name": "Key processes",
+      "label_1": "Electoral processes",
+      "label_2": "Executive processes",
+      "label_3": "Assembly processes",
+      "label_4": "Multilateralism initiatives",
+      "link_label": "Start a project with us"
     }
   },
   "search": {

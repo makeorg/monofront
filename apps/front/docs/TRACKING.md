@@ -466,16 +466,6 @@ Following parameters are added to all events.
     
   
 
-  - `click-button-consultations` Click participate link on home page
-
-    
-  
-
-  - `click-button-great-causes` Click great causes link on home page
-
-    
-  
-
   - `click-button-browse-consultations` Click browse consultations link on home page
 
     

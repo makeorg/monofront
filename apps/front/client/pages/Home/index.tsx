@@ -17,6 +17,7 @@ import { PartnershipBanner } from '../../app/Homepage/Partnership';
 import { InternationalPlaceholder } from '../../app/Homepage/International';
 import { HomepageSkipLinks } from '../../app/SkipLinks/Homepage';
 import { HomepageWrapperStyle } from './style';
+import { PartnershipSection } from '../../app/Homepage/Partnership/Sections';
 
 const HomePage: FC = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -81,9 +82,10 @@ const HomePage: FC = () => {
       )}
       {!isLoading && homepage && (
         <>
-          <Hero />
           <HomepageWrapperStyle>
+            <Hero />
             <HighlightsBanner highlights={homepage.highlights} />
+            <PartnershipSection />
             {hasConsultations ? (
               <HomepageQuestions
                 currentQuestions={homepage.currentQuestions}

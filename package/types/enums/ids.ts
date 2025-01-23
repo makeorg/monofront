@@ -11,7 +11,6 @@ export enum IDS {
   SORT_LIST = 'sort_list',
   TAGS_SECTION = 'tags_section',
   FLUSH_TAGS_TRIGGER = 'flush_tags_trigger',
-
   DEPARTMENT_STORAGE_KEY = 'declared_department',
 
   /** Main Elements */
@@ -25,4 +24,10 @@ export enum IDS {
   BROWSE_SECTION = 'browse_section',
   EXPLORE_SECTION = 'explore_section',
   CONSULTATION_NAVIGATION = 'consultation_navigation',
+
+  /** Homepage */
+  PUBLIC = 'public',
+  BUSINESS = 'business',
+  RESEARCH = 'research',
+  CITIZEN = 'citizen',
 }

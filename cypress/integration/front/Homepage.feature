@@ -12,7 +12,7 @@ Feature: The Home Page
 
   Scenario: Homepage has hero section
     Given I go to "france homepage"
-    Then I see "Ensemble, nous avons le pouvoir d'améliorer la société" in "hero-title" container
+    Then I see "Engage to Transform: building resilience in a complex world" in "hero-title" container
 
   Scenario: Homepage has highlights section
     Given I go to "france homepage"
@@ -42,7 +42,7 @@ Feature: The Home Page
   Scenario: Track display home page
     Given I monitor API "postTracking" requests
     When I go to "france homepage"
-    Then I see "Ensemble, nous avons le pouvoir d'améliorer la société" in "main" container
+    Then I see "Engage to Transform: building resilience in a complex world" in "main" container
     And event "display-page-home" should be tracked by Make with parameters values:
       | name                | value                                                                 |
       | eventType           | trackCustom                                                           |

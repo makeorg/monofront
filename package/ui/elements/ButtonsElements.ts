@@ -403,3 +403,62 @@ export const BlackBorderButtonStyle = styled.button.attrs(props => ({
   ${BasicButtonStyle};
   ${BlackBordersStyle};
 `;
+
+export const ButtonAnchorStyle = styled.button`
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px;
+  font-size: ${typography.FontSize.Arrondissement};
+  padding: ${spacings.s} ${spacings.m};
+  text-decoration: none;
+  background-color: transparent;
+  color: ${colors.Content.Interface.Dark};
+  border: 1px solid ${colors.Border.Interface.Darker};
+  transition: all 0.25s ease-out;
+  > svg {
+    margin-right: ${spacings.xs};
+  }
+  .tofill {
+    fill: ${colors.Content.Interface.Dark};
+  }
+  &: hover,
+  &:focus {
+    color: #3444BC;
+    background-color: #E3E5F7;
+    border-color: #3444BC;
+    .tofill {
+      fill: #3444BC;
+    }
+  }
+  &:visited {
+    color: #253186;
+    background-color: #FAFAFF;
+    border-color: #253186;
+    .tofill {
+      fill: #253186;
+    }
+  }
+  &:disabled {
+    color: #8D8D99;
+    background-color: #FAFAFF;
+    border-color: #8D8D99;
+    cursor: not-allowed;
+    .tofill {
+      fill: #8D8D99;
+    }
+  }
+`;
+
+export const LinkAnchorStyle = styled.button`
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: ${typography.FontSize.PetiteCouronne};
+  padding: 0;
+  text-decoration: underline;
+  background-color: transparent;
+  color: ${colors.Content.Interface.Dark};
+  margin-right: ${spacings.xs};
+  border: none;
+`;

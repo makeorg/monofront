@@ -7,6 +7,8 @@ import CircularStandardBold from '../fonts/CircularStandardBold.woff';
 import CircularStandardBold2 from '../fonts/CircularStandardBold.woff2';
 import PlayfairDisplayRegularItalic from '../fonts/PlayfairDisplayRegularItalic.woff';
 import PlayfairDisplayRegularItalic2 from '../fonts/PlayfairDisplayRegularItalic.woff2';
+import NeueMachinaUltraBold from '../fonts/PPNeueMachina-PlainUltrabold.woff';
+import NeueMachinaUltraBold2 from '../fonts/PPNeueMachina-PlainUltrabold.woff2';
 
 export const FontFacesStylesheet = createGlobalStyle`
   @font-face {
@@ -44,4 +46,15 @@ export const FontFacesStylesheet = createGlobalStyle`
     font-weight: normal;
     font-style: normal;
   }
+
+
+  @font-face {
+    font-family: 'Neue Machina Ultra Bold';
+    font-display: swap;
+    src: url(${NeueMachinaUltraBold}) format('woff'),
+      url(${NeueMachinaUltraBold2}) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 `;

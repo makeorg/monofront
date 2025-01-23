@@ -36,6 +36,8 @@ export const HomepageSectionStyle = styled(ColumnElementStyle)`
 `;
 
 export const HomepageSectionTitleStyle = styled(TitleLStyle)`
+  font-family: ${typography.FontFamily.Marketing};
+  letter-spacing: 0.5px;
   color: ${colors.Content.Interface.Dark};
   margin-bottom: ${spacings.l};
   text-transform: none;

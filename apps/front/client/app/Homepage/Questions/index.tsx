@@ -11,6 +11,10 @@ import {
   trackClickBrowseResults,
 } from '@make.org/utils/services/Tracking';
 import { useAppContext } from '@make.org/store';
+import { SvgArticle } from '@make.org/ui/Svg/elements/Article';
+import { Link } from 'react-router-dom';
+import { IDS } from '@make.org/types/enums';
+import { ButtonAnchorStyle } from '@make.org/ui/elements/ButtonsElements';
 import {
   HomepageSectionTitleStyle,
   HomepageSectionStyle,
@@ -18,7 +22,7 @@ import {
 } from '../../../pages/Home/style';
 import { BrowseConsultationsList } from '../../Consultation/Browse/List';
 import { ConsultationElementTitleStyle } from '../../Consultation/Browse/style';
-import { HomepageQuestionsButtonStyle, FeaturedSeparatorStyle } from './style';
+import { FeaturedSeparatorStyle } from './style';
 
 type Props = {
   currentQuestions: HomeQuestionType[] | [];
@@ -55,6 +59,7 @@ export const HomepageQuestions: FC<Props> = ({
       as="section"
       aria-labelledby="current_consultations_title"
       id="current_questions"
+      className={IDS.CITIZEN}
     >
       <HomepageSectionTitleStyle
         id="current_consultations_title"
@@ -89,13 +94,15 @@ export const HomepageQuestions: FC<Props> = ({
         </>
       )}
       <HomepagePageInnerStyle>
-        <HomepageQuestionsButtonStyle
+        <ButtonAnchorStyle
+          as={Link}
           to={buttonLink}
           onClick={handleClick}
           data-cy-link="current-questions-link"
         >
+          <SvgArticle aria-hidden focusable="false" />
           {buttonText}
-        </HomepageQuestionsButtonStyle>
+        </ButtonAnchorStyle>
       </HomepagePageInnerStyle>
     </HomepageSectionStyle>
   );

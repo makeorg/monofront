@@ -31,7 +31,7 @@ export const FeaturedLinkIconStyle = styled(SvgAngleArrowRight)`
   height: 12px;
   margin-left: ${spacings.s};
   .tofill {
-    fill: ${colors.Content.Make.Secondary};
+    fill: ${colors.Content.Interface.Dark};
   }
   @media (min-width: ${intToPx(Breakpoints.Tablet)}) {
     width: 14px;

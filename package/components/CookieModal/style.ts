@@ -4,7 +4,7 @@ import { intToPx } from '@make.org/utils/helpers/styled';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
 import {
-  RedButtonStyle,
+  ButtonAnchorStyle,
   UnstyledButtonStyle,
 } from '@make.org/ui/elements/ButtonsElements';
 import { SvgCookie } from '@make.org/ui/Svg/elements';
@@ -121,7 +121,7 @@ export const CookieSVGStyle = {
   marginRight: '16px',
 };
 
-export const CookieModalRedButtonStyle = styled(RedButtonStyle)`
+export const CookieModalButtonStyle = styled(ButtonAnchorStyle)`
   margin-left: ${spacings.sm};
 `;
 

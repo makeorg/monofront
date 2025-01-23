@@ -7,12 +7,12 @@ import { ROUTE_PARTNERSHIP } from '@make.org/utils/routes';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { useAppContext } from '@make.org/store';
 import {
-  PartnershipInnerStyle,
-  PartnershipParagraphStyle,
-  PartnershipSectionStyle,
-  PartnershipSubtitleStyle,
-  PartnershipTitleStyle,
-  PartnershipRedButton,
+  PartnershipBannerInnerStyle,
+  PartnershipBannerParagraphStyle,
+  PartnershipBannerStyle,
+  PartnershipBannerSubtitleStyle,
+  PartnershipBannerTitleStyle,
+  PartnershipBannerRedButton,
 } from './style';
 
 export const PartnershipBanner: FC = () => {
@@ -20,29 +20,29 @@ export const PartnershipBanner: FC = () => {
   const { language } = state.appConfig;
 
   return (
-    <PartnershipSectionStyle
+    <PartnershipBannerStyle
       as="section"
       aria-labelledby="partnership_title"
       id="partnership"
       data-cy-container="partnership"
     >
-      <PartnershipInnerStyle>
-        <PartnershipSubtitleStyle data-cy-container="partnership_subtitle">
+      <PartnershipBannerInnerStyle>
+        <PartnershipBannerSubtitleStyle data-cy-container="partnership_subtitle">
           {i18n.t('homepage.partnership.subtitle')}
-        </PartnershipSubtitleStyle>
-        <PartnershipTitleStyle
+        </PartnershipBannerSubtitleStyle>
+        <PartnershipBannerTitleStyle
           id="partnership_title"
           data-cy-container="partnership_title"
         >
           {i18n.t('homepage.partnership.title')}
-        </PartnershipTitleStyle>
-        <PartnershipParagraphStyle
+        </PartnershipBannerTitleStyle>
+        <PartnershipBannerParagraphStyle
           dangerouslySetInnerHTML={{
             __html: i18n.t('homepage.partnership.description'),
           }}
           data-cy-container="partnership_description"
         />
-        <PartnershipRedButton
+        <PartnershipBannerRedButton
           as="a"
           href={getWebflowDynamicLink(language, ROUTE_PARTNERSHIP)}
           target="_blank"
@@ -54,8 +54,8 @@ export const PartnershipBanner: FC = () => {
           <ScreenReaderItemStyle>
             {i18n.t('common.open_new_window')}
           </ScreenReaderItemStyle>
-        </PartnershipRedButton>
-      </PartnershipInnerStyle>
-    </PartnershipSectionStyle>
+        </PartnershipBannerRedButton>
+      </PartnershipBannerInnerStyle>
+    </PartnershipBannerStyle>
   );
 };

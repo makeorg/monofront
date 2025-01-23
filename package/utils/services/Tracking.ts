@@ -413,14 +413,6 @@ export const trackDisplayBrowseResults = (): void => {
   TrackingService.sendAllTrackers(trackingEvent.DISPLAY_BROWSE_RESULTS());
 };
 
-export const trackClickHomepageParticipate = (): void => {
-  TrackingService.sendAllTrackers(trackingEvent.CLICK_HOMEPAGE_PARTICIPATE());
-};
-
-export const trackClickHomepageDiscover = (): void => {
-  TrackingService.sendAllTrackers(trackingEvent.CLICK_HOMEPAGE_GREAT_CAUSES());
-};
-
 export const trackClickBrowseConsultations = (): void => {
   TrackingService.sendAllTrackers(
     trackingEvent.CLICK_HOMEPAGE_BROWSE_CONSULTATIONS()
