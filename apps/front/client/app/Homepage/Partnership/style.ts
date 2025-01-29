@@ -71,6 +71,7 @@ export const PartnershipSectionStyle = styled.section`
   padding: ${spacings.m};
   margin-bottom: ${spacings.xl};
   border-radius: 16px;
+  scroll-margin-top: ${spacings.l};
   @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
     grid-template-areas:
       'desc images'
@@ -79,6 +80,7 @@ export const PartnershipSectionStyle = styled.section`
     grid-gap: 0 ${spacings.m};
     padding: ${spacings.xl};
     margin-bottom: ${spacings.xxl};
+    scroll-margin-top: ${spacings.xl};
   }
   &#${IDS.PUBLIC} {
     background: #fafaff;

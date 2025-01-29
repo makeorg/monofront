@@ -78,7 +78,7 @@ export const Hero: FC = () => (
       <Image
         width={520}
         height={440}
-        src="https://assets.make.org/assets/home/hero_20012025.png"
+        src="https://assets.make.org/assets/home/hero_29012025.png"
         alt=""
       />
     </HeroContentStyle>

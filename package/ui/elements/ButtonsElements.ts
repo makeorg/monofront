@@ -422,30 +422,29 @@ export const ButtonAnchorStyle = styled.button`
   .tofill {
     fill: ${colors.Content.Interface.Dark};
   }
-  &: hover,
-  &:focus {
-    color: #3444BC;
-    background-color: #E3E5F7;
-    border-color: #3444BC;
+  &: hover {
+    color: #3444bc;
+    background-color: #e3e5f7;
+    border-color: #3444bc;
     .tofill {
-      fill: #3444BC;
+      fill: #3444bc;
     }
   }
-  &:visited {
+  &:focus {
     color: #253186;
-    background-color: #FAFAFF;
+    background-color: #fafaff;
     border-color: #253186;
     .tofill {
       fill: #253186;
     }
   }
   &:disabled {
-    color: #8D8D99;
-    background-color: #FAFAFF;
-    border-color: #8D8D99;
+    color: #8d8d99;
+    background-color: #fafaff;
+    border-color: #8d8d99;
     cursor: not-allowed;
     .tofill {
-      fill: #8D8D99;
+      fill: #8d8d99;
     }
   }
 `;
