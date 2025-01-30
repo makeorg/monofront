@@ -1135,8 +1135,8 @@
     },
     "title": "Головна сторінка",
     "hero": {
-      "title": "Разом ми здатні покращити суспільство",
-      "description": "Висловіть свою думку щодо важливих для вас соціальних питань, узявши участь у наших публічних консультаціях із громадянами. Ми, громадяни, асоціації та компанії, маємо разом визначити наші пріоритети й реалізувати конкретні зміни.",
+      "title": "Engage for change : building resilience in a complex world",
+      "description": "In a rapidly shifting world, the key to building positive and sustainable change is massive engagement. We empower citizens, employees and stakeholders thanks to online tools and innovative collaboration methodologies",
       "incentive": "Find out how we can help you :",
       "btob": "Businesses",
       "btog": "Public Institutions",
@@ -1187,35 +1187,35 @@
     "positioning_1": {
       "subtitle": "Make.org for",
       "title": "Public Institutions <br/>& Non-profit",
-      "description": "Make.org uses AI to support public institutions in massively engaging citizens at key stages, from elections to policy and legislative development, ensuring alignment and collective action.Make.org uses AI to support public institutions in massively engaging citizens at key stages, from elections to policy and legislative development, ensuring alignment and collective action.",
+      "description": "In times of uncertainty, our democracies face growing challenges in fully meeting citizens’ expectations & fostering social cohesion. Make.org provides innovative solutions to help public institutions and non-profit organizations effectively engage citizens on a large scale, supporting democracy at key stages, from elections to participatory policymaking. This ensures alignment in collective action.",
       "label_name": "Key processes",
-      "label_1": "Electoral processes",
-      "label_2": "Executive processes",
-      "label_3": "Assembly processes",
-      "label_4": "Multilateralism initiatives",
+      "label_1": "Policy-making Processes",
+      "label_2": "Citizen Participation",
+      "label_3": "Multilateral initiatives",
+      "label_4": "Pre-Electoral debates",
       "link_label": "Start a project with us"
     },
     "positioning_2": {
       "subtitle": "Make.org for",
       "title": "Businesses",
-      "description": "Make.org uses AI to support public institutions in massively engaging citizens at key stages, from elections to policy and legislative development, ensuring alignment and collective action.Make.org uses AI to support public institutions in massively engaging citizens at key stages, from elections to policy and legislative development, ensuring alignment and collective action.Make.org uses AI to massively involve employees and customers in strategic, operational, and CSR processes, fostering alignment and shared ownership to help businesses adapt quickly and effectively. Make.org uses AI to massively involve employees and customers in strategic, operational, and CSR processes, fostering alignment and shared ownership to help businesses adapt quickly and effectively.",
+      "description": "Companies face rising complexity and disengagement among employees and customers. Adapting to today’s rapid geopolitical, environmental and technological changes requires new approaches. Make.org uses innovative solutions to massively involve stakeholders in strategic, operational, and CSR processes, fostering alignment and shared ownership to help businesses adapt quickly and effectively.",
       "label_name": "Key processes",
-      "label_1": "Electoral processes",
-      "label_2": "Executive processes",
-      "label_3": "Assembly processes",
-      "label_4": "Multilateralism initiatives",
+      "label_1": "Great Causes programs",
+      "label_2": "Strategic processes",
+      "label_3": "Operational processes",
+      "label_4": "CSR processes",
       "link_label": "Start a project with us"
     },
     "positioning_3": {
       "subtitle": "Make.org for",
       "title": "A.I. Research",
-      "description": "Companies face rising complexity and disengagement among employees and customers. Adapting to today’s rapid geopolitical, environmental, and technological changes requires new approaches.",
+      "description": "AI research is vital to ensuring that artificial intelligence remains a positive force in the service of democracy and society. Make.org addresses this challenge by building specialized platforms to collect and provide hyper-qualified data tailored to the unique needs of various research stages. Additionally, Make.org has established dedicated research programs focused on aligning AI development with democratic values and societal needs.",
       "label_name": "Key processes",
-      "label_1": "Electoral processes",
-      "label_2": "Executive processes",
-      "label_3": "Assembly processes",
-      "label_4": "Multilateralism initiatives",
-      "link_label": "Start a project with us"
+      "label_1": "Democratic Commons",
+      "label_2": "AI-Democratic Resilience",
+      "label_3": "AI for Social Sciences",
+      "label_4": "AI for Data Sciences",
+      "link_label": "Collaborate with us"
     }
   },
   "search": {
