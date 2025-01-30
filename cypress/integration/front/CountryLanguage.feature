@@ -5,7 +5,7 @@ Feature: Country and Language management
   Scenario: Track display home page on british version
     Given I monitor API "postTracking" requests
     When I go to "british homepage" with a browser language "en"
-    Then I see "Together, we can change society for the better" in "main" container
+    Then I see "Engage for change : building resilience in a complex world" in "main" container
     And event "display-page-home" should be tracked by Make with parameters values:
       | name         | value                     |
       | eventType    | trackCustom               |
@@ -33,7 +33,7 @@ Feature: Country and Language management
   Scenario: Track display france Homepage with "en" language
     Given I monitor API "postTracking" requests
     When I go to "france homepage" with a browser language "en, fr, de"
-    Then I see "Together, we can change society for the better" in "main" container
+    Then I see "Engage for change : building resilience in a complex world" in "main" container
     And event "display-page-home" should be tracked by Make with parameters values:
       | name         | value                     |
       | eventType    | trackCustom               |
@@ -62,7 +62,7 @@ Feature: Country and Language management
   Scenario: Track display france Homepage whith language fallback
     Given I monitor API "postTracking" requests
     When I go to "france homepage" with a browser language "br"
-    Then I see "Together, we can change society for the better" in "main" container
+    Then I see "Engage for change : building resilience in a complex world" in "main" container
     And event "display-page-home" should be tracked by Make with parameters values:
       | name         | value                     |
       | eventType    | trackCustom               |
@@ -91,7 +91,7 @@ Feature: Country and Language management
   Scenario: Track display british Homepage with a browser language "de"
     Given I monitor API "postTracking" requests
     When I go to "british homepage" with a browser language "de"
-    Then I see "Gemeinsam können wir die Gesellschaft verbessern" in "main" container
+    Then I see "Engagement für Wandel: Resilienz in einer komplexen Welt aufbauen" in "main" container
     And event "display-page-home" should be tracked by Make with parameters values:
       | name         | value                     |
       | eventType    | trackCustom               |
@@ -119,7 +119,7 @@ Feature: Country and Language management
   Scenario: Track display france Homepage with a browser language ""
     Given I monitor API "postTracking" requests
     When I go to "france homepage" with a browser language ""
-    Then I see "Together, we can change society for the better" in "main" container
+    Then I see "Engage for change : building resilience in a complex world" in "main" container
     And event "display-page-home" should be tracked by Make with parameters values:
       | name         | value                     |
       | eventType    | trackCustom               |
@@ -147,7 +147,7 @@ Feature: Country and Language management
   Scenario: Track display france Homepage with a browser language "wrong-language"
     Given I monitor API "postTracking" requests
     When I go to "france homepage" with a browser language "wrong-language"
-    Then I see "Together, we can change society for the better" in "main" container
+    Then I see "Engage for change : building resilience in a complex world" in "main" container
     And event "display-page-home" should be tracked by Make with parameters values:
       | name         | value                     |
       | eventType    | trackCustom               |
@@ -373,7 +373,7 @@ Feature: Country and Language management
   Scenario: Force language with the query param lang
     Given I monitor API "postTracking" requests
     When I go to "france homepage" with a browser language "en, fr" and query params "lang=de"
-    Then I see "Gemeinsam können wir die Gesellschaft verbessern" in "main" container
+    Then I see "Engagement für Wandel: Resilienz in einer komplexen Welt aufbauen" in "main" container
     And event "display-page-home" should be tracked by Make with parameters values:
       | name         | value                            |
       | eventType    | trackCustom                      |
@@ -426,5 +426,5 @@ Feature: Country and Language management
       | referrer          | http://localhost:9009/__/ |
       | custom-data       | null                      |
     Then I see a button "country language switch" with label "France • En"
-    And I see "Together, we can change society for the better" in "main" container
+    And I see "Engage for change : building resilience in a complex world" in "main" container
     And I don't see "lang=de" in url
