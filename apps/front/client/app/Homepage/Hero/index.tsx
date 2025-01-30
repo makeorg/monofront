@@ -34,7 +34,7 @@ export const Hero: FC = () => (
         <HeroIncentiveStyle as="div">
           {i18n.t('homepage.hero.incentive')}
           <HeroListStyle>
-            <li>
+            <li className="first-button">
               <PrimaryButton
                 type={PRIMARYTYPE.BUTTON}
                 onClick={() => scrollToElementId(IDS.PUBLIC)}
@@ -43,7 +43,7 @@ export const Hero: FC = () => (
                 {i18n.t('homepage.hero.btog')}
               </PrimaryButton>
             </li>
-            <li>
+            <li className="second-button">
               <PrimaryButton
                 type={PRIMARYTYPE.BUTTON}
                 onClick={() => scrollToElementId(IDS.BUSINESS)}
@@ -52,7 +52,7 @@ export const Hero: FC = () => (
                 {i18n.t('homepage.hero.btob')}
               </PrimaryButton>
             </li>
-            <li>
+            <li className="third-button">
               <PrimaryButton
                 type={PRIMARYTYPE.BUTTON}
                 onClick={() => scrollToElementId(IDS.RESEARCH)}
@@ -61,7 +61,7 @@ export const Hero: FC = () => (
                 {i18n.t('homepage.hero.research')}
               </PrimaryButton>
             </li>
-            <li>
+            <li className="link-style">
               <LinkAnchorStyle
                 type="button"
                 className="js-click-animation"

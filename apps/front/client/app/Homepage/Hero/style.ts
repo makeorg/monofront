@@ -74,18 +74,37 @@ export const HeroListStyle = styled(UnstyledListStyle)`
   grid-template-columns: repeat(1, auto);
   grid-gap: ${spacings.m};
   margin-top: ${spacings.m};
+  grid-template-areas:
+    'first-button'
+    'second-button'
+    'third-button'
+    'link';
+  grid-gap: ${spacings.m};
   li {
     color: ${colors.Content.Interface.Dark};
   }
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    grid-template-columns: repeat(2, auto);
+  @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
+    grid-template-columns: repeat(3, auto);
+    grid-template-areas:
+      'first-button second-button third-button'
+      'link link link';
+    justify-items: self-start;
     li {
       display: flex;
       align-items: center;
       justify-content: center;
+      &.first-button {
+        grid-area: first-button;
+      }
+      &.second-button {
+        grid-area: second-button;
+      }
+      &.third-button {
+        grid-area: third-button;
+      }
+      &.link-style {
+        grid-area: link;
+      }
     }
-  }
-  @media (min-width: ${intToPx(Breakpoints.LargeDesktop)}) {
-    grid-template-columns: repeat(3, auto);
   }
 `;

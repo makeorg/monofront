@@ -159,12 +159,10 @@ export const PartnershipSectionLabelStyle = styled.span`
 
 export const PartnershipSectionListStyle = styled(UnstyledListStyle)`
   margin: ${spacings.s} 0 ${spacings.m};
-  @media (min-width: ${intToPx(Breakpoints.Desktop)}) {
-    display: inline-flex;
-  }
 `;
 
 export const PartnershipSectionListItemStyle = styled.li`
+  display: inline-flex;
   color: ${colors.Content.Interface.DarkSecondary};
   font-size: ${typography.FontSize.PetiteCouronne};
   margin-right: ${spacings.m};
