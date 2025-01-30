@@ -10,10 +10,8 @@ import {
   scrollToElementClass,
   scrollToElementId,
 } from '@make.org/utils/helpers/styled';
-import {
-  ButtonAnchorStyle,
-  LinkAnchorStyle,
-} from '@make.org/ui/elements/ButtonsElements';
+import { LinkAnchorStyle } from '@make.org/ui/elements/ButtonsElements';
+import { PrimaryButton, PRIMARYTYPE } from '@make.org/components/Buttons';
 import {
   HeroTitleStyle,
   HeroDescriptionStyle,
@@ -37,35 +35,36 @@ export const Hero: FC = () => (
           {i18n.t('homepage.hero.incentive')}
           <HeroListStyle>
             <li>
-              <ButtonAnchorStyle
-                type="button"
+              <PrimaryButton
+                type={PRIMARYTYPE.BUTTON}
                 onClick={() => scrollToElementId(IDS.PUBLIC)}
               >
                 <SvgBank aria-hidden focusable="false" />
                 {i18n.t('homepage.hero.btog')}
-              </ButtonAnchorStyle>
+              </PrimaryButton>
             </li>
             <li>
-              <ButtonAnchorStyle
-                type="button"
+              <PrimaryButton
+                type={PRIMARYTYPE.BUTTON}
                 onClick={() => scrollToElementId(IDS.BUSINESS)}
               >
                 <SvgOffice aria-hidden focusable="false" />
                 {i18n.t('homepage.hero.btob')}
-              </ButtonAnchorStyle>
+              </PrimaryButton>
             </li>
             <li>
-              <ButtonAnchorStyle
-                type="button"
+              <PrimaryButton
+                type={PRIMARYTYPE.BUTTON}
                 onClick={() => scrollToElementId(IDS.RESEARCH)}
               >
                 <SvgBrain aria-hidden focusable="false" />
                 {i18n.t('homepage.hero.research')}
-              </ButtonAnchorStyle>
+              </PrimaryButton>
             </li>
             <li>
               <LinkAnchorStyle
                 type="button"
+                className="js-click-animation"
                 onClick={() => scrollToElementClass(IDS.CITIZEN)}
               >
                 {i18n.t('homepage.hero.btoc')}

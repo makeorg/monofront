@@ -6,11 +6,11 @@ import { trackClickBlog } from '@make.org/utils/services/Tracking';
 import i18n from 'i18next';
 import { URL } from '@make.org/types/enums';
 import {
-  ButtonAnchorStyle,
   ExternalLinkIconStyle,
   LinkAnchorStyle,
 } from '@make.org/ui/elements/ButtonsElements';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
+import { PrimaryButton, PRIMARYTYPE } from '@make.org/components/Buttons';
 import {
   ConsultationsListStyle,
   ConsultationsListItemStyle,
@@ -105,11 +105,9 @@ export const FeaturedPosts: FC<Props> = ({ posts }) => {
         ))}
       </ConsultationsListStyle>
       <HomepagePageInnerStyle>
-        <ButtonAnchorStyle
-          as="a"
+        <PrimaryButton
+          type={PRIMARYTYPE.EXTERNAL}
           href={setLangAndLinksByCountry(country).link}
-          target="_blank"
-          rel="noopener"
           onClick={() => trackClickBlog('blog list')}
           data-cy-link="see-blog"
         >
@@ -119,7 +117,7 @@ export const FeaturedPosts: FC<Props> = ({ posts }) => {
           <ScreenReaderItemStyle>
             {i18n.t('common.open_new_window')}
           </ScreenReaderItemStyle>
-        </ButtonAnchorStyle>
+        </PrimaryButton>
       </HomepagePageInnerStyle>
     </HomepageSectionStyle>
   );

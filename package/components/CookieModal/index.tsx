@@ -25,14 +25,15 @@ import {
 import { useAppContext } from '@make.org/store';
 import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
 import { ILogger } from '@make.org/types';
+import { spacings } from '@make.org/designsystem/tokens/spacings';
 import {
   CookieModalButtonWithLinkStyle,
   CookieModalBannerWrapperStyle,
-  CookieModalButtonStyle,
   SvgCookieStyle,
 } from './style';
 import { FirstStepCookie } from './FirstStep';
 import { SecondStepCookie } from './SecondStep';
+import { PrimaryButton, PRIMARYTYPE } from '../Buttons';
 
 // set modal and styles
 ReactModal.setAppElement('#app');
@@ -122,18 +123,23 @@ export const CookieModal: React.FC<Props> = ({ logger }) => {
       <CookieModalBannerWrapperStyle>
         <SvgCookieStyle aria-hidden focusable="false" />
         {customization ? (
-          <CookieModalButtonStyle type="button" onClick={handlePreferences}>
+          <PrimaryButton
+            type={PRIMARYTYPE.BUTTON}
+            onClick={handlePreferences}
+            style={{ marginLeft: spacings.sm }}
+          >
             {i18n.t('cookie_modal.save')}
-          </CookieModalButtonStyle>
+          </PrimaryButton>
         ) : (
           <>
-            <CookieModalButtonStyle
-              type="button"
+            <PrimaryButton
+              type={PRIMARYTYPE.BUTTON}
               onClick={handleAcceptAll}
+              style={{ marginLeft: spacings.sm }}
               data-cy-button="accept-cookies"
             >
               {i18n.t('cookie_modal.accept')}
-            </CookieModalButtonStyle>
+            </PrimaryButton>
             <CookieModalButtonWithLinkStyle
               type="button"
               onClick={handlePersonalize}

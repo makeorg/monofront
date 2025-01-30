@@ -3,15 +3,13 @@ import { Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { FlexElementStyle } from '@make.org/ui/elements/FlexElements';
-import {
-  ButtonAnchorStyle,
-  UnstyledButtonStyle,
-} from '@make.org/ui/elements/ButtonsElements';
+import { UnstyledButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { SvgCookie } from '@make.org/ui/Svg/elements';
 import { TitleXXSStyle } from '@make.org/designsystem/components/Typography/Titles/style';
 import { TextMStyle } from '@make.org/designsystem/components/Typography/Text/style';
 import { colors } from '@make.org/designsystem/tokens/colors';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
+import { PrimaryButton } from '../Buttons';
 
 export const CookieModalContentStyle = styled.div`
   display: flex;
@@ -121,7 +119,7 @@ export const CookieSVGStyle = {
   marginRight: '16px',
 };
 
-export const CookieModalButtonStyle = styled(ButtonAnchorStyle)`
+export const CookieModalButtonStyle = styled(PrimaryButton)`
   margin-left: ${spacings.sm};
 `;
 

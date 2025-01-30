@@ -12,9 +12,8 @@ import {
 } from '@make.org/utils/services/Tracking';
 import { useAppContext } from '@make.org/store';
 import { SvgArticle } from '@make.org/ui/Svg/elements/Article';
-import { Link } from 'react-router-dom';
 import { IDS } from '@make.org/types/enums';
-import { ButtonAnchorStyle } from '@make.org/ui/elements/ButtonsElements';
+import { PrimaryButton, PRIMARYTYPE } from '@make.org/components/Buttons';
 import {
   HomepageSectionTitleStyle,
   HomepageSectionStyle,
@@ -94,15 +93,15 @@ export const HomepageQuestions: FC<Props> = ({
         </>
       )}
       <HomepagePageInnerStyle>
-        <ButtonAnchorStyle
-          as={Link}
-          to={buttonLink}
+        <PrimaryButton
+          type={PRIMARYTYPE.INTERNAL}
+          href={buttonLink}
           onClick={handleClick}
           data-cy-link="current-questions-link"
         >
           <SvgArticle aria-hidden focusable="false" />
           {buttonText}
-        </ButtonAnchorStyle>
+        </PrimaryButton>
       </HomepagePageInnerStyle>
     </HomepageSectionStyle>
   );
