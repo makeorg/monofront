@@ -19,6 +19,14 @@ import {
   PartnershipSectionParagraphStyle,
   PartnershipSectionTitleStyle,
 } from './style';
+import {
+  getBusinessPartners,
+  getPublicPartners,
+  imagesPartnerAI,
+  labelsPartnerAI,
+  labelsPartnerBusiness,
+  labelsPartnerPublic,
+} from './List';
 
 type Props = {
   sectionNumber: number;
@@ -32,122 +40,6 @@ type Props = {
   }>;
   direction: string;
 };
-
-const cdnPath = 'https://assets.make.org/assets/home/partners';
-
-const labelsPartner1 = [
-  `homepage.positioning_1.label_1`,
-  `homepage.positioning_1.label_2`,
-  `homepage.positioning_1.label_3`,
-  `homepage.positioning_1.label_4`,
-];
-
-const imagesPartner1 = [
-  {
-    url: `${cdnPath}/paris.png`,
-    alt: 'Ville de Paris',
-    width: 59,
-    height: 56,
-  },
-  {
-    url: `${cdnPath}/radiofrance.png`,
-    alt: 'Radio France',
-    width: 116,
-    height: 23,
-  },
-  {
-    url: `${cdnPath}/nato.png`,
-    alt: 'Nato - Otan',
-    width: 118,
-    height: 51,
-  },
-  {
-    url: `${cdnPath}/eu.png`,
-    alt: 'European Parliament',
-    width: 115,
-    height: 90,
-  },
-  {
-    url: `${cdnPath}/gouvernement.svg`,
-    alt: 'Gouvernement - Liberté, Égalité, Fraternité',
-    width: 97,
-    height: 50,
-  },
-  {
-    url: `${cdnPath}/cese.svg`,
-    alt: 'CESE - Conseil économique social et environnemental',
-    width: 50,
-    height: 60,
-  },
-];
-
-const labelsPartner2 = [
-  `homepage.positioning_2.label_1`,
-  `homepage.positioning_2.label_2`,
-  `homepage.positioning_2.label_3`,
-  `homepage.positioning_2.label_4`,
-];
-
-const imagesPartner2 = [
-  {
-    url: `${cdnPath}/engie.png`,
-    alt: 'Engie',
-    width: 109,
-    height: 37,
-  },
-  {
-    url: `${cdnPath}/laposte.png`,
-    alt: 'La Poste',
-    width: 91,
-    height: 44,
-  },
-  {
-    url: `${cdnPath}/orange.png`,
-    alt: 'Orange',
-    width: 56,
-    height: 54,
-  },
-  {
-    url: `${cdnPath}/loreal.png`,
-    alt: "L'Oréal",
-    width: 108,
-    height: 19,
-  },
-  {
-    url: `${cdnPath}/ca.png`,
-    alt: 'CA - Crédit Agricole',
-    width: 101,
-    height: 81,
-  },
-];
-
-const labelsPartner3 = [
-  `homepage.positioning_3.label_1`,
-  `homepage.positioning_3.label_2`,
-  `homepage.positioning_3.label_3`,
-  `homepage.positioning_3.label_4`,
-];
-
-const imagesPartner3 = [
-  {
-    url: `${cdnPath}/sciencespo.svg`,
-    alt: 'Sciences Po',
-    width: 124,
-    height: 19,
-  },
-  {
-    url: `${cdnPath}/cnrs.png`,
-    alt: 'CNRS',
-    width: 52,
-    height: 50,
-  },
-  {
-    url: `${cdnPath}/sorbonne.png`,
-    alt: 'Sorbonne Université',
-    width: 102,
-    height: 41,
-  },
-];
 
 const PROJECT_URLS = {
   fr: 'https://about.make.org/fr/commencer-un-projet',
@@ -232,6 +124,9 @@ const Section: FC<Props> = ({
 };
 
 export const PartnershipSection: FC = () => {
+  const { state } = useAppContext();
+  const { country } = state.appConfig;
+
   useEffect(() => {
     const handleScroll = () => handleScrollAnimation();
 
@@ -244,22 +139,22 @@ export const PartnershipSection: FC = () => {
       <Section
         sectionNumber={1}
         id={IDS.PUBLIC}
-        labels={labelsPartner1}
-        images={imagesPartner1}
+        labels={labelsPartnerPublic}
+        images={getPublicPartners(country)}
         direction="left"
       />
       <Section
         sectionNumber={2}
         id={IDS.BUSINESS}
-        labels={labelsPartner2}
-        images={imagesPartner2}
+        labels={labelsPartnerBusiness}
+        images={getBusinessPartners(country)}
         direction="right"
       />
       <Section
         sectionNumber={3}
         id={IDS.RESEARCH}
-        labels={labelsPartner3}
-        images={imagesPartner3}
+        labels={labelsPartnerAI}
+        images={imagesPartnerAI}
         direction="left"
       />
     </>
