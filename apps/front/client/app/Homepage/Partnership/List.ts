@@ -172,10 +172,10 @@ export const imagesPartnerBusinessFR = [
     height: 44,
   },
   {
-    url: `${cdnPath}/klesia.png`,
+    url: `${cdnPath}/klesia_new.png`,
     alt: 'Klésia - Protection et innonvation sociales',
-    width: 100,
-    height: 33,
+    width: 150,
+    height: 53,
   },
   {
     url: `${cdnPath}/ca.png`,
@@ -247,7 +247,7 @@ export const imagesPartnerAI = [
   {
     url: `${cdnPath}/sorbonne.png`,
     alt: 'Sorbonne Université',
-    width: 102,
+    width: 100,
     height: 41,
   },
 ];
