@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import i18n from 'i18next';
-import { Image } from '@make.org/ui/components/Image';
 import { SvgOffice } from '@make.org/ui/Svg/elements/Office';
 import { SvgBank } from '@make.org/ui/Svg/elements/Bank';
 import { SvgBrain } from '@make.org/ui/Svg/elements/Brain';
@@ -19,6 +18,7 @@ import {
   HeroInnerContentStyle,
   HeroIncentiveStyle,
   HeroListStyle,
+  HeroImageStyle,
 } from './style';
 
 export const Hero: FC = () => (
@@ -74,7 +74,7 @@ export const Hero: FC = () => (
           </HeroListStyle>
         </HeroIncentiveStyle>
       </HeroInnerContentStyle>
-      <Image
+      <HeroImageStyle
         width={520}
         height={440}
         src="https://assets.make.org/assets/home/hero_29012025.png"

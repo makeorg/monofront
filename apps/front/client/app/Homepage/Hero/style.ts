@@ -14,6 +14,7 @@ import {
   TextMStyle,
 } from '@make.org/designsystem/components/Typography/Text/style';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
+import { Image } from '@make.org/ui/components/Image';
 
 export const HeroContentStyle = styled(FlexElementStyle)`
   width: 100%;
@@ -107,4 +108,9 @@ export const HeroListStyle = styled(UnstyledListStyle)`
       }
     }
   }
+`;
+
+export const HeroImageStyle = styled(Image)`
+  height: auto;
+  max-height: 440px;
 `;
