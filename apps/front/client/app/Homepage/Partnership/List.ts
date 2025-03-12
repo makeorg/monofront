@@ -172,10 +172,10 @@ export const imagesPartnerBusinessFR = [
     height: 44,
   },
   {
-    url: `${cdnPath}/klesia_new.png`,
-    alt: 'Klésia - Protection et innonvation sociales',
-    width: 150,
-    height: 53,
+    url: `${cdnPath}/lvmh.svg`,
+    alt: 'LVMH',
+    width: 100,
+    height: 35,
   },
   {
     url: `${cdnPath}/ca.png`,
