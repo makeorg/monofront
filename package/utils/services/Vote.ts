@@ -4,6 +4,7 @@ import { VoteType } from '@make.org/types';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
 const vote = async (
+  questionId: string,
   proposalId: string,
   voteKey: string,
   proposalKey: string,
@@ -11,6 +12,7 @@ const vote = async (
 ): Promise<VoteType | null> => {
   try {
     const response = await VoteApiService.vote(
+      questionId,
       proposalId,
       voteKey,
       proposalKey,
@@ -27,6 +29,7 @@ const vote = async (
 };
 
 const unvote = async (
+  questionId: string,
   proposalId: string,
   voteKey: string,
   proposalKey: string,
@@ -34,6 +37,7 @@ const unvote = async (
 ): Promise<VoteType | null> => {
   try {
     const response = await VoteApiService.unvote(
+      questionId,
       proposalId,
       voteKey,
       proposalKey,

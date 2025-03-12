@@ -10,6 +10,8 @@ import { QualifyButtonWrapperStyle } from './style';
 type Props = {
   /** Array with qualifications received from Api */
   qualifications: QualificationType[];
+  /** Question's Id */
+  questionId: string;
   /** Proposal's Id */
   proposalId: string;
   /** String containing the hash generate api side for security purpose */
@@ -25,6 +27,7 @@ type Props = {
  */
 export const Qualification: React.FC<Props> = ({
   qualifications,
+  questionId,
   proposalId,
   proposalKey,
   votedKey,
@@ -52,6 +55,7 @@ export const Qualification: React.FC<Props> = ({
               qualification={qualification}
               votedKey={votedKey}
               proposalKey={proposalKey}
+              questionId={questionId}
               proposalId={proposalId}
               index={index}
             />

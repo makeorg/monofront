@@ -4,6 +4,7 @@ import { QualificationType } from '@make.org/types';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 
 const qualify = async (
+  questionId: string,
   proposalId: string,
   proposalKey: string,
   voteKey: string,
@@ -13,6 +14,7 @@ const qualify = async (
 ): Promise<QualificationType | null> => {
   try {
     const response = await QualificationApiService.qualify(
+      questionId,
       proposalId,
       proposalKey,
       voteKey,
@@ -31,6 +33,7 @@ const qualify = async (
 };
 
 const unqualify = async (
+  questionId: string,
   proposalId: string,
   proposalKey: string,
   voteKey: string,
@@ -40,6 +43,7 @@ const unqualify = async (
 ): Promise<QualificationType | null> => {
   try {
     const response = await QualificationApiService.unqualify(
+      questionId,
       proposalId,
       proposalKey,
       voteKey,

@@ -182,4 +182,18 @@ questionsRouter.use('/:questionId/proposals/:proposalId', (req, res) =>
   })
 );
 
+questionsRouter.use('/:questionId/proposals', (req, res) => {
+  const proposalsOfQuestion = fixtures.proposals.filter(
+    proposal => proposal.question.questionId === req.query.questionId
+  );
+  const proposals = proposalsOfQuestion.slice(
+    parseInt(req.query.skip, 10),
+    parseInt(req.query.limit, 10) + parseInt(req.query.skip, 10)
+  );
+  return res.send({
+    total: proposalsOfQuestion.length,
+    results: proposals,
+  });
+});
+
 module.exports = questionsRouter;

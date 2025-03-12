@@ -20,6 +20,8 @@ type Props = {
   qualification: QualificationType;
   /** Voted key property */
   votedKey: string;
+  /** Question's Id */
+  questionId: string;
   /** Proposal's Id */
   proposalId: string;
   /** String containing the hash generate api side for security purpose */
@@ -36,6 +38,7 @@ type Props = {
 export const QualificationButton: React.FC<Props> = ({
   qualification,
   votedKey,
+  questionId,
   proposalId,
   proposalKey,
   index,
@@ -61,6 +64,7 @@ export const QualificationButton: React.FC<Props> = ({
   const handleQualify = async (context: string) => {
     const qualificationResult: QualificationType | null =
       await QualificationService.qualify(
+        questionId,
         proposalId,
         proposalKey,
         votedKey,
@@ -86,6 +90,7 @@ export const QualificationButton: React.FC<Props> = ({
   const handleUnqualify = async (context: string) => {
     const qualificationResult: QualificationType | null =
       await QualificationService.unqualify(
+        questionId,
         proposalId,
         proposalKey,
         votedKey,

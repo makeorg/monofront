@@ -6,6 +6,8 @@ import { QualificationButton } from '@make.org/components/Qualification/Button';
 import { VoteResultStyle } from '@make.org/components/Vote/Result/style';
 
 type Props = {
+  /** Question's Id */
+  questionId: string;
   /** Proposal's Id */
   proposalId: string;
   /** Array of votes */
@@ -25,6 +27,7 @@ type Props = {
 };
 
 export const VoteResultElement: React.FC<Props> = ({
+  questionId,
   proposalId,
   votes,
   votedKey,
@@ -57,6 +60,7 @@ export const VoteResultElement: React.FC<Props> = ({
             key={`vote_result_${proposalId}_qualifcation_${qualification.qualificationKey}`}
             qualification={qualification}
             votedKey={votedKey}
+            questionId={questionId}
             proposalId={proposalId}
             proposalKey={proposalKey}
             disableClick

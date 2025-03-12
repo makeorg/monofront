@@ -26,7 +26,7 @@ Feature: Propose in panel
         When I click on "email register" button
         And I register with email "emailValue@example.com" and password "TestMake1!"
         And I register with firstname "testfirstname" and age "37" and postal code "94120" and I accept the data policy before submitting
-        And I see the "keep proposing" button
+        Then I see the "keep proposing" button
         When I click on "keep proposing" button
         Then I see "proposal_submit" container
 

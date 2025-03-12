@@ -44,7 +44,6 @@ Feature: Propose on sequence
       | language     | fr                                                                              | fr                                                                                                                                              |
       | source       | core                                                                            | widget-test                                                                                                                                     |
       | location     | sequence                                                                        | widget                                                                                                                                          |
-      | questionId   | question-1-id                                                                   | question-1-id                                                                                                                                   |
       | questionSlug | question-1-slug                                                                 | question-1-slug                                                                                                                                 |
       | referrer     | http://localhost:9009/__/                                                       | http://localhost:9008/__/                                                                                                                       |
       | url          | http://localhost:9009/FR/consultation/question-1-slug/selection?introCard=false | http://localhost:9008/?questionSlug=question-1-slug&source=widget-test&country=FR&language=fr&widgetId=fake-widget-questionid&hash=fake-hash-id |
@@ -64,6 +63,6 @@ Feature: Propose on sequence
     And I register with email "emailValue@example.com" and password "TestMake1!"
     Then I see "S’inscrire par e-mail (2/2)" in "register-panel-title" container
     When I register with firstname "testfirstname" and age "37" and postal code "94120" and I accept the data policy before submitting
-    And I see the "keep voting" button
+    Then I see the "keep voting" button
     When I click on "keep voting" button
     Then I am on the common sequence page of the question "question-0-slug"

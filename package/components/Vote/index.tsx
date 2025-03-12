@@ -109,6 +109,7 @@ export const Vote: React.FC<Props> = ({
     setPending(true);
 
     const unvote = await VoteService.unvote(
+      proposal.question.questionId,
       proposalId,
       voteKey,
       proposalKey,
@@ -142,6 +143,7 @@ export const Vote: React.FC<Props> = ({
     });
 
     const vote = await VoteService.vote(
+      proposal.question.questionId,
       proposalId,
       voteKey,
       proposalKey,
@@ -228,6 +230,7 @@ export const Vote: React.FC<Props> = ({
           pending={pending}
         />
         <Qualification
+          questionId={proposal.question.questionId}
           proposalId={proposalId}
           qualifications={userVote.qualifications}
           proposalKey={proposalKey}

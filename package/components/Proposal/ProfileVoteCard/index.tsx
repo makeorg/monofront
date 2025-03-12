@@ -126,6 +126,7 @@ export const ProfileVoteCard: FC<Props> = ({
               />
             )}
             <VoteResultElement
+              questionId={proposal.question.questionId}
               proposalId={proposal.id}
               votes={proposal.votes}
               votedKey={voteKey}

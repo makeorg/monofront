@@ -77,22 +77,24 @@ When('I login and submit a proposal in anonymous mode', () => {
       req.reply(userData);
     }
   ).as('getProfile');
-  cy.intercept({ method: 'POST', url: '/proposals' }, req => {
-    expect(req.body).to.include({
-      content: 'Il faut test',
-      questionId: 'question-1-id',
-      isAnonymous: true,
-      language: 'fr',
-      country: 'FR',
-    }),
-      req.reply({
-        statusCode: 200,
-        body: {
-          id: '11111111-2222-3333-4444-555555555555',
-          proposalId: '11111111-2222-3333-4444-555555555555',
-        },
-      });
-  }).as('postProposal');
+  cy.intercept(
+    { method: 'POST', url: '/questions/question-1-id/proposals' },
+    req => {
+      expect(req.body).to.include({
+        content: 'Il faut test',
+        isAnonymous: true,
+        language: 'fr',
+        country: 'FR',
+      }),
+        req.reply({
+          statusCode: 200,
+          body: {
+            id: '11111111-2222-3333-4444-555555555555',
+            proposalId: '11111111-2222-3333-4444-555555555555',
+          },
+        });
+    }
+  ).as('postProposal');
 
   cy.get('[name=email]').type(userData.email);
   cy.get('[name=password]').type(userData.password);
