@@ -6,9 +6,11 @@ import {
 import { AxiosResponse } from 'axios';
 import { ApiService } from '@make.org/api/ApiService';
 
-const PATH_PROPOSALS = '/proposals';
-const PATH_PROPOSAL = '/proposals/:proposalId';
-const PATH_PROPOSAL_REPORT = '/proposals/:proposalId/report';
+const PATH_SEARCH_PROPOSALS = '/proposals';
+const PATH_POST_PROPOSAL = '/questions/:questionId/proposals';
+const PATH_PROPOSAL = '/questions/:questionId/proposals/:proposalId';
+const PATH_PROPOSAL_REPORT =
+  '/questions/:questionId/proposals/:proposalId/report';
 
 type TypeAvailableAlgorithms = {
   [name: string]: { key: string; value: string };
@@ -39,25 +41,31 @@ export class ProposalApiService {
     country: string,
     isAnonymous: boolean
   ): Promise<void | AxiosResponse> {
-    return ApiService.callApi(PATH_PROPOSALS, {
-      method: 'POST',
-      body: JSON.stringify({
-        content,
-        questionId,
-        language,
-        country,
-        isAnonymous,
-      }),
-    });
+    return ApiService.callApi(
+      PATH_POST_PROPOSAL.replace(':questionId', questionId),
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          content,
+          language,
+          country,
+          isAnonymous,
+        }),
+      }
+    );
   }
 
   static report(
+    questionId: string,
     proposalId: string,
     reason: ReportReasonType,
     proposalLanguage: string
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
-      PATH_PROPOSAL_REPORT.replace(':proposalId', proposalId),
+      PATH_PROPOSAL_REPORT.replace(':questionId', questionId).replace(
+        ':proposalId',
+        proposalId
+      ),
       {
         method: 'POST',
         body: JSON.stringify({
@@ -69,12 +77,16 @@ export class ProposalApiService {
   }
 
   static getProposal(
+    questionId: string,
     proposalId: string,
     preferredLanguage: string,
     headers: ApiServiceHeadersType = {}
   ): Promise<void | AxiosResponse> {
     return ApiService.callApi(
-      PATH_PROPOSAL.replace(':proposalId', proposalId),
+      PATH_PROPOSAL.replace(':questionId', questionId).replace(
+        ':proposalId',
+        proposalId
+      ),
       {
         method: 'GET',
         headers,
@@ -131,7 +143,7 @@ export class ProposalApiService {
         params.order = 'DESC';
       }
     }
-    return ApiService.callApi(PATH_PROPOSALS, {
+    return ApiService.callApi(PATH_SEARCH_PROPOSALS, {
       method: 'GET',
       headers,
       params,

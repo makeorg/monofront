@@ -59,6 +59,7 @@ const ReportOptionsLabel: Array<{
 type Props = {
   switchProposalContent: () => void;
   showOriginal: boolean;
+  questionId: string;
   proposalId: string;
   translationLanguage: string;
 };
@@ -66,6 +67,7 @@ type Props = {
 export const SecondStepForm: React.FC<Props> = ({
   switchProposalContent,
   showOriginal,
+  questionId,
   proposalId,
   translationLanguage,
 }) => {
@@ -95,6 +97,7 @@ export const SecondStepForm: React.FC<Props> = ({
       setCanSubmit(true);
     };
     ProposalService.report(
+      questionId,
       proposalId,
       currentReport,
       translationLanguage,
@@ -121,6 +124,7 @@ export const SecondStepForm: React.FC<Props> = ({
               <FirstStepReportOptions
                 switchProposalContent={switchProposalContent}
                 showOriginal={showOriginal}
+                questionId={questionId}
                 proposalId={proposalId}
                 translationLanguage={translationLanguage}
               />

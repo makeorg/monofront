@@ -21,6 +21,7 @@ import {
 type Props = {
   switchProposalContent: () => void;
   showOriginal: boolean;
+  questionId: string;
   proposalId: string;
   translationLanguage: string;
 };
@@ -28,6 +29,7 @@ type Props = {
 export const FirstStepReportOptions: React.FC<Props> = ({
   switchProposalContent,
   showOriginal,
+  questionId,
   proposalId,
   translationLanguage,
 }) => {
@@ -44,6 +46,7 @@ export const FirstStepReportOptions: React.FC<Props> = ({
         <SecondStepForm
           switchProposalContent={switchProposalContent}
           showOriginal={showOriginal}
+          questionId={questionId}
           proposalId={proposalId}
           translationLanguage={translationLanguage}
         />

@@ -25,7 +25,11 @@ const ProposalPage: FC = () => {
   const question: QuestionType = selectCurrentQuestion(state);
   useEffect(() => {
     const getProposal = async () => {
-      const response = await ProposalService.getProposal(proposalId, language);
+      const response = await ProposalService.getProposal(
+        question.questionId,
+        proposalId,
+        language
+      );
       if (response) {
         setProposal(response);
       }

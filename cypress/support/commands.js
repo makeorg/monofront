@@ -29,11 +29,17 @@
 import 'cypress-wait-until';
 
 const endpoints = {
-  postVote: { method: 'POST', url: '**/proposals/*/vote' },
+  postVote: { method: 'POST', url: '**/questions/*/proposals/*/vote' },
   postTracking: { method: 'POST', url: '**/tracking/front' },
-  postUnvote: { method: 'POST', url: '**/proposals/*/unvote' },
-  postQualify: { method: 'POST', url: '**/proposals/*/qualification' },
-  postUnqualify: { method: 'POST', url: '**/proposals/*/unqualification' },
+  postUnvote: { method: 'POST', url: '**/questions/*/proposals/*/unvote' },
+  postQualify: {
+    method: 'POST',
+    url: '**/questions/*/proposals/*/qualification',
+  },
+  postUnqualify: {
+    method: 'POST',
+    url: '**/questions/*/proposals/*/unqualification',
+  },
   getFirstProposalSequence: {
     method: 'GET',
     url: '**/sequences/standard/*/first-proposal',

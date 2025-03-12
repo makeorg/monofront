@@ -9,8 +9,12 @@ describe('getProposal ApiService', () => {
   it('proposal api service has been called with right params', async () => {
     jest.spyOn(ProposalApiService, 'getProposal');
 
-    await ProposalService.getProposal('12345', 'fr');
-    expect(ProposalApiService.getProposal).toHaveBeenCalledWith('12345', 'fr');
+    await ProposalService.getProposal('12345', '12345', 'fr');
+    expect(ProposalApiService.getProposal).toHaveBeenCalledWith(
+      '12345',
+      '12345',
+      'fr'
+    );
   });
 });
 
@@ -22,6 +26,7 @@ describe('post a proposal report', () => {
   it('proposal api service has been called with right params', async () => {
     jest.spyOn(ProposalApiService, 'report');
 
+    const questionId = 'fake-question-id';
     const proposalId = 'fake-proposal-id';
     const reason = 'Inintelligible';
     const proposalLanguage = 'fr';
@@ -29,6 +34,7 @@ describe('post a proposal report', () => {
     const failure = jest.fn();
 
     await ProposalService.report(
+      questionId,
       proposalId,
       reason,
       proposalLanguage,
@@ -36,6 +42,7 @@ describe('post a proposal report', () => {
       failure
     );
     expect(ProposalApiService.report).toHaveBeenCalledWith(
+      questionId,
       proposalId,
       reason,
       proposalLanguage
@@ -52,6 +59,7 @@ describe('post a proposal report', () => {
     const failure = jest.fn();
 
     await ProposalService.report(
+      'fake-question-id',
       'fake-proposal-id',
       'Inintelligible',
       'fr',

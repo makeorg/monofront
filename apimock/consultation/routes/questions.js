@@ -123,4 +123,63 @@ questionsRouter.get('/:questionId/featured-proposals', (req, res) => {
   return res.send({ results });
 });
 
+questionsRouter.use('/:questionId/proposals/:proposalId/vote', (req, res) => {
+  switch (req.body.voteKey) {
+    case 'agree':
+      res.send(fixtures.voteAgree);
+      break;
+    case 'disagree':
+      res.send(fixtures.voteDisagree);
+      break;
+    case 'neutral':
+      res.send(fixtures.voteNeutral);
+      break;
+    default:
+      res.sendStatus(400);
+  }
+});
+
+questionsRouter.use('/:questionId/proposals/:proposalId/unvote', (req, res) => {
+  res.send(fixtures.vote);
+});
+
+questionsRouter.use(
+  '/:questionId/proposals/:proposalId/qualification',
+  (req, res) => {
+    const { count } = fixtures.qualifications[req.body.voteKey].find(
+      qualification =>
+        qualification.qualificationKey === req.body.qualificationKey
+    );
+    return res.send({
+      qualificationKey: req.body.qualificationKey,
+      hasQualified: true,
+      count: `${parseInt(count, 10) + 1}`,
+    });
+  }
+);
+
+questionsRouter.use(
+  '/:questionId/proposals/:proposalId/unqualification',
+  (req, res) => {
+    const { count } = fixtures.qualifications[req.body.voteKey].find(
+      qualification =>
+        qualification.qualificationKey === req.body.qualificationKey
+    );
+    return res.send({
+      qualificationKey: req.body.qualificationKey,
+      hasQualified: false,
+      count,
+    });
+  }
+);
+
+questionsRouter.use('/:questionId/proposals/:proposalId', (req, res) =>
+  res.send({
+    ...fixtures.proposals.find(
+      proposal => proposal.id === req.params.proposalId
+    ),
+    hasQualified: false,
+  })
+);
+
 module.exports = questionsRouter;

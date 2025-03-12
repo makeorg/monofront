@@ -35,6 +35,7 @@ const propose = async (
 };
 
 const report = async (
+  questionId: string,
   proposalId: string,
   reason: ReportReasonType,
   proposalLanguage: string,
@@ -42,7 +43,12 @@ const report = async (
   failure?: (error: Error) => void
 ): Promise<void> => {
   try {
-    await ProposalApiService.report(proposalId, reason, proposalLanguage);
+    await ProposalApiService.report(
+      questionId,
+      proposalId,
+      reason,
+      proposalLanguage
+    );
     if (success) {
       success();
     }
@@ -57,11 +63,13 @@ const report = async (
 };
 
 const getProposal = async (
+  questionId: string,
   proposalId: string,
   preferredLanguage: string
 ): Promise<ProposalType | null> => {
   try {
     const response = await ProposalApiService.getProposal(
+      questionId,
       proposalId,
       preferredLanguage
     );

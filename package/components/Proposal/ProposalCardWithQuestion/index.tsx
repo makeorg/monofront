@@ -79,6 +79,7 @@ export const ProposalCardWithQuestion: React.FC<Props> = ({
           <ReportOptionsButton
             switchProposalContent={switchProposalContent}
             showOriginal={showOriginal}
+            questionId={proposal.question.questionId}
             proposalId={proposal.id}
             translationLanguage={proposal.translatedLanguage}
           />
