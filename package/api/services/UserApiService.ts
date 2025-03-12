@@ -158,7 +158,9 @@ export class UserApiService {
     provider: string,
     token: string,
     approvePrivacyPolicy?: boolean,
-    optIn?: boolean
+    optIn?: boolean,
+    questionId?: string,
+    redirectUri?: string
   ): Promise<void | AxiosResponse<UserAuthType>> {
     const result = ApiService.callApi(PATH_USER_LOGIN_SOCIAL, {
       method: 'POST',
@@ -171,6 +173,8 @@ export class UserApiService {
         crmLanguage: ApiService.language,
         approvePrivacyPolicy,
         optIn,
+        questionId,
+        redirectUri,
       }),
     });
 

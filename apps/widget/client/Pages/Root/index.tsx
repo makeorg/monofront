@@ -11,7 +11,6 @@ import { Panel } from '@make.org/components/Panel';
 import { PrivacyPolicyModal } from '@make.org/components/PrivacyPolicyModal';
 import { Spinner } from '@make.org/ui/components/Loading/Spinner';
 import { isInProgress } from '@make.org/utils/helpers/date';
-import { QuestionType } from '@make.org/types';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
 import { MetaTags } from '@make.org/components/MetaTags';
 import i18n from 'i18next';
@@ -22,18 +21,20 @@ import { ClosedConsultation } from '../../components/ClosedConsultation';
 import { IntroProposal } from '../../components/IntroProposal';
 import { WidgetContainerStyle } from '../../style';
 import { FirstProposal } from '../../components/FirstProposal';
+import { PrivateAuthCard } from '../../components/PrivateAuthCard';
 
 export const RootPage: FC = () => {
   const { state } = useAppContext();
-  const { currentQuestion, appConfig, modal } = state;
+  const { currentQuestion, appConfig, modal, authRedirectInfo } = state;
+  console.log('state in Root/index : ', state);
   const { sequenceKind, loadFirstProposal } = state.sequence;
-  const { unsecure } = appConfig;
+  const { unsecure, device } = appConfig;
   const { showDataPolicy } = modal;
   const isStandardSequenceKind = sequenceKind
     ? isStandardSequence(sequenceKind)
     : true;
-  const question: QuestionType = selectCurrentQuestion(state);
-  const topProposalIsActive = question.activeFeatureData?.topProposal !== null;
+  const question = authRedirectInfo ? null : selectCurrentQuestion(state);
+  const topProposalIsActive = question?.activeFeatureData?.topProposal !== null;
   const [topProposal, disableTopProposal] =
     useState<boolean>(topProposalIsActive);
   const [widgetcards, setWidgetCards] = useState(
@@ -65,6 +66,12 @@ export const RootPage: FC = () => {
       />
     );
   }, [topProposal, loadFirstProposal, sequenceKind]);
+
+  if (!question) {
+    return authRedirectInfo ? (
+      <PrivateAuthCard authRedirectInfo={authRedirectInfo} device={device} />
+    ) : null;
+  }
 
   if (!currentQuestion) {
     return <Spinner />;

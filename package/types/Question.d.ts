@@ -193,6 +193,14 @@ export type QuestionType = {
   actionsUrl: string;
 };
 
+export type NotAuthSecuredQuestionType = {
+  authorizationEndpoint: string;
+  scope: string;
+  clientId: string;
+  responseType: string;
+  questionId: string;
+};
+
 export type CountsByQuestionType = {
   [questionId: string]: {
     proposalsCount: number;

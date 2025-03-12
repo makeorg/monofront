@@ -383,14 +383,18 @@ const loginSocial = async (
   optIn?: boolean,
   success?: (isNewAccount: boolean) => void,
   failure?: () => void,
-  unexpectedError?: () => void
+  unexpectedError?: () => void,
+  questionId?: string,
+  redirectUri?: string
 ): Promise<UserAuthType | void> => {
   try {
     const response = await UserApiService.loginSocial(
       provider,
       token,
       approvePrivacyPolicy,
-      optIn
+      optIn,
+      questionId,
+      redirectUri
     );
 
     if (response && response.data) {

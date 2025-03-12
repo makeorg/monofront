@@ -3634,6 +3634,8 @@ __metadata:
     "@types/object-hash": ^3
     "@types/react": ^18.2.21
     "@types/react-dom": ^18.2.7
+    "@types/react-router": ^5.1.20
+    "@types/react-router-dom": ^5.3.3
     babel-loader: 8.2.5
     babel-plugin-convert-to-json: ^0.1.0
     compression: ^1.7.4
@@ -3658,6 +3660,7 @@ __metadata:
     react-cookie: ^4.1.1
     react-dom: ^18.2.0
     react-head: ^3.4.2
+    react-router: ^5.3.4
     react-router-dom: ^5.3.4
     serialize-javascript: ^6.0.1
     serve-favicon: ^2.5.0
@@ -6635,7 +6638,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-router-dom@npm:5.3.3":
+"@types/react-router-dom@npm:5.3.3, @types/react-router-dom@npm:^5.3.3":
   version: 5.3.3
   resolution: "@types/react-router-dom@npm:5.3.3"
   dependencies:
@@ -6646,7 +6649,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-router@npm:*":
+"@types/react-router@npm:*, @types/react-router@npm:^5.1.20":
   version: 5.1.20
   resolution: "@types/react-router@npm:5.1.20"
   dependencies:

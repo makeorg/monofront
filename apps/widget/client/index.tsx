@@ -70,7 +70,7 @@ const initialState = createInitialState();
 
 if (env.isDev()) {
   // Set state for dev env, pass desired slug
-  window.INITIAL_STATE = initDevState(initialState, 'test-morgane');
+  window.INITIAL_STATE = initDevState(initialState, 'maif-pauline');
 }
 
 const serverState = window.INITIAL_STATE || initialState;
@@ -103,7 +103,6 @@ const initApp = async (state: StateRoot) => {
       undefined,
       undefined
     );
-
     if (question) {
       const { sequenceConfig } = question;
       const questionModified = {

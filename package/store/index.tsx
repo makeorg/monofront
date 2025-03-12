@@ -30,6 +30,7 @@ import { questions_reducer } from './reducers/questions';
 import { notifications_reducer } from './reducers/notifications';
 import { views_reducer } from './reducers/views';
 import { session_reducer } from './reducers/session';
+import { authRedirectInfo_reducer } from './reducers/authRedirectInfo';
 
 const AppContext = createContext({
   state: initialState,
@@ -52,6 +53,7 @@ const rootReducer = combineReducers({
   modal: modal_reducer,
   panel: panel_reducer,
   session: session_reducer,
+  authRedirectInfo: authRedirectInfo_reducer,
 });
 
 const useAllReducers = (

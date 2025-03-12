@@ -6,6 +6,8 @@ import { loggerApi } from './api/logger';
 import * as technicalPages from './technicalPages';
 import { mainRoute } from './ssr/mainRoute';
 import { maintenanceRoute } from './ssr/maintenanceRoute';
+import { oidcRoute } from './ssr/oidcRoute';
+import { privateAuthSuccededRoute } from './ssr/privateAuthSuccededRoute';
 
 function setCustomCacheControl(res: Response, path: string) {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -49,5 +51,7 @@ export const initRoutes = (app: Application): void => {
   app.get('/version', technicalPages.renderVersion);
   app.get('/demo', technicalPages.renderDemo);
   app.get('/maintenance', metricsMiddleware, maintenanceRoute);
+  app.get('/oidc', oidcRoute);
+  app.get('/auth-succeded', privateAuthSuccededRoute);
   app.get('/', metricsMiddleware, mainRoute);
 };

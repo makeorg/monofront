@@ -5,6 +5,7 @@ import {
   QuestionType,
   QuestionResultsType,
   CountsByQuestionType,
+  NotAuthSecuredQuestionType,
 } from './Question';
 import { LocaleType } from './enums';
 import { ProposalType } from './Proposal';
@@ -205,6 +206,8 @@ export type StateRoot = {
   partners?: StatePartners;
   panel: StatePanel;
   session: StateSession;
+  authRedirectInfo?: NotAuthSecuredQuestionType | null;
+  openIdCode?: string | null;
 };
 
 export type Reducer<State = any, Action = any> = (

@@ -1,4 +1,7 @@
-import { QuestionType } from '@make.org/types/Question';
+import {
+  QuestionType,
+  NotAuthSecuredQuestionType,
+} from '@make.org/types/Question';
 import { QuestionApiService } from '@make.org/api/services/QuestionApiService';
 import NodeCache from 'node-cache';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
@@ -16,7 +19,7 @@ const getQuestion = async (
   notFound: () => void,
   unexpectedError: () => void,
   preferredLanguage: string
-): Promise<QuestionType | void> => {
+): Promise<QuestionType | NotAuthSecuredQuestionType | void> => {
   const upperCountry = country.toUpperCase();
   const handleData = (data: QuestionType) => {
     if (!data.countries?.includes(upperCountry) || !data) {
@@ -42,6 +45,9 @@ const getQuestion = async (
   }
 
   try {
+    // Mocking a 401 or 403 response
+    // throw new ApiServiceError('Unauthorized', 401); // Change to 403 for Forbidden
+
     const response = await QuestionApiService.getDetail(...args);
     const formattedResponse = response && {
       ...response.data,
@@ -56,6 +62,9 @@ const getQuestion = async (
     const apiServiceError = error as ApiServiceError;
     if (apiServiceError.status === 404) {
       return notFound();
+    }
+    if (apiServiceError.status === 401 || apiServiceError.status === 403) {
+      return apiServiceError.data as NotAuthSecuredQuestionType;
     }
     ServerLogger.getInstance().logError(apiServiceError);
 
