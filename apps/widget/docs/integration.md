@@ -36,8 +36,8 @@ The widget cannot be embedded in an email.
 ```http
 # Example of security headers to allow the iframe.
 
-X-Frame-Options: ALLOW-FROM https://widget.make.org
 Access-Control-Allow-Origin: https://widget.make.org
+Content-Security-Policy: frame-ancestors <your_directives> https://widget.make.org; frame-src <your_directives> https://widget.make.org;
 ```
 
 ## Testing
