@@ -26,7 +26,6 @@ import { PrivateAuthCard } from '../../components/PrivateAuthCard';
 export const RootPage: FC = () => {
   const { state } = useAppContext();
   const { currentQuestion, appConfig, modal, authRedirectInfo } = state;
-  console.log('state in Root/index : ', state);
   const { sequenceKind, loadFirstProposal } = state.sequence;
   const { unsecure, device } = appConfig;
   const { showDataPolicy } = modal;

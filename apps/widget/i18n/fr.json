@@ -14,7 +14,15 @@
       "facebook_connect": "Continuer avec Facebook",
       "google_connect": "Continuer avec Google",
       "email_register": "S’inscrire par e-mail",
-      "count_register": "({{count}}/2)"
+      "count_register": "({{count}}/2)",
+      "openid_connect": "Continuer avec OpenID",
+      "identify": "Identification",
+      "identification_success": "Identification réussie",
+      "participate": "Pour participer à la consultation merci de vous identifier.",
+      "cgu_accept": "En vous identifiant, vous acceptez nos",
+      "error": "Une erreur est survenue, merci de réessayer",
+      "charte": "J'accepte que Make.org traite ces données pour que je puisse participer selon ",
+      "charte_link": " la charte."
     },
     "form": {
       "hide_password": "Masquer le mot de passe",
@@ -293,7 +301,8 @@
     "forgot_password": "Mot de passe oublié ?",
     "registration_title": "Je n’ai pas de compte,",
     "registration_link": "je m’en crée un.",
-    "email_doesnot_exist": "Votre {{emailLabel}} ou {{passwordLabel}} est incorrect."
+    "email_doesnot_exist": "Votre {{emailLabel}} ou {{passwordLabel}} est incorrect.",
+    "participate": "Participer"
   },
   "register": {
     "title": "Créer un compte",

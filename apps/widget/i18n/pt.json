@@ -61,7 +61,15 @@
       "facebook_connect": "Continuar com Facebook",
       "google_connect": "Continuar com Google",
       "email_register": "Registar-se por e-mail",
-      "count_register": "({{count}}/2)"
+      "count_register": "({{count}}/2)",
+      "openid_connect": "@@common.social_login.openid_connect|fr:Continuer avec OpenID",
+      "identify": "@@common.social_login.identify|fr:Identification",
+      "identification_success": "@@common.social_login.identification_success|fr:Identification réussie",
+      "participate": "@@common.social_login.participate|fr:Pour participer à la consultation merci de vous identifier.",
+      "cgu_accept": "@@common.social_login.cgu_accept|fr:En vous identifiant, vous acceptez nos",
+      "error": "@@common.social_login.error|fr:Une erreur est survenue, merci de réessayer",
+      "charte": "@@common.social_login.charte|fr:J'accepte que Make.org traite ces données pour que je puisse participer selon ",
+      "charte_link": "@@common.social_login.charte_link|fr: la charte."
     },
     "notifications": {
       "bad_link": "Este link já não é válido.",
@@ -289,7 +297,8 @@
     "forgot_password": "Palavra-passe esquecida?",
     "registration_title": "Não tenho conta,",
     "registration_link": "crio uma para mim.",
-    "email_doesnot_exist": "O seu {{emailLabel}} ou {{passwordLabel}} está incorreto."
+    "email_doesnot_exist": "O seu {{emailLabel}} ou {{passwordLabel}} está incorreto.",
+    "participate": "@@login.participate|fr:Participer"
   },
   "register": {
     "title": "Criar uma conta",

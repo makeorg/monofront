@@ -45,9 +45,6 @@ const getQuestion = async (
   }
 
   try {
-    // Mocking a 401 or 403 response
-    // throw new ApiServiceError('Unauthorized', 401); // Change to 403 for Forbidden
-
     const response = await QuestionApiService.getDetail(...args);
     const formattedResponse = response && {
       ...response.data,

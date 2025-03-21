@@ -74,7 +74,6 @@ export const mainRoute = async (
     questionUnexpectedError,
     formattedLanguage || DEFAULT_LANGUAGE
   );
-  console.log('question in mainRoute after le retour : ', question);
 
   const firstNotFound = () => {
     logger.logError({
@@ -113,10 +112,8 @@ export const mainRoute = async (
   }
 
   if ('authorizationEndpoint' in question) {
-    console.log('ici authorizationEndpoint');
     initialState.authRedirectInfo = question;
   } else {
-    console.log('ici questionId');
     const { questionId } = question;
     const formattedQuestionId = (questionId && questionId.toString()) || '';
 

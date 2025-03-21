@@ -4,9 +4,9 @@ import { Layouts, Breakpoints } from '@make.org/assets/vars/Breakpoints';
 import { intToPx } from '@make.org/utils/helpers/styled';
 import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { typography } from '@make.org/designsystem/tokens/typography';
-import { colors } from '@make.org/designsystem/tokens/colors';
+import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 
-export const PrivateAuthCardContainerStyle = styled(MiddleColumnStyle)`
+export const AuthSuccededCardContainerStyle = styled(MiddleColumnStyle)`
   position: relative;
   width: 100%;
   height: inherit;
@@ -24,51 +24,43 @@ export const PrivateAuthCardContainerStyle = styled(MiddleColumnStyle)`
   }
 `;
 
-export const PrivateAuthCardContentStyle = styled(MiddleColumnStyle)`
+export const AuthSuccededCardContentStyle = styled(MiddleColumnStyle)`
   width: 100%;
   flex: 1;
 `;
 
-export const PrivateAuthCardTitleStyle = styled.p`
+export const AuthSuccededCardTitleStyle = styled.p`
   font-family: ${typography.FontFamily.Highlight};
   font-size: ${typography.FontSize.PetiteCouronne};
   margin-bottom: 5px;
 `;
 
-export const PrivateAuthCardTextStyle = styled.p`
+export const AuthSuccededCardTextStyle = styled.p`
   font-family: ${typography.FontFamily.Default};
   font-size: ${typography.FontSize.Arrondissement};
   color: rgba(0, 0, 0, 0.65);
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 `;
 
-export const PrivateAuthCardButtonStyle = styled.button`
+export const AuthSuccededCardLinkStyle = styled.a`
+  font-family: ${typography.FontFamily.Default};
+  font-size: ${typography.FontSize.Arrondissement};
+  color: rgba(0, 0, 0, 0.65);
+`;
+
+export const AuthSuccededCheckboxContainerStyle = styled.div`
+  display: flex;
+  align-items: flex-start;
+`;
+
+export const AuthSuccededCardButtonStyle = styled(RedButtonStyle)`
   font-family: ${typography.FontFamily.Highlight};
   font-size: ${typography.FontSize.Arrondissement};
-  display: flex;
-  padding: 10px 20px;
-  width: fit-content;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  border: 1px solid ${colors.Content.Interface.Dark};
-  border-radius: 58px;
 `;
 
-export const PrivateAuthCardErrorStyle = styled.p`
+export const AuthSuccededCardErrorStyle = styled.p`
   font-family: ${typography.FontFamily.Default};
   font-size: ${typography.FontSize.Arrondissement};
   color: red;
   margin-top: 20px;
-`;
-
-export const OverlayLoader = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(2px);
-  z-index: 2;
 `;

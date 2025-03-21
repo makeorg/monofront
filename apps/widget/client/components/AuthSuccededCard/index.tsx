@@ -6,10 +6,28 @@ import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 import { loadQuestion } from '@make.org/store/actions/questions';
 import { setCurrentQuestionSlug } from '@make.org/store/actions/currentQuestion';
 import { resetAuthRedirectInfo } from '@make.org/store/actions/authRedirectInfo';
+import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { getGTUPageLink } from '@make.org/utils/helpers/url';
+import i18n from 'i18next';
+import { CharteCheckBox } from './CharteCheckBox';
+import {
+  AuthSuccededCardContainerStyle,
+  AuthSuccededCardContentStyle,
+  AuthSuccededCardTitleStyle,
+  AuthSuccededCardTextStyle,
+  AuthSuccededCardButtonStyle,
+  AuthSuccededCardErrorStyle,
+  AuthSuccededCardLinkStyle,
+} from './style';
 
 export const AuthSuccededCard: FC = () => {
   const [isParticipateEnable, setIsParticipateEnable] =
     useState<boolean>(false);
+  const [charteAccepted, setCharteAccepted] = useState<boolean>(false);
+  const { state } = useAppContext();
+  const { authRedirectInfo } = state;
+  const { country, language } = state.appConfig;
+  const question = authRedirectInfo || selectCurrentQuestion(state);
   const history = useHistory();
 
   const { dispatch } = useAppContext();
@@ -17,7 +35,7 @@ export const AuthSuccededCard: FC = () => {
   useEffect(() => {
     const updateQuestion = async () => {
       const questionDetails = await QuestionService.getDetail(
-        'maif-pauline',
+        question?.questionId,
         DEFAULT_LANGUAGE,
         () => {
           history.push('/');
@@ -27,7 +45,7 @@ export const AuthSuccededCard: FC = () => {
 
       if (questionDetails) {
         dispatch(loadQuestion(questionDetails));
-        dispatch(setCurrentQuestionSlug('maif-pauline'));
+        dispatch(setCurrentQuestionSlug(questionDetails.slug));
         dispatch(resetAuthRedirectInfo());
         setIsParticipateEnable(true);
       }
@@ -37,48 +55,41 @@ export const AuthSuccededCard: FC = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-xl text-center">
-        <h2 className="text-2xl font-bold text-gray-900">
-          Identification réussie
-        </h2>
-        <p className="mt-3 text-gray-700 text-sm">
-          En vous identifiant, vous acceptez nos
-          <a href="/" className="text-gray-900 underline font-medium">
-            conditions générales d’utilisation
-          </a>
-          .
-        </p>
-        <div className="mt-6 flex items-start space-x-3 text-left">
-          <input
-            type="checkbox"
-            id="accept"
-            className="mt-1 w-5 h-5 text-red-600 border-gray-300 rounded focus:ring-red-500"
-          />
-          <label
-            htmlFor="accept"
-            className="text-sm text-gray-700 leading-tight"
+    <AuthSuccededCardContainerStyle>
+      <AuthSuccededCardContentStyle>
+        <AuthSuccededCardTitleStyle>
+          {i18n.t('common.social_login.identification_success')}
+        </AuthSuccededCardTitleStyle>
+        <AuthSuccededCardTextStyle>
+          {i18n.t('common.social_login.cgu_accept')}{' '}
+          <AuthSuccededCardLinkStyle
+            href={`https://make.org${getGTUPageLink(country, language)}`}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            J&aposaccepte que Make.org traite ces données pour que je puisse
-            participer selon{' '}
-            <a href="/" className="text-red-600 underline font-medium">
-              la charte
-            </a>
-            .
-          </label>
-        </div>
+            {i18n.t('register.gtu_link')}
+          </AuthSuccededCardLinkStyle>
+        </AuthSuccededCardTextStyle>
 
-        <button
+        <CharteCheckBox
+          handleCheckbox={() => setCharteAccepted(!charteAccepted)}
+        />
+
+        <AuthSuccededCardButtonStyle
           type="button"
-          className="mt-6 w-full bg-red-600 text-white py-3 rounded-full font-semibold text-lg hover:bg-red-700 transition"
-          disabled={!isParticipateEnable}
+          disabled={!charteAccepted}
           onClick={() => {
             history.push('/');
           }}
         >
-          PARTICIPER
-        </button>
-      </div>
-    </div>
+          {i18n.t('login.participate')}
+        </AuthSuccededCardButtonStyle>
+        {!isParticipateEnable && (
+          <AuthSuccededCardErrorStyle>
+            {i18n.t('common.social_login.error')}
+          </AuthSuccededCardErrorStyle>
+        )}
+      </AuthSuccededCardContentStyle>
+    </AuthSuccededCardContainerStyle>
   );
 };

@@ -61,7 +61,15 @@
       "facebook_connect": "Συνεχίστε μέσω Facebook",
       "google_connect": "Συνεχίστε μέσω λογαριασμού Google",
       "email_register": "Εγγραφή μέσω e-mail",
-      "count_register": "({{count}}/2)"
+      "count_register": "({{count}}/2)",
+      "openid_connect": "@@common.social_login.openid_connect|fr:Continuer avec OpenID",
+      "identify": "@@common.social_login.identify|fr:Identification",
+      "identification_success": "@@common.social_login.identification_success|fr:Identification réussie",
+      "participate": "@@common.social_login.participate|fr:Pour participer à la consultation merci de vous identifier.",
+      "cgu_accept": "@@common.social_login.cgu_accept|fr:En vous identifiant, vous acceptez nos",
+      "error": "@@common.social_login.error|fr:Une erreur est survenue, merci de réessayer",
+      "charte": "@@common.social_login.charte|fr:J'accepte que Make.org traite ces données pour que je puisse participer selon ",
+      "charte_link": "@@common.social_login.charte_link|fr: la charte."
     },
     "notifications": {
       "bad_link": "Αυτός ο σύνδεσμος δεν ισχύει πλέον.",
@@ -289,7 +297,8 @@
     "forgot_password": "Ξεχάσατε τον κωδικό πρόσβασής σας;",
     "registration_title": "Δεν έχω λογαριασμό,",
     "registration_link": "θα δημιουργήσω έναν.",
-    "email_doesnot_exist": "Λάθος {{emailLabel}} ή {{passwordLabel}}."
+    "email_doesnot_exist": "Λάθος {{emailLabel}} ή {{passwordLabel}}.",
+    "participate": "@@login.participate|fr:Participer"
   },
   "register": {
     "title": "Δημιουργία λογαριασμού",

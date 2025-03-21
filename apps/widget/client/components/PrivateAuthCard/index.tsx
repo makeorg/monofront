@@ -9,7 +9,17 @@ import {
   loginSocialFailure,
   getUser,
 } from '@make.org/store/actions/authentication';
-import { OverlayLoader, PrivateAuthCardStyle } from './style';
+import { SvgOpenId } from '@make.org/ui/Svg/elements/OpenIdIcon';
+import i18n from 'i18next';
+import {
+  OverlayLoader,
+  PrivateAuthCardContainerStyle,
+  PrivateAuthCardContentStyle,
+  PrivateAuthCardTitleStyle,
+  PrivateAuthCardTextStyle,
+  PrivateAuthCardButtonStyle,
+  PrivateAuthCardErrorStyle,
+} from './style';
 
 interface PrivateAuthCardProps {
   authRedirectInfo: NotAuthSecuredQuestionType;
@@ -21,9 +31,6 @@ export const PrivateAuthCard: FC<PrivateAuthCardProps> = ({
   device,
 }: PrivateAuthCardProps) => {
   const history = useHistory();
-  const client_id = encodeURIComponent(authRedirectInfo.clientId);
-  const scope = encodeURIComponent(authRedirectInfo.scope);
-  const responseType = encodeURIComponent(authRedirectInfo.responseType);
   const { questionId } = authRedirectInfo;
 
   const [overlayLoader, setOverlayLoader] = useState(false);
@@ -57,10 +64,10 @@ export const PrivateAuthCard: FC<PrivateAuthCardProps> = ({
     if (redirectUri) {
       const newUrl =
         `${authRedirectInfo.authorizationEndpoint}` +
-        `?client_id=${client_id}` +
+        `?client_id=${encodeURIComponent(authRedirectInfo.clientId)}` +
         `&redirect_uri=${encodeURIComponent(redirectUri)}` +
-        `&scope=${scope}` +
-        `&response_type=${responseType}`;
+        `&scope=${encodeURIComponent(authRedirectInfo.scope)}` +
+        `&response_type=${encodeURIComponent(authRedirectInfo.responseType)}`;
       setUrl(newUrl);
     }
   }, [redirectUri]);
@@ -84,66 +91,73 @@ export const PrivateAuthCard: FC<PrivateAuthCardProps> = ({
   const loginFailure = useLoginFailure();
 
   return (
-    <PrivateAuthCardStyle>
-      <h1>Identification</h1>
-      <h2>Pour participer à la consultation, merci de vous identifier</h2>
-      <button
-        type="button"
-        onClick={() => {
-          setIsLoginError(false);
-          if (!url) return;
-          const maifWindow = window.open(
-            url,
-            '_blank',
-            `width=${dimensions.width},height=${dimensions.height},left=${dimensions.left},top=${dimensions.top},resizable=yes,scrollbars=yes`
-          );
-
-          const handlePopupClose = () => {
-            if (!popupRef.current || popupRef.current.closed) {
-              setIsWindowOpened(false);
-              popupRef.current = null;
-              window.removeEventListener('focus', handlePopupClose);
-            }
-          };
-
-          if (maifWindow) {
-            popupRef.current = maifWindow;
-            setIsWindowOpened(true);
-            window.addEventListener('focus', handlePopupClose);
-          }
-
-          const handleMessage = async (e: MessageEvent) => {
-            maifWindow?.close();
-            if (!maifWindow) setIsWindowOpened(false);
-
-            setOverlayLoader(true);
-
-            window.removeEventListener('message', handleMessage);
-            await UserService.loginSocial(
-              'oidc',
-              e.data.openIdCode!,
-              true,
-              false,
-              loginSuccess,
-              loginFailure,
-              () => null,
-              questionId,
-              `${window.location.origin}/oidc`
+    <PrivateAuthCardContainerStyle>
+      <PrivateAuthCardContentStyle>
+        <PrivateAuthCardTitleStyle>
+          {i18n.t('common.social_login.identify')}
+        </PrivateAuthCardTitleStyle>
+        <PrivateAuthCardTextStyle>
+          {i18n.t('common.social_login.participate')}
+        </PrivateAuthCardTextStyle>
+        <PrivateAuthCardButtonStyle
+          type="button"
+          onClick={() => {
+            setIsLoginError(false);
+            if (!url) return;
+            const maifWindow = window.open(
+              url,
+              '_blank',
+              `width=${dimensions.width},height=${dimensions.height},left=${dimensions.left},top=${dimensions.top},resizable=yes,scrollbars=yes`
             );
-          };
 
-          window.addEventListener('message', handleMessage);
-        }}
-        disabled={isWindowOpened}
-      >
-        Continuer avec OpenID
-      </button>
-      {isLoginError && (
-        <div className="error">
-          Une erreur est survenue, Veuillez ré-essayer de vous connecter
-        </div>
-      )}
-      {overlayLoader && <OverlayLoader />}
-    </PrivateAuthCardStyle>
+            const handlePopupClose = () => {
+              if (!popupRef.current || popupRef.current.closed) {
+                setIsWindowOpened(false);
+                popupRef.current = null;
+                window.removeEventListener('focus', handlePopupClose);
+              }
+            };
+
+            if (maifWindow) {
+              popupRef.current = maifWindow;
+              setIsWindowOpened(true);
+              window.addEventListener('focus', handlePopupClose);
+            }
+
+            const handleMessage = async (e: MessageEvent) => {
+              maifWindow?.close();
+              if (!maifWindow) setIsWindowOpened(false);
+
+              setOverlayLoader(true);
+
+              window.removeEventListener('message', handleMessage);
+              await UserService.loginSocial(
+                'oidc',
+                e.data.openIdCode!,
+                true,
+                false,
+                loginSuccess,
+                loginFailure,
+                () => null,
+                questionId,
+                `${window.location.origin}/oidc`
+              );
+            };
+
+            window.addEventListener('message', handleMessage);
+          }}
+          disabled={isWindowOpened}
+        >
+          <SvgOpenId />
+          {i18n.t('common.social_login.openid_connect')}
+        </PrivateAuthCardButtonStyle>
+        {isLoginError && (
+          <PrivateAuthCardErrorStyle>
+            {i18n.t('common.social_login.error')}
+          </PrivateAuthCardErrorStyle>
+        )}
+        {overlayLoader && <OverlayLoader />}
+      </PrivateAuthCardContentStyle>
+    </PrivateAuthCardContainerStyle>
   );
 };
