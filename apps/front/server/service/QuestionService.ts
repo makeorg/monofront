@@ -17,7 +17,7 @@ import { defaultUnexpectedError } from '@make.org/utils/services/DefaultErrorHan
 import hash from 'object-hash';
 import axios from 'axios';
 import { env } from '@make.org/assets/env';
-import { ClientLogger } from '@make.org/logger/clientLogger';
+import { ServerLogger } from '@make.org/logger/serverLogger';
 
 const CONTENT_API_RESULT_PATH = '/consultation-results';
 
@@ -60,7 +60,7 @@ const getQuestionResult = async (
     if (apiServiceError.status === 404) {
       return notFound();
     }
-    ClientLogger.getInstance().logError(apiServiceError);
+    ServerLogger.getInstance().logError(apiServiceError);
 
     return unexpectedError();
   }
@@ -95,7 +95,7 @@ const getQuestionSlug = async (
     if (apiServiceError.status === 404) {
       return notFound();
     }
-    ClientLogger.getInstance().logError(apiServiceError);
+    ServerLogger.getInstance().logError(apiServiceError);
 
     return unexpectedError();
   }
@@ -149,7 +149,7 @@ const getQuestion = async (
     if (apiServiceError.status === 404) {
       return notFound();
     }
-    ClientLogger.getInstance().logError(apiServiceError);
+    ServerLogger.getInstance().logError(apiServiceError);
 
     return unexpectedError();
   }
@@ -214,7 +214,7 @@ const startSequenceByKind = async (
       duplicates,
       voted,
       uniqueOrderedProposals,
-      ClientLogger.getInstance()
+      ServerLogger.getInstance()
     );
 
     const sequence: {
