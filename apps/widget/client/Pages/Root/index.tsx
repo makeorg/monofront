@@ -6,6 +6,7 @@ import {
   getMetalTitleBySequenceKind,
   isStandardSequence,
 } from '@make.org/utils/helpers/sequence';
+import { useLocation } from 'react-router';
 import { Modal } from '@make.org/components/Modal';
 import { Panel } from '@make.org/components/Panel';
 import { PrivacyPolicyModal } from '@make.org/components/PrivacyPolicyModal';
@@ -29,6 +30,10 @@ export const RootPage: FC = () => {
   const { sequenceKind, loadFirstProposal } = state.sequence;
   const { unsecure, device } = appConfig;
   const { showDataPolicy } = modal;
+  const { search } = useLocation();
+  const searchParams = new URLSearchParams(search);
+  const errorLogin = searchParams.get('error') !== null;
+
   const isStandardSequenceKind = sequenceKind
     ? isStandardSequence(sequenceKind)
     : true;
@@ -66,9 +71,13 @@ export const RootPage: FC = () => {
     );
   }, [topProposal, loadFirstProposal, sequenceKind]);
 
-  if (!question) {
+  if (!question || errorLogin) {
     return authRedirectInfo ? (
-      <PrivateAuthCard authRedirectInfo={authRedirectInfo} device={device} />
+      <PrivateAuthCard
+        authRedirectInfo={authRedirectInfo}
+        device={device}
+        errorLogin={errorLogin}
+      />
     ) : null;
   }
 

@@ -1,18 +1,10 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { NotAuthSecuredQuestionType } from '@make.org/types/Question';
-import { UserService } from '@make.org/utils/services/User';
 import { MOBILE_DEVICE } from '@make.org/utils/constants/config';
-import { useAppContext } from '@make.org/store';
-import {
-  loginSocialSuccess,
-  loginSocialFailure,
-  getUser,
-} from '@make.org/store/actions/authentication';
 import { SvgOpenId } from '@make.org/ui/Svg/elements/OpenIdIcon';
 import i18n from 'i18next';
 import {
-  OverlayLoader,
   PrivateAuthCardContainerStyle,
   PrivateAuthCardContentStyle,
   PrivateAuthCardTitleStyle,
@@ -24,16 +16,15 @@ import {
 interface PrivateAuthCardProps {
   authRedirectInfo: NotAuthSecuredQuestionType;
   device: string;
+  errorLogin: boolean;
 }
 
 export const PrivateAuthCard: FC<PrivateAuthCardProps> = ({
   authRedirectInfo,
   device,
+  errorLogin,
 }: PrivateAuthCardProps) => {
   const history = useHistory();
-  const { questionId } = authRedirectInfo;
-
-  const [overlayLoader, setOverlayLoader] = useState(false);
   const [redirectUri, setRedirectUri] = useState('');
   const [url, setUrl] = useState('');
   const [dimensions, setDimensions] = useState({
@@ -44,7 +35,6 @@ export const PrivateAuthCard: FC<PrivateAuthCardProps> = ({
   });
   const [isWindowOpened, setIsWindowOpened] = useState(false);
   const popupRef = useRef<Window | null>(null);
-  const [isLoginError, setIsLoginError] = useState(false);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -72,24 +62,6 @@ export const PrivateAuthCard: FC<PrivateAuthCardProps> = ({
     }
   }, [redirectUri]);
 
-  const { dispatch } = useAppContext();
-
-  const useLoginSuccess = () => async () => {
-    dispatch(loginSocialSuccess());
-    await getUser(dispatch);
-    history.push('auth-succeded');
-  };
-
-  const loginSuccess = useLoginSuccess();
-
-  const useLoginFailure = () => () => {
-    dispatch(loginSocialFailure());
-    setIsLoginError(true);
-    setOverlayLoader(false);
-  };
-
-  const loginFailure = useLoginFailure();
-
   return (
     <PrivateAuthCardContainerStyle>
       <PrivateAuthCardContentStyle>
@@ -102,7 +74,6 @@ export const PrivateAuthCard: FC<PrivateAuthCardProps> = ({
         <PrivateAuthCardButtonStyle
           type="button"
           onClick={() => {
-            setIsLoginError(false);
             if (!url) return;
             const maifWindow = window.open(
               url,
@@ -128,20 +99,11 @@ export const PrivateAuthCard: FC<PrivateAuthCardProps> = ({
               maifWindow?.close();
               if (!maifWindow) setIsWindowOpened(false);
 
-              setOverlayLoader(true);
-
               window.removeEventListener('message', handleMessage);
-              await UserService.loginSocial(
-                'oidc',
-                e.data.openIdCode!,
-                true,
-                false,
-                loginSuccess,
-                loginFailure,
-                () => null,
-                questionId,
-                `${window.location.origin}/oidc`
-              );
+              history.push({
+                pathname: 'auth-succeeded',
+                search: `?code=${e.data.openIdCode}`,
+              });
             };
 
             window.addEventListener('message', handleMessage);
@@ -151,12 +113,11 @@ export const PrivateAuthCard: FC<PrivateAuthCardProps> = ({
           <SvgOpenId />
           {i18n.t('common.social_login.openid_connect')}
         </PrivateAuthCardButtonStyle>
-        {isLoginError && (
+        {errorLogin && (
           <PrivateAuthCardErrorStyle>
             {i18n.t('common.social_login.error')}
           </PrivateAuthCardErrorStyle>
         )}
-        {overlayLoader && <OverlayLoader />}
       </PrivateAuthCardContentStyle>
     </PrivateAuthCardContainerStyle>
   );

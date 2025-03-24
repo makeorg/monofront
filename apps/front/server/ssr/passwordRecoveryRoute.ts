@@ -41,13 +41,19 @@ export const passwordRecoveryRoute = async (
         query: req.query,
       });
     };
-    const question = await QuestionService.getQuestion(
+    const questionOrOidcConf = await QuestionService.getQuestion(
       questionId.toString(),
       country,
       notFound,
       unexpectedError,
       language
     );
+
+    if (!questionOrOidcConf || 'authorizationEndpoint' in questionOrOidcConf) {
+      return reactRender(req, res.status(404), initialState);
+    }
+
+    const question = questionOrOidcConf;
 
     if (question) {
       initialState.currentQuestion = question.slug;

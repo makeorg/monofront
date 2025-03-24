@@ -42,7 +42,8 @@ export const accountActivationRoute = async (
         query: req.query,
       });
     };
-    const question = await QuestionService.getQuestion(
+
+    const questionOrOidcConf = await QuestionService.getQuestion(
       questionId,
       country,
       () => notFound(),
@@ -50,11 +51,13 @@ export const accountActivationRoute = async (
       language
     );
 
-    if (!question) {
+    if (!questionOrOidcConf || 'authorizationEndpoint' in questionOrOidcConf) {
       routeState.notifications.banner = notificationError;
 
       return reactRender(req, res, routeState);
     }
+
+    const question = questionOrOidcConf;
 
     routeState.currentQuestion = question.slug;
     routeState.questions = {

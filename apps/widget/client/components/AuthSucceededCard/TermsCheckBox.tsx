@@ -14,14 +14,14 @@ type Props = {
   /** Method called on change legal field */
   handleCheckbox: (fieldName: string, value: boolean) => void;
 };
-export const CharteCheckBox: React.FC<Props> = ({ handleCheckbox }) => {
+export const TermsCheckBox: React.FC<Props> = ({ handleCheckbox }) => {
   const { state } = useAppContext();
   const [checked, setIsChecked] = useState<boolean>(false);
   const { source, country, language } = state.appConfig;
   const isWidget = source === 'widget';
 
   const handleChange = () => {
-    handleCheckbox('charteCheckbox', !checked);
+    handleCheckbox('termsCheckbox', !checked);
     setIsChecked(!checked);
   };
 
@@ -32,7 +32,7 @@ export const CharteCheckBox: React.FC<Props> = ({ handleCheckbox }) => {
           required
           checked={checked}
           onChange={handleChange}
-          id="charteCheckbox"
+          id="termsCheckbox"
         />
         <StyledCheckbox isChecked={checked}>
           <SvgCheck />

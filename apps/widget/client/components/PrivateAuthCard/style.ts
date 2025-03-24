@@ -61,14 +61,3 @@ export const PrivateAuthCardErrorStyle = styled.p`
   color: red;
   margin-top: 20px;
 `;
-
-export const OverlayLoader = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(2px);
-  z-index: 2;
-`;

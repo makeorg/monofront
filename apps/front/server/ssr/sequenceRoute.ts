@@ -37,7 +37,7 @@ export const sequenceRoute = async (
     });
   };
 
-  const question = await QuestionService.getQuestion(
+  const questionOrOidcConf = await QuestionService.getQuestion(
     questionSlug,
     country,
     notFound,
@@ -45,9 +45,11 @@ export const sequenceRoute = async (
     language
   );
 
-  if (!question) {
+  if (!questionOrOidcConf || 'authorizationEndpoint' in questionOrOidcConf) {
     return reactRender(req, res.status(404), initialState);
   }
+
+  const question = questionOrOidcConf;
 
   if (!isInProgress(question) && !question.displayResults) {
     return res.redirect(question.aboutUrl);

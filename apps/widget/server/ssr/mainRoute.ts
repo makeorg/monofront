@@ -67,7 +67,7 @@ export const mainRoute = async (
     });
   };
 
-  const question = await QuestionService.getQuestion(
+  const questionOrOidcConf = await QuestionService.getQuestion(
     formattedQuestionSlug,
     formattedCountry,
     questionNotFound,
@@ -107,89 +107,92 @@ export const mainRoute = async (
     initialState.appConfig.unsecure = true;
   }
 
-  if (!question) {
+  if (!questionOrOidcConf) {
     return res.redirect('/maintenance');
   }
 
-  if ('authorizationEndpoint' in question) {
-    initialState.authRedirectInfo = question;
-  } else {
-    const { questionId } = question;
-    const formattedQuestionId = (questionId && questionId.toString()) || '';
-
-    const firstProposalUnexpectecError = () => {
-      logger.logError({
-        message: `Unexpected Error on mainRoute for first proposal fetch with question='${questionId}'`,
-        name: 'server-side',
-        url: req.url,
-        query: req.query,
-      });
-    };
-    const firstProposal = await FirstProposalService.getFirstProposal(
-      formattedQuestionId,
-      formattedCountry,
-      firstNotFound,
-      firstProposalUnexpectecError,
-      formattedLanguage || DEFAULT_LANGUAGE,
-      formattedSequenceKind
-    );
-
-    if (!firstProposal) {
-      return res.redirect('/maintenance');
-    }
-
-    const { sequenceConfig } = question;
-    const questionModified = {
-      ...question,
-      sequenceConfig: transformExtraSlidesConfigFromQuery(
-        sequenceConfig,
-        noIntroCard,
-        noPushProposal
-      ),
-    };
-
-    const cards: SequenceCardType[] = [
-      {
-        type: CARD.CARD_TYPE_PROPOSAL,
-        configuration: { proposal: firstProposal.data.proposal },
-        state: { votes: firstProposal.data.proposal.votes },
-        index: 0,
-      },
-    ];
-    const sequenceSize = getSequenceSize(
-      firstProposal.data.sequenceSize,
-      questionModified.sequenceConfig,
-      questionModified.canPropose,
-      questionModified.demographicsCardCount
-    );
-
-    updateTrackingQuestionParam(questionModified);
-
-    initialState.currentQuestion = formattedQuestionSlug;
-    initialState.questions = {
-      [formattedQuestionSlug]: {
-        question: questionModified,
-      },
-    };
-    initialState.sequence = {
-      ...initialState.sequence,
-      isLoading: false,
-      cards,
-      proposals: [firstProposal.data.proposal],
-      loadFirstProposal: true,
-      sequenceSize,
-      sequenceKind: formattedSequenceKind,
-    };
-    initialState.notifications.tip = {
-      contentId: NOTIF.FIRST_VOTE_TIP_MESSAGE,
-      level: NOTIF.NOTIFICATION_LEVEL_INFORMATION,
-      toDismiss: true,
-    };
-    initialState.session = {
-      ...initialState.session,
-      sessionId: firstProposal.sessionId,
-    };
+  if ('authorizationEndpoint' in questionOrOidcConf) {
+    initialState.authRedirectInfo = questionOrOidcConf;
+    return reactRender(req, res, initialState);
   }
+
+  const question = questionOrOidcConf;
+
+  const { questionId } = question;
+  const formattedQuestionId = (questionId && questionId.toString()) || '';
+
+  const firstProposalUnexpectecError = () => {
+    logger.logError({
+      message: `Unexpected Error on mainRoute for first proposal fetch with question='${questionId}'`,
+      name: 'server-side',
+      url: req.url,
+      query: req.query,
+    });
+  };
+  const firstProposal = await FirstProposalService.getFirstProposal(
+    formattedQuestionId,
+    formattedCountry,
+    firstNotFound,
+    firstProposalUnexpectecError,
+    formattedLanguage || DEFAULT_LANGUAGE,
+    formattedSequenceKind
+  );
+
+  if (!firstProposal) {
+    return res.redirect('/maintenance');
+  }
+
+  const { sequenceConfig } = question;
+  const questionModified = {
+    ...question,
+    sequenceConfig: transformExtraSlidesConfigFromQuery(
+      sequenceConfig,
+      noIntroCard,
+      noPushProposal
+    ),
+  };
+
+  const cards: SequenceCardType[] = [
+    {
+      type: CARD.CARD_TYPE_PROPOSAL,
+      configuration: { proposal: firstProposal.data.proposal },
+      state: { votes: firstProposal.data.proposal.votes },
+      index: 0,
+    },
+  ];
+  const sequenceSize = getSequenceSize(
+    firstProposal.data.sequenceSize,
+    questionModified.sequenceConfig,
+    questionModified.canPropose,
+    questionModified.demographicsCardCount
+  );
+
+  updateTrackingQuestionParam(questionModified);
+
+  initialState.currentQuestion = formattedQuestionSlug;
+  initialState.questions = {
+    [formattedQuestionSlug]: {
+      question: questionModified,
+    },
+  };
+  initialState.sequence = {
+    ...initialState.sequence,
+    isLoading: false,
+    cards,
+    proposals: [firstProposal.data.proposal],
+    loadFirstProposal: true,
+    sequenceSize,
+    sequenceKind: formattedSequenceKind,
+  };
+  initialState.notifications.tip = {
+    contentId: NOTIF.FIRST_VOTE_TIP_MESSAGE,
+    level: NOTIF.NOTIFICATION_LEVEL_INFORMATION,
+    toDismiss: true,
+  };
+  initialState.session = {
+    ...initialState.session,
+    sessionId: firstProposal.sessionId,
+  };
 
   return reactRender(req, res, initialState);
 };

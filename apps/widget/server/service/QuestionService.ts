@@ -60,9 +60,16 @@ const getQuestion = async (
     if (apiServiceError.status === 404) {
       return notFound();
     }
-    if (apiServiceError.status === 401 || apiServiceError.status === 403) {
-      return apiServiceError.data as NotAuthSecuredQuestionType;
+
+    const notAuthSecuredQuestion =
+      apiServiceError.data as NotAuthSecuredQuestionType;
+    if (
+      [401, 403].includes(apiServiceError.status) &&
+      notAuthSecuredQuestion?.authorizationEndpoint
+    ) {
+      return notAuthSecuredQuestion;
     }
+
     ServerLogger.getInstance().logError(apiServiceError);
 
     return unexpectedError();

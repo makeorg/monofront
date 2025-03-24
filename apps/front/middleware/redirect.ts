@@ -38,7 +38,7 @@ export const redirectToCountryMiddleware = async (
     });
   };
 
-  const question = await QuestionService.getQuestion(
+  const questionOrOidcConf = await QuestionService.getQuestion(
     formattedQuestionSlug,
     formattedCountry,
     questionNotFound,
@@ -46,7 +46,10 @@ export const redirectToCountryMiddleware = async (
     formattedLanguage || DEFAULT_LANGUAGE
   );
 
-  if (question && question.countries.includes(formattedCountry)) {
+  if (
+    questionOrOidcConf &&
+    questionOrOidcConf.countries.includes(formattedCountry)
+  ) {
     return res.redirect(`/${formattedCountry}${oldUrl}`);
   }
 

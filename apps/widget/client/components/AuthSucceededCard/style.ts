@@ -6,7 +6,7 @@ import { spacings } from '@make.org/designsystem/tokens/spacings';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { RedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 
-export const AuthSuccededCardContainerStyle = styled(MiddleColumnStyle)`
+export const AuthSucceededCardContainerStyle = styled(MiddleColumnStyle)`
   position: relative;
   width: 100%;
   height: inherit;
@@ -24,43 +24,36 @@ export const AuthSuccededCardContainerStyle = styled(MiddleColumnStyle)`
   }
 `;
 
-export const AuthSuccededCardContentStyle = styled(MiddleColumnStyle)`
+export const AuthSucceededCardContentStyle = styled(MiddleColumnStyle)`
   width: 100%;
   flex: 1;
 `;
 
-export const AuthSuccededCardTitleStyle = styled.p`
+export const AuthSucceededCardTitleStyle = styled.p`
   font-family: ${typography.FontFamily.Highlight};
   font-size: ${typography.FontSize.PetiteCouronne};
   margin-bottom: 5px;
 `;
 
-export const AuthSuccededCardTextStyle = styled.p`
+export const AuthSucceededCardTextStyle = styled.p`
   font-family: ${typography.FontFamily.Default};
   font-size: ${typography.FontSize.Arrondissement};
   color: rgba(0, 0, 0, 0.65);
   margin-bottom: 20px;
 `;
 
-export const AuthSuccededCardLinkStyle = styled.a`
+export const AuthSucceededCardLinkStyle = styled.a`
   font-family: ${typography.FontFamily.Default};
   font-size: ${typography.FontSize.Arrondissement};
   color: rgba(0, 0, 0, 0.65);
 `;
 
-export const AuthSuccededCheckboxContainerStyle = styled.div`
+export const AuthSucceededCheckboxContainerStyle = styled.div`
   display: flex;
   align-items: flex-start;
 `;
 
-export const AuthSuccededCardButtonStyle = styled(RedButtonStyle)`
+export const AuthSucceededCardButtonStyle = styled(RedButtonStyle)`
   font-family: ${typography.FontFamily.Highlight};
   font-size: ${typography.FontSize.Arrondissement};
-`;
-
-export const AuthSuccededCardErrorStyle = styled.p`
-  font-family: ${typography.FontFamily.Default};
-  font-size: ${typography.FontSize.Arrondissement};
-  color: red;
-  margin-top: 20px;
 `;
