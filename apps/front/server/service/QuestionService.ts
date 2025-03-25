@@ -18,6 +18,7 @@ import hash from 'object-hash';
 import axios from 'axios';
 import { env } from '@make.org/assets/env';
 import { ServerLogger } from '@make.org/logger/serverLogger';
+import { isSecuredConsultation } from '@make.org/utils/helpers/question';
 
 const CONTENT_API_RESULT_PATH = '/consultation-results';
 
@@ -85,9 +86,11 @@ const getQuestionSlug = async (
     const formattedResponse = response && {
       ...response.data,
     };
-    const { slug } = formattedResponse;
+    const { slug, operationKind } = formattedResponse;
 
-    cache.set(CACHE_KEY, slug);
+    if (operationKind && !isSecuredConsultation(operationKind)) {
+      cache.set(CACHE_KEY, slug);
+    }
 
     return slug;
   } catch (error: unknown) {
@@ -141,7 +144,10 @@ const getQuestion = async (
         response.data.returnedLanguage || response.data.language,
     };
 
-    cache.set(CACHE_KEY, formattedResponse);
+    const { operationKind } = formattedResponse as QuestionType;
+    if (operationKind && !isSecuredConsultation(operationKind)) {
+      cache.set(CACHE_KEY, formattedResponse);
+    }
 
     return handleData(formattedResponse);
   } catch (error: unknown) {

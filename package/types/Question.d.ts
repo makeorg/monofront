@@ -158,7 +158,11 @@ export type QuestionType = {
   endDate: string;
   landingSequenceId: string;
   canPropose: boolean;
-  operationKind: 'PUBLIC_CONSULTATION' | 'PRIVATE_CONSULTATION' | 'GREAT_CAUSE';
+  operationKind:
+    | 'PRIVATE_CONSULTATION'
+    | 'GREAT_CAUSE'
+    | 'BUSINESS_CONSULTATION'
+    | 'SECURED_CONSULTATION';
   sequenceConfig: QuestionExtraSlidesConfigType;
   aboutUrl: string;
   partners: PartnerType[];

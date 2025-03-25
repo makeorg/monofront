@@ -7,6 +7,7 @@ import NodeCache from 'node-cache';
 import { ApiServiceError } from '@make.org/api/ApiService/ApiServiceError';
 import hash from 'object-hash';
 import { ServerLogger } from '@make.org/logger/serverLogger';
+import { isSecuredConsultation } from '@make.org/utils/helpers/question';
 
 const cache = new NodeCache({ stdTTL: 900 });
 const clearCache = (): void => {
@@ -51,8 +52,10 @@ const getQuestion = async (
       returnedLanguage:
         response.data.returnedLanguage || response.data.language,
     };
-    // 900,000 milliseconds = 5 minutes
-    cache.set(CACHE_KEY, formattedResponse);
+    const { operationKind } = formattedResponse as QuestionType;
+    if (operationKind && !isSecuredConsultation(operationKind)) {
+      cache.set(CACHE_KEY, formattedResponse);
+    }
 
     return handleData(formattedResponse);
   } catch (error: unknown) {

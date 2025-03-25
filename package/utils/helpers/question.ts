@@ -2,9 +2,13 @@ import { PartnerType, QuestionType, StateQuestions } from '@make.org/types';
 import { trackingParamsService } from '@make.org/utils/services/TrackingParamsService';
 
 const GREAT_CAUSE = 'GREAT_CAUSE';
+const SECURED_CONSULTATION = 'SECURED_CONSULTATION';
 
 export const isGreatCause = (operationKind: string): boolean =>
   operationKind === GREAT_CAUSE;
+
+export const isSecuredConsultation = (operationKind: string): boolean =>
+  operationKind === SECURED_CONSULTATION;
 
 export const orderPartnersByWeight = (
   partner1: PartnerType,
