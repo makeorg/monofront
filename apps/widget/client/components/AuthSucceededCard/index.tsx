@@ -2,7 +2,6 @@ import React, { FC, useState } from 'react';
 import { useHistory, useLocation } from 'react-router';
 import { useAppContext } from '@make.org/store';
 import { QuestionService } from '@make.org/utils/services/Question';
-import { DEFAULT_LANGUAGE } from '@make.org/utils/constants/config';
 import { loadQuestion } from '@make.org/store/actions/questions';
 import { setCurrentQuestionSlug } from '@make.org/store/actions/currentQuestion';
 import { resetAuthRedirectInfo } from '@make.org/store/actions/authRedirectInfo';
@@ -43,7 +42,7 @@ export const AuthSucceededCard: FC = () => {
   const updateQuestion = async () => {
     const questionDetails = await QuestionService.getDetail(
       question?.questionId,
-      DEFAULT_LANGUAGE,
+      language,
       undefined,
       undefined
     );
