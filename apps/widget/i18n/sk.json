@@ -175,11 +175,6 @@
     "title": "Ďakujeme za reakciu na návrhy!",
     "description": "Pokračujte v hlasovaní a pomôžte nám tak stanoviť priority.",
     "link_text": "Chcem sa pripojiť ku konzultácií",
-    "register": {
-      "description": "Ako sledovať výsledky?",
-      "button_intro": "Vytvorte si",
-      "button_text": "Občiansky účet"
-    },
     "title_binding_mode": "Ďakujeme, že ste reagovali na návrhy a podelili sa s nami o informácie!"
   },
   "no_proposal_card": {
@@ -193,7 +188,6 @@
       "regular": "V súčasnosti nie sú k dispozícii žiadne nové návrhy.",
       "special": "Pokračujte v hlasovaní a pomôžte nám tak stanoviť priority."
     },
-    "link_text": "Chcem sa pripojiť ku konzultácií",
     "sharing": "Alebo môžete konzultáciu podporiť jej ďalším šírením."
   },
   "push_proposal_card": {
@@ -210,8 +204,6 @@
   },
   "special_final_card": {
     "title": "Ďakujeme za váš hlas!",
-    "subtitle": "Stále sa môžete zúčastniť na konzultácii",
-    "cta_text": "Chcem sa pripojiť ku konzultácií",
     "title_binding_mode": "Ďakujeme, že ste reagovali na návrhy a podelili sa s nami o informácie!"
   },
   "demographics_card": {

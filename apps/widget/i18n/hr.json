@@ -177,11 +177,6 @@
     "title": "Hvala vam što ste se očitovali na prijedloge!",
     "description": "Nastavite glasovati kako biste nam pomogli utvrditi prioritete.",
     "link_text": "Sudjelujem u raspravi",
-    "register": {
-      "description": "Kako pratiti tijek rezultata?",
-      "button_intro": "Stvorite",
-      "button_text": "prostor za građanina."
-    },
     "title_binding_mode": "Hvala što ste reagirali na prijedloge i podijelili neke informacije s nama!"
   },
   "no_proposal_card": {
@@ -195,7 +190,6 @@
       "regular": "Trenutačno nema novih prijedloga.",
       "special": "Nastavite glasovati kako biste nam pomogli utvrditi prioritete."
     },
-    "link_text": "Sudjelujem u raspravi",
     "sharing": "Ili distribuirajte ovu raspravu kako bi se doseglo što više korisnika."
   },
   "push_proposal_card": {
@@ -212,8 +206,6 @@
   },
   "special_final_card": {
     "title": "Hvala vam na glasovanju!",
-    "subtitle": "Možete nastaviti sudjelovati u raspravi",
-    "cta_text": "Sudjelujem u raspravi",
     "title_binding_mode": "Hvala što ste reagirali na prijedloge i podijelili neke informacije s nama!"
   },
   "demographics_card": {

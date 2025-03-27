@@ -358,11 +358,6 @@
     "description": "Continuați să votați pentru a ne ajuta să stabilim prioritățile.",
     "link_text": "Accesez consultarea",
     "continue": "Continui să votez",
-    "register": {
-      "description": "Cum se pot urmări rezultatele?",
-      "button_intro": "Creați-vă propriul",
-      "button_text": "spațiu personal."
-    },
     "title_binding_mode": "Vă mulțumim pentru că ați reacționat la propuneri și ne-ați împărtășit câteva informații!"
   },
   "no_proposal_card": {
@@ -376,7 +371,6 @@
       "regular": "Deocamdată nu sunt propuneri noi.",
       "special": "Continuați să votați pentru a ne ajuta să stabilim prioritățile."
     },
-    "link_text": "Accesez consultarea",
     "sharing": "Sau contribuiți la creșterea vizibilității acestei consultări, distribuind-o."
   },
   "push_proposal_card": {
@@ -393,8 +387,6 @@
   },
   "special_final_card": {
     "title": "Vă mulțumim că ați votat!",
-    "subtitle": "Puteți continua să participați la consultare",
-    "cta_text": "Accesez consultarea",
     "title_binding_mode": "Vă mulțumim pentru că ați reacționat la propuneri și ne-ați împărtășit câteva informații!"
   },
   "demographics_card": {

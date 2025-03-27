@@ -179,12 +179,7 @@
     "title": "Merci d’avoir réagi aux propositions !",
     "title_binding_mode": "Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !",
     "description": "Continuez à voter pour nous aider à identifier les priorités.",
-    "link_text": "J'accède à la consultation",
-    "register": {
-      "description": "Comment suivre les résultats ?",
-      "button_intro": "Créez votre",
-      "button_text": "Inscrivez-vous sur Make.org"
-    }
+    "link_text": "J'accède à la consultation"
   },
   "no_proposal_card": {
     "title": {
@@ -197,7 +192,6 @@
       "regular": "Il n'y a pas de nouvelles proposition pour le moment.",
       "special": "Continuez à voter pour nous aider à identifier les priorités."
     },
-    "link_text": "J'accède à la consultation",
     "sharing": "Ou donnez plus de portée à cette consultation en la diffusant."
   },
   "push_proposal_card": {
@@ -214,9 +208,7 @@
   },
   "special_final_card": {
     "title": "Merci d’avoir réagi aux propositions !",
-    "title_binding_mode": "Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !",
-    "subtitle": "Comment suivre les résultats ?",
-    "cta_text": "Inscrivez-vous sur Make.org"
+    "title_binding_mode": "Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "demographics_card": {
     "disclaimer": "Vos informations sont anonymes et permettent à nos résultats d'être représentatifs.",

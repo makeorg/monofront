@@ -251,10 +251,6 @@ export const FinalCardSeparatorStyle = styled(SeparatorStyle)`
   }
 `;
 
-export const FinalCardRegisterStyle = styled.div`
-  color: ${colors.Content.Interface.DarkSecondary};
-`;
-
 export const IntroProposalRedButtonStyle = styled(RedButtonStyle)`
   margin-top: ${spacings.l};
 `;

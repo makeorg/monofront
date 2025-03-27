@@ -358,11 +358,6 @@
     "description": "Continua a votare per aiutarci a identificare le priorità.",
     "link_text": "Accedo alla consultazione",
     "continue": "Continuo a votare",
-    "register": {
-      "description": "Come fare per seguire i risultati?",
-      "button_intro": "Crea la tua",
-      "button_text": "area riservata."
-    },
     "title_binding_mode": "Grazie per aver reagito alle proposte e per aver condiviso con noi alcune informazioni!"
   },
   "no_proposal_card": {
@@ -376,7 +371,6 @@
       "regular": "Per il momento non ci sono nuove proposte.",
       "special": "Continua a votare per aiutarci a identificare le priorità."
     },
-    "link_text": "Accedo alla consultazione",
     "sharing": "Oppure dai visibilità alla consultazione divulgandola tra i conoscenti."
   },
   "push_proposal_card": {
@@ -393,8 +387,6 @@
   },
   "special_final_card": {
     "title": "Grazie per i tuoi voti!",
-    "subtitle": "Puoi continuare a partecipare alla consultazione",
-    "cta_text": "Accedo alla consultazione",
     "title_binding_mode": "Grazie per aver reagito alle proposte e per aver condiviso con noi alcune informazioni!"
   },
   "demographics_card": {

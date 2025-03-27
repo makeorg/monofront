@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import {
   trackDisplayFinalCard,
   trackClickOperationPage,
-  trackClickCitizenRegister,
   trackClickRelaunchSequence,
 } from '@make.org/utils/services/Tracking';
 import i18n from 'i18next';
@@ -12,19 +11,14 @@ import {
 } from '@make.org/store/actions/sequence';
 import {
   RedButtonStyle,
-  RedLinkButtonStyle,
   BlackBorderLinkStyle,
 } from '@make.org/ui/elements/ButtonsElements';
 import { getParticipateLink } from '@make.org/utils/helpers/url';
 import { useAppContext } from '@make.org/store';
-import { setPanelContent } from '@make.org/store/actions/panel';
-import { PANEL_CONTENT } from '@make.org/store/actions/panel/panelContentEnum';
 import { FinalCardConfigType } from '@make.org/types';
 import {
   SequenceAltTitleStyle,
   SequenceParagraphStyle,
-  FinalCardSeparatorStyle,
-  FinalCardRegisterStyle,
   FinalCardWrapperStyle,
   SkipIconStyle,
   ButtonsContainerStyle,
@@ -38,11 +32,6 @@ type Props = {
 export const FinalCard: React.FC<Props> = ({ configuration, questionSlug }) => {
   const { dispatch, state } = useAppContext();
   const { country } = state.appConfig;
-
-  const handleClick = () => {
-    dispatch(setPanelContent(PANEL_CONTENT.REGISTER));
-    trackClickCitizenRegister();
-  };
 
   useEffect(() => {
     trackDisplayFinalCard();
@@ -80,20 +69,6 @@ export const FinalCard: React.FC<Props> = ({ configuration, questionSlug }) => {
           {i18n.t('final_card.continue')}
         </RedButtonStyle>
       </ButtonsContainerStyle>
-      <FinalCardSeparatorStyle />
-      <div data-cy-container="final-card-register-description">
-        {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
-        {i18n.t('final_card.register.description')}
-      </div>
-      <FinalCardRegisterStyle data-cy-container="final-card-register-intro">
-        {i18n.t('final_card.register.button_intro')}
-        <RedLinkButtonStyle
-          onClick={handleClick}
-          data-cy-button="final-card-register-button"
-        >
-          {i18n.t('final_card.register.button_text')}
-        </RedLinkButtonStyle>
-      </FinalCardRegisterStyle>
     </FinalCardWrapperStyle>
   );
 };

@@ -372,11 +372,6 @@
     "description": "Stimme über weitere Vorschläge ab und hilf uns dabei, die wichtigsten Themen zu identifizieren.",
     "link_text": "Alle Vorschläge entdecken",
     "continue": "Weiter abstimmen",
-    "register": {
-      "description": "Wie kann ich die Ergebnisse verfolgen?",
-      "button_intro": "Erstelle deinen",
-      "button_text": "Bürgerbereich."
-    },
     "title_binding_mode": "Vielen Dank für deine Abstimmung und dafür, dass du einige Informationen mit uns geteilt hast."
   },
   "no_proposal_card": {
@@ -390,7 +385,6 @@
       "regular": "Zurzeit gibt es keine neuen Vorschläge.",
       "special": "Stimme über weitere Vorschläge ab und hilf uns dabei, die wichtigsten Themen zu identifizieren."
     },
-    "link_text": "Alle Vorschläge entdecken",
     "sharing": "Oder gib dieser Konsultation mehr Reichweite, indem du sie verbreitest."
   },
   "push_proposal_card": {
@@ -407,8 +401,6 @@
   },
   "special_final_card": {
     "title": "Vielen Dank für deine Stimmabgaben!",
-    "subtitle": "Du kannst weiterhin an der Konsultation teilnehmen",
-    "cta_text": "Alle Vorschläge entdecken",
     "title_binding_mode": "Vielen Dank, dass Sie auf die Vorschläge reagiert und einige Informationen mit uns geteilt haben!"
   },
   "proposal_submit": {

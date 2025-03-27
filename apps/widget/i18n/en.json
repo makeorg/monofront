@@ -178,11 +178,6 @@
     "title": "Thank you for reacting to the proposals !",
     "description": "Keep voting to help us identify our priorities.",
     "link_text": "Access to the consultation",
-    "register": {
-      "description": "How to follow the results ?",
-      "button_intro": "Create your",
-      "button_text": "citizen account."
-    },
     "title_binding_mode": "Thank you for reacting to the proposals and sharing some information with us!"
   },
   "push_proposal_card": {
@@ -335,8 +330,6 @@
   },
   "special_final_card": {
     "title": "Thank you for reacting to the proposals !",
-    "subtitle": "How to follow the results ?",
-    "cta_text": "Register on Make.org",
     "title_binding_mode": "Thank you for reacting to the proposals and sharing some information with us!"
   },
   "no_proposal_card": {
@@ -350,7 +343,6 @@
       "regular": "There are no new proposals at the moment.",
       "special": "Keep voting to help us set our priorities."
     },
-    "link_text": "Go to the consultation",
     "sharing": "Or give more visibility to the consultation by sharing it."
   },
   "demographics_card": {

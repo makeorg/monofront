@@ -358,11 +358,6 @@
     "description": "Sigue votando para ayudarnos a identificar las necesidades más urgentes.",
     "link_text": "Acceder a la consulta",
     "continue": "Seguir votando",
-    "register": {
-      "description": "¿Cómo llevar un seguimiento de los resultados?",
-      "button_intro": "Crea tu",
-      "button_text": "Área personal."
-    },
     "title_binding_mode": "Gracias por reaccionar a las propuestas y compartir información con nosotros!"
   },
   "no_proposal_card": {
@@ -376,7 +371,6 @@
       "regular": "Por el momento no hay nuevas propuestas.",
       "special": "Sigue votando para ayudarnos a identificar las necesidades más urgentes."
     },
-    "link_text": "Acceder a la consulta",
     "sharing": "O difunde esta consulta para darle un mayor alcance."
   },
   "push_proposal_card": {
@@ -393,8 +387,6 @@
   },
   "special_final_card": {
     "title": "¡Gracias por tus votos!",
-    "subtitle": "Puedes seguir participando en la consulta",
-    "cta_text": "Acceder a la consulta",
     "title_binding_mode": "Gracias por reaccionar a las propuestas y compartir información con nosotros!"
   },
   "demographics_card": {

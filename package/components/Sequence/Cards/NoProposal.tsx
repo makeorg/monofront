@@ -1,13 +1,10 @@
 import React, { useEffect } from 'react';
 import i18n from 'i18next';
-import { LinkAsRedButtonStyle } from '@make.org/ui/elements/ButtonsElements';
 import { matchDesktopDevice } from '@make.org/utils/helpers/styled';
-import { getParticipateLink } from '@make.org/utils/helpers/url';
 import { QuestionType } from '@make.org/types';
 import { checkIsFeatureActivated } from '@make.org/utils/helpers/featureFlipping';
 import { FEATURE_FLIPPING } from '@make.org/types/enums';
 import { useAppContext } from '@make.org/store';
-import { SimpleLinkAsRedButton } from '@make.org/ui/elements/LinkElements';
 import { trackDisplayNoProposalSequence } from '@make.org/utils/services/Tracking';
 import { Sharing } from '../../Sharing';
 import {
@@ -29,7 +26,7 @@ export const NoProposal: React.FC<Props> = ({
   description,
 }) => {
   const { state } = useAppContext();
-  const { device, country, source } = state.appConfig;
+  const { device, source } = state.appConfig;
   const isWidget = source === 'widget';
   const isDesktop = matchDesktopDevice(device);
 
@@ -49,21 +46,6 @@ export const NoProposal: React.FC<Props> = ({
         {title}
       </SequenceMainTitleStyle>
       <SequenceParagraphStyle>{description}</SequenceParagraphStyle>
-      {isWidget ? (
-        <SimpleLinkAsRedButton
-          href={`https://make.org${getParticipateLink(country, question.slug)}`}
-          target="__blank"
-        >
-          {i18n.t('no_proposal_card.link_text')}
-        </SimpleLinkAsRedButton>
-      ) : (
-        <LinkAsRedButtonStyle
-          to={getParticipateLink(country, question.slug)}
-          data-cy-link="go-participate-page"
-        >
-          {i18n.t('no_proposal_card.link_text')}
-        </LinkAsRedButtonStyle>
-      )}
       {isDesktop && !isWidget && !isSharingDisabled && (
         <>
           <FinalCardSeparatorStyle />

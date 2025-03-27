@@ -78,12 +78,6 @@ export const LinkAsGreyButton = styled(GreyButtonStyle)`
   }
 `;
 
-export const RedUppercaseLinkElementStyle = styled(Link)`
-  ${linkStyle(colors.Content.Make.Secondary)};
-  text-transform: uppercase;
-  font-family: ${typography.FontFamily.Condensed};
-`;
-
 export const RedUppercaseHTMLLinkElementStyle = styled.a`
   ${linkStyle(colors.Content.Make.Secondary)};
   text-transform: uppercase;

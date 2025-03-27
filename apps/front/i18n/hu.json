@@ -372,11 +372,6 @@
     "description": "Folytassa a szavazást, hogy segítsen a prioritások kiválasztásában.",
     "link_text": "Hozzáférés a konzultációhoz",
     "continue": "Folytatom a szavazást",
-    "register": {
-      "description": "Hogyan lehet követni az eredményeket?",
-      "button_intro": "Hozza létre",
-      "button_text": "állampolgári felületét."
-    },
     "title_binding_mode": "Köszönjük, hogy reagált a javaslatokra és megosztott velünk néhány információt!"
   },
   "no_proposal_card": {
@@ -390,7 +385,6 @@
       "regular": "Jelenleg nincs új javaslat.",
       "special": "Folytassa a szavazást, hogy segítsen a prioritások kiválasztásában."
     },
-    "link_text": "Hozzáférés a konzultációhoz",
     "sharing": "Vagy növelje a konzultáció hatókörét annak terjesztésével."
   },
   "push_proposal_card": {
@@ -407,8 +401,6 @@
   },
   "special_final_card": {
     "title": "Köszönjük a szavazatokat!",
-    "subtitle": "Továbbra is részt vehet a konzultációban",
-    "cta_text": "Hozzáférés a konzultációhoz",
     "title_binding_mode": "Köszönjük, hogy reagált a javaslatokra és megosztott velünk néhány információt!"
   },
   "demographics_card": {

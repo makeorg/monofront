@@ -156,11 +156,6 @@
     "title": "Bedankt voor je reactie op de voorstellen!",
     "description": "Blijf stemmen om ons te helpen prioriteiten te stellen.",
     "link_text": "Ik ga naar de raadpleging",
-    "register": {
-      "description": "Hoe kan ik de resultaten volgen?",
-      "button_intro": "Maak je",
-      "button_text": "persoonlijke omgeving aan."
-    },
     "title_binding_mode": "Bedankt voor het reageren op de voorstellen en het delen van informatie met ons!"
   },
   "no_proposal_card": {
@@ -174,7 +169,6 @@
       "regular": "Er zijn momenteel geen nieuwe voorstellen.",
       "special": "Blijf stemmen om ons te helpen prioriteiten te stellen."
     },
-    "link_text": "Ik ga naar de raadpleging",
     "sharing": "Of geef deze raadpleging meer bekendheid door deze te verspreiden."
   },
   "push_proposal_card": {
@@ -191,8 +185,6 @@
   },
   "special_final_card": {
     "title": "Bedankt voor je stemmen!",
-    "subtitle": "Je kunt blijven deelnemen aan de raadpleging",
-    "cta_text": "Ik ga naar de raadpleging",
     "title_binding_mode": "Bedankt voor het reageren op de voorstellen en het delen van informatie met ons!"
   },
   "demographics_card": {

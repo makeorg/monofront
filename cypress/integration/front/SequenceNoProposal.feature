@@ -27,5 +27,3 @@ Feature: Empty sequence
       | country             | FR                                                                      |
       | language            | fr                                                                      |
     And event "click-start-sequence" should not be tracked by Make
-    When I click on "go-participate-page" link
-    Then I see the "participate consultation" page of the question "question-5-slug"

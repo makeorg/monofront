@@ -348,11 +348,6 @@
     "description": "Keep voting to help us identify our priorities.",
     "link_text": "Gain access to the consultation",
     "continue": "Continue voting",
-    "register": {
-      "description": "How can I see the results?",
-      "button_intro": "Create your",
-      "button_text": "citizen’s account."
-    },
     "title_binding_mode": "Thank you for reacting to the proposals and sharing some information with us!"
   },
   "push_proposal_card": {
@@ -1458,8 +1453,6 @@
   },
   "special_final_card": {
     "title": "Thank you for voting!",
-    "subtitle": "You can continue to participate in the consultation.",
-    "cta_text": "Gain access to the consultation",
     "title_binding_mode": "Thank you for reacting to the proposals and sharing some information with us!"
   },
   "no_proposal_card": {
@@ -1473,7 +1466,6 @@
       "regular": "There are no new proposals at the moment.",
       "special": "Keep voting to help us set our priorities."
     },
-    "link_text": "Go to the consultation",
     "sharing": "Or give more visibility to the consultation by sharing it."
   },
   "demographics_card": {

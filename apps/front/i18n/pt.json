@@ -377,11 +377,6 @@
     "description": "Continue a votar para nos ajudar a identificar prioridades.",
     "link_text": "Acedo à consulta",
     "continue": "Continuo a votar",
-    "register": {
-      "description": "Como monitorizar os resultados?",
-      "button_intro": "Crie o seu",
-      "button_text": "espaço do cidadão."
-    },
     "title_binding_mode": "Obrigado por reagir às propostas e partilhar algumas informações connosco!"
   },
   "no_proposal_card": {
@@ -395,7 +390,6 @@
       "regular": "Neste momento não há novas propostas.",
       "special": "Continue a votar para nos ajudar a identificar prioridades."
     },
-    "link_text": "Acedo à consulta",
     "sharing": "Ou alargue o âmbito da consulta através da sua divulgação."
   },
   "push_proposal_card": {
@@ -412,8 +406,6 @@
   },
   "special_final_card": {
     "title": "Obrigado pelos seus votos!",
-    "subtitle": "Ainda pode continuar a participar na consulta",
-    "cta_text": "Acedo à consulta",
     "title_binding_mode": "Obrigado por reagir às propostas e partilhar algumas informações connosco!"
   },
   "demographics_card": {

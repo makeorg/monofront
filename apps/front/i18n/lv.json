@@ -377,11 +377,6 @@
     "description": "Turpiniet balsot, lai palīdzētu mums noteikt prioritātes.",
     "link_text": "Es piekļūstu apspriešanai",
     "continue": "Es turpinu balsot",
-    "register": {
-      "description": "Kā sekot rezultātiem?",
-      "button_intro": "Izveidojiet savu",
-      "button_text": "iedzīvotāja telpu."
-    },
     "title_binding_mode": "Paldies, ka reaģējāt uz priekšlikumiem un dalījāties ar mums informācijā!"
   },
   "no_proposal_card": {
@@ -395,7 +390,6 @@
       "regular": "Patlaban nav jaunu priekšlikumu.",
       "special": "Turpiniet balsot, lai palīdzētu mums noteikt prioritātes."
     },
-    "link_text": "Es piekļūstu apspriešanai",
     "sharing": "Vai arī paplašiniet apspriešanas tvērumu, to izplatot."
   },
   "push_proposal_card": {
@@ -412,8 +406,6 @@
   },
   "special_final_card": {
     "title": "Paldies par jūsu balsojumu!",
-    "subtitle": "Jūs joprojām varat piedalīties apspriešanā",
-    "cta_text": "Es piekļūstu apspriešanai",
     "title_binding_mode": "Paldies, ka reaģējāt uz priekšlikumiem un dalījāties ar mums informācijā!"
   },
   "demographics_card": {

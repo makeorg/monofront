@@ -382,12 +382,7 @@
     "title_binding_mode": "Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !",
     "description": "Continuez à voter pour nous aider à identifier les priorités.",
     "link_text": "J'accède à la consultation",
-    "continue": "Je continue à voter",
-    "register": {
-      "description": "Comment suivre les résultats ?",
-      "button_intro": "Créez votre",
-      "button_text": "espace citoyen."
-    }
+    "continue": "Je continue à voter"
   },
   "no_proposal_card": {
     "title": {
@@ -400,7 +395,6 @@
       "regular": "Il n'y a pas de nouvelles proposition pour le moment.",
       "special": "Continuez à voter pour nous aider à identifier les priorités."
     },
-    "link_text": "J'accède à la consultation",
     "sharing": "Ou donnez plus de portée à cette consultation en la diffusant."
   },
   "push_proposal_card": {
@@ -417,9 +411,7 @@
   },
   "special_final_card": {
     "title": "Merci pour vos votes !",
-    "title_binding_mode": "Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !",
-    "subtitle": "Vous pouvez continuer à participer à la consultation",
-    "cta_text": "J'accède à la consultation"
+    "title_binding_mode": "Merci d’avoir réagi aux propositions et d’avoir partagé quelques informations avec nous !"
   },
   "demographics_card": {
     "disclaimer": "Vos informations sont anonymes et permettent à nos résultats d'être représentatifs.",

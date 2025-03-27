@@ -156,11 +156,6 @@
     "title": "Kiitos, että reagoit ehdotuksiin",
     "description": "Jatka äänestämistä. Näin tiedämme, mitä asioita pidetään tärkeimpinä.",
     "link_text": "Siirry kuulemiseen",
-    "register": {
-      "description": "Miten voin seurata tuloksia?",
-      "button_intro": "Luo oma",
-      "button_text": "kansalaisalue."
-    },
     "title_binding_mode": "Kiitos, että reagoitte ehdotuksiin ja jaoitte tietoja kanssamme!"
   },
   "no_proposal_card": {
@@ -174,7 +169,6 @@
       "regular": "Tällä hetkellä ei ole uusia ehdotuksia.",
       "special": "Jatka äänestämistä. Näin tiedämme, mitä asioita pidetään tärkeimpinä."
     },
-    "link_text": "Siirry kuulemiseen",
     "sharing": "Voit myös jakaa kuulemista ja siten edistää sen vaikuttavuutta."
   },
   "push_proposal_card": {
@@ -191,8 +185,6 @@
   },
   "special_final_card": {
     "title": "Kiitos äänistäsi!",
-    "subtitle": "Voit jatkaa kuulemiseen osallistumista",
-    "cta_text": "Siirry kuulemiseen",
     "title_binding_mode": "Kiitos, että reagoitte ehdotuksiin ja jaoitte tietoja kanssamme!"
   },
   "demographics_card": {

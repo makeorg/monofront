@@ -377,11 +377,6 @@
     "description": "Tęskite balsavimą ir taip padėkite mums nustatyti prioritetus.",
     "link_text": "DALYVAUTI konsultacijoje",
     "continue": "Balsuoju toliau",
-    "register": {
-      "description": "Kaip stebėti rezultatus?",
-      "button_intro": "Sukurkite savo",
-      "button_text": "pilietinę erdvę."
-    },
     "title_binding_mode": "Dėkojame, kad reaguojate į pasiūlymus ir dalijatės su mumis informacija!"
   },
   "no_proposal_card": {
@@ -395,7 +390,6 @@
       "regular": "Šiuo metu naujų pasiūlymų nėra.",
       "special": "Tęskite balsavimą ir taip padėkite mums nustatyti prioritetus."
     },
-    "link_text": "Dalyvauju konsultacijoje",
     "sharing": "Arba plėskite šios konsultacijos mastą skleisdami apie ją informaciją."
   },
   "push_proposal_card": {
@@ -412,8 +406,6 @@
   },
   "special_final_card": {
     "title": "Ačiū už jūsų balsus!",
-    "subtitle": "Galite toliau dalyvauti konsultacijoje",
-    "cta_text": "Dalyvauju konsultacijoje",
     "title_binding_mode": "Dėkojame, kad reaguojate į pasiūlymus ir dalijatės su mumis informacija!"
   },
   "demographics_card": {

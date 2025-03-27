@@ -179,11 +179,6 @@
     "title": "Hvala za odziv na naše predloge!",
     "description": "Nadaljujte z glasovanjem, da nam pomagate prepoznati prednostne naloge.",
     "link_text": "Želim sodelovati pri posvetovanju",
-    "register": {
-      "description": "Kako spremljati rezultate?",
-      "button_intro": "Ustvarite svoj",
-      "button_text": "državljanski kotiček."
-    },
     "title_binding_mode": "Ďakujeme, že ste reagovali na návrhy a podelili sa s nami o informácie!"
   },
   "no_proposal_card": {
@@ -197,7 +192,6 @@
       "regular": "Trenutno ni novih predlogov.",
       "special": "Nadaljujte z glasovanjem, da nam pomagate prepoznati prednostne naloge."
     },
-    "link_text": "Želim sodelovati pri posvetovanju",
     "sharing": "Ali razširite obseg tega posvetovanja tako, da ga delite."
   },
   "push_proposal_card": {
@@ -214,8 +208,6 @@
   },
   "special_final_card": {
     "title": "Hvala za vaše glasove!",
-    "subtitle": "Lahko še naprej sodelujete pri posvetovanju",
-    "cta_text": "Želim sodelovati pri posvetovanju",
     "title_binding_mode": "Hvala, ker ste se odzvali na predloge in z nami delili nekaj informacij!"
   },
   "demographics_card": {

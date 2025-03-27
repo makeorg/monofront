@@ -358,11 +358,6 @@
     "description": "Głosuj dalej, aby pomóc nam zidentyfikować najważniejsze wątki.",
     "link_text": "Przechodzę do konsultacji",
     "continue": "Kontynuuję głosowanie",
-    "register": {
-      "description": "Jak śledzić wyniki?",
-      "button_intro": "Stwórz swoją",
-      "button_text": "przestrzeń użytkownika."
-    },
     "title_binding_mode": "Dziękujemy za reakcję na propozycje i podzielenie się z nami informacjami!"
   },
   "no_proposal_card": {
@@ -376,7 +371,6 @@
       "regular": "W tej chwili nie ma nowych propozycji.",
       "special": "Głosuj dalej, aby pomóc nam zidentyfikować najważniejsze wątki."
     },
-    "link_text": "Przechodzę do konsultacji",
     "sharing": "Albo zwiększ zasięg tej konsultacji i udostępnij ją."
   },
   "push_proposal_card": {
@@ -393,8 +387,6 @@
   },
   "special_final_card": {
     "title": "Dziękujemy za oddanie głosów!",
-    "subtitle": "Możesz dalej uczestniczyć w konsultacji",
-    "cta_text": "Przechodzę do konsultacji",
     "title_binding_mode": "Dziękujemy za reakcję na propozycje i podzielenie się z nami informacjami!"
   },
   "demographics_card": {

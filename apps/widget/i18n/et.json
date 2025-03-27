@@ -175,11 +175,6 @@
     "title": "Täname, et reageerisite ettepanekutele!",
     "description": "Jätkate hääletamist, et aidata meil prioriteete määrata.",
     "link_text": "Sisenen konsulteerimisse",
-    "register": {
-      "description": "Kuidas tulemusi jälgida?",
-      "button_intro": "Looge oma",
-      "button_text": "kodanikukeskkond."
-    },
     "title_binding_mode": "Aitäh, et reageerisite ettepanekutele ja jagasite meiega teavet!"
   },
   "no_proposal_card": {
@@ -193,7 +188,6 @@
       "regular": "Hetkel ei ole uusi ettepanekuid.",
       "special": "Jätkate hääletamist, et aidata meil prioriteete määrata."
     },
-    "link_text": "Sisenen konsulteerimisse",
     "sharing": "Või suurendage selle konsulteerimise mõju, jagades seda."
   },
   "push_proposal_card": {
@@ -210,8 +204,6 @@
   },
   "special_final_card": {
     "title": "Täname hääletamise eest!",
-    "subtitle": "Kuidas tulemusi jälgida?",
-    "cta_text": "Sisenen konsultatsiooni",
     "title_binding_mode": "Aitäh, et reageerisite ettepanekutele ja jagasite meiega teavet!"
   },
   "demographics_card": {
