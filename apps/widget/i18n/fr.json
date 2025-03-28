@@ -189,7 +189,7 @@
       "keyword": "Merci, vous avez voté sur toutes les propositions de \"{{keyword}}\""
     },
     "description": {
-      "regular": "Il n'y a pas de nouvelles proposition pour le moment.",
+      "regular": "Il n'y a pas de nouvelles propositions pour le moment.",
       "special": "Continuez à voter pour nous aider à identifier les priorités."
     },
     "sharing": "Ou donnez plus de portée à cette consultation en la diffusant."

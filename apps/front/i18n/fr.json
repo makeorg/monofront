@@ -392,7 +392,7 @@
       "keyword": "Merci, vous avez voté sur toutes les propositions de \"{{keyword}}\""
     },
     "description": {
-      "regular": "Il n'y a pas de nouvelles proposition pour le moment.",
+      "regular": "Il n'y a pas de nouvelles propositions pour le moment.",
       "special": "Continuez à voter pour nous aider à identifier les priorités."
     },
     "sharing": "Ou donnez plus de portée à cette consultation en la diffusant."
@@ -427,7 +427,7 @@
       "title": "Soumettez votre proposition en moins de 140 caractères. Saisissez la dans le champ de proposition puis validez en cliquant sur le bouton \"Valider\"",
       "field": "Champs de proposition",
       "counter": "Votre proposition comprend {{current}} caractères sur un total de {{total}} caractères disponibles",
-      "panel_trigger": "Je propose une solution",
+      "panel_trigger": "Je propose une idée",
       "button_cancel": "Annuler",
       "button_submit": "Valider",
       "read_our": "Lire notre",
