@@ -333,7 +333,7 @@
       "from": "Priekšlikumu iesniedza: ",
       "age": "{{age}} gadi",
       "date": "ievietots (datums): ",
-      "disclaimer": "Šī iespēja neprasa, lai jūs būtu pieslēdzies savam Make.org.1 kontam<br/>Vaizmēr jūsu priekšlikums citiem lietotājiem paliks anonīms.",
+      "disclaimer": "Jūsu priekšlikums paliks anonīms citiem lietotājiem.",
       "anonymous_proposal": "Anonīms priekšlikums",
       "anonymous_mode": "Anonīmais režīms"
     },
@@ -451,7 +451,7 @@
       "button": "Turpināt balsot",
       "other_idea": "Man ir vēl viena ideja",
       "tooltip_title": "Notiek izskatīšana",
-      "tooltip_description": "Jūsu priekšlikumu mūsu moderatoru komandas apstrādās 48 stundu laikā, bet pagaidām jūs to varat atrast savā profilā.",
+      "tooltip_description": "Jūsu priekšlikumu mūsu komandas apstrādās 48 stundu laikā.",
       "grats": "Apsveicam, {{name}}, ",
       "proposal_sent": "jūsu priekšlikums tika nosūtīts ",
       "activate": "Ar vienu klikšķi apstipriniet savu e-pasta adresi, ",

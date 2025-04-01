@@ -328,7 +328,7 @@
       "from": "Vorschlag von: ",
       "age": "{{age}}",
       "date": "Geschrieben am: ",
-      "disclaimer": "Diese Option befreit Sie nicht davon, mit Ihrem Make.org-Konto verbunden zu sein.<br/> Ihr Vorschlag wird jedoch für andere Nutzerinnen und Nutzer anonym bleiben.",
+      "disclaimer": "Ihr Vorschlag bleibt für andere Benutzer anonym.",
       "anonymous_proposal": "Anonymer Vorschlag",
       "anonymous_mode": "Anonymer Modus"
     },
@@ -437,7 +437,7 @@
       "button": "Weiter abstimmen",
       "other_idea": "Ich habe eine andere Idee",
       "tooltip_title": "Wird gerade moderiert",
-      "tooltip_description": "Dein Vorschlag wird innerhalb von 48 Stunden von unseren Teams  bearbeitet. In der Zwischenzeit kannst du ihn ab sofort in deinem Profil finden.",
+      "tooltip_description": "Dein Vorschlag wird innerhalb von 48 Stunden von unseren Teams bearbeitet.",
       "grats": "Herzlichen Glückwunsch {{name}}, ",
       "proposal_sent": "dein Vorschlag wurde abgeschickt ",
       "activate": "Bestätige deine E-Mail-Adresse mit einem Klick",

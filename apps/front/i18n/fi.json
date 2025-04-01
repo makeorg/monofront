@@ -326,7 +326,7 @@
       "from": "Ehdotus henkilöltä ",
       "age": "{{age}} vuotta",
       "date": "julkaisupäivämäärä: ",
-      "disclaimer": "Tämä vaihtoehto ei vapauta sinua olemasta yhteydessä Make.org-tiliisi.<br/> Ehdotuksesi pysyy kuitenkin anonyyminä muille käyttäjille.",
+      "disclaimer": "Ehdotuksesi pysyy anonyyminä muille käyttäjille.",
       "anonymous_proposal": "Anonyymi ehdotus",
       "anonymous_mode": "Anonyymi tila"
     },
@@ -427,7 +427,7 @@
       "button": "Jatka äänestämistä",
       "other_idea": "Minulla on toinen idea",
       "tooltip_title": "Moderoitavana",
-      "tooltip_description": "Tiimimme käsittelevät ehdotuksesi 48 tunnin kuluessa. Sillä välin voit kuitenkin käydä katsomassa sitä profiilistasi, jossa se on heti nähtävissäsi.",
+      "tooltip_description": "Ehdotuksesi käsitellään tiimiemme toimesta 48 tunnin kuluessa.",
       "grats": "Onnittelut {{name}}, ",
       "proposal_sent": "ehdotuksesi on lähetetty ",
       "activate": "Vahvista sähköpostiosoitteesi yhdellä napsautuksella ",

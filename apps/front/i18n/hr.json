@@ -333,7 +333,7 @@
       "from": "Prijedlog korisnika: ",
       "age": "{{age}} godina",
       "date": "objavljeno dana: ",
-      "disclaimer": "Ova vas opcija ne izuzima od povezivanja s vašim Make.org računom.<br/>Međutim, vaš će prijedlog ostati anoniman drugim korisnicima.",
+      "disclaimer": "Vaš prijedlog će ostati anoniman za druge korisnike.",
       "anonymous_proposal": "Anonimni prijedlog",
       "anonymous_mode": "Anonimni način rada"
     },
@@ -451,7 +451,7 @@
       "button": "Nastavi glasovati",
       "other_idea": "Imam drugu ideju",
       "tooltip_title": "Trenutačno se moderira",
-      "tooltip_description": "Vaš prijedlog obrađuju naši timovi u roku od 48 sati, a u međuvremenu ga možete pronaći u svojem profilu.",
+      "tooltip_description": "Vaš prijedlog obrađuju naši timovi u roku od 48 sati.",
       "grats": "Čestitke, {{name}}, ",
       "proposal_sent": "vaš je prijedlog poslan ",
       "activate": "Potvrdite svoju adresu elektroničke pošte jednim klikom ",

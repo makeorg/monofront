@@ -333,7 +333,7 @@
       "from": "Návrh: ",
       "age": "{{age}} rokov",
       "date": "Uverejnené dňa: ",
-      "disclaimer": "Táto možnosť nie je oslobodený od toho, aby ste boli pripojené k účtu Make.org.<br/> Avšak, váš návrh zostane anonymný pre ostatných užívateľov.",
+      "disclaimer": "Váš návrh zostane anonymný pre ostatných používateľov.",
       "anonymous_proposal": "Anonymný návrh",
       "anonymous_mode": "Anonymný režim"
     },
@@ -451,7 +451,7 @@
       "button": "Pokračovať v hlasovaní",
       "other_idea": "Mám nápad",
       "tooltip_title": "Spracováva sa",
-      "tooltip_description": "Váš návrh spracujú naše tímy do 48 hodín, zatiaľ ho nájdete vo svojom profile.",
+      "tooltip_description": "Váš návrh bude spracovaný našimi tímami do 48 hodín.",
       "grats": "Gratulujeme {{name}}, ",
       "proposal_sent": "Váš návrh bol odoslaný ",
       "activate": "Prosím, z dôvodu overenia pravosti vášho účtu potvrďte vašu e-mailovou adresu. ",

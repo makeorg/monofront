@@ -328,7 +328,7 @@
       "from": "Förslag från: ",
       "age": "{{age}} år",
       "date": "upplagt den: ",
-      "disclaimer": "Det här alternativet befriar dig inte från att vara ansluten till ditt Make.org-konto.<br/> Men ditt förslag kommer att förbli anonymt för andra användare.",
+      "disclaimer": "Ditt förslag kommer att förbli anonymt för andra användare.",
       "anonymous_proposal": "Anonymt förslag",
       "anonymous_mode": "Anonymt läge"
     },
@@ -446,7 +446,7 @@
       "button": "Fortsätta att rösta",
       "other_idea": "Jag har en ny idé",
       "tooltip_title": "Modereras",
-      "tooltip_description": "Ditt förslag kommer att behandlas av vårt team inom 48 timmar. Under tiden kan du från och med nu se det i din profil.",
+      "tooltip_description": "Ditt förslag kommer att behandlas av våra team inom 48 timmar.",
       "grats": "Gratulerar {{name}}, ",
       "proposal_sent": "ditt förslag har skickats in ",
       "activate": "Bekräfta din e-postadress med ett klick ",

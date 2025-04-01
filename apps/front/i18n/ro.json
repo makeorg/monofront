@@ -331,7 +331,7 @@
       "from": "Propunere făcută de: ",
       "age": "{{age}} ani",
       "date": "publicată la data: ",
-      "disclaimer": "Această opțiune nu vă obligă să vă conectați la contul dumneavoastră Make.org.1<br/>Cu toate acestea, propunerea dumneavoastră va rămâne anonimă pentru ceilalți utilizatori.",
+      "disclaimer": "Propunerea dvs. va rămâne anonimă pentru ceilalți utilizatori.",
       "anonymous_proposal": "Propunere anonimă",
       "anonymous_mode": "Modul anonim"
     },
@@ -432,7 +432,7 @@
       "button": "Continuarea votării",
       "other_idea": "Am altă idee",
       "tooltip_title": "În curs de moderare",
-      "tooltip_description": "Propunerea dumneavoastră va fi procesată de echipele noastre în cel mult 48 de ore, până atunci puteți deja consulta propunerea la rubrica de profil.",
+      "tooltip_description": "Propunerea dvs. va fi procesată de echipele noastre în termen de 48 de ore.",
       "grats": "Felicitări, {{name}}, ",
       "proposal_sent": "propunerea dumneavoastră a fost trimisă ",
       "activate": "Confirmați-vă adresa de e-mail printr-un clic ",

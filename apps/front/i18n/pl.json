@@ -331,7 +331,7 @@
       "from": "Propozycja: ",
       "age": "{{age}} lat",
       "date": "złożona: ",
-      "disclaimer": "Ta opcja nie zwolnić was od bycia podłączonym do ksiąg Make.org, propozycja pozostaje anonimowa dla innych użytkowników.",
+      "disclaimer": "Twoja propozycja pozostanie anonimowa dla innych użytkowników.",
       "anonymous_proposal": "Anonimowy wniosek",
       "anonymous_mode": "Tryb życia"
     },
@@ -432,7 +432,7 @@
       "button": "Kontynuuj głosowanie",
       "other_idea": "Mam inny pomysł",
       "tooltip_title": "W trakcie moderacji",
-      "tooltip_description": "Twoja propozycja zostanie przeanalizowana przez nasze zespoły w ciągu 48 godzin, w międzyczasie już teraz możesz ją znaleźć na swoim profilu.",
+      "tooltip_description": "Twoja propozycja zostanie rozpatrzona przez nasze zespoły w ciągu 48 godzin.",
       "grats": "Gratulujemy, {{name}}, ",
       "proposal_sent": "Twoja propozycja została wysłana ",
       "activate": "Potwierdź Twój adres e-mail za jednym kliknięciem, ",

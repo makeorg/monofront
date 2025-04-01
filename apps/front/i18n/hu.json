@@ -328,7 +328,7 @@
       "from": "A javaslat szerzője: ",
       "age": "{{age}} éves",
       "date": "közzétéve: ",
-      "disclaimer": "Ez az opció nem mentesíti Önt attól, hogy csatlakozzon a Make.org fiókjához.<br/> Azonban a javaslat anonim marad más felhasználók számára.",
+      "disclaimer": "A javaslata névtelen marad a többi felhasználó számára.",
       "anonymous_proposal": "Anonim javaslat",
       "anonymous_mode": "Anonymous mód"
     },
@@ -446,7 +446,7 @@
       "button": "Szavazás folytatása",
       "other_idea": "Van egy másik elképzelésem.",
       "tooltip_title": "Moderálás alatt",
-      "tooltip_description": "Javaslatát 48 órán belül feldolgozzuk, addig is megtalálhatja a profiljában.",
+      "tooltip_description": "A javaslatát csapataink 48 órán belül feldolgozzák.",
       "grats": "Gratulálunk, {{name}}, ",
       "proposal_sent": "javaslatát elküldte ",
       "activate": "Egy kattintással erősítse meg e-mailcímét, ",

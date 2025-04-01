@@ -333,7 +333,7 @@
       "from": "Pasiūlymas: ",
       "age": "{{age}} metai (-ų)",
       "date": "įkelta: ",
-      "disclaimer": "Ši parinktis nereikalauja, kad būtumėte prisijungę prie savo Make.org.<br/>Vis dėlto jūsų pasiūlymas išliks anonimiškas kitiems naudotojams.",
+      "disclaimer": "Jūsų pasiūlymas liks anonimiškas kitiems vartotojams.",
       "anonymous_proposal": "Anoniminis pasiūlymas",
       "anonymous_mode": "Anoniminis režimas"
     },
@@ -451,7 +451,7 @@
       "button": "Tęsti balsavimą",
       "other_idea": "Turiu dar vieną idėją",
       "tooltip_title": "Moderuojama",
-      "tooltip_description": "Jūsų pasiūlymą mūsų komandos apdoros per 48 valandas, o dabar jį galite rasti savo profilyje.",
+      "tooltip_description": "Jūsų pasiūlymą mūsų komandos apdoros per 48 valandas.",
       "grats": "Sveikiname, {{name}}, ",
       "proposal_sent": "jūsų pasiūlymas išsiųstas ",
       "activate": "Patvirtinkite savo el. pašto adresą vienu paspaudimu, ",

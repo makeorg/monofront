@@ -326,7 +326,7 @@
       "from": "Voorstel van: ",
       "age": "{{age}} jaar",
       "date": "geplaatst op: ",
-      "disclaimer": "Deze optie vertoont je niet van een band met je make.org account, maar je voorstel zal anoniem blijven voor andere gebruikers.",
+      "disclaimer": "Uw voorstel blijft anoniem voor andere gebruikers.",
       "anonymous_proposal": "Anonieme voorstel",
       "anonymous_mode": "Anonieme modus"
     },
@@ -427,7 +427,7 @@
       "button": "Doorgaan met stemmen",
       "other_idea": "Ik heb een ander idee",
       "tooltip_title": "Wordt gemodereerd",
-      "tooltip_description": "Je voorstel wordt binnen 48 uur verwerkt door onze teams, intussen kun je het in je profiel terugvinden.",
+      "tooltip_description": "Uw voorstel wordt binnen 48 uur door onze teams verwerkt.",
       "grats": "Gefeliciteerd {{name}}, ",
       "proposal_sent": "je voorstel is verzonden ",
       "activate": "Bevestig je e-mailadres met één klik ",

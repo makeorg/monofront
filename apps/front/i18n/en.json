@@ -300,7 +300,7 @@
       "age": "{{age}}",
       "from": "Proposal from: ",
       "date": "published on: ",
-      "disclaimer": "This option does not require you to be logged in to your Make.org account.<br/> However, your proposal will remain anonymous to other users.",
+      "disclaimer": "Your proposal will remain anonymous to other users.",
       "anonymous_proposal": "Anonymous proposal",
       "anonymous_mode": "Anonymous mode"
     },
@@ -361,7 +361,7 @@
       "button": "Keep voting",
       "other_idea": "I have another idea",
       "tooltip_title": "Under moderation",
-      "tooltip_description": "Your proposal will be processed by our teams within 48 hours. In the meantime, you can already find it in your profile.",
+      "tooltip_description": "Your proposal will be processed by our teams within 48 hours.",
       "grats": "Congratulations {{name}}! ",
       "proposal_sent": "Your proposal has been submitted ",
       "activate": "Confirm your e-mail address in one click ",

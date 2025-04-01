@@ -331,7 +331,7 @@
       "from": "Propuesta de: ",
       "age": "{{age}} años",
       "date": "publicada el: ",
-      "disclaimer": "Esta opción no le exime de estar conectado a su cuenta Make.org.<br/> Sin embargo, su propuesta permanecerá anónima a otros usuarios.",
+      "disclaimer": "Su propuesta permanecerá anónima a otros usuarios.",
       "anonymous_proposal": "Propuesta anónima",
       "anonymous_mode": "Modo anónimo"
     },
@@ -432,7 +432,7 @@
       "button": "Seguir votando",
       "other_idea": "Tengo otra idea",
       "tooltip_title": "En fase de moderación",
-      "tooltip_description": "Tu propuesta será procesada por nuestros equipos en un plazo de 48 horas. Mientras tanto, ya puedes consultarla en tu perfil.",
+      "tooltip_description": "Tu propuesta será procesada por nuestros equipos en un plazo de 48 horas.",
       "grats": "¡Enhorabuena, {{name}}! ",
       "proposal_sent": "¡Tu propuesta se ha enviado correctamente ",
       "activate": "Confirma tu dirección de correo electrónico con un clic ",

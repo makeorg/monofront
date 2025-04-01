@@ -328,7 +328,7 @@
       "from": "Ettepaneku esitaja: ",
       "age": "{{age}}-aastane",
       "date": "postitamise kuupäev: ",
-      "disclaimer": "See valik ei nõua, et te oleksite sisse logitud oma Make.org.1 kontole<br/>Kui ka teie ettepanek jääb teiste kasutajate jaoks anonüümseks.",
+      "disclaimer": "Teie ettepanek jääb teiste kasutajate jaoks anonüümseks.",
       "anonymous_proposal": "Anonüümne ettepanek",
       "anonymous_mode": "Anonüümne režiim"
     },
@@ -446,7 +446,7 @@
       "button": "Jätka hääletamist",
       "other_idea": "Mul on veel üks idee",
       "tooltip_title": "Modereerimisel",
-      "tooltip_description": "Teie ettepanekut käsitletakse 48 tunni jooksul; seni võite seda oma profiili alt vaadata.",
+      "tooltip_description": "Teie ettepanek töötatakse meie meeskondade poolt läbi 48 tunni jooksul.",
       "grats": "Palju õnne, {{name}}, ",
       "proposal_sent": "teie ettepanek saadeti ära ",
       "activate": "Kinnitage ühe klõpsuga oma e-posti aadress, ",
