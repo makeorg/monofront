@@ -34,6 +34,9 @@ export const SequenceCardStyle = styled.section`
   box-shadow: ${shadows.s10};
   margin: ${spacings.l} auto;
   min-height: 350px;
+  &.no-proposal {
+    min-height: 0;
+  }
   &.widget {
     min-height: 0;
     margin: 17px auto ${spacings.sm};
