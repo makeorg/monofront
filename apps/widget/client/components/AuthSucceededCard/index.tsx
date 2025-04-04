@@ -65,7 +65,7 @@ export const AuthSucceededCard: FC = () => {
     dispatch(loginSocialFailure());
     history.push({
       pathname: '/',
-      search: '?error=login_social',
+      search: '?error_login=login_social',
     });
   };
 

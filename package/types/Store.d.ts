@@ -191,6 +191,12 @@ export type StateSession = {
   sessionId?: string;
 };
 
+export type OpenIdResponse = {
+  code?: string | null;
+  error?: string | null;
+  errorDescription?: string | null;
+};
+
 // All state
 export type StateRoot = {
   appConfig: StateConfig;
@@ -207,7 +213,7 @@ export type StateRoot = {
   panel: StatePanel;
   session: StateSession;
   authRedirectInfo?: NotAuthSecuredQuestionType | null;
-  openIdCode?: string | null;
+  openIdResponse?: OpenIdResponse;
 };
 
 export type Reducer<State = any, Action = any> = (

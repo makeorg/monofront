@@ -8,11 +8,15 @@ export const oidcRoute = async (req: Request, res: Response): Promise<void> => {
   // res.send('OIDC Route');
   // retrieve the code from the query params in the url
   let initialState = createInitialState();
-  const { code } = req.query;
+  const { code, error, error_description } = req.query;
 
   initialState = {
     ...initialState,
-    openIdCode: code as string,
+    openIdResponse: {
+      code: code as string,
+      error: error as string,
+      errorDescription: error_description as string,
+    },
   };
   return reactRender(req, res, initialState);
 };

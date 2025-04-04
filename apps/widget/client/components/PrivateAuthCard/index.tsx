@@ -34,6 +34,10 @@ export const PrivateAuthCard: FC<PrivateAuthCardProps> = ({
     top: 0,
   });
   const [isWindowOpened, setIsWindowOpened] = useState(false);
+  const [isOpenIdError, setIsOpenIdError] = useState<{
+    error: string;
+    errorMessage?: string;
+  } | null>(null);
   const popupRef = useRef<Window | null>(null);
 
   useEffect(() => {
@@ -100,10 +104,21 @@ export const PrivateAuthCard: FC<PrivateAuthCardProps> = ({
               if (!maifWindow) setIsWindowOpened(false);
 
               window.removeEventListener('message', handleMessage);
-              history.push({
-                pathname: 'auth-succeeded',
-                search: `?code=${e.data.openIdCode}`,
-              });
+
+              if (e.data.openIdError) {
+                setIsOpenIdError({
+                  error: e.data.openIdError,
+                  errorMessage: e.data.openIdErrorDescription,
+                });
+              }
+
+              if (e.data.openIdCode) {
+                setIsOpenIdError(null);
+                history.push({
+                  pathname: 'auth-succeeded',
+                  search: `?code=${e.data.openIdCode}`,
+                });
+              }
             };
 
             window.addEventListener('message', handleMessage);
@@ -116,6 +131,13 @@ export const PrivateAuthCard: FC<PrivateAuthCardProps> = ({
         {errorLogin && (
           <PrivateAuthCardErrorStyle>
             {i18n.t('common.social_login.error')}
+          </PrivateAuthCardErrorStyle>
+        )}
+        {isOpenIdError?.error && (
+          <PrivateAuthCardErrorStyle>
+            {i18n.t(`common.social_login.oidc_errors.${isOpenIdError.error}`, {
+              defaultValue: isOpenIdError.errorMessage,
+            })}
           </PrivateAuthCardErrorStyle>
         )}
       </PrivateAuthCardContentStyle>

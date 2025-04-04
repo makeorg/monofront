@@ -6,7 +6,11 @@ export const OidcPage: FC = () => {
 
   if (typeof window !== 'undefined')
     window.opener.postMessage(
-      { openIdCode: state.openIdCode },
+      {
+        openIdCode: state.openIdResponse?.code,
+        openIdError: state.openIdResponse?.error,
+        openIdErrorDescription: state.openIdResponse?.errorDescription,
+      },
       window.location.origin
     );
   return null;

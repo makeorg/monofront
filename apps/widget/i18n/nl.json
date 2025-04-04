@@ -69,7 +69,16 @@
       "cgu_accept": "@@common.social_login.cgu_accept|fr:En vous identifiant, vous acceptez nos",
       "error": "@@common.social_login.error|fr:Une erreur est survenue, merci de réessayer",
       "charte": "@@common.social_login.charte|fr:J'accepte que Make.org traite ces données pour que je puisse participer selon ",
-      "charte_link": "@@common.social_login.charte_link|fr: la charte."
+      "charte_link": "@@common.social_login.charte_link|fr: la charte.",
+      "oidc_errors": {
+        "invalid_request": "@@common.social_login.oidc_errors.invalid_request|fr:La requête est invalide.",
+        "unauthorized_client": "@@common.social_login.oidc_errors.unauthorized_client|fr:Le client n'est pas autorisé à demander un code d'autorisation.",
+        "access_denied": "@@common.social_login.oidc_errors.access_denied|fr:Vous n'avez pas accès à la ressource.",
+        "unsupported_response_type": "@@common.social_login.oidc_errors.unsupported_response_type|fr:Le type de réponse n'est pas pris en charge.",
+        "invalid_scope": "@@common.social_login.oidc_errors.invalid_scope|fr:Le champ 'scope' est invalide.",
+        "server_error": "@@common.social_login.oidc_errors.server_error|fr:Erreur interne du serveur.",
+        "temporarily_unavailable": "@@common.social_login.oidc_errors.temporarily_unavailable|fr:Le service est temporairement indisponible."
+      }
     },
     "notifications": {
       "bad_link": "Deze link is niet langer geldig.",

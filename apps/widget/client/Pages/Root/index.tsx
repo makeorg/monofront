@@ -32,7 +32,7 @@ export const RootPage: FC = () => {
   const { showDataPolicy } = modal;
   const { search } = useLocation();
   const searchParams = new URLSearchParams(search);
-  const errorLogin = searchParams.get('error') !== null;
+  const errorLogin = searchParams.get('error_login') !== null;
 
   const isStandardSequenceKind = sequenceKind
     ? isStandardSequence(sequenceKind)

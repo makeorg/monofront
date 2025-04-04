@@ -22,7 +22,16 @@
       "cgu_accept": "En vous identifiant, vous acceptez nos",
       "error": "Une erreur est survenue, merci de réessayer",
       "charte": "J'accepte que Make.org traite ces données pour que je puisse participer selon ",
-      "charte_link": " la charte."
+      "charte_link": " la charte.",
+      "oidc_errors": {
+        "invalid_request": "La requête est invalide.",
+        "unauthorized_client": "Le client n'est pas autorisé à demander un code d'autorisation.",
+        "access_denied": "Vous n'avez pas accès à la ressource.",
+        "unsupported_response_type": "Le type de réponse n'est pas pris en charge.",
+        "invalid_scope": "Le champ 'scope' est invalide.",
+        "server_error": "Erreur interne du serveur.",
+        "temporarily_unavailable": "Le service est temporairement indisponible."
+      }
     },
     "form": {
       "hide_password": "Masquer le mot de passe",
