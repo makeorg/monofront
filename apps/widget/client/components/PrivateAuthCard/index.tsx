@@ -1,5 +1,4 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import { NotAuthSecuredQuestionType } from '@make.org/types/Question';
 import { MOBILE_DEVICE } from '@make.org/utils/constants/config';
 import { SvgOpenId } from '@make.org/ui/Svg/elements/OpenIdIcon';
@@ -12,19 +11,17 @@ import {
   PrivateAuthCardButtonStyle,
   PrivateAuthCardErrorStyle,
 } from './style';
+import { AuthSucceededCard } from '../AuthSucceededCard';
 
 interface PrivateAuthCardProps {
   authRedirectInfo: NotAuthSecuredQuestionType;
   device: string;
-  errorLogin: boolean;
 }
 
 export const PrivateAuthCard: FC<PrivateAuthCardProps> = ({
   authRedirectInfo,
   device,
-  errorLogin,
 }: PrivateAuthCardProps) => {
-  const history = useHistory();
   const [redirectUri, setRedirectUri] = useState('');
   const [url, setUrl] = useState('');
   const [dimensions, setDimensions] = useState({
@@ -38,6 +35,9 @@ export const PrivateAuthCard: FC<PrivateAuthCardProps> = ({
     error: string;
     errorMessage?: string;
   } | null>(null);
+  const [openIdCode, setOpenIdCode] = useState<string | null>(null);
+  const [errorLogin, setErrorLogin] = useState<string | null>(null);
+
   const popupRef = useRef<Window | null>(null);
 
   useEffect(() => {
@@ -65,6 +65,17 @@ export const PrivateAuthCard: FC<PrivateAuthCardProps> = ({
       setUrl(newUrl);
     }
   }, [redirectUri]);
+
+  if (openIdCode && !errorLogin) {
+    return (
+      <AuthSucceededCard
+        code={openIdCode}
+        onError={message => {
+          setErrorLogin(message);
+        }}
+      />
+    );
+  }
 
   return (
     <PrivateAuthCardContainerStyle>
@@ -101,8 +112,9 @@ export const PrivateAuthCard: FC<PrivateAuthCardProps> = ({
 
             const handleMessage = async (e: MessageEvent) => {
               maifWindow?.close();
-              if (!maifWindow) setIsWindowOpened(false);
-
+              if (!maifWindow) {
+                setIsWindowOpened(false);
+              }
               window.removeEventListener('message', handleMessage);
 
               if (e.data.openIdError) {
@@ -113,11 +125,7 @@ export const PrivateAuthCard: FC<PrivateAuthCardProps> = ({
               }
 
               if (e.data.openIdCode) {
-                setIsOpenIdError(null);
-                history.push({
-                  pathname: 'auth-succeeded',
-                  search: `?code=${e.data.openIdCode}`,
-                });
+                setOpenIdCode(e.data.openIdCode);
               }
             };
 

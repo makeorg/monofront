@@ -29,9 +29,9 @@ import {
 import { TRANSLATION_COMMON_NAMESPACE } from '@make.org/utils/i18n/constants';
 import { ClientLogger } from '@make.org/logger/clientLogger';
 import { TrackingService } from '@make.org/utils/services/TrackingService';
+import { transformExtraSlidesConfigFromQuery } from '@make.org/widget/server/helpers/query.helper';
 import { translationRessources } from '../i18n';
 import { initDevState } from '../initDevState';
-import { transformExtraSlidesConfigFromQuery } from '../server/helpers/query.helper';
 import App from './App';
 import { getWidgetLocation } from '../utils/helpers/location';
 
@@ -183,6 +183,17 @@ const initApp = async (state: StateRoot) => {
       }
     }
   );
+  // add listener to update apiClient custom headers
+  apiClient.addbeforeCallListener('globalCore', async () => {
+    const { questionId, questionSlug, questionLanguage } =
+      trackingParamsService.all();
+
+    apiClient.customHeaders = {
+      'x-make-question-id': questionId || '',
+      'x-make-question-slug': questionSlug || '',
+      'x-make-question-language': questionLanguage || '',
+    };
+  });
 
   // init oauth utils
   const retrieveAccessToken = async (

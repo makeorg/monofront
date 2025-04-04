@@ -65,8 +65,8 @@ const SessionExpirationWithCookiesHandler: React.FC<Props> = ({
     const isInitalSetup = !sessionId;
 
     if (!isInitalSetup && sessionIdHasChanged && window && window.location) {
-      const [baseUrl] = window.location.href.split('#');
-      window.location.href = baseUrl;
+      const [url] = window.location.href.split('#');
+      window.location.href = url;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [apiSessionId]);
@@ -168,8 +168,8 @@ export const SessionExpiration: React.FC<Properties> = ({
     const isInitalSetup = !sessionId;
 
     if (!isInitalSetup && sessionIdHasChanged && window && window.location) {
-      const [baseUrl] = window.location.href.split('#');
-      window.location.href = baseUrl;
+      const [url] = window.location.href.split('#');
+      window.location.href = url;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [apiSessionId]);

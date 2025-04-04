@@ -6,7 +6,6 @@ import {
   getMetalTitleBySequenceKind,
   isStandardSequence,
 } from '@make.org/utils/helpers/sequence';
-import { useLocation } from 'react-router';
 import { Modal } from '@make.org/components/Modal';
 import { Panel } from '@make.org/components/Panel';
 import { PrivacyPolicyModal } from '@make.org/components/PrivacyPolicyModal';
@@ -30,29 +29,34 @@ export const RootPage: FC = () => {
   const { sequenceKind, loadFirstProposal } = state.sequence;
   const { unsecure, device } = appConfig;
   const { showDataPolicy } = modal;
-  const { search } = useLocation();
-  const searchParams = new URLSearchParams(search);
-  const errorLogin = searchParams.get('error_login') !== null;
 
   const isStandardSequenceKind = sequenceKind
     ? isStandardSequence(sequenceKind)
     : true;
-  const question = authRedirectInfo ? null : selectCurrentQuestion(state);
-  const topProposalIsActive = question?.activeFeatureData?.topProposal !== null;
-  const [topProposal, disableTopProposal] =
-    useState<boolean>(topProposalIsActive);
+  const question = selectCurrentQuestion(state);
+  const isClientSide = env.isClientSide();
+  const [topProposal, setTopProposal] = useState<boolean>(
+    !!question?.activeFeatureData?.topProposal
+  );
   const [widgetcards, setWidgetCards] = useState(
     <FirstProposal sequenceKind={sequenceKind || SEQUENCE.KIND_STANDARD} />
   );
-  const [isClientSide, setIsClientSide] = useState(false);
 
   useEffect(() => {
-    setIsClientSide(env.isClientSide());
-  }, []);
+    if (!question) {
+      return;
+    }
+
+    setTopProposal(!!question.activeFeatureData?.topProposal);
+  }, [question]);
 
   useEffect(() => {
+    if (!question) {
+      return;
+    }
+
     if (topProposal) {
-      setWidgetCards(<IntroProposal handleChange={disableTopProposal} />);
+      setWidgetCards(<IntroProposal handleChange={setTopProposal} />);
       return;
     }
 
@@ -69,16 +73,18 @@ export const RootPage: FC = () => {
         logger={ClientLogger.getInstance()}
       />
     );
-  }, [topProposal, loadFirstProposal, sequenceKind]);
+  }, [topProposal, loadFirstProposal, sequenceKind, question]);
 
-  if (!question || errorLogin) {
-    return authRedirectInfo ? (
-      <PrivateAuthCard
-        authRedirectInfo={authRedirectInfo}
-        device={device}
-        errorLogin={errorLogin}
-      />
-    ) : null;
+  // load private auth card
+  if (authRedirectInfo && !question) {
+    return (
+      <PrivateAuthCard authRedirectInfo={authRedirectInfo} device={device} />
+    );
+  }
+
+  // should never append
+  if (!question) {
+    return null;
   }
 
   if (!currentQuestion) {

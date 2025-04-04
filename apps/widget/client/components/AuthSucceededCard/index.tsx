@@ -1,5 +1,4 @@
 import React, { FC, useState } from 'react';
-import { useHistory, useLocation } from 'react-router';
 import { useAppContext } from '@make.org/store';
 import { QuestionService } from '@make.org/utils/services/Question';
 import { loadQuestion } from '@make.org/store/actions/questions';
@@ -15,7 +14,10 @@ import {
 } from '@make.org/store/actions/authentication';
 import { UserService } from '@make.org/utils/services/User';
 
-import { TermsCheckBox } from './TermsCheckBox';
+import { useLocation } from 'react-router';
+import { updateTrackingQuestionParam } from '@make.org/utils/helpers/question';
+import { Spinner } from '@make.org/ui/components/Loading/Spinner';
+import { transformExtraSlidesConfigFromQuery } from '@make.org/widget/server/helpers/query.helper';
 import {
   AuthSucceededCardContainerStyle,
   AuthSucceededCardContentStyle,
@@ -24,32 +26,50 @@ import {
   AuthSucceededCardButtonStyle,
   AuthSucceededCardLinkStyle,
 } from './style';
+import { TermsCheckBox } from './TermsCheckBox';
 
-export const AuthSucceededCard: FC = () => {
+interface AuthSucceededCardProps {
+  code: string;
+  onError: (message: string) => void;
+}
+
+export const AuthSucceededCard: FC<AuthSucceededCardProps> = ({
+  code,
+  onError,
+}) => {
   useState<boolean>(false);
   const [isTermsAccepted, setIsTermsAccepted] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const { state } = useAppContext();
-  const { authRedirectInfo } = state;
   const { country, language } = state.appConfig;
-  const question = authRedirectInfo || selectCurrentQuestion(state);
-  const history = useHistory();
+  const question = selectCurrentQuestion(state);
   const { search } = useLocation();
   const searchParams = new URLSearchParams(search);
-  const code = searchParams.get('code');
+  const questionSlug = searchParams.get('questionSlug') || '';
 
   const { dispatch } = useAppContext();
 
   const updateQuestion = async () => {
     const questionDetails = await QuestionService.getDetail(
-      question?.questionId,
+      questionSlug,
       language,
       undefined,
       undefined
     );
 
     if (questionDetails) {
-      dispatch(loadQuestion(questionDetails));
-      dispatch(setCurrentQuestionSlug(questionDetails.slug));
+      const { sequenceConfig } = questionDetails;
+      const questionModified = {
+        ...questionDetails,
+        sequenceConfig: transformExtraSlidesConfigFromQuery(
+          sequenceConfig,
+          true,
+          false
+        ),
+      };
+      updateTrackingQuestionParam(questionDetails);
+      dispatch(loadQuestion(questionModified));
+      dispatch(setCurrentQuestionSlug(questionModified.slug));
       dispatch(resetAuthRedirectInfo());
     }
   };
@@ -58,21 +78,19 @@ export const AuthSucceededCard: FC = () => {
     dispatch(loginSocialSuccess());
     await getUser(dispatch);
     await updateQuestion();
-    history.push('/');
   };
 
   const useLoginFailure = () => () => {
+    setIsLoading(false);
     dispatch(loginSocialFailure());
-    history.push({
-      pathname: '/',
-      search: '?error_login=login_social',
-    });
+    onError('login_social');
   };
 
   const loginSuccess = useLoginSuccess();
   const loginFailure = useLoginFailure();
 
   const handleClickParticipate = async () => {
+    setIsLoading(true);
     await UserService.loginSocial(
       'oidc',
       code!,
@@ -80,11 +98,17 @@ export const AuthSucceededCard: FC = () => {
       false,
       loginSuccess,
       loginFailure,
-      () => null,
+      () => {
+        setIsLoading(false);
+      },
       question?.questionId,
       `${window.location.origin}/oidc`
     );
   };
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <AuthSucceededCardContainerStyle>
