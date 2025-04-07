@@ -20,7 +20,7 @@ Please refers to <a href="https://docs.docker.com/engine/reference/commandline/d
 Dev mode :
 
 ```bash
-$ docker-compose -f docker-compose.dev.yaml --profile=widget-dev up -d
+$ docker-compose -f docker-compose.dev.yaml --profile widget-dev up -d
 # and go to https://localhost:3000
 # or go to https://local.makeorg.tech:3000/demo?WIDGET_PARAMS (iframe demo)
 ```
@@ -28,7 +28,7 @@ $ docker-compose -f docker-compose.dev.yaml --profile=widget-dev up -d
 Dev mode with SSR :
 
 ```bash
-$ docker-compose -f docker-compose.dev.yaml --profile=widget-ssr up -d
+$ docker-compose -f docker-compose.dev.yaml --profile widget-ssr up -d
 # and go to https://localhost:3000
 # or go to https://local.makeorg.tech:3000/demo?WIDGET_PARAMS (iframe demo)
 ```
@@ -41,7 +41,7 @@ $ docker ps
 # launch the build script in the container
 $ docker exec -it CONTAINER_ID yarn workspace @make.org/widget build
 # Restart the container
-$ docker-compose -f docker-compose.dev.yaml --profile=widget-ssr restart
+$ docker-compose -f docker-compose.dev.yaml --profile widget-ssr restart
 ```
 
 ## Running functional tests
@@ -49,7 +49,7 @@ $ docker-compose -f docker-compose.dev.yaml --profile=widget-ssr restart
 Start test environment
 
 ```bash
-$ docker-compose -f docker-compose.dev.yaml --profile=widget-test up -d
+$ docker-compose -f docker-compose.dev.yaml --profile widget-test up -d
 ```
 
 Run all tests
@@ -103,5 +103,3 @@ List keys without translation in code
 ```bash
 $ yarn workspace @make.org/widget  translation:orphan-keys -d ./i18n -l fr
 ```
-
-

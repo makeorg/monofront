@@ -12,6 +12,7 @@ import { PrivacyPolicyModal } from '@make.org/components/PrivacyPolicyModal';
 import { Spinner } from '@make.org/ui/components/Loading/Spinner';
 import { isInProgress } from '@make.org/utils/helpers/date';
 import { selectCurrentQuestion } from '@make.org/store/selectors/questions.selector';
+import { selectAuthentication } from '@make.org/store/selectors/user.selector';
 import { MetaTags } from '@make.org/components/MetaTags';
 import i18n from 'i18next';
 import { env } from '@make.org/assets/env';
@@ -29,18 +30,23 @@ export const RootPage: FC = () => {
   const { sequenceKind, loadFirstProposal } = state.sequence;
   const { unsecure, device } = appConfig;
   const { showDataPolicy } = modal;
+  const { isLoggedIn } = selectAuthentication(state);
 
   const isStandardSequenceKind = sequenceKind
     ? isStandardSequence(sequenceKind)
     : true;
   const question = selectCurrentQuestion(state);
-  const isClientSide = env.isClientSide();
   const [topProposal, setTopProposal] = useState<boolean>(
     !!question?.activeFeatureData?.topProposal
   );
   const [widgetcards, setWidgetCards] = useState(
     <FirstProposal sequenceKind={sequenceKind || SEQUENCE.KIND_STANDARD} />
   );
+  const [isClientSide, setIsClientSide] = useState(false);
+
+  useEffect(() => {
+    setIsClientSide(env.isClientSide());
+  }, []);
 
   useEffect(() => {
     if (!question) {
@@ -76,7 +82,7 @@ export const RootPage: FC = () => {
   }, [topProposal, loadFirstProposal, sequenceKind, question]);
 
   // load private auth card
-  if (authRedirectInfo && !question) {
+  if (authRedirectInfo && (!question || !isLoggedIn)) {
     return (
       <PrivateAuthCard authRedirectInfo={authRedirectInfo} device={device} />
     );

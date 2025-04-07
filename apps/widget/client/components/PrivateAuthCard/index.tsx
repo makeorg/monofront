@@ -36,7 +36,7 @@ export const PrivateAuthCard: FC<PrivateAuthCardProps> = ({
     errorMessage?: string;
   } | null>(null);
   const [openIdCode, setOpenIdCode] = useState<string | null>(null);
-  const [errorLogin, setErrorLogin] = useState<string | null>(null);
+  const [hasErrorLogin, setHasErrorLogin] = useState<boolean>(false);
 
   const popupRef = useRef<Window | null>(null);
 
@@ -66,13 +66,12 @@ export const PrivateAuthCard: FC<PrivateAuthCardProps> = ({
     }
   }, [redirectUri]);
 
-  if (openIdCode && !errorLogin) {
+  if (openIdCode && !hasErrorLogin) {
     return (
       <AuthSucceededCard
         code={openIdCode}
-        onError={message => {
-          setErrorLogin(message);
-        }}
+        onSuccess={() => setHasErrorLogin(false)}
+        onFailure={() => setHasErrorLogin(true)}
       />
     );
   }
@@ -90,7 +89,7 @@ export const PrivateAuthCard: FC<PrivateAuthCardProps> = ({
           type="button"
           onClick={() => {
             if (!url) return;
-            const maifWindow = window.open(
+            const oidcWindow = window.open(
               url,
               '_blank',
               `width=${dimensions.width},height=${dimensions.height},left=${dimensions.left},top=${dimensions.top},resizable=yes,scrollbars=yes`
@@ -104,15 +103,15 @@ export const PrivateAuthCard: FC<PrivateAuthCardProps> = ({
               }
             };
 
-            if (maifWindow) {
-              popupRef.current = maifWindow;
+            if (oidcWindow) {
+              popupRef.current = oidcWindow;
               setIsWindowOpened(true);
               window.addEventListener('focus', handlePopupClose);
             }
 
             const handleMessage = async (e: MessageEvent) => {
-              maifWindow?.close();
-              if (!maifWindow) {
+              oidcWindow?.close();
+              if (!oidcWindow) {
                 setIsWindowOpened(false);
               }
               window.removeEventListener('message', handleMessage);
@@ -136,7 +135,7 @@ export const PrivateAuthCard: FC<PrivateAuthCardProps> = ({
           <SvgOpenId />
           {i18n.t('common.social_login.openid_connect')}
         </PrivateAuthCardButtonStyle>
-        {errorLogin && (
+        {hasErrorLogin && (
           <PrivateAuthCardErrorStyle>
             {i18n.t('common.social_login.error')}
           </PrivateAuthCardErrorStyle>

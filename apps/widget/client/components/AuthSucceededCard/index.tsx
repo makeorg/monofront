@@ -13,8 +13,6 @@ import {
   getUser,
 } from '@make.org/store/actions/authentication';
 import { UserService } from '@make.org/utils/services/User';
-
-import { useLocation } from 'react-router';
 import { updateTrackingQuestionParam } from '@make.org/utils/helpers/question';
 import { Spinner } from '@make.org/ui/components/Loading/Spinner';
 import { transformExtraSlidesConfigFromQuery } from '@make.org/widget/server/helpers/query.helper';
@@ -30,28 +28,28 @@ import { TermsCheckBox } from './TermsCheckBox';
 
 interface AuthSucceededCardProps {
   code: string;
-  onError: (message: string) => void;
+  onSuccess: () => void;
+  onFailure: () => void;
 }
 
 export const AuthSucceededCard: FC<AuthSucceededCardProps> = ({
   code,
-  onError,
+  onSuccess,
+  onFailure,
 }) => {
   useState<boolean>(false);
   const [isTermsAccepted, setIsTermsAccepted] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { state } = useAppContext();
+  const { authRedirectInfo } = state;
   const { country, language } = state.appConfig;
-  const question = selectCurrentQuestion(state);
-  const { search } = useLocation();
-  const searchParams = new URLSearchParams(search);
-  const questionSlug = searchParams.get('questionSlug') || '';
+  const question = authRedirectInfo || selectCurrentQuestion(state);
 
   const { dispatch } = useAppContext();
 
   const updateQuestion = async () => {
     const questionDetails = await QuestionService.getDetail(
-      questionSlug,
+      question?.questionId,
       language,
       undefined,
       undefined
@@ -75,15 +73,16 @@ export const AuthSucceededCard: FC<AuthSucceededCardProps> = ({
   };
 
   const useLoginSuccess = () => async () => {
-    dispatch(loginSocialSuccess());
     await getUser(dispatch);
     await updateQuestion();
+    dispatch(loginSocialSuccess());
+    onSuccess();
   };
 
   const useLoginFailure = () => () => {
     setIsLoading(false);
     dispatch(loginSocialFailure());
-    onError('login_social');
+    onFailure();
   };
 
   const loginSuccess = useLoginSuccess();
