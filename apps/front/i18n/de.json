@@ -1238,11 +1238,11 @@
   },
   "legal": {
     "title": "Impressum",
-    "make_infos": "Herausgeber der Website: MAKE.ORG GmbH mit Sitz Karl-Marx-Str. 12, 12043 Berlin, Deutschland, beim Amtsgericht Berlin (Charlottenburg) unter der Registernummer HRB 242008 B (im Folgenden „Make.org“) eingetragen.\nUmsatzsteueridentifikationsnummer: DE353962906\nVerantwortlich für den Inhalt: Sarah Delahaye, Karl-Marx-Str. 12, 12043 Berlin\nDie EU Kommission hält unter der URL https://ec.europa.eu/consumers/odr eine Plattform zur Online-Streitschlichtung bereit. Wir sind zu einer Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder bereit noch verpflichtet.",
+    "make_infos": "Herausgeber der Website: MAKE.ORG GmbH mit Sitz Karl-Marx-Str. 12, 12043 Berlin, Deutschland, beim Amtsgericht Berlin (Charlottenburg) unter der Registernummer HRB 242008 B (im Folgenden „Make.org“) eingetragen.\nUmsatzsteueridentifikationsnummer: DE353962906\nVerantwortlich für den Inhalt: Karl-Marx-Str. 12, 12043 Berlin\nDie EU Kommission hält unter der URL https://ec.europa.eu/consumers/odr eine Plattform zur Online-Streitschlichtung bereit. Wir sind zu einer Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder bereit noch verpflichtet.",
     "mail": "E-Mail-Adresse: ",
     "make_phone": "Telefonnummer: ",
     "make_phone_number": "{{make_phone_number}}",
-    "director": "Vertretungsberechtigte Geschäftsführerin und Geschäftsführer: Sarah Delahaye, Axel Dauchez",
+    "director": "Vertretungsberechtigte Geschäftsführerin und Geschäftsführer: Axel Dauchez",
     "host": "Webhost: ",
     "host_address": "{{make_host_address}}, Frankreich",
     "host_phone": "Telefonnummer: ",
