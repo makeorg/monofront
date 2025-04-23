@@ -5,7 +5,10 @@ import { isInProgress } from '@make.org/utils/helpers/date';
 import { Link } from 'react-router-dom';
 import { scrollToTop } from '@make.org/utils/helpers/styled';
 import { SvgExternalLink } from '@make.org/ui/Svg/elements';
-import { getParticipateLink } from '@make.org/utils/helpers/url';
+import {
+  getParticipateLink,
+  getResultsLink,
+} from '@make.org/utils/helpers/url';
 import i18n from 'i18next';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
 import { useAppContext } from '@make.org/store';
@@ -18,11 +21,29 @@ type Props = {
 export const FeaturedLink: FC<Props> = ({ question }) => {
   const { state } = useAppContext();
   const { country } = state.appConfig;
+  const { resultsLink } = question;
+
+  const internalResultLink =
+    resultsLink && resultsLink.kind === 'internal' && resultsLink.value;
+
   if (isInProgress(question)) {
     return (
       <FeaturedLinkStyle
         as={Link}
         to={getParticipateLink(country, question.questionSlug)}
+        onClick={scrollToTop}
+      >
+        {question.operationTitle}
+        <FeaturedLinkIconStyle aria-hidden focusable="false" />
+      </FeaturedLinkStyle>
+    );
+  }
+
+  if (internalResultLink) {
+    return (
+      <FeaturedLinkStyle
+        as={Link}
+        to={getResultsLink(country, question.questionSlug)}
         onClick={scrollToTop}
       >
         {question.operationTitle}
