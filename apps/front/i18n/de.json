@@ -415,7 +415,7 @@
       "moderation_link": "Moderationscharta",
       "button_propose": "Bestätigen",
       "and": "und unsere",
-      "gtc": " nutzungsbedingungen",
+      "gtc": " Nutzungsbedingungen",
       "account_warning": "🔔 Du musst angemeldet sein, um einen Vorschlag einzureichen."
     },
     "authentication": {
@@ -1242,7 +1242,7 @@
     "mail": "E-Mail-Adresse: ",
     "make_phone": "Telefonnummer: ",
     "make_phone_number": "{{make_phone_number}}",
-    "director": "Vertretungsberechtigte Geschäftsführerin und Geschäftsführer: Axel Dauchez",
+    "director": "Vertretungsberechtigter Geschäftsführer: Axel Dauchez",
     "host": "Webhost: ",
     "host_address": "{{make_host_address}}, Frankreich",
     "host_phone": "Telefonnummer: ",
