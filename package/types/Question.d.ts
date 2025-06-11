@@ -195,6 +195,7 @@ export type QuestionType = {
   reportUrl?: string;
   proposalPrefix: string;
   actionsUrl: string;
+  resultsLink?: string;
 };
 
 export type NotAuthSecuredQuestionType = {

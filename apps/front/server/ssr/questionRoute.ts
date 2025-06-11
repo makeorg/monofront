@@ -53,7 +53,11 @@ export const questionRoute = async (
     return res.redirect(question.aboutUrl);
   }
 
-  if (!isInProgress(question) && question.displayResults) {
+  if (!isInProgress(question) && question.resultsLink) {
+    return res.redirect(question.resultsLink);
+  }
+
+  if (!isInProgress(question)) {
     return res.redirect(getRouteResults(country, question.slug));
   }
 
