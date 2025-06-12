@@ -10,13 +10,7 @@ import {
 } from '@make.org/components/Sequence/style';
 import { SequenceProgress } from '@make.org/components/Sequence/Progress';
 import { SequenceCardStyle } from '@make.org/components/Sequence/Cards/style';
-import { getParticipateLink } from '@make.org/utils/helpers/url';
-import { trackClickOperationPage } from '@make.org/utils/services/Tracking';
-import { RedUppercaseHTMLLinkElementStyle } from '@make.org/ui/elements/LinkElements';
-import {
-  ClosedConsultationDescriptionStyle,
-  ClosedConsultationTitleStyle,
-} from '../../style';
+import { ClosedConsultationTitleStyle } from '../../style';
 import { HeaderPanel } from '../HeaderPanel';
 
 type Props = {
@@ -26,7 +20,6 @@ type Props = {
 export const ClosedConsultation: FC<Props> = ({ dataCyClientLoaded }) => {
   const { state } = useAppContext();
   const question: QuestionType = selectCurrentQuestion(state);
-  const { country } = state.appConfig;
 
   return (
     <div data-cy-client-loaded={dataCyClientLoaded}>
@@ -44,19 +37,6 @@ export const ClosedConsultation: FC<Props> = ({ dataCyClientLoaded }) => {
             <ClosedConsultationTitleStyle>
               {i18n.t('unsecure.title')}
             </ClosedConsultationTitleStyle>
-            <ClosedConsultationDescriptionStyle>
-              {i18n.t('unsecure.description')}
-            </ClosedConsultationDescriptionStyle>
-            <RedUppercaseHTMLLinkElementStyle
-              href={`https://make.org${getParticipateLink(
-                country,
-                question.slug
-              )}`}
-              onClick={() => trackClickOperationPage()}
-              target="_blank"
-            >
-              {i18n.t('unsecure.link')}
-            </RedUppercaseHTMLLinkElementStyle>
           </SequenceCardStyle>
           <SequenceProgress disabled />
         </SequenceContentStyle>

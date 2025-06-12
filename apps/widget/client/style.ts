@@ -1,8 +1,5 @@
 import styled from 'styled-components';
-import {
-  SequenceParagraphStyle,
-  SequenceMainTitleStyle,
-} from '@make.org/components/Sequence/Cards/style';
+import { SequenceMainTitleStyle } from '@make.org/components/Sequence/Cards/style';
 import { typography } from '@make.org/designsystem/tokens/typography';
 import { ColumnElementStyle } from '@make.org/ui/elements/FlexElements';
 import { colors } from '@make.org/designsystem/tokens/colors';
@@ -25,13 +22,4 @@ export const ClosedConsultationTitleStyle = styled(SequenceMainTitleStyle)`
   font-size: ${typography.FontSize.Arrondissement};
   line-height: 1.5;
   letter-spacing: 0.14px;
-`;
-
-export const ClosedConsultationDescriptionStyle = styled(
-  SequenceParagraphStyle
-)`
-  font-family: ${typography.FontFamily.Default};
-  font-size: ${typography.FontSize.RueDeLappe};
-  line-height: 1.5;
-  letter-spacing: 0.12px;
 `;

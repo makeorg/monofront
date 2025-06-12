@@ -367,9 +367,7 @@
     "subtitle": "Hups, olemme pahoillamme! Make.org on parhaillaan ylläpidossa"
   },
   "unsecure": {
-    "title": "Kuuleminen on nyt päättynyt",
-    "description": "Haluatko tietää lisää tästä aiheesta? Lue lisää operaatiosta ja pysy ajan tasalla kaikista kansalaiskuulemisista rekisteröitymällä Make.org-sivustolle",
-    "link": "Tutustu toimintaamme"
+    "title": "Kuuleminen on nyt päättynyt"
   },
   "demographics_intro": {
     "title": "Olet melkein perillä! Jaa sosiodemografiset tietosi, jotta äänesi otetaan huomioon ja jotta olet edustavampi.",

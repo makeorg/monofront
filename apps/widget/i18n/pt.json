@@ -367,9 +367,7 @@
     "subtitle": "Ops, pedimos desculpas! Make.org está atualmente em manutenção"
   },
   "unsecure": {
-    "title": "A consulta está encerrada",
-    "description": "Gostaria de saber mais sobre este tema? Descubra o resto da operação e mantenha-se informado de todas as nossas consultas aos cidadãos, registando-se no Make.org",
-    "link": "Descubra a nossa operação"
+    "title": "A consulta está encerrada"
   },
   "demographics_intro": {
     "title": "Estás quase lá! Partilhe os seus dados sociodemográficos para que os seus votos sejam tidos em conta e para que seja mais representativo.",

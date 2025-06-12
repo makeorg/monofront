@@ -368,8 +368,6 @@
     "subtitle": "Oops, nous sommes désolé! Make.org est actuellement en maintenance"
   },
   "unsecure": {
-    "title": "La consultation est maintenant terminée",
-    "description": "Vous souhaitez en savoir plus sur ce sujet ? Découvrez la suite de l'opération et restez informé(e) de toutes nos consultations citoyennes en vous inscrivant sur Make.org",
-    "link": "Découvrir notre opération"
+    "title": "La consultation est maintenant terminée"
   }
 }

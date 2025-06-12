@@ -77,13 +77,3 @@ export const LinkAsGreyButton = styled(GreyButtonStyle)`
     text-decoration: none;
   }
 `;
-
-export const RedUppercaseHTMLLinkElementStyle = styled.a`
-  ${linkStyle(colors.Content.Make.Secondary)};
-  text-transform: uppercase;
-  font-family: ${typography.FontFamily.Condensed};
-  & svg {
-    max-width: 16px;
-    max-height: 14px;
-  }
-`;

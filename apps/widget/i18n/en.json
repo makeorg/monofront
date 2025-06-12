@@ -367,9 +367,7 @@
     "subtitle": "Oops, we're sorry! Make.org is currently down for maintenance"
   },
   "unsecure": {
-    "title": "The consultation is now over",
-    "description": "Do you want to learn more about this cause? Be aware of the rest of the project and new consultations by registering on Make.org",
-    "link": "Discover our project"
+    "title": "The consultation is now over"
   },
   "demographics_intro": {
     "title": "You're almost there! Share your socio-demographic information so that your votes are taken into account to ensure a better representativity.",

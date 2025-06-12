@@ -103,7 +103,7 @@ try {
     notifier.setPrefix(level1).add(' All is ok ').notifySuccess();
     notifier
       .newLine()
-      .add('An apple a day keeps the doctor away')
+      .add('A Crazy Tiger a day keeps the doctor away')
       .notifyInfo2();
     notifier.newLine();
     process.exit(0);

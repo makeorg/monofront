@@ -373,9 +373,7 @@
     "subtitle": "Ups, žal nam je! Make.org je trenutno v vzdrževanju"
   },
   "unsecure": {
-    "title": "Posvetovanje je zaključeno",
-    "description": "Želite izvedeti več o tej temi? Več informacij o operaciji in obveščanje o vseh naših posvetovanjih z državljani pridobite z registracijo na Make.org",
-    "link": "Odkrijte naše delovanje"
+    "title": "Posvetovanje je zaključeno"
   },
   "demographics_intro": {
     "title": "Skoraj ste prišli! Delite svoje socialno-demografske podatke, da bodo vaši glasovi upoštevani in da boste bolj reprezentativni.",
