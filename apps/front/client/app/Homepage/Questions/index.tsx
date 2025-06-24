@@ -21,7 +21,6 @@ import {
 } from '../../../pages/Home/style';
 import { BrowseConsultationsList } from '../../Consultation/Browse/List';
 import { ConsultationElementTitleStyle } from '../../Consultation/Browse/style';
-import { FeaturedSeparatorStyle } from './style';
 
 type Props = {
   currentQuestions: HomeQuestionType[] | [];
@@ -74,12 +73,7 @@ export const HomepageQuestions: FC<Props> = ({
         />
       ) : (
         <>
-          <BrowseConsultationsList
-            questions={currentQuestions}
-            total={currentQuestions.length}
-          />
           <HomepagePageInnerStyle>
-            <FeaturedSeparatorStyle />
             <ConsultationElementTitleStyle>
               {i18n.t('browse.past_questions')}
             </ConsultationElementTitleStyle>
