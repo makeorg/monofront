@@ -4,20 +4,13 @@ import { SvgClose } from '@make.org/ui/Svg/elements';
 import i18n from 'i18next';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import {
-  getBrowseConsultationsLink,
-  getBrowseResultsLink,
   getNewsLinkByCountry,
   getWebflowDynamicLink,
 } from '@make.org/utils/helpers/url';
-import { useLocation } from 'react-router';
-import { scrollToTop } from '@make.org/utils/helpers/styled';
 import { URL } from '@make.org/types/enums';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import { getCountryWithConsultations } from '@make.org/utils//helpers/countries';
 import { getCountriesTransMap } from '@make.org/front/client/helpers/translationsMap';
 import {
-  isBrowseConsultationsPage,
-  isBrowseResultsPage,
   ROUTE_WHOAREWE,
   ROUTE_PARTNERSHIP,
   ROUTE_JOIN_GREAT_CAUSE,
@@ -31,9 +24,7 @@ import {
   MenuCloseTriggerStyle,
   MenuInnerStyle,
   MenuNavStyle,
-  MenuItemTitleStyle,
   MenuItemStyle,
-  MenuInternalLinkStyle,
   MenuExternalLinkStyle,
   MenuNewWindowIconStyle,
   MenuItemCountryLanguageLinkStyle,
@@ -47,31 +38,14 @@ type Props = {
 };
 
 export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
-  const location = useLocation();
   const { state, dispatch } = useAppContext();
   const [countriesTransMap, setCountriesTransMap] = useState(
     getCountriesTransMap()
   );
 
-  const { country, language, countriesWithConsultations } = state.appConfig;
-  const browseConsultationsLink =
-    country && getBrowseConsultationsLink(country);
-  const browseResultsLink = country && getBrowseResultsLink(country);
-  const onBrowseConsultationsPage = isBrowseConsultationsPage(
-    location.pathname
-  );
-  const onBrowseResultsPage = isBrowseResultsPage(location.pathname);
+  const { country, language } = state.appConfig;
   const isFR = country === 'FR';
   const isDE = country === 'DE';
-  const countryHasConsultations = getCountryWithConsultations(
-    country,
-    countriesWithConsultations
-  );
-
-  const handleInternalNavigation = () => {
-    scrollToTop();
-    toggleExpansion();
-  };
 
   useEffect(() => {
     setCountriesTransMap(getCountriesTransMap());
@@ -99,33 +73,6 @@ export const MenuPanel: FC<Props> = ({ isExpanded, toggleExpansion }) => {
           aria-label={i18n.t('header.main_navigation') || undefined}
         >
           <UnstyledListStyle>
-            <MenuItemStyle>
-              <MenuItemTitleStyle>
-                {i18n.t('browse.page_title')}
-              </MenuItemTitleStyle>
-            </MenuItemStyle>
-            {!!browseConsultationsLink && countryHasConsultations && (
-              <MenuItemStyle className="white">
-                <MenuInternalLinkStyle
-                  className={onBrowseConsultationsPage ? 'current' : ''}
-                  to={browseConsultationsLink}
-                  onClick={handleInternalNavigation}
-                >
-                  {i18n.t('browse.nav_consultations_desktop')}
-                </MenuInternalLinkStyle>
-              </MenuItemStyle>
-            )}
-            {!!browseResultsLink && (
-              <MenuItemStyle className="white">
-                <MenuInternalLinkStyle
-                  className={onBrowseResultsPage ? 'current' : ''}
-                  to={browseResultsLink}
-                  onClick={handleInternalNavigation}
-                >
-                  {i18n.t('browse.nav_results_desktop')}
-                </MenuInternalLinkStyle>
-              </MenuItemStyle>
-            )}
             <MenuItemStyle className="white">
               <MenuExternalLinkStyle
                 target="_blank"

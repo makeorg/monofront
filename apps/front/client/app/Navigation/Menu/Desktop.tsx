@@ -3,15 +3,15 @@ import React, { useEffect, FC, useState, useRef } from 'react';
 import { UnstyledListStyle } from '@make.org/ui/elements/ListElements';
 import i18n from 'i18next';
 import {
-  getBrowseConsultationsLink,
   getWebflowDynamicLink,
+  getNewsLinkByCountry,
 } from '@make.org/utils/helpers/url';
 import useOnClickOutside from '@make.org/utils/hooks/useOnClickOutside';
-import { scrollToTop, unlockBody } from '@make.org/utils/helpers/styled';
+import { unlockBody } from '@make.org/utils/helpers/styled';
 import { removeAriaHiddenByClass } from '@make.org/utils/helpers/a11y';
 import { NAVIGATION, SEARCH } from '@make.org/types/enums';
 import { ScreenReaderItemStyle } from '@make.org/ui/elements/AccessibilityElements';
-import { getCountryWithConsultations } from '@make.org/utils/helpers/countries';
+
 import {
   ROUTE_PARTNERSHIP,
   ROUTE_WHOAREWE,
@@ -21,7 +21,6 @@ import { useAppContext } from '@make.org/store';
 import {
   DesktopMenuNavStyle,
   DesktopMenuItemStyle,
-  DesktopMenuInternalLinkStyle,
   MenuNewWindowIconStyle,
   DesktopMenuExternalLinkStyle,
   DesktopMenuDropdownButtonStyle,
@@ -31,13 +30,8 @@ import {
 
 export const DesktopMenu: FC = () => {
   const { state } = useAppContext();
-  const { country, language, countriesWithConsultations } = state.appConfig;
+  const { country, language } = state.appConfig;
   const [openDropdown, setOpenDropdown] = useState<boolean>(false);
-  const browseConsultationsLink = getBrowseConsultationsLink(country);
-  const countryHasConsultations = getCountryWithConsultations(
-    country,
-    countriesWithConsultations
-  );
   const isFR = country === 'FR';
   const ref = useRef<HTMLLIElement>(null);
 
@@ -69,16 +63,18 @@ export const DesktopMenu: FC = () => {
       aria-label={i18n.t('header.main_navigation') || undefined}
     >
       <UnstyledListStyle>
-        {countryHasConsultations && (
-          <DesktopMenuItemStyle className="with-border">
-            <DesktopMenuInternalLinkStyle
-              to={browseConsultationsLink}
-              onClick={scrollToTop}
-            >
-              {i18n.t('browse.page_title')}
-            </DesktopMenuInternalLinkStyle>
-          </DesktopMenuItemStyle>
-        )}
+        <DesktopMenuItemStyle className="with-border">
+          <DesktopMenuExternalLinkStyle
+            target="_blank"
+            rel="noopener"
+            href={getNewsLinkByCountry(country)}
+          >
+            {i18n.t('main_footer.news')}
+            <> </>
+            {externalLinkIcon}
+          </DesktopMenuExternalLinkStyle>
+        </DesktopMenuItemStyle>
+
         <DesktopMenuItemStyle
           className={`${SEARCH.SEARCH_DESKTOP_EXPANDED} with-border`}
         >
