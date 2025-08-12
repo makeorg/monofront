@@ -602,7 +602,8 @@
       "facebook_sharing": "Jakaminen Facebookissa: antaa käyttäjän jakaa sisältöä Facebook-tilillään.",
       "twitter_sharing": "Jakaminen Twitterissä: antaa käyttäjän jakaa sisältöä Twitter-tilillään.",
       "linkedin_sharing": "Jakaminen LinkedInissä: käyttäjä voi jakaa sisältöä LinkedIn-tilillään.",
-      "snapchat_pixel": "Pixel Snapchat: sen avulla optimoidaan mainoskampanjoiden toimintaa Snapchatissä. Näin pyritään lisäämään kansalaisten osallistumista."
+      "snapchat_pixel": "Pixel Snapchat: sen avulla optimoidaan mainoskampanjoiden toimintaa Snapchatissä. Näin pyritään lisäämään kansalaisten osallistumista.",
+      "tiktok_pixel": "TikTok Pixel: sen avulla optimoidaan mainoskampanjoiden toimintaa TikTokissä. Näin pyritään lisäämään kansalaisten osallistumista."
     }
   },
   "reset_password": {
@@ -1300,7 +1301,8 @@
         "facebook_sharing": "jakaminen Facebookissa: tämän evästeen avulla käyttäjä voi jakaa sisältöä Facebookissa, minkä lisäksi se parantaa käytettävyyttä.",
         "twitter_sharing": "jakaminen Twitterissä: tämän evästeen avulla käyttäjä voi jakaa sisältöä Twitterissä, minkä lisäksi se parantaa käytettävyyttä.",
         "linkedin_sharing": "jakaminen LinkedInissä: tämän evästeen avulla käyttäjä voi jakaa sisältöä LinkedInissä, minkä lisäksi se parantaa käytettävyyttä.",
-        "snapchat_tracking": "pixel Snapchat: kyseisten evästeiden avulla optimoidaan mainoskampanjoiden toimintaa Snapchatissä. Näin pyritään lisäämään kansalaisten osallistumista."
+        "snapchat_tracking": "pixel Snapchat: kyseisten evästeiden avulla optimoidaan mainoskampanjoiden toimintaa Snapchatissä. Näin pyritään lisäämään kansalaisten osallistumista.",
+        "tiktok_tracking": "pixel TikTok: kyseisten evästeiden avulla optimoidaan mainoskampanjoiden toimintaa TikTokissä. Näin pyritään lisäämään kansalaisten osallistumista."
       }
     }
   },

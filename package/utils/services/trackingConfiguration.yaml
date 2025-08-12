@@ -546,6 +546,7 @@ CLICK_COOKIE_SWITCH_ACCEPT:
         - facebook_tracking
         - twitter_tracking
         - snapchat_tracking
+        - tiktok_tracking
         - facebook_sharing
         - twitter_sharing
         - linkedin_sharing
@@ -560,6 +561,7 @@ CLICK_COOKIE_SWITCH_REFUSE:
         - facebook_tracking
         - twitter_tracking
         - snapchat_tracking
+        - tiktok_tracking
         - facebook_sharing
         - twitter_sharing
         - linkedin_sharing

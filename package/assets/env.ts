@@ -28,6 +28,11 @@ const twAPIKey = (): string => process.env.TW_API_KEY || '';
 const twAPISecret = (): string => process.env.TW_API_SECRET || '';
 const twAccessToken = (): string => process.env.TW_ACCESS_TOKEN || '';
 const twTokenSecret = (): string => process.env.TW_TOKEN_SECRET || '';
+
+// Tiktok vars
+const tiktokPixelId = (): string => process.env.TIKTOK_PIXEL_ID || '';
+
+// Told vars
 const toldToken = (): string => process.env.TOLD_TOKEN || '';
 
 // Snapchat vars
@@ -55,4 +60,5 @@ export const env = {
   twTokenSecret,
   toldToken,
   snapPixelId,
+  tiktokPixelId,
 };

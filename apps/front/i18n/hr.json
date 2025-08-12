@@ -628,7 +628,8 @@
       "facebook_sharing": "Dijeljenje na društvenoj mreži Facebook: omogućava se korisniku dijeljenje sadržaja na svojem računu za društvenu mrežu Facebook.",
       "twitter_sharing": "Dijeljenje na društvenoj mreži Twitter: omogućava se korisniku dijeljenje sadržaja na svojem računu za društvenu mrežu Twitter.",
       "linkedin_sharing": "Dijeljenje na društvenoj mreži LinkedIn: omogućava se korisniku dijeljenje sadržaja na svojem računu za društvenu mrežu LinkedIn.",
-      "snapchat_pixel": "pixel Snapchat: koristi se za optimiziranje performansi promotivnih kampanja za rasprave na društvenoj mreži Snapchat kako bi se povećalo sudjelovanje građana."
+      "snapchat_pixel": "pixel Snapchat: koristi se za optimiziranje performansi promotivnih kampanja za rasprave na društvenoj mreži Snapchat kako bi se povećalo sudjelovanje građana.",
+      "tiktok_pixel": "TikTok pixel: koristi se za optimiziranje performansi promotivnih kampanja za rasprave na društvenoj mreži TikTok kako bi se povećalo sudjelovanje građana."
     }
   },
   "reset_password": {
@@ -1430,7 +1431,8 @@
         "facebook_sharing": "dijeljenje Facebook: ovim se kolačićem omogućava korisniku dijeljenje sadržaja na društvenoj mreži Facebook i poboljšava jednostavnost korištenja.",
         "twitter_sharing": "dijeljenje Twitter: ovim se kolačićem omogućava korisniku dijeljenje sadržaja na društvenoj mreži Twitter i poboljšava jednostavnost korištenja.",
         "linkedin_sharing": "dijeljenje LinkedIn: ovim se kolačićem omogućava korisniku dijeljenje sadržaja na društvenoj mreži LinkedIn i poboljšava jednostavnost korištenja.",
-        "snapchat_tracking": "pixel Snapchat: ovi se kolačići upotrebljavaju za optimiziranje performansi promotivnih kampanja rasprava na društvenoj mreži Snapchat kako bi se povećalo sudjelovanje građana."
+        "snapchat_tracking": "pixel Snapchat: ovi se kolačići upotrebljavaju za optimiziranje performansi promotivnih kampanja rasprava na društvenoj mreži Snapchat kako bi se povećalo sudjelovanje građana.",
+        "tiktok_tracking": "pixel TikTok: ovi se kolačići upotrebljavaju za optimiziranje performansi promotivnih kampanja rasprava na društvenoj mreži TikTok kako bi se povećalo sudjelovanje građana."
       }
     }
   },

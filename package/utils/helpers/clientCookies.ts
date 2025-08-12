@@ -7,7 +7,8 @@ import { env } from '@make.org/assets/env';
 import { hotjar } from 'react-hotjar';
 import { twitter } from '@make.org/utils/services/Trackers/twttr.js';
 import { TwitterPixel } from '@make.org/utils/services/Trackers/TwitterTracking';
-import { SnapchatTracking } from '../services/Trackers/SnapchatTracking';
+import { SnapchatTracking } from '@make.org/utils/services/Trackers/SnapchatTracking';
+import { TiktokTracking } from '@make.org/utils/services/Trackers/TiktokTracking';
 
 declare global {
   interface Window {
@@ -78,6 +79,9 @@ export const initTrackersFromPreferences = (
   const shouldInitSnapPixel =
     trackingConsent.snapchat_tracking && !SnapchatTracking.isInitialized();
 
+  const shouldInitTiktokPixel =
+    trackingConsent.tiktok_tracking && !TiktokTracking.isInitialized();
+
   if (shouldInitFbPixel && visitorId) {
     FacebookTracking.init(logger, visitorId);
     FacebookTracking.pageView();
@@ -105,6 +109,11 @@ export const initTrackersFromPreferences = (
     SnapchatTracking.init(logger);
     SnapchatTracking.pageView();
   }
+
+  if (shouldInitTiktokPixel) {
+    TiktokTracking.init(logger);
+    TiktokTracking.pageView();
+  }
 };
 
 export const removeTrackersFromPreferences = (
@@ -116,8 +125,15 @@ export const removeTrackersFromPreferences = (
     !trackingConsent.twitter_tracking && twitter.initialized();
   const disableSnapTracking =
     !trackingConsent.snapchat_tracking && SnapchatTracking.isInitialized();
+  const disableTiktokTracking =
+    !trackingConsent.tiktok_tracking && TiktokTracking.isInitialized();
 
-  if (disableFBTacking || disableTWTracking || disableSnapTracking) {
+  if (
+    disableFBTacking ||
+    disableTWTracking ||
+    disableSnapTracking ||
+    disableTiktokTracking
+  ) {
     window.location.reload();
   }
 };

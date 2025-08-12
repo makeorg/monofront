@@ -628,7 +628,8 @@
       "facebook_sharing": "Sdílení na Facebooku: umožňuje uživateli sdílet obsah na svém účtu Facebook.",
       "twitter_sharing": "Sdílení na Twitteru: umožňuje uživateli sdílet obsah na jeho účtu Twitter.",
       "linkedin_sharing": "Sdílení LinkedIn: umožňuje uživateli sdílet obsah na jeho účtu LinkedIn.",
-      "snapchat_pixel": "Pixel Snapchat: používá se k optimalizaci výkonu kampaní propagujících konzultace na Snapchat za účelem zvýšení účasti občanů."
+      "snapchat_pixel": "Pixel Snapchat: používá se k optimalizaci výkonu kampaní propagujících konzultace na Snapchat za účelem zvýšení účasti občanů.",
+      "tiktok_pixel": "Pixel TikTok: používá se k optimalizaci výkonu kampaní propagujících konzultace na TikTok za účelem zvýšení účasti občanů."
     }
   },
   "reset_password": {
@@ -1346,7 +1347,8 @@
         "facebook_sharing": "sdílení na Facebooku: tento soubor cookie umožňuje uživateli sdílet obsah na Facebooku a zlepšit uživatelskou přívětivost.",
         "twitter_sharing": "sdílení na Twitteru: tento soubor cookie umožňuje uživateli sdílet obsah na Twitteru a zlepšit uživatelskou přívětivost.",
         "linkedin_sharing": "sdílení na LinkedInu: tento soubor cookie umožňuje uživateli sdílet obsah na Linkedinu a zlepšit uživatelskou přívětivost.",
-        "snapchat_tracking": "pixel Snapchat: tyto soubory cookies se používají k optimalizaci výkonu kampaní propagujících konzultace na Snapchat za účelem zvýšení účasti občanů."
+        "snapchat_tracking": "pixel Snapchat: tyto soubory cookies se používají k optimalizaci výkonu kampaní propagujících konzultace na Snapchat za účelem zvýšení účasti občanů.",
+        "tiktok_tracking": "pixel TikTok: tyto soubory cookies se používají k optimalizaci výkonu kampaní propagujících konzultace na TikTok za účelem zvýšení účasti občanů."
       }
     }
   },

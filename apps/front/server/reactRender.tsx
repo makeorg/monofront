@@ -86,6 +86,7 @@ const renderHtml = (
     .replace(/___HOTJAR_TOKEN___/gi, env.hotjarToken() || '')
     .replace(/___TOLD_TOKEN___/gi, env.toldToken() || '')
     .replace(/___SNAP_PIXEL_ID___/gi, env.snapPixelId() || '')
+    .replace(/___TIKTOK_PIXEL_ID___/gi, env.tiktokPixelId() || '')
     .replace('</body>', `${scriptTags}</body>`);
 
   return content;

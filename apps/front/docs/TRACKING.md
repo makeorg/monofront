@@ -575,7 +575,7 @@ Following parameters are added to all events.
     
     | param_name | required | description | values |
     |-|-|-|-|
-    | `type` | true | type name | `facebook_tracking`, `twitter_tracking`, `snapchat_tracking`, `facebook_sharing`, `twitter_sharing`, `linkedin_sharing` |
+    | `type` | true | type name | `facebook_tracking`, `twitter_tracking`, `snapchat_tracking`, `tiktok_tracking`, `facebook_sharing`, `twitter_sharing`, `linkedin_sharing` |
   
   
 
@@ -584,7 +584,7 @@ Following parameters are added to all events.
     
     | param_name | required | description | values |
     |-|-|-|-|
-    | `type` | true | type name | `facebook_tracking`, `twitter_tracking`, `snapchat_tracking`, `facebook_sharing`, `twitter_sharing`, `linkedin_sharing` |
+    | `type` | true | type name | `facebook_tracking`, `twitter_tracking`, `snapchat_tracking`, `tiktok_tracking`, `facebook_sharing`, `twitter_sharing`, `linkedin_sharing` |
   
   
 

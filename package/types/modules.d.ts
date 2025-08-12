@@ -37,4 +37,5 @@ declare module '*.jpeg' {
 declare module '@make.org/utils/services/Trackers/fbq.js';
 declare module '@make.org/utils/services/Trackers/twttr.js';
 declare module '@make.org/utils/services/Trackers/snap.js';
+declare module '@make.org/utils/services/Trackers/tiktok.js';
 declare module 'serialize-javascript';

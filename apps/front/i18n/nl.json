@@ -602,7 +602,8 @@
       "facebook_sharing": "Delen via Facebook: om gebruikers in staat te stellen inhoud te delen op hun Facebook-account.",
       "twitter_sharing": "Delen via Twitter: om gebruikers in staat te stellen inhoud te delen op hun Twitter-account.",
       "linkedin_sharing": "Delen via LinkedIn: om gebruikers in staat te stellen inhoud te delen op hun LinkedIn-account.",
-      "snapchat_pixel": "Snapchat-pixel: wordt gebruikt om de prestaties van campagnes ter bevordering van raadplegingen op Snapchat te optimaliseren om de burgerparticipatie te verhogen."
+      "snapchat_pixel": "Snapchat-pixel: wordt gebruikt om de prestaties van campagnes ter bevordering van raadplegingen op Snapchat te optimaliseren om de burgerparticipatie te verhogen.",
+      "tiktok_pixel": "TikTok pixel: wordt gebruikt om de prestaties van campagnes ter bevordering van raadplegingen op TikTok te optimaliseren om de burgerparticipatie te verhogen."
     }
   },
   "reset_password": {
@@ -1300,7 +1301,8 @@
         "facebook_sharing": "Delen op Facebook: deze cookie stelt de gebruiker in staat inhoud te delen op Facebook en de gebruiksvriendelijkheid te verbeteren.",
         "twitter_sharing": "Delen op Twitter: deze cookie stelt de gebruiker in staat inhoud te delen op Twitter en de gebruiksvriendelijkheid te verbeteren.",
         "linkedin_sharing": "Delen op LinkedIn: deze cookie stelt de gebruiker in staat inhoud te delen op LinkedIn en de gebruiksvriendelijkheid te verbeteren.",
-        "snapchat_tracking": "Snapchat-pixel: deze cookies worden gebruikt om de prestaties van campagnes die raadplegingen op Snapchat promoten te optimaliseren om de burgerparticipatie te verhogen."
+        "snapchat_tracking": "Snapchat-pixel: deze cookies worden gebruikt om de prestaties van campagnes die raadplegingen op Snapchat promoten te optimaliseren om de burgerparticipatie te verhogen.",
+        "tiktok_tracking": "TikTok-pixel: deze cookies worden gebruikt om de prestaties van campagnes die raadplegingen op TikTok promoten te optimaliseren om de burgerparticipatie te verhogen."
       }
     }
   },

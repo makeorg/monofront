@@ -612,7 +612,8 @@
       "facebook_sharing": "Auf Facebook teilen: Dieses Cookie ermöglicht es den Nutzer:innen, Inhalte über ihr Facebook-Konto zu teilen.",
       "twitter_sharing": "Auf Twitter teilen: Dieses Cookie ermöglicht es den Nutzer:innen, Inhalte über ihr Twitter-Konto zu teilen.",
       "linkedin_sharing": "Auf LinkedIn teilen: Dieses Cookie ermöglicht es den Nutzer:innen, Inhalte über ihr LinkedIn-Konto zu teilen.",
-      "snapchat_pixel": "Snapchat-Pixel: Es wird verwendet, um die Leistung von Snapchat-Werbekampagnen für Konsultationen zu verbessern und so die Bürgerbeteiligung zu erhöhen."
+      "snapchat_pixel": "Snapchat-Pixel: Es wird verwendet, um die Leistung von Snapchat-Werbekampagnen für Konsultationen zu verbessern und so die Bürgerbeteiligung zu erhöhen.",
+      "tiktok_pixel": "TikTok-Pixel: Es wird verwendet, um die Leistung von TikTok-Werbekampagnen für Konsultationen zu verbessern und so die Bürgerbeteiligung zu erhöhen."
     }
   },
   "reset_password": {
@@ -1394,7 +1395,8 @@
         "facebook_sharing": "Auf Facebook teilen: Dieses Cookie ermöglicht es Ihnen, Inhalte auf Facebook zu teilen und die Benutzerfreundlichkeit zu verbessern.",
         "twitter_sharing": "Auf Twitter teilen: Dieses Cookie ermöglicht es Ihnen, Inhalte auf Twitter zu teilen und die Benutzerfreundlichkeit zu verbessern.",
         "linkedin_sharing": "Dieses Cookie ermöglicht es Ihnen, Inhalte auf LinkedIn zu teilen und die Benutzerfreundlichkeit zu verbessern.",
-        "snapchat_tracking": "Snapchat-Pixel: Diese Cookies werden verwendet, um die Leistung von Snapchat-Werbekampagnen für Konsultationen zu verbessern und so die Bürgerbeteiligung zu erhöhen."
+        "snapchat_tracking": "Snapchat-Pixel: Diese Cookies werden verwendet, um die Leistung von Snapchat-Werbekampagnen für Konsultationen zu verbessern und so die Bürgerbeteiligung zu erhöhen.",
+        "tiktok_tracking": "TikTok-Pixel: Diese Cookies werden verwendet, um die Leistung von TikTok-Werbekampagnen für Konsultationen zu verbessern und so die Bürgerbeteiligung zu erhöhen."
       }
     }
   },

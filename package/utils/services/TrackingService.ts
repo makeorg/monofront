@@ -21,6 +21,7 @@ import { trackingParamsService } from './TrackingParamsService';
 import { defaultUnexpectedError } from './DefaultErrorHandler';
 import { MixpanelTracking } from './Trackers/MixpanelTracking';
 import { SnapchatTracking } from './Trackers/SnapchatTracking';
+import { TiktokTracking } from './Trackers/TiktokTracking';
 
 class TrackingValidationError extends Error {}
 
@@ -200,6 +201,11 @@ export const TrackingService = {
     //Snapchat
     if (preferencesCookie?.tracking_consent?.snapchat_tracking) {
       SnapchatTracking.trackCustom(eventName, trackingParamsService.visitorId);
+    }
+
+    // Tiktok
+    if (preferencesCookie?.tracking_consent?.tiktok_tracking) {
+      TiktokTracking.track(eventName);
     }
 
     // Mixpanel

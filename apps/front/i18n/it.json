@@ -609,7 +609,8 @@
       "facebook_sharing": "Condivisione Facebook: permette all'utente di condividere dei contenuti sul suo account Facebook.",
       "twitter_sharing": "Condivisione Twitter: permette all'utente di condividere dei contenuti sul suo account Twitter.",
       "linkedin_sharing": "Condivisione LinkedIn: permette all'utente di condividere dei contenuti sul suo account LinkedIn.",
-      "snapchat_pixel": "Pixel Snapchat: serve a ottimizzare le performance delle campagne di promozione delle consultazioni su Snapchat per aumentare la partecipazione della cittadinanza."
+      "snapchat_pixel": "Pixel Snapchat: serve a ottimizzare le performance delle campagne di promozione delle consultazioni su Snapchat per aumentare la partecipazione della cittadinanza.",
+      "tiktok_pixel": "Pixel TikTok: serve a ottimizzare le performance delle campagne di promozione delle consultazioni su TikTok per aumentare la partecipazione della cittadinanza."
     }
   },
   "reset_password": {
@@ -1327,7 +1328,8 @@
         "facebook_sharing": "condivisione Facebook: questo cookie permette all'utente di condividerei dei contenuti su Facebook e aumentare gli scambi e la condivisione.",
         "twitter_sharing": "condivisione Twitter: questo cookie permette all'utente di condividerei dei contenuti su Twitter e aumentare gli scambi e la condivisione.",
         "linkedin_sharing": "condivisione LinkedIn: questo cookie permette all'utente di condividerei dei contenuti su LinkedIn e aumentare gli scambi e la condivisione.",
-        "snapchat_tracking": "pixel Snapchat: questi cookie servono a ottimizzare le performance delle campagne di promozione delle consultazioni su Snapchat per aumentare la partecipazione della cittadinanza."
+        "snapchat_tracking": "pixel Snapchat: questi cookie servono a ottimizzare le performance delle campagne di promozione delle consultazioni su Snapchat per aumentare la partecipazione della cittadinanza.",
+        "tiktok_tracking": "pixel TikTok: questi cookie servono a ottimizzare le performance delle campagne di promozione delle consultazioni su TikTok per aumentare la partecipazione della cittadinanza."
       }
     }
   },

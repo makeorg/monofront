@@ -57,6 +57,7 @@ export const cspMiddleware = (
         'https://scripts.told.club/sdk/sdk.js',
         'https://sc-static.net/scevent.min.js',
         'https://tr.snapchat.com',
+        'https://analytics.tiktok.com',
       ],
       imgSrc: [
         ...defaultDirectives.imgSrc,
@@ -67,6 +68,7 @@ export const cspMiddleware = (
         'https://*.hotjar.com',
         'https://cdn.prod.website-files.com',
         'https://evolt.imgix.net/widget/Close-grey:800.svg',
+        'https://analytics.tiktok.com',
       ],
       connectSrc: [
         ...defaultDirectives.connectSrc,
@@ -80,6 +82,7 @@ export const cspMiddleware = (
         'wss://api.told.club/graphql',
         'https://tr.snapchat.com',
         'https://tr6.snapchat.com/p',
+        'https://analytics.tiktok.com',
       ],
       formAction: [
         ...defaultDirectives.formAction,

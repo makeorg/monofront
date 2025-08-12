@@ -628,7 +628,8 @@
       "facebook_sharing": "Facebook kopīgošana: ļauj lietotājam kopīgot saturu savā Facebook kontā.",
       "twitter_sharing": "Twitter kopīgošana: ļauj lietotājam kopīgot saturu savā Twitter kontā.",
       "linkedin_sharing": "LinkedIn kopīgošana: ļauj lietotājam kopīgot saturu savā LinkedIn kontā.",
-      "snapchat_pixel": "Pixel Snapchat: tiek izmantota, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas Snapchat, lai palielinātu iedzīvotāju līdzdalību."
+      "snapchat_pixel": "Pixel Snapchat: tiek izmantota, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas Snapchat, lai palielinātu iedzīvotāju līdzdalību.",
+      "tiktok_pixel": "TikTok pixel: tiek izmantota, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas TikTok, lai palielinātu iedzīvotāju līdzdalību."
     }
   },
   "reset_password": {
@@ -1430,7 +1431,8 @@
         "facebook_sharing": "Kopīgošana platformā Facebook: šī sīkdatne ļauj lietotājam kopīgot saturu Facebook un uzlabot lietojamību.",
         "twitter_sharing": "Kopīgošana platformā Twitter: šī sīkdatne ļauj lietotājam kopīgot saturu Twitter un uzlabot lietojamību.",
         "linkedin_sharing": "Kopīgošana platformā LinkedIn: šī sīkdatne ļauj lietotājam kopīgot saturu LinkedIn un uzlabot lietojamību.",
-        "snapchat_tracking": "pixel Snapchat: šīs sīkdatnes kalpo, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas Snapchat, lai palielinātu iedzīvotāju līdzdalību."
+        "snapchat_tracking": "pixel Snapchat: šīs sīkdatnes kalpo, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas Snapchat, lai palielinātu iedzīvotāju līdzdalību.",
+        "tiktok_tracking": "pixel TikTok: šīs sīkdatnes kalpo, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas TikTok, lai palielinātu iedzīvotāju līdzdalību."
       }
     }
   },

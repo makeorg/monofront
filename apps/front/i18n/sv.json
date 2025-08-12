@@ -621,7 +621,8 @@
       "facebook_sharing": "Delning Facebook: gör att användaren kan dela innehåll på sitt Facebook-konto.",
       "twitter_sharing": "Delning Twitter: gör att användaren kan dela innehåll på sitt Twitter-konto.",
       "linkedin_sharing": "Delning LinkedIn: gör att användaren kan dela innehåll på sitt LinkedIn-konto.",
-      "snapchat_pixel": "Pixel Snapchat: den förbättrar prestandan i samrådskampanjerna på Snapchat för att öka medborgardeltagandet."
+      "snapchat_pixel": "Pixel Snapchat: den förbättrar prestandan i samrådskampanjerna på Snapchat för att öka medborgardeltagandet.",
+      "tiktok_pixel": "Pixel TikTok: den förbättrar prestandan i samrådskampanjerna på TikTok för att öka medborgardeltagandet."
     }
   },
   "reset_password": {
@@ -1403,7 +1404,8 @@
         "facebook_sharing": "delning på Facebook: den här cookien gör att användaren kan dela innehåll på Facebook och förbättrar användarvänligheten.",
         "twitter_sharing": "delning på Twitter: den här cookien gör att användaren kan dela innehåll på Twitter och förbättrar användarvänligheten.",
         "linkedin_sharing": "delning på LinkedIn: den här cookien gör att användaren kan dela innehåll på LinkedIn och förbättrar användarvänligheten.",
-        "snapchat_tracking": "pixel Snapchat: den förbättrar prestandan i samrådskampanjerna på Snapchat för att öka medborgardeltagandet."
+        "snapchat_tracking": "pixel Snapchat: den förbättrar prestandan i samrådskampanjerna på Snapchat för att öka medborgardeltagandet.",
+        "tiktok_tracking": "pixel TikTok: den förbättrar prestandan i samrådskampanjerna på TikTok för att öka medborgardeltagandet."
       }
     }
   },
