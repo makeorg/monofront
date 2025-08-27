@@ -62,22 +62,22 @@
       "google_connect": "Продължете с Google",
       "email_register": "Регистрирайте се по имейл",
       "count_register": "({{count}}/2)",
-      "openid_connect": "@@common.social_login.openid_connect|fr:Continuer avec OpenID",
-      "identify": "@@common.social_login.identify|fr:Identification",
-      "identification_success": "@@common.social_login.identification_success|fr:Identification réussie",
-      "participate": "@@common.social_login.participate|fr:Pour participer à la consultation merci de vous identifier.",
-      "cgu_accept": "@@common.social_login.cgu_accept|fr:En vous identifiant, vous acceptez nos",
-      "error": "@@common.social_login.error|fr:Une erreur est survenue, merci de réessayer",
-      "charte": "@@common.social_login.charte|fr:J'accepte que Make.org traite ces données pour que je puisse participer selon ",
-      "charte_link": "@@common.social_login.charte_link|fr: la charte.",
+      "openid_connect": "Продължи с OpenID",
+      "identify": "Идентификация",
+      "identification_success": "Успешен вход",
+      "participate": "За да участвате в консултацията, моля влезте в системата.",
+      "cgu_accept": "С влизането си в системата приемате нашите",
+      "error": "Възникна грешка. Моля, опитайте отново",
+      "charte": "Приемам Make.org да обработва тези данни, за да мога да участвам съгласно ",
+      "charte_link": " хартата.",
       "oidc_errors": {
-        "invalid_request": "@@common.social_login.oidc_errors.invalid_request|fr:La requête est invalide.",
-        "unauthorized_client": "@@common.social_login.oidc_errors.unauthorized_client|fr:Le client n'est pas autorisé à demander un code d'autorisation.",
-        "access_denied": "@@common.social_login.oidc_errors.access_denied|fr:Vous n'avez pas accès à la ressource.",
-        "unsupported_response_type": "@@common.social_login.oidc_errors.unsupported_response_type|fr:Le type de réponse n'est pas pris en charge.",
-        "invalid_scope": "@@common.social_login.oidc_errors.invalid_scope|fr:Le champ 'scope' est invalide.",
-        "server_error": "@@common.social_login.oidc_errors.server_error|fr:Erreur interne du serveur.",
-        "temporarily_unavailable": "@@common.social_login.oidc_errors.temporarily_unavailable|fr:Le service est temporairement indisponible."
+        "invalid_request": "Заявката е невалидна.",
+        "unauthorized_client": "Клиентът няма право да поиска код за оторизация.",
+        "access_denied": "Нямате достъп до ресурса.",
+        "unsupported_response_type": "Типът отговор не се поддържа.",
+        "invalid_scope": "Полето „scope“ е невалидно.",
+        "server_error": "Вътрешна грешка на сървъра.",
+        "temporarily_unavailable": "Услугата временно не е налична."
       }
     },
     "notifications": {
@@ -142,7 +142,7 @@
       "from": "Предложение от: ",
       "age": "{{age}} години",
       "date": "публикувано на: ",
-      "disclaimer": "Тази опция не изисква да сте влезли в профила си в Make.org.1<br/>Въпреки това предложението ви ще остане анонимно за другите потребители.",
+      "disclaimer": "Вашето предложение ще остане анонимно за другите потребители.",
       "anonymous_proposal": "Анонимно предложение",
       "anonymous_mode": "Анонимен режим"
     },
@@ -226,7 +226,7 @@
       "button_login_link": "влизам.",
       "button_login": "Вход",
       "back_authentication": "Връщане към екрана за вход",
-      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
+      "account_use": "Гражданският ви профил ще ви позволи да следите живота на вашето предложение, да го споделяте, да виждате кога е онлайн и да гарантирате качеството на дебата."
     },
     "success": {
       "button": "Продължете да гласувате",
@@ -280,7 +280,7 @@
     "registration_title": "Нямам акаунт,",
     "registration_link": "създавам такъв.",
     "email_doesnot_exist": "Вашата {{emailLabel}} или {{passwordLabel}} са неправилни.",
-    "participate": "@@login.participate|fr:Participer"
+    "participate": "Участвай"
   },
   "register": {
     "title": "Създаване на акаунт",

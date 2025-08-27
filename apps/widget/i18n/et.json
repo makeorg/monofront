@@ -62,22 +62,22 @@
       "google_connect": "Jätka Google‘iga",
       "email_register": "Registreeru e-postiga",
       "count_register": "({{count}}/2)",
-      "openid_connect": "@@common.social_login.openid_connect|fr:Continuer avec OpenID",
-      "identify": "@@common.social_login.identify|fr:Identification",
-      "identification_success": "@@common.social_login.identification_success|fr:Identification réussie",
-      "participate": "@@common.social_login.participate|fr:Pour participer à la consultation merci de vous identifier.",
-      "cgu_accept": "@@common.social_login.cgu_accept|fr:En vous identifiant, vous acceptez nos",
-      "error": "@@common.social_login.error|fr:Une erreur est survenue, merci de réessayer",
-      "charte": "@@common.social_login.charte|fr:J'accepte que Make.org traite ces données pour que je puisse participer selon ",
-      "charte_link": "@@common.social_login.charte_link|fr: la charte.",
+      "openid_connect": "Jätka OpenID-ga",
+      "identify": "Identifitseerimine",
+      "identification_success": "Sisselogimine õnnestus",
+      "participate": "Konsultatsioonis osalemiseks logi sisse.",
+      "cgu_accept": "Sisselogimisel nõustute meie",
+      "error": "Tekkis viga. Palun proovige uuesti",
+      "charte": "Nõustun, et Make.org töötleb neid andmeid, et saaksin osaleda vastavalt ",
+      "charte_link": " hartat.",
       "oidc_errors": {
-        "invalid_request": "@@common.social_login.oidc_errors.invalid_request|fr:La requête est invalide.",
-        "unauthorized_client": "@@common.social_login.oidc_errors.unauthorized_client|fr:Le client n'est pas autorisé à demander un code d'autorisation.",
-        "access_denied": "@@common.social_login.oidc_errors.access_denied|fr:Vous n'avez pas accès à la ressource.",
-        "unsupported_response_type": "@@common.social_login.oidc_errors.unsupported_response_type|fr:Le type de réponse n'est pas pris en charge.",
-        "invalid_scope": "@@common.social_login.oidc_errors.invalid_scope|fr:Le champ 'scope' est invalide.",
-        "server_error": "@@common.social_login.oidc_errors.server_error|fr:Erreur interne du serveur.",
-        "temporarily_unavailable": "@@common.social_login.oidc_errors.temporarily_unavailable|fr:Le service est temporairement indisponible."
+        "invalid_request": "Päring on vigane.",
+        "unauthorized_client": "Kliendil ei ole luba taotleda autoriseerimiskoodi.",
+        "access_denied": "Teil pole juurdepääsu ressursile.",
+        "unsupported_response_type": "Vastuse tüüp ei ole toetatud.",
+        "invalid_scope": "Väli „scope“ on vigane.",
+        "server_error": "Serveri sisemine viga.",
+        "temporarily_unavailable": "Teenus ei ole ajutiselt saadaval."
       }
     },
     "notifications": {
@@ -144,7 +144,7 @@
       "from": "Ettepaneku esitaja: ",
       "age": "{{age}}-aastane",
       "date": "postitamise kuupäev: ",
-      "disclaimer": "See valik ei nõua, et te oleksite sisse logitud oma Make.org.1 kontole<br/>Kui ka teie ettepanek jääb teiste kasutajate jaoks anonüümseks.",
+      "disclaimer": "Teie ettepanek jääb teistele kasutajatele anonüümseks.",
       "anonymous_proposal": "Anonüümne ettepanek",
       "anonymous_mode": "Anonüümne režiim"
     },
@@ -245,7 +245,7 @@
       "button_login_link": "login sisse.",
       "button_login": "Logi sisse",
       "back_authentication": "Tagasi sisselogimise aknasse",
-      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
+      "account_use": "Teie kodanikukonto võimaldab teil jälgida oma ettepaneku kulgu, jagada seda, näha, millal see on veebis, ning tagada arutelu kvaliteet."
     },
     "success": {
       "button": "Jätka hääletamist",
@@ -299,7 +299,7 @@
     "registration_title": "Mul pole kontot,",
     "registration_link": "loon konto.",
     "email_doesnot_exist": "Teie {{emailLabel}} või {{passwordLabel}} on vale.",
-    "participate": "@@login.participate|fr:Participer"
+    "participate": "Osale"
   },
   "register": {
     "title": "Konto loomine",

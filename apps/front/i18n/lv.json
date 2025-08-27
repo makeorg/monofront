@@ -443,7 +443,7 @@
       "button_login_link": "es piesakos.",
       "button_login": "Pieteikties",
       "back_authentication": "Atgriezties pieteikšanās ekrānā",
-      "account_use": "Jūsu pilsoņa konts ļaus jums sekot līdzi jūsu priekšlikuma darbībai, kopīgot to un redzēt, kad tas ir tiešsaistē, kā arī nodrošināt debašu kvalitāti."
+      "account_use": "Jūsu pilsoņa konts ļaus jums sekot līdzi priekšlikuma gaitai, dalīties ar to, redzēt, kad tas ir tiešsaistē, un nodrošināt diskusijas kvalitāti."
     },
     "success": {
       "title": "Paldies, {{name}}!",

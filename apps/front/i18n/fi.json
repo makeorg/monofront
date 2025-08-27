@@ -419,7 +419,7 @@
       "button_login_link": "kirjaudu sisään.",
       "button_login": "Kirjaudu sisään",
       "back_authentication": "Siirry kirjautumisruutuun",
-      "account_use": "Kansalaistilisi avulla voit seurata ehdotuksesi käsittelyä, jakaa sitä ja nähdä, milloin se on verkossa, sekä varmistaa keskustelun laadun."
+      "account_use": "Kansalaistilisi avulla voit seurata ehdotuksesi etenemistä, jakaa sen, nähdä milloin se on verkossa ja varmistaa keskustelun laadun."
     },
     "success": {
       "title": "Kiitos {{name}}!",

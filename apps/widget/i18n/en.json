@@ -62,22 +62,22 @@
       "google_connect": "Continue with Google",
       "email_register": "Sign up with e-mail",
       "count_register": "({{count}}/2)",
-      "openid_connect": "@@common.social_login.openid_connect|fr:Continuer avec OpenID",
-      "identify": "@@common.social_login.identify|fr:Identification",
-      "identification_success": "@@common.social_login.identification_success|fr:Identification réussie",
-      "participate": "@@common.social_login.participate|fr:Pour participer à la consultation merci de vous identifier.",
-      "cgu_accept": "@@common.social_login.cgu_accept|fr:En vous identifiant, vous acceptez nos",
-      "error": "@@common.social_login.error|fr:Une erreur est survenue, merci de réessayer",
-      "charte": "@@common.social_login.charte|fr:J'accepte que Make.org traite ces données pour que je puisse participer selon ",
-      "charte_link": "@@common.social_login.charte_link|fr: la charte.",
+      "openid_connect": "Continue with OpenID",
+      "identify": "Identification",
+      "identification_success": "Successfully signed in",
+      "participate": "To take part in the consultation, please sign in.",
+      "cgu_accept": "By signing in, you accept our",
+      "error": "An error occurred. Please try again",
+      "charte": "I accept that Make.org processes this data so that I can participate according to ",
+      "charte_link": " the charter.",
       "oidc_errors": {
-        "invalid_request": "@@common.social_login.oidc_errors.invalid_request|fr:La requête est invalide.",
-        "unauthorized_client": "@@common.social_login.oidc_errors.unauthorized_client|fr:Le client n'est pas autorisé à demander un code d'autorisation.",
-        "access_denied": "@@common.social_login.oidc_errors.access_denied|fr:Vous n'avez pas accès à la ressource.",
-        "unsupported_response_type": "@@common.social_login.oidc_errors.unsupported_response_type|fr:Le type de réponse n'est pas pris en charge.",
-        "invalid_scope": "@@common.social_login.oidc_errors.invalid_scope|fr:Le champ 'scope' est invalide.",
-        "server_error": "@@common.social_login.oidc_errors.server_error|fr:Erreur interne du serveur.",
-        "temporarily_unavailable": "@@common.social_login.oidc_errors.temporarily_unavailable|fr:Le service est temporairement indisponible."
+        "invalid_request": "The request is invalid.",
+        "unauthorized_client": "The client is not authorized to request an authorization code.",
+        "access_denied": "You do not have access to the resource.",
+        "unsupported_response_type": "The response type is not supported.",
+        "invalid_scope": "The 'scope' field is invalid.",
+        "server_error": "Internal server error.",
+        "temporarily_unavailable": "The service is temporarily unavailable."
       }
     },
     "propose": "Submit",
@@ -143,7 +143,7 @@
       "age": "{{age}}",
       "from": "Proposition de : ",
       "date": "published on: ",
-      "disclaimer": "This option does not require you to be logged in to your Make.org account.<br/> However, your proposal will remain anonymous to other users.",
+      "disclaimer": "Your proposal will remain anonymous to other users.",
       "anonymous_proposal": "Anonymous proposal",
       "anonymous_mode": "Anonymous mode"
     },
@@ -226,7 +226,7 @@
       "last_step": "to send your proposal !",
       "back": "Back",
       "button_login": "Sign up with",
-      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
+      "account_use": "Your citizen account will allow you to follow the progress of your proposal, share it, see when it is online, and ensure the quality of the debate."
     }
   },
   "vote": {
@@ -268,7 +268,7 @@
     "email_doesnot_exist": "Invalid {{emailLabel}} or {{passwordLabel}}.",
     "connect": "Log in",
     "forgot_password": "Forgot password?",
-    "participate": "@@login.participate|fr:Participer"
+    "participate": "Participate"
   },
   "register": {
     "title": "Create an account",

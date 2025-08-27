@@ -62,22 +62,22 @@
       "google_connect": "Pokračovat s Googlem",
       "email_register": "Zaregistrovat se pomocí e-mailu",
       "count_register": "({{count}}/2)",
-      "openid_connect": "@@common.social_login.openid_connect|fr:Continuer avec OpenID",
-      "identify": "@@common.social_login.identify|fr:Identification",
-      "identification_success": "@@common.social_login.identification_success|fr:Identification réussie",
-      "participate": "@@common.social_login.participate|fr:Pour participer à la consultation merci de vous identifier.",
-      "cgu_accept": "@@common.social_login.cgu_accept|fr:En vous identifiant, vous acceptez nos",
-      "error": "@@common.social_login.error|fr:Une erreur est survenue, merci de réessayer",
-      "charte": "@@common.social_login.charte|fr:J'accepte que Make.org traite ces données pour que je puisse participer selon ",
-      "charte_link": "@@common.social_login.charte_link|fr: la charte.",
+      "openid_connect": "Pokračovat s OpenID",
+      "identify": "Identifikace",
+      "identification_success": "Přihlášení úspěšné",
+      "participate": "Chcete-li se zúčastnit konzultace, přihlaste se.",
+      "cgu_accept": "Přihlášením přijímáte naše",
+      "error": "Došlo k chybě. Zkuste to znovu",
+      "charte": "Souhlasím, aby Make.org zpracovával tato data, abych se mohl účastnit podle ",
+      "charte_link": " chartu.",
       "oidc_errors": {
-        "invalid_request": "@@common.social_login.oidc_errors.invalid_request|fr:La requête est invalide.",
-        "unauthorized_client": "@@common.social_login.oidc_errors.unauthorized_client|fr:Le client n'est pas autorisé à demander un code d'autorisation.",
-        "access_denied": "@@common.social_login.oidc_errors.access_denied|fr:Vous n'avez pas accès à la ressource.",
-        "unsupported_response_type": "@@common.social_login.oidc_errors.unsupported_response_type|fr:Le type de réponse n'est pas pris en charge.",
-        "invalid_scope": "@@common.social_login.oidc_errors.invalid_scope|fr:Le champ 'scope' est invalide.",
-        "server_error": "@@common.social_login.oidc_errors.server_error|fr:Erreur interne du serveur.",
-        "temporarily_unavailable": "@@common.social_login.oidc_errors.temporarily_unavailable|fr:Le service est temporairement indisponible."
+        "invalid_request": "Požadavek je neplatný.",
+        "unauthorized_client": "Klient není oprávněn požadovat autorizační kód.",
+        "access_denied": "Nemáte přístup k prostředku.",
+        "unsupported_response_type": "Typ odpovědi není podporován.",
+        "invalid_scope": "Pole 'scope' není platné.",
+        "server_error": "Vnitřní chyba serveru.",
+        "temporarily_unavailable": "Služba je dočasně nedostupná."
       }
     },
     "notifications": {
@@ -146,7 +146,7 @@
       "from": "Návrh: ",
       "age": "{{age}} let",
       "date": "zveřejněno dne: ",
-      "disclaimer": "Tato možnost vás nezdá od připojení k účtu Make.org.<br/> Váš návrh však zůstane anonymní pro ostatní uživatele.",
+      "disclaimer": "Váš návrh zůstane pro ostatní uživatele anonymní.",
       "anonymous_proposal": "Anonymní návrh",
       "anonymous_mode": "Anonymní režim"
     },
@@ -247,7 +247,7 @@
       "button_login_link": "jen se přihlásím.",
       "button_login": "Přihlásit se",
       "back_authentication": "Vrátit se na přihlašovací obrazovku",
-      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
+      "account_use": "Váš občanský účet vám umožní sledovat průběh vašeho návrhu, sdílet jej, vidět, kdy je online, a zajistit kvalitu debaty."
     },
     "success": {
       "button": "Pokračovat v hlasování",
@@ -302,7 +302,7 @@
     "registration_title": "Účet nemám,",
     "registration_link": "chci si jej vytvořit.",
     "email_doesnot_exist": "Tvůj {{emailLabel}} nebo {{passwordLabel}} je nesprávný.",
-    "participate": "@@login.participate|fr:Participer"
+    "participate": "Zúčastnit se"
   },
   "register": {
     "title": "Vytvořit účet",

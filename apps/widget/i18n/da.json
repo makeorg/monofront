@@ -62,22 +62,22 @@
       "google_connect": "Fortsæt med Google",
       "email_register": "Tilmeld dig pr. e-mail",
       "count_register": "({{count}}/2)",
-      "openid_connect": "@@common.social_login.openid_connect|fr:Continuer avec OpenID",
-      "identify": "@@common.social_login.identify|fr:Identification",
-      "identification_success": "@@common.social_login.identification_success|fr:Identification réussie",
-      "participate": "@@common.social_login.participate|fr:Pour participer à la consultation merci de vous identifier.",
-      "cgu_accept": "@@common.social_login.cgu_accept|fr:En vous identifiant, vous acceptez nos",
-      "error": "@@common.social_login.error|fr:Une erreur est survenue, merci de réessayer",
-      "charte": "@@common.social_login.charte|fr:J'accepte que Make.org traite ces données pour que je puisse participer selon ",
-      "charte_link": "@@common.social_login.charte_link|fr: la charte.",
+      "openid_connect": "Fortsæt med OpenID",
+      "identify": "Identifikation",
+      "identification_success": "Log ind lykkedes",
+      "participate": "For at deltage i høringen, skal du logge ind.",
+      "cgu_accept": "Ved at logge ind accepterer du vores",
+      "error": "Der opstod en fejl. Prøv igen",
+      "charte": "Jeg accepterer, at Make.org behandler disse data, så jeg kan deltage i henhold til ",
+      "charte_link": " chartret.",
       "oidc_errors": {
-        "invalid_request": "@@common.social_login.oidc_errors.invalid_request|fr:La requête est invalide.",
-        "unauthorized_client": "@@common.social_login.oidc_errors.unauthorized_client|fr:Le client n'est pas autorisé à demander un code d'autorisation.",
-        "access_denied": "@@common.social_login.oidc_errors.access_denied|fr:Vous n'avez pas accès à la ressource.",
-        "unsupported_response_type": "@@common.social_login.oidc_errors.unsupported_response_type|fr:Le type de réponse n'est pas pris en charge.",
-        "invalid_scope": "@@common.social_login.oidc_errors.invalid_scope|fr:Le champ 'scope' est invalide.",
-        "server_error": "@@common.social_login.oidc_errors.server_error|fr:Erreur interne du serveur.",
-        "temporarily_unavailable": "@@common.social_login.oidc_errors.temporarily_unavailable|fr:Le service est temporairement indisponible."
+        "invalid_request": "Anmodningen er ugyldig.",
+        "unauthorized_client": "Klienten er ikke autoriseret til at anmode om en autorisationskode.",
+        "access_denied": "Du har ikke adgang til ressourcen.",
+        "unsupported_response_type": "Svartypen understøttes ikke.",
+        "invalid_scope": "Feltet 'scope' er ugyldigt.",
+        "server_error": "Intern serverfejl.",
+        "temporarily_unavailable": "Tjenesten er midlertidigt utilgængelig."
       }
     },
     "notifications": {
@@ -144,7 +144,7 @@
       "from": "Forslag fra: ",
       "age": "{{age}} år",
       "date": "Indsendt den: ",
-      "disclaimer": "Denne mulighed fritager ikke dig for at blive forbundet til din Make.org konto.<br/> Dit forslag vil dog forblive anonym for andre brugere.",
+      "disclaimer": "Dit forslag forbliver anonymt for andre brugere.",
       "anonymous_proposal": "Anonymt forslag",
       "anonymous_mode": "Anonymt forslag"
     },
@@ -245,7 +245,7 @@
       "button_login_link": "jeg logger på.",
       "button_login": "Log på",
       "back_authentication": "Tilbage til logonskærmen",
-      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
+      "account_use": "Din borgerkonto giver dig mulighed for at følge dit forslag, dele det, se hvornår det er online og sikre kvaliteten af debatten."
     },
     "success": {
       "button": "Fortsæt med at stemme",
@@ -299,7 +299,7 @@
     "registration_title": "Jeg har ingen konto.",
     "registration_link": "Jeg opretter en.",
     "email_doesnot_exist": "Din {{emailLabel}} eller dit {{passwordLabel}} er forkert.",
-    "participate": "@@login.participate|fr:Participer"
+    "participate": "Deltag"
   },
   "register": {
     "title": "Opret en konto",

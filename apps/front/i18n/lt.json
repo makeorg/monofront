@@ -333,7 +333,7 @@
       "from": "Pasiūlymas: ",
       "age": "{{age}} metai (-ų)",
       "date": "įkelta: ",
-      "disclaimer": "Jūsų pasiūlymas liks anonimiškas kitiems vartotojams.",
+      "disclaimer": "Jūsų pasiūlymas liks anonimiškas kitiems naudotojams.",
       "anonymous_proposal": "Anoniminis pasiūlymas",
       "anonymous_mode": "Anoniminis režimas"
     },
@@ -443,7 +443,7 @@
       "button_login_link": "prisijungti.",
       "button_login": "Prisijungti",
       "back_authentication": "Grįžti į prisijungimo puslapį",
-      "account_use": "Piliečio paskyra leis jums stebėti savo pasiūlymo gyvenimą, dalytis juo ir pamatyti, kada jis yra internete, taip pat užtikrinti diskusijų kokybę."
+      "account_use": "Jūsų piliečio paskyra leis sekti jūsų pasiūlymo eigą, juo dalintis, matyti, kada jis paskelbtas internete, ir užtikrinti diskusijos kokybę."
     },
     "success": {
       "title": "Ačiū, {{name}}!",

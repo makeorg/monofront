@@ -331,7 +331,7 @@
       "from": "Propunere făcută de: ",
       "age": "{{age}} ani",
       "date": "publicată la data: ",
-      "disclaimer": "Propunerea dvs. va rămâne anonimă pentru ceilalți utilizatori.",
+      "disclaimer": "Propunerea dumneavoastră va rămâne anonimă pentru ceilalți utilizatori.",
       "anonymous_proposal": "Propunere anonimă",
       "anonymous_mode": "Modul anonim"
     },
@@ -424,7 +424,7 @@
       "button_login_link": "mă conectez.",
       "button_login": "Conectare",
       "back_authentication": "Revenire la pagina de conexiune",
-      "account_use": "Contul dvs. de cetățean vă va permite să urmăriți viața propunerii dvs., să o distribuiți și să vedeți când este online, precum și să asigurați calitatea dezbaterii."
+      "account_use": "Contul dumneavoastră de cetățean vă va permite să urmăriți evoluția propunerii, să o distribuiți, să vedeți când este online și să asigurați calitatea dezbaterii."
     },
     "success": {
       "title": "Mulțumim, {{name}}!",

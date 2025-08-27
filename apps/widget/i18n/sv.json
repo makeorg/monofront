@@ -62,22 +62,22 @@
       "google_connect": "Fortsätt med Google",
       "email_register": "Registrera dig via e-post",
       "count_register": "({{count}}/2)",
-      "openid_connect": "@@common.social_login.openid_connect|fr:Continuer avec OpenID",
-      "identify": "@@common.social_login.identify|fr:Identification",
-      "identification_success": "@@common.social_login.identification_success|fr:Identification réussie",
-      "participate": "@@common.social_login.participate|fr:Pour participer à la consultation merci de vous identifier.",
-      "cgu_accept": "@@common.social_login.cgu_accept|fr:En vous identifiant, vous acceptez nos",
-      "error": "@@common.social_login.error|fr:Une erreur est survenue, merci de réessayer",
-      "charte": "@@common.social_login.charte|fr:J'accepte que Make.org traite ces données pour que je puisse participer selon ",
-      "charte_link": "@@common.social_login.charte_link|fr: la charte.",
+      "openid_connect": "Fortsätt med OpenID",
+      "identify": "Identifiering",
+      "identification_success": "Inloggning lyckades",
+      "participate": "För att delta i samrådet, logga in.",
+      "cgu_accept": "Genom att logga in godkänner du våra",
+      "error": "Ett fel uppstod. Försök igen",
+      "charte": "Jag accepterar att Make.org behandlar dessa uppgifter så att jag kan delta enligt ",
+      "charte_link": " stadgan.",
       "oidc_errors": {
-        "invalid_request": "@@common.social_login.oidc_errors.invalid_request|fr:La requête est invalide.",
-        "unauthorized_client": "@@common.social_login.oidc_errors.unauthorized_client|fr:Le client n'est pas autorisé à demander un code d'autorisation.",
-        "access_denied": "@@common.social_login.oidc_errors.access_denied|fr:Vous n'avez pas accès à la ressource.",
-        "unsupported_response_type": "@@common.social_login.oidc_errors.unsupported_response_type|fr:Le type de réponse n'est pas pris en charge.",
-        "invalid_scope": "@@common.social_login.oidc_errors.invalid_scope|fr:Le champ 'scope' est invalide.",
-        "server_error": "@@common.social_login.oidc_errors.server_error|fr:Erreur interne du serveur.",
-        "temporarily_unavailable": "@@common.social_login.oidc_errors.temporarily_unavailable|fr:Le service est temporairement indisponible."
+        "invalid_request": "Begäran är ogiltig.",
+        "unauthorized_client": "Klienten har inte behörighet att begära en auktorisationskod.",
+        "access_denied": "Du har inte åtkomst till resursen.",
+        "unsupported_response_type": "Svarstypen stöds inte.",
+        "invalid_scope": "Fältet 'scope' är ogiltigt.",
+        "server_error": "Internt serverfel.",
+        "temporarily_unavailable": "Tjänsten är tillfälligt otillgänglig."
       }
     },
     "notifications": {
@@ -144,7 +144,7 @@
       "from": "Förslag från: ",
       "age": "{{age}} år",
       "date": "upplagt den: ",
-      "disclaimer": "Det här alternativet befriar dig inte från att vara ansluten till ditt Make.org-konto.<br/> Men ditt förslag kommer att förbli anonymt för andra användare.",
+      "disclaimer": "Ditt förslag kommer att förbli anonymt för andra användare.",
       "anonymous_proposal": "Anonymt förslag",
       "anonymous_mode": "Anonymt läge"
     },
@@ -245,7 +245,7 @@
       "button_login_link": "jag loggar in.",
       "button_login": "Logga in",
       "back_authentication": "Gå tillbaka till inloggningsskärmen",
-      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
+      "account_use": "Ditt medborgarkonto gör att du kan följa ditt förslags utveckling, dela det, se när det är online och säkerställa debattens kvalitet."
     },
     "success": {
       "button": "Fortsätta att rösta",
@@ -299,7 +299,7 @@
     "registration_title": "Jag har inget konto,",
     "registration_link": "jag ska skapa ett.",
     "email_doesnot_exist": "Din {{emailLabel}} eller ditt {{passwordLabel}} är felaktigt.",
-    "participate": "@@login.participate|fr:Participer"
+    "participate": "Delta"
   },
   "register": {
     "title": "Skapa ett konto",

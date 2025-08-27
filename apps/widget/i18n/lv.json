@@ -62,22 +62,22 @@
       "google_connect": "Turpināt ar Google",
       "email_register": "Reģistrējieties, izmantojot e-pastu",
       "count_register": "({{count}}/2)",
-      "openid_connect": "@@common.social_login.openid_connect|fr:Continuer avec OpenID",
-      "identify": "@@common.social_login.identify|fr:Identification",
-      "identification_success": "@@common.social_login.identification_success|fr:Identification réussie",
-      "participate": "@@common.social_login.participate|fr:Pour participer à la consultation merci de vous identifier.",
-      "cgu_accept": "@@common.social_login.cgu_accept|fr:En vous identifiant, vous acceptez nos",
-      "error": "@@common.social_login.error|fr:Une erreur est survenue, merci de réessayer",
-      "charte": "@@common.social_login.charte|fr:J'accepte que Make.org traite ces données pour que je puisse participer selon ",
-      "charte_link": "@@common.social_login.charte_link|fr: la charte.",
+      "openid_connect": "Turpināt ar OpenID",
+      "identify": "Identifikācija",
+      "identification_success": "Pieteikšanās veiksmīga",
+      "participate": "Lai piedalītos konsultācijā, lūdzu, piesakieties.",
+      "cgu_accept": "Piesakoties, jūs piekrītat mūsu",
+      "error": "Radās kļūda. Lūdzu, mēģiniet vēlreiz",
+      "charte": "Es piekrītu, ka Make.org apstrādā šos datus, lai es varētu piedalīties saskaņā ar ",
+      "charte_link": " hartu.",
       "oidc_errors": {
-        "invalid_request": "@@common.social_login.oidc_errors.invalid_request|fr:La requête est invalide.",
-        "unauthorized_client": "@@common.social_login.oidc_errors.unauthorized_client|fr:Le client n'est pas autorisé à demander un code d'autorisation.",
-        "access_denied": "@@common.social_login.oidc_errors.access_denied|fr:Vous n'avez pas accès à la ressource.",
-        "unsupported_response_type": "@@common.social_login.oidc_errors.unsupported_response_type|fr:Le type de réponse n'est pas pris en charge.",
-        "invalid_scope": "@@common.social_login.oidc_errors.invalid_scope|fr:Le champ 'scope' est invalide.",
-        "server_error": "@@common.social_login.oidc_errors.server_error|fr:Erreur interne du serveur.",
-        "temporarily_unavailable": "@@common.social_login.oidc_errors.temporarily_unavailable|fr:Le service est temporairement indisponible."
+        "invalid_request": "Pieprasījums nav derīgs.",
+        "unauthorized_client": "Klientam nav atļauts pieprasīt autorizācijas kodu.",
+        "access_denied": "Jums nav piekļuves resursam.",
+        "unsupported_response_type": "Atbildes tips netiek atbalstīts.",
+        "invalid_scope": "Lauks 'scope' nav derīgs.",
+        "server_error": "Iekšēja servera kļūda.",
+        "temporarily_unavailable": "Pakalpojums īslaicīgi nav pieejams."
       }
     },
     "notifications": {
@@ -144,7 +144,7 @@
       "from": "Priekšlikumu iesniedza: ",
       "age": "{{age}} gadi",
       "date": "ievietots (datums): ",
-      "disclaimer": "Šī iespēja neprasa, lai jūs būtu pieslēdzies savam Make.org.1 kontam<br/>Vaizmēr jūsu priekšlikums citiem lietotājiem paliks anonīms.",
+      "disclaimer": "Jūsu priekšlikums paliks anonīms citiem lietotājiem.",
       "anonymous_proposal": "Anonīms priekšlikums",
       "anonymous_mode": "Anonīmais režīms"
     },
@@ -245,7 +245,7 @@
       "button_login_link": "es piesakos.",
       "button_login": "Pieteikties",
       "back_authentication": "Atgriezties pieteikšanās ekrānā",
-      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
+      "account_use": "Jūsu pilsoņa konts ļaus jums sekot līdzi priekšlikuma gaitai, dalīties ar to, redzēt, kad tas ir tiešsaistē, un nodrošināt diskusijas kvalitāti."
     },
     "success": {
       "button": "Turpināt balsot",
@@ -299,7 +299,7 @@
     "registration_title": "Man nav konta,",
     "registration_link": "es to izveidošu.",
     "email_doesnot_exist": "Jūsu {{emailLabel}} vai {{passwordLabel}} ir nepareiza.",
-    "participate": "@@login.participate|fr:Participer"
+    "participate": "Piedalīties"
   },
   "register": {
     "title": "Izveidot kontu",

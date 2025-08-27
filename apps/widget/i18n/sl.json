@@ -62,22 +62,22 @@
       "google_connect": "Nadaljuj z Googlom",
       "email_register": "Registracija z e-naslovom",
       "count_register": "({{count}}/2)",
-      "openid_connect": "@@common.social_login.openid_connect|fr:Continuer avec OpenID",
-      "identify": "@@common.social_login.identify|fr:Identification",
-      "identification_success": "@@common.social_login.identification_success|fr:Identification réussie",
-      "participate": "@@common.social_login.participate|fr:Pour participer à la consultation merci de vous identifier.",
-      "cgu_accept": "@@common.social_login.cgu_accept|fr:En vous identifiant, vous acceptez nos",
-      "error": "@@common.social_login.error|fr:Une erreur est survenue, merci de réessayer",
-      "charte": "@@common.social_login.charte|fr:J'accepte que Make.org traite ces données pour que je puisse participer selon ",
-      "charte_link": "@@common.social_login.charte_link|fr: la charte.",
+      "openid_connect": "Nadaljuj z OpenID",
+      "identify": "Identifikacija",
+      "identification_success": "Prijava uspešna",
+      "participate": "Za sodelovanje pri posvetu se prijavite.",
+      "cgu_accept": "S prijavo sprejemate naše",
+      "error": "Prišlo je do napake. Poskusite znova",
+      "charte": "Strinjam se, da Make.org obdeluje te podatke, da lahko sodelujem v skladu z ",
+      "charte_link": " listino.",
       "oidc_errors": {
-        "invalid_request": "@@common.social_login.oidc_errors.invalid_request|fr:La requête est invalide.",
-        "unauthorized_client": "@@common.social_login.oidc_errors.unauthorized_client|fr:Le client n'est pas autorisé à demander un code d'autorisation.",
-        "access_denied": "@@common.social_login.oidc_errors.access_denied|fr:Vous n'avez pas accès à la ressource.",
-        "unsupported_response_type": "@@common.social_login.oidc_errors.unsupported_response_type|fr:Le type de réponse n'est pas pris en charge.",
-        "invalid_scope": "@@common.social_login.oidc_errors.invalid_scope|fr:Le champ 'scope' est invalide.",
-        "server_error": "@@common.social_login.oidc_errors.server_error|fr:Erreur interne du serveur.",
-        "temporarily_unavailable": "@@common.social_login.oidc_errors.temporarily_unavailable|fr:Le service est temporairement indisponible."
+        "invalid_request": "Zahteva je neveljavna.",
+        "unauthorized_client": "Odjemalec nima dovoljenja zahtevati avtorizacijsko kodo.",
+        "access_denied": "Nimate dostopa do vira.",
+        "unsupported_response_type": "Vrsta odziva ni podprta.",
+        "invalid_scope": "Polje 'scope' ni veljavno.",
+        "server_error": "Notranja napaka strežnika.",
+        "temporarily_unavailable": "Storitev je začasno nedosegljiva."
       }
     },
     "notifications": {
@@ -148,7 +148,7 @@
       "from": "Predlog: ",
       "age": "{{age}} let",
       "date": "objavljeno dne: ",
-      "disclaimer": "Ta možnost ne zahteva prijave v račun Make.org, vendar bo vaš predlog ostal anonimen za druge uporabnike.",
+      "disclaimer": "Vaš predlog bo ostal anonimen za druge uporabnike.",
       "anonymous_proposal": "Anonimni predlog",
       "anonymous_mode": "Anonimni način"
     },
@@ -249,7 +249,7 @@
       "button_login_link": "želim se prijaviti.",
       "button_login": "Prijava",
       "back_authentication": "Nazaj na stran za prijavo",
-      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
+      "account_use": "Vaš državljanski račun vam bo omogočil spremljanje življenja vašega predloga, njegovo deljenje, ogled, kdaj je objavljen, ter zagotavljanje kakovosti razprave."
     },
     "success": {
       "button": "Nadaljuj z glasovanjem",
@@ -305,7 +305,7 @@
     "registration_title": "Nimam računa,",
     "registration_link": "želim ga ustvariti.",
     "email_doesnot_exist": "Nepravilen {{emailLabel}} ali {{passwordLabel}}.",
-    "participate": "@@login.participate|fr:Participer"
+    "participate": "Sodeluj"
   },
   "register": {
     "title": "Ustvari račun",

@@ -333,7 +333,7 @@
       "from": "Návrh: ",
       "age": "{{age}} rokov",
       "date": "Uverejnené dňa: ",
-      "disclaimer": "Váš návrh zostane anonymný pre ostatných používateľov.",
+      "disclaimer": "Váš návrh zostane pre ostatných používateľov anonymný.",
       "anonymous_proposal": "Anonymný návrh",
       "anonymous_mode": "Anonymný režim"
     },
@@ -443,7 +443,7 @@
       "button_login_link": "chcem sa pripojiť.",
       "button_login": "Prihlásiť sa",
       "back_authentication": "Návrat na prihlasovaciu obrazovku",
-      "account_use": "Vaše občianske konto vám umožní sledovať život vášho návrhu, zdieľať ho a zistiť, kedy je online, ako aj zabezpečiť kvalitu diskusie."
+      "account_use": "Váš občiansky účet vám umožní sledovať život vášho návrhu, zdieľať ho, vidieť, kedy je online, a zabezpečiť kvalitu diskusie."
     },
     "success": {
       "title": "Ďakujeme {{name}}!",

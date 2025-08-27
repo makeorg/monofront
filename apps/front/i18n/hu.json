@@ -438,7 +438,7 @@
       "button_login_link": "bejelentkezem.",
       "button_login": "Bejelentkezés",
       "back_authentication": "Vissza a bejelentkezési képernyőre",
-      "account_use": "Polgári fiókja lehetővé teszi, hogy nyomon kövesse javaslata életét, megossza azt és lássa, mikor van online, valamint biztosítja a vita minőségét."
+      "account_use": "Az állampolgári fiókja lehetővé teszi, hogy kövesse javaslata életútját, megossza azt, lássa, mikor kerül online, és biztosítsa a vita minőségét."
     },
     "success": {
       "title": "Köszönjük, {{name}}!",

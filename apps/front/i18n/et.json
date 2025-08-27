@@ -328,7 +328,7 @@
       "from": "Ettepaneku esitaja: ",
       "age": "{{age}}-aastane",
       "date": "postitamise kuupäev: ",
-      "disclaimer": "Teie ettepanek jääb teiste kasutajate jaoks anonüümseks.",
+      "disclaimer": "Teie ettepanek jääb teistele kasutajatele anonüümseks.",
       "anonymous_proposal": "Anonüümne ettepanek",
       "anonymous_mode": "Anonüümne režiim"
     },
@@ -438,7 +438,7 @@
       "button_login_link": "login sisse.",
       "button_login": "Logi sisse",
       "back_authentication": "Tagasi sisselogimise aknasse",
-      "account_use": "Teie kodanikukonto võimaldab teil jälgida oma ettepaneku elu, jagada seda ja näha, millal see on võrgus, ning tagada arutelu kvaliteet."
+      "account_use": "Teie kodanikukonto võimaldab teil jälgida oma ettepaneku kulgu, jagada seda, näha, millal see on veebis, ning tagada arutelu kvaliteet."
     },
     "success": {
       "title": "Aitäh, {{name}}!",

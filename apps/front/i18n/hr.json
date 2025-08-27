@@ -333,7 +333,7 @@
       "from": "Prijedlog korisnika: ",
       "age": "{{age}} godina",
       "date": "objavljeno dana: ",
-      "disclaimer": "Vaš prijedlog će ostati anoniman za druge korisnike.",
+      "disclaimer": "Vaš prijedlog ostat će anoniman za druge korisnike.",
       "anonymous_proposal": "Anonimni prijedlog",
       "anonymous_mode": "Anonimni način rada"
     },
@@ -443,7 +443,7 @@
       "button_login_link": "prijavljujem se.",
       "button_login": "Prijava",
       "back_authentication": "Povratak na zaslon za prijavu",
-      "account_use": "Vaš građanski račun omogućit će vam da pratite život svog prijedloga, dijelite ga i vidite kada je na mreži, kao i da osigurate kvalitetu rasprave."
+      "account_use": "Vaš građanski račun omogućit će vam da pratite tijek svog prijedloga, dijelite ga, vidite kada je objavljen i osigurate kvalitetu rasprave."
     },
     "success": {
       "title": "Hvala korisniče {{name}}!",

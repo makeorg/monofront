@@ -448,7 +448,7 @@
       "button_login_link": "želim se prijaviti.",
       "button_login": "Prijava",
       "back_authentication": "Nazaj na stran za prijavo",
-      "account_use": "S svojim uporabniškim računom boste lahko spremljali življenje svojega predloga, ga delili in videli, kdaj je na spletu, ter skrbeli za kakovost razprave."
+      "account_use": "Vaš državljanski račun vam bo omogočil spremljanje življenja vašega predloga, njegovo deljenje, ogled, kdaj je objavljen, ter zagotavljanje kakovosti razprave."
     },
     "success": {
       "title": "Hvala, {{name}}!",

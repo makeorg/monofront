@@ -443,7 +443,7 @@
       "button_login_link": "виконати вхід.",
       "button_login": "Вхід",
       "back_authentication": "Повернутися до екрана входу в систему",
-      "account_use": "Váš občanský účet vám umožní sledovat život vašeho návrhu, sdílet ho a zjistit, kdy je online, a také zajistit kvalitu diskuse."
+      "account_use": "Ваш обліковий запис громадянина дозволить вам стежити за життям вашої пропозиції, ділитися нею, бачити, коли вона онлайн, і забезпечувати якість дискусії."
     },
     "success": {
       "title": "Дякуємо, {{name}}!",

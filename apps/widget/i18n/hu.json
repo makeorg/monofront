@@ -62,22 +62,22 @@
       "google_connect": "Folytatás a Google-lal",
       "email_register": "Regisztráció e-mailben",
       "count_register": "({{count}}/2)",
-      "openid_connect": "@@common.social_login.openid_connect|fr:Continuer avec OpenID",
-      "identify": "@@common.social_login.identify|fr:Identification",
-      "identification_success": "@@common.social_login.identification_success|fr:Identification réussie",
-      "participate": "@@common.social_login.participate|fr:Pour participer à la consultation merci de vous identifier.",
-      "cgu_accept": "@@common.social_login.cgu_accept|fr:En vous identifiant, vous acceptez nos",
-      "error": "@@common.social_login.error|fr:Une erreur est survenue, merci de réessayer",
-      "charte": "@@common.social_login.charte|fr:J'accepte que Make.org traite ces données pour que je puisse participer selon ",
-      "charte_link": "@@common.social_login.charte_link|fr: la charte.",
+      "openid_connect": "Folytatás OpenID-val",
+      "identify": "Azonosítás",
+      "identification_success": "Sikeres bejelentkezés",
+      "participate": "A konzultációban való részvételhez jelentkezzen be.",
+      "cgu_accept": "A bejelentkezéssel elfogadja a mi",
+      "error": "Hiba történt. Kérjük, próbálja meg újra",
+      "charte": "Elfogadom, hogy a Make.org feldolgozza ezeket az adatokat, hogy részt vehessek ",
+      "charte_link": " chartát.",
       "oidc_errors": {
-        "invalid_request": "@@common.social_login.oidc_errors.invalid_request|fr:La requête est invalide.",
-        "unauthorized_client": "@@common.social_login.oidc_errors.unauthorized_client|fr:Le client n'est pas autorisé à demander un code d'autorisation.",
-        "access_denied": "@@common.social_login.oidc_errors.access_denied|fr:Vous n'avez pas accès à la ressource.",
-        "unsupported_response_type": "@@common.social_login.oidc_errors.unsupported_response_type|fr:Le type de réponse n'est pas pris en charge.",
-        "invalid_scope": "@@common.social_login.oidc_errors.invalid_scope|fr:Le champ 'scope' est invalide.",
-        "server_error": "@@common.social_login.oidc_errors.server_error|fr:Erreur interne du serveur.",
-        "temporarily_unavailable": "@@common.social_login.oidc_errors.temporarily_unavailable|fr:Le service est temporairement indisponible."
+        "invalid_request": "A kérés érvénytelen.",
+        "unauthorized_client": "Az ügyfél nem jogosult engedélykódot kérni.",
+        "access_denied": "Nincs hozzáférése az erőforráshoz.",
+        "unsupported_response_type": "A válasz típusa nem támogatott.",
+        "invalid_scope": "A „scope” mező érvénytelen.",
+        "server_error": "Belső szerverhiba.",
+        "temporarily_unavailable": "A szolgáltatás átmenetileg nem érhető el."
       }
     },
     "notifications": {
@@ -144,7 +144,7 @@
       "from": "A javaslat szerzője: ",
       "age": "{{age}} éves",
       "date": "közzétéve: ",
-      "disclaimer": "Ez az opció nem mentesíti Önt attól, hogy csatlakozzon a Make.org fiókjához.<br/> Azonban a javaslat anonim marad más felhasználók számára.",
+      "disclaimer": "A javaslata névtelen marad a többi felhasználó számára.",
       "anonymous_proposal": "Anonim javaslat",
       "anonymous_mode": "Anonymous mód"
     },
@@ -245,7 +245,7 @@
       "button_login_link": "bejelentkezem.",
       "button_login": "Bejelentkezés",
       "back_authentication": "Vissza a bejelentkezési képernyőre",
-      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
+      "account_use": "Az állampolgári fiókja lehetővé teszi, hogy kövesse javaslata életútját, megossza azt, lássa, mikor kerül online, és biztosítsa a vita minőségét."
     },
     "success": {
       "button": "Szavazás folytatása",
@@ -299,7 +299,7 @@
     "registration_title": "Nincs felhasználói fiókom,",
     "registration_link": "létrehozok egyet.",
     "email_doesnot_exist": "A {{emailLabel}} vagy a {{passwordLabel}} hibás.",
-    "participate": "@@login.participate|fr:Participer"
+    "participate": "Részvétel"
   },
   "register": {
     "title": "Felhasználói fiók létrehozása",

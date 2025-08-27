@@ -331,7 +331,7 @@
       "from": "Proposta di: ",
       "age": "{{age}} anni",
       "date": "pubblicata il: ",
-      "disclaimer": "La tua proposta rimarrà anonima per gli altri utenti.",
+      "disclaimer": "La tua proposta resterà anonima per gli altri utenti.",
       "anonymous_proposal": "Anonimo proposta",
       "anonymous_mode": "Modalità anonima"
     },
@@ -424,7 +424,7 @@
       "button_login_link": "mi connetto.",
       "button_login": "Connessione",
       "back_authentication": "Torna alla schermata di connessione",
-      "account_use": "Il vostro account cittadino vi consentirà di seguire la vita della vostra proposta, condividerla e vedere quando è online, oltre a garantire la qualità del dibattito."
+      "account_use": "Il tuo account cittadino ti permetterà di seguire il percorso della tua proposta, condividerla, vedere quando è online e garantire la qualità del dibattito."
     },
     "success": {
       "title": "Grazie {{name}}!",

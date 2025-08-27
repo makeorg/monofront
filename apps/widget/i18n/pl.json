@@ -62,22 +62,22 @@
       "google_connect": "Kontynuuj na Google",
       "email_register": "Zarejestruj się przez e-mail",
       "count_register": "({{count}}/2)",
-      "openid_connect": "@@common.social_login.openid_connect|fr:Continuer avec OpenID",
-      "identify": "@@common.social_login.identify|fr:Identification",
-      "identification_success": "@@common.social_login.identification_success|fr:Identification réussie",
-      "participate": "@@common.social_login.participate|fr:Pour participer à la consultation merci de vous identifier.",
-      "cgu_accept": "@@common.social_login.cgu_accept|fr:En vous identifiant, vous acceptez nos",
-      "error": "@@common.social_login.error|fr:Une erreur est survenue, merci de réessayer",
-      "charte": "@@common.social_login.charte|fr:J'accepte que Make.org traite ces données pour que je puisse participer selon ",
-      "charte_link": "@@common.social_login.charte_link|fr: la charte.",
+      "openid_connect": "Kontynuuj z OpenID",
+      "identify": "Identyfikacja",
+      "identification_success": "Logowanie zakończone sukcesem",
+      "participate": "Aby wziąć udział w konsultacji, proszę się zalogować.",
+      "cgu_accept": "Logując się, akceptujesz nasze",
+      "error": "Wystąpił błąd. Proszę spróbować ponownie",
+      "charte": "Akceptuję, że Make.org przetwarza te dane, abym mógł uczestniczyć zgodnie z ",
+      "charte_link": " kartę.",
       "oidc_errors": {
-        "invalid_request": "@@common.social_login.oidc_errors.invalid_request|fr:La requête est invalide.",
-        "unauthorized_client": "@@common.social_login.oidc_errors.unauthorized_client|fr:Le client n'est pas autorisé à demander un code d'autorisation.",
-        "access_denied": "@@common.social_login.oidc_errors.access_denied|fr:Vous n'avez pas accès à la ressource.",
-        "unsupported_response_type": "@@common.social_login.oidc_errors.unsupported_response_type|fr:Le type de réponse n'est pas pris en charge.",
-        "invalid_scope": "@@common.social_login.oidc_errors.invalid_scope|fr:Le champ 'scope' est invalide.",
-        "server_error": "@@common.social_login.oidc_errors.server_error|fr:Erreur interne du serveur.",
-        "temporarily_unavailable": "@@common.social_login.oidc_errors.temporarily_unavailable|fr:Le service est temporairement indisponible."
+        "invalid_request": "Żądanie jest nieprawidłowe.",
+        "unauthorized_client": "Klient nie jest uprawniony do żądania kodu autoryzacyjnego.",
+        "access_denied": "Nie masz dostępu do zasobu.",
+        "unsupported_response_type": "Typ odpowiedzi nie jest obsługiwany.",
+        "invalid_scope": "Pole 'scope' jest nieprawidłowe.",
+        "server_error": "Wewnętrzny błąd serwera.",
+        "temporarily_unavailable": "Usługa jest tymczasowo niedostępna."
       }
     },
     "notifications": {
@@ -144,7 +144,7 @@
       "from": "Propozycja: ",
       "age": "{{age}} lat",
       "date": "złożona: ",
-      "disclaimer": "Ta opcja nie zwolnić was od bycia podłączonym do ksiąg Make.org, propozycja pozostaje anonimowa dla innych użytkowników.",
+      "disclaimer": "Twoja propozycja pozostanie anonimowa dla innych użytkowników.",
       "anonymous_proposal": "Anonimowy wniosek",
       "anonymous_mode": "Tryb życia"
     },
@@ -228,7 +228,7 @@
       "button_login_link": "chcę się zalogować",
       "button_login": "Zaloguj się",
       "back_authentication": "Powrót do ekranu logowania",
-      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
+      "account_use": "Twoje konto obywatelskie pozwoli Ci śledzić losy Twojej propozycji, udostępniać ją, sprawdzać, kiedy jest online, oraz dbać o jakość debaty."
     },
     "success": {
       "button": "Kontynuuj głosowanie",
@@ -284,7 +284,7 @@
     "registration_title": "Nie mam jeszcze konta,",
     "registration_link": "chcę je założyć.",
     "email_doesnot_exist": "Twój {{emailLabel}} lub {{passwordLabel}} są nieprawidłowe.",
-    "participate": "@@login.participate|fr:Participer"
+    "participate": "Uczestnicz"
   },
   "register": {
     "title": "Załóż konto",

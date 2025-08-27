@@ -328,7 +328,7 @@
       "from": "Forslag fra: ",
       "age": "{{age}} år",
       "date": "Indsendt den: ",
-      "disclaimer": "Dit forslag vil forblive anonymt for andre brugere.",
+      "disclaimer": "Dit forslag forbliver anonymt for andre brugere.",
       "anonymous_proposal": "Anonymt forslag",
       "anonymous_mode": "Anonymt forslag"
     },
@@ -438,7 +438,7 @@
       "button_login_link": "jeg logger på.",
       "button_login": "Log på",
       "back_authentication": "Tilbage til logonskærmen",
-      "account_use": "Med din borgerkonto kan du følge med i dit forslags liv, dele det og se, hvornår det er online, samt sikre kvaliteten af debatten."
+      "account_use": "Din borgerkonto giver dig mulighed for at følge dit forslag, dele det, se hvornår det er online og sikre kvaliteten af debatten."
     },
     "success": {
       "title": "Tak {{name}}!",

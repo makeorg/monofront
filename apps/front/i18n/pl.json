@@ -424,7 +424,7 @@
       "button_login_link": "chcę się zalogować.",
       "button_login": "Zaloguj się",
       "back_authentication": "Powrót do ekranu logowania",
-      "account_use": "Twoje konto obywatelskie pozwoli Ci śledzić losy Twojego wniosku, udostępniać go i sprawdzać, kiedy jest online, a także zapewniać jakość debaty."
+      "account_use": "Twoje konto obywatelskie pozwoli Ci śledzić losy Twojej propozycji, udostępniać ją, sprawdzać, kiedy jest online, oraz dbać o jakość debaty."
     },
     "success": {
       "title": "Dziękujemy, {{name}}!",

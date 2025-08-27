@@ -62,22 +62,22 @@
       "google_connect": "Tęskite naudodami „Google“",
       "email_register": "Registruotis el. paštu",
       "count_register": "({{count}}/2)",
-      "openid_connect": "@@common.social_login.openid_connect|fr:Continuer avec OpenID",
-      "identify": "@@common.social_login.identify|fr:Identification",
-      "identification_success": "@@common.social_login.identification_success|fr:Identification réussie",
-      "participate": "@@common.social_login.participate|fr:Pour participer à la consultation merci de vous identifier.",
-      "cgu_accept": "@@common.social_login.cgu_accept|fr:En vous identifiant, vous acceptez nos",
-      "error": "@@common.social_login.error|fr:Une erreur est survenue, merci de réessayer",
-      "charte": "@@common.social_login.charte|fr:J'accepte que Make.org traite ces données pour que je puisse participer selon ",
-      "charte_link": "@@common.social_login.charte_link|fr: la charte.",
+      "openid_connect": "Tęsti su OpenID",
+      "identify": "Identifikavimas",
+      "identification_success": "Prisijungimas sėkmingas",
+      "participate": "Norėdami dalyvauti konsultacijoje, prisijunkite.",
+      "cgu_accept": "Prisijungdami sutinkate su mūsų",
+      "error": "Įvyko klaida. Bandykite dar kartą",
+      "charte": "Sutinku, kad Make.org tvarkytų šiuos duomenis, kad galėčiau dalyvauti pagal ",
+      "charte_link": " chartiją.",
       "oidc_errors": {
-        "invalid_request": "@@common.social_login.oidc_errors.invalid_request|fr:La requête est invalide.",
-        "unauthorized_client": "@@common.social_login.oidc_errors.unauthorized_client|fr:Le client n'est pas autorisé à demander un code d'autorisation.",
-        "access_denied": "@@common.social_login.oidc_errors.access_denied|fr:Vous n'avez pas accès à la ressource.",
-        "unsupported_response_type": "@@common.social_login.oidc_errors.unsupported_response_type|fr:Le type de réponse n'est pas pris en charge.",
-        "invalid_scope": "@@common.social_login.oidc_errors.invalid_scope|fr:Le champ 'scope' est invalide.",
-        "server_error": "@@common.social_login.oidc_errors.server_error|fr:Erreur interne du serveur.",
-        "temporarily_unavailable": "@@common.social_login.oidc_errors.temporarily_unavailable|fr:Le service est temporairement indisponible."
+        "invalid_request": "Užklausa neteisinga.",
+        "unauthorized_client": "Klientui neleidžiama prašyti autorizacijos kodo.",
+        "access_denied": "Neturite prieigos prie ištekliaus.",
+        "unsupported_response_type": "Atsakymo tipas nepalaikomas.",
+        "invalid_scope": "Laukas „scope“ yra neteisingas.",
+        "server_error": "Vidinė serverio klaida.",
+        "temporarily_unavailable": "Paslauga laikinai nepasiekiama."
       }
     },
     "notifications": {
@@ -144,7 +144,7 @@
       "from": "Pasiūlymas: ",
       "age": "{{age}} metai (-ų)",
       "date": "įkelta: ",
-      "disclaimer": "Ši parinktis nereikalauja, kad būtumėte prisijungę prie savo Make.org.<br/>Vis dėlto jūsų pasiūlymas išliks anonimiškas kitiems naudotojams.",
+      "disclaimer": "Jūsų pasiūlymas liks anonimiškas kitiems naudotojams.",
       "anonymous_proposal": "Anoniminis pasiūlymas",
       "anonymous_mode": "Anoniminis režimas"
     },
@@ -245,7 +245,7 @@
       "button_login_link": "prisijungiu.",
       "button_login": "Prisijungti",
       "back_authentication": "Grįžti į prisijungimo puslapį",
-      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
+      "account_use": "Jūsų piliečio paskyra leis sekti jūsų pasiūlymo eigą, juo dalintis, matyti, kada jis paskelbtas internete, ir užtikrinti diskusijos kokybę."
     },
     "success": {
       "button": "Tęsti balsavimą",
@@ -299,7 +299,7 @@
     "registration_title": "Neturiu paskyros,",
     "registration_link": "bet ją susikursiu.",
     "email_doesnot_exist": "Jūsų {{emailLabel}} arba {{passwordLabel}} yra neteisingas.",
-    "participate": "@@login.participate|fr:Participer"
+    "participate": "Dalyvauti"
   },
   "register": {
     "title": "Sukurti paskyrą",

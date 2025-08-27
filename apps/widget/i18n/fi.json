@@ -62,22 +62,22 @@
       "google_connect": "Jatka Googlella",
       "email_register": "Rekisteröidy sähköpostiosoitteella",
       "count_register": "({{count}}/2)",
-      "openid_connect": "@@common.social_login.openid_connect|fr:Continuer avec OpenID",
-      "identify": "@@common.social_login.identify|fr:Identification",
-      "identification_success": "@@common.social_login.identification_success|fr:Identification réussie",
-      "participate": "@@common.social_login.participate|fr:Pour participer à la consultation merci de vous identifier.",
-      "cgu_accept": "@@common.social_login.cgu_accept|fr:En vous identifiant, vous acceptez nos",
-      "error": "@@common.social_login.error|fr:Une erreur est survenue, merci de réessayer",
-      "charte": "@@common.social_login.charte|fr:J'accepte que Make.org traite ces données pour que je puisse participer selon ",
-      "charte_link": "@@common.social_login.charte_link|fr: la charte.",
+      "openid_connect": "Jatka OpenID:llä",
+      "identify": "Tunnistautuminen",
+      "identification_success": "Kirjautuminen onnistui",
+      "participate": "Osallistuaksesi kuulemiseen, kirjaudu sisään.",
+      "cgu_accept": "Kirjautumalla hyväksyt meidän",
+      "error": "Tapahtui virhe. Yritä uudelleen",
+      "charte": "Hyväksyn, että Make.org käsittelee näitä tietoja, jotta voin osallistua ",
+      "charte_link": " peruskirjan.",
       "oidc_errors": {
-        "invalid_request": "@@common.social_login.oidc_errors.invalid_request|fr:La requête est invalide.",
-        "unauthorized_client": "@@common.social_login.oidc_errors.unauthorized_client|fr:Le client n'est pas autorisé à demander un code d'autorisation.",
-        "access_denied": "@@common.social_login.oidc_errors.access_denied|fr:Vous n'avez pas accès à la ressource.",
-        "unsupported_response_type": "@@common.social_login.oidc_errors.unsupported_response_type|fr:Le type de réponse n'est pas pris en charge.",
-        "invalid_scope": "@@common.social_login.oidc_errors.invalid_scope|fr:Le champ 'scope' est invalide.",
-        "server_error": "@@common.social_login.oidc_errors.server_error|fr:Erreur interne du serveur.",
-        "temporarily_unavailable": "@@common.social_login.oidc_errors.temporarily_unavailable|fr:Le service est temporairement indisponible."
+        "invalid_request": "Pyyntö on virheellinen.",
+        "unauthorized_client": "Asiakkaalla ei ole lupaa pyytää valtuutuskoodia.",
+        "access_denied": "Sinulla ei ole pääsyä resurssiin.",
+        "unsupported_response_type": "Vastaustyyppiä ei tueta.",
+        "invalid_scope": "Kenttä 'scope' on virheellinen.",
+        "server_error": "Sisäinen palvelinvirhe.",
+        "temporarily_unavailable": "Palvelu ei ole tilapäisesti käytettävissä."
       }
     },
     "notifications": {
@@ -142,7 +142,7 @@
       "from": "Ehdotus henkilöltä ",
       "age": "{{age}} vuotta",
       "date": "julkaisupäivämäärä: ",
-      "disclaimer": "Tämä vaihtoehto ei vapauta sinua olemasta yhteydessä Make.org-tiliisi.<br/> Ehdotuksesi pysyy kuitenkin anonyyminä muille käyttäjille.",
+      "disclaimer": "Ehdotuksesi pysyy anonyyminä muille käyttäjille.",
       "anonymous_proposal": "Anonyymi ehdotus",
       "anonymous_mode": "Anonyymi tila"
     },
@@ -226,7 +226,7 @@
       "button_login_link": "kirjaudu sisään.",
       "button_login": "Kirjaudu sisään",
       "back_authentication": "Siirry kirjautumisruutuun",
-      "account_use": "@@proposal_submit.authentication.account_use|fr:Votre compte citoyen vous permettra de suivre la vie de votre proposition, la partager et de voir quand elle est en ligne ainsi qu’assurer la qualité du débat"
+      "account_use": "Kansalaistilisi avulla voit seurata ehdotuksesi etenemistä, jakaa sen, nähdä milloin se on verkossa ja varmistaa keskustelun laadun."
     },
     "success": {
       "button": "Jatka äänestämistä",
@@ -280,7 +280,7 @@
     "registration_title": "Minulla ei ole tiliä.",
     "registration_link": "Haluan luoda sellaisen.",
     "email_doesnot_exist": "{{emailLabel}} tai {{passwordLabel}} on virheellinen.",
-    "participate": "@@login.participate|fr:Participer"
+    "participate": "Osallistu"
   },
   "register": {
     "title": "Luo tili",
