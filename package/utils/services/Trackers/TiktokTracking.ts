@@ -2,6 +2,7 @@
 import { env } from '@make.org/assets/env';
 import { ILogger } from '@make.org/types';
 import { ttq } from '@make.org/utils/services/Trackers/tiktok.js';
+import trackingConfiguration from '../trackingConfiguration.yaml';
 
 let initialized = false;
 declare global {
@@ -9,6 +10,10 @@ declare global {
     TIKTOK_PIXEL_ID?: string;
   }
 }
+
+const tiktokEventMapping: Record<string, string> = {
+  [trackingConfiguration.DISPLAY_SEQUENCE.key]: 'ViewContent',
+};
 
 const tiktokPixelId = env.isClientSide()
   ? window?.TIKTOK_PIXEL_ID
@@ -71,6 +76,11 @@ export const TiktokTracking = {
   },
 
   track(eventName: string): void {
+    let eventNameToTrack = eventName;
+    if (tiktokEventMapping[eventName]) {
+      eventNameToTrack = tiktokEventMapping[eventName];
+    }
+
     if (!isTiktokInitialized()) {
       // eslint-disable-next-line no-console
       this.logger.logWarning({
@@ -83,14 +93,14 @@ export const TiktokTracking = {
     if (env.isDev()) {
       // eslint-disable-next-line no-console
       console.info(
-        `Tracking Custom Tiktok (${tiktokPixelId}) event => ${eventName}`
+        `Tracking Custom Tiktok (${tiktokPixelId}) event => ${eventNameToTrack}`
       );
 
       return;
     }
 
     try {
-      ttq.track(eventName);
+      ttq.track(eventNameToTrack);
     } catch (e) {
       const error = e as string;
       this.logger.logError(error);
