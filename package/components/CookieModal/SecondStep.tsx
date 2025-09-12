@@ -175,6 +175,16 @@ export const SecondStepCookie: React.FC<Props> = ({
               description={i18n.t('cookie_modal.social_media.snapchat_pixel')}
             />
             <CookieSwitch
+              tracker={TRACKING_CONSENT.TIKTOK_TRACKING}
+              value={trackingConsent.tiktok_tracking}
+              description={i18n.t('cookie_modal.social_media.tiktok_pixel')}
+            />
+            <CookieSwitch
+              tracker={TRACKING_CONSENT.YDOT_TRACKING}
+              value={trackingConsent.ydot_tracking}
+              description={i18n.t('cookie_modal.social_media.ydot_pixel')}
+            />
+            <CookieSwitch
               tracker={TRACKING_CONSENT.FACEBOOK_SHARING}
               value={trackingConsent.facebook_sharing}
               description={i18n.t('cookie_modal.social_media.facebook_sharing')}

@@ -22,6 +22,7 @@ import { defaultUnexpectedError } from './DefaultErrorHandler';
 import { MixpanelTracking } from './Trackers/MixpanelTracking';
 import { SnapchatTracking } from './Trackers/SnapchatTracking';
 import { TiktokTracking } from './Trackers/TiktokTracking';
+import { YDotTracking } from './Trackers/YDotTracking';
 
 class TrackingValidationError extends Error {}
 
@@ -206,6 +207,11 @@ export const TrackingService = {
     // Tiktok
     if (preferencesCookie?.tracking_consent?.tiktok_tracking) {
       TiktokTracking.track(eventName);
+    }
+
+    // YDot
+    if (preferencesCookie?.tracking_consent?.ydot_tracking) {
+      YDotTracking.trackCustom(eventName);
     }
 
     // Mixpanel

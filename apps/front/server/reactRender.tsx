@@ -87,6 +87,7 @@ const renderHtml = (
     .replace(/___TOLD_TOKEN___/gi, env.toldToken() || '')
     .replace(/___SNAP_PIXEL_ID___/gi, env.snapPixelId() || '')
     .replace(/___TIKTOK_PIXEL_ID___/gi, env.tiktokPixelId() || '')
+    .replace(/___YDOT_PIXEL_ID___/gi, env.yDotPixelId() || '')
     .replace('</body>', `${scriptTags}</body>`);
 
   return content;

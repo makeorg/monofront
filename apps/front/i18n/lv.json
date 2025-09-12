@@ -629,7 +629,8 @@
       "twitter_sharing": "Twitter kopīgošana: ļauj lietotājam kopīgot saturu savā Twitter kontā.",
       "linkedin_sharing": "LinkedIn kopīgošana: ļauj lietotājam kopīgot saturu savā LinkedIn kontā.",
       "snapchat_pixel": "Pixel Snapchat: tiek izmantota, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas Snapchat, lai palielinātu iedzīvotāju līdzdalību.",
-      "tiktok_pixel": "TikTok pixel: tiek izmantota, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas TikTok, lai palielinātu iedzīvotāju līdzdalību."
+      "tiktok_pixel": "TikTok pixel: tiek izmantota, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas TikTok, lai palielinātu iedzīvotāju līdzdalību.",
+      "ydot_pixel": "@@cookie_modal.social_media.ydot_pixel|fr:Pixel Y!Dot : il sert à optimiser les performances des campagnes de promotions des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
     }
   },
   "reset_password": {
@@ -1432,7 +1433,8 @@
         "twitter_sharing": "Kopīgošana platformā Twitter: šī sīkdatne ļauj lietotājam kopīgot saturu Twitter un uzlabot lietojamību.",
         "linkedin_sharing": "Kopīgošana platformā LinkedIn: šī sīkdatne ļauj lietotājam kopīgot saturu LinkedIn un uzlabot lietojamību.",
         "snapchat_tracking": "pixel Snapchat: šīs sīkdatnes kalpo, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas Snapchat, lai palielinātu iedzīvotāju līdzdalību.",
-        "tiktok_tracking": "pixel TikTok: šīs sīkdatnes kalpo, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas TikTok, lai palielinātu iedzīvotāju līdzdalību."
+        "tiktok_tracking": "pixel TikTok: šīs sīkdatnes kalpo, lai optimizētu to kampaņu veiktspēju, kas reklamē apspriešanas TikTok, lai palielinātu iedzīvotāju līdzdalību.",
+        "ydot_tracking": "@@cookies_management.details.social.ydot_tracking|fr:pixel Y!Dot : ces cookies servent à optimiser les performances des campagnes de promotion des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
       }
     }
   },

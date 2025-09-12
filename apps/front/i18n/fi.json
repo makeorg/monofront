@@ -603,7 +603,8 @@
       "twitter_sharing": "Jakaminen Twitterissä: antaa käyttäjän jakaa sisältöä Twitter-tilillään.",
       "linkedin_sharing": "Jakaminen LinkedInissä: käyttäjä voi jakaa sisältöä LinkedIn-tilillään.",
       "snapchat_pixel": "Pixel Snapchat: sen avulla optimoidaan mainoskampanjoiden toimintaa Snapchatissä. Näin pyritään lisäämään kansalaisten osallistumista.",
-      "tiktok_pixel": "TikTok Pixel: sen avulla optimoidaan mainoskampanjoiden toimintaa TikTokissä. Näin pyritään lisäämään kansalaisten osallistumista."
+      "tiktok_pixel": "TikTok Pixel: sen avulla optimoidaan mainoskampanjoiden toimintaa TikTokissä. Näin pyritään lisäämään kansalaisten osallistumista.",
+      "ydot_pixel": "@@cookie_modal.social_media.ydot_pixel|fr:Pixel Y!Dot : il sert à optimiser les performances des campagnes de promotions des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
     }
   },
   "reset_password": {
@@ -1302,7 +1303,8 @@
         "twitter_sharing": "jakaminen Twitterissä: tämän evästeen avulla käyttäjä voi jakaa sisältöä Twitterissä, minkä lisäksi se parantaa käytettävyyttä.",
         "linkedin_sharing": "jakaminen LinkedInissä: tämän evästeen avulla käyttäjä voi jakaa sisältöä LinkedInissä, minkä lisäksi se parantaa käytettävyyttä.",
         "snapchat_tracking": "pixel Snapchat: kyseisten evästeiden avulla optimoidaan mainoskampanjoiden toimintaa Snapchatissä. Näin pyritään lisäämään kansalaisten osallistumista.",
-        "tiktok_tracking": "pixel TikTok: kyseisten evästeiden avulla optimoidaan mainoskampanjoiden toimintaa TikTokissä. Näin pyritään lisäämään kansalaisten osallistumista."
+        "tiktok_tracking": "pixel TikTok: kyseisten evästeiden avulla optimoidaan mainoskampanjoiden toimintaa TikTokissä. Näin pyritään lisäämään kansalaisten osallistumista.",
+        "ydot_tracking": "@@cookies_management.details.social.ydot_tracking|fr:pixel Y!Dot : ces cookies servent à optimiser les performances des campagnes de promotion des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
       }
     }
   },

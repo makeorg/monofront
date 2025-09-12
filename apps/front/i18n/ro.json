@@ -610,7 +610,8 @@
       "twitter_sharing": "Distribuire Twitter: permite utilizatorului să distribuie conținutul pe propriul cont de Twitter.",
       "linkedin_sharing": "Distribuire LinkedIn: permite utilizatorului să distribuie conținutul pe propriul cont de LinkedIn.",
       "snapchat_pixel": "Pixel Snapchat: servește la optimizarea performanțelor campaniilor prin care se promovează consultările pe Snapchat pentru a spori participarea cetățenilor.",
-      "tiktok_pixel": "Pixel TikTok: servește la optimizarea performanțelor campaniilor prin care se promovează consultările pe TikTok pentru a spori participarea cetățenilor."
+      "tiktok_pixel": "Pixel TikTok: servește la optimizarea performanțelor campaniilor prin care se promovează consultările pe TikTok pentru a spori participarea cetățenilor.",
+      "ydot_pixel": "@@cookie_modal.social_media.ydot_pixel|fr:Pixel Y!Dot : il sert à optimiser les performances des campagnes de promotions des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
     }
   },
   "reset_password": {
@@ -1329,7 +1330,8 @@
         "twitter_sharing": "distribuire Twitter: acest modul cookie permite utilizatorului să distribuie conținut pe Twitter și să îmbunătățească opțiunile de utilizare.",
         "linkedin_sharing": "distribuire LinkedIn: acest modul cookie permite utilizatorului să distribuie conținut pe LinkedIn și să îmbunătățească opțiunile de utilizare.",
         "snapchat_tracking": "Pixel Snapchat: aceste module cookie servesc la optimizarea performanțelor campaniilor prin care se promovează consultările pe Snapchat pentru a spori participarea cetățenilor.",
-        "tiktok_tracking": "Pixel TikTok: aceste module cookie servesc la optimizarea performanțelor campaniilor prin care se promovează consultările pe TikTok pentru a spori participarea cetățenilor."
+        "tiktok_tracking": "Pixel TikTok: aceste module cookie servesc la optimizarea performanțelor campaniilor prin care se promovează consultările pe TikTok pentru a spori participarea cetățenilor.",
+        "ydot_tracking": "@@cookies_management.details.social.ydot_tracking|fr:pixel Y!Dot : ces cookies servent à optimiser les performances des campagnes de promotion des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
       }
     }
   },

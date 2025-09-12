@@ -632,6 +632,7 @@
       "twitter_pixel": "Pixel Twitter : il sert à optimiser les performances des campagnes de promotions des consultations sur Twitter afin d’augmenter la participation des citoyens.",
       "snapchat_pixel": "Pixel Snapchat : il sert à optimiser les performances des campagnes de promotions des consultations sur Snapchat afin d’augmenter la participation des citoyens.",
       "tiktok_pixel": "Pixel TikTok : il sert à optimiser les performances des campagnes de promotions des consultations sur TikTok afin d’augmenter la participation des citoyens.",
+      "ydot_pixel": "Pixel Y!Dot : il sert à optimiser les performances des campagnes de promotions des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens.",
       "facebook_sharing": "Partage Facebook : permettre à l’utilisateur de partager du contenu sur son compte Facebook.",
       "twitter_sharing": "Partage Twitter : permettre à l’utilisateur de partager du contenu sur son compte Twitter.",
       "linkedin_sharing": "Partage LinkedIn : permettre à l’utilisateur de partager du contenu sur son compte LinkedIn."
@@ -1437,7 +1438,8 @@
         "facebook_sharing": "partage Facebook : ce cookie permet à l’utilisateur de partager du contenu sur Facebook et d’améliorer la convivialité.",
         "twitter_sharing": "partage Twitter : ce cookie permet à l’utilisateur de partager du contenu sur Twitter et d’améliorer la convivialité.",
         "linkedin_sharing": "partage LinkedIn : ce cookie permet à l’utilisateur de partager du contenu sur LinkedIn et d’améliorer la convivialité.",
-        "tiktok_tracking": "pixel TikTok : ces cookies servent à optimiser les performances des campagnes de promotion des consultations sur TikTok afin d’augmenter la participation des citoyens."
+        "tiktok_tracking": "pixel TikTok : ces cookies servent à optimiser les performances des campagnes de promotion des consultations sur TikTok afin d’augmenter la participation des citoyens.",
+        "ydot_tracking": "pixel Y!Dot : ces cookies servent à optimiser les performances des campagnes de promotion des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
       }
     }
   },

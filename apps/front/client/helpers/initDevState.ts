@@ -60,6 +60,7 @@ export const initDevState = (initialState: StateRoot): StateRoot => ({
       twitter_tracking: false,
       snapchat_tracking: false,
       tiktok_tracking: false,
+      ydot_tracking: false,
       facebook_sharing: false,
       twitter_sharing: false,
       linkedin_sharing: false,

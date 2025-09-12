@@ -121,6 +121,7 @@ export type StateTrackingConsent = {
   twitter_tracking: boolean;
   snapchat_tracking: boolean;
   tiktok_tracking: boolean;
+  ydot_tracking: boolean;
   facebook_sharing: boolean;
   twitter_sharing: boolean;
   linkedin_sharing: boolean;

@@ -629,7 +629,8 @@
       "twitter_sharing": "Zdieľanie na Twitteri: umožňuje používateľovi zdieľať obsah na svojom účte na Twitteri.",
       "linkedin_sharing": "Zdieľanie na LinkedIne: umožňuje používateľovi zdieľať obsah na svojom účte na LinkedIne.",
       "snapchat_pixel": "Snapchat Pixel: používa sa na optimalizáciu výkonu kampaní propagujúcich konzultácie na Snapchat s cieľom zvýšiť účasť občanov.",
-      "tiktok_pixel": "TikTok pixel: používa sa na optimalizáciu výkonu kampaní propagujúcich konzultácie na TikTok s cieľom zvýšiť účasť občanov."
+      "tiktok_pixel": "TikTok pixel: používa sa na optimalizáciu výkonu kampaní propagujúcich konzultácie na TikTok s cieľom zvýšiť účasť občanov.",
+      "ydot_pixel": "@@cookie_modal.social_media.ydot_pixel|fr:Pixel Y!Dot : il sert à optimiser les performances des campagnes de promotions des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
     }
   },
   "reset_password": {
@@ -1432,7 +1433,8 @@
         "twitter_sharing": "Zdieľanie na Twitteri: tento súbor cookie umožňuje používateľovi zdieľať obsah na Twitteri a zlepšiť použiteľnosť.",
         "linkedin_sharing": "Zdieľanie na LinkedIne: tento súbor cookie umožňuje používateľovi zdieľať obsah na LinkedIne a zlepšiť použiteľnosť.",
         "snapchat_tracking": "Snapchat Pixel: tieto súbory cookie sa používajú na optimalizáciu výkonu kampaní na podporu konzultácií na Snapchat s cieľom zvýšiť účasť občanov.",
-        "tiktok_tracking": "TikTok Pixel: tieto súbory cookie sa používajú na optimalizáciu výkonu kampaní na podporu konzultácií na TikTok s cieľom zvýšiť účasť občanov."
+        "tiktok_tracking": "TikTok Pixel: tieto súbory cookie sa používajú na optimalizáciu výkonu kampaní na podporu konzultácií na TikTok s cieľom zvýšiť účasť občanov.",
+        "ydot_tracking": "@@cookies_management.details.social.ydot_tracking|fr:pixel Y!Dot : ces cookies servent à optimiser les performances des campagnes de promotion des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
       }
     }
   },

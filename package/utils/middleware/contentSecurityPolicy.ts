@@ -58,6 +58,8 @@ export const cspMiddleware = (
         'https://sc-static.net/scevent.min.js',
         'https://tr.snapchat.com',
         'https://analytics.tiktok.com',
+        'https://sp.analytics.yahoo.com',
+        'https://s.yimg.com',
       ],
       imgSrc: [
         ...defaultDirectives.imgSrc,
@@ -69,6 +71,7 @@ export const cspMiddleware = (
         'https://cdn.prod.website-files.com',
         'https://evolt.imgix.net/widget/Close-grey:800.svg',
         'https://analytics.tiktok.com',
+        'https://sp.analytics.yahoo.com',
       ],
       connectSrc: [
         ...defaultDirectives.connectSrc,
@@ -83,6 +86,7 @@ export const cspMiddleware = (
         'https://tr.snapchat.com',
         'https://tr6.snapchat.com/p',
         'https://analytics.tiktok.com',
+        'https://s.yimg.com',
       ],
       formAction: [
         ...defaultDirectives.formAction,

@@ -613,7 +613,8 @@
       "twitter_sharing": "Auf Twitter teilen: Dieses Cookie ermöglicht es den Nutzer:innen, Inhalte über ihr Twitter-Konto zu teilen.",
       "linkedin_sharing": "Auf LinkedIn teilen: Dieses Cookie ermöglicht es den Nutzer:innen, Inhalte über ihr LinkedIn-Konto zu teilen.",
       "snapchat_pixel": "Snapchat-Pixel: Es wird verwendet, um die Leistung von Snapchat-Werbekampagnen für Konsultationen zu verbessern und so die Bürgerbeteiligung zu erhöhen.",
-      "tiktok_pixel": "TikTok-Pixel: Es wird verwendet, um die Leistung von TikTok-Werbekampagnen für Konsultationen zu verbessern und so die Bürgerbeteiligung zu erhöhen."
+      "tiktok_pixel": "TikTok-Pixel: Es wird verwendet, um die Leistung von TikTok-Werbekampagnen für Konsultationen zu verbessern und so die Bürgerbeteiligung zu erhöhen.",
+      "ydot_pixel": "@@cookie_modal.social_media.ydot_pixel|fr:Pixel Y!Dot : il sert à optimiser les performances des campagnes de promotions des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
     }
   },
   "reset_password": {
@@ -1396,7 +1397,8 @@
         "twitter_sharing": "Auf Twitter teilen: Dieses Cookie ermöglicht es Ihnen, Inhalte auf Twitter zu teilen und die Benutzerfreundlichkeit zu verbessern.",
         "linkedin_sharing": "Dieses Cookie ermöglicht es Ihnen, Inhalte auf LinkedIn zu teilen und die Benutzerfreundlichkeit zu verbessern.",
         "snapchat_tracking": "Snapchat-Pixel: Diese Cookies werden verwendet, um die Leistung von Snapchat-Werbekampagnen für Konsultationen zu verbessern und so die Bürgerbeteiligung zu erhöhen.",
-        "tiktok_tracking": "TikTok-Pixel: Diese Cookies werden verwendet, um die Leistung von TikTok-Werbekampagnen für Konsultationen zu verbessern und so die Bürgerbeteiligung zu erhöhen."
+        "tiktok_tracking": "TikTok-Pixel: Diese Cookies werden verwendet, um die Leistung von TikTok-Werbekampagnen für Konsultationen zu verbessern und so die Bürgerbeteiligung zu erhöhen.",
+        "ydot_tracking": "@@cookies_management.details.social.ydot_tracking|fr:pixel Y!Dot : ces cookies servent à optimiser les performances des campagnes de promotion des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
       }
     }
   },

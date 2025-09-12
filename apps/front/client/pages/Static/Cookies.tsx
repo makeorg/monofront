@@ -469,6 +469,14 @@ const CookiesPage: FC = () => {
                   />
                   <CookieSwitch
                     onCookiePage
+                    value={trackingConsent.ydot_tracking}
+                    tracker={TRACKING_CONSENT.YDOT_TRACKING}
+                    description={i18n.t(
+                      'cookies_management.details.social.ydot_tracking'
+                    )}
+                  />
+                  <CookieSwitch
+                    onCookiePage
                     tracker={TRACKING_CONSENT.FACEBOOK_SHARING}
                     value={trackingConsent.facebook_sharing}
                     description={i18n.t(

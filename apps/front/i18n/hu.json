@@ -622,7 +622,8 @@
       "twitter_sharing": "Partage Twitter: lehetővé teszi a felhasználó számára, hogy tartalmakat osszon meg a Twitter-fiókján.",
       "linkedin_sharing": "Partage LinkedIn: lehetővé teszi a felhasználó számára, hogy tartalmakat osszon meg a LinkedIn-fiókján.",
       "snapchat_pixel": "Pixel Snapchat: a konzultációkat a Snapchaten népszerűsítő kampányok teljesítményének optimalizálására szolgál az állampolgárok részvételének növelése érdekében.",
-      "tiktok_pixel": "TikTok pixel: a konzultációkat a TikToken népszerűsítő kampányok teljesítményének optimalizálására szolgál az állampolgárok részvételének növelése érdekében."
+      "tiktok_pixel": "TikTok pixel: a konzultációkat a TikToken népszerűsítő kampányok teljesítményének optimalizálására szolgál az állampolgárok részvételének növelése érdekében.",
+      "ydot_pixel": "@@cookie_modal.social_media.ydot_pixel|fr:Pixel Y!Dot : il sert à optimiser les performances des campagnes de promotions des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
     }
   },
   "reset_password": {
@@ -1405,7 +1406,8 @@
         "twitter_sharing": "partage Twitter: ez a süti lehetővé teszi a felhasználó számára a tartalmak megosztását a Twitteren és javítja a felhasználóbarátságot.",
         "linkedin_sharing": "partage LinkedIn: ez a süti lehetővé teszi a felhasználó számára a tartalmak megosztását a LinkedIn-en és javítja a felhasználóbarátságot.",
         "snapchat_tracking": "pixel Snapchat: ezeket a sütiket a Snapchat-konzultációkat népszerűsítő kampányok teljesítményének optimalizálására használják az állampolgárok részvételének növelése érdekében.",
-        "tiktok_tracking": "pixel TikTok: ezeket a sütiket a TikTok-konzultációkat népszerűsítő kampányok teljesítményének optimalizálására használják az állampolgárok részvételének növelése érdekében."
+        "tiktok_tracking": "pixel TikTok: ezeket a sütiket a TikTok-konzultációkat népszerűsítő kampányok teljesítményének optimalizálására használják az állampolgárok részvételének növelése érdekében.",
+        "ydot_tracking": "@@cookies_management.details.social.ydot_tracking|fr:pixel Y!Dot : ces cookies servent à optimiser les performances des campagnes de promotion des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
       }
     }
   },

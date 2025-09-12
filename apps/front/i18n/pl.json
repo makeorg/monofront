@@ -610,7 +610,8 @@
       "twitter_sharing": "Udostępnianie na Twitterze: umożliwia udostępnianie treści na swoim koncie na Twitterze.",
       "linkedin_sharing": "Udostępnianie na LindkedIn umożliwia udostępnianie treści na swoim koncie na LinkedInie.",
       "snapchat_pixel": "Pixel Snapchat: służy do podniesienia wydajności kampanii promujących konsultacje na Snapchat w celu zwiększenia obywatelskiej partycypacji.",
-      "tiktok_pixel": "Pixel TikTok: służy do podniesienia wydajności kampanii promujących konsultacje na TikTok w celu zwiększenia obywatelskiej partycypacji."
+      "tiktok_pixel": "Pixel TikTok: służy do podniesienia wydajności kampanii promujących konsultacje na TikTok w celu zwiększenia obywatelskiej partycypacji.",
+      "ydot_pixel": "@@cookie_modal.social_media.ydot_pixel|fr:Pixel Y!Dot : il sert à optimiser les performances des campagnes de promotions des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
     }
   },
   "reset_password": {
@@ -1329,7 +1330,8 @@
         "twitter_sharing": "udostępnianie na Twitterze: ten plik cookie umożliwia internautom udostępnianie treści na Twitterze i poprawę łatwości użytkowania.",
         "linkedin_sharing": "udostępnianie na LinkedIn: ten plik cookie umożliwia internautom udostępnianie treści na LinkedInie i poprawę łatwości użytkowania.",
         "snapchat_tracking": "pixel Snapchat: służy do podniesienia wydajności kampanii promujących konsultacje na Snapchat w celu zwiększenia partycypacji obywatelskiej.",
-        "tiktok_tracking": "pixel TikTok: służy do podniesienia wydajności kampanii promujących konsultacje na TikTok w celu zwiększenia partycypacji obywatelskiej."
+        "tiktok_tracking": "pixel TikTok: służy do podniesienia wydajności kampanii promujących konsultacje na TikTok w celu zwiększenia partycypacji obywatelskiej.",
+        "ydot_tracking": "@@cookies_management.details.social.ydot_tracking|fr:pixel Y!Dot : ces cookies servent à optimiser les performances des campagnes de promotion des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
       }
     }
   },

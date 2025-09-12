@@ -38,6 +38,9 @@ const toldToken = (): string => process.env.TOLD_TOKEN || '';
 // Snapchat vars
 const snapPixelId = (): string => process.env.SNAP_PIXEL_ID || '';
 
+// YDot vars
+const yDotPixelId = (): string => process.env.YDOT_PIXEL_ID || '';
+
 // Export in env object
 export const env = {
   nodeEnv,
@@ -61,4 +64,5 @@ export const env = {
   toldToken,
   snapPixelId,
   tiktokPixelId,
+  yDotPixelId,
 };
