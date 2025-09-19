@@ -630,7 +630,7 @@
       "linkedin_sharing": "Partilha LinkedIn: permitir que o utilizador partilhe conteúdos na sua conta LinkedIn.",
       "snapchat_pixel": "Pixel Snapchat: é utilizado para otimizar o desempenho das campanhas de promoção de consultas no Snapchat, a fim de aumentar a participação dos cidadãos.",
       "tiktok_pixel": "Pixel TikTok: é utilizado para otimizar o desempenho das campanhas de promoção de consultas no TikTok, a fim de aumentar a participação dos cidadãos.",
-      "ydot_pixel": "@@cookie_modal.social_media.ydot_pixel|fr:Pixel Y!Dot : il sert à optimiser les performances des campagnes de promotions des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
+      "ydot_pixel": "Pixel Y!Dot: Serve para otimizar o desempenho das campanhas de promoção das consultas do nosso parceiro Meemany, a fim de aumentar a participação dos cidadãos."
     }
   },
   "reset_password": {
@@ -1434,7 +1434,7 @@
         "linkedin_sharing": "partilha LinkedIn: Este cookie permite ao utilizador partilhar conteúdos no LinkedIn e melhorar a usabilidade.",
         "snapchat_tracking": "pixel Snapchat: estes cookies servem para otimizar o desempenho das campanhas de promoção de consultas no Snapchat, a fim de aumentar a participação dos cidadãos.",
         "tiktok_tracking": "pixel TikTok: estes cookies servem para otimizar o desempenho das campanhas de promoção de consultas no TikTok, a fim de aumentar a participação dos cidadãos.",
-        "ydot_tracking": "@@cookies_management.details.social.ydot_tracking|fr:pixel Y!Dot : ces cookies servent à optimiser les performances des campagnes de promotion des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
+        "ydot_tracking": "pixel Y!Dot: Estes cookies são usados para otimizar o desempenho das campanhas de promoção das consultas do nosso parceiro Meemany, a fim de aumentar a participação dos cidadãos."
       }
     }
   },

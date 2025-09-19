@@ -630,7 +630,7 @@
       "linkedin_sharing": "Dijeljenje na društvenoj mreži LinkedIn: omogućava se korisniku dijeljenje sadržaja na svojem računu za društvenu mrežu LinkedIn.",
       "snapchat_pixel": "pixel Snapchat: koristi se za optimiziranje performansi promotivnih kampanja za rasprave na društvenoj mreži Snapchat kako bi se povećalo sudjelovanje građana.",
       "tiktok_pixel": "TikTok pixel: koristi se za optimiziranje performansi promotivnih kampanja za rasprave na društvenoj mreži TikTok kako bi se povećalo sudjelovanje građana.",
-      "ydot_pixel": "@@cookie_modal.social_media.ydot_pixel|fr:Pixel Y!Dot : il sert à optimiser les performances des campagnes de promotions des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
+      "ydot_pixel": "Pixel Y!Dot: Služi za optimizaciju učinkovitosti promotivnih kampanja konzultacija našeg partnera Meemany kako bi se povećalo sudjelovanje građana."
     }
   },
   "reset_password": {
@@ -1434,7 +1434,7 @@
         "linkedin_sharing": "dijeljenje LinkedIn: ovim se kolačićem omogućava korisniku dijeljenje sadržaja na društvenoj mreži LinkedIn i poboljšava jednostavnost korištenja.",
         "snapchat_tracking": "pixel Snapchat: ovi se kolačići upotrebljavaju za optimiziranje performansi promotivnih kampanja rasprava na društvenoj mreži Snapchat kako bi se povećalo sudjelovanje građana.",
         "tiktok_tracking": "pixel TikTok: ovi se kolačići upotrebljavaju za optimiziranje performansi promotivnih kampanja rasprava na društvenoj mreži TikTok kako bi se povećalo sudjelovanje građana.",
-        "ydot_tracking": "@@cookies_management.details.social.ydot_tracking|fr:pixel Y!Dot : ces cookies servent à optimiser les performances des campagnes de promotion des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
+        "ydot_tracking": "pixel Y!Dot: Ovi se kolačići koriste za optimizaciju učinkovitosti promotivnih kampanja konzultacija našeg partnera Meemany s ciljem povećanja sudjelovanja građana."
       }
     }
   },

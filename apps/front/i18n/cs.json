@@ -630,7 +630,7 @@
       "linkedin_sharing": "Sdílení LinkedIn: umožňuje uživateli sdílet obsah na jeho účtu LinkedIn.",
       "snapchat_pixel": "Pixel Snapchat: používá se k optimalizaci výkonu kampaní propagujících konzultace na Snapchat za účelem zvýšení účasti občanů.",
       "tiktok_pixel": "Pixel TikTok: používá se k optimalizaci výkonu kampaní propagujících konzultace na TikTok za účelem zvýšení účasti občanů.",
-      "ydot_pixel": "@@cookie_modal.social_media.ydot_pixel|fr:Pixel Y!Dot : il sert à optimiser les performances des campagnes de promotions des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
+      "ydot_pixel": "Pixel Y!Dot: Slouží k optimalizaci výkonu propagačních kampaní konzultací našeho partnera Meemany za účelem zvýšení účasti občanů."
     }
   },
   "reset_password": {
@@ -1350,7 +1350,7 @@
         "linkedin_sharing": "sdílení na LinkedInu: tento soubor cookie umožňuje uživateli sdílet obsah na Linkedinu a zlepšit uživatelskou přívětivost.",
         "snapchat_tracking": "pixel Snapchat: tyto soubory cookies se používají k optimalizaci výkonu kampaní propagujících konzultace na Snapchat za účelem zvýšení účasti občanů.",
         "tiktok_tracking": "pixel TikTok: tyto soubory cookies se používají k optimalizaci výkonu kampaní propagujících konzultace na TikTok za účelem zvýšení účasti občanů.",
-        "ydot_tracking": "@@cookies_management.details.social.ydot_tracking|fr:pixel Y!Dot : ces cookies servent à optimiser les performances des campagnes de promotion des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
+        "ydot_tracking": "pixel Y!Dot: Tyto soubory cookie slouží k optimalizaci výkonu propagačních kampaní konzultací našeho partnera Meemany za účelem zvýšení účasti občanů."
       }
     }
   },

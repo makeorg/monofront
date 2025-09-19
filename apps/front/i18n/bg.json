@@ -604,7 +604,7 @@
       "linkedin_sharing": "Споделяне в LinkedIn: позволява на потребителя да споделя съдържание в своя акаунт в LinkedIn.",
       "snapchat_pixel": "Pixel Snpachat: използва се за оптимизиране на ефективността на кампаниите за популяризиране на консултациите в Snpachat с цел увеличаване на гражданското участие.",
       "tiktok_pixel": "Pixel TikTok : il sert à optimiser les performances des campagnes de promotions des consultations sur TikTok afin d’augmenter la participation des citoyens.",
-      "ydot_pixel": "@@cookie_modal.social_media.ydot_pixel|fr:Pixel Y!Dot : il sert à optimiser les performances des campagnes de promotions des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
+      "ydot_pixel": "Pixel Y!Dot: Използва се за оптимизиране на ефективността на кампаниите за популяризиране на консултациите на нашия партньор Meemany с цел повишаване на участието на гражданите."
     }
   },
   "reset_password": {
@@ -1304,7 +1304,7 @@
         "linkedin_sharing": "partage LinkedIn: тази бисквитка позволява на потребителя да споделя съдържание в LinkedIn и да подобри използваемостта.",
         "snapchat_tracking": "pixel Snapchat :  тези бисквитки се използват за оптимизиране на ефективността на кампаниите, популяризиращи консултациите в Snapchat,  за да се увеличи участието на гражданите.",
         "tiktok_tracking": "pixel TikTok :  тези бисквитки се използват за оптимизиране на ефективността на кампаниите, популяризиращи консултациите в TikTok,  за да се увеличи участието на гражданите.",
-        "ydot_tracking": "@@cookies_management.details.social.ydot_tracking|fr:pixel Y!Dot : ces cookies servent à optimiser les performances des campagnes de promotion des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
+        "ydot_tracking": "pixel Y!Dot: Тези бисквитки се използват за оптимизиране на ефективността на кампаниите за популяризиране на консултациите на нашия партньор Meemany с цел повишаване на участието на гражданите."
       }
     }
   },

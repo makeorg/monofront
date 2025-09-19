@@ -637,7 +637,7 @@
       "linkedin_sharing": "Deljenje LinkedIn: omogoča uporabniku delitev vsebine na njegovem računu LinkedIn.",
       "snapchat_pixel": "Pixel Snapchat: uporablja se za optimizacijo uspešnosti kampanj za promocijo posvetovanj na Snapchat zaradi povečanja sodelovanja državljanov.",
       "tiktok_pixel": "Pixel TikTok: uporablja se za optimizacijo uspešnosti kampanj za promocijo posvetovanj na TikTok zaradi povečanja sodelovanja državljanov.",
-      "ydot_pixel": "@@cookie_modal.social_media.ydot_pixel|fr:Pixel Y!Dot : il sert à optimiser les performances des campagnes de promotions des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
+      "ydot_pixel": "Pixel Y!Dot: Uporablja se za optimizacijo učinkovitosti promocijskih kampanj posvetovanj našega partnerja Meemany z namenom povečanja udeležbe državljanov."
     }
   },
   "reset_password": {
@@ -1461,7 +1461,7 @@
         "linkedin_sharing": "deljenje LinkedIn: ta piškotek omogoča uporabniku deljenje vsebine na LinkedInu in izboljšanje družabnosti.",
         "snapchat_tracking": "pixel Snapchat: ti piškotki se uporabljajo za optimizacijo uspešnosti kampanj za promocijo posvetovanj na Snapchat zaradi povečanja sodelovanja državljanov.",
         "tiktok_tracking": "pixel TikTok: ti piškotki se uporabljajo za optimizacijo uspešnosti kampanj za promocijo posvetovanj na TikTok zaradi povečanja sodelovanja državljanov.",
-        "ydot_tracking": "@@cookies_management.details.social.ydot_tracking|fr:pixel Y!Dot : ces cookies servent à optimiser les performances des campagnes de promotion des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
+        "ydot_tracking": "pixel Y!Dot: Ti piškotki se uporabljajo za optimizacijo učinkovitosti promocijskih kampanj posvetovanj našega partnerja Meemany, da bi povečali udeležbo državljanov."
       }
     }
   },

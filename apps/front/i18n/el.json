@@ -623,7 +623,7 @@
       "linkedin_sharing": "Κοινοποίηση στο LinkedIn: επιτρέπει στο χρήστη να κοινοποιεί περιεχόμενο στον λογαριασμό του στο LinkedIn.",
       "snapchat_pixel": "Snapchat Pixel: χρησιμοποιείται για τη βελτιστοποίηση των επιδόσεων των εκστρατειών προώθησης των διαβουλεύσεων στο Snapchat, προκειμένου να αυξηθεί η συμμετοχή των πολιτών.",
       "tiktok_pixel": "TikTok Pixel: χρησιμοποιείται για τη βελτιστοποίηση των επιδόσεων των εκστρατειών προώθησης των διαβουλεύσεων στο TikTok, προκειμένου να αυξηθεί η συμμετοχή των πολιτών.",
-      "ydot_pixel": "@@cookie_modal.social_media.ydot_pixel|fr:Pixel Y!Dot : il sert à optimiser les performances des campagnes de promotions des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
+      "ydot_pixel": "Pixel Y!Dot: Χρησιμοποιείται για τη βελτιστοποίηση της απόδοσης των εκστρατειών προώθησης των διαβουλεύσεων του συνεργάτη μας Meemany, με σκοπό την αύξηση της συμμετοχής των πολιτών."
     }
   },
   "reset_password": {
@@ -1407,7 +1407,7 @@
         "linkedin_sharing": "LinkedIn share: αυτό το cookie επιτρέπει στον χρήστη να κοινοποιεί περιεχόμενο στο LinkedIn και να βελτιώνει τη ευκολία χρήσης.",
         "snapchat_tracking": "Snapchat Pixel: αυτά τα cookies χρησιμεύουν στη βελτιστοποίηση των επιδόσεων των εκστρατειών προώθησης των διαβουλεύσεων στο Snapchat, προκειμένου να αυξηθεί η συμμετοχή των πολιτών.",
         "tiktok_tracking": "TikTok Pixel: αυτά τα cookies χρησιμεύουν στη βελτιστοποίηση των επιδόσεων των εκστρατειών προώθησης των διαβουλεύσεων στο TikTok, προκειμένου να αυξηθεί η συμμετοχή των πολιτών.",
-        "ydot_tracking": "@@cookies_management.details.social.ydot_tracking|fr:pixel Y!Dot : ces cookies servent à optimiser les performances des campagnes de promotion des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
+        "ydot_tracking": "pixel Y!Dot: Αυτά τα cookies χρησιμοποιούνται για τη βελτιστοποίηση της απόδοσης των εκστρατειών προώθησης των διαβουλεύσεων του συνεργάτη μας Meemany, με στόχο την αύξηση της συμμετοχής των πολιτών."
       }
     }
   },

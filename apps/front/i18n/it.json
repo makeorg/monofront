@@ -611,7 +611,7 @@
       "linkedin_sharing": "Condivisione LinkedIn: permette all'utente di condividere dei contenuti sul suo account LinkedIn.",
       "snapchat_pixel": "Pixel Snapchat: serve a ottimizzare le performance delle campagne di promozione delle consultazioni su Snapchat per aumentare la partecipazione della cittadinanza.",
       "tiktok_pixel": "Pixel TikTok: serve a ottimizzare le performance delle campagne di promozione delle consultazioni su TikTok per aumentare la partecipazione della cittadinanza.",
-      "ydot_pixel": "@@cookie_modal.social_media.ydot_pixel|fr:Pixel Y!Dot : il sert à optimiser les performances des campagnes de promotions des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
+      "ydot_pixel": "Pixel Y!Dot: Serve a ottimizzare le prestazioni delle campagne promozionali delle consultazioni del nostro partner Meemany per aumentare la partecipazione dei cittadini."
     }
   },
   "reset_password": {
@@ -1331,7 +1331,7 @@
         "linkedin_sharing": "condivisione LinkedIn: questo cookie permette all'utente di condividerei dei contenuti su LinkedIn e aumentare gli scambi e la condivisione.",
         "snapchat_tracking": "pixel Snapchat: questi cookie servono a ottimizzare le performance delle campagne di promozione delle consultazioni su Snapchat per aumentare la partecipazione della cittadinanza.",
         "tiktok_tracking": "pixel TikTok: questi cookie servono a ottimizzare le performance delle campagne di promozione delle consultazioni su TikTok per aumentare la partecipazione della cittadinanza.",
-        "ydot_tracking": "@@cookies_management.details.social.ydot_tracking|fr:pixel Y!Dot : ces cookies servent à optimiser les performances des campagnes de promotion des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
+        "ydot_tracking": "pixel Y!Dot: Questi cookie servono a ottimizzare le prestazioni delle campagne promozionali delle consultazioni del nostro partner Meemany per aumentare la partecipazione dei cittadini."
       }
     }
   },

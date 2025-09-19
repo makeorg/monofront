@@ -623,7 +623,7 @@
       "linkedin_sharing": "Delning LinkedIn: gör att användaren kan dela innehåll på sitt LinkedIn-konto.",
       "snapchat_pixel": "Pixel Snapchat: den förbättrar prestandan i samrådskampanjerna på Snapchat för att öka medborgardeltagandet.",
       "tiktok_pixel": "Pixel TikTok: den förbättrar prestandan i samrådskampanjerna på TikTok för att öka medborgardeltagandet.",
-      "ydot_pixel": "@@cookie_modal.social_media.ydot_pixel|fr:Pixel Y!Dot : il sert à optimiser les performances des campagnes de promotions des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
+      "ydot_pixel": "Pixel Y!Dot: Används för att optimera prestandan hos vår partner Meemanys kampanjer för konsultationer för att öka medborgarnas deltagande."
     }
   },
   "reset_password": {
@@ -1407,7 +1407,7 @@
         "linkedin_sharing": "delning på LinkedIn: den här cookien gör att användaren kan dela innehåll på LinkedIn och förbättrar användarvänligheten.",
         "snapchat_tracking": "pixel Snapchat: den förbättrar prestandan i samrådskampanjerna på Snapchat för att öka medborgardeltagandet.",
         "tiktok_tracking": "pixel TikTok: den förbättrar prestandan i samrådskampanjerna på TikTok för att öka medborgardeltagandet.",
-        "ydot_tracking": "@@cookies_management.details.social.ydot_tracking|fr:pixel Y!Dot : ces cookies servent à optimiser les performances des campagnes de promotion des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
+        "ydot_tracking": "pixel Y!Dot: Dessa cookies används för att optimera prestandan hos vår partner Meemanys kampanjer för konsultationer för att öka medborgarnas deltagande."
       }
     }
   },

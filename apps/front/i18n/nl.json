@@ -604,7 +604,7 @@
       "linkedin_sharing": "Delen via LinkedIn: om gebruikers in staat te stellen inhoud te delen op hun LinkedIn-account.",
       "snapchat_pixel": "Snapchat-pixel: wordt gebruikt om de prestaties van campagnes ter bevordering van raadplegingen op Snapchat te optimaliseren om de burgerparticipatie te verhogen.",
       "tiktok_pixel": "TikTok pixel: wordt gebruikt om de prestaties van campagnes ter bevordering van raadplegingen op TikTok te optimaliseren om de burgerparticipatie te verhogen.",
-      "ydot_pixel": "@@cookie_modal.social_media.ydot_pixel|fr:Pixel Y!Dot : il sert à optimiser les performances des campagnes de promotions des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
+      "ydot_pixel": "Pixel Y!Dot: Wordt gebruikt om de prestaties van de promotiecampagnes van onze partner Meemany voor consultaties te optimaliseren om de burgerdeelname te vergroten."
     }
   },
   "reset_password": {
@@ -1304,7 +1304,7 @@
         "linkedin_sharing": "Delen op LinkedIn: deze cookie stelt de gebruiker in staat inhoud te delen op LinkedIn en de gebruiksvriendelijkheid te verbeteren.",
         "snapchat_tracking": "Snapchat-pixel: deze cookies worden gebruikt om de prestaties van campagnes die raadplegingen op Snapchat promoten te optimaliseren om de burgerparticipatie te verhogen.",
         "tiktok_tracking": "TikTok-pixel: deze cookies worden gebruikt om de prestaties van campagnes die raadplegingen op TikTok promoten te optimaliseren om de burgerparticipatie te verhogen.",
-        "ydot_tracking": "@@cookies_management.details.social.ydot_tracking|fr:pixel Y!Dot : ces cookies servent à optimiser les performances des campagnes de promotion des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
+        "ydot_tracking": "pixel Y!Dot: Deze cookies worden gebruikt om de prestaties van de promotiecampagnes van onze partner Meemany voor consultaties te optimaliseren en zo de burgerdeelname te vergroten."
       }
     }
   },

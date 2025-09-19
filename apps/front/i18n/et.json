@@ -623,7 +623,7 @@
       "linkedin_sharing": "LinkedIni jagamine: võimaldab kasutajal sisu oma LinkedIni kontol jagada.",
       "snapchat_pixel": "Pixel Snapchat: optimeerib konsulteerimiste edendamiskampaaniate toimivust Snapchatis, et suurendada kodanike osalemisaktiivsust.",
       "tiktok_pixel": "TikTok Pixel: optimeerib konsulteerimiste edendamiskampaaniate toimivust TikTokis, et suurendada kodanike osalemisaktiivsust.",
-      "ydot_pixel": "@@cookie_modal.social_media.ydot_pixel|fr:Pixel Y!Dot : il sert à optimiser les performances des campagnes de promotions des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
+      "ydot_pixel": "Pixel Y!Dot: Seda kasutatakse meie partneri Meemany konsultatsioonikampaaniate tulemuste optimeerimiseks kodanike osaluse suurendamiseks."
     }
   },
   "reset_password": {
@@ -1407,7 +1407,7 @@
         "linkedin_sharing": "LinkedInis jagamine: võimaldab kasutajal sisu oma LinkedIni kontol jagada ja kasutajasõbralikkust suurendada.",
         "snapchat_tracking": "pixel Snapchat: need küpsised optimeerivad konsulteerimiste edendamise kampaaniate toimivust Snapchatis, suurendamaks kodanike osalemisaktiivsust.",
         "tiktok_tracking": "pixel TikTok: need küpsised optimeerivad konsulteerimiste edendamise kampaaniate toimivust TikTokis, suurendamaks kodanike osalemisaktiivsust.",
-        "ydot_tracking": "@@cookies_management.details.social.ydot_tracking|fr:pixel Y!Dot : ces cookies servent à optimiser les performances des campagnes de promotion des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
+        "ydot_tracking": "pixel Y!Dot: Neid küpsiseid kasutatakse meie partneri Meemany konsultatsioonikampaaniate tulemuste optimeerimiseks kodanike osaluse suurendamiseks."
       }
     }
   },

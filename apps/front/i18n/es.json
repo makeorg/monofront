@@ -611,7 +611,7 @@
       "linkedin_sharing": "Compartir en LinkedIn: permiten al usuario compartir contenidos en su cuenta de LinkedIn.",
       "snapchat_pixel": "Píxel de Snapchat: se utiliza para optimizar el rendimiento de las campañas de promoción de consultas en Snapchat con el fin de aumentar la participación ciudadana.",
       "tiktok_pixel": "Píxel de TikTok: se utiliza para optimizar el rendimiento de las campañas de promoción de consultas en TikTok con el fin de aumentar la participación ciudadana.",
-      "ydot_pixel": "@@cookie_modal.social_media.ydot_pixel|fr:Pixel Y!Dot : il sert à optimiser les performances des campagnes de promotions des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
+      "ydot_pixel": "Pixel Y!Dot: Sirve para optimizar el rendimiento de las campañas de promoción de las consultas de nuestro socio Meemany con el fin de aumentar la participación ciudadana."
     }
   },
   "reset_password": {
@@ -1331,7 +1331,7 @@
         "linkedin_sharing": "Compartir en LinkedIn: permiten al usuario compartir contenidos en su cuenta de LinkedIn y potenciar el manejo de la plataforma.",
         "snapchat_tracking": "Píxel de Snapchat: estas cookies se utilizan para optimizar el rendimiento de las campañas de promoción de consultas en Snapchat con el fin de aumentar la participación ciudadana.",
         "tiktok_tracking": "Píxel de TikTok: estas cookies se utilizan para optimizar el rendimiento de las campañas de promoción de consultas en TikTok con el fin de aumentar la participación ciudadana.",
-        "ydot_tracking": "@@cookies_management.details.social.ydot_tracking|fr:pixel Y!Dot : ces cookies servent à optimiser les performances des campagnes de promotion des consultations de notre partenaire Meemany afin d’augmenter la participation des citoyens."
+        "ydot_tracking": "pixel Y!Dot: Estas cookies se utilizan para optimizar el rendimiento de las campañas de promoción de las consultas de nuestro socio Meemany con el fin de aumentar la participación ciudadana."
       }
     }
   },
