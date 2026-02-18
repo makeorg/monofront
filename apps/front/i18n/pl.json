@@ -1469,9 +1469,9 @@
     },
     "advertising": {
       "title": "Reklama",
-      "description": "Nie możesz reklamować danej marki lub przedsiębiorstwa. Możesz natomiast zacytować daną markę lub przedsiębiorstwo wyłącznie jako przykład.",
-      "refused_card_example": "Należy sprawić, aby wszystkie przedsiębiorstwa używały rozwiązań proponowanych przez IBM.",
-      "validated_card_example": "Należy przestać spożywać niektóre mocno słodzone napoje sodowe, jak np. Coca-Cola."
+      "description": "Nie można zacytować konkretnej marki ani firmy.",
+      "refused_card_example": "Konieczne jest kupowanie produktów na eBay zamiast kupowania nowych produktów.",
+      "validated_card_example": "Należy kupować na platformach z produktami z drugiej ręki zamiast kupować nowe produkty."
     },
     "multiple_ideas": {
       "title": "Pomysły wielowątkowe",

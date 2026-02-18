@@ -1325,9 +1325,9 @@
     },
     "advertising": {
       "title": "Reklamavimas",
-      "description": "Negalite reklamuoti konkretaus prekių ženklo ar įmonės. Prekių ženklą ar įmonę galite paminėti tik kaip iliustruojantį pavyzdį.",
-      "refused_card_example": "Būtina, kad visos įmonės naudotų IBM siūlomus sprendimus.",
-      "validated_card_example": "Būtina nustoti vartoti kai kuriuos pernelyg saldžius gaiviuosius gėrimus, pavyzdžiui, „Coca-Cola“."
+      "description": "Neleidžiama nurodyti konkretaus prekės ženklo ar įmonės.",
+      "refused_card_example": "Reikia pirkti naudotus produktus eBay platformoje, o ne naujus.",
+      "validated_card_example": "Reikia pirkti naudotų prekių platformose, o ne naujus produktus."
     },
     "multiple_ideas": {
       "title": "Daugybė idėjų",

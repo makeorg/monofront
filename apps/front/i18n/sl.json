@@ -1351,9 +1351,9 @@
     },
     "advertising": {
       "title": "Oglaševanje",
-      "description": "Ne smete oglaševati določene znamke ali podjetja. Znamko ali podjetje lahko omenite izključno zaradi ponazoritve.",
-      "refused_card_example": "Treba je zagotoviti, da bi vsa podjetja uporabljala rešitve, ki jih ponuja IBM.",
-      "validated_card_example": "Treba je prenehati z uživanjem vseh pretirano sladkanih pijač, kakršna je na primer Coca-Cola."
+      "description": "Navajanje določene blagovne znamke ali podjetja ni dovoljeno.",
+      "refused_card_example": "Treba kupovati rabljene izdelke na eBayu namesto novih.",
+      "validated_card_example": "Treba kupovati na platformah za rabljene izdelke namesto kupovanja novih."
     },
     "multiple_ideas": {
       "title": "Več zamisli",

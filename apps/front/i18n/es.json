@@ -1469,9 +1469,9 @@
     },
     "advertising": {
       "title": "La publicidad",
-      "description": "Tu propuesta no debe promocionar una marca ni una empresa concretas. Puedes mencionar una marca o empresa únicamente mediante un ejemplo ilustrativo.",
-      "refused_card_example": "Es necesario que todas las empresas utilicen las soluciones propuestas por IBM.",
-      "validated_card_example": "Es necesario dejar de consumir algunos refrescos demasiado azucarados, como la Coca-Cola."
+      "description": "No puedes citar una marca o empresa específica.",
+      "refused_card_example": "Es necesario comprar productos de segunda mano en eBay en lugar de comprar productos nuevos.",
+      "validated_card_example": "Es necesario comprar en plataformas de segunda mano en lugar de comprar productos nuevos."
     },
     "multiple_ideas": {
       "title": "Las ideas variadas",

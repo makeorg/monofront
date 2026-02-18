@@ -1469,9 +1469,9 @@
     },
     "advertising": {
       "title": "Publicitate",
-      "description": "Nu puteți face publicitate pentru o anumită marcă sau companie. Totuși, puteți menționa numele unei mărci sau al unei companii doar ca exemplificare.",
-      "refused_card_example": "Trebuie ca toate companiile să aplice soluțiile propuse de IBM.",
-      "validated_card_example": "Trebuie să nu mai consumăm anumite băuturi carbogazoase foarte dulci, cum ar fi Coca-Cola."
+      "description": "Nu este permis să menționați o marcă sau o companie specifică.",
+      "refused_card_example": "Trebuie să cumpărăm produse second-hand de pe eBay în loc să cumpărăm produse noi.",
+      "validated_card_example": "Trebuie să cumpărăm de pe platforme de produse second-hand în loc să cumpărăm produse noi."
     },
     "multiple_ideas": {
       "title": "Ideile multiple",

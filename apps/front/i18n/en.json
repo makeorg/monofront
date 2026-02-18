@@ -1206,9 +1206,9 @@
     },
     "advertising": {
       "title": "Advertising",
-      "description": "You may not advertise a specific brand or company. Once again, you may mention a brand or company only as an illustrative example.",
-      "refused_card_example": "We should stop consuming Coca-Cola brand products.",
-      "validated_card_example": "We should stop consuming certain soft drinks that contain too much sugar, such as Coca-Cola."
+      "description": "You cannot quote a specific brand or company.",
+      "refused_card_example": "You should buy used products on eBay rather than buy new ones.",
+      "validated_card_example": "You should buy on second-hand platforms rather than buy new ones."
     },
     "multiple_ideas": {
       "title": "Multiple ideas",

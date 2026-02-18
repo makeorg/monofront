@@ -1299,9 +1299,9 @@
     },
     "advertising": {
       "title": "Reklame",
-      "description": "Du må ikke reklamere for et bestemt mærke eller en specifik virksomhed. Du må kun nævne et mærke eller en virksomhed for at illustrere et eksempel.",
-      "refused_card_example": "Vi skal sikre, at alle virksomheder bruger de produkter, der tilbydes af IBM.",
-      "validated_card_example": "Vi skal stoppe med at drikke sodavand med for meget sukker i, såsom Coca-Cola."
+      "description": "Du kan ikke citere et bestemt mærke eller selskab.",
+      "refused_card_example": "Det er nødvendigt at købe brugte produkter på eBay i stedet for at købe nye.",
+      "validated_card_example": "Du skal købe på brugte platforme i stedet for at købe ni."
     },
     "multiple_ideas": {
       "title": "Flere ideer",

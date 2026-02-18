@@ -1442,9 +1442,9 @@
     },
     "advertising": {
       "title": "Reclame",
-      "description": "U kunt geen reclame maken voor een specifiek merk of bedrijf. Ook hier kunt u een merk of bedrijf alleen noemen aan de hand van een illustratief voorbeeld.",
-      "refused_card_example": "Er moet door alle bedrijven gebruik worden gemaakt van de oplossingen die IBM biedt.",
-      "validated_card_example": "Er moet een verbod komen op de consumptie van bepaalde frisdranken die te veel suiker bevatten, zoals Coca Cola."
+      "description": "Je kunt geen specifiek merk of bedrijf citeren.",
+      "refused_card_example": "Men zou gebruikte producten op eBay moeten kopen in plaats van nieuwe te kopen.",
+      "validated_card_example": "Men zou op tweedehandsplatforms moeten kopen in plaats van nieuwe producten te kopen."
     },
     "multiple_ideas": {
       "title": "Meerdere ideeën",

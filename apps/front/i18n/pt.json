@@ -1325,9 +1325,9 @@
     },
     "advertising": {
       "title": "A publicidade",
-      "description": "Não pode fazer publicidade a uma marca ou empresa específica. Mais uma vez, só se pode mencionar uma marca ou empresa através de um exemplo ilustrativo.",
-      "refused_card_example": "É necessário que todas as empresas utilizem as soluções oferecidas pela IBM.",
-      "validated_card_example": "É necessário deixar de consumir certos refrigerantes demasiado adocicados, tais como a Coca-Cola."
+      "description": "Você não pode citar uma marca ou empresa específica.",
+      "refused_card_example": "É necessário comprar produtos usados no eBay em vez de comprar novo.",
+      "validated_card_example": "É necessário comprar em plataformas de segunda mão em vez de comprar produtos novos."
     },
     "multiple_ideas": {
       "title": "As ideias múltiplas",

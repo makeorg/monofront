@@ -1469,9 +1469,9 @@
     },
     "advertising": {
       "title": "Le pubblicità",
-      "description": "È vietato fare pubblicità per una marca o un’azienda specifica. Anche in questo caso, è possibile indicare o una marca o un’azienda esclusivamente a titolo d’esempio.",
-      "refused_card_example": "È necessario che tutte le imprese adottino le soluzioni proposte da IBM.",
-      "validated_card_example": "È necessario smettere di consumare le bibite troppo zuccherate, come la Coca Cola."
+      "description": "Non puoi citare un marchio specifico o una società.",
+      "refused_card_example": "È necessario acquistare prodotti usati su eBay invece di acquistare nuovo.",
+      "validated_card_example": "È necessario acquistare su piattaforme di seconda mano invece di acquistare prodotti nuovi."
     },
     "multiple_ideas": {
       "title": "Più idee in una proposta",

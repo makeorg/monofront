@@ -1299,9 +1299,9 @@
     },
     "advertising": {
       "title": "Reklam",
-      "description": "Du får inte göra reklam för något specifikt märke eller företag. Du får bara nämna märken eller företag genom exempel i illustrativt syfte.",
-      "refused_card_example": "Vi måste se till att alla företag använder lösningar från IBM.",
-      "validated_card_example": "Vi måste sluta att konsumera vissa alltför söta läskedrycker, som Coca-Cola."
+      "description": "Du kan inte citera ett specifikt varumärke eller företag.",
+      "refused_card_example": "Man bör köpa begagnade produkter på eBay istället för att köpa nya.",
+      "validated_card_example": "Man bör köpa på second hand-plattformar istället för att köpa nytt."
     },
     "multiple_ideas": {
       "title": "Flera idéer på en gång",

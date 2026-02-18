@@ -1325,9 +1325,9 @@
     },
     "advertising": {
       "title": "reklāmu",
-      "description": "Jūs nedrīkstat reklamēt konkrētu zīmolu vai uzņēmumu. Arī šajā gadījumā zīmolu vai uzņēmumu var minēt tikai ar ilustratīvu piemēru.",
-      "refused_card_example": "Nepieciešams, lai visi uzņēmumi izmantotu IBM piedāvātos risinājumus.",
-      "validated_card_example": "Nepieciešams pārtraukt lietot dažus pārmērīgi saldinātus bezalkoholiskos dzērienus, piemēram, Coca-Cola."
+      "description": "Nav atļauts minēt konkrētu zīmolu vai uzņēmumu.",
+      "refused_card_example": "Jāiegādājas lietotas preces eBay, nevis jauni produkti.",
+      "validated_card_example": "Jāiegādājas lietotas preces platformās, nevis jauni produkti."
     },
     "multiple_ideas": {
       "title": "vairākas idejas kopā",

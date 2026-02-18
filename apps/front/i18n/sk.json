@@ -1325,9 +1325,9 @@
     },
     "advertising": {
       "title": "Reklama",
-      "description": "Nemôžete inzerovať konkrétnu značku alebo spoločnosť. Značku alebo spoločnosť môžete opäť spomenúť len prostredníctvom ilustračného príkladu.",
-      "refused_card_example": "Je potrebné, aby všetky spoločnosti používali riešenia ponúkané spoločnosťou IBM.",
-      "validated_card_example": "Je potrebné prestať konzumovať niektoré príliš sladené nealkoholické nápoje, napríklad Coca-Colu."
+      "description": "Nemôžete citovať konkrétnu značku alebo spoločnosť.",
+      "refused_card_example": "Je potrebné nakupovať použité výrobky na eBay namiesto nákupu nových.",
+      "validated_card_example": "Je potrebné nakupovať na platformách s použitým tovarom namiesto nákupu nových výrobkov."
     },
     "multiple_ideas": {
       "title": "Viaceré nápady",

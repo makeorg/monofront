@@ -1299,9 +1299,9 @@
     },
     "advertising": {
       "title": "Reklám",
-      "description": "Nem reklámozhat konkrét márkát vagy céget. Márkát vagy vállalatot csak szemléltető példán keresztül említhet meg.",
-      "refused_card_example": "Muszáj minden vállalatnak az IBM által kínált megoldásokat használni.",
-      "validated_card_example": "Muszáj abbahagyni bizonyos túlságosan édesített üdítőitalok, például a Coca-Cola fogyasztását."
+      "description": "Nem idézhet egy adott márkát vagy céget.",
+      "refused_card_example": "Használt termékeket kell vásárolni az eBayen az új termékek helyett.",
+      "validated_card_example": "Használtcikk-platformokon kell vásárolni az új termékek vásárlása helyett."
     },
     "multiple_ideas": {
       "title": "Többféle elképzelés",

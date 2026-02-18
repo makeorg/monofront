@@ -1330,9 +1330,9 @@
     },
     "advertising": {
       "title": "La publicité",
-      "description": "Vous ne pouvez pas faire de la publicité pour une marque ou une entreprise spécifique. Là encore, vous pouvez mentionner une marque ou entreprise uniquement à travers un exemple d’illustration.",
-      "refused_card_example": "Il faut que toutes les entreprises utilisent les solutions proposées par IBM.",
-      "validated_card_example": "Il faut arrêter de consommer certains sodas trop sucrés, comme le Coca-Cola."
+      "description": "Vous ne pouvez pas citer une marque ou une entreprise spécifique.",
+      "refused_card_example": "Il faut acheter sur eBay des produits d’occasion plutôt que d’acheter neuf.",
+      "validated_card_example": "Il faut acheter sur des plateformes de seconde main plutôt que d’acheter neuf."
     },
     "multiple_ideas": {
       "title": "Les idées multiples",

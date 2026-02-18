@@ -1442,9 +1442,9 @@
     },
     "advertising": {
       "title": "Mainonta",
-      "description": "Et saa mainostaa tiettyä tuotemerkkiä tai yritystä. Voit mainita tuotemerkin tai yrityksen vain, jos mainitset sen esimerkkinä.",
-      "refused_card_example": "On toimittava näin: kaikkien yritysten on käytettävä IBM:n tarjoamia ratkaisuja.",
-      "validated_card_example": "On toimittava näin: on lopetettava tiettyjen liian makeutettujen virvoitusjuomien, kuten Coca-Colan, käyttö."
+      "description": "Et voi lainata tiettyä tuotemerkkiä tai yritystä.",
+      "refused_card_example": "On ostettava käytettyjä tuotteita eBaysta mieluummin kuin uusia.",
+      "validated_card_example": "On ostettava käytettyjen tuotteiden alustoilta mieluummin kuin uusia tuotteita."
     },
     "multiple_ideas": {
       "title": "Useat ideat",

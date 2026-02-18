@@ -1325,9 +1325,9 @@
     },
     "advertising": {
       "title": "Oglašavanje",
-      "description": "Ne možete oglašavati za određenu trgovačku marku ili poduzeće. Trgovačku marku ili poduzeće možete spomenuti samo kroz ilustrativan primjer.",
-      "refused_card_example": "Potrebno je da sva poduzeća upotrebljavaju rješenja koja predlaže poduzeće IBM.",
-      "validated_card_example": "Potrebno je da se prestanu konzumirati određena previše zaslađeni gazirani napitci poput Coca-Cole."
+      "description": "Nije dopušteno navoditi određeni brend ili tvrtku.",
+      "refused_card_example": "Treba kupovati rabljene proizvode na eBayu umjesto kupovati nove.",
+      "validated_card_example": "Treba kupovati na platformama za rabljenu robu umjesto kupovati nove proizvode."
     },
     "multiple_ideas": {
       "title": "Višestruke ideje",

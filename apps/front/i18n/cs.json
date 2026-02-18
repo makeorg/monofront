@@ -1469,9 +1469,9 @@
     },
     "advertising": {
       "title": "Reklama",
-      "description": "Reklamní propagace konkrétní značky nebo společnosti je zakázána. Opět platí, že značku nebo společnost můžete zmínit pouze jako ilustrativní příklad. ",
-      "refused_card_example": "Je třeba přestat konzumovat výrobky značky Coca-Cola",
-      "validated_card_example": "Je třeba přestat konzumovat některé limonády s příliš vysokým obsahem cukru jako je Coca-Cola"
+      "description": "Nemůžete citovat konkrétní značku nebo společnost.",
+      "refused_card_example": "Je třeba nakupovat použité výrobky na eBay místo nákupu nových.",
+      "validated_card_example": "Je třeba nakupovat na platformách s použitým zbožím místo nákupu nových výrobků."
     },
     "multiple_ideas": {
       "title": "Mnohočetné návrhy",

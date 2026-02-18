@@ -1299,9 +1299,9 @@
     },
     "advertising": {
       "title": "Reklaam",
-      "description": "Te ei tohi reklaamida ühtegi kaubamärki ega ettevõtet. Kaubamärke ja ettevõtteid tohib mainida ainult illustreeriva näitena.",
-      "refused_card_example": "On vaja, et kõik ettevõtted kasutaksid IBM-i lahendusi.",
-      "validated_card_example": "On vaja, et lõpetataks mõnede liiga magusate karastusjookide, nt Coca-Cola, tarbimine."
+      "description": "Konkreetse kaubamärgi või ettevõtte nimetamine ei ole lubatud.",
+      "refused_card_example": "Tuleks osta kasutatud tooteid eBayst, mitte uusi.",
+      "validated_card_example": "Tuleks osta kasutatud kaupade platvormidelt, mitte uusi tooteid."
     },
     "multiple_ideas": {
       "title": "Mitu ideed korraga",

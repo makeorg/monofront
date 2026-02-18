@@ -1290,9 +1290,9 @@
     },
     "advertising": {
       "title": "Werbung",
-      "description": "Du darfst weder für eine Marke noch ein bestimmtes Unternehmen Werbung machen. Lediglich zur Veranschaulichung darfst du eine Marke oder ein Unternehmen erwähnen.",
-      "refused_card_example": "Man sollte sicherstellen, dass alle Unternehmen die Lösungen von IBM nutzen.",
-      "validated_card_example": "Man sollte aufhören, stark zuckerhaltige Erfrischungsgetränke wie Coca-Cola zu trinken."
+      "description": "Sie können keine bestimmte Marke oder Firma zitieren.",
+      "refused_card_example": "Man sollte gebrauchte Produkte auf eBay kaufen, statt neu zu kaufen.",
+      "validated_card_example": "Man sollte auf Secondhand-Plattformen kaufen, statt neu zu kaufen."
     },
     "multiple_ideas": {
       "title": "Mehrere Ideen",
