@@ -37,15 +37,17 @@ const localStorageMock = (() => {
   };
 })();
 
+const jsdom = new JSDOM('', { url: 'http://localhost/' });
 // @ts-ignore
-global.document = new JSDOM('');
+global.document = jsdom.window.document;
 // @ts-ignore
 global.window = {
-  ...document.defaultView,
+  ...jsdom.window,
   // @ts-ignore
   FRONT_URL: jest.fn(),
+  location: jsdom.window.location,
   document: {
-    ...document,
+    ...jsdom.window.document,
     referrer: ''
   },
   sessionStorage: localStorageMock

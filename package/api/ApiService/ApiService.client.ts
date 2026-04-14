@@ -293,9 +293,12 @@ export class ApiServiceClient implements IApiServiceStrategy {
         listener(url, options)
       );
       const response = await this._retryApiCall(url, options);
-      setAttributesFromResponseHeaders(response?.headers);
+      const responseHeaders = response?.headers as
+        | ApiServiceHeadersType
+        | undefined;
+      setAttributesFromResponseHeaders(responseHeaders);
       await this._afterCallListeners.forEach(listener =>
-        listener(url, options, response?.headers || {})
+        listener(url, options, responseHeaders || {})
       );
 
       return response;

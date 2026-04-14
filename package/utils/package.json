@@ -12,7 +12,7 @@
     "@make.org/types": "0.1.0",
     "@make.org/ui": "0.1.0",
     "@make.org/utils": "0.1.0",
-    "axios": "~0.26.1",
+    "axios": "^1.15.0",
     "date-fns": "^2.29.1",
     "express": "^4.18.2",
     "express-prom-bundle": "^6.5.0",
