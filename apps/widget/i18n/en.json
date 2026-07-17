@@ -1,7 +1,7 @@
 {
   "meta": {
     "sequence": {
-      "title_standard": "Participate in the consultation '{{question}}' - Make.org",
+      "title_standard": "Participate in the conversation '{{question}}' - Make.org",
       "title_controversy": "Decide between the controversial proposals on the consultation '{{question}}' - Make.org ",
       "title_popular": "Take a position on the most popular proposals of the consultation '{{question}}' - Make.org"
     }
@@ -112,7 +112,7 @@
       "unexpected_error": "We are encountering an error, please try again later.",
       "network_error": "Impossible to access the full content of our website because it looks like you are offline.",
       "vote_only": {
-        "message": "Citizens have submitted many proposals since the beginning of the \"{{title}}\" consultation. We need your votes to make a difference between them. In the meantime we can't accept new proposals.",
+        "message": "Citizens have submitted many proposals since the beginning of the \"{{title}}\" conversation. We need your votes to make a difference between them. In the meantime we can't accept new proposals.",
         "button": "ok"
       },
       "vote_on_proposal": "Vote on this proposal"
@@ -186,7 +186,7 @@
   "final_card": {
     "title": "Thank you for reacting to the proposals !",
     "description": "Keep voting to help us identify our priorities.",
-    "link_text": "Access to the consultation",
+    "link_text": "Access to the conversation",
     "title_binding_mode": "Thank you for reacting to the proposals and sharing some information with us!"
   },
   "push_proposal_card": {
@@ -204,7 +204,7 @@
       "activate": "Confirm your email address in one click ",
       "link": "to ensure the authenticity of your account. Click on the activation link that you received at : {{mail}}",
       "question": "Do you have a question? Please contact us at : ",
-      "consultation_access": "Access to the consultation"
+      "consultation_access": "Access to the conversation"
     },
     "form": {
       "title": "Write a proposal using 140 characters max, then click on the \"Submit\" button",
@@ -257,8 +257,8 @@
   },
   "sequence": {
     "return": "Vote for proposals",
-    "title": "Vote for the proposals of the consultation: ",
-    "more": "Learn more about the consultation"
+    "title": "Vote for the proposals of the conversation: ",
+    "more": "Learn more about the conversation"
   },
   "login": {
     "title": "I already have an account",
@@ -331,7 +331,7 @@
     "privacy_policy": "privacy policy",
     "make_protect": "Make.org is committed to protecting your",
     "make_protect_link": "personal data.",
-    "opt_in": "I agree to receive emails from Make.org to be updated on current and future consultations."
+    "opt_in": "I agree to receive emails from Make.org to be updated on current and future conversations."
   },
   "sequence_zone": {
     "popular_title": "Popular proposals",

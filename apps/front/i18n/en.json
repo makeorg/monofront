@@ -25,11 +25,11 @@
       }
     },
     "results": {
-      "title": "Results of the consultation '{{question}}' - Make.org",
-      "description": "Discover the results of the citizens’ consultation, with proposals classified as “most popular”, “controversial” and “rejected”."
+      "title": "Results of the conversation '{{question}}' - Make.org",
+      "description": "Discover the results of the citizens’ conversation, with proposals classified as “most popular”, “controversial” and “rejected”."
     },
     "sequence": {
-      "title_standard": "Participate in the consultation '{{question}}' - Make.org",
+      "title_standard": "Participate in the conversation '{{question}}' - Make.org",
       "title_controversy": "Choose between the controversial proposals made in response to the consultation '{{question}}' - Make.org ",
       "title_popular": "Adopt positions on the most popular proposals made in response to the consultation '{{question}}' - Make.org",
       "title_keyword": "Adopt a position on the topic of '{{keywordLabel}}' in connection with the consultation '{{question}}' - Make.org "
@@ -117,9 +117,9 @@
       "greeting": "We are delighted to count you among our committed users!",
       "mail_confirmation_strong": "Confirm your e-mail address with one click ",
       "mail_confirmation": " to ensure the authenticity of your account. Click on the activation link that was sent to you at: {{mail}}",
-      "onboarding": "Express your opinion on social issues that are important to you by participating in our citizens’ consultations.",
-      "cta": "Take part in consultations",
-      "cta_access": "Gain access to the consultation",
+      "onboarding": "Express your opinion on social issues that are important to you by participating in our citizens’ conversations.",
+      "cta": "Take part in conversations",
+      "cta_access": "Gain access to the conversation",
       "optin_cgu_title": "Complete your registration",
       "optin_cgu_subtitle": "in a few clicks"
     },
@@ -242,7 +242,7 @@
       "unexpected_error": "We are encountering an error. Please try again later.",
       "network_error": "You cannot have access the full content of our website because it appears that you are offline.",
       "vote_only": {
-        "message": "Citizens have submitted many proposals since the beginning of the \"{{title}}\" consultation. We need your votes to make a difference between them. In the meantime we can't accept new proposals.",
+        "message": "Citizens have submitted many proposals since the beginning of the \"{{title}}\" conversation. We need your votes to make a difference between them. In the meantime we can't accept new proposals.",
         "button": "OK"
       },
       "vote_on_proposal": "Vote on this proposal",
@@ -289,7 +289,7 @@
     "button_1": "Participate",
     "button_2": "Learn more",
     "share_text": "Show your support by sharing this proposal:",
-    "footer_text": "This proposal was submitted in response to the {{operation_name}} consultation."
+    "footer_text": "This proposal was submitted in response to the {{operation_name}} conversation."
   },
   "proposal_card": {
     "previous": "Previous proposal",
@@ -346,7 +346,7 @@
   "final_card": {
     "title": "Thank you for responding to the proposals!",
     "description": "Keep voting to help us identify our priorities.",
-    "link_text": "Gain access to the consultation",
+    "link_text": "Gain access to the conversation",
     "continue": "Continue voting",
     "title_binding_mode": "Thank you for reacting to the proposals and sharing some information with us!"
   },
@@ -367,7 +367,7 @@
       "activate": "Confirm your e-mail address in one click ",
       "link": "to ensure the authenticity of your account. Click on the activation link that you have received at: {{mail}}",
       "question": "Do you have a question? Please contact us at: ",
-      "consultation_access": "Gain access to the consultation"
+      "consultation_access": "Gain access to the conversation"
     },
     "form": {
       "title": "Write a proposal, using 140 characters or less, then click on the \"Submit\" button",
@@ -448,8 +448,8 @@
   },
   "sequence": {
     "return": "Vote on the proposals",
-    "title": "Vote on the the proposals made in response to the consultation: ",
-    "more": "Learn more about the consultation"
+    "title": "Vote on the the proposals made in response to the conversation: ",
+    "more": "Learn more about the conversation"
   },
   "authentication": {
     "title": "Register to submit your proposal",
@@ -679,11 +679,11 @@
   "consultation": {
     "header": {
       "label_great_cause": "Make.org great cause",
-      "label_consultation": "citizens’ consultation",
+      "label_consultation": "citizens’ conversation",
       "label_results": "Results"
     },
     "tabs": {
-      "consultation": " Consultation ",
+      "consultation": " Conversation ",
       "action": " Actions ",
       "from": " from ",
       "to": " to ",
@@ -691,14 +691,14 @@
       "results": " Results "
     },
     "presentation": {
-      "title": "Why this consultation?",
+      "title": "Why this conversation?",
       "link_text": "Learn more"
     },
     "partners": {
       "intro_title": "A community in action ",
-      "intro_text": "Thousands of citizens participated in the consultation.",
+      "intro_text": "Thousands of citizens participated in the conversation.",
       "commitment_title": "They participated too!",
-      "commitment_text": "They support the consultation and the action plan that will follow.",
+      "commitment_text": "They support the conversation and the action plan that will follow.",
       "commitment_link": "See all partners",
       "founder": "Founder-partner",
       "init": "Consultation initiated by:",
@@ -722,8 +722,8 @@
       "see_proposals": "See more proposals"
     },
     "navigation": {
-      "introduction": "Find out more about the other themes addressed in the consultation: {{name}}",
-      "participate_desktop": "Participate in the consultation",
+      "introduction": "Find out more about the other themes addressed in the conversation: {{name}}",
+      "participate_desktop": "Participate in the conversation",
       "participate_mobile": "Participate",
       "participate_breadcrumb": "Participate in \"{{title}}\"",
       "explore_desktop": "Explore proposals",
@@ -732,7 +732,7 @@
     },
     "explore": {
       "title": "Explore proposals",
-      "description": "Use the search tools for easy exploration of the proposals submitted during the consultation and vote on those you deem interesting.",
+      "description": "Use the search tools for easy exploration of the proposals submitted during the conversation and vote on those you deem interesting.",
       "reset_filters": "Clear filters",
       "reset_filters_and_close": "Clear filter and close",
       "sort": "Sort",
@@ -781,7 +781,7 @@
       "download": {
         "title": "Download the full report",
         "button": "Download the full report",
-        "contact": "To obtain the full analysis report for this consultation, click on the button below."
+        "contact": "To obtain the full analysis report for this conversation, click on the button below."
       },
       "top_ideas": {
         "skiplink": "Top ideas to emerge",
@@ -803,13 +803,13 @@
         "percentage": "percentage"
       },
       "breadcrumb": "Results of \"{{title}}\"",
-      "title": "What can we take away from the consultation?",
+      "title": "What can we take away from the conversation?",
       "participation": {
-        "title": "Consultation’s participants"
+        "title": "Conversation’s participants"
       },
       "actionFDD": {
         "title": "The actions",
-        "text": "Following the consultation, citizen participation workshops, and the call for projects, concrete actions have emerged to ensure that your participation has a real impact on citizens' lives. Discover them on the Make.org Foundation website.",
+        "text": "Following the conversation, citizen participation workshops, and the call for projects, concrete actions have emerged to ensure that your participation has a real impact on citizens' lives. Discover them on the Make.org Foundation website.",
         "discover": "Discover"
       }
     },
@@ -821,7 +821,7 @@
       "proposals_other": "{{ count }} proposals",
       "votes_one": "{{ count }} vote",
       "votes_other": "{{ count }} votes",
-      "participate": "Are you an association? And do you want to participate in the consultation? {{ contact_us }}",
+      "participate": "Are you an association? And do you want to participate in the conversation? {{ contact_us }}",
       "contact_us": "Contact us",
       "more": "See more"
     },
@@ -851,17 +851,17 @@
       "progress_target": " out of {{votesTarget}} votes ({{percent}}%)",
       "progress_description": "The more votes a proposal receives, the more likely it is to produce a real change in society.",
       "progress_btn": "Participate",
-      "start_date": "Consultation starting date",
-      "end_date": "Consultation ending date",
+      "start_date": "Conversation starting date",
+      "end_date": "Conversation ending date",
       "progress_total": "Total number of votes"
     },
     "participate": {
-      "title": "How to participate in this consultation",
+      "title": "How to participate in this conversation",
       "description": "We count on everyone's action to defend the general interest. Therefore we need thousands of citizens’ proposals and opinions during our consultations."
     },
     "citizen_account": {
       "title": "Your citizen’s account on Make.org",
-      "description": "Thanks to your personal account, you have access to the results of your proposals and your voting records, and you will receive the results of the consultations. By registering with us, you will be informed by e-mail of the next citizens’ consultations and you will be invited to our participative events.",
+      "description": "Thanks to your personal account, you have access to the results of your proposals and your voting records, and you will receive the results of the conversations. By registering with us, you will be informed by e-mail of the next citizens’ conversations and you will be invited to our participative events.",
       "button_text": "Register"
     },
     "cards": {
@@ -873,7 +873,7 @@
       },
       "interact": {
         "title": "Respond to the proposals",
-        "description": "Proposals define the stakes of a consultation: express yourself to determine what the citizens’ priorities shall be.",
+        "description": "Proposals define the stakes of a conversation: express yourself to determine what the citizens’ priorities shall be.",
         "button": "Vote"
       },
       "controversy": {
@@ -888,11 +888,11 @@
       },
       "sharing": {
         "title": "Share the consultation",
-        "description": "Surely, your friends also have ideas and opinions that must be heard. Share this consultation with your friends to expand its reach."
+        "description": "Surely, your friends also have ideas and opinions that must be heard. Share this conversation with your friends to expand its reach."
       },
       "about": {
-        "title": "Why this consultation?",
-        "description": "Why has this consultation been launched? What is the underlying issue? Who promoted it?",
+        "title": "Why this conversation?",
+        "description": "Why has this conversation been launched? What is the underlying issue? Who promoted it?",
         "link": "Learn more"
       },
       "featured_proposals": {
@@ -1336,7 +1336,7 @@
     "privacy_policy": "privacy policy",
     "make_protect": "Make.org is committed to protecting your",
     "make_protect_link": "personal data.",
-    "opt_in": "I agree to receive emails from Make.org informing me of current and future consultations. (optional)"
+    "opt_in": "I agree to receive emails from Make.org informing me of current and future conversations. (optional)"
   },
   "browse": {
     "page_title": "Browse consultations",
@@ -1347,7 +1347,7 @@
     "nav_results_desktop": "Results of the consultations",
     "nav_results_mobile": "Results",
     "consultations": {
-      "all": "All consultations",
+      "all": "All conversations",
       "label": "Current consultations",
       "title": "Participate in current consultations",
       "subtitle": "Every vote is important! Vote and submit proposals to resolve our society’s problems.",
