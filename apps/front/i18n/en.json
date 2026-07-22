@@ -701,8 +701,8 @@
       "commitment_text": "They support the conversation and the action plan that will follow.",
       "commitment_link": "See all partners",
       "founder": "Founder-partner",
-      "init": "Consultation initiated by:",
-      "initWith": "This consultation was initiated with:",
+      "init": "Conversation initiated by:",
+      "initWith": "This conversation was initiated with:",
       "with": "In partnership with:",
       "by": "Initiated by:",
       "profile_link": "Go to: {{name}}'s profile",
@@ -857,7 +857,7 @@
     },
     "participate": {
       "title": "How to participate in this conversation",
-      "description": "We count on everyone's action to defend the general interest. Therefore we need thousands of citizens’ proposals and opinions during our consultations."
+      "description": "We count on everyone's action to defend the general interest. Therefore we need thousands of citizens’ proposals and opinions during our conversations."
     },
     "citizen_account": {
       "title": "Your citizen’s account on Make.org",
@@ -887,7 +887,7 @@
         "button": "Vote"
       },
       "sharing": {
-        "title": "Share the consultation",
+        "title": "Share the conversation",
         "description": "Surely, your friends also have ideas and opinions that must be heard. Share this conversation with your friends to expand its reach."
       },
       "about": {
