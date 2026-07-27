@@ -246,7 +246,7 @@
     "likeIt": "Favourite",
     "doable": "Realistic",
     "platitudeAgree": "Obvious",
-    "noWay": "No way!",
+    "noWay": "Hate this",
     "impossible": "Unrealistic",
     "platitudeDisagree": "Nonsense",
     "doNotUnderstand": "I don't understand",
@@ -370,7 +370,7 @@
     "title": "The consultation is now over"
   },
   "demographics_intro": {
-    "title": "You're almost there! Share your socio-demographic information so that your votes are taken into account to ensure a better representativity.",
+    "title": "You're nearly finished! Add a few details about yourself so we can ensure that everyone’s views are fairly represented.",
     "protect": "Don't worry, your data is protected 🔒",
     "next": "Next"
   }
