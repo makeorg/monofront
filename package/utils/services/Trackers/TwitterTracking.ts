@@ -14,10 +14,10 @@ declare global {
 const twPixelId = env.isClientSide() ? window?.TW_PIXEL_ID : env.twPixelId();
 
 const twitterEventMapping = {
-  [trackingConfiguration.CLICK_PROPOSAL_SUBMIT.key]: 'o2q9h',
+  [trackingConfiguration.CLICK_PROPOSAL_SUBMIT.key]: 'ref2e',
   [trackingConfiguration.CLICK_PROPOSAL_UNVOTE.key]: 'o2q9n',
   [trackingConfiguration.CLICK_PROPOSAL_VOTE.key]: 'o2q9d',
-  [trackingConfiguration.CLICK_SEQUENCE_FIRST_VOTE.key]: 'o2q9f',
+  [trackingConfiguration.CLICK_SEQUENCE_FIRST_VOTE.key]: 'reefs',
   [trackingConfiguration.CLICK_START_SEQUENCE.key]: 'o2q9t', // = click-sequence-launch on twitter
   [trackingConfiguration.CLICK_SEQUENCE_OPEN.key]: 'o2q9j',
   [trackingConfiguration.DISPLAY_PAGE_OPERATION.key]: 'o2q9i',
