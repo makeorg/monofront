@@ -204,8 +204,6 @@
     "hide_pannel": "Hide the content of the drop-down menu",
     "display_modal": "Display the content of the dialogue window",
     "hide_modal": "Hide the content of the dialogue window",
-    "display_tooltip": "Display the content of the mouse-hover tooltip",
-    "hide_tooltip": "Hide the content of the mouse-hover tooltip",
     "expand_collapse": "{{name}} - Display the content of the drop-down section",
     "shrink_collapse": "{{name}} - Hide the content of the drop-down section",
     "secondary_nav": "Secondary navigation",

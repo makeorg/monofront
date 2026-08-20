@@ -245,8 +245,6 @@
     "hide_pannel": "Sakrij sadržaj pokretne oglasne ploče",
     "display_modal": "Prikaži sadržaj dijaloškog okvira",
     "hide_modal": "Sakrij sadržaj dijaloškog okvira",
-    "display_tooltip": "Prikaži sadržaj informativne natuknice ",
-    "hide_tooltip": "Sakrij sadržaj informativne natuknice",
     "expand_collapse": "{{name}} – Prikaži sadržaj pokretnog odjeljka",
     "shrink_collapse": "{{name}} – Sakrij sadržaj pokretnog odjeljka",
     "secondary_nav": "Sekundarna navigacija",

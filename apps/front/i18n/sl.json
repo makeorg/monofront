@@ -245,8 +245,6 @@
     "hide_pannel": "Skrij vsebino spustnega menija",
     "display_modal": "Prikaži vsebino pogovornega okna",
     "hide_modal": "Skrij vsebino pogovornega okna",
-    "display_tooltip": "Prikaži vsebino opisa orodja ob preletu",
-    "hide_tooltip": "Skrij vsebino opisa orodja ob preletu",
     "expand_collapse": "{{name}} - Prikaži vsebino spustnega razdelka",
     "shrink_collapse": "{{name}} - Skrij vsebino spustnega razdelka",
     "secondary_nav": "Sekundarna navigacija",

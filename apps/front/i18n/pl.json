@@ -245,8 +245,6 @@
     "hide_pannel": "Ukryj zawartość listy rozwijanej",
     "display_modal": "Wyświetl zawartość okna dialogowego",
     "hide_modal": "Ukryj zawartość okna dialogowego",
-    "display_tooltip": "Wyświetl zawartość tooltipu po najechaniu myszką",
-    "hide_tooltip": "Ukryj zawartość tooltipu po najechaniu myszką",
     "expand_collapse": "{{name}} - Wyświetl zawartość sekcji rozwijanej",
     "shrink_collapse": "{{name}} - Ukryj zawartość sekcji rozwijanej",
     "secondary_nav": "Nawigacja drugorzędna",

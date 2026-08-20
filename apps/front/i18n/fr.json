@@ -245,8 +245,6 @@
     "hide_pannel": "Masquer le contenu du panneau déroulant",
     "display_modal": "Afficher le contenu de la fenêtre de dialogue",
     "hide_modal": "Masquer le contenu de la fenêtre de dialogue",
-    "display_tooltip": "Afficher le contenu de l'infobulle au survol",
-    "hide_tooltip": "Masquer le contenu de l'infobulle au survol",
     "expand_collapse": "{{name}} - Afficher le contenu de la section déroulante",
     "shrink_collapse": "{{name}} - Masquer le contenu de la section déroulante",
     "secondary_nav": "Navigation secondaire",

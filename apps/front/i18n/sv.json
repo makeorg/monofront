@@ -245,8 +245,6 @@
     "hide_pannel": "Dölj innehållet i rullistan",
     "display_modal": "Visa innehållet i dialogfönstret",
     "hide_modal": "Dölj innehållet i dialogfönstret",
-    "display_tooltip": "Visa innehållet i informationsruta där muspekaren hovrar",
-    "hide_tooltip": "Dölj innehållet i informationsruta där muspekaren hovrar",
     "expand_collapse": "{{name}} - Visa innehållet i rullavsnittet",
     "shrink_collapse": "{{name}} - Dölj innehållet i rullavsnittet",
     "secondary_nav": "Sekundär navigering",

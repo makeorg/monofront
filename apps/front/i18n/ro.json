@@ -245,8 +245,6 @@
     "hide_pannel": "Ascunderea conținutului meniului vertical",
     "display_modal": "Afișarea conținutului casetei de dialog",
     "hide_modal": "Ascunderea conținutului casetei de dialog",
-    "display_tooltip": "Afișarea conținutului sfatului interactiv la trecerea cu mouse-ul",
-    "hide_tooltip": "Ascunderea conținutului sfatului interactiv la trecerea cu mouse-ul",
     "expand_collapse": "{{name}} - Afișarea conținutului listei verticale",
     "shrink_collapse": "{{name}} - Ascunderea conținutului listei verticale",
     "secondary_nav": "Navigare secundară",

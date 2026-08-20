@@ -245,8 +245,6 @@
     "hide_pannel": "Peida rippmenüü sisu",
     "display_modal": "Kuva dialoogiakna sisu",
     "hide_modal": "Peida dialoogiakna sisu",
-    "display_tooltip": "Kuva jutumulli sisu hiirega üleliikumisel",
-    "hide_tooltip": "Peida jutumulli sisu hiirega üleliikumisel",
     "expand_collapse": "{{name}} - Kuva ripploendi sisu",
     "shrink_collapse": "{{name}} - Peida ripploendi sisu",
     "secondary_nav": "Teisene navigeerimine",

@@ -245,8 +245,6 @@
     "hide_pannel": "Ocultar o conteúdo do painel de descida",
     "display_modal": "Mostrar o conteúdo da janela de diálogo",
     "hide_modal": "Ocultar o conteúdo da janela de diálogo",
-    "display_tooltip": "Mostrar o conteúdo da tooltip ao passar por cima",
-    "hide_tooltip": "Ocultar o conteúdo da tooltip ao passar por cima",
     "expand_collapse": "{{name}} - Mostrar o conteúdo da secção pendente",
     "shrink_collapse": "{{name}} - Ocultar o conteúdo da secção pendente",
     "secondary_nav": "Navegação secundária",

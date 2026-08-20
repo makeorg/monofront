@@ -238,8 +238,6 @@
     "hide_pannel": "Den Inhalt der Dropdown-Liste ausblenden",
     "display_modal": "Den Inhalt des Dialogfensters anzeigen",
     "hide_modal": "Den Inhalt des Dialogfensters ausblenden",
-    "display_tooltip": "Den Inhalt des Tooltips beim Mouseover anzeigen",
-    "hide_tooltip": "Den Inhalt des Tooltips beim Mouseover ausblenden",
     "expand_collapse": "{{name}} – Den Inhalt des Dropdown-Bereichs anzeigen",
     "shrink_collapse": "{{name}} – Den Inhalt des Dropdown-Bereichs ausblenden",
     "secondary_nav": "Sekundäre Navigation",

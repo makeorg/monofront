@@ -245,8 +245,6 @@
     "hide_pannel": "Inhoud dropdownmenu verbergen",
     "display_modal": "Inhoud dialoogvenster tonen",
     "hide_modal": "Inhoud dialoogvenster verbergen",
-    "display_tooltip": "Inhoud tooltip tonen",
-    "hide_tooltip": "Inhoud tooltip verbergen",
     "expand_collapse": "{{name}} - Inhoud keuzemenu tonen",
     "shrink_collapse": "{{name}} - Inhoud keuzemenu verbergen",
     "secondary_nav": "Secundaire navigatie",

@@ -101,7 +101,7 @@ export const VoteResult: React.FC<Props> = ({
           </li>
         ))}
       </ScreenReaderItemStyle>
-      <VoteResultGraphStyle className={isWidget ? 'widget' : ''}>
+      <VoteResultGraphStyle className={isWidget ? 'widget' : ''} aria-hidden>
         {voteKeys.map(voteKey => (
           <VoteResultItemStyle key={`${voteKey}_item_${proposalId}`}>
             <Tooltip
@@ -109,8 +109,9 @@ export const VoteResult: React.FC<Props> = ({
               direction="left"
             >
               <VoteResultBarStyle
+                type="button"
+                tabIndex={-1}
                 className={isWidget ? 'widget' : ''}
-                aria-label={i18n.t('common.display_tooltip') || undefined}
                 color={voteButtonParams[voteKey].color}
                 percent={votesPercent[voteKey]}
               />

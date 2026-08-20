@@ -245,8 +245,6 @@
     "hide_pannel": "Slėpti išskleidžiamojo sąrašo turinį",
     "display_modal": "Rodyti dialogo lango turinį",
     "hide_modal": "Slėpti dialogo lango turinį",
-    "display_tooltip": "Rodyti patarimą užvedus pelės žymeklį ant elemento",
-    "hide_tooltip": "Slėpti patarimą užvedus pelės žymeklį ant elemento",
     "expand_collapse": "{{name}} - Rodyti išskleidžiamojo skirsnio turinį",
     "shrink_collapse": "{{name}} - Slėpti išskleidžiamojo skirsnio turinį",
     "secondary_nav": "Antrinis naršymas",

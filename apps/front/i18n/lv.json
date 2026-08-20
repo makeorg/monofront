@@ -245,8 +245,6 @@
     "hide_pannel": "Slēpt nolaižamā paneļa saturu",
     "display_modal": "Rādīt dialogloga saturu",
     "hide_modal": "Slēpt dialogloga saturu",
-    "display_tooltip": "Rādīt rīka padomu saturu, virzot kursoru",
-    "hide_tooltip": "Slēpt rīka padomu saturu, virzot kursoru",
     "expand_collapse": "{{name}} - Rādīt nolaižamās sadaļas saturu",
     "shrink_collapse": "{{name}} - Slēpt nolaižamās sadaļas saturu",
     "secondary_nav": "Papildu navigācija",

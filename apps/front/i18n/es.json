@@ -245,8 +245,6 @@
     "hide_pannel": "Ocultar el contenido del panel desplegable",
     "display_modal": "Mostrar el contenido de la ventana emergente",
     "hide_modal": "Ocultar el contenido de la ventana emergente",
-    "display_tooltip": "Mostrar el contenido de la ventana de información al pasar el cursor",
-    "hide_tooltip": "Ocultar el contenido de la ventana de información al pasar el cursor",
     "expand_collapse": "{{name}} - Mostrar el contenido de la sección desplegable",
     "shrink_collapse": "{{name}} - Ocultar el contenido de la sección desplegable",
     "secondary_nav": "Navegación secundaria",

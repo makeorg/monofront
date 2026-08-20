@@ -245,8 +245,6 @@
     "hide_pannel": "Mascherare il contenuto del pannello a tendina",
     "display_modal": "Mostra il contenuto della finestra di dialogo",
     "hide_modal": "Nascondi il contenuto della finestra di dialogo",
-    "display_tooltip": "Mostra il contenuto del tooltip al passaggio del mouse",
-    "hide_tooltip": "Nascondi il contenuto del tooltip al passaggio del mouse",
     "expand_collapse": "{{name}} - Mostra il contenuto della sezione a tendina",
     "shrink_collapse": "{{name}} - Nascondi il contenuto della sezione a tendina",
     "secondary_nav": "Navigazione secondaria",

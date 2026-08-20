@@ -245,8 +245,6 @@
     "hide_pannel": "A legördülő lista tartalmának elrejtése",
     "display_modal": "A párbeszédpanel tartalmának megjelenítése",
     "hide_modal": "A párbeszédpanel tartalmának elrejtése",
-    "display_tooltip": "Az eszközleírás tartalmának megjelenítése az egérrel való áthúzáskor",
-    "hide_tooltip": "Az eszközleírás tartalmának elrejtése az egérrel való áthúzáskor",
     "expand_collapse": "{{name}} - A legördülő menü tartalmának megjelenítése",
     "shrink_collapse": "{{name}} - A legördülő menü tartalmának elrejtése",
     "secondary_nav": "Másodlagos navigáció",

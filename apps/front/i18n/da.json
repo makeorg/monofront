@@ -245,8 +245,6 @@
     "hide_pannel": "Skjul indholdet af rullepanelet",
     "display_modal": "Vis indholdet af dialogboksen",
     "hide_modal": "Skjul indholdet af dialogboksen",
-    "display_tooltip": "Vis indholdet af tooltippen",
-    "hide_tooltip": "Skjul indholdet af tooltippen",
     "expand_collapse": "{{name}} - Vis indholdet af rulledelen",
     "shrink_collapse": "{{name}} - Skjul indholdet af rulledelen",
     "secondary_nav": "Sekundær browsing",

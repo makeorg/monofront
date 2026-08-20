@@ -245,8 +245,6 @@
     "hide_pannel": "Skrýt obsah rozbalovacího panelu",
     "display_modal": "Zobrazit obsah dialogového okna",
     "hide_modal": "Skrýt obsah dialogového okna",
-    "display_tooltip": "Zobrazit popis obsahu při umístění kurzoru myši",
-    "hide_tooltip": "Skrýt obsah popisku při umístění kurzoru myši",
     "expand_collapse": "{{name}} - Zobrazit obsah rozbalovací sekce",
     "shrink_collapse": "{{name}} - Skrýt obsah rozbalovací sekce",
     "secondary_nav": "Sekundární navigace",
