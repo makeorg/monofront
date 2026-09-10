@@ -240,7 +240,7 @@
       "unexpected_error": "We are encountering an error. Please try again later.",
       "network_error": "You cannot have access the full content of our website because it appears that you are offline.",
       "vote_only": {
-        "message": "Citizens have submitted many proposals since the beginning of the \"{{title}}\" conversation. We need your votes to make a difference between them. In the meantime we can't accept new proposals.",
+        "message": "People have submitted thousands of proposals since the conversation opened. We are now in the voting-only phase, so new proposals can no longer be submitted. You can still take part by voting on the proposals already shared.",
         "button": "OK"
       },
       "vote_on_proposal": "Vote on this proposal",
